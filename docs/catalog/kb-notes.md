@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-444 document(s).
+446 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -98,6 +98,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A green check you did not scope is not evidence](../kb-notes/methodology-a-green-check-you-did-not-scope-is-not-evidence.md) | methodology | published | 2026-08-23 | 2026-08-23 |
 | [A grouping key must come from the authoritative set, not from the rows being grouped](../kb-notes/methodology-a-grouping-key-must-come-from-the-authoritative-set.md) | methodology | published | 2026-08-13 | 2026-08-13 |
 | [A guard on generated output cannot see a regression staged in its source](../kb-notes/methodology-a-guard-on-generated-output-cannot-see-its-source.md) | methodology | published | 2026-09-10 | 2026-09-10 |
+| [A guard on the wrong generation of descendant is not a guard](../kb-notes/methodology-a-guard-on-the-wrong-generation-of-descendant-is-not-a-guard.md) | methodology | published | 2026-09-15 | 2026-09-15 |
 | [A guard test must not be able to fire the action it guards](../kb-notes/methodology-a-guard-test-must-not-be-able-to-fire-the-guarded-action.md) | methodology | published | 2026-08-19 | 2026-08-19 |
 | [A guard that fails on truth gets muted](../kb-notes/methodology-a-guard-that-fails-on-truth-gets-muted.md) | methodology | published | 2026-08-09 | 2026-08-09 |
 | [A guard that supplies its own input tests only the half after the input](../kb-notes/methodology-a-guard-that-supplies-its-own-input-tests-only-half.md) | methodology | published | 2026-09-12 | 2026-09-12 |
@@ -222,6 +223,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Assert what the reader sees, not what the source says](../kb-notes/methodology-assert-what-the-reader-sees.md) | methodology | published | 2026-08-11 | 2026-08-12 |
 | [Audit by rendered value, not by file — thousands of failures collapse to a few source lines](../kb-notes/methodology-audit-by-rendered-value-not-by-file.md) | methodology | published | 2026-09-04 | 2026-09-04 |
 | [Auto-layout tables silently park columns off-pane: diagnose with the inspector, defend with fixed layout](../kb-notes/methodology-fixed-table-layout-off-pane-columns.md) | methodology | published | 2026-06-11 |  |
+| [Before building a whole, check whether the halves are already assigned](../kb-notes/methodology-before-building-a-whole-check-whether-the-halves-are-already-assigned.md) | methodology | published | 2026-09-15 | 2026-09-15 |
 | [Before repairing a field, check whether the record already holds a better signal](../kb-notes/methodology-the-record-may-already-hold-a-better-signal-than-the-field-you-are-repairing.md) | methodology | published | 2026-08-14 | 2026-08-14 |
 | [Bucket military and non-military credit recommendations before you total them](../kb-notes/methodology-bucket-military-and-non-military-credit-recommendations.md) | methodology | published | 2026-08-13 | 2026-08-13 |
 | [Build a hierarchy from dotted ids without migrating stored keys](../kb-notes/methodology-tree-from-dotted-ids-stable-keys.md) | methodology | published | 2026-06-26 | 2026-06-26 |

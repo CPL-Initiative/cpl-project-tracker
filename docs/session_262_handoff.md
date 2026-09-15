@@ -4,6 +4,8 @@ date: 2026-09-14
 session: 262 (SkySave)
 tags: [handoff, implementation-funding, testing, a11y]
 status: current
+superseded: true
+superseded_by: session_263_handoff.md
 ---
 
 # You are Session 262

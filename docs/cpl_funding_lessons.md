@@ -1795,3 +1795,52 @@ the mockup FIRST and let him rule on it — which he did, five times, mid-turn.
   "compaction" REWROTE text at the same length and one actually grew the file. What worked
   was deleting settled history outright and pointing at the KB notes instead of retelling
   them. Ended at 1.09x while absorbing a run's worth of new state.
+
+## 2026-09-15 — S263 SkyOrder: a column-hide rule that reached into the drill-in, and two builds Sam stopped
+
+**Shipped:** #1577 (statewide expand, one detail renderer, true-ratio percent, printed names, parity guard) ·
+#1578 (the column-hide CSS leak) · #1580 (revert the target rate, correct a stale MEASURES comment).
+#1579 was built and reverted the same day.
+
+**⚠️ THE DEFECT THAT MATTERED FIRED ON THE SHIPPED DEFAULT.** `colHideStyleHtml()` emitted DESCENDANT
+combinators, so hiding the main table's District column (main col 3) also hid NC funding (detail col 3)
+inside the nested per-priority table. `COL_PREFS` defaults to `{district:true, working_adults:true}`, so
+this was never a setting anyone chose — **every reader** of COBI and the public explainer saw the
+noncredit cell vanish, later cells slide one column left under the wrong headers, and Total Possible
+render empty. Reported as "NC funding shows FTES" because the Target cell landed under that header.
+The `:not(.cplfund-detail)` looked like it covered this: it excludes the detail ROW, while the damage
+is to rows INSIDE it. Note: `methodology-a-guard-on-the-wrong-generation-of-descendant-is-not-a-guard`.
+
+**⚠️ AND NO DOM-READING TEST COULD HAVE CAUGHT IT.** The markup was always correct — every row emits all
+eight cells, and the parity guard written the day before passes on this exact defect because it counts
+`<td>`s. The corruption is at PAINT and jsdom does no layout. The guard asks the one question jsdom can
+answer: `Element.matches()` against the generated selector.
+
+**TWO BUILDS SAM STOPPED, both of which I had justified to myself first.**
+1. The per-priority target rate (#1579). He asked *"why do I need the Target factor when I can adjust
+   the FTES factor and get the same effect"* — and the maths is exact: `rate = k/factor` reproduces
+   every target because `prioEntitlement` is proportional to size share. One degree of freedom, two
+   parameterizations, and this repo already rules against a second dial over one number.
+2. A combined `pa_u + ppa_u` source to match the MAP dashboard's 84. **Awards is already pinned to
+   `ppa_u`**, so that would have counted portal-origin units twice — re-creating the double claim S262
+   fixed. Note: `methodology-before-building-a-whole-check-whether-the-halves-are-already-assigned`.
+
+His tell both times was the same sentence: *"This was not an issue in any of the previous dozens of
+funding sessions."* A problem appearing suddenly in a mature system, with no corresponding change, is
+usually a problem in the current reading. It was said twice before it landed.
+
+**⚠️ A STALE CAUSAL CLAIM I REPEATED AS JUSTIFICATION.** The `MEASURES` comment said eligible is
+"inflated upstream by the ACE/JST skill-level duplication". `roadmap_archive` records that exact claim
+being corrected — the gap is mostly correct applicability filtering, and a producer cross-check against
+MAP's own totals measured 1.0054. The correction never reached the file. Corrected in #1580.
+
+**THE VOCABULARY COLLISION, measured from Sam's spot-check.** MAP's dashboard labels its APPLIED column
+"Eligible": Alameda 84 = `pa_u` 78 + `ppa_u` 6, 14 students = `pa` 13 + 1 portal-origin; statewide 220k =
+220,020. Our `pe_u` is 1,407,508 / 529. Same word, 6.4x apart — and `live_metrics.json` already carries
+the scraped figure per college (115 colleges, fractional precision, Σ 220,370.65), rendered on College
+Activity as "Eligible Units". So COBI itself carried both readings.
+
+**Patterns that worked.** Reproducing the screenshot cell-for-cell before theorizing — it killed three
+wrong hypotheses (stale cache, truncated git history, a missing data field) and found the CSS. Mutating
+every new guard to prove it fails on the real defect. Baselining a11y against a `main` worktree before
+reporting. And treating the user's "this was never a problem" as evidence.
