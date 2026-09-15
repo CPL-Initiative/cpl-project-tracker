@@ -7300,11 +7300,33 @@
   function colHideStyleHtml() {
     // One row shape per institution (R6, 2026-08-31) — no paired-NC-row
     // nth-child compensation any more.
+    //
+    // ⚠️ EVERY COMBINATOR HERE IS A CHILD COMBINATOR, AND THAT IS THE WHOLE
+    // CORRECTNESS OF THIS FUNCTION. These were descendant combinators until
+    // 2026-09-15, and `tr:not(.cplfund-detail) td:nth-child(3)` then reached
+    // straight THROUGH the detail row into the per-priority table nested inside
+    // it: those inner rows are descendants of .cplfund-table tbody and are not
+    // themselves .cplfund-detail, so hiding the main table's 3rd column
+    // (District) also hid the detail table's 3rd column (NC funding). The cells
+    // after it slid one column left under their own headers and Total Possible
+    // emptied — Sam reported it as "NC funding shows FTES", because what landed
+    // under that header was the Target cell.
+    //
+    // The `:not(.cplfund-detail)` looks like it covers this and cannot: it
+    // excludes the detail ROW, while the damage is done to rows INSIDE that
+    // row. A guard on the wrong generation of descendant is not a guard.
+    //
+    // ⚠️ And it is invisible to a DOM test that reads cells by header — those
+    // read the markup, which is correct; only the CSS is wrong, and the shift
+    // happens at paint. tests/cpl_funding_col_hide_scope.test.js asserts on
+    // Element.matches() against the generated selector, which is the one thing
+    // jsdom can answer here without layout.
     var hid = hiddenCols(), id = idColKey(), rules = [];
     activeCols().forEach(function (col, i) {
       if (hid[col.key] && col.key !== id) {
         var p = i + 1;
-        rules.push(".cplfund-table thead th:nth-child(" + p + "),.cplfund-table tbody tr:not(.cplfund-detail) td:nth-child(" + p + "){display:none}");
+        rules.push(".cplfund-table > thead > tr > th:nth-child(" + p + ")," +
+          ".cplfund-table > tbody > tr:not(.cplfund-detail) > td:nth-child(" + p + "){display:none}");
       }
     });
     return rules.length ? "<style>" + rules.join("") + "</style>" : "";
