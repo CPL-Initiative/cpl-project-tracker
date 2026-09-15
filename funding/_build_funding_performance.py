@@ -21,21 +21,48 @@ Metrics (per docs/funding_priority_metrics_scope.md; forks ratified by Sam
                   and `pa_u` their unit sum. The middle rung of MAP's funnel
                   (eligible -> APPLIED -> transcribed) and the one P1 should be
                   scored on, for two reasons:
-                    1. ELIGIBLE is inflated upstream and we cannot fix it. ACE
-                       JST exhibits repeat a credit recommendation under every
-                       skill level, so a USMC veteran's eligibility multiplies
-                       (map_data_quality 10ad9e0a, high/open — MAP's parser
-                       can't easily keep only the highest level because skill
-                       levels aren't canonically ordered). Our own arithmetic is
-                       sound (the unit_crosscheck below reads 1.0054 against
-                       MAP's published totals) — the source figure is the one
-                       that's inflated. Applying credit is a per-student action
-                       taken once, so it does not carry the duplication.
+                    1. ELIGIBLE IS THE WHOLE JST BY DESIGN, and the gap to
+                       applied is the college doing its job. ⚠️ CORRECTED
+                       2026-09-15 — this note used to say eligible is "inflated
+                       upstream and we cannot fix it" by ACE/JST skill-level
+                       duplication (map_data_quality 10ad9e0a). cpl_funding.js
+                       retired that reading the same day, and Sam confirmed the
+                       history: "we had thought it best to parse the JST credit
+                       recommendations and list all those as Eligible credits
+                       that the college should articulate if possible and then
+                       decide if they can be applied". So eligible is the
+                       college's WORKLIST, chosen deliberately, and much of a
+                       JST was never applicable to a CCC — his example, one unit
+                       in marksmanship. Our arithmetic is sound either way (the
+                       unit_crosscheck below reads 1.0054 against MAP's
+                       published totals); what was wrong was calling the source
+                       figure defective, which invites someone to "fix" a
+                       measure with nothing wrong with it.
+                       ⚠️ AND THE ASYMMETRY IS STRUCTURAL, not a data-quality
+                       difference (Sam, same day): "Colleges only adopt an
+                       industry exhibit if they have course(s) they can
+                       articulate with it", while "for JST, they have to deal
+                       with whatever is listed based on the service members MOS
+                       and training". Industry eligibility arrives pre-filtered
+                       by construction; JST eligibility cannot be. Measured
+                       2026-09-15: Industry Certification converts 1,272
+                       eligible students to 1,249 applied (98%), Military 92%
+                       of 27,528 — but 63% of all eligible students are
+                       military, which is where the UNIT loss lives.
+                    1b. THE LOSS IS IN UNITS, NOT STUDENTS, which is the same
+                       fact from the other side: 43,654 eligible students become
+                       39,604 applied (91%), while 1,410,529 eligible units
+                       become 219,704 (15.6%). Applying credit is a per-student
+                       action taken once, so it carries no duplication and no
+                       inapplicable rungs.
                     2. Eligible measures OPPORTUNITY, not performance: 98 of 102
                        colleges clear an eligible-based target, median 42x. What
                        a college controls is whether it ACTS on the eligibility.
-                  Statewide the funnel is 1,354,527 eligible -> 242,559 applied
-                  (18%) -> 103,139 transcribed (8%).
+                  Statewide the funnel, measured 2026-09-15 on the published
+                  artifact: 1,410,529 eligible -> 219,704 applied (15.6%) ->
+                  73,000 transcribed (5.2%) UNITS. ⚠️ These move daily — read
+                  them from cpl_funding_performance.js rather than quoting this
+                  line, which is a dated sample and not a source.
   PP (added 2026-07-27 per Sam) = distinct PORTAL-ORIGIN students (Potential
                   Student = Yes, Test Student != Yes) with any transcribed CPL —
                   the P3 "transcribed Credit from either CPL Student Portal or
