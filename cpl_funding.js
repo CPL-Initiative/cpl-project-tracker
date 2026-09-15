@@ -355,6 +355,21 @@
     ".cplfund-cardgoal-set { color: var(--text-body); font-weight: 600; }",
     "@media (max-width: 560px) { .cplfund-cardgoal-lab { margin-left: 0; flex-basis: 100%; } }",
 
+    /* ── the MEASURE picker, in the metric block (Sam, 2026-09-15) ─────── */
+    /* Deliberately quieter than the outcome picker above it: the measure is a
+       setting a curator visits rarely, and the metric's WORDS are what the card
+       is for. Tokens only, never a raw hex. */
+    ".cplfund-cardsrc { display: flex; flex-direction: column; gap: 3px; margin-top: 7px;",
+    "  padding-top: 7px; border-top: 1px solid var(--border); }",
+    ".cplfund-cardsrc-lab { display: flex; align-items: center; gap: 6px; flex-wrap: wrap;",
+    "  font-size: .72rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--text-muted); }",
+    ".cplfund-cardsrc-sel { font: inherit; font-size: .82rem; text-transform: none; letter-spacing: 0;",
+    "  min-height: 28px; max-width: 100%; flex: 1 1 14rem; color: var(--text-strong);",
+    "  background: var(--surface-opaque); border: 1px solid var(--border-strong);",
+    "  border-radius: 6px; padding: 3px 6px; }",
+    ".cplfund-cardsrc-foot { font-size: .76rem; color: var(--text-muted); }",
+    "@media (max-width: 560px) { .cplfund-cardsrc-sel { flex-basis: 100%; } }",
+
     /* ── every card section below the Metric collapses ─────────────────── */
     ".cplfund-cardsec { border-top: 1px dashed var(--border-strong); margin-top: 6px; }",
     ".cplfund-cardsec > summary { display: flex; flex-wrap: wrap; gap: 2px 8px; align-items: baseline;",
@@ -3018,7 +3033,7 @@
     "data-textedit", "data-textsave", "data-textcancel", "data-textreset", "data-textarea",
     "data-secrename", "data-sectitle", "data-sectitlesave", "data-sectitlecancel",
     "data-sectitlereset", "data-sechide", "data-secshow",
-    "data-projsel", "data-projadd", "data-projrelease", "data-priogoal",
+    "data-projsel", "data-projadd", "data-projrelease", "data-priogoal", "data-priosrc",
     "data-rcgoal", "data-rcdel", "data-rstratadd", "data-rstratdel"];
   // PREVIEW-ONLY affordances, swept everywhere the curator is not previewing.
   // Kept OUT of CURATE_ATTRS rather than conditioned inside it, so the registry
@@ -4624,6 +4639,75 @@
     setPrio(slot, i, "goals", key === GOAL_DERIVED ? GOAL_DERIVED : [key]);
   }
 
+  // ── the MEASURE picker (Sam, 2026-09-15: "build the picker") ─────────────
+  //
+  // ⚠️ THIS WAS THE LAST FUNDING DIAL WITH NO CONTROL. Share, factor, title,
+  // metric text, goals, pool figures, strategies and positions are all curator
+  // edits; `metric_src` alone still required a session writing to the shared
+  // Supabase row. That is the gap Sam's own ruling was aimed at (2026-09-01:
+  // "I don't want you to fix it; I want the tab to save it"), and a session
+  // reading the handoff's "one dial in the tab" would have believed the control
+  // existed — I did, and told him so twice before checking the screen.
+  //
+  // ⚠️ THE OPTIONS ARE WORDS, NOT FEED KEYS, and that is HIS ruling too. On
+  // 2026-08-28, shown the key on the card face, he asked "what does this mean?
+  // Metric - pinned to ppa_u" — so the key moved into the metric block's
+  // tooltip and the visible words stayed plain. The picker keeps that bargain:
+  // a curator chooses by WHAT IS COUNTED, and the key stays in the tooltip.
+  //
+  // ⚠️ THE LIST IS DERIVED FROM THE REGISTRY, never hand-maintained, so a
+  // measure added to METRIC_SOURCES appears here without a second edit and a
+  // measure removed cannot linger as a dead option. Two filters, both read off
+  // the registry itself rather than a list of names:
+  //   * `unit === "units"` — the credit priorities are FTES-denominated, and
+  //     Sam ruled headcount dead on 2026-09-15 ("we do not use student
+  //     headcount for any metrics in this tab"). Offering one would re-open a
+  //     policy he closed.
+  //   * `lane !== "nc"` — the noncredit measures belong to the NC cards, which
+  //     are a different list with a different write path (setNcPrioStrategies).
+  var SRC_DERIVED = "";   // the un-pin sentinel measureOf() already honors
+  function pickableSources() {
+    if (typeof METRIC_SOURCES !== "object" || !METRIC_SOURCES) return [];
+    return Object.keys(METRIC_SOURCES).filter(function (k) {
+      var r = METRIC_SOURCES[k];
+      return r && r.unit === "units" && r.lane !== "nc";
+    });
+  }
+  function setPrioSrc(slot, i, key) {
+    // "" is STORED, not deleted — firstDefined() skips null and undefined, so a
+    // deleted key would let a lower layer's pin resurface and the curator could
+    // never un-pin. Same shape as GOAL_DERIVED, for the same reason.
+    setPrio(slot, i, "metric_src", key === SRC_DERIVED ? "" : key);
+  }
+  // `p` is the priority as priorities(slot) yields it; selAttr carries the
+  // display index, exactly as the outcome picker's does.
+  function srcPickerHtml(p, ctx, selAttr) {
+    if (publicMode()) return "";
+    var cur = (p && p.metric_src) || "";
+    var meas = measureOf(p || {}) || {};
+    var opts = '<option value=""' + (cur ? "" : " selected") +
+      ">Derived from the wording</option>" +
+      pickableSources().map(function (k) {
+        var r = METRIC_SOURCES[k];
+        return '<option value="' + esc(k) + '"' + (cur === k ? " selected" : "") + ">" +
+          esc(r.label || r.basis) + "</option>";
+      }).join("");
+    // What the card is ACTUALLY measured on right now, named the same way the
+    // Actual line names it — so the picker and the figure beneath it cannot
+    // appear to disagree. An unknown pin says so instead of reading as fine.
+    var foot = meas.bad_src
+      ? '<span class="cplfund-warn-text">' + esc(String(meas.bad_src)) +
+        " is outside the known MAP feeds, so this priority stays at $0 until it names one.</span>"
+      : cur
+        ? "Counts in CPL FTES."
+        : "The wording decides: " + esc(meas.basis || "awaiting a measure this metric names") + ".";
+    return '<div class="cplfund-cardsrc">' +
+      '<label class="cplfund-cardsrc-lab">Measured from ' +
+      '<select class="cplfund-cardsrc-sel" ' + selAttr +
+      ' aria-label="' + esc("Measure for " + ctx) + '">' + opts + "</select></label>" +
+      '<span class="cplfund-cardsrc-foot">' + foot + "</span></div>";
+  }
+
   function goalCite(keys) {
     return "Ed. Code &sect;78093.2(d)(1)(" + keys.join(") and (") + ")";
   }
@@ -5769,7 +5853,12 @@
         '<div class="metric"' +
           (p.metric_src ? ' title="' + esc("Measured from the MAP feed key " + p.metric_src) + '"' : "") +
           '>METRIC (Year ' + slot + mirroredNote(slot) + "): " +
-          edArea("metric", p.metric, { slot: slot, idx: i, rows: 2, ro: ro, label: p.label + " metric" }) + "</div>" +
+          edArea("metric", p.metric, { slot: slot, idx: i, rows: 2, ro: ro, label: p.label + " metric" }) +
+          // The measure sits WITH the metric, because it is what the metric's
+          // words resolve to — a curator reading the sentence and the measure
+          // in one block can see whether they agree.
+          (ro ? "" : srcPickerHtml(p, p.label + (p.title ? " — " + p.title : ""),
+            'data-priosrc="' + i + '"')) + "</div>" +
         cardSectionHtml("Rate and target",
           isFtesPrio
             ? "Target " + fmtNum1(sysHeads) + " CPL FTES"
@@ -6407,12 +6496,58 @@
   function wantsUnits(m) {
     return !has(m, "headcount") && (has(m, "ftes") || has(m, "unit"));
   }
+  // THE COUNSELOR STEP, READ FROM PROSE (2026-09-15, Sam's P2 correction).
+  //
+  // ⚠️ ONE PREDICATE, TWO READERS. measurability() picks the MEASURE and
+  // metricMilestone() picks the RUNG the diagnostic compares against, and they
+  // have to agree about what "counselor" in a metric means or the check fires on
+  // its own disagreement. This repo has already paid for two readers of one fact
+  // (the alias chain, copy-pasted and drifted to 7 maps against 15). So the test
+  // lives HERE, once, and both call it.
+  //
+  // Sam ruled the step is named for the CREDIT's state, not for who clicked it —
+  // the student, the counselor, the coordinator or an initiator may all check it
+  // — so the prose colleges actually write ("with Counselor checked", "counselor
+  // verified", "an accepted CPL Plan") all have to land on the same rung.
+  function saysCounselorAccepted(m) {
+    return has(m, "counselor") || has(m, "counseling") ||
+           has(m, "accepted plan") || has(m, "plan accepted") || has(m, "accepted cpl plan");
+  }
   var MEASURES = [
     // ── UNIT/FTES measures ────────────────────────────────────────────────
     // Sam moved the priorities to FTES (2026-07-31). Each entry carries an
     // explicit `unit` so the diagnostic can catch a metric whose text asks for
     // FTES but whose measure returns students — the exact mis-wire his three new
     // strings hit, which nothing detected because both sides were "measurable".
+    //
+    // THE COUNSELOR ENTRY SITS FIRST, AHEAD OF PORTAL AND APPLIED, and the order
+    // is the whole content of the rule. Sam's live P2 names THREE things at once
+    // — "Applied CPL units (FTES) for students with Counselor checked and
+    // originating from either CPL Portal, College CPL Landing Page, or batch
+    // upload" — so without this entry the text resolves to `pp_u` (portal-origin
+    // TRANSCRIBED units, 25.0 statewide across 3 colleges) on the portal clause
+    // alone, and the counselor clause it leads with reaches nothing.
+    //
+    // ⚠️ WHY COUNSELOR WINS OVER THE ORIGIN CLAUSE, measured 2026-09-15 on the
+    // published artifact: the counselor cut carries 24,804 units across 23
+    // college rows; portal origin carries 666.5. A metric naming BOTH can only
+    // be honored on one of them today, because no measure cuts the counselor
+    // step BY origin — and the clause with the data is the one that makes the
+    // priority measurable at all. `pac_u` also spans both cohorts, which is what
+    // lets it honor the "batch upload" route Sam's text names and `ppa_u`
+    // (Potential Student = Yes) excludes entirely.
+    //
+    // ⚠️ THIS ENTRY IS THE UNPINNED SAFETY NET, NOT THE LIVE PATH. P2 carries an
+    // explicit `metric_src`, and a pin always wins in measureOf(). The entry
+    // exists because a metric naming the counselor with NO pin previously fell
+    // through every rule to `{}` — a data gap, which pays every college its FULL
+    // cap. Measured on the live config: clearing P2's pin against the text
+    // "Counselor-accepted CPL Units (FTES)" paid Norco its whole $51,699 share
+    // with nothing measured behind it. See
+    // docs/kb-notes/methodology-a-default-payout-masks-the-gap-beneath-it.md.
+    { test: function (m) { return wantsUnits(m) && saysCounselorAccepted(m); },
+      src: "pac_u", unit: "units",
+      basis: "units of APPLIED CPL on counselor-accepted Student CPL Plans" },
     { test: function (m) { return wantsUnits(m) && (has(m, "portal") || has(m, "landing page")); },
       src: "pp_u", unit: "units",
       basis: "units of portal-origin transcribed CPL (via the CPL Student Portal / Landing Page)" },
@@ -6463,6 +6598,16 @@
       src: "p3_u", unit: "units",
       basis: "units of transcribed CPL, per MAP" },
     // ── HEADCOUNT measures (unchanged) ────────────────────────────────────
+    // The counselor step's headcount twin, first for the same reason its unit
+    // entry is first. `pac` is already in the registry and the feed, so leaving
+    // this one out would close the full-advance path on the FTES axis and leave
+    // it open on the headcount axis — the asymmetry is the bug, not the saving.
+    // (Headcount metrics are dead policy per Sam, 2026-09-15: "we do not use
+    // student headcount for any metrics in this tab." This entry exists so a
+    // metric nobody should write cannot pay a full cap if somebody writes it.)
+    { test: function (m) { return saysCounselorAccepted(m); },
+      src: "pac", unit: "students",
+      basis: "students whose CPL Plan a counselor accepted (the MAP Counselor lifecycle step)" },
     // Origin (CPL Student Portal / CPL Landing Page). The daily builder counts
     // portal-origin transcribed students (Potential Student = Yes, Test Student
     // ≠ Yes) into `pp` — a normal achievement-based metric (Sam, 2026-07-27):
@@ -6557,10 +6702,10 @@
     p2:   { unit: "students", milestone: "transcribed", basis: "distinct students with 6+ transcribed CPL units, per MAP" },
     p3:   { unit: "students", milestone: "transcribed", basis: "distinct students with any transcribed CPL, per MAP" },
     pp:   { unit: "students", milestone: "transcribed", basis: "portal-origin transcribed CPL (via the CPL Student Portal / Landing Page)" },
-    pe_u: { unit: "units", milestone: "eligible", basis: "units of eligible CPL identified in MAP" },
-    pa_u: { unit: "units", milestone: "applied", basis: "units of CPL APPLIED to student records in MAP" },
-    p3_u: { unit: "units", milestone: "transcribed", basis: "units of transcribed CPL, per MAP" },
-    pp_u: { unit: "units", milestone: "transcribed", basis: "units of portal-origin transcribed CPL (via the CPL Student Portal / Landing Page)" },
+    pe_u: { label: "Eligible CPL identified in MAP", unit: "units", milestone: "eligible", basis: "units of eligible CPL identified in MAP" },
+    pa_u: { label: "Applied CPL, all students", unit: "units", milestone: "applied", basis: "units of CPL APPLIED to student records in MAP" },
+    p3_u: { label: "Transcribed CPL", unit: "units", milestone: "transcribed", basis: "units of transcribed CPL, per MAP" },
+    pp_u: { label: "Transcribed CPL, portal-origin students", unit: "units", milestone: "transcribed", basis: "units of portal-origin transcribed CPL (via the CPL Student Portal / Landing Page)" },
     // ── the Access measure (2026-08-27, Sam) ───────────────────────────────
     // APPLIED units among portal-origin students — what the Year-1 Access
     // metric has asked for since it was written. Sam: "Potential Student ... is
@@ -6573,7 +6718,7 @@
     // the metric excludes. Pinned by tests/funding_portal_applied_test.py.
     ppa:   { unit: "students", milestone: "applied",
              basis: "portal-origin students (Potential Student = Yes) with CPL applied in MAP" },
-    ppa_u: { unit: "units", milestone: "applied",
+    ppa_u: { label: "Applied CPL, portal-origin students", unit: "units", milestone: "applied",
              basis: "units of CPL APPLIED for portal-origin students (via the CPL Student Portal / Landing Page)" },
     // ── the consolidated three (Sam, 2026-09-01) ──────────────────────────
     // The bands re-aim the same three priorities: Eligible under Access,
@@ -6592,7 +6737,7 @@
     // wording excludes (see the ppa block above, and pa_u=21 vs ppa_u=60).
     ppe:   { unit: "students", milestone: "eligible",
              basis: "portal-origin students (Potential Student = Yes) with any eligible CPL identified in MAP" },
-    ppe_u: { unit: "units", milestone: "eligible",
+    ppe_u: { label: "Eligible CPL, portal-origin students", unit: "units", milestone: "eligible",
              basis: "units of ELIGIBLE CPL for portal-origin students (via the CPL Student Portal / Landing Page)" },
     // The Counselor lifecycle step: applied CPL on a Student CPL Plan the
     // student ACCEPTED. Sam's spec (2026-09-01): "Applied CPL units measured in
@@ -6641,7 +6786,7 @@
     // rung exists or an accepted-plan measure would silently read as (A).
     pac:   { unit: "students", milestone: "accepted",
              basis: "students whose CPL Plan a counselor accepted (the MAP Counselor lifecycle step)" },
-    pac_u: { unit: "units", milestone: "accepted",
+    pac_u: { label: "Applied CPL on counselor-accepted CPL Plans", unit: "units", milestone: "accepted",
              basis: "units of APPLIED CPL on counselor-accepted Student CPL Plans" },
     // ── noncredit lane (DECLARED, NOT YET DELIVERED) ───────────────────────
     // Sam ruled 2026-08-26 that the NC lane EARNS like credit: a cap earned
@@ -6707,6 +6852,15 @@
     // Order matters and mirrors MEASURES: a metric naming two rungs is scored on
     // the one MEASURES would pick, so the check compares like with like rather
     // than inventing a second precedence nobody else follows.
+    //
+    // ACCEPTED SITS FIRST, mirroring the counselor entry's position in MEASURES.
+    // Sam's live P2 reads "Applied CPL units (FTES) for students with Counselor
+    // checked and …", so it names the applied rung and the accepted rung in one
+    // sentence; without this branch the check reads "applied" off the prose,
+    // compares it to `pac_u`'s "accepted", and reports a milestone mismatch
+    // against a pin that is exactly right. A diagnostic that fires on the
+    // correct configuration trains its reader to ignore it.
+    if (saysCounselorAccepted(m)) return "accepted";
     if (has(m, "applied")) return "applied";
     if (has(m, "eligible")) return "eligible";
     if (has(m, "transcribed")) return "transcribed";
@@ -10192,6 +10346,16 @@
           render();
         });
       });
+      // The MEASURE, set on the card (Sam, 2026-09-15). "" is the sentinel that
+      // hands the priority back to its metric's wording — see setPrioSrc() for
+      // why un-pinning stores a value rather than deleting one.
+      qsa("[data-priosrc]").forEach(function (sel) {
+        sel.addEventListener("change", function () {
+          savingState = "";
+          setPrioSrc(state.viewSlot, Number(sel.getAttribute("data-priosrc")), sel.value);
+          render();
+        });
+      });
       // A reported card has its own identity now (Sam, 2026-09-14), so its
       // picker re-points the CARD rather than re-tagging anything: the
       // designations stay project -> goal, which is what §78093.2(d)(2)
@@ -10574,6 +10738,15 @@
               // quoting a stored index by its screen ordinal is its own bug.
               pos: p.pos + 1, label: p.label, title: p.title || null,
               key: p.key, srcIndex: p.src,
+              // THE MEASURE IS A DIAL NOW (2026-09-15), so it belongs in the
+              // dial dump. scripts/funding_effective.js exists so nobody has to
+              // read the config to learn what the model uses — and until the
+              // picker shipped, the one setting it could not show was the one
+              // deciding what each priority counts. `pin` is what a curator
+              // chose (null when un-pinned); `measure` is what the model
+              // actually resolved, prose included, so the two can be compared.
+              metric_src: p.metric_src || null,
+              measure: (measureOf(p) || {}).src || null,
               share: p.share, factor: p.factor,
               unit: p.unit, metric: p.metric
             };

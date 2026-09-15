@@ -139,6 +139,15 @@ for (const y of e.years) {
       "   unit " + (p.unit || "-") +
       "   [stored index " + p.srcIndex + "]");
     if (p.metric) console.log("       metric: " + p.metric);
+    // THE MEASURE, which became a curator dial on 2026-09-15 (the picker).
+    // Printed as BOTH the pin and what the model actually resolved, because a
+    // pin that agrees with the wording and no pin at all are different states
+    // with the same figure — and this script exists so nobody has to open the
+    // config to tell them apart.
+    if (p.metric_src || p.measure) {
+      console.log("       measure: " + (p.measure || "(none — this priority is unmeasured)") +
+        (p.metric_src ? "   [pinned]" : "   [derived from the wording]"));
+    }
   }
 }
 

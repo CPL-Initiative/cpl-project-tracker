@@ -97,6 +97,13 @@ const wantsUnits = (function () {
   const m = consumerSrc.match(/function wantsUnits\(m\) \{[\s\S]*?\n  \}/);
   return eval("(" + m[0].replace(/^function wantsUnits/, "function") + ")");
 })();
+// The counselor-step predicate, rebuilt the same way and for the same reason:
+// MEASURES's first entry calls it, so a copy here would be a second reader of
+// the one fact metricMilestone() also reads (added 2026-09-15).
+const saysCounselorAccepted = (function () {
+  const m = consumerSrc.match(/function saysCounselorAccepted\(m\) \{[\s\S]*?\n  \}/);
+  return eval("(" + m[0].replace(/^function saysCounselorAccepted/, "function") + ")");
+})();
 const MEASURES = (function () {
   const start = consumerSrc.indexOf("var MEASURES = [");
   const end = consumerSrc.indexOf("];", start) + 2;
@@ -418,8 +425,19 @@ check("7a2: the BAKE carries no pin — its slot-2 metric is not the one the pin
   check("8a: with ppa_u present the Access column starts earning, no code change",
     /Actual/.test(card3.textContent) && !/Awaiting actuals/.test(card3.textContent) &&
     P.length === 3 && /[\d,.]+ FTES · /.test(P[2].actual) && !/no feed/.test(P[2].actual));
+  // ⚠️ ASSERTED ON THE PARSED REGISTRY, NOT ON ITS SOURCE TEXT. This line used
+  // to regex /ppa_u:\s*\{ unit: "units", milestone: "applied"/ against the
+  // consumer, which meant it tested FIELD ORDER inside an object literal: adding
+  // a `label` to the entry on 2026-09-15 (for the measure picker) broke it while
+  // every declared property stayed exactly as asserted. Reading the object tests
+  // the claim the name makes.
+  const REG = (function () {
+    const a = consumerSrc.indexOf("var METRIC_SOURCES = {");
+    const b = consumerSrc.indexOf("\n  };", a) + 4;
+    return eval("(" + consumerSrc.slice(a + "var METRIC_SOURCES = ".length, b) + ")");
+  })();
   check("8b: ppa_u is declared in the registry as an APPLIED-rung unit measure",
-    /ppa_u:\s*\{ unit: "units", milestone: "applied"/.test(consumerSrc));
+    !!REG.ppa_u && REG.ppa_u.unit === "units" && REG.ppa_u.milestone === "applied");
   check("8c: the registry records that ppa is NOT a filtered pa (disjoint cohorts)",
     /NOT a filtered `pa`/.test(consumerSrc) && /DISJOINT cohorts/.test(consumerSrc));
 }
