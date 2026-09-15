@@ -68,7 +68,7 @@ and he answers while the session works.
 | # | Verdict | State |
 |---|---|---|
 | 1 | edit | Drove the route-named picker labels (#1585). Done. |
-| 2 | yes | Trim P2's metric text to *"Applied CPL units (FTES) for students with Counselor checked"*. ⚠️ **NOT the P1 clause** — S264's lane text said P1 and that was wrong. **OPEN**: Supabase was in scheduled maintenance until 21:45Z, so the live text was never verified. **Read `cpl_funding_config` first — he may have trimmed it himself when he adjusted P1 and P2.** If it still carries the origin clause, hand him the sentence; the metric text is a live dial and a session does not write it by SQL. |
+| 2 | yes | Sam trimmed it himself — verified 2026-09-15 21:3xZ against his screenshot of the live tab: P2 read *"Applied CPL units (FTES) for students with Counselor step checked"*, no origin clause. ⚠️ **He said immediately after that he was still correcting the text, so RE-READ `cpl_funding_config` before relying on this** — and re-run the diagnostic, because a reworded metric can outrun its pin. ⚠️ S264 also had this as P1's clause; it was always P2's. |
 | 3 | edit (*"see screenshot and chat"*) | Resolved to `ppa_u`, NOT the `pa_u` the sheet proposed. He set it. Done. |
 | 4 | yes | Headcount basis removed; `allocationBasis()` locked to `ftes`. Done. |
 | 5 | yes | Per-CPL-type unit portion added to the standing Pedro request (lane NEXT ⓪). Done. |
