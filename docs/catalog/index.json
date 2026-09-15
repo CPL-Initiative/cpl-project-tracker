@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 444,
+   "count": 446,
    "docs": [
     {
      "created": "2026-08-14",
@@ -1632,6 +1632,21 @@
      "title": "A guard on generated output cannot see a regression staged in its source",
      "type": "methodology",
      "updated": "2026-09-10"
+    },
+    {
+     "created": "2026-09-15",
+     "governs": [],
+     "path": "docs/kb-notes/methodology-a-guard-on-the-wrong-generation-of-descendant-is-not-a-guard.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "css",
+      "testing",
+      "implementation-funding"
+     ],
+     "title": "A guard on the wrong generation of descendant is not a guard",
+     "type": "methodology",
+     "updated": "2026-09-15"
     },
     {
      "created": "2026-08-19",
@@ -4032,6 +4047,20 @@
      "title": "Auto-layout tables silently park columns off-pane: diagnose with the inspector, defend with fixed layout",
      "type": "methodology",
      "updated": ""
+    },
+    {
+     "created": "2026-09-15",
+     "governs": [],
+     "path": "docs/kb-notes/methodology-before-building-a-whole-check-whether-the-halves-are-already-assigned.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "measures",
+      "implementation-funding"
+     ],
+     "title": "Before building a whole, check whether the halves are already assigned",
+     "type": "methodology",
+     "updated": "2026-09-15"
     },
     {
      "created": "2026-08-14",
@@ -13170,8 +13199,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 236,
+   "count": 237,
    "docs": [
+    {
+     "created": "2026-09-15",
+     "governs": [],
+     "n": 263,
+     "path": "docs/session_263_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "implementation-funding",
+      "css",
+      "measures"
+     ],
+     "title": "a hide rule that reached into the drill-in, and two builds Sam stopped",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-14",
      "governs": [],
@@ -17164,5 +17209,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 890
+ "total": 893
 }

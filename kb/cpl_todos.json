@@ -1,8 +1,8 @@
 {
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
- "_as_of": "2026-09-14",
- "_session": 262,
- "_status": "Session 262 rebuilt the funding tab's outcomes the way Sam drew them on a screenshot. The band that used to wrap the priority boxes is gone; each box now carries its own outcome at the top — the letter, the name, the law it comes from and the sentence the law uses — and a menu to change it. Everything below the measure folds away, and a folded section still shows its own number, so closing one costs nothing. Activities can be added and removed on any card and the count follows. The two reported outcomes, Career attainment and Pilot projects, are now cards in their own right with their own strategies, and the statewide project funding splits between them: type a figure on one and the other takes the rest. That last one turned up a real fault. The same $8,959,692 had been reported under both outcomes at once — each line was right on its own, nothing ever added them up, and it took a feature request to expose it. Waiting on Sam: how the two reported cards should be ordered among the priority boxes, and one word — the control says activities, the count says projects.",
+ "_as_of": "2026-09-15",
+ "_session": 263,
+ "_status": "Session 263 fixed something every reader of the funding tab has been seeing. The drill-in table under each college was dropping one column: the noncredit funding cell disappeared, every figure after it slid one place to the left under the wrong heading, and the last column came up blank. It was not a setting anyone chose — the tab hides the District column out of the box, and a styling rule meant for the main table was reaching down into the smaller table inside it and hiding whatever sat in the same position. Sam spotted it from a screenshot. The statewide row now opens the same way a college row does, so the totals can be read against the priorities. A percentage that read 100% when a college was actually at 221% of its target now tells the truth, and the printed version of the table has its college names back — it had been printing 118 blank rows. Two things were built and then removed at Sam's direction: a second way to set priority targets that turned out to duplicate one we already had, and a plan to combine two measures that are already counted separately. Waiting on Sam: whether to point the Outreach measure at applied credit, which is one setting in the tab and no code, and whether to remove the leftover Headcount option from the allocation basis control.",
  "items": [
   {
    "id": "s259-sam-dispatch-cpl-chat-v66",
@@ -107,40 +107,28 @@
    "text": "Sam's rule that expended and allocated are not interchangeable — colleges spend, the Chancellor's Office allocates — was applied at the one place it was found in the memo builder. The rest of the memo and report text has not been read against it. Check who the subject is in each sentence before changing either word; a blanket sweep would get it backwards."
   },
   {
-   "id": "s260-sam-awards-counselor-measure",
+   "id": "s263-sam-pin-p1-applied",
    "for": "Sam",
    "tab": "implementation-funding",
-   "text": "The Counselor step is the only way Career attainment ever gets a campus measure, and the dial is still pointed elsewhere. You put the step into the Awards priority, and the model already treats an accepted CPL plan as serving both Completion and Career attainment. But Awards is currently measured on applied units from the portal, which only serves Access. The counselor data is available again — 24,778 units across 110 colleges. Changing what Awards measures is a dial, and dials are yours to set on the tab."
+   "text": "Point the Outreach priority at applied credit instead of eligible. This is one setting in the funding tab, no code: it makes our number match what colleges already see on the MAP dashboard, where the column called Eligible is in fact applied credit. Today Outreach counts 17 times what it asks for statewide, and 97 of 115 colleges clear it without trying; on applied that becomes 2.7 times and 52 of 115. Nothing else needs to change — the portal half of applied is already counted under Awards."
   },
   {
-   "id": "s260-fable-ask-1-four-bands",
-   "for": "Fable",
-   "tab": "implementation-funding",
-   "text": "Build the four bands once Sam answers on the reference card. Each statutory outcome gets its own heading, the outcome is chosen on the card with the measure deciding by default, and a curator's choice says in words that the CPL team made it. Sam approved the card shape: a simple face with one collapsed Detail section holding the description, the measure, the price and the strategies — and the activities picker stays on the face, not inside the fold."
-  },
-  {
-   "id": "s260-fable-cobi-contrast-pass",
-   "for": "Fable",
-   "tab": "cobi-dark-mode",
-   "text": "Seventeen of thirty-eight COBI tabs have text that is hard or impossible to read. The worst is white text on white — invisible. Grouped by colour pair rather than by page it is a short list of colour decisions, not a hundred separate problems. This is not in any lane yet and nobody has claimed it."
-  },
-  {
-   "id": "s262-sam-card-order",
+   "id": "s263-sam-headcount-option",
    "for": "Sam",
    "tab": "implementation-funding",
-   "text": "One choice about ordering. The two reported cards — Career attainment and Pilot projects — sit after the three priority boxes and cannot yet be dragged among them. Making them fully orderable means one list that covers both kinds of card, which has to stay in step with the order the priorities already use everywhere else (the ledger, the exports). The alternative is simpler: they order among themselves and always follow the priorities. The mock-up you approved showed the first. Either is quick once you say which."
+   "text": "Decide whether to remove the Headcount choice from the Allocation basis control. You have ruled that student headcount is not a metric here, but the control still offers it, and one click would re-size every college's award. There are also two lines of on-screen text that tell a reader the metrics are headcount-based. Removing all three is small and would make the rule something the page enforces rather than something each session has to remember."
   },
   {
-   "id": "s262-sam-count-noun",
-   "for": "Sam",
-   "tab": "implementation-funding",
-   "text": "One word. On a card the control reads 'Designate activities' and the count beneath it reads 'Reported through 4 designated projects'. Both are your own wording and both are right on their own — you use Activities to mean the workplan activities and the projects under them — but side by side on one card they read as two different things. Say which noun wins and it is a one-line sweep."
-  },
-  {
-   "id": "s262-fable-funding-contrast",
+   "id": "s263-fable-eligible-hover",
    "for": "Fable",
    "tab": "implementation-funding",
-   "text": "Seven faint-grey texts on the funding tab fall below the contrast standard — the version line, the qualifying figure under an award, the table footnote, the goal citations. All seven are older than this month's work and appear identically on the live site, so they were deliberately left alone rather than widening a merged change. They use one colour token that the design system itself marks decorative and never for real text, so this is one decision rather than seven fixes, and it belongs with the wider contrast sweep across the other tabs."
+   "text": "Once Sam has decided on applied, add the short explanation he asked for where eligible credit is named, so a reader comparing this tab with the MAP dashboard knows which of the two numbers they are looking at. Worth doing once, after the measure settles, rather than writing it twice."
+  },
+  {
+   "id": "s263-fable-calbright-ftes",
+   "for": "Fable",
+   "tab": "implementation-funding",
+   "text": "Calbright's noncredit size is still a stand-in figure of 1,000. Sam is pulling fresh reported sizes for every college from the Chancellor's Office next week, before the model is finalised. When that lands it re-sizes all 118 institutions, not just Calbright, so re-check which colleges sit at the minimum or the maximum afterwards."
   }
  ]
 }
