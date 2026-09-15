@@ -6709,9 +6709,9 @@
     p3:   { unit: "students", milestone: "transcribed", basis: "distinct students with any transcribed CPL, per MAP" },
     pp:   { unit: "students", milestone: "transcribed", basis: "portal-origin transcribed CPL (via the CPL Student Portal / Landing Page)" },
     pe_u: { label: "Eligible CPL identified in MAP", unit: "units", milestone: "eligible", basis: "units of eligible CPL identified in MAP" },
-    pa_u: { label: "Applied CPL, all students", unit: "units", milestone: "applied", basis: "units of CPL APPLIED to student records in MAP" },
+    pa_u: { label: "Applied CPL, every route", unit: "units", milestone: "applied", basis: "units of CPL APPLIED to student records in MAP" },
     p3_u: { label: "Transcribed CPL", unit: "units", milestone: "transcribed", basis: "units of transcribed CPL, per MAP" },
-    pp_u: { label: "Transcribed CPL, portal-origin students", unit: "units", milestone: "transcribed", basis: "units of portal-origin transcribed CPL (via the CPL Student Portal / Landing Page)" },
+    pp_u: { label: "Transcribed CPL from the CPL Portal or a College CPL Landing Page", unit: "units", milestone: "transcribed", basis: "units of portal-origin transcribed CPL (via the CPL Student Portal / Landing Page)" },
     // ── the Access measure (2026-08-27, Sam) ───────────────────────────────
     // APPLIED units among portal-origin students — what the Year-1 Access
     // metric has asked for since it was written. Sam: "Potential Student ... is
@@ -6724,7 +6724,7 @@
     // the metric excludes. Pinned by tests/funding_portal_applied_test.py.
     ppa:   { unit: "students", milestone: "applied",
              basis: "portal-origin students (Potential Student = Yes) with CPL applied in MAP" },
-    ppa_u: { label: "Applied CPL, portal-origin students", unit: "units", milestone: "applied",
+    ppa_u: { label: "Applied CPL from the CPL Portal or a College CPL Landing Page", unit: "units", milestone: "applied",
              basis: "units of CPL APPLIED for portal-origin students (via the CPL Student Portal / Landing Page)" },
     // ── the consolidated three (Sam, 2026-09-01) ──────────────────────────
     // The bands re-aim the same three priorities: Eligible under Access,
@@ -6743,7 +6743,7 @@
     // wording excludes (see the ppa block above, and pa_u=21 vs ppa_u=60).
     ppe:   { unit: "students", milestone: "eligible",
              basis: "portal-origin students (Potential Student = Yes) with any eligible CPL identified in MAP" },
-    ppe_u: { label: "Eligible CPL, portal-origin students", unit: "units", milestone: "eligible",
+    ppe_u: { label: "Eligible CPL from the CPL Portal or a College CPL Landing Page", unit: "units", milestone: "eligible",
              basis: "units of ELIGIBLE CPL for portal-origin students (via the CPL Student Portal / Landing Page)" },
     // The Counselor lifecycle step: applied CPL on a Student CPL Plan the
     // student ACCEPTED. Sam's spec (2026-09-01): "Applied CPL units measured in
@@ -6792,7 +6792,7 @@
     // rung exists or an accepted-plan measure would silently read as (A).
     pac:   { unit: "students", milestone: "accepted",
              basis: "students whose CPL Plan a counselor accepted (the MAP Counselor lifecycle step)" },
-    pac_u: { label: "Applied CPL on counselor-accepted CPL Plans", unit: "units", milestone: "accepted",
+    pac_u: { label: "Applied CPL with the Counselor step checked", unit: "units", milestone: "accepted",
              basis: "units of APPLIED CPL on counselor-accepted Student CPL Plans" },
     // ── noncredit lane (DECLARED, NOT YET DELIVERED) ───────────────────────
     // Sam ruled 2026-08-26 that the NC lane EARNS like credit: a cap earned
