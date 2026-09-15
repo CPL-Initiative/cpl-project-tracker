@@ -1820,6 +1820,17 @@
   // c = a base-college or shaped row; pass null for the statewide total.
   function prioTarget(c, p) {
     if (prioIsFtes(p)) {
+      // A curator-set rate states the target outright; absent one, the target
+      // stays money-derived exactly as before. Same shape as the students path
+      // below — sizeOf() is credit + noncredit FTES on the live basis, so
+      // size x rate is already CPL FTES and no conversion belongs here.
+      var tr = (p && p.ftes_target_rate != null && Number(p.ftes_target_rate) > 0)
+        ? Number(p.ftes_target_rate) : null;
+      if (tr != null) {
+        var lf = 1;
+        if (c) lf = (p && p.lane === "nc") ? laneShareOf(c).nc : laneShareOf(c).cr;
+        return (c ? sizeOf(c) * capScale(c) * lf : totalSize()) * tr;
+      }
       var r = ftesRate(), fac = prioFactor(p);
       // target = pot ÷ price, price = factor × rate. The × nYears() makes it the
       // CUMULATIVE window target (factor 1 ⇒ the old ×2 on a 2-yr window, exactly);
@@ -1879,6 +1890,41 @@
   // in prioTarget carries the cumulative-window conversion the old ×2 used to).
   function prioFactor(p) { var v = p && p.factor; return v == null ? 1 : Number(v); }
   function prioPrice(p) { return ftesRate() * prioFactor(p); }
+  // ── the PER-PRIORITY target rate (Sam, 2026-09-15) ────────────────────────
+  // "Make target_rate per-priority" / "Should be the FTES path".
+  //
+  // Until now a priority's FTES target was money-derived — pot ÷ price, with
+  // `factor` the only per-priority lever, and stating a target meant inverting a
+  // price (factor 0.5 doubles the FTES needed; Sam's own words). This states the
+  // target DIRECTLY: the share of a college's own teaching that must come from
+  // CPL on this priority.
+  //
+  // ⚠️ IT IS A SEPARATE KEY FROM `target_rate`, AND THAT IS A SAFETY PROPERTY,
+  // not a naming preference. The stored `target_rate` values are HEADCOUNT-ERA
+  // percentages — the live Awards priority carries 0.03 — and this file's own
+  // prioUnit() comment records the last time such a value was read on the wrong
+  // basis as "a category error (a '5% of headcount' rate applied to credit
+  // FTES)". Reading that 0.03 here would move Alameda's Awards target from 8.2
+  // to 94.6 CPL FTES against an actual of 0.2, silently, on deploy. A dormant
+  // value that becomes live when its meaning changed underneath it is the exact
+  // trap scripts/funding_effective.js exists to catch.
+  //
+  // ⚠️ THE EQUAL-YARDSTICK PROPERTY SURVIVES, which is the thing to check before
+  // changing a target formula. prioEntitlement is proportional to size share, so
+  // cap ÷ target = (share × pot) ÷ (size × rate) stays CONSTANT across colleges
+  // exactly as it did under pot ÷ price — the bounds are handled the same way
+  // too (pre-bounds entitlement for a floored college, capScale for a capped
+  // one). A rate that broke this would ask different colleges for different
+  // amounts of CPL per dollar.
+  //
+  // Returns null when unset — which is every priority today, so nothing moves
+  // until a curator sets one.
+  function ftesTargetRate(slot, idx) {
+    var v = prioField(slot, idx, "ftes_target_rate");
+    return (v == null || !(Number(v) > 0)) ? null : Number(v);
+  }
+  function setFtesTargetRate(slot, idx, v) { setPrio(slot, idx, "ftes_target_rate", Math.max(0, Number(v) || 0)); }
+  function clearFtesTargetRate(slot, idx) { setPrio(slot, idx, "ftes_target_rate", null); }
   function setFtesRate(v) { activeOverride().ftesRate = Math.max(0, Number(v) || 0); persistActive(); }
   // ── the priority UNIT seam (2026-08-06) ───────────────────────────────
   // A priority is scored in CPL FTES or in students, and that used to be
@@ -2220,6 +2266,10 @@
         strategies: prioStrategies(slot, i),
         share: share,
         target_rate: target_rate,
+        // The per-priority FTES target rate (2026-09-15). Null unless a curator
+        // set one; prioTarget() falls back to the money-derived target then, so
+        // adding this field moved no target on its own.
+        ftes_target_rate: ftesTargetRate(slot, i),
         factor: (function () { var v = prioField(slot, i, "factor"); return v == null ? 1 : Number(v); })(),
         per_student: prioPerStudent(slot, i, share, target_rate)
       };
@@ -5724,6 +5774,17 @@
       var rateBody = isFtesPrio
         ? '<p class="nums">Funding factor ' + edNum("priofactor", fmtNum2(prioFactor(p)), { small: true, slot: slot, idx: i, ro: ro, label: p.label + " funding factor" }) +
           "&times; the base rate &mdash; <strong>" + fmtMoney2(prioPrice(p)) + " per CPL FTES</strong></p>" +
+          // THE TARGET RATE, stated rather than inverted out of a price (Sam,
+          // 2026-09-15). The resulting target renders on the very next line, so
+          // a rate typed an order of magnitude out is visible on sight rather
+          // than only in the per-college cells.
+          '<p class="nums">Target rate ' +
+            edNum("ftestarget", p.ftes_target_rate == null ? "" : fmtRatePct(p.ftes_target_rate),
+              { small: true, slot: slot, idx: i, ro: ro, label: p.label + " target rate percent of FTES" }) +
+            "% of each institution&#39;s FTES" +
+            (p.ftes_target_rate == null
+              ? ' <span class="dk">&mdash; unset, so the target below follows the funding factor</span>'
+              : ' <span class="dk">&mdash; set, so it sets the target below</span>') + "</p>" +
           '<p class="nums">Target <strong>' + fmtNum1(sysHeads) + " CPL FTES</strong> " +
           '<span class="dk">(&asymp; ' + fmtInt(sysHeads * unitsPerCplFtes(null)) + " semester units)</span></p>"
         : '<p class="nums">Per-student rate $' + edNum("perstudent", (p.per_student || 0).toFixed(2), { small: true, slot: slot, idx: i, ro: ro, label: p.label + " funding dollars per student" }) +
@@ -9666,6 +9727,16 @@
       setPrio(slot, Number(idx), edit === "share" ? "share" : "target_rate", Math.max(0, pn) / 100);
       return;
     }
+    if (edit === "ftestarget") {
+      // A PERCENT of the institution's FTES. Blank clears it and the priority
+      // returns to the money-derived target — a clear has to be expressible, or
+      // a curator who sets a rate once can never get back to the default.
+      if (String(raw).trim() === "") { clearFtesTargetRate(slot, Number(idx)); return; }
+      var tr = parseNum(raw);
+      if (tr == null || tr < 0) { render(); return; }
+      setFtesTargetRate(slot, Number(idx), tr / 100);
+      return;
+    }
     if (edit === "priofactor") {
       // A raw multiple (0.5, 1, 2), NOT a percent — do not ÷100. 0 or junk reverts.
       var pf = parseNum(raw);
@@ -10652,6 +10723,12 @@
           // factor), so a projection that carries `share`, `cap` and `target`
           // and omits it cannot explain how the target was reached.
           factor: prioFactor(p),
+          // And the TARGET RATE for the same reason, one step stronger: once a
+          // rate is set it REPLACES the factor as what produced `target`, so a
+          // payload carrying only the factor would explain the target by the
+          // one input that is no longer driving it. Null when unset, which is
+          // the signal the factor is still the explanation.
+          ftes_target_rate: p.ftes_target_rate == null ? null : Number(p.ftes_target_rate),
           unit: prioUnitLabel(p),
           cap: prioCap(W, slot, p),
           target: prioTarget(c, p)
