@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 910,
-    "bytes": 9641195,
+    "bytes": 9642544,
     "over_budget": 8,
     "handoff_max": 265,
     "always_loaded_files": 1,
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 32,
-        "bytes": 185406,
+        "bytes": 186118,
         "over": 2
       },
       "handoff": {
         "files": 238,
-        "bytes": 2023875,
+        "bytes": 2024512,
         "over": 0
       }
     },
@@ -62,7 +62,7 @@
     },
     "vault": {
       "files": 2887,
-      "bytes": 1400787321,
+      "bytes": 1400788670,
       "heavy_bytes": 615545781,
       "heavy_share": 0.439,
       "ignore_filters": [
@@ -403,13 +403,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 16396,
+        "bytes": 17108,
         "limit": 12000,
         "lane": "roadmap_lane",
-        "over_by": 4396,
-        "ratio": 1.37
+        "over_by": 5108,
+        "ratio": 1.43
       },
-      "message": "16,396 B is 1.4× the roadmap_lane budget (12,000 B) — candidate for compaction",
+      "message": "17,108 B is 1.4× the roadmap_lane budget (12,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/implementation-funding.md"
     },
     {
