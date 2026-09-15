@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-09-14T18:08:45.221462+00:00",
+  "scraped_at": "2026-09-15T11:49:47.219950+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 28020,
+    "jst": 28085,
     "star_colleges": 57
   },
   "computed_star_colleges": 57,
@@ -22,17 +22,17 @@
     },
     "San Diego Mesa College": {
       "vets": 1070,
-      "jst": 1611,
+      "jst": 1613,
       "star": true
     },
     "San Diego City College": {
       "vets": 776,
-      "jst": 1499,
+      "jst": 1505,
       "star": true
     },
     "San Diego Miramar College": {
       "vets": 1181,
-      "jst": 1649,
+      "jst": 1653,
       "star": true
     },
     "Moreno Valley College": {
@@ -77,7 +77,7 @@
     },
     "Riverside City College": {
       "vets": 1508,
-      "jst": 818,
+      "jst": 869,
       "star": false
     },
     "El Camino College": {
@@ -115,14 +115,14 @@
       "jst": 405,
       "star": true
     },
+    "Modesto Junior College": {
+      "vets": 80,
+      "jst": 148,
+      "star": true
+    },
     "Cypress College": {
       "vets": 259,
       "jst": 387,
-      "star": true
-    },
-    "Modesto Junior College": {
-      "vets": 80,
-      "jst": 147,
       "star": true
     },
     "Santa Ana College": {
@@ -232,7 +232,7 @@
     },
     "Cerro Coso Community College": {
       "vets": 115,
-      "jst": 180,
+      "jst": 181,
       "star": true
     },
     "College of the Sequoias": {

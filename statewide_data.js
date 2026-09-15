@@ -306605,13 +306605,18 @@ window.CPL_STATEWIDE = {
       "potential": 0,
       "potential_names": [],
       "total_addressable": 0,
-      "credit_recs": [],
+      "credit_recs": [
+        {
+          "course": "Cal-GETC Area 3A",
+          "credit": "3 hours in Art History"
+        }
+      ],
       "authoritative_recs": [],
       "adopter_units": {},
       "adopter_lines": {},
       "peer_units_median": 0.0,
       "peer_units_max": 0.0,
-      "rec_units_total": 0
+      "rec_units_total": 3.0
     }
   ],
   "analysis": {
@@ -307500,9 +307505,9 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "CA MAP INITIATIVE COLLEGE",
-        "credit_recs": 3,
-        "exhibits": 1,
-        "disciplines": 1,
+        "credit_recs": 4,
+        "exhibits": 2,
+        "disciplines": 2,
         "ccc_collaborative": 3,
         "industry_certs": 3,
         "pct": 0.0
@@ -307523,7 +307528,7 @@ window.CPL_STATEWIDE = {
         "credit_recs": 5711,
         "exhibits": 1924,
         "courses": 315,
-        "colleges": 85,
+        "colleges": 86,
         "ccc_collaborative": 25,
         "pct": 42.9
       },
@@ -307731,7 +307736,7 @@ window.CPL_STATEWIDE = {
         "cpl_type": "Standardized Assessment",
         "credit_recs": 6918,
         "exhibits": 2313,
-        "colleges": 83,
+        "colleges": 84,
         "pct": 52.0
       },
       {
@@ -307775,7 +307780,7 @@ window.CPL_STATEWIDE = {
         "mode": "Self-study, exam preparation, other (S)",
         "credit_recs": 8248,
         "exhibits": 3321,
-        "colleges": 90,
+        "colleges": 91,
         "pct": 62.0
       },
       {
@@ -307847,7 +307852,7 @@ window.CPL_STATEWIDE = {
         "category": "Local",
         "credit_recs": 11753,
         "exhibits": 5270,
-        "colleges": 96,
+        "colleges": 97,
         "disciplines": 23,
         "pct": 88.3
       },
@@ -308271,6 +308276,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-09-14T18:07:33",
+  "generated_at": "2026-09-15T11:48:39",
   "total_credit_recs": 13308
 };
