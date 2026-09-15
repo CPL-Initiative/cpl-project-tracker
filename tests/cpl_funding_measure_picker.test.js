@@ -123,6 +123,24 @@ function fire(window, sel, v) {
     opts.every((o) => !/\b(p[ae]c?_u|pp[ae]?_u|p3_u|nc_\w+)\b/.test(o.text)));
   check("3b: every option reads as words a curator can choose between",
     opts.every((o) => /[a-z]{3}\s+[a-z]{2}/i.test(o.text)));
+  // ⚠️ THE LABELS NAME THE ROUTE, NOT THE COHORT (2026-09-15, Sam: "add the
+  // elements of the P1 metric to the drop down list so I can set it from
+  // there"). They used to read "portal-origin students", which is how the CODE
+  // thinks about the Potential Student split — a curator matching an option
+  // against the sentence they typed had nothing to match on. The picker exists
+  // to be recognised from the metric text, so the text's own words win.
+  check("3e: the origin options name the ROUTES, not the internal cohort",
+    opts.some((o) => /CPL Portal/.test(o.text) && /Landing Page/.test(o.text)) &&
+    !opts.some((o) => /portal-origin/i.test(o.text)));
+  // ⚠️ BATCH UPLOAD IS NAMED ON PURPOSE though the measure cannot see it yet
+  // (Sam, 2026-09-15: "Include batch in P1. It will have an indicator in the
+  // origination dataset later."). Pinned so a later reader does not "correct"
+  // the label back to what Potential Student currently counts — the label is
+  // written for what the measure becomes, as his P1 pin is.
+  check("3g: the origin options name batch upload, the third route",
+    opts.filter((o) => /batch upload/.test(o.text)).length === 3);
+  check("3f: the counselor option echoes the wording Sam writes on the card",
+    opts.some((o) => /Counselor step checked/.test(o.text)));
   check("3c: the feed key still rides the metric block's tooltip, where Sam put it",
     /Measured from the MAP feed key ppa_u/.test(
       pickerForCounselor(doc).closest(".metric").getAttribute("title") || ""));
