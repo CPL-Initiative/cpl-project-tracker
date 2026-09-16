@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-09-15T17:08:22.462464+00:00",
+  "scraped_at": "2026-09-16T11:41:50.467613+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 28089,
+    "jst": 28134,
     "star_colleges": 57
   },
   "computed_star_colleges": 57,
@@ -17,7 +17,7 @@
     },
     "Chaffey College": {
       "vets": 182,
-      "jst": 345,
+      "jst": 346,
       "star": true
     },
     "San Diego Mesa College": {
@@ -35,14 +35,14 @@
       "jst": 1653,
       "star": true
     },
+    "City College of San Francisco": {
+      "vets": 1197,
+      "jst": 1597,
+      "star": true
+    },
     "Moreno Valley College": {
       "vets": 916,
       "jst": 1018,
-      "star": true
-    },
-    "City College of San Francisco": {
-      "vets": 1197,
-      "jst": 1552,
       "star": true
     },
     "Bakersfield College": {
@@ -222,7 +222,7 @@
     },
     "Mission College": {
       "vets": 158,
-      "jst": 156,
+      "jst": 155,
       "star": true
     },
     "Los Angeles Mission College": {
