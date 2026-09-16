@@ -485,6 +485,154 @@ def write_workbook(path, res):
     wb.save(path)
 
 
+PAGE_CSS = """
+:root{--ink:#11223a;--muted:#55637a;--line:#c9d6e8;--bg:#f4f7fb;--card:#ffffff;
+--navy:#002f6d;--cobalt:#0047ab;--soft:#eef3fa;--accent:#7da1d4;--measure:none}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ink:#e7eef9;
+--muted:#a6b4ca;--line:#2b3a52;--bg:#0e1522;--card:#151f2e;--navy:#7da1d4;
+--cobalt:#7da1d4;--soft:#1a2637;--accent:#7da1d4}}
+:root[data-theme="dark"]{--ink:#e7eef9;--muted:#a6b4ca;--line:#2b3a52;--bg:#0e1522;
+--card:#151f2e;--navy:#7da1d4;--cobalt:#7da1d4;--soft:#1a2637;--accent:#7da1d4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:12px;top:12px;position:fixed;z-index:9;background:var(--card);
+color:var(--ink);padding:10px 14px;border:2px solid var(--cobalt);border-radius:8px}
+.wrap{max-width:1200px;margin:0 auto;padding-block:30px;padding-left:16px;padding-right:16px}
+h1{font-size:clamp(1.45rem,3.2vw,2.1rem);margin:0 0 .15em;color:var(--navy)}
+h2{font-size:clamp(1.05rem,2vw,1.3rem);margin:2em 0 .2em;color:var(--navy)}
+.sub{color:var(--muted);margin:0 0 .6em}
+.filters{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 22px}
+.chip{display:inline-block;padding:3px 11px;border:1px solid var(--line);border-radius:999px;
+font-size:.83rem;background:var(--card)}
+.chip b{font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:13px;margin:6px 0 8px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.card .n{font-size:2.1rem;font-weight:700;color:var(--cobalt);line-height:1.05}
+.card .l{font-weight:600;margin:.3em 0 .15em}
+.card .d{color:var(--muted);font-size:.89rem}
+.note{background:var(--soft);border:1px solid var(--line);border-left:4px solid var(--accent);
+border-radius:10px;padding:13px 16px;margin:22px 0;color:var(--ink)}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--card);
+margin-top:.7em}
+table{border-collapse:collapse;width:100%;font-size:.91rem;table-layout:fixed}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--soft);font-weight:600}
+td.who{color:var(--muted);font-size:.87rem}
+tbody tr:last-child td{border-bottom:none}
+a{color:var(--cobalt)}
+:focus-visible{outline:3px solid var(--cobalt);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media (max-width:560px){.wrap{padding-block:20px}table{font-size:.85rem}
+.card .n{font-size:1.8rem}}
+"""
+
+
+def write_page(path, res):
+    E = html.escape
+    rows = res["rows"]
+    adopt = [r for r in rows if r["headline"] == "Adopt"]
+    build = [r for r in rows if r["headline"] == "Build first-in-state"]
+    held = [r for r in rows if r["headline"] == "Already held"]
+    check = [r for r in rows if r["n_teaching"] == 0 and r["n_partial"] > 0]
+    P = []
+    P.append("<title>CPL opportunities — %s</title>" % E(res["region"]))
+    P.append("<style>%s</style>" % PAGE_CSS)
+    P.append('<a class="skip" href="#main">Skip to the opportunities</a>')
+    P.append('<div class="wrap">')
+    P.append("<h1>What CPL could these colleges create or adopt?</h1>")
+    P.append('<p class="sub">Jobs in %s, crossed with what each college already teaches '
+             "and what already exists in MAP.</p>" % E(res["region"]))
+
+    # the filter that produced this view, stated plainly
+    P.append('<div class="filters">')
+    seen = []
+    for c in res["colleges"]:
+        w = res["why"].get(c, "college")
+        lab = w if w.startswith("district") or w.startswith("region") else None
+        if lab and lab not in seen:
+            seen.append(lab)
+            P.append('<span class="chip"><b>%s</b></span>' % E(lab))
+    for c in res["colleges"]:
+        if res["why"].get(c, "college") == "college":
+            P.append('<span class="chip">%s</span>' % E(c))
+    P.append('<span class="chip">%d colleges in view</span>' % len(res["colleges"]))
+    P.append("</div>")
+
+    cards = [(len(adopt), "Could adopt now",
+              "A college teaches it and the credit already exists in MAP — it just is not signed up. "
+              "Paperwork, not new curriculum."),
+             (len(build), "Could build first in the state",
+              "A college teaches it and no credit exists anywhere in California."),
+             (len(held), "Already held",
+              "Teaches it and is already on the exhibit."),
+             (len(check), "Worth a look",
+              "No matching program, but courses came close.")]
+    P.append('<div class="grid">')
+    for n, l, d in cards:
+        P.append('<div class="card"><div class="n">%d</div><div class="l">%s</div>'
+                 '<div class="d">%s</div></div>' % (n, E(l), E(d)))
+    P.append("</div>")
+    P.append('<div class="note"><strong>Read these as suggestions, not answers.</strong> '
+             "The matches are made by comparing wording, not by reviewing curriculum, so some "
+             "will be wrong. Each row shows the programme and the exhibit behind it so the "
+             "college in the room can say yes or no on sight. Faculty decide.</div>")
+
+    P.append('<div id="main">')
+    def table(title, lede, items, third_head, third):
+        if not items:
+            return
+        P.append("<h2>%s</h2>" % E(title))
+        P.append('<p class="sub">%s</p>' % E(lede))
+        P.append('<div class="scroll" role="region" aria-label="%s" tabindex="0"><table>' % E(title))
+        P.append('<colgroup><col style="width:27%"><col style="width:9%">'
+                 '<col style="width:32%"><col style="width:32%"></colgroup>')
+        P.append("<thead><tr><th scope=\"col\">Job</th><th scope=\"col\">Entry level</th>"
+                 "<th scope=\"col\">%s</th><th scope=\"col\">%s</th></tr></thead><tbody>"
+                 % (E(third_head), "Credit that exists in MAP"))
+        for r in items[:60]:
+            who = "; ".join(third(r)) or "—"
+            ex = "; ".join(r["exhibits"][:2]) or "Nothing in MAP yet"
+            edu = (r["education"] or "").replace(" or equivalent", "")
+            P.append("<tr><td>%s</td><td class=\"who\">%s</td><td class=\"who\">%s</td>"
+                     "<td class=\"who\">%s</td></tr>"
+                     % (E(r["occupation"]), E(edu), E(who), E(ex)))
+        P.append("</tbody></table></div>")
+        if len(items) > 60:
+            P.append('<p class="sub">Showing the first 60 of %d — the spreadsheet has them all.</p>'
+                     % len(items))
+
+    table("Could adopt now", "The credit already exists. These colleges teach the subject and are "
+          "not on the exhibit yet.", adopt, "Colleges that could adopt",
+          lambda r: r["could_adopt"])
+    table("Could build first in the state", "These colleges teach the subject and no credit for it "
+          "exists anywhere in California.", build, "Colleges that teach it",
+          lambda r: r["could_build"])
+    table("Already held", "Teaching it and already on the exhibit.", held,
+          "Colleges already on it", lambda r: r["already_on_it"])
+    P.append("</div>")
+
+    P.append("<h2>The colleges in this view</h2>")
+    P.append('<div class="scroll" role="region" aria-label="Colleges in this view" tabindex="0"><table>')
+    P.append('<colgroup><col style="width:32%"><col style="width:26%"><col style="width:14%">'
+             '<col style="width:14%"><col style="width:14%"></colgroup>')
+    P.append('<thead><tr><th scope="col">College</th><th scope="col">Why it is here</th>'
+             '<th scope="col">Programs</th><th scope="col">Could adopt</th>'
+             '<th scope="col">Could build</th></tr></thead><tbody>')
+    for c, sm in sorted(res["per_college"].items()):
+        P.append("<tr><td>%s</td><td class=\"who\">%s</td><td>%d</td><td>%d</td><td>%d</td></tr>"
+                 % (E(c), E(res["why"].get(c, "college")), sm["n_programs"],
+                    sm["adopt_now"], sm["build"]))
+    P.append("</tbody></table></div>")
+    P.append('<p class="sub" style="margin-top:26px">Built %s · CCCCO COCI programs and course '
+             "catalog · MAP statewide exhibits · occupation list as supplied · MAP@rccd.edu</p>"
+             % datetime.date.today().isoformat())
+    P.append("</div>")
+    with open(path, "w", encoding="utf-8") as fh:
+        fh.write("".join(P))
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--college", action="append", default=[],
@@ -510,6 +658,8 @@ def main():
     os.makedirs(out, exist_ok=True)
     xlsx = os.path.join(out, f"{date.replace('-', '')}_{a.slug}_CPL_Opportunities.xlsx")
     write_workbook(xlsx, res)
+    page = os.path.join(out, f"{a.slug}_cpl_opportunities.html")
+    write_page(page, res)
     with open(os.path.join(out, "crosswalk.json"), "w", encoding="utf-8") as fh:
         json.dump(dict(_generated_at=datetime.datetime.now().isoformat(timespec="seconds"),
                        _generated_by="kb/_build_regional_cpl_opportunity.py", **res),
@@ -518,7 +668,7 @@ def main():
     build_n = sum(1 for r in res["rows"] if r["headline"] == "Build first-in-state")
     print(f"{len(colleges)} colleges | {res['n_occupations']} occupations | "
           f"adopt {adopt} · build first-in-state {build_n}")
-    print(xlsx)
+    print(xlsx); print(page)
     return 0
 
 
