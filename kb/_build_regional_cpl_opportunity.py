@@ -290,6 +290,26 @@ def select_colleges(names, districts, region, R):
     return sorted(picked), why
 
 
+# ── what we tell a college about how good these matches are ─────────────────
+# ⚠️ ONE SOURCE, THREE SURFACES. The workbook, the screen page and the handout all
+# carry this; three copies would drift the first time the score moves. Numbers
+# come from kb/_score_occupation_matcher.py against the 139 occupations a human
+# ruled on at San Joaquin Delta College — re-run it and update BOTH here.
+MATCH_ACCURACY = dict(
+    rulings=139,
+    precision="about nine in ten",
+    recall="roughly half",
+    scored_on="2026-09-16",
+)
+ACCURACY_HEAD = "How good are these matches?"
+ACCURACY_BODY = (
+    "Checked against %(rulings)d occupations reviewed by hand at one college: "
+    "%(precision)s of the rows shown hold up, and the list finds %(recall)s of what "
+    "the reviewer found. Read a row as a candidate and a gap as unconfirmed. "
+    "Faculty confirm every match before a college acts on it." % MATCH_ACCURACY
+)
+
+
 # ── the college's own capability ─────────────────────────────────────────────
 def college_capability(college, R):
     """What this college actually offers: Active/Approved COCI programs (CTE flagged)
@@ -553,6 +573,7 @@ def write_workbook(path, res):
                                        "review. Some will be wrong. The programs and courses behind "
                                        "each one are in the receipt so a college can reject it on "
                                        "sight. Faculty decide, always."),
+        (ACCURACY_HEAD, ACCURACY_BODY),
         ("Region occupation list", res["region"]),
         ("Colleges selected", "%d — see the 'Colleges in this view' sheet" % len(res["colleges"])),
         ("Built", datetime.date.today().isoformat()),
@@ -656,9 +677,9 @@ def write_page(path, res):
         P.append('<div class="card"><div class="n">%d</div><div class="l">%s</div>'
                  '<div class="d">%s</div></div>' % (n, E(l), E(d)))
     P.append("</div>")
-    P.append('<div class="note"><strong>Read these as suggestions, not answers.</strong> '
-             "The matches are made by comparing wording, not by reviewing curriculum, so some "
-             "will be wrong. Each row shows the programme and the exhibit behind it so the "
+    P.append('<div class="note"><strong>Read these as suggestions.</strong> '
+             "The matcher compares wording. Faculty supply the curriculum review, so some rows "
+             "will be wrong. Each row shows the program and the exhibit behind it so the "
              "college in the room can say yes or no on sight. Faculty decide.</div>")
 
     P.append('<div id="main">')
@@ -707,7 +728,9 @@ def write_page(path, res):
                  % (E(c), E(res["why"].get(c, "college")), sm["n_programs"],
                     sm["adopt_now"], sm["build"]))
     P.append("</tbody></table></div>")
-    P.append('<p class="sub" style="margin-top:26px">Built %s · CCCCO COCI programs and course '
+    P.append('<div class="note" style="margin-top:26px"><strong>%s</strong> %s</div>'
+             % (E(ACCURACY_HEAD), E(ACCURACY_BODY)))
+    P.append('<p class="sub" style="margin-top:14px">Built %s · CCCCO COCI programs and course '
              "catalog · MAP statewide exhibits · occupation list as supplied · MAP@rccd.edu</p>"
              % datetime.date.today().isoformat())
     P.append("</div>")
@@ -899,8 +922,8 @@ def write_handout(path, res, xlsx_path):
                          "and %d more in the spreadsheet</p>" % (len(items) - 25))
         P.append("</div>")
 
-    P.append('<div class="note"><strong>Read these as suggestions.</strong> The matches compare '
-             "course and occupation wording. Faculty confirm every one before a college acts on it.</div>")
+    P.append('<div class="note"><strong>%s</strong> The matches compare course and occupation '
+             "wording. %s</div>" % (E(ACCURACY_HEAD), E(ACCURACY_BODY)))
     P.append('<p class="foot">Built %s · Sources: CCCCO COCI program and course catalogs, MAP '
              "statewide exhibits, and the regional occupation list · Questions: MAP@rccd.edu</p>"
              % datetime.date.today().isoformat())
