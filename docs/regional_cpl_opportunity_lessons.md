@@ -97,3 +97,111 @@ for the printable handout; the CCCCO seal needed its white box made transparent.
 2. Port into the My College tab behind the existing picker.
 3. `cpl_occupation_match` verdict queue — Governance first, per Rule 10(a3).
 4. The college-to-region roster, which is Sam's to supply.
+
+## 2026-09-16 (later) — the external credential registry, and a second matcher defect
+
+Sam, Ashley and Sigrid were still in the meeting when Sam asked whether this
+session could reach the Credential Registry. It cannot: `credentialfinder.org`
+and `credentialengineregistry.org` are both refused by the network egress
+policy, measured with curl and with WebFetch. He captured the pages himself and
+passed them through Drive and the session upload, four of them in about forty
+minutes.
+
+### What a blocked domain costs, and what it does not
+
+The instinct on a blocked domain is to report the block and stop. The better
+move is to say precisely what a human capture would have to contain to be
+useful, because a person with a browser is a working channel and they will
+usually take one more step than you expect. Naming the four columns — credential
+name, issuer, occupation code, CTID — is what turned "I can't reach it" into
+four PDFs.
+
+The corrected record matters too. Earlier in this session I said collection 151
+was "almost certainly ours," meaning California's. It is the National
+Certification Collection, owned by Credential Engine OPEN. Sam found the actual
+California collection himself, and it is the better one.
+
+### Capture methods are not equivalent, and the difference is large
+
+Three methods, measured against Sam's own captures:
+
+| Method | Reach |
+|---|---|
+| Browser save of the scrolled collection page | ~500 members, provider in rendered prose |
+| The site's Print button, list not yet loaded | 8 members |
+| The site's Print button, list loaded | ~490 members in LABELED fields |
+| The site's Print button, on a credential detail page | that one credential's full record |
+
+The loaded-list print is the best of them: `resource Name` / `resource Type` /
+`provider` / `description` parse without a heuristic, where the rendered-prose
+capture needed a provider vocabulary built from its own clean rows and still
+left 53 rows on a word-count fallback.
+
+The finding that makes hand capture tractable: **two captures of the same
+collection overlapped on 15 rows out of roughly 490 each.** The list does not
+return a stable window, so repeating the print accumulates coverage rather than
+re-reading the same page. Two passes reached 974 of 6,738.
+
+### No occupation code exists at any level
+
+The list view, the collection print and the detail print all omit
+`ceterms:occupationType`, the O\*NET-SOC code and the CIP code. That was the one
+field that would have made the join exact against the 541 SOC-coded COE
+occupations, and it is absent everywhere a human capture can reach.
+
+What the detail print carries instead is better for CPL than a job code: 73 Task
+statements, each with its own CTID, plus Knowledge and Skill statements. Faculty
+award credit by comparing what a person can do against course outcomes, and a
+task list is written in those terms. A SOC code never is. This is the same
+substrate the parked Phase 4 (SLO ingestion) wants.
+
+### California is the higher-value collection, and it is complete
+
+369 licenses, every member, with the issuing state agency. California license
+titles track occupational titles, so they join to the COE occupations by name
+far better than "IBM Certified Solution Developer" ever will, and they are the
+credentials a California student actually holds.
+
+Measured join: 73 of 541 occupations matched, 115 pairs, 13%. Heating, Air
+Conditioning and Refrigeration Mechanics reaches the Warm-Air Heating,
+Ventilating and Air-Conditioning Contractor license cleanly.
+
+### The join exposed a second matcher defect
+
+`stem()` strips the agent suffixes `-er` and `-or` on any token past four
+characters. **engineer** reduces to **engine**; **actor** reduces to **act**.
+Eight false pairs rest on the first collision (Bus and Truck Mechanics and
+Diesel Engine Specialists against *Engineer In Training*) and one on the second
+(Actors against the *California Residential Mortgage Lending Act*).
+
+This is the same family as the single-shared-token errors Sam caught earlier the
+same day, and it is worth stating the general shape: **a stemmer that maps two
+different words onto one token manufactures agreement that the coverage rule
+then certifies.** Coverage cannot rescue it, because the collapsed token is a
+genuine member of both sets by the time coverage is computed.
+
+The plural suffixes are safe — `electricians` to `electrician` merges two forms
+of one word. The agent suffixes are not, because English uses `-er` and `-or`
+both to derive an agent and as ordinary word endings. The fix is measurable
+rather than hand-listed: protect a token whose stem is itself a literal token
+somewhere in either corpus.
+
+Left unfixed deliberately. The same matcher drives the regional opportunity
+build, whose output Sam has already reviewed, so the change gets its own run and
+a look at what moves rather than riding along inside a reference-data commit.
+
+### Sam's framing, which is the reason any of this matters
+
+> "We've never had a table of active certificates and licenses--which is why I'm
+> hyped about this:)"
+>
+> "Other than what we've catalogued in MAP"
+
+MAP's 2,948 exhibits answer what the colleges have written down. A registry of
+active licenses answers what a student already holds, and it grows whether or
+not a college does the work. Joining the two is the interesting move: a license
+with no matching MAP exhibit is an exhibit opportunity, stated in terms a
+college already understands.
+
+Captured in full at
+`CPLBrain/03-professional/braindumps/braindump-2026-09-16-1420-never-had-a-table-of-active-certificates-and-licenses.md`.

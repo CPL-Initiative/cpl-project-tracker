@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-446 document(s).
+447 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -91,6 +91,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A floor lives in test fixtures as well as in code](../kb-notes/methodology-a-floor-lives-in-fixtures-as-well-as-code.md) | methodology | published | 2026-09-03 | 2026-09-03 |
 | [A floor the layout cannot go under — why a page scrolls sideways on a phone, in four spellings](../kb-notes/methodology-a-floor-the-layout-cannot-go-under.md) | methodology | published | 2026-09-09 | 2026-09-09 |
 | [A fold at the label layer is not a fold — it hides the duplicate instead of resolving it](../kb-notes/methodology-a-fold-at-the-label-layer-is-not-a-fold.md) | methodology | published | 2026-08-17 | 2026-08-17 |
+| [A freehand catalog needs an authority file, not a vote](../kb-notes/methodology-a-freehand-catalog-needs-an-authority-file-not-a-vote.md) | methodology | published | 2026-09-16 | 2026-09-16 |
 | [A gate cannot protect the step that fills it](../kb-notes/methodology-a-gate-cannot-protect-the-step-that-fills-it.md) | methodology | published | 2026-08-19 | 2026-08-19 |
 | [A generator committed behind its output is a trap, not a convenience](../kb-notes/methodology-a-generator-that-lags-its-output-is-a-trap.md) | methodology | published | 2026-09-05 | 2026-09-05 |
 | [A globe shows a hemisphere: real estate on a screen is the zoom range, not the surface](../kb-notes/methodology-a-globe-shows-a-hemisphere-real-estate-is-the-zoom-range.md) | methodology | published | 2026-09-07 | 2026-09-07 |

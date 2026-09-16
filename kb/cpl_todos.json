@@ -1,38 +1,44 @@
 {
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
  "_as_of": "2026-09-16",
- "_session": 263,
- "_status": "Session 262 ran live with Sam, Ashley and Sigrid on scaling the Delta prototype. A new tool crosses a region's occupation list against any set of colleges or districts and produces three things: a workbook, a screen page, and a printable handout in the Cal-JAC format that carries the CPL Initiative and Chancellor's Office logos and embeds its own spreadsheet for emailing. The occupation side is solved — the Centers of Excellence supplied demand data for all nine California regions, 541 occupations each, with SOC codes. The matching is the open problem: about half its suggestions are wrong, because comparing course and occupation wording pairs Commercial Pilots with Commercial Music. Two causes are fixed and measured; the rest needs a real rule rather than a list of banned words. Delta's 139 human rulings give us a way to score it. Sam reversed the earlier decision to park this as a COBI tab and chose the My College tab as its home, with single pick as the default. One thing is genuinely blocked and it is his to unblock: nothing in our data says which college belongs to which Strong Workforce region.",
+ "_session": 264,
+ "_status": "The regional CPL opportunity view works: pick a college, a district or a region and it returns the occupations in that area, the exhibits the college can adopt today, and the exhibits it could build. Sam chose its home — inside the My College tab, not a new one. The open problem is the matcher that pairs an occupation with a course: it still makes wrong pairs, and this run found a second cause, a word-stemmer that collapses engineer onto engine. That gets fixed and scored against Delta's 139 human rulings before the view ships. Separately, the session gained something MAP has never held: a table of active certificates and licenses — 369 California occupational and professional licenses, complete with their issuing agency, plus 974 national industry certifications. Sam captured them by hand because the Credential Registry site is unreachable from here. He and Malone will pursue proper API access.",
  "items": [
   {
-   "id": "s263-sam-swp-region-roster",
+   "id": "s264-sam-ce-api",
    "for": "Sam",
    "tab": "my-college",
-   "text": "Send the list of which colleges belong to which Strong Workforce region. The nine region codes in the Centers of Excellence data are the Strong Workforce consortia, but nothing we hold says which college sits in which one. This is the only thing stopping the Strong Workforce filter from working, in both the new regional tool and the My College tab, where that button has been greyed out since 17 August."
+   "text": "Ask Credential Engine for API or bulk access to the Registry. Sam and Malone own this. It replaces capturing pages by hand and it is the only route to the occupation code, which no page carries."
   },
   {
-   "id": "s263-sam-pick-meeting-college",
+   "id": "s264-sam-asccc-areas",
    "for": "Sam",
    "tab": "my-college",
-   "text": "Name the college you would take to a first regional meeting. The matching gets tuned against whichever college we pick, so tuning against a real one beats tuning against a sample."
+   "text": "Send the Academic Senate (ASCCC) area roster — which college sits in which area. Every Supabase column matching area, senate, asccc, zone or region was searched and none carries them. Strong Workforce regions are already solved."
   },
   {
-   "id": "s263-sam-bay-occupation-rulings",
+   "id": "s264-sam-cer-authority",
    "for": "Sam",
-   "tab": "partner-crosswalks",
-   "text": "Decide who writes the Bay Area occupation-to-credential rulings. Only 17 of our existing 139 apply there, and all 17 are electrical or mechanical because the San Joaquin list came from an IBEW apprenticeship roster. The Bay's demand is health care, early childhood and transportation."
+   "tab": "cer",
+   "text": "Decide whether the Common Exhibit Reference should canonicalize against the credential registry — adopting the issuer's own credential name and the issuing agency in place of a vote among the freehand titles colleges typed."
   },
   {
-   "id": "s263-fable-matcher-scoring",
-   "for": "Fable",
-   "tab": "partner-crosswalks",
-   "text": "Score the occupation matcher against Delta's 139 human rulings and publish the error rate, then tune. Do not fix it with a list of forbidden words — that rebuilds the hand-curated map the tool exists to replace."
-  },
-  {
-   "id": "s263-fable-port-my-college",
+   "id": "s264-fable-stemmer",
    "for": "Fable",
    "tab": "my-college",
-   "text": "Port the regional opportunity view into the My College tab behind the scope picker that is already there. Single pick stays the default."
+   "text": "Fix the word-stemmer in the occupation matcher. It trims -er and -or, so engineer becomes engine and actor becomes act, which matched Diesel Engine Specialists to Engineer In Training. Then score the matcher against Delta College's 139 human rulings and publish the error rate."
+  },
+  {
+   "id": "s264-fable-my-college",
+   "for": "Fable",
+   "tab": "my-college",
+   "text": "Put the regional CPL opportunity view inside the My College tab, behind the scope picker that tab already has. Single pick by default, multi-select available for meetings."
+  },
+  {
+   "id": "s264-fable-licenses-handout",
+   "for": "Fable",
+   "tab": "my-college",
+   "text": "Add the 369 California licenses to the college handout as a third column, beside the exhibits a college can adopt and the ones it could build."
   },
   {
    "id": "s263-fable-verdict-queue-governance",
@@ -57,12 +63,6 @@
    "for": "Sam",
    "tab": "unified-courses",
    "text": "Six observations from the full sweep of SkyView are still open for your read. You have already ruled on one of them: the check boxes stay for now, because people cannot know what is available unless the list is in front of them. The rest are waiting."
-  },
-  {
-   "id": "s238-fable-dr24-surface",
-   "for": "Sam",
-   "tab": "governance",
-   "text": "DR-24 is a governance row with an owner and no surface yet: an added skill lands as proposed with the reviewer's name and the day, and joins the published outline when a second curator agrees; a removal works the same way in reverse. Building that means the map's first write, so it routes through Governance and the privacy review first."
   },
   {
    "id": "s255-fable-sierra-after-the-deploy",
