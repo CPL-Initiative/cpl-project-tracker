@@ -176,8 +176,18 @@ function registerStub() {
     !doc.querySelector("[data-secrename]") && !doc.querySelector("[data-textedit]"));
 
   const pubRows = Array.from(doc.querySelectorAll("[data-pubsechide], [data-pubsecshow]"));
-  check("2d: the public explainer's OWN seven sections are curatable here",
-    pubRows.length === 7);
+  // ⚠ THE LIST, NOT A COUNT. This read `pubRows.length === 7` and went red on
+  // 2026-09-15 when the explainer gained its "What counts, and when" section —
+  // a true change failing a guard that was only ever counting. A hard-coded
+  // count also cannot tell a section ADDED from a section RENAMED: swap two ids
+  // and 7 is still 7. Compared against the tab's own declaration, so the rows a
+  // curator sees and the sections the page ships stay the same list, in order.
+  const pubIds = pubRows.map(function (r) {
+    return r.getAttribute("data-pubsechide") || r.getAttribute("data-pubsecshow");
+  });
+  check("2d: EVERY public-explainer section the tab declares is curatable here, in order" +
+        (pubIds.join(",") === T.publicSectionOrder().join(",") ? "" : " — rows: " + pubIds.join(",")),
+    pubIds.length > 0 && pubIds.join(",") === T.publicSectionOrder().join(","));
 
   // Exclude a tab section: it must not simply vanish from its own curator.
   clickSel(window, doc, '[data-secpvhide="eligibility"]');

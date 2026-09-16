@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 448,
+   "count": 450,
    "docs": [
     {
      "created": "2026-08-14",
@@ -453,6 +453,26 @@
      "title": "\\\"Not signed in\\\" and \\\"only these people\\\" cannot both hold",
      "type": "methodology",
      "updated": "2026-09-08"
+    },
+    {
+     "created": "2026-09-15",
+     "governs": [
+      "tests/cpl_funding_calm.test.js",
+      "tests/cpl_funding_earn_retired.test.js",
+      "tests/funding_model_page.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-ban-is-only-as-wide-as-the-files-it-opens.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "testing",
+      "vocabulary",
+      "funding",
+      "presentation"
+     ],
+     "title": "A ban is only as wide as the files it opens",
+     "type": "methodology",
+     "updated": "2026-09-15"
     },
     {
      "created": "2026-08-24",
@@ -1193,6 +1213,26 @@
      "title": "A diagnosis that does not stop the run is a log line: the 2026-09-08 cron outage",
      "type": "methodology",
      "updated": "2026-09-10"
+    },
+    {
+     "created": "2026-09-15",
+     "governs": [
+      "funding-model/index.html",
+      "funding_model_payload.js",
+      "tests/funding_model_page.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-display-name-is-not-a-key.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "identity",
+      "curation",
+      "funding",
+      "presentation"
+     ],
+     "title": "A display name is not a key \u2014 and the entry that still matches is the one that lies",
+     "type": "methodology",
+     "updated": "2026-09-15"
     },
     {
      "created": "2026-08-07",
@@ -17276,5 +17316,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 897
+ "total": 899
 }

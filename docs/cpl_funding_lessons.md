@@ -1942,3 +1942,149 @@ obvious when it was "69 of 118 awards, largest swing $110,391" rather than "dead
 model instead of re-deriving. Mutating every new guard. And reading the builder before advising on
 P1 a second time, which is what showed his pin was already right and my advice aimed at the wrong
 horizon.
+
+## 2026-09-15 — S265 (SkyPublius): the explainer stops describing a model it no longer runs
+
+Sam gave the public explainer a pass: make its language consistent with the model, cut the
+redundancies, integrate the priorities and the timeline, fold the strategies, fix a table that ran
+off the window, and add a PDF link. Four of those are editorial. The one that mattered was not.
+
+### A description keyed on a name that changed
+
+The priority cards carried a hand-written plain-language sentence each, held in a map keyed on the
+priority TITLE:
+
+    var plain = { "Access": "…", "Outreach": "…", "Success": "…" };
+    m.textContent = plain[p.title] || p.metric;
+
+The live titles have been **Outreach · Completion · Awards** since Sam set the dials. So two of the
+three cards fell through the `||` to `p.metric` — the raw measure string, which is not a sentence —
+and the third, "Outreach", still matched its key and printed a description of **eligible** units
+under a priority that now measures **applied units from the portal, landing page and batch upload**.
+
+Nothing rendered wrong. No figure was stale, no guard went red, and the card that lied was the only
+one that looked normal. **A lookup keyed on a display name fails silently the day the name is
+curated, and it fails hardest on the entry that still matches.** The model already carries a
+`description` per priority, edited on the same tab as the share and the measure; that is what the
+card says now, and the guard renames a priority and requires the sentence to survive.
+
+The baseline requirements were the same defect with higher stakes. The page typed its own three,
+and the first read *"A CPL Coordinator or Counselor listed in MAP"* while the live model read
+*"Primary CPL Contact listed in MAP and the college public CPL Landing Page"*. A college reading the
+public page was being told to meet a requirement the model does not check. They come from
+`_requirements()` now — the same accessors the tab's eligibility section renders — and so does the
+participation deadline, which sat in the choices table as the typed string "1 Nov 2026" against a
+model holding `2026-11-01`. The page's two figure guards look for currency and for
+thousands-separated numbers; **a date is neither**, which is why it survived every audit.
+
+### Three vocabulary guards, none of which could see the page
+
+`cpl_funding_calm` §5 bans the retired funding words in RENDERED text — it reads the tab's mount.
+`cpl_funding_earn_retired` reads `cpl_funding.js`'s SOURCE, which is what caught the CSV header no
+DOM test could see. Between them they are described as "the whole guard".
+
+They are not, because the explainer is a THIRD file: hand-written markup in `funding-model/`. Two
+days after Sam retired "earn" it still said *"What it earns tracks the prior-learning credit…"* and
+*"the priority's share is earned with fewer units"* — on the one surface colleges actually read.
+**A ban is only as wide as the files it opens.** The page suite scans its own prose now, for the
+earn stems and for pool / money / draw / unspent / the advance concept, and reports the word with
+its surrounding sentence rather than a bare fail.
+
+### The print stylesheet is the PDF's design, and it deleted the institution names
+
+"Download PDF" prints the page rather than serving a file, because a file built once is the
+snapshot page this one was retired for. That makes the print rules the artifact, not an
+afterthought, and they have real work to do: five folds and three strategy lists are closed
+`<details>` (a headless print-to-PDF never runs our `beforeprint` handler, so CSS has to open them
+on its own), the tab's sticky header parks over the body from page two onward, and the controls
+print as dead boxes.
+
+Hiding the controls is where it went wrong. The first draft swept `.cplfund-caret` in with the
+toolbar and the search box — and **the caret IS the institution's name**: the calm pass turned the
+row toggle into the name as a real button. The PDF came out as 119 rows of figures with an empty
+Institution column and nothing to say whose they were. It was invisible in the markup, invisible in
+jsdom, and obvious in one screenshot. **Rendering is the only test for a rendering change**; the
+guard now asserts that print never hides that class, and says why in the assertion text.
+
+### What the window measurement showed, and what Sam's screenshot showed
+
+Sam reported that the college table "doesn't fit the window width". Measured in Chromium: the
+table needed **1,039px inside a 942px box** with the District column shown, so the last column ran
+into a sideways scroll. The cause was not the table — it was that the page capped everything,
+including the tab's full-width app, at its 1000px prose column. The heading stays in the prose wrap
+and only the table widens (`.wrap.wide`, 1320px), which is his "you can widen the table if
+helpful".
+
+Then he added the finding nobody had the measurement for: *"the column selector drop down stays up
+after opening — not sure how to close it."* A bare `<details>` closes on exactly one gesture, a
+second click on its own summary, and that is not where a hand goes. Staying open across a
+checkbox toggle is deliberate — several columns in one visit — so the fix adds only the two
+gestures that mean done: a click outside, and Escape with focus returned to the summary. **The
+listeners are torn down per render**, because the mount is rewritten whole on every render and a
+document-level listener with no teardown stacks one deep per render, each holding a dead panel.
+That last part is the half no interaction can reveal, so the guard asserts on the mechanism.
+
+### 138 focus rings that were never drawn
+
+`npm run a11y funding-model` failed on both the old page and the new one: **138 focusable controls
+with no visible focus ring**. `cpl_funding.js` writes every ring as
+`outline: 2px solid var(--gold-accent)`, and `--gold-accent` lives in COBI's `:root`, not here. An
+undefined `var()` invalidates the whole declaration at computed-value time, so `outline` fell back
+to its initial value and drew nothing — the search box, the Columns menu, Download as Excel, and
+every institution name in the table. `.cplfund-toolbar input:focus` was worse: it sets
+`outline: none` and trades it for `border-color: var(--navy-secondary)`, a second undefined token,
+so the trade gave nothing back.
+
+Mapped to the page's own `--focus-ring` rather than to the gold hex it names, because
+`prototype/check_contrast.py` puts #E3B341 at **1.74:1 on paper** and 1.95:1 on white — under the
+3:1 WCAG 2.2 SC 1.4.11 asks of a focus indicator — while cobalt measures 7.54:1 and 8.44:1. The
+target passes clean now. **A token that resolves on one page and not another is not a styling
+detail; it is a control with no visible state, and only the sweep says so.**
+
+### A shared section id is a shared control
+
+Sam then asked for the section titles to use the model's language, which is how the worst defect of
+the run got found — by reading the tab's own section names beside the explainer's.
+
+The tab's sections are `about · college · window · pools · formula · eligibility · priorities ·
+timing`. The new section I had just shipped was **`priorities`**. Curation is id-keyed:
+`sectionCuration(id)` resolves `titles[id]` and `secHidden[id]` out of the shared config, and the
+config carries a **live** `titles.priorities` — Sam's own rename of the tab's section to *"Funding
+Outcomes of Ed. Code §78093.2(d)(1)"*. So the explainer's h2 was being replaced by the tab's title,
+and hiding the tab's priorities section would have hidden the explainer's. Reproduced against the
+stored value before renaming it to `outcomes`.
+
+The rule was already written down. `cpl_funding.js` carries a long comment explaining why the
+explainer's ids are **not** aliased onto the tab's — *"a semantic alias would make one hide mean two
+different things on two pages and be wrong in a way nobody could see from either"* — and names
+`timing` as the one deliberate collision. I read that comment while adding the section and still
+picked a colliding id, because the comment argues against *deliberate* aliasing and an accidental
+one looks like neither.
+
+**A documented invariant with no guard is a convention, and conventions lose to autocomplete.** The
+check now reads `SECTION_HOUSE_ORDER` out of the source rather than copying it (a third copy would
+go stale exactly when the tab adds a section), lists `timing` as the single exemption so a second
+one has to be typed in and justified, and asserts that the scan can see a collision at all.
+
+Mutation notes, because two of them were instructive: renaming a section id in the markup alone
+fails four *other* assertions before mine, so the guard had to be tested on the path it is actually
+for — markup, declaration and the suite's own list all renamed together. And renaming
+`SECTION_HOUSE_ORDER` in the source to break the read is too destructive to be a mutation at all: it
+breaks the module. The realistic drift is a **reformat** — single quotes instead of double — which
+leaves the code working and the regex matching nothing, and that one the guard catches by name.
+
+### Patterns that worked
+
+- **Measuring the complaint before designing the fix.** "Doesn't fit" became "1,039 in 942 with
+  District shown", which named both the cause and the size of the remedy.
+- **Screenshotting the print media.** Two defects — the empty Institution column and the re-stacked
+  figure grids — existed only at paint, in a medium no test renders by default.
+- **Mutating every new guard.** Nine mutations across three suites; one of them found that the
+  requirements guard *died* rather than failing when the payload key went missing, which is the
+  S219 lesson reproduced inside a guard written after it.
+- **Reading the redirect before answering the question.** Sam asked whether to keep this page as
+  the public view; `cpl_funding_public.html` already carries the answer, and the reason is a
+  disclosure bug rather than a preference.
+- **Taking the small ask seriously.** "Align the section titles with the model's language" reads
+  like a copy-edit. Doing it meant listing the tab's section names beside the page's, which is the
+  only reason the id collision was ever seen.

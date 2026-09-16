@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-448 document(s).
+450 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -38,6 +38,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Unified memory table — one cross-repo store for facts, pitfalls, opportunities, wishlist, and timeline events](../kb-notes/adr-unified-memory-table.md) | adr | published | 2026-07-24 | 2026-07-24 |
 | [The CPL merge lens — the student-repeat test (anchored to Title 5 §55050's "similar" standard)](../kb-notes/glossary-cpl-merge-lens-student-repeat-test.md) | glossary | published | 2026-07-13 | 2026-07-13 |
 | [\"Not signed in\" and \"only these people\" cannot both hold](../kb-notes/methodology-not-signed-in-and-only-these-people-cannot-both-hold.md) | methodology | published | 2026-09-08 | 2026-09-08 |
+| [A ban is only as wide as the files it opens](../kb-notes/methodology-a-ban-is-only-as-wide-as-the-files-it-opens.md) | methodology | published | 2026-09-15 | 2026-09-15 |
 | [A blocked path hides every defect behind it — budget for a chain, not a fix](../kb-notes/methodology-a-blocked-path-hides-the-defects-behind-it.md) | methodology | published | 2026-08-24 | 2026-08-24 |
 | [A bound is tested by value, not by the model's clamp count](../kb-notes/methodology-a-bound-is-tested-by-value-not-by-the-clamp-count.md) | methodology | published | 2026-08-28 | 2026-08-28 |
 | [A bug report is evidence, not diagnosis — and the control that kills your favorite hypothesis](../kb-notes/methodology-a-bug-report-is-evidence-not-diagnosis.md) | methodology | published | 2026-09-07 | 2026-09-08 |
@@ -76,6 +77,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A deploy that deploys nothing leaves the old environment running](../kb-notes/methodology-a-deploy-that-deploys-nothing-leaves-the-old-environment-running.md) | methodology | published | 2026-09-11 | 2026-09-11 |
 | [A derived summary field used as a filter is a membership test in disguise](../kb-notes/methodology-a-summary-field-can-be-a-retrieval-gate.md) | methodology | published | 2026-08-13 | 2026-08-13 |
 | [A diagnosis that does not stop the run is a log line: the 2026-09-08 cron outage](../kb-notes/methodology-a-diagnosis-that-does-not-stop-the-run-is-a-log-line.md) | methodology | published | 2026-09-10 | 2026-09-10 |
+| [A display name is not a key — and the entry that still matches is the one that lies](../kb-notes/methodology-a-display-name-is-not-a-key.md) | methodology | published | 2026-09-15 | 2026-09-15 |
 | [A failed read is not an empty result — and an optimistic write must precede its repaint](../kb-notes/methodology-a-failed-read-is-not-an-empty-result.md) | methodology | published | 2026-08-07 | 2026-08-07 |
 | [A feature-test on a method that does not exist is indistinguishable from the feature being absent](../kb-notes/methodology-a-feature-test-on-a-missing-method-fails-silent.md) | methodology | published | 2026-09-11 | 2026-09-11 |
 | [A field defaulted in the consumer looks computed and never moves](../kb-notes/methodology-a-defaulted-field-looks-computed-and-never-moves.md) | methodology | published | 2026-09-02 | 2026-09-02 |
