@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-09-14T18:08:45.221462+00:00",
+  "scraped_at": "2026-09-16T17:08:30.076273+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 28020,
+    "jst": 28143,
     "star_colleges": 57
   },
   "computed_star_colleges": 57,
@@ -17,42 +17,42 @@
     },
     "Chaffey College": {
       "vets": 182,
-      "jst": 345,
+      "jst": 346,
       "star": true
     },
     "San Diego Mesa College": {
       "vets": 1070,
-      "jst": 1611,
+      "jst": 1613,
       "star": true
     },
     "San Diego City College": {
       "vets": 776,
-      "jst": 1499,
+      "jst": 1505,
       "star": true
     },
     "San Diego Miramar College": {
       "vets": 1181,
-      "jst": 1649,
-      "star": true
-    },
-    "Moreno Valley College": {
-      "vets": 916,
-      "jst": 1018,
+      "jst": 1653,
       "star": true
     },
     "City College of San Francisco": {
       "vets": 1197,
-      "jst": 1552,
+      "jst": 1597,
+      "star": true
+    },
+    "Moreno Valley College": {
+      "vets": 916,
+      "jst": 1022,
       "star": true
     },
     "Bakersfield College": {
       "vets": 416,
-      "jst": 571,
+      "jst": 572,
       "star": true
     },
     "Merced College": {
       "vets": 142,
-      "jst": 275,
+      "jst": 276,
       "star": true
     },
     "West Los Angeles College": {
@@ -77,7 +77,7 @@
     },
     "Riverside City College": {
       "vets": 1508,
-      "jst": 818,
+      "jst": 870,
       "star": false
     },
     "El Camino College": {
@@ -112,17 +112,17 @@
     },
     "College of the Desert": {
       "vets": 235,
-      "jst": 405,
+      "jst": 406,
+      "star": true
+    },
+    "Modesto Junior College": {
+      "vets": 80,
+      "jst": 148,
       "star": true
     },
     "Cypress College": {
       "vets": 259,
       "jst": 387,
-      "star": true
-    },
-    "Modesto Junior College": {
-      "vets": 80,
-      "jst": 147,
       "star": true
     },
     "Santa Ana College": {
@@ -182,7 +182,7 @@
     },
     "Clovis Community College": {
       "vets": 117,
-      "jst": 192,
+      "jst": 193,
       "star": true
     },
     "Shasta College": {
@@ -207,7 +207,7 @@
     },
     "Los Angeles Pierce College": {
       "vets": 296,
-      "jst": 139,
+      "jst": 141,
       "star": false
     },
     "Victor Valley College": {
@@ -222,7 +222,7 @@
     },
     "Mission College": {
       "vets": 158,
-      "jst": 156,
+      "jst": 155,
       "star": true
     },
     "Los Angeles Mission College": {
@@ -232,7 +232,7 @@
     },
     "Cerro Coso Community College": {
       "vets": 115,
-      "jst": 180,
+      "jst": 181,
       "star": true
     },
     "College of the Sequoias": {
@@ -297,7 +297,7 @@
     },
     "Reedley College": {
       "vets": 82,
-      "jst": 127,
+      "jst": 128,
       "star": true
     },
     "Lassen College": {
@@ -482,7 +482,7 @@
     },
     "Sacramento City College": {
       "vets": 203,
-      "jst": 107,
+      "jst": 108,
       "star": false
     },
     "Cuyamaca College": {

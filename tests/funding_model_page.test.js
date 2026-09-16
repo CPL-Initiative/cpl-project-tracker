@@ -215,6 +215,223 @@ check("the status line is empty on a successful paint",
     doc.querySelectorAll("#timing-list li").length === D.timing.length);
 }
 
+// ── THE PRIORITY CARD'S PLAIN SENTENCE COMES FROM THE MODEL ──────────────
+// ⚠️ WHY THIS EXISTS. The painter held a map of hand-written sentences keyed
+// on the priority TITLE — "Access", "Outreach", "Success". Those titles are
+// retired; the live set is Outreach / Completion / Awards. So two of the three
+// cards silently fell through to `p.metric` (the raw measure string, which is
+// not a plain-language sentence) and the third printed a 2026-08 description
+// of a measure the model had since stopped using, under a name that still
+// matched. Nothing rendered wrong; the page simply described a different model.
+//
+// The model carries a `description` per priority, curated on the same tab as
+// the share and the measure. The guard changes it through the layer a curator
+// writes to and requires the card to follow — a typed copy passes a single
+// paint and never moves again (the factors lesson, 2026-09-02).
+{
+  const T = win.CPL_FUNDING_TAB;
+  const repaint = function () {
+    win.CPL_PAINT_EXPLAINER(win.CPL_FUNDING_EXPLAINER.buildPayload(T, win.CPL_FUNDING));
+  };
+  check("the payload carries each priority's own description",
+    D.prios.length > 0 && D.prios.every((p) => typeof p.description === "string"));
+  T._setShared({ yearPriorities: { "1": { "0": {
+    title: "Outreach", description: "A sentence only the model could supply.",
+    metric: "Applied CPL Units (FTES) originating from the CPL Portal"
+  } } } });
+  repaint();
+  const card = doc.querySelector("#prios .prio");
+  check("a curator's description reaches the card, rather than a gloss typed on this page",
+    /A sentence only the model could supply\./.test(card.querySelector(".metric").textContent));
+  check("...and the measure is stated beside it, never in place of it",
+    /Applied CPL Units \(FTES\) originating from the CPL Portal/
+      .test(card.querySelector(".aim").textContent) &&
+    card.querySelector(".metric").textContent !== card.querySelector(".aim").textContent);
+  // THE TITLE MUST NOT BE THE KEY. Renaming a priority and leaving everything
+  // else alone is the exact move that broke the retired map: with a lookup
+  // keyed on the title, this next paint loses the sentence.
+  T._setShared({ yearPriorities: { "1": { "0": {
+    title: "A title nobody has used before", description: "A sentence only the model could supply."
+  } } } });
+  repaint();
+  check("...and RENAMING the priority keeps its sentence — the title is not the lookup key",
+    /A sentence only the model could supply\./
+      .test(doc.querySelector("#prios .prio .metric").textContent));
+  T._setShared({});
+  repaint();
+}
+
+// ── THE STRATEGIES FOLD, CLOSED ON OPEN ──────────────────────────────────
+// Sam, 2026-09-15: "allow for the strategies to be view by expanding the
+// section (default collapsed)." Seven strategies per priority, three
+// priorities — the list ran between the shares and everything below them.
+{
+  const T = win.CPL_FUNDING_TAB;
+  const repaint = function () {
+    win.CPL_PAINT_EXPLAINER(win.CPL_FUNDING_EXPLAINER.buildPayload(T, win.CPL_FUNDING));
+  };
+  T._setShared({ yearPriorities: { "1": { "0": {
+    strategies: ["Name a CPL coordinator", "Post every exhibit"] } } } });
+  repaint();
+  const fold = doc.querySelector("#prios .prio details.strat-fold");
+  check("the strategies sit in a fold under their own priority",
+    !!fold && fold.querySelectorAll("ul.strat li").length === 2 &&
+    doc.querySelectorAll("#prios details.strat-fold").length === 1);
+  check("...CLOSED on open, and named while it is shut",
+    fold.open === false && /Recommended strategies/.test(fold.querySelector("summary").textContent));
+  check("...with the same Show / Hide WORD the steps use, not a marker glyph",
+    !!fold.querySelector("summary .fold-word") &&
+    /details\.strat-fold \.fold-word::before\{content:"Show"\}/.test(html) &&
+    /details\.strat-fold\[open\] \.fold-word::before\{content:"Hide"\}/.test(html) &&
+    /details\.strat-fold > summary::marker\{content:''\}/.test(html));
+  // A repaint must not leave a second fold, or a stale one, behind.
+  repaint();
+  check("...and repainting leaves exactly one fold, still closed",
+    doc.querySelectorAll("#prios details.strat-fold").length === 1 &&
+    doc.querySelector("#prios details.strat-fold").open === false);
+  T._setShared({});
+  repaint();
+  check("a priority with no strategies paints no fold at all",
+    !doc.querySelector("#prios details.strat-fold"));
+}
+
+// ── THE BASELINE REQUIREMENTS COME FROM THE MODEL ────────────────────────
+// ⚠️ THE PAGE TYPED ITS OWN THREE, AND THE FIRST HAD DRIFTED. It read "A CPL
+// Coordinator or Counselor listed in MAP" while the live model read "Primary
+// CPL Contact listed in MAP and the college public CPL Landing Page" — a
+// requirement a college is asked to MEET, stated on the page colleges read,
+// differing from the one the model checks. Neither surface looked wrong alone.
+{
+  const T = win.CPL_FUNDING_TAB;
+  const repaint = function () {
+    win.CPL_PAINT_EXPLAINER(win.CPL_FUNDING_EXPLAINER.buildPayload(T, win.CPL_FUNDING));
+  };
+  // ⚠️ READ DEFENSIVELY. A guard that DIES cannot report (S219's lesson, and
+  // this one earned it in rehearsal): dropping `requirements` from the payload
+  // threw a TypeError here and took the whole run down — no FAIL line, no
+  // "N/N passed", just a stack. The regression it exists to catch would have
+  // read as a broken test rather than as a broken page.
+  const REQ = D.requirements || {};
+  const REQ_ITEMS = Array.isArray(REQ.items) ? REQ.items : null;
+  check("the payload carries the model's requirement list and its intro",
+    !!REQ_ITEMS && REQ_ITEMS.length > 0);
+  const painted = Array.from(doc.querySelectorAll("#req-list li")).map((li) => li.textContent);
+  check("every requirement the model states is on the page, in its order",
+    !!REQ_ITEMS && painted.length === REQ_ITEMS.length &&
+    REQ_ITEMS.every((t, i) => painted[i] === t));
+  check("...and the intro is the model's own, not a sentence typed here",
+    !!REQ_ITEMS && (!REQ.intro ||
+      doc.getElementById("req-intro").textContent === REQ.intro));
+  // The page must hold NO typed requirement of its own — the failure was a
+  // hand-written list, so an empty painted list has to leave nothing standing.
+  check("the markup ships no requirement of its own for a stale one to hide in",
+    (function () {
+      const ol = html.slice(html.indexOf('id="req-list"'));
+      return /^id="req-list"><\/ol>/.test(ol.slice(0, 40));
+    })());
+  // The DEADLINE is a figure too, and it sat in the choices table as the typed
+  // string "1 Nov 2026" against a model holding 2026-11-01. Nothing caught it:
+  // the page's two figure guards look for currency and for thousands-separated
+  // numbers, and a date is neither.
+  check("the deadline cell is painted from the model, not typed beside it",
+    !!REQ.deadline && doc.getElementById("t-deadline").textContent === REQ.deadline);
+  // A curator's edit to the requirement text must reach the page.
+  T._setShared({ coordLabel: "A requirement only a curator could have typed",
+                 extraReqs: ["And one more"], partLabel: "Participation confirmed by",
+                 participationDeadline: "2027-03-15" });
+  repaint();
+  check("...and a curator moving the deadline moves that cell",
+    doc.getElementById("t-deadline").textContent === "2027-03-15");
+  const after = Array.from(doc.querySelectorAll("#req-list li")).map((li) => li.textContent);
+  check("a curator's requirement edit reaches this page",
+    after.some((t) => /only a curator could have typed/.test(t)) &&
+    after.some((t) => t === "And one more"));
+  check("...and the participation requirement carries its deadline, joined once",
+    after.some((t) => /Participation confirmed by \d{4}-\d{2}-\d{2}$/.test(t)));
+  T._setShared({});
+  repaint();
+}
+
+// ── THE PDF, AND THE PRINT STYLESHEET THAT IS ITS DESIGN ─────────────────
+// Sam, 2026-09-15: "Add a pdf download link to the top" and "just want to make
+// sure we can output to well-formatted pdf". The page prints ITSELF — there is
+// no built file, because a file built once is the snapshot page this one
+// replaced. So the print rules ARE the PDF, and they are guarded like markup.
+{
+  check("a PDF control sits in the masthead, as a word rather than a mark",
+    (function () {
+      const b = doc.getElementById("pdf-btn");
+      return !!b && b.tagName === "BUTTON" && /Download PDF/.test(b.textContent) &&
+        !!doc.querySelector("header #pdf-btn");
+    })());
+  const print = (html.match(/@media print\{[\s\S]*?\n\}/) || [""])[0];
+  check("the print stylesheet exists and sets a page box",
+    /@page\{size:letter portrait/.test(print));
+  // ⚠️ THE FOLDS. Five steps and three strategy lists are CLOSED <details>. A
+  // headless print-to-PDF never runs our beforeprint handler, so the CSS has
+  // to open them on its own or the PDF carries the headings and none of the
+  // explanation.
+  check("print opens every fold from CSS ALONE — a headless PDF runs no script",
+    /details\.fold > \.fold-body, details\.strat-fold > ul\.strat\{display:block !important\}/.test(print));
+  check("...and the beforeprint handler opens them too, restoring what it found",
+    /beforeprint/.test(html) && /afterprint/.test(html) &&
+    /pair\[0\]\.open = pair\[1\]/.test(html));
+  // ⚠️ THE CARET IS THE INSTITUTION'S NAME (the calm pass made the row toggle
+  // the name itself). The first draft of this stylesheet hid .cplfund-caret
+  // along with the other controls and printed 119 rows with an empty
+  // Institution column. Measured in Chromium before and after.
+  check("print never HIDES the caret — it is the institution's name",
+    !/cplfund-caret[^{]*\{display:none/.test(print) &&
+    /#cplFundingMount \.cplfund-caret\{padding:0/.test(print));
+  check("print drops the table's controls, which have no meaning on paper",
+    /cplfund-toolbar/.test(print) && /cplfund-colmenu/.test(print) &&
+    /cplfund-optin-jump/.test(print) && /input\[type="search"\]/.test(print));
+  check("...and the PDF button prints nothing of itself",
+    /\.head-actions/.test(print));
+  // Sticky headers park over the body text from page two onward; the header
+  // group repeats them properly instead.
+  check("the table header repeats per page, and sticky is switched off",
+    /display:table-header-group/.test(print) && /position:static !important/.test(print));
+  check("the widened table returns to the page box on paper",
+    /\.wrap, \.wrap\.wide\{max-width:none/.test(print));
+}
+
+// ── THE PAGE'S OWN PROSE HONORS THE RETIRED FUNDING VOCABULARY ───────────
+// ⚠️ THE TWO EXISTING GUARDS CANNOT SEE THIS PAGE. cpl_funding_calm reads the
+// TAB's rendered mount; cpl_funding_earn_retired reads cpl_funding.js's
+// source. This page's prose is hand-written markup in a third file, and it
+// still said "What it earns tracks the prior-learning credit…" and "the
+// priority's share is earned with fewer units" a day after Sam retired the
+// word — on the one surface colleges actually read.
+//
+// Sam's map (2026-09-13): counts toward · qualifies for · demonstrated ·
+// remaining. Plus the standing bans: the advance concept (2026-09-01), the
+// banking sense of "draw" and "unspent" (2026-09-09), "pool" and "money" for
+// the model's total (2026-08-31).
+{
+  const body = html.slice(html.indexOf("<body"), html.indexOf("</footer>"));
+  const prose = body
+    .replace(/<script[\s\S]*?<\/script>/g, " ")   // the painter is code, not prose
+    .replace(/<!--[\s\S]*?-->/g, " ")             // a comment may name what it retired
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&[a-z]+;/g, " ");
+  const BANNED = [
+    [/(?<![\w$.-])(un)?earn(s|ed|ing|ings|able)?(?![\w$-])/i, "earn"],
+    [/\bpools?\b/i, "pool"], [/\bmoney\b/i, "money"],
+    [/\bdraws?\b|\bdrawn\b/i, "draw"], [/\bunspent\b/i, "unspent"],
+    [/\bthe dollars\b/i, "the dollars"], [/\badvanc(e|es|ed|ing)\b/i, "advance"],
+    [/\bapportion/i, "apportion"],
+  ];
+  const hits = BANNED.filter(([re]) => re.test(prose))
+    .map(([re, name]) => name + ' @"' + (prose.match(re) ? prose.slice(
+      Math.max(0, prose.search(re) - 40), prose.search(re) + 24).replace(/\s+/g, " ") : "") + '"');
+  check("the page's own prose carries no retired funding vocabulary" +
+        (hits.length ? " — " + hits.join(" | ") : ""), hits.length === 0);
+  // The scan has to be able to fail, or it proves nothing.
+  check("...and the scan would catch one (it sees a planted word)",
+    BANNED[0][0].test("the college earns its allocation"));
+}
+
 // ── the noncredit DECOMPOSITION must be EXPLAINED, not just carried ──
 // One pool (2026-08-31): no separate lane — the page states the CR/NC
 // decomposition, its restriction, and the origination rule for the
@@ -386,7 +603,12 @@ check("the status line is empty on a successful paint",
 //     visitor reads.
 {
   const T2 = win.CPL_FUNDING_TAB;
-  const IDS = ["lede", "institutions", "allocation", "qualify", "earning", "timing", "choices"];
+  // `outcomes` added 2026-09-15 (Sam: "a brief integration of the priorities
+  // and timeline"). The three priorities and the milestone list moved out of
+  // the two folds that held them into one open section between the table and
+  // the steps.
+  const IDS = ["lede", "institutions", "outcomes", "allocation", "qualify",
+               "earning", "timing", "choices"];
   const secs = Array.from(doc.querySelectorAll("[data-fsec]"));
   check("every section carries a data-fsec id, in page order",
     secs.length === IDS.length &&
@@ -395,10 +617,45 @@ check("the status line is empty on a successful paint",
     !doc.querySelector("footer[data-fsec]") &&
     /working model for discussion, not adopted policy/.test(doc.querySelector("footer").textContent));
 
+  // ⚠️ AN EXPLAINER SECTION MAY NOT SHARE AN ID WITH A TAB SECTION (except the
+  // one that does on purpose). This is not tidiness — curation is id-keyed, so
+  // a shared id means a curator's rename or hide on the TAB silently reaches
+  // this page. `outcomes` shipped for one commit as `priorities`, which is a
+  // tab section carrying the LIVE override "Funding Outcomes of Ed. Code
+  // §78093.2(d)(1)": the explainer's own h2 was replaced by it, and hiding the
+  // tab's priorities section hid this one too. Reproduced against the stored
+  // value before the rename.
+  //
+  // `timing` is the ONE deliberate collision — one subject, one switch — and it
+  // is named here so that adding a second requires editing this line and saying
+  // why, rather than inheriting the exemption by accident.
+  {
+    // ⚠️ THE TAB'S IDS ARE READ FROM THE SOURCE, not copied here. A typed copy
+    // is the same mistake one level up: the tab adds a section, this list does
+    // not, and the guard goes quiet about exactly the id that was just added.
+    const tabSrc = fs.readFileSync(path.join(ROOT, "cpl_funding.js"), "utf8");
+    const m = tabSrc.match(/var SECTION_HOUSE_ORDER = \[([\s\S]*?)\];/);
+    const TAB_IDS = m ? (m[1].match(/"([a-z_]+)"/g) || []).map((q) => q.slice(1, -1)) : [];
+    check("the tab's own section ids were read out of the source (the scan has input)",
+      TAB_IDS.length >= 8 && TAB_IDS.indexOf("priorities") >= 0);
+    const DELIBERATE = ["timing"];
+    const collisions = IDS.filter((id) => TAB_IDS.indexOf(id) >= 0 &&
+                                          DELIBERATE.indexOf(id) < 0);
+    check("no explainer section shares an id with a tab section, beyond the " +
+          "deliberate `timing`" +
+          (collisions.length ? " — collides: " + collisions.join(", ") : ""),
+      collisions.length === 0);
+    // The scan has to be able to fail, or it is decoration: `timing` IS in both
+    // lists, so the detector sees a real collision and only the exemption
+    // spares it.
+    check("...and the collision scan actually detects one (it sees `timing`)",
+      IDS.indexOf("timing") >= 0 && TAB_IDS.indexOf("timing") >= 0);
+  }
+
   const qualify = doc.querySelector('[data-fsec="qualify"]');
   const house = qualify.querySelector("h2").textContent;
   check("with no overrides, the house titles render and nothing is hidden",
-    /What a college has to do to qualify/.test(house) && secs.every((s2) => !s2.hidden));
+    /Eligibility requirements/.test(house) && secs.every((s2) => !s2.hidden));
 
   T2._setShared({ titles: { qualify: "Baseline <b>requirements</b>" }, secHidden: { timing: true } });
   win.CPL_CURATE_SECTIONS();

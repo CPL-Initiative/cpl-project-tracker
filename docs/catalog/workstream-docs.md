@@ -15,7 +15,7 @@ related:
 
 Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` that is not a lessons doc or a session handoff.
 
-80 document(s).
+81 document(s).
 
 | Title | File | Created | Updated |
 |---|---|---|---|
@@ -44,6 +44,7 @@ Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` t
 | [CPL Student Portal video — continuation capsule (SkyVid → next)](../cpl_portal_video_handoff.md) | `cpl_portal_video_handoff.md` | 2026-07-23 |  |
 | [Cross-Disciplinary Shared-COR Course Identity — Re-mint Scope](../research_workexp_crossdisc_remint_scope.md) | `research_workexp_crossdisc_remint_scope.md` | 2026-06-09 |  |
 | [Dashboard card metrics — consistency recommendations (Sam's recommend list)](../dashboard_card_metrics_recommendations.md) | `dashboard_card_metrics_recommendations.md` | 2026-06-29 |  |
+| [Draft note to MAP — the word "Eligible" on the CPL Dashboard](../map_eligible_label_note_draft.md) | `map_eligible_label_note_draft.md` | 2026-09-15 | 2026-09-15 |
 | [EACR Vision: Unified Exhibit Identity Layer](../exhibit_unification_vision.md) | `exhibit_unification_vision.md` |  |  |
 | [Fire & EMS eligibility (StarEmber) handoff → next session](../fire_ems_eligibility_handoff.md) | `fire_ems_eligibility_handoff.md` | 2026-07-20 |  |
 | [Foreign-Language SUBJ4 Split — Re-mint Scope](../fl_subj4_remint_scope.md) | `fl_subj4_remint_scope.md` | 2026-06-09 |  |

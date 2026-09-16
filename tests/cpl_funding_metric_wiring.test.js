@@ -34,6 +34,14 @@ const wantsUnits = (function () {
   const m = consumerSrc.match(/function wantsUnits\(m\) \{[\s\S]*?\n  \}/);
   return eval("(" + m[0].replace(/^function wantsUnits/, "function") + ")");
 })();
+// saysCounselorAccepted() is referenced from the first MEASURES entry (and from
+// metricMilestone), so it has to exist in this scope for the same reason
+// wantsUnits does — rebuilt out of the consumer rather than copied, so this
+// suite can never test a stale duplicate of the predicate (added 2026-09-15).
+const saysCounselorAccepted = (function () {
+  const m = consumerSrc.match(/function saysCounselorAccepted\(m\) \{[\s\S]*?\n  \}/);
+  return eval("(" + m[0].replace(/^function saysCounselorAccepted/, "function") + ")");
+})();
 const MEASURES = eval("(" + consumerSrc.slice(start + "var MEASURES = ".length, end - 1) + ")");
 function measure(metric) {
   const m = String(metric || "").toLowerCase();

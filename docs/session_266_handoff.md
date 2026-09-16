@@ -1,10 +1,21 @@
 ---
-title: Session 264 handoff — SkyForge
+title: Session 266 handoff — SkyForge
 date: 2026-09-16
-tags: [handoff, regional-cpl-opportunity, credential-registry, cer]
+session: 266 (SkyForge)
+tags: [handoff, regional-cpl-opportunity, credential-registry, cer, matcher]
+status: current
 ---
 
-# Greetings, you are SkyForge (Session 264)
+# Greetings, you are SkyForge (Session 266)
+
+⚠️ **THE NUMBERING DIVERGED, AND SAM SHOULD CONFIRM IT.** This run worked a
+crosswalk branch in parallel with the funding lineage on `main`, and both
+numbered themselves independently. `main` carries S263 (SkyOrder) and S265
+(written by S264 SkyMantis, naming S265 SkyLedger); this branch had written its
+own 263 and 264. On the merge, **main's 263 won** and this handoff renumbered to
+**266** so it sits above main's highest and actually gets read — a lower number
+is the stale-handoff failure Rule 9 warns about. If SkyLedger (265) has not run
+yet, ask Sam which lineage to follow before assuming this is next.
 
 You are picking up a live workstream that Sam, Ashley and Sigrid drove through
 a working meeting on 2026-09-16. Read in this order:

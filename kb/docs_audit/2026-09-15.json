@@ -1,0 +1,983 @@
+{
+  "generated": "2026-09-15",
+  "thresholds": {
+    "always_loaded": 60000,
+    "kb_note": 40000,
+    "index": 40000,
+    "lessons": 120000,
+    "handoff": 60000,
+    "roadmap_lane": 12000,
+    "other": 150000
+  },
+  "summary": {
+    "files": 910,
+    "bytes": 9642544,
+    "over_budget": 8,
+    "handoff_max": 265,
+    "always_loaded_files": 1,
+    "always_loaded_bytes": 60202,
+    "superseded_files": 0,
+    "superseded_bytes": 0,
+    "lanes": {
+      "always_loaded": {
+        "files": 1,
+        "bytes": 60202,
+        "over": 1
+      },
+      "other": {
+        "files": 114,
+        "bytes": 3046794,
+        "over": 3
+      },
+      "index": {
+        "files": 1,
+        "bytes": 28643,
+        "over": 0
+      },
+      "lessons": {
+        "files": 74,
+        "bytes": 1992399,
+        "over": 2
+      },
+      "kb_note": {
+        "files": 450,
+        "bytes": 2303876,
+        "over": 0
+      },
+      "roadmap_lane": {
+        "files": 32,
+        "bytes": 186118,
+        "over": 2
+      },
+      "handoff": {
+        "files": 238,
+        "bytes": 2024512,
+        "over": 0
+      }
+    },
+    "by_rule": {
+      "oversized_doc": 8,
+      "house_voice": 24,
+      "vault_heavy_path": 47
+    },
+    "vault": {
+      "files": 2888,
+      "bytes": 1400826680,
+      "heavy_bytes": 615545781,
+      "heavy_share": 0.439,
+      "ignore_filters": [
+        "cpl-project-tracker/kb/reference",
+        "cpl-project-tracker/cip_fitcheck",
+        "cpl-project-tracker/kb/unclassified_fold",
+        "cpl-project-tracker/tmc",
+        "cpl-project-tracker/unified_courses_member_desc.js",
+        "cpl-project-tracker/kb/coci_minted_singletons.json",
+        "cpl-project-tracker/kb/coci_minted_courses.json",
+        "cpl-project-tracker/unified_courses_details.js",
+        "cpl-project-tracker/kb/subj4_fold_out/2026-06-12/alias_map.json",
+        "cpl-project-tracker/kb/subj4_dryrun/alias_map.json",
+        "cpl-project-tracker/kb/subj4_apply/alias_map.json",
+        "cpl-project-tracker/kb/coci_minted_memberships.json",
+        "cpl-project-tracker/coci_lookup_data.js",
+        "cpl-project-tracker/unified_courses_standalone.js",
+        "cpl-project-tracker/kb/subj4_dryrun/collisions.json",
+        "cpl-project-tracker/unified_courses_members.js",
+        "cpl-project-tracker/kb/row_audit/latest.json",
+        "cpl-project-tracker/unified_courses_data.js",
+        "cpl-project-tracker/statewide_data.js",
+        "cpl-project-tracker/kb/remint_dryrun/alias_map.json",
+        "cpl-project-tracker/kb/cid_articulation_joins.json",
+        "cpl-project-tracker/coci_lookup_desc_A.js",
+        "cpl-project-tracker/tmc_college_courses.js",
+        "cpl-project-tracker/kb/coci_articulations.json",
+        "cpl-project-tracker/prototype/ccr_universe.json",
+        "cpl-project-tracker/coci_lookup_desc_C.js",
+        "cpl-project-tracker/coci_lookup_desc_E.js",
+        "cpl-project-tracker/kb/automerge_out/2026-06-13-titlelane/plan.json",
+        "cpl-project-tracker/exports/unified_courses.xlsx",
+        "cpl-project-tracker/kb/coci_curation.json",
+        "cpl-project-tracker/coci_lookup_desc_M.js",
+        "cpl-project-tracker/coci_lookup_desc_P.js",
+        "cpl-project-tracker/kb/automerge_out/2026-06-13-titlelane/supabase_ops.sql",
+        "cpl-project-tracker/tools/first_light_candidates.json",
+        "cpl-project-tracker/prototype/ccr_universe_members.json",
+        "cpl-project-tracker/unified_courses_index.js",
+        "cpl-project-tracker/unified_courses_suggestions.js",
+        "cpl-project-tracker/credential_reference_data.js",
+        "cpl-project-tracker/coci_lookup_desc_B.js",
+        "cpl-project-tracker/coci_lookup_desc_H.js",
+        "cpl-project-tracker/coci_lookup_desc_D.js",
+        "cpl-project-tracker/kb/remint_out/alias_map.json",
+        "cpl-project-tracker/coci_programs_data.js",
+        "cpl-project-tracker/kb/cr_reference_worklist.json",
+        "cpl-project-tracker/coci_lookup_desc_F.js",
+        "cpl-project-tracker/kb/authority_recode_out/2026-09-03/alias_map.json",
+        "cpl-project-tracker/coci_lookup_desc_K.js"
+      ]
+    }
+  },
+  "findings": [
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 60202,
+        "limit": 60000,
+        "lane": "always_loaded",
+        "over_by": 202,
+        "ratio": 1.0
+      },
+      "message": "60,202 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
+      "path": "CLAUDE.md"
+    },
+    {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "terms": {
+          "leverage": 1
+        }
+      },
+      "message": "1 business-register term — leverage x1 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "README.md"
+    },
+    {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "terms": {
+          "leverage": 1
+        }
+      },
+      "message": "1 business-register term — leverage x1 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/catalog/kb-notes.md"
+    },
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 166759,
+        "limit": 150000,
+        "lane": "other",
+        "over_by": 16759,
+        "ratio": 1.11
+      },
+      "message": "166,759 B is 1.1× the other budget (150,000 B) — candidate for compaction",
+      "path": "docs/ccr_atlas_lessons_archive.md"
+    },
+    {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "terms": {
+          "leverage": 2
+        }
+      },
+      "message": "2 business-register terms — leverage x2 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/ccr_convergence_strategy.md"
+    },
+    {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "terms": {
+          "leverage": 1
+        }
+      },
+      "message": "1 business-register term — leverage x1 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/co_platform_strategy.md"
+    },
+    {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 10,
+        "terms": {
+          "leverage": 10
+        }
+      },
+      "message": "10 business-register terms — leverage x10 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/coursecontrolnumber_remint.md"
+    },
+    {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 3,
+        "terms": {
+          "leverage": 3
+        }
+      },
+      "message": "3 business-register terms — leverage x3 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/cpl_assistant_lessons_archive.md"
+    },
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 121820,
+        "limit": 120000,
+        "lane": "lessons",
+        "over_by": 1820,
+        "ratio": 1.02
+      },
+      "message": "121,820 B is 1.0× the lessons budget (120,000 B) — candidate for compaction",
+      "path": "docs/cpl_funding_lessons.md"
+    },
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 266661,
+        "limit": 150000,
+        "lane": "other",
+        "over_by": 116661,
+        "ratio": 1.78
+      },
+      "message": "266,661 B is 1.8× the other budget (150,000 B) — candidate for compaction",
+      "path": "docs/cpl_funding_lessons_archive.md"
+    },
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 150822,
+        "limit": 120000,
+        "lane": "lessons",
+        "over_by": 30822,
+        "ratio": 1.26
+      },
+      "message": "150,822 B is 1.3× the lessons budget (120,000 B) — candidate for compaction",
+      "path": "docs/exhibit_canonicalization_lessons.md"
+    },
+    {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 4,
+        "terms": {
+          "leverage": 4
+        }
+      },
+      "message": "4 business-register terms — leverage x4 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/kb-notes/cpl-assistant-ccr-cer-recommendation-scope.md"
+    },
+    {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 5,
+        "terms": {
+          "leverage": 5
+        }
+      },
+      "message": "5 business-register terms — leverage x5 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/kb-notes/eacr-consolidation-scope.md"
+    },
+    {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "terms": {
+          "utilize": 1
+        }
+      },
+      "message": "1 business-register term — utilize x1 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/kb-notes/methodology-a-frequency-is-not-a-rule.md"
+    },
+    {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "terms": {
+          "leverage": 1
+        }
+      },
+      "message": "1 business-register term — leverage x1 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/kb-notes/methodology-an-unadopted-item-is-a-shelf-not-an-absence.md"
+    },
+    {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "terms": {
+          "leverage": 1
+        }
+      },
+      "message": "1 business-register term — leverage x1 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/kb-notes/methodology-curated-scenario-batches-doctrine-elicitation.md"
+    },
+    {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 3,
+        "terms": {
+          "leverage": 3
+        }
+      },
+      "message": "3 business-register terms — leverage x3 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/kb-notes/methodology-rank-cleanup-by-downstream-impact.md"
+    },
+    {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "terms": {
+          "leverage": 1
+        }
+      },
+      "message": "1 business-register term — leverage x1 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/kb-notes/methodology-rekey-derived-identity-maps.md"
+    },
+    {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "terms": {
+          "leverage": 2
+        }
+      },
+      "message": "2 business-register terms — leverage x2 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/kb-notes/playbook-trail-crew-method-magic-audit.md"
+    },
+    {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "terms": {
+          "leverage": 1
+        }
+      },
+      "message": "1 business-register term — leverage x1 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/noncredit_cpl_thinking.md"
+    },
+    {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "terms": {
+          "leverage": 1
+        }
+      },
+      "message": "1 business-register term — leverage x1 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/public_private_repo_split_scope.md"
+    },
+    {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "terms": {
+          "leverage": 1
+        }
+      },
+      "message": "1 business-register term — leverage x1 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/reference/kb_build_status.md"
+    },
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 18433,
+        "limit": 12000,
+        "lane": "roadmap_lane",
+        "over_by": 6433,
+        "ratio": 1.54
+      },
+      "message": "18,433 B is 1.5× the roadmap_lane budget (12,000 B) — candidate for compaction",
+      "path": "docs/reference/lanes/cobi-dark-mode.md"
+    },
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 17108,
+        "limit": 12000,
+        "lane": "roadmap_lane",
+        "over_by": 5108,
+        "ratio": 1.43
+      },
+      "message": "17,108 B is 1.4× the roadmap_lane budget (12,000 B) — candidate for compaction",
+      "path": "docs/reference/lanes/implementation-funding.md"
+    },
+    {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 4,
+        "terms": {
+          "leverage": 4
+        }
+      },
+      "message": "4 business-register terms — leverage x4 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/reference/pipeline_reference.md"
+    },
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 650440,
+        "limit": 150000,
+        "lane": "other",
+        "over_by": 500440,
+        "ratio": 4.34
+      },
+      "message": "650,440 B is 4.3× the other budget (150,000 B) — candidate for compaction",
+      "path": "docs/roadmap_archive.md"
+    },
+    {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 7,
+        "terms": {
+          "leverage": 7
+        }
+      },
+      "message": "7 business-register terms — leverage x7 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/roadmap_archive.md"
+    },
+    {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "terms": {
+          "leverage": 1
+        }
+      },
+      "message": "1 business-register term — leverage x1 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/sierra_maturity_roadmap.md"
+    },
+    {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "terms": {
+          "utilize": 1
+        }
+      },
+      "message": "1 business-register term — utilize x1 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/t5_55050_amendment_package_draft.md"
+    },
+    {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "terms": {
+          "leverage": 1
+        }
+      },
+      "message": "1 business-register term — leverage x1 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/t5_55050_article9_amendments.md"
+    },
+    {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "terms": {
+          "leverage": 1
+        }
+      },
+      "message": "1 business-register term — leverage x1 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/t5_55050_restore_the_2025_draft.md"
+    },
+    {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "terms": {
+          "leverage": 1
+        }
+      },
+      "message": "1 business-register term — leverage x1 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/working_with_claude_code.md"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/reference",
+      "detail": {
+        "bytes": 79676551,
+        "kind": "dir"
+      },
+      "message": "directory totals 79,676,551 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "cip_fitcheck",
+      "detail": {
+        "bytes": 51991148,
+        "kind": "dir"
+      },
+      "message": "directory totals 51,991,148 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/unclassified_fold",
+      "detail": {
+        "bytes": 20134223,
+        "kind": "dir"
+      },
+      "message": "directory totals 20,134,223 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "tmc",
+      "detail": {
+        "bytes": 14867812,
+        "kind": "dir"
+      },
+      "message": "directory totals 14,867,812 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "unified_courses_member_desc.js",
+      "detail": {
+        "bytes": 47884734,
+        "kind": "file"
+      },
+      "message": "47,884,734 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/coci_minted_singletons.json",
+      "detail": {
+        "bytes": 37048301,
+        "kind": "file"
+      },
+      "message": "37,048,301 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/coci_minted_courses.json",
+      "detail": {
+        "bytes": 34309802,
+        "kind": "file"
+      },
+      "message": "34,309,802 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "unified_courses_details.js",
+      "detail": {
+        "bytes": 21866626,
+        "kind": "file"
+      },
+      "message": "21,866,626 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/subj4_fold_out/2026-06-12/alias_map.json",
+      "detail": {
+        "bytes": 21616218,
+        "kind": "file"
+      },
+      "message": "21,616,218 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/subj4_dryrun/alias_map.json",
+      "detail": {
+        "bytes": 21616130,
+        "kind": "file"
+      },
+      "message": "21,616,130 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/subj4_apply/alias_map.json",
+      "detail": {
+        "bytes": 19689335,
+        "kind": "file"
+      },
+      "message": "19,689,335 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/coci_minted_memberships.json",
+      "detail": {
+        "bytes": 17743649,
+        "kind": "file"
+      },
+      "message": "17,743,649 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "coci_lookup_data.js",
+      "detail": {
+        "bytes": 17358026,
+        "kind": "file"
+      },
+      "message": "17,358,026 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "unified_courses_standalone.js",
+      "detail": {
+        "bytes": 14836687,
+        "kind": "file"
+      },
+      "message": "14,836,687 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/subj4_dryrun/collisions.json",
+      "detail": {
+        "bytes": 14572839,
+        "kind": "file"
+      },
+      "message": "14,572,839 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "unified_courses_members.js",
+      "detail": {
+        "bytes": 14342484,
+        "kind": "file"
+      },
+      "message": "14,342,484 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/row_audit/latest.json",
+      "detail": {
+        "bytes": 10476736,
+        "kind": "file"
+      },
+      "message": "10,476,736 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "unified_courses_data.js",
+      "detail": {
+        "bytes": 10108014,
+        "kind": "file"
+      },
+      "message": "10,108,014 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "statewide_data.js",
+      "detail": {
+        "bytes": 9443863,
+        "kind": "file"
+      },
+      "message": "9,443,863 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/remint_dryrun/alias_map.json",
+      "detail": {
+        "bytes": 9371742,
+        "kind": "file"
+      },
+      "message": "9,371,742 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/cid_articulation_joins.json",
+      "detail": {
+        "bytes": 8593791,
+        "kind": "file"
+      },
+      "message": "8,593,791 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "coci_lookup_desc_A.js",
+      "detail": {
+        "bytes": 8209035,
+        "kind": "file"
+      },
+      "message": "8,209,035 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "tmc_college_courses.js",
+      "detail": {
+        "bytes": 8035276,
+        "kind": "file"
+      },
+      "message": "8,035,276 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/coci_articulations.json",
+      "detail": {
+        "bytes": 7521214,
+        "kind": "file"
+      },
+      "message": "7,521,214 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "prototype/ccr_universe.json",
+      "detail": {
+        "bytes": 7509052,
+        "kind": "file"
+      },
+      "message": "7,509,052 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "coci_lookup_desc_C.js",
+      "detail": {
+        "bytes": 7019178,
+        "kind": "file"
+      },
+      "message": "7,019,178 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "coci_lookup_desc_E.js",
+      "detail": {
+        "bytes": 6738457,
+        "kind": "file"
+      },
+      "message": "6,738,457 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/automerge_out/2026-06-13-titlelane/plan.json",
+      "detail": {
+        "bytes": 6713055,
+        "kind": "file"
+      },
+      "message": "6,713,055 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "exports/unified_courses.xlsx",
+      "detail": {
+        "bytes": 6696806,
+        "kind": "file"
+      },
+      "message": "6,696,806 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/coci_curation.json",
+      "detail": {
+        "bytes": 5329120,
+        "kind": "file"
+      },
+      "message": "5,329,120 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "coci_lookup_desc_M.js",
+      "detail": {
+        "bytes": 4951655,
+        "kind": "file"
+      },
+      "message": "4,951,655 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "coci_lookup_desc_P.js",
+      "detail": {
+        "bytes": 4616887,
+        "kind": "file"
+      },
+      "message": "4,616,887 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/automerge_out/2026-06-13-titlelane/supabase_ops.sql",
+      "detail": {
+        "bytes": 4454134,
+        "kind": "file"
+      },
+      "message": "4,454,134 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "tools/first_light_candidates.json",
+      "detail": {
+        "bytes": 3955520,
+        "kind": "file"
+      },
+      "message": "3,955,520 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "prototype/ccr_universe_members.json",
+      "detail": {
+        "bytes": 3851153,
+        "kind": "file"
+      },
+      "message": "3,851,153 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "unified_courses_index.js",
+      "detail": {
+        "bytes": 3737067,
+        "kind": "file"
+      },
+      "message": "3,737,067 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "unified_courses_suggestions.js",
+      "detail": {
+        "bytes": 3489836,
+        "kind": "file"
+      },
+      "message": "3,489,836 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "credential_reference_data.js",
+      "detail": {
+        "bytes": 3007219,
+        "kind": "file"
+      },
+      "message": "3,007,219 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "coci_lookup_desc_B.js",
+      "detail": {
+        "bytes": 2915411,
+        "kind": "file"
+      },
+      "message": "2,915,411 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "coci_lookup_desc_H.js",
+      "detail": {
+        "bytes": 2799319,
+        "kind": "file"
+      },
+      "message": "2,799,319 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "coci_lookup_desc_D.js",
+      "detail": {
+        "bytes": 2626394,
+        "kind": "file"
+      },
+      "message": "2,626,394 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/remint_out/alias_map.json",
+      "detail": {
+        "bytes": 2501051,
+        "kind": "file"
+      },
+      "message": "2,501,051 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "coci_programs_data.js",
+      "detail": {
+        "bytes": 2442036,
+        "kind": "file"
+      },
+      "message": "2,442,036 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/cr_reference_worklist.json",
+      "detail": {
+        "bytes": 2354197,
+        "kind": "file"
+      },
+      "message": "2,354,197 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "coci_lookup_desc_F.js",
+      "detail": {
+        "bytes": 2322891,
+        "kind": "file"
+      },
+      "message": "2,322,891 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/authority_recode_out/2026-09-03/alias_map.json",
+      "detail": {
+        "bytes": 2162802,
+        "kind": "file"
+      },
+      "message": "2,162,802 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "coci_lookup_desc_K.js",
+      "detail": {
+        "bytes": 2038305,
+        "kind": "file"
+      },
+      "message": "2,038,305 B single file inside the vault"
+    }
+  ]
+}

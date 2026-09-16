@@ -1,7 +1,7 @@
 ---
 title: CPL Implementation Funding tab — workstream lessons
 created: 2026-06-11
-updated: 2026-09-14
+updated: 2026-09-15
 tags: [lessons, funding, implementation-funding, dashboard-tab, parallel-session]
 artifacts:
   - CPL_Dashboard.html / index.html (tab shell — PR #352)
@@ -1795,3 +1795,296 @@ the mockup FIRST and let him rule on it — which he did, five times, mid-turn.
   "compaction" REWROTE text at the same length and one actually grew the file. What worked
   was deleting settled history outright and pointing at the KB notes instead of retelling
   them. Ended at 1.09x while absorbing a run's worth of new state.
+
+## 2026-09-15 — S263 SkyOrder: a column-hide rule that reached into the drill-in, and two builds Sam stopped
+
+**Shipped:** #1577 (statewide expand, one detail renderer, true-ratio percent, printed names, parity guard) ·
+#1578 (the column-hide CSS leak) · #1580 (revert the target rate, correct a stale MEASURES comment).
+#1579 was built and reverted the same day.
+
+**⚠️ THE DEFECT THAT MATTERED FIRED ON THE SHIPPED DEFAULT.** `colHideStyleHtml()` emitted DESCENDANT
+combinators, so hiding the main table's District column (main col 3) also hid NC funding (detail col 3)
+inside the nested per-priority table. `COL_PREFS` defaults to `{district:true, working_adults:true}`, so
+this was never a setting anyone chose — **every reader** of COBI and the public explainer saw the
+noncredit cell vanish, later cells slide one column left under the wrong headers, and Total Possible
+render empty. Reported as "NC funding shows FTES" because the Target cell landed under that header.
+The `:not(.cplfund-detail)` looked like it covered this: it excludes the detail ROW, while the damage
+is to rows INSIDE it. Note: `methodology-a-guard-on-the-wrong-generation-of-descendant-is-not-a-guard`.
+
+**⚠️ AND NO DOM-READING TEST COULD HAVE CAUGHT IT.** The markup was always correct — every row emits all
+eight cells, and the parity guard written the day before passes on this exact defect because it counts
+`<td>`s. The corruption is at PAINT and jsdom does no layout. The guard asks the one question jsdom can
+answer: `Element.matches()` against the generated selector.
+
+**TWO BUILDS SAM STOPPED, both of which I had justified to myself first.**
+1. The per-priority target rate (#1579). He asked *"why do I need the Target factor when I can adjust
+   the FTES factor and get the same effect"* — and the maths is exact: `rate = k/factor` reproduces
+   every target because `prioEntitlement` is proportional to size share. One degree of freedom, two
+   parameterizations, and this repo already rules against a second dial over one number.
+2. A combined `pa_u + ppa_u` source to match the MAP dashboard's 84. **Awards is already pinned to
+   `ppa_u`**, so that would have counted portal-origin units twice — re-creating the double claim S262
+   fixed. Note: `methodology-before-building-a-whole-check-whether-the-halves-are-already-assigned`.
+
+His tell both times was the same sentence: *"This was not an issue in any of the previous dozens of
+funding sessions."* A problem appearing suddenly in a mature system, with no corresponding change, is
+usually a problem in the current reading. It was said twice before it landed.
+
+**⚠️ A STALE CAUSAL CLAIM I REPEATED AS JUSTIFICATION.** The `MEASURES` comment said eligible is
+"inflated upstream by the ACE/JST skill-level duplication". `roadmap_archive` records that exact claim
+being corrected — the gap is mostly correct applicability filtering, and a producer cross-check against
+MAP's own totals measured 1.0054. The correction never reached the file. Corrected in #1580.
+
+**THE VOCABULARY COLLISION, measured from Sam's spot-check.** MAP's dashboard labels its APPLIED column
+"Eligible": Alameda 84 = `pa_u` 78 + `ppa_u` 6, 14 students = `pa` 13 + 1 portal-origin; statewide 220k =
+220,020. Our `pe_u` is 1,407,508 / 529. Same word, 6.4x apart — and `live_metrics.json` already carries
+the scraped figure per college (115 colleges, fractional precision, Σ 220,370.65), rendered on College
+Activity as "Eligible Units". So COBI itself carried both readings.
+
+**Patterns that worked.** Reproducing the screenshot cell-for-cell before theorizing — it killed three
+wrong hypotheses (stale cache, truncated git history, a missing data field) and found the CSS. Mutating
+every new guard to prove it fails on the real defect. Baselining a11y against a `main` worktree before
+reporting. And treating the user's "this was never a problem" as evidence.
+
+---
+
+## 2026-09-15 — S264 (SkyMantis): the counselor step becomes a measure, and the last dial gets a control
+
+**What shipped.** Four PRs: #1582 (the counselor step as a measure + the measure picker), #1583
+(the builder's retired causal story + the decision sheet), #1584 (Credit FTES locked as the only
+allocation basis), #1585 (measure options named by route).
+
+### The defect Sam found by describing his own tab
+
+He said the counselor lifecycle check was on P2. It was — **in the metric text**. The pin was
+`ppa_u`, applied units among portal-origin students, which never reads the counselor field. The
+priority carrying the largest share (34%) promised a condition its measure did not apply, and
+nothing on screen said so, because the diagnostic that compares a metric's rung to its measure's
+rung had no `accepted` branch to compare WITH. Two seams, one missing concept.
+
+⚠️ **I had it backwards first.** I read "I added the counselor lifecycle check to P1" and built an
+entire mockup on P1 before he corrected me. The correction cost a rebuild; the lesson is that his
+FIRST description of a change is a description, and the live config is the fact. I did read the live
+config — and still let his sentence override what it said.
+
+### The control that did not exist
+
+`metric_src` was the last funding dial with no control: share, factor, title, metric text, goals,
+pool figures and strategies were all curator edits; the measure could only be changed by a session
+writing to the shared Supabase row. ⚠️ **The lane file and two handoffs called it "one dial in the
+tab, zero code", so I told Sam twice that the control existed before checking the screen.** That is
+the failure `methodology-verify-an-ask-against-what-the-reader-sees` was written for, committed by
+the session that had just read that note.
+
+**The picker's load-bearing detail is the un-pin.** `firstDefined()` skips null and undefined, so
+clearing a pin by DELETING the key lets a lower override layer's pin resurface — a curator would
+appear to un-pin and silently inherit someone else's measure. Storing `""` is what prevents it, and
+the mutation that deletes instead reds four assertions including the one that catches `ppa_u`
+coming back.
+
+### Sam's resolution beat the one I was about to build
+
+Asked for a measure carrying counselor AND origin, I was going to declare a combined `ppac_u`
+(undeliverable today — `Origin` is not in the feed). He instead **split the elements across two
+priorities**: origin onto P1, the counselor step onto P2. P2's text and measure now match exactly.
+Simpler, buildable today, and it made the S263 "do not build a combined source" caution moot rather
+than needing to be worked around.
+
+### Two verification failures, same shape
+
+⚠️ **A PIPE DISCARDS A COMMAND'S VERDICT.** Twice in one day:
+
+  * `node tests/run.js 2>&1 | grep -E "FAIL|passed"` — the grep swallowed the failing file's NAME
+    and replaced npm's exit code with grep's, so a genuinely red run printed "exited with code 0".
+    I reported the suite green and pushed on it. The unfiltered rerun named the file in seconds.
+  * `python3 kb/_build_dependency_map.py --check 2>&1 | tail -1 && git push` — same mechanism: the
+    exit code became `tail`'s, "dependency map is STALE" printed on screen, and the `&&` chain
+    pushed anyway.
+
+**Rule: never put a gate behind a pipe.** Run it bare, read the exit code, then act. Both were
+caught, but the first cost a cycle and a false report to Sam.
+
+### CI knows things `npm test` does not
+
+`test` went red on #1582 with **`dependency map is STALE`** — not a test failure. My local
+`node tests/run.js` passed 334/334 at the same commit. "Local suite green" and "CI green" were
+never the same claim, and I had been treating them as equivalent. `python3 kb/_build_dependency_map.py --check`
+is now part of the pre-push routine.
+
+### Retiring a behavior means inverting its tests, not deleting them
+
+Locking the allocation basis broke six assertions in `cpl_funding_basis` that PROVED the switch
+worked. Each became an absence guard naming the ruling; Part D's proportional-split maths was
+**retargeted** onto credit+noncredit FTES rather than dropped, and still holds to under $1 — which
+independently confirms the one-pool sizing formula. The suite went 38 → 39 assertions.
+
+⚠️ **And one sweep of mine went too far.** I removed the per-student rate card's "this year's
+metrics are headcount-denominated" as part of the basis removal. `cpl_funding_render` failed,
+correctly: that sentence describes the METRIC, not the basis, and is true on the baked Scenario-2
+path. The guard is now scoped to the basis claim rather than the bare word, because asserting on the
+word would re-break a true sentence on every future run.
+
+### What Sam ruled
+
+  * **The counselor check is on P2, not P1** — and he split origin onto P1 rather than combining.
+  * **"Don't worry about measurable but for the moment stranded funding."** P1 measures 666.5 units
+    against an ~88,000-unit target and 0 of 118 institutions reach it; he accepts that because the
+    origination element is coming. His pin is forward-correct: `ppa_u` is the key the cut lands on.
+  * **"Include batch in P1"** — the dropdown label names three routes though the measure counts two,
+    written for what the measure becomes.
+  * **"Effective" is retired vocabulary** — "we don't use it anymore". Its absence from all three
+    repos is correct, not a gap.
+  * **Eligible is the whole JST by design** — the parse decision from the early military-CPL days,
+    and industry CPL avoids the problem because colleges only adopt an exhibit when they hold a
+    course to articulate with it.
+
+**Patterns that worked.** Measuring before advising, every time — the Headcount removal became
+obvious when it was "69 of 118 awards, largest swing $110,391" rather than "dead policy". Asking the
+model instead of re-deriving. Mutating every new guard. And reading the builder before advising on
+P1 a second time, which is what showed his pin was already right and my advice aimed at the wrong
+horizon.
+
+## 2026-09-15 — S265 (SkyPublius): the explainer stops describing a model it no longer runs
+
+Sam gave the public explainer a pass: make its language consistent with the model, cut the
+redundancies, integrate the priorities and the timeline, fold the strategies, fix a table that ran
+off the window, and add a PDF link. Four of those are editorial. The one that mattered was not.
+
+### A description keyed on a name that changed
+
+The priority cards carried a hand-written plain-language sentence each, held in a map keyed on the
+priority TITLE:
+
+    var plain = { "Access": "…", "Outreach": "…", "Success": "…" };
+    m.textContent = plain[p.title] || p.metric;
+
+The live titles have been **Outreach · Completion · Awards** since Sam set the dials. So two of the
+three cards fell through the `||` to `p.metric` — the raw measure string, which is not a sentence —
+and the third, "Outreach", still matched its key and printed a description of **eligible** units
+under a priority that now measures **applied units from the portal, landing page and batch upload**.
+
+Nothing rendered wrong. No figure was stale, no guard went red, and the card that lied was the only
+one that looked normal. **A lookup keyed on a display name fails silently the day the name is
+curated, and it fails hardest on the entry that still matches.** The model already carries a
+`description` per priority, edited on the same tab as the share and the measure; that is what the
+card says now, and the guard renames a priority and requires the sentence to survive.
+
+The baseline requirements were the same defect with higher stakes. The page typed its own three,
+and the first read *"A CPL Coordinator or Counselor listed in MAP"* while the live model read
+*"Primary CPL Contact listed in MAP and the college public CPL Landing Page"*. A college reading the
+public page was being told to meet a requirement the model does not check. They come from
+`_requirements()` now — the same accessors the tab's eligibility section renders — and so does the
+participation deadline, which sat in the choices table as the typed string "1 Nov 2026" against a
+model holding `2026-11-01`. The page's two figure guards look for currency and for
+thousands-separated numbers; **a date is neither**, which is why it survived every audit.
+
+### Three vocabulary guards, none of which could see the page
+
+`cpl_funding_calm` §5 bans the retired funding words in RENDERED text — it reads the tab's mount.
+`cpl_funding_earn_retired` reads `cpl_funding.js`'s SOURCE, which is what caught the CSV header no
+DOM test could see. Between them they are described as "the whole guard".
+
+They are not, because the explainer is a THIRD file: hand-written markup in `funding-model/`. Two
+days after Sam retired "earn" it still said *"What it earns tracks the prior-learning credit…"* and
+*"the priority's share is earned with fewer units"* — on the one surface colleges actually read.
+**A ban is only as wide as the files it opens.** The page suite scans its own prose now, for the
+earn stems and for pool / money / draw / unspent / the advance concept, and reports the word with
+its surrounding sentence rather than a bare fail.
+
+### The print stylesheet is the PDF's design, and it deleted the institution names
+
+"Download PDF" prints the page rather than serving a file, because a file built once is the
+snapshot page this one was retired for. That makes the print rules the artifact, not an
+afterthought, and they have real work to do: five folds and three strategy lists are closed
+`<details>` (a headless print-to-PDF never runs our `beforeprint` handler, so CSS has to open them
+on its own), the tab's sticky header parks over the body from page two onward, and the controls
+print as dead boxes.
+
+Hiding the controls is where it went wrong. The first draft swept `.cplfund-caret` in with the
+toolbar and the search box — and **the caret IS the institution's name**: the calm pass turned the
+row toggle into the name as a real button. The PDF came out as 119 rows of figures with an empty
+Institution column and nothing to say whose they were. It was invisible in the markup, invisible in
+jsdom, and obvious in one screenshot. **Rendering is the only test for a rendering change**; the
+guard now asserts that print never hides that class, and says why in the assertion text.
+
+### What the window measurement showed, and what Sam's screenshot showed
+
+Sam reported that the college table "doesn't fit the window width". Measured in Chromium: the
+table needed **1,039px inside a 942px box** with the District column shown, so the last column ran
+into a sideways scroll. The cause was not the table — it was that the page capped everything,
+including the tab's full-width app, at its 1000px prose column. The heading stays in the prose wrap
+and only the table widens (`.wrap.wide`, 1320px), which is his "you can widen the table if
+helpful".
+
+Then he added the finding nobody had the measurement for: *"the column selector drop down stays up
+after opening — not sure how to close it."* A bare `<details>` closes on exactly one gesture, a
+second click on its own summary, and that is not where a hand goes. Staying open across a
+checkbox toggle is deliberate — several columns in one visit — so the fix adds only the two
+gestures that mean done: a click outside, and Escape with focus returned to the summary. **The
+listeners are torn down per render**, because the mount is rewritten whole on every render and a
+document-level listener with no teardown stacks one deep per render, each holding a dead panel.
+That last part is the half no interaction can reveal, so the guard asserts on the mechanism.
+
+### 138 focus rings that were never drawn
+
+`npm run a11y funding-model` failed on both the old page and the new one: **138 focusable controls
+with no visible focus ring**. `cpl_funding.js` writes every ring as
+`outline: 2px solid var(--gold-accent)`, and `--gold-accent` lives in COBI's `:root`, not here. An
+undefined `var()` invalidates the whole declaration at computed-value time, so `outline` fell back
+to its initial value and drew nothing — the search box, the Columns menu, Download as Excel, and
+every institution name in the table. `.cplfund-toolbar input:focus` was worse: it sets
+`outline: none` and trades it for `border-color: var(--navy-secondary)`, a second undefined token,
+so the trade gave nothing back.
+
+Mapped to the page's own `--focus-ring` rather than to the gold hex it names, because
+`prototype/check_contrast.py` puts #E3B341 at **1.74:1 on paper** and 1.95:1 on white — under the
+3:1 WCAG 2.2 SC 1.4.11 asks of a focus indicator — while cobalt measures 7.54:1 and 8.44:1. The
+target passes clean now. **A token that resolves on one page and not another is not a styling
+detail; it is a control with no visible state, and only the sweep says so.**
+
+### A shared section id is a shared control
+
+Sam then asked for the section titles to use the model's language, which is how the worst defect of
+the run got found — by reading the tab's own section names beside the explainer's.
+
+The tab's sections are `about · college · window · pools · formula · eligibility · priorities ·
+timing`. The new section I had just shipped was **`priorities`**. Curation is id-keyed:
+`sectionCuration(id)` resolves `titles[id]` and `secHidden[id]` out of the shared config, and the
+config carries a **live** `titles.priorities` — Sam's own rename of the tab's section to *"Funding
+Outcomes of Ed. Code §78093.2(d)(1)"*. So the explainer's h2 was being replaced by the tab's title,
+and hiding the tab's priorities section would have hidden the explainer's. Reproduced against the
+stored value before renaming it to `outcomes`.
+
+The rule was already written down. `cpl_funding.js` carries a long comment explaining why the
+explainer's ids are **not** aliased onto the tab's — *"a semantic alias would make one hide mean two
+different things on two pages and be wrong in a way nobody could see from either"* — and names
+`timing` as the one deliberate collision. I read that comment while adding the section and still
+picked a colliding id, because the comment argues against *deliberate* aliasing and an accidental
+one looks like neither.
+
+**A documented invariant with no guard is a convention, and conventions lose to autocomplete.** The
+check now reads `SECTION_HOUSE_ORDER` out of the source rather than copying it (a third copy would
+go stale exactly when the tab adds a section), lists `timing` as the single exemption so a second
+one has to be typed in and justified, and asserts that the scan can see a collision at all.
+
+Mutation notes, because two of them were instructive: renaming a section id in the markup alone
+fails four *other* assertions before mine, so the guard had to be tested on the path it is actually
+for — markup, declaration and the suite's own list all renamed together. And renaming
+`SECTION_HOUSE_ORDER` in the source to break the read is too destructive to be a mutation at all: it
+breaks the module. The realistic drift is a **reformat** — single quotes instead of double — which
+leaves the code working and the regex matching nothing, and that one the guard catches by name.
+
+### Patterns that worked
+
+- **Measuring the complaint before designing the fix.** "Doesn't fit" became "1,039 in 942 with
+  District shown", which named both the cause and the size of the remedy.
+- **Screenshotting the print media.** Two defects — the empty Institution column and the re-stacked
+  figure grids — existed only at paint, in a medium no test renders by default.
+- **Mutating every new guard.** Nine mutations across three suites; one of them found that the
+  requirements guard *died* rather than failing when the payload key went missing, which is the
+  S219 lesson reproduced inside a guard written after it.
+- **Reading the redirect before answering the question.** Sam asked whether to keep this page as
+  the public view; `cpl_funding_public.html` already carries the answer, and the reason is a
+  disclosure bug rather than a preference.
+- **Taking the small ask seriously.** "Align the section titles with the model's language" reads
+  like a copy-edit. Doing it meant listing the tab's section names beside the page's, which is the
+  only reason the id collision was ever seen.

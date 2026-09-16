@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-447 document(s).
+453 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -38,6 +38,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Unified memory table — one cross-repo store for facts, pitfalls, opportunities, wishlist, and timeline events](../kb-notes/adr-unified-memory-table.md) | adr | published | 2026-07-24 | 2026-07-24 |
 | [The CPL merge lens — the student-repeat test (anchored to Title 5 §55050's "similar" standard)](../kb-notes/glossary-cpl-merge-lens-student-repeat-test.md) | glossary | published | 2026-07-13 | 2026-07-13 |
 | [\"Not signed in\" and \"only these people\" cannot both hold](../kb-notes/methodology-not-signed-in-and-only-these-people-cannot-both-hold.md) | methodology | published | 2026-09-08 | 2026-09-08 |
+| [A ban is only as wide as the files it opens](../kb-notes/methodology-a-ban-is-only-as-wide-as-the-files-it-opens.md) | methodology | published | 2026-09-15 | 2026-09-15 |
 | [A blocked path hides every defect behind it — budget for a chain, not a fix](../kb-notes/methodology-a-blocked-path-hides-the-defects-behind-it.md) | methodology | published | 2026-08-24 | 2026-08-24 |
 | [A bound is tested by value, not by the model's clamp count](../kb-notes/methodology-a-bound-is-tested-by-value-not-by-the-clamp-count.md) | methodology | published | 2026-08-28 | 2026-08-28 |
 | [A bug report is evidence, not diagnosis — and the control that kills your favorite hypothesis](../kb-notes/methodology-a-bug-report-is-evidence-not-diagnosis.md) | methodology | published | 2026-09-07 | 2026-09-08 |
@@ -76,6 +77,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A deploy that deploys nothing leaves the old environment running](../kb-notes/methodology-a-deploy-that-deploys-nothing-leaves-the-old-environment-running.md) | methodology | published | 2026-09-11 | 2026-09-11 |
 | [A derived summary field used as a filter is a membership test in disguise](../kb-notes/methodology-a-summary-field-can-be-a-retrieval-gate.md) | methodology | published | 2026-08-13 | 2026-08-13 |
 | [A diagnosis that does not stop the run is a log line: the 2026-09-08 cron outage](../kb-notes/methodology-a-diagnosis-that-does-not-stop-the-run-is-a-log-line.md) | methodology | published | 2026-09-10 | 2026-09-10 |
+| [A display name is not a key — and the entry that still matches is the one that lies](../kb-notes/methodology-a-display-name-is-not-a-key.md) | methodology | published | 2026-09-15 | 2026-09-15 |
 | [A failed read is not an empty result — and an optimistic write must precede its repaint](../kb-notes/methodology-a-failed-read-is-not-an-empty-result.md) | methodology | published | 2026-08-07 | 2026-08-07 |
 | [A feature-test on a method that does not exist is indistinguishable from the feature being absent](../kb-notes/methodology-a-feature-test-on-a-missing-method-fails-silent.md) | methodology | published | 2026-09-11 | 2026-09-11 |
 | [A field defaulted in the consumer looks computed and never moves](../kb-notes/methodology-a-defaulted-field-looks-computed-and-never-moves.md) | methodology | published | 2026-09-02 | 2026-09-02 |
@@ -99,6 +101,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A green check you did not scope is not evidence](../kb-notes/methodology-a-green-check-you-did-not-scope-is-not-evidence.md) | methodology | published | 2026-08-23 | 2026-08-23 |
 | [A grouping key must come from the authoritative set, not from the rows being grouped](../kb-notes/methodology-a-grouping-key-must-come-from-the-authoritative-set.md) | methodology | published | 2026-08-13 | 2026-08-13 |
 | [A guard on generated output cannot see a regression staged in its source](../kb-notes/methodology-a-guard-on-generated-output-cannot-see-its-source.md) | methodology | published | 2026-09-10 | 2026-09-10 |
+| [A guard on the wrong generation of descendant is not a guard](../kb-notes/methodology-a-guard-on-the-wrong-generation-of-descendant-is-not-a-guard.md) | methodology | published | 2026-09-15 | 2026-09-15 |
 | [A guard test must not be able to fire the action it guards](../kb-notes/methodology-a-guard-test-must-not-be-able-to-fire-the-guarded-action.md) | methodology | published | 2026-08-19 | 2026-08-19 |
 | [A guard that fails on truth gets muted](../kb-notes/methodology-a-guard-that-fails-on-truth-gets-muted.md) | methodology | published | 2026-08-09 | 2026-08-09 |
 | [A guard that supplies its own input tests only the half after the input](../kb-notes/methodology-a-guard-that-supplies-its-own-input-tests-only-half.md) | methodology | published | 2026-09-12 | 2026-09-12 |
@@ -135,6 +138,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A partial ARIA pattern is worse than none — take the native control instead](../kb-notes/methodology-a-partial-aria-pattern-is-worse-than-none.md) | methodology | published | 2026-08-16 | 2026-08-16 |
 | [A percentage must never round up into a claim it cannot support](../kb-notes/methodology-a-percentage-must-not-round-up-into-a-claim.md) | methodology | published | 2026-08-11 | 2026-08-11 |
 | [A phrase sweep misses what a line break splits](../kb-notes/methodology-a-phrase-sweep-misses-what-a-line-break-splits.md) | methodology | published | 2026-08-31 | 2026-08-31 |
+| [A pipe discards a command's verdict](../kb-notes/methodology-a-pipe-discards-a-commands-verdict.md) | methodology | published | 2026-09-15 | 2026-09-15 |
 | [A piped test run reports the pipe's exit, not the suite's](../kb-notes/methodology-a-piped-test-run-reports-the-pipes-exit.md) | methodology | published | 2026-08-30 |  |
 | [A pipeline's exit status is its last command's, so `\| tail` reports success for a failing suite](../kb-notes/methodology-a-pipelines-exit-status-is-its-last-commands.md) | methodology | published | 2026-09-09 | 2026-09-09 |
 | [A presentation rule is the purest push case there is](../kb-notes/methodology-a-presentation-rule-is-the-purest-push-case.md) | methodology | published | 2026-08-29 | 2026-08-29 |
@@ -225,6 +229,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Assert what the reader sees, not what the source says](../kb-notes/methodology-assert-what-the-reader-sees.md) | methodology | published | 2026-08-11 | 2026-08-12 |
 | [Audit by rendered value, not by file — thousands of failures collapse to a few source lines](../kb-notes/methodology-audit-by-rendered-value-not-by-file.md) | methodology | published | 2026-09-04 | 2026-09-04 |
 | [Auto-layout tables silently park columns off-pane: diagnose with the inspector, defend with fixed layout](../kb-notes/methodology-fixed-table-layout-off-pane-columns.md) | methodology | published | 2026-06-11 |  |
+| [Before building a whole, check whether the halves are already assigned](../kb-notes/methodology-before-building-a-whole-check-whether-the-halves-are-already-assigned.md) | methodology | published | 2026-09-15 | 2026-09-15 |
 | [Before repairing a field, check whether the record already holds a better signal](../kb-notes/methodology-the-record-may-already-hold-a-better-signal-than-the-field-you-are-repairing.md) | methodology | published | 2026-08-14 | 2026-08-14 |
 | [Bucket military and non-military credit recommendations before you total them](../kb-notes/methodology-bucket-military-and-non-military-credit-recommendations.md) | methodology | published | 2026-08-13 | 2026-08-13 |
 | [Build a hierarchy from dotted ids without migrating stored keys](../kb-notes/methodology-tree-from-dotted-ids-stable-keys.md) | methodology | published | 2026-06-26 | 2026-06-26 |
@@ -339,6 +344,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Resolving the V4 articulation-ripple gate when folding a CER unclassified title](../kb-notes/methodology-cer-fold-articulation-ripple-sync.md) | methodology | published | 2026-06-03 | 2026-06-03 |
 | [Retire a global dial into per-item dials without moving any numbers](../kb-notes/methodology-retire-a-global-dial-into-per-item-dials.md) | methodology | published | 2026-08-04 | 2026-08-04 |
 | [Retire a mode toggle by making both modes coexist](../kb-notes/methodology-retire-a-mode-toggle-by-coexistence.md) | methodology | published | 2026-07-30 | 2026-07-30 |
+| [Retiring a behavior means inverting its tests, not deleting them](../kb-notes/methodology-retiring-a-behavior-means-inverting-its-tests.md) | methodology | published | 2026-09-15 | 2026-09-15 |
 | [Retiring a structure means rewriting its guard, not deleting it](../kb-notes/methodology-retiring-a-structure-means-rewriting-its-guard.md) | methodology | published | 2026-09-14 | 2026-09-14 |
 | [Retiring an auto-seeded data layer — check for curator decisions riding on it](../kb-notes/methodology-retiring-an-auto-seeded-layer.md) | methodology | published | 2026-05-30 | 2026-05-30 |
 | [Reuse the model, not its formula — a derivation can be wrong for cases its special case never touches](../kb-notes/methodology-reuse-the-model-not-its-formula.md) | methodology | published | 2026-08-11 | 2026-08-22 |
