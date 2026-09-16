@@ -30,7 +30,7 @@ You are picking up a live workstream that Sam, Ashley and Sigrid drove through
 a working meeting on 2026-09-16. Read in this order:
 
 1. `docs/reference/lanes/partner-crosswalks.md` — the lane, current truth
-2. `docs/regional_cpl_opportunity_lessons.md` — the two 2026-09-16 sections
+2. `docs/regional_cpl_opportunity_lessons.md` — the three 2026-09-16 sections
 3. `docs/kb-notes/methodology-a-freehand-catalog-needs-an-authority-file-not-a-vote.md`
 4. `CPLBrain/03-professional/braindumps/braindump-2026-09-16-1420-never-had-a-table-of-active-certificates-and-licenses.md`
 
@@ -124,6 +124,30 @@ Also corrected in rendered text while there: "Read these as suggestions, not
 answers" used the contrastive frame Sam ruled against the same day, and carried a
 British spelling of program.
 
+## Where PR #1576 stands
+
+**Open, ready for review, blocked on someone else's red test.** Head `374de70`,
+23 commits, merged up to `main` (`2c95b36`) with no conflict. TruffleHog green.
+`test` red on 2 of 337, both funding, both red on `main` untouched — see the
+funding block above. A check-in re-arms hourly and **merges the moment `test`
+goes green**, then unsubscribes. Do not merge past it, and do not re-run: the
+one sanctioned re-run is spent and confirmed the failure stable.
+
+⚠️ **If a THIRD file starts failing, that one is yours.** The two named above
+are the known baseline; anything beyond them came from this branch.
+
+## Ashley asked where the tab goes, and got this answer
+
+She checked in near the end of the session. The answer given, which matches
+Sam's ruling: **inside the My College tab**, behind the scope picker that tab
+already carries, single pick by default with multi-select for meetings. The
+reason to repeat back if asked again — a separate tab means a second copy of the
+college, district and region lists, and the second copy goes stale the day
+someone updates the first.
+
+She was also told what the accuracy caveat says, and that the 369 California
+licenses are the "what might this student already hold" column she asked for.
+
 ## Carryover
 
 | Item | State |
@@ -137,6 +161,8 @@ British spelling of program.
 | Credential Engine API | **Sam + Malone own it.** Not yours |
 | ASCCC (Academic Senate) areas | **NEEDS SAM** — every Supabase column matching area/senate/asccc/zone/region was searched, none carries them |
 | Flip SWP scope to `ready: true` in `college_briefing.js`, add `--swp-region` | small, unblocked |
+| The To-Do feed's 16 parked items | `kb/cpl_todos.json` `_deferred` — none is done; promote one back into `items` when it goes live |
+| PR #1576 | merges itself once the funding lane clears its two tests |
 
 ## Patterns that worked
 
