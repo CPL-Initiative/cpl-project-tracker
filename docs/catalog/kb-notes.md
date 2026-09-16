@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-445 document(s).
+446 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -183,6 +183,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A test that only fails under load is racing a timer the product owns](../kb-notes/methodology-a-test-that-only-fails-under-load-is-racing-a-timer.md) | methodology | published | 2026-09-06 | 2026-09-06 |
 | [A test that writes to the queue it monitors — CI noise is indistinguishable from user signal](../kb-notes/methodology-a-test-that-writes-to-the-queue-it-monitors.md) | methodology | published | 2026-08-07 | 2026-08-07 |
 | [A text measure must agree with what sits beside it](../kb-notes/methodology-a-text-measure-must-agree-with-what-sits-beside-it.md) | methodology | published | 2026-08-22 | 2026-08-22 |
+| [A title match must cover the title, not merely touch it](../kb-notes/methodology-a-title-match-must-cover-the-title-not-touch-it.md) | methodology | published | 2026-09-16 | 2026-09-16 |
 | [A token that cannot flip is a surface that cannot theme — the four shapes, and why every one of them reads as correct code](../kb-notes/methodology-a-token-that-cannot-flip-is-a-surface-that-cannot-theme.md) | methodology | published | 2026-09-09 | 2026-09-10 |
 | [A token with two jobs cannot be themed — count a token's uses by ROLE before you give it a dark value](../kb-notes/methodology-a-token-with-two-jobs-cannot-be-themed.md) | methodology | published | 2026-09-08 | 2026-09-08 |
 | [A total that balances is not a total that is right](../kb-notes/methodology-a-total-that-balances-is-not-a-total-that-is-right.md) | methodology | published | 2026-08-23 | 2026-08-23 |

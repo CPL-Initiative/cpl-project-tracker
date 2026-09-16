@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 445,
+   "count": 446,
    "docs": [
     {
      "created": "2026-08-14",
@@ -3278,6 +3278,25 @@
      "title": "A text measure must agree with what sits beside it",
      "type": "methodology",
      "updated": "2026-08-22"
+    },
+    {
+     "created": "2026-09-16",
+     "governs": [
+      "kb/_build_regional_cpl_opportunity.py"
+     ],
+     "path": "docs/kb-notes/methodology-a-title-match-must-cover-the-title-not-touch-it.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "matching",
+      "crosswalk",
+      "occupations",
+      "soc",
+      "data-quality"
+     ],
+     "title": "A title match must cover the title, not merely touch it",
+     "type": "methodology",
+     "updated": "2026-09-16"
     },
     {
      "created": "2026-09-09",
@@ -9012,7 +9031,7 @@
   },
   {
    "blurb": "Workstream scratchpads. A dated section is appended at every checkpoint.",
-   "count": 78,
+   "count": 79,
    "docs": [
     {
      "created": "2026-08-14",
@@ -10428,6 +10447,31 @@
       "filter-state"
      ],
      "title": "Quick-start Chat \u2014 Workstream Lessons",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-09-16",
+     "governs": [
+      "kb/_build_regional_cpl_opportunity.py",
+      "kb/reference/coe_occupation_demand_2024_2029.json",
+      "kb/reference/bay_region_coe_demand_2024_2029.json",
+      "kb/regional_cpl_out/"
+     ],
+     "path": "docs/regional_cpl_opportunity_lessons.md",
+     "status": null,
+     "tags": [
+      "lessons",
+      "crosswalk",
+      "regional",
+      "occupations",
+      "colleges",
+      "cpl",
+      "coe",
+      "swp",
+      "handout"
+     ],
+     "title": "Regional CPL opportunity (region occupations \u00d7 colleges) \u2014 lessons",
      "type": null,
      "updated": ""
     },
@@ -13191,8 +13235,27 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 236,
+   "count": 237,
    "docs": [
+    {
+     "created": "2026-09-16",
+     "governs": [],
+     "n": 263,
+     "path": "docs/session_263_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "session-263",
+      "crosswalk",
+      "regional",
+      "coe",
+      "swp",
+      "my-college"
+     ],
+     "title": "regional CPL opportunity, and a matcher that needs a rule",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-14",
      "governs": [],
@@ -17185,5 +17248,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 891
+ "total": 894
 }

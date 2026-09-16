@@ -250,7 +250,8 @@ def college_capability(college, R):
             continue
         for row in (courses.get(str(i)) or []):
             cat.append(dict(subj=str(row[0]).strip(), num=str(row[1]).strip(),
-                            title=str(row[2]).strip()))
+                            title=str(row[2]).strip(),
+                            units=(row[3] if len(row) > 3 else None)))
     return progs, cat
 
 
@@ -294,7 +295,25 @@ PRIORITY = {
 }
 
 
-def build(colleges, occ_path, region_label, why=None):
+def load_occupations(occ_path, occ_region=None):
+    """The statewide COE file carries all nine regions (4,869 rows). Matching the
+    whole thing against one college is nine times the work for one region's answer,
+    so a multi-region file MUST be filtered."""
+    doc = jload(occ_path)
+    occs = doc["occupations"] if isinstance(doc, dict) else doc
+    codes = {o.get("region_code") for o in occs if o.get("region_code")}
+    if len(codes) > 1:
+        if not occ_region:
+            raise SystemExit("%s carries %d regions (%s). Pass --occ-region."
+                             % (occ_path, len(codes), ", ".join(sorted(codes))))
+        occs = [o for o in occs if o.get("region_code") == occ_region]
+        if not occs:
+            raise SystemExit("No rows for --occ-region %r. Known: %s"
+                             % (occ_region, ", ".join(sorted(codes))))
+    return occs
+
+
+def build(colleges, occ_path, region_label, why=None, occ_region=None):
     """Cross a region's occupation list against EVERY selected college at once.
     The exhibit match is college-independent, so it is computed once and only the
     adoption check varies per college — 541 occupations x 2,617 exhibit titles is
@@ -303,8 +322,7 @@ def build(colleges, occ_path, region_label, why=None):
     canon_all = [R(c) or c for c in colleges]
     ex = map_exhibits(None)
 
-    occ_doc = jload(occ_path)
-    occs = occ_doc["occupations"] if isinstance(occ_doc, dict) else occ_doc
+    occs = load_occupations(occ_path, occ_region)
 
     ex_titles = list(ex.keys())
     mx = Matcher(ex_titles)
@@ -351,7 +369,9 @@ def build_one(canon, occs, occ_ex, ex, R):
             fit=fit, exhibit_status=st, priority=pri, priority_label=label,
             programs=[p["title"] for p, _ in pm[:4]],
             program_evidence="; ".join(sorted({t for _, h in pm[:4] for t in h["shared"]})),
-            courses=[f"{c['subj']} {c['num']} — {c['title']}" for c, _ in cm[:5]],
+            courses=[f"{c['subj']} {c['num']} — {c['title']}"
+                     + (f" ({c['units']} units)" if c.get("units") else "")
+                     for c, _ in cm[:5]],
             exhibits=xt[:4],
             exhibit_ids=sorted({i for t in xt[:4] for i in ex[t]["ids"]})[:4],
             exhibits_adopted=on_it[:4],
@@ -399,7 +419,8 @@ def aggregate(occs, per, occ_ex, ex, colleges):
             n_teaching=len(teaches), teaching=teaches,
             n_partial=len(partial), partial=partial,
             already_on_it=on_it, could_adopt=adopt, could_build=build,
-            evidence={c: (m[c]["programs"][:2] or m[c]["courses"][:2]) for c in teaches}))
+            evidence={c: (m[c]["programs"][:2] or m[c]["courses"][:2]) for c in teaches},
+            courses={c: m[c]["courses"][:4] for c in colleges if m[c]["courses"]}))
     rank = {"Adopt": 0, "Build first-in-state": 1, "Already held": 2,
             "Exhibit exists": 3, "No exhibit, no programs": 4}
     out.sort(key=lambda r: (rank[r["headline"]], -r["n_teaching"], r["occupation"].lower()))
@@ -644,6 +665,9 @@ def main():
                          "that roster does not exist in this repo yet.")
     ap.add_argument("--occupations", required=True)
     ap.add_argument("--region-label", default="the region")
+    ap.add_argument("--occ-region", default=None,
+                    help="region code to filter a multi-region occupation file "
+                         "(Bay, CVML, FN, GS, IE/D, LA, OC, SCC, SD/I)")
     ap.add_argument("--slug", required=True)
     a = ap.parse_args()
 
@@ -652,7 +676,7 @@ def main():
     if not colleges:
         raise SystemExit("Select at least one --college, --district or --region.")
 
-    res = build(colleges, a.occupations, a.region_label, why)
+    res = build(colleges, a.occupations, a.region_label, why, a.occ_region)
     date = datetime.date.today().isoformat()
     out = os.path.join(ROOT, "kb/regional_cpl_out", f"{date}-{a.slug}")
     os.makedirs(out, exist_ok=True)
@@ -797,16 +821,17 @@ def write_handout(path, res, xlsx_path):
                 continue
             P.append('<p class="band">%s</p>' % E(label))
             head3 = "MAP exhibit to adopt" if key == "adopt" else "Your courses that carry it"
-            P.append('<table><colgroup><col style="width:34%"><col style="width:20%">'
-                     '<col style="width:46%"></colgroup><thead><tr>'
-                     '<th scope="col">Occupation</th><th scope="col">Entry level</th>'
-                     '<th scope="col">' + E(head3) + "</th></tr></thead><tbody>")
+            P.append('<table><colgroup><col style="width:26%"><col style="width:30%">'
+                     '<col style="width:44%"></colgroup><thead><tr>'
+                     '<th scope="col">Occupation</th><th scope="col">' + E(head3) + '</th>'
+                     '<th scope="col">Your courses and units</th></tr></thead><tbody>')
             for r in sorted(items, key=lambda z: z["occupation"].lower())[:25]:
-                right = ("; ".join(r["exhibits"][:2]) if key == "adopt"
-                         else "; ".join(r["evidence"].get(col, [])[:2])) or "—"
-                edu = (r["education"] or "").replace(" or equivalent", "")
-                P.append("<tr><td>%s</td><td class=\"q\">%s</td><td class=\"q\">%s</td></tr>"
-                         % (E(r["occupation"]), E(edu), E(right)))
+                mid = ("; ".join(r["exhibits"][:2]) if key == "adopt"
+                       else "No exhibit exists in California") or "—"
+                crs = r.get("courses", {}).get(col) or r["evidence"].get(col) or []
+                cell = "<br>".join(E(c) for c in crs[:4]) or "—"
+                P.append('<tr><td>' + E(r["occupation"]) + '</td><td class="q">' + E(mid)
+                         + '</td><td class="q">' + cell + "</td></tr>")
             P.append("</tbody></table>")
             if len(items) > 25:
                 P.append('<p class="q" style="font-size:.82rem;margin:.5em 0 0">'
