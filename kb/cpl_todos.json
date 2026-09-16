@@ -72,9 +72,9 @@
   },
   {
    "id": "s266-funding-session-tests-unpin",
-   "for": "Fable",
+   "for": "Sam",
    "tab": "implementation-funding",
-   "text": "FOR THE FUNDING SESSION (Sam, 2026-09-16: \"that's the funding session's work to resolve\"). Two funding tests are red on main and block every open PR: the measure picker and the metric pin each check a fixed number — 826.8 CPL FTES, 25 units — against figures the daily dashboard rewrites, so they go red on a day nobody changed any code. Read the number from the same data the page reads, or freeze the test's own copy of it."
+   "text": "NEEDS RESOLVING, and Sam has asked for help reading it when he returns to this lane. Two automatic checks on the funding tab are failing. Nothing is broken: each check has an exact number written inside it (826.8 CPL FTES, and 25 units) that was right the day it was written, and the daily dashboard recalculates that number every morning. It is a stopped clock rather than a fire. It still matters, because we never merge past a failing check, so every open pull request is stuck behind these two. The fix is to let the check read the figure from the same place the page reads it. Full explanation in docs/reference/lanes/implementation-funding.md."
   }
  ],
  "_deferred": [
