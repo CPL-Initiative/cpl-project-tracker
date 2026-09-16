@@ -2041,6 +2041,38 @@ Mapped to the page's own `--focus-ring` rather than to the gold hex it names, be
 target passes clean now. **A token that resolves on one page and not another is not a styling
 detail; it is a control with no visible state, and only the sweep says so.**
 
+### A shared section id is a shared control
+
+Sam then asked for the section titles to use the model's language, which is how the worst defect of
+the run got found — by reading the tab's own section names beside the explainer's.
+
+The tab's sections are `about · college · window · pools · formula · eligibility · priorities ·
+timing`. The new section I had just shipped was **`priorities`**. Curation is id-keyed:
+`sectionCuration(id)` resolves `titles[id]` and `secHidden[id]` out of the shared config, and the
+config carries a **live** `titles.priorities` — Sam's own rename of the tab's section to *"Funding
+Outcomes of Ed. Code §78093.2(d)(1)"*. So the explainer's h2 was being replaced by the tab's title,
+and hiding the tab's priorities section would have hidden the explainer's. Reproduced against the
+stored value before renaming it to `outcomes`.
+
+The rule was already written down. `cpl_funding.js` carries a long comment explaining why the
+explainer's ids are **not** aliased onto the tab's — *"a semantic alias would make one hide mean two
+different things on two pages and be wrong in a way nobody could see from either"* — and names
+`timing` as the one deliberate collision. I read that comment while adding the section and still
+picked a colliding id, because the comment argues against *deliberate* aliasing and an accidental
+one looks like neither.
+
+**A documented invariant with no guard is a convention, and conventions lose to autocomplete.** The
+check now reads `SECTION_HOUSE_ORDER` out of the source rather than copying it (a third copy would
+go stale exactly when the tab adds a section), lists `timing` as the single exemption so a second
+one has to be typed in and justified, and asserts that the scan can see a collision at all.
+
+Mutation notes, because two of them were instructive: renaming a section id in the markup alone
+fails four *other* assertions before mine, so the guard had to be tested on the path it is actually
+for — markup, declaration and the suite's own list all renamed together. And renaming
+`SECTION_HOUSE_ORDER` in the source to break the read is too destructive to be a mutation at all: it
+breaks the module. The realistic drift is a **reformat** — single quotes instead of double — which
+leaves the code working and the regex matching nothing, and that one the guard catches by name.
+
 ### Patterns that worked
 
 - **Measuring the complaint before designing the fix.** "Doesn't fit" became "1,039 in 942 with
@@ -2053,3 +2085,6 @@ detail; it is a control with no visible state, and only the sweep says so.**
 - **Reading the redirect before answering the question.** Sam asked whether to keep this page as
   the public view; `cpl_funding_public.html` already carries the answer, and the reason is a
   disclosure bug rather than a preference.
+- **Taking the small ask seriously.** "Align the section titles with the model's language" reads
+  like a copy-edit. Doing it meant listing the tab's section names beside the page's, which is the
+  only reason the id collision was ever seen.

@@ -603,11 +603,11 @@ check("the status line is empty on a successful paint",
 //     visitor reads.
 {
   const T2 = win.CPL_FUNDING_TAB;
-  // `priorities` added 2026-09-15 (Sam: "a brief integration of the priorities
+  // `outcomes` added 2026-09-15 (Sam: "a brief integration of the priorities
   // and timeline"). The three priorities and the milestone list moved out of
   // the two folds that held them into one open section between the table and
   // the steps.
-  const IDS = ["lede", "institutions", "priorities", "allocation", "qualify",
+  const IDS = ["lede", "institutions", "outcomes", "allocation", "qualify",
                "earning", "timing", "choices"];
   const secs = Array.from(doc.querySelectorAll("[data-fsec]"));
   check("every section carries a data-fsec id, in page order",
@@ -617,10 +617,45 @@ check("the status line is empty on a successful paint",
     !doc.querySelector("footer[data-fsec]") &&
     /working model for discussion, not adopted policy/.test(doc.querySelector("footer").textContent));
 
+  // ⚠️ AN EXPLAINER SECTION MAY NOT SHARE AN ID WITH A TAB SECTION (except the
+  // one that does on purpose). This is not tidiness — curation is id-keyed, so
+  // a shared id means a curator's rename or hide on the TAB silently reaches
+  // this page. `outcomes` shipped for one commit as `priorities`, which is a
+  // tab section carrying the LIVE override "Funding Outcomes of Ed. Code
+  // §78093.2(d)(1)": the explainer's own h2 was replaced by it, and hiding the
+  // tab's priorities section hid this one too. Reproduced against the stored
+  // value before the rename.
+  //
+  // `timing` is the ONE deliberate collision — one subject, one switch — and it
+  // is named here so that adding a second requires editing this line and saying
+  // why, rather than inheriting the exemption by accident.
+  {
+    // ⚠️ THE TAB'S IDS ARE READ FROM THE SOURCE, not copied here. A typed copy
+    // is the same mistake one level up: the tab adds a section, this list does
+    // not, and the guard goes quiet about exactly the id that was just added.
+    const tabSrc = fs.readFileSync(path.join(ROOT, "cpl_funding.js"), "utf8");
+    const m = tabSrc.match(/var SECTION_HOUSE_ORDER = \[([\s\S]*?)\];/);
+    const TAB_IDS = m ? (m[1].match(/"([a-z_]+)"/g) || []).map((q) => q.slice(1, -1)) : [];
+    check("the tab's own section ids were read out of the source (the scan has input)",
+      TAB_IDS.length >= 8 && TAB_IDS.indexOf("priorities") >= 0);
+    const DELIBERATE = ["timing"];
+    const collisions = IDS.filter((id) => TAB_IDS.indexOf(id) >= 0 &&
+                                          DELIBERATE.indexOf(id) < 0);
+    check("no explainer section shares an id with a tab section, beyond the " +
+          "deliberate `timing`" +
+          (collisions.length ? " — collides: " + collisions.join(", ") : ""),
+      collisions.length === 0);
+    // The scan has to be able to fail, or it is decoration: `timing` IS in both
+    // lists, so the detector sees a real collision and only the exemption
+    // spares it.
+    check("...and the collision scan actually detects one (it sees `timing`)",
+      IDS.indexOf("timing") >= 0 && TAB_IDS.indexOf("timing") >= 0);
+  }
+
   const qualify = doc.querySelector('[data-fsec="qualify"]');
   const house = qualify.querySelector("h2").textContent;
   check("with no overrides, the house titles render and nothing is hidden",
-    /What a college has to do to qualify/.test(house) && secs.every((s2) => !s2.hidden));
+    /Eligibility requirements/.test(house) && secs.every((s2) => !s2.hidden));
 
   T2._setShared({ titles: { qualify: "Baseline <b>requirements</b>" }, secHidden: { timing: true } });
   win.CPL_CURATE_SECTIONS();

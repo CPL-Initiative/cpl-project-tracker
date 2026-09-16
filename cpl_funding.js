@@ -2785,18 +2785,25 @@
   // NO CONTROL ANYWHERE emitted six of the seven ids.
   var PUBLIC_SECTIONS = [
     { id: "lede",         label: "Introduction and the headline figures" },
-    { id: "institutions", label: "Every institution" },
+    { id: "institutions", label: "Max award by institution" },
     // The priorities and the milestones, together and unfolded (Sam,
     // 2026-09-15: "a brief integration of the priorities and timeline"). They
     // were one fold apart before — the three things that count sat inside Step
     // three and the dates inside Step four, so a reader who opened neither
-    // learned neither. The mechanics stay in those steps; this section is what
-    // counts and when.
-    { id: "priorities",   label: "What counts, and when" },
-    { id: "allocation",   label: "How much each institution is allocated" },
-    { id: "qualify",      label: "What a college has to do to qualify" },
+    // learned neither. The mechanics stay in those steps.
+    //
+    // ⚠️ THE ID IS `outcomes`, NOT `priorities`, AND THAT IS NOT A PREFERENCE.
+    // It shipped as `priorities` for one commit and collided with the TAB's own
+    // section of that name — which carries a LIVE title override
+    // ("Funding Outcomes of Ed. Code §78093.2(d)(1)") — so the explainer's h2
+    // was silently replaced by the tab's, and hiding the tab's priorities
+    // section hid this one too. Reproduced with the stored value before the
+    // rename. `timing` remains the ONE deliberate collision.
+    { id: "outcomes",     label: "Funding outcomes and milestones" },
+    { id: "allocation",   label: "How an allocation is computed" },
+    { id: "qualify",      label: "Eligibility requirements" },
     { id: "earning",      label: "How outcomes count toward funding" },
-    { id: "timing",       label: "When the funding is disbursed" },
+    { id: "timing",       label: "Disbursement and the funding window" },
     { id: "choices",      label: "What is a choice, and what is a given" }
   ];
   function publicHouseOrder() {
