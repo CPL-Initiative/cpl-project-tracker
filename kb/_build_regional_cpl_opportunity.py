@@ -179,6 +179,56 @@ def make_resolver():
     return R, DM
 
 
+# ── who is in the room ───────────────────────────────────────────────────────
+IDENTITY = "kb/college_identity/2026-08-23/crosswalk.json"
+
+
+def identity_rows():
+    """The committed college/district taxonomy: 120 entities, 73 districts.
+    ⚠️ IT CARRIES NO REGION FIELD OF ANY KIND — checked 2026-09-16. Strong
+    Workforce consortia and ASCCC areas exist nowhere in this repo, which is why
+    `college_briefing.js` ships those two scopes DISABLED with their reason. Do
+    not substitute the ~10-way `college_geo.region` proximity scheme: SWP has
+    eight consortia on different boundaries, and mis-grouping a college's peers
+    on a page people act on is worse than the filter being absent."""
+    return jload(IDENTITY)["colleges"]
+
+
+def select_colleges(names, districts, region, R):
+    """Resolve a multi-select into a set of canonical college names, and say
+    where each came from so the page can show the filter that produced it."""
+    rows = identity_rows()
+    by_district = defaultdict(list)
+    for r in rows:
+        if r.get("district") and r.get("entity_kind") == "college":
+            by_district[r["district"]].append(r["college_name"])
+
+    picked, why = {}, {}
+    for n in (names or []):
+        c = R(n) or n
+        picked[c] = True
+        why[c] = "college"
+    for d in (districts or []):
+        matches = [k for k in by_district if k.lower() == d.lower()] or \
+                  [k for k in by_district if d.lower() in k.lower()]
+        if not matches:
+            raise SystemExit("No district matches %r. Known districts: %d — try e.g. %r"
+                             % (d, len(by_district), sorted(by_district)[0]))
+        for k in matches:
+            for c in by_district[k]:
+                c = R(c) or c
+                picked.setdefault(c, True)
+                why.setdefault(c, "district: %s" % k)
+    if region:
+        DM = jload("kb/fire_electrical_domain_map.json")
+        for r in DM["receipts"]["college_courses"]:
+            if r["region"].lower() == region.lower():
+                c = R(r["college"]) or r["college"]
+                picked.setdefault(c, True)
+                why.setdefault(c, "region: %s" % r["region"])
+    return sorted(picked), why
+
+
 # ── the college's own capability ─────────────────────────────────────────────
 def college_capability(college, R):
     """What this college actually offers: Active/Approved COCI programs (CTE flagged)
@@ -205,7 +255,7 @@ def college_capability(college, R):
 
 
 # ── MAP: which credentials exist, and is this college on them ────────────────
-def map_exhibits(college):
+def map_exhibits(_unused=None):
     """unified title -> exhibit ids, adopters, potential, cpl types, discipline."""
     sw = load_window_json("statewide_data.js")
     info = defaultdict(lambda: dict(ids=set(), adopt=set(), pot=set(), types=set(),
@@ -244,20 +294,41 @@ PRIORITY = {
 }
 
 
-def build(college, occ_path, region_label):
+def build(colleges, occ_path, region_label, why=None):
+    """Cross a region's occupation list against EVERY selected college at once.
+    The exhibit match is college-independent, so it is computed once and only the
+    adoption check varies per college — 541 occupations x 2,617 exhibit titles is
+    the expensive half and it should not run N times."""
     R, DM = make_resolver()
-    canon = R(college) or college
-    progs, cat = college_capability(canon, R)
-    ex = map_exhibits(canon)
+    canon_all = [R(c) or c for c in colleges]
+    ex = map_exhibits(None)
 
     occ_doc = jload(occ_path)
     occs = occ_doc["occupations"] if isinstance(occ_doc, dict) else occ_doc
 
-    prog_titles = [p["title"] for p in progs]
-    course_titles = [c["title"] for c in cat]
     ex_titles = list(ex.keys())
-    mp, mc, mx = Matcher(prog_titles), Matcher(course_titles), Matcher(ex_titles)
+    mx = Matcher(ex_titles)
+    occ_ex = {}
+    for o in occs:
+        t = o.get("title") or o.get("occupation") or ""
+        hits = [(x, h) for x in ex_titles if (h := mx.hit(t, x))]
+        hits.sort(key=lambda z: -z[1]["score"])
+        occ_ex[t] = [x for x, _ in hits[:4]]
 
+    per = {}
+    for canon in canon_all:
+        per[canon] = build_one(canon, occs, occ_ex, ex, R)
+
+    agg = aggregate(occs, per, occ_ex, ex, canon_all)
+    return dict(colleges=canon_all, why=why or {}, region=region_label,
+                n_occupations=len(agg), per_college={c: v["summary"] for c, v in per.items()},
+                rows=agg, detail=per)
+
+
+def build_one(canon, occs, occ_ex, ex, R):
+    progs, cat = college_capability(canon, R)
+    mp = Matcher([p["title"] for p in progs])
+    mc = Matcher([c["title"] for c in cat])
     rows = []
     for o in occs:
         title = o.get("title") or o.get("occupation") or ""
@@ -270,15 +341,9 @@ def build(college, occ_path, region_label):
         cm.sort(key=lambda x: -x[1]["score"])
         fit = "confirmed" if pm else ("partial" if cm else "none")
 
-        xm = [(t, h) for t in ex_titles if (h := mx.hit(title, t))]
-        xm.sort(key=lambda x: -x[1]["score"])
-        on_it = [t for t, _ in xm if canon in ex[t]["adopt"]]
-        if on_it:
-            st = "on_it"
-        elif xm:
-            st = "exists"
-        else:
-            st = "nowhere"
+        xt = occ_ex.get(title, [])
+        on_it = [t for t in xt if canon in ex[t]["adopt"]]
+        st = "on_it" if on_it else ("exists" if xt else "nowhere")
 
         pri, label = PRIORITY[(fit, st)]
         rows.append(dict(
@@ -287,18 +352,58 @@ def build(college, occ_path, region_label):
             programs=[p["title"] for p, _ in pm[:4]],
             program_evidence="; ".join(sorted({t for _, h in pm[:4] for t in h["shared"]})),
             courses=[f"{c['subj']} {c['num']} — {c['title']}" for c, _ in cm[:5]],
-            exhibits=[t for t, _ in xm[:4]],
-            exhibit_ids=sorted({i for t, _ in xm[:4] for i in ex[t]["ids"]})[:4],
+            exhibits=xt[:4],
+            exhibit_ids=sorted({i for t in xt[:4] for i in ex[t]["ids"]})[:4],
             exhibits_adopted=on_it[:4],
-            cpl_types=sorted({y for t, _ in xm[:4] for y in ex[t]["types"]}),
-            n_programs=len(pm), n_courses=len(cm), n_exhibits=len(xm)))
+            cpl_types=sorted({y for t in xt[:4] for y in ex[t]["types"]}),
+            n_programs=len(pm), n_courses=len(cm), n_exhibits=len(xt)))
 
     rows.sort(key=lambda r: (r["priority"], -r["n_programs"], r["occupation"].lower()))
     grid = Counter((r["fit"], r["exhibit_status"]) for r in rows)
-    return dict(college=canon, region=region_label,
-                n_programs=len(progs), n_cte=sum(1 for p in progs if p["cte"]),
-                n_courses=len(cat), n_occupations=len(rows),
-                grid={f"{a}|{b}": n for (a, b), n in grid.items()}, rows=rows)
+    return dict(rows=rows, summary=dict(
+        college=canon, n_programs=len(progs), n_cte=sum(1 for p in progs if p["cte"]),
+        n_courses=len(cat),
+        adopt_now=grid.get(("confirmed", "exists"), 0),
+        already=grid.get(("confirmed", "on_it"), 0),
+        build=grid.get(("confirmed", "nowhere"), 0)))
+
+
+def aggregate(occs, per, occ_ex, ex, colleges):
+    """One row per OCCUPATION, naming which colleges could act and how. A regional
+    meeting has several colleges in the room; the useful unit is the occupation,
+    with the colleges listed against it — not N separate reports to cross-read."""
+    byocc = {}
+    for c in colleges:
+        for r in per[c]["rows"]:
+            byocc.setdefault(r["occupation"], {})[c] = r
+    out = []
+    for o in occs:
+        t = o.get("title") or o.get("occupation") or ""
+        if not t or t not in byocc:
+            continue
+        m = byocc[t]
+        teaches = [c for c in colleges if m[c]["fit"] == "confirmed"]
+        partial = [c for c in colleges if m[c]["fit"] == "partial"]
+        xt = occ_ex.get(t, [])
+        on_it = [c for c in colleges if m[c]["exhibit_status"] == "on_it"]
+        adopt = [c for c in teaches if c not in on_it and xt]
+        build = [c for c in teaches if not xt]
+        if xt:
+            head = "Adopt" if adopt else ("Already held" if on_it else "Exhibit exists")
+        else:
+            head = "Build first-in-state" if teaches else "No exhibit, no programs"
+        out.append(dict(
+            occupation=t, soc=o.get("soc", ""), education=o.get("education", ""),
+            headline=head, exhibits=xt[:3],
+            exhibit_ids=sorted({i for x in xt[:3] for i in ex[x]["ids"]})[:3],
+            n_teaching=len(teaches), teaching=teaches,
+            n_partial=len(partial), partial=partial,
+            already_on_it=on_it, could_adopt=adopt, could_build=build,
+            evidence={c: (m[c]["programs"][:2] or m[c]["courses"][:2]) for c in teaches}))
+    rank = {"Adopt": 0, "Build first-in-state": 1, "Already held": 2,
+            "Exhibit exists": 3, "No exhibit, no programs": 4}
+    out.sort(key=lambda r: (rank[r["headline"]], -r["n_teaching"], r["occupation"].lower()))
+    return out
 
 
 # ── outputs ──────────────────────────────────────────────────────────────────
@@ -307,20 +412,16 @@ from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.utils import get_column_letter
 
 NAVY, LIGHT, RULE = "002F6D", "EEF3FA", "C9D6E8"
-COLS = [("Priority", 9), ("What this means", 46), ("Occupation", 40), ("SOC", 10),
-        ("Entry level", 26), ("Do you teach it?", 16), ("Your programs", 40),
-        ("Your courses", 40), ("Exhibit exists?", 16), ("MAP exhibit", 38),
-        ("Exhibit ID", 20), ("CPL type", 22)]
-KEYS = ["priority", "priority_label", "occupation", "soc", "education", "fit",
-        "programs", "courses", "exhibit_status", "exhibits", "exhibit_ids", "cpl_types"]
-FIT_WORD = {"confirmed": "Yes — program", "partial": "Partly — courses", "none": "No"}
-EX_WORD = {"on_it": "Yes — you are on it", "exists": "Yes — not you", "nowhere": "None in MAP"}
+COLS = [("What to do", 22), ("Occupation", 42), ("SOC", 10), ("Entry level", 26),
+        ("Colleges that teach it", 15), ("Could adopt — the exhibit exists", 46),
+        ("Could build — no exhibit anywhere", 46), ("Already on the exhibit", 34),
+        ("MAP exhibit", 40), ("Exhibit ID", 22)]
+KEYS = ["headline", "occupation", "soc", "education", "n_teaching", "could_adopt",
+        "could_build", "already_on_it", "exhibits", "exhibit_ids"]
 
 
 def write_workbook(path, res):
-    wb = Workbook()
-    ws = wb.active
-    ws.title = "CPL Opportunities"
+    wb = Workbook(); ws = wb.active; ws.title = "CPL Opportunities"
     thin = Side(style="thin", color=RULE)
     for i, (h, w) in enumerate(COLS, 1):
         c = ws.cell(row=1, column=i, value=h)
@@ -328,171 +429,96 @@ def write_workbook(path, res):
         c.fill = PatternFill("solid", fgColor=NAVY)
         c.alignment = Alignment(vertical="center", wrap_text=True)
         ws.column_dimensions[get_column_letter(i)].width = w
-    ws.row_dimensions[1].height = 30
-    ws.freeze_panes = "A2"
+    ws.row_dimensions[1].height = 30; ws.freeze_panes = "A2"
     for ri, r in enumerate(res["rows"], start=2):
         for ci, k in enumerate(KEYS, 1):
             v = r[k]
-            if k == "fit":
-                v = FIT_WORD[v]
-            elif k == "exhibit_status":
-                v = EX_WORD[v]
-            elif isinstance(v, list):
-                v = "; ".join(v)
+            if isinstance(v, list): v = "; ".join(v)
             c = ws.cell(row=ri, column=ci, value=v)
-            c.alignment = Alignment(vertical="top",
-                                    wrap_text=k in ("priority_label", "occupation",
-                                                    "programs", "courses", "exhibits"))
+            c.alignment = Alignment(vertical="top", wrap_text=k not in ("soc", "n_teaching"))
             c.border = Border(bottom=thin)
-            if ri % 2 == 0:
-                c.fill = PatternFill("solid", fgColor=LIGHT)
+            if ri % 2 == 0: c.fill = PatternFill("solid", fgColor=LIGHT)
     ws.auto_filter.ref = f"A1:{get_column_letter(len(COLS))}{max(2, len(res['rows'])+1)}"
 
-    w2 = wb.create_sheet("How to read this")
-    for i, (h, w) in enumerate([("Field", 30), ("Detail", 108)], 1):
+    w2 = wb.create_sheet("Colleges in this view")
+    for i, (h, w) in enumerate([("College", 36), ("Why it is here", 34), ("Programs", 12),
+                                ("CTE", 10), ("Courses", 12), ("Could adopt", 14),
+                                ("Could build", 14), ("Already held", 14)], 1):
         c = w2.cell(row=1, column=i, value=h)
-        c.font = Font(bold=True, color="FFFFFF")
-        c.fill = PatternFill("solid", fgColor=NAVY)
+        c.font = Font(bold=True, color="FFFFFF"); c.fill = PatternFill("solid", fgColor=NAVY)
         w2.column_dimensions[get_column_letter(i)].width = w
+    for ri, (col, sm) in enumerate(sorted(res["per_college"].items()), start=2):
+        for ci, v in enumerate([col, res["why"].get(col, ""), sm["n_programs"], sm["n_cte"],
+                                sm["n_courses"], sm["adopt_now"], sm["build"], sm["already"]], 1):
+            w2.cell(row=ri, column=ci, value=v).alignment = Alignment(vertical="top")
+
+    w3 = wb.create_sheet("How to read this")
+    for i, (h, w) in enumerate([("Field", 28), ("Detail", 110)], 1):
+        c = w3.cell(row=1, column=i, value=h)
+        c.font = Font(bold=True, color="FFFFFF"); c.fill = PatternFill("solid", fgColor=NAVY)
+        w3.column_dimensions[get_column_letter(i)].width = w
     notes = [
-        ("College", res["college"]), ("Region occupation list", res["region"]),
+        ("What a row is", "One job the region has. The columns say which of the selected colleges "
+                          "could act on it, and how."),
+        ("Could adopt", "The college teaches it and a MAP exhibit already exists, but the college is "
+                        "not on that exhibit. This is an articulation — paperwork, not new curriculum."),
+        ("Could build", "The college teaches it and no exhibit exists anywhere in California. Whoever "
+                        "does it is first in the state."),
+        ("Two kinds of blank", "'An exhibit exists and we are not on it' and 'no exhibit exists' look "
+                               "identical in a spreadsheet and are opposite next steps. They are kept "
+                               "in separate columns on purpose."),
+        ("EVERY MATCH IS A CANDIDATE", "Matches are made by comparing wording, not by a curriculum "
+                                       "review. Some will be wrong. The programs and courses behind "
+                                       "each one are in the receipt so a college can reject it on "
+                                       "sight. Faculty decide, always."),
+        ("Region occupation list", res["region"]),
+        ("Colleges selected", "%d — see the 'Colleges in this view' sheet" % len(res["colleges"])),
         ("Built", datetime.date.today().isoformat()),
-        ("What a row is", "One occupation your region has, crossed with whether you teach it and "
-                          "whether a MAP exhibit exists for it."),
-        ("P0 / P1 / P2", "P0 you already hold. P1 is the meeting: you teach it, the exhibit exists, "
-                         "you are not on it — that is an articulation, not new curriculum. P2 you "
-                         "teach it and no exhibit exists anywhere in California, so you would be first."),
-        ("EVERY MATCH IS A CANDIDATE", "Matches are mechanical — made on title wording, not by a "
-                                       "curriculum review. The program, course and exhibit that "
-                                       "produced each row are shown so you can confirm or reject it "
-                                       "on sight. Nothing here is a determination; faculty decide."),
-        ("'Partly — courses'", "No program title matched, but courses did. A real capability can be "
-                               "invisible to a program search — a 10-course apprenticeship can sit "
-                               "under a program named something else entirely."),
-        ("Two kinds of empty", "'Exhibit exists, not you' is an adoption task. 'None in MAP' is a "
-                               "build opportunity. Same blank cell, opposite next step."),
-        ("Your footprint", f"{res['n_programs']} active programs ({res['n_cte']} CTE) · "
-                           f"{res['n_courses']} courses in the COCI catalog"),
         ("Sources", "CCCCO COCI program export and per-college course catalog; MAP statewide exhibit "
                     "extract; the region's occupation list as supplied."),
         ("Questions", "MAP@rccd.edu"),
     ]
     for ri, (k, v) in enumerate(notes, start=2):
-        a = w2.cell(row=ri, column=1, value=k)
-        a.font = Font(bold=True)
+        a = w3.cell(row=ri, column=1, value=k); a.font = Font(bold=True)
         a.alignment = Alignment(vertical="top")
-        w2.cell(row=ri, column=2, value=v).alignment = Alignment(vertical="top", wrap_text=True)
+        w3.cell(row=ri, column=2, value=v).alignment = Alignment(vertical="top", wrap_text=True)
     wb.save(path)
-
-
-def write_page(path, res):
-    g = res["grid"]
-    def cell(f, s): return g.get(f"{f}|{s}", 0)
-    E = html.escape
-    band = [r for r in res["rows"] if r["priority"] in ("P0", "P1", "P2")]
-    parts = ["""<title>CPL opportunities — %s</title><style>
-:root{--ink:#11223a;--muted:#55637a;--line:#c9d6e8;--bg:#f7f9fc;--card:#fff;--navy:#002f6d;
---cobalt:#0047ab;--soft:#eef3fa;--ok:#1d6b3f;--warn:#8a5a00;--measure:none}
-:root:not([data-theme="light"]){}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ink:#e8eef8;--muted:#a8b6cc;
---line:#2b3a52;--bg:#0f1622;--card:#151f2e;--soft:#1b2738;--cobalt:#7da1d4}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);
-font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
-.wrap{max-width:1180px;margin:0 auto;padding-block:28px;padding-left:16px;padding-right:16px}
-h1{font-size:clamp(1.4rem,3vw,2rem);margin:0 0 .2em;color:var(--navy)}
-@media (prefers-color-scheme:dark){h1{color:var(--cobalt)}}
-.sub{color:var(--muted);margin:0 0 1.4em}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin:0 0 26px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
-.card .n{font-size:1.9rem;font-weight:700;color:var(--navy);line-height:1.1}
-@media (prefers-color-scheme:dark){.card .n{color:var(--cobalt)}}
-.card .l{font-weight:600;margin:.25em 0 .1em}.card .d{color:var(--muted);font-size:.9rem}
-h2{font-size:1.15rem;margin:1.8em 0 .5em;color:var(--navy)}
-@media (prefers-color-scheme:dark){h2{color:var(--cobalt)}}
-.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--card)}
-table{border-collapse:collapse;width:100%%;font-size:.9rem;table-layout:fixed}
-th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
-th{background:var(--soft);font-weight:600;position:sticky;top:0}
-td.ev{color:var(--muted);font-size:.85rem}
-.tag{display:inline-block;padding:1px 7px;border:1px solid var(--line);border-radius:999px;
-font-size:.78rem;color:var(--muted);white-space:nowrap}
-.note{background:var(--soft);border:1px solid var(--line);border-left:4px solid var(--cobalt);
-border-radius:8px;padding:12px 15px;margin:0 0 22px;color:var(--ink)}
-@media (max-width:560px){.wrap{padding-block:18px}table{font-size:.82rem}}
-</style><div class="wrap">""" % E(res["college"])]
-    parts.append("<h1>CPL opportunities — %s</h1>" % E(res["college"]))
-    parts.append('<p class="sub">Occupations in %s, crossed with what %s teaches and what MAP already holds. '
-                 "%d active programs (%d CTE) · %d courses · %d occupations examined.</p>"
-                 % (E(res["region"]), E(res["college"]), res["n_programs"], res["n_cte"],
-                    res["n_courses"], res["n_occupations"]))
-    parts.append('<div class="note"><strong>Every match below is a candidate, not a determination.</strong> '
-                 "Matches are made on title wording, not a curriculum review. The program, course and "
-                 "exhibit behind each row are shown so you can confirm or reject it in the room. "
-                 "Faculty decide.</div>")
-    cards = [(cell("confirmed", "exists"), "Adopt now",
-              "You teach it, the exhibit exists, you are not on it. An articulation, not new curriculum."),
-             (cell("confirmed", "nowhere"), "Build first-in-state",
-              "You teach it and no exhibit exists anywhere in California."),
-             (cell("confirmed", "on_it"), "Already yours",
-              "You teach it and you are on the exhibit."),
-             (cell("partial", "exists") + cell("partial", "on_it"), "Worth checking",
-              "Courses look close but no program title matched.")]
-    parts.append('<div class="grid">')
-    for n, l, d in cards:
-        parts.append('<div class="card"><div class="n">%d</div><div class="l">%s</div>'
-                     '<div class="d">%s</div></div>' % (n, E(l), E(d)))
-    parts.append("</div>")
-    parts.append("<h2>The occupations to talk about</h2>")
-    parts.append('<div class="scroll" role="region" aria-label="CPL opportunities by occupation" tabindex="0"><table>')
-    parts.append('<colgroup><col style="width:7%"><col style="width:21%"><col style="width:24%">'
-                 '<col style="width:24%"><col style="width:24%"></colgroup>')
-    parts.append("<thead><tr><th scope=\"col\">Priority</th><th scope=\"col\">Occupation</th>"
-                 "<th scope=\"col\">What you teach</th><th scope=\"col\">What MAP holds</th>"
-                 "<th scope=\"col\">Next step</th></tr></thead><tbody>")
-    for r in band:
-        ev = "; ".join(r["programs"][:2]) or "; ".join(r["courses"][:2]) or "—"
-        mx = "; ".join(r["exhibits"][:2]) or "Nothing in MAP"
-        parts.append("<tr><td><span class=\"tag\">%s</span></td><td>%s<br><span class=\"tag\">%s</span></td>"
-                     "<td class=\"ev\">%s</td><td class=\"ev\">%s</td><td>%s</td></tr>"
-                     % (E(r["priority"]), E(r["occupation"]), E(r["soc"] or "—"), E(ev), E(mx),
-                        E(r["priority_label"])))
-    parts.append("</tbody></table></div>")
-    parts.append('<p class="sub" style="margin-top:22px">Built %s · CCCCO COCI program export and '
-                 "per-college course catalog · MAP statewide exhibit extract · MAP@rccd.edu</p>"
-                 % datetime.date.today().isoformat())
-    parts.append("</div>")
-    with open(path, "w", encoding="utf-8") as fh:
-        fh.write("".join(parts))
 
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--college", required=True)
+    ap.add_argument("--college", action="append", default=[],
+                    help="repeatable; one or many")
+    ap.add_argument("--district", action="append", default=[],
+                    help="repeatable; expands to every college in the district")
+    ap.add_argument("--region", default=None,
+                    help="our internal macro-region. NOT a Strong Workforce consortium — "
+                         "that roster does not exist in this repo yet.")
     ap.add_argument("--occupations", required=True)
     ap.add_argument("--region-label", default="the region")
-    ap.add_argument("--slug", default=None)
+    ap.add_argument("--slug", required=True)
     a = ap.parse_args()
 
-    res = build(a.college, a.occupations, a.region_label)
-    slug = a.slug or re.sub(r"[^a-z0-9]+", "-", res["college"].lower()).strip("-")
-    date = datetime.date.today().isoformat()
-    out = os.path.join(ROOT, "kb/regional_cpl_out", f"{date}-{slug}")
-    os.makedirs(out, exist_ok=True)
+    R, _ = make_resolver()
+    colleges, why = select_colleges(a.college, a.district, a.region, R)
+    if not colleges:
+        raise SystemExit("Select at least one --college, --district or --region.")
 
-    xlsx = os.path.join(out, "%s_%s_CPL_Opportunities.xlsx"
-                        % (date.replace("-", ""), res["college"].replace(" ", "_")))
+    res = build(colleges, a.occupations, a.region_label, why)
+    date = datetime.date.today().isoformat()
+    out = os.path.join(ROOT, "kb/regional_cpl_out", f"{date}-{a.slug}")
+    os.makedirs(out, exist_ok=True)
+    xlsx = os.path.join(out, f"{date.replace('-', '')}_{a.slug}_CPL_Opportunities.xlsx")
     write_workbook(xlsx, res)
-    page = os.path.join(out, "%s_cpl_opportunities.html" % slug)
-    write_page(page, res)
     with open(os.path.join(out, "crosswalk.json"), "w", encoding="utf-8") as fh:
         json.dump(dict(_generated_at=datetime.datetime.now().isoformat(timespec="seconds"),
                        _generated_by="kb/_build_regional_cpl_opportunity.py", **res),
                   fh, indent=1, ensure_ascii=False)
-    g = res["grid"]
-    print("%s — %d occupations | P0 already %d · P1 adopt now %d · P2 build %d"
-          % (res["college"], res["n_occupations"], g.get("confirmed|on_it", 0),
-             g.get("confirmed|exists", 0), g.get("confirmed|nowhere", 0)))
-    print(xlsx); print(page)
+    adopt = sum(1 for r in res["rows"] if r["headline"] == "Adopt")
+    build_n = sum(1 for r in res["rows"] if r["headline"] == "Build first-in-state")
+    print(f"{len(colleges)} colleges | {res['n_occupations']} occupations | "
+          f"adopt {adopt} · build first-in-state {build_n}")
+    print(xlsx)
     return 0
 
 
