@@ -1,0 +1,1495 @@
+{
+ "_source": "credentialfinder.org — California Occupational and Professional Licenses collection",
+ "_owner": "Credential Engine OPEN",
+ "_credential_type": "License (state-issued occupational and professional licensure)",
+ "_member_count_reported": 369,
+ "_captured_by": "Sam Lee (page printed to PDF, uploaded to the session)",
+ "_captured_on": "2026-09-16",
+ "_parsed_on": "2026-09-16",
+ "_coverage": "369 of 369 members — COMPLETE. The capture reached every member of the collection.",
+ "_why_this_matters": "California license titles track occupational titles, so they join to kb/reference/coe_occupation_demand_2024_2029.json by name far better than the national certification collection does. These are also the credentials a California student actually holds, which is what a CPL conversation turns on.",
+ "_cpl_caveat": "A license is an occupational gate. CPL awards credit for the training and experience behind it. A license on this list signals that a student completed something a college can assess; the college still decides what credit that training carries. Treat a license as evidence to pursue, and let a faculty ruling set the award.",
+ "_no_occupation_field": "The collection list view carries the credential name and the issuing agency. It omits ceterms:occupationType and the O*NET-SOC code, so a name join or a curator ruling is what connects these to an occupation. Sam confirmed on 2026-09-16 that the page offers no download or export control.",
+ "_network": "credentialengineregistry.org and credentialfinder.org are BLOCKED by this network's egress policy (connect_rejected, verified 2026-09-16 via curl and WebFetch). A human-captured page is the channel.",
+ "licenses": [
+  {
+   "name": "Accident and Health Agent or Sickness",
+   "issuer": "California Department of Industrial Relations"
+  },
+  {
+   "name": "Accountants, Certified Public",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Acupuncture License",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Adjuster, Independent Insurance",
+   "issuer": "California Department of Industrial Relations"
+  },
+  {
+   "name": "Adjuster, Interim Public Insurance",
+   "issuer": "California Department of Industrial Relations"
+  },
+  {
+   "name": "Adjuster, Public Insurance",
+   "issuer": "California Department of Industrial Relations"
+  },
+  {
+   "name": "Administrative Services Credential",
+   "issuer": "California Commission on Teacher Credentialing"
+  },
+  {
+   "name": "Administrator",
+   "issuer": "California Department of Industrial Relations"
+  },
+  {
+   "name": "Advanced Emergency Medical Technician (AEMT)",
+   "issuer": "California Emergency Medical Services Authority"
+  },
+  {
+   "name": "Agricultural Engineer",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Agricultural Pest Control Adviser",
+   "issuer": "California Department of Pesticide Regulation"
+  },
+  {
+   "name": "Air and Water Balancing Limited Specialty Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Alarm Company Agent",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Alarm Company Qualified Manager",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Applicator License (Structural Pest Control)",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Apprentice",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Apprentice Embalmer",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Architects (Architectural Practice)",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Asbestos Certification",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Asbestos Consultant Certification",
+   "issuer": "California Department of Industrial Relations"
+  },
+  {
+   "name": "Associate Clinical Social Worker (ASW), Registration",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Audiology",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Awnings Limited Specialty Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "B-2 - Residential Remodeling Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Bail Agent",
+   "issuer": "California Department of Industrial Relations"
+  },
+  {
+   "name": "Bail Permittee",
+   "issuer": "California Department of Industrial Relations"
+  },
+  {
+   "name": "Bail Solicitor",
+   "issuer": "California Department of Industrial Relations"
+  },
+  {
+   "name": "Barber",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Baton Permit",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Baton Training Instructor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Bedding Retailer",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Blasters License",
+   "issuer": "California Department of Industrial Relations"
+  },
+  {
+   "name": "Boiler, Hot Water Heating and Steam Fitting Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Boxer/Mixed Martial Arts/Kickboxer, Amateur",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Boxer/Mixed Martial Arts/Kickboxer, Professional",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Broker-Dealer Certificate",
+   "issuer": "California Department of Financial Protection and Innovation"
+  },
+  {
+   "name": "Building Moving/Demolition Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Butter Grader's License",
+   "issuer": "California Department of Food and Agriculture"
+  },
+  {
+   "name": "Cabinet, Millwork and Finish Carpentry Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "California Deferred Deposit Transaction Law (CDDTL)",
+   "issuer": "California Department of Financial Protection and Innovation"
+  },
+  {
+   "name": "California Finance Lender Law",
+   "issuer": "California Department of Financial Protection and Innovation"
+  },
+  {
+   "name": "California Radiologic Technologist (CRT)",
+   "issuer": "California Department of Public Health"
+  },
+  {
+   "name": "California Residential Mortgage Lending Act",
+   "issuer": "California Department of Financial Protection and Innovation"
+  },
+  {
+   "name": "Cannabis Cultivator License",
+   "issuer": "California Department of Cannabis Control"
+  },
+  {
+   "name": "Cannabis Distributor License",
+   "issuer": "California Department of Cannabis Control"
+  },
+  {
+   "name": "Cannabis Event Organizer License",
+   "issuer": "California Department of Cannabis Control"
+  },
+  {
+   "name": "Cannabis Manufacturer License",
+   "issuer": "California Department of Cannabis Control"
+  },
+  {
+   "name": "Cannabis Microbusiness License",
+   "issuer": "California Department of Cannabis Control"
+  },
+  {
+   "name": "Cannabis Retailer License",
+   "issuer": "California Department of Cannabis Control"
+  },
+  {
+   "name": "Cannabis Testing Laboratory License",
+   "issuer": "California Department of Cannabis Control"
+  },
+  {
+   "name": "Cargo Shipper's Agent",
+   "issuer": "California Department of Industrial Relations"
+  },
+  {
+   "name": "Casualty Broker-Agent",
+   "issuer": "California Department of Industrial Relations"
+  },
+  {
+   "name": "Cemetery Broker",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Cemetery Manager",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Cemetery Salesperson",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Central Vacuum Systems Limited Specialty Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Ceramic and Mosaic Tile Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Certified Engineering Geologist",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Certified Hemodialysis Technician",
+   "issuer": "California Department of Public Health"
+  },
+  {
+   "name": "Certified Hydrogeologist",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Certified Nurse Assistant",
+   "issuer": "California Department of Public Health"
+  },
+  {
+   "name": "Certified Phlebotomy Technician I (CPT I) Certificate",
+   "issuer": "California Department of Public Health"
+  },
+  {
+   "name": "Certified Phlebotomy Technician II (CPT II) Certificate",
+   "issuer": "California Department of Public Health"
+  },
+  {
+   "name": "Certified Rangeland Manager (CRM)",
+   "issuer": "California Board of Forestry and Fire Protection"
+  },
+  {
+   "name": "Certified Shorthand Reporters License",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Chemical Engineer",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Chiropractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Civil Engineer",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Clinical Chemist License",
+   "issuer": "California Department of Public Health"
+  },
+  {
+   "name": "Clinical Chemist Scientist",
+   "issuer": "California Department of Public Health"
+  },
+  {
+   "name": "Clinical Cytogeneticist Scientist",
+   "issuer": "California Department of Public Health"
+  },
+  {
+   "name": "Clinical Genetic Molecular Biologist Scientist",
+   "issuer": "California Department of Public Health"
+  },
+  {
+   "name": "Clinical Hematologist Scientist",
+   "issuer": "California Department of Public Health"
+  },
+  {
+   "name": "Clinical Histocompatibility Laboratory Director License",
+   "issuer": "California Department of Public Health"
+  },
+  {
+   "name": "Clinical Histocompatibility Scientist",
+   "issuer": "California Department of Public Health"
+  },
+  {
+   "name": "Clinical Immunohematologist Scientist",
+   "issuer": "California Department of Public Health"
+  },
+  {
+   "name": "Clinical Laboratory Bioanalyst License",
+   "issuer": "California Department of Public Health"
+  },
+  {
+   "name": "Clinical Laboratory Cytogeneticists",
+   "issuer": "California Department of Public Health"
+  },
+  {
+   "name": "Clinical Laboratory Genetic Molecular Biologist",
+   "issuer": "California Department of Public Health"
+  },
+  {
+   "name": "Clinical Laboratory Scientist",
+   "issuer": "California Department of Public Health"
+  },
+  {
+   "name": "Clinical Laboratory Scientist (Limited) Trainee",
+   "issuer": "California Department of Public Health"
+  },
+  {
+   "name": "Clinical Microbiologist Scientist",
+   "issuer": "California Department of Public Health"
+  },
+  {
+   "name": "Clinical Nurse Specialist",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Clinical Toxicologist Scientist",
+   "issuer": "California Department of Public Health"
+  },
+  {
+   "name": "Commercial Driver License",
+   "issuer": "California Department of Motor Vehicles"
+  },
+  {
+   "name": "Commercial Drivers License (CDL)",
+   "issuer": "California Department of Motor Vehicles"
+  },
+  {
+   "name": "Commercial Fishing License",
+   "issuer": "California Department of Fish and Wildlife"
+  },
+  {
+   "name": "Concrete Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Concrete Related Services Limited Specialty Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Construction Clean-Up Limited Specialty Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Construction Zone Traffic Control Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Contact Lens Dispenser",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Control Systems Engineer",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Cosmetologist",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Cremated Remains Disposer",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Crematory Manager",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Custom Upholsterer",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Cytotechnologist License",
+   "issuer": "California Department of Public Health"
+  },
+  {
+   "name": "Dental Assistant - Registered",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Dental Assistant in Extended Functions - Registered",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Dental Hygienist, Registered",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Dental License",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Designated Representative License - Vet Food-Animal Drug Retailer",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Designated Representative License - Wholesaler/Non-Resident Wholesaler",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Distribution System Operator",
+   "issuer": "California State Water Resources Control Board"
+  },
+  {
+   "name": "Doctor of Podiatric Medicine (DPM)",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Doors, Gates and Activating Devices Limited Specialty Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Drilling, Blasting and Oil Field Work Limited Specialty Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Driving School Instructor License",
+   "issuer": "California Department of Motor Vehicles"
+  },
+  {
+   "name": "Driving School Operator License",
+   "issuer": "California Department of Motor Vehicles"
+  },
+  {
+   "name": "Drywall Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Earthwork and Paving Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Electrical Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Electrical Engineer",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Electrologists",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Electroneuromyography (ENMG) Certificate",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Elevated Floors Limited Specialty Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Elevator Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Embalmer",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Emergency Medical Technician (EMT)",
+   "issuer": "California Emergency Medical Services Authority"
+  },
+  {
+   "name": "Engineer In Training (E.I.T.)",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Epinephrine Auto-injector Certification (EPI)",
+   "issuer": "California Emergency Medical Services Authority"
+  },
+  {
+   "name": "Escrow Agent",
+   "issuer": "California Department of Financial Protection and Innovation"
+  },
+  {
+   "name": "Esthetician",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Exposed Firearm Permit",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Fencing Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Field Representative (Structural Pest Control)",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Fire and Casualty Broker-Agent",
+   "issuer": "California Department of Industrial Relations"
+  },
+  {
+   "name": "Fire Protection Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Fire Protection Engineer",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Firearms Training Instructor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Fisherman's Retail License",
+   "issuer": "California Department of Fish and Wildlife"
+  },
+  {
+   "name": "Flooring and Floor Covering Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "For-Hire Vessel Carrier Insurance Certificate",
+   "issuer": "California Department of Parks and Recreation"
+  },
+  {
+   "name": "For-Hire Vessel Operator License",
+   "issuer": "California Department of Parks and Recreation"
+  },
+  {
+   "name": "Framing and Rough Carpentry Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Funeral Director",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Furniture and Bedding Retailer",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Furniture Retailer",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Gas Tester Certification",
+   "issuer": "California Department of Industrial Relations"
+  },
+  {
+   "name": "General Anesthesia Permit (dentist or physician)",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "General Building Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "General Engineering Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "General Manufactured Housing Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "General Sampler's and Weigher's License",
+   "issuer": "California Department of Food and Agriculture"
+  },
+  {
+   "name": "Geotechnical Engineer",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Glazing Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Guide License",
+   "issuer": "California Department of Fish and Wildlife"
+  },
+  {
+   "name": "Hairstylist",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Hardware, Locks and Safes Limited Specialty Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Hazardous Substance Removal and Remedial Actions Certification",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Hearing Aid Dispenser License",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Home Health Aide Certification",
+   "issuer": "California Department of Public Health"
+  },
+  {
+   "name": "Home Improvement Salesperson Registration",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Hospital Inspector Certification",
+   "issuer": "California Department of Health Care Access and Information"
+  },
+  {
+   "name": "Hydroseed Spraying Limited Specialty Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Importer",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Independent Driving Instructor License",
+   "issuer": "California Department of Motor Vehicles"
+  },
+  {
+   "name": "Industrial Engineer",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Insulation and Acoustical Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Investment Adviser Certificate",
+   "issuer": "California Department of Financial Protection and Innovation"
+  },
+  {
+   "name": "Judge, Amateur",
+   "issuer": "California Amateur Mixed Martial Arts Organization, Inc."
+  },
+  {
+   "name": "Judge, Professional",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Kinesiological Electromyography (KEMG) Certificate",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Land Surveyor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Land Surveyor In Training (L.S.I.T.)",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Landscape Architect, Licensed",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Landscaping Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Lathing and Plastering Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Lawyer",
+   "issuer": "The State Bar of California"
+  },
+  {
+   "name": "Licensed Clinical Social Worker (LCSW)",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Licensed Educational Psychologist (LEP), License",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Licensed Midwife",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Licensed Professional Clinical Counselor (LPCC), License",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Licensed Psychologist",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Licensed Vocational Nurse",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Life and Disability Insurance Analyst",
+   "issuer": "California Department of Industrial Relations"
+  },
+  {
+   "name": "Life Settlement Broker",
+   "issuer": "California Department of Industrial Relations"
+  },
+  {
+   "name": "Life-Limited to the Payment of Funeral and Burial Expenses",
+   "issuer": "California Department of Industrial Relations"
+  },
+  {
+   "name": "Life-Only Agent",
+   "issuer": "California Department of Industrial Relations"
+  },
+  {
+   "name": "Limited Lines Automobile Insurance Agent",
+   "issuer": "California Department of Industrial Relations"
+  },
+  {
+   "name": "Limited Phlebotomy Technician Certification",
+   "issuer": "California Department of Public Health"
+  },
+  {
+   "name": "Limited Sampler's and Weigher's License",
+   "issuer": "California Department of Food and Agriculture"
+  },
+  {
+   "name": "Livestock Meat Inspector License",
+   "issuer": "California Department of Food and Agriculture"
+  },
+  {
+   "name": "Lock and Security Equipment Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Locksmith Company License",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Locksmith Employee Registration",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Low Voltage Systems Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Machinery and Pumps Limited Specialty Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Manager of Athletic Professionals",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Manicurist",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Manufactured Home, Mobilehome 90 Day Salesperson Certificate",
+   "issuer": "California Department of Housing and Community Development"
+  },
+  {
+   "name": "Manufactured Home, Mobilehome, and Commercial Modular Salesperson License",
+   "issuer": "California Department of Housing and Community Development"
+  },
+  {
+   "name": "Manufacturer",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Marriage and Family Therapist (LMFT), License",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Martial Arts Fighter, Amateur",
+   "issuer": "California Amateur Mixed Martial Arts Organization, Inc."
+  },
+  {
+   "name": "Masonry Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Matchmaker, Assistant",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Matchmakers",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Mechanical Engineer",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Medical Laboratory Technician",
+   "issuer": "California Department of Public Health"
+  },
+  {
+   "name": "Metal Products Limited Specialty Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Metallurgical Engineer",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Moderate Sedation Permit",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Mortgage Loan Originator",
+   "issuer": "California Department of Financial Protection and Innovation"
+  },
+  {
+   "name": "Motor Club Agent",
+   "issuer": "California Department of Industrial Relations"
+  },
+  {
+   "name": "Naturopathic Doctor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Non-Electrical Sign Installation Limited Specialty Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Nuclear Engineer",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Nuclear Medicine Technologist (NMT)",
+   "issuer": "California Department of Public Health"
+  },
+  {
+   "name": "Nurse Anesthetist",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Nurse Midwife",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Nurse Midwife Furnishing Certificate (NMF)",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Nurse Practitioner",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Nurse Practitioner Furnishing Certificate (NPF)",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Nurse, Registered",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Nursing Home Administrator",
+   "issuer": "California Department of Public Health"
+  },
+  {
+   "name": "Occupational Licensing for Participants in Horse Racing",
+   "issuer": "California Business, Consumer Services, and Housing Agency"
+  },
+  {
+   "name": "Occupational Therapist",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Occupational Therapy Assistant",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Operator License (Structural Pest Control)",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Optometry License",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Oral and Maxillofacial Surgery Permit",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Oral Laboratory (Oral and Maxillofacial) Pathologist License",
+   "issuer": "California Department of Public Health"
+  },
+  {
+   "name": "Ornamental Metal Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Orthotists and Prosthetists",
+   "issuer": "California Emergency Medical Services Authority"
+  },
+  {
+   "name": "Osteopathic Physician and Surgeon License",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Painting and Decorating Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Paperhanging Limited Specialty Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Paramedic License (EMT-P)",
+   "issuer": "California Emergency Medical Services Authority"
+  },
+  {
+   "name": "Parking and Highway Improvement Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Part-time Fraternal Agent",
+   "issuer": "California Department of Industrial Relations"
+  },
+  {
+   "name": "Pasteurizer's License",
+   "issuer": "California Department of Food and Agriculture"
+  },
+  {
+   "name": "Pediatric Minimal Sedation Permit",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Personal Lines Broker-Agent",
+   "issuer": "California Department of Industrial Relations"
+  },
+  {
+   "name": "Pest Control Aircraft Pilot Certificate",
+   "issuer": "California Department of Pesticide Regulation"
+  },
+  {
+   "name": "Pest Control Dealer Designated Agent",
+   "issuer": "California Department of Pesticide Regulation"
+  },
+  {
+   "name": "Petroleum Engineer",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Pharmacist, Intern",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Pharmacist, Registered",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Pharmacy Technician",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Physical Therapist",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Physical Therapist Assistant",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Physician and Surgeon",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Physician Assistant",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Pile Driving/Pressure Foundation Jacking Limited Specialty Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Pipeline Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Plumbing Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Pole Installation and Maintenance Limited Specialty Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Pool and Spa Maintenance Limited Specialty Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Portable Electronics Insurance Agent",
+   "issuer": "California Department of Industrial Relations"
+  },
+  {
+   "name": "Portable Fire Extinguishers - Service Personnel",
+   "issuer": "California Office of the State Fire Marshal"
+  },
+  {
+   "name": "Poultry Meat Inspector License",
+   "issuer": "California Department of Food and Agriculture"
+  },
+  {
+   "name": "Prefabricated Equipment Limited Specialty Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Private Investigator",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Private Patrol Operator",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Processing Inspector License",
+   "issuer": "California Department of Food and Agriculture"
+  },
+  {
+   "name": "Professional Fiduciary License",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Professional Geologist",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Professional Geophysicists",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Promoter, Amateur",
+   "issuer": "California Amateur Mixed Martial Arts Organization, Inc."
+  },
+  {
+   "name": "Promoter, Professional",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Property Broker-Agent",
+   "issuer": "California Department of Industrial Relations"
+  },
+  {
+   "name": "Property Tax Assessment Analyst Certification",
+   "issuer": "California Property Tax Department"
+  },
+  {
+   "name": "Property Taxes Appraiser Certification",
+   "issuer": "California Property Tax Department"
+  },
+  {
+   "name": "Proprietary Private Security Employer (PSE)",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Proprietary Private Security Officer",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Psychiatric Technician",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Psychiatric/Mental Health Nurse",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Psychological Testing Technician",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Public Display Fireworks",
+   "issuer": "California Office of the State Fire Marshal"
+  },
+  {
+   "name": "Public Health Microbiologist",
+   "issuer": "California Department of Public Health"
+  },
+  {
+   "name": "Public Health Nurse",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Pupil Personnel Services Credential",
+   "issuer": "California Commission on Teacher Credentialing"
+  },
+  {
+   "name": "Qualified Applicator Certificate",
+   "issuer": "California Department of Pesticide Regulation"
+  },
+  {
+   "name": "Qualified Applicator License",
+   "issuer": "California Department of Pesticide Regulation"
+  },
+  {
+   "name": "Qualified Medical Evaluator",
+   "issuer": "California Department of Industrial Relations"
+  },
+  {
+   "name": "Real Estate Appraisal License",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Real Estate Broker License",
+   "issuer": "California Department of Real Estate"
+  },
+  {
+   "name": "Real Estate Salesperson",
+   "issuer": "California Department of Real Estate"
+  },
+  {
+   "name": "Referees, Amateur",
+   "issuer": "California Amateur Mixed Martial Arts Organization, Inc."
+  },
+  {
+   "name": "Referees, Professional",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Refrigeration Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Registered Associate Marriage and Family Therapist (AMFT) , Registration",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Registered Associate Professional Clinical Counselor (APCC), Registration",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Registered Dental Hygienist - Extended Functions (RDHEF)",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Registered Dental Hygienists in Alternative Practice (RDHAP)",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Registered Environmental Health Specialist",
+   "issuer": "California Department of Public Health"
+  },
+  {
+   "name": "Registered Polysomnographic Technician",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Registered Polysomnographic Technologist",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Registered Polysomnographic Trainee",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Registered Professional Forester (RPF)",
+   "issuer": "California Board of Forestry and Fire Protection"
+  },
+  {
+   "name": "Registered Psychological Associate",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Reinforcing Steel Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Rental Car Agent",
+   "issuer": "California Department of Industrial Relations"
+  },
+  {
+   "name": "Repossession Agency Employee",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Repossession Agency Qualified Manager",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Research Psychoanalyst",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Respiratory Care Practitioner",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Roofing Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Safety Representative Certification",
+   "issuer": "California Department of Industrial Relations"
+  },
+  {
+   "name": "Sand and Water Blasting Limited Specialty Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Sanitation System Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Sanitizer",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Scaffolding Limited Specialty Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "School Audiometrist Registration",
+   "issuer": "California Department of Health Care Services"
+  },
+  {
+   "name": "School Nurse Services Credential",
+   "issuer": "California Commission on Teacher Credentialing"
+  },
+  {
+   "name": "Seconds",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Securities Agents/Salesperson Reporting",
+   "issuer": "California Department of Financial Protection and Innovation"
+  },
+  {
+   "name": "Security Guard Registration",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Service Station Equipment and Maintenance Specialty Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Sheet Metal Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Siding and Decking Limited Specialty Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Sign Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Smog Check Technician",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Solar Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Special Lines' Surplus Line Broker",
+   "issuer": "California Department of Industrial Relations"
+  },
+  {
+   "name": "Spectacle Lens Dispenser",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Speech-Language Pathologist or Audiologist Aide Registration",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Speech-Language Pathology",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Speech-Language Pathology Assistant Registration",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Speech-Language Pathology Services Credential",
+   "issuer": "California Commission on Teacher Credentialing"
+  },
+  {
+   "name": "Stock Agent (Insurance)",
+   "issuer": "California Department of Industrial Relations"
+  },
+  {
+   "name": "Structural Engineer",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Structural Steel Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Student Research Psychoanalyst",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Studio Teachers Certificate",
+   "issuer": "California Department of Industrial Relations"
+  },
+  {
+   "name": "Supply Dealer",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Surplus Lines Broker",
+   "issuer": "California Department of Industrial Relations"
+  },
+  {
+   "name": "Suspended Ceilings Limited Specialty Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Swimming Pool Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Synthetic Products Limited Specialty Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Teacher Credentials",
+   "issuer": "California Commission on Teacher Credentialing"
+  },
+  {
+   "name": "Teacher Librarian Services Credential",
+   "issuer": "California Commission on Teacher Credentialing"
+  },
+  {
+   "name": "Technician's License",
+   "issuer": "California Department of Food and Agriculture"
+  },
+  {
+   "name": "Tester's License",
+   "issuer": "California Department of Food and Agriculture"
+  },
+  {
+   "name": "Timekeeper",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Title Marketing Representative",
+   "issuer": "California Department of Industrial Relations"
+  },
+  {
+   "name": "Traffic Engineer",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Traffic Violator School Instructor License",
+   "issuer": "California Department of Motor Vehicles"
+  },
+  {
+   "name": "Traffic Violator School Operator License",
+   "issuer": "California Department of Motor Vehicles"
+  },
+  {
+   "name": "Trapping License",
+   "issuer": "California Department of Fish and Wildlife"
+  },
+  {
+   "name": "Travel Insurance Agent",
+   "issuer": "California Department of Industrial Relations"
+  },
+  {
+   "name": "Tree Service Limited Specialty Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Trenching Limited Specialty Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Underground Storage Tank Tester",
+   "issuer": "California State Water Resources Control Board"
+  },
+  {
+   "name": "University Veterinarian",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Vehicle Representative License",
+   "issuer": "California Department of Motor Vehicles"
+  },
+  {
+   "name": "Vehicle Safety Systems Inspection Technician",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Vehicle Salesperson License",
+   "issuer": "California Department of Motor Vehicles"
+  },
+  {
+   "name": "Vehicle Verifier License",
+   "issuer": "California Department of Motor Vehicles"
+  },
+  {
+   "name": "Veterinarian",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Veterinary Assistant Controlled Substances Permit (VACSP)",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Veterinary Premises Permit",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Veterinary Technologists and Technicians",
+   "issuer": "California Emergency Medical Services Authority"
+  },
+  {
+   "name": "Warm-Air Heating, Ventilating and Air-Conditioning Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Wastewater Treatment Plant Operator",
+   "issuer": "California State Water Resources Control Board"
+  },
+  {
+   "name": "Water Conditioning Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Water Treatment Operator",
+   "issuer": "California State Water Resources Control Board"
+  },
+  {
+   "name": "Weatherization and Energy Conservation Limited Specialty Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Welding Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Well Drilling (Water) Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Wholesaler",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Window Coverings Limited Specialty Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "Wood Tanks Limited Specialty Contractor",
+   "issuer": "California Department of Consumer Affairs"
+  },
+  {
+   "name": "X-ray Supervisor and Operator Certificate/Permit",
+   "issuer": "California Department of Public Health"
+  },
+  {
+   "name": "X-ray, Limited Permit Technician (LP)",
+   "issuer": "California Department of Public Health"
+  },
+  {
+   "name": "Yacht and Ship Broker's License",
+   "issuer": "California Department of Parks and Recreation"
+  },
+  {
+   "name": "Yacht and Ship Salesperson's License",
+   "issuer": "California Department of Parks and Recreation"
+  }
+ ],
+ "_join_measured_2026_09_16": "Joined by name to the 541 COE occupations with Matcher from kb/_build_regional_cpl_opportunity.py: 73 occupations matched (13%), 115 occupation-license pairs. Good hits include Heating, Air Conditioning and Refrigeration Mechanics -> Warm-Air Heating, Ventilating and Air-Conditioning Contractor, and Barbers -> Barber.",
+ "_matcher_defect_found": "OVER-STEMMING ON AGENT SUFFIXES. stem() strips -er/-ors/-or when the token is longer than 4 characters, so 'engineer' reduces to 'engine' and 'actor' reduces to 'act'. That produced 8 false pairs resting on the engine/engineer collapse alone (Bus and Truck Mechanics and Diesel Engine Specialists -> Engineer In Training) and one on act/actor (Actors -> California Residential Mortgage Lending Act). The plural suffixes are safe; the agent suffixes collide with real words. A fix protects a token whose stem is itself a literal token in either corpus. UNFIXED as of 2026-09-16 -- the same matcher drives the regional opportunity build, so the change needs its own run and a look at what moves.",
+ "_detail_page_print": "Sam printed one detail page on 2026-09-16 (the NICE Framework work role Secure Systems Development, CTID ce-0729ead7-6586-4020-895e-0990b0a84221). The print carries the full record: 73 Task statements, each with its own CTID, plus Knowledge and Skill statements. It carries no occupation code either. For CPL that task list is the more useful half -- faculty map credit against learning outcomes, which is what Phase 4 (SLO ingestion) in the roadmap is for. Printing 369 detail pages one at a time stays impractical, so the detail print fits a credential a college is actually pursuing."
+}
