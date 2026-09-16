@@ -50,7 +50,7 @@ Outputs to kb/regional_cpl_out/<date>-<slug>/ : the workbook, the HTML page, and
 crosswalk.json (the run receipt). Per the artifact policy the workbook and page are
 REGENERABLE and are not committed; the receipt is.
 """
-import argparse, datetime, html, json, math, os, re, sys
+import argparse, base64, datetime, html, json, math, os, re, sys
 from collections import defaultdict, Counter
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -660,6 +660,8 @@ def main():
     write_workbook(xlsx, res)
     page = os.path.join(out, f"{a.slug}_cpl_opportunities.html")
     write_page(page, res)
+    hand = os.path.join(out, f"{a.slug}_handout.html")
+    write_handout(hand, res, xlsx)
     with open(os.path.join(out, "crosswalk.json"), "w", encoding="utf-8") as fh:
         json.dump(dict(_generated_at=datetime.datetime.now().isoformat(timespec="seconds"),
                        _generated_by="kb/_build_regional_cpl_opportunity.py", **res),
@@ -668,9 +670,157 @@ def main():
     build_n = sum(1 for r in res["rows"] if r["headline"] == "Build first-in-state")
     print(f"{len(colleges)} colleges | {res['n_occupations']} occupations | "
           f"adopt {adopt} · build first-in-state {build_n}")
-    print(xlsx); print(page)
+    print(xlsx); print(page); print(hand)
     return 0
 
+
+
+# ── the handout ──────────────────────────────────────────────────────────────
+# Ashley's format, taken from the Cal-JAC Credit Opportunities guide (7.2026):
+# a college heading carrying its own counts, then rows grouped by the thing the
+# credit attaches to. One self-contained file — print it, or attach it to mail.
+HANDOUT_CSS = """
+:root{--ink:#11223a;--muted:#55637a;--line:#c9d6e8;--bg:#f4f7fb;--card:#ffffff;
+--navy:#002f6d;--cobalt:#0047ab;--soft:#eef3fa;--gold:#f5a800;--measure:none}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.sheet{max-width:1020px;margin:0 auto;background:var(--card);
+padding-block:0;padding-left:0;padding-right:0}
+.masthead{display:flex;align-items:center;justify-content:space-between;gap:20px;
+flex-wrap:wrap;padding:22px 30px 18px;border-bottom:3px solid var(--navy)}
+.masthead img.cpl{height:46px;width:auto;max-width:100%}
+.masthead img.seal{height:62px;width:auto}
+.partner{font-size:.68rem;letter-spacing:.16em;color:var(--muted);
+text-transform:uppercase;margin:0 0 6px}
+.inner{padding:24px 30px 34px}
+h1{font-size:1.6rem;margin:0 0 .3em;color:var(--navy);line-height:1.2}
+.lede{color:var(--ink);margin:0 0 18px;max-width:var(--measure,none)}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 22px}
+.btn{font:inherit;font-weight:600;padding:9px 16px;border-radius:8px;
+border:1px solid var(--navy);background:var(--navy);color:#fff;cursor:pointer;
+text-decoration:none;display:inline-block}
+.btn.alt{background:var(--card);color:var(--navy)}
+.btn:hover{background:var(--cobalt);border-color:var(--cobalt);color:#fff}
+.summary{display:flex;gap:26px;flex-wrap:wrap;padding:14px 18px;background:var(--soft);
+border:1px solid var(--line);border-radius:10px;margin:0 0 24px}
+.summary div{min-width:120px}
+.summary .n{font-size:1.6rem;font-weight:700;color:var(--navy);line-height:1.1}
+.summary .l{font-size:.82rem;color:var(--muted)}
+.college{margin:26px 0 0;break-inside:avoid}
+.college h2{display:flex;justify-content:space-between;align-items:baseline;gap:14px;
+flex-wrap:wrap;font-size:1.02rem;letter-spacing:.06em;text-transform:uppercase;
+color:var(--navy);margin:0 0 .35em;padding-bottom:7px;border-bottom:2px solid var(--gold)}
+.college h2 .counts{font-size:.76rem;letter-spacing:.09em;color:var(--muted);
+font-weight:600;white-space:nowrap}
+.band{font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;font-weight:700;
+color:var(--navy);background:var(--soft);padding:6px 10px;margin:14px 0 0;
+border-left:3px solid var(--cobalt)}
+table{border-collapse:collapse;width:100%;font-size:.88rem;table-layout:fixed}
+th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);
+font-weight:700}
+td.q{color:var(--muted)}
+.note{border:1px solid var(--line);border-left:4px solid var(--gold);background:var(--soft);
+border-radius:8px;padding:12px 15px;margin:22px 0 0}
+.foot{margin:26px 0 0;padding-top:14px;border-top:1px solid var(--line);
+color:var(--muted);font-size:.82rem}
+a{color:var(--cobalt)}
+:focus-visible{outline:3px solid var(--cobalt);outline-offset:2px}
+@media (max-width:620px){.inner,.masthead{padding-left:16px;padding-right:16px}
+h1{font-size:1.32rem}table{font-size:.82rem}}
+@media print{
+  @page{margin:0.45in}
+  body{background:#fff;font-size:10.5pt}
+  .sheet{max-width:none}
+  .toolbar,.skip{display:none!important}
+  .masthead{padding:0 0 10px}
+  .inner{padding:12px 0 0}
+  .college,tr,.band{break-inside:avoid}
+  .college h2{break-after:avoid}
+  thead{display:table-header-group}
+  a{text-decoration:none;color:var(--ink)}
+}
+"""
+
+
+def write_handout(path, res, xlsx_path):
+    E = html.escape
+    logos = jload("kb/reference/handout_logos.json")
+    with open(xlsx_path, "rb") as fh:
+        xb64 = base64.b64encode(fh.read()).decode()
+    xname = os.path.basename(xlsx_path)
+
+    adopt = [r for r in res["rows"] if r["headline"] == "Adopt"]
+    build = [r for r in res["rows"] if r["headline"] == "Build first-in-state"]
+    by_college = defaultdict(lambda: {"adopt": [], "build": []})
+    for r in adopt:
+        for c in r["could_adopt"]:
+            by_college[c]["adopt"].append(r)
+    for r in build:
+        for c in r["could_build"]:
+            by_college[c]["build"].append(r)
+
+    P = ["<title>CPL Credit Opportunities — %s</title>" % E(res["region"]),
+         "<style>%s</style>" % HANDOUT_CSS, '<div class="sheet">']
+    P.append('<div class="masthead"><div>'
+             '<p class="partner">In partnership with the</p>'
+             '<img class="cpl" alt="California Community Colleges Credit for Prior Learning Initiative" '
+             'src="data:image/png;base64,%s"></div>'
+             '<img class="seal" alt="California Community Colleges Chancellor\'s Office seal" '
+             'src="data:image/png;base64,%s"></div>' % (logos["cpl"], logos["seal"]))
+    P.append('<div class="inner">')
+    P.append("<h1>CPL Credit Opportunities — %s</h1>" % E(res["region"]))
+    P.append('<p class="lede">This guide maps the occupations %s needs to the courses these '
+             "colleges already teach, and shows where Credit for Prior Learning can be adopted "
+             "from an existing MAP exhibit or built for the first time in California.</p>"
+             % E(res["region"]))
+    P.append('<div class="toolbar">'
+             '<button class="btn" type="button" onclick="window.print()">Print or save as PDF</button>'
+             '<a class="btn alt" download="%s" href="data:application/vnd.openxmlformats-officedocument'
+             '.spreadsheetml.sheet;base64,%s">Download the spreadsheet</a></div>' % (E(xname), xb64))
+    P.append('<div class="summary">'
+             '<div><div class="n">%d</div><div class="l">Colleges</div></div>'
+             '<div><div class="n">%d</div><div class="l">Ready to adopt</div></div>'
+             '<div><div class="n">%d</div><div class="l">First in the state</div></div>'
+             '<div><div class="n">%d</div><div class="l">Occupations reviewed</div></div></div>'
+             % (len(res["colleges"]), len(adopt), len(build), res["n_occupations"]))
+
+    for col in sorted(by_college):
+        blk = by_college[col]
+        P.append('<div class="college"><h2>%s<span class="counts">%d TO ADOPT &nbsp;·&nbsp; '
+                 "%d TO BUILD</span></h2>" % (E(col), len(blk["adopt"]), len(blk["build"])))
+        for key, label in (("adopt", "Adopt — the credit already exists in MAP"),
+                           ("build", "Build — first in California")):
+            items = blk[key]
+            if not items:
+                continue
+            P.append('<p class="band">%s</p>' % E(label))
+            head3 = "MAP exhibit to adopt" if key == "adopt" else "Your courses that carry it"
+            P.append('<table><colgroup><col style="width:34%"><col style="width:20%">'
+                     '<col style="width:46%"></colgroup><thead><tr>'
+                     '<th scope="col">Occupation</th><th scope="col">Entry level</th>'
+                     '<th scope="col">' + E(head3) + "</th></tr></thead><tbody>")
+            for r in sorted(items, key=lambda z: z["occupation"].lower())[:25]:
+                right = ("; ".join(r["exhibits"][:2]) if key == "adopt"
+                         else "; ".join(r["evidence"].get(col, [])[:2])) or "—"
+                edu = (r["education"] or "").replace(" or equivalent", "")
+                P.append("<tr><td>%s</td><td class=\"q\">%s</td><td class=\"q\">%s</td></tr>"
+                         % (E(r["occupation"]), E(edu), E(right)))
+            P.append("</tbody></table>")
+            if len(items) > 25:
+                P.append('<p class="q" style="font-size:.82rem;margin:.5em 0 0">'
+                         "and %d more in the spreadsheet</p>" % (len(items) - 25))
+        P.append("</div>")
+
+    P.append('<div class="note"><strong>Read these as suggestions.</strong> The matches compare '
+             "course and occupation wording. Faculty confirm every one before a college acts on it.</div>")
+    P.append('<p class="foot">Built %s · Sources: CCCCO COCI program and course catalogs, MAP '
+             "statewide exhibits, and the regional occupation list · Questions: MAP@rccd.edu</p>"
+             % datetime.date.today().isoformat())
+    P.append("</div></div>")
+    with open(path, "w", encoding="utf-8") as fh:
+        fh.write("".join(P))
 
 if __name__ == "__main__":
     sys.exit(main())

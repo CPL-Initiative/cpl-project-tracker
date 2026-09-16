@@ -358,7 +358,15 @@ named here because a store nobody names is a store nobody finds —
   dense, and register follows audience.
   - **Concede before you argue**, stating the other position at full strength;
     **preserve their authority explicitly** (what is not ours to decide);
-    **say what a thing is NOT** where it could be misread; keep the **student as
+    ⚠️ **STATE IT POSITIVELY — NO "IT IS THIS, NOT THAT" (Sam, 2026-09-16).**
+    *"I don't like the practice the saying, 'it's this, not that' Just make
+    positive, active voice declarations."* The contrastive frame makes the reader
+    hold a wrong idea in mind to discard it, and it spends a sentence on what you
+    are not saying. Declare the thing. ⚠️ **This NARROWS the older rule that
+    survives beside it** — a genuine misreading may still be closed off, once,
+    where the reader would otherwise land on it; the ban is on the reflex, which
+    had become the house tic. Scope matches the mannerly-language rule: outward
+    artifacts **and replies to Sam in session**. Keep the **student as
     the subject** of the problem; **anchor claims to a named instrument** rather
     than asserting them; **vary sentence length and let a short declarative
     land** after a long qualified one; put the **ask last, and make it small**.
