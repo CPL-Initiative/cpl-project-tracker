@@ -2,7 +2,7 @@
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
  "_as_of": "2026-09-16",
  "_session": 264,
- "_status": "The regional CPL opportunity view works: pick a college, a district or a region and it returns the occupations in that area, the exhibits the college can adopt today, and the exhibits it could build. Sam chose its home — inside the My College tab, not a new one. The open problem is the matcher that pairs an occupation with a course: it still makes wrong pairs, and this run found a second cause, a word-stemmer that collapses engineer onto engine. That gets fixed and scored against Delta's 139 human rulings before the view ships. Separately, the session gained something MAP has never held: a table of active certificates and licenses — 369 California occupational and professional licenses, complete with their issuing agency, plus 974 national industry certifications. Sam captured them by hand because the Credential Registry site is unreachable from here. He and Malone will pursue proper API access.",
+ "_status": "The regional CPL opportunity view works: pick a college, a district or a region and it returns the occupations in that area, the exhibits the college can adopt today, and the exhibits it could build. Sam chose its home — inside the My College tab, not a new one. The open problem is the matcher that pairs an occupation with a course: it still makes wrong pairs, and this run found a second cause, a word-stemmer that collapses engineer onto engine. That is fixed and scored: against Delta's 139 human rulings the tool is right about nine times in ten when it says a college has something, and it finds about half of what a person finds. Sam accepted those gaps, so every view now prints the numbers and tells the reader a missing occupation is unconfirmed rather than settled. Separately, the session gained something MAP has never held: a table of active certificates and licenses — 369 California occupational and professional licenses, complete with their issuing agency, plus 974 national industry certifications. Sam captured them by hand because the Credential Registry site is unreachable from here. He and Malone will pursue proper API access.",
  "items": [
   {
    "id": "s264-sam-ce-api",
@@ -38,7 +38,7 @@
    "id": "s264-fable-licenses-handout",
    "for": "Fable",
    "tab": "my-college",
-   "text": "Add the 369 California licenses to the college handout as a third column, beside the exhibits a college can adopt and the ones it could build."
+   "text": "Add the 369 California licenses to the college handout as a third column, beside the exhibits a college can adopt and the ones it could build. The handout already carries the accuracy caveat, so the new column needs the same treatment: say what is confirmed and what a person in the room should check."
   },
   {
    "id": "s263-fable-verdict-queue-governance",

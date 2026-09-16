@@ -85,11 +85,30 @@ no token, so nothing threshold-shaped reaches them. Closing it needs a synonym
 layer or the curated `kb/occupation_credential_map.json` — which the score
 reframes as the part carrying the meaning rather than scaffolding to replace.
 
+## Shipped after the score
+
+Sam accepted the gaps rather than holding the view for a better matcher: *"we can
+live with known gaps and can call those out to our colleges when we meet with
+them. Maybe just add a simple caveat to the views where needed."*
+
+`ACCURACY_HEAD` / `ACCURACY_BODY` in the generator carry the measured numbers to
+**all three surfaces** — workbook notes sheet, screen page, printable handout —
+from ONE constant. ⚠️ **Re-run `kb/_score_occupation_matcher.py` and update the
+constant in the same commit.** A caveat quoting a stale score is worse than none.
+
+The caveat names the recall half as well as the precision half on purpose: a
+college needs to know that an occupation missing from the page is unconfirmed, so
+the person in the room adds what the matcher could not reach.
+
+Also corrected in rendered text while there: "Read these as suggestions, not
+answers" used the contrastive frame Sam ruled against the same day, and carried a
+British spelling of program.
+
 ## Carryover
 
 | Item | State |
 |---|---|
-| Matcher: the vocabulary gap | **next** — a synonym layer, or lean on the curated map. Thresholds are exhausted |
+| Matcher: the vocabulary gap | **next** — a synonym layer, or lean on the curated map. Thresholds are exhausted, and the views now disclose the gap |
 | The Engineering homograph | open — 4 wrong Santa Rosa rows, wants a sense distinction |
 | Port the regional view into My College | queued, behind the matcher |
 | California licenses as a third handout column | queued — Sam has seen the Santa Rosa handout and wants this shape |
