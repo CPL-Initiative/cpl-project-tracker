@@ -1,0 +1,38 @@
+{
+  "_what": "Strong Workforce / Centers of Excellence region for every California Community College, derived from college_geo's county column.",
+  "_authored": "2026-09-16",
+  "_why": "Sam, 2026-09-16: 'You should have the SW region in our dataset from MAP--check it.' He was right. college_geo carries a COUNTY per college, and the SWP consortia are defined by county, so the mapping is derivable rather than missing.",
+  "_derivation": "college_geo.region is a nine-way grouping that agrees with the nine SWP regions on SEVEN of nine exactly, by county. Two differ, and only three colleges move.",
+  "_corroboration": "With the three moves applied the Bay Region holds 28 colleges across 12 counties, which matches the Bay Region COE's own published description of itself (28 colleges, 12 counties). Two independent facts agree.",
+  "_status": "PROPOSED — not yet written to Supabase. Adding a region to the shared college taxonomy is a schema change to a shared table (Rule 10(a3)); this file is the reviewable plan and the receipt.",
+
+  "renames": {
+    "_note": "Same colleges, the consortium's own name.",
+    "Central Coast": "South Central Coast",
+    "San Joaquin Valley": "Central Valley/Mother Lode",
+    "Inland Empire": "Inland Empire/Desert",
+    "San Diego – Imperial": "San Diego/Imperial"
+  },
+
+  "moves": {
+    "_note": "SWP puts Monterey, Santa Cruz and San Benito counties in the BAY region. college_geo has them under Central Coast. These three colleges move; nothing else does.",
+    "Hartnell College": {"county": "Monterey", "from": "Central Coast", "to": "Bay Area"},
+    "Monterey Peninsula College": {"county": "Monterey", "from": "Central Coast", "to": "Bay Area"},
+    "Cabrillo College": {"county": "Santa Cruz", "from": "Central Coast", "to": "Bay Area"}
+  },
+
+  "regions": {
+    "Bay": {"name": "Bay Area", "counties": ["Alameda","Contra Costa","Marin","Monterey","Napa","San Benito","San Francisco","San Mateo","Santa Clara","Santa Cruz","Solano","Sonoma"], "colleges_after_moves": 28},
+    "CVML": {"name": "Central Valley/Mother Lode", "counties": ["Fresno","Kern","Kings","Madera","Merced","San Joaquin","Stanislaus","Tulare","Tuolumne"], "colleges_after_moves": 15},
+    "FN": {"name": "Far North", "counties": ["Butte","Humboldt","Lassen","Mendocino","Plumas","Shasta","Siskiyou"], "colleges_after_moves": 7},
+    "GS": {"name": "Greater Sacramento", "counties": ["El Dorado","Placer","Sacramento","Yolo","Yuba"], "colleges_after_moves": 8},
+    "IE/D": {"name": "Inland Empire/Desert", "counties": ["Riverside","San Bernardino"], "colleges_after_moves": 12},
+    "LA": {"name": "Los Angeles", "counties": ["Los Angeles"], "colleges_after_moves": 21},
+    "OC": {"name": "Orange County", "counties": ["Orange"], "colleges_after_moves": 11},
+    "SCC": {"name": "South Central Coast", "counties": ["San Luis Obispo","Santa Barbara","Ventura"], "colleges_after_moves": 6},
+    "SD/I": {"name": "San Diego/Imperial", "counties": ["Imperial","San Diego"], "colleges_after_moves": 11}
+  },
+
+  "_counties_are_the_key": "Assign region by COUNTY, never by name similarity. The county column is what makes this checkable, and it is why the two mismatches were findable at all.",
+  "_next": "Confirm with Sam, then add swp_region + swp_region_code to the college taxonomy alongside district and mis_district_code, and flip the SWP scope to ready:true in college_briefing.js. The ASCCC area (four areas, A-D) is a SEPARATE scheme and stays disabled."
+}

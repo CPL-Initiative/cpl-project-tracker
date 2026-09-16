@@ -75,6 +75,9 @@ miscellaneous not elsewhere classified including includes level entry first line
 occupations occupation specialists specialist technicians technician assistants assistant
 managers manager supervisors supervisor helpers helper operators operator installers installer
 repairers repairer tenders tender setters setter services service related support
+studies study technology technologies science sciences program programs certificate certification
+introduction introductory beginning intermediate advanced fundamentals basic basics principles
+skills training course courses degree associate applied management
 """.split())
 
 
@@ -92,6 +95,15 @@ def clean_title(s):
 def toks(s):
     return [t for t in re.split(r"[^a-z0-9]+", (s or "").lower())
             if len(t) > 2 and t not in STOP]
+
+
+def _dedupe(seq):
+    """The same course arrives from two articulations. Keep first-seen order."""
+    seen, out = set(), []
+    for x in seq:
+        if x not in seen:
+            seen.add(x); out.append(x)
+    return out
 
 
 def stem(t):
@@ -140,8 +152,16 @@ class Matcher:
         if not shared:
             return None
         cover = len(shared) / len(A)
+        # ⚠️ ONE SHARED WORD IS A MATCH ONLY WHEN IT IS THE WHOLE OF ONE SIDE.
+        # Measured 2026-09-16 on Santa Rosa: without this, "Audiovisual Equipment
+        # Installers" matched "Diesel Equipment Technology" on `equipment`, and
+        # "Aircraft Service Attendants" matched "Personal Care Attendant" on
+        # `attendant`. Both titles carry two domain words and agree on the weaker
+        # one. "Paralegals and Legal Assistants" against "Paralegal Studies"
+        # survives because `studies` is generic framing and the programme side
+        # reduces to {paralegal} alone.
         ok = (len(shared) >= 2 and cover >= 0.50) or \
-             (len(shared) == 1 and cover >= 0.50 and all(self.df.get(t, 0) <= 2 for t in shared))
+             (len(shared) == 1 and (len(A) == 1 or len(B) == 1))
         if not ok:
             return None
         return dict(shared=sorted(shared), cover=round(cover, 2),
@@ -369,9 +389,9 @@ def build_one(canon, occs, occ_ex, ex, R):
             fit=fit, exhibit_status=st, priority=pri, priority_label=label,
             programs=[p["title"] for p, _ in pm[:4]],
             program_evidence="; ".join(sorted({t for _, h in pm[:4] for t in h["shared"]})),
-            courses=[f"{c['subj']} {c['num']} — {c['title']}"
-                     + (f" ({c['units']} units)" if c.get("units") else "")
-                     for c, _ in cm[:5]],
+            courses=_dedupe([f"{c['subj']} {c['num']} — {c['title']}"
+                             + (f" ({c['units']} units)" if c.get("units") else "")
+                             for c, _ in cm[:8]])[:5],
             exhibits=xt[:4],
             exhibit_ids=sorted({i for t in xt[:4] for i in ex[t]["ids"]})[:4],
             exhibits_adopted=on_it[:4],
