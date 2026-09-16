@@ -23,10 +23,10 @@
    "text": "Decide whether the Common Exhibit Reference should canonicalize against the credential registry — adopting the issuer's own credential name and the issuing agency in place of a vote among the freehand titles colleges typed."
   },
   {
-   "id": "s264-fable-stemmer",
+   "id": "s264-fable-matcher-vocabulary",
    "for": "Fable",
    "tab": "my-college",
-   "text": "Fix the word-stemmer in the occupation matcher. It trims -er and -or, so engineer becomes engine and actor becomes act, which matched Diesel Engine Specialists to Engineer In Training. Then score the matcher against Delta College's 139 human rulings and publish the error rate."
+   "text": "The occupation matcher now has a score: against Delta College's 139 human rulings it is right about nine times in ten when it says a college has something, and it finds about half of what a person finds. The word-stemmer bug is fixed. What is left is vocabulary — an application developer and a Computer Programming certificate share no words at all, so no threshold reaches them. Next: a synonym layer, or lean on the curated map."
   },
   {
    "id": "s264-fable-my-college",

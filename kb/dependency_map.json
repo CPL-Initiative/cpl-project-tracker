@@ -4,9 +4,9 @@
   "supabase_tables": 80,
   "rpcs": 31,
   "edge_functions": 5,
-  "file_datasets": 463,
+  "file_datasets": 465,
   "external_services": 143,
-  "consumers": 333,
+  "consumers": 334,
   "workflows": 33,
   "data_js_files": 59,
   "tabs": 37
@@ -3926,6 +3926,13 @@
      "direction": "read",
      "how": "literal",
      "line": 222
+    },
+    {
+     "id": "script:kb/_build_regional_cpl_opportunity.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 298
     }
    ],
    "producers": [
@@ -8429,6 +8436,19 @@
     "workflow:phase-1e-apply.yml"
    ]
   },
+  "file:kb/college_identity/<date>/crosswalk.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_regional_cpl_opportunity.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 244
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/college_short_names.json": {
    "consumers": [
     {
@@ -8465,6 +8485,13 @@
      "direction": "read",
      "how": "literal",
      "line": 200
+    },
+    {
+     "id": "script:kb/_build_regional_cpl_opportunity.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 221
     },
     {
      "id": "script:kb/_seed_college_short_names.py",
@@ -9698,6 +9725,13 @@
      "direction": "read",
      "how": "literal",
      "line": 204
+    },
+    {
+     "id": "script:kb/_build_regional_cpl_opportunity.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 220
     }
    ],
    "served": true,
@@ -11157,6 +11191,19 @@
      "direction": "read",
      "how": "literal",
      "line": 101
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/reference/handout_logos.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_regional_cpl_opportunity.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 834
     }
    ],
    "served": true,
@@ -13406,6 +13453,13 @@
      "line": 127
     },
     {
+     "id": "script:kb/_build_regional_cpl_opportunity.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 322
+    },
+    {
      "id": "script:kb/_preseed_unclassified.py",
      "kind": "script",
      "direction": "read",
@@ -14228,6 +14282,13 @@
      "direction": "read",
      "how": "literal",
      "line": 100
+    },
+    {
+     "id": "script:kb/_build_regional_cpl_opportunity.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 306
     },
     {
      "id": "script:tmc/_build_college_adts.py",
@@ -18486,6 +18547,7 @@
     "tests/authority_recode_apply_test.py",
     "tests/zband_retire_apply_test.py",
     "tests/uc_cur_promote_test.py",
+    "tests/occupation_matcher_stemming_test.py",
     "tests/identities_rekey_test.py",
     "tests/ccr_cpl_payload_test.py",
     "tests/ccr_cpl_universe_test.py",

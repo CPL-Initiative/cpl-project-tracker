@@ -134,6 +134,16 @@ jobs:
       # materialized record, P0 twice and P1 drift. Pure-stdlib python, no network.
       - name: UC-CUR promotion guard (kb/_uc_cur_promote.py)
         run: python3 tests/uc_cur_promote_test.py
+      # Occupation matcher stemming (Session 263) — stem() strips -er/-or, which
+      # is right for `installers -> install` and wrong for `engineer -> engine`
+      # and `actors -> act`: those land on a DIFFERENT word, and the coverage
+      # rule cannot catch it because the collapsed token is a genuine member of
+      # both sets by the time coverage runs. Measured on the 369-license join:
+      # 8 false pairs from the first collision, 1 from the second. The guard also
+      # pins `electricians -> electrician`, which an over-correction would break.
+      # Pure-stdlib python, no network.
+      - name: Occupation matcher stemming guard (kb/_build_regional_cpl_opportunity.py)
+        run: python3 tests/occupation_matcher_stemming_test.py
       # Identities map re-key (Session 226) — the articulation identities map
       # carried 1,597 keys on ids no longer in the catalog. Guards the chain
       # resolution (one lookup per map, in order), the collision rule (the live

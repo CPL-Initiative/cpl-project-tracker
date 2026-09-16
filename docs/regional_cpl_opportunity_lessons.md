@@ -205,3 +205,114 @@ college already understands.
 
 Captured in full at
 `CPLBrain/03-professional/braindumps/braindump-2026-09-16-1420-never-had-a-table-of-active-certificates-and-licenses.md`.
+
+## 2026-09-16 (third) — the matcher gets a score, and two fixes get rejected by it
+
+Sam: *"yes, fix the stemmer and score it against Delta's rulings."* Both
+happened, and the scoring is what made the session worth it: **two plausible
+fixes were measured and thrown away**, and neither would have looked wrong in
+review.
+
+### The score, and what it says
+
+`kb/_score_occupation_matcher.py` runs the matcher against the 139 occupations a
+human ruled on in `kb/delta_offering_map.json` — 52 confirmed, 38 potential, 49
+none. Two metrics, because the obvious one is not the useful one:
+
+- **Pair level** — of the occupation-to-program pairs proposed, how many the
+  human also named. Precision 0.47, recall 0.124. Harsh by construction: a human
+  names the programs that best answer the question, not every program whose title
+  overlaps.
+- **Decision level** — for each occupation, does the tool agree with the human
+  about whether this college has anything at all. **Precision 0.907, recall 0.51,
+  accuracy 0.626.**
+
+The decision number is the one to quote, because it is what the page renders. In
+plain terms: **when the tool says a college has something, it is right about nine
+times in ten, and it finds about half of what a human finds.** That is the right
+failure shape for a page a college reads — a wrong row wastes a meeting, a missing
+row is something a person in the room can still add.
+
+### Fix one, rejected: "protect the strip when the bare word is also in play"
+
+The stemmer strips `-er`/`-or` past four characters, so `engineer` became
+`engine` and `actors` became `act`. The first rule written for it was general and
+measured-sounding: if stripping an agent suffix lands on a token that is itself
+present in either title, the two are different words, so leave it alone.
+
+It removed both bad pairs. It also cost Santa Rosa three correct rows:
+
+| Occupation | Program it stopped reaching |
+|---|---|
+| Roofers | Basic Roof Framing |
+| Floral Designers | Floral Design |
+| Data Entry Keyers | 10-Key Data Entry |
+
+The rule had it exactly backwards. For a **true** agent noun — roofer, designer,
+keyer — the bare word being present is precisely when the merge is right. What
+separates `engineer` and `actor` is not a condition you can test at comparison
+time: an engineer is not "one who engines," and the *act* an actor performs is not
+the *Act* a legislature passes. Those are facts about English, not about the pair.
+
+The rule that shipped names **forbidden landing points** instead — a two-member
+set, each earned by a counted false pair. A strip onto one falls through to the
+next suffix, so the plural strip survives: `engineers → engineer`,
+`actors → actor`. Two spellings of one occupation still reach each other, and
+neither reaches `engine` or `act`. The three regressions are now test cases in
+`tests/occupation_matcher_stemming_test.py`, so the appealing wrong rule cannot
+come back green.
+
+### The fix exposed a homograph the bug had been hiding
+
+With `engineers` reducing to `engineer` instead of `engine`, Santa Rosa gained
+five rows pairing **Locomotive**, **Ship**, **Rail Yard**, **Stationary** and
+**Operating Engineers** with its **Engineering** program. None of them is an
+engineer in the academic sense. Santa Rosa moved 58 → 63 adopt rows, and four of
+those five are wrong.
+
+Worth stating plainly: **the bug had been suppressing a second bug.** Mangling
+the token to `engine` kept the homograph from ever matching. Fixing the stemmer
+did not create the homograph problem, it revealed it, and the count got worse on
+the way to being right.
+
+### Fix two, rejected: gate the single-token path on rarity
+
+The remaining errors all come from one path — a single shared token counts as a
+match when it is the whole of one side, which is what lets *Paralegals and Legal
+Assistants* reach *Paralegal Studies*. "Engineering" is a whole title that reduces
+to one token, so it collects every kind of Engineer.
+
+`Matcher` already carries a measured rarity test, unused in the current path, and
+gating on it looked principled: `paralegal` and `barber` are rare in a college's
+catalog, `engineer` recurs. It fails twice.
+
+It did not even fix the target — at 220 programs the 2% floor still calls
+`engineer` rare. And it cost real rows:
+
+| Occupation | Lost |
+|---|---|
+| Welders, Cutters, Solderers, and Brazers | Welding |
+| Automotive Body and Related Repairers | Auto Body |
+| Nursing Assistants | Nursing |
+
+Delta's decision F1 fell 0.653 → 0.630.
+
+The reason is worth keeping: **rarity runs backwards here.** A college with
+several welding programs serves welders *more*, not less. Frequency in a catalog
+measures institutional investment, and this rule needed it to measure ambiguity.
+Those are different things that happen to be numbers.
+
+Reverted, with the finding kept as a comment in the code so the next session does
+not retry it blind.
+
+### What the score says to do next
+
+The misses are not threshold problems. *Application developer* against *Computer
+Programming*, *ambulatory coder* against *Medical Office Assistant* — these share
+no token at all, so no threshold reaches them. **The recall ceiling is
+vocabulary.** Closing it needs a synonym layer, or the curated
+`kb/occupation_credential_map.json` that already holds the human rulings.
+
+Which is the argument for keeping the curated map. It was starting to look like
+scaffolding the generic matcher would replace. The score says it is the part that
+carries the meaning.

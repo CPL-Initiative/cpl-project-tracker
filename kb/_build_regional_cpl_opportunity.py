@@ -106,10 +106,43 @@ def _dedupe(seq):
     return out
 
 
+# ⚠️ -er / -or DERIVE AN AGENT *AND* END ORDINARY WORDS, so stripping them can
+# land on a DIFFERENT word. Measured 2026-09-16 joining the 369 California
+# licenses to the 541 COE occupations: "engineer" reduced to "engine" and put Bus
+# and Truck Mechanics and Diesel Engine Specialists against Engineer In Training
+# (8 pairs), and "actors" reduced to "act" and put Actors against the California
+# Residential Mortgage Lending Act. The coverage rule cannot catch either — by
+# the time coverage runs, the collapsed token is a genuine member of both sets.
+#
+# ⚠️ "IS THE BARE WORD ALSO IN PLAY" IS THE WRONG TEST, AND IT WAS TRIED FIRST.
+# For a true agent noun the bare word being present is exactly when the merge is
+# RIGHT: Roofers/Roof, Floral Designers/Floral Design, Data Entry Keyers/10-Key.
+# That rule cost Santa Rosa three correct rows before the before/after run caught
+# it. What separates engineer and actor is that they are not agent derivations of
+# the word the strip produces — engineer is not "one who engines", and the "act"
+# an actor performs is not the "Act" a legislature passes.
+#
+# So the guard names the FORBIDDEN LANDING POINTS, not a condition. A strip that
+# lands on one of these falls through to the next suffix, which leaves the plural
+# strip intact: engineers -> engineer, actors -> actor. Two spellings of the same
+# occupation still reach each other, and neither reaches engine or act.
+#
+# Extend it when a join measures a new collision. Each entry earns its place by
+# a counted false pair, never by suspicion.
+AGENT_SUF = ("ers", "ors", "er", "or")
+NOT_AGENT_ROOTS = frozenset({
+    "engine",   # engineer/engineers — 8 false pairs, 2026-09-16
+    "act",      # actor/actors — 1 false pair, 2026-09-16
+})
+
+
 def stem(t):
     for suf in ("ing", "ers", "er", "ors", "or", "ies", "es", "s"):
         if len(t) > 4 and t.endswith(suf):
-            return t[: -len(suf)]
+            base = t[: -len(suf)]
+            if suf in AGENT_SUF and base in NOT_AGENT_ROOTS:
+                continue          # try the next suffix; the plural strip is safe
+            return base
     return t
 
 
@@ -160,16 +193,24 @@ class Matcher:
         # one. "Paralegals and Legal Assistants" against "Paralegal Studies"
         # survives because `studies` is generic framing and the programme side
         # reduces to {paralegal} alone.
+        # ⚠️ RARITY WAS TRIED HERE AND IS THE WRONG SIGNAL (2026-09-16, measured).
+        # Gating this path on `rare(shared)` was meant to stop "Engineering" —
+        # a whole title that reduces to one token — collecting Locomotive, Ship,
+        # Rail Yard and Stationary Engineers, none of whom is an engineer in the
+        # academic sense. It did not even do that (at 220 programs the 2% floor
+        # still called `engineer` rare) and it cost real rows: Welders, Cutters,
+        # Solderers and Brazers stopped reaching Welding, Automotive Body and
+        # Related Repairers stopped reaching Auto Body, Nursing Assistants
+        # stopped reaching Nursing. Delta's decision F1 fell 0.653 -> 0.630.
+        # The reason is that rarity runs BACKWARDS here: a college with several
+        # welding programs serves welders MORE, not less. What is left is a
+        # homograph problem, and it wants a sense distinction, not a frequency.
         ok = (len(shared) >= 2 and cover >= 0.50) or \
              (len(shared) == 1 and (len(A) == 1 or len(B) == 1))
         if not ok:
             return None
         return dict(shared=sorted(shared), cover=round(cover, 2),
                     score=round(sum(self.idf(t) for t in shared), 2))
-        if len(shared) >= 2 or any(self.rare(t) for t in shared):
-            return dict(shared=sorted(shared),
-                        score=round(sum(self.idf(t) for t in shared), 2))
-        return None
 
 
 # ── identity ─────────────────────────────────────────────────────────────────

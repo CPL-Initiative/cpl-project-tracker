@@ -49,29 +49,48 @@ ended:
 
 ## The priority workstream
 
-**The matcher is the blocker, and it now has two measured defects.**
+**The matcher now has a score, and the score changed what "next" means.**
 
-1. **The single-shared-token path** still produces false positives. Fixed so far:
-   SOC "Except Police, Fire" negation, and the coverage rule (a shared token must
-   cover ≥ 0.5 of the occupation, or be the whole of one side), which cut Santa
-   Rosa from 233 "adopt now" to 24.
-2. **Over-stemming on agent suffixes, found 2026-09-16 and UNFIXED.** `stem()`
-   strips `-er`/`-or` past four characters, so **engineer → engine** and
-   **actor → act**. Measured on the license join: 8 false pairs from the first,
-   1 from the second. Coverage cannot catch it, because the collapsed token is a
-   genuine member of both sets by the time coverage runs. The fix is measurable
-   rather than hand-listed: protect a token whose stem is itself a literal token
-   in either corpus. Plural suffixes stay as they are.
+`kb/_score_occupation_matcher.py` runs it against Delta's 139 human rulings.
+**Decision level: precision 0.907, recall 0.51, accuracy 0.626** — when the tool
+says a college has something it is right about nine times in ten, and it finds
+about half of what a human finds. Quote the decision number, never the pair
+number (0.47 / 0.124); the pair metric is harsh by construction because a human
+names the best programs, not every overlapping one.
 
-Tune it offline against Delta's 139 human rulings as a labeled test set and
-publish the error rate. The same matcher drives the regional build, so run it
-before and after and say what moved.
+Shipped this run: the agent-suffix over-stemming guard (`NOT_AGENT_ROOTS`) plus
+`tests/occupation_matcher_stemming_test.py` in CI. Both measured collisions are
+gone from the license join.
+
+⚠️ **TWO PLAUSIBLE FIXES WERE MEASURED AND REJECTED. Do not retry them blind —
+both are recorded in the code.**
+
+1. *"Protect the agent strip when the bare word is also in play."* Backwards: for
+   a true agent noun that is exactly when the merge is right. Cost Santa Rosa
+   Roofers/Roof, Floral Designers/Floral Design, Data Entry Keyers/10-Key. Those
+   three are now test cases.
+2. *Gate the single-token path on `rare()`.* Rarity runs backwards here — a
+   college with several welding programs serves welders MORE. It failed to fix
+   its target and cost Welders, Automotive Body Repairers and Nursing Assistants.
+   Delta F1 fell 0.653 → 0.630.
+
+⚠️ **The stem fix exposed a homograph it had been masking.** Santa Rosa gained
+five rows pairing Locomotive / Ship / Rail Yard / Stationary / Operating
+Engineers with its **Engineering** program (58 → 63 adopt). Four are wrong. This
+needs a sense distinction, not a threshold.
+
+⭐ **The recall ceiling is VOCABULARY, not tuning.** *Application developer* and
+*Computer Programming*, *ambulatory coder* and *Medical Office Assistant* share
+no token, so nothing threshold-shaped reaches them. Closing it needs a synonym
+layer or the curated `kb/occupation_credential_map.json` — which the score
+reframes as the part carrying the meaning rather than scaffolding to replace.
 
 ## Carryover
 
 | Item | State |
 |---|---|
-| Matcher tuning + the agent-suffix fix | **next** — one run, scored, with a before/after |
+| Matcher: the vocabulary gap | **next** — a synonym layer, or lean on the curated map. Thresholds are exhausted |
+| The Engineering homograph | open — 4 wrong Santa Rosa rows, wants a sense distinction |
 | Port the regional view into My College | queued, behind the matcher |
 | California licenses as a third handout column | queued — Sam has seen the Santa Rosa handout and wants this shape |
 | `cpl_occupation_match` verdict queue | **Rule 10(a3) — Governance first.** A new shared human-write table is a decision-rights change, not a code detail |
