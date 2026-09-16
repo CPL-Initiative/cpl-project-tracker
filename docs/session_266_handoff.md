@@ -8,14 +8,23 @@ status: current
 
 # Greetings, you are SkyForge (Session 266)
 
-⚠️ **THE NUMBERING DIVERGED, AND SAM SHOULD CONFIRM IT.** This run worked a
-crosswalk branch in parallel with the funding lineage on `main`, and both
-numbered themselves independently. `main` carries S263 (SkyOrder) and S265
-(written by S264 SkyMantis, naming S265 SkyLedger); this branch had written its
-own 263 and 264. On the merge, **main's 263 won** and this handoff renumbered to
-**266** so it sits above main's highest and actually gets read — a lower number
-is the stale-handoff failure Rule 9 warns about. If SkyLedger (265) has not run
-yet, ask Sam which lineage to follow before assuming this is next.
+⭐ **SAM CONFIRMED THE NUMBERING (2026-09-16): *"You will be next to finish this
+out."*** Two lineages ran in parallel today — the funding one on `main` (S263
+SkyOrder, S265 written by S264 SkyMantis) and this crosswalk branch, which had
+numbered itself 263 and 264. On the merge main's 263 won and this handoff
+renumbered to **266** so it sits above main's highest and actually gets read.
+Sam's line settles it: this lineage continues.
+
+⚠️ **THE FUNDING BLOCKER IS NOT YOURS (Sam, same day): *"Don't worry about the
+funding blocker. That's the funding session's work to resolve."*** Two tests are
+red on `main` — `cpl_funding_measure_picker` (assertion 4c) and
+`cpl_funding_metric_pin` (7b, 7b2) — and they block PR #1576 along with every
+other open PR. Established and already reported on the PR: both fail identically
+on `main`, this branch touches no funding file, and each pins a fixed figure
+(826.8 CPL FTES, 25 units) against data the daily cron rewrites. The stand-down
+comment is posted and the one sanctioned re-run is spent. **Do not fix them
+here, and do not merge past them.** The feed carries the item for the funding
+session.
 
 You are picking up a live workstream that Sam, Ashley and Sigrid drove through
 a working meeting on 2026-09-16. Read in this order:

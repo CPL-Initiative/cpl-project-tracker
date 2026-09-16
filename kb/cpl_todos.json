@@ -2,7 +2,7 @@
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
  "_as_of": "2026-09-16",
  "_session": 266,
- "_status": "The regional CPL opportunity view works: pick a college, a district or a region and it returns the occupations in that area, the exhibits the college can adopt today, and the exhibits it could build. Sam chose its home — inside the My College tab, not a new one. The open problem is the matcher that pairs an occupation with a course: it still makes wrong pairs, and this run found a second cause, a word-stemmer that collapses engineer onto engine. That is fixed and scored: against Delta's 139 human rulings the tool is right about nine times in ten when it says a college has something, and it finds about half of what a person finds. Sam accepted those gaps, so every view now prints the numbers and tells the reader a missing occupation is unconfirmed rather than settled. Separately, the session gained something MAP has never held: a table of active certificates and licenses — 369 California occupational and professional licenses, complete with their issuing agency, plus 974 national industry certifications. Sam captured them by hand because the Credential Registry site is unreachable from here. He and Malone will pursue proper API access. Separately, the funding lineage's own items are still on this list below; two sessions ran in parallel today and the feed carries both until someone with the whole picture trims it.",
+ "_status": "The regional CPL opportunity view works: pick a college, a district or a region and it returns the occupations in that area, the exhibits the college can adopt today, and the exhibits it could build. Sam chose its home — inside the My College tab, not a new one. The open problem is the matcher that pairs an occupation with a course: it still makes wrong pairs, and this run found a second cause, a word-stemmer that collapses engineer onto engine. That is fixed and scored: against Delta's 139 human rulings the tool is right about nine times in ten when it says a college has something, and it finds about half of what a person finds. Sam accepted those gaps, so every view now prints the numbers and tells the reader a missing occupation is unconfirmed rather than settled. Separately, the session gained something MAP has never held: a table of active certificates and licenses — 369 California occupational and professional licenses, complete with their issuing agency, plus 974 national industry certifications. Sam captured them by hand because the Credential Registry site is unreachable from here. He and Malone will pursue proper API access. The feed is trimmed back to twelve; sixteen older items are parked in this file under _deferred rather than deleted, since none of them is done. One item is flagged for the funding session: two of its tests are red on main and block every open pull request.",
  "items": [
   {
    "id": "s266-sam-ce-api",
@@ -70,6 +70,14 @@
    "tab": "cobi-assistant",
    "text": "Put the assistant's sign-in awareness live: dispatch the cpl-chat deploy workflow. What changes: nothing for the public page, the Fact Sheet drawer, map.rccd.edu or the vendor iframe. On COBI, a signed-in reviewer or team-phrase holder sees one line under the assistant saying it recognized the sign-in — the proof that the server, not the page, decided who is asking. The log also records who asked and from where. The database change is already in place, so the order does not matter. Then try it: sign in, ask one question on the CPL Assistant tab, look for the line."
   },
+  {
+   "id": "s266-funding-session-tests-unpin",
+   "for": "Fable",
+   "tab": "implementation-funding",
+   "text": "FOR THE FUNDING SESSION (Sam, 2026-09-16: \"that's the funding session's work to resolve\"). Two funding tests are red on main and block every open PR: the measure picker and the metric pin each check a fixed number — 826.8 CPL FTES, 25 units — against figures the daily dashboard rewrites, so they go red on a day nobody changed any code. Read the number from the same data the page reads, or freeze the test's own copy of it."
+  }
+ ],
+ "_deferred": [
   {
    "id": "s259-sam-health-probe-hourly",
    "for": "Sam",
@@ -166,5 +174,6 @@
    "tab": "implementation-funding",
    "text": "Sam's rule that expended and allocated are not interchangeable — colleges spend, the Chancellor's Office allocates — was applied at the one place it was found in the memo builder. The rest of the memo and report text has not been read against it. Check who the subject is in each sentence before changing either word; a blanket sweep would get it backwards."
   }
- ]
+ ],
+ "_deferred_note": "Trimmed out of the rendered feed on 2026-09-16 to bring it back to budget (Sam: \"trim the todo\"). These are NOT done -- cpl_todos.js reads `items` only, so they are parked rather than deleted. Promote one back into `items` when it becomes live."
 }
