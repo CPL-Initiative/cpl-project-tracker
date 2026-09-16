@@ -4,9 +4,9 @@
   "supabase_tables": 80,
   "rpcs": 31,
   "edge_functions": 5,
-  "file_datasets": 465,
+  "file_datasets": 467,
   "external_services": 143,
-  "consumers": 334,
+  "consumers": 335,
   "workflows": 33,
   "data_js_files": 59,
   "tabs": 37
@@ -3932,7 +3932,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 298
+     "line": 318
     }
    ],
    "producers": [
@@ -9094,6 +9094,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/delta_offering_map.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_score_occupation_matcher.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 57
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/dependency_map.json": {
    "consumers": [
     {
@@ -11203,7 +11216,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 834
+     "line": 857
     }
    ],
    "served": true,
@@ -13457,7 +13470,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 322
+     "line": 342
     },
     {
      "id": "script:kb/_preseed_unclassified.py",
@@ -14059,6 +14072,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/occupation_matcher_stemming_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/prefix_fold_apply_test.py": {
    "consumers": [
     {
@@ -14288,7 +14314,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 306
+     "line": 326
     },
     {
      "id": "script:tmc/_build_college_adts.py",

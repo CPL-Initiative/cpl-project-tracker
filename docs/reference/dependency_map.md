@@ -438,6 +438,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/crnc_mirrors.json` | scripts: `excel_to_dashboard.py`, `kb/_detect_crnc_mirrors.py`, `kb/_rekey_crnc_mirrors.py` | — |
 | `kb/crossdisc_out/alias_map.json` | scripts: `kb/alias_chain.py` | — |
 | `kb/dashboard_config.json` | scripts: `excel_to_dashboard.py` | — |
+| `kb/delta_offering_map.json` | scripts: `kb/_score_occupation_matcher.py` | — |
 | `kb/dependency_map.json` | tabs: `admin` | — |
 | `kb/discipline_aliases.json` | tabs: `canonical-subj4` · scripts: `excel_to_dashboard.py`, `kb/_alias_canon.py`, `kb/_apply_drama_theater_convergence.py`, `kb/_apply_kin_pe_convergence.py`, `kb/_uc_cur_promote.py`, `kb/_zband_retire_apply.py`, `kb/_zband_retire_dryrun.py` | — |
 | `kb/discipline_blanks_worklist.json` | scripts: `kb/_build_discipline_blanks_worklist.py` | scripts: `kb/_build_discipline_blanks_worklist.py` · committed by: `daily-dashboard.yml` |
@@ -661,6 +662,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/memory_audit_test.py` | workflows: `js-tests.yml` | — |
 | `tests/merge_candidate_queue_test.py` | workflows: `js-tests.yml` | — |
 | `tests/merge_chain_flatten_test.py` | workflows: `js-tests.yml` | — |
+| `tests/occupation_matcher_stemming_test.py` | workflows: `js-tests.yml` | — |
 | `tests/prefix_fold_apply_test.py` | workflows: `js-tests.yml` | — |
 | `tests/prefix_fold_dryrun_test.py` | workflows: `js-tests.yml` | — |
 | `tests/probe_lifecycle_checks_test.py` | workflows: `js-tests.yml` | — |
@@ -857,5 +859,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 80 Supabase tables · 31 RPCs · 5 edge functions · 465 file
-datasets · 143 external services · 334 consumers · 33 workflows · 37 tabs.
+Coverage: 80 Supabase tables · 31 RPCs · 5 edge functions · 467 file
+datasets · 143 external services · 335 consumers · 33 workflows · 37 tabs.
