@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-09-16T14:15:02.323Z",
+  "scraped_at": "2026-09-16T17:08:29.721Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -18,18 +18,18 @@
       "colleges": [
         {
           "college": "Moreno Valley College",
-          "students": 2516,
-          "units": 12887.5,
-          "avgUnits": 5.122217806041335,
-          "transcriptionRate": 92.6,
-          "avgTranscribed": 4.742647058823529,
+          "students": 2521,
+          "units": 12907.5,
+          "avgUnits": 5.119992066640222,
+          "transcriptionRate": 95.6,
+          "avgTranscribed": 4.893692978976596,
           "criteriaMetCount": 5,
-          "militaryStudents": 1018,
-          "nonMilitaryStudents": 1515,
+          "militaryStudents": 1022,
+          "nonMilitaryStudents": 1516,
           "apprenticeStudents": 0,
-          "savings": 17171455,
-          "yearImpact": 69377637,
-          "transcribedUnits": 11932.5
+          "savings": 17206055,
+          "yearImpact": 69498977,
+          "transcribedUnits": 12337
         },
         {
           "college": "Norco College",
@@ -63,17 +63,17 @@
         },
         {
           "college": "Riverside City College",
-          "students": 887,
-          "units": 4307,
-          "avgUnits": 4.855693348365276,
-          "transcriptionRate": 92.7,
-          "avgTranscribed": 4.499436302142052,
+          "students": 888,
+          "units": 4318,
+          "avgUnits": 4.862612612612613,
+          "transcriptionRate": 92.4,
+          "avgTranscribed": 4.49436936936937,
           "criteriaMetCount": 4,
-          "militaryStudents": 869,
+          "militaryStudents": 870,
           "nonMilitaryStudents": 20,
           "apprenticeStudents": 0,
-          "savings": 7752445,
-          "yearImpact": 27296666,
+          "savings": 7771475,
+          "yearImpact": 27363403,
           "transcribedUnits": 3991
         },
         {
@@ -153,13 +153,13 @@
         },
         {
           "college": "Merced College",
-          "students": 3348,
+          "students": 3349,
           "units": 10056,
-          "avgUnits": 3.003584229390681,
+          "avgUnits": 3.002687369363989,
           "transcriptionRate": 98,
-          "avgTranscribed": 2.943847072879331,
+          "avgTranscribed": 2.942968050164228,
           "criteriaMetCount": 3,
-          "militaryStudents": 275,
+          "militaryStudents": 276,
           "nonMilitaryStudents": 3075,
           "apprenticeStudents": 20,
           "savings": 10874645,
@@ -443,13 +443,13 @@
         },
         {
           "college": "Los Angeles Pierce College",
-          "students": 392,
+          "students": 394,
           "units": 1446,
-          "avgUnits": 3.688775510204082,
+          "avgUnits": 3.6700507614213196,
           "transcriptionRate": 71,
-          "avgTranscribed": 2.61734693877551,
+          "avgTranscribed": 2.6040609137055837,
           "criteriaMetCount": 1,
-          "militaryStudents": 139,
+          "militaryStudents": 141,
           "nonMilitaryStudents": 253,
           "apprenticeStudents": 0,
           "savings": 1626395,
@@ -1177,6 +1177,21 @@
           "transcribedUnits": 0
         },
         {
+          "college": "Reedley College",
+          "students": 132,
+          "units": 534.5,
+          "avgUnits": 4.049242424242424,
+          "transcriptionRate": 0,
+          "avgTranscribed": 0,
+          "criteriaMetCount": 0,
+          "militaryStudents": 128,
+          "nonMilitaryStudents": 4,
+          "apprenticeStudents": 0,
+          "savings": 838622.5,
+          "yearImpact": 3092849,
+          "transcribedUnits": 0
+        },
+        {
           "college": "Ohlone College",
           "students": 132,
           "units": 0,
@@ -1189,21 +1204,6 @@
           "apprenticeStudents": 0,
           "savings": 0,
           "yearImpact": 0,
-          "transcribedUnits": 0
-        },
-        {
-          "college": "Reedley College",
-          "students": 131,
-          "units": 534.5,
-          "avgUnits": 4.080152671755725,
-          "transcriptionRate": 0,
-          "avgTranscribed": 0,
-          "criteriaMetCount": 0,
-          "militaryStudents": 127,
-          "nonMilitaryStudents": 4,
-          "apprenticeStudents": 0,
-          "savings": 838622.5,
-          "yearImpact": 3092849,
           "transcribedUnits": 0
         },
         {
@@ -1757,15 +1757,15 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "51,594",
+      "value": "51,604",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "28,134"
+          "value": "28,143"
         },
         {
           "label": "Workforce/Other",
-          "value": "23,547"
+          "value": "23,548"
         },
         {
           "label": "Apprentice",
@@ -1799,7 +1799,7 @@
       "breakdowns": [
         {
           "label": "Military",
-          "value": "15k"
+          "value": "16k"
         },
         {
           "label": "Workforce/Other",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 51594,
-    "Units": 220784.65000000002,
-    "TranscribedUnits": 73024.95,
-    "Savings": 330794112.75,
-    "YearImpact": 1310056776.4,
-    "MilitaryStudents": 28134,
-    "NonMilitaryStudents": 23547,
+    "Students": 51604,
+    "Units": 220815.65000000002,
+    "TranscribedUnits": 73429.45,
+    "Savings": 330847742.75,
+    "YearImpact": 1310244853.4,
+    "MilitaryStudents": 28143,
+    "NonMilitaryStudents": 23548,
     "AprenticeStudents": 851,
-    "AverageUnits": 4.279269876342211,
-    "TranscribedAverage": 1.4153767879986043
+    "AverageUnits": 4.279041353383459,
+    "TranscribedAverage": 1.4229410510813114
   }
 }

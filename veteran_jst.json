@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-09-16T14:15:02.862983+00:00",
+  "scraped_at": "2026-09-16T17:08:30.076273+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 28134,
+    "jst": 28143,
     "star_colleges": 57
   },
   "computed_star_colleges": 57,
@@ -42,7 +42,7 @@
     },
     "Moreno Valley College": {
       "vets": 916,
-      "jst": 1018,
+      "jst": 1022,
       "star": true
     },
     "Bakersfield College": {
@@ -52,7 +52,7 @@
     },
     "Merced College": {
       "vets": 142,
-      "jst": 275,
+      "jst": 276,
       "star": true
     },
     "West Los Angeles College": {
@@ -77,7 +77,7 @@
     },
     "Riverside City College": {
       "vets": 1508,
-      "jst": 869,
+      "jst": 870,
       "star": false
     },
     "El Camino College": {
@@ -207,7 +207,7 @@
     },
     "Los Angeles Pierce College": {
       "vets": 296,
-      "jst": 139,
+      "jst": 141,
       "star": false
     },
     "Victor Valley College": {
@@ -297,7 +297,7 @@
     },
     "Reedley College": {
       "vets": 82,
-      "jst": 127,
+      "jst": 128,
       "star": true
     },
     "Lassen College": {
