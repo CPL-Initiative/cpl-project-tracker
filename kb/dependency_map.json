@@ -17193,6 +17193,16 @@
      "line": 2350
     },
     {
+     "id": "module:college_briefing.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "seeded",
+     "line": 0,
+     "tabs": [
+      "college-briefing"
+     ]
+    },
+    {
      "id": "module:college_identity.js",
      "kind": "module",
      "direction": "read",
@@ -17226,6 +17236,16 @@
   "supabase:map_college_contacts_pub": {
    "consumers": [
     {
+     "id": "module:college_briefing.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "seeded",
+     "line": 0,
+     "tabs": [
+      "college-briefing"
+     ]
+    },
+    {
      "id": "script:kb/_publish_college_briefing.py",
      "kind": "script",
      "direction": "read",
@@ -17237,6 +17257,16 @@
   },
   "supabase:map_college_cr_unit": {
    "consumers": [
+    {
+     "id": "module:college_briefing.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "seeded",
+     "line": 0,
+     "tabs": [
+      "college-briefing"
+     ]
+    },
     {
      "id": "script:chatbox/smoke_test.sh",
      "kind": "script",
@@ -17257,6 +17287,16 @@
   "supabase:map_college_cr_waiting_pub": {
    "consumers": [
     {
+     "id": "module:college_briefing.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "seeded",
+     "line": 0,
+     "tabs": [
+      "college-briefing"
+     ]
+    },
+    {
      "id": "script:kb/_publish_college_briefing.py",
      "kind": "script",
      "direction": "write",
@@ -17274,6 +17314,16 @@
      "direction": "read",
      "how": "literal",
      "line": 1089
+    },
+    {
+     "id": "module:college_briefing.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "seeded",
+     "line": 0,
+     "tabs": [
+      "college-briefing"
+     ]
     },
     {
      "id": "script:chatbox/smoke_test.sh",
@@ -17295,6 +17345,16 @@
   "supabase:map_college_credit_summary_pub": {
    "consumers": [
     {
+     "id": "module:college_briefing.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "seeded",
+     "line": 0,
+     "tabs": [
+      "college-briefing"
+     ]
+    },
+    {
      "id": "script:kb/_publish_college_briefing.py",
      "kind": "script",
      "direction": "read",
@@ -17312,6 +17372,16 @@
      "direction": "read",
      "how": "literal",
      "line": 1092
+    },
+    {
+     "id": "module:college_briefing.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "seeded",
+     "line": 0,
+     "tabs": [
+      "college-briefing"
+     ]
     },
     {
      "id": "script:chatbox/smoke_test.sh",
@@ -17332,6 +17402,16 @@
   },
   "supabase:map_college_goal2_pub": {
    "consumers": [
+    {
+     "id": "module:college_briefing.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "seeded",
+     "line": 0,
+     "tabs": [
+      "college-briefing"
+     ]
+    },
     {
      "id": "script:kb/_publish_college_briefing.py",
      "kind": "script",

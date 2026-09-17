@@ -95,14 +95,14 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `kb_curation` | tabs: `canonical-subj4`, `credential-reference`, `map-export`, `unified-courses`, `vision-2030` · scripts: `kb/_apply_canonical_subj4.py`, `kb/_apply_credential_review.py`, `kb/_apply_curation.py`, `kb/_apply_unclassified_triage.py`, `kb/_cred_rename_apply_supabase.py`, `kb/_eacr_flag_migrate.py`, `kb/_overmerge_apply_supabase.py`, `kb/_preseed_unclassified.py`, `kb/_rekey_kb_curation_supabase.py`, `kb/_subj4_apply_supabase.py` | tabs: `canonical-subj4`, `credential-reference`, `unified-courses`, `vision-2030` · scripts: `kb/_cred_rename_apply_supabase.py`, `kb/_eacr_flag_migrate.py`, `kb/_overmerge_apply_supabase.py`, `kb/_preseed_unclassified.py`, `kb/_rekey_kb_curation_supabase.py`, `kb/_subj4_apply_supabase.py` |
 | `liftoff_state` | pages: `CPL_Dashboard.html` | pages: `CPL_Dashboard.html` |
 | `map_cleanup_worklist` | tabs: `map-data-quality` | — |
-| `map_college_contacts` | tabs: `college-identity`, `map-queue`, `map-users` · scripts: `kb/_publish_college_briefing.py` · `edgefn:cpl-chat` | — |
-| `map_college_contacts_pub` | scripts: `kb/_publish_college_briefing.py` | — |
-| `map_college_cr_unit` | scripts: `chatbox/smoke_test.sh`, `kb/_publish_college_briefing.py` | — |
-| `map_college_cr_waiting_pub` | none found | scripts: `kb/_publish_college_briefing.py` |
-| `map_college_credit_summary` | scripts: `chatbox/smoke_test.sh`, `kb/_publish_college_briefing.py` · `edgefn:cpl-chat` | — |
-| `map_college_credit_summary_pub` | scripts: `kb/_publish_college_briefing.py` | — |
-| `map_college_goal2` | scripts: `chatbox/smoke_test.sh`, `kb/_publish_college_briefing.py` · `edgefn:cpl-chat` | — |
-| `map_college_goal2_pub` | scripts: `kb/_publish_college_briefing.py` | — |
+| `map_college_contacts` | tabs: `college-briefing`, `college-identity`, `map-queue`, `map-users` · scripts: `kb/_publish_college_briefing.py` · `edgefn:cpl-chat` | — |
+| `map_college_contacts_pub` | tabs: `college-briefing` · scripts: `kb/_publish_college_briefing.py` | — |
+| `map_college_cr_unit` | tabs: `college-briefing` · scripts: `chatbox/smoke_test.sh`, `kb/_publish_college_briefing.py` | — |
+| `map_college_cr_waiting_pub` | tabs: `college-briefing` | scripts: `kb/_publish_college_briefing.py` |
+| `map_college_credit_summary` | tabs: `college-briefing` · scripts: `chatbox/smoke_test.sh`, `kb/_publish_college_briefing.py` · `edgefn:cpl-chat` | — |
+| `map_college_credit_summary_pub` | tabs: `college-briefing` · scripts: `kb/_publish_college_briefing.py` | — |
+| `map_college_goal2` | tabs: `college-briefing` · scripts: `chatbox/smoke_test.sh`, `kb/_publish_college_briefing.py` · `edgefn:cpl-chat` | — |
+| `map_college_goal2_pub` | tabs: `college-briefing` · scripts: `kb/_publish_college_briefing.py` | — |
 | `map_college_nudges` | tabs: `governance`, `map-queue`, `map-users` | tabs: `map-queue`, `map-users` |
 | `map_college_users` | tabs: `map-queue`, `map-users` | — |
 | `map_colleges` | tabs: `college-briefing`, `college-identity`, `map-queue`, `map-users` · scripts: `chatbox/smoke_test.sh`, `kb/_identity_daily_check.py` · `edgefn:cpl-chat` | — |
