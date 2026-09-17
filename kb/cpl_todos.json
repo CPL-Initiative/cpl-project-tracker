@@ -2,7 +2,7 @@
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
  "_as_of": "2026-09-17",
  "_session": 267,
- "_status": "The public funding explainer now reads the model instead of copies of it. Its priority descriptions, the baseline requirements a college has to meet, and the participation deadline had all been typed onto the page by hand, and each had quietly drifted from what the model actually says — one card was describing a measure we stopped using. The page also gained a Download PDF button, a section that puts the three priorities and the milestone dates together, section titles in the model's own words, and a college table that fits the window. Separately, the test suite went red on main with nobody's hands on it: three checks had memorised figures that the nightly data refresh recomputes, so an ordinary data update broke them and cost another piece of work an hour proving it was not at fault. Those checks now read the figures rather than remembering them. Main is green. The crosswalk lineage also landed this run: a regional CPL opportunity view for any college, district or Strong Workforce region, now carrying its own measured accuracy on every page, plus the first table of active California licenses and national certifications the program has held.",
+ "_status": "Sigrid meets the Bay Area Strong Workforce consortium and can now pick any college in the room and show what it could already give credit for — 28 colleges, 6,903 occupation rows, 1,223 of them ready to adopt today. It lives inside the My College tab, so she flips between colleges with the picker that was already there. Two things to know about what it shows: the matches are made by the tool rather than ruled by a person, so the page says on every row which word it matched on and asks faculty to confirm before a college acts; and the accuracy figures were measured at San Joaquin Delta College, so the page also says plainly that they come from outside the Bay. Building it turned up a quiet fault worth naming: the old region setting was dropping five of the consortium's 28 colleges with nothing on the page to say so. That is fixed, and the college-to-region list now lives in the repo rather than being inferred.",
  "items": [
   {
    "id": "s266-sam-ce-api",
@@ -26,13 +26,7 @@
    "id": "s266-fable-matcher-vocabulary",
    "for": "Fable",
    "tab": "my-college",
-   "text": "The occupation matcher now has a score: against Delta College's 139 human rulings it is right about nine times in ten when it says a college has something, and it finds about half of what a person finds. The word-stemmer bug is fixed. What is left is vocabulary — an application developer and a Computer Programming certificate share no words at all, so no threshold reaches them. Next: a synonym layer, or lean on the curated map."
-  },
-  {
-   "id": "s266-fable-my-college",
-   "for": "Fable",
-   "tab": "my-college",
-   "text": "Put the regional CPL opportunity view inside the My College tab, behind the scope picker that tab already has. Single pick by default, multi-select available for meetings."
+   "text": "The occupation matcher's misses are a VOCABULARY problem, not a tuning one. Application developer and Computer Programming share no word, so no threshold reaches them. The register is live in the My College tab and discloses the gap, so this is about making it find more rather than about shipping. Closing it needs a synonym layer or the curated occupation map — and two plausible shortcuts are already measured and rejected in the code."
   },
   {
    "id": "s266-fable-licenses-handout",
@@ -77,10 +71,10 @@
    "text": "Say go on the hourly health probe, or make the one-line change yourself. Its own notes say to raise it from every three hours to hourly once billing moved to the corporate account, which happened on 10 September; the remote session that tried to make the change was stopped by its permission rules because a scheduled workflow is a shared resource that spends real funding (about $22 a month at the notes' estimate). The change is the cron line in cpl-chat-health.yml: '7 */3 * * *' becomes '7 * * * *'."
   },
   {
-   "id": "s266-funding-session-tests-unpin",
-   "for": "Sam",
-   "tab": "implementation-funding",
-   "text": "NEEDS RESOLVING, and Sam has asked for help reading it when he returns to this lane. Two automatic checks on the funding tab are failing. Nothing is broken: each check has an exact number written inside it (826.8 CPL FTES, and 25 units) that was right the day it was written, and the daily dashboard recalculates that number every morning. It is a stopped clock rather than a fire. It still matters, because we never merge past a failing check, so every open pull request is stuck behind these two. The fix is to let the check read the figure from the same place the page reads it. Full explanation in docs/reference/lanes/implementation-funding.md."
+   "id": "s267-fable-register-other-regions",
+   "for": "Fable",
+   "tab": "my-college",
+   "text": "The opportunity register covers the Bay's 28 colleges only. A college outside it is told so rather than shown an empty page, but any other region needs its own build — about an hour of generation, no design change. Run it when a second consortium asks."
   }
  ],
  "_deferred": [

@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-454 document(s).
+457 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -156,6 +156,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A safe fallback is safe only for the caller it was written for](../kb-notes/methodology-a-safe-fallback-is-caller-specific.md) | methodology | published | 2026-08-11 | 2026-08-11 |
 | [A saved setting is not the effective value — ask the model, not the config](../kb-notes/methodology-a-saved-setting-is-not-the-effective-value.md) | methodology | published | 2026-08-26 | 2026-08-26 |
 | [A scoped question may need a different instrument, not a filter](../kb-notes/methodology-a-scoped-question-may-need-a-different-instrument.md) | methodology | published | 2026-08-19 | 2026-08-19 |
+| [A score measured in one population is not a score in another](../kb-notes/methodology-a-score-measured-in-one-population-is-not-a-score-in-another.md) | methodology | published | 2026-09-17 | 2026-09-17 |
 | [A screen and its export must share a scope, not a shape](../kb-notes/methodology-screen-and-export-share-a-scope-not-a-shape.md) | methodology | published | 2026-08-28 | 2026-08-28 |
 | [A second bound breaks a pin-as-you-go solver — one-sided is monotone, two-sided is not](../kb-notes/methodology-a-second-bound-breaks-a-pin-as-you-go-solver.md) | methodology | published | 2026-08-22 | 2026-08-22 |
 | [A second copy of a fact is a stale copy waiting](../kb-notes/methodology-a-second-copy-of-a-fact-is-a-stale-copy-waiting.md) | methodology | published | 2026-08-25 | 2026-08-25 |
@@ -170,6 +171,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A snapshot cannot be the authority on intent](../kb-notes/methodology-a-snapshot-cannot-be-the-authority-on-intent.md) | methodology | published | 2026-09-07 | 2026-09-07 |
 | [A snapshot of a live model is a claim that decays](../kb-notes/methodology-a-snapshot-of-a-live-model-is-a-claim-that-decays.md) | methodology | published | 2026-08-23 | 2026-08-23 |
 | [A soft-delete overlay on dual-rendered rows must be scoped to ONE render layer](../kb-notes/methodology-layer-scoped-soft-delete-dual-rendered-rows.md) | methodology | published | 2026-07-02 | 2026-07-02 |
+| [A solved prerequisite does not notify its consumers](../kb-notes/methodology-a-solved-prerequisite-does-not-notify-its-consumers.md) | methodology | published | 2026-09-17 | 2026-09-17 |
 | [A source file that abbreviates titles fakes an absence](../kb-notes/methodology-a-source-file-that-abbreviates-titles-fakes-an-absence.md) | methodology | published | 2026-08-12 | 2026-08-12 |
 | [A staged state lives on the model, and every view asks it](../kb-notes/methodology-a-staged-state-lives-on-the-model-and-every-view-asks-it.md) | methodology | published | 2026-09-07 | 2026-09-07 |
 | [A static guard should assert the contract, not the argument order](../kb-notes/methodology-assert-the-contract-not-the-argument-order.md) | methodology | published | 2026-08-11 | 2026-08-11 |
@@ -399,6 +401,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [When two source tabs disagree, neither is authoritative — get the certified value](../kb-notes/methodology-conflicting-source-tabs-use-certified-value.md) | methodology | published | 2026-07-15 |  |
 | [When you can't verify an assumption, ship the oracle beside it](../kb-notes/methodology-ship-the-oracle-with-the-assumption.md) | methodology | published | 2026-07-31 | 2026-07-31 |
 | [Witness-kinship gate: historical receipts need a present-tense validity check](../kb-notes/methodology-witness-kinship-gate.md) | methodology | published | 2026-06-11 |  |
+| [Write the dependency-free output first](../kb-notes/methodology-write-the-dependency-free-output-first.md) | methodology | published | 2026-09-17 | 2026-09-17 |
 | [A decision sheet takes its replies on the page, and the session reads them from the store](../kb-notes/playbook-decision-sheet-replies.md) | playbook | published | 2026-09-05 | 2026-09-05 |
 | [Answering a vulnerability notice about a host we link to](../kb-notes/playbook-answering-a-vulnerability-notice-about-a-host-we-link-to.md) | playbook | published | 2026-09-11 | 2026-09-11 |
 | [Curate-editable overlay for a standalone static page](../kb-notes/playbook-curate-editable-standalone-page.md) | playbook | published | 2026-06-28 | 2026-06-28 |

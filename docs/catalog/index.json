@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 454,
+   "count": 457,
    "docs": [
     {
      "created": "2026-08-14",
@@ -2749,6 +2749,25 @@
      "updated": "2026-08-19"
     },
     {
+     "created": "2026-09-17",
+     "governs": [
+      "college_briefing.js",
+      "kb/_score_occupation_matcher.py",
+      "kb/_emit_regional_opps_data.py"
+     ],
+     "path": "docs/kb-notes/methodology-a-score-measured-in-one-population-is-not-a-score-in-another.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "partner-crosswalks",
+      "matcher",
+      "disclosure"
+     ],
+     "title": "A score measured in one population is not a score in another",
+     "type": "methodology",
+     "updated": "2026-09-17"
+    },
+    {
      "created": "2026-08-28",
      "governs": [
       "cpl_funding.js"
@@ -3021,6 +3040,25 @@
      "title": "A soft-delete overlay on dual-rendered rows must be scoped to ONE render layer",
      "type": "methodology",
      "updated": "2026-07-02"
+    },
+    {
+     "created": "2026-09-17",
+     "governs": [
+      "kb/_build_regional_cpl_opportunity.py",
+      "kb/reference/swp_region_roster.json",
+      "college_briefing.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-solved-prerequisite-does-not-notify-its-consumers.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "partner-crosswalks",
+      "data-quality",
+      "docstrings"
+     ],
+     "title": "A solved prerequisite does not notify its consumers",
+     "type": "methodology",
+     "updated": "2026-09-17"
     },
     {
      "created": "2026-08-12",
@@ -7572,6 +7610,23 @@
      "title": "Witness-kinship gate: historical receipts need a present-tense validity check",
      "type": "methodology",
      "updated": ""
+    },
+    {
+     "created": "2026-09-17",
+     "governs": [
+      "kb/_build_regional_cpl_opportunity.py"
+     ],
+     "path": "docs/kb-notes/methodology-write-the-dependency-free-output-first.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "generators",
+      "pipeline",
+      "reliability"
+     ],
+     "title": "Write the dependency-free output first",
+     "type": "methodology",
+     "updated": "2026-09-17"
     },
     {
      "created": "2026-09-05",
@@ -13394,8 +13449,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 240,
+   "count": 241,
    "docs": [
+    {
+     "created": "2026-09-17",
+     "governs": [],
+     "n": 268,
+     "path": "docs/session_268_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "partner-crosswalks",
+      "regional-cpl-opportunity",
+      "my-college",
+      "matcher"
+     ],
+     "title": "the register reached the tab, and the roster that was solved but unwired",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-17",
      "governs": [],
@@ -17453,5 +17525,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 906
+ "total": 910
 }
