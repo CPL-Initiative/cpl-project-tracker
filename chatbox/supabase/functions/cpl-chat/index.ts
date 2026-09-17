@@ -1010,6 +1010,47 @@ async function searchCollegeOfferings(query: string, sb: any): Promise<any[] | n
   return data;
 }
 
+// ── College PROGRAMS search (the AWARDS a college confers) ─────────────────────
+// The third of Sierra's three views of a college, and the one she was missing
+// entirely until 2026-09-17: chatbox_exhibits is what a college has ARTICULATED,
+// coci_college_offerings is what it TEACHES (a course rollup), and this is what
+// it AWARDS. She declined a real student question about LVN programs while
+// coci_college_programs sat unread at 22,335 rows over 118 colleges.
+//
+// A course rollup cannot answer it. "Does anyone teach nursing courses" and
+// "which colleges confer an LVN certificate" are different questions, and only
+// the second is what a student choosing a college is asking.
+//
+// RAW TERMS, not a caller-built tsquery — the reason is in
+// searchExhibitsByTopic's header: `aed:*` parsed as 'english' becomes `'a':*`.
+// "LVN" is that same class, three letters with no stem, and here it is the
+// headline query rather than an edge case.
+//
+// ⚠️ MEASURED, and it is the whole design: by program title the LVN question
+// finds 53 colleges, by either code 44, and the union is 56 — 12 colleges only
+// the title finds, 3 only a code finds. So the RPC matches BOTH surfaces and
+// reports `matched_via` per row. Never gate on a code.
+//
+// Returns null when the RPC is absent, which is the state until the migration in
+// chatbox/supabase_search_college_programs.sql is applied. That is deliberate:
+// an unmigrated database costs Sierra this one section and nothing else.
+async function searchCollegePrograms(query: string, sb: any): Promise<any[] | null> {
+  const rawKeywords = extractTopicKeywords(query);
+  if (rawKeywords.length === 0) return null;
+  const keywords = expandWithSynonyms(rawKeywords);
+  const { data, error } = await sb.rpc("search_college_programs", {
+    search_terms: keywords,
+    college_filter: null,
+    result_limit: 150,
+  });
+  if (error) {
+    console.error("search_college_programs unavailable:", error.message);
+    return null;
+  }
+  if (!data || data.length === 0) return null;
+  return data;
+}
+
 // Fetch region/county for EVERY college in one read (~120 rows) so BOTH lists —
 // the earned-exhibit list and the course-catalog list — can rank by proximity.
 // This replaces a single-row lookup that only the offerings path could use:
@@ -2163,6 +2204,89 @@ function buildOfferingsContext(
   return ctx;
 }
 
+// ── Build programs context (what colleges AWARD) ──────────────────────────────
+// Ranked on the same askedGeo anchor as the offerings list, so a student gets
+// nearest-first in both sections rather than two differently-sorted lists.
+//
+// ⚠️ THE SPLIT THAT MATTERS IS `matched_via`, NOT THE RANKING. A program whose
+// TITLE names what was asked is the thing; a program matched only by its CODE is
+// in the same field and may be for somebody else entirely. The LVN case is the
+// worked example: "LVN to RN" is coded Registered Nursing in both taxonomies, so
+// a code-matched row can be a BRIDGE FOR PEOPLE WHO ALREADY HOLD the credential
+// the asker wants to earn. Collapsing the two would have Sierra answer an
+// aspiring LVN with a program that requires an LVN license to enter.
+function buildProgramsContext(
+  programs: any[],
+  askedCollege: string | null,
+  askedGeo: any | null,
+  geoMap: Map<string, any> | null = null,
+): string {
+  if (!programs || programs.length === 0) return "";
+
+  const byCollege = new Map<string, { named: any[]; field: any[]; region: string | null; county: string | null }>();
+  for (const r of programs) {
+    const fb = geoMap?.get(r.college) || null;
+    const g = byCollege.get(r.college) || {
+      named: [], field: [],
+      region: r.region || fb?.region || null,
+      county: r.county || fb?.county || null,
+    };
+    // 'title' and 'title+code' mean the program's own name carries the ask.
+    if (r.matched_via === "code") g.field.push(r);
+    else g.named.push(r);
+    byCollege.set(r.college, g);
+  }
+
+  const rank = (g: any) => (g.named.length > 0 ? 1000 : 0)
+    + proximityBand(g, askedGeo) * 100
+    + Math.min(g.named.length + g.field.length, 39);
+
+  const fmtProgram = (r: any) => {
+    let s = `  - ${r.program_title}`;
+    if (r.award) s += ` — ${r.award}`;
+    const codes = [];
+    if (r.top_title) codes.push(`TOP ${r.top_code} ${r.top_title}`);
+    if (r.cip_title) codes.push(`CIP ${r.cip_code} ${r.cip_title}`);
+    if (codes.length) s += ` [${codes.join("; ")}]`;
+    if (r.status && r.status !== "Active") s += ` (status ${r.status})`;
+    return s + `\n`;
+  };
+
+  const fmtCollege = (college: string, g: any) => {
+    let s = `\n## ${college}${geoLabel(g)}\n`;
+    if (g.named.length) {
+      s += `  AWARDS THIS (the program name says so):\n`;
+      for (const r of g.named.slice(0, 6)) s += fmtProgram(r);
+      if (g.named.length > 6) s += `  ... and ${g.named.length - 6} more.\n`;
+    }
+    if (g.field.length) {
+      s += `  SAME FIELD BY CODE ONLY — verify this is the right program before offering it:\n`;
+      for (const r of g.field.slice(0, 3)) s += fmtProgram(r);
+      if (g.field.length > 3) s += `  ... and ${g.field.length - 3} more.\n`;
+    }
+    return s;
+  };
+
+  const askedRaw = askedCollege ? byCollege.get(askedCollege) : null;
+  const others = [...byCollege.entries()]
+    .filter(([c]) => c !== askedCollege)
+    .sort((a, b) => rank(b[1]) - rank(a[1]));
+
+  let ctx = "\n\n--- Program Catalog: WHICH COLLEGES AWARD THIS (COCI programs — the degrees and certificates a college confers, NOT a CPL articulation) ---\n";
+  ctx += `${byCollege.size} college(s) below have a matching program. This is the TOP matching set, NOT an exhaustive list.\n`;
+
+  if (askedCollege) {
+    if (askedRaw) ctx += `\n### ${askedCollege} — what it awards in this area:` + fmtCollege(askedCollege, askedRaw);
+    else ctx += `\n### ${askedCollege} has no matching program in the current COCI export — say you are not certain from the data at hand rather than that it has none.\n`;
+  }
+  if (others.length) {
+    ctx += `\n### ${askedCollege ? "Other colleges" : "Colleges"} with a matching program (nearest first when a home college is known):\n`;
+    for (const [college, g] of others.slice(0, 10)) ctx += fmtCollege(college, g);
+    if (others.length > 10) ctx += `\n  ... and ${others.length - 10} more college(s) have a matching program.\n`;
+  }
+  return ctx;
+}
+
 // ── Build topic context (organized by college) ─────────────────
 function buildTopicContext(
   results: any[],
@@ -2634,6 +2758,15 @@ const OFFERINGS_RULE = `\n\nABOUT THE "COURSE CATALOG / WHICH COLLEGES TEACH THI
 - ALWAYS add that teaching a course is not a guarantee of credit — the student/organization should contact the college's CPL coordinator to request a review. Never claim an articulation exists when only a course is taught.
 - The catalog list shows the TOP matching colleges, NOT an exhaustive list. NEVER conclude that a college does NOT teach a subject just because it isn't shown — many colleges that teach it may not appear. If a specific college the visitor named is not in the list, do NOT say it lacks the courses; say you're not certain from the data at hand and suggest checking that college's catalog or CPL coordinator.`;
 
+const PROGRAMS_RULE = `\n\nABOUT THE "PROGRAM CATALOG / WHICH COLLEGES AWARD THIS" SECTION (if present): this is the set of DEGREES AND CERTIFICATES a college confers, from the COCI program export. It is a THIRD thing, distinct from both sections above — the exhibit list is what a college has already ARTICULATED for CPL, the course catalog is what it TEACHES, and this is what a student can actually EARN there. A college can teach courses in a field and confer no award in it.
+- WHEN SOMEONE ASKS WHERE THEY CAN STUDY OR TRAIN FOR SOMETHING, this section is the direct answer. Lead with it, name the colleges, and name the AWARD (a certificate and a degree are different commitments, and the visitor is choosing between them).
+- HONOR THE SPLIT INSIDE EACH COLLEGE. Programs under "AWARDS THIS" are named for what was asked. Programs under "SAME FIELD BY CODE ONLY" matched on their TOP or CIP code and MAY BE A DIFFERENT PROGRAM FOR A DIFFERENT PERSON — the standing example is an "LVN to RN" bridge, which is coded Registered Nursing and REQUIRES the visitor to already hold the license they were asking how to get. Never present a code-only match as though it were the program asked for. If a code-only match is all a college has, say what it is and who it is for.
+- A CODE NAMES THE FIELD, NOT THE AUDIENCE. TOP and CIP say what a program is about. Neither can say who it is for, what it requires, or where it leads. Read the program TITLE and the AWARD for that, and when the data cannot settle it, say so and point at the college.
+- NEVER TREAT A MISSING CIP AS A MISSING DISCIPLINE. CIP is blank on about one in eight active programs and TOP is never blank. A program with no CIP is a program whose CIP was not entered, nothing more.
+- THE LIST IS NOT EXHAUSTIVE. It is the top matching set. Never conclude a college awards nothing in a field because it is not shown — say you are not certain from the data at hand and point to that college catalog or CPL coordinator.
+- PROGRAMS ARE NOT CPL. A college conferring an award in a field has not thereby set up CPL credit for a credential in it. Keep the two separate, and apply the same invitation as the course catalog: a college that awards in the field is well positioned to articulate CPL for a related credential.
+- STATUS IS SHOWN WHEN IT IS NOT SIMPLY ACTIVE. A program marked teachout is closing to new students — say so plainly if you name it.`;
+
 // #6 — Missing/unconfigured CPL landing pages (v23 — Sam, 2026-07-01: "not all
 // colleges have configured their CPL Landing pages"). Never invent a link;
 // turn the gap into two concrete next steps.
@@ -2947,6 +3080,7 @@ const RULE_DEFAULTS: Array<RuleDefault> = [
   { key: "statewide", title: "Statewide collaborative credit recommendations", body: STATEWIDE_RULE, appliesWhen: "always", sortOrder: 10 },
   { key: "credit_list", title: "List course titles and units, never a bare count", body: CREDIT_LIST_RULE, appliesWhen: "always", sortOrder: 20 },
   { key: "offerings", title: "Course catalog — teaching is not articulating", body: OFFERINGS_RULE, appliesWhen: "always", sortOrder: 30 },
+  { key: "programs", title: "Program catalog — a code names the field, not the audience", body: PROGRAMS_RULE, appliesWhen: "always", sortOrder: 35 },
   { key: "credential", title: "Canonical credential record", body: CREDENTIAL_RULE, appliesWhen: "credential", sortOrder: 40 },
   { key: "credit_recs", title: "Credit recommendation lines — the full set", body: CREDIT_RECS_RULE, appliesWhen: "credential_or_volume", sortOrder: 50 },
   { key: "alignment", title: "Articulation worklist for a college", body: ALIGNMENT_RULE, appliesWhen: "alignment", sortOrder: 60 },
@@ -3290,6 +3424,7 @@ function buildSystemPrompt(
   searchMode: "college" | "topic" | "college_topic" | "general",
   multiTurn: boolean = false,
   offeringsContext: string = "",
+  programsContext: string = "",
   audienceRule: string = "",
   teamGuidance: string = "",
   creditContext: string = "",
@@ -3418,7 +3553,7 @@ ${assembled.alwaysText}`;
 
   const volatilePart = `
 ${hostScopeBlock(hostScope)}
-${context}${metricsContext}${collegeContext}${topicContext}${offeringsContext}${credentialContext}${volumeContext}${alignmentContext}${creditContext}${assembled.conditionalText}${specialInstruction}${audienceRule}${teamGuidance}`;
+${context}${metricsContext}${collegeContext}${topicContext}${offeringsContext}${programsContext}${credentialContext}${volumeContext}${alignmentContext}${creditContext}${assembled.conditionalText}${specialInstruction}${audienceRule}${teamGuidance}`;
 
   return { stable, volatile: volatilePart };
 }
@@ -3708,7 +3843,7 @@ Deno.serve(async (req: Request) => {
 
     // 2. Vector search + college detection + live metrics + topic search +
     //    course-catalog offerings + team guidance (parallel)
-    const [searchResult, collegeProfile, liveMetrics, topicResults, offeringsResults, teamGuidance, geoMap, creditData, viewer] = await Promise.all([
+    const [searchResult, collegeProfile, liveMetrics, topicResults, offeringsResults, programsResults, teamGuidance, geoMap, creditData, viewer] = await Promise.all([
       sb.rpc("match_document_sections", {
         query_embedding: Array.from(queryEmbedding),
         match_threshold: MATCH_THRESHOLD,
@@ -3718,6 +3853,7 @@ Deno.serve(async (req: Request) => {
       fetchLiveMetrics(),
       searchExhibitsByTopic(searchText, sb), // earned-exhibit set (no college filter)
       searchCollegeOfferings(searchText, sb), // course catalog: who TEACHES this
+      searchCollegePrograms(searchText, sb),  // program catalog: who AWARDS this (v67)
       fetchTeamGuidance(sb, hostSurface),     // sierra_guidance active rows (v25; surface-scoped v56)
       fetchCollegeGeoMap(sb),                 // region/county for every college (v30)
       fetchCreditData(sb),                    // published credit-disposition aggregates (v36)
@@ -3840,6 +3976,15 @@ Deno.serve(async (req: Request) => {
       const askedCollege = singleProfile?.college || null;
       const coreKeywords = expandWithSynonyms(extractTopicKeywords(searchText));
       offeringsContext = buildOfferingsContext(offeringsResults, askedCollege, askedGeo, coreKeywords, geoMap);
+    }
+
+    // Program-catalog context — what colleges AWARD. Ranked against the same
+    // askedGeo anchor, so the two catalog sections agree about what "nearest"
+    // means. Empty until the search_college_programs migration is applied.
+    let programsContext = "";
+    if (programsResults && programsResults.length > 0) {
+      programsContext = buildProgramsContext(
+        programsResults, singleProfile?.college || null, askedGeo, geoMap);
     }
 
     // Credit disposition — shaped once detection has resolved, so "at MY college"
@@ -3980,7 +4125,7 @@ Deno.serve(async (req: Request) => {
 
     const systemPrompt = buildSystemPrompt(
       sections || [], liveMetrics, collegeContext, topicContext, searchMode,
-      multiTurn, offeringsContext, audienceKey ? AUDIENCE_RULES[audienceKey] : "",
+      multiTurn, offeringsContext, programsContext, audienceKey ? AUDIENCE_RULES[audienceKey] : "",
       teamGuidance || "", creditContext, credentialContext, volumeContext, alignmentContext,
       rulesOverlay, ruleReport, hostScope);
 

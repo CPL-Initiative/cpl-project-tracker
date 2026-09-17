@@ -108,6 +108,16 @@ jobs:
       # the published anon key. Pure-stdlib python; same non-required check.
       - name: Supabase function-grant lint (revoke must name PUBLIC)
         run: python3 tests/supabase_function_grants_test.py
+      # The COCI program export's CIP column and the Taxonomy manual's CTE
+      # asterisk (Session 272). Both were read past for months and landed in
+      # coci_college_programs unseen — 14,740 of 22,335 rows carried a top_title
+      # beginning "* ". Re-measures the LVN arithmetic that designed
+      # search_college_programs (53 by title, 44 by either code, 56 in union)
+      # straight from the committed export, so the figures quoted in the SQL
+      # header cannot go stale silently. Imports the builder's own parsers.
+      # Pure-stdlib python, no network.
+      - name: COCI program CIP + CTE-marker parse guard
+        run: python3 tests/coci_program_cip_test.py
       # My College went public on 2026-09-17, so the tab's four gated tables are
       # mirrored into `_pub` tables with suppression applied at BUILD time. This
       # asserts the PROPERTY the ADR asks for — that subtraction cannot pin a
