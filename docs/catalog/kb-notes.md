@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-460 document(s).
+462 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -144,6 +144,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A pipe discards a command's verdict](../kb-notes/methodology-a-pipe-discards-a-commands-verdict.md) | methodology | published | 2026-09-15 | 2026-09-15 |
 | [A piped test run reports the pipe's exit, not the suite's](../kb-notes/methodology-a-piped-test-run-reports-the-pipes-exit.md) | methodology | published | 2026-08-30 |  |
 | [A pipeline's exit status is its last command's, so `\| tail` reports success for a failing suite](../kb-notes/methodology-a-pipelines-exit-status-is-its-last-commands.md) | methodology | published | 2026-09-09 | 2026-09-09 |
+| [A prefix match on a stem is not a match on the word](../kb-notes/methodology-a-prefix-match-on-a-stem-is-not-a-match-on-the-word.md) | methodology | published | 2026-09-17 | 2026-09-17 |
 | [A presentation rule is the purest push case there is](../kb-notes/methodology-a-presentation-rule-is-the-purest-push-case.md) | methodology | published | 2026-08-29 | 2026-08-29 |
 | [A proposal standing in for expert judgment needs two signals of different kinds](../kb-notes/methodology-two-signals-for-a-judgment-proposal.md) | methodology | published | 2026-08-13 | 2026-08-13 |
 | [A provenance label must say why, not what](../kb-notes/methodology-a-provenance-label-must-say-why-not-what.md) | methodology | published | 2026-08-13 | 2026-08-13 |
@@ -217,6 +218,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [An empty read is only evidence if the set cannot legitimately be empty](../kb-notes/methodology-an-empty-read-is-only-evidence-if-the-set-cannot-be-empty.md) | methodology | published | 2026-08-14 | 2026-08-14 |
 | [An error that arrives inside a successful response is invisible to every status check](../kb-notes/methodology-an-error-inside-a-success-is-invisible-to-every-status-check.md) | methodology | published | 2026-09-11 | 2026-09-11 |
 | [An incentive teaches where the finish line is](../kb-notes/methodology-an-incentive-teaches-where-the-finish-line-is.md) | methodology | published | 2026-08-06 | 2026-08-06 |
+| [An index is a write-path cost until a measurement says otherwise](../kb-notes/methodology-an-index-is-a-write-path-cost-until-measured.md) | methodology | published | 2026-09-17 | 2026-09-17 |
 | [An inline placeholder style outranks the CSS your module injects](../kb-notes/methodology-an-inline-placeholder-style-outranks-the-css-you-inject.md) | methodology | published | 2026-08-21 | 2026-08-21 |
 | [An instruction that names another surface is a dependency nothing enforces](../kb-notes/methodology-an-instruction-naming-another-surface-is-an-unenforced-dependency.md) | methodology | published | 2026-08-14 | 2026-08-14 |
 | [An opportunity figure must be what peers ACHIEVED, not what the record allows](../kb-notes/methodology-an-opportunity-figure-must-be-what-peers-achieved.md) | methodology | published | 2026-08-17 | 2026-08-17 |

@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 460,
+   "count": 462,
    "docs": [
     {
      "created": "2026-08-14",
@@ -2513,6 +2513,26 @@
      "updated": "2026-09-09"
     },
     {
+     "created": "2026-09-17",
+     "governs": [
+      "chatbox/supabase_search_college_programs.sql",
+      "chatbox/supabase/functions/cpl-chat/index.ts",
+      "tests/sierra_program_search.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-prefix-match-on-a-stem-is-not-a-match-on-the-word.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "retrieval",
+      "full-text-search",
+      "sierra",
+      "vocabulary"
+     ],
+     "title": "A prefix match on a stem is not a match on the word",
+     "type": "methodology",
+     "updated": "2026-09-17"
+    },
+    {
      "created": "2026-08-29",
      "governs": [
       "CLAUDE.md",
@@ -3924,6 +3944,25 @@
      "title": "An incentive teaches where the finish line is",
      "type": "methodology",
      "updated": "2026-08-06"
+    },
+    {
+     "created": "2026-09-17",
+     "governs": [
+      "chatbox/supabase_search_college_programs.sql",
+      "chatbox/sync_coci_offerings.py"
+     ],
+     "path": "docs/kb-notes/methodology-an-index-is-a-write-path-cost-until-measured.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "supabase",
+      "postgres",
+      "performance",
+      "pipeline-safety"
+     ],
+     "title": "An index is a write-path cost until a measurement says otherwise",
+     "type": "methodology",
+     "updated": "2026-09-17"
     },
     {
      "created": "2026-08-21",
@@ -13510,8 +13549,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 244,
+   "count": 245,
    "docs": [
+    {
+     "created": "2026-09-17",
+     "governs": [],
+     "n": 273,
+     "path": "docs/session_273_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "sierra",
+      "program-search",
+      "cip",
+      "deploy"
+     ],
+     "title": "program search is live; the edge function is not deployed",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-17",
      "governs": [],
@@ -17639,5 +17695,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 916
+ "total": 919
 }
