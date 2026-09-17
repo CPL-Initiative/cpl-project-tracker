@@ -143,6 +143,38 @@ block("(4)", function () {
   check("(4) \"applied none\" fails", fires("Students there have applied none of it."));
 });
 
+// ── (5) 15b — the third instance of the same class ───────────────────────────
+// ⭐ #1566 taught 15a and 15c to be negation-aware because those two had gone red.
+// 15b bans the same vocabulary for the same reason and was left on the plain
+// matcher, so on 2026-09-17 it failed against a correct answer reading "…not a
+// backlog it's failing to clear" — the SAME sentence shape as the 15a failure
+// #1566 was written for, one mode over. Fixing the instances that fail leaves the
+// class intact; these checks are the class.
+block("(5)", function () {
+  const RE_15B = modeRegex("15b frames it as opportunity");
+  check("(5) ⭐ 15b hands its regex to the stripper, like 15a and 15c", !!RE_15B,
+    "15b is a framing guard on the same words as 15a — on the plain matcher it goes red "
+    + "every time a correct answer denies the accusation in the guard's own vocabulary");
+  check("(5) ⭐ 15a and 15b ban the SAME vocabulary — one guard, one word list",
+    RE_15B !== null && RE_15A !== null && RE_15B === RE_15A,
+    "15a: " + RE_15A + "\n        15b: " + RE_15B
+    + "\n        divergence is how the third instance stayed hidden");
+  // Class-level: no framing guard may sit on the plain matcher again.
+  check("(5) ⭐ no report-card vocabulary is left on the negation-BLIND matcher",
+    !/answer_must_not_match -i "[^"]*(failing|negligent|shameful)/.test(SH),
+    "a guard on this vocabulary must use answer_must_not_match_unnegated, or a correct "
+    + "answer that denies the charge reads as the charge");
+  if (!EXPRS || !RE_15B) return;
+  const fires = (a) => guardFires(EXPRS, RE_15B, a);
+  check("(5) ⭐ run 35247463463: \"not a backlog it's failing to clear\" passes",
+    !fires("a big number like this mostly reflects how many veterans a college serves, not a backlog it's failing to clear."));
+  check("(5) ⚠ an UNNEGATED report card still fails: \"Mesa is failing to act\"",
+    fires("San Diego Mesa College is failing to act on the credit it has already articulated."),
+    "the guard must still be able to catch the thing it exists for");
+  check("(5) ⚠ \"the worst performer in the district\" still fails",
+    fires("Mesa is the worst performer in the district on CPL."));
+});
+
 const failed = results.filter((r) => !r[1]);
 results.forEach(([name, ok, why]) =>
   console.log((ok ? "  ok  " : "  FAIL ") + name + (ok || !why ? "" : "\n        " + why)));

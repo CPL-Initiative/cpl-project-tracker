@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 458,
+   "count": 459,
    "docs": [
     {
      "created": "2026-08-14",
@@ -2262,6 +2262,27 @@
      "title": "A model switch carries its defaults with it, not just its price",
      "type": "methodology",
      "updated": "2026-09-11"
+    },
+    {
+     "created": "2026-09-17",
+     "governs": [
+      "chatbox/health_check.sh",
+      "tests/sierra_cors_contract.test.js",
+      "tests/sierra_health_probe.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-monitor-that-is-not-a-browser-cannot-see-a-browser-failure.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "monitoring",
+      "deploys",
+      "cors",
+      "sierra",
+      "reliability"
+     ],
+     "title": "A monitor that is not a browser cannot see a browser's failure",
+     "type": "methodology",
+     "updated": "2026-09-17"
     },
     {
      "created": "2026-08-19",
@@ -17579,5 +17600,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 913
+ "total": 914
 }

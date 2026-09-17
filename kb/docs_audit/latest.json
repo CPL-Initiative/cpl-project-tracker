@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 924,
-    "bytes": 9767265,
-    "over_budget": 7,
-    "handoff_max": 269,
+    "files": 927,
+    "bytes": 9786442,
+    "over_budget": 8,
+    "handoff_max": 270,
     "always_loaded_files": 1,
     "always_loaded_bytes": 60839,
     "superseded_files": 0,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 114,
-        "bytes": 3075118,
+        "bytes": 3075803,
         "over": 3
       },
       "index": {
@@ -40,36 +40,36 @@
         "over": 1
       },
       "kb_note": {
-        "files": 459,
-        "bytes": 2346323,
+        "files": 461,
+        "bytes": 2356013,
         "over": 0
       },
       "roadmap_lane": {
         "files": 32,
-        "bytes": 195291,
-        "over": 2
+        "bytes": 198078,
+        "over": 3
       },
       "handoff": {
-        "files": 242,
-        "bytes": 2056835,
+        "files": 243,
+        "bytes": 2062850,
         "over": 0
       }
     },
     "by_rule": {
-      "oversized_doc": 7,
+      "oversized_doc": 8,
       "house_voice": 24,
       "vault_heavy_path": 49
     },
     "vault": {
-      "files": 2935,
-      "bytes": 1438226768,
-      "heavy_bytes": 636853984,
-      "heavy_share": 0.443,
+      "files": 2938,
+      "bytes": 1444559905,
+      "heavy_bytes": 643132987,
+      "heavy_share": 0.445,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
         "cpl-project-tracker/cip_fitcheck",
-        "cpl-project-tracker/kb/unclassified_fold",
         "cpl-project-tracker/kb/regional_cpl_out",
+        "cpl-project-tracker/kb/unclassified_fold",
         "cpl-project-tracker/tmc",
         "cpl-project-tracker/unified_courses_member_desc.js",
         "cpl-project-tracker/kb/coci_minted_singletons.json",
@@ -104,9 +104,9 @@
         "cpl-project-tracker/prototype/ccr_universe_members.json",
         "cpl-project-tracker/unified_courses_index.js",
         "cpl-project-tracker/unified_courses_suggestions.js",
+        "cpl-project-tracker/regional_cpl_opportunity_data.js",
         "cpl-project-tracker/credential_reference_data.js",
         "cpl-project-tracker/coci_lookup_desc_B.js",
-        "cpl-project-tracker/regional_cpl_opportunity_data.js",
         "cpl-project-tracker/coci_lookup_desc_H.js",
         "cpl-project-tracker/coci_lookup_desc_D.js",
         "cpl-project-tracker/kb/remint_out/alias_map.json",
@@ -402,6 +402,19 @@
       "path": "docs/reference/lanes/implementation-funding.md"
     },
     {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 14661,
+        "limit": 12000,
+        "lane": "roadmap_lane",
+        "over_by": 2661,
+        "ratio": 1.22
+      },
+      "message": "14,661 B is 1.2× the roadmap_lane budget (12,000 B) — candidate for compaction",
+      "path": "docs/reference/lanes/partner-crosswalks.md"
+    },
+    {
       "rule": "house_voice",
       "fixable": false,
       "detail": {
@@ -521,22 +534,22 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
+      "path": "kb/regional_cpl_out",
+      "detail": {
+        "bytes": 21007294,
+        "kind": "dir"
+      },
+      "message": "directory totals 21,007,294 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
       "path": "kb/unclassified_fold",
       "detail": {
         "bytes": 20713019,
         "kind": "dir"
       },
       "message": "directory totals 20,713,019 B inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
-      "path": "kb/regional_cpl_out",
-      "detail": {
-        "bytes": 15249545,
-        "kind": "dir"
-      },
-      "message": "directory totals 15,249,545 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -881,6 +894,16 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
+      "path": "regional_cpl_opportunity_data.js",
+      "detail": {
+        "bytes": 3421019,
+        "kind": "file"
+      },
+      "message": "3,421,019 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
       "path": "credential_reference_data.js",
       "detail": {
         "bytes": 3007219,
@@ -897,16 +920,6 @@
         "kind": "file"
       },
       "message": "2,915,411 B single file inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
-      "path": "regional_cpl_opportunity_data.js",
-      "detail": {
-        "bytes": 2899765,
-        "kind": "file"
-      },
-      "message": "2,899,765 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

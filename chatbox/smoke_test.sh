@@ -434,7 +434,13 @@ answer_must_match -i "mesa" "15b names the college asked about"
 answer_must_match "[0-9],[0-9]{3}" "15b states an actual per-college figure"
 # The lead is the already-articulated block — everything built, nobody acted.
 answer_must_match -i "articulat" "15b surfaces the already-articulated opportunity"
-answer_must_not_match -i "failing|worst|poorly|negligent" "15b frames it as opportunity"
+# Same guard as 15a, so the same helper and the same vocabulary. It was left on
+# the plain matcher when #1566 taught 15a and 15c to be negation-aware — the two
+# modes that had gone red — and went red itself on 2026-09-17 against a correct
+# answer reading "…not a backlog it's failing to clear", the SAME sentence shape
+# as the 15a failure #1566 was written for. Fix the class, not the instances.
+answer_must_not_match_unnegated -i "failing|failure to|worst|poorly|negligent|shameful" \
+  "15b frames it as opportunity"
 
 # A college genuinely absent from the credit-disposition dataset must NOT be
 # rendered as zero. Calbright has no row in map_college_credit_summary.
