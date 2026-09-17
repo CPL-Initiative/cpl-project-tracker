@@ -11451,7 +11451,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 29
+     "line": 35
     }
    ],
    "served": true,
@@ -13644,14 +13644,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 30
+     "line": 36
     },
     {
      "id": "script:kb/_emit_swp_region_data.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 30
+     "line": 36
     }
    ],
    "producers": [
