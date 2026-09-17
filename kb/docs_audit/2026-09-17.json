@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 919,
-    "bytes": 9731844,
+    "files": 923,
+    "bytes": 9759625,
     "over_budget": 7,
-    "handoff_max": 267,
+    "handoff_max": 268,
     "always_loaded_files": 1,
     "always_loaded_bytes": 60839,
     "superseded_files": 0,
@@ -26,44 +26,43 @@
       },
       "other": {
         "files": 114,
-        "bytes": 3070657,
+        "bytes": 3074941,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 19512,
+        "bytes": 17865,
         "over": 0
       },
       "lessons": {
         "files": 75,
-        "bytes": 2008925,
+        "bytes": 2014994,
         "over": 1
       },
       "kb_note": {
-        "files": 456,
-        "bytes": 2334178,
+        "files": 459,
+        "bytes": 2346323,
         "over": 0
       },
       "roadmap_lane": {
         "files": 32,
-        "bytes": 195260,
+        "bytes": 195279,
         "over": 2
       },
       "handoff": {
-        "files": 240,
-        "bytes": 2042473,
+        "files": 241,
+        "bytes": 2049384,
         "over": 0
       }
     },
     "by_rule": {
       "oversized_doc": 7,
       "house_voice": 24,
-      "vault_heavy_path": 49,
-      "checkpoint_overdue": 1
+      "vault_heavy_path": 49
     },
     "vault": {
-      "files": 2923,
-      "bytes": 1430705255,
+      "files": 2927,
+      "bytes": 1430735069,
       "heavy_bytes": 636530333,
       "heavy_share": 0.445,
       "ignore_filters": [
@@ -418,13 +417,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 650440,
+        "bytes": 653631,
         "limit": 150000,
         "lane": "other",
-        "over_by": 500440,
-        "ratio": 4.34
+        "over_by": 503631,
+        "ratio": 4.36
       },
-      "message": "650,440 B is 4.3× the other budget (150,000 B) — candidate for compaction",
+      "message": "653,631 B is 4.4× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {
@@ -988,17 +987,6 @@
         "kind": "file"
       },
       "message": "2,038,305 B single file inside the vault"
-    },
-    {
-      "rule": "checkpoint_overdue",
-      "fixable": false,
-      "path": "docs/session_267_handoff.md",
-      "detail": {
-        "commits_since": 36,
-        "budget": 6,
-        "handoff": "session_267_handoff.md"
-      },
-      "message": "36 commit(s) have landed since `docs/session_267_handoff.md` was last written (budget 6). Rule 9's own trigger — 'roughly every ~100K tokens' — is a condition nothing can observe, so this is the observable stand-in. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
     }
   ]
 }

@@ -158,7 +158,9 @@ The whole ecosystem, end-to-end:
    (team-only: one page, not 123 — pick a college and get where it stands
    against the goals, what its already-articulated-and-waiting credit actually
    consists of, its share of both funding pools with each priority's target,
-   its tier with the missing criteria named, who MAP has on file for it, and a
+   its tier with the missing criteria named, who MAP has on file for it, what
+   occupations in its region it could already give credit for — matched against
+   its own catalog, with the accuracy disclosed — and a
    Sierra AI box with questions computed from that college's own figures), and
    a **Pipeline** progress board.
 2. **The data pipeline** — daily GitHub Actions cron pulls fresh statewide

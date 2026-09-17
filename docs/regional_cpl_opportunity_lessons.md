@@ -316,3 +316,108 @@ vocabulary.** Closing it needs a synonym layer, or the curated
 Which is the argument for keeping the curated map. It was starting to look like
 scaffolding the generic matcher would replace. The score says it is the part that
 carries the meaning.
+
+## 2026-09-17 (S267, SkyQuarry) — the register reaches the tab, and three things that had quietly disagreed
+
+Sam opened the session asking whether S266's crosswalk work could be finished
+for Sigrid's meeting with the Bay Area Strong Workforce consortium the next day,
+and said he thought it "went a bit off the rails and got confused with the
+session SkyPublius was handling at the same time."
+
+**The confusion was real, and it was not cross-contamination.** The two branches
+shared no code. What had happened is narrower and more interesting: S266 solved
+a prerequisite late in its own run and never told the things it had written
+earlier that day.
+
+### Three statements about one fact, all dated 2026-09-16
+
+- `identity_rows()`: *"IT CARRIES NO REGION FIELD OF ANY KIND — checked
+  2026-09-16… Do not substitute the ~10-way `college_geo.region` proximity
+  scheme."*
+- `--region`'s help: *"NOT a Strong Workforce consortium — that roster does not
+  exist in this repo yet."*
+- `kb/reference/swp_region_map.json`, same day: the roster derived from county,
+  **applied** to `map_colleges.swp_region`, Bay Area resolving to 28 colleges
+  across 12 counties and corroborated against the Bay Region COE's own
+  description of itself.
+
+⚠️ **AND `select_colleges()` PERFORMED THE SUBSTITUTION ITS NEIGHBOUR'S
+DOCSTRING FORBADE.** Measured: `--region "Bay Area"` returns **23** where the
+consortium has **28**, dropping Berkeley City, Cabrillo, Cañada, Hartnell and
+Monterey Peninsula — the last three because Strong Workforce puts Monterey,
+Santa Cruz and San Benito counties in the Bay and the proximity scheme puts them
+in Central Coast. Nothing on the page said five member colleges were missing.
+
+Had the run gone ahead as the branch stood, Sigrid would have shown a
+consortium a page silently missing five of its members. Note:
+[`methodology-a-solved-prerequisite-does-not-notify-its-consumers`](kb-notes/methodology-a-solved-prerequisite-does-not-notify-its-consumers.md).
+
+### What was actually missing was the tab, and the lane file said so
+
+The branch changed **zero `.js` and zero `.html` files**. The lane's own "Next"
+listed *"② port into the My College tab"* as queued behind matcher work. Sam's
+answer settled the shape: *"I want her to be able to pick any college in the
+meeting and showcase their options. She needs to be able to flip through to
+other colleges as well. The tab is needed."* Then: *"We have a good prototype
+with the delta college html that Ashley worked on--not the excel worksheet."*
+
+⭐ **THE PICKER ALREADY EXISTED.** The My College tab's `college` scope ships
+`ready: true` and selects any college, so live flipping needed no scope work at
+all — only content. Reading the tab before designing for it removed most of the
+job.
+
+⭐ **PRECOMPUTE, BECAUSE A ROOM CANNOT WAIT ON A MATCHER.** 28 colleges took
+6m30s to build. `kb/_emit_regional_opps_data.py` turns a run receipt into a
+lazy-loaded data file (6,903 rows, 1,223 adopt-now, 2.8MB), so the first college
+costs a fetch and every college after it costs nothing.
+
+### Ashley's Delta page is curated; the register is matched; they paint alike
+
+The Delta prototype is good because a human ruled all 139 occupations for Delta.
+No other Bay college has an offering map. ⚠️ **A matched row and a ruled row are
+indistinguishable on screen**, which is the S265 lesson in another costume — the
+card that lied was the only one that looked normal. Hence the caveat above the
+rows, the matched term printed on every row, and the transfer sentence below.
+Note: [`methodology-a-score-measured-in-one-population-is-not-a-score-in-another`](kb-notes/methodology-a-score-measured-in-one-population-is-not-a-score-in-another.md).
+
+### Four failures worth keeping
+
+⚠️ **A 14-MINUTE BUILD WROTE NOTHING.** `write_workbook` ran FIRST and needs
+`openpyxl`; without it the run raised before the page, handout and receipt —
+none of which need it. The tip-of-branch commit had moved the import *inside*
+the function "so the generator is importable without it", which made the module
+importable and left the run just as fatal. Note:
+[`methodology-write-the-dependency-free-output-first`](kb-notes/methodology-write-the-dependency-free-output-first.md).
+
+⚠️ **A CLOSED DRAWER WITH A BLANK SUMMARY READS AS BROKEN.** `sec()` drops the
+value span when the summary is empty, and the register returned `""` in two of
+its five states. Caught by `college_briefing.test.js` (P), which only ever
+exercises the no-college case — so `oppsSummaryFor` is pure now and the
+register's own test walks all five.
+
+⚠️ **THE DEPENDENCY MAP RECORDS LINE NUMBERS.** It was rebuilt, then three later
+commits shifted code in `college_briefing.js` and pushed four reads down 26
+lines each, turning CI red with no dataset changed. *"Rebuild it genuinely
+last"* means after the last edit to any file it maps.
+
+⚠️ **THE DOC BUDGET IS UTF-8 BYTES, NOT CHARACTERS.** Trimming the lane file by
+`len(str)` read 11,966 against a 12,000 budget while the auditor read 12,168 —
+these files are dense with ⚠️ and ⭐, six and three bytes each. Measure with
+`len(s.encode("utf-8"))`.
+
+### Instruments to check a claim with
+
+**Bisect the branch's own contradictions before believing its narrative.** Every
+finding above came from comparing the branch against itself — a docstring
+against the function below it, a committed roster against the flag that ignored
+it, a lane file's "Next" against its diff. The handoff read coherently; the code
+did not agree with it.
+
+**A superseded `head_sha` is the normal case.** A `check_suite.completed` wake
+named `b5a3bdf` while the head was `90d7f9e`, and #1576 merged to main mid-CI,
+turning this PR dirty. Re-read the current head every time.
+
+**Merge-commit against squash is an add/add conflict on files nobody
+disagreed about.** #1576 landed on main as a squash while this branch carried it
+as a merge. Resolution was mechanical once that was understood: verify main's
+copy is byte-identical to the pre-fix original, then take ours as the superset.
