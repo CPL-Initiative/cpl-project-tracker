@@ -1,7 +1,7 @@
 {
  "_about": "Identity-anchored title suggestions for the CER unclassified-triage worklist (kb/_suggest_unclassified.py). Precedence per skill Rule 5c: CCN > C-ID > (M-ID once stable) > modal local course title; plus CareerOneStop authority matches when the registry is synced. One-click FILL chips — the curator always confirms; never auto-applied.",
- "_generated_at": "2026-09-10T13:27:14Z",
- "count": 200,
+ "_generated_at": "2026-09-17T11:50:54Z",
+ "count": 201,
  "suggestions": {
   "ACTG-51 APPLIED ACCOUNTING": [
    {
@@ -1795,6 +1795,16 @@
     "code": "REGN 44",
     "share": 1.0,
     "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "RUSS 1-Elementary Russian- Credit by Exam": [
+   {
+    "kind": "course",
+    "title": "Elementary Russian (First Quarter)",
+    "code": "RUSS 1",
+    "share": 1.0,
+    "colleges": 4,
     "scoped": true
    }
   ],

@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-09-16T17:08:30.076273+00:00",
+  "scraped_at": "2026-09-17T11:48:18.630396+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 28143,
+    "jst": 28177,
     "star_colleges": 57
   },
   "computed_star_colleges": 57,
@@ -27,7 +27,7 @@
     },
     "San Diego City College": {
       "vets": 776,
-      "jst": 1505,
+      "jst": 1506,
       "star": true
     },
     "San Diego Miramar College": {
@@ -37,7 +37,7 @@
     },
     "City College of San Francisco": {
       "vets": 1197,
-      "jst": 1597,
+      "jst": 1628,
       "star": true
     },
     "Moreno Valley College": {
@@ -77,7 +77,7 @@
     },
     "Riverside City College": {
       "vets": 1508,
-      "jst": 870,
+      "jst": 869,
       "star": false
     },
     "El Camino College": {
@@ -157,12 +157,12 @@
     },
     "Mt. San Jacinto College": {
       "vets": 168,
-      "jst": 536,
+      "jst": 537,
       "star": true
     },
     "College of the Canyons": {
       "vets": 382,
-      "jst": 518,
+      "jst": 519,
       "star": true
     },
     "San Joaquin Delta College": {
@@ -222,7 +222,7 @@
     },
     "Mission College": {
       "vets": 158,
-      "jst": 155,
+      "jst": 156,
       "star": true
     },
     "Los Angeles Mission College": {
