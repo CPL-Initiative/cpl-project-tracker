@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-245 document(s).
+246 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 274 | [the merge was ready, the deploy is waiting on one apply](../session_274_handoff.md) | 2026-09-17 |
 | 273 | [program search is live; the edge function is not deployed](../session_273_handoff.md) | 2026-09-17 |
 | 272 | [Sierra's outage was a deploy skew, and My College went public](../session_272_handoff.md) | 2026-09-17 |
 | 270 | [the register's three tweaks landed, and three invisible controls found under them](../session_270_handoff.md) | 2026-09-17 |

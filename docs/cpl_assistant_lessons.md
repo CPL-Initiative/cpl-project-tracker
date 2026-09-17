@@ -781,3 +781,123 @@ Program search is live and verified (A 8/8 · B 2/2 · C 4/4). The SQL half of t
 phrase work is applied. **The edge-function half — the `lvn` family, the
 `become` stop word, the `singleTokenTerms` guard — is committed and INERT until
 `cpl-chat-deploy.yml` runs.** #1603 carries it and needs merging first.
+
+## 2026-09-17 — SkyPilot (S273): the merge was ready and the deploy was not
+
+**The ask (Sam, verbatim):** *"Please check the work carefully and advise if
+we're ready to merge the new branch and expand Sierra's capability without
+breaking anything."* The merge was ready. The deploy was not, and the
+instrument that said it was — the first run of the preview A/B — passed every
+assertion on both slugs while the new route timed out underneath it.
+
+### What the check found before the merge
+
+#1603's `test` was green on its head; locally the JS suite passed 343/343 and
+all 44 of `js-tests.yml`'s python and shell steps passed. Live: the phrase
+branch is applied, the function has one signature, anon may execute it, and the
+LVN question reaches **56 colleges with 0 non-nursing rows** (28 before). The
+unguarded phrase reproduces the **42601** live, so the `singleTokenTerms` guard
+is load-bearing rather than defensive.
+
+**Deno IS obtainable in the sandbox.** The S272 handoff said *"there is no Deno
+in the sandbox, so `index.ts` cannot be typechecked locally."* `npm install
+deno@2` puts a 2.9 binary in `node_modules/.bin` in four seconds. With a
+`deno.json` of `{"nodeModulesDir":"auto"}` beside a copy of the file, `deno
+check` runs; it reports **15 strict-mode errors on `main` and the identical 15
+on the branch** — implicit `any` on callbacks and a nullable array passed where
+a non-null one is typed — so the branch adds none, and the Supabase deploy does
+not typecheck, which is why v66 shipped with them. `deno run --no-check` with
+dummy env vars and a 12-second timeout boots the module and serves, which is
+the TDZ-class check the file's own header asks for. A missing tool was a
+missing install. KB note: `methodology-a-missing-tool-is-usually-a-missing-install`.
+
+Merged as `0b40f8a`, squash, after marking the draft ready (branch policy:
+never park in draft).
+
+### The A/B passed and the route was timing out underneath it
+
+`cpl-chat-preview-ab.yml` had **never run** before today (0 runs). Run 1 on
+`main`: production **ALL MODES OK**, preview **ALL MODES OK**, no regressions.
+Then the function logs for the preview window:
+
+    21:21:17  search_college_programs unavailable: canceling statement due to statement timeout
+    21:23:12  search_college_programs unavailable: canceling statement due to statement timeout
+    21:23:43  search_college_programs unavailable: canceling statement due to statement timeout
+
+`pg_stat_statements` for the PostgREST call: **15 calls, mean 4,282 ms, max
+7,875 ms** — and the three canceled calls are not in that mean. The effective
+timeout through PostgREST is **8 s** (the `authenticator` role's; `service_role`
+carries none of its own), and the anon key's is **3 s**.
+
+Three things made it invisible:
+
+1. **The route fails safe.** `searchCollegePrograms` logs and returns null, so
+   Sierra answers without the Program Catalog section and the answer reads
+   fluent and complete. A pass/fail grid on prose cannot see a section that is
+   simply absent.
+2. **No smoke mode asks the function a program question.** 7p calls the RPC
+   directly, with the 3-term LVN set, on the anon key: **1.8 s against a 3 s
+   timeout** — a latent flake, not a guard.
+3. **The batch waits for the slowest route.** Every retrieval runs in one
+   `Promise.all`, so on those questions Sierra's answer started 8 s later than
+   it would have, and on every keyword-bearing question ~4 s later.
+
+### The cause is the slope, and the synonym table sets it
+
+The first version counted document frequency with two `count(*)` statements
+per term, each recomputing two tsvectors over all 22,335 rows: **~320 ms a
+count** (the four vectors for the whole table cost 633 ms to compute once).
+The term count is not the student's; it is `TOPIC_SYNONYMS`': "How do I become
+an LVN?" is 3 terms, an EMT question 6, a firefighter question 12, and the
+Boys & Girls Club smoke question **30**. Measured uncontended, sequentially, as
+the postgres role:
+
+| terms | per-term loop (before) | one pass (after) |
+|---:|---:|---:|
+| 3 (LVN) | 1,788 ms | 1,168 ms |
+| 6 (EMT) | 4,255 ms | 1,098 ms |
+| 12 (firefighter) | 8,076 ms | 1,382 ms |
+| 30 (Boys & Girls Club) | 19,784 ms | 2,522 ms |
+
+The file's own header had recorded **561.9 ms** for a 6-term call on the same
+day. Today's 4.3 s is the same shape measured cleanly; the earlier figure was
+not what a question costs. The lesson under the lesson: **a timing without its
+term count and role is not a measurement.**
+
+### The fix, and how it was proven without touching the shared schema
+
+Compute the four tsvectors ONCE per call into a `materialized` CTE, count every
+term's DF in one pass over it, and run the ranked match against the same CTE.
+Same per-surface DF rule, same keep-all-if-all-generic rule, same english/simple
+split, same phrase handling, same ranking, same fuzzy fallback.
+
+Proof: the rewrite was created as **`pg_temp.scp_v2`** — a session-local
+function that vanishes with the connection — and run beside the live one on
+nine term sets: the four above, a `college_filter`, the per-surface generic
+rule (*technology*), a nonsense token, the fuzzy fallback (*excellance*) and a
+phrase alone. **0 rows differ in either direction on all nine; the order is
+identical on eight**, and differs in 2 of 300 positions on *technology*, two
+rows tied on rank, college and title. A4–A8, B2 and C1–C4 all pass on the copy.
+The slope went from ~650 ms per term to ~60 ms on a ~700 ms floor. The floor
+is the four vectors; stored generated columns would move it to load time, and
+that is a MEASURED decision for another day, because the loader is one
+statement under a fixed timeout (see #1602).
+
+Guards added: verification **Part D** (a 30-term call under 6 s, the LVN
+question under 3 s), and smoke **7p asserts latency** beside reach and
+cleanliness (under 4 s on the anon key). KB note:
+`methodology-a-retrieval-route-costs-what-the-synonym-table-decides`.
+
+### Sam's decisions this run
+
+None ruled yet. He asked for advice; the advice, the apply, the A/B re-run and
+the deploy are in `docs/session_274_handoff.md`. Still open from S272: whether
+the Edge Function should auto-deploy on merge.
+
+### The state a next session inherits
+
+#1603 is merged and NOT deployed (production is v66, pre-#1601). The preview
+slug `cpl-chat-preview` (v1, the merged bytes) persists from A/B run
+35275472821 and reads the live RPC. The one-pass rewrite is the schema of
+record on this branch and is not applied until Sam says so; until then the
+route is slow and the deploy should wait.
