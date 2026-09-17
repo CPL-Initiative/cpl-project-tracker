@@ -68,7 +68,12 @@ emit() {  # status  reason  [who is affected]
 # "dropped silently"; a browser drops the whole request instead.
 #
 # It makes no model call, so it runs FIRST and fails fast.
-ORIGIN="${CPL_CHAT_ORIGIN:-https://cpl-initiative.github.io}"
+# ⚠ The default sits on its own line because kb/_build_dependency_map.py scrapes
+# URLs out of scripts, and a literal closing on a ${VAR:-…} default lands INSIDE
+# the match — it mapped a second external service "cpl-initiative.github.io}",
+# splitting this script off from that origin's other seven consumers.
+DEFAULT_ORIGIN="https://cpl-initiative.github.io"
+ORIGIN="${CPL_CHAT_ORIGIN:-$DEFAULT_ORIGIN}"
 # Every header a Sierra caller can attach. The public page and the Fact Sheet
 # send the first three; cpl_chat.js (the COBI widget) adds x-team-pass for a
 # phrase holder via credentialHeaders(). tests/sierra_cors_contract.test.js holds
