@@ -18,6 +18,11 @@ notes, `kb/cpl_todos.json`, `docs/INDEX.md` + `docs/catalog/`, `kb/README.md`,
 `CPLBrain` vault note. The lane file and this handoff are what got written.
 **Run `python3 kb/_docs_audit.py` first**, then catch the rest up.
 
+⚠️ **PR #1594 IS OPEN AND DELIBERATELY A DRAFT** — it carries this checkpoint
+and the generator edits below. It stays a draft until you have RUN the generator
+for one college, because nothing here is verified end to end. Mark it ready and
+merge once it is.
+
 Read: [`lanes/partner-crosswalks.md`](reference/lanes/partner-crosswalks.md) ·
 `docs/session_268_handoff.md` · PRs #1591 #1593.
 
