@@ -108,6 +108,8 @@
 -- and it carries its own CIP fixture so the CIP half is proven without
 -- waiting on a sync). Query-side route: tests/sierra_program_search.test.js.
 
+-- word_similarity() in the fuzzy fallback needs the extension; it does NOT need
+-- an index (see the measured note further down).
 create extension if not exists pg_trgm;
 
 -- ── The two columns the builder had been dropping on the floor ────────────────
@@ -141,16 +143,38 @@ begin
   return n;
 end $function$;
 
--- ── Indexes: the DF loop counts once per term per surface ─────────────────────
-create index if not exists coci_programs_title_fts
-  on public.coci_college_programs
-  using gin (to_tsvector('english', public.cx_search_norm(program_title)));
-create index if not exists coci_programs_title_fts_simple
-  on public.coci_college_programs
-  using gin (to_tsvector('simple', public.cx_search_norm(program_title)));
-create index if not exists coci_programs_title_trgm
-  on public.coci_college_programs
-  using gin (public.cx_search_norm(program_title) gin_trgm_ops);
+-- ── NO INDEXES ARE ADDED HERE, and that is a measured decision ────────────────
+-- This file originally created three GIN indexes over cx_search_norm(program_title)
+-- — english, simple and trigram — to keep the per-surface DF loop below fast.
+-- Applied 2026-09-17, they BROKE THE LOADER within the hour:
+--
+--   coci_offerings_replace: 16097 rows total   ✓
+--   coci_programs_replace → HTTP 500 {"code":"57014",
+--     "message":"canceling statement due to statement timeout"}
+--                                       (coci-offerings-sync run 11)
+--
+-- coci_programs_replace deletes and reinserts all 22,335 rows in ONE statement.
+-- The table already carried a GIN FTS index (coci_programs_fts, on the combined
+-- english program_title+top_title vector) and coped; three more tripled the
+-- index maintenance on that statement and pushed it past the timeout. No data
+-- was lost — the delete+insert rolls back atomically — but every later sync
+-- would have failed identically.
+--
+-- ⚠️ THEY ALSO BOUGHT NOTHING. Measured on the live table, 5 calls of a 6-term
+-- query (12 DF counts) at result_limit 300:
+--
+--     with the three indexes ....... 561.9 ms per call
+--     without them ................. 565.8 ms per call
+--
+-- A 4 ms difference, inside the noise. 22,335 rows is a seq scan of a few
+-- milliseconds, and a `count(*)` over a predicate matching a large share of the
+-- table is not what a GIN index helps. The evidence was already in this file's
+-- own design: the CODE surface has never had an index and performs the same.
+-- Reversed by migration drop_coci_programs_search_indexes_loader_timeout.
+--
+-- The lesson worth keeping: an index added on reasoning rather than on a
+-- measurement is a write-path cost with no read-path benefit, and the write path
+-- here is a single statement under a fixed timeout.
 
 -- ── The route ─────────────────────────────────────────────────────────────────
 create or replace function public.search_college_programs(
