@@ -126,6 +126,19 @@ const OPPS = {
     h.indexOf("about nine in ten") < h.indexOf("cb-opp-list"));
   check("(b) confirmation is named as the gate before a college acts",
     /faculty confirm every match/i.test(h));
+
+  // ⭐ The score was measured at ONE college against ITS region's occupation
+  // list. Quoting it on another region's register without saying so presents a
+  // transferred number as a local one.
+  check("(b) ⭐ a score measured outside this region says so",
+    /outside the Bay Region/.test(h) && /indicative/.test(h));
+  // …and it must disappear on its own when the scoring college IS in the set,
+  // or the sentence becomes boilerplate that stops carrying information.
+  const local = JSON.parse(JSON.stringify(OPPS));
+  local.meta.accuracy.scored_at = "Covered College";
+  const lh = M._oppsBodyFor(local, "Covered College", "ready", []);
+  check("(b) ⭐ …and it is absent when the score was measured INSIDE the region",
+    !/outside/.test(lh) && /Covered College/.test(lh));
 }
 
 // ── (c) unmatched occupations are named ──

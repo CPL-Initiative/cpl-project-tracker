@@ -931,7 +931,20 @@
       + " of what a reviewer finds.</b> Checked against "
       + esc(String(acc.rulings || 139)) + " occupations reviewed by hand at "
       + esc(acc.scored_at || "one college") + ". Read a row as a candidate and a gap as unconfirmed — "
-      + "faculty confirm every match before a college acts on it.</div>";
+      + "faculty confirm every match before a college acts on it."
+      /* ⚠ SAY WHEN THE SCORE TRAVELLED. The figures were measured at one college
+       * against ITS region's occupation list; a register for a different region
+       * is a different mix of work, so the same matcher can perform differently
+       * on it. Derived from the data rather than written in: the scoring college
+       * is outside this register exactly when the register does not list it, so
+       * the sentence appears on a Bay page and disappears on a Central Valley
+       * one with no edit. Quoting a transferred score in silence is the failure
+       * this guards. */
+      + (acc.scored_at && (meta.colleges || []).indexOf(acc.scored_at) === -1
+          ? " That measurement comes from a college outside " + esc(meta.region || "this region")
+            + ". Occupation mixes differ by region, so read the figures here as indicative."
+          : "")
+      + "</div>";
 
     var counts = {};
     d.rows.forEach(function (r) { counts[r.priority] = (counts[r.priority] || 0) + 1; });
