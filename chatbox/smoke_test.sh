@@ -127,16 +127,37 @@ answer_must_not_match() { # [-i] regex label
 # more, but X awarded 0" still fails on X, and so does "not a problem, but
 # colleges are failing to act". A bare "awarded zero" or "is failing" still
 # fails. Privacy guards (14b) stay on the strict form — naming a contact inside
-# a negation is still naming it. tests/smoke_negation_stripper.test.js runs
-# these two expressions through real sed against the recorded answers that
-# went red (runs 34621090976 and 34639257647) and against controls that must
-# stay red.
+# a negation is still naming it.
+#
+# ⚠ THE FOURTH INSTANCE (2026-09-17, run 35279516157, S273): 15a went red on
+#   "So don't read 1.2M as \"1.2M units of credit colleges are failing to award.\""
+# — a NEGATED READING VERB followed by a quotation. Shape 1 could not reach it
+# (47 characters from "don't" to "failing", against the 40-character bound) and
+# shape 2 knew only the saying verbs. Shape 2 now also runs a "don't read /
+# treat / interpret / see / take / count / mistake / describe …" clause to its
+# clause end, which is the same rule as "can't say": what the answer tells the
+# reader NOT to conclude is not the answer's claim. The bounds still hold — a
+# colon, comma or dash ends the excuse, so "Don't read this as a compliment:
+# colleges are failing to act" still fails on the second clause. And a period
+# followed by a DIGIT is a decimal point, not a clause end — the recorded answer
+# said "1.2M", and the first cut of this fix stopped stripping at the "1".
+#
+# ⚠ THE FIFTH (run 35281579500, the smoke on the PR carrying the fourth): 15c
+#   went red on "That's different from saying they've 'awarded zero' — it means
+#   the data simply isn't present". A CONTRAST PHRASE ("different from", "as
+#   opposed to", "far from") plus a gerund does the negating, with no "not" in
+#   sight. Those phrases join shape 2's negation words and the verbs carry their
+#   -ing forms. Still bounded: "different from Mesa, which has awarded zero"
+#   names no saying verb and still fails.
+# tests/smoke_negation_stripper.test.js runs these two expressions through real
+# sed against the recorded answers that went red (runs 34621090976, 34639257647,
+# 35279516157 and 35281579500) and against controls that must stay red.
 answer_must_not_match_unnegated() { # [-i] regex label
   local flag=""; if [ "$1" = "-i" ]; then flag="-i"; shift; fi
   local re="$1" label="$2" stripped
   stripped="$(printf '%s' "$LAST_ANSWER" | sed -E \
-    -e "s/\\b(not|never|no|nor|isn.?t|aren.?t|wasn.?t|weren.?t|rather than|instead of) [^.,;:—–]{0,40}($re)//Ig" \
-    -e "s/\\b(can.?t|cannot|can not|don.?t|do not|won.?t|not|never) (say|claim|report|confirm|state|tell you)\\b[^.,;:—–]*//Ig")"
+    -e "s/\\b(not|never|no|nor|isn.?t|aren.?t|wasn.?t|weren.?t|rather than|instead of) ([^.,;:—–]|\\.[0-9]){0,40}($re)//Ig" \
+    -e "s/\\b(can.?t|cannot|can not|don.?t|do not|won.?t|not|never|different from|as opposed to|far from) (say|saying|claim|claiming|report|reporting|confirm|confirming|state|stating|tell you|telling you|read|reading|treat|treating|interpret|interpreting|see|seeing|take|taking|count|counting|mistake|mistaking|describe|describing)\\b([^.,;:—–]|\\.[0-9])*//Ig")"
   if printf '%s' "$stripped" | grep -E $flag -q -- "$re"; then
     echo "::error::$label: answer should NOT match /$re/ outside a negation (regression)"; fail=1
   else

@@ -888,6 +888,34 @@ question under 3 s), and smoke **7p asserts latency** beside reach and
 cleanliness (under 4 s on the anon key). KB note:
 `methodology-a-retrieval-route-costs-what-the-synonym-table-decides`.
 
+### The fourth instance of the negation class arrived on this PR's own smoke run
+
+Smoke run 35279516157 on PR #1604 went red on mode 15a against a correct
+answer: *"So don't read 1.2M as '1.2M units of credit colleges are failing to
+award.'"* A negated READING verb followed by a quotation — 47 characters from
+"don't" to "failing" against shape 1's 40-character bound, and a verb shape 2
+did not know. The re-run passed, which is the class surfacing again rather than
+a regression: #1566 fixed two instances, #1597 the third, and each fix taught
+the stripper one more sentence shape. The reading verbs (*read, treat,
+interpret, see, take, count, mistake, describe*) now join the can't-say shape,
+with the recorded answer as a fixture and three controls that keep a colon, a
+comma and an unnegated verb red. `tests/smoke_negation_stripper.test.js` 30 →
+37. The first cut of the fix still failed the fixture: the answer said "1.2M",
+and the stripper's clause class treated the decimal point as a period, so the
+strip stopped after "don't read 1". A period followed by a digit is a decimal
+point in both shapes now, and a control keeps a sentence-ending period red.
+
+The fix's own smoke run then produced the FIFTH instance, on 15c: *"That's
+different from saying they've 'awarded zero' — it means the data simply isn't
+present."* A contrast phrase plus a gerund does the negating with no negation
+word at all. *different from*, *as opposed to* and *far from* join shape 2's
+negation words, the verbs carry their -ing forms, and the test file is at 42
+with two more controls. Five shapes in six days is the class asking for a
+different instrument than sed; until one exists, every framing guard gains a
+fixture the day an instance appears. The general point stands from #1597: what an answer tells the reader NOT
+to conclude is not the answer's claim, and every framing guard has to strip
+that before it greps.
+
 ### Sam's decisions this run
 
 None ruled yet. He asked for advice; the advice, the apply, the A/B re-run and

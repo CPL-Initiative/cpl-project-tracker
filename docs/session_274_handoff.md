@@ -87,6 +87,7 @@ Read in order: this file · [`lanes/sierra-retrieval-corpus.md`](reference/lanes
 | Client-side time limit on every retrieval RPC (`AbortSignal`) | recommended, not built — `s273-fable-route-time-limits` |
 | Stored generated tsvector columns to cut the ~700 ms floor | a LOADER-side cost; measure on `coci_programs_replace` before shipping (#1602's lesson) |
 | The 15 strict-mode type errors in `index.ts` | pre-existing on `main`; clear in a code-only PR, then `deno check` can gate |
+| Smoke 15a's fourth negation shape (a negated reading verb, then a quotation) and 15c's fifth (a contrast phrase: "different from saying") | fixed: reading verbs, contrast phrases and gerunds joined the stripper's can't-say shape; fixtures + controls in `smoke_negation_stripper.test.js` (42). Five shapes in six days: the class wants a better instrument than sed |
 | Auto-deploy on merge | NEEDS SAM (from S272) |
 | Sam's eyes on the public My College, signed out | asked S271, still unconfirmed |
 | Health cron fires ~4/day against a cron asking for 8 | open, observed not diagnosed |
