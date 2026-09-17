@@ -15,10 +15,12 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-241 document(s).
+243 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 270 | [the register's three tweaks landed, and three invisible controls found under them](../session_270_handoff.md) | 2026-09-17 |
+| 269 | [the register's three tweaks, half landed (EMERGENCY checkpoint)](../session_269_handoff.md) | 2026-09-17 |
 | 268 | [the register reached the tab, and the roster that was solved but unwired](../session_268_handoff.md) | 2026-09-17 |
 | 267 | [the explainer reads the model, and a test that pinned the cron's data](../session_267_handoff.md) | 2026-09-17 |
 | 266 | [SkyForge](../session_266_handoff.md) | 2026-09-16 |
