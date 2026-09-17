@@ -666,8 +666,30 @@ const TOPIC_SYNONYMS: Record<string, string[]> = {
   security: ["homeland", "hls", "protective", "transportation"],
   homeland: ["security", "hls", "protective"],
   welding: ["weld", "welder", "fabrication", "smaw", "fcaw"],
-  nursing: ["nurse", "lpn", "cna", "health", "clinical"],
-  nurse: ["nursing", "lpn", "cna", "health", "clinical"],
+  nursing: ["nurse", "lvn", "lpn", "cna", "health", "clinical"],
+  nurse: ["nursing", "lvn", "lpn", "cna", "health", "clinical"],
+  // ⚠️ CALIFORNIA SAYS LVN. This table carried `lpn` — the term used in other
+  // states — and had no `lvn` key at all, so "How do I become an LVN?" expanded
+  // to NOTHING: extractTopicKeywords gives ["become","lvn"], no key resolved,
+  // and nearestSynonymKey("lvn") returned null so even the fuzzy last resort
+  // missed. Measured on the program catalog, the query reached 28 of the 53
+  // colleges its title surface can find.
+  //
+  // THE VALUES ARE PHRASES ON PURPOSE, and single tokens were measured and
+  // rejected. "vocational" pulls in vocational education and vocational ESL
+  // (82 colleges against a 56 ideal). "practical" is worse in a subtler way:
+  // it is 9 characters, so it takes the stemmed prefix path, `practical:*`
+  // becomes `'practic':*`, and that matches Architectural PRACTICE, Teaching
+  // PRACTICES and PRACTICUM in Machine Shorthand — 30 of the 36 title rows it
+  // added were not nursing at all. Same family of defect as the `aed` → `'a':*`
+  // failure that search_exhibits_by_topic_v2's header records: a prefix match on
+  // a stem, not a match on the word.
+  //
+  // The phrases hit it exactly. Measured against the ground truth (program
+  // titles matching /\mlvn\M|vocational nurs/): 53 title colleges, 44 code
+  // colleges, 56 in union, and ZERO non-nursing title rows. search_college_programs
+  // routes any whitespace-bearing term through phraseto_tsquery.
+  lvn: ["practical nursing", "vocational nursing"],
   automotive: ["auto", "ase", "mechanic", "vehicle", "engine"],
   mechanic: ["automotive", "ase", "engine", "vehicle"],
   apprentice: ["apprenticeship", "journeyperson", "ibew"],
@@ -736,6 +758,16 @@ const TOPIC_STOP_WORDS = new Set([
   // anticipated; this list is the cheap first pass for the ones we know.
   "cert", "certs", "certificate", "certification", "certifications",
   "cpl", "ccc", "cccs", "articulation", "articulated",
+  // "HOW DO I BECOME A ..." is one of the most common student phrasings, and
+  // `become` was a live search term in every one of them. Measured 2026-09-17
+  // on the program catalog: the LVN question returned "BECOMING a Social Media
+  // Influencer" — `become` stems to 'becom' and prefix-matches it. It was the
+  // only non-nursing row in 118, and it came from the question's shape rather
+  // than its subject. The DF filter cannot catch this class: `become` is rare
+  // enough to pass a frequency test and still says nothing about the topic,
+  // which is exactly the division of labor this list's header describes.
+  // extractTopicKeywords does not stem, so each surface form is needed.
+  "become", "becomes", "becoming",
 ]);
 
 function extractTopicKeywords(query: string): string[] {
@@ -886,6 +918,15 @@ function expandWithSynonyms(keywords: string[]): string[] {
   return [...expanded];
 }
 
+// A term carrying whitespace is a PHRASE, meant for a route that can express one
+// (search_college_programs, via phraseto_tsquery). The `k + ":*"` builders below
+// cannot: `to_tsquery('english', 'lvn:* | practical nursing:*')` is a hard
+// syntax error (42601, verified against the live database), which would make the
+// whole call return null rather than drop the one term. Any builder that
+// concatenates terms into a tsquery string filters them out through this.
+const singleTokenTerms = (terms: string[]): string[] =>
+  terms.filter((t) => !/\s/.test(t.trim()));
+
 // ── Topic-based exhibit search ─────────────────────────────────
 async function searchExhibitsByTopic(
   query: string,
@@ -927,7 +968,7 @@ async function searchExhibitsByTopic(
   // Strategy 1b: v1 fallback — only reached if v2 is missing (not yet migrated)
   // or errored. Carries the original stemmer defect, so it is a safety net for
   // availability, not a co-equal path.
-  const tsQuery = keywords.map((k) => `${k}:*`).join(" | ");
+  const tsQuery = singleTokenTerms(keywords).map((k) => `${k}:*`).join(" | ");
 
   const { data: ftsResults, error: ftsError } = await sb
     .rpc("search_exhibits_by_topic", {
@@ -999,7 +1040,7 @@ async function searchCollegeOfferings(query: string, sb: any): Promise<any[] | n
   const rawKeywords = extractTopicKeywords(query);
   if (rawKeywords.length === 0) return null;
   const keywords = expandWithSynonyms(rawKeywords);
-  const tsQuery = keywords.map((k) => `${k}:*`).join(" | ");
+  const tsQuery = singleTokenTerms(keywords).map((k) => `${k}:*`).join(" | ");
   const { data, error } = await sb.rpc("search_college_offerings", {
     search_query: tsQuery,
     college_filter: null,

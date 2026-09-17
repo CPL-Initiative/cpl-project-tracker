@@ -94,6 +94,9 @@
 -- If EVERY term looks generic on a surface, that surface keeps them all, so a
 -- broad question still answers rather than returning nothing.
 --
+-- MULTI-WORD TERMS are phrases (phraseto_tsquery), which is what lets the LVN
+-- question be asked precisely — see the measured note in the term loop below.
+--
 -- Zero rows is a RESULT. The trigram fallback runs only when full-text matched
 -- nothing, and a genuine zero is returned as zero — the caller must not offer a
 -- neighbouring program instead.
@@ -204,6 +207,52 @@ begin
   if corpus_n = 0 then return; end if;
 
   foreach t in array coalesce(search_terms, '{}'::text[]) loop
+    -- ── PHRASE TERMS (2026-09-17) ─────────────────────────────────────────────
+    -- A term carrying whitespace is a phrase, and phrases exist because no single
+    -- token could express "vocational nursing". Measured on this corpus against
+    -- the ground truth (titles matching /\mlvn\M|vocational nurs/):
+    --
+    --     lvn alone ........................ 28 colleges
+    --     lvn + "vocational" (one token) ... 82   (vocational education, ESL)
+    --     lvn + "practical"  (one token) ... 63   but 30 of 36 added title rows
+    --                                            are Architectural PRACTICE,
+    --                                            Teaching PRACTICES, PRACTICUM —
+    --                                            `practical:*` stems to
+    --                                            `'practic':*` and prefix-matches
+    --                                            them. The aed → 'a':* family.
+    --     lvn + the two PHRASES ............ 53 title · 44 code · 56 union
+    --                                            and ZERO non-nursing title rows
+    --
+    -- phraseto_tsquery keeps the adjacency, so `'vocat' <-> 'nurs'` matches
+    -- "Licensed Vocational Nursing" and cannot match "Architectural Practice".
+    -- Phrases run on the english vector only (the 'simple' config would not stem
+    -- "Nursing" to match "Nurse") and are parenthesized before the OR-join —
+    -- tsquery binds <-> tighter than |, so this is belt and braces.
+    if btrim(coalesce(t, '')) ~ '\s' then
+      begin
+        term_q := phraseto_tsquery('english', public.cx_search_norm(t));
+      exception when others then term_q := null;
+      end;
+      continue when term_q is null or term_q::text = '';
+
+      select count(*) into df from public.coci_college_programs p
+      where to_tsvector('english', public.cx_search_norm(p.program_title)) @@ term_q;
+      t_eng_all := t_eng_all || ('(' || term_q::text || ')');
+      if df <= corpus_n * generic_pct then
+        t_eng_keep := t_eng_keep || ('(' || term_q::text || ')');
+      end if;
+
+      select count(*) into df from public.coci_college_programs p
+      where to_tsvector('english', public.cx_search_norm(
+              coalesce(p.top_title,'') || ' ' || coalesce(p.cip_title,''))) @@ term_q;
+      c_eng_all := c_eng_all || ('(' || term_q::text || ')');
+      if df <= corpus_n * generic_pct then
+        c_eng_keep := c_eng_keep || ('(' || term_q::text || ')');
+      end if;
+
+      continue;
+    end if;
+
     norm := lower(regexp_replace(coalesce(t, ''), '[^a-zA-Z0-9]', '', 'g'));
     continue when length(norm) < 3;
 
