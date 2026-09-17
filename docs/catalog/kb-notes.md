@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-453 document(s).
+454 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -186,6 +186,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A test file is a memory budget, and the process boundary is the only allocator](../kb-notes/methodology-a-test-file-is-a-memory-budget.md) | methodology | published | 2026-08-20 | 2026-08-20 |
 | [A test must report a missing thing, not dereference it](../kb-notes/methodology-a-test-must-report-a-missing-thing-not-dereference-it.md) | methodology | published | 2026-08-25 | 2026-08-25 |
 | [A test that only fails under load is racing a timer the product owns](../kb-notes/methodology-a-test-that-only-fails-under-load-is-racing-a-timer.md) | methodology | published | 2026-09-06 | 2026-09-06 |
+| [A test that pins a figure from a regenerated artifact fails on a data refresh, not on a defect](../kb-notes/methodology-a-test-that-pins-a-generated-figure-fails-on-a-data-refresh.md) | methodology | published | 2026-09-17 | 2026-09-17 |
 | [A test that writes to the queue it monitors — CI noise is indistinguishable from user signal](../kb-notes/methodology-a-test-that-writes-to-the-queue-it-monitors.md) | methodology | published | 2026-08-07 | 2026-08-07 |
 | [A text measure must agree with what sits beside it](../kb-notes/methodology-a-text-measure-must-agree-with-what-sits-beside-it.md) | methodology | published | 2026-08-22 | 2026-08-22 |
 | [A title match must cover the title, not merely touch it](../kb-notes/methodology-a-title-match-must-cover-the-title-not-touch-it.md) | methodology | published | 2026-09-16 | 2026-09-16 |

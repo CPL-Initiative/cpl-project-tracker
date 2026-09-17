@@ -66,6 +66,30 @@ function mount(opts) {
   T.render();
   return { T, window, doc };
 }
+// ⚠️ A FIGURE IS DERIVED FROM THE ARTIFACT, NEVER TYPED HERE (2026-09-16).
+// `cpl_funding_performance.js` is rewritten by the daily cron, so a literal
+// expectation is a test that goes red on a DATA REFRESH with no code change
+// behind it. That is not hypothetical: 4c pinned "826.8 CPL FTES" and the
+// 2026-09-16 run moved statewide `pac_u` from 24,804.45 to 24,847.45 — 828.2 —
+// turning `main` red and stopping an unrelated PR. The same run moved `pp_u`
+// from 25 units to 63.5 and its carriers from 3 to 4, which broke two more
+// assertions in cpl_funding_metric_pin.test.js the same way.
+//
+// This file already derives its OPTION SET from the consumer's own registry for
+// exactly this reason ("rather than a copy that can drift from it"); the figures
+// get the same treatment. Deriving does NOT weaken the check: the expectation is
+// computed for the SPECIFIC key the card must read, and asserted to differ from
+// the rival key's, so reading the wrong measure still fails. A derivation that
+// could not tell the two apart would be a tautology, so the difference is
+// asserted rather than assumed.
+//
+// Statewide converts units at the semester default — 30 units to one CPL FTES;
+// the two quarter colleges are ~2% of enrolment and do not move the statewide
+// figure at display precision (the consumer says so at `toActual`).
+function statewideFtes(window, key) {
+  return (window.CPL_FUNDING_PERF.statewide[key] / 30).toFixed(1);
+}
+const rx = (s) => new RegExp(s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
 const sels = (doc) => Array.from(doc.querySelectorAll("[data-priosrc]"));
 // ⚠️ LOCATE THE PINNED CARD BY ITS CONTENT, NOT BY DOM ORDINAL. priorityOrder
 // is a permutation — [0,1,2] in the bake, [0,2,1] live — so the Nth select in
@@ -160,8 +184,13 @@ function fire(window, sel, v) {
   const after = cardForCounselor(doc).textContent.replace(/\s+/g, " ");
   check("4b: after — the Actual line names the counselor measure",
     /counselor-accepted/.test(after));
-  check("4c: and the actual FIGURE moves with it (826.8 CPL FTES, not 22.2)",
-    /826\.8 CPL FTES/.test(after) && !/22\.2 CPL FTES/.test(after));
+  const chosen = statewideFtes(window, "pac_u");     // what the card must now read
+  const rival = statewideFtes(window, "ppa_u");      // the measure it moved OFF
+  check("4c: and the actual FIGURE moves with it — the counselor measure's own statewide " +
+        "figure (" + chosen + " CPL FTES), not the origin measure's (" + rival + ")",
+    chosen !== rival &&                                        // the check can discriminate
+    rx(chosen + " CPL FTES").test(after) &&
+    !rx(rival + " CPL FTES").test(after));
   // The outcome row derives from the measure's milestone, so it follows.
   check("4d: the statutory outcome follows the measure to (B) and (C)",
     /\(B\)/.test(after) && /\(C\)/.test(after));
