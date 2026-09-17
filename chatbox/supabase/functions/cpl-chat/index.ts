@@ -1437,7 +1437,7 @@ function buildCollegeCredentialContext(
   out += `These are ${college}'s OWN articulated credentials matching the question, read from the `
       + `curated catalogue rather than the freehand titles the college typed into MAP. State them `
       + `as established fact — this college awards credit for these today.\n`;
-  out += `ANSWER WITH BOTH HALVES: name the CREDENTIAL (the certificate, license or apprenticeship `
+  out += `ANSWER WITH BOTH HALVES: name the CREDENTIAL (the certificate, licence or apprenticeship `
       + `stage the person needs to hold) AND the COURSES it converts into, with units, exactly as `
       + `listed beneath it. A visitor who is told only that "the college awards CPL for this" still `
       + `does not know what they would get. Where a credential below has no course lines, say the `

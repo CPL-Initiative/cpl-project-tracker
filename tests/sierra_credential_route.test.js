@@ -64,7 +64,10 @@ check("catalogue-wide lookup runs only when the statewide lens is empty",
 check("CREDENTIAL_RULE is injected only when there is credential context",
       /body: CREDENTIAL_RULE, appliesWhen: "credential"/.test(src));
 check("credentialContext reaches the prompt template",
-      /\$\{offeringsContext\}\$\{credentialContext\}/.test(src));
+      // programsContext was inserted ahead of it in S272 (the COCI program
+      // catalog), so the adjacency moved; credentialContext still has to reach
+      // the chain, which is what this check is for.
+      /\$\{programsContext\}\$\{credentialContext\}/.test(src));
 
 /* ── 7. The contract the route exists to honour ────────────────────────────── */
 const rule = (src.match(/const CREDENTIAL_RULE = `[\s\S]*?`;/) || [""])[0];

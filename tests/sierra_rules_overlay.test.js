@@ -221,7 +221,7 @@ try {
     .replace(/ as \w+/g, "");
   block += "; return {STATEWIDE_RULE,CREDIT_LIST_RULE,OFFERINGS_RULE,CREDENTIAL_RULE," +
            "CREDIT_RECS_RULE,ALIGNMENT_RULE,VOLUME_RULE,CREDIT_STATUS_RULE,PORTAL_RULE," +
-           "LANDING_PAGE_RULE,RULE_DEFAULTS,assembleRules};";
+           "LANDING_PAGE_RULE,PROGRAMS_RULE,RULE_DEFAULTS,assembleRules};";
   // eslint-disable-next-line no-new-func
   const M = new Function(block)();
 
@@ -232,7 +232,7 @@ try {
 
   let mismatches = 0;
   for (const c of combos) {
-    const OLD = M.STATEWIDE_RULE + M.CREDIT_LIST_RULE + M.OFFERINGS_RULE
+    const OLD = M.STATEWIDE_RULE + M.CREDIT_LIST_RULE + M.OFFERINGS_RULE + M.PROGRAMS_RULE
       + (c.credentialContext ? M.CREDENTIAL_RULE : "")
       + ((c.credentialContext || c.volumeContext) ? M.CREDIT_RECS_RULE : "")
       + (c.alignmentContext ? M.ALIGNMENT_RULE : "")
