@@ -162,6 +162,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `nc_partner_note_revise` | tabs: `nc-learning-partners` | — |
 | `search_college_credentials` | `edgefn:cpl-chat` | — |
 | `search_college_offerings` | scripts: `chatbox/smoke_test.sh` · `edgefn:cpl-chat` | — |
+| `search_college_programs` | `edgefn:cpl-chat` | — |
 | `search_credential_volume` | `edgefn:cpl-chat` | — |
 | `search_credentials_any` | `edgefn:cpl-chat` | — |
 | `search_exhibits_by_topic` | `edgefn:cpl-chat` | — |
@@ -648,6 +649,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/ccr_universe_members_test.py` | workflows: `js-tests.yml` | — |
 | `tests/ccr_universe_orbits_test.py` | workflows: `js-tests.yml` | — |
 | `tests/cobi_live_banner.test.js` | workflows: `js-tests.yml` | — |
+| `tests/coci_program_cip_test.py` | workflows: `js-tests.yml` | — |
 | `tests/college_briefing_publish_suppression_test.py` | workflows: `college-briefing-publish.yml`, `js-tests.yml` | — |
 | `tests/context_budget_test.py` | workflows: `js-tests.yml` | — |
 | `tests/custom_report_payload_test.py` | workflows: `map-custom-report-load.yml` | — |
@@ -868,5 +870,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 84 Supabase tables · 31 RPCs · 5 edge functions · 472 file
+Coverage: 84 Supabase tables · 32 RPCs · 5 edge functions · 473 file
 datasets · 143 external services · 340 consumers · 34 workflows · 37 tabs.
