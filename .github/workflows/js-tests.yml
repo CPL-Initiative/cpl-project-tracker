@@ -108,6 +108,14 @@ jobs:
       # the published anon key. Pure-stdlib python; same non-required check.
       - name: Supabase function-grant lint (revoke must name PUBLIC)
         run: python3 tests/supabase_function_grants_test.py
+      # My College went public on 2026-09-17, so the tab's four gated tables are
+      # mirrored into `_pub` tables with suppression applied at BUILD time. This
+      # asserts the PROPERTY the ADR asks for — that subtraction cannot pin a
+      # withheld value — rather than that a flag got set. The sharpest input is
+      # map_college_cr_unit: 145,554 of its rows describe exactly ONE student at
+      # a named college, course and credit recommendation. Pure-stdlib, no network.
+      - name: My College public layer — suppression properties
+        run: python3 tests/college_briefing_publish_suppression_test.py
       # Re-key chain guard (Session 224) — a re-mint alias map can CHAIN (one
       # pair's old key is another pair's new key: `ARME M10AJ -> FLNG M10AJ`
       # beside `ARMN M10AJ -> ARME M10AJ`). The Supabase re-key must vacate the
