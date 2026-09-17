@@ -11,13 +11,13 @@
   },
   "summary": {
     "files": 919,
-    "bytes": 9746084,
+    "bytes": 9731844,
     "over_budget": 7,
     "handoff_max": 267,
     "always_loaded_files": 1,
     "always_loaded_bytes": 60839,
-    "superseded_files": 1,
-    "superseded_bytes": 10441,
+    "superseded_files": 0,
+    "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
@@ -31,7 +31,7 @@
       },
       "index": {
         "files": 1,
-        "bytes": 34496,
+        "bytes": 19512,
         "over": 0
       },
       "lessons": {
@@ -51,25 +51,26 @@
       },
       "handoff": {
         "files": 240,
-        "bytes": 2041729,
+        "bytes": 2042473,
         "over": 0
       }
     },
     "by_rule": {
       "oversized_doc": 7,
       "house_voice": 24,
-      "superseded_handoff": 1,
-      "vault_heavy_path": 47
+      "vault_heavy_path": 49,
+      "checkpoint_overdue": 1
     },
     "vault": {
-      "files": 2917,
-      "bytes": 1416865606,
-      "heavy_bytes": 618400179,
-      "heavy_share": 0.436,
+      "files": 2923,
+      "bytes": 1430705255,
+      "heavy_bytes": 636530333,
+      "heavy_share": 0.445,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
         "cpl-project-tracker/cip_fitcheck",
         "cpl-project-tracker/kb/unclassified_fold",
+        "cpl-project-tracker/kb/regional_cpl_out",
         "cpl-project-tracker/tmc",
         "cpl-project-tracker/unified_courses_member_desc.js",
         "cpl-project-tracker/kb/coci_minted_singletons.json",
@@ -106,6 +107,7 @@
         "cpl-project-tracker/unified_courses_suggestions.js",
         "cpl-project-tracker/credential_reference_data.js",
         "cpl-project-tracker/coci_lookup_desc_B.js",
+        "cpl-project-tracker/regional_cpl_opportunity_data.js",
         "cpl-project-tracker/coci_lookup_desc_H.js",
         "cpl-project-tracker/coci_lookup_desc_D.js",
         "cpl-project-tracker/kb/remint_out/alias_map.json",
@@ -438,17 +440,6 @@
       "path": "docs/roadmap_archive.md"
     },
     {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 266,
-        "authoritative": 267,
-        "has_frontmatter": true
-      },
-      "message": "handoff 266 is below the authoritative 267 but is not stamped `superseded: true`",
-      "path": "docs/session_266_handoff.md"
-    },
-    {
       "rule": "house_voice",
       "fixable": false,
       "detail": {
@@ -513,10 +504,10 @@
       "fixable": false,
       "path": "kb/reference",
       "detail": {
-        "bytes": 82222959,
+        "bytes": 82227956,
         "kind": "dir"
       },
-      "message": "directory totals 82,222,959 B inside the vault"
+      "message": "directory totals 82,227,956 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -537,6 +528,16 @@
         "kind": "dir"
       },
       "message": "directory totals 20,423,621 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/regional_cpl_out",
+      "detail": {
+        "bytes": 15225392,
+        "kind": "dir"
+      },
+      "message": "directory totals 15,225,392 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -901,6 +902,16 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
+      "path": "regional_cpl_opportunity_data.js",
+      "detail": {
+        "bytes": 2899765,
+        "kind": "file"
+      },
+      "message": "2,899,765 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
       "path": "coci_lookup_desc_H.js",
       "detail": {
         "bytes": 2799319,
@@ -977,6 +988,17 @@
         "kind": "file"
       },
       "message": "2,038,305 B single file inside the vault"
+    },
+    {
+      "rule": "checkpoint_overdue",
+      "fixable": false,
+      "path": "docs/session_267_handoff.md",
+      "detail": {
+        "commits_since": 36,
+        "budget": 6,
+        "handoff": "session_267_handoff.md"
+      },
+      "message": "36 commit(s) have landed since `docs/session_267_handoff.md` was last written (budget 6). Rule 9's own trigger — 'roughly every ~100K tokens' — is a condition nothing can observe, so this is the observable stand-in. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
     }
   ]
 }
