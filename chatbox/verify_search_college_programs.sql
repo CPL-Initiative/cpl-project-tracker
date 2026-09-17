@@ -139,3 +139,36 @@ begin
 
   raise notice 'PART C: 4 checks passed.';
 end $$;
+
+-- ── PART D: the cost is bounded (2026-09-17, S273) ───────────────────────────
+-- The first version counted document frequency with two full scans PER TERM,
+-- ~320 ms each, so the cost was set by the synonym table rather than the
+-- student: a 30-term expansion took 19,784 ms and timed out through PostgREST
+-- (8 s), and the edge function logged `search_college_programs unavailable`
+-- three times in one smoke run while every assertion still passed. The one-pass
+-- rewrite measures 2,522 ms for the same 30 terms and 1,168 ms for the LVN
+-- question. These bounds sit at roughly 2x the measured values and well under
+-- both timeouts; if D1 fires, the DF loop has gone back to one scan per term.
+do $$
+declare t0 timestamptz; ms numeric; n bigint;
+begin
+  t0 := clock_timestamp();
+  select count(*) into n from public.search_college_programs(array[
+    'boys','girls','club','near','san','pedro','nccer','carpentry','electrician','plumbing',
+    'welding','osha','teens','nearby','them','construction','carpenter','woodworking','electrical','ibew',
+    'apprentice','wiring','pipefitting','plumber','weld','welder','fabrication','smaw','fcaw','occupational'], null, 150);
+  ms := extract(epoch from clock_timestamp() - t0) * 1000;
+  if ms > 6000 then
+    raise exception 'D1 FAIL: a 30-term call took % ms (2,522 ms one-pass; 19,784 ms with per-term scans) — is the DF loop scanning the table once per term again?', round(ms);
+  end if;
+
+  t0 := clock_timestamp();
+  select count(*) into n from public.search_college_programs(
+    array['lvn','practical nursing','vocational nursing'], null, 600);
+  ms := extract(epoch from clock_timestamp() - t0) * 1000;
+  if ms > 3000 then
+    raise exception 'D2 FAIL: the LVN question took % ms — smoke 7p calls this with the anon key, whose statement timeout is 3 s', round(ms);
+  end if;
+
+  raise notice 'PART D: 2 checks passed.';
+end $$;

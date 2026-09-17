@@ -402,6 +402,23 @@ if [ "${pnoise:-1}" -eq 0 ]; then
 else
   echo "::error::7p ⭐ ${pnoise} non-nursing program(s) came back, e.g. '${pfirst}'. A phrase has degraded to loose token matching — `practical:*` stems to `'practic':*` and prefix-matches PRACTICE/PRACTICUM."; fail=1
 fi
+# ⚠ COST IS PART OF CORRECTNESS ON THIS ROUTE (2026-09-17, S273). The first
+# preview A/B run of the edge function passed every mode while this RPC timed
+# out on 3 of its questions: the function awaits every retrieval route in one
+# Promise.all, so a slow route delays the whole answer, and a timed-out one
+# (8 s through PostgREST) drops the Program Catalog section silently — the
+# answer reads fluent and complete. The per-term DF scans were the cause
+# (19.8 s for a 30-term expansion); the one-pass rewrite measures 1.2 s for
+# these three terms. This call runs on the ANON key, whose statement timeout is
+# 3 s, so 4 s here fails loudly before either timeout does.
+psecs=$(curl -sS --max-time 45 -o /dev/null -w '%{time_total}' -X POST "$REST_BASE/rpc/search_college_programs" \
+  -H 'Content-Type: application/json' -H "apikey: $ANON" -H "Authorization: Bearer $ANON" \
+  -d "$(printf '{"search_terms":%s,"college_filter":null,"result_limit":600}' "$PROGRAMS_TERMS")" 2>/dev/null || echo 99)
+if awk -v s="${psecs:-99}" 'BEGIN { exit !(s + 0 < 4.0) }'; then
+  echo "  [assert ok] 7p ⭐ the LVN question answered in ${psecs}s (1.2 s measured; the anon key times out at 3 s)"
+else
+  echo "::error::7p ⭐ the LVN question took ${psecs}s — over 4 s, the route is back near a statement timeout. Sierra's whole answer waits on this RPC, and a timeout drops the Program Catalog section silently. Check that search_college_programs still computes its vectors ONCE per call (verify Part D)."; fail=1
+fi
 
 # Broad "who teaches this" — the catalog should surface colleges that TEACH
 # construction/carpentry (not only those with an existing exhibit).

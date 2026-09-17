@@ -180,6 +180,48 @@ end $function$;
 -- here is a single statement under a fixed timeout.
 
 -- ── The route ─────────────────────────────────────────────────────────────────
+-- ⚠️ ONE PASS OVER THE TABLE PER CALL, AND THAT IS A MEASURED DECISION
+-- (2026-09-17, S273). The first version of this function counted document
+-- frequency with two `count(*)` statements PER TERM, each recomputing two
+-- tsvectors for all 22,335 rows — about 320 ms a count. The cost scaled with
+-- the term count, and the term count is set by the synonym table, not by the
+-- student: "How do I become an LVN?" is 3 terms, an EMT question 6, a
+-- firefighter question 12, and a Boys & Girls Club question 30. Measured on the
+-- live table, uncontended, as the postgres role:
+--
+--                                     per-term loop      one pass (this)
+--     3 terms  (the LVN question) ........  1,788 ms          1,168 ms
+--     6 terms  (an EMT question) .........  4,255 ms          1,098 ms
+--     12 terms (a firefighter question) ..  8,076 ms          1,382 ms
+--     30 terms (a Boys & Girls Club ask) . 19,784 ms          2,522 ms
+--
+-- The slope is what changed: ~650 ms per term before, ~60 ms per term now, on
+-- a ~700 ms floor (the four vectors, computed once). Row-for-row identical on
+-- nine term sets — the four above, a college_filter, the per-surface generic
+-- rule ("technology"), a nonsense token, the fuzzy fallback ("excellance") and
+-- a phrase alone — 0 rows differ in either direction; the order differs in 2 of
+-- 300 positions on "technology", two rows tied on rank, college and title.
+-- Measured on a session-local pg_temp copy beside the live function, so the
+-- comparison touched no shared schema.
+--
+-- Through PostgREST the effective statement timeout is 8 s (the authenticator
+-- role's), and the anon key's is 3 s. In the first preview A/B run of the
+-- edge function (2026-09-17 21:14–21:27Z) the route timed out on 3 of the
+-- questions that expanded past ~10 terms and the function logged
+-- `search_college_programs unavailable` each time; pg_stat_statements recorded
+-- the surviving calls at a MEAN of 4,282 ms and a max of 7,875 ms. The edge
+-- function awaits every retrieval route in one Promise.all, so a slow route
+-- delays the whole answer, and a timed-out one costs the Program Catalog
+-- section silently — the answer reads fluent and complete.
+--
+-- The fix is structural, not an index (see the NO INDEXES note above — three
+-- GIN indexes broke the loader for a measured 4 ms). The four tsvectors are
+-- computed ONCE per call into a materialized CTE, every term's document
+-- frequency is counted in one pass over that CTE, and the ranked match reads
+-- the same CTE. Semantics are unchanged — the same per-surface DF rule, the
+-- same keep-all-if-all-generic rule, the same english/simple split, the same
+-- phrase handling, the same ranking. chatbox/verify_search_college_programs.sql
+-- Part D pins the cost so the per-term scan cannot come back unnoticed.
 create or replace function public.search_college_programs(
   search_terms   text[],
   college_filter text    default null,
@@ -196,16 +238,16 @@ language plpgsql
 stable
 as $function$
 declare
-  corpus_n bigint; t text; norm text; term_q tsquery; use_simple boolean; df bigint;
-  t_eng_keep text[] := '{}'; t_sim_keep text[] := '{}';
-  t_eng_all  text[] := '{}'; t_sim_all  text[] := '{}';
-  c_eng_keep text[] := '{}'; c_sim_keep text[] := '{}';
-  c_eng_all  text[] := '{}'; c_sim_all  text[] := '{}';
-  qt_eng tsquery; qt_sim tsquery; qc_eng tsquery; qc_sim tsquery;
+  corpus_n bigint; t text; norm text; term_q tsquery; use_simple boolean;
+  -- Every parsed term as the text of its tsquery, beside the vector it belongs
+  -- to: 'phrase' (english only), 'eng' (stemmed prefix) or 'sim' (unstemmed).
+  qs    text[] := '{}';
+  kinds text[] := '{}';
 begin
   select count(*) into corpus_n from public.coci_college_programs;
   if corpus_n = 0 then return; end if;
 
+  -- ── 1. Parse the terms. No table access in this loop. ──────────────────────
   foreach t in array coalesce(search_terms, '{}'::text[]) loop
     -- ── PHRASE TERMS (2026-09-17) ─────────────────────────────────────────────
     -- A term carrying whitespace is a phrase, and phrases exist because no single
@@ -234,22 +276,8 @@ begin
       exception when others then term_q := null;
       end;
       continue when term_q is null or term_q::text = '';
-
-      select count(*) into df from public.coci_college_programs p
-      where to_tsvector('english', public.cx_search_norm(p.program_title)) @@ term_q;
-      t_eng_all := t_eng_all || ('(' || term_q::text || ')');
-      if df <= corpus_n * generic_pct then
-        t_eng_keep := t_eng_keep || ('(' || term_q::text || ')');
-      end if;
-
-      select count(*) into df from public.coci_college_programs p
-      where to_tsvector('english', public.cx_search_norm(
-              coalesce(p.top_title,'') || ' ' || coalesce(p.cip_title,''))) @@ term_q;
-      c_eng_all := c_eng_all || ('(' || term_q::text || ')');
-      if df <= corpus_n * generic_pct then
-        c_eng_keep := c_eng_keep || ('(' || term_q::text || ')');
-      end if;
-
+      qs := qs || term_q::text;
+      kinds := kinds || 'phrase'::text;
       continue;
     end if;
 
@@ -273,74 +301,81 @@ begin
     exception when others then continue;
     end;
     continue when term_q is null or term_q::text = '';
-
-    -- PER-SURFACE document frequency. A term generic among the code vocabulary
-    -- can still be the discriminating word in a freehand program title.
-    select count(*) into df from public.coci_college_programs p
-    where (to_tsvector('english', public.cx_search_norm(p.program_title))
-        || to_tsvector('simple',  public.cx_search_norm(p.program_title))) @@ term_q;
-    if use_simple then
-      t_sim_all := t_sim_all || term_q::text;
-      if df <= corpus_n * generic_pct then t_sim_keep := t_sim_keep || term_q::text; end if;
-    else
-      t_eng_all := t_eng_all || term_q::text;
-      if df <= corpus_n * generic_pct then t_eng_keep := t_eng_keep || term_q::text; end if;
-    end if;
-
-    select count(*) into df from public.coci_college_programs p
-    where (to_tsvector('english', public.cx_search_norm(
-             coalesce(p.top_title,'') || ' ' || coalesce(p.cip_title,'')))
-        || to_tsvector('simple',  public.cx_search_norm(
-             coalesce(p.top_title,'') || ' ' || coalesce(p.cip_title,'')))) @@ term_q;
-    if use_simple then
-      c_sim_all := c_sim_all || term_q::text;
-      if df <= corpus_n * generic_pct then c_sim_keep := c_sim_keep || term_q::text; end if;
-    else
-      c_eng_all := c_eng_all || term_q::text;
-      if df <= corpus_n * generic_pct then c_eng_keep := c_eng_keep || term_q::text; end if;
-    end if;
+    qs := qs || term_q::text;
+    kinds := kinds || (case when use_simple then 'sim' else 'eng' end)::text;
   end loop;
 
-  -- If every term looked generic on a surface, that surface keeps them all.
-  if array_length(t_eng_keep, 1) is null and array_length(t_sim_keep, 1) is null then
-    t_eng_keep := t_eng_all; t_sim_keep := t_sim_all;
-  end if;
-  if array_length(c_eng_keep, 1) is null and array_length(c_sim_keep, 1) is null then
-    c_eng_keep := c_eng_all; c_sim_keep := c_sim_all;
-  end if;
-
-  qt_eng := nullif(array_to_string(t_eng_keep, ' | '), '')::tsquery;
-  qt_sim := nullif(array_to_string(t_sim_keep, ' | '), '')::tsquery;
-  qc_eng := nullif(array_to_string(c_eng_keep, ' | '), '')::tsquery;
-  qc_sim := nullif(array_to_string(c_sim_keep, ' | '), '')::tsquery;
-
-  if qt_eng is not null or qt_sim is not null or qc_eng is not null or qc_sim is not null then
+  -- ── 2. One pass: vectors once, every DF in one scan, then the ranked match. ─
+  -- PER-SURFACE document frequency. A term generic among the code vocabulary
+  -- can still be the discriminating word in a freehand program title. If EVERY
+  -- term looks generic on a surface, that surface keeps them all, so a broad
+  -- question still answers rather than returning nothing.
+  if array_length(qs, 1) is not null then
     return query
-    with hits as (
+    with tv as materialized (
       select p.college, p.program_title, p.award, p.status,
              p.top_code, p.top_title, p.cip_code, p.cip_title,
-             (   (qt_eng is not null and to_tsvector('english', public.cx_search_norm(p.program_title)) @@ qt_eng)
-              or (qt_sim is not null and to_tsvector('simple',  public.cx_search_norm(p.program_title)) @@ qt_sim)
+             v.te, v.ts, v.ce, v.cs, v.te || v.ts as tb, v.ce || v.cs as cb
+      from public.coci_college_programs p
+      cross join lateral (
+        select to_tsvector('english', public.cx_search_norm(p.program_title)) as te,
+               to_tsvector('simple',  public.cx_search_norm(p.program_title)) as ts,
+               to_tsvector('english', public.cx_search_norm(
+                 coalesce(p.top_title,'') || ' ' || coalesce(p.cip_title,''))) as ce,
+               to_tsvector('simple',  public.cx_search_norm(
+                 coalesce(p.top_title,'') || ' ' || coalesce(p.cip_title,''))) as cs
+      ) v
+    ),
+    terms as (
+      select u.ord, u.q::tsquery as q, u.kind
+      from unnest(qs, kinds) with ordinality as u(q, kind, ord)
+    ),
+    df as (
+      select tm.ord, tm.q, tm.kind,
+             count(*) filter (where case when tm.kind = 'phrase' then tv.te @@ tm.q else tv.tb @@ tm.q end) as df_t,
+             count(*) filter (where case when tm.kind = 'phrase' then tv.ce @@ tm.q else tv.cb @@ tm.q end) as df_c
+      from terms tm cross join tv
+      group by tm.ord, tm.q, tm.kind
+    ),
+    sel as (
+      select df.ord, df.q, df.kind,
+             (df.df_t <= corpus_n * generic_pct)
+               or not bool_or(df.df_t <= corpus_n * generic_pct) over () as use_t,
+             (df.df_c <= corpus_n * generic_pct)
+               or not bool_or(df.df_c <= corpus_n * generic_pct) over () as use_c
+      from df
+    ),
+    q4 as (
+      select
+        nullif(string_agg(case when sel.kind = 'phrase' then '(' || sel.q::text || ')' else sel.q::text end,
+                          ' | ' order by sel.ord)
+               filter (where sel.use_t and sel.kind in ('phrase', 'eng')), '')::tsquery as qt_eng,
+        nullif(string_agg(sel.q::text, ' | ' order by sel.ord)
+               filter (where sel.use_t and sel.kind = 'sim'), '')::tsquery as qt_sim,
+        nullif(string_agg(case when sel.kind = 'phrase' then '(' || sel.q::text || ')' else sel.q::text end,
+                          ' | ' order by sel.ord)
+               filter (where sel.use_c and sel.kind in ('phrase', 'eng')), '')::tsquery as qc_eng,
+        nullif(string_agg(sel.q::text, ' | ' order by sel.ord)
+               filter (where sel.use_c and sel.kind = 'sim'), '')::tsquery as qc_sim
+      from sel
+    ),
+    hits as (
+      select tv.college, tv.program_title, tv.award, tv.status,
+             tv.top_code, tv.top_title, tv.cip_code, tv.cip_title,
+             (   (q4.qt_eng is not null and tv.te @@ q4.qt_eng)
+              or (q4.qt_sim is not null and tv.ts @@ q4.qt_sim)
              ) as title_hit,
-             (   (qc_eng is not null and to_tsvector('english', public.cx_search_norm(
-                    coalesce(p.top_title,'') || ' ' || coalesce(p.cip_title,''))) @@ qc_eng)
-              or (qc_sim is not null and to_tsvector('simple',  public.cx_search_norm(
-                    coalesce(p.top_title,'') || ' ' || coalesce(p.cip_title,''))) @@ qc_sim)
+             (   (q4.qc_eng is not null and tv.ce @@ q4.qc_eng)
+              or (q4.qc_sim is not null and tv.cs @@ q4.qc_sim)
              ) as code_hit,
              greatest(
-               case when qt_eng is null then 0 else ts_rank_cd(
-                 setweight(to_tsvector('english', public.cx_search_norm(p.program_title)), 'A'), qt_eng) end,
-               case when qt_sim is null then 0 else ts_rank_cd(
-                 setweight(to_tsvector('simple',  public.cx_search_norm(p.program_title)), 'A'), qt_sim) end,
-               case when qc_eng is null then 0 else ts_rank_cd(
-                 setweight(to_tsvector('english', public.cx_search_norm(
-                   coalesce(p.top_title,'') || ' ' || coalesce(p.cip_title,''))), 'B'), qc_eng) end,
-               case when qc_sim is null then 0 else ts_rank_cd(
-                 setweight(to_tsvector('simple',  public.cx_search_norm(
-                   coalesce(p.top_title,'') || ' ' || coalesce(p.cip_title,''))), 'B'), qc_sim) end
+               case when q4.qt_eng is null then 0 else ts_rank_cd(setweight(tv.te, 'A'), q4.qt_eng) end,
+               case when q4.qt_sim is null then 0 else ts_rank_cd(setweight(tv.ts, 'A'), q4.qt_sim) end,
+               case when q4.qc_eng is null then 0 else ts_rank_cd(setweight(tv.ce, 'B'), q4.qc_eng) end,
+               case when q4.qc_sim is null then 0 else ts_rank_cd(setweight(tv.cs, 'B'), q4.qc_sim) end
              ) as rank
-      from public.coci_college_programs p
-      where (college_filter is null or p.college = college_filter)
+      from tv cross join q4
+      where (college_filter is null or tv.college = college_filter)
     )
     select h.college, h.program_title, h.award, h.status,
            h.top_code, h.top_title, h.cip_code, h.cip_title,
