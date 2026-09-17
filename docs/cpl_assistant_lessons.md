@@ -922,10 +922,34 @@ None ruled yet. He asked for advice; the advice, the apply, the A/B re-run and
 the deploy are in `docs/session_274_handoff.md`. Still open from S272: whether
 the Edge Function should auto-deploy on merge.
 
+### Sam said "apply and deploy", and v67 went live the same evening
+
+His words, verbatim: *"apply and deploy...as long as we don't break Sierra in
+the process:) I'm OK with a few anomalies if those occur. We can hone as we
+go. My hope is that the gain we will get in her responses will far outweigh
+any clean up needed."* Captured as `cpl_memory`
+`sam-authorized-apply-and-deploy-program-search-2026-09-17`. The bar it sets:
+not breaking Sierra is the constraint; anomalies in answer quality are
+accepted and honed.
+
+The sequence, with what each step measured:
+
+1. **Apply** — migration `20260917231239 search_college_programs_one_pass`
+   (`apply_migration`; the earlier session's refusal did not recur). One
+   signature, anon may still execute.
+2. **Verify live** — A 8/8 · B 2/2 · C 4/4 · **D 2/2**: the 30-term call
+   2,573 ms, the LVN question 887 ms, 56 colleges.
+3. **A/B run 2** (35285864076, `cleanup=true`) — ALL MODES OK on both slugs,
+   no regressions, and **zero** `search_college_programs unavailable` lines in
+   `function_logs` for the window, against three in run 1. The four Postgres
+   timeouts in the window are mode 15d's deliberate anon probes against the two
+   large gated tables, present in every run. The preview slug was deleted by
+   the run.
+4. **Deploy** — run 35287167393, `confirm=DEPLOY`, `main` at `ab3e4a9`;
+   **cpl-chat v67** at 23:31Z, `verify_jwt` false.
+5. **Post-deploy smoke and health** — dispatched 23:36Z; result recorded
+   below.
+
 ### The state a next session inherits
 
-#1603 is merged and NOT deployed (production is v66, pre-#1601). The preview
-slug `cpl-chat-preview` (v1, the merged bytes) persists from A/B run
-35275472821 and reads the live RPC. The one-pass rewrite is the schema of
-record on this branch and is not applied until Sam says so; until then the
-route is slow and the deploy should wait.
+**cpl-chat v67 is live with the program route, and the one-pass search is applied.** #1603 is merged; production was v66, pre-#1601, until 23:31Z. The preview slug is gone (A/B run 2 cleaned it up). What remains is honing: read real questions and the logs, give every retrieval RPC its own time limit, and measure generated tsvector columns on the loader before adding them.

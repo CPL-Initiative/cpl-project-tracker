@@ -1,5 +1,5 @@
 ---
-title: Session 274 handoff — the merge was ready, the deploy is waiting on one apply
+title: Session 274 handoff — program search is applied and deployed as v67; now we hone
 date: 2026-09-17
 session: 273 (SkyPilot)
 tags: [handoff, sierra, program-search, deploy, performance]
@@ -8,58 +8,63 @@ status: current
 
 # You are Session 274
 
-Your moniker is **SkyMeter** — the work in front of you is one apply, one
-re-measurement, and a deploy whose readiness is now a number rather than a
-guess.
+Your moniker is **SkyMeter** — Sierra's third view of a college is live in
+production, and the work in front of you is reading how it behaves and honing
+it, with the numbers this session left you.
 
 Read in order: this file · [`lanes/sierra-retrieval-corpus.md`](reference/lanes/sierra-retrieval-corpus.md)
 · `docs/cpl_assistant_lessons.md` (2026-09-17, S273) · the header of
 `chatbox/supabase_search_college_programs.sql` · PRs #1603 and the S273 PR.
 
-## ⛔ WHERE THINGS STAND
+## ✅ WHERE THINGS STAND (as of 2026-09-17 23:31Z)
 
-- **#1603 is MERGED (`0b40f8a`) and NOT DEPLOYED.** Production is cpl-chat
-  **v66**, which predates #1601: the program route, the phrases and the guards
-  all sit on `main` and nowhere live.
-- **The first `cpl-chat-preview-ab.yml` run (35275472821) came back clean on
-  the grid and was NOT a green light.** Both slugs ALL MODES OK, no regressions;
-  the preview's own `function_logs` show `search_college_programs unavailable:
-  canceling statement due to statement timeout` three times.
-  `pg_stat_statements`: 15 calls, mean 4,282 ms, max 7,875 ms; the effective
-  timeout through PostgREST is 8 s. The route fails safe — Sierra answered
-  without the section and read fine.
-- **The fix is written and proven, not applied.** `search_college_programs`
-  now computes its four tsvectors ONCE per call and counts every term's DF in
-  one pass: identical rows on nine term sets (proven on a `pg_temp` copy beside
-  the live function), 1.1–2.5 s against 1.8–19.8 s. Applying it is a
-  `create or replace` of a read-only RPC with no production consumer today,
-  and Sam has been asked for the go (To-Do `s273-sam-apply-program-search-rewrite`).
-- The preview slug **`cpl-chat-preview` (v1, the merged bytes) persists** and
-  reads the live RPC, so a re-run of the A/B measures the apply directly.
+- **cpl-chat v67 is LIVE** (deploy run 35287167393, `main` at `ab3e4a9`). It
+  carries #1601's program route, #1603's phrases, stop word and guards. Sam
+  authorized it verbatim: *"apply and deploy...as long as we don't break Sierra
+  in the process:) I'm OK with a few anomalies if those occur. We can hone as
+  we go."* (`cpl_memory` `sam-authorized-apply-and-deploy-program-search-2026-09-17`).
+- **The one-pass `search_college_programs` is APPLIED** (migration
+  `20260917231239 search_college_programs_one_pass`). Verified live after the
+  apply: A 8/8 · B 2/2 · C 4/4 · **D 2/2**, the 30-term call at 2,573 ms, the
+  LVN question at 887 ms reaching 56 colleges.
+- **The second `cpl-chat-preview-ab.yml` run (35285864076) was clean in BOTH
+  senses:** ALL MODES OK on both slugs, no regressions, and ZERO
+  `search_college_programs unavailable` lines in `function_logs` for its window
+  (run 1 had three). The four Postgres timeouts in that window are mode 15d's
+  deliberate anon-role probes, present in every run. The preview slug was
+  deleted by the run (`cleanup=true`).
+- **Post-deploy smoke:** see the last line of the lessons doc's S273 section —
+  it was still running when this file was written; SkyMeter, confirm it first.
 
 ## YOUR SEQUENCE
 
-1. **Apply the rewrite** once Sam says go: the function block of
-   `chatbox/supabase_search_college_programs.sql`, then run
-   `chatbox/verify_search_college_programs.sql` (A 8 · B 2 · C 4 · **D 2**).
-2. **Re-run `cpl-chat-preview-ab.yml`** on `main` and then read the LOGS, not
-   only the grid: `select … from logs where source = 'function_logs' and
-   event_message ilike '%unavailable%'` over the run's window. Zero lines is
-   the pass.
-3. **`cpl-chat-deploy.yml`** (confirm `DEPLOY`), then `cpl-chat-smoke.yml` and
-   read **7p**, which now asserts the LVN question answers in under 4 s.
-4. Delete `cpl-chat-preview` (a later A/B run with `cleanup=true`, or by hand).
-5. Rollback is one `cpl-chat-deploy.yml` dispatch from the previous commit,
-   and one `create or replace` from git for the SQL.
+1. **Read what v67 does with real questions.** `chat_interactions` rows since
+   23:31Z 2026-09-17 (session_id other than `smoke-ci` / `health-probe`), and
+   `function_logs` for `unavailable`, `EMPTY ANSWER` and `error`. The route
+   fails safe, so a missing Program Catalog section is only visible in the
+   logs.
+2. **Ask Sam to read Sierra's program answers in a browser** (To-Do
+   `s273-sam-read-program-answers`): "Where can I train to become an LVN?",
+   "Which colleges award a welding certificate?", one with a home college
+   named. Anomalies are expected and accepted; record each as a fixture or a
+   vocabulary entry, the way the negation class is handled.
+3. **Give every retrieval RPC a client-side time limit** (`AbortSignal` on the
+   `.rpc()` calls, To-Do `s273-fable-route-time-limits`) so one slow route can
+   never hold the whole answer for 8 s again. Deploy needs the A/B + the logs
+   read, as this session did.
+4. **Optional, measured:** stored generated tsvector columns to cut the ~700 ms
+   floor of the program route. A LOADER-side cost — measure on
+   `coci_programs_replace` before shipping (#1602's lesson).
+5. Rollback stays one `cpl-chat-deploy.yml` dispatch from the previous commit
+   (`663027f` was v66), and one `create or replace` from git for the SQL.
 
-## ⚠️ Sam's open calls — his, not yours
+## ⚠️ Sam's open call — his, not yours
 
 - **Auto-deploy the Edge Function on merge?** Asked in S272, still unruled.
   S272 recommended yes with the dispatch kept for rollbacks; S273 adds: the A/B
   can run on the BRANCH before merge (it checks out the dispatched ref), so the
-  gate moves in front of the merge rather than disappearing.
-- **The apply above.** Zero production effect until the deploy; it makes the
-  deploy safe.
+  gate moves in front of the merge rather than disappearing. Today's sequence
+  (apply → A/B → logs → deploy → smoke) took about 25 minutes by hand.
 
 ## What this session learned
 
@@ -83,7 +88,8 @@ Read in order: this file · [`lanes/sierra-retrieval-corpus.md`](reference/lanes
 
 | Item | State |
 |---|---|
-| Apply the one-pass `search_college_programs` → A/B re-run → deploy → 7p → delete the preview slug | **your first job** — apply NEEDS SAM |
+| Apply → A/B re-run → deploy → smoke → delete the preview slug | **DONE 2026-09-17** — v67 live, migration `search_college_programs_one_pass` applied, A/B run 2 clean in grid and logs |
+| Sam reads Sierra's program answers in a browser | asked — `s273-sam-read-program-answers` |
 | Client-side time limit on every retrieval RPC (`AbortSignal`) | recommended, not built — `s273-fable-route-time-limits` |
 | Stored generated tsvector columns to cut the ~700 ms floor | a LOADER-side cost; measure on `coci_programs_replace` before shipping (#1602's lesson) |
 | The 15 strict-mode type errors in `index.ts` | pre-existing on `main`; clear in a code-only PR, then `deno check` can gate |
