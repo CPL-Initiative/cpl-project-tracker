@@ -155,7 +155,9 @@ The whole ecosystem, end-to-end:
    (Career Passport, CA Master Plan, workforce/upskilling) and CA budget
    items; harvested daily from free sources + a suggest-a-story queue and
    Claude-triaged, read live so it never goes stale), a **My College** tab
-   (team-only: one page, not 123 — pick a college and get where it stands
+   (open to colleges and the public since 2026-09-17, reading published
+   copies with small student counts removed before publication, while the
+   protected tables behind it keep their protection: one page, not 123 — pick a college and get where it stands
    against the goals, what its already-articulated-and-waiting credit actually
    consists of, its share of both funding pools with each priority's target,
    its tier with the missing criteria named, who MAP has on file for it, what

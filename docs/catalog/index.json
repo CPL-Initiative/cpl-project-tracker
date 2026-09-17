@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 459,
+   "count": 460,
    "docs": [
     {
      "created": "2026-08-14",
@@ -729,6 +729,27 @@
      "title": "A check that never registers can never fail",
      "type": "methodology",
      "updated": "2026-08-21"
+    },
+    {
+     "created": "2026-09-17",
+     "governs": [
+      "coci_college_programs",
+      "coci_college_offerings",
+      "tmc/source_data/coci_program_export_*.csv"
+     ],
+     "path": "docs/kb-notes/methodology-a-code-cannot-say-who-a-program-is-for.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "top-codes",
+      "cip",
+      "coci",
+      "retrieval",
+      "sierra"
+     ],
+     "title": "A classification code cannot say who a program is for",
+     "type": "methodology",
+     "updated": "2026-09-17"
     },
     {
      "created": "2026-07-02",
@@ -13489,8 +13510,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 243,
+   "count": 244,
    "docs": [
+    {
+     "created": "2026-09-17",
+     "governs": [],
+     "n": 272,
+     "path": "docs/session_272_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "sierra",
+      "my-college",
+      "disclosure",
+      "coci",
+      "cip"
+     ],
+     "title": "Sierra's outage was a deploy skew, and My College went public",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-17",
      "governs": [],
@@ -17600,5 +17639,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 914
+ "total": 916
 }

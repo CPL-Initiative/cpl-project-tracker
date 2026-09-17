@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-459 document(s).
+460 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -52,6 +52,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A check that cannot fail reads exactly like a clean result](../kb-notes/methodology-a-check-that-cannot-fail-reads-as-a-clean-result.md) | methodology | published | 2026-09-09 | 2026-09-10 |
 | [A check that cannot fire on what it names — disabled controls, and the falsification pass](../kb-notes/methodology-a-check-that-cannot-fire-on-what-it-names.md) | methodology | published | 2026-09-09 | 2026-09-09 |
 | [A check that never registers can never fail](../kb-notes/methodology-a-check-that-never-registers-can-never-fail.md) | methodology | published | 2026-08-15 | 2026-08-21 |
+| [A classification code cannot say who a program is for](../kb-notes/methodology-a-code-cannot-say-who-a-program-is-for.md) | methodology | published | 2026-09-17 | 2026-09-17 |
 | [A click-outside-closes overlay must test the click TARGET, never walk ancestors](../kb-notes/methodology-overlay-close-on-backdrop-target-only.md) | methodology | published | 2026-07-02 | 2026-07-02 |
 | [A client cannot see the cap the server enforces, so a two-half feature fails in the half that deployed](../kb-notes/methodology-a-client-cannot-see-the-cap-the-server-enforces.md) | methodology | published | 2026-08-25 | 2026-08-25 |
 | [A client gate stricter than its RLS policy fails silently, toward lost work](../kb-notes/methodology-a-client-gate-must-mirror-its-own-rls-policy.md) | methodology | published | 2026-08-28 | 2026-08-28 |
