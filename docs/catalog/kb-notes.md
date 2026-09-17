@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-462 document(s).
+464 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -154,6 +154,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A remembered toggle hides the default from its author](../kb-notes/methodology-a-remembered-toggle-hides-the-default-from-its-author.md) | methodology | published | 2026-09-02 | 2026-09-02 |
 | [A report must read the screen, not recompute it](../kb-notes/methodology-a-report-must-read-the-screen-not-recompute-it.md) | methodology | published | 2026-08-17 | 2026-08-17 |
 | [A retrieval miss and a data gap look identical from the answer](../kb-notes/methodology-a-retrieval-miss-and-a-data-gap-look-identical.md) | methodology | published | 2026-08-11 | 2026-08-11 |
+| [A retrieval route costs what the synonym table decides, and the batch waits for the slowest route](../kb-notes/methodology-a-retrieval-route-costs-what-the-synonym-table-decides.md) | methodology | published | 2026-09-17 | 2026-09-17 |
 | [A rotating credential cannot be cached](../kb-notes/methodology-a-rotating-credential-cannot-be-cached.md) | methodology | published | 2026-08-15 | 2026-08-15 |
 | [A rule that is right for reading can be wrong for writing](../kb-notes/methodology-a-rule-that-is-right-for-reading-can-be-wrong-for-writing.md) | methodology | published | 2026-09-07 | 2026-09-07 |
 | [A rule you wrote down is not a rule you applied](../kb-notes/methodology-a-rule-you-wrote-is-not-a-rule-you-applied.md) | methodology | published | 2026-08-21 | 2026-09-04 |
@@ -198,6 +199,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A title match must cover the title, not merely touch it](../kb-notes/methodology-a-title-match-must-cover-the-title-not-touch-it.md) | methodology | published | 2026-09-16 | 2026-09-16 |
 | [A token that cannot flip is a surface that cannot theme — the four shapes, and why every one of them reads as correct code](../kb-notes/methodology-a-token-that-cannot-flip-is-a-surface-that-cannot-theme.md) | methodology | published | 2026-09-09 | 2026-09-10 |
 | [A token with two jobs cannot be themed — count a token's uses by ROLE before you give it a dark value](../kb-notes/methodology-a-token-with-two-jobs-cannot-be-themed.md) | methodology | published | 2026-09-08 | 2026-09-08 |
+| [A tool the sandbox lacks is usually one install away, and a boot test is cheaper than a preview deploy](../kb-notes/methodology-a-missing-tool-is-usually-a-missing-install.md) | methodology | published | 2026-09-17 | 2026-09-17 |
 | [A total that balances is not a total that is right](../kb-notes/methodology-a-total-that-balances-is-not-a-total-that-is-right.md) | methodology | published | 2026-08-23 | 2026-08-23 |
 | [A value can exist in the repo and never reach the payload — two minting paths, one inference pipeline](../kb-notes/methodology-a-discipline-can-exist-in-the-repo-and-never-reach-the-payload.md) | methodology | published | 2026-09-08 | 2026-09-08 |
 | [A view must not fly where it cannot draw](../kb-notes/methodology-a-view-must-not-fly-where-it-cannot-draw.md) | methodology | published | 2026-08-25 | 2026-08-25 |

@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 462,
+   "count": 464,
    "docs": [
     {
      "created": "2026-08-14",
@@ -2710,6 +2710,28 @@
      "updated": "2026-08-11"
     },
     {
+     "created": "2026-09-17",
+     "governs": [
+      "chatbox/supabase_search_college_programs.sql",
+      "chatbox/verify_search_college_programs.sql",
+      "chatbox/smoke_test.sh",
+      "chatbox/supabase/functions/cpl-chat/index.ts"
+     ],
+     "path": "docs/kb-notes/methodology-a-retrieval-route-costs-what-the-synonym-table-decides.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "sierra",
+      "retrieval",
+      "performance",
+      "smoke-test",
+      "supabase"
+     ],
+     "title": "A retrieval route costs what the synonym table decides, and the batch waits for the slowest route",
+     "type": "methodology",
+     "updated": "2026-09-17"
+    },
+    {
      "created": "2026-08-15",
      "governs": [
       "cpl_session.js",
@@ -3560,6 +3582,26 @@
      "title": "A token with two jobs cannot be themed \u2014 count a token's uses by ROLE before you give it a dark value",
      "type": "methodology",
      "updated": "2026-09-08"
+    },
+    {
+     "created": "2026-09-17",
+     "governs": [
+      "chatbox/supabase/functions/cpl-chat/index.ts",
+      ".github/workflows/cpl-chat-preview-ab.yml"
+     ],
+     "path": "docs/kb-notes/methodology-a-missing-tool-is-usually-a-missing-install.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "sierra",
+      "deno",
+      "edge-function",
+      "sandbox",
+      "verification"
+     ],
+     "title": "A tool the sandbox lacks is usually one install away, and a boot test is cheaper than a preview deploy",
+     "type": "methodology",
+     "updated": "2026-09-17"
     },
     {
      "created": "2026-08-23",
@@ -13549,8 +13591,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 245,
+   "count": 246,
    "docs": [
+    {
+     "created": "2026-09-17",
+     "governs": [],
+     "n": 274,
+     "path": "docs/session_274_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "sierra",
+      "program-search",
+      "deploy",
+      "performance"
+     ],
+     "title": "the merge was ready, the deploy is waiting on one apply",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-17",
      "governs": [],
@@ -17695,5 +17754,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 919
+ "total": 922
 }
