@@ -832,17 +832,30 @@
     return state.opps.colleges[state.college] || null;
   }
 
-  function oppsSummary() {
-    if (!state.college) return "";
-    if (state.oppsState === "loading") return esc("loading");
-    if (state.oppsState === "error") return esc("unavailable");
-    var d = oppsFor();
-    if (!d) return state.oppsState === "ready" ? esc("not in this set") : "";
+  /* PURE, and ⚠ NEVER EMPTY IN ANY STATE. sec() drops the value span entirely
+   * when this returns "", and a closed drawer with a bare title reads as broken
+   * rather than as collapsed — the reader has to open it to find out there was
+   * nothing to see. This section has five states where most have two, which is
+   * why it is a separate function with its own assertions rather than an inline
+   * expression. college_briefing.test.js (P) pins the rendered no-college case;
+   * the register's own test walks all five. */
+  function oppsSummaryFor(opps, college, oppsState) {
+    if (!college) return esc("pick a college");
+    if (oppsState === "loading") return esc("loading");
+    if (oppsState === "error") return esc("unavailable");
+    var d = opps && opps.colleges ? opps.colleges[college] : null;
+    // "idle" means the drawer has never been opened, so the register has not
+    // been fetched — distinct from "fetched, and this college is outside it".
+    if (!d) return esc(oppsState === "ready" ? "not in this set" : "open to load");
     var n = {};
     d.rows.forEach(function (r) { n[r.priority] = (n[r.priority] || 0) + 1; });
     // The summary names the two tiers a meeting acts on. The rest are in the
     // section; a closed drawer should answer "is there anything here for me?".
     return esc(((n.P0 || 0) + (n.P1 || 0)) + " to adopt now, " + (n.P2 || 0) + " to build first-in-state");
+  }
+
+  function oppsSummary() {
+    return oppsSummaryFor(state.opps, state.college, state.oppsState);
   }
 
   function oppChips(list, cls) {
@@ -3564,6 +3577,7 @@
     // states — loading, failed, college-outside-the-set, populated — can be
     // asserted without a college selection and a Supabase read behind them.
     _oppsBodyFor: oppsBodyFor,
+    _oppsSummaryFor: oppsSummaryFor,
     _oppRow: oppRow,
     _setAllSections: setAllSections,
     _getSession: getSession,

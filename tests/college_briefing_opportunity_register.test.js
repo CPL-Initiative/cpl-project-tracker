@@ -168,6 +168,33 @@ const OPPS = {
     nocollege !== loading && loading !== failed && nocollege !== failed);
 }
 
+// ── (h) ⭐ THE CLOSED DRAWER ALWAYS SAYS SOMETHING, IN ALL FIVE STATES ──
+// sec() drops the value span when the summary is empty, and a closed section
+// with a bare title reads as broken rather than as collapsed. This section has
+// five states where most have two, and the first cut of it returned "" for two
+// of them — caught by college_briefing.test.js (P), which only ever exercises
+// the no-college case. Walked exhaustively here so the other four cannot rot.
+{
+  const states = [
+    ["no college picked", OPPS, null, "ready"],
+    ["never opened, so never fetched", null, "Covered College", "idle"],
+    ["loading", null, "Covered College", "loading"],
+    ["failed read", null, "Covered College", "error"],
+    ["college outside the register", OPPS, "Outside College", "ready"],
+    ["populated", OPPS, "Covered College", "ready"],
+    ["covered but with no rows", OPPS, "Other Covered College", "ready"]
+  ];
+  for (const [label, opps, college, st] of states) {
+    const v = M._oppsSummaryFor(opps, college, st);
+    check("(h) summary is non-empty — " + label, !!v && v.trim().length > 0);
+  }
+  check("(h) the populated summary carries the two tiers a meeting acts on",
+    /\d+ to adopt now/.test(M._oppsSummaryFor(OPPS, "Covered College", "ready")));
+  check("(h) ⭐ 'not fetched yet' and 'outside the register' read differently",
+    M._oppsSummaryFor(null, "Covered College", "idle")
+      !== M._oppsSummaryFor(OPPS, "Outside College", "ready"));
+}
+
 // ── (g) XSS — these strings come from MAP and COCI, typed by people ──
 {
   const nasty = {
