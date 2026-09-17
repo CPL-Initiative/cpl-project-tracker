@@ -64,35 +64,38 @@
    * question — who are you here as — and curates the second list from the
    * answer.
    *
-   * ⚠ TWO OF THE FIVE HAVE NO DATA, AND THAT IS NOT A UI PROBLEM. Sam asked for
-   * Strong Workforce region and Academic Senate region. Neither exists in this
-   * repo: `map_colleges` carries only id/name/variants/is_test/entity_kind, and
-   * the funding roster's only geography key is `district`.
+   * ⚠ STRONG WORKFORCE IS LIVE SINCE 2026-09-17; ACADEMIC SENATE IS NOT.
+   * The consortium roster is `swp_region_data.js` (117 colleges, 9 regions,
+   * resolved from `map_colleges.swp_region`). ASCCC areas A–D still exist in no
+   * column we hold, so that one stays off with its reason.
    *
-   * ⚠ AND THE REGION DATA WE *DO* HOLD IS A THIRD SCHEME — do not be tempted.
+   * ⚠ THE REGION DATA WE HOLD ELSEWHERE IS A THIRD SCHEME — do not be tempted.
    * `college_geo.region` (Supabase, 120 colleges) is a hand-authored ~10-way
    * macro-region built for Sierra's "which colleges NEAR me" ranking
-   * (chatbox/_seed_college_geo.py says so in its docstring). The Strong
-   * Workforce program has EIGHT regional consortia with different boundaries
-   * — our "San Joaquin Valley" + "Greater Sacramento" split does not match
-   * "Central Valley/Mother Lode", and "Central Coast" is not "South Central
-   * Coast" — and the ASCCC has FOUR areas, A–D. Wiring `college_geo` behind
-   * either label would silently mis-group a college's peers in a view people
-   * act on, which is worse than the button being off. Sam (2026-08-17): the
-   * real figures are on the MAP Dashboard, so the source exists — it just has
-   * not been located in an export yet. When it is, add the mapping and flip
-   * `ready`; nothing else here changes. */
+   * (chatbox/_seed_college_geo.py says so in its docstring). It DISAGREES with
+   * the consortia: measured 2026-09-17, its "Bay Area" holds 23 colleges where
+   * the consortium has 28, because Strong Workforce puts Monterey, Santa Cruz
+   * and San Benito counties in the Bay and the proximity scheme puts them in
+   * Central Coast. Behind this label it would mis-group a college's peers in a
+   * view people act on — silently, since 23 names look like a complete list.
+   *
+   * ⚠ THIS BUTTON STAYED OFF FOR A DAY AFTER ITS DATA ARRIVED, still reading
+   * "not yet in an export we hold" while the roster sat committed beside it and
+   * the crosswalk generator already read it. A disabled control does not notice
+   * that its prerequisite landed. When `senate` gets its roster, flip it here in
+   * the same change that commits the data. */
   var SCOPES = [
     { k: "college",   label: "My college",                    ready: true },
     { k: "district",  label: "My district",                   ready: true },
-    { k: "swp",       label: "My Strong Workforce region",    ready: false,
-      why: "Needs the college-to-consortium list — it is on the MAP Dashboard but not yet in an export we hold." },
+    { k: "swp",       label: "My Strong Workforce region",    ready: true },
     { k: "senate",    label: "My Academic Senate region",     ready: false,
       why: "Needs the college-to-ASCCC-area list — same source, not yet located." },
     { k: "statewide", label: "Statewide",                     ready: true }
   ];
   // Scopes that need a second pick. Statewide is the whole set, so it does not.
-  function scopeNeedsEntity(k) { return k === "college" || k === "district"; }
+  function scopeNeedsEntity(k) {
+    return k === "college" || k === "district" || k === "swp";
+  }
   var SCOPE_KEY = "cplMyCollegeScope.v1";
 
   // Every collapsible section on the tab, so Expand all / Collapse all can act
@@ -119,6 +122,14 @@
     // District filter for the college picker (from the funding roster, which
     // carries a district per college). "" = every college.
     district: "",
+    /* The Strong Workforce consortium, by CODE (`Bay`, `IE/D`). Serves two
+     * jobs deliberately: it IS the entity when the scope is `swp`, and it is an
+     * optional narrowing on the college picker — which is what a facilitator
+     * running a consortium meeting actually needs, so she can flip between the
+     * region's colleges rather than hunting all 120 by name. */
+    swpRegion: "",
+    swp: "idle",      // idle | loading | ready | error
+    swpData: null,
     // Which collapsible sections the reader has opened, by section id. Sam,
     // 2026-08-12: Sierra AI is the tab; everything under it opens on demand.
     // Held in state rather than read off the DOM because render() rewrites
@@ -1127,10 +1138,45 @@
           }).join("")
         + "</div></div>";
     }
-    // College. 120 of them, so this is a SELECT with an optional district
-    // narrowing rather than 120 buttons — a curated list is one you can get
-    // through, and a wall of buttons is not.
-    var shown = (state.district && dIdx && dIdx[state.district]) ? dIdx[state.district] : names;
+    if (scope === "swp") {
+      var R = state.swpData && state.swpData.regions;
+      var codes = R ? Object.keys(R).sort(function (a, b) {
+        return R[a].name.localeCompare(R[b].name);
+      }) : [];
+      if (!codes.length) {
+        return '<div class="cb-scope">' + back
+          + '<h2 class="cb-scope-q">Choose your Strong Workforce region</h2>'
+          + '<p class="cb-note">'
+          + (state.swp === "loading" ? "Loading the consortium list…"
+             : "The consortium list could not be read, so there is nothing to choose from. "
+               + "That is a failed read, not an empty system — try again, or pick a college instead.")
+          + "</p></div>";
+      }
+      return '<div class="cb-scope">' + back
+        + '<h2 class="cb-scope-q">Choose your Strong Workforce region</h2>'
+        + '<div class="cb-ent">'
+        + codes.map(function (c) {
+            return '<button type="button" class="cb-ent-b" data-swp="' + esc(c) + '">'
+              + esc(R[c].name)
+              + '<span class="cb-ent-n">' + R[c].colleges.length + " colleges</span></button>";
+          }).join("")
+        + "</div></div>";
+    }
+    // College. 120 of them, so this is a SELECT with optional narrowing rather
+    // than 120 buttons — a curated list is one you can get through, and a wall
+    // of buttons is not.
+    // ⚠ TWO NARROWINGS, AND THEY INTERSECT. District and consortium are
+    // different groupings of the same colleges, so applying both is meaningful
+    // (a district inside a region) and applying either alone is the common
+    // case. The consortium one exists because a facilitator running a regional
+    // meeting flips between that region's colleges, and picking them out of 120
+    // by name is the thing she should not have to do.
+    var shown = names;
+    if (state.district && dIdx && dIdx[state.district]) shown = dIdx[state.district];
+    if (state.swpRegion) {
+      var inRegion = swpColleges(state.swpRegion);
+      shown = shown.filter(function (n) { return inRegion.indexOf(n) >= 0; });
+    }
     var districts2 = dIdx ? Object.keys(dIdx).sort() : [];
     var h = '<div class="cb-scope">' + back + '<h2 class="cb-scope-q">Choose your college</h2><div class="cb-bar cb-bar-pick">';
     if (districts2.length) {
@@ -1139,6 +1185,20 @@
         + districts2.map(function (d) {
             return '<option value="' + esc(d) + '"' + (d === state.district ? " selected" : "") + ">"
               + esc(d.replace(/ Community College District$/, " CCD")) + " (" + dIdx[d].length + ")</option>";
+          }).join("")
+        + "</select></div>";
+    }
+    var RR = state.swpData && state.swpData.regions;
+    if (RR) {
+      var rcodes = Object.keys(RR).sort(function (a, b) {
+        return RR[a].name.localeCompare(RR[b].name);
+      });
+      h += '<div><label for="cb-swp">Narrow by Strong Workforce region (optional)</label>'
+        + '<select id="cb-swp">'
+        + '<option value="">All regions (' + names.length + " colleges)</option>"
+        + rcodes.map(function (c) {
+            return '<option value="' + esc(c) + '"' + (c === state.swpRegion ? " selected" : "") + ">"
+              + esc(RR[c].name) + " (" + RR[c].colleges.length + ")</option>";
           }).join("")
         + "</select></div>";
     }
@@ -1158,13 +1218,20 @@
   function scopeLabel() {
     if (state.scope === "college") return state.college || null;
     if (state.scope === "district") return state.district || null;
+    if (state.scope === "swp") {
+      // The consortium's own name, never its code — "Bay Area", never "Bay",
+      // and never "IE/D" in a heading someone reads aloud in a meeting.
+      return state.swpRegion ? swpName(state.swpRegion) : null;
+    }
     if (state.scope === "statewide") return "California Community Colleges";
     return null;
   }
   function scopeReady() {
     if (!state.scope) return false;
     if (!scopeNeedsEntity(state.scope)) return true;
-    return !!(state.scope === "college" ? state.college : state.district);
+    if (state.scope === "college") return !!state.college;
+    if (state.scope === "swp") return !!state.swpRegion;
+    return !!state.district;
   }
 
   /* ── Step 3: the header once a choice is made ─────────────────────────────
@@ -1988,7 +2055,9 @@
       return { n: n, waiting: fmt(num(s.articulated_waiting)), stu: fmt(num(s.students)) };
     });
 
-    var title = state.scope === "district" ? state.district : "All colleges";
+    var title = state.scope === "district" ? state.district
+              : state.scope === "swp" ? swpName(state.swpRegion)
+              : "All colleges";
     var h = '<h3 class="cb-h">' + esc(title) + " — " + group.length
       + (group.length === 1 ? " college" : " colleges") + "</h3>";
     h += '<div class="cb-roll">'
@@ -2137,7 +2206,9 @@
     // this is a list of work to do, not a league table (and Sam's standing rule
     // is that colleges are never publicly ranked).
     if (!state.college) {
-      var group = state.scope === "district" ? (dIdx && dIdx[state.district]) || [] : names;
+      var group = state.scope === "district" ? (dIdx && dIdx[state.district]) || []
+                : state.scope === "swp" ? swpColleges(state.swpRegion)
+                : names;
       h += rollup(group, b);
       finish(root, h); return;
     }
@@ -2717,7 +2788,8 @@
   function rememberScope() {
     try {
       localStorage.setItem(SCOPE_KEY, JSON.stringify({
-        scope: state.scope, college: state.college, district: state.district
+        scope: state.scope, college: state.college, district: state.district,
+        swpRegion: state.swpRegion
       }));
     } catch (e) { /* in-memory only */ }
   }
@@ -2761,6 +2833,7 @@
     state.scope = r.scope;
     state.college = r.college || null;
     state.district = r.district || "";
+    state.swpRegion = r.swpRegion || "";
     state.detail = null; state.detailFor = null; state.detailError = null;
     rememberScope();
     recompute(); render(root);
@@ -2775,6 +2848,10 @@
     // the district scope would silently decide what the district view showed.
     if (k !== "college") { state.college = null; state.detail = null; state.detailFor = null; }
     if (k !== "district") state.district = "";
+    // The consortium narrowing survives a move to the college scope — it is
+    // a filter there, and a facilitator who picked the Bay and then chose
+    // "My college" wants the Bay's 28 listed rather than all 120 again.
+    if (k !== "swp" && k !== "college") state.swpRegion = "";
     rememberScope();
     recompute(); render(root);
   }
@@ -3032,6 +3109,25 @@
       }
       recompute(); render(root);
     };
+    // The consortium narrowing, same contract as the district one above: a
+    // selection the new filter no longer contains is cleared rather than left
+    // on screen under a picker that does not list it.
+    var sw = root.querySelector("#cb-swp");
+    if (sw) sw.onchange = function () {
+      state.swpRegion = sw.value || "";
+      if (state.college && state.swpRegion
+          && swpColleges(state.swpRegion).indexOf(state.college) < 0) {
+        state.college = null; state.detail = null; state.detailFor = null;
+      }
+      rememberScope(); recompute(); render(root);
+    };
+    // The region buttons on the `swp` scope's own second question.
+    Array.prototype.forEach.call(root.querySelectorAll("[data-swp]"), function (b) {
+      b.onclick = function () {
+        state.swpRegion = b.getAttribute("data-swp") || "";
+        rememberScope(); recompute(); render(root);
+      };
+    });
     // Remember which sections the reader opened. render() rewrites innerHTML,
     // so without this a change of role or district would slam every drawer
     // shut under someone mid-read.
@@ -3081,6 +3177,33 @@
       state.roster = window.CPL_FUNDING ? "ready" : "error";
       if (root) render(root);
     });
+  }
+
+  /* The Strong Workforce consortium roster. 3.6KB, so it loads with the tab
+   * rather than on demand: the scope question offers it in the first screen,
+   * and a button that appears a beat late reads as broken. */
+  function loadSwp(root) {
+    if (state.swp !== "idle") return;
+    state.swp = "loading";
+    loadScript("swp_region_data.js", "CPL_SWP_REGIONS", function () {
+      var D = window.CPL_SWP_REGIONS;
+      state.swpData = (D && D.regions) ? D : null;
+      state.swp = state.swpData ? "ready" : "error";
+      if (root) render(root);
+    });
+  }
+
+  /* PURE. The consortium's colleges, or [] when the roster has not arrived.
+   * ⚠ NEVER falls back to another region scheme: a near-miss roster is worse
+   * than an empty one, because 23 names look exactly as complete as 28. */
+  function swpColleges(code) {
+    var R = state.swpData && state.swpData.regions;
+    return (R && R[code] && R[code].colleges) || [];
+  }
+
+  function swpName(code) {
+    var R = state.swpData && state.swpData.regions;
+    return (R && R[code] && R[code].name) || code || "";
   }
 
   /* The daily tier classification, from the same committed live_metrics.json
@@ -3535,13 +3658,14 @@
     var root = document.getElementById("college-briefing-root");
     if (!root) return;
     if (state.scope === null) restoreScope();
-    if (state.data && state.loadedSignedIn === signedIn()) { loadRoster(root); loadLive(root); render(root); return; }
+    if (state.data && state.loadedSignedIn === signedIn()) { loadRoster(root); loadSwp(root); loadLive(root); render(root); return; }
     if (!signedIn()) { state.data = null; render(root); return; }
     state.loading = true; render(root);
     // The roster is small and powers the district picker, so it starts now,
     // in parallel with the Supabase reads. The 370KB model waits until a
     // college is actually chosen.
     loadRoster(root);
+    loadSwp(root);
     loadLive(root);
     loadAll().then(function () {
       state.loading = false; state.loadedSignedIn = signedIn(); render(root);
