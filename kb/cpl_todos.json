@@ -2,19 +2,13 @@
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-17",
   "_session": 273,
-  "_status": "The branch that made the LVN question askable is merged, and the assistant is NOT yet deployed with it. We deployed the same code to a private copy first and asked it the 22 questions we ask the live assistant: every answer passed. Underneath, though, the new program lookup timed out on three of those questions, and the assistant quietly answered without the program section each time. The cause is measured: the lookup did two full scans of the 22,335-program table per search term, and the synonym list turns one question into 3 to 30 terms, so a broad question took 4 to 20 seconds against an 8-second limit. A rewrite that does the same work in one pass returns identical rows on nine test questions in 1 to 2.5 seconds. It is written and tested; it waits on Sam's go to apply, then the private comparison again, then the deploy. Also learned: this container CAN type-check and boot-test the assistant's code after all (Deno installs from npm), which the previous two handoffs said was impossible.",
+  "_status": "Sierra can now answer what a college AWARDS, live, as of the evening of 17 September: the program search is applied to the database in its fast one-pass form and the assistant is deployed as version 67 with it. Before the deploy, a private copy of the assistant answered all 22 test questions as well as the live one, and this time the function logs showed zero timeouts underneath (the first try had three, which is why the lookup was rewritten first). Sam authorized both steps and accepted that a few odd answers may appear; the plan is to read what real questions do, fix anomalies as fixtures or vocabulary, and give every lookup its own time limit so one slow lookup can never hold an answer. Open for Sam: whether the assistant should deploy itself on merge, and a browser read of the new program answers.",
   "items": [
     {
-      "id": "s273-sam-apply-program-search-rewrite",
+      "id": "s273-sam-read-program-answers",
       "for": "Sam",
       "tab": "chatbot",
-      "text": "Say go on applying the faster program lookup. The private copy of the assistant answered all 22 test questions as well as the live one, but underneath it the program lookup timed out on 3 of them and the answer silently lost its program section each time (an EMT question took 4 seconds, a firefighter question 8, the broadest one 20). The rewrite does the same work in one pass — identical results on nine test questions, 1 to 2.5 seconds — and is written into the schema of record. Applying it changes nothing anyone sees today; it is what makes the deploy safe. Then: the private comparison again, then the deploy."
-    },
-    {
-      "id": "s273-fable-ab-rerun-then-deploy",
-      "for": "Fable",
-      "tab": "chatbot",
-      "text": "After Sam's apply: re-run the private comparison (cpl-chat-preview-ab.yml) and read the function LOGS for 'search_college_programs unavailable' — the pass/fail grid cannot see a dropped section. Zero lines means deploy (cpl-chat-deploy.yml, confirm DEPLOY), run the smoke and read mode 7p, which now also asserts the lookup answers in under 4 seconds, then delete the private copy cpl-chat-preview (cleanup=true on a later A/B run, or by hand)."
+      "text": "Read Sierra's new program answers in a browser. She is live (version 67) with the third view of a college — the degrees and certificates it awards — and every check we can run passed, but no human has read the prose yet. Try 'Where can I train to become an LVN?', 'Which colleges award a welding certificate?', and one question that names your home college. Odd answers are expected and welcome: each one becomes a fixture or a vocabulary entry, the way the negation class is handled."
     },
     {
       "id": "s273-fable-route-time-limits",
@@ -75,6 +69,12 @@
       "for": "Fable",
       "tab": "my-college",
       "text": "The occupation matcher's misses are a VOCABULARY problem, not a tuning one. Application developer and Computer Programming share no word, so no threshold reaches them. The register is live in the My College tab and discloses the gap, so this is about making it find more rather than about shipping. Closing it needs a synonym layer or the curated occupation map — and two plausible shortcuts are already measured and rejected in the code."
+    },
+    {
+      "id": "s264-sam-origination-owner",
+      "for": "Sam",
+      "tab": "implementation-funding",
+      "text": "When the origination data lands, half of it works by itself and half does not. The noncredit location side switches on automatically. The landing page / portal / batch upload side waits for a deliberate one-line change, made only once the exact spellings are confirmed, and the only signal that it is waiting is a line in a daily log. Worth giving that to someone by name."
     }
   ],
   "_deferred": [
@@ -83,12 +83,6 @@
       "for": "Fable",
       "tab": "my-college",
       "text": "Add the 369 California licenses to the college handout as a third column, beside the exhibits a college can adopt and the ones it could build. The handout already carries the accuracy caveat, so the new column needs the same treatment: say what is confirmed and what a person in the room should check."
-    },
-    {
-      "id": "s264-sam-origination-owner",
-      "for": "Sam",
-      "tab": "implementation-funding",
-      "text": "When the origination data lands, half of it works by itself and half does not. The noncredit location side switches on automatically. The landing page / portal / batch upload side waits for a deliberate one-line change, made only once the exact spellings are confirmed, and the only signal that it is waiting is a line in a daily log. Worth giving that to someone by name."
     },
     {
       "id": "s264-sam-sheet-remaining",
