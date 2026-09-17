@@ -164,7 +164,11 @@
     // Priority buckets the reader has filtered to. Empty = show everything.
     // Held in state so a render() rewrite does not drop the filter, but the
     // filter itself acts on the DOM — see wireOpps().
-    oppsFilter: []
+    oppsFilter: [],
+    // The 2-digit CIP sector the reader has narrowed to; "" is every sector and
+    // "none" is the rows whose matched programs carry no CIP. Sam's word for
+    // this level is "CIP Sector" — cip_crosswalk.js uses it for the same thing.
+    oppsCip: ""
   };
 
   // MAP's six CPL types, in the order a coordinator thinks about them, with the
@@ -783,14 +787,24 @@
        * are tokens here rather than the standalone page's literals — the
        * standalone file has no token layer to inherit and COBI does. */
       ".cb-opp-tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:0 0 14px;}",
-      ".cb-opp-tools input[type=search]{flex:1 1 260px;min-width:0;padding:8px 11px;border:1px solid var(--border-strong);border-radius:6px;background:var(--surface);color:var(--text);font:inherit;}",
-      ".cb-opp-tools input[type=search]:focus-visible{outline:2px solid var(--focus-ring,var(--brand));outline-offset:1px;}",
+      ".cb-opp-tools input[type=search]{flex:1 1 260px;min-width:0;padding:8px 11px;border:1px solid var(--border-strong);border-radius:6px;background:var(--surface);color:var(--text,var(--text-strong));font:inherit;}",
+      ".cb-opp-tools input[type=search]:focus-visible{outline:2px solid var(--focus-ring,var(--cobalt));outline-offset:1px;}",
       ".cb-opp-f{font:inherit;font-size:.78rem;padding:5px 11px;border-radius:999px;cursor:pointer;background:var(--surface);color:var(--text-body);border:1px solid var(--border-strong);}",
-      ".cb-opp-f:hover{border-color:var(--brand);}",
-      ".cb-opp-f:focus-visible{outline:2px solid var(--focus-ring,var(--brand));outline-offset:2px;}",
+      ".cb-opp-f:hover{border-color:var(--brand,var(--cobalt));}",
+      ".cb-opp-f:focus-visible{outline:2px solid var(--focus-ring,var(--cobalt));outline-offset:2px;}",
       /* The pressed state carries a border weight and a filled background, so
-       * the active filter is not signalled by color alone. */
-      ".cb-opp-f[aria-pressed=true]{background:var(--brand);color:var(--on-accent,#fff);border-color:var(--brand);font-weight:700;}",
+       * the active filter is not signalled by color alone.
+       * ⛔ `var(--brand)` ALONE PAINTS NOTHING. COBI defines --brand NOWHERE, on
+       * purpose (see the phantom-token block in both HTMLs), so `background:
+       * var(--brand)` is invalid at computed-value time and falls to
+       * transparent — leaving `--on-accent` WHITE TEXT ON THE PAGE at 1.06:1,
+       * and "All N" is pressed by default, so it was the first thing the
+       * register painted. Measured in Chromium, 2026-09-17.
+       * `--cobalt` is the defined token for this role and it is theme-aware
+       * (#0047AB light / #7DA1D4 dark), so the fallback needs no dark rule:
+       * white on cobalt is 8.44:1 light, and --on-accent (#141413) on the dark
+       * cobalt is 6.95:1. */
+      ".cb-opp-f[aria-pressed=true]{background:var(--brand,var(--cobalt));color:var(--on-accent,#fff);border-color:var(--brand,var(--cobalt));font-weight:700;}",
       ".cb-opp-count{font-size:.8rem;color:var(--text-muted);margin-left:auto;}",
       ".cb-opp{border:1px solid var(--border);border-radius:8px;padding:12px 14px;margin:0 0 10px;background:var(--surface);}",
       ".cb-opp[hidden]{display:none;}",
@@ -800,8 +814,16 @@
       /* P0/P1 are the two the meeting acts on, so they carry weight. Everything
        * below them stays quiet on purpose — a page where every tier shouts has
        * no way left to show which two matter. */
-      ".cb-opp-t.p0{background:var(--cpl-green,var(--brand));color:var(--on-accent,#fff);border-color:transparent;}",
-      ".cb-opp-t.p1{background:var(--brand);color:var(--on-accent,#fff);border-color:transparent;}",
+      /* ⛔ THESE TWO WERE INVISIBLE. Same undefined-token trap as the pressed
+       * filter chip below: neither `--cpl-green` nor `--brand` is defined in
+       * COBI's LIGHT theme, so both backgrounds fell to transparent and left
+       * `--on-accent` white text on the card. P0 and P1 are the two tiers this
+       * comment says carry weight, and they are the two a meeting acts on.
+       * `--green-progress` and `--cobalt` are the defined, theme-aware tokens
+       * for these roles: white on cobalt is 8.44:1, white on #2C601A is 7.51:1,
+       * and in dark `--on-accent` (#141413) sits on the lifted pair. */
+      ".cb-opp-t.p0{background:var(--cpl-green,var(--green-progress));color:var(--on-accent,#fff);border-color:transparent;}",
+      ".cb-opp-t.p1{background:var(--brand,var(--cobalt));color:var(--on-accent,#fff);border-color:transparent;}",
       ".cb-opp-fit{font-size:.72rem;padding:2px 8px;border-radius:4px;white-space:nowrap;border:1px solid var(--border-strong);color:var(--text-body);}",
       ".cb-opp-soc{font-size:.72rem;color:var(--text-muted);white-space:nowrap;}",
       ".cb-opp-b{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px 18px;}",
@@ -810,6 +832,36 @@
       ".cb-chip{display:inline-block;font-size:.76rem;padding:2px 8px;margin:0 4px 4px 0;border-radius:4px;background:var(--surface-subtle);border:1px solid var(--border);color:var(--text-body);}",
       ".cb-chip.ex{background:var(--brand-soft,var(--surface-subtle));}",
       ".cb-opp-none{font-size:.8rem;color:var(--text-muted);font-style:italic;}",
+      /* ── The CER heading over its credit recommendations (Sam, 2026-09-17) ──
+       * The exhibit name leads and the credit it grants hangs under it, so a
+       * reader takes in "which credential" before "how much credit on which
+       * course". The rule down the left is what ties the list to its heading
+       * once two exhibits sit next to each other. */
+      ".cb-cer{margin:0 0 9px;padding-left:9px;border-left:2px solid var(--border-strong);}",
+      ".cb-cer:last-child{margin-bottom:0;}",
+      ".cb-cer-n{margin:0 0 3px;font-size:.8rem;font-weight:700;color:var(--text-strong);line-height:1.35;}",
+      ".cb-recs{list-style:none;margin:0;padding:0;font-size:.76rem;color:var(--text-body);}",
+      ".cb-recs li{margin:0 0 2px;line-height:1.4;}",
+      ".cb-recs b{font-weight:700;color:var(--text-strong);}",
+      /* Word badges, never marks. The border carries the distinction as well as
+       * the fill does, so neither reads by color alone. */
+      ".cb-tag{display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.04em;",
+      "padding:1px 6px;margin-left:6px;border-radius:3px;white-space:nowrap;vertical-align:1px;",
+      "border:1px solid var(--border-strong);background:var(--surface-subtle);color:var(--text-body);}",
+      /* ⚠ NO TINTED GROUND UNDER THE STATEWIDE BADGE. `--brand-soft` is the
+       * cobalt at .22 alpha, so in dark it lifts the ground TOWARD the text
+       * color it sits under: #7DA1D4 on that composite measures 4.34:1, under
+       * AA. On the plain subtle ground it is 5.62:1. The badge reads by its
+       * color and its border, and it carries the word "Statewide" besides. */
+      ".cb-tag.sw{border-color:var(--brand,var(--cobalt));color:var(--brand,var(--cobalt));}",
+      ".cb-tag.on{border-color:var(--cpl-green,var(--green-progress));color:var(--cpl-green,var(--green-progress));}",
+      /* The CIP Sector control. `flex-shrink` on the select lets a long family
+       * name truncate rather than push the search box off the row. */
+      ".cb-opp-cip{display:inline-flex;align-items:center;gap:7px;font-size:.78rem;color:var(--text-muted);}",
+      ".cb-opp-cip>span{font-weight:700;white-space:nowrap;}",
+      ".cb-opp-cipsel{font:inherit;font-size:.78rem;max-width:min(320px,52vw);padding:5px 8px;",
+      "border:1px solid var(--border-strong);border-radius:6px;background:var(--surface);color:var(--text,var(--text-strong));}",
+      ".cb-opp-cipsel:focus-visible{outline:2px solid var(--focus-ring,var(--cobalt));outline-offset:1px;}",
       ".cb-opp-ev{font-size:.78rem;color:var(--text-body);margin:0;}",
       ".cb-opp-empty{padding:14px;text-align:center;color:var(--text-muted);font-size:.85rem;}",
       "@media (max-width:560px){.cb-opp-b{grid-template-columns:1fr;}.cb-opp-count{margin-left:0;flex-basis:100%;}}"
@@ -836,7 +888,24 @@
    * unmatched occupations are named rather than merely counted. The person in
    * the room is the one who can add what the matcher could not reach. */
   var OPP_FITS = { confirmed: "Confirmed", partial: "Partial", none: "No program match" };
-  var OPP_TIERS = ["P0", "P1", "P2", "P3", "P4", "P5"];
+  /* ⚠ THE TIERS ARE FILTERED BY WORD, NEVER BY NUMBER (Sam, 2026-09-17): "Add a
+   * CIP Sector filter rather than the numbered P chips". A chip reading "P1 42"
+   * makes the reader learn a code to use a control, which is the plain-words
+   * rule, and the Delta page he called the good prototype already filters by
+   * "Adopt now" and "Build first-in-state". The tier PILL on each card keeps its
+   * code — it is a compact marker with the full sentence in its title, and the
+   * legend sits in the card — but nothing the reader must click is a number.
+   * The full sentence per tier still travels in `meta.priority_labels`. */
+  var OPP_TIERS = [
+    { key: "P1", word: "Adopt now" },
+    { key: "P0", word: "Already yours" },
+    { key: "P2", word: "Build first-in-state" },
+    { key: "P3", word: "Check the fit" },
+    { key: "P4", word: "Build later" }
+  ];
+  // cip_crosswalk.js's own wording for a program with no CIP. Matched on
+  // purpose: the same absence should read the same in both places.
+  var OPP_NO_CIP = "No CIP assigned yet";
 
   function oppsFor() {
     if (!state.opps || !state.college) return null;
@@ -876,15 +945,68 @@
     }).join("");
   }
 
+  /* ⚠ THE CER IS A HEADING OVER ITS CREDIT RECOMMENDATIONS, NOT A CHIP BESIDE
+   * THEM (Sam, 2026-09-17): "Need to list the MAP exhibit CER names above any of
+   * the aligned credit recommendations and note any that are Statewide
+   * exhibits/CRs". The flat `exhibits` list said only THAT an exhibit matched;
+   * a college in the room needs to see WHAT credit it grants and on which
+   * course, and whether the exhibit is one every college can use.
+   *
+   * ⚠ FALLS BACK TO THE FLAT LIST. `exhibit_detail` arrived on 2026-09-17 and a
+   * data file emitted before it carries only `exhibits` — rendering nothing
+   * there would report "no credit recommendations" about an occupation that has
+   * them, which is the worst of the three outcomes. */
+  function cerBlock(r) {
+    var xd = r.exhibit_detail;
+    if (!xd || !xd.length) {
+      return (r.exhibits && r.exhibits.length)
+        ? oppChips(r.exhibits, "ex")
+        : '<span class="cb-opp-none">None recorded</span>';
+    }
+    return xd.map(function (x) {
+      var h = '<div class="cb-cer"><p class="cb-cer-n">' + esc(x.cer || "");
+      // Words, not marks. "Statewide" is the one a consortium asks about first:
+      // an exhibit any college may adopt, against one that a single college
+      // built for itself.
+      if (x.statewide) h += '<span class="cb-tag sw">Statewide</span>';
+      if (x.adopted) h += '<span class="cb-tag on">Already on it</span>';
+      h += "</p>";
+      var recs = x.recs || [];
+      if (!recs.length) {
+        h += '<p class="cb-opp-none">No credit recommendation recorded on this exhibit.</p>';
+      } else {
+        h += '<ul class="cb-recs">' + recs.map(function (c) {
+          return "<li><b>" + esc(c.course || "") + "</b>"
+            + (c.credit ? " — " + esc(c.credit) : "") + "</li>";
+        }).join("") + "</ul>";
+      }
+      return h + "</div>";
+    }).join("");
+  }
+
   function oppRow(r, labels) {
     var tier = String(r.priority || "").toLowerCase();
     labels = labels || {};
+    var secs = r.cip_sectors || [];
     // Everything the search box matches on, lowercased once at build time so
-    // filtering is a substring test rather than a walk of the DOM.
+    // filtering is a substring test rather than a walk of the DOM. The credit
+    // recommendations are in here too: a coordinator searches for the course
+    // they already teach, and before this they could not reach it.
     var q = [r.occupation, r.soc, r.program_evidence]
-      .concat(r.programs || [], r.courses || [], r.exhibits || [])
+      .concat(r.programs || [], r.courses || [], r.exhibits || [],
+              (r.exhibit_detail || []).reduce(function (a, x) {
+                return a.concat([x.cer]).concat((x.recs || []).map(function (c) {
+                  return (c.course || "") + " " + (c.credit || "");
+                }));
+              }, []))
       .filter(Boolean).join(" ").toLowerCase();
+    /* `data-cip` is the filter's whole mechanism: a space-delimited set of
+     * 2-digit sectors, or "none" when the matched programs carry no CIP. The
+     * sentinel is deliberate — an empty attribute would be indistinguishable
+     * from a row the filter should skip, and "no CIP" is a real answer a reader
+     * picks on purpose. */
     var h = '<article class="cb-opp" data-tier="' + esc(r.priority || "")
+      + '" data-cip="' + esc(secs.length ? secs.join(" ") : "none")
       + '" data-q="' + esc(q) + '">'
       + '<div class="cb-opp-h">'
       + '<span class="cb-opp-t ' + esc(tier) + '" title="' + esc(labels[r.priority] || "") + '">'
@@ -895,7 +1017,7 @@
       + "</div><div class=\"cb-opp-b\">";
     h += '<div><p class="lbl">Programs</p>' + oppChips(r.programs)
       + '<p class="lbl">Courses that carry the content</p>' + oppChips(r.courses) + "</div>";
-    h += '<div><p class="lbl">Credit recommendations</p>' + oppChips(r.exhibits, "ex")
+    h += '<div><p class="lbl">MAP exhibits and what they grant</p>' + cerBlock(r)
       + '<p class="lbl">What this tier means</p><p class="cb-opp-ev">'
       + esc(labels[r.priority] || "") + "</p></div>";
     h += '<div><p class="lbl">Why this occupation matched</p><p class="cb-opp-ev">'
@@ -909,11 +1031,22 @@
     return h + "</div></article>";
   }
 
+  /* One collapsed drawer of occupation names. Returns "" for an empty list, so
+   * a college with nothing in a bucket gets no drawer rather than an open
+   * question with no answer under it. */
+  function oppDrawer(list, summary, note) {
+    if (!list || !list.length) return "";
+    return '<details class="cb-strat"><summary>' + list.length + " " + esc(summary)
+      + "</summary>" + '<p class="cb-opp-ev" style="margin-top:8px">' + esc(note) + "</p>"
+      + '<div style="margin-top:8px">' + oppChips(list) + "</div></details>";
+  }
+
   /* PURE — every input explicit, so the states below can be asserted without
    * standing up a college selection and a Supabase read. `oppsBody()` is the
    * thin wrapper that reads them off `state`. */
-  function oppsBodyFor(opps, college, oppsState, filter) {
+  function oppsBodyFor(opps, college, oppsState, filter, cip) {
     filter = filter || [];
+    cip = cip || "";
     if (!college) {
       return '<div class="cb-opp-empty">Pick a college above to see what it could already give credit for.</div>';
     }
@@ -957,36 +1090,84 @@
           : "")
       + "</div>";
 
-    var counts = {};
-    d.rows.forEach(function (r) { counts[r.priority] = (counts[r.priority] || 0) + 1; });
+    var counts = {}, cipCounts = {};
+    d.rows.forEach(function (r) {
+      counts[r.priority] = (counts[r.priority] || 0) + 1;
+      var secs = r.cip_sectors && r.cip_sectors.length ? r.cip_sectors : ["none"];
+      secs.forEach(function (c) { cipCounts[c] = (cipCounts[c] || 0) + 1; });
+    });
     h += '<div class="cb-opp-tools">';
     h += '<button type="button" class="cb-opp-f" data-tier="" aria-pressed="'
       + (filter.length ? "false" : "true") + '">All ' + d.rows.length + "</button>";
     OPP_TIERS.forEach(function (t) {
-      if (!counts[t]) return;
-      h += '<button type="button" class="cb-opp-f" data-tier="' + t + '" aria-pressed="'
-        + (filter.indexOf(t) >= 0 ? "true" : "false") + '">'
-        + t + " " + counts[t] + "</button>";
+      if (!counts[t.key]) return;
+      h += '<button type="button" class="cb-opp-f" data-tier="' + t.key + '" aria-pressed="'
+        + (filter.indexOf(t.key) >= 0 ? "true" : "false") + '">'
+        + esc(t.word) + " " + counts[t.key] + "</button>";
     });
-    h += '<input type="search" class="cb-opp-q" placeholder="Search occupation, program or course"'
+
+    /* ⚠ A SELECT, NOT CHIPS. Eighteen sectors with names as long as
+     * "Agricultural/Animal/Plant/Veterinary Science and Related Fields" is a
+     * second full row of controls above the content — and a chip row that wraps
+     * to three lines is the thing the tier chips were just trimmed for.
+     * ⚠ ONLY THE SECTORS PRESENT, each with its count: a control offering a
+     * choice that yields nothing is how a reader concludes the page is broken.
+     * The labels are baked into the data file so this tab need not pull the
+     * 277 KB CIP crosswalk to name fifty families. */
+    var cipKeys = Object.keys(cipCounts).filter(function (c) { return c !== "none"; }).sort();
+    if (cipKeys.length) {
+      var lbl = meta.cip_sector_labels || {};
+      h += '<label class="cb-opp-cip"><span>CIP Sector</span>'
+        + '<select class="cb-opp-cipsel" aria-label="Narrow this register to one CIP Sector">'
+        + '<option value=""' + (cip ? "" : " selected") + ">Every sector ("
+        + d.rows.length + ")</option>";
+      cipKeys.forEach(function (c) {
+        h += '<option value="' + esc(c) + '"' + (cip === c ? " selected" : "") + ">"
+          + esc(c + " — " + (lbl[c] || ("CIP sector " + c))) + " (" + cipCounts[c] + ")</option>";
+      });
+      if (cipCounts.none) {
+        h += '<option value="none"' + (cip === "none" ? " selected" : "") + ">"
+          + esc(OPP_NO_CIP) + " (" + cipCounts.none + ")</option>";
+      }
+      h += "</select></label>";
+    }
+
+    h += '<input type="search" class="cb-opp-q" placeholder="Search occupation, program, course or credit"'
       + ' aria-label="Search this register">';
     h += '<span class="cb-opp-count" role="status"></span></div>';
 
     h += '<div class="cb-opp-list">' + d.rows.map(function (r) { return oppRow(r, meta.priority_labels); }).join("") + "</div>";
 
-    if (d.unmatched && d.unmatched.length) {
-      h += "<details class=\"cb-strat\"><summary>" + d.unmatched.length
-        + " occupations with no program and no credit recommendation found</summary>"
-        + '<p class="cb-opp-ev" style="margin-top:8px">Recall is '
-        + esc(acc.recall || "roughly half") + ", so treat these as unconfirmed rather than settled. "
-        + "If this college teaches one of them, that is the matcher missing it, not the college lacking it.</p>"
-        + '<div style="margin-top:8px">' + oppChips(d.unmatched) + "</div></details>";
-    }
+    /* ⚠ WHAT IS NOT LISTED IS STILL NAMED, IN THREE DRAWERS.
+     * Sam, 2026-09-17: "No need to list items where the college has no aligned
+     * course or program" — so 80% of the rows leave the register. They stay
+     * reachable, and they stay SEPARATE, because they are three different facts
+     * and one heading would misreport two of them: a statewide credit
+     * recommendation the college does not teach toward, an exhibit the college
+     * has already adopted with no program found, and an occupation nothing in
+     * California covers. Collapsed into one "nothing here" they would read as a
+     * finding about the college, which is the failure this whole tab guards. */
+    h += oppDrawer(d.not_teaching,
+      "occupations with a credit recommendation this college does not teach toward",
+      "California holds a credit recommendation for each of these and this college's catalog "
+        + "shows no matching program. Recall is " + (acc.recall || "roughly half")
+        + ", so read each as a question for the room rather than a settled gap.");
+    h += oppDrawer(d.adopted_no_program,
+      "occupations this college is already on the exhibit for, with no program found",
+      "The matcher reached the exhibit and missed the program. Someone who knows this "
+        + "catalog can say in a moment which program belongs here, and that correction is "
+        + "worth more than the row would have been.");
+    h += oppDrawer(d.unmatched,
+      "occupations with no program and no credit recommendation found",
+      "Recall is " + (acc.recall || "roughly half") + ", so treat these as unconfirmed "
+        + "rather than settled. If this college teaches one of them, that is the matcher "
+        + "missing it, not the college lacking it.");
     return h;
   }
 
   function oppsBody() {
-    return oppsBodyFor(state.opps, state.college, state.oppsState, state.oppsFilter);
+    return oppsBodyFor(state.opps, state.college, state.oppsState,
+      state.oppsFilter, state.oppsCip);
   }
 
   /* Filtering acts on the DOM, never through render(): a rewrite of innerHTML
@@ -998,13 +1179,21 @@
     var out = root.querySelector(".cb-opp-count");
     var rows = Array.prototype.slice.call(list.querySelectorAll(".cb-opp"));
 
+    var cipSel = root.querySelector(".cb-opp-cipsel");
+
     function apply() {
       var q = (box && box.value || "").trim().toLowerCase();
-      var tiers = state.oppsFilter, shown = 0;
+      var tiers = state.oppsFilter, cip = state.oppsCip, shown = 0;
       rows.forEach(function (el) {
         var okT = !tiers.length || tiers.indexOf(el.getAttribute("data-tier")) >= 0;
+        /* ⚠ PAD BOTH SIDES BEFORE THE SUBSTRING TEST. `data-cip` is a
+         * space-delimited SET ("46 47"), so a bare indexOf("4") would match
+         * every sector beginning with 4 and a bare indexOf("11") would match
+         * "11" inside a longer run. The padding makes it a token test. */
+        var okC = !cip
+          || (" " + (el.getAttribute("data-cip") || "") + " ").indexOf(" " + cip + " ") >= 0;
         var okQ = !q || (el.getAttribute("data-q") || "").indexOf(q) >= 0;
-        var ok = okT && okQ;
+        var ok = okT && okC && okQ;
         el.hidden = !ok;
         if (ok) shown++;
       });
@@ -1012,6 +1201,11 @@
         ? rows.length + " occupations"
         : shown + " of " + rows.length + " occupations";
     }
+
+    if (cipSel) cipSel.onchange = function () {
+      state.oppsCip = cipSel.value || "";
+      apply();
+    };
 
     Array.prototype.forEach.call(root.querySelectorAll(".cb-opp-f"), function (b) {
       b.onclick = function () {
@@ -3714,6 +3908,11 @@
     // states — loading, failed, college-outside-the-set, populated — can be
     // asserted without a college selection and a Supabase read behind them.
     _oppsBodyFor: oppsBodyFor,
+    // Exported so the CIP filter is asserted through the DOM path the reader
+    // actually uses, rather than through a re-implementation of it in a test.
+    _wireOpps: wireOpps,
+    _cerBlock: cerBlock,
+    _oppDrawer: oppDrawer,
     _oppsSummaryFor: oppsSummaryFor,
     _oppRow: oppRow,
     _setAllSections: setAllSections,

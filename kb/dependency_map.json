@@ -721,7 +721,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1894,
+     "line": 2088,
      "tabs": [
       "college-briefing"
      ]
@@ -1204,7 +1204,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1886,
+     "line": 2080,
      "tabs": [
       "college-briefing"
      ]
@@ -1646,7 +1646,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1912,
+     "line": 2106,
      "tabs": [
       "college-briefing"
      ]
@@ -2733,7 +2733,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1914,
+     "line": 2108,
      "tabs": [
       "college-briefing"
      ]
@@ -3560,6 +3560,13 @@
      "direction": "read",
      "how": "literal",
      "line": 43
+    },
+    {
+     "id": "script:kb/_emit_regional_opps_data.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 96
     }
    ],
    "producers": [
@@ -4316,7 +4323,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3236,
+     "line": 3430,
      "tabs": [
       "college-briefing"
      ]
@@ -4346,7 +4353,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3176,
+     "line": 3370,
      "tabs": [
       "college-briefing"
      ]
@@ -4424,7 +4431,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2276,
+     "line": 2470,
      "tabs": [
       "college-briefing"
      ]
@@ -5170,7 +5177,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2885,
+     "line": 3079,
      "tabs": [
       "college-briefing"
      ]
@@ -12483,7 +12490,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3217,
+     "line": 3411,
      "tabs": [
       "college-briefing"
      ]
@@ -13220,7 +13227,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3255,
+     "line": 3449,
      "tabs": [
       "college-briefing"
      ]
@@ -13230,7 +13237,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 86
+     "line": 150
     }
    ],
    "producers": [
@@ -13634,7 +13641,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3188,
+     "line": 3382,
      "tabs": [
       "college-briefing"
      ]
@@ -16028,7 +16035,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1403,
+     "line": 1597,
      "tabs": [
       "college-briefing"
      ]
@@ -16289,7 +16296,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3531,
+     "line": 3725,
      "tabs": [
       "college-briefing"
      ]
@@ -17150,7 +17157,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3554,
+     "line": 3748,
      "tabs": [
       "college-briefing"
      ]
@@ -17186,7 +17193,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1414,
+     "line": 1608,
      "tabs": [
       "college-briefing"
      ]
@@ -17215,7 +17222,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3553,
+     "line": 3747,
      "tabs": [
       "college-briefing"
      ]
@@ -17244,7 +17251,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1407,
+     "line": 1601,
      "tabs": [
       "college-briefing"
      ]
@@ -17336,7 +17343,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3552,
+     "line": 3746,
      "tabs": [
       "college-briefing"
      ]
@@ -17449,7 +17456,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1400,
+     "line": 1594,
      "tabs": [
       "college-briefing"
      ]
