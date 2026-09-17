@@ -1,0 +1,73 @@
+name: My College public layer
+
+# Rebuilds the `_pub` tables the My College tab reads now that the tab is open to
+# colleges and the public (Sam, 2026-09-17).
+#
+# WHY A RUNNER: the agent sandbox is egress-blocked from *.supabase.co, and the
+# suppression this job applies must not be re-implemented in SQL just to get it
+# running somewhere. kb/_publish_college_briefing.py holds the ONE
+# implementation; tests/college_briefing_publish_suppression_test.py proves its
+# properties without a database.
+#
+# ⚠ WHAT THIS JOB IS FOR. Three of the tab's four tables cannot be un-gated:
+# map_college_cr_unit holds 145,554 rows describing exactly ONE student at a
+# named college, course and credit recommendation, with that student's exact
+# credit total; map_college_credit_summary publishes exact sub-threshold
+# headcounts; map_college_contacts is a statewide CCC executive directory with
+# emails. So the ratified ADR's shape applies — two objects, not one. The bases
+# keep their gates and are never written. This builds the public mirrors.
+#
+# ⚠ THE BASES ARE READ-ONLY HERE. If you ever find yourself adding a write to
+# map_college_* in this job, stop: that is a different decision, and it routes
+# through Governance and the privacy ADRs first (Rule 10 a3).
+#
+# Re-run it whenever the MAP loads refresh the bases. It is idempotent.
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "dry-run (read + plan, write nothing) or apply"
+        required: true
+        default: "apply"
+        type: choice
+        options: [apply, dry-run]
+
+  # The MAP-derived bases refresh on their own cadence; this trails the daily
+  # dashboard window like the other service-key jobs, clear of :17/:20.
+  schedule:
+    - cron: "40 13 * * *"
+
+concurrency:
+  group: college-briefing-publish
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      # The properties, before the bytes. A suppression bug must fail HERE,
+      # where nothing has been published yet, rather than after the write.
+      - name: Prove the suppression properties
+        run: python3 tests/college_briefing_publish_suppression_test.py
+
+      - name: Publish the My College public layer
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: |
+          MODE="${{ github.event.inputs.mode || 'apply' }}"
+          echo "mode: $MODE"
+          if [ "$MODE" = "dry-run" ]; then
+            python3 kb/_publish_college_briefing.py --dry-run
+          else
+            python3 kb/_publish_college_briefing.py
+          fi
