@@ -25,7 +25,6 @@ Run from repo root:  python3 chatbox/build_coci_offerings.py
 STATIC artifact — rebuild only on a fresh COCI extract (like tmc_college_courses.js).
 """
 import os, re, json, glob, collections, datetime
-import openpyxl
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 XLSX = os.path.join(ROOT, "kb", "reference", "coci_course_list.xlsx")
@@ -106,17 +105,60 @@ def make_college_resolver(full_names):
 
 
 def split_top(raw):
-    """'0952.00: Construction Crafts Technology' -> ('0952.00', 'Construction Crafts Technology')."""
+    """'0952.00: Construction Crafts Technology' -> ('0952.00', 'Construction Crafts Technology').
+
+    ⚠️ The `*` is the Taxonomy of Programs manual's CTE marker, NOT part of the
+    name. The program export writes it inline ('0949.00* Automotive Collision
+    Repair') where the course list never does, so until 2026-09-17 this function
+    handed back a top_title of '* Automotive Collision Repair' — 14,740 of 22,335
+    active program rows (66%), against 0 of 16,097 offerings rows. Harmless while
+    nothing read the programs table; a leading asterisk in a searched and
+    displayed name the moment one does.
+
+    The marker is NOT captured as a `cte` flag here: measured against
+    kb/reference/top_categories.json (the same manual, parsed) the export's
+    asterisk disagrees on 495 of 20,727 matchable active rows, and reconciling
+    two readings of one manual is not a retrieval change. Rule 7's CTE carve-out
+    stays with kb/_join_cte_from_top.py and its reference map.
+    """
     raw = str(raw or "").strip()
     if not raw:
         return ("", "")
-    m = re.match(r"\s*([0-9]{4}\.[0-9]{2})\s*[:\-]?\s*(.*)$", raw)
+    m = re.match(r"\s*([0-9]{4}\.[0-9]{2})\s*\*?\s*[:\-]?\s*(.*)$", raw)
     if m:
         return (m.group(1), m.group(2).strip())
     return ("", raw)
 
 
+def split_cip(raw):
+    """'51.3801 Registered Nursing/Registered Nurse.' -> ('51.3801', 'Registered Nursing/Registered Nurse').
+
+    CIP is a SECOND, independent discipline signal the program export has carried
+    all along in its `CIP CODE` column, which this builder read past. It is worth
+    loading and is NOT worth gating on: CIP is blank on 13.4% of the active rows
+    this builder keeps (2,986 of 22,335) against TOP's 0.0%. The federal taxonomy
+    also splits where TOP does not — an LVN-to-RN bridge is coded Registered
+    Nursing in BOTH — so a code of either family answers a program question only
+    with the program TITLE beside it. See search_college_programs.
+
+    The source appends a period to every title ('Accounting.'); the code shape is
+    two digits, a dot, four digits, verified against every nonblank active row.
+    """
+    raw = str(raw or "").strip()
+    if not raw:
+        return ("", "")
+    m = re.match(r"\s*([0-9]{2}\.[0-9]{4})\s*[:\-]?\s*(.*)$", raw)
+    if m:
+        return (m.group(1), m.group(2).strip().rstrip(".").strip())
+    return ("", raw)
+
+
 def build_offerings():
+    # Imported HERE, not at module scope, so tests/coci_program_cip_test.py can
+    # import split_top/split_cip with the standard library alone — CI's python
+    # steps install nothing. Only this function needs the workbook reader.
+    import openpyxl
+
     wb = openpyxl.load_workbook(XLSX, read_only=True, data_only=True)
     ws = wb.active
     ci = {}
@@ -196,12 +238,15 @@ def build_programs(full_names):
                 unresolved[(r.get("COLLEGE") or "").strip()] += 1
                 continue
             top_code, top_title = split_top(r.get("TOP CODE"))
+            cip_code, cip_title = split_cip(r.get("CIP CODE"))
             rows.append({
                 "college": college,
                 "program_title": (r.get("TITLE") or "").strip()[:200],
                 "award": (r.get("AWARD") or "").strip()[:80],
                 "top_code": top_code,
                 "top_title": top_title,
+                "cip_code": cip_code,
+                "cip_title": cip_title,
                 "status": status,
             })
     return rows, os.path.basename(path), dict(unresolved)
@@ -222,6 +267,10 @@ def main():
             "programs_rows": len(programs),
             "programs_source": prog_src,
             "programs_unresolved_colleges": prog_unresolved,
+            # Loaded, never gated on — a blank CIP must stay visible rather than
+            # read as "this program has no discipline".
+            "programs_cip_blank": sum(1 for r in programs if not r["cip_code"]),
+            "programs_top_blank": sum(1 for r in programs if not r["top_code"]),
             "colleges": len(colleges),
             "geo_rows": len(geo),
             "colleges_missing_geo": missing_geo,
