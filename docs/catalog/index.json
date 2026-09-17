@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 457,
+   "count": 458,
    "docs": [
     {
      "created": "2026-08-14",
@@ -1233,6 +1233,25 @@
      "title": "A display name is not a key \u2014 and the entry that still matches is the one that lies",
      "type": "methodology",
      "updated": "2026-09-15"
+    },
+    {
+     "created": "2026-09-17",
+     "governs": [
+      "kb/_emit_regional_opps_data.py",
+      "college_briefing.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-dropped-row-still-needs-its-own-name.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "ui",
+      "data-quality",
+      "disclosure",
+      "my-college"
+     ],
+     "title": "A dropped row still needs its own name",
+     "type": "methodology",
+     "updated": "2026-09-17"
     },
     {
      "created": "2026-08-07",
@@ -13114,7 +13133,7 @@
      ],
      "title": "Partner crosswalks \u2014 lane state",
      "type": null,
-     "updated": "2026-08-28"
+     "updated": "2026-09-17"
     },
     {
      "created": "2026-08-28",
@@ -13449,8 +13468,43 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 241,
+   "count": 243,
    "docs": [
+    {
+     "created": "2026-09-17",
+     "governs": [],
+     "n": 270,
+     "path": "docs/session_270_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "partner-crosswalks",
+      "my-college",
+      "register",
+      "tokens",
+      "a11y"
+     ],
+     "title": "the register's three tweaks landed, and three invisible controls found under them",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-09-17",
+     "governs": [],
+     "n": 269,
+     "path": "docs/session_269_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "partner-crosswalks",
+      "my-college",
+      "register",
+      "emergency-checkpoint"
+     ],
+     "title": "the register's three tweaks, half landed (EMERGENCY checkpoint)",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-17",
      "governs": [],
@@ -17525,5 +17579,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 910
+ "total": 913
 }

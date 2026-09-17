@@ -351,7 +351,11 @@ def college_capability(college, R):
     for r in d["rows"]:
         if R(CO[r[0]]) != college or ST[r[6]] not in ("Active", "Approved"):
             continue
-        progs.append(dict(title=r[2].strip(), award=AW[r[5]], units=r[7], cte=(r[9] == 1)))
+        # r[4] is the program's CIP code ("05.0200"); its first two digits are
+        # the CIP SECTOR — Sam's word for the 2-digit level, the same grouping
+        # cip_crosswalk.js labels from CIP_CROSSWALK.fams.
+        progs.append(dict(title=r[2].strip(), award=AW[r[5]], units=r[7],
+                          cte=(r[9] == 1), cip=(r[4] or "").strip()))
 
     t = load_window_json("tmc_college_courses.js")
     names, courses = t["colleges"], t["courses"]
@@ -371,7 +375,7 @@ def map_exhibits(_unused=None):
     """unified title -> exhibit ids, adopters, potential, cpl types, discipline."""
     sw = load_window_json("statewide_data.js")
     info = defaultdict(lambda: dict(ids=set(), adopt=set(), pot=set(), types=set(),
-                                    disc=set(), statewide=False))
+                                    disc=set(), statewide=False, recs=[]))
     for e in sw["exhibits"]:
         ut = e.get("unified_title") or e.get("title")
         i = info[ut]
@@ -386,6 +390,18 @@ def map_exhibits(_unused=None):
             i["disc"].add(e["discipline"])
         if e.get("collaborative_type") == "CCC Collaborative":
             i["statewide"] = True
+        # ⚠️ THE CER NAME AND ITS CREDIT RECOMMENDATIONS ARE DIFFERENT THINGS, and
+        # several raw exhibits fold into one unified title, so the recs accumulate
+        # across them. Deduped on (course, credit): the same recommendation reached
+        # by two colleges' freehand titles is one recommendation, and listing it
+        # twice under one CER reads as two.
+        seen = {(r.get("course"), r.get("credit")) for r in i["recs"]}
+        for r in (e.get("credit_recs") or []):
+            k = (r.get("course"), r.get("credit"))
+            if k not in seen and (k[0] or k[1]):
+                seen.add(k)
+                i["recs"].append({"course": r.get("course") or "",
+                                  "credit": r.get("credit") or ""})
     return info
 
 
@@ -484,8 +500,23 @@ def build_one(canon, occs, occ_ex, ex, R):
                              + (f" ({c['units']} units)" if c.get("units") else "")
                              for c, _ in cm[:8]])[:5],
             exhibits=xt[:4],
+            # ⚠️ `exhibits` STAYS A LIST OF CER NAMES — the workbook, the screen page
+            # and the handout all join it as strings. The structured form below is
+            # ADDITIVE, for the COBI register, which shows each CER heading the
+            # credit recommendations that hang off it rather than one flat list.
+            exhibit_detail=[dict(
+                cer=t,
+                statewide=bool(ex[t]["statewide"]),
+                adopted=(t in on_it),
+                recs=ex[t]["recs"][:6],
+            ) for t in xt[:4]],
             exhibit_ids=sorted({i for t in xt[:4] for i in ex[t]["ids"]})[:4],
             exhibits_adopted=on_it[:4],
+            # The CIP SECTOR of the programs this occupation matched — the 2-digit
+            # level. Empty when nothing matched, which after the register drops its
+            # no-alignment rows is the build-first-in-state case.
+            cip_sectors=sorted({(p.get("cip") or "")[:2] for p, _ in pm[:4]
+                                if (p.get("cip") or "").strip()}),
             cpl_types=sorted({y for t in xt[:4] for y in ex[t]["types"]}),
             n_programs=len(pm), n_courses=len(cm), n_exhibits=len(xt)))
 
@@ -815,17 +846,24 @@ def main():
     # receipt included, none of which need it. Measured 2026-09-17.
     page = os.path.join(out, f"{a.slug}_cpl_opportunities.html")
     write_page(page, res)
-    hand = os.path.join(out, f"{a.slug}_handout.html")
-    write_handout(hand, res, xlsx)
     with open(os.path.join(out, "crosswalk.json"), "w", encoding="utf-8") as fh:
         json.dump(dict(_generated_at=datetime.datetime.now().isoformat(timespec="seconds"),
                        _generated_by="kb/_build_regional_cpl_opportunity.py", **res),
                   fh, indent=1, ensure_ascii=False)
+    # ⚠️ THE HANDOUT READS THE WORKBOOK, so the workbook goes BEFORE it and AFTER
+    # the two that need nothing. Ordering the workbook dead last broke the handout
+    # outright (FileNotFoundError, measured 2026-09-17) — "dependency-free output
+    # first" means ordering by what can fail, and the handout depends on the very
+    # step that can. A missing openpyxl now costs the workbook and the handout's
+    # download button, never the page or the receipt.
     try:
         write_workbook(xlsx, res)
     except ImportError as e:
         xlsx = None
-        print("workbook skipped (%s). The page, handout and receipt are written." % e)
+        print("workbook skipped (%s). The page and receipt are written; the handout "
+              "loses only its download button." % e)
+    hand = os.path.join(out, f"{a.slug}_handout.html")
+    write_handout(hand, res, xlsx)
     adopt = sum(1 for r in res["rows"] if r["headline"] == "Adopt")
     build_n = sum(1 for r in res["rows"] if r["headline"] == "Build first-in-state")
     print(f"{len(colleges)} colleges | {res['n_occupations']} occupations | "
@@ -908,9 +946,14 @@ h1{font-size:1.32rem}table{font-size:.82rem}}
 def write_handout(path, res, xlsx_path):
     E = html.escape
     logos = jload("kb/reference/handout_logos.json")
-    with open(xlsx_path, "rb") as fh:
-        xb64 = base64.b64encode(fh.read()).decode()
-    xname = os.path.basename(xlsx_path)
+    # The workbook is EMBEDDED as the handout's download button. Without it the
+    # handout still stands on its own, so a missing one drops the button rather
+    # than the page.
+    xb64, xname = "", ""
+    if xlsx_path and os.path.exists(xlsx_path):
+        with open(xlsx_path, "rb") as fh:
+            xb64 = base64.b64encode(fh.read()).decode()
+        xname = os.path.basename(xlsx_path)
 
     adopt = [r for r in res["rows"] if r["headline"] == "Adopt"]
     build = [r for r in res["rows"] if r["headline"] == "Build first-in-state"]
@@ -938,8 +981,10 @@ def write_handout(path, res, xlsx_path):
              % E(res["region"]))
     P.append('<div class="toolbar">'
              '<button class="btn" type="button" onclick="window.print()">Print or save as PDF</button>'
-             '<a class="btn alt" download="%s" href="data:application/vnd.openxmlformats-officedocument'
-             '.spreadsheetml.sheet;base64,%s">Download the spreadsheet</a></div>' % (E(xname), xb64))
+             + ('<a class="btn alt" download="%s" href="data:application/vnd.openxmlformats-officedocument'
+                '.spreadsheetml.sheet;base64,%s">Download the spreadsheet</a>' % (E(xname), xb64)
+                if xb64 else "")
+             + '</div>')
     P.append('<div class="summary">'
              '<div><div class="n">%d</div><div class="l">Colleges</div></div>'
              '<div><div class="n">%d</div><div class="l">Ready to adopt</div></div>'
