@@ -241,3 +241,127 @@ and zero published credit-recommendation lines**.
 Santiago Canyon on lineworker, and the ACE 25-credit recommendation as the instrument.
 Separately: ask whether the Firefighter Journeyperson Certificate's Local flag is a
 decision or an artifact — promoting it reaches 98 colleges.
+
+---
+
+## 2026-09-14 — the occupation-anchored crosswalk, and 56% phantom rows
+
+### What prompted it
+
+**Ashley, fourth engagement in this lineage.** She sent the San Joaquin Department
+of Adult Education occupation list (160 program-area names) and asked for a
+field-facing Excel crosswalk scoped to **Electrical, Fire and Wildland Fire only**,
+with a fixed eight-column shape:
+
+> Occupation · Region · Credit Recommendation · Discipline · Exhibit ID ·
+> Exhibit Title · College · Course Name
+
+…and the standard she set for a row: *"Do not include an exhibit unless it can be
+verified as available through the MAP platform."* Explicitly a student/field
+resource, explicitly not a research report.
+
+### What we learned
+
+**1. ⭐ THE FINDING: an articulation's college list belongs to the GROUP, not to
+each course in it.** Joining `local[].colleges` pairwise to `local[].subj/num`
+claimed San Diego Miramar teaches `FIRE B1`, `FIRETEC 2`, `FT 1` and `FSC 111`. Its
+fire prefix is `FIPT`; it teaches 6 of the 27 rows that join produced. Across the
+build, **4,106 of 7,332 rows — 56% — named a course at a college that does not
+offer it**, every one carrying a real exhibit ID, real recommendation, real college
+and real course title. Gating each pair on the COCI per-college catalog
+(`tmc_college_courses.js`) left 3,207 verified rows. Full note:
+[[methodology-an-articulation-college-list-belongs-to-the-group-not-the-course]].
+
+⚠️ **The spot check confirms the wrong reading.** 57% of multi-course articulations
+do carry a distinct college list per course, so a small sample looks right. The
+error scales with group size, which means **the most-adopted credential is the
+worst offender** — Firefighter 1 produced the worst cell we found.
+
+**2. ⚠️ The discipline on an articulation is the COURSE's, not the credential's.**
+`articulations[].disc` labeled *CEM 155 Blueprint Reading* under *General
+Electrician Certification* as **Welding**. A "discipline of the credit
+recommendation" column has to come from the credential (`disc_modal`), with the
+articulation value as fallback — not the reverse, which is what the first build did.
+
+**3. ⚠️ The electrical false-positive list needed extending AGAIN, and the 2026-09-09
+list was not the place to do it.** The committed list catches automotive and AP
+Physics. Six more survived it: *Planets and the Solar System with Lab* (Astronomy)
+and *Passive Solar Design and Construction* via `/solar/`; *Basic Electricity for
+Airframe and Powerplant* (Aviation), *Boatworks 101 — Yacht Electrical Systems*,
+*Heavy Machinery Electrical Systems* (Agriculture) and *Exit and Electrical Security
+Devices* (Carpentry) via `/electric/`. They live in
+`kb/sjcoe_occupation_scope_map.json` as `extra_electrical_false_positives`, layered
+on top, so `kb/fire_electrical_domain_map.json` keeps meaning what it meant on
+2026-09-09 and that run stays reproducible.
+
+**4. ⚠️ Anchor a family regex or the variant exhibit leaks.** `general electrician
+certification` unanchored also matches the separate *General Electrician
+Certification — Solar* exhibit, which put Solar Photovoltaic Design in front of
+cable splicers and line workers. `^…$` confines it to occupations carrying the
+solar family. Ashley asked for *meaningful alignment, not keyword similarity*; this
+is the mechanical half of that.
+
+**5. The canonical roster is the wrong authority for DISPLAY names.**
+`kb/college_short_names.json` canonicalizes to *City College Of San Francisco* and
+*Mt San Antonio College*. MAP's own adopter names — *City College of San Francisco*,
+*Mt. San Antonio College* — are the correctly spelled ones. Resolve identity through
+the roster; print what MAP says.
+
+**6. Row volume is a scoping signal, not just a formatting problem.** 52 in-scope
+occupations, and the fire lane alone produced 2,379 rows against wildland's 14.
+That ratio is the 2026-09-09 chain finding showing through from the other side:
+wildland credentials exist and are adopted almost nowhere. The thin lane is the
+honest answer, and padding it would have hidden the finding.
+
+### State
+
+- `kb/_build_occupation_cpl_crosswalk.py` — fourth instrument in the lineage.
+- `kb/sjcoe_occupation_scope_map.json` — occupation scope + family map (data, not code).
+- Receipt: `kb/occupation_crosswalk_out/2026-09-14-sjcoe-electrical-fire/crosswalk.json`.
+- Delivered: 3,207 opportunities · 52 occupations · 130 exhibits · 36 colleges · 9 regions.
+
+### Next
+
+- Ashley may want the same shape for the other SJCOE program areas (health care,
+  construction trades, IT) — the tool is occupation-agnostic; only the map changes.
+- The catalog gate belongs in the other three crosswalk builders; they have the
+  same pairwise join and have not been re-measured against it.
+
+### 2026-09-14, second pass — MAP's taxonomy, not ours
+
+Ashley, after reviewing the first build: *"use the knowledge base in the MAP
+Platform and only provide information on Electrical and Fire/Wildland
+occupations."*
+
+**7. ⭐ The platform's own taxonomy outranks a regex built to approximate it.** I
+had attached EMT and Paramedic credentials to three fire-service occupations
+(FIRE MEDIC, FIRE FIGHTER PARAMEDIC, Firefighter EMT) on the reasoning that the
+occupation requires the credential. MAP does not agree, and MAP is the authority:
+`map.rccd.edu/statewidecpl/` files **Firefighter EMT Certificate** and **Fire
+Fighter Paramedic Journeyperson Certificate** under **Emergency Medical
+Services**, a program area distinct from Fire Technology — and its own fallback
+patterns test `paramedic` / `emt` / `emergency medical` *before* `fire` so that a
+fire-shaped title cannot capture them. 266 rows removed. The judgment was mine,
+flagged as mine, and wrong.
+
+⚠️ **The mirror of that taxonomy was already committed** as
+`kb/statewide_exhibit_categories.json` and I did not consult it — I wrote lane
+regexes instead. Scoping now resolves in MAP's order: explicit assignment, then
+MAP's patterns, then the repo regex only for titles MAP's list does not reach.
+
+**8. ⚠️ MAP has no Electrical category.** Its electrical credentials (C-10, C-46,
+NCCER Commercial/Industrial Electrician 1–4, both apprenticeships) live inside
+**Construction Technology**, beside masonry, plumbing and carpentry. That category
+needs an electrical-trade test layered on top, not wholesale inclusion.
+
+**9. ⭐ All 12 of MAP's statewide electrical credentials have adopters and ZERO
+recorded receiving courses.** 1–2 adopters each, no `local` articulation lines.
+Not one can produce a verified row, so every electrical row in the deliverable
+comes from a *local* exhibit (IBEW apprenticeship, General Electrician
+Certification, Introduction to Electricity). This is the 2026-09-09 "electrical
+chain breaks" finding confirmed from the articulation side rather than the
+receiving-course side.
+
+**Second pass:** 2,941 rows · 52 occupations · 118 exhibits · 24 colleges · 9
+regions. Colleges fell 36 → 24 because EMT Certification alone carried 28
+adopters.

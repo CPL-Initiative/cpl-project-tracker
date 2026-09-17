@@ -120,3 +120,10 @@ kb/domain_crosswalk_out/**/*.html
 # is gitignored, so the receipt is the only record of what was produced.
 kb/occupation_crosswalk_out/**/*.xlsx
 kb/occupation_crosswalk_out/**/*.html
+
+# Regional CPL opportunity runs (kb/_build_regional_cpl_opportunity.py). Same
+# rule as every other crosswalk lane: the workbook and the shareable page are
+# REGENERABLE from the generator plus its inputs, so only crosswalk.json — the
+# run receipt — is committed. It is the record of what a college was shown.
+kb/regional_cpl_out/**/*.xlsx
+kb/regional_cpl_out/**/*.html

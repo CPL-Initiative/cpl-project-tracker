@@ -4,9 +4,9 @@
   "supabase_tables": 80,
   "rpcs": 31,
   "edge_functions": 5,
-  "file_datasets": 461,
+  "file_datasets": 467,
   "external_services": 143,
-  "consumers": 332,
+  "consumers": 335,
   "workflows": 33,
   "data_js_files": 59,
   "tabs": 37
@@ -3926,6 +3926,13 @@
      "direction": "read",
      "how": "literal",
      "line": 222
+    },
+    {
+     "id": "script:kb/_build_regional_cpl_opportunity.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 318
     }
    ],
    "producers": [
@@ -4817,6 +4824,13 @@
      "line": 64
     },
     {
+     "id": "script:kb/_build_occupation_cpl_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 209
+    },
+    {
      "id": "script:kb/_build_partner_crosswalk.py",
      "kind": "script",
      "direction": "read",
@@ -5441,6 +5455,13 @@
      "direction": "read",
      "how": "literal",
      "line": 117
+    },
+    {
+     "id": "script:kb/_build_occupation_cpl_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 210
     }
    ],
    "producers": [
@@ -8415,6 +8436,19 @@
     "workflow:phase-1e-apply.yml"
    ]
   },
+  "file:kb/college_identity/<date>/crosswalk.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_regional_cpl_opportunity.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 244
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/college_short_names.json": {
    "consumers": [
     {
@@ -8451,6 +8485,13 @@
      "direction": "read",
      "how": "literal",
      "line": 200
+    },
+    {
+     "id": "script:kb/_build_regional_cpl_opportunity.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 221
     },
     {
      "id": "script:kb/_seed_college_short_names.py",
@@ -9048,6 +9089,19 @@
      "direction": "read",
      "how": "literal",
      "line": 257
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/delta_offering_map.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_score_occupation_matcher.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 57
     }
    ],
    "served": true,
@@ -9675,6 +9729,26 @@
    "main_committers": [
     "workflow:daily-dashboard.yml"
    ]
+  },
+  "file:kb/fire_electrical_domain_map.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_occupation_cpl_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 204
+    },
+    {
+     "id": "script:kb/_build_regional_cpl_opportunity.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 220
+    }
+   ],
+   "served": true,
+   "main_committers": []
   },
   "file:kb/fl_subj4_out/<date>/alias_map.json": {
    "consumers": [
@@ -11135,6 +11209,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/reference/handout_logos.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_regional_cpl_opportunity.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 864
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/reference/map_college_roster_rules.json": {
    "consumers": [
     {
@@ -11483,6 +11570,19 @@
     "workflow:daily-dashboard.yml"
    ]
   },
+  "file:kb/sjcoe_occupation_scope_map.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_occupation_cpl_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 205
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/statewide_exhibit_categories.json": {
    "consumers": [
     {
@@ -11491,6 +11591,13 @@
      "direction": "read",
      "how": "literal",
      "line": 5329
+    },
+    {
+     "id": "script:kb/_build_occupation_cpl_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 142
     },
     {
      "id": "script:kb/_seed_statewide_categories.py",
@@ -13345,11 +13452,25 @@
      "line": 116
     },
     {
+     "id": "script:kb/_build_occupation_cpl_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 208
+    },
+    {
      "id": "script:kb/_build_partner_crosswalk.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
      "line": 127
+    },
+    {
+     "id": "script:kb/_build_regional_cpl_opportunity.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 342
     },
     {
      "id": "script:kb/_preseed_unclassified.py",
@@ -13951,6 +14072,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/occupation_matcher_stemming_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/prefix_fold_apply_test.py": {
    "consumers": [
     {
@@ -14167,6 +14301,20 @@
      "tabs": [
       "tmc-builder"
      ]
+    },
+    {
+     "id": "script:kb/_build_occupation_cpl_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 100
+    },
+    {
+     "id": "script:kb/_build_regional_cpl_opportunity.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 326
     },
     {
      "id": "script:tmc/_build_college_adts.py",
@@ -18425,6 +18573,7 @@
     "tests/authority_recode_apply_test.py",
     "tests/zband_retire_apply_test.py",
     "tests/uc_cur_promote_test.py",
+    "tests/occupation_matcher_stemming_test.py",
     "tests/identities_rekey_test.py",
     "tests/ccr_cpl_payload_test.py",
     "tests/ccr_cpl_universe_test.py",
