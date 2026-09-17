@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-243 document(s).
+244 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 272 | [Sierra's outage was a deploy skew, and My College went public](../session_272_handoff.md) | 2026-09-17 |
 | 270 | [the register's three tweaks landed, and three invisible controls found under them](../session_270_handoff.md) | 2026-09-17 |
 | 269 | [the register's three tweaks, half landed (EMERGENCY checkpoint)](../session_269_handoff.md) | 2026-09-17 |
 | 268 | [the register reached the tab, and the roster that was solved but unwired](../session_268_handoff.md) | 2026-09-17 |

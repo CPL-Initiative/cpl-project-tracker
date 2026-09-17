@@ -580,3 +580,48 @@ excludes the dashes. `tests/smoke_negation_stripper.test.js` reads both sed
 expressions and both mode regexes out of the script and runs real `sed` and
 `grep`: the two recorded answers pass, the failure shapes still fail, and the
 suite fails 6 of 24 against the previous script.
+
+## 2026-09-17 — the outage that was not billing, and the table Sierra cannot see
+
+**Sierra went dark for the MAP team for five days and every instrument said she
+was up.** Sam reported it as billing (the Anthropic balance had genuinely run dry
+twice in August, so it was the right first guess) and two colleagues were already
+checking auto-reload tokens. The logs ruled it out in one read: the last
+successful POST was the 11:33 health probe, and the only later traffic was two
+`OPTIONS 204` from one browser with **no POST after either one**. An exhausted
+balance produces a POST carrying an error body; it cannot produce a preflight
+with nothing behind it.
+
+**Cause: the page and the Edge Function deploy on different triggers.** #1568
+(09-12) taught the COBI widget to send `x-team-pass` and added it to the
+function's `Access-Control-Allow-Headers` in the same commit — the source was
+never inconsistent. But the page ships on merge and the function only on a
+`cpl-chat-deploy.yml` dispatch, and nobody dispatched. Live was v65, whose
+allow-list predates the header, and a browser answers that by refusing to send
+the request at all. Public surfaces never noticed: they hold no credential.
+
+⚠️ **The probe passed ~40 times through it because curl makes no preflight.**
+#1595 taught `health_check.sh` to preflight first (free, so it runs ahead of the
+paid call) and to assert the deployed allow-list against every header a caller
+can attach. Durable:
+[`methodology-a-monitor-that-is-not-a-browser-cannot-see-a-browser-failure`](kb-notes/methodology-a-monitor-that-is-not-a-browser-cannot-see-a-browser-failure.md).
+
+⚠️ **#1568's own comment predicted the wrong failure** — "drops the header
+silently and every phrase holder reads as public", a degradation. A browser drops
+the request. A comment naming the wrong symptom sends the next reader to the
+wrong drawer.
+
+**The post-deploy smoke failure was not a regression.** Mode 15b went red on a
+correct answer reading "…not a backlog it's failing to clear" — the banned stem
+inside a negation. #1566 had taught 15a and 15c to be negation-aware because
+those two had gone red; 15b banned the same vocabulary and stayed on the plain
+matcher. #1597 fixed the CLASS and added a check that no report-card vocabulary
+is left on the negation-blind matcher.
+
+**Open, and the next session's queue: Sierra cannot see program data at all.**
+`search_college_offerings` reads `coci_college_offerings` (the course rollup) and
+nothing else. `coci_college_programs` holds **22,335 rows across 118 colleges**
+and no retrieval path touches it. That is why she declined "which Santa Ana LVN
+courses align with my CNA" — and why a session answering from offerings alone
+gets it wrong. See
+[`methodology-a-code-cannot-say-who-a-program-is-for`](kb-notes/methodology-a-code-cannot-say-who-a-program-is-for.md).
