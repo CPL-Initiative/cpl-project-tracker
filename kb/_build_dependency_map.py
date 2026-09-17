@@ -165,6 +165,25 @@ SEEDS = [
                      ("supabase:map_student_credit", "read")],
         "why": "table names are shell loop variables (RLS-gate probes)",
     },
+    {   # college_briefing.js: sources() picks the table per reader, then the call
+        # sites read `REST + "/" + SRC.summary + "?…"` — REST_CONCAT_RE needs the
+        # name to follow `REST + "`, so all eight went invisible when My College
+        # opened to the public (2026-09-17) and the Admin tab's "Who can read it"
+        # column lost four tables while gaining none. Same blindness S209 fixed
+        # for raci, arriving through a variable instead of a helper.
+        "file": "college_briefing.js",
+        "anchor": r"function sources\(\)",
+        "datasets": [("supabase:map_college_credit_summary", "read"),
+                     ("supabase:map_college_goal2", "read"),
+                     ("supabase:map_college_cr_unit", "read"),
+                     ("supabase:map_college_contacts", "read"),
+                     ("supabase:map_college_credit_summary_pub", "read"),
+                     ("supabase:map_college_goal2_pub", "read"),
+                     ("supabase:map_college_cr_waiting_pub", "read"),
+                     ("supabase:map_college_contacts_pub", "read")],
+        "why": "the table is chosen per reader — gated bases for a phrase holder, "
+               "`_pub` mirrors for the public — so no call site names one literally",
+    },
     {   # map_team_queue.js loads map_users.js purely to read _FALLBACK_CONTACTS
         "file": "map_team_queue.js",
         "anchor": r'loadScript\("map_users\.js"',

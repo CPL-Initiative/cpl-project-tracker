@@ -243,9 +243,13 @@ window.COBI_ADMIN_SURFACE = {
         "budget_funding",
         "chatbox_credentials",
         "map_college_contacts",
+        "map_college_contacts_pub",
         "map_college_cr_unit",
+        "map_college_cr_waiting_pub",
         "map_college_credit_summary",
+        "map_college_credit_summary_pub",
         "map_college_goal2",
+        "map_college_goal2_pub",
         "map_colleges",
         "map_credential_student_rollup"
       ],
