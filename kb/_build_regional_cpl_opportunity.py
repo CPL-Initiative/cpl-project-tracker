@@ -246,16 +246,40 @@ IDENTITY = "kb/college_identity/2026-08-23/crosswalk.json"
 
 def identity_rows():
     """The committed college/district taxonomy: 120 entities, 73 districts.
-    ⚠️ IT CARRIES NO REGION FIELD OF ANY KIND — checked 2026-09-16. Strong
-    Workforce consortia and ASCCC areas exist nowhere in this repo, which is why
-    `college_briefing.js` ships those two scopes DISABLED with their reason. Do
-    not substitute the ~10-way `college_geo.region` proximity scheme: SWP has
-    eight consortia on different boundaries, and mis-grouping a college's peers
-    on a page people act on is worse than the filter being absent."""
+
+    It carries no region field, so region selection reads a separate roster —
+    see `swp_colleges()`.
+
+    ⚠️ THIS DOCSTRING USED TO SAY THE SWP ROSTER EXISTED NOWHERE IN THIS REPO
+    AND THAT NO REGION SCHEME MAY STAND IN FOR IT. The first half stopped being
+    true on 2026-09-16, when the roster was derived from county and applied to
+    `map_colleges.swp_region`; the second half was sound, and `--region` was
+    violating it at the same time by reading the fire/electrical macro-region.
+    Measured 2026-09-17: `--region "Bay Area"` returned 23 colleges where the
+    consortium has 28, dropping Berkeley City, Cabrillo, Cañada, Hartnell and
+    Monterey Peninsula with nothing on the page to say so. Use `--swp-region`
+    for a consortium; `--region` stays for the proximity grouping it names."""
     return jload(IDENTITY)["colleges"]
 
 
-def select_colleges(names, districts, region, R):
+SWP_ROSTER = "kb/reference/swp_region_roster.json"
+
+
+def swp_colleges(code_or_name):
+    """Every college in one Strong Workforce consortium, by code (`Bay`) or name
+    (`Bay Area`). Reads the roster committed at `kb/reference/swp_region_roster.json`
+    rather than Supabase, because the sandbox cannot reach `*.supabase.co`
+    (Rule 10c) — the file carries the query that refreshes it."""
+    R = jload(SWP_ROSTER)["regions"]
+    want = (code_or_name or "").strip().lower()
+    for code, blk in R.items():
+        if want in (code.lower(), blk["name"].lower()):
+            return blk["colleges"], blk["name"]
+    raise SystemExit("Unknown Strong Workforce region %r. Known: %s"
+                     % (code_or_name, ", ".join(sorted(R))))
+
+
+def select_colleges(names, districts, region, R, swp_region=None):
     """Resolve a multi-select into a set of canonical college names, and say
     where each came from so the page can show the filter that produced it."""
     rows = identity_rows()
@@ -280,6 +304,12 @@ def select_colleges(names, districts, region, R):
                 c = R(c) or c
                 picked.setdefault(c, True)
                 why.setdefault(c, "district: %s" % k)
+    if swp_region:
+        cols, label = swp_colleges(swp_region)
+        for c in cols:
+            c = R(c) or c
+            picked.setdefault(c, True)
+            why.setdefault(c, "Strong Workforce region: %s" % label)
     if region:
         DM = jload("kb/fire_electrical_domain_map.json")
         for r in DM["receipts"]["college_courses"]:
@@ -752,8 +782,14 @@ def main():
     ap.add_argument("--district", action="append", default=[],
                     help="repeatable; expands to every college in the district")
     ap.add_argument("--region", default=None,
-                    help="our internal macro-region. NOT a Strong Workforce consortium — "
-                         "that roster does not exist in this repo yet.")
+                    help="our internal ~9-way proximity macro-region, from the "
+                         "fire/electrical domain map. For a Strong Workforce "
+                         "consortium use --swp-region: the two disagree (Bay Area "
+                         "is 23 here against the consortium's 28).")
+    ap.add_argument("--swp-region", default=None,
+                    help="a Strong Workforce consortium, by code (Bay, CVML, FN, GS, "
+                         "IE/D, LA, OC, SCC, SD/I) or name. Expands to every member "
+                         "college from kb/reference/swp_region_roster.json.")
     ap.add_argument("--occupations", required=True)
     ap.add_argument("--region-label", default="the region")
     ap.add_argument("--occ-region", default=None,
@@ -763,16 +799,20 @@ def main():
     a = ap.parse_args()
 
     R, _ = make_resolver()
-    colleges, why = select_colleges(a.college, a.district, a.region, R)
+    colleges, why = select_colleges(a.college, a.district, a.region, R, a.swp_region)
     if not colleges:
-        raise SystemExit("Select at least one --college, --district or --region.")
+        raise SystemExit("Select at least one --college, --district, --region or --swp-region.")
 
     res = build(colleges, a.occupations, a.region_label, why, a.occ_region)
     date = datetime.date.today().isoformat()
     out = os.path.join(ROOT, "kb/regional_cpl_out", f"{date}-{a.slug}")
     os.makedirs(out, exist_ok=True)
     xlsx = os.path.join(out, f"{date.replace('-', '')}_{a.slug}_CPL_Opportunities.xlsx")
-    write_workbook(xlsx, res)
+    # ⚠️ THE DEPENDENCY-FREE OUTPUTS GO FIRST, AND THE WORKBOOK LAST. The build
+    # above is the expensive part (~6.5 min for 28 colleges); write_workbook is
+    # the only step that needs a third-party library, and while it ran first a
+    # machine without openpyxl threw the ENTIRE run away — page, handout and the
+    # receipt included, none of which need it. Measured 2026-09-17.
     page = os.path.join(out, f"{a.slug}_cpl_opportunities.html")
     write_page(page, res)
     hand = os.path.join(out, f"{a.slug}_handout.html")
@@ -781,11 +821,17 @@ def main():
         json.dump(dict(_generated_at=datetime.datetime.now().isoformat(timespec="seconds"),
                        _generated_by="kb/_build_regional_cpl_opportunity.py", **res),
                   fh, indent=1, ensure_ascii=False)
+    try:
+        write_workbook(xlsx, res)
+    except ImportError as e:
+        xlsx = None
+        print("workbook skipped (%s). The page, handout and receipt are written." % e)
     adopt = sum(1 for r in res["rows"] if r["headline"] == "Adopt")
     build_n = sum(1 for r in res["rows"] if r["headline"] == "Build first-in-state")
     print(f"{len(colleges)} colleges | {res['n_occupations']} occupations | "
           f"adopt {adopt} · build first-in-state {build_n}")
-    print(xlsx); print(page); print(hand)
+    if xlsx: print(xlsx)
+    print(page); print(hand)
     return 0
 
 

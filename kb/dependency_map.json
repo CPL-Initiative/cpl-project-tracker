@@ -4,11 +4,11 @@
   "supabase_tables": 80,
   "rpcs": 31,
   "edge_functions": 5,
-  "file_datasets": 467,
+  "file_datasets": 469,
   "external_services": 143,
-  "consumers": 335,
+  "consumers": 336,
   "workflows": 33,
-  "data_js_files": 59,
+  "data_js_files": 60,
   "tabs": 37
  },
  "datasets": {
@@ -721,7 +721,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1559,
+     "line": 1827,
      "tabs": [
       "college-briefing"
      ]
@@ -1204,7 +1204,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1551,
+     "line": 1819,
      "tabs": [
       "college-briefing"
      ]
@@ -1646,7 +1646,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1577,
+     "line": 1845,
      "tabs": [
       "college-briefing"
      ]
@@ -2733,7 +2733,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1579,
+     "line": 1847,
      "tabs": [
       "college-briefing"
      ]
@@ -3932,7 +3932,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 318
+     "line": 348
     }
    ],
    "producers": [
@@ -4316,7 +4316,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2830,
+     "line": 3113,
      "tabs": [
       "college-briefing"
      ]
@@ -4346,7 +4346,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2797,
+     "line": 3080,
      "tabs": [
       "college-briefing"
      ]
@@ -4424,7 +4424,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1930,
+     "line": 2205,
      "tabs": [
       "college-briefing"
      ]
@@ -5170,7 +5170,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2533,
+     "line": 2808,
      "tabs": [
       "college-briefing"
      ]
@@ -11216,7 +11216,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 864
+     "line": 910
     }
    ],
    "served": true,
@@ -11432,6 +11432,19 @@
      "direction": "write",
      "how": "literal",
      "line": 39
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/reference/swp_region_roster.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_regional_cpl_opportunity.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 265
     }
    ],
    "served": true,
@@ -12463,7 +12476,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2811,
+     "line": 3094,
      "tabs": [
       "college-briefing"
      ]
@@ -13193,6 +13206,35 @@
     "workflow:weekly-reflections-summary.yml"
    ]
   },
+  "file:regional_cpl_opportunity_data.js": {
+   "consumers": [
+    {
+     "id": "module:college_briefing.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 3132,
+     "tabs": [
+      "college-briefing"
+     ]
+    },
+    {
+     "id": "script:kb/_emit_regional_opps_data.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 86
+    }
+   ],
+   "producers": [
+    {
+     "by": "script:kb/_emit_regional_opps_data.py",
+     "how": "header"
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:remint_series_readings_rulings_<date>.json": {
    "consumers": [
     {
@@ -13470,7 +13512,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 342
+     "line": 372
     },
     {
      "id": "script:kb/_preseed_unclassified.py",
@@ -14314,7 +14356,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 326
+     "line": 356
     },
     {
      "id": "script:tmc/_build_college_adts.py",
@@ -15943,7 +15985,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1068,
+     "line": 1336,
      "tabs": [
       "college-briefing"
      ]
@@ -16204,7 +16246,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3110,
+     "line": 3408,
      "tabs": [
       "college-briefing"
      ]
@@ -17065,7 +17107,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3133,
+     "line": 3431,
      "tabs": [
       "college-briefing"
      ]
@@ -17101,7 +17143,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1079,
+     "line": 1347,
      "tabs": [
       "college-briefing"
      ]
@@ -17130,7 +17172,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3132,
+     "line": 3430,
      "tabs": [
       "college-briefing"
      ]
@@ -17159,7 +17201,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1072,
+     "line": 1340,
      "tabs": [
       "college-briefing"
      ]
@@ -17251,7 +17293,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3131,
+     "line": 3429,
      "tabs": [
       "college-briefing"
      ]
@@ -17364,7 +17406,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1065,
+     "line": 1333,
      "tabs": [
       "college-briefing"
      ]
@@ -19065,6 +19107,10 @@
   "fact-sheet/statewide_recs.js": {
    "global": "CPL_STATEWIDE_RECS",
    "producer": "fact-sheet/_build_statewide_recs.py"
+  },
+  "regional_cpl_opportunity_data.js": {
+   "global": "CPL_REGIONAL_OPPS",
+   "producer": "kb/_emit_regional_opps_data.py"
   },
   "scripts/check_funding_nc_row_layout.js": {
    "global": "CPL_FUNDING_NO_REMOTE",

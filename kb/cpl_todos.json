@@ -1,7 +1,7 @@
 {
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
  "_as_of": "2026-09-17",
- "_session": 266,
+ "_session": 267,
  "_status": "The public funding explainer now reads the model instead of copies of it. Its priority descriptions, the baseline requirements a college has to meet, and the participation deadline had all been typed onto the page by hand, and each had quietly drifted from what the model actually says — one card was describing a measure we stopped using. The page also gained a Download PDF button, a section that puts the three priorities and the milestone dates together, section titles in the model's own words, and a college table that fits the window. Separately, the test suite went red on main with nobody's hands on it: three checks had memorised figures that the nightly data refresh recomputes, so an ordinary data update broke them and cost another piece of work an hour proving it was not at fault. Those checks now read the figures rather than remembering them. Main is green. The crosswalk lineage also landed this run: a regional CPL opportunity view for any college, district or Strong Workforce region, now carrying its own measured accuracy on every page, plus the first table of active California licenses and national certifications the program has held.",
  "items": [
   {
@@ -75,6 +75,12 @@
    "for": "Sam",
    "tab": "cobi-assistant",
    "text": "Say go on the hourly health probe, or make the one-line change yourself. Its own notes say to raise it from every three hours to hourly once billing moved to the corporate account, which happened on 10 September; the remote session that tried to make the change was stopped by its permission rules because a scheduled workflow is a shared resource that spends real funding (about $22 a month at the notes' estimate). The change is the cron line in cpl-chat-health.yml: '7 */3 * * *' becomes '7 * * * *'."
+  },
+  {
+   "id": "s266-funding-session-tests-unpin",
+   "for": "Sam",
+   "tab": "implementation-funding",
+   "text": "NEEDS RESOLVING, and Sam has asked for help reading it when he returns to this lane. Two automatic checks on the funding tab are failing. Nothing is broken: each check has an exact number written inside it (826.8 CPL FTES, and 25 units) that was right the day it was written, and the daily dashboard recalculates that number every morning. It is a stopped clock rather than a fire. It still matters, because we never merge past a failing check, so every open pull request is stuck behind these two. The fix is to let the check read the figure from the same place the page reads it. Full explanation in docs/reference/lanes/implementation-funding.md."
   }
  ],
  "_deferred": [
