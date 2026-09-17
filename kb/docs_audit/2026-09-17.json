@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 918,
-    "bytes": 9740022,
-    "over_budget": 8,
-    "handoff_max": 266,
+    "files": 919,
+    "bytes": 9746180,
+    "over_budget": 7,
+    "handoff_max": 267,
     "always_loaded_files": 1,
     "always_loaded_bytes": 60839,
     "superseded_files": 0,
@@ -26,18 +26,18 @@
       },
       "other": {
         "files": 114,
-        "bytes": 3049228,
+        "bytes": 3070657,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 33547,
+        "bytes": 34537,
         "over": 0
       },
       "lessons": {
         "files": 75,
-        "bytes": 2029355,
-        "over": 2
+        "bytes": 2008925,
+        "over": 1
       },
       "kb_note": {
         "files": 456,
@@ -46,23 +46,23 @@
       },
       "roadmap_lane": {
         "files": 32,
-        "bytes": 197812,
+        "bytes": 195260,
         "over": 2
       },
       "handoff": {
-        "files": 239,
-        "bytes": 2035063,
+        "files": 240,
+        "bytes": 2041784,
         "over": 0
       }
     },
     "by_rule": {
-      "oversized_doc": 8,
+      "oversized_doc": 7,
       "house_voice": 24,
       "vault_heavy_path": 47
     },
     "vault": {
-      "files": 2929,
-      "bytes": 1418230456,
+      "files": 2930,
+      "bytes": 1418236921,
       "heavy_bytes": 618400179,
       "heavy_share": 0.436,
       "ignore_filters": [
@@ -219,26 +219,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 135865,
-        "limit": 120000,
-        "lane": "lessons",
-        "over_by": 15865,
-        "ratio": 1.13
-      },
-      "message": "135,865 B is 1.1× the lessons budget (120,000 B) — candidate for compaction",
-      "path": "docs/cpl_funding_lessons.md"
-    },
-    {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
-        "bytes": 266661,
+        "bytes": 287354,
         "limit": 150000,
         "lane": "other",
-        "over_by": 116661,
-        "ratio": 1.78
+        "over_by": 137354,
+        "ratio": 1.92
       },
-      "message": "266,661 B is 1.8× the other budget (150,000 B) — candidate for compaction",
+      "message": "287,354 B is 1.9× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/cpl_funding_lessons_archive.md"
     },
     {
@@ -403,13 +390,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 20949,
+        "bytes": 18397,
         "limit": 12000,
         "lane": "roadmap_lane",
-        "over_by": 8949,
-        "ratio": 1.75
+        "over_by": 6397,
+        "ratio": 1.53
       },
-      "message": "20,949 B is 1.7× the roadmap_lane budget (12,000 B) — candidate for compaction",
+      "message": "18,397 B is 1.5× the roadmap_lane budget (12,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/implementation-funding.md"
     },
     {

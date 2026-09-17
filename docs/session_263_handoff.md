@@ -5,7 +5,7 @@ session: 263 (SkyOrder)
 tags: [handoff, implementation-funding, css, measures]
 status: current
 superseded: true
-superseded_by: session_266_handoff.md
+superseded_by: session_267_handoff.md
 ---
 
 # You are Session 264

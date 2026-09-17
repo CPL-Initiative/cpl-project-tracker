@@ -4,9 +4,18 @@ date: 2026-09-16
 session: 266 (SkyForge)
 tags: [handoff, regional-cpl-opportunity, credential-registry, cer, matcher]
 status: current
+superseded: true
+superseded_by: session_267_handoff.md
 ---
 
 # Greetings, you are SkyForge (Session 266)
+
+⚠️ **THE `superseded_by: session_267_handoff.md` STAMP IS NUMERIC, NOT TOPICAL.**
+The auditor ranks handoffs by number and 267 is higher, so it stamped this one.
+267 belongs to the **funding** lineage and says of this work: *"The crosswalk
+goes to its own session, steering clear of funding work."* **This file remains
+the crosswalk lane's handoff.** Read 267 for what landed on `main`; read this
+one to continue PR #1576.
 
 ⭐ **SAM CONFIRMED THE NUMBERING (2026-09-16): *"You will be next to finish this
 out."*** Two lineages ran in parallel today — the funding one on `main` (S263

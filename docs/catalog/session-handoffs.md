@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-239 document(s).
+240 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 267 | [the explainer reads the model, and a test that pinned the cron's data](../session_267_handoff.md) | 2026-09-17 |
 | 266 | [SkyForge](../session_266_handoff.md) | 2026-09-16 |
 | 265 | [the counselor step becomes a measure, and the last dial gets a control](../session_265_handoff.md) | 2026-09-15 |
 | 263 | [a hide rule that reached into the drill-in, and two builds Sam stopped](../session_263_handoff.md) | 2026-09-15 |

@@ -5,7 +5,7 @@ session: 264 (SkyMantis)
 tags: [handoff, implementation-funding, measures, curator-controls]
 status: current
 superseded: true
-superseded_by: session_266_handoff.md
+superseded_by: session_267_handoff.md
 ---
 
 # You are Session 265
