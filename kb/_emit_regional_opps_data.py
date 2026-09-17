@@ -1,0 +1,136 @@
+#!/usr/bin/env python3
+"""Emit the COBI data file behind the My College tab's CPL opportunity register.
+
+Reads a `kb/_build_regional_cpl_opportunity.py` run receipt and writes
+`regional_cpl_opportunity_data.js` (`window.CPL_REGIONAL_OPPS`), so the tab can
+flip between colleges in a meeting without re-running the matcher — the build is
+~35 seconds per college and a meeting cannot wait on it.
+
+    python3 kb/_emit_regional_opps_data.py \
+        --receipt kb/regional_cpl_out/2026-09-17-bay28/crosswalk.json \
+        --out regional_cpl_opportunity_data.js
+
+⚠️ THE REGISTER IS MATCHER OUTPUT, NOT CURATED RULINGS, AND THE TWO LOOK
+IDENTICAL ON SCREEN. `kb/_score_occupation_matcher.py` puts the decision level
+at precision 0.907 / recall 0.51 against the 139 occupations a human ruled at
+San Joaquin Delta College. The measured numbers travel with the data, in `meta`,
+so the view cannot render a caveat that has drifted from the score — re-score and
+re-emit together. A caveat quoting a stale score is worse than none.
+
+⚠️ P6 ROWS CARRY NO INFORMATION AND ARE NOT EMITTED AS ROWS. "No exhibit, no
+programs" is 343 of 541 occupations at a typical college; emitted in full they
+are 63% of the payload and say only "nothing here". They ship as a bare name
+list under `unmatched` so the count and the occupations stay visible — a reader
+needs to see that the list was considered and came back empty, and the recall
+half of the caveat says an absence is unconfirmed rather than a finding.
+"""
+import argparse
+import datetime
+import json
+import os
+import sys
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# Rows we emit in full. P6 is the empty bucket — see the module docstring.
+ROW_PRIORITIES = ("P0", "P1", "P2", "P3", "P4", "P5")
+
+# Kept per row. Everything else in the receipt is either derivable (`n_programs`,
+# `n_courses`, `n_exhibits` are lengths) or an internal id the view never paints
+# (`exhibit_ids`). `program_evidence` STAYS: it is the token the match turned on,
+# and with precision at ~0.9 the reader needs to see why a row is here to judge
+# it. Dropping it would leave a claim with no way to check it.
+ROW_FIELDS = ("occupation", "soc", "education", "fit", "priority",
+              "exhibit_status", "programs", "courses", "exhibits",
+              "exhibits_adopted", "program_evidence", "cpl_types")
+
+
+def trim_row(r):
+    out = {}
+    for k in ROW_FIELDS:
+        v = r.get(k)
+        if v in (None, "", [], {}):
+            continue
+        out[k] = v
+    return out
+
+
+def build(receipt):
+    colleges = {}
+    labels = {}
+    for name, block in receipt.get("detail", {}).items():
+        rows = block.get("rows", []) or []
+        keep, unmatched = [], []
+        for r in rows:
+            p = r.get("priority")
+            # One legend for the whole file rather than the same sentence
+            # repeated on every row at every college.
+            if p and r.get("priority_label"):
+                labels.setdefault(p, r["priority_label"])
+            if p in ROW_PRIORITIES:
+                keep.append(trim_row(r))
+            else:
+                unmatched.append(r.get("occupation"))
+        keep.sort(key=lambda r: (r.get("priority", "P9"), r.get("occupation", "")))
+        colleges[name] = {
+            "summary": block.get("summary") or {},
+            "rows": keep,
+            "unmatched": [u for u in unmatched if u],
+        }
+    return colleges, labels
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--receipt", required=True)
+    ap.add_argument("--out", default="regional_cpl_opportunity_data.js")
+    a = ap.parse_args()
+
+    with open(a.receipt, encoding="utf-8") as fh:
+        receipt = json.load(fh)
+
+    colleges, labels = build(receipt)
+    if not colleges:
+        sys.exit("ERROR: %s carries no per-college detail." % a.receipt)
+
+    payload = {
+        "meta": {
+            "generated_at": datetime.datetime.now().isoformat(timespec="seconds"),
+            "generated_by": "kb/_emit_regional_opps_data.py",
+            "source_receipt": os.path.relpath(os.path.abspath(a.receipt), ROOT),
+            "source_generated_at": receipt.get("_generated_at"),
+            "region": receipt.get("region"),
+            "n_occupations": receipt.get("n_occupations"),
+            "colleges": sorted(colleges),
+            "priority_labels": labels,
+            # Travels with the data so the view cannot outlive the score.
+            "accuracy": {
+                "rulings": 139,
+                "scored_on": "2026-09-16",
+                "scored_at": "San Joaquin Delta College",
+                "precision": "about nine in ten",
+                "recall": "roughly half",
+            },
+        },
+        "colleges": colleges,
+    }
+
+    out_path = a.out if os.path.isabs(a.out) else os.path.join(ROOT, a.out)
+    with open(out_path, "w", encoding="utf-8") as fh:
+        fh.write("// GENERATED by kb/_emit_regional_opps_data.py — do not hand-edit.\n")
+        fh.write("// Source receipt: %s\n" % payload["meta"]["source_receipt"])
+        fh.write("// Matcher output, not curated rulings. See the emitter's docstring.\n")
+        fh.write("window.CPL_REGIONAL_OPPS = ")
+        json.dump(payload, fh, ensure_ascii=False, separators=(",", ":"))
+        fh.write(";\n")
+
+    n_rows = sum(len(c["rows"]) for c in colleges.values())
+    n_un = sum(len(c["unmatched"]) for c in colleges.values())
+    size = os.path.getsize(out_path)
+    print("colleges %d | rows %d | unmatched %d | %s (%.1f KB)"
+          % (len(colleges), n_rows, n_un, out_path, size / 1024.0))
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

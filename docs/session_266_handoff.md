@@ -4,6 +4,8 @@ date: 2026-09-16
 session: 266 (SkyForge)
 tags: [handoff, regional-cpl-opportunity, credential-registry, cer, matcher]
 status: current
+superseded: true
+superseded_by: session_267_handoff.md
 ---
 
 # Greetings, you are SkyForge (Session 266)

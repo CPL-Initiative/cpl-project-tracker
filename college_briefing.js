@@ -100,7 +100,7 @@
   // deliberately IN this list — Sam chose the literal reading: Collapse all
   // closes everything, Sierra included. A control that silently exempts one
   // section teaches people it is broken.
-  var SECTION_IDS = ["sierra", "start", "stand", "waiting", "types", "courseshare",
+  var SECTION_IDS = ["sierra", "start", "opps", "stand", "waiting", "types", "courseshare",
                      "tier", "funding", "advice", "contacts", "resources"];
 
   var state = {
@@ -139,7 +139,21 @@
     // value, and a loader keyed on nullness would either never run or run
     // forever depending on how the field was initialised.
     liveState: "idle", // idle | loading | ready | error
-    live: null
+    live: null,
+    /* The occupation opportunity register (regional_cpl_opportunity_data.js,
+     * ~2MB for the Bay's 28 colleges). Precomputed rather than matched live:
+     * kb/_build_regional_cpl_opportunity.py runs ~35 seconds PER COLLEGE, and
+     * the whole point of this section is that someone can flip between colleges
+     * in front of a room. Pulled on first open of the section, not on tab open —
+     * most visits never scroll to it.
+     * ⚠ Its own status field, not a bare `opps == null` check: null is also the
+     * failed-read value (see liveState above for the same reasoning). */
+    oppsState: "idle", // idle | loading | ready | error
+    opps: null,
+    // Priority buckets the reader has filtered to. Empty = show everything.
+    // Held in state so a render() rewrite does not drop the filter, but the
+    // filter itself acts on the DOM — see wireOpps().
+    oppsFilter: []
   };
 
   // MAP's six CPL types, in the order a coordinator thinks about them, with the
@@ -749,9 +763,237 @@
       ".cb-strat li{margin-bottom:7px;}",
       ".cb-strat li:last-child{margin-bottom:0;}",
       ".cb-strat li .cb-m{font-size:.8rem;margin-top:3px;}",
-      ".cb-strat li .cb-d{font-size:.76rem;color:var(--text-muted);margin-top:2px;line-height:1.45;}"
+      ".cb-strat li .cb-d{font-size:.76rem;color:var(--text-muted);margin-top:2px;line-height:1.45;}",
+
+      /* ── The occupation opportunity register ──────────────────────────────
+       * Ported from the page kb/_build_regional_cpl_opportunity.py writes, which
+       * is Ashley's Cal-JAC-derived layout: one card per occupation, the tier
+       * and the fit on the header line, and three columns underneath. Colors
+       * are tokens here rather than the standalone page's literals — the
+       * standalone file has no token layer to inherit and COBI does. */
+      ".cb-opp-tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:0 0 14px;}",
+      ".cb-opp-tools input[type=search]{flex:1 1 260px;min-width:0;padding:8px 11px;border:1px solid var(--border-strong);border-radius:6px;background:var(--surface);color:var(--text);font:inherit;}",
+      ".cb-opp-tools input[type=search]:focus-visible{outline:2px solid var(--focus-ring,var(--brand));outline-offset:1px;}",
+      ".cb-opp-f{font:inherit;font-size:.78rem;padding:5px 11px;border-radius:999px;cursor:pointer;background:var(--surface);color:var(--text-body);border:1px solid var(--border-strong);}",
+      ".cb-opp-f:hover{border-color:var(--brand);}",
+      ".cb-opp-f:focus-visible{outline:2px solid var(--focus-ring,var(--brand));outline-offset:2px;}",
+      /* The pressed state carries a border weight and a filled background, so
+       * the active filter is not signalled by color alone. */
+      ".cb-opp-f[aria-pressed=true]{background:var(--brand);color:var(--on-accent,#fff);border-color:var(--brand);font-weight:700;}",
+      ".cb-opp-count{font-size:.8rem;color:var(--text-muted);margin-left:auto;}",
+      ".cb-opp{border:1px solid var(--border);border-radius:8px;padding:12px 14px;margin:0 0 10px;background:var(--surface);}",
+      ".cb-opp[hidden]{display:none;}",
+      ".cb-opp-h{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;margin:0 0 9px;}",
+      ".cb-opp-h h4{margin:0;font-size:.95rem;flex:1 1 auto;color:var(--text-strong);}",
+      ".cb-opp-t{font-size:.7rem;font-weight:700;letter-spacing:.06em;padding:2px 8px;border-radius:4px;white-space:nowrap;border:1px solid var(--border-strong);color:var(--text-body);background:var(--surface-subtle);}",
+      /* P0/P1 are the two the meeting acts on, so they carry weight. Everything
+       * below them stays quiet on purpose — a page where every tier shouts has
+       * no way left to show which two matter. */
+      ".cb-opp-t.p0{background:var(--cpl-green,var(--brand));color:var(--on-accent,#fff);border-color:transparent;}",
+      ".cb-opp-t.p1{background:var(--brand);color:var(--on-accent,#fff);border-color:transparent;}",
+      ".cb-opp-fit{font-size:.72rem;padding:2px 8px;border-radius:4px;white-space:nowrap;border:1px solid var(--border-strong);color:var(--text-body);}",
+      ".cb-opp-soc{font-size:.72rem;color:var(--text-muted);white-space:nowrap;}",
+      ".cb-opp-b{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px 18px;}",
+      ".cb-opp-b .lbl{font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);font-weight:700;margin:0 0 5px;}",
+      ".cb-opp-b .lbl:not(:first-child){margin-top:11px;}",
+      ".cb-chip{display:inline-block;font-size:.76rem;padding:2px 8px;margin:0 4px 4px 0;border-radius:4px;background:var(--surface-subtle);border:1px solid var(--border);color:var(--text-body);}",
+      ".cb-chip.ex{background:var(--brand-soft,var(--surface-subtle));}",
+      ".cb-opp-none{font-size:.8rem;color:var(--text-muted);font-style:italic;}",
+      ".cb-opp-ev{font-size:.78rem;color:var(--text-body);margin:0;}",
+      ".cb-opp-empty{padding:14px;text-align:center;color:var(--text-muted);font-size:.85rem;}",
+      "@media (max-width:560px){.cb-opp-b{grid-template-columns:1fr;}.cb-opp-count{margin-left:0;flex-basis:100%;}}"
     ].join("\n");
     document.head.appendChild(s);
+  }
+
+  /* ── The occupation opportunity register ────────────────────────────────
+   * "Which of the occupations this region trains for could this college
+   * already give credit for?" — the regional crosswalk, rendered per college so
+   * a facilitator can flip between them live.
+   *
+   * ⚠ THESE ROWS ARE MATCHED, NOT RULED, AND THE DIFFERENCE DOES NOT SHOW.
+   * The curated lane (kb/delta_offering_map.json) carries a human ruling and a
+   * written rationale per occupation; this data carries a token match scored at
+   * precision 0.907 / recall 0.51. A matched row and a ruled row paint
+   * identically, which is exactly how a reader comes to trust the wrong one —
+   * so the caveat sits ABOVE the register rather than under it, and the token
+   * the match turned on is printed on every row. Nothing here is a finding
+   * until a person confirms it.
+   *
+   * ⚠ ABSENCE IS NOT A FINDING EITHER. Recall is about half, so an occupation
+   * missing from this list is unconfirmed rather than absent — which is why the
+   * unmatched occupations are named rather than merely counted. The person in
+   * the room is the one who can add what the matcher could not reach. */
+  var OPP_FITS = { confirmed: "Confirmed", partial: "Partial", none: "No program match" };
+  var OPP_TIERS = ["P0", "P1", "P2", "P3", "P4", "P5"];
+
+  function oppsFor() {
+    if (!state.opps || !state.college) return null;
+    return state.opps.colleges[state.college] || null;
+  }
+
+  function oppsSummary() {
+    if (!state.college) return "";
+    if (state.oppsState === "loading") return esc("loading");
+    if (state.oppsState === "error") return esc("unavailable");
+    var d = oppsFor();
+    if (!d) return state.oppsState === "ready" ? esc("not in this set") : "";
+    var n = {};
+    d.rows.forEach(function (r) { n[r.priority] = (n[r.priority] || 0) + 1; });
+    // The summary names the two tiers a meeting acts on. The rest are in the
+    // section; a closed drawer should answer "is there anything here for me?".
+    return esc(((n.P0 || 0) + (n.P1 || 0)) + " to adopt now, " + (n.P2 || 0) + " to build first-in-state");
+  }
+
+  function oppChips(list, cls) {
+    if (!list || !list.length) return '<span class="cb-opp-none">None recorded</span>';
+    return list.map(function (t) {
+      return '<span class="cb-chip' + (cls ? " " + cls : "") + '">' + esc(t) + "</span>";
+    }).join("");
+  }
+
+  function oppRow(r, labels) {
+    var tier = String(r.priority || "").toLowerCase();
+    labels = labels || {};
+    // Everything the search box matches on, lowercased once at build time so
+    // filtering is a substring test rather than a walk of the DOM.
+    var q = [r.occupation, r.soc, r.program_evidence]
+      .concat(r.programs || [], r.courses || [], r.exhibits || [])
+      .filter(Boolean).join(" ").toLowerCase();
+    var h = '<article class="cb-opp" data-tier="' + esc(r.priority || "")
+      + '" data-q="' + esc(q) + '">'
+      + '<div class="cb-opp-h">'
+      + '<span class="cb-opp-t ' + esc(tier) + '" title="' + esc(labels[r.priority] || "") + '">'
+      + esc(r.priority || "") + "</span>"
+      + "<h4>" + esc(r.occupation || "") + "</h4>"
+      + (r.soc ? '<span class="cb-opp-soc">SOC ' + esc(r.soc) + "</span>" : "")
+      + '<span class="cb-opp-fit">' + esc(OPP_FITS[r.fit] || r.fit || "") + "</span>"
+      + "</div><div class=\"cb-opp-b\">";
+    h += '<div><p class="lbl">Programs</p>' + oppChips(r.programs)
+      + '<p class="lbl">Courses that carry the content</p>' + oppChips(r.courses) + "</div>";
+    h += '<div><p class="lbl">Credit recommendations</p>' + oppChips(r.exhibits, "ex")
+      + '<p class="lbl">What this tier means</p><p class="cb-opp-ev">'
+      + esc(labels[r.priority] || "") + "</p></div>";
+    h += '<div><p class="lbl">Why this occupation matched</p><p class="cb-opp-ev">'
+      + (r.program_evidence
+          ? "Matched on <b>" + esc(r.program_evidence) + "</b> in this college's own catalog. Confirm before acting."
+          : "No matching term recorded.")
+      + "</p>"
+      + (r.education ? '<p class="lbl">Typical entry education</p><p class="cb-opp-ev">'
+          + esc(r.education) + "</p>" : "")
+      + "</div>";
+    return h + "</div></article>";
+  }
+
+  /* PURE — every input explicit, so the states below can be asserted without
+   * standing up a college selection and a Supabase read. `oppsBody()` is the
+   * thin wrapper that reads them off `state`. */
+  function oppsBodyFor(opps, college, oppsState, filter) {
+    filter = filter || [];
+    if (!college) {
+      return '<div class="cb-opp-empty">Pick a college above to see what it could already give credit for.</div>';
+    }
+    if (oppsState === "idle" || oppsState === "loading") {
+      return '<div class="cb-opp-empty">Loading the occupation register…</div>';
+    }
+    if (oppsState === "error" || !opps) {
+      return '<div class="cb-opp-empty">The occupation register could not be loaded. '
+        + "Everything else on this page is unaffected.</div>";
+    }
+    var meta = opps.meta || {}, d = (opps.colleges || {})[college] || null;
+    /* ⚠ "NOT IN THIS SET" IS NOT "NOTHING TO ADOPT". The register covers one
+     * region; a college outside it has been measured against nothing, and
+     * rendering that as an empty list would read as a finding about the college.
+     * Same failure family the rest of this tab guards: a read we did not make is
+     * never a zero. */
+    if (!d) {
+      return '<div class="cb-opp-empty">' + esc(college) + " is not in "
+        + esc(meta.region || "this region") + "'s occupation set, so there is nothing to show here yet. "
+        + "The register currently covers " + esc(String((meta.colleges || []).length))
+        + " colleges.</div>";
+    }
+    var acc = meta.accuracy || {};
+    var h = '<div class="cb-note"><b>' + esc(acc.precision || "About nine in ten")
+      + " of the rows below hold up, and the list finds " + esc(acc.recall || "roughly half")
+      + " of what a reviewer finds.</b> Checked against "
+      + esc(String(acc.rulings || 139)) + " occupations reviewed by hand at "
+      + esc(acc.scored_at || "one college") + ". Read a row as a candidate and a gap as unconfirmed — "
+      + "faculty confirm every match before a college acts on it.</div>";
+
+    var counts = {};
+    d.rows.forEach(function (r) { counts[r.priority] = (counts[r.priority] || 0) + 1; });
+    h += '<div class="cb-opp-tools">';
+    h += '<button type="button" class="cb-opp-f" data-tier="" aria-pressed="'
+      + (filter.length ? "false" : "true") + '">All ' + d.rows.length + "</button>";
+    OPP_TIERS.forEach(function (t) {
+      if (!counts[t]) return;
+      h += '<button type="button" class="cb-opp-f" data-tier="' + t + '" aria-pressed="'
+        + (filter.indexOf(t) >= 0 ? "true" : "false") + '">'
+        + t + " " + counts[t] + "</button>";
+    });
+    h += '<input type="search" class="cb-opp-q" placeholder="Search occupation, program or course"'
+      + ' aria-label="Search this register">';
+    h += '<span class="cb-opp-count" role="status"></span></div>';
+
+    h += '<div class="cb-opp-list">' + d.rows.map(function (r) { return oppRow(r, meta.priority_labels); }).join("") + "</div>";
+
+    if (d.unmatched && d.unmatched.length) {
+      h += "<details class=\"cb-strat\"><summary>" + d.unmatched.length
+        + " occupations with no program and no credit recommendation found</summary>"
+        + '<p class="cb-opp-ev" style="margin-top:8px">Recall is '
+        + esc(acc.recall || "roughly half") + ", so treat these as unconfirmed rather than settled. "
+        + "If this college teaches one of them, that is the matcher missing it, not the college lacking it.</p>"
+        + '<div style="margin-top:8px">' + oppChips(d.unmatched) + "</div></details>";
+    }
+    return h;
+  }
+
+  function oppsBody() {
+    return oppsBodyFor(state.opps, state.college, state.oppsState, state.oppsFilter);
+  }
+
+  /* Filtering acts on the DOM, never through render(): a rewrite of innerHTML
+   * would drop the search box's focus and caret on every keystroke. */
+  function wireOpps(root) {
+    var list = root.querySelector(".cb-opp-list");
+    if (!list) return;
+    var box = root.querySelector(".cb-opp-q");
+    var out = root.querySelector(".cb-opp-count");
+    var rows = Array.prototype.slice.call(list.querySelectorAll(".cb-opp"));
+
+    function apply() {
+      var q = (box && box.value || "").trim().toLowerCase();
+      var tiers = state.oppsFilter, shown = 0;
+      rows.forEach(function (el) {
+        var okT = !tiers.length || tiers.indexOf(el.getAttribute("data-tier")) >= 0;
+        var okQ = !q || (el.getAttribute("data-q") || "").indexOf(q) >= 0;
+        var ok = okT && okQ;
+        el.hidden = !ok;
+        if (ok) shown++;
+      });
+      if (out) out.textContent = shown === rows.length
+        ? rows.length + " occupations"
+        : shown + " of " + rows.length + " occupations";
+    }
+
+    Array.prototype.forEach.call(root.querySelectorAll(".cb-opp-f"), function (b) {
+      b.onclick = function () {
+        var t = b.getAttribute("data-tier");
+        if (!t) state.oppsFilter = [];
+        else {
+          var i = state.oppsFilter.indexOf(t);
+          if (i >= 0) state.oppsFilter.splice(i, 1); else state.oppsFilter.push(t);
+        }
+        Array.prototype.forEach.call(root.querySelectorAll(".cb-opp-f"), function (o) {
+          var ot = o.getAttribute("data-tier");
+          o.setAttribute("aria-pressed",
+            (ot ? state.oppsFilter.indexOf(ot) >= 0 : !state.oppsFilter.length) ? "true" : "false");
+        });
+        apply();
+      };
+    });
+    if (box) box.oninput = apply;
+    apply();
   }
 
   /* ── Render ──────────────────────────────────────────────────────────── */
@@ -1885,6 +2127,13 @@
       h += sec("start", "Start here", esc(b.leads[0].item.measure.headline), leadBody);
     }
 
+    // ── What this college could already give credit for ───────────────────
+    // High on the page on purpose: this is the section a college meeting is
+    // actually held to look at, and it reads the same for every college, so a
+    // facilitator can flip between them without the page rearranging itself.
+    var oppsSum = oppsSummary();
+    h += sec("opps", "What you could already give credit for", oppsSum, oppsBody());
+
     // ── Your funding ──────────────────────────────────────────────────────
     // Two appropriations, kept visibly apart. Neither figure is derived here.
     var f = fundingFor(state.college);
@@ -2764,8 +3013,16 @@
       d.addEventListener("toggle", function () {
         var id = d.getAttribute("data-sec");
         if (id) state.open[id] = d.open;
+        // The register is the one section whose data is not already in hand.
+        // Pulled on open rather than on tab load: most visits never reach it.
+        if (id === "opps" && d.open) loadOpps(root);
       });
     });
+    // A section restored already-open from the previous render never fires a
+    // toggle, so the load has to be re-checked here or the drawer sits on its
+    // placeholder forever.
+    if (state.open.opps && state.college) loadOpps(root);
+    wireOpps(root);
     Array.prototype.forEach.call(root.querySelectorAll(".cb-pick"), function (b) {
       b.onclick = function () { selectCollege(b.getAttribute("data-college"), root); };
     });
@@ -2835,6 +3092,21 @@
       }
       try { M.ensureLoaded(); } catch (e) { /* the model renders its own empty state */ }
       state.funding = "ready";
+      if (root) render(root);
+    });
+  }
+
+  /* The occupation opportunity register. Pulled on first OPEN of its section
+   * rather than on college selection: the file carries every college in the
+   * region at once, so a second college costs nothing after the first, and a
+   * visitor who never opens the section never pays the 2MB. */
+  function loadOpps(root) {
+    if (state.oppsState !== "idle") return;
+    state.oppsState = "loading";
+    loadScript("regional_cpl_opportunity_data.js", "CPL_REGIONAL_OPPS", function () {
+      var D = window.CPL_REGIONAL_OPPS;
+      state.opps = (D && D.colleges) ? D : null;
+      state.oppsState = state.opps ? "ready" : "error";
       if (root) render(root);
     });
   }
@@ -3288,6 +3560,11 @@
     _briefingBlocks: briefingBlocks,
     _SCOPES: SCOPES,
     _SECTION_IDS: SECTION_IDS,
+    // PURE. The opportunity register's body, every input explicit, so its
+    // states — loading, failed, college-outside-the-set, populated — can be
+    // asserted without a college selection and a Supabase read behind them.
+    _oppsBodyFor: oppsBodyFor,
+    _oppRow: oppRow,
     _setAllSections: setAllSections,
     _getSession: getSession,
     _authHeaders: authHeaders,

@@ -1,0 +1,172 @@
+{
+ "_what": "The RESOLVED Strong Workforce consortium roster: every California Community College by SWP region, read out of map_colleges.swp_region on 2026-09-17.",
+ "_why": "kb/reference/swp_region_map.json records the DERIVATION (county -> region, plus the renames and the three moves) but not the resulting roster, so a generator could only get the membership by querying Supabase. The sandbox cannot reach *.supabase.co (Rule 10c), which is why --region fell back to the fire/electrical macro-region and silently produced 23 Bay colleges against this file's 28.",
+ "_source": "map_colleges.swp_region / swp_region_code, applied 2026-09-16 by migration add_swp_region_to_map_colleges.",
+ "_read_on": "2026-09-17",
+ "_caveat": "Calbright College Non-Credit carries no region: it is statewide and online and belongs to no regional consortium. 117 of 118 college and continuing-education rows are covered here.",
+ "_refresh": "select swp_region_code, swp_region, college_name from map_colleges where swp_region_code is not null and coalesce(is_test,false)=false order by 1,3;",
+ "regions": {
+  "Bay": {
+   "name": "Bay Area",
+   "colleges": [
+    "Berkeley City College",
+    "Cabrillo College",
+    "Cañada College",
+    "Chabot College",
+    "City College of San Francisco",
+    "College of Alameda",
+    "College of Marin",
+    "College of San Mateo",
+    "Contra Costa College",
+    "De Anza College",
+    "Diablo Valley College",
+    "Evergreen Valley College",
+    "Foothill College",
+    "Gavilan College",
+    "Hartnell College",
+    "Laney College",
+    "Las Positas College",
+    "Los Medanos College",
+    "Merritt College",
+    "Mission College",
+    "Monterey Peninsula College",
+    "Napa Valley College",
+    "Ohlone College",
+    "San Jose City College",
+    "Santa Rosa Junior College",
+    "Skyline College",
+    "Solano Community College",
+    "West Valley College"
+   ]
+  },
+  "CVML": {
+   "name": "Central Valley/Mother Lode",
+   "colleges": [
+    "Bakersfield College",
+    "Cerro Coso Community College",
+    "Clovis Community College",
+    "Coalinga College",
+    "College of the Sequoias",
+    "Columbia College",
+    "Fresno City College",
+    "Lemoore College",
+    "Madera College",
+    "Merced College",
+    "Modesto Junior College",
+    "Porterville College",
+    "Reedley College",
+    "San Joaquin Delta College",
+    "Taft College"
+   ]
+  },
+  "FN": {
+   "name": "Far North",
+   "colleges": [
+    "Butte College",
+    "College of the Redwoods",
+    "College of the Siskiyous",
+    "Feather River College",
+    "Lassen College",
+    "Mendocino College",
+    "Shasta College"
+   ]
+  },
+  "GS": {
+   "name": "Greater Sacramento",
+   "colleges": [
+    "American River College",
+    "Cosumnes River College",
+    "Folsom Lake College",
+    "Lake Tahoe Community College",
+    "Sacramento City College",
+    "Sierra College",
+    "Woodland Community College",
+    "Yuba College"
+   ]
+  },
+  "IE/D": {
+   "name": "Inland Empire/Desert",
+   "colleges": [
+    "Barstow Community College",
+    "Chaffey College",
+    "College of the Desert",
+    "Copper Mountain College",
+    "Crafton Hills College",
+    "Moreno Valley College",
+    "Mt. San Jacinto College",
+    "Norco College",
+    "Palo Verde College",
+    "Riverside City College",
+    "San Bernardino Valley College",
+    "Victor Valley College"
+   ]
+  },
+  "LA": {
+   "name": "Los Angeles",
+   "colleges": [
+    "Antelope Valley College",
+    "Cerritos College",
+    "Citrus College",
+    "College of the Canyons",
+    "Compton College",
+    "East Los Angeles College",
+    "El Camino College",
+    "Glendale Community College",
+    "Long Beach City College",
+    "Los Angeles City College",
+    "Los Angeles Harbor College",
+    "Los Angeles Mission College",
+    "Los Angeles Pierce College",
+    "Los Angeles Southwest College",
+    "Los Angeles Trade Technical College",
+    "Los Angeles Valley College",
+    "Mt. San Antonio College",
+    "Pasadena City College",
+    "Rio Hondo College",
+    "Santa Monica College",
+    "West Los Angeles College"
+   ]
+  },
+  "OC": {
+   "name": "Orange County",
+   "colleges": [
+    "Coastline Community College",
+    "Cypress College",
+    "Fullerton College",
+    "Golden West College",
+    "Irvine Valley College",
+    "North Orange Continuing Education",
+    "Orange Coast College",
+    "Saddleback College",
+    "Santa Ana College",
+    "Santiago Canyon College"
+   ]
+  },
+  "SCC": {
+   "name": "South Central Coast",
+   "colleges": [
+    "Allan Hancock College",
+    "Cuesta College",
+    "Moorpark College",
+    "Oxnard College",
+    "Santa Barbara City College",
+    "Ventura College"
+   ]
+  },
+  "SD/I": {
+   "name": "San Diego/Imperial",
+   "colleges": [
+    "Cuyamaca College",
+    "Grossmont College",
+    "Imperial Valley College",
+    "MiraCosta College",
+    "Palomar College",
+    "San Diego City College",
+    "San Diego College of Continuing Education",
+    "San Diego Mesa College",
+    "San Diego Miramar College",
+    "Southwestern College"
+   ]
+  }
+ }
+}
