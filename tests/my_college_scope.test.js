@@ -5,16 +5,20 @@
 // sections; make Sierra collapsible-but-open; add expand/collapse all and a
 // report button.
 //
-// ⭐ TWO OF THE FIVE SCOPES HAVE NO DATA, AND THAT IS THE INTERESTING PART.
-// Strong Workforce region and Academic Senate region do not exist anywhere in
-// this repo. The region data we DO hold (`college_geo.region`) is a third,
-// unrelated scheme — a hand-authored ~10-way macro-region built for Sierra's
-// "which colleges near me" ranking. SWP has EIGHT regional consortia with
-// different boundaries; the ASCCC has FOUR areas. Wiring college_geo behind
-// either label would silently mis-group a college's peers in a view people act
-// on. So those two render DISABLED WITH A REASON, and this file pins that —
-// because the tempting "fix" for a disabled button is to point it at the
-// nearest available column.
+// ⭐ ONE OF THE FIVE SCOPES HAS NO DATA, AND THAT IS THE INTERESTING PART.
+// Academic Senate area exists nowhere in this repo, so it renders DISABLED WITH
+// A REASON and this file pins that — because the tempting "fix" for a disabled
+// button is to point it at the nearest available column, and the nearest one is
+// wrong. `college_geo.region` is a third, unrelated scheme: a hand-authored
+// ~10-way macro-region built for Sierra's "which colleges near me" ranking.
+// Measured 2026-09-17, its "Bay Area" holds 23 colleges where the Strong
+// Workforce consortium has 28.
+//
+// ⚠ STRONG WORKFORCE WAS THE SECOND ONE UNTIL 2026-09-17, when its roster was
+// derived and committed — and the button went on saying "not yet in an export
+// we hold" for a day after the data landed beside it. A disabled control does
+// not notice that its prerequisite arrived, so block 2 now asserts that this one
+// is ENABLED rather than only that the other is off.
 //
 // Run from repo root: `npm test` (or `node tests/my_college_scope.test.js`).
 const fs = require("fs");
@@ -81,17 +85,22 @@ block("step 1", function () {
   const opts = root.querySelectorAll(".cb-scope-b");
   check("all five scopes are offered", opts.length === 5);
   const enabled = root.querySelectorAll(".cb-scope-b:not([disabled])");
-  check("three are usable — college, district, statewide", enabled.length === 3);
+  // ⚠ FOUR SINCE 2026-09-17. The Strong Workforce roster landed
+  // (swp_region_data.js, 117 colleges over 9 consortia) and this scope flipped
+  // with it. Academic Senate areas still exist in no column we hold.
+  check("four are usable — college, district, Strong Workforce, statewide", enabled.length === 4);
   const keys = Array.prototype.map.call(enabled, function (b) { return b.getAttribute("data-scope"); });
-  check("…and they are the three with data",
-    JSON.stringify(keys.sort()) === JSON.stringify(["college", "district", "statewide"]));
+  check("…and they are the four with data",
+    JSON.stringify(keys.sort()) === JSON.stringify(["college", "district", "statewide", "swp"]));
 });
 
 // ── 2. ⭐ A scope with no data says so, rather than pointing somewhere wrong ───
 block("disabled scopes", function () {
   const { root } = load();
   const off = root.querySelectorAll(".cb-scope-b[disabled]");
-  check("⭐ the two region scopes render, disabled", off.length === 2);
+  // ⭐ The rule is that a scope with no data RENDERS, disabled, with its
+  // reason — not that any particular count of them is off. One is off now.
+  check("⭐ the scope with no data renders, disabled", off.length === 1);
   check("…both are still READABLE as labels",
     Array.prototype.every.call(off, function (b) { return /[A-Za-z]{4}/.test(b.textContent); }));
   check("⭐ each says WHY it is off, not just that it is",
@@ -100,8 +109,14 @@ block("disabled scopes", function () {
       return t.length > 30 && /list|export|MAP Dashboard/i.test(t);
     }),
     "a disabled control with no reason reads as broken, not as pending");
-  check("neither is silently hidden",
-    /Strong Workforce/.test(root.textContent) && /Academic Senate/.test(root.textContent));
+  check("it is not silently hidden", /Academic Senate/.test(root.textContent));
+  // ⭐ AND THE ONE THAT GOT ITS DATA IS ACTUALLY OFFERED. This is the check that
+  // would have caught the day the roster landed and the button stayed dark:
+  // the data shipped, the generator read it, and this control went on saying
+  // "not yet in an export we hold".
+  check("⭐ Strong Workforce is offered, and ENABLED once its roster exists",
+    !!root.querySelector('.cb-scope-b[data-scope="swp"]:not([disabled])'),
+    "a disabled control does not notice that its prerequisite arrived");
   // ⚠ The trap this pins: college_geo.region exists and is RIGHT THERE. It is
   // a proximity grouping, not SWP consortia and not ASCCC areas.
   check("⚠ no region grouping is wired to either label yet",
@@ -303,11 +318,13 @@ block("persistence", function () {
     !half.root.querySelector("[data-scope-resume]"));
 
   // ⚠ A remembered scope that is not READY must not strand anyone on a blank
-  // screen — e.g. a "swp" saved by a future build, read by this one.
-  const bad = load({ remember: { scope: "swp" } });
+  // screen — e.g. a "senate" saved by a future build, read by this one.
+  // (This was "swp" until 2026-09-17, when that scope got its roster; the rule
+  // is unchanged, the example moved to the one still without data.)
+  const bad = load({ remember: { scope: "senate" } });
   bad.M.activate();
   check("⚠ a remembered scope with no data is ignored, not restored",
-    bad.M._state.scope !== "swp");
+    bad.M._state.scope !== "senate");
   // activate() puts the tab into its loading state on the way to fetching, so
   // render explicitly to see where the reader actually lands.
   bad.M._state.loading = false;
