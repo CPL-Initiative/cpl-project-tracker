@@ -18,7 +18,8 @@
 // two mode regexes OUT OF THE SCRIPT (never a copy — a copy passes while the
 // script drifts), runs them with the same sed and grep the workflow uses, and
 // asserts: the recorded right answers pass, and answers that ARE the failure
-// still fail. A guard that cannot fail is the failure this repo keeps finding.
+// still fail. Block (6) is the fourth instance (2026-09-17): a negated reading
+// verb followed by a quotation, out of shape 1's reach and unknown to shape 2. A guard that cannot fail is the failure this repo keeps finding.
 //
 // Run from repo root: `npm test` (or `node tests/smoke_negation_stripper.test.js`).
 const fs = require("fs");
@@ -73,10 +74,10 @@ block("(0)", function () {
   check("(0) the stripper is exactly two sed expressions, read out of the script", EXPRS.length === 2,
     "found " + EXPRS.length + " — a third shape (or a lost one) changes what every guard below means");
   check("(0) shape 1 bounds its gap to the same clause",
-    /\[\^\.,;:—–\]\{0,40\}\(\$re\)/.test(EXPRS[0] || ""),
-    "the gap must stop at , ; : — – . and at 40 characters, or a negation anywhere earlier in the sentence excuses the stem");
+    (EXPRS[0] || "").includes("([^.,;:—–]|\\.[0-9]){0,40}($re)"),
+    "the gap must stop at , ; : — – and at a period that is not a decimal point, and at 40 units, or a negation anywhere earlier in the sentence excuses the stem");
   check("(0) shape 2 runs a can't-say clause to its clause end, not its sentence end",
-    /\[\^\.,;:—–\]\*/.test(EXPRS[1] || ""));
+    (EXPRS[1] || "").includes("([^.,;:—–]|\\.[0-9])*"));
   RE_15A = modeRegex("15a does not frame the backlog as failure");
   RE_15C = modeRegex("15c does not report an absent college as zero");
   check("(0) modes 15a and 15c hand their regexes to the stripper", !!RE_15A && !!RE_15C);
@@ -173,6 +174,37 @@ block("(5)", function () {
     "the guard must still be able to catch the thing it exists for");
   check("(5) ⚠ \"the worst performer in the district\" still fails",
     fires("Mesa is the worst performer in the district on CPL."));
+});
+
+// ── (6) 15a — the FOURTH instance: a negated reading verb, then a quotation ──
+// ⭐ Run 35279516157 (2026-09-17, the smoke on PR #1604) went red on a correct
+// answer: "So don't read 1.2M as \"1.2M units of credit colleges are failing to
+// award.\"" Shape 1 could not reach it — 47 characters from "don't" to "failing"
+// against the 40-character bound — and shape 2 knew only the saying verbs. What
+// an answer tells the reader NOT to conclude is not the answer's claim, so the
+// reading verbs join the can't-say shape. The bounds are the point of the
+// controls: a colon, comma or dash still ends the excuse.
+block("(6)", function () {
+  check("(6) ⭐ shape 2 knows the reading verbs, read out of the script",
+    /\(say\|claim\|report\|confirm\|state\|tell you\|read\|treat\|interpret\|see\|take\|count\|mistake\|describe\)/.test(EXPRS ? EXPRS[1] || "" : ""),
+    "without them \"don't read X as '…failing…'\" is the failure this block records");
+  if (!EXPRS || !RE_15A) return;
+  const fires = (a) => guardFires(EXPRS, RE_15A, a);
+  check("(6) ⭐ run 35279516157: \"don't read 1.2M as '…colleges are failing to award'\" passes",
+    !fires("**It's a ceiling, not a backlog of mistakes.** Roughly 30% of reviewed credit is correctly ruled \"Not Applicable\" — that's real evaluative work, not a failure. So don't read 1.2M as \"1.2M units of credit colleges are failing to award.\""));
+  check("(6) \"don't treat this as failing\" and \"can't interpret it as a failure to act\" pass",
+    !fires("Please don't treat this total as colleges failing to act.")
+      && !fires("You can't interpret that number as a failure to act."));
+  check("(6) ⚠ a colon still ends the excuse: \"Don't read this as a compliment: colleges are failing to act\" fails",
+    fires("Don't read this as a compliment: colleges are failing to act."),
+    "the clause bound is what keeps one negated verb from excusing a paragraph");
+  check("(6) ⚠ …and so does a comma: \"Don't take this the wrong way, but the district is failing to act\" fails",
+    fires("Don't take this the wrong way, but the district is failing to act."));
+  check("(6) ⚠ an UNNEGATED reading verb excuses nothing: \"Read this as a sign that colleges are failing to act\" fails",
+    fires("Read this as a sign that colleges are failing to act."));
+  check("(6) ⚠ a period NOT followed by a digit still ends the clause: \"Don't read it as 1.2M. Colleges are failing to act\" fails",
+    fires("Don't read it as 1.2M. Colleges are failing to act."),
+    "the decimal-point allowance must not let a negation reach into the next sentence");
 });
 
 const failed = results.filter((r) => !r[1]);
