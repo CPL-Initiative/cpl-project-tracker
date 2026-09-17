@@ -249,6 +249,56 @@
     return null;
   }
   function signedIn() { return !!getSession(); }
+
+  /* ── Which copy of this tab's data a reader may see (2026-09-17) ──────────
+   * Sam opened My College to colleges and the public. Four of the tables
+   * behind it stay gated on `is_allowed_reviewer() OR team_pass_ok()`, because
+   * three of them cannot be un-gated at all: map_college_cr_unit holds 145,554
+   * rows describing exactly ONE student at a named college, course and credit
+   * recommendation; map_college_credit_summary publishes exact sub-threshold
+   * headcounts; map_college_contacts is a statewide CCC executive directory
+   * with emails.
+   *
+   * So the page reads the `_pub` mirrors when it holds no credential and the
+   * bases when it does — the ADR's two objects, not one
+   * (adr-student-detail-aggregate-disclosure-control). The mirrors are built by
+   * kb/_publish_college_briefing.py with suppression applied BEFORE publishing;
+   * nothing on this page re-derives it.
+   *
+   * ⚠ A SIGNED-IN READER STILL SEES MORE, and that is the point of the split.
+   * The public contact row carries the CPL coordinator, the CPL counselor and
+   * the landing page — what routes a student to a person. The VPAA, VPSS,
+   * articulation officer, faculty lead and certifying official stay behind the
+   * gate, and the page SAYS SO rather than rendering a row of blanks: an
+   * unexplained gap reads as a college with no staff. */
+  var PUBLIC_CONTACT_ROLES = ["cpl_coordinator", "cpl_counselor"];
+
+  function sources() {
+    var pub = !signedIn();
+    return {
+      pub: pub,
+      summary: pub ? "map_college_credit_summary_pub" : "map_college_credit_summary",
+      goal2: pub ? "map_college_goal2_pub" : "map_college_goal2",
+      contacts: pub ? "map_college_contacts_pub" : "map_college_contacts",
+      contactSelect: pub
+        ? "college,cpl_coordinator,cpl_coordinator_email,cpl_counselor,cpl_counselor_email,landing_page_url"
+        : "college,primary_contact,primary_contact_email,cpl_coordinator,cpl_coordinator_email,"
+          + "cpl_counselor,cpl_counselor_email,articulation_officer,articulation_officer_email,"
+          + "faculty_lead,faculty_lead_email,certifying_official,certifying_official_email,"
+          + "vpaa,vpaa_email,vpss,vpss_email,landing_page_url,last_updated_on",
+      /* The published waiting table IS the Needs-Action / articulated>0 slice,
+       * already suppressed, so the filters that carve it out of the base must
+       * NOT be re-applied here — they would silently drop every remainder row,
+       * which carries no cpl_status_plan at all. */
+      waiting: pub ? "map_college_cr_waiting_pub" : "map_college_cr_unit",
+      waitingQuery: pub
+        ? "&select=credit_rec,college_course,course_type,sum_articulated_credits,"
+          + "distinct_students,withheld_recommendations"
+        : "&cpl_status_plan=eq." + encodeURIComponent("Needs Action")
+          + "&sum_articulated_credits=gt.0"
+          + "&select=credit_rec,college_course,course_type,sum_articulated_credits,distinct_students"
+    };
+  }
   function authHeaders() {
     var s = getSession();
     // PostgREST 401s on an empty/garbled Bearer, so a phrase session keeps the
@@ -1589,6 +1639,7 @@
     if (id == null) { state.detail = null; state.detailFor = name; return Promise.resolve(); }
     state.detailLoading = true; state.detailError = null; state.detailFor = name;
     var h = authHeaders();
+    var SRC = sources();
     var q = encodeURIComponent('{"' + name.replace(/"/g, '\\"') + '"}');
     return Promise.all([
       jget(REST + "/map_credential_student_rollup?college_id=eq." + id
@@ -1598,18 +1649,14 @@
          + "&select=unified_title,cpl_types,statewide", { headers: h }),
       jget(REST + "/chatbox_credentials?potential_colleges=cs." + q
          + "&select=unified_title,cpl_types,statewide,ccc_rec,adopter_colleges", { headers: h }),
-      jget(REST + "/map_college_goal2?college_id=eq." + id
+      jget(REST + "/" + SRC.goal2 + "?college_id=eq." + id
          + "&select=dest,rows_n,students,suppressed,reason", { headers: h }),
       // What the "already articulated, waiting" units actually CONSIST of.
       // Same filter as map_college_credit_summary.articulated_waiting
       // (kb/supabase_map_college_credit_summary.sql line 33) so the breakdown
       // sums to the headline exactly — a list that did not reconcile with the
       // number above it would be worse than no list.
-      jget(REST + "/map_college_cr_unit?college_id=eq." + id
-         + "&cpl_status_plan=eq." + encodeURIComponent("Needs Action")
-         + "&sum_articulated_credits=gt.0"
-         + "&select=credit_rec,college_course,course_type,sum_articulated_credits,distinct_students",
-         { headers: h })
+      jget(REST + "/" + SRC.waiting + "?college_id=eq." + id + SRC.waitingQuery, { headers: h })
     ]).then(function (r) {
       state.detail = { rollup: r[0] || [], adopted: r[1] || [], potential: r[2] || [],
                        goal2: r[3] || [], waiting: r[4] || [] };
@@ -1741,9 +1788,33 @@
      * students on the systemwide dashboard, no credit rows — was being
      * congratulated on a finished queue. */
     if (!summary) return { unmeasured: true };
-    var rows = detail.waiting;
-    if (!rows.length) return { empty: true, total: 0, groups: [] };
-    var by = {}, total = 0, mil = 0;
+
+    /* ⚠ A REMAINDER ROW IS NOT A DATA GAP, AND IT MUST NOT BE GROUPED.
+     * The published mirror collapses every sub-threshold recommendation for a
+     * college into ONE row carrying their summed credits, no recommendation, no
+     * course and no headcount, with `withheld_recommendations` saying how many
+     * it stands for (never 1 — a remainder standing for one row IS that row).
+     * Fed through the grouping below it would land as "Not categorized" and
+     * "(no recommendation named in MAP)", which are this data's words for MAP
+     * being blank — a deliberate withholding rendered as somebody's oversight.
+     * So it comes out here and is reported as its own line.
+     *
+     * Its units stay IN the total, because the breakdown sits under the
+     * headline figure and a list that does not add up to the number above it is
+     * worse than no list. */
+    var all = detail.waiting || [];
+    var rows = [], withheldUnits = 0, withheldRecs = 0;
+    all.forEach(function (r) {
+      var n = Number(r.withheld_recommendations) || 0;
+      if (n > 0) {
+        withheldUnits += Number(r.sum_articulated_credits) || 0;
+        withheldRecs += n;
+        return;
+      }
+      rows.push(r);
+    });
+    if (!all.length) return { empty: true, total: 0, groups: [], withheld: null };
+    var by = {}, total = withheldUnits, mil = 0;
     rows.forEach(function (r) {
       var u = Number(r.sum_articulated_credits) || 0;
       if (u <= 0) return;
@@ -1757,7 +1828,7 @@
       var rec = cleanText(r.credit_rec) || "(no recommendation named in MAP)";
       by[ct].recs[rec] = (by[ct].recs[rec] || 0) + u;
     });
-    if (!total) return { empty: true, total: 0, groups: [] };
+    if (!total) return { empty: true, total: 0, groups: [], withheld: null };
     var groups = Object.keys(by).map(function (k) {
       var g = by[k];
       g.share = g.units / total;
@@ -1766,7 +1837,14 @@
       delete g.recs;
       return g;
     }).sort(function (a, b) { return b.units - a.units; });
+    /* Group shares are of the FULL total, so they deliberately do not sum to 1
+     * when something is withheld — the withheld line accounts for the rest. A
+     * share renormalized over the visible rows would quietly report the withheld
+     * units as not existing. */
     return { suppressed: false, empty: false, total: total, groups: groups,
+             withheld: withheldRecs
+               ? { units: withheldUnits, recommendations: withheldRecs }
+               : null,
              militaryUnits: mil, militaryShare: mil / total };
   }
 
@@ -2176,14 +2254,22 @@
     return out.length ? out.join(", ") : null;
   }
 
-  function contactRoster(row) {
+  /* ⚠ A ROLE THIS READER MAY NOT SEE IS NOT AN EMPTY ROLE. The public contact
+   * mirror carries the CPL coordinator, the CPL counselor and the landing page
+   * — what routes a student to a person. Every other role is absent from the
+   * READ, so classifying it by whether the value is falsy would file it under
+   * "Not filled in", and the page would tell a college its VP Academic Affairs
+   * is missing when the truth is that we did not ask. Three lists, not two. */
+  function contactRoster(row, pub) {
     if (!row) return null;
-    var filled = [], blank = [];
+    var filled = [], blank = [], heldBack = [];
     CONTACT_ROLES.forEach(function (r) {
+      if (pub && PUBLIC_CONTACT_ROLES.indexOf(r.k) === -1) { heldBack.push({ label: r.label }); return; }
       var name = dedupeValue(row[r.k]), email = dedupeValue(row[r.e]);
       (name || email ? filled : blank).push({ label: r.label, name: name, email: email, lead: !!r.lead });
     });
-    return { filled: filled, blank: blank, landing: row.landing_page_url || null,
+    return { filled: filled, blank: blank, heldBack: heldBack,
+             landing: row.landing_page_url || null,
              updated: row.last_updated_on || null };
   }
 
@@ -2289,27 +2375,16 @@
   function render(root) {
     ensureCss();
     shedPlaceholder(root);
-    if (!signedIn()) {
-      // Was: "Sign in with the team phrase to view the college briefing." —
-      // true, but it never said WHERE, and four of this tab's tables gate the
-      // READ, so the whole briefing was blank with nothing to act on.
-      root.innerHTML = '<div class="cb-gate" style="padding:16px 24px;"></div>';
-      var gate = root.querySelector(".cb-gate");
-      if (window.CPL_TEAM_PHRASE && gate) {
-        gate.appendChild(window.CPL_TEAM_PHRASE.lockedBanner({
-          what: "The college briefing — contacts, credit summaries and funding —"
-        }));
-      } else if (gate) {
-        // FAIL-SAFE. If the shared helper has not loaded, still say what is
-        // locked and where the control is — an empty locked state would be
-        // worse than the copy this replaced, which at least named a tab.
-        var p = document.createElement("p");
-        p.setAttribute("data-tp-locked", "");
-        p.textContent = "You are not signed in. Unlock with the team phrase \u2014 the About menu in the header.";
-        gate.appendChild(p);
-      }
-      return;
-    }
+    /* ⚠ THE SIGN-IN GATE IS GONE (Sam, 2026-09-17: My College is open to
+     * colleges and the public). It used to return a locked banner here, which
+     * is why setting the menu audience to Everyone changed nothing a reader
+     * could see — the Admin control governs the MENU, and this governed the
+     * PAGE.
+     *
+     * Nothing was un-gated to make this work. sources() points a credential-less
+     * reader at the `_pub` mirrors, which carry suppression applied at build
+     * time; the bases keep exactly the RLS they had. A reader who holds the team
+     * phrase still reads the bases and still sees more. */
     if (state.loading) { root.innerHTML = '<div style="padding:24px;text-align:center;color:var(--text-muted);">Measuring…</div>'; return; }
 
     var names = (state.data && state.data.colleges) || [];
@@ -2723,6 +2798,22 @@
         }
         waitBody += "</div>";
       });
+      /* The withheld line sits IN the list, as a row, because it is part of the
+       * total the reader was just told these add up to. Reporting it under the
+       * table, or not at all, turns suppressed credit into credit that does not
+       * exist — the "absent read as zero" failure this whole tab is built
+       * against. Plain words, no mark: the sentence carries it. */
+      if (wb.withheld) {
+        var wp = safePct(wb.withheld.units / wb.total, 1);
+        waitBody += '<div class="cb-wrow"><div class="cb-whead">'
+          + "<b>Withheld to protect small student counts</b>"
+          + '<span class="v">' + fmt(Math.round(wb.withheld.units)) + " units · " + wp + "%</span></div>"
+          + '<div class="cb-bar"><i style="width:' + Math.max(0, Math.min(100, wp)) + '%"></i></div>'
+          + '<div class="cb-wrecs">' + fmt(wb.withheld.recommendations)
+          + " credit recommendations, each held by fewer than 10 students at this college. "
+          + "They are counted in the total above and named nowhere, so no single one can be "
+          + "worked out from what is shown.</div></div>";
+      }
       waitBody += "</div>";
       if (wb.militaryShare >= 0.6) {
         var allMil = wb.militaryShare >= 1;
@@ -2827,7 +2918,7 @@
 
     // ── Current MAP Users and Contacts ─────────────────────────────────────
     var roster = contactRoster(state.data && state.data.raw && state.data.raw.contactRowByName
-      && state.data.raw.contactRowByName[state.college]);
+      && state.data.raw.contactRowByName[state.college], sources().pub);
     if (roster) {
       var contactBody = "";
       contactBody += '<div class="cb-note" style="margin-top:0">This is what MAP shows today. <b>The primary contact is where a '
@@ -2844,6 +2935,12 @@
         contactBody += '<div class="cb-note">Not filled in: <b>'
           + roster.blank.map(function (r) { return esc(r.label); }).join("</b>, <b>") + "</b>. "
           + "Blank is not a problem in itself — but a blank primary contact means student requests have nowhere to land.</div>";
+      }
+      if (roster.heldBack.length) {
+        contactBody += '<div class="cb-note">Shown to signed-in MAP staff only: <b>'
+          + roster.heldBack.map(function (r) { return esc(r.label); }).join("</b>, <b>") + "</b>. "
+          + "These roles are recorded in MAP. This page lists the people a student's CPL request "
+          + "should reach, and leaves the rest to staff who sign in.</div>";
       }
       if (roster.landing) {
         contactBody += '<div class="cb-note">Your CPL landing page: <a href="' + esc(roster.landing)
@@ -3721,6 +3818,7 @@
   }
 
   function loadAll() {
+    var SRC = sources();
     return Promise.all([
       jget(REST + "/cpl_funding_config?id=eq.default&select=config"),
       // entity_kind=neq.test EXCLUDES MAP's sandbox orgs (Sam, 2026-08-13:
@@ -3744,8 +3842,8 @@
       // EMPTY on the two partner rows by design, so a consumer must treat an
       // empty array as "no aliases", never as a failed read.
       jget(REST + "/map_colleges?select=college_id,college_name,variants&entity_kind=neq.test&order=college_name"),
-      jget(REST + "/map_college_credit_summary?select=*"),
-      jget(REST + "/map_college_contacts?select=college,primary_contact,primary_contact_email,cpl_coordinator,cpl_coordinator_email,cpl_counselor,cpl_counselor_email,articulation_officer,articulation_officer_email,faculty_lead,faculty_lead_email,certifying_official,certifying_official_email,vpaa,vpaa_email,vpss,vpss_email,landing_page_url,last_updated_on")
+      jget(REST + "/" + SRC.summary + "?select=*"),
+      jget(REST + "/" + SRC.contacts + "?select=" + SRC.contactSelect)
     ]).then(function (res) {
       var cfgRow = res[0] && res[0][0], colleges = res[1] || [], summary = res[2] || [], contacts = res[3] || [];
       var nameToId = {}, names = [];
@@ -3853,7 +3951,9 @@
     if (!root) return;
     if (state.scope === null) restoreScope();
     if (state.data && state.loadedSignedIn === signedIn()) { loadRoster(root); loadSwp(root); loadLive(root); render(root); return; }
-    if (!signedIn()) { state.data = null; render(root); return; }
+    // No sign-in branch: a public reader loads the `_pub` mirrors through
+    // sources(). `loadedSignedIn` above is what reloads from the OTHER source
+    // when a reader signs in or out mid-session.
     state.loading = true; render(root);
     // The roster is small and powers the district picker, so it starts now,
     // in parallel with the Supabase reads. The 370KB model waits until a
@@ -3881,6 +3981,11 @@
     // no k-anonymity of its own, so breaking out a withheld college's credit
     // would hand back what suppression removed.
     _waitingBreakdown: waitingBreakdown,
+    // Pure. Exposed because the three-way split (filled / blank / held back) is
+    // the difference between telling a college its VP is missing and telling it
+    // we did not ask.
+    _contactRoster: contactRoster,
+    _sources: sources,
     _prioritiesAlign: prioritiesAlign,
     // The reorder join (Sam, 2026-08-20). Both pure: applyPriorityOrder puts a
     // program's priorities into the curator's display order, programPriorityFor

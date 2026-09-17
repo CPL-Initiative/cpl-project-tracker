@@ -54,7 +54,11 @@ function load(signedIn) {
   );
   const w = dom.window;
   if (signedIn) w.localStorage.setItem("cpl_team_pass", "phrase");
-  w.fetch = function () { return new Promise(function () {}); }; // never resolves
+  // Never resolves, and records what was asked for: which TABLE a credential-less
+  // reader hits is the whole disclosure boundary, and it cannot be seen from the
+  // rendered page.
+  w.__fetched = [];
+  w.fetch = function (u) { w.__fetched.push(String(u)); return new Promise(function () {}); };
   // Shared phrase helper first — production ships both, and the locked state
   // renders its banner (with a working input) rather than the bare fallback.
   const tp = w.document.createElement("script");
@@ -76,11 +80,34 @@ check("defaults to Sam's answer: Scenario 1 / Year 1", M._SCENARIO === "Scenario
 const out = load(false);
 const gRoot = out.document.getElementById("college-briefing-root");
 out.CPL_COLLEGE_BRIEFING.render(gRoot);
-// Was: /sign in/i against copy that never said WHERE. The banner states the
-// lock and carries the input, so assert the input.
-check("team-gated: no figures logged out", /not signed in/i.test(gRoot.textContent));
-check("team-gated: …and an unlock box is offered right there",
-  !!gRoot.querySelector('[data-tp-locked] input[type="password"]'));
+// ⭐ THE GATE IS GONE (Sam, 2026-09-17: My College is open to colleges and the
+// public). These two checks asserted the OLD contract — logged out meant a
+// locked banner and no figures — which is exactly what he asked to change.
+//
+// What replaces them is the assertion that actually carries the privacy now:
+// a credential-less reader reads the `_pub` MIRRORS and never a gated base. The
+// mirrors are built with suppression applied before publication
+// (kb/_publish_college_briefing.py); the bases still hold 145,554 rows that each
+// describe one student. Which table was asked for cannot be seen from the
+// rendered page, so it is asserted on the request.
+out.CPL_COLLEGE_BRIEFING.activate();
+const pubUrls = out.__fetched.join(" ");
+check("public: ⭐ the tab renders with no credential at all",
+  !/not signed in/i.test(gRoot.textContent),
+  "the Admin audience control governs the MENU; this gate governed the PAGE");
+check("public: ⭐ figures come from the published mirrors",
+  /map_college_credit_summary_pub/.test(pubUrls) && /map_college_contacts_pub/.test(pubUrls));
+check("public: ⚠ NEVER reads a gated base",
+  !/map_college_credit_summary\?/.test(pubUrls) && !/map_college_contacts\?/.test(pubUrls),
+  "a credential-less read of the base answers 200 + [] under RLS, so this is "
+  + "silent by construction and only visible on the request");
+
+// …and a signed-in reader still reads the bases, which is what the split is for.
+const inWin = load(true);
+inWin.CPL_COLLEGE_BRIEFING.activate();
+const gatedUrls = inWin.__fetched.join(" ");
+check("signed in: ⭐ still reads the gated bases, not the mirrors",
+  /map_college_credit_summary\?/.test(gatedUrls) && !/map_college_credit_summary_pub/.test(gatedUrls));
 
 // ── Part C — the strategy library ──
 // Two programs: one shaped like the live cpl-implementation, one standing in
