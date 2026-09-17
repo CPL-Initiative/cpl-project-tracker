@@ -19,7 +19,9 @@
 // script drifts), runs them with the same sed and grep the workflow uses, and
 // asserts: the recorded right answers pass, and answers that ARE the failure
 // still fail. Block (6) is the fourth instance (2026-09-17): a negated reading
-// verb followed by a quotation, out of shape 1's reach and unknown to shape 2. A guard that cannot fail is the failure this repo keeps finding.
+// verb followed by a quotation, out of shape 1's reach and unknown to shape 2.
+// Block (7) is the fifth, the same day: a contrast phrase ("different from
+// saying") doing the negating with no negation word at all. A guard that cannot fail is the failure this repo keeps finding.
 //
 // Run from repo root: `npm test` (or `node tests/smoke_negation_stripper.test.js`).
 const fs = require("fs");
@@ -186,7 +188,7 @@ block("(5)", function () {
 // controls: a colon, comma or dash still ends the excuse.
 block("(6)", function () {
   check("(6) ⭐ shape 2 knows the reading verbs, read out of the script",
-    /\(say\|claim\|report\|confirm\|state\|tell you\|read\|treat\|interpret\|see\|take\|count\|mistake\|describe\)/.test(EXPRS ? EXPRS[1] || "" : ""),
+    (EXPRS ? EXPRS[1] || "" : "").includes("|read|reading|treat|treating|interpret|interpreting|see|seeing|take|taking|count|counting|mistake|mistaking|describe|describing)"),
     "without them \"don't read X as '…failing…'\" is the failure this block records");
   if (!EXPRS || !RE_15A) return;
   const fires = (a) => guardFires(EXPRS, RE_15A, a);
@@ -205,6 +207,32 @@ block("(6)", function () {
   check("(6) ⚠ a period NOT followed by a digit still ends the clause: \"Don't read it as 1.2M. Colleges are failing to act\" fails",
     fires("Don't read it as 1.2M. Colleges are failing to act."),
     "the decimal-point allowance must not let a negation reach into the next sentence");
+});
+
+// ── (7) 15c — the FIFTH instance: a contrast phrase does the negating ────────
+// ⭐ Run 35281579500 (the smoke on the PR carrying block 6) went red on 15c
+// against a correct answer: "That's different from saying they've \"awarded
+// zero\" — it means the data simply isn't present in this dataset". No "not",
+// no "can't": the contrast phrase plus a gerund is the negation. "different
+// from", "as opposed to" and "far from" join shape 2's negation words, and the
+// verbs carry their -ing forms. The controls keep the bound honest: a contrast
+// with no saying verb, and a colon, still fail.
+block("(7)", function () {
+  check("(7) ⭐ shape 2 knows the contrast phrases and the gerunds, read out of the script",
+    (EXPRS ? EXPRS[1] || "" : "").includes("|different from|as opposed to|far from) (say|saying|claim|claiming|"),
+    "without them \"different from saying they've 'awarded zero'\" is the failure this block records");
+  if (!EXPRS || !RE_15C) return;
+  const fires = (a) => guardFires(EXPRS, RE_15C, a);
+  check("(7) ⭐ run 35281579500: \"different from saying they've 'awarded zero' — it means…\" passes",
+    !fires("**Calbright College Credit** and **Calbright College Non-Credit** are not currently in the CPL Credit Disposition dataset, which tracks what colleges have acted on (units applied, transcribed, etc.). That's different from saying they've \"awarded zero\" — it means the data simply isn't present in this dataset, not that no activity has occurred."));
+  check("(7) \"as opposed to claiming it applied none\" and \"far from reporting zero transcribed\" pass",
+    !fires("As opposed to claiming the college applied none of it, the dataset simply lacks a row.")
+      && !fires("Far from reporting that Calbright has transcribed zero units, the table has no Calbright row."));
+  check("(7) ⚠ a contrast with NO saying verb excuses nothing: \"different from Mesa, which has awarded zero units\" fails",
+    fires("Calbright is different from Mesa, which has awarded zero units."),
+    "the phrase negates a CLAIM (saying, reporting); a plain comparison is not a denial");
+  check("(7) ⚠ a colon still ends the excuse: \"Different from saying so: Calbright awarded 0 units\" fails",
+    fires("Different from saying so: Calbright awarded 0 units."));
 });
 
 const failed = results.filter((r) => !r[1]);
