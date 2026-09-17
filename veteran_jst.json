@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-09-17T14:20:17.976052+00:00",
+  "scraped_at": "2026-09-17T17:09:36.202414+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 28177,
+    "jst": 28191,
     "star_colleges": 57
   },
   "computed_star_colleges": 57,
@@ -285,14 +285,14 @@
       "jst": 143,
       "star": false
     },
+    "Diablo Valley College": {
+      "vets": 211,
+      "jst": 186,
+      "star": true
+    },
     "College of San Mateo": {
       "vets": 199,
       "jst": 182,
-      "star": true
-    },
-    "Diablo Valley College": {
-      "vets": 211,
-      "jst": 173,
       "star": true
     },
     "Reedley College": {
@@ -482,7 +482,7 @@
     },
     "Sacramento City College": {
       "vets": 203,
-      "jst": 108,
+      "jst": 109,
       "star": false
     },
     "Cuyamaca College": {
