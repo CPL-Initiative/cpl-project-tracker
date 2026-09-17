@@ -19,6 +19,12 @@ all true agent nouns, where the bare word being present is exactly when the merg
 is RIGHT. The guard names forbidden LANDING POINTS instead, and those three pairs
 are checked below so the wrong fix cannot come back green.
 
+⚠️ CI's python steps are STDLIB-ONLY by convention, and this file imports the
+generator to reach stem/toks/Matcher. That made it fail on the runner with
+`ModuleNotFoundError: openpyxl` while passing locally (2026-09-17) — the
+generator imported openpyxl at module scope. The import now lives inside
+write_workbook(). Keep it that way, and add no third-party import here.
+
 Run: python3 tests/occupation_matcher_stemming_test.py
 """
 import importlib.util

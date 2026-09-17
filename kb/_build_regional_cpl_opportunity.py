@@ -509,9 +509,13 @@ def aggregate(occs, per, occ_ex, ex, colleges):
 
 
 # ── outputs ──────────────────────────────────────────────────────────────────
-from openpyxl import Workbook
-from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
-from openpyxl.utils import get_column_letter
+# ⚠️ openpyxl IS IMPORTED INSIDE write_workbook(), NOT HERE. At module scope it
+# made this file unimportable anywhere the library is absent, and CI's python
+# lint steps are stdlib-only by convention — so
+# tests/occupation_matcher_stemming_test.py, which only wants stem/toks/Matcher,
+# died on `ModuleNotFoundError: openpyxl` on the runner while passing locally
+# (2026-09-17). A generator should be importable for its logic without dragging
+# in the library that writes its spreadsheet.
 
 NAVY, LIGHT, RULE = "002F6D", "EEF3FA", "C9D6E8"
 COLS = [("What to do", 22), ("Occupation", 42), ("SOC", 10), ("Entry level", 26),
@@ -523,6 +527,9 @@ KEYS = ["headline", "occupation", "soc", "education", "n_teaching", "could_adopt
 
 
 def write_workbook(path, res):
+    from openpyxl import Workbook
+    from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
+    from openpyxl.utils import get_column_letter
     wb = Workbook(); ws = wb.active; ws.title = "CPL Opportunities"
     thin = Side(style="thin", color=RULE)
     for i, (h, w) in enumerate(COLS, 1):
