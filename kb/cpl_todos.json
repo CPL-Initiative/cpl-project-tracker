@@ -1,167 +1,179 @@
 {
-  "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-09-17",
-  "_session": 271,
-  "_status": "Sierra was dark for the MAP team for five days and every instrument said she was up. The cause was a deploy skew, not billing: the assistant's page ships when we merge, the function behind it ships only when someone presses deploy, and the two drifted apart — so browsers holding the team phrase were refused while the public page answered fine. She is back, the uptime probe now checks the thing that broke, and My College is open to colleges and the public. Nothing was un-gated to do that: the page reads published copies with small student counts already removed, and every protected table keeps its protection. Next up is letting Sierra see college PROGRAM data — today she can only see courses, which is why she could not answer a real student's question about nursing pathways.",
-  "items": [
-    {
-      "id": "s271-sam-mycollege-eyes",
-      "for": "Sam",
-      "tab": "my-college",
-      "text": "Open My College signed out and tell us it reads right. A college with withheld rows should show a 'Withheld to protect small student counts' line inside the breakdown, and the contacts list should say which roles are staff-only rather than calling them blank. Our automated check cannot load this page's data, so your eyes are the check."
-    },
-    {
-      "id": "s271-sam-lvn-oc",
-      "for": "Sam",
-      "tab": "chatbot",
-      "text": "Confirm whether any Orange County college runs LVN ENTRY training. The COCI extract shows Cypress, Golden West and Saddleback with LVN programs, but all three are LVN-to-RN bridges for people who already hold the licence. If entry training exists and the extract misses it, that is a data gap worth recording."
-    },
-    {
-      "id": "s271-fable-cip-loader",
-      "for": "Fable",
-      "tab": "chatbot",
-      "text": "Load the CIP code the COCI program export already carries. The builder reads title, award and TOP code and throws CIP away. Load it, but do not gate on it: CIP is blank on one active program in seven, where TOP is never blank."
-    },
-    {
-      "id": "s271-fable-program-search",
-      "for": "Fable",
-      "tab": "chatbot",
-      "text": "Give Sierra a way to search college PROGRAMS, not just courses. She reads a course rollup and nothing else, so 22,335 program rows across 118 colleges are invisible to her. Match on the program's title as well as its codes — searching by title finds 53 colleges with LVN programs where searching by code finds 44."
-    },
-    {
-      "id": "s271-fable-health-cron",
-      "for": "Fable",
-      "tab": "chatbot",
-      "text": "Work out why Sierra's uptime check runs about four times a day when it is scheduled eight times. Observed across three days, not yet diagnosed. The gap between checks is how long an outage can sit unnoticed."
-    },
-    {
-      "id": "s266-sam-asccc-areas",
-      "for": "Sam",
-      "tab": "my-college",
-      "text": "Send the Academic Senate (ASCCC) area roster — which college sits in which area. Every Supabase column matching area, senate, asccc, zone or region was searched and none carries them. Strong Workforce regions are already solved."
-    },
-    {
-      "id": "s266-sam-cer-authority",
-      "for": "Sam",
-      "tab": "cer",
-      "text": "Decide whether the Common Exhibit Reference should canonicalize against the credential registry — adopting the issuer's own credential name and the issuing agency in place of a vote among the freehand titles colleges typed."
-    },
-    {
-      "id": "s266-fable-matcher-vocabulary",
-      "for": "Fable",
-      "tab": "my-college",
-      "text": "The occupation matcher's misses are a VOCABULARY problem, not a tuning one. Application developer and Computer Programming share no word, so no threshold reaches them. The register is live in the My College tab and discloses the gap, so this is about making it find more rather than about shipping. Closing it needs a synonym layer or the curated occupation map — and two plausible shortcuts are already measured and rejected in the code."
-    },
-    {
-      "id": "s266-fable-licenses-handout",
-      "for": "Fable",
-      "tab": "my-college",
-      "text": "Add the 369 California licenses to the college handout as a third column, beside the exhibits a college can adopt and the ones it could build. The handout already carries the accuracy caveat, so the new column needs the same treatment: say what is confirmed and what a person in the room should check."
-    },
-    {
-      "id": "s264-sam-sheet-remaining",
-      "for": "Sam",
-      "tab": "implementation-funding",
-      "text": "One thing from the 15 September decision sheet is yours: a note to MAP about the Dashboard's \"Eligible\" label, which actually shows applied credit. It is drafted and waiting for you to send at docs/map_eligible_label_note_draft.md — check the figures again first, because the reconciliation is the whole argument."
-    },
-    {
-      "id": "s264-sam-origination-owner",
-      "for": "Sam",
-      "tab": "implementation-funding",
-      "text": "When the origination data lands, half of it works by itself and half does not. The noncredit location side switches on automatically. The landing page / portal / batch upload side waits for a deliberate one-line change, made only once the exact spellings are confirmed, and the only signal that it is waiting is a line in a daily log. Worth giving that to someone by name."
-    }
-  ],
-  "_deferred": [
-    {
-      "id": "s259-fable-verify-v66-after-deploy",
-      "for": "Fable",
-      "tab": "cobi-assistant",
-      "text": "After Sam's deploy, read the new log columns: how many turns came from a signed-in reviewer, how many from the team phrase, how many from the public, and from which surface. The count of six real questions in thirty hours could not tell the COBI tabs from the public page; now it can. Also show those two columns in Sierra Training's conversation list, which reads the same table."
-    },
-    {
-      "id": "s259-fable-sierra-bubble-ui",
-      "for": "Fable",
-      "tab": "cobi-assistant",
-      "text": "Build the floating assistant bubble on every COBI tab — Sam's ask from the 11th. The flag it needed exists now; the control does not. It mounts the same assistant the CPL Assistant tab uses, in the house style, with controls at least 24 pixels tall and a single column on a phone. What a signed-in reader may additionally see is a separate decision that goes through Governance first."
-    },
-    {
-      "id": "s259-fable-health-probe-blind-spot",
-      "for": "Fable",
-      "tab": "cobi-assistant",
-      "text": "The health probe asks one simple question, so it cannot see the failure where Sierra answers broad questions with silence — it passed straight through two hours of that on the 11th. Rather than pay for a second question every run, have the probe read how many blank answers the live table recorded since its last run. That costs nothing and watches real visitors instead of its own test question."
-    },
-    {
-      "id": "s256-sam-forward-kynd-memo",
-      "for": "Sam",
-      "tab": "cobi-assistant",
-      "text": "Forward the KYND memo (vault: 20260911_Memo_map_rccd_edu_WordPress_wp2shell_Notice.docx) to whoever holds the SiteGround login for map.rccd.edu, filling in the TO line. Two things come back: the WordPress version on both the production site and staging2.map.rccd.edu, which the notice did not list, and whether the log search found anything. Then answer KYND. Until the site is confirmed clean, the Monday job that copies the site's story cards onto the Fact Sheet keeps running; pausing it is your call, and the current cards checked clean."
-    },
-    {
-      "id": "s255-fable-sierra-after-the-deploy",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "What is left behind the assistant after Sam's two rulings of the 11th. The sixteen-row register sweep on Sonnet 5 with reasoning off has still not been run — it is the hardest thing she does and the one caller with no record yet, and it now matters more than it did: the check for whether her answers are being cut short came back clean, but almost nobody is using her yet (six real questions in thirty hours against four hundred and forty of our own), so watching live traffic mostly watches ourselves. The sweep is the only test that would really exercise the new, much higher answer limit. After it, an A/B of private reasoning at low effort on the preview copy, but only if the sweep shows a gap — Sam's words were \"test for better options if they exist.\""
-    },
-    {
-      "id": "s255-fable-sheet-rulings-outstanding",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "Eleven decisions from the sheet of the 11th are settled and waiting to be built. Two carry an instruction rather than a plain yes: every panel tint becomes the one pale gray rather than six near-identical shades, and Pierce College keeps the Los Angeles in its name — the bare spelling was a mistake, not a variant to support. The rest: a permanent name beside each statewide credential, five refinements to the CPL view, the twenty-four places asking for a colour that was never defined, the faint grey notes on the Implementation Funding tab, splitting the explainer footer so sources can be hidden, the published standard to start from, the phrase people type before moving a course, and letting an assistant instruction apply only to SkyView questions."
-    },
-    {
-      "id": "s252-sam-sweep-observations",
-      "for": "Sam",
-      "tab": "unified-courses",
-      "text": "Six observations from the full sweep of SkyView are still open for your read. You have already ruled on one of them: the check boxes stay for now, because people cannot know what is available unless the list is in front of them. The rest are waiting."
-    },
-    {
-      "id": "s252-fable-cpl-ask-and-join-check",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "Two follow-ups behind the CPL view. Ask SkyView on the CPL map still asks the assistant in course words (the discipline list is shared; the terms are course titles), so a question about credentials lands on discipline chips at best — the envelope needs a credential vocabulary. And the Courses map's Articulations light and the CPL map read the same record through opposite joins; a one-file test that they name the same pairs would catch the day one build drifts."
-    },
-    {
-      "id": "s251-sam-cid-descriptor-text",
-      "for": "Sam",
-      "tab": "unified-courses",
-      "text": "The statewide course descriptions you want a C-ID course to inherit are not in our data. You thought they came with the TMC tab work — that work gave us the 293 C-ID codes, which is probably what you are remembering, but not a word of the descriptive text behind them. So the ask to ASCCC is narrower than it looked: we have the identifiers and need only the descriptor prose."
-    },
-    {
-      "id": "s251-fable-dashboard-data-gaps",
-      "for": "Fable",
-      "tab": "dashboard",
-      "text": "Three things behind the daily dashboard, all data rather than display. The history file stops at 7 September because the build did not run for three days, and the gap has to be filled or the one-day comparison silently reads from the wrong date. The builder finds MAP's columns by name but falls back to a guessed position when a name moves, which is how it would produce confident wrong numbers rather than failing. And the moment MAP restores the CPL lifecycle checks, the counsellor-verified column goes back into the daily fetch."
-    },
-    {
-      "id": "s248-fable-theme-remainder",
-      "for": "Fable",
-      "tab": "team-raci",
-      "text": "What is left of the theme work, in one place. The faults still outstanding are dark greys sitting on dark backgrounds and a handful of pale backgrounds that never flipped, each individually named by the accessibility sweep. There is also a genuine bug found during that work which is wrong in both themes, not just the dark one: an unresolved brand link renders its own placeholder text. And a note for whoever picks this up — the probe that finds missing colour names reports what it fixed but not how many it found, so a run that finds nothing looks the same as a run that finds everything."
-    },
-    {
-      "id": "s246-fable-expended-sweep",
-      "for": "Fable",
-      "tab": "implementation-funding",
-      "text": "Sam's rule that expended and allocated are not interchangeable — colleges spend, the Chancellor's Office allocates — was applied at the one place it was found in the memo builder. The rest of the memo and report text has not been read against it. Check who the subject is in each sentence before changing either word; a blanket sweep would get it backwards."
-    },
-    {
-      "id": "s245-fable-unfailable-checks",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "Several of our own tests cannot fail. Seven files print no readable count of what they checked, so if their checks quietly vanished nobody would notice; and a test guarding a phrase that was later deleted kept passing while measuring nothing at all. This run added a third example and a habit that catches it: run a new test against the code as it was BEFORE the fix, and confirm it fails there."
-    },
-    {
-      "id": "s238-fable-dr24-surface",
-      "for": "Sam",
-      "tab": "governance",
-      "text": "DR-24 is a governance row with an owner and no surface yet: an added skill lands as proposed with the reviewer's name and the day, and joins the published outline when a second curator agrees; a removal works the same way in reverse. Building that means the map's first write, so it routes through Governance and the privacy review first."
-    },
-    {
-      "id": "s238-fable-stale-exhibits-and-funnel",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "Two housekeeping items behind the CPL face. Fifty-five exhibits in the articulation crosswalk are no longer in today's MAP feed; they stay on the map flagged in words rather than dropped, and the fix is a re-seed of the crosswalk from a fresh custom report. And the credit-funnel numbers the face carries for context were read by hand on 2026-09-07; refresh them after the next custom-report load."
-    }
-  ],
-  "_deferred_note": "Parked out of the RENDERED feed to hold it at budget. None of these is done -- cpl_todos.js reads `items` only. Promote one back into `items` when it goes live. Two session lineages feed this file, so it fills faster than one session's work would suggest; keep the newest twelve rendered and park the rest."
+ "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
+ "_as_of": "2026-09-17",
+ "_session": 272,
+ "_status": "Sierra can now answer what a college AWARDS, not only what it teaches. A table of 22,335 programs across 118 colleges had been sitting unread, which is why she turned down a real student asking about LVN training. The fix was decided by counting rather than by intuition: asking about LVN finds 53 colleges by program name and 44 by program code, and 56 once you combine them — because a dozen colleges run bridge programs FOR people who already hold the licence, coded under Registered Nursing. A code tells you what a program is about and cannot tell you who it is for, so we show both and label which one matched. Two mistakes were ours and both are fixed: three database indexes meant to speed the search instead broke the nightly data load within the hour, and measured they saved four thousandths of a second; and a one-word shortcut we proposed for the LVN wording turned out to pull in Architectural Practice and Practicum in Machine Shorthand, which we found by testing it before shipping it. The proper fix took the question from 28 colleges to 56 with nothing irrelevant. We also closed a hole where a work-in-progress branch could rewrite the live public course catalogue before anyone reviewed it. What is left is a deploy: the database half is live, the assistant's own half is written and waiting, and we have asked Sam to approve a private test run first.",
+ "items": [
+  {
+   "id": "s272-sam-chat-deploy",
+   "for": "Sam",
+   "tab": "chatbot",
+   "text": "Say go on deploying the assistant. The program search is live in the database, but three changes that live in the assistant's own code — the LVN wording, a question-word filter, and a guard that keeps a two-word search term out of a place that cannot handle one — do nothing until the function is deployed. We would like to deploy it to a private copy first, ask it the same 22 questions we ask the live one, and compare, because this container cannot check the code compiles. That private run changes nothing anyone sees."
+  },
+  {
+   "id": "s272-sam-autodeploy-ruling",
+   "for": "Sam",
+   "tab": "chatbot",
+   "text": "Decide whether the assistant should deploy itself when we merge. Today its page goes live on merge and the function behind it waits for someone to push a button — the same gap that left Sierra dark for five days in September while every check said she was fine. Making it automatic removes that gap and also removes a human pause before a change reaches students. Our recommendation is to make it automatic and keep the button for undoing."
+  },
+  {
+   "id": "s272-fable-cte-asterisk-disagreement",
+   "for": "Fable",
+   "tab": "chatbot",
+   "text": "Reconcile two readings of one manual. The state's Taxonomy of Programs marks career-education programs with an asterisk, and the copy in the program export disagrees with the copy we parsed ourselves on 495 of 20,727 programs. Neither is obviously right. Until it is settled we read the marker for display only and never as a fact about a program."
+  },
+  {
+   "id": "s272-fable-verify-v2-missing",
+   "for": "Fable",
+   "tab": "chatbot",
+   "text": "One of our search files points at a test file that has never existed. The exhibit search names chatbox/verify_search_exhibits_v2.sql as the thing that proves it works, and git shows it was never written or deleted. Either write it or remove the claim — a pointer to nothing is worse than no pointer."
+  },
+  {
+   "id": "s271-sam-mycollege-eyes",
+   "for": "Sam",
+   "tab": "my-college",
+   "text": "Open My College signed out and tell us it reads right. A college with withheld rows should show a 'Withheld to protect small student counts' line inside the breakdown, and the contacts list should say which roles are staff-only rather than calling them blank. Our automated check cannot load this page's data, so your eyes are the check."
+  },
+  {
+   "id": "s271-sam-lvn-oc",
+   "for": "Sam",
+   "tab": "chatbot",
+   "text": "Confirm whether any Orange County college runs LVN ENTRY training. The COCI extract shows Cypress, Golden West and Saddleback with LVN programs, but all three are LVN-to-RN bridges for people who already hold the licence. If entry training exists and the extract misses it, that is a data gap worth recording."
+  },
+  {
+   "id": "s271-fable-health-cron",
+   "for": "Fable",
+   "tab": "chatbot",
+   "text": "Work out why Sierra's uptime check runs about four times a day when it is scheduled eight times. Observed across three days, not yet diagnosed. The gap between checks is how long an outage can sit unnoticed."
+  },
+  {
+   "id": "s266-sam-asccc-areas",
+   "for": "Sam",
+   "tab": "my-college",
+   "text": "Send the Academic Senate (ASCCC) area roster — which college sits in which area. Every Supabase column matching area, senate, asccc, zone or region was searched and none carries them. Strong Workforce regions are already solved."
+  },
+  {
+   "id": "s266-sam-cer-authority",
+   "for": "Sam",
+   "tab": "cer",
+   "text": "Decide whether the Common Exhibit Reference should canonicalize against the credential registry — adopting the issuer's own credential name and the issuing agency in place of a vote among the freehand titles colleges typed."
+  },
+  {
+   "id": "s266-fable-matcher-vocabulary",
+   "for": "Fable",
+   "tab": "my-college",
+   "text": "The occupation matcher's misses are a VOCABULARY problem, not a tuning one. Application developer and Computer Programming share no word, so no threshold reaches them. The register is live in the My College tab and discloses the gap, so this is about making it find more rather than about shipping. Closing it needs a synonym layer or the curated occupation map — and two plausible shortcuts are already measured and rejected in the code."
+  },
+  {
+   "id": "s266-fable-licenses-handout",
+   "for": "Fable",
+   "tab": "my-college",
+   "text": "Add the 369 California licenses to the college handout as a third column, beside the exhibits a college can adopt and the ones it could build. The handout already carries the accuracy caveat, so the new column needs the same treatment: say what is confirmed and what a person in the room should check."
+  },
+  {
+   "id": "s264-sam-origination-owner",
+   "for": "Sam",
+   "tab": "implementation-funding",
+   "text": "When the origination data lands, half of it works by itself and half does not. The noncredit location side switches on automatically. The landing page / portal / batch upload side waits for a deliberate one-line change, made only once the exact spellings are confirmed, and the only signal that it is waiting is a line in a daily log. Worth giving that to someone by name."
+  }
+ ],
+ "_deferred": [
+  {
+   "id": "s264-sam-sheet-remaining",
+   "for": "Sam",
+   "tab": "implementation-funding",
+   "text": "One thing from the 15 September decision sheet is yours: a note to MAP about the Dashboard's \"Eligible\" label, which actually shows applied credit. It is drafted and waiting for you to send at docs/map_eligible_label_note_draft.md — check the figures again first, because the reconciliation is the whole argument."
+  },
+  {
+   "id": "s259-fable-verify-v66-after-deploy",
+   "for": "Fable",
+   "tab": "cobi-assistant",
+   "text": "After Sam's deploy, read the new log columns: how many turns came from a signed-in reviewer, how many from the team phrase, how many from the public, and from which surface. The count of six real questions in thirty hours could not tell the COBI tabs from the public page; now it can. Also show those two columns in Sierra Training's conversation list, which reads the same table."
+  },
+  {
+   "id": "s259-fable-sierra-bubble-ui",
+   "for": "Fable",
+   "tab": "cobi-assistant",
+   "text": "Build the floating assistant bubble on every COBI tab — Sam's ask from the 11th. The flag it needed exists now; the control does not. It mounts the same assistant the CPL Assistant tab uses, in the house style, with controls at least 24 pixels tall and a single column on a phone. What a signed-in reader may additionally see is a separate decision that goes through Governance first."
+  },
+  {
+   "id": "s259-fable-health-probe-blind-spot",
+   "for": "Fable",
+   "tab": "cobi-assistant",
+   "text": "The health probe asks one simple question, so it cannot see the failure where Sierra answers broad questions with silence — it passed straight through two hours of that on the 11th. Rather than pay for a second question every run, have the probe read how many blank answers the live table recorded since its last run. That costs nothing and watches real visitors instead of its own test question."
+  },
+  {
+   "id": "s256-sam-forward-kynd-memo",
+   "for": "Sam",
+   "tab": "cobi-assistant",
+   "text": "Forward the KYND memo (vault: 20260911_Memo_map_rccd_edu_WordPress_wp2shell_Notice.docx) to whoever holds the SiteGround login for map.rccd.edu, filling in the TO line. Two things come back: the WordPress version on both the production site and staging2.map.rccd.edu, which the notice did not list, and whether the log search found anything. Then answer KYND. Until the site is confirmed clean, the Monday job that copies the site's story cards onto the Fact Sheet keeps running; pausing it is your call, and the current cards checked clean."
+  },
+  {
+   "id": "s255-fable-sierra-after-the-deploy",
+   "for": "Fable",
+   "tab": "unified-courses",
+   "text": "What is left behind the assistant after Sam's two rulings of the 11th. The sixteen-row register sweep on Sonnet 5 with reasoning off has still not been run — it is the hardest thing she does and the one caller with no record yet, and it now matters more than it did: the check for whether her answers are being cut short came back clean, but almost nobody is using her yet (six real questions in thirty hours against four hundred and forty of our own), so watching live traffic mostly watches ourselves. The sweep is the only test that would really exercise the new, much higher answer limit. After it, an A/B of private reasoning at low effort on the preview copy, but only if the sweep shows a gap — Sam's words were \"test for better options if they exist.\""
+  },
+  {
+   "id": "s255-fable-sheet-rulings-outstanding",
+   "for": "Fable",
+   "tab": "unified-courses",
+   "text": "Eleven decisions from the sheet of the 11th are settled and waiting to be built. Two carry an instruction rather than a plain yes: every panel tint becomes the one pale gray rather than six near-identical shades, and Pierce College keeps the Los Angeles in its name — the bare spelling was a mistake, not a variant to support. The rest: a permanent name beside each statewide credential, five refinements to the CPL view, the twenty-four places asking for a colour that was never defined, the faint grey notes on the Implementation Funding tab, splitting the explainer footer so sources can be hidden, the published standard to start from, the phrase people type before moving a course, and letting an assistant instruction apply only to SkyView questions."
+  },
+  {
+   "id": "s252-sam-sweep-observations",
+   "for": "Sam",
+   "tab": "unified-courses",
+   "text": "Six observations from the full sweep of SkyView are still open for your read. You have already ruled on one of them: the check boxes stay for now, because people cannot know what is available unless the list is in front of them. The rest are waiting."
+  },
+  {
+   "id": "s252-fable-cpl-ask-and-join-check",
+   "for": "Fable",
+   "tab": "unified-courses",
+   "text": "Two follow-ups behind the CPL view. Ask SkyView on the CPL map still asks the assistant in course words (the discipline list is shared; the terms are course titles), so a question about credentials lands on discipline chips at best — the envelope needs a credential vocabulary. And the Courses map's Articulations light and the CPL map read the same record through opposite joins; a one-file test that they name the same pairs would catch the day one build drifts."
+  },
+  {
+   "id": "s251-sam-cid-descriptor-text",
+   "for": "Sam",
+   "tab": "unified-courses",
+   "text": "The statewide course descriptions you want a C-ID course to inherit are not in our data. You thought they came with the TMC tab work — that work gave us the 293 C-ID codes, which is probably what you are remembering, but not a word of the descriptive text behind them. So the ask to ASCCC is narrower than it looked: we have the identifiers and need only the descriptor prose."
+  },
+  {
+   "id": "s251-fable-dashboard-data-gaps",
+   "for": "Fable",
+   "tab": "dashboard",
+   "text": "Three things behind the daily dashboard, all data rather than display. The history file stops at 7 September because the build did not run for three days, and the gap has to be filled or the one-day comparison silently reads from the wrong date. The builder finds MAP's columns by name but falls back to a guessed position when a name moves, which is how it would produce confident wrong numbers rather than failing. And the moment MAP restores the CPL lifecycle checks, the counsellor-verified column goes back into the daily fetch."
+  },
+  {
+   "id": "s248-fable-theme-remainder",
+   "for": "Fable",
+   "tab": "team-raci",
+   "text": "What is left of the theme work, in one place. The faults still outstanding are dark greys sitting on dark backgrounds and a handful of pale backgrounds that never flipped, each individually named by the accessibility sweep. There is also a genuine bug found during that work which is wrong in both themes, not just the dark one: an unresolved brand link renders its own placeholder text. And a note for whoever picks this up — the probe that finds missing colour names reports what it fixed but not how many it found, so a run that finds nothing looks the same as a run that finds everything."
+  },
+  {
+   "id": "s246-fable-expended-sweep",
+   "for": "Fable",
+   "tab": "implementation-funding",
+   "text": "Sam's rule that expended and allocated are not interchangeable — colleges spend, the Chancellor's Office allocates — was applied at the one place it was found in the memo builder. The rest of the memo and report text has not been read against it. Check who the subject is in each sentence before changing either word; a blanket sweep would get it backwards."
+  },
+  {
+   "id": "s245-fable-unfailable-checks",
+   "for": "Fable",
+   "tab": "unified-courses",
+   "text": "Several of our own tests cannot fail. Seven files print no readable count of what they checked, so if their checks quietly vanished nobody would notice; and a test guarding a phrase that was later deleted kept passing while measuring nothing at all. This run added a third example and a habit that catches it: run a new test against the code as it was BEFORE the fix, and confirm it fails there."
+  },
+  {
+   "id": "s238-fable-dr24-surface",
+   "for": "Sam",
+   "tab": "governance",
+   "text": "DR-24 is a governance row with an owner and no surface yet: an added skill lands as proposed with the reviewer's name and the day, and joins the published outline when a second curator agrees; a removal works the same way in reverse. Building that means the map's first write, so it routes through Governance and the privacy review first."
+  },
+  {
+   "id": "s238-fable-stale-exhibits-and-funnel",
+   "for": "Fable",
+   "tab": "unified-courses",
+   "text": "Two housekeeping items behind the CPL face. Fifty-five exhibits in the articulation crosswalk are no longer in today's MAP feed; they stay on the map flagged in words rather than dropped, and the fix is a re-seed of the crosswalk from a fresh custom report. And the credit-funnel numbers the face carries for context were read by hand on 2026-09-07; refresh them after the next custom-report load."
+  }
+ ],
+ "_deferred_note": "Parked out of the RENDERED feed to hold it at budget. None of these is done -- cpl_todos.js reads `items` only. Promote one back into `items` when it goes live. Two session lineages feed this file, so it fills faster than one session's work would suggest; keep the newest twelve rendered and park the rest."
 }

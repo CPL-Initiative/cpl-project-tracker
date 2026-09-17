@@ -105,3 +105,37 @@ begin
 
   raise notice 'PART B: 2 checks passed (% rows carry a CIP).', loaded;
 end $$;
+
+-- ── PART C: phrase terms (2026-09-17) ────────────────────────────────────────
+-- Phrases exist because the LVN question cannot be asked with single tokens.
+-- C2 is the one that matters: adjacency is the whole point. `practical:*` stems
+-- to `'practic':*` and prefix-matches Architectural PRACTICE; `'practic' <->
+-- 'nurs'` cannot. If C2 ever fires, the phrase branch has fallen back to loose
+-- token matching and the noise is back.
+do $$
+declare n bigint;
+begin
+  select count(*) into n from public.search_college_programs(array['vocational nursing'], null, 300);
+  if n = 0 then
+    raise exception 'C1 FAIL: a phrase term matched nothing — the phraseto_tsquery branch is not being reached (is the term reaching the RPC with its whitespace intact?)';
+  end if;
+
+  select count(*) into n from public.search_college_programs(array['vocational nursing'], null, 600)
+   where program_title !~* 'practical|vocational|lvn|lpn|nurs';
+  if n > 0 then
+    raise exception 'C2 FAIL: the phrase matched % non-nursing rows — adjacency has been lost', n;
+  end if;
+
+  select count(*) into n from public.search_college_programs(array['zzq qqz'], null, 50);
+  if n <> 0 then raise exception 'C3 FAIL: a nonsense phrase returned % rows', n; end if;
+
+  -- The end-to-end shape of the question this was built for. The edge function
+  -- expands "How do I become an LVN?" to exactly these three terms.
+  select count(distinct college) into n from public.search_college_programs(
+    array['lvn','practical nursing','vocational nursing'], null, 600);
+  if n < 50 then
+    raise exception 'C4 FAIL: the LVN question reached only % colleges; it measured 56 on 2026-09-17 (28 before phrases)', n;
+  end if;
+
+  raise notice 'PART C: 4 checks passed.';
+end $$;

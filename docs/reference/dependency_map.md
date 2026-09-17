@@ -162,7 +162,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `nc_partner_note_revise` | tabs: `nc-learning-partners` | — |
 | `search_college_credentials` | `edgefn:cpl-chat` | — |
 | `search_college_offerings` | scripts: `chatbox/smoke_test.sh` · `edgefn:cpl-chat` | — |
-| `search_college_programs` | `edgefn:cpl-chat` | — |
+| `search_college_programs` | scripts: `chatbox/smoke_test.sh` · `edgefn:cpl-chat` | — |
 | `search_credential_volume` | `edgefn:cpl-chat` | — |
 | `search_credentials_any` | `edgefn:cpl-chat` | — |
 | `search_exhibits_by_topic` | `edgefn:cpl-chat` | — |

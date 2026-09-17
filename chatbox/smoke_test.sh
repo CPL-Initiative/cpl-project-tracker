@@ -329,6 +329,80 @@ else
   echo "::error::7r ⭐ only ${la_hits:-0} of 6 LA-basin construction teachers reached the offerings context — part 3 has no data to stand on (check detection + the 150-row limit)"; fail=1
 fi
 
+# ── MODE 7p: the PROGRAM route (what a college AWARDS) ───────────────────────
+# Sierra gained a third view of a college on 2026-09-17 — what it AWARDS, from
+# coci_college_programs. 7r above covers what a college TEACHES; neither covers
+# this, and the two answer different student questions.
+#
+# ⚠ WHY THE NOISE ASSERTION IS THE POINT. This route's failure mode is not an
+# empty answer, it is a FLUENT WRONG ONE, and it has two shapes:
+#
+#   1. A single-token synonym. "practical" is 9 characters so it takes the
+#      stemmed-prefix path, `practical:*` becomes `'practic':*`, and that
+#      prefix-matched Architectural PRACTICE, Teaching PRACTICES and PRACTICUM in
+#      Machine Shorthand — 30 of 36 added title rows were not nursing. The fix
+#      was phrase terms (phraseto_tsquery keeps adjacency).
+#   2. A phrase reaching a builder that cannot express one.
+#      to_tsquery('english', 'lvn:* | practical nursing:*') is a hard 42601, so
+#      an unguarded phrase makes search_college_offerings return NULL. Sierra
+#      then answers fluently with no course-catalog section at all — a silent
+#      degradation that neither the health probe nor a browser can see, because
+#      nothing errors and nothing looks broken.
+#
+# So this mode asserts REACH and CLEANLINESS together. Either alone passes on a
+# broken build.
+#
+# ⚠ The term list is a TRANSCRIPTION of what expandWithSynonyms produces for an
+# LVN question, and transcriptions drift silently —
+# tests/sierra_program_search.test.js block 10 re-derives it from index.ts and
+# fails the moment they part. Same guard mode 7r's literal has.
+PROGRAMS_TERMS='["lvn","practical nursing","vocational nursing"]'
+programs_call() { # json array of terms
+  curl -sS --max-time 45 -X POST "$REST_BASE/rpc/search_college_programs" \
+    -H 'Content-Type: application/json' -H "apikey: $ANON" -H "Authorization: Bearer $ANON" \
+    -d "$(printf '{"search_terms":%s,"college_filter":null,"result_limit":600}' "$1")"
+}
+echo "===================================================================="
+echo "MODE: 7p program retrieval answers the LVN question cleanly"
+negp="$(programs_call '["zzq qqz"]')"
+case "$negp" in
+  "[]") echo "  [assert ok] negative control: a nonsense PHRASE returns no programs" ;;
+  *) echo "::error::7p negative control FAILED — a nonsense phrase returned $(printf '%s' "$negp" | head -c 160). The assertions below cannot be trusted."; fail=1 ;;
+esac
+prows="$(programs_call "$PROGRAMS_TERMS")"
+case "$prows" in
+  "[{"*) echo "  [assert ok] positive control: the programs RPC returned rows" ;;
+  *) echo "::error::7p positive control FAILED — search_college_programs returned $(printf '%s' "$prows" | head -c 200)"; fail=1 ;;
+esac
+pstat=$(printf '%s' "$prows" | python3 -c '
+import json, re, sys
+try:
+    rows = json.loads(sys.stdin.read())
+    rows = rows if isinstance(rows, list) else []
+except Exception:
+    rows = []
+colleges = {r.get("college") for r in rows if r.get("college")}
+NURSING = re.compile(r"practical|vocational|lvn|lpn|nurs", re.I)
+noise = [r.get("program_title") for r in rows if not NURSING.search(r.get("program_title") or "")]
+print(len(colleges), len(noise), (noise[0] or "")[:60].replace("|", "/") if noise else "-", sep="|")
+')
+pcolleges=$(printf '%s' "$pstat" | cut -d'|' -f1)
+pnoise=$(printf '%s' "$pstat" | cut -d'|' -f2)
+pfirst=$(printf '%s' "$pstat" | cut -d'|' -f3)
+# A THRESHOLD, not a count: 56 colleges measured 2026-09-17, and a college can
+# leave the program catalog on any COCI refresh. 40 still fails loudly if the
+# phrase branch, the lvn family or the CIP load regresses (28 was the before).
+if [ "${pcolleges:-0}" -ge 40 ]; then
+  echo "  [assert ok] 7p ⭐ the LVN question reached $pcolleges colleges (56 measured; 28 before phrase terms)"
+else
+  echo "::error::7p ⭐ the LVN question reached only ${pcolleges:-0} colleges — expected 40+. Check the phrase branch (phraseto_tsquery), the lvn synonym family, and that cip_code is loaded."; fail=1
+fi
+if [ "${pnoise:-1}" -eq 0 ]; then
+  echo "  [assert ok] 7p ⭐ every program returned is nursing-worded — adjacency held"
+else
+  echo "::error::7p ⭐ ${pnoise} non-nursing program(s) came back, e.g. '${pfirst}'. A phrase has degraded to loose token matching — `practical:*` stems to `'practic':*` and prefix-matches PRACTICE/PRACTICUM."; fail=1
+fi
+
 # Broad "who teaches this" — the catalog should surface colleges that TEACH
 # construction/carpentry (not only those with an existing exhibit).
 run "8 offerings broad (who teaches construction)" \

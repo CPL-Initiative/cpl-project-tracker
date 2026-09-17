@@ -625,3 +625,159 @@ and no retrieval path touches it. That is why she declined "which Santa Ana LVN
 courses align with my CNA" — and why a session answering from offerings alone
 gets it wrong. See
 [`methodology-a-code-cannot-say-who-a-program-is-for`](kb-notes/methodology-a-code-cannot-say-who-a-program-is-for.md).
+
+## 2026-09-17 — SkyIndex (S272): the third view of a college, and three artifacts that were not regenerated
+
+**What shipped.** Sierra had three possible views of a college and held two: what
+it has ARTICULATED (`chatbox_exhibits`) and what it TEACHES
+(`coci_college_offerings`, a rollup of the 141k-row course list). What it AWARDS
+sat in `coci_college_programs` — 22,335 rows over 118 colleges — read by no
+retrieval path, which is why she declined a real student LVN question. #1601
+added `search_college_programs`, `searchCollegePrograms()` and `PROGRAMS_RULE`;
+#1602 reverted an index mistake made in the same hour; #1603 closed the two gaps
+testing it exposed.
+
+### The measurement that designed it, and why "neither gating" is the design
+
+Counting colleges for the LVN question on the active COCI export: **53 by
+program title, 44 by either code (TOP 44 / CIP 43), 56 in union** — 12 colleges
+only the title finds, 3 only a code finds. The 12 are LVN-to-RN bridges,
+correctly coded Registered Nursing in BOTH taxonomies, because **a code says
+what a program is ABOUT and cannot say who it is FOR**. Those programs require
+the license the asker wants to earn. So the function returns the union and
+reports `matched_via`, and the context builder files a code-only match in a
+separate labeled bucket rather than presenting it as the program asked for.
+
+### CIP: loaded, never gated
+
+Sam: *"Maybe use CIP instead of TOP — more reliable."* Right about direction and
+measured it does not replace TOP. CIP is blank on **13.4%** of the 22,335 active
+rows the builder keeps, **14.1%** on the `Active`-only denominator `cpl_memory`
+quotes, **29.1%** of all 29,147 export rows, against TOP's **0.0%**. Three real
+denominators, one fact counted three ways. After the sync, 19,349 of 22,335 rows
+carry a CIP. It earns its place where TOP cannot speak: `practical` returns 102
+rows through CIP's *Licensed Practical/Vocational Nurse Training*, a phrase TOP
+never uses (TOP says *Licensed Vocational Nursing*).
+
+### Generic-term frequency has to be counted PER SURFACE
+
+The one departure from `search_exhibits_by_topic_v2`'s shape. Measured:
+*technology* is **7.8%** of program titles and **16.3%** of the code vocabulary,
+so it crosses the 15% generic threshold on codes and sits well under it on
+titles. That is structural — code titles are a small controlled vocabulary
+repeated across many rows (602 active programs share the TOP title *Automotive
+Technology*) while program titles are freehand. A combined count discards a term
+that still discriminates in the place a student actually typed it.
+
+### ⚠️ An index added on reasoning is a write-path cost with no read-path benefit
+
+The migration created three GIN indexes over `cx_search_norm(program_title)` to
+keep the per-surface DF loop fast. Within the hour they broke the loader:
+`coci_programs_replace` deletes and reinserts all 22,335 rows in ONE statement,
+the table already carried a GIN FTS index and coped, and three more tripled the
+maintenance on that statement until it failed with **57014, statement timeout**.
+No data was lost (the delete+insert rolls back atomically) and every later sync
+would have failed identically, including the one carrying CIP.
+
+Then the measurement: **561.9 ms per call with them, 565.8 ms without.** Four
+milliseconds, inside the noise. 22,335 rows is a seq scan of a few milliseconds,
+and a `count(*)` over a predicate matching a large share of a table is not what
+GIN helps. The evidence was already in the design — the code surface of the same
+function has never had an index and performs identically. KB note:
+`methodology-an-index-is-a-write-path-cost-until-measured`.
+
+### ⚠️ A prefix match on a stem is not a match on the word
+
+"How do I become an LVN?" extracted `["become","lvn"]` and expanded to NOTHING:
+no `lvn` key in `TOPIC_SYNONYMS` (the table carried `lpn`, the term other states
+use, and omitted California's own) and `nearestSynonymKey("lvn")` returned null,
+so even the fuzzy last resort missed. The route reached **28 of 56** colleges.
+
+I proposed a one-line synonym to Sam and then measured it, which is what showed
+it wrong. `vocational` reaches 82 colleges against a 56 ideal. `practical` is
+worse in a subtler way: 9 characters, so it takes the stemmed-prefix path,
+`practical:*` becomes `'practic':*`, and that matched **Architectural PRACTICE,
+Teaching PRACTICES, PRACTICUM in Machine Shorthand** — 30 of the 36 title rows
+it added were not nursing. Same family as the `aed` → `'a':*` defect this file
+already records.
+
+The fix is PHRASES. `phraseto_tsquery` keeps adjacency: `'vocat' <-> 'nurs'`
+matches *Licensed Vocational Nursing* and cannot match *Architectural Practice*.
+End to end: **56 colleges, 0 non-nursing rows**, which is exactly the union
+ground truth. KB note:
+`methodology-a-prefix-match-on-a-stem-is-not-a-match-on-the-word`.
+
+Two things fell out of testing it:
+
+- **A cross-impact, computed rather than discovered.** A multi-word term would
+  have flowed into `searchCollegeOfferings`, where
+  `to_tsquery('english', 'lvn:* | practical nursing:*')` is a hard **42601** —
+  verified live. That is a PRIMARY path, so an unfiltered phrase would return
+  null and silently cost the course-catalog section on every LVN question.
+  `singleTokenTerms` filters phrases out of both `${k}:*` builders, and the test
+  asserts EVERY such builder is guarded rather than the two that exist today.
+- **`become` was a live search term**, returning "BECOMING a Social Media
+  Influencer" — the only non-nursing row in 118. It describes the ask rather
+  than the topic, which is what `TOPIC_STOP_WORDS` is for; `how`, `can` and
+  `get` were already there. The DF filter cannot catch this class: `become` is
+  rare enough to pass a frequency test and still says nothing about a topic.
+
+### ⚠️ `npm test` is not the suite, and three derived artifacts proved it
+
+CI went red on #1601 with *"the committed index and catalogs are up to date"*.
+`npm test` auto-discovers `tests/*.test.js` and nothing else; the repo's other
+**46 checks are separate `python3` steps** in `js-tests.yml`, and both failures
+lived there. "343 files, 0 failures" was true of the JS suite and silent about
+half of CI.
+
+Three derived artifacts needed regenerating across the session, each invisible
+to `npm test`: `sierra_rule_defaults.js` (from `index.ts`), the docs catalogs
+(from lane frontmatter), and `kb/dependency_map.json` — twice, the second time
+because smoke mode 7p became a new `search_college_programs` caller. SkyVeil's
+handoff names this exact trap under safety patterns (*"a local run that passes
+before the final map rebuild hides real regressions"*), and reading it at session
+start did not stop me walking into it, because I was treating `npm test` as the
+suite. **Extract the workflow's own steps and run them.**
+
+### ⚠️ A feature-branch push wrote production data
+
+`coci-offerings-sync.yml` had `on: push` with a paths filter and **no branch
+filter**, so the first push to the feature branch ran
+`sync_coci_offerings.py --apply` against the live public catalog from unreviewed
+code — run 10 rewrote all three tables before the PR had a single check finish.
+The effect happened to be the intended one, and the mechanism meant any
+`claude/*` branch touching the builder reached students' answers directly.
+`branches: [main]` in #1603.
+
+### Retired from the lane file (history, kept once)
+
+The lane carried this post-mortem, now superseded and preserved here per the
+checkpoint's retire-before-you-append rule: *"This lane read 'RECOMMENDED, NOT
+BUILT … blocked on Sam's go' for three weeks after it shipped, and S258 carried
+that line into open question 3. What Sam's '3. Yes' (2026-09-12) actually
+answered is the SCOPE-FLAG question on the To-Do he read
+(`s258-sam-sierra-bubble-scope`): whether Sierra may use non-public data is
+decided by the SERVER from the sign-in, never claimed by the page."*
+
+### Sam's decisions this run
+
+1. **"apply the migration"** — authorized applying
+   `chatbox/supabase_search_college_programs.sql` live after the harness
+   classifier refused the session's first attempt.
+2. **"do both"** — closed the sync branch filter and the LVN vocabulary gap.
+3. **Asked what he could do to prevent another Sierra outage**, which surfaced
+   that `cpl-chat-deploy.yml` is `workflow_dispatch` only and its own header says
+   it *"triggers nothing automatically"* — the same page-on-merge /
+   function-on-dispatch asymmetry behind the five-day outage. **His call is
+   pending** on whether the function should auto-deploy on merge.
+4. **Asked how we would know a deploy will break things**, which is what
+   surfaced `cpl-chat-preview-ab.yml` as the right gate: same bytes, unadvertised
+   slug, smoke modes compared against production. No Deno in the sandbox means
+   `index.ts` cannot be typechecked locally, so the preview run replaces a guess.
+
+### The state a next session inherits
+
+Program search is live and verified (A 8/8 · B 2/2 · C 4/4). The SQL half of the
+phrase work is applied. **The edge-function half — the `lvn` family, the
+`become` stop word, the `singleTokenTerms` guard — is committed and INERT until
+`cpl-chat-deploy.yml` runs.** #1603 carries it and needs merging first.
