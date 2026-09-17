@@ -33,8 +33,11 @@ Read in order: this file · [`lanes/sierra-retrieval-corpus.md`](reference/lanes
   (run 1 had three). The four Postgres timeouts in that window are mode 15d's
   deliberate anon-role probes, present in every run. The preview slug was
   deleted by the run (`cleanup=true`).
-- **Post-deploy smoke:** see the last line of the lessons doc's S273 section —
-  it was still running when this file was written; SkyMeter, confirm it first.
+- **Post-deploy smoke and health, both green on v67:** smoke run 35287560339
+  ALL MODES OK, 7p at 56 colleges and **1.60 s** on the anon key; health run
+  35287562670 green. The smoke's 19 chat turns took the same 5.7 minutes as
+  on v66, with answers ~13% longer and 8 of 19 mentioning programs (3 before).
+  Function logs since the deploy: 0 `unavailable`, 0 `EMPTY ANSWER`, 0 errors.
 
 ## YOUR SEQUENCE
 

@@ -947,8 +947,15 @@ The sequence, with what each step measured:
    the run.
 4. **Deploy** — run 35287167393, `confirm=DEPLOY`, `main` at `ab3e4a9`;
    **cpl-chat v67** at 23:31Z, `verify_jwt` false.
-5. **Post-deploy smoke and health** — dispatched 23:36Z; result recorded
-   below.
+5. **Post-deploy smoke and health** — health run 35287562670 green at
+   23:36Z; smoke run 35287560339 **ALL MODES OK** (job done 23:42:25Z), with
+   7p on the live function through the anon key: **56 colleges, adjacency
+   held, 1.60 s** (the old function measured 1.8 s there against a 3 s
+   timeout). The 19 chat turns took 5.7 minutes, the same as v66's run at
+   21:04Z; answers came out about 13% longer (1,102 vs 974 output tokens) and
+   8 of 19 mention programs or awards, against 3 on v66. Function logs since
+   the deploy: 0 `unavailable`, 0 `EMPTY ANSWER`, 0 errors. `cpl_memory`
+   milestone: `cpl-chat-v67-program-search-live-2026-09-17`.
 
 ### The state a next session inherits
 
