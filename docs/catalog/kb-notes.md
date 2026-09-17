@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-451 document(s).
+454 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -93,6 +93,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A floor lives in test fixtures as well as in code](../kb-notes/methodology-a-floor-lives-in-fixtures-as-well-as-code.md) | methodology | published | 2026-09-03 | 2026-09-03 |
 | [A floor the layout cannot go under — why a page scrolls sideways on a phone, in four spellings](../kb-notes/methodology-a-floor-the-layout-cannot-go-under.md) | methodology | published | 2026-09-09 | 2026-09-09 |
 | [A fold at the label layer is not a fold — it hides the duplicate instead of resolving it](../kb-notes/methodology-a-fold-at-the-label-layer-is-not-a-fold.md) | methodology | published | 2026-08-17 | 2026-08-17 |
+| [A freehand catalog needs an authority file, not a vote](../kb-notes/methodology-a-freehand-catalog-needs-an-authority-file-not-a-vote.md) | methodology | published | 2026-09-16 | 2026-09-16 |
 | [A gate cannot protect the step that fills it](../kb-notes/methodology-a-gate-cannot-protect-the-step-that-fills-it.md) | methodology | published | 2026-08-19 | 2026-08-19 |
 | [A generator committed behind its output is a trap, not a convenience](../kb-notes/methodology-a-generator-that-lags-its-output-is-a-trap.md) | methodology | published | 2026-09-05 | 2026-09-05 |
 | [A globe shows a hemisphere: real estate on a screen is the zoom range, not the surface](../kb-notes/methodology-a-globe-shows-a-hemisphere-real-estate-is-the-zoom-range.md) | methodology | published | 2026-09-07 | 2026-09-07 |
@@ -188,6 +189,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A test that pins a figure from a regenerated artifact fails on a data refresh, not on a defect](../kb-notes/methodology-a-test-that-pins-a-generated-figure-fails-on-a-data-refresh.md) | methodology | published | 2026-09-17 | 2026-09-17 |
 | [A test that writes to the queue it monitors — CI noise is indistinguishable from user signal](../kb-notes/methodology-a-test-that-writes-to-the-queue-it-monitors.md) | methodology | published | 2026-08-07 | 2026-08-07 |
 | [A text measure must agree with what sits beside it](../kb-notes/methodology-a-text-measure-must-agree-with-what-sits-beside-it.md) | methodology | published | 2026-08-22 | 2026-08-22 |
+| [A title match must cover the title, not merely touch it](../kb-notes/methodology-a-title-match-must-cover-the-title-not-touch-it.md) | methodology | published | 2026-09-16 | 2026-09-16 |
 | [A token that cannot flip is a surface that cannot theme — the four shapes, and why every one of them reads as correct code](../kb-notes/methodology-a-token-that-cannot-flip-is-a-surface-that-cannot-theme.md) | methodology | published | 2026-09-09 | 2026-09-10 |
 | [A token with two jobs cannot be themed — count a token's uses by ROLE before you give it a dark value](../kb-notes/methodology-a-token-with-two-jobs-cannot-be-themed.md) | methodology | published | 2026-09-08 | 2026-09-08 |
 | [A total that balances is not a total that is right](../kb-notes/methodology-a-total-that-balances-is-not-a-total-that-is-right.md) | methodology | published | 2026-08-23 | 2026-08-23 |
@@ -204,6 +206,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Agreement is not corroboration when the behavior is systematic](../kb-notes/methodology-agreement-is-not-corroboration-when-the-behaviour-is-systematic.md) | methodology | published | 2026-08-20 | 2026-08-20 |
 | [Alias maps are permutations, not graphs: resolution semantics for stacked re-keys](../kb-notes/methodology-alias-map-resolution-semantics.md) | methodology | published | 2026-06-11 |  |
 | [An affordance gated on a problem is invisible when there isn't one](../kb-notes/methodology-an-affordance-gated-on-a-problem-is-invisible-when-there-isnt-one.md) | methodology | published | 2026-08-11 | 2026-08-11 |
+| [An articulation's college list belongs to the group, not to each course in it](../kb-notes/methodology-an-articulation-college-list-belongs-to-the-group-not-the-course.md) | methodology | published | 2026-09-14 | 2026-09-14 |
 | [An assertion pinned to a mutable value stops being a guard](../kb-notes/methodology-an-assertion-pinned-to-a-mutable-value-stops-being-a-guard.md) | methodology | published | 2026-08-15 | 2026-08-15 |
 | [An auto-triggered smoke test validates the version it is replacing](../kb-notes/methodology-order-the-post-deploy-check-after-the-deploy.md) | methodology | published | 2026-08-11 | 2026-08-11 |
 | [An empty read is only evidence if the set cannot legitimately be empty](../kb-notes/methodology-an-empty-read-is-only-evidence-if-the-set-cannot-be-empty.md) | methodology | published | 2026-08-14 | 2026-08-14 |

@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 451,
+   "count": 454,
    "docs": [
     {
      "created": "2026-08-14",
@@ -1532,6 +1532,26 @@
      "title": "A fold at the label layer is not a fold \u2014 it hides the duplicate instead of resolving it",
      "type": "methodology",
      "updated": "2026-08-17"
+    },
+    {
+     "created": "2026-09-16",
+     "governs": [
+      "kb/reference/california_occupational_licenses.json",
+      "kb/reference/credential_registry_national_sample.json",
+      ".claude/skills/exhibit-canonicalization/SKILL.md"
+     ],
+     "path": "docs/kb-notes/methodology-a-freehand-catalog-needs-an-authority-file-not-a-vote.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "cer",
+      "credential-registry",
+      "canonicalization",
+      "credential-engine"
+     ],
+     "title": "A freehand catalog needs an authority file, not a vote",
+     "type": "methodology",
+     "updated": "2026-09-16"
     },
     {
      "created": "2026-08-19",
@@ -3372,6 +3392,25 @@
      "updated": "2026-08-22"
     },
     {
+     "created": "2026-09-16",
+     "governs": [
+      "kb/_build_regional_cpl_opportunity.py"
+     ],
+     "path": "docs/kb-notes/methodology-a-title-match-must-cover-the-title-not-touch-it.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "matching",
+      "crosswalk",
+      "occupations",
+      "soc",
+      "data-quality"
+     ],
+     "title": "A title match must cover the title, not merely touch it",
+     "type": "methodology",
+     "updated": "2026-09-16"
+    },
+    {
      "created": "2026-09-09",
      "governs": [],
      "path": "docs/kb-notes/methodology-a-token-that-cannot-flip-is-a-surface-that-cannot-theme.md",
@@ -3671,6 +3710,27 @@
      "title": "An affordance gated on a problem is invisible when there isn't one",
      "type": "methodology",
      "updated": "2026-08-11"
+    },
+    {
+     "created": "2026-09-14",
+     "governs": [
+      "kb/_build_occupation_cpl_crosswalk.py",
+      "kb/sjcoe_occupation_scope_map.json"
+     ],
+     "path": "docs/kb-notes/methodology-an-articulation-college-list-belongs-to-the-group-not-the-course.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "cpl",
+      "crosswalk",
+      "articulation",
+      "data-quality",
+      "map",
+      "coci"
+     ],
+     "title": "An articulation's college list belongs to the group, not to each course in it",
+     "type": "methodology",
+     "updated": "2026-09-14"
     },
     {
      "created": "2026-08-15",
@@ -9114,7 +9174,7 @@
   },
   {
    "blurb": "Workstream scratchpads. A dated section is appended at every checkpoint.",
-   "count": 78,
+   "count": 79,
    "docs": [
     {
      "created": "2026-08-14",
@@ -10530,6 +10590,31 @@
       "filter-state"
      ],
      "title": "Quick-start Chat \u2014 Workstream Lessons",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-09-16",
+     "governs": [
+      "kb/_build_regional_cpl_opportunity.py",
+      "kb/reference/coe_occupation_demand_2024_2029.json",
+      "kb/reference/bay_region_coe_demand_2024_2029.json",
+      "kb/regional_cpl_out/"
+     ],
+     "path": "docs/regional_cpl_opportunity_lessons.md",
+     "status": null,
+     "tags": [
+      "lessons",
+      "crosswalk",
+      "regional",
+      "occupations",
+      "colleges",
+      "cpl",
+      "coe",
+      "swp",
+      "handout"
+     ],
+     "title": "Regional CPL opportunity (region occupations \u00d7 colleges) \u2014 lessons",
      "type": null,
      "updated": ""
     },
@@ -13309,7 +13394,7 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 239,
+   "count": 240,
    "docs": [
     {
      "created": "2026-09-17",
@@ -13324,6 +13409,23 @@
       "testing"
      ],
      "title": "the explainer reads the model, and a test that pinned the cron's data",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-09-16",
+     "governs": [],
+     "n": 266,
+     "path": "docs/session_266_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "regional-cpl-opportunity",
+      "credential-registry",
+      "cer",
+      "matcher"
+     ],
+     "title": "SkyForge",
      "type": null,
      "updated": ""
     },
@@ -17351,5 +17453,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 901
+ "total": 906
 }

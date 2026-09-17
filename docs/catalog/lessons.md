@@ -15,7 +15,7 @@ related:
 
 Workstream scratchpads. A dated section is appended at every checkpoint.
 
-78 document(s).
+79 document(s).
 
 | Title | File | Created | Updated |
 |---|---|---|---|
@@ -77,6 +77,7 @@ Workstream scratchpads. A dated section is appended at every checkpoint.
 | [Project lifecycle — Table / Archive a project (soft-delete) lessons](../project_lifecycle_lessons.md) | `project_lifecycle_lessons.md` | 2026-06-29 |  |
 | [Public standalone pages — accessibility and mobile lessons](../public_pages_a11y_lessons.md) | `public_pages_a11y_lessons.md` | 2026-08-20 | 2026-09-09 |
 | [Quick-start Chat — Workstream Lessons](../quickstart_chat_lessons.md) | `quickstart_chat_lessons.md` | 2026-05-26 |  |
+| [Regional CPL opportunity (region occupations × colleges) — lessons](../regional_cpl_opportunity_lessons.md) | `regional_cpl_opportunity_lessons.md` | 2026-09-16 |  |
 | [Session 26 — codebase audit + remediation lessons](../session_26_audit_lessons.md) | `session_26_audit_lessons.md` | 2026-06-01 |  |
 | [Session credentials — what "signed in" means across 26 modules](../session_credentials_lessons.md) | `session_credentials_lessons.md` | 2026-08-15 |  |
 | [Sidebar / Tab Router — Workstream Lessons](../sidebar_lessons.md) | `sidebar_lessons.md` | 2026-05-27 |  |
