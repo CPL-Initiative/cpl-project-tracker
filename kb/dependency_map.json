@@ -6,7 +6,7 @@
   "edge_functions": 5,
   "file_datasets": 470,
   "external_services": 143,
-  "consumers": 337,
+  "consumers": 338,
   "workflows": 33,
   "data_js_files": 61,
   "tabs": 37
@@ -596,6 +596,13 @@
       "map-queue",
       "map-users"
      ]
+    },
+    {
+     "id": "script:chatbox/health_check.sh",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 75
     },
     {
      "id": "script:kb/_build_partner_crosswalk.py",
