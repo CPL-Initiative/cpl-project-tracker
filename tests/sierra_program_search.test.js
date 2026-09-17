@@ -42,6 +42,7 @@ function block(label, fn) {
 const FN = fs.readFileSync("chatbox/supabase/functions/cpl-chat/index.ts", "utf8");
 const SQL = fs.readFileSync("chatbox/supabase_search_college_programs.sql", "utf8");
 const VERIFY = fs.readFileSync("chatbox/verify_search_college_programs.sql", "utf8");
+const SMOKE = fs.readFileSync("chatbox/smoke_test.sh", "utf8");
 
 let M = null;
 block("lift", () => {
@@ -266,6 +267,39 @@ block("9. the phrase branch exists in the schema of record", () => {
     "the normalizer strips whitespace, so a phrase reaching it first is lost");
   check("(9) the verification file covers phrases",
     /C2 FAIL/.test(VERIFY) && /adjacency/i.test(VERIFY));
+});
+
+// ── 10. The smoke literal cannot drift from the real expansion ─────────────
+// smoke mode 7p pins the LVN term set as a shell literal. A transcription drifts
+// silently: edit TOPIC_SYNONYMS and the smoke script keeps querying the OLD
+// terms, still passes, and quietly stops testing the retrieval the function
+// performs. tests/sierra_offerings_retrieval.test.js was written for exactly
+// this failure on mode 7r's literal; this is the same guard for 7p's.
+block("10. smoke 7p agrees with index.ts", () => {
+  const m = SMOKE.match(/PROGRAMS_TERMS='(\[[^']*\])'/);
+  check("(10) mode 7p pins a term list", !!m,
+    "if the literal moved, this guard is testing nothing");
+  if (!m) return;
+  let pinned = null;
+  try { pinned = JSON.parse(m[1]); } catch (e) { /* reported below */ }
+  check("(10) …and it is valid JSON", Array.isArray(pinned));
+  if (!Array.isArray(pinned)) return;
+
+  const live = V.expandWithSynonyms(V.extractTopicKeywords("How do I become an LVN?"));
+  const a = [...pinned].sort().join("|");
+  const b = [...live].sort().join("|");
+  check("(10) ⚠ the pinned terms ARE what an LVN question expands to today",
+    a === b,
+    "smoke 7p queries " + JSON.stringify([...pinned].sort())
+    + " but index.ts now produces " + JSON.stringify([...live].sort())
+    + " — update PROGRAMS_TERMS in chatbox/smoke_test.sh");
+  check("(10) mode 7p asserts REACH and CLEANLINESS, not just rows",
+    /reached \$pcolleges colleges/.test(SMOKE) && /non-nursing program/.test(SMOKE),
+    "either assertion alone passes on a broken build — reach without cleanliness "
+    + "misses the PRACTICE/PRACTICUM noise, cleanliness without reach misses a "
+    + "phrase branch that matches nothing");
+  check("(10) …behind a negative control, like 7r",
+    /negative control: a nonsense PHRASE returns no programs/.test(SMOKE));
 });
 
 const failed = results.filter((r) => !r[1]);
