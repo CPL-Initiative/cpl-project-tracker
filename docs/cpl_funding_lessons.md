@@ -2088,3 +2088,66 @@ leaves the code working and the regex matching nothing, and that one the guard c
 - **Taking the small ask seriously.** "Align the section titles with the model's language" reads
   like a copy-edit. Doing it meant listing the tab's section names beside the page's, which is the
   only reason the id collision was ever seen.
+
+## 2026-09-16 — S265 (SkyPublius), second pass: main went red with nobody's hands on it
+
+Sam, closing out an unrelated session: *"I told it not to handle this matter but leave it to you."*
+The matter was `main` red on `test`, found by the SJCOE crosswalk session, which correctly refused
+to fix funding tests inside a crosswalk branch.
+
+### Three assertions that described yesterday's data
+
+| Suite | Assertion | Pinned | Now |
+|---|---|---|---|
+| `cpl_funding_measure_picker` | `4c` | `826.8 CPL FTES` | `pac_u` 24,804.45 → 24,847.45 = **828.2** |
+| `cpl_funding_metric_pin` | `7b` | "at most the **3** `pp_u` carriers" | **4** |
+| `cpl_funding_metric_pin` | `7b2` | `25 units` | `pp_u` 25 → **63.5**, printed 64 |
+
+All three read `cpl_funding_performance.js`, which the daily dashboard workflow rewrites. Three
+consecutive `Daily dashboard update` commits regenerated it. The measures moved by ordinary
+amounts; the assertions moved by nothing.
+
+**Bisected before blaming anything**, because the explainer merge had landed hours earlier and was
+the obvious suspect: both suites are green at `d906cf2` (before it) and green at `4a00bd9` (the
+merge itself), red only after the cron. The code was never wrong, and neither was the crosswalk
+branch — which is what its session had already established from the other side.
+
+### What it cost somebody else
+
+The crosswalk session reproduced the failure against `origin/main` in a worktree, diffed its own
+branch to prove it touched no funding file, wrote the finding up on its PR and stood down. That is
+the right call and it is an hour of work that existed only because a test lied about what was
+broken. Red `main` is a tax on every PR opened while it lasts: the first duty on a red check is to
+prove it is not yours, and here that proof took a bisect.
+
+### Deriving without making the test vacuous
+
+The fix is to compute each expectation from the same artifact the code reads. The obvious objection
+— that this can only ever pass — is answered by keeping three properties:
+
+1. the expectation is keyed to a SPECIFIC measure, so reading the wrong one still fails;
+2. the rival measure's figure is asserted ABSENT, not merely unmentioned;
+3. `chosen !== rival` is asserted outright, because if the two lanes ever agreed the comparison
+   would pass regardless of what the code read — and a check that cannot fail should say so rather
+   than wait to be trusted.
+
+For `7b`'s carrier COUNT the same shape applies structurally: the non-zero column must equal the
+`pp_u` carrier count derived from the artifact, and the portal lane must be several times thinner
+than the applied lane — which is the claim the assertion was always making ("the prose landed on
+the thin lane"), in a form the daily run cannot move.
+
+This file's own suite already did this for its option SET — it rebuilds `METRIC_SOURCES` out of the
+consumer "rather than a copy that can drift from it". The values simply never got the same
+treatment.
+
+### ⚠️ A mutation that changes nothing proves nothing
+
+Verifying the rewrite, I forced `earnFraction`'s statewide lookup to a fixed key expecting `4c` to
+fail. It passed — and my first reading was that the rewritten assertion was weak. It was not: that
+particular figure is rendered from a different path, so the mutation never moved the thing under
+test. The decisive mutation was neutering the picker's own write path, which fails `4c` by name
+along with 4b, 4e and three of section 5; pointing the portal prose rule at the applied lane fails
+`7b` and `7b2` by name.
+
+**Check that a mutation actually changed the output before drawing any conclusion from a green
+run** — in either direction. A no-op mutation looks exactly like a passing guard.

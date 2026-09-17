@@ -367,16 +367,43 @@ check("7a2: the BAKE carries no pin — its slot-2 metric is not the one the pin
   const p1vals = dataLines.map((l) => l.split(",")[iP1]);
   const p3vals = dataLines.map((l) => l.split(",")[iP3]);
   const nonzero = (a) => a.filter((v) => v !== "" && v !== "0" && !/^</.test(v));
-  check("7b: UNPINNED, the live Access prose lands on the credit portal measure — at most the 3 " +
-        "pp_u carriers read anything, every other institution a measured 0",
-    dataLines.length > 100 && nonzero(p1vals).length <= 3 &&
-    p1vals.filter((v) => v === "0").length >= 110 &&
+  // ⚠️ THE CARRIER COUNT IS DERIVED, NOT TYPED (2026-09-16). This read
+  // "at most the 3 pp_u carriers" and `>= 110` zeros. `cpl_funding_performance.js`
+  // is rewritten by the daily cron, and its 2026-09-16 run took `pp_u` from 3
+  // carriers to 4 (Modesto, Moreno Valley, Solano, West LA) and from 25 units to
+  // 63.5 — turning `main` red on a DATA REFRESH with no code change behind it,
+  // and stopping an unrelated PR that had to stand down and explain why.
+  //
+  // The invariant this assertion is actually for survives the refresh: the
+  // unpinned prose lands on the PORTAL measure, a lane almost nobody carries,
+  // rather than on the applied lane almost everybody does. So both sides are
+  // read from the artifact — exact agreement with `pp_u`'s carriers, and the
+  // thin-vs-fat comparison that says WHICH lane it landed on.
+  const carriersOf = (key) => Object.values(window.CPL_FUNDING_PERF.colleges || {})
+    .filter((r) => r && r[key] > 0).length;
+  const portal = carriersOf("pp_u"), applied = carriersOf("pa_u");
+  check("7b: UNPINNED, the live Access prose lands on the credit portal measure — exactly its " +
+        portal + " carriers read anything (the applied lane has " + applied + "), every other " +
+        "institution a measured 0",
+    dataLines.length > 100 &&
+    portal > 0 && portal * 4 < applied &&                  // the thin lane, and the check can tell
+    nonzero(p1vals).length === portal &&
+    p1vals.filter((v) => v === "0").length === dataLines.length - portal &&
     p1vals.filter((v) => v === "").length === 0);
   // ...and the statewide card shows the portal measure's own tiny raw figure —
   // the fingerprint of WHERE the prose landed.
   const cards = allCards(doc);
-  check("7b2: the statewide Access card reads the portal measure's 25 units, not the applied lane",
-    /25 units/.test(cards[0].textContent));
+  // Same treatment: the card prints the measure's own RAW units, rounded, and
+  // that figure is the fingerprint of WHERE the prose landed — so it is read
+  // from the artifact and asserted to differ from the applied lane's, which is
+  // what makes it a fingerprint rather than a number.
+  const sw = window.CPL_FUNDING_PERF.statewide;
+  const portalUnits = Math.round(sw.pp_u), appliedUnits = Math.round(sw.pa_u);
+  check("7b2: the statewide Access card reads the portal measure's own units (" + portalUnits +
+        "), not the applied lane's (" + appliedUnits + ")",
+    portalUnits !== appliedUnits &&
+    new RegExp("\\b" + portalUnits + " units\\b").test(cards[0].textContent) &&
+    !new RegExp("\\b" + appliedUnits + " units\\b").test(cards[0].textContent));
   // ⚠️ 7c USED TO READ "every pinned cell says 'no feed'", which was true only
   // while ppa_u was undelivered. The cron delivered it and the guard went red on
   // a change that was the feature working. Assert the INVARIANT instead: the pin
