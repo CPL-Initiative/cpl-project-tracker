@@ -83,6 +83,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           REASON: ${{ steps.probe.outputs.reason }}
+          SCOPE: ${{ steps.probe.outputs.scope }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           set -euo pipefail
@@ -94,7 +95,7 @@ jobs:
             "" \
             "**Probe run:** ${RUN_URL}" \
             "" \
-            "Every Sierra surface is affected at once: the public page, the COBI tab, the Fact Sheet drawer, map.rccd.edu, the college landing pages and the vendor iframe." \
+            "**Who is affected:** ${SCOPE:-(not captured)}" \
             "" \
             "This issue closes itself on the next successful probe." \
             "" \
