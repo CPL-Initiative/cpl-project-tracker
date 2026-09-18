@@ -2667,7 +2667,7 @@ function buildOfferingsContext(
     return s;
   };
 
-  let ctx = "\n\n--- Course Catalog: WHICH COLLEGES TEACH THIS (COCI offerings — what a college teaches, NOT whether it has a CPL articulation yet) ---\n";
+  let ctx = "\n\n--- Course Catalog: WHICH COLLEGES TEACH THIS (college catalog data — what a college teaches, NOT whether it has a CPL articulation yet) ---\n";
   ctx += `${byCollege.size} college(s) shown below currently teach course(s) in this area (TOP matches — NOT an exhaustive list; more colleges may teach it).\n`;
 
   if (askedCollege) {
@@ -2678,7 +2678,7 @@ function buildOfferingsContext(
       ctx += `\n### ${askedCollege} teaches only RELATED programs (not the core discipline) — mention these lightly, then point to the nearest colleges that teach the core discipline (below):`;
       ctx += fmtCollege(askedCollege, askedRaw);
     } else {
-      ctx += `\n### ${askedCollege} does NOT appear to teach courses in this area in the current COCI catalog — point to the nearest colleges that do (below).\n`;
+      ctx += `\n### ${askedCollege} does NOT appear to teach courses in this area in the current catalog data — point to the nearest colleges that do (below).\n`;
     }
   }
 
@@ -2690,7 +2690,7 @@ function buildOfferingsContext(
     const here = others.filter(([, g]) => proximityBand(g, askedGeo) >= (askedGeo.county ? 3 : 2));
     ctx += here.length
       ? `\n### In ${askedGeo.label}: ${here.length} college(s) teach in this area — they are listed first below.\n`
-      : `\n### The current COCI catalog lists no college in ${askedGeo.label} teaching courses matching this. Say what the catalog shows — never that no college in ${askedGeo.label} has or teaches it — name any related programs the program catalog section lists there, then offer the nearest colleges below (county and distance shown) as the realistic route, with the standing caveat that teaching is not a guarantee of credit.\n`;
+      : `\n### The current catalog data lists no college in ${askedGeo.label} teaching courses matching this. Say what the catalog data shows — never that no college in ${askedGeo.label} has or teaches it — name any related programs the program catalog section lists there, then offer the nearest colleges below (county and distance shown) as the realistic route, with the standing caveat that teaching is not a guarantee of credit.\n`;
   }
   if (others.length) {
     ctx += `\n### ${askedCollege ? "Other colleges" : "Colleges"} that teach this (nearest first when a home college is known):\n`;
@@ -2771,12 +2771,12 @@ function buildProgramsContext(
       || cmpKm(proximityKm(a[0], askedGeo), proximityKm(b[0], askedGeo))
       || (volume(b[1]) - volume(a[1])));
 
-  let ctx = "\n\n--- Program Catalog: WHICH COLLEGES AWARD THIS (COCI programs — the degrees and certificates a college confers, NOT a CPL articulation) ---\n";
+  let ctx = "\n\n--- Program Catalog: WHICH COLLEGES AWARD THIS (program catalog data — the degrees and certificates a college confers, NOT a CPL articulation) ---\n";
   ctx += `${byCollege.size} college(s) below have a matching program. This is the TOP matching set, NOT an exhaustive list.\n`;
 
   if (askedCollege) {
     if (askedRaw) ctx += `\n### ${askedCollege} — what it awards in this area:` + fmtCollege(askedCollege, askedRaw);
-    else ctx += `\n### ${askedCollege} has no matching program in the current COCI export — say you are not certain from the data at hand rather than that it has none.\n`;
+    else ctx += `\n### ${askedCollege} has no matching program in the current program catalog data — say you are not certain from the data at hand rather than that it has none.\n`;
   }
   // Same fact, same reason as the offerings builder: a county with no matching
   // program is an ANSWER, and the model must not soften it into "not certain".
@@ -2784,7 +2784,7 @@ function buildProgramsContext(
     const here = others.filter(([, g]) => proximityBand(g, askedGeo) >= (askedGeo.county ? 3 : 2));
     ctx += here.length
       ? `\n### In ${askedGeo.label}: ${here.length} college(s) have a matching program — they are listed first below. Read each title and award before calling any of them the program asked for (a bridge such as "LVN to RN" is for people who already hold the license). When another section says the catalog lists no college in ${askedGeo.label} for the entry program, these are the related programs it does list there — name them.\n`
-      : `\n### The current COCI program export lists no college in ${askedGeo.label} with a matching program. Say what the export shows — never that no college in ${askedGeo.label} offers it — then name the nearest colleges below that award it, with their county and distance.\n`;
+      : `\n### The current program catalog data lists no college in ${askedGeo.label} with a matching program. Say what the catalog data shows — never that no college in ${askedGeo.label} offers it — then name the nearest colleges below that award it, with their county and distance.\n`;
   }
   if (others.length) {
     ctx += `\n### ${askedCollege ? "Other colleges" : "Colleges"} with a matching program (nearest first when a home college is known):\n`;
@@ -3029,6 +3029,332 @@ async function fetchProgramCourses(pairs: Array<any>, sb: any): Promise<any[] | 
   return data && data.length > 0 ? data : null;
 }
 
+// ── THE QUICK LIST, THE PRECEDENT IN THE BLOCK, THE FLYER (v72, 2026-09-18, S276) ──
+// Sam, after reading v71's Orange County answer ("it's returning expected
+// results now"):
+//
+//   "Goal now would be for her to be able to add near the start of her detailed
+//    answer a quick list view of the typical CNA course next to typical LVN
+//    courses. The user did not say where they did their CNA, so being able to
+//    generalize is an added skill level for Sierra. Response could be thought
+//    of as a flyer — Have a CNA Cert? Ask for your credit toward LVN, Rad Tech,
+//    ADN, Med Asst, Surgical Tech, Sterilization Tech, Phlebotomy… if Sierra
+//    were a counselor, she would have this at her fingertips for the student."
+//
+// Three instruments, all retrieval, none prose:
+//
+//   THE QUICK LIST. program_typical_courses() (chatbox/supabase_program_typical_
+//   courses.sql) aggregates chatbox_college_courses STATEWIDE per TOP program:
+//   for every normalized course title, how many of the colleges teaching the
+//   program list it (49 of 65 CNA colleges list a Nurse Assistant course;
+//   Fundamentals of Nursing, Vocational Nursing I and Pharmacology lead the 44
+//   LVN colleges — measured 2026-09-18). The block renders the held program's
+//   typical courses (what the credential covers, generalized because nobody
+//   named the CNA's college) beside the target program's (what to ask about),
+//   and PROSPECTIVE_RULE asks for a two-column table right after the first
+//   paragraph. Counts are in COLLEGES, never rows.
+//
+//   THE PRECEDENT, IN THE BLOCK. Three of the last four Orange County answers
+//   dropped Chaffey's NURVN 414 while the credential record carried it: the
+//   rule said "cite the precedent" and the record sat in another section.
+//   buildPrecedentLines renders the held credentials' recommendation lines and
+//   adopter names HERE, and says "none on record" in words only when the record
+//   was read and holds none — never when the read failed.
+//
+//   THE FLYER. RELATED_PROGRAMS is the CPL team's counselor list, keyed by the
+//   TOP program that trains the credential held: the programs whose first
+//   courses the credential's training commonly overlaps (Sam's list, above).
+//   Curated knowledge, attributed; the catalog data checks every line — how
+//   many colleges teach the program statewide, whether one is in the visitor's
+//   place, the nearest that do, its typical first courses. Never a
+//   determination: every line is a request to a CPL coordinator.
+//
+// TOP is the KEY here, never a gate: it is how the catalog data groups a program
+// (the grouping the block has used since v69), and a crosswalk entry is the
+// curator's judgment, not an inference from a code.
+const TYPICAL_COURSES_PER_PROGRAM = 8;
+const FLYER_COURSES_PER_PROGRAM = 2;
+const FLYER_NAMES = 2;
+// { [heldTop]: { label, aliases (the visitor's words that name the credential,
+// lower-case), targets: [{ top, label }] } }. Codes from the program catalog
+// data's own titles (coci_college_offerings, 2026-09-18): Sterile Processing
+// programs are coded Hospital Central Service Technician (1209.00), Surgical
+// Technology is Surgical Technician (1217.00), Phlebotomy has its own code
+// (1205.10), Medical Assisting is 1208.00 (its clinical and administrative
+// options sit under 1208.10 and 1208.20 and are not listed separately).
+const RELATED_PROGRAMS: Record<string, any> = {
+  "1230.30": {
+    label: "Certified Nurse Assistant (CNA)",
+    aliases: ["cna", "nurse assistant", "nursing assistant", "certified nurse assistant", "certified nursing assistant", "nurse aide", "nursing aide"],
+    targets: [
+      { top: "1230.20", label: "Vocational Nursing (LVN)" },
+      { top: "1230.10", label: "Registered Nursing (ADN / RN)" },
+      { top: "1208.00", label: "Medical Assisting" },
+      { top: "1205.10", label: "Phlebotomy" },
+      { top: "1225.00", label: "Radiologic Technology (Rad Tech)" },
+      { top: "1217.00", label: "Surgical Technology" },
+      { top: "1209.00", label: "Sterile Processing (Central Service Technician)" },
+    ],
+  },
+};
+
+// The program that trains the credential the visitor holds: its title names a
+// held term, or it is the same kind of thing as a held phrase or a held title.
+// Shared by the block's BACKGROUND mark and the flyer's held-program lookup, so
+// the two can never disagree about which program is the visitor's own.
+function isBackgroundTitle(title: string, terms: Array<string>, heldPhrases: Array<string>, credentials: Array<string>): boolean {
+  const ts = (terms || []).filter(Boolean);
+  if (ts.length === 0) return false;
+  return namesHeld(title, ts)
+    || (heldPhrases || []).some((p) => sameKind(title, p))
+    || (credentials || []).some((c) => sameKind(title, c));
+}
+
+// The TOP programs that train the credential held. The picked programs the
+// BACKGROUND mark falls on — with the block's own fail-safe: when every picked
+// program would be background, none is (a visitor who says "I have nursing
+// experience" has named no program), and only a crosswalk alias the visitor's
+// words name exactly ("cna") can still say which. With no picks at all, the
+// alias is the only path.
+function heldProgramTops(pairs: Array<any>, heldPhrases: Array<string>, heldTerms: Array<string>, credentials: Array<string>): Array<string> {
+  const terms = [...(heldTerms || []), ...(heldPhrases || [])].filter(Boolean);
+  const tops: Array<string> = [];
+  const background: Array<string> = [];
+  for (const p of pairs || []) {
+    if (!p || !p.top_code) continue;
+    if (!tops.includes(p.top_code)) tops.push(p.top_code);
+    if (!background.includes(p.top_code) && isBackgroundTitle(p.top_title || "", terms, heldPhrases || [], credentials || [])) background.push(p.top_code);
+  }
+  if (background.length > 0 && background.length < tops.length) return background;
+  const out: Array<string> = [];
+  const lower = terms.map((t) => String(t).toLowerCase().trim());
+  for (const top of Object.keys(RELATED_PROGRAMS)) {
+    const aliases: Array<string> = RELATED_PROGRAMS[top].aliases || [];
+    if (aliases.some((a) => lower.includes(a))) out.push(top);
+  }
+  return out;
+}
+
+// The flyer's targets for the held programs, in the team's order, each once.
+function relatedProgramTops(heldTops: Array<string>): Array<any> {
+  const out: Array<any> = [];
+  for (const t of heldTops || []) {
+    const entry = RELATED_PROGRAMS[t];
+    if (!entry) continue;
+    for (const x of entry.targets || []) {
+      if (!out.some((o) => o.top === x.top)) out.push({ top: x.top, label: x.label, from: t });
+    }
+  }
+  return out;
+}
+
+// A title the college typed in capitals renders in title case; a mixed-case
+// title is left as the college wrote it.
+const TITLE_SMALL_WORDS = new Set(["of", "and", "for", "to", "in", "the", "a", "an", "with", "or", "on", "at", "by"]);
+function titleCaseIfShouting(t: string): string {
+  const s = String(t || "").trim();
+  if (!s || s !== s.toUpperCase() || !/[A-Z]/.test(s)) return s;
+  const parts = s.toLowerCase().split(/(\s+|\/)/);
+  let word = 0;
+  return parts.map((w) => {
+    if (!w.trim() || w === "/") return w;
+    word++;
+    if (/^(i|ii|iii|iv|v|vi|vii|viii|ix|x)$/.test(w)) return w.toUpperCase();
+    if (word > 1 && TITLE_SMALL_WORDS.has(w)) return w;
+    return w.charAt(0).toUpperCase() + w.slice(1);
+  }).join("");
+}
+
+// The same content stems in any order are one course family: the RPC's rows are
+// folded on that key and their college arrays unioned, so a count stays a count
+// of colleges after the fold.
+function typicalFoldKey(norm: string): string {
+  return [...contentStems(norm)].sort().join(" ");
+}
+// Groups the RPC's rows per program, folds same-stem rows, ranks by colleges and
+// caps. Returns Map top_code → { top_code, top_title, program_colleges,
+// courses: [{ title, n, units, example, credit, noncredit }] }.
+function foldTypicalRows(rows: any[] | null, cap: number = TYPICAL_COURSES_PER_PROGRAM): Map<string, any> {
+  const out = new Map<string, any>();
+  for (const r of rows || []) {
+    if (!r || !r.top_code || !r.norm) continue;
+    if (!out.has(r.top_code)) {
+      out.set(r.top_code, { top_code: r.top_code, top_title: r.top_title || r.top_code, program_colleges: Number(r.program_colleges) || 0, groups: new Map<string, any>() });
+    }
+    const prog = out.get(r.top_code);
+    const key = typicalFoldKey(r.norm) || r.norm;
+    let g = prog.groups.get(key);
+    if (!g) {
+      // The first row for a key is the largest (the RPC orders by colleges): its
+      // title, units and example lead the family.
+      g = { title: titleCaseIfShouting(r.modal_title || r.norm), colleges: new Set<string>(), n: 0, units: r.modal_units,
+            example: r.example_college && r.example_code ? `${r.example_college} · ${r.example_code}` : "", credit: 0, noncredit: 0 };
+      prog.groups.set(key, g);
+    }
+    for (const c of (Array.isArray(r.colleges) ? r.colleges : [])) g.colleges.add(c);
+    g.n = Math.max(g.n, g.colleges.size, Number(r.n_colleges) || 0);
+    g.credit += Number(r.credit_rows) || 0;
+    g.noncredit += Number(r.noncredit_rows) || 0;
+  }
+  for (const prog of out.values()) {
+    prog.courses = [...prog.groups.values()]
+      .map((g) => ({ title: g.title, n: Math.max(g.colleges.size, g.n), units: g.units, example: g.example, credit: g.credit, noncredit: g.noncredit }))
+      .sort((a, b) => (b.n - a.n) || (a.title < b.title ? -1 : a.title > b.title ? 1 : 0))
+      .slice(0, cap);
+    delete prog.groups;
+  }
+  return out;
+}
+function typicalUnitsText(c: any): string {
+  const u = Number(c.units);
+  if (u > 0) return `usually ${u} unit${u === 1 ? "" : "s"}`;
+  if (c.credit > 0 && c.noncredit > 0) return "credit at some colleges, noncredit at others";
+  return "usually noncredit";
+}
+
+// The QUICK LIST the model turns into the two-column table. `programs` are the
+// block's sections with their role (background true = the program that trains
+// the credential held; false = the program the visitor wants to enter; null =
+// unknown, the fail-safe case). The held program renders first — what the
+// credential covers, then what to ask about. A program the RPC returned no
+// rows for is skipped; one column is better than none.
+function buildQuickList(typical: Map<string, any>, programs: Array<any>): string {
+  const list = [...(programs || [])].sort((a, b) => ((b.background === true ? 1 : 0) - (a.background === true ? 1 : 0)));
+  const parts: Array<string> = [];
+  for (const p of list) {
+    const prog = typical.get(p.top_code);
+    if (!prog || !prog.courses || prog.courses.length === 0) continue;
+    const role = p.background === true
+      ? "the program that trains the credential held — what the credential covers"
+      : p.background === false ? "the program the visitor wants to enter — what to ask about" : "a program the question matched";
+    let s = `## Typical ${prog.top_title} courses (${role}; ${prog.program_colleges} colleges teach the program statewide):\n`;
+    for (const c of prog.courses) {
+      s += `  - ${c.title} — at ${c.n} of ${prog.program_colleges} colleges (`;
+      s += c.example ? `e.g. ${c.example}; ${typicalUnitsText(c)})\n` : `${typicalUnitsText(c)})\n`;
+    }
+    parts.push(s);
+  }
+  if (parts.length === 0) return "";
+  return `\nQUICK LIST — typical courses in each program, STATEWIDE, from the college catalog data: for each course name, how many of the colleges teaching the program list it (counted in colleges — the theory, lab and clinical sections of one course count once). The visitor did not say where they trained, so the held program's list generalizes across every college that teaches it. Render it as the two-column table the rule describes, right after the first paragraph.\n` + parts.join("");
+}
+
+// PRECEDENT ON RECORD, rendered inside the block. A college is paired with a
+// course only when the record names exactly one adopter for the line (the
+// alignment rule's "never pair a specific college to a specific course" holds
+// otherwise). A null record means it was not read this turn — say nothing
+// rather than "none"; an empty held list means the visitor named no credential.
+function buildPrecedentLines(heldTitles: Array<string>, recs: Map<string, any> | null, adopters: Map<string, any> | null): string {
+  if (!recs || !heldTitles || heldTitles.length === 0) return "";
+  const lines: Array<string> = [];
+  for (const t of heldTitles) {
+    const rec = recs.get(t);
+    if (!rec || !Array.isArray(rec.recs) || rec.recs.length === 0) continue;
+    const names: Array<string> = (adopters && adopters.get(t) ? adopters.get(t) : []).map((a: any) => a && a.name).filter(Boolean);
+    for (const line of rec.recs) {
+      const credit = line.title || line.credit || "";
+      if (!credit) continue;
+      const course = line.example_course ? ` (${line.example_course})` : "";
+      const n = Number(line.colleges) || Number(rec.n_adopter_colleges) || 0;
+      if (n === 1 && names.length === 1) lines.push(`  - ${names[0]} articulated ${t} against ${credit}${course}`);
+      else lines.push(`  - ${n || "some"} college(s) articulated ${t} as ${credit}${course}${names.length ? ` — adopters on record: ${names.slice(0, 5).join(", ")}` : ""}`);
+    }
+  }
+  if (lines.length === 0) {
+    return `\nPRECEDENT ON RECORD for the credential held: none — the credential record holds no college that has articulated it against a named course yet. Say so in words and say the request would be a first; never invent one.\n`;
+  }
+  return `\nPRECEDENT ON RECORD for the credential held (from the credential record — cite the college, the course and the units as the evidence that the match has been made before; a general-education award is a precedent for credit, not for a program course):\n${lines.join("\n")}\n`;
+}
+
+// The FLYER: other programs the held credential commonly counts toward — the
+// team's list, checked against the catalog data. `teachers` are
+// coci_college_offerings rows for the target programs (college, top_code,
+// top_title, course_count); geography comes from geoMap and the campus points.
+// `skipTops` are the programs the block already renders in full.
+function buildRelatedPrograms(
+  heldTops: Array<string>, targets: Array<any>, teachers: any[] | null, typical: Map<string, any>,
+  askedCollege: string | null, askedGeo: any | null, geoMap: Map<string, any> | null, skipTops: Array<string> = [],
+): string {
+  if (!heldTops || heldTops.length === 0 || !targets || targets.length === 0) return "";
+  const heldLabel = heldTops.map((t) => (RELATED_PROGRAMS[t] && RELATED_PROGRAMS[t].label) || t).join(" / ");
+  const byTop = new Map<string, any[]>();
+  for (const r of teachers || []) {
+    if (!r || !r.college || !r.top_code) continue;
+    const list = byTop.get(r.top_code) || [];
+    if (!list.some((x) => x.college === r.college)) list.push(r);
+    byTop.set(r.top_code, list);
+  }
+  const lines: Array<string> = [];
+  for (const t of targets) {
+    if ((skipTops || []).includes(t.top)) continue;
+    const rows = byTop.get(t.top) || [];
+    const prog = typical.get(t.top);
+    const statewide = Math.max(rows.length, (prog && prog.program_colleges) || 0);
+    // Nothing in the catalog data for it: leave the line out rather than name a
+    // program no college teaches.
+    if (!statewide) continue;
+    const withGeo = rows.map((r) => {
+      const g = geoMap ? geoMap.get(r.college) : null;
+      return { college: r.college, band: proximityBand(g || null, askedGeo), km: proximityKm(r.college, askedGeo), courses: Number(r.course_count) || 0 };
+    }).sort((a, b) =>
+      ((b.college === askedCollege ? 1 : 0) - (a.college === askedCollege ? 1 : 0))
+      || (b.band - a.band) || cmpKm(a.km, b.km) || (b.courses - a.courses)
+      || (a.college < b.college ? -1 : a.college > b.college ? 1 : 0));
+    let s = `  - ${t.label} — ${statewide} college(s) teach it statewide`;
+    let placed = false;
+    if (askedCollege) {
+      s += withGeo.some((r) => r.college === askedCollege) ? `; ${askedCollege} teaches it` : `; the catalog data lists no course in it at ${askedCollege}`;
+    } else if (askedGeo && askedGeo.label) {
+      const here = withGeo.filter((r) => r.band >= (askedGeo.county ? 3 : 2));
+      if (here.length) {
+        s += `; in ${askedGeo.label}: ${here.length} (${here.slice(0, FLYER_NAMES).map((r) => r.college).join(", ")}${here.length > FLYER_NAMES ? ", …" : ""})`;
+        placed = true;
+      } else {
+        s += `; the catalog data lists none in ${askedGeo.label}`;
+      }
+    }
+    const nearest = withGeo.filter((r) => r.college !== askedCollege).slice(0, FLYER_NAMES);
+    if (!placed && nearest.length && (askedGeo || askedCollege)) {
+      s += `; nearest: ${nearest.map((r) => { const d = distanceText(r.college, askedGeo); return r.college + (d ? ` (${d})` : ""); }).join(", ")}`;
+    }
+    if (prog && prog.courses && prog.courses.length) {
+      s += `; typical first courses: ${prog.courses.slice(0, FLYER_COURSES_PER_PROGRAM).map((c: any) => c.title).join(", ")}`;
+    }
+    lines.push(s + ".");
+  }
+  if (lines.length === 0) return "";
+  return `\nOTHER PROGRAMS A ${heldLabel.toUpperCase()} COMMONLY COUNTS TOWARD — the CPL team's counselor list (Sam Lee, 2026-09-18), checked against the catalog data: the training behind the credential overlaps the first courses of these programs, so each is a request to that college's CPL coordinator, never a determination. Offer them briefly at the END of the answer, one line each with the nearest college and the first course to ask about, as what else is worth asking; the visitor can ask about any of them next.\n${lines.join("\n")}\n`;
+}
+
+// One RPC for the typical-courses lists of every program the block will name.
+// Fails safe to null: no QUICK LIST and no flyer courses, nothing else lost.
+async function fetchTypicalCourses(tops: Array<string>, sb: any): Promise<any[] | null> {
+  const codes = [...new Set((tops || []).filter(Boolean))];
+  if (codes.length === 0) return null;
+  const { data, error } = await sb.rpc("program_typical_courses", { top_codes: codes, min_colleges: 2, per_top: 40 });
+  if (error) {
+    console.error("typical courses unavailable:", error.message);
+    return null;
+  }
+  return data && data.length > 0 ? data : null;
+}
+// Who teaches the flyer's programs: one PostgREST read of the offerings rollup
+// (a row per college × program). Fails safe to null: the flyer then carries the
+// statewide counts from the typical-courses read and no nearest college.
+async function fetchProgramTeachers(tops: Array<string>, sb: any): Promise<any[] | null> {
+  const codes = [...new Set((tops || []).filter(Boolean))];
+  if (codes.length === 0) return null;
+  const { data, error } = await sb.from("coci_college_offerings")
+    .select("college, top_code, top_title, course_count")
+    .in("top_code", codes)
+    .order("top_code").order("college")
+    .limit(1000);
+  if (error) {
+    console.error("program teachers unavailable:", error.message);
+    return null;
+  }
+  return data && data.length > 0 ? data : null;
+}
+
 // The block the model reads. Grouped by TOP program, then by college in the
 // order pickProspectivePairs chose; a place with no college teaching the program
 // is TOLD, in words, for the reason buildOfferingsContext gives — without the
@@ -3041,6 +3367,10 @@ function buildProspectiveContext(
   askedGeo: any | null,
   heldPhrases: Array<string> = [],
   heldTerms: Array<string> = [],
+  // v72: { typical (foldTypicalRows), teachers, recs, adopters, geoMap } — each
+  // optional, each fail-safe; a null extras renders the v71 block plus the
+  // college on every course line.
+  extras: any = null,
 ): string {
   if (!pairs || pairs.length === 0 || !courses || courses.length === 0) return "";
   const pairKey = (c: string, t: string) => `${c}||${t}`;
@@ -3064,11 +3394,8 @@ function buildProspectiveContext(
   // or a held credential title. Never every section — with nothing left to be
   // the target, no section is marked and the order is the picks' own.
   const terms = [...(heldTerms || []), ...(heldPhrases || [])].filter(Boolean);
-  const isBackground = (title: string): boolean =>
-    terms.length > 0 && (namesHeld(title, terms)
-      || (heldPhrases || []).some((p) => sameKind(title, p))
-      || (credentials || []).some((c) => sameKind(title, c)));
-  const sections: Array<{ text: string; background: boolean }> = [];
+  const isBackground = (title: string): boolean => isBackgroundTitle(title, terms, heldPhrases || [], credentials || []);
+  const sections: Array<any> = [];
   for (const [top, plist] of byTop) {
     const title = plist[0]?.top_title || top;
     let section = "";
@@ -3076,7 +3403,7 @@ function buildProspectiveContext(
       const here = plist.filter((p) => p.band >= (askedGeo.county ? 3 : 2));
       section += here.length > 0
         ? `In ${askedGeo.label}: ${here.length} of the colleges below.\n`
-        : `The COCI catalog lists no college in ${askedGeo.label} teaching this program. State it as what the catalog shows, never as a fact about ${askedGeo.label}; the program catalog section names any related programs there (a bridge such as LVN to RN is for people who already hold the license) — name them. The colleges below are the nearest that do teach it — name them with their county and distance so the visitor can judge the trip.\n`;
+        : `The catalog data lists no college in ${askedGeo.label} teaching this program. State it as what the catalog data shows, never as a fact about ${askedGeo.label}; the program catalog section names any related programs there (a bridge such as LVN to RN is for people who already hold the license) — name them. The colleges below are the nearest that do teach it — name them with their county and distance so the visitor can judge the trip.\n`;
     }
     let sectionRendered = 0;
     for (const p of plist) {
@@ -3085,7 +3412,10 @@ function buildProspectiveContext(
       sectionRendered++;
       section += `### ${p.college}${geoLabel(p, distanceText(p.college, askedGeo))} — ${rows.length} course(s) in this program:\n`;
       for (const r of rows.slice(0, PROSPECTIVE_COURSES_PER_COLLEGE)) {
-        section += `  - ${r.subject} ${r.course_number} — ${r.course_title}`;
+        // THE COLLEGE IS ON EVERY LINE (v72): v71 attached Mt. San Antonio's VOC VN1
+        // to Golden West once (chat_interactions 39a328be) — a course under a heading
+        // with no college on the line can be re-attached to a nearer college.
+        section += `  - ${p.college} · ${r.subject} ${r.course_number} — ${r.course_title}`;
         const units = Number(r.units);
         if (units > 0) section += ` (${units} units)`;
         else if (/noncredit|non-enhanced|enhanced funding/i.test(String(r.credit_type || ""))) section += ` (noncredit)`;
@@ -3101,24 +3431,34 @@ function buildProspectiveContext(
       const head = `\n## ${title} (TOP ${top})`
         + (background ? ` — BACKGROUND: the program that trains the credential the visitor holds; never the course to ask about` : ``)
         + `\n`;
-      sections.push({ text: head + section, background });
+      sections.push({ text: head + section, background, top, title });
     }
   }
   if (sections.length === 0) return "";
   const targets = sections.filter((x) => !x.background);
   // Fail-safe: a block with no target section is rendered unmarked, in order.
   const marked = targets.length > 0 && targets.length < sections.length;
-  let out = `\n\n--- PROSPECTIVE CREDIT: what a credential could count toward (COCI course lists for the programs asked about) ---\n`;
+  let out = `\n\n--- PROSPECTIVE CREDIT: what a credential could count toward (course lists from the college catalog data for the programs asked about) ---\n`;
   out += `The visitor holds a credential`;
   if (heldPhrases && heldPhrases.length > 0) out += ` — ${heldPhrases.map((p) => `"${p}"`).join(", ")} in their words`;
   if (credentials.length > 0) out += ` (matched in the credential record above as ${credentials.join("; ")})`;
-  out += ` and is asking which courses it might count toward. Below, for each program the question matched, the course list at the colleges nearest ${who} that teach it, nearest first, with the distance in miles where it is known. `;
+  out += ` and is asking which courses it might count toward. Below, for each program the question matched, the course list at the colleges nearest ${who} that teach it, nearest first, with the distance in miles where it is known. Every course line names its college first — a course belongs to the college on its own line and to no other. `;
   if (marked) {
     out += `The section marked BACKGROUND is the program that trains the credential the visitor already holds: read it to see what the credential covers, and never name one of its courses as the course to ask about — the first course you name comes from a section without that mark, which is listed first. `;
   }
   out += `Compare the credential's content with the program's ENTRY-LEVEL courses (fundamentals, foundations, introduction, transition, basic, level I) and present the closest as what to ASK that college's CPL coordinator to review — the college decides. `;
   out += `Where the credential record carries a precedent (a college that articulated this credential against a named course), cite it as the evidence that the match has been made before.\n`;
   const ordered = marked ? [...targets, ...sections.filter((x) => x.background)] : sections;
+  // v72: the QUICK LIST, the PRECEDENT ON RECORD and the FLYER render BEFORE the
+  // course lists, so the model reads them where it reads the courses. The
+  // precedent needs a holding phrase (with none, the held titles are every
+  // matched title and an LVN award would read as the CNA holder's precedent).
+  const typical: Map<string, any> = extras && extras.typical instanceof Map ? extras.typical : new Map<string, any>();
+  out += buildQuickList(typical, ordered.map((x) => ({ top_code: x.top, background: marked ? x.background : null })));
+  if (extras && extras.recs && (heldPhrases || []).length > 0) out += buildPrecedentLines(credentials, extras.recs, extras.adopters || null);
+  const heldTops = heldProgramTops(pairs, heldPhrases || [], heldTerms || [], credentials || []);
+  out += buildRelatedPrograms(heldTops, relatedProgramTops(heldTops), extras ? extras.teachers || null : null, typical,
+    askedCollege, askedGeo, extras ? extras.geoMap || null : null, ordered.map((x) => x.top));
   for (const x of ordered) {
     out += marked ? x.text : x.text.replace(/ — BACKGROUND: the program that trains the credential the visitor holds; never the course to ask about\n/, "\n");
   }
@@ -3584,6 +3924,7 @@ const CREDIT_LIST_RULE = `\n\nWHEN DESCRIBING WHAT CREDIT IS AVAILABLE: do NOT j
 // redirect to the nearest teaching college. This is the key upgrade for detailed
 // questions like "which nearby college could give my students CPL for NCCER?"
 const OFFERINGS_RULE = `\n\nABOUT THE "COURSE CATALOG / WHICH COLLEGES TEACH THIS" SECTION (if present): this shows which colleges currently TEACH courses in a discipline (their curriculum). This is DIFFERENT from a CPL exhibit/articulation — teaching a course does NOT mean the college has set up CPL credit for a credential yet. Use it to reason like a CPL advisor:
+- CALL THE SOURCE "THE COLLEGE CATALOG DATA" (or "the catalog data"), never "COCI" — that is the name of an internal Chancellor's Office system the visitor does not know (Sam, 2026-09-18).
 - If a college TEACHES the relevant discipline but has NO matching CPL exhibit, present it as a strong ADOPTION OPPORTUNITY: e.g. "El Camino already teaches construction courses (CTEC 170, CTEC 503 OSHA), so it's well positioned to award CPL for NCCER — the college's CPL coordinator would set up that articulation." Frame it invitingly, never as a deficiency.
 - If the college the visitor named does NOT teach the discipline, say so warmly and point them to the NEAREST colleges that DO (use the county/region provided — closest first).
 - When a peer college has ALREADY articulated the credential (from the exhibit results), name it as proof it can be done ("Barstow and Norco have already set up NCCER credit").
@@ -3599,7 +3940,7 @@ const OFFERINGS_RULE = `\n\nABOUT THE "COURSE CATALOG / WHICH COLLEGES TEACH THI
 - WHEN ASKED WHICH COURSES A CREDENTIAL COULD COUNT TOWARD ("what CNA courses match LVN courses"), work from the data in front of you: the course lines in the catalog section for the program asked about, and the credit-recommendation precedents in the credential record (how adopter colleges articulated it — course and units). Name only courses that appear in the context, and present matches as what to ask the college's CPL coordinator to review — faculty decide the award. Where the context carries no course list for that program, say which college teaches it and that the course-level match is the college's to confirm.
 - The catalog list shows the TOP matching colleges, NOT an exhaustive list. NEVER conclude that a college does NOT teach a subject just because it isn't shown — many colleges that teach it may not appear. If a specific college the visitor named is not in the list, do NOT say it lacks the courses; say you're not certain from the data at hand and suggest checking that college's catalog or CPL coordinator.`;
 
-const PROGRAMS_RULE = `\n\nABOUT THE "PROGRAM CATALOG / WHICH COLLEGES AWARD THIS" SECTION (if present): this is the set of DEGREES AND CERTIFICATES a college confers, from the COCI program export. It is a THIRD thing, distinct from both sections above — the exhibit list is what a college has already ARTICULATED for CPL, the course catalog is what it TEACHES, and this is what a student can actually EARN there. A college can teach courses in a field and confer no award in it.
+const PROGRAMS_RULE = `\n\nABOUT THE "PROGRAM CATALOG / WHICH COLLEGES AWARD THIS" SECTION (if present): this is the set of DEGREES AND CERTIFICATES a college confers, from the program catalog data. It is a THIRD thing, distinct from both sections above — the exhibit list is what a college has already ARTICULATED for CPL, the course catalog is what it TEACHES, and this is what a student can actually EARN there. A college can teach courses in a field and confer no award in it.
 - WHEN SOMEONE ASKS WHERE THEY CAN STUDY OR TRAIN FOR SOMETHING, this section is the direct answer. Lead with it, name the colleges, and name the AWARD (a certificate and a degree are different commitments, and the visitor is choosing between them).
 - HONOR THE SPLIT INSIDE EACH COLLEGE. Programs under "AWARDS THIS" are named for what was asked. Programs under "SAME FIELD BY CODE ONLY" matched on their TOP or CIP code and MAY BE A DIFFERENT PROGRAM FOR A DIFFERENT PERSON — the standing example is an "LVN to RN" bridge, which is coded Registered Nursing and REQUIRES the visitor to already hold the license they were asking how to get. Never present a code-only match as though it were the program asked for. If a code-only match is all a college has, say what it is and who it is for.
 - A CODE NAMES THE FIELD, NOT THE AUDIENCE. TOP and CIP say what a program is about. Neither can say who it is for, what it requires, or where it leads. Read the program TITLE and the AWARD for that, and when the data cannot settle it, say so and point at the college.
@@ -3717,11 +4058,14 @@ This is the most actionable thing you can give a college. Walk the recommendatio
 const PROSPECTIVE_RULE = `\n\nABOUT THE "PROSPECTIVE CREDIT" SECTION (if present) — WHAT A HELD CREDENTIAL COULD COUNT TOWARD:
 This answers a DIFFERENT question from every section above. The exhibit and credential sections say who ALREADY grants credit for a credential. This section is for the visitor who holds a credential and wants to know which courses in a program it MIGHT count toward, so they can ask for a review at a college that has never granted it. Answer that question. Do not swap in the "who already grants it" answer, and do not decline because no exhibit exists: a college that has not articulated a credential can still review a request, and such requests are how articulations begin.
 - LEAD WITH THE ANSWER. The first sentence names a course to ask about — college, course number, title — from the program the visitor wants to enter (a section without the BACKGROUND mark), and the same paragraph carries the rest of the courses and how to ask. Nothing comes before that first course: no "first, the limits", no "note first", no paragraph about the catalog or the bridges, no table of who has articulated what, no remark about the question. When the catalog lists no college in the visitor's place for the program, the first sentence still names the nearest college's course, and the sentence about the catalog and the related programs FOLLOWS it in the same paragraph. Existing articulations come AFTER the courses, as the precedent line below, briefly, and only for the credential the visitor holds or one of the same kind (for a CNA holder: Nurse Assistant and Acute Care Nursing Assistant articulations count) — an award for a different credential (an LVN license award, for a CNA holder) is not evidence and is not listed.
+- THEN THE QUICK LIST. Right after the first paragraph, give a two-column markdown table from the section's QUICK LIST: the left column the typical courses of the program that trains the credential held (what a CNA's training covers — the visitor did not say where they trained, so the section generalizes across every college that teaches the program), the right column the typical courses of the program they want to enter (what to ask about). Five to eight rows, course names with the college count in parentheses where it helps, no course numbers (those belong to the college lists below). Head the columns in plain words, for example "What a CNA typically covers" and "LVN courses to ask about".
+- THE COLLEGE IS ON EVERY COURSE LINE. A course belongs to the college named on its own line and to no other college — never attach a course to a different college, even one in the visitor's place (one answer named Mt. San Antonio's VOC VN1 as Golden West's).
 - WORK FROM THE COURSE LIST. For the program the visitor wants to enter, read its courses at the colleges shown and name the ones whose content the credential plausibly covers — usually the entry-level courses (fundamentals, foundations, introduction, transition, basic, level I), never the advanced or specialty ones. Say in a phrase WHY each is a candidate: what the credential trains that the course teaches. Name only courses that appear in the context, with their course number.
 - THE PROGRAM THEY WANT TO ENTER IS THE TARGET. When the lists include the program that trains the credential they already hold (a nurse assistant program for a CNA holder), that section is marked BACKGROUND and comes last: it is background, not the answer — they do not need credit for what they hold; they need credit toward what they are entering. Never name a course from a BACKGROUND section as the course to ask about, and never open with one; its courses show what the credential covers, and that is all they are for.
 - PRESENT EVERY MATCH AS A REQUEST, NEVER A DETERMINATION. Say "ask the CPL coordinator at <college> to review your <credential> against <course>"; never that it "qualifies", "counts", "is equivalent" or "will be accepted". Faculty decide, and a college that has not granted it before can still say yes.
-- CITE THE PRECEDENT WHEN THERE IS ONE, AND NEVER SAY THERE IS NONE WHEN THE RECORD SHOWS ONE. If the credential record shows a college that articulated this credential — or one of the same kind — against a named course in the target program's field (Chaffey College articulated Acute Care Nursing Assistant, 6 units, against NURVN 414 Acute Care Nursing Assistant: Vocational Nursing Foundations), say so with the college, the course and the units; it is the evidence that makes the request credible at a college that has not done it yet. Only when the record shows no such articulation say that the request would be a first.
-- WHEN THE CATALOG LISTS NO COLLEGE IN THE VISITOR'S PLACE FOR THE TARGET PROGRAM, the section says so. State it as what the catalog shows, never as a fact about the place: "the COCI catalog lists no LVN entry program at an Orange County community college", never "no Orange County college has LVN" or "teaches LVN". Name the related programs the program catalog section lists in the place (an LVN-to-RN bridge at Cypress, Golden West and Saddleback is for people who already hold the license), so a reader who knows those programs sees that you saw them. Then give the same course-level answer for the nearest colleges shown, naming each college's county and its distance (the heading gives it in miles, where known) so the visitor can judge the trip.
+- CITE THE PRECEDENT WHEN THERE IS ONE, AND NEVER SAY THERE IS NONE WHEN THE RECORD SHOWS ONE. If the credential record shows a college that articulated this credential — or one of the same kind — against a named course in the target program's field (Chaffey College articulated Acute Care Nursing Assistant, 6 units, against NURVN 414 Acute Care Nursing Assistant: Vocational Nursing Foundations), say so with the college, the course and the units; it is the evidence that makes the request credible at a college that has not done it yet. The PRECEDENT ON RECORD lines inside the section are that record, rendered where you read the courses — cite them by college, course and units; only when the section says none is on record say that the request would be a first.
+- WHEN THE CATALOG LISTS NO COLLEGE IN THE VISITOR'S PLACE FOR THE TARGET PROGRAM, the section says so. State it as what the catalog shows, never as a fact about the place: "the catalog data lists no LVN entry program at an Orange County community college", never "no Orange County college has LVN" or "teaches LVN". Name the related programs the program catalog section lists in the place (an LVN-to-RN bridge at Cypress, Golden West and Saddleback is for people who already hold the license), so a reader who knows those programs sees that you saw them. Then give the same course-level answer for the nearest colleges shown, naming each college's county and its distance (the heading gives it in miles, where known) so the visitor can judge the trip.
+- CLOSE WITH THE FLYER when the section carries OTHER PROGRAMS the credential commonly counts toward: after the course-level answer, one short list — "Also worth asking about with a CNA:" — one line per program with the nearest college that teaches it and the first course to ask about; brief, no table; the visitor can ask about any of them next.
 - NEVER invent a course, a course number or a college, and never guess at a college's catalog beyond the lists shown.`;
 
 const CREDIT_STATUS_RULE = `\n\nABOUT THE "CPL CREDIT DISPOSITION" SECTION (if present) — WHAT COLLEGES HAVE ACTED ON:
@@ -5016,8 +5360,22 @@ Deno.serve(async (req: Request) => {
         const coreKw = expandWithSynonyms(extractTopicKeywords(routeText));
         const pairs = pickProspectivePairs(offeringsResults, coreKw, college, askedGeo, geoMap);
         if (pairs.length > 0) {
-          const courseRows = await fetchProgramCourses(pairs, sb);
-          prospectiveContext = buildProspectiveContext(pairs, courseRows, heldTitles, college, askedGeo, heldPhrases, heldTerms);
+          // v72: beside the course lists, the QUICK LIST (typical courses
+          // statewide for every program the block names) and the FLYER (the
+          // programs the held credential commonly counts toward, from
+          // RELATED_PROGRAMS, checked against the catalog data) — three reads,
+          // concurrent, each fail-safe on its own.
+          const heldTops = heldProgramTops(pairs, heldPhrases, heldTerms, heldTitles);
+          const sectionTops: Array<string> = [...new Set(pairs.map((p: any) => String(p.top_code)))];
+          const related = relatedProgramTops(heldTops).filter((t: any) => !sectionTops.includes(t.top));
+          const typicalTops = [...new Set([...sectionTops, ...related.map((t: any) => String(t.top))])];
+          const [courseRows, typicalRows, teacherRows] = await Promise.all([
+            fetchProgramCourses(pairs, sb),
+            fetchTypicalCourses(typicalTops, sb),
+            fetchProgramTeachers(related.map((t: any) => String(t.top)), sb),
+          ]);
+          prospectiveContext = buildProspectiveContext(pairs, courseRows, heldTitles, college, askedGeo, heldPhrases, heldTerms,
+            { typical: foldTypicalRows(typicalRows), teachers: teacherRows, recs, adopters, geoMap });
         }
       }
     } catch (e) {

@@ -41,6 +41,17 @@
 //      with a CNA course. Only the visitor's own words say which credential is
 //      held; block 10 pins the holding-phrase parser, the held-title filter and
 //      the BACKGROUND mark that sends the CNA section last.
+//   6. (S276, v72) Sam: "a quick list view of the typical CNA course next to
+//      typical LVN courses… The user did not say where they did their CNA, so
+//      being able to generalize is an added skill level" — and the flyer:
+//      "Have a CNA Cert? Ask for your credit toward LVN, Rad Tech, ADN, Med
+//      Asst, Surgical Tech, Sterilization Tech, Phlebotomy". Block 11 pins the
+//      QUICK LIST (program_typical_courses() folded and rendered), the
+//      PRECEDENT ON RECORD rendered inside the block (three of four answers had
+//      dropped Chaffey's NURVN 414), the FLYER (RELATED_PROGRAMS checked against
+//      the catalog data), the college on every course line (v71 attached Mt.
+//      San Antonio's VOC VN1 to Golden West), and that no rendered catalog text
+//      says "COCI" (Sam: "say something like catalog data").
 //
 // Assertions here are on what retrieval BUILDS and how the context ORDERS,
 // never on model prose (methodology-assert-what-retrieval-returns). Fixtures are
@@ -65,7 +76,10 @@ try {
     ["proximityBand", "REGION_NEIGHBORS", "regionsNeighbor", "pickProspectivePairs",
      "buildProspectiveContext", "buildOfferingsContext", "geoLabel", "PROSPECTIVE_COLLEGES_PER_TOP", "PROSPECTIVE_COURSES_PER_COLLEGE",
      "COLLEGE_POINTS", "collegePoint", "haversineKm", "placePoint", "proximityKm", "cmpKm", "distanceText",
-     "heldCredentialPhrases", "pickHeldTitles", "sameKind", "namesHeld", "contentStems", "stemToken"]);
+     "heldCredentialPhrases", "pickHeldTitles", "sameKind", "namesHeld", "contentStems", "stemToken",
+     "RELATED_PROGRAMS", "TYPICAL_COURSES_PER_PROGRAM", "isBackgroundTitle", "heldProgramTops", "relatedProgramTops",
+     "titleCaseIfShouting", "typicalFoldKey", "foldTypicalRows", "buildQuickList", "buildPrecedentLines", "buildRelatedPrograms",
+     "fetchTypicalCourses", "fetchProgramTeachers"]);
   F = liftBlock(SRC, "// A SUBSTRING INSIDE A WORD IS NOT A MATCH ON THE WORD",
     "async function fetchStatewideRecommendations(", ["isFalseFriend"]);
 } catch (e) { liftErr = e; }
@@ -242,18 +256,18 @@ block("5. buildProspectiveContext", () => {
   const lvnSec = ctx.slice(lvnAt);
   const cnaSec = ctx.slice(cnaAt, lvnAt);
   check("(5) ⭐ a program the catalog lists no college in the place for is said in words, as a statement about the catalog and never about the place",
-    lvnSec.includes("The COCI catalog lists no college in Orange County teaching this program. State it as what the catalog shows, never as a fact about Orange County"));
+    lvnSec.includes("The catalog data lists no college in Orange County teaching this program. State it as what the catalog data shows, never as a fact about Orange County"));
   check("(5) a program the place does teach is counted", cnaSec.includes("In Orange County: 3 of the colleges below."));
   check("(5) a college renders with its county and region",
     lvnSec.includes("### Pasadena City College (Los Angeles County, Los Angeles) — 3 course(s) in this program:"));
   check("(5) a course line carries subject, number, title and units",
-    lvnSec.includes("  - NURS 102 — Fundamentals of Vocational Nursing – Theory (5 units)\n"));
+    lvnSec.includes("  - Pasadena City College · NURS 102 — Fundamentals of Vocational Nursing – Theory (5 units)\n"));
   check("(5) ⭐ the cap holds and the remainder is counted, never dropped silently",
     lvnSec.includes("... and 2 more course(s) in this program.")
-    && (lvnSec.match(/^  - NURVN /gm) || []).length === G.PROSPECTIVE_COURSES_PER_COLLEGE);
+    && (lvnSec.match(/^  - Chaffey College · NURVN /gm) || []).length === G.PROSPECTIVE_COURSES_PER_COLLEGE);
   check("(5) a zero-unit course is marked noncredit rather than shown with 0 units",
-    lvnSec.includes("  - NURVN 600 — NCLEX Review for VN Licensure Examination (noncredit)\n")
-    && cnaSec.includes("  - VHLTH 106 — Acute Care Nursing Assistant Theory (noncredit)\n"));
+    lvnSec.includes("  - Chaffey College · NURVN 600 — NCLEX Review for VN Licensure Examination (noncredit)\n")
+    && cnaSec.includes("  - Santa Ana College · VHLTH 106 — Acute Care Nursing Assistant Theory (noncredit)\n"));
   check("(5) a picked college the read returned no rows for is skipped, not shown empty",
     !ctx.includes("### Southwestern College"));
   check("(5) ⭐ only picked pairs render — the cross product's extra rows do not",
@@ -442,11 +456,11 @@ block("9. the direct answer first, the catalog never the world, no remark about 
   check("(9) the LEAD bullet comes before WORK FROM THE COURSE LIST", rule.indexOf("- LEAD WITH THE ANSWER.") < rule.indexOf("- WORK FROM THE COURSE LIST."));
   const ctx = G.buildProspectiveContext(G.pickProspectivePairs(offerings, coreKeywords, null, orange, geoMap), courses, held, null, orange);
   check("(9) ⭐ the block's no-college line is about the catalog and points at the related programs",
-    ctx.includes("The COCI catalog lists no college in Orange County teaching this program.") && ctx.includes("the program catalog section names any related programs there") && !/NO college in Orange County/.test(ctx));
+    ctx.includes("The catalog data lists no college in Orange County teaching this program.") && ctx.includes("the program catalog section names any related programs there") && !/NO college in Orange County/.test(ctx));
   const off = G.buildOfferingsContext(offerings.filter((o) => o.top_code === "1230.20"), null, orange, ["vocational nursing"], geoMap);
-  check("(9) the offerings builder's line is about the catalog too", /### The current COCI catalog lists no college in Orange County teaching courses matching this\. Say what the catalog shows — never that no college in Orange County has or teaches it/.test(off));
+  check("(9) the offerings builder's line is about the catalog too", /### The current catalog data lists no college in Orange County teaching courses matching this\. Say what the catalog data shows — never that no college in Orange County has or teaches it/.test(off));
   check("(9) the programs builder's lines are about the export, and the in-place line names the bridges as the related programs",
-    /The current COCI program export lists no college in \$\{askedGeo\.label\} with a matching program/.test(SRC)
+    /The current program catalog data lists no college in \$\{askedGeo\.label\} with a matching program/.test(SRC)
     && /these are the related programs it does list there — name them/.test(SRC));
   check("(9) the place block and the offerings rule say the same", /say what the catalog shows \(never that no college in \$\{place\.label\} has it\)/.test(SRC)
     && /when a section says the catalog lists none of them, say what the catalog shows \(never that no college in the place has it\)/.test(SRC));
@@ -548,7 +562,7 @@ block("10. the held credential is the visitor's own words; its program is BACKGR
   check("(10) the intro says what the mark means and that the first course comes from an unmarked section",
     ctx.includes("The section marked BACKGROUND is the program that trains the credential the visitor already holds") && ctx.includes("the first course you name comes from a section without that mark, which is listed first"));
   check("(10) the background section still shows its courses (what the credential covers) and its in-place count",
-    ctx.slice(cnaAt).includes("In Orange County: 3 of the colleges below.") && ctx.slice(cnaAt).includes("  - VHLTH 106 — Acute Care Nursing Assistant Theory (noncredit)\n"));
+    ctx.slice(cnaAt).includes("In Orange County: 3 of the colleges below.") && ctx.slice(cnaAt).includes("  - Santa Ana College · VHLTH 106 — Acute Care Nursing Assistant Theory (noncredit)\n"));
   // Fail-safe: a held phrase every section answers to marks nothing.
   const all = G.buildProspectiveContext(pairs, courses, heldTitles, null, orangePt, ["nursing"], ["nursing"]);
   check("(10) ⭐ when every section would be BACKGROUND none is marked, the intro carries no mark sentence, and the order is the picks' own",
@@ -563,7 +577,7 @@ block("10. the held credential is the visitor's own words; its program is BACKGR
   // Wiring and the rule.
   check("(10) ⭐ the handler parses the holding phrase from the route text, filters the matched titles by it, and passes both to the builder",
     /const heldPhrases = heldCredentialPhrases\(routeText\);/.test(SRC) && /const heldTitles = pickHeldTitles\(matchedTitles, heldPhrases\)\.slice\(0, 4\);/.test(SRC)
-    && /buildProspectiveContext\(pairs, courseRows, heldTitles, college, askedGeo, heldPhrases, heldTerms\)/.test(SRC));
+    && /buildProspectiveContext\(pairs, courseRows, heldTitles, college, askedGeo, heldPhrases, heldTerms,\s*\{ typical: foldTypicalRows\(typicalRows\)/.test(SRC));
   check("(10) the route still fires on ANY matched credential (the held filter never switches the section off)",
     /if \(\(askedGeo \|\| college\) && matchedTitles\.length > 0 && offeringsResults && offeringsResults\.length > 0\)/.test(SRC));
   check("(10) the held terms carry the phrase synonyms (nurse assistant for cna), built outside the lifted block",
@@ -577,6 +591,199 @@ block("10. the held credential is the visitor's own words; its program is BACKGR
     /^answer_head_must_not_match\(\) \{/m.test(SMOKE) && /answer should NOT match \/\$re\/ within the first \$chars characters \(regression\)/.test(SMOKE)
     && /answer_head_must_not_match -i 300 "VHLTH\[ -\]\?10\[1-8\]\\b\|VMED\[ -\]\?\(10\|11\|70\|71\)\\b\|NURS\[ -\]\?G06\[01\]\|CNA\[ -\]\?42\[2-7\]/.test(SMOKE)
     && /7c ⭐ the first course named is in the target program/.test(SMOKE));
+});
+
+// ── 11. The QUICK LIST, the precedent in the block, the flyer, the college on every line (v72, 2026-09-18, S276) ──
+// Sam, after reading v71's answer: "a quick list view of the typical CNA course
+// next to typical LVN courses… The user did not say where they did their CNA,
+// so being able to generalize is an added skill level for Sierra. Response
+// could be thought of as a flyer — Have a CNA Cert? Ask for your credit toward
+// LVN, Rad Tech, ADN, Med Asst, Surgical Tech, Sterilization Tech, Phlebotomy…
+// if Sierra were a counselor, she would have this at her fingertips." And:
+// "Sierra shouldn't use the inside term COCI. Instead say something like
+// catalog data." Fixtures are program_typical_courses() rows as measured live
+// on 2026-09-18 (48 of 65 CNA colleges fold to Nurse Assistant), offerings rows
+// for the flyer's programs, and the credential record's own lines for the CNA
+// credentials (Chaffey NURVN 414 is the one CNA-to-LVN precedent in MAP).
+block("11. quick list, precedent lines, flyer, the college on every course line, no COCI", () => {
+  const trow = (top_code, top_title, norm, n, total, modal_title, units, ex_college, ex_code, credit, noncredit, colleges) =>
+    ({ top_code, top_title, norm, n_colleges: n, program_colleges: total, colleges: colleges || [], modal_title, modal_units: String(units),
+       example_college: ex_college, example_code: ex_code, credit_rows: credit, noncredit_rows: noncredit });
+  const typicalRows = [
+    trow("1230.30", CNA, "nurse assistant", 48, 65, "Nurse Assistant", 0, "American River College", "NURSE 100", 50, 34),
+    trow("1230.30", CNA, "acute care nurse assistant", 10, 65, "Acute Care Nurse Assistant", 0, "Crafton Hills College", "CNA/N 631", 4, 15),
+    trow("1230.30", CNA, "home health aide", 7, 65, "Certified Home Health Aide", 2, "Columbia College", "NURSE 153", 7, 0),
+    trow("1230.20", LVN, "fundamentals nurse", 13, 44, "FUNDAMENTALS OF NURSING", 3, "Allan Hancock College", "NURS 317", 30, 0, ["Allan Hancock College", "Chaffey College"]),
+    trow("1230.20", LVN, "fundamentals vocational nurse", 10, 44, "Fundamentals of Vocational Nursing", 5, "Bakersfield College", "VNRS B69", 14, 1),
+    trow("1230.20", LVN, "pharmacology", 8, 44, "Pharmacology", 1, "Allan Hancock College", "NURS 310", 13, 0),
+    trow("1230.20", LVN, "vocational nurse", 8, 44, "Vocational Nursing I", 6, "Cerro Coso Community College", "HCRSC 113", 25, 3),
+    // A second spelling of the first family: folded on its stems, colleges unioned.
+    trow("1230.20", LVN, "nurse fundamentals", 2, 44, "Nursing Fundamentals", 3, "Madera College", "LVN 111", 2, 0, ["Madera College", "Merced College"]),
+    trow("1208.00", "Medical Assisting", "medical assistant", 14, 57, "Medical Assisting Practicum", 0, "Chabot College", "MEDA 70A", 13, 4),
+    trow("1208.00", "Medical Assisting", "medical terminology", 13, 57, "Medical Terminology", 3, "Cabrillo College", "MA 70", 14, 0),
+    trow("1205.10", "Phlebotomy", "phlebotomy technician", 11, 26, "Phlebotomy Technician", 0, "Cerro Coso Community College", "HCRS C060", 4, 14),
+    trow("1230.10", RN, "fundamentals nurse", 30, 80, "Fundamentals of Nursing", 4, "Bakersfield College", "NURS B40", 42, 0),
+    trow("1217.00", "Surgical Technician", "introduction surgical technology", 3, 5, "Introduction to Surgical Technology", 2, "Cosumnes River College", "SURG 100", 3, 0),
+    trow("1209.00", "Hospital Central Service Technician", "central service technology", 2, 5, "CENTRAL SERVICE TECHNOLOGY", 3.5, "Skyline College", "SURG 448", 4, 0),
+  ];
+  const teach = (college, top_code, top_title, course_count) => ({ college, top_code, top_title, course_count });
+  const teachers = [
+    teach("Santa Ana College", "1208.00", "Medical Assisting", 12), teach("Golden West College", "1208.00", "Medical Assisting", 9),
+    teach("Saddleback College", "1208.00", "Medical Assisting", 6), teach("Long Beach City College", "1208.00", "Medical Assisting", 10),
+    teach("Santiago Canyon College", "1205.10", "Phlebotomy", 2), teach("Long Beach City College", "1205.10", "Phlebotomy", 3),
+    teach("Golden West College", "1230.10", RN, 23), teach("Saddleback College", "1230.10", RN, 33), teach("Pasadena City College", "1230.10", RN, 30),
+    teach("Cypress College", "1225.00", "Radiologic Technology", 20), teach("Long Beach City College", "1225.00", "Radiologic Technology", 25),
+    teach("Cosumnes River College", "1217.00", "Surgical Technician", 12), teach("Skyline College", "1217.00", "Surgical Technician", 8),
+    teach("Skyline College", "1209.00", "Hospital Central Service Technician", 3),
+  ];
+  const recs = new Map([
+    ["Acute Care Nursing Assistant", { rec_kind: "local_modal", n_recs: 1, n_adopter_colleges: 1,
+      recs: [{ cid: null, credit: "6 hours in Acute Care Nursing Assistant: Vocational Nursing Foundations", colleges: 1, example_course: "NURVN 414" }] }],
+    ["Certified Nurse Assistant (CNA) Certification", { rec_kind: "local_modal", n_recs: 2, n_adopter_colleges: 2, recs: [
+      { cid: null, credit: "3 hours in Lifelong Learning and Self Development", colleges: 1, example_course: "LACCD GE 7" },
+      { cid: null, credit: "6 hours in Nurse Assistant Training", colleges: 1, example_course: "HS 061" }] }],
+  ]);
+  const adopters = new Map([
+    ["Acute Care Nursing Assistant", [{ name: "Chaffey College", url: null }]],
+    ["Certified Nurse Assistant (CNA) Certification", [{ name: "Los Angeles City College", url: null }, { name: "Lemoore College", url: null }]],
+  ]);
+  const geo11 = new Map(geoMap);
+  geo11.set("Cosumnes River College", geo("Greater Sacramento", "Sacramento"));
+  geo11.set("Skyline College", geo("Bay Area", "San Mateo"));
+  const matched = ["Licensed Vocational Nurse (LVN) License", "Certified Nurse Assistant (CNA) Certification", "LVN License",
+    "Nurse Assistant Training", "Acute Care Nursing Assistant", "Certified Nursing Assistant (CNA)"];
+  const heldTitles = G.pickHeldTitles(matched, ["cna"]).slice(0, 4);
+  const heldTerms = ["cna", "nurse assistant", "certified nurse assistant"];
+  const orangePt = { ...orange, point: G.placePoint(orange, geoMap) };
+
+  // The fold.
+  const T = G.foldTypicalRows(typicalRows);
+  check("(11) one entry per program, courses ranked by colleges, the program's college count carried as the denominator",
+    T.size === 7 && T.get("1230.30").courses.length === 3 && T.get("1230.30").courses[0].n === 48 && T.get("1230.30").program_colleges === 65
+    && G.TYPICAL_COURSES_PER_PROGRAM === 8 && G.foldTypicalRows(null).size === 0);
+  const lvnT = T.get("1230.20");
+  check("(11) ⭐ two spellings of one course family fold on their stems (fundamentals nurse + nurse fundamentals) — four families, the count in colleges kept",
+    lvnT.courses.length === 4 && lvnT.courses[0].title === "Fundamentals of Nursing" && lvnT.courses[0].n === 13 && !lvnT.courses.some((c) => /Nursing Fundamentals/.test(c.title))
+    && G.typicalFoldKey("nurse fundamentals") === G.typicalFoldKey("fundamentals nurse") && G.typicalFoldKey("fundamentals vocational nurse") !== G.typicalFoldKey("fundamentals nurse"),
+    JSON.stringify(lvnT.courses.map((c) => [c.title, c.n])));
+  check("(11) a title the college typed in capitals renders in title case; a mixed-case title is kept as written",
+    G.titleCaseIfShouting("FUNDAMENTALS OF NURSING") === "Fundamentals of Nursing" && G.titleCaseIfShouting("ADV/HOSPITAL CENT SVC TECH") === "Adv/Hospital Cent Svc Tech"
+    && G.titleCaseIfShouting("Vocational Nursing I") === "Vocational Nursing I" && G.titleCaseIfShouting("NURSING SKILLS LAB II") === "Nursing Skills Lab II" && G.titleCaseIfShouting("") === "");
+
+  // The QUICK LIST.
+  const ql = G.buildQuickList(T, [{ top_code: "1230.20", background: false }, { top_code: "1230.30", background: true }]);
+  check("(11) ⭐ the QUICK LIST renders the held program first (what the credential covers), then the target (what to ask about), counted in colleges, statewide",
+    ql.indexOf("## Typical Certified Nurse Assistant courses (the program that trains the credential held") < ql.indexOf("## Typical Licensed Vocational Nursing courses (the program the visitor wants to enter")
+    && ql.includes("  - Nurse Assistant — at 48 of 65 colleges (e.g. American River College · NURSE 100; credit at some colleges, noncredit at others)\n")
+    && ql.includes("  - Fundamentals of Nursing — at 13 of 44 colleges (e.g. Allan Hancock College · NURS 317; usually 3 units)\n")
+    && ql.includes("65 colleges teach the program statewide") && /QUICK LIST — typical courses in each program, STATEWIDE/.test(ql), ql);
+  check("(11) the quick list says the held list generalizes because the visitor did not say where they trained, and asks for the two-column table after the first paragraph",
+    /The visitor did not say where they trained, so the held program's list generalizes/.test(ql) && /two-column table the rule describes, right after the first paragraph/.test(ql));
+  check("(11) a program with no rows is skipped, no programs render nothing, an unknown role reads as a matched program",
+    G.buildQuickList(T, [{ top_code: "9999.99", background: false }]) === "" && G.buildQuickList(T, []) === ""
+    && /a program the question matched/.test(G.buildQuickList(T, [{ top_code: "1230.20", background: null }])));
+
+  // The precedent, in the block.
+  const pl = G.buildPrecedentLines(["Acute Care Nursing Assistant", "Certified Nurse Assistant (CNA) Certification"], recs, adopters);
+  check("(11) ⭐ the Chaffey precedent renders as one line pairing the single adopter with its course and credit",
+    pl.includes("  - Chaffey College articulated Acute Care Nursing Assistant against 6 hours in Acute Care Nursing Assistant: Vocational Nursing Foundations (NURVN 414)"), pl);
+  check("(11) two adopters with one college per line are never paired to a course; the adopters are listed",
+    pl.includes("  - 1 college(s) articulated Certified Nurse Assistant (CNA) Certification as 6 hours in Nurse Assistant Training (HS 061) — adopters on record: Los Angeles City College, Lemoore College"), pl);
+  check("(11) ⭐ none on record is said only when the record was read: an empty record says none, a null record says nothing, no held title says nothing",
+    /PRECEDENT ON RECORD for the credential held: none/.test(G.buildPrecedentLines(["EMT Certification"], new Map(), null))
+    && G.buildPrecedentLines(["EMT Certification"], null, null) === "" && G.buildPrecedentLines([], recs, adopters) === "");
+
+  // The held program and the flyer's targets.
+  const pairsPt = G.pickProspectivePairs(offerings, coreKeywords, null, orangePt, geoMap);
+  check("(11) ⭐ the held program is the one the BACKGROUND mark falls on (CNA for a CNA holder); every-section-background falls back to an alias, and 'nursing' names none; no picks, the alias alone",
+    JSON.stringify(G.heldProgramTops(pairsPt, ["cna"], heldTerms, heldTitles)) === '["1230.30"]'
+    && G.heldProgramTops(pairsPt, ["nursing"], ["nursing"], heldTitles).length === 0
+    && JSON.stringify(G.heldProgramTops([], ["cna"], ["cna"], [])) === '["1230.30"]'
+    && G.heldProgramTops(pairsPt, [], [], []).length === 0);
+  const rel = G.relatedProgramTops(["1230.30"]);
+  check("(11) the flyer's targets are Sam's list in his order, LVN first, seven programs; an unknown held program has none",
+    rel.length === 7 && rel.map((t) => t.top).join(",") === "1230.20,1230.10,1208.00,1205.10,1225.00,1217.00,1209.00"
+    && rel.every((t) => t.label && t.from === "1230.30") && G.relatedProgramTops(["0000.00"]).length === 0 && G.relatedProgramTops([]).length === 0);
+  check("(11) the crosswalk is keyed by real codes, lists no program as its own target, carries aliases and plain-words labels",
+    Object.entries(G.RELATED_PROGRAMS).every(([top, e]) => /^\d{4}\.\d{2}$/.test(top) && e.label && e.aliases.length > 0
+      && e.targets.every((t) => t.top !== top && /^\d{4}\.\d{2}$/.test(t.top) && t.label)));
+
+  // The flyer.
+  const fl = G.buildRelatedPrograms(["1230.30"], rel, teachers, T, null, orangePt, geo11, ["1230.20", "1230.30"]);
+  check("(11) ⭐ the flyer names the team's list with attribution, skips the programs the block renders, and calls every line a request",
+    /OTHER PROGRAMS A CERTIFIED NURSE ASSISTANT \(CNA\) COMMONLY COUNTS TOWARD — the CPL team's counselor list \(Sam Lee, 2026-09-18\), checked against the catalog data/.test(fl)
+    && !/Vocational Nursing \(LVN\)/.test(fl) && /never a determination/.test(fl) && /Offer them briefly at the END of the answer/.test(fl), fl);
+  check("(11) ⭐ a program taught in the visitor's county names the in-county colleges nearest first, two named and the rest counted, with its typical first courses",
+    fl.includes("  - Medical Assisting — 57 college(s) teach it statewide; in Orange County: 3 (Santa Ana College, Golden West College, …); typical first courses: Medical Assisting Practicum, Medical Terminology."), fl);
+  check("(11) ⭐ a program with no college in the county says what the catalog data lists and names the nearest with a distance",
+    /  - Surgical Technology — 5 college\(s\) teach it statewide; the catalog data lists none in Orange County; nearest: (Cosumnes River College|Skyline College) \(about \d+ miles from the center of Orange County\), (Cosumnes River College|Skyline College) \(about \d+ miles from the center of Orange County\); typical first courses: Introduction to Surgical Technology\./.test(fl), fl);
+  check("(11) sterile processing renders under the team's plain label from the catalog data's own program code",
+    /  - Sterile Processing \(Central Service Technician\) — 5 college\(s\) teach it statewide; the catalog data lists none in Orange County; nearest: Skyline College \(about \d+ miles/.test(fl), fl);
+  check("(11) a named college is answered for that college: it teaches the program, or the catalog data lists no course in it there and the nearest follow",
+    (() => {
+      const sb = { ...geoMap.get("Saddleback College"), college: "Saddleback College", point: G.collegePoint("Saddleback College") };
+      const f = G.buildRelatedPrograms(["1230.30"], rel, teachers, T, "Saddleback College", sb, geo11, ["1230.20", "1230.30"]);
+      return /Medical Assisting — 57 college\(s\) teach it statewide; Saddleback College teaches it;/.test(f)
+        && /Phlebotomy — 26 college\(s\) teach it statewide; the catalog data lists no course in it at Saddleback College; nearest: Santiago Canyon College \(about \d+ miles from Saddleback College\), Long Beach City College/.test(f);
+    })());
+  check("(11) no held program, no targets, or no catalog rows for a program: nothing, or the line left out",
+    G.buildRelatedPrograms([], rel, teachers, T, null, orangePt, geo11) === "" && G.buildRelatedPrograms(["1230.30"], [], teachers, T, null, orangePt, geo11) === ""
+    && !/Radiologic/.test(G.buildRelatedPrograms(["1230.30"], rel, teachers.filter((r) => r.top_code !== "1225.00"), new Map(), null, orangePt, geo11)));
+
+  // The whole block.
+  const pairs5 = G.pickProspectivePairs(offerings, coreKeywords, null, orange, geoMap);
+  const extras = { typical: T, teachers, recs, adopters, geoMap: geo11 };
+  const full = G.buildProspectiveContext(pairs5, courses, heldTitles, null, orange, ["cna"], heldTerms, extras);
+  check("(11) ⭐ every course line names its college first, and the intro says a course belongs to the college on its own line",
+    full.includes("  - Pasadena City College · NURS 102 — Fundamentals of Vocational Nursing – Theory (5 units)\n")
+    && full.includes("  - Chaffey College · NURVN 414 — Acute Care Nursing Assistant: Vocational Nursing Foundations (6 units)\n")
+    && !/\n  - NURS 102 /.test(full) && /Every course line names its college first/.test(full));
+  const qAt = full.indexOf("QUICK LIST"), pAt = full.indexOf("PRECEDENT ON RECORD"), fAt = full.indexOf("OTHER PROGRAMS A CERTIFIED NURSE ASSISTANT"), sAt = full.indexOf("## Licensed Vocational Nursing (TOP 1230.20)");
+  check("(11) ⭐ the quick list, the precedent and the flyer render before the course lists, in that order",
+    qAt > 0 && pAt > qAt && fAt > pAt && sAt > fAt, `q@${qAt} p@${pAt} f@${fAt} s@${sAt}`);
+  check("(11) inside the block the flyer skips the two programs the block renders (LVN, CNA) and the precedent names Chaffey",
+    !/  - Vocational Nursing \(LVN\) —/.test(full) && /  - Medical Assisting —/.test(full) && /Chaffey College articulated Acute Care Nursing Assistant/.test(full));
+  check("(11) the precedent needs a holding phrase: with none, no precedent lines (an LVN award must never read as the CNA holder's)",
+    !/PRECEDENT ON RECORD/.test(G.buildProspectiveContext(pairs5, courses, held, null, orange, [], [], extras)));
+  check("(11) the fail-safe holds with extras: a phrase every section answers to marks nothing, names no held program, and the quick list carries no role",
+    (() => {
+      const a = G.buildProspectiveContext(pairs5, courses, heldTitles, null, orange, ["nursing"], ["nursing"], extras);
+      return !/BACKGROUND|OTHER PROGRAMS/.test(a) && /a program the question matched/.test(a) && !/credential held — what the credential covers/.test(a);
+    })());
+  check("(11) without extras the block renders as v71 did plus the college on every line: no quick list, no precedent, no flyer",
+    (() => { const v = G.buildProspectiveContext(pairs5, courses, heldTitles, null, orange, ["cna"], heldTerms); return !/QUICK LIST|PRECEDENT ON RECORD|OTHER PROGRAMS/.test(v) && /  - Pasadena City College · NURS 102/.test(v); })());
+
+  // Wiring, the rule, the smoke, the schema of record.
+  check("(11) ⭐ the handler runs the three reads concurrently and hands the folded typical rows, the teachers, the record and the geography to the builder",
+    /const \[courseRows, typicalRows, teacherRows\] = await Promise\.all\(\[\s*fetchProgramCourses\(pairs, sb\),\s*fetchTypicalCourses\(typicalTops, sb\),\s*fetchProgramTeachers\(related\.map\(\(t: any\) => String\(t\.top\)\), sb\),\s*\]\);/.test(SRC)
+    && /\{ typical: foldTypicalRows\(typicalRows\), teachers: teacherRows, recs, adopters, geoMap \}\)/.test(SRC));
+  check("(11) the typical-courses read is the program_typical_courses RPC and the teachers read is one PostgREST query on the offerings rollup, both fail-safe",
+    /sb\.rpc\("program_typical_courses", \{ top_codes: codes, min_colleges: 2, per_top: 40 \}\)/.test(SRC) && /typical courses unavailable/.test(SRC)
+    && /sb\.from\("coci_college_offerings"\)\s*\.select\("college, top_code, top_title, course_count"\)/.test(SRC) && /program teachers unavailable/.test(SRC));
+  check("(11) the flyer's targets exclude the programs the block renders as sections",
+    /const related = relatedProgramTops\(heldTops\)\.filter\(\(t: any\) => !sectionTops\.includes\(t\.top\)\);/.test(SRC));
+  const rule11 = (SRC.match(/const PROSPECTIVE_RULE = `([\s\S]*?)`;/) || [])[1] || "";
+  check("(11) ⭐ the rule asks for the two-column table right after the first paragraph, held program left, target right, from the QUICK LIST",
+    /- THEN THE QUICK LIST\. Right after the first paragraph, give a two-column markdown table from the section's QUICK LIST/.test(rule11)
+    && rule11.indexOf("- THEN THE QUICK LIST.") > rule11.indexOf("- LEAD WITH THE ANSWER.") && rule11.indexOf("- THEN THE QUICK LIST.") < rule11.indexOf("- WORK FROM THE COURSE LIST."));
+  check("(11) ⭐ the rule puts the college on every course line, cites the PRECEDENT ON RECORD lines, and closes with the flyer before the never-invent line",
+    /- THE COLLEGE IS ON EVERY COURSE LINE\./.test(rule11) && /The PRECEDENT ON RECORD lines inside the section are that record/.test(rule11)
+    && /- CLOSE WITH THE FLYER when the section carries OTHER PROGRAMS/.test(rule11) && rule11.indexOf("- CLOSE WITH THE FLYER") < rule11.indexOf("- NEVER invent a course"));
+  const offRule = (SRC.match(/const OFFERINGS_RULE = `([\s\S]*?)`;/) || [])[1] || "";
+  const progRule = (SRC.match(/const PROGRAMS_RULE = `([\s\S]*?)`;/) || [])[1] || "";
+  check("(11) ⭐ no rendered catalog text says COCI: the builders and the catalog rules call it the catalog data, and the always-on rule carries the ban once",
+    !/COCI/.test(full) && !/COCI/.test(G.buildOfferingsContext(offerings, null, orange, coreKeywords, geoMap)) && !/COCI/.test(rule11) && !/COCI/.test(progRule)
+    && /Program Catalog: WHICH COLLEGES AWARD THIS \(program catalog data —/.test(SRC) && !/COCI (catalog|offerings|program export|course lists)/.test(SRC)
+    && /CALL THE SOURCE "THE COLLEGE CATALOG DATA" \(or "the catalog data"\), never "COCI"/.test(offRule) && (offRule.match(/COCI/g) || []).length === 1);
+  check("(11) ⭐ the smoke fails every mode whose answer says COCI (a counted shape) and 7c reads for the quick-list table, the flyer, the college on the line, and the RPC",
+    SMOKE.includes("answer should NOT match /\\bCOCI\\b/") && SMOKE.includes("7c ⭐ the QUICK LIST") && SMOKE.includes("7c ⭐ the flyer")
+    && SMOKE.includes("7c ⭐ a course is named with its own college") && SMOKE.includes('/rpc/program_typical_courses') && SMOKE.includes("VOC[ -]?VN[ -]?1\\b|Vocational Nursing 1\\b"));
+  const sqlPath = "chatbox/supabase_program_typical_courses.sql";
+  const sql = fs.existsSync(sqlPath) ? fs.readFileSync(sqlPath, "utf8") : "";
+  check("(11) the schema of record and its verify file exist, with the grants naming the API roles",
+    /create or replace function public\.program_typical_courses\(/.test(sql) && /create or replace function public\.cpl_course_title_norm\(title text\)/.test(sql)
+    && /grant execute on function public\.program_typical_courses\(text\[\], integer, integer\) to anon, authenticated, service_role;/.test(sql)
+    && fs.existsSync("chatbox/verify_program_typical_courses.sql"));
 });
 
 // ── Report ──────────────────────────────────────────────────────────────────
