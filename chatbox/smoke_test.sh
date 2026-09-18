@@ -671,7 +671,20 @@ answer_must_match -i "pasadena|citrus|rio hondo|mt\. san antonio|mount san anton
 answer_head_must_match -i 600 "pasadena|citrus|rio hondo|mt\. san antonio|mount san antonio|glendale" "7s ⭐ …in the FIRST SENTENCE — the nearest real option leads the answer"
 # The false zero itself, in the shapes v72 produced.
 answer_must_not_match -i "(does ?n.t|do ?n.t|no|none)[^.]{0,80}san gabriel valley[^.]{0,80}(lvn|vocational nursing|entry program)|no (college|community college)s? in the san gabriel valley" "7s ⭐ never says the catalog shows no San Gabriel Valley college with an LVN entry program — five teach one (Sam, 2026-09-18)"
-answer_must_not_match -i "my data does ?n.t confirm|i can.t confirm their course lists|once i can confirm your closest" "7s ⭐ never disclaims data it holds — v72 named Pasadena and Rio Hondo from the model's own knowledge and said it could not confirm their course lists, while the catalog held 28 rows and 8"
+# ⚠️ THIS BAN IS A FAMILY, NOT A QUOTATION (2026-09-18, S277). The first version
+# listed v72's three exact phrasings and PASSED on the branch's own smoke run
+# 35398069297 while production made the identical mistake in new words: "I don't
+# have the specific San Gabriel Valley college course lists in front of me right
+# now, so I can't name exact course numbers there" and "I don't have that catalog
+# slice loaded here". Mode 14's lesson again — an assertion pinned to a value
+# that can leave the data stops being a guard the moment it does.
+answer_must_not_match -i "my data does ?n.t confirm|can.?t confirm their course lists|once i can confirm your closest|do ?n.t have (the |that |its |their )?[^.]{0,40}(course list|catalog|catalog slice)|(course list|catalog slice)[^.]{0,30}(in front of me|loaded here|available to me)|can.?t name exact course numbers|do ?n.t have that catalog" "7s ⭐ never disclaims catalog data it holds — the catalog carries 87 LVN course rows across five San Gabriel Valley colleges (Sam, 2026-09-18)"
+# ⭐ SAM'S BAR IS A COURSE-LEVEL ANSWER, AND ONLY RETRIEVAL CAN MEET IT. A college
+# NAME is not enough: production named East Los Angeles, Rio Hondo and Mt. San
+# Antonio from the model's own knowledge while saying it could not name a course
+# there. These are the entry courses the five San Gabriel Valley LVN programs
+# actually list, so this assertion cannot be satisfied without the anchor.
+answer_must_match -i "VNRS[ -]?15[01]|NURS[ -]?(102|125)|VOC[ -]?VN[ -]?10[01]|VOC[ -]?VN[ -]?1\b|NS[ -]?110\b|VN[ -]?0?61\b" "7s ⭐ names a San Gabriel Valley LVN entry course BY NUMBER — Citrus VNRS 150, Pasadena NURS 102/125, Mt. SAC VOC VN101, Glendale NS 110 or Rio Hondo VN 61 (a college name alone comes from the model's own knowledge; only the anchor supplies the course)"
 answer_must_not_match -i "los medanos|merritt college|city college of san francisco" "7s ⭐ never leads a San Gabriel Valley visitor to a northern California college — they rank 34th of 43 and beyond on distance"
 # The quick list, with the normalizer's CNA family folded (S277): the left column
 # must not restate one course under several names. "Acute Care CNA", "CNA Acute
