@@ -46,10 +46,27 @@ Read in order: this file · [`lanes/sierra-retrieval-corpus.md`](reference/lanes
 - **Proven locally:** `npm test` 344/344 (`f64f645`), the 40 CI python/shell
   steps, `deno check` at the 15 pre-existing errors with none added,
   `deno run` boots, `tests/sierra_place_anchor.test.js` 77/77.
-- **In flight when this session closed:** the branch A/B run
-  **35298283829** (candidate on the preview slug, `cleanup=false`) and CI
-  `test` on `f64f645`. The first `test` run (on `897076a`) failed on exactly
-  the four files `f64f645` fixes.
+- **The branch A/B run 35298283829 is DONE and clean:** candidate
+  (`cpl-chat-preview`, still deployed, `cleanup=false`) **ALL MODES OK**
+  including 7c; production v67 failed only 7c's prose assertion; **no
+  regressions**. The candidate's Orange County answer lists Saddleback,
+  Golden West, Santa Ana and Santiago Canyon with their CNA and nursing
+  course codes, says none has articulated CNA-to-LVN credit, and names the
+  Napa Valley and San Bernardino Valley LVN-credit precedents. Two things it
+  did NOT say, for the next hone: that no Orange County college confers a
+  Vocational Nursing award (it called the RN courses "LVN-adjacent"), and
+  the Chaffey NURVN 414 precedent — `search_statewide_recommendations
+  ('cna')` returns Cisco's CCNA at tier 3, a statewide hit, and the handler
+  skips the LOCAL credential route whenever the statewide one returns
+  anything, so Acute Care Nursing Assistant never reaches the model. ⚠️ One
+  `search_college_programs unavailable` (statement timeout) at 02:14:30Z in
+  the A/B window — one call under the doubled load of two smoke suites
+  (run 2 yesterday had zero, run 1 three). The route fails safe; the
+  client-side time limit and the loader-side tsvector columns are the
+  answers already queued.
+- **CI `test` on `f64f645`** was still running when this session closed; the
+  first `test` run (on `897076a`) failed on exactly the four files `f64f645`
+  fixes, and the full suite is 344/344 locally on `f64f645`.
 
 ## YOUR SEQUENCE
 
@@ -112,6 +129,7 @@ Read in order: this file · [`lanes/sierra-retrieval-corpus.md`](reference/lanes
 | **The `smoke` check on #1607 is RED by construction until v68 deploys** (run 35299011638): the workflow runs the branch's smoke script against PRODUCTION v67, and mode 7c's prose assertion ("names a college from the anchored sets") fails on v67 for exactly the reason the PR exists — the RPC assertions pass. Doctrine merges on `test` green with `unstable` allowed; read 7c on the A/B candidate instead | expected; no action |
 | The checkpoint commits (`97c49d6`, `f3797f2`, and the lane trim) ride on #1607; the vault note is [CPLBrain #154](https://github.com/samueltlee/CPLBrain/pull/154) (draft) | merge #154 on green, with #1607 |
 | Sam reads Sierra's program answers in a browser | asked S273 — `s273-sam-read-program-answers` |
+| The statewide-first gate hides local credentials behind a false friend: `search_statewide_recommendations('cna')` returns Cisco's CCNA, so `fetchAnyCredentials` never runs and the Chaffey CNA-to-LVN precedent is unreachable | found in the A/B candidate's answer; fix is to run the local route when the statewide hits share no token with the question, or always and let the context label them |
 | Client-side time limit on every retrieval RPC (`AbortSignal`) | recommended, not built — `s273-fable-route-time-limits` |
 | College-derived anchor inside the RPCs (detection ahead of the catalog routes) | designed, not built — see the KB note's "What it does not do yet" |
 | Stored generated tsvector columns to cut the ~700 ms floor | a LOADER-side cost; measure on `coci_programs_replace` first (#1602) |
