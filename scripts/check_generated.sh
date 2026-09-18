@@ -16,6 +16,11 @@ run() {
   if out=$(eval "$2" 2>&1); then echo "ok"; else echo "STALE"; echo "$out" | tail -4 | sed 's/^/    /'; fail=1; fi
 }
 run "docs index + catalogs"   "python3 kb/_build_docs_index.py --check"
+# ⚠️ `git add` YOUR NEW FILES BEFORE REBUILDING THE DEPENDENCY MAP.
+# _build_dependency_map.py enumerates the tree with `git ls-files`, so a file
+# that is still untracked is INVISIBLE to it: the rebuild looks clean, this
+# gate says ok, and CI fails one round later once the commit makes the file
+# tracked and its read edges appear. Cost two CI rounds on 2026-09-18.
 run "dependency map"          "python3 kb/_build_dependency_map.py --check"
 run "re-mint blast radius"    "python3 kb/_build_remint_blast_radius.py --check"
 run "docs corpus lint"        "python3 tests/docs_audit_test.py"
