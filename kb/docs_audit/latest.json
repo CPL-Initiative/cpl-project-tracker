@@ -11,8 +11,8 @@
   },
   "summary": {
     "files": 939,
-    "bytes": 9920107,
-    "over_budget": 9,
+    "bytes": 9920089,
+    "over_budget": 8,
     "handoff_max": 275,
     "always_loaded_files": 1,
     "always_loaded_bytes": 60839,
@@ -46,8 +46,8 @@
       },
       "roadmap_lane": {
         "files": 32,
-        "bytes": 199846,
-        "over": 4
+        "bytes": 199828,
+        "over": 3
       },
       "handoff": {
         "files": 247,
@@ -56,13 +56,13 @@
       }
     },
     "by_rule": {
-      "oversized_doc": 9,
+      "oversized_doc": 8,
       "house_voice": 24,
       "vault_heavy_path": 50
     },
     "vault": {
       "files": 2968,
-      "bytes": 1465557341,
+      "bytes": 1465557323,
       "heavy_bytes": 663691721,
       "heavy_share": 0.453,
       "ignore_filters": [
@@ -414,19 +414,6 @@
       },
       "message": "14,661 B is 1.2× the roadmap_lane budget (12,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/partner-crosswalks.md"
-    },
-    {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
-        "bytes": 12004,
-        "limit": 12000,
-        "lane": "roadmap_lane",
-        "over_by": 4,
-        "ratio": 1.0
-      },
-      "message": "12,004 B is 1.0× the roadmap_lane budget (12,000 B) — candidate for compaction",
-      "path": "docs/reference/lanes/sierra-retrieval-corpus.md"
     },
     {
       "rule": "house_voice",
