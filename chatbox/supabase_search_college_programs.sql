@@ -107,6 +107,24 @@
 -- with "function ... is not unique" (42725). Any future parameter addition here
 -- must DROP the superseded signature explicitly.
 --
+-- THE PLACE ANCHOR (2026-09-18, S273): anchor_county / anchor_region
+-- ------------------------------------------------------------------
+-- Sam's test question on v67 — "I have a cna cert and I want to go to a
+-- college in orange county. What CNA courses at the colleges match LVN courses
+-- so I can ask for credit?" — came back with LVN programs in Sacramento, Butte,
+-- Humboldt, Madera and Siskiyou counties. The edge function ranks by proximity
+-- only AFTER this function has applied result_limit, and only against a
+-- RESOLVED college; a county in the question anchored nothing. With the cna
+-- family added the CNA/LVN term set matches 162 rows over 69 colleges, so a
+-- 150-row limit ordered by rank alone can cut a local college before the
+-- caller ever sees it. The anchor is therefore applied HERE, as the leading
+-- ORDER BY keys — same county first, then same region, then rank — and never
+-- as a filter: a county with no matching program still returns the nearest
+-- ones, which is the answer that county needs. Null anchors leave the order
+-- exactly as it was. Measured 2026-09-18: the OC CNA/LVN call returns the same
+-- row SET with and without the anchor; Orange County's five colleges move from
+-- positions 46-120 to 1-16.
+--
 -- VERIFICATION: chatbox/verify_search_college_programs.sql (self-asserting,
 -- and it carries its own CIP fixture so the CIP half is proven without
 -- waiting on a sync). Query-side route: tests/sierra_program_search.test.js.
@@ -222,12 +240,20 @@ end $function$;
 -- same keep-all-if-all-generic rule, the same english/simple split, the same
 -- phrase handling, the same ranking. chatbox/verify_search_college_programs.sql
 -- Part D pins the cost so the per-term scan cannot come back unnoticed.
+-- ⚠️ SIGNATURE CHANGE (2026-09-18): two anchor parameters. Per the OVERLOAD
+-- TRAP note above, the superseded signature is dropped first, in the same
+-- transaction, so PostgREST never sees two candidates. The grants the drop
+-- discards are restored at the end of this file.
+drop function if exists public.search_college_programs(text[], text, integer, numeric, real);
+
 create or replace function public.search_college_programs(
   search_terms   text[],
   college_filter text    default null,
   result_limit   integer default 150,
   generic_pct    numeric default 0.15,
-  fuzzy_floor    real    default 0.6
+  fuzzy_floor    real    default 0.6,
+  anchor_county  text    default null,
+  anchor_region  text    default null
 )
 returns table(
   college text, program_title text, award text, status text,
@@ -387,7 +413,11 @@ begin
     left join public.college_geo g on g.college = h.college
     left join public.chatbox_college_profiles pr on pr.college = h.college
     where h.title_hit or h.code_hit
-    order by h.rank desc, h.college asc, h.program_title asc
+    -- The place anchor leads (never null: IS NOT DISTINCT FROM under the
+    -- not-null guard), then the rank the caller has always had.
+    order by (anchor_county is not null and g.county is not distinct from anchor_county) desc,
+             (anchor_region is not null and g.region is not distinct from anchor_region) desc,
+             h.rank desc, h.college asc, h.program_title asc
     limit result_limit;
   end if;
 
@@ -407,6 +437,8 @@ begin
            from unnest(coalesce(search_terms, '{}'::text[])) tt
            where length(tt) >= 6) > fuzzy_floor
     order by
+      (anchor_county is not null and g.county is not distinct from anchor_county) desc,
+      (anchor_region is not null and g.region is not distinct from anchor_region) desc,
       (select max(word_similarity(lower(tt), lower(public.cx_search_norm(p.program_title))))
        from unnest(coalesce(search_terms, '{}'::text[])) tt
        where length(tt) >= 6) desc,
@@ -415,3 +447,8 @@ begin
   end if;
 end;
 $function$;
+
+-- The drop above discarded the explicit grants; restore them. anon is what the
+-- smoke test and every anon-key caller use, service_role is the edge function.
+grant execute on function public.search_college_programs(text[], text, integer, numeric, real, text, text)
+  to anon, authenticated, service_role;

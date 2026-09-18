@@ -172,3 +172,61 @@ begin
 
   raise notice 'PART D: 2 checks passed.';
 end $$;
+
+-- ── PART E: the place anchor (2026-09-18, S273) ──────────────────────────────
+-- A county named in the question orders the rows INSIDE the limit. Measured on
+-- the OC CNA-to-LVN term set: 139 rows without an anchor and Orange County's
+-- colleges at positions 46, 55-57, 114 and 119-120; anchored, they lead and are
+-- contiguous, and the row SET is unchanged.
+do $$
+declare n bigint; m bigint; k bigint;
+  terms text[] := array['cna','lvn','nurse assistant','certified nurse assistant','practical nursing','vocational nursing'];
+begin
+  -- E1: still exactly one signature — the superseded one was dropped.
+  select count(*) into n from pg_proc p join pg_namespace ns on ns.oid = p.pronamespace
+   where ns.nspname = 'public' and p.proname = 'search_college_programs';
+  if n <> 1 then raise exception 'E1 FAIL: % signatures of search_college_programs — drop the superseded one', n; end if;
+
+  -- E2: anchored rows LEAD, and they are contiguous.
+  with r as (
+    select row_number() over () as pos, county
+    from public.search_college_programs(search_terms := terms, college_filter := null,
+           result_limit := 150, anchor_county := 'Orange', anchor_region := 'Orange County'))
+  select count(*) filter (where county = 'Orange'),
+         min(pos) filter (where county = 'Orange'),
+         max(pos) filter (where county = 'Orange') into n, m, k from r;
+  if coalesce(n, 0) = 0 then raise exception 'E2 FAIL: no Orange County rows for the CNA/LVN terms'; end if;
+  if m <> 1 or k <> n then
+    raise exception 'E2 FAIL: Orange County rows sit at positions %..% of % — the anchor is a tiebreak, not the leading key', m, k, n;
+  end if;
+
+  -- E3: the anchor changes the ORDER, never the SET.
+  select count(*) into n from (
+    (select college, program_title, award, top_code
+       from public.search_college_programs(search_terms := terms, college_filter := null, result_limit := 1000)
+     except
+     select college, program_title, award, top_code
+       from public.search_college_programs(search_terms := terms, college_filter := null, result_limit := 1000, anchor_county := 'Orange'))
+    union all
+    (select college, program_title, award, top_code
+       from public.search_college_programs(search_terms := terms, college_filter := null, result_limit := 1000, anchor_county := 'Orange')
+     except
+     select college, program_title, award, top_code
+       from public.search_college_programs(search_terms := terms, college_filter := null, result_limit := 1000))
+  ) d;
+  if n <> 0 then raise exception 'E3 FAIL: the anchor changed the row set by % rows — it must order, never filter', n; end if;
+
+  -- E4: a region-only anchor leads with the region.
+  with r as (
+    select row_number() over () as pos, region
+    from public.search_college_programs(search_terms := array['lvn','practical nursing','vocational nursing'],
+           college_filter := null, result_limit := 150, anchor_county := null, anchor_region := 'Inland Empire'))
+  select count(*) filter (where region = 'Inland Empire'),
+         min(pos) filter (where region = 'Inland Empire'),
+         max(pos) filter (where region = 'Inland Empire') into n, m, k from r;
+  if coalesce(n, 0) = 0 or m <> 1 or k <> n then
+    raise exception 'E4 FAIL: Inland Empire rows at %..% of % — the region anchor is not the second key', m, k, n;
+  end if;
+
+  raise notice 'PART E: 4 checks passed.';
+end $$;

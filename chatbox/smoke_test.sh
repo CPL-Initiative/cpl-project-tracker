@@ -441,6 +441,110 @@ else
   echo "::error::7p ⭐ the LVN question took ${psecs}s — over 4 s, the route is back near a statement timeout. Sierra's whole answer waits on this RPC, and a timeout drops the Program Catalog section silently. Check that search_college_programs still computes its vectors ONCE per call (verify Part D)."; fail=1
 fi
 
+# ── MODE 7c: a PLACE anchors both catalog routes (2026-09-18, S273) ───────────
+# Sam's test question on v67 — "I have a cna cert and I want to go to a college
+# in orange county. What CNA courses at the colleges match LVN courses…" —
+# resolved "orange" to Orange Coast College and NOCE, and listed LVN programs in
+# Sacramento, Butte, Humboldt, Madera and Siskiyou counties: askedGeo came only
+# from a resolved college, so a county in the question anchored nothing, and
+# both catalog lists fell back to volume order. v68 anchors on the county
+# INSIDE the RPCs (anchor_county / anchor_region, so result_limit can never cut
+# the local colleges), gives `cna` a synonym family, and lets the offerings
+# builder express a phrase (`nurse:* <-> assistant:*`).
+#
+# Three assertions, on RETRIEVAL rather than prose except the last:
+#   · the programs RPC with anchor_county=Orange LEADS with Orange County rows,
+#     contiguously — a mixed run means the anchor is a tiebreak, not a key;
+#   · the offerings RPC with the phrase query reaches the Licensed Vocational
+#     Nursing TOP (44 colleges measured; 0 before, because every phrase was
+#     dropped) and leads with Orange County;
+#   · the answer to the county question names Orange County and a college from
+#     the anchored sets.
+#
+# ⚠ OC_TERMS and OC_OFFERINGS_TSQ are TRANSCRIPTIONS of what index.ts builds for
+# OC_QUESTION once the place is stripped; tests/sierra_place_anchor.test.js
+# re-derives both from index.ts and fails when they part. Same guard 7p and 7r
+# carry.
+OC_QUESTION='I have a CNA certificate and I want to go to a college in Orange County. What CNA courses match LVN courses so I can ask for credit?'
+OC_TERMS='["cna","lvn","nurse assistant","certified nurse assistant","practical nursing","vocational nursing"]'
+OC_OFFERINGS_TSQ='cna:* | lvn:* | (nurse:* <-> assistant:*) | (certified:* <-> nurse:* <-> assistant:*) | (practical:* <-> nursing:*) | (vocational:* <-> nursing:*)'
+programs_call_anchored() { # json array of terms, county
+  curl -sS --max-time 45 -X POST "$REST_BASE/rpc/search_college_programs" \
+    -H 'Content-Type: application/json' -H "apikey: $ANON" -H "Authorization: Bearer $ANON" \
+    -d "$(printf '{"search_terms":%s,"college_filter":null,"result_limit":150,"anchor_county":"%s","anchor_region":null}' "$1" "$2")"
+}
+offerings_call_anchored() { # tsquery, county
+  curl -sS --max-time 45 -X POST "$REST_BASE/rpc/search_college_offerings" \
+    -H 'Content-Type: application/json' -H "apikey: $ANON" -H "Authorization: Bearer $ANON" \
+    -d "$(printf '{"search_query":%s,"college_filter":null,"result_limit":150,"anchor_county":"%s","anchor_region":null}' \
+          "$(printf '%s' "$1" | python3 -c 'import json,sys; print(json.dumps(sys.stdin.read()))')" "$2")"
+}
+# Reads a JSON row array on stdin; prints "<first county>|<n in county>|<contiguous 1/0>|<n rows>|<n with the given top_title>"
+anchor_stat() { # county top_title
+  python3 -c '
+import json, sys
+county, top = sys.argv[1], sys.argv[2]
+try:
+    rows = json.loads(sys.stdin.read())
+    rows = rows if isinstance(rows, list) else []
+except Exception:
+    rows = []
+counties = [r.get("county") for r in rows]
+n = counties.count(county)
+last = max((i for i, c in enumerate(counties) if c == county), default=-1)
+contiguous = 1 if n and all(c == county for c in counties[:last + 1]) else 0
+tops = sum(1 for r in rows if r.get("top_title") == top)
+print((counties[0] or "-") if counties else "-", n, contiguous, len(rows), tops, sep="|")
+' "$1" "$2"
+}
+echo "===================================================================="
+echo "MODE: 7c a place anchors both catalog routes (Orange County, CNA to LVN)"
+pstat=$(programs_call_anchored "$OC_TERMS" "Orange" | anchor_stat "Orange" "-")
+pfirst=$(printf '%s' "$pstat" | cut -d'|' -f1); pn=$(printf '%s' "$pstat" | cut -d'|' -f2)
+pcontig=$(printf '%s' "$pstat" | cut -d'|' -f3); prows=$(printf '%s' "$pstat" | cut -d'|' -f4)
+if [ "${prows:-0}" -gt 0 ]; then
+  echo "  [assert ok] positive control: the anchored programs RPC returned $prows rows"
+else
+  echo "::error::7c positive control FAILED — search_college_programs returned no rows for $OC_TERMS with anchor_county Orange (is the anchored signature applied? verify Part E)"; fail=1
+fi
+# A THRESHOLD, not a count: 16 Orange County rows measured 2026-09-18 over five
+# colleges (Saddleback, Golden West, Cypress, Santa Ana, Santiago Canyon).
+if [ "$pfirst" = "Orange" ] && [ "${pn:-0}" -ge 5 ] && [ "${pcontig:-0}" -eq 1 ]; then
+  echo "  [assert ok] 7c ⭐ the programs RPC leads with $pn contiguous Orange County rows (16 measured)"
+else
+  echo "::error::7c ⭐ the programs RPC did not lead with Orange County (first=$pfirst, orange rows=$pn, contiguous=$pcontig). The anchor must be the LEADING order key inside the RPC — a county question's own colleges were at positions 46-120 on v67."; fail=1
+fi
+ostat=$(offerings_call_anchored "$OC_OFFERINGS_TSQ" "Orange" | anchor_stat "Orange" "Licensed Vocational Nursing")
+ofirst=$(printf '%s' "$ostat" | cut -d'|' -f1); on=$(printf '%s' "$ostat" | cut -d'|' -f2)
+ocontig=$(printf '%s' "$ostat" | cut -d'|' -f3); orows=$(printf '%s' "$ostat" | cut -d'|' -f4); ovn=$(printf '%s' "$ostat" | cut -d'|' -f5)
+if [ "${orows:-0}" -gt 0 ]; then
+  echo "  [assert ok] positive control: the anchored offerings RPC returned $orows rows"
+else
+  echo "::error::7c positive control FAILED — search_college_offerings returned no rows for the phrase query (a phrase reaching a builder that cannot parse it returns NULL, and Sierra answers with no catalog section)"; fail=1
+fi
+if [ "$ofirst" = "Orange" ] && [ "${on:-0}" -ge 3 ] && [ "${ocontig:-0}" -eq 1 ]; then
+  echo "  [assert ok] 7c ⭐ the offerings RPC leads with $on contiguous Orange County rows (6 measured)"
+else
+  echo "::error::7c ⭐ the offerings RPC did not lead with Orange County (first=$ofirst, orange rows=$on, contiguous=$ocontig)."; fail=1
+fi
+# 44 Licensed Vocational Nursing rows measured; 20 still fails loudly if the
+# phrase form regresses to single tokens (then this TOP is reached only where a
+# course title spells "LVN" — the RN bridges — and the count falls to 0).
+if [ "${ovn:-0}" -ge 20 ]; then
+  echo "  [assert ok] 7c ⭐ the phrase query reached $ovn Licensed Vocational Nursing rows (44 measured; 0 before phrases)"
+else
+  echo "::error::7c ⭐ the phrase query reached only ${ovn:-0} Licensed Vocational Nursing rows — the <-> phrase is being dropped or rebound (check tsQueryFromTerms and that the RPC still parses with to_tsquery)."; fail=1
+fi
+run "7c place anchor (Orange County, CNA to LVN)" \
+  "$(printf '{"query":"%s","session_id":"smoke-ci","history":[]}' "$OC_QUESTION")"
+answer_must_match -i "orange county" "7c names the place the visitor named"
+# The anchored sets: the five Orange County colleges with a nursing-assistant or
+# LVN-bridge program, and the nearest Vocational Nursing programs (Los Angeles
+# and Inland Empire). Any one of them is a real, retrieved college; on v67 the
+# answer named none of them and guessed at Santa Ana "based on typical OC
+# nursing offerings".
+answer_must_match -i "saddleback|golden west|cypress|santa ana|santiago canyon|long beach|rio hondo|citrus|chaffey|riverside city|mt\. san antonio|pasadena|antelope valley|west los angeles|los angeles mission|crafton hills|mt\. san jacinto" "7c names a college from the anchored sets"
+
 # Broad "who teaches this" — the catalog should surface colleges that TEACH
 # construction/carpentry (not only those with an existing exhibit).
 run "8 offerings broad (who teaches construction)" \
