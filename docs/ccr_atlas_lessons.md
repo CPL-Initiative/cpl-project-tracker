@@ -1795,3 +1795,87 @@ credentials with no members, and a dict lookup does not error.
 - Merged: **#1546** (`e45a77d`, the sweep and its two defects) and **#1547**
   (`f09a567`, the CPL universe); the vault's session note in CPLBrain **#136**.
 
+
+## 2026-09-18 — SkyView is read only on its face, a drop always answers, and the served page is generated (S276 parallel, SkyLevel)
+
+A parallel session to the Sierra work. No handoff; Sam's two asks were to make
+SkyView safe to share and to fix the drag-and-drop that stops responding.
+
+### Read only was already true, and invisible
+
+SkyView writes nothing. Five GETs of static payloads and one POST — the Ask
+calling `cpl-chat` as a drafting surface that skips its own `chat_interactions`
+insert. No `rest/v1` call anywhere. A merge stages a `CN:<control number>
+merge_into <identity>` row in browser memory and a refresh loses it.
+
+The page said so in three places and a reader could see none of them: the footer
+(`main>footer`, which `body.u-solo` hides), `#prov`'s title attribute (on a
+masthead solo hides too), and a code comment. `body.u-solo` is SkyView alone —
+the view that opens — so the default view offered drag handles, a **Move** chip
+and a "What this would write" panel with no account of what a drop does.
+
+One band under the control row now says it, with the link going where curation
+is actually saved: `unified_courses.js` POSTs `kb_curation` under a magic-link
+reviewer session with RLS on every row. 29px at 1440×900, 47px at 390×844.
+
+⚠️ **The Admin tab cannot answer this question.** Its menu dialog sets who sees
+SkyView in the side menu; `pages.yml` serves `prototype/` deliberately, so the
+page opens for anyone holding the link. Sam checked there first, reasonably.
+
+### The silence WAS the "stops responding"
+
+`pointerup` had one exit that returned without a word: a carried course released
+on `drag.fromNode`, read as "a click on the hollow point, not a move". For a
+course picked up from a MEMBER SQUARE, `fromNode` is the clustered identity that
+square belongs to — so a deliberate drag ending on the open identity took that
+exit, cleared the carry, printed nothing, and left the hint still reading
+"Carrying …".
+
+It bites on the second or third attempt because each merge adds a square to the
+open identity's ring, an open ring SPREADS across its neighbors, and the odds a
+pointer aimed at a loner lands on one of the destination's own members climb
+with every course merged in. Reproduced on VOCE M9008 with three orbiting
+stand-alones, driven the way a curator works — fly once, open the parent, drag
+the loners in without re-centering. `CLICK_SLOP` is 8px against the 5px the
+carry needs to start; the panel's Drag… button has no press point, so its travel
+reads as infinite and is never mistaken for a click.
+
+⚠️ **The mis-pick was measured and LEFT ALONE.** Over eight parent identities
+through the page's own `pick()`: **23 of 24** loners already resolve to
+themselves with their parent open, and **37 of 37** focused member stars resolve
+to that member. The 2026-09-06 reading rule is perfect; the eclipse is one in
+twenty-four. Re-ordering the hit test to chase the 1 risks the 37. With the
+silence gone that case reads as a clear refusal instead of a dead map.
+
+### ⚠️ prototype/skyview.html is GENERATED, and the read-only band shipped into it
+
+The band in #1618 was written into the served page directly. It passed a browser
+check, a new jsdom suite, review, merge and deploy — and #1617's rebuild from the
+sources stripped it out of main about twenty minutes later.
+
+What caught it: the jsdom suite for the NEXT change loaded `ccr_atlas_v1.html` +
+`ccr_universe.js`, so two of its checks failed with a result that made no sense —
+a queued course and a settled course at an identical radius. A suite pointed at
+the served page would have passed and taught nothing.
+
+`scripts/check_generated.sh` already existed, already carried two "added after
+this script missed one" notes, and did not list `prototype/skyview.html` — while
+this lane file's own last line tells you to run it before a push. The page is in
+it now, and `tests/skyview_built_from_source_test.py` names the source file and
+line of the first divergence. Durable version:
+[`methodology-a-generated-file-accepts-your-edit`](kb-notes/methodology-a-generated-file-accepts-your-edit.md).
+
+### The queue against the parent
+
+Sam: *"it should move the course circle next to the parent circle — as if it's in
+line for the next remint procedure."* A staged course used to take whatever spoke
+index it landed on. It now draws on a short arc hugging the parent circle, ahead
+of the ring, as a CIRCLE rather than a star — out on the map a course of its own
+is a circle, so the shape says this one came in from outside and has not been
+folded in. Label: "staged, awaiting a curator". The ring lays out from the
+courses actually in it, so pulling one into the queue does not re-flow it.
+
+### PRs
+
+#1618 (the band, and the artifact mistake), #1619 (the drop answer, the queue,
+the port to the sources, the build guard, the inventory fix).

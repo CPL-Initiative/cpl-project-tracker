@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 472,
+   "count": 473,
    "docs": [
     {
      "created": "2026-08-14",
@@ -1635,6 +1635,25 @@
      "title": "A gate cannot protect the step that fills it",
      "type": "methodology",
      "updated": "2026-08-19"
+    },
+    {
+     "created": "2026-09-18",
+     "governs": [
+      "tests/skyview_built_from_source_test.py",
+      "scripts/check_generated.sh",
+      "prototype/build_ccr_atlas.py"
+     ],
+     "path": "docs/kb-notes/methodology-a-generated-file-accepts-your-edit.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "generated-artifacts",
+      "ci",
+      "skyview"
+     ],
+     "title": "A generated file accepts your edit, and that is what makes it dangerous",
+     "type": "methodology",
+     "updated": "2026-09-18"
     },
     {
      "created": "2026-09-05",
@@ -13760,8 +13779,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 248,
+   "count": 249,
    "docs": [
+    {
+     "created": "2026-09-18",
+     "governs": [],
+     "n": 277,
+     "path": "docs/session_277_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "skyview",
+      "ccr",
+      "generated-artifacts",
+      "read-only"
+     ],
+     "title": "SkyView is shareable and answers every drop; next, the curator's Save",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-18",
      "governs": [],
@@ -17958,5 +17994,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 932
+ "total": 934
 }

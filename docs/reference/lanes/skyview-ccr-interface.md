@@ -38,15 +38,31 @@ keyboard path. **`#skyview` OPENS AS THE SKY** since S239 — **Sky · Globe** a
 places to stand on ONE canvas. A course opens its outline of record (S235); a
 staged move is marked on the course itself (S239).
 
-**Swept end to end 2026-09-10 (S252):** `npm run sweep` drives the served page
-through every reader and curator action (~200 checks) and passes. The two defects
-it found shipped the same day — the Ask's union where a question meant an
-intersection (Sam's *"introductory welding courses"* screenshot), and the *Drag…*
-mouse path that left Esc dead — and what it observed and did not change is
-[`skyview_backlog` ⑩](../../skyview_backlog.md).
+**Swept end to end:** `npm run sweep` drives the served page through every reader
+and curator action (~200 checks) and passes. What it observed and did not change
+is [`skyview_backlog` ⑩](../../skyview_backlog.md).
+
+⚠️ **`prototype/skyview.html` IS GENERATED — edit `ccr_universe.js` (behavior and
+markup) or `ccr_atlas_v1.html` (CSS), then `python3 prototype/build_ccr_atlas.py`.**
+A hand-patch survives review and deploy and dies on the next rebuild; it did, on
+2026-09-18 (#1618, reverted by #1617's rebuild within the hour). Guarded now by
+`tests/skyview_built_from_source_test.py`, in CI and in `scripts/check_generated.sh`.
+[`methodology-a-generated-file-accepts-your-edit`](../../kb-notes/methodology-a-generated-file-accepts-your-edit.md)
+
+**Read only, on its face (2026-09-18).** A band under the control row states it
+where the curate controls are: *Read only. Moves stage in this browser alone.
+Signed-in curators save in COBI's Common Course Reference tab.* The three older
+statements all sat in chrome `body.u-solo` hides. SkyView still writes NOTHING —
+one POST in the file, the Ask, which inserts no row. The Admin tab's menu dialog
+cannot answer this: `pages.yml` serves `prototype/`, so the page opens for anyone
+holding the link.
 
 **Current behavior worth knowing before you touch it:** rotation `SPIN` 0.018; a
-dropped course PARKS; courses gather by level on the ring score already chose;
+dropped course PARKS; a drop that stages nothing ANSWERS (the
+silent `fromNode` exit was the "stops responding on the second or third merge",
+2026-09-18) and a staged course queues on its own arc against the parent circle,
+labeled *staged, awaiting a curator*; courses gather by level on the ring score
+already chose;
 **CTE vs academic** is three Show switches (25,857 · 16,470 · **7,569 with no
 verdict**); **Isolate** is a toggle; the phone header is 114px at 390×844 (map
 86%) and pinch zooms; a question typed in the search box becomes a map selection
@@ -89,8 +105,8 @@ visibly on the sky so folks can easily see…"*. The data side is done (`sw` on 
 84); the treatment depends on the rest of the sentence — see which are statewide,
 see what a college could adopt, or see where they are already in use.
 ② **The live `sierra_guidance` CHECK constraint** does not yet allow
-`skyview-ask`. The schema of record does. Not blocking — nothing in the feature
-writes a guidance row — so it only matters to scope a Sierra rule to this surface.
+`skyview-ask` (the schema of record does). Not blocking; it only matters to scope
+a Sierra rule to this surface.
 ③ **The opening width on a phone.** At 188° across on a 390px canvas the
 discipline labels clip off both edges. Narrowing is a real improvement but
 `NODE_ZOOM` decides per island whether courses draw at all, and the margin is the
@@ -108,15 +124,11 @@ link, never a github.io URL.
 
 ## NEXT
 
-⭐ **CPL MODE IS A SECOND UNIVERSE, NOT A RELABELLING — Sam's ruling, 2026-09-10,
-his words:** *"Instead of courses, it groups exhibits in discipline groupings
-like the course view but relies on the CER titles to show Exhibits like we show
-the courses — as entities. So a Firefighter 1 Exhibit would be like a MID
-grouping showing all the local exhibits as members of the group as if they were
-courses. Then we would show the course(s), perhaps on the exhibit cards, that
-have CPL based on the exhibit… It's like another universe where the entities are
-exhibits rather than courses, but just like in course view, circles around the
-exhibits can indicate that courses are articulated to them."*
+⭐ **CPL MODE IS A SECOND UNIVERSE, NOT A RELABELING** (Sam's ruling, 2026-09-10).
+Exhibits grouped into discipline islands the way courses are, CER canonical titles
+as the entities, local exhibits as their members, a ring where courses are
+articulated to them. His words verbatim: `cpl_memory`
+`sam-cpl-mode-is-an-exhibit-universe-2026-09-10`.
 
 This is not the shipped CPL face, which renames the same points. It is a second
 payload with the same shape as `ccr_universe.json`: **CER canonical titles as
@@ -163,10 +175,9 @@ sources, union them, *"err on the side of including anything possibly relevant,
 as the faculty will revise and keep or toss."*
 ② **The blanks — RULED AND NARROWED: 93 → 86.** Five codes went into the subject
 map (BSOT · HUMA · GRAF · BCST · BARB); HOSP is genuinely split four ways.
-⚠️ **The remaining 86 are NOT fillable and the payload says so**: across their 45
-codes, 37 have no other identity carrying that prefix and 6 read "unanimous" off
-a SINGLE row. A **curator pass, never an inference**:
-`kb/discipline_blanks_worklist.json`.
+⚠️ **The remaining 86 are NOT fillable and the payload says so** (37 of their 45
+codes have no other identity carrying that prefix). A **curator pass, never an
+inference**: `kb/discipline_blanks_worklist.json`.
 ③ **The disagreements: 9 → 2, and neither survivor is a map problem.** Left:
 **PHTO** (the map is right, its twelve courses mis-filed) and **ESLN** (③b's
 rename). ⭐ All nine printed NOTHING until S243 — `standingHtml()` appended the
