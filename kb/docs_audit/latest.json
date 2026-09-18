@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 939,
-    "bytes": 9920041,
+    "bytes": 9920107,
     "over_budget": 9,
     "handoff_max": 275,
     "always_loaded_files": 1,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 114,
-        "bytes": 3087692,
+        "bytes": 3087772,
         "over": 3
       },
       "index": {
@@ -46,7 +46,7 @@
       },
       "roadmap_lane": {
         "files": 32,
-        "bytes": 199860,
+        "bytes": 199846,
         "over": 4
       },
       "handoff": {
@@ -62,7 +62,7 @@
     },
     "vault": {
       "files": 2968,
-      "bytes": 1465557017,
+      "bytes": 1465557341,
       "heavy_bytes": 663691721,
       "heavy_share": 0.453,
       "ignore_filters": [
@@ -419,13 +419,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 12018,
+        "bytes": 12004,
         "limit": 12000,
         "lane": "roadmap_lane",
-        "over_by": 18,
+        "over_by": 4,
         "ratio": 1.0
       },
-      "message": "12,018 B is 1.0× the roadmap_lane budget (12,000 B) — candidate for compaction",
+      "message": "12,004 B is 1.0× the roadmap_lane budget (12,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/sierra-retrieval-corpus.md"
     },
     {

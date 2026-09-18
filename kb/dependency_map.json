@@ -4,7 +4,7 @@
   "supabase_tables": 84,
   "rpcs": 30,
   "edge_functions": 5,
-  "file_datasets": 474,
+  "file_datasets": 475,
   "external_services": 143,
   "consumers": 340,
   "workflows": 34,
@@ -13886,6 +13886,19 @@
    "main_committers": []
   },
   "file:tests/cobi_live_banner.test.js": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/coci_offerings_sync_chunk_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
