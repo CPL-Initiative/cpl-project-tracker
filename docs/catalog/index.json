@@ -13717,8 +13717,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 247,
+   "count": 248,
    "docs": [
+    {
+     "created": "2026-09-18",
+     "governs": [],
+     "n": 276,
+     "path": "docs/session_276_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "sierra",
+      "prospective-cpl",
+      "deploy",
+      "geography",
+      "route-time-limit"
+     ],
+     "title": "v70 is live and answers the direct question first; read it, then finish the time limit",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-18",
      "governs": [],
@@ -17897,5 +17915,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 929
+ "total": 930
 }
