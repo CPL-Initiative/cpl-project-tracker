@@ -75,6 +75,15 @@ public Supabase bucket `ccr-desc`, 159 shards / 50 MB.
 the payload AND `ccr_universe.js` are INLINE in the served page, so regenerating
 the JSON alone never reaches it, and neither does a JS change. Rebuild with
 `prototype/build_ccr_atlas.py`; never hand-patch `skyview.html`.
+⚠️ **THIS RULE WAS ALREADY HERE ON 2026-09-18 AND A SESSION HAND-PATCHED THE PAGE
+ANYWAY** — reading the lane file's pointer to this document is not the same as
+opening it. The read-only band shipped in #1618 as an artifact edit, survived a
+browser check, a jsdom suite, review, merge and deploy, and #1617's rebuild
+stripped it out of main twenty minutes later. **Knowing the rule is not the
+defense; the check is.** `tests/skyview_built_from_source_test.py` compares the
+served page to its sources and names the source file and line of the first
+divergence, in `js-tests.yml` and in `scripts/check_generated.sh` — which had
+listed every other generated file and not this one.
 `prototype/ccr_cpl.json` and `prototype/ccr_sky.json` rebuild every run; their
 tests fail CI on a stale file.
 
