@@ -2347,6 +2347,78 @@ function buildCreditContext(cs: any): string {
 const PLACE_ALIASES: Record<string, string> = {
   "la county": "Los Angeles", "l.a. county": "Los Angeles", "oc": "Orange",
 };
+// A SUB-REGION IS A PLACE TOO (2026-09-18, S277). Measured failure: a visitor
+// wrote "I have a cna cert and live in the San Gabriel Valley … compare typical
+// CNA courses to LVN". resolveAskedPlace matched nothing — the text carries no
+// "<county> county", no alias, and no bare REGION name ("Los Angeles" is skipped
+// because nine colleges contain it) — so askedGeo was null, both catalog RPCs
+// fell back to volume order, and Sierra offered Los Medanos College (Contra
+// Costa, ~370 mi) as "one of the nearer matches I can confirm" while telling the
+// visitor the catalog data showed no San Gabriel Valley college teaching an LVN
+// entry program. The catalog holds FIVE, with 87 course rows between them:
+// Pasadena City (NURS 102/125 Fundamentals of Vocational Nursing, 28 rows),
+// Citrus (VNRS 150 Fundamentals of Nursing, 20), Glendale (NS 110, 19),
+// Mt. San Antonio (VOC VN101, 12) and Rio Hondo (VN 61, 8). The answer then
+// named Pasadena and Rio Hondo itself, from the model's own knowledge, and said
+// "my data doesn't confirm their course lists here" — the data held 28 rows and
+// 8. A false zero is the worst answer she gives: it closes the conversation, and
+// nobody files feedback about a door they were told wasn't there.
+//
+// A county is too coarse to be the whole instrument here — Los Angeles County
+// runs from Lancaster to Long Beach — so a sub-region carries its OWN anchor
+// colleges: the band still comes from the county (every LA college ranks above
+// every non-LA one), and the centroid of the named campuses orders WITHIN the
+// band, which is what puts Pasadena and Citrus above Antelope Valley.
+//
+// Only names a student would actually type, and only where the name points at
+// one place: "South Bay" is omitted because it is Torrance to a Los Angeles
+// student and San Jose to a Bay Area one, and a confidently wrong anchor is
+// worse than none. Every college named here is asserted to exist in
+// college_geo by tests/sierra_place_anchor.test.js — a typo would silently
+// shrink a sub-region.
+const SUBREGIONS: Array<{ names: string[]; label: string; county: string; colleges: string[] }> = [
+  { names: ["san gabriel valley", "sgv"], label: "the San Gabriel Valley", county: "Los Angeles",
+    colleges: ["Pasadena City College", "Citrus College", "Mt. San Antonio College", "Rio Hondo College",
+               "East Los Angeles College", "Glendale Community College"] },
+  { names: ["san fernando valley"], label: "the San Fernando Valley", county: "Los Angeles",
+    colleges: ["Los Angeles Valley College", "Los Angeles Mission College", "Los Angeles Pierce College",
+               "College of the Canyons"] },
+  { names: ["santa clarita valley"], label: "the Santa Clarita Valley", county: "Los Angeles",
+    colleges: ["College of the Canyons"] },
+  { names: ["antelope valley"], label: "the Antelope Valley", county: "Los Angeles",
+    colleges: ["Antelope Valley College"] },
+  { names: ["gateway cities"], label: "the Gateway Cities", county: "Los Angeles",
+    colleges: ["Cerritos College", "Compton College", "Long Beach City College", "Rio Hondo College"] },
+  { names: ["westside", "west side of los angeles"], label: "the Westside", county: "Los Angeles",
+    colleges: ["Santa Monica College", "West Los Angeles College"] },
+  { names: ["high desert", "victor valley"], label: "the High Desert", county: "San Bernardino",
+    colleges: ["Victor Valley College", "Barstow Community College", "Copper Mountain College"] },
+  { names: ["coachella valley"], label: "the Coachella Valley", county: "Riverside",
+    colleges: ["College of the Desert"] },
+  { names: ["north county san diego", "north san diego county"], label: "North County San Diego",
+    county: "San Diego", colleges: ["MiraCosta College", "Palomar College"] },
+  { names: ["silicon valley"], label: "Silicon Valley", county: "Santa Clara",
+    colleges: ["De Anza College", "Foothill College", "Mission College", "San Jose City College",
+               "West Valley College", "Evergreen Valley College"] },
+  { names: ["east bay"], label: "the East Bay", county: "Alameda",
+    colleges: ["Berkeley City College", "Chabot College", "College of Alameda", "Laney College",
+               "Las Positas College", "Merritt College", "Ohlone College", "Contra Costa College",
+               "Diablo Valley College", "Los Medanos College"] },
+  { names: ["north bay"], label: "the North Bay", county: "Sonoma",
+    colleges: ["Santa Rosa Junior College", "College of Marin", "Napa Valley College",
+               "Solano Community College"] },
+  { names: ["the peninsula", "san francisco peninsula"], label: "the Peninsula", county: "San Mateo",
+    colleges: ["Cañada College", "College of San Mateo", "Skyline College"] },
+];
+// Region names a visitor uses that college_geo does not spell that way. A bare
+// region name already matches as a phrase (resolveAskedPlace), so these are only
+// the synonyms — never a name that is also part of a college's name.
+const REGION_ALIASES: Record<string, string> = {
+  "central valley": "San Joaquin Valley",
+  "sf bay area": "Bay Area",
+  "san francisco bay area": "Bay Area",
+};
+
 function resolveAskedPlace(text: string, geoMap: Map<string, any> | null): any | null {
   if (!text || !geoMap || geoMap.size === 0) return null;
   const regionOf = new Map<string, string>();
@@ -2366,6 +2438,31 @@ function resolveAskedPlace(text: string, geoMap: Map<string, any> | null): any |
       best = { county, region, match: m[0], index: m.index };
     }
   };
+
+  // A SUB-REGION WINS OVER THE COUNTY THAT CONTAINS IT — it is the more specific
+  // statement of where the visitor is, and its own campuses are the anchor.
+  // Longest match inside this pass, so "north san diego county" beats a bare
+  // county read of the same words.
+  let sub: any = null;
+  for (const sr of SUBREGIONS) {
+    const here = sr.colleges.filter((c) => geoMap.has(c));
+    if (here.length === 0) continue;
+    for (const name of sr.names) {
+      const m = new RegExp("\\b" + esc(name) + "\\b", "i").exec(text);
+      if (m && (!sub || m[0].length > sub.match.length)) {
+        sub = { county: sr.county, region: regionOf.get(sr.county) || null, label: sr.label,
+                colleges: here, match: m[0], index: m.index };
+      }
+    }
+  }
+  if (sub) {
+    const stripped = (text.slice(0, sub.index) + " " + text.slice(sub.index + sub.match.length))
+      .replace(/\s{2,}/g, " ").trim();
+    return { county: sub.county, region: sub.region, label: sub.label, colleges: sub.colleges, stripped };
+  }
+  for (const [alias, region] of Object.entries(REGION_ALIASES)) {
+    if (regions.has(region)) consider(null, region, esc(alias));
+  }
   for (const [county, region] of regionOf) consider(county, region, esc(county) + "\\s+county");
   for (const [alias, county] of Object.entries(PLACE_ALIASES)) {
     if (regionOf.has(county)) consider(county, regionOf.get(county) || null, esc(alias));
@@ -2393,10 +2490,12 @@ function resolveAskedPlace(text: string, geoMap: Map<string, any> | null): any |
 // colleges ARE in the place, and what to do when none of them has the thing.
 function buildPlaceContext(place: any | null, geoMap: Map<string, any> | null): string {
   if (!place || !geoMap) return "";
+  const named: Set<string> | null = place.colleges && place.colleges.length
+    ? new Set<string>(place.colleges) : null;
   const here: Array<string> = [];
   for (const [college, g] of geoMap) {
     if (!g) continue;
-    if (place.county ? g.county === place.county : g.region === place.region) here.push(college);
+    if (named ? named.has(college) : (place.county ? g.county === place.county : g.region === place.region)) here.push(college);
   }
   here.sort();
   let s = `\n\n--- THE VISITOR'S PLACE: ${place.label}`;
@@ -2406,6 +2505,9 @@ function buildPlaceContext(place: any | null, geoMap: Map<string, any> | null): 
   s += here.length
     ? `Community colleges in ${place.label} (${here.length}): ${here.join("; ")}.\n`
     : `No community college in the geography table sits in ${place.label}; rank by the nearest region instead.\n`;
+  if (named && place.county) {
+    s += `${place.label} is part of ${place.county} County, and the rest of that county is still close: the ranked lists below carry those colleges next, with their distance. Never read the ${here.length} above as the only colleges within reach.\n`;
+  }
   s += `Lead with what the colleges in ${place.label} teach and award. When none of them has what was asked, the catalog sections say the catalog lists none — say what the catalog shows (never that no college in ${place.label} has it), name the related programs it does list there, then name the nearest colleges that do, with their county and distance, so the visitor can judge the trip. Never present a college outside ${place.label} as if it were local, and never guess at a college's catalog: name only courses and programs that appear in the context.\n`;
   return s;
 }
@@ -2550,10 +2652,15 @@ function haversineKm(a: Array<number>, b: Array<number>): number {
 // the place is a county, else region). Null when nothing inside it has a point.
 function placePoint(place: any | null, geoMap: Map<string, any> | null): Array<number> | null {
   if (!place || !geoMap || (!place.county && !place.region)) return null;
+  // A sub-region anchors on the campuses it names, never on its whole county:
+  // Los Angeles County runs from Lancaster to Long Beach, and its centroid puts
+  // the San Gabriel Valley's own colleges no closer than anyone else's.
+  const named: Set<string> | null = place.colleges && place.colleges.length
+    ? new Set<string>(place.colleges) : null;
   let lat = 0, lon = 0, n = 0;
   for (const [college, g] of geoMap) {
     if (!g) continue;
-    if (place.county ? g.county === place.county : g.region === place.region) {
+    if (named ? named.has(college) : (place.county ? g.county === place.county : g.region === place.region)) {
       const p = collegePoint(college);
       if (!p) continue;
       lat += p[0]; lon += p[1]; n++;
@@ -3936,7 +4043,9 @@ const OFFERINGS_RULE = `\n\nABOUT THE "COURSE CATALOG / WHICH COLLEGES TEACH THI
 - DISTANCE IS A FACT, NOT A FILTER. Never suppress the nearest teaching college just because it is far. Name it and STATE THE DISTANCE PLAINLY using the county/region provided — "the nearest college teaching this is <college>, in <county>, which is a fair way from you" — and let the visitor judge whether it is worth it. Withholding a distant option leaves someone who would happily travel, or study online, with nothing at all. State it honestly; do not sell it, and do not apologise for it.
 - IF ALL THREE PARTS COME UP EMPTY — no college has articulated it, and no nearby college teaches it — SAY SO PLAINLY rather than padding the answer. Then give the two things that still help: (a) Credit for Being You, where they can record the credential and see their options across every California community college as they change; and (b) an invitation to email the MAP team at MAP@rccd.edu so the gap is on record. Be explicit that flagging it is genuinely useful — an unmet request is how the system learns a credential is in demand and worth building. Never invent a college, a course or an articulation to avoid an empty answer.
 - ALWAYS add that teaching a course is not a guarantee of credit — the student/organization should contact the college's CPL coordinator to request a review. Never claim an articulation exists when only a course is taught.
-- WHEN THE VISITOR NAMED A PLACE (a county or a region) RATHER THAN A COLLEGE, the context carries a "THE VISITOR'S PLACE" block and each catalog section says whether any college IN that place matches. Treat the place as home: lead with its colleges, and when a section says the catalog lists none of them, say what the catalog shows (never that no college in the place has it), name the related programs the catalog does list there, and name the nearest colleges that do, with their county and distance. Never answer a county question from whichever college happens to share a word with it.
+- WHEN THE VISITOR NAMED A PLACE (a county, a region or a named sub-region such as the San Gabriel Valley) RATHER THAN A COLLEGE, the context carries a "THE VISITOR'S PLACE" block and each catalog section says whether any college IN that place matches. Treat the place as home: lead with its colleges, and when a section says the catalog lists none of them, say what the catalog shows (never that no college in the place has it), name the related programs the catalog does list there, and name the nearest colleges that do, with their county and distance. Never answer a county question from whichever college happens to share a word with it.
+  - ⚠️ EVERY TIME YOU MENTION THE ABSENCE, ATTRIBUTE IT TO THE CATALOG — the closing caveat as much as the opening sentence. One answer opened correctly with "the catalog data lists no college in Orange County currently teaching an LVN entry program" and then closed with "since no Orange County college currently teaches an LVN entry program", which is the flat claim about the county Sam called wrong. The short restatement is the one that slips; write the attribution into it, or leave the absence out of the later paragraph entirely.
+  - A SUB-REGION IS NOT A FENCE. Its block names the colleges inside it and says the rest of its county is still close. The colleges beyond it are real options, ranked by distance — name them as such, and never imply the visitor's choices end at the sub-region's edge.
 - WHEN ASKED WHICH COURSES A CREDENTIAL COULD COUNT TOWARD ("what CNA courses match LVN courses"), work from the data in front of you: the course lines in the catalog section for the program asked about, and the credit-recommendation precedents in the credential record (how adopter colleges articulated it — course and units). Name only courses that appear in the context, and present matches as what to ask the college's CPL coordinator to review — faculty decide the award. Where the context carries no course list for that program, say which college teaches it and that the course-level match is the college's to confirm.
 - The catalog list shows the TOP matching colleges, NOT an exhaustive list. NEVER conclude that a college does NOT teach a subject just because it isn't shown — many colleges that teach it may not appear. If a specific college the visitor named is not in the list, do NOT say it lacks the courses; say you're not certain from the data at hand and suggest checking that college's catalog or CPL coordinator.`;
 
@@ -4058,7 +4167,9 @@ This is the most actionable thing you can give a college. Walk the recommendatio
 const PROSPECTIVE_RULE = `\n\nABOUT THE "PROSPECTIVE CREDIT" SECTION (if present) — WHAT A HELD CREDENTIAL COULD COUNT TOWARD:
 This answers a DIFFERENT question from every section above. The exhibit and credential sections say who ALREADY grants credit for a credential. This section is for the visitor who holds a credential and wants to know which courses in a program it MIGHT count toward, so they can ask for a review at a college that has never granted it. Answer that question. Do not swap in the "who already grants it" answer, and do not decline because no exhibit exists: a college that has not articulated a credential can still review a request, and such requests are how articulations begin.
 - LEAD WITH THE ANSWER. The first sentence names a course to ask about — college, course number, title — from the program the visitor wants to enter (a section without the BACKGROUND mark), and the same paragraph carries the rest of the courses and how to ask. Nothing comes before that first course: no "first, the limits", no "note first", no paragraph about the catalog or the bridges, no table of who has articulated what, no remark about the question. When the catalog lists no college in the visitor's place for the program, the first sentence still names the nearest college's course, and the sentence about the catalog and the related programs FOLLOWS it in the same paragraph. Existing articulations come AFTER the courses, as the precedent line below, briefly, and only for the credential the visitor holds or one of the same kind (for a CNA holder: Nurse Assistant and Acute Care Nursing Assistant articulations count) — an award for a different credential (an LVN license award, for a CNA holder) is not evidence and is not listed.
-- THEN THE QUICK LIST. Right after the first paragraph, give a two-column markdown table from the section's QUICK LIST: the left column the typical courses of the program that trains the credential held (what a CNA's training covers — the visitor did not say where they trained, so the section generalizes across every college that teaches the program), the right column the typical courses of the program they want to enter (what to ask about). Five to eight rows, course names with the college count in parentheses where it helps, no course numbers (those belong to the college lists below). Head the columns in plain words, for example "What a CNA typically covers" and "LVN courses to ask about".
+- THEN THE QUICK LIST. Right after the first paragraph, give a two-column markdown table from the section's QUICK LIST: the left column the typical courses of the program that trains the credential held (what a CNA's training covers — the visitor did not say where they trained, so the section generalizes across every college that teaches the program), the right column the typical courses of the program they want to enter (what to ask about). Head the columns in plain words, for example "What a CNA typically covers" and "LVN courses to ask about". Course names with the college count in parentheses where it helps, no course numbers (those belong to the college lists below).
+  - TAKE THE ROWS THE QUICK LIST GIVES YOU AND STOP. Use every course the section lists for a program, in its order, and never invent, split or restate one to reach a row count — the two columns are almost always different lengths, and a short column is the true answer. A training program is often ONE course plus a few add-ons: the CNA list is Nurse Assistant at 50 of 65 colleges and then a short tail, while the LVN list runs to eight. Pad the short side and you produce the same course under four names, which reads as four things a CNA studied and is false. Leave the extra cells of the shorter column empty.
+  - THE COLUMNS ARE TWO INDEPENDENT LISTS, NOT PAIRINGS. A markdown table invites the reader to pair each row across, so say in the line before it that the left column is what the training typically covers and the right is what to ask about, and that the rows do not line up one to one. Where one course genuinely does answer another — a nurse assistant's patient-care and clinical hours against an LVN fundamentals course — say that in the prose, where you can give the reason, never by placing them on the same row and leaving the reader to guess.
 - THE COLLEGE IS ON EVERY COURSE LINE. A course belongs to the college named on its own line and to no other college — never attach a course to a different college, even one in the visitor's place (one answer named Mt. San Antonio's VOC VN1 as Golden West's).
 - WORK FROM THE COURSE LIST. For the program the visitor wants to enter, read its courses at the colleges shown and name the ones whose content the credential plausibly covers — usually the entry-level courses (fundamentals, foundations, introduction, transition, basic, level I), never the advanced or specialty ones. Say in a phrase WHY each is a candidate: what the credential trains that the course teaches. Name only courses that appear in the context, with their course number.
 - THE PROGRAM THEY WANT TO ENTER IS THE TARGET. When the lists include the program that trains the credential they already hold (a nurse assistant program for a CNA holder), that section is marked BACKGROUND and comes last: it is background, not the answer — they do not need credit for what they hold; they need credit toward what they are entering. Never name a course from a BACKGROUND section as the course to ask about, and never open with one; its courses show what the credential covers, and that is all they are for.

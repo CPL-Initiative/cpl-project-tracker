@@ -47,8 +47,28 @@ begin
   s := public.cpl_course_title_norm('Advanced Medical Surgical Nursing');
   if s <> 'advanced medical surgical nurse' then raise exception 'A3 FAIL: advanced med-surg normalized to "%"', s; end if;
   -- The possessive: the punctuation strip leaves a lone "s", which is a stop word.
+  -- 'aide' folds to 'assistant' (S277), so this is the SAME course as above --
+  -- that fold is the point, and "Home Health Aide" stays its own group because
+  -- its other two words differ.
   s := public.cpl_course_title_norm('Nurse''s Aide');
-  if s <> 'nurse aide' then raise exception 'A3 FAIL: possessive normalized to "%"', s; end if;
+  if s <> 'nurse assistant' then raise exception 'A3 FAIL: possessive normalized to "%"', s; end if;
+  -- The abbreviation expands (S277): these five reached the quick list as five
+  -- separate courses, and 22 colleges teach one course between them.
+  s := public.cpl_course_title_norm('Acute Care Cna');
+  if s <> 'acute care nurse assistant' then raise exception 'A3 FAIL: acute care CNA normalized to "%"', s; end if;
+  s := public.cpl_course_title_norm('Acute Care Theory for CNAs');
+  if s <> 'acute care nurse assistant' then raise exception 'A3 FAIL: acute care CNAs normalized to "%"', s; end if;
+  s := public.cpl_course_title_norm('CNA /Acute Care Aide');
+  if s <> 'nurse assistant acute care' then raise exception 'A3 FAIL: CNA/acute aide normalized to "%"', s; end if;
+  -- ⚠️ The last two differ in ORDER only. That is folded by typicalFoldKey() in
+  -- the cpl-chat function, which sorts the content stems and unions the college
+  -- arrays; this function deliberately does NOT sort, so `norm` stays readable
+  -- for the smoke's anon probe, which matches it as a string.
+  s := public.cpl_course_title_norm('LVN Pharmacology');
+  if s <> 'vocational nurse pharmacology' then raise exception 'A3 FAIL: LVN pharmacology normalized to "%"', s; end if;
+  -- The expansion can repeat a word; the dedupe keeps first-occurrence order.
+  s := public.cpl_course_title_norm('CNA / Certified Nurse Assistant');
+  if s <> 'nurse assistant' then raise exception 'A3 FAIL: CNA + spelled-out normalized to "%"', s; end if;
   if public.cpl_course_title_norm(null) <> '' or public.cpl_course_title_norm('') <> '' then
     raise exception 'A3 FAIL: null/empty title must normalize to empty';
   end if;
@@ -88,6 +108,13 @@ begin
 
   -- A9: cost. Eight health programs (RN's 1,544 rows among them) in well under
   -- the anon key's 3 s statement timeout; 1,500 ms fails loudly first.
+  -- ⚠️ WARM THE CACHE FIRST, OR A9 MEASURES THE DISK. chatbox_college_courses is
+  -- 141,696 rows and every call seq-scans it. Measured 2026-09-18 (S277): the
+  -- FIRST call after a cold start took 1,625 ms and the next three took 198 ms.
+  -- A9 is the first statement here to touch the table, so without this it
+  -- reports the one-off page-in as the function's cost and fails a correct
+  -- normalizer. The warm-up is one program, and its own time is not asserted.
+  perform count(*) from public.program_typical_courses(array['1230.30'], 2, 40) r;
   t0 := clock_timestamp();
   perform count(*) from public.program_typical_courses(array['1230.30','1230.20','1230.10','1208.00','1205.10','1225.00','1217.00','1209.00'], 2, 40) r;
   ms := extract(epoch from clock_timestamp() - t0) * 1000;

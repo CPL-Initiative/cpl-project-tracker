@@ -50,7 +50,7 @@ try {
   V = liftBlock(SRC, "const TOPIC_SYNONYMS", "// ── Topic-based exhibit search",
     ["extractTopicKeywords", "expandWithSynonyms", "singleTokenTerms", "tsQueryFromTerms", "TOPIC_SYNONYMS"]);
   P = liftBlock(SRC, "// ── Place anchor", "// Proximity band for ranking",
-    ["resolveAskedPlace", "buildPlaceContext", "PLACE_ALIASES"]);
+    ["resolveAskedPlace", "buildPlaceContext", "PLACE_ALIASES", "SUBREGIONS", "REGION_ALIASES"]);
   G = liftBlock(SRC, "// Proximity band for ranking", "// ── Live CPL contacts (v45",
     ["proximityBand", "buildOfferingsContext", "buildProgramsContext"]);
 } catch (e) { liftErr = e; }
@@ -74,6 +74,11 @@ const geoMap = new Map([
   ["Long Beach City College", geo("Los Angeles", "Los Angeles")],
   ["Rio Hondo College", geo("Los Angeles", "Los Angeles")],
   ["Citrus College", geo("Los Angeles", "Los Angeles")],
+  ["Pasadena City College", geo("Los Angeles", "Los Angeles")],
+  ["Mt. San Antonio College", geo("Los Angeles", "Los Angeles")],
+  ["Glendale Community College", geo("Los Angeles", "Los Angeles")],
+  ["East Los Angeles College", geo("Los Angeles", "Los Angeles")],
+  ["Antelope Valley College", geo("Los Angeles", "Los Angeles")],
   ["Los Angeles Harbor College", geo("Los Angeles", "Los Angeles")],
   ["Chaffey College", geo("Inland Empire", "San Bernardino")],
   ["Riverside City College", geo("Inland Empire", "Riverside")],
@@ -306,6 +311,88 @@ block("7. wiring — the place reaches the routes, the RPCs and the prompt", () 
   check("(7) the four credential probe builders take phrase synonyms", (SRC.match(/phraseSynonymProbes\(kws\)/g) || []).length === 4);
   check("(7) …under a budget that keeps the raw probes", (SRC.match(/probes\.slice\(0, 10\)/g) || []).length === 4 && !/probes\.slice\(0, 8\)/.test(SRC));
   check("(7) the geo test's pinned call is still there for it", /fetchCollegeGeoMap\(sb\),/.test(SRC));
+});
+
+// ── 8. A SUB-REGION IS A PLACE TOO (2026-09-18, S277) ────────────────────────
+// Sam, 2026-09-18, on a live answer: "Sierra is still not answering correctly."
+// The visitor wrote "I have a cna cert and live in the San Gabriel Valley …
+// compare typical CNA courses to LVN". resolveAskedPlace matched NOTHING — no
+// "<county> county", no alias, and "Los Angeles" is skipped as a bare region
+// because nine colleges carry it in their name — so askedGeo was null, both
+// catalog RPCs fell back to volume order, and Sierra offered Los Medanos
+// College (Contra Costa, ~370 mi) as "one of the nearer matches I can confirm"
+// while stating the catalog data showed no San Gabriel Valley college teaching
+// an LVN entry program. Measured against the live catalog that same day, FIVE
+// do, with 87 course rows between them: Pasadena City (NURS 102/125, 28 rows),
+// Citrus (VNRS 150, 20), Glendale (NS 110, 19), Mt. San Antonio (VOC VN101, 12)
+// and Rio Hondo (VN 61, 8). The answer then named Pasadena and Rio Hondo from
+// the model's own knowledge and said "my data doesn't confirm their course
+// lists here" — while the data held 28 rows and 8.
+const SAM_Q3 = "I have a cna cert and live in the San Gabriel Valley where I want to get credit for my classes toward LVN or related job. Can you compare typical CNA courses to LVN and others so I can see what credit I might request?";
+block("8. a sub-region resolves, anchors and strips", () => {
+  if (!P) return;
+  const p = P.resolveAskedPlace(SAM_Q3, geoMap);
+  check("(8) ⭐ the San Gabriel Valley resolves at all — it returned null before",
+    p !== null, "resolveAskedPlace returned null for Sam's question");
+  if (!p) return;
+  check("(8) it anchors on the county that contains it", p.county === "Los Angeles");
+  check("(8) …and carries that county's region for the band", p.region === "Los Angeles");
+  check("(8) it labels itself, never as its county", /San Gabriel Valley/.test(p.label) && !/Los Angeles County/.test(p.label));
+  check("(8) ⭐ it carries its OWN campuses, so the anchor point is not the county centroid",
+    Array.isArray(p.colleges) && p.colleges.includes("Pasadena City College") && p.colleges.includes("Citrus College"));
+  check("(8) …filtered to colleges the geography table actually holds",
+    p.colleges.every((c) => geoMap.has(c)));
+  check("(8) the place is STRIPPED from the text the keyword routes see",
+    !/san gabriel valley/i.test(p.stripped) && /cna cert/i.test(p.stripped),
+    "stripped = " + JSON.stringify(p.stripped));
+});
+block("8. the place block names the colleges that ARE there", () => {
+  if (!P) return;
+  const p = P.resolveAskedPlace(SAM_Q3, geoMap);
+  const ctx = P.buildPlaceContext(p, geoMap);
+  check("(8) ⭐ it lists the San Gabriel Valley colleges by name",
+    /Pasadena City College/.test(ctx) && /Citrus College/.test(ctx) && /Rio Hondo College/.test(ctx));
+  check("(8) ⚠ and says the rest of the county is still close — the list is not a fence",
+    /rest of that county is still close/.test(ctx) && /never read/i.test(ctx),
+    "a sub-region's college list must never read as the only colleges within reach");
+  check("(8) it keeps the standing never-state-an-absence-as-a-fact instruction",
+    /never that no college in/.test(ctx));
+});
+block("8. a sub-region beats the county it sits in", () => {
+  if (!P) return;
+  const p = P.resolveAskedPlace("I live in the San Gabriel Valley in Los Angeles County", geoMap);
+  check("(8) ⚠ the more specific place wins the tie", p && /San Gabriel Valley/.test(p.label),
+    "got " + (p && p.label));
+});
+block("8. the vocabulary is real", () => {
+  if (!P || !P.SUBREGIONS) return;
+  const rows = P.SUBREGIONS;
+  // The typo guard: a misspelled college is silently dropped by the geoMap
+  // filter, which shrinks a sub-region without failing anything.
+  const known = new Set(JSON.parse(fs.readFileSync("chatbox/college_geo.json", "utf8")).map((r) => r.college));
+  const unknown = [];
+  for (const sr of rows) for (const c of sr.colleges) if (!known.has(c)) unknown.push(sr.label + " → " + c);
+  check("(8) ⭐ every college named in a sub-region exists in college_geo.json", unknown.length === 0,
+    unknown.join("; "));
+  const counties = new Set(JSON.parse(fs.readFileSync("chatbox/college_geo.json", "utf8")).map((r) => r.county));
+  const badCounty = rows.filter((sr) => !counties.has(sr.county)).map((sr) => sr.label + " → " + sr.county);
+  check("(8) every sub-region's county exists too", badCounty.length === 0, badCounty.join("; "));
+  check("(8) names are lower-case — resolveAskedPlace matches case-insensitively but escapes them verbatim",
+    rows.every((sr) => sr.names.every((n) => n === n.toLowerCase())));
+  check("(8) ⚠ no sub-region claims an ambiguous name — \"South Bay\" is Torrance to one student and San Jose to another",
+    !rows.some((sr) => sr.names.some((n) => n === "south bay")),
+    "a confidently wrong anchor is worse than none");
+  check("(8) the region aliases point at regions college_geo declares", P.REGION_ALIASES &&
+    Object.values(P.REGION_ALIASES).every((r) =>
+      new Set(JSON.parse(fs.readFileSync("chatbox/college_geo.json", "utf8")).map((x) => x.region)).has(r)));
+});
+block("8. the padded-table rule is gone", () => {
+  check("(8) ⭐ the rule no longer demands five to eight rows", !/Five to eight rows/.test(SRC),
+    "that count is what made the model restate one CNA course under six names");
+  check("(8) it tells the model to take the rows the quick list gives and stop",
+    /TAKE THE ROWS THE QUICK LIST GIVES YOU AND STOP/.test(SRC));
+  check("(8) ⚠ and that the two columns are lists, not row-by-row pairings",
+    /THE COLUMNS ARE TWO INDEPENDENT LISTS, NOT PAIRINGS/.test(SRC));
 });
 
 const failed = results.filter((r) => !r[1]);
