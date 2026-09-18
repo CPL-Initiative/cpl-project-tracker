@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-09-17T17:09:36.202414+00:00",
+  "scraped_at": "2026-09-18T11:21:37.173030+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 28191,
+    "jst": 28255,
     "star_colleges": 57
   },
   "computed_star_colleges": 57,
@@ -17,7 +17,7 @@
     },
     "Chaffey College": {
       "vets": 182,
-      "jst": 346,
+      "jst": 347,
       "star": true
     },
     "San Diego Mesa College": {
@@ -30,14 +30,14 @@
       "jst": 1506,
       "star": true
     },
+    "City College of San Francisco": {
+      "vets": 1197,
+      "jst": 1681,
+      "star": true
+    },
     "San Diego Miramar College": {
       "vets": 1181,
       "jst": 1653,
-      "star": true
-    },
-    "City College of San Francisco": {
-      "vets": 1197,
-      "jst": 1628,
       "star": true
     },
     "Moreno Valley College": {
@@ -62,7 +62,7 @@
     },
     "Norco College": {
       "vets": 831,
-      "jst": 553,
+      "jst": 560,
       "star": false
     },
     "Long Beach City College": {
@@ -197,7 +197,7 @@
     },
     "Solano Community College": {
       "vets": 278,
-      "jst": 160,
+      "jst": 161,
       "star": false
     },
     "Fullerton College": {
@@ -215,15 +215,15 @@
       "jst": 339,
       "star": true
     },
+    "Mission College": {
+      "vets": 158,
+      "jst": 158,
+      "star": true
+    },
     "Ventura College": {
       "vets": 254,
       "jst": 185,
       "star": false
-    },
-    "Mission College": {
-      "vets": 158,
-      "jst": 156,
-      "star": true
     },
     "Los Angeles Mission College": {
       "vets": 112,
@@ -355,14 +355,14 @@
       "jst": 63,
       "star": false
     },
-    "Crafton Hills College": {
-      "vets": 577,
-      "jst": 20,
-      "star": false
-    },
     "Palo Verde College": {
       "vets": 24,
       "jst": 9,
+      "star": false
+    },
+    "Crafton Hills College": {
+      "vets": 577,
+      "jst": 20,
       "star": false
     },
     "Porterville College": {
@@ -385,6 +385,11 @@
       "jst": 21,
       "star": false
     },
+    "Los Medanos College": {
+      "vets": 146,
+      "jst": 229,
+      "star": true
+    },
     "Compton College": {
       "vets": 42,
       "jst": 21,
@@ -404,11 +409,6 @@
       "vets": 47,
       "jst": 30,
       "star": false
-    },
-    "Los Medanos College": {
-      "vets": 146,
-      "jst": 229,
-      "star": true
     },
     "College of Alameda": {
       "vets": 30,

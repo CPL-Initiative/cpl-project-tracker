@@ -162549,6 +162549,422 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 0.75
     },
     {
+      "exhibit_id": "MAPICI-SSO1-1-001",
+      "exhibit_ids": [
+        "MAPICI-SSO1-1-001"
+      ],
+      "title": "S404 Safety Officer",
+      "unified_title": "S404 Safety Officer",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "S404 Safety Officer"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Palo Verde College"
+      ],
+      "potential": 59,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Imperial Valley College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Ohlone College",
+        "Oxnard College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "San Diego Miramar College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Yuba College"
+      ],
+      "total_addressable": 60,
+      "credit_recs": [
+        {
+          "course": "FST 221",
+          "credit": "1.5 hours in S404 Safety Officer"
+        }
+      ],
+      "authoritative_recs": [],
+      "adopter_units": {
+        "Palo Verde College": 1.5
+      },
+      "adopter_lines": {
+        "Palo Verde College": 1
+      },
+      "peer_units_median": 1.5,
+      "peer_units_max": 1.5,
+      "rec_units_total": 1.5
+    },
+    {
+      "exhibit_id": "MAPICI-CO2F1-1-001",
+      "exhibit_ids": [
+        "MAPICI-CO2F1-1-001"
+      ],
+      "title": "Company Officer 2C: Fire Inspections and Investigations",
+      "unified_title": "Company Officer 2C: Fire Inspections and Investigations",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Company Officer 2C: Fire Inspections and Investigations"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Palo Verde College"
+      ],
+      "potential": 59,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Imperial Valley College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Ohlone College",
+        "Oxnard College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "San Diego Miramar College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Yuba College"
+      ],
+      "total_addressable": 60,
+      "credit_recs": [
+        {
+          "course": "FST 247",
+          "credit": "2 hours in Company Officer 2C: Fire Inspections and Investigations"
+        }
+      ],
+      "authoritative_recs": [],
+      "adopter_units": {
+        "Palo Verde College": 2.0
+      },
+      "adopter_lines": {
+        "Palo Verde College": 1
+      },
+      "peer_units_median": 2.0,
+      "peer_units_max": 2.0,
+      "rec_units_total": 2.0
+    },
+    {
+      "exhibit_id": "MAPICI-CO2W1-1-001",
+      "exhibit_ids": [
+        "MAPICI-CO2W1-1-001"
+      ],
+      "title": "Company Officer 2E: Wildland Incident Operations",
+      "unified_title": "Company Officer 2E: Wildland Incident Operations",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Company Officer 2E: Wildland Incident Operations"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Palo Verde College"
+      ],
+      "potential": 59,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Imperial Valley College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Ohlone College",
+        "Oxnard College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "San Diego Miramar College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Yuba College"
+      ],
+      "total_addressable": 60,
+      "credit_recs": [
+        {
+          "course": "FST 249",
+          "credit": "2 hours in Company Officer 2E: Wildland Incident Operations"
+        }
+      ],
+      "authoritative_recs": [],
+      "adopter_units": {
+        "Palo Verde College": 2.0
+      },
+      "adopter_lines": {
+        "Palo Verde College": 1
+      },
+      "peer_units_median": 2.0,
+      "peer_units_max": 2.0,
+      "rec_units_total": 2.0
+    },
+    {
+      "exhibit_id": "MAPICI-CPAT-1-001",
+      "exhibit_ids": [
+        "MAPICI-CPAT-1-001"
+      ],
+      "title": "Candidate Physical Ability Test",
+      "unified_title": "Candidate Physical Ability Test",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Candidate Physical Ability Test"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Industry",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Medanos College"
+      ],
+      "potential": 59,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Imperial Valley College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Valley College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Ohlone College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "San Diego Miramar College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Yuba College"
+      ],
+      "total_addressable": 60,
+      "credit_recs": [
+        {
+          "course": "FIRE 106",
+          "credit": "1 hour in Physical Fitness for Public Safety Personnel"
+        }
+      ],
+      "authoritative_recs": [],
+      "adopter_units": {
+        "Los Medanos College": 1.0
+      },
+      "adopter_lines": {
+        "Los Medanos College": 1
+      },
+      "peer_units_median": 1.0,
+      "peer_units_max": 1.0,
+      "rec_units_total": 1.0
+    },
+    {
       "exhibit_id": "MAPCBES-REP-1-001|MAPCXS-REP-1-001|MAPCxS-PORE-1-001",
       "exhibit_ids": [
         "MAPCBES-REP-1-001",
@@ -163853,116 +164269,6 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 3.0,
       "peer_units_max": 3.0,
       "rec_units_total": 9.0
-    },
-    {
-      "exhibit_id": "MAPICI-FDTP-1-001",
-      "exhibit_ids": [
-        "MAPICI-FDTP-1-001"
-      ],
-      "title": "Candidate Physical Ability Test (CPAT)",
-      "unified_title": "Candidate Physical Ability Test (CPAT)",
-      "is_classified": true,
-      "issuing_agency": "International Association of Fire Fighters (IAFF)",
-      "training_agency": "",
-      "confidence_title": 0.9,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Fire Department Testing Procedures Candidate Physical Abilities Test (CPAT) Certification"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Public and Protective Services",
-      "sector": "Academic Transfer & General Education",
-      "collaborative_type": "Local",
-      "adopters": 2,
-      "adopter_names": [
-        "Los Medanos College",
-        "San Diego Miramar College"
-      ],
-      "potential": 58,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Bakersfield College",
-        "Butte College",
-        "Cabrillo College",
-        "Chabot College",
-        "Chaffey College",
-        "City College of San Francisco",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Fresno City College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Imperial Valley College",
-        "Lake Tahoe Community College",
-        "Las Positas College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Valley College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Ohlone College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Santa Ana College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Solano Community College",
-        "Southwestern College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "Yuba College"
-      ],
-      "total_addressable": 60,
-      "credit_recs": [
-        {
-          "course": "FIPT 100D",
-          "credit": "0.75 hours in Fire Department Testing Procedures"
-        },
-        {
-          "course": "FIRE 106",
-          "credit": "0.75 hours in Fire Department Testing Procedures"
-        }
-      ],
-      "authoritative_recs": [],
-      "adopter_units": {
-        "Los Medanos College": 0.75,
-        "San Diego Miramar College": 0.75
-      },
-      "adopter_lines": {
-        "Los Medanos College": 1,
-        "San Diego Miramar College": 1
-      },
-      "peer_units_median": 0.75,
-      "peer_units_max": 0.75,
-      "rec_units_total": 1.5
     },
     {
       "exhibit_id": "MAPICI-KCFD1-1-001",
@@ -227011,6 +227317,82 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 39.5
     },
     {
+      "exhibit_id": "MAPICI-FDTP-1-001",
+      "exhibit_ids": [
+        "MAPICI-FDTP-1-001"
+      ],
+      "title": "Candidate Physical Ability Test (CPAT)",
+      "unified_title": "Candidate Physical Ability Test (CPAT)",
+      "is_classified": true,
+      "issuing_agency": "International Association of Fire Fighters (IAFF)",
+      "training_agency": "",
+      "confidence_title": 0.9,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Fire Department Testing Procedures Candidate Physical Abilities Test (CPAT) Certification"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "San Diego Miramar College"
+      ],
+      "potential": 31,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Chabot College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Siskiyous",
+        "Crafton Hills College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Fresno City College",
+        "Imperial Valley College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Los Medanos College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Oxnard College",
+        "Palomar College",
+        "Rio Hondo College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Victor Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 32,
+      "credit_recs": [
+        {
+          "course": "FIPT 100D",
+          "credit": "0.75 hours in Fire Department Testing Procedures"
+        }
+      ],
+      "authoritative_recs": [],
+      "adopter_units": {
+        "San Diego Miramar College": 0.75
+      },
+      "adopter_lines": {
+        "San Diego Miramar College": 1
+      },
+      "peer_units_median": 0.75,
+      "peer_units_max": 0.75,
+      "rec_units_total": 0.75
+    },
+    {
       "exhibit_id": "MAPICA-CFFP-1-001",
       "exhibit_ids": [
         "MAPICA-CFFP-1-001"
@@ -229696,6 +230078,86 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 3.0,
       "peer_units_max": 3.0,
       "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPICP-EC-E-1-001",
+      "exhibit_ids": [
+        "MAPICP-EC-E-1-001"
+      ],
+      "title": "EMT Card/Certification - EMT 405 EMT Preparation and EMT 11 Emergency Medical Technician",
+      "unified_title": "EMT Card/Certification - EMT 405 EMT Preparation and EMT 11 Emergency Medical Technician",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "EMT Card/Certification - EMT 405 EMT Preparation and EMT 11 Emergency Medical Technician"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Health",
+      "sector": "Health",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Chaffey College"
+      ],
+      "potential": 31,
+      "potential_names": [
+        "Barstow Community College",
+        "Cabrillo College",
+        "Chabot College",
+        "City College of San Francisco",
+        "College of Marin",
+        "College of the Desert",
+        "Columbia College",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "East Los Angeles College",
+        "Foothill College",
+        "Las Positas College",
+        "Los Angeles Harbor College",
+        "Los Angeles Southwest College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Saddleback College",
+        "Shasta College",
+        "Sierra College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Woodland Community College"
+      ],
+      "total_addressable": 32,
+      "credit_recs": [
+        {
+          "course": "EMT 11",
+          "credit": "7 hours in Emergency Medical Technician"
+        },
+        {
+          "course": "EMT 405",
+          "credit": "3 hours in Emergency Medical Technician Preparation"
+        }
+      ],
+      "authoritative_recs": [],
+      "adopter_units": {
+        "Chaffey College": 10.0
+      },
+      "adopter_lines": {
+        "Chaffey College": 2
+      },
+      "peer_units_median": 10.0,
+      "peer_units_max": 10.0,
+      "rec_units_total": 10.0
     },
     {
       "exhibit_id": "MAPSAH-AL1-1-001|MAPSAH-ALLO-1-001|MAPSAS-A-L-1-001|MAPSAS-A:L-1-001|MAPSAS-AL-V-1-001|MAPSAS-AL-V1-1-001|MAPSAS-AL1-1-001|MAPSAS-AL10-1-001|MAPSAS-AL2-1-001|MAPSAS-AL3-1-001|MAPSAS-AL4-1-001|MAPSAS-AL5-1-001|MAPSAS-AL6-1-001|MAPSAS-AL7-1-001|MAPSAS-AL8-1-001|MAPSAS-AL9-1-001|MAPSAS-ALV-1-001|MAPSAS-ALV1-1-001",
@@ -264459,6 +264921,316 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 0.75
     },
     {
+      "exhibit_id": "MAPICI-H1RA-1-001",
+      "exhibit_ids": [
+        "MAPICI-H1RA-1-001"
+      ],
+      "title": "Hazmat 1st Respond Awareness",
+      "unified_title": "Hazmat 1st Respond Awareness",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Hazmat 1st Respond Awareness"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Palo Verde College"
+      ],
+      "potential": 17,
+      "potential_names": [
+        "Allan Hancock College",
+        "Cuyamaca College",
+        "De Anza College",
+        "Golden West College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Mt. San Antonio College",
+        "Ohlone College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "Santa Monica College",
+        "Santiago Canyon College",
+        "Sierra College",
+        "Southwestern College",
+        "Woodland Community College"
+      ],
+      "total_addressable": 18,
+      "credit_recs": [
+        {
+          "course": "FST 151",
+          "credit": "0.25 hours in Hazardous Materials First Responder Awareness Level"
+        }
+      ],
+      "authoritative_recs": [],
+      "adopter_units": {
+        "Palo Verde College": 0.25
+      },
+      "adopter_lines": {
+        "Palo Verde College": 1
+      },
+      "peer_units_median": 0.25,
+      "peer_units_max": 0.25,
+      "rec_units_total": 0.25
+    },
+    {
+      "exhibit_id": "MAPICI-HMT1-1-001",
+      "exhibit_ids": [
+        "MAPICI-HMT1-1-001"
+      ],
+      "title": "Haz Mat Technician 1A: Basic Chemistry",
+      "unified_title": "Haz Mat Technician 1A: Basic Chemistry",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Haz Mat Technician 1A: Basic Chemistry"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Palo Verde College"
+      ],
+      "potential": 17,
+      "potential_names": [
+        "Allan Hancock College",
+        "Cuyamaca College",
+        "De Anza College",
+        "Golden West College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Mt. San Antonio College",
+        "Ohlone College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "Santa Monica College",
+        "Santiago Canyon College",
+        "Sierra College",
+        "Southwestern College",
+        "Woodland Community College"
+      ],
+      "total_addressable": 18,
+      "credit_recs": [
+        {
+          "course": "FST 152",
+          "credit": "2 hours in Haz Mat Technician 1A: Basic Chemistry"
+        }
+      ],
+      "authoritative_recs": [],
+      "adopter_units": {
+        "Palo Verde College": 2.0
+      },
+      "adopter_lines": {
+        "Palo Verde College": 1
+      },
+      "peer_units_median": 2.0,
+      "peer_units_max": 2.0,
+      "rec_units_total": 2.0
+    },
+    {
+      "exhibit_id": "MAPICI-HMT11-1-001",
+      "exhibit_ids": [
+        "MAPICI-HMT11-1-001"
+      ],
+      "title": "Haz Mat Technician 1B: Applied Chemistry",
+      "unified_title": "Haz Mat Technician 1B: Applied Chemistry",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Haz Mat Technician 1B: Applied Chemistry"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Palo Verde College"
+      ],
+      "potential": 17,
+      "potential_names": [
+        "Allan Hancock College",
+        "Cuyamaca College",
+        "De Anza College",
+        "Golden West College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Mt. San Antonio College",
+        "Ohlone College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "Santa Monica College",
+        "Santiago Canyon College",
+        "Sierra College",
+        "Southwestern College",
+        "Woodland Community College"
+      ],
+      "total_addressable": 18,
+      "credit_recs": [
+        {
+          "course": "FST 153",
+          "credit": "1.75 hours in Haz Mat Technician 1B: Applied Chemistry"
+        }
+      ],
+      "authoritative_recs": [],
+      "adopter_units": {
+        "Palo Verde College": 1.75
+      },
+      "adopter_lines": {
+        "Palo Verde College": 1
+      },
+      "peer_units_median": 1.75,
+      "peer_units_max": 1.75,
+      "rec_units_total": 1.75
+    },
+    {
+      "exhibit_id": "MAPICI-HMT12-1-001",
+      "exhibit_ids": [
+        "MAPICI-HMT12-1-001"
+      ],
+      "title": "Haz Mat Technician 1C: Incident Considerations",
+      "unified_title": "Haz Mat Technician 1C: Incident Considerations",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Haz Mat Technician 1C: Incident Considerations"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Palo Verde College"
+      ],
+      "potential": 17,
+      "potential_names": [
+        "Allan Hancock College",
+        "Cuyamaca College",
+        "De Anza College",
+        "Golden West College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Mt. San Antonio College",
+        "Ohlone College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "Santa Monica College",
+        "Santiago Canyon College",
+        "Sierra College",
+        "Southwestern College",
+        "Woodland Community College"
+      ],
+      "total_addressable": 18,
+      "credit_recs": [
+        {
+          "course": "FST 154",
+          "credit": "1.75 hours in Haz Mat Technician 1C: Incident Considerations"
+        }
+      ],
+      "authoritative_recs": [],
+      "adopter_units": {
+        "Palo Verde College": 1.75
+      },
+      "adopter_lines": {
+        "Palo Verde College": 1
+      },
+      "peer_units_median": 1.75,
+      "peer_units_max": 1.75,
+      "rec_units_total": 1.75
+    },
+    {
+      "exhibit_id": "MAPICI-HMT13-1-001",
+      "exhibit_ids": [
+        "MAPICI-HMT13-1-001"
+      ],
+      "title": "Haz Mat Technician 1D: Tactical Field Operations",
+      "unified_title": "Haz Mat Technician 1D: Tactical Field Operations",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Haz Mat Technician 1D: Tactical Field Operations"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Palo Verde College"
+      ],
+      "potential": 17,
+      "potential_names": [
+        "Allan Hancock College",
+        "Cuyamaca College",
+        "De Anza College",
+        "Golden West College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Mt. San Antonio College",
+        "Ohlone College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "Santa Monica College",
+        "Santiago Canyon College",
+        "Sierra College",
+        "Southwestern College",
+        "Woodland Community College"
+      ],
+      "total_addressable": 18,
+      "credit_recs": [
+        {
+          "course": "FST 155",
+          "credit": "1.75 hours in Haz Mat Technician 1D: Tactical Field Operations"
+        }
+      ],
+      "authoritative_recs": [],
+      "adopter_units": {
+        "Palo Verde College": 1.75
+      },
+      "adopter_lines": {
+        "Palo Verde College": 1
+      },
+      "peer_units_median": 1.75,
+      "peer_units_max": 1.75,
+      "rec_units_total": 1.75
+    },
+    {
       "exhibit_id": "MAPICI-I0-1-002|MAPICI-I0-F-1-001",
       "exhibit_ids": [
         "MAPICI-I0-1-002",
@@ -267752,6 +268524,66 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 3.0,
       "peer_units_max": 3.0,
       "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPICI-FC6W-1-001",
+      "exhibit_ids": [
+        "MAPICI-FC6W-1-001"
+      ],
+      "title": "Fire Ctrl 6 Wildland Fire",
+      "unified_title": "Fire Ctrl 6 Wildland Fire",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Fire Ctrl 6 Wildland Fire"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Palo Verde College"
+      ],
+      "potential": 15,
+      "potential_names": [
+        "Allan Hancock College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Cabrillo College",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Lassen College",
+        "Mt. San Antonio College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Shasta College"
+      ],
+      "total_addressable": 16,
+      "credit_recs": [
+        {
+          "course": "FST 119",
+          "credit": "0.75 hours in Fire Control 6 Wildland Firefighting Essentials"
+        }
+      ],
+      "authoritative_recs": [],
+      "adopter_units": {
+        "Palo Verde College": 0.75
+      },
+      "adopter_lines": {
+        "Palo Verde College": 1
+      },
+      "peer_units_median": 0.75,
+      "peer_units_max": 0.75,
+      "rec_units_total": 0.75
     },
     {
       "exhibit_id": "MAPCBEN-ACI-1-001",
@@ -307708,11 +308540,11 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "Chaffey College",
-        "credit_recs": 513,
-        "exhibits": 436,
+        "credit_recs": 515,
+        "exhibits": 437,
         "disciplines": 18,
         "ccc_collaborative": 59,
-        "industry_certs": 101,
+        "industry_certs": 103,
         "pct": 3.9
       },
       {
@@ -307731,7 +308563,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 20,
         "ccc_collaborative": 147,
         "industry_certs": 211,
-        "pct": 3.6
+        "pct": 3.5
       },
       {
         "college": "Los Angeles Pierce College",
@@ -307767,7 +308599,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 15,
         "ccc_collaborative": 87,
         "industry_certs": 202,
-        "pct": 2.7
+        "pct": 2.6
       },
       {
         "college": "Copper Mountain College",
@@ -308400,6 +309232,15 @@ window.CPL_STATEWIDE = {
         "pct": 0.5
       },
       {
+        "college": "Palo Verde College",
+        "credit_recs": 60,
+        "exhibits": 60,
+        "disciplines": 2,
+        "ccc_collaborative": 0,
+        "industry_certs": 60,
+        "pct": 0.5
+      },
+      {
         "college": "Citrus College",
         "credit_recs": 54,
         "exhibits": 47,
@@ -308460,15 +309301,6 @@ window.CPL_STATEWIDE = {
         "disciplines": 2,
         "ccc_collaborative": 0,
         "industry_certs": 0,
-        "pct": 0.4
-      },
-      {
-        "college": "Palo Verde College",
-        "credit_recs": 51,
-        "exhibits": 51,
-        "disciplines": 2,
-        "ccc_collaborative": 0,
-        "industry_certs": 51,
         "pct": 0.4
       },
       {
@@ -308619,9 +309451,9 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Public and Protective Services",
-        "credit_recs": 1448,
-        "exhibits": 496,
-        "courses": 617,
+        "credit_recs": 1457,
+        "exhibits": 506,
+        "courses": 626,
         "colleges": 52,
         "ccc_collaborative": 542,
         "pct": 10.9
@@ -308646,8 +309478,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Health",
-        "credit_recs": 470,
-        "exhibits": 234,
+        "credit_recs": 472,
+        "exhibits": 235,
         "courses": 318,
         "colleges": 46,
         "ccc_collaborative": 31,
@@ -308817,8 +309649,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "cpl_type": "Industry Certification",
-        "credit_recs": 3685,
-        "exhibits": 1133,
+        "credit_recs": 3696,
+        "exhibits": 1144,
         "colleges": 79,
         "pct": 27.7
       },
@@ -308861,8 +309693,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "mode": "Industry training (I)",
-        "credit_recs": 2769,
-        "exhibits": 1078,
+        "credit_recs": 2778,
+        "exhibits": 1088,
         "colleges": 76,
         "pct": 20.8
       },
@@ -308910,9 +309742,9 @@ window.CPL_STATEWIDE = {
       },
       {
         "mode": "Proprietary or non-accredited learning (P)",
-        "credit_recs": 26,
-        "exhibits": 22,
-        "colleges": 6,
+        "credit_recs": 28,
+        "exhibits": 23,
+        "colleges": 7,
         "pct": 0.2
       },
       {
@@ -308926,8 +309758,8 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 11763,
-        "exhibits": 5280,
+        "credit_recs": 11773,
+        "exhibits": 5290,
         "colleges": 97,
         "disciplines": 23,
         "pct": 88.3
@@ -308942,8 +309774,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "category": "Industry/Other",
-        "credit_recs": 226,
-        "exhibits": 45,
+        "credit_recs": 227,
+        "exhibits": 46,
         "colleges": 22,
         "disciplines": 11,
         "pct": 1.7
@@ -309352,6 +310184,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-09-17T17:08:25",
-  "total_credit_recs": 13319
+  "generated_at": "2026-09-18T11:20:34",
+  "total_credit_recs": 13330
 };
