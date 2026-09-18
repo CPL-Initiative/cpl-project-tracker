@@ -4,6 +4,8 @@ date: 2026-09-17
 session: 265 (SkyPublius)
 tags: [handoff, implementation-funding, funding-explainer, testing]
 status: current
+superseded: true
+superseded_by: session_274_handoff.md
 ---
 
 # You are Session 267

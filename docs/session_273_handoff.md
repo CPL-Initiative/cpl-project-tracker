@@ -4,6 +4,8 @@ date: 2026-09-17
 session: 272 (SkyIndex)
 tags: [handoff, sierra, program-search, cip, deploy]
 status: current
+superseded: true
+superseded_by: session_274_handoff.md
 ---
 
 # You are Session 273

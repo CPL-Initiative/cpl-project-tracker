@@ -19,7 +19,7 @@ One per session, newest first. **Only the highest-numbered handoff is authoritat
 
 | N | Handoff | Created |
 |---|---|---|
-| 274 | [program search is applied and deployed as v67; now we hone](../session_274_handoff.md) | 2026-09-17 |
+| 274 | [v68 is built and verified; merge, deploy and read it](../session_274_handoff.md) | 2026-09-18 |
 | 273 | [program search is live; the edge function is not deployed](../session_273_handoff.md) | 2026-09-17 |
 | 272 | [Sierra's outage was a deploy skew, and My College went public](../session_272_handoff.md) | 2026-09-17 |
 | 270 | [the register's three tweaks landed, and three invisible controls found under them](../session_270_handoff.md) | 2026-09-17 |

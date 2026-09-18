@@ -4,6 +4,8 @@ date: 2026-09-17
 session: 268 (SkyBridge, continued as SkyQuarry's second run)
 tags: [handoff, partner-crosswalks, my-college, register, emergency-checkpoint]
 status: current
+superseded: true
+superseded_by: session_274_handoff.md
 ---
 
 # You are Session 269

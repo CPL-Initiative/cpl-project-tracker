@@ -960,3 +960,123 @@ The sequence, with what each step measured:
 ### The state a next session inherits
 
 **cpl-chat v67 is live with the program route, and the one-pass search is applied.** #1603 is merged; production was v66, pre-#1601, until 23:31Z. The preview slug is gone (A/B run 2 cleaned it up). What remains is honing: read real questions and the logs, give every retrieval RPC its own time limit, and measure generated tsvector columns on the loader before adding them.
+
+## 2026-09-18 — SkyPilot (S273, second round): a place is an anchor, not a college
+
+Sam read v67 in a browser the evening it shipped and pasted two answers back:
+*"See the responses. Still not able to analyze course and program data."* The
+question, verbatim: *"I have a cna cert and I want to go to a college in
+orange county. What CNA courses at the colleges match LVN courses so I can ask
+for credit?"* Sierra profiled Orange Coast College and North Orange Continuing
+Education, listed LVN programs in Sacramento, Butte, Humboldt, Madera and
+Siskiyou counties, said she had no CNA-to-LVN crosswalk, and guessed at Santa
+Ana "based on typical OC nursing offerings".
+
+### What the evidence said
+
+`chat_interactions` `051d37b6` (01:31Z) and the function logs first: every
+route fired (`rules_fired` carried `offerings` and `programs`), nothing timed
+out. The data reached the model. Then the RPCs re-run with the terms the
+question produced:
+
+- `extractTopicKeywords` gave `[cna, want, orange, county, cna, courses,
+  match, lvn, courses, ask]`. Three of ten named the topic.
+- `askedGeo` comes only from a RESOLVED college. A county resolves nothing,
+  so both catalog builders fell back to volume order under a ten-college cap.
+  In the programs RPC's own order Orange County's rows sat at positions 46,
+  55–57, 114 and 119–120 of 139 — the cap never reached them.
+- "orange" ilike-matched Orange Coast College and NOCE, so the answer was
+  about two colleges nobody had asked for.
+- `cna` was a VALUE in the `nursing` and `nurse` families and had no key of
+  its own; `nearestSynonymKey` guards tokens under six characters. Only
+  titles spelling "CNA" matched — Santiago Canyon's "ESL for CNA and
+  Caregiving", the HHA course — while Golden West's and Saddleback's
+  "Certified Nurse Assistant" and Santa Ana's "Nursing Assistant" did not.
+- The offerings builder dropped every phrase (`singleTokenTerms`), so an LVN
+  question reached the Vocational Nursing TOP (44 colleges) only where a
+  course title spelled "LVN": the RN bridges. No LVN course list ever reached
+  the model.
+- The credential probes are built from the first four keywords: "cna want",
+  "want orange", "orange county", "county cna". "lvn" was never asked.
+  `search_credentials_any('nursing assistant')` returns Acute Care Nursing
+  Assistant — Chaffey, 6 units in NURVN 414 *Acute Care Nursing Assistant:
+  Vocational Nursing Foundations* — the one CNA-to-LVN precedent in MAP.
+- The fact the student needed: no Orange County college confers a Vocational
+  Nursing award in the current COCI export. The county's "LVN" programs are
+  LVN-to-RN bridges (Saddleback, Golden West, Cypress). The nearest
+  Vocational Nursing programs are in Los Angeles County and the Inland
+  Empire. Nothing in the context said so; the "not exhaustive" rule did its
+  job and the model hedged.
+
+### The fix (PR #1607, cpl-chat v68)
+
+1. `resolveAskedPlace` — a county with the word "county" beside it, or a
+   multi-word region, from the `college_geo` map (now read beside the
+   embedding, before detection). The place anchors `askedGeo`, is STRIPPED
+   from the text the college matcher and the keyword routes see, and a place
+   named in an earlier turn still counts. A named college wins. "Riverside"
+   alone is a college; "Los Angeles" is in nine college names; "LA County"
+   and "the OC" are aliases.
+2. `anchor_county` / `anchor_region` on both catalog RPCs as the leading
+   ORDER BY keys, never a filter — a proximity sort applied after
+   `result_limit` cannot restore a row the limit already cut. Measured: the
+   same row SET with and without the anchor; Orange County's rows move to
+   positions 1–16. Drop-then-create (the overload trap), grants restored,
+   applied live as `search_college_programs_place_anchor` and
+   `search_college_offerings_place_anchor`; v67 keeps calling with the old
+   named arguments, and the production smoke run after the migration passed.
+   The offerings function had no file of record until now
+   (`chatbox/supabase_search_college_offerings.sql`, read back with
+   `pg_get_functiondef` before it was changed).
+3. The model is told the fact in words: a "THE VISITOR'S PLACE" block with
+   the county's colleges, and each catalog builder says `In Orange County:
+   N college(s)…` or `NO college in Orange County has a matching program in
+   the current COCI program export`.
+4. `cna: ["nurse assistant", "certified nurse assistant"]` — phrases only,
+   for the reason `lvn` is; `tsQueryFromTerms` expresses a phrase as
+   `nurse:* <-> assistant:*` (verified live: parses, matches "Nursing
+   Assistant" and "Certified Nursing Assistant (CNA)", not "Vocational ESL");
+   ask-shape stop words (*want, ask, request, match, course, program*, the
+   contraction stems); phrase synonyms ride along as credential probes under
+   a cap of 10.
+5. OFFERINGS_RULE gains two bullets: how to answer a place, and how to match
+   courses to a credential from the course lines and precedents in the
+   context — never from a guess.
+
+### How it was proven
+
+`tests/sierra_place_anchor.test.js` (77) lifts the resolver, the block, both
+builders and the phrase builder out of `index.ts` and asserts the ORDERED
+SET and the "none in the place" lines on real rows; block 6 re-derives smoke
+mode 7c's transcriptions from `index.ts`. Mode 7c asserts the anchored
+programs RPC leads with contiguous Orange County rows, the offerings phrase
+query reaches the Vocational Nursing TOP (44 measured, 0 before) and leads
+with Orange County, and the county question's answer names the place and a
+college from the anchored sets. Verify Part E and the new offerings verify
+assert order-changes-set-does-not. Locally: `npm test` 344/344 on `f64f645`,
+the 40 CI python/shell steps, `deno check` unchanged at 15, `deno run` boots.
+
+⚠️ **The first full `npm test` failed four files, all on code SHAPE:**
+`sierra_program_search.test.js` reads every `word:` in the RPC call block as
+a passed argument and a ternary's colon gave it "county"; the rule defaults
+file is generated from the rule text; the new floor entry belonged inside
+`files`; two client pins named the retrieval-text variable. The targeted
+tests had passed. Run the whole suite before the push.
+
+### Sam's decisions this run
+
+- *"See the responses. Still not able to analyze course and program data."*
+  — the defect report, and the bar: Sierra must reason over the course and
+  program data she holds, for a place as well as for a college.
+- *"maybe we should refresh checkpoint and take the rest of this to a new
+  session--this one is too long--been working OT!"* — the merge, deploy,
+  smoke and the production read hand to Session 274.
+
+### The state a next session inherits
+
+**Production is v67. v68 is built, proven locally, its migrations are applied
+live, PR #1607 is open (draft), the branch A/B run 35298283829 and CI `test`
+on `f64f645` were in flight at handoff.** Session 274 reads the A/B grid and
+the preview logs, merges on green `test`, deploys, runs health and smoke,
+reads the production logs, asks the Orange County question of production,
+and asks Sam to read the answer.
