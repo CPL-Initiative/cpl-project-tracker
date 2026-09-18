@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 473,
+   "count": 474,
    "docs": [
     {
      "created": "2026-08-14",
@@ -1673,6 +1673,25 @@
      "title": "A generator committed behind its output is a trap, not a convenience",
      "type": "methodology",
      "updated": "2026-09-05"
+    },
+    {
+     "created": "2026-09-18",
+     "governs": [
+      "prototype/build_ccr_atlas.py",
+      "prototype/ccr_atlas_v1.html",
+      "tests/ccr_skyview_read_only.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-generator-does-not-know-what-a-comment-is.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "generated-artifacts",
+      "testing",
+      "skyview"
+     ],
+     "title": "A generator does not know what a comment is",
+     "type": "methodology",
+     "updated": "2026-09-18"
     },
     {
      "created": "2026-09-07",
@@ -18000,5 +18019,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 934
+ "total": 935
 }
