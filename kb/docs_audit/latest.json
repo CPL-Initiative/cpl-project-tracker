@@ -10,8 +10,8 @@
     "other": 150000
   },
   "summary": {
-    "files": 939,
-    "bytes": 9920686,
+    "files": 941,
+    "bytes": 9929313,
     "over_budget": 8,
     "handoff_max": 275,
     "always_loaded_files": 1,
@@ -40,8 +40,8 @@
         "over": 1
       },
       "kb_note": {
-        "files": 469,
-        "bytes": 2398628,
+        "files": 471,
+        "bytes": 2407255,
         "over": 0
       },
       "roadmap_lane": {
@@ -58,13 +58,14 @@
     "by_rule": {
       "oversized_doc": 8,
       "house_voice": 24,
-      "vault_heavy_path": 50
+      "unindexed_kb_note": 2,
+      "vault_heavy_path": 49
     },
     "vault": {
-      "files": 2968,
-      "bytes": 1465557975,
-      "heavy_bytes": 663691721,
-      "heavy_share": 0.453,
+      "files": 2969,
+      "bytes": 1445050119,
+      "heavy_bytes": 643137858,
+      "heavy_share": 0.445,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
         "cpl-project-tracker/cip_fitcheck",
@@ -77,7 +78,6 @@
         "cpl-project-tracker/unified_courses_details.js",
         "cpl-project-tracker/kb/subj4_fold_out/2026-06-12/alias_map.json",
         "cpl-project-tracker/kb/subj4_dryrun/alias_map.json",
-        "cpl-project-tracker/chatbox/coci_offerings_payload.json",
         "cpl-project-tracker/kb/subj4_apply/alias_map.json",
         "cpl-project-tracker/kb/coci_minted_memberships.json",
         "cpl-project-tracker/coci_lookup_data.js",
@@ -279,6 +279,24 @@
       },
       "message": "1 business-register term — utilize x1 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
       "path": "docs/kb-notes/methodology-a-frequency-is-not-a-rule.md"
+    },
+    {
+      "rule": "unindexed_kb_note",
+      "fixable": false,
+      "detail": {
+        "stem": "methodology-a-new-assertion-must-fail-in-the-shape-the-grid-counts"
+      },
+      "message": "not referenced from docs/INDEX.md or any catalog it links to — unreachable by browsing",
+      "path": "docs/kb-notes/methodology-a-new-assertion-must-fail-in-the-shape-the-grid-counts.md"
+    },
+    {
+      "rule": "unindexed_kb_note",
+      "fixable": false,
+      "detail": {
+        "stem": "methodology-an-absence-in-the-data-is-a-statement-about-the-data"
+      },
+      "message": "not referenced from docs/INDEX.md or any catalog it links to — unreachable by browsing",
+      "path": "docs/kb-notes/methodology-an-absence-in-the-data-is-a-statement-about-the-data.md"
     },
     {
       "rule": "house_voice",
@@ -621,16 +639,6 @@
         "kind": "file"
       },
       "message": "21,616,130 B single file inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
-      "path": "chatbox/coci_offerings_payload.json",
-      "detail": {
-        "bytes": 20553863,
-        "kind": "file"
-      },
-      "message": "20,553,863 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
