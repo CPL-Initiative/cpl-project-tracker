@@ -33,6 +33,14 @@
 //      from Orange County. A campus point per college (COLLEGE_POINTS) makes
 //      distance the key inside a band; block 8 pins it, and the fallback (no
 //      point on the anchor → volume, as before) is what blocks 3–5 still see.
+//   5. (S275, v71) The credential record matches the TARGET's credential too —
+//      for "I have a CNA certificate … what CNA courses match LVN courses" the
+//      local route's first row is Licensed Vocational Nurse (LVN) License — so
+//      v70's block told the model the visitor held an LVN license, and the CNA
+//      section (the county's own rows) rendered first. Production opened twice
+//      with a CNA course. Only the visitor's own words say which credential is
+//      held; block 10 pins the holding-phrase parser, the held-title filter and
+//      the BACKGROUND mark that sends the CNA section last.
 //
 // Assertions here are on what retrieval BUILDS and how the context ORDERS,
 // never on model prose (methodology-assert-what-retrieval-returns). Fixtures are
@@ -56,7 +64,8 @@ try {
   G = liftBlock(SRC, "// Proximity band for ranking", "// ── Live CPL contacts (v45",
     ["proximityBand", "REGION_NEIGHBORS", "regionsNeighbor", "pickProspectivePairs",
      "buildProspectiveContext", "buildOfferingsContext", "geoLabel", "PROSPECTIVE_COLLEGES_PER_TOP", "PROSPECTIVE_COURSES_PER_COLLEGE",
-     "COLLEGE_POINTS", "collegePoint", "haversineKm", "placePoint", "proximityKm", "cmpKm", "distanceText"]);
+     "COLLEGE_POINTS", "collegePoint", "haversineKm", "placePoint", "proximityKm", "cmpKm", "distanceText",
+     "heldCredentialPhrases", "pickHeldTitles", "sameKind", "namesHeld", "contentStems", "stemToken"]);
   F = liftBlock(SRC, "// A SUBSTRING INSIDE A WORD IS NOT A MATCH ON THE WORD",
     "async function fetchStatewideRecommendations(", ["isFalseFriend"]);
 } catch (e) { liftErr = e; }
@@ -229,7 +238,7 @@ block("5. buildProspectiveContext", () => {
   check("(5) it says who the lists are nearest to", ctx.includes("nearest Orange County that teach it"));
   const lvnAt = ctx.indexOf("## Licensed Vocational Nursing (TOP 1230.20)");
   const cnaAt = ctx.indexOf("## Certified Nurse Assistant (TOP 1230.30)");
-  check("(5) one section per program, in the order the pairs came", cnaAt > 0 && lvnAt > cnaAt);
+  check("(5) one section per program, in the order the pairs came (no holding phrase → nothing is BACKGROUND)", cnaAt > 0 && lvnAt > cnaAt && !ctx.includes("BACKGROUND"));
   const lvnSec = ctx.slice(lvnAt);
   const cnaSec = ctx.slice(cnaAt, lvnAt);
   check("(5) ⭐ a program the catalog lists no college in the place for is said in words, as a statement about the catalog and never about the place",
@@ -444,8 +453,8 @@ block("9. the direct answer first, the catalog never the world, no remark about 
   check("(9) no builder says 'Say so plainly' about a place any more", !/NO college in \$\{askedGeo\.label\}/.test(SRC) && !/Say so plainly, then (offer|name) the nearest/.test(SRC));
   check("(9) ⭐ smoke fails EVERY mode whose answer opens with a remark about the question",
     /answer should NOT match \/opens with a remark about the question\/ \(sierra_guidance cafb92af/.test(SMOKE) && SMOKE.indexOf("head -c 160 | grep -E -i -q") < SMOKE.indexOf("sleep 1   # stay well under"));
-  check("(9) ⭐ smoke 7c asserts the course-level answer LEADS (first 800 characters) and that no sentence states the absence as Orange County's",
-    /answer_head_must_match -i 800 "NURS\[ -\]\?\(102\|125\)/.test(SMOKE) && /never states a catalog absence as a fact about Orange County/.test(SMOKE));
+  check("(9) ⭐ smoke 7c asserts the course-level answer LEADS (first 400 characters — the first sentence; 800 let v70's CNA opener through) and that no sentence states the absence as Orange County's",
+    /answer_head_must_match -i 400 "NURS\[ -\]\?\(102\|125\)/.test(SMOKE) && !/answer_head_must_match -i 800/.test(SMOKE) && /never states a catalog absence as a fact about Orange County/.test(SMOKE));
   // The first A/B (run 35314469546) showed two more things. The candidate's first
   // 700 characters carried no course code — the model opened with the ask in
   // general terms, then the catalog statement, then the bridges, then the
@@ -469,6 +478,105 @@ block("9. the direct answer first, the catalog never the world, no remark about 
   check("(9) every curl in the smoke script carries a time limit (a stalled RPC must never hang a run)",
     curls.length > 0 && curls.every((l) => /--max-time/.test(l)), curls.filter((l) => !/--max-time/.test(l)).join(" | "));
   check("(9) the head helper exists and reads only the head", /^answer_head_must_match\(\) \{/m.test(SMOKE) && /head -c "\$chars" \| grep -E \$flag -q -- "\$re"/.test(SMOKE));
+});
+
+// ── 10. The target program first; the program that trains the held credential is BACKGROUND (v71) ──
+// v70's post-deploy smoke (run 35318277251, answer 1be7b7d0) opened "Ask the
+// CPL coordinator at Golden West College to review your CNA certificate against
+// NURS G060N (Certified Nurse Assistant)", and the next run on production
+// (35319154259, answer 3eb53557) opened with Santa Ana's VHLTH 101/102/103/104
+// — the CNA program both times, Long Beach's VN 220 at character 854. Two causes,
+// both measured: the CNA section rendered first (the offerings RPC leads with the
+// county's rows, and Orange County teaches CNA, not LVN), and the block's intro
+// named "Licensed Vocational Nurse (LVN) License" as the credential held, because
+// search_credentials_any('lvn') matches it at tier 3 with three adopters and the
+// adopted-first sort ranks it first of six. The record cannot say which
+// credential the visitor holds. The question can.
+block("10. the held credential is the visitor's own words; its program is BACKGROUND, rendered last", () => {
+  const H = G.heldCredentialPhrases;
+  const j = (x) => JSON.stringify(x);
+  check("(10) ⭐ the smoke's 7c phrasing yields the held credential",
+    j(H("I have a CNA certificate and I want to go to a college . What CNA courses match LVN courses so I can ask for credit?")) === '["cna"]');
+  check("(10) ⭐ Sam's own phrasing yields it too",
+    j(H("I have a CNA cert and want to see what LVN course align with CNA courses so I can request credit for those courses.")) === '["cna"]');
+  check("(10) a spelled-out credential after \"I'm a\" is the phrase, with the adjective dropped; a weak verb with no credential noun after it yields nothing",
+    j(H("I'm a certified nursing assistant and want to become an LVN. Which courses could my CNA count toward?")) === '["nursing assistant"]');
+  check("(10) \"as an\" and \"I have been a … for 3 years\" both name the credential",
+    j(H("As an LVN, which RN courses at Golden West could my license count toward?")) === '["lvn"]'
+    && j(H("I have been a CNA for 3 years and I want to go to a college in Orange County")) === '["cna"]');
+  check("(10) ⭐ no first-person holding phrase, no held credential — the question about someone else's CNA, and the question about a question",
+    j(H("What LVN courses could a CNA count toward in Orange County?")) === '[]'
+    && j(H("I have a question about CNA courses and LVN programs")) === '[]');
+  check("(10) a weak verb needs the credential noun: \"with a strong LVN program\" names nothing, \"I have my EMT card\" names EMT",
+    j(H("I want to go to a college with a strong LVN program. I have my EMT card and a CNA certificate.")) === '["emt"]');
+  check("(10) a multi-word credential survives whole; empty input is empty", j(H("I've got an FAA private pilot certificate; what aviation courses could it count toward?")) === '["faa private pilot"]'
+    && j(H("")) === '[]' && j(H(null)) === '[]');
+  // The six titles the local route returns for the 7c question, in its order (measured 2026-09-18).
+  const matched = ["Licensed Vocational Nurse (LVN) License", "Certified Nurse Assistant (CNA) Certification", "LVN License",
+    "Nurse Assistant Training", "Acute Care Nursing Assistant", "Certified Nursing Assistant (CNA)"];
+  check("(10) ⭐ for a CNA holder the held titles are the CNA ones and their kind — the precedent credential included, the LVN license excluded",
+    j(G.pickHeldTitles(matched, ["cna"])) === j(["Certified Nurse Assistant (CNA) Certification", "Nurse Assistant Training", "Acute Care Nursing Assistant", "Certified Nursing Assistant (CNA)"]),
+    j(G.pickHeldTitles(matched, ["cna"])));
+  check("(10) for an LVN holder the held titles are the two LVN licenses", j(G.pickHeldTitles(matched, ["lvn"])) === j(["Licensed Vocational Nurse (LVN) License", "LVN License"]));
+  check("(10) the spelled-out phrase reaches the same titles through their stems", j(G.pickHeldTitles(matched, ["nursing assistant"])) === j(G.pickHeldTitles(matched, ["cna"])));
+  check("(10) with no holding phrase every matched title is kept, as before v71; a phrase no title names keeps none",
+    G.pickHeldTitles(matched, []).length === 6 && G.pickHeldTitles(matched, ["welding"]).length === 0);
+  check("(10) sameKind: nurse/nursing and assistant/assisting fold; a credential-type word carries nothing; two stems, or all of a shorter title",
+    G.sameKind("Certified Nurse Assistant", "Nurse Assistant Training") && G.sameKind("Licensed Vocational Nursing", "Licensed Vocational Nurse (LVN) License")
+    && G.sameKind("Medical Assisting", "Certified Medical Assistant (CMA)") && G.sameKind("Phlebotomy", "Certified Phlebotomy Technician (CPT)")
+    && !G.sameKind("Licensed Vocational Nursing", "Certified Nurse Assistant (CNA) Certification") && !G.sameKind("Registered Nursing", "Certified Nursing Assistant (CNA)")
+    && !G.sameKind("Licensed Vocational Nursing", "") && G.stemToken("nursing") === G.stemToken("nurse") && G.stemToken("assisting") === G.stemToken("assistant"));
+  check("(10) namesHeld matches a whole word or phrase, never a substring (the isFalseFriend test)",
+    G.namesHeld("Certified Nurse Assistant (CNA) Certification", ["cna"]) && G.namesHeld("Certified Nurse Assistant", ["nurse assistant"])
+    && !G.namesHeld("Cisco Certified Network Associate (CCNA)", ["cna"]) && !G.namesHeld("Certified Nurse Assistant", []));
+  const phrases = ["cna"];
+  const terms = ["cna", "nurse assistant", "certified nurse assistant"]; // the phrase, its words, its phrase synonyms
+  const heldTitles = G.pickHeldTitles(matched, phrases).slice(0, 4);
+  const orangePt = { ...orange, point: G.placePoint(orange, geoMap) };
+  const pairs = G.pickProspectivePairs(offerings, coreKeywords, null, orangePt, geoMap);
+  const ctx = G.buildProspectiveContext(pairs, courses, heldTitles, null, orangePt, phrases, terms);
+  const lvnAt = ctx.indexOf("## Licensed Vocational Nursing (TOP 1230.20)");
+  const cnaAt = ctx.indexOf("## Certified Nurse Assistant (TOP 1230.30)");
+  check("(10) ⭐ the target program renders FIRST and the program that trains the held credential LAST, whatever order the picks came in",
+    lvnAt > 0 && cnaAt > lvnAt, `lvn@${lvnAt} cna@${cnaAt}`);
+  check("(10) ⭐ the held credential's program carries the BACKGROUND mark in its heading, and the target does not",
+    ctx.includes("## Certified Nurse Assistant (TOP 1230.30) — BACKGROUND: the program that trains the credential the visitor holds; never the course to ask about\n")
+    && ctx.includes("## Licensed Vocational Nursing (TOP 1230.20)\n"));
+  check("(10) ⭐ the intro names the credential in the visitor's words and the held titles only — never the LVN license",
+    ctx.includes('The visitor holds a credential — "cna" in their words (matched in the credential record above as Certified Nurse Assistant (CNA) Certification; Nurse Assistant Training; Acute Care Nursing Assistant; Certified Nursing Assistant (CNA))')
+    && !ctx.includes("LVN License"));
+  check("(10) the intro says what the mark means and that the first course comes from an unmarked section",
+    ctx.includes("The section marked BACKGROUND is the program that trains the credential the visitor already holds") && ctx.includes("the first course you name comes from a section without that mark, which is listed first"));
+  check("(10) the background section still shows its courses (what the credential covers) and its in-place count",
+    ctx.slice(cnaAt).includes("In Orange County: 3 of the colleges below.") && ctx.slice(cnaAt).includes("  - VHLTH 106 — Acute Care Nursing Assistant Theory (noncredit)\n"));
+  // Fail-safe: a held phrase every section answers to marks nothing.
+  const all = G.buildProspectiveContext(pairs, courses, heldTitles, null, orangePt, ["nursing"], ["nursing"]);
+  check("(10) ⭐ when every section would be BACKGROUND none is marked, the intro carries no mark sentence, and the order is the picks' own",
+    !all.includes("BACKGROUND") && all.indexOf("## Certified Nurse Assistant (TOP 1230.30)\n") < all.indexOf("## Licensed Vocational Nursing (TOP 1230.20)\n")
+    && all.includes('"nursing" in their words'));
+  const none = G.buildProspectiveContext(pairs, courses, heldTitles, null, orangePt, [], []);
+  check("(10) with no phrase the block renders exactly as the five-argument call does", none === G.buildProspectiveContext(pairs, courses, heldTitles, null, orangePt) && !none.includes("BACKGROUND"));
+  check("(10) the mark comes from the held credential TITLES too (no synonym family needed): a CNA holder with only the titles marks the CNA program",
+    G.buildProspectiveContext(pairs, courses, heldTitles, null, orangePt, ["cna"], ["cna"]).includes("(TOP 1230.30) — BACKGROUND"));
+  check("(10) a held credential no section trains marks nothing (an EMT holder asking about LVN and CNA courses)",
+    !G.buildProspectiveContext(pairs, courses, ["EMT Certification"], null, orangePt, ["emt"], ["emt", "emergency medical technician"]).includes("BACKGROUND"));
+  // Wiring and the rule.
+  check("(10) ⭐ the handler parses the holding phrase from the route text, filters the matched titles by it, and passes both to the builder",
+    /const heldPhrases = heldCredentialPhrases\(routeText\);/.test(SRC) && /const heldTitles = pickHeldTitles\(matchedTitles, heldPhrases\)\.slice\(0, 4\);/.test(SRC)
+    && /buildProspectiveContext\(pairs, courseRows, heldTitles, college, askedGeo, heldPhrases, heldTerms\)/.test(SRC));
+  check("(10) the route still fires on ANY matched credential (the held filter never switches the section off)",
+    /if \(\(askedGeo \|\| college\) && matchedTitles\.length > 0 && offeringsResults && offeringsResults\.length > 0\)/.test(SRC));
+  check("(10) the held terms carry the phrase synonyms (nurse assistant for cna), built outside the lifted block",
+    /\.\.\.phraseSynonymProbes\(heldPhrases\.flatMap\(\(p\) => p\.split\(\/\\s\+\/\)\)\)/.test(SRC));
+  const rule = (SRC.match(/const PROSPECTIVE_RULE = `([\s\S]*?)`;/) || [])[1] || "";
+  check("(10) ⭐ the LEAD bullet says the first course comes from a section without the BACKGROUND mark",
+    /The first sentence names a course to ask about — college, course number, title — from the program the visitor wants to enter \(a section without the BACKGROUND mark\)/.test(rule));
+  check("(10) ⭐ the TARGET bullet names the mark, says it comes last, and bans opening with a BACKGROUND course",
+    /that section is marked BACKGROUND and comes last/.test(rule) && /Never name a course from a BACKGROUND section as the course to ask about, and never open with one/.test(rule));
+  check("(10) ⭐ smoke 7c fails when a CNA course code appears in the first 300 characters (the head NOT-match helper, in a counted error shape)",
+    /^answer_head_must_not_match\(\) \{/m.test(SMOKE) && /answer should NOT match \/\$re\/ within the first \$chars characters \(regression\)/.test(SMOKE)
+    && /answer_head_must_not_match -i 300 "VHLTH\[ -\]\?10\[1-8\]\\b\|VMED\[ -\]\?\(10\|11\|70\|71\)\\b\|NURS\[ -\]\?G06\[01\]\|CNA\[ -\]\?42\[2-7\]/.test(SMOKE)
+    && /7c ⭐ the first course named is in the target program/.test(SMOKE));
 });
 
 // ── Report ──────────────────────────────────────────────────────────────────

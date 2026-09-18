@@ -2755,6 +2755,144 @@ function buildProgramsContext(
 const PROSPECTIVE_COLLEGES_PER_TOP = 3;
 const PROSPECTIVE_COURSES_PER_COLLEGE = 12;
 
+// THE VISITOR'S OWN WORDS SAY WHICH CREDENTIAL THEY HOLD (v71, 2026-09-18, S275).
+// The credential record matches every credential the question names. For the
+// Orange County question — "I have a CNA certificate … what CNA courses match
+// LVN courses" — the local route returns the CNA certifications AND the LVN
+// license (measured: search_credentials_any('lvn') returns Licensed Vocational
+// Nurse (LVN) License at tier 3 with three adopters, which the adopted-first
+// sort ranks FIRST of the six), so v70's block opened "The visitor holds a
+// credential (matched … as Licensed Vocational Nurse (LVN) License; …)", and the
+// model, told to name a course first, named the nearest CNA course — Golden West
+// NURS G060N, then Santa Ana VHLTH 101 — ahead of every LVN course, twice on
+// production. The record cannot say which credential is held. The question can:
+// a first-person holding phrase ("I have a", "I hold", "I'm a", "as a", "with my")
+// names it, and the phrase is what marks the program that trains it BACKGROUND.
+// Pure — lifted by tests/sierra_prospective_credit.test.js.
+//
+// A holding phrase is a verb, then the words up to a credential noun or a clause
+// boundary. STRONG verbs accept a short phrase with no noun ("I'm a CNA");
+// WEAK ones need the noun ("with my CNA certificate", never "with a college").
+const HELD_VERBS_STRONG: Array<Array<string>> = [
+  ["i", "ve", "got"], ["i", "ve", "earned"], ["i", "ve", "completed"], ["i", "ve", "finished"], ["i", "ve", "been"],
+  ["i", "have", "been"], ["i", "work", "as"], ["i", "have"], ["i", "hold"], ["i", "got"], ["i", "earned"],
+  ["i", "completed"], ["i", "finished"], ["i", "am"], ["i", "m"], ["as", "a"], ["as", "an"], ["being", "a"], ["being", "an"],
+];
+const HELD_VERBS_WEAK: Array<Array<string>> = [
+  ["with", "my"], ["with", "a"], ["with", "an"], ["have", "my"], ["got", "my"], ["hold", "my"], ["holding", "my"],
+  ["holding", "a"], ["holding", "an"], ["hold", "a"], ["hold", "an"], ["my"],
+];
+// Words that close the phrase: the credential noun.
+const HELD_NOUNS = new Set([
+  "cert", "certs", "certificate", "certificates", "certification", "certifications", "license", "licenses",
+  "licence", "licences", "credential", "credentials", "card", "cards", "diploma", "degree", "training",
+  "ticket", "endorsement", "registration", "rating", "ratings",
+]);
+// Words inside the phrase that name nothing (articles, adjectives, time).
+const HELD_SKIP = new Set([
+  "a", "an", "the", "my", "our", "own", "current", "currently", "active", "valid", "new", "recent", "recently",
+  "already", "also", "just", "now", "still", "been", "worked", "working", "certified", "licensed", "registered",
+  "state", "california", "ca", "first", "second", "years", "year", "months", "month", "one", "two", "three",
+]);
+// Words that end the phrase without naming a credential.
+const HELD_BOUNDARY = new Set([
+  "and", "but", "or", "so", "who", "which", "that", "where", "when", "while", "because", "since", "if", "then",
+  "than", "in", "at", "from", "for", "to", "of", "on", "near", "into", "toward", "towards", "about", "by",
+  "through", "via", "within", "around", "before", "after", "during", "want", "wanted", "wanting", "would",
+  "like", "looking", "trying", "hoping", "need", "needs", "question", "questions", "some", "few", "couple",
+  "lot", "lots", "list", "interest", "idea", "problem", "issue", "trouble", "time", "plan", "plans", "goal",
+  "goals", "chance", "option", "options", "experience", "background", "no", "not", "never", "nothing",
+  "am", "is", "are", "was", "were", "be", "can", "could", "will", "should", "do", "does", "did", "don", "t",
+]);
+function heldCredentialPhrases(text: string): Array<string> {
+  const toks = String(text || "").toLowerCase().replace(/['’]/g, " ")
+    .replace(/[^a-z0-9\s]/g, " | ").split(/\s+/).filter(Boolean);
+  const out: Array<string> = [];
+  const at = (i: number, verbs: Array<Array<string>>): Array<string> | null => {
+    let best: Array<string> | null = null;
+    for (const v of verbs) {
+      if (v.every((w, j) => toks[i + j] === w) && (!best || v.length > best.length)) best = v;
+    }
+    return best;
+  };
+  for (let i = 0; i < toks.length; i++) {
+    let verb = at(i, HELD_VERBS_STRONG);
+    const strong = !!verb;
+    if (!verb) verb = at(i, HELD_VERBS_WEAK);
+    if (!verb) continue;
+    let j = i + verb.length;
+    const words: Array<string> = [];
+    let closed = false;
+    while (j < toks.length && words.length < 4) {
+      const w = toks[j++];
+      if (w === "|" || HELD_BOUNDARY.has(w)) break;
+      if (HELD_NOUNS.has(w)) { closed = true; break; }
+      if (HELD_SKIP.has(w) || /^[0-9]+$/.test(w)) continue;
+      words.push(w);
+    }
+    if (words.length > 0 && (closed || (strong && words.length <= 3))) {
+      const phrase = words.join(" ");
+      if (!out.includes(phrase)) out.push(phrase);
+    }
+    i = Math.max(i, j - 1);
+  }
+  return out;
+}
+
+// Content stems of a title, for "the same program / the same kind of credential":
+// credential-type words and articles carry nothing, and a light stem folds
+// nurse/nursing and assistant/assisting. Consistency is the point, never English.
+const STEM_NOISE = new Set([
+  "a", "an", "the", "of", "and", "for", "in", "to", "with", "or", "by", "cert", "certs", "certificate",
+  "certificates", "certification", "certifications", "certified", "license", "licenses", "licensed", "licence",
+  "credential", "credentials", "card", "program", "programs", "course", "courses", "level", "generic",
+  "state", "california", "ca", "department", "board",
+]);
+function stemToken(w: string): string {
+  const m = /^(.{3,}?)(ations?|ings?|ions?|ants?|ers?|ies|ied|ed|es|s|e)$/.exec(w);
+  return m ? m[1] : w;
+}
+function contentStems(text: string): Set<string> {
+  const out = new Set<string>();
+  for (const w of String(text || "").toLowerCase().replace(/[^a-z0-9\s]/g, " ").split(/\s+/)) {
+    if (w.length < 2 || STEM_NOISE.has(w)) continue;
+    out.add(stemToken(w));
+  }
+  return out;
+}
+// Two titles are the same thing when they share two content stems, or every
+// stem of the shorter one when it has fewer than two.
+function sameKind(a: string, b: string): boolean {
+  const A = contentStems(a), B = contentStems(b);
+  if (A.size === 0 || B.size === 0) return false;
+  let shared = 0;
+  for (const s of A) if (B.has(s)) shared++;
+  return shared >= Math.min(2, A.size, B.size);
+}
+// A held term appears in a title as a WHOLE word or phrase (the isFalseFriend test).
+function namesHeld(title: string, terms: Array<string>): boolean {
+  const hay = String(title || "").toLowerCase();
+  for (const t of terms) {
+    const needle = String(t || "").trim().toLowerCase();
+    if (!needle) continue;
+    const esc = needle.replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/\s+/g, "\\s+");
+    if (new RegExp("(^|[^a-z0-9])" + esc + "($|[^a-z0-9])").test(hay)) return true;
+  }
+  return false;
+}
+// The matched credential titles the visitor HOLDS: those naming a held phrase (or
+// its words) — and, so the precedent survives, those of the same kind as one of
+// them (Acute Care Nursing Assistant, for a CNA holder). With no holding phrase
+// in the question every matched title is kept, as before v71.
+function pickHeldTitles(titles: Array<string>, phrases: Array<string>): Array<string> {
+  const list = (titles || []).filter(Boolean);
+  if (!phrases || phrases.length === 0) return list;
+  const terms = [...phrases, ...phrases.flatMap((p) => p.split(/\s+/))].filter((t) => t.length >= 2);
+  const direct = list.filter((t) => namesHeld(t, terms) || phrases.some((p) => sameKind(t, p)));
+  if (direct.length === 0) return [];
+  return list.filter((t) => direct.includes(t) || direct.some((d) => sameKind(t, d)));
+}
+
 // The (college × TOP) pairs to read course lists for. Per core TOP: a named
 // college first, then by proximity band (in the county, in the region, in a
 // neighboring region, elsewhere), then (v70) by distance from the anchor where
@@ -2830,6 +2968,8 @@ function buildProspectiveContext(
   credentials: Array<string>,
   askedCollege: string | null,
   askedGeo: any | null,
+  heldPhrases: Array<string> = [],
+  heldTerms: Array<string> = [],
 ): string {
   if (!pairs || pairs.length === 0 || !courses || courses.length === 0) return "";
   const pairKey = (c: string, t: string) => `${c}||${t}`;
@@ -2848,16 +2988,19 @@ function buildProspectiveContext(
     byTop.set(p.top_code, list);
   }
   const who = askedCollege || (askedGeo && askedGeo.label) || "the visitor";
-  let out = `\n\n--- PROSPECTIVE CREDIT: what a credential could count toward (COCI course lists for the programs asked about) ---\n`;
-  out += `The visitor holds a credential`;
-  if (credentials.length > 0) out += ` (matched in the credential record above as ${credentials.join("; ")})`;
-  out += ` and is asking which courses it might count toward. Below, for each program the question matched, the course list at the colleges nearest ${who} that teach it, nearest first, with the distance in miles where it is known. `;
-  out += `Compare the credential's content with the program's ENTRY-LEVEL courses (fundamentals, foundations, introduction, transition, basic, level I) and present the closest as what to ASK that college's CPL coordinator to review — the college decides. `;
-  out += `Where the credential record carries a precedent (a college that articulated this credential against a named course), cite it as the evidence that the match has been made before.\n`;
-  let rendered = 0;
+  // The program that trains the credential the visitor holds is BACKGROUND: its
+  // title names a held phrase, or it is the same kind of thing as a held phrase
+  // or a held credential title. Never every section — with nothing left to be
+  // the target, no section is marked and the order is the picks' own.
+  const terms = [...(heldTerms || []), ...(heldPhrases || [])].filter(Boolean);
+  const isBackground = (title: string): boolean =>
+    terms.length > 0 && (namesHeld(title, terms)
+      || (heldPhrases || []).some((p) => sameKind(title, p))
+      || (credentials || []).some((c) => sameKind(title, c)));
+  const sections: Array<{ text: string; background: boolean }> = [];
   for (const [top, plist] of byTop) {
     const title = plist[0]?.top_title || top;
-    let section = `\n## ${title} (TOP ${top})\n`;
+    let section = "";
     if (askedGeo && askedGeo.label && !askedCollege) {
       const here = plist.filter((p) => p.band >= (askedGeo.county ? 3 : 2));
       section += here.length > 0
@@ -2882,9 +3025,33 @@ function buildProspectiveContext(
         section += `  ... and ${rows.length - PROSPECTIVE_COURSES_PER_COLLEGE} more course(s) in this program.\n`;
       }
     }
-    if (sectionRendered > 0) { out += section; rendered += sectionRendered; }
+    if (sectionRendered > 0) {
+      const background = isBackground(title);
+      const head = `\n## ${title} (TOP ${top})`
+        + (background ? ` — BACKGROUND: the program that trains the credential the visitor holds; never the course to ask about` : ``)
+        + `\n`;
+      sections.push({ text: head + section, background });
+    }
   }
-  return rendered > 0 ? out : "";
+  if (sections.length === 0) return "";
+  const targets = sections.filter((x) => !x.background);
+  // Fail-safe: a block with no target section is rendered unmarked, in order.
+  const marked = targets.length > 0 && targets.length < sections.length;
+  let out = `\n\n--- PROSPECTIVE CREDIT: what a credential could count toward (COCI course lists for the programs asked about) ---\n`;
+  out += `The visitor holds a credential`;
+  if (heldPhrases && heldPhrases.length > 0) out += ` — ${heldPhrases.map((p) => `"${p}"`).join(", ")} in their words`;
+  if (credentials.length > 0) out += ` (matched in the credential record above as ${credentials.join("; ")})`;
+  out += ` and is asking which courses it might count toward. Below, for each program the question matched, the course list at the colleges nearest ${who} that teach it, nearest first, with the distance in miles where it is known. `;
+  if (marked) {
+    out += `The section marked BACKGROUND is the program that trains the credential the visitor already holds: read it to see what the credential covers, and never name one of its courses as the course to ask about — the first course you name comes from a section without that mark, which is listed first. `;
+  }
+  out += `Compare the credential's content with the program's ENTRY-LEVEL courses (fundamentals, foundations, introduction, transition, basic, level I) and present the closest as what to ASK that college's CPL coordinator to review — the college decides. `;
+  out += `Where the credential record carries a precedent (a college that articulated this credential against a named course), cite it as the evidence that the match has been made before.\n`;
+  const ordered = marked ? [...targets, ...sections.filter((x) => x.background)] : sections;
+  for (const x of ordered) {
+    out += marked ? x.text : x.text.replace(/ — BACKGROUND: the program that trains the credential the visitor holds; never the course to ask about\n/, "\n");
+  }
+  return out;
 }
 
 // ── Build topic context (organized by college) ─────────────────
@@ -3478,9 +3645,9 @@ This is the most actionable thing you can give a college. Walk the recommendatio
 // it." The section it governs is built by buildProspectiveContext.
 const PROSPECTIVE_RULE = `\n\nABOUT THE "PROSPECTIVE CREDIT" SECTION (if present) — WHAT A HELD CREDENTIAL COULD COUNT TOWARD:
 This answers a DIFFERENT question from every section above. The exhibit and credential sections say who ALREADY grants credit for a credential. This section is for the visitor who holds a credential and wants to know which courses in a program it MIGHT count toward, so they can ask for a review at a college that has never granted it. Answer that question. Do not swap in the "who already grants it" answer, and do not decline because no exhibit exists: a college that has not articulated a credential can still review a request, and such requests are how articulations begin.
-- LEAD WITH THE ANSWER. The first sentence names a course to ask about — college, course number, title — and the same paragraph carries the rest of the courses and how to ask. Nothing comes before that first course: no "first, the limits", no "note first", no paragraph about the catalog or the bridges, no table of who has articulated what, no remark about the question. When the catalog lists no college in the visitor's place for the program, the first sentence still names the nearest college's course, and the sentence about the catalog and the related programs FOLLOWS it in the same paragraph. Existing articulations come AFTER the courses, as the precedent line below, briefly, and only for the credential the visitor holds or one of the same kind (for a CNA holder: Nurse Assistant and Acute Care Nursing Assistant articulations count) — an award for a different credential (an LVN license award, for a CNA holder) is not evidence and is not listed.
+- LEAD WITH THE ANSWER. The first sentence names a course to ask about — college, course number, title — from the program the visitor wants to enter (a section without the BACKGROUND mark), and the same paragraph carries the rest of the courses and how to ask. Nothing comes before that first course: no "first, the limits", no "note first", no paragraph about the catalog or the bridges, no table of who has articulated what, no remark about the question. When the catalog lists no college in the visitor's place for the program, the first sentence still names the nearest college's course, and the sentence about the catalog and the related programs FOLLOWS it in the same paragraph. Existing articulations come AFTER the courses, as the precedent line below, briefly, and only for the credential the visitor holds or one of the same kind (for a CNA holder: Nurse Assistant and Acute Care Nursing Assistant articulations count) — an award for a different credential (an LVN license award, for a CNA holder) is not evidence and is not listed.
 - WORK FROM THE COURSE LIST. For the program the visitor wants to enter, read its courses at the colleges shown and name the ones whose content the credential plausibly covers — usually the entry-level courses (fundamentals, foundations, introduction, transition, basic, level I), never the advanced or specialty ones. Say in a phrase WHY each is a candidate: what the credential trains that the course teaches. Name only courses that appear in the context, with their course number.
-- THE PROGRAM THEY WANT TO ENTER IS THE TARGET. When the lists include the program that trains the credential they already hold (a nurse assistant program for a CNA holder), that list is background, not the answer — they do not need credit for what they hold; they need credit toward what they are entering.
+- THE PROGRAM THEY WANT TO ENTER IS THE TARGET. When the lists include the program that trains the credential they already hold (a nurse assistant program for a CNA holder), that section is marked BACKGROUND and comes last: it is background, not the answer — they do not need credit for what they hold; they need credit toward what they are entering. Never name a course from a BACKGROUND section as the course to ask about, and never open with one; its courses show what the credential covers, and that is all they are for.
 - PRESENT EVERY MATCH AS A REQUEST, NEVER A DETERMINATION. Say "ask the CPL coordinator at <college> to review your <credential> against <course>"; never that it "qualifies", "counts", "is equivalent" or "will be accepted". Faculty decide, and a college that has not granted it before can still say yes.
 - CITE THE PRECEDENT WHEN THERE IS ONE, AND NEVER SAY THERE IS NONE WHEN THE RECORD SHOWS ONE. If the credential record shows a college that articulated this credential — or one of the same kind — against a named course in the target program's field (Chaffey College articulated Acute Care Nursing Assistant, 6 units, against NURVN 414 Acute Care Nursing Assistant: Vocational Nursing Foundations), say so with the college, the course and the units; it is the evidence that makes the request credible at a college that has not done it yet. Only when the record shows no such articulation say that the request would be a first.
 - WHEN THE CATALOG LISTS NO COLLEGE IN THE VISITOR'S PLACE FOR THE TARGET PROGRAM, the section says so. State it as what the catalog shows, never as a fact about the place: "the COCI catalog lists no LVN entry program at an Orange County community college", never "no Orange County college has LVN" or "teaches LVN". Name the related programs the program catalog section lists in the place (an LVN-to-RN bridge at Cypress, Golden West and Saddleback is for people who already hold the license), so a reader who knows those programs sees that you saw them. Then give the same course-level answer for the nearest colleges shown, naming each college's county and its distance (the heading gives it in miles, where known) so the visitor can judge the trip.
@@ -4761,14 +4928,25 @@ Deno.serve(async (req: Request) => {
       // hold count toward, at a college that has not granted it?" Fires when a
       // credential matched, a place or a college anchors the question, and the
       // course catalog matched a core program; one PostgREST read, fail-safe.
-      const heldTitles = [...(stdRecs || []), ...(anyCreds || [])]
-        .map((r: any) => r?.unified_title).filter(Boolean).slice(0, 4);
-      if ((askedGeo || college) && heldTitles.length > 0 && offeringsResults && offeringsResults.length > 0) {
+      // v71: the visitor's own words say which of the matched credentials they
+      // HOLD (the record matches the target's credential too — see
+      // heldCredentialPhrases). The held titles are the ones the block names,
+      // and the held terms (the phrase, its words, its phrase synonyms) are
+      // what marks the program that trains it BACKGROUND.
+      const matchedTitles = [...(stdRecs || []), ...(anyCreds || [])]
+        .map((r: any) => r?.unified_title).filter(Boolean);
+      const heldPhrases = heldCredentialPhrases(routeText);
+      const heldTerms = [...new Set([
+        ...heldPhrases, ...heldPhrases.flatMap((p) => p.split(/\s+/)),
+        ...phraseSynonymProbes(heldPhrases.flatMap((p) => p.split(/\s+/))),
+      ])].filter((t) => t.length >= 2);
+      const heldTitles = pickHeldTitles(matchedTitles, heldPhrases).slice(0, 4);
+      if ((askedGeo || college) && matchedTitles.length > 0 && offeringsResults && offeringsResults.length > 0) {
         const coreKw = expandWithSynonyms(extractTopicKeywords(routeText));
         const pairs = pickProspectivePairs(offeringsResults, coreKw, college, askedGeo, geoMap);
         if (pairs.length > 0) {
           const courseRows = await fetchProgramCourses(pairs, sb);
-          prospectiveContext = buildProspectiveContext(pairs, courseRows, heldTitles, college, askedGeo);
+          prospectiveContext = buildProspectiveContext(pairs, courseRows, heldTitles, college, askedGeo, heldPhrases, heldTerms);
         }
       }
     } catch (e) {

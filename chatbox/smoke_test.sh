@@ -111,6 +111,20 @@ answer_head_must_match() { # [-i] chars regex label
   fi
 }
 
+# The NOT-match on the HEAD only: what must not come FIRST. 7c's first course
+# has to be in the program the visitor is entering, and v70 opened twice on
+# production with a CNA course — Golden West NURS G060N, then Santa Ana VHLTH
+# 101 — the program that trains the credential the visitor already holds.
+answer_head_must_not_match() { # [-i] chars regex label
+  local flag=""; if [ "$1" = "-i" ]; then flag="-i"; shift; fi
+  local chars="$1" re="$2" label="$3"
+  if printf '%s' "$LAST_ANSWER" | head -c "$chars" | grep -E $flag -q -- "$re"; then
+    echo "::error::$label: answer should NOT match /$re/ within the first $chars characters (regression)"; fail=1
+  else
+    echo "  [assert ok] $label does not match /$re/ within the first $chars characters"
+  fi
+}
+
 # Content assertions on the LAST run()'s answer. Optional leading -i = ignore case.
 answer_must_match() {     # [-i] regex label
   local flag=""; if [ "$1" = "-i" ]; then flag="-i"; shift; fi
@@ -573,7 +587,8 @@ answer_must_match -i "saddleback|golden west|cypress|santa ana|santiago canyon|l
 # the older assertion named, so a catalog refresh that reorders the picks is a
 # loud red here rather than a silent miss. Reads for the SHAPE Sam asked for.
 answer_must_match -i "NURS[ -]?(102|125)|VN[ -]?(8|10|103|215|220|61|061)\b|VOC[ -]?VN10[01]|NURVN[ -]?(403|414)|VNRS[ -]?150|Fundamentals of (Vocational )?Nursing|Vocational Nursing Foundations|Transition to Vocational Nursing|Vocational Nursing I\b" "7c ⭐ names a Vocational Nursing course from the prospective course lists (Sam's bar: a course-level answer)"
-answer_head_must_match -i 800 "NURS[ -]?(102|125)|VN[ -]?(8|10|103|215|220|61|061)\b|VOC[ -]?VN10[01]|NURVN[ -]?(403|414)|VNRS[ -]?150|Fundamentals of (Vocational )?Nursing|Vocational Nursing Foundations|Transition to Vocational Nursing|Vocational Nursing I\b" "7c ⭐ leads with the course-level answer — the direct answer first, the limits and precedents after (Sam, 2026-09-18)"
+answer_head_must_match -i 400 "NURS[ -]?(102|125)|VN[ -]?(8|10|103|215|220|61|061)\b|VOC[ -]?VN10[01]|NURVN[ -]?(403|414)|VNRS[ -]?150|Fundamentals of (Vocational )?Nursing|Vocational Nursing Foundations|Transition to Vocational Nursing|Vocational Nursing I\b" "7c ⭐ leads with the course-level answer in the FIRST SENTENCE — the direct answer first, the limits and precedents after (Sam, 2026-09-18; 800 characters let v70's CNA opener through, VN 220 at 854)"
+answer_head_must_not_match -i 300 "VHLTH[ -]?10[1-8]\b|VMED[ -]?(10|11|70|71)\b|NURS[ -]?G06[01]|CNA[ -]?42[2-7]|\bHS[ -]?5[01]\b|NHSN[ -]?5[01]\b|NRS[ -]?10[134]\b|NURAST[ -]?60|NURS[ -]?103\b" "7c ⭐ the first course named is in the target program — no CNA course code in the first 300 characters (v70 opened with Golden West NURS G060N, then Santa Ana VHLTH 101; the CNA program is BACKGROUND)"
 answer_must_not_match -i "no orange county (community )?colleges? (currently )?(teach|teaches|offers?|runs?|has an? (lvn|vocational nursing)|have an? (lvn|vocational nursing))|none of the orange county colleges (currently )?(teach|offer|have|has|run)" "7c ⭐ never states a catalog absence as a fact about Orange County (Sam, 2026-09-18: flat wrong — say what the catalog shows and name the bridges)"
 answer_must_match -i "chaffey|NURVN[ -]?414|acute care nursing assistant" "7c ⭐ cites the CNA-to-LVN precedent (Chaffey NURVN 414) rather than saying no college has done it"
 answer_must_match -i "ask|request|review" "7c ⭐ frames the match as a request for review, never a determination"

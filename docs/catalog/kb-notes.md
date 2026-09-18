@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-469 document(s).
+470 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -387,6 +387,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [The number of findings is not the number of problems — rank an audit by blast radius before you read it](../kb-notes/methodology-the-number-of-findings-is-not-the-number-of-problems.md) | methodology | published | 2026-09-09 | 2026-09-09 |
 | [The obvious detector measures the wrong thing: boilerplate is not repetition](../kb-notes/methodology-the-obvious-detector-measures-the-wrong-thing.md) | methodology | published | 2026-09-10 | 2026-09-10 |
 | [The plausible cause is not the measured one, and the check is usually cheaper than the guess](../kb-notes/methodology-the-plausible-cause-is-not-the-measured-one.md) | methodology | published | 2026-08-09 | 2026-08-09 |
+| [The record cannot say which credential is held — only the visitor's words can](../kb-notes/methodology-the-record-cannot-say-which-credential-is-held.md) | methodology | published | 2026-09-18 | 2026-09-18 |
 | [The same arithmetic can read as withholding or as investment](../kb-notes/methodology-the-same-arithmetic-can-read-as-withholding-or-as-investment.md) | methodology | published | 2026-08-22 | 2026-08-22 |
 | [The sphere is the map through a projection, not a second renderer](../kb-notes/methodology-the-sphere-is-the-map-through-a-projection.md) | methodology | published | 2026-09-07 | 2026-09-07 |
 | [The text a reader sees is not the text a test reads](../kb-notes/methodology-the-text-a-reader-sees-is-not-the-text-a-test-reads.md) | methodology | published | 2026-09-02 | 2026-09-02 |
