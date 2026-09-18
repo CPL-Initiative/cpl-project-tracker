@@ -88,6 +88,13 @@ begin
 
   -- A9: cost. Eight health programs (RN's 1,544 rows among them) in well under
   -- the anon key's 3 s statement timeout; 1,500 ms fails loudly first.
+  -- ⚠️ WARM THE CACHE FIRST, OR A9 MEASURES THE DISK. chatbox_college_courses is
+  -- 141,696 rows and every call seq-scans it. Measured 2026-09-18 (S277): the
+  -- FIRST call after a cold start took 1,625 ms and the next three took 198 ms.
+  -- A9 is the first statement here to touch the table, so without this it
+  -- reports the one-off page-in as the function's cost and fails a correct
+  -- normalizer. The warm-up is one program, and its own time is not asserted.
+  perform count(*) from public.program_typical_courses(array['1230.30'], 2, 40) r;
   t0 := clock_timestamp();
   perform count(*) from public.program_typical_courses(array['1230.30','1230.20','1230.10','1208.00','1205.10','1225.00','1217.00','1209.00'], 2, 40) r;
   ms := extract(epoch from clock_timestamp() - t0) * 1000;

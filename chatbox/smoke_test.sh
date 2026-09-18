@@ -638,6 +638,48 @@ answer_must_match -i "phlebotomy|medical assist|radiologic|surgical tech|sterile
 # Antonio's VOC VN1 to Golden West — chat_interactions 39a328be).
 answer_head_must_not_match -i 300 "(golden west|cypress|saddleback|santa ana|santiago canyon)[^.]{0,120}(VN[ -]?[0-9]|VOC VN|NURVN|VNRS|NURS[ -]?(102|125))" "7c ⭐ a course is named with its own college — no Orange County college teaches an LVN entry course, so none may be attached to one"
 
+# ── MODE 7s: a SUB-REGION is a place too (2026-09-18, S277) ──────────────────
+# Sam, 2026-09-18, on a live v72 answer: "Sierra is still not answering
+# correctly." His visitor wrote "I have a cna cert and live in the San Gabriel
+# Valley". resolveAskedPlace matched nothing — the text carries no "<county>
+# county", no alias, and a bare "Los Angeles" is skipped because nine colleges
+# carry it in their name — so askedGeo was null, both catalog routes fell back
+# to volume order, and the answer offered Los Medanos College (Contra Costa,
+# ~346 mi from the San Gabriel Valley) as "one of the nearer matches I can
+# confirm" while stating the catalog data showed no San Gabriel Valley college
+# teaching an LVN entry program.
+#
+# FIVE DO, measured live the same day (87 course rows): Pasadena City
+# (NURS 102/125 Fundamentals of Vocational Nursing, 28 rows), Citrus (VNRS 150,
+# 20), Glendale (NS 110, 19), Mt. San Antonio (VOC VN101, 12), Rio Hondo
+# (VN 61, 8). The answer then named Pasadena and Rio Hondo from the model's own
+# knowledge and said "my data doesn't confirm their course lists here".
+#
+# 7c guards a COUNTY; this guards the sub-region, which is the shape that had no
+# vocabulary at all. A false zero is the worst answer Sierra gives: it closes the
+# conversation, and nobody files feedback about a door they were told wasn't
+# there.
+SGV_QUESTION='I have a cna cert and live in the San Gabriel Valley where I want to get credit for my classes toward LVN or related job. Can you compare typical CNA courses to LVN and others so I can see what credit I might request?'
+echo "MODE: 7s a sub-region anchors the catalog routes (San Gabriel Valley, CNA to LVN)"
+run "7s sub-region anchor (San Gabriel Valley, CNA to LVN)" \
+  "$(printf '{"query":"%s","session_id":"smoke-ci","history":[]}' "$SGV_QUESTION")"
+answer_must_match -i "san gabriel valley" "7s names the place the visitor named"
+# The five San Gabriel Valley colleges that teach an LVN entry course. At least
+# one must be named: on v72 none was, and the answer sent the visitor to Contra
+# Costa County.
+answer_must_match -i "pasadena|citrus|rio hondo|mt\. san antonio|mount san antonio|glendale" "7s ⭐ names a San Gabriel Valley college that teaches the LVN entry course (v72 named none and offered Los Medanos, 346 mi)"
+answer_head_must_match -i 600 "pasadena|citrus|rio hondo|mt\. san antonio|mount san antonio|glendale" "7s ⭐ …in the FIRST SENTENCE — the nearest real option leads the answer"
+# The false zero itself, in the shapes v72 produced.
+answer_must_not_match -i "(does ?n.t|do ?n.t|no|none)[^.]{0,80}san gabriel valley[^.]{0,80}(lvn|vocational nursing|entry program)|no (college|community college)s? in the san gabriel valley" "7s ⭐ never says the catalog shows no San Gabriel Valley college with an LVN entry program — five teach one (Sam, 2026-09-18)"
+answer_must_not_match -i "my data does ?n.t confirm|i can.t confirm their course lists|once i can confirm your closest" "7s ⭐ never disclaims data it holds — v72 named Pasadena and Rio Hondo from the model's own knowledge and said it could not confirm their course lists, while the catalog held 28 rows and 8"
+answer_must_not_match -i "los medanos|merritt college|city college of san francisco" "7s ⭐ never leads a San Gabriel Valley visitor to a northern California college — they rank 34th of 43 and beyond on distance"
+# The quick list, with the normalizer's CNA family folded (S277): the left column
+# must not restate one course under several names. "Acute Care CNA", "CNA Acute
+# Care", "Acute Certified Nursing Assistant" and "Acute Care Theory for CNAs"
+# were four of the six rows v72 drew.
+answer_must_not_match -i "acute care cna[^a-z]|cna acute care|acute care theory for cnas" "7s ⭐ the quick list does not restate the acute-care course under its raw title variants (cpl_course_title_norm expands CNA and sorts the key; 22 colleges were split seven ways)"
+answer_must_match -i "ask|request|review" "7s ⭐ frames the match as a request for review, never a determination"
+
 # Broad "who teaches this" — the catalog should surface colleges that TEACH
 # construction/carpentry (not only those with an existing exhibit).
 run "8 offerings broad (who teaches construction)" \
