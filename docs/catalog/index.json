@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 466,
+   "count": 467,
    "docs": [
     {
      "created": "2026-08-14",
@@ -1254,6 +1254,27 @@
      "title": "A display name is not a key \u2014 and the entry that still matches is the one that lies",
      "type": "methodology",
      "updated": "2026-09-15"
+    },
+    {
+     "created": "2026-09-18",
+     "governs": [
+      "kb/_text_repair.py",
+      "kb/_build_college_courses.py",
+      "chatbox/build_coci_offerings.py",
+      "tests/course_title_mojibake_test.py"
+     ],
+     "path": "docs/kb-notes/methodology-a-double-decoded-string-needs-the-codec-that-decoded-it.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "encoding",
+      "loader",
+      "coci",
+      "pitfall"
+     ],
+     "title": "A double-decoded string needs the codec that decoded it \u2014 cp1252, a C1 passthrough, and repair before you collapse whitespace",
+     "type": "methodology",
+     "updated": "2026-09-18"
     },
     {
      "created": "2026-09-17",
@@ -13637,8 +13658,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 246,
+   "count": 247,
    "docs": [
+    {
+     "created": "2026-09-18",
+     "governs": [],
+     "n": 275,
+     "path": "docs/session_275_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "sierra",
+      "prospective-cpl",
+      "deploy",
+      "encoding"
+     ],
+     "title": "v69 answers the prospective question; ship it, read it, then give nearest a distance",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-18",
      "governs": [],
@@ -17800,5 +17838,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 924
+ "total": 926
 }

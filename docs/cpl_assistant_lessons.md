@@ -1080,3 +1080,136 @@ on `f64f645` were in flight at handoff.** Session 274 reads the A/B grid and
 the preview logs, merges on green `test`, deploys, runs health and smoke,
 reads the production logs, asks the Orange County question of production,
 and asks Sam to read the answer.
+
+## 2026-09-18 — SkyMeter (S274): v68 shipped, and then Sam said what the question was
+
+**The ask (Sam's greeting, and then his mid-session correction, verbatim):**
+the greeting handed over #1607 to merge and deploy. An hour in, on v67's and
+the v68 candidate's answers to his Orange County question: *"I was asking her
+to compare CNA courses to LVN courses so the user could ask for credit. Both
+she and the last session seemed to confuse this ask with the typical ask for
+which existing exhibits offer CPL for CNA, which is not the question. I know
+that few, perhaps just one, college has articulated CNA for CPL, but that's
+not the concern. The question is what might qualify so the user could ask for
+it at a college that has not yet granted it."*
+
+### v68: one CI fix, then the sequence by hand a third time
+
+#1607's `test` was red on its head `569a55d` at *Dependency map — content
+guards + drift check*: `kb/dependency_map.json` had not been rebuilt after the
+branch's `index.ts`, `smoke_test.sh` and SQL edits moved 30 edges, the
+category that reddened #1601 twice. Reproduced in a worktree, regenerated,
+pushed `022b85d`; green at 03:00Z; ready, squash-merged `fa87ece` 03:06Z. The
+deploy (run 35302005168) put **cpl-chat v68** live at 03:08Z; health green at
+03:10Z; both smoke runs ALL MODES OK; `function_logs` from the deploy: 82
+lines, 0 unavailable, 0 EMPTY ANSWER, 0 errors. The vault note PR (#154)
+merged beside it.
+
+### The v68 answer, read against Sam's bar
+
+The merge's own smoke run asked his question of v68 at 03:10:05Z
+(`chat_interactions` `9a74a91b`). It anchored Orange County correctly — four
+CNA programs, the bridges named — and then answered the exhibit question: "I
+don't have a record of any college that has articulated CNA certification
+credit toward LVN program courses", two reverse-direction LVN-credit
+precedents (Napa Valley, San Bernardino Valley), and *"ask them to review your
+CNA certificate against their LVN prerequisites."* No LVN course. No nearest
+LVN program. No Chaffey. `rules_fired` carried `credential`, which was the
+CCNA false friend.
+
+### What the evidence said
+
+- **No route carried the target program's course list.** `coci_college_offerings`
+  holds a sample per (college × TOP); `chatbox_college_courses` holds them all
+  (141,696 rows, 120 colleges) and only the alignment route read it, for a
+  named college. Pasadena NURS 102 *Fundamentals of Vocational Nursing*,
+  Southwestern VN 10 and VN 8, Chaffey NURVN 403 beside its NURVN 414, Citrus
+  VNRS 150, Long Beach City VN 215 / VN 220, Rio Hondo VN 61 — none reached
+  the model.
+- **The alignment route is the wrong instrument for the target program.**
+  Pointed at Saddleback for *Acute Care Nursing Assistant* it proposed
+  Saddleback's own noncredit CNA courses (CNA 425NC–427NC at 0.61–0.62): the
+  courses a CNA holder already has. It scores a college's courses against the
+  precedent's course title, and Chaffey named its course unusually. At Long
+  Beach City it ranked *Math Prep for Vocational Nursing Program* above
+  *Fundamentals of Nursing*.
+- **"Nearest" had no neighbor.** The anchored offerings query returns 0 rows
+  for TOP 1230.20 in Orange County (its "LVN" programs are RN-coded bridges),
+  and `college_geo` puts Orange County in a region of one county, so past the
+  county every college tied at band 0 and volume decided: Sacramento City (30
+  courses) and Butte (25) ahead of Pasadena (24), Southwestern (23), Chaffey
+  (22), Citrus (20), Long Beach City (16), Rio Hondo (8).
+- **A false friend switched the precedents off.** `search_statewide_recommendations`
+  matches tier 3 by `title LIKE '%needle%'`, so `cna` returned Cisco Certified
+  Network Associate (CCNA), the "cna" inside "ccna"; one statewide hit meant
+  `fetchAnyCredentials` never ran, and the CNA credentials, the LVN license
+  credentials (3 adopters) and the only CNA-to-LVN precedent in MAP (Chaffey,
+  6 units in NURVN 414) never reached the model.
+
+### The fix (PR #1608, cpl-chat v69)
+
+1. **A prospective-credit block.** `pickProspectivePairs` (per core TOP, the
+   three colleges nearest the anchor that teach it: a named college first,
+   then county, region, neighboring region, elsewhere; volume only within a
+   band), `fetchProgramCourses` (one PostgREST read, fail-safe),
+   `buildProspectiveContext` (twelve courses per college, the remainder
+   counted, noncredit marked, *NO college in Orange County teaches this
+   program* said in words), `PROSPECTIVE_RULE` at sortOrder 65: work from the
+   course list, the program they want to ENTER is the target, every match is
+   a request never a determination, cite the precedent.
+2. **A neighbor band.** `REGION_NEIGHBORS`, nine mainland regions, asserted
+   symmetric; `proximityBand` county 3 > region 2 > neighbor 1 > elsewhere 0;
+   both catalog builders' thresholds moved with it.
+3. **The false-friend guard.** `isFalseFriend` keeps a tier-3 or tier-4 hit
+   only when the probe is a whole word in the text that matched; a tier-4 row
+   with no `matched_via` is kept. Both credential routes run concurrently,
+   always.
+4. **Adopted first.** The candidate's first answer met the bar and then said
+   no college had articulated CNA-to-LVN fundamentals credit — the CAP took
+   the precedent this time: the local route sorted by tier and kept four, and
+   Acute Care Nursing Assistant matches at tier 4 behind four tier-3 hits. It
+   now ranks an adopted credential first and keeps six; measured on the seven
+   probes, the precedent ranks fifth once CCNA is dropped.
+5. **Course titles repaired at the loader** (`ae76280`): 381 of 141,696 titles
+   and 186 of 16,097 offerings rows carried UTF-8 read back as cp1252, once or
+   twice; the two `fix_moji` copies used latin-1, fired only on "Ã", and were
+   applied to the college name only. One repair in `kb/_text_repair.py` now,
+   cp1252 with a C1 passthrough, applied to the title before `clean()`. The
+   stored rows wait for Sam: the course sync is upsert-only with the title in
+   its conflict key. KB note: `methodology-a-double-decoded-string-needs-the-codec-that-decoded-it`.
+
+### How it was proven
+
+`tests/sierra_prospective_credit.test.js` (61) on the real Orange County rows;
+smoke 7c gains Sam's bar (a Vocational Nursing course from the lists, request
+framing); `sierra_geo_ranking` and `sierra_credential_route` repinned; the
+rule-chain tests carry the twelfth rule; `npm test` 345/345; all 43 CI
+python/shell steps plus the new one; `deno check` at main's 15; `deno run`
+boots. **A/B run 35302590083 (`bf46011`):** production 2 failing assertions,
+candidate ALL MODES OK, no regressions; fixed by the candidate: 7c's
+course-level assertion and a 15c negation flake. The candidate's own answer
+(`b0bcea2d`, 03:26:46Z): no OC college teaches LVN, the bridges named as
+bridges, Pasadena / Southwestern / Chaffey with counties, NURS 102/102L, VN
+10/10L, NURVN 403/403L with units, *"ask the CPL coordinator … to review your
+CNA certificate against their Fundamentals of Nursing course."* Prompts no
+larger: 21,123 uncached tokens on average against production's 21,900.
+`function_logs` for the window: 185 lines, 0 unavailable, 0 EMPTY ANSWER, 0
+errors. The second A/B (run 35303520840, on the adopted-first commit) is the
+gate for the deploy.
+
+### Sam's decisions this run
+
+- The bar, verbatim above — captured as `cpl_memory`
+  `sam-cna-question-is-what-might-qualify-not-who-articulated-2026-09-18`
+  and a vault braindump, unprompted.
+- Still his: auto-deploy on merge (since S272); the 381 stored garbled rows
+  (`s274-sam-course-title-cleanup`).
+
+### The lesson under the lessons
+
+A correct answer to the wrong question reads as a miss. Two sessions and one
+A/B judged the Orange County answer on whether it named the right colleges;
+Sam judged it on whether it compared courses. The question's SHAPE belongs in
+the fixture, not only its nouns — 7c now reads for a course code and the word
+"review". And when a fact is hidden twice — first by a gate, then by a cap —
+removing the gate is not the fix; measuring which rows reach the model is.

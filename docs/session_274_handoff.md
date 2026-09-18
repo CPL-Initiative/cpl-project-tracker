@@ -3,7 +3,8 @@ title: Session 274 handoff — v68 is built and verified; merge, deploy and read
 date: 2026-09-18
 session: 273 (SkyPilot)
 tags: [handoff, sierra, place-anchor, program-search, deploy]
-status: current
+status: superseded
+superseded_by: session_275_handoff.md
 ---
 
 # You are Session 274
