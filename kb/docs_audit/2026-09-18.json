@@ -10,9 +10,9 @@
     "other": 150000
   },
   "summary": {
-    "files": 946,
-    "bytes": 9994975,
-    "over_budget": 8,
+    "files": 947,
+    "bytes": 10022515,
+    "over_budget": 9,
     "handoff_max": 277,
     "always_loaded_files": 1,
     "always_loaded_bytes": 60839,
@@ -26,43 +26,43 @@
       },
       "other": {
         "files": 114,
-        "bytes": 3091017,
+        "bytes": 3093372,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 17754,
+        "bytes": 17952,
         "over": 0
       },
       "lessons": {
         "files": 75,
-        "bytes": 2080492,
+        "bytes": 2087508,
         "over": 1
       },
       "kb_note": {
-        "files": 474,
-        "bytes": 2420556,
+        "files": 475,
+        "bytes": 2425680,
         "over": 0
       },
       "roadmap_lane": {
         "files": 32,
-        "bytes": 199840,
-        "over": 3
+        "bytes": 200792,
+        "over": 4
       },
       "handoff": {
         "files": 249,
-        "bytes": 2124477,
+        "bytes": 2136372,
         "over": 0
       }
     },
     "by_rule": {
-      "oversized_doc": 8,
+      "oversized_doc": 9,
       "house_voice": 24,
       "vault_heavy_path": 49
     },
     "vault": {
-      "files": 2983,
-      "bytes": 1452726365,
+      "files": 2984,
+      "bytes": 1452757755,
       "heavy_bytes": 643455286,
       "heavy_share": 0.443,
       "ignore_filters": [
@@ -415,6 +415,19 @@
       "path": "docs/reference/lanes/partner-crosswalks.md"
     },
     {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 12573,
+        "limit": 12000,
+        "lane": "roadmap_lane",
+        "over_by": 573,
+        "ratio": 1.05
+      },
+      "message": "12,573 B is 1.0× the roadmap_lane budget (12,000 B) — candidate for compaction",
+      "path": "docs/reference/lanes/skyview-ccr-interface.md"
+    },
+    {
       "rule": "house_voice",
       "fixable": false,
       "detail": {
@@ -430,13 +443,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 663630,
+        "bytes": 665109,
         "limit": 150000,
         "lane": "other",
-        "over_by": 513630,
-        "ratio": 4.42
+        "over_by": 515109,
+        "ratio": 4.43
       },
-      "message": "663,630 B is 4.4× the other budget (150,000 B) — candidate for compaction",
+      "message": "665,109 B is 4.4× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {

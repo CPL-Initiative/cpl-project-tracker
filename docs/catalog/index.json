@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 472,
+   "count": 473,
    "docs": [
     {
      "created": "2026-08-14",
@@ -1635,6 +1635,25 @@
      "title": "A gate cannot protect the step that fills it",
      "type": "methodology",
      "updated": "2026-08-19"
+    },
+    {
+     "created": "2026-09-18",
+     "governs": [
+      "tests/skyview_built_from_source_test.py",
+      "scripts/check_generated.sh",
+      "prototype/build_ccr_atlas.py"
+     ],
+     "path": "docs/kb-notes/methodology-a-generated-file-accepts-your-edit.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "generated-artifacts",
+      "ci",
+      "skyview"
+     ],
+     "title": "A generated file accepts your edit, and that is what makes it dangerous",
+     "type": "methodology",
+     "updated": "2026-09-18"
     },
     {
      "created": "2026-09-05",
@@ -13775,9 +13794,13 @@
       "deploy",
       "quick-list",
       "flyer",
-      "plain-words"
+      "plain-words",
+      "skyview",
+      "ccr",
+      "generated-artifacts",
+      "read-only"
      ],
-     "title": "v72 is live (the quick list, the flyer, the precedent in the block, \"catalog data\"); next, the crosswalk beyond the CNA and the measurements the queue still owes",
+     "title": "v72 is live (the quick list, the flyer, the precedent in the block, \"catalog data\"); next, the crosswalk beyond the CNA and the measurements the queue still owes \u00b7 part two, the SkyView lane (shareable, answers every drop)",
      "type": null,
      "updated": ""
     },
@@ -17977,5 +18000,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 933
+ "total": 934
 }

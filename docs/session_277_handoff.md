@@ -1,8 +1,8 @@
 ---
-title: Session 277 handoff — v72 is live (the quick list, the flyer, the precedent in the block, "catalog data"); next, the crosswalk beyond the CNA and the measurements the queue still owes
+title: Session 277 handoff — v72 is live (the quick list, the flyer, the precedent in the block, "catalog data"); next, the crosswalk beyond the CNA and the measurements the queue still owes · part two, the SkyView lane (shareable, answers every drop)
 date: 2026-09-18
-session: 276 (SkyGauge)
-tags: [handoff, sierra, prospective-cpl, deploy, quick-list, flyer, plain-words]
+session: 276 (SkyGauge) and 276 parallel (SkyLevel)
+tags: [handoff, sierra, prospective-cpl, deploy, quick-list, flyer, plain-words, skyview, ccr, generated-artifacts, read-only]
 status: current
 ---
 
@@ -14,13 +14,22 @@ what the queue owes next is measurement: how the new route costs under load,
 whether a named college should keep the county band, whether the campus
 points are right.
 
+⚠️ **TWO SESSIONS RAN 2026-09-18 IN PARALLEL, AND BOTH WROTE THIS FILE.** This
+is the merged handoff. Part one (this half) is the **Sierra** lane, written by
+SkyGauge; part two, below the rule near the end, is the **SkyView** lane,
+written by SkyLevel and merged from #1621 with its headings demoted and one
+sentence adjusted for the name. SkyLevel's half called you **SkyLedger**; the
+sign-off line Sam pastes names **SkyCaliper**. Answer to either, carry
+SkyCaliper forward. The SkyView queue (`s277-*`) sits in the To-Do feed beside
+the Sierra one, and the merged feed keeps the Sierra session's `_status`.
+
 Read in order: this file · [`lanes/sierra-retrieval-corpus.md`](reference/lanes/sierra-retrieval-corpus.md)
 · `docs/cpl_assistant_lessons.md` (2026-09-18, S276) ·
 `docs/kb-notes/methodology-typical-is-a-count-of-colleges-across-the-whole-catalog.md`
 · `docs/kb-notes/methodology-an-inside-term-leaks-through-the-context-not-the-prose.md`
 · [PR #1617](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1617) (merged, v72).
 
-## ✅ WHERE THINGS STAND (as of 2026-09-18 17:20Z)
+## ✅ WHERE THINGS STAND (as of 2026-09-18 17:35Z)
 
 - **cpl-chat v72 is LIVE** (PR #1617 squash-merged as `fc3ebe3` on green
   `test`; deploy run 35370070548 byte-verified; `list_edge_functions`
@@ -33,10 +42,33 @@ Read in order: this file · [`lanes/sierra-retrieval-corpus.md`](reference/lanes
   El Camino named and not dismissed, so both mode-9 assertions hold on the
   completed text) while the modes on either side streamed at 40–100 tokens/s:
   one slow generation, and mode 9 had passed on this commit at 16:42Z, so the
-  one sanctioned re-run went out: run 35373228305, dispatched 17:15Z, in
-  progress at this commit. Also measured in that run: three 5 s route cuts
-  during mode 8 (17:00:08–14Z; `is_allowed_reviewer`, `chatbox_college_profiles`
-  twice; `college_geo` took 3.6 s) — the reads failed safe and the mode passed.
+  one sanctioned re-run went out: run 35373228305 (17:15Z). It failed mode 7c
+  alone, for a measured reason outside the function: the scheduled
+  `map-custom-report-load.yml` (run 35372830989, cron 17:11Z) posted 629,232
+  rows to `stg_map_student_credit` from 17:13:41 to 17:16:37Z, single requests
+  ran up to 125 s at the gateway, Postgres canceled 20 statements on its
+  timeout (15 of them at 17:19), and the function logged some thirty route
+  cuts between 17:16 and 17:21Z (`program_typical_courses`,
+  `chatbox_college_courses`, `search_college_programs` among them), so 7c's
+  answer (`e2a6aba3`, 17:20:19Z) came without its block, as designed. Mode 9
+  passed in 25 s; every mode after 17:21Z passed. The loader's job reported
+  HTTP 504 on the promotion at 17:18:58Z and printed "rolled back, live
+  unchanged" — and `map_data_loads` row 35 shows the promotion COMMITTED at
+  17:16:52Z (629,232 student rows, 221,324 CR-unit rows, reconciled): the
+  gateway gave up at 60 s, the transaction did not. Live carries today's data;
+  the job's red is a misreport (its first after 38 green runs). A third clean
+  run in a quiet window, 35374928638 (17:32Z): every answer assertion passed,
+  7c's eleven included (quick list, flyer, Chaffey, the course-level first
+  sentence); its one failure was the smoke's own anon probe of
+  `program_typical_courses` (rows=0 at 17:35:31Z — the anon key's 3 s statement
+  timeout, while a one-row `map_colleges` read took 3.1 s at 17:38Z). The
+  function logged two cuts in that run (`search_college_programs` 17:34:04Z,
+  `program_typical_courses` 17:34:57Z on the Harbor NCCER question), both
+  failed safe. So v72's answers are verified three times over (16:42Z full
+  pass; 17:35Z 7c full pass); the smoke's anon probe and the function's
+  fan-out share one PostgREST pool, and that is the open item (sequence 9).
+  The first clean run had shown the shape in miniature: three 5 s route cuts
+  during mode 8 (17:00:08–14Z) that failed safe.
   `function_logs` 16:43–16:50Z: 0 route cuts, 0 EMPTY
   ANSWER, 0 unavailable, 0 errors; `program_typical_courses` 5 of 5 calls 200.
 - **What v72 does, on Sam's two asks** (verbatim in `cpl_memory`
@@ -129,6 +161,24 @@ Read in order: this file · [`lanes/sierra-retrieval-corpus.md`](reference/lanes
    have the SSE parser print the stream's token rate so the log says which
    it was. Decide before the next hone; no code moved for it this session.
 
+9. **The loader's 504 is a misreport, and the smoke's probe shares the pool.**
+   Today's `map-custom-report-load.yml` run (35372830989) printed "PROMOTION
+   REFUSED (HTTP 504). Live is UNCHANGED — the whole transaction rolled back"
+   while `map_data_loads` row 35 shows the promotion committed at 17:16:52Z
+   (629,232 student rows, reconciled). A gateway timeout ends the HTTP call,
+   never the Postgres transaction, so the loader must read `map_data_loads`
+   back (for a minute or two) before it declares a rollback; until then a red
+   run there means "read the table". Do not re-dispatch it for today. The
+   same minutes cost the smoke re-run its 7c (route cuts) and the third run its
+   anon probe of `program_typical_courses` (3 s statement timeout while the
+   function's own fan-out of some thirty reads per request held the PostgREST
+   pool). Two small moves: give the smoke's probe the two-program shape and a
+   retry, and measure the pool under one request
+   (`s275-fable-programs-route-latency` now includes the typical-courses
+   call). The loaders own 17:06–17:20Z (credential-catalog-sync 17:06,
+   custom-report load and college-briefing-publish 17:11); dispatch smokes
+   clear of it. The lane is `lanes/map-custom-reports.md`.
+
 ## ⚠️ Sam's open calls — his, not yours
 
 - **Which Orange County college runs an LVN entry program**
@@ -159,7 +209,8 @@ Read in order: this file · [`lanes/sierra-retrieval-corpus.md`](reference/lanes
 
 | Item | State |
 |---|---|
-| v72 deploy → health → smoke → logs | deploy 35370070548 ✅ · health 35370311547 ✅ · merge-triggered smoke 35370054033 ✅ · clean smoke 35371403392 ✗ mode 9 only (curl's 90 s ceiling; the answer completed at ~100 s) · re-run 35373228305 in progress at commit time · logs clean |
+| v72 deploy → health → smoke → logs | deploy 35370070548 ✅ · health 35370311547 ✅ · merge-triggered smoke 35370054033 ✅ · clean smoke 35371403392 ✗ mode 9 only (curl's 90 s ceiling; the answer completed at ~100 s) · re-run 35373228305 ✗ 7c only (route cuts during the 17:13–17:21Z student-credit load) · third run 35374928638 ✗ the smoke's anon probe only (rows=0 at the 3 s statement timeout; every answer assertion passed, 7c's eleven included) · logs: two fail-safe cuts in that run |
+| MAP Custom Report load, 17:11Z cron | job red: the promotion call got HTTP 504 and the job printed "rolled back, live unchanged" — yet `map_data_loads` 35 shows it committed at 17:16:52Z with today's rows, reconciled. Live is current; do NOT re-dispatch. The loader needs a read-back after a gateway timeout (sequence item 9) |
 | Sam reads v72's Orange County answer | ask — `s276-sam-oc-answer-v72` |
 | The precedent line names its program | designed — `s276-fable-precedent-names-its-program` (step 2) |
 | `RELATED_PROGRAMS` beyond the CNA | NEEDS SAM — `s276-sam-related-programs-next-list` |
@@ -206,3 +257,121 @@ Read in order: this file · [`lanes/sierra-retrieval-corpus.md`](reference/lanes
 
 *Greetings, you are Sky**Caliper** (Session 277), see Sky**Gauge**'s handoff —
 `docs/session_277_handoff.md` — let's keep rolling with our queue.*
+- The SkyView lane (#1621): `docs/kb-notes/methodology-a-generated-file-accepts-your-edit.md`.
+
+---
+
+## Part two — the SkyView lane (SkyLevel's handoff, merged from #1621)
+
+SkyLevel's half named you **SkyLedger** (the note at the top of this file keeps one name, SkyCaliper) — SkyView now says what it is and answers what you
+do to it, and the work in front of you is the write that makes a merge stick.
+
+⚠️ **TWO SESSIONS RAN 2026-09-18 IN PARALLEL.** This handoff is the **SkyView**
+lane, written by SkyLevel, which had no handoff of its own (Sam: *"this session I
+don't have a typical handoff to give you"*). The **Sierra** lane ran beside it as
+SkyGauge and shipped v72 in [PR #1617](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1617);
+its state is in [`lanes/sierra-retrieval-corpus.md`](reference/lanes/sierra-retrieval-corpus.md)
+and `docs/cpl_assistant_lessons.md`, and its own carryover is in the To-Do feed.
+If SkyGauge also wrote this file, **merge the two halves rather than picking one**.
+
+Read in order: this file · [`lanes/skyview-ccr-interface.md`](reference/lanes/skyview-ccr-interface.md)
+· [`reference/skyview_invariants.md`](reference/skyview_invariants.md) (before any code)
+· `docs/ccr_atlas_lessons.md` (2026-09-18) ·
+[`methodology-a-generated-file-accepts-your-edit`](kb-notes/methodology-a-generated-file-accepts-your-edit.md)
+· [PR #1618](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1618) (merged)
+· [PR #1619](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1619) (merged).
+
+### ✅ WHERE THINGS STAND
+
+- **SkyView states that it is read only**, in a band under the control row, inside
+  `#u-full` so it survives full screen and clear of the legend so folding cannot
+  take it: *Read only. Moves stage in this browser alone. Signed-in curators save
+  in COBI's Common Course Reference tab.* 29px at 1440×900, 47px at 390×844, no
+  horizontal scroll. The three older statements of the same fact all sat in chrome
+  `body.u-solo` hides — the footer, `#prov`'s title attribute, and a comment.
+- **The page still writes NOTHING.** One POST in the whole file (the Ask calling
+  `cpl-chat`, a drafting surface that skips its `chat_interactions` insert), no
+  `rest/v1` call at all. `tests/ccr_skyview_read_only.test.js` (21 checks) pins
+  both the placement and the no-write claim, so a later change cannot quietly
+  falsify a statement the page was shared on.
+- **A drop that stages nothing now answers.** `pointerup` had one exit returning
+  in silence — a carried course released on `drag.fromNode`, which for a course
+  picked up from a member square is the whole clustered identity. That silence was
+  Sam's *"stops responding on the second or third merge"*. `CLICK_SLOP` is 8px
+  against the 5px a carry needs to start; the panel's Drag… button has no press
+  point, so its travel reads infinite and is never a click.
+- **A merged course queues against its parent** on its own arc, drawn as a circle
+  rather than a ring star, labeled *staged, awaiting a curator* — Sam's *"as if
+  it's in line for the next remint procedure"*.
+- ⚠️ **`prototype/skyview.html` IS GENERATED, and #1618 shipped into it.** The band
+  was written into the artifact, passed a browser check, a jsdom suite, review,
+  merge and deploy — and #1617's rebuild from the sources stripped it out of main
+  within the hour. Everything now lives in `prototype/ccr_universe.js` and
+  `prototype/ccr_atlas_v1.html`; `tests/skyview_built_from_source_test.py` names
+  the source file and line of the first divergence, in `js-tests.yml` **and** in
+  `scripts/check_generated.sh`, which had listed every other generated file and
+  not this one.
+
+### YOUR SEQUENCE
+
+1. **Merge execution from SkyView** (`s277-fable-skyview-merge-execution`), once
+   Sam says go — it is his call and it is on the sheet. The write already exists
+   and is governed: `unified_courses.js` POSTs `kb_curation` with `field:
+   "merge_into"` under a magic-link reviewer session with RLS per row, and
+   `table:kb_curation` maps to governance row DR-04. So the build is the
+   `cpl_session.js` keeper (31 modules already read a reviewer session), a Save
+   control on the staged list, the same POST, the undo that already exists as a
+   row delete, and **one entry in `kb/governance_surface_map.json` with its
+   reason** — a read-only surface gaining writes is a decision-rights change under
+   Rule 10 (a3). The band's wording changes with it, and its test is the file to
+   update deliberately.
+2. **Re-mint: compose and approve in SkyView, land in the harness**
+   (`s277-sam-skyview-remint-surface`). Sam asked for SkyView to be a complete
+   curation surface *"I know that reminting is a big deal… we can be careful."*
+   ⚠️ **A browser cannot do the landing, and the reason is mechanical, not
+   caution:** `docs/coursecontrolnumber_remint.md` requires producer and consumer
+   in ONE git commit (new export against old kb collapses Phase B to 0 and member
+   rows to 76, measured), then the gated Supabase re-key inside a window that must
+   close before the 10:17 UTC cron, because the workflow runs `_apply_curation.py`
+   before export. Build the request, the dry-run's blast radius and the approval
+   in SkyView; dispatch the playbook to land it.
+3. **The loner eclipse** (`s277-fable-skyview-loner-eclipse`) — measured and
+   deliberately unfixed. 23 of 24 loners already resolve correctly with their
+   parent open; 37 of 37 focused member stars resolve to that member. Reopen only
+   if Sam hits it again.
+4. **`.claude/settings.json` read-tool allowlist.** #1617 landed a `permissions.allow`
+   block with five Supabase tools. Adding the read-only GitHub MCP tools
+   (`pull_request_read`, `actions_list`, `get_check_run`) is a small, safe follow-up
+   now that the file exists on main. ⚠️ **Worth raising with Sam first:**
+   `mcp__Supabase__execute_sql` in that list runs arbitrary SQL against the project
+   holding `map_student_credit` (537,908 student-grain rows); the other four are
+   genuinely read-only.
+
+### ⚠️ Sam's open calls — his, not yours
+
+- **Does SkyView save a merge itself** (`s277-sam-skyview-share-and-curate-scope`).
+- **Statewide exhibits on the sky** (lane item ①) — his 2026-09-10 ask cut off.
+- **The opening width on a phone** (lane item ③) — a ruling, not a sweep.
+- The Sierra lane's own open calls are in the To-Do feed and its lane file.
+
+### What this session learned
+
+- **A generated file accepts your edit, and that is what makes it dangerous.**
+  Every signal fires green and the failure arrives later from somewhere else. KB
+  note: `methodology-a-generated-file-accepts-your-edit`. The rule already existed
+  — `skyview_invariants.md` says *"never hand-patch `skyview.html`"* — and reading
+  the lane's pointer to that file is not the same as opening it. Knowing is not
+  the defense; the check is.
+- **Silence is a bug report.** "Stops responding" was not a dead handler; it was a
+  handler that did the right thing and said nothing, leaving a stale hint claiming
+  the reader still carried a course. Every exit from a gesture needs an account.
+- **Measure before re-ordering a rule that already works.** The hit-test fix was
+  tempting and would have traded 37 of 37 for 23 of 24.
+
+### Safety patterns to honor
+
+- `prototype/skyview.html` is generated — edit the sources, run
+  `python3 prototype/build_ccr_atlas.py`, and run `bash scripts/check_generated.sh`
+  LAST before a push.
+- `npm run sweep` and `npm run a11y skyview` in the same PR as any SkyView change.
+- The band's claim is load-bearing: Sam shared the page on it.

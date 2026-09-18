@@ -32,6 +32,13 @@ run "Sierra rule defaults"    "node tests/sierra_rules.test.js >/dev/null 2>&1 |
 # The discipline-blank worklist (S243) derives from unified_courses_data.js AND
 # the subject map, so a map edit staled it in the same commit that made it.
 run "discipline blanks worklist" "python3 kb/_build_discipline_blanks_worklist.py --check"
+# ⚠️ AND IT MISSED ONE MORE, WHICH SHIPPED (2026-09-18, #1618). prototype/skyview.html
+# is assembled by prototype/build_ccr_atlas.py, and step 4d2 of daily-dashboard.yml
+# re-runs that build whenever the unified-courses artifacts move. A session edited the
+# served page directly; it passed review, merged and deployed, and #1617's rebuild
+# stripped it out of main twenty minutes later. The SkyView lane file already told
+# people to run THIS script before a push — the page just was not in it.
+run "SkyView built page"      "python3 tests/skyview_built_from_source_test.py >/dev/null"
 echo
 if [ "$fail" -ne 0 ]; then
   echo "Regenerate, re-run this, THEN push:"

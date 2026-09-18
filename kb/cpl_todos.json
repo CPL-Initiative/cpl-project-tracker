@@ -2,8 +2,26 @@
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-18",
   "_session": 276,
-  "_status": "Version 72 is live (S276, 2026-09-18 16:43Z). When someone says which credential they hold and asks what it could count toward, Sierra now answers the way a counselor would: the course to ask about first; then a two-column table of what the credential's program typically covers beside what the target program typically teaches, counted across every college in the state because the visitor never named their own college; then the precedent on record (Chaffey's NURVN 414 for a CNA); and, at the end, a short flyer of the other programs the credential commonly counts toward, each with the nearest college that teaches it and the first course to ask about. Every course line names its college, and Sierra says 'catalog data', never COCI. The new database function behind the table was rewritten the same hour after its first version took 33 seconds on a broad question and timed out under load; it now answers in under a second. Open for Sam: read version 72's Orange County answer; name the next credential-to-programs list for the flyer; which Orange County college runs LVN entry training; the 381 garbled course rows; auto-deploy on merge; the scope of guidance rule 674923db.",
+  "_status": "Version 72 is live (S276, 2026-09-18 16:43Z). When someone says which credential they hold and asks what it could count toward, Sierra now answers the way a counselor would: the course to ask about first; then a two-column table of what the credential's program typically covers beside what the target program typically teaches, counted across every college in the state because the visitor never named their own college; then the precedent on record (Chaffey's NURVN 414 for a CNA); and, at the end, a short flyer of the other programs the credential commonly counts toward, each with the nearest college that teaches it and the first course to ask about. Every course line names its college, and Sierra says 'catalog data', never COCI. The new database function behind the table was rewritten the same hour after its first version took 33 seconds on a broad question and timed out under load; it now answers in under a second. Open for Sam: read version 72's Orange County answer; name the next credential-to-programs list for the flyer; which Orange County college runs LVN entry training; the 381 garbled course rows; auto-deploy on merge; the scope of guidance rule 674923db. The parallel SkyView session (SkyLevel) shipped the read-only band and the drop that answers (#1618, #1619); its three items sit in the feed under unified-courses. Today's scheduled MAP Custom Report load went red at its promotion step with a gateway timeout and said it rolled back, yet the load table shows the promotion committed at 17:16Z with today's rows; live is current, and the loader needs to read the table back before it reports a rollback.",
   "items": [
+    {
+      "id": "s277-sam-skyview-share-and-curate-scope",
+      "for": "Sam",
+      "tab": "unified-courses",
+      "text": "SkyView is safe to share now — the page states it on its face: 'Read only. Moves stage in this browser alone. Signed-in curators save in COBI's Common Course Reference tab.' It writes nothing at all: one POST in the whole file, the Ask, which inserts no row. Two things are yours to decide before it becomes a curation surface. First, whether SkyView should save a merge itself — the write already exists and is governed (kb_curation field merge_into, magic-link reviewer session, RLS per row, governance row DR-04), so this is wiring an existing write to a second surface plus one entry in kb/governance_surface_map.json, because a read-only surface gaining writes is a decision-rights change under Rule 10 (a3). Second, whether re-mint should be composed and approved in SkyView while the playbook's harness does the landing — the atomic git-plus-Supabase window a re-mint needs cannot be held from a browser."
+    },
+    {
+      "id": "s277-fable-skyview-merge-execution",
+      "for": "Fable",
+      "tab": "unified-courses",
+      "text": "Build merge execution on SkyView once Sam says go: the cpl_session.js sign-in keeper (31 modules already read a reviewer session), a Save control on the staged list, the same kb_curation POST unified_courses.js makes, the undo that already exists as a row delete, and the governance_surface_map.json entry with its reason. The read-only band then changes from 'Moves stage in this browser alone' to what saving actually does — tests/ccr_skyview_read_only.test.js pins the current wording and the no-write claim, so it is the file to update deliberately rather than to work around."
+    },
+    {
+      "id": "s277-fable-skyview-loner-eclipse",
+      "for": "Fable",
+      "tab": "unified-courses",
+      "text": "Decide whether to re-order SkyView's hit test for the one-in-twenty-four eclipse. Measured 2026-09-18 over eight parent identities through the page's own pick(): 23 of 24 loners resolve to themselves with their parent open, and 37 of 37 focused member stars resolve to that member. The reading rule is perfect, so chasing the 1 risks the 37 and pick() was left unchanged; with the silent drop exit fixed, that case now reads as a clear refusal rather than a dead map. Reopen it only if Sam hits it again."
+    },
     {
       "id": "s276-sam-oc-answer-v72",
       "for": "Sam",
@@ -35,22 +53,10 @@
       "text": "Say go on deleting 381 garbled course-title rows. Sierra's course lists showed Pasadena's NURS 102 as 'Fundamentals of Vocational Nursing Ã¢â‚¬â€œ Theory'. The loaders are fixed so the next nightly sync writes clean titles, but the course table's sync only adds and never deletes, and its match key includes the title, so the 381 garbled rows (84 colleges) would sit beside the repaired ones and double the alignment candidates. The plan: after the first clean sync, delete rows whose title carries the garbled sequences, with a receipt listing each row so it can be put back. A shared-table write, so it waits for your go."
     },
     {
-      "id": "s274-fable-offerings-replace-atomic",
-      "for": "Fable",
-      "tab": "chatbot",
-      "text": "Make the course-catalog replace atomic. The offerings sync truncates on its first chunk and appends the rest, each chunk its own transaction, so a chunk the database cancels leaves a partial catalog live. It happened twice on 18 September (12,000 then 8,000 of 16,097 rows) and Sierra answered from the partial catalog for forty minutes. Smaller chunks with a retry are in; the real fix loads into a staging table and swaps in one statement. Until then, expect any merge that edits a loader to re-sync the catalog beside its own smoke run."
-    },
-    {
       "id": "s272-sam-autodeploy-ruling",
       "for": "Sam",
       "tab": "chatbot",
       "text": "Decide whether the assistant should deploy itself when we merge. Today its page goes live on merge and the function behind it waits for someone to push a button — the same gap that left Sierra dark for five days in September while every check said she was fine. Making it automatic removes that gap and also removes a human pause before a change reaches students. Our recommendation is to make it automatic and keep the button for undoing."
-    },
-    {
-      "id": "s271-sam-mycollege-eyes",
-      "for": "Sam",
-      "tab": "my-college",
-      "text": "Open My College signed out and tell us it reads right. A college with withheld rows should show a 'Withheld to protect small student counts' line inside the breakdown, and the contacts list should say which roles are staff-only rather than calling them blank. Our automated check cannot load this page's data, so your eyes are the check."
     },
     {
       "id": "s271-sam-lvn-oc",
@@ -69,15 +75,27 @@
       "for": "Fable",
       "tab": "chatbot",
       "text": "For a question that names a college, order the nearby lists by distance alone. Today the county band still comes first, so from Long Beach City College an Antelope Valley program 110 miles away outranks Cypress 12 miles away across the county line. A named place keeps its band; a named college should not."
+    }
+  ],
+  "_deferred": [
+    {
+      "id": "s274-fable-offerings-replace-atomic",
+      "for": "Fable",
+      "tab": "chatbot",
+      "text": "Make the course-catalog replace atomic. The offerings sync truncates on its first chunk and appends the rest, each chunk its own transaction, so a chunk the database cancels leaves a partial catalog live. It happened twice on 18 September (12,000 then 8,000 of 16,097 rows) and Sierra answered from the partial catalog for forty minutes. Smaller chunks with a retry are in; the real fix loads into a staging table and swaps in one statement. Until then, expect any merge that edits a loader to re-sync the catalog beside its own smoke run."
+    },
+    {
+      "id": "s271-sam-mycollege-eyes",
+      "for": "Sam",
+      "tab": "my-college",
+      "text": "Open My College signed out and tell us it reads right. A college with withheld rows should show a 'Withheld to protect small student counts' line inside the breakdown, and the contacts list should say which roles are staff-only rather than calling them blank. Our automated check cannot load this page's data, so your eyes are the check."
     },
     {
       "id": "s275-fable-verify-campus-points",
       "for": "Fable",
       "tab": "chatbot",
       "text": "Verify the 119 campus coordinates against IPEDS from a machine that can reach nces.ed.gov (the sandbox cannot). They were entered from public campus locations to about a mile; a wrong point changes which college leads a list."
-    }
-  ],
-  "_deferred": [
+    },
     {
       "id": "s272-fable-cte-asterisk-disagreement",
       "for": "Fable",

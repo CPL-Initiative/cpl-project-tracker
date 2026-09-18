@@ -1548,12 +1548,41 @@ runtime logged "connection closed before message completed" at 17:02:23Z,
 which is the client having left. Mode 8 before it streamed 1,123 tokens in
 ~27 s and mode 10 after it 1,067 in ~11 s; mode 9's 1,117 took ~92 s. One slow
 generation, then. Mode 9 had passed on this commit at 16:42Z, so the one
-sanctioned re-run went out: 35373228305, dispatched 17:15Z, in progress at
-this commit. The same run measured three 5 s route cuts during mode 8
-(17:00:08–14Z: `is_allowed_reviewer`, `chatbox_college_profiles` twice, with
-`college_geo` at 3.6 s in the gateway log) — the reads failed safe and the
-mode passed; the function fans out some thirty reads per request, and the
-pooler is where they queue. `function_logs`
+sanctioned re-run went out: 35373228305 (17:15Z). It failed mode 7c alone,
+and the cause was measured outside the function. The scheduled
+`map-custom-report-load.yml` (run 35372830989, cron 17:11Z) posted 629,232
+rows to `stg_map_student_credit` in 126 batches from 17:13:41 to 17:16:37Z;
+single requests ran up to 125 s at the gateway; Postgres canceled 20
+statements on its timeout (15 of them at 17:19); and the function logged some
+thirty route cuts between 17:16 and 17:21Z — `search_college_programs` on
+nearly every request, `program_typical_courses` three times,
+`chatbox_college_courses` twice, and once each for the offerings, exhibits,
+credential and goal reads. 7c's answer (`e2a6aba3`, 17:20:19Z) came without
+its block, as the route limits are designed to fail, and its five checks
+failed as designed. Mode 9 passed in 25 s; every mode after 17:21Z passed.
+The loader's job got HTTP 504 on its promotion call at 17:18:58Z and printed
+"rolled back, live unchanged" — its first red after 38 green runs — and
+`map_data_loads` row 35 shows the promotion committed at 17:16:52Z with
+today's 629,232 student rows, reconciled. A gateway timeout ends the HTTP
+call and leaves the Postgres transaction running to its commit; the client's
+inference was wrong, and a loader that can be told 504 must read the table
+back before it declares a rollback. The first clean run had shown the same shape in miniature: three 5 s
+cuts during mode 8 at 17:00:08–14Z that failed safe. **The lesson:** a
+scheduled bulk load saturates the database for about five minutes, the
+function's route limits fail safe and the answer silently loses its block,
+and a smoke inside that window fails 7c for the loader's reasons — the
+function logs say `typical courses unavailable: TimeoutError`, which is the
+tell. The loaders own the 17:06–17:20Z window (credential-catalog-sync 17:06,
+custom-report load and college-briefing-publish 17:11); dispatch smokes clear
+of it. A third clean run in a quiet window, 35374928638 (17:32Z), passed
+every answer assertion — 7c's eleven included — and failed only the smoke's
+own anon probe of `program_typical_courses` (rows=0 at 17:35:31Z: the anon
+key's 3 s statement timeout, while a one-row `map_colleges` read took 3.1 s
+at 17:38Z and the database showed no vacuum, no long transaction and no
+loader — the function's fan-out of some thirty reads per request and the
+probe share one PostgREST pool). v72's answers stand verified three times;
+the pool is the open item, queued with the programs-route latency.
+`function_logs`
 16:43–16:50Z: 0 route time-limit cuts, 0 EMPTY ANSWER, 0 unavailable, 0
 errors; `program_typical_courses` answered 5 of 5 calls with 200.
 
