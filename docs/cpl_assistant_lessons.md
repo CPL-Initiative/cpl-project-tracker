@@ -1194,8 +1194,14 @@ bridges, Pasadena / Southwestern / Chaffey with counties, NURS 102/102L, VN
 CNA certificate against their Fundamentals of Nursing course."* Prompts no
 larger: 21,123 uncached tokens on average against production's 21,900.
 `function_logs` for the window: 185 lines, 0 unavailable, 0 EMPTY ANSWER, 0
-errors. The second A/B (run 35303520840, on the adopted-first commit) is the
-gate for the deploy.
+errors. The second A/B (run 35303520840, on the adopted-first commit): preview ALL
+MODES OK, no regressions, production one failing (7c's course-level
+assertion, by construction); the candidate's answer (`36d5ca5b`, 03:41:38Z)
+cites *"Chaffey College | 6 hrs Acute Care Nursing Assistant: Vocational
+Nursing Foundations (NURVN 414)"*. Merged #1608 as `1834d16` on green `test`
+(run 35304075555) and deployed **v69** at 03:52:55Z (run 35304800563), with
+Sam asleep and his *"automode it from here"* on record; health run
+35304888485 and smoke run 35304890419 followed.
 
 ### Sam's decisions this run
 

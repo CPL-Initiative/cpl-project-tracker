@@ -1,5 +1,5 @@
 ---
-title: Session 275 handoff — v69 answers the prospective question; ship it, read it, then give nearest a distance
+title: Session 275 handoff — v69 is live and answers the prospective question; read it, then give nearest a distance
 date: 2026-09-18
 session: 274 (SkyMeter)
 tags: [handoff, sierra, prospective-cpl, deploy, encoding]
@@ -18,8 +18,14 @@ Read in order: this file · [`lanes/sierra-retrieval-corpus.md`](reference/lanes
 `docs/kb-notes/methodology-what-might-qualify-is-a-different-question-from-who-already-grants-it.md`
 · [PR #1608](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1608).
 
-## ✅ WHERE THINGS STAND (as of 2026-09-18 03:40Z)
+## ✅ WHERE THINGS STAND (as of 2026-09-18 03:56Z)
 
+- **cpl-chat v69 is LIVE** (PR #1608 squash-merged as `1834d16` with `test`
+  run 35304075555 green; deploy run 35304800563, 03:52:55Z;
+  `list_edge_functions` reports version 69). Health run 35304888485 and
+  smoke run 35304890419 were dispatched against it at 03:53Z. Sam went to
+  bed at 03:50Z with *"automode it from here"*, so this session ran the
+  merge and the deploy under his standing authorization.
 - **cpl-chat v68 is LIVE** (deploy run 35302005168, `main` at `fa87ece`,
   03:08Z): a county or region named in the question anchors both catalog
   lists. Health green; smoke runs 35301970000 and 35302133252 ALL MODES OK;
@@ -31,7 +37,7 @@ Read in order: this file · [`lanes/sierra-retrieval-corpus.md`](reference/lanes
   `sam-cna-question-is-what-might-qualify-not-who-articulated-2026-09-18`.
   v68's production answer (`chat_interactions` `9a74a91b`) anchored the
   county and then answered the exhibit question — the miss he named.
-- **v69 is on PR #1608 (`claude/confident-johnson-18vlh7`, head `2691382`):**
+- **What v69 carries (PR #1608, merged):**
   the prospective-credit block (per core TOP, the three nearest colleges'
   full course lists from `chatbox_college_courses`; `PROSPECTIVE_RULE`: the
   target is the program they want to ENTER, every match a REQUEST, cite the
@@ -45,24 +51,27 @@ Read in order: this file · [`lanes/sierra-retrieval-corpus.md`](reference/lanes
   102/102L, Southwestern VN 10/10L, Chaffey NURVN 403/403L with units, framed
   as a request; prompts no larger than production (21,123 vs 21,900 uncached
   tokens); logs clean. It missed the Chaffey NURVN 414 precedent — the cap,
-  not the gate — which `2691382` fixes; **the second A/B (run 35303520840)
-  gates the deploy.** [If this file still says so, check the run and the
-  deploy state before anything else.]
+  not the gate — which `2691382` fixed. **The second A/B (run 35303520840, on
+  `2691382`):** preview ALL MODES OK, no regressions, production 1 failing
+  (7c's course-level assertion, by construction against v68); the candidate's
+  answer (`36d5ca5b`, 03:41:38Z) cites *"Chaffey College | 6 hrs Acute Care
+  Nursing Assistant: Vocational Nursing Foundations (NURVN 414)"*; one
+  `search_college_programs unavailable` at 03:34:41Z under two concurrent
+  suites, fail-safe.
 - **Locally proven on the branch:** `npm test` 345/345, all 43 CI
   python/shell steps plus the new mojibake step, `deno check` at main's 15,
   `deno run` boots, `sierra_prospective_credit.test.js` 61/61.
 
 ## YOUR SEQUENCE
 
-1. **Confirm the deploy state.** `list_edge_functions`: v69 live? If PR #1608
-   is merged and the function is still v68, the deploy is yours:
-   `cpl-chat-deploy.yml` (`confirm: DEPLOY`) → `cpl-chat-health.yml` →
-   `cpl-chat-smoke.yml` → `function_logs` (`unavailable` / `EMPTY ANSWER` /
-   `error`). If the PR is still open, read the second A/B's grid AND logs,
-   merge on green `test`, then deploy.
-2. **Read v69's production answer** to the Orange County question (the
-   smoke's 7c turn lands in `chat_interactions`, session `smoke-ci`) against
-   Sam's bar, then ask Sam to read it (`s274-sam-oc-question-v69`).
+1. **Confirm v69 held overnight.** `list_edge_functions` (version 69), the
+   health cron's runs since 04:00Z, and `function_logs` since 03:52Z
+   (`unavailable` / `EMPTY ANSWER` / `error`). The deploy, health and smoke
+   runs are in WHERE THINGS STAND.
+2. **Sam reads v69's production answer** to the Orange County question
+   (`s274-sam-oc-question-v69`); this session's reading of the smoke's 7c
+   turn is in WHERE THINGS STAND. If he says it still misses, the hone
+   continues on a branch with an A/B before any deploy.
 3. **Give "nearest" a distance** (`s274-fable-nearest-needs-distance`): within
    a proximity band the picks order by course count. A county-to-county
    distance table (centroids are enough; `college_geo` has county) lets the
@@ -108,7 +117,7 @@ Read in order: this file · [`lanes/sierra-retrieval-corpus.md`](reference/lanes
 
 | Item | State |
 |---|---|
-| v69 deploy → health → smoke → logs → Sam reads the answer | **YOURS FIRST** if this file still says the second A/B gates it |
+| v69 deploy → health → smoke → logs | ✅ done 2026-09-18 (runs 35304800563 · 35304888485 · 35304890419) |
 | Sam reads the v69 Orange County answer | asked — `s274-sam-oc-question-v69` |
 | Delete the 381 garbled course rows after the first clean sync (receipt) | NEEDS SAM — `s274-sam-course-title-cleanup` |
 | A county-to-county distance table for "nearest" | designed, not built — `s274-fable-nearest-needs-distance` |
