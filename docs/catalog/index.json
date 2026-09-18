@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 469,
+   "count": 470,
    "docs": [
     {
      "created": "2026-08-14",
@@ -7339,6 +7339,26 @@
      "title": "The plausible cause is not the measured one, and the check is usually cheaper than the guess",
      "type": "methodology",
      "updated": "2026-08-09"
+    },
+    {
+     "created": "2026-09-18",
+     "governs": [
+      "chatbox/supabase/functions/cpl-chat/index.ts",
+      "chatbox/smoke_test.sh",
+      "tests/sierra_prospective_credit.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-the-record-cannot-say-which-credential-is-held.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "sierra",
+      "retrieval",
+      "epistemics",
+      "prospective-credit"
+     ],
+     "title": "The record cannot say which credential is held \u2014 only the visitor's words can",
+     "type": "methodology",
+     "updated": "2026-09-18"
     },
     {
      "created": "2026-08-22",
@@ -17895,5 +17915,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 929
+ "total": 930
 }
