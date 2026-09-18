@@ -11,13 +11,13 @@
   },
   "summary": {
     "files": 936,
-    "bytes": 9881011,
+    "bytes": 9881268,
     "over_budget": 9,
     "handoff_max": 274,
     "always_loaded_files": 1,
     "always_loaded_bytes": 60839,
-    "superseded_files": 6,
-    "superseded_bytes": 38813,
+    "superseded_files": 0,
+    "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
@@ -46,24 +46,23 @@
       },
       "roadmap_lane": {
         "files": 32,
-        "bytes": 200074,
+        "bytes": 200001,
         "over": 4
       },
       "handoff": {
         "files": 246,
-        "bytes": 2082941,
+        "bytes": 2083271,
         "over": 0
       }
     },
     "by_rule": {
       "oversized_doc": 9,
       "house_voice": 24,
-      "superseded_handoff": 6,
       "vault_heavy_path": 49
     },
     "vault": {
       "files": 2960,
-      "bytes": 1444894333,
+      "bytes": 1444894590,
       "heavy_bytes": 643137858,
       "heavy_share": 0.445,
       "ignore_filters": [
@@ -419,13 +418,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 12232,
+        "bytes": 12159,
         "limit": 12000,
         "lane": "roadmap_lane",
-        "over_by": 232,
-        "ratio": 1.02
+        "over_by": 159,
+        "ratio": 1.01
       },
-      "message": "12,232 B is 1.0× the roadmap_lane budget (12,000 B) — candidate for compaction",
+      "message": "12,159 B is 1.0× the roadmap_lane budget (12,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/sierra-retrieval-corpus.md"
     },
     {
@@ -464,72 +463,6 @@
       },
       "message": "7 business-register terms — leverage x7 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
       "path": "docs/roadmap_archive.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 267,
-        "authoritative": 274,
-        "has_frontmatter": true
-      },
-      "message": "handoff 267 is below the authoritative 274 but is not stamped `superseded: true`",
-      "path": "docs/session_267_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 268,
-        "authoritative": 274,
-        "has_frontmatter": true
-      },
-      "message": "handoff 268 is below the authoritative 274 but is not stamped `superseded: true`",
-      "path": "docs/session_268_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 269,
-        "authoritative": 274,
-        "has_frontmatter": true
-      },
-      "message": "handoff 269 is below the authoritative 274 but is not stamped `superseded: true`",
-      "path": "docs/session_269_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 270,
-        "authoritative": 274,
-        "has_frontmatter": true
-      },
-      "message": "handoff 270 is below the authoritative 274 but is not stamped `superseded: true`",
-      "path": "docs/session_270_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 272,
-        "authoritative": 274,
-        "has_frontmatter": true
-      },
-      "message": "handoff 272 is below the authoritative 274 but is not stamped `superseded: true`",
-      "path": "docs/session_272_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 273,
-        "authoritative": 274,
-        "has_frontmatter": true
-      },
-      "message": "handoff 273 is below the authoritative 274 but is not stamped `superseded: true`",
-      "path": "docs/session_273_handoff.md"
     },
     {
       "rule": "house_voice",
