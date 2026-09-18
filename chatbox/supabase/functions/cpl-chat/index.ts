@@ -87,6 +87,11 @@ const MAX_TOKENS = 8192;
  * why the default moved rather than the secret being set and forgotten. To go
  * back to Haiku in a hurry, set the secret; no code change, no deploy.
  *
+ * ⭐ THE ROUTE TIME LIMIT NEEDS NO DEPLOY EITHER (2026-09-18). Every retrieval
+ * read runs under a client-side limit, 5,000 ms by default; the
+ * `CPL_ROUTE_TIMEOUT_MS` secret overrides it and `0` disables it. The block
+ * above ROUTE_TIMEOUT_MS says what it covers and how a cut reads in the logs.
+ *
  * ⚠ THE PRICE CUT IS REAL BUT IT IS NOT THE WHOLE BILL. Haiku 4.5 is $1/$5 per
  * MTok against Sonnet 4.6's $3/$15 — 3× both directions. This endpoint is
  * INPUT-dominated (MAX_TOKENS caps every answer at 2,048), so the saving lands
@@ -162,6 +167,72 @@ const MAX_TOKENS = 8192;
  * determination across sixteen rows returned as strict JSON and nothing else.
  * If quality slips anywhere first, it will slip there. */
 const MODEL = Deno.env.get("CPL_CHAT_MODEL") || "claude-sonnet-5";
+
+// ── EVERY RETRIEVAL READ HAS ITS OWN TIME LIMIT (2026-09-18, S275) ─────────────
+// The retrieval routes run together in one Promise.all and the answer waits for
+// the slowest. Until now the only limit was the database's: the authenticator
+// role's 8 s statement_timeout, which every PostgREST call inherits. So one slow
+// route — search_college_programs under two concurrent smoke suites, five times
+// in the 24 hours to 2026-09-18 — held the whole answer for eight seconds
+// before failing safe. The one-pass rewrite of that route (S273) is the fix;
+// this is the backstop: a client-side limit on every READ the function makes
+// through supabase-js, applied in ONE place (the client's fetch) rather than
+// at each of the fourteen call sites, so a route added later is covered on the
+// day it lands.
+//
+// What it covers: every GET, and every POST to /rest/v1/rpc/ (a PostgREST
+// function call). What it leaves alone: table writes (the interaction log, a
+// feedback row) — a write that is cut leaves nothing behind, and a slow write
+// holds no answer, so it keeps the database's own limit. The vector search
+// runs through the same client and is covered too; it already turned a
+// database timeout into a 500, and it still does, sooner.
+//
+// A cut request surfaces as an error the route already handles (supabase-js
+// returns `{ error: { message: "TimeoutError: …" } }` rather than throwing), so
+// every route fails safe exactly as it does on a statement timeout, and the
+// function logs carry one line per cut: `route time limit: 5000 ms cut POST
+// /rest/v1/rpc/search_college_programs after 5003 ms`. Read them after every
+// A/B and deploy; a cut is a route to fix, never a setting to raise blindly.
+//
+// ⭐ THE VALUE NEEDS NO DEPLOY: the `CPL_ROUTE_TIMEOUT_MS` secret overrides the
+// committed default (5,000 ms — twice the slowest route measured after the
+// one-pass rewrite, 2.6 s, and well under the database's 8 s); `0` disables the
+// limit. Pure helpers below are lifted by tests/sierra_route_time_limit.test.js.
+const ROUTE_TIMEOUT_MS = routeTimeoutMs(Deno.env.get("CPL_ROUTE_TIMEOUT_MS"));
+
+// Route time limit — pure helpers (lifted by the test; no Deno reference here)
+function routeTimeoutMs(raw: string | undefined | null): number {
+  if (raw === undefined || raw === null || String(raw).trim() === "") return 5000;
+  const n = Number(raw);
+  if (!Number.isFinite(n) || n < 0) return 5000;
+  return Math.floor(n);   // 0 disables the limit
+}
+function routeLimitApplies(url: string, method: string): boolean {
+  const m = String(method || "GET").toUpperCase();
+  if (m === "GET" || m === "HEAD") return true;
+  return m === "POST" && /\/rest\/v1\/rpc\//.test(String(url || ""));
+}
+function routePath(url: string): string {
+  try { return new URL(url).pathname; } catch { return String(url); }
+}
+// The fetch supabase-js is handed. `limitMs` and `doFetch` are parameters so the
+// test can prove the cut with a fake fetch that never answers.
+function fetchWithRouteLimit(input: any, init: any, limitMs: number, doFetch: any): Promise<any> {
+  const url = typeof input === "string" ? input : (input && input.href) ? input.href : (input && input.url) || "";
+  const method = (init && init.method) || (input && input.method) || "GET";
+  if (!(limitMs > 0) || !routeLimitApplies(url, method)) return doFetch(input, init);
+  const timeout = AbortSignal.timeout(limitMs);
+  const signal = init && init.signal ? AbortSignal.any([init.signal, timeout]) : timeout;
+  const started = Date.now();
+  return doFetch(input, { ...(init || {}), signal }).catch((e: any) => {
+    if (timeout.aborted) {
+      console.error(`route time limit: ${limitMs} ms cut ${String(method).toUpperCase()} ${routePath(url)} after ${Date.now() - started} ms`);
+    }
+    throw e;
+  });
+}
+// End of the route time limit helpers
+const routeLimitedFetch = (input: any, init?: any) => fetchWithRouteLimit(input, init, ROUTE_TIMEOUT_MS, fetch);
 const RATE_LIMIT_PER_MIN = 20;
 
 const rateLimits = new Map<string, { count: number; resetAt: number }>();
@@ -4150,7 +4221,7 @@ function viewerCredentials(headers: any, anonKey: string) {
  * one credential header the caller sent. Injectable so the test can stand in a
  * fake and prove which key and headers the check is made with. */
 function userScopedClient(anonKey: string, extraHeaders: any) {
-  return createClient(SUPABASE_URL, anonKey, { global: { headers: extraHeaders } });
+  return createClient(SUPABASE_URL, anonKey, { global: { headers: extraHeaders, fetch: routeLimitedFetch } });
 }
 
 async function deriveViewer(headers: any, makeClient: any = userScopedClient) {
@@ -4620,7 +4691,7 @@ Deno.serve(async (req: Request) => {
     const searchText = (retrievalText
       || (isRefinement ? `${trimmedQuery}  ${priorUserText}` : trimmedQuery)).slice(0, 1000);
 
-    const sb = createClient(SUPABASE_URL, SUPABASE_SERVICE_KEY);
+    const sb = createClient(SUPABASE_URL, SUPABASE_SERVICE_KEY, { global: { fetch: routeLimitedFetch } });
 
     // 1. Generate query embedding (over the retrieval text) — and read the
     //    geography table beside it, because the PLACE parse below needs the
