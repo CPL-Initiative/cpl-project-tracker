@@ -6,7 +6,7 @@
   "edge_functions": 5,
   "file_datasets": 477,
   "external_services": 143,
-  "consumers": 340,
+  "consumers": 341,
   "workflows": 34,
   "data_js_files": 61,
   "tabs": 37
@@ -59,14 +59,14 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 4091
+     "line": 4147
     },
     {
      "id": "module:prototype/check_skyview_sweep.js",
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 388
+     "line": 449
     },
     {
      "id": "module:sierra/sierra.js",
@@ -1168,7 +1168,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 5662
+     "line": 5718
     }
    ],
    "main_committers": []
@@ -4689,6 +4689,20 @@
      "direction": "read",
      "how": "markup",
      "line": 807
+    },
+    {
+     "id": "page:prototype/ccr_atlas_v1.html",
+     "kind": "page",
+     "direction": "read",
+     "how": "markup",
+     "line": 2095
+    },
+    {
+     "id": "page:prototype/skyview.html",
+     "kind": "page",
+     "direction": "read",
+     "how": "markup",
+     "line": 0
     }
    ],
    "served": true,
@@ -13329,6 +13343,20 @@
      "direction": "read",
      "how": "markup",
      "line": 0
+    },
+    {
+     "id": "page:prototype/ccr_atlas_v1.html",
+     "kind": "page",
+     "direction": "read",
+     "how": "markup",
+     "line": 2096
+    },
+    {
+     "id": "page:prototype/skyview.html",
+     "kind": "page",
+     "direction": "read",
+     "how": "markup",
+     "line": 0
     }
    ],
    "served": true,
@@ -13707,6 +13735,20 @@
    "consumers": [
     {
      "id": "page:CPL_Dashboard.html",
+     "kind": "page",
+     "direction": "read",
+     "how": "markup",
+     "line": 0
+    },
+    {
+     "id": "page:prototype/ccr_atlas_v1.html",
+     "kind": "page",
+     "direction": "read",
+     "how": "markup",
+     "line": 2094
+    },
+    {
+     "id": "page:prototype/skyview.html",
      "kind": "page",
      "direction": "read",
      "how": "markup",
@@ -15541,7 +15583,9 @@
      "how": "seeded",
      "line": 0,
      "pages": [
-      "CPL_Dashboard.html"
+      "CPL_Dashboard.html",
+      "prototype/ccr_atlas_v1.html",
+      "prototype/skyview.html"
      ]
     }
    ],
@@ -15566,7 +15610,9 @@
      "how": "seeded",
      "line": 0,
      "pages": [
-      "CPL_Dashboard.html"
+      "CPL_Dashboard.html",
+      "prototype/ccr_atlas_v1.html",
+      "prototype/skyview.html"
      ]
     }
    ],
@@ -15938,7 +15984,9 @@
      "how": "seeded",
      "line": 0,
      "pages": [
-      "CPL_Dashboard.html"
+      "CPL_Dashboard.html",
+      "prototype/ccr_atlas_v1.html",
+      "prototype/skyview.html"
      ]
     }
    ],
@@ -17087,6 +17135,13 @@
      ]
     },
     {
+     "id": "module:prototype/ccr_universe.js",
+     "kind": "module",
+     "direction": "write",
+     "how": "literal",
+     "line": 6336
+    },
+    {
      "id": "module:statewide_interactive.js",
      "kind": "module",
      "direction": "read",
@@ -17125,6 +17180,13 @@
      "tabs": [
       "unified-courses"
      ]
+    },
+    {
+     "id": "page:prototype/skyview.html",
+     "kind": "page",
+     "direction": "write",
+     "how": "inline",
+     "line": 0
     },
     {
      "id": "script:kb/_apply_canonical_subj4.py",
