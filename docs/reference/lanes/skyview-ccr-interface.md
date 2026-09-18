@@ -49,13 +49,43 @@ A hand-patch survives review and deploy and dies on the next rebuild; it did, on
 `tests/skyview_built_from_source_test.py`, in CI and in `scripts/check_generated.sh`.
 [`methodology-a-generated-file-accepts-your-edit`](../../kb-notes/methodology-a-generated-file-accepts-your-edit.md)
 
-**Read only, on its face (2026-09-18).** A band under the control row states it
-where the curate controls are: *Read only. Moves stage in this browser alone.
-Signed-in curators save in COBI's Common Course Reference tab.* The three older
-statements all sat in chrome `body.u-solo` hides. SkyView still writes NOTHING —
-one POST in the file, the Ask, which inserts no row. The Admin tab's menu dialog
-cannot answer this: `pages.yml` serves `prototype/`, so the page opens for anyone
-holding the link.
+**A three-rung curation ladder (2026-09-18, #1625).** Sam specified it across
+three messages: *"To position courses to merge needs at least team code auth to
+do"*, *"magic link can do any of the three"*, *"Team code or magic should be
+able to navigate to all links"*.
+
+| Rung | Credential | Opens |
+|---|---|---|
+| 0 VIEW | the link alone | map, search, details, Ask |
+| 1 STAGE | the team phrase | positioning a course for a merge; the COBI and CCR-table links |
+| 2 EXECUTE | a magic-link reviewer | Save, writing `kb_curation` |
+
+`curationRung()` is the ONLY place any of it is decided — the rungs moved twice
+inside one conversation, and nothing else reads the storage keys. Its ranking
+matches `nav_overlay.js`'s `AUDIENCE_RANK`, so rung 2 satisfying rung 1 falls out
+rather than being special-cased. **Re-mint is NOT built**: Sam called it the
+process *after* merge execution, and his 2026-09-05 ruling makes a re-mint view a
+queue he approves, never a fire button.
+
+Sign-in and the curation line live in the band inside `#u-full` — the only chrome
+surviving both `body.u-solo` and browser full screen. ⚠️ The staged list
+(`#u-writes`) is in `#u-below`, which solo HIDES, so a Save control there would be
+invisible in the default view. The band's older sentence stays exactly true below
+rung 2: nothing under EXECUTE sends anything anywhere, and Sam shared the page on
+that sentence.
+
+⚠️ **The rung gate is a convenience, not a boundary, and the code says so.**
+Staging writes nothing, so gating it in the browser IS the mechanism; for EXECUTE
+the button is a courtesy and `kb_curation`'s RLS is the real refusal. Hiding the
+COBI links removes the OFFER rather than the access — `pages.yml` serves
+`prototype/` and COBI alike, so anyone holding an address walks in. 12 of the 29
+Everyone-rung tabs render live internal data to a signed-out reader; closing that
+is RLS or the [public/private split](public-private-repo-split.md).
+
+Governance: `tab:skyview-merge-execution` → **DR-04**, the row already governing
+`kb_curation` (Rule 10 a3). The dependency map now derives the same edge —
+`prototype/ccr_universe.js` writes `kb_curation`, and all three phrase RPCs gain
+both SkyView pages as readers.
 
 **Current behavior worth knowing before you touch it:** rotation `SPIN` 0.018; a
 dropped course PARKS; a drop that stages nothing ANSWERS (the

@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-473 document(s).
+474 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -100,6 +100,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A gate cannot protect the step that fills it](../kb-notes/methodology-a-gate-cannot-protect-the-step-that-fills-it.md) | methodology | published | 2026-08-19 | 2026-08-19 |
 | [A generated file accepts your edit, and that is what makes it dangerous](../kb-notes/methodology-a-generated-file-accepts-your-edit.md) | methodology | published | 2026-09-18 | 2026-09-18 |
 | [A generator committed behind its output is a trap, not a convenience](../kb-notes/methodology-a-generator-that-lags-its-output-is-a-trap.md) | methodology | published | 2026-09-05 | 2026-09-05 |
+| [A generator does not know what a comment is](../kb-notes/methodology-a-generator-does-not-know-what-a-comment-is.md) | methodology | published | 2026-09-18 | 2026-09-18 |
 | [A globe shows a hemisphere: real estate on a screen is the zoom range, not the surface](../kb-notes/methodology-a-globe-shows-a-hemisphere-real-estate-is-the-zoom-range.md) | methodology | published | 2026-09-07 | 2026-09-07 |
 | [A grain-invariant measure can still be the wrong one](../kb-notes/methodology-a-grain-invariant-measure-can-still-be-the-wrong-one.md) | methodology | published | 2026-08-10 | 2026-08-10 |
 | [A green check you did not scope is not evidence](../kb-notes/methodology-a-green-check-you-did-not-scope-is-not-evidence.md) | methodology | published | 2026-08-23 | 2026-08-23 |
