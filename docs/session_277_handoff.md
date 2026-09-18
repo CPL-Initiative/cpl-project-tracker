@@ -20,14 +20,24 @@ Read in order: this file · [`lanes/sierra-retrieval-corpus.md`](reference/lanes
 · `docs/kb-notes/methodology-an-inside-term-leaks-through-the-context-not-the-prose.md`
 · [PR #1617](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1617) (merged, v72).
 
-## ✅ WHERE THINGS STAND (as of 2026-09-18 16:55Z)
+## ✅ WHERE THINGS STAND (as of 2026-09-18 17:20Z)
 
 - **cpl-chat v72 is LIVE** (PR #1617 squash-merged as `fc3ebe3` on green
   `test`; deploy run 35370070548 byte-verified; `list_edge_functions`
   version 72 at 16:43:19Z). Health run 35370311547 green at 16:45Z. The
   merge-triggered smoke (run 35370054033, started before the swap) passed
   every mode including the new 7c checks; the dispatched clean run:
-  run 35371403392, dispatched 16:56Z after the parallel session's push-triggered smoke finished, in progress at this commit (the result lands in the next commit). `function_logs` 16:43–16:50Z: 0 route cuts, 0 EMPTY
+  35371403392 (16:56Z) failed ONE mode, 9 (the multi-college NCCER question):
+  curl's 90 s ceiling, 11,463 bytes received. The function finished that
+  answer at ~100 s (`chat_interactions` `6547d030`, 17:02:17Z, 1,117 tokens;
+  El Camino named and not dismissed, so both mode-9 assertions hold on the
+  completed text) while the modes on either side streamed at 40–100 tokens/s:
+  one slow generation, and mode 9 had passed on this commit at 16:42Z, so the
+  one sanctioned re-run went out: run 35373228305, dispatched 17:15Z, in
+  progress at this commit. Also measured in that run: three 5 s route cuts
+  during mode 8 (17:00:08–14Z; `is_allowed_reviewer`, `chatbox_college_profiles`
+  twice; `college_geo` took 3.6 s) — the reads failed safe and the mode passed.
+  `function_logs` 16:43–16:50Z: 0 route cuts, 0 EMPTY
   ANSWER, 0 unavailable, 0 errors; `program_typical_courses` 5 of 5 calls 200.
 - **What v72 does, on Sam's two asks** (verbatim in `cpl_memory`
   `sam-quick-list-and-flyer-a-counselor-at-her-fingertips-2026-09-18` and
@@ -63,14 +73,20 @@ Read in order: this file · [`lanes/sierra-retrieval-corpus.md`](reference/lanes
   "Allow once" prompts are the auto-mode classifier, which an allowlist does
   not change, and the classifier also refused a few shell commands as
   self-modification). He also flagged a parallel **SkyView session**; its
-  PR #1618 merged and was merged into this branch; its PR #1619 is open.
+  PR #1618 merged and was merged into this branch; its PR #1619 merged at
+  17:01Z (`1d65115`) and was merged into this branch too: `test` on main at
+  `fc3ebe3` was red on `ccr_skyview_read_only` (run 35370054088; the cron
+  commit `7aabe52` had rebuilt `prototype/skyview.html` without the band),
+  this docs PR inherited the red on its first push, and #1619 — the band in
+  the sources — made main's `test` green again (run 35371906271).
 - **A measured note for the SkyView lane:** #1619's commit message says
   #1617's merge removed the read-only band from `prototype/skyview.html`.
   `git log -- prototype/skyview.html` on main shows the band left in
   `7aabe52`, the daily dashboard cron commit between #1618 and #1617 (the
   cron rebuilds the page from sources that did not carry it; 36 deletions);
   #1617 did not touch the file. #1619's fix (the band in the sources) is the
-  right one either way.
+  right one either way. It merged at 17:01Z (`1d65115`) and main's `test` is
+  green again.
 
 ## YOUR SEQUENCE
 
@@ -103,6 +119,16 @@ Read in order: this file · [`lanes/sierra-retrieval-corpus.md`](reference/lanes
 7. **Atomic catalog replace** (`s274-fable-offerings-replace-atomic`) —
    designed, not built.
 
+8. **Decide what the smoke's 90 s ceiling means when the answer completes
+   later.** Run 35371403392 failed mode 9 at curl's ceiling while the
+   function finished the answer at ~100 s (`chat_interactions` `6547d030`).
+   A student waiting 90 s has left, so the ceiling may be the right bar,
+   but today the smoke cannot tell a slow generation from a dead function.
+   Two small options: on a curl timeout, read the interaction row for the
+   question (the smoke holds the anon key; check what that key can read), or
+   have the SSE parser print the stream's token rate so the log says which
+   it was. Decide before the next hone; no code moved for it this session.
+
 ## ⚠️ Sam's open calls — his, not yours
 
 - **Which Orange County college runs an LVN entry program**
@@ -133,7 +159,7 @@ Read in order: this file · [`lanes/sierra-retrieval-corpus.md`](reference/lanes
 
 | Item | State |
 |---|---|
-| v72 deploy → health → smoke → logs | deploy 35370070548 ✅ · health 35370311547 ✅ · merge-triggered smoke 35370054033 ✅ · clean smoke 35371403392 in progress at commit time · logs clean |
+| v72 deploy → health → smoke → logs | deploy 35370070548 ✅ · health 35370311547 ✅ · merge-triggered smoke 35370054033 ✅ · clean smoke 35371403392 ✗ mode 9 only (curl's 90 s ceiling; the answer completed at ~100 s) · re-run 35373228305 in progress at commit time · logs clean |
 | Sam reads v72's Orange County answer | ask — `s276-sam-oc-answer-v72` |
 | The precedent line names its program | designed — `s276-fable-precedent-names-its-program` (step 2) |
 | `RELATED_PROGRAMS` beyond the CNA | NEEDS SAM — `s276-sam-related-programs-next-list` |
@@ -142,7 +168,7 @@ Read in order: this file · [`lanes/sierra-retrieval-corpus.md`](reference/lanes
 | Verify `COLLEGE_POINTS` against IPEDS | needs a machine with egress — `s275-fable-verify-campus-points` |
 | Atomic catalog replace | designed, not built — `s274-fable-offerings-replace-atomic` |
 | Guidance row 674923db re-scope · Orange County LVN entry program · 381 garbled rows · auto-deploy on merge | NEEDS SAM |
-| SkyView read-only band | the other session's PR #1619 (the cron commit `7aabe52` removed it, measured) |
+| SkyView read-only band | restored from the sources by the other session's PR #1619, merged 17:01Z (the cron commit `7aabe52` had removed it, measured) |
 | Health cron fires ~4/day against a cron asking for 8 | open, observed not diagnosed |
 | The 15 strict-mode type errors in `index.ts` | pre-existing on `main`; identical set on this branch |
 

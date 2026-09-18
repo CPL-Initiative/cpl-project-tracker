@@ -1539,7 +1539,21 @@ regenerated on the merged tree). Deploy run 35370070548 byte-verified;
 `list_edge_functions` reported version 72 at 16:43:19Z. Health run
 35370311547 green at 16:45Z. The merge-triggered smoke (run 35370054033,
 started 16:42:27Z, before the function swapped) passed every mode, the new 7c
-checks included; the dispatched clean run: run 35371403392, dispatched 16:56Z once the parallel session's push-triggered smoke had finished, in progress at this commit. `function_logs`
+checks included. The dispatched clean run, 35371403392 (16:56Z), failed one
+mode — 9, the multi-college NCCER question — at curl's 90 s ceiling with
+11,463 bytes received. The function finished that answer anyway:
+`chat_interactions` `6547d030` at 17:02:17Z, 1,117 tokens, El Camino named
+and not dismissed, so both mode-9 assertions hold on the completed text; the
+runtime logged "connection closed before message completed" at 17:02:23Z,
+which is the client having left. Mode 8 before it streamed 1,123 tokens in
+~27 s and mode 10 after it 1,067 in ~11 s; mode 9's 1,117 took ~92 s. One slow
+generation, then. Mode 9 had passed on this commit at 16:42Z, so the one
+sanctioned re-run went out: 35373228305, dispatched 17:15Z, in progress at
+this commit. The same run measured three 5 s route cuts during mode 8
+(17:00:08–14Z: `is_allowed_reviewer`, `chatbox_college_profiles` twice, with
+`college_geo` at 3.6 s in the gateway log) — the reads failed safe and the
+mode passed; the function fans out some thirty reads per request, and the
+pooler is where they queue. `function_logs`
 16:43–16:50Z: 0 route time-limit cuts, 0 EMPTY ANSWER, 0 unavailable, 0
 errors; `program_typical_courses` answered 5 of 5 calls with 200.
 
@@ -1563,7 +1577,14 @@ left in `7aabe52`, the daily dashboard cron commit between #1618 and #1617,
 which rebuilt the page from sources that did not carry it (36 deletions);
 #1617 did not touch the file. The cron rebuilds the served page, so a change
 written into the built artifact lasts until the next run — #1619's fix (the
-band in the sources) is the right one.
+band in the sources) is the right one. It merged at 17:01Z (`1d65115`).
+Between the cron commit and that merge, `test` on main was red on
+`ccr_skyview_read_only.test.js` (run 35370054088 at `fc3ebe3`), and this
+session's docs-only checkpoint PR inherited the red on its first push. The
+remedy was the recovered base itself: merge main into the branch, which
+carries #1619's fix, and the test passes on the merged tree (21 checks, with
+`skyview_built_from_source_test.py` 8 of 8). A red `test` on a docs diff is
+the base's state, and the first question is whether main is red too.
 
 ### The lesson under the lessons
 
