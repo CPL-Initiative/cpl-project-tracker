@@ -19,7 +19,7 @@ One per session, newest first. **Only the highest-numbered handoff is authoritat
 
 | N | Handoff | Created |
 |---|---|---|
-| 276 | [v70 is live and answers the direct question first; read it, then finish the time limit](../session_276_handoff.md) | 2026-09-18 |
+| 276 | [v71 is live, the first course is in the target program, the time limit ships; next, the precedent moves into the block](../session_276_handoff.md) | 2026-09-18 |
 | 275 | [v69 is live and answers the prospective question; read it, then give nearest a distance](../session_275_handoff.md) | 2026-09-18 |
 | 274 | [v68 is built and verified; merge, deploy and read it](../session_274_handoff.md) | 2026-09-18 |
 | 273 | [program search is live; the edge function is not deployed](../session_273_handoff.md) | 2026-09-17 |
