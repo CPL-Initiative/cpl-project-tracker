@@ -11018,7 +11018,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 47
+     "line": 49
     },
     {
      "id": "script:kb/_build_course_top_consensus.py",
@@ -18872,6 +18872,7 @@
     "prototype/check_contrast.py",
     "tests/supabase_function_grants_test.py",
     "tests/coci_program_cip_test.py",
+    "tests/course_title_mojibake_test.py",
     "tests/college_briefing_publish_suppression_test.py",
     "tests/rekey_kb_curation_chain_test.py",
     "tests/authority_recode_apply_test.py",

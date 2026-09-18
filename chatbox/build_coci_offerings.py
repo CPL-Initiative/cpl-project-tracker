@@ -39,15 +39,9 @@ TITLES_MAX = 40  # distinct titles kept for the searchable blob
 
 
 # ---- college-name reconciliation (program loose label -> course-list full) ----
-def fix_moji(s):
-    """Repair the double-encoded 'CaÃ±ada College' the COCI export carries so our
-    names match the correct-unicode form used by chatbox_college_profilies."""
-    if s and "Ã" in s:
-        try:
-            return s.encode("latin-1").decode("utf-8")
-        except (UnicodeEncodeError, UnicodeDecodeError):
-            return s
-    return s
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.join(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))), "kb"))
+from _text_repair import fix_moji  # noqa: E402 — one repair for both COCI loaders; see kb/_text_repair.py
 
 
 def norm_college(s):
@@ -177,7 +171,8 @@ def build_offerings():
         colleges.add(college)
         subj = str(row[ci["Subject"]] or "").strip()
         num = str(row[ci["Course_Number"]] or "").strip()
-        title = str(row[ci["CourseTitle"]] or "").strip()
+        # The title feeds titles_text and the samples Sierra renders; repair it too.
+        title = fix_moji(str(row[ci["CourseTitle"]] or "").strip())
         units = row[ci["UnitValue"]]
         credit_type = str(row[ci["CreditType"]] or "").strip()
         top_code, top_title = split_top(row[ci["TopCode"]])

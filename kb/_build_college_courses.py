@@ -43,6 +43,8 @@ from collections import Counter
 
 import openpyxl
 
+from _text_repair import fix_moji  # one repair for both COCI loaders; see kb/_text_repair.py
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 XLSX = os.path.join(ROOT, "kb", "reference", "coci_course_list.xlsx")
 OUT = os.path.join(ROOT, "kb", "college_courses_payload.json")
@@ -50,15 +52,6 @@ OUT = os.path.join(ROOT, "kb", "college_courses_payload.json")
 _WS = re.compile(r"\s+")
 
 
-def fix_moji(s: str) -> str:
-    """Repair the double-encoded 'CaÃ±ada College' the COCI export carries, so
-    names match the correct-unicode form the rest of the corpus uses."""
-    if s and "Ã" in s:
-        try:
-            return s.encode("latin-1").decode("utf-8")
-        except (UnicodeEncodeError, UnicodeDecodeError):
-            return s
-    return s
 
 
 def clean(v) -> str:
@@ -84,10 +77,13 @@ def build() -> tuple[list, dict]:
     rows: list = []
     stats: Counter = Counter()
     for r in ws.iter_rows(min_row=2, values_only=True):
-        college = fix_moji(clean(r[ix["College"]]))
+        # REPAIR BEFORE clean(): clean() collapses whitespace, and a no-break space
+        # inside a double-decoded run ("Ã‚Â\xa0") is the byte the round trip needs.
+        college = clean(fix_moji(r[ix["College"]]))
         subject = clean(r[ix["Subject"]])
         number = clean(r[ix["Course_Number"]])
-        title = clean(r[ix["CourseTitle"]])
+        # The TITLE is what Sierra renders to students; it was never repaired.
+        title = clean(fix_moji(r[ix["CourseTitle"]]))
         stats["read"] += 1
         # A course with no title cannot participate in title alignment, which is
         # this table's entire purpose. Count them rather than dropping silently.
