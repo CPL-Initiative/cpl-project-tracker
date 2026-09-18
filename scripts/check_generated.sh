@@ -17,6 +17,7 @@ run() {
 }
 run "docs index + catalogs"   "python3 kb/_build_docs_index.py --check"
 run "dependency map"          "python3 kb/_build_dependency_map.py --check"
+run "re-mint blast radius"    "python3 kb/_build_remint_blast_radius.py --check"
 run "docs corpus lint"        "python3 tests/docs_audit_test.py"
 run "docs index builder"      "python3 tests/docs_index_build_test.py"
 run "American spelling"       "python3 tests/american_spelling_test.py"

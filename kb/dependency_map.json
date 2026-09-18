@@ -18993,6 +18993,8 @@
     "prototype/check_contrast.py",
     "tests/supabase_function_grants_test.py",
     "tests/supabase_sql_guard_test.py",
+    "kb/_build_remint_blast_radius.py",
+    "tests/remint_blast_radius_test.py",
     "tests/coci_program_cip_test.py",
     "tests/course_title_mojibake_test.py",
     "tests/coci_offerings_sync_chunk_test.py",
