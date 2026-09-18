@@ -425,8 +425,8 @@ block("9. the direct answer first, the catalog never the world, no remark about 
     && /a directive about where a credential ALREADY earns credit answers a different question/.test(SRC));
   const rule = (SRC.match(/const PROSPECTIVE_RULE = `([\s\S]*?)`;/) || [])[1] || "";
   check("(9) ⭐ the prospective rule leads with the answer and puts articulations after it, only for the credential held",
-    /^- LEAD WITH THE ANSWER\. The first sentence names the courses to ask about/m.test(rule)
-    && /Existing articulations belong AFTER the answer/.test(rule) && /an LVN license award, for a CNA holder\) is not evidence and is not listed/.test(rule));
+    /^- LEAD WITH THE ANSWER\. The first sentence names a course to ask about — college, course number, title/m.test(rule)
+    && /Existing articulations come AFTER the courses/.test(rule) && /an LVN license award, for a CNA holder\) is not evidence and is not listed/.test(rule));
   check("(9) ⭐ the prospective rule states a catalog absence as the catalog's, never the place's, and names the bridges",
     /WHEN THE CATALOG LISTS NO COLLEGE IN THE VISITOR'S PLACE FOR THE TARGET PROGRAM/.test(rule)
     && /never "no Orange County college has LVN"/.test(rule) && /an LVN-to-RN bridge at Cypress, Golden West and Saddleback/.test(rule));
@@ -443,9 +443,31 @@ block("9. the direct answer first, the catalog never the world, no remark about 
     && /when a section says the catalog lists none of them, say what the catalog shows \(never that no college in the place has it\)/.test(SRC));
   check("(9) no builder says 'Say so plainly' about a place any more", !/NO college in \$\{askedGeo\.label\}/.test(SRC) && !/Say so plainly, then (offer|name) the nearest/.test(SRC));
   check("(9) ⭐ smoke fails EVERY mode whose answer opens with a remark about the question",
-    /opens with a remark about the question \(sierra_guidance cafb92af/.test(SMOKE) && SMOKE.indexOf("head -c 160 | grep -E -i -q") < SMOKE.indexOf("sleep 1   # stay well under"));
-  check("(9) ⭐ smoke 7c asserts the course-level answer LEADS (first 700 characters) and that no sentence states the absence as Orange County's",
-    /answer_head_must_match -i 700 "NURS\[ -\]\?\(102\|125\)/.test(SMOKE) && /never states a catalog absence as a fact about Orange County/.test(SMOKE));
+    /answer should NOT match \/opens with a remark about the question\/ \(sierra_guidance cafb92af/.test(SMOKE) && SMOKE.indexOf("head -c 160 | grep -E -i -q") < SMOKE.indexOf("sleep 1   # stay well under"));
+  check("(9) ⭐ smoke 7c asserts the course-level answer LEADS (first 800 characters) and that no sentence states the absence as Orange County's",
+    /answer_head_must_match -i 800 "NURS\[ -\]\?\(102\|125\)/.test(SMOKE) && /never states a catalog absence as a fact about Orange County/.test(SMOKE));
+  // The first A/B (run 35314469546) showed two more things. The candidate's first
+  // 700 characters carried no course code — the model opened with the ask in
+  // general terms, then the catalog statement, then the bridges, then the
+  // courses — and it dropped the Chaffey precedent, reading "only for the
+  // credential the visitor holds" as excluding a same-kind credential.
+  check("(9) ⭐ the LEAD bullet puts the first course before the catalog sentence even when the place has none",
+    /the first sentence still names the nearest college's course, and the sentence about the catalog and the related programs FOLLOWS it/.test(rule));
+  check("(9) ⭐ a same-kind credential counts as the visitor's for the precedent (Acute Care Nursing Assistant for a CNA holder)",
+    /or one of the same kind \(for a CNA holder: Nurse Assistant and Acute Care Nursing Assistant articulations count\)/.test(rule)
+    && /NEVER SAY THERE IS NONE WHEN THE RECORD SHOWS ONE/.test(rule) && /Chaffey College articulated Acute Care Nursing Assistant, 6 units, against NURVN 414/.test(rule));
+  check("(9) ⭐ smoke 7c asserts the precedent is cited", /answer_must_match -i "chaffey\|NURVN\[ -\]\?414\|acute care nursing assistant" "7c ⭐ cites the CNA-to-LVN precedent/.test(SMOKE));
+  // The A/B compare step counts only four error shapes ("<label>: expected
+  // answer to match", "<label>: answer should NOT match", "empty answer for",
+  // "curl failed for"). The first run of the new checks printed a fifth shape
+  // and a sixth, so the grid read "0 failing" over a preview log that ended
+  // SMOKE TEST FAILED. Every prose assertion's error line takes a counted shape.
+  const errorLines = [...SMOKE.matchAll(/echo "::error::\$label: ([^"]+)"/g)].map((m) => m[1]);
+  check("(9) ⭐ every prose-assertion error line takes a shape the A/B compare counts",
+    errorLines.length >= 4 && errorLines.every((l) => /^(expected answer to match|answer should NOT match)/.test(l)), errorLines.filter((l) => !/^(expected answer to match|answer should NOT match)/.test(l)).join(" | "));
+  const curls = (SMOKE.match(/^[^#\n]*curl -sS[^\n]*$/gm) || []);
+  check("(9) every curl in the smoke script carries a time limit (a stalled RPC must never hang a run)",
+    curls.length > 0 && curls.every((l) => /--max-time/.test(l)), curls.filter((l) => !/--max-time/.test(l)).join(" | "));
   check("(9) the head helper exists and reads only the head", /^answer_head_must_match\(\) \{/m.test(SMOKE) && /head -c "\$chars" \| grep -E \$flag -q -- "\$re"/.test(SMOKE));
 });
 
