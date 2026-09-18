@@ -1,102 +1,139 @@
 ---
-title: Session 274 handoff — program search is applied and deployed as v67; now we hone
-date: 2026-09-17
+title: Session 274 handoff — v68 is built and verified; merge, deploy and read it
+date: 2026-09-18
 session: 273 (SkyPilot)
-tags: [handoff, sierra, program-search, deploy, performance]
+tags: [handoff, sierra, place-anchor, program-search, deploy]
 status: current
 ---
 
 # You are Session 274
 
-Your moniker is **SkyMeter** — Sierra's third view of a college is live in
-production, and the work in front of you is reading how it behaves and honing
-it, with the numbers this session left you.
+Your moniker is **SkyMeter** — the work in front of you is finishing a
+deploy this session built and proved but did not ship, then reading how
+Sierra behaves with it.
 
 Read in order: this file · [`lanes/sierra-retrieval-corpus.md`](reference/lanes/sierra-retrieval-corpus.md)
-· `docs/cpl_assistant_lessons.md` (2026-09-17, S273) · the header of
-`chatbox/supabase_search_college_programs.sql` · PRs #1603 and the S273 PR.
+· `docs/cpl_assistant_lessons.md` (2026-09-18, S273 second round) ·
+`docs/kb-notes/methodology-a-place-is-an-anchor-not-a-college.md` ·
+[PR #1607](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1607).
 
-## ✅ WHERE THINGS STAND (as of 2026-09-17 23:31Z)
+## ✅ WHERE THINGS STAND (as of 2026-09-18 02:30Z)
 
-- **cpl-chat v67 is LIVE** (deploy run 35287167393, `main` at `ab3e4a9`). It
-  carries #1601's program route, #1603's phrases, stop word and guards. Sam
-  authorized it verbatim: *"apply and deploy...as long as we don't break Sierra
-  in the process:) I'm OK with a few anomalies if those occur. We can hone as
-  we go."* (`cpl_memory` `sam-authorized-apply-and-deploy-program-search-2026-09-17`).
-- **The one-pass `search_college_programs` is APPLIED** (migration
-  `20260917231239 search_college_programs_one_pass`). Verified live after the
-  apply: A 8/8 · B 2/2 · C 4/4 · **D 2/2**, the 30-term call at 2,573 ms, the
-  LVN question at 887 ms reaching 56 colleges.
-- **The second `cpl-chat-preview-ab.yml` run (35285864076) was clean in BOTH
-  senses:** ALL MODES OK on both slugs, no regressions, and ZERO
-  `search_college_programs unavailable` lines in `function_logs` for its window
-  (run 1 had three). The four Postgres timeouts in that window are mode 15d's
-  deliberate anon-role probes, present in every run. The preview slug was
-  deleted by the run (`cleanup=true`).
-- **Post-deploy smoke and health, both green on v67:** smoke run 35287560339
-  ALL MODES OK, 7p at 56 colleges and **1.60 s** on the anon key; health run
-  35287562670 green. The smoke's 19 chat turns took the same 5.7 minutes as
-  on v66, with answers ~13% longer and 8 of 19 mentioning programs (3 before).
-  Function logs since the deploy: 0 `unavailable`, 0 `EMPTY ANSWER`, 0 errors.
+- **Production is still cpl-chat v67.** Sam read its answer to *"I have a cna
+  cert and I want to go to a college in orange county. What CNA courses at
+  the colleges match LVN courses so I can ask for credit?"* and said *"Still
+  not able to analyze course and program data."* The diagnosis is in the KB
+  note; the short form: a county in the question anchored nothing (askedGeo
+  came only from a resolved college), "orange" matched Orange Coast College
+  and NOCE by name, `cna` had no synonym family, the offerings query dropped
+  every phrase, and the ask-shape words spent the credential probes.
+- **v68 is BUILT on `claude/exciting-allen-k2nrbf`, PR #1607 (draft).**
+  `resolveAskedPlace` anchors on a county or region from `college_geo`,
+  strips it from detection and the keyword routes, carries it across turns;
+  both catalog builders say in words when no college in the place matches;
+  `cna` expands to phrases; `tsQueryFromTerms` expresses a phrase as
+  `nurse:* <-> assistant:*`; ask-shape stop words; phrase synonyms as
+  credential probes. Two commits: `897076a` (the change) and `f64f645`
+  (four test pins the change moved).
+- **The two RPC migrations are APPLIED LIVE and verified**
+  (`search_college_programs_place_anchor`,
+  `search_college_offerings_place_anchor`): `anchor_county` /
+  `anchor_region` lead the ORDER BY, never filter. Part E 4/4 and the
+  offerings verify 6/6. v67 keeps calling with the old named args (the
+  smoke run 35298250073 against production passed after the migration,
+  mode 7c included). Rollback is one `create or replace` from git for each
+  function — drop the two-anchor signature first.
+- **Proven locally:** `npm test` 344/344 (`f64f645`), the 40 CI python/shell
+  steps, `deno check` at the 15 pre-existing errors with none added,
+  `deno run` boots, `tests/sierra_place_anchor.test.js` 77/77.
+- **The branch A/B run 35298283829 is DONE and clean:** candidate
+  (`cpl-chat-preview`, still deployed, `cleanup=false`) **ALL MODES OK**
+  including 7c; production v67 failed only 7c's prose assertion; **no
+  regressions**. The candidate's Orange County answer lists Saddleback,
+  Golden West, Santa Ana and Santiago Canyon with their CNA and nursing
+  course codes, says none has articulated CNA-to-LVN credit, and names the
+  Napa Valley and San Bernardino Valley LVN-credit precedents. Two things it
+  did NOT say, for the next hone: that no Orange County college confers a
+  Vocational Nursing award (it called the RN courses "LVN-adjacent"), and
+  the Chaffey NURVN 414 precedent — `search_statewide_recommendations
+  ('cna')` returns Cisco's CCNA at tier 3, a statewide hit, and the handler
+  skips the LOCAL credential route whenever the statewide one returns
+  anything, so Acute Care Nursing Assistant never reaches the model. ⚠️ One
+  `search_college_programs unavailable` (statement timeout) at 02:14:30Z in
+  the A/B window — one call under the doubled load of two smoke suites
+  (run 2 yesterday had zero, run 1 three). The route fails safe; the
+  client-side time limit and the loader-side tsvector columns are the
+  answers already queued.
+- **CI `test` on `f64f645`** was still running when this session closed; the
+  first `test` run (on `897076a`) failed on exactly the four files `f64f645`
+  fixes, and the full suite is 344/344 locally on `f64f645`.
 
 ## YOUR SEQUENCE
 
-1. **Read what v67 does with real questions.** `chat_interactions` rows since
-   23:31Z 2026-09-17 (session_id other than `smoke-ci` / `health-probe`), and
-   `function_logs` for `unavailable`, `EMPTY ANSWER` and `error`. The route
-   fails safe, so a missing Program Catalog section is only visible in the
-   logs.
-2. **Ask Sam to read Sierra's program answers in a browser** (To-Do
-   `s273-sam-read-program-answers`): "Where can I train to become an LVN?",
-   "Which colleges award a welding certificate?", one with a home college
-   named. Anomalies are expected and accepted; record each as a fixture or a
-   vocabulary entry, the way the negation class is handled.
-3. **Give every retrieval RPC a client-side time limit** (`AbortSignal` on the
-   `.rpc()` calls, To-Do `s273-fable-route-time-limits`) so one slow route can
-   never hold the whole answer for 8 s again. Deploy needs the A/B + the logs
-   read, as this session did.
-4. **Optional, measured:** stored generated tsvector columns to cut the ~700 ms
-   floor of the program route. A LOADER-side cost — measure on
-   `coci_programs_replace` before shipping (#1602's lesson).
-5. Rollback stays one `cpl-chat-deploy.yml` dispatch from the previous commit
-   (`663027f` was v66), and one `create or replace` from git for the SQL.
+1. **Read the A/B** (run 35298283829): the PASS/FAIL grid for both slugs —
+   a mode that passes on production and fails on the candidate is the
+   signal; 7c may fail on production and pass on the candidate, which is
+   fine — then `function_logs` for the run's window: `unavailable`,
+   `EMPTY ANSWER`, `error`. A fail-safe route drops its section silently,
+   so the grid alone is not the check.
+2. **`test` green on `f64f645`** (get_check_runs on the PR head, never a
+   `check_suite.completed` wake) → mark #1607 ready → squash-merge. Sam's
+   review is not a gate.
+3. **Deploy v68** — `cpl-chat-deploy.yml`, `confirm: DEPLOY` — then
+   `cpl-chat-health.yml`, `cpl-chat-smoke.yml`, and `function_logs` again.
+   Delete the preview slug afterwards (an A/B run with `cleanup=true`, or
+   the Supabase dashboard).
+4. **Ask the Orange County question of production** and read the answer:
+   it should say that no Orange County college confers a Vocational
+   Nursing award in COCI, name the LVN-to-RN bridges for what they are,
+   name the nearest Vocational Nursing programs with their county, and
+   cite the Chaffey NURVN 414 precedent for CNA-to-LVN credit. Then ask
+   Sam to read it (To-Do `s273-sam-oc-question-v68`).
+5. Only then the older queue: client-side time limits on every retrieval
+   RPC (`s273-fable-route-time-limits`); the college-derived anchor
+   applied inside the RPCs too (today only a PLACE reaches the database;
+   a named college still ranks client-side after the limit); generated
+   tsvector columns as a measured loader-side option.
 
 ## ⚠️ Sam's open call — his, not yours
 
 - **Auto-deploy the Edge Function on merge?** Asked in S272, still unruled.
-  S272 recommended yes with the dispatch kept for rollbacks; S273 adds: the A/B
-  can run on the BRANCH before merge (it checks out the dispatched ref), so the
-  gate moves in front of the merge rather than disappearing. Today's sequence
-  (apply → A/B → logs → deploy → smoke) took about 25 minutes by hand.
+  This round is the third time the sequence apply → A/B → logs → merge →
+  deploy → smoke was run by hand; the A/B runs on the branch, so the gate
+  can sit in front of the merge.
 
 ## What this session learned
 
-- **Deno installs from npm in the sandbox** (`npm install deno@2`). With a
-  `deno.json` of `{"nodeModulesDir":"auto"}` beside a copy of `index.ts`,
-  `deno check` runs (15 pre-existing strict-mode errors on `main`, identical set
-  on the branch, none added; the Supabase deploy does not typecheck) and
-  `deno run --no-check` with dummy env vars boots the module. Two handoffs said
-  this was impossible. KB note: `methodology-a-missing-tool-is-usually-a-missing-install`.
-- **A pass/fail grid cannot see a route that fails safe.** After any A/B, read
-  `function_logs` for the preview window. KB note:
-  `methodology-a-retrieval-route-costs-what-the-synonym-table-decides`.
-- **A timing without its term count and role is not a measurement.** The
-  file's header carried 561.9 ms for a 6-term call; the same call measured
-  cleanly is 4,255 ms. Record the terms and the role with every number.
-- **Prove a SQL rewrite in `pg_temp`.** Session-local, vanishes with the
-  connection, touches no shared schema; `EXCEPT` both ways plus a row-number
-  order check is the equivalence proof.
+- **A place is an anchor, not a college.** A county or region named in the
+  question must anchor geography and must never be matched against college
+  names; and a proximity sort applied after `result_limit` cannot restore a
+  row the limit already cut, so the anchor belongs inside the query. KB
+  note: `methodology-a-place-is-an-anchor-not-a-college`.
+- **Tell the model the fact in words.** "NO college in Orange County has a
+  matching program" in the context is what stops a hedge; the "not
+  exhaustive" rule alone produces one.
+- **The words that describe the ask are stop words** (*want, ask, request,
+  match, course, program*) — every one was a live search term and a spent
+  credential probe.
+- **A test pin reads code shapes, not behavior.** Four files failed on the
+  first full run for a ternary colon, a regenerated defaults file, a floor
+  entry at the wrong level, and a renamed variable. Run the FULL `npm test`
+  before the push; the targeted tests are not the suite.
 
 ## Carryover
 
 | Item | State |
 |---|---|
-| Apply → A/B re-run → deploy → smoke → delete the preview slug | **DONE 2026-09-17** — v67 live, migration `search_college_programs_one_pass` applied, A/B run 2 clean in grid and logs |
-| Sam reads Sierra's program answers in a browser | asked — `s273-sam-read-program-answers` |
+| A/B 35298283829 read (grid + logs) → merge #1607 → deploy v68 → health + smoke → logs | **YOURS FIRST** — everything before it is done and verified |
+| Production read of the Orange County CNA-to-LVN question; Sam reads it | after the deploy — `s273-sam-oc-question-v68` |
+| **The `smoke` check on #1607 is RED by construction until v68 deploys** (run 35299011638): the workflow runs the branch's smoke script against PRODUCTION v67, and mode 7c's prose assertion ("names a college from the anchored sets") fails on v67 for exactly the reason the PR exists — the RPC assertions pass. Doctrine merges on `test` green with `unstable` allowed; read 7c on the A/B candidate instead | expected; no action |
+| The checkpoint commits (`97c49d6`, `f3797f2`, and the lane trim) ride on #1607; the vault note is [CPLBrain #154](https://github.com/samueltlee/CPLBrain/pull/154) (draft) | merge #154 on green, with #1607 |
+| Sam reads Sierra's program answers in a browser | asked S273 — `s273-sam-read-program-answers` |
+| The statewide-first gate hides local credentials behind a false friend: `search_statewide_recommendations('cna')` returns Cisco's CCNA, so `fetchAnyCredentials` never runs and the Chaffey CNA-to-LVN precedent is unreachable | found in the A/B candidate's answer; fix is to run the local route when the statewide hits share no token with the question, or always and let the context label them |
 | Client-side time limit on every retrieval RPC (`AbortSignal`) | recommended, not built — `s273-fable-route-time-limits` |
-| Stored generated tsvector columns to cut the ~700 ms floor | a LOADER-side cost; measure on `coci_programs_replace` before shipping (#1602's lesson) |
+| College-derived anchor inside the RPCs (detection ahead of the catalog routes) | designed, not built — see the KB note's "What it does not do yet" |
+| Stored generated tsvector columns to cut the ~700 ms floor | a LOADER-side cost; measure on `coci_programs_replace` first (#1602) |
 | The 15 strict-mode type errors in `index.ts` | pre-existing on `main`; clear in a code-only PR, then `deno check` can gate |
-| Smoke 15a's fourth negation shape (a negated reading verb, then a quotation) and 15c's fifth (a contrast phrase: "different from saying") | fixed: reading verbs, contrast phrases and gerunds joined the stripper's can't-say shape; fixtures + controls in `smoke_negation_stripper.test.js` (42). Five shapes in six days: the class wants a better instrument than sed |
 | Auto-deploy on merge | NEEDS SAM (from S272) |
 | Sam's eyes on the public My College, signed out | asked S271, still unconfirmed |
 | Health cron fires ~4/day against a cron asking for 8 | open, observed not diagnosed |
@@ -105,20 +142,21 @@ Read in order: this file · [`lanes/sierra-retrieval-corpus.md`](reference/lanes
 ## ⚠️ Safety patterns to honor
 
 - **`npm test` IS NOT THE SUITE.** Extract `js-tests.yml`'s python steps and run
-  them (44 pass locally on this branch).
+  them (40 pass locally on this branch). And the targeted tests are not
+  `npm test`: run the whole thing before a push.
 - **A `check_suite.completed` wake can name a SUPERSEDED head.** Re-read
   `get_check_runs` on the current head; `test` green there before every merge.
-- **NEVER INDEX `coci_college_programs`** (measured, #1602). Generated columns
-  are a different cost class and still a measurement, not a reflex.
+- **NEVER INDEX `coci_college_programs`** (measured, #1602).
 - **Read the function logs after any A/B or deploy**, not only the grid.
+- **A signature change is drop-then-create**, in one migration, grants
+  restored (the overload trap; both SQL files of record say so).
 - Rule 4 (both HTMLs) · Rule 5 (never force-push `main`) · Rule 10 (Supabase
   only through MCP; the stop hook's "unpushed" nag is the documented false
   positive — `python3 scripts/patch_stop_hook.py`, never push to silence it).
 
 ## KB notes added this run
 
-- `methodology-a-retrieval-route-costs-what-the-synonym-table-decides`
-- `methodology-a-missing-tool-is-usually-a-missing-install`
+- `methodology-a-place-is-an-anchor-not-a-college`
 
 ---
 

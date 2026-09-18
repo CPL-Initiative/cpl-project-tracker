@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-464 document(s).
+465 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -144,6 +144,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A pipe discards a command's verdict](../kb-notes/methodology-a-pipe-discards-a-commands-verdict.md) | methodology | published | 2026-09-15 | 2026-09-15 |
 | [A piped test run reports the pipe's exit, not the suite's](../kb-notes/methodology-a-piped-test-run-reports-the-pipes-exit.md) | methodology | published | 2026-08-30 |  |
 | [A pipeline's exit status is its last command's, so `\| tail` reports success for a failing suite](../kb-notes/methodology-a-pipelines-exit-status-is-its-last-commands.md) | methodology | published | 2026-09-09 | 2026-09-09 |
+| [A place is an anchor, not a college — and the words that describe the ask are not the topic](../kb-notes/methodology-a-place-is-an-anchor-not-a-college.md) | methodology | published | 2026-09-18 | 2026-09-18 |
 | [A prefix match on a stem is not a match on the word](../kb-notes/methodology-a-prefix-match-on-a-stem-is-not-a-match-on-the-word.md) | methodology | published | 2026-09-17 | 2026-09-17 |
 | [A presentation rule is the purest push case there is](../kb-notes/methodology-a-presentation-rule-is-the-purest-push-case.md) | methodology | published | 2026-08-29 | 2026-08-29 |
 | [A proposal standing in for expert judgment needs two signals of different kinds](../kb-notes/methodology-two-signals-for-a-judgment-proposal.md) | methodology | published | 2026-08-13 | 2026-08-13 |

@@ -1,9 +1,21 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-09-17",
+  "_as_of": "2026-09-18",
   "_session": 273,
-  "_status": "Sierra can now answer what a college AWARDS, live, as of the evening of 17 September: the program search is applied to the database in its fast one-pass form and the assistant is deployed as version 67 with it. Before the deploy, a private copy of the assistant answered all 22 test questions as well as the live one, and this time the function logs showed zero timeouts underneath (the first try had three, which is why the lookup was rewritten first). Sam authorized both steps and accepted that a few odd answers may appear; the plan is to read what real questions do, fix anomalies as fixtures or vocabulary, and give every lookup its own time limit so one slow lookup can never hold an answer. Open for Sam: whether the assistant should deploy itself on merge, and a browser read of the new program answers.",
+  "_status": "Sam read the new program answers the evening they shipped and found the assistant still could not analyze course and program data for a student who named a county rather than a college: a county anchored nothing, 'orange' matched Orange Coast College by name, the nursing-assistant vocabulary had no entry, and the course-catalog query dropped every two-word term. Version 68 fixes all of it and is built, tested (344 of 344 suites) and proven against the live database, with the two database changes already applied and verified; it is not yet deployed. The next session reads the private copy's A/B run and its logs, merges, deploys, runs the health and smoke checks, then asks the Orange County question of the live assistant. Open for Sam: whether the assistant should deploy itself on merge, and a browser read of the answers once version 68 is live.",
   "items": [
+    {
+      "id": "s273-fable-finish-v68",
+      "for": "Fable",
+      "tab": "chatbot",
+      "text": "Finish shipping version 68 of the assistant. Everything before the deploy is done: the code is on PR #1607, the two database changes are applied and verified, and every local check passed. Read the private-copy A/B run (35298283829) and its function logs, merge once the test check is green on the latest commit, deploy with the DEPLOY confirmation, run the health and smoke checks, read the production logs, then delete the preview copy."
+    },
+    {
+      "id": "s273-sam-oc-question-v68",
+      "for": "Sam",
+      "tab": "chatbot",
+      "text": "Once version 68 is live, ask the Orange County question again in a browser: 'I have a CNA cert and I want to go to a college in Orange County. What CNA courses match LVN courses so I can ask for credit?' The answer should say that no Orange County college confers a Vocational Nursing award in the state's program export, name the LVN-to-RN bridges for what they are, name the nearest Vocational Nursing programs with their county, and cite Chaffey's 6-unit precedent for CNA-to-LVN credit. Tell us whether it reads as analysis of the data."
+    },
     {
       "id": "s273-sam-read-program-answers",
       "for": "Sam",
@@ -59,25 +71,25 @@
       "text": "Send the Academic Senate (ASCCC) area roster — which college sits in which area. Every Supabase column matching area, senate, asccc, zone or region was searched and none carries them. Strong Workforce regions are already solved."
     },
     {
+      "id": "s266-fable-matcher-vocabulary",
+      "for": "Fable",
+      "tab": "my-college",
+      "text": "The occupation matcher's misses are a VOCABULARY problem, not a tuning one. Application developer and Computer Programming share no word, so no threshold reaches them. The register is live in the My College tab and discloses the gap, so this is about making it find more rather than about shipping. Closing it needs a synonym layer or the curated occupation map — and two plausible shortcuts are already measured and rejected in the code."
+    }
+  ],
+  "_deferred": [
+    {
       "id": "s266-sam-cer-authority",
       "for": "Sam",
       "tab": "cer",
       "text": "Decide whether the Common Exhibit Reference should canonicalize against the credential registry — adopting the issuer's own credential name and the issuing agency in place of a vote among the freehand titles colleges typed."
     },
     {
-      "id": "s266-fable-matcher-vocabulary",
-      "for": "Fable",
-      "tab": "my-college",
-      "text": "The occupation matcher's misses are a VOCABULARY problem, not a tuning one. Application developer and Computer Programming share no word, so no threshold reaches them. The register is live in the My College tab and discloses the gap, so this is about making it find more rather than about shipping. Closing it needs a synonym layer or the curated occupation map — and two plausible shortcuts are already measured and rejected in the code."
-    },
-    {
       "id": "s264-sam-origination-owner",
       "for": "Sam",
       "tab": "implementation-funding",
       "text": "When the origination data lands, half of it works by itself and half does not. The noncredit location side switches on automatically. The landing page / portal / batch upload side waits for a deliberate one-line change, made only once the exact spellings are confirmed, and the only signal that it is waiting is a line in a daily log. Worth giving that to someone by name."
-    }
-  ],
-  "_deferred": [
+    },
     {
       "id": "s266-fable-licenses-handout",
       "for": "Fable",

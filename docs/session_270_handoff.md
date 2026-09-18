@@ -4,6 +4,8 @@ date: 2026-09-17
 session: 269 (SkyLedger)
 tags: [handoff, partner-crosswalks, my-college, register, tokens, a11y]
 status: current
+superseded: true
+superseded_by: session_274_handoff.md
 ---
 
 # You are Session 270

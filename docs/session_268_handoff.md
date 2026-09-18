@@ -4,6 +4,8 @@ date: 2026-09-17
 session: 267 (SkyQuarry)
 tags: [handoff, partner-crosswalks, regional-cpl-opportunity, my-college, matcher]
 status: current
+superseded: true
+superseded_by: session_274_handoff.md
 ---
 
 # You are Session 268

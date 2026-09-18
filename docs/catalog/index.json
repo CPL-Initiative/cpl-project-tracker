@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 464,
+   "count": 465,
    "docs": [
     {
      "created": "2026-08-14",
@@ -2511,6 +2511,30 @@
      "title": "A pipeline's exit status is its last command's, so `| tail` reports success for a failing suite",
      "type": "methodology",
      "updated": "2026-09-09"
+    },
+    {
+     "created": "2026-09-18",
+     "governs": [
+      "chatbox/supabase/functions/cpl-chat/index.ts",
+      "chatbox/supabase_search_college_programs.sql",
+      "chatbox/supabase_search_college_offerings.sql",
+      "chatbox/smoke_test.sh",
+      "tests/sierra_place_anchor.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-place-is-an-anchor-not-a-college.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "sierra",
+      "retrieval",
+      "geography",
+      "synonyms",
+      "smoke-test",
+      "supabase"
+     ],
+     "title": "A place is an anchor, not a college \u2014 and the words that describe the ask are not the topic",
+     "type": "methodology",
+     "updated": "2026-09-18"
     },
     {
      "created": "2026-09-17",
@@ -13322,7 +13346,7 @@
      ],
      "title": "Sierra retrieval + corpus \u2014 lane state",
      "type": null,
-     "updated": "2026-09-17"
+     "updated": "2026-09-18"
     },
     {
      "created": "2026-08-28",
@@ -13594,7 +13618,7 @@
    "count": 246,
    "docs": [
     {
-     "created": "2026-09-17",
+     "created": "2026-09-18",
      "governs": [],
      "n": 274,
      "path": "docs/session_274_handoff.md",
@@ -13602,11 +13626,11 @@
      "tags": [
       "handoff",
       "sierra",
+      "place-anchor",
       "program-search",
-      "deploy",
-      "performance"
+      "deploy"
      ],
-     "title": "program search is applied and deployed as v67; now we hone",
+     "title": "v68 is built and verified; merge, deploy and read it",
      "type": null,
      "updated": ""
     },
@@ -17754,5 +17778,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 922
+ "total": 923
 }

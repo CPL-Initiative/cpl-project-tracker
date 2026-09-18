@@ -690,6 +690,18 @@ const TOPIC_SYNONYMS: Record<string, string[]> = {
   // colleges, 56 in union, and ZERO non-nursing title rows. search_college_programs
   // routes any whitespace-bearing term through phraseto_tsquery.
   lvn: ["practical nursing", "vocational nursing"],
+  // ⚠️ CNA HAD NO KEY (2026-09-18, S273). `nursing` and `nurse` carry "cna" as a
+  // VALUE, so a nursing question reached CNA rows, but "cna" itself resolved to
+  // nothing — nearestSynonymKey guards tokens under 6 characters — and the
+  // catalog routes matched only titles that spell out "CNA". Measured on the
+  // Orange County program export: "ESL for CNA and Caregiving" and the HHA
+  // course matched; "Certified Nurse Assistant" (Golden West, Saddleback) and
+  // "Nursing Assistant" (Santa Ana) did not. Phrases, for the reason lvn is:
+  // "assistant" alone is Medical Assisting, Dental Assistant and Administrative
+  // Assistant. `'nurs' <-> 'assist'` matches "Nurse Assistant", "Nursing
+  // Assistant" and "Certified Nursing Assistant (CNA)" under the english
+  // stemmer (verified live).
+  cna: ["nurse assistant", "certified nurse assistant"],
   automotive: ["auto", "ase", "mechanic", "vehicle", "engine"],
   mechanic: ["automotive", "ase", "engine", "vehicle"],
   apprentice: ["apprenticeship", "journeyperson", "ibew"],
@@ -768,6 +780,23 @@ const TOPIC_STOP_WORDS = new Set([
   // which is exactly the division of labor this list's header describes.
   // extractTopicKeywords does not stem, so each surface form is needed.
   "become", "becomes", "becoming",
+  // ASK-SHAPE WORDS (2026-09-18, S273). Sam's test question — "I have a cna cert
+  // and I want to go to a college in orange county. What CNA courses at the
+  // colleges match LVN courses so I can ask for credit?" — extracted [cna, want,
+  // orange, county, cna, courses, match, lvn, courses, ask]. Three of the ten
+  // named the topic. The rest reached every route as live terms: "courses"
+  // matched "Courses in ESL", "Golf Course", "UC 7 Course Pattern" and "Regular
+  // Basic Course: Police Academy" in the program export, and the credential
+  // probes — built from the FIRST four keywords — were spent on "cna want",
+  // "want orange", "orange county" and "county cna", so "lvn" was never asked
+  // and the one CNA-to-LVN precedent in MAP (Chaffey, NURVN 414) never reached
+  // the model. The county itself is stripped earlier, by resolveAskedPlace;
+  // these are the words that describe the ASK. Contraction stems ("don" from
+  // "don't") are here because the tokenizer splits on the apostrophe.
+  "want", "wants", "wanted", "ask", "asking", "asked", "request", "requests",
+  "requested", "match", "matches", "matching", "course", "courses", "program",
+  "programs", "yet", "don", "didn", "doesn", "isn", "aren", "wasn", "weren",
+  "won", "wouldn", "couldn", "shouldn", "haven", "hasn", "hadn",
 ]);
 
 function extractTopicKeywords(query: string): string[] {
@@ -927,6 +956,22 @@ function expandWithSynonyms(keywords: string[]): string[] {
 const singleTokenTerms = (terms: string[]): string[] =>
   terms.filter((t) => !/\s/.test(t.trim()));
 
+// THE OFFERINGS BUILDER CAN EXPRESS A PHRASE (2026-09-18, S273). `a:* <-> b:*`
+// is valid tsquery syntax — verified live: to_tsquery('english', 'vocational:*
+// <-> nursing:*') parses to 'vocat':* <-> 'nurs':* and matches "Licensed
+// Vocational Nursing" and "Transition to Vocational Nursing", not "Vocational
+// ESL" and not "Nursing: Vocational/Practical" (adjacency is directional).
+// Until this, the offerings route dropped every phrase through singleTokenTerms,
+// so an LVN question reached the Vocational Nursing TOP (44 colleges) only where
+// a course title happened to spell "LVN" — the RN bridges — and no LVN course
+// list ever reached the model. Each phrase is parenthesized so the OR-join
+// cannot rebind it. singleTokenTerms stays for the v1 exhibit fallback.
+const tsQueryFromTerms = (terms: Array<string>): string =>
+  terms.map((t) => t.trim()).filter(Boolean).map((t) =>
+    /\s/.test(t)
+      ? "(" + t.split(/\s+/).map((w) => `${w}:*`).join(" <-> ") + ")"
+      : `${t}:*`).join(" | ");
+
 // ── Topic-based exhibit search ─────────────────────────────────
 async function searchExhibitsByTopic(
   query: string,
@@ -1036,16 +1081,20 @@ async function searchExhibitsByTopic(
 // for an adoption recommendation when a college teaches a discipline but hasn't
 // articulated the credential yet (e.g. NCCER carpentry). Reads coci_college_offerings
 // via search_college_offerings (rollup by college x TOP program, + region/county).
-async function searchCollegeOfferings(query: string, sb: any): Promise<any[] | null> {
+async function searchCollegeOfferings(query: string, sb: any, anchor: any | null = null): Promise<any[] | null> {
   const rawKeywords = extractTopicKeywords(query);
   if (rawKeywords.length === 0) return null;
   const keywords = expandWithSynonyms(rawKeywords);
-  const tsQuery = singleTokenTerms(keywords).map((k) => `${k}:*`).join(" | ");
+  const tsQuery = tsQueryFromTerms(keywords);
   const { data, error } = await sb.rpc("search_college_offerings", {
     search_query: tsQuery,
     college_filter: null,
     result_limit: 150, // generous — a noisy multi-keyword query must not truncate a
                        // relevant college out (the Q1 El-Camino false-negative)
+    // A PLACE named in the question orders the rows nearest it INSIDE the RPC
+    // (2026-09-18), so the limit above cannot cut the local colleges out.
+    anchor_county: anchor?.county ?? null,
+    anchor_region: anchor?.region ?? null,
   });
   if (error || !data || data.length === 0) return null;
   return data;
@@ -1075,7 +1124,7 @@ async function searchCollegeOfferings(query: string, sb: any): Promise<any[] | n
 // Returns null when the RPC is absent, which is the state until the migration in
 // chatbox/supabase_search_college_programs.sql is applied. That is deliberate:
 // an unmigrated database costs Sierra this one section and nothing else.
-async function searchCollegePrograms(query: string, sb: any): Promise<any[] | null> {
+async function searchCollegePrograms(query: string, sb: any, anchor: any | null = null): Promise<any[] | null> {
   const rawKeywords = extractTopicKeywords(query);
   if (rawKeywords.length === 0) return null;
   const keywords = expandWithSynonyms(rawKeywords);
@@ -1083,6 +1132,10 @@ async function searchCollegePrograms(query: string, sb: any): Promise<any[] | nu
     search_terms: keywords,
     college_filter: null,
     result_limit: 150,
+    // A PLACE named in the question orders the rows nearest it INSIDE the RPC
+    // (2026-09-18), so the limit above cannot cut the local colleges out.
+    anchor_county: anchor?.county ?? null,
+    anchor_region: anchor?.region ?? null,
   });
   if (error) {
     console.error("search_college_programs unavailable:", error.message);
@@ -1342,6 +1395,19 @@ function fmtN(n: any): string {
  * tokens are useless on their own — "peace" and "officer" separately match
  * nothing a person meant. We probe pairs FIRST for that reason.
  */
+// PHRASE SYNONYMS RIDE ALONG AS PROBES (2026-09-18, S273). The curated names use
+// the long form — "Acute Care Nursing Assistant", "Licensed Vocational Nurse
+// (LVN) License" — and a student writes "cna" and "lvn". The synonym families
+// bridge the two, and a PHRASE from a family is precise where a single-token
+// synonym ("health", "clinical") would drag in neighbors. Measured live:
+// search_credentials_any('cna') returns the CNA certification and Cisco's CCNA;
+// ('nursing assistant') returns Acute Care Nursing Assistant — the one
+// CNA-to-LVN precedent in MAP (Chaffey, 6 units in NURVN 414 Vocational Nursing
+// Foundations) — which the raw probes never asked for.
+function phraseSynonymProbes(kws: Array<string>): Array<string> {
+  return expandWithSynonyms(kws).filter((t) => /\s/.test(t));
+}
+
 async function fetchStatewideRecommendations(query: string, sb: any): Promise<any[] | null> {
   const kws = extractTopicKeywords(query);
   if (kws.length === 0) return null;
@@ -1349,11 +1415,14 @@ async function fetchStatewideRecommendations(query: string, sb: any): Promise<an
   // Adjacent pairs first (longest, most specific), then singles. Capped so a
   // rambling question cannot fan out into a dozen round-trips.
   const probes: string[] = [];
-  for (let i = 0; i < kws.length - 1 && probes.length < 4; i++) probes.push(`${kws[i]} ${kws[i + 1]}`);
+  for (let i = 0; i < kws.length - 1 && probes.length < 4; i++) {
+    if (kws[i] !== kws[i + 1]) probes.push(`${kws[i]} ${kws[i + 1]}`);
+  }
   for (const k of kws.slice(0, 4)) if (!probes.includes(k)) probes.push(k);
+  for (const p of phraseSynonymProbes(kws)) if (!probes.includes(p)) probes.push(p);
 
   const byTitle = new Map<string, any>();
-  for (const asked of probes.slice(0, 8)) {
+  for (const asked of probes.slice(0, 10)) {
     const { data, error } = await sb.rpc("search_statewide_recommendations", {
       asked, result_limit: 4,
     });
@@ -1390,11 +1459,14 @@ async function fetchAnyCredentials(query: string, sb: any): Promise<any[] | null
   // worker, license] and "iron" was NEVER asked — while search_credentials_any
   // ('iron') returns 25 rows. The subject of the sentence fell off the end.
   const probes: string[] = [];
-  for (let i = 0; i < kws.length - 1 && probes.length < 4; i++) probes.push(`${kws[i]} ${kws[i + 1]}`);
+  for (let i = 0; i < kws.length - 1 && probes.length < 4; i++) {
+    if (kws[i] !== kws[i + 1]) probes.push(`${kws[i]} ${kws[i + 1]}`);
+  }
   for (const k of kws.slice(0, 4)) if (!probes.includes(k)) probes.push(k);
+  for (const p of phraseSynonymProbes(kws)) if (!probes.includes(p)) probes.push(p);
 
   const byTitle = new Map<string, any>();
-  for (const asked of probes.slice(0, 8)) {
+  for (const asked of probes.slice(0, 10)) {
     const { data, error } = await sb.rpc("search_credentials_any", { asked, result_limit: 3 });
     if (error || !data) continue;
     for (const r of data) {
@@ -1434,11 +1506,14 @@ async function fetchCollegeCredentials(
   const kws = extractTopicKeywords(query);
   if (kws.length === 0) return null;
   const probes: string[] = [];
-  for (let i = 0; i < kws.length - 1 && probes.length < 4; i++) probes.push(`${kws[i]} ${kws[i + 1]}`);
+  for (let i = 0; i < kws.length - 1 && probes.length < 4; i++) {
+    if (kws[i] !== kws[i + 1]) probes.push(`${kws[i]} ${kws[i + 1]}`);
+  }
   for (const k of kws.slice(0, 4)) if (!probes.includes(k)) probes.push(k);
+  for (const p of phraseSynonymProbes(kws)) if (!probes.includes(p)) probes.push(p);
 
   const byTitle = new Map<string, any>();
-  for (const asked of probes.slice(0, 8)) {
+  for (const asked of probes.slice(0, 10)) {
     const { data, error } = await sb.rpc("search_college_credentials", {
       asked, college, result_limit: 8,
     });
@@ -1525,11 +1600,14 @@ async function fetchCredentialVolume(query: string, sb: any): Promise<any[] | nu
   const kws = extractTopicKeywords(query);
   if (kws.length === 0) return null;
   const probes: string[] = [];
-  for (let i = 0; i < kws.length - 1 && probes.length < 4; i++) probes.push(`${kws[i]} ${kws[i + 1]}`);
+  for (let i = 0; i < kws.length - 1 && probes.length < 4; i++) {
+    if (kws[i] !== kws[i + 1]) probes.push(`${kws[i]} ${kws[i + 1]}`);
+  }
   for (const k of kws.slice(0, 4)) if (!probes.includes(k)) probes.push(k);
+  for (const p of phraseSynonymProbes(kws)) if (!probes.includes(p)) probes.push(p);
 
   const byTitle = new Map<string, any>();
-  for (const asked of probes.slice(0, 8)) {
+  for (const asked of probes.slice(0, 10)) {
     const { data, error } = await sb.rpc("search_credential_volume", { asked, result_limit: 6 });
     if (error || !data) continue;
     for (const r of data) {
@@ -2134,6 +2212,91 @@ function buildCreditContext(cs: any): string {
   return out;
 }
 
+// ── Place anchor: a county or region named in the question (2026-09-18) ──────
+// ⚠ A PLACE IS AN ANCHOR, NOT A COLLEGE (S273). Sam's test question on v67 —
+// "I have a cna cert and I want to go to a college in orange county. What CNA
+// courses at the colleges match LVN courses so I can ask for credit?" — went
+// three ways wrong at once, and all three came from the same gap:
+//   · "orange" ilike-matched Orange Coast College and North Orange Continuing
+//     Education, so the answer was about two colleges nobody had asked about;
+//   · askedGeo comes only from a RESOLVED college, so the county anchored
+//     nothing and both catalog lists fell back to volume order — the seven LVN
+//     programs she named were in Sacramento, Butte, Humboldt, Madera, Siskiyou
+//     and Los Angeles counties;
+//   · "orange" and "county" went to every keyword route as live terms.
+// college_geo already holds a county and a region for every college. This
+// recognizes one named in the question, anchors on it, and STRIPS it from the
+// text the college matcher and the keyword routes see. A named college still
+// wins: its own geography is the anchor, and a college name never carries the
+// word "county" (which is why a county needs that word beside it — "Riverside"
+// alone is a college). Regions match as bare phrases of two or more words, and
+// never one that is part of a college name ("Los Angeles" is in nine).
+const PLACE_ALIASES: Record<string, string> = {
+  "la county": "Los Angeles", "l.a. county": "Los Angeles", "oc": "Orange",
+};
+function resolveAskedPlace(text: string, geoMap: Map<string, any> | null): any | null {
+  if (!text || !geoMap || geoMap.size === 0) return null;
+  const regionOf = new Map<string, string>();
+  const regions = new Set<string>();
+  for (const g of geoMap.values()) {
+    if (g && g.county && g.region && !regionOf.has(g.county)) regionOf.set(g.county, g.region);
+    if (g && g.region) regions.add(g.region);
+  }
+  const collegeNames: Array<string> = [];
+  for (const name of geoMap.keys()) collegeNames.push(String(name).toLowerCase());
+  const esc = (s: string) => s.toLowerCase()
+    .replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/\s+/g, "\\s+");
+  let best: any = null;
+  const consider = (county: any, region: any, pattern: string) => {
+    const m = new RegExp("\\b" + pattern + "\\b", "i").exec(text);
+    if (m && (!best || m[0].length > best.match.length)) {
+      best = { county, region, match: m[0], index: m.index };
+    }
+  };
+  for (const [county, region] of regionOf) consider(county, region, esc(county) + "\\s+county");
+  for (const [alias, county] of Object.entries(PLACE_ALIASES)) {
+    if (regionOf.has(county)) consider(county, regionOf.get(county) || null, esc(alias));
+  }
+  if (!best) {
+    for (const region of regions) {
+      if (!/\s/.test(region)) continue;
+      const low = region.toLowerCase();
+      if (collegeNames.some((n) => n.includes(low))) continue;
+      consider(null, region, esc(region));
+    }
+  }
+  if (!best) return null;
+  const stripped = (text.slice(0, best.index) + " " + text.slice(best.index + best.match.length))
+    .replace(/\s{2,}/g, " ").trim();
+  return {
+    county: best.county,
+    region: best.region,
+    label: best.county ? `${best.county} County` : best.region,
+    stripped,
+  };
+}
+
+// The block the model reads where a college profile would have been: which
+// colleges ARE in the place, and what to do when none of them has the thing.
+function buildPlaceContext(place: any | null, geoMap: Map<string, any> | null): string {
+  if (!place || !geoMap) return "";
+  const here: Array<string> = [];
+  for (const [college, g] of geoMap) {
+    if (!g) continue;
+    if (place.county ? g.county === place.county : g.region === place.region) here.push(college);
+  }
+  here.sort();
+  let s = `\n\n--- THE VISITOR'S PLACE: ${place.label}`;
+  if (place.county && place.region && place.region !== place.label) s += ` (${place.region} region)`;
+  s += ` ---\n`;
+  s += `The visitor named a PLACE, not a college. Treat it as home: every ranked list below is ordered nearest this place first.\n`;
+  s += here.length
+    ? `Community colleges in ${place.label} (${here.length}): ${here.join("; ")}.\n`
+    : `No community college in the geography table sits in ${place.label}; rank by the nearest region instead.\n`;
+  s += `Lead with what the colleges in ${place.label} teach and award. When none of them has what was asked, the catalog sections say so — repeat it plainly, then name the nearest colleges that do, with their county, so the visitor can judge the distance. Never present a college outside ${place.label} as if it were local, and never guess at a college's catalog: name only courses and programs that appear in the context.\n`;
+  return s;
+}
+
 // Proximity band for ranking: same county (2) > same region (1) > elsewhere (0).
 // Returns 0 for every college when no home college is known, which leaves the
 // pre-existing volume ordering untouched.
@@ -2237,6 +2400,16 @@ function buildOfferingsContext(
     }
   }
 
+  // A PLACE anchor with no college in it is a fact the model must be TOLD, not
+  // left to infer from a list ordered nearest-first (2026-09-18): the header
+  // says the list is not exhaustive, so without this line the model hedges
+  // ("my data only surfaced two") instead of saying what the catalog shows.
+  if (askedGeo && askedGeo.label && !askedCollege) {
+    const here = others.filter(([, g]) => proximityBand(g, askedGeo) >= (askedGeo.county ? 2 : 1));
+    ctx += here.length
+      ? `\n### In ${askedGeo.label}: ${here.length} college(s) teach in this area — they are listed first below.\n`
+      : `\n### NO college in ${askedGeo.label} teaches courses matching this in the current COCI catalog. Say so plainly, then offer the nearest colleges below (county shown) as the realistic route, with the standing caveat that teaching is not a guarantee of credit.\n`;
+  }
   if (others.length) {
     ctx += `\n### ${askedCollege ? "Other colleges" : "Colleges"} that teach this (nearest first when a home college is known):\n`;
     for (const [college, g] of others.slice(0, 10)) ctx += fmtCollege(college, g);
@@ -2319,6 +2492,14 @@ function buildProgramsContext(
   if (askedCollege) {
     if (askedRaw) ctx += `\n### ${askedCollege} — what it awards in this area:` + fmtCollege(askedCollege, askedRaw);
     else ctx += `\n### ${askedCollege} has no matching program in the current COCI export — say you are not certain from the data at hand rather than that it has none.\n`;
+  }
+  // Same fact, same reason as the offerings builder: a county with no matching
+  // program is an ANSWER, and the model must not soften it into "not certain".
+  if (askedGeo && askedGeo.label && !askedCollege) {
+    const here = others.filter(([, g]) => proximityBand(g, askedGeo) >= (askedGeo.county ? 2 : 1));
+    ctx += here.length
+      ? `\n### In ${askedGeo.label}: ${here.length} college(s) have a matching program — they are listed first below. Read each title and award before calling any of them the program asked for (a bridge such as "LVN to RN" is for people who already hold the license).\n`
+      : `\n### NO college in ${askedGeo.label} has a matching program in the current COCI program export. Say so plainly, then name the nearest colleges below that award it, with their county.\n`;
   }
   if (others.length) {
     ctx += `\n### ${askedCollege ? "Other colleges" : "Colleges"} with a matching program (nearest first when a home college is known):\n`;
@@ -2797,6 +2978,8 @@ const OFFERINGS_RULE = `\n\nABOUT THE "COURSE CATALOG / WHICH COLLEGES TEACH THI
 - DISTANCE IS A FACT, NOT A FILTER. Never suppress the nearest teaching college just because it is far. Name it and STATE THE DISTANCE PLAINLY using the county/region provided — "the nearest college teaching this is <college>, in <county>, which is a fair way from you" — and let the visitor judge whether it is worth it. Withholding a distant option leaves someone who would happily travel, or study online, with nothing at all. State it honestly; do not sell it, and do not apologise for it.
 - IF ALL THREE PARTS COME UP EMPTY — no college has articulated it, and no nearby college teaches it — SAY SO PLAINLY rather than padding the answer. Then give the two things that still help: (a) Credit for Being You, where they can record the credential and see their options across every California community college as they change; and (b) an invitation to email the MAP team at MAP@rccd.edu so the gap is on record. Be explicit that flagging it is genuinely useful — an unmet request is how the system learns a credential is in demand and worth building. Never invent a college, a course or an articulation to avoid an empty answer.
 - ALWAYS add that teaching a course is not a guarantee of credit — the student/organization should contact the college's CPL coordinator to request a review. Never claim an articulation exists when only a course is taught.
+- WHEN THE VISITOR NAMED A PLACE (a county or a region) RATHER THAN A COLLEGE, the context carries a "THE VISITOR'S PLACE" block and each catalog section says whether any college IN that place matches. Treat the place as home: lead with its colleges, and when a section says none of them matches, say so plainly and name the nearest colleges that do, with their county. Never answer a county question from whichever college happens to share a word with it.
+- WHEN ASKED WHICH COURSES A CREDENTIAL COULD COUNT TOWARD ("what CNA courses match LVN courses"), work from the data in front of you: the course lines in the catalog section for the program asked about, and the credit-recommendation precedents in the credential record (how adopter colleges articulated it — course and units). Name only courses that appear in the context, and present matches as what to ask the college's CPL coordinator to review — faculty decide the award. Where the context carries no course list for that program, say which college teaches it and that the course-level match is the college's to confirm.
 - The catalog list shows the TOP matching colleges, NOT an exhaustive list. NEVER conclude that a college does NOT teach a subject just because it isn't shown — many colleges that teach it may not appear. If a specific college the visitor named is not in the list, do NOT say it lacks the courses; say you're not certain from the data at hand and suggest checking that college's catalog or CPL coordinator.`;
 
 const PROGRAMS_RULE = `\n\nABOUT THE "PROGRAM CATALOG / WHICH COLLEGES AWARD THIS" SECTION (if present): this is the set of DEGREES AND CERTIFICATES a college confers, from the COCI program export. It is a THIRD thing, distinct from both sections above — the exhibit list is what a college has already ARTICULATED for CPL, the course catalog is what it TEACHES, and this is what a student can actually EARN there. A college can teach courses in a field and confer no award in it.
@@ -3874,29 +4057,45 @@ Deno.serve(async (req: Request) => {
 
     const sb = createClient(SUPABASE_URL, SUPABASE_SERVICE_KEY);
 
-    // 1. Generate query embedding (over the retrieval text)
+    // 1. Generate query embedding (over the retrieval text) — and read the
+    //    geography table beside it, because the PLACE parse below needs the
+    //    county and region names BEFORE college detection runs (2026-09-18).
+    //    Concurrent with the embedding, so the read costs no wall time.
     // @ts-ignore
     const session = new Supabase.ai.Session("gte-small");
-    const queryEmbedding = await session.run(searchText, {
-      mean_pool: true,
-      normalize: true,
-    });
+    const [queryEmbedding, geoMap] = await Promise.all([
+      session.run(searchText, { mean_pool: true, normalize: true }),
+      fetchCollegeGeoMap(sb),                 // region/county for every college (v30) — now before detection
+    ]);
+
+    /* ⚠ A PLACE IS AN ANCHOR, NOT A COLLEGE (2026-09-18, S273; the measured
+     * failure is on resolveAskedPlace). The place anchors askedGeo and the
+     * anchor_county/anchor_region the catalog RPCs order by, and is STRIPPED
+     * from the text the college matcher and the keyword routes see — "orange"
+     * and "county" are never topic words. A place named in an EARLIER turn
+     * still counts: Sam's second question, "What CNA courses match LVN courses
+     * so I can ask for credit…", carried no place and v67 forgot Orange County
+     * entirely. A college named in the question still wins over the place. */
+    const placeNow = resolveAskedPlace(searchText, geoMap);
+    const placePrior = placeNow ? null : resolveAskedPlace(priorUserText, geoMap);
+    const askedPlace = placeNow || placePrior;
+    const placeAnchor = askedPlace ? { county: askedPlace.county, region: askedPlace.region, label: askedPlace.label } : null;
+    const routeText = placeNow ? placeNow.stripped : searchText;
 
     // 2. Vector search + college detection + live metrics + topic search +
     //    course-catalog offerings + team guidance (parallel)
-    const [searchResult, collegeProfile, liveMetrics, topicResults, offeringsResults, programsResults, teamGuidance, geoMap, creditData, viewer] = await Promise.all([
+    const [searchResult, collegeProfile, liveMetrics, topicResults, offeringsResults, programsResults, teamGuidance, creditData, viewer] = await Promise.all([
       sb.rpc("match_document_sections", {
         query_embedding: Array.from(queryEmbedding),
         match_threshold: MATCH_THRESHOLD,
         match_count: MATCH_COUNT,
       }),
-      detectAndFetchCollegeProfile(searchText, sb),
+      detectAndFetchCollegeProfile(routeText, sb),
       fetchLiveMetrics(),
-      searchExhibitsByTopic(searchText, sb), // earned-exhibit set (no college filter)
-      searchCollegeOfferings(searchText, sb), // course catalog: who TEACHES this
-      searchCollegePrograms(searchText, sb),  // program catalog: who AWARDS this (v67)
+      searchExhibitsByTopic(routeText, sb), // earned-exhibit set (no college filter)
+      searchCollegeOfferings(routeText, sb, placeAnchor), // course catalog: who TEACHES this (place-anchored v68)
+      searchCollegePrograms(routeText, sb, placeAnchor),  // program catalog: who AWARDS this (v67; place-anchored v68)
       fetchTeamGuidance(sb, hostSurface),     // sierra_guidance active rows (v25; surface-scoped v56)
-      fetchCollegeGeoMap(sb),                 // region/county for every college (v30)
       fetchCreditData(sb),                    // published credit-disposition aggregates (v36)
       deriveViewer(req.headers),              // who is asking, from the credential — never the body (v66)
     ]);
@@ -3967,7 +4166,7 @@ Deno.serve(async (req: Request) => {
     // The home college's own region/county — the anchor BOTH lists rank against.
     // Null whenever the question names no college, which leaves every list in its
     // previous volume-first order.
-    const askedGeo = singleProfile ? geoMap.get(singleProfile.college) || null : null;
+    const askedGeo = singleProfile ? geoMap.get(singleProfile.college) || null : placeAnchor;
 
     if (singleProfile && topicResults && topicResults.length > 0) {
       // COMBINED MODE: both college and topic detected
@@ -4009,13 +4208,19 @@ Deno.serve(async (req: Request) => {
     }
     // else: GENERAL MODE — just RAG + live metrics
 
+    // A PLACE with no college resolved: the anchor block goes where the college
+    // profile would have gone, so the model reads "home" before any list (v68).
+    if (askedPlace && !singleProfile && !(Array.isArray(resolvedProfile) && resolvedProfile.length > 0)) {
+      collegeContext = buildPlaceContext(askedPlace, geoMap) + collegeContext;
+    }
+
     // Course-catalog offerings context — WHAT colleges teach (the adoption basis).
     // Available in every mode; ranked against the same askedGeo anchor as the
     // exhibit list above, with geoMap filling in any row the RPC left ungeocoded.
     let offeringsContext = "";
     if (offeringsResults && offeringsResults.length > 0) {
       const askedCollege = singleProfile?.college || null;
-      const coreKeywords = expandWithSynonyms(extractTopicKeywords(searchText));
+      const coreKeywords = expandWithSynonyms(extractTopicKeywords(routeText));
       offeringsContext = buildOfferingsContext(offeringsResults, askedCollege, askedGeo, coreKeywords, geoMap);
     }
 
@@ -4068,10 +4273,10 @@ Deno.serve(async (req: Request) => {
     await Promise.all([
       (async () => {
         try {
-          stdRecs = await fetchStatewideRecommendations(searchText, sb);
+          stdRecs = await fetchStatewideRecommendations(routeText, sb);
           anyCreds = stdRecs && stdRecs.length > 0
             ? null
-            : await fetchAnyCredentials(searchText, sb);
+            : await fetchAnyCredentials(routeText, sb);
         } catch (e) {
           console.error("credential lookup failed:", e);
         }
@@ -4083,7 +4288,7 @@ Deno.serve(async (req: Request) => {
       (async () => {
         try {
           collegeCreds = await fetchCollegeCredentials(
-            searchText, singleProfile?.college || null, sb);
+            routeText, singleProfile?.college || null, sb);
         } catch (e) {
           console.error("college credential lookup failed:", e);
         }
@@ -4091,7 +4296,7 @@ Deno.serve(async (req: Request) => {
       (async () => {
         try {
           const both = await Promise.all([
-            fetchCredentialVolume(searchText, sb),
+            fetchCredentialVolume(routeText, sb),
             fetchAdoptionOpportunities(singleProfile?.college || null, sb),
           ]);
           vol = both[0];
