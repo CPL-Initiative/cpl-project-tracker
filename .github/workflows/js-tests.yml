@@ -132,6 +132,15 @@ jobs:
       # shapes, idempotence, and that genuine text survives. Pure stdlib.
       - name: Course-title mojibake repair (kb/_text_repair.py)
         run: python3 tests/course_title_mojibake_test.py
+      # Offerings sync chunk retry (S274) — the merge's path-triggered catalog
+      # sync died twice on a 4,000-row chunk under the authenticator role's 8 s
+      # statement_timeout (57014) and left coci_college_offerings LIVE at 12,000
+      # and then 8,000 of 16,097 rows while Sierra answered from it. Chunks are
+      # 1,000 now and a cancelled chunk retries at half size down to 250; any
+      # other error still stops the run; a cancelled first chunk truncates again
+      # on retry and a later one never does. Pure stdlib, no network.
+      - name: Offerings sync chunk retry (chatbox/sync_coci_offerings.py)
+        run: python3 tests/coci_offerings_sync_chunk_test.py
       - name: My College public layer — suppression properties
         run: python3 tests/college_briefing_publish_suppression_test.py
       # Re-key chain guard (Session 224) — a re-mint alias map can CHAIN (one

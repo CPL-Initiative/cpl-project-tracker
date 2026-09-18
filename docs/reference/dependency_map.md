@@ -141,8 +141,6 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | Dataset | Read by | Written by |
 |---|---|---|
 | `cobi_rls_gates` | tabs: `admin` | — |
-| `coci_offerings_replace` | scripts: `chatbox/sync_coci_offerings.py` | — |
-| `coci_programs_replace` | scripts: `chatbox/sync_coci_offerings.py` | — |
 | `college_adoption_opportunities` | `edgefn:cpl-chat` | — |
 | `college_geo_replace` | scripts: `chatbox/sync_coci_offerings.py` | — |
 | `cpl_funding_optin_review` | tabs: `college-briefing`, `implementation-funding` | — |
@@ -871,5 +869,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 84 Supabase tables · 32 RPCs · 5 edge functions · 474 file
+Coverage: 84 Supabase tables · 30 RPCs · 5 edge functions · 474 file
 datasets · 143 external services · 340 consumers · 34 workflows · 37 tabs.
