@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 470,
+   "count": 472,
    "docs": [
     {
      "created": "2026-08-14",
@@ -4111,6 +4111,27 @@
      "updated": "2026-08-21"
     },
     {
+     "created": "2026-09-18",
+     "governs": [
+      "chatbox/supabase/functions/cpl-chat/index.ts",
+      "chatbox/smoke_test.sh",
+      "sierra_rule_defaults.js"
+     ],
+     "path": "docs/kb-notes/methodology-an-inside-term-leaks-through-the-context-not-the-prose.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "sierra",
+      "vocabulary",
+      "plain-words",
+      "prompting",
+      "retrieval"
+     ],
+     "title": "An inside term leaks through the context, never through the prose rules",
+     "type": "methodology",
+     "updated": "2026-09-18"
+    },
+    {
      "created": "2026-08-14",
      "governs": [
       "reviewer_signin.js",
@@ -7546,6 +7567,28 @@
      "title": "Two sessions fixing one guard may both be right \u2014 measure before you pick",
      "type": "methodology",
      "updated": "2026-09-10"
+    },
+    {
+     "created": "2026-09-18",
+     "governs": [
+      "chatbox/supabase_program_typical_courses.sql",
+      "chatbox/verify_program_typical_courses.sql",
+      "chatbox/supabase/functions/cpl-chat/index.ts",
+      "tests/sierra_prospective_credit.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-typical-is-a-count-of-colleges-across-the-whole-catalog.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "sierra",
+      "retrieval",
+      "catalog",
+      "prospective-credit",
+      "aggregation"
+     ],
+     "title": "Typical\" is a count of colleges across the whole catalog \u2014 generalize when the visitor's college is unnamed",
+     "type": "methodology",
+     "updated": "2026-09-18"
     },
     {
      "created": "2026-06-11",
@@ -17915,5 +17958,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 930
+ "total": 932
 }

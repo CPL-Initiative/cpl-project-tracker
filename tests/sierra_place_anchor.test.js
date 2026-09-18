@@ -184,7 +184,7 @@ block("3. the builders lead with the place", () => {
     /LVN to RN.*already hold the license/.test(pc));
   const none = G.buildProgramsContext(PROGRAMS.filter((r) => geoMap.get(r.college).county !== "Orange"), null, anchor, geoMap);
   check("(3) ⭐ programs: a county with NO matching program is told so, in words",
-    /### The current COCI program export lists no college in Orange County with a matching program/.test(none), none);
+    /### The current program catalog data lists no college in Orange County with a matching program/.test(none), none);
   check("(3) programs: …and the nearest still follow", headings(none).length > 0);
   const noAnchor = G.buildProgramsContext(PROGRAMS, null, null, geoMap);
   check("(3) programs: without an anchor there is no place line", !/In Orange County|lists no college in/.test(noAnchor));
@@ -202,7 +202,7 @@ block("3. the builders lead with the place", () => {
     "these rows only exist once the offerings query can express 'vocational nursing' as a phrase");
   const onone = G.buildOfferingsContext(OFFERINGS.filter((r) => geoMap.get(r.college).county !== "Orange"), null, anchor, core, geoMap);
   check("(3) ⭐ offerings: a county with NO teaching college is told so, in words",
-    /### The current COCI catalog lists no college in Orange County teaching courses matching this/.test(onone), onone);
+    /### The current catalog data lists no college in Orange County teaching courses matching this/.test(onone), onone);
   const region = { county: null, region: "Inland Empire", label: "Inland Empire" };
   const ie = G.buildOfferingsContext(OFFERINGS, null, region, core, geoMap);
   check("(3) a region-only anchor counts by region", /### In Inland Empire: 1 college\(s\) teach/.test(ie), ie);

@@ -63,6 +63,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `class` | scripts: `kb/_identity_daily_check.py` | — |
 | `cobi_live_session` | tabs: `admin` · pages: `CPL_Dashboard.html` | — |
 | `cobi_nav` | pages: `CPL_Dashboard.html` | tabs: `admin` |
+| `coci_college_offerings` | `edgefn:cpl-chat` | — |
 | `college` | scripts: `kb/_identity_daily_check.py` | — |
 | `college_geo` | `edgefn:cpl-chat` | — |
 | `cpl_adoption_interest` | tabs: `cpl-pathways` | tabs: `cpl-pathways` |
@@ -158,6 +159,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `match_document_sections` | `edgefn:cpl-chat` | — |
 | `nc_artifact_revise` | tabs: `nc-learning-partners` | — |
 | `nc_partner_note_revise` | tabs: `nc-learning-partners` | — |
+| `program_typical_courses` | scripts: `chatbox/smoke_test.sh` · `edgefn:cpl-chat` | — |
 | `search_college_credentials` | `edgefn:cpl-chat` | — |
 | `search_college_offerings` | scripts: `chatbox/smoke_test.sh` · `edgefn:cpl-chat` | — |
 | `search_college_programs` | scripts: `chatbox/smoke_test.sh` · `edgefn:cpl-chat` | — |
@@ -871,5 +873,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 84 Supabase tables · 30 RPCs · 5 edge functions · 476 file
+Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 476 file
 datasets · 143 external services · 340 consumers · 34 workflows · 37 tabs.

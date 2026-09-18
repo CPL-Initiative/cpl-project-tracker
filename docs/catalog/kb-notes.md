@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-470 document(s).
+472 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -226,6 +226,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [An incentive teaches where the finish line is](../kb-notes/methodology-an-incentive-teaches-where-the-finish-line-is.md) | methodology | published | 2026-08-06 | 2026-08-06 |
 | [An index is a write-path cost until a measurement says otherwise](../kb-notes/methodology-an-index-is-a-write-path-cost-until-measured.md) | methodology | published | 2026-09-17 | 2026-09-17 |
 | [An inline placeholder style outranks the CSS your module injects](../kb-notes/methodology-an-inline-placeholder-style-outranks-the-css-you-inject.md) | methodology | published | 2026-08-21 | 2026-08-21 |
+| [An inside term leaks through the context, never through the prose rules](../kb-notes/methodology-an-inside-term-leaks-through-the-context-not-the-prose.md) | methodology | published | 2026-09-18 | 2026-09-18 |
 | [An instruction that names another surface is a dependency nothing enforces](../kb-notes/methodology-an-instruction-naming-another-surface-is-an-unenforced-dependency.md) | methodology | published | 2026-08-14 | 2026-08-14 |
 | [An opportunity figure must be what peers ACHIEVED, not what the record allows](../kb-notes/methodology-an-opportunity-figure-must-be-what-peers-achieved.md) | methodology | published | 2026-08-17 | 2026-08-17 |
 | [An RLS-filtered read is not an error — it is an empty answer](../kb-notes/methodology-an-rls-filtered-read-is-not-an-error.md) | methodology | published | 2026-08-17 | 2026-08-17 |
@@ -397,6 +398,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Transitive closure is right for decisions and wrong for similarity](../kb-notes/methodology-transitive-closure-is-right-for-decisions-and-wrong-for-similarity.md) | methodology | published | 2026-08-24 | 2026-08-24 |
 | [Two expressions of one predicate will drift apart, and the drift is silent](../kb-notes/methodology-two-expressions-of-one-predicate-will-drift-apart.md) | methodology | published | 2026-09-09 | 2026-09-09 |
 | [Two sessions fixing one guard may both be right — measure before you pick](../kb-notes/methodology-two-fixes-to-one-guard-may-both-be-right.md) | methodology | published | 2026-09-10 | 2026-09-10 |
+| [Typical" is a count of colleges across the whole catalog — generalize when the visitor's college is unnamed](../kb-notes/methodology-typical-is-a-count-of-colleges-across-the-whole-catalog.md) | methodology | published | 2026-09-18 | 2026-09-18 |
 | [User-vocabulary category maps — curated JSON + anchored-pattern fallback](../kb-notes/methodology-user-vocabulary-category-maps.md) | methodology | published | 2026-06-11 | 2026-06-11 |
 | [Validate a derived metric against the expert's ranking before publishing it](../kb-notes/methodology-validate-a-derived-metric-against-expert-ranking.md) | methodology | published | 2026-08-06 | 2026-08-06 |
 | [Validate a supplied code column by its structural invariant, not by spot-checking values](../kb-notes/methodology-validate-a-code-column-by-its-structural-invariant.md) | methodology | published | 2026-08-12 | 2026-08-14 |

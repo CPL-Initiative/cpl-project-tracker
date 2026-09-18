@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-09-18T13:39:09.623Z",
+  "scraped_at": "2026-09-18T16:33:42.347Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -228,17 +228,17 @@
         },
         {
           "college": "Palo Verde College",
-          "students": 19,
-          "units": 222.75,
-          "avgUnits": 11.723684210526315,
-          "transcriptionRate": 87.9,
-          "avgTranscribed": 10.302631578947368,
+          "students": 20,
+          "units": 275.25,
+          "avgUnits": 13.7625,
+          "transcriptionRate": 71.1,
+          "avgTranscribed": 9.7875,
           "criteriaMetCount": 3,
           "militaryStudents": 9,
-          "nonMilitaryStudents": 10,
+          "nonMilitaryStudents": 11,
           "apprenticeStudents": 0,
-          "savings": 235608.75,
-          "yearImpact": 1090489.5,
+          "savings": 286271.25,
+          "yearImpact": 1339024.5,
           "transcribedUnits": 195.75
         }
       ]
@@ -1012,6 +1012,21 @@
           "transcribedUnits": 0
         },
         {
+          "college": "Cerro Coso Community College",
+          "students": 182,
+          "units": 885,
+          "avgUnits": 4.862637362637362,
+          "transcriptionRate": 0,
+          "avgTranscribed": 0,
+          "criteriaMetCount": 0,
+          "militaryStudents": 182,
+          "nonMilitaryStudents": 0,
+          "apprenticeStudents": 0,
+          "savings": 1531050,
+          "yearImpact": 5369295,
+          "transcribedUnits": 0
+        },
+        {
           "college": "College of San Mateo",
           "students": 182,
           "units": 546,
@@ -1024,21 +1039,6 @@
           "apprenticeStudents": 0,
           "savings": 934200,
           "yearImpact": 3276180,
-          "transcribedUnits": 0
-        },
-        {
-          "college": "Cerro Coso Community College",
-          "students": 181,
-          "units": 880,
-          "avgUnits": 4.861878453038674,
-          "transcriptionRate": 0,
-          "avgTranscribed": 0,
-          "criteriaMetCount": 0,
-          "militaryStudents": 181,
-          "nonMilitaryStudents": 0,
-          "apprenticeStudents": 0,
-          "savings": 1522400,
-          "yearImpact": 5338960,
           "transcribedUnits": 0
         },
         {
@@ -1162,6 +1162,21 @@
           "transcribedUnits": 0
         },
         {
+          "college": "Reedley College",
+          "students": 133,
+          "units": 535.5,
+          "avgUnits": 4.026315789473684,
+          "transcriptionRate": 0,
+          "avgTranscribed": 0,
+          "criteriaMetCount": 0,
+          "militaryStudents": 129,
+          "nonMilitaryStudents": 4,
+          "apprenticeStudents": 0,
+          "savings": 840352.5,
+          "yearImpact": 3098916,
+          "transcribedUnits": 0
+        },
+        {
           "college": "Irvine Valley College",
           "students": 133,
           "units": 393,
@@ -1174,21 +1189,6 @@
           "apprenticeStudents": 0,
           "savings": 674700,
           "yearImpact": 2366130,
-          "transcribedUnits": 0
-        },
-        {
-          "college": "Reedley College",
-          "students": 132,
-          "units": 534.5,
-          "avgUnits": 4.049242424242424,
-          "transcriptionRate": 0,
-          "avgTranscribed": 0,
-          "criteriaMetCount": 0,
-          "militaryStudents": 128,
-          "nonMilitaryStudents": 4,
-          "apprenticeStudents": 0,
-          "savings": 838622.5,
-          "yearImpact": 3092849,
           "transcribedUnits": 0
         },
         {
@@ -1757,15 +1757,15 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "51,728",
+      "value": "51,731",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "28,255"
+          "value": "28,257"
         },
         {
           "label": "Workforce/Other",
-          "value": "23,560"
+          "value": "23,561"
         },
         {
           "label": "Apprentice",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 51728,
-    "Units": 221653.65000000002,
+    "Students": 51731,
+    "Units": 221712.15000000002,
     "TranscribedUnits": 73473.45,
-    "Savings": 332234117.75,
-    "YearImpact": 1315197219.4,
-    "MilitaryStudents": 28255,
-    "NonMilitaryStudents": 23560,
+    "Savings": 332295160.25,
+    "YearImpact": 1315482156.4,
+    "MilitaryStudents": 28257,
+    "NonMilitaryStudents": 23561,
     "AprenticeStudents": 851,
-    "AverageUnits": 4.284983954531396,
-    "TranscribedAverage": 1.4203806449118466
+    "AverageUnits": 4.285866308403086,
+    "TranscribedAverage": 1.4202982737623475
   }
 }

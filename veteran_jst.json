@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-09-18T13:39:10.058092+00:00",
+  "scraped_at": "2026-09-18T16:33:42.808034+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 28255,
+    "jst": 28257,
     "star_colleges": 57
   },
   "computed_star_colleges": 57,
@@ -232,7 +232,7 @@
     },
     "Cerro Coso Community College": {
       "vets": 115,
-      "jst": 181,
+      "jst": 182,
       "star": true
     },
     "College of the Sequoias": {
@@ -297,7 +297,7 @@
     },
     "Reedley College": {
       "vets": 82,
-      "jst": 128,
+      "jst": 129,
       "star": true
     },
     "Lassen College": {
@@ -350,14 +350,14 @@
       "jst": 141,
       "star": false
     },
-    "Hartnell College": {
-      "vets": 106,
-      "jst": 63,
-      "star": false
-    },
     "Palo Verde College": {
       "vets": 24,
       "jst": 9,
+      "star": false
+    },
+    "Hartnell College": {
+      "vets": 106,
+      "jst": 63,
       "star": false
     },
     "Crafton Hills College": {
