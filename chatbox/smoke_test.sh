@@ -587,7 +587,15 @@ try:
     rows = json.loads(sys.stdin.read()); rows = rows if isinstance(rows, list) else []
 except Exception:
     rows = []
-cna = [r for r in rows if r.get("top_code") == "1230.30" and r.get("norm") == "nurse assistant"]
+# ⚠️ MATCH THE KEY AS A WORD SET, NOT A STRING (2026-09-18, S277). This read
+# `norm == "nurse assistant"` and reported 0 colleges the moment a normalizer
+# revision emitted the same words in another order, while the folding was
+# working perfectly (run 35399461350). cpl_course_title_norm does not sort --
+# typicalFoldKey() in the edge function does -- so a probe on the raw key must
+# not care about order either.
+def _key(s):
+    return " ".join(sorted(set((s or "").split())))
+cna = [r for r in rows if r.get("top_code") == "1230.30" and _key(r.get("norm")) == _key("nurse assistant")]
 lvn = [r for r in rows if r.get("top_code") == "1230.20"]
 print(len(rows), (cna[0].get("n_colleges", 0) if cna else 0), len(lvn), sep="|")
 ')
@@ -690,7 +698,7 @@ answer_must_not_match -i "los medanos|merritt college|city college of san franci
 # must not restate one course under several names. "Acute Care CNA", "CNA Acute
 # Care", "Acute Certified Nursing Assistant" and "Acute Care Theory for CNAs"
 # were four of the six rows v72 drew.
-answer_must_not_match -i "acute care cna[^a-z]|cna acute care|acute care theory for cnas" "7s ⭐ the quick list does not restate the acute-care course under its raw title variants (cpl_course_title_norm expands CNA and sorts the key; 22 colleges were split seven ways)"
+answer_must_not_match -i "acute care cna[^a-z]|cna acute care|acute care theory for cnas" "7s ⭐ the quick list does not restate the acute-care course under its raw title variants (cpl_course_title_norm expands CNA; 22 colleges were split seven ways)"
 answer_must_match -i "ask|request|review" "7s ⭐ frames the match as a request for review, never a determination"
 
 # Broad "who teaches this" — the catalog should surface colleges that TEACH

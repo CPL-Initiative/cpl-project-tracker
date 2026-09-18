@@ -47,8 +47,28 @@ begin
   s := public.cpl_course_title_norm('Advanced Medical Surgical Nursing');
   if s <> 'advanced medical surgical nurse' then raise exception 'A3 FAIL: advanced med-surg normalized to "%"', s; end if;
   -- The possessive: the punctuation strip leaves a lone "s", which is a stop word.
+  -- 'aide' folds to 'assistant' (S277), so this is the SAME course as above --
+  -- that fold is the point, and "Home Health Aide" stays its own group because
+  -- its other two words differ.
   s := public.cpl_course_title_norm('Nurse''s Aide');
-  if s <> 'nurse aide' then raise exception 'A3 FAIL: possessive normalized to "%"', s; end if;
+  if s <> 'nurse assistant' then raise exception 'A3 FAIL: possessive normalized to "%"', s; end if;
+  -- The abbreviation expands (S277): these five reached the quick list as five
+  -- separate courses, and 22 colleges teach one course between them.
+  s := public.cpl_course_title_norm('Acute Care Cna');
+  if s <> 'acute care nurse assistant' then raise exception 'A3 FAIL: acute care CNA normalized to "%"', s; end if;
+  s := public.cpl_course_title_norm('Acute Care Theory for CNAs');
+  if s <> 'acute care nurse assistant' then raise exception 'A3 FAIL: acute care CNAs normalized to "%"', s; end if;
+  s := public.cpl_course_title_norm('CNA /Acute Care Aide');
+  if s <> 'nurse assistant acute care' then raise exception 'A3 FAIL: CNA/acute aide normalized to "%"', s; end if;
+  -- ⚠️ The last two differ in ORDER only. That is folded by typicalFoldKey() in
+  -- the cpl-chat function, which sorts the content stems and unions the college
+  -- arrays; this function deliberately does NOT sort, so `norm` stays readable
+  -- for the smoke's anon probe, which matches it as a string.
+  s := public.cpl_course_title_norm('LVN Pharmacology');
+  if s <> 'vocational nurse pharmacology' then raise exception 'A3 FAIL: LVN pharmacology normalized to "%"', s; end if;
+  -- The expansion can repeat a word; the dedupe keeps first-occurrence order.
+  s := public.cpl_course_title_norm('CNA / Certified Nurse Assistant');
+  if s <> 'nurse assistant' then raise exception 'A3 FAIL: CNA + spelled-out normalized to "%"', s; end if;
   if public.cpl_course_title_norm(null) <> '' or public.cpl_course_title_norm('') <> '' then
     raise exception 'A3 FAIL: null/empty title must normalize to empty';
   end if;
