@@ -577,6 +577,21 @@ details.u-views:not([open]) .u-views-menu{display:none}   /* the flat list in th
 .u-face-line{margin:0;padding:5px clamp(12px,2vw,24px);font-size:.8rem;line-height:1.4;color:var(--text-muted);
   background:var(--surface-subtle);border-bottom:1px solid var(--border)}
 .u-face-line[hidden]{display:none}
+/* ⭐ THE READ-ONLY STATEMENT, ALWAYS PAINTED (Sam, 2026-09-18: "I want to share
+   COBI SkyView with some folks but I want to make sure it is read only view. I
+   don't see anywhere on the surface how to log in to curate").
+   ⚠️ THE PAGE SAID THIS THREE TIMES AND A READER COULD SEE NONE OF THEM. The
+   footer carrying "Nothing here writes to Supabase" is `main>footer`, which
+   `body.u-solo` hides; #prov carries the same sentence in a title attribute on
+   a masthead solo hides too; the third copy is a code comment. So the default
+   view — the one he would share — offered drag handles, a Move chip and a
+   "What this would write" panel with no account of what a drop does.
+   It lives INSIDE #u-full so it survives browser full screen, and OUTSIDE the
+   legend so folding the legend cannot take it away. Same band as the face line:
+   that token pair is already measured for contrast. */
+.u-ro-line{margin:0;padding:5px clamp(12px,2vw,24px);font-size:.8rem;line-height:1.4;
+  color:var(--text-muted);background:var(--surface-subtle);border-bottom:1px solid var(--border)}
+.u-ro-line strong{color:var(--text-strong)}
 /* the credentials reaching a course, in the panel and on the outline */
 .cpl-list{list-style:none;margin:.3em 0 0;padding:0}
 .cpl-list li{padding:.5em 0;border-top:1px solid var(--border)}

@@ -494,6 +494,14 @@ jobs:
         run: python3 tests/merge_candidate_queue_test.py
       - name: Alias chain single source (kb/alias_chain.py)
         run: python3 tests/alias_chain_single_source_test.py
+      # SkyView is BUILT (2026-09-18). prototype/skyview.html is assembled from
+      # prototype/ccr_atlas_v1.html and prototype/ccr_universe.js by
+      # prototype/build_ccr_atlas.py, and step 4d2 of daily-dashboard.yml re-runs
+      # that build whenever the unified-courses artifacts move. A change made in
+      # the artifact therefore survives review, merge and deploy, and is reverted
+      # by a cron run days later with nothing to point at. It happened on #1618.
+      - name: SkyView is built from its sources (prototype/build_ccr_atlas.py)
+        run: python3 tests/skyview_built_from_source_test.py
       - name: Stop-hook unpushed check (scripts/patch_stop_hook.py)
         run: python3 tests/stop_hook_git_check_test.py
       # Video context frame planner (Session 234) — scene detection is right for
