@@ -120,6 +120,13 @@ function build(opts) {
     runScripts: "dangerously", pretendToBeVisual: true,
     url: "https://example.org/prototype/skyview.html" + (opts.hash || ""),
     beforeParse(window) {
+    /* THE STAGE RUNG (Sam, 2026-09-18: "To position courses to merge needs at
+     * least team code auth to do"). Staging is gated on curationRung() >= 1,
+     * so a fixture that drags a course has to say who is dragging. The real
+     * page loads team_phrase.js; jsdom does not fetch external scripts, so the
+     * rung is declared here instead — deliberately, because a gate that failed
+     * open when its module is missing would be no gate at all. */
+    window.CPL_TEAM_PHRASE = { get: () => "fixture-team-phrase" };
       window.HTMLCanvasElement.prototype.getContext = function () { return fakeCtx(opts.log); };
       window.fetch = () => Promise.resolve({ ok: false, status: 404, json: () => Promise.reject(new Error("404")) });
       window.CPL_CCR_SKY = SKY;                       // the placement payload, inline (as CPL_CCR_CPL is for the face)
