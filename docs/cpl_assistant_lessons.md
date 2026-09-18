@@ -1244,3 +1244,123 @@ Sam judged it on whether it compared courses. The question's SHAPE belongs in
 the fixture, not only its nouns — 7c now reads for a course code and the word
 "review". And when a fact is hidden twice — first by a gate, then by a cap —
 removing the gate is not the fix; measuring which rows reach the model is.
+
+## 2026-09-18 — SkyCompass (S275): "nearest" got a distance, Sam read v69 in a browser, and v70 answers the direct question first
+
+**The ask (Sam's greeting, then his 05:55Z message, verbatim):** the greeting
+handed over the queue: confirm v69 held, give "nearest" a distance, a time
+limit on every retrieval RPC. Then, after reading v69's Orange County answer
+in a browser (`chat_interactions` `f49a11c2`): *"Sierra is still answering
+this test question wrong on a few accounts: 1. She says no OC colleges have
+LVN, which is flat wrong. 2. She doesn't answer the question directly and
+immediately looks for an exhibit when that wasn't the question asked. 3. She
+starts by breaking one of our Sierra training rules by saying, 'Great
+question.' Instead of giving the most direct answer to the direct question.
+Please see if you can fold solutions in as you work on the queue."*
+
+### v69 held overnight
+
+All four tables whole (offerings 16,097 / 120; programs 22,335 / 118;
+courses 141,696; geo 120); the 7c retrieval check by SQL (Orange leads with 6
+contiguous rows, 44 Licensed Vocational Nursing rows); `list_edge_functions`
+v69; the health cron green at 04:34Z; `function_logs` 03:52–05:33Z: 251
+lines, 0 unavailable, 0 EMPTY ANSWER, 0 errors. No human turn until Sam's at
+05:33Z.
+
+### "Nearest" has a distance (commit 2242aefe)
+
+Inside a proximity band the picks and the lists ordered by volume, which
+says nothing about distance: Pasadena and Southwestern led the Orange County
+LVN lists ahead of Long Beach City and Rio Hondo. No coordinate existed
+anywhere in the repo or the database, and the sandbox cannot reach IPEDS or
+the Census (both blocked by the egress proxy), so `COLLEGE_POINTS` is 119
+campus points to three decimals entered from public campus locations,
+approximate to about a mile, and the code says so. The anchor is the named
+college's campus or the mean of the campuses inside the named place
+(`placePoint`); `cmpKm` orders inside a band in all four lists, volume after;
+an anchor with no point falls back to volume byte for byte, which is why
+every existing fixture and assertion passed unchanged. Each heading carries
+"about N miles from the center of Orange County". Measured on the live
+Orange-anchored rows: Long Beach City 24 km, Rio Hondo 29, Mt. San Antonio 32.
+`lift_ts.js` strips `Array<number>` and not a tuple type, so the table is
+typed that way.
+
+### Sam's three readings (commit 2188a23f)
+
+1. **"No OC colleges have LVN, which is flat wrong."** Measured: the export
+   holds no Vocational Nursing entry program at an Orange County college —
+   Cypress, Golden West and Saddleback list LVN-to-RN bridges, no course sits
+   under TOP 1230.20 in the county — so v69's sentence was what the catalog
+   shows, phrased as a fact about the county, and every "NO college in the
+   place" line told the model to "say so plainly". Every such line now states
+   what the catalog shows and names the related programs there; smoke 7c
+   fails the flat form. Which Orange County college runs an LVN entry program
+   is his to name (`s271-sam-lvn-oc`, open since S271).
+2. **The exhibit table led.** The prompt's own precedence line — *if a
+   directive conflicts with the general instructions, the team guidance wins*
+   — let directive 674923db ("answer with the colleges that have ALREADY
+   articulated it, first and plainly") outrank PROSPECTIVE_RULE. The header
+   now scopes each directive to the question shape it names, with the
+   PROSPECTIVE CREDIT section as the signal; the LEAD bullet puts the
+   courses first and articulations after, only for the credential held.
+3. **"Great question."** Guidance row cafb92af says not to; the model wrote
+   "Great question to be asking". The cached preamble now says the first
+   sentence is the answer, never a remark about the question, and the smoke
+   fails every mode that opens with one.
+
+### The first A/B, and what the grid could not see (commit 01103aec)
+
+Run 35314469546: no regressions, the candidate fixed 7c's absence check, and
+its answer (`00b7168f`) opened with the ask, named the bridges and led with
+Long Beach City (about 15 miles), Rio Hondo and Mt. San Antonio. Read
+directly it showed two more things: no course code in its first 700
+characters (the ask in general terms, then the catalog, then the bridges,
+then the courses) and no Chaffey precedent ("only for the credential the
+visitor holds" read as excluding a same-kind credential). And the grid said
+"0 failing" over a preview log that ended SMOKE TEST FAILED: the compare
+counts four error shapes and the two new checks printed a fifth and a sixth.
+The LEAD bullet now names a course in the first sentence with the catalog
+sentence following in the same paragraph; a same-kind credential counts and
+CITE THE PRECEDENT names Chaffey's NURVN 414; every prose assertion prints a
+counted shape (the pre-existing name-count helper had the same gap) and block
+9 pins it; smoke 7c asserts the precedent; every curl carries a time limit
+(mode 12's four had none). Run 35316558438 on the fix: **candidate ALL MODES
+OK, no regressions**, both new 7c checks fixed; the answer (`ac2f4905`) opens
+*"Ask the CPL coordinator at Long Beach City College to review your CNA
+certificate against VN 220 — Transition to Vocational Nursing (4 units)"*,
+states the absence as the catalog's with the three bridges, leads with Long
+Beach (~15 miles), Rio Hondo and Mt. San Antonio, and cites Chaffey.
+
+### v70, and the route time limit
+
+#1611 squash-merged as `415b8e45` on green `test`; **v70 deployed 07:11Z**
+(run 35318209938) under Sam's standing "apply and deploy, hone as we go" and
+his "fold solutions in"; health and smoke dispatched after. The push-triggered
+smoke runs the branch's assertions against production and is red by
+construction until the deploy — one comment on the PR says so. The route time
+limit (`s273-fable-route-time-limits`) is built on PR #1612: one fetch wrapper
+on both supabase-js clients, every GET and rpc POST, 5,000 ms default,
+`CPL_ROUTE_TIMEOUT_MS` overrides with no deploy, table writes exempt, one log
+line per cut; `tests/sierra_route_time_limit.test.js` (22) proves the cut with
+a fetch that never answers — Node keeps no event loop alive for an
+`AbortSignal.timeout` timer, so the test holds a keep-alive or exits 0 with no
+report. A/B on that branch before its deploy.
+
+### Sam's decisions this run
+
+- The three readings, verbatim above (`cpl_memory`
+  `sam-v69-orange-county-answer-three-misses-2026-09-18`, a vault braindump).
+- Deploy v70: on the standing authorization, no fresh go asked
+  (`s275-deployed-v70-under-standing-authorization-2026-09-18`) — his to narrow.
+- Still his: which Orange County college runs an LVN entry program; the 381
+  garbled rows; auto-deploy on merge; whether guidance row 674923db should be
+  re-scoped in the Training tab.
+
+### The lesson under the lessons
+
+A reader who knows the ground is the test the grid cannot run. The smoke's
+bar (a course code and the word "review") was met, and the answer still read
+wrong to Sam three ways a regex did not see; his readings became fixtures the
+same hour. And an instrument that counts what it knows how to count reads
+"0 failing" over a failed run — a new check must fail in the shape the grid
+counts, or it was never measured.

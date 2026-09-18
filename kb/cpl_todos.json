@@ -1,26 +1,20 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-18",
-  "_session": 274,
-  "_status": "Version 69 is live (S274, 2026-09-18 03:53Z). Sierra now carries the full course lists for the matched programs at the nearest colleges, a neighbor-region band so Orange County's nearest LVN programs are in Los Angeles rather than Sacramento, a guard that stops Cisco's CCNA standing in for 'cna' and hiding the Chaffey precedent, and course titles repaired at the loader. Both A/Bs were clean; the deploy, health and smoke runs are recorded in the handoff. Sam reads the answer next. Version 68 (03:08Z) had answered the exhibit question instead of his, which in his words is: compare the CNA with the LVN program's courses so the student can ask a college that has not granted it. One anomaly from the merge itself: the catalog sync it triggered timed out twice and left the course catalog partial for forty minutes; the chunk fix merged, its sync restored the catalog at 04:36Z, and two smoke suites then passed every mode against version 69.",
+  "_session": 275,
+  "_status": "Version 70 is live (S275, 2026-09-18 07:11Z). Sierra's course lists and catalog lists now order nearest first inside a proximity band using a campus coordinate per college, so the Orange County LVN lists lead with Long Beach City and Rio Hondo, and every heading says about how many miles away a college is. Sam read version 69 in a browser and named three misses: 'no OC colleges have LVN' (the catalog lists only LVN-to-RN bridges in the county, so the answer now says what the catalog shows and names the bridges), the exhibit answer ahead of the direct one (the team-guidance rule for 'where does my credential earn credit' had been allowed to govern a different question), and a 'Great question' opener. Version 70 fixes all three, cites the Chaffey precedent, and the A/B was clean with no regressions. The retrieval time limit is built on PR #1612 and waits for its own A/B. Health is green; the post-deploy smoke failed one assertion — the answer's first sentence named an in-county CNA course before the LVN course — and fixing that is the next session's first build.",
   "items": [
     {
-      "id": "s274-sam-oc-question-v69",
-      "for": "Sam",
+      "id": "s275-fable-target-program-first",
+      "for": "Fable",
       "tab": "chatbot",
-      "text": "Version 69 is live (2026-09-18, 03:53Z). Ask the Orange County question again in a browser: 'I have a CNA certificate and I want to go to a college in Orange County. What CNA courses match LVN courses so I can ask for credit?' Your bar, in your words: compare the CNA with the LVN program's courses so the student can ask a college that has not granted it. Version 68 answered the exhibit question instead (no LVN course, no nearest LVN program, no Chaffey precedent). Version 69 carries the full course lists for the nearest Vocational Nursing programs, tells the assistant the target program is the one you want to enter, and asks it to present matches as a request to the CPL coordinator, citing Chaffey's NURVN 414. Tell us whether the answer now names the courses to ask about."
+      "text": "Make the first course come from the program the visitor wants to ENTER. Version 70's smoke answer opened by telling a CNA holder to ask Golden West about its CNA course (the program that trains what they already hold, in the county they named) before reaching Long Beach's VN 220. Label the held-credential program's section as background, render target programs first, and assert that the first 300 characters carry no CNA course code. A/B, merge, deploy, and read the answer."
     },
     {
       "id": "s274-sam-course-title-cleanup",
       "for": "Sam",
       "tab": "chatbot",
       "text": "Say go on deleting 381 garbled course-title rows. Sierra's course lists showed Pasadena's NURS 102 as 'Fundamentals of Vocational Nursing Ã¢â‚¬â€œ Theory'. The loaders are fixed so the next nightly sync writes clean titles, but the course table's sync only adds and never deletes, and its match key includes the title, so the 381 garbled rows (84 colleges) would sit beside the repaired ones and double the alignment candidates. The plan: after the first clean sync, delete rows whose title carries the garbled sequences, with a receipt listing each row so it can be put back. A shared-table write, so it waits for your go."
-    },
-    {
-      "id": "s274-fable-nearest-needs-distance",
-      "for": "Fable",
-      "tab": "chatbot",
-      "text": "Give 'nearest' a distance. The neighbor-region band puts Los Angeles, Inland Empire and San Diego colleges ahead of Sacramento for an Orange County question, but inside a band the order is by how many courses a college teaches, which says nothing about distance. A county-to-county distance table (centroids are enough) would let the course lists lead with Long Beach and Rio Hondo rather than whichever program is largest."
     },
     {
       "id": "s274-fable-offerings-replace-atomic",
@@ -38,7 +32,7 @@
       "id": "s273-fable-route-time-limits",
       "for": "Fable",
       "tab": "chatbot",
-      "text": "Give every retrieval lookup a time limit of its own inside the assistant (an AbortSignal on the RPC call), so one slow lookup can never hold the whole answer for 8 seconds. The lookups run together and the answer waits for the slowest; today the only limit is the database's. Pair it with the one-pass rewrite so the limit is a backstop rather than the fix."
+      "text": "Finish the retrieval time limit: PR #1612 is built and merged with main (every lookup gets a 5-second limit of its own, tunable by the CPL_ROUTE_TIMEOUT_MS secret without a deploy; table writes are exempt; each cut is logged). Run its A/B on the branch, read the preview logs for 'route time limit' lines, merge on green test, deploy, and read the logs again."
     },
     {
       "id": "s272-sam-autodeploy-ruling",
@@ -46,6 +40,50 @@
       "tab": "chatbot",
       "text": "Decide whether the assistant should deploy itself when we merge. Today its page goes live on merge and the function behind it waits for someone to push a button — the same gap that left Sierra dark for five days in September while every check said she was fine. Making it automatic removes that gap and also removes a human pause before a change reaches students. Our recommendation is to make it automatic and keep the button for undoing."
     },
+    {
+      "id": "s271-sam-mycollege-eyes",
+      "for": "Sam",
+      "tab": "my-college",
+      "text": "Open My College signed out and tell us it reads right. A college with withheld rows should show a 'Withheld to protect small student counts' line inside the breakdown, and the contacts list should say which roles are staff-only rather than calling them blank. Our automated check cannot load this page's data, so your eyes are the check."
+    },
+    {
+      "id": "s271-sam-lvn-oc",
+      "for": "Sam",
+      "tab": "chatbot",
+      "text": "Name the Orange County college that runs LVN ENTRY training, if one does. You called 'no OC colleges have LVN' flat wrong (2026-09-18); the COCI extract lists only the LVN-to-RN bridges at Cypress, Golden West and Saddleback, and no course under the Vocational Nursing TOP in the county, so Sierra now says what the catalog shows and names the bridges. If entry training exists and the extract misses it, that is a data gap to trace in the loader."
+    },
+    {
+      "id": "s271-fable-health-cron",
+      "for": "Fable",
+      "tab": "chatbot",
+      "text": "Work out why Sierra's uptime check runs about four times a day when it is scheduled eight times. Observed across three days, not yet diagnosed. The gap between checks is how long an outage can sit unnoticed."
+    },
+    {
+      "id": "s275-sam-oc-answer-v70",
+      "for": "Sam",
+      "tab": "chatbot",
+      "text": "Version 70 is live (2026-09-18, 07:11Z). Ask the Orange County question again in a browser. Your three readings of version 69 are folded in: the first sentence names the course to ask about (Long Beach City's VN 220, Rio Hondo's VN 61), the catalog absence is stated as the catalog's with the three bridges named, and no answer opens with a remark about the question; the Chaffey precedent is cited. Tell us whether it now reads right."
+    },
+    {
+      "id": "s275-sam-guidance-674923db-scope",
+      "for": "Sam",
+      "tab": "chatbot",
+      "text": "Decide whether to re-scope the team guidance rule that says 'answer with the colleges that have ALREADY articulated it, first and plainly'. The assistant's prompt let it govern a different question (what might my credential count toward), which is why version 69 led with an exhibit table. Version 70 scopes it in code; editing the rule itself in the Training tab to open with 'When someone asks where a credential ALREADY earns credit' would make the scope visible to the team."
+    },
+    {
+      "id": "s275-fable-college-anchor-pure-distance",
+      "for": "Fable",
+      "tab": "chatbot",
+      "text": "For a question that names a college, order the nearby lists by distance alone. Today the county band still comes first, so from Long Beach City College an Antelope Valley program 110 miles away outranks Cypress 12 miles away across the county line. A named place keeps its band; a named college should not."
+    },
+    {
+      "id": "s275-fable-verify-campus-points",
+      "for": "Fable",
+      "tab": "chatbot",
+      "text": "Verify the 119 campus coordinates against IPEDS from a machine that can reach nces.ed.gov (the sandbox cannot). They were entered from public campus locations to about a mile; a wrong point changes which college leads a list."
+    }
+  ],
+  "_deferred": [
     {
       "id": "s272-fable-cte-asterisk-disagreement",
       "for": "Fable",
@@ -58,26 +96,6 @@
       "tab": "chatbot",
       "text": "One of our search files points at a test file that has never existed. The exhibit search names chatbox/verify_search_exhibits_v2.sql as the thing that proves it works, and git shows it was never written or deleted. Either write it or remove the claim — a pointer to nothing is worse than no pointer."
     },
-    {
-      "id": "s271-sam-mycollege-eyes",
-      "for": "Sam",
-      "tab": "my-college",
-      "text": "Open My College signed out and tell us it reads right. A college with withheld rows should show a 'Withheld to protect small student counts' line inside the breakdown, and the contacts list should say which roles are staff-only rather than calling them blank. Our automated check cannot load this page's data, so your eyes are the check."
-    },
-    {
-      "id": "s271-sam-lvn-oc",
-      "for": "Sam",
-      "tab": "chatbot",
-      "text": "Confirm whether any Orange County college runs LVN ENTRY training. The COCI extract shows Cypress, Golden West and Saddleback with LVN programs, but all three are LVN-to-RN bridges for people who already hold the licence. If entry training exists and the extract misses it, that is a data gap worth recording."
-    },
-    {
-      "id": "s271-fable-health-cron",
-      "for": "Fable",
-      "tab": "chatbot",
-      "text": "Work out why Sierra's uptime check runs about four times a day when it is scheduled eight times. Observed across three days, not yet diagnosed. The gap between checks is how long an outage can sit unnoticed."
-    }
-  ],
-  "_deferred": [
     {
       "id": "s266-sam-asccc-areas",
       "for": "Sam",

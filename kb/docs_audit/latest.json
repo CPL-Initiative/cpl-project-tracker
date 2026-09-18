@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 941,
-    "bytes": 9929313,
+    "files": 942,
+    "bytes": 9949657,
     "over_budget": 8,
-    "handoff_max": 275,
+    "handoff_max": 276,
     "always_loaded_files": 1,
     "always_loaded_bytes": 60839,
     "superseded_files": 0,
@@ -26,17 +26,17 @@
       },
       "other": {
         "files": 114,
-        "bytes": 3087772,
+        "bytes": 3088414,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 17905,
+        "bytes": 18823,
         "over": 0
       },
       "lessons": {
         "files": 75,
-        "bytes": 2057851,
+        "bytes": 2065159,
         "over": 1
       },
       "kb_note": {
@@ -46,24 +46,23 @@
       },
       "roadmap_lane": {
         "files": 32,
-        "bytes": 199823,
+        "bytes": 199819,
         "over": 3
       },
       "handoff": {
-        "files": 247,
-        "bytes": 2097868,
+        "files": 248,
+        "bytes": 2109348,
         "over": 0
       }
     },
     "by_rule": {
       "oversized_doc": 8,
       "house_voice": 24,
-      "unindexed_kb_note": 2,
       "vault_heavy_path": 49
     },
     "vault": {
-      "files": 2969,
-      "bytes": 1445050119,
+      "files": 2970,
+      "bytes": 1445073473,
       "heavy_bytes": 643137858,
       "heavy_share": 0.445,
       "ignore_filters": [
@@ -279,24 +278,6 @@
       },
       "message": "1 business-register term — utilize x1 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
       "path": "docs/kb-notes/methodology-a-frequency-is-not-a-rule.md"
-    },
-    {
-      "rule": "unindexed_kb_note",
-      "fixable": false,
-      "detail": {
-        "stem": "methodology-a-new-assertion-must-fail-in-the-shape-the-grid-counts"
-      },
-      "message": "not referenced from docs/INDEX.md or any catalog it links to — unreachable by browsing",
-      "path": "docs/kb-notes/methodology-a-new-assertion-must-fail-in-the-shape-the-grid-counts.md"
-    },
-    {
-      "rule": "unindexed_kb_note",
-      "fixable": false,
-      "detail": {
-        "stem": "methodology-an-absence-in-the-data-is-a-statement-about-the-data"
-      },
-      "message": "not referenced from docs/INDEX.md or any catalog it links to — unreachable by browsing",
-      "path": "docs/kb-notes/methodology-an-absence-in-the-data-is-a-statement-about-the-data.md"
     },
     {
       "rule": "house_voice",
