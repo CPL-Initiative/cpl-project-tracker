@@ -2335,7 +2335,7 @@ function buildPlaceContext(place: any | null, geoMap: Map<string, any> | null): 
   s += here.length
     ? `Community colleges in ${place.label} (${here.length}): ${here.join("; ")}.\n`
     : `No community college in the geography table sits in ${place.label}; rank by the nearest region instead.\n`;
-  s += `Lead with what the colleges in ${place.label} teach and award. When none of them has what was asked, the catalog sections say so — repeat it plainly, then name the nearest colleges that do, with their county, so the visitor can judge the distance. Never present a college outside ${place.label} as if it were local, and never guess at a college's catalog: name only courses and programs that appear in the context.\n`;
+  s += `Lead with what the colleges in ${place.label} teach and award. When none of them has what was asked, the catalog sections say the catalog lists none — say what the catalog shows (never that no college in ${place.label} has it), name the related programs it does list there, then name the nearest colleges that do, with their county and distance, so the visitor can judge the trip. Never present a college outside ${place.label} as if it were local, and never guess at a college's catalog: name only courses and programs that appear in the context.\n`;
   return s;
 }
 
@@ -2619,7 +2619,7 @@ function buildOfferingsContext(
     const here = others.filter(([, g]) => proximityBand(g, askedGeo) >= (askedGeo.county ? 3 : 2));
     ctx += here.length
       ? `\n### In ${askedGeo.label}: ${here.length} college(s) teach in this area — they are listed first below.\n`
-      : `\n### NO college in ${askedGeo.label} teaches courses matching this in the current COCI catalog. Say so plainly, then offer the nearest colleges below (county and distance shown) as the realistic route, with the standing caveat that teaching is not a guarantee of credit.\n`;
+      : `\n### The current COCI catalog lists no college in ${askedGeo.label} teaching courses matching this. Say what the catalog shows — never that no college in ${askedGeo.label} has or teaches it — name any related programs the program catalog section lists there, then offer the nearest colleges below (county and distance shown) as the realistic route, with the standing caveat that teaching is not a guarantee of credit.\n`;
   }
   if (others.length) {
     ctx += `\n### ${askedCollege ? "Other colleges" : "Colleges"} that teach this (nearest first when a home college is known):\n`;
@@ -2712,8 +2712,8 @@ function buildProgramsContext(
   if (askedGeo && askedGeo.label && !askedCollege) {
     const here = others.filter(([, g]) => proximityBand(g, askedGeo) >= (askedGeo.county ? 3 : 2));
     ctx += here.length
-      ? `\n### In ${askedGeo.label}: ${here.length} college(s) have a matching program — they are listed first below. Read each title and award before calling any of them the program asked for (a bridge such as "LVN to RN" is for people who already hold the license).\n`
-      : `\n### NO college in ${askedGeo.label} has a matching program in the current COCI program export. Say so plainly, then name the nearest colleges below that award it, with their county and distance.\n`;
+      ? `\n### In ${askedGeo.label}: ${here.length} college(s) have a matching program — they are listed first below. Read each title and award before calling any of them the program asked for (a bridge such as "LVN to RN" is for people who already hold the license). When another section says the catalog lists no college in ${askedGeo.label} for the entry program, these are the related programs it does list there — name them.\n`
+      : `\n### The current COCI program export lists no college in ${askedGeo.label} with a matching program. Say what the export shows — never that no college in ${askedGeo.label} offers it — then name the nearest colleges below that award it, with their county and distance.\n`;
   }
   if (others.length) {
     ctx += `\n### ${askedCollege ? "Other colleges" : "Colleges"} with a matching program (nearest first when a home college is known):\n`;
@@ -2862,7 +2862,7 @@ function buildProspectiveContext(
       const here = plist.filter((p) => p.band >= (askedGeo.county ? 3 : 2));
       section += here.length > 0
         ? `In ${askedGeo.label}: ${here.length} of the colleges below.\n`
-        : `NO college in ${askedGeo.label} teaches this program in the current COCI catalog. The colleges below are the nearest that do — name them with their county and distance so the visitor can judge the trip.\n`;
+        : `The COCI catalog lists no college in ${askedGeo.label} teaching this program. State it as what the catalog shows, never as a fact about ${askedGeo.label}; the program catalog section names any related programs there (a bridge such as LVN to RN is for people who already hold the license) — name them. The colleges below are the nearest that do teach it — name them with their county and distance so the visitor can judge the trip.\n`;
     }
     let sectionRendered = 0;
     for (const p of plist) {
@@ -3357,7 +3357,7 @@ const OFFERINGS_RULE = `\n\nABOUT THE "COURSE CATALOG / WHICH COLLEGES TEACH THI
 - DISTANCE IS A FACT, NOT A FILTER. Never suppress the nearest teaching college just because it is far. Name it and STATE THE DISTANCE PLAINLY using the county/region provided — "the nearest college teaching this is <college>, in <county>, which is a fair way from you" — and let the visitor judge whether it is worth it. Withholding a distant option leaves someone who would happily travel, or study online, with nothing at all. State it honestly; do not sell it, and do not apologise for it.
 - IF ALL THREE PARTS COME UP EMPTY — no college has articulated it, and no nearby college teaches it — SAY SO PLAINLY rather than padding the answer. Then give the two things that still help: (a) Credit for Being You, where they can record the credential and see their options across every California community college as they change; and (b) an invitation to email the MAP team at MAP@rccd.edu so the gap is on record. Be explicit that flagging it is genuinely useful — an unmet request is how the system learns a credential is in demand and worth building. Never invent a college, a course or an articulation to avoid an empty answer.
 - ALWAYS add that teaching a course is not a guarantee of credit — the student/organization should contact the college's CPL coordinator to request a review. Never claim an articulation exists when only a course is taught.
-- WHEN THE VISITOR NAMED A PLACE (a county or a region) RATHER THAN A COLLEGE, the context carries a "THE VISITOR'S PLACE" block and each catalog section says whether any college IN that place matches. Treat the place as home: lead with its colleges, and when a section says none of them matches, say so plainly and name the nearest colleges that do, with their county. Never answer a county question from whichever college happens to share a word with it.
+- WHEN THE VISITOR NAMED A PLACE (a county or a region) RATHER THAN A COLLEGE, the context carries a "THE VISITOR'S PLACE" block and each catalog section says whether any college IN that place matches. Treat the place as home: lead with its colleges, and when a section says the catalog lists none of them, say what the catalog shows (never that no college in the place has it), name the related programs the catalog does list there, and name the nearest colleges that do, with their county and distance. Never answer a county question from whichever college happens to share a word with it.
 - WHEN ASKED WHICH COURSES A CREDENTIAL COULD COUNT TOWARD ("what CNA courses match LVN courses"), work from the data in front of you: the course lines in the catalog section for the program asked about, and the credit-recommendation precedents in the credential record (how adopter colleges articulated it — course and units). Name only courses that appear in the context, and present matches as what to ask the college's CPL coordinator to review — faculty decide the award. Where the context carries no course list for that program, say which college teaches it and that the course-level match is the college's to confirm.
 - The catalog list shows the TOP matching colleges, NOT an exhaustive list. NEVER conclude that a college does NOT teach a subject just because it isn't shown — many colleges that teach it may not appear. If a specific college the visitor named is not in the list, do NOT say it lacks the courses; say you're not certain from the data at hand and suggest checking that college's catalog or CPL coordinator.`;
 
@@ -3478,11 +3478,12 @@ This is the most actionable thing you can give a college. Walk the recommendatio
 // it." The section it governs is built by buildProspectiveContext.
 const PROSPECTIVE_RULE = `\n\nABOUT THE "PROSPECTIVE CREDIT" SECTION (if present) — WHAT A HELD CREDENTIAL COULD COUNT TOWARD:
 This answers a DIFFERENT question from every section above. The exhibit and credential sections say who ALREADY grants credit for a credential. This section is for the visitor who holds a credential and wants to know which courses in a program it MIGHT count toward, so they can ask for a review at a college that has never granted it. Answer that question. Do not swap in the "who already grants it" answer, and do not decline because no exhibit exists: a college that has not articulated a credential can still review a request, and such requests are how articulations begin.
+- LEAD WITH THE ANSWER. The first sentence names the courses to ask about — college, course number, title — and the next says how to ask. Nothing comes before it: no "first, the limits", no table of who has articulated what, no remark about the question. Existing articulations belong AFTER the answer, as the precedent line below, in at most two sentences, and only for the credential the visitor holds — an award for a different credential (an LVN license award, for a CNA holder) is not evidence and is not listed.
 - WORK FROM THE COURSE LIST. For the program the visitor wants to enter, read its courses at the colleges shown and name the ones whose content the credential plausibly covers — usually the entry-level courses (fundamentals, foundations, introduction, transition, basic, level I), never the advanced or specialty ones. Say in a phrase WHY each is a candidate: what the credential trains that the course teaches. Name only courses that appear in the context, with their course number.
 - THE PROGRAM THEY WANT TO ENTER IS THE TARGET. When the lists include the program that trains the credential they already hold (a nurse assistant program for a CNA holder), that list is background, not the answer — they do not need credit for what they hold; they need credit toward what they are entering.
 - PRESENT EVERY MATCH AS A REQUEST, NEVER A DETERMINATION. Say "ask the CPL coordinator at <college> to review your <credential> against <course>"; never that it "qualifies", "counts", "is equivalent" or "will be accepted". Faculty decide, and a college that has not granted it before can still say yes.
 - CITE THE PRECEDENT WHEN THERE IS ONE. If the credential record shows a college that articulated this credential against a named course, say so with the college, the course and the units — it is the evidence that makes the request credible at a college that has not done it yet.
-- WHEN NO COLLEGE IN THE VISITOR'S PLACE TEACHES THE TARGET PROGRAM, the section says so. Say it plainly, then give the same course-level answer for the nearest colleges shown, naming each college's county and its distance (the heading gives it in miles, where known) so the visitor can judge the trip.
+- WHEN THE CATALOG LISTS NO COLLEGE IN THE VISITOR'S PLACE FOR THE TARGET PROGRAM, the section says so. State it as what the catalog shows, never as a fact about the place: "the COCI catalog lists no LVN entry program at an Orange County community college", never "no Orange County college has LVN" or "teaches LVN". Name the related programs the program catalog section lists in the place (an LVN-to-RN bridge at Cypress, Golden West and Saddleback is for people who already hold the license), so a reader who knows those programs sees that you saw them. Then give the same course-level answer for the nearest colleges shown, naming each college's county and its distance (the heading gives it in miles, where known) so the visitor can judge the trip.
 - NEVER invent a course, a course number or a college, and never guess at a college's catalog beyond the lists shown.`;
 
 const CREDIT_STATUS_RULE = `\n\nABOUT THE "CPL CREDIT DISPOSITION" SECTION (if present) — WHAT COLLEGES HAVE ACTED ON:
@@ -4167,6 +4168,8 @@ Your knowledge comes from the sources below. Answer based on these sources. If t
 
 Be concise, friendly, and professional. Use plain language.
 
+THE FIRST SENTENCE IS THE ANSWER. Never open with a remark about the question — no "Great question", "Good question", "That's a great question to be asking", no thanks, no "let's line this up", no preamble of any kind — and never comment on the question before answering it. Answer the question that was asked, directly, before anything else; the supporting facts, the limits of the data and the next steps come after the answer, never in front of it.
+
 IMPORTANT: When citing any numbers or metrics (student counts, units, savings, college counts, etc.), ALWAYS use the "LIVE CPL Dashboard Metrics" section below. These live numbers are scraped directly from the CCCCO Dashboard and are the most current. If a vault source below mentions a different number for the same metric, the live dashboard number is correct and the vault source is outdated. This applies especially to military/veteran student counts, savings figures, and unit totals.
 ${assembled.alwaysText}`;
 
@@ -4324,7 +4327,7 @@ async function fetchTeamGuidance(sb: any, surface: string | null = null): Promis
 
     let out = "";
     if (directiveText) {
-      out += `\n\nTEAM GUIDANCE (directives added by the CPL/MAP team — follow them; if one conflicts with the general instructions above, the team guidance wins):${directiveText}`;
+      out += `\n\nTEAM GUIDANCE (directives added by the CPL/MAP team — follow them; if one conflicts with the general instructions above, the team guidance wins. Each directive governs the question shape it names: when the context carries a "PROSPECTIVE CREDIT" section, the visitor holds a credential and is asking what it MIGHT count toward at a college that has not granted it, so a directive about where a credential ALREADY earns credit answers a different question — lead with the course-level answer, and keep the already-articulated colleges to the precedent line that section describes):${directiveText}`;
     }
     if (displayText) {
       out += `\n\nTEAM DISPLAY RULES (how the CPL/MAP team wants structured output shaped — tables, columns, labels, ordering. Apply them whenever you build the output they describe; they do not override a factual instruction above):${displayText}`;

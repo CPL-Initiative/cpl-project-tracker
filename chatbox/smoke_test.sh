@@ -89,8 +89,26 @@ run() { # label  json-body
     echo "::error::empty answer for $label${why:+ — stream carried $why}"
     fail=1
   fi
+  # EVERY MODE: the first sentence is the answer (Sam, 2026-09-18, reading v69's
+  # Orange County answer: it opened "Great question to be asking before you
+  # enroll" against sierra_guidance cafb92af). A remark about the question in
+  # the first 160 characters fails the mode, whatever else the answer got right.
+  if printf '%s' "$ans" | head -c 160 | grep -E -i -q '^[[:space:]]*(#+[[:space:]]*)?(\*\*)?(great|good|excellent|fantastic|wonderful|smart|fair|important|interesting|thoughtful|that.?s an? (great|good|fair|excellent)) (question|ask|thing to)'; then
+    echo "::error::$label: opens with a remark about the question (sierra_guidance cafb92af — the first sentence is the answer)"; fail=1
+  fi
   echo
   sleep 1   # stay well under the 20 req/min/IP rate limit
+}
+# The same match, on the HEAD of the answer only: the direct answer must come
+# FIRST (Sam, 2026-09-18: "give the most direct answer to the direct question").
+answer_head_must_match() { # [-i] chars regex label
+  local flag=""; if [ "$1" = "-i" ]; then flag="-i"; shift; fi
+  local chars="$1" re="$2" label="$3"
+  if printf '%s' "$LAST_ANSWER" | head -c "$chars" | grep -E $flag -q -- "$re"; then
+    echo "  [assert ok] $label matches /$re/ within the first $chars characters"
+  else
+    echo "::error::$label: expected the FIRST $chars characters of the answer to match /$re/ (the direct answer must lead)"; fail=1
+  fi
 }
 
 # Content assertions on the LAST run()'s answer. Optional leading -i = ignore case.
@@ -555,6 +573,8 @@ answer_must_match -i "saddleback|golden west|cypress|santa ana|santiago canyon|l
 # the older assertion named, so a catalog refresh that reorders the picks is a
 # loud red here rather than a silent miss. Reads for the SHAPE Sam asked for.
 answer_must_match -i "NURS[ -]?(102|125)|VN[ -]?(8|10|103|215|220|61|061)\b|VOC[ -]?VN10[01]|NURVN[ -]?(403|414)|VNRS[ -]?150|Fundamentals of (Vocational )?Nursing|Vocational Nursing Foundations|Transition to Vocational Nursing|Vocational Nursing I\b" "7c ⭐ names a Vocational Nursing course from the prospective course lists (Sam's bar: a course-level answer)"
+answer_head_must_match -i 700 "NURS[ -]?(102|125)|VN[ -]?(8|10|103|215|220|61|061)\b|VOC[ -]?VN10[01]|NURVN[ -]?(403|414)|VNRS[ -]?150|Fundamentals of (Vocational )?Nursing|Vocational Nursing Foundations|Transition to Vocational Nursing|Vocational Nursing I\b" "7c ⭐ leads with the course-level answer — the direct answer first, the limits and precedents after (Sam, 2026-09-18)"
+answer_must_not_match -i "no orange county (community )?colleges? (currently )?(teach|teaches|offers?|runs?|has an? (lvn|vocational nursing)|have an? (lvn|vocational nursing))|none of the orange county colleges (currently )?(teach|offer|have|has|run)" "7c ⭐ never states a catalog absence as a fact about Orange County (Sam, 2026-09-18: flat wrong — say what the catalog shows and name the bridges)"
 answer_must_match -i "ask|request|review" "7c ⭐ frames the match as a request for review, never a determination"
 
 # Broad "who teaches this" — the catalog should surface colleges that TEACH

@@ -232,8 +232,8 @@ block("5. buildProspectiveContext", () => {
   check("(5) one section per program, in the order the pairs came", cnaAt > 0 && lvnAt > cnaAt);
   const lvnSec = ctx.slice(lvnAt);
   const cnaSec = ctx.slice(cnaAt, lvnAt);
-  check("(5) ⭐ a program NO college in the place teaches is said in words",
-    lvnSec.includes("NO college in Orange County teaches this program in the current COCI catalog"));
+  check("(5) ⭐ a program the catalog lists no college in the place for is said in words, as a statement about the catalog and never about the place",
+    lvnSec.includes("The COCI catalog lists no college in Orange County teaching this program. State it as what the catalog shows, never as a fact about Orange County"));
   check("(5) a program the place does teach is counted", cnaSec.includes("In Orange County: 3 of the colleges below."));
   check("(5) a college renders with its county and region",
     lvnSec.includes("### Pasadena City College (Los Angeles County, Los Angeles) — 3 course(s) in this program:"));
@@ -259,7 +259,7 @@ block("5. buildProspectiveContext", () => {
     G.pickProspectivePairs(offerings, coreKeywords, "Rio Hondo College", geoMap.get("Rio Hondo College"), geoMap),
     courses, held, "Rio Hondo College", geoMap.get("Rio Hondo College"));
   check("(5) for a named college the lists are nearest IT and no place line is written",
-    named.includes("nearest Rio Hondo College that teach it") && !named.includes("NO college in"));
+    named.includes("nearest Rio Hondo College that teach it") && !named.includes("lists no college in"));
   check("(5) the block tells the model to present matches as a REQUEST and to cite the precedent",
     ctx.includes("what to ASK that college's CPL coordinator to review") && ctx.includes("cite it as the evidence"));
 });
@@ -404,6 +404,49 @@ block("8. distance — COLLEGE_POINTS, placePoint, within-band order", () => {
   check("(8) distance is a sort key in all four lists (offerings, programs, exhibits, the prospective picks)",
     (SRC.match(/cmpKm\(proximityKm\(a\[0\], askedGeo\), proximityKm\(b\[0\], askedGeo\)\)/g) || []).length === 3 && /cmpKm\(a\.km, b\.km\)/.test(SRC));
   check("(8) the rule tells the model the distance is in the heading", /its distance \(the heading gives it in miles, where known\)/.test(SRC));
+});
+
+// ── 9. Sam's three readings of v69's answer (2026-09-18) ────────────────────
+// He read chat_interactions f49a11c2 in a browser: "1. She says no OC colleges
+// have LVN, which is flat wrong. 2. She doesn't answer the question directly and
+// immediately looks for an exhibit when that wasn't the question asked. 3. She
+// starts by breaking one of our Sierra training rules by saying, 'Great
+// question.'" Measured: the COCI export holds no Vocational Nursing entry
+// program at an Orange County college (only the LVN-to-RN bridges), so (1) is a
+// catalog absence stated as a fact about the county; (2) is the prompt's own
+// precedence line letting guidance 674923db ("already articulated it, first")
+// outrank the prospective rule; (3) is guidance cafb92af, too soft to hold.
+block("9. the direct answer first, the catalog never the world, no remark about the question", () => {
+  const stable = SRC.slice(SRC.indexOf("const stable = `You are the CPL Chatbox"), SRC.indexOf("${assembled.alwaysText}`;"));
+  check("(9) ⭐ the cached preamble says the first sentence is the answer and bans the remark about the question",
+    /THE FIRST SENTENCE IS THE ANSWER\. Never open with a remark about the question/.test(stable) && /"Great question"/.test(stable));
+  check("(9) ⭐ the guidance header scopes a directive to the question shape it names, and names the prospective section",
+    /the team guidance wins\. Each directive governs the question shape it names: when the context carries a "PROSPECTIVE CREDIT" section/.test(SRC)
+    && /a directive about where a credential ALREADY earns credit answers a different question/.test(SRC));
+  const rule = (SRC.match(/const PROSPECTIVE_RULE = `([\s\S]*?)`;/) || [])[1] || "";
+  check("(9) ⭐ the prospective rule leads with the answer and puts articulations after it, only for the credential held",
+    /^- LEAD WITH THE ANSWER\. The first sentence names the courses to ask about/m.test(rule)
+    && /Existing articulations belong AFTER the answer/.test(rule) && /an LVN license award, for a CNA holder\) is not evidence and is not listed/.test(rule));
+  check("(9) ⭐ the prospective rule states a catalog absence as the catalog's, never the place's, and names the bridges",
+    /WHEN THE CATALOG LISTS NO COLLEGE IN THE VISITOR'S PLACE FOR THE TARGET PROGRAM/.test(rule)
+    && /never "no Orange County college has LVN"/.test(rule) && /an LVN-to-RN bridge at Cypress, Golden West and Saddleback/.test(rule));
+  check("(9) the LEAD bullet comes before WORK FROM THE COURSE LIST", rule.indexOf("- LEAD WITH THE ANSWER.") < rule.indexOf("- WORK FROM THE COURSE LIST."));
+  const ctx = G.buildProspectiveContext(G.pickProspectivePairs(offerings, coreKeywords, null, orange, geoMap), courses, held, null, orange);
+  check("(9) ⭐ the block's no-college line is about the catalog and points at the related programs",
+    ctx.includes("The COCI catalog lists no college in Orange County teaching this program.") && ctx.includes("the program catalog section names any related programs there") && !/NO college in Orange County/.test(ctx));
+  const off = G.buildOfferingsContext(offerings.filter((o) => o.top_code === "1230.20"), null, orange, ["vocational nursing"], geoMap);
+  check("(9) the offerings builder's line is about the catalog too", /### The current COCI catalog lists no college in Orange County teaching courses matching this\. Say what the catalog shows — never that no college in Orange County has or teaches it/.test(off));
+  check("(9) the programs builder's lines are about the export, and the in-place line names the bridges as the related programs",
+    /The current COCI program export lists no college in \$\{askedGeo\.label\} with a matching program/.test(SRC)
+    && /these are the related programs it does list there — name them/.test(SRC));
+  check("(9) the place block and the offerings rule say the same", /say what the catalog shows \(never that no college in \$\{place\.label\} has it\)/.test(SRC)
+    && /when a section says the catalog lists none of them, say what the catalog shows \(never that no college in the place has it\)/.test(SRC));
+  check("(9) no builder says 'Say so plainly' about a place any more", !/NO college in \$\{askedGeo\.label\}/.test(SRC) && !/Say so plainly, then (offer|name) the nearest/.test(SRC));
+  check("(9) ⭐ smoke fails EVERY mode whose answer opens with a remark about the question",
+    /opens with a remark about the question \(sierra_guidance cafb92af/.test(SMOKE) && SMOKE.indexOf("head -c 160 | grep -E -i -q") < SMOKE.indexOf("sleep 1   # stay well under"));
+  check("(9) ⭐ smoke 7c asserts the course-level answer LEADS (first 700 characters) and that no sentence states the absence as Orange County's",
+    /answer_head_must_match -i 700 "NURS\[ -\]\?\(102\|125\)/.test(SMOKE) && /never states a catalog absence as a fact about Orange County/.test(SMOKE));
+  check("(9) the head helper exists and reads only the head", /^answer_head_must_match\(\) \{/m.test(SMOKE) && /head -c "\$chars" \| grep -E \$flag -q -- "\$re"/.test(SMOKE));
 });
 
 // ── Report ──────────────────────────────────────────────────────────────────
