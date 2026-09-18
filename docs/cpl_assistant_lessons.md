@@ -1203,6 +1203,31 @@ Nursing Foundations (NURVN 414)"*. Merged #1608 as `1834d16` on green `test`
 Sam asleep and his *"automode it from here"* on record; health run
 35304888485 and smoke run 35304890419 followed.
 
+### The merge re-synced the catalog, and the sync failed twice (04:00Z)
+
+Both smoke runs on v69 (35304793704 push-triggered, 35304890419 dispatched)
+reported SMOKE TEST FAILED on exactly one assertion: *7c ⭐ the offerings RPC
+did not lead with Orange County (first=Orange, orange rows=2, contiguous=1)*.
+Every prose assertion passed, and the 7c answer itself met Sam's bar. The
+cause was the catalog: `1834d16` changed `chatbox/build_coci_offerings.py`
+(the mojibake import), a path trigger for `coci-offerings-sync.yml`, so the
+merge re-synced the live catalog beside its own smoke run. The builder was
+clean (16,097 / 22,335 / 120); `coci_offerings_replace` chunk 4 died with
+57014 — the authenticator role carries `statement_timeout=8s`, inherited by
+every PostgREST call, service key included — and the re-dispatch died on
+chunk 3 with nothing else running. Each replace RPC is one transaction and
+chunk 1 truncates, so `coci_college_offerings` sat live at 12,000 and then
+8,000 of 16,097 rows (92, then 61 colleges) while Sierra answered from it;
+programs and geo were untouched because the script exits on the first
+failure. `pg_stat_user_tables` showed no bloat (autovacuum had run); the GIN
+index on `titles_text` is what makes a 4,000-row insert cost seconds. Fix
+(`0ff24d7`): 1,000-row chunks and a halving retry down to 250 on 57014 only,
+a canceled first chunk truncating again and a later one appending;
+`tests/coci_offerings_sync_chunk_test.py` (21) pins it. The lesson: a path
+trigger on a merge is a deploy, and a replace that is transactional per
+chunk can leave a partial table live — the durable fix is a staging table
+and a one-statement swap (`s274-fable-offerings-replace-atomic`).
+
 ### Sam's decisions this run
 
 - The bar, verbatim above — captured as `cpl_memory`

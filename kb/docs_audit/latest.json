@@ -11,8 +11,8 @@
   },
   "summary": {
     "files": 939,
-    "bytes": 9915842,
-    "over_budget": 8,
+    "bytes": 9920041,
+    "over_budget": 9,
     "handoff_max": 275,
     "always_loaded_files": 1,
     "always_loaded_bytes": 60839,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 114,
-        "bytes": 3087846,
+        "bytes": 3087692,
         "over": 3
       },
       "index": {
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 75,
-        "bytes": 2056138,
+        "bytes": 2057851,
         "over": 1
       },
       "kb_note": {
@@ -46,25 +46,25 @@
       },
       "roadmap_lane": {
         "files": 32,
-        "bytes": 199482,
-        "over": 3
+        "bytes": 199860,
+        "over": 4
       },
       "handoff": {
         "files": 247,
-        "bytes": 2095004,
+        "bytes": 2097266,
         "over": 0
       }
     },
     "by_rule": {
-      "oversized_doc": 8,
+      "oversized_doc": 9,
       "house_voice": 24,
-      "vault_heavy_path": 49
+      "vault_heavy_path": 50
     },
     "vault": {
-      "files": 2966,
-      "bytes": 1444990016,
-      "heavy_bytes": 643137858,
-      "heavy_share": 0.445,
+      "files": 2968,
+      "bytes": 1465557017,
+      "heavy_bytes": 663691721,
+      "heavy_share": 0.453,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
         "cpl-project-tracker/cip_fitcheck",
@@ -77,6 +77,7 @@
         "cpl-project-tracker/unified_courses_details.js",
         "cpl-project-tracker/kb/subj4_fold_out/2026-06-12/alias_map.json",
         "cpl-project-tracker/kb/subj4_dryrun/alias_map.json",
+        "cpl-project-tracker/chatbox/coci_offerings_payload.json",
         "cpl-project-tracker/kb/subj4_apply/alias_map.json",
         "cpl-project-tracker/kb/coci_minted_memberships.json",
         "cpl-project-tracker/coci_lookup_data.js",
@@ -415,6 +416,19 @@
       "path": "docs/reference/lanes/partner-crosswalks.md"
     },
     {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 12018,
+        "limit": 12000,
+        "lane": "roadmap_lane",
+        "over_by": 18,
+        "ratio": 1.0
+      },
+      "message": "12,018 B is 1.0× the roadmap_lane budget (12,000 B) — candidate for compaction",
+      "path": "docs/reference/lanes/sierra-retrieval-corpus.md"
+    },
+    {
       "rule": "house_voice",
       "fixable": false,
       "detail": {
@@ -620,6 +634,16 @@
         "kind": "file"
       },
       "message": "21,616,130 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "chatbox/coci_offerings_payload.json",
+      "detail": {
+        "bytes": 20553863,
+        "kind": "file"
+      },
+      "message": "20,553,863 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

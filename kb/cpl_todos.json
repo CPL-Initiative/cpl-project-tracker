@@ -2,7 +2,7 @@
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-18",
   "_session": 274,
-  "_status": "Version 69 is live (S274, 2026-09-18 03:53Z). Sierra now carries the full course lists for the matched programs at the nearest colleges, a neighbor-region band so Orange County's nearest LVN programs are in Los Angeles rather than Sacramento, a guard that stops Cisco's CCNA standing in for 'cna' and hiding the Chaffey precedent, and course titles repaired at the loader. Both A/Bs were clean; the deploy, health and smoke runs are recorded in the handoff. Sam reads the answer next. Version 68 (03:08Z) had answered the exhibit question instead of his, which in his words is: compare the CNA with the LVN program's courses so the student can ask a college that has not granted it.",
+  "_status": "Version 69 is live (S274, 2026-09-18 03:53Z). Sierra now carries the full course lists for the matched programs at the nearest colleges, a neighbor-region band so Orange County's nearest LVN programs are in Los Angeles rather than Sacramento, a guard that stops Cisco's CCNA standing in for 'cna' and hiding the Chaffey precedent, and course titles repaired at the loader. Both A/Bs were clean; the deploy, health and smoke runs are recorded in the handoff. Sam reads the answer next. Version 68 (03:08Z) had answered the exhibit question instead of his, which in his words is: compare the CNA with the LVN program's courses so the student can ask a college that has not granted it. One anomaly from the merge itself: the catalog sync it triggered timed out twice and left the course catalog partial for forty minutes; the chunk fix is on the same branch and its merge restores the catalog.",
   "items": [
     {
       "id": "s274-sam-oc-question-v69",
@@ -21,6 +21,12 @@
       "for": "Fable",
       "tab": "chatbot",
       "text": "Give 'nearest' a distance. The neighbor-region band puts Los Angeles, Inland Empire and San Diego colleges ahead of Sacramento for an Orange County question, but inside a band the order is by how many courses a college teaches, which says nothing about distance. A county-to-county distance table (centroids are enough) would let the course lists lead with Long Beach and Rio Hondo rather than whichever program is largest."
+    },
+    {
+      "id": "s274-fable-offerings-replace-atomic",
+      "for": "Fable",
+      "tab": "chatbot",
+      "text": "Make the course-catalog replace atomic. The offerings sync truncates on its first chunk and appends the rest, each chunk its own transaction, so a chunk the database cancels leaves a partial catalog live. It happened twice on 18 September (12,000 then 8,000 of 16,097 rows) and Sierra answered from the partial catalog for forty minutes. Smaller chunks with a retry are in; the real fix loads into a staging table and swaps in one statement. Until then, expect any merge that edits a loader to re-sync the catalog beside its own smoke run."
     },
     {
       "id": "s273-sam-read-program-answers",
@@ -69,15 +75,15 @@
       "for": "Fable",
       "tab": "chatbot",
       "text": "Work out why Sierra's uptime check runs about four times a day when it is scheduled eight times. Observed across three days, not yet diagnosed. The gap between checks is how long an outage can sit unnoticed."
-    },
+    }
+  ],
+  "_deferred": [
     {
       "id": "s266-sam-asccc-areas",
       "for": "Sam",
       "tab": "my-college",
       "text": "Send the Academic Senate (ASCCC) area roster — which college sits in which area. Every Supabase column matching area, senate, asccc, zone or region was searched and none carries them. Strong Workforce regions are already solved."
-    }
-  ],
-  "_deferred": [
+    },
     {
       "id": "s266-fable-matcher-vocabulary",
       "for": "Fable",

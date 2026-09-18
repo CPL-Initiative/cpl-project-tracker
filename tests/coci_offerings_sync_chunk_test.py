@@ -71,30 +71,30 @@ check("three calls", [c[0] for c in calls] == [1000, 1000, 500], str(calls))
 check("only the first call truncates", [c[1] for c in calls] == [True, False, False], str(calls))
 check("total is every row", total == 2500, str(total))
 
-print("(2) the first chunk is cancelled: it retries smaller and truncates again, then appends")
+print("(2) the first chunk is canceled: it retries smaller and truncates again, then appends")
 def cancel_above_300(n, part, trunc):
     if len(part) > 300:
         raise mod._RpcError("coci_offerings_replace", 500, TIMEOUT)
     return len(part)
 calls, total = run(rows, cancel_above_300)
 sizes = [c[0] for c in calls]
-check("1,000 then 500 were cancelled, 250 landed", sizes[:3] == [1000, 500, 250], str(sizes[:4]))
-check("every cancelled attempt at the start truncated (the delete rolled back with it)",
+check("1,000 then 500 were canceled, 250 landed", sizes[:3] == [1000, 500, 250], str(sizes[:4]))
+check("every canceled attempt at the start truncated (the delete rolled back with it)",
       all(c[1] for c in calls[:3]), str(calls[:3]))
 check("no call after the first success truncates", not any(c[1] for c in calls[3:]), str(calls[3:6]))
 check("every row landed at 250", total == 2500 and set(sizes[2:]) == {250}, f"{total} {set(sizes[2:])}")
 
-print("(3) a LATER chunk is cancelled: the retry appends — it never re-truncates")
+print("(3) a LATER chunk is canceled: the retry appends — it never re-truncates")
 def cancel_third_call(n, part, trunc):
     if n == 3:
         raise mod._RpcError("coci_offerings_replace", 500, TIMEOUT)
     return len(part)
 calls, total = run(rows, cancel_third_call)
-check("the cancelled third call was an append", calls[2] == (500, False), str(calls))
+check("the canceled third call was an append", calls[2] == (500, False), str(calls))
 check("its retry appended too", len(calls) >= 4 and calls[3][1] is False, str(calls))
 check("total is every row, nothing counted twice", total == 2500, str(total))
 
-print("(4) a chunk cancelled at MIN_CHUNK stops the run loudly — no infinite loop, no skip")
+print("(4) a chunk canceled at MIN_CHUNK stops the run loudly — no infinite loop, no skip")
 def cancel_above_100(n, part, trunc):
     if len(part) > 100:
         raise mod._RpcError("coci_offerings_replace", 500, TIMEOUT)

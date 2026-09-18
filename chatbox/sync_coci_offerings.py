@@ -28,7 +28,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PAYLOAD = os.path.join(ROOT, "chatbox", "coci_offerings_payload.json")
 SUPABASE_URL = "https://hvuwhnbuahrtptokpqfh.supabase.co"
 CHUNK = 1000      # rows per request — 4,000 timed out twice on 2026-09-18 (see _load_chunked)
-MIN_CHUNK = 250   # the floor a cancelled chunk halves down to before the run stops
+MIN_CHUNK = 250   # the floor a canceled chunk halves down to before the run stops
 
 
 class _RpcError(Exception):
@@ -71,11 +71,11 @@ def _load_chunked(fn, rows, key, chunk=CHUNK):
     35305845390): two runs of the 4,000-row chunks died with 57014 — the
     authenticator role's 8 s statement_timeout, which every PostgREST call
     inherits, service key included — on chunks 4 and 3. Each replace RPC is one
-    transaction, so the cancelled chunk rolled back and the catalog was left LIVE
+    transaction, so the canceled chunk rolled back and the catalog was left LIVE
     at 12,000 and then 8,000 of 16,097 rows, and Sierra answered from it. The GIN
     index on titles_text is what makes a chunk cost seconds; halving the chunk
-    halves the statement. A cancelled FIRST chunk rolled its truncate back too,
-    so the retry truncates again; a cancelled later chunk appends on retry.
+    halves the statement. A canceled FIRST chunk rolled its truncate back too,
+    so the retry truncates again; a canceled later chunk appends on retry.
     """
     total, i, size, truncate = 0, 0, chunk, True
     while i < len(rows):
@@ -85,7 +85,7 @@ def _load_chunked(fn, rows, key, chunk=CHUNK):
         except _RpcError as e:
             if _is_statement_timeout(e) and size > MIN_CHUNK:
                 size = max(MIN_CHUNK, size // 2)
-                print(f"    {fn}: a {len(part)}-row chunk was cancelled (57014); retrying at {size} rows")
+                print(f"    {fn}: a {len(part)}-row chunk was canceled (57014); retrying at {size} rows")
                 continue
             raise SystemExit(str(e))
         total += n or 0
