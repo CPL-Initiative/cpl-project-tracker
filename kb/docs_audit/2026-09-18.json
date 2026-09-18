@@ -61,8 +61,8 @@
       "vault_heavy_path": 49
     },
     "vault": {
-      "files": 2979,
-      "bytes": 1452655577,
+      "files": 2980,
+      "bytes": 1452666316,
       "heavy_bytes": 643452131,
       "heavy_share": 0.443,
       "ignore_filters": [
