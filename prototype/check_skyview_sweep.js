@@ -157,9 +157,33 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
     await sleep(250);
     return (await st(page)).sel;
   }
+  /* ⚠️ THE SWEEP STANDS IN FOR A CURATOR, SO IT HOLDS THE TEAM PHRASE.
+   *
+   * Since 2026-09-18 positioning a course for a merge needs the STAGE rung
+   * (Sam: "To position courses to merge needs at least team code auth to
+   * do"), and most of this file drags courses about. Without a credential
+   * every drag is correctly refused and two thirds of the sweep fails for one
+   * reason, which tells you nothing about the thing each check is for.
+   *
+   * Granted HERE because load() is the one place navigation happens, so no
+   * section can forget it. The menu section below deliberately takes it away
+   * again for a few checks, to stand where a shared-link reader stands, and
+   * puts it back.
+   *
+   * The phrase is never verified against the server by this gate — team_phrase.js
+   * only calls out on unlock() — so any non-empty string satisfies it. That is
+   * a statement about the gate being a convenience, not a boundary: kb_curation's
+   * RLS is what actually refuses a write. */
+  async function grantStageRung(page) {
+    await page.evaluate(() => {
+      try { localStorage.setItem("cpl_team_pass", "sweep-phrase"); } catch (e) {}
+      window.dispatchEvent(new Event("cpl-team-pass-unlocked"));
+    });
+  }
   async function load(page, hash) {
     await page.goto(url + (hash ? "#" + hash : ""), { waitUntil: "domcontentloaded" });
     await page.waitForFunction(() => window.CPL_CCR_UNIVERSE && window.CPL_CCR_UNIVERSE_MEMBERS && document.getElementById("u-cvs"), null, { timeout: 30000 }).catch(() => {});
+    await grantStageRung(page);
     await sleep(700);
   }
   async function shot(page, name) { if (shotDir) await page.screenshot({ path: path.join(shotDir, name + ".png") }); }
@@ -228,10 +252,47 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   const bb0c = await cvsBox(page);
   await page.click("#u-more-sum"); await sleep(150);
   ok("More opens", await page.evaluate(() => document.getElementById("u-more-menu").open));
-  const goto = await page.evaluate(() => [...document.querySelectorAll("#u-views-menu > *")].map((e) => (e.tagName === "SPAN" ? "[here] " : "") + e.textContent.trim()));
-  ok("Go to names where you are and offers every other view", goto[0] === "[here] SkyView" && goto.includes("Comprehensive view") && goto.includes("By discipline") && goto.includes("By subject") && goto.includes("ESL packaging") && goto.includes("How SkyView works") && goto.includes("CCR table view") && goto.includes("COBI"), goto.join(" · "));
+  /* ⚠️ "[here]" IS A CLASS, NOT A TAG. This mapper used to read any SPAN as
+   * the you-are-here marker, which was true while `.u-views-here` was the only
+   * span in the menu. The no-rung branch adds a second one, and the old rule
+   * reported "Sign in to open COBI." as the view the reader is standing on. */
+  const gotoOf = () => page.evaluate(() => [...document.querySelectorAll("#u-views-menu > *")]
+    .map((e) => (e.classList.contains("u-views-here") ? "[here] " : "") + e.textContent.trim()));
+  const goto = await gotoOf();
+  ok("Go to names where you are and offers every other view of this page",
+    goto[0] === "[here] SkyView" && goto.includes("Comprehensive view") && goto.includes("By discipline") &&
+    goto.includes("By subject") && goto.includes("ESL packaging") && goto.includes("How SkyView works"), goto.join(" · "));
   ok("stand-alone there is no 'Open in its own tab' (that is the framed door)", !goto.includes("Open in its own tab"));
-  ok("CCR table view and COBI are links out to COBI in a new tab", await page.evaluate(() => { const a = document.getElementById("u-ccr-list"), c = document.getElementById("u-cobi"); return a && a.tagName === "A" && /index\.html#unified-courses\/list$/.test(a.getAttribute("href")) && a.target === "_blank" && c && c.tagName === "A"; }));
+
+  /* ── the two ways OUT need a rung (Sam, 2026-09-18) ──────────────────────
+   * "Team code or magic should be able to navigate to all links." Both COBI
+   * links render only when NOT framed — only on the stand-alone page, which is
+   * exactly the page shared outside the team. The sweep holds the phrase (see
+   * grantStageRung), so it starts on the curator's side of the gate. */
+  ok("with the team phrase both COBI links appear", goto.includes("CCR table view") && goto.includes("COBI"), goto.join(" · "));
+  ok("…as links out to COBI in a new tab", await page.evaluate(() => { const a = document.getElementById("u-ccr-list"), c = document.getElementById("u-cobi"); return a && a.tagName === "A" && /index\.html#unified-courses\/list$/.test(a.getAttribute("href")) && a.target === "_blank" && c && c.tagName === "A"; }));
+
+  /* Now stand where a shared-link reader stands. This is the half that matters
+   * for what Sam asked: the page he hands to people outside the team must not
+   * offer them a door into COBI. */
+  await page.evaluate(() => {
+    try { localStorage.removeItem("cpl_team_pass"); } catch (e) {}
+    window.dispatchEvent(new Event("cpl-team-pass-unlocked"));
+  });
+  await sleep(150);
+  const gotoAnon = await gotoOf();
+  ok("no rung: neither COBI link is offered", !gotoAnon.includes("CCR table view") && !gotoAnon.includes("COBI"), gotoAnon.join(" · "));
+  ok("no rung: the in-page views are all still there",
+    gotoAnon.includes("Comprehensive view") && gotoAnon.includes("By discipline") && gotoAnon.includes("How SkyView works"), gotoAnon.join(" · "));
+  ok("no rung: the menu says the door exists rather than going quiet",
+    gotoAnon.some((g) => /Sign in to open COBI/.test(g)), gotoAnon.join(" · "));
+  ok("no rung: the note is not mistaken for the current view",
+    !gotoAnon.some((g) => /^\[here\] Sign in/.test(g)), gotoAnon.join(" · "));
+
+  /* Put it back — every check after this one drags a course, and a browser
+   * left without the rung would fail them all for the wrong reason. */
+  await grantStageRung(page);
+  await sleep(150);
   ok("on the Sky the Night | Day pair shows and Dark canvas is hidden", await page.evaluate(() => !document.getElementById("u-nd").hidden && document.getElementById("u-dark").hidden && document.getElementById("u-night").getAttribute("aria-pressed") === "true"));
   await page.click("#u-insp-toggle"); await sleep(200); s = await st(page);
   const wOpen = (await cvsBox(page)).width;
