@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 467,
+   "count": 469,
    "docs": [
     {
      "created": "2026-08-14",
@@ -2347,6 +2347,26 @@
      "updated": "2026-08-19"
     },
     {
+     "created": "2026-09-18",
+     "governs": [
+      ".github/workflows/cpl-chat-preview-ab.yml",
+      "chatbox/smoke_test.sh",
+      "tests/sierra_prospective_credit.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-new-assertion-must-fail-in-the-shape-the-grid-counts.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "sierra",
+      "smoke-test",
+      "a-b",
+      "instrumentation"
+     ],
+     "title": "A new assertion must fail in the shape the grid counts \u2014 or the grid reads \"0 failing\" over a failed run",
+     "type": "methodology",
+     "updated": "2026-09-18"
+    },
+    {
      "created": "2026-08-13",
      "governs": [
       "kb/_build_cr_reference.py",
@@ -3896,6 +3916,25 @@
      "title": "Alias maps are permutations, not graphs: resolution semantics for stacked re-keys",
      "type": "methodology",
      "updated": ""
+    },
+    {
+     "created": "2026-09-18",
+     "governs": [
+      "chatbox/supabase/functions/cpl-chat/index.ts",
+      "chatbox/smoke_test.sh"
+     ],
+     "path": "docs/kb-notes/methodology-an-absence-in-the-data-is-a-statement-about-the-data.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "sierra",
+      "house-voice",
+      "retrieval",
+      "epistemics"
+     ],
+     "title": "An absence in the data is a statement about the data \u2014 say what the catalog shows, never that the county has none",
+     "type": "methodology",
+     "updated": "2026-09-18"
     },
     {
      "created": "2026-08-11",
@@ -17838,5 +17877,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 926
+ "total": 928
 }
