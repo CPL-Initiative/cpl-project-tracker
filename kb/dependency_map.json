@@ -4,7 +4,7 @@
   "supabase_tables": 85,
   "rpcs": 31,
   "edge_functions": 5,
-  "file_datasets": 476,
+  "file_datasets": 477,
   "external_services": 143,
   "consumers": 340,
   "workflows": 34,
@@ -14360,6 +14360,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/supabase_sql_guard_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/uc_cur_promote_test.py": {
    "consumers": [
     {
@@ -18917,6 +18930,7 @@
     "tests/governance_docs_panel.test.js",
     "prototype/check_contrast.py",
     "tests/supabase_function_grants_test.py",
+    "tests/supabase_sql_guard_test.py",
     "tests/coci_program_cip_test.py",
     "tests/course_title_mojibake_test.py",
     "tests/coci_offerings_sync_chunk_test.py",

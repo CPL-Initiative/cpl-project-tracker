@@ -108,6 +108,13 @@ jobs:
       # the published anon key. Pure-stdlib python; same non-required check.
       - name: Supabase function-grant lint (revoke must name PUBLIC)
         run: python3 tests/supabase_function_grants_test.py
+      # The PreToolUse guard that lets auto mode stop prompting on every read
+      # (Session 277). It returns `allow` for read-only SQL, so the convenience
+      # is only safe while every write case stays `deny` — a false allow is a
+      # write reaching a shared table with no prompt and no receipt, which is
+      # what Rule 10 exists to prevent. Pure-stdlib python, no network.
+      - name: Supabase SQL guard (reads allow, writes deny, unknown asks)
+        run: python3 tests/supabase_sql_guard_test.py
       # The COCI program export's CIP column and the Taxonomy manual's CTE
       # asterisk (Session 272). Both were read past for months and landed in
       # coci_college_programs unseen — 14,740 of 22,335 rows carried a top_title
