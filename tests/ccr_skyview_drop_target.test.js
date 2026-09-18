@@ -103,6 +103,13 @@ const dom = new JSDOM(html, {
   runScripts: "dangerously", pretendToBeVisual: true,
   url: "https://example.org/prototype/skyview.html",
   beforeParse(window) {
+    /* THE STAGE RUNG (Sam, 2026-09-18: "To position courses to merge needs at
+     * least team code auth to do"). Staging is gated on curationRung() >= 1,
+     * so a fixture that drags a course has to say who is dragging. The real
+     * page loads team_phrase.js; jsdom does not fetch external scripts, so the
+     * rung is declared here instead — deliberately, because a gate that failed
+     * open when its module is missing would be no gate at all. */
+    window.CPL_TEAM_PHRASE = { get: () => "fixture-team-phrase" };
     window.CPL_SKYVIEW_OPENS = "map";   // this suite measures the flat map; the Sky has its own (ccr_skyview_sky.test.js)
     window.HTMLCanvasElement.prototype.getContext = function () { return fakeCtx(); };
     window.fetch = () => Promise.resolve({ ok: false, status: 404, json: () => Promise.reject(new Error("404")) });

@@ -592,6 +592,29 @@ details.u-views:not([open]) .u-views-menu{display:none}   /* the flat list in th
 .u-ro-line{margin:0;padding:5px clamp(12px,2vw,24px);font-size:.8rem;line-height:1.4;
   color:var(--text-muted);background:var(--surface-subtle);border-bottom:1px solid var(--border)}
 .u-ro-line strong{color:var(--text-strong)}
+/* The controls inside the curation line. `.linkish` is the page's existing
+   button-that-reads-as-a-link; these only give it a hit target that clears
+   WCAG 2.2 SC 2.5.8 (24px) without growing the band's height — the canvas is
+   sized off that height, so padding here would push the legend off a phone.
+   Inline-flex + min-height rather than vertical padding does it. */
+.u-ro-line .linkish{min-height:24px;display:inline-flex;align-items:center}
+.u-ro-line button[disabled]{opacity:.6;cursor:default}
+/* The sign-in host sits INSIDE #u-full so browser full screen still paints it.
+   Absolute so it cannot change the band's height and re-size the canvas under
+   the reader mid-task; scrollable so a phone keyboard cannot bury the button. */
+.u-signin{position:absolute;z-index:6;right:clamp(12px,2vw,24px);
+  max-width:min(26rem,calc(100vw - 24px));max-height:60vh;overflow-y:auto;
+  background:var(--surface);border:1px solid var(--border);border-radius:10px;
+  box-shadow:0 8px 28px rgba(0,0,0,.18);padding:.75rem .85rem}
+.u-signin[hidden]{display:none}
+.u-signin-tp{margin:0 0 .6rem;padding:0 0 .6rem;border-bottom:1px solid var(--border)}
+.u-signin-tp p{margin:0 0 .45rem;font-size:.8rem;line-height:1.45;color:var(--text-body)}
+.u-signin-tp input{min-height:32px;padding:.25rem .4rem;font:inherit;
+  border:1px solid var(--border);border-radius:6px;background:var(--surface)}
+#u-tp-msg{font-size:.8rem;color:var(--text-muted)}
+/* The one-line note that stands where the COBI links do for a signed-in
+   curator — a menu that quietly lacks two items reads as a bug. */
+.u-views-note{display:block;padding:.3rem .1rem;font-size:.8rem;color:var(--text-muted)}
 /* the credentials reaching a course, in the panel and on the outline */
 .cpl-list{list-style:none;margin:.3em 0 0;padding:0}
 .cpl-list li{padding:.5em 0;border-top:1px solid var(--border)}
@@ -2050,6 +2073,27 @@ else boot();
 <script id="atlas-univmem" type="application/json">__UNIVMEM__</script>
 <script>try{window.CPL_CCR_UNIVERSE=JSON.parse(document.getElementById("atlas-universe").textContent);window.CPL_ATLAS_DATA=JSON.parse(document.getElementById("atlas-data").textContent);}catch(e){}
 try{window.CPL_CCR_UNIVERSE_MEMBERS=JSON.parse(document.getElementById("atlas-univmem").textContent);}catch(e){window.CPL_CCR_UNIVERSE_MEMBERS=null;}</script>
+<!-- The reviewer session and the one sign-in door, shared with COBI rather than
+     reimplemented here (Sam, 2026-09-18: "I don't see anywhere on the surface
+     how to log in to curate"). These are the FIRST external scripts on this
+     page — everything else is inlined by build_ccr_atlas.py — and they resolve
+     to the repo root for both outputs: the committed served page at
+     prototype/skyview.html and the gitignored full build beside it.
+
+     ⚠️ NEVER WRITE A BUILD PLACEHOLDER IN THIS COMMENT. build_ccr_atlas.py
+     substitutes with str.replace, which does not care that it is inside a
+     comment: naming the universe placeholder here inlined the whole 485 KB of
+     ccr_universe.js a second time and nearly doubled the served page. Say
+     "the universe script" in prose and let the tag below be the only one.
+
+     cpl_session.js FIRST and before the universe script: it renews `cpl_sb` underneath
+     every reader and start()s while its own script evaluates, so the universe
+     JS reads a hydrated session rather than "signed out" for the whole parse.
+     A missing file fails soft — ccr_universe.js checks for window.CPL_SESSION
+     before offering anything, and the map stays read-only without it. -->
+<script src="../team_phrase.js"></script>
+<script src="../cpl_session.js"></script>
+<script src="../reviewer_signin.js"></script>
 <script>__UNIVJS__</script>
 </body>
 </html>

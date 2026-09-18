@@ -1895,6 +1895,43 @@ function emptied(nd){
   return !!(m && (m.cn in movedTo) && movedTo[m.cn]!==nd.i);
 }
 
+/* ══ THE CURATION LADDER (Sam, 2026-09-18) ══════════════════════════════════
+ * Three rungs, and the page says which one the reader is standing on:
+ *
+ *   0 VIEW     Anyone with the link. The map, the search, the details panel,
+ *              the Ask. Sam shares this page; this rung is what he shares.
+ *   1 STAGE    The TEAM PHRASE. Positioning a course for a merge. His words,
+ *              2026-09-18: "To position courses to merge needs at least team
+ *              code auth to do."
+ *   2 EXECUTE  A magic-link reviewer session. Writing kb_curation, which is
+ *              the only rung that leaves this browser.
+ *
+ * Re-mint sits ABOVE execute and is deliberately absent: Sam called it "the
+ * additional process" after merge execution, and his 2026-09-05 ruling makes a
+ * re-mint view a queue he approves, never a fire button. Rule 7 also re-locks
+ * at faculty publication, so building an approve step here now would be built
+ * to be torn out.
+ *
+ * ⚠️ ONE FUNCTION, because the rungs have moved twice in one conversation and
+ * will move again. Every gate reads this; nothing else reads the storage keys.
+ *
+ * The ranking matches nav_overlay.js's AUDIENCE_RANK (everyone 0, signed_in 1,
+ * magic_link 2) on purpose — a reviewer session satisfies the STAGE rung too,
+ * so a curator who signed in never has to also hold the phrase.
+ *
+ * ⚠️ THIS IS A CONVENIENCE GATE, NOT A SECURITY BOUNDARY, and it is honest
+ * about which is which. Staging writes nothing, so gating it in the browser is
+ * the whole mechanism and that is fine. EXECUTE is different: the button is a
+ * courtesy and kb_curation's RLS is the real gate — a row is refused server
+ * side for anyone who is not an allowed reviewer, whatever this function says. */
+function curationRung(){
+  try{ if(window.CPL_SESSION && window.CPL_SESSION.get()) return 2; }catch(e){}
+  try{ if(window.CPL_TEAM_PHRASE && window.CPL_TEAM_PHRASE.get()) return 1; }catch(e){}
+  return 0;
+}
+function canStage(){ return curationRung() >= 1; }
+function canExecute(){ return curationRung() >= 2; }
+
 /* ══ THE STAGED-TO-MOVE STATE — ON THE MODEL, NOT THE VIEW (v4 item 7) ═══════
  * Sam, 2026-09-06, after dragging a course onto another identity: "It didn't
  * really change over here, which I would expect it to change and to give me a
@@ -3090,6 +3127,18 @@ window.__ccrUniverse = function(opts){
        * actually SAVED — unified_courses.js POSTs kb_curation under a magic-link
        * reviewer session with RLS on every row — so "how do I log in to curate"
        * has an answer on the surface rather than only in the repo. */
+      /* Plain words, in the reader's own place \u2014 now the curation line, which
+       * says what is true for THIS reader and carries the only control that
+       * changes it.
+       *
+       * \u26a0\ufe0f THE SIGNED-OUT SENTENCE IS RENDERED INLINE, NOT LEFT EMPTY FOR JS.
+       * fitCanvas() subtracts this element's height from the canvas, and an
+       * empty band at first measure leaves the canvas that many pixels too tall
+       * and pushes the legend off the foot of a phone. Signed out with nothing
+       * staged is also the state almost every reader opens in, so the markup
+       * carries it verbatim and renderCurationLine() only ever replaces it. The
+       * chrome ResizeObserver watches u-ro-line, so a later re-render
+       * re-measures on its own. */
       '<p class="u-ro-line" id="u-ro-line">'+
         '<strong>Read only.</strong> Moves stage in this browser alone. '+
         'Signed-in curators save in '+
@@ -3097,6 +3146,13 @@ window.__ccrUniverse = function(opts){
           'title="The Common Course Reference table in COBI \u2014 where a signed-in reviewer saves a merge">'+
           'COBI\u2019s Common Course Reference tab</a>.'+
       '</p>'+
+      /* The sign-in form mounts HERE, inside #u-full, for the same reason the
+       * band is: browser full screen paints only #u-full, and a sign-in the
+       * reader cannot reach in the view they are standing in is the gap Sam
+       * reported. reviewer_signin.js brings its own CSS and renders a
+       * self-contained .cobi-rsi box, so this host needs no styling of its
+       * own. Hidden until asked for \u2014 a form nobody opened is noise. */
+      '<div class="u-signin" id="u-signin" hidden></div>'+
       '<div class="u-stage" id="u-stage">'+
         '<div class="u-wrap" id="u-wrap">'+
           '<canvas id="u-cvs" tabindex="0" role="img" aria-label="'+
@@ -6099,6 +6155,22 @@ function renderNode(){
   });
 }
 function applyMove(cn, code, college, toId, d){
+  /* THE STAGE RUNG. Every route that stages a move — a canvas drop, the
+   * panel's Drag… then click, Move here, Accept — meets here, which is why the
+   * carry is released here too, so this is the one place the gate belongs.
+   *
+   * ⚠️ IT REFUSES OUT LOUD. The silent return was the bug Sam reported as
+   * "stops responding on the second or third merge"; a gate that drops the
+   * gesture and says nothing repeats it exactly, and this one fires for the
+   * shared-link reader who has no idea a rung exists. Say what is needed and
+   * where the control is. */
+  if(!canStage()){
+    if(drag) drag=null;
+    setHint("Positioning a course needs the team phrase. Open <strong>Sign in</strong> "+
+            "under the controls to enter it — the map, search and details stay open to everyone.");
+    draw();
+    return;
+  }
   var gate=canMove(cn);
   if(!gate.ok){ setHint(sharedKeyReason(cn, code, gate.others)); return; }
   var from=movedTo[cn]||originOf(cn);
@@ -6137,11 +6209,154 @@ function applyMove(cn, code, college, toId, d){
   draw();
 }
 function drawWrites(){
+  /* FIRST, and before the early return below: the curation line lives in
+   * #u-full and has to update even when #u-writes is absent or hidden, which
+   * is every solo view — the one this band exists for. */
+  renderCurationLine();
   var el=document.getElementById("u-writes"); if(!el) return;
   if(!moves.length){ el.innerHTML='<p class="empty">No moves yet.</p>'; return; }
   el.innerHTML='<div class="writes">'+moves.map(function(m){
     return "<div>CN:"+esc(m.cn)+"  merge_into  "+esc(m.to)+"</div>";
   }).join("")+"</div>";
+}
+
+/* ══ THE CURATION LINE — what is true for THIS reader, where they stand ═════
+ * The band under the control row used to state one fact for everybody ("Read
+ * only. Moves stage in this browser alone."). With the ladder above it there
+ * are three readers, and the sentence is false for two of them. So the band
+ * says the reader's own state and carries the control that changes it.
+ *
+ * ⚠️ IT LIVES IN #u-full AND THAT IS THE POINT. The staged list (#u-writes)
+ * lives in #u-below, which `body.u-solo` — SkyView, the default, the view Sam
+ * asked for the login on — hides entirely. A Save control on that list would
+ * be invisible in the view where the curation happens. This band is the only
+ * chrome that survives both solo and browser full screen.
+ *
+ * ⚠️ THE NON-REVIEWER'S SENTENCE MUST STAY TRUE. Sam shared this page on
+ * "Moves stage in this browser alone", and for rungs 0 and 1 it still is —
+ * nothing below the EXECUTE rung sends anything anywhere. Only rung 2 gets a
+ * sentence about saving, and only rung 2 can. */
+function renderCurationLine(){
+  var el=document.getElementById("u-ro-line"); if(!el) return;
+  var rung=curationRung(), n=moves.length;
+  var staged=n?(" <strong>"+n+"</strong> move"+(n===1?"":"s")+" staged."):"";
+  if(rung>=2){
+    var who="";
+    try{ var s=window.CPL_SESSION.get(); who=(s&&s.email)||""; }catch(e){}
+    el.innerHTML='<strong>Signed in'+(who?(" as "+esc(who)):"")+'.</strong>'+staged+' '+
+      (n?'<button type="button" class="linkish" id="u-save-merges">Save '+n+' move'+(n===1?"":"s")+
+         ' to the Common Course Reference</button> · ':'Stage a move and you can save it here. ')+
+      '<button type="button" class="linkish" id="u-signout">Sign out</button>';
+  } else if(rung===1){
+    el.innerHTML='<strong>Read only.</strong> Moves stage in this browser alone.'+staged+
+      ' <button type="button" class="linkish" id="u-signin-open">Sign in to save them</button>';
+  } else {
+    el.innerHTML='<strong>Read only.</strong> Moves stage in this browser alone. '+
+      '<button type="button" class="linkish" id="u-signin-open">Sign in</button> '+
+      'to position courses and save merges.';
+  }
+  var o=document.getElementById("u-signin-open"); if(o) o.onclick=openSigninSheet;
+  var sv=document.getElementById("u-save-merges"); if(sv) sv.onclick=saveStagedMerges;
+  var so=document.getElementById("u-signout");
+  if(so) so.onclick=function(){ try{ window.CPL_SESSION.signOut(); }catch(e){} renderCurationLine(); draw(); };
+}
+
+/* The one door, shared with COBI rather than reimplemented. reviewer_signin.js
+ * brings its own CSS and renders a self-contained box, and team_phrase.js owns
+ * the phrase — this only opens the host and puts both in one place, because a
+ * reader who needs one rung has no way to know which rung they need. */
+function openSigninSheet(){
+  var host=document.getElementById("u-signin"); if(!host) return;
+  if(!host.hidden){ host.hidden=true; return; }
+  host.hidden=false;
+  host.innerHTML='<div class="u-signin-in"></div>';
+  var inner=host.querySelector(".u-signin-in");
+  /* The phrase rung first: it is the one a curator arriving from a shared link
+   * most likely needs, and it is the cheaper of the two to satisfy. */
+  if(window.CPL_TEAM_PHRASE && !window.CPL_TEAM_PHRASE.get()){
+    var box=document.createElement("div");
+    box.className="u-signin-tp";
+    box.innerHTML='<p><strong>Team phrase</strong> — lets you position courses for a merge. '+
+      'Moves still stage in this browser until a signed-in reviewer saves them.</p>'+
+      '<input type="password" id="u-tp-in" autocomplete="off" aria-label="Team phrase">'+
+      ' <button type="button" class="linkish" id="u-tp-go">Unlock</button>'+
+      '<span id="u-tp-msg" role="status"></span>';
+    inner.appendChild(box);
+    box.querySelector("#u-tp-go").onclick=function(){
+      var v=(box.querySelector("#u-tp-in").value||"").trim();
+      var msg=box.querySelector("#u-tp-msg");
+      if(!v){ msg.textContent=" Enter the phrase."; return; }
+      msg.textContent=" Checking…";
+      window.CPL_TEAM_PHRASE.unlock(v).then(function(ok){
+        msg.textContent=ok?" Unlocked.":" That phrase was not accepted.";
+        if(ok){ host.hidden=true; renderCurationLine(); draw(); }
+      }).catch(function(){ msg.textContent=" Could not check the phrase — try again."; });
+    };
+  }
+  var mount=document.createElement("div");
+  inner.appendChild(mount);
+  if(window.CPL_REVIEWER_SIGNIN){
+    window.CPL_REVIEWER_SIGNIN.mountInto(mount, {
+      title:"Reviewer sign-in",
+      blurb:"A magic link to your reviewer email. Signing in lets you SAVE a staged merge; "+
+            "the database decides which rows you may write."
+    });
+  } else {
+    mount.innerHTML='<p>Sign-in is unavailable on this page. Curate in '+
+      '<a href="../index.html#unified-courses/list" target="_blank" rel="noopener">'+
+      'COBI’s Common Course Reference tab</a>.</p>';
+  }
+}
+
+/* ══ THE WRITE ══════════════════════════════════════════════════════════════
+ * The SAME row unified_courses.js has always written: kb_curation, one
+ * merge_into row per member, course_id "CN:<cn>", under a magic-link reviewer
+ * session with RLS deciding per row. Nothing new is invented here — a second
+ * shape for the same decision would be a second thing to keep true.
+ *
+ * Reversible from its receipt (Rule 10 a2): each row is deleted by its
+ * (course_id, field) pair, which is exactly what the panel's Put back already
+ * does locally and what unified_courses.js's Undo does remotely.
+ *
+ * ⚠️ ensureFresh() BEFORE the write, never the cached session: a Supabase
+ * access token lives about an hour, and the failure this avoids is the one
+ * that produced three bug reports in one evening (methodology-a-rotating-
+ * credential-cannot-be-cached). */
+function saveStagedMerges(){
+  if(!moves.length) return;
+  if(!canExecute()){ setHint("Sign in to save a staged merge."); return; }
+  var btn=document.getElementById("u-save-merges");
+  if(btn){ btn.disabled=true; btn.textContent="Saving…"; }
+  var batch=moves.slice();
+  window.CPL_SESSION.ensureFresh().then(function(sess){
+    if(!sess || !sess.access_token) throw new Error("no-session");
+    var body=batch.map(function(m){
+      return { course_id:"CN:"+m.cn, field:"merge_into", value:m.to, reviewer_email:sess.email };
+    });
+    return fetch(ASK_URL+"/rest/v1/kb_curation", {
+      method:"POST",
+      headers:{ apikey:ASK_ANON, Authorization:"Bearer "+sess.access_token,
+                "Content-Type":"application/json",
+                Prefer:"resolution=merge-duplicates,return=minimal" },
+      body:JSON.stringify(body)
+    });
+  }).then(function(r){
+    if(!r.ok) throw new Error("status "+r.status);
+    /* Saved rows stop being STAGED — they are now curation awaiting the next
+     * sync, the same state a merge made in COBI is in. Clearing them is what
+     * makes the count honest; leaving them would offer to save them twice. */
+    batch.forEach(function(m){ delete movedTo[m.cn]; });
+    moves=moves.filter(function(m){ return batch.indexOf(m)<0; });
+    setHint("Saved <strong>"+batch.length+"</strong> merge"+(batch.length===1?"":"s")+
+            " to the Common Course Reference. They materialize on the next daily sync; "+
+            "undo one in COBI’s Common Course Reference tab.");
+    drawWrites(); if(selNode) renderNode(); draw();
+  }).catch(function(e){
+    var why=(e&&e.message)||"network error";
+    setHint("Could not save"+(why==="no-session"?" — your sign-in expired. Sign in again.":
+            " — "+esc(why)+". Nothing was written; your moves are still staged."));
+    renderCurationLine();
+  });
 }
 
 /* ══ the views, one menu for all of them ═══════════════════════════════════
@@ -6214,7 +6429,7 @@ function viewsMenuInto(host){
       'title="Show the Common Course Reference table in this tab">CCR table view</button>');
     items.push('<a class="linkish" id="u-own-tab" href="'+esc(ownUrl())+'" target="_blank" rel="noopener" '+
       'title="Open SkyView in its own browser tab, to keep it beside the list">Open in its own tab</a>');
-  } else {
+  } else if(canStage()){
     items.push('<a class="linkish" id="u-ccr-list" href="../index.html#unified-courses/list" target="_blank" rel="noopener" '+
       'title="The Common Course Reference table in COBI — filters, quality flags and the Merge actions">CCR table view</a>');
     /* The way back to the rest of the work (Sam, 2026-09-07: "Need a COBI link
@@ -6225,6 +6440,29 @@ function viewsMenuInto(host){
      * same reason the CCR table view is a message rather than a link there. */
     items.push('<a class="linkish" id="u-cobi" href="../index.html" target="_blank" rel="noopener" '+
       'title="COBI — the dashboard SkyView belongs to">COBI</a>');
+  } else {
+    /* ⚠️ THE TWO WAYS OUT OF THIS PAGE ARE THE ONES THAT NEEDED A RUNG (Sam,
+     * 2026-09-18: "Team code or magic should be able to navigate to all
+     * links", answering his own earlier "expand auth to other controls like
+     * the navigation to other non-public pages").
+     *
+     * Both go to ../index.html, and they render ONLY when not framed — that
+     * is, only on the stand-alone page, which is exactly the page Sam shares
+     * with people outside the team. So a shared link was offering every
+     * recipient a door into COBI.
+     *
+     * The views above stay open to everyone: they are views of THIS page, and
+     * this page is what he shares.
+     *
+     * ⚠️ AND IT SAYS SO. Failing closed and failing silently are separable,
+     * and only the first was ever the requirement — a menu that quietly lacks
+     * two items reads as a bug to the curator who expects them. This names the
+     * remedy without describing what is behind the door.
+     *
+     * ⚠️ HIDING THE LINK IS NOT WHAT PROTECTS COBI. Pages serves it publicly
+     * and anyone who knows the address walks in; what this removes is the
+     * offer. The gate that matters is RLS on the tables COBI reads. */
+    items.push('<span class="u-views-note">Sign in to open COBI.</span>');
   }
   /* Inside the map's More panel (host[data-flat]) the list renders FLAT under
    * the panel's own "Go to" heading — a menu inside a menu is a door behind a
@@ -6251,6 +6489,34 @@ function viewsMenuInto(host){
   });
 }
 window.__ccrViewsMenu = viewsMenuInto;
+
+/* ══ THE CHROME FOLLOWS THE CREDENTIAL ═════════════════════════════════════
+ * Two surfaces now depend on the rung — the curation line and the Views menu's
+ * two ways out — and a credential can change while the page sits open: a magic
+ * link lands in ANOTHER browser tab and cpl_session.js shares it through
+ * localStorage, the phrase unlocks in place, the session expires, the reader
+ * signs out somewhere else.
+ *
+ * ⚠️ ALL THREE EVENT NAMES, plus storage. cpl_session.js announces
+ * `cpl-session-changed`, the older curator tabs `cpl-auth-change`, and
+ * team_phrase.js `cpl-team-pass-unlocked`. Listening for one of three is how a
+ * control comes to sit stale beside a credential that has changed — the exact
+ * failure cobi_identity.js documents in the same words. */
+function refreshAuthChrome(){
+  try{ renderCurationLine(); }catch(e){}
+  try{ var slot=document.getElementById("u-views-slot"); if(slot) viewsMenuInto(slot); }catch(e){}
+}
+(function(){
+  if(typeof window==="undefined"||!window.addEventListener) return;
+  ["cpl-session-changed","cpl-auth-change","cpl-team-pass-unlocked","focus"]
+    .forEach(function(ev){ window.addEventListener(ev, refreshAuthChrome); });
+  window.addEventListener("storage", function(e){
+    /* The `cpl_` prefix covers every credential key either module writes,
+     * `cpl_sb` included, so this page never needs to name one. A null key is a
+     * storage clear, which is also a credential change. */
+    if(!e||!e.key||e.key.indexOf("cpl_")===0) refreshAuthChrome();
+  });
+})();
 /* One listener closes ANY open Views menu on a click elsewhere — registered
  * once, because the menu is rebuilt on every render and a listener per build
  * would pile up. A menu left standing over the map is why menus feel broken. */

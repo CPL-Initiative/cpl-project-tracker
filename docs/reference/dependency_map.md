@@ -93,7 +93,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `gr_revisions` | tabs: `gr-priorities` | tabs: `gr-priorities` |
 | `item_raci` | tabs: `raci` · modules: `master_report.js` · pages: `CPL_Dashboard.html` | tabs: `raci` |
 | `item_updates` | tabs: `annual-report`, `raci` · modules: `master_report.js` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py`, `kb/_load_projects.py` | tabs: `raci` |
-| `kb_curation` | tabs: `canonical-subj4`, `credential-reference`, `map-export`, `unified-courses`, `vision-2030` · scripts: `kb/_apply_canonical_subj4.py`, `kb/_apply_credential_review.py`, `kb/_apply_curation.py`, `kb/_apply_unclassified_triage.py`, `kb/_cred_rename_apply_supabase.py`, `kb/_eacr_flag_migrate.py`, `kb/_overmerge_apply_supabase.py`, `kb/_preseed_unclassified.py`, `kb/_rekey_kb_curation_supabase.py`, `kb/_subj4_apply_supabase.py` | tabs: `canonical-subj4`, `credential-reference`, `unified-courses`, `vision-2030` · scripts: `kb/_cred_rename_apply_supabase.py`, `kb/_eacr_flag_migrate.py`, `kb/_overmerge_apply_supabase.py`, `kb/_preseed_unclassified.py`, `kb/_rekey_kb_curation_supabase.py`, `kb/_subj4_apply_supabase.py` |
+| `kb_curation` | tabs: `canonical-subj4`, `credential-reference`, `map-export`, `unified-courses`, `vision-2030` · scripts: `kb/_apply_canonical_subj4.py`, `kb/_apply_credential_review.py`, `kb/_apply_curation.py`, `kb/_apply_unclassified_triage.py`, `kb/_cred_rename_apply_supabase.py`, `kb/_eacr_flag_migrate.py`, `kb/_overmerge_apply_supabase.py`, `kb/_preseed_unclassified.py`, `kb/_rekey_kb_curation_supabase.py`, `kb/_subj4_apply_supabase.py` | tabs: `canonical-subj4`, `credential-reference`, `unified-courses`, `vision-2030` · modules: `prototype/ccr_universe.js` · pages: `prototype/skyview.html` · scripts: `kb/_cred_rename_apply_supabase.py`, `kb/_eacr_flag_migrate.py`, `kb/_overmerge_apply_supabase.py`, `kb/_preseed_unclassified.py`, `kb/_rekey_kb_curation_supabase.py`, `kb/_subj4_apply_supabase.py` |
 | `liftoff_state` | pages: `CPL_Dashboard.html` | pages: `CPL_Dashboard.html` |
 | `map_cleanup_worklist` | tabs: `map-data-quality` | — |
 | `map_college_contacts` | tabs: `college-briefing`, `college-identity`, `map-queue`, `map-users` · scripts: `kb/_publish_college_briefing.py` · `edgefn:cpl-chat` | — |
@@ -147,8 +147,8 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `cpl_funding_optin_review` | tabs: `college-briefing`, `implementation-funding` | — |
 | `credential_alignment_for_college` | `edgefn:cpl-chat` | — |
 | `credential_recs_for_titles` | `edgefn:cpl-chat` | — |
-| `fin_pass_ok` | pages: `CPL_Dashboard.html` | — |
-| `gr_pass_ok` | tabs: `gr-priorities` · pages: `CPL_Dashboard.html` | — |
+| `fin_pass_ok` | pages: `CPL_Dashboard.html`, `prototype/ccr_atlas_v1.html`, `prototype/skyview.html` | — |
+| `gr_pass_ok` | tabs: `gr-priorities` · pages: `CPL_Dashboard.html`, `prototype/ccr_atlas_v1.html`, `prototype/skyview.html` | — |
 | `is_allowed_reviewer` | `edgefn:cpl-chat` | — |
 | `map_clear_custom_report_staging` | scripts: `kb/_sync_map_custom_reports.py` | — |
 | `map_contacts_replace` | scripts: `map/sync_map_users.py` | — |
@@ -170,7 +170,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `search_statewide_recommendations` | `edgefn:cpl-chat` | — |
 | `sierra_feedback_set_status` | tabs: `sierra-training` | — |
 | `sierra_feedback_upsert` | tabs: `chatbot` · pages: `sierra/index.html` · scripts: `chatbox/smoke_test.sh` | — |
-| `team_pass_ok` | tabs: `raci` · pages: `CPL_Dashboard.html`, `kb-portal/index.html` · `edgefn:cpl-chat` | — |
+| `team_pass_ok` | tabs: `raci` · pages: `CPL_Dashboard.html`, `kb-portal/index.html`, `prototype/ccr_atlas_v1.html`, `prototype/skyview.html` · `edgefn:cpl-chat` | — |
 | `tmc_review_submission` | tabs: `tmc-builder` | — |
 
 ## Edge functions
@@ -318,7 +318,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `cpl_memory.js` | pages: `CPL_Dashboard.html` | — |
 | `cpl_news.js` | pages: `CPL_Dashboard.html` | — |
 | `cpl_pathways.js` | pages: `CPL_Dashboard.html` | — |
-| `cpl_session.js` | pages: `CPL_Dashboard.html`, `fact-sheet/index.html` | — |
+| `cpl_session.js` | pages: `CPL_Dashboard.html`, `fact-sheet/index.html`, `prototype/ccr_atlas_v1.html`, `prototype/skyview.html` | — |
 | `cpl_theme.js` | pages: `CPL_Dashboard.html` | — |
 | `cpl_todos.js` | pages: `CPL_Dashboard.html` | — |
 | `cr_reference.js` | pages: `CPL_Dashboard.html` | — |
@@ -626,7 +626,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `report_generator.js` | pages: `CPL_Dashboard.html` | — |
 | `reports/CPL_Master_Report.docx` | none found | committed by: `daily-dashboard.yml` |
 | `reports/projects/*.docx` | none found | committed by: `daily-dashboard.yml` |
-| `reviewer_signin.js` | pages: `CPL_Dashboard.html` | — |
+| `reviewer_signin.js` | pages: `CPL_Dashboard.html`, `prototype/ccr_atlas_v1.html`, `prototype/skyview.html` | — |
 | `scripts/publish_skyview_desc_shards.sh` | workflows: `daily-dashboard.yml`, `skyview-desc-shards.yml` | — |
 | `scripts/stamp_asset_versions.py` | workflows: `pages.yml` | — |
 | `sierra/sierra.js` | pages: `sierra/index.html` | — |
@@ -634,7 +634,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `statewide/_probe_exhibit_authority.py` | workflows: `statewide-probe-authority.yml` | — |
 | `statewide_interactive.js` | pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py` | — |
 | `tabs.js` | pages: `CPL_Dashboard.html` | — |
-| `team_phrase.js` | pages: `CPL_Dashboard.html` | — |
+| `team_phrase.js` | pages: `CPL_Dashboard.html`, `prototype/ccr_atlas_v1.html`, `prototype/skyview.html` | — |
 | `team_phrase_header.js` | pages: `CPL_Dashboard.html` | — |
 | `team_phrases.js` | pages: `CPL_Dashboard.html` | — |
 | `tests/admin_live_banner_control.test.js` | workflows: `js-tests.yml` | — |
@@ -875,4 +875,4 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 
 Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 477 file
-datasets · 143 external services · 340 consumers · 34 workflows · 37 tabs.
+datasets · 143 external services · 341 consumers · 34 workflows · 37 tabs.
