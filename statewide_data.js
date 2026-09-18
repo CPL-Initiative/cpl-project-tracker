@@ -162965,6 +162965,110 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 1.0
     },
     {
+      "exhibit_id": "MAPICI-RS3S-1-001",
+      "exhibit_ids": [
+        "MAPICI-RS3S-1-001"
+      ],
+      "title": "Rescue Systems 3: Structural Collapse Technician",
+      "unified_title": "Rescue Systems 3: Structural Collapse Technician",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Rescue Systems 3: Structural Collapse Technician"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Palo Verde College"
+      ],
+      "potential": 59,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Imperial Valley College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Ohlone College",
+        "Oxnard College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "San Diego Miramar College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Yuba College"
+      ],
+      "total_addressable": 60,
+      "credit_recs": [
+        {
+          "course": "FST 219",
+          "credit": "0.5 hours in Rescue Systems 3: Structural Collapse Technician"
+        }
+      ],
+      "authoritative_recs": [],
+      "adopter_units": {
+        "Palo Verde College": 0.5
+      },
+      "adopter_lines": {
+        "Palo Verde College": 1
+      },
+      "peer_units_median": 0.5,
+      "peer_units_max": 0.5,
+      "rec_units_total": 0.5
+    },
+    {
       "exhibit_id": "MAPCBES-REP-1-001|MAPCXS-REP-1-001|MAPCxS-PORE-1-001",
       "exhibit_ids": [
         "MAPCBES-REP-1-001",
@@ -309233,11 +309337,11 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "Palo Verde College",
-        "credit_recs": 60,
-        "exhibits": 60,
+        "credit_recs": 61,
+        "exhibits": 61,
         "disciplines": 2,
         "ccc_collaborative": 0,
-        "industry_certs": 60,
+        "industry_certs": 61,
         "pct": 0.5
       },
       {
@@ -309438,7 +309542,7 @@ window.CPL_STATEWIDE = {
         "courses": 316,
         "colleges": 86,
         "ccc_collaborative": 25,
-        "pct": 42.9
+        "pct": 42.8
       },
       {
         "discipline": "Engineering and Industrial Technologies",
@@ -309451,9 +309555,9 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Public and Protective Services",
-        "credit_recs": 1457,
-        "exhibits": 506,
-        "courses": 626,
+        "credit_recs": 1458,
+        "exhibits": 507,
+        "courses": 627,
         "colleges": 52,
         "ccc_collaborative": 542,
         "pct": 10.9
@@ -309649,8 +309753,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "cpl_type": "Industry Certification",
-        "credit_recs": 3696,
-        "exhibits": 1144,
+        "credit_recs": 3697,
+        "exhibits": 1145,
         "colleges": 79,
         "pct": 27.7
       },
@@ -309693,8 +309797,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "mode": "Industry training (I)",
-        "credit_recs": 2778,
-        "exhibits": 1088,
+        "credit_recs": 2779,
+        "exhibits": 1089,
         "colleges": 76,
         "pct": 20.8
       },
@@ -309758,8 +309862,8 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 11773,
-        "exhibits": 5290,
+        "credit_recs": 11774,
+        "exhibits": 5291,
         "colleges": 97,
         "disciplines": 23,
         "pct": 88.3
@@ -310184,6 +310288,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-09-18T13:38:01",
-  "total_credit_recs": 13330
+  "generated_at": "2026-09-18T16:32:33",
+  "total_credit_recs": 13331
 };

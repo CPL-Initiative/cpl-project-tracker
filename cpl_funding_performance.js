@@ -8,16 +8,16 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 10,
  "statewide": {
-  "pe": 43831,
-  "pa": 39783,
+  "pe": 43834,
+  "pa": 39786,
   "ppa": 108,
   "p2": 3098,
   "p3": 14580,
   "pp": 6,
   "ppe": 118,
   "pac": 2849,
-  "pe_u": 1417734.95,
-  "pa_u": 220986.15,
+  "pe_u": 1417893.95,
+  "pa_u": 221045.15,
   "ppa_u": 667.5,
   "ppe_u": 6778.5,
   "pac_u": 24920.45,
@@ -244,10 +244,10 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 0.0
   },
   "Cerro Coso": {
-   "pe": 180,
-   "pe_u": 9170.5,
-   "pa": 176,
-   "pa_u": 880.0,
+   "pe": 181,
+   "pe_u": 9225.5,
+   "pa": 177,
+   "pa_u": 885.0,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 0,
@@ -1310,10 +1310,10 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 0.0
   },
   "Palo Verde": {
-   "pe": 19,
-   "pe_u": 645.75,
-   "pa": 19,
-   "pa_u": 222.75,
+   "pe": 20,
+   "pe_u": 698.75,
+   "pa": 20,
+   "pa_u": 275.75,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 10,
@@ -1382,10 +1382,10 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 0.0
   },
   "Reedley College": {
-   "pe": 131,
-   "pe_u": 4888.5,
-   "pa": 111,
-   "pa_u": 534.5,
+   "pe": 132,
+   "pe_u": 4939.5,
+   "pa": 112,
+   "pa_u": 535.5,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 0,
@@ -2184,8 +2184,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Cerro Coso": {
    "Military": {
-    "pe": 180,
-    "pa": 176,
+    "pe": 181,
+    "pa": 177,
     "p3": 0
    }
   },
@@ -3101,8 +3101,8 @@ window.CPL_FUNDING_PERF = {
     "p3": 0
    },
    "Military": {
-    "pe": 126,
-    "pa": 107,
+    "pe": 127,
+    "pa": 108,
     "p3": 0
    },
    "Portfolio Review": {
@@ -3685,8 +3685,8 @@ window.CPL_FUNDING_PERF = {
    "p3": 14
   },
   "Industry Certification": {
-   "pe": 1280,
-   "pa": 1257,
+   "pe": 1281,
+   "pa": 1258,
    "p3": 1156
   },
   "Industry Certification | Military": {
@@ -3732,8 +3732,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 27693,
-   "pa": 25552,
+   "pe": 27695,
+   "pa": 25554,
    "p3": 2551
   },
   "Military | Portfolio Review": {
@@ -3783,13 +3783,13 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1417258.45,
-   "pa_u": 220986.15,
+   "pe_u": 1417417.45,
+   "pa_u": 221045.15,
    "p3_u": 73409.95
   },
   "map": {
-   "pe_u": 1424036.95,
-   "pa_u": 221653.65,
+   "pe_u": 1424195.95,
+   "pa_u": 221712.65,
    "p3_u": 73473.45
   },
   "ratio": {
@@ -3867,8 +3867,8 @@ window.CPL_FUNDING_PERF = {
   "Foothill": false,
   "Copper Mountain": true,
   "Pasadena": false,
-  "Hartnell": false,
   "Palo Verde": false,
+  "Hartnell": false,
   "Crafton Hills": false,
   "Porterville": false,
   "American River": false,
