@@ -1356,6 +1356,42 @@ report. A/B on that branch before its deploy.
   garbled rows; auto-deploy on merge; whether guidance row 674923db should be
   re-scoped in the Training tab.
 
+### After the checkpoint: v71, the time limit shipped, the compare's exit code
+
+v70's post-deploy smoke failed the 7c head check, and the next push-smoke
+against production failed it the same way: the answers opened with a CNA
+course (Golden West NURS G060N, then Santa Ana VHLTH 101) and reached Long
+Beach's VN 220 at character 854. Two causes, both in the context the model
+read: the CNA section rendered first (the offerings RPC leads with the
+county's rows, and Orange County teaches CNA, not LVN), and the block's intro
+named the LVN license as the credential held — `search_credentials_any('lvn')`
+returns it at tier 3 with three adopters and the adopted-first sort ranks it
+first of six. The record matches every credential the question names; only
+the visitor's words say which one they hold. v71 (#1614, `7d23be6f`) reads
+the first-person holding phrase (`heldCredentialPhrases`), keeps the held
+titles and their kind (`pickHeldTitles`, `sameKind` — Acute Care Nursing
+Assistant stays, the LVN license goes), marks the held program BACKGROUND and
+renders target sections first, with a fail-safe that marks nothing when no
+target would remain. Block 10 of `sierra_prospective_credit` (131) pins it;
+smoke 7c fails on a CNA course code in the first 300 characters and reads the
+head at 400. KB note: `methodology-the-record-cannot-say-which-credential-is-held`.
+
+A/B run 35322736555: no regressions, both 7c head checks fixed by the
+candidate, the Chaffey precedent dropped on BOTH sides — three of the last
+four Orange County answers dropped it, on v70 and the candidate alike, so the
+precedent moves from the rule into the block next
+(`s275-fable-precedent-in-the-block`). **v71 deployed 08:26Z** (run
+35324360975; `list_edge_functions` v71), carrying #1612's route time limit.
+The first measured cut: `search_college_programs` at 5,002 ms on mode 9 of the
+preview smoke, failed safe, the answer passed every assertion.
+
+Two instruments were wrong this run. The A/B compare's regression verdict
+never reached the job — `python3 … | tee compare.txt` without `pipefail`
+made the step's status tee's, so run 35320175425 printed one REGRESSION and
+concluded success (#1615 sets pipefail). And `tests/check_floor.json` keeps
+its floors under `files`; a top-level key is ignored by the runner, and one
+had sat there at 60 since an earlier session while the files entry said 103.
+
 ### The lesson under the lessons
 
 A reader who knows the ground is the test the grid cannot run. The smoke's
@@ -1363,4 +1399,7 @@ bar (a course code and the word "review") was met, and the answer still read
 wrong to Sam three ways a regex did not see; his readings became fixtures the
 same hour. And an instrument that counts what it knows how to count reads
 "0 failing" over a failed run — a new check must fail in the shape the grid
-counts, or it was never measured.
+counts, or it was never measured. And a prompt rule cannot outrun a context
+that contradicts it: v69's rule already called the held program background,
+and the model opened with it twice because the block's own intro said the
+visitor held an LVN license. Fix what retrieval builds; pin what it builds.

@@ -2,13 +2,19 @@
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-18",
   "_session": 275,
-  "_status": "Version 70 is live (S275, 2026-09-18 07:11Z). Sierra's course lists and catalog lists now order nearest first inside a proximity band using a campus coordinate per college, so the Orange County LVN lists lead with Long Beach City and Rio Hondo, and every heading says about how many miles away a college is. Sam read version 69 in a browser and named three misses: 'no OC colleges have LVN' (the catalog lists only LVN-to-RN bridges in the county, so the answer now says what the catalog shows and names the bridges), the exhibit answer ahead of the direct one (the team-guidance rule for 'where does my credential earn credit' had been allowed to govern a different question), and a 'Great question' opener. Version 70 fixes all three, cites the Chaffey precedent, and the A/B was clean with no regressions. The retrieval time limit is built on PR #1612 and waits for its own A/B. Health is green; the post-deploy smoke failed one assertion — the answer's first sentence named an in-county CNA course before the LVN course — and fixing that is the next session's first build.",
+  "_status": "Version 71 is live (S275, 2026-09-18 08:26Z). When someone says which credential they hold and asks what it could count toward, the first course Sierra names is now in the program they want to enter; the courses of the program that trains what they already hold come last, marked as background, because the credential record matches both credentials and only the visitor's own words say which one is held. Every retrieval lookup now has its own five-second limit (tunable without a deploy), and its first cut was measured and harmless. The A/B compare's verdict now fails the job when it reads a regression (it never had). Open for Sam: read version 71's Orange County answer; which Orange County college runs LVN entry training; the 381 garbled course rows; auto-deploy on merge; the scope of guidance rule 674923db. Version 71's first production answer attached a Mt. San Antonio course to Golden West College, so the next build puts the college on every course line and the Chaffey precedent inside the block, beside the courses it is evidence for.",
   "items": [
     {
-      "id": "s275-fable-target-program-first",
+      "id": "s275-fable-precedent-in-the-block",
       "for": "Fable",
       "tab": "chatbot",
-      "text": "Make the first course come from the program the visitor wants to ENTER. Version 70's smoke answer opened by telling a CNA holder to ask Golden West about its CNA course (the program that trains what they already hold, in the county they named) before reaching Long Beach's VN 220. Label the held-credential program's section as background, render target programs first, and assert that the first 300 characters carry no CNA course code. A/B, merge, deploy, and read the answer."
+      "text": "Put the college on every course line and the CNA-to-LVN precedent inside the prospective block. Version 71's first production answer opened 'At Golden West College, ask … to review your CNA certificate against VOC VN1 / Vocational Nursing 1' — that course is Mt. San Antonio's, and Golden West teaches no LVN course: the block lists courses under a college heading with no college on the line, and the model re-attached a course to the county's college. Three of the last four answers also said no college had articulated a CNA credential against an LVN course while the credential record carried Chaffey's NURVN 414. Render each course line with its college, compute the precedent line for the held titles and render it under the target program's heading, say in the rule that college and course come from the same heading, and pin both; the smoke fails when an Orange County college name precedes an LVN course code in the first 300 characters."
+    },
+    {
+      "id": "s275-fable-programs-route-latency",
+      "for": "Fable",
+      "tab": "chatbot",
+      "text": "Measure the program search's latency under the smoke's load. The route time limit cut it once in the version 71 A/B (5,002 ms on the Boys & Girls Club question) and the answer failed safe with no program catalog; the route usually answers in one to three seconds. Read the function logs for every cut line over a week, then decide whether the query moves or the limit does. Never an index on the programs table (#1602)."
     },
     {
       "id": "s274-sam-course-title-cleanup",
@@ -27,12 +33,6 @@
       "for": "Sam",
       "tab": "chatbot",
       "text": "Read Sierra's new program answers in a browser. She is live (version 67) with the third view of a college — the degrees and certificates it awards — and every check we can run passed, but no human has read the prose yet. Try 'Where can I train to become an LVN?', 'Which colleges award a welding certificate?', and one question that names your home college. Odd answers are expected and welcome: each one becomes a fixture or a vocabulary entry, the way the negation class is handled."
-    },
-    {
-      "id": "s273-fable-route-time-limits",
-      "for": "Fable",
-      "tab": "chatbot",
-      "text": "Finish the retrieval time limit: PR #1612 is built and merged with main (every lookup gets a 5-second limit of its own, tunable by the CPL_ROUTE_TIMEOUT_MS secret without a deploy; table writes are exempt; each cut is logged). Run its A/B on the branch, read the preview logs for 'route time limit' lines, merge on green test, deploy, and read the logs again."
     },
     {
       "id": "s272-sam-autodeploy-ruling",
@@ -59,10 +59,10 @@
       "text": "Work out why Sierra's uptime check runs about four times a day when it is scheduled eight times. Observed across three days, not yet diagnosed. The gap between checks is how long an outage can sit unnoticed."
     },
     {
-      "id": "s275-sam-oc-answer-v70",
+      "id": "s275-sam-oc-answer-v71",
       "for": "Sam",
       "tab": "chatbot",
-      "text": "Version 70 is live (2026-09-18, 07:11Z). Ask the Orange County question again in a browser. Your three readings of version 69 are folded in: the first sentence names the course to ask about (Long Beach City's VN 220, Rio Hondo's VN 61), the catalog absence is stated as the catalog's with the three bridges named, and no answer opens with a remark about the question; the Chaffey precedent is cited. Tell us whether it now reads right."
+      "text": "Version 71 is live (2026-09-18, 08:26Z). Ask the Orange County question again in a browser. The first sentence now names the course to ask about in the LVN program (Long Beach City's VN 220, Rio Hondo's VN 61, Mt. San Antonio's VOC VN101); the CNA program's own courses come last, marked as background; the catalog absence is stated as the catalog's with the three bridges named; no answer opens with a remark about the question. The Chaffey precedent is cited in about one answer in four, so the next build puts it in the block. Tell us whether it now reads right."
     },
     {
       "id": "s275-sam-guidance-674923db-scope",
