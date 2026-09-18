@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-246 document(s).
+247 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 275 | [v69 answers the prospective question; ship it, read it, then give nearest a distance](../session_275_handoff.md) | 2026-09-18 |
 | 274 | [v68 is built and verified; merge, deploy and read it](../session_274_handoff.md) | 2026-09-18 |
 | 273 | [program search is live; the edge function is not deployed](../session_273_handoff.md) | 2026-09-17 |
 | 272 | [Sierra's outage was a deploy skew, and My College went public](../session_272_handoff.md) | 2026-09-17 |

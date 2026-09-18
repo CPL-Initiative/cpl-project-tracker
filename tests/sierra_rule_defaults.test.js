@@ -1,7 +1,8 @@
 // Sierra's built-in rules pane (Session 156) — jsdom + equivalence test.
 //
 // #1186 made the built-in prompt rules curatable data (`sierra_rules`) — ten of
-// them then, eleven since S272 added `programs` (the COCI program catalog).
+// them then, eleven since S272 added `programs` (the COCI program catalog),
+// twelve since S274 added `prospective` (what a held credential could count toward).
 // Nothing could edit them but SQL, and nothing could SEE them at all — which is
 // the half that mattered: on 2026-08-14 Sam wrote an instruction at 13:33, got
 // the old behaviour at 14:49, and the cause was STATEWIDE_RULE quietly beating
@@ -72,7 +73,7 @@ const TS_PATH = path.join(__dirname, "..", "chatbox", "supabase", "functions", "
   const w = makeWin();
   const api = w.CPL_SIERRA_TRAINING_TAB;
   const defs = api._ruleDefaults().rules;
-  check("the generated defaults carry all eleven built-in rules", defs.length === 11);
+  check("the generated defaults carry all twelve built-in rules", defs.length === 12);
   check("the protected set survives generation",
     defs.filter((r) => r.protected).map((r) => r.key).sort().join(",")
       === "credit_status,landing_page,portal,volume");
@@ -218,15 +219,15 @@ function makeWin(opts) {
     check("the team phrase never even probes as a reviewer",
       w.__fetches.filter((f) => /team_access/.test(f.url)).length === 0);
   }
-  // (b) reviewer, table empty — the NORMAL state. Must show all eleven rules.
+  // (b) reviewer, table empty — the NORMAL state. Must show all twelve rules.
   {
     const w = makeWin({ jwt: true, reviewer: true });
     const api = w.CPL_SIERRA_TRAINING_TAB;
     const root = w.document.getElementById("sierra-training-root");
     await api._loadRulesPane(root);
     check("a reviewer with an empty table lands on 'ok'", api._state.rulesState === "ok");
-    check("an empty table still lists all eleven built-in rules",
-      root.querySelectorAll(".sit-rule").length === 11);
+    check("an empty table still lists all twelve built-in rules",
+      root.querySelectorAll(".sit-rule").length === 12);
     check("an empty table reads as 'nothing changed', not as 'no rules'",
       /<b>0<\/b> changed by the team/.test(root.innerHTML));
   }

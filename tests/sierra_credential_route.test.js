@@ -57,10 +57,17 @@ check("probes adjacent word PAIRS, not just single tokens",
       /\$\{kws\[i\]\}\s\$\{kws\[i\s*\+\s*1\]\}/.test(src),
       "without pair probes, 'peace officer' and 'real estate' never match");
 
-/* ── 5. The fallback only runs when statewide is empty ─────────────────────── */
-check("catalogue-wide lookup runs only when the statewide lens is empty",
-      /stdRecs\s*&&\s*stdRecs\.length\s*>\s*0\s*\?\s*null/.test(src),
-      "the fallback should not cost a round-trip on the common path");
+/* ── 5. Both lenses run, concurrently (S274) ───────────────────────────────── */
+// Until 2026-09-18 the catalogue-wide lookup ran only when the statewide lens
+// was empty, so ONE statewide hit — including a false friend such as Cisco's
+// CCNA matching the "cna" inside its own acronym — hid every local credential
+// and the Chaffey CNA-to-LVN precedent with them. The two lookups are
+// independent and now run side by side; the guard that keeps the round-trip
+// cheap is that they share one Promise.all, never a sequential await.
+check("catalogue-wide lookup runs BESIDE the statewide lens, never gated on it (S274)",
+      /Promise\.all\(\[\s*fetchStatewideRecommendations\(routeText, sb\),\s*fetchAnyCredentials\(routeText, sb\),\s*\]\)/.test(src)
+      && !/stdRecs\s*&&\s*stdRecs\.length\s*>\s*0\s*\?\s*null/.test(src),
+      "a statewide hit must not switch the local route off — that is how the CCNA false friend hid the CNA precedent");
 
 /* ── 6. Rule is wired, and conditionally ───────────────────────────────────── */
 check("CREDENTIAL_RULE is injected only when there is credential context",

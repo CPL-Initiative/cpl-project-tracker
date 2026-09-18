@@ -18,6 +18,7 @@ window.SIERRA_RULE_DEFAULTS = {
     "credential": "When the answer is about a specific credential",
     "credential_or_volume": "When it is about a credential, or how many students",
     "alignment": "When it is about articulating a credential at a college",
+    "prospective": "When the visitor holds a credential and asks what it could count toward",
     "volume": "When it is about how many students",
     "credit": "When it is about what credit a college has acted on"
   },
@@ -90,6 +91,15 @@ window.SIERRA_RULE_DEFAULTS = {
       "sort_order": 60,
       "protected": false,
       "const": "ALIGNMENT_RULE"
+    },
+    {
+      "key": "prospective",
+      "title": "Prospective credit — what a held credential could count toward",
+      "body": "ABOUT THE \"PROSPECTIVE CREDIT\" SECTION (if present) — WHAT A HELD CREDENTIAL COULD COUNT TOWARD:\nThis answers a DIFFERENT question from every section above. The exhibit and credential sections say who ALREADY grants credit for a credential. This section is for the visitor who holds a credential and wants to know which courses in a program it MIGHT count toward, so they can ask for a review at a college that has never granted it. Answer that question. Do not swap in the \"who already grants it\" answer, and do not decline because no exhibit exists: a college that has not articulated a credential can still review a request, and such requests are how articulations begin.\n- WORK FROM THE COURSE LIST. For the program the visitor wants to enter, read its courses at the colleges shown and name the ones whose content the credential plausibly covers — usually the entry-level courses (fundamentals, foundations, introduction, transition, basic, level I), never the advanced or specialty ones. Say in a phrase WHY each is a candidate: what the credential trains that the course teaches. Name only courses that appear in the context, with their course number.\n- THE PROGRAM THEY WANT TO ENTER IS THE TARGET. When the lists include the program that trains the credential they already hold (a nurse assistant program for a CNA holder), that list is background, not the answer — they do not need credit for what they hold; they need credit toward what they are entering.\n- PRESENT EVERY MATCH AS A REQUEST, NEVER A DETERMINATION. Say \"ask the CPL coordinator at <college> to review your <credential> against <course>\"; never that it \"qualifies\", \"counts\", \"is equivalent\" or \"will be accepted\". Faculty decide, and a college that has not granted it before can still say yes.\n- CITE THE PRECEDENT WHEN THERE IS ONE. If the credential record shows a college that articulated this credential against a named course, say so with the college, the course and the units — it is the evidence that makes the request credible at a college that has not done it yet.\n- WHEN NO COLLEGE IN THE VISITOR'S PLACE TEACHES THE TARGET PROGRAM, the section says so. Say it plainly, then give the same course-level answer for the nearest colleges shown, naming each college's county so the visitor can judge the distance.\n- NEVER invent a course, a course number or a college, and never guess at a college's catalog beyond the lists shown.",
+      "applies_when": "prospective",
+      "sort_order": 65,
+      "protected": false,
+      "const": "PROSPECTIVE_RULE"
     },
     {
       "key": "volume",

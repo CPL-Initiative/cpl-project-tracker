@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-465 document(s).
+467 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -79,6 +79,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A derived summary field used as a filter is a membership test in disguise](../kb-notes/methodology-a-summary-field-can-be-a-retrieval-gate.md) | methodology | published | 2026-08-13 | 2026-08-13 |
 | [A diagnosis that does not stop the run is a log line: the 2026-09-08 cron outage](../kb-notes/methodology-a-diagnosis-that-does-not-stop-the-run-is-a-log-line.md) | methodology | published | 2026-09-10 | 2026-09-10 |
 | [A display name is not a key — and the entry that still matches is the one that lies](../kb-notes/methodology-a-display-name-is-not-a-key.md) | methodology | published | 2026-09-15 | 2026-09-15 |
+| [A double-decoded string needs the codec that decoded it — cp1252, a C1 passthrough, and repair before you collapse whitespace](../kb-notes/methodology-a-double-decoded-string-needs-the-codec-that-decoded-it.md) | methodology | published | 2026-09-18 | 2026-09-18 |
 | [A dropped row still needs its own name](../kb-notes/methodology-a-dropped-row-still-needs-its-own-name.md) | methodology | published | 2026-09-17 | 2026-09-17 |
 | [A failed read is not an empty result — and an optimistic write must precede its repaint](../kb-notes/methodology-a-failed-read-is-not-an-empty-result.md) | methodology | published | 2026-08-07 | 2026-08-07 |
 | [A feature-test on a method that does not exist is indistinguishable from the feature being absent](../kb-notes/methodology-a-feature-test-on-a-missing-method-fails-silent.md) | methodology | published | 2026-09-11 | 2026-09-11 |
@@ -402,6 +403,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Verify the last hop of a resolution chain](../kb-notes/methodology-verify-the-last-hop-of-a-resolution-chain.md) | methodology | published | 2026-08-09 | 2026-08-09 |
 | [Verify with the instrument that can see the defect](../kb-notes/methodology-verify-with-the-instrument-that-can-see-the-defect.md) | methodology | published | 2026-08-20 | 2026-08-24 |
 | [Warm a tinny voiceover with measured EQ — diagnose before you boost](../kb-notes/methodology-warm-a-tinny-voiceover-measured-eq.md) | methodology | published | 2026-07-23 | 2026-07-23 |
+| [What might qualify is a different question from who already grants it — answer it from the target program's course list](../kb-notes/methodology-what-might-qualify-is-a-different-question-from-who-already-grants-it.md) | methodology | published | 2026-09-18 | 2026-09-18 |
 | [When a corpus does not fit, its order is the selection](../kb-notes/methodology-when-a-corpus-does-not-fit-the-order-is-the-selection.md) | methodology | published | 2026-08-26 | 2026-08-26 |
 | [When an authoritative identity key exists, use it before you score strings](../kb-notes/methodology-use-the-identity-key-before-you-score-strings.md) | methodology | published | 2026-08-13 | 2026-08-13 |
 | [When the workaround is the keyboard, suspect the event model](../kb-notes/methodology-when-the-workaround-is-the-keyboard-suspect-the-event-model.md) | methodology | published | 2026-08-28 | 2026-08-28 |

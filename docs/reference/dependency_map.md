@@ -54,7 +54,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `allowed_reviewers` | `edgefn:cpl-news-harvest` | — |
 | `budget_funding` | tabs: `budget`, `college-briefing`, `implementation-funding` · scripts: `excel_to_dashboard.py`, `kb/_load_budget.py`, `kb/_test_budget_cutover.py` | tabs: `budget` |
 | `chat_interactions` | tabs: `sierra-training` | `edgefn:cpl-chat` |
-| `chatbox_college_courses` | none found | scripts: `kb/_sync_college_courses.py` |
+| `chatbox_college_courses` | `edgefn:cpl-chat` | scripts: `kb/_sync_college_courses.py` |
 | `chatbox_college_profiles` | scripts: `map/sync_map_users.py` · `edgefn:cpl-chat` | — |
 | `chatbox_credential_recs` | none found | scripts: `kb/_sync_credential_recs.py` |
 | `chatbox_credentials` | tabs: `college-briefing` · `edgefn:cpl-chat` | scripts: `kb/_sync_credential_catalog.py` |
@@ -652,6 +652,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/coci_program_cip_test.py` | workflows: `js-tests.yml` | — |
 | `tests/college_briefing_publish_suppression_test.py` | workflows: `college-briefing-publish.yml`, `js-tests.yml` | — |
 | `tests/context_budget_test.py` | workflows: `js-tests.yml` | — |
+| `tests/course_title_mojibake_test.py` | workflows: `js-tests.yml` | — |
 | `tests/custom_report_payload_test.py` | workflows: `map-custom-report-load.yml` | — |
 | `tests/custom_report_response_test.py` | workflows: `js-tests.yml` | — |
 | `tests/dependency_map_test.py` | workflows: `js-tests.yml` | — |
@@ -870,5 +871,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 84 Supabase tables · 32 RPCs · 5 edge functions · 473 file
+Coverage: 84 Supabase tables · 32 RPCs · 5 edge functions · 474 file
 datasets · 143 external services · 340 consumers · 34 workflows · 37 tabs.

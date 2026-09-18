@@ -206,7 +206,7 @@ check("the old hand-concatenated rule chain is gone from the prompt template",
 // The strongest assertion available here, and worth the extra lift: build the
 // OLD hand-concatenated chain from the real rule consts and compare it byte for
 // byte with what assembleRules() produces from the real registry, across every
-// combination of the four contexts. sort_order was chosen to reproduce the old
+// combination of the five contexts. sort_order was chosen to reproduce the old
 // order exactly, so introducing the registry should be a no-op for a public bot
 // on day one — "it looks right" is not good enough for a surface students read.
 try {
@@ -221,14 +221,14 @@ try {
     .replace(/ as \w+/g, "");
   block += "; return {STATEWIDE_RULE,CREDIT_LIST_RULE,OFFERINGS_RULE,CREDENTIAL_RULE," +
            "CREDIT_RECS_RULE,ALIGNMENT_RULE,VOLUME_RULE,CREDIT_STATUS_RULE,PORTAL_RULE," +
-           "LANDING_PAGE_RULE,PROGRAMS_RULE,RULE_DEFAULTS,assembleRules};";
+           "LANDING_PAGE_RULE,PROGRAMS_RULE,PROSPECTIVE_RULE,RULE_DEFAULTS,assembleRules};";
   // eslint-disable-next-line no-new-func
   const M = new Function(block)();
 
   const combos = [];
   for (const cred of ["", "c"]) for (const vol of ["", "v"])
-    for (const ali of ["", "a"]) for (const cre of ["", "k"])
-      combos.push({ credentialContext: cred, volumeContext: vol, alignmentContext: ali, creditContext: cre });
+    for (const ali of ["", "a"]) for (const pro of ["", "p"]) for (const cre of ["", "k"])
+      combos.push({ credentialContext: cred, volumeContext: vol, alignmentContext: ali, prospectiveContext: pro, creditContext: cre });
 
   let mismatches = 0;
   for (const c of combos) {
@@ -236,6 +236,7 @@ try {
       + (c.credentialContext ? M.CREDENTIAL_RULE : "")
       + ((c.credentialContext || c.volumeContext) ? M.CREDIT_RECS_RULE : "")
       + (c.alignmentContext ? M.ALIGNMENT_RULE : "")
+      + (c.prospectiveContext ? M.PROSPECTIVE_RULE : "")
       + (c.volumeContext ? M.VOLUME_RULE : "")
       + (c.creditContext ? M.CREDIT_STATUS_RULE : "")
       + M.PORTAL_RULE + M.LANDING_PAGE_RULE;

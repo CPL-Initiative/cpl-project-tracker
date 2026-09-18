@@ -124,6 +124,14 @@ jobs:
       # withheld value — rather than that a flag got set. The sharpest input is
       # map_college_cr_unit: 145,554 of its rows describe exactly ONE student at
       # a named college, course and credit recommendation. Pure-stdlib, no network.
+      # Course-title mojibake repair (S274) — 381 course titles and 186 offerings
+      # rows carried UTF-8 read back as cp1252, once or twice, and Sierra's
+      # course lists rendered them to students ("Fundamentals of Vocational
+      # Nursing Ã¢â‚¬â€œ Theory"). One repair in kb/_text_repair.py, imported by
+      # BOTH COCI loaders and applied to the TITLE; the test pins the live
+      # shapes, idempotence, and that genuine text survives. Pure stdlib.
+      - name: Course-title mojibake repair (kb/_text_repair.py)
+        run: python3 tests/course_title_mojibake_test.py
       - name: My College public layer — suppression properties
         run: python3 tests/college_briefing_publish_suppression_test.py
       # Re-key chain guard (Session 224) — a re-mint alias map can CHAIN (one

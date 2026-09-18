@@ -544,6 +544,18 @@ answer_must_match -i "orange county" "7c names the place the visitor named"
 # answer named none of them and guessed at Santa Ana "based on typical OC
 # nursing offerings".
 answer_must_match -i "saddleback|golden west|cypress|santa ana|santiago canyon|long beach|rio hondo|citrus|chaffey|riverside city|mt\. san antonio|pasadena|antelope valley|west los angeles|los angeles mission|crafton hills|mt\. san jacinto" "7c names a college from the anchored sets"
+# v69 (2026-09-18, S274). Sam's bar for this question is a COURSE-LEVEL answer —
+# "compare CNA courses to LVN courses so the user could ask for credit" — at a
+# college that has not granted it. So the answer must name a Vocational Nursing
+# course from the PROSPECTIVE CREDIT block (the full course lists at the three
+# nearest LVN programs; Orange County has none, so its neighbors: Los Angeles,
+# Inland Empire, San Diego) and frame the match as a request for review. The
+# alternation carries the entry-level course at every college the block can pick
+# under the neighbor band (course_count order) plus the two Los Angeles programs
+# the older assertion named, so a catalog refresh that reorders the picks is a
+# loud red here rather than a silent miss. Reads for the SHAPE Sam asked for.
+answer_must_match -i "NURS[ -]?(102|125)|VN[ -]?(8|10|103|215|220|61|061)\b|NURVN[ -]?(403|414)|VNRS[ -]?150|Fundamentals of (Vocational )?Nursing|Vocational Nursing Foundations|Transition to Vocational Nursing|Vocational Nursing I\b" "7c ⭐ names a Vocational Nursing course from the prospective course lists (Sam's bar: a course-level answer)"
+answer_must_match -i "ask|request|review" "7c ⭐ frames the match as a request for review, never a determination"
 
 # Broad "who teaches this" — the catalog should surface colleges that TEACH
 # construction/carpentry (not only those with an existing exhibit).
