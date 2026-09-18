@@ -141,6 +141,11 @@ jobs:
       - name: Compare the PASS/FAIL grids
         id: compare
         run: |
+          # ⚠ The compare's exit code is the job's verdict, and `| tee` was
+          # swallowing it: without pipefail a pipeline's status is tee's (0),
+          # so run 35320175425 (2026-09-18) printed one REGRESSION and
+          # concluded success. pipefail makes the grid's exit code the step's.
+          set -o pipefail
           python3 - <<'PY' | tee compare.txt
           import re, sys
 
