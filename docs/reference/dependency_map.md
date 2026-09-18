@@ -54,7 +54,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `allowed_reviewers` | `edgefn:cpl-news-harvest` | — |
 | `budget_funding` | tabs: `budget`, `college-briefing`, `implementation-funding` · scripts: `excel_to_dashboard.py`, `kb/_load_budget.py`, `kb/_test_budget_cutover.py` | tabs: `budget` |
 | `chat_interactions` | tabs: `sierra-training` | `edgefn:cpl-chat` |
-| `chatbox_college_courses` | none found | scripts: `kb/_sync_college_courses.py` |
+| `chatbox_college_courses` | `edgefn:cpl-chat` | scripts: `kb/_sync_college_courses.py` |
 | `chatbox_college_profiles` | scripts: `map/sync_map_users.py` · `edgefn:cpl-chat` | — |
 | `chatbox_credential_recs` | none found | scripts: `kb/_sync_credential_recs.py` |
 | `chatbox_credentials` | tabs: `college-briefing` · `edgefn:cpl-chat` | scripts: `kb/_sync_credential_catalog.py` |

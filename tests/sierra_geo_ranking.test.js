@@ -171,8 +171,17 @@ const LA_COLLEGES = [
     check("same county scores above same region",
       pb({ county: "Los Angeles", region: "Los Angeles" }, LA) >
       pb({ county: "Orange", region: "Los Angeles" }, LA));
-    check("a different county+region scores 0",
-      pb({ county: "Riverside", region: "Inland Empire" }, LA) === 0);
+    // S274 (2026-09-18): a NEIGHBORING region is a band of its own — below the
+    // home region, above everywhere else — so an Orange County LVN question
+    // (a county with no such program, in a region of one county) ranks Long
+    // Beach and Chaffey ahead of Sacramento and Butte instead of letting volume
+    // decide. Inland Empire borders Los Angeles; the Far North does not.
+    check("a neighboring region scores below the home region and above elsewhere",
+      pb({ county: "Riverside", region: "Inland Empire" }, LA) > 0 &&
+      pb({ county: "Riverside", region: "Inland Empire" }, LA) <
+      pb({ county: "Orange", region: "Los Angeles" }, LA));
+    check("a distant county+region scores 0",
+      pb({ county: "Shasta", region: "Far North" }, LA) === 0);
     check("no home college => every band is 0 (ordering unchanged)",
       pb({ county: "Los Angeles", region: "Los Angeles" }, null) === 0);
     check("an ungeocoded college scores 0 rather than throwing",

@@ -1408,6 +1408,31 @@ function phraseSynonymProbes(kws: Array<string>): Array<string> {
   return expandWithSynonyms(kws).filter((t) => /\s/.test(t));
 }
 
+// A SUBSTRING INSIDE A WORD IS NOT A MATCH ON THE WORD (2026-09-18, S274).
+// search_statewide_recommendations and search_credentials_any match tier 3 by
+// `title LIKE '%needle%'` and tier 4 by the same test on a college-entered
+// variant, so "cna" matched Cisco Certified Network Associate (CCNA) at tier 3
+// — the "cna" inside "ccna". And because a statewide hit used to switch the
+// local route off, that one false friend hid the CNA credentials, the LVN
+// license credentials and the only CNA-to-LVN precedent in MAP (Chaffey, 6
+// units in NURVN 414) on Sam's Orange County question. Same family as
+// `practical:*` becoming 'practic':* (methodology-a-prefix-match-on-a-stem-is-
+// not-a-match-on-the-word). A substring hit is kept only when the probe appears
+// as a WHOLE WORD in the text that matched: the title at tier 3, the matching
+// variant at tier 4. Exact hits (tiers 1–2) and fuzzy tiers are untouched, and
+// a tier-4 row that does not say which variant matched cannot be judged, so it
+// is kept — dropping it would re-create the false zero this route exists to end.
+function isFalseFriend(asked: string, row: any): boolean {
+  const tier = Number(row?.match_tier);
+  if (tier !== 3 && tier !== 4) return false;
+  if (tier === 4 && !row.matched_via) return false;
+  const hay = String(tier === 3 ? row.unified_title || "" : row.matched_via || "");
+  const needle = String(asked || "").trim().toLowerCase();
+  if (!needle) return false;
+  const esc = needle.replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/\s+/g, "\\s+");
+  return !new RegExp("(^|[^a-z0-9])" + esc + "($|[^a-z0-9])", "i").test(hay);
+}
+
 async function fetchStatewideRecommendations(query: string, sb: any): Promise<any[] | null> {
   const kws = extractTopicKeywords(query);
   if (kws.length === 0) return null;
@@ -1428,6 +1453,7 @@ async function fetchStatewideRecommendations(query: string, sb: any): Promise<an
     });
     if (error || !data) continue;
     for (const r of data) {
+      if (isFalseFriend(asked, r)) continue;
       const prev = byTitle.get(r.unified_title);
       // Keep the STRONGEST evidence across probes: a pair matching at tier 3
       // beats a single token matching at tier 4 for the same credential.
@@ -1470,6 +1496,7 @@ async function fetchAnyCredentials(query: string, sb: any): Promise<any[] | null
     const { data, error } = await sb.rpc("search_credentials_any", { asked, result_limit: 3 });
     if (error || !data) continue;
     for (const r of data) {
+      if (isFalseFriend(asked, r)) continue;
       const prev = byTitle.get(r.unified_title);
       if (!prev || r.match_tier < prev.match_tier) byTitle.set(r.unified_title, r);
     }
@@ -1519,6 +1546,7 @@ async function fetchCollegeCredentials(
     });
     if (error || !data) continue;
     for (const r of data) {
+      if (isFalseFriend(asked, r)) continue;
       const prev = byTitle.get(r.unified_title);
       if (!prev || r.match_tier < prev.match_tier) byTitle.set(r.unified_title, r);
     }
@@ -1611,6 +1639,7 @@ async function fetchCredentialVolume(query: string, sb: any): Promise<any[] | nu
     const { data, error } = await sb.rpc("search_credential_volume", { asked, result_limit: 6 });
     if (error || !data) continue;
     for (const r of data) {
+      if (isFalseFriend(asked, r)) continue;
       const prev = byTitle.get(r.unified_title);
       if (!prev || r.match_tier < prev.match_tier) byTitle.set(r.unified_title, r);
     }
@@ -2297,13 +2326,40 @@ function buildPlaceContext(place: any | null, geoMap: Map<string, any> | null): 
   return s;
 }
 
-// Proximity band for ranking: same county (2) > same region (1) > elsewhere (0).
-// Returns 0 for every college when no home college is known, which leaves the
-// pre-existing volume ordering untouched.
+// Proximity band for ranking: same county (3) > same region (2) > a NEIGHBORING
+// region (1) > elsewhere (0). Returns 0 for every college when no home college
+// or place is known, which leaves the pre-existing volume ordering untouched.
+//
+// THE NEIGHBOR BAND (2026-09-18, S274). college_geo carries ten regions and no
+// notion of adjacency, so once a place's own county and region were exhausted
+// every remaining college tied at 0 and VOLUME decided: an Orange County LVN
+// question — a county with NO Vocational Nursing entry program in COCI, and a
+// region of one county — listed Sacramento, Butte and Humboldt ahead of Long
+// Beach, Rio Hondo and Chaffey. A static map of which regions border which is
+// the smallest instrument that fixes it. It is geography, not policy: each
+// region names the regions it shares a border with, and the test asserts the
+// map is symmetric. "Statewide / Online" (Calbright) is nobody's neighbor and
+// everybody's option; the lists still carry it on volume.
+const REGION_NEIGHBORS: Record<string, string[]> = {
+  "Orange County": ["Los Angeles", "Inland Empire", "San Diego – Imperial"],
+  "Los Angeles": ["Orange County", "Inland Empire", "Central Coast", "San Joaquin Valley"],
+  "Inland Empire": ["Orange County", "Los Angeles", "San Diego – Imperial", "San Joaquin Valley"],
+  "San Diego – Imperial": ["Orange County", "Inland Empire"],
+  "Central Coast": ["Los Angeles", "San Joaquin Valley", "Bay Area"],
+  "San Joaquin Valley": ["Central Coast", "Bay Area", "Greater Sacramento", "Los Angeles", "Inland Empire"],
+  "Bay Area": ["Central Coast", "San Joaquin Valley", "Greater Sacramento", "Far North"],
+  "Greater Sacramento": ["Bay Area", "San Joaquin Valley", "Far North"],
+  "Far North": ["Greater Sacramento", "Bay Area"],
+};
+function regionsNeighbor(a: string | null, b: string | null): boolean {
+  if (!a || !b || a === b) return false;
+  return (REGION_NEIGHBORS[a] || []).includes(b);
+}
 function proximityBand(geo: any | null, askedGeo: any | null): number {
   if (!askedGeo || !geo) return 0;
-  if (askedGeo.county && geo.county && geo.county === askedGeo.county) return 2;
-  if (askedGeo.region && geo.region && geo.region === askedGeo.region) return 1;
+  if (askedGeo.county && geo.county && geo.county === askedGeo.county) return 3;
+  if (askedGeo.region && geo.region && geo.region === askedGeo.region) return 2;
+  if (regionsNeighbor(askedGeo.region || null, geo.region || null)) return 1;
   return 0;
 }
 
@@ -2405,7 +2461,7 @@ function buildOfferingsContext(
   // says the list is not exhaustive, so without this line the model hedges
   // ("my data only surfaced two") instead of saying what the catalog shows.
   if (askedGeo && askedGeo.label && !askedCollege) {
-    const here = others.filter(([, g]) => proximityBand(g, askedGeo) >= (askedGeo.county ? 2 : 1));
+    const here = others.filter(([, g]) => proximityBand(g, askedGeo) >= (askedGeo.county ? 3 : 2));
     ctx += here.length
       ? `\n### In ${askedGeo.label}: ${here.length} college(s) teach in this area — they are listed first below.\n`
       : `\n### NO college in ${askedGeo.label} teaches courses matching this in the current COCI catalog. Say so plainly, then offer the nearest colleges below (county shown) as the realistic route, with the standing caveat that teaching is not a guarantee of credit.\n`;
@@ -2496,7 +2552,7 @@ function buildProgramsContext(
   // Same fact, same reason as the offerings builder: a county with no matching
   // program is an ANSWER, and the model must not soften it into "not certain".
   if (askedGeo && askedGeo.label && !askedCollege) {
-    const here = others.filter(([, g]) => proximityBand(g, askedGeo) >= (askedGeo.county ? 2 : 1));
+    const here = others.filter(([, g]) => proximityBand(g, askedGeo) >= (askedGeo.county ? 3 : 2));
     ctx += here.length
       ? `\n### In ${askedGeo.label}: ${here.length} college(s) have a matching program — they are listed first below. Read each title and award before calling any of them the program asked for (a bridge such as "LVN to RN" is for people who already hold the license).\n`
       : `\n### NO college in ${askedGeo.label} has a matching program in the current COCI program export. Say so plainly, then name the nearest colleges below that award it, with their county.\n`;
@@ -2507,6 +2563,168 @@ function buildProgramsContext(
     if (others.length > 10) ctx += `\n  ... and ${others.length - 10} more college(s) have a matching program.\n`;
   }
   return ctx;
+}
+
+// ── Prospective credit: the courses a held credential could count toward ──────
+// (2026-09-18, S274.) Sam, on v67's answer to his Orange County question — "I
+// have a cna cert and I want to go to a college in orange county. What CNA
+// courses at the colleges match LVN courses so I can ask for credit?":
+//
+//   "I was asking her to compare CNA courses to LVN courses so the user could
+//    ask for credit. Both she and the last session seemed to confuse this ask
+//    with the typical ask for which existing exhibits offer CPL for CNA, which
+//    is not the question... The question is what might qualify so the user
+//    could ask for it at a college that has not yet granted it."
+//
+// That is a PROSPECTIVE question. The visitor holds a credential, the college
+// holds no exhibit, and the answer is the target program's courses whose content
+// the credential plausibly covers — stated as what to ask the CPL coordinator to
+// review. The exhibit and credential routes answer a different question ("who
+// already grants it"), and a correct answer to that one reads as a miss.
+//
+// The instrument is the course list itself. coci_college_offerings carries only
+// a SAMPLE of courses per (college × TOP); chatbox_college_courses carries them
+// all (141,696 rows over 120 colleges, the alignment route's own table). So: for
+// every TOP program the question matched as a core discipline, pick the colleges
+// nearest the anchor that teach it — those IN the place first, then the nearest
+// outside it — and read their full course list for that TOP. The model then
+// compares the credential's content with the program's entry-level courses, with
+// the precedent lines in the credential record (how another college mapped the
+// same credential) as the evidence, and presents the match as a REQUEST.
+//
+// Never a determination: every line this block renders is a course the college
+// TEACHES, not a course the credential is worth. PROSPECTIVE_RULE says so twice.
+const PROSPECTIVE_COLLEGES_PER_TOP = 3;
+const PROSPECTIVE_COURSES_PER_COLLEGE = 12;
+
+// The (college × TOP) pairs to read course lists for. Per core TOP: a named
+// college first, then by proximity band (in the county, in the region, in a
+// neighboring region, elsewhere), then by how much of the program the college
+// teaches. Returns [{ college, top_code, top_title, band, county, region }] in
+// render order. Pure — lifted by tests/sierra_prospective_credit.test.js.
+function pickProspectivePairs(
+  offerings: any[] | null,
+  coreKeywords: Array<string>,
+  askedCollege: string | null,
+  askedGeo: any | null,
+  geoMap: Map<string, any> | null,
+): Array<any> {
+  if (!offerings || offerings.length === 0) return [];
+  const isCore = (o: any) => {
+    const t = (o.top_title || "").toLowerCase();
+    return coreKeywords.some((k) => k.length >= 4 && t.includes(k));
+  };
+  const byTop = new Map<string, any[]>();
+  for (const o of offerings) {
+    if (!o || !o.college || !o.top_code || !isCore(o)) continue;
+    const fb = geoMap?.get(o.college) || null;
+    const geo = { region: o.region || fb?.region || null, county: o.county || fb?.county || null };
+    const list = byTop.get(o.top_code) || [];
+    if (list.some((p) => p.college === o.college)) continue;
+    list.push({
+      college: o.college, top_code: o.top_code, top_title: o.top_title || o.top_code,
+      band: proximityBand(geo, askedGeo), county: geo.county, region: geo.region,
+      courses: o.course_count || 0,
+    });
+    byTop.set(o.top_code, list);
+  }
+  const out: Array<any> = [];
+  for (const [, list] of byTop) {
+    list.sort((a, b) =>
+      ((b.college === askedCollege ? 1 : 0) - (a.college === askedCollege ? 1 : 0))
+      || (b.band - a.band) || (b.courses - a.courses)
+      || (a.college < b.college ? -1 : a.college > b.college ? 1 : 0));
+    for (const p of list.slice(0, PROSPECTIVE_COLLEGES_PER_TOP)) out.push(p);
+  }
+  return out;
+}
+
+// One PostgREST read for every picked pair. `.in()` on both columns returns the
+// cross product (a college picked for one TOP may teach another picked TOP too),
+// so the builder filters back to the pairs it was given. Fails safe to null:
+// an unavailable read costs this one section and nothing else.
+async function fetchProgramCourses(pairs: Array<any>, sb: any): Promise<any[] | null> {
+  if (!pairs || pairs.length === 0) return null;
+  const colleges = [...new Set(pairs.map((p) => p.college))];
+  const tops = [...new Set(pairs.map((p) => p.top_code))];
+  const { data, error } = await sb.from("chatbox_college_courses")
+    .select("college, top_code, subject, course_number, course_title, units, credit_type, cid")
+    .in("college", colleges)
+    .in("top_code", tops)
+    .order("college").order("top_code").order("subject").order("course_number")
+    .limit(400);
+  if (error) {
+    console.error("program course list unavailable:", error.message);
+    return null;
+  }
+  return data && data.length > 0 ? data : null;
+}
+
+// The block the model reads. Grouped by TOP program, then by college in the
+// order pickProspectivePairs chose; a place with no college teaching the program
+// is TOLD, in words, for the reason buildOfferingsContext gives — without the
+// line, the "not exhaustive" rule makes the model hedge instead of answering.
+function buildProspectiveContext(
+  pairs: Array<any>,
+  courses: any[] | null,
+  credentials: Array<string>,
+  askedCollege: string | null,
+  askedGeo: any | null,
+): string {
+  if (!pairs || pairs.length === 0 || !courses || courses.length === 0) return "";
+  const pairKey = (c: string, t: string) => `${c}||${t}`;
+  const byPair = new Map<string, any[]>();
+  for (const r of courses) {
+    if (!r || !r.college || !r.top_code) continue;
+    const k = pairKey(r.college, r.top_code);
+    const list = byPair.get(k) || [];
+    list.push(r);
+    byPair.set(k, list);
+  }
+  const byTop = new Map<string, any[]>();
+  for (const p of pairs) {
+    const list = byTop.get(p.top_code) || [];
+    list.push(p);
+    byTop.set(p.top_code, list);
+  }
+  const who = askedCollege || (askedGeo && askedGeo.label) || "the visitor";
+  let out = `\n\n--- PROSPECTIVE CREDIT: what a credential could count toward (COCI course lists for the programs asked about) ---\n`;
+  out += `The visitor holds a credential`;
+  if (credentials.length > 0) out += ` (matched in the credential record above as ${credentials.join("; ")})`;
+  out += ` and is asking which courses it might count toward. Below, for each program the question matched, the course list at the colleges nearest ${who} that teach it. `;
+  out += `Compare the credential's content with the program's ENTRY-LEVEL courses (fundamentals, foundations, introduction, transition, basic, level I) and present the closest as what to ASK that college's CPL coordinator to review — the college decides. `;
+  out += `Where the credential record carries a precedent (a college that articulated this credential against a named course), cite it as the evidence that the match has been made before.\n`;
+  let rendered = 0;
+  for (const [top, plist] of byTop) {
+    const title = plist[0]?.top_title || top;
+    let section = `\n## ${title} (TOP ${top})\n`;
+    if (askedGeo && askedGeo.label && !askedCollege) {
+      const here = plist.filter((p) => p.band >= (askedGeo.county ? 3 : 2));
+      section += here.length > 0
+        ? `In ${askedGeo.label}: ${here.length} of the colleges below.\n`
+        : `NO college in ${askedGeo.label} teaches this program in the current COCI catalog. The colleges below are the nearest that do — name them with their county so the visitor can judge the distance.\n`;
+    }
+    let sectionRendered = 0;
+    for (const p of plist) {
+      const rows = byPair.get(pairKey(p.college, p.top_code)) || [];
+      if (rows.length === 0) continue;
+      sectionRendered++;
+      section += `### ${p.college}${geoLabel(p)} — ${rows.length} course(s) in this program:\n`;
+      for (const r of rows.slice(0, PROSPECTIVE_COURSES_PER_COLLEGE)) {
+        section += `  - ${r.subject} ${r.course_number} — ${r.course_title}`;
+        const units = Number(r.units);
+        if (units > 0) section += ` (${units} units)`;
+        else if (/noncredit|non-enhanced|enhanced funding/i.test(String(r.credit_type || ""))) section += ` (noncredit)`;
+        if (r.cid) section += ` [C-ID ${r.cid}]`;
+        section += `\n`;
+      }
+      if (rows.length > PROSPECTIVE_COURSES_PER_COLLEGE) {
+        section += `  ... and ${rows.length - PROSPECTIVE_COURSES_PER_COLLEGE} more course(s) in this program.\n`;
+      }
+    }
+    if (sectionRendered > 0) { out += section; rendered += sectionRendered; }
+  }
+  return rendered > 0 ? out : "";
 }
 
 // ── Build topic context (organized by college) ─────────────────
@@ -3094,6 +3312,18 @@ This is the most actionable thing you can give a college. Walk the recommendatio
 - IF THE COLLEGE HAS NO SIMILARLY-TITLED COURSE, say so honestly rather than stretching for a match, and point at what peers used — they may teach it under a different name.
 - NEVER invent a course, a course number, or a college. If the section does not list it, we do not have it.`;
 
+// Prospective credit (2026-09-18, S274). Sam: "The question is what might
+// qualify so the user could ask for it at a college that has not yet granted
+// it." The section it governs is built by buildProspectiveContext.
+const PROSPECTIVE_RULE = `\n\nABOUT THE "PROSPECTIVE CREDIT" SECTION (if present) — WHAT A HELD CREDENTIAL COULD COUNT TOWARD:
+This answers a DIFFERENT question from every section above. The exhibit and credential sections say who ALREADY grants credit for a credential. This section is for the visitor who holds a credential and wants to know which courses in a program it MIGHT count toward, so they can ask for a review at a college that has never granted it. Answer that question. Do not swap in the "who already grants it" answer, and do not decline because no exhibit exists: a college that has not articulated a credential can still review a request, and such requests are how articulations begin.
+- WORK FROM THE COURSE LIST. For the program the visitor wants to enter, read its courses at the colleges shown and name the ones whose content the credential plausibly covers — usually the entry-level courses (fundamentals, foundations, introduction, transition, basic, level I), never the advanced or specialty ones. Say in a phrase WHY each is a candidate: what the credential trains that the course teaches. Name only courses that appear in the context, with their course number.
+- THE PROGRAM THEY WANT TO ENTER IS THE TARGET. When the lists include the program that trains the credential they already hold (a nurse assistant program for a CNA holder), that list is background, not the answer — they do not need credit for what they hold; they need credit toward what they are entering.
+- PRESENT EVERY MATCH AS A REQUEST, NEVER A DETERMINATION. Say "ask the CPL coordinator at <college> to review your <credential> against <course>"; never that it "qualifies", "counts", "is equivalent" or "will be accepted". Faculty decide, and a college that has not granted it before can still say yes.
+- CITE THE PRECEDENT WHEN THERE IS ONE. If the credential record shows a college that articulated this credential against a named course, say so with the college, the course and the units — it is the evidence that makes the request credible at a college that has not done it yet.
+- WHEN NO COLLEGE IN THE VISITOR'S PLACE TEACHES THE TARGET PROGRAM, the section says so. Say it plainly, then give the same course-level answer for the nearest colleges shown, naming each college's county so the visitor can judge the distance.
+- NEVER invent a course, a course number or a college, and never guess at a college's catalog beyond the lists shown.`;
+
 const CREDIT_STATUS_RULE = `\n\nABOUT THE "CPL CREDIT DISPOSITION" SECTION (if present) — WHAT COLLEGES HAVE ACTED ON:
 This is the newest and least-known part of the picture: not what credit EXISTS, but what has been DONE with it. Use it whenever someone asks how a college (or the system) is doing on CPL, what is outstanding, or where to focus.
 
@@ -3143,6 +3373,7 @@ type RuleContext = {
   credentialContext: string;
   volumeContext: string;
   alignmentContext: string;
+  prospectiveContext: string;
   creditContext: string;
 };
 
@@ -3173,6 +3404,7 @@ const RULE_PREDICATES: Record<string, any> = {
   credential: (c) => !!c.credentialContext,
   credential_or_volume: (c) => !!(c.credentialContext || c.volumeContext),
   alignment: (c) => !!c.alignmentContext,
+  prospective: (c: any) => !!c.prospectiveContext,
   volume: (c) => !!c.volumeContext,
   credit: (c) => !!c.creditContext,
 };
@@ -3308,6 +3540,7 @@ const RULE_DEFAULTS: Array<RuleDefault> = [
   { key: "credential", title: "Canonical credential record", body: CREDENTIAL_RULE, appliesWhen: "credential", sortOrder: 40 },
   { key: "credit_recs", title: "Credit recommendation lines — the full set", body: CREDIT_RECS_RULE, appliesWhen: "credential_or_volume", sortOrder: 50 },
   { key: "alignment", title: "Articulation worklist for a college", body: ALIGNMENT_RULE, appliesWhen: "alignment", sortOrder: 60 },
+  { key: "prospective", title: "Prospective credit — what a held credential could count toward", body: PROSPECTIVE_RULE, appliesWhen: "prospective", sortOrder: 65 },
   { key: "volume", title: "Student volume by credential", body: VOLUME_RULE, appliesWhen: "volume", sortOrder: 70 },
   { key: "credit_status", title: "CPL credit disposition", body: CREDIT_STATUS_RULE, appliesWhen: "credit", sortOrder: 80 },
   { key: "portal", title: "Credit for Being You — the student portal", body: PORTAL_RULE, appliesWhen: "always", sortOrder: 90 },
@@ -3655,6 +3888,7 @@ function buildSystemPrompt(
   credentialContext: string = "",
   volumeContext: string = "",
   alignmentContext: string = "",
+  prospectiveContext: string = "",
   // The curator overlay, or null to run entirely on code defaults.
   rulesOverlay: Map<string, RuleOverlay> | null = null,
   // Filled with the rule keys that actually fired, so the caller can record
@@ -3730,7 +3964,7 @@ function buildSystemPrompt(
   // therefore whose precedence — was invisible and unchangeable without a PR
   // and a deploy.
   const assembled = assembleRules(RULE_DEFAULTS, rulesOverlay, {
-    credentialContext, volumeContext, alignmentContext, creditContext,
+    credentialContext, volumeContext, alignmentContext, creditContext, prospectiveContext,
   });
   if (report) {
     report.fired = assembled.fired;
@@ -3777,7 +4011,7 @@ ${assembled.alwaysText}`;
 
   const volatilePart = `
 ${hostScopeBlock(hostScope)}
-${context}${metricsContext}${collegeContext}${topicContext}${offeringsContext}${programsContext}${credentialContext}${volumeContext}${alignmentContext}${creditContext}${assembled.conditionalText}${specialInstruction}${audienceRule}${teamGuidance}`;
+${context}${metricsContext}${collegeContext}${topicContext}${offeringsContext}${programsContext}${credentialContext}${volumeContext}${alignmentContext}${prospectiveContext}${creditContext}${assembled.conditionalText}${specialInstruction}${audienceRule}${teamGuidance}`;
 
   return { stable, volatile: volatilePart };
 }
@@ -4267,16 +4501,28 @@ Deno.serve(async (req: Request) => {
     let credentialContext = "";
     let volumeContext = "";
     let alignmentContext = "";
+    let prospectiveContext = "";
     let stdRecs: any = null, anyCreds: any = null, vol: any = null, adopt: any = null;
     let collegeCreds: any = null;
 
     await Promise.all([
+      // BOTH CREDENTIAL ROUTES, ALWAYS, CONCURRENTLY (2026-09-18, S274). The
+      // local route used to run only when the statewide one came back empty, so
+      // ONE statewide hit — a false friend included (isFalseFriend) — hid every
+      // local credential. A prospective question ("what could my CNA count
+      // toward in an LVN program?") is answered by LOCAL precedents, Chaffey's
+      // NURVN 414 articulation of Acute Care Nursing Assistant among them, and
+      // those were exactly what the gate withheld. buildCredentialContext already
+      // labels the two lists; Sam's statewide-only rule governs the REC LINES
+      // within one credential, never which credentials are named.
       (async () => {
         try {
-          stdRecs = await fetchStatewideRecommendations(routeText, sb);
-          anyCreds = stdRecs && stdRecs.length > 0
-            ? null
-            : await fetchAnyCredentials(routeText, sb);
+          const routes = await Promise.all([
+            fetchStatewideRecommendations(routeText, sb),
+            fetchAnyCredentials(routeText, sb),
+          ]);
+          stdRecs = routes[0];
+          anyCreds = routes[1];
         } catch (e) {
           console.error("credential lookup failed:", e);
         }
@@ -4344,6 +4590,21 @@ Deno.serve(async (req: Request) => {
         const align = await fetchAlignment(topTitle, college, sb);
         alignmentContext = buildAlignmentContext(align, topTitle, college);
       }
+
+      // Route PROSPECTIVE (v69, 2026-09-18, S274) — "which courses could what I
+      // hold count toward, at a college that has not granted it?" Fires when a
+      // credential matched, a place or a college anchors the question, and the
+      // course catalog matched a core program; one PostgREST read, fail-safe.
+      const heldTitles = [...(stdRecs || []), ...(anyCreds || [])]
+        .map((r: any) => r?.unified_title).filter(Boolean).slice(0, 4);
+      if ((askedGeo || college) && heldTitles.length > 0 && offeringsResults && offeringsResults.length > 0) {
+        const coreKw = expandWithSynonyms(extractTopicKeywords(routeText));
+        const pairs = pickProspectivePairs(offeringsResults, coreKw, college, askedGeo, geoMap);
+        if (pairs.length > 0) {
+          const courseRows = await fetchProgramCourses(pairs, sb);
+          prospectiveContext = buildProspectiveContext(pairs, courseRows, heldTitles, college, askedGeo);
+        }
+      }
     } catch (e) {
       // The lines are an enrichment. Losing them must cost the DETAIL, never the
       // credential sections themselves — so rebuild without them rather than
@@ -4373,7 +4634,7 @@ Deno.serve(async (req: Request) => {
       sections || [], liveMetrics, collegeContext, topicContext, searchMode,
       multiTurn, offeringsContext, programsContext, audienceKey ? AUDIENCE_RULES[audienceKey] : "",
       teamGuidance || "", creditContext, credentialContext, volumeContext, alignmentContext,
-      rulesOverlay, ruleReport, hostScope);
+      prospectiveContext, rulesOverlay, ruleReport, hostScope);
 
     /* A drafting caller gets the answer doctrine REPLACED — see DRAFTING_BLOCK.
      * Appended to `volatile` on purpose: `stable` is the prompt-cache

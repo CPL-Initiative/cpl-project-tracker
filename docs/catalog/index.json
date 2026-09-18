@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 465,
+   "count": 466,
    "docs": [
     {
      "created": "2026-08-14",
@@ -7640,6 +7640,28 @@
      "title": "Warm a tinny voiceover with measured EQ \u2014 diagnose before you boost",
      "type": "methodology",
      "updated": "2026-07-23"
+    },
+    {
+     "created": "2026-09-18",
+     "governs": [
+      "chatbox/supabase/functions/cpl-chat/index.ts",
+      "chatbox/smoke_test.sh",
+      "tests/sierra_prospective_credit.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-what-might-qualify-is-a-different-question-from-who-already-grants-it.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "sierra",
+      "retrieval",
+      "alignment",
+      "prospective-cpl",
+      "geography",
+      "smoke-test"
+     ],
+     "title": "What might qualify is a different question from who already grants it \u2014 answer it from the target program's course list",
+     "type": "methodology",
+     "updated": "2026-09-18"
     },
     {
      "created": "2026-08-26",
@@ -17778,5 +17800,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 923
+ "total": 924
 }
