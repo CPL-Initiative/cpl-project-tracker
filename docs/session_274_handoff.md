@@ -109,6 +109,7 @@ Read in order: this file · [`lanes/sierra-retrieval-corpus.md`](reference/lanes
 |---|---|
 | A/B 35298283829 read (grid + logs) → merge #1607 → deploy v68 → health + smoke → logs | **YOURS FIRST** — everything before it is done and verified |
 | Production read of the Orange County CNA-to-LVN question; Sam reads it | after the deploy — `s273-sam-oc-question-v68` |
+| **The `smoke` check on #1607 is RED by construction until v68 deploys** (run 35299011638): the workflow runs the branch's smoke script against PRODUCTION v67, and mode 7c's prose assertion ("names a college from the anchored sets") fails on v67 for exactly the reason the PR exists — the RPC assertions pass. Doctrine merges on `test` green with `unstable` allowed; read 7c on the A/B candidate instead | expected; no action |
 | The checkpoint commits (`97c49d6`, `f3797f2`, and the lane trim) ride on #1607; the vault note is [CPLBrain #154](https://github.com/samueltlee/CPLBrain/pull/154) (draft) | merge #154 on green, with #1607 |
 | Sam reads Sierra's program answers in a browser | asked S273 — `s273-sam-read-program-answers` |
 | Client-side time limit on every retrieval RPC (`AbortSignal`) | recommended, not built — `s273-fable-route-time-limits` |
