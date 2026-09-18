@@ -1403,3 +1403,130 @@ counts, or it was never measured. And a prompt rule cannot outrun a context
 that contradicts it: v69's rule already called the held program background,
 and the model opened with it twice because the block's own intro said the
 visitor held an LVN license. Fix what retrieval builds; pin what it builds.
+
+## 2026-09-18 — SkyGauge (S276): the quick list, the flyer, "catalog data", and the precedent inside the block
+
+**The ask (Sam's opening message, verbatim):** *"I tested Sierra with the same
+question and it's returning expected results now. Sky Compass did great work!
+Goal now would be for her to be able to add near the start of her detailed
+answer a quick list view of the typical CNA course next to typical LVN
+courses. The user did not say where they did their CNA, so being able to
+generalize is an added skill level for Sierra. Response could be thought of as
+a flyer—Have a CNA Cert? Ask for your credit toward LVN, Rad Tech, ADN, Med
+Asst, Surgical Tech, Sterilization Tech, Phlebotomy…oops! got a little carried
+away…but if Sierra were a counselor, she would have this at her fingertips for
+the student."* And: *"Also, Sierra shouldn't use the inside term COCI. Instead
+say something like catalog data."* Mid-session: *"Can we prevent the need for
+me to approve all these sql queries?"*
+
+### What the evidence said
+
+- **v71's answer to his own test** (`chat_interactions` `a0f4a6ec`, 13:40Z)
+  opened with Long Beach City's VN 220 and then wrote *"the COCI catalog
+  doesn't list a full LVN entry program at any Orange County community
+  college"*. The student-audience rule had banned the word since v22. It came
+  from the CONTEXT: the three catalog builders headed their sections "COCI
+  offerings", "COCI programs", "COCI catalog", and two catalog rules said
+  "COCI program export". A prompt rule cannot outrun a context that
+  contradicts it (the v71 lesson, again).
+- **No route carried a statewide picture.** The prospective block reads the
+  full course list of the three colleges nearest the visitor, per program.
+  The visitor's own CNA college is unknown, so "what a CNA typically covers"
+  needs the whole catalog. `chatbox_college_courses` holds it; PostgREST caps
+  a read at 1,000 rows and says nothing when it cuts (Registered Nursing alone
+  is 1,544 rows over 80 colleges), so the aggregation has to run in the
+  database.
+- **Measured, live, 2026-09-18.** TOP 1230.30 Certified Nurse Assistant: 65
+  colleges, 195 rows; normalized and counted in colleges, 48 of 65 list a
+  Nurse Assistant course, 10 an Acute Care Nurse Assistant, 7 Home Health
+  Aide — unfolded, "nurse assistant" had been seven titles (11 + 10 + 9 + 7 +
+  4 + 4 + 3). TOP 1230.20 Licensed Vocational Nursing: 44 colleges, 528 rows;
+  Fundamentals of Nursing 13, Fundamentals of Vocational Nursing 10,
+  Intravenous Therapy and Blood Withdrawal 8, Pharmacology 8, Vocational
+  Nursing I 8. Level words (fundamentals, introduction, advanced) stay in the
+  key; delivery and level suffixes (theory, lab, clinical, I/II, A/B) fold.
+- **Sam's flyer maps to catalog codes.** LVN 1230.20 (44 colleges), RN/ADN
+  1230.10 (80), Medical Assisting 1208.00 (57), Phlebotomy 1205.10 (26),
+  Radiologic Technology 1225.00 (28), Surgical Technician 1217.00 (5), and
+  the Sterile Processing programs are coded Hospital Central Service
+  Technician 1209.00 (5).
+- **The precedent** (S275's open item): three of the last four Orange County
+  answers dropped Chaffey's NURVN 414 while the credential record carried it —
+  the rule said "cite the precedent" and the record sat in another section.
+  And v71 once attached Mt. San Antonio's VOC VN1 to Golden West
+  (`39a328be`): a course under a college heading with no college on its line.
+
+### The fix (cpl-chat v72, branch `claude/sierra-cna-credential-pathways-ptzlzw`)
+
+1. **`program_typical_courses(top_codes, min_colleges, per_top)`** and its
+   normalizer `cpl_course_title_norm(text)`
+   (`chatbox/supabase_program_typical_courses.sql`, verify file beside it,
+   applied live 2026-09-18 ~15:05Z, the nine verify checks clean). One row per
+   program × normalized title: `count(distinct college)`, the colleges array,
+   the modal title and unit value, one example course, the credit/noncredit
+   split, and the program's college count as the denominator. Eight health
+   programs aggregate in well under a second; there is no index on
+   `top_code` and the table does not need one at this size.
+2. **The QUICK LIST in the block.** `foldTypicalRows` folds the rows on a stem
+   key and unions the college arrays; `buildQuickList` renders the held
+   program first (what the credential covers) then the target (what to ask
+   about), each course as *Title — at N of M colleges (e.g. College · CODE;
+   usually U units | usually noncredit | credit at some colleges, noncredit at
+   others)*. `PROSPECTIVE_RULE` gains THEN THE QUICK LIST: a two-column
+   markdown table right after the first paragraph, held left, target right,
+   five to eight rows, course names only.
+3. **PRECEDENT ON RECORD inside the block.** `buildPrecedentLines` renders the
+   held credentials' recommendation lines from the record already fetched,
+   pairs a college with a course only when the record names one adopter, says
+   "none" only when the record was read and holds none, and only when a
+   holding phrase names the credential (with none, an LVN award would read as
+   the CNA holder's precedent). The CITE bullet now points at these lines.
+4. **The FLYER.** `RELATED_PROGRAMS` (Sam's list, keyed by 1230.30, attributed
+   in the block), `heldProgramTops` (the BACKGROUND mark's program, with the
+   block's own fail-safe, else an alias the visitor's words name exactly),
+   `fetchProgramTeachers` (the offerings rollup by TOP), and
+   `buildRelatedPrograms`: per program, the statewide college count, the
+   in-place colleges nearest first or *the catalog data lists none in
+   <place>* with the nearest two and their distance, and the typical first
+   courses; programs the block already renders are skipped; a program with
+   nothing in the catalog data is left out. Rule: CLOSE WITH THE FLYER, one
+   line per program, at the end.
+5. **The college on every course line** (`Pasadena City College · NURS 102 —
+   …`), the intro says a course belongs to the college on its own line, the
+   rule says it (THE COLLEGE IS ON EVERY COURSE LINE), and smoke 7c fails an
+   Orange County college attached to an LVN course in the head; `VN1` and
+   `Vocational Nursing 1` join the course alternation.
+6. **COCI is gone from every rendered string** — "the college catalog data" /
+   "the catalog data" / "the program catalog data" in the three builders and
+   two rules; the always-on catalog rule carries the ban once; the smoke fails
+   any mode whose answer says COCI, in the counted error shape.
+7. **Fewer approvals.** `.claude/settings.json` allows the Supabase read tools
+   (`execute_sql`, `list_edge_functions`, `query_logs`, `list_tables`,
+   `get_edge_function`) without a prompt; `apply_migration` and the deploy
+   still prompt. A permission rule is by tool name, so the allow covers SQL
+   writes too — Rule 10 governs those; it takes effect at the next session
+   start.
+
+### How it was proven
+
+`tests/sierra_prospective_credit.test.js` block 11 (163 checks, floor raised
+from 131): the fold, the quick list, the precedent lines (Chaffey paired; two
+adopters never paired; none/null/no-title shapes), the held-program lookup and
+its fail-safe, the flyer for a place and for a named college, the whole block
+with and without extras, the wiring, the rule bullets, the smoke assertions,
+and that no rendered catalog text says COCI. `sierra_place_anchor` repinned
+(77). `npm test` 346 of 346 files; 46 of the workflow's python/shell steps
+green locally (the JS-suite gate step runs only in CI); `deno check` 15
+errors, the identical set as `main`; `sierra_rule_defaults.js` regenerated;
+the dependency map rebuilt (the new RPC and the offerings read appear as
+edges). The A/B on the preview slug and the deploy follow this commit.
+
+### Sam's decisions this run
+
+- The quick list and the flyer, verbatim above (`cpl_memory`
+  `sam-quick-list-and-flyer-a-counselor-at-her-fingertips-2026-09-18`; vault
+  braindump 2026-09-18 14:45).
+- Never "COCI"; say "catalog data" (`sam-never-say-coci-say-catalog-data-2026-09-18`).
+- Fewer SQL approvals: the project settings allow the Supabase read tools.
+- Still his: which Orange County college runs an LVN entry program; the 381
+  garbled rows; auto-deploy on merge; guidance row 674923db's scope.

@@ -96,6 +96,14 @@ run() { # label  json-body
   if printf '%s' "$ans" | head -c 160 | grep -E -i -q '^[[:space:]]*(#+[[:space:]]*)?(\*\*)?(great|good|excellent|fantastic|wonderful|smart|fair|important|interesting|thoughtful|that.?s an? (great|good|fair|excellent)) (question|ask|thing to)'; then
     echo "::error::$label: answer should NOT match /opens with a remark about the question/ (sierra_guidance cafb92af — the first sentence is the answer)"; fail=1
   fi
+  # EVERY MODE: never the inside term "COCI" (Sam, 2026-09-18: "Sierra shouldn't
+  # use the inside term COCI. Instead say something like catalog data"). To a
+  # visitor the source is "the college catalog data"; COCI is the name of a
+  # Chancellor's Office system they have never heard of. v71 wrote "the COCI
+  # catalog doesn't list a full LVN entry program" in Sam's own test answer.
+  if printf '%s' "$ans" | grep -E -q '\bCOCI\b'; then
+    echo "::error::$label: answer should NOT match /\bCOCI\b/ (an inside term — say the catalog data; Sam, 2026-09-18)"; fail=1
+  fi
   echo
   sleep 1   # stay well under the 20 req/min/IP rate limit
 }
@@ -567,6 +575,28 @@ if [ "${ovn:-0}" -ge 20 ]; then
 else
   echo "::error::7c ⭐ the phrase query reached only ${ovn:-0} Licensed Vocational Nursing rows — the <-> phrase is being dropped or rebound (check tsQueryFromTerms and that the RPC still parses with to_tsquery)."; fail=1
 fi
+# v72 (2026-09-18, S276): the typical-courses RPC behind the QUICK LIST. A
+# threshold, never a count — 48 of 65 colleges fold to "nurse assistant"
+# measured 2026-09-18; 30 still fails loudly if the normalization stops folding
+# the variants, and survives a catalog refresh.
+tstat=$(curl -sS --max-time 45 -X POST "$REST_BASE/rpc/program_typical_courses" \
+  -H 'Content-Type: application/json' -H "apikey: $ANON" -H "Authorization: Bearer $ANON" \
+  -d '{"top_codes":["1230.30","1230.20"],"min_colleges":2,"per_top":12}' | python3 -c '
+import json, sys
+try:
+    rows = json.loads(sys.stdin.read()); rows = rows if isinstance(rows, list) else []
+except Exception:
+    rows = []
+cna = [r for r in rows if r.get("top_code") == "1230.30" and r.get("norm") == "nurse assistant"]
+lvn = [r for r in rows if r.get("top_code") == "1230.20"]
+print(len(rows), (cna[0].get("n_colleges", 0) if cna else 0), len(lvn), sep="|")
+')
+trows=$(printf '%s' "$tstat" | cut -d'|' -f1); tcna=$(printf '%s' "$tstat" | cut -d'|' -f2); tlvn=$(printf '%s' "$tstat" | cut -d'|' -f3)
+if [ "${trows:-0}" -gt 0 ] && [ "${tcna:-0}" -ge 30 ] && [ "${tlvn:-0}" -ge 5 ]; then
+  echo "  [assert ok] 7c ⭐ program_typical_courses folds the CNA course to one family at $tcna colleges (48 of 65 measured) and lists $tlvn LVN course families"
+else
+  echo "::error::7c ⭐ program_typical_courses returned rows=${trows:-0}, nurse-assistant colleges=${tcna:-0} (need 30), LVN families=${tlvn:-0} (need 5) — is chatbox/supabase_program_typical_courses.sql applied, and is cpl_course_title_norm still folding the variants?"; fail=1
+fi
 run "7c place anchor (Orange County, CNA to LVN)" \
   "$(printf '{"query":"%s","session_id":"smoke-ci","history":[]}' "$OC_QUESTION")"
 answer_must_match -i "orange county" "7c names the place the visitor named"
@@ -586,12 +616,27 @@ answer_must_match -i "saddleback|golden west|cypress|santa ana|santiago canyon|l
 # under the neighbor band (course_count order) plus the two Los Angeles programs
 # the older assertion named, so a catalog refresh that reorders the picks is a
 # loud red here rather than a silent miss. Reads for the SHAPE Sam asked for.
-answer_must_match -i "NURS[ -]?(102|125)|VN[ -]?(8|10|103|215|220|61|061)\b|VOC[ -]?VN10[01]|NURVN[ -]?(403|414)|VNRS[ -]?150|Fundamentals of (Vocational )?Nursing|Vocational Nursing Foundations|Transition to Vocational Nursing|Vocational Nursing I\b" "7c ⭐ names a Vocational Nursing course from the prospective course lists (Sam's bar: a course-level answer)"
-answer_head_must_match -i 400 "NURS[ -]?(102|125)|VN[ -]?(8|10|103|215|220|61|061)\b|VOC[ -]?VN10[01]|NURVN[ -]?(403|414)|VNRS[ -]?150|Fundamentals of (Vocational )?Nursing|Vocational Nursing Foundations|Transition to Vocational Nursing|Vocational Nursing I\b" "7c ⭐ leads with the course-level answer in the FIRST SENTENCE — the direct answer first, the limits and precedents after (Sam, 2026-09-18; 800 characters let v70's CNA opener through, VN 220 at 854)"
+answer_must_match -i "NURS[ -]?(102|125)|VN[ -]?(8|10|103|215|220|61|061)\b|VOC[ -]?VN10[01]|NURVN[ -]?(403|414)|VNRS[ -]?150|Fundamentals of (Vocational )?Nursing|Vocational Nursing Foundations|Transition to Vocational Nursing|Vocational Nursing I\b|VOC[ -]?VN[ -]?1\b|Vocational Nursing 1\b" "7c ⭐ names a Vocational Nursing course from the prospective course lists (Sam's bar: a course-level answer)"
+answer_head_must_match -i 400 "NURS[ -]?(102|125)|VN[ -]?(8|10|103|215|220|61|061)\b|VOC[ -]?VN10[01]|NURVN[ -]?(403|414)|VNRS[ -]?150|Fundamentals of (Vocational )?Nursing|Vocational Nursing Foundations|Transition to Vocational Nursing|Vocational Nursing I\b|VOC[ -]?VN[ -]?1\b|Vocational Nursing 1\b" "7c ⭐ leads with the course-level answer in the FIRST SENTENCE — the direct answer first, the limits and precedents after (Sam, 2026-09-18; 800 characters let v70's CNA opener through, VN 220 at 854)"
 answer_head_must_not_match -i 300 "VHLTH[ -]?10[1-8]\b|VMED[ -]?(10|11|70|71)\b|NURS[ -]?G06[01]|CNA[ -]?42[2-7]|\bHS[ -]?5[01]\b|NHSN[ -]?5[01]\b|NRS[ -]?10[134]\b|NURAST[ -]?60|NURS[ -]?103\b" "7c ⭐ the first course named is in the target program — no CNA course code in the first 300 characters (v70 opened with Golden West NURS G060N, then Santa Ana VHLTH 101; the CNA program is BACKGROUND)"
 answer_must_not_match -i "no orange county (community )?colleges? (currently )?(teach|teaches|offers?|runs?|has an? (lvn|vocational nursing)|have an? (lvn|vocational nursing))|none of the orange county colleges (currently )?(teach|offer|have|has|run)" "7c ⭐ never states a catalog absence as a fact about Orange County (Sam, 2026-09-18: flat wrong — say what the catalog shows and name the bridges)"
 answer_must_match -i "chaffey|NURVN[ -]?414|acute care nursing assistant" "7c ⭐ cites the CNA-to-LVN precedent (Chaffey NURVN 414) rather than saying no college has done it"
 answer_must_match -i "ask|request|review" "7c ⭐ frames the match as a request for review, never a determination"
+# v72 (2026-09-18, S276). Sam: "a quick list view of the typical CNA course next
+# to typical LVN courses" near the start of the detailed answer — a two-column
+# table, the held program's typical courses beside the target's, from the QUICK
+# LIST the block renders off program_typical_courses(). Read within the first
+# 1,800 characters (v71's first paragraph ran ~900) for a table row that carries
+# a CNA cell before an LVN cell.
+answer_head_must_match -i 1800 '\|[^|]*(CNA|nurse assistant|nursing assistant)[^|]*\|[^|]*(LVN|vocational nursing)[^|]*\|' "7c ⭐ the QUICK LIST: a two-column table with the CNA courses beside the LVN courses near the start (Sam, 2026-09-18)"
+# The flyer — "Have a CNA Cert? Ask for your credit toward LVN, Rad Tech, ADN,
+# Med Asst, Surgical Tech, Sterilization Tech, Phlebotomy": at least one of the
+# other programs the block lists is named.
+answer_must_match -i "phlebotomy|medical assist|radiologic|surgical tech|sterile process|registered nurs" "7c ⭐ the flyer: names another program a CNA commonly counts toward (Sam, 2026-09-18)"
+# The college on the line: no Orange County college teaches an LVN entry course,
+# so none may be named as the college of one in the head (v71 attached Mt. San
+# Antonio's VOC VN1 to Golden West — chat_interactions 39a328be).
+answer_head_must_not_match -i 300 "(golden west|cypress|saddleback|santa ana|santiago canyon)[^.]{0,120}(VN[ -]?[0-9]|VOC VN|NURVN|VNRS|NURS[ -]?(102|125))" "7c ⭐ a course is named with its own college — no Orange County college teaches an LVN entry course, so none may be attached to one"
 
 # Broad "who teaches this" — the catalog should surface colleges that TEACH
 # construction/carpentry (not only those with an existing exhibit).

@@ -10,9 +10,9 @@
     "other": 150000
   },
   "summary": {
-    "files": 943,
-    "bytes": 9959496,
-    "over_budget": 8,
+    "files": 945,
+    "bytes": 9978290,
+    "over_budget": 9,
     "handoff_max": 276,
     "always_loaded_files": 1,
     "always_loaded_bytes": 60839,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 114,
-        "bytes": 3088659,
+        "bytes": 3089271,
         "over": 3
       },
       "index": {
@@ -36,18 +36,18 @@
       },
       "lessons": {
         "files": 75,
-        "bytes": 2067821,
+        "bytes": 2076109,
         "over": 1
       },
       "kb_note": {
-        "files": 472,
-        "bytes": 2412493,
+        "files": 474,
+        "bytes": 2420556,
         "over": 0
       },
       "roadmap_lane": {
         "files": 32,
-        "bytes": 199833,
-        "over": 3
+        "bytes": 201664,
+        "over": 4
       },
       "handoff": {
         "files": 248,
@@ -56,15 +56,15 @@
       }
     },
     "by_rule": {
-      "oversized_doc": 8,
+      "oversized_doc": 9,
       "house_voice": 24,
       "vault_heavy_path": 49
     },
     "vault": {
-      "files": 2972,
-      "bytes": 1445122399,
-      "heavy_bytes": 643137858,
-      "heavy_share": 0.445,
+      "files": 2979,
+      "bytes": 1452657413,
+      "heavy_bytes": 643452131,
+      "heavy_share": 0.443,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
         "cpl-project-tracker/cip_fitcheck",
@@ -415,6 +415,19 @@
       "path": "docs/reference/lanes/partner-crosswalks.md"
     },
     {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 13822,
+        "limit": 12000,
+        "lane": "roadmap_lane",
+        "over_by": 1822,
+        "ratio": 1.15
+      },
+      "message": "13,822 B is 1.2× the roadmap_lane budget (12,000 B) — candidate for compaction",
+      "path": "docs/reference/lanes/sierra-retrieval-corpus.md"
+    },
+    {
       "rule": "house_voice",
       "fixable": false,
       "detail": {
@@ -546,10 +559,10 @@
       "fixable": false,
       "path": "kb/unclassified_fold",
       "detail": {
-        "bytes": 20713019,
+        "bytes": 21002417,
         "kind": "dir"
       },
-      "message": "directory totals 20,713,019 B inside the vault"
+      "message": "directory totals 21,002,417 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -706,10 +719,10 @@
       "fixable": false,
       "path": "statewide_data.js",
       "detail": {
-        "bytes": 9477427,
+        "bytes": 9502302,
         "kind": "file"
       },
-      "message": "9,477,427 B single file inside the vault"
+      "message": "9,502,302 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
