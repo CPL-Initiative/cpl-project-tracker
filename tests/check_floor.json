@@ -253,6 +253,7 @@
     "sierra_model_choice.test.js": 20,
     "sierra_offerings_retrieval.test.js": 19,
     "sierra_page.test.js": 32,
+    "sierra_place_anchor.test.js": 77,
     "sierra_program_search.test.js": 20,
     "sierra_prompt_cache.test.js": 31,
     "sierra_rule_defaults.test.js": 35,
@@ -345,6 +346,5 @@
     "uc_zscheme_recognition.test.js": 9,
     "workplan_goals_authoritative.test.js": 26,
     "workplan_goals_desc_editors.test.js": 22
-  },
-  "sierra_place_anchor.test.js": 77
+  }
 }

@@ -1093,8 +1093,8 @@ async function searchCollegeOfferings(query: string, sb: any, anchor: any | null
                        // relevant college out (the Q1 El-Camino false-negative)
     // A PLACE named in the question orders the rows nearest it INSIDE the RPC
     // (2026-09-18), so the limit above cannot cut the local colleges out.
-    anchor_county: anchor ? anchor.county : null,
-    anchor_region: anchor ? anchor.region : null,
+    anchor_county: anchor?.county ?? null,
+    anchor_region: anchor?.region ?? null,
   });
   if (error || !data || data.length === 0) return null;
   return data;
@@ -1134,8 +1134,8 @@ async function searchCollegePrograms(query: string, sb: any, anchor: any | null 
     result_limit: 150,
     // A PLACE named in the question orders the rows nearest it INSIDE the RPC
     // (2026-09-18), so the limit above cannot cut the local colleges out.
-    anchor_county: anchor ? anchor.county : null,
-    anchor_region: anchor ? anchor.region : null,
+    anchor_county: anchor?.county ?? null,
+    anchor_region: anchor?.region ?? null,
   });
   if (error) {
     console.error("search_college_programs unavailable:", error.message);

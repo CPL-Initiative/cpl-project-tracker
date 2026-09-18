@@ -281,8 +281,11 @@ block("7. wiring — the place reaches the routes, the RPCs and the prompt", () 
   check("(7) ⭐ askedGeo falls back to the place when no college resolved",
     /const askedGeo = singleProfile \? geoMap\.get\(singleProfile\.college\) \|\| null : placeAnchor;/.test(SRC));
   check("(7) the place block reaches the prompt", /collegeContext = buildPlaceContext\(askedPlace, geoMap\) \+ collegeContext;/.test(SRC));
-  check("(7) ⭐ both RPC calls pass the anchor", (SRC.match(/anchor_county: anchor \? anchor\.county : null,/g) || []).length === 2
-    && (SRC.match(/anchor_region: anchor \? anchor\.region : null,/g) || []).length === 2);
+  // `anchor?.county ?? null`, not a ternary: sierra_program_search.test.js reads
+  // every `word:` in the call block as a passed argument, and a ternary's colon
+  // would read as one ("county", "region") that the SQL does not declare.
+  check("(7) ⭐ both RPC calls pass the anchor", (SRC.match(/anchor_county: anchor\?\.county \?\? null,/g) || []).length === 2
+    && (SRC.match(/anchor_region: anchor\?\.region \?\? null,/g) || []).length === 2);
   check("(7) ⭐ both SQL files of record declare the anchor parameters",
     /anchor_county\s+text\s+default null,\s*\n\s*anchor_region\s+text\s+default null/.test(SQL_P)
     && /anchor_county\s+text\s+default null,\s*\n\s*anchor_region\s+text\s+default null/.test(SQL_O));

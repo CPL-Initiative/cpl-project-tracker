@@ -38,8 +38,10 @@ check("template literals balanced (no escaped closing backtick)",
 
 /* ── 2. The lookups use the handler's real client variable ─────────────────── */
 check("credential lookups receive the handler's client (`sb`, not `supabase`)",
-      /fetchStatewideRecommendations\(searchText,\s*sb\)/.test(src) &&
-      /fetchAnyCredentials\(searchText,\s*sb\)/.test(src),
+      // routeText since v68: the retrieval text with a named PLACE stripped out
+      // (tests/sierra_place_anchor.test.js). The pin here is the CLIENT.
+      /fetchStatewideRecommendations\((?:searchText|routeText),\s*sb\)/.test(src) &&
+      /fetchAnyCredentials\((?:searchText|routeText),\s*sb\)/.test(src),
       "the handler client is `sb`; passing `supabase` is a ReferenceError per request");
 
 /* ── 3. Both RPCs are called, by their real names ──────────────────────────── */
