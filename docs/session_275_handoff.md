@@ -18,14 +18,18 @@ Read in order: this file · [`lanes/sierra-retrieval-corpus.md`](reference/lanes
 `docs/kb-notes/methodology-what-might-qualify-is-a-different-question-from-who-already-grants-it.md`
 · [PR #1608](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1608).
 
-## ✅ WHERE THINGS STAND (as of 2026-09-18 04:20Z)
+## ✅ WHERE THINGS STAND (as of 2026-09-18 04:55Z)
 
 - **cpl-chat v69 is LIVE** (PR #1608 squash-merged as `1834d16` with `test`
   run 35304075555 green; deploy run 35304800563, 03:52:55Z;
-  `list_edge_functions` reports version 69). Health run 35304888485 and
-  smoke run 35304890419 were dispatched against it at 03:53Z. Sam went to
-  bed at 03:50Z with *"automode it from here"*, so this session ran the
-  merge and the deploy under his standing authorization.
+  `list_edge_functions` reports version 69). Health run 35304888485 green;
+  the first smoke (35304890419) failed only 7c's offerings-RPC check — the
+  catalog, next bullet. After the restore, two smoke suites ran against v69
+  at once (35307877230, and 35307845295 from a session Sam started by
+  mistake and archived): both ALL MODES OK at 04:47Z. `function_logs`
+  04:00–04:50Z: 144 lines, 0 unavailable, 0 EMPTY ANSWER, 0 errors. Sam
+  went to bed at 03:50Z with *"automode it from here"*, so this session ran
+  the merge, the deploy and the repair under his standing authorization.
 - ⚠️ **THE MERGE RE-SYNCED THE OFFERINGS CATALOG, AND THE SYNC FAILED TWICE.**
   `1834d16` touched `chatbox/build_coci_offerings.py`, a path trigger for
   `coci-offerings-sync.yml`. Its push run (35304793635) died on chunk 4 with
@@ -37,11 +41,14 @@ Read in order: this file · [`lanes/sierra-retrieval-corpus.md`](reference/lanes
   (22,335) and geo (120) were untouched. That is why both smoke runs on v69
   (35304793704, 35304890419) failed exactly one assertion — 7c's anchored
   offerings RPC check (Orange rows=2, contiguous=1) — while every prose
-  assertion passed. **Fix on PR #1609 (`0ff24d7`):** 1,000-row chunks with a
-  halving retry down to 250 (`tests/coci_offerings_sync_chunk_test.py`, 21);
-  its merge re-triggers the sync. [If this file still says the catalog is
-  partial: `select count(*) from coci_college_offerings` — 16,097 is whole;
-  if not, dispatch `coci-offerings-sync.yml` and read its log.]
+  assertion passed. **Fixed and restored:** PR #1609 (merged as `62ce4ff`,
+  04:35Z) moved the sync to 1,000-row chunks with a halving retry down to 250
+  (`tests/coci_offerings_sync_chunk_test.py`, 21); its path-triggered run
+  35307510273 succeeded in 82 s and the catalog measured whole at 04:40Z —
+  16,097 rows / 120 colleges, the 7c RPC check back at 6 contiguous Orange
+  rows and 44 Licensed Vocational Nursing rows; 5 offerings rows still match
+  the mojibake pattern (down from 186 — check whether they are genuine). The
+  catalog was partial from 03:53Z to 04:36Z.
 - **cpl-chat v68 is LIVE** (deploy run 35302005168, `main` at `fa87ece`,
   03:08Z): a county or region named in the question anchors both catalog
   lists. Health green; smoke runs 35301970000 and 35302133252 ALL MODES OK;
@@ -141,7 +148,7 @@ Read in order: this file · [`lanes/sierra-retrieval-corpus.md`](reference/lanes
 
 | Item | State |
 |---|---|
-| v69 deploy → health → smoke → logs | ✅ done 2026-09-18 (runs 35304800563 · 35304888485 · 35304890419) |
+| v69 deploy → health → smoke → logs | ✅ done 2026-09-18 (deploy 35304800563 · health 35304888485 · clean smokes 35307877230 + 35307845295 after the catalog restore · logs clean) |
 | Sam reads the v69 Orange County answer | asked — `s274-sam-oc-question-v69` |
 | Atomic catalog replace (staging table + one-statement swap) so a canceled chunk can never leave a partial catalog live | designed, not built — `s274-fable-offerings-replace-atomic` |
 | Delete the 381 garbled course rows after the first clean sync (receipt) | NEEDS SAM — `s274-sam-course-title-cleanup` |
