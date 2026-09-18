@@ -89,6 +89,13 @@ var EDGE_URLS = window.CPL_SKYVIEW_EDGE_URLS ||
 var authority=null;          // {discipline: {cs, chips:[{system,code}], source, flag}}
 var subjEdge=null;           // {SUBJ4: discipline} — the authority for the edge
 var drag=null;               // {kind:'pan'|'island'|'course'|'node', ...}
+/* How far a pointer may travel and still count as a click rather than a move.
+ * A carry only STARTS once the pointer has moved more than 5px, so a release is
+ * read as a click only inside this slop around the press point — past it the
+ * reader dragged, and a drag that lands somewhere always gets an answer.
+ * A carry with no press point of its own (the panel's Drag… button) reports an
+ * infinite travel, so it is never mistaken for a click. */
+var CLICK_SLOP=8;
 var searchHits=[], searchTerm="";
 var placedBoxes=[], titlesQueued=0, labelStats={ids:0,titles:0,full:0};
 /* Starts CLOSED (Sam, 2026-09-04: "Open SkyView with the detail panel default
@@ -1238,7 +1245,10 @@ function setProj(p, quiet){
 window.__ccrSetProj=function(p){ setProj(p); };
 /* For the harness: the projection by name, both ways. */
 /* For the harness: what the page finds under a canvas point — the same pick() the pointer uses. */
-window.__ccrPickAt=function(px,py){ if(!U) return null; var h=pick(px,py); return h ? {nd:h.nd?h.nd.i:null, isl:h.isl?h.isl.d:null, mem:h.mem?h.mem.n:null, nodesOn:h.isl?h.isl._nodesOn:null, k:h.isl?islScale(h.isl):null} : null; };
+/* ⚠️ `forDrop` is the SECOND rule pick() carries, and a harness that cannot ask
+ * for it can only see half the hit test — the reading half. The drop half is
+ * where the 2026-09-07 and 2026-09-18 defects both lived. */
+window.__ccrPickAt=function(px,py,forDrop){ if(!U) return null; var h=pick(px,py,!!forDrop); return h ? {nd:h.nd?h.nd.i:null, isl:h.isl?h.isl.d:null, mem:h.mem?h.mem.n:null, memOf:h.mem?h.nd.i:null, nodesOn:h.isl?h.isl._nodesOn:null, k:h.isl?islScale(h.isl):null} : null; };
 window.__ccrW2S=function(x,y,name){ var I=null; if(U&&name) U.islands.forEach(function(q){ if(q.d===name) I=q; }); return w2s(x,y,I||undefined); };
 window.__ccrS2W=function(px,py,name){ var I=null; if(U&&name) U.islands.forEach(function(q){ if(q.d===name) I=q; }); return s2w(px,py,I||undefined); };
 var SYS=[["#F1EAFC","#6D28D9","M-ID","our working label"],
@@ -2379,12 +2389,41 @@ function drawMembers(nd, isl, p, rad, k, queue, focus){
     if((memFilter && m.n===memFilter) || (drag && drag.kind==="course" && drag.cn===m.cn)){ ms[ms.length-1]=m; }
   });
   var n=ms.length;
+  /* ⭐ THE QUEUE AGAINST THE PARENT (Sam, 2026-09-18: "When courses are merged,
+   * it should move the course circle next to the parent circle — as if it's in
+   * line for the next remint procedure. I want it to be more apparent that the
+   * course is pre-merged and awaiting curator confirmation.")
+   *
+   * A staged course used to take whatever spoke index it happened to land on,
+   * so on a well-adopted identity it was one star among two hundred, told apart
+   * only by its fill. Nothing about that says "waiting". Drawn as its own short
+   * arc hugging the circle, ahead of the ring, a merge reads as a line of
+   * courses standing at the door — which is what it is, since nothing is
+   * written until a curator saves.
+   *
+   * It stays a CIRCLE rather than joining the ring's stars: out on the map a
+   * course of its own is a circle, so keeping that shape says this one came in
+   * from outside and has not been folded in yet. Shape, position and color all
+   * carry it, so the mark survives a reader who cannot separate the greens. */
+  var queued=[], settled=[];
+  for(var qi=0; qi<n; qi++){
+    if(stagedHere(ms[qi].cn, nd.i)) queued.push(ms[qi]); else settled.push(ms[qi]);
+  }
+  /* The ring is laid out from the courses that are actually IN it, so pulling a
+   * course into the queue does not re-flow the ring underneath it. */
+  var ns=settled.length;
   // Open for reading (selected or hovered), the ring spreads so the names can
   // radiate from it; at the open-all zoom the identities are far apart already.
   var spread=focus?Math.min(70, n*1.7):0;
   var R0=rad+16+spread, perRing=Math.max(8, Math.round(2*Math.PI*R0/(focus?15:13)));
   var sys=sysPal(nd);
-  var rings=Math.ceil(n/perRing);
+  var rings=Math.max(1, Math.ceil(ns/perRing));
+  /* The queue sits between the circle's edge and the ring's first course. The
+   * step is measured against the DOT, not picked: a 6.2px radius is 12.4px
+   * across, so 17px of arc leaves a gap you can see and the row reads as
+   * separate courses in line. It closes up as the queue grows, so a long one
+   * arcs around the circle instead of running off it. */
+  var RQ=rad+9, qStep=Math.min(0.42, 17/Math.max(RQ,1));
   /* With the light on or the CPL face up, the star of a college whose course
    * here is the RECEIVING course of an articulation takes the light's fill. */
   var artSet=(lit && !isExhibits()) ? cplCollegesOf(nd) : null;
@@ -2424,12 +2463,27 @@ function drawMembers(nd, isl, p, rad, k, queue, focus){
     ctx.beginPath(); ctx.arc(p[0],p[1],rad,0,6.2832);
     ctx.fillStyle=sys[0]; ctx.fill(); ctx.lineWidth=2; ctx.strokeStyle=sys[1]; ctx.stroke();
   }
+  /* Queued first, so a staged course is painted over the ring rather than under
+   * it wherever the two meet. */
+  var draws=queued.concat(settled), nq=queued.length;
   for(var i=0;i<n;i++){
-    var m=ms[i];
-    var ring=Math.floor(i/perRing), inRing=Math.min(perRing, n-ring*perRing), j=i-ring*perRing;
-    var R=R0+ring*15;
-    var a=-Math.PI/2 + j*2*Math.PI/inRing + ring*0.35;
-    var x=p[0]+R*Math.cos(a), y=p[1]+R*Math.sin(a);
+    var m=draws[i];
+    var inQueue=i<nq;
+    var ring, inRing, j, R, a, x, y;
+    if(inQueue){
+      /* Centered on the top of the circle: one course sits straight above its
+       * parent, and a queue of several opens symmetrically from there, so the
+       * arc reads as a line rather than as a ring that failed to close. */
+      a=-Math.PI/2 + (i-(nq-1)/2)*qStep;
+      R=RQ; ring=0;
+      x=p[0]+R*Math.cos(a); y=p[1]+R*Math.sin(a);
+    } else {
+      var si=i-nq;
+      ring=Math.floor(si/perRing); inRing=Math.min(perRing, ns-ring*perRing); j=si-ring*perRing;
+      R=R0+ring*15;
+      a=-Math.PI/2 + j*2*Math.PI/Math.max(inRing,1) + ring*0.35;
+      x=p[0]+R*Math.cos(a); y=p[1]+R*Math.sin(a);
+    }
     /* Parked: drawn where the reader left it, not on its spoke. The spoke line
      * below still runs from the parent to (x,y), which is the point — it says
      * "this is still yours" while the course sits where it was put. */
@@ -2440,22 +2494,38 @@ function drawMembers(nd, isl, p, rad, k, queue, focus){
     }
     var movedHere=(m.cn in movedTo) && movedTo[m.cn]===nd.i;
     var carried=drag && drag.kind==="course" && drag.cn===m.cn;
-    ctx.beginPath(); ctx.moveTo(p[0]+rad*Math.cos(a), p[1]+rad*Math.sin(a)); ctx.lineTo(x,y);
-    ctx.lineWidth=1; ctx.strokeStyle=pal.ringFaint; ctx.stroke();
+    /* A course the reader PARKED has left the queue's arc for a place of its
+     * own, so it takes the spoke back — the line is what still says whose it is.
+     * A queued course is touching the circle already; a spoke between two things
+     * this close is a mark that proves nothing. */
+    if(!inQueue || park){
+      ctx.beginPath(); ctx.moveTo(p[0]+rad*Math.cos(a), p[1]+rad*Math.sin(a)); ctx.lineTo(x,y);
+      ctx.lineWidth=1; ctx.strokeStyle=pal.ringFaint; ctx.stroke();
+    }
     /* A college's own course is a small star on its spoke. Muted: it is evidence
      * for the identity at the centre, never a competitor for attention. */
     var artic=!!(artSet && artSet[m.c]);
-    starPath(x, y, 5.2);
+    if(inQueue && !park){
+      // In line at the door: the circle it had out on the map, a little larger
+      // than a ring star so the eye finds it first on a crowded identity.
+      ctx.beginPath(); ctx.arc(x, y, 6.2, 0, 6.2832);
+    } else starPath(x, y, 5.2);
     ctx.fillStyle=movedHere?pal.sqMoved:carried?pal.sqCarried:artic?pal.litFill:pal.hollow; ctx.fill();
-    ctx.lineWidth=artic?1.6:1.2; ctx.strokeStyle=movedHere?pal.sqMovedStroke:artic?pal.lit:sys[1]; ctx.stroke();
+    ctx.lineWidth=(inQueue&&!park)?2:(artic?1.6:1.2);
+    ctx.strokeStyle=movedHere?pal.sqMovedStroke:artic?pal.lit:sys[1]; ctx.stroke();
     memberPts.push({x:x, y:y, m:m, nd:nd, isl:isl});
     if(k>MEMBER_ZOOM || focus)
       // Short college names on the map (Sam, 2026-09-05: "Could use the short
       // names on the colleges throughout") — a ring of 24 spokes is where the
       // repeated word "College" costs the most and says the least.
-      queue.push({mem:m, nd:nd, px:x, py:y, rad:4,
-                  lines:[m.ex ? trunc(m.n,34)+(movedHere?" · staged here":"")     // a local exhibit: its title, no college on the row
-                              : m.n+" · "+trunc(shortCollege(m.c),26)+(movedHere?" · staged here":"")], band:"member",
+      /* ⚠️ A QUEUED COURSE SAYS WHAT IT IS WAITING FOR. "staged here" states the
+       * position; a reader deciding whether to trust the map needs to know that
+       * a person still has to save it, which is the whole difference between
+       * this map and the record. */
+      queue.push({mem:m, nd:nd, px:x, py:y, rad:(inQueue&&!park)?7:4,
+                  lines:[(m.ex ? trunc(m.n,34)     // a local exhibit: its title, no college on the row
+                               : m.n+" · "+trunc(shortCollege(m.c),26))+
+                         (movedHere?(inQueue&&!park?" · staged, awaiting a curator":" · staged here"):"")], band:"member",
                   out:[Math.cos(a), Math.sin(a)],
                   force:!!focus || !!(memFilter && m.n===memFilter) || carried || movedHere});
   }
@@ -3016,6 +3086,17 @@ window.__ccrUniverse = function(opts){
       /* The CPL face says its own coverage, in one line, where the reader is
        * looking. Inside #u-full so it exists in browser full screen. */
       '<p class="u-face-line" id="u-face-line" hidden></p>'+
+      /* Plain words, in the reader's own place. The link goes where curation is
+       * actually SAVED — unified_courses.js POSTs kb_curation under a magic-link
+       * reviewer session with RLS on every row — so "how do I log in to curate"
+       * has an answer on the surface rather than only in the repo. */
+      '<p class="u-ro-line" id="u-ro-line">'+
+        '<strong>Read only.</strong> Moves stage in this browser alone. '+
+        'Signed-in curators save in '+
+        '<a href="../index.html#unified-courses/list" target="_blank" rel="noopener" '+
+          'title="The Common Course Reference table in COBI \u2014 where a signed-in reviewer saves a merge">'+
+          'COBI\u2019s Common Course Reference tab</a>.'+
+      '</p>'+
       '<div class="u-stage" id="u-stage">'+
         '<div class="u-wrap" id="u-wrap">'+
           '<canvas id="u-cvs" tabindex="0" role="img" aria-label="'+
@@ -3132,7 +3213,14 @@ function fitCanvas(){
   var stage=document.getElementById("u-stage")||full;
   var topEl=document.getElementById("u-top"), footEl=document.getElementById("u-foot");
   var lineEl=document.getElementById("u-face-line");
-  var th=(topEl?topEl.offsetHeight:0)+((lineEl&&!lineEl.hidden)?lineEl.offsetHeight:0), fh=footEl?footEl.offsetHeight:0, h;
+  /* ⚠️ EVERY BAND ABOVE THE CANVAS COMES OUT OF `th`, or the canvas is drawn
+   * that many pixels too tall and the legend is pushed off the foot of a
+   * phone. The canvas height is JS-owned here (the CSS deliberately does not
+   * try to own it), so adding chrome without adding it here is a layout bug
+   * no jsdom suite can see. */
+  var roEl=document.getElementById("u-ro-line");
+  var th=(topEl?topEl.offsetHeight:0)+((lineEl&&!lineEl.hidden)?lineEl.offsetHeight:0)+
+         ((roEl&&!roEl.hidden)?roEl.offsetHeight:0), fh=footEl?footEl.offsetHeight:0, h;
   if(document.fullscreenElement && document.fullscreenElement===full) h=window.innerHeight-th-fh;
   /* SkyView alone: nothing is painted above or below the section, so the canvas
    * takes the viewport minus the top row and the legend strip — the same
@@ -4261,7 +4349,7 @@ function wire(){
     chromeRO=new ResizeObserver(function(){
       if(document.getElementById("u-cvs")===cvs){ fitCanvas(); syncViewK(); draw(); }
     });
-    ["u-top","u-foot","u-face-line"].forEach(function(id){
+    ["u-top","u-foot","u-face-line","u-ro-line"].forEach(function(id){
       var el=document.getElementById(id); if(el) chromeRO.observe(el);
     });
   }
@@ -4651,7 +4739,7 @@ function wire(){
       if(Math.abs(px-drag.x0)+Math.abs(py-drag.y0)>5){
         var mem=drag.mem, mgate=canMove(mem.cn);
         if(!mgate.ok){ setHint(sharedKeyReason(mem.cn, mem.n, mgate.others)); drag={kind:"pan", x0:px, y0:py, vx:view.x, vy:view.y, moved:true}; return; }
-        drag={kind:"course", cn:mem.cn, d:mem.d, code:mem.n, college:mem.c, px:px, py:py, fromNode:drag.nd, fromIsl:drag.isl};
+        drag={kind:"course", cn:mem.cn, d:mem.d, code:mem.n, college:mem.c, px:px, py:py, sx:drag.x0, sy:drag.y0, fromNode:drag.nd, fromIsl:drag.isl};
         setHint("Carrying <strong>"+esc(mem.n)+"</strong> ("+esc(mem.c)+") — drop it on the identity it belongs to.");
         draw();
       }
@@ -4684,7 +4772,7 @@ function wire(){
           if(m && !emptied(drag.nd)){
             var gate=canMove(m.cn);
             if(!gate.ok){ setHint(sharedKeyReason(m.cn, m.n, gate.others)); drag={kind:"pan", x0:px, y0:py, vx:view.x, vy:view.y}; return; }
-            drag={kind:"course", cn:m.cn, d:m.d, code:m.n, college:m.c, px:px, py:py, fromNode:drag.nd, fromIsl:drag.isl};
+            drag={kind:"course", cn:m.cn, d:m.d, code:m.n, college:m.c, px:px, py:py, sx:drag.x0, sy:drag.y0, fromNode:drag.nd, fromIsl:drag.isl};
             setHint("Carrying <strong>"+esc(m.n)+"</strong> ("+esc(m.c)+") — drop it on the identity it belongs to.");
             draw();
           }
@@ -4702,9 +4790,40 @@ function wire(){
     if(pinch){ if(ptList().length<2){ endPinch(); drag=null; draw(); } return; }
     if(drag && drag.kind==="course"){
       var hit=pick(px,py,true);
-      if(hit && hit.nd && drag.fromNode && hit.nd===drag.fromNode){
-        // Released where it started: a click on the hollow point, not a move.
-        selNode=hit.nd; selIsl=hit.isl; showNode(hit.nd, hit.isl); drag=null; draw(); return;
+      /* ⭐ ONLY A GESTURE THAT WENT NOWHERE IS A CLICK (Sam, 2026-09-18: "SkyView
+       * seems to stop responding to on the second or third drag and drop merge
+       * attempt — been doing that for a while").
+       *
+       * ⚠️ THIS BRANCH USED TO SWALLOW A REAL DRAG IN SILENCE, and that silence
+       * IS the "stopped responding". `fromNode` is the node the carry started
+       * on — for a MEMBER SQUARE that is the clustered identity the square
+       * belongs to, not the square. So a deliberate drag that ends on the open
+       * identity took this exit, cleared the carry, printed nothing, and left
+       * the hint still reading "Carrying …". The reader is told they are holding
+       * a course they are not holding, over a map that did nothing.
+       *
+       * It bites on the second or third attempt because each merge adds another
+       * square to the open identity's ring, and an open ring SPREADS across its
+       * neighbors — so the odds that a pointer aimed at a loner lands on one of
+       * the destination's own members climb with every course merged in.
+       * Reproduced in Chromium 2026-09-18 on VOCE M9008 with three orbiting
+       * stand-alones: the pointer picked up VOC ED 089CE (a member of the open
+       * identity) instead of the loner underneath, the drop resolved back to
+       * VOCE M9008, and moves stayed at 0 with no message.
+       *
+       * A press that never travels is still a click and still selects — that is
+       * what this branch was written for. A gesture that crossed the map is a
+       * move, so it falls through to applyMove(), which already has the honest
+       * answer for a course dropped on the identity it is already in. Either
+       * way the carry ends and the hint stops lying. */
+      var travel=(drag.sx==null) ? 1e9 : Math.hypot(px-drag.sx, py-drag.sy);
+      if(hit && hit.nd && drag.fromNode && hit.nd===drag.fromNode && travel<=CLICK_SLOP){
+        // Released where it started, having gone nowhere: a click, not a move.
+        selNode=hit.nd; selIsl=hit.isl; showNode(hit.nd, hit.isl);
+        // ⚠️ The carry is over, so the "Carrying …" line must go with it.
+        setHint("<strong>"+esc(drag.code)+"</strong> stayed where it was \u2014 nothing moved. "+
+                "Drag it onto the identity it belongs to to merge it.");
+        drag=null; draw(); return;
       }
       if(hit && hit.nd) applyMove(drag.cn, drag.code, drag.college, hit.nd.i, drag.d);
       else {
