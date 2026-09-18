@@ -31,9 +31,9 @@ on:
 # ⚠️ THIS IS NOT THE `paths:`/`if:` CHANGE THE HEADER FORBIDS. That warning is
 # about a check that never REPORTS on the head being merged, which blocks a
 # required check forever. Here the group is keyed to the PULL REQUEST, so only
-# runs on SUPERSEDED commits are cancelled and the newest commit always gets its
+# runs on SUPERSEDED commits are canceled and the newest commit always gets its
 # own run that reports normally. A push to main keys on the SHA instead, so each
-# main commit is its own group and can never be cancelled by a later one — main
+# main commit is its own group and can never be canceled by a later one — main
 # is the permanent record and its run has to finish.
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}
@@ -132,6 +132,15 @@ jobs:
       # shapes, idempotence, and that genuine text survives. Pure stdlib.
       - name: Course-title mojibake repair (kb/_text_repair.py)
         run: python3 tests/course_title_mojibake_test.py
+      # Offerings sync chunk retry (S274) — the merge's path-triggered catalog
+      # sync died twice on a 4,000-row chunk under the authenticator role's 8 s
+      # statement_timeout (57014) and left coci_college_offerings LIVE at 12,000
+      # and then 8,000 of 16,097 rows while Sierra answered from it. Chunks are
+      # 1,000 now and a canceled chunk retries at half size down to 250; any
+      # other error still stops the run; a canceled first chunk truncates again
+      # on retry and a later one never does. Pure stdlib, no network.
+      - name: Offerings sync chunk retry (chatbox/sync_coci_offerings.py)
+        run: python3 tests/coci_offerings_sync_chunk_test.py
       - name: My College public layer — suppression properties
         run: python3 tests/college_briefing_publish_suppression_test.py
       # Re-key chain guard (Session 224) — a re-mint alias map can CHAIN (one

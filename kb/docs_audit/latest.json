@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 939,
-    "bytes": 9914545,
+    "bytes": 9920089,
     "over_budget": 8,
     "handoff_max": 275,
     "always_loaded_files": 1,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 114,
-        "bytes": 3087709,
+        "bytes": 3087772,
         "over": 3
       },
       "index": {
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 75,
-        "bytes": 2055668,
+        "bytes": 2057851,
         "over": 1
       },
       "kb_note": {
@@ -46,25 +46,25 @@
       },
       "roadmap_lane": {
         "files": 32,
-        "bytes": 199380,
+        "bytes": 199828,
         "over": 3
       },
       "handoff": {
         "files": 247,
-        "bytes": 2094416,
+        "bytes": 2097266,
         "over": 0
       }
     },
     "by_rule": {
       "oversized_doc": 8,
       "house_voice": 24,
-      "vault_heavy_path": 49
+      "vault_heavy_path": 50
     },
     "vault": {
-      "files": 2966,
-      "bytes": 1444988382,
-      "heavy_bytes": 643137858,
-      "heavy_share": 0.445,
+      "files": 2968,
+      "bytes": 1465557323,
+      "heavy_bytes": 663691721,
+      "heavy_share": 0.453,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
         "cpl-project-tracker/cip_fitcheck",
@@ -77,6 +77,7 @@
         "cpl-project-tracker/unified_courses_details.js",
         "cpl-project-tracker/kb/subj4_fold_out/2026-06-12/alias_map.json",
         "cpl-project-tracker/kb/subj4_dryrun/alias_map.json",
+        "cpl-project-tracker/chatbox/coci_offerings_payload.json",
         "cpl-project-tracker/kb/subj4_apply/alias_map.json",
         "cpl-project-tracker/kb/coci_minted_memberships.json",
         "cpl-project-tracker/coci_lookup_data.js",
@@ -620,6 +621,16 @@
         "kind": "file"
       },
       "message": "21,616,130 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "chatbox/coci_offerings_payload.json",
+      "detail": {
+        "bytes": 20553863,
+        "kind": "file"
+      },
+      "message": "20,553,863 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

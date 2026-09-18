@@ -1,5 +1,5 @@
 ---
-title: Session 275 handoff — v69 answers the prospective question; ship it, read it, then give nearest a distance
+title: Session 275 handoff — v69 is live and answers the prospective question; read it, then give nearest a distance
 date: 2026-09-18
 session: 274 (SkyMeter)
 tags: [handoff, sierra, prospective-cpl, deploy, encoding]
@@ -18,8 +18,30 @@ Read in order: this file · [`lanes/sierra-retrieval-corpus.md`](reference/lanes
 `docs/kb-notes/methodology-what-might-qualify-is-a-different-question-from-who-already-grants-it.md`
 · [PR #1608](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1608).
 
-## ✅ WHERE THINGS STAND (as of 2026-09-18 03:40Z)
+## ✅ WHERE THINGS STAND (as of 2026-09-18 04:20Z)
 
+- **cpl-chat v69 is LIVE** (PR #1608 squash-merged as `1834d16` with `test`
+  run 35304075555 green; deploy run 35304800563, 03:52:55Z;
+  `list_edge_functions` reports version 69). Health run 35304888485 and
+  smoke run 35304890419 were dispatched against it at 03:53Z. Sam went to
+  bed at 03:50Z with *"automode it from here"*, so this session ran the
+  merge and the deploy under his standing authorization.
+- ⚠️ **THE MERGE RE-SYNCED THE OFFERINGS CATALOG, AND THE SYNC FAILED TWICE.**
+  `1834d16` touched `chatbox/build_coci_offerings.py`, a path trigger for
+  `coci-offerings-sync.yml`. Its push run (35304793635) died on chunk 4 with
+  57014 — the authenticator role's 8 s `statement_timeout`, which every
+  PostgREST call inherits, service key included — and the re-dispatch
+  (35305845390) on chunk 3 with nothing else running. Chunk 1 truncates and
+  each chunk is one transaction, so `coci_college_offerings` sat LIVE at
+  12,000 and then 8,000 of 16,097 rows (92, then 61 colleges); programs
+  (22,335) and geo (120) were untouched. That is why both smoke runs on v69
+  (35304793704, 35304890419) failed exactly one assertion — 7c's anchored
+  offerings RPC check (Orange rows=2, contiguous=1) — while every prose
+  assertion passed. **Fix on PR #1609 (`0ff24d7`):** 1,000-row chunks with a
+  halving retry down to 250 (`tests/coci_offerings_sync_chunk_test.py`, 21);
+  its merge re-triggers the sync. [If this file still says the catalog is
+  partial: `select count(*) from coci_college_offerings` — 16,097 is whole;
+  if not, dispatch `coci-offerings-sync.yml` and read its log.]
 - **cpl-chat v68 is LIVE** (deploy run 35302005168, `main` at `fa87ece`,
   03:08Z): a county or region named in the question anchors both catalog
   lists. Health green; smoke runs 35301970000 and 35302133252 ALL MODES OK;
@@ -31,7 +53,7 @@ Read in order: this file · [`lanes/sierra-retrieval-corpus.md`](reference/lanes
   `sam-cna-question-is-what-might-qualify-not-who-articulated-2026-09-18`.
   v68's production answer (`chat_interactions` `9a74a91b`) anchored the
   county and then answered the exhibit question — the miss he named.
-- **v69 is on PR #1608 (`claude/confident-johnson-18vlh7`, head `2691382`):**
+- **What v69 carries (PR #1608, merged):**
   the prospective-credit block (per core TOP, the three nearest colleges'
   full course lists from `chatbox_college_courses`; `PROSPECTIVE_RULE`: the
   target is the program they want to ENTER, every match a REQUEST, cite the
@@ -45,24 +67,30 @@ Read in order: this file · [`lanes/sierra-retrieval-corpus.md`](reference/lanes
   102/102L, Southwestern VN 10/10L, Chaffey NURVN 403/403L with units, framed
   as a request; prompts no larger than production (21,123 vs 21,900 uncached
   tokens); logs clean. It missed the Chaffey NURVN 414 precedent — the cap,
-  not the gate — which `2691382` fixes; **the second A/B (run 35303520840)
-  gates the deploy.** [If this file still says so, check the run and the
-  deploy state before anything else.]
+  not the gate — which `2691382` fixed. **The second A/B (run 35303520840, on
+  `2691382`):** preview ALL MODES OK, no regressions, production 1 failing
+  (7c's course-level assertion, by construction against v68); the candidate's
+  answer (`36d5ca5b`, 03:41:38Z) cites *"Chaffey College | 6 hrs Acute Care
+  Nursing Assistant: Vocational Nursing Foundations (NURVN 414)"*; one
+  `search_college_programs unavailable` at 03:34:41Z under two concurrent
+  suites, fail-safe.
 - **Locally proven on the branch:** `npm test` 345/345, all 43 CI
   python/shell steps plus the new mojibake step, `deno check` at main's 15,
   `deno run` boots, `sierra_prospective_credit.test.js` 61/61.
 
 ## YOUR SEQUENCE
 
-1. **Confirm the deploy state.** `list_edge_functions`: v69 live? If PR #1608
-   is merged and the function is still v68, the deploy is yours:
-   `cpl-chat-deploy.yml` (`confirm: DEPLOY`) → `cpl-chat-health.yml` →
-   `cpl-chat-smoke.yml` → `function_logs` (`unavailable` / `EMPTY ANSWER` /
-   `error`). If the PR is still open, read the second A/B's grid AND logs,
-   merge on green `test`, then deploy.
-2. **Read v69's production answer** to the Orange County question (the
-   smoke's 7c turn lands in `chat_interactions`, session `smoke-ci`) against
-   Sam's bar, then ask Sam to read it (`s274-sam-oc-question-v69`).
+1. **Confirm the catalog is whole and v69 held overnight.** `select count(*)
+   from coci_college_offerings` (16,097 rows, 120 colleges), the 7c RPC check
+   by SQL (`search_college_offerings` with `anchor_county` Orange leads with
+   ≥3 contiguous Orange rows and reaches ≥20 Licensed Vocational Nursing rows),
+   `list_edge_functions` (version 69), the health cron's runs since 04:00Z,
+   and `function_logs` since 03:52Z (`unavailable` / `EMPTY ANSWER` /
+   `error`). The deploy, health, smoke and sync runs are in WHERE THINGS STAND.
+2. **Sam reads v69's production answer** to the Orange County question
+   (`s274-sam-oc-question-v69`); this session's reading of the smoke's 7c
+   turn is in WHERE THINGS STAND. If he says it still misses, the hone
+   continues on a branch with an A/B before any deploy.
 3. **Give "nearest" a distance** (`s274-fable-nearest-needs-distance`): within
    a proximity band the picks order by course count. A county-to-county
    distance table (centroids are enough; `college_geo` has county) lets the
@@ -100,6 +128,11 @@ Read in order: this file · [`lanes/sierra-retrieval-corpus.md`](reference/lanes
   the five undefined code points passed through, up to three passes, repair
   before whitespace collapse, one module for every loader. KB note:
   `methodology-a-double-decoded-string-needs-the-codec-that-decoded-it`.
+- **A path trigger on a merge is a deploy.** A loader edit that shipped with
+  a function change re-synced the live catalog beside the merge's own smoke
+  run, and the chunk that died left a partial catalog live for forty minutes
+  because the replace is transactional per chunk, never as a whole. Make the
+  replace atomic, or keep loader edits off function PRs.
 - **A stale dependency map is the CI failure this repo keeps re-learning**
   (#1601 twice, #1607 once, and once more on this branch). Rebuild it after
   every edit that moves lines in `index.ts`, `smoke_test.sh` or the SQL.
@@ -108,8 +141,9 @@ Read in order: this file · [`lanes/sierra-retrieval-corpus.md`](reference/lanes
 
 | Item | State |
 |---|---|
-| v69 deploy → health → smoke → logs → Sam reads the answer | **YOURS FIRST** if this file still says the second A/B gates it |
+| v69 deploy → health → smoke → logs | ✅ done 2026-09-18 (runs 35304800563 · 35304888485 · 35304890419) |
 | Sam reads the v69 Orange County answer | asked — `s274-sam-oc-question-v69` |
+| Atomic catalog replace (staging table + one-statement swap) so a canceled chunk can never leave a partial catalog live | designed, not built — `s274-fable-offerings-replace-atomic` |
 | Delete the 381 garbled course rows after the first clean sync (receipt) | NEEDS SAM — `s274-sam-course-title-cleanup` |
 | A county-to-county distance table for "nearest" | designed, not built — `s274-fable-nearest-needs-distance` |
 | Client-side time limit on every retrieval RPC | recommended, not built — `s273-fable-route-time-limits` |
@@ -132,6 +166,9 @@ Read in order: this file · [`lanes/sierra-retrieval-corpus.md`](reference/lanes
   `get_check_runs` on the current head; `test` green there before every merge.
 - **Read the function logs after any A/B or deploy**, not only the grid; and
   read the candidate's own answer in `chat_interactions`, not only the grid.
+- **A catalog sync that fails mid-way is LIVE damage, not a red run.** Read
+  `count(*)` on all three tables after any `coci-offerings-sync.yml` failure
+  and re-dispatch; a smoke that fails only 7c's RPC check is the catalog.
 - **NEVER INDEX `coci_college_programs`** (measured, #1602).
 - **A signature change is drop-then-create**, one migration, grants restored.
 - Rule 4 (both HTMLs) · Rule 5 (never force-push `main`) · Rule 10 (Supabase

@@ -6,7 +6,9 @@ Reads chatbox/coci_offerings_payload.json (built by build_coci_offerings.py) and
 writes via the Supabase SERVICE KEY through the chunkable replace RPCs
 (coci_offerings_replace / coci_programs_replace / college_geo_replace). Chunked
 because the offerings payload (~16k rows) is too large for one request body:
-the FIRST chunk truncates, the rest append.
+the FIRST chunk truncates, the rest append, and a chunk the database cancels
+(57014) is retried at half the size — see _load_chunked for the 2026-09-18
+measurement that set the sizes.
 
 Runner-as-proxy pattern (like map/sync_map_users.py / the curation sync). No PII —
 these are public course/program catalogs. Prints only counts.
@@ -25,7 +27,20 @@ import urllib.request
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PAYLOAD = os.path.join(ROOT, "chatbox", "coci_offerings_payload.json")
 SUPABASE_URL = "https://hvuwhnbuahrtptokpqfh.supabase.co"
-CHUNK = 4000  # rows per request (keeps each body well under PostgREST limits)
+CHUNK = 1000      # rows per request — 4,000 timed out twice on 2026-09-18 (see _load_chunked)
+MIN_CHUNK = 250   # the floor a canceled chunk halves down to before the run stops
+
+
+class _RpcError(Exception):
+    """A PostgREST error response: .code is the HTTP status, .detail the body."""
+
+    def __init__(self, fn, code, detail):
+        super().__init__(f"Supabase RPC {fn} → HTTP {code}: {detail}")
+        self.fn, self.code, self.detail = fn, code, detail
+
+
+def _is_statement_timeout(err):
+    return '"57014"' in err.detail or "statement timeout" in err.detail
 
 
 def _sb_rpc(fn, body, key):
@@ -44,17 +59,39 @@ def _sb_rpc(fn, body, key):
             detail = e.read().decode("utf-8", "replace")[:400]
         except Exception:
             pass
-        raise SystemExit(f"Supabase RPC {fn} → HTTP {e.code}: {detail}")
+        raise _RpcError(fn, e.code, detail)
 
 
-def _load_chunked(fn, rows, key):
-    """Chunked replace: first chunk truncates, the rest append. Returns total inserted."""
-    total = 0
-    for i in range(0, len(rows), CHUNK):
-        chunk = rows[i:i + CHUNK]
-        n = _sb_rpc(fn, {"p_rows": chunk, "p_truncate": i == 0}, key)
+def _load_chunked(fn, rows, key, chunk=CHUNK):
+    """Chunked replace: the first request truncates, the rest append. Returns the
+    total inserted.
+
+    A chunk the database CANCELS is retried at half the size, down to MIN_CHUNK;
+    any other error stops the run. Measured 2026-09-18 (runs 35304793635 and
+    35305845390): two runs of the 4,000-row chunks died with 57014 — the
+    authenticator role's 8 s statement_timeout, which every PostgREST call
+    inherits, service key included — on chunks 4 and 3. Each replace RPC is one
+    transaction, so the canceled chunk rolled back and the catalog was left LIVE
+    at 12,000 and then 8,000 of 16,097 rows, and Sierra answered from it. The GIN
+    index on titles_text is what makes a chunk cost seconds; halving the chunk
+    halves the statement. A canceled FIRST chunk rolled its truncate back too,
+    so the retry truncates again; a canceled later chunk appends on retry.
+    """
+    total, i, size, truncate = 0, 0, chunk, True
+    while i < len(rows):
+        part = rows[i:i + size]
+        try:
+            n = _sb_rpc(fn, {"p_rows": part, "p_truncate": truncate}, key)
+        except _RpcError as e:
+            if _is_statement_timeout(e) and size > MIN_CHUNK:
+                size = max(MIN_CHUNK, size // 2)
+                print(f"    {fn}: a {len(part)}-row chunk was canceled (57014); retrying at {size} rows")
+                continue
+            raise SystemExit(str(e))
         total += n or 0
-        print(f"    {fn}: +{n} (chunk {i // CHUNK + 1})")
+        print(f"    {fn}: +{n} (rows {i + 1}-{i + len(part)} of {len(rows)})")
+        i += len(part)
+        truncate = False
     return total
 
 
@@ -77,7 +114,10 @@ def main():
         raise SystemExit("SUPABASE_SERVICE_KEY unset — cannot write. (Set it in the workflow env.)")
 
     print("\nWriting via service key…")
-    g = _sb_rpc("college_geo_replace", {"p_rows": geo}, key)
+    try:
+        g = _sb_rpc("college_geo_replace", {"p_rows": geo}, key)
+    except _RpcError as e:
+        raise SystemExit(str(e))
     print(f"  ✓ college_geo_replace: {g} rows")
     o = _load_chunked("coci_offerings_replace", off, key)
     print(f"  ✓ coci_offerings_replace: {o} rows total")
