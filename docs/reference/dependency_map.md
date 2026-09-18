@@ -652,6 +652,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/coci_program_cip_test.py` | workflows: `js-tests.yml` | — |
 | `tests/college_briefing_publish_suppression_test.py` | workflows: `college-briefing-publish.yml`, `js-tests.yml` | — |
 | `tests/context_budget_test.py` | workflows: `js-tests.yml` | — |
+| `tests/course_title_mojibake_test.py` | workflows: `js-tests.yml` | — |
 | `tests/custom_report_payload_test.py` | workflows: `map-custom-report-load.yml` | — |
 | `tests/custom_report_response_test.py` | workflows: `js-tests.yml` | — |
 | `tests/dependency_map_test.py` | workflows: `js-tests.yml` | — |
@@ -870,5 +871,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 84 Supabase tables · 32 RPCs · 5 edge functions · 473 file
+Coverage: 84 Supabase tables · 32 RPCs · 5 edge functions · 474 file
 datasets · 143 external services · 340 consumers · 34 workflows · 37 tabs.

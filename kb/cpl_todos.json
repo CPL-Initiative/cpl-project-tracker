@@ -1,20 +1,26 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-18",
-  "_session": 273,
-  "_status": "Sam read the new program answers the evening they shipped and found the assistant still could not analyze course and program data for a student who named a county rather than a college: a county anchored nothing, 'orange' matched Orange Coast College by name, the nursing-assistant vocabulary had no entry, and the course-catalog query dropped every two-word term. Version 68 fixes all of it and is built, tested (344 of 344 suites) and proven against the live database, with the two database changes already applied and verified; it is not yet deployed. The next session reads the private copy's A/B run and its logs, merges, deploys, runs the health and smoke checks, then asks the Orange County question of the live assistant. Open for Sam: whether the assistant should deploy itself on merge, and a browser read of the answers once version 68 is live.",
+  "_session": 274,
+  "_status": "Version 68 shipped (S274, 03:08Z): a county or region named in the question now anchors both catalog lists, and every check after the deploy was green. Sam then set the bar the next release has to meet, in his words: compare the CNA with the LVN program's courses so the student can ask a college that has not granted it. Version 69 is built and on its branch (PR #1608): the full course lists for the matched programs at the nearest colleges, a neighbor-region band so Orange County's nearest LVN programs are in Los Angeles rather than Sacramento, a guard that stops Cisco's CCNA standing in for 'cna' and hiding the Chaffey precedent, and course titles repaired at the loader. It ships after its A/B and a deploy dispatch; Sam reads the answer after that.",
   "items": [
     {
-      "id": "s273-fable-finish-v68",
-      "for": "Fable",
-      "tab": "chatbot",
-      "text": "Finish shipping version 68 of the assistant. Everything before the deploy is done: the code is on PR #1607, the two database changes are applied and verified, and every local check passed. Read the private-copy A/B run (35298283829) and its function logs, merge once the test check is green on the latest commit, deploy with the DEPLOY confirmation, run the health and smoke checks, read the production logs, then delete the preview copy."
-    },
-    {
-      "id": "s273-sam-oc-question-v68",
+      "id": "s274-sam-oc-question-v69",
       "for": "Sam",
       "tab": "chatbot",
-      "text": "Once version 68 is live, ask the Orange County question again in a browser: 'I have a CNA cert and I want to go to a college in Orange County. What CNA courses match LVN courses so I can ask for credit?' The answer should say that no Orange County college confers a Vocational Nursing award in the state's program export, name the LVN-to-RN bridges for what they are, name the nearest Vocational Nursing programs with their county, and cite Chaffey's 6-unit precedent for CNA-to-LVN credit. Tell us whether it reads as analysis of the data."
+      "text": "Once version 69 is live, ask the Orange County question again in a browser: 'I have a CNA certificate and I want to go to a college in Orange County. What CNA courses match LVN courses so I can ask for credit?' Your bar, in your words: compare the CNA with the LVN program's courses so the student can ask a college that has not granted it. Version 68 answered the exhibit question instead (no LVN course, no nearest LVN program, no Chaffey precedent). Version 69 carries the full course lists for the nearest Vocational Nursing programs, tells the assistant the target program is the one you want to enter, and asks it to present matches as a request to the CPL coordinator, citing Chaffey's NURVN 414. Tell us whether the answer now names the courses to ask about."
+    },
+    {
+      "id": "s274-sam-course-title-cleanup",
+      "for": "Sam",
+      "tab": "chatbot",
+      "text": "Say go on deleting 381 garbled course-title rows. Sierra's course lists showed Pasadena's NURS 102 as 'Fundamentals of Vocational Nursing Ã¢â‚¬â€œ Theory'. The loaders are fixed so the next nightly sync writes clean titles, but the course table's sync only adds and never deletes, and its match key includes the title, so the 381 garbled rows (84 colleges) would sit beside the repaired ones and double the alignment candidates. The plan: after the first clean sync, delete rows whose title carries the garbled sequences, with a receipt listing each row so it can be put back. A shared-table write, so it waits for your go."
+    },
+    {
+      "id": "s274-fable-nearest-needs-distance",
+      "for": "Fable",
+      "tab": "chatbot",
+      "text": "Give 'nearest' a distance. The neighbor-region band puts Los Angeles, Inland Empire and San Diego colleges ahead of Sacramento for an Orange County question, but inside a band the order is by how many courses a college teaches, which says nothing about distance. A county-to-county distance table (centroids are enough) would let the course lists lead with Long Beach and Rio Hondo rather than whichever program is largest."
     },
     {
       "id": "s273-sam-read-program-answers",
@@ -69,15 +75,15 @@
       "for": "Sam",
       "tab": "my-college",
       "text": "Send the Academic Senate (ASCCC) area roster — which college sits in which area. Every Supabase column matching area, senate, asccc, zone or region was searched and none carries them. Strong Workforce regions are already solved."
-    },
+    }
+  ],
+  "_deferred": [
     {
       "id": "s266-fable-matcher-vocabulary",
       "for": "Fable",
       "tab": "my-college",
       "text": "The occupation matcher's misses are a VOCABULARY problem, not a tuning one. Application developer and Computer Programming share no word, so no threshold reaches them. The register is live in the My College tab and discloses the gap, so this is about making it find more rather than about shipping. Closing it needs a synonym layer or the curated occupation map — and two plausible shortcuts are already measured and rejected in the code."
-    }
-  ],
-  "_deferred": [
+    },
     {
       "id": "s266-sam-cer-authority",
       "for": "Sam",

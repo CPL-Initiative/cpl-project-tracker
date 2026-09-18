@@ -1502,9 +1502,19 @@ async function fetchAnyCredentials(query: string, sb: any): Promise<any[] | null
     }
   }
   if (byTitle.size === 0) return null;
+  // AN ARTICULATED CREDENTIAL OUTRANKS A CATALOG ENTRY NOBODY HAS ADOPTED,
+  // whatever the match tier (2026-09-18, S274): an adopter is the precedent a
+  // student can point to at a college that has not granted it. Measured on the
+  // Orange County probes: Acute Care Nursing Assistant — the one CNA-to-LVN
+  // precedent in MAP (Chaffey, 6 units in NURVN 414) — matched at tier 4 behind
+  // four tier-3 hits and a cap of four, so the v69 candidate told the student
+  // no college had articulated it. Adopted first, then tier, then adopters;
+  // six kept, not four. The statewide route keeps its own order: every row it
+  // returns is a published standard whether or not anyone has adopted it yet.
   return [...byTitle.values()]
-    .sort((a, b) => a.match_tier - b.match_tier || b.n_adopters - a.n_adopters)
-    .slice(0, 4);
+    .sort((a, b) => ((b.n_adopters > 0 ? 1 : 0) - (a.n_adopters > 0 ? 1 : 0))
+      || a.match_tier - b.match_tier || b.n_adopters - a.n_adopters)
+    .slice(0, 6);
 }
 
 /**

@@ -289,6 +289,15 @@ block("7. wiring", () => {
   check("(7) the route fires on the anchored offerings with the same core keywords the catalog uses",
     /pickProspectivePairs\(offeringsResults, coreKw, college, askedGeo, geoMap\)/.test(SRC)
     && /const coreKw = expandWithSynonyms\(extractTopicKeywords\(routeText\)\)/.test(SRC));
+  const anyFn = SRC.slice(SRC.indexOf("async function fetchAnyCredentials("), SRC.indexOf("async function fetchCollegeCredentials("));
+  check("(7) ⭐ the local route ranks an ADOPTED credential first and keeps six, so a tier-4 precedent (Chaffey's NURVN 414) survives four tier-3 catalog hits",
+    (() => {
+      // The probe builder's own `kws.slice(0, 4)` is not the cap; the cap is the
+      // slice after the final sort, so judge only the return statement.
+      const ret = anyFn.slice(anyFn.lastIndexOf("return [...byTitle.values()]"));
+      return /\(b\.n_adopters > 0 \? 1 : 0\) - \(a\.n_adopters > 0 \? 1 : 0\)/.test(ret)
+        && /\.slice\(0, 6\)/.test(ret) && !/\.slice\(0, 4\)/.test(ret);
+    })());
   check("(7) the read is one PostgREST query on chatbox_college_courses, fail-safe",
     /sb\.from\("chatbox_college_courses"\)/.test(SRC) && /program course list unavailable/.test(SRC));
   check("(7) the block reaches the prompt right after the alignment worklist",
