@@ -4,9 +4,9 @@
   "supabase_tables": 85,
   "rpcs": 31,
   "edge_functions": 5,
-  "file_datasets": 477,
+  "file_datasets": 481,
   "external_services": 143,
-  "consumers": 341,
+  "consumers": 342,
   "workflows": 34,
   "data_js_files": 61,
   "tabs": 37
@@ -6105,6 +6105,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/_build_remint_blast_radius.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/_cred_rename_apply.py": {
    "consumers": [
     {
@@ -6720,6 +6733,13 @@
      "line": 66
     },
     {
+     "id": "script:kb/_build_remint_blast_radius.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 74
+    },
+    {
      "id": "script:kb/_ccr_trail.py",
      "kind": "script",
      "direction": "read",
@@ -7041,6 +7061,13 @@
      "direction": "read",
      "how": "literal",
      "line": 269
+    },
+    {
+     "id": "script:kb/_build_remint_blast_radius.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 75
     },
     {
      "id": "script:kb/_desc_consolidation_dryrun.py",
@@ -7763,6 +7790,13 @@
      "direction": "read",
      "how": "literal",
      "line": 234
+    },
+    {
+     "id": "script:kb/_build_remint_blast_radius.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 73
     },
     {
      "id": "script:kb/_ccr_trail.py",
@@ -10538,6 +10572,13 @@
      "line": 56
     },
     {
+     "id": "script:kb/_build_remint_blast_radius.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 76
+    },
+    {
      "id": "script:kb/_desc_consolidation_dryrun.py",
      "kind": "script",
      "direction": "read",
@@ -11547,6 +11588,19 @@
      "direction": "read",
      "how": "literal",
      "line": 172
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/remint_blast_worklist.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_remint_blast_radius.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 85
     }
    ],
    "served": true,
@@ -13034,6 +13088,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:prototype/ccr_remint_blast.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_remint_blast_radius.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 84
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:prototype/ccr_sky.json": {
    "consumers": [
     {
@@ -14351,6 +14418,19 @@
    "main_committers": []
   },
   "file:tests/rekey_kb_curation_chain_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/remint_blast_radius_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -18993,6 +19073,8 @@
     "prototype/check_contrast.py",
     "tests/supabase_function_grants_test.py",
     "tests/supabase_sql_guard_test.py",
+    "kb/_build_remint_blast_radius.py",
+    "tests/remint_blast_radius_test.py",
     "tests/coci_program_cip_test.py",
     "tests/course_title_mojibake_test.py",
     "tests/coci_offerings_sync_chunk_test.py",
