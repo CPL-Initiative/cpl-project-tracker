@@ -327,8 +327,8 @@ collapse to one `<date>` family so writer and reader edges join.
 | `dashboard_filters.js` | pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py` | — |
 | `docs/*.md` | scripts: `kb/_build_docs_index.py` | — |
 | `docs/*_lessons.md` | scripts: `kb/_build_docs_index.py` | — |
-| `docs/INDEX.md` | scripts: `kb/_docs_audit.py`, `kb/doctrine.py` | — |
-| `docs/catalog/index.json` | tabs: `governance` | — |
+| `docs/INDEX.md` | scripts: `kb/_build_docs_index.py`, `kb/_docs_audit.py`, `kb/doctrine.py` | — |
+| `docs/catalog/index.json` | tabs: `governance` · scripts: `kb/_build_docs_index.py` | — |
 | `docs/common_cr_reference_scope.md` | scripts: `kb/_build_cr_reference.py` | — |
 | `docs/reference/mid_lifecycle.md` | scripts: `kb/_doctrine_scenarios.py` | — |
 | `docs/reference/statute/README.md` | scripts: `kb/_doctrine_scenarios.py` | — |

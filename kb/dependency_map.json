@@ -4989,6 +4989,13 @@
   "file:docs/INDEX.md": {
    "consumers": [
     {
+     "id": "script:kb/_build_docs_index.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 50
+    },
+    {
      "id": "script:kb/_docs_audit.py",
      "kind": "script",
      "direction": "read",
@@ -5017,6 +5024,13 @@
      "tabs": [
       "governance"
      ]
+    },
+    {
+     "id": "script:kb/_build_docs_index.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 382
     }
    ],
    "served": false,
