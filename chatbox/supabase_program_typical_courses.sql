@@ -4,7 +4,17 @@
 -- for a set of TOP programs, which course titles the colleges that teach the
 -- program most often list — statewide, counted in colleges, never in rows.
 -- Applied live via the Supabase MCP on 2026-09-18 as:
---   program_typical_courses
+--   program_typical_courses                     (the first version)
+--   program_typical_courses_linear_normalizer   (this version, ~16:05Z)
+--
+-- ⚠️ COST IS PART OF CORRECTNESS ON THIS ROUTE (the programs-route lesson,
+-- 2026-09-17). The first version measured 65 ms on two programs and 32,986 ms
+-- on the 47 health programs: a regex chain at ~0.45 ms per row and a
+-- correlated FILTER subquery quadratic in rows. The anon key times out at 3 s
+-- and the edge function cuts a read at 5 s, so the smoke's anon call and the
+-- preview function's calls got HTTP 500 while both suites ran (15:48–15:56Z)
+-- and the answer lost its QUICK LIST silently. The verify file's A9/A10 time
+-- eight programs and the 47 health programs; run it after any edit here.
 --
 --
 -- WHY THIS EXISTS: the visitor did not say where they trained
@@ -94,21 +104,30 @@ returns text
 language sql
 immutable
 as $function$
-  select trim(regexp_replace(
-    regexp_replace(
-      regexp_replace(
-        regexp_replace(
-          regexp_replace(
-            regexp_replace(
-              regexp_replace(
-                regexp_replace(lower(coalesce(title, '')), '\(.*?\)', ' ', 'g'),
-                '[^a-z0-9 ]', ' ', 'g'),
-              '\m(nursing|nurses|nurse s)\M', 'nurse', 'g'),
-            '\m(assisting|assistants|assistance)\M', 'assistant', 'g'),
-          '\m(foundations|foundation|fundamental)\M', 'fundamentals', 'g'),
-        '\m(intro|introductory)\M', 'introduction', 'g'),
-      '\m(i|ii|iii|iv|v|vi|1|2|3|4|5|6|a|b|c|d|e|and|the|of|for|to|in|an|with|theory|lecture|lab|laboratory|clinical|clinic|clinicals|practicum|skills|skill|training|program|course|certified|cert|level|part|section|concepts|principles|applications|practice)\M', ' ', 'g'),
-    '\s+', ' ', 'g'));
+  -- Word-array normalization, never a regex chain. The first version ran eight
+  -- regexp_replace calls per row, one with a 60-word alternation, at ~0.45 ms a
+  -- row; 47 health programs (10,106 rows) took 33 s and the API returned 500
+  -- (statement timeout) to the smoke and to the preview function on 2026-09-18.
+  -- Two small regexes, then a word filter: the same 47 programs in ~0.9 s.
+  select coalesce(array_to_string(array(
+    select case t.w
+             when 'nursing' then 'nurse' when 'nurses' then 'nurse'
+             when 'assisting' then 'assistant' when 'assistants' then 'assistant' when 'assistance' then 'assistant'
+             when 'foundations' then 'fundamentals' when 'foundation' then 'fundamentals' when 'fundamental' then 'fundamentals'
+             when 'intro' then 'introduction' when 'introductory' then 'introduction'
+             else t.w end
+    from unnest(string_to_array(
+           regexp_replace(regexp_replace(lower(coalesce(title, '')), '\(.*?\)', ' ', 'g'), '[^a-z0-9]+', ' ', 'g'),
+           ' ')) with ordinality as t(w, ord)
+    where t.w <> ''
+      -- 's' is the possessive left behind by the punctuation strip ("Nurse's Aide").
+      and t.w <> all(array['i','ii','iii','iv','v','vi','1','2','3','4','5','6','a','b','c','d','e','s',
+                           'and','the','of','for','to','in','an','with',
+                           'theory','lecture','lab','laboratory','clinical','clinic','clinicals','practicum','skills','skill',
+                           'training','program','course','certified','cert','level','part','section','concepts','principles',
+                           'applications','practice'])
+    order by t.ord
+  ), ' '), '');
 $function$;
 
 -- Drop-then-create on a signature change, as the other RPCs do: PostgREST
@@ -150,7 +169,10 @@ as $function$
            mode() within group (order by b.course_title) as modal_title,
            mode() within group (order by b.units) as modal_units,
            min(b.college) as example_college,
-           min(b.subject || ' ' || b.course_number) filter (where b.college = (select min(x.college) from base x where x.top_code = b.top_code and x.norm = b.norm)) as example_code,
+           -- The first course of the alphabetically-first college — one sort, never
+           -- a correlated subquery per row (the first version's FILTER subquery was
+           -- quadratic in rows and the larger half of the 33 s).
+           (array_agg(b.subject || ' ' || b.course_number order by b.college, b.subject, b.course_number))[1] as example_code,
            sum(case when coalesce(b.units, 0) > 0 then 1 else 0 end)::integer as credit_rows,
            sum(case when coalesce(b.units, 0) > 0 then 0 else 1 end)::integer as noncredit_rows
     from base b

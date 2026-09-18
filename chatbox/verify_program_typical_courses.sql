@@ -46,6 +46,9 @@ begin
   -- Level words survive: an entry course and an advanced one stay distinct.
   s := public.cpl_course_title_norm('Advanced Medical Surgical Nursing');
   if s <> 'advanced medical surgical nurse' then raise exception 'A3 FAIL: advanced med-surg normalized to "%"', s; end if;
+  -- The possessive: the punctuation strip leaves a lone "s", which is a stop word.
+  s := public.cpl_course_title_norm('Nurse''s Aide');
+  if s <> 'nurse aide' then raise exception 'A3 FAIL: possessive normalized to "%"', s; end if;
   if public.cpl_course_title_norm(null) <> '' or public.cpl_course_title_norm('') <> '' then
     raise exception 'A3 FAIL: null/empty title must normalize to empty';
   end if;
@@ -64,8 +67,9 @@ begin
   -- A6: counts are in colleges — no family may exceed the program's colleges,
   -- and the colleges array carries exactly n_colleges names.
   select count(*) into n from public.program_typical_courses(array['1230.30','1230.20'], 2, 40) r
-   where r.n_colleges > r.program_colleges or coalesce(array_length(r.colleges, 1), 0) <> r.n_colleges;
-  if n <> 0 then raise exception 'A6 FAIL: % rows with a college count that is not a count of colleges', n; end if;
+   where r.n_colleges > r.program_colleges or coalesce(array_length(r.colleges, 1), 0) <> r.n_colleges
+      or r.example_code is null or r.example_college is null;
+  if n <> 0 then raise exception 'A6 FAIL: % rows with a bad college count or no example course', n; end if;
 
   -- A7: the caps hold. per_top rows per program at most; min_colleges respected.
   select count(*) into n from public.program_typical_courses(array['1230.20'], 2, 3) r;
@@ -83,9 +87,17 @@ begin
   if n <> 0 then raise exception 'A8 FAIL: an unknown code returned % rows', n; end if;
 
   -- A9: cost. Eight health programs (RN's 1,544 rows among them) in well under
-  -- the anon key's 3 s statement timeout; 2,000 ms fails loudly first.
+  -- the anon key's 3 s statement timeout; 1,500 ms fails loudly first.
   t0 := clock_timestamp();
   perform count(*) from public.program_typical_courses(array['1230.30','1230.20','1230.10','1208.00','1205.10','1225.00','1217.00','1209.00'], 2, 40) r;
   ms := extract(epoch from clock_timestamp() - t0) * 1000;
-  if ms > 2000 then raise exception 'A9 FAIL: eight programs took % ms (need under 2000)', round(ms); end if;
+  if ms > 1500 then raise exception 'A9 FAIL: eight programs took % ms (need under 1500)', round(ms); end if;
+
+  -- A10: cost at the shape that failed. The 47 health programs (10,106 rows) are
+  -- the broad question's load; the first version took 32,986 ms here and the
+  -- linear one ~900 ms. 3,000 ms fails loudly, under the edge function's 5 s cut.
+  t0 := clock_timestamp();
+  perform count(*) from public.program_typical_courses(array(select distinct o.top_code from public.coci_college_offerings o where o.top_code like '12%'), 2, 40) r;
+  ms := extract(epoch from clock_timestamp() - t0) * 1000;
+  if ms > 3000 then raise exception 'A10 FAIL: the 47 health programs took % ms (need under 3000; 900 measured)', round(ms); end if;
 end $$;
