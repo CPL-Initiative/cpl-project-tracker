@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-248 document(s).
+249 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 277 | [v72 is live (the quick list, the flyer, the precedent in the block, "catalog data"); next, the crosswalk beyond the CNA and the measurements the queue still owes](../session_277_handoff.md) | 2026-09-18 |
 | 276 | [v71 is live, the first course is in the target program, the time limit ships; next, the precedent moves into the block](../session_276_handoff.md) | 2026-09-18 |
 | 275 | [v69 is live and answers the prospective question; read it, then give nearest a distance](../session_275_handoff.md) | 2026-09-18 |
 | 274 | [v68 is built and verified; merge, deploy and read it](../session_274_handoff.md) | 2026-09-18 |

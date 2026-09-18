@@ -1530,3 +1530,49 @@ edges). The A/B on the preview slug and the deploy follow this commit.
 - Fewer SQL approvals: the project settings allow the Supabase read tools.
 - Still his: which Orange County college runs an LVN entry program; the 381
   garbled rows; auto-deploy on merge; guidance row 674923db's scope.
+
+### Deployed: v72 live at 16:43Z
+
+PR #1617 squash-merged as `fc3ebe3` on green `test` after main's #1618 was
+merged in (the only conflicts were the three generated docs-audit artifacts,
+regenerated on the merged tree). Deploy run 35370070548 byte-verified;
+`list_edge_functions` reported version 72 at 16:43:19Z. Health run
+35370311547 green at 16:45Z. The merge-triggered smoke (run 35370054033,
+started 16:42:27Z, before the function swapped) passed every mode, the new 7c
+checks included; the dispatched clean run: run 35371403392, dispatched 16:56Z once the parallel session's push-triggered smoke had finished, in progress at this commit. `function_logs`
+16:43–16:50Z: 0 route time-limit cuts, 0 EMPTY ANSWER, 0 unavailable, 0
+errors; `program_typical_courses` answered 5 of 5 calls with 200.
+
+**Production v72's answer to Sam's question** (`chat_interactions`
+`43fa4d62`, 16:45:44Z): the first paragraph asks about the fundamentals
+courses and names Long Beach City's VN 220, Rio Hondo's VN 61 and Mt. San
+Antonio's VOC VN101, with the absence stated as the catalog data's and the
+three bridges named; then the two-column table, "What a CNA typically covers"
+beside "LVN courses to ask about", each row with its college count (Nurse
+Assistant 48; Fundamentals of Nursing 15); then the precedent (Chaffey's
+NURVN 414, and Lemoore's HS 061 award); the request framing; and "Also worth
+asking about with a CNA" — Registered Nursing at Santa Ana and Golden West,
+Medical Assisting, and the rest. No COCI. One imprecision to watch: the model
+called Chaffey's precedent "not an LVN-course match specifically", although
+NURVN 414 sits in Chaffey's LVN program.
+
+**A note for the SkyView lane, measured, not inferred.** PR #1619's commit
+message attributes the loss of the read-only band in `prototype/skyview.html`
+to #1617's merge. `git log -- prototype/skyview.html` on main shows the band
+left in `7aabe52`, the daily dashboard cron commit between #1618 and #1617,
+which rebuilt the page from sources that did not carry it (36 deletions);
+#1617 did not touch the file. The cron rebuilds the served page, so a change
+written into the built artifact lasts until the next run — #1619's fix (the
+band in the sources) is the right one.
+
+### The lesson under the lessons
+
+A counselor's answer has a shape before it has facts: what you hold, what you
+want, what to ask about, what else is open to you. Retrieval can render that
+shape only from the whole catalog, because the visitor's own college is
+unknown — "typical" is a count of colleges, never a list from the three
+nearest. And a route that measures fast on two programs and slow on forty-seven
+fails silently under the time limit, so the cost check belongs in the verify
+file at the shape that fails. An inside term reaches the answer through the
+context the model reads; rename it where retrieval renders it, keep the ban,
+and guard the answer in the shape the grid counts.

@@ -1,14 +1,26 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-18",
-  "_session": 275,
-  "_status": "Version 71 is live (S275, 2026-09-18 08:26Z). When someone says which credential they hold and asks what it could count toward, the first course Sierra names is now in the program they want to enter; the courses of the program that trains what they already hold come last, marked as background, because the credential record matches both credentials and only the visitor's own words say which one is held. Every retrieval lookup now has its own five-second limit (tunable without a deploy), and its first cut was measured and harmless. The A/B compare's verdict now fails the job when it reads a regression (it never had). Open for Sam: read version 71's Orange County answer; which Orange County college runs LVN entry training; the 381 garbled course rows; auto-deploy on merge; the scope of guidance rule 674923db. Version 71's first production answer attached a Mt. San Antonio course to Golden West College, so the next build puts the college on every course line and the Chaffey precedent inside the block, beside the courses it is evidence for.",
+  "_session": 276,
+  "_status": "Version 72 is live (S276, 2026-09-18 16:43Z). When someone says which credential they hold and asks what it could count toward, Sierra now answers the way a counselor would: the course to ask about first; then a two-column table of what the credential's program typically covers beside what the target program typically teaches, counted across every college in the state because the visitor never named their own college; then the precedent on record (Chaffey's NURVN 414 for a CNA); and, at the end, a short flyer of the other programs the credential commonly counts toward, each with the nearest college that teaches it and the first course to ask about. Every course line names its college, and Sierra says 'catalog data', never COCI. The new database function behind the table was rewritten the same hour after its first version took 33 seconds on a broad question and timed out under load; it now answers in under a second. Open for Sam: read version 72's Orange County answer; name the next credential-to-programs list for the flyer; which Orange County college runs LVN entry training; the 381 garbled course rows; auto-deploy on merge; the scope of guidance rule 674923db.",
   "items": [
     {
-      "id": "s275-fable-precedent-in-the-block",
+      "id": "s276-sam-oc-answer-v72",
+      "for": "Sam",
+      "tab": "chatbot",
+      "text": "Version 72 is live (2026-09-18, 16:43Z). Ask the Orange County question again in a browser and say whether it reads the way a counselor would say it. After the first paragraph names the course to ask about, a two-column table shows what a CNA program typically covers beside what an LVN program typically teaches, counted across every college in the state (the visitor never said where they earned the CNA); the Chaffey precedent follows; and the answer closes with the other programs a CNA can ask for credit toward, each with the nearest college that teaches it. Sierra now says 'catalog data', never COCI."
+    },
+    {
+      "id": "s276-sam-related-programs-next-list",
+      "for": "Sam",
+      "tab": "chatbot",
+      "text": "Name the next credential-to-programs list for the flyer. Today the flyer exists for one credential: a CNA, with your list (LVN, RN/ADN, Medical Assisting, Phlebotomy, Radiologic Technology, Surgical Technology, Sterile Processing), attributed to you in the answer and checked against the catalog data. The mechanism takes any credential; the list is the team's knowledge, never an inference from a code. Candidates to confirm or strike: EMT to Paramedic and Fire Technology; LVN to RN; Medical Assistant to LVN and Phlebotomy; Pharmacy Technician to nursing pharmacology."
+    },
+    {
+      "id": "s276-fable-precedent-names-its-program",
       "for": "Fable",
       "tab": "chatbot",
-      "text": "Put the college on every course line and the CNA-to-LVN precedent inside the prospective block. Version 71's first production answer opened 'At Golden West College, ask … to review your CNA certificate against VOC VN1 / Vocational Nursing 1' — that course is Mt. San Antonio's, and Golden West teaches no LVN course: the block lists courses under a college heading with no college on the line, and the model re-attached a course to the county's college. Three of the last four answers also said no college had articulated a CNA credential against an LVN course while the credential record carried Chaffey's NURVN 414. Render each course line with its college, compute the precedent line for the held titles and render it under the target program's heading, say in the rule that college and course come from the same heading, and pin both; the smoke fails when an Orange County college name precedes an LVN course code in the first 300 characters."
+      "text": "Let the precedent line say which program its course sits in. Version 72's first production answer called Chaffey's NURVN 414 'not an LVN-course match specifically' although that course is in Chaffey's LVN program; when a precedent's course matches a course in the target program's list, the line can say so, and the misreading closes. Pin it in the prospective-credit test; A/B before deploy."
     },
     {
       "id": "s275-fable-programs-route-latency",
@@ -29,12 +41,6 @@
       "text": "Make the course-catalog replace atomic. The offerings sync truncates on its first chunk and appends the rest, each chunk its own transaction, so a chunk the database cancels leaves a partial catalog live. It happened twice on 18 September (12,000 then 8,000 of 16,097 rows) and Sierra answered from the partial catalog for forty minutes. Smaller chunks with a retry are in; the real fix loads into a staging table and swaps in one statement. Until then, expect any merge that edits a loader to re-sync the catalog beside its own smoke run."
     },
     {
-      "id": "s273-sam-read-program-answers",
-      "for": "Sam",
-      "tab": "chatbot",
-      "text": "Read Sierra's new program answers in a browser. She is live (version 67) with the third view of a college — the degrees and certificates it awards — and every check we can run passed, but no human has read the prose yet. Try 'Where can I train to become an LVN?', 'Which colleges award a welding certificate?', and one question that names your home college. Odd answers are expected and welcome: each one becomes a fixture or a vocabulary entry, the way the negation class is handled."
-    },
-    {
       "id": "s272-sam-autodeploy-ruling",
       "for": "Sam",
       "tab": "chatbot",
@@ -51,18 +57,6 @@
       "for": "Sam",
       "tab": "chatbot",
       "text": "Name the Orange County college that runs LVN ENTRY training, if one does. You called 'no OC colleges have LVN' flat wrong (2026-09-18); the COCI extract lists only the LVN-to-RN bridges at Cypress, Golden West and Saddleback, and no course under the Vocational Nursing TOP in the county, so Sierra now says what the catalog shows and names the bridges. If entry training exists and the extract misses it, that is a data gap to trace in the loader."
-    },
-    {
-      "id": "s271-fable-health-cron",
-      "for": "Fable",
-      "tab": "chatbot",
-      "text": "Work out why Sierra's uptime check runs about four times a day when it is scheduled eight times. Observed across three days, not yet diagnosed. The gap between checks is how long an outage can sit unnoticed."
-    },
-    {
-      "id": "s275-sam-oc-answer-v71",
-      "for": "Sam",
-      "tab": "chatbot",
-      "text": "Version 71 is live (2026-09-18, 08:26Z). Ask the Orange County question again in a browser. The first sentence now names the course to ask about in the LVN program (Long Beach City's VN 220, Rio Hondo's VN 61, Mt. San Antonio's VOC VN101); the CNA program's own courses come last, marked as background; the catalog absence is stated as the catalog's with the three bridges named; no answer opens with a remark about the question. The Chaffey precedent is cited in about one answer in four, so the next build puts it in the block. Tell us whether it now reads right."
     },
     {
       "id": "s275-sam-guidance-674923db-scope",
@@ -221,6 +215,12 @@
       "for": "Fable",
       "tab": "unified-courses",
       "text": "Two housekeeping items behind the CPL face. Fifty-five exhibits in the articulation crosswalk are no longer in today's MAP feed; they stay on the map flagged in words rather than dropped, and the fix is a re-seed of the crosswalk from a fresh custom report. And the credit-funnel numbers the face carries for context were read by hand on 2026-09-07; refresh them after the next custom-report load."
+    },
+    {
+      "id": "s271-fable-health-cron",
+      "for": "Fable",
+      "tab": "chatbot",
+      "text": "Work out why Sierra's uptime check runs about four times a day when it is scheduled eight times. Observed across three days, not yet diagnosed. The gap between checks is how long an outage can sit unnoticed."
     }
   ],
   "_deferred_note": "Parked out of the RENDERED feed to hold it at budget. None of these is done -- cpl_todos.js reads `items` only. Promote one back into `items` when it goes live. Two session lineages feed this file, so it fills faster than one session's work would suggest; keep the newest twelve rendered and park the rest."

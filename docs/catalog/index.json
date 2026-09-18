@@ -13760,8 +13760,27 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 248,
+   "count": 249,
    "docs": [
+    {
+     "created": "2026-09-18",
+     "governs": [],
+     "n": 277,
+     "path": "docs/session_277_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "sierra",
+      "prospective-cpl",
+      "deploy",
+      "quick-list",
+      "flyer",
+      "plain-words"
+     ],
+     "title": "v72 is live (the quick list, the flyer, the precedent in the block, \"catalog data\"); next, the crosswalk beyond the CNA and the measurements the queue still owes",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-18",
      "governs": [],
@@ -17958,5 +17977,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 932
+ "total": 933
 }
