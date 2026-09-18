@@ -554,7 +554,7 @@ answer_must_match -i "saddleback|golden west|cypress|santa ana|santiago canyon|l
 # under the neighbor band (course_count order) plus the two Los Angeles programs
 # the older assertion named, so a catalog refresh that reorders the picks is a
 # loud red here rather than a silent miss. Reads for the SHAPE Sam asked for.
-answer_must_match -i "NURS[ -]?(102|125)|VN[ -]?(8|10|103|215|220|61|061)\b|NURVN[ -]?(403|414)|VNRS[ -]?150|Fundamentals of (Vocational )?Nursing|Vocational Nursing Foundations|Transition to Vocational Nursing|Vocational Nursing I\b" "7c ⭐ names a Vocational Nursing course from the prospective course lists (Sam's bar: a course-level answer)"
+answer_must_match -i "NURS[ -]?(102|125)|VN[ -]?(8|10|103|215|220|61|061)\b|VOC[ -]?VN10[01]|NURVN[ -]?(403|414)|VNRS[ -]?150|Fundamentals of (Vocational )?Nursing|Vocational Nursing Foundations|Transition to Vocational Nursing|Vocational Nursing I\b" "7c ⭐ names a Vocational Nursing course from the prospective course lists (Sam's bar: a course-level answer)"
 answer_must_match -i "ask|request|review" "7c ⭐ frames the match as a request for review, never a determination"
 
 # Broad "who teaches this" — the catalog should surface colleges that TEACH

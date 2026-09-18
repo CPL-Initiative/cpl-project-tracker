@@ -1156,7 +1156,10 @@ async function fetchCollegeGeoMap(sb: any): Promise<Map<string, any>> {
   const { data } = await sb.from("college_geo").select("college, region, county");
   const m = new Map<string, any>();
   for (const r of data || []) {
-    m.set(r.college, { region: r.region || null, county: r.county || null });
+    m.set(r.college, {
+      college: r.college, region: r.region || null, county: r.county || null,
+      point: collegePoint(r.college),   // campus coordinates (v70) — null for an online college
+    });
   }
   return m;
 }
@@ -2373,11 +2376,150 @@ function proximityBand(geo: any | null, askedGeo: any | null): number {
   return 0;
 }
 
+// ── "NEAREST" NEEDS A DISTANCE (2026-09-18, S275) ────────────────────────────
+// The bands say which colleges are IN the place the visitor named (county,
+// region, a neighboring region) and nothing about how far the rest are: inside
+// a band the order fell to volume, so an Orange County LVN question led with
+// Pasadena and Southwestern (the largest programs in the neighboring regions)
+// ahead of Long Beach City and Rio Hondo, twenty-five miles away. A campus
+// coordinate per college gives "nearest" a distance. It orders WITHIN a band —
+// the bands still come first, because a place the visitor named is a fact the
+// lists must honor before geometry — and it falls back to volume whenever
+// either side has no point, so a fixture or a table row without coordinates
+// behaves exactly as before.
+//
+// The anchor point is the named college's campus, or for a place the mean of
+// the campuses inside it (placePoint) — a county's colleges cluster where its
+// people live, which is what a student means by "in Orange County". Distances
+// are great-circle (haversine), rendered to the model in miles, rounded (to the
+// mile under ten, to five miles above), and labeled "about", because the
+// coordinates are campus points to three decimals: entered 2026-09-18 from the
+// colleges' public campus locations, approximate to about a mile, never
+// authoritative — the sandbox cannot reach IPEDS to verify them, and a session
+// that can should. Online colleges (Calbright) have no point and no distance.
+//
+// Keys are the college_geo names (the COCI full names). A college missing here
+// sorts by volume inside its band, never errors. tests/sierra_prospective_credit
+// .test.js block 8 asserts full coverage of chatbox/college_geo.json, the
+// California bounding box, and the Orange County picks. ⚠ Types here are
+// Array<number>, never a tuple type: tests/lib/lift_ts.js strips the former.
+const COLLEGE_POINTS: Record<string, Array<number>> = {
+  "Allan Hancock College": [34.941, -120.420], "American River College": [38.649, -121.348],
+  "Antelope Valley College": [34.664, -118.170], "Bakersfield College": [35.410, -118.965],
+  "Barstow Community College": [34.902, -117.055], "Berkeley City College": [37.870, -122.271],
+  "Butte College": [39.589, -121.659], "Cabrillo College": [36.991, -121.926],
+  "Cañada College": [37.449, -122.267], "Cerritos College": [33.885, -118.096],
+  "Cerro Coso Community College": [35.630, -117.660], "Chabot College": [37.645, -122.105],
+  "Chaffey College": [34.144, -117.582], "Citrus College": [34.130, -117.890],
+  "City College of San Francisco": [37.726, -122.451], "Clovis Community College": [36.835, -119.698],
+  "Coalinga College": [36.140, -120.364], "Coastline Community College": [33.715, -117.944],
+  "College of Alameda": [37.786, -122.287], "College of Marin": [37.950, -122.546],
+  "College of San Mateo": [37.535, -122.336], "College of the Canyons": [34.404, -118.565],
+  "College of the Desert": [33.735, -116.377], "College of the Redwoods": [40.698, -124.192],
+  "College of the Sequoias": [36.325, -119.301], "College of the Siskiyous": [41.419, -122.386],
+  "Columbia College": [38.029, -120.396], "Compton College": [33.887, -118.207],
+  "Contra Costa College": [37.970, -122.335], "Copper Mountain College": [34.116, -116.310],
+  "Cosumnes River College": [38.472, -121.431], "Crafton Hills College": [34.046, -117.076],
+  "Cuesta College": [35.320, -120.736], "Cuyamaca College": [32.735, -116.930],
+  "Cypress College": [33.831, -118.033], "De Anza College": [37.319, -122.045],
+  "Diablo Valley College": [37.971, -122.072], "East Los Angeles College": [34.044, -118.151],
+  "El Camino College": [33.887, -118.331], "Evergreen Valley College": [37.306, -121.776],
+  "Feather River College": [39.938, -120.928], "Folsom Lake College": [38.664, -121.138],
+  "Foothill College": [37.362, -122.129], "Fresno City College": [36.765, -119.806],
+  "Fullerton College": [33.876, -117.920], "Gavilan College": [36.986, -121.590],
+  "Glendale Community College": [34.166, -118.236], "Golden West College": [33.720, -118.011],
+  "Grossmont College": [32.815, -117.005], "Hartnell College": [36.681, -121.661],
+  "Imperial Valley College": [32.829, -115.502], "Irvine Valley College": [33.685, -117.781],
+  "Lake Tahoe Community College": [38.925, -119.968], "Laney College": [37.796, -122.260],
+  "Las Positas College": [37.691, -121.794], "Lassen College": [40.427, -120.639],
+  "Lemoore College": [36.312, -119.796], "Long Beach City College": [33.832, -118.137],
+  "Los Angeles City College": [34.088, -118.292], "Los Angeles Harbor College": [33.785, -118.287],
+  "Los Angeles Mission College": [34.290, -118.425], "Los Angeles Pierce College": [34.184, -118.575],
+  "Los Angeles Southwest College": [33.925, -118.300], "Los Angeles Trade Technical College": [34.030, -118.270],
+  "Los Angeles Valley College": [34.180, -118.415], "Los Medanos College": [38.004, -121.893],
+  "Madera College": [36.986, -120.056], "Mendocino College": [39.144, -123.202],
+  "Merced College": [37.331, -120.475], "Merritt College": [37.787, -122.166],
+  "MiraCosta College": [33.191, -117.301], "Mission College": [37.391, -121.979],
+  "Modesto Junior College": [37.646, -121.005], "Monterey Peninsula College": [36.591, -121.887],
+  "Moorpark College": [34.290, -118.855], "Moreno Valley College": [33.911, -117.204],
+  "Mt. San Antonio College": [34.048, -117.847], "Mt. San Jacinto College": [33.801, -116.985],
+  "Napa Valley College": [38.270, -122.270], "Norco College": [33.921, -117.560],
+  "North Orange Continuing Education": [33.850, -117.946], "North Orange Continuing Education Credit": [33.850, -117.946],
+  "Ohlone College": [37.530, -121.917], "Orange Coast College": [33.670, -117.911],
+  "Oxnard College": [34.169, -119.174], "Palo Verde College": [33.613, -114.605],
+  "Palomar College": [33.150, -117.186], "Pasadena City College": [34.145, -118.121],
+  "Porterville College": [36.059, -119.020], "Reedley College": [36.607, -119.445],
+  "Rio Hondo College": [33.990, -118.030], "Riverside City College": [33.970, -117.385],
+  "Sacramento City College": [38.541, -121.500], "Saddleback College": [33.586, -117.661],
+  "San Bernardino Valley College": [34.085, -117.315], "San Diego City College": [32.720, -117.155],
+  "San Diego College of Continuing Education": [32.701, -117.100], "San Diego College of Continuing Education Credit": [32.701, -117.100],
+  "San Diego Mesa College": [32.805, -117.171], "San Diego Miramar College": [32.895, -117.131],
+  "San Joaquin Delta College": [37.975, -121.316], "San Jose City College": [37.314, -121.930],
+  "Santa Ana College": [33.756, -117.891], "Santa Barbara City College": [34.406, -119.698],
+  "Santa Monica College": [34.016, -118.471], "Santa Rosa Junior College": [38.455, -122.719],
+  "Santiago Canyon College": [33.811, -117.787], "Shasta College": [40.605, -122.306],
+  "Sierra College": [38.791, -121.230], "Skyline College": [37.630, -122.466],
+  "Solano Community College": [38.234, -122.127], "Southwestern College": [32.640, -117.010],
+  "Taft College": [35.145, -119.454], "Ventura College": [34.276, -119.256],
+  "Victor Valley College": [34.488, -117.315], "West Los Angeles College": [33.999, -118.395],
+  "West Valley College": [37.264, -122.011], "Woodland Community College": [38.680, -121.740],
+  "Yuba College": [39.127, -121.560],
+};
+function collegePoint(college: string | null): Array<number> | null {
+  return (college && COLLEGE_POINTS[college]) || null;
+}
+function haversineKm(a: Array<number>, b: Array<number>): number {
+  const R = 6371.0, toRad = (d: number) => d * Math.PI / 180;
+  const dLat = toRad(b[0] - a[0]), dLon = toRad(b[1] - a[1]);
+  const h = Math.sin(dLat / 2) ** 2
+    + Math.cos(toRad(a[0])) * Math.cos(toRad(b[0])) * Math.sin(dLon / 2) ** 2;
+  return 2 * R * Math.asin(Math.sqrt(h));
+}
+// The anchor point of a PLACE: the mean of the campuses inside it (county when
+// the place is a county, else region). Null when nothing inside it has a point.
+function placePoint(place: any | null, geoMap: Map<string, any> | null): Array<number> | null {
+  if (!place || !geoMap || (!place.county && !place.region)) return null;
+  let lat = 0, lon = 0, n = 0;
+  for (const [college, g] of geoMap) {
+    if (!g) continue;
+    if (place.county ? g.county === place.county : g.region === place.region) {
+      const p = collegePoint(college);
+      if (!p) continue;
+      lat += p[0]; lon += p[1]; n++;
+    }
+  }
+  return n > 0 ? [lat / n, lon / n] : null;
+}
+// Kilometers from the anchor to a college's campus, or null when either side has
+// no point — and null means "unknown", never "far": cmpKm sorts it last.
+function proximityKm(college: string | null, askedGeo: any | null): number | null {
+  const anchor = askedGeo && askedGeo.point ? askedGeo.point : null;
+  const p = collegePoint(college);
+  return anchor && p ? haversineKm(anchor, p) : null;
+}
+function cmpKm(a: number | null, b: number | null): number {
+  const an = a === null || a === undefined, bn = b === null || b === undefined;
+  if (an || bn) return an && bn ? 0 : an ? 1 : -1;
+  return a - b;
+}
+// "about 15 miles from the center of Orange County" / "about 12 miles from Long
+// Beach City College" — what the model can quote, or "" when nothing is known.
+function distanceText(college: string | null, askedGeo: any | null): string {
+  const km = proximityKm(college, askedGeo);
+  if (km === null || !askedGeo) return "";
+  const from = askedGeo.college ? askedGeo.college : (askedGeo.label ? `the center of ${askedGeo.label}` : "");
+  if (!from || askedGeo.college === college) return "";
+  const mi = km * 0.621371;
+  const shown = mi < 10 ? Math.max(1, Math.round(mi)) : Math.round(mi / 5) * 5;
+  return `about ${shown} mile${shown === 1 ? "" : "s"} from ${from}`;
+}
+
 // "Riverside County, Inland Empire" — the label that lets the model actually say
-// "nearby" instead of guessing from a college name.
-function geoLabel(geo: any | null): string {
-  if (!geo || (!geo.county && !geo.region)) return "";
-  return ` (${[geo.county && geo.county + " County", geo.region].filter(Boolean).join(", ")})`;
+// "nearby" instead of guessing from a college name. A distance, when known, rides
+// inside the same parentheses so every heading parser keeps working.
+function geoLabel(geo: any | null, distance: string = ""): string {
+  const parts = [geo && geo.county && geo.county + " County", geo && geo.region, distance].filter(Boolean);
+  return parts.length ? ` (${parts.join(", ")})` : "";
 }
 
 // ── Build offerings context (what colleges TEACH — the adoption basis) ──────────
@@ -2423,21 +2565,24 @@ function buildOfferingsContext(
   // volume term of `min(courses, 39)` — so a college in another region with 39+
   // courses scored 239 and a same-region college with none scored 240. One point
   // apart is not an ordering, it is a coin flip, and volume won it often enough
-  // to matter. Volume is now only ever a tie-breaker WITHIN a proximity band.
-  const rank = (g: any) => {
-    const p = (g.core ? 1000 : 0) + proximityBand(g, askedGeo) * 100;
-    return p + Math.min(g.courses, 39);
-  };
+  // to matter. Volume is now only ever a tie-breaker WITHIN a proximity band —
+  // and since v70 the distance from the anchor comes before it there, so two
+  // colleges in the same band sort nearest first and volume decides only when
+  // neither has a point (cmpKm sorts an unknown distance last, never first).
+  const rank = (g: any) => (g.core ? 1000 : 0) + proximityBand(g, askedGeo) * 100;
+  const volume = (g: any) => Math.min(g.courses, 39);
 
   const askedRaw = askedCollege ? byCollege.get(askedCollege) : null;
   // Only treat the asked college as "teaches this" when it has a CORE match.
   const asked = askedRaw && askedRaw.core ? askedRaw : null;
   const others = [...byCollege.entries()]
     .filter(([c]) => c !== askedCollege)
-    .sort((a, b) => rank(b[1]) - rank(a[1]));
+    .sort((a, b) => (rank(b[1]) - rank(a[1]))
+      || cmpKm(proximityKm(a[0], askedGeo), proximityKm(b[0], askedGeo))
+      || (volume(b[1]) - volume(a[1])));
 
   const fmtCollege = (college: string, g: any) => {
-    let s = `\n## ${college}${geoLabel(g)}`;
+    let s = `\n## ${college}${geoLabel(g, distanceText(college, askedGeo))}`;
     s += ` — teaches ${g.courses} course(s) in this area:\n`;
     for (const o of g.rows.slice(0, 4)) {
       s += `  - ${o.top_title || o.top_code} (${o.course_count} course(s)`;
@@ -2474,7 +2619,7 @@ function buildOfferingsContext(
     const here = others.filter(([, g]) => proximityBand(g, askedGeo) >= (askedGeo.county ? 3 : 2));
     ctx += here.length
       ? `\n### In ${askedGeo.label}: ${here.length} college(s) teach in this area — they are listed first below.\n`
-      : `\n### NO college in ${askedGeo.label} teaches courses matching this in the current COCI catalog. Say so plainly, then offer the nearest colleges below (county shown) as the realistic route, with the standing caveat that teaching is not a guarantee of credit.\n`;
+      : `\n### NO college in ${askedGeo.label} teaches courses matching this in the current COCI catalog. Say so plainly, then offer the nearest colleges below (county and distance shown) as the realistic route, with the standing caveat that teaching is not a guarantee of credit.\n`;
   }
   if (others.length) {
     ctx += `\n### ${askedCollege ? "Other colleges" : "Colleges"} that teach this (nearest first when a home college is known):\n`;
@@ -2517,9 +2662,10 @@ function buildProgramsContext(
     byCollege.set(r.college, g);
   }
 
-  const rank = (g: any) => (g.named.length > 0 ? 1000 : 0)
-    + proximityBand(g, askedGeo) * 100
-    + Math.min(g.named.length + g.field.length, 39);
+  // Named-program match first, then the proximity band, then (v70) the distance
+  // from the anchor, then how many programs match — the offerings builder's keys.
+  const rank = (g: any) => (g.named.length > 0 ? 1000 : 0) + proximityBand(g, askedGeo) * 100;
+  const volume = (g: any) => Math.min(g.named.length + g.field.length, 39);
 
   const fmtProgram = (r: any) => {
     let s = `  - ${r.program_title}`;
@@ -2533,7 +2679,7 @@ function buildProgramsContext(
   };
 
   const fmtCollege = (college: string, g: any) => {
-    let s = `\n## ${college}${geoLabel(g)}\n`;
+    let s = `\n## ${college}${geoLabel(g, distanceText(college, askedGeo))}\n`;
     if (g.named.length) {
       s += `  AWARDS THIS (the program name says so):\n`;
       for (const r of g.named.slice(0, 6)) s += fmtProgram(r);
@@ -2550,7 +2696,9 @@ function buildProgramsContext(
   const askedRaw = askedCollege ? byCollege.get(askedCollege) : null;
   const others = [...byCollege.entries()]
     .filter(([c]) => c !== askedCollege)
-    .sort((a, b) => rank(b[1]) - rank(a[1]));
+    .sort((a, b) => (rank(b[1]) - rank(a[1]))
+      || cmpKm(proximityKm(a[0], askedGeo), proximityKm(b[0], askedGeo))
+      || (volume(b[1]) - volume(a[1])));
 
   let ctx = "\n\n--- Program Catalog: WHICH COLLEGES AWARD THIS (COCI programs — the degrees and certificates a college confers, NOT a CPL articulation) ---\n";
   ctx += `${byCollege.size} college(s) below have a matching program. This is the TOP matching set, NOT an exhaustive list.\n`;
@@ -2565,7 +2713,7 @@ function buildProgramsContext(
     const here = others.filter(([, g]) => proximityBand(g, askedGeo) >= (askedGeo.county ? 3 : 2));
     ctx += here.length
       ? `\n### In ${askedGeo.label}: ${here.length} college(s) have a matching program — they are listed first below. Read each title and award before calling any of them the program asked for (a bridge such as "LVN to RN" is for people who already hold the license).\n`
-      : `\n### NO college in ${askedGeo.label} has a matching program in the current COCI program export. Say so plainly, then name the nearest colleges below that award it, with their county.\n`;
+      : `\n### NO college in ${askedGeo.label} has a matching program in the current COCI program export. Say so plainly, then name the nearest colleges below that award it, with their county and distance.\n`;
   }
   if (others.length) {
     ctx += `\n### ${askedCollege ? "Other colleges" : "Colleges"} with a matching program (nearest first when a home college is known):\n`;
@@ -2609,9 +2757,10 @@ const PROSPECTIVE_COURSES_PER_COLLEGE = 12;
 
 // The (college × TOP) pairs to read course lists for. Per core TOP: a named
 // college first, then by proximity band (in the county, in the region, in a
-// neighboring region, elsewhere), then by how much of the program the college
-// teaches. Returns [{ college, top_code, top_title, band, county, region }] in
-// render order. Pure — lifted by tests/sierra_prospective_credit.test.js.
+// neighboring region, elsewhere), then (v70) by distance from the anchor where
+// both sides have a campus point, then by how much of the program the college
+// teaches. Returns [{ college, top_code, top_title, band, km, county, region }]
+// in render order. Pure — lifted by tests/sierra_prospective_credit.test.js.
 function pickProspectivePairs(
   offerings: any[] | null,
   coreKeywords: Array<string>,
@@ -2633,7 +2782,8 @@ function pickProspectivePairs(
     if (list.some((p) => p.college === o.college)) continue;
     list.push({
       college: o.college, top_code: o.top_code, top_title: o.top_title || o.top_code,
-      band: proximityBand(geo, askedGeo), county: geo.county, region: geo.region,
+      band: proximityBand(geo, askedGeo), km: proximityKm(o.college, askedGeo),
+      county: geo.county, region: geo.region,
       courses: o.course_count || 0,
     });
     byTop.set(o.top_code, list);
@@ -2642,7 +2792,7 @@ function pickProspectivePairs(
   for (const [, list] of byTop) {
     list.sort((a, b) =>
       ((b.college === askedCollege ? 1 : 0) - (a.college === askedCollege ? 1 : 0))
-      || (b.band - a.band) || (b.courses - a.courses)
+      || (b.band - a.band) || cmpKm(a.km, b.km) || (b.courses - a.courses)
       || (a.college < b.college ? -1 : a.college > b.college ? 1 : 0));
     for (const p of list.slice(0, PROSPECTIVE_COLLEGES_PER_TOP)) out.push(p);
   }
@@ -2701,7 +2851,7 @@ function buildProspectiveContext(
   let out = `\n\n--- PROSPECTIVE CREDIT: what a credential could count toward (COCI course lists for the programs asked about) ---\n`;
   out += `The visitor holds a credential`;
   if (credentials.length > 0) out += ` (matched in the credential record above as ${credentials.join("; ")})`;
-  out += ` and is asking which courses it might count toward. Below, for each program the question matched, the course list at the colleges nearest ${who} that teach it. `;
+  out += ` and is asking which courses it might count toward. Below, for each program the question matched, the course list at the colleges nearest ${who} that teach it, nearest first, with the distance in miles where it is known. `;
   out += `Compare the credential's content with the program's ENTRY-LEVEL courses (fundamentals, foundations, introduction, transition, basic, level I) and present the closest as what to ASK that college's CPL coordinator to review — the college decides. `;
   out += `Where the credential record carries a precedent (a college that articulated this credential against a named course), cite it as the evidence that the match has been made before.\n`;
   let rendered = 0;
@@ -2712,14 +2862,14 @@ function buildProspectiveContext(
       const here = plist.filter((p) => p.band >= (askedGeo.county ? 3 : 2));
       section += here.length > 0
         ? `In ${askedGeo.label}: ${here.length} of the colleges below.\n`
-        : `NO college in ${askedGeo.label} teaches this program in the current COCI catalog. The colleges below are the nearest that do — name them with their county so the visitor can judge the distance.\n`;
+        : `NO college in ${askedGeo.label} teaches this program in the current COCI catalog. The colleges below are the nearest that do — name them with their county and distance so the visitor can judge the trip.\n`;
     }
     let sectionRendered = 0;
     for (const p of plist) {
       const rows = byPair.get(pairKey(p.college, p.top_code)) || [];
       if (rows.length === 0) continue;
       sectionRendered++;
-      section += `### ${p.college}${geoLabel(p)} — ${rows.length} course(s) in this program:\n`;
+      section += `### ${p.college}${geoLabel(p, distanceText(p.college, askedGeo))} — ${rows.length} course(s) in this program:\n`;
       for (const r of rows.slice(0, PROSPECTIVE_COURSES_PER_COLLEGE)) {
         section += `  - ${r.subject} ${r.course_number} — ${r.course_title}`;
         const units = Number(r.units);
@@ -2810,6 +2960,7 @@ function buildTopicContext(
     const geoOf = (c: string) => (geoMap ? geoMap.get(c) || null : null);
     const sortedColleges = [...byCollege.entries()].sort((a, b) =>
       (proximityBand(geoOf(b[0]), askedGeo) - proximityBand(geoOf(a[0]), askedGeo)) ||
+      cmpKm(proximityKm(a[0], askedGeo), proximityKm(b[0], askedGeo)) ||
       (b[1].length - a[1].length));
 
     ctx += `\n### LOCAL EXHIBITS by college${askedGeo ? " (nearest first)" : ""}\n`;
@@ -2817,7 +2968,7 @@ function buildTopicContext(
     for (const [college, exhibits] of sortedColleges) {
       const url = exhibits[0]?.landing_page_url;
       const collegeRecTotal = exhibits.reduce((sum: number, e: any) => sum + (e.rec_count || 0), 0);
-      ctx += `\n## ${college}${geoLabel(geoOf(college))} — ${exhibits.length} exhibit(s), ${collegeRecTotal} credit recommendation(s)`;
+      ctx += `\n## ${college}${geoLabel(geoOf(college), distanceText(college, askedGeo))} — ${exhibits.length} exhibit(s), ${collegeRecTotal} credit recommendation(s)`;
       if (url) ctx += ` | CPL Landing Page: ${url}`;
       ctx += `\n`;
 
@@ -3331,7 +3482,7 @@ This answers a DIFFERENT question from every section above. The exhibit and cred
 - THE PROGRAM THEY WANT TO ENTER IS THE TARGET. When the lists include the program that trains the credential they already hold (a nurse assistant program for a CNA holder), that list is background, not the answer — they do not need credit for what they hold; they need credit toward what they are entering.
 - PRESENT EVERY MATCH AS A REQUEST, NEVER A DETERMINATION. Say "ask the CPL coordinator at <college> to review your <credential> against <course>"; never that it "qualifies", "counts", "is equivalent" or "will be accepted". Faculty decide, and a college that has not granted it before can still say yes.
 - CITE THE PRECEDENT WHEN THERE IS ONE. If the credential record shows a college that articulated this credential against a named course, say so with the college, the course and the units — it is the evidence that makes the request credible at a college that has not done it yet.
-- WHEN NO COLLEGE IN THE VISITOR'S PLACE TEACHES THE TARGET PROGRAM, the section says so. Say it plainly, then give the same course-level answer for the nearest colleges shown, naming each college's county so the visitor can judge the distance.
+- WHEN NO COLLEGE IN THE VISITOR'S PLACE TEACHES THE TARGET PROGRAM, the section says so. Say it plainly, then give the same course-level answer for the nearest colleges shown, naming each college's county and its distance (the heading gives it in miles, where known) so the visitor can judge the trip.
 - NEVER invent a course, a course number or a college, and never guess at a college's catalog beyond the lists shown.`;
 
 const CREDIT_STATUS_RULE = `\n\nABOUT THE "CPL CREDIT DISPOSITION" SECTION (if present) — WHAT COLLEGES HAVE ACTED ON:
@@ -4323,7 +4474,9 @@ Deno.serve(async (req: Request) => {
     const placeNow = resolveAskedPlace(searchText, geoMap);
     const placePrior = placeNow ? null : resolveAskedPlace(priorUserText, geoMap);
     const askedPlace = placeNow || placePrior;
-    const placeAnchor = askedPlace ? { county: askedPlace.county, region: askedPlace.region, label: askedPlace.label } : null;
+    const placeAnchor = askedPlace
+      ? { county: askedPlace.county, region: askedPlace.region, label: askedPlace.label, point: placePoint(askedPlace, geoMap) }
+      : null;
     const routeText = placeNow ? placeNow.stripped : searchText;
 
     // 2. Vector search + college detection + live metrics + topic search +

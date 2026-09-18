@@ -27,6 +27,12 @@
 //      switched the local route off, so the CNA credentials, the LVN license
 //      credentials and the only CNA-to-LVN precedent in MAP (Chaffey, NURVN 414)
 //      never reached the model.
+//   4. (S275, 2026-09-18) Inside a proximity band the picks ordered by VOLUME,
+//      which says nothing about distance: the neighbor band put Pasadena and
+//      Southwestern ahead of Long Beach City and Rio Hondo, twenty-five miles
+//      from Orange County. A campus point per college (COLLEGE_POINTS) makes
+//      distance the key inside a band; block 8 pins it, and the fallback (no
+//      point on the anchor → volume, as before) is what blocks 3–5 still see.
 //
 // Assertions here are on what retrieval BUILDS and how the context ORDERS,
 // never on model prose (methodology-assert-what-retrieval-returns). Fixtures are
@@ -49,7 +55,8 @@ let G = null, F = null, liftErr = null;
 try {
   G = liftBlock(SRC, "// Proximity band for ranking", "// ── Live CPL contacts (v45",
     ["proximityBand", "REGION_NEIGHBORS", "regionsNeighbor", "pickProspectivePairs",
-     "buildProspectiveContext", "geoLabel", "PROSPECTIVE_COLLEGES_PER_TOP", "PROSPECTIVE_COURSES_PER_COLLEGE"]);
+     "buildProspectiveContext", "buildOfferingsContext", "geoLabel", "PROSPECTIVE_COLLEGES_PER_TOP", "PROSPECTIVE_COURSES_PER_COLLEGE",
+     "COLLEGE_POINTS", "collegePoint", "haversineKm", "placePoint", "proximityKm", "cmpKm", "distanceText"]);
   F = liftBlock(SRC, "// A SUBSTRING INSIDE A WORD IS NOT A MATCH ON THE WORD",
     "async function fetchStatewideRecommendations(", ["isFalseFriend"]);
 } catch (e) { liftErr = e; }
@@ -185,7 +192,7 @@ block("3. pickProspectivePairs — a place", () => {
     tops.length === 2 && tops.includes("1230.30") && tops.includes("1230.20") && !tops.includes("1230.10"));
   const cna = pairs.filter((p) => p.top_code === "1230.30").map((p) => p.college);
   const lvn = pairs.filter((p) => p.top_code === "1230.20").map((p) => p.college);
-  check("(3) ⭐ in the county first, by how much of the program the college teaches, capped at " + G.PROSPECTIVE_COLLEGES_PER_TOP,
+  check("(3) ⭐ in the county first; with no point on the anchor, by how much of the program the college teaches (the fallback), capped at " + G.PROSPECTIVE_COLLEGES_PER_TOP,
     cna.join("|") === "Santa Ana College|Saddleback College|Santiago Canyon College", cna.join("|"));
   check("(3) a neighbor-region college never displaces a county one for the same program", !cna.includes("Rio Hondo College"));
   check("(3) ⭐ with no college in the county or region, the NEIGHBORING regions supply the picks",
@@ -206,7 +213,7 @@ block("3. pickProspectivePairs — a place", () => {
 block("4. pickProspectivePairs — a named college", () => {
   const pairs = G.pickProspectivePairs(offerings, coreKeywords, "Rio Hondo College", geoMap.get("Rio Hondo College"), geoMap);
   const lvn = pairs.filter((p) => p.top_code === "1230.20").map((p) => p.college);
-  check("(4) ⭐ the named college leads its program, then its own region by volume",
+  check("(4) ⭐ the named college leads its program, then its own region by volume when the anchor carries no point (the fallback)",
     lvn.join("|") === "Rio Hondo College|Pasadena City College|Citrus College", lvn.join("|"));
   const cna = pairs.filter((p) => p.top_code === "1230.30").map((p) => p.college);
   check("(4) the named college leads the other program too, then the nearest (Orange is a neighbor of Los Angeles)",
@@ -321,7 +328,82 @@ block("7. wiring", () => {
     /7c ⭐ names a Vocational Nursing course from the prospective course lists/.test(SMOKE)
     && /7c ⭐ frames the match as a request for review/.test(SMOKE));
   check("(7) smoke 7c's course alternation names the entry course at every college the block can pick",
-    /NURVN\[ -\]\?\(403\|414\)/.test(SMOKE) && /VNRS\[ -\]\?150/.test(SMOKE) && /NURS\[ -\]\?\(102\|125\)/.test(SMOKE));
+    /NURVN\[ -\]\?\(403\|414\)/.test(SMOKE) && /VNRS\[ -\]\?150/.test(SMOKE) && /NURS\[ -\]\?\(102\|125\)/.test(SMOKE)
+    && /VOC\[ -\]\?VN10\[01\]/.test(SMOKE) && /VN\[ -\]\?\(8\|10\|103\|215\|220\|61\|061\)/.test(SMOKE));
+});
+
+// ── 8. "Nearest" has a distance (2026-09-18, S275) ──────────────────────────
+// Inside a band the picks ordered by volume. A campus point per college makes
+// distance the key inside a band; the bands still come first, and an anchor
+// with no point (blocks 3–5) falls back to volume exactly as before.
+block("8. distance — COLLEGE_POINTS, placePoint, within-band order", () => {
+  const geoJson = JSON.parse(fs.readFileSync("chatbox/college_geo.json", "utf8"));
+  const online = geoJson.filter((g) => g.region === "Statewide / Online").map((g) => g.college);
+  const missing = geoJson.filter((g) => !online.includes(g.college) && !G.COLLEGE_POINTS[g.college]).map((g) => g.college);
+  const extra = Object.keys(G.COLLEGE_POINTS).filter((c) => !geoJson.some((g) => g.college === c));
+  check("(8) ⭐ every college in college_geo.json has a campus point, except the online college", missing.length === 0, missing.join(", "));
+  check("(8) no point names a college the geography table does not know", extra.length === 0, extra.join(", "));
+  check("(8) the online college has no point and no distance", online.length === 1 && G.collegePoint(online[0]) === null
+    && G.proximityKm(online[0], { point: [33.7, -117.9] }) === null);
+  const outside = Object.entries(G.COLLEGE_POINTS)
+    .filter(([, p]) => !(p.length === 2 && p[0] >= 32.5 && p[0] <= 42.1 && p[1] >= -124.5 && p[1] <= -114.1)).map(([c]) => c);
+  check("(8) every point is a [lat, lon] pair inside California's bounding box", outside.length === 0, outside.join(", "));
+  const km = (a, b) => G.haversineKm(G.collegePoint(a), G.collegePoint(b));
+  check("(8) haversine is symmetric and zero on itself",
+    Math.abs(km("Santa Ana College", "Shasta College") - km("Shasta College", "Santa Ana College")) < 1e-9 && km("Santa Ana College", "Santa Ana College") === 0);
+  check("(8) known distances hold: Long Beach City under 20 km from Golden West; Southwestern over 140 km from Santa Ana; Shasta over 900 km from Southwestern",
+    km("Long Beach City College", "Golden West College") < 20 && km("Santa Ana College", "Southwestern College") > 140 && km("Shasta College", "Southwestern College") > 900);
+  const pt = G.placePoint(orange, geoMap);
+  check("(8) placePoint averages the campuses inside the place (the fixture's five Orange County colleges)",
+    !!pt && Math.abs(pt[0] - 33.7408) < 0.001 && Math.abs(pt[1] + 117.8766) < 0.001, JSON.stringify(pt));
+  check("(8) placePoint on a region anchor averages the region; nothing inside, or no place, is null",
+    G.placePoint({ region: "Inland Empire" }, geoMap) !== null && G.placePoint({ county: "Nowhere" }, geoMap) === null && G.placePoint(null, geoMap) === null);
+  check("(8) cmpKm sorts an unknown distance last, never first",
+    G.cmpKm(null, 5) === 1 && G.cmpKm(5, null) === -1 && G.cmpKm(null, null) === 0 && G.cmpKm(3, 9) < 0 && G.cmpKm(9, 3) > 0);
+  const orangePt = { ...orange, point: pt };
+  // ⭐ The to-do's own case: the course lists lead with Long Beach and Rio Hondo.
+  const pairs = G.pickProspectivePairs(offerings, coreKeywords, null, orangePt, geoMap);
+  const lvn = pairs.filter((p) => p.top_code === "1230.20").map((p) => p.college);
+  const cna = pairs.filter((p) => p.top_code === "1230.30").map((p) => p.college);
+  check("(8) ⭐ with a point, the LVN picks lead with Long Beach City and Rio Hondo — nearest first inside the neighbor band, never largest first",
+    lvn.join("|") === "Long Beach City College|Rio Hondo College|Citrus College", lvn.join("|"));
+  check("(8) ⭐ inside the county the picks are nearest first too (Saddleback, 26 km out, drops behind Golden West)",
+    cna.join("|") === "Santa Ana College|Santiago Canyon College|Golden West College", cna.join("|"));
+  check("(8) every pair carries its distance in km", pairs.every((p) => typeof p.km === "number" && p.km >= 0));
+  check("(8) the bands still come first: no neighbor-region college outranks a county one, and the elsewhere programs stay out",
+    !cna.includes("Rio Hondo College") && !lvn.includes("Sacramento City College") && !lvn.includes("Butte College"));
+  const rh = { ...geoMap.get("Rio Hondo College"), college: "Rio Hondo College", point: G.collegePoint("Rio Hondo College") };
+  const named = G.pickProspectivePairs(offerings, coreKeywords, "Rio Hondo College", rh, geoMap).filter((p) => p.top_code === "1230.20").map((p) => p.college);
+  check("(8) a named college leads, then the nearest campus in its own county (Pasadena, 19 km), never the largest program",
+    named[0] === "Rio Hondo College" && named[1] === "Pasadena City College"
+    && ["Long Beach City College", "Citrus College"].includes(named[2]) && !named.includes("Chaffey College"), named.join("|"));
+  const ctx = G.buildProspectiveContext(pairs, courses, held, null, orangePt);
+  check("(8) ⭐ a heading carries the distance in miles, labeled about, from the center of the place",
+    ctx.includes("### Long Beach City College (Los Angeles County, Los Angeles, about 15 miles from the center of Orange County) — 1 course(s) in this program:"),
+    ctx.slice(ctx.indexOf("### Long Beach"), ctx.indexOf("### Long Beach") + 150));
+  check("(8) the block says the lists are nearest first with the distance shown", ctx.includes("nearest first, with the distance in miles where it is known"));
+  check("(8) for a named college the distance reads from that college, and never for the college itself",
+    G.distanceText("Pasadena City College", rh) === "about 10 miles from Rio Hondo College" && G.distanceText("Rio Hondo College", rh) === "");
+  check("(8) with no point on the anchor there is no distance text, and geoLabel renders exactly as before",
+    G.distanceText("Pasadena City College", orange) === "" && G.geoLabel({ county: "Orange", region: "Orange County" }) === " (Orange County, Orange County)");
+  check("(8) under ten miles the label rounds to the mile; above, to five",
+    G.distanceText("Santiago Canyon College", orangePt) === "about 7 miles from the center of Orange County"
+    && G.distanceText("Citrus College", orangePt) === "about 25 miles from the center of Orange County");
+  const off = G.buildOfferingsContext(offerings, null, orangePt, coreKeywords, geoMap);
+  const heads = [...off.matchAll(/^## ([^\n(]+?)(?: \(|$)/gm)].map((m) => m[1].trim());
+  const at = (c) => heads.indexOf(c);
+  check("(8) ⭐ the offerings list: the county first, then the neighbor band nearest first (Long Beach, Rio Hondo, Citrus, Pasadena, Chaffey, Southwestern)",
+    at("Saddleback College") >= 0 && at("Long Beach City College") > at("Saddleback College")
+    && at("Long Beach City College") < at("Rio Hondo College") && at("Rio Hondo College") < at("Citrus College")
+    && at("Citrus College") < at("Pasadena City College") && at("Pasadena City College") < at("Chaffey College")
+    && at("Chaffey College") < at("Southwestern College"), heads.join(" > "));
+  check("(8) the offerings headings carry the distance too",
+    /## Long Beach City College \(Los Angeles County, Los Angeles, about 15 miles from the center of Orange County\)/.test(off));
+  check("(8) ⭐ a place anchor carries its point, and the geo map gives a named college its campus point",
+    /label: askedPlace\.label, point: placePoint\(askedPlace, geoMap\)/.test(SRC) && /point: collegePoint\(r\.college\)/.test(SRC));
+  check("(8) distance is a sort key in all four lists (offerings, programs, exhibits, the prospective picks)",
+    (SRC.match(/cmpKm\(proximityKm\(a\[0\], askedGeo\), proximityKm\(b\[0\], askedGeo\)\)/g) || []).length === 3 && /cmpKm\(a\.km, b\.km\)/.test(SRC));
+  check("(8) the rule tells the model the distance is in the heading", /its distance \(the heading gives it in miles, where known\)/.test(SRC));
 });
 
 // ── Report ──────────────────────────────────────────────────────────────────
