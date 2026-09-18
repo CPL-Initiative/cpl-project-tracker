@@ -1530,3 +1530,99 @@ edges). The A/B on the preview slug and the deploy follow this commit.
 - Fewer SQL approvals: the project settings allow the Supabase read tools.
 - Still his: which Orange County college runs an LVN entry program; the 381
   garbled rows; auto-deploy on merge; guidance row 674923db's scope.
+
+### Deployed: v72 live at 16:43Z
+
+PR #1617 squash-merged as `fc3ebe3` on green `test` after main's #1618 was
+merged in (the only conflicts were the three generated docs-audit artifacts,
+regenerated on the merged tree). Deploy run 35370070548 byte-verified;
+`list_edge_functions` reported version 72 at 16:43:19Z. Health run
+35370311547 green at 16:45Z. The merge-triggered smoke (run 35370054033,
+started 16:42:27Z, before the function swapped) passed every mode, the new 7c
+checks included. The dispatched clean run, 35371403392 (16:56Z), failed one
+mode — 9, the multi-college NCCER question — at curl's 90 s ceiling with
+11,463 bytes received. The function finished that answer anyway:
+`chat_interactions` `6547d030` at 17:02:17Z, 1,117 tokens, El Camino named
+and not dismissed, so both mode-9 assertions hold on the completed text; the
+runtime logged "connection closed before message completed" at 17:02:23Z,
+which is the client having left. Mode 8 before it streamed 1,123 tokens in
+~27 s and mode 10 after it 1,067 in ~11 s; mode 9's 1,117 took ~92 s. One slow
+generation, then. Mode 9 had passed on this commit at 16:42Z, so the one
+sanctioned re-run went out: 35373228305 (17:15Z). It failed mode 7c alone,
+and the cause was measured outside the function. The scheduled
+`map-custom-report-load.yml` (run 35372830989, cron 17:11Z) posted 629,232
+rows to `stg_map_student_credit` in 126 batches from 17:13:41 to 17:16:37Z;
+single requests ran up to 125 s at the gateway; Postgres canceled 20
+statements on its timeout (15 of them at 17:19); and the function logged some
+thirty route cuts between 17:16 and 17:21Z — `search_college_programs` on
+nearly every request, `program_typical_courses` three times,
+`chatbox_college_courses` twice, and once each for the offerings, exhibits,
+credential and goal reads. 7c's answer (`e2a6aba3`, 17:20:19Z) came without
+its block, as the route limits are designed to fail, and its five checks
+failed as designed. Mode 9 passed in 25 s; every mode after 17:21Z passed.
+The loader's job got HTTP 504 on its promotion call at 17:18:58Z and printed
+"rolled back, live unchanged" — its first red after 38 green runs — and
+`map_data_loads` row 35 shows the promotion committed at 17:16:52Z with
+today's 629,232 student rows, reconciled. A gateway timeout ends the HTTP
+call and leaves the Postgres transaction running to its commit; the client's
+inference was wrong, and a loader that can be told 504 must read the table
+back before it declares a rollback. The first clean run had shown the same shape in miniature: three 5 s
+cuts during mode 8 at 17:00:08–14Z that failed safe. **The lesson:** a
+scheduled bulk load saturates the database for about five minutes, the
+function's route limits fail safe and the answer silently loses its block,
+and a smoke inside that window fails 7c for the loader's reasons — the
+function logs say `typical courses unavailable: TimeoutError`, which is the
+tell. The loaders own the 17:06–17:20Z window (credential-catalog-sync 17:06,
+custom-report load and college-briefing-publish 17:11); dispatch smokes clear
+of it. A third clean run in a quiet window, 35374928638 (17:32Z), passed
+every answer assertion — 7c's eleven included — and failed only the smoke's
+own anon probe of `program_typical_courses` (rows=0 at 17:35:31Z: the anon
+key's 3 s statement timeout, while a one-row `map_colleges` read took 3.1 s
+at 17:38Z and the database showed no vacuum, no long transaction and no
+loader — the function's fan-out of some thirty reads per request and the
+probe share one PostgREST pool). v72's answers stand verified three times;
+the pool is the open item, queued with the programs-route latency.
+`function_logs`
+16:43–16:50Z: 0 route time-limit cuts, 0 EMPTY ANSWER, 0 unavailable, 0
+errors; `program_typical_courses` answered 5 of 5 calls with 200.
+
+**Production v72's answer to Sam's question** (`chat_interactions`
+`43fa4d62`, 16:45:44Z): the first paragraph asks about the fundamentals
+courses and names Long Beach City's VN 220, Rio Hondo's VN 61 and Mt. San
+Antonio's VOC VN101, with the absence stated as the catalog data's and the
+three bridges named; then the two-column table, "What a CNA typically covers"
+beside "LVN courses to ask about", each row with its college count (Nurse
+Assistant 48; Fundamentals of Nursing 15); then the precedent (Chaffey's
+NURVN 414, and Lemoore's HS 061 award); the request framing; and "Also worth
+asking about with a CNA" — Registered Nursing at Santa Ana and Golden West,
+Medical Assisting, and the rest. No COCI. One imprecision to watch: the model
+called Chaffey's precedent "not an LVN-course match specifically", although
+NURVN 414 sits in Chaffey's LVN program.
+
+**A note for the SkyView lane, measured, not inferred.** PR #1619's commit
+message attributes the loss of the read-only band in `prototype/skyview.html`
+to #1617's merge. `git log -- prototype/skyview.html` on main shows the band
+left in `7aabe52`, the daily dashboard cron commit between #1618 and #1617,
+which rebuilt the page from sources that did not carry it (36 deletions);
+#1617 did not touch the file. The cron rebuilds the served page, so a change
+written into the built artifact lasts until the next run — #1619's fix (the
+band in the sources) is the right one. It merged at 17:01Z (`1d65115`).
+Between the cron commit and that merge, `test` on main was red on
+`ccr_skyview_read_only.test.js` (run 35370054088 at `fc3ebe3`), and this
+session's docs-only checkpoint PR inherited the red on its first push. The
+remedy was the recovered base itself: merge main into the branch, which
+carries #1619's fix, and the test passes on the merged tree (21 checks, with
+`skyview_built_from_source_test.py` 8 of 8). A red `test` on a docs diff is
+the base's state, and the first question is whether main is red too.
+
+### The lesson under the lessons
+
+A counselor's answer has a shape before it has facts: what you hold, what you
+want, what to ask about, what else is open to you. Retrieval can render that
+shape only from the whole catalog, because the visitor's own college is
+unknown — "typical" is a count of colleges, never a list from the three
+nearest. And a route that measures fast on two programs and slow on forty-seven
+fails silently under the time limit, so the cost check belongs in the verify
+file at the shape that fails. An inside term reaches the answer through the
+context the model reads; rename it where retrieval renders it, keep the ban,
+and guard the answer in the shape the grid counts.
