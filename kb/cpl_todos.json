@@ -8,19 +8,25 @@
       "id": "s277-sam-skyview-share-and-curate-scope",
       "for": "Sam",
       "tab": "unified-courses",
-      "text": "SkyView is safe to share now — the page states it on its face: 'Read only. Moves stage in this browser alone. Signed-in curators save in COBI's Common Course Reference tab.' It writes nothing at all: one POST in the whole file, the Ask, which inserts no row. Two things are yours to decide before it becomes a curation surface. First, whether SkyView should save a merge itself — the write already exists and is governed (kb_curation field merge_into, magic-link reviewer session, RLS per row, governance row DR-04), so this is wiring an existing write to a second surface plus one entry in kb/governance_surface_map.json, because a read-only surface gaining writes is a decision-rights change under Rule 10 (a3). Second, whether re-mint should be composed and approved in SkyView while the playbook's harness does the landing — the atomic git-plus-Supabase window a re-mint needs cannot be held from a browser."
+      "text": "ANSWERED 2026-09-18 — you said yes to SkyView saving a merge itself, and asked that the build happen in the next session. Two calls are still yours. The RE-MINT SHAPE: a corpus re-key is a batch migration and cannot come from a browser (the playbook needs producer and consumer in one git commit plus a gated Supabase re-key inside a window closing before the 10:17 UTC cron), but a principled re-mint of specific identities is expressible as a request — SkyView composes it, shows the dry-run's blast radius on the map, takes your approval, and a dispatched workflow lands it. Smallest first step is that blast-radius view alone, read only, no approve button. The EXECUTE_SQL GUARD: the allowlist from #1617 removed the prompt that was the only thing enforcing Rule 10's write discipline on a database holding 537,908 student-grain rows; recommended fix is a PreToolUse hook that passes reads and blocks write verbs, which keeps the speed Sierra needs. Both are written up in cpl_memory."
     },
     {
       "id": "s277-fable-skyview-merge-execution",
       "for": "Fable",
       "tab": "unified-courses",
-      "text": "Build merge execution on SkyView once Sam says go: the cpl_session.js sign-in keeper (31 modules already read a reviewer session), a Save control on the staged list, the same kb_curation POST unified_courses.js makes, the undo that already exists as a row delete, and the governance_surface_map.json entry with its reason. The read-only band then changes from 'Moves stage in this browser alone' to what saving actually does — tests/ccr_skyview_read_only.test.js pins the current wording and the no-write claim, so it is the file to update deliberately rather than to work around."
+      "text": "BUILD IT — Sam said yes on 2026-09-18. The cpl_session.js sign-in keeper (31 modules already read a reviewer session), a Save control on the staged list, the same kb_curation merge_into POST unified_courses.js makes, the undo that already exists as a row delete, and one entry in kb/governance_surface_map.json with its reason, because a read-only surface gaining writes is a decision-rights change under Rule 10 (a3). Two things the yes carries that are easy to miss. tests/ccr_skyview_read_only.test.js asserts the page has exactly one non-GET request and no rest/v1 call at all — that guard was written to resist a casual change, so update it deliberately rather than route around it. And the band's sentence stops being true for one audience: 'Moves stage in this browser alone' is false for a signed-in curator and still true for everyone else, including the people Sam is sharing the page with, whose writes RLS refuses. Make the band conditional on session state and keep the non-reviewer's version accurate — he shared the page on that sentence."
     },
     {
       "id": "s277-fable-skyview-loner-eclipse",
       "for": "Fable",
       "tab": "unified-courses",
       "text": "Decide whether to re-order SkyView's hit test for the one-in-twenty-four eclipse. Measured 2026-09-18 over eight parent identities through the page's own pick(): 23 of 24 loners resolve to themselves with their parent open, and 37 of 37 focused member stars resolve to that member. The reading rule is perfect, so chasing the 1 risks the 37 and pick() was left unchanged; with the silent drop exit fixed, that case now reads as a clear refusal rather than a dead map. Reopen it only if Sam hits it again."
+    },
+    {
+      "id": "s277-fable-execute-sql-pretooluse-hook",
+      "for": "Fable",
+      "tab": "admin",
+      "text": "Put a PreToolUse hook in front of mcp__Supabase__execute_sql once Sam picks it. #1617 allowlisted five Supabase tools; four are read-only by construction, and execute_sql runs arbitrary SQL against the project holding map_student_credit (537,908 student-grain rows), kb_curation (32,441) and team_access. Rule 10's write discipline is doctrine and the permission prompt was its only mechanism. The hook passes reads and blocks INSERT, UPDATE, DELETE, TRUNCATE, DROP and ALTER, so the Sierra lane keeps frictionless exploratory reads. Say the limit plainly in the hook's own comment: a pattern over SQL is a guardrail against accident, not a security boundary — a CTE carrying an INSERT, a DO block or a function with side effects can pass naive matching. The stronger alternative, if Sam prefers it, is a Postgres role with no write grants, where the database enforces it and no pattern is needed."
     },
     {
       "id": "s276-sam-oc-answer-v72",
@@ -69,15 +75,15 @@
       "for": "Sam",
       "tab": "chatbot",
       "text": "Decide whether to re-scope the team guidance rule that says 'answer with the colleges that have ALREADY articulated it, first and plainly'. The assistant's prompt let it govern a different question (what might my credential count toward), which is why version 69 led with an exhibit table. Version 70 scopes it in code; editing the rule itself in the Training tab to open with 'When someone asks where a credential ALREADY earns credit' would make the scope visible to the team."
-    },
+    }
+  ],
+  "_deferred": [
     {
       "id": "s275-fable-college-anchor-pure-distance",
       "for": "Fable",
       "tab": "chatbot",
       "text": "For a question that names a college, order the nearby lists by distance alone. Today the county band still comes first, so from Long Beach City College an Antelope Valley program 110 miles away outranks Cypress 12 miles away across the county line. A named place keeps its band; a named college should not."
-    }
-  ],
-  "_deferred": [
+    },
     {
       "id": "s274-fable-offerings-replace-atomic",
       "for": "Fable",
