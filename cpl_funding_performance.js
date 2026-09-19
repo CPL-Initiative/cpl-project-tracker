@@ -4,24 +4,24 @@
 // pull. Aggregate, small-cell-suppressed counts ONLY (see
 // docs/kb-notes/adr-funding-priority-metrics-privacy.md). Do not hand-edit.
 window.CPL_FUNDING_PERF = {
- "as_of": "2026-09-18",
+ "as_of": "2026-09-19",
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 10,
  "statewide": {
-  "pe": 43834,
-  "pa": 39786,
+  "pe": 43865,
+  "pa": 39816,
   "ppa": 108,
-  "p2": 3098,
-  "p3": 14580,
+  "p2": 3101,
+  "p3": 14584,
   "pp": 6,
   "ppe": 118,
-  "pac": 2849,
-  "pe_u": 1417893.95,
-  "pa_u": 221045.15,
+  "pac": 2850,
+  "pe_u": 1419150.7,
+  "pa_u": 221397.9,
   "ppa_u": 667.5,
   "ppe_u": 6778.5,
-  "pac_u": 24920.45,
-  "p3_u": 73409.95,
+  "pac_u": 24981.7,
+  "p3_u": 73498.2,
   "pp_u": 63.5
  },
  "colleges": {
@@ -537,9 +537,9 @@ window.CPL_FUNDING_PERF = {
   },
   "Diablo Valley": {
    "pe": 185,
-   "pe_u": 8056.0,
+   "pe_u": 8062.0,
    "pa": 185,
-   "pa_u": 555.0,
+   "pa_u": 564.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 3.0,
@@ -1049,10 +1049,10 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 27.0
   },
   "Merritt": {
-   "pe": 13,
-   "pe_u": 671.0,
-   "pa": 13,
-   "pa_u": 66.0,
+   "pe": 16,
+   "pe_u": 796.0,
+   "pa": 16,
+   "pa_u": 84.0,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 0,
@@ -1164,16 +1164,16 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 0.0
   },
   "Moreno Valley": {
-   "pe": 2481,
-   "pe_u": 53084.5,
-   "pa": 2152,
-   "pa_u": 12854.0,
+   "pe": 2484,
+   "pe_u": 53148.5,
+   "pa": 2155,
+   "pa_u": 12881.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 53.5,
-   "p2": 473,
-   "p3": 2089,
-   "p3_u": 12298.5,
+   "p2": 475,
+   "p3": 2092,
+   "p3_u": 12325.5,
    "pp": null,
    "pp_suppressed": true,
    "pp_u": 38.5,
@@ -1311,20 +1311,20 @@ window.CPL_FUNDING_PERF = {
   },
   "Palo Verde": {
    "pe": 20,
-   "pe_u": 698.75,
+   "pe_u": 707.0,
    "pa": 20,
-   "pa_u": 275.75,
+   "pa_u": 284.0,
    "ppa": 0,
    "ppa_u": 0.0,
-   "p2": 10,
-   "p3": 10,
-   "p3_u": 195.75,
+   "p2": 11,
+   "p3": 11,
+   "p3_u": 257.0,
    "pp": 0,
    "pp_u": 0.0,
    "ppe": 0,
    "ppe_u": 0.0,
-   "pac": 10,
-   "pac_u": 195.75
+   "pac": 11,
+   "pac_u": 257.0
   },
   "Pasadena": {
    "pe": 139,
@@ -1438,8 +1438,8 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 0.0
   },
   "Sacramento City": {
-   "pe": 73,
-   "pe_u": 2829.0,
+   "pe": 74,
+   "pe_u": 2891.0,
    "pa": 0,
    "pa_u": 0.0,
    "ppa": 0,
@@ -1492,10 +1492,10 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 850.0
   },
   "San Diego City": {
-   "pe": 4337,
-   "pe_u": 97987.5,
-   "pa": 4336,
-   "pa_u": 15270.0,
+   "pe": 4338,
+   "pe_u": 98017.5,
+   "pa": 4337,
+   "pa_u": 15274.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 12.0,
@@ -1511,10 +1511,10 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 0.0
   },
   "San Diego Mesa": {
-   "pe": 4703,
-   "pe_u": 105956.5,
-   "pa": 4703,
-   "pa_u": 15973.5,
+   "pe": 4706,
+   "pe_u": 106112.5,
+   "pa": 4706,
+   "pa_u": 15985.5,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 4.0,
@@ -1549,10 +1549,10 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 0.0
   },
   "San Francisco": {
-   "pe": 1695,
-   "pe_u": 76810.5,
-   "pa": 1694,
-   "pa_u": 11966.0,
+   "pe": 1715,
+   "pe_u": 77616.0,
+   "pa": 1714,
+   "pa_u": 12240.5,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 10,
@@ -2942,14 +2942,14 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 1002,
-    "pa": 1002,
-    "p3": 950
+    "pe": 1003,
+    "pa": 1003,
+    "p3": 951
    },
    "Standardized Assessment": {
-    "pe": 244,
-    "pa": 244,
-    "p3": 244
+    "pe": 246,
+    "pa": 246,
+    "p3": 246
    }
   },
   "Mt San Antonio": {
@@ -3052,7 +3052,7 @@ window.CPL_FUNDING_PERF = {
    "Industry Certification": {
     "pe": null,
     "pa": null,
-    "p3": 10,
+    "p3": 11,
     "pe_suppressed": true,
     "pa_suppressed": true
    },
@@ -3147,7 +3147,7 @@ window.CPL_FUNDING_PERF = {
   },
   "Sacramento City": {
    "Military": {
-    "pe": 73,
+    "pe": 74,
     "pa": 0,
     "p3": 0
    }
@@ -3246,8 +3246,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 1490,
-    "pa": 1490,
+    "pe": 1491,
+    "pa": 1491,
     "p3": 0
    },
    "Standardized Assessment": {
@@ -3339,8 +3339,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 1678,
-    "pa": 1677,
+    "pe": 1698,
+    "pa": 1697,
     "p3": 10
    },
    "Military | Standardized Assessment": {
@@ -3687,7 +3687,7 @@ window.CPL_FUNDING_PERF = {
   "Industry Certification": {
    "pe": 1281,
    "pa": 1258,
-   "p3": 1156
+   "p3": 1157
   },
   "Industry Certification | Military": {
    "pe": 51,
@@ -3732,9 +3732,9 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 27695,
-   "pa": 25554,
-   "p3": 2551
+   "pe": 27724,
+   "pa": 25582,
+   "p3": 2552
   },
   "Military | Portfolio Review": {
    "pe": null,
@@ -3773,9 +3773,9 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Standardized Assessment": {
-   "pe": 4408,
-   "pa": 3053,
-   "p3": 1909
+   "pe": 4410,
+   "pa": 3055,
+   "p3": 1911
   }
  },
  "cpl_types_note": "Distinct-student counts per college per `CPL Type Description`, for the funnel rungs pe/pa/p3. COUNTS ONLY — no unit sums, because each source row carries the student's TOTAL credits rather than that type's portion, so a per-type unit sum would attribute the whole total to every type a student carries. A student holding two types counts once under each, so the types do NOT sum to the college's undifferentiated count. Batch Cx/AP/IB uploads arrive already-transcribed by construction (students already in the college SIS, surfaced in MAP), so read p3 by type before treating a transcribed figure as lifecycle work.",
@@ -3783,14 +3783,14 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1417417.45,
-   "pa_u": 221045.15,
-   "p3_u": 73409.95
+   "pe_u": 1418674.2,
+   "pa_u": 221397.9,
+   "p3_u": 73498.2
   },
   "map": {
-   "pe_u": 1424195.95,
-   "pa_u": 221712.65,
-   "p3_u": 73473.45
+   "pe_u": 1425452.7,
+   "pa_u": 222065.4,
+   "p3_u": 73561.7
   },
   "ratio": {
    "pe_u": 1.0048,
@@ -3879,8 +3879,8 @@ window.CPL_FUNDING_PERF = {
   "Redwoods": false,
   "Berkeley City": false,
   "Canada": false,
-  "Alameda": false,
   "Merritt": false,
+  "Alameda": false,
   "Cuesta": true,
   "Napa": true,
   "Santa Monica": false,
@@ -3915,7 +3915,7 @@ window.CPL_FUNDING_PERF = {
   "Cosumnes River": false,
   "Folsom Lake": false
  },
- "vet_star_as_of": "2026-09-18",
+ "vet_star_as_of": "2026-09-19",
  "vet_star_threshold": 0.75,
  "vet_star_n": 57
 };

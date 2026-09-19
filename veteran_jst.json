@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-09-18T16:33:42.808034+00:00",
+  "scraped_at": "2026-09-19T11:05:39.292101+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 28257,
+    "jst": 28286,
     "star_colleges": 57
   },
   "computed_star_colleges": 57,
@@ -22,17 +22,17 @@
     },
     "San Diego Mesa College": {
       "vets": 1070,
-      "jst": 1613,
+      "jst": 1616,
       "star": true
     },
     "San Diego City College": {
       "vets": 776,
-      "jst": 1506,
+      "jst": 1507,
       "star": true
     },
     "City College of San Francisco": {
       "vets": 1197,
-      "jst": 1681,
+      "jst": 1701,
       "star": true
     },
     "San Diego Miramar College": {
@@ -42,7 +42,7 @@
     },
     "Moreno Valley College": {
       "vets": 916,
-      "jst": 1022,
+      "jst": 1023,
       "star": true
     },
     "Bakersfield College": {
@@ -410,14 +410,14 @@
       "jst": 30,
       "star": false
     },
+    "Merritt College": {
+      "vets": 82,
+      "jst": 15,
+      "star": false
+    },
     "College of Alameda": {
       "vets": 30,
       "jst": 14,
-      "star": false
-    },
-    "Merritt College": {
-      "vets": 82,
-      "jst": 12,
       "star": false
     },
     "Cuesta College": {
@@ -482,7 +482,7 @@
     },
     "Sacramento City College": {
       "vets": 203,
-      "jst": 109,
+      "jst": 110,
       "star": false
     },
     "Cuyamaca College": {
