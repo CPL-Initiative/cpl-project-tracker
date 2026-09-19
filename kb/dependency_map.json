@@ -4,9 +4,9 @@
   "supabase_tables": 85,
   "rpcs": 31,
   "edge_functions": 5,
-  "file_datasets": 481,
+  "file_datasets": 484,
   "external_services": 143,
-  "consumers": 342,
+  "consumers": 344,
   "workflows": 34,
   "data_js_files": 61,
   "tabs": 37
@@ -2865,6 +2865,33 @@
      "direction": "read",
      "how": "literal",
      "line": 326
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:.claude/settings.json": {
+   "consumers": [
+    {
+     "id": "script:scripts/check_hooks_live.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 41
+    },
+    {
+     "id": "script:scripts/install_prompt_guards.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 80
+    },
+    {
+     "id": "script:scripts/install_prompt_guards.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 80
     }
    ],
    "served": true,
@@ -13877,6 +13904,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/allow_readonly_tool_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/american_spelling_test.py": {
    "consumers": [
     {
@@ -13891,6 +13931,19 @@
    "main_committers": []
   },
   "file:tests/authority_recode_apply_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/bash_read_guard_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -19073,6 +19126,8 @@
     "prototype/check_contrast.py",
     "tests/supabase_function_grants_test.py",
     "tests/supabase_sql_guard_test.py",
+    "tests/bash_read_guard_test.py",
+    "tests/allow_readonly_tool_test.py",
     "kb/_build_remint_blast_radius.py",
     "tests/remint_blast_radius_test.py",
     "tests/coci_program_cip_test.py",
