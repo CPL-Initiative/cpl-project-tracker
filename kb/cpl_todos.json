@@ -75,6 +75,12 @@
       "for": "Sam",
       "tab": "chatbot",
       "text": "Name the next credential-to-programs list for the flyer. Today the flyer exists for one credential: a CNA, with your list (LVN, RN/ADN, Medical Assisting, Phlebotomy, Radiologic Technology, Surgical Technology, Sterile Processing), attributed to you in the answer and checked against the catalog data. The mechanism takes any credential; the list is the team's knowledge, never an inference from a code. Candidates to confirm or strike: EMT to Paramedic and Fire Technology; LVN to RN; Medical Assistant to LVN and Phlebotomy; Pharmacy Technician to nursing pharmacology."
+    },
+    {
+      "id": "s278-fable-skyview-pinch-registry",
+      "for": "Fable",
+      "tab": "unified-courses",
+      "text": "MEASURED PRE-EXISTING, not from the auth work. The SkyView browser sweep's \"one finger after the pinch still turns the sky (the registry is clean)\" fails identically on f66659c (226/227) and on the gating branch (230/231) - one finger after a two-finger spread does not turn the sky, so a pointer id is surviving the pinch. It came in with the ladder's three new script tags (team_phrase, cpl_session, reviewer_signin) or earlier; the pre-ladder page passed. Not CI-gating - the sweep is not in js-tests.yml - which is exactly why it will sit unnoticed. Look at pointercancel handling in the pointer registry."
     }
   ],
   "_deferred": [

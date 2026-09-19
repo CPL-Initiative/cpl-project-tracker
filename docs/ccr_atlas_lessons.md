@@ -1966,3 +1966,43 @@ Both were exercising curator behavior without declaring a curator. They now use
 the established fixture (`window.CPL_TEAM_PHRASE = { get: () => … }`), which is
 the honest fix — jsdom loads no external script, so a gate that failed open when
 its module is missing would be no gate at all.
+
+### ⚠️ A stale `origin/main` made a working gate look broken
+
+Attributing a sweep failure, I ran the baseline against `origin/main` without
+fetching. The ref was hours old (`d89ddec`), predating the curation ladder
+entirely, so the baseline page had no `curationRung`, no band and no
+`team_phrase.js` — and the comparison said the COBI links were still offered to
+a reader with no credential, i.e. that #1625's gate did not work on the live
+page. **It does.** `git fetch` moved `origin/main` `d89ddec → f66659c` as a
+*forced update*, and the re-run against the true parent showed the COBI gate
+holding exactly as designed.
+
+⭐ **The tell was available and I did not read it**: the probe reported
+`CPL_TEAM_PHRASE.get() = "no module"`, which says the page never loaded
+`team_phrase.js` at all — a fact about the *page*, not about the gate. A
+baseline missing the module under test is not a baseline.
+
+**Fetch before trusting `origin/main` in a long session.** Nothing about a
+stale ref announces itself; `git show origin/main:<path>` answers confidently
+with yesterday's file.
+
+### ⭐ Attribute a failure by running the baseline, not by reading the diff
+
+The sweep's *"one finger after the pinch still turns the sky (the registry is
+clean)"* looked unrelated to an auth change, and the reasoning was sound —
+nothing in the diff touches pointer handling, and the one mechanism that could
+have (`refreshAuthChrome` is bound to `focus`, and now re-routes off a gated
+view) cannot fire on the phone page, which holds the phrase through `load()`.
+
+Sound reasoning is not a measurement. Running the true baseline settled it:
+
+| | checks | failures |
+|---|---|---|
+| `f66659c` | 226/227 | the pinch, only |
+| this branch | 230/231 | the pinch, only |
+
+**Pre-existing, and now written down as work** (`s278-fable-skyview-pinch-registry`)
+rather than left as a line in a PR comment. ⚠️ **The sweep is not in
+`js-tests.yml`**, so nothing in CI has ever gone red for it — which is exactly
+how it stayed unnoticed, and why it needed a To-Do row instead of a mention.
