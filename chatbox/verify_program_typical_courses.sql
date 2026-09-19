@@ -59,16 +59,19 @@ begin
   s := public.cpl_course_title_norm('Acute Care Theory for CNAs');
   if s <> 'acute care nurse assistant' then raise exception 'A3 FAIL: acute care CNAs normalized to "%"', s; end if;
   s := public.cpl_course_title_norm('CNA /Acute Care Aide');
-  if s <> 'nurse assistant acute care' then raise exception 'A3 FAIL: CNA/acute aide normalized to "%"', s; end if;
-  -- ⚠️ The last two differ in ORDER only. That is folded by typicalFoldKey() in
-  -- the cpl-chat function, which sorts the content stems and unions the college
-  -- arrays; this function deliberately does NOT sort, so `norm` stays readable
-  -- for the smoke's anon probe, which matches it as a string.
+  if s <> 'nurse assistant acute care assistant' then raise exception 'A3 FAIL: CNA/acute aide normalized to "%"', s; end if;
+  -- ⚠️ The last two differ in ORDER, and this one repeats a word. Both are
+  -- folded by typicalFoldKey() in the cpl-chat function, which sorts the content
+  -- stems and unions the college arrays. This function deliberately does NOT
+  -- sort or dedupe: both cost 1.2-2.0 s over the table and buy nothing (the CNA
+  -- family is 50 colleges either way), and the anon role's 3 s statement timeout
+  -- has no room for it. A sorted key also breaks the smoke's anon probe, which
+  -- matches `norm` as a string.
   s := public.cpl_course_title_norm('LVN Pharmacology');
   if s <> 'vocational nurse pharmacology' then raise exception 'A3 FAIL: LVN pharmacology normalized to "%"', s; end if;
-  -- The expansion can repeat a word; the dedupe keeps first-occurrence order.
+  -- The expansion can repeat a word, and that is left alone (see above).
   s := public.cpl_course_title_norm('CNA / Certified Nurse Assistant');
-  if s <> 'nurse assistant' then raise exception 'A3 FAIL: CNA + spelled-out normalized to "%"', s; end if;
+  if s <> 'nurse assistant nurse assistant' then raise exception 'A3 FAIL: CNA + spelled-out normalized to "%"', s; end if;
   if public.cpl_course_title_norm(null) <> '' or public.cpl_course_title_norm('') <> '' then
     raise exception 'A3 FAIL: null/empty title must normalize to empty';
   end if;

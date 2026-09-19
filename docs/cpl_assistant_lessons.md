@@ -1626,3 +1626,156 @@ fails silently under the time limit, so the cost check belongs in the verify
 file at the shape that fails. An inside term reaches the answer through the
 context the model reads; rename it where retrieval renders it, keep the ban,
 and guard the answer in the shape the grid counts.
+
+---
+
+## v73 — a sub-region is a place too, and one CNA course is not six (S277, SkyCaliper, 2026-09-18)
+
+Sam: *"Sierra is still not answering correctly. The request was to compare
+typical CNA courses to Typical LVN and other related jobs."* His visitor wrote
+*"I have a cna cert and live in the San Gabriel Valley"*, and v72 answered by
+recommending **Los Medanos College — Contra Costa County, 346 miles away** — as
+*"one of the nearer matches I can confirm"*, while stating that the catalog data
+showed no San Gabriel Valley college teaching an LVN entry program.
+
+Five do, and the catalog held 87 course rows for them: Pasadena City
+NURS 102/125 (28 rows), Citrus VNRS 150 (20), Glendale NS 110 (19), Mt. San
+Antonio VOC VN101 (12), Rio Hondo VN 61 (8). Sam confirmed Citrus independently
+from the college's own program page while the fix was in flight; the data had
+been there the whole time.
+
+### The place never resolved, and the answer argued with itself
+
+`resolveAskedPlace` matched a county only with the literal word "county", three
+aliases, and bare multi-word REGION names — and it deliberately skips
+"Los Angeles" as a region because nine colleges carry it in their name. "San
+Gabriel Valley" matched nothing, so `askedGeo` was null and both catalog RPCs
+fell back to volume order, which is how northern California surfaced.
+
+⭐ **The tell was in the answer.** It named Pasadena City College and Rio Hondo
+itself — from the model's own knowledge of southern California — and then said
+*"my data doesn't confirm their course lists here"* while the catalog held 28
+rows and 8. When an answer names a thing and disclaims knowing it, retrieval
+missed something the model did not.
+
+`SUBREGIONS` gives thirteen sub-regional names their own anchor campuses. ⚠️ **A
+county is not a fine enough anchor**: Los Angeles County runs from Lancaster to
+Long Beach, and its centroid puts the San Gabriel Valley's colleges no closer
+than anyone else's — so the county sets the proximity BAND and the centroid of
+the named campuses orders WITHIN it. Re-ranked: Pasadena 6 mi, Rio Hondo 7,
+Citrus 9, Mt. SAC 12, Glendale 12; Los Medanos falls to 34th of 43.
+⚠️ **An ambiguous name is left out** — *South Bay* is Torrance to a Los Angeles
+student and San Jose to a Bay Area one, and a confidently wrong anchor is worse
+than none.
+
+### One course, said six ways, read as six things a CNA studied
+
+The table's left column listed *Nurse Assistant · Acute Care Nurse Assistant ·
+Certified Home Health Aide · Acute Care CNA · Acute Certified Nursing Assistant
+· Restorative Nurse Assistant*. Three of those six are the same course.
+`cpl_course_title_norm` folded nurse/nursing and dropped "certified", but never
+expanded **CNA** — the word colleges actually type for the program this function
+groups. 22 colleges teaching one acute-care course arrived as seven rows
+(10 + 4 + 2 + 2 + 2 + 1 + 1), and not one of them beat Home Health Aide at 7.
+
+⚠️ **The prompt was the other half.** The rule demanded "five to eight rows". A
+training program is often ONE course plus a few add-ons, so a row quota on a
+two-column comparison makes the model reach for variants whenever one side is
+genuinely short. The quota is gone; the columns are now stated as two
+independent lists, because a markdown table invites a row-wise reading that
+*Restorative Nurse Assistant ↔ Pediatric Nursing* never earned.
+
+### Two corrections this session made to itself
+
+⚠️ **"Nothing renders `norm`, so an unreadable key costs nothing" was false, and
+it was written into the file as justification.** The first fix sorted the words
+to make the key order-independent. The smoke's anon probe reads
+`norm == "nurse assistant"` as a string, so it found no row and reported **0
+colleges against a threshold of 30** — a red check on a function that had just
+improved. Four files call that RPC; grepping them would have taken a second.
+
+⚠️ **The sort was redundant besides.** `foldTypicalRows()` already groups rows by
+`typicalFoldKey()`, which sorts the CONTENT STEMS and unions the college arrays
+— word order has been folded downstream since v72. The load-bearing half was
+always the expansion. The normalizer now dedupes in first-occurrence order and
+leaves `norm` readable; the probe compares it as a word SET, so the next
+revision cannot break it by reordering.
+
+⚠️ **A guard pinned to a quotation is not a guard.** Mode 7s PASSED against
+unfixed production. Its disclaimer ban listed v72's three exact phrasings, and
+production said the same thing in new words — *"I don't have the specific San
+Gabriel Valley college course lists in front of me right now"*. Worse, 7s asked
+only for a college NAME, which the model supplies from its own knowledge while
+naming no course at all. It now bans the family and requires a San Gabriel
+Valley course **by number**, which only the anchor can supply. The A/B then
+showed all five 7s assertions moving from fail to pass.
+
+### The third correction: a canonical key is not free
+
+The post-deploy smoke failed twice, and the second failure is what made it real
+rather than flake. Every ANSWER assertion passed — 7c's quick list and Chaffey
+precedent, 7s naming a San Gabriel Valley course by number — and the only red
+was the smoke's own anon probe of `program_typical_courses`, reporting **rows=0
+against a threshold of 30**. `postgres_logs` for that window held three
+*"canceling statement due to statement timeout"* lines: the anon role carries
+`statement_timeout=3s`.
+
+Measured over all 141,696 titles:
+
+| normalizer | ms |
+|---|---:|
+| pre-S277, no expansion | 3,463 |
+| flat + expansion (shipped) | 3,987 |
+| flat + dedupe | 5,203 |
+| CTE chain + dedupe | 5,426 |
+
+⚠️ **I had made it 57% slower to canonicalize a key that was already
+canonicalized downstream.** The dedupe costs 1,216 ms and the CNA family is
+**50 colleges either way**, because `typicalFoldKey()` sorts the content stems
+and unions the college arrays before anything renders. The sort was the same
+mistake in the earlier round; the dedupe was that mistake repeated one revision
+later, in a different clause, for the same wrong reason.
+
+⭐ **The expansion — the part that actually fixes the answer — costs 15%.**
+Everything above that was work to make `norm` look canonical to a reader, and
+`norm` is a grouping key nobody renders. The shipped function is one flat
+expression: no CTE chain, no dedupe, no sort. The anon path went from 251 ms to
+**62 ms**, well inside its 3 s budget.
+
+The shape of the failure is worth keeping: the answers were right the whole
+time. A cost regression on this route does not show up as a wrong answer, it
+shows up as a *missing section* — the quick list silently absent — because every
+retrieval read fails safe. The probe that caught it is the only thing that
+looks at the RPC directly.
+
+### What the deploy left open
+
+v73 shipped at 23:01Z. Its answer opens where it should — *"Ask the CPL
+coordinator at Pasadena City College to review your CNA training against
+NURS 102 … or at Citrus College against VNRS 150 … All three colleges are in the
+San Gabriel Valley"* — and its table carries six distinct CNA courses beside
+eight LVN ones, with the lead-in saying the rows do not pair up.
+
+But it also writes *"no exhibit in our data shows a college that has already
+articulated CNA credit specifically into an LVN course"*, and **Chaffey NURVN 414
+is exactly that** — Acute Care Nursing Assistant, 6 units, into an LVN-program
+course. The precedent block surfaced Lemoore's CNA-into-a-CNA-course instead.
+That was a weak precedent in v72; in v73 it has become a false negative, which
+makes `s276-fable-precedent-names-its-program` the next fix rather than a
+nicety.
+
+### The lesson under the lessons
+
+A false zero is the worst answer Sierra gives, and the two that produced this
+one were both failures of vocabulary rather than of data: the place had no name
+she knew, and the course had an abbreviation she did not expand. Neither showed
+up as an error — both rendered a confident, well-formed answer. And the guards
+written against them both passed at first, because each was pinned to the exact
+words of the failure it had just watched instead of to the thing that must be
+true.
+
+The session's own three corrections rhyme, too. Twice I made a grouping key more
+canonical in SQL — first by sorting it, then by deduping it — and both times the
+work was already done downstream, both times it cost real milliseconds, and both
+times a consumer I had not looked for paid for it. Before making a value
+canonical, find out who reads it and whether something else already has.
