@@ -81,6 +81,18 @@
       "for": "Fable",
       "tab": "unified-courses",
       "text": "MEASURED PRE-EXISTING, not from the auth work. The SkyView browser sweep's \"one finger after the pinch still turns the sky (the registry is clean)\" fails identically on f66659c (226/227) and on the gating branch (230/231) - one finger after a two-finger spread does not turn the sky, so a pointer id is surviving the pinch. It came in with the ladder's three new script tags (team_phrase, cpl_session, reviewer_signin) or earlier; the pre-ladder page passed. Not CI-gating - the sweep is not in js-tests.yml - which is exactly why it will sit unnoticed. Look at pointercancel handling in the pointer registry."
+    },
+    {
+      "id": "s278-sam-install-the-prompt-guards",
+      "for": "Sam",
+      "tab": "admin",
+      "text": "ONE COMMAND, AND ONLY YOU CAN RUN IT. The approval-prompt guards are built and tested but cannot load: Claude Code reads .claude/settings.json from the session's PROJECT ROOT, and with three repos attached that root is their PARENT - so this repo's settings file has never loaded in any multi-repo session. Run 'python3 scripts/install_prompt_guards.py' to see the plan, then add --apply. A session cannot do it: the classifier refuses any settings write as self-modification, which is correct because these hooks grant permission. Takes effect at the NEXT session start; confirm with scripts/check_hooks_live.py."
+    },
+    {
+      "id": "s278-fable-root-settings-are-ephemeral",
+      "for": "Fable",
+      "tab": "admin",
+      "text": "The prompt guards install to <session root>/.claude/settings.json, which on the web runner is /home/user - outside all three repos and reclaimed with the container. So the install does not survive a fresh cloud session. Options to weigh: a per-machine installer like scripts/install-three-repo-check.ps1 (covers Sam's desktop, not the cloud), or asking whether the harness can root a session at a repo while still attaching the other two. Until then check_hooks_live.py is the honest signal - run it at session start."
     }
   ],
   "_deferred": [

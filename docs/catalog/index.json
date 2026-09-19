@@ -13167,7 +13167,7 @@
   },
   {
    "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
-   "count": 47,
+   "count": 48,
    "docs": [
     {
      "created": "2026-08-28",
@@ -13595,6 +13595,22 @@
      "status": null,
      "tags": [],
      "title": "Primary-source statutory and regulatory text",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-09-19",
+     "governs": [],
+     "path": "docs/reference/approval_prompt_hooks.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "hooks",
+      "permissions",
+      "settings",
+      "tooling"
+     ],
+     "title": "Approval-prompt guards \u2014 why the allowlist never worked, and where the hooks must live",
      "type": null,
      "updated": ""
     },
@@ -18057,5 +18073,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 937
+ "total": 938
 }

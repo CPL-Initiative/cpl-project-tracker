@@ -60,8 +60,27 @@ CASES = [
     ("quoted identifier",
      'select "drop" from weird_table;', "allow"),
 
+    # ── ⚠️ THE ONE CARVE-OUT: Rule 8's own memory writes ─────────────────────
+    # This case read "deny" until 2026-09-19, and that was the guard blocking
+    # the doctrine it serves: Rule 9 requires EVERY checkpoint to write
+    # cpl_memory, so wherever this hook fires the checkpoint could not
+    # complete. Measured before the fix: insert -> deny, update -> deny.
+    #
+    # The carve-out counts rather than pattern-matches, so it fails closed —
+    # the four cases under it are the boundaries, and each one was written to
+    # break a looser implementation.
+    ("cpl_memory insert — Rule 8's own write",
+     "insert into cpl_memory (slug) values ('x');", "allow"),
+    ("cpl_memory update, schema-qualified",
+     "update public.cpl_memory set summary='y' where slug='x';", "allow"),
+    ("a second table in the same statement keeps the deny",
+     "insert into cpl_memory (slug) select 1; insert into kb_curation (k) values ('x');", "deny"),
+    ("a delete against cpl_memory is still a delete",
+     "update cpl_memory set a=1; delete from cpl_memory;", "deny"),
+    ("the carve-out is cpl_memory ALONE, not any table",
+     "insert into kb_curation (k) values ('x');", "deny"),
+
     # ── writes: every one of these must be denied ────────────────────────────
-    ("insert", "insert into cpl_memory (slug) values ('x');", "deny"),
     ("update", "update cobi_nav set audience='everyone' where key='admin';", "deny"),
     ("delete", "delete from kb_curation where id = 5;", "deny"),
     ("CTE-wrapped insert",

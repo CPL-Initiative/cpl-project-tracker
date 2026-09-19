@@ -115,6 +115,21 @@ jobs:
       # what Rule 10 exists to prevent. Pure-stdlib python, no network.
       - name: Supabase SQL guard (reads allow, writes deny, unknown asks)
         run: python3 tests/supabase_sql_guard_test.py
+      # The Bash half of the same mechanism (Session 278). A hook is needed
+      # here and NOT for the read-only MCP tools, because auto mode drops
+      # blanket `Bash(*)` and wildcarded-interpreter allow rules on entry
+      # while keeping MCP tool rules — so arbitrary-argument reads (`git
+      # status`, `grep`, `sed -n` with any arguments) cannot be covered by a
+      # permission rule without enumerating them, and the MCP reads can.
+      # Same asymmetry as above and the same reason to pin it: a hook
+      # returning `allow` is a REAL grant, so a false allow removes the human
+      # check rather than deferring it, while a false ask costs one prompt.
+      # The bypass cases are the point of the file: a compound command whose
+      # SECOND segment writes, a redirection, a `$(…)`, an assignment prefix,
+      # and flags that flip a reader into a writer (`sed -i`, `find -delete`).
+      # Pure-stdlib python, no network.
+      - name: Bash read guard (read-only allow, everything else asks)
+        run: python3 tests/bash_read_guard_test.py
       # The re-mint blast radius (Session 277). Guards three READINGS rather
       # than three behaviors, because all three were got wrong while building
       # it and none of them errored: course_id IS the identity id, the

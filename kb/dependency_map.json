@@ -4,9 +4,9 @@
   "supabase_tables": 85,
   "rpcs": 31,
   "edge_functions": 5,
-  "file_datasets": 481,
-  "external_services": 143,
-  "consumers": 342,
+  "file_datasets": 483,
+  "external_services": 144,
+  "consumers": 344,
   "workflows": 34,
   "data_js_files": 61,
   "tabs": 37
@@ -517,6 +517,18 @@
      "direction": "read",
      "how": "yaml",
      "line": 0
+    }
+   ],
+   "main_committers": []
+  },
+  "external:code.claude.com": {
+   "consumers": [
+    {
+     "id": "script:scripts/install_prompt_guards.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 11
     }
    ],
    "main_committers": []
@@ -2865,6 +2877,33 @@
      "direction": "read",
      "how": "literal",
      "line": 326
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:.claude/settings.json": {
+   "consumers": [
+    {
+     "id": "script:scripts/check_hooks_live.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 41
+    },
+    {
+     "id": "script:scripts/install_prompt_guards.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 146
+    },
+    {
+     "id": "script:scripts/install_prompt_guards.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 146
     }
    ],
    "served": true,
@@ -13903,6 +13942,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/bash_read_guard_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/ccr_cpl_payload_test.py": {
    "consumers": [
     {
@@ -19073,6 +19125,7 @@
     "prototype/check_contrast.py",
     "tests/supabase_function_grants_test.py",
     "tests/supabase_sql_guard_test.py",
+    "tests/bash_read_guard_test.py",
     "kb/_build_remint_blast_radius.py",
     "tests/remint_blast_radius_test.py",
     "tests/coci_program_cip_test.py",
