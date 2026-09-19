@@ -117,6 +117,143 @@ false-absence class) · `docs/cpl_assistant_lessons.md` (2026-09-18/19) ·
 
 ---
 
+## ⛔ THE APPROVAL-PROMPT STORM — SAM'S ASK, 2026-09-19
+
+Sam: *"the swarm of 'Allow Once' approval requests I am getting yesterday and
+today. It's making the work unsustainable."* **This is your first job.**
+
+**What is already known, and must not be re-derived.** `permissions.allow` does
+NOT stop these. Auto mode runs a SEPARATE classifier that judges each call on its
+CONTENT, and an allow rule gives its prompt nothing to offer — which is why there
+is no *Always allow* button. #1617 allowlisted five Supabase tools and the
+prompts got WORSE. #1623 then proved the mechanism that DOES work: a **PreToolUse
+hook returning `permissionDecision: "allow"`** short-circuits the classifier
+entirely. `scripts/supabase_sql_guard.py` does exactly this for
+`mcp__Supabase__execute_sql`.
+
+**Why the storm continues anyway: the guard covers ONE tool.** Everything else a
+session does all day still reaches the classifier — `Bash` (git status/log/diff,
+grep, sed, cat, wc, npm test, python3 read-only scripts), the `mcp__github__`
+reads (`pull_request_read`, `get_job_logs`, `actions_list`, `get_check_run`), and
+the other Supabase reads. In this session those were the overwhelming majority of
+calls.
+
+### ⚠️ FIX THE GUARD'S OWN BUG FIRST — IT BLOCKS RULE 8
+
+`scripts/supabase_sql_guard.py` denies every write verb with no carve-out, so
+**Rule 8's own memory writes are blocked**. Measured 2026-09-19:
+
+```
+select 1                                  -> allow
+insert into cpl_memory (slug) values (..) -> deny   ⛔
+update cpl_memory set summary=... .       -> deny   ⛔
+```
+
+Every checkpoint must write `cpl_memory`. Wherever that hook fires, the
+checkpoint cannot complete. It did NOT fire in this remote session (the writes
+went through), which is itself worth knowing: **a hook that works on Sam's
+machine may be inert on the web runner, so neither its protection nor its
+breakage is uniform.** Give it an explicit, narrow carve-out — an `insert`/
+`update` whose only target is `cpl_memory` — and keep `deny` for everything else.
+
+### The proposal
+
+1. **One `Bash` PreToolUse guard, same shape as the SQL one.** This is the bulk
+   of the storm. `allow` a read-only command allowlist (`git status|log|diff|show
+   |rev-list|ls-remote`, `grep`, `rg`, `sed -n`, `cat`, `head`, `tail`, `wc`,
+   `ls`, `find`, `npm test`, `python3 kb/_docs_audit.py`, `_build_*.py --check`,
+   `_context_budget.py`); `ask` for EVERYTHING else. ⚠️ **Never `allow` by
+   default** — the SQL guard's own rule: an unparsed command falls through to the
+   prompt, never past it. Compound commands (`&&`, `|`, `;`, backticks, `$(`)
+   fall through unless every segment is on the list.
+2. **A matcher for the `mcp__github__` read tools** → `allow`. Reads only; leave
+   `create_pull_request`, `merge_pull_request` and `actions_run_trigger` to
+   prompt, because those are outward-facing and the prompt is doing real work.
+3. **Extend the Supabase matcher** to `query_logs`, `list_tables`,
+   `list_edge_functions`, `get_advisors` → `allow`.
+4. **Then delete the now-pointless `permissions.allow` block**, or keep it with a
+   comment saying it is not what stops the prompts. Leaving it implies a
+   mechanism that measurably does not work.
+
+⚠️ **A hook returning `allow` is a REAL grant — it removes the human check.** That
+is the whole point and the whole risk, so the allowlist must be genuinely
+read-only and the default must stay `ask`. Editing `.claude/settings.json` itself
+should keep prompting; the classifier is right to treat that as
+self-modification.
+
+Precedent, tests and the payload shape: `scripts/supabase_sql_guard.py` +
+`tests/supabase_sql_guard_test.py`. The `update-config` skill covers
+settings.json mechanics; `fewer-permission-prompts` scans transcripts for the
+frequent calls — ⚠️ but it proposes an ALLOWLIST, which is the thing that does not
+work here. Use it to find the calls, then put them behind a hook.
+
+`cpl_memory`: `advice-execute-sql-allowlist-needs-a-pretooluse-hook-2026-09-18`.
+
+---
+
+## ⚠️ SIERRA: FOUR DEFECTS IN THIS MORNING'S ANSWER (2026-09-19)
+
+Sam ran an Orange County CNA-to-LVN/Surgical-Tech question and called the answer
+"very good" — the shape IS right. Four things in it are wrong, and **one bug
+causes three of them** (`chat_interactions` `c3e8914b`, 13:29:47Z).
+
+⭐ **"Surgical Tech" RESOLVED TO A COLLEGE.** `%tech%` matches exactly one name in
+`chatbox_college_profiles` — **Los Angeles Trade Technical College** — and in
+`detectAndFetchCollegeProfile` a lone single-word match wins outright. So the home
+college became LA Trade Tech and Orange County was ignored. Everything geographic
+in the answer follows from that: distances measured "from LA Trade Tech", West LA
+(~7 mi) and Glendale (~10 mi) offered as the "nearest" LVN colleges (they are
+nearest to DOWNTOWN LA; from Orange County it is Long Beach City, Rio Hondo,
+Mt. SAC), the whole flyer pointed at Los Angeles City College, and the line
+*"exact Orange County mileage isn't in what I have."*
+**Fix:** the word filter already drops topic words for exactly this reason
+(`nurse`, `nursing`, `welding`, `firefighter`, `paramedic`, `police`). Add
+`tech`, `technical`, `technology`, `surgical`. Same family as "orange" matching
+Orange Coast College. **Smallest fix, roots out three defects, easy to test.**
+
+⛔ **A FALSE ZERO IN THE VISITOR'S OWN COUNTY.** The answer says the catalog shows
+no Surgical Technology program nearby. **Saddleback College teaches it — 8 course
+rows — and Saddleback is in Orange County.** Downstream of the wrong anchor.
+
+⚠️ **THE TABLE'S LEFT COLUMN IS NOT CNA COURSES.** It rendered *Nurse Assistant
+Training* and *Lifelong Learning and Self Development* — both lines of the Lemoore
+ARTICULATION, and the second is a general-education line, not anything a CNA
+studies. The statewide list it should have used: Nurse Assistant (50 colleges),
+Acute Care Nurse Assistant (12), Certified Home Health Aide (7). The right column
+is one college's curriculum (Adult Health Care I/II, Alterations in Health: Lab),
+not the statewide LVN list either. ⚠️ **`program_typical_courses` returned 200 at
+13:29:24** — the data arrived and was not used, so this is a PROMPT/rendering
+problem, not retrieval.
+
+⚠️ **The Chaffey false negative is still there** (`s276-fable-precedent-names-its-program`).
+
+**Latency:** `postgrest_logs` logged a burst of *"Warp server error: Thread killed
+by timeout manager"* at 13:29:58, right after the answer.
+
+## ✅ SAM'S CORRECTION, 2026-09-19 — AND WHY THE DOCTRINE SURVIVED IT
+
+Sam, from his own research: **no Orange County CCC offers an LVN entry program** —
+only LVN-to-ADN/RN bridges. So the catalog was right, and v73's scoped sentence
+(*"at an Orange County COMMUNITY COLLEGE specifically"*) was correct. His words:
+*"I said she was flat wrong but it was me who was wrong."*
+
+⭐ **The framing rule stands, and NOCROP is why.** North Orange County ROP teaches
+LVN, so UNSCOPED — *"no college in Orange County teaches LVN"* — the sentence is
+false. The one word "community" is the whole difference, which is exactly what
+`an-absence-in-the-data-is-a-statement-about-the-data` exists to put there. Both
+older rows are amended rather than superseded, so a future session does not read
+"flat wrong" as a standing fact.
+
+⭐ **The gap it exposes belongs to `NC / Learning Partners`,** whose scope line
+names ROP but which carries no worked instance. NOCROP + LVN is a good first one.
+Sam: *"later we hope to bring in data from our adult ed, not-for-credit, ROP, and
+community programs that could lead to certifications eligible for CPL at the
+CCCs."* Rows: `no-orange-county-ccc-offers-an-lvn-entry-program-2026-09-19` ·
+`a-ccc-scoped-absence-still-reads-as-nothing-near-me-2026-09-19` ·
+`the-premise-was-wrong-and-the-ruling-was-right-2026-09-19`.
+
+---
+
 # PART TWO — SKYVIEW / AUTH / RE-MINT (SkyLedger)
 
 ⚠️ **THIS IS AN EMERGENCY CHECKPOINT (Rule 9a).** `kb/_context_budget.py` read
