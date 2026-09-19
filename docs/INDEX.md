@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-09-18
+updated: 2026-09-19
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -66,12 +66,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 5 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 474 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 475 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 79 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 81 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 47 | [`catalog/reference.md`](catalog/reference.md) |
 | Session handoffs | 250 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **936** | |
+| **total** | **937** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,8 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+
+- **2026-09-19 (S277, SkyCaliper)** — Sierra v73: a sub-region anchors the catalog routes (the San Gabriel Valley false zero), the CNA quick list folds to four real courses, and the comparison table loses its row quota. New note: EXPLAIN ANALYZE's own clock is a cost.
 - 2026-09-18 (S276, SkyGauge) — cpl-chat v72: the quick list of typical courses, the flyer, the precedent in the block, "catalog data" instead of COCI; two KB notes; handoff 277.
 - **2026-09-18 (S276 parallel, SkyLevel — Rule 9 checkpoint):** SkyView is safe to share and says so. It always wrote nothing (one POST, the Ask, which inserts no row); the page stated that three times in chrome `body.u-solo` hides, so a band under the control row now says it where the curate controls are and links to the CCR tab where curation is actually saved ([#1618](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1618)). ⭐ **Sam's "stops responding on the second or third merge" was a drop exit that returned in SILENCE** — a carried course released on `drag.fromNode`, which for a course picked up from a member square is the whole clustered identity, so a real drag onto the open identity cleared the carry, printed nothing, and left the hint claiming one was still in hand. Gated on travel now; a merged course also queues on its own arc against the parent, labeled *staged, awaiting a curator* ([#1619](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1619)). ⛔ **The band shipped into `prototype/skyview.html`, which is GENERATED** — it passed a browser check, a jsdom suite, review, merge and deploy, and #1617's rebuild stripped it from `main` within the hour. `skyview_invariants.md` already said *"never hand-patch skyview.html"*, and `scripts/check_generated.sh` listed every other generated file and not this one. Both fixed, plus `tests/skyview_built_from_source_test.py`, which names the source file and line. ⚠️ The hit-test mis-pick was MEASURED and left alone: 23 of 24 loners already resolve correctly, 37 of 37 focused member stars resolve to that member. KB note: `methodology-a-generated-file-accepts-your-edit`.
 - **2026-09-18 (S275, SkyCompass — Rule 9 checkpoint):** ⭐ **cpl-chat v70 live (07:11Z)** — "nearest" has a distance (119 campus points; nearest first inside a proximity band in all four lists; miles in every heading; Long Beach City and Rio Hondo lead the Orange County LVN lists), and Sam's three readings of v69 are folded in: the first sentence names the course to ask about, a catalog absence is stated as the catalog's with the bridges named, no answer opens with a remark about the question; the guidance header scopes a directive to the question shape it names. A/B 35316558438: candidate ALL MODES OK, no regressions. ⚠️ The A/B compare counts four error shapes — a new check must fail in one of them. Route time limit built on #1612 (A/B pending). KB notes: `methodology-a-new-assertion-must-fail-in-the-shape-the-grid-counts`, `methodology-an-absence-in-the-data-is-a-statement-about-the-data`.

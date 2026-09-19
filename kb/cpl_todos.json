@@ -1,9 +1,33 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-09-18",
-  "_session": 276,
-  "_status": "Version 72 is live (S276, 2026-09-18 16:43Z). When someone says which credential they hold and asks what it could count toward, Sierra now answers the way a counselor would: the course to ask about first; then a two-column table of what the credential's program typically covers beside what the target program typically teaches, counted across every college in the state because the visitor never named their own college; then the precedent on record (Chaffey's NURVN 414 for a CNA); and, at the end, a short flyer of the other programs the credential commonly counts toward, each with the nearest college that teaches it and the first course to ask about. Every course line names its college, and Sierra says 'catalog data', never COCI. The new database function behind the table was rewritten the same hour after its first version took 33 seconds on a broad question and timed out under load; it now answers in under a second. Open for Sam: read version 72's Orange County answer; name the next credential-to-programs list for the flyer; which Orange County college runs LVN entry training; the 381 garbled course rows; auto-deploy on merge; the scope of guidance rule 674923db. The parallel SkyView session (SkyLevel) shipped the read-only band and the drop that answers (#1618, #1619); its three items sit in the feed under unified-courses. Today's scheduled MAP Custom Report load went red at its promotion step with a gateway timeout and said it rolled back, yet the load table shows the promotion committed at 17:16Z with today's rows; live is current, and the loader needs to read the table back before it reports a rollback.",
+  "_as_of": "2026-09-19",
+  "_session": 277,
+  "_status": "Sierra v73 is live (2026-09-18 23:01Z). A student who says where they live now gets colleges near them: someone in the San Gabriel Valley is pointed at Pasadena City, Citrus and Rio Hondo — six to nine miles — where v72 offered a college 346 miles away and said, wrongly, that no San Gabriel Valley college taught the program. Five do. The side-by-side of CNA courses against LVN courses is also honest now: it had been listing one course under six slightly different names, which read as six things a CNA had studied. In parallel, SkyView gained its curation ladder and the re-mint blast radius gained its data layer. Two things wait on people: Sam reading a v73 answer in a browser, and the next Sierra fix — she currently says no college has ever granted CNA credit toward an LVN course, and Chaffey has.",
   "items": [
+    {
+      "id": "s277-sam-read-v73-answer",
+      "for": "Sam",
+      "tab": "cpl-assistant",
+      "text": "Read Sierra's answer to a \"I have a CNA cert and live in <place>\" question in a browser. v73 should open by naming a college near you and the course to ask about — for the San Gabriel Valley that is Pasadena City NURS 102, Citrus VNRS 150 or Rio Hondo VN 61. No session can check this; the sandbox cannot reach Sierra's host."
+    },
+    {
+      "id": "s277-fable-precedent-names-its-program",
+      "for": "Fable",
+      "tab": "cpl-assistant",
+      "text": "Sierra now says \"no exhibit shows a college that has articulated CNA credit into an LVN course\" — Chaffey NURVN 414 is exactly that, so it is a false negative rather than weak evidence. Make the precedent block prefer a precedent whose course sits in the TARGET program, and say which program it belongs to. Needs its own A/B."
+    },
+    {
+      "id": "s277-fable-smoke-probe-distinguishes-timeout",
+      "for": "Fable",
+      "tab": "cpl-assistant",
+      "text": "The smoke's anon probe of program_typical_courses reads a timeout and a wrong answer identically, so three green deploys looked red. The RPC takes 115 ms; the probe hit the anon role's 3-second ceiling under load while Sierra's own calls returned 200. Teach the probe to tell the two apart. An index is NOT the fix — see the EXPLAIN-timing note."
+    },
+    {
+      "id": "s277-sam-related-programs-next-list",
+      "for": "Sam",
+      "tab": "cpl-assistant",
+      "text": "Name the next credential-to-program list, the way you did for the CNA (LVN, Rad Tech, ADN, Med Asst, Surgical Tech, Sterilization Tech, Phlebotomy). Obvious candidates to confirm or strike: EMT to Paramedic and Fire Technology; LVN to RN; Medical Assistant to LVN and Phlebotomy; Pharmacy Technician to nursing pharmacology. It is your list, never an inference from a code."
+    },
     {
       "id": "s277-sam-skyview-share-and-curate-scope",
       "for": "Sam",
@@ -11,22 +35,10 @@
       "text": "ANSWERED 2026-09-18 — you said yes to SkyView saving a merge itself, and asked that the build happen in the next session. Two calls are still yours. The RE-MINT SHAPE: a corpus re-key is a batch migration and cannot come from a browser (the playbook needs producer and consumer in one git commit plus a gated Supabase re-key inside a window closing before the 10:17 UTC cron), but a principled re-mint of specific identities is expressible as a request — SkyView composes it, shows the dry-run's blast radius on the map, takes your approval, and a dispatched workflow lands it. Smallest first step is that blast-radius view alone, read only, no approve button. The EXECUTE_SQL GUARD: the allowlist from #1617 removed the prompt that was the only thing enforcing Rule 10's write discipline on a database holding 537,908 student-grain rows; recommended fix is a PreToolUse hook that passes reads and blocks write verbs, which keeps the speed Sierra needs. Both are written up in cpl_memory."
     },
     {
-      "id": "s277-fable-skyview-merge-execution",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "BUILD IT — Sam said yes on 2026-09-18. The cpl_session.js sign-in keeper (31 modules already read a reviewer session), a Save control on the staged list, the same kb_curation merge_into POST unified_courses.js makes, the undo that already exists as a row delete, and one entry in kb/governance_surface_map.json with its reason, because a read-only surface gaining writes is a decision-rights change under Rule 10 (a3). Two things the yes carries that are easy to miss. tests/ccr_skyview_read_only.test.js asserts the page has exactly one non-GET request and no rest/v1 call at all — that guard was written to resist a casual change, so update it deliberately rather than route around it. And the band's sentence stops being true for one audience: 'Moves stage in this browser alone' is false for a signed-in curator and still true for everyone else, including the people Sam is sharing the page with, whose writes RLS refuses. Make the band conditional on session state and keep the non-reviewer's version accurate — he shared the page on that sentence."
-    },
-    {
       "id": "s277-fable-skyview-loner-eclipse",
       "for": "Fable",
       "tab": "unified-courses",
       "text": "Decide whether to re-order SkyView's hit test for the one-in-twenty-four eclipse. Measured 2026-09-18 over eight parent identities through the page's own pick(): 23 of 24 loners resolve to themselves with their parent open, and 37 of 37 focused member stars resolve to that member. The reading rule is perfect, so chasing the 1 risks the 37 and pick() was left unchanged; with the silent drop exit fixed, that case now reads as a clear refusal rather than a dead map. Reopen it only if Sam hits it again."
-    },
-    {
-      "id": "s277-fable-execute-sql-pretooluse-hook",
-      "for": "Fable",
-      "tab": "admin",
-      "text": "Put a PreToolUse hook in front of mcp__Supabase__execute_sql once Sam picks it. #1617 allowlisted five Supabase tools; four are read-only by construction, and execute_sql runs arbitrary SQL against the project holding map_student_credit (537,908 student-grain rows), kb_curation (32,441) and team_access. Rule 10's write discipline is doctrine and the permission prompt was its only mechanism. The hook passes reads and blocks INSERT, UPDATE, DELETE, TRUNCATE, DROP and ALTER, so the Sierra lane keeps frictionless exploratory reads. Say the limit plainly in the hook's own comment: a pattern over SQL is a guardrail against accident, not a security boundary — a CTE carrying an INSERT, a DO block or a function with side effects can pass naive matching. The stronger alternative, if Sam prefers it, is a Postgres role with no write grants, where the database enforces it and no pattern is needed."
     },
     {
       "id": "s276-sam-oc-answer-v72",
@@ -63,18 +75,6 @@
       "for": "Sam",
       "tab": "chatbot",
       "text": "Decide whether the assistant should deploy itself when we merge. Today its page goes live on merge and the function behind it waits for someone to push a button — the same gap that left Sierra dark for five days in September while every check said she was fine. Making it automatic removes that gap and also removes a human pause before a change reaches students. Our recommendation is to make it automatic and keep the button for undoing."
-    },
-    {
-      "id": "s271-sam-lvn-oc",
-      "for": "Sam",
-      "tab": "chatbot",
-      "text": "Name the Orange County college that runs LVN ENTRY training, if one does. You called 'no OC colleges have LVN' flat wrong (2026-09-18); the COCI extract lists only the LVN-to-RN bridges at Cypress, Golden West and Saddleback, and no course under the Vocational Nursing TOP in the county, so Sierra now says what the catalog shows and names the bridges. If entry training exists and the extract misses it, that is a data gap to trace in the loader."
-    },
-    {
-      "id": "s275-sam-guidance-674923db-scope",
-      "for": "Sam",
-      "tab": "chatbot",
-      "text": "Decide whether to re-scope the team guidance rule that says 'answer with the colleges that have ALREADY articulated it, first and plainly'. The assistant's prompt let it govern a different question (what might my credential count toward), which is why version 69 led with an exhibit table. Version 70 scopes it in code; editing the rule itself in the Training tab to open with 'When someone asks where a credential ALREADY earns credit' would make the scope visible to the team."
     }
   ],
   "_deferred": [
