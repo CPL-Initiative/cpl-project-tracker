@@ -4,8 +4,8 @@
   "supabase_tables": 85,
   "rpcs": 31,
   "edge_functions": 5,
-  "file_datasets": 484,
-  "external_services": 143,
+  "file_datasets": 483,
+  "external_services": 144,
   "consumers": 344,
   "workflows": 34,
   "data_js_files": 61,
@@ -517,6 +517,18 @@
      "direction": "read",
      "how": "yaml",
      "line": 0
+    }
+   ],
+   "main_committers": []
+  },
+  "external:code.claude.com": {
+   "consumers": [
+    {
+     "id": "script:scripts/install_prompt_guards.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 11
     }
    ],
    "main_committers": []
@@ -2884,14 +2896,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 80
+     "line": 146
     },
     {
      "id": "script:scripts/install_prompt_guards.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 80
+     "line": 146
     }
    ],
    "served": true,
@@ -13904,19 +13916,6 @@
    "served": true,
    "main_committers": []
   },
-  "file:tests/allow_readonly_tool_test.py": {
-   "consumers": [
-    {
-     "id": "workflow:js-tests.yml",
-     "kind": "workflow",
-     "direction": "run",
-     "how": "yaml",
-     "line": 0
-    }
-   ],
-   "served": true,
-   "main_committers": []
-  },
   "file:tests/american_spelling_test.py": {
    "consumers": [
     {
@@ -19127,7 +19126,6 @@
     "tests/supabase_function_grants_test.py",
     "tests/supabase_sql_guard_test.py",
     "tests/bash_read_guard_test.py",
-    "tests/allow_readonly_tool_test.py",
     "kb/_build_remint_blast_radius.py",
     "tests/remint_blast_radius_test.py",
     "tests/coci_program_cip_test.py",

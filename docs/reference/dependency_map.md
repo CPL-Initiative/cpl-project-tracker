@@ -643,7 +643,6 @@ collapse to one `<date>` family so writer and reader edges join.
 | `team_phrases.js` | pages: `CPL_Dashboard.html` | — |
 | `tests/admin_live_banner_control.test.js` | workflows: `js-tests.yml` | — |
 | `tests/alias_chain_single_source_test.py` | workflows: `js-tests.yml` | — |
-| `tests/allow_readonly_tool_test.py` | workflows: `js-tests.yml` | — |
 | `tests/american_spelling_test.py` | workflows: `js-tests.yml` | — |
 | `tests/authority_recode_apply_test.py` | workflows: `js-tests.yml` | — |
 | `tests/bash_read_guard_test.py` | workflows: `js-tests.yml` | — |
@@ -735,6 +734,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `cdn.jsdelivr.net` | tabs: `pipeline` |
 | `cdnjs.cloudflare.com` | scripts: `prototype/globe/build_globe.py` |
 | `claude.ai` | tabs: `admin` · scripts: `scripts/announce_session_hint.py` · workflows: `cpl-chat-health.yml`, `map-users-sync.yml` |
+| `code.claude.com` | scripts: `scripts/install_prompt_guards.py` |
 | `commons.wikimedia.org` | pages: `CPL_Dashboard.html` · scripts: `tools/source_first_light_art.mjs` |
 | `counseling.santarosa.edu` | tabs: `map-queue`, `map-users` |
 | `cpl-initiative.github.io` | tabs: `college-briefing`, `implementation-funding`, `map-queue`, `map-users` · scripts: `chatbox/health_check.sh`, `kb/_build_partner_crosswalk.py` · workflows: `daily-dashboard.yml` · `edgefn:cpl-chat`, `edgefn:cpl-news-harvest`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
@@ -881,5 +881,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 484 file
-datasets · 143 external services · 344 consumers · 34 workflows · 37 tabs.
+Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 483 file
+datasets · 144 external services · 344 consumers · 34 workflows · 37 tabs.

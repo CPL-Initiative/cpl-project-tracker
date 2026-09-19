@@ -22,20 +22,40 @@ set these to auto. Do I need to change Rule 8 to do this?"*
 you work, write at checkpoint). Nothing about it touches the prompts, and
 changing it would not have helped.
 
-## Two gates, and only one of them is reachable by config
+## ⛔ The diagnosis this repo carried was wrong
 
-| | what it is | does `permissions.allow` reach it? |
-|---|---|---|
-| Permission layer | the allow/deny/ask rules in `settings.json` | yes — that IS it |
-| Auto-mode classifier | judges each call on its **content** | **no** |
+Handoff 278 and #1623 held that `permissions.allow` **cannot** stop auto mode's
+prompts, because the classifier judges each call on its content and an allow
+rule has nothing to offer it. That is not what the classifier does. Its
+[documented decision order](https://code.claude.com/docs/en/permission-modes)
+begins:
 
-⚠️ **The missing "Always allow" button was the tell all along.** The button has
-nothing to offer when an allow rule already exists, so its absence says the
-prompt is coming from the other gate. #1617 allowlisted five Supabase tools
-and the prompts got **worse**.
+> 1. **Actions matching your allow, ask, or deny rules resolve immediately**
 
-**What does work:** a `PreToolUse` hook returning `permissionDecision: "allow"`
-short-circuits the classifier entirely.
+**Allow rules work in auto mode.** Sam's allowlist never failed — it never
+**loaded**. One cause, not two, and the elaborate mechanism built on the wrong
+half was larger than the problem.
+
+⚠️ **This is the second time in one session that an inherited claim was acted
+on before being checked** (the other: a stale `origin/main` that made a working
+gate look broken). Both cost real work. The rule earned twice over: **verify
+the premise before building on it**, especially when it arrives from a handoff
+written under context pressure.
+
+### What auto mode DOES drop
+
+On entering auto mode, a short list of allow rules is dropped — and the split
+is what decides the design:
+
+| Dropped | Kept |
+|---|---|
+| blanket `Bash(*)`, `PowerShell(*)` | narrow rules like `Bash(npm test)` |
+| wildcarded interpreters (`Bash(python*)`) | **MCP tool rules** |
+| package-manager run commands, `Agent`, `Monitor` | |
+
+So an MCP read tool needs only a rule. Arbitrary-argument Bash needs a hook,
+because the blanket form is dropped and the narrow form cannot enumerate
+`git status` with any arguments.
 
 ## ⛔ The reason it still did not work: the hooks never loaded
 
@@ -64,29 +84,36 @@ repo looking entirely correct. `scripts/check_hooks_live.py` reports which
 world a session is in, and it cannot depend on a hook to answer, because "no
 hook ran" is the case it exists to detect.
 
-## The three guards
+## What gets installed: mostly rules, two hooks
 
-All default to **`ask`**. An unrecognized call, an unparseable one, or a
-recognized one carrying an unknown flag falls through to the prompt, never
-past it.
-
-| Matcher | Script | Allows |
+| Mechanism | Covers | Why this one |
 |---|---|---|
-| `Bash` | `scripts/bash_read_guard.py` | `git` read subcommands, `grep`/`rg`, `sed -n`, `cat`/`head`/`tail`/`wc`/`ls`/`find`, `npm test`, `npm run sweep\|a11y`, `node tests/…`, `python3 kb/_docs_audit.py`, `kb/_build_*.py --check`, `bash scripts/check_generated.sh` |
-| `mcp__Supabase__execute_sql` | `scripts/supabase_sql_guard.py` | read-only SQL, plus the one `cpl_memory` carve-out |
-| `mcp__(github\|Supabase)__.*` | `scripts/allow_readonly_tool.py` | a closed list of read tools |
+| `permissions.allow` | ~32 read-only `mcp__github__` and `mcp__Supabase__` tools | Read-only by nature, nothing to inspect per call, and MCP rules survive auto mode |
+| `Bash` hook | `git` read subcommands, `grep`/`rg`, `sed -n`, `cat`/`head`/`tail`/`wc`/`ls`/`find`, `npm test`, `npm run sweep\|a11y`, `node tests/…`, `python3 kb/_docs_audit.py`, `kb/_build_*.py --check`, `bash scripts/check_generated.sh` | Blanket Bash rules are dropped; arbitrary arguments cannot be enumerated |
+| `execute_sql` hook | read-only SQL, plus the `cpl_memory` carve-out | ⚠️ See below |
+
+⚠️ **`execute_sql` IS DELIBERATELY NOT IN `permissions.allow`.** An allow rule
+"resolves immediately", which would skip the guard and auto-approve **writes**
+as well — exactly what #1617 did, and exactly what Rule 10 exists to prevent.
+The hook can read the statement; a rule cannot.
 
 ⚠️ **A hook returning `allow` is a REAL grant — it removes the human check
-rather than deferring it.** So each guard keeps its own closed list and the
-matcher only routes. Two independent things would have to be wrong for a write
-to pass.
+rather than deferring it.** Both hooks default to `ask`: an unrecognized call,
+an unparseable one, or a recognized one carrying an unknown flag falls through
+to the prompt, never past it.
 
-**Deliberately absent, and must stay absent:** `create_pull_request`,
-`merge_pull_request`, `update_pull_request`, `add_issue_comment`,
-`push_files`, `create_or_update_file`, `delete_file`, `actions_run_trigger`,
-`apply_migration`, `deploy_edge_function`. Those publish, spend CI, or change a
-shared table — the prompt on them is doing real work, and a comment posted to a
-colleague's PR by accident cannot be recalled.
+**Deliberately absent from the allow list, and must stay absent:**
+`create_pull_request`, `merge_pull_request`, `update_pull_request`,
+`add_issue_comment`, `push_files`, `create_or_update_file`, `delete_file`,
+`actions_run_trigger`, `apply_migration`, `deploy_edge_function`. Those
+publish, spend CI, or change a shared table — the prompt on them is doing real
+work, and a comment posted to a colleague's PR by accident cannot be recalled.
+
+⚠️ **AND THE MODE ITSELF IS NOT THE PROBLEM.** Auto mode is the lowest-prompt
+mode there is ("everything, with background safety checks"). `acceptEdits`
+auto-approves only reads, file edits and basic filesystem commands, so every
+Bash and MCP call would prompt — *more* prompts, not fewer. `plan` cannot do
+the work. Stay on auto; fix where the settings live.
 
 ### What the Bash guard refuses, and why each case exists
 
