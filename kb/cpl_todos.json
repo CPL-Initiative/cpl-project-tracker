@@ -2,8 +2,38 @@
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-19",
   "_session": 277,
-  "_status": "Sierra v73 is live (2026-09-18 23:01Z). A student who says where they live now gets colleges near them: someone in the San Gabriel Valley is pointed at Pasadena City, Citrus and Rio Hondo — six to nine miles — where v72 offered a college 346 miles away and said, wrongly, that no San Gabriel Valley college taught the program. Five do. The side-by-side of CNA courses against LVN courses is also honest now: it had been listing one course under six slightly different names, which read as six things a CNA had studied. In parallel, SkyView gained its curation ladder and the re-mint blast radius gained its data layer. Two things wait on people: Sam reading a v73 answer in a browser, and the next Sierra fix — she currently says no college has ever granted CNA credit toward an LVN course, and Chaffey has.",
+  "_status": "Sierra v73 is live and answering the CNA-to-LVN question in the right shape. Two things now need attention. First, the approval prompts: the work is being interrupted constantly, and the cause is known - an allowlist does not stop them, only a hook that answers for the tool does, and today only one tool has one. Second, this morning's answer looked good but got four things wrong, three of them from a single bug: the words \"Surgical Tech\" matched a college named Trade Technical, so Sierra measured every distance from downtown Los Angeles instead of Orange County and missed Saddleback, which teaches Surgical Technology in the student's own county. Sam also confirmed from his own research that no Orange County community college offers an LVN entry program - the catalog was right - while North Orange County ROP does, which is the kind of provider we hope to bring in.",
   "items": [
+    {
+      "id": "s278-fable-approval-prompt-hooks",
+      "for": "Fable",
+      "tab": "admin",
+      "text": "FIRST JOB. Stop the Allow Once storm. An allowlist does not work - auto mode runs a separate classifier - but a PreToolUse hook returning allow does, which is how execute_sql was fixed. Extend it: a Bash read-only guard (the bulk of it), the github read tools, the remaining Supabase reads. Anything unrecognized must still ask."
+    },
+    {
+      "id": "s278-fable-sql-guard-blocks-rule-8",
+      "for": "Fable",
+      "tab": "admin",
+      "text": "The Supabase guard denies every write with no exception, so it blocks the memory writes every checkpoint has to make. Measured: insert into cpl_memory -> deny. Give it a narrow carve-out for cpl_memory and keep deny for everything else. It did not fire on the web runner, so the breakage is uneven."
+    },
+    {
+      "id": "s278-fable-surgical-tech-matches-a-college",
+      "for": "Fable",
+      "tab": "cpl-assistant",
+      "text": "The words \"Surgical Tech\" match Los Angeles Trade Technical College, so Sierra treated it as the student's home college and measured everything from downtown LA instead of Orange County. Add tech, technical, technology and surgical to the word filter that already drops nurse, welding and firefighter. Small fix, corrects three errors."
+    },
+    {
+      "id": "s278-fable-saddleback-surgical-tech-false-zero",
+      "for": "Fable",
+      "tab": "cpl-assistant",
+      "text": "Sierra told an Orange County student no nearby college teaches Surgical Technology. Saddleback teaches it, in Orange County, with 8 courses. Confirm this clears once the college-name mixup above is fixed."
+    },
+    {
+      "id": "s278-fable-quick-list-not-used-in-the-table",
+      "for": "Fable",
+      "tab": "cpl-assistant",
+      "text": "The side-by-side table drew its CNA column from an old articulation record instead of the statewide course list - one row was a general-education line, not a CNA course. The statewide data was fetched successfully, so this is about how the answer is written, not about retrieval."
+    },
     {
       "id": "s277-sam-read-v73-answer",
       "for": "Sam",
@@ -15,12 +45,6 @@
       "for": "Fable",
       "tab": "cpl-assistant",
       "text": "Sierra now says \"no exhibit shows a college that has articulated CNA credit into an LVN course\" — Chaffey NURVN 414 is exactly that, so it is a false negative rather than weak evidence. Make the precedent block prefer a precedent whose course sits in the TARGET program, and say which program it belongs to. Needs its own A/B."
-    },
-    {
-      "id": "s277-fable-smoke-probe-distinguishes-timeout",
-      "for": "Fable",
-      "tab": "cpl-assistant",
-      "text": "The smoke's anon probe of program_typical_courses reads a timeout and a wrong answer identically, so three green deploys looked red. The RPC takes 115 ms; the probe hit the anon role's 3-second ceiling under load while Sierra's own calls returned 200. Teach the probe to tell the two apart. An index is NOT the fix — see the EXPLAIN-timing note."
     },
     {
       "id": "s277-sam-related-programs-next-list",
@@ -51,30 +75,6 @@
       "for": "Sam",
       "tab": "chatbot",
       "text": "Name the next credential-to-programs list for the flyer. Today the flyer exists for one credential: a CNA, with your list (LVN, RN/ADN, Medical Assisting, Phlebotomy, Radiologic Technology, Surgical Technology, Sterile Processing), attributed to you in the answer and checked against the catalog data. The mechanism takes any credential; the list is the team's knowledge, never an inference from a code. Candidates to confirm or strike: EMT to Paramedic and Fire Technology; LVN to RN; Medical Assistant to LVN and Phlebotomy; Pharmacy Technician to nursing pharmacology."
-    },
-    {
-      "id": "s276-fable-precedent-names-its-program",
-      "for": "Fable",
-      "tab": "chatbot",
-      "text": "Let the precedent line say which program its course sits in. Version 72's first production answer called Chaffey's NURVN 414 'not an LVN-course match specifically' although that course is in Chaffey's LVN program; when a precedent's course matches a course in the target program's list, the line can say so, and the misreading closes. Pin it in the prospective-credit test; A/B before deploy."
-    },
-    {
-      "id": "s275-fable-programs-route-latency",
-      "for": "Fable",
-      "tab": "chatbot",
-      "text": "Measure the program search's latency under the smoke's load. The route time limit cut it once in the version 71 A/B (5,002 ms on the Boys & Girls Club question) and the answer failed safe with no program catalog; the route usually answers in one to three seconds. Read the function logs for every cut line over a week, then decide whether the query moves or the limit does. Never an index on the programs table (#1602)."
-    },
-    {
-      "id": "s274-sam-course-title-cleanup",
-      "for": "Sam",
-      "tab": "chatbot",
-      "text": "Say go on deleting 381 garbled course-title rows. Sierra's course lists showed Pasadena's NURS 102 as 'Fundamentals of Vocational Nursing Ã¢â‚¬â€œ Theory'. The loaders are fixed so the next nightly sync writes clean titles, but the course table's sync only adds and never deletes, and its match key includes the title, so the 381 garbled rows (84 colleges) would sit beside the repaired ones and double the alignment candidates. The plan: after the first clean sync, delete rows whose title carries the garbled sequences, with a receipt listing each row so it can be put back. A shared-table write, so it waits for your go."
-    },
-    {
-      "id": "s272-sam-autodeploy-ruling",
-      "for": "Sam",
-      "tab": "chatbot",
-      "text": "Decide whether the assistant should deploy itself when we merge. Today its page goes live on merge and the function behind it waits for someone to push a button — the same gap that left Sierra dark for five days in September while every check said she was fine. Making it automatic removes that gap and also removes a human pause before a change reaches students. Our recommendation is to make it automatic and keep the button for undoing."
     }
   ],
   "_deferred": [
