@@ -13826,14 +13826,15 @@
      "status": null,
      "tags": [
       "handoff",
+      "sierra",
+      "prospective-cpl",
+      "place-anchor",
       "skyview",
       "auth",
       "remint",
-      "blast-radius",
-      "execute-sql",
-      "emergency-checkpoint"
+      "execute-sql"
      ],
-     "title": "the SkyView curation ladder is live, the re-mint blast radius has its data layer, and the execute_sql prompt storm is fixed",
+     "title": "part one, Sierra v73 (a sub-region is a place, the CNA quick list is four real courses); part two, the SkyView curation ladder and the re-mint blast radius",
      "type": null,
      "updated": ""
     },

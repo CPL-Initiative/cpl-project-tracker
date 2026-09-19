@@ -19,7 +19,7 @@ One per session, newest first. **Only the highest-numbered handoff is authoritat
 
 | N | Handoff | Created |
 |---|---|---|
-| 278 | [the SkyView curation ladder is live, the re-mint blast radius has its data layer, and the execute_sql prompt storm is fixed](../session_278_handoff.md) | 2026-09-18 |
+| 278 | [part one, Sierra v73 (a sub-region is a place, the CNA quick list is four real courses); part two, the SkyView curation ladder and the re-mint blast radius](../session_278_handoff.md) | 2026-09-18 |
 | 277 | [v72 is live (the quick list, the flyer, the precedent in the block, "catalog data"); next, the crosswalk beyond the CNA and the measurements the queue still owes · part two, the SkyView lane (shareable, answers every drop)](../session_277_handoff.md) | 2026-09-18 |
 | 276 | [v71 is live, the first course is in the target program, the time limit ships; next, the precedent moves into the block](../session_276_handoff.md) | 2026-09-18 |
 | 275 | [v69 is live and answers the prospective question; read it, then give nearest a distance](../session_275_handoff.md) | 2026-09-18 |
