@@ -13798,8 +13798,27 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 249,
+   "count": 250,
    "docs": [
+    {
+     "created": "2026-09-18",
+     "governs": [],
+     "n": 278,
+     "path": "docs/session_278_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "skyview",
+      "auth",
+      "remint",
+      "blast-radius",
+      "execute-sql",
+      "emergency-checkpoint"
+     ],
+     "title": "the SkyView curation ladder is live, the re-mint blast radius has its data layer, and the execute_sql prompt storm is fixed",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-18",
      "governs": [],
@@ -18019,5 +18038,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 935
+ "total": 936
 }
