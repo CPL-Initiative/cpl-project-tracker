@@ -1,21 +1,9 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-19",
-  "_session": 277,
-  "_status": "Sierra v73 is live and answering the CNA-to-LVN question in the right shape. Two things now need attention. First, the approval prompts: the work is being interrupted constantly, and the cause is known - an allowlist does not stop them, only a hook that answers for the tool does, and today only one tool has one. Second, this morning's answer looked good but got four things wrong, three of them from a single bug: the words \"Surgical Tech\" matched a college named Trade Technical, so Sierra measured every distance from downtown Los Angeles instead of Orange County and missed Saddleback, which teaches Surgical Technology in the student's own county. Sam also confirmed from his own research that no Orange County community college offers an LVN entry program - the catalog was right - while North Orange County ROP does, which is the kind of provider we hope to bring in.",
+  "_session": 278,
+  "_status": "SkyView is now a public read-only surface you can share: signed out it offers the map, How SkyView works and a sign-in note, and nothing that edits. The banner names which credential you hold - Read only, Team phrase, or Magic link - and says whether that covers COBI too, because it is one sign-in across both. Separately, we found why the Allow-Once prompts never stopped: this repo's settings file has NEVER loaded in a three-repo session, because Claude Code reads settings from the folder ABOVE the three clones. The guards are built and tested; installing them is one command only Sam can run, and making that survive a fresh cloud session is the open question.",
   "items": [
-    {
-      "id": "s278-fable-approval-prompt-hooks",
-      "for": "Fable",
-      "tab": "admin",
-      "text": "FIRST JOB. Stop the Allow Once storm. An allowlist does not work - auto mode runs a separate classifier - but a PreToolUse hook returning allow does, which is how execute_sql was fixed. Extend it: a Bash read-only guard (the bulk of it), the github read tools, the remaining Supabase reads. Anything unrecognized must still ask."
-    },
-    {
-      "id": "s278-fable-sql-guard-blocks-rule-8",
-      "for": "Fable",
-      "tab": "admin",
-      "text": "The Supabase guard denies every write with no exception, so it blocks the memory writes every checkpoint has to make. Measured: insert into cpl_memory -> deny. Give it a narrow carve-out for cpl_memory and keep deny for everything else. It did not fire on the web runner, so the breakage is uneven."
-    },
     {
       "id": "s278-fable-surgical-tech-matches-a-college",
       "for": "Fable",
@@ -83,16 +71,16 @@
       "text": "MEASURED PRE-EXISTING, not from the auth work. The SkyView browser sweep's \"one finger after the pinch still turns the sky (the registry is clean)\" fails identically on f66659c (226/227) and on the gating branch (230/231) - one finger after a two-finger spread does not turn the sky, so a pointer id is surviving the pinch. It came in with the ladder's three new script tags (team_phrase, cpl_session, reviewer_signin) or earlier; the pre-ladder page passed. Not CI-gating - the sweep is not in js-tests.yml - which is exactly why it will sit unnoticed. Look at pointercancel handling in the pointer registry."
     },
     {
-      "id": "s278-sam-install-the-prompt-guards",
-      "for": "Sam",
-      "tab": "admin",
-      "text": "ONE COMMAND, AND ONLY YOU CAN RUN IT. The approval-prompt guards are built and tested but cannot load: Claude Code reads .claude/settings.json from the session's PROJECT ROOT, and with three repos attached that root is their PARENT - so this repo's settings file has never loaded in any multi-repo session. Run 'python3 scripts/install_prompt_guards.py' to see the plan, then add --apply. A session cannot do it: the classifier refuses any settings write as self-modification, which is correct because these hooks grant permission. Takes effect at the NEXT session start; confirm with scripts/check_hooks_live.py."
-    },
-    {
       "id": "s278-fable-root-settings-are-ephemeral",
       "for": "Fable",
       "tab": "admin",
       "text": "The prompt guards install to <session root>/.claude/settings.json, which on the web runner is /home/user - outside all three repos and reclaimed with the container. So the install does not survive a fresh cloud session. Options to weigh: a per-machine installer like scripts/install-three-repo-check.ps1 (covers Sam's desktop, not the cloud), or asking whether the harness can root a session at a repo while still attaching the other two. Until then check_hooks_live.py is the honest signal - run it at session start."
+    },
+    {
+      "id": "s279-sam-install-and-persist-the-guards",
+      "for": "Sam",
+      "tab": "admin",
+      "text": "ONE COMMAND, AND ONLY YOU CAN RUN IT - a session is refused as self-modification, correctly, because these grant permission. On your own machine: 'python3 scripts/install_prompt_guards.py --user --apply', then start a NEW session (hooks bind at startup) and check with scripts/check_hooks_live.py. That one persists. For cloud sessions the same install lasts one container, so the durable fix is your cloud environment's SETUP SCRIPT - configured once, outside the container, runs every start. Stay on Auto mode; it is the lowest-prompt mode and switching would add prompts."
     }
   ],
   "_deferred": [

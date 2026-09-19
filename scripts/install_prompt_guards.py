@@ -1,8 +1,21 @@
 #!/usr/bin/env python3
 """Install the approval-prompt settings where a multi-repo session will load them.
 
-    python3 scripts/install_prompt_guards.py            # show what it would do
-    python3 scripts/install_prompt_guards.py --apply    # write it
+    python3 scripts/install_prompt_guards.py                   # dry run, session root
+    python3 scripts/install_prompt_guards.py --apply           # write it there
+    python3 scripts/install_prompt_guards.py --user --apply    # LOCAL machine: persists
+    python3 scripts/install_prompt_guards.py /some/root --apply
+
+⚠️ WHICH TARGET SURVIVES WHAT:
+  --user  ~/.claude/settings.json. On a LOCAL machine this is ordinary
+          user-scope settings, read in every session and every project, living
+          outside any repo or container — so it PERSISTS. Cloud sessions do not
+          read it at all.
+  default the session root (the parent of the clones in a multi-repo session).
+          Correct for a cloud session, and gone when the container is
+          reclaimed. For a durable cloud fix, run this from the environment's
+          SETUP SCRIPT, which is configured outside the container and runs at
+          every start.
 
 WHY A SEPARATE INSTALLER
 ------------------------
@@ -133,10 +146,31 @@ def blocks():
 
 
 def target_root():
-    """Where the session roots. Prefer an explicit argument; else the parent."""
+    """Where to install. An explicit path wins; then --user; else the parent.
+
+    ⚠️ --user IS THE PERSISTENT ANSWER ON A LOCAL MACHINE AND IS NOT READ IN THE
+    CLOUD. The two surfaces differ, and conflating them is how this lands in the
+    wrong place:
+
+      local (terminal / desktop)  ~/.claude/settings.json is ordinary user-scope
+                                  settings, read in every session and every
+                                  project. It lives outside any repo and outside
+                                  any container, so it survives. Install here.
+      cloud session               "User and project local settings
+                                  (~/.claude/settings.json and
+                                  .claude/settings.local.json): not read."
+                                  The session root is the parent of the clones
+                                  and dies with the container, so an install
+                                  there lasts one session. The durable lever is
+                                  the cloud environment's SETUP SCRIPT, which is
+                                  configured outside the container and runs at
+                                  every start — point it at this script.
+    """
     for a in sys.argv[1:]:
         if not a.startswith("-"):
             return os.path.abspath(a)
+    if "--user" in sys.argv:
+        return os.path.expanduser("~")
     return os.path.dirname(REPO)
 
 

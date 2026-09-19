@@ -4,6 +4,8 @@ date: 2026-09-18
 session: 274 (SkyMeter)
 tags: [handoff, sierra, prospective-cpl, deploy, encoding]
 status: current
+superseded: true
+superseded_by: session_279_handoff.md
 ---
 
 # You are Session 275

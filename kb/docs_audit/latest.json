@@ -6,67 +6,68 @@
     "index": 40000,
     "lessons": 120000,
     "handoff": 60000,
-    "roadmap_lane": 12000,
+    "roadmap_lane": 20000,
     "other": 150000
   },
   "summary": {
-    "files": 950,
-    "bytes": 10070123,
-    "over_budget": 9,
-    "handoff_max": 278,
+    "files": 954,
+    "bytes": 10115458,
+    "over_budget": 4,
+    "handoff_max": 279,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 60839,
+    "always_loaded_bytes": 59989,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 60839,
-        "over": 1
+        "bytes": 59989,
+        "over": 0
       },
       "other": {
-        "files": 114,
-        "bytes": 3094970,
+        "files": 115,
+        "bytes": 3112158,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 18224,
+        "bytes": 16240,
         "over": 0
       },
       "lessons": {
         "files": 75,
-        "bytes": 2098377,
+        "bytes": 2109561,
         "over": 1
       },
       "kb_note": {
-        "files": 477,
-        "bytes": 2432063,
+        "files": 479,
+        "bytes": 2440443,
         "over": 0
       },
       "roadmap_lane": {
         "files": 32,
-        "bytes": 204212,
-        "over": 4
+        "bytes": 209359,
+        "over": 0
       },
       "handoff": {
-        "files": 250,
-        "bytes": 2161438,
+        "files": 251,
+        "bytes": 2167708,
         "over": 0
       }
     },
     "by_rule": {
-      "oversized_doc": 9,
       "house_voice": 24,
-      "vault_heavy_path": 49
+      "oversized_doc": 4,
+      "vault_heavy_path": 51
     },
     "vault": {
-      "files": 2995,
-      "bytes": 1461054028,
-      "heavy_bytes": 643761552,
-      "heavy_share": 0.441,
+      "files": 3164,
+      "bytes": 1526267624,
+      "heavy_bytes": 708841301,
+      "heavy_share": 0.464,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
+        "cpl-project-tracker/prototype/ccr_desc",
         "cpl-project-tracker/cip_fitcheck",
         "cpl-project-tracker/kb/unclassified_fold",
         "cpl-project-tracker/kb/regional_cpl_out",
@@ -83,6 +84,7 @@
         "cpl-project-tracker/unified_courses_standalone.js",
         "cpl-project-tracker/kb/subj4_dryrun/collisions.json",
         "cpl-project-tracker/unified_courses_members.js",
+        "cpl-project-tracker/prototype/ccr_atlas_v1.built.html",
         "cpl-project-tracker/kb/row_audit/latest.json",
         "cpl-project-tracker/unified_courses_data.js",
         "cpl-project-tracker/statewide_data.js",
@@ -119,19 +121,6 @@
     }
   },
   "findings": [
-    {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
-        "bytes": 60839,
-        "limit": 60000,
-        "lane": "always_loaded",
-        "over_by": 839,
-        "ratio": 1.01
-      },
-      "message": "60,839 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
-      "path": "CLAUDE.md"
-    },
     {
       "rule": "house_voice",
       "fixable": false,
@@ -376,58 +365,6 @@
       "path": "docs/reference/kb_build_status.md"
     },
     {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
-        "bytes": 18433,
-        "limit": 12000,
-        "lane": "roadmap_lane",
-        "over_by": 6433,
-        "ratio": 1.54
-      },
-      "message": "18,433 B is 1.5× the roadmap_lane budget (12,000 B) — candidate for compaction",
-      "path": "docs/reference/lanes/cobi-dark-mode.md"
-    },
-    {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
-        "bytes": 18397,
-        "limit": 12000,
-        "lane": "roadmap_lane",
-        "over_by": 6397,
-        "ratio": 1.53
-      },
-      "message": "18,397 B is 1.5× the roadmap_lane budget (12,000 B) — candidate for compaction",
-      "path": "docs/reference/lanes/implementation-funding.md"
-    },
-    {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
-        "bytes": 14661,
-        "limit": 12000,
-        "lane": "roadmap_lane",
-        "over_by": 2661,
-        "ratio": 1.22
-      },
-      "message": "14,661 B is 1.2× the roadmap_lane budget (12,000 B) — candidate for compaction",
-      "path": "docs/reference/lanes/partner-crosswalks.md"
-    },
-    {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
-        "bytes": 14293,
-        "limit": 12000,
-        "lane": "roadmap_lane",
-        "over_by": 2293,
-        "ratio": 1.19
-      },
-      "message": "14,293 B is 1.2× the roadmap_lane budget (12,000 B) — candidate for compaction",
-      "path": "docs/reference/lanes/skyview-ccr-interface.md"
-    },
-    {
       "rule": "house_voice",
       "fixable": false,
       "detail": {
@@ -443,13 +380,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 665109,
+        "bytes": 669481,
         "limit": 150000,
         "lane": "other",
-        "over_by": 515109,
-        "ratio": 4.43
+        "over_by": 519481,
+        "ratio": 4.46
       },
-      "message": "665,109 B is 4.4× the other budget (150,000 B) — candidate for compaction",
+      "message": "669,481 B is 4.5× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {
@@ -533,6 +470,16 @@
         "kind": "dir"
       },
       "message": "directory totals 82,227,956 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "prototype/ccr_desc",
+      "detail": {
+        "bytes": 52517189,
+        "kind": "dir"
+      },
+      "message": "directory totals 52,517,189 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -697,6 +644,16 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
+      "path": "prototype/ccr_atlas_v1.built.html",
+      "detail": {
+        "bytes": 12562524,
+        "kind": "file"
+      },
+      "message": "12,562,524 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
       "path": "kb/row_audit/latest.json",
       "detail": {
         "bytes": 10476736,
@@ -719,10 +676,10 @@
       "fixable": false,
       "path": "statewide_data.js",
       "detail": {
-        "bytes": 9522263,
+        "bytes": 9522261,
         "kind": "file"
       },
-      "message": "9,522,263 B single file inside the vault"
+      "message": "9,522,261 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -979,10 +936,10 @@
       "fixable": false,
       "path": "kb/cr_reference_worklist.json",
       "detail": {
-        "bytes": 2354161,
+        "bytes": 2354199,
         "kind": "file"
       },
-      "message": "2,354,161 B single file inside the vault"
+      "message": "2,354,199 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

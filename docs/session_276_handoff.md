@@ -4,6 +4,8 @@ date: 2026-09-18
 session: 275 (SkyCompass)
 tags: [handoff, sierra, prospective-cpl, deploy, route-time-limit, a-b]
 status: current
+superseded: true
+superseded_by: session_279_handoff.md
 ---
 
 # You are Session 276
