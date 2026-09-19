@@ -1779,3 +1779,41 @@ canonical in SQL — first by sorting it, then by deduping it — and both times
 work was already done downstream, both times it cost real milliseconds, and both
 times a consumer I had not looked for paid for it. Before making a value
 canonical, find out who reads it and whether something else already has.
+
+### Postscript, 2026-09-19: the probe that could not tell a timeout from a wrong answer
+
+Three post-deploy smokes on v73 failed, and all three failed on the same single
+assertion: the anon probe of `program_typical_courses` reading **rows=0 against a
+threshold of 30**. Every answer assertion passed in the third run. The logs
+settle it:
+
+```
+00:22:24  POST | 200 | .../rpc/program_typical_courses | Deno/2.1.4   ← the function
+00:23:43  POST | 200 | .../rpc/program_typical_courses | Deno/2.1.4
+00:24:14  POST | 500 | .../rpc/program_typical_courses | curl/8.5.0   ← the probe
+00:24:17  {"code":"57014", ... "canceling statement due to statement timeout"}
+00:24:22  POST | 200 | .../rpc/program_typical_courses | Deno/2.1.4
+```
+
+The function's own calls to the same RPC return 200 on either side of the
+probe's 500. The RPC executes in **115 ms** with every buffer a shared hit. What
+the probe hit was the anon role's `statement_timeout=3s` under momentary
+contention — the shared-pool item the S277 handoff already had open as sequence
+9, now reproducible rather than occasional.
+
+⚠️ **The probe's defect is that it reports a timeout and a wrong answer
+identically.** Its Python reads `rows = rows if isinstance(rows, list) else []`,
+so a 500 with a `57014` body becomes `rows=0`, which reads as *"the normalizer
+stopped folding"* — and that is exactly how it was read, twice, sending this
+session chasing a cost regression that had already been fixed. A check that
+cannot distinguish "the thing is broken" from "I could not ask" will eventually
+spend somebody's afternoon.
+
+⭐ **And the first instrument reached for lied.** `EXPLAIN (ANALYZE, TIMING ON)`
+put the statement at 4,809 ms, with the sequential scan at 4,794 ms and 141,366
+rows discarded by filter — an open-and-shut argument for indexing `top_code`.
+`TIMING OFF` on the same statement in the same session: **115 ms**. The clock
+calls were the cost. Acting on the inflated figure would have added an index to a
+141,696-row table whose loader replaces every row, which this repo has already
+been burned by. Filed as
+[`methodology-explain-analyze-timing-is-not-free`](kb-notes/methodology-explain-analyze-timing-is-not-free.md).

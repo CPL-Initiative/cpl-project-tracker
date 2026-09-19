@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-474 document(s).
+475 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -268,6 +268,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Emit the threshold with the label it prints](../kb-notes/methodology-emit-the-threshold-with-the-label-it-prints.md) | methodology | published | 2026-08-10 | 2026-08-10 |
 | [Every id-keyed artifact class belongs in the post-apply chain](../kb-notes/methodology-every-id-keyed-artifact-class-belongs-in-the-post-apply-chain.md) | methodology | published | 2026-09-04 | 2026-09-04 |
 | [Every live database function needs a committed schema-of-record file](../kb-notes/methodology-live-db-functions-need-committed-schema.md) | methodology | published | 2026-07-02 | 2026-07-02 |
+| [EXPLAIN ANALYZE's own clock is a cost, and on a wide scan it dominates](../kb-notes/methodology-explain-analyze-timing-is-not-free.md) | methodology | published | 2026-09-19 | 2026-09-19 |
 | [Falsify a claim when falsification is cheap](../kb-notes/methodology-falsify-a-claim-when-falsification-is-cheap.md) | methodology | published | 2026-08-19 | 2026-08-19 |
 | [Fan-in discipline convergence — fold alternate names to a canonical, the mirror of the umbrella split](../kb-notes/methodology-fan-in-discipline-convergence.md) | methodology | published | 2026-06-10 | 2026-06-11 |
 | [Fan-in discipline folds must re-point every inference lexicon (or re-derivation resurrects the alias)](../kb-notes/methodology-fanin-alias-lexicon-contamination.md) | methodology | published | 2026-06-12 |  |

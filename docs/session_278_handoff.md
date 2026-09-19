@@ -1,8 +1,8 @@
 ---
-title: Session 278 handoff — the SkyView curation ladder is live, the re-mint blast radius has its data layer, and the execute_sql prompt storm is fixed
+title: Session 278 handoff — part one, Sierra v73 (a sub-region is a place, the CNA quick list is four real courses); part two, the SkyView curation ladder and the re-mint blast radius
 date: 2026-09-18
-session: 277 (SkyLedger)
-tags: [handoff, skyview, auth, remint, blast-radius, execute-sql, emergency-checkpoint]
+session: 277 (SkyLedger) and 277 parallel (SkyCaliper)
+tags: [handoff, sierra, prospective-cpl, place-anchor, skyview, auth, remint, execute-sql]
 status: current
 ---
 
@@ -11,6 +11,113 @@ status: current
 Your moniker is **SkyWarden** — this session built the gate (who may stage, who
 may save, who may leave the page) and the instrument that says what a re-mint
 would cost. What is left is the surface that shows it.
+
+⚠️ **TWO SESSIONS RAN 2026-09-18 IN PARALLEL, AND BOTH WROTE THIS FILE.** Part
+one (immediately below) is the **Sierra** lane, added by **SkyCaliper**; part two,
+from "THIS IS AN EMERGENCY CHECKPOINT" onward, is the **SkyView / auth / re-mint**
+lane written by SkyLedger. The moniker **SkyWarden** and the sign-off line at the
+bottom stand for both. Read part one first if the queue is Sierra, part two first
+if it is SkyView; the two touched no common file (verified: the `cpl-chat`
+function bytes are identical across SkyLedger's two merges).
+
+---
+
+# PART ONE — SIERRA (SkyCaliper)
+
+## ✅ cpl-chat v73 IS LIVE (2026-09-18 23:01Z, `list_edge_functions` v73)
+
+Sam, reading a v72 answer: *"Sierra is still not answering correctly. The request
+was to compare typical CNA courses to Typical LVN and other related jobs."* His
+visitor wrote **"I have a cna cert and live in the San Gabriel Valley"**, and v72
+sent them to **Los Medanos College — Contra Costa County, 346 miles** — while
+stating the catalog showed no San Gabriel Valley college teaching an LVN entry
+program. **Five do, 87 course rows between them:** Pasadena City NURS 102/125
+(28), Citrus VNRS 150 (20), Glendale NS 110 (19), Mt. San Antonio VOC VN101 (12),
+Rio Hondo VN 61 (8). Sam confirmed Citrus independently from the college's own
+page while the fix was in flight.
+
+**Three defects, all fixed and shipped ([#1624](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1624), [#1629](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1629)):**
+
+1. **The place never resolved.** `resolveAskedPlace` knew `<county> county`,
+   three aliases and bare REGION names, and skips "Los Angeles" because nine
+   colleges carry it. `SUBREGIONS` (13 names) now carries its own anchor
+   campuses: the county sets the band, their centroid orders within it.
+   Re-ranked — Pasadena 6 mi, Rio Hondo 7, Citrus 9; Los Medanos 34th of 43.
+2. **The CNA column was one course said six ways.** `cpl_course_title_norm`
+   never expanded **CNA**, so 22 colleges teaching one acute-care course arrived
+   as seven rows. It expands `cna`/`lvn` and folds `aide`→`assistant` now.
+3. **The rule demanded "five to eight rows"**, which forced the padding. Gone;
+   the columns are stated as two independent lists.
+
+**A/B run 35402876913: candidate ALL MODES OK, ZERO regressions, five 7s
+assertions fixed.** The deployed bytes are identical to the A/B'd commit.
+
+## ⚠️ WHAT THE SIERRA LANE OWES YOU
+
+1. **`s276-fable-precedent-names-its-program` is now a FALSE NEGATIVE, and is the
+   next Sierra fix.** v73 writes *"no exhibit in our data shows a college that has
+   already articulated CNA credit specifically into an LVN course"* — **Chaffey
+   NURVN 414 is exactly that** (Acute Care Nursing Assistant, 6 units, in
+   Chaffey's LVN program). The block ranked Lemoore's CNA-into-a-CNA-course
+   first. Smoke 7c asserts Chaffey and passes on the Orange County question, so
+   the block CAN reach it. Needs its own A/B.
+2. **The smoke's anon probe of `program_typical_courses` is red on main and the
+   answers are fine.** Three runs failed on that one assertion. `edge_logs` show
+   the function's own RPCs at 200 on either side of the probe's 500, and
+   `postgrest_logs` logged `57014` for `anon` — the 3 s `statement_timeout` under
+   contention. The RPC is **115 ms**. ⚠️ **The probe reports a timeout and a
+   wrong answer identically** (`rows = rows if isinstance(rows, list) else []`),
+   which is what sent this session chasing a cost regression twice. Fixing the
+   probe to distinguish them is the smallest real fix; an index on
+   `chatbox_college_courses.top_code` is NOT (see the KB note below).
+3. **Sam has not read a v73 answer in a browser.** No session can — the sandbox
+   is egress-blocked from `*.supabase.co`.
+4. **`CLAUDE.md` is 60,839 bytes against its 60,000 budget** (1.01×, flagged
+   `always_loaded`). Not caused by this run; it wants a pare-down.
+
+## What part one learned
+
+- ⭐ **A false zero is the worst answer Sierra gives, and both causes here were
+  vocabulary, not data** — the place had no name she knew, the course had an
+  abbreviation she did not expand. Neither surfaced as an error; both rendered a
+  confident, well-formed answer.
+- ⚠️ **The tell was the answer arguing with itself**: it named Pasadena and Rio
+  Hondo from the model's own knowledge, then said *"my data doesn't confirm their
+  course lists here"* while the catalog held 28 rows and 8. When an answer names
+  a thing and disclaims knowing it, retrieval missed what the model did not.
+- ⚠️ **A guard pinned to a quotation is not a guard.** Smoke 7s PASSED against
+  unfixed production: its ban listed v72's three exact phrasings, and it asked
+  only that a college be NAMED, which the model supplies from its own knowledge.
+  It bans the family now and requires a course BY NUMBER.
+- ⚠️ **Twice I made a grouping key canonical in SQL — first a sort, then a dedupe
+  — and both were already done downstream by `typicalFoldKey()`, both cost real
+  time, and both broke or nearly broke a consumer.** The sort broke the smoke's
+  probe outright. Before making a value canonical, find who reads it and whether
+  something else already does it.
+- ⭐ **`EXPLAIN (ANALYZE, TIMING ON)` said 4,809 ms for a 115 ms statement** —
+  two clock reads per row over 141,696 rows. It pointed straight at an index on a
+  table whose loader replaces every row. KB note:
+  `methodology-explain-analyze-timing-is-not-free`.
+
+## Read in order (Sierra)
+
+`docs/reference/lanes/sierra-retrieval-corpus.md` ·
+`docs/reference/lanes/sierra-false-absences.md` (the sub-region is its FIFTH
+false-absence class) · `docs/cpl_assistant_lessons.md` (2026-09-18/19) ·
+`docs/kb-notes/methodology-explain-analyze-timing-is-not-free.md`.
+
+`cpl_memory` rows from this run: `a-sub-region-is-a-place-too-2026-09-18` ·
+`one-course-said-seven-ways-is-not-seven-courses-2026-09-18` ·
+`a-sorted-grouping-key-broke-the-consumer-that-read-it-2026-09-18` ·
+`a-guard-pinned-to-a-quotation-is-not-a-guard-2026-09-18` ·
+`cpl-chat-v73-subregion-anchor-live-2026-09-18` ·
+`v73-precedent-block-now-produces-a-false-negative-2026-09-18` ·
+`the-smoke-anon-probe-times-out-where-the-function-succeeds-2026-09-19` ·
+`explain-analyze-timing-inflates-a-wide-seq-scan-2026-09-19`.
+
+---
+
+# PART TWO — SKYVIEW / AUTH / RE-MINT (SkyLedger)
 
 ⚠️ **THIS IS AN EMERGENCY CHECKPOINT (Rule 9a).** `kb/_context_budget.py` read
 **31,860 tokens left (95.9% used)** — below the 50,000 EMERGENCY line — right
