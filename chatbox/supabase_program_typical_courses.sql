@@ -6,7 +6,7 @@
 -- Applied live via the Supabase MCP on 2026-09-18 as:
 --   program_typical_courses                     (the first version)
 --   program_typical_courses_linear_normalizer   (the linear rewrite, ~16:05Z)
---   cpl_course_title_norm_cna_expansion             (this version, 2026-09-18, S277)
+--   cpl_course_title_norm_cna_expansion_flat        (this version, 2026-09-18, S277)
 --
 -- ⚠️ COST IS PART OF CORRECTNESS ON THIS ROUTE (the programs-route lesson,
 -- 2026-09-17). The first version measured 65 ms on two programs and 32,986 ms
@@ -109,7 +109,6 @@ as $function$
   -- regexp_replace calls per row, one with a 60-word alternation, at ~0.45 ms a
   -- row; 47 health programs (10,106 rows) took 33 s and the API returned 500
   -- (statement timeout) to the smoke and to the preview function on 2026-09-18.
-  -- Two small regexes, then a word filter: the same 47 programs in ~0.7 s.
   --
   -- THE ABBREVIATION HAS TO EXPAND (2026-09-18, S277). "CNA" and "LVN" are the
   -- words colleges type for the very programs this function groups, and neither
@@ -124,46 +123,42 @@ as $function$
   -- 22 colleges teach that course and not one of those rows beat Home Health
   -- Aide at 7, so the table Sierra drew for a CNA holder listed six
   -- near-duplicates of one course as six things their training covers.
-  -- 'aide' folds to 'assistant' for the same reason: it merges "Nurse Aide"
-  -- into "Nurse Assistant" and leaves "Home Health Aide" and "Behavioral Health
-  -- Aide" as their own groups, which are different courses.
-  -- Measured effect on TOP 1230.30: Nurse Assistant 48 -> 50 colleges, and the
-  -- acute-care family 10 -> 16 once the consumer folds the reorderings.
+  -- 'aide' folds to 'assistant' for the same reason: it merges "Nurse Aide" into
+  -- "Nurse Assistant" and leaves "Home Health Aide" and "Behavioral Health Aide"
+  -- as their own groups, which are different courses. Measured on TOP 1230.30:
+  -- Nurse Assistant 48 -> 50 colleges, the acute-care family 10 -> 16 once the
+  -- consumer folds the reorderings.
   --
-  -- ⚠️ WORD ORDER IS FOLDED DOWNSTREAM, NOT HERE, AND THE KEY STAYS READABLE.
-  -- foldTypicalRows() in the cpl-chat function groups rows by typicalFoldKey(),
-  -- which sorts the CONTENT STEMS of `norm` and unions the college arrays -- so
-  -- "acute care nurse assistant" and "nurse assistant acute care" are already
-  -- one family by the time anything renders. Sorting the words HERE as well was
-  -- redundant, and it broke a real consumer: the smoke's anon probe reads
-  -- `norm == 'nurse assistant'` directly, and reported 0 colleges for it while
-  -- the fold was working perfectly (run 35399461350). `norm` is a readable,
-  -- first-occurrence-ordered key, and a caller may match on it.
-  with flat as (
-    select ' ' || regexp_replace(
-             regexp_replace(lower(coalesce(title, '')), '\(.*?\)', ' ', 'g'),
-             '[^a-z0-9]+', ' ', 'g') || ' ' as t
-  ), expanded as (
-    -- Padded with a space on both sides above, so a plain replace() is a
-    -- whole-word replace and "CNA 21L" expands the way a titled course does.
-    select replace(replace(replace(replace(t,
-             ' cnas ', ' nurse assistant '),
-             ' cna ',  ' nurse assistant '),
-             ' lvns ', ' vocational nurse '),
-             ' lvn ',  ' vocational nurse ') as t
-    from flat
-  ), mapped as (
+  -- ⚠️ ONE FLAT EXPRESSION: NO CTE CHAIN, NO DEDUPE, NO SORT. Two revisions of
+  -- this function tried to make the KEY canonical here, and both were redundant
+  -- AND expensive, because foldTypicalRows()/typicalFoldKey() in the cpl-chat
+  -- function already sorts the content stems of `norm` and unions the college
+  -- arrays. Measured over all 141,696 titles:
+  --   pre-S277 (no expansion)      3,463 ms
+  --   this (flat + expansion)      3,987 ms  (+15%, what the fix actually costs)
+  --   flat + dedupe                5,203 ms  (+1,216 ms; the CNA family is 50
+  --                                           colleges either way — it bought
+  --                                           nothing)
+  --   CTE chain + dedupe           5,426 ms
+  -- The extra cost is NOT free: the anon role carries statement_timeout=3s, and
+  -- the CTE version made the smoke's anon probe time out on every run (rows=0
+  -- against a threshold of 30) while the answers themselves were correct.
+  -- ⚠️ A sorted key ALSO breaks that probe, which reads `norm` as a string.
+  -- Keep this expression flat, and keep `norm` readable and in source order.
+  select coalesce(array_to_string(array(
     select case t.w
              when 'nursing' then 'nurse' when 'nurses' then 'nurse'
-             when 'assisting' then 'assistant' when 'assistants' then 'assistant'
-             when 'assistance' then 'assistant'
+             when 'assisting' then 'assistant' when 'assistants' then 'assistant' when 'assistance' then 'assistant'
              when 'aide' then 'assistant' when 'aides' then 'assistant'
-             when 'foundations' then 'fundamentals' when 'foundation' then 'fundamentals'
-             when 'fundamental' then 'fundamentals'
+             when 'foundations' then 'fundamentals' when 'foundation' then 'fundamentals' when 'fundamental' then 'fundamentals'
              when 'intro' then 'introduction' when 'introductory' then 'introduction'
-             else t.w end as w,
-           t.ord
-    from unnest(string_to_array(trim((select t from expanded)), ' ')) with ordinality as t(w, ord)
+             else t.w end
+    -- Padded with a space on both sides, so a plain replace() is a whole-word
+    -- replace and "CNA 21L" expands the way a titled course does.
+    from unnest(string_to_array(trim(replace(replace(replace(replace(
+           ' ' || regexp_replace(regexp_replace(lower(coalesce(title, '')), '\(.*?\)', ' ', 'g'), '[^a-z0-9]+', ' ', 'g') || ' ',
+           ' cnas ', ' nurse assistant '), ' cna ', ' nurse assistant '),
+           ' lvns ', ' vocational nurse '), ' lvn ', ' vocational nurse ')), ' ')) with ordinality as t(w, ord)
     where t.w <> ''
       -- 's' is the possessive left behind by the punctuation strip ("Nurse's Aide").
       and t.w <> all(array['i','ii','iii','iv','v','vi','1','2','3','4','5','6','a','b','c','d','e','s',
@@ -171,11 +166,7 @@ as $function$
                            'theory','lecture','lab','laboratory','clinical','clinic','clinicals','practicum','skills','skill',
                            'training','program','course','certified','cert','level','part','section','concepts','principles',
                            'applications','practice'])
-  )
-  -- Dedupe on the MAPPED word, keeping first-occurrence order: the expansion can
-  -- introduce a repeat ("CNA/Certified Nurse Assistant" -> nurse assistant twice).
-  select coalesce(array_to_string(array(
-    select d.w from (select w, min(ord) as ord from mapped group by w) d order by d.ord
+    order by t.ord
   ), ' '), '');
 $function$;
 
