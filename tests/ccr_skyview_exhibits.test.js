@@ -126,6 +126,14 @@ function build(withExhibits) {
     runScripts: "dangerously", pretendToBeVisual: true,
     url: "https://example.org/prototype/skyview.html",
     beforeParse(window) {
+      /* ⚠️ THE ROUTE CHECKS BELOW WALK INTO #comprehensive, WHICH NOW NEEDS A
+       * RUNG (Sam, 2026-09-19 — a read-only SkyView may not "access views
+       * where edits could be done", and the comprehensive view embeds the
+       * forest, whose "Open this one" opens the decision surface). This suite
+       * is about which UNIVERSE a hash selects, so it declares a curator and
+       * leaves the gate itself to ccr_skyview_read_only.test.js. Same fixture
+       * shape as ccr_skyview_staged_move.test.js. */
+      window.CPL_TEAM_PHRASE = { get: () => "fixture-team-phrase" };
       window.CPL_SKYVIEW_OPENS = "map";   // the flat map; the Sky has its own suite
       window.HTMLCanvasElement.prototype.getContext = function () { return fakeCtx(); };
       if (withExhibits) { window.CPL_CCR_EXHIBITS = EXU; window.CPL_CCR_EXHIBITS_MEMBERS = EXM; }

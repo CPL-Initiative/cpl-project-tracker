@@ -132,7 +132,32 @@ window.__ccrPreview = function(el, pack){
   el.innerHTML = s.join("");
 };
 
+/* ══ THE SECOND STAGING PATH, AND IT HAD NO GATE (Sam, 2026-09-19) ═════════
+ * This is a full curation surface — "Move any course to the identity it
+ * belongs to", a drag target per circle, a Move button for people who would
+ * rather not drag, and a review-status selector — with its own `moves` array.
+ * It predates the curation ladder, it lives in a DIFFERENT FILE from
+ * curationRung(), and so the ladder never saw it. Two ordinary doors reached
+ * it from a read-only page: the comprehensive view embeds the forest, whose
+ * "Open this one" calls straight here, and #work/<discipline> routed here by
+ * URL. Gating the Views menu alone would have left both standing.
+ *
+ * ⚠️ IT ASKS THE LADDER, IT DOES NOT REIMPLEMENT IT. window.__ccrRung is
+ * curationRung/canStage/canExecute exported from ccr_universe.js, so the page
+ * still has exactly one place that decides — the property that suite asserts.
+ * Reading cpl_sb or cpl_team_pass here would be a second decider and the
+ * beginning of the drift.
+ *
+ * ⚠️ AND IT FAILS CLOSED. No ladder means no permission: the build inlines both
+ * files into the one page every time (it refuses to write a page missing either
+ * placeholder), so an absent __ccrRung is a broken build, never a bare reader
+ * who should be let through. */
 window.__ccrDecision = function(discName, i){
+  var L = window.__ccrRung;
+  if(!L || !L.canStage()){
+    if(typeof window.__ccrUniverse === "function") window.__ccrUniverse({solo:true});
+    return;
+  }
   var DATA = JSON.parse(document.getElementById("atlas-data").textContent);
   var pack = DATA.detail[discName][i];
   var view = document.getElementById("view");

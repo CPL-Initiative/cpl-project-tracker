@@ -1879,3 +1879,90 @@ courses actually in it, so pulling one into the queue does not re-flow it.
 
 #1618 (the band, and the artifact mistake), #1619 (the drop answer, the queue,
 the port to the sources, the build guard, the inventory fix).
+
+---
+
+## 2026-09-19 (SkyWarden, S278) — the read-only page had three doors, and none was in a menu
+
+Sam's ask was two sentences and both were reports of what the screen failed to
+tell him: *"I just want to make sure that I can see on SkyView if I am signed on
+with either magic link or team phrase AND if not, I want to see clearly that I
+am in Read Only mode"*, and *"I am able in current mode to go to the links on
+the side menu and those should be grayed out in read mode."* The goal underneath
+them: *"allow public read only SkyView access but prevent any actions to be
+taken that would edit or access views where edits could be done."*
+
+### ⭐ A gate on the menu is a gate on the polite path only
+
+The ladder shipped the day before (#1625) and the Views menu already withheld
+its two COBI links below the STAGE rung. What it did not hold were the routes:
+`#comprehensive`, `#disciplines`, `#subjects`, `#esl` and `#work/<discipline>`
+are ordinary URLs, reached by a shared link, a bookmark, a typed hash or the
+Back button without the menu ever opening.
+
+⚠️ **The failure mode is that the fix LOOKS DONE.** Remove the item and the
+screenshot is correct; the URL still works and nothing on screen says so. The
+gate went onto `__ccrRoute()`, the one funnel every route passes, and the suite
+now asserts the two lists AGREE — a view given a rung in the menu but missing
+from `GATED_ROUTES` is exactly the hole and is invisible to inspection.
+
+### ⛔ A single-decider guard is only as wide as the files it reads
+
+`ccr_skyview_read_only.test.js` asserts *"nothing outside curationRung() decides
+authorization"*, and it passed throughout. `ccr_atlas_graph.js`'s
+`__ccrDecision` is a complete drag-to-move curation surface — a drop target per
+circle, a Move button, its own `moves[]`, a review-status selector — and the
+guard never saw it, **because the guard reads `ccr_universe.js` and the surface
+lives in another file.** Two ordinary doors reached it from a read-only page:
+the comprehensive view embeds the forest, whose *Open this one* calls it
+directly, and `#work/<discipline>` routed to it.
+
+The repair keeps one decider rather than adding a second: `window.__ccrRung`
+exports the ladder and graph.js asks it, failing CLOSED when it is absent
+(the build refuses to write a page missing either file, so a missing ladder is
+a broken build, never a bare reader). The generalizable line is the heading.
+
+### ⚠️ Markup that paints before its own gate is ungated
+
+The static `u-ro-line` banner hardcoded `href="../index.html#unified-courses/list"`
+so the band would have content before `renderCurationLine()` measured it (the
+canvas is sized off its height). That link painted for every reader in the first
+frame — underneath the sentence telling them they were read only — on precisely
+the stand-alone page Sam shares outside the team. **The suite REQUIRED that link**
+("the link points at the CCR tab in COBI"), written when the band's job was to
+answer *how do I log in to curate*. The assertion is now inverted: the shipped
+markup carries no link at all.
+
+### ⭐ Two rungs opening on the same words is the same bug as no sign at all
+
+Rung 1 read *"**Read only.** Moves stage in this browser alone"* — rung 0's
+sentence — so a curator who had just entered the team phrase got no confirmation
+it had taken. A guard asserting each branch SAYS something would have passed.
+The suite now asserts the three leads are **distinct**: **Read only** · **Team
+phrase** · **Magic link**.
+
+### ⭐ When a user asks whether two surfaces share a sign-in, the model is usually right and merely unstated
+
+*"I'm not sure if I'm also signed in on COBI main page."* It is one credential:
+`cpl_sb` and `cpl_team_pass` are `localStorage` keys, and `prototype/skyview.html`
+and `index.html` are the same origin — holding one here IS holding it there. No
+code change was needed for the fact, only for saying it. Rungs 1 and 2 say *"here
+and in COBI"*; rung 0 stays exactly as Sam read it on screen.
+
+### What the workspace shell forced
+
+By discipline, By subject and ESL packaging are **one shell with one mode bar**,
+so gating two of the three would have left the third as a doorway into the other
+two. They travel together. The course outline of record went the other way and
+stayed OPEN — it is reading matter, and Sam's line is about edits — with its
+reviewer panel, its per-skill Remove (one funnel, `dropBtn`) and Add a skill
+carrying the rung instead.
+
+### Two suites caught the gate working
+
+`ccr_skyview_outline.test.js` and `ccr_skyview_exhibits.test.js` failed on the
+first run: one drove the reviewer panel, the other routed to `#comprehensive`.
+Both were exercising curator behavior without declaring a curator. They now use
+the established fixture (`window.CPL_TEAM_PHRASE = { get: () => … }`), which is
+the honest fix — jsdom loads no external script, so a gate that failed open when
+its module is missing would be no gate at all.

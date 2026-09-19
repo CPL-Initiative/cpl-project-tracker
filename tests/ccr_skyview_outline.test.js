@@ -188,6 +188,15 @@ const dom = new JSDOM(html, {
   runScripts: "dangerously", pretendToBeVisual: true,
   url: "https://example.org/prototype/skyview.html",
   beforeParse(window) {
+    /* ⚠️ THIS SUITE DRIVES CURATOR CONTROLS, SO IT HAS TO SAY WHO IS DRIVING.
+     * The outline's reviewer panel, its Remove buttons and Add a skill are
+     * built only above the STAGE rung (Sam, 2026-09-19: a read-only SkyView
+     * must "prevent any actions to be taken that would edit"). Same fixture
+     * shape as ccr_skyview_staged_move.test.js: jsdom fetches no external
+     * script, so the rung is declared here rather than by team_phrase.js —
+     * deliberately, because a gate that failed open when its module is
+     * missing would be no gate at all. */
+    window.CPL_TEAM_PHRASE = { get: () => "fixture-team-phrase" };
     window.CPL_SKYVIEW_OPENS = "map";   // this suite measures the flat map; the Sky has its own (ccr_skyview_sky.test.js)
     window.HTMLCanvasElement.prototype.getContext = function () { return fakeCtx(); };
     // The description shards, served rather than 404'd: two of the six layers
