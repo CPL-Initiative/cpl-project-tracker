@@ -1,7 +1,7 @@
 ---
 title: "SkyView / the CCR curation interface — lane state"
 created: 2026-08-28
-updated: 2026-09-10
+updated: 2026-09-19
 tags: [reference, roadmap-lane]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -49,16 +49,76 @@ A hand-patch survives review and deploy and dies on the next rebuild; it did, on
 `tests/skyview_built_from_source_test.py`, in CI and in `scripts/check_generated.sh`.
 [`methodology-a-generated-file-accepts-your-edit`](../../kb-notes/methodology-a-generated-file-accepts-your-edit.md)
 
-**A three-rung curation ladder (2026-09-18, #1625).** Sam specified it across
-three messages: *"To position courses to merge needs at least team code auth to
-do"*, *"magic link can do any of the three"*, *"Team code or magic should be
-able to navigate to all links"*.
+**A three-rung curation ladder (2026-09-18, #1625; widened 2026-09-19).** Sam
+specified it across three messages: *"To position courses to merge needs at
+least team code auth to do"*, *"magic link can do any of the three"*, *"Team
+code or magic should be able to navigate to all links"*. On 2026-09-19 he named
+the goal the ladder serves: *"allow public read only SkyView access but prevent
+any actions to be taken that would edit or access views where edits could be
+done."*
 
 | Rung | Credential | Opens |
 |---|---|---|
-| 0 VIEW | the link alone | map, search, details, Ask |
-| 1 STAGE | the team phrase | positioning a course for a merge; the COBI and CCR-table links |
+| 0 VIEW | the link alone | the map, search, details, the Ask, the course outline of record, How SkyView works |
+| 1 STAGE | the team phrase | positioning a course; the comprehensive view, By discipline, By subject, ESL packaging, the decision surface, the outline's reviewer panel; the COBI and CCR-table links |
 | 2 EXECUTE | a magic-link reviewer | Save, writing `kb_curation` |
+
+⭐ **RUNG 0 IS NOW A DELIBERATE PUBLIC SURFACE, AND WHAT IT HOLDS WAS CHOSEN
+RATHER THAN INHERITED.** Four views left it on 2026-09-19 because each reaches a
+staging control: the comprehensive view embeds the forest, whose *Open this one*
+opens the decision surface; the Disciplines table carries a **Decisions** button
+into the same place; and **By discipline / By subject / ESL packaging share ONE
+workspace shell with ONE mode bar**, so a reader let into ESL is one click from
+the Disciplines table. Asked whether to gray them or hide them, Sam chose
+**hide** — a rung-0 menu lists SkyView, How SkyView works, and one note naming
+the remedy. The course outline of record STAYS open: it is reading matter, and
+its reviewer panel carries the rung instead.
+
+⚠️ **THE MENU WAS NEVER THE ONLY DOOR, AND GATING IT ALONE WOULD HAVE LOOKED
+RIGHT IN A SCREENSHOT.** `#comprehensive`, `#disciplines`, `#subjects`, `#esl`
+and `#work/<discipline>` are ordinary URLs — a shared link, a bookmark, a typed
+hash or Back reaches them without the menu ever opening. `GATED_ROUTES` puts the
+same question on `__ccrRoute()`, the one funnel every route passes; a refused
+route lands on the map and says why. `refreshAuthChrome()` re-runs it when a
+credential is lost, so a curator who signs out in another tab stops standing on
+the Disciplines table. The suite asserts the two lists AGREE — a view given a
+rung in the menu but left out of `GATED_ROUTES` is invisible on screen and is
+exactly the hole.
+
+⛔ **THE LADDER HAD A SECOND DOORWAY IN ANOTHER FILE, AND THE SINGLE-DECIDER
+GUARD COULD NOT SEE IT.** `ccr_atlas_graph.js`'s `__ccrDecision` is a full
+drag-to-move curation surface — *"Move any course to the identity it belongs
+to"*, a drop target per circle, a Move button, a review-status selector — with
+its own `moves[]`. It predates the ladder and lives in a different file, so
+`curationRung()` never saw it, and `ccr_skyview_read_only.test.js`'s *"nothing
+outside curationRung() decides authorization"* passed throughout **because it
+only read `ccr_universe.js`**. The lesson generalizes: **a single-decider guard
+is only as wide as the files it reads.** Fixed by exporting `window.__ccrRung`
+and having graph.js ask it — one decider still — failing CLOSED when absent,
+since the build refuses to write a page missing either file.
+
+⚠️ **THE BAND NAMES THE CREDENTIAL, BECAUSE TWO RUNGS OPENED ON THE SAME WORDS.**
+Rung 1 read *"**Read only.** Moves stage in this browser alone"* — rung 0's
+sentence — so a curator who had just entered the phrase could not tell it had
+taken. Sam, 2026-09-19: *"I just want to make sure that I can see on SkyView if
+I am signed on with either magic link or team phrase AND if not, I want to see
+clearly that I am in Read Only mode."* Each rung now leads with its own name
+(**Read only** · **Team phrase** · **Magic link**), and the suite asserts the
+three leads are DISTINCT rather than merely present.
+
+⭐ **AND IT ANSWERS THE COBI HALF, WHICH IS ONE CREDENTIAL.** His other
+uncertainty: *"I'm not sure if I'm also signed in on COBI main page."* `cpl_sb`
+and `cpl_team_pass` are `localStorage` keys and `prototype/skyview.html` and
+`index.html` are the **same origin**, so holding one here IS holding it there.
+Rungs 1 and 2 say *"here and in COBI"*; rung 0 stays exactly as he read it on
+screen and leaves COBI to the menu's one note.
+
+⚠️ **THE PRE-JS BANNER HANDED EVERY READER A COBI DOOR.** The static
+`u-ro-line` markup hardcoded `href="../index.html#unified-courses/list"` and
+painted in the gap before `renderCurationLine()` ran — underneath the sentence
+saying the reader was read only — so the Views-menu gate never applied to it.
+Removed; the suite's assertion **inverted** from requiring that link to
+forbidding any link in the shipped markup.
 
 `curationRung()` is the ONLY place any of it is decided — the rungs moved twice
 inside one conversation, and nothing else reads the storage keys. Its ranking
@@ -76,8 +136,8 @@ that sentence.
 
 ⚠️ **The rung gate is a convenience, not a boundary, and the code says so.**
 Staging writes nothing, so gating it in the browser IS the mechanism; for EXECUTE
-the button is a courtesy and `kb_curation`'s RLS is the real refusal. Hiding the
-COBI links removes the OFFER rather than the access — `pages.yml` serves
+the button is a courtesy and `kb_curation`'s RLS is the real refusal. Withholding
+a view or a COBI link removes the OFFER rather than the access — `pages.yml` serves
 `prototype/` and COBI alike, so anyone holding an address walks in. 12 of the 29
 Everyone-rung tabs render live internal data to a signed-out reader; closing that
 is RLS or the [public/private split](public-private-repo-split.md).

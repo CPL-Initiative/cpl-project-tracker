@@ -1931,6 +1931,13 @@ function curationRung(){
 }
 function canStage(){ return curationRung() >= 1; }
 function canExecute(){ return curationRung() >= 2; }
+/* ⚠️ EXPORTED BECAUSE THE LADDER HAS A SECOND DOORWAY IN ANOTHER FILE.
+ * ccr_atlas_graph.js's __ccrDecision is a full drag-to-move curation surface
+ * with its own moves[] — a staging path this file's canStage() never saw,
+ * reachable from the comprehensive view's forest ("Open this one") and from
+ * #work/<discipline>. It asks THIS function rather than reading the storage
+ * keys itself, so the page still has exactly one place that decides. */
+window.__ccrRung = { rung: curationRung, canStage: canStage, canExecute: canExecute };
 
 /* ══ THE STAGED-TO-MOVE STATE — ON THE MODEL, NOT THE VIEW (v4 item 7) ═══════
  * Sam, 2026-09-06, after dragging a course onto another identity: "It didn't
@@ -3139,12 +3146,16 @@ window.__ccrUniverse = function(opts){
        * carries it verbatim and renderCurationLine() only ever replaces it. The
        * chrome ResizeObserver watches u-ro-line, so a later re-render
        * re-measures on its own. */
+      /* ⚠️ THE MARKUP CARRIES THE RUNG-0 SENTENCE AND NO LINK (Sam, 2026-09-19).
+       * It used to hardcode an <a> to ../index.html#unified-courses/list, which
+       * paints for EVERY reader in the gap before renderCurationLine() runs —
+       * so the stand-alone page Sam shares outside the team opened with a COBI
+       * door in its first frame, underneath the very sentence saying the reader
+       * was read only. The gate in the Views menu could not see it. The signed-in
+       * branches build their own controls, so nothing is lost by starting here. */
       '<p class="u-ro-line" id="u-ro-line">'+
         '<strong>Read only.</strong> Moves stage in this browser alone. '+
-        'Signed-in curators save in '+
-        '<a href="../index.html#unified-courses/list" target="_blank" rel="noopener" '+
-          'title="The Common Course Reference table in COBI \u2014 where a signed-in reviewer saves a merge">'+
-          'COBI\u2019s Common Course Reference tab</a>.'+
+        'Sign in to position courses and save merges.'+
       '</p>'+
       /* The sign-in form mounts HERE, inside #u-full, for the same reason the
        * band is: browser full screen paints only #u-full, and a sign-in the
@@ -6235,7 +6246,20 @@ function drawWrites(){
  * ⚠️ THE NON-REVIEWER'S SENTENCE MUST STAY TRUE. Sam shared this page on
  * "Moves stage in this browser alone", and for rungs 0 and 1 it still is —
  * nothing below the EXECUTE rung sends anything anywhere. Only rung 2 gets a
- * sentence about saving, and only rung 2 can. */
+ * sentence about saving, and only rung 2 can.
+ *
+ * ⚠️ EACH RUNG LEADS WITH THE NAME OF ITS OWN CREDENTIAL (Sam, 2026-09-19:
+ * "I just want to make sure that I can see on SkyView if I am signed on with
+ * either magic link or team phrase AND if not, I want to see clearly that I am
+ * in Read Only mode"). Rung 1 used to open on the same two words as rung 0, so
+ * a curator who had just entered the phrase could not tell it had taken.
+ *
+ * ⚠️ AND RUNGS 1 AND 2 ANSWER THE COBI HALF, because that was the other half of
+ * what he asked ("I'm not sure if I'm also signed in on COBI main page"). It is
+ * ONE credential: cpl_sb and cpl_team_pass are localStorage keys, and SkyView
+ * and COBI are the same origin — so holding one here IS holding it there. Rung
+ * 0 stays as he read it on screen and says nothing about COBI; the Views menu's
+ * one note carries the remedy. */
 function renderCurationLine(){
   var el=document.getElementById("u-ro-line"); if(!el) return;
   var rung=curationRung(), n=moves.length;
@@ -6243,12 +6267,14 @@ function renderCurationLine(){
   if(rung>=2){
     var who="";
     try{ var s=window.CPL_SESSION.get(); who=(s&&s.email)||""; }catch(e){}
-    el.innerHTML='<strong>Signed in'+(who?(" as "+esc(who)):"")+'.</strong>'+staged+' '+
+    el.innerHTML='<strong>Magic link \u2014 signed in'+(who?(" as "+esc(who)):"")+
+      ', here and in COBI.</strong>'+staged+' '+
       (n?'<button type="button" class="linkish" id="u-save-merges">Save '+n+' move'+(n===1?"":"s")+
          ' to the Common Course Reference</button> · ':'Stage a move and you can save it here. ')+
       '<button type="button" class="linkish" id="u-signout">Sign out</button>';
   } else if(rung===1){
-    el.innerHTML='<strong>Read only.</strong> Moves stage in this browser alone.'+staged+
+    el.innerHTML='<strong>Team phrase \u2014 signed in here and in COBI.</strong> You can position '+
+      'courses; moves stage in this browser alone.'+staged+
       ' <button type="button" class="linkish" id="u-signin-open">Sign in to save them</button>';
   } else {
     el.innerHTML='<strong>Read only.</strong> Moves stage in this browser alone. '+
@@ -6383,16 +6409,16 @@ var VIEWS=[
   {key:"skyview", id:"u-nav-sky", label:"SkyView",
    title:"The map alone, filling the window",
    go:function(){ window.__ccrUniverse({solo:true}); }},
-  {key:"comprehensive", id:"u-nav-comp", label:"Comprehensive view",
+  {key:"comprehensive", rung:1, id:"u-nav-comp", label:"Comprehensive view",
    title:"The map with the explanatory panes and the work grid below it",
    go:function(){ window.__ccrUniverse({solo:false}); }},
-  {key:"disciplines", id:"u-nav-forest", label:"By discipline",
+  {key:"disciplines", rung:1, id:"u-nav-forest", label:"By discipline",
    title:"Every discipline as a list — identities, stand-alone courses, decisions",
    go:function(){ window.__ccrWorkspace("discipline", {q:boxValue()}); }},
-  {key:"subjects", id:"u-nav-subject", label:"By subject",
+  {key:"subjects", rung:1, id:"u-nav-subject", label:"By subject",
    title:"Every four-letter Common SUBJ code, and the discipline it belongs to",
    go:function(){ window.__ccrWorkspace("subject", {q:boxValue()}); }},
-  {key:"esl", id:"u-nav-esl", label:"ESL packaging",
+  {key:"esl", rung:1, id:"u-nav-esl", label:"ESL packaging",
    title:"The first packaging fold, drawn against today’s data",
    when:eslAvailable,
    go:function(){ window.__ccrWorkspace("esl"); }},
@@ -6413,7 +6439,17 @@ function tellParent(action){
 }
 function viewsMenuInto(host){
   if(!host) return;
-  var items=VIEWS.filter(function(v){ return !v.when || v.when(); }).map(function(v){
+  /* ⚠️ A VIEW WITH A `rung` LEAVES THE MENU ENTIRELY BELOW IT (Sam, 2026-09-19:
+   * "those should be grayed out in read mode", then choosing hide over gray —
+   * "My goal is to allow public read only SkyView access but prevent any
+   * actions to be taken that would edit or access views where edits could be
+   * done"). The four gated views all reach a staging control: the workspace's
+   * three modes share ONE shell with one mode bar, so a reader let into ESL is
+   * one click from the Disciplines table and its Decisions button; and the
+   * comprehensive view embeds the forest, whose "Open this one" opens
+   * __ccrDecision. SkyView and How SkyView works carry no edit and stay open,
+   * which is the page Sam shares. */
+  var items=VIEWS.filter(function(v){ return (!v.when || v.when()) && (!v.rung || curationRung()>=v.rung); }).map(function(v){
     if(v.key===curView)
       return '<span class="u-views-here" aria-current="page" title="'+esc(v.title)+'">'+esc(v.label)+'</span>';
     return '<button class="linkish" type="button" id="'+v.id+'" data-view="'+v.key+'" title="'+esc(v.title)+'">'+esc(v.label)+'</button>';
@@ -6462,7 +6498,7 @@ function viewsMenuInto(host){
      * ⚠️ HIDING THE LINK IS NOT WHAT PROTECTS COBI. Pages serves it publicly
      * and anyone who knows the address walks in; what this removes is the
      * offer. The gate that matters is RLS on the tables COBI reads. */
-    items.push('<span class="u-views-note">Sign in to open COBI.</span>');
+    items.push('<span class="u-views-note">Sign in to open the curation views and COBI.</span>');
   }
   /* Inside the map's More panel (host[data-flat]) the list renders FLAT under
    * the panel's own "Go to" heading — a menu inside a menu is a door behind a
@@ -6505,6 +6541,13 @@ window.__ccrViewsMenu = viewsMenuInto;
 function refreshAuthChrome(){
   try{ renderCurationLine(); }catch(e){}
   try{ var slot=document.getElementById("u-views-slot"); if(slot) viewsMenuInto(slot); }catch(e){}
+  /* ⚠️ THE CREDENTIAL OWNS THE VIEW, NOT ONLY THE CHROME AROUND IT. A curator
+   * standing on the Disciplines table who signs out — here, or in another tab,
+   * or by letting the session lapse — used to keep the table on screen with a
+   * menu that had just stopped offering it. Re-running the route sends them to
+   * the map the way any other refused route does, hint and all, because the
+   * rung is re-read there rather than decided a second time here. */
+  try{ if(curView && GATED_ROUTES[curView] && !canStage()) window.__ccrRoute(); }catch(e){}
 }
 (function(){
   if(typeof window==="undefined"||!window.addEventListener) return;
@@ -6569,9 +6612,31 @@ function routeArg(){
   var m=String(location.hash||"").replace(/^#/,"").split("/").slice(1).join("/").split("?")[0];
   try{ return decodeURIComponent(m); }catch(e){ return m; }
 }
+/* ⚠️ THE MENU IS NOT THE ONLY DOOR — GATING IT ALONE WOULD BE DECORATION.
+ * #comprehensive, #disciplines, #subjects, #esl and #work/<discipline> are
+ * ordinary URLs: a shared link, a bookmark, a typed hash or the Back button
+ * reaches them without ever opening the menu the item was removed from. So the
+ * one funnel every route passes through asks the same question the menu asks.
+ *
+ * #outline/<id> is NOT here on purpose. A course outline of record is reading
+ * matter, and Sam's line is about edits ("prevent any actions to be taken that
+ * would edit or access views where edits could be done") — so the outline stays
+ * open and its reviewer panel is what carries the rung, down in olOutlineHtml.
+ *
+ * A refused route lands on the map rather than a wall: SkyView is the thing the
+ * reader came for and is open to them. It says why, because a link that
+ * silently goes somewhere else reads as broken. */
+var GATED_ROUTES={comprehensive:1, disciplines:1, subjects:1, esl:1, work:1};
 window.__ccrRoute=function(){
   if(!window.CPL_CCR_UNIVERSE){ if(typeof window.__ccrForest==="function") window.__ccrForest(); return; }
   var k=routeKey(), arg=routeArg();
+  if(GATED_ROUTES[k] && !canStage()){
+    window.__ccrUniverse({solo:true});
+    try{ if(window.history && history.replaceState) history.replaceState(null, "", "#skyview"); }catch(e){}
+    try{ setHint("That view is for signed-in curators. SkyView is open to everyone \u2014 "+
+                 "sign in from the band above to open the rest."); }catch(e){}
+    return;
+  }
   /* `#skyview/cpl` opens the map on the CPL face — a face is a lens, but a
    * lens the reader can send someone a link to. */
   if(k==="comprehensive") window.__ccrUniverse({solo:false, face:(arg==="cpl")?"cpl":"courses"});
@@ -7895,6 +7960,8 @@ function olHtml(nd, isl){
   if(loading) sbody='<p class="empty">Loading…</p>';
   else {
     function dropBtn(x){
+      /* One funnel for every Remove on the outline, so the rung is asked once. */
+      if(!canStage()) return "";
       return ' <button class="btn small ol-sk-act" type="button" data-drop="'+esc(x.k)+'" '+
         'title="Take this skill off the outline. Staged in this browser — nothing is written.">Remove</button>';
     }
@@ -7938,8 +8005,10 @@ function olHtml(nd, isl){
           return '<li><span class="ol-sk">'+esc(x.p)+'</span>'+
             ' <button class="btn small ol-sk-act" type="button" data-restore="'+esc(x.k)+'">Put back</button></li>';
         }).join("")+'</ul></details>':"")+
-      '<p class="row" style="margin:.9em 0 0"><button class="btn small" type="button" id="ol-sk-add">Add a skill</button> '+
-        '<span class="sub">A skill no catalog names — what a learner walks out able to do. Staged, not written.</span></p>';
+      (canStage()
+        ? '<p class="row" style="margin:.9em 0 0"><button class="btn small" type="button" id="ol-sk-add">Add a skill</button> '+
+          '<span class="sub">A skill no catalog names — what a learner walks out able to do. Staged, not written.</span></p>'
+        : "");
   }
   h+=olLayer("skills","Skills a learner would carry out of this course",
     'Imputed from the words the colleges wrote, not supplied by an agency. '+
@@ -7981,7 +8050,12 @@ function olHtml(nd, isl){
     }).join("")+'</ul>', {tag:"0 of 13", empty:true});
 
   /* ── layer 5: what a reviewer may do ──────────────────────────────────── */
-  h+=olLayer("review","What a reviewer may change",
+  /* ⚠️ THE LAYER IS BUILT ONLY FOR A READER WHO MAY (Sam, 2026-09-19). Every
+   * control in it stages a proposal — Propose a different title, Propose a
+   * different subject, Drop the proposals — and a proposal is an edit in the
+   * eyes of the person clicking it, whatever the page says about writing. The
+   * outline itself stays open; this panel is the part that needed the rung. */
+  if(canStage()) h+=olLayer("review","What a reviewer may change",
     'Sam’s ruling, 2026-09-05: reviewers edit titles and re-subject; a re-mint waits until the '+
     'change is <strong>verified</strong> and <strong>admin-released</strong>. The controls below stage a '+
     'proposal in this browser, as do <strong>Add a skill</strong> and <strong>Remove</strong> in the skills '+

@@ -282,10 +282,25 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   await sleep(150);
   const gotoAnon = await gotoOf();
   ok("no rung: neither COBI link is offered", !gotoAnon.includes("CCR table view") && !gotoAnon.includes("COBI"), gotoAnon.join(" · "));
-  ok("no rung: the in-page views are all still there",
-    gotoAnon.includes("Comprehensive view") && gotoAnon.includes("By discipline") && gotoAnon.includes("How SkyView works"), gotoAnon.join(" · "));
-  ok("no rung: the menu says the door exists rather than going quiet",
-    gotoAnon.some((g) => /Sign in to open COBI/.test(g)), gotoAnon.join(" · "));
+  /* ⚠️ THESE TWO FLIPPED ON 2026-09-19 AND THE REASON BELONGS HERE. Until then
+   * the contract was that the in-page views stay open to everyone — they are
+   * views of THIS page, and this page is what Sam shares. He then named the
+   * goal they have to serve: "allow public read only SkyView access but
+   * prevent any actions to be taken that would edit or access views where
+   * edits could be done", and chose HIDE over gray when asked.
+   *
+   * All four reach a staging control. The comprehensive view embeds the
+   * forest, whose "Open this one" opens the decision surface; By discipline
+   * carries a Decisions button into the same place; and By subject and ESL
+   * packaging share ONE workspace shell with ONE mode bar with it, so a reader
+   * let into ESL is one click from the Disciplines table. SkyView and How
+   * SkyView works carry no edit and stay. */
+  for (const v of ["Comprehensive view", "By discipline", "By subject", "ESL packaging"])
+    ok(`no rung: ${v} is withheld`, !gotoAnon.includes(v), gotoAnon.join(" · "));
+  ok("no rung: the two views that carry no edit are still offered",
+    gotoAnon.includes("How SkyView works") && gotoAnon.some((g) => /SkyView$/.test(g)), gotoAnon.join(" · "));
+  ok("no rung: the menu names the remedy rather than going quiet",
+    gotoAnon.some((g) => /Sign in to open the curation views and COBI/.test(g)), gotoAnon.join(" · "));
   ok("no rung: the note is not mistaken for the current view",
     !gotoAnon.some((g) => /^\[here\] Sign in/.test(g)), gotoAnon.join(" · "));
 
