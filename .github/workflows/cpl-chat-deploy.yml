@@ -71,7 +71,7 @@ jobs:
           sha256sum $F
 
       - name: Set up Supabase CLI
-        uses: supabase/setup-cli@v1
+        uses: supabase/setup-cli@v3
         with:
           version: latest
 
