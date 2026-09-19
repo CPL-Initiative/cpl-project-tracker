@@ -143,14 +143,60 @@ nothing about the session that ran it. Start a new one, then confirm:
 python3 scripts/check_hooks_live.py
 ```
 
-## What is still not solved
+## ⚠️ What the documentation says, and it settles this
 
-- **The web runner is ephemeral.** Anything written outside the three repos is
-  gone when the container is reclaimed, so the installer has to run again each
-  time — or the root settings need to come from somewhere durable. A
-  per-machine install (the pattern
-  `scripts/install-three-repo-check.ps1` already uses) covers Sam's local
-  machine but not a fresh cloud session.
+Sam, 2026-09-19: *"I need a persistent solution rather than ephemeral."* The
+installer above writes to the session root, which on the cloud runner is
+`/home/user` — outside all three repos and reclaimed with the container. The
+official docs
+([Settings in cloud sessions](https://code.claude.com/docs/en/settings#settings-in-cloud-sessions))
+say why, and rule out a second approach as well:
+
+> **Shared project settings** (`.claude/settings.json`): read in a session with
+> one repository… **A session with several repositories starts above the
+> clones, so from each repository's `.claude/settings.json` it loads only the
+> plugins and marketplaces the file declares, not permission rules, hooks,
+> `env`, or other keys.**
+
+> **User and project local settings** (`~/.claude/settings.json` and
+> `.claude/settings.local.json`): **not read.**
+
+So the measurement was not a quirk of this runner — it is documented behavior.
+And `~/.claude/settings.json` is not a fallback: cloud sessions never read it.
+
+⚠️ **THE THREE-REPO RULE AND HOOKS-FROM-THE-REPO ARE MUTUALLY EXCLUSIVE.**
+CLAUDE.md requires all three attached; that requirement is what puts the
+session root above the clones. Any fix has to accept one or change the other.
+
+### The persistent options, with what is actually known about each
+
+| | Where it lives | Persistent? | Confidence |
+|---|---|---|---|
+| **Server-managed settings** (claude.ai admin console) | the organization | yes, org-wide | **Documented to reach cloud sessions.** Owner-level change |
+| **Cloud environment setup script** | the environment config | yes, runs at every container start | **Documented.** Writes the root settings before the session begins |
+| **Environment variables** on the environment | the environment config | yes | Documented, but a narrower lever than hooks |
+| **Package the guards as a PLUGIN** | committed in this repo | yes, git-tracked | ⚠️ **Promising, unverified** — see below |
+| Single-repo session | n/a | n/a | Repo settings load fully, but it gives up the three-repo rule |
+
+⭐ **THE PLUGIN ROUTE IS THE ELEGANT ONE AND IS NOT YET PROVEN.** Plugins may
+carry hooks (`hooks/hooks.json`, the same shape as the `hooks` block here), a
+marketplace source may be a **local path**, and plugins are precisely what a
+multi-repo session still loads from a repo's settings — so guards committed to
+this repo would survive every fresh clone. The doubt is one sentence in
+[Discover plugins](https://code.claude.com/docs/en/discover-plugins#configure-team-marketplaces):
+a plugin *"that comes from an external source such as a GitHub repository or
+npm package doesn't load until the team member installs it."* Whether a
+local path inside the clone counts as external decides whether this works
+unattended. **Test it before relying on it.**
+
+## Still open
+
 - **`permissions.allow` is kept in the repo settings with a comment saying it
   does not work**, rather than deleted, so the next session does not re-add it
   expecting a different result.
+- ⚠️ **Auto mode is the classifier.** Sam turned it on 2026-09-18 to reduce the
+  prompts, and it is what produces the ones that cannot be suppressed by an
+  allow rule. Turning it off restores ordinary prompting, where
+  `permissions.allow` works — but only once the settings load at all, which is
+  the same unsolved step. Whether to keep auto mode is a separate decision from
+  where the settings live.
