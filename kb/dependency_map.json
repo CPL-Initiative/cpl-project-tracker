@@ -528,7 +528,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 11
+     "line": 24
     }
    ],
    "main_committers": []
@@ -2896,14 +2896,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 146
+     "line": 180
     },
     {
      "id": "script:scripts/install_prompt_guards.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 146
+     "line": 180
     }
    ],
    "served": true,
@@ -2963,7 +2963,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 201
+     "line": 216
     },
     {
      "id": "script:kb/_doctrine_scenarios.py",
@@ -3217,7 +3217,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 222
+     "line": 237
     },
     {
      "id": "script:kb/_normalize_kb_note_frontmatter.py",
@@ -5053,7 +5053,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 207
+     "line": 222
     },
     {
      "id": "script:kb/doctrine.py",

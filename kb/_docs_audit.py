@@ -103,7 +103,22 @@ THRESHOLDS = {
     "index":         40_000,   # a landing page you must scroll is not a landing page
     "lessons":      120_000,   # scratchpads may be long, not unbounded
     "handoff":       60_000,   # ~4500 chars is the documented sweet spot
-    "roadmap_lane":  12_000,   # one §11 lane's state; past this it is a log
+    # 12_000 -> 20_000 on 2026-09-19 (Sam: "May need to change the budget for
+    # docs since it's all required and current truth"). MEASURED before the
+    # change: 28 of 32 lanes fit, and all four over it were dense CURRENT TRUTH
+    # rather than logs — cobi-dark-mode 18.4K, implementation-funding 18.4K,
+    # skyview-ccr-interface 16.8K, partner-crosswalks 14.7K. A limit that three
+    # unrelated lanes cross while saying nothing stale is measuring the wrong
+    # thing.
+    #
+    # ⚠️ SIZE WAS A PROXY FOR STALENESS, AND THE REAL GUARD ALREADY EXISTS.
+    # "past this it is a log" is the actual failure, and `stacked_roadmap_cell`
+    # tests for it DIRECTLY on this same lane — it reported 0 on the day this
+    # was raised. A lane file is also PULL: it costs tokens only to the session
+    # that chose to open it, unlike always_loaded, which every session in three
+    # repos pays whether or not it is relevant. So this budget can be generous
+    # where that one cannot, and 60_000 above stays put for exactly that reason.
+    "roadmap_lane":  20_000,   # one §11 lane's state; past this it is a log
     "other":        150_000,
 }
 

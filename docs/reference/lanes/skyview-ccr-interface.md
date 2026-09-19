@@ -39,8 +39,14 @@ places to stand on ONE canvas. A course opens its outline of record (S235); a
 staged move is marked on the course itself (S239).
 
 **Swept end to end:** `npm run sweep` drives the served page through every reader
-and curator action (~200 checks) and passes. What it observed and did not change
-is [`skyview_backlog` ⑩](../../skyview_backlog.md).
+and curator action — **230 of 231 as of 2026-09-19**. The one failure is
+INHERITED, not this lane's recent work: *"one finger after the pinch still turns
+the sky (the registry is clean)"* fails identically on the parent commit
+(226/227), so a pointer id survives a two-finger spread somewhere older.
+⚠️ **The sweep is not in `js-tests.yml`**, so CI has never gone red for it —
+which is how it stayed unnoticed. Filed as `s278-fable-skyview-pinch-registry`.
+What the sweep observed and did not change is
+[`skyview_backlog` ⑩](../../skyview_backlog.md).
 
 ⚠️ **`prototype/skyview.html` IS GENERATED — edit `ccr_universe.js` (behavior and
 markup) or `ccr_atlas_v1.html` (CSS), then `python3 prototype/build_ccr_atlas.py`.**
@@ -63,62 +69,33 @@ done."*
 | 1 STAGE | the team phrase | positioning a course; the comprehensive view, By discipline, By subject, ESL packaging, the decision surface, the outline's reviewer panel; the COBI and CCR-table links |
 | 2 EXECUTE | a magic-link reviewer | Save, writing `kb_curation` |
 
-⭐ **RUNG 0 IS NOW A DELIBERATE PUBLIC SURFACE, AND WHAT IT HOLDS WAS CHOSEN
-RATHER THAN INHERITED.** Four views left it on 2026-09-19 because each reaches a
-staging control: the comprehensive view embeds the forest, whose *Open this one*
-opens the decision surface; the Disciplines table carries a **Decisions** button
-into the same place; and **By discipline / By subject / ESL packaging share ONE
-workspace shell with ONE mode bar**, so a reader let into ESL is one click from
-the Disciplines table. Asked whether to gray them or hide them, Sam chose
-**hide** — a rung-0 menu lists SkyView, How SkyView works, and one note naming
-the remedy. The course outline of record STAYS open: it is reading matter, and
-its reviewer panel carries the rung instead.
+⭐ **RUNG 0 IS A DELIBERATE PUBLIC SURFACE (2026-09-19).** Four views need
+STAGE because each reaches a staging control — the comprehensive view embeds
+the forest (*Open this one* → the decision surface), By discipline carries a
+**Decisions** button to the same place, and By subject / ESL packaging share
+**one workspace shell with one mode bar** with it, so ESL is one click from the
+Disciplines table. Asked to gray or hide, Sam chose **hide**. The outline of
+record stays open as reading matter; its reviewer panel carries the rung.
 
-⚠️ **THE MENU WAS NEVER THE ONLY DOOR, AND GATING IT ALONE WOULD HAVE LOOKED
-RIGHT IN A SCREENSHOT.** `#comprehensive`, `#disciplines`, `#subjects`, `#esl`
-and `#work/<discipline>` are ordinary URLs — a shared link, a bookmark, a typed
-hash or Back reaches them without the menu ever opening. `GATED_ROUTES` puts the
-same question on `__ccrRoute()`, the one funnel every route passes; a refused
-route lands on the map and says why. `refreshAuthChrome()` re-runs it when a
-credential is lost, so a curator who signs out in another tab stops standing on
-the Disciplines table. The suite asserts the two lists AGREE — a view given a
-rung in the menu but left out of `GATED_ROUTES` is invisible on screen and is
-exactly the hole.
+⚠️ **THE MENU IS NOT THE ONLY DOOR.** Those views are also plain URLs, so
+`GATED_ROUTES` puts the same question on `__ccrRoute()`, the one funnel, and
+`refreshAuthChrome()` re-runs it on credential loss. The suite asserts the menu
+list and the route list AGREE — a view gated in one and not the other is
+invisible on screen.
 
-⛔ **THE LADDER HAD A SECOND DOORWAY IN ANOTHER FILE, AND THE SINGLE-DECIDER
-GUARD COULD NOT SEE IT.** `ccr_atlas_graph.js`'s `__ccrDecision` is a full
-drag-to-move curation surface — *"Move any course to the identity it belongs
-to"*, a drop target per circle, a Move button, a review-status selector — with
-its own `moves[]`. It predates the ladder and lives in a different file, so
-`curationRung()` never saw it, and `ccr_skyview_read_only.test.js`'s *"nothing
-outside curationRung() decides authorization"* passed throughout **because it
-only read `ccr_universe.js`**. The lesson generalizes: **a single-decider guard
-is only as wide as the files it reads.** Fixed by exporting `window.__ccrRung`
-and having graph.js ask it — one decider still — failing CLOSED when absent,
-since the build refuses to write a page missing either file.
+⛔ **`ccr_atlas_graph.js`'s `__ccrDecision` IS A SECOND CURATION SURFACE**, and
+had no gate: `curationRung()` never saw it because it lives in another file,
+and the suite's *"nothing outside curationRung() decides authorization"* passed
+for the same reason. It asks the exported `window.__ccrRung` now, failing
+CLOSED. **A single-decider guard is only as wide as the files it reads.**
 
-⚠️ **THE BAND NAMES THE CREDENTIAL, BECAUSE TWO RUNGS OPENED ON THE SAME WORDS.**
-Rung 1 read *"**Read only.** Moves stage in this browser alone"* — rung 0's
-sentence — so a curator who had just entered the phrase could not tell it had
-taken. Sam, 2026-09-19: *"I just want to make sure that I can see on SkyView if
-I am signed on with either magic link or team phrase AND if not, I want to see
-clearly that I am in Read Only mode."* Each rung now leads with its own name
-(**Read only** · **Team phrase** · **Magic link**), and the suite asserts the
-three leads are DISTINCT rather than merely present.
+⚠️ **THE BAND NAMES THE CREDENTIAL** (**Read only** · **Team phrase** · **Magic
+link**) — rungs 0 and 1 used to open on the same words. Rungs 1 and 2 add
+*"here and in COBI"*: one origin, one credential. The static `u-ro-line` markup
+no longer ships a COBI link, which painted before the gate could reach it.
 
-⭐ **AND IT ANSWERS THE COBI HALF, WHICH IS ONE CREDENTIAL.** His other
-uncertainty: *"I'm not sure if I'm also signed in on COBI main page."* `cpl_sb`
-and `cpl_team_pass` are `localStorage` keys and `prototype/skyview.html` and
-`index.html` are the **same origin**, so holding one here IS holding it there.
-Rungs 1 and 2 say *"here and in COBI"*; rung 0 stays exactly as he read it on
-screen and leaves COBI to the menu's one note.
-
-⚠️ **THE PRE-JS BANNER HANDED EVERY READER A COBI DOOR.** The static
-`u-ro-line` markup hardcoded `href="../index.html#unified-courses/list"` and
-painted in the gap before `renderCurationLine()` ran — underneath the sentence
-saying the reader was read only — so the Views-menu gate never applied to it.
-Removed; the suite's assertion **inverted** from requiring that link to
-forbidding any link in the shipped markup.
+Story, measurements and two attribution failures:
+[`ccr_atlas_lessons`](../../ccr_atlas_lessons.md) (2026-09-19).
 
 `curationRung()` is the ONLY place any of it is decided — the rungs moved twice
 inside one conversation, and nothing else reads the storage keys. Its ranking

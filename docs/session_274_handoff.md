@@ -5,6 +5,8 @@ session: 273 (SkyPilot)
 tags: [handoff, sierra, place-anchor, program-search, deploy]
 status: superseded
 superseded_by: session_275_handoff.md
+superseded: true
+superseded_by: session_279_handoff.md
 ---
 
 # You are Session 274

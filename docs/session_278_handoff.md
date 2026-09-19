@@ -4,6 +4,8 @@ date: 2026-09-18
 session: 277 (SkyLedger) and 277 parallel (SkyCaliper)
 tags: [handoff, sierra, prospective-cpl, place-anchor, skyview, auth, remint, execute-sql]
 status: current
+superseded: true
+superseded_by: session_279_handoff.md
 ---
 
 # You are Session 278

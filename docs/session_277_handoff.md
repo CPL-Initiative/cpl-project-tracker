@@ -4,6 +4,8 @@ date: 2026-09-18
 session: 276 (SkyGauge) and 276 parallel (SkyLevel)
 tags: [handoff, sierra, prospective-cpl, deploy, quick-list, flyer, plain-words, skyview, ccr, generated-artifacts, read-only]
 status: current
+superseded: true
+superseded_by: session_279_handoff.md
 ---
 
 # You are Session 277

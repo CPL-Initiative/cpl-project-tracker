@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-475 document(s).
+477 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -177,6 +177,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A shared credential can only scope to a surface that is exclusive to its group](../kb-notes/methodology-a-shared-credential-can-only-scope-to-an-exclusive-surface.md) | methodology | published | 2026-08-12 | 2026-08-12 |
 | [A silent input cap is a content swap, and the model fills the vacuum with its own instructions](../kb-notes/methodology-a-silent-input-cap-is-a-content-swap.md) | methodology | published | 2026-08-24 | 2026-08-24 |
 | [A similarity threshold can't bridge a zero-overlap synonym — use a curated synonym map](../kb-notes/methodology-synonym-map-vs-similarity-threshold.md) | methodology | published | 2026-06-16 | 2026-06-18 |
+| [A single-decider guard is only as wide as the files it reads](../kb-notes/methodology-a-single-decider-guard-is-only-as-wide-as-the-files-it-reads.md) | methodology | published | 2026-09-19 | 2026-09-19 |
 | [A slow build fingerprints its inputs so the check stays cheap](../kb-notes/methodology-a-slow-build-fingerprints-its-inputs-so-the-check-stays-cheap.md) | methodology | published | 2026-09-07 | 2026-09-07 |
 | [A snapshot cannot be the authority on intent](../kb-notes/methodology-a-snapshot-cannot-be-the-authority-on-intent.md) | methodology | published | 2026-09-07 | 2026-09-07 |
 | [A snapshot of a live model is a claim that decays](../kb-notes/methodology-a-snapshot-of-a-live-model-is-a-claim-that-decays.md) | methodology | published | 2026-08-23 | 2026-08-23 |
@@ -409,6 +410,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Verify an ask against what the reader sees, not what the code does](../kb-notes/methodology-verify-an-ask-against-what-the-reader-sees.md) | methodology | published | 2026-09-05 | 2026-09-05 |
 | [Verify the consumer graph before migrating a data class — a dead reader means delete, not migrate](../kb-notes/methodology-verify-consumer-before-migrating.md) | methodology | published | 2026-05-31 | 2026-06-01 |
 | [Verify the last hop of a resolution chain](../kb-notes/methodology-verify-the-last-hop-of-a-resolution-chain.md) | methodology | published | 2026-08-09 | 2026-08-09 |
+| [Verify the premise before you build on it](../kb-notes/methodology-verify-the-premise-before-you-build-on-it.md) | methodology | published | 2026-09-19 | 2026-09-19 |
 | [Verify with the instrument that can see the defect](../kb-notes/methodology-verify-with-the-instrument-that-can-see-the-defect.md) | methodology | published | 2026-08-20 | 2026-08-24 |
 | [Warm a tinny voiceover with measured EQ — diagnose before you boost](../kb-notes/methodology-warm-a-tinny-voiceover-measured-eq.md) | methodology | published | 2026-07-23 | 2026-07-23 |
 | [What might qualify is a different question from who already grants it — answer it from the target program's course list](../kb-notes/methodology-what-might-qualify-is-a-different-question-from-who-already-grants-it.md) | methodology | published | 2026-09-18 | 2026-09-18 |

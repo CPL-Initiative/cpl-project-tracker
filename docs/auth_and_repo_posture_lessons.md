@@ -194,3 +194,82 @@ the memo Sam forwards is in the vault
   `*.supabase.co` and `api.github.com`), so the live WordPress version was never
   read. The memo says so in its second paragraph; a memo that implied a check
   it did not make would be the wrong kind of reassurance.
+
+---
+
+## 2026-09-19 (SkyWarden, S278) — the settings never loaded, and the diagnosis was wrong twice
+
+Sam, after #1623 shipped the `execute_sql` guard: *"Still getting the Allow SQL
+run requests--wish we could set these to auto. Do I need to change Rule 8 to do
+this?"* His session was new and all three repos were attached, so the usual
+"hooks bind at session start, yours predates the fix" did not apply.
+
+### ⛔ The three-repo rule is what stops repo hooks loading
+
+Claude Code reads `.claude/settings.json` from the session's **project root**.
+CLAUDE.md requires all three repos attached; that requirement puts the root
+*above* the clones. Measured on a fresh session — `~/.claude/projects/` held one
+entry, `-home-user`, while the settings file sat at
+`/home/user/cpl-project-tracker/.claude/settings.json`. The docs say the same
+thing outright: a multi-repo session loads *"only the plugins and marketplaces
+the file declares, not permission rules, hooks, `env`, or other keys"*, and
+`~/.claude/settings.json` is *"not read"* in cloud sessions at all.
+
+⚠️ **A dead hook fails silently in BOTH directions** — no prompt relief and no
+Rule 10 enforcement — while the file sits in the repo looking correct. That is
+why this shipped a detector (`scripts/check_hooks_live.py`) rather than a note,
+and why the detector cannot depend on a hook to answer.
+
+⚠️ **The rule and the mechanism are mutually exclusive.** Any fix accepts one or
+changes the other. Confirmed twice before the docs were found: an
+`insert into cpl_memory` the guard denies ran anyway, and the harness stop hook
+carried no trace of `patch_stop_hook.py`.
+
+### ⛔ `permissions.allow` works in auto mode — the handoff said it did not
+
+The inherited claim was that an allow rule cannot reach the classifier. The
+classifier's documented decision order opens: *"Actions matching your allow,
+ask, or deny rules resolve immediately."* **The allowlist never failed; it never
+loaded.** One cause, not two — and three guards were built where a list of rules
+plus one hook would do.
+
+What auto mode *does* drop on entry decides the real design: blanket `Bash(*)`,
+wildcarded interpreters, package-manager runs, `Agent` and `Monitor` rules.
+Narrow Bash rules and **MCP tool rules survive**. So MCP reads need only a rule;
+arbitrary-argument Bash needs a hook; and `execute_sql` stays on its hook
+*deliberately*, because an allow rule resolves immediately and would
+auto-approve writes — exactly what #1617 did.
+
+### ⭐ Auto mode caused the storm it was turned on to stop
+
+Sam: *"I turned on auto yesterday, I believe, to try and abate the storm."* Auto
+mode is the classifier. It suppresses routine prompts by judging content, and
+escalates what it judges risky into prompts no allow rule shadows. His dominant
+call that week was production SQL — the hardest-escalated category. The mode
+meant to reduce prompts routed his most common operation into the one bucket it
+would not stop asking about.
+
+⚠️ **Do not switch modes to fix this.** Auto is the lowest-prompt mode there is;
+`acceptEdits` auto-approves only reads, edits and basic filesystem commands, so
+every Bash and MCP call would prompt — more, not fewer.
+
+### ⚠️ The guard blocked the doctrine it serves
+
+`supabase_sql_guard.py` denied every write verb with no exception, so Rule 8's
+`cpl_memory` writes were denied and **no checkpoint could complete wherever it
+fired**. The carve-out added here fails closed by COUNTING: only `insert`/
+`update`, and every one must target `cpl_memory`.
+
+### ⭐ Two unverified premises in one session
+
+The other was a stale `origin/main` (`d89ddec`, force-updated on fetch) that
+predated the curation ladder and made a working gate look broken. Both were
+inherited claims acted on before checking, and both cost real work. **Verify the
+premise before building on it** — a handoff written under context pressure is
+exactly where a confident wrong claim gets passed forward.
+
+### PRs
+
+[#1633](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1633) — the
+guards, the installer, the detector, and the simplification that removed a third
+of them.

@@ -36,17 +36,17 @@ you move something out of this file, leave the line that says it is out there.
 Deep reference offloaded: `docs/reference/` — pipeline_reference ·
 kb_build_status · mid_lifecycle · troubleshooting · obsidian_vault_wiring ·
 finished_workstreams · skyview_invariants · live_session_banner ·
-`lanes/` (stubs below).
+[approval_prompt_hooks](docs/reference/approval_prompt_hooks.md) (the
+Allow-Once storm; this repo's `.claude/settings.json` does NOT load in a
+three-repo session) · `lanes/` (stubs below).
 
-**Skills** (`.claude/skills/`) are pull-side too, triggered by their own
-`description` rather than by a pointer: **consult-doctrine** (what has this repo
-already decided about the files I am reading — the answer to a rule that only
-fires when remembered), **exhibit-canonicalization** (collapsing freehand MAP
-exhibit titles into unified credential names), **video-context** (watching a
-screen recording locally — frames plus a transcript that never leaves the
-machine) and **obsidian-markdown**. They are
-named here because a store nobody names is a store nobody finds —
-`unreferenced_offload` flags any that stop being.
+**Skills** (`.claude/skills/`) are pull-side too, fired by their own
+`description` rather than by a pointer: **consult-doctrine** (what this repo has
+already decided about the files you are reading), **exhibit-canonicalization**
+(freehand MAP exhibit titles into unified credential names), **video-context**
+(a screen recording read locally) and
+**obsidian-markdown**. Named here because a store nobody names is a store
+nobody finds; `unreferenced_offload` flags any that stop being.
 
 ---
 
@@ -664,10 +664,9 @@ Read that before a UI rework, a First Light artifact, or a table layout.
   covers both HTMLs without a Rule-4 mirror. Only `:root` tokens need the mirror.
 - **Prototype UI in a fast-feedback canvas, then port.** Iterate the look in a
   Claude artifact, lock it with Sam, then implement into the monolith.
-- **Stop-hook:** a SessionStart hook runs `scripts/patch_stop_hook.py`, which
-  patches the HARNESS's `~/.claude/stop-hook-git-check.sh` in place — installing
-  our copy over it never worked remotely (the harness re-provisions it). Local
-  machines still `cp scripts/stop-hook-git-check.sh ~/.claude/`.
+- **Stop-hook:** patched in place by `scripts/patch_stop_hook.py` at
+  SessionStart; installing our own copy never worked remotely. See
+  [`troubleshooting`](docs/reference/troubleshooting.md).
 
 ## Deployed site
 
@@ -681,15 +680,9 @@ Read it BEFORE: vault-sync or vault-path work, Obsidian exclusion, or the
 sparse-checkout fix. It holds the vault root, `scripts/sync-vault-clones.ps1`,
 and why exclusion is a relevance filter rather than a performance one.
 
-Three doc lanes by lifecycle — **KB notes** (`docs/kb-notes/`, the durable,
-Obsidian-target lane), **lessons** (`docs/<workstream>_lessons.md`, appended
-every checkpoint) and **session handoffs** (`docs/session_<N>_handoff.md`).
-The table and the per-lane contract are in [`docs/INDEX.md`](docs/INDEX.md).
-
-The KB-notes lane is **proactive + auto-flowing**: when a session learns
-something durable, a new note lands in `docs/kb-notes/` with `kb-status:
-published` (no review-queue middle state — sessions author at final
-quality). The checkpoint commit body lists new notes for the audit trail.
+Three doc lanes by lifecycle — KB notes, lessons, session handoffs. Which is
+which, the per-lane contract, and the KB-notes lane's author-at-final-quality
+rule: [`docs/INDEX.md`](docs/INDEX.md).
 
 **Checkpoint scope — vault, never the public KB.** Rule 9 / `/checkpoint`
 refreshes *this* repo's docs (`docs/kb-notes/`, lessons, §11, the To-Do feed),
@@ -750,18 +743,14 @@ Trust-Card auditor work, or CID/CIDx pathway decisions. The live Roadmap table
 > the lane's *state* changes. ⚠️ **Do not re-inflate a cell** — that is how §11
 > became 90 KB of a 151 KB always-loaded file.
 >
-> **A lane file states CURRENT TRUTH, not a log.** When a finding contradicts it,
-> **delete the superseded text**; never prefix `*Prior:*` and leave it below.
-> History goes to the lessons doc, once. The cost of stacking is not bloat but
-> CONTRADICTION, and **no reading order fixes a contradiction inside one
-> document.** `stacked_roadmap_cell` guards both surfaces, mechanically, because
-> Sam does not review checkpoint output by design.
+> **A lane file states CURRENT TRUTH, not a log.** When a finding contradicts
+> it, **delete the superseded text**; never prefix `*Prior:*`. The cost of
+> stacking is not bloat but CONTRADICTION, and no reading order fixes one
+> inside a single document. `stacked_roadmap_cell` guards both surfaces.
 >
-> ⚠️ **Retiring a lane: do not grep for it — `lane_retirement_signal` already
-> ran the test** over every lane file and names any whose own text claims no open
-> work; READ those. It is fail-safe and never says "retire this".
-> **Hand-grepping has been wrong EVERY time** (four occasions, S206/S208).
-> Mechanics + why: [`lanes/README.md`](docs/reference/lanes/README.md).
+> ⚠️ **Retiring a lane: do not grep for it** — `lane_retirement_signal` already
+> ran that test and names the candidates; hand-grepping has been wrong EVERY
+> time (four occasions). [`lanes/README.md`](docs/reference/lanes/README.md).
 
 | Phase | What | Status |
 |---|---|---|
@@ -820,7 +809,6 @@ the date moved · **duplicate sections / HTML growing** on every run ·
 404** (the lockfile is gitignored, so every range resolves live — pin exactly) ·
 **docx library errors**.
 
-⚠️ **The stop-hook nags** — the "N unpushed commits" one (FIXED, Session 228) and the
-"Unverified `noreply@github.com`" false positive (**do not amend, do not push** —
-amending rewrites `main`, Rule 5) are both covered there, with the confirming
-commands.
+⚠️ **The stop-hook nags** are covered there too — including the "Unverified
+`noreply@github.com`" false positive, where the fix is to do NOTHING (amending
+rewrites `main`, Rule 5).
