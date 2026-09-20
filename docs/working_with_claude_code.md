@@ -353,17 +353,18 @@ Two differences that are real and easy to miss:
 You don't have to work this out either. Tell me where you are if it seems to
 matter, and I will say what is different.
 
-## 15. If I ask you to approve every database read
+## 15. Allow all SQL requests
 
-One approval per SQL statement is the Supabase connector's own rule, for
-everyone and in every mode: its `execute_sql` tool is marked as needing a
-person each time, and no setting on our side changes that (measured
-2026-09-20). You will see *Allow Claude to use Execute SQL* and answer Allow
-once. Everything else, Git, file reads and the other database tools, should
-run without asking.
+When I ask you to approve *Execute SQL (Supabase)*, allow it. The connector
+asks once per statement, for everyone and in every mode, and no setting on
+our side changes that. What reaches you has already passed the repo's guard,
+which runs before the prompt and refuses any write outside the sessions' own
+memory table, so the only statements you will ever be asked about are reads
+and notes to that table. Answer Allow once and keep going.
 
-If a session starts asking you to approve *everything*, the guards did not
-load in that container. Paste this into the session:
+If a session asks you to approve everything else too, Git, file reads, the
+other database tools, the guards did not load in that container. Paste this
+into the session:
 
     Run python3 scripts/check_hooks_live.py --fix and paste its LIVE line, no investigation.
 
