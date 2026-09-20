@@ -19453,7 +19453,8 @@
    "name": "TypeSafe (Jev) smoke test",
    "crons": [],
    "scripts": [
-    "kb/_typesafe_smoke.py"
+    "kb/_typesafe_smoke.py",
+    "kb/_typesafe_cr_trial.py"
    ],
    "adds": [],
    "push": null,
