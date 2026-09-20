@@ -1,0 +1,52 @@
+name: TypeSafe (Jev) smoke test
+
+# Verifies that the TYPESAFE_API_KEY repository secret is present and that
+# TypeSafe's System One API accepts it. Nothing is written, nothing is committed.
+#
+# WHY A RUNNER: typesafe.ai is egress-blocked from the agent sandbox — the proxy
+# gateway answers 403 to CONNECT on api.typesafe.ai, docs.typesafe.ai and the
+# apex — so a Claude session cannot verify the key itself. A runner has open
+# egress and stands in as the proxy. Same runner-as-proxy pattern as
+# map-users-schema-probe.yml (Azure MAP API) and cpl-landing-pages.yml.
+#
+# WHY DISPATCH-ONLY: a `pull_request` trigger would hand the secret to any fork
+# that opens a PR, and every run spends a real API call. This is a thing you run
+# when you have just rotated or first added the key, never on a schedule.
+#
+# THE KEY NEVER REACHES THE LOG: kb/_typesafe_smoke.py prints presence and
+# length only, and kb/typesafe_client.py redacts the key out of error bodies
+# before they are raised. This repo's Actions logs are readable by anyone who
+# can read the repo.
+#
+# Setup (Sam runs this once — a session cannot create secrets):
+#   gh secret set TYPESAFE_API_KEY --repo CPL-Initiative/cpl-project-tracker
+# See docs/reference/typesafe_jev.md.
+
+on:
+  workflow_dispatch:
+    inputs:
+      full:
+        description: 'Also spend one System One call (end-to-end, not just auth)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: typesafe-smoke
+  cancel-in-progress: false
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Smoke-test the TypeSafe key (no writes, no commit)
+        env:
+          TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
+        run: |
+          python3 kb/_typesafe_smoke.py ${{ inputs.full && '--full' || '' }}

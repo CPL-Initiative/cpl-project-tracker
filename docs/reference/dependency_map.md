@@ -413,6 +413,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_sync_map_custom_reports.py` | workflows: `map-custom-report-load.yml` | — |
 | `kb/_sync_moc_crosswalk.py` | workflows: `moc-crosswalk-sync.yml` | — |
 | `kb/_sync_peer_articulations.py` | workflows: `credential-catalog-sync.yml` | — |
+| `kb/_typesafe_smoke.py` | workflows: `typesafe-smoke.yml` | — |
 | `kb/authority_recode_out/2026-09-03/ag_classification.json` | scripts: `kb/_authority_recode_dryrun.py` | — |
 | `kb/authority_recode_out/2026-09-03/fl_classification.json` | scripts: `kb/_authority_recode_dryrun.py` | — |
 | `kb/authority_recode_out/2026-09-03/seed_edits.json` | scripts: `kb/_authority_recode_dryrun.py`, `kb/_zband_retire_dryrun.py` | — |
@@ -691,6 +692,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/stop_hook_git_check_test.py` | workflows: `js-tests.yml` | — |
 | `tests/supabase_function_grants_test.py` | workflows: `js-tests.yml` | — |
 | `tests/supabase_sql_guard_test.py` | workflows: `js-tests.yml` | — |
+| `tests/typesafe_client_test.py` | workflows: `js-tests.yml` | — |
 | `tests/uc_cur_promote_test.py` | workflows: `js-tests.yml` | — |
 | `tests/umbrella_codes_are_declared_test.py` | workflows: `js-tests.yml` | — |
 | `tests/video_context_test.py` | workflows: `js-tests.yml` | — |
@@ -723,6 +725,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `api.gdeltproject.org` | `edgefn:cpl-news-harvest` |
 | `api.github.com/repos/` | modules: `kb-portal/config.js` |
 | `api.github.com/repos/cpl-initiative` | `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
+| `api.typesafe.ai` | scripts: `kb/typesafe_client.py` |
 | `arc.losrios.edu` | tabs: `map-queue`, `map-users` |
 | `bsky.app` | `edgefn:cpl-news-harvest` |
 | `c-id.net` | scripts: `kb/_ingest_cid_articulations.py` |
@@ -756,6 +759,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `github.com` | pages: `kb-portal/index.html` |
 | `github.com/CPL-Initiative/cpl-knowledge-base` | pages: `kb-portal/index.html` |
 | `github.com/CPL-Initiative/cpl-project-tracker` | tabs: `governance`, `unified-courses` |
+| `github.com/CPL-Initiative/cpl-project-tracker)` | scripts: `kb/typesafe_client.py` |
 | `github.com/CPL-Initiative/cpl-project-tracker;` | scripts: `tools/source_first_light_art.mjs` |
 | `github.com/cpl-initiative/cpl-project-tracker` | tabs: `unified-courses` |
 | `icangotocollege.com` | tabs: `cpl-pathways` |
@@ -881,5 +885,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 483 file
-datasets · 144 external services · 344 consumers · 34 workflows · 37 tabs.
+Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 485 file
+datasets · 146 external services · 346 consumers · 35 workflows · 37 tabs.
