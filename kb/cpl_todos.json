@@ -36,7 +36,7 @@
   },
   {
    "id": "s279-skykeeper-jev-for-sierra",
-   "for": "Sky",
+   "for": "Fable",
    "tab": "cpl-assistant",
    "text": "Sam, 2026-09-20: \"we should be able to use Jev to speed and broaden Sierra's ability as well.\" Jev returns typed judgments with calibrated probabilities at ~0.2s a call, which fits Sierra's two known defect classes: the %tech% word-filter false positive (a noul on \"does this phrase name a college?\" would have caught Surgical Tech matching LA Trade Tech) and the false absences, where a choice over candidate colleges with a confidence gate would let her say \"I am not sure\" instead of \"none\". Jev gives no rationale, so it routes and gates; Sierra still answers. Verified working on a runner 2026-09-20."
   },
