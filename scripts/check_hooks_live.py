@@ -106,8 +106,20 @@ def main():
         print("                local setting reaches it.")
     elif root["present"]:
         print("ROOT PRESENT —  but carries none of our guard blocks (%s)" % MARK)
+        print("                Something else wrote the root file, or the blocks were removed.")
+        print("                This session: python3 %s/scripts/install_prompt_guards.py --apply" % REPO)
+        print("                (settings reload live). Every later session: change the date on")
+        print("                the setup script's comment line at claude.ai/code so the")
+        print("                snapshot rebuilds.")
     else:
         print("NO ROOT FILE —  the setup script did not run, or wrote elsewhere")
+        print("                (it never fails the session by design, so a failure is silent).")
+        print("                This session: python3 %s/scripts/install_prompt_guards.py --apply" % REPO)
+        print("                (settings reload live). Every later session: check the Setup")
+        print("                script field at claude.ai/code still calls the installer, change")
+        print("                the date on its comment line, and in the next new session expand")
+        print("                'Initialized session' and look for 'prompt-guard install")
+        print("                attempted' or a Python error.")
     print()
 
     if not os.path.exists(SETTINGS):
@@ -137,7 +149,8 @@ def main():
         return 0
 
     print()
-    print("INERT (repo file) — no session is rooted at this repo, so nothing in the")
+    print("INERT (repo file) — EXPECTED in every three-repo session; the ROOT line above")
+    print("        is the verdict. No session is rooted at this repo, so nothing in the")
     print("        repo's own settings.json loads. This is the normal three-repo")
     print("        layout: the root is the parent directory and the repo is a")
     print("        subdirectory of it. What counts is the ROOT line above.")

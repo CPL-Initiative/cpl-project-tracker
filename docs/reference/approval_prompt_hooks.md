@@ -382,6 +382,30 @@ upstream, and nothing in this repo, the session root, a hook or a mode
 reaches it. Every other Supabase tool on the allow list ran silently in this
 container too (0.4 s, measured).
 
+### If the LIVE line is wrong
+
+`check_hooks_live.py` prints the verdict on its ROOT line; the INERT block
+below it is expected in every three-repo session and means nothing on its
+own. Three bad states, and the same first move for each:
+
+| ROOT line | Meaning | This session | Every later session |
+|---|---|---|---|
+| `execute_sql allow rule: NO` | the snapshot predates a change to the installer's list | `python3 scripts/install_prompt_guards.py --apply` (settings reload live) | change the date on the setup script's comment line at claude.ai/code; the next new session rebuilds the snapshot |
+| `ROOT PRESENT — but carries none of our guard blocks` | something else wrote the root file, or the blocks were removed | same | same |
+| `NO ROOT FILE` | the setup script did not run, or failed silently (it never fails the session, by design) | same | check the Setup script field still calls the installer, change the date, and in the next new session expand "Initialized session" and look for `prompt-guard install attempted` or a Python error |
+
+The paste, in the session that showed the bad line:
+
+```
+Run this and paste the output, no investigation:
+python3 /home/user/cpl-project-tracker/scripts/install_prompt_guards.py --apply && python3 /home/user/cpl-project-tracker/scripts/check_hooks_live.py
+```
+
+A good result ends with the LIVE line reading `execute_sql allow rule: yes`.
+The `--apply` run counts in that session because Claude Code reloads hooks
+and permission rules from a changed settings file; it grants nothing the
+installer's list does not already name.
+
 **What is left is a design choice, and it is Sam's:** (1) keep the one prompt,
 on `execute_sql` only, with every other read silent, which is where things
 stand; (2) a read path that is not this tool, for example the npm server run
