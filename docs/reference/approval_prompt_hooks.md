@@ -90,12 +90,14 @@ hook ran" is the case it exists to detect.
 |---|---|---|
 | `permissions.allow` | ~32 read-only `mcp__github__` and `mcp__Supabase__` tools | Read-only by nature, nothing to inspect per call, and MCP rules survive auto mode |
 | `Bash` hook | `git` read subcommands, `grep`/`rg`, `sed -n`, `cat`/`head`/`tail`/`wc`/`ls`/`find`, `npm test`, `npm run sweep\|a11y`, `node tests/…`, `python3 kb/_docs_audit.py`, `kb/_build_*.py --check`, `bash scripts/check_generated.sh` | Blanket Bash rules are dropped; arbitrary arguments cannot be enumerated |
-| `execute_sql` hook | read-only SQL, plus the `cpl_memory` carve-out | ⚠️ See below |
+| `execute_sql` rule **and** hook | read-only SQL, plus the `cpl_memory` carve-out | ⚠️ See below — the pairing is the design (proposed 2026-09-20) |
 
-⚠️ **`execute_sql` IS DELIBERATELY NOT IN `permissions.allow`.** An allow rule
-"resolves immediately", which would skip the guard and auto-approve **writes**
-as well — exactly what #1617 did, and exactly what Rule 10 exists to prevent.
-The hook can read the statement; a rule cannot.
+⚠️ **`execute_sql` NEEDS BOTH THE ALLOW RULE AND THE HOOK (S280, 2026-09-20;
+Sam's decision pending).** The hook alone did not stop the prompt — measured at
+the end of this doc. PreToolUse hooks fire before any permission-mode check and
+a hook `deny` wins over an allow rule, so the rule resolves the reads
+immediately and the guard still refuses writes outside `cpl_memory` before the
+rule is consulted. #1617's mistake was the rule WITHOUT the hook.
 
 ⚠️ **A hook returning `allow` is a REAL grant — it removes the human check
 rather than deferring it.** Both hooks default to `ask`: an unrecognized call,
@@ -163,8 +165,9 @@ of duplicating them. Paths are written **absolute** on purpose:
 is the parent of this repo, so `"$CLAUDE_PROJECT_DIR/scripts/…"` would resolve
 to nothing.
 
-⚠️ **Hooks bind at SESSION START.** Running the installer mid-session changes
-nothing about the session that ran it. Start a new one, then confirm:
+Hooks are picked up by the file watcher (docs: *"the file watcher normally
+picks up hook changes automatically"*; S279 saw the guard fire mid-session).
+A new session is still the safe assumption for the permission rules. Confirm:
 
 ```
 python3 scripts/check_hooks_live.py
@@ -224,6 +227,70 @@ unattended. **Test it before relying on it.**
 - ⚠️ **Auto mode is the classifier.** Sam turned it on 2026-09-18 to reduce the
   prompts, and it is what produces the ones that cannot be suppressed by an
   allow rule. Turning it off restores ordinary prompting, where
-  `permissions.allow` works — but only once the settings load at all, which is
-  the same unsolved step. Whether to keep auto mode is a separate decision from
+  `permissions.allow` works — but only once the settings load at all, which
+  the setup script now does (measured 2026-09-20, below). Whether to keep auto mode is a separate decision from
   where the settings live.
+
+## 2026-09-20 (S280): the guards load, and for `execute_sql` the hook's `allow` is not enough
+
+Sam, mid-session: *"Still getting the swarm of allow sql that we've been trying
+to solve for the last 5 sessions."* Read off this session's own transcript
+(`~/.claude/projects/-home-user/<session>.jsonl`), not inferred:
+
+| Call | Guard ran? | Guard said | Waited |
+|---|---|---|---|
+| Rule 8 memory query | yes, 99 ms, exit 0 | allow | 298 s |
+| schema query | yes, 35 ms | allow | 43 s |
+| one JSON roll-up | yes, 102 ms | allow | 1,297 s |
+| three `cpl_memory` inserts | yes | allow (the carve-out) | 15 s · 117 s · 51 s |
+| `mcp__github__get_commit`, on the allow list | not hooked | rule | 0.8 s |
+| `mcp__Supabase__get_project_url`, on the allow list | not hooked | rule | 0.4 s |
+
+Three of the five sessions' premises are settled by that table:
+
+1. **The session-root file loads.** `/home/user/.claude/settings.json`, written
+   by the environment's setup script at container start, produced a
+   `hook_success` transcript entry on every Bash and `execute_sql` call. The
+   "not read" quotation above is about `~/.claude/settings.json` and the repo
+   files; the root file is what the setup script targets, and it works.
+   `check_hooks_live.py` said INERT this session while the guards were live,
+   and sent the session after the wrong question; it should report the root
+   first (change staged with the installer change, pending Sam's decision).
+2. **Allow rules resolve immediately, in auto mode, for MCP tools.** A GitHub
+   read and a Supabase read on the list returned in under a second.
+3. **A hook `allow` does not stop the `execute_sql` prompt.** The docs put
+   hooks before every permission-mode check and let them tighten, never
+   loosen: *"a hook returning `allow` doesn't bypass deny rules from settings,
+   and it can't suppress the prompt for MCP tools marked
+   `requiresUserInteraction` or for connector tools your organization set to
+   `ask`"* (hooks guide). Whichever path applies here, the measurement is the
+   same: the hook's allow was advisory and a rule is authoritative.
+
+**The proposed change.** `execute_sql` carries the allow rule and the hook.
+The rule resolves reads without a prompt; the hook, firing first, still
+returns `deny` for any write outside `cpl_memory` and `ask` for anything it
+cannot parse, and a hook deny wins over an allow rule. The trade: if the guard
+script ever crashes, the rule approves the statement where a prompt used to
+appear. The guard is stdlib-only and its 35 cases run in CI. ⚠️ A session may
+not commit this on its own: the classifier refuses it as `[Self-Modification]`,
+correctly, because the setup script turns the installer's allow list into the
+next session's permissions. Sam decides.
+
+**What could still prompt after the rule lands, and both are outside the repo:**
+
+- An organization connector control that sets this one tool to `ask`. That
+  prompt reads *"Your organization requires approval for this tool"*, appears
+  in every mode, and only the claude.ai admin console changes it. The
+  allow-listed Supabase read returned in 0.4 s, so the connector as a whole is
+  not set to ask; the question is that one tool.
+- The server marking the tool `anthropic/requiresUserInteraction`. Checked in
+  the published `@supabase/mcp-server-supabase@0.13.0`, the version this
+  session's connector reported: the annotation is absent. The server's own
+  confirm step for destructive statements is an MCP elicitation, and it did
+  not fire on these reads.
+
+**What to do.** Land the rule, let the setup script re-run the installer at
+the next container start, and read the prompt if one still appears. Its
+wording decides between the two cases above. The `promptId` field on a
+transcript's tool result is not a prompt indicator — the 0.4 s call carried
+one too.
