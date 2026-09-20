@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 961,
-    "bytes": 10186349,
+    "bytes": 10187315,
     "over_budget": 4,
     "handoff_max": 281,
     "always_loaded_files": 1,
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 75,
-        "bytes": 2118481,
+        "bytes": 2119447,
         "over": 1
       },
       "kb_note": {
@@ -62,7 +62,7 @@
     },
     "vault": {
       "files": 3020,
-      "bytes": 1468930052,
+      "bytes": 1468930956,
       "heavy_bytes": 644076945,
       "heavy_share": 0.438,
       "ignore_filters": [

@@ -343,3 +343,18 @@ regenerated map.
 measurement; [#1641](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1641)
 — the test that pins the rule to its hook, the checker reading the root, the
 installer's corrected comments, the regenerated map.
+
+### ⚠️ The last prompt is upstream, and no local setting reaches it
+
+With the rule loaded, `select 1` through the Supabase connector still asked,
+Deny / Allow once, no "don't ask again", while the guard refused the harmless
+write. The docs list two ways an MCP tool prompts past a matching allow rule:
+an organization control set to ask, whose prompt names the organization, and
+a tool the server marks `anthropic/requiresUserInteraction`, which prompts on
+every call in every mode with no remember option. The wording excludes the
+first, and Sam's last paste closed the remaining alternative: rules loaded,
+`list_tables` silent, `execute_sql` alone asking. The public server source
+carries no such mark, so it is added upstream, in the hosted connector or by
+the connector platform. Five sessions of settings work removed every prompt
+they could reach; the one that remains is a design choice for Sam, recorded
+in the reference doc with the recommended order.
