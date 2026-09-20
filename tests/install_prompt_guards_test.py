@@ -85,6 +85,19 @@ def main():
                              for h in (b.get("hooks") or []))]) == len(ipg.GUARDS)),
         ]
 
+    checker = os.path.join(ROOT, "scripts", "check_hooks_live.py")
+    with tempfile.TemporaryDirectory() as tmp:
+        out = subprocess.run([sys.executable, checker, "--root", tmp, "--fix"],
+                             capture_output=True, text=True)
+        checks.append(("checker --fix on an empty root writes the settings and reports the rule",
+                       out.returncode == 0 and "FIXED" in out.stdout
+                       and "execute_sql allow rule: yes" in out.stdout
+                       and os.path.exists(os.path.join(tmp, ".claude", "settings.json"))))
+        out2 = subprocess.run([sys.executable, checker, "--root", tmp, "--fix"],
+                              capture_output=True, text=True)
+        checks.append(("checker --fix on a healthy root changes nothing",
+                       out2.returncode == 0 and "FIXED" not in out2.stdout
+                       and "execute_sql allow rule: yes" in out2.stdout))
     failed = [label for label, ok in checks if not ok]
     for label, ok in checks:
         print(("ok   " if ok else "FAIL ") + label)

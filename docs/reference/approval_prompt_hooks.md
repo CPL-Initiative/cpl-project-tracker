@@ -390,7 +390,7 @@ own. Three bad states, and the same first move for each:
 
 | ROOT line | Meaning | This session | Every later session |
 |---|---|---|---|
-| `execute_sql allow rule: NO` | the snapshot predates a change to the installer's list | `python3 scripts/install_prompt_guards.py --apply` (settings reload live) | change the date on the setup script's comment line at claude.ai/code; the next new session rebuilds the snapshot |
+| `execute_sql allow rule: NO` | the snapshot predates a change to the installer's list | the opening line's `check_hooks_live.py --fix` runs the installer for this session (settings reload live); the paste below does the same by hand | change the date on the setup script's comment line at claude.ai/code; the next new session rebuilds the snapshot |
 | `ROOT PRESENT — but carries none of our guard blocks` | something else wrote the root file, or the blocks were removed | same | same |
 | `NO ROOT FILE` | the setup script did not run, or failed silently (it never fails the session, by design) | same | check the Setup script field still calls the installer, change the date, and in the next new session expand "Initialized session" and look for `prompt-guard install attempted` or a Python error |
 

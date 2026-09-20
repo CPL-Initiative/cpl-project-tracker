@@ -508,10 +508,10 @@ first day.** Do the remembering for them.
   quiet) — close with this line, filled in, on its own:
   > *Greetings, you are Sky**Next** (Session N+1), see Sky**You**'s handoff —
   > `docs/session_<N+1>_handoff.md` (link) — let's keep rolling with our queue.
-  > First, run `python3 scripts/check_hooks_live.py` and paste its LIVE line, no
-  > investigation.*
+  > First, run `python3 scripts/check_hooks_live.py --fix` and paste its LIVE
+  > line, no investigation.*
   The check sentence is standing (Sam, 2026-09-20): the first turn shows him
-  whether the guards loaded. You **assign** the next moniker (one name, not a
+  whether the guards loaded, and `--fix` repairs the session if not. You **assign** the next moniker (one name, not a
   menu) and it must be the one the handoff names. *"I just copy and paste the whole thing in the new session. If I
   need to change direction, I just add the new direction to the opening note"* —
   so the line must stand alone, and nothing may follow it but the sign-off. The

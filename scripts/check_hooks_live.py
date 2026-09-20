@@ -35,6 +35,7 @@ has to detect. So it reads the evidence Claude Code leaves on disk instead.
 """
 import json
 import os
+import subprocess
 import sys
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -43,7 +44,7 @@ MARK = "# cpl-prompt-guard"      # what install_prompt_guards.py stamps on its b
 SQL_TOOL = "mcp__Supabase__execute_sql"
 
 
-def root_report():
+def root_report(root_dir=None):
     """What the SESSION ROOT's settings carry — the file that actually loads.
 
     ⚠️ MEASURED 2026-09-20 (S280): `<root>/.claude/settings.json`, written by
@@ -56,7 +57,8 @@ def root_report():
     and said INERT while the guards were live from the root, which sent a
     session chasing the wrong question. So: report the root first.
     """
-    path = os.path.join(os.path.dirname(REPO), ".claude", "settings.json")
+    root_dir = root_dir or os.path.dirname(REPO)
+    path = os.path.join(root_dir, ".claude", "settings.json")
     if not os.path.exists(path):
         return {"path": path, "present": False}
     try:
@@ -83,8 +85,35 @@ def project_roots():
     return ["/" + d.lstrip("-").replace("-", "/") for d in sorted(os.listdir(base))]
 
 
+def healthy(root):
+    return bool(root.get("present") and root.get("hooked") and root.get("sql_rule")
+                and not root.get("error"))
+
+
 def main():
-    root = root_report()
+    """`--fix` repairs the session at hand when the ROOT line is bad: it runs the
+    installer for this root and reports again. It does nothing when the guards
+    are live, so a list change still waits for the snapshot rebuild (the human
+    gate). `--root DIR` points both at another root; tests use it. Sam,
+    2026-09-20: "How am I going to remember this?" — the opening line runs
+    this with --fix, so nobody has to."""
+    args = sys.argv[1:]
+    root_dir = None
+    if "--root" in args:
+        root_dir = os.path.abspath(args[args.index("--root") + 1])
+    fix = "--fix" in args
+    root = root_report(root_dir)
+    fixed = False
+    if fix and not healthy(root):
+        cmd = [sys.executable, os.path.join(REPO, "scripts", "install_prompt_guards.py"),
+               root_dir or os.path.dirname(REPO), "--apply"]
+        run = subprocess.run(cmd, capture_output=True, text=True)
+        print("FIXED —         ran the installer for this session (exit %d): %s"
+              % (run.returncode, " ".join(cmd[1:])))
+        if run.returncode != 0:
+            print((run.stdout + run.stderr).strip()[-600:])
+        root = root_report(root_dir)
+        fixed = True
     print("session root:   %s" % root["path"])
     if root.get("error"):
         print("ROOT BROKEN:    will not parse (%s)" % root["error"])
@@ -109,6 +138,10 @@ def main():
         print("                If a prompt reads 'Your organization requires approval for")
         print("                this tool', the org's connector control is set to ask and no")
         print("                local setting reaches it.")
+        if fixed:
+            print("                Repaired for THIS session only. Later sessions start from the")
+            print("                environment snapshot: change the date on the setup script's")
+            print("                comment line at claude.ai/code so it rebuilds.")
     elif root["present"]:
         print("ROOT PRESENT —  but carries none of our guard blocks (%s)" % MARK)
         print("                Something else wrote the root file, or the blocks were removed.")

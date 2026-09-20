@@ -2901,7 +2901,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 41
+     "line": 42
     },
     {
      "id": "script:scripts/install_prompt_guards.py",

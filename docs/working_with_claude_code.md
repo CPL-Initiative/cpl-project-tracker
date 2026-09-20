@@ -353,6 +353,25 @@ Two differences that are real and easy to miss:
 You don't have to work this out either. Tell me where you are if it seems to
 matter, and I will say what is different.
 
+## 15. If I ask you to approve every database read
+
+One approval per SQL statement is the Supabase connector's own rule, for
+everyone and in every mode: its `execute_sql` tool is marked as needing a
+person each time, and no setting on our side changes that (measured
+2026-09-20). You will see *Allow Claude to use Execute SQL* and answer Allow
+once. Everything else, Git, file reads and the other database tools, should
+run without asking.
+
+If a session starts asking you to approve *everything*, the guards did not
+load in that container. Paste this into the session:
+
+    Run python3 scripts/check_hooks_live.py --fix and paste its LIVE line, no investigation.
+
+A good answer reads `LIVE (root) … execute_sql allow rule: yes`, and that
+repairs the session you are in. If it happens in every new session, tell Sam:
+the environment's setup script needs its date line changed so the snapshot
+rebuilds, a one-minute edit on his side.
+
 ## For Sam — a note on agents
 
 You floated *"maybe need some established agents who are mindful of these
