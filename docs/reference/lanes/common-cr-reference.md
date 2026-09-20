@@ -67,3 +67,6 @@ artifact's own store; read them with `read_db` on collection `replies` BEFORE
 executing, and an item with no reply document has **no** verdict. His verdicts
 become the first curator decisions this lane has ever had, and the measure of
 whether Jev earns a run at the other 1,881 groups.
+
+**Where Jev fits beyond this lane, and the gates each use carries:**
+[`reference-system-one-model-fit-by-lane`](../../kb-notes/reference-system-one-model-fit-by-lane.md) (S280, 2026-09-20).
