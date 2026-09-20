@@ -1,9 +1,39 @@
 {
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
- "_as_of": "2026-09-19",
+ "_as_of": "2026-09-20",
  "_session": 278,
- "_status": "SkyView is now a public read-only surface you can share: signed out it offers the map, How SkyView works and a sign-in note, and nothing that edits. The banner names which credential you hold - Read only, Team phrase, or Magic link - and says whether that covers COBI too, because it is one sign-in across both. Separately, we found why the Allow-Once prompts never stopped: this repo's settings file has NEVER loaded in a three-repo session, because Claude Code reads settings from the folder ABOVE the three clones. The guards are built and tested; installing them is one command only Sam can run, and making that survive a fresh cloud session is the open question.",
+ "_status": "TypeSafe's Jev is wired and proven: the key lives as a GitHub Actions secret, a runner calls the API because sessions cannot reach it directly, and 51 credit-recommendation pairs were scored in 10 seconds. The Common CR Reference lane turned out to be a cross-group problem, not an in-group one — every rung-5 group holds a single wording, so the question is which groups belong together, and blocking on the shared canonical cuts 1.87 million comparisons to 51. Jev discriminates on those: it separated Introduction to Criminology from Introduction to Criminal Justice under the same course code. It never says a confident no, so it suggests and a curator decides. Sam's verdicts on the decision sheet are the next move, and they will be the first curator decisions this lane has ever carried.",
  "items": [
+  {
+   "id": "s279-sam-work-the-jev-cr-sheet",
+   "for": "Sam",
+   "tab": "cr-reference",
+   "text": "51 credit-recommendation pairs are waiting for your verdict at claude.ai/artifact/KydcskYBqc93WAurcMEatq — 25 that Jev reads as the same recommendation (346 articulation rows) and 26 it is unsure about (838 rows). Replies save on the sheet as you go, so you can work it in sittings; nothing executes until you say the package is ready. These become the first curator decisions this lane has ever had."
+  },
+  {
+   "id": "s279-sam-setup-script-for-prompt-guards",
+   "for": "Sam",
+   "tab": "admin",
+   "text": "Paste the prompt-guard installer into the Setup script field of the cloud environment (claude.ai/code, cloud icon above the message box, hover Default, gear). Without it the SQL approval prompts come back every session, because the settings file a session reads lives inside the container and dies with it. The exact tested line is in the session 280 handoff."
+  },
+  {
+   "id": "s279-sam-kb-curation-reason-column",
+   "for": "Sam",
+   "tab": "governance",
+   "text": "kb_curation holds 34,443 curation rows and has no column for a reason — which is why the effort to capture why you merge courses had nowhere to land, beyond the volume problem. Adding one is a new write surface on a shared human-write table, so it needs a Governance pass before it ships."
+  },
+  {
+   "id": "s279-fable-jev-variable-battery",
+   "for": "Fable",
+   "tab": "cr-reference",
+   "text": "Extend the Jev trial from one question per pair to a battery of variable questions (level difference, scope, vendor-specific, lab vs lecture, units) asked in a single call, then cluster pairs by their answer profile. That turns per-case rulings into rules, which is what makes the variables KB feasible. Score the profiles against Sam's verdicts on the 51-item sheet first."
+  },
+  {
+   "id": "s279-fable-no-confident-negatives",
+   "for": "Fable",
+   "tab": "cr-reference",
+   "text": "Jev never scored below 0.32 across 51 pairs, so the keep bucket was empty — it does not express confident negatives on this question. Before trusting it as a filter rather than a suggester, try re-framing the question so a no is as easy to say as a yes, and re-run (about 40 seconds on a branch with no open PR)."
+  },
   {
    "id": "s279-skykeeper-jev-for-sierra",
    "for": "Sky",
@@ -47,46 +77,16 @@
    "text": "Name the next credential-to-program list, the way you did for the CNA (LVN, Rad Tech, ADN, Med Asst, Surgical Tech, Sterilization Tech, Phlebotomy). Obvious candidates to confirm or strike: EMT to Paramedic and Fire Technology; LVN to RN; Medical Assistant to LVN and Phlebotomy; Pharmacy Technician to nursing pharmacology. It is your list, never an inference from a code."
   },
   {
-   "id": "s277-sam-skyview-share-and-curate-scope",
-   "for": "Sam",
-   "tab": "unified-courses",
-   "text": "ANSWERED 2026-09-18 — you said yes to SkyView saving a merge itself, and asked that the build happen in the next session. Two calls are still yours. The RE-MINT SHAPE: a corpus re-key is a batch migration and cannot come from a browser (the playbook needs producer and consumer in one git commit plus a gated Supabase re-key inside a window closing before the 10:17 UTC cron), but a principled re-mint of specific identities is expressible as a request — SkyView composes it, shows the dry-run's blast radius on the map, takes your approval, and a dispatched workflow lands it. Smallest first step is that blast-radius view alone, read only, no approve button. The EXECUTE_SQL GUARD: the allowlist from #1617 removed the prompt that was the only thing enforcing Rule 10's write discipline on a database holding 537,908 student-grain rows; recommended fix is a PreToolUse hook that passes reads and blocks write verbs, which keeps the speed Sierra needs. Both are written up in cpl_memory."
-  },
-  {
    "id": "s277-fable-skyview-loner-eclipse",
    "for": "Fable",
    "tab": "unified-courses",
    "text": "Decide whether to re-order SkyView's hit test for the one-in-twenty-four eclipse. Measured 2026-09-18 over eight parent identities through the page's own pick(): 23 of 24 loners resolve to themselves with their parent open, and 37 of 37 focused member stars resolve to that member. The reading rule is perfect, so chasing the 1 risks the 37 and pick() was left unchanged; with the silent drop exit fixed, that case now reads as a clear refusal rather than a dead map. Reopen it only if Sam hits it again."
   },
   {
-   "id": "s276-sam-oc-answer-v72",
-   "for": "Sam",
-   "tab": "chatbot",
-   "text": "Version 72 is live (2026-09-18, 16:43Z). Ask the Orange County question again in a browser and say whether it reads the way a counselor would say it. After the first paragraph names the course to ask about, a two-column table shows what a CNA program typically covers beside what an LVN program typically teaches, counted across every college in the state (the visitor never said where they earned the CNA); the Chaffey precedent follows; and the answer closes with the other programs a CNA can ask for credit toward, each with the nearest college that teaches it. Sierra now says 'catalog data', never COCI."
-  },
-  {
-   "id": "s276-sam-related-programs-next-list",
-   "for": "Sam",
-   "tab": "chatbot",
-   "text": "Name the next credential-to-programs list for the flyer. Today the flyer exists for one credential: a CNA, with your list (LVN, RN/ADN, Medical Assisting, Phlebotomy, Radiologic Technology, Surgical Technology, Sterile Processing), attributed to you in the answer and checked against the catalog data. The mechanism takes any credential; the list is the team's knowledge, never an inference from a code. Candidates to confirm or strike: EMT to Paramedic and Fire Technology; LVN to RN; Medical Assistant to LVN and Phlebotomy; Pharmacy Technician to nursing pharmacology."
-  },
-  {
    "id": "s278-fable-skyview-pinch-registry",
    "for": "Fable",
    "tab": "unified-courses",
    "text": "MEASURED PRE-EXISTING, not from the auth work. The SkyView browser sweep's \"one finger after the pinch still turns the sky (the registry is clean)\" fails identically on f66659c (226/227) and on the gating branch (230/231) - one finger after a two-finger spread does not turn the sky, so a pointer id is surviving the pinch. It came in with the ladder's three new script tags (team_phrase, cpl_session, reviewer_signin) or earlier; the pre-ladder page passed. Not CI-gating - the sweep is not in js-tests.yml - which is exactly why it will sit unnoticed. Look at pointercancel handling in the pointer registry."
-  },
-  {
-   "id": "s278-fable-root-settings-are-ephemeral",
-   "for": "Fable",
-   "tab": "admin",
-   "text": "The prompt guards install to <session root>/.claude/settings.json, which on the web runner is /home/user - outside all three repos and reclaimed with the container. So the install does not survive a fresh cloud session. Options to weigh: a per-machine installer like scripts/install-three-repo-check.ps1 (covers Sam's desktop, not the cloud), or asking whether the harness can root a session at a repo while still attaching the other two. Until then check_hooks_live.py is the honest signal - run it at session start."
-  },
-  {
-   "id": "s279-sam-install-and-persist-the-guards",
-   "for": "Sam",
-   "tab": "admin",
-   "text": "ONE COMMAND, AND ONLY YOU CAN RUN IT - a session is refused as self-modification, correctly, because these grant permission. On your own machine: 'python3 scripts/install_prompt_guards.py --user --apply', then start a NEW session (hooks bind at startup) and check with scripts/check_hooks_live.py. That one persists. For cloud sessions the same install lasts one container, so the durable fix is your cloud environment's SETUP SCRIPT - configured once, outside the container, runs every start. Stay on Auto mode; it is the lowest-prompt mode and switching would add prompts."
   }
  ],
  "_deferred": [

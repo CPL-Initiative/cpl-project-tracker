@@ -4,6 +4,8 @@ date: 2026-09-19
 session: 278 (SkyWarden)
 tags: [handoff, skyview, auth, permissions, hooks, settings]
 status: current
+superseded: true
+superseded_by: session_280_handoff.md
 ---
 
 # You are Session 279

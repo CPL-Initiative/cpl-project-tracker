@@ -309,3 +309,40 @@ several** — 22.2% of the vocabulary turns on it, and the existing
 units-are-not-identity ruling came from a genuinely different situation
 (colleges writing one course at different units, versus ACE issuing different
 amounts for different training). The other three can be answered alongside.
+
+## 2026-09-20 — what a model can and cannot be asked (S279, SkyKeeper)
+
+**The lane's own headline number meant something other than it looked like.**
+"156 of 2,159 groups carry a decision" reads as curator judgments. It counts the
+mechanical rung ladder. `cr_reference_decisions` has never held a row. The
+doctrine rule that caught this is the one that says a figure from a lane file is
+a claim, not a measurement — reproducing it took one query and changed the whole
+plan, because the trial I had designed scored Jev against a gold set that does
+not exist.
+
+**The shape of the problem was wrong in the same way.** Every rung-5 group holds
+exactly one wording, so there is nothing to merge inside one. Ninety percent of
+this lane is a cross-group question, and nobody had said so in those words.
+Brute force is 1.87M pairs; blocking on the shared canonical is 51. **The
+leverage was in the blocking, not in the matcher** — a better similarity metric
+over 1.87M pairs would still have been unusable.
+
+**A typed answer is not a boolean, and reading it as one fails silently.**
+TypeSafe's noul returns a probability, 0 to 1. The trial filtered `x is True`,
+which no float satisfies, so it would have printed "MERGE on 0 of 55 pairs"
+whatever Jev said — a confidently wrong negative that reads exactly like a clean
+result. It was caught only because Sam opened egress to the vendor's docs and
+the schema could finally be read rather than inferred from their SDK. **The
+cheapest fix for a class of silent failure was network access, not code.**
+
+**Jev discriminates where string distance cannot.** *Introduction to Criminology*
+sat at 0.48 against the same AJ 110 anchor that *Introduction to Criminal
+Justice* scored 0.89 on, with near-identical row counts. Algebra-based physics
+mechanics (0.64) ranked above electricity and magnetism (0.44) against
+INTRO PHYSICS — the correct ordering, and the reverse of what shared tokens
+would give.
+
+**But it never says no.** Nothing fell below 0.32 across 51 pairs. Whatever
+else it is, it is not a filter: the usable signal is the top of the range, and
+everything else is still a curator's afternoon.
+

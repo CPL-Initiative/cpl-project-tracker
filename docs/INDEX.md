@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-09-19
+updated: 2026-09-20
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -66,12 +66,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 5 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 477 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 479 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 79 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 81 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 48 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 251 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **941** | |
+| Session handoffs | 252 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **944** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -123,6 +123,7 @@ Authoritative external sources we've cached:
 
 ## Update history
 
+- **2026-09-20 (S279, SkyKeeper)** — TypeSafe/Jev wired and verified end to end; CR Reference trial scored 51 anchored pairs in 10s and shipped a decision sheet for Sam's verdicts. Two KB notes: a typed answer is not a boolean; a curation table that cannot store a reason.
 - **2026-09-19 (S278, SkyWarden — Rule 9 checkpoint)** — ⭐ **SkyView is a deliberate PUBLIC read-only surface** ([#1632](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1632)): Sam's goal was *"allow public read only SkyView access but prevent any actions to be taken that would edit or access views where edits could be done"*, and asked to gray the menu items or hide them he chose **hide**. Four views moved behind STAGE — each reaches a staging control, and By discipline / By subject / ESL packaging share ONE workspace shell with ONE mode bar, so they travel together. ⚠️ **Gating the menu alone would have LOOKED right in a screenshot**: the views are also plain URLs, so `GATED_ROUTES` puts the same question on `__ccrRoute()`, the one funnel, and the suite asserts the two lists AGREE. ⛔ **A second curation surface lived in another file and the single-decider guard could not see it** — `ccr_atlas_graph.js`'s `__ccrDecision` has its own `moves[]`, and the suite's *"nothing outside curationRung() decides authorization"* passed throughout **because it only read `ccr_universe.js`**. Also: the band now NAMES the credential (rungs 0 and 1 opened on the same words) and answers the COBI half — one origin, one credential; and the pre-JS banner stopped shipping a COBI link it painted before its own gate could reach it. ⛔ **Then the prompt storm** ([#1633](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1633)): **this repo's `.claude/settings.json` has NEVER loaded in a three-repo session** — Claude Code reads the session's project root, which with three repos attached is their parent (`~/.claude/projects/` held one entry, `-home-user`). Documented behavior, and `~/.claude/settings.json` is not read in cloud sessions at all. ⚠️ **Two inherited premises were wrong**: `permissions.allow` DOES work in auto mode (*"allow, ask, or deny rules resolve immediately"*), and a stale `origin/main` made a working gate look broken — so a third of the guards were unnecessary and were removed on Sam's *"simplify it"*. Auto mode is the classifier, and it was turned on to stop the storm it caused. `roadmap_lane` budget 12,000 → 20,000 on Sam's call (measured: 28/32 fit, the 4 over were current truth, and `stacked_roadmap_cell` is the real guard). Two KB notes.
 - **2026-09-19 (S277, SkyCaliper)** — Sierra v73: a sub-region anchors the catalog routes (the San Gabriel Valley false zero), the CNA quick list folds to four real courses, and the comparison table loses its row quota. New note: EXPLAIN ANALYZE's own clock is a cost.
 - 2026-09-18 (S276, SkyGauge) — cpl-chat v72: the quick list of typical courses, the flyer, the precedent in the block, "catalog data" instead of COCI; two KB notes; handoff 277.

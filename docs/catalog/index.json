@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 477,
+   "count": 479,
    "docs": [
     {
      "created": "2026-08-14",
@@ -1100,6 +1100,24 @@
      "title": "A crosswalk's value is the lint, not the mapping",
      "type": "methodology",
      "updated": "2026-08-21"
+    },
+    {
+     "created": "2026-09-20",
+     "governs": [
+      "kb/cr_reference_worklist.json"
+     ],
+     "path": "docs/kb-notes/methodology-a-curation-table-that-cannot-store-a-reason.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "curation",
+      "schema",
+      "governance",
+      "ccr"
+     ],
+     "title": "A curation table that cannot store a reason will never build a reason KB",
+     "type": "methodology",
+     "updated": "2026-09-20"
     },
     {
      "created": "2026-08-21",
@@ -3743,6 +3761,25 @@
      "title": "A total that balances is not a total that is right",
      "type": "methodology",
      "updated": "2026-08-23"
+    },
+    {
+     "created": "2026-09-20",
+     "governs": [
+      "kb/_typesafe_smoke.py",
+      "kb/_typesafe_cr_trial.py"
+     ],
+     "path": "docs/kb-notes/methodology-a-typed-answer-is-not-a-boolean.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "typesafe",
+      "jev",
+      "verification",
+      "silent-failure"
+     ],
+     "title": "A typed answer is not a boolean, and reading it as one fails silently",
+     "type": "methodology",
+     "updated": "2026-09-20"
     },
     {
      "created": "2026-09-08",
@@ -13869,8 +13906,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 251,
+   "count": 252,
    "docs": [
+    {
+     "created": "2026-09-20",
+     "governs": [],
+     "n": 280,
+     "path": "docs/session_280_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "typesafe",
+      "jev",
+      "cr-reference",
+      "curation",
+      "permissions"
+     ],
+     "title": "Jev is wired and proven; the CR Reference is a cross-group problem",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-19",
      "governs": [],
@@ -18128,5 +18183,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 941
+ "total": 944
 }
