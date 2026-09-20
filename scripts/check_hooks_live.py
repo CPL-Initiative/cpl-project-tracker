@@ -93,9 +93,14 @@ def main():
               "execute_sql allow rule: %s"
               % (", ".join(root["hooked"]), root["allow_n"],
                  "yes" if root["sql_rule"] else "NO"))
-        if not root["sql_rule"]:
-            print("                ⚠️ execute_sql will still PROMPT. A hook `allow` alone was")
-            print("                measured (2026-09-20) not to stop it; the allow RULE does.")
+        if root["sql_rule"]:
+            print("                execute_sql still asks once per call, by an upstream mark on")
+            print("                that one tool (measured 2026-09-20); every other listed tool")
+            print("                runs silently, and the guard refuses writes before Supabase.")
+        else:
+            print("                ⚠️ The execute_sql rule is absent here. (Even with it, that one")
+            print("                tool asks once per call by an upstream mark, measured 2026-09-20;")
+            print("                every other listed tool runs silently.)")
             print("                This container started from an environment snapshot built")
             print("                before the rule landed (the setup script runs once per")
             print("                snapshot). This session: python3 scripts/install_prompt_guards.py")
