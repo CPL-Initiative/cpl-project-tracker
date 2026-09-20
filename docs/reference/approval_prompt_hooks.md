@@ -372,25 +372,31 @@ second's signature. ⚠️ **The mark is not in the public server source.** The
 package 0.13.0) contains no `requiresUserInteraction` anywhere, so if the
 mark exists it is added upstream of that code: by Supabase's hosted build or
 by the connector platform. The sandbox cannot read the connector's
-`tools/list` (egress-blocked). **One alternative stays open:** the
-environment restarted between Sam's two pastes ("Resumed session — your
-environment restarted"), so the resumed VM could have started without the
-rules the 20:40 checker saw. The discriminating paste, in that session: run
-`check_hooks_live.py` again, then call the allow-listed `list_tables` once.
-Rules loaded and `list_tables` silent while `execute_sql` prompts means the
-mark, upstream, and nothing local reaches it; `list_tables` prompting too
-means the resume lost the rules and a fresh session is the fix. Every other
-Supabase tool on the allow list ran silently in this container (0.4 s,
-measured).
+`tools/list` (egress-blocked). The environment had restarted between Sam's
+two pastes, so the resumed VM could have started without the rules; **Sam ran
+the discriminating paste in that session (about 21:15 UTC): the checker read
+`execute_sql allow rule: yes` with 33 rules, the allow-listed `list_tables`
+went through with no prompt, and `execute_sql` alone had asked.** The rules
+were loaded and honored for every other tool; the one exception is the mark,
+upstream, and nothing in this repo, the session root, a hook or a mode
+reaches it. Every other Supabase tool on the allow list ran silently in this
+container too (0.4 s, measured).
 
-**If it is the mark, what is left is a design choice, and it is Sam's:** (1) keep the one prompt,
+**What is left is a design choice, and it is Sam's:** (1) keep the one prompt,
 on `execute_sql` only, with every other read silent, which is where things
 stand; (2) a read path that is not this tool, for example the npm server run
 inside the sandbox in `--read-only` mode from the setup script, which carries
 no such mark, at the price of a Supabase token among the environment's
 variables and two hosts on its allowed list, with a security review before
 any of it; (3) ask whether the connector offers a read-only configuration that
-drops the mark. A session does not make this call.
+drops the mark. A session does not make this call. Recommended: (1) now, with
+one question to Supabase support (does the hosted connector mark
+`execute_sql` as requiring user interaction, and does read-only mode change
+it), which costs nothing; (2) only as a decision-sheet item with its
+security review, never as a session's own build. Five sessions of settings
+work removed every prompt that could be removed; a session now batches its
+Supabase writes into one call per checkpoint and keeps `execute_sql` reads to
+as few calls as the work allows.
 
 The confirmation, in a session that reads `yes`: a plain `select` through the
 Supabase tool runs without a prompt, and the harmless denied write

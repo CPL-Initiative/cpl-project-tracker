@@ -12,7 +12,7 @@ Your moniker is **SkyAnvil** — S280 (SkyForge) took Sam's 51 verdicts from
 the Jev sheet into `cr_reference_decisions`, diagnosed the Allow-SQL storm to
 its last lever, and wrote down the rulings that reshape every decision sheet
 from here. What is left is building on those rulings; the storm is down to
-one prompt on `execute_sql`, and one paste decides whether it is upstream.
+one prompt on `execute_sql`, and that one is upstream of everything local.
 
 ## ✅ WHAT SHIPPED
 
@@ -47,20 +47,20 @@ rule: yes`.
 **The confirmation, about 21:00:** the guard refused `update kb_curation set
 value = value where false` before it reached Supabase (its text verbatim in
 the reference doc), and `select 1` STILL prompted, Deny / Allow once, no
-"don't ask again". Two explanations remain and one paste separates them.
-(1) The connector marks `execute_sql` `anthropic/requiresUserInteraction`,
-which prompts on every call in every mode past any allow rule; the public
-server source (0.13.0, 2026-09-17) carries no such mark, so it would be added
-upstream, by the hosted build or the connector platform, and nothing local
-reaches it. (2) The environment restarted between Sam's two pastes, and the
-resumed VM started without the rules. **The paste (already with Sam):**
-`check_hooks_live.py` again, then one `list_tables` call; `list_tables`
-silent with `execute_sql` prompting is (1), `list_tables` prompting too is
-(2), and (2) is fixed by a fresh session. **If (1), NEEDS SAM, a design
-choice:** keep the one prompt; a read path that is not this tool (the npm
-server in the sandbox in read-only mode, a token and two allowed hosts,
-security review first); or ask Supabase whether a read-only configuration
-drops the mark. Writes (`apply_migration`, any mutating tool) prompt by
+"don't ask again". Sam then ran the discriminating paste in that same
+session (about 21:15): the checker read `execute_sql allow rule: yes` with 33
+rules, the allow-listed `list_tables` went through with no prompt, and
+`execute_sql` alone had asked. So the rules load and hold for every other
+tool, and the one exception is a mark on `execute_sql` that Claude Code
+honors past any allow rule (`anthropic/requiresUserInteraction`; the public
+server source carries none, so it is added upstream, by the hosted build or
+the connector platform). Nothing in this repo, the root settings, a hook or a
+mode reaches it. **NEEDS SAM, a design choice, recommended order:** keep the
+one prompt and ask Supabase support the one question (does the hosted
+connector mark `execute_sql`, and does read-only mode change it); a read path
+that is not this tool (the npm server in the sandbox in read-only mode, a
+token and two allowed hosts) only as a decision-sheet item with its security
+review. Writes (`apply_migration`, any mutating tool) prompt by
 design and should; a session batches its memory writes into one call per
 checkpoint so Sam sees one prompt, not two. Whenever `ALLOW_TOOLS` or the
 guards change again: merge, then change the date on the setup script's
@@ -103,7 +103,7 @@ Full record: `docs/reference/approval_prompt_hooks.md`, "2026-09-20, later".
 
 | Item | State |
 |---|---|
-| The `execute_sql` prompt | rule on `main` (#1641), snapshot rebuilt 20:40:31, guard refuses writes; `select` still prompted after an environment restart. One paste decides upstream mark vs. lost rules; if upstream, **NEEDS SAM:** keep the one prompt, or a read path that is not this tool |
+| The `execute_sql` prompt | rule on `main` (#1641), snapshot rebuilt 20:40:31, guard refuses writes, rules load (`list_tables` silent); `execute_sql` alone prompts, by an upstream mark. **NEEDS SAM:** keep the one prompt (recommended, plus one question to Supabase support), or a read path that is not this tool, by decision sheet |
 | Decision-sheet template rebuild | `s280-fable-decision-sheet-template-rec-is-the-focal-point` — the next build; rules in `docs/reference/decision_sheets.md` |
 | Variable battery | `s279-fable-jev-variable-battery` — score profiles against the receipt's 51 verdicts; the gate is settled, the band under it is the work |
 | CI plan | `s280-fable-ci-shard-and-run-only-what-the-diff-touches` — measure per-file timings first |
