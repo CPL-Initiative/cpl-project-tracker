@@ -13983,7 +13983,7 @@
       "permissions",
       "prompt-storm"
      ],
-     "title": "the verdicts landed, the storm is down to the connector's own mark, and every sheet changes shape",
+     "title": "the verdicts landed, the storm is down to one prompt on execute_sql, and every sheet changes shape",
      "type": null,
      "updated": ""
     },

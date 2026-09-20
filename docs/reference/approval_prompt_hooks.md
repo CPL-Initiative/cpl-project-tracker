@@ -367,17 +367,23 @@ acceptEdits, auto, and bypassPermissions permission modes, and doesn't offer a
 the prompt either"*
 ([MCP → Require approval for a specific tool](https://code.claude.com/docs/en/mcp#require-approval-for-a-specific-tool)).
 The prompt's wording excludes the first; the missing "don't ask again" is the
-second's signature. The connector's server marks `execute_sql`; the npm
-package checked earlier (`@supabase/mcp-server-supabase@0.13.0`) is a
-different build from the one the claude.ai connector runs, and the sandbox
-cannot read the connector's `tools/list` (egress-blocked), so this is
-inferred from the docs' exception list and the prompt's shape rather than
-read off the server. Every other Supabase tool on the allow list runs
-silently (0.4 s, measured); `execute_sql` is the one the connector insists a
-person approve, and no setting in this repo, the session root, a hook or a
-mode changes that.
+second's signature. ⚠️ **The mark is not in the public server source.** The
+`supabase-community/supabase-mcp` repository at its tip (6c411e2, 2026-09-17,
+package 0.13.0) contains no `requiresUserInteraction` anywhere, so if the
+mark exists it is added upstream of that code: by Supabase's hosted build or
+by the connector platform. The sandbox cannot read the connector's
+`tools/list` (egress-blocked). **One alternative stays open:** the
+environment restarted between Sam's two pastes ("Resumed session — your
+environment restarted"), so the resumed VM could have started without the
+rules the 20:40 checker saw. The discriminating paste, in that session: run
+`check_hooks_live.py` again, then call the allow-listed `list_tables` once.
+Rules loaded and `list_tables` silent while `execute_sql` prompts means the
+mark, upstream, and nothing local reaches it; `list_tables` prompting too
+means the resume lost the rules and a fresh session is the fix. Every other
+Supabase tool on the allow list ran silently in this container (0.4 s,
+measured).
 
-**What is left is a design choice, and it is Sam's:** (1) keep the one prompt,
+**If it is the mark, what is left is a design choice, and it is Sam's:** (1) keep the one prompt,
 on `execute_sql` only, with every other read silent, which is where things
 stand; (2) a read path that is not this tool, for example the npm server run
 inside the sandbox in `--read-only` mode from the setup script, which carries

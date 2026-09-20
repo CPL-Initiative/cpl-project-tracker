@@ -1,5 +1,5 @@
 ---
-title: Session 281 handoff — the verdicts landed, the storm is down to the connector's own mark, and every sheet changes shape
+title: Session 281 handoff — the verdicts landed, the storm is down to one prompt on execute_sql, and every sheet changes shape
 date: 2026-09-20
 session: 280 (SkyForge)
 tags: [handoff, cr-reference, jev, decision-sheets, permissions, prompt-storm]
@@ -12,7 +12,7 @@ Your moniker is **SkyAnvil** — S280 (SkyForge) took Sam's 51 verdicts from
 the Jev sheet into `cr_reference_decisions`, diagnosed the Allow-SQL storm to
 its last lever, and wrote down the rulings that reshape every decision sheet
 from here. What is left is building on those rulings; the storm is down to
-one tool the connector insists a person approve, and that is Sam's call.
+one prompt on `execute_sql`, and one paste decides whether it is upstream.
 
 ## ✅ WHAT SHIPPED
 
@@ -32,7 +32,7 @@ one tool the connector insists a person approve, and that is Sam's call.
 delete on that value. `cpl_memory` gained 11 rows (S279's six, one advice
 row, four rulings and pitfalls). No SQL is owed for this checkpoint.
 
-## ✅ THE SNAPSHOT REBUILT — and `execute_sql` prompts by the connector's design
+## ✅ THE SNAPSHOT REBUILT — and one prompt on `execute_sql` remains
 
 The `execute_sql` allow rule is on `main` (Sam's c7382c94) with its test
 (#1641). A session Sam started at 20:05, after the commit, still read one
@@ -47,17 +47,26 @@ rule: yes`.
 **The confirmation, about 21:00:** the guard refused `update kb_curation set
 value = value where false` before it reached Supabase (its text verbatim in
 the reference doc), and `select 1` STILL prompted, Deny / Allow once, no
-"don't ask again". The docs leave one cause once the rule is loaded and the
-org-control wording is absent: the connector's server marks `execute_sql`
-`anthropic/requiresUserInteraction`, which prompts on every call in every
-mode and past any allow rule. Every other allow-listed Supabase tool runs
-silently. **NEEDS SAM, a design choice:** keep the one prompt as it stands; a
-read path that is not this tool (the npm server in the sandbox in read-only
-mode, a token and two allowed hosts, security review first); or ask whether
-the connector's read-only configuration drops the mark. Whenever `ALLOW_TOOLS`
-or the guards change again: merge, then change the date on the setup
-script's comment line. Full record: `docs/reference/approval_prompt_hooks.md`,
-"2026-09-20, later".
+"don't ask again". Two explanations remain and one paste separates them.
+(1) The connector marks `execute_sql` `anthropic/requiresUserInteraction`,
+which prompts on every call in every mode past any allow rule; the public
+server source (0.13.0, 2026-09-17) carries no such mark, so it would be added
+upstream, by the hosted build or the connector platform, and nothing local
+reaches it. (2) The environment restarted between Sam's two pastes, and the
+resumed VM started without the rules. **The paste (already with Sam):**
+`check_hooks_live.py` again, then one `list_tables` call; `list_tables`
+silent with `execute_sql` prompting is (1), `list_tables` prompting too is
+(2), and (2) is fixed by a fresh session. **If (1), NEEDS SAM, a design
+choice:** keep the one prompt; a read path that is not this tool (the npm
+server in the sandbox in read-only mode, a token and two allowed hosts,
+security review first); or ask Supabase whether a read-only configuration
+drops the mark. Writes (`apply_migration`, any mutating tool) prompt by
+design and should; a session batches its memory writes into one call per
+checkpoint so Sam sees one prompt, not two. Whenever `ALLOW_TOOLS` or the
+guards change again: merge, then change the date on the setup script's
+comment line. Nothing is pasted per session any more; if that ever changes,
+it goes in the opening line Sam pastes, never in prose he must remember.
+Full record: `docs/reference/approval_prompt_hooks.md`, "2026-09-20, later".
 
 ## SAM'S DECISIONS THIS RUN
 
@@ -94,7 +103,7 @@ script's comment line. Full record: `docs/reference/approval_prompt_hooks.md`,
 
 | Item | State |
 |---|---|
-| The `execute_sql` prompt | rule on `main` (#1641), snapshot rebuilt 20:40:31, guard refuses writes; `select` still prompts: the connector's `requiresUserInteraction` mark. **NEEDS SAM:** keep the one prompt, or a read path that is not this tool |
+| The `execute_sql` prompt | rule on `main` (#1641), snapshot rebuilt 20:40:31, guard refuses writes; `select` still prompted after an environment restart. One paste decides upstream mark vs. lost rules; if upstream, **NEEDS SAM:** keep the one prompt, or a read path that is not this tool |
 | Decision-sheet template rebuild | `s280-fable-decision-sheet-template-rec-is-the-focal-point` — the next build; rules in `docs/reference/decision_sheets.md` |
 | Variable battery | `s279-fable-jev-variable-battery` — score profiles against the receipt's 51 verdicts; the gate is settled, the band under it is the work |
 | CI plan | `s280-fable-ci-shard-and-run-only-what-the-diff-touches` — measure per-file timings first |
