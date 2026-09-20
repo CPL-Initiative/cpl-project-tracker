@@ -26,9 +26,19 @@ silently as "no key configured".
 
 Question shapes — `criteria` is what distinguishes them, and swapping the two
 container types is the easy mistake:
-    noul(instructions, criteria=None)   yes/no
+    noul(instructions, criteria=None)   yes/no; criteria keys are "true"/"false"
     choice(instructions, criteria)      criteria is a MAP  label -> description
     score(instructions, criteria)       criteria is a LIST, >= 2, indexed from 0
+
+⚠️ ANSWER SHAPES — A NOUL IS A PROBABILITY, NOT A BOOLEAN (docs.typesafe.ai,
+read 2026-09-20 once egress was opened):
+    noul   -> {"type":"noul",   "noul": 0.99}    float 0..1, NO confidence field
+    choice -> {"type":"choice", "choice": "<label>", "confidence": 0.0..1.0}
+    score  -> {"type":"score",  "score": <int>,     "confidence": 0.0..1.0}
+"A Noul answer is a single number representing the probability that the answer
+is yes... The number is the answer and the certainty in one." Reading it as a
+bool costs you the whole result silently: `answer is True` is False for every
+float, so a caller reports zero hits whatever the model said.
 
 Usage:
     python3 kb/_typesafe_smoke.py           # auth + model list

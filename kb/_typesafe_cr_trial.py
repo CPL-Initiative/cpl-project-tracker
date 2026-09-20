@@ -83,19 +83,29 @@ def build_pairs():
 
 def ask(pair, key):
     """One call, two questions. State stays tight on purpose — TypeSafe's own
-    guidance is that irrelevant detail costs accuracy."""
+    guidance is that irrelevant detail costs accuracy.
+
+    ⚠️ A NOUL ANSWER IS A PROBABILITY, NOT A BOOLEAN. The docs are explicit:
+    "A Noul answer is a single number representing the probability that the
+    answer is yes where 0 means no and 1 means yes... The number is the answer
+    and the certainty in one." An earlier cut of this file read it as a bool and
+    tested `is True`, which a float never satisfies — it would have reported
+    zero merges whatever Jev said, and that reads exactly like a clean negative
+    result. Noul carries NO separate confidence field; choice and score do.
+    """
     state = {
         "published_recommendation": pair["anchor_rec"],
         "candidate_recommendation": pair["cand_rec"],
         "shared_course": pair["canonical"],
     }
     questions = {
+        # Noul criteria is an object keyed "true"/"false", not "yes"/"no".
         "same": noul(
             "Do these two credit recommendations describe the same course content, "
             "such that one college's award and the other's should be treated as the "
             "same recommendation?",
-            {"yes": "Same content. Wording differs only.",
-             "no": "Different content, even though both map to the same course code."}),
+            {"true": "Same content. Wording differs only.",
+             "false": "Different content, even though both map to the same course code."}),
         "care": score(
             "How much curator attention does this pair deserve before acting?",
             ["Obvious — act without review.",
@@ -104,12 +114,25 @@ def ask(pair, key):
              "Likely wrong to merge — needs a subject expert."]),
     }
     answers = (system_one(state, questions, key).get("answers") or {})
-    same = answers.get("same") or {}
+    care = answers.get("care") or {}
     return {
-        "same": same.get("noul"),
-        "p": same.get("probability", same.get("confidence")),
-        "care": (answers.get("care") or {}).get("score"),
+        "p_same": (answers.get("same") or {}).get("noul"),
+        "care": care.get("score"),
+        "care_confidence": care.get("confidence"),
     }
+
+
+def verdict(p):
+    """Bucket a noul probability. Thresholds are OURS, in code, deliberately —
+    confidence-gated routing is the point: the answer says what, the number says
+    whether to act."""
+    if p is None:
+        return "  ?  "
+    if p >= 0.85:
+        return "MERGE"
+    if p <= 0.15:
+        return "keep "
+    return "REVIEW"
 
 
 def main():
@@ -131,14 +154,14 @@ def main():
     results = []
     for i, p in enumerate(pairs, 1):
         try:
-            verdict = ask(p, key)
+            answer = ask(p, key)
         except SystemExit as e:
             print(f"  stopped at pair {i}: {e}")
             break
-        results.append({**p, **verdict})
-        mark = {True: "MERGE", False: "keep ", None: "  ?  "}.get(verdict["same"], "  ?  ")
-        prob = f"{verdict['p']:.2f}" if isinstance(verdict["p"], (int, float)) else " -- "
-        print(f"  {mark} p={prob} care={verdict['care']} "
+        results.append({**p, **answer})
+        mark = verdict(answer["p_same"])
+        prob = f"{answer['p_same']:.2f}" if isinstance(answer["p_same"], (int, float)) else " -- "
+        print(f"  {mark} p={prob} care={answer['care']} "
               f"{p['rows']:>4}r  {p['cand_rec'][:52]:<52} vs {p['anchor_rec'][:40]}")
 
     os.makedirs(OUT, exist_ok=True)
@@ -146,11 +169,17 @@ def main():
         json.dump({"_doc": "Jev suggestions for Common CR Reference. SUGGESTS, never merges.",
                    "pairs": results}, f, indent=1)
 
-    merges = [r for r in results if r["same"] is True]
-    rows = sum(r["rows"] for r in merges)
+    scored = [r for r in results if isinstance(r["p_same"], (int, float))]
+    merges = [r for r in scored if r["p_same"] >= 0.85]
+    review = [r for r in scored if 0.15 < r["p_same"] < 0.85]
+    keeps = [r for r in scored if r["p_same"] <= 0.15]
     print(f"\n{'='*70}")
-    print(f"Jev says MERGE on {len(merges)} of {len(results)} pairs, "
-          f"covering {rows:,} articulation rows.")
+    print(f"scored {len(scored)} of {len(results)} pairs")
+    print(f"  MERGE  (p>=0.85): {len(merges):>3}  covering {sum(r['rows'] for r in merges):,} rows")
+    print(f"  REVIEW (0.15-85): {len(review):>3}  covering {sum(r['rows'] for r in review):,} rows")
+    print(f"  keep   (p<=0.15): {len(keeps):>3}  covering {sum(r['rows'] for r in keeps):,} rows")
+    if scored and len(set(verdict(r["p_same"]) for r in scored)) == 1:
+        print("  ⚠️ EVERY pair landed in one bucket — Jev is not discriminating here.")
     print(f"Wrote {OUT}/trial.json — a worklist for a curator, not a decision.")
     return 0
 
