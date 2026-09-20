@@ -130,6 +130,11 @@ jobs:
       # Pure-stdlib python, no network.
       - name: Bash read guard (read-only allow, everything else asks)
         run: python3 tests/bash_read_guard_test.py
+      # The execute_sql allow rule is safe ONLY beside the execute_sql hook
+      # (hooks fire first, and a hook deny wins). Measured 2026-09-20: the
+      # hook's own allow does not stop the prompt; the rule does.
+      - name: Prompt-guard installer (the execute_sql rule never ships without its hook)
+        run: python3 tests/install_prompt_guards_test.py
       # The re-mint blast radius (Session 277). Guards three READINGS rather
       # than three behaviors, because all three were got wrong while building
       # it and none of them errored: course_id IS the identity id, the

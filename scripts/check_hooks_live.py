@@ -39,6 +39,33 @@ import sys
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SETTINGS = os.path.join(REPO, ".claude", "settings.json")
+MARK = "# cpl-prompt-guard"      # what install_prompt_guards.py stamps on its blocks
+SQL_TOOL = "mcp__Supabase__execute_sql"
+
+
+def root_report():
+    """What the SESSION ROOT's settings carry — the file that actually loads.
+
+    ⚠️ MEASURED 2026-09-20 (S280): `<root>/.claude/settings.json`, written by
+    the environment's setup script at container start, DOES load in a
+    three-repo cloud session — a `hook_success` transcript entry on every Bash
+    and execute_sql call. This check used to look only at the repo's own file
+    and said INERT while the guards were live from the root, which sent a
+    session chasing the wrong question. So: report the root first.
+    """
+    path = os.path.join(os.path.dirname(REPO), ".claude", "settings.json")
+    if not os.path.exists(path):
+        return {"path": path, "present": False}
+    try:
+        cfg = json.load(open(path, encoding="utf-8"))
+    except Exception as e:
+        return {"path": path, "present": True, "error": str(e)}
+    pre = (cfg.get("hooks") or {}).get("PreToolUse") or []
+    hooked = sorted(str(b.get("matcher")) for b in pre
+                    if any(MARK in (h.get("command") or "") for h in (b.get("hooks") or [])))
+    allow = (cfg.get("permissions") or {}).get("allow") or []
+    return {"path": path, "present": True, "hooked": hooked,
+            "allow_n": len(allow), "sql_rule": SQL_TOOL in allow}
 
 
 def project_roots():
@@ -54,6 +81,29 @@ def project_roots():
 
 
 def main():
+    root = root_report()
+    print("session root:   %s" % root["path"])
+    if root.get("error"):
+        print("ROOT BROKEN:    will not parse (%s)" % root["error"])
+    elif root["present"] and root.get("hooked"):
+        print("LIVE (root) —   guards installed: %s · %d allow rule(s) · "
+              "execute_sql allow rule: %s"
+              % (", ".join(root["hooked"]), root["allow_n"],
+                 "yes" if root["sql_rule"] else "NO"))
+        if not root["sql_rule"]:
+            print("                ⚠️ execute_sql will still PROMPT. A hook `allow` alone was")
+            print("                measured (2026-09-20) not to stop it; the allow RULE does.")
+            print("                Re-run scripts/install_prompt_guards.py from the setup")
+            print("                script — it adds the rule beside the hook.")
+        print("                If a prompt reads 'Your organization requires approval for")
+        print("                this tool', the org's connector control is set to ask and no")
+        print("                local setting reaches it.")
+    elif root["present"]:
+        print("ROOT PRESENT —  but carries none of our guard blocks (%s)" % MARK)
+    else:
+        print("NO ROOT FILE —  the setup script did not run, or wrote elsewhere")
+    print()
+
     if not os.path.exists(SETTINGS):
         print("no .claude/settings.json in this repo — nothing to load")
         return 0
@@ -81,18 +131,19 @@ def main():
         return 0
 
     print()
-    print("INERT — no session is rooted at this repo, so NONE of these hooks load.")
-    print("        This is the normal three-repo layout: the root is the parent")
-    print("        directory and the repo is a subdirectory of it.")
-    print()
-    print("        Consequences, both silent:")
-    print("          * the approval prompts these guards suppress keep coming")
-    print("          * Rule 10's write discipline is unenforced by the harness")
-    print()
-    print("        Fix: put the same hooks where the session actually roots —")
-    print("        <root>/.claude/settings.json, or user-level ~/.claude/settings.json,")
-    print("        with ABSOLUTE paths to this repo's scripts (CLAUDE_PROJECT_DIR")
-    print("        points at the root, not at this repo).")
+    print("INERT (repo file) — no session is rooted at this repo, so nothing in the")
+    print("        repo's own settings.json loads. This is the normal three-repo")
+    print("        layout: the root is the parent directory and the repo is a")
+    print("        subdirectory of it. What counts is the ROOT line above.")
+    if not (root.get("present") and root.get("hooked")):
+        print()
+        print("        Consequences, both silent:")
+        print("          * the approval prompts these guards suppress keep coming")
+        print("          * Rule 10's write discipline is unenforced by the harness")
+        print()
+        print("        Fix: have the environment's setup script run")
+        print("        python3 %s/scripts/install_prompt_guards.py --apply" % REPO)
+        print("        so <root>/.claude/settings.json exists before the session starts.")
     return 0
 
 
