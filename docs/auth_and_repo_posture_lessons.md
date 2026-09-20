@@ -316,7 +316,19 @@ about seven days. So a change to `ALLOW_TOOLS` reaches new sessions after
 one edit of the setup script at claude.ai/code, and reaches the running
 session at once with `--apply`, because Claude Code reloads permissions and
 hooks from a changed settings file. The reference doc and the installer said
-"at every container start"; both are corrected.
+"at every container start"; both are corrected. Confirmed the same evening:
+after Sam's dated comment line, the next session's settings were written at
+20:40:31 with 33 rules and the checker read yes.
+
+### ⭐ Hand over the whole paste
+
+Sam pasted two bare diagnostic commands into a fresh session and it spent
+about twenty-five tool runs explaining them. Given the full message (the
+commands, "paste the output, no investigation", what a good result looks
+like), the next session ran them and stopped. His ruling: *"When you give me
+instructions, let me know exactly what to paste in the new session. I doubt
+I'll remember this habit."* The session remembers; it is a CLAUDE.md team
+obligation now.
 
 Two smaller corrections from the same measurement. A guard writes a
 `hook_success` entry only when it emits a decision, so "every call" was the

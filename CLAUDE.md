@@ -37,7 +37,7 @@ Deep reference offloaded: `docs/reference/` — pipeline_reference ·
 kb_build_status · mid_lifecycle · troubleshooting · obsidian_vault_wiring ·
 finished_workstreams · skyview_invariants · live_session_banner ·
 [approval_prompt_hooks](docs/reference/approval_prompt_hooks.md) (the
-Allow-Once storm: the fix is an allow rule for `execute_sql`) · `lanes/` (stubs below).
+Allow-Once storm) · `lanes/` (stubs below).
 
 **Skills** (`.claude/skills/`) are pull-side too, fired by their own
 `description` rather than by a pointer: **consult-doctrine** (what this repo has
@@ -287,12 +287,9 @@ nobody finds; `unreferenced_offload` flags any that stop being.
   American, of course."* Use **color · behavior · normalize · organization ·
   analyze · center · judgment · program · catalog · license (n and v) · gray ·
   enroll · while (not `whilst`) · among (not `amongst`)** and the
-  `-ize`/`-ization` family. ⚠️ **The British form in a word pair MUST be written
-  in a code span.** Bare, the sweeper rewrites it — this list read
-  `while (not while)` for weeks because `american_spelling` corrected the very
-  words the rule documents, and a bare quotation of that trips
-  `self_corrected_word_pair` in turn. `prose_only()` masks code spans, so the
-  backticks are what let an entry survive its own lint. **Rendered UI text
+  `-ize`/`-ization` family. ⚠️ **The British form in a word pair MUST be in a code
+  span** — bare, the sweeper rewrites it (this list read `while (not while)`
+  for weeks). **Rendered UI text
   first**, then docs, then comments. Enforced by `american_spelling` in `kb/_docs_audit.py`.
   ⚠️ It scans PROSE only: `grey` is a valid CSS keyword and a token name is not
   a spelling, so never blind-replace inside code.
@@ -499,6 +496,10 @@ first day.** Do the remembering for them.
   get you a note--escape doesn't work when you're locked in on something."*
   When the next step waits on anything external, END THE TURN — a scheduled
   wake brings the session back. One batch of calls per turn during a wait.
+- **HAND OVER THE WHOLE PASTE (Sam, 2026-09-20).** A command for another
+  session goes to Sam as the full message he pastes there: the command, then
+  *paste the output, no investigation*, then what a good result looks like.
+  *"I doubt I'll remember this habit"* — the session remembers.
 - **Say what you can't do, early.** No Teams/email sending (drafts only, a human
   presses send), no MAP writes (read-only system of record), no unattached
   repos, no visibility into other sessions except through committed docs.

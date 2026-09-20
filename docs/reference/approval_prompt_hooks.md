@@ -339,6 +339,15 @@ corrected.
    ([Settings → When edits take effect](https://code.claude.com/docs/en/settings#when-edits-take-effect)),
    so the rule counts in the session that ran it.
 
+**Confirmed the same evening.** Sam added a dated comment line to the setup
+script; the next session's root settings were written at 20:40:31 UTC with 33
+allow rules, and `check_hooks_live.py` read `execute_sql allow rule: yes`. His
+setup script loops over `/home/user/*/scripts/install_prompt_guards.py` and
+runs the first it finds with `--apply`, so its text needed nothing beyond the
+comment. The edit is also the human gate: a SessionStart hook that re-applied
+the list would let a commit to `main` change a session's permissions
+unattended, and that is the shape the classifier refuses for good reason.
+
 The confirmation, in a session that reads `yes`: a plain `select` through the
 Supabase tool runs without a prompt, and the harmless denied write
 (`update kb_curation set value = value where false`) is still refused with the

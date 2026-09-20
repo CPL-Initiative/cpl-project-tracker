@@ -1,5 +1,5 @@
 ---
-title: Session 281 handoff — the verdicts landed, the storm is down to one setup-script edit, and every sheet changes shape
+title: Session 281 handoff — the verdicts landed, the storm is over, and every sheet changes shape
 date: 2026-09-20
 session: 280 (SkyForge)
 tags: [handoff, cr-reference, jev, decision-sheets, permissions, prompt-storm]
@@ -11,8 +11,8 @@ status: current
 Your moniker is **SkyAnvil** — S280 (SkyForge) took Sam's 51 verdicts from
 the Jev sheet into `cr_reference_decisions`, diagnosed the Allow-SQL storm to
 its last lever, and wrote down the rulings that reshape every decision sheet
-from here. What is left is building on those rulings, and one edit of the
-cloud environment's setup script that only Sam can make.
+from here. What is left is building on those rulings; the storm's last
+confirmation is Sam's second paste.
 
 ## ✅ WHAT SHIPPED
 
@@ -22,6 +22,7 @@ cloud environment's setup script that only Sam can make.
 | [#1639](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1639) | Approval-prompt reference: the session-root guards load; a hook allow does not stop the `execute_sql` prompt — merged |
 | [#1640](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1640) | CR Reference: Sam's 51 verdicts recorded (41 fold, 10 keep) with the receipt, his decision-sheet rulings, this checkpoint — merged |
 | [#1641](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1641) | Prompt guards: the `execute_sql` rule pinned to its hook by a test, the checker reads the session root, the installer's comments corrected, the dependency map regenerated — merged |
+| [#1642](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1642) | The setup script runs once per environment snapshot: the correction, the procedure, the hook-entry count — merged |
 | CPLBrain #158–#162 | S279's parked note and Ashley's; this session's note and tools booklet; two braindumps — all merged |
 
 **Supabase:** `cr_reference_decisions` holds **30 rows** (was 0) under
@@ -30,27 +31,24 @@ cloud environment's setup script that only Sam can make.
 delete on that value. `cpl_memory` gained 11 rows (S279's six, one advice
 row, four rulings and pitfalls). No SQL is owed for this checkpoint.
 
-## ⛔ ONE EDIT WAITS ON SAM — rebuild the environment snapshot
+## ✅ THE SNAPSHOT REBUILT — one confirmation left
 
 The `execute_sql` allow rule is on `main` (Sam's c7382c94) with its test
 (#1641). A session Sam started at 20:05, after the commit, still read one
-`execute_sql` line in `/home/user/.claude/settings.json`, and its container
-carried the same clone and settings timestamps as this one, to the second
-(15:03:17 / 15:03:27 / 15:03:31). The docs name the mechanism: the setup
-script runs once, Anthropic snapshots the filesystem, and every later session
-starts from the snapshot and skips the script. It runs again only when the
-environment's setup script or allowed hosts change, or after about seven days.
+`execute_sql` line, because a cloud session starts from the environment's
+filesystem snapshot: the setup script runs once, later sessions skip it, and
+it runs again only when the script or the allowed hosts change or after about
+seven days (#1642 records the measurement and the docs). Sam added a dated
+comment line to the setup script; the next session's settings were written at
+20:40:31 with 33 rules and `check_hooks_live.py` read `execute_sql allow
+rule: yes`.
 
-**Sam's action, once:** edit the setup script at claude.ai/code (a dated
-comment line is enough), save. The next new session rebuilds the snapshot and
-`python3 scripts/check_hooks_live.py` reads `execute_sql allow rule: yes`.
-**Until then, per session:** `python3 scripts/install_prompt_guards.py
---apply`; settings edits reach the running session (docs, "When edits take
-effect"). **Confirm** in a session that reads `yes`: a plain `select` through
-the Supabase tool with no prompt, and `update kb_curation set value = value
-where false` still refused by the guard. If that ever executes, the rule is
-short-circuiting the hook and comes out. Full record and the two routes
-considered: `docs/reference/approval_prompt_hooks.md`, "2026-09-20, later".
+**Left, in that session (Sam's paste is already with him):** `select 1`
+through the Supabase tool with no approval prompt, and `update kb_curation set
+value = value where false` refused by the guard. If that ever executes, the
+rule is short-circuiting the hook and comes out. Whenever `ALLOW_TOOLS` or the
+guards change again: merge, then change the date on that comment line. Full
+record: `docs/reference/approval_prompt_hooks.md`, "2026-09-20, later".
 
 ## SAM'S DECISIONS THIS RUN
 
@@ -73,6 +71,12 @@ considered: `docs/reference/approval_prompt_hooks.md`, "2026-09-20, later".
   `main` red at the next push; make the staleness check ignore line drift, or
   drop the numbers from the map.
 - **Stay on Auto** (he asked about Accept Edits). **TruffleHog stays.**
+- **Hand over the whole paste** (2026-09-20): *"When you give me instructions,
+  let me know exactly what to paste in the new session. I doubt I'll remember
+  this habit."* A command for another session goes to him as the full message
+  he pastes there: the command, *paste the output, no investigation*, and what
+  a good result looks like. Now a CLAUDE.md team obligation; the session that
+  got the bare version spent about twenty-five tool runs on two lines.
 - **Open to him:** the Jev data rule (public catalog text is all that leaves
   the building) and whether to start Sierra's semantic smoke assertions.
 
@@ -80,7 +84,7 @@ considered: `docs/reference/approval_prompt_hooks.md`, "2026-09-20, later".
 
 | Item | State |
 |---|---|
-| The `execute_sql` allow rule | on `main` with its test (#1641). **NEEDS SAM:** one edit of the environment's setup script so the snapshot rebuilds; `--apply` per session until then |
+| The `execute_sql` allow rule | on `main` (#1641); snapshot rebuilt 20:40:31 (33 rules, checker reads yes). Left: Sam's confirmation paste (a prompt-free `select`; the harmless write refused) |
 | Decision-sheet template rebuild | `s280-fable-decision-sheet-template-rec-is-the-focal-point` — the next build; rules in `docs/reference/decision_sheets.md` |
 | Variable battery | `s279-fable-jev-variable-battery` — score profiles against the receipt's 51 verdicts; the gate is settled, the band under it is the work |
 | CI plan | `s280-fable-ci-shard-and-run-only-what-the-diff-touches` — measure per-file timings first |
