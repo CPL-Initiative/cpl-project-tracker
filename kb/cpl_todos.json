@@ -5,12 +5,6 @@
  "_status": "TypeSafe's Jev is wired and proven: the key lives as a GitHub Actions secret, a runner calls the API because sessions cannot reach it directly, and 51 credit-recommendation pairs were scored in 10 seconds. The Common CR Reference lane turned out to be a cross-group problem, not an in-group one — every rung-5 group holds a single wording, so the question is which groups belong together, and blocking on the shared canonical cuts 1.87 million comparisons to 51. Jev discriminates on those: it separated Introduction to Criminology from Introduction to Criminal Justice under the same course code. It never says a confident no, so it suggests and a curator decides. Sam's verdicts on the decision sheet are the next move, and they will be the first curator decisions this lane has ever carried.",
  "items": [
   {
-   "id": "s279-sam-work-the-jev-cr-sheet",
-   "for": "Sam",
-   "tab": "cr-reference",
-   "text": "51 credit-recommendation pairs are waiting for your verdict at claude.ai/artifact/KydcskYBqc93WAurcMEatq — 25 that Jev reads as the same recommendation (346 articulation rows) and 26 it is unsure about (838 rows). Replies save on the sheet as you go, so you can work it in sittings; nothing executes until you say the package is ready. These become the first curator decisions this lane has ever had."
-  },
-  {
    "id": "s279-sam-setup-script-for-prompt-guards",
    "for": "Sam",
    "tab": "admin",
@@ -26,7 +20,7 @@
    "id": "s279-fable-jev-variable-battery",
    "for": "Fable",
    "tab": "cr-reference",
-   "text": "Extend the Jev trial from one question per pair to a battery of variable questions (level difference, scope, vendor-specific, lab vs lecture, units) asked in a single call, then cluster pairs by their answer profile. That turns per-case rulings into rules, which is what makes the variables KB feasible. Score the profiles against Sam's verdicts on the 51-item sheet first."
+   "text": "Extend the Jev trial from one question per pair to a battery of variable questions (level difference, scope, vendor-specific, lab vs lecture, units) asked in a single call, then cluster pairs by their answer profile. Score the profiles against Sam's 51 verdicts first: 41 fold, 10 keep, in kb/receipts/cr_reference_decisions_2026-09-20_s280.json. Above p 0.85 Jev was 25 for 25; below it the probability carried no signal, so the battery is what has to separate the 10 keeps from the 16 folds in that band."
   },
   {
    "id": "s279-fable-no-confident-negatives",
@@ -87,6 +81,12 @@
    "for": "Fable",
    "tab": "unified-courses",
    "text": "MEASURED PRE-EXISTING, not from the auth work. The SkyView browser sweep's \"one finger after the pinch still turns the sky (the registry is clean)\" fails identically on f66659c (226/227) and on the gating branch (230/231) - one finger after a two-finger spread does not turn the sky, so a pointer id is surviving the pinch. It came in with the ladder's three new script tags (team_phrase, cpl_session, reviewer_signin) or earlier; the pre-ladder page passed. Not CI-gating - the sweep is not in js-tests.yml - which is exactly why it will sit unnoticed. Look at pointercancel handling in the pointer registry."
+  },
+  {
+   "id": "s280-fable-decision-sheet-template-rec-is-the-focal-point",
+   "for": "Fable",
+   "tab": "cr-reference",
+   "text": "Sam, 2026-09-20: \"make your recommendation line more visually a focal point. I found myself saying yes to things that I later had to flip keep because I didn't pay attention to your rec.\" Rebuild the decision-sheet template (kb/_decision_sheet_replies.py + docs/reference/decision_sheets.md): the proposed disposition as a highlighted callout above the chips; the first chip confirms the proposal and names the action (Keep the fold / Pull out), never a bare Yes; Edit behind Other; undo as a toggle; the running total in outcome terms in the bottom bar; a stopping point every twenty items; the framing sentence in the header. Fold proposed by default, faculty pull out."
   }
  ],
  "_deferred": [

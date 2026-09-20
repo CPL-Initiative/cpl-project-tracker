@@ -56,3 +56,34 @@ replaced.
 sheet said 15 sites carried a banned word (14 by the time the item ran, because
 an earlier item had absorbed one) and nine sections on a page that has seven.
 Both numbers were right when written and stale when executed.
+
+## Sam's rulings of 2026-09-20 (S280, from the Jev CR Reference sheet)
+
+- **The recommendation line is the visual focal point.** *"I found myself
+  saying yes to things that I later had to flip keep because I didn't pay
+  attention to your rec."* The proposed disposition is a highlighted callout
+  above the chips, never a `dd` in the same gray as the facts.
+- **Chips name the outcome.** The 51-item sheet defined Yes as "take the
+  proposal" and its review band proposed hold-separate, so a Yes there meant
+  keep by the sheet and fold to Sam; items 26–41 all carried a Yes and then a
+  flip to Keep. The first chip confirms the proposal and its label names the
+  action (*Keep the fold* / *Pull out*); *Edit* sits behind *Other*.
+- **Over-merge by default; faculty pull out.** *"It is better to over merge
+  and give faculty the chance to pull them out rather than the other way
+  around. It's easier to respond to a decision than to make one."* Every item
+  proposes the fold with a one-line reason it might be wrong, in the
+  variables' vocabulary (level, scope, units, lab against lecture,
+  vendor-specific, a different course).
+- **The framing sits in the header, in his words:** no student repeats a
+  course they have already mastered, and credit mobility and articulation
+  adoptability across the system.
+- **Decision fatigue is the design constraint.** *"Making decisions is taxing
+  and only so many can be made before people bail out."* The mechanics that
+  operate as a game without reading as one: a running total in outcome terms
+  (rows settled, colleges reached), the biggest win first, a stopping point
+  every twenty items, sittings as plain text, completion states per
+  discipline, the curator of record named in the reference, shared challenges
+  rather than college rankings. Quality goes in the score: undo and reversal
+  rates, never clicks. He agreed: *"Good pushback--agree!"*
+- **The flow runs for every reference** (CER, CSR, CCRR, CCR), and a reference
+  needs a decisions store with a reason column before its first sheet.

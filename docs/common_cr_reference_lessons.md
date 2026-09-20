@@ -357,3 +357,35 @@ all that leaves the building) and what the two posts get wrong are in
 The next Jev build is Sierra's semantic smoke assertions, advisory column
 first; the CR variable battery still waits on the 51 verdicts, and the
 `replies` collection held none at the start of this session.
+
+## 2026-09-20 — S280 (SkyForge): the verdicts landed, and what they said about Jev and about sheets
+
+Sam answered all 51 items in two sittings of a few minutes each: 33 fold, 18
+keep, no notes. Shown the eight anchors carrying both a fold and a keep, he
+flipped eight keeps to fold, so the lane's first curator decisions are
+**41 fold, 10 keep**, written as 30 rows in `cr_reference_decisions` and
+verified against the committed receipt
+(`kb/receipts/cr_reference_decisions_2026-09-20_s280.json`).
+
+**The gate is right; the ordering under it is noise.** Every pair Jev put at
+0.85 or above folded, 25 of 25. Below the gate, Sam first kept the four
+highest pairs (all 0.84) and folded the three lowest (0.32, 0.44, 0.48). A
+probability in that band told us nothing about his verdict.
+
+**A Yes relative to a proposal that flips per section is not a verdict.** The
+sheet's how-to defined Yes as "take the proposal"; the review band proposed
+hold-separate; Sam read Yes as fold throughout and said so: *"I found myself
+saying yes to things that I later had to flip keep because I didn't pay
+attention to your rec."* Items 26–41 all sat at version 2 — a Yes, then a flip
+to Keep — answered bottom-up in one minute. That is the fatigue click made
+visible, and his rulings follow from it: the recommendation line is the focal
+point, chips name the outcome, the fold is proposed by default and pulled out,
+the framing sits in the header.
+
+**Over-merge by design.** *"It is better to over merge and give faculty the
+chance to pull them out rather than the other way around. It's easier to
+respond to a decision than to make one."* The `split` and `excluded`
+affordances in the decisions table are the pull-out; the sheet is the
+proposal. He wants the flow for CER, CSR, CCRR and CCR, and CCR is *"the big
+kahuna with its thousands of decisions"*. The prerequisite there is a
+decisions store with a reason column, which the CCR does not have yet.

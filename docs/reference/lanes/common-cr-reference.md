@@ -21,7 +21,7 @@ related:
 
 ## Status
 
-✅ **WORKLIST LIVE** (scoped SkyRunner #1174; built SkyCall #1176). ⭐ **SAM'S DESIGN RULING:** *"CID is only one factor… similar to the CCR, we take into account matching factors like title, course name and number, course description, subject, etc."* — illustrative, not exhaustive. C-ID-as-key fails BOTH ways: it over-merges (`AJ 110` on two genuinely different POST lines) and under-merges badly (only ~17% of the 2,344 strings carry a C-ID at all). ⭐ **AUTOMATION REACHES ~10%, SO THIS IS A CURATION WORKBENCH, NOT A MERGE ENGINE** — rung 1 published statewide 351 lines/134 credentials · rung 2 C-ID 36 of those · rung 3 CCR course identity 40 strings · rung 4 mechanical twin ~160 · rung 5 similarity **suggests, never merges**. **~90% is curator judgment no matcher reaches** (*Racial Issues and the Police* ≡ *Community Relations* — one POST topic, unrelated words), which is what the **+ Add a wording** picker is for. ⭐ **SCOPE IS GLOBAL + a split affordance (Sam, 2026-08-13):** 407 strings (17%) span >1 credential but carry **45% of all articulation rows**, and `Introduction to FCAW` is one recommendation under all ten AWS/ASME credentials carrying it. ⚠️ **RANK BY COLLAPSE VALUE (wordings × colleges), NEVER BY CREDENTIALS SPANNED** — the widest-spreading string is `3 hours in Elective Course Credits`: 61 credentials, **1 college**, a placeholder. Credentials-spanned would have ranked the corpus's least useful string #1; collapse value sinks it to #174 with no special case. Real head: `Intro to Administration of Justice` (5 wordings/26 colleges), then Principles & Procedures, then Criminal Investigation. **156 of 2,159 groups carry a decision; top 50 strings = 49.4% of all articulations — an afternoon, not an ocean.** ⚠️ **Units are NOT identity** (`SPAN 100` at 4/4.5/5) — a screen on rung 4 ONLY; rung 1/2/3 override it, so `Engine Performance` correctly merges 2/3-4/4/5 units and the spread is **always displayed**. ⚠️ **Grouping is by KEY, NEVER transitive** — 164 strings bridge ≥2 course identities, so components would chain `AJ 110`↔*Community Relations*↔`AJ 160`. ⚠️ **Two gates DON'T work: `attribution='per_course'`** (every poisoned `AJ 110` row carries it) **and a line-fraction/cartesian test** (`AJ 110` hits 8 of POST's 43 → reads non-cartesian → sails through). The gate that works is the credential's **COURSE count**. ⚠️ **A normalization and the screens that judge it MUST see the same text** — `screen_profile()` ran on the raw topic while the key ran on the folded one, so `Intro`/`Introduction` read as different levels and the level screen **blocked the top of the queue**; then the test re-implemented the folds, missed `adv`, and failed two correct groups. Fixed by EMITTING the profile, not re-deriving it. Decisions live in gated Supabase `cr_reference_decisions` keyed on `group_key`, so a rebuild can never overwrite a judgment. **NEXT: Sam works the head — the top ~50 groups — and we watch which rungs he overrides.** Story: [`docs/common_cr_reference_lessons.md`](docs/common_cr_reference_lessons.md) · scope [`docs/common_cr_reference_scope.md`](docs/common_cr_reference_scope.md).
+✅ **WORKLIST LIVE** (scoped SkyRunner #1174; built SkyCall #1176). ⭐ **SAM'S DESIGN RULING:** *"CID is only one factor… similar to the CCR, we take into account matching factors like title, course name and number, course description, subject, etc."* — illustrative, not exhaustive. C-ID-as-key fails BOTH ways: it over-merges (`AJ 110` on two genuinely different POST lines) and under-merges badly (only ~17% of the 2,344 strings carry a C-ID at all). ⭐ **AUTOMATION REACHES ~10%, SO THIS IS A CURATION WORKBENCH, NOT A MERGE ENGINE** — rung 1 published statewide 351 lines/134 credentials · rung 2 C-ID 36 of those · rung 3 CCR course identity 40 strings · rung 4 mechanical twin ~160 · rung 5 similarity **suggests, never merges**. **~90% is curator judgment no matcher reaches** (*Racial Issues and the Police* ≡ *Community Relations* — one POST topic, unrelated words), which is what the **+ Add a wording** picker is for. ⭐ **SCOPE IS GLOBAL + a split affordance (Sam, 2026-08-13):** 407 strings (17%) span >1 credential but carry **45% of all articulation rows**, and `Introduction to FCAW` is one recommendation under all ten AWS/ASME credentials carrying it. ⚠️ **RANK BY COLLAPSE VALUE (wordings × colleges), NEVER BY CREDENTIALS SPANNED** — the widest-spreading string is `3 hours in Elective Course Credits`: 61 credentials, **1 college**, a placeholder. Credentials-spanned would have ranked the corpus's least useful string #1; collapse value sinks it to #174 with no special case. Real head: `Intro to Administration of Justice` (5 wordings/26 colleges), then Principles & Procedures, then Criminal Investigation. **30 groups carry a curator decision as of 2026-09-20 (the older "156" counted the mechanical rung ladder); top 50 strings = 49.4% of all articulations — an afternoon, not an ocean.** ⚠️ **Units are NOT identity** (`SPAN 100` at 4/4.5/5) — a screen on rung 4 ONLY; rung 1/2/3 override it, so `Engine Performance` correctly merges 2/3-4/4/5 units and the spread is **always displayed**. ⚠️ **Grouping is by KEY, NEVER transitive** — 164 strings bridge ≥2 course identities, so components would chain `AJ 110`↔*Community Relations*↔`AJ 160`. ⚠️ **Two gates DON'T work: `attribution='per_course'`** (every poisoned `AJ 110` row carries it) **and a line-fraction/cartesian test** (`AJ 110` hits 8 of POST's 43 → reads non-cartesian → sails through). The gate that works is the credential's **COURSE count**. ⚠️ **A normalization and the screens that judge it MUST see the same text** — `screen_profile()` ran on the raw topic while the key ran on the folded one, so `Intro`/`Introduction` read as different levels and the level screen **blocked the top of the queue**; then the test re-implemented the folds, missed `adv`, and failed two correct groups. Fixed by EMITTING the profile, not re-deriving it. Decisions live in gated Supabase `cr_reference_decisions` keyed on `group_key`, so a rebuild can never overwrite a judgment. **NEXT: Sam works the head — the top ~50 groups — and we watch which rungs he overrides.** Story: [`docs/common_cr_reference_lessons.md`](docs/common_cr_reference_lessons.md) · scope [`docs/common_cr_reference_scope.md`](docs/common_cr_reference_scope.md).
 
 ## Jev on this lane (2026-09-20, S279 SkyKeeper)
 
@@ -60,13 +60,36 @@ express confident negatives here. The usable gate is **p≥0.85 = suggest**,
 everything else = a curator looks. It suggests; rung 5's "similarity suggests,
 never merges" and Rule 7's TOP posture both still hold.
 
-**NEXT: Sam works the 51-item decision sheet** —
-[artifact](https://claude.ai/artifact/KydcskYBqc93WAurcMEatq), source
-`docs/visuals/2026-09-20-jev-cr-reference-pairs.html`. Replies live in the
-artifact's own store; read them with `read_db` on collection `replies` BEFORE
-executing, and an item with no reply document has **no** verdict. His verdicts
-become the first curator decisions this lane has ever had, and the measure of
-whether Jev earns a run at the other 1,881 groups.
+**THE VERDICTS LANDED (2026-09-20, S280).** Sam answered all 51 on the
+[sheet](https://claude.ai/artifact/KydcskYBqc93WAurcMEatq): 33 fold, 18 keep,
+no notes; then, shown the eight anchors that carried both a fold and a keep,
+he flipped 26, 27, 28, 29, 32, 35, 37, 38 to fold: **41 fold, 10 keep**.
+Written to `cr_reference_decisions` as **30 rows** (20 anchor groups carrying
+the folded wordings as members, 10 kept groups confirmed as their own
+recommendation), INSERT-only under `updated_by = cr-reference-s280@bot`,
+verified member-by-member against the receipt:
+`kb/receipts/cr_reference_decisions_2026-09-20_s280.json` (+ `.sql` beside it;
+rollback is one delete on that `updated_by`). These are the lane's first
+curator decisions.
+
+**Calibration against Sam:** at p ≥ 0.85 Jev was right 25 of 25. Below the gate
+the number carried no signal: he kept the four 0.84 pairs at first and folded
+the three lowest (0.32, 0.44, 0.48); after the review 16 of 26 folded. The gate
+earns its place; the ordering under it does not. Keeps after review: items
+30, 31, 33, 34, 36, 39, 40, 41, 44, 47.
+
+⚠️ **The sheet's Yes was ambiguous.** Its how-to defined Yes as
+"take the proposal", and the review band proposed hold-separate, so a Yes there
+meant keep by the sheet and fold to Sam. His messages and his flips list fix
+the reading as fold. Sam's rulings for every next sheet (2026-09-20): the
+recommendation line is the visual focal point, chips name the outcome (never a
+bare Yes), the fold is proposed by default with its reason and faculty pull
+out, and the framing sits in the header.
+[`decision_sheets`](../decision_sheets.md).
+
+**NEXT:** the variable battery (`s279-fable-jev-variable-battery`), scored
+against the 51 verdicts in the receipt, and the next sheet built to Sam's
+rulings. The other 1,881 rung-5 groups wait on that.
 
 **Where Jev fits beyond this lane, and the gates each use carries:**
 [`reference-system-one-model-fit-by-lane`](../../kb-notes/reference-system-one-model-fit-by-lane.md) (S280, 2026-09-20).
