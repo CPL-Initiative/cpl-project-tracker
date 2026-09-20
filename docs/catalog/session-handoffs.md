@@ -19,7 +19,7 @@ One per session, newest first. **Only the highest-numbered handoff is authoritat
 
 | N | Handoff | Created |
 |---|---|---|
-| 281 | [the verdicts landed, the storm is over, and every sheet changes shape](../session_281_handoff.md) | 2026-09-20 |
+| 281 | [the verdicts landed, the storm is down to the connector's own mark, and every sheet changes shape](../session_281_handoff.md) | 2026-09-20 |
 | 280 | [Jev is wired and proven; the CR Reference is a cross-group problem](../session_280_handoff.md) | 2026-09-20 |
 | 279 | [SkyView is a public read-only surface; the prompt guards are built but NOT installed](../session_279_handoff.md) | 2026-09-19 |
 | 278 | [part one, Sierra v73 (a sub-region is a place, the CNA quick list is four real courses); part two, the SkyView curation ladder and the re-mint blast radius](../session_278_handoff.md) | 2026-09-18 |

@@ -348,6 +348,44 @@ comment. The edit is also the human gate: a SessionStart hook that re-applied
 the list would let a commit to `main` change a session's permissions
 unattended, and that is the shape the classifier refuses for good reason.
 
+**And the prompt survived the rule (about 21:00 UTC).** In that session, with
+the rule loaded, `select 1` through the connector's `execute_sql` still raised
+*Allow Claude to use Execute SQL (Supabase)?* with Deny and Allow once and no
+"don't ask again"; the harmless `update kb_curation set value = value where
+false` was refused by the guard before it reached Supabase, verbatim:
+`PreToolUse:mcp__Supabase__execute_sql hook error: Blocked by the repo's
+Supabase guard: this statement contains update.` So the guard half holds, and
+the prompt half has one cause left. The docs list exactly two ways an MCP tool
+prompts past a matching allow rule
+([permission modes → how the classifier evaluates actions](https://code.claude.com/docs/en/permission-modes#how-the-classifier-evaluates-actions)):
+a connector tool the organization set to `ask`, whose prompt carries the
+reason *Your organization requires approval for this tool*, and a tool whose
+server sets `_meta["anthropic/requiresUserInteraction"]` to `true`, for which
+Claude Code *"shows that tool's permission prompt on every call, even in
+acceptEdits, auto, and bypassPermissions permission modes, and doesn't offer a
+'don't ask again' option for it. Allow rules that match the tool don't skip
+the prompt either"*
+([MCP → Require approval for a specific tool](https://code.claude.com/docs/en/mcp#require-approval-for-a-specific-tool)).
+The prompt's wording excludes the first; the missing "don't ask again" is the
+second's signature. The connector's server marks `execute_sql`; the npm
+package checked earlier (`@supabase/mcp-server-supabase@0.13.0`) is a
+different build from the one the claude.ai connector runs, and the sandbox
+cannot read the connector's `tools/list` (egress-blocked), so this is
+inferred from the docs' exception list and the prompt's shape rather than
+read off the server. Every other Supabase tool on the allow list runs
+silently (0.4 s, measured); `execute_sql` is the one the connector insists a
+person approve, and no setting in this repo, the session root, a hook or a
+mode changes that.
+
+**What is left is a design choice, and it is Sam's:** (1) keep the one prompt,
+on `execute_sql` only, with every other read silent, which is where things
+stand; (2) a read path that is not this tool, for example the npm server run
+inside the sandbox in `--read-only` mode from the setup script, which carries
+no such mark, at the price of a Supabase token among the environment's
+variables and two hosts on its allowed list, with a security review before
+any of it; (3) ask whether the connector offers a read-only configuration that
+drops the mark. A session does not make this call.
+
 The confirmation, in a session that reads `yes`: a plain `select` through the
 Supabase tool runs without a prompt, and the harmless denied write
 (`update kb_curation set value = value where false`) is still refused with the

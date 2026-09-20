@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 961,
-    "bytes": 10180967,
+    "bytes": 10184657,
     "over_budget": 4,
     "handoff_max": 281,
     "always_loaded_files": 1,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 115,
-        "bytes": 3127911,
+        "bytes": 3130602,
         "over": 3
       },
       "index": {
@@ -51,7 +51,7 @@
       },
       "handoff": {
         "files": 253,
-        "bytes": 2182250,
+        "bytes": 2183249,
         "over": 0
       }
     },
@@ -62,7 +62,7 @@
     },
     "vault": {
       "files": 3020,
-      "bytes": 1468923867,
+      "bytes": 1468927585,
       "heavy_bytes": 644076945,
       "heavy_share": 0.438,
       "ignore_filters": [

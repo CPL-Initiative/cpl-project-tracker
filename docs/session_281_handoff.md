@@ -1,5 +1,5 @@
 ---
-title: Session 281 handoff — the verdicts landed, the storm is over, and every sheet changes shape
+title: Session 281 handoff — the verdicts landed, the storm is down to the connector's own mark, and every sheet changes shape
 date: 2026-09-20
 session: 280 (SkyForge)
 tags: [handoff, cr-reference, jev, decision-sheets, permissions, prompt-storm]
@@ -11,8 +11,8 @@ status: current
 Your moniker is **SkyAnvil** — S280 (SkyForge) took Sam's 51 verdicts from
 the Jev sheet into `cr_reference_decisions`, diagnosed the Allow-SQL storm to
 its last lever, and wrote down the rulings that reshape every decision sheet
-from here. What is left is building on those rulings; the storm's last
-confirmation is Sam's second paste.
+from here. What is left is building on those rulings; the storm is down to
+one tool the connector insists a person approve, and that is Sam's call.
 
 ## ✅ WHAT SHIPPED
 
@@ -23,7 +23,7 @@ confirmation is Sam's second paste.
 | [#1640](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1640) | CR Reference: Sam's 51 verdicts recorded (41 fold, 10 keep) with the receipt, his decision-sheet rulings, this checkpoint — merged |
 | [#1641](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1641) | Prompt guards: the `execute_sql` rule pinned to its hook by a test, the checker reads the session root, the installer's comments corrected, the dependency map regenerated — merged |
 | [#1642](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1642) | The setup script runs once per environment snapshot: the correction, the procedure, the hook-entry count — merged |
-| [#1643](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1643) | Sam's paste rule in `CLAUDE.md`; the 20:40:31 confirmation; this handoff — merges on green |
+| [#1643](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1643) | Sam's paste rule in `CLAUDE.md`; the 20:40:31 confirmation; the connector's mark on `execute_sql`; this handoff — merges on green |
 | CPLBrain #158–#162 | S279's parked note and Ashley's; this session's note and tools booklet; two braindumps — all merged |
 
 **Supabase:** `cr_reference_decisions` holds **30 rows** (was 0) under
@@ -32,7 +32,7 @@ confirmation is Sam's second paste.
 delete on that value. `cpl_memory` gained 11 rows (S279's six, one advice
 row, four rulings and pitfalls). No SQL is owed for this checkpoint.
 
-## ✅ THE SNAPSHOT REBUILT — one confirmation left
+## ✅ THE SNAPSHOT REBUILT — and `execute_sql` prompts by the connector's design
 
 The `execute_sql` allow rule is on `main` (Sam's c7382c94) with its test
 (#1641). A session Sam started at 20:05, after the commit, still read one
@@ -44,12 +44,20 @@ comment line to the setup script; the next session's settings were written at
 20:40:31 with 33 rules and `check_hooks_live.py` read `execute_sql allow
 rule: yes`.
 
-**Left, in that session (Sam's paste is already with him):** `select 1`
-through the Supabase tool with no approval prompt, and `update kb_curation set
-value = value where false` refused by the guard. If that ever executes, the
-rule is short-circuiting the hook and comes out. Whenever `ALLOW_TOOLS` or the
-guards change again: merge, then change the date on that comment line. Full
-record: `docs/reference/approval_prompt_hooks.md`, "2026-09-20, later".
+**The confirmation, about 21:00:** the guard refused `update kb_curation set
+value = value where false` before it reached Supabase (its text verbatim in
+the reference doc), and `select 1` STILL prompted, Deny / Allow once, no
+"don't ask again". The docs leave one cause once the rule is loaded and the
+org-control wording is absent: the connector's server marks `execute_sql`
+`anthropic/requiresUserInteraction`, which prompts on every call in every
+mode and past any allow rule. Every other allow-listed Supabase tool runs
+silently. **NEEDS SAM, a design choice:** keep the one prompt as it stands; a
+read path that is not this tool (the npm server in the sandbox in read-only
+mode, a token and two allowed hosts, security review first); or ask whether
+the connector's read-only configuration drops the mark. Whenever `ALLOW_TOOLS`
+or the guards change again: merge, then change the date on the setup
+script's comment line. Full record: `docs/reference/approval_prompt_hooks.md`,
+"2026-09-20, later".
 
 ## SAM'S DECISIONS THIS RUN
 
@@ -79,13 +87,14 @@ record: `docs/reference/approval_prompt_hooks.md`, "2026-09-20, later".
   a good result looks like. Now a CLAUDE.md team obligation; the session that
   got the bare version spent about twenty-five tool runs on two lines.
 - **Open to him:** the Jev data rule (public catalog text is all that leaves
-  the building) and whether to start Sierra's semantic smoke assertions.
+  the building), whether to start Sierra's semantic smoke assertions, and the
+  `execute_sql` read path (keep the one prompt, or a path that is not this tool).
 
 ## Carryover
 
 | Item | State |
 |---|---|
-| The `execute_sql` allow rule | on `main` (#1641); snapshot rebuilt 20:40:31 (33 rules, checker reads yes). Left: Sam's confirmation paste (a prompt-free `select`; the harmless write refused) |
+| The `execute_sql` prompt | rule on `main` (#1641), snapshot rebuilt 20:40:31, guard refuses writes; `select` still prompts: the connector's `requiresUserInteraction` mark. **NEEDS SAM:** keep the one prompt, or a read path that is not this tool |
 | Decision-sheet template rebuild | `s280-fable-decision-sheet-template-rec-is-the-focal-point` — the next build; rules in `docs/reference/decision_sheets.md` |
 | Variable battery | `s279-fable-jev-variable-battery` — score profiles against the receipt's 51 verdicts; the gate is settled, the band under it is the work |
 | CI plan | `s280-fable-ci-shard-and-run-only-what-the-diff-touches` — measure per-file timings first |
