@@ -87,6 +87,12 @@
    "for": "Fable",
    "tab": "cr-reference",
    "text": "Sam, 2026-09-20: \"make your recommendation line more visually a focal point. I found myself saying yes to things that I later had to flip keep because I didn't pay attention to your rec.\" Rebuild the decision-sheet template (kb/_decision_sheet_replies.py + docs/reference/decision_sheets.md): the proposed disposition as a highlighted callout above the chips; the first chip confirms the proposal and names the action (Keep the fold / Pull out), never a bare Yes; Edit behind Other; undo as a toggle; the running total in outcome terms in the bottom bar; a stopping point every twenty items; the framing sentence in the header. Fold proposed by default, faculty pull out."
+  },
+  {
+   "id": "s280-fable-ci-shard-and-run-only-what-the-diff-touches",
+   "for": "Fable",
+   "tab": "all",
+   "text": "Sam, 2026-09-20, on the ten-minute merge: shard the JS suite across a runner matrix and run only the test files the diff touches on a pull request (the full suite stays on every push to main), plus the one hot spot, the funding tests that boot the whole dashboard in jsdom per file. Measure first: per-file timings from the last run, then the workflow change. A wholesale refactor of the monolith is not the lever for CI time."
   }
  ],
  "_deferred": [
