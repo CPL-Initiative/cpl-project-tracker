@@ -2,13 +2,13 @@
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
  "_as_of": "2026-09-20",
  "_session": 280,
- "_status": "Sam's 51 verdicts on the Jev decision sheet are recorded: 41 wordings fold into their published statewide line and 10 stay separate, 30 rows in the decisions table with a committed receipt and a one-line rollback. Jev's gate held (25 of 25 above 0.85) and the numbers under the gate told us nothing, so the model orders the queue and people decide. Sam's rulings reshape every sheet from here: the recommendation is the focal point, chips name the outcome, the fold is proposed by default and faculty pull out, the framing sits in the header. The Allow SQL prompt is diagnosed to its last lever, one allow rule that only a person can add. Next: rebuild the sheet template to the rulings, score the variable battery against the receipt, and the agreed CI plan (shard the suite, run only what the diff touches).",
+ "_status": "Sam's 51 verdicts on the Jev decision sheet are recorded: 41 wordings fold into their published statewide line and 10 stay separate, 30 rows in the decisions table with a committed receipt and a one-line rollback. Jev's gate held (25 of 25 above 0.85) and the numbers under the gate told us nothing, so the model orders the queue and people decide. Sam's rulings reshape every sheet from here: the recommendation is the focal point, chips name the outcome, the fold is proposed by default and faculty pull out, the framing sits in the header. The Allow SQL prompt is down to one edit: the allow rule is on main with its test, and a new session still starts from the environment's filesystem snapshot built before it, so Sam edits the setup script once to rebuild the snapshot. Next: rebuild the sheet template to the rulings, score the variable battery against the receipt, and the agreed CI plan (shard the suite, run only what the diff touches).",
  "items": [
   {
-   "id": "s279-sam-setup-script-for-prompt-guards",
+   "id": "s280-sam-edit-the-setup-script-so-the-snapshot-rebuilds",
    "for": "Sam",
    "tab": "admin",
-   "text": "Paste the prompt-guard installer into the Setup script field of the cloud environment (claude.ai/code, cloud icon above the message box, hover Default, gear). Without it the SQL approval prompts come back every session, because the settings file a session reads lives inside the container and dies with it. The exact tested line is in the session 280 handoff."
+   "text": "The setup script is in place and the execute_sql allow rule is on main, but a new session starts from the environment's filesystem snapshot, built at 15:03 UTC on 2026-09-20, before your commit; the setup script runs again only when it changes, or after about seven days. Open the environment at claude.ai/code (cloud icon above the message box, hover Default, gear), add a dated comment line to the Setup script, save. The next new session rebuilds the snapshot and python3 scripts/check_hooks_live.py reads \"execute_sql allow rule: yes\". Until then, run python3 scripts/install_prompt_guards.py --apply once per session. Then confirm: a plain select through the Supabase tool with no prompt, and the harmless update kb_curation set value = value where false still refused."
   },
   {
    "id": "s279-sam-kb-curation-reason-column",
@@ -32,7 +32,7 @@
    "id": "s280-fable-ci-shard-and-run-only-what-the-diff-touches",
    "for": "Fable",
    "tab": "all",
-   "text": "Sam, 2026-09-20, on the ten-minute merge: shard the JS suite across a runner matrix and run only the test files the diff touches on a pull request (the full suite stays on every push to main), plus the one hot spot, the funding tests that boot the whole dashboard in jsdom per file. Measure first: per-file timings from the last run, then the workflow change. A wholesale refactor of the monolith is not the lever for CI time."
+   "text": "Sam, 2026-09-20, on the ten-minute merge: shard the JS suite across a runner matrix and run only the test files the diff touches on a pull request (the full suite stays on every push to main), plus the one hot spot, the funding tests that boot the whole dashboard in jsdom per file. Measure first: per-file timings from the last run, then the workflow change. A wholesale refactor of the monolith is not the lever for CI time. Also: the dependency map records line numbers, so a one-line edit above a mapped reference (Sam's, 2026-09-20, in the installer: 180 to 181) turned main red at the next push; make the staleness check ignore line drift, or drop the numbers from the map."
   },
   {
    "id": "s279-fable-jev-variable-battery",

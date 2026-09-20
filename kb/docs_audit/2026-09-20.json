@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 961,
-    "bytes": 10172777,
+    "bytes": 10179410,
     "over_budget": 4,
     "handoff_max": 281,
     "always_loaded_files": 1,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 115,
-        "bytes": 3123171,
+        "bytes": 3127327,
         "over": 3
       },
       "index": {
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 75,
-        "bytes": 2116097,
+        "bytes": 2117829,
         "over": 1
       },
       "kb_note": {
@@ -51,7 +51,7 @@
       },
       "handoff": {
         "files": 253,
-        "bytes": 2181182,
+        "bytes": 2181927,
         "over": 0
       }
     },
@@ -62,8 +62,8 @@
     },
     "vault": {
       "files": 3020,
-      "bytes": 1468912993,
-      "heavy_bytes": 644077019,
+      "bytes": 1468922501,
+      "heavy_bytes": 644076945,
       "heavy_share": 0.438,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
@@ -654,10 +654,10 @@
       "fixable": false,
       "path": "statewide_data.js",
       "detail": {
-        "bytes": 9548273,
+        "bytes": 9548257,
         "kind": "file"
       },
-      "message": "9,548,273 B single file inside the vault"
+      "message": "9,548,257 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -914,10 +914,10 @@
       "fixable": false,
       "path": "kb/cr_reference_worklist.json",
       "detail": {
-        "bytes": 2354219,
+        "bytes": 2354161,
         "kind": "file"
       },
-      "message": "2,354,219 B single file inside the vault"
+      "message": "2,354,161 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

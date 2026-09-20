@@ -47,9 +47,12 @@ def root_report():
     """What the SESSION ROOT's settings carry — the file that actually loads.
 
     ⚠️ MEASURED 2026-09-20 (S280): `<root>/.claude/settings.json`, written by
-    the environment's setup script at container start, DOES load in a
-    three-repo cloud session — a `hook_success` transcript entry on every Bash
-    and execute_sql call. This check used to look only at the repo's own file
+    the environment's setup script when the environment snapshot was built,
+    DOES load in a three-repo cloud session — a `hook_success` transcript
+    entry on every execute_sql call and on every Bash call the guard allowed.
+    The setup script runs once per snapshot, so the file can predate a change
+    to the installer's list by hours or days (it did, by 4 h 47 min, the day
+    the execute_sql rule landed). This check used to look only at the repo's own file
     and said INERT while the guards were live from the root, which sent a
     session chasing the wrong question. So: report the root first.
     """
@@ -93,8 +96,11 @@ def main():
         if not root["sql_rule"]:
             print("                ⚠️ execute_sql will still PROMPT. A hook `allow` alone was")
             print("                measured (2026-09-20) not to stop it; the allow RULE does.")
-            print("                Re-run scripts/install_prompt_guards.py from the setup")
-            print("                script — it adds the rule beside the hook.")
+            print("                This container started from an environment snapshot built")
+            print("                before the rule landed (the setup script runs once per")
+            print("                snapshot). This session: python3 scripts/install_prompt_guards.py")
+            print("                --apply. Every later session: edit the environment's setup")
+            print("                script at claude.ai/code so the snapshot rebuilds.")
         print("                If a prompt reads 'Your organization requires approval for")
         print("                this tool', the org's connector control is set to ask and no")
         print("                local setting reaches it.")
@@ -143,7 +149,8 @@ def main():
         print()
         print("        Fix: have the environment's setup script run")
         print("        python3 %s/scripts/install_prompt_guards.py --apply" % REPO)
-        print("        so <root>/.claude/settings.json exists before the session starts.")
+        print("        so <root>/.claude/settings.json exists before the session starts")
+        print("        (it runs once per environment snapshot; edit it to rebuild).")
     return 0
 
 

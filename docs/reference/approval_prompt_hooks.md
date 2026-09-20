@@ -203,7 +203,7 @@ session root above the clones. Any fix has to accept one or change the other.
 | | Where it lives | Persistent? | Confidence |
 |---|---|---|---|
 | **Server-managed settings** (claude.ai admin console) | the organization | yes, org-wide | **Documented to reach cloud sessions.** Owner-level change |
-| **Cloud environment setup script** | the environment config | yes, runs at every container start | **Documented.** Writes the root settings before the session begins |
+| **Cloud environment setup script** | the environment config | yes: it runs once, and the filesystem snapshot it leaves is what every later session starts from (rebuilt when the script or the allowed hosts change, or after about seven days) | **Documented.** Writes the root settings into the snapshot |
 | **Environment variables** on the environment | the environment config | yes | Documented, but a narrower lever than hooks |
 | **Package the guards as a PLUGIN** | committed in this repo | yes, git-tracked | ⚠️ **Promising, unverified** — see below |
 | Single-repo session | n/a | n/a | Repo settings load fully, but it gives up the three-repo rule |
@@ -249,13 +249,15 @@ to solve for the last 5 sessions."* Read off this session's own transcript
 Three of the five sessions' premises are settled by that table:
 
 1. **The session-root file loads.** `/home/user/.claude/settings.json`, written
-   by the environment's setup script at container start, produced a
-   `hook_success` transcript entry on every Bash and `execute_sql` call. The
-   "not read" quotation above is about `~/.claude/settings.json` and the repo
-   files; the root file is what the setup script targets, and it works.
-   `check_hooks_live.py` said INERT this session while the guards were live,
-   and sent the session after the wrong question; it should report the root
-   first (change staged with the installer change, pending Sam's decision).
+   by the environment's setup script when the environment snapshot was built,
+   produced a `hook_success` transcript entry on every `execute_sql` call
+   (10 of 10 by session end) and on every Bash call the guard allowed (11 of
+   111; a guard writes nothing for a command off its list, so those calls
+   leave no entry and go to auto mode's classifier). The "not read" quotation
+   above is about `~/.claude/settings.json` and the repo files; the root file
+   is what the setup script targets, and it works. `check_hooks_live.py` said
+   INERT this session while the guards were live, and sent the session after
+   the wrong question; since #1641 it reports the root first.
 2. **Allow rules resolve immediately, in auto mode, for MCP tools.** A GitHub
    read and a Supabase read on the list returned in under a second.
 3. **A hook `allow` does not stop the `execute_sql` prompt.** The docs put
@@ -289,8 +291,71 @@ next session's permissions. Sam decides.
   confirm step for destructive statements is an MCP elicitation, and it did
   not fire on these reads.
 
-**What to do.** Land the rule, let the setup script re-run the installer at
-the next container start, and read the prompt if one still appears. Its
-wording decides between the two cases above. The `promptId` field on a
-transcript's tool result is not a prompt indicator — the 0.4 s call carried
-one too.
+**What to do.** Land the rule, rebuild the environment snapshot so the setup
+script runs the installer again (the section below says how; it does not
+happen on its own at the next session), and read the prompt if one still
+appears. Its wording decides between the two cases above. The `promptId`
+field on a transcript's tool result is not a prompt indicator — the 0.4 s
+call carried one too.
+
+## 2026-09-20, later (S280): the rule landed and a fresh session still read 1 — the environment snapshot
+
+Sam added the line on `main` at 19:50 UTC (c7382c94). A session he started at
+20:05 still counted one `execute_sql` line in `/home/user/.claude/settings.json`
+(the hook matcher, no rule). Its container and this one carry the same three
+timestamps to the second — clone 15:03:17, checkout of `main` 15:03:27, root
+settings written 15:03:31 — so they are one filesystem, and the docs say which
+([Configure cloud environments → Environment caching](https://code.claude.com/docs/en/cloud-environments#environment-caching)):
+
+> "The setup script runs the first time you start a session in an
+> environment. After it completes, Anthropic snapshots the filesystem and
+> reuses that snapshot as the starting point for later sessions. New sessions
+> start with your dependencies, tools, and Docker images already on disk, and
+> skip the setup script step."
+>
+> "The setup script runs again to rebuild the cache when you change the
+> environment's setup script or allowed network hosts, and when the cache
+> reaches its expiry after roughly seven days. Resuming an existing session
+> never re-runs the setup script."
+
+So the root settings are a **snapshot artifact**: the installer's allow list
+as of the snapshot build, four hours and forty-seven minutes before the commit
+that day. A new session fast-forwards the clone (the 20:05 HEAD move in that
+session's reflog) and leaves the settings file as the snapshot had it. The
+rows above that said the setup script runs at every container start are
+corrected.
+
+**The procedure, whenever `ALLOW_TOOLS` or the guards change:**
+
+1. Merge the change.
+2. Edit the environment's setup script at claude.ai/code (a dated comment line
+   is enough) and save. The next new session rebuilds the snapshot, runs the
+   installer from a clone that carries the change, and
+   `python3 scripts/check_hooks_live.py` reads `execute_sql allow rule: yes`.
+3. Any session started from the old snapshot gets the change for itself with
+   `python3 scripts/install_prompt_guards.py --apply`. Claude Code watches
+   settings files and *"applies most edits to the running session without a
+   restart, including edits to `permissions`, `hooks`"*
+   ([Settings → When edits take effect](https://code.claude.com/docs/en/settings#when-edits-take-effect)),
+   so the rule counts in the session that ran it.
+
+The confirmation, in a session that reads `yes`: a plain `select` through the
+Supabase tool runs without a prompt, and the harmless denied write
+(`update kb_curation set value = value where false`) is still refused with the
+guard's reason. If that statement ever executes, the rule is short-circuiting
+the hook and must come out.
+
+**Two other routes, and why the edit is the default.** A SessionStart hook in
+a repo's `.claude/settings.json` does not run in a three-repo session (the
+same docs page, "Limitations in cloud sessions"). A SessionStart hook written
+into the root file by the installer would re-apply the list at every start
+and pick up later changes without an edit, at the cost of a script that
+rewrites the session's permissions unattended; it still needs one rebuild to
+get into the snapshot. Sam decides; until he does, the edit is the procedure.
+
+**Also corrected here: the `hook_success` count.** A guard writes an entry
+only when it emits a decision, so the entries measure the calls it allowed,
+not the calls it saw: 10 of 10 `execute_sql` calls and 11 of 111 Bash calls
+in this session, 4 of 21 in the 20:05 session. The Bash guard's low hit rate
+is the compound-command shape of a working session; those calls go to auto
+mode's classifier.

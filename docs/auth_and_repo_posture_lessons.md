@@ -301,3 +301,33 @@ always-approve annotation, so once the line lands the prompts should stop; if
 one survives, its wording names the next lever. He asked whether Accept Edits
 would help: no, it would prompt on every write instead. TruffleHog stays; it
 never gated a merge.
+
+### ⭐ The setup script runs once — the root settings are a snapshot artifact
+
+Sam's line landed at 19:50 UTC; a session he started at 20:05 still read one
+`execute_sql` line in the root settings. That container and this one carry
+the same three timestamps to the second (clone 15:03:17, checkout 15:03:27,
+settings 15:03:31): one filesystem snapshot, built before the commit. The
+cloud-environments docs say so under "Environment caching": the setup script
+runs the first time a session starts in an environment, Anthropic snapshots
+the filesystem, later sessions start from the snapshot and skip the script,
+and it runs again only when the script or the allowed hosts change or after
+about seven days. So a change to `ALLOW_TOOLS` reaches new sessions after
+one edit of the setup script at claude.ai/code, and reaches the running
+session at once with `--apply`, because Claude Code reloads permissions and
+hooks from a changed settings file. The reference doc and the installer said
+"at every container start"; both are corrected.
+
+Two smaller corrections from the same measurement. A guard writes a
+`hook_success` entry only when it emits a decision, so "every call" was the
+allowed calls: 10 of 10 `execute_sql`, 11 of 111 Bash. And the dependency map
+records line numbers, so Sam's one added line moved a mapped reference from
+180 to 181 and turned `main` red on two runs before #1641 carried the
+regenerated map.
+
+### PRs
+
+[#1639](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1639) — the
+measurement; [#1641](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1641)
+— the test that pins the rule to its hook, the checker reading the root, the
+installer's corrected comments, the regenerated map.
