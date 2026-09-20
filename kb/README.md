@@ -1024,3 +1024,14 @@ with colleges."*
 the course are not listed; exactly one apart stay at a lower score. Applied **only** where
 COCI supplied units — a course with no units is never filtered, because an absent
 measurement must not read as a failed one.
+
+## `receipts/` — committed receipts for data writes (2026-09-20, Session 280)
+
+Every bulk write to a shared Supabase table leaves two files here, named for
+the table, the date and the session: a JSON receipt (what was decided, by whom,
+from which source, with the rows as written and the verification result) and
+the SQL beside it. The receipt is what makes the write reversible (Rule 10(a2)):
+an INSERT-only batch carries one `updated_by` or `reviewer_email` value, and
+rollback is one delete on it. First entry:
+`cr_reference_decisions_2026-09-20_s280.{json,sql}`, Sam Lee's 51 verdicts from
+the Jev decision sheet, 30 rows, verified member-by-member against the live table.

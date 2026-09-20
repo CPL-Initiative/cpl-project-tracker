@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-480 document(s).
+482 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -296,6 +296,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Land a re-mint by rehearsal and a fresh read, then read the numbers it moves](../kb-notes/methodology-land-a-re-mint-by-rehearsal-and-a-fresh-read.md) | methodology | published | 2026-09-03 | 2026-09-04 |
 | [Lazy-load heavy per-tab data behind tab activation](../kb-notes/methodology-lazy-load-heavy-tab-data.md) | methodology | published | 2026-06-09 | 2026-06-09 |
 | [Lead with the steps, not the rationale](../kb-notes/methodology-lead-with-the-steps-not-the-rationale.md) | methodology | published | 2026-08-10 | 2026-08-10 |
+| [Measure a permission guard by the wait it removes, never by the decision it prints](../kb-notes/methodology-measure-a-guard-by-the-wait-it-removes.md) | methodology | published | 2026-09-20 | 2026-09-20 |
 | [Measure the distribution before you pick a parallel strategy](../kb-notes/methodology-measure-the-distribution-before-you-pick-a-parallel-strategy.md) | methodology | published | 2026-08-28 | 2026-08-28 |
 | [Measure your mechanism's ceiling before working the queue](../kb-notes/methodology-measure-your-mechanism-ceiling-before-working-the-queue.md) | methodology | published | 2026-08-24 | 2026-08-24 |
 | [Methodology — A consumer must guard fields the baked payload omits but the fallback fills](../kb-notes/methodology-consumer-tolerate-omitted-baked-fields.md) | methodology | published | 2026-06-04 | 2026-06-04 |
@@ -348,6 +349,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Populate-on-file-drop seam for grounded reference data](../kb-notes/methodology-populate-on-file-drop-seam-for-grounded-reference-data.md) | methodology | published | 2026-07-29 | 2026-07-29 |
 | [Probing the MAP Custom Report API for a view's real columns (value-signature method)](../kb-notes/methodology-map-api-value-signature-probe.md) | methodology | published | 2026-06-30 |  |
 | [Promoted-record ghosts in candidate worklists](../kb-notes/methodology-promoted-record-ghosts-in-worklists.md) | methodology | published | 2026-06-15 | 2026-06-15 |
+| [Propose the decision and let people pull it back — it is easier to respond to a decision than to make one](../kb-notes/methodology-propose-the-decision-and-let-people-pull-it-back.md) | methodology | published | 2026-09-20 | 2026-09-20 |
 | [Provenance is the spine of a generated document, not a footnote on it](../kb-notes/methodology-provenance-is-the-spine-of-a-generated-document.md) | methodology | published | 2026-09-05 | 2026-09-05 |
 | [Publish the denominator with the number, as a column](../kb-notes/methodology-publish-the-denominator-with-the-number.md) | methodology | published | 2026-08-11 | 2026-08-11 |
 | [Push what a session cannot know to ask for; pull everything else](../kb-notes/methodology-push-what-cannot-be-asked-for-pull-everything-else.md) | methodology | published | 2026-08-28 | 2026-08-28 |

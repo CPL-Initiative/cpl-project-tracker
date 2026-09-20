@@ -37,8 +37,8 @@ Deep reference offloaded: `docs/reference/` — pipeline_reference ·
 kb_build_status · mid_lifecycle · troubleshooting · obsidian_vault_wiring ·
 finished_workstreams · skyview_invariants · live_session_banner ·
 [approval_prompt_hooks](docs/reference/approval_prompt_hooks.md) (the
-Allow-Once storm; this repo's `.claude/settings.json` does NOT load in a
-three-repo session) · `lanes/` (stubs below).
+Allow-Once storm; the session-root settings the setup script writes DO load,
+and only an allow rule stops the `execute_sql` prompt) · `lanes/` (stubs below).
 
 **Skills** (`.claude/skills/`) are pull-side too, fired by their own
 `description` rather than by a pointer: **consult-doctrine** (what this repo has
