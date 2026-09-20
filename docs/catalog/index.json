@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 479,
+   "count": 480,
    "docs": [
     {
      "created": "2026-08-14",
@@ -8752,6 +8752,27 @@
      "title": "Soft-delete a daily-generated entity via an overlay table + collapsed section",
      "type": "playbook",
      "updated": "2026-06-29"
+    },
+    {
+     "created": "2026-09-20",
+     "governs": [
+      "kb/_typesafe_smoke.py",
+      "kb/_typesafe_cr_trial.py"
+     ],
+     "path": "docs/kb-notes/reference-system-one-model-fit-by-lane.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "jev",
+      "typesafe",
+      "effort-level",
+      "curation",
+      "sierra",
+      "tooling"
+     ],
+     "title": "A System One model earns its place where a hit is cheap to verify \u2014 Jev, use case by use case, against this repo's lanes",
+     "type": "reference",
+     "updated": "2026-09-20"
     },
     {
      "created": "2026-06-20",
@@ -18183,5 +18204,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 944
+ "total": 945
 }

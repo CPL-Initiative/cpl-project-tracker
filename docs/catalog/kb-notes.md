@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-479 document(s).
+480 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -457,6 +457,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Resuming a frozen session — check main before rebuilding its in-flight work](../kb-notes/playbook-resume-frozen-session-check-main-first.md) | playbook | published | 2026-06-02 | 2026-06-02 |
 | [Runner-as-proxy for an external API the agent sandbox can't reach](../kb-notes/playbook-runner-as-external-api-proxy.md) | playbook | published | 2026-06-19 | 2026-06-28 |
 | [Soft-delete a daily-generated entity via an overlay table + collapsed section](../kb-notes/playbook-soft-delete-generated-entity-via-overlay.md) | playbook | published | 2026-06-29 | 2026-06-29 |
+| [A System One model earns its place where a hit is cheap to verify — Jev, use case by use case, against this repo's lanes](../kb-notes/reference-system-one-model-fit-by-lane.md) | reference | internal | 2026-09-20 | 2026-09-20 |
 | [ADT acceptance & course-substitution rules (ASCCC C-ID guidance + STAR Act)](../kb-notes/reference-adt-acceptance-rules.md) | reference | published | 2026-06-20 |  |
 | [Authority-anchored credential naming — CareerOneStop / O*NET / COOL / Credential Engine for the CER](../kb-notes/reference-authority-anchored-credential-naming.md) | reference | published | 2026-07-07 | 2026-07-07 |
 | [Batch-uploaded transcribed credit — why transcribed counts are not comparable across colleges](../kb-notes/reference-batch-uploaded-transcribed-credit.md) | reference | published | 2026-08-10 | 2026-08-10 |

@@ -346,3 +346,14 @@ would give.
 else it is, it is not a filter: the usable signal is the top of the range, and
 everything else is still a curator's afternoon.
 
+
+## 2026-09-20 — S280 (SkyForge): the twenty-one Jev use cases, mapped against our lanes
+
+Sam shared @shannholmberg's thread and the *Jev + Claude Code* infographic. The
+map, the three tests that decide fit (cheap to verify · ranks, does not filter ·
+one more signal under the TOP posture), the data rule (public catalog text is
+all that leaves the building) and what the two posts get wrong are in
+[`reference-system-one-model-fit-by-lane`](kb-notes/reference-system-one-model-fit-by-lane.md).
+The next Jev build is Sierra's semantic smoke assertions, advisory column
+first; the CR variable battery still waits on the 51 verdicts, and the
+`replies` collection held none at the start of this session.
