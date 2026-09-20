@@ -180,17 +180,16 @@ nobody finds; `unreferenced_offload` flags any that stop being.
        H=$(ls docs/session_*_handoff.md | sort -V | tail -1)
        git rev-list --count $(git log -1 --format=%H -- "$H")..HEAD
 
-   ⚠️ Rule 9's ORIGINAL trigger was *"roughly every ~100K tokens… no exact
-   counter; use proxies"* — unactionable, and false besides (9a: it is on disk).
-   **Twice now the trigger has been the broken part, not the rule.**
+   ⚠️ Rule 9's ORIGINAL trigger (*"roughly every ~100K tokens… use proxies"*)
+   was unactionable and false (9a: it is on disk). **Twice the trigger has been
+   the broken part, not the rule.**
 
    ⚠️ **Run `/checkpoint`; do not improvise one from memory.** Asked to describe
    one under pressure on 2026-08-29 I named 2 of its 13 artifacts and hand-waved
    the rest, and it looked competent. **The artifact list is the checkpoint
    command, not this file** — all 13, none optional:
    [`.claude/commands/checkpoint.md`](.claude/commands/checkpoint.md) is the
-   authority. ⚠️ This file carried a near-complete SECOND copy until 2026-08-29,
-   and the two had already drifted.
+   authority.
 
    ⚠️ **THE USUAL CHECKPOINT EDIT is the LANE FILE, not the §11 row.** §11's
    table is a POINTER INDEX; each lane's state lives in
@@ -508,14 +507,16 @@ first day.** Do the remembering for them.
   or anything that looks like the end (a checkpoint, a "thanks, that's it", a long
   quiet) — close with this line, filled in, on its own:
   > *Greetings, you are Sky**Next** (Session N+1), see Sky**You**'s handoff —
-  > `docs/session_<N+1>_handoff.md` (link) — let's keep rolling with our queue.*
-  You **assign** the next moniker (one name, not a menu) and it must be the one the
-  handoff names. *"I just copy and paste the whole thing in the new session. If I
+  > `docs/session_<N+1>_handoff.md` (link) — let's keep rolling with our queue.
+  > First, run `python3 scripts/check_hooks_live.py` and paste its LIVE line, no
+  > investigation.*
+  The check sentence is standing (Sam, 2026-09-20): the first turn shows him
+  whether the guards loaded. You **assign** the next moniker (one name, not a
+  menu) and it must be the one the handoff names. *"I just copy and paste the whole thing in the new session. If I
   need to change direction, I just add the new direction to the opening note"* —
   so the line must stand alone, and nothing may follow it but the sign-off. The
-  path and the number are both there on purpose: the path is what the new session
-  reads, and writing the number means looking at the file, which is how the
-  stale-number failure Rule 9 warns about gets caught at the greeting.
+  path is what the new session reads; writing the number means looking at the
+  file, which catches the stale-number failure Rule 9 warns about.
 
 ## Branch policy
 

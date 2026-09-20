@@ -95,6 +95,11 @@ Full record: `docs/reference/approval_prompt_hooks.md`, "2026-09-20, later".
   he pastes there: the command, *paste the output, no investigation*, and what
   a good result looks like. Now a CLAUDE.md team obligation; the session that
   got the bare version spent about twenty-five tool runs on two lines.
+- **The guard check rides the opening line** (2026-09-20): *"Can you add the
+  prompt to the handoff language for the end of each session?"* The sign-off
+  template now ends with one sentence, run `scripts/check_hooks_live.py` and
+  paste its LIVE line, so every new session's first turn shows whether the
+  guards loaded. A good line reads `LIVE (root) … execute_sql allow rule: yes`.
 - **Open to him:** the Jev data rule (public catalog text is all that leaves
   the building), whether to start Sierra's semantic smoke assertions, and the
   `execute_sql` read path (keep the one prompt, or a path that is not this tool).
@@ -152,4 +157,6 @@ the receipt · `docs/common_cr_reference_lessons.md` (2026-09-20).
 ---
 
 *Greetings, you are Sky**Anvil** (Session 281), see Sky**Forge**'s handoff —
-`docs/session_281_handoff.md` — let's keep rolling with our queue.*
+`docs/session_281_handoff.md` — let's keep rolling with our queue.
+First, run `python3 scripts/check_hooks_live.py` and paste its LIVE line, no
+investigation.*
