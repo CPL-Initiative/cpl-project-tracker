@@ -1,5 +1,5 @@
 ---
-title: Session 281 handoff — the verdicts landed, the storm is down to one setup-script edit, and every sheet changes shape
+title: Session 281 handoff — the verdicts landed, the storm is down to one prompt on execute_sql, and every sheet changes shape
 date: 2026-09-20
 session: 280 (SkyForge)
 tags: [handoff, cr-reference, jev, decision-sheets, permissions, prompt-storm]
@@ -11,8 +11,8 @@ status: current
 Your moniker is **SkyAnvil** — S280 (SkyForge) took Sam's 51 verdicts from
 the Jev sheet into `cr_reference_decisions`, diagnosed the Allow-SQL storm to
 its last lever, and wrote down the rulings that reshape every decision sheet
-from here. What is left is building on those rulings, and one edit of the
-cloud environment's setup script that only Sam can make.
+from here. What is left is building on those rulings; the storm is down to
+one prompt on `execute_sql`, and that one is upstream of everything local.
 
 ## ✅ WHAT SHIPPED
 
@@ -22,6 +22,8 @@ cloud environment's setup script that only Sam can make.
 | [#1639](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1639) | Approval-prompt reference: the session-root guards load; a hook allow does not stop the `execute_sql` prompt — merged |
 | [#1640](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1640) | CR Reference: Sam's 51 verdicts recorded (41 fold, 10 keep) with the receipt, his decision-sheet rulings, this checkpoint — merged |
 | [#1641](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1641) | Prompt guards: the `execute_sql` rule pinned to its hook by a test, the checker reads the session root, the installer's comments corrected, the dependency map regenerated — merged |
+| [#1642](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1642) | The setup script runs once per environment snapshot: the correction, the procedure, the hook-entry count — merged |
+| [#1643](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1643) | Sam's paste rule in `CLAUDE.md`; the 20:40:31 confirmation; the connector's mark on `execute_sql`; this handoff — merges on green |
 | CPLBrain #158–#162 | S279's parked note and Ashley's; this session's note and tools booklet; two braindumps — all merged |
 
 **Supabase:** `cr_reference_decisions` holds **30 rows** (was 0) under
@@ -30,27 +32,41 @@ cloud environment's setup script that only Sam can make.
 delete on that value. `cpl_memory` gained 11 rows (S279's six, one advice
 row, four rulings and pitfalls). No SQL is owed for this checkpoint.
 
-## ⛔ ONE EDIT WAITS ON SAM — rebuild the environment snapshot
+## ✅ THE SNAPSHOT REBUILT — and one prompt on `execute_sql` remains
 
 The `execute_sql` allow rule is on `main` (Sam's c7382c94) with its test
 (#1641). A session Sam started at 20:05, after the commit, still read one
-`execute_sql` line in `/home/user/.claude/settings.json`, and its container
-carried the same clone and settings timestamps as this one, to the second
-(15:03:17 / 15:03:27 / 15:03:31). The docs name the mechanism: the setup
-script runs once, Anthropic snapshots the filesystem, and every later session
-starts from the snapshot and skips the script. It runs again only when the
-environment's setup script or allowed hosts change, or after about seven days.
+`execute_sql` line, because a cloud session starts from the environment's
+filesystem snapshot: the setup script runs once, later sessions skip it, and
+it runs again only when the script or the allowed hosts change or after about
+seven days (#1642 records the measurement and the docs). Sam added a dated
+comment line to the setup script; the next session's settings were written at
+20:40:31 with 33 rules and `check_hooks_live.py` read `execute_sql allow
+rule: yes`.
 
-**Sam's action, once:** edit the setup script at claude.ai/code (a dated
-comment line is enough), save. The next new session rebuilds the snapshot and
-`python3 scripts/check_hooks_live.py` reads `execute_sql allow rule: yes`.
-**Until then, per session:** `python3 scripts/install_prompt_guards.py
---apply`; settings edits reach the running session (docs, "When edits take
-effect"). **Confirm** in a session that reads `yes`: a plain `select` through
-the Supabase tool with no prompt, and `update kb_curation set value = value
-where false` still refused by the guard. If that ever executes, the rule is
-short-circuiting the hook and comes out. Full record and the two routes
-considered: `docs/reference/approval_prompt_hooks.md`, "2026-09-20, later".
+**The confirmation, about 21:00:** the guard refused `update kb_curation set
+value = value where false` before it reached Supabase (its text verbatim in
+the reference doc), and `select 1` STILL prompted, Deny / Allow once, no
+"don't ask again". Sam then ran the discriminating paste in that same
+session (about 21:15): the checker read `execute_sql allow rule: yes` with 33
+rules, the allow-listed `list_tables` went through with no prompt, and
+`execute_sql` alone had asked. So the rules load and hold for every other
+tool, and the one exception is a mark on `execute_sql` that Claude Code
+honors past any allow rule (`anthropic/requiresUserInteraction`; the public
+server source carries none, so it is added upstream, by the hosted build or
+the connector platform). Nothing in this repo, the root settings, a hook or a
+mode reaches it. **NEEDS SAM, a design choice, recommended order:** keep the
+one prompt and ask Supabase support the one question (does the hosted
+connector mark `execute_sql`, and does read-only mode change it); a read path
+that is not this tool (the npm server in the sandbox in read-only mode, a
+token and two allowed hosts) only as a decision-sheet item with its security
+review. Writes (`apply_migration`, any mutating tool) prompt by
+design and should; a session batches its memory writes into one call per
+checkpoint so Sam sees one prompt, not two. Whenever `ALLOW_TOOLS` or the
+guards change again: merge, then change the date on the setup script's
+comment line. Nothing is pasted per session any more; if that ever changes,
+it goes in the opening line Sam pastes, never in prose he must remember.
+Full record: `docs/reference/approval_prompt_hooks.md`, "2026-09-20, later".
 
 ## SAM'S DECISIONS THIS RUN
 
@@ -73,14 +89,31 @@ considered: `docs/reference/approval_prompt_hooks.md`, "2026-09-20, later".
   `main` red at the next push; make the staleness check ignore line drift, or
   drop the numbers from the map.
 - **Stay on Auto** (he asked about Accept Edits). **TruffleHog stays.**
+- **The swarm came first; auto mode was his response** (2026-09-20): *"I only
+  switched to auto mode because the allow swarm was driving me nuts. It only
+  started recently."* Outranks S278's inference; both recorded in the lessons.
+- **Hand over the whole paste** (2026-09-20): *"When you give me instructions,
+  let me know exactly what to paste in the new session. I doubt I'll remember
+  this habit."* A command for another session goes to him as the full message
+  he pastes there: the command, *paste the output, no investigation*, and what
+  a good result looks like. Now a CLAUDE.md team obligation; the session that
+  got the bare version spent about twenty-five tool runs on two lines.
+- **The guard check rides the opening line** (2026-09-20): *"Can you add the
+  prompt to the handoff language for the end of each session?"* The sign-off
+  template now ends with one sentence, run `scripts/check_hooks_live.py --fix`
+  and paste its LIVE line, so every new session's first turn shows whether the
+  guards loaded and repairs the session if not. A good line reads
+  `LIVE (root) … execute_sql allow rule: yes`. *"How am I going to remember
+  this? My team will never get it."* Nobody remembers it: the greeting does.
 - **Open to him:** the Jev data rule (public catalog text is all that leaves
-  the building) and whether to start Sierra's semantic smoke assertions.
+  the building), whether to start Sierra's semantic smoke assertions, and the
+  `execute_sql` read path (keep the one prompt, or a path that is not this tool).
 
 ## Carryover
 
 | Item | State |
 |---|---|
-| The `execute_sql` allow rule | on `main` with its test (#1641). **NEEDS SAM:** one edit of the environment's setup script so the snapshot rebuilds; `--apply` per session until then |
+| The `execute_sql` prompt | rule on `main` (#1641), snapshot rebuilt 20:40:31, guard refuses writes, rules load (`list_tables` silent); `execute_sql` alone prompts, by an upstream mark. **NEEDS SAM:** keep the one prompt (recommended, plus one question to Supabase support), or a read path that is not this tool, by decision sheet |
 | Decision-sheet template rebuild | `s280-fable-decision-sheet-template-rec-is-the-focal-point` — the next build; rules in `docs/reference/decision_sheets.md` |
 | Variable battery | `s279-fable-jev-variable-battery` — score profiles against the receipt's 51 verdicts; the gate is settled, the band under it is the work |
 | CI plan | `s280-fable-ci-shard-and-run-only-what-the-diff-touches` — measure per-file timings first |
@@ -129,4 +162,6 @@ the receipt · `docs/common_cr_reference_lessons.md` (2026-09-20).
 ---
 
 *Greetings, you are Sky**Anvil** (Session 281), see Sky**Forge**'s handoff —
-`docs/session_281_handoff.md` — let's keep rolling with our queue.*
+`docs/session_281_handoff.md` — let's keep rolling with our queue.
+First, run `python3 scripts/check_hooks_live.py --fix` and paste its LIVE
+line, no investigation.*

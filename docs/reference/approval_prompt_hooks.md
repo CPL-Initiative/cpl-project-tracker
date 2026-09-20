@@ -224,12 +224,20 @@ unattended. **Test it before relying on it.**
 - **`permissions.allow` is kept in the repo settings with a comment saying it
   does not work**, rather than deleted, so the next session does not re-add it
   expecting a different result.
-- ⚠️ **Auto mode is the classifier.** Sam turned it on 2026-09-18 to reduce the
-  prompts, and it is what produces the ones that cannot be suppressed by an
-  allow rule. Turning it off restores ordinary prompting, where
-  `permissions.allow` works — but only once the settings load at all, which
-  the setup script now does (measured 2026-09-20, below). Whether to keep auto mode is a separate decision from
-  where the settings live.
+- ⚠️ **Auto mode is the classifier, and it neither caused nor cured the storm.**
+  Sam, 2026-09-20: *"I only switched to auto mode because the allow swarm was
+  driving me nuts. It only started recently."* His words outrank the S278
+  inference that auto mode started it. The order, as far as it can be dated
+  from here: since 2026-08-30 the three-repo rule kept this repo's own allow
+  list from loading at all, so every tool it pre-approved began asking; the
+  connector's per-call mark on `execute_sql`, honored by the runtime since
+  v2.1.199, made SQL ask on every call, and its "don't ask again" wrote a rule
+  the tool ignored until a later release removed the option (Claude Code
+  changelog, undated); auto mode on 2026-09-18 was the response and changed
+  neither; on 2026-09-20 the root settings load and every tool but that one is
+  silent. Turning auto mode off would not touch the one prompt that remains
+  and would bring back ordinary prompting for what the classifier now approves
+  silently, so it stays on (Sam's ruling, 2026-09-20).
 
 ## 2026-09-20 (S280): the guards load, and for `execute_sql` the hook's `allow` is not enough
 
@@ -338,6 +346,89 @@ corrected.
    restart, including edits to `permissions`, `hooks`"*
    ([Settings → When edits take effect](https://code.claude.com/docs/en/settings#when-edits-take-effect)),
    so the rule counts in the session that ran it.
+
+**Confirmed the same evening.** Sam added a dated comment line to the setup
+script; the next session's root settings were written at 20:40:31 UTC with 33
+allow rules, and `check_hooks_live.py` read `execute_sql allow rule: yes`. His
+setup script loops over `/home/user/*/scripts/install_prompt_guards.py` and
+runs the first it finds with `--apply`, so its text needed nothing beyond the
+comment. The edit is also the human gate: a SessionStart hook that re-applied
+the list would let a commit to `main` change a session's permissions
+unattended, and that is the shape the classifier refuses for good reason.
+
+**And the prompt survived the rule (about 21:00 UTC).** In that session, with
+the rule loaded, `select 1` through the connector's `execute_sql` still raised
+*Allow Claude to use Execute SQL (Supabase)?* with Deny and Allow once and no
+"don't ask again"; the harmless `update kb_curation set value = value where
+false` was refused by the guard before it reached Supabase, verbatim:
+`PreToolUse:mcp__Supabase__execute_sql hook error: Blocked by the repo's
+Supabase guard: this statement contains update.` So the guard half holds, and
+the prompt half has one cause left. The docs list exactly two ways an MCP tool
+prompts past a matching allow rule
+([permission modes → how the classifier evaluates actions](https://code.claude.com/docs/en/permission-modes#how-the-classifier-evaluates-actions)):
+a connector tool the organization set to `ask`, whose prompt carries the
+reason *Your organization requires approval for this tool*, and a tool whose
+server sets `_meta["anthropic/requiresUserInteraction"]` to `true`, for which
+Claude Code *"shows that tool's permission prompt on every call, even in
+acceptEdits, auto, and bypassPermissions permission modes, and doesn't offer a
+'don't ask again' option for it. Allow rules that match the tool don't skip
+the prompt either"*
+([MCP → Require approval for a specific tool](https://code.claude.com/docs/en/mcp#require-approval-for-a-specific-tool)).
+The prompt's wording excludes the first; the missing "don't ask again" is the
+second's signature. ⚠️ **The mark is not in the public server source.** The
+`supabase-community/supabase-mcp` repository at its tip (6c411e2, 2026-09-17,
+package 0.13.0) contains no `requiresUserInteraction` anywhere, so if the
+mark exists it is added upstream of that code: by Supabase's hosted build or
+by the connector platform. The sandbox cannot read the connector's
+`tools/list` (egress-blocked). The environment had restarted between Sam's
+two pastes, so the resumed VM could have started without the rules; **Sam ran
+the discriminating paste in that session (about 21:15 UTC): the checker read
+`execute_sql allow rule: yes` with 33 rules, the allow-listed `list_tables`
+went through with no prompt, and `execute_sql` alone had asked.** The rules
+were loaded and honored for every other tool; the one exception is the mark,
+upstream, and nothing in this repo, the session root, a hook or a mode
+reaches it. Every other Supabase tool on the allow list ran silently in this
+container too (0.4 s, measured).
+
+### If the LIVE line is wrong
+
+`check_hooks_live.py` prints the verdict on its ROOT line; the INERT block
+below it is expected in every three-repo session and means nothing on its
+own. Three bad states, and the same first move for each:
+
+| ROOT line | Meaning | This session | Every later session |
+|---|---|---|---|
+| `execute_sql allow rule: NO` | the snapshot predates a change to the installer's list | the opening line's `check_hooks_live.py --fix` runs the installer for this session (settings reload live); the paste below does the same by hand | change the date on the setup script's comment line at claude.ai/code; the next new session rebuilds the snapshot |
+| `ROOT PRESENT — but carries none of our guard blocks` | something else wrote the root file, or the blocks were removed | same | same |
+| `NO ROOT FILE` | the setup script did not run, or failed silently (it never fails the session, by design) | same | check the Setup script field still calls the installer, change the date, and in the next new session expand "Initialized session" and look for `prompt-guard install attempted` or a Python error |
+
+The paste, in the session that showed the bad line:
+
+```
+Run this and paste the output, no investigation:
+python3 /home/user/cpl-project-tracker/scripts/install_prompt_guards.py --apply && python3 /home/user/cpl-project-tracker/scripts/check_hooks_live.py
+```
+
+A good result ends with the LIVE line reading `execute_sql allow rule: yes`.
+The `--apply` run counts in that session because Claude Code reloads hooks
+and permission rules from a changed settings file; it grants nothing the
+installer's list does not already name.
+
+**What is left is a design choice, and it is Sam's:** (1) keep the one prompt,
+on `execute_sql` only, with every other read silent, which is where things
+stand; (2) a read path that is not this tool, for example the npm server run
+inside the sandbox in `--read-only` mode from the setup script, which carries
+no such mark, at the price of a Supabase token among the environment's
+variables and two hosts on its allowed list, with a security review before
+any of it; (3) ask whether the connector offers a read-only configuration that
+drops the mark. A session does not make this call. Recommended: (1) now, with
+one question to Supabase support (does the hosted connector mark
+`execute_sql` as requiring user interaction, and does read-only mode change
+it), which costs nothing; (2) only as a decision-sheet item with its
+security review, never as a session's own build. Five sessions of settings
+work removed every prompt that could be removed; a session now batches its
+Supabase writes into one call per checkpoint and keeps `execute_sql` reads to
+as few calls as the work allows.
 
 The confirmation, in a session that reads `yes`: a plain `select` through the
 Supabase tool runs without a prompt, and the harmless denied write

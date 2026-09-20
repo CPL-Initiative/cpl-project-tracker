@@ -37,7 +37,7 @@ Deep reference offloaded: `docs/reference/` — pipeline_reference ·
 kb_build_status · mid_lifecycle · troubleshooting · obsidian_vault_wiring ·
 finished_workstreams · skyview_invariants · live_session_banner ·
 [approval_prompt_hooks](docs/reference/approval_prompt_hooks.md) (the
-Allow-Once storm: the fix is an allow rule for `execute_sql`) · `lanes/` (stubs below).
+Allow-Once storm) · `lanes/` (stubs below).
 
 **Skills** (`.claude/skills/`) are pull-side too, fired by their own
 `description` rather than by a pointer: **consult-doctrine** (what this repo has
@@ -180,17 +180,16 @@ nobody finds; `unreferenced_offload` flags any that stop being.
        H=$(ls docs/session_*_handoff.md | sort -V | tail -1)
        git rev-list --count $(git log -1 --format=%H -- "$H")..HEAD
 
-   ⚠️ Rule 9's ORIGINAL trigger was *"roughly every ~100K tokens… no exact
-   counter; use proxies"* — unactionable, and false besides (9a: it is on disk).
-   **Twice now the trigger has been the broken part, not the rule.**
+   ⚠️ Rule 9's ORIGINAL trigger (*"roughly every ~100K tokens… use proxies"*)
+   was unactionable and false (9a: it is on disk). **Twice the trigger has been
+   the broken part, not the rule.**
 
    ⚠️ **Run `/checkpoint`; do not improvise one from memory.** Asked to describe
    one under pressure on 2026-08-29 I named 2 of its 13 artifacts and hand-waved
    the rest, and it looked competent. **The artifact list is the checkpoint
    command, not this file** — all 13, none optional:
    [`.claude/commands/checkpoint.md`](.claude/commands/checkpoint.md) is the
-   authority. ⚠️ This file carried a near-complete SECOND copy until 2026-08-29,
-   and the two had already drifted.
+   authority.
 
    ⚠️ **THE USUAL CHECKPOINT EDIT is the LANE FILE, not the §11 row.** §11's
    table is a POINTER INDEX; each lane's state lives in
@@ -287,12 +286,9 @@ nobody finds; `unreferenced_offload` flags any that stop being.
   American, of course."* Use **color · behavior · normalize · organization ·
   analyze · center · judgment · program · catalog · license (n and v) · gray ·
   enroll · while (not `whilst`) · among (not `amongst`)** and the
-  `-ize`/`-ization` family. ⚠️ **The British form in a word pair MUST be written
-  in a code span.** Bare, the sweeper rewrites it — this list read
-  `while (not while)` for weeks because `american_spelling` corrected the very
-  words the rule documents, and a bare quotation of that trips
-  `self_corrected_word_pair` in turn. `prose_only()` masks code spans, so the
-  backticks are what let an entry survive its own lint. **Rendered UI text
+  `-ize`/`-ization` family. ⚠️ **The British form in a word pair MUST be in a code
+  span** — bare, the sweeper rewrites it (this list read `while (not while)`
+  for weeks). **Rendered UI text
   first**, then docs, then comments. Enforced by `american_spelling` in `kb/_docs_audit.py`.
   ⚠️ It scans PROSE only: `grey` is a valid CSS keyword and a token name is not
   a spelling, so never blind-replace inside code.
@@ -499,6 +495,10 @@ first day.** Do the remembering for them.
   get you a note--escape doesn't work when you're locked in on something."*
   When the next step waits on anything external, END THE TURN — a scheduled
   wake brings the session back. One batch of calls per turn during a wait.
+- **HAND OVER THE WHOLE PASTE (Sam, 2026-09-20).** A command for another
+  session goes to Sam as the full message he pastes there: the command, then
+  *paste the output, no investigation*, then what a good result looks like.
+  *"I doubt I'll remember this habit"* — the session remembers.
 - **Say what you can't do, early.** No Teams/email sending (drafts only, a human
   presses send), no MAP writes (read-only system of record), no unattached
   repos, no visibility into other sessions except through committed docs.
@@ -507,14 +507,16 @@ first day.** Do the remembering for them.
   or anything that looks like the end (a checkpoint, a "thanks, that's it", a long
   quiet) — close with this line, filled in, on its own:
   > *Greetings, you are Sky**Next** (Session N+1), see Sky**You**'s handoff —
-  > `docs/session_<N+1>_handoff.md` (link) — let's keep rolling with our queue.*
-  You **assign** the next moniker (one name, not a menu) and it must be the one the
-  handoff names. *"I just copy and paste the whole thing in the new session. If I
+  > `docs/session_<N+1>_handoff.md` (link) — let's keep rolling with our queue.
+  > First, run `python3 scripts/check_hooks_live.py --fix` and paste its LIVE
+  > line, no investigation.*
+  The check sentence is standing (Sam, 2026-09-20): the first turn shows him
+  whether the guards loaded, and `--fix` repairs the session if not. You **assign** the next moniker (one name, not a
+  menu) and it must be the one the handoff names. *"I just copy and paste the whole thing in the new session. If I
   need to change direction, I just add the new direction to the opening note"* —
   so the line must stand alone, and nothing may follow it but the sign-off. The
-  path and the number are both there on purpose: the path is what the new session
-  reads, and writing the number means looking at the file, which is how the
-  stale-number failure Rule 9 warns about gets caught at the greeting.
+  path is what the new session reads; writing the number means looking at the
+  file, which catches the stale-number failure Rule 9 warns about.
 
 ## Branch policy
 
