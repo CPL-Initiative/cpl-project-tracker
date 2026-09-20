@@ -54,7 +54,8 @@ content, contradictory criteria, structural invariants, and generation.
 2. **It ranks; it does not filter.** S279 measured 0 of 51 pairs below 0.32.
    Until a question is reframed so that a no is as easy to say as a yes, and
    re-measured, the usable signal is the top of the range: p ≥ 0.85 suggests,
-   and everything below is a curator's afternoon.
+   and everything below is a curator's afternoon. Sam's 51 verdicts bore this out: 25 of 25
+   folded above the gate, and below it his verdicts did not follow the number.
 3. **One more signal, under the TOP posture.** A probability from a model is a
    `*_source` like `top_code`: it displays, it corroborates, and it is held out
    of any identity fold until a second independent signal or a curator agrees
@@ -69,7 +70,7 @@ content, contradictory criteria, structural invariants, and generation.
 
 | Thread use case | The shape in this repo | Verdict | Gate | The labeled set that already exists |
 |---|---|---|---|---|
-| 9 · confidence-based human queues | The 51-pair decision sheet: p ≥ 0.85 suggests, the rest is REVIEW, a care score per pair | Built (S279) | Sam's verdicts; the decision-sheet ruling of 2026-08-30 | None yet; the sheet creates it |
+| 9 · confidence-based human queues | The 51-pair decision sheet: p ≥ 0.85 suggests, the rest is REVIEW, a care score per pair | Built (S279); verdicts landed (S280) | Sam's verdicts; the decision-sheet ruling of 2026-08-30 | Sam's 51 verdicts: 41 fold, 10 keep, `kb/receipts/cr_reference_decisions_2026-09-20_s280.json` |
 | 10 · first-pass judge | Sierra's smoke and A/B assertions are string matches, and *a guard pinned to a quotation is not a guard* (2026-09-18). A noul per rendered answer: does it state a catalog absence as a fact about a place, does it say COCI, does the first sentence answer the question | **Next** | Runs on the A/B runner as an advisory column; becomes an assertion once it agrees with Sam's rulings | The `chat_interactions` rows Sam has ruled on; the four Sierra defects |
 | 13 · reranker, 14 · source verifier | Sierra's false absences and the `%tech%` word filter: a noul on *does this phrase name a college?*; a choice over candidate colleges with a confidence gate that lets her say *I am not sure* | **Next** (To-Do `s279-skykeeper-jev-for-sierra`) | Jev routes and gates; Sierra answers; Jev never writes a sentence a student reads | The smoke suite's 7c and 7s modes |
 | 12 · semantic linting | `kb/_docs_audit.py` lints the mechanical floor (spelling, business register). The judgments it cannot regex, the contrastive frame, the mannerly aside, a college *earning* funding, are one noul per sentence | Later | Informational finding, never a merge gate; runs on a runner because the sandbox cannot reach the API | Sam's rulings and the before/after pairs in `reference-cccco-house-voice` |

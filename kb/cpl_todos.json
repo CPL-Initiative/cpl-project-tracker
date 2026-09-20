@@ -1,15 +1,9 @@
 {
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
  "_as_of": "2026-09-20",
- "_session": 278,
- "_status": "TypeSafe's Jev is wired and proven: the key lives as a GitHub Actions secret, a runner calls the API because sessions cannot reach it directly, and 51 credit-recommendation pairs were scored in 10 seconds. The Common CR Reference lane turned out to be a cross-group problem, not an in-group one — every rung-5 group holds a single wording, so the question is which groups belong together, and blocking on the shared canonical cuts 1.87 million comparisons to 51. Jev discriminates on those: it separated Introduction to Criminology from Introduction to Criminal Justice under the same course code. It never says a confident no, so it suggests and a curator decides. Sam's verdicts on the decision sheet are the next move, and they will be the first curator decisions this lane has ever carried.",
+ "_session": 280,
+ "_status": "Sam's 51 verdicts on the Jev decision sheet are recorded: 41 wordings fold into their published statewide line and 10 stay separate, 30 rows in the decisions table with a committed receipt and a one-line rollback. Jev's gate held (25 of 25 above 0.85) and the numbers under the gate told us nothing, so the model orders the queue and people decide. Sam's rulings reshape every sheet from here: the recommendation is the focal point, chips name the outcome, the fold is proposed by default and faculty pull out, the framing sits in the header. The Allow SQL prompt is diagnosed to its last lever, one allow rule that only a person can add. Next: rebuild the sheet template to the rulings, score the variable battery against the receipt, and the agreed CI plan (shard the suite, run only what the diff touches).",
  "items": [
-  {
-   "id": "s279-sam-work-the-jev-cr-sheet",
-   "for": "Sam",
-   "tab": "cr-reference",
-   "text": "51 credit-recommendation pairs are waiting for your verdict at claude.ai/artifact/KydcskYBqc93WAurcMEatq — 25 that Jev reads as the same recommendation (346 articulation rows) and 26 it is unsure about (838 rows). Replies save on the sheet as you go, so you can work it in sittings; nothing executes until you say the package is ready. These become the first curator decisions this lane has ever had."
-  },
   {
    "id": "s279-sam-setup-script-for-prompt-guards",
    "for": "Sam",
@@ -23,10 +17,28 @@
    "text": "kb_curation holds 34,443 curation rows and has no column for a reason — which is why the effort to capture why you merge courses had nowhere to land, beyond the volume problem. Adding one is a new write surface on a shared human-write table, so it needs a Governance pass before it ships."
   },
   {
+   "id": "s277-sam-read-v73-answer",
+   "for": "Sam",
+   "tab": "cpl-assistant",
+   "text": "Read Sierra's answer to a \"I have a CNA cert and live in <place>\" question in a browser. v73 should open by naming a college near you and the course to ask about — for the San Gabriel Valley that is Pasadena City NURS 102, Citrus VNRS 150 or Rio Hondo VN 61. No session can check this; the sandbox cannot reach Sierra's host."
+  },
+  {
+   "id": "s280-fable-decision-sheet-template-rec-is-the-focal-point",
+   "for": "Fable",
+   "tab": "cr-reference",
+   "text": "Sam, 2026-09-20: \"make your recommendation line more visually a focal point. I found myself saying yes to things that I later had to flip keep because I didn't pay attention to your rec.\" Rebuild the decision-sheet template (kb/_decision_sheet_replies.py + docs/reference/decision_sheets.md): the proposed disposition as a highlighted callout above the chips; the first chip confirms the proposal and names the action (Keep the fold / Pull out), never a bare Yes; Edit behind Other; undo as a toggle; the running total in outcome terms in the bottom bar; a stopping point every twenty items; the framing sentence in the header. Fold proposed by default, faculty pull out."
+  },
+  {
+   "id": "s280-fable-ci-shard-and-run-only-what-the-diff-touches",
+   "for": "Fable",
+   "tab": "all",
+   "text": "Sam, 2026-09-20, on the ten-minute merge: shard the JS suite across a runner matrix and run only the test files the diff touches on a pull request (the full suite stays on every push to main), plus the one hot spot, the funding tests that boot the whole dashboard in jsdom per file. Measure first: per-file timings from the last run, then the workflow change. A wholesale refactor of the monolith is not the lever for CI time."
+  },
+  {
    "id": "s279-fable-jev-variable-battery",
    "for": "Fable",
    "tab": "cr-reference",
-   "text": "Extend the Jev trial from one question per pair to a battery of variable questions (level difference, scope, vendor-specific, lab vs lecture, units) asked in a single call, then cluster pairs by their answer profile. That turns per-case rulings into rules, which is what makes the variables KB feasible. Score the profiles against Sam's verdicts on the 51-item sheet first."
+   "text": "Extend the Jev trial from one question per pair to a battery of variable questions (level difference, scope, vendor-specific, lab vs lecture, units) asked in a single call, then cluster pairs by their answer profile. Score the profiles against Sam's 51 verdicts first: 41 fold, 10 keep, in kb/receipts/cr_reference_decisions_2026-09-20_s280.json. Above p 0.85 Jev was 25 for 25; below it the probability carried no signal, so the battery is what has to separate the 10 keeps from the 16 folds in that band."
   },
   {
    "id": "s279-fable-no-confident-negatives",
@@ -59,11 +71,13 @@
    "text": "The side-by-side table drew its CNA column from an old articulation record instead of the statewide course list - one row was a general-education line, not a CNA course. The statewide data was fetched successfully, so this is about how the answer is written, not about retrieval."
   },
   {
-   "id": "s277-sam-read-v73-answer",
-   "for": "Sam",
-   "tab": "cpl-assistant",
-   "text": "Read Sierra's answer to a \"I have a CNA cert and live in <place>\" question in a browser. v73 should open by naming a college near you and the course to ask about — for the San Gabriel Valley that is Pasadena City NURS 102, Citrus VNRS 150 or Rio Hondo VN 61. No session can check this; the sandbox cannot reach Sierra's host."
-  },
+   "id": "s278-fable-skyview-pinch-registry",
+   "for": "Fable",
+   "tab": "unified-courses",
+   "text": "MEASURED PRE-EXISTING, not from the auth work. The SkyView browser sweep's \"one finger after the pinch still turns the sky (the registry is clean)\" fails identically on f66659c (226/227) and on the gating branch (230/231) - one finger after a two-finger spread does not turn the sky, so a pointer id is surviving the pinch. It came in with the ladder's three new script tags (team_phrase, cpl_session, reviewer_signin) or earlier; the pre-ladder page passed. Not CI-gating - the sweep is not in js-tests.yml - which is exactly why it will sit unnoticed. Look at pointercancel handling in the pointer registry."
+  }
+ ],
+ "_deferred": [
   {
    "id": "s277-fable-precedent-names-its-program",
    "for": "Fable",
@@ -82,14 +96,6 @@
    "tab": "unified-courses",
    "text": "Decide whether to re-order SkyView's hit test for the one-in-twenty-four eclipse. Measured 2026-09-18 over eight parent identities through the page's own pick(): 23 of 24 loners resolve to themselves with their parent open, and 37 of 37 focused member stars resolve to that member. The reading rule is perfect, so chasing the 1 risks the 37 and pick() was left unchanged; with the silent drop exit fixed, that case now reads as a clear refusal rather than a dead map. Reopen it only if Sam hits it again."
   },
-  {
-   "id": "s278-fable-skyview-pinch-registry",
-   "for": "Fable",
-   "tab": "unified-courses",
-   "text": "MEASURED PRE-EXISTING, not from the auth work. The SkyView browser sweep's \"one finger after the pinch still turns the sky (the registry is clean)\" fails identically on f66659c (226/227) and on the gating branch (230/231) - one finger after a two-finger spread does not turn the sky, so a pointer id is surviving the pinch. It came in with the ladder's three new script tags (team_phrase, cpl_session, reviewer_signin) or earlier; the pre-ladder page passed. Not CI-gating - the sweep is not in js-tests.yml - which is exactly why it will sit unnoticed. Look at pointercancel handling in the pointer registry."
-  }
- ],
- "_deferred": [
   {
    "id": "s275-fable-college-anchor-pure-distance",
    "for": "Fable",

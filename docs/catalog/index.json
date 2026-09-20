@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 480,
+   "count": 482,
    "docs": [
     {
      "created": "2026-08-14",
@@ -5526,6 +5526,25 @@
      "updated": "2026-08-10"
     },
     {
+     "created": "2026-09-20",
+     "governs": [
+      "scripts/check_hooks_live.py",
+      "scripts/supabase_sql_guard.py"
+     ],
+     "path": "docs/kb-notes/methodology-measure-a-guard-by-the-wait-it-removes.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "permissions",
+      "hooks",
+      "tooling",
+      "verification"
+     ],
+     "title": "Measure a permission guard by the wait it removes, never by the decision it prints",
+     "type": "methodology",
+     "updated": "2026-09-20"
+    },
+    {
      "created": "2026-08-28",
      "governs": [
       "tests/run.js",
@@ -6561,6 +6580,27 @@
      "title": "Promoted-record ghosts in candidate worklists",
      "type": "methodology",
      "updated": "2026-06-15"
+    },
+    {
+     "created": "2026-09-20",
+     "governs": [
+      "kb/_decision_sheet_replies.py",
+      "kb/receipts/cr_reference_decisions_2026-09-20_s280.json"
+     ],
+     "path": "docs/kb-notes/methodology-propose-the-decision-and-let-people-pull-it-back.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "curation",
+      "decision-sheets",
+      "ccr",
+      "cer",
+      "cr-reference",
+      "sam-ruling"
+     ],
+     "title": "Propose the decision and let people pull it back \u2014 it is easier to respond to a decision than to make one",
+     "type": "methodology",
+     "updated": "2026-09-20"
     },
     {
      "created": "2026-09-05",
@@ -13927,8 +13967,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 252,
+   "count": 253,
    "docs": [
+    {
+     "created": "2026-09-20",
+     "governs": [],
+     "n": 281,
+     "path": "docs/session_281_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "cr-reference",
+      "jev",
+      "decision-sheets",
+      "permissions",
+      "prompt-storm"
+     ],
+     "title": "the verdicts landed, the storm is diagnosed to one line, and every sheet changes shape",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-20",
      "governs": [],
@@ -18204,5 +18262,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 945
+ "total": 948
 }
