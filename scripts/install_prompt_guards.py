@@ -14,8 +14,8 @@
   default the session root (the parent of the clones in a multi-repo session).
           Correct for a cloud session, and gone when the container is
           reclaimed. For a durable cloud fix, run this from the environment's
-          SETUP SCRIPT, which is configured outside the container and runs at
-          every start.
+          SETUP SCRIPT, which is configured outside the container and runs
+          once, when the environment snapshot is built (see below).
 
 WHY A SEPARATE INSTALLER
 ------------------------
@@ -36,19 +36,29 @@ cloud sessions never read it. `scripts/check_hooks_live.py` reports which
 world a session is in.
 
 MEASURED 2026-09-20 (S280): the session-root file DOES load. Written by the
-environment's setup script at container start, it produced a `hook_success`
-transcript entry on every Bash and execute_sql call, and the allow-listed MCP
-reads returned in under a second. The docs do not mention the root file
-either way; the transcript does.
+environment's setup script when the snapshot was built, it produced a
+`hook_success` transcript entry on every execute_sql call and on every Bash
+call the guard allowed (a guard writes nothing for a command off its list),
+and the allow-listed MCP reads returned in under a second. The docs do not
+mention the root file either way; the transcript does.
 
 ⚠️ A SESSION CANNOT INSTALL THESE FOR ITSELF, AND SHOULD NOT BE ABLE TO. Auto
 mode's classifier refuses every write to a `.claude/settings.json` as
 `[Self-Modification]` — correctly, since permission rules and `allow` hooks
 are exactly that. A person runs this.
 
-⚠️ HOOKS ARE PICKED UP BY THE FILE WATCHER (docs: "the file watcher normally
-picks up hook changes automatically"; S279 saw the guard fire mid-session).
-A NEW session is still the safe assumption for the permission rules.
+⚠️ SETTINGS ARE PICKED UP BY THE FILE WATCHER — hooks AND permission rules
+(docs, Settings → When edits take effect: Claude Code "applies most edits to
+the running session without a restart, including edits to permissions,
+hooks"). So --apply counts in the session that runs it.
+
+⚠️ THE SETUP SCRIPT RUNS ONCE PER ENVIRONMENT SNAPSHOT, NOT PER SESSION (docs,
+Cloud environments → Environment caching; measured 2026-09-20: two containers
+with identical clone and settings timestamps to the second, one of them
+started 4 h 47 min after the commit its settings lacked). After ALLOW_TOOLS or
+GUARDS change: merge, then edit the environment's setup script at
+claude.ai/code (a dated comment line is enough) so the next new session
+rebuilds the snapshot. Until then, --apply once per session.
 
 WHAT IT INSTALLS, AND WHY IT IS MOSTLY PLAIN PERMISSION RULES
 --------------------------------------------------------------
@@ -190,8 +200,10 @@ def target_root():
                                   and dies with the container, so an install
                                   there lasts one session. The durable lever is
                                   the cloud environment's SETUP SCRIPT, which is
-                                  configured outside the container and runs at
-                                  every start — point it at this script.
+                                  configured outside the container and runs
+                                  when the environment snapshot is built —
+                                  point it at this script, and edit it after
+                                  any change here so the snapshot rebuilds.
     """
     for a in sys.argv[1:]:
         if not a.startswith("-"):
@@ -249,16 +261,20 @@ def main():
 
     if not apply:
         print("\nDry run. Re-run with --apply to write it.")
-        print("⚠️  Hooks are picked up by the file watcher; start a NEW session to be")
-        print("    sure the permission rules load too.")
+        print("⚠️  The file watcher picks up hooks AND permission rules, so --apply")
+        print("    counts in this session. A NEW session starts from the environment")
+        print("    SNAPSHOT: after any change here, edit the setup script at")
+        print("    claude.ai/code so the snapshot rebuilds.")
         return 0
 
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w", encoding="utf-8") as fh:
         json.dump(cfg, fh, indent=2)
         fh.write("\n")
-    print("\nwritten. Hooks are picked up by the file watcher; start a NEW session")
-    print("to be sure the permission rules load too.")
+    print("\nwritten. The file watcher picks up hooks AND permission rules, so this")
+    print("counts in the running session. A NEW session starts from the environment")
+    print("SNAPSHOT: after any change here, edit the setup script at claude.ai/code")
+    print("so the snapshot rebuilds; until then, run --apply once per session.")
     print("Then confirm with: python3 %s/scripts/check_hooks_live.py" % REPO)
     return 0
 
