@@ -1,123 +1,132 @@
 #!/usr/bin/env python3
-"""Prove the TypeSafe (Jev) key works — without printing it.
+"""TypeSafe (Jev) — verify the key, and the one place the wire format lives.
+
+Jev is TypeSafe's "System One" model: it answers small typed questions about a
+piece of state and returns a structured answer with a calibrated probability.
 
 WHY A RUNNER: typesafe.ai is egress-blocked from the agent sandbox (the gateway
-answers 403 to CONNECT on api./docs./apex). A GitHub Actions runner has open
-egress, so it stands in as the proxy — the same pattern
-.github/workflows/map-users-schema-probe.yml uses for the Azure MAP API.
+answers 403 to CONNECT on api./docs./apex), so a Claude session cannot call Jev
+or read its docs. A GitHub Actions runner has open egress and stands in as the
+proxy — the same pattern map-users-schema-probe.yml uses for the Azure MAP API.
 
-WHAT IT PRINTS: whether the key is present, its length, the models the account
-can see, and — with --full — one real System One answer. The key itself never
-reaches stdout; kb/typesafe_client.py redacts it from error bodies too, because
-this repo's Actions logs are readable by anyone who can read the repo.
+⚠️ THE CONTRACT BELOW WAS READ OFF @typesafe-ai/sdk@0.6.0's PUBLISHED DIST, not
+the docs, because registry.npmjs.org is reachable and docs.typesafe.ai is not.
+Verified live on a runner 2026-09-20: models → jev-latest, jev-preview; one
+systemone call answered correctly. A web-search summary claimed the key variable
+was TYPESAFE_AI_API_KEY; it is TYPESAFE_API_KEY, and the wrong name fails
+silently as "no key configured".
+
+    TYPESAFE_API_KEY        the key (required)
+    TYPESAFE_BASE_URL       default https://api.typesafe.ai
+    TYPESAFE_DEFAULT_MODEL  default jev-latest
+
+    POST /v1/systemone   {state, questions, model} -> {answers: {<name>: ...}}
+    GET  /v1/models
+    Authorization: Bearer <key>
+
+Question shapes — `criteria` is what distinguishes them, and swapping the two
+container types is the easy mistake:
+    noul(instructions, criteria=None)   yes/no
+    choice(instructions, criteria)      criteria is a MAP  label -> description
+    score(instructions, criteria)       criteria is a LIST, >= 2, indexed from 0
 
 Usage:
-    python3 kb/_typesafe_smoke.py            # auth + model list only
-    python3 kb/_typesafe_smoke.py --full     # also spend one System One call
+    python3 kb/_typesafe_smoke.py           # auth + model list
+    python3 kb/_typesafe_smoke.py --full    # also spend one System One call
 
-Exit codes: 0 pass · 1 failure · 2 no key configured.
+Exit: 0 pass · 1 failure · 2 no key. Pure stdlib.
 """
 
+import json
 import os
+import ssl
 import sys
+import urllib.error
+import urllib.request
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+BASE = os.environ.get("TYPESAFE_BASE_URL", "").strip() or "https://api.typesafe.ai"
+MODEL = os.environ.get("TYPESAFE_DEFAULT_MODEL", "").strip() or "jev-latest"
 
-from typesafe_client import (  # noqa: E402
-    ENV, DEFAULT_BASE_URL, DEFAULT_MODEL,
-    TypeSafeClient, TypeSafeError, TypeSafeAuthError, choice,
-)
+
+def noul(instructions=None, criteria=None):
+    return {"type": "noul", "instructions": instructions, "criteria": criteria}
+
+
+def choice(instructions, criteria):
+    return {"type": "choice", "instructions": instructions, "criteria": criteria}
+
+
+def score(instructions, criteria):
+    return {"type": "score", "instructions": instructions, "criteria": list(criteria)}
+
+
+def call(path, key, body=None, method="GET", timeout=30):
+    """One request. The key goes in the header only, and is scrubbed from any
+    error text — this repo's Actions logs are readable by anyone who can read
+    the repo, and an API that echoes your token back is how it would leak."""
+    data = json.dumps(body).encode() if body is not None else None
+    headers = {"Authorization": "Bearer " + key, "Accept": "application/json"}
+    if data:
+        headers["Content-Type"] = "application/json"
+    req = urllib.request.Request(BASE + path, data=data, headers=headers, method=method)
+    try:
+        with urllib.request.urlopen(req, timeout=timeout,
+                                    context=ssl.create_default_context()) as r:
+            raw = r.read().decode()
+        return json.loads(raw) if raw else {}
+    except urllib.error.HTTPError as e:
+        detail = e.read().decode("utf-8", "replace")[:300].replace(key, "<redacted>")
+        raise SystemExit(f"❌ TypeSafe HTTP {e.code} on {method} {path}. {detail}")
+    except urllib.error.URLError as e:
+        raise SystemExit(
+            f"❌ Cannot reach {BASE} ({e.reason}). The agent sandbox is egress-blocked "
+            "for typesafe.ai — run this on a GitHub Actions runner instead.")
+
+
+def system_one(state, questions, key, model=None):
+    """The entry point real work should use. Returns the parsed response."""
+    return call("/v1/systemone", key, {"state": state, "questions": questions,
+                                       "model": model or MODEL}, method="POST")
 
 
 def main():
-    full = "--full" in sys.argv
-
-    raw = os.environ.get(ENV["api_key"])
-    if not raw or not raw.strip():
-        print(f"❌ {ENV['api_key']} is not set (or is blank).")
-        print("   GitHub Actions: add it as a repository secret, then reference it")
-        print("   as `${{ secrets.TYPESAFE_API_KEY }}` in the job's `env:` block.")
-        print("   See docs/reference/typesafe_jev.md.")
+    key = (os.environ.get("TYPESAFE_API_KEY") or "").strip()
+    if not key:
+        print("❌ TYPESAFE_API_KEY is not set (or is blank).")
+        print("   Add it under Settings > Secrets and variables > Actions, then")
+        print("   reference it as `${{ secrets.TYPESAFE_API_KEY }}` in the job env.")
         return 2
 
-    # Length only — never the value. A trailing newline in a pasted secret is the
-    # usual cause of a key that "is set" and still 401s, and length is what shows it.
-    print(f"✅ {ENV['api_key']} present — {len(raw)} chars"
-          f"{' ⚠️ has surrounding whitespace' if raw != raw.strip() else ''}")
-    print(f"   base URL: {os.environ.get(ENV['base_url']) or DEFAULT_BASE_URL}")
-    print(f"   model:    {os.environ.get(ENV['default_model']) or DEFAULT_MODEL}")
+    raw = os.environ["TYPESAFE_API_KEY"]
+    # Length only, never the value. A pasted trailing newline is the usual cause
+    # of a key that "is set" and still 401s, and length is what reveals it.
+    print(f"✅ TYPESAFE_API_KEY present — {len(raw)} chars"
+          f"{' ⚠️ has surrounding whitespace' if raw != key else ''}")
+    print(f"   base URL: {BASE}\n   model:    {MODEL}")
 
-    try:
-        client = TypeSafeClient()
-    except TypeSafeAuthError as e:
-        print(f"❌ {e}")
-        return 2
+    models = call("/v1/models", key)
+    items = models.get("data") or models.get("models") or [] if isinstance(models, dict) else models
+    names = [i.get("id") or i.get("name") if isinstance(i, dict) else str(i) for i in items]
+    print(f"✅ GET /v1/models → {len(names)} model(s): {', '.join(n for n in names if n)}")
 
-    try:
-        models = client.models()
-    except TypeSafeAuthError as e:
-        print(f"❌ Auth failed: {e}")
-        return 1
-    except TypeSafeError as e:
-        print(f"❌ {e}")
-        return 1
-
-    names = _model_names(models)
-    print(f"✅ GET /v1/models → {len(names)} model(s): {', '.join(names[:8]) or '(none listed)'}")
-
-    if not full:
+    if "--full" not in sys.argv:
         print("\n✅ Auth verified. Re-run with --full to spend one System One call.")
         return 0
 
-    # One real question, deliberately about nothing in our data — the point is to
-    # prove the round trip, so no MAP content goes out before the governance gate
-    # in docs/reference/typesafe_jev.md has been walked.
-    try:
-        response = client.system_one(
-            state="The Chancellor's Office allocated the funding in August.",
-            questions={
-                "tense": choice(
-                    "Is this sentence in the past or the future?",
-                    {"past": "It already happened.", "future": "It has yet to happen."},
-                )
-            },
-        )
-    except TypeSafeError as e:
-        print(f"❌ System One call failed: {e}")
-        return 1
-
-    answer = (response.get("answers") or {}).get("tense") or {}
-    picked = answer.get("choice")
-    print(f"✅ POST /v1/systemone → answers.tense.choice = {picked!r}")
-    if picked != "past":
+    # Deliberately about nothing in our data: this proves the round trip, and no
+    # MAP content goes out before the first real use is agreed.
+    out = system_one(
+        "The Chancellor's Office allocated the funding in August.",
+        {"tense": choice("Is this sentence in the past or the future?",
+                         {"past": "It already happened.",
+                          "future": "It has yet to happen."})},
+        key)
+    answer = (out.get("answers") or {}).get("tense") or {}
+    print(f"✅ POST /v1/systemone → answers.tense.choice = {answer.get('choice')!r}")
+    if answer.get("choice") != "past":
         print(f"   ⚠️ Expected 'past'. Full answer: {answer}")
     print("\n✅ End-to-end verified — the key works and Jev answers.")
     return 0
-
-
-def _model_names(payload):
-    """The list shape is unverified (the docs are egress-blocked), so read it
-    defensively rather than assuming `data[].id` the way an OpenAI-shaped API
-    would. A smoke test that crashes on an unexpected envelope reports nothing."""
-    if isinstance(payload, dict):
-        for key in ("data", "models"):
-            items = payload.get(key)
-            if isinstance(items, list):
-                return [_name(i) for i in items]
-        if payload:
-            return [str(k) for k in payload.keys()]
-    if isinstance(payload, list):
-        return [_name(i) for i in payload]
-    return []
-
-
-def _name(item):
-    if isinstance(item, dict):
-        for key in ("id", "name", "model"):
-            if item.get(key):
-                return str(item[key])
-        return "(unnamed)"
-    return str(item)
 
 
 if __name__ == "__main__":

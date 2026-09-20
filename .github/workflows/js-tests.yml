@@ -176,15 +176,6 @@ jobs:
         run: python3 tests/coci_offerings_sync_chunk_test.py
       - name: My College public layer — suppression properties
         run: python3 tests/college_briefing_publish_suppression_test.py
-      # TypeSafe (Jev) wire contract (Session 279) — every check guards a
-      # SILENT failure. A wrong env var name reports "no key configured" while a
-      # good secret sits unread, and a key echoed into an error body lands in an
-      # Actions log anyone who can read the repo can read. The contract is
-      # pinned from @typesafe-ai/sdk's published dist because docs.typesafe.ai is
-      # egress-blocked from the sandbox, so a later session cannot re-check it
-      # casually. Pure-stdlib python, no network.
-      - name: TypeSafe client contract + key redaction (kb/typesafe_client.py)
-        run: python3 tests/typesafe_client_test.py
       # Re-key chain guard (Session 224) — a re-mint alias map can CHAIN (one
       # pair's old key is another pair's new key: `ARME M10AJ -> FLNG M10AJ`
       # beside `ARMN M10AJ -> ARME M10AJ`). The Supabase re-key must vacate the
