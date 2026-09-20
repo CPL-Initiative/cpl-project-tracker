@@ -1,7 +1,7 @@
 {
  "_about": "Identity-anchored title suggestions for the CER unclassified-triage worklist (kb/_suggest_unclassified.py). Precedence per skill Rule 5c: CCN > C-ID > (M-ID once stable) > modal local course title; plus CareerOneStop authority matches when the registry is synced. One-click FILL chips — the curator always confirms; never auto-applied.",
- "_generated_at": "2026-09-19T11:08:11Z",
- "count": 202,
+ "_generated_at": "2026-09-20T11:33:00Z",
+ "count": 204,
  "suggestions": {
   "ACTG-51 APPLIED ACCOUNTING": [
    {
@@ -411,7 +411,7 @@
     "scoped": true
    }
   ],
-  "BIOTECH 470": [
+  "BIOTECH 470 - Capstone Seminar in Biomanufacturing Quality": [
    {
     "kind": "course",
     "title": "Capstone Seminar in Biomanufacturing Quality",
@@ -870,6 +870,26 @@
     "code": "CRPSCI 19",
     "share": 1.0,
     "colleges": 2,
+    "scoped": true
+   }
+  ],
+  "CTE Film/TV Production IIA at William S. Hart District High School (MEA 111)": [
+   {
+    "kind": "course",
+    "title": "Exploring Video Field Production",
+    "code": "MEA 111",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "CTE Film/TV Production IIB at William S. Hart District High School (MEA 112)": [
+   {
+    "kind": "course",
+    "title": "Exploring Video Studio Production",
+    "code": "MEA 112",
+    "share": 1.0,
+    "colleges": 1,
     "scoped": true
    }
   ],
