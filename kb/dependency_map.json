@@ -4,7 +4,7 @@
   "supabase_tables": 85,
   "rpcs": 31,
   "edge_functions": 5,
-  "file_datasets": 485,
+  "file_datasets": 486,
   "external_services": 145,
   "consumers": 347,
   "workflows": 35,
@@ -2908,14 +2908,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 180
+     "line": 207
     },
     {
      "id": "script:scripts/install_prompt_guards.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 180
+     "line": 207
     }
    ],
    "served": true,
@@ -14358,6 +14358,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/install_prompt_guards_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/js_suite_gate_test.py": {
    "consumers": [
     {
@@ -19171,6 +19184,7 @@
     "tests/supabase_function_grants_test.py",
     "tests/supabase_sql_guard_test.py",
     "tests/bash_read_guard_test.py",
+    "tests/install_prompt_guards_test.py",
     "kb/_build_remint_blast_radius.py",
     "tests/remint_blast_radius_test.py",
     "tests/coci_program_cip_test.py",

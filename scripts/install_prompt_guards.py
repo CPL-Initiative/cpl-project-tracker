@@ -35,12 +35,20 @@ is outside any repo — and `~/.claude/settings.json` is not a fallback, because
 cloud sessions never read it. `scripts/check_hooks_live.py` reports which
 world a session is in.
 
+MEASURED 2026-09-20 (S280): the session-root file DOES load. Written by the
+environment's setup script at container start, it produced a `hook_success`
+transcript entry on every Bash and execute_sql call, and the allow-listed MCP
+reads returned in under a second. The docs do not mention the root file
+either way; the transcript does.
+
 ⚠️ A SESSION CANNOT INSTALL THESE FOR ITSELF, AND SHOULD NOT BE ABLE TO. Auto
 mode's classifier refuses every write to a `.claude/settings.json` as
 `[Self-Modification]` — correctly, since permission rules and `allow` hooks
 are exactly that. A person runs this.
 
-⚠️ AND IT ONLY TAKES EFFECT AT THE NEXT SESSION START.
+⚠️ HOOKS ARE PICKED UP BY THE FILE WATCHER (docs: "the file watcher normally
+picks up hook changes automatically"; S279 saw the guard fire mid-session).
+A NEW session is still the safe assumption for the permission rules.
 
 WHAT IT INSTALLS, AND WHY IT IS MOSTLY PLAIN PERMISSION RULES
 --------------------------------------------------------------
@@ -67,11 +75,22 @@ That split decides the design:
                       with ANY arguments) cannot be enumerated as narrow rules,
                       and the blanket form is dropped. A hook can read the
                       command; a rule cannot.
-  execute_sql hook    ⚠️ DELIBERATELY NOT IN permissions.allow. An allow rule
-                      "resolves immediately", which would skip the guard and
-                      auto-approve WRITES too — exactly what #1617 did and what
-                      Rule 10 exists to prevent. The hook allows reads, denies
-                      writes, and carves out Rule 8's own cpl_memory writes.
+  execute_sql         BOTH an allow rule AND the hook, and the pairing is the
+                      design (measured 2026-09-20, S280). The hook alone was
+                      not enough: on every execute_sql call that session the
+                      guard ran, returned `allow` in under 0.1 s with exit 0,
+                      and the call still waited on a prompt (5 min, 43 s,
+                      21 min, 51 s) — while the allow-listed MCP reads returned
+                      in 0.4–0.8 s. The docs put PreToolUse hooks BEFORE every
+                      permission-mode check and let a hook tighten but never
+                      loosen, so the rule resolves the reads immediately and
+                      the hook's `deny` still fires first on any write outside
+                      cpl_memory. #1617's mistake was the rule WITHOUT the
+                      hook; this is the rule WITH it.
+                      ⚠️ Neither reaches a tool an organization's connector
+                      control has set to `ask` — that prompt says so in its
+                      own text ("Your organization requires approval for this
+                      tool") and only the org admin console changes it.
 """
 import json
 import os
@@ -123,6 +142,13 @@ ALLOW_TOOLS = [
     "mcp__Supabase__get_advisors",
     "mcp__Supabase__query_logs",
     "mcp__Supabase__search_docs",
+    # ⚠️ The one entry here that is NOT read-only by nature. It is safe only
+    # because of the execute_sql hook in GUARDS: hooks fire before any
+    # permission-mode check and a hook `deny` wins over an allow rule, so a
+    # write outside cpl_memory is refused before this rule is consulted. The
+    # rule exists because the hook's own `allow` was measured (2026-09-20) not
+    # to stop the prompt, while a rule does. Never ship this line without the
+    # hook — tests/install_prompt_guards_test.py pins the pairing.
     "mcp__Supabase__execute_sql",
 ]
 
@@ -217,19 +243,22 @@ def main():
     for matcher, rel in GUARDS:
         print("   %-34s -> %s" % (matcher, rel))
     print()
-    print("⚠️  execute_sql is on the HOOK, not in permissions.allow: an allow rule")
-    print("    resolves immediately and would auto-approve writes too (Rule 10).")
+    print("⚠️  execute_sql is BOTH an allow rule and a hook: the rule stops the prompt")
+    print("    (a hook allow alone did not, measured 2026-09-20) and the hook's deny")
+    print("    still fires first on any write outside cpl_memory (Rule 10).")
 
     if not apply:
         print("\nDry run. Re-run with --apply to write it.")
-        print("⚠️  Takes effect at the NEXT session start — hooks bind when a session begins.")
+        print("⚠️  Hooks are picked up by the file watcher; start a NEW session to be")
+        print("    sure the permission rules load too.")
         return 0
 
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w", encoding="utf-8") as fh:
         json.dump(cfg, fh, indent=2)
         fh.write("\n")
-    print("\nwritten. ⚠️ Start a NEW session for it to take effect.")
+    print("\nwritten. Hooks are picked up by the file watcher; start a NEW session")
+    print("to be sure the permission rules load too.")
     print("Then confirm with: python3 %s/scripts/check_hooks_live.py" % REPO)
     return 0
 
