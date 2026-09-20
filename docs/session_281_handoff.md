@@ -89,6 +89,9 @@ Full record: `docs/reference/approval_prompt_hooks.md`, "2026-09-20, later".
   `main` red at the next push; make the staleness check ignore line drift, or
   drop the numbers from the map.
 - **Stay on Auto** (he asked about Accept Edits). **TruffleHog stays.**
+- **The swarm came first; auto mode was his response** (2026-09-20): *"I only
+  switched to auto mode because the allow swarm was driving me nuts. It only
+  started recently."* Outranks S278's inference; both recorded in the lessons.
 - **Hand over the whole paste** (2026-09-20): *"When you give me instructions,
   let me know exactly what to paste in the new session. I doubt I'll remember
   this habit."* A command for another session goes to him as the full message

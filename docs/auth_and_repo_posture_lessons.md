@@ -358,3 +358,16 @@ carries no such mark, so it is added upstream, in the hosted connector or by
 the connector platform. Five sessions of settings work removed every prompt
 they could reach; the one that remains is a design choice for Sam, recorded
 in the reference doc with the recommended order.
+
+### ⚠️ Sam's correction: the swarm came first, auto mode was the response
+
+S278's heading above reads "Auto mode caused the storm it was turned on to
+stop." Sam, 2026-09-20: *"I only switched to auto mode because the allow
+swarm was driving me nuts. It only started recently."* A human statement
+outranks a session's inference, so both stand here, with his first. What can
+be dated: the three-repo rule of 2026-08-30 kept this repo's allow list from
+loading at all, so every pre-approved tool began asking; the connector's
+per-call mark on `execute_sql` made SQL ask on every call once the runtime
+honored it; auto mode on 2026-09-18 changed neither. The lesson is the one
+Rule 8 already carries: when the person who lived it says the order was
+different, the record changes, and the inference is labeled as one.

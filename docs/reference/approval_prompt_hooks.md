@@ -224,12 +224,20 @@ unattended. **Test it before relying on it.**
 - **`permissions.allow` is kept in the repo settings with a comment saying it
   does not work**, rather than deleted, so the next session does not re-add it
   expecting a different result.
-- ⚠️ **Auto mode is the classifier.** Sam turned it on 2026-09-18 to reduce the
-  prompts, and it is what produces the ones that cannot be suppressed by an
-  allow rule. Turning it off restores ordinary prompting, where
-  `permissions.allow` works — but only once the settings load at all, which
-  the setup script now does (measured 2026-09-20, below). Whether to keep auto mode is a separate decision from
-  where the settings live.
+- ⚠️ **Auto mode is the classifier, and it neither caused nor cured the storm.**
+  Sam, 2026-09-20: *"I only switched to auto mode because the allow swarm was
+  driving me nuts. It only started recently."* His words outrank the S278
+  inference that auto mode started it. The order, as far as it can be dated
+  from here: since 2026-08-30 the three-repo rule kept this repo's own allow
+  list from loading at all, so every tool it pre-approved began asking; the
+  connector's per-call mark on `execute_sql`, honored by the runtime since
+  v2.1.199, made SQL ask on every call, and its "don't ask again" wrote a rule
+  the tool ignored until a later release removed the option (Claude Code
+  changelog, undated); auto mode on 2026-09-18 was the response and changed
+  neither; on 2026-09-20 the root settings load and every tool but that one is
+  silent. Turning auto mode off would not touch the one prompt that remains
+  and would bring back ordinary prompting for what the classifier now approves
+  silently, so it stays on (Sam's ruling, 2026-09-20).
 
 ## 2026-09-20 (S280): the guards load, and for `execute_sql` the hook's `allow` is not enough
 
