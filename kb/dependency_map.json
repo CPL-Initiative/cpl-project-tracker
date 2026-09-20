@@ -4,9 +4,9 @@
   "supabase_tables": 85,
   "rpcs": 31,
   "edge_functions": 5,
-  "file_datasets": 484,
+  "file_datasets": 485,
   "external_services": 145,
-  "consumers": 346,
+  "consumers": 347,
   "workflows": 35,
   "data_js_files": 61,
   "tabs": 37
@@ -6535,6 +6535,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/_typesafe_cr_trial.py": {
+   "consumers": [
+    {
+     "id": "workflow:typesafe-smoke.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/_typesafe_smoke.py": {
    "consumers": [
     {
@@ -8858,6 +8871,13 @@
      "direction": "write",
      "how": "literal",
      "line": 84
+    },
+    {
+     "id": "script:kb/_typesafe_cr_trial.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 38
     }
    ],
    "producers": [

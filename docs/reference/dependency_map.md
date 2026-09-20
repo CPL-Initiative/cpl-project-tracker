@@ -413,6 +413,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_sync_map_custom_reports.py` | workflows: `map-custom-report-load.yml` | — |
 | `kb/_sync_moc_crosswalk.py` | workflows: `moc-crosswalk-sync.yml` | — |
 | `kb/_sync_peer_articulations.py` | workflows: `credential-catalog-sync.yml` | — |
+| `kb/_typesafe_cr_trial.py` | workflows: `typesafe-smoke.yml` | — |
 | `kb/_typesafe_smoke.py` | workflows: `typesafe-smoke.yml` | — |
 | `kb/authority_recode_out/2026-09-03/ag_classification.json` | scripts: `kb/_authority_recode_dryrun.py` | — |
 | `kb/authority_recode_out/2026-09-03/fl_classification.json` | scripts: `kb/_authority_recode_dryrun.py` | — |
@@ -437,7 +438,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/cos_matches.json` | tabs: `credential-reference` · scripts: `kb/_match_cos_authority.py` | committed by: `cos-authority-sync.yml` |
 | `kb/course_crosswalk.json` | scripts: `kb/_curation_01.py`, `kb/_esl_package_dryrun.py`, `kb/_zband_retire_dryrun.py` | scripts: `kb/_seed_cx_common_courses.py` |
 | `kb/cpl_todos.json` | pages: `CPL_Dashboard.html` | — |
-| `kb/cr_reference_worklist.json` | tabs: `cr-reference` · scripts: `kb/_build_cr_reference.py` | scripts: `kb/_build_cr_reference.py` · committed by: `daily-dashboard.yml` |
+| `kb/cr_reference_worklist.json` | tabs: `cr-reference` · scripts: `kb/_build_cr_reference.py`, `kb/_typesafe_cr_trial.py` | scripts: `kb/_build_cr_reference.py` · committed by: `daily-dashboard.yml` |
 | `kb/cred_rename_dryrun` | none found | committed by: `cred-rename-apply.yml` |
 | `kb/cred_rename_dryrun/alias_map.json` | workflows: `cred-rename-apply.yml` | committed by: `daily-dashboard.yml` |
 | `kb/cred_rename_dryrun/collisions.json` | none found | committed by: `daily-dashboard.yml` |
@@ -883,5 +884,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 484 file
-datasets · 145 external services · 346 consumers · 35 workflows · 37 tabs.
+Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 485 file
+datasets · 145 external services · 347 consumers · 35 workflows · 37 tabs.
