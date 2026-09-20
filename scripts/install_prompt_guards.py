@@ -123,6 +123,7 @@ ALLOW_TOOLS = [
     "mcp__Supabase__get_advisors",
     "mcp__Supabase__query_logs",
     "mcp__Supabase__search_docs",
+    "mcp__Supabase__execute_sql",
 ]
 
 # ── the two hooks a rule cannot replace ────────────────────────────────────
