@@ -4,6 +4,8 @@ date: 2026-09-20
 session: 279 (SkyKeeper)
 tags: [handoff, typesafe, jev, cr-reference, curation, permissions]
 status: current
+superseded: true
+superseded_by: session_281_handoff.md
 ---
 
 # You are Session 280
