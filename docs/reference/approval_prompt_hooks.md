@@ -11,19 +11,6 @@ related:
   - "[[docs/reference/lanes/org-phrase-scope-auth]]"
 ---
 
-> **Adjacent, same boundary:** the TypeSafe (Jev) integration hits blocker #2
-> of this document from the other side — a `claude plugin install` run locally
-> never reaches a cloud session, the same way this repo's `.claude/settings.json`
-> never loads in a three-repo one. Its key handling, its verified wire contract
-> and its egress block are in
-> [`docs/reference/typesafe_jev.md`](docs/reference/typesafe_jev.md).
->
-> ⚠️ That pointer lives HERE rather than in `CLAUDE.md` because the always-loaded
-> file measured 59,989 bytes against its 60,000 budget on 2026-09-20 — 11 bytes
-> of slack. `unreferenced_offload` counts one hop through a doc `CLAUDE.md`
-> already links, and this is that hop. **Sam: the budget wall is real and the
-> next pointer has nowhere to go** — trimming doctrine prose is your call.
-
 # The approval-prompt storm
 
 Sam, 2026-09-19: *"the swarm of 'Allow Once' approval requests I am getting

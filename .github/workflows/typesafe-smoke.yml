@@ -14,13 +14,13 @@ name: TypeSafe (Jev) smoke test
 # when you have just rotated or first added the key, never on a schedule.
 #
 # THE KEY NEVER REACHES THE LOG: kb/_typesafe_smoke.py prints presence and
-# length only, and kb/typesafe_client.py redacts the key out of error bodies
-# before they are raised. This repo's Actions logs are readable by anyone who
-# can read the repo.
+# length only, and redacts the key out of any error body before raising. This
+# repo's Actions logs are readable by anyone who can read the repo.
 #
-# Setup (Sam runs this once — a session cannot create secrets):
-#   gh secret set TYPESAFE_API_KEY --repo CPL-Initiative/cpl-project-tracker
-# See docs/reference/typesafe_jev.md.
+# The secret is set under Settings > Secrets and variables > Actions (a session
+# cannot create secrets). Verified working on a runner 2026-09-20: models ->
+# jev-latest, jev-preview, and one System One call answered correctly. The wire
+# format and the question shapes live in that script's docstring.
 
 on:
   workflow_dispatch:
@@ -29,6 +29,14 @@ on:
         description: 'Also spend one System One call (end-to-end, not just auth)'
         type: boolean
         default: false
+      cr_trial:
+        description: 'Run the Common CR Reference trial (Jev suggests merges; nothing is written)'
+        type: boolean
+        default: false
+      cr_limit:
+        description: 'Cap the trial to the N highest-row pairs (blank = all)'
+        type: string
+        default: ''
 
 permissions:
   contents: read
@@ -50,3 +58,14 @@ jobs:
           TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
         run: |
           python3 kb/_typesafe_smoke.py ${{ inputs.full && '--full' || '' }}
+      # Reads kb/cr_reference_worklist.json, asks Jev one noul + one score per
+      # anchored pair, prints a ranked worklist. SUGGESTS ONLY — no Supabase
+      # write, no commit, nothing decided. Rung 5 reads "similarity suggests,
+      # never merges", and Rule 7's TOP doctrine says an unreliable signal must
+      # never gate identity.
+      - name: Common CR Reference trial (suggests, never merges)
+        if: ${{ inputs.cr_trial }}
+        env:
+          TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
+        run: |
+          python3 kb/_typesafe_cr_trial.py ${{ inputs.cr_limit && format('--limit {0}', inputs.cr_limit) || '' }}

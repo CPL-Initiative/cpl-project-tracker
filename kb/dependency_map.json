@@ -5,8 +5,8 @@
   "rpcs": 31,
   "edge_functions": 5,
   "file_datasets": 485,
-  "external_services": 146,
-  "consumers": 346,
+  "external_services": 145,
+  "consumers": 347,
   "workflows": 35,
   "data_js_files": 61,
   "tabs": 37
@@ -353,11 +353,11 @@
   "external:api.typesafe.ai": {
    "consumers": [
     {
-     "id": "script:kb/typesafe_client.py",
+     "id": "script:kb/_typesafe_smoke.py",
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 53
+     "line": 20
     }
    ],
    "main_committers": []
@@ -1062,18 +1062,6 @@
      "tabs": [
       "unified-courses"
      ]
-    }
-   ],
-   "main_committers": []
-  },
-  "external:github.com/CPL-Initiative/cpl-project-tracker)": {
-   "consumers": [
-    {
-     "id": "script:kb/typesafe_client.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "url",
-     "line": 58
     }
    ],
    "main_committers": []
@@ -6547,6 +6535,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/_typesafe_cr_trial.py": {
+   "consumers": [
+    {
+     "id": "workflow:typesafe-smoke.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/_typesafe_smoke.py": {
    "consumers": [
     {
@@ -8870,6 +8871,13 @@
      "direction": "write",
      "how": "literal",
      "line": 84
+    },
+    {
+     "id": "script:kb/_typesafe_cr_trial.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 38
     }
    ],
    "producers": [
@@ -14584,19 +14592,6 @@
    "served": true,
    "main_committers": []
   },
-  "file:tests/typesafe_client_test.py": {
-   "consumers": [
-    {
-     "id": "workflow:js-tests.yml",
-     "kind": "workflow",
-     "direction": "run",
-     "how": "yaml",
-     "line": 0
-    }
-   ],
-   "served": true,
-   "main_committers": []
-  },
   "file:tests/uc_cur_promote_test.py": {
    "consumers": [
     {
@@ -19182,7 +19177,6 @@
     "tests/course_title_mojibake_test.py",
     "tests/coci_offerings_sync_chunk_test.py",
     "tests/college_briefing_publish_suppression_test.py",
-    "tests/typesafe_client_test.py",
     "tests/rekey_kb_curation_chain_test.py",
     "tests/authority_recode_apply_test.py",
     "tests/zband_retire_apply_test.py",
@@ -19479,7 +19473,8 @@
    "name": "TypeSafe (Jev) smoke test",
    "crons": [],
    "scripts": [
-    "kb/_typesafe_smoke.py"
+    "kb/_typesafe_smoke.py",
+    "kb/_typesafe_cr_trial.py"
    ],
    "adds": [],
    "push": null,
