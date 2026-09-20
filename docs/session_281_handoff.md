@@ -23,6 +23,7 @@ confirmation is Sam's second paste.
 | [#1640](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1640) | CR Reference: Sam's 51 verdicts recorded (41 fold, 10 keep) with the receipt, his decision-sheet rulings, this checkpoint — merged |
 | [#1641](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1641) | Prompt guards: the `execute_sql` rule pinned to its hook by a test, the checker reads the session root, the installer's comments corrected, the dependency map regenerated — merged |
 | [#1642](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1642) | The setup script runs once per environment snapshot: the correction, the procedure, the hook-entry count — merged |
+| [#1643](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1643) | Sam's paste rule in `CLAUDE.md`; the 20:40:31 confirmation; this handoff — merges on green |
 | CPLBrain #158–#162 | S279's parked note and Ashley's; this session's note and tools booklet; two braindumps — all merged |
 
 **Supabase:** `cr_reference_decisions` holds **30 rows** (was 0) under
