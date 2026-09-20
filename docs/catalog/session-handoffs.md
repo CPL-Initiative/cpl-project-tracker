@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-251 document(s).
+252 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 280 | [Jev is wired and proven; the CR Reference is a cross-group problem](../session_280_handoff.md) | 2026-09-20 |
 | 279 | [SkyView is a public read-only surface; the prompt guards are built but NOT installed](../session_279_handoff.md) | 2026-09-19 |
 | 278 | [part one, Sierra v73 (a sub-region is a place, the CNA quick list is four real courses); part two, the SkyView curation ladder and the re-mint blast radius](../session_278_handoff.md) | 2026-09-18 |
 | 277 | [v72 is live (the quick list, the flyer, the precedent in the block, "catalog data"); next, the crosswalk beyond the CNA and the measurements the queue still owes · part two, the SkyView lane (shareable, answers every drop)](../session_277_handoff.md) | 2026-09-18 |
