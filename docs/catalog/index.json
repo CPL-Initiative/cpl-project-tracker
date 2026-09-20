@@ -13204,7 +13204,7 @@
   },
   {
    "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
-   "count": 48,
+   "count": 49,
    "docs": [
     {
      "created": "2026-08-28",
@@ -13862,6 +13862,23 @@
      "title": "Troubleshooting \u2014 dashboard, Pages, scrape, and the stop-hook false positives",
      "type": null,
      "updated": "2026-08-19"
+    },
+    {
+     "created": "2026-09-20",
+     "governs": [],
+     "path": "docs/reference/typesafe_jev.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "typesafe",
+      "jev",
+      "secrets",
+      "integration",
+      "tooling"
+     ],
+     "title": "TypeSafe (Jev) \u2014 the key, the wire contract, and the two blockers",
+     "type": null,
+     "updated": ""
     }
    ],
    "name": "Reference (pull-side)",
@@ -18128,5 +18145,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 941
+ "total": 942
 }
