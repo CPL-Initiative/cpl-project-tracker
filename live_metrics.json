@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-09-21T12:55:17.659Z",
+  "scraped_at": "2026-09-21T15:56:57.262Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -63,17 +63,17 @@
         },
         {
           "college": "Riverside City College",
-          "students": 887,
-          "units": 4323,
-          "avgUnits": 4.873731679819617,
-          "transcriptionRate": 92.3,
-          "avgTranscribed": 4.499436302142052,
+          "students": 888,
+          "units": 4334,
+          "avgUnits": 4.88063063063063,
+          "transcriptionRate": 92.1,
+          "avgTranscribed": 4.49436936936937,
           "criteriaMetCount": 4,
-          "militaryStudents": 869,
+          "militaryStudents": 870,
           "nonMilitaryStudents": 20,
           "apprenticeStudents": 0,
-          "savings": 7780125,
-          "yearImpact": 27393738,
+          "savings": 7799155,
+          "yearImpact": 27460475,
           "transcribedUnits": 3991
         },
         {
@@ -1163,17 +1163,17 @@
         },
         {
           "college": "Reedley College",
-          "students": 133,
-          "units": 535.5,
-          "avgUnits": 4.026315789473684,
+          "students": 134,
+          "units": 541.5,
+          "avgUnits": 4.041044776119403,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
-          "militaryStudents": 129,
+          "militaryStudents": 130,
           "nonMilitaryStudents": 4,
           "apprenticeStudents": 0,
-          "savings": 840352.5,
-          "yearImpact": 3098916,
+          "savings": 850732.5,
+          "yearImpact": 3135318,
           "transcribedUnits": 0
         },
         {
@@ -1757,11 +1757,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "51,762",
+      "value": "51,764",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "28,286"
+          "value": "28,288"
         },
         {
           "label": "Workforce/Other",
@@ -1835,7 +1835,7 @@
       "breakdowns": [
         {
           "label": "Military",
-          "value": "$773M"
+          "value": "$774M"
         },
         {
           "label": "Workforce/Other",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 51762,
-    "Units": 222065.40000000002,
+    "Students": 51764,
+    "Units": 222082.40000000002,
     "TranscribedUnits": 73561.7,
-    "Savings": 332887949,
-    "YearImpact": 1317602535.4,
-    "MilitaryStudents": 28286,
+    "Savings": 332917359,
+    "YearImpact": 1317705674.4,
+    "MilitaryStudents": 28288,
     "NonMilitaryStudents": 23563,
     "AprenticeStudents": 851,
-    "AverageUnits": 4.290124029210618,
-    "TranscribedAverage": 1.4211525829759282
+    "AverageUnits": 4.2902866857275335,
+    "TranscribedAverage": 1.4210976740591916
   }
 }
