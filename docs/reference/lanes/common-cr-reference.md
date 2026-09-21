@@ -117,10 +117,115 @@ anchor, this lane's named hard case.
 proposals. The 2026-09-20 receipt predates opt-out and is entirely his, which is
 why it is the ground truth.
 
-**NEXT:** dispatch `--ref ccrr` on the runner and score it against the receipt —
-that is `s279-fable-jev-variable-battery`, and it validates the routine where
-ground truth exists. Only then CCR, whose method half emits Trust Cards rather
-than findings. The other 1,881 rung-5 groups wait on that.
+## SCORED against Sam's 51 verdicts (2026-09-21, S281) — `kb/_jev_score.py`
+
+No runner was needed: the receipt carries Jev's `p_same` and `care` beside his
+verdict on the same row, so the scoring is arithmetic over a committed file and
+anyone can reproduce it.
+
+**The inherited claim reproduces exactly.** p ≥ 0.85 folded **25/25**; below it,
+**16/26**.
+
+**The gate is empirically right, not merely asserted.** Sweeping it, 0.85 is the
+highest-recall threshold that suggests no wrong fold at all (precision 1.00,
+recall 0.61). Precision degrades the moment it drops — 0.94 at 0.80, 0.87 at
+0.70. Acting on the gate would have folded 25 pairs and 346 articulation rows
+with nothing wrong in it.
+
+⚠️ **NOTHING JEV IS ASKED TODAY ORDERS THE BAND BELOW THE GATE.** That band is
+26 pairs and 838 rows — the part that actually needs a curator. Measured within
+it: **AUC(p_same) = 0.441, AUC(care) = 0.450**, against 0.50 for chance
+(permutation p = 0.67 on care). The three LOWEST-scored pairs in the whole set
+— 0.32, 0.44, 0.48 — were all folds.
+
+⚠️ **A WHOLE-SET COMPARISON OF `care` FLATTERS AND MUST NOT BE USED.** All ten
+keeps sit below the gate and the above-gate folds are easy ones with low care,
+so comparing every fold against every keep reports a +0.41 separation that is
+really "above-gate items are easy". The band is the only honest place to
+measure. This reading was made and corrected the same hour.
+
+**SO THE VARIABLE BATTERY IS JUSTIFIED, AND FOR A SPECIFIC REASON:** the two
+questions Jev is asked are exhausted, and more of the same will not order what
+they cannot. The battery has to ask DIFFERENT questions — level, scope, units,
+lab against lecture, vendor-specific, a different course — which is what
+`s279-fable-jev-variable-battery` proposed and what this measurement now
+supports rather than assumes.
+
+## The battery is built and pre-registered (2026-09-21, S281) — `kb/_jev_battery.py`
+
+Six variables, Sam's own vocabulary for holding two recommendations apart:
+**level · scope · units · lab · vendor · different_course**. Each is phrased as a
+REASON TO HOLD SEPARATE, so a keep should score higher on every one — one
+direction for all six, no sign to get backwards later. All six ride ONE call per
+pair; 26 calls covers the band.
+
+⚠️ **THE SELECTION RULE IS FIXED IN THE SOURCE BEFORE ANY ANSWER EXISTS.**
+AUC ≥ 0.65, permutation p ≤ 0.05, 20,000 shuffles, seed 7. Otherwise a 26-row
+set picks its own winners.
+
+**One primary endpoint, six diagnostics.** The question is not six questions —
+*"should these stay separate?"* is *"is ANY of these reasons present?"* — so the
+primary is `any_reason`, the max across the battery, uncorrected because it is
+the one primary. The six singletons are secondary, Holm-corrected among
+themselves, to say WHICH reason does the work.
+
+⚠️ **THE PRIMARY GATES THE SECONDARIES.** Measured before the gate existed: six
+tests over 26 rows handed a "winner" on **2 of 25 pure-noise runs**. With the
+gate, 0 of 25. If no reason at all separates the band, one reason passing is
+chance.
+
+⚠️ **POWER, MEASURED BEFORE A SINGLE CALL WAS SPENT.** At 16 fold against 10
+keep this design detects **AUC ≥ ~0.75** on the primary and **≥ ~0.80** on a
+secondary. A real but moderate variable at 0.70 is invisible here. **So a null
+means "no large effect in 26 pairs", never "no signal"** — and a variable that
+does pass is carrying a big effect, which is exactly why one batch cannot
+confirm it and the script calls a pass a hypothesis.
+
+## THE BATTERY RAN, AND NOTHING PASSED (2026-09-21, run 35632754128)
+
+Receipt: `kb/receipts/jev_battery_2026-09-21_s281.json` — recorded there because
+an Actions log and artifact both age out.
+
+| | AUC | p | p(holm) |
+|---|---:|---:|---:|
+| **PRIMARY — any_reason** | **0.378** | 0.848 | — |
+| level | 0.738 | 0.023 | 0.138 |
+| vendor | 0.684 | 0.062 | 0.310 |
+| different_course | 0.537 | 0.384 | 1.000 |
+| lab | 0.459 | 0.640 | 1.000 |
+| scope | 0.366 | 0.871 | 1.000 |
+| units | 0.281 | 0.972 | 1.000 |
+
+⚠️ **THE PRIMARY IS BELOW CHANCE.** The battery is not weakly right, it is
+**backwards**: when Jev found a reason to hold two recommendations apart, Sam
+was MORE likely to fold them.
+
+⚠️ **`units` AT 0.281 IS INTERPRETABLE, NOT NOISE — AND THIS LANE PREDICTED IT.**
+The lane already rules that **units are NOT identity** (`SPAN 100` at 4/4.5/5 is
+one course; `Engine Performance` correctly merges 2/3-4/4/5). Jev applies the
+general-purpose assumption that an hours difference means a content difference,
+which is exactly the assumption CPL has decided against. A general model brings
+general priors, and where the domain has overruled one, the model's confidence
+runs the wrong way.
+
+⚠️ **`level` IS THE ONE LEAD, AND THE PRE-REGISTRATION IS WHY IT IS NOT A
+FINDING.** Right direction, largest effect, raw p 0.023 — reportable as "level
+works" by anyone who had not fixed the rule first. Six questions at once yield
+about one good-looking result by luck; Holm puts it at 0.138. It earns ONE
+targeted re-test on a batch it did not pick, pre-registered as a single
+hypothesis. It does not earn a re-analysis of these 26 rows.
+
+**WHAT DID NOT FAIL:** the 0.85 gate on the original question — 25 of 25, 346
+articulation rows, nothing wrong in it. The failure is confined to the 26 hard
+pairs, and those are where curator judgment IS the product rather than a cost to
+be automated away.
+
+**NEXT:** harvest the value that exists rather than chase the band. The gate is
+validated, so run the adjudicator across the rung-5 population and take the
+above-gate suggestions; put the band on a decision sheet. Giving Jev a different
+KIND of evidence (member course titles, the units spread, what other colleges did
+with the same pair) is the only version of "ask again" worth spending calls on —
+never a seventh rephrasing of the same question against the same two strings.
 
 **Where Jev fits beyond this lane, and the gates each use carries:**
 [`reference-system-one-model-fit-by-lane`](../../kb-notes/reference-system-one-model-fit-by-lane.md) (S280, 2026-09-20).

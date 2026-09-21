@@ -142,6 +142,14 @@ jobs:
       # — Jev is replaced by a recorder that asserts what it was shown.
       - name: Jev adjudication (the second look never sees the first verdict)
         run: python3 tests/jev_adjudicate_test.py
+      # The battery's SELECTION RULE (S281). A rule that cannot reject noise is
+      # worse than none — it launders chance into a finding the next session
+      # builds on. Asserts a false-positive RATE on pure noise (not perfection:
+      # zero-in-25 fails a correctly-calibrated rule most of the time), that a
+      # planted signal IS detected, and that a null says "no LARGE effect"
+      # rather than "no signal". Pure stdlib, no network, no key.
+      - name: Jev variable battery (the rule rejects noise and detects signal)
+        run: python3 tests/jev_battery_test.py
       # The re-mint blast radius (Session 277). Guards three READINGS rather
       # than three behaviors, because all three were got wrong while building
       # it and none of them errored: course_id IS the identity id, the
