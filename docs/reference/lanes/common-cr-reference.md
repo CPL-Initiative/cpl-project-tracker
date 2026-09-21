@@ -233,7 +233,18 @@ never a seventh rephrasing of the same question against the same two strings.
 ## The ladder sheet, and the ranking rule that failed on it (2026-09-21, S282 SkyLedger)
 
 Sheet: **https://claude.ai/artifact/BkxGoSkJUE22BWCGcw9pwB** — ten items,
-generator `kb/_build_jev_ladder_sheet.py`, awaiting Sam.
+generator `kb/_build_jev_ladder_sheet.py`.
+
+⚠️ **ALL TEN CAME BACK ADOPTED, AND NONE OF THEM IS SAM'S.** He pressed Complete
+at 18:31:36Z, two minutes after the sheet was published: `replies/done` reads
+`ruled: 0 · as_proposed: 10`, and every row is stamped `by: "default"`. Under
+opt-out that is a verdict for each item together with the statement that nobody
+individually reviewed one. **So this sheet is worth nothing as calibration** —
+the scoring rule is `by: "sam"` rows only, and there are none. Nine items are
+being executed because adopting them costs him nothing; **item 1 is held**,
+because it is the only one that spends something of his (his next sitting of
+verdicts, on the CCR) and it carries the sheet's proposal rather than his
+choice. Asked back in the comment thread.
 
 ⚠️ **COLLAPSE VALUE CANNOT RANK THE FOUR CENTERS — IT IS A CONSTANT BETWEEN
 THEM.** The S281 handoff said to prioritize the ladder by collapse value
