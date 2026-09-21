@@ -2,8 +2,20 @@
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
  "_as_of": "2026-09-21",
  "_session": 281,
- "_status": "The decision sheet is rebuilt and merged. Sam's recommendation now sits in a highlighted panel directly above the chips, the chips name the outcome (Keep the fold / Pull out) so a Yes cannot read two ways, the intro is gone so the sheet opens on item 1, and every item arrives set to the recommendation — he changes only what he disagrees with. An item he touches is recorded as his; one he lets ride is recorded as taken-as-proposed, so a sheet stopped halfway never hands over verdicts nobody read as though they were his. Jev now has one adjudication module covering CSR, CER and the Common CR Reference, with an independent second look on anything that merges. Next: run it on the CR Reference and score it against the 51 verdicts Sam already gave.",
+ "_status": "The decision sheet work is merged and Jev now has one adjudication module for CSR, CER and the Common CR Reference. We scored Jev against the 51 verdicts Sam gave on 2026-09-20: the 0.85 confidence gate is real — 25 of 25 right, 346 articulation rows, nothing wrong in it. Then we asked six new questions about the 26 hard pairs the gate leaves behind, and nothing passed: the headline number came back BELOW chance, meaning the new questions point the wrong way. One of them, units, is backwards for a reason we already knew — CPL has ruled that different hours do not mean a different course, and a general model does not know that. So the recommendation is to harvest what works (run the gate across the whole population) and put the hard pairs on a decision sheet, rather than keep trying to automate judgment. Next decision is Sam's: which reference gets its own set of verdicts first, since only the CR Reference has any to calibrate a gate against.",
  "items": [
+  {
+   "id": "s281-sam-jev-ladder-priority",
+   "for": "Sam",
+   "tab": "cr-reference",
+   "text": "You asked for a prioritized, progressive set of Jev runs per consolidation center (CER, CSR, CCR, CCRR). The one decision only you can make: each center needs its own confidence gate calibrated against real verdicts before it can be trusted, and only the CR Reference has any (your 51). So which center gets a verdict set first? Say the word and it comes back as a numbered decision sheet with the proposed rung order and what each costs."
+  },
+  {
+   "id": "s281-fable-harvest-the-gate",
+   "for": "Fable",
+   "tab": "cr-reference",
+   "text": "Harvest the value that is proven rather than chasing the hard band. The 0.85 gate scored 25 of 25 on Sam's verdicts, so run kb/_jev_adjudicate.py across the full rung-5 population instead of only the 55 anchored pairs, take everything above the gate as suggestions, and put the rest on a decision sheet. The band is 26 pairs and 838 rows — one sitting, not an automation problem."
+  },
   {
    "id": "s281-sam-item-10-change-of-mind",
    "for": "Sam",
@@ -15,12 +27,6 @@
    "for": "Sam",
    "tab": "cr-reference",
    "text": "You asked to delete the intro from decision sheets and it is gone. The framing sentence can still be switched back on per sheet, because putting it in the header was your own earlier ruling. Say the word and that option goes too."
-  },
-  {
-   "id": "s281-fable-jev-ccrr-score",
-   "for": "Fable",
-   "tab": "cr-reference",
-   "text": "Dispatch typesafe-smoke.yml with adjudicate: ccrr, then score Jev's answers against the 51 verdicts in kb/receipts/cr_reference_decisions_2026-09-20_s280.json. Score against by:\"sam\" rows ONLY — the sheet is opt-out now, so an untouched item carries the recommendation and scoring against it measures the default rather than the model. This is s279-fable-jev-variable-battery."
   },
   {
    "id": "s281-fable-jev-ccr-trust-cards",
@@ -69,15 +75,15 @@
    "for": "Fable",
    "tab": "cpl-assistant",
    "text": "Sam, 2026-09-20: \"we should be able to use Jev to speed and broaden Sierra's ability as well.\" Jev returns typed judgments with calibrated probabilities at ~0.2s a call, which fits Sierra's two known defect classes: the %tech% word-filter false positive (a noul on \"does this phrase name a college?\" would have caught Surgical Tech matching LA Trade Tech) and the false absences, where a choice over candidate colleges with a confidence gate would let her say \"I am not sure\" instead of \"none\". Jev gives no rationale, so it routes and gates; Sierra still answers. Verified working on a runner 2026-09-20."
-  },
+  }
+ ],
+ "_deferred": [
   {
    "id": "s278-fable-surgical-tech-matches-a-college",
    "for": "Fable",
    "tab": "cpl-assistant",
    "text": "The words \"Surgical Tech\" match Los Angeles Trade Technical College, so Sierra treated it as the student's home college and measured everything from downtown LA instead of Orange County. Add tech, technical, technology and surgical to the word filter that already drops nurse, welding and firefighter. Small fix, corrects three errors."
-  }
- ],
- "_deferred": [
+  },
   {
    "id": "s278-fable-saddleback-surgical-tech-false-zero",
    "for": "Fable",

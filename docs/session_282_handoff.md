@@ -13,12 +13,13 @@ around the sixteen verdicts Sam had to reverse, took three more rounds of his
 changes the same afternoon, and then put Jev behind one adjudication module for
 CSR, CER and CCRR. What is left is running it where ground truth exists.
 
-## ✅ WHAT SHIPPED
+## ✅ WHAT SHIPPED — all merged to `main`
 
 | PR | What |
 |---|---|
-| [#1644](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1644) | Decision sheets rebuilt: proposal as focal point, outcome-named chips, no intro, Complete, opt-out — **merged** (`41b598b`) |
-| [#1645](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1645) | A refused send does not read like a delivered one; reach stated before the press; the record is the mechanism; **the Jev magic half for CSR/CER/CCRR** — open, green expected |
+| [#1644](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1644) | Decision sheets rebuilt: proposal as focal point, outcome-named chips, no intro, Complete, opt-out (`41b598b`) |
+| [#1645](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1645) | The record is the mechanism, not the notification; one Jev magic half for CSR/CER/CCRR; the S281 checkpoint (`864986f`) |
+| [#1646](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1646) | Jev scored against Sam's 51 verdicts, then a pre-registered battery — run and result (`6ee3d0a`) |
 
 **Sheet:** https://claude.ai/artifact/S45LDdRVBkZT9YQEHgYRAA (v6)
 
@@ -69,19 +70,52 @@ confident the first look was. KB note:
 **The receipt's 51 pairs all still present**; 4 new ones under `community
 relations`.
 
+## ⚠️ THE BATTERY RAN AND NOTHING PASSED — the result that shapes what is next
+
+Run 35632754128, 26 calls over the below-gate band, scored against his 51.
+Receipt: `kb/receipts/jev_battery_2026-09-21_s281.json` (an Actions log and
+artifact both age out).
+
+    PRIMARY any_reason  AUC 0.378  p 0.848   does not pass
+    level 0.738 (p 0.023, holm 0.138) · vendor 0.684 · different_course 0.537
+    lab 0.459 · scope 0.366 · units 0.281
+
+**The primary is BELOW CHANCE** — the battery is backwards, not weakly right:
+when Jev found a reason to hold two apart, Sam was MORE likely to fold.
+
+⚠️ **`units` at 0.281 is interpretable and this lane predicted it.** The lane
+rules units are NOT identity (`SPAN 100` at 4/4.5/5 is one course). Jev applies
+the general prior that an hours difference means a content difference — the
+assumption CPL has overruled. **Where a domain has overruled a general prior, a
+general model's confidence runs the wrong way.** That is the durable lesson and
+a KB-note candidate once a second center shows the same shape.
+
+⚠️ **`level` is a LEAD, not a finding.** Right direction, largest effect, raw
+p 0.023 — "level works" to anyone who had not pre-registered. Six questions
+yield about one good-looking result by luck. It earns ONE targeted re-test on a
+batch it did not pick; **never a re-analysis of these 26 rows**.
+
+**What did NOT fail: the 0.85 gate — 25/25, 346 rows, nothing wrong in it.**
+The failure is confined to the 26 hard pairs, which is where curator judgment IS
+the product. So: **harvest the head, sheet the band.** Run the adjudicator over
+the rung-5 population and take above-gate suggestions; put the band on a sheet.
+If you ask again, change the KIND of evidence (member course titles, units
+spread, what other colleges did with the same pair) — never a seventh
+rephrasing against the same two strings.
+
 ## Carryover
 
 | Item | State |
 |---|---|
-| **NEXT: dispatch `--ref ccrr`** | `.github/workflows/typesafe-smoke.yml`, input `adjudicate: ccrr`. Score against `kb/receipts/cr_reference_decisions_2026-09-20_s280.json`, `by: "sam"` rows only. This is `s279-fable-jev-variable-battery` |
-| CCR (the big kahuna) | deliberately NOT wired — its method half emits Trust Cards, not findings. Validate on CCRR first |
-| PR #1645 | open; merge on green per the auto-merge authorization |
-| Item 10 on the demo sheet | old item 30, which he had KEPT, came back `fold`. **Needs Sam:** real change of mind, or demo-clicking? |
-| `framing=` parameter | **Needs Sam:** keep, or delete outright |
+| **NEXT: the progressive Jev ladder** | Sam, 2026-09-21: *"I will want to set up a prioritized and progressive set of Jev runs... configured for each of our large consolidation centers such as CER, CSR, CCR, CCRR."* Offered as a numbered decision sheet; **he has not answered**. ⚠️ The first item must be that **each center needs its OWN gate calibrated on real verdicts, and only CCRR has any (51)** — so "which center gets a verdict set first" is the decision. Prioritize by collapse value (rows × colleges), the lane's existing rule |
+| CCR (the big kahuna) | still NOT wired — its method half emits Trust Cards, not findings |
+| Item 10 on the demo sheet | old item 30, which he had KEPT, came back `fold`. **Needs Sam** |
+| `framing=` parameter | **Needs Sam**: keep the per-sheet switch, or delete it |
+| `cpl_memory` rows | **STAGED, NOT WRITTEN** — `kb/receipts/cpl_memory_2026-09-21_s281.sql`. The Supabase guard blocked `execute_sql` under Rule 10 and `apply_migration` was deliberately NOT used to route around a guard that had just refused. Sam runs it or lifts the guard |
 | `kb_curation` reason column | Governance first; prerequisite for CER and CCR sheets |
 | Sierra: four defects, Chaffey false negative | untouched |
 | SkyView pinch failure | inherited, `s278-fable-skyview-pinch-registry` |
-| CI shard plan | `s280-fable-ci-shard-and-run-only-what-the-diff-touches` — measure per-file timings first |
+| CI shard plan | `s280-fable-ci-shard-and-run-only-what-the-diff-touches` |
 
 ## Read in order
 
