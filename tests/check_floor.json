@@ -157,7 +157,7 @@
     "csr_subj_check.test.js": 33,
     "csr_ui_tweaks.test.js": 27,
     "decision_sheet_replies.test.js": 27,
-    "decision_sheet_template.test.js": 51,
+    "decision_sheet_template.test.js": 53,
     "eacr_a11y.test.js": 45,
     "eacr_common_titles.test.js": 6,
     "eacr_filters.test.js": 23,

@@ -324,6 +324,16 @@ later.then(() => {
       noRun.doc.getElementById("submit-btn").textContent === "Completed — tell Claude" &&
       okRun.doc.getElementById("submit-btn").textContent === "Completed — sent",
       "the reader must not have to read carefully to tell delivered from not");
+    // ⭐ SAY IT BEFORE THE PRESS. He should not have to press Complete to find
+    // out it cannot reach anyone; canSendToClaude posts nothing and never
+    // prompts, so the note above the button knows its own reach at load.
+    check("when nothing is listening, the note says so BEFORE the press",
+      /No Claude session is listening/.test(noRun.doc.getElementById("submit-note").textContent) &&
+      /decisions done/.test(noRun.doc.getElementById("submit-note").textContent),
+      "got: " + noRun.doc.getElementById("submit-note").textContent.slice(0, 160));
+    check("and when a session IS listening the note stays out of the way",
+      !/No Claude session/.test(okRun.doc.getElementById("submit-note").textContent),
+      "the reachable case is the common one and needs no warning");
     check("the failed state is marked without relying on color alone",
       /missed/.test(state.className) && !/missed/.test(okState.className) &&
       /could NOT reach/.test(state.textContent),

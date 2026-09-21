@@ -667,6 +667,33 @@ def replies_js(sheet_id):
 
   /* ── Complete: write the record, then ring the doorbell ── */
   var sbtn = document.getElementById("submit-btn"), sstate = document.getElementById("submit-state");
+  var snote = document.getElementById("submit-note");
+
+  // ⚠️ SAY IT BEFORE THE PRESS, NOT AFTER (Sam, 2026-09-21). He pressed
+  // Complete, the send found no session listening, and he had to come and ask
+  // whether it had worked. canSendToClaude() posts nothing and never prompts —
+  // the capability notes call it cheap on each render of the control — so the
+  // button can know its own reach at load and say so in the note above it.
+  // A reachable session is the common case, so the note only changes when the
+  // answer is that nothing is listening.
+  function reach(){
+    if (!snote || !sbtn) return;
+    var C = window.claude, p;
+    try { p = C && typeof C.use === "function" ? C.use("comments") : null; } catch (e) { return; }
+    if (!p || typeof p.then !== "function") return;
+    p.then(function(cm){
+      if (!cm || typeof cm.canSendToClaude !== "function") return;
+      cm.canSendToClaude().then(function(can){
+        if (can === "available") return;               // the button can ring; say nothing
+        snote.textContent = "Every reply is saved as you make it. No Claude session is "
+          + "listening to this sheet right now, so pressing Complete records that you are "
+          + "done and you tell Claude in the chat — say \u201cdecisions done\u201d and it "
+          + "reads your replies straight off this sheet.";
+        sbtn.textContent = "Complete";
+      }, function(){});
+    }, function(){});
+  }
+  reach();
   function tally(){
     var done = 0, total = 0, asProposed = [], blank = 0;
     els.forEach(function(el){
