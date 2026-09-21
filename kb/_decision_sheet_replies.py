@@ -279,6 +279,13 @@ SUBMIT_CSS = r"""
   .submit-btn:hover { background: var(--cobalt, #0047AB); border-color: var(--cobalt, #0047AB); }
   .submit-btn[disabled] { opacity: .6; cursor: default; }
   .submit-state { margin: 10px 0 0; font-size: .9rem; color: var(--text-body, #3A3A36); min-height: 1em; }
+  /* A send that did not land gets its own rule and weight — the reader has to
+     be able to tell "it reached Claude" from "it did not" without reading
+     carefully. #1C1C1A on #FDF6E3 is 15.82:1. Color is never the only signal:
+     the words say it too, and the button relabels itself. */
+  .submit-state.missed { background: var(--rest-tint, #FDF6E3); color: var(--text-strong, #1C1C1A);
+    border-left: 4px solid var(--mustard-text, #8B6800); border-radius: 6px;
+    padding: 8px 12px; font-weight: 600; }
 """
 
 REPLIES_BAR = (
@@ -671,7 +678,11 @@ def replies_js(sheet_id):
     });
     return { done: done, total: total, asProposed: asProposed, blank: blank };
   }
-  function say(t){ if (sstate) sstate.textContent = t; }
+  function say(t, missed){
+    if (!sstate) return;
+    sstate.textContent = t;
+    sstate.className = "submit-state" + (missed ? " missed" : "");
+  }
   if (sbtn) sbtn.addEventListener("click", function(){
     var n = tally();
     sbtn.disabled = true;
@@ -697,11 +708,20 @@ def replies_js(sheet_id):
     function finish(sent, why){
       rec.sent = sent;
       if (col) { try { col.doc("done").set(copy(rec)); } catch (e) {} }
+      // ⚠️ A FAILED DOORBELL MUST NOT READ LIKE A DELIVERED ONE (Sam,
+      // 2026-09-21: "I hit complete on the new decision sheet but I don't know
+      // if it alerted you in context"). The send failed silently enough that he
+      // had to come and ask. It says so plainly now, and it says the thing that
+      // is actually true: the replies are ON the sheet and the session reads
+      // them from here, so a refused send costs a sentence in chat, never the
+      // work.
       say(sent ? "Sent. The session has it — " + n.done + " of " + n.total + " your own call"
                  + (n.asProposed.length ? ", " + n.asProposed.length + " as proposed." : ".")
-               : "Marked complete on the sheet" + (why ? " (" + why + ")" : "") +
-                 ". Use Copy replies to hand them over.");
-      sbtn.textContent = "Completed";
+               : "Saved on the sheet — but I could NOT reach the session"
+                 + (why ? " (" + why + ")" : "") +
+                 ". Your replies are safe here. Say \u201cdecisions done\u201d in the chat and "
+                 + "Claude will read them straight off this sheet.", !sent);
+      sbtn.textContent = sent ? "Completed — sent" : "Completed — tell Claude";
     }
     // The store is the record and is written whether or not the send lands.
     var C = window.claude, p;

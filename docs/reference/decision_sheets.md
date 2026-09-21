@@ -170,6 +170,19 @@ than claiming it was sent. Reading `replies/done` is how a session knows a sheet
 was declared finished; it is the counterpart to "an item with no reply has no
 verdict."
 
+⚠️ **A REFUSED SEND MUST NOT READ LIKE A DELIVERED ONE.** Sam, 2026-09-21,
+after pressing Complete: *"I hit complete on the new decision sheet but I don't
+know if it alerted you in context."* It had not — `replies/done` carried
+`sent: false` — and the page said so too quietly to notice. Three signals
+separate the outcomes now: the button relabels itself (*Completed — sent* /
+*Completed — tell Claude*), the state line names the reason, and a failed send
+gets its own panel. The words carry it without the color.
+
+**The fact worth saying on the page:** a refused send costs a sentence in chat,
+never the work. The replies are ON the sheet and a session reads them straight
+off it with `read_db`, so the failure message tells the reader to say
+"decisions done" rather than to re-do anything.
+
 **What the bar reports, and the one number it refuses.** The running total is
 in outcome terms — articulation rows settled and colleges reached — plus how
 many verdicts were changed. ⚠️ **`reach` takes college IDS, never a count.**
