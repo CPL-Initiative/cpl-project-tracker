@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 964,
-    "bytes": 10233950,
+    "bytes": 10234760,
     "over_budget": 4,
     "handoff_max": 282,
     "always_loaded_files": 1,
@@ -46,7 +46,7 @@
       },
       "roadmap_lane": {
         "files": 32,
-        "bytes": 224589,
+        "bytes": 225399,
         "over": 0
       },
       "handoff": {
@@ -61,8 +61,8 @@
       "vault_heavy_path": 49
     },
     "vault": {
-      "files": 3041,
-      "bytes": 1476709589,
+      "files": 3042,
+      "bytes": 1476724785,
       "heavy_bytes": 644366356,
       "heavy_share": 0.436,
       "ignore_filters": [
