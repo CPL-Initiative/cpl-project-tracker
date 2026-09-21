@@ -43,6 +43,20 @@
   .howto p { margin: 6px 0; }
   @media (max-width: 560px) { .card { padding: 14px; } }
 /* replies:css:start */
+  .submit { background: var(--surface-opaque, #FFFFFF); border: 1px solid var(--border-strong, rgba(28,28,26,.30));
+    border-radius: 14px; padding: 18px 20px; margin: 28px 0 8px; }
+  .submit h2 { margin: 0 0 4px; font-size: 1.15rem; }
+  .submit-note { margin: 0 0 12px; color: var(--text-body, #3A3A36); font-size: .95rem; }
+  /* #FFFFFF on #002F6D is 12.90:1. The fallback is load-bearing: without it an
+     undefined token leaves the background transparent and paints white on the
+     card's white, the 2026-09-06 failure. */
+  .submit-btn { font: inherit; font-size: 1rem; font-weight: 700; min-height: 44px; padding: 10px 22px;
+    border: 1px solid var(--seal-blue, #002F6D); border-radius: 8px;
+    background: var(--seal-blue, #002F6D); color: #FFFFFF; cursor: pointer; }
+  .submit-btn:hover { background: var(--cobalt, #0047AB); border-color: var(--cobalt, #0047AB); }
+  .submit-btn[disabled] { opacity: .6; cursor: default; }
+  .submit-state { margin: 10px 0 0; font-size: .9rem; color: var(--text-body, #3A3A36); min-height: 1em; }
+
   /* ── replies: chips, a note, a follow-up flag (Sam, 2026-09-05) ── */
   .reply { margin: 12px 0 0; padding-top: 10px; border-top: 1px dashed var(--border); }
   .reply-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
@@ -133,14 +147,11 @@
 /* replies:css:end */</style>
 </head>
 <body>
-<a class="skip" href="#items">Skip to the items</a>
+<a class="skip" href="#items">Skip to the decisions</a>
 <main class="wrap">
 <h1>The decision sheet, rebuilt</h1>
-<p class="sheet-framing">Every fold here means one recommendation where there were several, so a student carries their credit from one college to the next and no one repeats a course they have already mastered. Faculty can pull any wording back out; responding to a decision is easier than making one, so each item proposes the fold and tells you the one reason it might be wrong.</p><p class="sheet-framing-worth">10 items · 116 articulation rows · Curator of record: Sam Lee</p>
-<div class="howto"><p>Each item says what I propose, in the panel above the chips. Click a reply under each one; the words are explained below. These are ten real items off the 2026-09-20 sheet — the eight you ruled on twice, and two you ruled on once — rendered in the rebuilt template. Nothing here writes to the reference; it is the shape, for you to react to.</p><!-- replies:start --><p><strong>Click your reply under each item — and under each memory a batch item lists.</strong> Each item carries what I propose in the panel above the chips, and the first chip confirms it by naming what happens: <em>Keep the fold</em> takes the merge, <em>Pull out</em> holds the wording separate. Under a single memory the first chip names what the batch would do to it — <em>Verify</em> or <em>Retire</em>; Hold out and Rewrite keep one back from a verify batch, Keep holds one back from a retire batch. <em>Other</em> opens the rarer replies. Press a chip again to undo it. Follow up marks an item the session should come back to whatever the verdict; the note is for anything a word cannot carry. The line under each reply says what was saved. On the artifact your replies save to the sheet itself and the session reads them from there. Opened anywhere else they stay in this browser, and <em>Copy replies</em> at the foot of the page builds the numbered line for you to paste. Stop wherever you like — the sheet marks a resting point every twenty items and everything above it is already saved.</p><!-- replies:end --></div>
-<h2 id="items">Ten items, in the new shape</h2>
-<section class="group">
-<h2 class="visually-hidden" hidden>Ten items, in the new shape</h2>
+
+<section class="group" id="items">
 <article class="card" id="i1" data-rows="14">
 <h3>1 &middot; SPAN 100 — Elementary Spanish I</h3>
 <p class="ref">reference: item 26 on the 2026-09-20 sheet</p>
@@ -220,7 +231,7 @@
 <dt>What this is</dt><dd>A college wrote <strong>&ldquo;5 hours in Financial Accounting I&rdquo;</strong>. The published statewide line reads <strong>&ldquo;4.5 hours in Financial Accounting&rdquo;</strong>. Carries <strong>3 articulation rows</strong> across 3 colleges.</dd>
 <dt>Why</dt><dd>Jev put the probability they are the same at <strong>0.82</strong>. You held it separate, and it stayed separate.</dd>
 <div class="reply-rec reply-rec-dl"><dt class="reply-rec-lbl">What I propose</dt><dd class="reply-rec-text">Fold this wording into the published line. One recommendation where there are two, and 3 articulation rows collapse. <em>It might be wrong if</em> the two lines differ in level or scope rather than wording.</dd></div></dl>
-<!-- replies:start --><div class="reply" data-item="10" data-ref="item 30 on the 2026-09-20 sheet" data-title="10 &amp;middot; ACCT 110 — Financial Accounting" data-kind="item" data-parent="" data-rows="3"><div class="reply-row" role="group" aria-label="Your reply to item 10"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="fold" aria-pressed="false">Keep the fold</button><button type="button" class="reply-chip" data-v="keep" aria-pressed="false">Pull out</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-more" aria-expanded="false" aria-controls="more-10">Other</button><div class="reply-more-row" id="more-10" role="group" aria-label="Other replies to item 10" hidden><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button></div><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-10">Notes for the session</label><textarea id="note-10" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+<!-- replies:start --><div class="reply" data-item="10" data-ref="item 30 on the 2026-09-20 sheet" data-title="10 &amp;middot; ACCT 110 — Financial Accounting" data-kind="item" data-parent="" data-rows="3"><div class="reply-row" role="group" aria-label="Your reply to item 10"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="fold" aria-pressed="false">Keep the fold</button><button type="button" class="reply-chip" data-v="keep" aria-pressed="false">Pull out</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-more" aria-expanded="false" aria-controls="more-10">Other</button><div class="reply-more-row" id="more-10" role="group" aria-label="Other replies to item 10" hidden><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button></div><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-10">Notes for the session</label><textarea id="note-10" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article><!-- replies:start --><section class="submit" aria-labelledby="submit-h"><h2 id="submit-h">Done?</h2><p class="submit-note" id="submit-note">Every reply is saved as you make it. Press Complete when you have finished, and the session is told the sheet is done.</p><button type="button" class="submit-btn" id="submit-btn">Complete</button><p class="submit-state" id="submit-state" aria-live="polite"></p></section><!-- replies:end -->
 </section>
 </main>
 <!-- replies:start --><div class="reply-bar" id="reply-bar" role="region" aria-label="Your replies so far"><span class="reply-count" id="reply-count">0 replied</span><span class="reply-outcome" id="reply-outcome"></span><span class="reply-where" id="reply-where"></span><button type="button" class="reply-chip reply-copy" id="reply-copy">Copy replies</button><details class="reply-show"><summary>Show the reply line</summary><textarea id="reply-line" class="reply-line" rows="4" readonly aria-label="The reply line, ready to paste"></textarea></details></div>
@@ -455,6 +466,53 @@
       paintAll();
     }, function(){});
   }
+
+  /* ── Complete: write the record, then ring the doorbell ── */
+  var sbtn = document.getElementById("submit-btn"), sstate = document.getElementById("submit-state");
+  function tally(){
+    var done = 0, total = 0;
+    els.forEach(function(el){
+      if ((el.getAttribute("data-kind") || "item") !== "item") return;
+      total++; if (!empty(state[el.getAttribute("data-item")])) done++;
+    });
+    return { done: done, total: total };
+  }
+  function say(t){ if (sstate) sstate.textContent = t; }
+  if (sbtn) sbtn.addEventListener("click", function(){
+    var n = tally();
+    sbtn.disabled = true;
+    // ⚠️ The unanswered items are named, never silently counted as agreement:
+    // "an item with no reply has NO verdict" is the rule the session executes by.
+    var short = n.total - n.done;
+    var text = "Decisions done on " + SHEET + " — " + n.done + " of " + n.total + " items answered"
+      + (short ? ", " + short + " left blank (no verdict on those)" : "") + ". " + line();
+    var rec = { sheet: SHEET, answered: n.done, items: n.total, at: new Date().toISOString(), sent: false };
+    function finish(sent, why){
+      rec.sent = sent;
+      if (col) { try { col.doc("done").set(copy(rec)); } catch (e) {} }
+      say(sent ? "Sent. The session has it — " + n.done + " of " + n.total + " answered."
+               : "Marked complete on the sheet" + (why ? " (" + why + ")" : "") +
+                 ". Use Copy replies to hand them over.");
+      sbtn.textContent = "Completed";
+    }
+    // The store is the record and is written whether or not the send lands.
+    var C = window.claude, p;
+    try { p = C && typeof C.use === "function" ? C.use("comments") : null; } catch (e) { p = null; }
+    if (!p || typeof p.then !== "function") { finish(false, "commenting is off here"); return; }
+    say("Sending…");
+    p.then(function(cm){
+      if (!cm || typeof cm.sendToClaude !== "function") { finish(false, "commenting is off here"); return; }
+      cm.canSendToClaude().then(function(can){
+        if (can !== "available") { finish(false, can === "writers_only" ? "you are not an editor of this sheet" : "no session is listening"); return; }
+        cm.anchorFor(sbtn).then(function(anchor){
+          // One deliberate send, from the viewer's own click. Never retried:
+          // a rejected write is not proof nothing was written.
+          cm.sendToClaude({ anchor: anchor, text: text.slice(0, 3800) })
+            .then(function(){ finish(true); }, function(err){ finish(false, (err && err.code) || "it could not be sent"); });
+        }, function(){ finish(false, "the button could not be anchored"); });
+      }, function(){ finish(false, "commenting is off here"); });
+    }, function(){ finish(false, "commenting is off here"); });
+  });
 
   read(); paintAll(); light();
 })();

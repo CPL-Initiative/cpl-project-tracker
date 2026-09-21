@@ -217,6 +217,50 @@ def framing_block(text=None, curator="", counts=""):
     return out
 
 
+# ── Complete: one click that tells the session ──────────────────────────────
+# Sam, 2026-09-21: "Add a Complete or Submit button at the end that alerts you
+# in the chat that it's done." Before this the session learned a sheet was
+# finished only by being told in chat, which is the habit the decision-sheet
+# flow exists to remove.
+#
+# The mechanism is the `comments` capability's sendToClaude(): it posts a
+# comment AND notifies the Claude sessions watching this artifact, which is the
+# one page-side route to Claude (writing "@Claude" in page text does nothing).
+# It needs the FULL declaration — under composer_only, canSendToClaude() reads
+# "off" — and the full form makes the artifact organization-internal, which a
+# decision sheet already is.
+#
+# ⚠️ THE DB WRITE IS THE RECORD; THE SEND IS THE DOORBELL. A send can be
+# refused (consent, a viewer who is not an editor, no session listening) and
+# none of those mean the sheet is unfinished, so the completion is written to
+# the store FIRST and the page says plainly which of the two happened. Reading
+# `submissions/done` is how a session knows a sheet was declared finished —
+# the counterpart to "an item with no reply has no verdict."
+SUBMIT_BLOCK = (
+    '<section class="submit" aria-labelledby="submit-h">'
+    '<h2 id="submit-h">Done?</h2>'
+    '<p class="submit-note" id="submit-note">Every reply is saved as you make it. '
+    'Press Complete when you have finished, and the session is told the sheet is done.</p>'
+    '<button type="button" class="submit-btn" id="submit-btn">Complete</button>'
+    '<p class="submit-state" id="submit-state" aria-live="polite"></p>'
+    '</section>')
+
+SUBMIT_CSS = r"""
+  .submit { background: var(--surface-opaque, #FFFFFF); border: 1px solid var(--border-strong, rgba(28,28,26,.30));
+    border-radius: 14px; padding: 18px 20px; margin: 28px 0 8px; }
+  .submit h2 { margin: 0 0 4px; font-size: 1.15rem; }
+  .submit-note { margin: 0 0 12px; color: var(--text-body, #3A3A36); font-size: .95rem; }
+  /* #FFFFFF on #002F6D is 12.90:1. The fallback is load-bearing: without it an
+     undefined token leaves the background transparent and paints white on the
+     card's white, the 2026-09-06 failure. */
+  .submit-btn { font: inherit; font-size: 1rem; font-weight: 700; min-height: 44px; padding: 10px 22px;
+    border: 1px solid var(--seal-blue, #002F6D); border-radius: 8px;
+    background: var(--seal-blue, #002F6D); color: #FFFFFF; cursor: pointer; }
+  .submit-btn:hover { background: var(--cobalt, #0047AB); border-color: var(--cobalt, #0047AB); }
+  .submit-btn[disabled] { opacity: .6; cursor: default; }
+  .submit-state { margin: 10px 0 0; font-size: .9rem; color: var(--text-body, #3A3A36); min-height: 1em; }
+"""
+
 REPLIES_BAR = (
     '<div class="reply-bar" id="reply-bar" role="region" aria-label="Your replies so far">'
     '<span class="reply-count" id="reply-count">0 replied</span>'
@@ -228,7 +272,7 @@ REPLIES_BAR = (
     '</details>'
     '</div>')
 
-REPLIES_CSS = r"""
+REPLIES_CSS = SUBMIT_CSS + r"""
   /* ── replies: chips, a note, a follow-up flag (Sam, 2026-09-05) ── */
   .reply { margin: 12px 0 0; padding-top: 10px; border-top: 1px dashed var(--border); }
   .reply-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
@@ -554,6 +598,53 @@ def replies_js(sheet_id):
     }, function(){});
   }
 
+  /* ── Complete: write the record, then ring the doorbell ── */
+  var sbtn = document.getElementById("submit-btn"), sstate = document.getElementById("submit-state");
+  function tally(){
+    var done = 0, total = 0;
+    els.forEach(function(el){
+      if ((el.getAttribute("data-kind") || "item") !== "item") return;
+      total++; if (!empty(state[el.getAttribute("data-item")])) done++;
+    });
+    return { done: done, total: total };
+  }
+  function say(t){ if (sstate) sstate.textContent = t; }
+  if (sbtn) sbtn.addEventListener("click", function(){
+    var n = tally();
+    sbtn.disabled = true;
+    // ⚠️ The unanswered items are named, never silently counted as agreement:
+    // "an item with no reply has NO verdict" is the rule the session executes by.
+    var short = n.total - n.done;
+    var text = "Decisions done on " + SHEET + " — " + n.done + " of " + n.total + " items answered"
+      + (short ? ", " + short + " left blank (no verdict on those)" : "") + ". " + line();
+    var rec = { sheet: SHEET, answered: n.done, items: n.total, at: new Date().toISOString(), sent: false };
+    function finish(sent, why){
+      rec.sent = sent;
+      if (col) { try { col.doc("done").set(copy(rec)); } catch (e) {} }
+      say(sent ? "Sent. The session has it — " + n.done + " of " + n.total + " answered."
+               : "Marked complete on the sheet" + (why ? " (" + why + ")" : "") +
+                 ". Use Copy replies to hand them over.");
+      sbtn.textContent = "Completed";
+    }
+    // The store is the record and is written whether or not the send lands.
+    var C = window.claude, p;
+    try { p = C && typeof C.use === "function" ? C.use("comments") : null; } catch (e) { p = null; }
+    if (!p || typeof p.then !== "function") { finish(false, "commenting is off here"); return; }
+    say("Sending…");
+    p.then(function(cm){
+      if (!cm || typeof cm.sendToClaude !== "function") { finish(false, "commenting is off here"); return; }
+      cm.canSendToClaude().then(function(can){
+        if (can !== "available") { finish(false, can === "writers_only" ? "you are not an editor of this sheet" : "no session is listening"); return; }
+        cm.anchorFor(sbtn).then(function(anchor){
+          // One deliberate send, from the viewer's own click. Never retried:
+          // a rejected write is not proof nothing was written.
+          cm.sendToClaude({ anchor: anchor, text: text.slice(0, 3800) })
+            .then(function(){ finish(true); }, function(err){ finish(false, (err && err.code) || "it could not be sent"); });
+        }, function(){ finish(false, "the button could not be anchored"); });
+      }, function(){ finish(false, "commenting is off here"); });
+    }, function(){ finish(false, "commenting is off here"); });
+  });
+
   read(); paintAll(); light();
 })();
 </script>
@@ -754,6 +845,19 @@ def _rest_stops(html_text):
     return ''.join(out)
 
 
+def _submit_block(html_text):
+    """Complete, after the last item — where a reader arrives when they are
+    finished (Sam, 2026-09-21: "at the end"). The fixed bar carries the running
+    total and stays on screen; this is the deliberate end of the sitting."""
+    last = None
+    for m in _CARD.finditer(html_text):
+        last = m
+    if not last:
+        return html_text
+    i = last.end()
+    return html_text[:i] + MARK_S + SUBMIT_BLOCK + MARK_E + html_text[i:]
+
+
 def other_for(chips):
     """The verdicts that go behind Other: the rarer ones, so the words carrying
     the sheet are the words a reader sees (Sam, 2026-09-20: "Edit behind
@@ -816,6 +920,7 @@ def inject(html_text, sheet_id):
     html_text = _CARD.sub(card_sub, html_text)
     html_text = _DONE.sub(done_sub, html_text)
     html_text = _rest_stops(html_text)
+    html_text = _submit_block(html_text)
     # CSS into the page's first </style>.
     css = CSS_S + REPLIES_CSS + CSS_E
     if '</style>' in html_text:
@@ -888,14 +993,24 @@ SHEET_HEAD = """<!DOCTYPE html>
 </style>
 </head>
 <body>
-<a class="skip" href="#items">Skip to the items</a>
+<a class="skip" href="#items">Skip to the decisions</a>
 <main class="wrap">
 <h1>%(title)s</h1>
-%(framing)s
+%(intro)s
+<section class="group" id="items">
+"""
+
+# ⚠️ THE SHEET OPENS ON THE DECISIONS (Sam, 2026-09-21): "You can delete the
+# intro part of the decision sheet and start directly with the decisions." The
+# framing, the how-to box and the section heading are gone by default; the
+# title stays, because a page with no h1 has no outline and nothing to name it.
+# His 2026-09-20 ruling that "the framing sits in the header, in his words"
+# still holds where a sheet wants it — pass `framing=` to put it back — but a
+# reader who has to scroll past preamble to reach item 1 pays that cost on
+# every sitting, and the chips now name their own outcomes, so the how-to has
+# little left to explain.
+INTRO_BLOCK = """%(framing)s
 <div class="howto"><p>%(howto)s</p></div>
-<h2 id="items">%(heading)s</h2>
-<section class="group">
-<h2 class="visually-hidden" hidden>%(heading)s</h2>
 """
 
 
@@ -915,7 +1030,7 @@ def _worth(it):
 
 
 def build_sheet(title, items, framing=None, curator="", counts="", sheet_id=None,
-                howto="", heading="The proposals", chips=None):
+                howto="", chips=None):
     """A whole sheet, built to the template. `items` are dicts carrying `title`,
     `ref`, `facts`, `rec`, `why`, and optionally `rows`, `reach` and `chips`.
 
@@ -924,13 +1039,15 @@ def build_sheet(title, items, framing=None, curator="", counts="", sheet_id=None
     point falls every REST_EVERY items; the framing and the curator of record
     sit in the header. Returns the finished HTML, reply controls already in."""
     chips = chips or CHIPS_FOLD
-    head = SHEET_HEAD % {
-        'title': E(title),
-        'framing': framing_block(framing, curator=curator, counts=counts),
-        'howto': E("Each item says what I propose, in the panel above the chips. "
-                   "Click a reply under each one; the words are explained below."),
-        'heading': E(heading),
-    }
+    intro_html = ''
+    if framing or curator or counts or howto:
+        intro_html = INTRO_BLOCK % {
+            'framing': framing_block(framing, curator=curator, counts=counts),
+            'howto': E(howto) if howto else E(
+                "Each item says what I propose, in the panel above the chips. "
+                "Click a reply under each one."),
+        }
+    head = SHEET_HEAD % {'title': E(title), 'intro': intro_html}
     body = []
     for i, it in enumerate(items, 1):
         body.append(
@@ -941,8 +1058,6 @@ def build_sheet(title, items, framing=None, curator="", counts="", sheet_id=None
             f'<dt>What I propose</dt><dd class="ask">{it["rec"]}</dd>\n'
             f'</dl>\n</article>')
     html_text = head + "\n".join(body) + "\n</section>\n</main>\n</body>\n</html>"
-    if howto:
-        html_text = html_text.replace('</p></div>', ' ' + howto + '</p></div>', 1)
     return inject(html_text, sheet_id or 'sheet')
 
 

@@ -47,15 +47,9 @@ for n in picks:
 out = m.build_sheet(
     "The decision sheet, rebuilt",
     items,
-    curator="Sam Lee",
-    # No colleges clause: the receipt carries per-item COUNTS, and a union of
-    # invented ids would report a reach these ten items do not have.
-    counts=f"{len(items)} items · {rows_total} articulation rows",
     sheet_id="2026-09-21-decision-sheet-template",
-    howto=("These are ten real items off the 2026-09-20 sheet — the eight you ruled on twice, "
-           "and two you ruled on once — rendered in the rebuilt template. Nothing here writes "
-           "to the reference; it is the shape, for you to react to."),
-    heading="Ten items, in the new shape",
+    # No intro: Sam, 2026-09-21 — "delete the intro part of the decision sheet
+    # and start directly with the decisions." The sheet opens on item 1.
 )
 open('docs/visuals/2026-09-21-decision-sheet-template.html', 'w', encoding='utf-8').write(out)
 print(f"{len(items)} items · {rows_total} rows · {len(out)} bytes")

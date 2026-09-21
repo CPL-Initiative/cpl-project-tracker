@@ -199,6 +199,90 @@ try { execFileSync("python3", ["-c",
 check("a college COUNT is refused, because a count cannot be totaled honestly", threw,
   "reach must take the ids; there is no honest union from counts");
 
+/* ── 5b. the sheet opens on the decisions, and Complete tells the session ── */
+
+// Sam, 2026-09-21: "You can delete the intro part of the decision sheet and
+// start directly with the decisions" and "Add a Complete or Submit button at
+// the end that alerts you in the chat that it's done."
+const plain = inject(fixture(3), "plain");
+const d3 = new JSDOM(plain, { runScripts: "dangerously", url: "https://sheet.test/s", virtualConsole: new VirtualConsole() });
+const doc3 = d3.window.document;
+check("a sheet built with no framing carries no intro to scroll past",
+  !doc3.querySelector(".sheet-framing") && !/Click your reply under each item/.test(
+    (doc3.querySelector(".card") || {}).textContent || ""),
+  "the framing block belongs only to a sheet that asks for one");
+
+const submit = doc3.querySelector(".submit");
+const lastCard = Array.from(doc3.querySelectorAll("article.card")).pop();
+check("Complete sits after the last item",
+  submit && submit.previousElementSibling === lastCard,
+  "the button is the end of the sitting, so it goes after the last card");
+check("Complete is a word, not a glyph",
+  doc3.getElementById("submit-btn").textContent.trim() === "Complete", "");
+
+// The send: what it says, and what it refuses to assume.
+function completeWith(canSend) {
+  const sent = [];
+  const stored = [];
+  const cm = {
+    canSendToClaude: () => Promise.resolve(canSend),
+    anchorFor: () => Promise.resolve({ path: "p", x: 1, y: 2 }),
+    sendToClaude: (t) => { sent.push(t); return Promise.resolve({ threadId: "t", commentId: "c" }); },
+  };
+  const db = { collection: () => ({
+    doc: (id) => ({ set: (data) => { stored.push({ id, data }); return Promise.resolve(); } }),
+    onSnapshot: (next) => { next({ docs: [] }); return () => {}; },
+  }) };
+  const dom2 = new JSDOM(plain, {
+    runScripts: "dangerously", url: "https://sheet.test/s", virtualConsole: new VirtualConsole(),
+    beforeParse(w) { w.claude = { use: (n) => Promise.resolve(n === "db" ? db : n === "comments" ? cm : null) }; },
+  });
+  return { dom: dom2, doc: dom2.window.document, sent, stored };
+}
+
+const okRun = completeWith("available");
+const later = new Promise((r) => setTimeout(r, 60));
+later.then(() => {
+  // Answer ONE of three, then complete.
+  const first = okRun.doc.querySelector(".reply[data-item]");
+  first.querySelector('[data-v="fold"]').dispatchEvent(new okRun.dom.window.MouseEvent("click", { bubbles: true }));
+  okRun.doc.getElementById("submit-btn").dispatchEvent(new okRun.dom.window.MouseEvent("click", { bubbles: true }));
+  return new Promise((r) => setTimeout(r, 80));
+}).then(() => {
+  const text = (okRun.sent[0] || {}).text || "";
+  check("Complete sends the session a message", okRun.sent.length === 1,
+    "sendToClaude is the page's only route to Claude");
+  check("the message counts what was answered", /1 of 3 items answered/.test(text),
+    "got: " + text.slice(0, 120));
+  // ⭐ The rule the session executes by: no reply means NO verdict.
+  check("unanswered items are named as having no verdict, never counted as agreement",
+    /2 left blank \(no verdict on those\)/.test(text),
+    "a silent yes on an unanswered item is the failure this guards: " + text.slice(0, 160));
+  const done = okRun.stored.filter((w) => w.id === "done");
+  check("the completion is written to the store, not only sent",
+    done.length === 1 && done[0].data.answered === 1 && done[0].data.items === 3 && done[0].data.sent === true,
+    "the store is the record; the send is the doorbell");
+  check("the page says it reached the session",
+    /Sent\. The session has it/.test(okRun.doc.getElementById("submit-state").textContent), "");
+
+  // A refused send must still record, and must never claim it was sent.
+  const noRun = completeWith("no_session");
+  return new Promise((r) => setTimeout(r, 60)).then(() => {
+    noRun.doc.getElementById("submit-btn").dispatchEvent(new noRun.dom.window.MouseEvent("click", { bubbles: true }));
+    return new Promise((r) => setTimeout(r, 80));
+  }).then(() => {
+    const done = noRun.stored.filter((w) => w.id === "done");
+    check("a refused send still records the completion",
+      done.length === 1 && done[0].data.sent === false,
+      "a send can be refused for reasons that say nothing about whether the sheet is finished");
+    check("and the page never claims it was sent",
+      !/Sent\./.test(noRun.doc.getElementById("submit-state").textContent) &&
+      /Copy replies/.test(noRun.doc.getElementById("submit-state").textContent),
+      "got: " + noRun.doc.getElementById("submit-state").textContent);
+    report();
+  });
+});
+
 /* ── 6. the callout's own colors, computed ── */
 
 // A decision sheet is a one-off artifact and does not sit in a11y.config.js, so
@@ -255,12 +339,14 @@ check("the real sheet's proposals are promoted, and none is left as a fact",
   (once.match(/class="reply-rec reply-rec-dl"/g) || []).length === 51,
   "all 51 proposals should be promoted to the foot of their dl");
 
-/* ── report ── */
-let failed = 0;
-for (const [name, ok, why] of results) {
-  if (!ok) failed++;
-  console.log((ok ? "ok   " : "FAIL ") + name + (ok || !why ? "" : "\n       " + why));
+/* ── report (called once the async Complete checks have landed) ── */
+function report() {
+  let failed = 0;
+  for (const [name, ok, why] of results) {
+    if (!ok) failed++;
+    console.log((ok ? "ok   " : "FAIL ") + name + (ok || !why ? "" : "\n       " + why));
+  }
+  console.log((results.length - failed) + "/" + results.length + " passed");
+  fs.rmSync(TMP, { recursive: true, force: true });
+  process.exit(failed ? 1 : 0);
 }
-console.log((results.length - failed) + "/" + results.length + " passed");
-fs.rmSync(TMP, { recursive: true, force: true });
-process.exit(failed ? 1 : 0);
