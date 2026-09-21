@@ -4805,7 +4805,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 555
+     "line": 586
     },
     {
      "id": "script:kb/_jev_battery.py",
@@ -7632,7 +7632,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 484
+     "line": 515
     },
     {
      "id": "script:kb/_join_credit_status.py",
@@ -8970,7 +8970,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 321
+     "line": 352
     },
     {
      "id": "script:kb/_typesafe_cr_trial.py",
@@ -12114,7 +12114,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 458
+     "line": 489
     }
    ],
    "served": true,

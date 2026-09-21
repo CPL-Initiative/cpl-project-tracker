@@ -147,6 +147,44 @@ check("scoring is documented as his own verdicts, never as-proposed rows",
 check("the module states it suggests and never writes",
       "never merges" in src.lower() and "nothing is decided" in src.lower(), "")
 
+# ── 10. a gate belongs to the reference that measured it ────────────────────
+# Ladder item 3, adopted 2026-09-21: every center calibrates its own gate and
+# none inherits 0.85. That number came from Sam's 51 CCRR verdicts on ONE
+# question -- do these two recommendations describe the same content -- and the
+# battery already measured what a borrowed prior does where the domain has
+# overruled it (`units`, AUC 0.281, BELOW chance). So a reference with no
+# measured gate must never print `suggest`.
+check("only the ccrr carries a measured gate",
+      J.gate_for("ccrr") == 0.85 and all(J.gate_for(r) is None
+                                         for r in J.REFS if r != "ccrr"),
+      "gates: " + repr(J.GATES))
+
+check("⭐ NO GATE MEANS NO SUGGESTION, however confident Jev was",
+      J.act_bucket(0.99, True, None) == "uncalibrated"
+      and J.act_bucket(0.99, False, None) == "uncalibrated"
+      and J.act_bucket(0.01, True, None) == "uncalibrated",
+      "an uncalibrated number must never reach the plan")
+
+check("a measured gate still buckets normally",
+      J.act_bucket(0.97, True, 0.85) == "suggest"
+      and J.act_bucket(0.97, False, 0.85) == "contested"
+      and J.act_bucket(0.40, True, 0.85) == "curator",
+      "the ccrr's behavior must not change")
+
+check("an unscored finding stays unscored under either gate",
+      J.act_bucket(None, True, None) == "unscored"
+      and J.act_bucket(None, True, 0.85) == "unscored", "")
+
+# ⚠️ The second look is a skeptic for a proposal. A calibration run makes no
+# proposal, so spending it there doubles the calls to refute nothing.
+check("the second look is withheld where there is no gate",
+      "if gate is not None and first[\"p\"] is not None" in src,
+      "a calibration sitting is one call per finding")
+
+check("adding a gate is documented as requiring a curator's own verdicts",
+      "by: \"sam\"" in src and "precision 1.00" in src,
+      "an opt-out default would calibrate the model against its own proposal")
+
 failed = 0
 for name, ok, why in results:
     if not ok:
