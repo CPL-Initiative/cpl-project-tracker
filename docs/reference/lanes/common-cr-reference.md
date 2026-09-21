@@ -155,17 +155,12 @@ verdicts, on the CCR) and it carries the sheet's proposal rather than his
 choice. Asked back in the comment thread.
 
 ⚠️ **COLLAPSE VALUE CANNOT RANK THE FOUR CENTERS — IT IS A CONSTANT BETWEEN
-THEM.** The S281 handoff said to prioritize the ladder by collapse value
-(rows × colleges), this lane's own rule. Measured on
-`chatbox_peer_articulations`: the CER, CSR, CCR and CCRR each ride the **same
-9,413 articulation rows across the same 82 colleges**, because they consolidate
-different COLUMNS of one corpus (`unified_title` · `subject` ·
-`subject`+`course_number` · `credit_rec`). Collapse value orders items WITHIN a
-center and ranks nothing BETWEEN them. This is the **second** corpus on which
-the rule has failed for a corpus-specific reason — the ACE lane found the mirror
-image on 2026-08-14 (`a-ranking-rule-must-be-rederived-per-corpus`), where every
-head topic already sat at 80–100 of 108 colleges. **Re-derive a ranking rule
-per corpus; never carry one across.**
+THEM.** Measured on `chatbox_peer_articulations`: the CER, CSR, CCR and CCRR
+each ride the **same 9,413 articulation rows across the same 82 colleges**,
+consolidating different COLUMNS of one corpus. The rule orders items WITHIN a
+center and is undefined between them. Third corpus to need its own rule —
+the test to run before carrying one anywhere:
+[`methodology-a-ranking-rule-is-a-claim-about-where-variance-lives`](../../kb-notes/methodology-a-ranking-rule-is-a-claim-about-where-variance-lives.md).
 
 **What ranks the centers instead: what ONE SITTING of verdicts is worth.**
 
@@ -176,14 +171,10 @@ per corpus; never carry one across.**
 | **CSR** | 143 findings (123 are one rule) | identity layer, not rows | Rule 7 re-mint |
 | **CER** | 59 findings · 38 keys | **71 rows · 20 colleges** | **~1.2 rows** |
 
-⚠️ **THE CER's MEASURED REACH IS 71 ROWS.** Only **21 of its 38** distinct
-credential titles appear in the articulated corpus at all, so its mid-sized
-backlog buys the least of any center per verdict. Caveat recorded on the sheet:
-the CER governs 3,813 unified titles across all of MAP, so its value may sit in
-**exhibit adoption** rather than articulation rows — a measure nobody has taken.
-
-⚠️ **THE CCR WAS NOT ASKABLE**, structurally: its method half emits Trust Cards
-where the others emit findings. Fixed this session — see the CCR rung below.
+⚠️ **THE CER's MEASURED REACH IS 71 ROWS** — only **21 of its 38** credential
+titles reach the articulated corpus at all. Caveat on the sheet: the CER governs
+3,813 unified titles across MAP, so its value may sit in **exhibit adoption**
+rather than rows, which nobody has measured.
 
 ⚠️ **123 OF THE CSR's 143 ARE RULE 7 QUESTIONS.** `cs9_anchor_subj_diverge` asks
 whether a discipline's canonical SUBJ4 should follow its anchor course — a
@@ -258,9 +249,8 @@ authority anchors sit in `common_courses.json`, which the auditor excludes by
 design as upstream authority.
 
 **SO THE LADDER HAS A SEQUENCING CONSTRAINT.** Asking *"does this course belong
-under this parent"* treats the parent as fixed, and for 79% it is a four-month-old
-draft; re-titling a parent before its membership is settled bakes the error into
-the new name. Both directions fail alone, so the rungs run membership first,
+under this parent"* treats the parent as fixed, and re-titling a parent before
+its membership is settled bakes the error into the new name. Membership first,
 parent second, and **loop**:
 
 | Rung | Question | Evidence |
@@ -289,4 +279,12 @@ M-ID layer is the low-stakes rehearsal room, the measure is whether a reader
 rules quickly and stays right (undo and reversal rates, never clicks), and
 faculty are discipline-bound — **slice the sheet by discipline**. Capture: `CPLBrain` braindump `2026-09-21-1900-the-ladder-is-a-rehearsal-for-faculty-decisions`.
 
-**NEXT: stage `ccr_findings()` into the rungs above**, CIP from `coci_college_programs`.
+**THE RUNGS ARE BUILT** (`--rung title|cip|description`, cumulative). CIP comes
+from `kb/top_cip_map.json` — the modal CIP colleges assigned to real programs,
+which resolves for **1,235 of the 1,237** questions and rides in WITH its
+majority (`share`, `cips`) so it corroborates rather than gates.
+⚠️ **RUN ONE RUNG.** A rung cannot escalate until it has a gate, and the CCR has
+zero verdicts — 0.85 belongs to the CCRR and a different question. **NEXT: a
+`title`-rung sitting, whose verdicts calibrate that rung; then rung 2 re-asks
+only what rung 1 left unsettled.** Rung 4 (the parent's own title and number)
+waits on settled membership.

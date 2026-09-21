@@ -88,6 +88,53 @@ check("COCI carriage-return escapes are stripped from the evidence",
     "f,_ = j.ccr_findings()\nprint(' '.join(x['evidence'] for x in f))")),
   "a window spent on escape artifacts is a window not spent on the course");
 
+/* ── 5. the progressive rungs: title -> cip -> description ────────────────── */
+// Sam, 2026-09-21: "title then CIP then course description". One question asked
+// with more evidence each rung, so the cheap signal settles the easy rows. The
+// rungs must be CUMULATIVE and ORDERED, or "escalate what rung 1 could not
+// settle" means nothing — rung 2 has to be rung 1 plus the CIP, not a different
+// question wearing the same name.
+const rungs = JSON.parse(py(
+  "f, _ = j.ccr_findings()\n" +
+  "x = [y for y in f if 'CIP colleges assigned' in y['rungs']['cip']][0]\n" +
+  "print(json.dumps({'order': list(j.CCR_RUNGS), 'r': x['rungs'],\n" +
+  "  'with_cip': sum(1 for y in f if 'CIP colleges assigned' in y['rungs']['cip']),\n" +
+  "  'n': len(f)}))"));
+
+check("the rungs are ordered title, cip, description",
+  rungs.order.join(",") === "title,cip,description", rungs.order.join(","));
+
+check("each rung CONTAINS the one before it",
+  rungs.r.cip.startsWith(rungs.r.title) && rungs.r.description.startsWith(rungs.r.cip),
+  "a rung that drops earlier evidence is a different question, not an escalation");
+
+check("rung 1 carries no CIP and no description",
+  !/CIP colleges assigned/.test(rungs.r.title) && !/description:/.test(rungs.r.title),
+  rungs.r.title.slice(0, 160));
+
+check("the description arrives only at rung 3",
+  !/description:/.test(rungs.r.cip) && /description:/.test(rungs.r.description),
+  "cip rung: " + rungs.r.cip.slice(-90));
+
+// ⚠️ CIP CORROBORATES, NEVER GATES (Rule 7 reaches it: a course's only route to
+// a CIP is its TOP code). A bare code would read as fact where a TOP carries a
+// mean of 2.85 CIPs, so the majority rides into the evidence with it.
+check("the CIP arrives with its own majority attached",
+  /the modal CIP on \d+% of \d+ programs/.test(rungs.r.cip),
+  rungs.r.cip.slice(-140));
+
+check("nearly every finding resolves a CIP",
+  rungs.with_cip / rungs.n > 0.9, `${rungs.with_cip} of ${rungs.n}`);
+
+/* ── 6. a rung is asked ONE at a time, and only where rungs exist ─────────── */
+let rejected = false;
+try {
+  execFileSync("python3", ["kb/_jev_adjudicate.py", "--ref", "ccrr", "--rung", "title",
+                           "--dry-run"], { stdio: "pipe" });
+} catch (e) { rejected = /--rung applies to --ref ccr/.test(String(e.stderr || e)); }
+check("--rung is refused for a reference that has no rungs", rejected,
+  "asking a rung of the CCRR would silently ask its only question");
+
 /* ── report ──────────────────────────────────────────────────────────────── */
 let pass = 0;
 for (const [name, ok, why] of results) {

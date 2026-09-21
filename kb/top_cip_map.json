@@ -1,0 +1,2723 @@
+{
+ "_doc": "TOP -> modal CIP, observed on real college programs. CIP CORROBORATES, NEVER GATES (Rule 7's TOP caveat reaches it, because a course's only route to a CIP is its TOP code). Read `share` and `cips` beside every code.",
+ "_generated_by": "kb/_build_top_cip_map.py",
+ "_generated_at": "2026-09-21",
+ "_source": "coci_college_programs (Supabase) \u2014 modal CIP per TOP code",
+ "_stats": {
+  "top_codes": 387,
+  "one_cip_only": 136,
+  "mean_cips_per_top": 2.85,
+  "mean_modal_share": 0.865
+ },
+ "map": {
+  "0101.00": {
+   "cip": "01.0000",
+   "title": "Agriculture, Agriculture Operations, And Related Sciences",
+   "share": 0.537,
+   "cips": 3,
+   "programs": 54
+  },
+  "0102.00": {
+   "cip": "01.0302",
+   "title": "Animal/Livestock Husbandry and Production",
+   "share": 0.842,
+   "cips": 3,
+   "programs": 38
+  },
+  "0102.10": {
+   "cip": "01.8301",
+   "title": "Veterinary/Animal Health Technology/Technician and Veterinary Assistant",
+   "share": 0.944,
+   "cips": 2,
+   "programs": 18
+  },
+  "0102.20": {
+   "cip": "01.8301",
+   "title": "Veterinary/Animal Health Technology/Technician and Veterinary Assistant",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 1
+  },
+  "0102.30": {
+   "cip": "01.0306",
+   "title": "Dairy Husbandry and Production",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 1
+  },
+  "0102.40": {
+   "cip": "01.0307",
+   "title": "Horse Husbandry/Equine Science and Management",
+   "share": 0.867,
+   "cips": 3,
+   "programs": 15
+  },
+  "0103.00": {
+   "cip": "01.0304",
+   "title": "Crop Production",
+   "share": 0.859,
+   "cips": 2,
+   "programs": 64
+  },
+  "0103.10": {
+   "cip": "01.1105",
+   "title": "Plant Protection and Integrated Pest Management",
+   "share": 0.933,
+   "cips": 2,
+   "programs": 15
+  },
+  "0104.00": {
+   "cip": "01.1004",
+   "title": "Viticulture and Enology",
+   "share": 0.814,
+   "cips": 3,
+   "programs": 43
+  },
+  "0109.00": {
+   "cip": "01.0601",
+   "title": "Applied Horticulture/Horticulture Operations, General",
+   "share": 0.968,
+   "cips": 3,
+   "programs": 93
+  },
+  "0109.10": {
+   "cip": "01.0605",
+   "title": "Landscaping and Groundskeeping",
+   "share": 0.944,
+   "cips": 3,
+   "programs": 71
+  },
+  "0109.20": {
+   "cip": "01.0608",
+   "title": "Floriculture/Floristry Operations and Management",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 17
+  },
+  "0109.30": {
+   "cip": "01.0606",
+   "title": "Plant Nursery Operations and Management",
+   "share": 0.95,
+   "cips": 2,
+   "programs": 20
+  },
+  "0109.40": {
+   "cip": "01.0607",
+   "title": "Turf and Turfgrass Management",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 6
+  },
+  "0112.00": {
+   "cip": "01.0102",
+   "title": "Agribusiness/Agricultural Business Operations",
+   "share": 0.94,
+   "cips": 3,
+   "programs": 50
+  },
+  "0113.00": {
+   "cip": "01.1002",
+   "title": "Food Technology and Processing",
+   "share": 0.529,
+   "cips": 3,
+   "programs": 17
+  },
+  "0114.00": {
+   "cip": "03.0501",
+   "title": "Forestry, General",
+   "share": 0.84,
+   "cips": 2,
+   "programs": 25
+  },
+  "0115.00": {
+   "cip": "03.0101",
+   "title": "Natural Resources/Conservation, General",
+   "share": 0.827,
+   "cips": 6,
+   "programs": 52
+  },
+  "0115.10": {
+   "cip": "31.0301",
+   "title": "Parks, Recreation and Leisure Facilities Management, General",
+   "share": 0.909,
+   "cips": 2,
+   "programs": 11
+  },
+  "0115.20": {
+   "cip": "03.0601",
+   "title": "Wildlife, Fish and Wildlands Science and Management",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 4
+  },
+  "0116.00": {
+   "cip": "01.0205",
+   "title": "Agricultural Mechanics and Equipment/Machine Technology/Technician",
+   "share": 0.78,
+   "cips": 3,
+   "programs": 41
+  },
+  "0199.00": {
+   "cip": "01.9999",
+   "title": "Agricultural/Animal/Plant/Veterinary Science and Related Fields, Other",
+   "share": 0.909,
+   "cips": 2,
+   "programs": 11
+  },
+  "0201.00": {
+   "cip": "04.0901",
+   "title": "Architectural Technology/Technician",
+   "share": 0.836,
+   "cips": 6,
+   "programs": 110
+  },
+  "0201.10": {
+   "cip": "04.0601",
+   "title": "Landscape Architecture",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 3
+  },
+  "0299.00": {
+   "cip": "04.0299",
+   "title": "Architecture, Other",
+   "share": 0.6,
+   "cips": 2,
+   "programs": 5
+  },
+  "0301.00": {
+   "cip": "03.0104",
+   "title": "Environmental Science",
+   "share": 0.959,
+   "cips": 3,
+   "programs": 73
+  },
+  "0302.00": {
+   "cip": "03.0103",
+   "title": "Environmental Studies",
+   "share": 0.929,
+   "cips": 4,
+   "programs": 42
+  },
+  "0303.00": {
+   "cip": "15.0508",
+   "title": "Hazardous Materials Management and Waste Technology/Technician",
+   "share": 0.545,
+   "cips": 4,
+   "programs": 33
+  },
+  "0401.00": {
+   "cip": "26.0101",
+   "title": "Biology/Biological Sciences, General",
+   "share": 0.958,
+   "cips": 3,
+   "programs": 167
+  },
+  "0402.00": {
+   "cip": "26.0301",
+   "title": "Botany/Plant Biology",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 1
+  },
+  "0403.00": {
+   "cip": "26.0502",
+   "title": "Microbiology, General",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 1
+  },
+  "0407.00": {
+   "cip": "26.0701",
+   "title": "Zoology/Animal Biology",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 2
+  },
+  "0408.00": {
+   "cip": "30.9999",
+   "title": "Multi-/Interdisciplinary Studies, Other",
+   "share": 0.667,
+   "cips": 2,
+   "programs": 3
+  },
+  "0410.00": {
+   "cip": "26.0901",
+   "title": "Physiology, General",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 7
+  },
+  "0430.00": {
+   "cip": "15.0401",
+   "title": "Biomedical Technology/Technician",
+   "share": 0.509,
+   "cips": 5,
+   "programs": 114
+  },
+  "0499.00": {
+   "cip": "26.9999",
+   "title": "Biological and Biomedical Sciences, Other",
+   "share": 0.938,
+   "cips": 2,
+   "programs": 16
+  },
+  "0501.00": {
+   "cip": "52.0101",
+   "title": "Business/Commerce, General",
+   "share": 0.787,
+   "cips": 5,
+   "programs": 108
+  },
+  "0502.00": {
+   "cip": "52.0302",
+   "title": "Accounting Technology/Technician and Bookkeeping",
+   "share": 0.608,
+   "cips": 6,
+   "programs": 296
+  },
+  "0502.10": {
+   "cip": "52.1601",
+   "title": "Taxation",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 27
+  },
+  "0504.00": {
+   "cip": "52.0803",
+   "title": "Banking and Financial Support Services",
+   "share": 0.97,
+   "cips": 2,
+   "programs": 33
+  },
+  "0505.00": {
+   "cip": "52.0201",
+   "title": "Business Administration and Management, General",
+   "share": 0.96,
+   "cips": 4,
+   "programs": 227
+  },
+  "0506.00": {
+   "cip": "52.0201",
+   "title": "Business Administration and Management, General",
+   "share": 0.896,
+   "cips": 10,
+   "programs": 201
+  },
+  "0506.30": {
+   "cip": "52.0204",
+   "title": "Office Management and Supervision",
+   "share": 0.8,
+   "cips": 4,
+   "programs": 50
+  },
+  "0506.40": {
+   "cip": "52.0703",
+   "title": "Small Business Administration/Management",
+   "share": 0.651,
+   "cips": 6,
+   "programs": 192
+  },
+  "0506.50": {
+   "cip": "52.0212",
+   "title": "Retail Management",
+   "share": 0.768,
+   "cips": 4,
+   "programs": 56
+  },
+  "0508.00": {
+   "cip": "52.1101",
+   "title": "International Business/Trade/Commerce",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 54
+  },
+  "0509.00": {
+   "cip": "52.1801",
+   "title": "Sales, Distribution, and Marketing Operations, General",
+   "share": 0.548,
+   "cips": 7,
+   "programs": 115
+  },
+  "0509.10": {
+   "cip": "09.0903",
+   "title": "Advertising",
+   "share": 0.909,
+   "cips": 2,
+   "programs": 11
+  },
+  "0509.40": {
+   "cip": "52.1804",
+   "title": "Selling Skills and Sales Operations",
+   "share": 0.933,
+   "cips": 2,
+   "programs": 15
+  },
+  "0509.60": {
+   "cip": "52.1899",
+   "title": "General Merchandising, Sales, and Related Marketing Operations, Other",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 2
+  },
+  "0509.70": {
+   "cip": "52.0208",
+   "title": "E-Commerce/Electronic Commerce",
+   "share": 0.833,
+   "cips": 2,
+   "programs": 12
+  },
+  "0510.00": {
+   "cip": "52.0203",
+   "title": "Logistics, Materials, and Supply Chain Management",
+   "share": 0.938,
+   "cips": 3,
+   "programs": 65
+  },
+  "0511.00": {
+   "cip": "52.1501",
+   "title": "Real Estate",
+   "share": 0.986,
+   "cips": 3,
+   "programs": 148
+  },
+  "0511.10": {
+   "cip": "52.1501",
+   "title": "Real Estate",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 3
+  },
+  "0512.00": {
+   "cip": "52.1701",
+   "title": "Insurance",
+   "share": 0.909,
+   "cips": 2,
+   "programs": 11
+  },
+  "0514.00": {
+   "cip": "52.0401",
+   "title": "Administrative Assistant and Secretarial Science, General",
+   "share": 0.72,
+   "cips": 11,
+   "programs": 364
+  },
+  "0514.10": {
+   "cip": "22.0301",
+   "title": "Legal Administrative Assistant/Secretary",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 19
+  },
+  "0514.20": {
+   "cip": "51.0716",
+   "title": "Medical Administrative/Executive Assistant and Medical Secretary",
+   "share": 0.788,
+   "cips": 3,
+   "programs": 33
+  },
+  "0514.30": {
+   "cip": "22.0303",
+   "title": "Court Reporting and Captioning/Court Reporter",
+   "share": 0.923,
+   "cips": 2,
+   "programs": 26
+  },
+  "0514.40": {
+   "cip": "52.0204",
+   "title": "Office Management and Supervision",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 19
+  },
+  "0516.00": {
+   "cip": "52.1002",
+   "title": "Labor and Industrial Relations",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 8
+  },
+  "0518.00": {
+   "cip": "52.0411",
+   "title": "Customer Service Support/Call Center/Teleservice Operation",
+   "share": 0.857,
+   "cips": 3,
+   "programs": 14
+  },
+  "0599.00": {
+   "cip": "52.9999",
+   "title": "Business, Management, Marketing, and Related Support Services, Other",
+   "share": 0.679,
+   "cips": 3,
+   "programs": 53
+  },
+  "0601.00": {
+   "cip": "09.0100",
+   "title": "Communication, General",
+   "share": 0.529,
+   "cips": 5,
+   "programs": 17
+  },
+  "0602.00": {
+   "cip": "09.0401",
+   "title": "Journalism",
+   "share": 0.953,
+   "cips": 4,
+   "programs": 106
+  },
+  "0604.00": {
+   "cip": "09.0701",
+   "title": "Radio and Television",
+   "share": 0.771,
+   "cips": 2,
+   "programs": 48
+  },
+  "0604.10": {
+   "cip": "09.0701",
+   "title": "Radio and Television",
+   "share": 0.929,
+   "cips": 2,
+   "programs": 14
+  },
+  "0604.20": {
+   "cip": "09.0701",
+   "title": "Radio and Television",
+   "share": 0.9,
+   "cips": 4,
+   "programs": 110
+  },
+  "0604.30": {
+   "cip": "09.0402",
+   "title": "Broadcast Journalism",
+   "share": 0.889,
+   "cips": 2,
+   "programs": 9
+  },
+  "0606.00": {
+   "cip": "09.0900",
+   "title": "Public Relations, Advertising, and Applied Communication",
+   "share": 0.917,
+   "cips": 2,
+   "programs": 12
+  },
+  "0607.00": {
+   "cip": "23.1303",
+   "title": "Professional, Technical, Business, and Scientific Writing",
+   "share": 0.667,
+   "cips": 2,
+   "programs": 3
+  },
+  "0610.00": {
+   "cip": "09.0102",
+   "title": "Mass Communication/Media Studies",
+   "share": 0.875,
+   "cips": 2,
+   "programs": 8
+  },
+  "0612.00": {
+   "cip": "50.0601",
+   "title": "Film/Cinema/Media Studies",
+   "share": 0.958,
+   "cips": 2,
+   "programs": 24
+  },
+  "0612.10": {
+   "cip": "50.0601",
+   "title": "Film/Cinema/Media Studies",
+   "share": 0.8,
+   "cips": 2,
+   "programs": 5
+  },
+  "0612.20": {
+   "cip": "50.0602",
+   "title": "Cinematography and Film/Video Production",
+   "share": 0.961,
+   "cips": 5,
+   "programs": 102
+  },
+  "0614.00": {
+   "cip": "10.0303",
+   "title": "Prepress/Desktop Publishing and Digital Imaging Design",
+   "share": 0.395,
+   "cips": 7,
+   "programs": 119
+  },
+  "0614.10": {
+   "cip": "10.0304",
+   "title": "Animation, Interactive Technology, Video Graphics and Special Effects",
+   "share": 0.836,
+   "cips": 5,
+   "programs": 73
+  },
+  "0614.20": {
+   "cip": "10.0304",
+   "title": "Animation, Interactive Technology, Video Graphics and Special Effects",
+   "share": 0.5,
+   "cips": 4,
+   "programs": 44
+  },
+  "0614.30": {
+   "cip": "11.0801",
+   "title": "Web Page, Digital/Multimedia and Information Resources Design",
+   "share": 0.976,
+   "cips": 3,
+   "programs": 82
+  },
+  "0614.40": {
+   "cip": "10.0304",
+   "title": "Animation, Interactive Technology, Video Graphics and Special Effects",
+   "share": 0.987,
+   "cips": 2,
+   "programs": 78
+  },
+  "0614.50": {
+   "cip": "10.0303",
+   "title": "Prepress/Desktop Publishing and Digital Imaging Design",
+   "share": 0.786,
+   "cips": 3,
+   "programs": 14
+  },
+  "0614.60": {
+   "cip": "11.0803",
+   "title": "Computer Graphics",
+   "share": 0.717,
+   "cips": 8,
+   "programs": 53
+  },
+  "0699.00": {
+   "cip": "09.9999",
+   "title": "Communication, Journalism, and Related Programs, Other",
+   "share": 0.96,
+   "cips": 2,
+   "programs": 25
+  },
+  "0701.00": {
+   "cip": "11.0101",
+   "title": "Computer and Information Sciences, General",
+   "share": 0.679,
+   "cips": 7,
+   "programs": 81
+  },
+  "0702.00": {
+   "cip": "11.0103",
+   "title": "Information Technology",
+   "share": 0.527,
+   "cips": 14,
+   "programs": 203
+  },
+  "0702.10": {
+   "cip": "11.0601",
+   "title": "Data Entry/Microcomputer Applications, General",
+   "share": 0.586,
+   "cips": 10,
+   "programs": 87
+  },
+  "0706.00": {
+   "cip": "11.0701",
+   "title": "Computer Science",
+   "share": 0.802,
+   "cips": 6,
+   "programs": 126
+  },
+  "0707.00": {
+   "cip": "11.0201",
+   "title": "Computer Programming/Programmer, General",
+   "share": 0.719,
+   "cips": 6,
+   "programs": 64
+  },
+  "0707.10": {
+   "cip": "11.0201",
+   "title": "Computer Programming/Programmer, General",
+   "share": 0.807,
+   "cips": 13,
+   "programs": 150
+  },
+  "0707.20": {
+   "cip": "11.0802",
+   "title": "Data Modeling/Warehousing and Database Administration",
+   "share": 0.793,
+   "cips": 5,
+   "programs": 29
+  },
+  "0707.30": {
+   "cip": "11.0501",
+   "title": "Computer Systems Analysis/Analyst",
+   "share": 0.885,
+   "cips": 4,
+   "programs": 26
+  },
+  "0708.00": {
+   "cip": "11.1003",
+   "title": "Computer and Information Systems Security/Auditing/Information Assurance",
+   "share": 0.582,
+   "cips": 13,
+   "programs": 170
+  },
+  "0708.10": {
+   "cip": "11.0901",
+   "title": "Computer Systems Networking and Telecommunications",
+   "share": 0.636,
+   "cips": 10,
+   "programs": 184
+  },
+  "0708.20": {
+   "cip": "11.1006",
+   "title": "Computer Support Specialist",
+   "share": 0.745,
+   "cips": 6,
+   "programs": 55
+  },
+  "0709.00": {
+   "cip": "11.1004",
+   "title": "Web/Multimedia Management and Webmaster",
+   "share": 0.875,
+   "cips": 5,
+   "programs": 32
+  },
+  "0709.10": {
+   "cip": "52.0208",
+   "title": "E-Commerce/Electronic Commerce",
+   "share": 0.571,
+   "cips": 2,
+   "programs": 7
+  },
+  "0799.00": {
+   "cip": "11.9999",
+   "title": "Computer and Information Sciences and Support Services, Other",
+   "share": 0.406,
+   "cips": 4,
+   "programs": 32
+  },
+  "0801.00": {
+   "cip": "13.0101",
+   "title": "Education, General",
+   "share": 0.542,
+   "cips": 6,
+   "programs": 24
+  },
+  "0802.00": {
+   "cip": "13.1501",
+   "title": "Teacher Assistant/Aide",
+   "share": 0.935,
+   "cips": 4,
+   "programs": 62
+  },
+  "0802.10": {
+   "cip": "13.1501",
+   "title": "Teacher Assistant/Aide",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 4
+  },
+  "0809.00": {
+   "cip": "13.1001",
+   "title": "Special Education and Teaching, General",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 11
+  },
+  "0835.00": {
+   "cip": "31.0501",
+   "title": "Sports, Kinesiology, and Physical Education/Fitness, General",
+   "share": 0.962,
+   "cips": 3,
+   "programs": 52
+  },
+  "0835.10": {
+   "cip": "31.0501",
+   "title": "Sports, Kinesiology, and Physical Education/Fitness, General",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 5
+  },
+  "0835.20": {
+   "cip": "31.0507",
+   "title": "Physical Fitness Technician",
+   "share": 0.939,
+   "cips": 5,
+   "programs": 98
+  },
+  "0835.50": {
+   "cip": "31.0501",
+   "title": "Sports, Kinesiology, and Physical Education/Fitness, General",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 6
+  },
+  "0835.60": {
+   "cip": "31.0504",
+   "title": "Sport and Fitness Administration/Management",
+   "share": 0.923,
+   "cips": 3,
+   "programs": 26
+  },
+  "0835.70": {
+   "cip": "31.9999",
+   "title": "Parks, Recreation, Leisure, Fitness, and Kinesiology, Other",
+   "share": 0.6,
+   "cips": 3,
+   "programs": 10
+  },
+  "0835.80": {
+   "cip": "31.0501",
+   "title": "Sports, Kinesiology, and Physical Education/Fitness, General",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 1
+  },
+  "0836.00": {
+   "cip": "31.0101",
+   "title": "Parks, Recreation and Leisure Studies",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 10
+  },
+  "0836.10": {
+   "cip": "31.0101",
+   "title": "Parks, Recreation and Leisure Studies",
+   "share": 0.75,
+   "cips": 2,
+   "programs": 8
+  },
+  "0837.00": {
+   "cip": "51.0001",
+   "title": "Health and Wellness, General",
+   "share": 0.5,
+   "cips": 3,
+   "programs": 16
+  },
+  "0839.00": {
+   "cip": "13.1309",
+   "title": "Technology Teacher Education/Industrial Arts Teacher Education",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 3
+  },
+  "0850.00": {
+   "cip": "16.1601",
+   "title": "American Sign Language (ASL)",
+   "share": 0.985,
+   "cips": 2,
+   "programs": 65
+  },
+  "0850.10": {
+   "cip": "16.1603",
+   "title": "Sign Language Interpretation and Translation",
+   "share": 0.943,
+   "cips": 2,
+   "programs": 35
+  },
+  "0860.00": {
+   "cip": "13.0501",
+   "title": "Educational/Instructional Technology",
+   "share": 0.632,
+   "cips": 5,
+   "programs": 19
+  },
+  "0899.00": {
+   "cip": "13.9999",
+   "title": "Education, Other",
+   "share": 0.833,
+   "cips": 4,
+   "programs": 24
+  },
+  "0901.00": {
+   "cip": "14.0101",
+   "title": "Engineering, General",
+   "share": 0.559,
+   "cips": 5,
+   "programs": 186
+  },
+  "0924.00": {
+   "cip": "15.0000",
+   "title": "Engineering Technologies/Technicians, General",
+   "share": 0.731,
+   "cips": 8,
+   "programs": 67
+  },
+  "0934.00": {
+   "cip": "47.0101",
+   "title": "Electrical/Electronics Equipment Installation and Repair Technology/Technician, General",
+   "share": 0.538,
+   "cips": 8,
+   "programs": 119
+  },
+  "0934.10": {
+   "cip": "47.0104",
+   "title": "Computer Installation and Repair Technology/Technician",
+   "share": 0.476,
+   "cips": 4,
+   "programs": 21
+  },
+  "0934.20": {
+   "cip": "47.0105",
+   "title": "Industrial Electronics Technology/Technician",
+   "share": 0.773,
+   "cips": 2,
+   "programs": 22
+  },
+  "0934.30": {
+   "cip": "15.0305",
+   "title": "Telecommunications Technology/Technician",
+   "share": 0.524,
+   "cips": 3,
+   "programs": 21
+  },
+  "0934.40": {
+   "cip": "46.0301",
+   "title": "Electrical and Power Transmission Installation/Installer, General",
+   "share": 0.97,
+   "cips": 2,
+   "programs": 33
+  },
+  "0934.60": {
+   "cip": "15.0401",
+   "title": "Biomedical Technology/Technician",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 5
+  },
+  "0934.70": {
+   "cip": "15.0404",
+   "title": "Instrumentation Technology/Technician",
+   "share": 0.75,
+   "cips": 2,
+   "programs": 8
+  },
+  "0934.80": {
+   "cip": "15.0304",
+   "title": "Laser and Optical Technology/Technician",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 5
+  },
+  "0935.00": {
+   "cip": "15.0403",
+   "title": "Electromechanical/Electromechanical Engineering Technology/Technician",
+   "share": 0.593,
+   "cips": 3,
+   "programs": 27
+  },
+  "0936.00": {
+   "cip": "10.0305",
+   "title": "Graphic and Printing Equipment Operator, General Production",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 17
+  },
+  "0943.00": {
+   "cip": "15.0404",
+   "title": "Instrumentation Technology/Technician",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 6
+  },
+  "0945.00": {
+   "cip": "47.0303",
+   "title": "Industrial Mechanics and Maintenance Technology/Technician",
+   "share": 0.769,
+   "cips": 7,
+   "programs": 65
+  },
+  "0946.00": {
+   "cip": "15.0501",
+   "title": "Heating, Ventilation, Air Conditioning and Refrigeration Engineering Technology/Technician",
+   "share": 0.712,
+   "cips": 5,
+   "programs": 118
+  },
+  "0946.10": {
+   "cip": "15.1701",
+   "title": "Energy Systems Technology/Technician",
+   "share": 0.596,
+   "cips": 9,
+   "programs": 57
+  },
+  "0947.00": {
+   "cip": "47.0605",
+   "title": "Diesel Mechanics Technology/Technician",
+   "share": 0.803,
+   "cips": 4,
+   "programs": 61
+  },
+  "0947.20": {
+   "cip": "47.0302",
+   "title": "Heavy Equipment Maintenance Technology/Technician",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 17
+  },
+  "0947.30": {
+   "cip": "49.0202",
+   "title": "Construction/Heavy Equipment/Earthmoving Equipment Operation",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 3
+  },
+  "0947.40": {
+   "cip": "49.0208",
+   "title": "Railroad and Railway Transportation",
+   "share": 0.818,
+   "cips": 2,
+   "programs": 11
+  },
+  "0947.50": {
+   "cip": "49.0205",
+   "title": "Truck and Bus Driver/Commercial Vehicle Operator and Instructor",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 13
+  },
+  "0948.00": {
+   "cip": "47.0604",
+   "title": "Automobile/Automotive Mechanics Technology/Technician",
+   "share": 0.958,
+   "cips": 7,
+   "programs": 527
+  },
+  "0948.30": {
+   "cip": "47.0606",
+   "title": "Small Engine Mechanics and Repair Technology/Technician",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 4
+  },
+  "0948.40": {
+   "cip": "47.0614",
+   "title": "Alternative Fuel Vehicle Technology/Technician",
+   "share": 0.984,
+   "cips": 2,
+   "programs": 63
+  },
+  "0949.00": {
+   "cip": "47.0603",
+   "title": "Autobody/Collision and Repair Technology/Technician",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 67
+  },
+  "0949.10": {
+   "cip": "48.0303",
+   "title": "Upholstery/Upholsterer",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 4
+  },
+  "0950.00": {
+   "cip": "47.0607",
+   "title": "Airframe Mechanics and Aircraft Maintenance Technology/Technician",
+   "share": 0.622,
+   "cips": 3,
+   "programs": 45
+  },
+  "0950.10": {
+   "cip": "47.0607",
+   "title": "Airframe Mechanics and Aircraft Maintenance Technology/Technician",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 19
+  },
+  "0950.20": {
+   "cip": "47.0608",
+   "title": "Aircraft Powerplant Technology/Technician",
+   "share": 0.941,
+   "cips": 2,
+   "programs": 17
+  },
+  "0950.40": {
+   "cip": "47.0609",
+   "title": "Avionics Maintenance Technology/Technician",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 4
+  },
+  "0950.50": {
+   "cip": "47.0607",
+   "title": "Airframe Mechanics and Aircraft Maintenance Technology/Technician",
+   "share": 0.667,
+   "cips": 2,
+   "programs": 3
+  },
+  "0952.00": {
+   "cip": "46.0415",
+   "title": "Building Construction Technology/Technician",
+   "share": 0.639,
+   "cips": 8,
+   "programs": 97
+  },
+  "0952.10": {
+   "cip": "46.0201",
+   "title": "Carpentry/Carpenter",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 51
+  },
+  "0952.20": {
+   "cip": "46.0302",
+   "title": "Electrician",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 67
+  },
+  "0952.30": {
+   "cip": "46.0502",
+   "title": "Pipefitting/Pipefitter and Sprinkler Fitter",
+   "share": 0.609,
+   "cips": 2,
+   "programs": 46
+  },
+  "0952.50": {
+   "cip": "48.0703",
+   "title": "Cabinetmaking and Millwork",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 35
+  },
+  "0952.60": {
+   "cip": "46.0101",
+   "title": "Mason/Masonry",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 4
+  },
+  "0952.70": {
+   "cip": "46.0413",
+   "title": "Carpet, Floor, and Tile Worker",
+   "share": 0.833,
+   "cips": 2,
+   "programs": 6
+  },
+  "0952.80": {
+   "cip": "46.0404",
+   "title": "Drywall Installation/Drywaller",
+   "share": 0.9,
+   "cips": 2,
+   "programs": 20
+  },
+  "0952.90": {
+   "cip": "46.0410",
+   "title": "Roofer",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 2
+  },
+  "0953.00": {
+   "cip": "15.1301",
+   "title": "Drafting and Design Technology/Technician, General",
+   "share": 0.753,
+   "cips": 6,
+   "programs": 93
+  },
+  "0953.10": {
+   "cip": "15.1303",
+   "title": "Architectural Drafting and Architectural CAD/CADD",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 30
+  },
+  "0953.20": {
+   "cip": "15.1304",
+   "title": "Civil Drafting and Civil Engineering CAD/CADD",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 8
+  },
+  "0953.30": {
+   "cip": "15.1305",
+   "title": "Electrical/Electronics Drafting and Electrical/Electronics CAD/CADD",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 5
+  },
+  "0953.40": {
+   "cip": "15.1306",
+   "title": "Mechanical Drafting and Mechanical Drafting CAD/CADD",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 32
+  },
+  "0953.60": {
+   "cip": "50.0410",
+   "title": "Illustration",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 2
+  },
+  "0954.00": {
+   "cip": "41.0301",
+   "title": "Chemical Technology/Technician",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 10
+  },
+  "0954.20": {
+   "cip": "15.0607",
+   "title": "Plastics and Polymer Engineering Technology/Technician",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 10
+  },
+  "0955.00": {
+   "cip": "41.0301",
+   "title": "Chemical Technology/Technician",
+   "share": 0.929,
+   "cips": 2,
+   "programs": 14
+  },
+  "0956.00": {
+   "cip": "15.0613",
+   "title": "Manufacturing Engineering Technology/Technician",
+   "share": 0.669,
+   "cips": 9,
+   "programs": 133
+  },
+  "0956.30": {
+   "cip": "48.0501",
+   "title": "Machine Tool Technology/Machinist",
+   "share": 0.99,
+   "cips": 2,
+   "programs": 100
+  },
+  "0956.40": {
+   "cip": "48.0506",
+   "title": "Sheet Metal Technology/Sheetworking",
+   "share": 0.967,
+   "cips": 2,
+   "programs": 30
+  },
+  "0956.50": {
+   "cip": "48.0508",
+   "title": "Welding Technology/Welder",
+   "share": 0.881,
+   "cips": 6,
+   "programs": 194
+  },
+  "0956.70": {
+   "cip": "15.0703",
+   "title": "Industrial Safety Technology/Technician",
+   "share": 0.839,
+   "cips": 4,
+   "programs": 31
+  },
+  "0956.80": {
+   "cip": "15.0702",
+   "title": "Quality Control Technology/Technician",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 5
+  },
+  "0956.90": {
+   "cip": "15.0613",
+   "title": "Manufacturing Engineering Technology/Technician",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 2
+  },
+  "0957.00": {
+   "cip": "46.0412",
+   "title": "Building/Construction Site Management/Manager",
+   "share": 0.614,
+   "cips": 5,
+   "programs": 70
+  },
+  "0957.20": {
+   "cip": "46.0403",
+   "title": "Building/Home/Construction Inspection/Inspector",
+   "share": 0.977,
+   "cips": 2,
+   "programs": 44
+  },
+  "0957.30": {
+   "cip": "15.1102",
+   "title": "Surveying Technology/Surveying",
+   "share": 0.87,
+   "cips": 4,
+   "programs": 23
+  },
+  "0958.00": {
+   "cip": "15.0506",
+   "title": "Water Quality and Wastewater Treatment Management and Recycling Technology/Technician",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 62
+  },
+  "0959.00": {
+   "cip": "49.0399",
+   "title": "Marine Transportation, Other",
+   "share": 0.714,
+   "cips": 2,
+   "programs": 7
+  },
+  "0959.10": {
+   "cip": "49.0304",
+   "title": "Diver, Professional and Instructor",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 2
+  },
+  "0962.00": {
+   "cip": "47.0404",
+   "title": "Musical Instrument Fabrication and Repair",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 3
+  },
+  "0999.00": {
+   "cip": "15.0699",
+   "title": "Industrial Production Technologies/Technicians, Other",
+   "share": 0.556,
+   "cips": 3,
+   "programs": 9
+  },
+  "1001.00": {
+   "cip": "50.0101",
+   "title": "Visual and Performing Arts, General",
+   "share": 0.845,
+   "cips": 6,
+   "programs": 116
+  },
+  "1002.00": {
+   "cip": "50.0701",
+   "title": "Art/Art Studies, General",
+   "share": 0.662,
+   "cips": 5,
+   "programs": 195
+  },
+  "1002.10": {
+   "cip": "50.0705",
+   "title": "Drawing",
+   "share": 0.857,
+   "cips": 2,
+   "programs": 21
+  },
+  "1002.20": {
+   "cip": "50.0709",
+   "title": "Sculpture",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 14
+  },
+  "1002.30": {
+   "cip": "50.0711",
+   "title": "Ceramic Arts and Ceramics",
+   "share": 0.941,
+   "cips": 2,
+   "programs": 34
+  },
+  "1004.00": {
+   "cip": "50.0901",
+   "title": "Music, General",
+   "share": 0.868,
+   "cips": 5,
+   "programs": 227
+  },
+  "1005.00": {
+   "cip": "10.0203",
+   "title": "Recording Arts Technology/Technician",
+   "share": 0.531,
+   "cips": 8,
+   "programs": 179
+  },
+  "1006.00": {
+   "cip": "50.0502",
+   "title": "Technical Theatre/Theatre Design and Technology",
+   "share": 0.974,
+   "cips": 3,
+   "programs": 117
+  },
+  "1007.00": {
+   "cip": "50.0501",
+   "title": "Drama and Dramatics/Theatre Arts, General",
+   "share": 0.916,
+   "cips": 6,
+   "programs": 179
+  },
+  "1008.00": {
+   "cip": "50.0301",
+   "title": "Dance, General",
+   "share": 0.963,
+   "cips": 3,
+   "programs": 80
+  },
+  "1008.10": {
+   "cip": "50.0399",
+   "title": "Dance, Other",
+   "share": 0.939,
+   "cips": 2,
+   "programs": 33
+  },
+  "1009.00": {
+   "cip": "50.0401",
+   "title": "Design and Visual Communications, General",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 5
+  },
+  "1009.10": {
+   "cip": "50.0713",
+   "title": "Jewelry Arts",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 6
+  },
+  "1011.00": {
+   "cip": "50.0605",
+   "title": "Photography",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 41
+  },
+  "1012.00": {
+   "cip": "50.0406",
+   "title": "Commercial Photography",
+   "share": 0.513,
+   "cips": 5,
+   "programs": 156
+  },
+  "1013.00": {
+   "cip": "50.0402",
+   "title": "Commercial and Advertising Art",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 17
+  },
+  "1030.00": {
+   "cip": "50.0409",
+   "title": "Graphic Design",
+   "share": 0.974,
+   "cips": 3,
+   "programs": 154
+  },
+  "1099.00": {
+   "cip": "50.9999",
+   "title": "Visual and Performing Arts, Other",
+   "share": 0.655,
+   "cips": 4,
+   "programs": 29
+  },
+  "1101.00": {
+   "cip": "16.0101",
+   "title": "Foreign Languages and Literatures, General",
+   "share": 0.963,
+   "cips": 2,
+   "programs": 27
+  },
+  "1102.00": {
+   "cip": "16.0901",
+   "title": "French Language and Literature",
+   "share": 0.977,
+   "cips": 2,
+   "programs": 43
+  },
+  "1103.00": {
+   "cip": "16.0501",
+   "title": "German Language and Literature",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 13
+  },
+  "1104.00": {
+   "cip": "16.0902",
+   "title": "Italian Language and Literature",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 16
+  },
+  "1105.00": {
+   "cip": "16.0905",
+   "title": "Spanish Language and Literature",
+   "share": 0.994,
+   "cips": 2,
+   "programs": 158
+  },
+  "1106.00": {
+   "cip": "16.0402",
+   "title": "Russian Language and Literature",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 8
+  },
+  "1107.00": {
+   "cip": "16.0301",
+   "title": "Chinese Language and Literature",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 18
+  },
+  "1108.00": {
+   "cip": "16.0302",
+   "title": "Japanese Language and Literature",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 31
+  },
+  "1112.00": {
+   "cip": "16.1101",
+   "title": "Arabic Language and Literature",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 5
+  },
+  "1117.20": {
+   "cip": "16.1408",
+   "title": "Vietnamese Language and Literature",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 3
+  },
+  "1117.30": {
+   "cip": "16.0303",
+   "title": "Korean Language and Literature",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 5
+  },
+  "1199.00": {
+   "cip": "16.9999",
+   "title": "Foreign Languages, Literatures, and Linguistics, Other",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 5
+  },
+  "1201.00": {
+   "cip": "51.0000",
+   "title": "Health Services/Allied Health/Health Sciences, General",
+   "share": 0.754,
+   "cips": 6,
+   "programs": 138
+  },
+  "1202.00": {
+   "cip": "51.0701",
+   "title": "Health/Health Care Administration/Management",
+   "share": 0.333,
+   "cips": 3,
+   "programs": 6
+  },
+  "1205.00": {
+   "cip": "51.1004",
+   "title": "Clinical/Medical Laboratory Technician",
+   "share": 0.947,
+   "cips": 2,
+   "programs": 19
+  },
+  "1205.10": {
+   "cip": "51.1009",
+   "title": "Phlebotomy Technician/Phlebotomist",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 9
+  },
+  "1208.00": {
+   "cip": "51.0801",
+   "title": "Medical/Clinical Assistant",
+   "share": 0.824,
+   "cips": 3,
+   "programs": 74
+  },
+  "1208.10": {
+   "cip": "51.0801",
+   "title": "Medical/Clinical Assistant",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 14
+  },
+  "1208.20": {
+   "cip": "51.0710",
+   "title": "Medical Office Assistant/Specialist",
+   "share": 0.538,
+   "cips": 5,
+   "programs": 39
+  },
+  "1208.30": {
+   "cip": "51.0703",
+   "title": "Health Unit Coordinator/Ward Clerk",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 1
+  },
+  "1209.00": {
+   "cip": "51.0799",
+   "title": "Health and Medical Administrative Services, Other",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 3
+  },
+  "1210.00": {
+   "cip": "51.0908",
+   "title": "Respiratory Care Therapy/Therapist",
+   "share": 0.833,
+   "cips": 2,
+   "programs": 30
+  },
+  "1211.00": {
+   "cip": "51.0917",
+   "title": "Polysomnography",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 2
+  },
+  "1212.00": {
+   "cip": "51.0903",
+   "title": "Electroneurodiagnostic/Electroencephalographic Technology/Technologist",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 3
+  },
+  "1213.00": {
+   "cip": "51.0901",
+   "title": "Cardiovascular Technology/Technologist",
+   "share": 0.857,
+   "cips": 2,
+   "programs": 7
+  },
+  "1214.00": {
+   "cip": "51.1099",
+   "title": "Clinical/Medical Laboratory Science and Allied Professions, Other",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 4
+  },
+  "1215.00": {
+   "cip": "51.0902",
+   "title": "Electrocardiograph Technology/Technician",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 6
+  },
+  "1217.00": {
+   "cip": "51.0909",
+   "title": "Surgical Technology/Technologist",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 6
+  },
+  "1218.00": {
+   "cip": "51.0803",
+   "title": "Occupational Therapist Assistant",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 8
+  },
+  "1219.00": {
+   "cip": "51.1802",
+   "title": "Optometric Technician/Assistant",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 8
+  },
+  "1220.00": {
+   "cip": "51.0204",
+   "title": "Audiology/Audiologist and Speech-Language Pathology/Pathologist",
+   "share": 0.895,
+   "cips": 2,
+   "programs": 19
+  },
+  "1221.00": {
+   "cip": "51.0805",
+   "title": "Pharmacy Technician/Assistant",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 33
+  },
+  "1222.00": {
+   "cip": "51.0806",
+   "title": "Physical Therapy Assistant",
+   "share": 0.85,
+   "cips": 2,
+   "programs": 20
+  },
+  "1223.00": {
+   "cip": "51.0707",
+   "title": "Health Information/Medical Records Technology/Technician",
+   "share": 0.8,
+   "cips": 5,
+   "programs": 20
+  },
+  "1223.10": {
+   "cip": "51.0713",
+   "title": "Medical Insurance Coding Specialist/Coder",
+   "share": 0.867,
+   "cips": 3,
+   "programs": 15
+  },
+  "1225.00": {
+   "cip": "51.0911",
+   "title": "Radiologic Technology/Science - Radiographer",
+   "share": 0.976,
+   "cips": 2,
+   "programs": 41
+  },
+  "1227.00": {
+   "cip": "51.0910",
+   "title": "Diagnostic Medical Sonography/Sonographer and Ultrasound Technician",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 12
+  },
+  "1228.00": {
+   "cip": "51.0913",
+   "title": "Athletic Training/Trainer",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 39
+  },
+  "1230.00": {
+   "cip": "51.3801",
+   "title": "Registered Nursing/Registered Nurse",
+   "share": 0.75,
+   "cips": 2,
+   "programs": 8
+  },
+  "1230.10": {
+   "cip": "51.3801",
+   "title": "Registered Nursing/Registered Nurse",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 119
+  },
+  "1230.20": {
+   "cip": "51.3901",
+   "title": "Licensed Practical/Vocational Nurse Training",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 66
+  },
+  "1230.30": {
+   "cip": "51.3902",
+   "title": "Nursing Assistant/Aide and Patient Care Assistant/Aide",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 38
+  },
+  "1230.80": {
+   "cip": "51.2602",
+   "title": "Home Health Aide/Home Attendant",
+   "share": 0.917,
+   "cips": 2,
+   "programs": 12
+  },
+  "1239.00": {
+   "cip": "51.1502",
+   "title": "Psychiatric/Mental Health Services Technician",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 18
+  },
+  "1240.00": {
+   "cip": "51.0699",
+   "title": "Dental Services and Allied Professions, Other",
+   "share": 0.667,
+   "cips": 2,
+   "programs": 3
+  },
+  "1240.10": {
+   "cip": "51.0601",
+   "title": "Dental Assisting/Assistant",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 44
+  },
+  "1240.20": {
+   "cip": "51.0602",
+   "title": "Dental Hygiene/Hygienist",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 25
+  },
+  "1240.30": {
+   "cip": "51.0603",
+   "title": "Dental Laboratory Technology/Technician",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 6
+  },
+  "1250.00": {
+   "cip": "51.0904",
+   "title": "Emergency Medical Technology/Technician (EMT Paramedic)",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 57
+  },
+  "1251.00": {
+   "cip": "51.0904",
+   "title": "Emergency Medical Technology/Technician (EMT Paramedic)",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 61
+  },
+  "1255.00": {
+   "cip": "12.0301",
+   "title": "Funeral Service and Mortuary Science, General",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 3
+  },
+  "1260.00": {
+   "cip": "51.0000",
+   "title": "Health Services/Allied Health/Health Sciences, General",
+   "share": 0.736,
+   "cips": 7,
+   "programs": 53
+  },
+  "1261.00": {
+   "cip": "51.2208",
+   "title": "Community Health and Preventive Medicine",
+   "share": 0.913,
+   "cips": 4,
+   "programs": 46
+  },
+  "1270.00": {
+   "cip": "31.0505",
+   "title": "Exercise Science and Kinesiology",
+   "share": 0.864,
+   "cips": 6,
+   "programs": 140
+  },
+  "1299.00": {
+   "cip": "51.9999",
+   "title": "Health Professions and Related Clinical Sciences, Other",
+   "share": 0.486,
+   "cips": 8,
+   "programs": 35
+  },
+  "1301.00": {
+   "cip": "19.0101",
+   "title": "Family and Consumer Sciences/Human Sciences, General",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 9
+  },
+  "1301.10": {
+   "cip": "19.0403",
+   "title": "Consumer Services and Advocacy",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 4
+  },
+  "1302.00": {
+   "cip": "50.0408",
+   "title": "Interior Design",
+   "share": 0.968,
+   "cips": 2,
+   "programs": 62
+  },
+  "1303.00": {
+   "cip": "19.0901",
+   "title": "Apparel and Textiles, General",
+   "share": 0.794,
+   "cips": 4,
+   "programs": 34
+  },
+  "1303.10": {
+   "cip": "50.0407",
+   "title": "Fashion/Apparel Design",
+   "share": 0.875,
+   "cips": 5,
+   "programs": 48
+  },
+  "1303.20": {
+   "cip": "19.0905",
+   "title": "Apparel and Textile Marketing Management",
+   "share": 0.653,
+   "cips": 3,
+   "programs": 49
+  },
+  "1303.30": {
+   "cip": "19.0902",
+   "title": "Apparel and Textile Manufacture",
+   "share": 0.773,
+   "cips": 3,
+   "programs": 22
+  },
+  "1305.00": {
+   "cip": "19.0709",
+   "title": "Child Care Provider/Assistant",
+   "share": 0.49,
+   "cips": 11,
+   "programs": 412
+  },
+  "1305.10": {
+   "cip": "19.0706",
+   "title": "Child Development",
+   "share": 0.907,
+   "cips": 5,
+   "programs": 43
+  },
+  "1305.20": {
+   "cip": "13.1015",
+   "title": "Education/Teaching of Individuals in Early Childhood Special Education Programs",
+   "share": 0.844,
+   "cips": 4,
+   "programs": 45
+  },
+  "1305.40": {
+   "cip": "19.0709",
+   "title": "Child Care Provider/Assistant",
+   "share": 0.629,
+   "cips": 3,
+   "programs": 35
+  },
+  "1305.50": {
+   "cip": "19.0709",
+   "title": "Child Care Provider/Assistant",
+   "share": 0.696,
+   "cips": 4,
+   "programs": 23
+  },
+  "1305.60": {
+   "cip": "19.0707",
+   "title": "Family and Community Services",
+   "share": 0.714,
+   "cips": 3,
+   "programs": 7
+  },
+  "1305.70": {
+   "cip": "19.0707",
+   "title": "Family and Community Services",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 2
+  },
+  "1305.80": {
+   "cip": "19.0708",
+   "title": "Child Care and Support Services Management",
+   "share": 0.592,
+   "cips": 5,
+   "programs": 49
+  },
+  "1305.90": {
+   "cip": "19.0709",
+   "title": "Child Care Provider/Assistant",
+   "share": 0.667,
+   "cips": 3,
+   "programs": 42
+  },
+  "1306.00": {
+   "cip": "19.0501",
+   "title": "Foods, Nutrition, and Wellness Studies, General",
+   "share": 0.806,
+   "cips": 7,
+   "programs": 124
+  },
+  "1306.20": {
+   "cip": "19.0505",
+   "title": "Foodservice Systems Administration/Management",
+   "share": 0.714,
+   "cips": 3,
+   "programs": 21
+  },
+  "1306.30": {
+   "cip": "12.0500",
+   "title": "Cooking and Related Culinary Arts, General",
+   "share": 0.665,
+   "cips": 8,
+   "programs": 203
+  },
+  "1306.60": {
+   "cip": "51.3103",
+   "title": "Dietetic Technician",
+   "share": 0.8,
+   "cips": 2,
+   "programs": 5
+  },
+  "1307.00": {
+   "cip": "52.0901",
+   "title": "Hospitality Administration/Management, General",
+   "share": 0.852,
+   "cips": 7,
+   "programs": 122
+  },
+  "1307.10": {
+   "cip": "12.0504",
+   "title": "Restaurant, Culinary, and Catering Management/Manager",
+   "share": 0.787,
+   "cips": 5,
+   "programs": 61
+  },
+  "1307.20": {
+   "cip": "52.0904",
+   "title": "Hotel/Motel Administration/Management",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 10
+  },
+  "1307.30": {
+   "cip": "31.0302",
+   "title": "Golf Course Operation and Grounds Management",
+   "share": 0.667,
+   "cips": 2,
+   "programs": 3
+  },
+  "1308.00": {
+   "cip": "19.0701",
+   "title": "Human Development and Family Studies, General",
+   "share": 0.778,
+   "cips": 3,
+   "programs": 9
+  },
+  "1309.00": {
+   "cip": "30.1101",
+   "title": "Gerontology",
+   "share": 0.559,
+   "cips": 2,
+   "programs": 34
+  },
+  "1401.00": {
+   "cip": "22.0000",
+   "title": "Legal Studies",
+   "share": 0.987,
+   "cips": 2,
+   "programs": 78
+  },
+  "1402.00": {
+   "cip": "22.0302",
+   "title": "Legal Assistant/Paralegal",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 83
+  },
+  "1501.00": {
+   "cip": "23.0101",
+   "title": "English Language and Literature, General",
+   "share": 0.977,
+   "cips": 4,
+   "programs": 171
+  },
+  "1501.10": {
+   "cip": "16.0102",
+   "title": "Linguistics",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 5
+  },
+  "1502.00": {
+   "cip": "23.9999",
+   "title": "English Language and Literature/Letters, Other",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 5
+  },
+  "1506.00": {
+   "cip": "09.0101",
+   "title": "Speech Communication and Rhetoric",
+   "share": 0.972,
+   "cips": 3,
+   "programs": 217
+  },
+  "1507.00": {
+   "cip": "23.1302",
+   "title": "Creative Writing",
+   "share": 0.912,
+   "cips": 3,
+   "programs": 34
+  },
+  "1509.00": {
+   "cip": "38.0101",
+   "title": "Philosophy",
+   "share": 0.989,
+   "cips": 2,
+   "programs": 95
+  },
+  "1510.00": {
+   "cip": "38.0201",
+   "title": "Religion/Religious Studies",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 9
+  },
+  "1520.00": {
+   "cip": "23.0101",
+   "title": "English Language and Literature, General",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 4
+  },
+  "1599.00": {
+   "cip": "24.0199",
+   "title": "Liberal Arts and Sciences, General Studies and Humanities, Other",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 5
+  },
+  "1601.00": {
+   "cip": "25.0101",
+   "title": "Library and Information Science",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 7
+  },
+  "1602.00": {
+   "cip": "25.0301",
+   "title": "Library and Archives Assisting",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 31
+  },
+  "1701.00": {
+   "cip": "27.0101",
+   "title": "Mathematics, General",
+   "share": 0.99,
+   "cips": 3,
+   "programs": 200
+  },
+  "1702.00": {
+   "cip": "27.0301",
+   "title": "Applied Mathematics, General",
+   "share": 0.592,
+   "cips": 6,
+   "programs": 49
+  },
+  "1799.00": {
+   "cip": "27.0199",
+   "title": "Mathematics, Other",
+   "share": 0.5,
+   "cips": 2,
+   "programs": 2
+  },
+  "1901.00": {
+   "cip": "40.0101",
+   "title": "Physical Sciences, General",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 12
+  },
+  "1902.00": {
+   "cip": "40.0801",
+   "title": "Physics, General",
+   "share": 0.979,
+   "cips": 3,
+   "programs": 140
+  },
+  "1905.00": {
+   "cip": "40.0501",
+   "title": "Chemistry, General",
+   "share": 0.968,
+   "cips": 2,
+   "programs": 94
+  },
+  "1911.00": {
+   "cip": "40.0201",
+   "title": "Astronomy",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 13
+  },
+  "1914.00": {
+   "cip": "40.0601",
+   "title": "Geology/Earth Science, General",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 78
+  },
+  "1919.00": {
+   "cip": "40.0607",
+   "title": "Oceanography, Chemical and Physical",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 5
+  },
+  "1920.00": {
+   "cip": "41.9999",
+   "title": "Science Technologies/Technicians, Other",
+   "share": 0.667,
+   "cips": 2,
+   "programs": 3
+  },
+  "1930.00": {
+   "cip": "40.0601",
+   "title": "Geology/Earth Science, General",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 9
+  },
+  "1999.00": {
+   "cip": "40.9999",
+   "title": "Physical Sciences, Other",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 1
+  },
+  "2001.00": {
+   "cip": "42.0101",
+   "title": "Psychology, General",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 135
+  },
+  "2003.00": {
+   "cip": "30.1701",
+   "title": "Behavioral Sciences",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 8
+  },
+  "2099.00": {
+   "cip": "42.9999",
+   "title": "Psychology, Other",
+   "share": 0.75,
+   "cips": 2,
+   "programs": 4
+  },
+  "2102.00": {
+   "cip": "44.0401",
+   "title": "Public Administration",
+   "share": 0.625,
+   "cips": 3,
+   "programs": 8
+  },
+  "2102.10": {
+   "cip": "15.0201",
+   "title": "Civil Engineering Technologies/Technicians",
+   "share": 0.545,
+   "cips": 3,
+   "programs": 11
+  },
+  "2104.00": {
+   "cip": "44.0000",
+   "title": "Public Administration And Social Service Professions",
+   "share": 0.836,
+   "cips": 4,
+   "programs": 159
+  },
+  "2104.40": {
+   "cip": "51.1501",
+   "title": "Substance Abuse/Addiction Counseling",
+   "share": 0.977,
+   "cips": 3,
+   "programs": 86
+  },
+  "2104.50": {
+   "cip": "44.9999",
+   "title": "Public Administration and Social Service Professions, Other",
+   "share": 0.5,
+   "cips": 2,
+   "programs": 4
+  },
+  "2105.00": {
+   "cip": "43.0107",
+   "title": "Criminal Justice/Police Science",
+   "share": 0.519,
+   "cips": 7,
+   "programs": 264
+  },
+  "2105.10": {
+   "cip": "43.0102",
+   "title": "Corrections",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 43
+  },
+  "2105.20": {
+   "cip": "43.0199",
+   "title": "Corrections and Criminal Justice, Other",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 4
+  },
+  "2105.30": {
+   "cip": "43.0301",
+   "title": "Homeland Security",
+   "share": 0.864,
+   "cips": 3,
+   "programs": 22
+  },
+  "2105.40": {
+   "cip": "43.0406",
+   "title": "Forensic Science and Technology",
+   "share": 0.6,
+   "cips": 4,
+   "programs": 25
+  },
+  "2105.50": {
+   "cip": "43.0107",
+   "title": "Criminal Justice/Police Science",
+   "share": 0.98,
+   "cips": 2,
+   "programs": 51
+  },
+  "2105.60": {
+   "cip": "43.0107",
+   "title": "Criminal Justice/Police Science",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 16
+  },
+  "2133.00": {
+   "cip": "43.0201",
+   "title": "Fire Prevention and Safety Technology/Technician",
+   "share": 0.589,
+   "cips": 6,
+   "programs": 168
+  },
+  "2133.10": {
+   "cip": "43.0206",
+   "title": "Wildland/Forest Firefighting and Investigation",
+   "share": 0.958,
+   "cips": 2,
+   "programs": 24
+  },
+  "2133.50": {
+   "cip": "43.0203",
+   "title": "Fire Science/Fire-fighting",
+   "share": 0.974,
+   "cips": 2,
+   "programs": 39
+  },
+  "2140.00": {
+   "cip": "16.0103",
+   "title": "Language Interpretation and Translation",
+   "share": 0.897,
+   "cips": 3,
+   "programs": 29
+  },
+  "2199.00": {
+   "cip": "43.9999",
+   "title": "Homeland Security, Law Enforcement, Firefighting and Related Protective Services, Other",
+   "share": 0.467,
+   "cips": 3,
+   "programs": 15
+  },
+  "2201.00": {
+   "cip": "45.0101",
+   "title": "Social Sciences, General",
+   "share": 0.911,
+   "cips": 3,
+   "programs": 45
+  },
+  "2201.10": {
+   "cip": "05.0207",
+   "title": "Women's Studies",
+   "share": 0.952,
+   "cips": 2,
+   "programs": 21
+  },
+  "2201.20": {
+   "cip": "05.0102",
+   "title": "American/United States Studies/Civilization",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 4
+  },
+  "2201.30": {
+   "cip": "05.0299",
+   "title": "Ethnic, Cultural Minority, and Gender Studies, Other",
+   "share": 0.792,
+   "cips": 6,
+   "programs": 48
+  },
+  "2201.40": {
+   "cip": "05.0208",
+   "title": "Gay/Lesbian Studies",
+   "share": 0.95,
+   "cips": 2,
+   "programs": 20
+  },
+  "2201.50": {
+   "cip": "05.0200",
+   "title": "Ethnic Studies",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 16
+  },
+  "2201.60": {
+   "cip": "05.0203",
+   "title": "Hispanic-American, Puerto Rican, and Mexican-American/Chicano Studies",
+   "share": 0.9,
+   "cips": 2,
+   "programs": 20
+  },
+  "2201.70": {
+   "cip": "05.0207",
+   "title": "Women's Studies",
+   "share": 0.938,
+   "cips": 2,
+   "programs": 16
+  },
+  "2201.80": {
+   "cip": "05.0201",
+   "title": "African American/Black Studies",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 14
+  },
+  "2201.90": {
+   "cip": "05.0206",
+   "title": "Asian American Studies",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 4
+  },
+  "2201.91": {
+   "cip": "05.0202",
+   "title": "American Indian/Native American Studies",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 2
+  },
+  "2202.00": {
+   "cip": "45.0201",
+   "title": "Anthropology, General",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 106
+  },
+  "2202.20": {
+   "cip": "45.0301",
+   "title": "Archeology",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 9
+  },
+  "2203.00": {
+   "cip": "05.0200",
+   "title": "Ethnic Studies",
+   "share": 0.981,
+   "cips": 3,
+   "programs": 104
+  },
+  "2203.30": {
+   "cip": "05.0203",
+   "title": "Hispanic-American, Puerto Rican, and Mexican-American/Chicano Studies",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 1
+  },
+  "2203.40": {
+   "cip": "05.0206",
+   "title": "Asian American Studies",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 1
+  },
+  "2204.00": {
+   "cip": "45.0601",
+   "title": "Economics, General",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 108
+  },
+  "2205.00": {
+   "cip": "54.0101",
+   "title": "History, General",
+   "share": 0.967,
+   "cips": 4,
+   "programs": 121
+  },
+  "2206.00": {
+   "cip": "45.0701",
+   "title": "Geography",
+   "share": 0.943,
+   "cips": 3,
+   "programs": 88
+  },
+  "2206.10": {
+   "cip": "45.0702",
+   "title": "Geographic Information Science and Cartography",
+   "share": 0.94,
+   "cips": 2,
+   "programs": 50
+  },
+  "2207.00": {
+   "cip": "45.1001",
+   "title": "Political Science and Government, General",
+   "share": 0.992,
+   "cips": 2,
+   "programs": 124
+  },
+  "2208.00": {
+   "cip": "45.1101",
+   "title": "Sociology, General",
+   "share": 0.977,
+   "cips": 4,
+   "programs": 130
+  },
+  "2210.00": {
+   "cip": "45.0901",
+   "title": "International Relations and Affairs",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 19
+  },
+  "2210.10": {
+   "cip": "05.0199",
+   "title": "Area Studies, Other",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 8
+  },
+  "2210.20": {
+   "cip": "30.2001",
+   "title": "Global Studies",
+   "share": 0.636,
+   "cips": 5,
+   "programs": 33
+  },
+  "2299.00": {
+   "cip": "45.9999",
+   "title": "Social Sciences, Other",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 3
+  },
+  "3005.00": {
+   "cip": "99.9999",
+   "title": "Unknown",
+   "share": 0.8,
+   "cips": 2,
+   "programs": 5
+  },
+  "3007.00": {
+   "cip": "12.0401",
+   "title": "Cosmetology/Cosmetologist, General",
+   "share": 0.763,
+   "cips": 8,
+   "programs": 114
+  },
+  "3009.00": {
+   "cip": "52.1905",
+   "title": "Tourism and Travel Services Marketing Operations",
+   "share": 0.923,
+   "cips": 2,
+   "programs": 13
+  },
+  "3020.00": {
+   "cip": "49.0104",
+   "title": "Aviation/Airway Management and Operations",
+   "share": 0.8,
+   "cips": 2,
+   "programs": 5
+  },
+  "3020.10": {
+   "cip": "49.0104",
+   "title": "Aviation/Airway Management and Operations",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 12
+  },
+  "3020.20": {
+   "cip": "49.0102",
+   "title": "Airline/Commercial/Professional Pilot and Flight Crew",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 27
+  },
+  "3020.30": {
+   "cip": "49.0105",
+   "title": "Air Traffic Controller",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 4
+  },
+  "3020.40": {
+   "cip": "49.0106",
+   "title": "Airline Flight Attendant",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 7
+  },
+  "3099.00": {
+   "cip": "12.9999",
+   "title": "Culinary, Entertainment, and Personal Services, Other",
+   "share": 0.5,
+   "cips": 2,
+   "programs": 4
+  },
+  "4901.00": {
+   "cip": "24.0101",
+   "title": "Liberal Arts and Sciences/Liberal Studies",
+   "share": 0.958,
+   "cips": 6,
+   "programs": 166
+  },
+  "4901.10": {
+   "cip": "24.0101",
+   "title": "Liberal Arts and Sciences/Liberal Studies",
+   "share": 0.946,
+   "cips": 4,
+   "programs": 204
+  },
+  "4901.20": {
+   "cip": "24.0101",
+   "title": "Liberal Arts and Sciences/Liberal Studies",
+   "share": 0.96,
+   "cips": 4,
+   "programs": 125
+  },
+  "4902.00": {
+   "cip": "30.0101",
+   "title": "Biological and Physical Sciences",
+   "share": 0.947,
+   "cips": 5,
+   "programs": 132
+  },
+  "4903.00": {
+   "cip": "24.0103",
+   "title": "Humanities/Humanistic Studies",
+   "share": 0.962,
+   "cips": 3,
+   "programs": 53
+  },
+  "4903.10": {
+   "cip": "24.0103",
+   "title": "Humanities/Humanistic Studies",
+   "share": 0.966,
+   "cips": 3,
+   "programs": 59
+  },
+  "4903.30": {
+   "cip": "24.0103",
+   "title": "Humanities/Humanistic Studies",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 21
+  },
+  "4930.00": {
+   "cip": "24.0102",
+   "title": "General Studies",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 19
+  },
+  "4930.09": {
+   "cip": "32.0108",
+   "title": "Developmental/Remedial English",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 1
+  },
+  "4930.10": {
+   "cip": "32.0105",
+   "title": "Job-Seeking/Changing Skills",
+   "share": 0.667,
+   "cips": 5,
+   "programs": 27
+  },
+  "4930.11": {
+   "cip": "35.0101",
+   "title": "Interpersonal and Social Skills, General",
+   "share": 0.875,
+   "cips": 3,
+   "programs": 16
+  },
+  "4930.12": {
+   "cip": "32.0105",
+   "title": "Job-Seeking/Changing Skills",
+   "share": 0.932,
+   "cips": 6,
+   "programs": 117
+  },
+  "4930.13": {
+   "cip": "32.0105",
+   "title": "Job-Seeking/Changing Skills",
+   "share": 0.905,
+   "cips": 3,
+   "programs": 21
+  },
+  "4930.14": {
+   "cip": "32.0199",
+   "title": "Basic Skills and Developmental/Remedial Education, Other",
+   "share": 0.897,
+   "cips": 5,
+   "programs": 39
+  },
+  "4930.30": {
+   "cip": "32.0199",
+   "title": "Basic Skills and Developmental/Remedial Education, Other",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 6
+  },
+  "4930.31": {
+   "cip": "30.0001",
+   "title": "Comprehensive Transition and Postsecondary (CTP) Program",
+   "share": 0.5,
+   "cips": 2,
+   "programs": 2
+  },
+  "4930.32": {
+   "cip": "32.0199",
+   "title": "Basic Skills and Developmental/Remedial Education, Other",
+   "share": 0.75,
+   "cips": 2,
+   "programs": 4
+  },
+  "4930.60": {
+   "cip": "32.0101",
+   "title": "Basic Skills and Developmental/Remedial Education, General",
+   "share": 0.929,
+   "cips": 2,
+   "programs": 28
+  },
+  "4930.62": {
+   "cip": "53.0201",
+   "title": "High School Equivalence Certificate Program",
+   "share": 0.919,
+   "cips": 5,
+   "programs": 99
+  },
+  "4930.72": {
+   "cip": "32.0105",
+   "title": "Job-Seeking/Changing Skills",
+   "share": 0.357,
+   "cips": 6,
+   "programs": 14
+  },
+  "4930.84": {
+   "cip": "32.0109",
+   "title": "Second Language Learning",
+   "share": 0.615,
+   "cips": 4,
+   "programs": 26
+  },
+  "4930.85": {
+   "cip": "32.0108",
+   "title": "Developmental/Remedial English",
+   "share": 0.727,
+   "cips": 3,
+   "programs": 11
+  },
+  "4930.86": {
+   "cip": "32.0109",
+   "title": "Second Language Learning",
+   "share": 0.571,
+   "cips": 2,
+   "programs": 63
+  },
+  "4930.87": {
+   "cip": "32.0108",
+   "title": "Developmental/Remedial English",
+   "share": 0.481,
+   "cips": 9,
+   "programs": 532
+  },
+  "4930.90": {
+   "cip": "33.0102",
+   "title": "American Citizenship Education",
+   "share": 0.9,
+   "cips": 2,
+   "programs": 10
+  },
+  "4931.00": {
+   "cip": "32.0109",
+   "title": "Second Language Learning",
+   "share": 0.671,
+   "cips": 5,
+   "programs": 73
+  },
+  "4932.00": {
+   "cip": "32.0111",
+   "title": "Workforce Development and Training",
+   "share": 0.667,
+   "cips": 2,
+   "programs": 3
+  },
+  "4999.00": {
+   "cip": "30.9999",
+   "title": "Multi-/Interdisciplinary Studies, Other",
+   "share": 1.0,
+   "cips": 1,
+   "programs": 25
+  }
+ }
+}

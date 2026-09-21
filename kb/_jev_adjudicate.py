@@ -423,12 +423,54 @@ def _clean_desc(d):
     return " ".join(d.replace("_x000D_", " ").split())
 
 
+# ── the CCR's PROGRESSIVE RUNGS (Sam, 2026-09-21: "title then CIP then course
+# description") ──────────────────────────────────────────────────────────────
+# One question, asked with more evidence at each rung, so the cheap signal
+# settles the easy rows and only what it cannot settle escalates. The rungs are
+# ordered and CUMULATIVE — rung 2 is rung 1 plus the CIP, rung 3 is rung 2 plus
+# the description.
+#
+# ⚠️ A RUNG CANNOT ESCALATE UNTIL IT HAS A GATE, AND THE CCR HAS NO VERDICTS.
+# The 0.85 gate belongs to the CCRR and was measured on a different question
+# (ladder item 3, adopted: every center calibrates its own). So the first CCR
+# sitting runs ONE rung — `title` — and Sam's verdicts on it calibrate that
+# rung's gate. Rung 2 then re-asks only the rows rung 1 left unsettled. Running
+# all three at once would spend three calls per row to learn nothing about
+# which rung did the work.
+CCR_RUNGS = ("title", "cip", "description")
+
+
+def _cip_for(top):
+    """The modal CIP colleges actually assigned to programs under this TOP.
+
+    ⚠️ IT ARRIVES WITH ITS OWN MAJORITY ATTACHED. A TOP carries a mean of 2.85
+    CIPs, so a bare code would read as fact where the truth is a 3-way split.
+    `share` and `cips` ride into the evidence for the same reason Rule 7 keeps
+    TOP a corroborator: the only route from a course to a CIP is its TOP code,
+    so CIP inherits TOP's unreliability and CORROBORATES, NEVER GATES."""
+    if not top:
+        return None
+    blob = _TOP_CIP.get("map") or {}
+    return blob.get(str(top).strip())
+
+
+def _load_top_cip():
+    path = os.path.join(HERE, "top_cip_map.json")
+    if not os.path.exists(path):
+        return {}
+    return json.load(open(path, encoding="utf-8"))
+
+
+_TOP_CIP = _load_top_cip()
+
+
 def ccr_findings():
     """Trust Cards to questions, for the three tags that carry a content judgment.
 
     The card itself is compact (`id`, `tags`, `lev`, `fts` …) and holds no title,
     discipline or description, so the evidence is joined back from the minted
-    course records the auditor read.
+    course records the auditor read. Each finding carries a `rungs` dict — the
+    evidence string for each of `CCR_RUNGS` — and `run()` asks exactly one.
 
     ⚠️ A TOP-DERIVED DISCIPLINE IS LABELLED IN THE EVIDENCE. Rule 7's "gate
     identity, keep display" ruling holds that a discipline inferred from a TOP
@@ -459,31 +501,47 @@ def ccr_findings():
         src = rec.get("discipline_source") or ""
         disc_note = " (inferred from TOP, uncorroborated)" if src in TOP_DERIVED else ""
         desc = _clean_desc(desc)
+        members = c.get("lev") or 1
+        cip = _cip_for(rec.get("top_code"))
+
+        # RUNG 1 — the title alone, against the discipline it is filed under.
+        rung1 = [f"title: {title}", f"discipline: {disc}{disc_note}",
+                 f"{members} member course(s) across the colleges that offer it"]
+        # RUNG 2 — the CIP colleges assigned, WITH how thin its majority is.
+        rung2 = list(rung1)
+        if cip:
+            agree = (f"{cip['cip']} {cip['title']}"
+                     f" (the modal CIP on {int(cip['share'] * 100)}% of "
+                     f"{cip['programs']} programs under this TOP"
+                     + (f", which carries {cip['cips']} CIPs in all)"
+                        if cip["cips"] > 1 else ", the only CIP under it)"))
+            rung2.append("CIP colleges assigned: " + agree)
+        # RUNG 3 — the course description, which is what separates a real miss
+        # from the token-overlap artifacts rung 1 cannot tell apart.
+        rung3 = list(rung2)
+        if desc:
+            rung3.append(f"description: {desc[:300]}")
+
         for tag in hits:
-            # ⚠️ THE DESCRIPTION RIDES EVERY RULE, INCLUDING THE TITLE ONE.
-            # `discipline_title_mismatch` fires on token overlap, so most of its
-            # 1,118 rows are artifacts — `Three-Dimensional Design` under Art
-            # and `Environmental Ethics` under Philosophy share no token with
-            # their discipline and are both plainly right. The description is
-            # the only evidence that separates those from a real miss, and the
-            # real misses are obvious in it: an `Ethics` row under Philosophy
-            # whose description is DEH-24's dental-hygiene prerequisites.
-            # Withholding it would leave Jev judging a title against a label.
-            ev = [f"title: {title}", f"discipline: {disc}{disc_note}"]
-            if desc:
-                ev.append(f"description: {desc[:300]}")
-            ev.append(f"{c.get('lev') or 1} member course(s) across the colleges that offer it")
             out.append({
                 "id": f"{c['id']}||{tag}",
                 "rule": tag,
                 "item": title,
-                "evidence": " · ".join(ev),
+                "rungs": {
+                    "title": " · ".join(rung1),
+                    "cip": " · ".join(rung2),
+                    "description": " · ".join(rung3),
+                },
+                # The default evidence is the LAST rung, so a caller that does
+                # not choose one is handed everything rather than silently the
+                # thinnest case.
+                "evidence": " · ".join(rung3),
                 "suggestion": f"review the discipline recorded for {c['id']}",
                 # The CCR's collapse-value analogue: how many local courses ride
                 # this identity. Ranking by it puts the widest rows first.
-                "weight": c.get("lev") or 1,
+                "weight": members,
             })
-    return out, "kb/row_audit/latest.json"
+    return out, "kb/row_audit/latest.json + kb/top_cip_map.json"
 
 
 REFS = {
@@ -517,15 +575,27 @@ def sam_verdicts():
     return truth
 
 
-def run(ref_key, limit, held, key, score_only=False):
+def run(ref_key, limit, held, key, score_only=False, rung=None):
     title, loader, rules = REFS[ref_key]
     findings, source = loader()
+    # ⚠️ ONE RUNG PER RUN. A finding that carries `rungs` is asked at exactly the
+    # rung named, so a sitting measures what THAT evidence settles. Asking every
+    # rung at once spends three calls per row and cannot say which one worked.
+    if rung:
+        if any("rungs" in f for f in findings):
+            missing = [f["id"] for f in findings if rung not in (f.get("rungs") or {})]
+            if missing:
+                raise SystemExit(f"{len(missing)} finding(s) carry no '{rung}' rung")
+            findings = [dict(f, evidence=f["rungs"][rung]) for f in findings]
+        else:
+            raise SystemExit(f"{ref_key} has no rungs — drop --rung")
     findings = [f for f in findings if f["id"] not in held]
     findings.sort(key=lambda f: -(f.get("weight") or 0))
     if limit:
         findings = findings[:limit]
 
-    print(f"{title} ({ref_key}) — {len(findings)} finding(s) from {source}")
+    at = f" at rung '{rung}'" if rung else ""
+    print(f"{title} ({ref_key}) — {len(findings)} finding(s){at} from {source}")
     if held:
         print(f"  {len(held)} held by the curator, dropped before any call was spent")
     by_rule = {}
@@ -590,6 +660,11 @@ def main():
     ap.add_argument("--ref", required=True, choices=sorted(REFS), help="which reference")
     ap.add_argument("--limit", type=int, help="cap to the N highest-weight findings")
     ap.add_argument("--held", help="JSON file of finding ids the curator has parked")
+    ap.add_argument("--rung", choices=CCR_RUNGS,
+                    help="CCR only: which evidence to ask with. Ordered and "
+                         "cumulative (title -> cip -> description); run ONE, "
+                         "calibrate its gate on Sam's verdicts, then escalate "
+                         "only the rows it left unsettled.")
     ap.add_argument("--dry-run", action="store_true",
                     help="show what would be asked, spend no calls, need no key")
     a = ap.parse_args()
@@ -598,8 +673,11 @@ def main():
     if a.held:
         held = set(json.load(open(a.held, encoding="utf-8")))
 
+    if a.rung and a.ref != "ccr":
+        ap.error("--rung applies to --ref ccr")
+
     if a.dry_run:
-        run(a.ref, a.limit, held, key=None, score_only=True)
+        run(a.ref, a.limit, held, key=None, score_only=True, rung=a.rung)
         return 0
 
     key = (os.environ.get("TYPESAFE_API_KEY") or "").strip()
@@ -607,7 +685,7 @@ def main():
         print("❌ TYPESAFE_API_KEY is not set. typesafe.ai is egress-blocked from the "
               "agent sandbox — dispatch .github/workflows/typesafe-smoke.yml instead.")
         return 2
-    _, results = run(a.ref, a.limit, held, key)
+    _, results = run(a.ref, a.limit, held, key, rung=a.rung)
     report(a.ref, results)
     return 0
 
