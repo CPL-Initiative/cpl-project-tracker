@@ -8,18 +8,18 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 10,
  "statewide": {
-  "pe": 43867,
-  "pa": 39818,
-  "ppa": 108,
+  "pe": 43873,
+  "pa": 39823,
+  "ppa": 106,
   "p2": 3101,
   "p3": 14584,
   "pp": 6,
-  "ppe": 118,
+  "ppe": 116,
   "pac": 2850,
-  "pe_u": 1419259.7,
-  "pa_u": 221414.9,
-  "ppa_u": 667.5,
-  "ppe_u": 6778.5,
+  "pe_u": 1419476.7,
+  "pa_u": 221441.9,
+  "ppa_u": 660.5,
+  "ppe_u": 6771.5,
   "pac_u": 24981.7,
   "p3_u": 73498.2,
   "pp_u": 63.5
@@ -1087,10 +1087,10 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 0.0
   },
   "Mission": {
-   "pe": 158,
-   "pe_u": 7473.0,
-   "pa": 158,
-   "pa_u": 948.0,
+   "pe": 162,
+   "pe_u": 7672.0,
+   "pa": 162,
+   "pa_u": 972.0,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": null,
@@ -1438,8 +1438,8 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 0.0
   },
   "Sacramento City": {
-   "pe": 74,
-   "pe_u": 2891.0,
+   "pe": 75,
+   "pe_u": 2906.0,
    "pa": 0,
    "pa_u": 0.0,
    "ppa": 0,
@@ -1622,13 +1622,13 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 0.0
   },
   "Santa Ana": {
-   "pe": 458,
-   "pe_u": 16595.0,
-   "pa": 453,
-   "pa_u": 2027.2,
+   "pe": 459,
+   "pe_u": 16598.0,
+   "pa": 454,
+   "pa_u": 2030.2,
    "ppa": null,
    "ppa_suppressed": true,
-   "ppa_u": 11.0,
+   "ppa_u": 4.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -1636,7 +1636,7 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0,
    "ppe": null,
    "ppe_suppressed": true,
-   "ppe_u": 35.0,
+   "ppe_u": 28.0,
    "pac": 27,
    "pac_u": 346.2
   },
@@ -2735,8 +2735,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Mission": {
    "Military": {
-    "pe": 158,
-    "pa": 158,
+    "pe": 162,
+    "pa": 162,
     "p3": null,
     "p3_suppressed": true
    }
@@ -3147,7 +3147,7 @@ window.CPL_FUNDING_PERF = {
   },
   "Sacramento City": {
    "Military": {
-    "pe": 74,
+    "pe": 75,
     "pa": 0,
     "p3": 0
    }
@@ -3387,8 +3387,8 @@ window.CPL_FUNDING_PERF = {
     "p3": 0
    },
    "Industry Certification": {
-    "pe": 13,
-    "pa": 12,
+    "pe": 14,
+    "pa": 13,
     "p3": 0
    },
    "Industry Certification | Other": {
@@ -3685,8 +3685,8 @@ window.CPL_FUNDING_PERF = {
    "p3": 14
   },
   "Industry Certification": {
-   "pe": 1281,
-   "pa": 1258,
+   "pe": 1282,
+   "pa": 1259,
    "p3": 1157
   },
   "Industry Certification | Military": {
@@ -3732,8 +3732,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 27726,
-   "pa": 25584,
+   "pe": 27731,
+   "pa": 25588,
    "p3": 2552
   },
   "Military | Portfolio Review": {
@@ -3783,13 +3783,13 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1418783.2,
-   "pa_u": 221414.9,
+   "pe_u": 1419000.2,
+   "pa_u": 221441.9,
    "p3_u": 73498.2
   },
   "map": {
-   "pe_u": 1425561.7,
-   "pa_u": 222082.4,
+   "pe_u": 1425771.7,
+   "pa_u": 222102.4,
    "p3_u": 73561.7
   },
   "ratio": {

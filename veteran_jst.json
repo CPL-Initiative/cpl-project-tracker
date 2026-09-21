@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-09-21T15:56:57.615822+00:00",
+  "scraped_at": "2026-09-21T18:16:26.816266+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 28288,
+    "jst": 28292,
     "star_colleges": 57
   },
   "computed_star_colleges": 57,
@@ -127,7 +127,7 @@
     },
     "Santa Ana College": {
       "vets": 334,
-      "jst": 377,
+      "jst": 376,
       "star": true
     },
     "Barstow Community College": {
@@ -217,7 +217,7 @@
     },
     "Mission College": {
       "vets": 158,
-      "jst": 158,
+      "jst": 162,
       "star": true
     },
     "Ventura College": {
@@ -482,7 +482,7 @@
     },
     "Sacramento City College": {
       "vets": 203,
-      "jst": 110,
+      "jst": 111,
       "star": false
     },
     "Cuyamaca College": {

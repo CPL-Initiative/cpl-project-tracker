@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-09-21T15:56:57.262Z",
+  "scraped_at": "2026-09-21T18:16:26.546Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -429,16 +429,16 @@
         {
           "college": "Santa Ana College",
           "students": 512,
-          "units": 2038.1999999999998,
-          "avgUnits": 3.9808593749999996,
+          "units": 2034.1999999999998,
+          "avgUnits": 3.9730468749999996,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 1,
-          "militaryStudents": 377,
+          "militaryStudents": 376,
           "nonMilitaryStudents": 135,
-          "apprenticeStudents": 10,
-          "savings": 3179918.5,
-          "yearImpact": 11914277.6,
+          "apprenticeStudents": 9,
+          "savings": 3185708.5,
+          "yearImpact": 11942681.6,
           "transcribedUnits": 0
         },
         {
@@ -622,6 +622,21 @@
           "transcribedUnits": 0
         },
         {
+          "college": "Mission College",
+          "students": 162,
+          "units": 972,
+          "avgUnits": 6,
+          "transcriptionRate": 0.6,
+          "avgTranscribed": 0.037037037037037035,
+          "criteriaMetCount": 1,
+          "militaryStudents": 162,
+          "nonMilitaryStudents": 0,
+          "apprenticeStudents": 0,
+          "savings": 1681560,
+          "yearImpact": 5897124,
+          "transcribedUnits": 6
+        },
+        {
           "college": "Solano Community College",
           "students": 161,
           "units": 1111,
@@ -635,21 +650,6 @@
           "savings": 1901270,
           "yearImpact": 6667633,
           "transcribedUnits": 12
-        },
-        {
-          "college": "Mission College",
-          "students": 158,
-          "units": 948,
-          "avgUnits": 6,
-          "transcriptionRate": 0.6,
-          "avgTranscribed": 0.0379746835443038,
-          "criteriaMetCount": 1,
-          "militaryStudents": 158,
-          "nonMilitaryStudents": 0,
-          "apprenticeStudents": 0,
-          "savings": 1640040,
-          "yearImpact": 5751516,
-          "transcribedUnits": 6
         },
         {
           "college": "Barstow Community College",
@@ -1208,13 +1208,13 @@
         },
         {
           "college": "Sacramento City College",
-          "students": 110,
+          "students": 111,
           "units": 0,
           "avgUnits": 0,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
-          "militaryStudents": 110,
+          "militaryStudents": 111,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
           "savings": 0,
@@ -1757,11 +1757,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "51,764",
+      "value": "51,769",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "28,288"
+          "value": "28,292"
         },
         {
           "label": "Workforce/Other",
@@ -1769,7 +1769,7 @@
         },
         {
           "label": "Apprentice",
-          "value": "851"
+          "value": "850"
         }
       ]
     },
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 51764,
-    "Units": 222082.40000000002,
+    "Students": 51769,
+    "Units": 222102.40000000002,
     "TranscribedUnits": 73561.7,
-    "Savings": 332917359,
-    "YearImpact": 1317705674.4,
-    "MilitaryStudents": 28288,
+    "Savings": 332964669,
+    "YearImpact": 1317879686.4,
+    "MilitaryStudents": 28292,
     "NonMilitaryStudents": 23563,
-    "AprenticeStudents": 851,
-    "AverageUnits": 4.2902866857275335,
-    "TranscribedAverage": 1.4210976740591916
+    "AprenticeStudents": 850,
+    "AverageUnits": 4.290258648998436,
+    "TranscribedAverage": 1.420960420328768
   }
 }
