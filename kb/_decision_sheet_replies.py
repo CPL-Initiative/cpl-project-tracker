@@ -27,6 +27,19 @@ import html
 
 E = html.escape
 
+def _chip(c):
+    """A chip is the word a reader sees, or a (label, value) pair when that word
+    and the word the session stores differ. ⚠️ **THE VALUE NAMES THE OUTCOME,
+    NEVER AGREEMENT** (Sam, 2026-09-20). The 51-item Jev sheet defined Yes as
+    "take the proposal" and its review band proposed hold-separate, so a Yes
+    there meant keep by the sheet and fold to Sam: items 26-41 all carried a Yes
+    and then a flip to Keep. A value of `fold` means fold whatever was proposed,
+    so the reply line cannot be read two ways."""
+    if isinstance(c, (tuple, list)):
+        return str(c[0]), str(c[1])
+    return str(c), str(c).lower()
+
+
 CHIPS_DEFAULT = ["Yes", "Keep", "Retire", "Edit", "Later"]
 CHIPS_CLASS = ["Yes", "No", "Later"]
 CHIPS_GROUP = ["Yes", "Keep", "Later"]
@@ -34,6 +47,16 @@ CHIPS_DONE = ["Undo"]
 # A sheet that asks what to BUILD, not what a memory row is worth. Keep/Retire
 # read as verdicts on a claim; a plan is accepted, reshaped, deferred or dropped.
 CHIPS_BUILD = ["Yes", "Edit", "Later", "Dismiss"]
+
+# ── the reference sheets: fold by default, faculty pull out ──────────────────
+# Sam, 2026-09-20: "It is better to over merge and give faculty the chance to
+# pull them out rather than the other way around. It's easier to respond to a
+# decision than to make one." So a reference item PROPOSES the fold, and the
+# first chip confirms it by naming the action. Neither word is a bare Yes.
+CHIPS_FOLD = [("Keep the fold", "fold"), ("Pull out", "keep"), ("Later", "later")]
+# The rarer verdicts sit behind Other so the two that carry the sheet are the
+# two a reader sees. Sam, 2026-09-20: "Edit behind Other."
+CHIPS_OTHER = [("Edit", "edit"), ("Dismiss", "dismiss")]
 
 
 # Under a single memory the first chip NAMES the batch's action instead of
@@ -47,27 +70,78 @@ CHIPS_ENTRY_VERIFY = ["Verify", "Hold out", "Rewrite", "Later"]
 CHIPS_ENTRY_RETIRE = ["Retire", "Keep", "Later"]
 
 
-def replies_block(item, ref="", chips=None, title="", compact=False, kind="item", parent=""):
+def replies_block(item, ref="", chips=None, title="", compact=False, kind="item",
+                  parent="", rec="", other=None, rows=0, reach=None):
     """The reply controls for one item. `item` is the number a reply names
     ("3", "D7", or "2.o3" for one memory inside item 2); `ref` is what the
     session needs to act (a slug, an id, a class key); `chips` are the verdict
-    words offered, Yes first; `kind` is item / entry / done, `parent` the item
-    an entry belongs to. Sam, 2026-09-05: "I need the response controls on each
-    memory, not just on the whole batch" — an entry block sits under every
-    memory a batch item lists, and its first chip names the batch's action for
-    that one memory (Verify, Retire) rather than saying Yes."""
-    chips = list(chips or CHIPS_DEFAULT)
+    words offered, the one that confirms the proposal first; `kind` is
+    item / entry / done, `parent` the item an entry belongs to.
+
+    `rec` is the PROPOSED DISPOSITION, and it renders as a highlighted callout
+    directly above the chips. Sam, 2026-09-20: *"make your recommendation line
+    more visually a focal point. I found myself saying yes to things that I
+    later had to flip keep because I didn't pay attention to your rec."* On the
+    51-item sheet the proposal was a `dd` in the same gray as the facts and he
+    read past it sixteen times.
+
+    `other` are the rarer verdicts, folded behind an Other toggle so the two
+    words that carry the sheet are the two a reader sees. `rows` and `reach`
+    are what settling this item is WORTH — articulation rows collapsed, and the
+    COLLEGE IDS it reaches — which the bar totals in those terms rather than in
+    clicks. `reach` is a collection, never a count: colleges repeat across
+    items, so the bar unions the ids instead of summing numbers that would
+    over-report a sitting.
+
+    Sam, 2026-09-05: "I need the response controls on each memory, not just on
+    the whole batch" — an entry block sits under every memory a batch item
+    lists, and its first chip names the batch's action for that one memory
+    (Verify, Retire) rather than saying Yes."""
+    chips = [_chip(c) for c in (chips or CHIPS_DEFAULT)]
+    other = [_chip(c) for c in (other or [])]
     n = str(item)
-    btns = "".join(
-        f'<button type="button" class="reply-chip" data-v="{E(c.lower())}" aria-pressed="false">{E(c)}</button>'
-        for c in chips)
+
+    def btn(label, value, cls="reply-chip"):
+        return (f'<button type="button" class="{cls}" data-v="{E(value)}" '
+                f'aria-pressed="false">{E(label)}</button>')
+
+    btns = "".join(btn(l, v) for l, v in chips)
+    more = ""
+    if other:
+        mid = "more-" + _re_id(n)
+        more = (
+            f'<button type="button" class="reply-chip reply-more" aria-expanded="false" '
+            f'aria-controls="{E(mid)}">Other</button>'
+            f'<div class="reply-more-row" id="{E(mid)}" role="group" '
+            f'aria-label="Other replies to item {E(n)}" hidden>'
+            + "".join(btn(l, v) for l, v in other) + '</div>')
+
+    # The proposal, above the chips and not in the facts' gray. The word
+    # "propose" stays: it is a proposal until the reader rules on it.
+    callout = ""
+    if rec:
+        callout = (f'<p class="reply-rec"><span class="reply-rec-lbl">What I propose</span>'
+                   f'<span class="reply-rec-text">{rec}</span></p>')
+
     ph = ("Why, or what to do instead" if compact
           else "A condition, a rewrite, a name to hold out, what to follow up on")
+    worth = ""
+    if rows:
+        worth = f' data-rows="{int(rows)}"'
+    if reach is not None and not isinstance(reach, (list, tuple, set, frozenset)):
+        # ⚠️ A COUNT CANNOT BE TOTALED. Colleges repeat across items, so summing
+        # per-item college counts over-reports the reach of a sitting — the
+        # number Sam would read as progress. Pass the ids and the bar unions
+        # them; there is no honest way to do it from counts alone.
+        raise TypeError("reach takes the college ids this item reaches, not a count")
+    if reach:
+        worth += f' data-reach="{E(" ".join(sorted(str(r) for r in reach)))}"'
     return (
         f'<div class="reply{" reply-compact" if compact else ""}" data-item="{E(n)}" data-ref="{E(ref)}" '
-        f'data-title="{E(title)}" data-kind="{E(kind)}" data-parent="{E(parent)}">'
+        f'data-title="{E(title)}" data-kind="{E(kind)}" data-parent="{E(parent)}"{worth}>'
+        f'{callout}'
         f'<div class="reply-row" role="group" aria-label="Your reply to item {E(n)}">'
-        f'<span class="reply-lbl">Your reply</span>{btns}'
+        f'<span class="reply-lbl">Your reply</span>{btns}{more}'
         f'<button type="button" class="reply-chip reply-fu" aria-pressed="false" '
         f'title="Mark this for the session to follow up on, whatever the verdict">Follow up</button>'
         f'</div>'
@@ -77,18 +151,76 @@ def replies_block(item, ref="", chips=None, title="", compact=False, kind="item"
         f'</div>')
 
 
+def _re_id(n):
+    """An item number as an id fragment: item ids carry dots and colons."""
+    import re
+    return re.sub(r'[^A-Za-z0-9_-]', '-', str(n))
+
+
+REST_EVERY = 20
+
+
+def rest_stop(through, note=""):
+    """A stopping point, `through` items into the sheet.
+
+    Sam, 2026-09-20: *"Making decisions is taxing and only so many can be made
+    before people bail out."* Every twenty items the sheet offers the exit in
+    plain words and says the replies are already saved, so stopping reads as a
+    sitting that ended rather than work abandoned. ⚠️ The marker names the
+    POSITION, never a total: what is settled changes as the reader works, and a
+    number frozen into the page would be wrong the moment it was read. The live
+    total is the bar's job."""
+    body = E(note) if note else (
+        f"{through} items behind you. A good place to stop — every reply above is "
+        f"already saved, and the sheet picks up here when you come back.")
+    return (f'<p class="reply-rest" role="note"><span class="reply-rest-lbl">Rest</span>'
+            f'<span>{body}</span></p>')
+
+
 REPLIES_HOWTO = (
-    '<p><strong>Or click your reply under each item — and under each memory a batch item lists.</strong> Yes takes the recommendation. '
-    'Under a single memory the first chip names what the batch would do to it — <em>Verify</em> or <em>Retire</em> — so the word '
-    'says what happens to that memory; Hold out and Rewrite keep one back from a verify batch, Keep holds one back from a retire batch. '
+    '<p><strong>Click your reply under each item — and under each memory a batch item lists.</strong> '
+    'Each item carries what I propose in the panel above the chips, and the first chip confirms it by naming '
+    'what happens: <em>Keep the fold</em> takes the merge, <em>Pull out</em> holds the wording separate. '
+    'Under a single memory the first chip names what the batch would do to it — <em>Verify</em> or '
+    '<em>Retire</em>; Hold out and Rewrite keep one back from a verify batch, Keep holds one back from a '
+    'retire batch. <em>Other</em> opens the rarer replies. Press a chip again to undo it. '
     'Follow up marks an item the session should come back to whatever the verdict; the note '
     'is for anything a word cannot carry. The line under each reply says what was saved. On the artifact your replies save to the sheet itself '
     'and the session reads them from there. Opened anywhere else they stay in this browser, and '
-    '<em>Copy replies</em> at the foot of the page builds the numbered line for you to paste.</p>')
+    '<em>Copy replies</em> at the foot of the page builds the numbered line for you to paste. '
+    'Stop wherever you like — the sheet marks a resting point every twenty items and everything above it is already saved.</p>')
+
+
+# ⚠️ THE FRAMING SITS IN THE HEADER, IN SAM'S WORDS (2026-09-20). A reader
+# ruling on four hundred wordings needs the reason in front of them, not in a
+# lane file. His: no student repeats a course they have already mastered;
+# credit mobility and articulation adoptability across the system.
+FRAMING = (
+    "Every fold here means one recommendation where there were several, so a student carries "
+    "their credit from one college to the next and no one repeats a course they have already "
+    "mastered. Faculty can pull any wording back out; responding to a decision is easier than "
+    "making one, so each item proposes the fold and tells you the one reason it might be wrong.")
+
+
+def framing_block(text=None, curator="", counts=""):
+    """The framing sentence for the top of a sheet, above the first item.
+
+    `curator` names who is ruling — the curator of record travels with the
+    decision into the reference, so the judgment is attributed rather than
+    laundered into an anonymous value. `counts` is what the sitting is worth in
+    outcome terms (rows, colleges), measured, never guessed."""
+    out = f'<p class="sheet-framing">{text or FRAMING}</p>'
+    tail = " · ".join(x for x in (E(counts) if counts else "",
+                                  f"Curator of record: {E(curator)}" if curator else "") if x)
+    if tail:
+        out += f'<p class="sheet-framing-worth">{tail}</p>'
+    return out
+
 
 REPLIES_BAR = (
     '<div class="reply-bar" id="reply-bar" role="region" aria-label="Your replies so far">'
     '<span class="reply-count" id="reply-count">0 replied</span>'
+    '<span class="reply-outcome" id="reply-outcome"></span>'
     '<span class="reply-where" id="reply-where"></span>'
     '<button type="button" class="reply-chip reply-copy" id="reply-copy">Copy replies</button>'
     '<details class="reply-show"><summary>Show the reply line</summary>'
@@ -115,6 +247,48 @@ REPLIES_CSS = r"""
      12.90:1. */
   .reply-chip[aria-pressed="true"] { background: var(--seal-blue, #002F6D); border-color: var(--seal-blue, #002F6D); color: #fff; }
   .reply-chip.reply-fu { margin-left: auto; }
+
+  /* ── the proposal, above the chips ───────────────────────────────────────
+     Sam, 2026-09-20: "make your recommendation line more visually a focal
+     point. I found myself saying yes to things that I later had to flip keep
+     because I didn't pay attention to your rec." On the 51-item sheet the
+     proposal was a <dd> in the same gray as the facts, and he read past it
+     sixteen times. Here it is a tinted panel with its own rule and its own
+     label word, so the eye lands on it before it reaches the chips.
+     ⚠️ Every token carries a LITERAL FALLBACK: this block travels with the
+     module into sheets that may define none of them, and a declaration that
+     is invalid at computed-value time falls back to transparent — the same
+     failure that painted a selected chip white on white in 2026-09-06.
+     Measured on the fallbacks: #1C1C1A on #E8EFF8 is 14.74:1, the label
+     #002F6D on #E8EFF8 is 11.14:1. The rule and the label word are both
+     non-color signals, so the callout never depends on the tint alone. */
+  .reply-rec { margin: 0 0 10px; padding: 9px 13px; border-radius: 8px;
+    background: var(--rec-tint, #E8EFF8); border-left: 4px solid var(--seal-blue, #002F6D);
+    color: var(--text-strong, #1C1C1A); font-size: 1rem; line-height: 1.5; }
+  .reply-rec-lbl { display: block; font-size: .72rem; text-transform: uppercase;
+    letter-spacing: .08em; font-weight: 700; color: var(--seal-blue, #002F6D); margin-bottom: 2px; }
+  .reply-rec-text { font-weight: 600; }
+  .reply-rec strong { font-weight: 700; }
+  /* The promoted pair inside a <dl>: an HTML5 dl may group dt/dd in a div, so
+     the panel is the group itself and the two rows lose their own margins. */
+  .reply-rec-dl { margin: 14px 0 0; }
+  .reply-rec-dl dt.reply-rec-lbl, .reply-rec-dl dd.reply-rec-text { margin: 0; padding: 0; }
+  .reply-rec-dl dd.reply-rec-text { font-weight: 600; margin-left: 0; }
+
+  /* Other: the rarer verdicts, out of the way until they are wanted. */
+  .reply-more-row { flex: 1 1 100%; display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+  .reply-more-row[hidden] { display: none; }
+
+  /* A stopping point every twenty items (Sam, 2026-09-20: "Making decisions
+     is taxing and only so many can be made before people bail out"). It says
+     the replies are saved, so leaving reads as a sitting that ended. */
+  .reply-rest { margin: 26px 0; padding: 11px 15px; border-radius: 8px;
+    background: var(--rest-tint, #FDF6E3); border: 1px solid var(--border-strong, rgba(28,28,26,.30));
+    color: var(--text-strong, #1C1C1A); font-size: .95rem; }
+  .sheet-framing { font-size: 1.05rem; color: var(--text-strong, #1C1C1A); margin: 0 0 6px; }
+  .sheet-framing-worth { font-size: .9rem; color: var(--text-muted, #5C5C55); margin: 0 0 18px; }
+  .reply-rest-lbl { display: block; font-size: .72rem; text-transform: uppercase;
+    letter-spacing: .08em; font-weight: 700; color: var(--mustard-text, #8B6800); margin-bottom: 2px; }
   .reply-notelbl { display: block; font-size: .78rem; color: var(--text-muted); margin: 8px 0 3px; }
   .reply-note { width: 100%; box-sizing: border-box; font: inherit; font-size: .92rem; padding: 7px 9px;
     border: 1px solid var(--border-strong); border-radius: 6px; background: var(--surface-opaque);
@@ -127,11 +301,14 @@ REPLIES_CSS = r"""
   .glist li .reply-lbl { font-size: .66rem; }
   .reply-compact .reply-notelbl { position: absolute; left: -9999px; }
   .reply-compact .reply-note { margin-top: 6px; }
+  .reply-compact .reply-rec { font-size: .92rem; padding: 7px 10px; margin-bottom: 7px; }
   ol.done li { position: relative; }
   .reply-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 5; background: var(--surface-opaque);
     border-top: 1px solid var(--border-strong); padding: 8px 16px; display: flex; flex-wrap: wrap;
     gap: 6px 14px; align-items: center; font-size: .9rem; box-shadow: 0 -6px 18px rgba(28,28,26,.08); }
   .reply-count { font-weight: 700; color: var(--text-strong); font-variant-numeric: tabular-nums; }
+  .reply-outcome { font-weight: 600; color: var(--seal-blue, #002F6D); font-variant-numeric: tabular-nums;
+    font-size: .88rem; }
   .reply-where { color: var(--text-muted); font-size: .82rem; flex: 1 1 240px; }
   .reply-show { margin: 0; flex: 1 1 100%; }
   .reply-show summary { font-size: .82rem; padding: 2px 0; }
@@ -194,7 +371,10 @@ def replies_js(sheet_id):
     if (pending[item] === "saving") return "Saving…";
     if (pending[item] === "failed") return "Could not save to the sheet; kept in this browser. Use Copy replies.";
     var w = words(el, r);
-    return where === "db" ? "Saved to the sheet: " + w + "." : "Saved in this browser only: " + w + ". Use Copy replies to send it.";
+    // Undo is the same chip pressed again -- say so, or it is not discoverable.
+    var undo = r.v ? " Press it again to undo." : "";
+    return where === "db" ? "Saved to the sheet: " + w + "." + undo
+                          : "Saved in this browser only: " + w + ". Use Copy replies to send it." + undo;
   }
   function paint(el){
     if (!el) return;
@@ -203,13 +383,31 @@ def replies_js(sheet_id):
       b.setAttribute("aria-pressed", r.v && r.v === b.getAttribute("data-v") ? "true" : "false");
     });
     var fu = el.querySelector(".reply-fu"); if (fu) fu.setAttribute("aria-pressed", r.fu ? "true" : "false");
+    // A verdict that lives behind Other has to be VISIBLE once it is chosen --
+    // a selected chip inside a hidden row is a reply the reader cannot see, the
+    // same failure as the chip that painted white on white.
+    var moreRow = el.querySelector(".reply-more-row"), moreBtn = el.querySelector(".reply-more");
+    if (moreRow && moreBtn && r.v && moreRow.querySelector('.reply-chip[data-v="' + r.v + '"]')) {
+      moreRow.hidden = false; moreBtn.setAttribute("aria-expanded", "true");
+    }
     var note = el.querySelector(".reply-note");
     if (note && document.activeElement !== note && (r.note || "") !== note.value) note.value = r.note || "";
     var st = el.querySelector(".reply-state"); if (st) st.textContent = stateWords(el, item, r);
   }
   function paintAll(){ els.forEach(paint); bar(); }
+  // ⚠️ QUALITY GOES IN THE SCORE, NEVER CLICKS (Sam, 2026-09-20, agreeing with
+  // the pushback: "Good pushback--agree!"). A reversal is a verdict REPLACED by
+  // a different verdict -- the sixteen flips on the Jev sheet were the signal
+  // that the proposal was not being read. Clearing a chip is an undo and is not
+  // a reversal; neither is a first answer. The count rides with the reply, so
+  // the session reads which items the reader changed their mind on.
   function set(item, patch){
-    var r = rec(item); for (var k in patch) if (Object.prototype.hasOwnProperty.call(patch, k)) r[k] = patch[k];
+    var r = rec(item), was = r.v || "";
+    for (var k in patch) if (Object.prototype.hasOwnProperty.call(patch, k)) r[k] = patch[k];
+    if (Object.prototype.hasOwnProperty.call(patch, "v") && was && patch.v && patch.v !== was) {
+      r.flips = (r.flips || 0) + 1;
+      r.was = was;
+    }
     r.t = new Date().toISOString();
     state[item] = r; keep();
     paint(byItem(item)); bar(); push(item);
@@ -239,12 +437,35 @@ def replies_js(sheet_id):
     });
     return parts.length ? parts.join(" · ") : "No replies yet.";
   }
+  // ⚠️ THE RUNNING TOTAL IS IN OUTCOME TERMS (Sam, 2026-09-20). What a sitting
+  // is worth is articulation rows collapsed and colleges reached, never clicks
+  // logged. Rows are this item's own and add up; COLLEGES REPEAT across items,
+  // so the ids are unioned -- a sum of per-item college counts would report a
+  // reach the sitting did not have, which is the one number a reader takes at
+  // face value. An item that carries neither stays out of the outcome clause
+  // rather than contributing a zero.
+  function outcome(){
+    var rows = 0, colleges = {}, any = false;
+    els.forEach(function(el){
+      if (empty(state[el.getAttribute("data-item")])) return;
+      var rv = parseInt(el.getAttribute("data-rows") || "0", 10);
+      if (rv > 0) { rows += rv; any = true; }
+      var ids = (el.getAttribute("data-reach") || "").split(/\s+/);
+      ids.forEach(function(id){ if (id) { colleges[id] = 1; any = true; } });
+    });
+    if (!any) return "";
+    var out = [], nc = Object.keys(colleges).length;
+    if (rows) out.push(rows + (rows === 1 ? " articulation row" : " articulation rows") + " settled");
+    if (nc) out.push(nc + (nc === 1 ? " college" : " colleges") + " reached");
+    return out.join(" · ");
+  }
   function bar(){
-    var n = { item: [0, 0], entry: [0, 0], done: [0, 0] }, fu = 0;
+    var n = { item: [0, 0], entry: [0, 0], done: [0, 0] }, fu = 0, flips = 0;
     els.forEach(function(el){
       var k = el.getAttribute("data-kind") || "item"; if (!n[k]) n[k] = [0, 0];
       var r = state[el.getAttribute("data-item")];
       n[k][1]++; if (!empty(r)) n[k][0]++; if (r && r.fu) fu++;
+      if (r && r.flips) flips += r.flips;
     });
     var parts = [];
     if (n.item[1]) parts.push(n.item[0] + " of " + n.item[1] + " items");
@@ -252,6 +473,12 @@ def replies_js(sheet_id):
     if (n.done[1]) parts.push(n.done[0] + " of " + n.done[1] + " retired rows");
     var c = document.getElementById("reply-count");
     if (c) c.textContent = parts.join(" · ") + " replied" + (fu ? " · " + fu + " to follow up" : "");
+    var o = document.getElementById("reply-outcome");
+    if (o) {
+      var text = outcome();
+      if (flips) text += (text ? " · " : "") + flips + (flips === 1 ? " changed" : " changed");
+      o.textContent = text;
+    }
     var w = document.getElementById("reply-where");
     if (w) w.textContent = where === "db"
       ? "Replies save to this sheet; the session reads them from here."
@@ -282,6 +509,12 @@ def replies_js(sheet_id):
     });
     var fu = el.querySelector(".reply-fu");
     if (fu) fu.addEventListener("click", function(){ set(item, { fu: !(state[item] && state[item].fu) }); });
+    var more = el.querySelector(".reply-more"), moreRow = el.querySelector(".reply-more-row");
+    if (more && moreRow) more.addEventListener("click", function(){
+      var open = more.getAttribute("aria-expanded") === "true";
+      more.setAttribute("aria-expanded", open ? "false" : "true");
+      moreRow.hidden = open;
+    });
     var note = el.querySelector(".reply-note"), tm = null;
     if (note) {
       note.addEventListener("input", function(){ clearTimeout(tm); tm = setTimeout(function(){ set(item, { note: note.value }); }, 500); });
@@ -346,14 +579,43 @@ CSS_S, CSS_E = "/* replies:css:start */", "/* replies:css:end */"
 
 import re as _re
 
-_CARD = _re.compile(r'(<article class="card(?: lift)?" id="(i\d+)">)(.*?)(</article>)', _re.S)
+# `data-rows` / `data-reach` on the article are what settling the item is worth;
+# the pass copies them onto the reply block, where the bar totals them.
+_CARD = _re.compile(
+    r'(<article class="card(?: lift)?" id="(i\d+)"(?P<attrs>[^>]*)>)(?P<body>.*?)(</article>)', _re.S)
 _DONE = _re.compile(r'(<li id="(d\d+)">)(.*?)(</li>)', _re.S)
 _SECTION = _re.compile(r'<section class="group">\s*<h2>(.*?)</h2>', _re.S)
 
 
 def _strip(html_text):
-    """Remove every earlier injection so the pass is idempotent."""
-    html_text = _re.sub(_re.escape(MARK_S) + r'.*?' + _re.escape(MARK_E), '', html_text, flags=_re.S)
+    """Remove every earlier injection so the pass is idempotent.
+
+    ⚠️ **THE MARKERS NEST, SO A NON-GREEDY MATCH LEAVES WRECKAGE.** The
+    2026-09-20 sheet shipped with the how-to paragraph injected INSIDE item 1's
+    reply block (see `_howto_end` for why), which put one marked region inside
+    another. `MARK_S.*?MARK_E` then matched the INNER pair, deleting the how-to
+    text and the outer block's closing marker while leaving its opening `<div
+    class="reply">` behind — a stray chip row and an orphaned div in the card,
+    on every re-run. Count the depth and cut the OUTERMOST region instead, so a
+    sheet carrying a nested injection strips clean the first time."""
+    out, i = [], 0
+    while True:
+        a = html_text.find(MARK_S, i)
+        if a < 0:
+            out.append(html_text[i:])
+            break
+        out.append(html_text[i:a])
+        pos, depth = a + len(MARK_S), 1
+        while depth:
+            nxt_s, nxt_e = html_text.find(MARK_S, pos), html_text.find(MARK_E, pos)
+            if nxt_e < 0:               # unterminated: drop the rest of the region
+                pos = len(html_text); break
+            if 0 <= nxt_s < nxt_e:
+                depth += 1; pos = nxt_s + len(MARK_S)
+            else:
+                depth -= 1; pos = nxt_e + len(MARK_E)
+        i = pos
+    html_text = ''.join(out)
     html_text = _re.sub(_re.escape(CSS_S) + r'.*?' + _re.escape(CSS_E), '', html_text, flags=_re.S)
     return html_text
 
@@ -365,9 +627,16 @@ def _text(fragment):
 _ENTRY = _re.compile(r'(<li>)(<span class="gt">(.*?)</span>.*?<span class="ref">reference: (.*?)</span>)(</li>)', _re.S)
 
 
+def _ask_text(card_html):
+    """The card's proposed disposition, before or after it is promoted."""
+    m = (_re.search(r'<dd class="ask">(.*?)</dd>', card_html, _re.S)
+         or _re.search(r'<dd class="reply-rec-text">(.*?)</dd>', card_html, _re.S))
+    return _text(m.group(1)).lower() if m else ''
+
+
 def entry_chips(card_html):
     """What one memory inside a batch can be told, read off the batch's ask."""
-    ask = _text((_re.search(r'<dd class="ask">(.*?)</dd>', card_html, _re.S) or [None, ''])[1]).lower()
+    ask = _ask_text(card_html)
     if 'verified' in ask:
         return CHIPS_ENTRY_VERIFY
     if 'retire' in ask:
@@ -379,9 +648,14 @@ def chips_for(section_title, card_html):
     """Which words a card offers, by the section it sits in and its shape."""
     t = (section_title or '').lower()
     h3 = _text((_re.search(r'<h3[^>]*>(.*?)</h3>', card_html, _re.S) or [None, ''])[1])
-    ask = _text((_re.search(r'<dd class="ask">(.*?)</dd>', card_html, _re.S) or [None, ''])[1]).lower()
+    ask = _ask_text(card_html)
     if 'older only' in ask:
         return ["Yes", "Older only", "No", "Later"]
+    # A reference sheet proposes the fold; the chips name the two outcomes.
+    # Sam, 2026-09-20: the first chip confirms the proposal and its label names
+    # the action, never a bare Yes.
+    if _re.search(r'\bfold\b|\bmerge\b', ask):
+        return CHIPS_FOLD
     # 'what to check' is a REVIEW section — a rule already shipped and the ask is
     # whether it stays. Keep/Retire read as verdicts on a claim and are wrong
     # there too: what is on offer is accept, reshape, defer or drop.
@@ -393,6 +667,99 @@ def chips_for(section_title, card_html):
     if _re.search(r'entries replaced by one newer ruling', h3, _re.I):
         return CHIPS_GROUP
     return CHIPS_DEFAULT
+
+
+_ASK_PAIR = _re.compile(r'<dt>[^<]*</dt>\s*<dd class="ask">(.*?)</dd>\s*', _re.S)
+
+
+def promote_rec(body):
+    """Move the card's proposed disposition to the foot of its `<dl>` and give
+    it the callout's look, so it sits directly above the chips.
+
+    Sam, 2026-09-20: *"make your recommendation line more visually a focal
+    point. I found myself saying yes to things that I later had to flip keep
+    because I didn't pay attention to your rec."* On the 51-item sheet the
+    proposal was `<dd class="ask">` — the same gray as the two facts around it,
+    with *Why* sitting between it and the chips — and sixteen items came back
+    with a verdict he had to reverse.
+
+    A sheet BUILT to this template passes `rec=` to `replies_block()` and needs
+    none of this. This is the pass over a sheet that already exists.
+
+    ⚠️ Idempotent by construction, not by a guard: the promoted pair no longer
+    carries `class="ask"`, so a second run finds nothing to move. That matters
+    because `_strip()` removes the injected block, and a lift that depended on
+    the block to survive would lose the proposal on the second run."""
+    m = _ASK_PAIR.search(body)
+    if not m:
+        return body
+    close = body.find('</dl>', m.end())   # the dl that HELD it, never the card's last
+    if close < 0:
+        return body
+    # An HTML5 `<dl>` may group a dt/dd pair in a `<div>`; that is what lets the
+    # pair be painted as one panel.
+    panel = ('<div class="reply-rec reply-rec-dl">'
+             '<dt class="reply-rec-lbl">What I propose</dt>'
+             '<dd class="reply-rec-text">' + m.group(1) + '</dd></div>')
+    body = body[:m.start()] + body[m.end():]
+    i = close - (m.end() - m.start())
+    return body[:i] + panel + body[i:]
+
+
+def _howto_end(html_text):
+    """Where the how-to box closes, whatever element it is.
+
+    ⚠️ **THIS LOOKED FOR `</div>` AND THE BOX IS A `<ul>`.** On the 2026-09-20
+    Jev sheet the how-to box is `<ul class="howto">`, so the first `</div>`
+    after it was item 1's reply row and the how-to paragraph — the text that
+    explains what the chips mean — shipped BURIED INSIDE THE FIRST ITEM'S
+    CHIPS, where no reader would look for it. Read the box's own tag and close
+    on its match, counting nesting, so the paragraph lands in the box.
+
+    Returns the index just before the box's closing tag, or -1."""
+    m = _re.search(r'<(\w+)([^>]*?)class="howto"', html_text)
+    if not m:
+        return -1
+    tag = m.group(1)
+    pos, depth = m.end(), 1
+    pat = _re.compile(r'<(/?)%s\b[^>]*?(/?)>' % _re.escape(tag), _re.I)
+    while True:
+        mm = pat.search(html_text, pos)
+        if not mm:
+            return -1
+        if mm.group(1):
+            depth -= 1
+            if depth == 0:
+                return mm.start()
+        elif not mm.group(2):
+            depth += 1
+        pos = mm.end()
+
+
+def _rest_stops(html_text):
+    """A stopping point after every twentieth item card. Counted over the cards
+    the reader actually answers, in document order, and never after the last one
+    — the foot of the sheet is already a stopping point."""
+    ends, pos = [], 0
+    for m in _CARD.finditer(html_text):
+        ends.append(m.end())
+    out, last, n = [], 0, 0
+    for i, e in enumerate(ends):
+        n += 1
+        out.append(html_text[last:e])
+        last = e
+        if n % REST_EVERY == 0 and i < len(ends) - 1:
+            out.append(MARK_S + rest_stop(n) + MARK_E)
+    out.append(html_text[last:])
+    return ''.join(out)
+
+
+def other_for(chips):
+    """The verdicts that go behind Other: the rarer ones, so the words carrying
+    the sheet are the words a reader sees (Sam, 2026-09-20: "Edit behind
+    Other"). A set that already offers one keeps it in the open."""
+    have = {_chip(c)[1] for c in chips}
+    return [c for c in CHIPS_OTHER if _chip(c)[1] not in have]
 
 
 def inject(html_text, sheet_id):
@@ -411,12 +778,20 @@ def inject(html_text, sheet_id):
         return title
 
     def card_sub(m):
-        open_tag, cid, body, close = m.group(1), m.group(2), m.group(3), m.group(4)
+        open_tag, cid = m.group(1), m.group(2)
+        body, close = m.group('body'), m.group(5)
+        attrs = m.group('attrs') or ''
+        worth_rows = (_re.search(r'data-rows="(\d+)"', attrs) or [None, 0])[1]
+        worth_reach = (_re.search(r'data-reach="([^"]*)"', attrs) or [None, ''])[1]
         n = cid[1:]
         title = _text((_re.search(r'<h3[^>]*>(.*?)</h3>', body, _re.S) or [None, ''])[1])
         ref = (_re.search(r'<p class="ref">reference: (.*?)</p>', body, _re.S) or [None, ''])[1]
         ref = _text(ref) or title
-        block = replies_block(n, ref, chips_for(section_at(m.start()), body), title, kind="item")
+        body = promote_rec(body)
+        ch = chips_for(section_at(m.start()), body)
+        block = replies_block(n, ref, ch, title, kind="item", other=other_for(ch),
+                              rows=int(worth_rows or 0),
+                              reach=(worth_reach.split() if worth_reach else None))
         # Every memory the batch lists gets its own compact block (Sam,
         # 2026-09-05: "the response controls on each memory, not just on the
         # whole batch"); its id is <item>.<reference>, so the reply line and
@@ -440,6 +815,7 @@ def inject(html_text, sheet_id):
 
     html_text = _CARD.sub(card_sub, html_text)
     html_text = _DONE.sub(done_sub, html_text)
+    html_text = _rest_stops(html_text)
     # CSS into the page's first </style>.
     css = CSS_S + REPLIES_CSS + CSS_E
     if '</style>' in html_text:
@@ -447,11 +823,9 @@ def inject(html_text, sheet_id):
     else:
         html_text = '<style>' + css + '</style>\n' + html_text
     # The how-to box learns about the chips.
-    hi = html_text.find('class="howto"')
+    hi = _howto_end(html_text)
     if hi >= 0:
-        end = html_text.find('</div>', hi)
-        if end >= 0:
-            html_text = html_text[:end] + MARK_S + REPLIES_HOWTO + MARK_E + html_text[end:]
+        html_text = html_text[:hi] + MARK_S + REPLIES_HOWTO + MARK_E + html_text[hi:]
     # The bar and the script at the foot.
     foot = MARK_S + REPLIES_BAR + replies_js(sheet_id) + MARK_E
     if '</body>' in html_text:
@@ -459,6 +833,117 @@ def inject(html_text, sheet_id):
     else:
         html_text = html_text.rstrip() + "\n" + foot + "\n"
     return html_text
+
+
+# ── building a sheet to the template ────────────────────────────────────────
+# Every sheet before this one was hand-assembled, and the 2026-09-20 sheet is
+# what that cost: the proposal in the facts' gray, a bare Yes that read two
+# ways, and sixteen verdicts Sam had to reverse. A builder that calls this
+# cannot make those three mistakes, which is the point of having one.
+
+SHEET_HEAD = """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>%(title)s</title>
+<style>
+  /* First Light v1.6 tokens — values from prototype/first_light_theme_v1.html.
+     A light identity, painted explicitly; every surface and color is a token. */
+  :root {
+    --paper: #F4F2ED; --text-strong: #1C1C1A; --text-body: #3A3A36; --text-muted: #5C5C55;
+    --surface-opaque: #FFFFFF; --surface-subtle: #F7F5F1;
+    --border: rgba(28,28,26,.14); --border-strong: rgba(28,28,26,.30);
+    --cobalt: #0047AB; --seal-blue: #002F6D; --mustard-text: #8B6800;
+    --rec-tint: #E8EFF8; --rest-tint: #FDF6E3;
+    --focus-ring: var(--cobalt); --radius: 14px;
+  }
+  html { color-scheme: light; }
+  body { background: var(--paper); color: var(--text-body);
+    font-family: 'Source Sans 3', Arial, sans-serif; font-size: 16px; line-height: 1.55;
+    margin: 0; padding: 0 16px 64px; }
+  .wrap { max-width: var(--cpl-measure, 780px); margin: 0 auto; }
+  a { color: var(--cobalt); }
+  :focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 2px; border-radius: 4px; }
+  .skip { position: absolute; left: -9999px; top: 0; background: var(--surface-opaque);
+    color: var(--cobalt); padding: 8px 14px; z-index: 10; }
+  .skip:focus { left: 8px; }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+  h1 { font-family: 'Playfair Display', Georgia, serif; color: var(--text-strong); text-wrap: balance;
+    font-size: clamp(1.7rem, 5vw, 2.4rem); line-height: 1.15; margin: 34px 0 8px; }
+  h2 { font-family: 'Playfair Display', Georgia, serif; color: var(--text-strong);
+    font-size: 1.25rem; margin: 36px 0 4px; }
+  h3 { font-size: 1.05rem; font-weight: 700; color: var(--text-strong); margin: 0; }
+  .card { background: var(--surface-opaque); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 16px 20px; margin: 16px 0; }
+  .card .ref { color: var(--text-muted); font-size: .84rem; margin: 2px 0 10px; }
+  .card dl { margin: 0; }
+  .card dt { font-size: .72rem; text-transform: uppercase; letter-spacing: .08em;
+    font-weight: 700; color: var(--text-muted); margin-top: 10px; }
+  .card dd { margin: 2px 0 0; }
+  .howto { background: var(--surface-opaque); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 16px 20px; margin: 22px 0 8px; }
+  .howto p { margin: 6px 0; }
+  @media (max-width: 560px) { .card { padding: 14px; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#items">Skip to the items</a>
+<main class="wrap">
+<h1>%(title)s</h1>
+%(framing)s
+<div class="howto"><p>%(howto)s</p></div>
+<h2 id="items">%(heading)s</h2>
+<section class="group">
+<h2 class="visually-hidden" hidden>%(heading)s</h2>
+"""
+
+
+def _worth(it):
+    """What settling this item is worth, as attributes on its card. `reach` is a
+    collection of college ids — never a count, for the reason `replies_block`
+    refuses one."""
+    out = ''
+    if it.get('rows'):
+        out += f' data-rows="{int(it["rows"])}"'
+    reach = it.get('reach')
+    if reach is not None and not isinstance(reach, (list, tuple, set, frozenset)):
+        raise TypeError("reach takes the college ids this item reaches, not a count")
+    if reach:
+        out += f' data-reach="{E(" ".join(sorted(str(x) for x in reach)))}"'
+    return out
+
+
+def build_sheet(title, items, framing=None, curator="", counts="", sheet_id=None,
+                howto="", heading="The proposals", chips=None):
+    """A whole sheet, built to the template. `items` are dicts carrying `title`,
+    `ref`, `facts`, `rec`, `why`, and optionally `rows`, `reach` and `chips`.
+
+    The proposal goes in as `rec` and lands in the callout above the chips; the
+    chips default to CHIPS_FOLD with Edit and Dismiss behind Other; a stopping
+    point falls every REST_EVERY items; the framing and the curator of record
+    sit in the header. Returns the finished HTML, reply controls already in."""
+    chips = chips or CHIPS_FOLD
+    head = SHEET_HEAD % {
+        'title': E(title),
+        'framing': framing_block(framing, curator=curator, counts=counts),
+        'howto': E("Each item says what I propose, in the panel above the chips. "
+                   "Click a reply under each one; the words are explained below."),
+        'heading': E(heading),
+    }
+    body = []
+    for i, it in enumerate(items, 1):
+        body.append(
+            f'<article class="card" id="i{i}"{_worth(it)}>\n<h3>{i} &middot; {E(it["title"])}</h3>\n'
+            f'<p class="ref">reference: {E(it.get("ref", ""))}</p>\n<dl>\n'
+            f'<dt>What this is</dt><dd>{it["facts"]}</dd>\n'
+            f'<dt>Why</dt><dd>{it.get("why", "")}</dd>\n'
+            f'<dt>What I propose</dt><dd class="ask">{it["rec"]}</dd>\n'
+            f'</dl>\n</article>')
+    html_text = head + "\n".join(body) + "\n</section>\n</main>\n</body>\n</html>"
+    if howto:
+        html_text = html_text.replace('</p></div>', ' ' + howto + '</p></div>', 1)
+    return inject(html_text, sheet_id or 'sheet')
 
 
 def main(argv=None):
