@@ -116,6 +116,60 @@ a builder gets them by construction rather than by remembering. What to call:
   `dd.ask` to the foot of its `<dl>` and paints it as the callout. Idempotent
   by construction, because the promoted pair no longer carries `class="ask"`.
 
+## Opt-out: the recommendation arrives selected (2026-09-21)
+
+Sam, 2026-09-21: *"set the decision button for each item to your recommended
+and I will change only if needed — opt-out approach"*. Every item renders with
+its recommended chip already pressed, **in the markup**, so it holds before any
+script runs. The reader touches only what they disagree with.
+
+⚠️ **A PRE-SELECTED CHIP LOOKS EXACTLY LIKE AN ANSWERED ONE, AND THE PAGE MUST
+NEVER LET THE TWO COLLAPSE.** Opt-out means a sheet abandoned at item 30 carries
+verdicts for 31–51 that nobody read. Those verdicts are still handed over — that
+is the whole point — but never as the curator's:
+
+- An item with **no stored reply** is carrying the proposal. An item with a
+  stored reply was ruled on by a person; every one is stamped `by: "sam"`.
+- **Complete commits the untouched items** with their proposal and
+  `by: "default"`, so the session gets a verdict for every item *and* knows
+  which were individually reviewed.
+- The message, the `replies/done` record and the **paste line** all carry the
+  split — the paste line matters most, because it is the fallback when the send
+  is refused, which is exactly where provenance would otherwise be lost.
+- **Undo removes the reply** rather than storing an empty verdict: a stored
+  blank claims "I deliberately left this open", which differs from "I did not
+  touch it". The item returns to carrying the proposal.
+- The bar reads *"12 of 51 your call · 39 as proposed"*, so progress through the
+  sheet stays visible under opt-out.
+
+⚠️ **Only a card that STATES a proposal arrives selected.** A card with nothing
+proposed has nothing to opt out of, and pre-selecting there would invent a
+recommendation the sheet never made. `preselect` is `None` for those.
+
+⚠️ **The calibration measurement now needs the provenance.** "Jev was right 25
+of 25 above p 0.85" is only meaningful over items a person actually judged. Score
+against `by: "sam"` rows; an `as_proposed` row measures the default, never the
+model.
+
+## Complete — the button that tells the session (2026-09-21)
+
+Sam: *"Add a Complete or Submit button at the end that alerts you in the chat
+that it's done."* It sits after the last item and uses the `comments`
+capability's `sendToClaude()`, which posts a comment AND notifies the Claude
+sessions watching the artifact. That is the page's **only** route to Claude —
+writing "@Claude" in page text does nothing — and it needs the full `comments`
+declaration (`composer_only` makes `canSendToClaude()` read `"off"`), which
+makes the artifact organization-internal. Publish a sheet with
+`capabilities: {db: {}, comments: {}}`.
+
+⚠️ **The db write is the record; the send is the doorbell.** A send can be
+refused for reasons that say nothing about whether the sheet is finished —
+consent, a viewer who is not an editor, no session listening. So the completion
+lands in `replies/done` first and the page says which of the two happened rather
+than claiming it was sent. Reading `replies/done` is how a session knows a sheet
+was declared finished; it is the counterpart to "an item with no reply has no
+verdict."
+
 **What the bar reports, and the one number it refuses.** The running total is
 in outcome terms — articulation rows settled and colleges reached — plus how
 many verdicts were changed. ⚠️ **`reach` takes college IDS, never a count.**

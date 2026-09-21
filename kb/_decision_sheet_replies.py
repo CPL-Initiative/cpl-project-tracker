@@ -71,7 +71,7 @@ CHIPS_ENTRY_RETIRE = ["Retire", "Keep", "Later"]
 
 
 def replies_block(item, ref="", chips=None, title="", compact=False, kind="item",
-                  parent="", rec="", other=None, rows=0, reach=None):
+                  parent="", rec="", other=None, rows=0, reach=None, preselect=None):
     """The reply controls for one item. `item` is the number a reply names
     ("3", "D7", or "2.o3" for one memory inside item 2); `ref` is what the
     session needs to act (a slug, an id, a class key); `chips` are the verdict
@@ -84,6 +84,15 @@ def replies_block(item, ref="", chips=None, title="", compact=False, kind="item"
     later had to flip keep because I didn't pay attention to your rec."* On the
     51-item sheet the proposal was a `dd` in the same gray as the facts and he
     read past it sixteen times.
+
+    `preselect` is the verdict the item ARRIVES with — Sam, 2026-09-21: *"set
+    the decision button for each item to your recommended and I will change only
+    if needed -- opt-out approach"*. ⚠️ **A pre-selected chip looks exactly like
+    an answered one**, so the page never conflates the two: an item with a
+    stored reply was ruled on by a person, an item without one is carrying the
+    proposal, and Complete commits the second kind marked `by: "default"`. A
+    sheet abandoned at item 30 therefore hands over 21 items the reader never
+    read, SAID SO, rather than 21 silent agreements.
 
     `other` are the rarer verdicts, folded behind an Other toggle so the two
     words that carry the sheet are the two a reader sees. `rows` and `reach`
@@ -101,9 +110,14 @@ def replies_block(item, ref="", chips=None, title="", compact=False, kind="item"
     other = [_chip(c) for c in (other or [])]
     n = str(item)
 
+    # ⚠️ OPT-OUT: the recommended chip ARRIVES SELECTED (Sam, 2026-09-21: "set
+    # the decision button for each item to your recommended and I will change
+    # only if needed"). The pressed state is rendered in the MARKUP, not painted
+    # by script, so a reader with JS still loading never sees an unset sheet.
     def btn(label, value, cls="reply-chip"):
+        on = "true" if preselect is not None and value == preselect else "false"
         return (f'<button type="button" class="{cls}" data-v="{E(value)}" '
-                f'aria-pressed="false">{E(label)}</button>')
+                f'aria-pressed="{on}">{E(label)}</button>')
 
     btns = "".join(btn(l, v) for l, v in chips)
     more = ""
@@ -126,8 +140,12 @@ def replies_block(item, ref="", chips=None, title="", compact=False, kind="item"
     ph = ("Why, or what to do instead" if compact
           else "A condition, a rewrite, a name to hold out, what to follow up on")
     worth = ""
+    if preselect is not None:
+        # The page distinguishes an item the reader TOUCHED from one they let
+        # ride: this attribute is the proposal, and a stored reply is a person.
+        worth += f' data-default="{E(preselect)}"'
     if rows:
-        worth = f' data-rows="{int(rows)}"'
+        worth += f' data-rows="{int(rows)}"'
     if reach is not None and not isinstance(reach, (list, tuple, set, frozenset)):
         # ⚠️ A COUNT CANNOT BE TOTALED. Colleges repeat across items, so summing
         # per-item college counts over-reports the reach of a sitting — the
@@ -178,9 +196,11 @@ def rest_stop(through, note=""):
 
 
 REPLIES_HOWTO = (
-    '<p><strong>Click your reply under each item — and under each memory a batch item lists.</strong> '
-    'Each item carries what I propose in the panel above the chips, and the first chip confirms it by naming '
-    'what happens: <em>Keep the fold</em> takes the merge, <em>Pull out</em> holds the wording separate. '
+    '<p><strong>Each item arrives set to what I propose — change only the ones you disagree with.</strong> '
+    'The proposal is in the panel above the chips and the chip naming it is already chosen: '
+    '<em>Keep the fold</em> takes the merge, <em>Pull out</em> holds the wording separate. '
+    'Anything you press is recorded as your own call; anything you leave stands as proposed, and I am told '
+    'which is which. '
     'Under a single memory the first chip names what the batch would do to it — <em>Verify</em> or '
     '<em>Retire</em>; Hold out and Rewrite keep one back from a verify batch, Keep holds one back from a '
     'retire batch. <em>Other</em> opens the rarer replies. Press a chip again to undo it. '
@@ -398,6 +418,15 @@ def replies_js(sheet_id):
     return { item: item, ref: el ? el.getAttribute("data-ref") : "", title: el ? el.getAttribute("data-title") : "", v: "", note: "", fu: false };
   }
   function empty(r){ return !r || (!r.v && !r.fu && !r.note); }
+  // ⚠️ TWO STATES PER ITEM, AND THEY MUST NEVER COLLAPSE (Sam's opt-out, 2026-09-21).
+  // An item CARRYING THE PROPOSAL has no stored reply; an item a person RULED ON
+  // has one. They look the same on screen — that is the point of opt-out — so
+  // everything that counts, reports or hands over reads `state`, never the
+  // painted chip. Collapsing them is how a sheet stopped at item 30 would hand
+  // over 21 verdicts nobody read.
+  function dflt(item){ var el = byItem(item); return el ? (el.getAttribute("data-default") || "") : ""; }
+  function verdict(item){ var r = state[item]; return r && r.v ? r.v : dflt(item); }
+  function ruled(item){ var r = state[item]; return !!(r && !empty(r)); }
   function chipWord(el, v){
     var bs = el ? el.querySelectorAll(".reply-chip[data-v]") : [];
     for (var i = 0; i < bs.length; i++) if (bs[i].getAttribute("data-v") === v) return bs[i].textContent;
@@ -411,20 +440,26 @@ def replies_js(sheet_id):
     return w.join(", ");
   }
   function stateWords(el, item, r){
-    if (empty(r)) return "";
+    if (empty(r)) {
+      var d = dflt(item);
+      // Say it is the proposal and not an answer, or the reader cannot tell
+      // a chip they set from one that was set for them.
+      return d ? "Proposed: " + chipWord(el, d) + ". Change it if needed — it stands as it is." : "";
+    }
     if (pending[item] === "saving") return "Saving…";
     if (pending[item] === "failed") return "Could not save to the sheet; kept in this browser. Use Copy replies.";
     var w = words(el, r);
     // Undo is the same chip pressed again -- say so, or it is not discoverable.
     var undo = r.v ? " Press it again to undo." : "";
-    return where === "db" ? "Saved to the sheet: " + w + "." + undo
-                          : "Saved in this browser only: " + w + ". Use Copy replies to send it." + undo;
+    return where === "db" ? "Your call: " + w + "." + undo
+                          : "Your call, in this browser only: " + w + ". Use Copy replies to send it." + undo;
   }
   function paint(el){
     if (!el) return;
     var item = el.getAttribute("data-item"), r = state[item] || {};
+    var shown = r.v || (empty(r) ? dflt(item) : "");
     Array.prototype.forEach.call(el.querySelectorAll(".reply-chip[data-v]"), function(b){
-      b.setAttribute("aria-pressed", r.v && r.v === b.getAttribute("data-v") ? "true" : "false");
+      b.setAttribute("aria-pressed", shown && shown === b.getAttribute("data-v") ? "true" : "false");
     });
     var fu = el.querySelector(".reply-fu"); if (fu) fu.setAttribute("aria-pressed", r.fu ? "true" : "false");
     // A verdict that lives behind Other has to be VISIBLE once it is chosen --
@@ -453,8 +488,18 @@ def replies_js(sheet_id):
       r.was = was;
     }
     r.t = new Date().toISOString();
+    r.by = "sam";                       // a stored reply is always a person's
+    // Undoing the last thing on an item returns it to CARRYING THE PROPOSAL,
+    // rather than leaving a stored reply with an empty verdict — which would
+    // read as a deliberate blank and is a different claim.
+    if (empty(r) && dflt(item)) { del(item); return; }
     state[item] = r; keep();
     paint(byItem(item)); bar(); push(item);
+  }
+  function del(item){
+    delete state[item]; keep();
+    if (col) { try { col.doc(item).delete(); } catch (e) {} }
+    paint(byItem(item)); bar();
   }
   function push(item){
     if (!col) return;
@@ -473,8 +518,17 @@ def replies_js(sheet_id):
     var parts = [];
     els.forEach(function(el){
       var item = el.getAttribute("data-item"), r = state[item];
-      if (empty(r)) return;
-      var s = item + " " + (r.v ? r.v : "(no verdict)");
+      if (empty(r)) {
+        // An item carrying the proposal is reported AS the proposal, marked so
+        // — never as a verdict the reader gave.
+        var d = el.getAttribute("data-default");
+        if (d) parts.push(item + " " + d + " (as proposed)");
+        return;
+      }
+      // ⚠️ The provenance rides the PASTE LINE too. This line is the fallback
+      // when the send is refused, which is precisely the path where "he ruled
+      // on it" and "it rode the proposal" would otherwise become the same.
+      var s = item + " " + (r.v ? r.v : "(no verdict)") + (r.by === "default" ? " (as proposed)" : "");
       if (r.fu) s += ", follow up";
       if (r.note) s += " — “" + String(r.note).replace(/\s+/g, " ").trim() + "”";
       parts.push(s);
@@ -511,12 +565,18 @@ def replies_js(sheet_id):
       n[k][1]++; if (!empty(r)) n[k][0]++; if (r && r.fu) fu++;
       if (r && r.flips) flips += r.flips;
     });
-    var parts = [];
+    var parts = [], proposed = 0;
+    els.forEach(function(el){
+      if ((el.getAttribute("data-kind") || "item") !== "item") return;
+      if (el.getAttribute("data-default") && !ruled(el.getAttribute("data-item"))) proposed++;
+    });
     if (n.item[1]) parts.push(n.item[0] + " of " + n.item[1] + " items");
     if (n.entry[1]) parts.push(n.entry[0] + " of " + n.entry[1] + " memories");
     if (n.done[1]) parts.push(n.done[0] + " of " + n.done[1] + " retired rows");
     var c = document.getElementById("reply-count");
-    if (c) c.textContent = parts.join(" · ") + " replied" + (fu ? " · " + fu + " to follow up" : "");
+    if (c) c.textContent = parts.join(" · ") + " your call"
+      + (proposed ? " · " + proposed + " as proposed" : "")
+      + (fu ? " · " + fu + " to follow up" : "");
     var o = document.getElementById("reply-outcome");
     if (o) {
       var text = outcome();
@@ -601,27 +661,44 @@ def replies_js(sheet_id):
   /* ── Complete: write the record, then ring the doorbell ── */
   var sbtn = document.getElementById("submit-btn"), sstate = document.getElementById("submit-state");
   function tally(){
-    var done = 0, total = 0;
+    var done = 0, total = 0, asProposed = [], blank = 0;
     els.forEach(function(el){
       if ((el.getAttribute("data-kind") || "item") !== "item") return;
-      total++; if (!empty(state[el.getAttribute("data-item")])) done++;
+      total++;
+      var item = el.getAttribute("data-item");
+      if (ruled(item)) { done++; return; }
+      if (el.getAttribute("data-default")) asProposed.push(item); else blank++;
     });
-    return { done: done, total: total };
+    return { done: done, total: total, asProposed: asProposed, blank: blank };
   }
   function say(t){ if (sstate) sstate.textContent = t; }
   if (sbtn) sbtn.addEventListener("click", function(){
     var n = tally();
     sbtn.disabled = true;
-    // ⚠️ The unanswered items are named, never silently counted as agreement:
-    // "an item with no reply has NO verdict" is the rule the session executes by.
-    var short = n.total - n.done;
-    var text = "Decisions done on " + SHEET + " — " + n.done + " of " + n.total + " items answered"
-      + (short ? ", " + short + " left blank (no verdict on those)" : "") + ". " + line();
-    var rec = { sheet: SHEET, answered: n.done, items: n.total, at: new Date().toISOString(), sent: false };
+    // ⚠️ COMMIT THE PROPOSALS, AND SAY THEY ARE PROPOSALS. Under opt-out the
+    // reader only touches what they disagree with, so the untouched items DO
+    // carry a verdict — but `by: "default"` records that nobody ruled on them
+    // individually, and the message says how many. An item with neither a
+    // reply nor a proposal is still a blank, and is still named as one.
+    var now = new Date().toISOString();
+    n.asProposed.forEach(function(item){
+      var r = { item: item, ref: (byItem(item) || {getAttribute:function(){return "";}}).getAttribute("data-ref"),
+                title: byItem(item) ? byItem(item).getAttribute("data-title") : "",
+                v: dflt(item), note: "", fu: false, by: "default", t: now };
+      state[item] = r;
+      if (col) { try { col.doc(item).set(copy(r)); } catch (e) {} }
+    });
+    keep(); paintAll();
+    var text = "Decisions done on " + SHEET + " — " + n.done + " of " + n.total + " items your own call"
+      + (n.asProposed.length ? ", " + n.asProposed.length + " taken as proposed (not individually reviewed)" : "")
+      + (n.blank ? ", " + n.blank + " left blank (no verdict on those)" : "") + ". " + line();
+    var rec = { sheet: SHEET, ruled: n.done, as_proposed: n.asProposed.length, blank: n.blank,
+                items: n.total, at: now, sent: false };
     function finish(sent, why){
       rec.sent = sent;
       if (col) { try { col.doc("done").set(copy(rec)); } catch (e) {} }
-      say(sent ? "Sent. The session has it — " + n.done + " of " + n.total + " answered."
+      say(sent ? "Sent. The session has it — " + n.done + " of " + n.total + " your own call"
+                 + (n.asProposed.length ? ", " + n.asProposed.length + " as proposed." : ".")
                : "Marked complete on the sheet" + (why ? " (" + why + ")" : "") +
                  ". Use Copy replies to hand them over.");
       sbtn.textContent = "Completed";
@@ -893,9 +970,15 @@ def inject(html_text, sheet_id):
         ref = _text(ref) or title
         body = promote_rec(body)
         ch = chips_for(section_at(m.start()), body)
+        # ⚠️ ONLY A CARD THAT STATES A PROPOSAL ARRIVES SELECTED. The first chip
+        # is the one that confirms the proposal, so it is the default — but a
+        # card with nothing proposed has nothing to opt out OF, and pre-selecting
+        # there would invent a recommendation the sheet never made.
+        pre = _chip(ch[0])[1] if (ch and _ask_text(body)) else None
         block = replies_block(n, ref, ch, title, kind="item", other=other_for(ch),
                               rows=int(worth_rows or 0),
-                              reach=(worth_reach.split() if worth_reach else None))
+                              reach=(worth_reach.split() if worth_reach else None),
+                              preselect=pre)
         # Every memory the batch lists gets its own compact block (Sam,
         # 2026-09-05: "the response controls on each memory, not just on the
         # whole batch"); its id is <item>.<reference>, so the reply line and

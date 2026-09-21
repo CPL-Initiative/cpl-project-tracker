@@ -145,9 +145,24 @@ function press(el, sel) { el.querySelector(sel).dispatchEvent(new dom.window.Mou
 const c1 = doc.getElementById("i1").querySelector(".reply");
 const store = () => JSON.parse(dom.window.localStorage.getItem("sheet-replies:sheet") || "{}");
 
+// ⭐ OPT-OUT (Sam, 2026-09-21): "set the decision button for each item to your
+// recommended and I will change only if needed." The recommendation arrives
+// selected, in the MARKUP, so it holds before any script runs.
+check("the recommended chip arrives selected",
+  c1.querySelector('[data-v="fold"]').getAttribute("aria-pressed") === "true" &&
+  /class="reply-chip" data-v="fold" aria-pressed="true"/.test(out),
+  "the chip must be pressed in the HTML, not painted on load");
+check("an item nobody has touched stores nothing",
+  !store()["1"], "a pre-selected chip is not a reply; only a person makes one");
+check("and the page says the chip is a proposal, not an answer",
+  /Proposed: Keep the fold/.test(c1.querySelector(".reply-state").textContent),
+  "a reader cannot otherwise tell a chip they set from one set for them");
+
 press(c1, '[data-v="fold"]');
 check("a chip records its verdict", store()["1"] && store()["1"].v === "fold",
   "expected v=fold, got " + JSON.stringify(store()["1"]));
+check("a stored reply is stamped as the person's",
+  store()["1"].by === "sam", "provenance is what keeps opt-out honest");
 check("the state line says a second press undoes it",
   /Press it again to undo/.test(c1.querySelector(".reply-state").textContent),
   "undo is a toggle and has to be discoverable");
@@ -158,15 +173,18 @@ check("a reversal is counted, and what it was is kept",
   "the sixteen flips were the signal the proposal was not being read");
 
 press(c1, '[data-v="keep"]');
-check("pressing the chosen chip again undoes it", !store()["1"].v,
-  "expected the verdict cleared");
-check("an undo is not counted as a reversal", store()["1"].flips === 1,
-  "quality goes in the score, and clearing a chip is not a change of mind");
+check("undoing returns the item to carrying the proposal", !store()["1"],
+  "a stored reply with an empty verdict would read as a deliberate blank, " +
+  "which is a different claim from 'I did not touch this'");
+check("and the proposal is painted again",
+  c1.querySelector('[data-v="fold"]').getAttribute("aria-pressed") === "true", "");
 
 // Other: a verdict chosen behind it has to be visible afterwards.
 press(c1, ".reply-more");
 check("Other opens the rarer replies", !c1.querySelector(".reply-more-row").hidden, "");
 press(c1, '[data-v="edit"]');
+check("a verdict from behind Other is still the person's",
+  store()["1"] && store()["1"].v === "edit" && store()["1"].by === "sam", "");
 // Seeded BEFORE the sheet's own script, which sits at the foot of the page.
 const reloaded = new JSDOM(out.replace("<body>",
   `<body><script>localStorage.setItem("sheet-replies:sheet",${JSON.stringify(JSON.stringify(store()))});</script>`),
@@ -252,18 +270,32 @@ later.then(() => {
   const text = (okRun.sent[0] || {}).text || "";
   check("Complete sends the session a message", okRun.sent.length === 1,
     "sendToClaude is the page's only route to Claude");
-  check("the message counts what was answered", /1 of 3 items answered/.test(text),
-    "got: " + text.slice(0, 120));
-  // ⭐ The rule the session executes by: no reply means NO verdict.
-  check("unanswered items are named as having no verdict, never counted as agreement",
-    /2 left blank \(no verdict on those\)/.test(text),
-    "a silent yes on an unanswered item is the failure this guards: " + text.slice(0, 160));
+  check("the message counts what the reader themselves decided",
+    /1 of 3 items your own call/.test(text), "got: " + text.slice(0, 140));
+  // ⭐ THE FAILURE OPT-OUT COULD CAUSE, GUARDED. A pre-selected chip looks
+  // exactly like an answered one, so a sheet stopped early would hand over
+  // verdicts nobody read. They are handed over — that is what Sam asked for —
+  // but never as his, and the count says how many rode the proposal.
+  check("items taken as proposed are handed over marked, never as the reader's",
+    /2 taken as proposed \(not individually reviewed\)/.test(text),
+    "got: " + text.slice(0, 200));
+  check("the paste line marks them too, where a refused send falls back",
+    (text.match(/\(as proposed\)/g) || []).length === 2,
+    "the fallback path is exactly where provenance would be lost: " + text.slice(0, 220));
+  const committed = okRun.stored.filter((w) => w.id !== "done");
+  check("each item taken as proposed is stored stamped by: default",
+    committed.filter((w) => w.data.by === "default").length === 2 &&
+    committed.filter((w) => w.data.by === "sam").length === 1,
+    "got: " + JSON.stringify(committed.map((w) => [w.id, w.data.by])));
   const done = okRun.stored.filter((w) => w.id === "done");
   check("the completion is written to the store, not only sent",
-    done.length === 1 && done[0].data.answered === 1 && done[0].data.items === 3 && done[0].data.sent === true,
-    "the store is the record; the send is the doorbell");
+    done.length === 1 && done[0].data.ruled === 1 && done[0].data.as_proposed === 2 &&
+    done[0].data.items === 3 && done[0].data.sent === true,
+    "the store is the record; the send is the doorbell. got: " + JSON.stringify(done[0] && done[0].data));
   check("the page says it reached the session",
     /Sent\. The session has it/.test(okRun.doc.getElementById("submit-state").textContent), "");
+  check("the bar keeps the two kinds apart while working",
+    /your call/.test(okRun.doc.getElementById("reply-count").textContent), "");
 
   // A refused send must still record, and must never claim it was sent.
   const noRun = completeWith("no_session");
