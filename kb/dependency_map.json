@@ -19265,6 +19265,7 @@
     "tests/bash_read_guard_test.py",
     "tests/install_prompt_guards_test.py",
     "tests/jev_adjudicate_test.py",
+    "tests/jev_battery_test.py",
     "kb/_build_remint_blast_radius.py",
     "tests/remint_blast_radius_test.py",
     "tests/coci_program_cip_test.py",
@@ -19569,6 +19570,7 @@
    "scripts": [
     "kb/_typesafe_smoke.py",
     "kb/_jev_adjudicate.py",
+    "kb/_jev_battery.py",
     "kb/_typesafe_cr_trial.py"
    ],
    "adds": [],

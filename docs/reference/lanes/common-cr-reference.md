@@ -151,10 +151,43 @@ lab against lecture, vendor-specific, a different course — which is what
 `s279-fable-jev-variable-battery` proposed and what this measurement now
 supports rather than assumes.
 
-**NEXT:** build the battery against the band's 26 pairs, score it the same way
-with `kb/_jev_score.py`, and keep any variable that beats 0.50 in-band. Only
-then CCR, whose method half emits Trust Cards rather than findings. The other
-1,881 rung-5 groups wait on that.
+## The battery is built and pre-registered (2026-09-21, S281) — `kb/_jev_battery.py`
+
+Six variables, Sam's own vocabulary for holding two recommendations apart:
+**level · scope · units · lab · vendor · different_course**. Each is phrased as a
+REASON TO HOLD SEPARATE, so a keep should score higher on every one — one
+direction for all six, no sign to get backwards later. All six ride ONE call per
+pair; 26 calls covers the band.
+
+⚠️ **THE SELECTION RULE IS FIXED IN THE SOURCE BEFORE ANY ANSWER EXISTS.**
+AUC ≥ 0.65, permutation p ≤ 0.05, 20,000 shuffles, seed 7. Otherwise a 26-row
+set picks its own winners.
+
+**One primary endpoint, six diagnostics.** The question is not six questions —
+*"should these stay separate?"* is *"is ANY of these reasons present?"* — so the
+primary is `any_reason`, the max across the battery, uncorrected because it is
+the one primary. The six singletons are secondary, Holm-corrected among
+themselves, to say WHICH reason does the work.
+
+⚠️ **THE PRIMARY GATES THE SECONDARIES.** Measured before the gate existed: six
+tests over 26 rows handed a "winner" on **2 of 25 pure-noise runs**. With the
+gate, 0 of 25. If no reason at all separates the band, one reason passing is
+chance.
+
+⚠️ **POWER, MEASURED BEFORE A SINGLE CALL WAS SPENT.** At 16 fold against 10
+keep this design detects **AUC ≥ ~0.75** on the primary and **≥ ~0.80** on a
+secondary. A real but moderate variable at 0.70 is invisible here. **So a null
+means "no large effect in 26 pairs", never "no signal"** — and a variable that
+does pass is carrying a big effect, which is exactly why one batch cannot
+confirm it and the script calls a pass a hypothesis.
+
+**NEXT:** dispatch `.github/workflows/typesafe-smoke.yml` with `battery: true`
+(26 calls). It scores itself on the way out. A variable that passes gets
+re-tested on a batch it did not pick before it goes anywhere near the routine;
+if nothing passes, the next move is a different KIND of evidence — member course
+titles, the units spread, TOP/CIP corroboration — never a seventh rephrasing of
+the same question. Only then CCR, whose method half emits Trust Cards rather
+than findings. The other 1,881 rung-5 groups wait on that.
 
 **Where Jev fits beyond this lane, and the gates each use carries:**
 [`reference-system-one-model-fit-by-lane`](../../kb-notes/reference-system-one-model-fit-by-lane.md) (S280, 2026-09-20).

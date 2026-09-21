@@ -46,6 +46,10 @@ on:
         description: 'Cap the adjudication to the N highest-weight findings (blank = all)'
         type: string
         default: ''
+      battery:
+        description: 'Variable battery over the below-gate band (26 calls; scores itself against Sam 51 verdicts)'
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -84,6 +88,23 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: jev-${{ inputs.adjudicate }}
+          path: kb/jev_out/
+
+      # The variable battery (kb/_jev_battery.py). 26 calls over the pairs that
+      # the 0.85 gate leaves to a curator, asking the six reasons Sam named for
+      # holding two recommendations apart. It scores ITSELF against his 51
+      # verdicts at the end — the selection rule is pre-registered in the source,
+      # so the run cannot choose its own threshold.
+      - name: Jev variable battery (asks, scores, decides nothing)
+        if: inputs.battery
+        env:
+          TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
+        run: python3 kb/_jev_battery.py --ask
+      - name: Upload the battery profiles
+        if: inputs.battery
+        uses: actions/upload-artifact@v4
+        with:
+          name: jev-battery
           path: kb/jev_out/
       # Reads kb/cr_reference_worklist.json, asks Jev one noul + one score per
       # anchored pair, prints a ranked worklist. SUGGESTS ONLY — no Supabase
