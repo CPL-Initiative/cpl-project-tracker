@@ -4,9 +4,9 @@
   "supabase_tables": 85,
   "rpcs": 31,
   "edge_functions": 5,
-  "file_datasets": 486,
+  "file_datasets": 488,
   "external_services": 145,
-  "consumers": 347,
+  "consumers": 348,
   "workflows": 35,
   "data_js_files": 61,
   "tabs": 37
@@ -5207,6 +5207,19 @@
      "direction": "read",
      "how": "literal",
      "line": 281
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:docs/visuals/<date>-decision-sheet-template.html": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_decision_sheet_demo.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 60
     }
    ],
    "served": false,
@@ -10720,6 +10733,19 @@
     }
    ],
    "served": true,
+   "main_committers": []
+  },
+  "file:kb/receipts/cr_reference_decisions_<date>_s280.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_decision_sheet_demo.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 15
+    }
+   ],
+   "served": false,
    "main_committers": []
   },
   "file:kb/reference/CIPCode2020.csv": {
