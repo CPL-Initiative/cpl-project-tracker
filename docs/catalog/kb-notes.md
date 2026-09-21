@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-482 document(s).
+484 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -171,6 +171,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A screen and its export must share a scope, not a shape](../kb-notes/methodology-screen-and-export-share-a-scope-not-a-shape.md) | methodology | published | 2026-08-28 | 2026-08-28 |
 | [A second bound breaks a pin-as-you-go solver — one-sided is monotone, two-sided is not](../kb-notes/methodology-a-second-bound-breaks-a-pin-as-you-go-solver.md) | methodology | published | 2026-08-22 | 2026-08-22 |
 | [A second copy of a fact is a stale copy waiting](../kb-notes/methodology-a-second-copy-of-a-fact-is-a-stale-copy-waiting.md) | methodology | published | 2026-08-25 | 2026-08-25 |
+| [A second look shown the verdict rubber-stamps it — ask the negative instead](../kb-notes/methodology-a-second-look-shown-the-verdict-rubber-stamps-it.md) | methodology | published | 2026-09-21 | 2026-09-21 |
 | [A second PR stacked on a just-merged branch can squash to an empty commit — verify main](../kb-notes/methodology-stacked-pr-empty-squash.md) | methodology | published | 2026-06-23 | 2026-06-23 |
 | [A self-contained injected component must paint its own canvas, not just its text](../kb-notes/methodology-self-contained-injected-component-styling.md) | methodology | published | 2026-06-02 | 2026-06-02 |
 | [A settled ruling does not enforce itself — the consumer has to change](../kb-notes/methodology-a-settled-ruling-does-not-enforce-itself.md) | methodology | published | 2026-08-13 | 2026-08-13 |
@@ -397,6 +398,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [The obvious detector measures the wrong thing: boilerplate is not repetition](../kb-notes/methodology-the-obvious-detector-measures-the-wrong-thing.md) | methodology | published | 2026-09-10 | 2026-09-10 |
 | [The plausible cause is not the measured one, and the check is usually cheaper than the guess](../kb-notes/methodology-the-plausible-cause-is-not-the-measured-one.md) | methodology | published | 2026-08-09 | 2026-08-09 |
 | [The record cannot say which credential is held — only the visitor's words can](../kb-notes/methodology-the-record-cannot-say-which-credential-is-held.md) | methodology | published | 2026-09-18 | 2026-09-18 |
+| [The record is the mechanism; the notification is a bonus](../kb-notes/methodology-the-record-is-the-mechanism-the-notification-is-a-bonus.md) | methodology | published | 2026-09-21 | 2026-09-21 |
 | [The same arithmetic can read as withholding or as investment](../kb-notes/methodology-the-same-arithmetic-can-read-as-withholding-or-as-investment.md) | methodology | published | 2026-08-22 | 2026-08-22 |
 | [The sphere is the map through a projection, not a second renderer](../kb-notes/methodology-the-sphere-is-the-map-through-a-projection.md) | methodology | published | 2026-09-07 | 2026-09-07 |
 | [The text a reader sees is not the text a test reads](../kb-notes/methodology-the-text-a-reader-sees-is-not-the-text-a-test-reads.md) | methodology | published | 2026-09-02 | 2026-09-02 |
