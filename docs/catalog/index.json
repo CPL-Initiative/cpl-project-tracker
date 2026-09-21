@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 482,
+   "count": 484,
    "docs": [
     {
      "created": "2026-08-14",
@@ -3046,6 +3046,26 @@
      "title": "A second copy of a fact is a stale copy waiting",
      "type": "methodology",
      "updated": "2026-08-25"
+    },
+    {
+     "created": "2026-09-21",
+     "governs": [
+      "kb/_jev_adjudicate.py",
+      "tests/jev_adjudicate_test.py"
+     ],
+     "path": "docs/kb-notes/methodology-a-second-look-shown-the-verdict-rubber-stamps-it.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "adjudication",
+      "ai",
+      "trail-crew",
+      "jev",
+      "verification"
+     ],
+     "title": "A second look shown the verdict rubber-stamps it \u2014 ask the negative instead",
+     "type": "methodology",
+     "updated": "2026-09-21"
     },
     {
      "created": "2026-06-23",
@@ -7532,6 +7552,25 @@
      "title": "The record cannot say which credential is held \u2014 only the visitor's words can",
      "type": "methodology",
      "updated": "2026-09-18"
+    },
+    {
+     "created": "2026-09-21",
+     "governs": [
+      "kb/_decision_sheet_replies.py",
+      "docs/reference/decision_sheets.md"
+     ],
+     "path": "docs/kb-notes/methodology-the-record-is-the-mechanism-the-notification-is-a-bonus.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "decision-sheets",
+      "artifacts",
+      "notification",
+      "claude-code"
+     ],
+     "title": "The record is the mechanism; the notification is a bonus",
+     "type": "methodology",
+     "updated": "2026-09-21"
     },
     {
      "created": "2026-08-22",
@@ -13382,7 +13421,7 @@
      ],
      "title": "Common CR Reference \u2014 lane state",
      "type": null,
-     "updated": "2026-08-28"
+     "updated": "2026-09-21"
     },
     {
      "created": "2026-08-28",
@@ -13967,8 +14006,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 253,
+   "count": 254,
    "docs": [
+    {
+     "created": "2026-09-21",
+     "governs": [],
+     "n": 282,
+     "path": "docs/session_282_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "decision-sheets",
+      "cr-reference",
+      "jev",
+      "adjudication"
+     ],
+     "title": "the decision sheet is rebuilt and opt-out, and Jev has one magic half for every reference",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-20",
      "governs": [],
@@ -18262,5 +18318,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 948
+ "total": 951
 }

@@ -1,7 +1,7 @@
 ---
 title: "Common CR Reference — lane state"
 created: 2026-08-28
-updated: 2026-08-28
+updated: 2026-09-21
 tags: [reference, roadmap-lane]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -87,9 +87,40 @@ bare Yes), the fold is proposed by default with its reason and faculty pull
 out, and the framing sits in the header.
 [`decision_sheets`](../decision_sheets.md).
 
-**NEXT:** the variable battery (`s279-fable-jev-variable-battery`), scored
-against the 51 verdicts in the receipt, and the next sheet built to Sam's
-rulings. The other 1,881 rung-5 groups wait on that.
+## The magic half is one module now (2026-09-21, S281 SkyAnvil)
+
+`kb/_jev_adjudicate.py` is the single Jev adjudication routine for every
+reference — CSR, CER and CCRR wired, CCR deliberately not. The method+magic
+pattern is [`playbook-trail-crew-method-magic-audit`](../../kb-notes/playbook-trail-crew-method-magic-audit.md),
+which ran it twice on 2026-07-10; every reference already owns a METHOD half and
+what differs is the magic one. CCRR's blocking is **imported** from
+`_typesafe_cr_trial.build_pairs()`, never reimplemented.
+
+⚠️ **THE SECOND LOOK NEVER SEES THE VERDICT IT CHECKS.** The playbook requires a
+skeptic on every merge; its working version re-derived the numbers rather than
+re-reading the claim. Jev cannot read a registry, so re-derivation here is the
+NEGATIVE question put to the same evidence in a separate call with the first
+answer withheld — "critique this proposal" is the shape that rubber-stamps. A
+refuted proposal routes to the curator however confident the first look was, and
+a 0.5 hedge is not a refutation. Run it from
+`.github/workflows/typesafe-smoke.yml` (typesafe.ai is egress-blocked from the
+sandbox); it SUGGESTS and writes nothing.
+
+**Triage, measured 2026-09-21:** CER 239 findings → 59 worth a call · CSR 185 →
+143 · CCRR 55 anchored pairs. **The receipt's 51 pairs are all still present**
+(reconciled, none lost); the 4 new ones sit under the `community relations`
+anchor, this lane's named hard case.
+
+⚠️ **SCORE AGAINST `by: "sam"` ROWS ONLY.** The decision sheet went opt-out on
+2026-09-21, so an untouched item carries the recommendation marked
+`by: "default"`. Scoring a matcher against those measures it against its own
+proposals. The 2026-09-20 receipt predates opt-out and is entirely his, which is
+why it is the ground truth.
+
+**NEXT:** dispatch `--ref ccrr` on the runner and score it against the receipt —
+that is `s279-fable-jev-variable-battery`, and it validates the routine where
+ground truth exists. Only then CCR, whose method half emits Trust Cards rather
+than findings. The other 1,881 rung-5 groups wait on that.
 
 **Where Jev fits beyond this lane, and the gates each use carries:**
 [`reference-system-one-model-fit-by-lane`](../../kb-notes/reference-system-one-model-fit-by-lane.md) (S280, 2026-09-20).

@@ -4,6 +4,8 @@ date: 2026-09-20
 session: 280 (SkyForge)
 tags: [handoff, cr-reference, jev, decision-sheets, permissions, prompt-storm]
 status: current
+superseded: true
+superseded_by: session_282_handoff.md
 ---
 
 # You are Session 281

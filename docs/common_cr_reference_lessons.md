@@ -389,3 +389,89 @@ affordances in the decisions table are the pull-out; the sheet is the
 proposal. He wants the flow for CER, CSR, CCRR and CCR, and CCR is *"the big
 kahuna with its thousands of decisions"*. The prerequisite there is a
 decisions store with a reason column, which the CCR does not have yet.
+
+## 2026-09-21 (S281, SkyAnvil) — the decision sheet rebuilt, and one magic half for four references
+
+### The sheet, rebuilt around what the 51-item run cost
+
+Sam reversed sixteen of his 51 verdicts on 2026-09-20 and named the cause:
+*"make your recommendation line more visually a focal point. I found myself
+saying yes to things that I later had to flip keep because I didn't pay
+attention to your rec."* Two faults were in play at once, and both are now
+prevented by construction rather than by care:
+
+- **The proposal read as a fact.** It was `<dd class="ask">` in the same gray as
+  the facts around it, with *Why* sitting between it and the chips. It is a
+  tinted panel now, with its own rule and label word, and it is the last thing
+  before the chip row. `promote_rec()` does the same to a sheet that already
+  exists.
+- **A bare Yes reads two ways.** The sheet defined Yes as "take the proposal"
+  and its review band proposed hold-separate, so a Yes there meant *keep* by the
+  sheet and *fold* to Sam. The stored value names the OUTCOME now — `fold` means
+  fold whatever was proposed — and the label names the action.
+
+Three further asks landed the same day: the intro deleted so the sheet opens on
+item 1; a **Complete** button at the end; and **opt-out** — *"set the decision
+button for each item to your recommended and I will change only if needed"*.
+
+### Opt-out's one hazard, and the shape that contains it
+
+A pre-selected chip is indistinguishable from an answered one, so a sheet
+abandoned at item 30 hands over verdicts for 31–51 that nobody read. They are
+still handed over — that is what opt-out IS — but never as his: an item with no
+stored reply is carrying the proposal, a stored reply is always a person's
+(`by: "sam"`), and Complete commits the rest marked `by: "default"`. The split
+rides the message, the `replies/done` record and the paste line.
+
+⚠️ **This changes what the calibration measurement means.** *"Jev was right 25
+of 25 above p 0.85"* only holds over items a person actually judged. Score the
+variable battery against `by: "sam"` rows; an as-proposed row measures the
+default, never the model.
+
+### `sendToClaude()` does not reach a Claude Code session — measured
+
+Sam pressed Complete and asked whether it had reached the session. It had not.
+The record said so (`replies/done` carried `sent: false`), which is what the
+db-write-first design is for, but the page said it too quietly to notice.
+
+The first diagnosis was wrong in an instructive way: the artifact watch HAD
+lapsed on a session restart, so re-registering it looked like the fix. It was
+not. Watch confirmed live at 13:42:11Z, pressed at 13:43:24Z, same
+`no_session`. **A remote-container Claude Code session is not a session
+`sendToClaude` can reach**, and no amount of watch hygiene changes that.
+
+So the mechanism inverts: `replies/done` is a durable record that needs nothing
+alive at the moment of the press, which means a sheet finished at midnight is
+read by whatever session runs next. The send is a bonus that works from a
+claude.ai chat session. **Arm a `send_later` that reads `replies/done` and
+compares its `at`** — that is the hand-over procedure now.
+
+### One magic half, and the second look the trial lacked
+
+`playbook-trail-crew-method-magic-audit` already ran this pattern twice on
+2026-07-10 (CER, then CSR). Every reference owns a METHOD half; what differs is
+the MAGIC half, and the playbook records that the CCR *"has never had the magic
+half at scale — the backlog is adjudication, not detection."* Jev is the cheap
+magic half, so `kb/_jev_adjudicate.py` is the one place it lives — four trial
+scripts would drift as the alias chain's copy drifted to 7 maps against 15.
+
+⚠️ **The second look never sees the verdict it checks.** The playbook demands a
+skeptic on every merge, and its own working version *"re-derived the numbers"*
+rather than re-reading the claim. Jev cannot read a registry, so re-derivation
+here means the NEGATIVE question put to the same evidence in a separate call
+with the first answer withheld. "Critique this proposal" hands a model a
+conclusion and asks for fault, which is the shape that rubber-stamps. A refuted
+proposal goes to the curator however confident the first look was, and a 0.5
+hedge is not a refutation.
+
+**Triage, measured:** CER 239 findings → 59 worth a call (180 are roman-numeral
+renames and style nits); CSR 185 → 143; CCRR 55 anchored pairs.
+
+**Reconciled rather than assumed:** the receipt holds 51 pairs and
+`build_pairs()` now yields 55. All 51 are still present, none lost, and the four
+new ones all sit under the `community relations` anchor — the case this lane
+names as the hard one. The calibration stands.
+
+**CCR is deliberately not wired.** Its method half emits Trust Cards rather than
+findings, and it is the big kahuna; pointing an unvalidated routine at it before
+scoring against the 51 would be backwards.

@@ -307,10 +307,43 @@ later.then(() => {
     check("a refused send still records the completion",
       done.length === 1 && done[0].data.sent === false,
       "a send can be refused for reasons that say nothing about whether the sheet is finished");
-    check("and the page never claims it was sent",
-      !/Sent\./.test(noRun.doc.getElementById("submit-state").textContent) &&
-      /Copy replies/.test(noRun.doc.getElementById("submit-state").textContent),
-      "got: " + noRun.doc.getElementById("submit-state").textContent);
+    // ⭐ A FAILED DOORBELL MUST NOT READ LIKE A DELIVERED ONE. Sam, 2026-09-21:
+    // "I hit complete on the new decision sheet but I don't know if it alerted
+    // you in context" — it had not, and the page's wording was quiet enough
+    // that he had to come and ask. Three signals now separate the two outcomes,
+    // and the words carry it without the color (the glyph/color rule).
+    const state = noRun.doc.getElementById("submit-state");
+    const okState = okRun.doc.getElementById("submit-state");
+    check("a refused send says so in plain words",
+      /No session was listening/.test(state.textContent) && !/^Sent\./.test(state.textContent),
+      "got: " + state.textContent);
+    check("and says what to do instead",
+      /decisions done/.test(state.textContent) && /Recorded on the sheet/.test(state.textContent),
+      "the record IS readable off the sheet, so a refused send costs a sentence, never the work");
+    check("the button itself distinguishes the two outcomes",
+      noRun.doc.getElementById("submit-btn").textContent === "Completed — tell Claude" &&
+      okRun.doc.getElementById("submit-btn").textContent === "Completed — sent",
+      "the reader must not have to read carefully to tell delivered from not");
+    // ⭐ SAY IT BEFORE THE PRESS. He should not have to press Complete to find
+    // out it cannot reach anyone; canSendToClaude posts nothing and never
+    // prompts, so the note above the button knows its own reach at load.
+    // ⚠️ The note must not promise the press reaches anyone. Measured
+    // 2026-09-21: sendToClaude reports no_session for a Claude Code session
+    // even with a live watch, so the record — read off the sheet — is the
+    // mechanism and the send is a bonus.
+    const note = noRun.doc.getElementById("submit-note").textContent;
+    check("when nothing is listening, the note says so BEFORE the press",
+      /reads the record straight off the sheet/.test(note) && /decisions done/.test(note),
+      "got: " + note.slice(0, 200));
+    check("and it never promises the press alone reached a session",
+      !/the session is told/.test(note), "got: " + note.slice(0, 200));
+    check("when a session IS listening the note stays out of the way",
+      /the session is told the sheet is done/.test(okRun.doc.getElementById("submit-note").textContent),
+      "the reachable case is the common one and needs no warning");
+    check("the failed state is marked without relying on color alone",
+      /missed/.test(state.className) && !/missed/.test(okState.className) &&
+      /No session was listening/.test(state.textContent),
+      "the panel changes AND the words say it");
     report();
   });
 });

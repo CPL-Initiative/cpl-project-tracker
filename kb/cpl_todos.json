@@ -1,9 +1,33 @@
 {
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
- "_as_of": "2026-09-20",
- "_session": 280,
- "_status": "Sam's 51 verdicts on the Jev decision sheet are recorded: 41 wordings fold into their published statewide line and 10 stay separate, 30 rows in the decisions table with a committed receipt and a one-line rollback. Jev's gate held (25 of 25 above 0.85) and the numbers under the gate told us nothing, so the model orders the queue and people decide. Sam's rulings reshape every sheet from here: the recommendation is the focal point, chips name the outcome, the fold is proposed by default and faculty pull out, the framing sits in the header. The Allow SQL prompt is down to one edit: the allow rule is on main with its test, and a new session still starts from the environment's filesystem snapshot built before it, Sam edited the setup script, the snapshot rebuilt (settings written 20:40:31, 33 rules, checker reads yes), and one prompt remains on execute_sql: the rules load and hold for every other tool (list_tables silent), and that one tool carries an upstream mark nothing local reaches. Sam's call: keep the one prompt and ask Supabase support one question, or build a read path that is not this tool by decision sheet. Next: rebuild the sheet template to the rulings, score the variable battery against the receipt, and the agreed CI plan (shard the suite, run only what the diff touches).",
+ "_as_of": "2026-09-21",
+ "_session": 281,
+ "_status": "The decision sheet is rebuilt and merged. Sam's recommendation now sits in a highlighted panel directly above the chips, the chips name the outcome (Keep the fold / Pull out) so a Yes cannot read two ways, the intro is gone so the sheet opens on item 1, and every item arrives set to the recommendation — he changes only what he disagrees with. An item he touches is recorded as his; one he lets ride is recorded as taken-as-proposed, so a sheet stopped halfway never hands over verdicts nobody read as though they were his. Jev now has one adjudication module covering CSR, CER and the Common CR Reference, with an independent second look on anything that merges. Next: run it on the CR Reference and score it against the 51 verdicts Sam already gave.",
  "items": [
+  {
+   "id": "s281-sam-item-10-change-of-mind",
+   "for": "Sam",
+   "tab": "cr-reference",
+   "text": "On the template sheet you folded item 10, which is item 30 from the 2026-09-20 sheet — one you had kept separate after the review. If that is a real change of mind, say so and it goes into the decisions table; otherwise it reads as demo-clicking and the reference stays as it is."
+  },
+  {
+   "id": "s281-sam-framing-parameter",
+   "for": "Sam",
+   "tab": "cr-reference",
+   "text": "You asked to delete the intro from decision sheets and it is gone. The framing sentence can still be switched back on per sheet, because putting it in the header was your own earlier ruling. Say the word and that option goes too."
+  },
+  {
+   "id": "s281-fable-jev-ccrr-score",
+   "for": "Fable",
+   "tab": "cr-reference",
+   "text": "Dispatch typesafe-smoke.yml with adjudicate: ccrr, then score Jev's answers against the 51 verdicts in kb/receipts/cr_reference_decisions_2026-09-20_s280.json. Score against by:\"sam\" rows ONLY — the sheet is opt-out now, so an untouched item carries the recommendation and scoring against it measures the default rather than the model. This is s279-fable-jev-variable-battery."
+  },
+  {
+   "id": "s281-fable-jev-ccr-trust-cards",
+   "for": "Fable",
+   "tab": "cr-reference",
+   "text": "Wire the CCR (the big kahuna) into kb/_jev_adjudicate.py once the CR Reference run has been scored. Its method half is _row_audit.py Trust Cards rather than a findings list, so it needs its own adapter and its own per-rule questions. Do not point an unvalidated routine at thousands of decisions."
+  },
   {
    "id": "s280-sam-decide-the-execute-sql-read-path",
    "for": "Sam",
@@ -21,12 +45,6 @@
    "for": "Sam",
    "tab": "cpl-assistant",
    "text": "Read Sierra's answer to a \"I have a CNA cert and live in <place>\" question in a browser. v73 should open by naming a college near you and the course to ask about — for the San Gabriel Valley that is Pasadena City NURS 102, Citrus VNRS 150 or Rio Hondo VN 61. No session can check this; the sandbox cannot reach Sierra's host."
-  },
-  {
-   "id": "s280-fable-decision-sheet-template-rec-is-the-focal-point",
-   "for": "Fable",
-   "tab": "cr-reference",
-   "text": "Sam, 2026-09-20: \"make your recommendation line more visually a focal point. I found myself saying yes to things that I later had to flip keep because I didn't pay attention to your rec.\" Rebuild the decision-sheet template (kb/_decision_sheet_replies.py + docs/reference/decision_sheets.md): the proposed disposition as a highlighted callout above the chips; the first chip confirms the proposal and names the action (Keep the fold / Pull out), never a bare Yes; Edit behind Other; undo as a toggle; the running total in outcome terms in the bottom bar; a stopping point every twenty items; the framing sentence in the header. Fold proposed by default, faculty pull out."
   },
   {
    "id": "s280-fable-ci-shard-and-run-only-what-the-diff-touches",
@@ -57,7 +75,9 @@
    "for": "Fable",
    "tab": "cpl-assistant",
    "text": "The words \"Surgical Tech\" match Los Angeles Trade Technical College, so Sierra treated it as the student's home college and measured everything from downtown LA instead of Orange County. Add tech, technical, technology and surgical to the word filter that already drops nurse, welding and firefighter. Small fix, corrects three errors."
-  },
+  }
+ ],
+ "_deferred": [
   {
    "id": "s278-fable-saddleback-surgical-tech-false-zero",
    "for": "Fable",
@@ -75,9 +95,7 @@
    "for": "Fable",
    "tab": "unified-courses",
    "text": "MEASURED PRE-EXISTING, not from the auth work. The SkyView browser sweep's \"one finger after the pinch still turns the sky (the registry is clean)\" fails identically on f66659c (226/227) and on the gating branch (230/231) - one finger after a two-finger spread does not turn the sky, so a pointer id is surviving the pinch. It came in with the ladder's three new script tags (team_phrase, cpl_session, reviewer_signin) or earlier; the pre-ladder page passed. Not CI-gating - the sweep is not in js-tests.yml - which is exactly why it will sit unnoticed. Look at pointercancel handling in the pointer registry."
-  }
- ],
- "_deferred": [
+  },
   {
    "id": "s277-fable-precedent-names-its-program",
    "for": "Fable",
