@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 484,
+   "count": 485,
    "docs": [
     {
      "created": "2026-08-14",
@@ -2750,6 +2750,22 @@
      "title": "A published asset with zero uptake is an outreach worklist, not a build backlog",
      "type": "methodology",
      "updated": "2026-08-05"
+    },
+    {
+     "created": "2026-09-21",
+     "governs": [],
+     "path": "docs/kb-notes/methodology-a-ranking-rule-is-a-claim-about-where-variance-lives.md",
+     "status": "internal",
+     "tags": [
+      "methodology",
+      "kb-note",
+      "ranking",
+      "prioritization",
+      "curation"
+     ],
+     "title": "A ranking rule is a claim about where variance lives \u2014 re-derive it per corpus",
+     "type": "methodology",
+     "updated": ""
     },
     {
      "created": "2026-09-04",
@@ -18318,5 +18334,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 951
+ "total": 952
 }
