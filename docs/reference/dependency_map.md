@@ -323,7 +323,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `cpl_theme.js` | pages: `CPL_Dashboard.html` | — |
 | `cpl_todos.js` | pages: `CPL_Dashboard.html` | — |
 | `cr_reference.js` | pages: `CPL_Dashboard.html` | — |
-| `cr_reference_decisions_<date>_s280.json` | scripts: `kb/_jev_adjudicate.py`, `kb/_jev_score.py` | — |
+| `cr_reference_decisions_<date>_s280.json` | scripts: `kb/_jev_adjudicate.py`, `kb/_jev_battery.py`, `kb/_jev_score.py` | — |
 | `credential_reference.js` | pages: `CPL_Dashboard.html` | — |
 | `csr_authority_codes_rulings_<date>.json` | scripts: `kb/_authority_recode_dryrun.py`, `kb/_seed_authority_codes.py` | — |
 | `dashboard_filters.js` | pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py` | — |
@@ -396,6 +396,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_fold_unclassified.py` | workflows: `daily-dashboard.yml` | — |
 | `kb/_identity_daily_check.py` | workflows: `map-users-sync.yml` | — |
 | `kb/_jev_adjudicate.py` | workflows: `typesafe-smoke.yml` | — |
+| `kb/_jev_battery.py` | workflows: `typesafe-smoke.yml` | — |
 | `kb/_match_cos_authority.py` | workflows: `cos-authority-sync.yml` | — |
 | `kb/_overmerge_apply.py` | workflows: `overmerge-apply.yml` | — |
 | `kb/_overmerge_apply_supabase.py` | workflows: `overmerge-apply.yml` | — |
@@ -681,6 +682,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/identities_rekey_test.py` | workflows: `js-tests.yml` | — |
 | `tests/install_prompt_guards_test.py` | workflows: `js-tests.yml` | — |
 | `tests/jev_adjudicate_test.py` | workflows: `js-tests.yml` | — |
+| `tests/jev_battery_test.py` | workflows: `js-tests.yml` | — |
 | `tests/js_suite_gate_test.py` | workflows: `js-tests.yml` | — |
 | `tests/kpi_history_no_gaps_test.py` | workflows: `js-tests.yml` | — |
 | `tests/legacy_anchor_duplicates_test.py` | workflows: `js-tests.yml` | — |
@@ -890,5 +892,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 491 file
-datasets · 145 external services · 350 consumers · 35 workflows · 37 tabs.
+Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 493 file
+datasets · 145 external services · 351 consumers · 35 workflows · 37 tabs.

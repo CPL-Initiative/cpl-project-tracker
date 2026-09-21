@@ -181,13 +181,51 @@ means "no large effect in 26 pairs", never "no signal"** — and a variable that
 does pass is carrying a big effect, which is exactly why one batch cannot
 confirm it and the script calls a pass a hypothesis.
 
-**NEXT:** dispatch `.github/workflows/typesafe-smoke.yml` with `battery: true`
-(26 calls). It scores itself on the way out. A variable that passes gets
-re-tested on a batch it did not pick before it goes anywhere near the routine;
-if nothing passes, the next move is a different KIND of evidence — member course
-titles, the units spread, TOP/CIP corroboration — never a seventh rephrasing of
-the same question. Only then CCR, whose method half emits Trust Cards rather
-than findings. The other 1,881 rung-5 groups wait on that.
+## THE BATTERY RAN, AND NOTHING PASSED (2026-09-21, run 35632754128)
+
+Receipt: `kb/receipts/jev_battery_2026-09-21_s281.json` — recorded there because
+an Actions log and artifact both age out.
+
+| | AUC | p | p(holm) |
+|---|---:|---:|---:|
+| **PRIMARY — any_reason** | **0.378** | 0.848 | — |
+| level | 0.738 | 0.023 | 0.138 |
+| vendor | 0.684 | 0.062 | 0.310 |
+| different_course | 0.537 | 0.384 | 1.000 |
+| lab | 0.459 | 0.640 | 1.000 |
+| scope | 0.366 | 0.871 | 1.000 |
+| units | 0.281 | 0.972 | 1.000 |
+
+⚠️ **THE PRIMARY IS BELOW CHANCE.** The battery is not weakly right, it is
+**backwards**: when Jev found a reason to hold two recommendations apart, Sam
+was MORE likely to fold them.
+
+⚠️ **`units` AT 0.281 IS INTERPRETABLE, NOT NOISE — AND THIS LANE PREDICTED IT.**
+The lane already rules that **units are NOT identity** (`SPAN 100` at 4/4.5/5 is
+one course; `Engine Performance` correctly merges 2/3-4/4/5). Jev applies the
+general-purpose assumption that an hours difference means a content difference,
+which is exactly the assumption CPL has decided against. A general model brings
+general priors, and where the domain has overruled one, the model's confidence
+runs the wrong way.
+
+⚠️ **`level` IS THE ONE LEAD, AND THE PRE-REGISTRATION IS WHY IT IS NOT A
+FINDING.** Right direction, largest effect, raw p 0.023 — reportable as "level
+works" by anyone who had not fixed the rule first. Six questions at once yield
+about one good-looking result by luck; Holm puts it at 0.138. It earns ONE
+targeted re-test on a batch it did not pick, pre-registered as a single
+hypothesis. It does not earn a re-analysis of these 26 rows.
+
+**WHAT DID NOT FAIL:** the 0.85 gate on the original question — 25 of 25, 346
+articulation rows, nothing wrong in it. The failure is confined to the 26 hard
+pairs, and those are where curator judgment IS the product rather than a cost to
+be automated away.
+
+**NEXT:** harvest the value that exists rather than chase the band. The gate is
+validated, so run the adjudicator across the rung-5 population and take the
+above-gate suggestions; put the band on a decision sheet. Giving Jev a different
+KIND of evidence (member course titles, the units spread, what other colleges did
+with the same pair) is the only version of "ask again" worth spending calls on —
+never a seventh rephrasing of the same question against the same two strings.
 
 **Where Jev fits beyond this lane, and the gates each use carries:**
 [`reference-system-one-model-fit-by-lane`](../../kb-notes/reference-system-one-model-fit-by-lane.md) (S280, 2026-09-20).
