@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The decision sheet, rebuilt</title>
+<style>
+  /* First Light v1.6 tokens — values from prototype/first_light_theme_v1.html.
+     A light identity, painted explicitly; every surface and color is a token. */
+  :root {
+    --paper: #F4F2ED; --text-strong: #1C1C1A; --text-body: #3A3A36; --text-muted: #5C5C55;
+    --surface-opaque: #FFFFFF; --surface-subtle: #F7F5F1;
+    --border: rgba(28,28,26,.14); --border-strong: rgba(28,28,26,.30);
+    --cobalt: #0047AB; --seal-blue: #002F6D; --mustard-text: #8B6800;
+    --rec-tint: #E8EFF8; --rest-tint: #FDF6E3;
+    --focus-ring: var(--cobalt); --radius: 14px;
+  }
+  html { color-scheme: light; }
+  body { background: var(--paper); color: var(--text-body);
+    font-family: 'Source Sans 3', Arial, sans-serif; font-size: 16px; line-height: 1.55;
+    margin: 0; padding: 0 16px 64px; }
+  .wrap { max-width: var(--cpl-measure, 780px); margin: 0 auto; }
+  a { color: var(--cobalt); }
+  :focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 2px; border-radius: 4px; }
+  .skip { position: absolute; left: -9999px; top: 0; background: var(--surface-opaque);
+    color: var(--cobalt); padding: 8px 14px; z-index: 10; }
+  .skip:focus { left: 8px; }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+  h1 { font-family: 'Playfair Display', Georgia, serif; color: var(--text-strong); text-wrap: balance;
+    font-size: clamp(1.7rem, 5vw, 2.4rem); line-height: 1.15; margin: 34px 0 8px; }
+  h2 { font-family: 'Playfair Display', Georgia, serif; color: var(--text-strong);
+    font-size: 1.25rem; margin: 36px 0 4px; }
+  h3 { font-size: 1.05rem; font-weight: 700; color: var(--text-strong); margin: 0; }
+  .card { background: var(--surface-opaque); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 16px 20px; margin: 16px 0; }
+  .card .ref { color: var(--text-muted); font-size: .84rem; margin: 2px 0 10px; }
+  .card dl { margin: 0; }
+  .card dt { font-size: .72rem; text-transform: uppercase; letter-spacing: .08em;
+    font-weight: 700; color: var(--text-muted); margin-top: 10px; }
+  .card dd { margin: 2px 0 0; }
+  .howto { background: var(--surface-opaque); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 16px 20px; margin: 22px 0 8px; }
+  .howto p { margin: 6px 0; }
+  @media (max-width: 560px) { .card { padding: 14px; } }
+/* replies:css:start */
+  .submit { background: var(--surface-opaque, #FFFFFF); border: 1px solid var(--border-strong, rgba(28,28,26,.30));
+    border-radius: 14px; padding: 18px 20px; margin: 28px 0 8px; }
+  .submit h2 { margin: 0 0 4px; font-size: 1.15rem; }
+  .submit-note { margin: 0 0 12px; color: var(--text-body, #3A3A36); font-size: .95rem; }
+  /* #FFFFFF on #002F6D is 12.90:1. The fallback is load-bearing: without it an
+     undefined token leaves the background transparent and paints white on the
+     card's white, the 2026-09-06 failure. */
+  .submit-btn { font: inherit; font-size: 1rem; font-weight: 700; min-height: 44px; padding: 10px 22px;
+    border: 1px solid var(--seal-blue, #002F6D); border-radius: 8px;
+    background: var(--seal-blue, #002F6D); color: #FFFFFF; cursor: pointer; }
+  .submit-btn:hover { background: var(--cobalt, #0047AB); border-color: var(--cobalt, #0047AB); }
+  .submit-btn[disabled] { opacity: .6; cursor: default; }
+  .submit-state { margin: 10px 0 0; font-size: .9rem; color: var(--text-body, #3A3A36); min-height: 1em; }
+
+  /* ── replies: chips, a note, a follow-up flag (Sam, 2026-09-05) ── */
+  .reply { margin: 12px 0 0; padding-top: 10px; border-top: 1px dashed var(--border); }
+  .reply-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .reply-lbl { font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; font-weight: 700;
+    color: var(--text-muted); margin-right: 4px; }
+  .reply-chip { font: inherit; font-size: .86rem; font-weight: 600; min-height: 30px; padding: 3px 12px;
+    border: 1px solid var(--border-strong); border-radius: 6px; background: var(--surface-opaque);
+    color: var(--text-body); cursor: pointer; }
+  .reply-chip:hover { background: var(--surface-subtle); }
+  /* ⚠️ --seal-blue is a First Light token the HOST SHEET may not define — this
+     block has to stand on its own. Without the fallback the declaration is
+     invalid at computed-value time, background falls back to transparent, and
+     `color:#fff` paints white on the card's white: 1.00:1, so the SELECTED
+     chip is invisible and the reader cannot see which verdict they picked.
+     Measured 2026-09-06 on the seven-open-calls sheet. #002F6D on white is
+     12.90:1. */
+  .reply-chip[aria-pressed="true"] { background: var(--seal-blue, #002F6D); border-color: var(--seal-blue, #002F6D); color: #fff; }
+  .reply-chip.reply-fu { margin-left: auto; }
+
+  /* ── the proposal, above the chips ───────────────────────────────────────
+     Sam, 2026-09-20: "make your recommendation line more visually a focal
+     point. I found myself saying yes to things that I later had to flip keep
+     because I didn't pay attention to your rec." On the 51-item sheet the
+     proposal was a <dd> in the same gray as the facts, and he read past it
+     sixteen times. Here it is a tinted panel with its own rule and its own
+     label word, so the eye lands on it before it reaches the chips.
+     ⚠️ Every token carries a LITERAL FALLBACK: this block travels with the
+     module into sheets that may define none of them, and a declaration that
+     is invalid at computed-value time falls back to transparent — the same
+     failure that painted a selected chip white on white in 2026-09-06.
+     Measured on the fallbacks: #1C1C1A on #E8EFF8 is 14.74:1, the label
+     #002F6D on #E8EFF8 is 11.14:1. The rule and the label word are both
+     non-color signals, so the callout never depends on the tint alone. */
+  .reply-rec { margin: 0 0 10px; padding: 9px 13px; border-radius: 8px;
+    background: var(--rec-tint, #E8EFF8); border-left: 4px solid var(--seal-blue, #002F6D);
+    color: var(--text-strong, #1C1C1A); font-size: 1rem; line-height: 1.5; }
+  .reply-rec-lbl { display: block; font-size: .72rem; text-transform: uppercase;
+    letter-spacing: .08em; font-weight: 700; color: var(--seal-blue, #002F6D); margin-bottom: 2px; }
+  .reply-rec-text { font-weight: 600; }
+  .reply-rec strong { font-weight: 700; }
+  /* The promoted pair inside a <dl>: an HTML5 dl may group dt/dd in a div, so
+     the panel is the group itself and the two rows lose their own margins. */
+  .reply-rec-dl { margin: 14px 0 0; }
+  .reply-rec-dl dt.reply-rec-lbl, .reply-rec-dl dd.reply-rec-text { margin: 0; padding: 0; }
+  .reply-rec-dl dd.reply-rec-text { font-weight: 600; margin-left: 0; }
+
+  /* Other: the rarer verdicts, out of the way until they are wanted. */
+  .reply-more-row { flex: 1 1 100%; display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+  .reply-more-row[hidden] { display: none; }
+
+  /* A stopping point every twenty items (Sam, 2026-09-20: "Making decisions
+     is taxing and only so many can be made before people bail out"). It says
+     the replies are saved, so leaving reads as a sitting that ended. */
+  .reply-rest { margin: 26px 0; padding: 11px 15px; border-radius: 8px;
+    background: var(--rest-tint, #FDF6E3); border: 1px solid var(--border-strong, rgba(28,28,26,.30));
+    color: var(--text-strong, #1C1C1A); font-size: .95rem; }
+  .sheet-framing { font-size: 1.05rem; color: var(--text-strong, #1C1C1A); margin: 0 0 6px; }
+  .sheet-framing-worth { font-size: .9rem; color: var(--text-muted, #5C5C55); margin: 0 0 18px; }
+  .reply-rest-lbl { display: block; font-size: .72rem; text-transform: uppercase;
+    letter-spacing: .08em; font-weight: 700; color: var(--mustard-text, #8B6800); margin-bottom: 2px; }
+  .reply-notelbl { display: block; font-size: .78rem; color: var(--text-muted); margin: 8px 0 3px; }
+  .reply-note { width: 100%; box-sizing: border-box; font: inherit; font-size: .92rem; padding: 7px 9px;
+    border: 1px solid var(--border-strong); border-radius: 6px; background: var(--surface-opaque);
+    color: var(--text-body); resize: vertical; min-height: 34px; }
+  .reply-state { margin: 4px 0 0; font-size: .76rem; color: var(--text-muted); min-height: 1em; }
+  .reply-compact { margin-top: 8px; padding-top: 8px; }
+  .glist li .reply { margin: 6px 0 4px; padding-top: 6px; border-top: 1px dotted var(--border); }
+  .glist li .reply-chip { font-size: .8rem; min-height: 26px; padding: 2px 9px; }
+  .glist li .reply-note { font-size: .86rem; min-height: 30px; }
+  .glist li .reply-lbl { font-size: .66rem; }
+  .reply-compact .reply-notelbl { position: absolute; left: -9999px; }
+  .reply-compact .reply-note { margin-top: 6px; }
+  .reply-compact .reply-rec { font-size: .92rem; padding: 7px 10px; margin-bottom: 7px; }
+  ol.done li { position: relative; }
+  .reply-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 5; background: var(--surface-opaque);
+    border-top: 1px solid var(--border-strong); padding: 8px 16px; display: flex; flex-wrap: wrap;
+    gap: 6px 14px; align-items: center; font-size: .9rem; box-shadow: 0 -6px 18px rgba(28,28,26,.08); }
+  .reply-count { font-weight: 700; color: var(--text-strong); font-variant-numeric: tabular-nums; }
+  .reply-outcome { font-weight: 600; color: var(--seal-blue, #002F6D); font-variant-numeric: tabular-nums;
+    font-size: .88rem; }
+  .reply-where { color: var(--text-muted); font-size: .82rem; flex: 1 1 240px; }
+  .reply-show { margin: 0; flex: 1 1 100%; }
+  .reply-show summary { font-size: .82rem; padding: 2px 0; }
+  .reply-line { width: 100%; box-sizing: border-box; font: inherit; font-size: .86rem; padding: 6px 8px;
+    border: 1px solid var(--border-strong); border-radius: 6px; background: var(--surface-subtle); color: var(--text-body); }
+  body { padding-bottom: 120px; }
+  @media (max-width: 560px) { .reply-chip { padding: 3px 9px; } .reply-chip.reply-fu { margin-left: 0; } }
+/* replies:css:end */</style>
+</head>
+<body>
+<a class="skip" href="#items">Skip to the decisions</a>
+<main class="wrap">
+<h1>The decision sheet, rebuilt</h1>
+
+<section class="group" id="items">
+<article class="card" id="i1" data-rows="14">
+<h3>1 &middot; SPAN 100 — Elementary Spanish I</h3>
+<p class="ref">reference: item 26 on the 2026-09-20 sheet</p>
+<dl>
+<dt>What this is</dt><dd>A college wrote <strong>&ldquo;5 hours in Spanish 1&rdquo;</strong>. The published statewide line reads <strong>&ldquo;4 hours in Elementary Spanish I&rdquo;</strong>. Carries <strong>14 articulation rows</strong> across 6 colleges.</dd>
+<dt>Why</dt><dd>Jev put the probability they are the same at <strong>0.84</strong>. You ruled on this one first as keep and then flipped it to fold, which is the reversal this template is built to prevent.</dd>
+<div class="reply-rec reply-rec-dl"><dt class="reply-rec-lbl">What I propose</dt><dd class="reply-rec-text">Fold this wording into the published line. One recommendation where there are two, and 14 articulation rows collapse. <em>It might be wrong if</em> the two lines differ in level or scope rather than wording.</dd></div></dl>
+<!-- replies:start --><div class="reply" data-item="1" data-ref="item 26 on the 2026-09-20 sheet" data-title="1 &amp;middot; SPAN 100 — Elementary Spanish I" data-kind="item" data-parent="" data-default="fold" data-rows="14"><div class="reply-row" role="group" aria-label="Your reply to item 1"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="fold" aria-pressed="true">Keep the fold</button><button type="button" class="reply-chip" data-v="keep" aria-pressed="false">Pull out</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-more" aria-expanded="false" aria-controls="more-1">Other</button><div class="reply-more-row" id="more-1" role="group" aria-label="Other replies to item 1" hidden><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button></div><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-1">Notes for the session</label><textarea id="note-1" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+<article class="card" id="i2" data-rows="7">
+<h3>2 &middot; MATH 110 — Introduction to Statistics</h3>
+<p class="ref">reference: item 27 on the 2026-09-20 sheet</p>
+<dl>
+<dt>What this is</dt><dd>A college wrote <strong>&ldquo;4 hours in Elementary Statistics&rdquo;</strong>. The published statewide line reads <strong>&ldquo;4 hours in Introduction to Statistics&rdquo;</strong>. Carries <strong>7 articulation rows</strong> across 7 colleges.</dd>
+<dt>Why</dt><dd>Jev put the probability they are the same at <strong>0.84</strong>. You ruled on this one first as keep and then flipped it to fold, which is the reversal this template is built to prevent.</dd>
+<div class="reply-rec reply-rec-dl"><dt class="reply-rec-lbl">What I propose</dt><dd class="reply-rec-text">Fold this wording into the published line. One recommendation where there are two, and 7 articulation rows collapse. <em>It might be wrong if</em> the two lines differ in level or scope rather than wording.</dd></div></dl>
+<!-- replies:start --><div class="reply" data-item="2" data-ref="item 27 on the 2026-09-20 sheet" data-title="2 &amp;middot; MATH 110 — Introduction to Statistics" data-kind="item" data-parent="" data-default="fold" data-rows="7"><div class="reply-row" role="group" aria-label="Your reply to item 2"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="fold" aria-pressed="true">Keep the fold</button><button type="button" class="reply-chip" data-v="keep" aria-pressed="false">Pull out</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-more" aria-expanded="false" aria-controls="more-2">Other</button><div class="reply-more-row" id="more-2" role="group" aria-label="Other replies to item 2" hidden><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button></div><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-2">Notes for the session</label><textarea id="note-2" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+<article class="card" id="i3" data-rows="5">
+<h3>3 &middot; SPAN 110 — Elementary Spanish II</h3>
+<p class="ref">reference: item 28 on the 2026-09-20 sheet</p>
+<dl>
+<dt>What this is</dt><dd>A college wrote <strong>&ldquo;5 hours in BEGINNING SPANISH II&rdquo;</strong>. The published statewide line reads <strong>&ldquo;4 hours in Elementary Spanish II&rdquo;</strong>. Carries <strong>5 articulation rows</strong> across 5 colleges.</dd>
+<dt>Why</dt><dd>Jev put the probability they are the same at <strong>0.84</strong>. You ruled on this one first as keep and then flipped it to fold, which is the reversal this template is built to prevent.</dd>
+<div class="reply-rec reply-rec-dl"><dt class="reply-rec-lbl">What I propose</dt><dd class="reply-rec-text">Fold this wording into the published line. One recommendation where there are two, and 5 articulation rows collapse. <em>It might be wrong if</em> the two lines differ in level or scope rather than wording.</dd></div></dl>
+<!-- replies:start --><div class="reply" data-item="3" data-ref="item 28 on the 2026-09-20 sheet" data-title="3 &amp;middot; SPAN 110 — Elementary Spanish II" data-kind="item" data-parent="" data-default="fold" data-rows="5"><div class="reply-row" role="group" aria-label="Your reply to item 3"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="fold" aria-pressed="true">Keep the fold</button><button type="button" class="reply-chip" data-v="keep" aria-pressed="false">Pull out</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-more" aria-expanded="false" aria-controls="more-3">Other</button><div class="reply-more-row" id="more-3" role="group" aria-label="Other replies to item 3" hidden><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button></div><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-3">Notes for the session</label><textarea id="note-3" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+<article class="card" id="i4" data-rows="4">
+<h3>4 &middot; COMP 122 — Programming Concepts and Methodology I</h3>
+<p class="ref">reference: item 29 on the 2026-09-20 sheet</p>
+<dl>
+<dt>What this is</dt><dd>A college wrote <strong>&ldquo;3 hours in Problem Solving and Programming 1&rdquo;</strong>. The published statewide line reads <strong>&ldquo;3 hours in Programming Concepts and Methodology I&rdquo;</strong>. Carries <strong>4 articulation rows</strong> across 3 colleges.</dd>
+<dt>Why</dt><dd>Jev put the probability they are the same at <strong>0.84</strong>. You ruled on this one first as keep and then flipped it to fold, which is the reversal this template is built to prevent.</dd>
+<div class="reply-rec reply-rec-dl"><dt class="reply-rec-lbl">What I propose</dt><dd class="reply-rec-text">Fold this wording into the published line. One recommendation where there are two, and 4 articulation rows collapse. <em>It might be wrong if</em> the two lines differ in level or scope rather than wording.</dd></div></dl>
+<!-- replies:start --><div class="reply" data-item="4" data-ref="item 29 on the 2026-09-20 sheet" data-title="4 &amp;middot; COMP 122 — Programming Concepts and Methodology I" data-kind="item" data-parent="" data-default="fold" data-rows="4"><div class="reply-row" role="group" aria-label="Your reply to item 4"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="fold" aria-pressed="true">Keep the fold</button><button type="button" class="reply-chip" data-v="keep" aria-pressed="false">Pull out</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-more" aria-expanded="false" aria-controls="more-4">Other</button><div class="reply-more-row" id="more-4" role="group" aria-label="Other replies to item 4" hidden><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button></div><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-4">Notes for the session</label><textarea id="note-4" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+<article class="card" id="i5" data-rows="7">
+<h3>5 &middot; SPAN 110 — Elementary Spanish II</h3>
+<p class="ref">reference: item 32 on the 2026-09-20 sheet</p>
+<dl>
+<dt>What this is</dt><dd>A college wrote <strong>&ldquo;5 hours in Elementary Spanish 2&rdquo;</strong>. The published statewide line reads <strong>&ldquo;4 hours in Elementary Spanish II&rdquo;</strong>. Carries <strong>7 articulation rows</strong> across 5 colleges.</dd>
+<dt>Why</dt><dd>Jev put the probability they are the same at <strong>0.79</strong>. You ruled on this one first as keep and then flipped it to fold, which is the reversal this template is built to prevent.</dd>
+<div class="reply-rec reply-rec-dl"><dt class="reply-rec-lbl">What I propose</dt><dd class="reply-rec-text">Fold this wording into the published line. One recommendation where there are two, and 7 articulation rows collapse. <em>It might be wrong if</em> the two lines differ in level or scope rather than wording.</dd></div></dl>
+<!-- replies:start --><div class="reply" data-item="5" data-ref="item 32 on the 2026-09-20 sheet" data-title="5 &amp;middot; SPAN 110 — Elementary Spanish II" data-kind="item" data-parent="" data-default="fold" data-rows="7"><div class="reply-row" role="group" aria-label="Your reply to item 5"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="fold" aria-pressed="true">Keep the fold</button><button type="button" class="reply-chip" data-v="keep" aria-pressed="false">Pull out</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-more" aria-expanded="false" aria-controls="more-5">Other</button><div class="reply-more-row" id="more-5" role="group" aria-label="Other replies to item 5" hidden><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button></div><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-5">Notes for the session</label><textarea id="note-5" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+<article class="card" id="i6" data-rows="2">
+<h3>6 &middot; MATH 110 — Introduction to Statistics</h3>
+<p class="ref">reference: item 35 on the 2026-09-20 sheet</p>
+<dl>
+<dt>What this is</dt><dd>A college wrote <strong>&ldquo;4 hours in Introduction to Probability and Statistics&rdquo;</strong>. The published statewide line reads <strong>&ldquo;4 hours in Introduction to Statistics&rdquo;</strong>. Carries <strong>2 articulation rows</strong> across 2 colleges.</dd>
+<dt>Why</dt><dd>Jev put the probability they are the same at <strong>0.75</strong>. You ruled on this one first as keep and then flipped it to fold, which is the reversal this template is built to prevent.</dd>
+<div class="reply-rec reply-rec-dl"><dt class="reply-rec-lbl">What I propose</dt><dd class="reply-rec-text">Fold this wording into the published line. One recommendation where there are two, and 2 articulation rows collapse. <em>It might be wrong if</em> the two lines differ in level or scope rather than wording.</dd></div></dl>
+<!-- replies:start --><div class="reply" data-item="6" data-ref="item 35 on the 2026-09-20 sheet" data-title="6 &amp;middot; MATH 110 — Introduction to Statistics" data-kind="item" data-parent="" data-default="fold" data-rows="2"><div class="reply-row" role="group" aria-label="Your reply to item 6"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="fold" aria-pressed="true">Keep the fold</button><button type="button" class="reply-chip" data-v="keep" aria-pressed="false">Pull out</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-more" aria-expanded="false" aria-controls="more-6">Other</button><div class="reply-more-row" id="more-6" role="group" aria-label="Other replies to item 6" hidden><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button></div><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-6">Notes for the session</label><textarea id="note-6" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+<article class="card" id="i7" data-rows="1">
+<h3>7 &middot; KIN 101 — First Aid, CPR and AED</h3>
+<p class="ref">reference: item 37 on the 2026-09-20 sheet</p>
+<dl>
+<dt>What this is</dt><dd>A college wrote <strong>&ldquo;3 hours in Community First Aid &amp; Safety&rdquo;</strong>. The published statewide line reads <strong>&ldquo;3 hours in First Aid, CPR and AED&rdquo;</strong>. Carries <strong>1 articulation row</strong> across 1 college.</dd>
+<dt>Why</dt><dd>Jev put the probability they are the same at <strong>0.73</strong>. You ruled on this one first as keep and then flipped it to fold, which is the reversal this template is built to prevent.</dd>
+<div class="reply-rec reply-rec-dl"><dt class="reply-rec-lbl">What I propose</dt><dd class="reply-rec-text">Fold this wording into the published line. One recommendation where there are two, and 1 articulation row collapse. <em>It might be wrong if</em> the two lines differ in level or scope rather than wording.</dd></div></dl>
+<!-- replies:start --><div class="reply" data-item="7" data-ref="item 37 on the 2026-09-20 sheet" data-title="7 &amp;middot; KIN 101 — First Aid, CPR and AED" data-kind="item" data-parent="" data-default="fold" data-rows="1"><div class="reply-row" role="group" aria-label="Your reply to item 7"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="fold" aria-pressed="true">Keep the fold</button><button type="button" class="reply-chip" data-v="keep" aria-pressed="false">Pull out</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-more" aria-expanded="false" aria-controls="more-7">Other</button><div class="reply-more-row" id="more-7" role="group" aria-label="Other replies to item 7" hidden><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button></div><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-7">Notes for the session</label><textarea id="note-7" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+<article class="card" id="i8" data-rows="72">
+<h3>8 &middot; AJ 220 — Juvenile Procedures</h3>
+<p class="ref">reference: item 38 on the 2026-09-20 sheet</p>
+<dl>
+<dt>What this is</dt><dd>A college wrote <strong>&ldquo;3 hours in Juvenile Procedures&rdquo;</strong>. The published statewide line reads <strong>&ldquo;3 hours in Juvenile Law and Procedures&rdquo;</strong>. Carries <strong>72 articulation rows</strong> across 15 colleges.</dd>
+<dt>Why</dt><dd>Jev put the probability they are the same at <strong>0.7</strong>. You ruled on this one first as keep and then flipped it to fold, which is the reversal this template is built to prevent.</dd>
+<div class="reply-rec reply-rec-dl"><dt class="reply-rec-lbl">What I propose</dt><dd class="reply-rec-text">Fold this wording into the published line. One recommendation where there are two, and 72 articulation rows collapse. <em>It might be wrong if</em> the two lines differ in level or scope rather than wording.</dd></div></dl>
+<!-- replies:start --><div class="reply" data-item="8" data-ref="item 38 on the 2026-09-20 sheet" data-title="8 &amp;middot; AJ 220 — Juvenile Procedures" data-kind="item" data-parent="" data-default="fold" data-rows="72"><div class="reply-row" role="group" aria-label="Your reply to item 8"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="fold" aria-pressed="true">Keep the fold</button><button type="button" class="reply-chip" data-v="keep" aria-pressed="false">Pull out</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-more" aria-expanded="false" aria-controls="more-8">Other</button><div class="reply-more-row" id="more-8" role="group" aria-label="Other replies to item 8" hidden><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button></div><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-8">Notes for the session</label><textarea id="note-8" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+<article class="card" id="i9" data-rows="1">
+<h3>9 &middot; PSY 110 — Introductory Psychology</h3>
+<p class="ref">reference: item 1 on the 2026-09-20 sheet</p>
+<dl>
+<dt>What this is</dt><dd>A college wrote <strong>&ldquo;3 hours in Introductory Psychology&rdquo;</strong>. The published statewide line reads <strong>&ldquo;3 hours in Introduction to Psychology&rdquo;</strong>. Carries <strong>1 articulation row</strong> across 1 college.</dd>
+<dt>Why</dt><dd>Jev put the probability they are the same at <strong>0.96</strong>. You folded it first time.</dd>
+<div class="reply-rec reply-rec-dl"><dt class="reply-rec-lbl">What I propose</dt><dd class="reply-rec-text">Fold this wording into the published line. One recommendation where there are two, and 1 articulation row collapse. <em>It might be wrong if</em> the two lines differ in level or scope rather than wording.</dd></div></dl>
+<!-- replies:start --><div class="reply" data-item="9" data-ref="item 1 on the 2026-09-20 sheet" data-title="9 &amp;middot; PSY 110 — Introductory Psychology" data-kind="item" data-parent="" data-default="fold" data-rows="1"><div class="reply-row" role="group" aria-label="Your reply to item 9"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="fold" aria-pressed="true">Keep the fold</button><button type="button" class="reply-chip" data-v="keep" aria-pressed="false">Pull out</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-more" aria-expanded="false" aria-controls="more-9">Other</button><div class="reply-more-row" id="more-9" role="group" aria-label="Other replies to item 9" hidden><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button></div><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-9">Notes for the session</label><textarea id="note-9" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+<article class="card" id="i10" data-rows="3">
+<h3>10 &middot; ACCT 110 — Financial Accounting</h3>
+<p class="ref">reference: item 30 on the 2026-09-20 sheet</p>
+<dl>
+<dt>What this is</dt><dd>A college wrote <strong>&ldquo;5 hours in Financial Accounting I&rdquo;</strong>. The published statewide line reads <strong>&ldquo;4.5 hours in Financial Accounting&rdquo;</strong>. Carries <strong>3 articulation rows</strong> across 3 colleges.</dd>
+<dt>Why</dt><dd>Jev put the probability they are the same at <strong>0.82</strong>. You held it separate, and it stayed separate.</dd>
+<div class="reply-rec reply-rec-dl"><dt class="reply-rec-lbl">What I propose</dt><dd class="reply-rec-text">Fold this wording into the published line. One recommendation where there are two, and 3 articulation rows collapse. <em>It might be wrong if</em> the two lines differ in level or scope rather than wording.</dd></div></dl>
+<!-- replies:start --><div class="reply" data-item="10" data-ref="item 30 on the 2026-09-20 sheet" data-title="10 &amp;middot; ACCT 110 — Financial Accounting" data-kind="item" data-parent="" data-default="fold" data-rows="3"><div class="reply-row" role="group" aria-label="Your reply to item 10"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="fold" aria-pressed="true">Keep the fold</button><button type="button" class="reply-chip" data-v="keep" aria-pressed="false">Pull out</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-more" aria-expanded="false" aria-controls="more-10">Other</button><div class="reply-more-row" id="more-10" role="group" aria-label="Other replies to item 10" hidden><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button></div><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-10">Notes for the session</label><textarea id="note-10" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article><!-- replies:start --><section class="submit" aria-labelledby="submit-h"><h2 id="submit-h">Done?</h2><p class="submit-note" id="submit-note">Every reply is saved as you make it. Press Complete when you have finished, and the session is told the sheet is done.</p><button type="button" class="submit-btn" id="submit-btn">Complete</button><p class="submit-state" id="submit-state" aria-live="polite"></p></section><!-- replies:end -->
+</section>
+</main>
+<!-- replies:start --><div class="reply-bar" id="reply-bar" role="region" aria-label="Your replies so far"><span class="reply-count" id="reply-count">0 replied</span><span class="reply-outcome" id="reply-outcome"></span><span class="reply-where" id="reply-where"></span><button type="button" class="reply-chip reply-copy" id="reply-copy">Copy replies</button><details class="reply-show"><summary>Show the reply line</summary><textarea id="reply-line" class="reply-line" rows="4" readonly aria-label="The reply line, ready to paste"></textarea></details></div>
+<script>
+(function(){
+  "use strict";
+  var SHEET = "2026-09-21-decision-sheet-template";
+  var LS = "sheet-replies:" + SHEET;
+  var els = Array.prototype.slice.call(document.querySelectorAll(".reply[data-item]"));
+  if (!els.length) return;
+  var state = {};        // item -> {item, ref, title, v, note, fu, t}; always this page's own objects
+  var col = null;        // the artifact's shared store, once this view can reach it
+  var where = "local";   // "db" once the store answers
+  var pending = {};      // item -> "saving" | "failed" | ""
+  var saved = {};        // item -> the `t` the store is known to hold
+
+  // What a snapshot delivers is FROZEN (the store's contract: "clone a body
+  // before editing it for a write"). The first version adopted the echoed body
+  // as state and assigned into it; outside strict mode the assignment is
+  // silently ignored, so from an item's first save on, every click painted
+  // nothing and wrote the unchanged document back (Sam, 2026-09-05: "I click
+  // Follow Up and it doesn't turn blue but does say response was saved").
+  // copy() means state is never the store's object; strict mode makes any
+  // such write throw instead of pass.
+  function copy(r){ var o = {}; if (r) for (var k in r) if (Object.prototype.hasOwnProperty.call(r, k)) o[k] = r[k]; return o; }
+
+  function read(){ try { var s = JSON.parse(localStorage.getItem(LS) || "{}"); if (s && typeof s === "object") state = s; } catch (e) {} }
+  function keep(){ try { localStorage.setItem(LS, JSON.stringify(state)); } catch (e) {} }
+  function byItem(item){ for (var i = 0; i < els.length; i++) if (els[i].getAttribute("data-item") === item) return els[i]; return null; }
+  function rec(item){
+    if (state[item]) return copy(state[item]);
+    var el = byItem(item);
+    return { item: item, ref: el ? el.getAttribute("data-ref") : "", title: el ? el.getAttribute("data-title") : "", v: "", note: "", fu: false };
+  }
+  function empty(r){ return !r || (!r.v && !r.fu && !r.note); }
+  // ⚠️ TWO STATES PER ITEM, AND THEY MUST NEVER COLLAPSE (Sam's opt-out, 2026-09-21).
+  // An item CARRYING THE PROPOSAL has no stored reply; an item a person RULED ON
+  // has one. They look the same on screen — that is the point of opt-out — so
+  // everything that counts, reports or hands over reads `state`, never the
+  // painted chip. Collapsing them is how a sheet stopped at item 30 would hand
+  // over 21 verdicts nobody read.
+  function dflt(item){ var el = byItem(item); return el ? (el.getAttribute("data-default") || "") : ""; }
+  function verdict(item){ var r = state[item]; return r && r.v ? r.v : dflt(item); }
+  function ruled(item){ var r = state[item]; return !!(r && !empty(r)); }
+  function chipWord(el, v){
+    var bs = el ? el.querySelectorAll(".reply-chip[data-v]") : [];
+    for (var i = 0; i < bs.length; i++) if (bs[i].getAttribute("data-v") === v) return bs[i].textContent;
+    return v;
+  }
+  function words(el, r){
+    var w = [];
+    if (r.v) w.push(chipWord(el, r.v));
+    if (r.fu) w.push("follow up");
+    if (r.note) w.push("a note");
+    return w.join(", ");
+  }
+  function stateWords(el, item, r){
+    if (empty(r)) {
+      var d = dflt(item);
+      // Say it is the proposal and not an answer, or the reader cannot tell
+      // a chip they set from one that was set for them.
+      return d ? "Proposed: " + chipWord(el, d) + ". Change it if needed — it stands as it is." : "";
+    }
+    if (pending[item] === "saving") return "Saving…";
+    if (pending[item] === "failed") return "Could not save to the sheet; kept in this browser. Use Copy replies.";
+    var w = words(el, r);
+    // Undo is the same chip pressed again -- say so, or it is not discoverable.
+    var undo = r.v ? " Press it again to undo." : "";
+    return where === "db" ? "Your call: " + w + "." + undo
+                          : "Your call, in this browser only: " + w + ". Use Copy replies to send it." + undo;
+  }
+  function paint(el){
+    if (!el) return;
+    var item = el.getAttribute("data-item"), r = state[item] || {};
+    var shown = r.v || (empty(r) ? dflt(item) : "");
+    Array.prototype.forEach.call(el.querySelectorAll(".reply-chip[data-v]"), function(b){
+      b.setAttribute("aria-pressed", shown && shown === b.getAttribute("data-v") ? "true" : "false");
+    });
+    var fu = el.querySelector(".reply-fu"); if (fu) fu.setAttribute("aria-pressed", r.fu ? "true" : "false");
+    // A verdict that lives behind Other has to be VISIBLE once it is chosen --
+    // a selected chip inside a hidden row is a reply the reader cannot see, the
+    // same failure as the chip that painted white on white.
+    var moreRow = el.querySelector(".reply-more-row"), moreBtn = el.querySelector(".reply-more");
+    if (moreRow && moreBtn && r.v && moreRow.querySelector('.reply-chip[data-v="' + r.v + '"]')) {
+      moreRow.hidden = false; moreBtn.setAttribute("aria-expanded", "true");
+    }
+    var note = el.querySelector(".reply-note");
+    if (note && document.activeElement !== note && (r.note || "") !== note.value) note.value = r.note || "";
+    var st = el.querySelector(".reply-state"); if (st) st.textContent = stateWords(el, item, r);
+  }
+  function paintAll(){ els.forEach(paint); bar(); }
+  // ⚠️ QUALITY GOES IN THE SCORE, NEVER CLICKS (Sam, 2026-09-20, agreeing with
+  // the pushback: "Good pushback--agree!"). A reversal is a verdict REPLACED by
+  // a different verdict -- the sixteen flips on the Jev sheet were the signal
+  // that the proposal was not being read. Clearing a chip is an undo and is not
+  // a reversal; neither is a first answer. The count rides with the reply, so
+  // the session reads which items the reader changed their mind on.
+  function set(item, patch){
+    var r = rec(item), was = r.v || "";
+    for (var k in patch) if (Object.prototype.hasOwnProperty.call(patch, k)) r[k] = patch[k];
+    if (Object.prototype.hasOwnProperty.call(patch, "v") && was && patch.v && patch.v !== was) {
+      r.flips = (r.flips || 0) + 1;
+      r.was = was;
+    }
+    r.t = new Date().toISOString();
+    r.by = "sam";                       // a stored reply is always a person's
+    // Undoing the last thing on an item returns it to CARRYING THE PROPOSAL,
+    // rather than leaving a stored reply with an empty verdict — which would
+    // read as a deliberate blank and is a different claim.
+    if (empty(r) && dflt(item)) { del(item); return; }
+    state[item] = r; keep();
+    paint(byItem(item)); bar(); push(item);
+  }
+  function del(item){
+    delete state[item]; keep();
+    if (col) { try { col.doc(item).delete(); } catch (e) {} }
+    paint(byItem(item)); bar();
+  }
+  function push(item){
+    if (!col) return;
+    var r = state[item]; if (!r) return;
+    var t = r.t;
+    pending[item] = "saving"; paint(byItem(item));
+    col.doc(item).set(copy(r)).then(function(){
+      // A newer change may have gone up meanwhile; its own callbacks settle it.
+      if (state[item] && state[item].t === t) { pending[item] = ""; saved[item] = t; }
+      paint(byItem(item)); bar();
+    }, function(){ pending[item] = "failed"; paint(byItem(item)); bar(); });
+  }
+
+  /* ── the bar: how many, where they are, the line to paste ── */
+  function line(){
+    var parts = [];
+    els.forEach(function(el){
+      var item = el.getAttribute("data-item"), r = state[item];
+      if (empty(r)) {
+        // An item carrying the proposal is reported AS the proposal, marked so
+        // — never as a verdict the reader gave.
+        var d = el.getAttribute("data-default");
+        if (d) parts.push(item + " " + d + " (as proposed)");
+        return;
+      }
+      // ⚠️ The provenance rides the PASTE LINE too. This line is the fallback
+      // when the send is refused, which is precisely the path where "he ruled
+      // on it" and "it rode the proposal" would otherwise become the same.
+      var s = item + " " + (r.v ? r.v : "(no verdict)") + (r.by === "default" ? " (as proposed)" : "");
+      if (r.fu) s += ", follow up";
+      if (r.note) s += " — “" + String(r.note).replace(/\s+/g, " ").trim() + "”";
+      parts.push(s);
+    });
+    return parts.length ? parts.join(" · ") : "No replies yet.";
+  }
+  // ⚠️ THE RUNNING TOTAL IS IN OUTCOME TERMS (Sam, 2026-09-20). What a sitting
+  // is worth is articulation rows collapsed and colleges reached, never clicks
+  // logged. Rows are this item's own and add up; COLLEGES REPEAT across items,
+  // so the ids are unioned -- a sum of per-item college counts would report a
+  // reach the sitting did not have, which is the one number a reader takes at
+  // face value. An item that carries neither stays out of the outcome clause
+  // rather than contributing a zero.
+  function outcome(){
+    var rows = 0, colleges = {}, any = false;
+    els.forEach(function(el){
+      if (empty(state[el.getAttribute("data-item")])) return;
+      var rv = parseInt(el.getAttribute("data-rows") || "0", 10);
+      if (rv > 0) { rows += rv; any = true; }
+      var ids = (el.getAttribute("data-reach") || "").split(/\s+/);
+      ids.forEach(function(id){ if (id) { colleges[id] = 1; any = true; } });
+    });
+    if (!any) return "";
+    var out = [], nc = Object.keys(colleges).length;
+    if (rows) out.push(rows + (rows === 1 ? " articulation row" : " articulation rows") + " settled");
+    if (nc) out.push(nc + (nc === 1 ? " college" : " colleges") + " reached");
+    return out.join(" · ");
+  }
+  function bar(){
+    var n = { item: [0, 0], entry: [0, 0], done: [0, 0] }, fu = 0, flips = 0;
+    els.forEach(function(el){
+      var k = el.getAttribute("data-kind") || "item"; if (!n[k]) n[k] = [0, 0];
+      var r = state[el.getAttribute("data-item")];
+      n[k][1]++; if (!empty(r)) n[k][0]++; if (r && r.fu) fu++;
+      if (r && r.flips) flips += r.flips;
+    });
+    var parts = [], proposed = 0;
+    els.forEach(function(el){
+      if ((el.getAttribute("data-kind") || "item") !== "item") return;
+      if (el.getAttribute("data-default") && !ruled(el.getAttribute("data-item"))) proposed++;
+    });
+    if (n.item[1]) parts.push(n.item[0] + " of " + n.item[1] + " items");
+    if (n.entry[1]) parts.push(n.entry[0] + " of " + n.entry[1] + " memories");
+    if (n.done[1]) parts.push(n.done[0] + " of " + n.done[1] + " retired rows");
+    var c = document.getElementById("reply-count");
+    if (c) c.textContent = parts.join(" · ") + " your call"
+      + (proposed ? " · " + proposed + " as proposed" : "")
+      + (fu ? " · " + fu + " to follow up" : "");
+    var o = document.getElementById("reply-outcome");
+    if (o) {
+      var text = outcome();
+      if (flips) text += (text ? " · " : "") + flips + (flips === 1 ? " changed" : " changed");
+      o.textContent = text;
+    }
+    var w = document.getElementById("reply-where");
+    if (w) w.textContent = where === "db"
+      ? "Replies save to this sheet; the session reads them from here."
+      : "Replies stay in this browser until you copy them into the session.";
+    var t = document.getElementById("reply-line"); if (t) t.value = line();
+  }
+  var copyBtn = document.getElementById("reply-copy");
+  if (copyBtn) copyBtn.addEventListener("click", function(){
+    var text = line(), done = function(ok){
+      copyBtn.textContent = ok ? "Copied" : "Select the line below and copy it";
+      setTimeout(function(){ copyBtn.textContent = "Copy replies"; }, 2200);
+      if (!ok) { var d = document.querySelector(".reply-show"); if (d) d.open = true; }
+    };
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(function(){ done(true); }, function(){ done(false); });
+      else done(false);
+    } catch (e) { done(false); }
+  });
+
+  /* ── wire each item ── */
+  els.forEach(function(el){
+    var item = el.getAttribute("data-item");
+    Array.prototype.forEach.call(el.querySelectorAll(".reply-chip[data-v]"), function(b){
+      b.addEventListener("click", function(){
+        var v = b.getAttribute("data-v"), cur = state[item] && state[item].v;
+        set(item, { v: cur === v ? "" : v });          // the pressed chip clears on a second click
+      });
+    });
+    var fu = el.querySelector(".reply-fu");
+    if (fu) fu.addEventListener("click", function(){ set(item, { fu: !(state[item] && state[item].fu) }); });
+    var more = el.querySelector(".reply-more"), moreRow = el.querySelector(".reply-more-row");
+    if (more && moreRow) more.addEventListener("click", function(){
+      var open = more.getAttribute("aria-expanded") === "true";
+      more.setAttribute("aria-expanded", open ? "false" : "true");
+      moreRow.hidden = open;
+    });
+    var note = el.querySelector(".reply-note"), tm = null;
+    if (note) {
+      note.addEventListener("input", function(){ clearTimeout(tm); tm = setTimeout(function(){ set(item, { note: note.value }); }, 500); });
+      note.addEventListener("blur", function(){ clearTimeout(tm); if ((state[item] ? state[item].note : "") !== note.value) set(item, { note: note.value }); });
+    }
+  });
+
+  /* ── the artifact's store, when this view has one ── */
+  function light(){
+    var C = window.claude;
+    if (!C || typeof C.use !== "function") return;
+    var p; try { p = C.use("db"); } catch (e) { return; }
+    if (!p || typeof p.then !== "function") return;
+    p.then(function(db){
+      if (!db) return;
+      col = db.collection("replies"); where = "db";
+      col.onSnapshot(function(snap){
+        var seen = {};
+        snap.docs.forEach(function(d){
+          var r = d.data(); if (!r || !r.item) return;
+          seen[r.item] = 1;
+          var cur = state[r.item];
+          // The store's copy wins when it is at least as new as this page's;
+          // COPIED, because the delivered body is frozen and stays the store's.
+          if (!cur || String(r.t || "") >= String(cur.t || "")) {
+            state[r.item] = copy(r); saved[r.item] = r.t || "";
+            if (pending[r.item] !== "saving") pending[r.item] = "";
+          }
+        });
+        // Anything this browser holds that the store does not: send it up once.
+        Object.keys(state).forEach(function(item){
+          if (!seen[item] && !pending[item] && !empty(state[item]) && saved[item] !== state[item].t) push(item);
+        });
+        keep(); paintAll();
+      }, function(){ where = "local"; col = null; paintAll(); });
+      paintAll();
+    }, function(){});
+  }
+
+  /* ── Complete: write the record, then ring the doorbell ── */
+  var sbtn = document.getElementById("submit-btn"), sstate = document.getElementById("submit-state");
+  function tally(){
+    var done = 0, total = 0, asProposed = [], blank = 0;
+    els.forEach(function(el){
+      if ((el.getAttribute("data-kind") || "item") !== "item") return;
+      total++;
+      var item = el.getAttribute("data-item");
+      if (ruled(item)) { done++; return; }
+      if (el.getAttribute("data-default")) asProposed.push(item); else blank++;
+    });
+    return { done: done, total: total, asProposed: asProposed, blank: blank };
+  }
+  function say(t){ if (sstate) sstate.textContent = t; }
+  if (sbtn) sbtn.addEventListener("click", function(){
+    var n = tally();
+    sbtn.disabled = true;
+    // ⚠️ COMMIT THE PROPOSALS, AND SAY THEY ARE PROPOSALS. Under opt-out the
+    // reader only touches what they disagree with, so the untouched items DO
+    // carry a verdict — but `by: "default"` records that nobody ruled on them
+    // individually, and the message says how many. An item with neither a
+    // reply nor a proposal is still a blank, and is still named as one.
+    var now = new Date().toISOString();
+    n.asProposed.forEach(function(item){
+      var r = { item: item, ref: (byItem(item) || {getAttribute:function(){return "";}}).getAttribute("data-ref"),
+                title: byItem(item) ? byItem(item).getAttribute("data-title") : "",
+                v: dflt(item), note: "", fu: false, by: "default", t: now };
+      state[item] = r;
+      if (col) { try { col.doc(item).set(copy(r)); } catch (e) {} }
+    });
+    keep(); paintAll();
+    var text = "Decisions done on " + SHEET + " — " + n.done + " of " + n.total + " items your own call"
+      + (n.asProposed.length ? ", " + n.asProposed.length + " taken as proposed (not individually reviewed)" : "")
+      + (n.blank ? ", " + n.blank + " left blank (no verdict on those)" : "") + ". " + line();
+    var rec = { sheet: SHEET, ruled: n.done, as_proposed: n.asProposed.length, blank: n.blank,
+                items: n.total, at: now, sent: false };
+    function finish(sent, why){
+      rec.sent = sent;
+      if (col) { try { col.doc("done").set(copy(rec)); } catch (e) {} }
+      say(sent ? "Sent. The session has it — " + n.done + " of " + n.total + " your own call"
+                 + (n.asProposed.length ? ", " + n.asProposed.length + " as proposed." : ".")
+               : "Marked complete on the sheet" + (why ? " (" + why + ")" : "") +
+                 ". Use Copy replies to hand them over.");
+      sbtn.textContent = "Completed";
+    }
+    // The store is the record and is written whether or not the send lands.
+    var C = window.claude, p;
+    try { p = C && typeof C.use === "function" ? C.use("comments") : null; } catch (e) { p = null; }
+    if (!p || typeof p.then !== "function") { finish(false, "commenting is off here"); return; }
+    say("Sending…");
+    p.then(function(cm){
+      if (!cm || typeof cm.sendToClaude !== "function") { finish(false, "commenting is off here"); return; }
+      cm.canSendToClaude().then(function(can){
+        if (can !== "available") { finish(false, can === "writers_only" ? "you are not an editor of this sheet" : "no session is listening"); return; }
+        cm.anchorFor(sbtn).then(function(anchor){
+          // One deliberate send, from the viewer's own click. Never retried:
+          // a rejected write is not proof nothing was written.
+          cm.sendToClaude({ anchor: anchor, text: text.slice(0, 3800) })
+            .then(function(){ finish(true); }, function(err){ finish(false, (err && err.code) || "it could not be sent"); });
+        }, function(){ finish(false, "the button could not be anchored"); });
+      }, function(){ finish(false, "commenting is off here"); });
+    }, function(){ finish(false, "commenting is off here"); });
+  });
+
+  read(); paintAll(); light();
+})();
+</script>
+<!-- replies:end --></body>
+</html>
