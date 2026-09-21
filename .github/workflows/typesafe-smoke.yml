@@ -38,13 +38,18 @@ on:
         type: string
         default: ''
       adjudicate:
-        description: 'Jev magic half for a reference (csr / cer / ccrr) — suggests, writes nothing'
+        description: 'Jev magic half for a reference (csr / cer / ccr / ccrr) — suggests, writes nothing'
         type: choice
-        options: ['', 'csr', 'cer', 'ccrr']
+        options: ['', 'csr', 'cer', 'ccr', 'ccrr']
         default: ''
       adjudicate_limit:
         description: 'Cap the adjudication to the N highest-weight findings (blank = all)'
         type: string
+        default: ''
+      rung:
+        description: 'CCR only — which evidence to ask with. Ordered and cumulative; run ONE, calibrate its gate on a curator''s verdicts, then escalate only what it left unsettled.'
+        type: choice
+        options: ['', 'title', 'cip', 'description']
         default: ''
       battery:
         description: 'Variable battery over the below-gate band (26 calls; scores itself against Sam 51 verdicts)'
@@ -76,13 +81,21 @@ jobs:
       # the smoke test: typesafe.ai is egress-blocked from the agent sandbox.
       # ⚠️ It SUGGESTS — nothing is written to Supabase, nothing is committed,
       # and the output is uploaded as an artifact for a curator to read.
+      #
+      # ⚠️ A REFERENCE WITH NO MEASURED GATE RUNS AS A CALIBRATION SITTING. Only
+      # the ccrr has one (0.85, from Sam's 51 verdicts on a different question),
+      # so a ccr run ranks every row for a curator, suggests nothing, and spends
+      # no second look — one call per finding. Its verdicts are what earns the
+      # ccr a gate in `GATES`. Pick ONE rung: `title` is the cheapest and the
+      # one to calibrate first.
       - name: Jev adjudication (suggests, never merges)
         if: inputs.adjudicate != ''
         env:
           TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
         run: |
           python3 kb/_jev_adjudicate.py --ref '${{ inputs.adjudicate }}' \
-            ${{ inputs.adjudicate_limit && format('--limit {0}', inputs.adjudicate_limit) || '' }}
+            ${{ inputs.adjudicate_limit && format('--limit {0}', inputs.adjudicate_limit) || '' }} \
+            ${{ inputs.rung && format('--rung {0}', inputs.rung) || '' }}
       - name: Upload the worklist
         if: inputs.adjudicate != ''
         uses: actions/upload-artifact@v4

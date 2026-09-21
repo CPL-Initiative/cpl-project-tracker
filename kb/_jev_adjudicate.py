@@ -87,18 +87,49 @@ OUT = os.path.join(HERE, "jev_out")
 # sub-gate probability as a ranking.
 GATE = 0.85
 
+# ⚠️ A GATE BELONGS TO THE REFERENCE AND THE QUESTION IT WAS MEASURED ON.
+# 0.85 was measured against Sam's 51 CCRR verdicts on one question — do these
+# two recommendations describe the same content. Ladder item 3 (adopted
+# 2026-09-21): *every center calibrates its own gate, and none inherits 0.85.*
+# A reference absent from this map HAS NO GATE, and this module must never
+# print `suggest` for one: the battery already measured what a borrowed prior
+# does when the domain has overruled it (`units`, AUC 0.281, below chance).
+#
+# To add one: run a calibration sitting, get a curator's verdicts on rows they
+# individually judged (`by: "sam"` — never an opt-out default), sweep the
+# threshold for the highest recall at precision 1.00, and record it here with
+# the receipt that measured it.
+GATES = {
+    # ccrr — 25/25 correct above 0.85 across 51 verdicts, 346 rows, precision
+    # 1.00 / recall 0.61; receipt kb/receipts/cr_reference_decisions_2026-09-20_s280.json
+    "ccrr": 0.85,
+}
 
-def act_bucket(p, agree):
+
+def gate_for(ref_key):
+    """The measured gate for this reference, or None where none exists yet."""
+    return GATES.get(ref_key)
+
+
+def act_bucket(p, agree, gate=GATE):
     """What to do with a finding. `agree` is the independent second look.
 
     ⚠️ Confidence alone never reaches the plan: a proposal the second look
     contradicts goes to the curator however sure the first was. That is the
-    playbook's "a refuted merge falls back to the judgment queue"."""
+    playbook's "a refuted merge falls back to the judgment queue".
+
+    ⚠️ NO GATE MEANS NO SUGGESTION. With `gate=None` every row reads
+    `uncalibrated` and lands in front of a curator, whatever Jev's probability
+    was. The probability is still recorded — that is what the calibration
+    sitting exists to collect — but nothing is proposed off an uncalibrated
+    number, which is the failure ladder item 3 was adopted to prevent."""
     if p is None:
         return "unscored"
-    if p >= GATE and agree is True:
+    if gate is None:
+        return "uncalibrated"   # ranked for a curator; nothing is proposed
+    if p >= gate and agree is True:
         return "suggest"        # both looks agree; a curator still confirms
-    if p >= GATE and agree is False:
+    if p >= gate and agree is False:
         return "contested"      # confident and contradicted — the interesting pile
     return "curator"            # everything under the gate
 
@@ -594,8 +625,15 @@ def run(ref_key, limit, held, key, score_only=False, rung=None):
     if limit:
         findings = findings[:limit]
 
+    gate = gate_for(ref_key)
     at = f" at rung '{rung}'" if rung else ""
     print(f"{title} ({ref_key}) — {len(findings)} finding(s){at} from {source}")
+    if gate is None:
+        print(f"  NO CALIBRATED GATE for {ref_key} — this is a CALIBRATION run: "
+              f"every row is ranked for a curator and nothing is suggested. "
+              f"0.85 belongs to the ccrr and a different question.")
+    else:
+        print(f"  gate {gate} (measured on this reference's own verdicts)")
     if held:
         print(f"  {len(held)} held by the curator, dropped before any call was spent")
     by_rule = {}
@@ -619,12 +657,16 @@ def run(ref_key, limit, held, key, score_only=False, rung=None):
         # The second look is spent ONLY where the first one is confident enough
         # to matter. Below the gate the curator sees it regardless, so a second
         # call would change no outcome and still cost a call.
-        if first["p"] is not None and first["p"] >= GATE:
+        # ⚠️ AND NOT AT ALL WITHOUT A GATE. A calibration sitting exists to put
+        # Jev's probability beside a curator's verdict; there is nothing to be
+        # confident against yet, so the skeptic would double the calls to refute
+        # a proposal this run is not making.
+        if gate is not None and first["p"] is not None and first["p"] >= gate:
             try:
                 agree, p_hold = second_look(state, spec, key)
             except SystemExit as e:
                 print(f"  second look unavailable at {i}: {e}")
-        act = act_bucket(first["p"], agree)
+        act = act_bucket(first["p"], agree, gate)
         results.append({**f, **first, "agree": agree, "p_hold": p_hold, "act": act})
         pr = f"{first['p']:.2f}" if isinstance(first["p"], (int, float)) else " -- "
         print(f"  {act:<9} p={pr} care={first['care']} {f['rule'][:22]:<22} {f['item'][:46]}")
@@ -642,13 +684,19 @@ def report(ref_key, results):
     for r in results:
         buckets[r["act"]] = buckets.get(r["act"], 0) + 1
     print(f"\n{'=' * 70}")
-    for b in ("suggest", "contested", "curator", "unscored"):
+    for b in ("suggest", "contested", "curator", "uncalibrated", "unscored"):
         if buckets.get(b):
             print(f"  {b:<10} {buckets[b]:>4}")
     # ⚠️ The trial's own guard: one bucket means the model is not discriminating,
     # which looks identical to a clean result and is not one.
     if results and len([b for b in buckets if buckets[b]]) == 1:
-        print("  ⚠️ EVERY finding landed in one bucket — Jev is not discriminating here.")
+        if buckets.get("uncalibrated"):
+            # Expected, and not the failure the guard below is looking for: with
+            # no gate there is only one bucket by construction.
+            print("  calibration run — one bucket by construction. Rank by p, "
+                  "take a curator's verdicts, then record a gate in GATES.")
+        else:
+            print("  ⚠️ EVERY finding landed in one bucket — Jev is not discriminating here.")
     if buckets.get("contested"):
         print(f"  ⚠️ {buckets['contested']} confident proposal(s) the independent second "
               f"look contradicted — these are the ones worth a curator's time first.")
