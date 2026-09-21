@@ -170,6 +170,27 @@ than claiming it was sent. Reading `replies/done` is how a session knows a sheet
 was declared finished; it is the counterpart to "an item with no reply has no
 verdict."
 
+⚠️ **MEASURED 2026-09-21: `sendToClaude()` DOES NOT REACH A CLAUDE CODE SESSION.**
+It reports `no_session` from a remote-container session **even with a live,
+confirmed artifact watch** — re-registered at 13:42:11Z, pressed at 13:43:24Z,
+same answer, `replies/done` carrying `sent: false`. Do not spend another session
+diagnosing consent or permissions: the send is not the path.
+
+**THE RELIABLE PATH IS THE SESSION READING THE SHEET.** `replies/done` is a
+durable record that needs nothing alive at the moment of the press, so a sheet
+finished at midnight is still readable by whatever session runs next. When you
+hand over a sheet:
+
+1. Arm a `send_later` check that reads `replies/done` with `ArtifactData` and
+   compares its `at` against the last one you saw. A new `at` means a sitting
+   ended; read the `replies` collection and act.
+2. Tell Sam that saying **"decisions done"** gets it read immediately — that is
+   the expedite, not the mechanism.
+
+The button still offers the send (it costs nothing and would work from a
+claude.ai chat session), and the page states which of the two happened. What it
+must never do is imply the press alone reached anyone.
+
 ⚠️ **A REFUSED SEND MUST NOT READ LIKE A DELIVERED ONE.** Sam, 2026-09-21,
 after pressing Complete: *"I hit complete on the new decision sheet but I don't
 know if it alerted you in context."* It had not — `replies/done` carried

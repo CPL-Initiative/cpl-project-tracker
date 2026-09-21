@@ -315,10 +315,10 @@ later.then(() => {
     const state = noRun.doc.getElementById("submit-state");
     const okState = okRun.doc.getElementById("submit-state");
     check("a refused send says so in plain words",
-      /could NOT reach the session/.test(state.textContent) && !/^Sent\./.test(state.textContent),
+      /No session was listening/.test(state.textContent) && !/^Sent\./.test(state.textContent),
       "got: " + state.textContent);
-    check("and says the replies are safe and what to do instead",
-      /replies are safe/.test(state.textContent) && /decisions done/.test(state.textContent),
+    check("and says what to do instead",
+      /decisions done/.test(state.textContent) && /Recorded on the sheet/.test(state.textContent),
       "the record IS readable off the sheet, so a refused send costs a sentence, never the work");
     check("the button itself distinguishes the two outcomes",
       noRun.doc.getElementById("submit-btn").textContent === "Completed — tell Claude" &&
@@ -327,16 +327,22 @@ later.then(() => {
     // ⭐ SAY IT BEFORE THE PRESS. He should not have to press Complete to find
     // out it cannot reach anyone; canSendToClaude posts nothing and never
     // prompts, so the note above the button knows its own reach at load.
+    // ⚠️ The note must not promise the press reaches anyone. Measured
+    // 2026-09-21: sendToClaude reports no_session for a Claude Code session
+    // even with a live watch, so the record — read off the sheet — is the
+    // mechanism and the send is a bonus.
+    const note = noRun.doc.getElementById("submit-note").textContent;
     check("when nothing is listening, the note says so BEFORE the press",
-      /No Claude session is listening/.test(noRun.doc.getElementById("submit-note").textContent) &&
-      /decisions done/.test(noRun.doc.getElementById("submit-note").textContent),
-      "got: " + noRun.doc.getElementById("submit-note").textContent.slice(0, 160));
-    check("and when a session IS listening the note stays out of the way",
-      !/No Claude session/.test(okRun.doc.getElementById("submit-note").textContent),
+      /reads the record straight off the sheet/.test(note) && /decisions done/.test(note),
+      "got: " + note.slice(0, 200));
+    check("and it never promises the press alone reached a session",
+      !/the session is told/.test(note), "got: " + note.slice(0, 200));
+    check("when a session IS listening the note stays out of the way",
+      /the session is told the sheet is done/.test(okRun.doc.getElementById("submit-note").textContent),
       "the reachable case is the common one and needs no warning");
     check("the failed state is marked without relying on color alone",
       /missed/.test(state.className) && !/missed/.test(okState.className) &&
-      /could NOT reach/.test(state.textContent),
+      /No session was listening/.test(state.textContent),
       "the panel changes AND the words say it");
     report();
   });

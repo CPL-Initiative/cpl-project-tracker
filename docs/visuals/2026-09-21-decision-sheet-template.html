@@ -534,10 +534,10 @@
       if (!cm || typeof cm.canSendToClaude !== "function") return;
       cm.canSendToClaude().then(function(can){
         if (can === "available") return;               // the button can ring; say nothing
-        snote.textContent = "Every reply is saved as you make it. No Claude session is "
-          + "listening to this sheet right now, so pressing Complete records that you are "
-          + "done and you tell Claude in the chat — say \u201cdecisions done\u201d and it "
-          + "reads your replies straight off this sheet.";
+        snote.textContent = "Every reply is saved as you make it. Press Complete when you have "
+          + "finished — it records that this sheet is done, and a session reads the record "
+          + "straight off the sheet. To have it picked up right away, say \u201cdecisions "
+          + "done\u201d in the chat.";
         sbtn.textContent = "Complete";
       }, function(){});
     }, function(){});
@@ -593,11 +593,19 @@
       // work.
       say(sent ? "Sent. The session has it — " + n.done + " of " + n.total + " your own call"
                  + (n.asProposed.length ? ", " + n.asProposed.length + " as proposed." : ".")
-               : "Saved on the sheet — but I could NOT reach the session"
-                 + (why ? " (" + why + ")" : "") +
-                 ". Your replies are safe here. Say \u201cdecisions done\u201d in the chat and "
-                 + "Claude will read them straight off this sheet.", !sent);
+               : "Recorded on the sheet — " + n.done + " of " + n.total + " your own call"
+                 + (n.asProposed.length ? ", " + n.asProposed.length + " as proposed" : "")
+                 + ". No session was listening just now"
+                 + (why && why !== "no session is listening" ? " (" + why + ")" : "")
+                 + ", so say \u201cdecisions done\u201d in the chat and Claude reads them "
+                 + "straight off this sheet.", !sent);
       sbtn.textContent = sent ? "Completed — sent" : "Completed — tell Claude";
+      // ⚠️ MEASURED 2026-09-21: sendToClaude() reports "no session is listening"
+      // for a Claude Code session in a remote container even with a live,
+      // confirmed artifact watch. Sam pressed Complete a minute after the watch
+      // was re-registered and got the same answer. The button therefore records
+      // and offers the send; the RELIABLE path is the session reading
+      // `replies/done` off this sheet, which needs nothing from this page.
     }
     // The store is the record and is written whether or not the send lands.
     var C = window.claude, p;
