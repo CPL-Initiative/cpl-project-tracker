@@ -6,7 +6,7 @@
   "edge_functions": 5,
   "file_datasets": 491,
   "external_services": 145,
-  "consumers": 349,
+  "consumers": 350,
   "workflows": 35,
   "data_js_files": 61,
   "tabs": 37
@@ -4806,6 +4806,13 @@
      "direction": "read",
      "how": "literal",
      "line": 331
+    },
+    {
+     "id": "script:kb/_jev_score.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 26
     }
    ],
    "served": false,

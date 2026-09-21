@@ -117,10 +117,44 @@ anchor, this lane's named hard case.
 proposals. The 2026-09-20 receipt predates opt-out and is entirely his, which is
 why it is the ground truth.
 
-**NEXT:** dispatch `--ref ccrr` on the runner and score it against the receipt —
-that is `s279-fable-jev-variable-battery`, and it validates the routine where
-ground truth exists. Only then CCR, whose method half emits Trust Cards rather
-than findings. The other 1,881 rung-5 groups wait on that.
+## SCORED against Sam's 51 verdicts (2026-09-21, S281) — `kb/_jev_score.py`
+
+No runner was needed: the receipt carries Jev's `p_same` and `care` beside his
+verdict on the same row, so the scoring is arithmetic over a committed file and
+anyone can reproduce it.
+
+**The inherited claim reproduces exactly.** p ≥ 0.85 folded **25/25**; below it,
+**16/26**.
+
+**The gate is empirically right, not merely asserted.** Sweeping it, 0.85 is the
+highest-recall threshold that suggests no wrong fold at all (precision 1.00,
+recall 0.61). Precision degrades the moment it drops — 0.94 at 0.80, 0.87 at
+0.70. Acting on the gate would have folded 25 pairs and 346 articulation rows
+with nothing wrong in it.
+
+⚠️ **NOTHING JEV IS ASKED TODAY ORDERS THE BAND BELOW THE GATE.** That band is
+26 pairs and 838 rows — the part that actually needs a curator. Measured within
+it: **AUC(p_same) = 0.441, AUC(care) = 0.450**, against 0.50 for chance
+(permutation p = 0.67 on care). The three LOWEST-scored pairs in the whole set
+— 0.32, 0.44, 0.48 — were all folds.
+
+⚠️ **A WHOLE-SET COMPARISON OF `care` FLATTERS AND MUST NOT BE USED.** All ten
+keeps sit below the gate and the above-gate folds are easy ones with low care,
+so comparing every fold against every keep reports a +0.41 separation that is
+really "above-gate items are easy". The band is the only honest place to
+measure. This reading was made and corrected the same hour.
+
+**SO THE VARIABLE BATTERY IS JUSTIFIED, AND FOR A SPECIFIC REASON:** the two
+questions Jev is asked are exhausted, and more of the same will not order what
+they cannot. The battery has to ask DIFFERENT questions — level, scope, units,
+lab against lecture, vendor-specific, a different course — which is what
+`s279-fable-jev-variable-battery` proposed and what this measurement now
+supports rather than assumes.
+
+**NEXT:** build the battery against the band's 26 pairs, score it the same way
+with `kb/_jev_score.py`, and keep any variable that beats 0.50 in-band. Only
+then CCR, whose method half emits Trust Cards rather than findings. The other
+1,881 rung-5 groups wait on that.
 
 **Where Jev fits beyond this lane, and the gates each use carries:**
 [`reference-system-one-model-fit-by-lane`](../../kb-notes/reference-system-one-model-fit-by-lane.md) (S280, 2026-09-20).

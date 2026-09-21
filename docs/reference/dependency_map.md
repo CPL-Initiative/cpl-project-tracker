@@ -323,7 +323,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `cpl_theme.js` | pages: `CPL_Dashboard.html` | — |
 | `cpl_todos.js` | pages: `CPL_Dashboard.html` | — |
 | `cr_reference.js` | pages: `CPL_Dashboard.html` | — |
-| `cr_reference_decisions_<date>_s280.json` | scripts: `kb/_jev_adjudicate.py` | — |
+| `cr_reference_decisions_<date>_s280.json` | scripts: `kb/_jev_adjudicate.py`, `kb/_jev_score.py` | — |
 | `credential_reference.js` | pages: `CPL_Dashboard.html` | — |
 | `csr_authority_codes_rulings_<date>.json` | scripts: `kb/_authority_recode_dryrun.py`, `kb/_seed_authority_codes.py` | — |
 | `dashboard_filters.js` | pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py` | — |
@@ -891,4 +891,4 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 
 Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 491 file
-datasets · 145 external services · 349 consumers · 35 workflows · 37 tabs.
+datasets · 145 external services · 350 consumers · 35 workflows · 37 tabs.
