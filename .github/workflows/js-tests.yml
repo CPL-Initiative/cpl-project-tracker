@@ -135,6 +135,13 @@ jobs:
       # hook's own allow does not stop the prompt; the rule does.
       - name: Prompt-guard installer (the execute_sql rule never ships without its hook)
         run: python3 tests/install_prompt_guards_test.py
+      # The Jev magic half (S281). Guards the ways an AI adjudication pass fails
+      # while LOOKING like it worked: a skeptic shown the verdict rubber-stamps
+      # it, a refuted proposal reaching the plan, a noul probability read as a
+      # boolean, and calls spent on mechanical findings. Pure stdlib, no network
+      # — Jev is replaced by a recorder that asserts what it was shown.
+      - name: Jev adjudication (the second look never sees the first verdict)
+        run: python3 tests/jev_adjudicate_test.py
       # The re-mint blast radius (Session 277). Guards three READINGS rather
       # than three behaviors, because all three were got wrong while building
       # it and none of them errored: course_id IS the identity id, the

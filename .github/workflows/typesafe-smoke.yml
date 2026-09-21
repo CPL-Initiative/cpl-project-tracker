@@ -37,6 +37,15 @@ on:
         description: 'Cap the trial to the N highest-row pairs (blank = all)'
         type: string
         default: ''
+      adjudicate:
+        description: 'Jev magic half for a reference (csr / cer / ccrr) — suggests, writes nothing'
+        type: choice
+        options: ['', 'csr', 'cer', 'ccrr']
+        default: ''
+      adjudicate_limit:
+        description: 'Cap the adjudication to the N highest-weight findings (blank = all)'
+        type: string
+        default: ''
 
 permissions:
   contents: read
@@ -58,6 +67,24 @@ jobs:
           TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
         run: |
           python3 kb/_typesafe_smoke.py ${{ inputs.full && '--full' || '' }}
+
+      # The magic half (kb/_jev_adjudicate.py). Same runner-as-proxy reason as
+      # the smoke test: typesafe.ai is egress-blocked from the agent sandbox.
+      # ⚠️ It SUGGESTS — nothing is written to Supabase, nothing is committed,
+      # and the output is uploaded as an artifact for a curator to read.
+      - name: Jev adjudication (suggests, never merges)
+        if: inputs.adjudicate != ''
+        env:
+          TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
+        run: |
+          python3 kb/_jev_adjudicate.py --ref '${{ inputs.adjudicate }}' \
+            ${{ inputs.adjudicate_limit && format('--limit {0}', inputs.adjudicate_limit) || '' }}
+      - name: Upload the worklist
+        if: inputs.adjudicate != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: jev-${{ inputs.adjudicate }}
+          path: kb/jev_out/
       # Reads kb/cr_reference_worklist.json, asks Jev one noul + one score per
       # anchored pair, prints a ranked worklist. SUGGESTS ONLY — no Supabase
       # write, no commit, nothing decided. Rung 5 reads "similarity suggests,
