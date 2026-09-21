@@ -321,10 +321,176 @@ def ccrr_findings():
     return out, "kb/cr_reference_worklist.json"
 
 
+# ── CCR: the Trust Card adapter (S282, 2026-09-21) ──────────────────────────
+# Sam ruled on the ladder sheet that the CCR gets the next sitting of verdicts.
+# The CCR sat outside this module for a structural reason: `kb/_row_audit.py`
+# emits Trust Cards — a per-row SCORE across 19 rules — where the CSR, CER and
+# CCRR emit findings, which are discrete questions. Jev answers questions, so
+# the adapter's whole job is deciding which tags ARE questions.
+#
+# ⚠️ MOST OF THE CCR's TAGS ARE NOT QUESTIONS, AND THREE OF THEM ARE TRAPS.
+# Measured on 27,580 cards (kb/row_audit/latest.json, 2026-09-21):
+#
+#   STATE, not judgment — a curator repairs these, nobody adjudicates them:
+#     seed_untouched_discipline 14,511 · cluster_blanks_when_aggregatable 7,158
+#     blank_description 5,750 · blank_discipline 96 · mid_id_off_scheme 1
+#     cluster_member_unresolved 1
+#
+#   ⚠️ THE TRAPS — 6,621 rows firing on signals THIS REPO HAS ALREADY RULED
+#   NON-AUTHORITATIVE. Asking Jev about them spends calls to get a confident
+#   answer pointing the wrong way, which is the most expensive kind of wrong:
+#     unit_anomaly 4,179          — the lane rules units are NOT identity
+#                                   (`SPAN 100` at 4/4.5/5 is one course). The
+#                                   battery MEASURED Jev on exactly this
+#                                   question and scored AUC 0.281, BELOW
+#                                   CHANCE, because a general model assumes an
+#                                   hours difference means a content
+#                                   difference. Never ask it.
+#     top_discipline_disagreement 1,189 · member_top_divergence 1,253
+#                                 — Rule 7's TOP caveat: TOP is faculty-entered
+#                                   with no gatekeeper, ~52% of consolidated
+#                                   M-IDs are TOP-mixed, and it NEVER gates a
+#                                   primary determination. A question whose
+#                                   whole premise is "TOP disagrees" asks Jev
+#                                   to gate on TOP.
+#
+#   ⚠️ IDENTITY-ADJACENT — Jev may RANK these, never rule on them. Same Rule 7
+#   logic as item 9 held the CSR out for: a SUBJ4 change is a re-mint.
+#     subject_discipline_outlier 322 · subject_collision_signal 113
+#
+# WHAT IS LEFT IS A CONTENT JUDGMENT, and it is the only thing worth a call:
+#     discipline_title_mismatch 1,118 · description_discipline_disagreement 73
+#     generic_title_concrete_discipline 46   =  1,237 questions
+#
+# So the CCR's 27,580 cards trIage to 1,237 — the same shape as the CER (239 to
+# 59) and CSR (185 to 143), reached by asking which tags a curator would
+# recognize as a question rather than by taking the biggest pile.
+CCR_RULES = {
+    "discipline_title_mismatch": {
+        "ask": ("This course's title shares no subject vocabulary with the discipline it "
+                "is filed under. Does the title belong to a DIFFERENT discipline than the "
+                "one recorded?"),
+        "true": "The title names a different discipline.",
+        "false": "The title fits the recorded discipline; the wording is just generic.",
+        "negative": ("Can this title reasonably sit inside the recorded discipline, as a "
+                     "course that discipline would offer?"),
+    },
+    "description_discipline_disagreement": {
+        "ask": ("This course's description describes subject matter that differs from the "
+                "discipline it is filed under. Does the description indicate the "
+                "discipline is wrong?"),
+        "true": "The description names different subject matter.",
+        "false": "The description is consistent with the recorded discipline.",
+        "negative": ("Is the description consistent with the recorded discipline, allowing "
+                     "for a course that spans more than one subject?"),
+    },
+    "generic_title_concrete_discipline": {
+        "ask": ("This course carries a generic title under a specific discipline. Is the "
+                "title too generic to identify what the course teaches?"),
+        "true": "Too generic to identify the course.",
+        "false": "Generic wording, but the course is still identifiable.",
+        "negative": ("Does the title, read with its discipline, identify the course well "
+                     "enough for a faculty member to recognize it?"),
+    },
+}
+
+# Tags Jev is ASKED about. Everything else in the audit is state, a trap, or
+# identity — see the block above, where each exclusion carries its reason.
+CCR_ASKABLE = tuple(CCR_RULES)
+
+# Held out of the ASK and named here so a future session reads the reason
+# rather than re-deriving it and re-adding them.
+CCR_NEVER_ASK = {
+    "unit_anomaly": "units are not identity; Jev measured AUC 0.281 on this question",
+    "top_discipline_disagreement": "Rule 7: TOP never gates a primary determination",
+    "member_top_divergence": "Rule 7: TOP never gates a primary determination",
+}
+CCR_RANK_ONLY = {
+    "subject_discipline_outlier": "a SUBJ4 change is a Rule 7 re-mint",
+    "subject_collision_signal": "a SUBJ4 change is a Rule 7 re-mint",
+}
+
+
+def _clean_desc(d):
+    """COCI descriptions arrive with literal `_x000D_` carriage-return escapes
+    in them. TypeSafe's own guidance is that irrelevant detail costs accuracy,
+    and a window spent on escape artifacts is a window not spent on the course.
+
+    ⚠️ THE CATALOG BOILERPLATE STAYS. Stripping prerequisites and corequisites
+    looks like the same cleanup and destroys the finding: the DEH-24
+    prerequisite list IS what reveals that an `Ethics` row filed under
+    Philosophy is a dental-hygiene course."""
+    return " ".join(d.replace("_x000D_", " ").split())
+
+
+def ccr_findings():
+    """Trust Cards to questions, for the three tags that carry a content judgment.
+
+    The card itself is compact (`id`, `tags`, `lev`, `fts` …) and holds no title,
+    discipline or description, so the evidence is joined back from the minted
+    course records the auditor read.
+
+    ⚠️ A TOP-DERIVED DISCIPLINE IS LABELLED IN THE EVIDENCE. Rule 7's "gate
+    identity, keep display" ruling holds that a discipline inferred from a TOP
+    code displays but is held out of the canonical fold until a second signal
+    agrees. Handing Jev such a discipline as though a curator had set it would
+    ask it to judge a title against a guess."""
+    audit = os.path.join(HERE, "row_audit", "latest.json")
+    if not os.path.exists(audit):
+        raise SystemExit("no Trust Cards — run `python3 kb/_row_audit.py` first")
+    cards = json.load(open(audit, encoding="utf-8"))["rows"]
+    courses = json.load(open(os.path.join(HERE, "coci_minted_courses.json"),
+                             encoding="utf-8"))["courses"]
+
+    TOP_DERIVED = {"top_code", "top_division"}
+    out = []
+    for c in cards:
+        hits = [t for t in (c.get("tags") or []) if t in CCR_ASKABLE]
+        if not hits:
+            continue
+        rec = courses.get(c["id"]) or {}
+        title = (rec.get("common_title") or "").strip()
+        disc = (rec.get("discipline") or "").strip()
+        desc = (rec.get("description") or "").strip()
+        if not title or not disc:
+            # With no title or no discipline there is no question to put: the
+            # row is a blank to repair, which `blank_*` already tags.
+            continue
+        src = rec.get("discipline_source") or ""
+        disc_note = " (inferred from TOP, uncorroborated)" if src in TOP_DERIVED else ""
+        desc = _clean_desc(desc)
+        for tag in hits:
+            # ⚠️ THE DESCRIPTION RIDES EVERY RULE, INCLUDING THE TITLE ONE.
+            # `discipline_title_mismatch` fires on token overlap, so most of its
+            # 1,118 rows are artifacts — `Three-Dimensional Design` under Art
+            # and `Environmental Ethics` under Philosophy share no token with
+            # their discipline and are both plainly right. The description is
+            # the only evidence that separates those from a real miss, and the
+            # real misses are obvious in it: an `Ethics` row under Philosophy
+            # whose description is DEH-24's dental-hygiene prerequisites.
+            # Withholding it would leave Jev judging a title against a label.
+            ev = [f"title: {title}", f"discipline: {disc}{disc_note}"]
+            if desc:
+                ev.append(f"description: {desc[:300]}")
+            ev.append(f"{c.get('lev') or 1} member course(s) across the colleges that offer it")
+            out.append({
+                "id": f"{c['id']}||{tag}",
+                "rule": tag,
+                "item": title,
+                "evidence": " · ".join(ev),
+                "suggestion": f"review the discipline recorded for {c['id']}",
+                # The CCR's collapse-value analogue: how many local courses ride
+                # this identity. Ranking by it puts the widest rows first.
+                "weight": c.get("lev") or 1,
+            })
+    return out, "kb/row_audit/latest.json"
+
+
 REFS = {
     "csr": ("Common Subject Reference", csr_findings, CSR_RULES),
     "cer": ("Credential Reference", cer_findings, CER_RULES),
     "ccrr": ("Common CR Reference", ccrr_findings, CCRR_RULES),
+    "ccr": ("Common Course Reference", ccr_findings, CCR_RULES),
 }
 
 

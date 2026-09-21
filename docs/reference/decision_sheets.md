@@ -170,11 +170,27 @@ than claiming it was sent. Reading `replies/done` is how a session knows a sheet
 was declared finished; it is the counterpart to "an item with no reply has no
 verdict."
 
-⚠️ **MEASURED 2026-09-21: `sendToClaude()` DOES NOT REACH A CLAUDE CODE SESSION.**
-It reports `no_session` from a remote-container session **even with a live,
-confirmed artifact watch** — re-registered at 13:42:11Z, pressed at 13:43:24Z,
-same answer, `replies/done` carrying `sent: false`. Do not spend another session
-diagnosing consent or permissions: the send is not the path.
+⚠️ **`sendToClaude()` REACHES A SESSION SOMETIMES, AND BOTH MEASUREMENTS ARE
+REAL.** On 2026-09-21 S281 measured it refusing from a remote container —
+`no_session` at 13:43:24Z, `replies/done` carrying `sent: false` — and wrote
+that the send is not the path. **Three hours later the same press worked**: the
+Jev ladder sheet's Complete reported `sent: true` at 18:31:36Z and the comment
+reached S282 as an artifact-comment relay, which is how that session learned the
+sheet was finished.
+
+**What differs is not established.** The likeliest candidate is the watch: a
+publish reports the wake subscription as *arming in the background*, and the
+tool's own words are that this **is not a subscription until a `watch` listing
+names it** — so a session can believe it re-registered a watch that never
+armed. ⚠️ **Never claim a watch a result did not confirm**, and never conclude
+from one refusal that the send cannot work.
+
+**THE RELIABLE PATH IS STILL THE SESSION READING THE SHEET**, for a reason no
+send fixes: `replies/done` needs nothing alive at the moment of the press, so a
+sheet finished at midnight is still readable by whatever session runs next. Arm
+the `send_later` check every time. Treat a successful send as the doorbell it
+was designed to be — it arrives sooner when it works, and the record is what
+makes the sheet legible when it does not.
 
 **THE RELIABLE PATH IS THE SESSION READING THE SHEET.** `replies/done` is a
 durable record that needs nothing alive at the moment of the press, so a sheet

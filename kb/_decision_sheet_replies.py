@@ -54,6 +54,13 @@ CHIPS_BUILD = ["Yes", "Edit", "Later", "Dismiss"]
 # decision than to make one." So a reference item PROPOSES the fold, and the
 # first chip confirms it by naming the action. Neither word is a bare Yes.
 CHIPS_FOLD = [("Keep the fold", "fold"), ("Pull out", "keep"), ("Later", "later")]
+# ── a LADDER sheet: what to do next, not what one row is worth ──────────────
+# A reference sheet proposes a fold and its chips say fold or pull out. A sheet
+# that proposes a PLAN — which center runs next, which step comes first — has no
+# fold in it, and `chips_for` would hand every item CHIPS_DEFAULT, whose first
+# word is the bare Yes Sam's 2026-09-20 ruling retired. The value names the
+# outcome the same way: `adopt` means this step becomes the plan.
+CHIPS_PLAN = [("Adopt", "adopt"), ("Drop", "drop"), ("Later", "later")]
 # The rarer verdicts sit behind Other so the two that carry the sheet are the
 # two a reader sees. Sam, 2026-09-20: "Edit behind Other."
 CHIPS_OTHER = [("Edit", "edit"), ("Dismiss", "dismiss")]
@@ -1024,7 +1031,11 @@ def inject(html_text, sheet_id):
         ref = (_re.search(r'<p class="ref">reference: (.*?)</p>', body, _re.S) or [None, ''])[1]
         ref = _text(ref) or title
         body = promote_rec(body)
-        ch = chips_for(section_at(m.start()), body)
+        # The card's OWN words win. `chips_for` guesses from the ask text, which
+        # is right for a hand-written sheet and wrong for a built one whose
+        # builder already said which two outcomes the item has.
+        worth_chips = (_re.search(r'data-chips="([^"]*)"', attrs) or [None, ''])[1]
+        ch = _chips_from_attr(html.unescape(worth_chips)) or chips_for(section_at(m.start()), body)
         # ⚠️ ONLY A CARD THAT STATES A PROPOSAL ARRIVES SELECTED. The first chip
         # is the one that confirms the proposal, so it is the default — but a
         # card with nothing proposed has nothing to opt out OF, and pre-selecting
@@ -1152,6 +1163,47 @@ INTRO_BLOCK = """%(framing)s
 """
 
 
+_CHIP_BAD = ';|"<>&'
+
+
+def _chips_attr(chips):
+    """Serialize a card's chips onto the card itself, so the inject pass uses
+    THE WORDS THE BUILDER CHOSE rather than guessing them from the ask text.
+
+    ⚠️ `build_sheet` documented a `chips` argument from the day it was written
+    and never used one: every card's words came from `chips_for`, which reads
+    the ask for "fold" or "merge" and otherwise falls back to CHIPS_DEFAULT —
+    whose first word is the bare `Yes` that produced sixteen reversals on the
+    2026-09-20 sheet. A sheet whose items propose a PLAN cannot honestly put
+    the word fold in its ask to buy better chips, so the argument had to become
+    real. A card with no `data-chips` still falls back to `chips_for`, so every
+    sheet built before this keeps the words it shipped with."""
+    out = []
+    for c in chips:
+        label, value = _chip(c)
+        bad = [ch for ch in _CHIP_BAD if ch in label + value]
+        if bad:
+            raise ValueError(
+                "a chip label or value cannot carry %s: %r/%r" % (" ".join(bad), label, value))
+        out.append(label + "|" + value)
+    return ";".join(out)
+
+
+def _chips_from_attr(s):
+    """Read back what `_chips_attr` wrote. An empty or malformed attribute
+    returns nothing, so the caller falls back to `chips_for` rather than
+    rendering a card with no way to answer it."""
+    out = []
+    for part in (s or "").split(";"):
+        if not part:
+            continue
+        label, sep, value = part.partition("|")
+        if not label or not sep or not value:
+            return []
+        out.append((label, value))
+    return out
+
+
 def _worth(it):
     """What settling this item is worth, as attributes on its card. `reach` is a
     collection of college ids — never a count, for the reason `replies_block`
@@ -1164,6 +1216,8 @@ def _worth(it):
         raise TypeError("reach takes the college ids this item reaches, not a count")
     if reach:
         out += f' data-reach="{E(" ".join(sorted(str(x) for x in reach)))}"'
+    if it.get('chips'):
+        out += f' data-chips="{E(_chips_attr(it["chips"]))}"'
     return out
 
 
@@ -1188,6 +1242,8 @@ def build_sheet(title, items, framing=None, curator="", counts="", sheet_id=None
     head = SHEET_HEAD % {'title': E(title), 'intro': intro_html}
     body = []
     for i, it in enumerate(items, 1):
+        # The sheet's chips are every item's default; an item may override.
+        it = dict(it, chips=it.get('chips') or chips)
         body.append(
             f'<article class="card" id="i{i}"{_worth(it)}>\n<h3>{i} &middot; {E(it["title"])}</h3>\n'
             f'<p class="ref">reference: {E(it.get("ref", ""))}</p>\n<dl>\n'
