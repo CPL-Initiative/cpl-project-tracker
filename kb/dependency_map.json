@@ -4,9 +4,9 @@
   "supabase_tables": 85,
   "rpcs": 31,
   "edge_functions": 5,
-  "file_datasets": 493,
+  "file_datasets": 494,
   "external_services": 145,
-  "consumers": 351,
+  "consumers": 352,
   "workflows": 35,
   "data_js_files": 61,
   "tabs": 37
@@ -4805,7 +4805,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 331
+     "line": 497
     },
     {
      "id": "script:kb/_jev_battery.py",
@@ -5247,6 +5247,26 @@
      "direction": "write",
      "how": "literal",
      "line": 54
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:docs/visuals/<date>-jev-ladder.html": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_jev_ladder_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 34
+    },
+    {
+     "id": "script:kb/_build_jev_ladder_sheet.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 34
     }
    ],
    "served": false,
@@ -7606,6 +7626,13 @@
      "direction": "read",
      "how": "literal",
      "line": 100
+    },
+    {
+     "id": "script:kb/_jev_adjudicate.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 442
     },
     {
      "id": "script:kb/_join_credit_status.py",
@@ -11828,6 +11855,13 @@
      "tabs": [
       "unified-courses"
      ]
+    },
+    {
+     "id": "script:kb/_jev_adjudicate.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 486
     },
     {
      "id": "workflow:overmerge-apply.yml",

@@ -658,6 +658,8 @@ Read that before a UI rework, a First Light artifact, or a table layout.
   under `tests/` (`npm test`; `tests/run.js` auto-discovers `tests/*.test.js`).
   Never a throwaway `/tmp` test — make it guard the *failure mode*. CI's
   `js-tests.yml` is **non-required** and never gates merge-on-green.
+- ⚠️ **`git add`, then `bash scripts/check_generated.sh`, is the LAST thing before
+  a push** — `npm test` covers none of CI's generator `--check` steps.
 - **New CSS uses `var(--token)`, never a raw hex.** Missing role → add a token,
   in **BOTH** HTMLs (Rule 4). Derived tints get their own tokens.
 - **Prefer injecting tab CSS from the tab's JS** (the `ensureCerScopeCss()`
@@ -700,7 +702,7 @@ deliberate, human-gated step — never a checkpoint side effect.
 
 ## Pipeline Reference
 
-**Moved to [`docs/reference/pipeline_reference.md`](docs/reference/pipeline_reference.md)** (2026-07-10 pare-down — was 1,087 lines of context-tax).
+**Moved to [`docs/reference/pipeline_reference.md`](docs/reference/pipeline_reference.md)**.
 
 Read it BEFORE: touching `excel_to_dashboard.py` or the daily workflow (§5–6);
 adding/moving tabs or nav (§7b); working on CPL Assistant (§7c) or TMC Builder
@@ -712,7 +714,7 @@ EACR identity (§9); C-ID/CCN conventions (§10). Contents: 1 Architecture ·
 
 ## Knowledge Base & Unified Courses Curation — Build Status
 
-**Moved to [`docs/reference/kb_build_status.md`](docs/reference/kb_build_status.md)** (2026-07-10 pare-down — was 421 lines).
+**Moved to [`docs/reference/kb_build_status.md`](docs/reference/kb_build_status.md)**.
 
 Read it BEFORE: KB/unified-courses curation work, the CCR worklists, or citing
 build-phase history. It holds the phase-by-phase build narrative, counts, and
@@ -800,7 +802,7 @@ from one readiness tier to the next.
 
 ## Troubleshooting
 
-**Moved to [`docs/reference/troubleshooting.md`](docs/reference/troubleshooting.md)** (2026-08-19 pare-down — 5,302 bytes of symptom-triggered reference that every session paid for and only a broken run reads).
+**Moved to [`docs/reference/troubleshooting.md`](docs/reference/troubleshooting.md)** (2026-08-19 pare-down — symptom-triggered reference only a broken run reads).
 
 Go there when: the **dashboard is not updating** · a **Pages deploy failed** or
 the site is stale after a merge (dispatch a FRESH `pages.yml` run — never
