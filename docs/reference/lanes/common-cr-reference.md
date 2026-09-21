@@ -229,3 +229,59 @@ never a seventh rephrasing of the same question against the same two strings.
 
 **Where Jev fits beyond this lane, and the gates each use carries:**
 [`reference-system-one-model-fit-by-lane`](../../kb-notes/reference-system-one-model-fit-by-lane.md) (S280, 2026-09-20).
+
+## The ladder sheet, and the ranking rule that failed on it (2026-09-21, S282 SkyLedger)
+
+Sheet: **https://claude.ai/artifact/BkxGoSkJUE22BWCGcw9pwB** — ten items,
+generator `kb/_build_jev_ladder_sheet.py`, awaiting Sam.
+
+⚠️ **COLLAPSE VALUE CANNOT RANK THE FOUR CENTERS — IT IS A CONSTANT BETWEEN
+THEM.** The S281 handoff said to prioritize the ladder by collapse value
+(rows × colleges), this lane's own rule. Measured on
+`chatbox_peer_articulations`: the CER, CSR, CCR and CCRR each ride the **same
+9,413 articulation rows across the same 82 colleges**, because they consolidate
+different COLUMNS of one corpus (`unified_title` · `subject` ·
+`subject`+`course_number` · `credit_rec`). Collapse value orders items WITHIN a
+center and ranks nothing BETWEEN them. This is the **second** corpus on which
+the rule has failed for a corpus-specific reason — the ACE lane found the mirror
+image on 2026-08-14 (`a-ranking-rule-must-be-rederived-per-corpus`), where every
+head topic already sat at 80–100 of 108 colleges. **Re-derive a ranking rule
+per corpus; never carry one across.**
+
+**What ranks the centers instead: what ONE SITTING of verdicts is worth.**
+
+| Center | Judgment backlog | Reach of that backlog | Per verdict |
+|---|---|---|---|
+| **CCR** | 16,478 identities · 33,418 stand-alone | **134,485 member rows** | not yet askable |
+| **CCRR** | 2,159 groups (1,936 at rung 5) | 9,413 rows · 82 colleges | **~29 rows** (51 verdicts → 1,459 rows) |
+| **CSR** | 143 findings (123 are one rule) | identity layer, not rows | Rule 7 re-mint |
+| **CER** | 59 findings · 38 keys | **71 rows · 20 colleges** | **~1.2 rows** |
+
+⚠️ **THE CER's MEASURED REACH IS 71 ROWS.** Only **21 of its 38** distinct
+credential titles appear in the articulated corpus at all. Its backlog looks
+mid-sized and buys the least of any center per verdict. Caveat recorded on the
+sheet: the CER governs credential titles across all of MAP (3,813 unified
+titles), so its value may sit in **exhibit adoption** rather than articulation
+rows — a measure nobody has taken yet.
+
+⚠️ **THE CCR IS NOT ASKABLE YET, AND THE REASON IS STRUCTURAL.** Its method half
+(`kb/_row_audit.py`) emits **Trust Cards** — a score per row — where the CSR, CER
+and CCRR emit **findings**, which are discrete questions. Jev answers questions,
+so the CCR needs a Trust-Card→question adapter before a sitting can be spent
+there. That is item 2 on the sheet and the prerequisite for item 1.
+
+⚠️ **123 OF THE CSR's 143 ARE RULE 7 QUESTIONS.** `cs9_anchor_subj_diverge` asks
+whether a discipline's canonical SUBJ4 should follow its anchor course — a
+**re-mint**, under the mandatory playbook, and Rule 7 holds that an unreliable
+signal never gates identity. Jev may RANK them for a curator; it must never
+carry the verdict.
+
+⚠️ **THE CER AND CSR FINDINGS ARE FROM 2026-07-10 — 73 days stale.** Every
+triage count in the S281 handoff (CER 239→59, CSR 185→143) comes off those two
+files, and the M-ID layer has been through a re-mint since. **Re-run both
+scanners before a call is spent on either.**
+
+**Only the CCRR has a decisions store.** `cr_reference_decisions` (with its
+`note` reason column) and `kb_curation` are the only decision/curation tables in
+the database. Each other center needs one before its first sheet, routed through
+Governance under Rule 10(a3).
