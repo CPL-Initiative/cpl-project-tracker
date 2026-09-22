@@ -167,6 +167,23 @@ already suspect it, which is why the pointer is here.
 
 ## NEEDS SAM
 
+⚠️ **TWO OF THESE THREE WERE ALREADY BUILT WHEN SAM RULED ON THEM (verified
+2026-09-22, open-asks sheet items 14-16).** They stayed on this list after the
+work landed, so the sheet carried them to him and he spent a ruling on each.
+
+- **① the statewide treatment — ALREADY SHIPPED.** `ccr_universe.js` draws the
+  second ring today, and its comment cites the ask by date: *"A statewide
+  exhibit wears a second ring (Sam, 2026-09-10: 'shown visibly on the sky') — a
+  mark, not a color, so it reads by day and by night; the word rides the label
+  and the card."* The word is on the label (`nd.sw` in the head line) and on the
+  card. Sam's ruling — a persistent mark on the node — describes what exists.
+- **② the `sierra_guidance` CHECK constraint — ALREADY ALIGNED.** Read live:
+  `sierra_guidance_surface_ck` allows `my-college · cobi-assistant · public ·
+  fact-sheet · memory-autogen · memory-briefing · gr-analysis · skyview-ask`.
+  There is no migration to run and no save failure to fix.
+- **③ the phone opening — STILL OPEN, and the ruling stands.** See below.
+
+
 ① **What the statewide exhibits are FOR.** His 2026-09-10 ask cut off at *"shown
 visibly on the sky so folks can easily see…"*. The data side is done (`sw` on all
 84); the treatment depends on the rest of the sentence — see which are statewide,
@@ -174,7 +191,25 @@ see what a college could adopt, or see where they are already in use.
 ② **The live `sierra_guidance` CHECK constraint** does not yet allow
 `skyview-ask` (the schema of record does). Not blocking; it only matters to scope
 a Sierra rule to this surface.
-③ **The opening width on a phone.** At 188° across on a 390px canvas the
+③ **The opening width on a phone — RULED "narrow" (Sam, 2026-09-22), NOT YET
+DONE.** `sph.half` is fixed at 94° (188° across) for every viewport; nothing
+reads the width.
+
+⚠️ **THE RISK I PUT ON THE SHEET WAS THE WRONG WAY ROUND.** The card warned that
+narrowing might leave islands "collapsed", reading as empty. The invariant says
+the opposite: `NODE_ZOOM` fails islands as the window WIDENS, because the
+stereographic scale falls with width. Narrowing RAISES scale, so stars get
+safer; what narrowing costs is islands in view at once, never their stars.
+
+⚠️ **AND IT NEEDS A MEASUREMENT NOBODY HAS TAKEN AT PHONE WIDTH.** The table in
+`ccr_universe.js` (150/188/226/240 across) was measured at desktop. Two attempts
+at a 390px harness on 2026-09-22 returned IDENTICAL numbers at every angle with
+every label stat zero — the page never rendered under them, so those runs are a
+result about the harness rather than about the sky. `npm run a11y` renders
+SkyView fine (11 routes pass), so the working path is that harness rather than a
+bare Playwright script. Do not pick an angle off the desktop table.
+
+③ *(original wording)* **The opening width on a phone.** At 188° across on a 390px canvas the
 discipline labels clip off both edges. Narrowing is a real improvement but
 `NODE_ZOOM` decides per island whether courses draw at all, and the margin is the
 point (see the invariant), so this is a ruling, not a sweep.

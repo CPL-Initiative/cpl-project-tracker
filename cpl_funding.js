@@ -87,7 +87,7 @@
     ".cplfund-card { text-align: center; }",
     // Screen-reader-only utility (a11y, 2026-07-28).
     ".cplfund-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }",
-    ".cplfund-src { font-size: .8rem; color: var(--text-faint); margin: -6px 0 14px; }",
+    ".cplfund-src { font-size: .8rem; color: var(--text-muted); margin: -6px 0 14px; }",
     ".cplfund-src a { color: var(--accent-link); }",
     // Page actions row (Sam, 2026-08-31): expand/collapse-all, Draft memo,
     // Save as PDF, and the reviewer view preview. Words, not glyphs.
@@ -131,7 +131,7 @@
     ".cplfund-metricdiag summary { cursor: pointer; }",
     ".cf-ok { color: var(--text-muted); font-weight: 600; }",
     ".cplfund-ledgernote, .cplfund-ledgerdrift { font-size: .78rem; margin: 0 0 8px; }",
-    ".cplfund-row.cplfund-deeplink > td { background: var(--surface-subtle); box-shadow: inset 3px 0 0 var(--link); }",
+    ".cplfund-row.cplfund-deeplink > td { background: var(--surface-subtle); box-shadow: inset 3px 0 0 var(--link,var(--accent-link)); }",
     ".cf-withheld { color: var(--text-muted); font-style: italic; }",
     ".cf-adv { display: inline-block; margin-left: 4px; padding: 0 4px; border-radius: 3px; font-size: .62rem; font-weight: 700; letter-spacing: .02em; text-transform: uppercase; color: var(--text-muted); background: var(--surface-muted); border: 1px solid var(--border); white-space: nowrap; }",
     ".cplfund-basis-lbl { font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); font-weight: 700; }",
@@ -162,7 +162,7 @@
     ".cplfund-dtl-table th { text-align: left; font-size: .68rem; text-transform: uppercase; letter-spacing: .04em; color: var(--text-muted); padding: 3px 6px; border-bottom: 1px solid var(--border-strong); }",
     ".cplfund-dtl-table th:not(:first-child), .cplfund-dtl-table td:not(:first-child) { text-align: right; }",
     ".cplfund-dtl-table td { padding: 3px 6px; border-bottom: 1px solid var(--border); font-variant-numeric: tabular-nums; }",
-    ".cplfund-dtl-table td .sub { display: block; font-size: .75rem; color: var(--text-faint); }",
+    ".cplfund-dtl-table td .sub { display: block; font-size: .75rem; color: var(--text-muted); }",
     ".cplfund-ftesfactors { display: grid; gap: 2px; font-size: .8rem; }",
     ".cplfund-ftesrow { display: grid; grid-template-columns: minmax(180px,auto) minmax(90px,auto) 1fr;" +
       " gap: 10px; align-items: baseline; padding: 3px 0; border-bottom: 1px dotted var(--border); }",
@@ -183,7 +183,7 @@
     // The two word controls sit in one quiet group at the end of a card.
     ".cplfund-card-ctl { display: inline-flex; gap: 6px; align-items: center; margin-top: 6px; }",
     ".cplfund-card .l .cplfund-pool-label-input { font-size: .8rem; color: var(--text-muted); text-align: center; }",
-    ".cplfund-card-note { font-size: .72rem; color: var(--text-faint); margin-top: 3px; line-height: 1.3; }",
+    ".cplfund-card-note { font-size: .72rem; color: var(--text-muted); margin-top: 3px; line-height: 1.3; }",
     // ── THE FLAT LEDGER (Sam, 2026-09-01) ──────────────────────────────────
     // The money lines read DOWN to a total instead of sitting in seven boxes of
     // four different kinds. The classes are unchanged — .cplfund-card names a
@@ -251,19 +251,19 @@
     ".cplfund-goal { background: var(--surface-subtle); border: 1px solid var(--border); border-left: 4px solid var(--navy-secondary); border-radius: 8px; padding: 14px 16px; }",
     ".cplfund-goal h4 { margin: 0 0 8px; color: var(--navy-primary); font-size: 1rem; display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px; }",
     ".cplfund-goal-key { font-weight: 700; }",
-    ".cplfund-goal-cite { font-size: .7rem; font-weight: 400; color: var(--text-faint); letter-spacing: .02em; }",
+    ".cplfund-goal-cite { font-size: .7rem; font-weight: 400; color: var(--text-muted); letter-spacing: .02em; }",
     ".cplfund-goal-quote { margin: 0 0 10px; padding: 6px 10px; border-left: 3px solid var(--border-strong); background: var(--surface-opaque); font-size: .8rem; font-style: italic; color: var(--text-body); border-radius: 0 4px 4px 0; }",
     ".cplfund-goal-axes { display: grid; gap: 10px; }",
     ".cplfund-goal-ax h5 { margin: 0 0 4px; font-size: .72rem; text-transform: uppercase; letter-spacing: .05em; color: var(--text-muted); font-weight: 700; }",
     ".cplfund-goal-ax ul { margin: 0; padding-left: 18px; font-size: .8rem; line-height: 1.6; }",
     ".cplfund-goal-ax p { margin: 0; font-size: .8rem; line-height: 1.55; }",
-    ".cplfund-goal-empty { color: var(--text-faint); font-style: italic; }",
+    ".cplfund-goal-empty { color: var(--text-muted); font-style: italic; }",
     ".cplfund-goal-chip { display: inline-block; border-radius: 4px; padding: 1px 7px; font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; border: 1px solid var(--border-strong); background: var(--surface-opaque); color: var(--text-body); }",
     ".cplfund-goal-chip.ok { border-color: var(--border-strong); color: var(--text-strong); }",
     ".cplfund-goal-chip.warn { border-color: var(--mustard-text); color: var(--mustard-text); }",
-    ".cplfund-goal-chip.gap { border-color: var(--text-faint); color: var(--text-faint); }",
+    ".cplfund-goal-chip.gap { border-color: var(--text-muted); color: var(--text-muted); }",
     ".cplfund-goal-limit { margin-top: 8px !important; padding: 6px 9px; border-left: 3px solid var(--border-strong); background: var(--surface-opaque); border-radius: 0 4px 4px 0; font-size: .78rem !important; }",
-    ".cplfund-goal-derived { font-size: .68rem; text-transform: uppercase; letter-spacing: .04em; color: var(--text-faint); border: 1px dashed var(--border-strong); border-radius: 4px; padding: 0 4px; }",
+    ".cplfund-goal-derived { font-size: .68rem; text-transform: uppercase; letter-spacing: .04em; color: var(--text-muted); border: 1px dashed var(--border-strong); border-radius: 4px; padding: 0 4px; }",
     // ── the (d)(2) account: four ROWS, not four cards (Sam, 2026-09-01) ──
     // These come after the card rules above deliberately: .cplfund-goal is now
     // a <tr>, and the box treatment it used to carry (background, border-left,
@@ -286,14 +286,14 @@
     ".cplfund-evk { font-weight: 700; color: var(--text-strong); }",
     ".cplfund-evtext { color: var(--text-body); }",
     ".cplfund-evwhy { display: inline; }",
-    ".cplfund-evwhy > summary { display: inline; cursor: pointer; font-size: .78rem; color: var(--link); margin-left: 4px; }",
+    ".cplfund-evwhy > summary { display: inline; cursor: pointer; font-size: .78rem; color: var(--link,var(--accent-link)); margin-left: 4px; }",
     ".cplfund-evwhy > summary::-webkit-details-marker { display: none; }",
     ".cplfund-evwhy > summary::before { content: \"Show \"; }",
     ".cplfund-evwhy[open] > summary::before { content: \"Hide \"; }",
     ".cplfund-evwhy .cplfund-goal-limit { display: block; margin-top: 6px !important; }",
     // The superscript marker. Underlined AND raised, so it is not colour alone,
     // and it keeps a real focus ring — it is a link, and a curator tabs to it.
-    ".cplfund-goalsup { font-size: .8em; vertical-align: super; line-height: 0; color: var(--link); text-decoration: underline; text-decoration-style: dotted; margin-left: 1px; }",
+    ".cplfund-goalsup { font-size: .8em; vertical-align: super; line-height: 0; color: var(--link,var(--accent-link)); text-decoration: underline; text-decoration-style: dotted; margin-left: 1px; }",
     ".cplfund-goalsup:focus-visible { outline: 2px solid var(--navy-secondary); outline-offset: 2px; border-radius: 2px; }",
     "@media (max-width: 560px) { .cplfund-goals { grid-template-columns: 1fr; } }",
     ".cplfund-prio .p { background: var(--surface-subtle); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; }",
@@ -492,7 +492,7 @@
     ".cplfund-table th { z-index: 3; }",
     ".cplfund-table tbody tr.cplfund-systemrow td { position: sticky; top: var(--cf-pin1, auto); z-index: 2; }",
     ".cplfund-table tbody tr.cplfund-ncsysrow td { top: var(--cf-pin2, auto); }",
-    ".cplfund-table td .sub { display: block; font-weight: 400; font-size: .75rem; color: var(--text-faint); }",
+    ".cplfund-table td .sub { display: block; font-weight: 400; font-size: .75rem; color: var(--text-muted); }",
     // The caret is a real <button> (a11y, 2026-07-28) — reset the button chrome
     // so it still reads as a bare caret glyph, keep it keyboard-focusable.
     // The row toggle is the institution's NAME, as a real <button> (a11y): every
@@ -517,7 +517,7 @@
     ".cplfund-detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 6px 22px; font-size: .83rem; }",
     ".cplfund-detail-grid .dk { color: var(--text-muted); }",
     ".cplfund-detail-grid > .cplfund-dtl-tscroll, .cplfund-detail-grid > .cplfund-optin, .cplfund-detail-grid > .cplfund-notewrap { grid-column: 1 / -1; }",
-    ".cplfund-foot { font-size: .78rem; color: var(--text-faint); margin: 10px 2px; }",
+    ".cplfund-foot { font-size: .78rem; color: var(--text-muted); margin: 10px 2px; }",
     ".cplfund-foot div { margin: 2px 0; overflow-wrap: anywhere; }",
     ".cplfund-empty { border: 1px dashed var(--border-strong); border-radius: 8px; background: var(--surface-subtle); color: var(--text-muted); padding: 28px; text-align: center; }",
     // ── config / auth bar ──
@@ -551,7 +551,7 @@
     ".cplfund-subtabs button.on { background: var(--seal-blue); color: var(--white); border-color: var(--seal-blue); }",
     ".cplfund-reptoolbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 12px; }",
     ".cplfund-reptoolbar .dk { font-size: .82rem; }",
-    ".cplfund-repnote { font-size: .82rem; color: var(--text-faint); margin: 0 0 10px; }",
+    ".cplfund-repnote { font-size: .82rem; color: var(--text-muted); margin: 0 0 10px; }",
     // The editable memo surface — a print-faithful page the curator edits inline.
     ".cplfund-memo { background: var(--surface-opaque); border: 1px solid var(--border); border-radius: 8px; padding: 40px 48px; max-width: 820px; margin: 0 auto; color: var(--text-strong); line-height: 1.5; font-size: .95rem; box-shadow: 0 1px 4px rgba(0,0,0,.06); }",
     ".cplfund-memo:focus { outline: 2px solid var(--gold-accent); outline-offset: 4px; }",
@@ -571,7 +571,7 @@
     ".cplfund-memo td { border-top: 1px solid var(--border); padding: 3px 6px; text-align: right; }",
     ".cplfund-memo .sig { margin-top: 18px; }",
     ".cplfund-memo .cc { margin-top: 16px; font-size: .85rem; color: var(--text-muted); }",
-    ".cplfund-saving { font-size: .78rem; color: var(--text-faint); }",
+    ".cplfund-saving { font-size: .78rem; color: var(--text-muted); }",
     ".cplfund-saving.err { color: var(--red-alert); font-weight: 600; }",
     // ── year controls ──
     ".cplfund-years { display: flex; flex-wrap: wrap; gap: 14px 22px; align-items: center; margin: 0 0 12px; }",
@@ -595,7 +595,7 @@
     ".cplfund-chip { display: inline-block; font-size: .72rem; margin-left: 4px; font-weight: 400; cursor: help; }",
     ".cplfund-bound { color: var(--text-muted); margin-left: 3px; }",
     // so it reads as a quiet marker, not a bright emoji.
-    ".cplfund-carry { color: var(--text-faint); font-size: .75rem; font-weight: 400; }",
+    ".cplfund-carry { color: var(--text-muted); font-size: .75rem; font-weight: 400; }",
     ".cplfund-elig { background: var(--surface-subtle); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; font-size: .88rem; line-height: 1.55; text-align: left; }",
     ".cplfund-elig-intro { margin-bottom: 8px; }",
     // Requirement list: a bullet + one full-width editable line per item, all
@@ -680,14 +680,14 @@
     ".cplfund-table td.cf-prio { line-height: 1.28; }",
     ".cf-prio .cf-t { color: var(--text-muted); }",
     // The row labels (Tgt / Now) — tiny, muted, so the numbers lead.
-    ".cf-prio .cf-lbl { font-size: .7rem; letter-spacing: .02em; color: var(--text-faint); font-weight: 600; margin-right: 2px; }",
+    ".cf-prio .cf-lbl { font-size: .7rem; letter-spacing: .02em; color: var(--text-muted); font-weight: 600; margin-right: 2px; }",
     // Real dollars are BOLD (Sam, 2026-07-28): the funding cap on the target line
     // and the earned $ on the actual line. Counts + % stay normal weight.
     ".cf-prio .cf-cap { font-weight: 700; color: var(--navy-secondary); }",
     ".cf-prio .cf-a { font-weight: 400; color: var(--text-muted); display: block; margin-top: 1px; }",
     ".cf-prio .cf-u { font-weight: 700; color: var(--navy-primary); }",
     ".cf-prio .cf-pct { color: var(--green-progress); font-weight: 400; }",
-    ".cf-prio .cf-gap { color: var(--text-faint); font-weight: 400; }",
+    ".cf-prio .cf-gap { color: var(--text-muted); font-weight: 400; }",
     // ── the Option A NONCREDIT row (Sam, 2026-08-27) ─────────────────────
     // A recessed band directly under its credit row, so the pair reads as one
     // institution in two lanes. ⚠️ The tint is NOT the signal — the CR/NC chips
@@ -717,7 +717,7 @@
     // other. A flex row would ragged-edge the labels.
     ".cplfund-table td.cf-size { text-align: right; }",
     ".cf-size .cf-szline { display: grid; grid-template-columns: 1.7em 1fr; gap: .35em; align-items: baseline; }",
-    ".cf-size .cf-lane { text-align: left; font-size: .66rem; font-weight: 700; letter-spacing: .05em; color: var(--text-faint); }",
+    ".cf-size .cf-lane { text-align: left; font-size: .66rem; font-weight: 700; letter-spacing: .05em; color: var(--text-muted); }",
     // Sam: "give the CR/NC chips a muted different color". A filled muted chip
     // rather than the outlined one every other chip on the row uses, so the lane
     // label is distinguishable from the floor/ceiling/gate glyphs beside it.
@@ -742,8 +742,8 @@
     // and states the dial it is measured against.
     ".cf-belowchip { display: inline-block; font-size: .6rem; font-weight: 600; letter-spacing: .03em; " +
       "padding: 1px 5px; margin-left: 5px; border: 1px solid var(--border); border-radius: 3px; " +
-      "background: transparent; color: var(--text-faint); cursor: help; vertical-align: middle; }",
-    ".cplfund-table tr.cplfund-ncout > td { color: var(--text-faint); }",
+      "background: transparent; color: var(--text-muted); cursor: help; vertical-align: middle; }",
+    ".cplfund-table tr.cplfund-ncout > td { color: var(--text-muted); }",
     // Numbered pie glyph for the Elig column (Sam, 2026-07-24).
     ".cf-eligpie { vertical-align: middle; display: inline-block; }",
     ".cplfund-notewrap { grid-column: 1 / -1; }",
@@ -896,7 +896,7 @@
     ".cf-ess.ok { color: var(--text-strong); }",
     ".cf-ess.part { color: var(--mustard-text); }",
     ".cf-ess.no { color: var(--text-muted); font-weight: 400; }",
-    ".cf-ess.pend { color: var(--text-faint); font-weight: 400; }",
+    ".cf-ess.pend { color: var(--text-muted); font-weight: 400; }",
     ".cplfund-table th.c, .cplfund-table td.c { text-align: center; }",
     ".cplfund-declined td { background: var(--surface-subtle); }",
     // Noncredit feeder measurables ladder (F1 / F2).

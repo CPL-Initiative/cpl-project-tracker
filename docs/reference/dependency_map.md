@@ -249,7 +249,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `tmc_ge_patterns.js` | `CPL_TMC_GE_PATTERNS` | not stated in header | tabs: `tmc-builder` |
 | `tmc_templates.js` | `CPL_TMC_TEMPLATES` | `tmc/_parse_tmc_pdfs.py` | tabs: `tmc-builder` · scripts: `tmc/_build_college_adts.py`, `tmc/_parse_tmc_pdfs.py` |
 | `unified_courses_aligned.js` | `CPL_UC_ALIGNED` | not stated in header | tabs: `unified-courses` · scripts: `excel_to_dashboard.py`, `kb/_build_aligned_exhibits.py` |
-| `unified_courses_data.js` | `CPL_UNIFIED_COURSES` | not stated in header | tabs: `unified-courses` · scripts: `excel_to_dashboard.py`, `kb/_analyze_witness_kinship.py`, `kb/_build_ccr_atlas_extract.py`, `kb/_build_ccr_sky.py`, `kb/_build_ccr_universe.py`, `kb/_build_crosslist_decision_sheet.py`, `kb/_build_discipline_blanks_worklist.py`, `kb/_build_orphan_parent_worklist.py`, `kb/_esl_ladder_relevel_dryrun.py`, `kb/_merge_candidate_queue.py`, `kb/_morphological_variant_dryrun.py`, `kb/_seed_college_short_names.py` |
+| `unified_courses_data.js` | `CPL_UNIFIED_COURSES` | not stated in header | tabs: `unified-courses` · scripts: `excel_to_dashboard.py`, `kb/_analyze_witness_kinship.py`, `kb/_build_ccr_atlas_extract.py`, `kb/_build_ccr_sky.py`, `kb/_build_ccr_universe.py`, `kb/_build_crosslist_decision_sheet.py`, `kb/_build_discipline_blanks_worklist.py`, `kb/_build_open_asks_decision_sheet.py`, `kb/_build_orphan_parent_worklist.py`, `kb/_esl_ladder_relevel_dryrun.py`, `kb/_merge_candidate_queue.py`, `kb/_morphological_variant_dryrun.py`, `kb/_seed_college_short_names.py` |
 | `unified_courses_index.js` | `CPL_UC_INDEX` | not stated in header | tabs: `unified-courses` · scripts: `excel_to_dashboard.py`, `kb/_build_esl_fold_preview.py`, `kb/_esl_package_actionable.py`, `kb/_esl_package_apply.py` |
 | `unified_courses_member_desc.js` | `CPL_UC_MEMBER_DESC` | not stated in header | tabs: `unified-courses` · scripts: `excel_to_dashboard.py`, `kb/_build_ccr_universe.py`, `kb/_jev_adjudicate.py` |
 | `unified_courses_members.js` | `CPL_UC_MEMBERS` | not stated in header | tabs: `unified-courses` · scripts: `excel_to_dashboard.py`, `kb/_build_ccr_atlas_extract.py`, `kb/_build_ccr_universe.py`, `kb/_build_esl_fold_preview.py`, `kb/_esl_ladder_relevel_dryrun.py`, `kb/_esl_package_apply.py` |
@@ -270,7 +270,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `/tmp/metrics_status` | workflows: `daily-dashboard.yml` | — |
 | `<date>-skyview-globe-prototype.html` | scripts: `prototype/globe/build_globe.py` | scripts: `prototype/globe/build_globe.py` |
 | `CLAUDE.md` | scripts: `kb/_build_docs_index.py`, `kb/_consolidation_loss_audit.py`, `kb/_docs_audit.py`, `kb/_doctrine_scenarios.py`, `kb/doctrine.py` | — |
-| `CPL_Dashboard.html` | scripts: `excel_to_dashboard.py`, `kb/_glyph_sweep.py`, `prototype/check_contrast.py` | scripts: `excel_to_dashboard.py` · committed by: `daily-dashboard.yml` |
+| `CPL_Dashboard.html` | scripts: `excel_to_dashboard.py`, `kb/_build_open_asks_decision_sheet.py`, `kb/_glyph_sweep.py`, `prototype/check_contrast.py` | scripts: `excel_to_dashboard.py` · committed by: `daily-dashboard.yml` |
 | `CPL_Initiative_Project_List_v3.xlsx` | scripts: `excel_to_dashboard.py`, `kb/_validate_projects.py`, `kb/_validate_workplan_goals.py` | — |
 | `CustomReport_*.json` | scripts: `funding/_build_cr_backlog.py`, `funding/_build_funding_performance.py`, `kb/_sync_map_custom_reports.py` | — |
 | `README.md` | scripts: `excel_to_dashboard.py`, `kb/_build_docs_index.py`, `kb/_docs_audit.py`, `kb/_normalize_kb_note_frontmatter.py`, `kb/doctrine.py` | — |
@@ -308,14 +308,14 @@ collapse to one `<date>` family so writer and reader edges join.
 | `coci_program_export_<date>.csv` | scripts: `kb/_build_baccalaureate_pathways.py`, `kb/_build_coci_programs.py`, `kb/_build_futuro_hth_crosswalk.py`, `kb/_build_program_course_graph.py`, `kb/_classify_noncredit_programs.py`, `tmc/_build_college_adts.py` | — |
 | `college_activity.js` | pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py` | committed by: `daily-dashboard.yml` |
 | `college_activity_template.html` | scripts: `excel_to_dashboard.py`, `kb/_test_light_theme.py` | committed by: `daily-dashboard.yml` |
-| `college_briefing.js` | pages: `CPL_Dashboard.html` · scripts: `scripts/stamp_asset_versions.py` | — |
+| `college_briefing.js` | pages: `CPL_Dashboard.html` · scripts: `kb/_build_open_asks_decision_sheet.py`, `scripts/stamp_asset_versions.py` | — |
 | `college_identity.js` | pages: `CPL_Dashboard.html` | — |
 | `college_report_generator.js` | pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py` | — |
 | `college_short_names.js` | pages: `CPL_Dashboard.html` · scripts: `kb/_seed_college_short_names.py` | scripts: `kb/_seed_college_short_names.py` |
 | `contracts.js` | pages: `CPL_Dashboard.html` | — |
 | `course_top_consensus.json` | tabs: `cip-crosswalk` · scripts: `kb/_build_course_top_consensus.py` | scripts: `kb/_build_course_top_consensus.py` |
 | `cpl_chat.js` | pages: `CPL_Dashboard.html` | — |
-| `cpl_funding.js` | tabs: `college-briefing` · pages: `CPL_Dashboard.html`, `funding-model/index.html` | — |
+| `cpl_funding.js` | tabs: `college-briefing` · pages: `CPL_Dashboard.html`, `funding-model/index.html` · scripts: `kb/_build_open_asks_decision_sheet.py` | — |
 | `cpl_memory.js` | pages: `CPL_Dashboard.html` | — |
 | `cpl_news.js` | pages: `CPL_Dashboard.html` | — |
 | `cpl_pathways.js` | pages: `CPL_Dashboard.html` | — |
@@ -332,6 +332,9 @@ collapse to one `<date>` family so writer and reader edges join.
 | `docs/INDEX.md` | scripts: `kb/_build_docs_index.py`, `kb/_docs_audit.py`, `kb/doctrine.py` | — |
 | `docs/catalog/index.json` | tabs: `governance` · scripts: `kb/_build_docs_index.py` | — |
 | `docs/common_cr_reference_scope.md` | scripts: `kb/_build_cr_reference.py` | — |
+| `docs/military_cr_reference_scope.md` | scripts: `kb/_build_open_asks_decision_sheet.py` | — |
+| `docs/reference/lanes/esl-packaging.md` | scripts: `kb/_build_open_asks_decision_sheet.py` | — |
+| `docs/reference/lanes/t5-55050-article-9.md` | scripts: `kb/_build_open_asks_decision_sheet.py` | — |
 | `docs/reference/mid_lifecycle.md` | scripts: `kb/_doctrine_scenarios.py` | — |
 | `docs/reference/statute/README.md` | scripts: `kb/_doctrine_scenarios.py` | — |
 | `docs/reference/statute/t5_55050_55051_final_reg_text_<date>.txt` | scripts: `kb/_derive_55050_clean.py` | — |
@@ -364,7 +367,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `funding/_build_funding_performance.py` | workflows: `daily-dashboard.yml` | — |
 | `funding_model_payload.js` | pages: `funding-model/index.html` | — |
 | `generate_reports.js` | scripts: `excel_to_dashboard.py` · workflows: `daily-dashboard.yml` | — |
-| `governance.js` | pages: `CPL_Dashboard.html` | — |
+| `governance.js` | pages: `CPL_Dashboard.html` · scripts: `kb/_build_open_asks_decision_sheet.py` | — |
 | `gr_priorities.js` | pages: `CPL_Dashboard.html` | — |
 | `index.html` | scripts: `excel_to_dashboard.py`, `kb/_glyph_sweep.py`, `nudges/build_nudges.py`, `prototype/check_contrast.py`, `raci/_seed_team_members.py` | committed by: `daily-dashboard.yml` |
 | `kb-portal/app.js` | pages: `kb-portal/index.html` | — |
@@ -607,7 +610,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `map_data_quality.js` | pages: `CPL_Dashboard.html` | — |
 | `map_export.js` | pages: `CPL_Dashboard.html` | — |
 | `map_team_queue.js` | pages: `CPL_Dashboard.html` | — |
-| `map_users.js` | tabs: `map-queue` · pages: `CPL_Dashboard.html` | — |
+| `map_users.js` | tabs: `map-queue` · pages: `CPL_Dashboard.html` · scripts: `kb/_build_open_asks_decision_sheet.py` | — |
 | `master_report.js` | pages: `CPL_Dashboard.html` | — |
 | `mission_control.js` | pages: `CPL_Dashboard.html` | — |
 | `nav_groups.js` | pages: `CPL_Dashboard.html` | — |
@@ -633,7 +636,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `prototype/ccr_desc/*.json` | pages: `prototype/skyview.html` | — |
 | `prototype/ccr_remint_blast.json` | scripts: `kb/_build_remint_blast_radius.py` | — |
 | `prototype/ccr_sky.json` | scripts: `kb/_build_ccr_sky.py` | committed by: `daily-dashboard.yml` |
-| `prototype/ccr_universe.js` | scripts: `kb/_glyph_sweep.py`, `prototype/build_ccr_atlas.py` | — |
+| `prototype/ccr_universe.js` | scripts: `kb/_build_open_asks_decision_sheet.py`, `kb/_glyph_sweep.py`, `prototype/build_ccr_atlas.py` | — |
 | `prototype/ccr_universe.json` | scripts: `kb/_build_ccr_cpl.py`, `kb/_build_ccr_sky.py`, `kb/_build_ccr_universe.py`, `prototype/build_ccr_atlas.py`, `prototype/globe/extract_globe_data.py` | — |
 | `prototype/ccr_universe_members.json` | scripts: `kb/_audit_control_number_claims.py`, `kb/_build_ccr_universe.py`, `prototype/build_ccr_atlas.py` | — |
 | `prototype/check_contrast.py` | workflows: `js-tests.yml` | — |
@@ -904,5 +907,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 505 file
+Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 508 file
 datasets · 145 external services · 357 consumers · 35 workflows · 37 tabs.

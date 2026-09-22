@@ -269,7 +269,7 @@ by color pair on the S249 post-sweep run:
 
 | n | worst | pair | what it is |
 |---:|---:|---|---|
-| **10** | 3.06:1 | `#7A7A74` on the dark grounds | ⭐ **`--text-faint` carrying essential text.** Its own dark-block comment says *decorative only — never essential text*, so every one of these is a SITE using the wrong role, not a bad token value. `--text-muted` is the fix, per site. **NEEDS SAM** where the site is on Implementation Funding (his tab, and it changes light). |
+| **10** | 3.06:1 | `#7A7A74` on the dark grounds | ⭐ **`--text-faint` carrying essential text.** Its own dark-block comment says *decorative only — never essential text*, so every one of these is a SITE using the wrong role, not a bad token value. `--text-muted` is the fix, per site. ✅ RULED (item 12): the Implementation Funding sites moved to `--text-muted`. |
 | 5 | 3.21:1 | `#7C7A72` · `#838382` · `#888888` · `#6D6D6B` | near-faint greys, all 3.2–4.4:1 — one step from AA |
 | 4 | 1.11:1 | `#ECE9E2` on `#CFCBB2` / `#F1F5F9` | themed ink on a **raw light ground** that stays light in dark — the grounds S249 did not reach |
 | 3 | 2.82:1 | `#8B6800` / `#B89133` on warm darks | `--mustard-text`'s LIGHT value painting in dark |
@@ -283,13 +283,37 @@ Also open: **printing while in dark mode** — consumer-JS dark rules still appl
 to a print, so it comes out dark-on-dark in places. That wants `@media screen`
 scoping on every dark rule and is its own pass.
 
-**NEEDS SAM** — three, all of which change the LIGHT theme, which is why none
-was swept:
-1. Whether `--surface-1`/`--surface-2` get light values too (unifies six tabs'
-   tints and repaints them — a design call).
-2. The `--text-faint` sites on Implementation Funding (part of the 10 above).
-3. ⭐ **The 24 `var(--brand)` / `var(--link)` / `var(--text)` declarations that
-   resolve to NOTHING in both themes** — written with no fallback, invalid at
-   computed-value time, so `college_briefing.js`'s `.cb-bfrac>i` progress bar is
-   `transparent` and its `.cb-lead`/`.cb-next` accent borders do not draw. Not a
-   theming bug; fixing it is visible in light.
+## ✅ RULED AND LANDED (Sam, open-asks sheet items 11-13, 2026-09-22)
+
+All three changed the LIGHT theme, which is why none had been swept.
+
+1. **`--surface-1`/`--surface-2` carry light values now** — aliases of
+   `--surface-subtle`/`--surface-muted`, whose dark values they were already
+   byte-identical to. Dark-only had left twelve hand-picked tints behind
+   fallbacks (`#eef3f9`, `#f4f7fb`, `#fafcff`, `#F6F2FD`, `#fdf8ec` …), cool
+   blues on a warm ground. Every ink clears AA on both (worst 5.56:1).
+   ⚠️ **`--gold-soft` sat in the same assertion and STAYS dark-only** — item 11
+   named the two surface tokens, and sweeping the gold ground in beside them is
+   how a ruling grows past what was asked.
+2. **The Implementation Funding `--text-faint` sites moved to `--text-muted`** —
+   19 of them. ⚠️ **It was never a dark-mode bug.** Measured against the real
+   grounds, `--text-faint` fails AA in BOTH themes (3.24:1 light on `--paper`,
+   4.23:1 dark) while `--text-muted` passes everywhere (6.02–7.91:1). This lane
+   recorded it as a dark finding only because that is where the a11y pass ran.
+   ⚠️ **34 sites carry the same defect on 7 other tabs** — `cpl_memory` 12,
+   `contracts` 9, `map_data_quality` 5, `cpl_todos` 3, `cr_reference` 2,
+   `cpl_news` 2, `cpl_pathways` 1. Not ruled on, not touched.
+3. **The 24 phantom-token declarations point at real roles** —
+   `var(--brand,var(--cobalt))`, `--link` → `--accent-link`, `--text` →
+   `--text-strong`. Exactly 24, matching this lane's own count.
+
+Guard: `tests/phantom_token_repair.test.js` (6 checks) + `cpl_theme` 66.
+⚠️ **`cpl_theme` had asserted the OPPOSITE of item 1**, and its comment said
+why: *"Defining them light too would repaint six tabs; that is Sam's call, not a
+tidy-up."* A guard parked awaiting a ruling. It stopped the unilateral change it
+was written to stop, and the ruling released it.
+
+**Still open here, none of it ruled:** printing while in dark mode (consumer-JS
+dark rules apply to a print, so it comes out dark-on-dark); the raw light
+grounds `#CFCBB2` / `#F1F5F9` that stay light in dark; the near-faint grays one
+step from AA.

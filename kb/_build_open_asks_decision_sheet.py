@@ -21,13 +21,14 @@ the CARD. When a lane's ask changes, the card here is what has to change with it
 
 ⚠️ AND THIS SHEET REPORTS; IT NEVER RULES. Nine of these were asked before and
 have sat unanswered — restating them is the whole job. An item that has drifted
-out of its lane's wording is a bug in this file, never a licence to update the
+out of its lane's wording is a bug in this file, never a license to update the
 lane from here.
 
 Run: python3 kb/_build_open_asks_decision_sheet.py
      python3 kb/_build_open_asks_decision_sheet.py --check   (coverage only)
 """
 import glob
+import json
 import os
 import re
 import sys
@@ -56,6 +57,175 @@ NO_OPEN_ASK = {
 
 def chips(*pairs):
     return list(pairs)
+
+# ── what each card's premise rests on ────────────────────────────────────────
+# ⚠️ FOUR OF THE 2026-09-22 SHEET'S TWENTY-ONE CARDS RESTED ON A PREMISE THAT
+# HAD ALREADY MOVED, and Sam ruled on all four before anyone noticed:
+#
+#   item 14  "the treatment depends on the rest of the sentence" — ccr_universe.js
+#            had been drawing the statewide ring since 2026-09-10, citing his ask
+#            BY DATE in its own comment
+#   item 15  "the live CHECK constraint does not allow skyview-ask" — it does
+#   item 17  "8 colleges" — five profiles, and not one of them a community college
+#   item 16  the risk was stated backwards: NODE_ZOOM fails islands as the window
+#            WIDENS, so narrowing makes stars safer, never emptier
+#
+# The cause is specific and fixable. The cross-list sheet RECOMPUTED every count
+# at build time; this builder QUOTED lane prose, and lane prose lags the code.
+# So every card now declares its evidence, and the kinds that the repo can settle
+# are settled HERE, on every build:
+#
+#   measured(fn)       the repo can answer it. Answered at build time, every time.
+#                      If the predicate says the premise no longer holds, the
+#                      BUILD REFUSES — the sheet stops asking what is already done.
+#   live(date, how)    only a running system knows (Supabase, a deployed function),
+#                      and this script cannot reach one. The card carries the date
+#                      it was last checked and says so in the reader's own words.
+#   quoted(src, as_of) copied from a lane file. The card names the file and the
+#                      date, so a ruling is made knowing the number is second-hand.
+#   policy()           a judgment with no factual premise; nothing to go stale.
+#
+# ⚠️ `quoted` IS NOT A LOOPHOLE. It is the honest label for a claim nobody
+# re-checked, and it prints as one. If a claim CAN be measured, measure it.
+
+def measured(fn, note=""):
+    return {"kind": "measured", "fn": fn, "note": note}
+
+
+def live(checked, how):
+    return {"kind": "live", "checked": checked, "how": how}
+
+
+def quoted(src, as_of):
+    return {"kind": "quoted", "src": src, "as_of": as_of}
+
+
+def policy():
+    return {"kind": "policy"}
+
+
+def _read(rel):
+    try:
+        return open(os.path.join(ROOT, rel), encoding="utf-8").read()
+    except OSError:
+        return ""
+
+
+def _code(src):
+    """Source with comments stripped — prose ABOUT a defect is not the defect."""
+    return re.sub(r"/\*[\s\S]*?\*/", "", re.sub(r"^\s*//.*$", "", src, flags=re.M))
+
+
+# ── the repo-checkable premises ──────────────────────────────────────────────
+# Each returns (still_open, detail). A False is not an error: it means the work
+# landed and the card has to go.
+
+def p_phantom_tokens():
+    bare = []
+    for f in ("college_briefing.js", "cpl_funding.js", "map_users.js", "governance.js"):
+        bare += re.findall(r"var\(--(brand|link|text)\)", _code(_read(f)))
+    return bool(bare), "%d bare phantom-token use(s) in consumer JS" % len(bare)
+
+
+def p_text_faint_funding():
+    n = len(re.findall(r"var\(--text-faint\b", _code(_read("cpl_funding.js"))))
+    return n > 0, "%d --text-faint site(s) on Implementation Funding" % n
+
+
+def p_surface_light():
+    src = _read("CPL_Dashboard.html")
+    i = src.find(":root")
+    light = src[i:src.find("}", i)] if i >= 0 else ""
+    defined = bool(re.search(r"--surface-1:\s*#", light))
+    return (not defined), ("--surface-1/2 are dark-only" if not defined
+                           else "--surface-1/2 already carry light values")
+
+
+def p_statewide_ring():
+    src = _read("prototype/ccr_universe.js")
+    draws = bool(re.search(r"nd\.sw\s*&&[\s\S]{0,200}?ctx\.arc", src))
+    return (not draws), ("no statewide ring in ccr_universe.js" if not draws
+                         else "ccr_universe.js already draws the statewide ring")
+
+
+def p_phone_opening():
+    src = _read("prototype/ccr_universe.js")
+    aware = bool(re.search(r"(narrowScreen|matchMedia|innerWidth)[\s\S]{0,400}?sph\.half", src))
+    return (not aware), ("sph.half is fixed for every viewport" if not aware
+                         else "the opening already reads the viewport")
+
+
+def p_eths_misprefixed():
+    src = _read("unified_courses_data.js")
+    if not src:
+        return True, "unified_courses_data.js unreadable — premise unverified"
+    try:
+        rows = json.loads(src[src.index("{"):src.rindex("}") + 1])["rows"]
+    except Exception:
+        return True, "unified_courses_data.js unparsed — premise unverified"
+    PHYS = ("fencing", "swim", "golf", "track", "yoga", "aerobic", "fitness",
+            "weight", "aquatic", "tennis", "soccer", "basketball", "volleyball")
+    n = sum(1 for r in rows
+            if str(r.get("id", "")).startswith("ETHS")
+            and any(w in (r.get("title") or "").lower() for w in PHYS))
+    return n > 0, "%d ETHS-prefixed physical-activity identities" % n
+
+
+# Keyed by the item's POSITION on the sheet — the number Sam replies with, and
+# the only unique handle (two ESL cards share a `ref`).
+EVIDENCE = {
+    1:  [measured(p_eths_misprefixed)],
+    2:  [policy()],
+    3:  [quoted("docs/reference/lanes/esl-packaging.md", "2026-08-29")],
+    4:  [quoted("docs/reference/lanes/esl-packaging.md", "2026-08-29")],
+    5:  [quoted("docs/reference/lanes/esl-packaging.md", "2026-08-29")],
+    6:  [quoted("docs/reference/lanes/esl-packaging.md", "2026-08-29")],
+    7:  [quoted("docs/military_cr_reference_scope.md", "2026-09-05")],
+    8:  [quoted("docs/military_cr_reference_scope.md", "2026-09-05")],
+    9:  [policy()],
+    10: [policy()],
+    11: [measured(p_phone_opening)],
+    12: [live("2026-09-22", "information_schema.columns for any area/senate column")],
+    13: [policy()],
+    14: [live("2026-09-22", "the mojibake count in chatbox_college_courses")],
+    15: [quoted("docs/reference/lanes/t5-55050-article-9.md", "2026-08-30")],
+}
+
+PROVENANCE = {
+    "measured": "Measured from the repo when this sheet was built.",
+    "live": "Checked against the live system on %s. Re-verify before ruling — "
+            "this builder cannot reach it.",
+    "quoted": "Quoted from %s as of %s. Second-hand: nobody re-checked it for "
+              "this sheet.",
+    "policy": "A judgment, not a measurement — nothing here to go stale.",
+}
+
+
+def provenance_line(ev):
+    bits = []
+    for e in ev:
+        k = e["kind"]
+        if k == "live":
+            bits.append(PROVENANCE[k] % e["checked"])
+        elif k == "quoted":
+            bits.append(PROVENANCE[k] % (e["src"], e["as_of"]))
+        else:
+            bits.append(PROVENANCE[k])
+    return " ".join(bits)
+
+
+def check_premises(I):
+    """Run every measured premise. Returns the cards whose premise has moved."""
+    settled = []
+    for n, it in enumerate(I, 1):
+        for e in EVIDENCE.get(n, []):
+            if e["kind"] != "measured":
+                continue
+            still_open, detail = e["fn"]()
+            if not still_open:
+                settled.append((n, it["title"], detail))
+    return settled
+
 
 
 CH_LATER = ('Later', 'later')
@@ -277,102 +447,11 @@ def items():
     })
 
     # ══ COBI dark mode ═══════════════════════════════════════════════════════
-    I.append({
-        'lane': 'cobi-dark-mode',
-        'title': 'Do --surface-1 / --surface-2 get light values too',
-        'ref': 'cobi-dark-mode · NEEDS SAM 1',
-        'facts': (
-            "Giving them light values unifies six tabs' tints and <strong>repaints them in the light "
-            "theme</strong>. It is the one change here that a reader who never opens dark mode would "
-            "notice."),
-        'why': (
-            "It is a design call about the light identity, not a theming fix, which is why no session "
-            "swept it."),
-        'rec': (
-            "<strong>Yes &mdash; one tint vocabulary across both themes.</strong> <em>It might be wrong "
-            "if</em> the six tabs' tints are deliberate per-tab identity, in which case unifying them "
-            "flattens something you chose."),
-        'chips': chips(('Unify the tints', 'unify'), ('Leave light alone', 'leave'), CH_LATER),
-    })
 
-    I.append({
-        'lane': 'cobi-dark-mode',
-        'title': 'The --text-faint sites on Implementation Funding',
-        'ref': 'cobi-dark-mode · NEEDS SAM 2',
-        'rows': 10,
-        'facts': (
-            "Ten sites paint essential text in <code>--text-faint</code> at <strong>3.06:1</strong>, "
-            "below AA. The token's own comment reads <em>decorative only &mdash; never essential "
-            "text</em>, so each is a site using the wrong role rather than a bad token value. "
-            "<code>--text-muted</code> is the fix, and it changes the light theme."),
-        'why': (
-            "It is your tab, and the repair is visible in light where you read it."),
-        'rec': (
-            "<strong>Move them to <code>--text-muted</code>.</strong> <em>It might be wrong if</em> the "
-            "text really is decorative there, in which case the fix is to cut it rather than darken "
-            "it."),
-        'chips': chips(('Move to --text-muted', 'muted'), ('It is decorative, cut it', 'cut'), CH_LATER),
-    })
 
-    I.append({
-        'lane': 'cobi-dark-mode',
-        'title': 'The 24 declarations that resolve to nothing in both themes',
-        'ref': 'cobi-dark-mode · NEEDS SAM 3',
-        'rows': 24,
-        'facts': (
-            "24 <code>var(--brand)</code> / <code>var(--link)</code> / <code>var(--text)</code> "
-            "declarations were written with <strong>no fallback and no such token</strong>, so they are "
-            "invalid at computed-value time. <code>college_briefing.js</code>'s "
-            "<code>.cb-bfrac&gt;i</code> progress bar paints <code>transparent</code>, and its "
-            "<code>.cb-lead</code> / <code>.cb-next</code> accent borders do not draw at all."),
-        'why': (
-            "This is a live rendering bug in both themes rather than a theming question &mdash; it "
-            "reached this sheet only because the fix is visible in light."),
-        'rec': (
-            "<strong>Point all 24 at the real roles and re-measure both themes.</strong> <em>It might "
-            "be wrong if</em> you want the progress bar to stay invisible, which nothing in the lane "
-            "suggests."),
-        'chips': chips(('Fix all 24', 'fix'), ('Show me first', 'show'), CH_LATER),
-    })
 
     # ══ SkyView ══════════════════════════════════════════════════════════════
-    I.append({
-        'lane': 'skyview-ccr-interface',
-        'title': 'What the statewide exhibits are FOR',
-        'ref': 'skyview · NEEDS SAM ①',
-        'rows': 84,
-        'facts': (
-            "Your 2026-09-10 ask cut off at <em>&ldquo;shown visibly on the sky so folks can easily "
-            "see&hellip;&rdquo;</em>. The data side is done &mdash; <code>sw</code> is on all 84 &mdash; "
-            "but the treatment depends on the rest of the sentence."),
-        'why': (
-            "Three readings fit the fragment and they draw differently: see which are statewide, see "
-            "what a college could adopt, or see where they are already in use."),
-        'rec': (
-            "<strong>Which are statewide, as a persistent mark on the node.</strong> <em>It might be "
-            "wrong if</em> you meant adoption, which needs a college picked first and is a different "
-            "control."),
-        'chips': chips(('Which are statewide', 'sw'), ('What a college could adopt', 'adopt'),
-                       ('Where already in use', 'inuse'), CH_LATER),
-    })
 
-    I.append({
-        'lane': 'skyview-ccr-interface',
-        'title': 'The sierra_guidance CHECK constraint and skyview-ask',
-        'ref': 'skyview · NEEDS SAM ②',
-        'facts': (
-            "The live CHECK constraint does not allow <code>skyview-ask</code>, though the schema of "
-            "record does. A curator picking it gets a hard save failure. Not blocking anything today; "
-            "it matters only to scope a Sierra rule to this surface."),
-        'why': (
-            "It is one statement against a live table, which is why it waits for you rather than "
-            "riding a session's own judgment."),
-        'rec': (
-            "<strong>Apply the one-statement migration so the live constraint matches the schema of "
-            "record.</strong> <em>It might be wrong if</em> you would rather no Sierra rule ever scope "
-            "to SkyView, in which case the schema of record is what should change."),
-        'chips': chips(('Align the constraint', 'align'), ('Drop it from the schema', 'drop'), CH_LATER),
-    })
 
     I.append({
         'lane': 'skyview-ccr-interface',
@@ -393,24 +472,6 @@ def items():
     })
 
     # ══ the rest ═════════════════════════════════════════════════════════════
-    I.append({
-        'lane': 'map-users-student-contact',
-        'title': 'Eight colleges keep a snapshot contact where MAP is now blank',
-        'ref': 'map-users · NEEDS SAM',
-        'rows': 8,
-        'facts': (
-            "Eight colleges still show a contact captured on <strong>2026-06-25</strong> where MAP now "
-            "holds nothing. MAP is read-only for us, so the blank cannot be filled there; the choice is "
-            "whether a student sees a possibly-stale name or no name."),
-        'why': (
-            "A stale roster costs a student the wrong person to email. A blank costs them nobody to "
-            "email. Both are real, and this lane exists so that every landing page routes to a person."),
-        'rec': (
-            "<strong>Keep showing them, labelled with the date they were captured.</strong> "
-            "<em>It might be wrong if</em> a wrong name is worse than none, which is the reading that "
-            "would drop all eight."),
-        'chips': chips(('Keep, dated', 'keep'), ('Drop them', 'drop'), ('Ask the colleges', 'ask'), CH_LATER),
-    })
 
     I.append({
         'lane': 'partner-crosswalks',
@@ -495,6 +556,29 @@ def build(check_only=False):
     I = items()
     found, missing, stale, dead = audit_coverage(I)
 
+    # ── every card declares its evidence ─────────────────────────────────────
+    undeclared = [n for n in range(1, len(I) + 1) if not EVIDENCE.get(n)]
+    if undeclared:
+        print("REFUSING TO BUILD — these cards declare no evidence: %s\n"
+              "Every card says what its premise rests on: measured(), live(), "
+              "quoted() or policy(). A card with none is a claim nobody owns."
+              % ", ".join(map(str, undeclared)), file=sys.stderr)
+        return 1
+
+    # ── and every measured premise is re-run, here, now ──────────────────────
+    settled = check_premises(I)
+    if settled:
+        print("REFUSING TO BUILD — these cards ask about work that is already "
+              "done. Measured just now:", file=sys.stderr)
+        for n, title, detail in settled:
+            print("  %2d. %s\n      -> %s" % (n, title, detail), file=sys.stderr)
+        print("\nRemove the card, or correct it if the premise changed rather "
+              "than closed. This guard exists because four cards on the "
+              "2026-09-22 sheet asked Sam to rule on work that had already "
+              "shipped — one of them citing his own ask, by date, in the very "
+              "file that implemented it.", file=sys.stderr)
+        return 1
+
     if missing:
         print("REFUSING TO BUILD — these lanes carry a NEEDS-SAM marker that no item "
               "covers and no dismissal names:", file=sys.stderr)
@@ -514,8 +598,14 @@ def build(check_only=False):
 
     lanes = sorted({it['lane'] for it in I})
     if check_only:
+        kinds = {}
+        for n in range(1, len(I) + 1):
+            for e in EVIDENCE[n]:
+                kinds[e["kind"]] = kinds.get(e["kind"], 0) + 1
         print(f"coverage ok — {len(I)} items across {len(lanes)} lanes; "
               f"{len(found)} lane(s) carry a marker, {len(NO_OPEN_ASK)} dismissed by name")
+        print("evidence: " + " · ".join("%s %d" % (k, v) for k, v in sorted(kinds.items()))
+              + "  (every measured premise re-checked and still open)")
         return 0
 
     framing = (
@@ -526,6 +616,12 @@ def build(check_only=False):
         "asked twice (items 2 and 20), so they can travel together. Nothing here has been acted on.")
     counts = (f"{len(I)} items across {len(lanes)} lanes · "
               f"every lane carrying an open ask is covered, by build-time audit")
+
+    # The reader sees where each claim came from, in their own words.
+    I = [dict(it, facts=it["facts"]
+              + '<p class="prov"><em>' + m.E(provenance_line(EVIDENCE[n]))
+              + '</em></p>')
+         for n, it in enumerate(I, 1)]
 
     out = m.build_sheet(
         "Everything outstanding for you", I,

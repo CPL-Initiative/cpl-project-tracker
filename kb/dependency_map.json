@@ -4,7 +4,7 @@
   "supabase_tables": 85,
   "rpcs": 31,
   "edge_functions": 5,
-  "file_datasets": 505,
+  "file_datasets": 508,
   "external_services": 145,
   "consumers": 357,
   "workflows": 35,
@@ -232,7 +232,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 5530
+     "line": 5573
     },
     {
      "id": "edgefn:cpl-news-harvest",
@@ -828,7 +828,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 4069
+     "line": 4112
     }
    ],
    "main_committers": []
@@ -1518,7 +1518,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 4879
+     "line": 4922
     }
    ],
    "main_committers": []
@@ -3012,6 +3012,13 @@
      "line": 134
     },
     {
+     "id": "script:kb/_build_open_asks_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 136
+    },
+    {
      "id": "script:kb/_glyph_sweep.py",
      "kind": "script",
      "direction": "read",
@@ -4075,6 +4082,13 @@
      "line": 0
     },
     {
+     "id": "script:kb/_build_open_asks_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 125
+    },
+    {
      "id": "script:scripts/stamp_asset_versions.py",
      "kind": "script",
      "direction": "read",
@@ -4399,6 +4413,13 @@
      "direction": "read",
      "how": "markup",
      "line": 1089
+    },
+    {
+     "id": "script:kb/_build_open_asks_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 125
     }
    ],
    "served": true,
@@ -5141,6 +5162,45 @@
    "served": false,
    "main_committers": []
   },
+  "file:docs/military_cr_reference_scope.md": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_open_asks_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 183
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:docs/reference/lanes/esl-packaging.md": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_open_asks_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 179
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:docs/reference/lanes/t5-55050-article-9.md": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_open_asks_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 191
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:docs/reference/mid_lifecycle.md": {
    "consumers": [
     {
@@ -5339,14 +5399,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 40
+     "line": 41
     },
     {
      "id": "script:kb/_build_open_asks_decision_sheet.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 40
+     "line": 41
     }
    ],
    "served": false,
@@ -5835,6 +5895,13 @@
      "direction": "read",
      "how": "inline",
      "line": 0
+    },
+    {
+     "id": "script:kb/_build_open_asks_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 125
     }
    ],
    "served": true,
@@ -13121,6 +13188,13 @@
      "direction": "read",
      "how": "inline",
      "line": 0
+    },
+    {
+     "id": "script:kb/_build_open_asks_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 125
     }
    ],
    "served": true,
@@ -13517,6 +13591,13 @@
   },
   "file:prototype/ccr_universe.js": {
    "consumers": [
+    {
+     "id": "script:kb/_build_open_asks_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 145
+    },
     {
      "id": "script:kb/_glyph_sweep.py",
      "kind": "script",
@@ -15381,6 +15462,13 @@
      "line": 44
     },
     {
+     "id": "script:kb/_build_open_asks_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 159
+    },
+    {
      "id": "script:kb/_build_orphan_parent_worklist.py",
      "kind": "script",
      "direction": "read",
@@ -16210,7 +16298,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 4688
+     "line": 4731
     }
    ],
    "main_committers": []
@@ -16302,7 +16390,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 5181
+     "line": 5224
     }
    ],
    "main_committers": []
@@ -16520,7 +16608,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 4692
+     "line": 4735
     },
     {
      "id": "module:kb-portal/composer_util.js",
@@ -16715,7 +16803,7 @@
      "kind": "edgefn",
      "direction": "write",
      "how": "literal",
-     "line": 5754
+     "line": 5797
     },
     {
      "id": "module:sierra_training.js",
@@ -18734,7 +18822,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 4950
+     "line": 4993
     },
     {
      "id": "module:sierra_training.js",
@@ -18766,7 +18854,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 4379
+     "line": 4422
     },
     {
      "id": "module:sierra_training.js",

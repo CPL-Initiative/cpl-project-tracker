@@ -380,16 +380,35 @@ for (const [name, raw, isPy] of [["CPL_Dashboard.html", cpl], ["index.html", idx
 // every site fell through to a hardcoded light fallback in both themes: the
 // single largest cause in the dark sweep (19 of 128 contrast findings), and
 // invisible to review because `var(--surface-2,#eef3f9)` reads as themed code.
-// They are now defined in the DARK blocks ONLY — light keeps each site's own
-// tint, so the fix moved no light pixel. Defining them light too would repaint
-// six tabs; that is Sam's call, not a tidy-up.
+// They were defined in the DARK blocks ONLY — light kept each site's own tint,
+// so the fix moved no light pixel. This comment used to end "Defining them
+// light too would repaint six tabs; that is Sam's call, not a tidy-up."
+//
+// ✅ SAM RULED IT, 2026-09-22 (open-asks sheet item 11): unify the tints. So
+// --surface-1/--surface-2 now carry LIGHT values too, and the six tabs repaint
+// — that cost is the ruling, not a regression. The light values are ALIASES of
+// --surface-subtle/--surface-muted, whose dark values the two were already
+// byte-identical to, so this states a role rather than inventing a color.
+// What light lost by being undefined: twelve different hand-picked tints
+// (#eef3f9, #f4f7fb, #eef2f7, #fafcff, #F6F2FD, #fdf8ec, #f1f5f9, #EDE4FB …),
+// cool blues on a warm ground, each invisible to review inside a fallback.
+//
+// ⚠️ --gold-soft IS NOT COVERED BY THAT RULING and stays dark-only. Item 11
+// named --surface-1 and --surface-2; nothing was said about the gold ground,
+// and a sweep is how a ruling quietly grows past what was asked.
 for (const tok of ["--surface-1", "--surface-2", "--gold-soft"]) {
   check("⭐ " + tok + " IS defined in the dark block (it was a phantom token)",
     new RegExp("\\" + tok + ":\\s*#").test(darkDecl));
 }
 const lightDecl = cpl.slice(cpl.indexOf(":root {"), cpl.indexOf(":root {") + 4000);
-check("⭐ --surface-1/--surface-2/--gold-soft are NOT defined in the light :root (deliberate)",
-  !/--surface-[12]:\s*#/.test(lightDecl) && !/--gold-soft:\s*#/.test(lightDecl));
+check("⭐ --surface-1/--surface-2 ARE defined in the light :root (Sam's item-11 ruling)",
+  /--surface-1:\s*#F7F5F1/i.test(lightDecl) && /--surface-2:\s*#ECE9E2/i.test(lightDecl),
+  "the step scale is one vocabulary across both themes now; dark-only left "
+  + "twelve hand-picked light tints behind fallbacks");
+check("⭐ --gold-soft stays OUT of the light :root (not ruled on)",
+  !/--gold-soft:\s*#/.test(lightDecl),
+  "item 11 named --surface-1 and --surface-2; sweeping the gold ground in with "
+  + "them is how a ruling grows past what was asked");
 
 // ─── the same asymmetry, 21 tokens wider (S249) ─────────────────────────────
 // The rest of the phantom color tokens: --cpl-cream painted a cream chip on

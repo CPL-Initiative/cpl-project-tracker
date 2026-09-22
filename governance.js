@@ -642,7 +642,7 @@
       ".gov-lane .blurb { color: var(--text-muted); font-size:.8rem; padding:0 12px 6px; margin:0; }",
       ".gov-doclist { list-style:none; margin:0; padding:0 12px 10px; }",
       ".gov-doclist li { padding:5px 0; border-top:1px solid var(--border); font-size:.85rem; }",
-      ".gov-doclist a { color: var(--link); text-decoration:none; }",
+      ".gov-doclist a { color: var(--link,var(--accent-link)); text-decoration:none; }",
       ".gov-doclist a:hover, .gov-doclist a:focus-visible { text-decoration:underline; }",
       ".gov-doclist .meta { color: var(--text-muted); font-size:.75rem; }",
       ".gov-doclist .gov-governs { color: var(--text-muted); font-size:.73rem; display:block; }",

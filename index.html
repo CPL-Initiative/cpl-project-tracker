@@ -54,6 +54,19 @@
             --surface-opaque: #FFFFFF;        /* data — tables NEVER on glass */
             --surface-subtle: #F7F5F1;
             --surface-muted: #ECE9E2;
+            /* ⚠️ THE LIGHT HALF OF THE STEP SCALE (Sam, open-asks item 11, 2026-09-22).
+               --surface-1/--surface-2 were DARK-ONLY, so in light every use fell
+               to its own hardcoded fallback and six tabs each invented a tint:
+               #eef3f9, #f4f7fb, #eef2f7, #fafcff, #fafbfc, #f1f5f9, #F6F2FD,
+               #fdf8ec, #f8fafc, #f5f5f5, #eef6ff, #EDE4FB — cool blues against a
+               warm First Light ground. Defining them here collapses all of it to
+               one pair and REPAINTS those tabs; Sam ruled that cost worth paying.
+               ⚠️ ALIASES, NEVER NEW COLORS: the dark values are byte-identical to
+               dark --surface-subtle/--surface-muted, so the light values are the
+               light forms of the same two roles. Every ink clears AA on both
+               (worst: --text-muted 5.56:1 on --surface-2). */
+            --surface-1: #F7F5F1;   /* = --surface-subtle */
+            --surface-2: #ECE9E2;   /* = --surface-muted */
             --border: rgba(28,28,26,.14);
             --border-strong: rgba(28,28,26,.30);
 

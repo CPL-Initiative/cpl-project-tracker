@@ -3791,6 +3791,27 @@ function buildCollegeContext(profile: any, includeContacts: boolean = true): str
   // Declared INSIDE this function on purpose: the Node tests lift the block that
   // starts at this signature, so a module-level const it references falls outside
   // the lifted range and the lift dies with "TABLE_COLUMN_RULE is not defined".
+  //
+  // ⚠ AND THAT IS NOT HYPOTHETICAL — I PUT TWO CONSTANTS ABOVE THIS SIGNATURE ON
+  // 2026-09-22 AND CI CAUGHT IT: sierra_candidate_census and
+  // sierra_district_roster both died with "SNAPSHOT_SUPPRESS is not defined",
+  // 13 checks between them, while the suite that covers the feature passed. The
+  // comment above was already here. Read it before adding a const.
+
+  // The snapshot's capture date, emitted with any contact that comes from it.
+  // One source for the date, so the line a visitor reads and the guard that
+  // checks it can never disagree.
+  const SNAPSHOT_CAPTURED = "2026-06-25";
+
+  // ⚠ A TEST ROW MUST NEVER ROUTE A STUDENT. MAP's own suppression field is
+  // map_colleges.entity_kind (the mechanism #1171 established for the sandbox
+  // orgs that leaked into Custom Reports), but that column is not on the profile
+  // row this branch holds, and the profile fetch does not filter on it — an
+  // ilike search for "map" or "college" can surface the test profile. So the one
+  // test college that reaches the snapshot branch is named here.
+  // Keep this in step with entity_kind; do not grow it by hand for anything else.
+  const SNAPSHOT_SUPPRESS = new Set(["ca map initiative college"]);
+
   /* Column rules for any per-college table the model builds.
    *
    * ⚠ "STUDENTS AWARDED" IS A WRONG LABEL, NOT A STYLE PREFERENCE, and it was
@@ -3959,15 +3980,37 @@ function buildCollegeContext(profile: any, includeContacts: boolean = true): str
             + `after the name, never a substitute for it.\n`;
       } else {
         // Fallback: the 2026-06-25 snapshot. Reached only when the live read
-        // failed or the college has no map_college_contacts row at all (8 such
-        // profiles, all test rows, a partner and two non-CCC institutions).
+        // failed or the college has no map_college_contacts row at all.
+        //
+        // ⚠ RE-MEASURED 2026-09-22, AND THE POPULATION IS NOT WHAT IT WAS
+        // DESCRIBED AS. This comment used to read "8 such profiles"; five
+        // profiles have no map_college_contacts row today, and not one of them
+        // is a California Community College whose contact went blank:
+        //   CA MAP INITIATIVE COLLEGE  — a TEST row (map_colleges.entity_kind)
+        //   Launch Apprenticeship Non-Credit, Pima Medical Institute,
+        //   Sage College                — a partner and two non-CCC institutions
+        //   San Diego Continuing Education — a NAME VARIANT of a college that
+        //     does have a row, so this one is an identity-join failure rather
+        //     than a missing contact. Fourth occurrence of that class.
+        // A college whose primary_contact_email is merely blank NEVER reaches
+        // here: it takes the live branch and lands further down the cascade.
+        //
+        // Sam ruled 2026-09-22 (open-asks sheet item 17): keep showing these,
+        // labelled with the date they were captured, so a visitor can weigh a
+        // months-old name for themselves rather than being told nothing.
         const contacts = p.contacts || {};
         const coordinator = contacts.cpl_coordinator || contacts.primary_contact;
         const email = contacts.cpl_coordinator_email || contacts.primary_contact_email;
-        if (coordinator && coordinator !== "" && coordinator !== "NA") {
+        const suppressed = SNAPSHOT_SUPPRESS.has(String(p.college ?? "").trim().toLowerCase());
+        if (!suppressed && coordinator && coordinator !== "" && coordinator !== "NA") {
           ctx += `\nCPL Contact: ${coordinator}`;
           if (email && email !== "" && email !== "NA") ctx += ` (${email})`;
-          ctx += `\n`;
+          // The date is the whole point of the ruling: an undated name reads as
+          // current, and this one is not.
+          ctx += ` — from a MAP snapshot taken ${SNAPSHOT_CAPTURED}, not a live lookup\n`;
+          ctx += `⚠ SAY THAT THIS CONTACT COMES FROM A SNAPSHOT DATED `
+              + `${SNAPSHOT_CAPTURED} and may have changed. Give the name and email `
+              + `plainly first, then the date. Never present it as current.\n`;
         }
       }
     }
