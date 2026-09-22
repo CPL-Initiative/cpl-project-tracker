@@ -1,3 +1,16 @@
+---
+title: "Untangling KIN, PE and Athletics costs two identifiers"
+created: 2026-09-22
+updated: 2026-09-22
+tags: [reference, kinesiology, physical-education, discipline, c-id, ccn, crosslist, identity]
+kb-status: internal
+obsidian-folder: cpl-project-tracker/kb-notes
+related:
+  - "[[CLAUDE]]"
+  - "[[methodology-top-is-a-last-in-line-signal]]"
+  - "[[discipline-crosslist]]"
+---
+
 # Untangling KIN, PE and Athletics costs two identifiers
 
 Sam asked for this on 2026-09-22, in his note on item 13 of the CCR title-rung
