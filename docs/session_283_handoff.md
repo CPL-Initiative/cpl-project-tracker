@@ -108,13 +108,19 @@ and **4,065 have member descriptions** in `unified_courses_member_desc.js`
 
 ## THE FIRST SITTING RAN — AND IT FOUND A DIFFERENT QUESTION
 
-Sam reviewed **26 of 50** title-rung items on 2026-09-22: 7 moves, 19 keeps.
-Receipt: `kb/receipts/jev_ccr_title_rung_2026-09-22_s282.json`.
+Sam reviewed **26 of 50** title-rung items on 2026-09-22: 7 moves, 19 keeps —
+8 ruled in the store, 18 agreed with the proposal below his mark. ⚠️ **The
+store's last input is item 23 and he said 26**; his own count is the mark, and
+the computed one is a floor. Run receipt:
+`kb/receipts/jev_ccr_title_rung_2026-09-22_s282.json`.
 
 - **Jev's ranking works. AUC 0.865** over the 26.
-- **No usable gate came out of it.** The best zero-error threshold is 0.52 and
-  it recalls 2 of 7 moves; *Race and Ethnic Relations* was a move at p=0.16. The
-  CCR stays out of `GATES` until a rung measures the question Sam is answering.
+- **No usable gate came out of it.** Any threshold above **0.51** is error-free
+  and recalls **2 of 7** moves — the highest keep sits at 0.51, the lowest move
+  at **0.16** (*Race and Ethnic Relations*, which he moved to Ethnic Studies).
+  The CCR stays out of `GATES` until a rung measures the question Sam is
+  answering. Receipt:
+  `kb/receipts/jev_ccr_title_rung_calibration_2026-09-22_s282.json`.
 - **Every one of his 7 moves is a TAXONOMY call**, never a title-match error:
   Photography out of Art, Theater out of Music, Ethnic Studies out of Sociology,
   Office Technology out of IT, Diesel out of Automotive. Jev was asked whether a
@@ -190,6 +196,9 @@ anywhere on it means no mark.)
 | `level` re-test | Ladder item 7: ONE pre-registered re-test on a batch it did not pick. Never a re-analysis of the 26 |
 | CER/CSR scanners | Ladder item 8: last ran **2026-07-10**, 73 days stale. Re-run before spending a call |
 | `cpl_memory` rows from S281 | **STILL STAGED** — `kb/receipts/cpl_memory_2026-09-21_s281.sql`; the guard blocks `execute_sql` writes |
+| **Cross-list KIN / PE / ATHL** | His note on item 13: *"we should cross list all KIN, PE, ATHL courses… Let's do a follow up analysis of CID and CCN to see the fallout."* ATHL is a canonical Subject; its MQ discipline is Kinesiology |
+| **Art / Photography / Digital Media guidance** | His note on item 8: *"I believe folks at the colleges intermingle these without clear guidance"* |
+| **Business vs Noncredit / Vocational Small Business** | His note on item 12, flagged follow-up |
 | Sierra: four defects, Chaffey false negative | untouched |
 | SkyView pinch failure | inherited, `s278-fable-skyview-pinch-registry` |
 

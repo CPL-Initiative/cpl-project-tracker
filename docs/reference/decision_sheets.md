@@ -76,6 +76,12 @@ evidence.
   above it is not. The earlier rule — *score against `by: "sam"`* — was written
   before the mark existed and is superseded by this one.
 - **A sheet with no input at all has no mark**, and nothing on it is reviewed.
+- ⚠️ **THE COMPUTED MARK IS A FLOOR, AND A CURATOR'S OWN COUNT OUTRANKS IT.** On
+  the title-rung sheet the last stored input is item **23**; Sam said he made it
+  through **26**. He read three more and agreed with all three, which leaves no
+  trace a page can see. Where a curator says how far they got, that number is the
+  mark (Rule 8: a human-sourced fact is not superseded by a session's inference).
+  The computed mark is what you use when nobody said.
 
 ⚠️ **A verdict of `edit` carries the wording in `note` — use it verbatim.**
 Two of that sheet's items came back as `edit` with Sam's own replacement
