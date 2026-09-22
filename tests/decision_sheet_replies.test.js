@@ -234,17 +234,41 @@ const tick = (ms) => new Promise((r) => setTimeout(r, ms || 5));
         if (!root.has(m[1])) broken.push(f + " -> " + m[1]);
       }
     }
-    // The narrowing above is only safe while a sheet actually CARRIES prose that
-    // would trip the wide scan. Lose that fixture and a revert to scanning the
-    // whole file passes green, and the next sheet to quote a token name fails
-    // for no reason anyone can see.
-    const quotesAToken = sheets.some((f) => {
-      const src = fs.readFileSync(path.join(dir, f), "utf8");
-      return /<code>var\((--[a-z0-9-]+)\)<\/code>/.test(src);
-    });
-    check("⭐ a sheet quotes a token in PROSE, so the CSS-only scan is exercised",
-      quotesAToken,
-      "no sheet carries <code>var(--x)</code>; the scan's narrowing is now untested");
+    // ⚠️ THE SCAN IS EXERCISED ON ITS OWN FIXTURE, NOT ON WHATEVER A SHEET
+    // HAPPENS TO SAY. The first version of this check searched the COMMITTED
+    // sheets for `<code>var(--x)</code>` and asserted one carried it — the
+    // 2026-09-22 open-asks sheet did, in the card reporting that very bug. Then
+    // that card was removed (the work landed), the fixture vanished with it, and
+    // CI went red on a correct tree. Its own comment had predicted exactly that:
+    // "Lose that fixture and a revert to scanning the whole file passes green."
+    //
+    // A guard that depends on incidental content in a GENERATED artifact is not
+    // a guard, it is a coincidence. Two-way fixture instead: prose naming a
+    // token must be ignored, CSS painting with one must be caught. Same shape as
+    // the builder's measured predicates, learned the same day.
+    const FIX_ROOT = ':root {\n  --real: #fff;\n}';
+    const proseOnly = '<style>' + FIX_ROOT + '\na{color:var(--real)}</style>'
+      + '<p>the bug was <code>var(--brand)</code> painting nothing</p>';
+    const inTheCss = '<style>' + FIX_ROOT + '\na{color:var(--brand)}</style>'
+      + '<p>nothing quoted here</p>';
+    const scan = (src) => {
+      const root = new Set();
+      const rb = /:root\s*\{([\s\S]*?)\n\s*\}/.exec(src);
+      if (rb) for (const m of rb[1].matchAll(/(--[a-z0-9-]+)\s*:/g)) root.add(m[1]);
+      const out = [];
+      for (const m of cssOf(src).matchAll(/var\((--[a-z0-9-]+)\)/g)) {
+        if (!root.has(m[1])) out.push(m[1]);
+      }
+      return out;
+    };
+    check("⭐ a token named in PROSE is not read as CSS",
+      scan(proseOnly).length === 0,
+      "got " + JSON.stringify(scan(proseOnly))
+      + " — a sheet that WRITES ABOUT an unresolved token paints nothing with it");
+    check("⭐ a token painting in CSS is still caught",
+      scan(inTheCss).length === 1 && scan(inTheCss)[0] === "--brand",
+      "got " + JSON.stringify(scan(inTheCss))
+      + " — this is the failure the guard exists for: a selected chip at 1.00:1");
 
     check("every bare var(--token) on a decision sheet resolves in that sheet",
       broken.length === 0, broken.slice(0, 6).join(" | "));
