@@ -4,9 +4,9 @@
   "supabase_tables": 85,
   "rpcs": 31,
   "edge_functions": 5,
-  "file_datasets": 497,
+  "file_datasets": 498,
   "external_services": 145,
-  "consumers": 354,
+  "consumers": 355,
   "workflows": 35,
   "data_js_files": 61,
   "tabs": 37
@@ -5254,6 +5254,26 @@
      "direction": "write",
      "how": "literal",
      "line": 38
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:docs/visuals/<date>-crosslist-options.html": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_crosslist_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 29
+    },
+    {
+     "id": "script:kb/_build_crosslist_decision_sheet.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 29
     }
    ],
    "served": false,
@@ -11626,6 +11646,13 @@
      "line": 36
     },
     {
+     "id": "script:kb/_build_crosslist_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 170
+    },
+    {
      "id": "script:kb/_infer_disciplines.py",
      "kind": "script",
      "direction": "read",
@@ -11737,6 +11764,13 @@
      "direction": "read",
      "how": "literal",
      "line": 37
+    },
+    {
+     "id": "script:kb/_build_crosslist_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 64
     },
     {
      "id": "script:kb/_preseed_null_issuers.py",
@@ -15211,6 +15245,13 @@
      "direction": "read",
      "how": "literal",
      "line": 839
+    },
+    {
+     "id": "script:kb/_build_crosslist_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 68
     },
     {
      "id": "script:kb/_build_discipline_blanks_worklist.py",
