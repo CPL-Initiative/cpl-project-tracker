@@ -3695,19 +3695,6 @@ function buildTopicContext(
 // the colleges that have only those as "leadership-only", i.e. NOT routable for
 // a student's CPL request — sending a CPL question to a college president is
 // worse than saying we do not know who to ask. 115 of 122 route without them.
-// The snapshot's capture date, emitted with any contact that comes from it.
-// One source for the date so the prose and the guard can never disagree.
-const SNAPSHOT_CAPTURED = "2026-06-25";
-
-// ⚠ A TEST ROW MUST NEVER ROUTE A STUDENT. MAP's own suppression field is
-// map_colleges.entity_kind (the mechanism #1171 established for the sandbox
-// orgs that leaked into Custom Reports), but that column is not on the profile
-// row this branch holds, and the profile fetch does not filter on it — an
-// ilike search for "map" or "college" can surface the test profile. So the one
-// test college that reaches the snapshot branch is named here.
-// Keep this in step with entity_kind; do not grow it by hand for anything else.
-const SNAPSHOT_SUPPRESS = new Set(["ca map initiative college"]);
-
 const CONTACT_CASCADE: Array<[string, string, string]> = [
   ["cpl_coordinator",      "cpl_coordinator_email",      "CPL Coordinator"],
   ["primary_contact",      "primary_contact_email",      "CPL Contact"],
@@ -3804,6 +3791,27 @@ function buildCollegeContext(profile: any, includeContacts: boolean = true): str
   // Declared INSIDE this function on purpose: the Node tests lift the block that
   // starts at this signature, so a module-level const it references falls outside
   // the lifted range and the lift dies with "TABLE_COLUMN_RULE is not defined".
+  //
+  // ⚠ AND THAT IS NOT HYPOTHETICAL — I PUT TWO CONSTANTS ABOVE THIS SIGNATURE ON
+  // 2026-09-22 AND CI CAUGHT IT: sierra_candidate_census and
+  // sierra_district_roster both died with "SNAPSHOT_SUPPRESS is not defined",
+  // 13 checks between them, while the suite that covers the feature passed. The
+  // comment above was already here. Read it before adding a const.
+
+  // The snapshot's capture date, emitted with any contact that comes from it.
+  // One source for the date, so the line a visitor reads and the guard that
+  // checks it can never disagree.
+  const SNAPSHOT_CAPTURED = "2026-06-25";
+
+  // ⚠ A TEST ROW MUST NEVER ROUTE A STUDENT. MAP's own suppression field is
+  // map_colleges.entity_kind (the mechanism #1171 established for the sandbox
+  // orgs that leaked into Custom Reports), but that column is not on the profile
+  // row this branch holds, and the profile fetch does not filter on it — an
+  // ilike search for "map" or "college" can surface the test profile. So the one
+  // test college that reaches the snapshot branch is named here.
+  // Keep this in step with entity_kind; do not grow it by hand for anything else.
+  const SNAPSHOT_SUPPRESS = new Set(["ca map initiative college"]);
+
   /* Column rules for any per-college table the model builds.
    *
    * ⚠ "STUDENTS AWARDED" IS A WRONG LABEL, NOT A STYLE PREFERENCE, and it was
