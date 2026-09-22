@@ -125,7 +125,8 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
   check("E: the demonstrated/remaining pool cards are retired (R11) — the Summary carries the readout",
     !doc.querySelector(".cplfund-card.earned") && !doc.querySelector(".cplfund-card.unearned") &&
     (function (s) {
-      return !!s && /demonstrated so far/.test(s.textContent) && /remaining rolls forward/.test(s.textContent);
+      return !!s && /allocated/.test(s.textContent) && /demonstrate \$/.test(s.textContent) &&
+        /remaining \$[\d,]+ rolls forward/.test(s.textContent);
     })(doc.querySelector(".cplfund-summary")));
 
   const pcards = doc.querySelectorAll(".cplfund-prio .p");

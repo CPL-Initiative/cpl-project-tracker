@@ -65,7 +65,7 @@ const fmtM = function (v) { return "$" + Math.round(v).toLocaleString("en-US"); 
     check("...and no carve-out survives in it (R3)", line.indexOf("carve-out") === -1);
   }
   check("floor note: funding raised, targets not (formula)",
-    doc.querySelector(".cplfund-formula").textContent.indexOf("not its targets") !== -1);
+    /targets stay proportional[^.]* before the base/.test(doc.querySelector(".cplfund-formula").textContent));
   // Drill-in county context survives the hidden column.
   click(window, doc.querySelector("tr.cplfund-row"));
   check("drill-in still shows the county context",

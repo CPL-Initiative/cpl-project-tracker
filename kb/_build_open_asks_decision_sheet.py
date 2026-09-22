@@ -47,9 +47,12 @@ NEEDS = re.compile(r'NEEDS SAM', re.I)
 # exclusion list would let a real ask be silenced by adding one line.
 NO_OPEN_ASK = {
     'implementation-funding':
-        "its own marker reads 'NEEDS SAM - nothing open'; the 2026-09-15 sheet's "
-        "seven items are answered AND executed. Its one residue is a note Sam "
-        "SENDS, which is not a decision.",
+        "its four open asks ride their own sheet, kb/_build_funding_review_decision_sheet.py "
+        "(https://claude.ai/artifact/9MfbN6jqio8as9mY4LwPB2, 2026-09-22), because this "
+        "sheet's live replies store is keyed to its published 21-item version while this "
+        "builder now holds 15 cards: republishing to add cards would pin Sam's saved "
+        "replies on the wrong ones. Fold them in once this sheet is rebuilt on a fresh "
+        "store.",
     'README':
         "the lanes index, which documents the marker rather than carrying one.",
 }

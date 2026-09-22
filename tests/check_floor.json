@@ -102,6 +102,7 @@
     "cpl_funding_earning.test.js": 50,
     "cpl_funding_effective.test.js": 22,
     "cpl_funding_equity.test.js": 91,
+    "cpl_funding_leadership_review.test.js": 15,
     "cpl_funding_frontload.test.js": 46,
     "cpl_funding_gate_ledger_public.test.js": 58,
     "cpl_funding_lane_switch.test.js": 50,

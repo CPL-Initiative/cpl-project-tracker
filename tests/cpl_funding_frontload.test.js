@@ -400,7 +400,7 @@ check("targets are NOT scaled by disbursement (per-student rate doubles, student
   check("front-load: the explainer stops quoting an annual tranche",
     flExplain.textContent.indexOf("one annual tranche") === -1);
   check("front-load: the explainer names the full window + the multiplied per-student rate",
-    /full .* window, placed on the table in Year 1/.test(flExplain.textContent) &&
+    /full .* window, available in Year 1/.test(flExplain.textContent) &&
     /effective rate per student is \d+×/.test(flExplain.textContent));
 
   // The money-cell hover (the P-cells are retired — one-pool port, 2026-08-31 —

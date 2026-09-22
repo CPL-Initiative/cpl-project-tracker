@@ -235,13 +235,14 @@ const DISTRICTS = (function () {
     iP1a >= 0 && !!sysLine && Number(sysLine[iP1a]) === 20000);
   check("the retired P1/P2/P3 table columns are gone (absence guard, 2026-08-31)",
     !doc.querySelector('th[data-sort="prio0"]') && !doc.querySelector("#cplFundTable td.cf-prio"));
-  check("footer explains the per-priority target/actual detail + dedup",
-    // case-insensitive: the footer names the expand's Target/Actual COLUMNS
-    // since the P-columns sentence was rewritten (2026-09-01)
-    footText(doc).indexOf("deduplicate across colleges") !== -1 &&
-    /target/i.test(footText(doc)) && /actual/i.test(footText(doc)));
-  check("a non-empty unmatched bucket is surfaced in the footer",
-    footText(doc).indexOf("Mystery University") !== -1);
+  // The footer is one sources line now (Sam, 2026-09-22); the unmatched-name
+  // check moved to the curator-only Metric wiring panel.
+  check("the footer names the MAP pull it reads",
+    /Sources: MAP platform records as of/.test(footText(doc)));
+  check("a non-empty unmatched bucket is surfaced in the curator's Metric wiring panel",
+    !!doc.querySelector(".cplfund-metricdiag .cplfund-unmatched") &&
+    doc.querySelector(".cplfund-metricdiag .cplfund-unmatched").textContent.indexOf("Mystery University") !== -1 &&
+    footText(doc).indexOf("Mystery University") === -1);
   // Alameda's expand: the P1 detail row stacks the actual (300) under its target.
   T._state.open["c:Alameda"] = true;
   T.render();

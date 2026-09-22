@@ -99,23 +99,21 @@ header{border-bottom:1px solid var(--border); background:var(--surface-opaque)}
 section{padding:clamp(34px,6vw,60px) 0; border-bottom:1px solid var(--border)}
 section:last-of-type{border-bottom:0}
 .sec-head{margin-bottom:1.4em}
-.step-no{display:inline-block; font-family:"Source Sans 3",sans-serif; font-size:.74rem; font-weight:700;
-  letter-spacing:.14em; text-transform:uppercase; color:var(--cobalt); margin-bottom:.5em}
 
 /* ── folded steps (Sam, 2026-09-02) ───────────────────────────────────────
    The page opens on the introduction and the institution table; the steps
    that explain the mechanics are folded, each behind its own heading with a
    Show / Hide word — a reader who wants the detail opens it, and one who
-   wants their figure never scrolls past it. The summary holds phrasing
-   content and one heading, which is what the element permits, so the step
-   label is a span here rather than the paragraph it is in an open section. */
+   wants their figure never scrolls past it. The summary holds one heading,
+   which is what the element permits. Each fold is headed by its text title
+   alone, as on the tab's public view (Sam, 2026-09-22: "rather than Step 1,
+   2, 3 use text headers consistent with the public page"). */
 details.fold > summary{list-style:none; cursor:pointer; display:grid;
   grid-template-columns:minmax(0,1fr) auto; align-items:center; column-gap:16px}
 details.fold > summary::-webkit-details-marker{display:none}
 details.fold > summary::marker{content:''}
-details.fold > summary .step-no{grid-column:1; margin-bottom:.35em}
 details.fold > summary h2{grid-column:1}
-details.fold > summary .fold-word{grid-column:2; grid-row:1 / span 2; font-size:.88rem; font-weight:600;
+details.fold > summary .fold-word{grid-column:2; grid-row:1; font-size:.88rem; font-weight:600;
   color:var(--text-muted); white-space:nowrap}
 details.fold > summary .fold-word::before{content:"Show"}
 details.fold[open] > summary .fold-word::before{content:"Hide"}
@@ -470,7 +468,6 @@ section[hidden]{display:none}
   <div class="wrap">
     <details class="fold">
     <summary>
-      <span class="step-no">Step one</span>
       <h2>How an allocation is computed</h2>
       <span class="fold-word" aria-hidden="true"></span>
     </summary>
@@ -487,7 +484,7 @@ section[hidden]{display:none}
         amount and is brought up to it, funded from within the same total.</li>
       <li><strong>The cap, <span id="l-cap">$400,000</span></strong>, across the two years.
         <span id="l-capn">Six</span> institutions&rsquo; proportional share exceeded that amount and is
-        held there. The difference, <span id="l-capr">$262,241</span>, is redistributed across the
+        held there. The model re-splits the difference, <span id="l-capr">$262,241</span>, across the
         institutions below the cap. An institution held at the cap is assessed against a correspondingly
         smaller target, so it qualifies at the same rate as every institution above the base award.</li>
     </ul>
@@ -515,7 +512,6 @@ section[hidden]{display:none}
   <div class="wrap">
     <details class="fold">
     <summary>
-      <span class="step-no">Step two</span>
       <h2>Eligibility requirements</h2>
       <span class="fold-word" aria-hidden="true"></span>
     </summary>
@@ -529,9 +525,9 @@ section[hidden]{display:none}
     <p id="req-intro">Each requirement is verifiable from MAP:</p>
     <ol id="req-list"></ol>
     <div class="note">
-      <p><strong>Meeting the baseline does not change the size of the award.</strong> An institution that
-        has yet to meet the requirements carries the same award, held in reserve for it rather than
-        redistributed to institutions that met them earlier.</p>
+      <p><strong>Each institution keeps its full award while it meets the baseline.</strong> The model
+        reserves the funding an institution demonstrates for that institution, and the institution receives
+        it once it confirms local participation.</p>
     </div>
     </div>
     </details>
@@ -542,7 +538,6 @@ section[hidden]{display:none}
   <div class="wrap">
     <details class="fold">
     <summary>
-      <span class="step-no">Step three</span>
       <h2>How outcomes count toward funding</h2>
       <span class="fold-word" aria-hidden="true"></span>
     </summary>
@@ -604,7 +599,6 @@ section[hidden]{display:none}
   <div class="wrap">
     <details class="fold">
     <summary>
-      <span class="step-no">Step four</span>
       <h2>Disbursement and the funding window</h2>
       <span class="fold-word" aria-hidden="true"></span>
     </summary>

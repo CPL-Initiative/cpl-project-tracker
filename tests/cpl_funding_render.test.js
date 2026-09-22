@@ -81,7 +81,7 @@ const money = function (n) { return "$" + Math.round(n).toLocaleString("en-US");
       !!card && /credit \+ noncredit FTES \(allocation basis\)/.test(card.textContent));
     check("basis card sums ALL " + ROSTER_N + " institution rows, placeholder-aware",
       !!card && card.textContent.indexOf(combined.toLocaleString("en-US")) !== -1 &&
-      new RegExp("of all " + ROSTER_N + " institution rows").test(card.textContent));
+      new RegExp("summed over all " + ROSTER_N + " institutions").test(card.textContent));
     check("...never Calbright's untrustworthy reported figure",
       !!card && combined !== withReported &&
       card.textContent.indexOf(withReported.toLocaleString("en-US")) === -1);
@@ -340,8 +340,10 @@ const money = function (n) { return "$" + Math.round(n).toLocaleString("en-US");
   check("the NC FTES header cites MIS + the noncredit restriction",
     /MIS/.test(doc.querySelector('th[data-sort="nc_ftes"]').getAttribute("title") || "") &&
     /noncredit/.test(doc.querySelector('th[data-sort="nc_ftes"]').getAttribute("title") || ""));
-  check("mixed-vintage honesty note counts the rows still on 2022-23",
-    footText(doc).indexOf("await a 2025-26 headcount") !== -1);
+  // The vintage note retired with the notes block (Sam, 2026-09-22); the
+  // headcount source is still cited on the sources line.
+  check("the sources line cites the headcount source",
+    /Sources:/.test(footText(doc)) && footText(doc).indexOf("await a 2025-26 headcount") === -1);
 
   // No-match empty row.
   commit(window, doc.getElementById("cplFundSearch"), "zzz-no-such-college");
@@ -537,7 +539,7 @@ const money = function (n) { return "$" + Math.round(n).toLocaleString("en-US");
       // Case-insensitive: the phrase became the start of its own sentence when
       // the timing moved out of the hero LABEL into its note (2026-09-01), and
       // this check is deliberately about the figures rather than the wording.
-      /rather than a carve-out line/i.test(note) &&
+      /Noncredit FTES count in the same split/.test(note) && !/carve-out/i.test(note) &&
       note.indexOf(money(eff.pool.nc_only_held_by_origination)) !== -1 &&
       // The claim is that the note says the college shares are carried WITHIN
       // college awards — not one idiom for it. "Riding college awards" was the
