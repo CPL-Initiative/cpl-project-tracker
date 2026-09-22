@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 486,
+   "count": 487,
    "docs": [
     {
      "created": "2026-08-14",
@@ -9796,6 +9796,16 @@
      "title": "TMC tab \u2192 CO-staff ADT review/processing tool (PCF-bootstrapped)",
      "type": "scope",
      "updated": ""
+    },
+    {
+     "created": "",
+     "governs": [],
+     "path": "docs/kb-notes/reference-kin-pe-athl-identifier-fallout.md",
+     "status": null,
+     "tags": [],
+     "title": "Untangling KIN, PE and Athletics costs two identifiers",
+     "type": null,
+     "updated": ""
     }
    ],
    "name": "KB notes",
@@ -18369,5 +18379,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 954
+ "total": 955
 }
