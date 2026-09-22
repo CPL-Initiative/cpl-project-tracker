@@ -569,13 +569,13 @@
     var s = document.createElement("style");
     s.id = "cpl-briefing-css";
     s.textContent = [
-      "#college-briefing-root{text-align:left;color:var(--text);}",
+      "#college-briefing-root{text-align:left;color:var(--text,var(--text-strong));}",
       ".cb-bar{display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end;margin-bottom:18px;}",
       ".cb-bar label{display:block;font-size:.75rem;color:var(--text-muted);margin-bottom:4px;}",
-      ".cb-bar select{padding:7px 10px;border:1px solid var(--border-strong);border-radius:6px;background:var(--surface);color:var(--text);min-width:220px;}",
-      ".cb-lead{border:1px solid var(--border-strong);border-left:4px solid var(--brand);border-radius:8px;padding:14px 16px;margin-bottom:12px;background:var(--surface-subtle);}",
+      ".cb-bar select{padding:7px 10px;border:1px solid var(--border-strong);border-radius:6px;background:var(--surface);color:var(--text,var(--text-strong));min-width:220px;}",
+      ".cb-lead{border:1px solid var(--border-strong);border-left:4px solid var(--brand,var(--cobalt));border-radius:8px;padding:14px 16px;margin-bottom:12px;background:var(--surface-subtle);}",
       ".cb-lead h4{margin:0 0 4px;font-size:.95rem;}",
-      ".cb-lead .cb-num{font-size:1.35rem;font-weight:700;color:var(--brand);}",
+      ".cb-lead .cb-num{font-size:1.35rem;font-weight:700;color:var(--brand,var(--cobalt));}",
       ".cb-prog{margin-top:26px;}",
       ".cb-prog>h3{margin:0 0 4px;font-size:1.05rem;}",
       ".cb-pri{border:1px solid var(--border);border-radius:8px;padding:14px 16px;margin:12px 0;background:var(--surface);}",
@@ -584,12 +584,12 @@
       ".cb-item{padding:9px 0;border-top:1px solid var(--border);}",
       ".cb-item:first-of-type{border-top:0;}",
       ".cb-item .cb-t{font-size:.87rem;}",
-      ".cb-item .cb-m{font-size:.82rem;margin-top:3px;color:var(--text);}",
-      ".cb-item .cb-m b{color:var(--brand);}",
+      ".cb-item .cb-m{font-size:.82rem;margin-top:3px;color:var(--text,var(--text-strong));}",
+      ".cb-item .cb-m b{color:var(--brand,var(--cobalt));}",
       ".cb-item .cb-d{font-size:.78rem;color:var(--text-muted);margin-top:2px;}",
       ".cb-flag{display:inline-block;font-size:.68rem;padding:1px 7px;border-radius:10px;border:1px solid var(--border-strong);color:var(--text-muted);margin-left:6px;vertical-align:middle;}",
       ".cb-bfrac{height:5px;border-radius:3px;background:var(--border);margin-top:6px;overflow:hidden;max-width:320px;}",
-      ".cb-bfrac>i{display:block;height:100%;background:var(--brand);}",
+      ".cb-bfrac>i{display:block;height:100%;background:var(--brand,var(--cobalt));}",
       ".cb-warn{border:1px solid var(--warn,#b45309);border-radius:8px;padding:12px 14px;margin:14px 0;font-size:.83rem;}",
       ".cb-note{font-size:.78rem;color:var(--text-muted);margin-top:18px;line-height:1.5;}",
       // ── Rework 2026-08-11: steps first, then data, advice last ──
@@ -641,7 +641,7 @@
       ".cb-prow .cb-whead{font-size:.85rem;}",
       ".cb-prow .cb-whead .v{font-weight:700;color:var(--text-strong);font-size:.85rem;}",
       ".cb-ptarget{font-size:.76rem;color:var(--text-muted);margin-top:3px;line-height:1.45;}",
-      ".cb-next{border:1px solid var(--border-strong);border-left:4px solid var(--brand);border-radius:8px;padding:13px 15px;margin-top:14px;background:var(--surface-subtle);}",
+      ".cb-next{border:1px solid var(--border-strong);border-left:4px solid var(--brand,var(--cobalt));border-radius:8px;padding:13px 15px;margin-top:14px;background:var(--surface-subtle);}",
       ".cb-next ul{margin:0;padding-left:18px;font-size:.84rem;line-height:1.55;}",
       ".cb-next li{margin-bottom:5px;}",
       ".cb-next li:last-child{margin-bottom:0;}",
@@ -662,7 +662,7 @@
       ".cb-ess-list{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:9px;}",
       ".cb-ess-list li{display:flex;gap:9px;align-items:flex-start;border-top:1px solid var(--border);padding-top:9px;font-size:.83rem;}",
       ".cb-ess-list li:first-child{border-top:0;padding-top:0;}",
-      ".cb-ess-list .cb-num{font-size:.83rem;font-weight:600;color:var(--brand);margin-top:2px;}",
+      ".cb-ess-list .cb-num{font-size:.83rem;font-weight:600;color:var(--brand,var(--cobalt));margin-top:2px;}",
       ".cb-ess-list .cb-d{font-size:.77rem;color:var(--text-muted);margin-top:2px;line-height:1.45;}",
       // Words, not glyphs (see essMark). Wider than the old 1.5em glyph slot and
       // left-aligned so "Not yet" and "Partial" sit on one line at every size.
@@ -689,8 +689,8 @@
       ".cb-assist .cb-asks{margin-top:12px;}",
       ".cb-assist-mount{margin-top:12px;}",
       ".cb-asks{display:flex;flex-wrap:wrap;gap:8px;}",
-      ".cb-ask{font:inherit;font-size:.82rem;text-align:left;padding:9px 12px;border:1px solid var(--border-strong);border-radius:999px;background:var(--surface);color:var(--text);cursor:pointer;}",
-      ".cb-ask:hover{border-color:var(--brand);color:var(--brand);}",
+      ".cb-ask{font:inherit;font-size:.82rem;text-align:left;padding:9px 12px;border:1px solid var(--border-strong);border-radius:999px;background:var(--surface);color:var(--text,var(--text-strong));cursor:pointer;}",
+      ".cb-ask:hover{border-color:var(--brand,var(--cobalt));color:var(--brand,var(--cobalt));}",
       // ── Sierra AI leads the tab (Sam, 2026-08-12) ──────────────────────
       // The team's read was that she is the useful part, so she gets the
       // weight: a heavier frame, real breathing room, and a stated purpose.
@@ -731,7 +731,7 @@
         + "text-align:left;padding:13px 16px;border:1px solid var(--border,#d8dde6);border-radius:10px;"
         + "background:var(--surface-opaque,#fff);color:inherit;font:inherit;cursor:pointer;}",
       ".cb-scope-b:hover:not([disabled]){border-color:var(--cobalt,#0047AB);background:var(--surface-subtle,#eef3fa);}",
-      ".cb-scope-b:focus-visible{outline:2px solid var(--focus-ring,var(--brand));outline-offset:2px;}",
+      ".cb-scope-b:focus-visible{outline:2px solid var(--focus-ring,var(--brand,var(--cobalt)));outline-offset:2px;}",
       /* A disabled option stays READABLE. Greying it to the point of being hard
          to read hides the one thing it is there to say — that it exists and why
          it is off — so only the affordance is dimmed, not the sentence. */
@@ -741,7 +741,7 @@
       ".cb-scope-soon{font-size:.76rem;color:var(--text-muted);white-space:nowrap;}",
       ".cb-scope-note{margin:14px 0 0;font-size:.8rem;color:var(--text-muted);line-height:1.5;}",
       ".cb-back{background:none;border:0;padding:0 0 10px;font:inherit;font-size:.82rem;"
-        + "color:var(--accent-link,var(--brand));cursor:pointer;}",
+        + "color:var(--accent-link,var(--brand,var(--cobalt)));cursor:pointer;}",
       ".cb-back:hover{text-decoration:underline;}",
       ".cb-ent{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px;}",
       ".cb-ent-b{display:flex;flex-direction:column;gap:2px;text-align:left;padding:11px 14px;"
@@ -807,8 +807,8 @@
       ".cb-sec[open]{background:var(--surface-subtle);border-color:var(--border-strong);}",
       ".cb-sum{list-style:none;cursor:pointer;padding:13px 16px;display:flex;align-items:baseline;justify-content:space-between;gap:14px;border-radius:9px;}",
       ".cb-sum::-webkit-details-marker{display:none;}",
-      ".cb-sum:hover .cb-sum-t{color:var(--brand);}",
-      ".cb-sum:focus-visible{outline:2px solid var(--focus-ring,var(--brand));outline-offset:-2px;}",
+      ".cb-sum:hover .cb-sum-t{color:var(--brand,var(--cobalt));}",
+      ".cb-sum:focus-visible{outline:2px solid var(--focus-ring,var(--brand,var(--cobalt)));outline-offset:-2px;}",
       ".cb-sum-t{font-size:.97rem;font-weight:600;color:var(--text-strong);display:flex;align-items:baseline;gap:8px;}",
       ".cb-sum-t::before{content:'▸';font-size:.8em;color:var(--text-muted);transition:transform .12s ease;display:inline-block;}",
       ".cb-sec[open] .cb-sum-t::before{transform:rotate(90deg);}",
@@ -818,12 +818,12 @@
       "@media (prefers-reduced-motion:reduce){.cb-sum-t::before{transition:none;}}",
       // Strategies, nested inside the funding priority they belong to.
       ".cb-strat{margin-top:9px;border-top:1px solid var(--border);padding-top:8px;}",
-      ".cb-strat>summary{list-style:none;cursor:pointer;font-size:.79rem;color:var(--accent-link,var(--brand));display:inline-flex;align-items:baseline;gap:6px;}",
+      ".cb-strat>summary{list-style:none;cursor:pointer;font-size:.79rem;color:var(--accent-link,var(--brand,var(--cobalt)));display:inline-flex;align-items:baseline;gap:6px;}",
       ".cb-strat>summary::-webkit-details-marker{display:none;}",
       ".cb-strat>summary::before{content:'▸';font-size:.85em;display:inline-block;transition:transform .12s ease;}",
       ".cb-strat[open]>summary::before{transform:rotate(90deg);}",
       ".cb-strat>summary:hover{text-decoration:underline;}",
-      ".cb-strat>summary:focus-visible{outline:2px solid var(--focus-ring,var(--brand));outline-offset:2px;border-radius:3px;}",
+      ".cb-strat>summary:focus-visible{outline:2px solid var(--focus-ring,var(--brand,var(--cobalt)));outline-offset:2px;border-radius:3px;}",
       ".cb-strat ol{margin:9px 0 0;padding-left:19px;font-size:.82rem;line-height:1.5;color:var(--text-body);}",
       ".cb-strat li{margin-bottom:7px;}",
       ".cb-strat li:last-child{margin-bottom:0;}",
