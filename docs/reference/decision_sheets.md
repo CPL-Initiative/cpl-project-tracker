@@ -76,6 +76,16 @@ evidence.
   above it is not. The earlier rule — *score against `by: "sam"`* — was written
   before the mark existed and is superseded by this one.
 - **A sheet with no input at all has no mark**, and nothing on it is reviewed.
+  Measured 2026-09-22 on the cross-list sheet: Complete pressed with nothing
+  touched wrote `ruled: 0, as_proposed: 12, through: null`. The twelve proposals
+  are still handed over — that is opt-out working — and none of them is a
+  ruling.
+- ⚠️ **ANY LINE BUILT AFTER THE COMMIT REPORTS A MARK THE COMMIT MADE.** The
+  same sitting sent *"0 of 12 items your own call"* and *"reviewed through 12
+  (the whole sheet)"* in one sentence, because the completion message called
+  `line()` after the as-proposed loop had given every card a reply. `line(hw)`
+  takes the mark read beforehand, and
+  `tests/decision_sheet_high_water.test.js` fails on the ordering.
 - ⚠️ **THE COMPUTED MARK IS A FLOOR, AND A CURATOR'S OWN COUNT OUTRANKS IT.** On
   the title-rung sheet the last stored input is item **23**; Sam said he made it
   through **26**. He read three more and agreed with all three, which leaves no

@@ -429,7 +429,13 @@
     });
     return { mark: mark, whole: mark !== null && mark === last };
   }
-  function line(){
+  // ⚠️ `hw` IS PASSED IN WHERE THE MARK MUST PREDATE THE CALLER'S OWN WRITES.
+  // Complete stores a reply for every as-proposed item, so a line built after
+  // that loop reports the whole sheet as reviewed no matter where the reader
+  // stopped. Measured live on 2026-09-22: a sheet completed with nothing ruled
+  // said "0 of 12 items your own call" and "reviewed through 12 (the whole
+  // sheet)" in the same sentence.
+  function line(hw){
     var parts = [];
     els.forEach(function(el){
       var item = el.getAttribute("data-item"), r = state[item];
@@ -449,9 +455,9 @@
       parts.push(s);
     });
     var text = parts.length ? parts.join(" · ") : "No replies yet.";
-    var hw = highWater();
-    if (hw.mark) text += " — reviewed through " + hw.mark
-      + (hw.whole ? " (the whole sheet)." : "; the items after it were not reached.");
+    var h = hw || highWater();
+    if (h.mark) text += " — reviewed through " + h.mark
+      + (h.whole ? " (the whole sheet)." : "; the items after it were not reached.");
     return text;
   }
   // ⚠️ THE RUNNING TOTAL IS IN OUTCOME TERMS (Sam, 2026-09-20). What a sitting
@@ -651,7 +657,7 @@
     // carries input and the high-water mark reads as the last card on the
     // sheet. Capture it first: it is the only record of how far the reader
     // actually got before pressing Complete.
-    var through = highWater().mark;
+    var hw0 = highWater(), through = hw0.mark;
     // ⚠️ COMMIT THE PROPOSALS, AND SAY THEY ARE PROPOSALS. Under opt-out the
     // reader only touches what they disagree with, so the untouched items DO
     // carry a verdict — but `by: "default"` records that nobody ruled on them
@@ -668,7 +674,7 @@
     keep(); paintAll();
     var text = "Decisions done on " + SHEET + " — " + n.done + " of " + n.total + " items your own call"
       + (n.asProposed.length ? ", " + n.asProposed.length + " taken as proposed (not individually reviewed)" : "")
-      + (n.blank ? ", " + n.blank + " left blank (no verdict on those)" : "") + ". " + line();
+      + (n.blank ? ", " + n.blank + " left blank (no verdict on those)" : "") + ". " + line(hw0);
     var rec = { sheet: SHEET, ruled: n.done, as_proposed: n.asProposed.length, blank: n.blank,
                 items: n.total, through: through, at: now, sent: false };
     function finish(sent, why){

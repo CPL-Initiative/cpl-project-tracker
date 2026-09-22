@@ -69,13 +69,25 @@ const db = {
   },
 };
 
+// The completion message is only observable through the comments capability, and
+// it is the surface where a mark computed too late would reach a reader.
+const sent = [];
+const comments = {
+  canSendToClaude: () => Promise.resolve("available"),
+  anchorFor: () => Promise.resolve({}),
+  sendToClaude: ({ text }) => { sent.push(text); return Promise.resolve(); },
+};
+
 const errors = [];
 const vc = new VirtualConsole();
 vc.on("jsdomError", (e) => errors.push(String(e && e.message)));
 
 const dom = new JSDOM(html, { runScripts: "dangerously", virtualConsole: vc, pretendToBeVisual: true,
   url: "https://sheet.test/mark",
-  beforeParse(w) { w.claude = { use: (name) => Promise.resolve(name === "db" ? db : null) }; } });
+  beforeParse(w) {
+    w.claude = { use: (name) => Promise.resolve(
+      name === "db" ? db : name === "comments" ? comments : null) };
+  } });
 const document = dom.window.document;
 const pasteLine = () => document.getElementById("reply-line").value;
 
@@ -119,6 +131,19 @@ const pasteLine = () => document.getElementById("reply-line").value;
     writes.filter((w) => w.data && w.data.by === "default").length === 2,
     JSON.stringify(writes.filter((w) => w.data && w.data.by === "default").map((w) => w.id)));
   check("nothing threw", errors.length === 0, errors.join(" | "));
+
+  /* ── 4b. the message Complete sends carries the SAME mark ───────────────── */
+  // ⚠️ Measured live on 2026-09-22: a sheet completed with nothing ruled sent
+  // "0 of 12 items your own call" and "reviewed through 12 (the whole sheet)"
+  // in one sentence, because the line was built after the commit stored a reply
+  // for every card. The record was right and the sentence was not.
+  const msg = sent[0] || "";
+  check("Complete actually sent a message", !!msg, JSON.stringify(sent));
+  check("⭐ the sent message names the mark as it stood BEFORE the commit",
+    /reviewed through 3\b/.test(msg) && !/reviewed through 4\b/.test(msg),
+    msg.slice(-220));
+  check("the sent message never calls a partly read sheet the whole sheet",
+    !/the whole sheet/.test(msg), msg.slice(-220));
 
   /* ── 5. a mark on the last card reads as the whole sheet ────────────────── */
   const dom2 = new JSDOM(html, { runScripts: "dangerously", virtualConsole: new VirtualConsole(),
