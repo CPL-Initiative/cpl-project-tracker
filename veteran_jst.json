@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-09-22T14:05:15.747627+00:00",
+  "scraped_at": "2026-09-22T17:10:44.797942+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 28307,
+    "jst": 28310,
     "star_colleges": 58
   },
   "computed_star_colleges": 58,
@@ -47,7 +47,7 @@
     },
     "Bakersfield College": {
       "vets": 416,
-      "jst": 572,
+      "jst": 574,
       "star": true
     },
     "Merced College": {
@@ -260,14 +260,14 @@
       "jst": 112,
       "star": true
     },
+    "Oxnard College": {
+      "vets": 118,
+      "jst": 160,
+      "star": true
+    },
     "San Jose City College": {
       "vets": 148,
       "jst": 122,
-      "star": true
-    },
-    "Oxnard College": {
-      "vets": 118,
-      "jst": 159,
       "star": true
     },
     "Golden West College": {

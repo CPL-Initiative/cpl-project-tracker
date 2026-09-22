@@ -311248,44 +311248,6 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 0
     },
     {
-      "exhibit_id": "MAPSAS-AAH(6-1-001",
-      "exhibit_ids": [
-        "MAPSAS-AAH(6-1-001"
-      ],
-      "title": "AP Art History (Score 3 or higher) - Cal-GETC Area 3A",
-      "unified_title": "AP Art History (Score 3 or higher) - Cal-GETC Area 3A",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "AP Art History (Score 3 or higher) - Cal-GETC Area 3A"
-      ],
-      "cpl_type": "Standardized Assessment",
-      "discipline": "Not Mapped",
-      "sector": "",
-      "collaborative_type": "Local",
-      "adopters": 0,
-      "adopter_names": [],
-      "potential": 0,
-      "potential_names": [],
-      "total_addressable": 0,
-      "credit_recs": [
-        {
-          "course": "Cal-GETC Area 3A",
-          "credit": "3 hours in Art History"
-        }
-      ],
-      "authoritative_recs": [],
-      "adopter_units": {},
-      "adopter_lines": {},
-      "peer_units_median": 0.0,
-      "peer_units_max": 0.0,
-      "rec_units_total": 3.0
-    },
-    {
       "exhibit_id": "MAPCXH-C1IT-1-001",
       "exhibit_ids": [
         "MAPCXH-C1IT-1-001"
@@ -312205,9 +312167,9 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "CA MAP INITIATIVE COLLEGE",
-        "credit_recs": 4,
-        "exhibits": 2,
-        "disciplines": 2,
+        "credit_recs": 3,
+        "exhibits": 1,
+        "disciplines": 1,
         "ccc_collaborative": 3,
         "industry_certs": 3,
         "pct": 0.0
@@ -312225,10 +312187,10 @@ window.CPL_STATEWIDE = {
     "by_discipline": [
       {
         "discipline": "Not Mapped",
-        "credit_recs": 5716,
-        "exhibits": 1929,
+        "credit_recs": 5715,
+        "exhibits": 1928,
         "courses": 319,
-        "colleges": 86,
+        "colleges": 85,
         "ccc_collaborative": 25,
         "pct": 42.9
       },
@@ -312434,9 +312396,9 @@ window.CPL_STATEWIDE = {
     "by_cpl_type": [
       {
         "cpl_type": "Standardized Assessment",
-        "credit_recs": 6915,
-        "exhibits": 2311,
-        "colleges": 84,
+        "credit_recs": 6914,
+        "exhibits": 2310,
+        "colleges": 83,
         "pct": 51.8
       },
       {
@@ -312478,10 +312440,10 @@ window.CPL_STATEWIDE = {
     "by_mode_of_learning": [
       {
         "mode": "Self-study, exam preparation, other (S)",
-        "credit_recs": 8249,
-        "exhibits": 3330,
-        "colleges": 91,
-        "pct": 61.9
+        "credit_recs": 8248,
+        "exhibits": 3329,
+        "colleges": 90,
+        "pct": 61.8
       },
       {
         "mode": "Industry training (I)",
@@ -312550,9 +312512,9 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 11779,
-        "exhibits": 5318,
-        "colleges": 97,
+        "credit_recs": 11778,
+        "exhibits": 5317,
+        "colleges": 96,
         "disciplines": 23,
         "pct": 88.3
       },
@@ -312976,6 +312938,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-09-22T14:04:05",
-  "total_credit_recs": 13337
+  "generated_at": "2026-09-22T17:09:41",
+  "total_credit_recs": 13336
 };

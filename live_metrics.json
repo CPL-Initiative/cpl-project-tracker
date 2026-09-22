@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-09-22T14:05:15.336Z",
+  "scraped_at": "2026-09-22T17:10:44.482Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -198,17 +198,17 @@
         },
         {
           "college": "Bakersfield College",
-          "students": 619,
-          "units": 8765.5,
-          "avgUnits": 14.160743134087237,
+          "students": 621,
+          "units": 8781.5,
+          "avgUnits": 14.140901771336553,
           "transcriptionRate": 10.6,
-          "avgTranscribed": 1.5008077544426495,
+          "avgTranscribed": 1.4959742351046699,
           "criteriaMetCount": 3,
-          "militaryStudents": 572,
+          "militaryStudents": 574,
           "nonMilitaryStudents": 61,
           "apprenticeStudents": 0,
-          "savings": 15729995,
-          "yearImpact": 56354621.5,
+          "savings": 15757675,
+          "yearImpact": 56451693.5,
           "transcribedUnits": 929
         },
         {
@@ -1058,17 +1058,17 @@
         },
         {
           "college": "Oxnard College",
-          "students": 159,
-          "units": 632,
-          "avgUnits": 3.9748427672955975,
+          "students": 160,
+          "units": 636,
+          "avgUnits": 3.975,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
-          "militaryStudents": 159,
+          "militaryStudents": 160,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
-          "savings": 1086440,
-          "yearImpact": 3810076,
+          "savings": 1093360,
+          "yearImpact": 3834344,
           "transcribedUnits": 0
         },
         {
@@ -1313,14 +1313,14 @@
         },
         {
           "college": "Napa Valley College",
-          "students": 54,
+          "students": 55,
           "units": 42,
-          "avgUnits": 0.7777777777777778,
+          "avgUnits": 0.7636363636363637,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
           "militaryStudents": 52,
-          "nonMilitaryStudents": 2,
+          "nonMilitaryStudents": 3,
           "apprenticeStudents": 0,
           "savings": 72660,
           "yearImpact": 254814,
@@ -1757,15 +1757,15 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "51,788",
+      "value": "51,792",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "28,307"
+          "value": "28,310"
         },
         {
           "label": "Workforce/Other",
-          "value": "23,567"
+          "value": "23,568"
         },
         {
           "label": "Apprentice",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 51788,
-    "Units": 222200.90000000002,
+    "Students": 51792,
+    "Units": 222220.90000000002,
     "TranscribedUnits": 73561.7,
-    "Savings": 333118244,
-    "YearImpact": 1318447959.9,
-    "MilitaryStudents": 28307,
-    "NonMilitaryStudents": 23567,
+    "Savings": 333152844,
+    "YearImpact": 1318569299.9,
+    "MilitaryStudents": 28310,
+    "NonMilitaryStudents": 23568,
     "AprenticeStudents": 850,
-    "AverageUnits": 4.2905866223835645,
-    "TranscribedAverage": 1.4204390978605081
+    "AverageUnits": 4.290641411801051,
+    "TranscribedAverage": 1.420329394501081
   }
 }

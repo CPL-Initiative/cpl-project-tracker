@@ -8,16 +8,16 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 10,
  "statewide": {
-  "pe": 43888,
-  "pa": 39838,
+  "pe": 43938,
+  "pa": 39859,
   "ppa": 106,
   "p2": 3101,
   "p3": 14584,
   "pp": 6,
   "ppe": 116,
   "pac": 2853,
-  "pe_u": 1420110.7,
-  "pa_u": 221540.4,
+  "pe_u": 1423617.7,
+  "pa_u": 221671.4,
   "ppa_u": 660.5,
   "ppe_u": 6771.5,
   "pac_u": 25015.2,
@@ -98,10 +98,10 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 0.0
   },
   "Bakersfield": {
-   "pe": 601,
-   "pe_u": 26299.5,
-   "pa": 594,
-   "pa_u": 8699.5,
+   "pe": 603,
+   "pe_u": 26375.5,
+   "pa": 596,
+   "pa_u": 8715.5,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 66.0,
@@ -333,10 +333,10 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 0.0
   },
   "Coastline": {
-   "pe": 896,
-   "pe_u": 63462.0,
-   "pa": 527,
-   "pa_u": 3280.0,
+   "pe": 943,
+   "pe_u": 66856.0,
+   "pa": 545,
+   "pa_u": 3391.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 10.0,
@@ -1291,10 +1291,10 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 0.0
   },
   "Oxnard": {
-   "pe": 158,
-   "pe_u": 8588.0,
-   "pa": 157,
-   "pa_u": 628.0,
+   "pe": 159,
+   "pe_u": 8625.0,
+   "pa": 158,
+   "pa_u": 632.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 4.0,
@@ -2083,8 +2083,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 557,
-    "pa": 554,
+    "pe": 559,
+    "pa": 556,
     "p3": 27
    }
   },
@@ -2246,8 +2246,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Coastline": {
    "Military": {
-    "pe": 896,
-    "pa": 527,
+    "pe": 943,
+    "pa": 545,
     "p3": 0
    }
   },
@@ -3043,8 +3043,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Oxnard": {
    "Military": {
-    "pe": 157,
-    "pa": 157,
+    "pe": 158,
+    "pa": 158,
     "p3": 0
    }
   },
@@ -3732,8 +3732,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 27745,
-   "pa": 25602,
+   "pe": 27795,
+   "pa": 25623,
    "p3": 2552
   },
   "Military | Portfolio Review": {
@@ -3783,13 +3783,13 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1419634.2,
-   "pa_u": 221540.4,
+   "pe_u": 1423141.2,
+   "pa_u": 221671.4,
    "p3_u": 73498.2
   },
   "map": {
-   "pe_u": 1426405.7,
-   "pa_u": 222200.9,
+   "pe_u": 1429912.7,
+   "pa_u": 222331.9,
    "p3_u": 73561.7
   },
   "ratio": {
@@ -3849,8 +3849,8 @@ window.CPL_FUNDING_PERF = {
   "West Hills Lemoore": false,
   "East LA": false,
   "Evergreen Valley": true,
-  "San Jose City": true,
   "Oxnard": true,
+  "San Jose City": true,
   "Golden West": false,
   "Cerritos": true,
   "Allan Hancock": false,
