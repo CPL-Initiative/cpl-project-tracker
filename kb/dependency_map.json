@@ -4,7 +4,7 @@
   "supabase_tables": 85,
   "rpcs": 31,
   "edge_functions": 5,
-  "file_datasets": 498,
+  "file_datasets": 499,
   "external_services": 145,
   "consumers": 355,
   "workflows": 35,
@@ -8859,7 +8859,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 199
+     "line": 265
     },
     {
      "id": "script:kb/_seed_cx_common_courses.py",
@@ -11699,7 +11699,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 190
+     "line": 256
     },
     {
      "id": "script:kb/_seed_subject_discipline_map.py",
@@ -14704,6 +14704,19 @@
    "main_committers": []
   },
   "file:tests/merge_chain_flatten_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/mid_short_code_gate_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -19450,6 +19463,7 @@
     "tests/governance_docs_panel.test.js",
     "prototype/check_contrast.py",
     "tests/supabase_function_grants_test.py",
+    "tests/mid_short_code_gate_test.py",
     "tests/supabase_sql_guard_test.py",
     "tests/bash_read_guard_test.py",
     "tests/install_prompt_guards_test.py",
