@@ -11,22 +11,22 @@
   },
   "summary": {
     "files": 969,
-    "bytes": 10278451,
+    "bytes": 10287483,
     "over_budget": 5,
     "handoff_max": 283,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 60274,
+    "always_loaded_bytes": 61632,
     "superseded_files": 1,
     "superseded_bytes": 8963,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 60274,
+        "bytes": 61632,
         "over": 1
       },
       "other": {
         "files": 115,
-        "bytes": 3150647,
+        "bytes": 3153747,
         "over": 3
       },
       "index": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 33,
-        "bytes": 231819,
+        "bytes": 233411,
         "over": 0
       },
       "handoff": {
         "files": 255,
-        "bytes": 2208584,
+        "bytes": 2211566,
         "over": 0
       }
     },
@@ -62,9 +62,9 @@
       "vault_heavy_path": 49
     },
     "vault": {
-      "files": 3064,
-      "bytes": 1484815756,
-      "heavy_bytes": 644696382,
+      "files": 3067,
+      "bytes": 1484953039,
+      "heavy_bytes": 644695265,
       "heavy_share": 0.434,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
@@ -124,13 +124,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 60274,
+        "bytes": 61632,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 274,
-        "ratio": 1.0
+        "over_by": 1632,
+        "ratio": 1.03
       },
-      "message": "60,274 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "61,632 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
       "path": "CLAUDE.md"
     },
     {
@@ -679,10 +679,10 @@
       "fixable": false,
       "path": "statewide_data.js",
       "detail": {
-        "bytes": 9588864,
+        "bytes": 9587747,
         "kind": "file"
       },
-      "message": "9,588,864 B single file inside the vault"
+      "message": "9,587,747 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

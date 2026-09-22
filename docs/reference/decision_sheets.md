@@ -284,3 +284,64 @@ so the paragraph explaining the chips shipped **inside item 1's chip row**;
 then made `_strip()` match the INNER pair, orphaning the outer reply block on
 every re-run; the strip counts depth and cuts the outermost region.
 Guarded by `tests/decision_sheet_template.test.js` (24 checks, `npm test`).
+
+## The standing open-asks sheet (added 2026-09-22)
+
+Sam, 2026-09-22: *"Always give me a decision sheet for any outstanding items for
+me..."*
+
+That upgrades the rule. The 2026-08-30 framing built a sheet *when judgments
+accumulate*; this one makes the sheet the **standing form of the backlog** —
+anything waiting on him belongs on it, and it is rebuilt and handed over rather
+than held back for a quorum.
+
+**Builder:** `kb/_build_open_asks_decision_sheet.py` →
+`docs/visuals/2026-09-22-open-asks.html`
+→ published at https://claude.ai/artifact/FTEhLfMxhRfv4YH6DGSPhn
+**Guard:** `tests/open_asks_sheet_coverage_test.py` (14 checks).
+
+### Why it audits itself
+
+⚠️ **An "always" that depends on a session remembering is not an always.** When
+the rule was written the open asks had scattered into **eleven** lane files'
+NEEDS-SAM blocks, and exactly **one** of them had reached §11's roadmap table —
+so the index a session actually reads under-reported the backlog by an order of
+magnitude. Nothing was hiding; nothing was gathering them either.
+
+So the builder does not trust its own item list. `audit_coverage()` scans every
+`docs/reference/lanes/*.md` for a NEEDS-SAM marker and **refuses to build**
+unless each lane carrying one is either covered by an item or named in
+`NO_OPEN_ASK` **with a reason**. Add an ask to a lane, and the sheet breaks until
+somebody asks it.
+
+`NO_OPEN_ASK` is the Rule 10(a3) posture — map it or dismiss it, and the reason
+is the point — pointed at a backlog instead of a write surface. A bare exclusion
+list would let a real ask be silenced with one line, so the test requires every
+dismissal to carry more than a token string.
+
+### What the scan can and cannot do
+
+- **It guards COVERAGE, and a person writes the CARD.** A lane's NEEDS-SAM block
+  is freehand prose. A parser can tell you the lane has an open ask; it cannot
+  produce what a sheet needs — the ask in plain words, the measured context, and
+  a proposal with its draft reason. Those are hand-written, and when a lane's ask
+  changes the card has to change with it.
+- **The sheet reports; it never rules.** Most of these were asked before and sat
+  unanswered — restating them *is* the job. An item that has drifted from its
+  lane's wording is a bug in the builder, never a licence to edit the lane from
+  the sheet.
+- **Only decisions belong on it.** A lane's own NEXT list is session work. The
+  test that keeps them apart: could a session settle this correctly on its own?
+  Then it is not an item.
+
+### The two shapes an item must have
+
+`tests/open_asks_sheet_coverage_test.py` pins both, because both were learned the
+hard way on earlier sheets:
+
+- ⭐ **Every proposal says how it could be wrong** (`it might be wrong if …`). A
+  recommendation with no failure condition is an assertion, and the reader cannot
+  weigh what they cannot see the other side of.
+- ⭐ **Chips name the OUTCOME, never agreement.** *Re-mint them* / *Leave them*,
+  never *Yes* / *No* — six months later the chip is the whole record, and "Yes"
+  records assent to a proposal nobody will remember.

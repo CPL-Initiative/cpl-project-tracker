@@ -124,6 +124,14 @@ cannot be resolved without reading the title.
 Item 2's gate stops FUTURE mints from repeating it. **The existing 31 stay wrong
 until item 3 is ruled.**
 
+## The two held items are on the standing sheet
+
+Sam's 2026-09-22 rule — *"Always give me a decision sheet for any outstanding
+items for me..."* — means items **3** and **10** no longer wait in this file to be
+noticed. They are items 1 and 2 of [the standing open-asks sheet](https://claude.ai/artifact/FTEhLfMxhRfv4YH6DGSPhn),
+beside nineteen others gathered from eight more lanes. Answering either means
+editing both: this file states current truth, the sheet stops asking.
+
 ## Next
 
 1. Sam's word on 3 and 10.

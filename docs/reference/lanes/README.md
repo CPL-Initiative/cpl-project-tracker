@@ -13,6 +13,26 @@ obsidian-folder: cpl-project-tracker/reference/lanes
 here. At checkpoint you update the LANE FILE, and touch the §11 row only when
 the lane's STATE changes.
 
+## ⚠️ A NEEDS-SAM marker here is ALSO an item on the standing sheet
+
+Sam, 2026-09-22: *"Always give me a decision sheet for any outstanding items for
+me..."* — so an ask is not delivered by sitting in a lane file. When he said it,
+the open asks sat in **eleven** lane files and exactly **one** had reached §11.
+
+`kb/_build_open_asks_decision_sheet.py` gathers them into
+[the standing sheet](https://claude.ai/artifact/FTEhLfMxhRfv4YH6DGSPhn) (source `docs/visuals/2026-09-22-open-asks.html`)
+and **refuses to build** while a lane carries a NEEDS-SAM marker that no item
+covers and no `NO_OPEN_ASK` reason dismisses. So:
+
+- **Writing NEEDS SAM in a lane breaks the build** until the ask gets a card —
+  which is the point. The marker is a claim on his attention; the sheet is how it
+  reaches him.
+- **Answering one means editing both** — the lane file states current truth, the
+  sheet stops asking.
+- The card needs what a scan cannot produce: the ask in plain words, the measured
+  context, a proposal, and how the proposal could be wrong. Mechanics:
+  [`decision_sheets`](../decision_sheets.md).
+
 ## Why hand-grepping the roadmap for retirable lanes is banned
 
 ⚠️ **It has been wrong every single time it was tried.** Session 206 called five
