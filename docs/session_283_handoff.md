@@ -196,7 +196,7 @@ anywhere on it means no mark.)
 | `level` re-test | Ladder item 7: ONE pre-registered re-test on a batch it did not pick. Never a re-analysis of the 26 |
 | CER/CSR scanners | Ladder item 8: last ran **2026-07-10**, 73 days stale. Re-run before spending a call |
 | `cpl_memory` rows from S281 | **STILL STAGED** — `kb/receipts/cpl_memory_2026-09-21_s281.sql`; the guard blocks `execute_sql` writes |
-| **Cross-list KIN / PE / ATHL** | His note on item 13: *"we should cross list all KIN, PE, ATHL courses… Let's do a follow up analysis of CID and CCN to see the fallout."* ATHL is a canonical Subject; its MQ discipline is Kinesiology |
+| **Cross-list KIN / PE / ATHL** | **ANALYSIS DONE** — [`reference-kin-pe-athl-identifier-fallout`](kb-notes/reference-kin-pe-athl-identifier-fallout.md). The identifier cost of untangling or cross-listing is **two rows** (`KIN 100`, `PH 107`), neither athletic; CCN exposure is **zero**. ⚠️ And **no row carries `disc == "Physical Education"`** — all 1,177 read Kinesiology, so item 4's fold already happened in the rows and only the subject-map entry remains. MQ and repeatability are the real constraints, and both sit outside what this measured |
 | **Art / Photography / Digital Media guidance** | His note on item 8: *"I believe folks at the colleges intermingle these without clear guidance"* |
 | **Business vs Noncredit / Vocational Small Business** | His note on item 12, flagged follow-up |
 | Sierra: four defects, Chaffey false negative | untouched |

@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-486 document(s).
+487 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -505,3 +505,4 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Phase 2 — Projects Table Migration (Scope)](../kb-notes/phase-2-projects-migration-scope.md) | scope | published | 2026-05-28 |  |
 | [TMC ADT submission — supporting-document upload (CORs → the contact-hours gap)](../kb-notes/tmc-adt-document-upload-scope.md) | scope | published | 2026-06-22 |  |
 | [TMC tab → CO-staff ADT review/processing tool (PCF-bootstrapped)](../kb-notes/tmc-co-review-scope.md) | scope | published | 2026-06-20 |  |
+| [Untangling KIN, PE and Athletics costs two identifiers](../kb-notes/reference-kin-pe-athl-identifier-fallout.md) | — | — |  |  |
