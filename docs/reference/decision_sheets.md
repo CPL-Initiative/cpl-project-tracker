@@ -47,6 +47,36 @@ the two largest sweeps on the sheet — had simply not been answered, and readin
 "decisions done" as covering all nine would have swept 21 sites unauthorized.
 Ask about the gaps in one line and execute the rest.
 
+⚠️ **THE HIGH-WATER MARK NARROWS THAT RULE (Sam, 2026-09-22).** *"On these
+decision sheets, you can assume that the last item showing some sort of input is
+an indicator that everything prior to it is good to go as is."* The last item
+carrying ANY input — a chip, a note, a follow-up flag, a picker value — marks how
+far the reader got. Everything **at or below** it was read: an untouched item
+there was read and agreed with, and it counts as the curator's judgment.
+Everything **above** it was never reached, and the original rule stands there
+unchanged — no reply, no verdict.
+
+He said it after the CCR title-rung sitting, where the store held 8 reply
+documents and he had in fact ruled on 26: *"I made it through 26 — just left the
+'Leave it' ones as is if they were OK."* Reading only the 8 would have thrown
+away 18 real judgments and measured Jev's calibration against a third of the
+evidence.
+
+- **The store cannot tell the two apart.** Under opt-out an untouched item is
+  `by: "default"` whether it was read and agreed with or never seen. The mark is
+  the only thing that separates them, so it rides the **paste line** (`reviewed
+  through 26; the items after it were not reached.`) and the `replies/done`
+  record's `through` field.
+- ⚠️ **Complete DESTROYS the mark, so it is captured first.** The Complete
+  handler stores a reply for every as-proposed item; after it runs, every card
+  carries input and the mark reads as the last card on the sheet. `highWater()`
+  is called before that commit.
+- **Calibration scores everything at or below the mark**, not just `by: "sam"`
+  rows. An agreed-with proposal below the mark is evidence; an untouched item
+  above it is not. The earlier rule — *score against `by: "sam"`* — was written
+  before the mark existed and is superseded by this one.
+- **A sheet with no input at all has no mark**, and nothing on it is reviewed.
+
 ⚠️ **A verdict of `edit` carries the wording in `note` — use it verbatim.**
 Two of that sheet's items came back as `edit` with Sam's own replacement
 sentences; his words go in as written, not paraphrased into the proposal they
@@ -148,8 +178,10 @@ recommendation the sheet never made. `preselect` is `None` for those.
 
 ⚠️ **The calibration measurement now needs the provenance.** "Jev was right 25
 of 25 above p 0.85" is only meaningful over items a person actually judged. Score
-against `by: "sam"` rows; an `as_proposed` row measures the default, never the
-model.
+everything **at or below the high-water mark** (see *Reading the replies*): a
+`by: "sam"` row is a ruling, and an untouched row below the mark is an agreement
+with the proposal, which is equally a judgment. An `as_proposed` row **above**
+the mark measures the default, never the model.
 
 ## Complete — the button that tells the session (2026-09-21)
 

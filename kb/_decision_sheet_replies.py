@@ -78,7 +78,8 @@ CHIPS_ENTRY_RETIRE = ["Retire", "Keep", "Later"]
 
 
 def replies_block(item, ref="", chips=None, title="", compact=False, kind="item",
-                  parent="", rec="", other=None, rows=0, reach=None, preselect=None):
+                  parent="", rec="", other=None, rows=0, reach=None, preselect=None,
+                  pickers=None):
     """The reply controls for one item. `item` is the number a reply names
     ("3", "D7", or "2.o3" for one memory inside item 2); `ref` is what the
     session needs to act (a slug, an id, a class key); `chips` are the verdict
@@ -115,6 +116,7 @@ def replies_block(item, ref="", chips=None, title="", compact=False, kind="item"
     (Verify, Retire) rather than saying Yes."""
     chips = [_chip(c) for c in (chips or CHIPS_DEFAULT)]
     other = [_chip(c) for c in (other or [])]
+    pickers = pickers or []
     n = str(item)
 
     # ⚠️ OPT-OUT: the recommended chip ARRIVES SELECTED (Sam, 2026-09-21: "set
@@ -127,6 +129,27 @@ def replies_block(item, ref="", chips=None, title="", compact=False, kind="item"
                 f'aria-pressed="{on}">{E(label)}</button>')
 
     btns = "".join(btn(l, v) for l, v in chips)
+    # ⚠️ A PICKER IS AN `<input list=>` AGAINST A SHARED `<datalist>`, NEVER A
+    # `<select>` PER CARD. Sam, 2026-09-22: *"add a Subject and Discipline picker
+    # to each item so I can at least see what the official choices are."* The
+    # official lists run to 320 subject codes and 248 disciplines; fifty cards
+    # each carrying their own copy would be ~28,000 option elements. One
+    # datalist per list is declared once at the foot and every input points at
+    # it — which also gives type-ahead, the only usable way through 248 names.
+    picks = ""
+    if pickers:
+        rowsp = []
+        for pk in pickers:
+            pid = f"pick-{_re_id(n)}-{pk['name']}"
+            rowsp.append(
+                f'<label class="reply-pick"><span class="reply-pick-lbl">{E(pk["label"])}</span>'
+                f'<input type="text" id="{E(pid)}" class="reply-pick-in" '
+                f'data-pick="{E(pk["name"])}" list="{E(pk["list"])}" '
+                f'value="{E(pk.get("value") or "")}" '
+                f'placeholder="{E(pk.get("placeholder") or "")}" '
+                f'autocomplete="off" spellcheck="false"></label>')
+        picks = '<div class="reply-picks">' + "".join(rowsp) + '</div>'
+
     more = ""
     if other:
         mid = "more-" + _re_id(n)
@@ -170,6 +193,7 @@ def replies_block(item, ref="", chips=None, title="", compact=False, kind="item"
         f'<button type="button" class="reply-chip reply-fu" aria-pressed="false" '
         f'title="Mark this for the session to follow up on, whatever the verdict">Follow up</button>'
         f'</div>'
+        f'{picks}'
         f'<label class="reply-notelbl" for="note-{E(n)}">Notes for the session</label>'
         f'<textarea id="note-{E(n)}" class="reply-note" rows="{1 if compact else 2}" placeholder="{E(ph)}"></textarea>'
         f'<p class="reply-state" aria-live="polite"></p>'
@@ -310,6 +334,15 @@ REPLIES_CSS = SUBMIT_CSS + r"""
   /* ── replies: chips, a note, a follow-up flag (Sam, 2026-09-05) ── */
   .reply { margin: 12px 0 0; padding-top: 10px; border-top: 1px dashed var(--border); }
   .reply-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .reply-picks { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+  .reply-pick { display: flex; flex-direction: column; gap: 3px; flex: 1 1 220px; min-width: 0; }
+  .reply-pick-lbl { font-size: .72rem; text-transform: uppercase; letter-spacing: .07em;
+    font-weight: 700; color: var(--text-muted, #5C5C55); }
+  .reply-pick-in { font: inherit; font-size: .92rem; padding: 6px 9px; width: 100%;
+    color: var(--text-strong, #1C1C1A); background: var(--surface-opaque, #fff);
+    border: 1px solid var(--border-strong, rgba(28,28,26,.30)); border-radius: 8px; }
+  .reply-pick-in::placeholder { color: var(--text-muted, #5C5C55); opacity: 1; }
+  .reply-pick-in[data-off="1"] { border-color: var(--mustard-text, #8B6800); }
   .reply-lbl { font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; font-weight: 700;
     color: var(--text-muted); margin-right: 4px; }
   .reply-chip { font: inherit; font-size: .86rem; font-weight: 600; min-height: 30px; padding: 3px 12px;
@@ -431,7 +464,21 @@ def replies_js(sheet_id):
     var el = byItem(item);
     return { item: item, ref: el ? el.getAttribute("data-ref") : "", title: el ? el.getAttribute("data-title") : "", v: "", note: "", fu: false };
   }
-  function empty(r){ return !r || (!r.v && !r.fu && !r.note); }
+  function onList(inp, v){
+    var id = inp.getAttribute("list"), dl = id ? document.getElementById(id) : null;
+    if (!dl) return true;
+    var os = dl.getElementsByTagName("option");
+    for (var i = 0; i < os.length; i++) if ((os[i].value || "") === v) return true;
+    return false;
+  }
+  // ⚠️ A PICKER VALUE COUNTS. Without this, choosing a discipline and nothing
+  // else would read as an untouched item and be handed over as the proposal.
+  function empty(r){
+    if (!r) return true;
+    if (r.v || r.fu || r.note) return false;
+    for (var k in r) if (k.indexOf("pick_") === 0 && r[k]) return false;
+    return !(r.subject || r.discipline);
+  }
   // ⚠️ TWO STATES PER ITEM, AND THEY MUST NEVER COLLAPSE (Sam's opt-out, 2026-09-21).
   // An item CARRYING THE PROPOSAL has no stored reply; an item a person RULED ON
   // has one. They look the same on screen — that is the point of opt-out — so
@@ -528,6 +575,23 @@ def replies_js(sheet_id):
   }
 
   /* ── the bar: how many, where they are, the line to paste ── */
+  // ⚠️ SAM'S HIGH-WATER MARK (2026-09-22): "the last item showing some sort of
+  // input is an indicator that everything prior to it is good to go as is."
+  // It NARROWS "an item with no reply has no verdict" rather than replacing it:
+  // an untouched item BELOW the mark was read and agreed with, one ABOVE it was
+  // never reached, and both look identical in the store. The mark is the only
+  // thing that tells them apart, so it rides the paste line and the `done`
+  // record. Computed over every card in sheet order — a picker value, a note or
+  // a follow-up flag is "some sort of input" as much as a chip is.
+  function highWater(){
+    var mark = null, last = null;
+    els.forEach(function(el){
+      var item = el.getAttribute("data-item");
+      last = item;
+      if (!empty(state[item])) mark = item;
+    });
+    return { mark: mark, whole: mark !== null && mark === last };
+  }
   function line(){
     var parts = [];
     els.forEach(function(el){
@@ -547,7 +611,11 @@ def replies_js(sheet_id):
       if (r.note) s += " — “" + String(r.note).replace(/\s+/g, " ").trim() + "”";
       parts.push(s);
     });
-    return parts.length ? parts.join(" · ") : "No replies yet.";
+    var text = parts.length ? parts.join(" · ") : "No replies yet.";
+    var hw = highWater();
+    if (hw.mark) text += " — reviewed through " + hw.mark
+      + (hw.whole ? " (the whole sheet)." : "; the items after it were not reached.");
+    return text;
   }
   // ⚠️ THE RUNNING TOTAL IS IN OUTCOME TERMS (Sam, 2026-09-20). What a sitting
   // is worth is articulation rows collapsed and colleges reached, never clicks
@@ -638,6 +706,27 @@ def replies_js(sheet_id):
       note.addEventListener("input", function(){ clearTimeout(tm); tm = setTimeout(function(){ set(item, { note: note.value }); }, 500); });
       note.addEventListener("blur", function(){ clearTimeout(tm); if ((state[item] ? state[item].note : "") !== note.value) set(item, { note: note.value }); });
     }
+    // ⚠️ A PICKER SAVES INTO THE SAME RECORD AS THE CHIP. `set()` merges any
+    // key, so the chosen subject and discipline ride the reply rather than
+    // living in a second store the session would have to know to read.
+    var picks = el.querySelectorAll(".reply-pick-in[data-pick]");
+    for (var pi = 0; pi < picks.length; pi++) {
+      (function(inp){
+        var key = inp.getAttribute("data-pick"), pt = null;
+        function commit(){
+          var v = inp.value.trim(), cur = state[item] ? (state[item][key] || "") : "";
+          // ⚠️ A TYPED VALUE THAT IS NOT ON THE OFFICIAL LIST IS STILL SAVED,
+          // and marked rather than rejected. Sam asked to SEE the official
+          // choices, not to be confined to them — and a name he reaches for
+          // that the list lacks is itself a finding about the list.
+          inp.setAttribute("data-off", (v && !onList(inp, v)) ? "1" : "0");
+          if (v !== cur) { var patch = {}; patch[key] = v; set(item, patch); }
+        }
+        inp.addEventListener("input", function(){ clearTimeout(pt); pt = setTimeout(commit, 400); });
+        inp.addEventListener("change", function(){ clearTimeout(pt); commit(); });
+        inp.addEventListener("blur", function(){ clearTimeout(pt); commit(); });
+      })(picks[pi]);
+    }
   });
 
   /* ── the artifact's store, when this view has one ── */
@@ -720,6 +809,12 @@ def replies_js(sheet_id):
   if (sbtn) sbtn.addEventListener("click", function(){
     var n = tally();
     sbtn.disabled = true;
+    // ⚠️ THE MARK IS READ BEFORE THE COMMIT, OR IT IS GONE. The loop below
+    // stores a reply for every as-proposed item, so after it runs EVERY card
+    // carries input and the high-water mark reads as the last card on the
+    // sheet. Capture it first: it is the only record of how far the reader
+    // actually got before pressing Complete.
+    var through = highWater().mark;
     // ⚠️ COMMIT THE PROPOSALS, AND SAY THEY ARE PROPOSALS. Under opt-out the
     // reader only touches what they disagree with, so the untouched items DO
     // carry a verdict — but `by: "default"` records that nobody ruled on them
@@ -738,7 +833,7 @@ def replies_js(sheet_id):
       + (n.asProposed.length ? ", " + n.asProposed.length + " taken as proposed (not individually reviewed)" : "")
       + (n.blank ? ", " + n.blank + " left blank (no verdict on those)" : "") + ". " + line();
     var rec = { sheet: SHEET, ruled: n.done, as_proposed: n.asProposed.length, blank: n.blank,
-                items: n.total, at: now, sent: false };
+                items: n.total, through: through, at: now, sent: false };
     function finish(sent, why){
       rec.sent = sent;
       if (col) { try { col.doc("done").set(copy(rec)); } catch (e) {} }
@@ -1041,10 +1136,14 @@ def inject(html_text, sheet_id):
         # card with nothing proposed has nothing to opt out OF, and pre-selecting
         # there would invent a recommendation the sheet never made.
         pre = _chip(ch[0])[1] if (ch and _ask_text(body)) else None
+        # A card declares its pickers the same way it declares its chips: on the
+        # card, so the inject pass carries them through without a second source.
+        worth_picks = (_re.search(r'data-pickers="([^"]*)"', attrs) or [None, ''])[1]
         block = replies_block(n, ref, ch, title, kind="item", other=other_for(ch),
                               rows=int(worth_rows or 0),
                               reach=(worth_reach.split() if worth_reach else None),
-                              preselect=pre)
+                              preselect=pre,
+                              pickers=_pickers_from_attr(html.unescape(worth_picks)))
         # Every memory the batch lists gets its own compact block (Sam,
         # 2026-09-05: "the response controls on each memory, not just on the
         # whole batch"); its id is <item>.<reference>, so the reply line and
@@ -1204,6 +1303,32 @@ def _chips_from_attr(s):
     return out
 
 
+def _pickers_attr(pickers):
+    """Serialize a card's pickers onto the card, same reason as `_chips_attr`."""
+    out = []
+    for pk in pickers:
+        parts = [pk["name"], pk["label"], pk["list"], pk.get("value") or "",
+                 pk.get("placeholder") or ""]
+        bad = [c for c in ';|"<>&' if any(c in str(x) for x in parts)]
+        if bad:
+            raise ValueError(f"a picker field cannot carry {' '.join(bad)}: {parts}")
+        out.append("|".join(parts))
+    return ";".join(out)
+
+
+def _pickers_from_attr(s):
+    out = []
+    for part in (s or "").split(";"):
+        if not part:
+            continue
+        bits = part.split("|")
+        if len(bits) != 5:
+            return []
+        out.append({"name": bits[0], "label": bits[1], "list": bits[2],
+                    "value": bits[3], "placeholder": bits[4]})
+    return out
+
+
 def _worth(it):
     """What settling this item is worth, as attributes on its card. `reach` is a
     collection of college ids — never a count, for the reason `replies_block`
@@ -1218,11 +1343,25 @@ def _worth(it):
         out += f' data-reach="{E(" ".join(sorted(str(x) for x in reach)))}"'
     if it.get('chips'):
         out += f' data-chips="{E(_chips_attr(it["chips"]))}"'
+    if it.get('pickers'):
+        out += f' data-pickers="{E(_pickers_attr(it["pickers"]))}"'
     return out
 
 
+def datalists(lists):
+    """The option lists a sheet's pickers point at, declared ONCE.
+
+    `lists` is {id: [value, ...]}. Emitted at the foot so fifty cards share two
+    lists rather than carrying 28,000 option elements between them."""
+    out = []
+    for lid, vals in (lists or {}).items():
+        opts = "".join(f'<option value="{E(str(v))}">' for v in vals)
+        out.append(f'<datalist id="{E(lid)}">{opts}</datalist>')
+    return "".join(out)
+
+
 def build_sheet(title, items, framing=None, curator="", counts="", sheet_id=None,
-                howto="", chips=None):
+                howto="", chips=None, lists=None):
     """A whole sheet, built to the template. `items` are dicts carrying `title`,
     `ref`, `facts`, `rec`, `why`, and optionally `rows`, `reach` and `chips`.
 
@@ -1251,7 +1390,8 @@ def build_sheet(title, items, framing=None, curator="", counts="", sheet_id=None
             f'<dt>Why</dt><dd>{it.get("why", "")}</dd>\n'
             f'<dt>What I propose</dt><dd class="ask">{it["rec"]}</dd>\n'
             f'</dl>\n</article>')
-    html_text = head + "\n".join(body) + "\n</section>\n</main>\n</body>\n</html>"
+    html_text = (head + "\n".join(body) + "\n</section>\n</main>\n"
+                 + datalists(lists) + "\n</body>\n</html>")
     return inject(html_text, sheet_id or 'sheet')
 
 

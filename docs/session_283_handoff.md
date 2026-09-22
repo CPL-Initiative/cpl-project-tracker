@@ -1,6 +1,6 @@
 ---
-title: Session 283 handoff — the CCR is wired, the rungs are built, and one sitting stands between here and a calibrated gate
-date: 2026-09-21
+title: Session 283 handoff — the first sitting ran, and it found a different question
+date: 2026-09-22
 session: 282 (SkyLedger)
 tags: [handoff, jev, ccr, cr-reference, calibration, decision-sheets]
 status: current
@@ -9,8 +9,9 @@ status: current
 # You are Session 283
 
 Your moniker is **SkyRung** — S282 (SkyLedger) built the ladder sheet Sam had
-never seen, took his ruling on item 1, wired the CCR onto the Jev module, and
-built his title→CIP→description rungs. What is left is spending one sitting.
+never seen, took his ruling on item 1, wired the CCR onto the Jev module, built
+his six rungs, and spent the first sitting. Jev ranks well and the rung measures
+the wrong question; Sam's answer to that is the open decision below.
 
 ## ✅ WHAT SHIPPED — all merged to `main`
 
@@ -105,6 +106,53 @@ records carry no description; 4,231 aggregatable rows are missing exactly that,
 and **4,065 have member descriptions** in `unified_courses_member_desc.js`
 (same key, loaded lazily — 47 MB). 271 agree word-for-word, 3,794 differ.
 
+## THE FIRST SITTING RAN — AND IT FOUND A DIFFERENT QUESTION
+
+Sam reviewed **26 of 50** title-rung items on 2026-09-22: 7 moves, 19 keeps.
+Receipt: `kb/receipts/jev_ccr_title_rung_2026-09-22_s282.json`.
+
+- **Jev's ranking works. AUC 0.865** over the 26.
+- **No usable gate came out of it.** The best zero-error threshold is 0.52 and
+  it recalls 2 of 7 moves; *Race and Ethnic Relations* was a move at p=0.16. The
+  CCR stays out of `GATES` until a rung measures the question Sam is answering.
+- **Every one of his 7 moves is a TAXONOMY call**, never a title-match error:
+  Photography out of Art, Theater out of Music, Ethnic Studies out of Sociology,
+  Office Technology out of IT, Diesel out of Automotive. Jev was asked whether a
+  title matches its parent. Sam answered where the course belongs.
+
+**Sam's reading of that pattern, verbatim (2026-09-22) — the open decision:**
+
+> The pattern show real variability and uncertainty in the field--we somehow
+> need to use this process to get everything properly nested OR just cross list
+> the heck out of the misfits and live to tell another day:)
+
+Measured the same hour across all 16,480 unified course rows, resolving member
+subject codes through `kb/reference/subject_discipline_map.json`:
+
+| | rows | share |
+|---|---|---|
+| resolve to one MQ discipline | 10,136 | 62% |
+| resolve to **more than one** | **1,210** | **7.3%** |
+| resolve to none (map leaves ambiguous codes unmapped) | 5,134 | 31% |
+
+1,086 sit at two disciplines, 98 at three, 26 at four or five. The contested
+population is a tail — small enough to look at every row. The fields already
+exist and sit idle: `xdisc` on the unified rows (9 in use) and
+`cross_listing_group` on the CCR seed.
+
+The 1,210 holds **both** kinds. Introduction to Photojournalism resolves to
+Journalism and Photography, Digital Forensics Fundamentals to CIS and
+Administration of Justice, Medical Terminology to HIT and Nursing — dual homes.
+Hydraulics (Fluid Power) sits under Agriculture with members reading Automotive
+Technology and Fire Technology — a mis-nest. **The misfit rung's job is to sort
+one from the other**, which is a question a faculty member answers in a glance.
+
+⚠️ **The session's recommendation is on the table and NOT ruled**: cross-list,
+keep one discipline primary for counting (the same shape as Rule 7's TOP ruling
+— gate identity, keep display), because a cross-list is reversible and a re-nest
+is a re-mint. Sam has not answered. Captured verbatim in
+`CPLBrain/03-professional/braindumps/braindump-2026-09-22-1730-nest-it-or-cross-list-the-misfits.md`.
+
 ## THE GATE RULE — READ BEFORE ANY SCORING
 
 ⚠️ **0.85 BELONGS TO THE CCRR AND ITS ONE QUESTION.** `GATES` maps reference →
@@ -114,15 +162,27 @@ second look spent** (a skeptic refutes a proposal; a calibration run makes
 none). Full reasoning:
 [`methodology-a-threshold-belongs-to-the-question-that-measured-it`](kb-notes/methodology-a-threshold-belongs-to-the-question-that-measured-it.md).
 
-⚠️ **Score only `by: "sam"` rows.** The ladder sheet came back 10/10
-`by: "default"` and is worth nothing as calibration.
+⚠️ **Score everything AT OR BELOW THE HIGH-WATER MARK (Sam, 2026-09-22):**
+*"the last item showing some sort of input is an indicator that everything prior
+to it is good to go as is."* The title-rung sheet stored 8 reply documents and
+he had ruled on **26** — he touched only what he disagreed with. Scoring the 8
+would have thrown away 18 real judgments. An untouched item BELOW the mark is an
+agreement with the proposal and counts; an item above it was never reached and
+does not. The mark rides the paste line and the `replies/done` record's
+`through` field; `tests/decision_sheet_high_water.test.js` guards it, including
+the edge that **Complete destroys the mark unless it is read first**. Doctrine:
+[`decision_sheets`](reference/decision_sheets.md) § *Reading the replies*.
+(The ladder sheet's own 10/10 `by: "default"` still scores nothing — no input
+anywhere on it means no mark.)
 
 ## Carryover
 
 | Item | State |
 |---|---|
 | **ESL merging procedure** | **NEEDS A DECISION SHEET, and he asked for it by name (2026-09-21):** *"we have an ESL merging procedure I'd like to adjust but I will want you to give me in the next session a decision sheet to manage the adjustments to what we currently use or have queued to use."* Start from [`lanes/esl-packaging`](reference/lanes/esl-packaging.md) — cover what is in use AND what is queued |
-| First sitting size | **ANSWERED: 40–60.** Dispatch at 50 |
+| First sitting size | **DONE.** Ran at 50; Sam reviewed 26 |
+| **Nest or cross-list the misfits** | **AWAITING SAM'S RULING** — his question, the 7.3% measurement and the session's recommendation are in the section above. Everything downstream of the misfit rung waits on it |
+| Subject/Discipline pickers | **SHIPPED** on the title-rung sheet — one shared `<datalist>` per list (320 subject codes, 248 MQ disciplines), pre-filled with where the course sits now. `tests/decision_sheet_pickers.test.js` |
 | Rungs for the other centers | Sam wants the same ladder shape for CER, CSR and CCRR |
 | CCR decisions table | Ladder item 4 (adopted): every center needs one before its first sheet, routed through Governance under Rule 10(a3). **None exists for the CCR** |
 | Rung 7 (the parent's title + number) | Designed, not coded. Waits on settled membership |

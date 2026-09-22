@@ -5246,14 +5246,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 36
+     "line": 38
     },
     {
      "id": "script:kb/_build_ccr_title_rung_sheet.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 36
+     "line": 38
     }
    ],
    "served": false,
@@ -11619,6 +11619,13 @@
      "line": 269
     },
     {
+     "id": "script:kb/_build_ccr_title_rung_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 36
+    },
+    {
      "id": "script:kb/_infer_disciplines.py",
      "kind": "script",
      "direction": "read",
@@ -11723,6 +11730,13 @@
      "direction": "read",
      "how": "literal",
      "line": 94
+    },
+    {
+     "id": "script:kb/_build_ccr_title_rung_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 37
     },
     {
      "id": "script:kb/_preseed_null_issuers.py",

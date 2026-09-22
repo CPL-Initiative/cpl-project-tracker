@@ -33,6 +33,8 @@ sys.path.insert(0, 'kb')
 import _decision_sheet_replies as m  # noqa: E402
 
 RECEIPT = 'kb/receipts/jev_ccr_title_rung_2026-09-22_s282.json'
+MQ = 'kb/reference/mq_disciplines.json'
+SUBJMAP = 'kb/reference/subject_discipline_map.json'
 OUT = 'docs/visuals/2026-09-22-ccr-title-rung.html'
 SHEET_ID = '2026-09-22-ccr-title-rung'
 
@@ -55,8 +57,29 @@ RULE_SAYS = {
 }
 
 
+def official_lists():
+    """The two official vocabularies, so a curator can SEE the choices.
+
+    Sam, 2026-09-22: *"add a Subject and Discipline picker to each item so I can
+    at least see what the official choices are."* Three of his first eight
+    replies said in a note what a picker would have captured as a value —
+    *"to Photography"*, *"should be Theater"*, *"Ethnic Studies"* — and one
+    asked outright whether ATHL is a subject or a discipline. It is a subject,
+    and it maps to the MQ discipline Kinesiology; a picker showing both answers
+    that question on the card instead of in a round trip.
+
+    ⚠️ THE TWO LISTS ARE DIFFERENT KINDS OF THING and the labels say so. The
+    subject codes are the canonical SUBJ4 vocabulary this repo curates; the
+    disciplines are the CO's Minimum Qualifications list, which nobody here
+    gets to extend."""
+    mq = sorted(json.load(open(MQ, encoding='utf-8'))['disciplines'])
+    smap = json.load(open(SUBJMAP, encoding='utf-8'))['map']
+    return sorted(smap), mq, smap
+
+
 def build():
     r = json.load(open(RECEIPT, encoding='utf-8'))
+    subjects, disciplines, smap = official_lists()
     items = []
     for it in r['items']:
         p, disc, title = it['p_different'], it['discipline'], it['title']
@@ -87,6 +110,10 @@ def build():
             rec = (f"<strong>Move it out of {m.E(disc)}.</strong> "
                    "<em>It might be wrong if</em> the discipline is broader than its name "
                    "suggests, or the course is cross-listed.")
+        # The card's CURRENT subject is the M-ID's prefix; its current discipline
+        # is what the row carries. Both arrive filled so the picker shows where
+        # the course sits now, and changing it records where it should go.
+        subj_now = it['id'].split('||')[0].split()[0]
         items.append({
             'title': title,
             'ref': it['id'],
@@ -95,12 +122,23 @@ def build():
             'rec': rec,
             'rows': members,
             'chips': CHIPS_KEEP if (fits or arguable) else CHIPS_MOVE,
+            'pickers': [
+                {'name': 'subject', 'label': 'Subject code',
+                 'list': 'dl-subjects', 'value': subj_now,
+                 'placeholder': 'one of 320 canonical codes'},
+                {'name': 'discipline', 'label': 'MQ discipline',
+                 'list': 'dl-disciplines', 'value': disc,
+                 'placeholder': "one of the CO's 248 disciplines"},
+            ],
         })
 
-    out = m.build_sheet("Fifty courses, and where they are filed", items, sheet_id=SHEET_ID)
+    out = m.build_sheet(
+        "Fifty courses, and where they are filed", items, sheet_id=SHEET_ID,
+        lists={'dl-subjects': subjects, 'dl-disciplines': disciplines})
     open(OUT, 'w', encoding='utf-8').write(out)
     keep = sum(1 for i in items if i['chips'] is CHIPS_KEEP)
     print(f"{len(items)} items · {keep} proposed to stay, {len(items)-keep} to move "
+          f"· {len(subjects)} subject codes, {len(disciplines)} disciplines "
           f"· {len(out)} bytes → {OUT}")
 
 
