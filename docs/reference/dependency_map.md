@@ -345,6 +345,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `docs/visuals/<date>-ccr-title-rung.html` | scripts: `kb/_build_ccr_title_rung_sheet.py` | scripts: `kb/_build_ccr_title_rung_sheet.py` |
 | `docs/visuals/<date>-crosslist-options.html` | scripts: `kb/_build_crosslist_decision_sheet.py` | scripts: `kb/_build_crosslist_decision_sheet.py` |
 | `docs/visuals/<date>-decision-sheet-template.html` | none found | scripts: `kb/_build_decision_sheet_demo.py` |
+| `docs/visuals/<date>-funding-review.html` | scripts: `kb/_build_funding_review_decision_sheet.py` | scripts: `kb/_build_funding_review_decision_sheet.py` |
 | `docs/visuals/<date>-jev-ladder.html` | scripts: `kb/_build_jev_ladder_sheet.py` | scripts: `kb/_build_jev_ladder_sheet.py` |
 | `docs/visuals/<date>-memory-audit-verdicts.html` | scripts: `kb/memory_audit/2026-09-05-sheet_builder.py` | scripts: `kb/memory_audit/2026-09-05-sheet_builder.py` |
 | `docs/visuals/<date>-open-asks.html` | scripts: `kb/_build_open_asks_decision_sheet.py` | scripts: `kb/_build_open_asks_decision_sheet.py` |
@@ -759,7 +760,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `canadacollege.edu` | tabs: `map-queue`, `map-users` |
 | `cdn.jsdelivr.net` | tabs: `pipeline` |
 | `cdnjs.cloudflare.com` | scripts: `prototype/globe/build_globe.py` |
-| `claude.ai` | tabs: `admin` · scripts: `scripts/announce_session_hint.py` · workflows: `cpl-chat-health.yml`, `map-users-sync.yml` |
+| `claude.ai` | tabs: `admin` · scripts: `kb/_build_open_asks_decision_sheet.py`, `scripts/announce_session_hint.py` · workflows: `cpl-chat-health.yml`, `map-users-sync.yml` |
 | `code.claude.com` | scripts: `scripts/install_prompt_guards.py` |
 | `commons.wikimedia.org` | pages: `CPL_Dashboard.html` · scripts: `tools/source_first_light_art.mjs` |
 | `counseling.santarosa.edu` | tabs: `map-queue`, `map-users` |
@@ -907,5 +908,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 508 file
-datasets · 145 external services · 357 consumers · 35 workflows · 37 tabs.
+Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 509 file
+datasets · 145 external services · 358 consumers · 35 workflows · 37 tabs.

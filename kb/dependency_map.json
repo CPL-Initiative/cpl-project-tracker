@@ -4,9 +4,9 @@
   "supabase_tables": 85,
   "rpcs": 31,
   "edge_functions": 5,
-  "file_datasets": 508,
+  "file_datasets": 509,
   "external_services": 145,
-  "consumers": 357,
+  "consumers": 358,
   "workflows": 35,
   "data_js_files": 61,
   "tabs": 37
@@ -508,6 +508,13 @@
      "tabs": [
       "admin"
      ]
+    },
+    {
+     "id": "script:kb/_build_open_asks_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 51
     },
     {
      "id": "script:scripts/announce_session_hint.py",
@@ -3016,7 +3023,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 136
+     "line": 139
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -4086,7 +4093,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 125
+     "line": 128
     },
     {
      "id": "script:scripts/stamp_asset_versions.py",
@@ -4419,7 +4426,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 125
+     "line": 128
     }
    ],
    "served": true,
@@ -5169,7 +5176,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 183
+     "line": 186
     }
    ],
    "served": false,
@@ -5182,7 +5189,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 179
+     "line": 182
     }
    ],
    "served": false,
@@ -5195,7 +5202,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 191
+     "line": 194
     }
    ],
    "served": false,
@@ -5347,6 +5354,26 @@
      "direction": "write",
      "how": "literal",
      "line": 54
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:docs/visuals/<date>-funding-review.html": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_funding_review_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 37
+    },
+    {
+     "id": "script:kb/_build_funding_review_decision_sheet.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 37
     }
    ],
    "served": false,
@@ -5901,7 +5928,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 125
+     "line": 128
     }
    ],
    "served": true,
@@ -13194,7 +13221,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 125
+     "line": 128
     }
    ],
    "served": true,
@@ -13596,7 +13623,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 145
+     "line": 148
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -15466,7 +15493,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 159
+     "line": 162
     },
     {
      "id": "script:kb/_build_orphan_parent_worklist.py",
