@@ -298,7 +298,20 @@ than held back for a quorum.
 **Builder:** `kb/_build_open_asks_decision_sheet.py` →
 `docs/visuals/2026-09-22-open-asks.html`
 → published at https://claude.ai/artifact/FTEhLfMxhRfv4YH6DGSPhn
-**Guard:** `tests/open_asks_sheet_coverage_test.py` (14 checks).
+**Guard:** `tests/open_asks_sheet_coverage_test.py` (24 checks).
+
+⚠️ **A REPLY IS KEYED TO THE CARD'S POSITION, SO A BUILDER THAT DROPS CARDS MUST
+NOT REPUBLISH ONTO A LIVE STORE (measured 2026-09-22, S283).** The `replies`
+collection stores each verdict under the item's NUMBER (`"11"`, `"12"` …). The
+standing sheet was published with 21 cards, Sam answered all 21 (Complete,
+`through: "18"`), and #1659 then removed the executed cards, so the builder emits
+15. Rebuilt and republished, card 11 (the phone opening width) would inherit the
+reply stored for the old card 11 (the light surface tints), and so on down the
+sheet. Only card 7 still lines up. **Before republishing any sheet whose card
+count or order changed, start a fresh `SHEET_ID` and artifact, or migrate the
+store by title.** Until then new asks ride their own sheet: the funding lane's
+four are at https://claude.ai/artifact/9MfbN6jqio8as9mY4LwPB2
+(`kb/_build_funding_review_decision_sheet.py`), named in `NO_OPEN_ASK`.
 
 ### Why it audits itself
 

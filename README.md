@@ -294,9 +294,9 @@ The whole ecosystem, end-to-end:
    column, because the prose cap is what pushed its last column off the edge.
    **Funding outcomes and milestones** follows: the three priorities and the
    milestone list together, open, with each priority's recommended strategies
-   folded closed. The steps that explain the mechanics fold closed on open, and
-   the section titles are the model's own words (*How an allocation is
-   computed*, *Eligibility requirements*). Every checkable claim — the priority
+   folded closed. The sections that explain the mechanics fold closed on open,
+   each headed by its text title alone, and the titles are the model's own words
+   (*How an allocation is computed*, *Eligibility requirements*). Every checkable claim — the priority
    descriptions, the baseline requirements, the participation deadline — is read
    from the model rather than typed beside it. **Download PDF** prints the page
    itself, so the file carries the model as it currently stands; there is no

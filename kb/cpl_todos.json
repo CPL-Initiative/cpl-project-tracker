@@ -1,9 +1,33 @@
 {
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
- "_as_of": "2026-09-21",
- "_session": 282,
- "_status": "Sam ruled that the Common Course Reference gets the next sitting of judgments, and settled its size at 40 to 60, so nothing is blocking it. He also reshaped the ladder: course description now comes before CIP, and three new rungs join it — units, subject-code outliers, and blanks that the member courses can fill. His rule that two units of variation is a non-critical difference is the useful part: it settles 2,641 of 4,179 unit questions without asking anything, leaving 1,538 that genuinely need a look. The blanks rung turned out to be worth far more than it first appeared — 4,065 consolidated courses have no description while their member courses do. He wants this same ladder shape for the other references next, and an ESL merging decision sheet in the coming session.",
+ "_as_of": "2026-09-22",
+ "_session": 283,
+ "_status": "The Implementation Funding tab is ready for the CO leadership review. Sam's last edits are live: the Summary opens on the total allocated and ends on local confirmation, a new line states how the $150,000 base and $400,000 cap spread the funding across institutions of every size, the baseline counts run over 116 colleges including Calbright, and the notes under the table are one sources line. Sam also reported that the Chancellor's Office research team can measure career attainment from EDD wage data, which gives goal (C) a measure the CO takes itself; four decisions on how that enters the model wait on his funding review sheet. The course-reference work stands where the last handoff left it: the first sitting ran, and six of the twelve cross-list items have landed.",
  "items": [
+  {
+   "id": "s283-sam-funding-review-sheet",
+   "for": "Sam",
+   "tab": "implementation-funding",
+   "text": "Four decisions from the funding review wait on the funding review sheet (https://claude.ai/artifact/9MfbN6jqio8as9mY4LwPB2): how the EDD career-attainment measure enters the model, whose wage-outcome definition it uses, whether Priority 2 keeps serving goal (C), and how the institution drill-in consolidates. Each arrives set to the proposal; change only the ones you disagree with."
+  },
+  {
+   "id": "s283-sam-register-norco",
+   "for": "Sam",
+   "tab": "activities-projects",
+   "text": "Project 1.1.2, AI Apprenticeship CPL Tools, still lists Santiago Canyon College and Norco College on its team. You said the partners are Santiago Canyon and American River College, so change Norco to American River in Activities. Sessions cannot write that table."
+  },
+  {
+   "id": "s283-fable-build-funding-rulings",
+   "for": "Fable",
+   "tab": "implementation-funding",
+   "text": "Read the funding review sheet's replies, then build what they rule: a CO-measured lane for the EDD wage outcome shown on the (C) card from its first import, and the one-line status in place of the three drill-in cells. The model reads an undelivered measure as $0, so no funding share moves onto the wage measure before an import lands."
+  },
+  {
+   "id": "s283-fable-open-asks-renumbering",
+   "for": "Fable",
+   "tab": "all",
+   "text": "The standing open-asks sheet cannot be republished as it stands: its saved replies are numbered to the 21 cards Sam answered, and the builder now holds 15, so every reply would land on the wrong card. Give it a fresh sheet and store before the next rebuild. Two of Sam's replies on it still wait on a session: his Advise on item 7 (name the unit range, such as 1-3u, as a rule for all merges and mints) and his offer on item 18 to ask Pedro for a regions report."
+  },
   {
    "id": "s282-sam-esl-merging-sheet",
    "for": "Sam",
@@ -29,12 +53,6 @@
    "text": "Harvest the value that is proven rather than chasing the hard band. The 0.85 gate scored 25 of 25 on Sam's verdicts, so run kb/_jev_adjudicate.py across the full rung-5 population instead of only the 55 anchored pairs, take everything above the gate as suggestions, and put the rest on a decision sheet. The band is 26 pairs and 838 rows — one sitting, not an automation problem."
   },
   {
-   "id": "s282-fable-ccr-title-rung-sitting",
-   "for": "Fable",
-   "tab": "cr-reference",
-   "text": "Run the first course sitting: Sam settled on 40 to 60 questions, so dispatch the title rung at 50, build a decision sheet from the result, and hand him the link. His verdicts are what earn the course reference a confidence threshold of its own — the one we have belongs to the credit recommendations and a different question."
-  },
-  {
    "id": "s282-fable-rerun-cer-csr-scanners",
    "for": "Fable",
    "tab": "cr-reference",
@@ -53,6 +71,14 @@
    "text": "You asked to delete the intro from decision sheets and it is gone. The framing sentence can still be switched back on per sheet, because putting it in the header was your own earlier ruling. Say the word and that option goes too."
   },
   {
+   "id": "s280-fable-ci-shard-and-run-only-what-the-diff-touches",
+   "for": "Fable",
+   "tab": "all",
+   "text": "Sam, 2026-09-20, on the ten-minute merge: shard the JS suite across a runner matrix and run only the test files the diff touches on a pull request (the full suite stays on every push to main), plus the one hot spot, the funding tests that boot the whole dashboard in jsdom per file. Measure first: per-file timings from the last run, then the workflow change. A wholesale refactor of the monolith is not the lever for CI time. Also: the dependency map records line numbers, so a one-line edit above a mapped reference (Sam's, 2026-09-20, in the installer: 180 to 181) turned main red at the next push; make the staleness check ignore line drift, or drop the numbers from the map."
+  }
+ ],
+ "_deferred": [
+  {
    "id": "s280-sam-decide-the-execute-sql-read-path",
    "for": "Sam",
    "tab": "admin",
@@ -70,14 +96,6 @@
    "tab": "cpl-assistant",
    "text": "Read Sierra's answer to a \"I have a CNA cert and live in <place>\" question in a browser. v73 should open by naming a college near you and the course to ask about — for the San Gabriel Valley that is Pasadena City NURS 102, Citrus VNRS 150 or Rio Hondo VN 61. No session can check this; the sandbox cannot reach Sierra's host."
   },
-  {
-   "id": "s280-fable-ci-shard-and-run-only-what-the-diff-touches",
-   "for": "Fable",
-   "tab": "all",
-   "text": "Sam, 2026-09-20, on the ten-minute merge: shard the JS suite across a runner matrix and run only the test files the diff touches on a pull request (the full suite stays on every push to main), plus the one hot spot, the funding tests that boot the whole dashboard in jsdom per file. Measure first: per-file timings from the last run, then the workflow change. A wholesale refactor of the monolith is not the lever for CI time. Also: the dependency map records line numbers, so a one-line edit above a mapped reference (Sam's, 2026-09-20, in the installer: 180 to 181) turned main red at the next push; make the staleness check ignore line drift, or drop the numbers from the map."
-  }
- ],
- "_deferred": [
   {
    "id": "s278-fable-surgical-tech-matches-a-college",
    "for": "Fable",

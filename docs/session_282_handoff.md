@@ -4,6 +4,8 @@ date: 2026-09-21
 session: 281 (SkyAnvil)
 tags: [handoff, decision-sheets, cr-reference, jev, adjudication]
 status: current
+superseded: true
+superseded_by: session_284_handoff.md
 ---
 
 # You are Session 282

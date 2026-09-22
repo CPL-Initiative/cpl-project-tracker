@@ -5495,7 +5495,9 @@
      "governs": [
       "kb/_build_ccr_universe.py",
       "prototype/ccr_universe.js",
-      "tests/ccr_universe_orbits_test.py"
+      "tests/ccr_universe_orbits_test.py",
+      "kb/_decision_sheet_replies.py",
+      "kb/_build_open_asks_decision_sheet.py"
      ],
      "path": "docs/kb-notes/methodology-key-a-side-table-by-the-write-key-not-by-position.md",
      "status": "published",
@@ -5508,7 +5510,7 @@
      ],
      "title": "Key a side table by the write key, never by list position",
      "type": "methodology",
-     "updated": "2026-09-03"
+     "updated": "2026-09-22"
     },
     {
      "created": "2026-09-03",
@@ -10515,7 +10517,7 @@
      ],
      "title": "CPL Implementation Funding tab \u2014 workstream lessons",
      "type": null,
-     "updated": "2026-09-15"
+     "updated": "2026-09-22"
     },
     {
      "created": "2026-06-21",
@@ -14071,8 +14073,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 255,
+   "count": 256,
    "docs": [
+    {
+     "created": "2026-09-22",
+     "governs": [],
+     "n": 284,
+     "path": "docs/session_284_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "implementation-funding",
+      "decision-sheets",
+      "edd",
+      "career-attainment"
+     ],
+     "title": "the funding tab is ready for leadership, and career attainment has a measure",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-22",
      "governs": [],
@@ -18401,5 +18420,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 956
+ "total": 957
 }
