@@ -203,6 +203,26 @@ const tick = (ms) => new Promise((r) => setTimeout(r, ms || 5));
           .filter((f) => fs.readFileSync(path.join(dir, f), "utf8").includes("replies:css:start"))
       : [];
     check("there is at least one injected sheet to check", sheets.length > 0, String(sheets.length));
+    // ⚠️ SCAN THE CSS, NOT THE PAGE. A sheet can WRITE ABOUT an unresolved
+    // token — the 2026-09-22 open-asks sheet carries
+    // `<code>var(--brand)</code>` in the prose of the item that reports that
+    // exact bug on the Implementation Funding tab — and prose paints nothing.
+    // Scanning the whole file reported three "broken" tokens on a sheet whose
+    // CSS is clean. This is the same error class the repo keeps relearning:
+    // `KIN` matched inside "Public SpeaKINg", and `american_spelling` has to
+    // skip code because a token name is not a spelling. Match the surface that
+    // can actually misbehave.
+    //
+    // Nothing is given up by narrowing: the failure this guard exists for was
+    // `background: var(--seal-blue)` in the INJECTED CSS, which is a <style>
+    // block, and inline style="" attributes are scanned too.
+    const cssOf = (src) => {
+      const parts = [];
+      for (const m of src.matchAll(/<style\b[^>]*>([\s\S]*?)<\/style>/gi)) parts.push(m[1]);
+      for (const m of src.matchAll(/\sstyle\s*=\s*"([^"]*)"/gi)) parts.push(m[1]);
+      for (const m of src.matchAll(/\sstyle\s*=\s*'([^']*)'/gi)) parts.push(m[1]);
+      return parts.join("\n");
+    };
     const broken = [];
     for (const f of sheets) {
       const src = fs.readFileSync(path.join(dir, f), "utf8");
@@ -210,10 +230,22 @@ const tick = (ms) => new Promise((r) => setTimeout(r, ms || 5));
       const rootBlock = /:root\s*\{([\s\S]*?)\n\s*\}/.exec(src);
       if (rootBlock) for (const m of rootBlock[1].matchAll(/(--[a-z0-9-]+)\s*:/g)) root.add(m[1]);
       // a reference is BARE only when the token name is followed straight by ')'
-      for (const m of src.matchAll(/var\((--[a-z0-9-]+)\)/g)) {
+      for (const m of cssOf(src).matchAll(/var\((--[a-z0-9-]+)\)/g)) {
         if (!root.has(m[1])) broken.push(f + " -> " + m[1]);
       }
     }
+    // The narrowing above is only safe while a sheet actually CARRIES prose that
+    // would trip the wide scan. Lose that fixture and a revert to scanning the
+    // whole file passes green, and the next sheet to quote a token name fails
+    // for no reason anyone can see.
+    const quotesAToken = sheets.some((f) => {
+      const src = fs.readFileSync(path.join(dir, f), "utf8");
+      return /<code>var\((--[a-z0-9-]+)\)<\/code>/.test(src);
+    });
+    check("⭐ a sheet quotes a token in PROSE, so the CSS-only scan is exercised",
+      quotesAToken,
+      "no sheet carries <code>var(--x)</code>; the scan's narrowing is now untested");
+
     check("every bare var(--token) on a decision sheet resolves in that sheet",
       broken.length === 0, broken.slice(0, 6).join(" | "));
   }

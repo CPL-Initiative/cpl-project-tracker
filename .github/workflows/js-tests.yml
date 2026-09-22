@@ -123,6 +123,15 @@ jobs:
       # Pure-stdlib python; same non-required check.
       - name: Orphan-parent worklist (the decidable column, and freshness)
         run: python3 tests/orphan_parent_worklist_test.py
+
+      # The standing open-asks sheet must cover every lane that carries an open
+      # ask. Sam's "always" (2026-09-22) cannot depend on a session remembering:
+      # when he asked, the asks sat in eleven lane files and one reached §11.
+      # Pure-stdlib python; same non-required check.
+      - name: Open-asks sheet covers every lane with an open ask
+        run: |
+          python3 kb/_build_open_asks_decision_sheet.py --check
+          python3 tests/open_asks_sheet_coverage_test.py
       # The PreToolUse guard that lets auto mode stop prompting on every read
       # (Session 277). It returns `allow` for read-only SQL, so the convenience
       # is only safe while every write case stays `deny` — a false allow is a

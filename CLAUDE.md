@@ -445,6 +445,16 @@ first day.** Do the remembering for them.
   `capabilities: {db: {}}`, the `replies` collection, where the file lives,
   the worked example) are PULL:
   [`decision_sheets`](docs/reference/decision_sheets.md).
+  ⚠️ **AND IT IS "ALWAYS", NOT "WHEN THEY ACCUMULATE" (Sam, 2026-09-22).**
+  *"Always give me a decision sheet for any outstanding items for me..."* —
+  so the sheet is the STANDING form of the backlog, built whenever anything is
+  waiting on him, never held back for a quorum. ⚠️ **An "always" a session has
+  to remember is not one**: the asks had scattered into eleven lane files'
+  NEEDS-SAM blocks and only ONE reached §11, so
+  `kb/_build_open_asks_decision_sheet.py` **refuses to build** when a lane
+  carries a NEEDS-SAM marker that no item covers and no `NO_OPEN_ASK` reason
+  dismisses. Add the ask to a lane and the sheet breaks until it is asked.
+  Rebuild it at every checkpoint and hand over the link.
 - **CAPTURE UNPLANNED SUBSTANCE ON THE FLY (Sam, 2026-08-30).** His important
   statements are never planned — *"just comes out of our interactions and I
   don't think to say specifically braindump."* When Sam or a team member says
@@ -755,6 +765,15 @@ Trust-Card auditor work, or CID/CIDx pathway decisions. The live Roadmap table
 > ran that test and names the candidates; hand-grepping has been wrong EVERY
 > time (four occasions). [`lanes/README.md`](docs/reference/lanes/README.md).
 
+> ⚠️ **ANYTHING WAITING ON SAM IS ALSO A CARD ON THE STANDING SHEET** —
+> `kb/_build_open_asks_decision_sheet.py` →
+> [https://claude.ai/artifact/FTEhLfMxhRfv4YH6DGSPhn](https://claude.ai/artifact/FTEhLfMxhRfv4YH6DGSPhn)
+> (source `docs/visuals/2026-09-22-open-asks.html`),
+> **21 items across 9 lanes** as of 2026-09-22. This table under-reported it by
+> an order of magnitude (eleven lanes carried an ask; one row said so), so the
+> builder now **refuses** while a lane's NEEDS-SAM marker has no card. Rebuild it
+> at checkpoint and hand over the link.
+
 | Phase | What | Status |
 |---|---|---|
 | 1b (3/3) | Curate-write Repair-from-members action (Supabase schema migration + fresh-read + cron-window) | parked (low immediate value — 1 cluster; build when ≥5 clusters exist) |
@@ -785,7 +804,7 @@ Trust-Card auditor work, or CID/CIDx pathway decisions. The live Roadmap table
 | **GR register / CO policy & regulation review** | Every CO priority area's regulatory / Ed. Code revisions under consideration, with the artifacts informing them — pointed at the whole CO, not just CPL. | ✅ live · open work — [lane state](docs/reference/lanes/gr-register.md) |
 | **Public/private repo split** | Partition the truly public views (Sierra, Fact Sheet, veteran map, landing pages) from COBI + the methodology, so the approach is not trivially cloneable. | 🔨 in progress · open work — [lane state](docs/reference/lanes/public-private-repo-split.md) |
 | **MAP Custom Reports (3 new) / ITPI automation** | Wire the three new MAP Custom Reports, load them, keep them fresh. | ✅ live · open work — [lane state](docs/reference/lanes/map-custom-reports.md) |
-| **Discipline cross-listing** | Nest, alias, or let a course carry two homes — the 1,210 rows whose colleges disagree about discipline. Sam's 12-item sheet; 3 of 12 landed. | 🔨 in progress · **2 need Sam** — [lane state](docs/reference/lanes/discipline-crosslist.md) |
+| **Discipline cross-listing** | Nest, alias, or let a course carry two homes — the 1,210 rows whose colleges disagree about discipline. Sam's 12-item sheet; 3 of 12 landed. | 🔨 in progress · **2 on the [open-asks sheet](https://claude.ai/artifact/FTEhLfMxhRfv4YH6DGSPhn)** — [lane state](docs/reference/lanes/discipline-crosslist.md) |
 | **SkyView / the CCR curation interface** | An interactive view of the Common Course Reference — common courses by discipline, their constituent local courses, and moving a course to where it belongs. | ✅ live · open work — [lane state](docs/reference/lanes/skyview-ccr-interface.md) |
 | **ESL packaging (the first fold)** | Collapse the ESL discipline to comprehensives + carve-outs — the proof that packaging reaches the target. | ✅ live · open work — [lane state](docs/reference/lanes/esl-packaging.md) |
 | **Title 5 §55050 → Ed. Code Article 9** | A regulation that does not implement the statute it operates under — and the amendment package that fixes it. | ✅ live · open work — [lane state](docs/reference/lanes/t5-55050-article-9.md) |

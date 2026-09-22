@@ -46,6 +46,12 @@ run "orphan-parent worklist"   "python3 kb/_build_orphan_parent_worklist.py --ch
 # stripped it out of main twenty minutes later. The SkyView lane file already told
 # people to run THIS script before a push — the page just was not in it.
 run "SkyView built page"      "python3 tests/skyview_built_from_source_test.py >/dev/null"
+# The standing open-asks sheet (Sam, 2026-09-22: "Always give me a decision
+# sheet for any outstanding items for me"). This is a COVERAGE check, never a
+# byte-equality one: the cards are hand-written, so what has to stay true is
+# that every lane carrying a NEEDS-SAM marker is asked about or dismissed by
+# name. A lane that gains an ask fails here until somebody puts it on the sheet.
+run "open-asks sheet coverage" "python3 kb/_build_open_asks_decision_sheet.py --check >/dev/null"
 echo
 if [ "$fail" -ne 0 ]; then
   echo "Regenerate, re-run this, THEN push:"

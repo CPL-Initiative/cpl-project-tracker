@@ -344,6 +344,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `docs/visuals/<date>-decision-sheet-template.html` | none found | scripts: `kb/_build_decision_sheet_demo.py` |
 | `docs/visuals/<date>-jev-ladder.html` | scripts: `kb/_build_jev_ladder_sheet.py` | scripts: `kb/_build_jev_ladder_sheet.py` |
 | `docs/visuals/<date>-memory-audit-verdicts.html` | scripts: `kb/memory_audit/2026-09-05-sheet_builder.py` | scripts: `kb/memory_audit/2026-09-05-sheet_builder.py` |
+| `docs/visuals/<date>-open-asks.html` | scripts: `kb/_build_open_asks_decision_sheet.py` | scripts: `kb/_build_open_asks_decision_sheet.py` |
 | `docx.min.js` | tabs: `annual-report`, `college-briefing`, `implementation-funding` · modules: `master_report.js` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py` | — |
 | `excel_to_dashboard.py` | workflows: `daily-dashboard.yml` | — |
 | `exports/20260826_T5_55050_Article9_Conformity_TrackedChanges_v5.docx` | none found | scripts: `kb/_build_55050_redline_docx.py`, `kb/_verify_55050_redline.py` |
@@ -389,6 +390,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_build_discipline_blanks_worklist.py` | workflows: `daily-dashboard.yml` | — |
 | `kb/_build_docs_index.py` | workflows: `js-tests.yml` | — |
 | `kb/_build_governance_candidates.py` | workflows: `daily-dashboard.yml` | — |
+| `kb/_build_open_asks_decision_sheet.py` | workflows: `js-tests.yml` | — |
 | `kb/_build_orphan_parent_worklist.py` | workflows: `daily-dashboard.yml` | — |
 | `kb/_build_peer_articulations.py` | workflows: `credential-catalog-sync.yml`, `daily-dashboard.yml` | — |
 | `kb/_build_program_course_graph.py` | workflows: `daily-dashboard.yml`, `program-course-fetch.yml` | — |
@@ -699,6 +701,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/merge_chain_flatten_test.py` | workflows: `js-tests.yml` | — |
 | `tests/mid_short_code_gate_test.py` | workflows: `js-tests.yml` | — |
 | `tests/occupation_matcher_stemming_test.py` | workflows: `js-tests.yml` | — |
+| `tests/open_asks_sheet_coverage_test.py` | workflows: `js-tests.yml` | — |
 | `tests/orphan_parent_worklist_test.py` | workflows: `js-tests.yml` | — |
 | `tests/prefix_fold_apply_test.py` | workflows: `js-tests.yml` | — |
 | `tests/prefix_fold_dryrun_test.py` | workflows: `js-tests.yml` | — |
@@ -901,5 +904,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 502 file
-datasets · 145 external services · 356 consumers · 35 workflows · 37 tabs.
+Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 505 file
+datasets · 145 external services · 357 consumers · 35 workflows · 37 tabs.
