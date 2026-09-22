@@ -1,0 +1,2532 @@
+{
+  "_about": "Identities whose recorded discipline appears nowhere among their members' mapped disciplines. Item 9 of Sam's cross-list decision sheet, 2026-09-22: their own worklist, ahead of the cross-list pass.",
+  "_generated_by": "kb/_build_orphan_parent_worklist.py",
+  "_read_this_first": "`decidable` is the column that matters. A false there means the payload holds nothing to check a proposed discipline against — the members disagree, or every signal rests on a one or two character subject code, or the row carries an approved identifier. Filling those from the modal member would reproduce the `ES`-reads-Ethnic-Studies error in reverse. ⚠ And `members_say` is what the colleges typed, never a verdict on the parent: AUTD M1040 Medium and Heavy Truck Drivetrain Service is recorded Diesel Mechanics while its members read Automotive Technology, and Diesel Mechanics is arguably the better answer. A decidable row is one a curator can settle from what is here, whichever way they settle it.",
+  "_counts": {
+    "orphan_parents": 111,
+    "decidable": 18,
+    "undecidable": 93,
+    "members_disagree": 93,
+    "short_codes_only": 0,
+    "carries_an_approved_identifier": 0
+  },
+  "rows": [
+    {
+      "id": "AUTD M1040",
+      "title": "Medium and Heavy Truck Drivetrain Service, Diagnosis, and Repair",
+      "id_system": "M-ID",
+      "recorded_discipline": "Diesel Mechanics",
+      "members": 10,
+      "subject_codes": [
+        "AUTO",
+        "DM"
+      ],
+      "member_disciplines": {
+        "Automotive Technology": 1,
+        "Multimedia": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Automotive Technology": 1
+      },
+      "decidable": true,
+      "why": "every member that resolves on a code longer than 2 characters reads Automotive Technology (1 of them)",
+      "members_say": "Automotive Technology"
+    },
+    {
+      "id": "DENT M1046",
+      "title": "Medical Assisting Externship: Administrative and Clinical",
+      "id_system": "M-ID",
+      "recorded_discipline": "Dental Technology",
+      "members": 9,
+      "subject_codes": [
+        "HTEC",
+        "MEDA",
+        "RC"
+      ],
+      "member_disciplines": {
+        "Health Care Ancillaries": 2,
+        "Respiratory Technologies": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Health Care Ancillaries": 2
+      },
+      "decidable": true,
+      "why": "every member that resolves on a code longer than 2 characters reads Health Care Ancillaries (2 of them)",
+      "members_say": "Health Care Ancillaries"
+    },
+    {
+      "id": "PUBS M1011",
+      "title": "Fire Continued Professional Training (CPT)",
+      "id_system": "M-ID",
+      "recorded_discipline": "Public Safety",
+      "members": 9,
+      "subject_codes": [
+        "CJA",
+        "FT",
+        "LE"
+      ],
+      "member_disciplines": {
+        "Administration of Justice": 2,
+        "Fire Technology": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Administration of Justice": 1
+      },
+      "decidable": true,
+      "why": "every member that resolves on a code longer than 2 characters reads Administration of Justice (1 of them)",
+      "members_say": "Administration of Justice"
+    },
+    {
+      "id": "PEDS M1037",
+      "title": "Adapted Sport & Recreational Physical Activity",
+      "id_system": "M-ID",
+      "recorded_discipline": "Physical Education Disabled Students",
+      "members": 8,
+      "subject_codes": [
+        "KIN",
+        "KINE",
+        "PE"
+      ],
+      "member_disciplines": {
+        "Kinesiology": 2,
+        "Physical Education": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Kinesiology": 2
+      },
+      "decidable": true,
+      "why": "every member that resolves on a code longer than 2 characters reads Kinesiology (2 of them)",
+      "members_say": "Kinesiology"
+    },
+    {
+      "id": "AUTD M1025",
+      "title": "Caterpillar Machine Electronic Systems",
+      "id_system": "M-ID",
+      "recorded_discipline": "Diesel Mechanics",
+      "members": 7,
+      "subject_codes": [
+        "CAT",
+        "DM"
+      ],
+      "member_disciplines": {
+        "Office Technologies": 1,
+        "Multimedia": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Office Technologies": 1
+      },
+      "decidable": true,
+      "why": "every member that resolves on a code longer than 2 characters reads Office Technologies (1 of them)",
+      "members_say": "Office Technologies"
+    },
+    {
+      "id": "GRAF M1001",
+      "title": "Web Programming: JavaScript",
+      "id_system": "M-ID",
+      "recorded_discipline": "Graphic Arts",
+      "members": 6,
+      "subject_codes": [
+        "CIS",
+        "CS"
+      ],
+      "member_disciplines": {
+        "Computer Information Systems": 1,
+        "Computer Science": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Computer Information Systems": 1
+      },
+      "decidable": true,
+      "why": "every member that resolves on a code longer than 2 characters reads Computer Information Systems (1 of them)",
+      "members_say": "Computer Information Systems"
+    },
+    {
+      "id": "KINE M1053",
+      "title": "Cardiovascular Development - Running Emphasis 1",
+      "id_system": "M-ID",
+      "recorded_discipline": "Kinesiology",
+      "members": 6,
+      "subject_codes": [
+        "ES",
+        "FITN",
+        "PE"
+      ],
+      "member_disciplines": {
+        "Physical Education": 2,
+        "Ethnic Studies": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Physical Education": 1
+      },
+      "decidable": true,
+      "why": "every member that resolves on a code longer than 2 characters reads Physical Education (1 of them)",
+      "members_say": "Physical Education"
+    },
+    {
+      "id": "PEDS M1020",
+      "title": "Adapted Swimming for Total Fitness",
+      "id_system": "M-ID",
+      "recorded_discipline": "Physical Education Disabled Students",
+      "members": 5,
+      "subject_codes": [
+        "ES",
+        "KINS"
+      ],
+      "member_disciplines": {
+        "Ethnic Studies": 1,
+        "Kinesiology": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Kinesiology": 1
+      },
+      "decidable": true,
+      "why": "every member that resolves on a code longer than 2 characters reads Kinesiology (1 of them)",
+      "members_say": "Kinesiology"
+    },
+    {
+      "id": "PEDS M1040",
+      "title": "Adaptive Individual Sports: Bowling",
+      "id_system": "M-ID",
+      "recorded_discipline": "Physical Education Disabled Students",
+      "members": 5,
+      "subject_codes": [
+        "KIN",
+        "PE"
+      ],
+      "member_disciplines": {
+        "Kinesiology": 1,
+        "Physical Education": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Kinesiology": 1
+      },
+      "decidable": true,
+      "why": "every member that resolves on a code longer than 2 characters reads Kinesiology (1 of them)",
+      "members_say": "Kinesiology"
+    },
+    {
+      "id": "THTR M1355",
+      "title": "Voice and Diction for the Theatre",
+      "id_system": "M-ID",
+      "recorded_discipline": "Drama/Theater Arts",
+      "members": 5,
+      "subject_codes": [
+        "MUSIC",
+        "TA"
+      ],
+      "member_disciplines": {
+        "Music": 1,
+        "Theater Arts": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Music": 1
+      },
+      "decidable": true,
+      "why": "every member that resolves on a code longer than 2 characters reads Music (1 of them)",
+      "members_say": "Music"
+    },
+    {
+      "id": "KINE M1860",
+      "title": "Intermediate Lap Swimming for Cardiovascular Fitness",
+      "id_system": "M-ID",
+      "recorded_discipline": "Kinesiology",
+      "members": 4,
+      "subject_codes": [
+        "ES",
+        "PEAC"
+      ],
+      "member_disciplines": {
+        "Ethnic Studies": 1,
+        "Physical Education": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Physical Education": 1
+      },
+      "decidable": true,
+      "why": "every member that resolves on a code longer than 2 characters reads Physical Education (1 of them)",
+      "members_say": "Physical Education"
+    },
+    {
+      "id": "KINE M1866",
+      "title": "Introductory Lap Swimming for Cardiovascular Fitness",
+      "id_system": "M-ID",
+      "recorded_discipline": "Kinesiology",
+      "members": 4,
+      "subject_codes": [
+        "ES",
+        "PEAC"
+      ],
+      "member_disciplines": {
+        "Ethnic Studies": 1,
+        "Physical Education": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Physical Education": 1
+      },
+      "decidable": true,
+      "why": "every member that resolves on a code longer than 2 characters reads Physical Education (1 of them)",
+      "members_say": "Physical Education"
+    },
+    {
+      "id": "PEDS M1006",
+      "title": "Aquatic Exercise I--Fundamentals",
+      "id_system": "M-ID",
+      "recorded_discipline": "Physical Education Disabled Students",
+      "members": 4,
+      "subject_codes": [
+        "ES",
+        "KIN"
+      ],
+      "member_disciplines": {
+        "Ethnic Studies": 1,
+        "Kinesiology": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Kinesiology": 1
+      },
+      "decidable": true,
+      "why": "every member that resolves on a code longer than 2 characters reads Kinesiology (1 of them)",
+      "members_say": "Kinesiology"
+    },
+    {
+      "id": "AUTB M1071",
+      "title": "Import Body Customizing",
+      "id_system": "M-ID",
+      "recorded_discipline": "Agricultural Business and Related Services",
+      "members": 3,
+      "subject_codes": [
+        "AB",
+        "AUTO"
+      ],
+      "member_disciplines": {
+        "Auto Body Technology": 1,
+        "Automotive Technology": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Automotive Technology": 1
+      },
+      "decidable": true,
+      "why": "every member that resolves on a code longer than 2 characters reads Automotive Technology (1 of them)",
+      "members_say": "Automotive Technology"
+    },
+    {
+      "id": "PEDS M1018",
+      "title": "Personalized Fitness Planning for Lifetime Wellness",
+      "id_system": "M-ID",
+      "recorded_discipline": "Physical Education Disabled Students",
+      "members": 3,
+      "subject_codes": [
+        "KINE",
+        "PE"
+      ],
+      "member_disciplines": {
+        "Kinesiology": 1,
+        "Physical Education": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Kinesiology": 1
+      },
+      "decidable": true,
+      "why": "every member that resolves on a code longer than 2 characters reads Kinesiology (1 of them)",
+      "members_say": "Kinesiology"
+    },
+    {
+      "id": "PEDS M1022",
+      "title": "Adapted Swimming and Hydroexercise",
+      "id_system": "M-ID",
+      "recorded_discipline": "Physical Education Disabled Students",
+      "members": 2,
+      "subject_codes": [
+        "KIN",
+        "PE"
+      ],
+      "member_disciplines": {
+        "Kinesiology": 1,
+        "Physical Education": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Kinesiology": 1
+      },
+      "decidable": true,
+      "why": "every member that resolves on a code longer than 2 characters reads Kinesiology (1 of them)",
+      "members_say": "Kinesiology"
+    },
+    {
+      "id": "THTR M1121",
+      "title": "Irvine Valley Conservatory",
+      "id_system": "M-ID",
+      "recorded_discipline": "Drama/Theater Arts",
+      "members": 2,
+      "subject_codes": [
+        "MUS",
+        "TA"
+      ],
+      "member_disciplines": {
+        "Music": 1,
+        "Theater Arts": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Music": 1
+      },
+      "decidable": true,
+      "why": "every member that resolves on a code longer than 2 characters reads Music (1 of them)",
+      "members_say": "Music"
+    },
+    {
+      "id": "THTR M1124",
+      "title": "Contemporary World Drama Intensive",
+      "id_system": "M-ID",
+      "recorded_discipline": "Drama/Theater Arts",
+      "members": 2,
+      "subject_codes": [
+        "DNCE",
+        "TA"
+      ],
+      "member_disciplines": {
+        "Dance": 1,
+        "Theater Arts": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Dance": 1
+      },
+      "decidable": true,
+      "why": "every member that resolves on a code longer than 2 characters reads Dance (1 of them)",
+      "members_say": "Dance"
+    },
+    {
+      "id": "ENGR 110",
+      "title": "Introduction to Engineering",
+      "id_system": "C-ID",
+      "recorded_discipline": "Industrial Technology",
+      "members": 94,
+      "subject_codes": [
+        "ENGR",
+        "ETEC"
+      ],
+      "member_disciplines": {
+        "Engineering": 1,
+        "Engineering Technology": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Engineering": 1,
+        "Engineering Technology": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Engineering and Engineering Technology), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "SJS 120",
+      "title": "Introduction to Women’s Studies",
+      "id_system": "C-ID",
+      "recorded_discipline": "Social Science",
+      "members": 74,
+      "subject_codes": [
+        "CHIC",
+        "ETHS",
+        "SOC"
+      ],
+      "member_disciplines": {
+        "Chicano Studies": 1,
+        "Ethnic Studies": 1,
+        "Sociology": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Chicano Studies": 1,
+        "Ethnic Studies": 1,
+        "Sociology": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Chicano Studies and Ethnic Studies and Sociology), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "FTVE 120",
+      "title": "Beginning Audio Production",
+      "id_system": "C-ID",
+      "recorded_discipline": "Media Production",
+      "members": 40,
+      "subject_codes": [
+        "FILM",
+        "MUS"
+      ],
+      "member_disciplines": {
+        "Film and Media Studies": 1,
+        "Music": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Film and Media Studies": 1,
+        "Music": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Film and Media Studies and Music), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "IMNT M1006",
+      "title": "Programmable Logic Controllers (PLCs)",
+      "id_system": "M-ID",
+      "recorded_discipline": "Industrial Maintenance",
+      "members": 20,
+      "subject_codes": [
+        "ELECT",
+        "ETEC"
+      ],
+      "member_disciplines": {
+        "Electronics": 1,
+        "Engineering Technology": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Electronics": 1,
+        "Engineering Technology": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Electronics and Engineering Technology), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "GRAF M1011",
+      "title": "Digital Imaging 1",
+      "id_system": "M-ID",
+      "recorded_discipline": "Graphic Arts",
+      "members": 18,
+      "subject_codes": [
+        "ART",
+        "DART",
+        "PHOT"
+      ],
+      "member_disciplines": {
+        "Art": 1,
+        "Multimedia": 1,
+        "Photography": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Art": 1,
+        "Multimedia": 1,
+        "Photography": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Art and Multimedia and Photography), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "GRAF M1010",
+      "title": "Digital Illustration with Adobe Illustrator",
+      "id_system": "M-ID",
+      "recorded_discipline": "Graphic Arts",
+      "members": 12,
+      "subject_codes": [
+        "ART",
+        "ARTD",
+        "CS",
+        "DART"
+      ],
+      "member_disciplines": {
+        "Art": 1,
+        "Commercial Art": 1,
+        "Computer Science": 1,
+        "Multimedia": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Art": 1,
+        "Commercial Art": 1,
+        "Multimedia": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Art and Commercial Art and Multimedia), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "AUTD M1029",
+      "title": "Construction Systems - Introduction to Low Voltage Building Systems 1",
+      "id_system": "M-ID",
+      "recorded_discipline": "Diesel Mechanics",
+      "members": 11,
+      "subject_codes": [
+        "AUTO",
+        "ELECT"
+      ],
+      "member_disciplines": {
+        "Automotive Technology": 1,
+        "Electronics": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Automotive Technology": 1,
+        "Electronics": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Automotive Technology and Electronics), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "COUN M1168",
+      "title": "Case Administration, Crisis Intervention and Referral",
+      "id_system": "M-ID",
+      "recorded_discipline": "Counseling",
+      "members": 11,
+      "subject_codes": [
+        "CJA",
+        "LEPD",
+        "PUBSERV"
+      ],
+      "member_disciplines": {
+        "Administration of Justice": 2,
+        "Public Safety": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Administration of Justice": 2,
+        "Public Safety": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Administration of Justice and Public Safety), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "HUMA M1110",
+      "title": "World Religions (Honors)",
+      "id_system": "M-ID",
+      "recorded_discipline": "Religious Studies",
+      "members": 11,
+      "subject_codes": [
+        "HUMAN",
+        "PHIL"
+      ],
+      "member_disciplines": {
+        "Humanities": 1,
+        "Philosophy": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Humanities": 1,
+        "Philosophy": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Humanities and Philosophy), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "THTR M1349",
+      "title": "Concert Touring Master Electrician",
+      "id_system": "M-ID",
+      "recorded_discipline": "Drama/Theater Arts",
+      "members": 11,
+      "subject_codes": [
+        "MUSC",
+        "TA",
+        "THEA"
+      ],
+      "member_disciplines": {
+        "Theater Arts": 2,
+        "Commercial Music": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Commercial Music": 1,
+        "Theater Arts": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Commercial Music and Theater Arts), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "DRAF M1040",
+      "title": "Geometric Dimensioning and Tolerancing (GD&T)",
+      "id_system": "M-ID",
+      "recorded_discipline": "Drafting/CADD",
+      "members": 10,
+      "subject_codes": [
+        "DMT",
+        "ENGR",
+        "MACH"
+      ],
+      "member_disciplines": {
+        "Manufacturing Technology": 1,
+        "Engineering": 1,
+        "Machine Tool Technology": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Manufacturing Technology": 1,
+        "Engineering": 1,
+        "Machine Tool Technology": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Engineering and Machine Tool Technology and Manufacturing Technology), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "DRAF M1053",
+      "title": "Introduction to Mechanical Design with SolidWorks",
+      "id_system": "M-ID",
+      "recorded_discipline": "Drafting/CADD",
+      "members": 10,
+      "subject_codes": [
+        "ENGR",
+        "ENGT"
+      ],
+      "member_disciplines": {
+        "Engineering": 1,
+        "Engineering Technology": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Engineering": 1,
+        "Engineering Technology": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Engineering and Engineering Technology), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "DRAF M1055",
+      "title": "Machine Design Applications Using Solid Modeling",
+      "id_system": "M-ID",
+      "recorded_discipline": "Drafting/CADD",
+      "members": 10,
+      "subject_codes": [
+        "ENGR",
+        "ENGT"
+      ],
+      "member_disciplines": {
+        "Engineering": 1,
+        "Engineering Technology": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Engineering": 1,
+        "Engineering Technology": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Engineering and Engineering Technology), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "ELET M1003",
+      "title": "Mathematics for DC/AC Theory and Circuit Fundamentals",
+      "id_system": "M-ID",
+      "recorded_discipline": "Electronics",
+      "members": 10,
+      "subject_codes": [
+        "CNET",
+        "ELEC",
+        "ENGT"
+      ],
+      "member_disciplines": {
+        "Computer Information Systems": 1,
+        "Electricity": 1,
+        "Engineering Technology": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Computer Information Systems": 1,
+        "Electricity": 1,
+        "Engineering Technology": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Computer Information Systems and Electricity and Engineering Technology), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "ESCI M1085",
+      "title": "Solar Photovoltaic Systems Design, Installation, and Troubleshooting",
+      "id_system": "M-ID",
+      "recorded_discipline": "Environmental Technologies",
+      "members": 10,
+      "subject_codes": [
+        "CONST",
+        "CT",
+        "ELEC",
+        "EST"
+      ],
+      "member_disciplines": {
+        "Construction Technology": 2,
+        "Electricity": 1,
+        "Physical Education": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Construction Technology": 1,
+        "Electricity": 1,
+        "Physical Education": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Construction Technology and Electricity and Physical Education), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "HLTH M1053",
+      "title": "Introduction to Pharmacology and Medication Administration",
+      "id_system": "M-ID",
+      "recorded_discipline": "Health",
+      "members": 10,
+      "subject_codes": [
+        "ALH",
+        "MA",
+        "NRN",
+        "NURS"
+      ],
+      "member_disciplines": {
+        "Health Care Ancillaries": 2,
+        "Nursing": 2
+      },
+      "member_disciplines_on_long_codes": {
+        "Nursing": 2,
+        "Health Care Ancillaries": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Health Care Ancillaries and Nursing), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "HVAC M1055",
+      "title": "Introduction to Sheet Metal Fabrication",
+      "id_system": "M-ID",
+      "recorded_discipline": "Air Conditioning, Refrigeration, Heating",
+      "members": 10,
+      "subject_codes": [
+        "APPR",
+        "ENGT"
+      ],
+      "member_disciplines": {
+        "Auto Body Technology": 1,
+        "Engineering Technology": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Auto Body Technology": 1,
+        "Engineering Technology": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Auto Body Technology and Engineering Technology), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "IDST M1039",
+      "title": "Assistive Computer Technology: Skills for the Internet",
+      "id_system": "M-ID",
+      "recorded_discipline": "Interdisciplinary Studies",
+      "members": 10,
+      "subject_codes": [
+        "ACT",
+        "CSIS"
+      ],
+      "member_disciplines": {
+        "Construction Technology": 1,
+        "Computer Information Systems": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Construction Technology": 1,
+        "Computer Information Systems": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Computer Information Systems and Construction Technology), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "INDT M1073",
+      "title": "Carpentry and Construction for Renewable Energy Installers",
+      "id_system": "M-ID",
+      "recorded_discipline": "Industrial Technology",
+      "members": 10,
+      "subject_codes": [
+        "CT",
+        "ELEC",
+        "ENGR",
+        "EST"
+      ],
+      "member_disciplines": {
+        "Construction Technology": 1,
+        "Electricity": 1,
+        "Engineering": 1,
+        "Physical Education": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Electricity": 1,
+        "Engineering": 1,
+        "Physical Education": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Electricity and Engineering and Physical Education), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "THTR M1291",
+      "title": "Introduction to Recording and Sound Reinforcement",
+      "id_system": "M-ID",
+      "recorded_discipline": "Drama/Theater Arts",
+      "members": 10,
+      "subject_codes": [
+        "BCST",
+        "MUS",
+        "MUSC",
+        "TA",
+        "THEA"
+      ],
+      "member_disciplines": {
+        "Theater Arts": 2,
+        "Broadcasting Technology": 1,
+        "Music": 1,
+        "Commercial Music": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Broadcasting Technology": 1,
+        "Music": 1,
+        "Commercial Music": 1,
+        "Theater Arts": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Broadcasting Technology and Commercial Music and Music and Theater Arts), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "AUTD M1027",
+      "title": "Manual and Automatic Transmissions, Transaxles and Drive Trains",
+      "id_system": "M-ID",
+      "recorded_discipline": "Diesel Mechanics",
+      "members": 9,
+      "subject_codes": [
+        "AUTO",
+        "CAT"
+      ],
+      "member_disciplines": {
+        "Automotive Technology": 1,
+        "Office Technologies": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Automotive Technology": 1,
+        "Office Technologies": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Automotive Technology and Office Technologies), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "BUSI M1377",
+      "title": "Computer Keyboarding: 10 Key",
+      "id_system": "M-ID",
+      "recorded_discipline": "Business",
+      "members": 9,
+      "subject_codes": [
+        "BIT",
+        "BSOT",
+        "CIS"
+      ],
+      "member_disciplines": {
+        "Building Codes and Regulations": 1,
+        "Office Technologies": 1,
+        "Computer Information Systems": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Building Codes and Regulations": 1,
+        "Office Technologies": 1,
+        "Computer Information Systems": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Building Codes and Regulations and Computer Information Systems and Office Technologies), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "COUN M1187",
+      "title": "Introduction to Treatment Planning and Case Management",
+      "id_system": "M-ID",
+      "recorded_discipline": "Counseling",
+      "members": 9,
+      "subject_codes": [
+        "HLTH",
+        "PUBSERV"
+      ],
+      "member_disciplines": {
+        "Health": 1,
+        "Public Safety": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Health": 1,
+        "Public Safety": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Health and Public Safety), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "CRIM M1106",
+      "title": "Civil Litigation Practice and Procedures",
+      "id_system": "M-ID",
+      "recorded_discipline": "Administration of Justice",
+      "members": 9,
+      "subject_codes": [
+        "LAW",
+        "PARA"
+      ],
+      "member_disciplines": {
+        "Law": 1,
+        "Legal Assisting": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Law": 1,
+        "Legal Assisting": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Law and Legal Assisting), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "ETHS M1171",
+      "title": "Individual Study in Latin American and Latino/A Studies",
+      "id_system": "M-ID",
+      "recorded_discipline": "Ethnic Studies",
+      "members": 9,
+      "subject_codes": [
+        "ANTH",
+        "CHICANO",
+        "ETHN"
+      ],
+      "member_disciplines": {
+        "Chicano Studies": 2,
+        "Anthropology": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Chicano Studies": 2,
+        "Anthropology": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Anthropology and Chicano Studies), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "ETHS M1187",
+      "title": "Peace, Nonviolence and Conflict Resolution",
+      "id_system": "M-ID",
+      "recorded_discipline": "Ethnic Studies",
+      "members": 9,
+      "subject_codes": [
+        "HIST",
+        "PEAC"
+      ],
+      "member_disciplines": {
+        "History": 1,
+        "Physical Education": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "History": 1,
+        "Physical Education": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (History and Physical Education), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "INDT M1060",
+      "title": "Electrical Power Motors and Controls",
+      "id_system": "M-ID",
+      "recorded_discipline": "Industrial Technology",
+      "members": 9,
+      "subject_codes": [
+        "CNET",
+        "EET",
+        "ETEC"
+      ],
+      "member_disciplines": {
+        "Computer Information Systems": 1,
+        "Electronic Technology": 1,
+        "Engineering Technology": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Computer Information Systems": 1,
+        "Electronic Technology": 1,
+        "Engineering Technology": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Computer Information Systems and Electronic Technology and Engineering Technology), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "INDT M1109",
+      "title": "Construction Blueprints, Specifications, Measurements, and Codes",
+      "id_system": "M-ID",
+      "recorded_discipline": "Industrial Technology",
+      "members": 9,
+      "subject_codes": [
+        "CNST",
+        "WELD"
+      ],
+      "member_disciplines": {
+        "Construction Technology": 1,
+        "Welding": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Construction Technology": 1,
+        "Welding": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Construction Technology and Welding), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "INDT M1126",
+      "title": "Service and Maintenance to Alternative Fueled Vehicles (AFVs)",
+      "id_system": "M-ID",
+      "recorded_discipline": "Industrial Technology",
+      "members": 9,
+      "subject_codes": [
+        "AMT",
+        "AUT"
+      ],
+      "member_disciplines": {
+        "Aviation": 1,
+        "Automotive Technology": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Aviation": 1,
+        "Automotive Technology": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Automotive Technology and Aviation), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "PHSC M1008",
+      "title": "Coastal Environmental Monitoring; Field Studies in Oceanography",
+      "id_system": "M-ID",
+      "recorded_discipline": "Physical Sciences",
+      "members": 9,
+      "subject_codes": [
+        "ESCI",
+        "GEOL"
+      ],
+      "member_disciplines": {
+        "Environmental Technologies": 1,
+        "Earth Science": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Environmental Technologies": 1,
+        "Earth Science": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Earth Science and Environmental Technologies), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "COUN M1027",
+      "title": "Anger Management and Effective Communication",
+      "id_system": "M-ID",
+      "recorded_discipline": "Counseling",
+      "members": 8,
+      "subject_codes": [
+        "ADMJ",
+        "PUBSERV"
+      ],
+      "member_disciplines": {
+        "Administration of Justice": 1,
+        "Public Safety": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Administration of Justice": 1,
+        "Public Safety": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Administration of Justice and Public Safety), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "ELEC M1088",
+      "title": "Advanced Motor Controls, Variable Frequency Drives, Programmable Logic Controls",
+      "id_system": "M-ID",
+      "recorded_discipline": "Electricity",
+      "members": 8,
+      "subject_codes": [
+        "ELECT",
+        "EST",
+        "HVACR",
+        "MTT"
+      ],
+      "member_disciplines": {
+        "Electronics": 1,
+        "Physical Education": 1,
+        "Air Conditioning, Refrigeration, Heating": 1,
+        "Machine Tool Technology": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Electronics": 1,
+        "Physical Education": 1,
+        "Air Conditioning, Refrigeration, Heating": 1,
+        "Machine Tool Technology": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Air Conditioning, Refrigeration, Heating and Electronics and Machine Tool Technology and Physical Education), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "ELET M1071",
+      "title": "Introduction to Microcontrollers and Embedded Design",
+      "id_system": "M-ID",
+      "recorded_discipline": "Electronics",
+      "members": 8,
+      "subject_codes": [
+        "ELEC",
+        "ENGR",
+        "ENGT",
+        "MTT"
+      ],
+      "member_disciplines": {
+        "Electricity": 1,
+        "Engineering": 1,
+        "Engineering Technology": 1,
+        "Machine Tool Technology": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Electricity": 1,
+        "Engineering": 1,
+        "Engineering Technology": 1,
+        "Machine Tool Technology": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Electricity and Engineering and Engineering Technology and Machine Tool Technology), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "FCSH M1026",
+      "title": "Fashion Event Planning and Production",
+      "id_system": "M-ID",
+      "recorded_discipline": "Family and Consumer Studies/ Home Economics",
+      "members": 8,
+      "subject_codes": [
+        "CUL",
+        "FASH",
+        "FASHION"
+      ],
+      "member_disciplines": {
+        "Fashion and Related Technologies": 2,
+        "Culinary Arts/Food Technology": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Fashion and Related Technologies": 2,
+        "Culinary Arts/Food Technology": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Culinary Arts/Food Technology and Fashion and Related Technologies), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "INDT M1014",
+      "title": "Airframe Hydraulics and Landing Gear - FAA",
+      "id_system": "M-ID",
+      "recorded_discipline": "Industrial Technology",
+      "members": 8,
+      "subject_codes": [
+        "AMT",
+        "AUTO"
+      ],
+      "member_disciplines": {
+        "Aviation": 1,
+        "Automotive Technology": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Aviation": 1,
+        "Automotive Technology": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Automotive Technology and Aviation), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "VOCE M1002",
+      "title": "Introduction to Spreadsheets - Using MS Excel",
+      "id_system": "M-ID",
+      "recorded_discipline": "Vocational",
+      "members": 8,
+      "subject_codes": [
+        "ACCT",
+        "BOT",
+        "BUSAD",
+        "BUSN",
+        "CIS"
+      ],
+      "member_disciplines": {
+        "Business": 3,
+        "Office Technologies": 1,
+        "Computer Information Systems": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Business": 3,
+        "Office Technologies": 1,
+        "Computer Information Systems": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Business and Computer Information Systems and Office Technologies), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "ARTS M9010",
+      "title": "Music Appreciation for Seniors",
+      "id_system": "M-ID",
+      "recorded_discipline": "Art",
+      "members": 7,
+      "subject_codes": [
+        "DANCE",
+        "DRAMA",
+        "MUS",
+        "MUSIC"
+      ],
+      "member_disciplines": {
+        "Music": 2,
+        "Dance": 1,
+        "Drama/Theater Arts": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Music": 2,
+        "Dance": 1,
+        "Drama/Theater Arts": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Dance and Drama/Theater Arts and Music), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "DRAF M1027",
+      "title": "2-Dimensional Computer-Aided Drawing and Design with AutoCAD",
+      "id_system": "M-ID",
+      "recorded_discipline": "Drafting/CADD",
+      "members": 7,
+      "subject_codes": [
+        "DMT",
+        "ENGR",
+        "ENGT"
+      ],
+      "member_disciplines": {
+        "Manufacturing Technology": 1,
+        "Engineering": 1,
+        "Engineering Technology": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Manufacturing Technology": 1,
+        "Engineering": 1,
+        "Engineering Technology": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Engineering and Engineering Technology and Manufacturing Technology), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "ENGT M1001",
+      "title": "3D Printing/Additive Manufacturing: Applications and Practice",
+      "id_system": "M-ID",
+      "recorded_discipline": "Engineering Technology",
+      "members": 7,
+      "subject_codes": [
+        "DMT",
+        "MACH"
+      ],
+      "member_disciplines": {
+        "Manufacturing Technology": 1,
+        "Machine Tool Technology": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Manufacturing Technology": 1,
+        "Machine Tool Technology": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Machine Tool Technology and Manufacturing Technology), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "GRAF M1030",
+      "title": "Photo Editing for Digital and Print Publication",
+      "id_system": "M-ID",
+      "recorded_discipline": "Graphic Arts",
+      "members": 7,
+      "subject_codes": [
+        "DART",
+        "MEDIA"
+      ],
+      "member_disciplines": {
+        "Multimedia": 1,
+        "Media Production": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Multimedia": 1,
+        "Media Production": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Media Production and Multimedia), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "GRAF M1051",
+      "title": "Introduction to Virtual Production",
+      "id_system": "M-ID",
+      "recorded_discipline": "Graphic Arts",
+      "members": 7,
+      "subject_codes": [
+        "CINE",
+        "CINEMA",
+        "DAID",
+        "MEDIA"
+      ],
+      "member_disciplines": {
+        "Film and Media Studies": 2,
+        "Multimedia": 1,
+        "Media Production": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Film and Media Studies": 2,
+        "Multimedia": 1,
+        "Media Production": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Film and Media Studies and Media Production and Multimedia), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "HLTH M1043",
+      "title": "CPT (Current Procedural Terminology) Beginning Coding",
+      "id_system": "M-ID",
+      "recorded_discipline": "Health",
+      "members": 7,
+      "subject_codes": [
+        "HIT",
+        "MEDA"
+      ],
+      "member_disciplines": {
+        "Health Information Technology": 1,
+        "Health Care Ancillaries": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Health Information Technology": 1,
+        "Health Care Ancillaries": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Health Care Ancillaries and Health Information Technology), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "HLTH M1186",
+      "title": "Legal and Ethical Aspects of Health Information",
+      "id_system": "M-ID",
+      "recorded_discipline": "Health",
+      "members": 7,
+      "subject_codes": [
+        "DH",
+        "DMS",
+        "HIT",
+        "MA"
+      ],
+      "member_disciplines": {
+        "Dental Technology": 1,
+        "Diagnostic Medical Technology": 1,
+        "Health Information Technology": 1,
+        "Health Care Ancillaries": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Diagnostic Medical Technology": 1,
+        "Health Information Technology": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Diagnostic Medical Technology and Health Information Technology), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "INDT M1100",
+      "title": "Introduction to Robotics and Mechatronics",
+      "id_system": "M-ID",
+      "recorded_discipline": "Industrial Technology",
+      "members": 7,
+      "subject_codes": [
+        "CNET",
+        "ELEC"
+      ],
+      "member_disciplines": {
+        "Computer Information Systems": 1,
+        "Electricity": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Computer Information Systems": 1,
+        "Electricity": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Computer Information Systems and Electricity), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "RSPT M1064",
+      "title": "Evidence-Based Practice in Occupational Therapy Interventions",
+      "id_system": "M-ID",
+      "recorded_discipline": "Respiratory Technologies",
+      "members": 7,
+      "subject_codes": [
+        "OTA",
+        "PTA"
+      ],
+      "member_disciplines": {
+        "Occupational Therapy Assisting": 1,
+        "Physical Therapy Assisting": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Occupational Therapy Assisting": 1,
+        "Physical Therapy Assisting": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Occupational Therapy Assisting and Physical Therapy Assisting), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "ARTD M1008",
+      "title": "Graphic Design-Visual Communication: Typography",
+      "id_system": "M-ID",
+      "recorded_discipline": "Commercial Art",
+      "members": 6,
+      "subject_codes": [
+        "ART",
+        "ARTS",
+        "DAID"
+      ],
+      "member_disciplines": {
+        "Art": 2,
+        "Multimedia": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Art": 2,
+        "Multimedia": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Art and Multimedia), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "ELET M1004",
+      "title": "AC Electronic Circuits and Devices",
+      "id_system": "M-ID",
+      "recorded_discipline": "Electronics",
+      "members": 6,
+      "subject_codes": [
+        "ELEC",
+        "ETEC"
+      ],
+      "member_disciplines": {
+        "Electricity": 1,
+        "Engineering Technology": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Electricity": 1,
+        "Engineering Technology": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Electricity and Engineering Technology), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "ELET M1036",
+      "title": "Industrial Motor and Equipment Control",
+      "id_system": "M-ID",
+      "recorded_discipline": "Electronics",
+      "members": 6,
+      "subject_codes": [
+        "ETEC",
+        "MFGT"
+      ],
+      "member_disciplines": {
+        "Engineering Technology": 1,
+        "Manufacturing Technology": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Engineering Technology": 1,
+        "Manufacturing Technology": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Engineering Technology and Manufacturing Technology), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "ETHS M1012",
+      "title": "History of the U.S. from 1877 to Present Honors",
+      "id_system": "M-ID",
+      "recorded_discipline": "Ethnic Studies",
+      "members": 6,
+      "subject_codes": [
+        "ETHN",
+        "HIST"
+      ],
+      "member_disciplines": {
+        "Chicano Studies": 1,
+        "History": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Chicano Studies": 1,
+        "History": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Chicano Studies and History), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "LSKL M1005",
+      "title": "Listening and Speaking 2: Intermediate Oral Communication, Presentations, and Note-Taking Skills",
+      "id_system": "M-ID",
+      "recorded_discipline": "Learning Assistance or Learning Skills",
+      "members": 6,
+      "subject_codes": [
+        "COUNS",
+        "ESL"
+      ],
+      "member_disciplines": {
+        "Counseling": 1,
+        "English as a Second Language": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Counseling": 1,
+        "English as a Second Language": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Counseling and English as a Second Language), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "PLGL M1013",
+      "title": "Business Organizations",
+      "id_system": "M-ID",
+      "recorded_discipline": "Legal Assisting",
+      "members": 6,
+      "subject_codes": [
+        "BUS",
+        "LAW"
+      ],
+      "member_disciplines": {
+        "Business": 1,
+        "Law": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Business": 1,
+        "Law": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Business and Law), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "THES M1015",
+      "title": "Advanced Principles of Stage and Screen Combat",
+      "id_system": "M-ID",
+      "recorded_discipline": "Stagecraft",
+      "members": 6,
+      "subject_codes": [
+        "DRAM",
+        "THEA"
+      ],
+      "member_disciplines": {
+        "Drama/Theater Arts": 1,
+        "Theater Arts": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Drama/Theater Arts": 1,
+        "Theater Arts": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Drama/Theater Arts and Theater Arts), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "THTR M9015",
+      "title": "Senior Musical Performance Skills",
+      "id_system": "M-ID",
+      "recorded_discipline": "Drama/Theater Arts",
+      "members": 6,
+      "subject_codes": [
+        "MUS",
+        "TA",
+        "THEA"
+      ],
+      "member_disciplines": {
+        "Theater Arts": 2,
+        "Music": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Music": 1,
+        "Theater Arts": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Music and Theater Arts), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "COUN M1176",
+      "title": "Motivational Interviewing and Nonconfrontational Approaches",
+      "id_system": "M-ID",
+      "recorded_discipline": "Counseling",
+      "members": 5,
+      "subject_codes": [
+        "HLTH",
+        "PUBSERV"
+      ],
+      "member_disciplines": {
+        "Health": 1,
+        "Public Safety": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Health": 1,
+        "Public Safety": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Health and Public Safety), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "ETHS M1238",
+      "title": "Introduction to Environmental Studies: Environmental Change and Sustainability",
+      "id_system": "M-ID",
+      "recorded_discipline": "Ethnic Studies",
+      "members": 5,
+      "subject_codes": [
+        "ARCH",
+        "GEOG"
+      ],
+      "member_disciplines": {
+        "Architecture": 1,
+        "Geography": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Architecture": 1,
+        "Geography": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Architecture and Geography), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "ETHS M1239",
+      "title": "Asian Pacific Islanders in United States History and Culture",
+      "id_system": "M-ID",
+      "recorded_discipline": "Ethnic Studies",
+      "members": 5,
+      "subject_codes": [
+        "AIS",
+        "ETHN",
+        "HIST"
+      ],
+      "member_disciplines": {
+        "Native American/American Indian Studies": 1,
+        "Chicano Studies": 1,
+        "History": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Native American/American Indian Studies": 1,
+        "Chicano Studies": 1,
+        "History": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Chicano Studies and History and Native American/American Indian Studies), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "GRAF M1013",
+      "title": "Digital Illustration 2",
+      "id_system": "M-ID",
+      "recorded_discipline": "Graphic Arts",
+      "members": 5,
+      "subject_codes": [
+        "ART",
+        "MAT"
+      ],
+      "member_disciplines": {
+        "Art": 1,
+        "Mathematics": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Art": 1,
+        "Mathematics": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Art and Mathematics), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "HLTH M1210",
+      "title": "ECG Interpretation in Emergency Medical Services",
+      "id_system": "M-ID",
+      "recorded_discipline": "Health",
+      "members": 5,
+      "subject_codes": [
+        "EMT",
+        "NURS"
+      ],
+      "member_disciplines": {
+        "Emergency Medical Technologies": 1,
+        "Nursing": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Emergency Medical Technologies": 1,
+        "Nursing": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Emergency Medical Technologies and Nursing), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "IDST M1012",
+      "title": "Assistive Computer Technology: Access to Computers",
+      "id_system": "M-ID",
+      "recorded_discipline": "Interdisciplinary Studies",
+      "members": 5,
+      "subject_codes": [
+        "ACT",
+        "CSIS"
+      ],
+      "member_disciplines": {
+        "Construction Technology": 1,
+        "Computer Information Systems": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Construction Technology": 1,
+        "Computer Information Systems": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Computer Information Systems and Construction Technology), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "IDST M1110",
+      "title": "Student Leadership in Higher Education",
+      "id_system": "M-ID",
+      "recorded_discipline": "Interdisciplinary Studies",
+      "members": 5,
+      "subject_codes": [
+        "COUNS",
+        "HUMA"
+      ],
+      "member_disciplines": {
+        "Counseling": 1,
+        "Humanities": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Counseling": 1,
+        "Humanities": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Counseling and Humanities), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "MULT M1116",
+      "title": "Game Play Mechanics and Prototyping",
+      "id_system": "M-ID",
+      "recorded_discipline": "Multimedia",
+      "members": 5,
+      "subject_codes": [
+        "ART",
+        "MAT"
+      ],
+      "member_disciplines": {
+        "Art": 1,
+        "Mathematics": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Art": 1,
+        "Mathematics": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Art and Mathematics), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "STMF M1004",
+      "title": "Oxygen/Acetylene Basics for the Automotive Technician",
+      "id_system": "M-ID",
+      "recorded_discipline": "Steamfitting",
+      "members": 5,
+      "subject_codes": [
+        "AUTO",
+        "WELD"
+      ],
+      "member_disciplines": {
+        "Automotive Technology": 1,
+        "Welding": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Automotive Technology": 1,
+        "Welding": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Automotive Technology and Welding), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "THES M1010",
+      "title": "Stagecraft 2 for Theatre, TV, and Film",
+      "id_system": "M-ID",
+      "recorded_discipline": "Stagecraft",
+      "members": 5,
+      "subject_codes": [
+        "DRAM",
+        "THE",
+        "THEA",
+        "THTR"
+      ],
+      "member_disciplines": {
+        "Drama/Theater Arts": 2,
+        "Theater Arts": 2
+      },
+      "member_disciplines_on_long_codes": {
+        "Drama/Theater Arts": 2,
+        "Theater Arts": 2
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Drama/Theater Arts and Theater Arts), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "BCST M1036",
+      "title": "History of American Film",
+      "id_system": "M-ID",
+      "recorded_discipline": "Broadcasting Technology",
+      "members": 4,
+      "subject_codes": [
+        "FTV",
+        "HISTORY"
+      ],
+      "member_disciplines": {
+        "Film and Media Studies": 1,
+        "History": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Film and Media Studies": 1,
+        "History": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Film and Media Studies and History), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "CSAI M1004",
+      "title": "Ethics and Artificial Intelligence",
+      "id_system": "M-ID",
+      "recorded_discipline": "Artificial Intelligence",
+      "members": 4,
+      "subject_codes": [
+        "CIS",
+        "PHILOS"
+      ],
+      "member_disciplines": {
+        "Computer Information Systems": 1,
+        "Philosophy": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Computer Information Systems": 1,
+        "Philosophy": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Computer Information Systems and Philosophy), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "ETHS M1088",
+      "title": "History of the Chicano/Mexican American",
+      "id_system": "M-ID",
+      "recorded_discipline": "Ethnic Studies",
+      "members": 4,
+      "subject_codes": [
+        "ETHN",
+        "HIST"
+      ],
+      "member_disciplines": {
+        "Chicano Studies": 1,
+        "History": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Chicano Studies": 1,
+        "History": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Chicano Studies and History), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "HLTH M1197",
+      "title": "MLT Certification/Licensure Examination Preparation",
+      "id_system": "M-ID",
+      "recorded_discipline": "Health",
+      "members": 4,
+      "subject_codes": [
+        "ADN",
+        "PTA"
+      ],
+      "member_disciplines": {
+        "Nursing": 1,
+        "Physical Therapy Assisting": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Nursing": 1,
+        "Physical Therapy Assisting": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Nursing and Physical Therapy Assisting), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "HTEC M1031",
+      "title": "Basic Medical Terminology, Pathophysiology and Pharmacology",
+      "id_system": "M-ID",
+      "recorded_discipline": "Health Care Ancillaries",
+      "members": 4,
+      "subject_codes": [
+        "EMS",
+        "HIT"
+      ],
+      "member_disciplines": {
+        "Emergency Medical Technologies": 1,
+        "Health Information Technology": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Emergency Medical Technologies": 1,
+        "Health Information Technology": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Emergency Medical Technologies and Health Information Technology), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "OSHA M1002",
+      "title": "Advanced Electrical Safety and NFPA 70E",
+      "id_system": "M-ID",
+      "recorded_discipline": "Industrial Safety",
+      "members": 4,
+      "subject_codes": [
+        "ELECT",
+        "EST"
+      ],
+      "member_disciplines": {
+        "Electronics": 1,
+        "Physical Education": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Electronics": 1,
+        "Physical Education": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Electronics and Physical Education), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "PEDS M1007",
+      "title": "Aquatics: Level 2, Intermediate Swimming",
+      "id_system": "M-ID",
+      "recorded_discipline": "Physical Education Disabled Students",
+      "members": 4,
+      "subject_codes": [
+        "KINE",
+        "PE",
+        "PHED"
+      ],
+      "member_disciplines": {
+        "Physical Education": 2,
+        "Kinesiology": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Kinesiology": 1,
+        "Physical Education": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Kinesiology and Physical Education), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "SOCS M1027",
+      "title": "People of the World: The Cultures of Globalization and Change",
+      "id_system": "M-ID",
+      "recorded_discipline": "Social Science",
+      "members": 4,
+      "subject_codes": [
+        "ANTH",
+        "SOCI"
+      ],
+      "member_disciplines": {
+        "Anthropology": 1,
+        "Sociology": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Anthropology": 1,
+        "Sociology": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Anthropology and Sociology), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "THTR M1021",
+      "title": "Acting for Film and Television",
+      "id_system": "M-ID",
+      "recorded_discipline": "Drama/Theater Arts",
+      "members": 4,
+      "subject_codes": [
+        "RTVF",
+        "TA",
+        "THEATER"
+      ],
+      "member_disciplines": {
+        "Theater Arts": 2,
+        "Film and Media Studies": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Film and Media Studies": 1,
+        "Theater Arts": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Film and Media Studies and Theater Arts), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "THTR M1269",
+      "title": "Intermediate Motion Picture Performance Production",
+      "id_system": "M-ID",
+      "recorded_discipline": "Drama/Theater Arts",
+      "members": 4,
+      "subject_codes": [
+        "ART",
+        "HUM",
+        "THEA"
+      ],
+      "member_disciplines": {
+        "Art": 1,
+        "Humanities": 1,
+        "Theater Arts": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Art": 1,
+        "Humanities": 1,
+        "Theater Arts": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Art and Humanities and Theater Arts), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "THTR M1323",
+      "title": "Fundamentals of Acting: Voice and Diction for the Stage",
+      "id_system": "M-ID",
+      "recorded_discipline": "Drama/Theater Arts",
+      "members": 4,
+      "subject_codes": [
+        "MUS",
+        "THE"
+      ],
+      "member_disciplines": {
+        "Music": 1,
+        "Theater Arts": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Music": 1,
+        "Theater Arts": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Music and Theater Arts), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "THTR M1347",
+      "title": "Theatrical City Tours: New York",
+      "id_system": "M-ID",
+      "recorded_discipline": "Drama/Theater Arts",
+      "members": 4,
+      "subject_codes": [
+        "DANCE",
+        "THEA"
+      ],
+      "member_disciplines": {
+        "Dance": 1,
+        "Theater Arts": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Dance": 1,
+        "Theater Arts": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Dance and Theater Arts), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "BSOT M1235",
+      "title": "Computer Fundamentals and Productivity Tools",
+      "id_system": "M-ID",
+      "recorded_discipline": "Office Technologies",
+      "members": 3,
+      "subject_codes": [
+        "BIT",
+        "BUS"
+      ],
+      "member_disciplines": {
+        "Building Codes and Regulations": 1,
+        "Business": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Building Codes and Regulations": 1,
+        "Business": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Building Codes and Regulations and Business), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "ELET M1042",
+      "title": "Electrical and Instrumentation Motor Controls",
+      "id_system": "M-ID",
+      "recorded_discipline": "Electronics",
+      "members": 3,
+      "subject_codes": [
+        "ELEC",
+        "EST"
+      ],
+      "member_disciplines": {
+        "Electricity": 1,
+        "Physical Education": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Electricity": 1,
+        "Physical Education": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Electricity and Physical Education), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "ETHS M1245",
+      "title": "Psychology of Prejudice and Discrimination",
+      "id_system": "M-ID",
+      "recorded_discipline": "Ethnic Studies",
+      "members": 3,
+      "subject_codes": [
+        "ETHN",
+        "PSYC"
+      ],
+      "member_disciplines": {
+        "Chicano Studies": 1,
+        "Psychology": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Chicano Studies": 1,
+        "Psychology": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Chicano Studies and Psychology), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "ETHS M1279",
+      "title": "Cultural Competence in the Workplace",
+      "id_system": "M-ID",
+      "recorded_discipline": "Ethnic Studies",
+      "members": 3,
+      "subject_codes": [
+        "ETHN",
+        "SOC"
+      ],
+      "member_disciplines": {
+        "Chicano Studies": 1,
+        "Sociology": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Chicano Studies": 1,
+        "Sociology": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Chicano Studies and Sociology), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "HLTH M1113",
+      "title": "Occupational Therapy Skills in Physical Rehabilitation, Orthopedic, and Medical Intervention",
+      "id_system": "M-ID",
+      "recorded_discipline": "Health",
+      "members": 3,
+      "subject_codes": [
+        "OTA",
+        "PTA"
+      ],
+      "member_disciplines": {
+        "Occupational Therapy Assisting": 1,
+        "Physical Therapy Assisting": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Occupational Therapy Assisting": 1,
+        "Physical Therapy Assisting": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Occupational Therapy Assisting and Physical Therapy Assisting), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "HLTH M9052",
+      "title": "Introduction to Electronic Health Records(EHR)",
+      "id_system": "M-ID",
+      "recorded_discipline": "Health",
+      "members": 3,
+      "subject_codes": [
+        "MEDA",
+        "VOC"
+      ],
+      "member_disciplines": {
+        "Health Care Ancillaries": 1,
+        "Vocational": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Health Care Ancillaries": 1,
+        "Vocational": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Health Care Ancillaries and Vocational), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "HUMA M1102",
+      "title": "Introduction to the New Testament and Early Christian Literature",
+      "id_system": "M-ID",
+      "recorded_discipline": "Religious Studies",
+      "members": 3,
+      "subject_codes": [
+        "HUMA",
+        "PHIL"
+      ],
+      "member_disciplines": {
+        "Humanities": 1,
+        "Philosophy": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Humanities": 1,
+        "Philosophy": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Humanities and Philosophy), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "MULT M1083",
+      "title": "Typography and Graphic Design",
+      "id_system": "M-ID",
+      "recorded_discipline": "Multimedia",
+      "members": 3,
+      "subject_codes": [
+        "ART",
+        "MAT"
+      ],
+      "member_disciplines": {
+        "Art": 1,
+        "Mathematics": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Art": 1,
+        "Mathematics": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Art and Mathematics), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "AGMA M1114",
+      "title": "Hydraulics (Fluid Power)",
+      "id_system": "M-ID",
+      "recorded_discipline": "Agriculture",
+      "members": 2,
+      "subject_codes": [
+        "AUTO",
+        "FIRE"
+      ],
+      "member_disciplines": {
+        "Automotive Technology": 1,
+        "Fire Technology": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Automotive Technology": 1,
+        "Fire Technology": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Automotive Technology and Fire Technology), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "ETHS M1005",
+      "title": "United States History: Focus on Chicanos Since 1848",
+      "id_system": "M-ID",
+      "recorded_discipline": "Ethnic Studies",
+      "members": 2,
+      "subject_codes": [
+        "ETHN",
+        "HIST"
+      ],
+      "member_disciplines": {
+        "Chicano Studies": 1,
+        "History": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Chicano Studies": 1,
+        "History": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Chicano Studies and History), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "ETHS M1172",
+      "title": "Introduction to Chicano/A Studies",
+      "id_system": "M-ID",
+      "recorded_discipline": "Ethnic Studies",
+      "members": 2,
+      "subject_codes": [
+        "ETHN",
+        "SOC"
+      ],
+      "member_disciplines": {
+        "Chicano Studies": 1,
+        "Sociology": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Chicano Studies": 1,
+        "Sociology": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Chicano Studies and Sociology), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "ETHS M1174",
+      "title": "Sociology of the Chicano",
+      "id_system": "M-ID",
+      "recorded_discipline": "Ethnic Studies",
+      "members": 2,
+      "subject_codes": [
+        "ETHN",
+        "SOC"
+      ],
+      "member_disciplines": {
+        "Chicano Studies": 1,
+        "Sociology": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Chicano Studies": 1,
+        "Sociology": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Chicano Studies and Sociology), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "ETHS M1189",
+      "title": "Ethnicity and American Culture",
+      "id_system": "M-ID",
+      "recorded_discipline": "Ethnic Studies",
+      "members": 2,
+      "subject_codes": [
+        "ETHN",
+        "HIST"
+      ],
+      "member_disciplines": {
+        "Chicano Studies": 1,
+        "History": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Chicano Studies": 1,
+        "History": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Chicano Studies and History), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "IDST M1129",
+      "title": "Fundamentals of Reading",
+      "id_system": "M-ID",
+      "recorded_discipline": "Interdisciplinary Studies",
+      "members": 2,
+      "subject_codes": [
+        "DSPS",
+        "ENGL"
+      ],
+      "member_disciplines": {
+        "Disabled Student Programs and": 1,
+        "English": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Disabled Student Programs and": 1,
+        "English": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Disabled Student Programs and and English), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "KINE M1096",
+      "title": "Pilates, Advanced",
+      "id_system": "M-ID",
+      "recorded_discipline": "Kinesiology",
+      "members": 2,
+      "subject_codes": [
+        "DAN",
+        "PEAC"
+      ],
+      "member_disciplines": {
+        "Dance": 1,
+        "Physical Education": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Dance": 1,
+        "Physical Education": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Dance and Physical Education), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "KINE M1927",
+      "title": "Pilates, Intermediate",
+      "id_system": "M-ID",
+      "recorded_discipline": "Kinesiology",
+      "members": 2,
+      "subject_codes": [
+        "DAN",
+        "PEAC"
+      ],
+      "member_disciplines": {
+        "Dance": 1,
+        "Physical Education": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Dance": 1,
+        "Physical Education": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Dance and Physical Education), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "PEDS M1008",
+      "title": "Aquatics: Level 1, Beginning Swimming",
+      "id_system": "M-ID",
+      "recorded_discipline": "Physical Education Disabled Students",
+      "members": 2,
+      "subject_codes": [
+        "KINE",
+        "PHED"
+      ],
+      "member_disciplines": {
+        "Kinesiology": 1,
+        "Physical Education": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Kinesiology": 1,
+        "Physical Education": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Kinesiology and Physical Education), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "PLGL M1029",
+      "title": "Environmental Law and Policy",
+      "id_system": "M-ID",
+      "recorded_discipline": "Legal Assisting",
+      "members": 2,
+      "subject_codes": [
+        "AGNR",
+        "LAW"
+      ],
+      "member_disciplines": {
+        "Agriculture": 1,
+        "Law": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Agriculture": 1,
+        "Law": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Agriculture and Law), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    }
+  ]
+}

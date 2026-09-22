@@ -383,6 +383,18 @@ jobs:
           python3 kb/_build_discipline_blanks_worklist.py \
             || echo "::warning title=Discipline-blank worklist not rebuilt::kb/_build_discipline_blanks_worklist.py failed — the curator list describes the previous payload until the next run. Check the step log."
 
+      # ── Step 4d6: the orphan-parent worklist (Session 282) ─────────
+      # Identities whose recorded discipline appears NOWHERE among their
+      # members' mapped disciplines — item 9 of Sam's cross-list sheet,
+      # 2026-09-22. Same reason as 4d5: it reads unified_courses_data.js and the
+      # subject map, so it has to be rebuilt HERE or it describes yesterday's
+      # payload. Read-only, ~2 s, local files only.
+      # tests/orphan_parent_worklist_test.py fails CI on a stale file.
+      - name: Rebuild the orphan-parent worklist
+        run: |
+          python3 kb/_build_orphan_parent_worklist.py \
+            || echo "::warning title=Orphan-parent worklist not rebuilt::kb/_build_orphan_parent_worklist.py failed — the curator list describes the previous payload until the next run. Check the step log."
+
       # ── Step 5: Prepare GitHub Pages entry point ─────────────────
       - name: Copy dashboard to index.html
         run: cp CPL_Dashboard.html index.html
@@ -431,6 +443,9 @@ jobs:
           # The discipline-blank worklist (Step 4d5): the identities the edge
           # cannot reach, for a curator pass.
           git add kb/discipline_blanks_worklist.json 2>/dev/null || true
+          # The orphan-parent worklist (Step 4d6): parents whose members all
+          # disagree with them, for the same curator pass.
+          git add kb/orphan_parent_worklist.json 2>/dev/null || true
           # CSR rollup: per-discipline CPL opportunities (mirror of EACR/CCR)
           git add kb/discipline_cpl_rollup.json 2>/dev/null || true
           # Cred-Ref PR-5a: credential-review curator-edit overlay
