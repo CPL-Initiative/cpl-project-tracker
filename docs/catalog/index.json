@@ -9594,6 +9594,25 @@
      "updated": ""
     },
     {
+     "created": "2026-09-22",
+     "governs": [],
+     "path": "docs/kb-notes/reference-kin-pe-athl-identifier-fallout.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "kinesiology",
+      "physical-education",
+      "discipline",
+      "c-id",
+      "ccn",
+      "crosslist",
+      "identity"
+     ],
+     "title": "Untangling KIN, PE and Athletics costs two identifiers",
+     "type": "reference",
+     "updated": "2026-09-22"
+    },
+    {
      "created": "2026-06-19",
      "governs": [
       "chatbox/supabase/functions/cpl-chat/index.ts",
@@ -9795,16 +9814,6 @@
      ],
      "title": "TMC tab \u2192 CO-staff ADT review/processing tool (PCF-bootstrapped)",
      "type": "scope",
-     "updated": ""
-    },
-    {
-     "created": "",
-     "governs": [],
-     "path": "docs/kb-notes/reference-kin-pe-athl-identifier-fallout.md",
-     "status": null,
-     "tags": [],
-     "title": "Untangling KIN, PE and Athletics costs two identifiers",
-     "type": null,
      "updated": ""
     }
    ],
@@ -13384,7 +13393,7 @@
   },
   {
    "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
-   "count": 48,
+   "count": 49,
    "docs": [
     {
      "created": "2026-08-28",
@@ -13478,6 +13487,19 @@
      "title": "CPL clean-up worklist \u2014 lane state",
      "type": null,
      "updated": "2026-08-28"
+    },
+    {
+     "created": "2026-09-22",
+     "governs": [],
+     "path": "docs/reference/lanes/discipline-crosslist.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane"
+     ],
+     "title": "Discipline cross-listing \u2014 nest, alias or carry two homes \u2014 lane state",
+     "type": null,
+     "updated": "2026-09-22"
     },
     {
      "created": "2026-08-28",
@@ -18379,5 +18401,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 955
+ "total": 956
 }

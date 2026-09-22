@@ -10,23 +10,23 @@
     "other": 150000
   },
   "summary": {
-    "files": 967,
-    "bytes": 10257379,
-    "over_budget": 4,
+    "files": 969,
+    "bytes": 10278451,
+    "over_budget": 5,
     "handoff_max": 283,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 59996,
-    "superseded_files": 0,
-    "superseded_bytes": 0,
+    "always_loaded_bytes": 60274,
+    "superseded_files": 1,
+    "superseded_bytes": 8963,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 59996,
-        "over": 0
+        "bytes": 60274,
+        "over": 1
       },
       "other": {
         "files": 115,
-        "bytes": 3145984,
+        "bytes": 3150647,
         "over": 3
       },
       "index": {
@@ -40,31 +40,32 @@
         "over": 1
       },
       "kb_note": {
-        "files": 488,
-        "bytes": 2477531,
+        "files": 489,
+        "bytes": 2482022,
         "over": 0
       },
       "roadmap_lane": {
-        "files": 32,
-        "bytes": 225192,
+        "files": 33,
+        "bytes": 231819,
         "over": 0
       },
       "handoff": {
         "files": 255,
-        "bytes": 2203571,
+        "bytes": 2208584,
         "over": 0
       }
     },
     "by_rule": {
+      "oversized_doc": 5,
       "house_voice": 24,
-      "oversized_doc": 4,
+      "superseded_handoff": 1,
       "vault_heavy_path": 49
     },
     "vault": {
-      "files": 3047,
-      "bytes": 1476859399,
-      "heavy_bytes": 644384914,
-      "heavy_share": 0.436,
+      "files": 3064,
+      "bytes": 1484815756,
+      "heavy_bytes": 644696382,
+      "heavy_share": 0.434,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
         "cpl-project-tracker/cip_fitcheck",
@@ -119,6 +120,19 @@
     }
   },
   "findings": [
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 60274,
+        "limit": 60000,
+        "lane": "always_loaded",
+        "over_by": 274,
+        "ratio": 1.0
+      },
+      "message": "60,274 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
+      "path": "CLAUDE.md"
+    },
     {
       "rule": "house_voice",
       "fixable": false,
@@ -400,6 +414,17 @@
       "path": "docs/roadmap_archive.md"
     },
     {
+      "rule": "superseded_handoff",
+      "fixable": true,
+      "detail": {
+        "session": 282,
+        "authoritative": 283,
+        "has_frontmatter": true
+      },
+      "message": "handoff 282 is below the authoritative 283 but is not stamped `superseded: true`",
+      "path": "docs/session_282_handoff.md"
+    },
+    {
       "rule": "house_voice",
       "fixable": false,
       "detail": {
@@ -484,10 +509,10 @@
       "fixable": false,
       "path": "kb/unclassified_fold",
       "detail": {
-        "bytes": 21870611,
+        "bytes": 22160009,
         "kind": "dir"
       },
-      "message": "directory totals 21,870,611 B inside the vault"
+      "message": "directory totals 22,160,009 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -654,10 +679,10 @@
       "fixable": false,
       "path": "statewide_data.js",
       "detail": {
-        "bytes": 9566830,
+        "bytes": 9588864,
         "kind": "file"
       },
-      "message": "9,566,830 B single file inside the vault"
+      "message": "9,588,864 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -754,10 +779,10 @@
       "fixable": false,
       "path": "exports/unified_courses.xlsx",
       "detail": {
-        "bytes": 6696806,
+        "bytes": 6696804,
         "kind": "file"
       },
-      "message": "6,696,806 B single file inside the vault"
+      "message": "6,696,804 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -914,10 +939,10 @@
       "fixable": false,
       "path": "kb/cr_reference_worklist.json",
       "detail": {
-        "bytes": 2354159,
+        "bytes": 2354197,
         "kind": "file"
       },
-      "message": "2,354,159 B single file inside the vault"
+      "message": "2,354,197 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
