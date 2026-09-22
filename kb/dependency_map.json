@@ -4,9 +4,9 @@
   "supabase_tables": 85,
   "rpcs": 31,
   "edge_functions": 5,
-  "file_datasets": 495,
+  "file_datasets": 497,
   "external_services": 145,
-  "consumers": 353,
+  "consumers": 354,
   "workflows": 35,
   "data_js_files": 61,
   "tabs": 37
@@ -5234,6 +5234,26 @@
      "direction": "read",
      "how": "literal",
      "line": 281
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:docs/visuals/<date>-ccr-title-rung.html": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_ccr_title_rung_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 36
+    },
+    {
+     "id": "script:kb/_build_ccr_title_rung_sheet.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 36
     }
    ],
    "served": false,
@@ -10837,6 +10857,19 @@
      "direction": "read",
      "how": "literal",
      "line": 15
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/receipts/jev_ccr_title_rung_<date>_s282.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_ccr_title_rung_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 35
     }
    ],
    "served": false,
