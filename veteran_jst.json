@@ -1,14 +1,14 @@
 {
-  "scraped_at": "2026-09-21T18:16:26.816266+00:00",
+  "scraped_at": "2026-09-22T11:45:21.997875+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
-    "vets": 34135,
-    "jst": 28292,
-    "star_colleges": 57
+    "vets": 33435,
+    "jst": 28307,
+    "star_colleges": 58
   },
-  "computed_star_colleges": 57,
+  "computed_star_colleges": 58,
   "colleges": {
     "Santiago Canyon College": {
       "vets": 288,
@@ -72,7 +72,7 @@
     },
     "De Anza College": {
       "vets": 903,
-      "jst": 979,
+      "jst": 991,
       "star": true
     },
     "Riverside City College": {
@@ -101,9 +101,9 @@
       "star": true
     },
     "San Bernardino Valley College": {
-      "vets": 907,
+      "vets": 207,
       "jst": 207,
-      "star": false
+      "star": true
     },
     "Fresno City College": {
       "vets": 724,
@@ -217,7 +217,7 @@
     },
     "Mission College": {
       "vets": 158,
-      "jst": 162,
+      "jst": 164,
       "star": true
     },
     "Ventura College": {
@@ -482,7 +482,7 @@
     },
     "Sacramento City College": {
       "vets": 203,
-      "jst": 111,
+      "jst": 112,
       "star": false
     },
     "Cuyamaca College": {
