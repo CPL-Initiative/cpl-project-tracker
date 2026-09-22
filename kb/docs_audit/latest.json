@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 969,
-    "bytes": 10287483,
+    "bytes": 10293148,
     "over_budget": 5,
     "handoff_max": 283,
     "always_loaded_files": 1,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 115,
-        "bytes": 3153747,
+        "bytes": 3154673,
         "over": 3
       },
       "index": {
@@ -46,7 +46,7 @@
       },
       "roadmap_lane": {
         "files": 33,
-        "bytes": 233411,
+        "bytes": 238150,
         "over": 0
       },
       "handoff": {
@@ -58,12 +58,13 @@
     "by_rule": {
       "oversized_doc": 5,
       "house_voice": 24,
+      "american_spelling": 1,
       "superseded_handoff": 1,
       "vault_heavy_path": 49
     },
     "vault": {
-      "files": 3067,
-      "bytes": 1484953039,
+      "files": 3068,
+      "bytes": 1484972043,
       "heavy_bytes": 644695265,
       "heavy_share": 0.434,
       "ignore_filters": [
@@ -375,6 +376,21 @@
       },
       "message": "1 business-register term — leverage x1 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
       "path": "docs/reference/kb_build_status.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "labelled": {
+            "n": 1,
+            "prefer": "labeled"
+          }
+        }
+      },
+      "message": "1 British form — labelled→labeled",
+      "path": "docs/reference/lanes/map-users-student-contact.md"
     },
     {
       "rule": "house_voice",
