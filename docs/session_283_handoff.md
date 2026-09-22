@@ -25,6 +25,56 @@ the wrong question; Sam's answer to that is the open decision below.
 **Ladder sheet:** https://claude.ai/artifact/BkxGoSkJUE22BWCGcw9pwB
 **Status visual:** https://claude.ai/artifact/AHFBSetu87Hi6RqkA33dfU
 
+## ⭐ THE CROSS-LIST WORKSTREAM — 6 of 12 ITEMS LANDED (S282, after the sitting)
+
+Sam asked for a decision sheet on cross-listing and got twelve items:
+**https://claude.ai/artifact/BizNPAbrucq6hWARVzTQBp** · generator
+`kb/_build_crosslist_decision_sheet.py` · **lane state (READ THIS FIRST):**
+[`lanes/discipline-crosslist`](reference/lanes/discipline-crosslist.md).
+
+⚠️ **HE PRESSED COMPLETE WITH NOTHING INDIVIDUALLY RULED** — `ruled: 0,
+as_proposed: 12, through: null`. Under opt-out the twelve proposals ARE handed
+over, and none of them is a ruling. That is why two are held.
+
+| PR | items |
+|---|---|
+| [#1653](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1653) | the high-water mark, the pickers, the title-rung calibration receipt, the completion-message fix |
+| [#1654](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1654) | **11** — KIN/PE/ATHL identifier fallout |
+| [#1655](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1655) | **9** — the orphan-parent worklist |
+| [#1656](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1656) | **1, 7, 8** — the frame, one primary, the re-mint boundary |
+| earlier in #1653 | **2** — a 1-2 char subject code never decides a discipline |
+
+⛔ **NEEDS SAM, AND ONLY THESE TWO.** Item **3** (re-mint the 31 mis-prefixed
+ETHS identities — changes stored data under the playbook) and item **10** (open
+`xdisc` to curators — a new write surface, Rule 10(a3) routes it through
+Governance). The reply is already in the sheet's comment thread; **do not
+re-ask**.
+
+**LEFT TO BUILD:** item **4** (the Kinesiology/PE alias — ONE
+`subject_discipline_map.json` entry, because zero rows carry
+`disc == "Physical Education"`), item **5** (nest the specializations on the
+vocabulary), item **6** (cross-list kind C through `xdisc`, waits on 5), then
+the item-**12** sitting at 50 rows from kind C.
+
+⚠️ **THE 17:01 CRON PREDATED daily-dashboard STEP 4d6**, so it regenerated
+`unified_courses_data.js` without rebuilding `kb/orphan_parent_worklist.json`.
+Run `python3 kb/_build_orphan_parent_worklist.py --check` on fresh main; if
+STALE, rebuild and carry it on the next PR. **Do NOT dispatch a second
+daily-dashboard run** while one may be in flight (Rule 6). Tomorrow's 06:17 run
+fixes it unaided.
+
+⚠️ **THIS WAS A CONTEXT-PRESSURE CHECKPOINT at 63,383 tokens left.** Refreshed:
+this handoff, and `lanes/discipline-crosslist.md` (merged in #1656). **NOT
+refreshed:** the To-Do feed, the lessons docs, `cpl_memory` rows, the §11
+session narrative, and the other 30 lane files. S284 should run a full
+`/checkpoint` early.
+
+⚠️ **TWO TOOL BEHAVIORS THAT COST TIME THIS RUN.** `get_check_runs` on a PR
+repeatedly returned a SUPERSEDED head's runs as though current, and
+`actions_list` with a `branch` filter returned a main-branch cron run. Verify CI
+by matching `head_sha` against `git rev-parse HEAD`, using `actions_list` with
+`workflow_id` and NO branch filter.
+
 ## SAM'S DECISIONS THIS RUN
 
 - **"CCR gets the next sitting"** — ladder item 1, and the sheet's ONLY
