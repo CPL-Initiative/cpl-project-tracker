@@ -4,9 +4,9 @@
   "supabase_tables": 85,
   "rpcs": 31,
   "edge_functions": 5,
-  "file_datasets": 497,
+  "file_datasets": 499,
   "external_services": 145,
-  "consumers": 354,
+  "consumers": 355,
   "workflows": 35,
   "data_js_files": 61,
   "tabs": 37
@@ -5246,14 +5246,34 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 36
+     "line": 38
     },
     {
      "id": "script:kb/_build_ccr_title_rung_sheet.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 36
+     "line": 38
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:docs/visuals/<date>-crosslist-options.html": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_crosslist_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 29
+    },
+    {
+     "id": "script:kb/_build_crosslist_decision_sheet.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 29
     }
    ],
    "served": false,
@@ -8839,7 +8859,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 199
+     "line": 265
     },
     {
      "id": "script:kb/_seed_cx_common_courses.py",
@@ -11619,6 +11639,20 @@
      "line": 269
     },
     {
+     "id": "script:kb/_build_ccr_title_rung_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 36
+    },
+    {
+     "id": "script:kb/_build_crosslist_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 170
+    },
+    {
      "id": "script:kb/_infer_disciplines.py",
      "kind": "script",
      "direction": "read",
@@ -11665,7 +11699,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 190
+     "line": 256
     },
     {
      "id": "script:kb/_seed_subject_discipline_map.py",
@@ -11723,6 +11757,20 @@
      "direction": "read",
      "how": "literal",
      "line": 94
+    },
+    {
+     "id": "script:kb/_build_ccr_title_rung_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 37
+    },
+    {
+     "id": "script:kb/_build_crosslist_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 64
     },
     {
      "id": "script:kb/_preseed_null_issuers.py",
@@ -14668,6 +14716,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/mid_short_code_gate_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/occupation_matcher_stemming_test.py": {
    "consumers": [
     {
@@ -15197,6 +15258,13 @@
      "direction": "read",
      "how": "literal",
      "line": 839
+    },
+    {
+     "id": "script:kb/_build_crosslist_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 68
     },
     {
      "id": "script:kb/_build_discipline_blanks_worklist.py",
@@ -19395,6 +19463,7 @@
     "tests/governance_docs_panel.test.js",
     "prototype/check_contrast.py",
     "tests/supabase_function_grants_test.py",
+    "tests/mid_short_code_gate_test.py",
     "tests/supabase_sql_guard_test.py",
     "tests/bash_read_guard_test.py",
     "tests/install_prompt_guards_test.py",

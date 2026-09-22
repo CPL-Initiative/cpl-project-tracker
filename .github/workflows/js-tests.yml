@@ -108,6 +108,14 @@ jobs:
       # the published anon key. Pure-stdlib python; same non-required check.
       - name: Supabase function-grant lint (revoke must name PUBLIC)
         run: python3 tests/supabase_function_grants_test.py
+      # A 1-2 character subject code never decides a discipline on its own
+      # (Sam's cross-list sheet item 2, 2026-09-22). `ES` maps to Ethnic Studies
+      # and means Exercise Science at many colleges, which is how 31
+      # physical-activity courses came to carry an ETHS prefix. The gate lives
+      # in the MINTING path because the re-mint that repairs those rows runs
+      # through it. Pure-stdlib python; same non-required check.
+      - name: M-ID short-code gate (corroborate, never gate on 1-2 chars)
+        run: python3 tests/mid_short_code_gate_test.py
       # The PreToolUse guard that lets auto mode stop prompting on every read
       # (Session 277). It returns `allow` for read-only SQL, so the convenience
       # is only safe while every write case stays `deny` — a false allow is a

@@ -19,7 +19,7 @@ One per session, newest first. **Only the highest-numbered handoff is authoritat
 
 | N | Handoff | Created |
 |---|---|---|
-| 283 | [the CCR is wired, the rungs are built, and one sitting stands between here and a calibrated gate](../session_283_handoff.md) | 2026-09-21 |
+| 283 | [the first sitting ran, and it found a different question](../session_283_handoff.md) | 2026-09-22 |
 | 282 | [the decision sheet is rebuilt and opt-out, and Jev has one magic half for every reference](../session_282_handoff.md) | 2026-09-21 |
 | 281 | [the verdicts landed, the storm is down to one prompt on execute_sql, and every sheet changes shape](../session_281_handoff.md) | 2026-09-20 |
 | 280 | [Jev is wired and proven; the CR Reference is a cross-group problem](../session_280_handoff.md) | 2026-09-20 |

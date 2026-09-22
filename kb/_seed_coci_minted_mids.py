@@ -152,6 +152,72 @@ def canonical_subj_token(disc, modal_token, canon_map):
     return canon_map.get(disc) or modal_token
 
 
+# ⚠️ A SUBJECT CODE OF ONE OR TWO CHARACTERS NEVER DECIDES A DISCIPLINE ALONE
+# (Sam's cross-list sheet, item 2, 2026-09-22). 25 mapped codes are this short
+# and they are ambiguous by construction: `ES` maps to Ethnic Studies here and
+# means Exercise Science at many colleges, which is how 31 physical-activity
+# courses came to carry an ETHS prefix — Advanced Fencing, Swimming for
+# Nonswimmers, Intercollegiate Track, Advanced Golf. Both senses are real in
+# the data (Introduction to Racial and Ethnic Groups also carries `ES`), so the
+# code cannot be resolved without reading the title.
+#
+# This is Rule 7's TOP posture applied to a second ambiguous signal: corroborate,
+# never gate. A short modal code keeps its discipline only when a LONGER code in
+# the same cluster maps to the SAME discipline. Disagreement, or no longer code
+# at all, holds the discipline for review rather than substituting a different
+# answer — a substitution would be a second guess dressed as a determination.
+SHORT_CODE_MAX = 2
+
+
+def discipline_for_modal(modal_subject, subj_counts, disc_map):
+    """The cluster's discipline, and a note when a short modal code held it back.
+
+    Returns (discipline_or_None, note_or_None). `subj_counts` is the Counter of
+    every member's subject code, which is where corroboration comes from.
+    """
+    key = normsubj(modal_subject)
+    mapped = disc_map.get(key)
+    if len(key) > SHORT_CODE_MAX:
+        return mapped, None
+
+    longer = [(s, disc_map.get(normsubj(s))) for s, _ in subj_counts.most_common()
+              if len(normsubj(s)) > SHORT_CODE_MAX]
+    agreeing = [s for s, d in longer if d and mapped and d == mapped]
+    if agreeing:
+        return mapped, None
+    disagreeing = [(s, d) for s, d in longer if d and d != mapped]
+    if disagreeing:
+        s, d = disagreeing[0]
+        return None, (f"modal subject {modal_subject!r} is a {len(key)}-character code reading "
+                      f"{mapped!r}, and {s!r} in the same cluster reads {d!r}; discipline held "
+                      f"for review rather than gated on the short code.")
+    return None, (f"modal subject {modal_subject!r} is a {len(key)}-character code and nothing "
+                  f"longer in the cluster corroborates it; discipline held for review.")
+
+
+def mint_token(modal_subject, subj_counts):
+    """The fallback M-ID token when no discipline supplies a canonical SUBJ4.
+
+    ⚠️ Prefer a code of three characters or more. Holding a short modal's
+    discipline (above) would otherwise mint `M-ID ES 100`, and the M-ID shape is
+    SUBJ4 — the gate must not buy a correct discipline with a broken identifier.
+
+    A cluster whose every code is short keeps the short token, which is the
+    convention already in force for an unmapped discipline. Measured 2026-09-22:
+    21 of 15,937 minted M-IDs carry a prefix under four characters (`F M1002`,
+    `LT M1001`, `NC M9009`, `TV M1001`, `ART M1235`, `ATC M1001`), so the gate
+    follows the existing shape rather than introducing one. It will add a few:
+    33 rows read Ethnic Studies on `ES` alone, and no longer code corroborates
+    any of them.
+    """
+    if len(normsubj(modal_subject)) > SHORT_CODE_MAX:
+        return re.sub(r"\s+", "", modal_subject) or "MISC"
+    for s, _ in subj_counts.most_common():
+        if len(normsubj(s)) > SHORT_CODE_MAX:
+            return re.sub(r"\s+", "", s) or "MISC"
+    return re.sub(r"\s+", "", modal_subject) or "MISC"
+
+
 def is_blank(v):
     return v is None or (str(v).strip().lower() in BLANKS)
 
@@ -237,12 +303,12 @@ def main():
         modal_subject = subj_counts.most_common(1)[0][0]
         n_subjects = len(subj_counts)
 
-        disc = DISCIPLINE_MAP.get(normsubj(modal_subject))
+        disc, short_note = discipline_for_modal(modal_subject, subj_counts, DISCIPLINE_MAP)
         # ID token must be space-free so "M-ID <token> <n>" stays parseable;
         # the readable modal subject is kept in the `subject` field. The token
         # itself is the CANONICAL SUBJ4 when the discipline has one (CSR
         # wiring — Rule 7 / CSR0066); umbrellas/unmapped keep the modal.
-        raw_token = re.sub(r"\s+", "", modal_subject) or "MISC"
+        raw_token = mint_token(modal_subject, subj_counts)
         subj_token = canonical_subj_token(disc, raw_token, CANON_MAP)
         next_num[subj_token] = next_num.get(subj_token, 98) + 2
         course_id = f"M-ID {subj_token} {next_num[subj_token]}"
@@ -256,7 +322,9 @@ def main():
         conf = confidence(len(members), n_subjects)
 
         notes = []
-        if disc is None:
+        if short_note:
+            notes.append(short_note)
+        elif disc is None:
             notes.append(f"modal subject '{modal_subject}' not in discipline map; needs review.")
         if n_subjects >= 8:
             notes.append(f"high subject spread ({n_subjects} subjects); possible over-merge — review.")
