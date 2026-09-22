@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-254 document(s).
+255 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 283 | [the CCR is wired, the rungs are built, and one sitting stands between here and a calibrated gate](../session_283_handoff.md) | 2026-09-21 |
 | 282 | [the decision sheet is rebuilt and opt-out, and Jev has one magic half for every reference](../session_282_handoff.md) | 2026-09-21 |
 | 281 | [the verdicts landed, the storm is down to one prompt on execute_sql, and every sheet changes shape](../session_281_handoff.md) | 2026-09-20 |
 | 280 | [Jev is wired and proven; the CR Reference is a cross-group problem](../session_280_handoff.md) | 2026-09-20 |

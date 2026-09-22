@@ -1,20 +1,44 @@
 {
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
  "_as_of": "2026-09-21",
- "_session": 281,
- "_status": "The decision sheet work is merged and Jev now has one adjudication module for CSR, CER and the Common CR Reference. We scored Jev against the 51 verdicts Sam gave on 2026-09-20: the 0.85 confidence gate is real — 25 of 25 right, 346 articulation rows, nothing wrong in it. Then we asked six new questions about the 26 hard pairs the gate leaves behind, and nothing passed: the headline number came back BELOW chance, meaning the new questions point the wrong way. One of them, units, is backwards for a reason we already knew — CPL has ruled that different hours do not mean a different course, and a general model does not know that. So the recommendation is to harvest what works (run the gate across the whole population) and put the hard pairs on a decision sheet, rather than keep trying to automate judgment. Next decision is Sam's: which reference gets its own set of verdicts first, since only the CR Reference has any to calibrate a gate against.",
+ "_session": 282,
+ "_status": "Sam ruled that the Common Course Reference gets the next sitting of judgments, and settled its size at 40 to 60, so nothing is blocking it. He also reshaped the ladder: course description now comes before CIP, and three new rungs join it — units, subject-code outliers, and blanks that the member courses can fill. His rule that two units of variation is a non-critical difference is the useful part: it settles 2,641 of 4,179 unit questions without asking anything, leaving 1,538 that genuinely need a look. The blanks rung turned out to be worth far more than it first appeared — 4,065 consolidated courses have no description while their member courses do. He wants this same ladder shape for the other references next, and an ESL merging decision sheet in the coming session.",
  "items": [
   {
-   "id": "s281-sam-jev-ladder-priority",
+   "id": "s282-sam-esl-merging-sheet",
    "for": "Sam",
    "tab": "cr-reference",
-   "text": "You asked for a prioritized, progressive set of Jev runs per consolidation center (CER, CSR, CCR, CCRR). The one decision only you can make: each center needs its own confidence gate calibrated against real verdicts before it can be trusted, and only the CR Reference has any (your 51). So which center gets a verdict set first? Say the word and it comes back as a numbered decision sheet with the proposed rung order and what each costs."
+   "text": "You asked for a decision sheet next session to adjust the ESL merging procedure — covering both what we use now and what is queued to use. It is first on the next session's list and named in the handoff."
+  },
+  {
+   "id": "s282-fable-rungs-for-other-centers",
+   "for": "Fable",
+   "tab": "cr-reference",
+   "text": "Sam wants the same rung ladder for the other consolidation centers. The course ladder is the template: a few rungs that ask one question with more evidence each time, then separate rungs for the questions that have their own populations. Build the credential and subject ladders on that shape once the course rungs have run."
+  },
+  {
+   "id": "s282-sam-ccr-decisions-table",
+   "for": "Sam",
+   "tab": "governance",
+   "text": "The CCR has nowhere to record a verdict. Only the Common CR Reference has a decisions table, so a CCR sitting would produce judgments with no home and you would be asked the same questions again. You adopted this as item 4 of the ladder; it needs a Governance pass before it ships, because a first writer to a shared table is a decision-rights change."
   },
   {
    "id": "s281-fable-harvest-the-gate",
    "for": "Fable",
    "tab": "cr-reference",
    "text": "Harvest the value that is proven rather than chasing the hard band. The 0.85 gate scored 25 of 25 on Sam's verdicts, so run kb/_jev_adjudicate.py across the full rung-5 population instead of only the 55 anchored pairs, take everything above the gate as suggestions, and put the rest on a decision sheet. The band is 26 pairs and 838 rows — one sitting, not an automation problem."
+  },
+  {
+   "id": "s282-fable-ccr-title-rung-sitting",
+   "for": "Fable",
+   "tab": "cr-reference",
+   "text": "Run the first course sitting: Sam settled on 40 to 60 questions, so dispatch the title rung at 50, build a decision sheet from the result, and hand him the link. His verdicts are what earn the course reference a confidence threshold of its own — the one we have belongs to the credit recommendations and a different question."
+  },
+  {
+   "id": "s282-fable-rerun-cer-csr-scanners",
+   "for": "Fable",
+   "tab": "cr-reference",
+   "text": "The credential and subject scanners last ran on 10 July, so every count we quote for them is 73 days old and the course identity layer has been renumbered since. Re-run both and re-triage before spending a single call on either."
   },
   {
    "id": "s281-sam-item-10-change-of-mind",
@@ -27,12 +51,6 @@
    "for": "Sam",
    "tab": "cr-reference",
    "text": "You asked to delete the intro from decision sheets and it is gone. The framing sentence can still be switched back on per sheet, because putting it in the header was your own earlier ruling. Say the word and that option goes too."
-  },
-  {
-   "id": "s281-fable-jev-ccr-trust-cards",
-   "for": "Fable",
-   "tab": "cr-reference",
-   "text": "Wire the CCR (the big kahuna) into kb/_jev_adjudicate.py once the CR Reference run has been scored. Its method half is _row_audit.py Trust Cards rather than a findings list, so it needs its own adapter and its own per-rule questions. Do not point an unvalidated routine at thousands of decisions."
   },
   {
    "id": "s280-sam-decide-the-execute-sql-read-path",
@@ -57,24 +75,6 @@
    "for": "Fable",
    "tab": "all",
    "text": "Sam, 2026-09-20, on the ten-minute merge: shard the JS suite across a runner matrix and run only the test files the diff touches on a pull request (the full suite stays on every push to main), plus the one hot spot, the funding tests that boot the whole dashboard in jsdom per file. Measure first: per-file timings from the last run, then the workflow change. A wholesale refactor of the monolith is not the lever for CI time. Also: the dependency map records line numbers, so a one-line edit above a mapped reference (Sam's, 2026-09-20, in the installer: 180 to 181) turned main red at the next push; make the staleness check ignore line drift, or drop the numbers from the map."
-  },
-  {
-   "id": "s279-fable-jev-variable-battery",
-   "for": "Fable",
-   "tab": "cr-reference",
-   "text": "Extend the Jev trial from one question per pair to a battery of variable questions (level difference, scope, vendor-specific, lab vs lecture, units) asked in a single call, then cluster pairs by their answer profile. Score the profiles against Sam's 51 verdicts first: 41 fold, 10 keep, in kb/receipts/cr_reference_decisions_2026-09-20_s280.json. Above p 0.85 Jev was 25 for 25; below it the probability carried no signal, so the battery is what has to separate the 10 keeps from the 16 folds in that band."
-  },
-  {
-   "id": "s279-fable-no-confident-negatives",
-   "for": "Fable",
-   "tab": "cr-reference",
-   "text": "Jev never scored below 0.32 across 51 pairs, so the keep bucket was empty — it does not express confident negatives on this question. Before trusting it as a filter rather than a suggester, try re-framing the question so a no is as easy to say as a yes, and re-run (about 40 seconds on a branch with no open PR)."
-  },
-  {
-   "id": "s279-skykeeper-jev-for-sierra",
-   "for": "Fable",
-   "tab": "cpl-assistant",
-   "text": "Sam, 2026-09-20: \"we should be able to use Jev to speed and broaden Sierra's ability as well.\" Jev returns typed judgments with calibrated probabilities at ~0.2s a call, which fits Sierra's two known defect classes: the %tech% word-filter false positive (a noul on \"does this phrase name a college?\" would have caught Surgical Tech matching LA Trade Tech) and the false absences, where a choice over candidate colleges with a confidence gate would let her say \"I am not sure\" instead of \"none\". Jev gives no rationale, so it routes and gates; Sierra still answers. Verified working on a runner 2026-09-20."
   }
  ],
  "_deferred": [

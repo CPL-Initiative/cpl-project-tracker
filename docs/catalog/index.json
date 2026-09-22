@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 485,
+   "count": 486,
    "docs": [
     {
      "created": "2026-08-14",
@@ -3707,6 +3707,23 @@
      "title": "A text measure must agree with what sits beside it",
      "type": "methodology",
      "updated": "2026-08-22"
+    },
+    {
+     "created": "2026-09-21",
+     "governs": [],
+     "path": "docs/kb-notes/methodology-a-threshold-belongs-to-the-question-that-measured-it.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "kb-note",
+      "calibration",
+      "gate",
+      "model-fit",
+      "jev"
+     ],
+     "title": "A threshold belongs to the question that measured it",
+     "type": "methodology",
+     "updated": ""
     },
     {
      "created": "2026-09-16",
@@ -14022,8 +14039,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 254,
+   "count": 255,
    "docs": [
+    {
+     "created": "2026-09-21",
+     "governs": [],
+     "n": 283,
+     "path": "docs/session_283_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "jev",
+      "ccr",
+      "cr-reference",
+      "calibration",
+      "decision-sheets"
+     ],
+     "title": "the CCR is wired, the rungs are built, and one sitting stands between here and a calibrated gate",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-21",
      "governs": [],
@@ -18334,5 +18369,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 952
+ "total": 954
 }

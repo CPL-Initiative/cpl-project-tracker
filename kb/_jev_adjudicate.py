@@ -427,19 +427,177 @@ CCR_RULES = {
 
 # Tags Jev is ASKED about. Everything else in the audit is state, a trap, or
 # identity — see the block above, where each exclusion carries its reason.
-CCR_ASKABLE = tuple(CCR_RULES)
+# ⚠️ CCR_ASKABLE is the THREE content-judgment tags and nothing else — it is
+# what rungs 1-3 select on, and widening it would pull the population rungs into
+# the cumulative ladder, where they do not belong.
+CCR_ASKABLE = ("discipline_title_mismatch",
+               "description_discipline_disagreement",
+               "generic_title_concrete_discipline")
 
 # Held out of the ASK and named here so a future session reads the reason
 # rather than re-deriving it and re-adding them.
+# ⚠️ STILL NEVER ASKED. Both ask Jev to gate on TOP, which Rule 7 forbids
+# outright — TOP is faculty-entered with no gatekeeper and ~52% of consolidated
+# M-IDs are TOP-mixed. No domain rule rescues a question whose whole premise is
+# "TOP disagrees", which is what separates these from units below.
 CCR_NEVER_ASK = {
-    "unit_anomaly": "units are not identity; Jev measured AUC 0.281 on this question",
     "top_discipline_disagreement": "Rule 7: TOP never gates a primary determination",
     "member_top_divergence": "Rule 7: TOP never gates a primary determination",
 }
-CCR_RANK_ONLY = {
-    "subject_discipline_outlier": "a SUBJ4 change is a Rule 7 re-mint",
-    "subject_collision_signal": "a SUBJ4 change is a Rule 7 re-mint",
+
+# ⚠️ `unit_anomaly` LEFT THIS SET ON 2026-09-21, AND THE REASON MATTERS.
+# It was never-ask because Jev scored AUC 0.281 on it — below chance — applying
+# the general prior that different hours mean different content. Sam supplied
+# the domain rule that overrules the prior (two units of variation is
+# non-critical), so the question is now askable BECAUSE THE RULE IS STATED IN
+# IT. The `units` rung clears 63% mechanically and asks the rest with the
+# threshold given, so the model is never left to invent one. Re-adding it as a
+# bare "do these units differ?" question would reproduce 0.281 exactly.
+CCR_MOVED_TO_RUNG = {
+    "unit_anomaly": "asked at the `units` rung, with Sam's 2-unit rule stated in the question",
+    "subject_discipline_outlier": "asked at the `subject` rung; a curator still rules",
+    "subject_collision_signal": "asked at the `subject` rung; a curator still rules",
 }
+
+# The subject tags are ASKED now (Sam, 2026-09-21), and their answer is still
+# never an action: `CCR_NEVER_AUTO` names the rung, and a SUBJ4 change remains
+# the re-mint playbook's call.
+CCR_RANK_ONLY = {
+    "subject_discipline_outlier": "a SUBJ4 change is a Rule 7 re-mint — ranked, never ruled",
+    "subject_collision_signal": "a SUBJ4 change is a Rule 7 re-mint — ranked, never ruled",
+}
+
+
+def _clean_desc(d):
+    """COCI descriptions arrive with literal `_x000D_` carriage-return escapes
+    in them. TypeSafe's own guidance is that irrelevant detail costs accuracy,
+    and a window spent on escape artifacts is a window not spent on the course.
+
+    ⚠️ THE CATALOG BOILERPLATE STAYS. Stripping prerequisites and corequisites
+    looks like the same cleanup and destroys the finding: the DEH-24
+    prerequisite list IS what reveals that an `Ethics` row filed under
+    Philosophy is a dental-hygiene course."""
+    return " ".join(d.replace("_x000D_", " ").split())
+# ── the CCR's LADDER (Sam, 2026-09-21) ──────────────────────────────────────
+# First: *"title then CIP then course description"*. Revised the same day:
+#   "make CIP the 3rd level and add units into the ladder. I'm thinking the
+#    range should be 2 units variation as a non-critical difference. Add in a
+#    rung for subject code outliers and untouched seeds, and blanks (where
+#    there is something useful to work with in the aggregate)."
+# And, on where this goes next: *"I will want similar rungs for the other
+# datasets"* — so this ladder is the TEMPLATE for the CER, CSR and CCRR, not a
+# one-off shape for the CCR.
+#
+# ⚠️ TWO KINDS OF RUNG, AND CONFLATING THEM WOULD COST A SITTING.
+#   Rungs 1-3 are ONE question over ONE population (the 1,237 content-judgment
+#   rows), asked with more evidence each time. They are CUMULATIVE — rung 2 is
+#   rung 1 plus the description, rung 3 adds the CIP — so "escalate what rung 1
+#   could not settle" is meaningful. Run one, calibrate its gate on a curator's
+#   verdicts, escalate only the unsettled rows.
+#   Rungs 4-6 are DIFFERENT questions over DIFFERENT populations. They neither
+#   accumulate nor escalate into one another, and each earns its OWN gate.
+# `CCR_RUNGS` keeps Sam's single ordering; `CCR_RUNG_KIND` says which is which,
+# so a future session cannot read rung 4 as "rung 3 plus units".
+CCR_RUNGS = ("title", "description", "cip", "units", "subject", "aggregate")
+CCR_RUNG_KIND = {
+    "title": "evidence", "description": "evidence", "cip": "evidence",
+    "units": "population", "subject": "population", "aggregate": "population",
+}
+CCR_EVIDENCE_RUNGS = tuple(r for r in CCR_RUNGS if CCR_RUNG_KIND[r] == "evidence")
+
+# ⚠️ SAM'S UNITS RULE IS THE DOMAIN PRIOR THE BATTERY WAS MISSING.
+# `unit_anomaly` sat in CCR_NEVER_ASK because the pre-registered battery
+# measured Jev on exactly that question at **AUC 0.281 — below chance** — it
+# applies the general assumption that different hours mean different content,
+# which this domain has overruled. Sam supplies the rule that overrules it:
+# two units of variation is a non-critical difference.
+#
+# So units re-enter as a MEASURED SCREEN rather than a question put to a general
+# model. Measured 2026-09-21 across all 4,179 `unit_anomaly` cards (every one
+# carries two or more member unit values):
+#     2,641 (63%) sit at or under 2 units apart  -> cleared mechanically, no call
+#     1,538 (37%) sit above it, up to 33 apart   -> the real question
+# The question states the rule, so the model is never left to invent a
+# threshold of its own — which is what it did at 0.281.
+UNITS_NONCRITICAL = 2.0
+
+# ⚠️ THE SUBJECT RUNG ASKS, BUT ITS ANSWER IS NEVER AN ACTION. A subject-code
+# change is a re-mint under the mandatory playbook, and Rule 7 holds that an
+# unreliable signal never gates identity. Sam's framing makes the exploration
+# safe (*"the MIDs are still experimental, so the stakes are low"*) — it does
+# not make a model's answer a decision. `never_auto` says so in the data.
+CCR_NEVER_AUTO = ("subject",)
+
+
+def _cip_for(top):
+    """The modal CIP colleges actually assigned to programs under this TOP.
+
+    ⚠️ IT ARRIVES WITH ITS OWN MAJORITY ATTACHED. A TOP carries a mean of 2.85
+    CIPs, so a bare code would read as fact where the truth is a 3-way split.
+    `share` and `cips` ride into the evidence for the same reason Rule 7 keeps
+    TOP a corroborator: the only route from a course to a CIP is its TOP code,
+    so CIP inherits TOP's unreliability and CORROBORATES, NEVER GATES."""
+    if not top:
+        return None
+    return (_TOP_CIP.get("map") or {}).get(str(top).strip())
+
+
+def _load_top_cip():
+    path = os.path.join(HERE, "top_cip_map.json")
+    if not os.path.exists(path):
+        return {}
+    return json.load(open(path, encoding="utf-8"))
+
+
+_TOP_CIP = _load_top_cip()
+
+
+def _members(mid):
+    return (_MEMBERSHIPS or {}).get(mid) or []
+
+
+def _load_memberships():
+    path = os.path.join(HERE, "coci_minted_memberships.json")
+    if not os.path.exists(path):
+        return {}
+    return (json.load(open(path, encoding="utf-8")) or {}).get("memberships") or {}
+
+
+_MEMBERSHIPS = _load_memberships()
+
+
+_MEMBER_DESC = None
+
+
+def _member_descs(mid):
+    """The member courses' own descriptions, from `unified_courses_member_desc.js`.
+
+    ⚠️ MEMBERSHIP RECORDS DO NOT CARRY DESCRIPTIONS. They hold college, control
+    number, subject, course number, units, credit status and TOP — so the blank
+    a cluster most often has (4,231 of the 7,158 aggregatable rows) cannot be
+    filled from them at all. The member descriptions live in their own artifact,
+    keyed by the same id, and 4,065 of those 4,231 have at least one.
+
+    Loaded lazily: the file is ~47 MB and only the `aggregate` rung reads it."""
+    global _MEMBER_DESC
+    if _MEMBER_DESC is None:
+        path = os.path.join(os.path.dirname(HERE), "unified_courses_member_desc.js")
+        if not os.path.exists(path):
+            _MEMBER_DESC = {}
+        else:
+            raw = open(path, encoding="utf-8").read()
+            blob = json.loads(raw[raw.index("{", raw.index("=")):].rstrip().rstrip(";"))
+            _MEMBER_DESC = blob.get("desc") or {}
+    return _MEMBER_DESC.get(mid) or []
+
+
+def _units_spread(mid):
+    """How far apart the members' unit counts sit, or None when fewer than two
+    members carry one. The spread is what Sam's rule is stated against."""
+    us = [m.get("units") for m in _members(mid) if isinstance(m.get("units"), (int, float))]
+    if len(us) < 2:
+        return None
+    return round(max(us) - min(us), 2)
 
 
 def _clean_desc(d):
@@ -454,54 +612,48 @@ def _clean_desc(d):
     return " ".join(d.replace("_x000D_", " ").split())
 
 
-# ── the CCR's PROGRESSIVE RUNGS (Sam, 2026-09-21: "title then CIP then course
-# description") ──────────────────────────────────────────────────────────────
-# One question, asked with more evidence at each rung, so the cheap signal
-# settles the easy rows and only what it cannot settle escalates. The rungs are
-# ordered and CUMULATIVE — rung 2 is rung 1 plus the CIP, rung 3 is rung 2 plus
-# the description.
-#
-# ⚠️ A RUNG CANNOT ESCALATE UNTIL IT HAS A GATE, AND THE CCR HAS NO VERDICTS.
-# The 0.85 gate belongs to the CCRR and was measured on a different question
-# (ladder item 3, adopted: every center calibrates its own). So the first CCR
-# sitting runs ONE rung — `title` — and Sam's verdicts on it calibrate that
-# rung's gate. Rung 2 then re-asks only the rows rung 1 left unsettled. Running
-# all three at once would spend three calls per row to learn nothing about
-# which rung did the work.
-CCR_RUNGS = ("title", "cip", "description")
+# ── the per-rung questions ──────────────────────────────────────────────────
+# Rungs 1-3 share the three content-judgment rules already in CCR_RULES; the
+# population rungs each carry their own.
+
+CCR_UNITS_RULE = {
+    "ask": ("These colleges teach the same course at different unit counts. Given that a "
+            "difference of two units or less is treated as non-critical in this system, is "
+            "this spread large enough to mean the colleges are teaching DIFFERENT content?"),
+    "true": "Too far apart to be the same course.",
+    "false": "A scheduling or calendar difference, not a content difference.",
+    "negative": ("Can one course reasonably be taught at this range of unit counts by "
+                 "different colleges, on different academic calendars?"),
+}
+
+CCR_SUBJECT_RULE = {
+    "ask": ("This course's subject code differs from the one its discipline normally uses. "
+            "Does the course belong under the subject its own code names, rather than the "
+            "discipline's?"),
+    "true": "The course's own subject code is the right one.",
+    "false": "The discipline's usual subject code is right; this one is an outlier.",
+    "negative": ("Is this course a legitimate member of the discipline it is filed under, "
+                 "with the subject code simply being a local naming choice?"),
+}
+
+CCR_AGGREGATE_RULE = {
+    "ask": ("This consolidated course is missing a value that its member courses carry. Do "
+            "the members agree closely enough that their common value should fill the "
+            "blank?"),
+    "true": "The members agree; take their value.",
+    "false": "The members disagree, or the blank needs a curator rather than a majority.",
+    "negative": ("Do the members disagree enough that filling the blank from them would "
+                 "record something no college actually teaches?"),
+}
 
 
-def _cip_for(top):
-    """The modal CIP colleges actually assigned to programs under this TOP.
+def ccr_findings(rung=None):
+    """Trust Cards to questions, per rung of Sam's ladder.
 
-    ⚠️ IT ARRIVES WITH ITS OWN MAJORITY ATTACHED. A TOP carries a mean of 2.85
-    CIPs, so a bare code would read as fact where the truth is a 3-way split.
-    `share` and `cips` ride into the evidence for the same reason Rule 7 keeps
-    TOP a corroborator: the only route from a course to a CIP is its TOP code,
-    so CIP inherits TOP's unreliability and CORROBORATES, NEVER GATES."""
-    if not top:
-        return None
-    blob = _TOP_CIP.get("map") or {}
-    return blob.get(str(top).strip())
-
-
-def _load_top_cip():
-    path = os.path.join(HERE, "top_cip_map.json")
-    if not os.path.exists(path):
-        return {}
-    return json.load(open(path, encoding="utf-8"))
-
-
-_TOP_CIP = _load_top_cip()
-
-
-def ccr_findings():
-    """Trust Cards to questions, for the three tags that carry a content judgment.
-
-    The card itself is compact (`id`, `tags`, `lev`, `fts` …) and holds no title,
-    discipline or description, so the evidence is joined back from the minted
-    course records the auditor read. Each finding carries a `rungs` dict — the
-    evidence string for each of `CCR_RUNGS` — and `run()` asks exactly one.
+    Rungs 1-3 (`title` / `description` / `cip`) put ONE question — does this
+    course belong under the discipline it is filed under — to the three
+    content-judgment tags, with cumulative evidence. Rungs 4-6 (`units` /
+    `subject` / `aggregate`) each carry their own population and question.
 
     ⚠️ A TOP-DERIVED DISCIPLINE IS LABELLED IN THE EVIDENCE. Rule 7's "gate
     identity, keep display" ruling holds that a discipline inferred from a TOP
@@ -514,7 +666,16 @@ def ccr_findings():
     cards = json.load(open(audit, encoding="utf-8"))["rows"]
     courses = json.load(open(os.path.join(HERE, "coci_minted_courses.json"),
                              encoding="utf-8"))["courses"]
+    src = "kb/row_audit/latest.json + kb/top_cip_map.json + kb/coci_minted_memberships.json"
+    kind = CCR_RUNG_KIND.get(rung or "title")
 
+    if kind == "population":
+        return _ccr_population(rung, cards, courses), src
+    return _ccr_evidence(rung, cards, courses), src
+
+
+def _ccr_evidence(rung, cards, courses):
+    """Rungs 1-3: one question, cumulative evidence, over the 1,237."""
     TOP_DERIVED = {"top_code", "top_division"}
     out = []
     for c in cards:
@@ -524,55 +685,139 @@ def ccr_findings():
         rec = courses.get(c["id"]) or {}
         title = (rec.get("common_title") or "").strip()
         disc = (rec.get("discipline") or "").strip()
-        desc = (rec.get("description") or "").strip()
+        desc = _clean_desc((rec.get("description") or "").strip())
         if not title or not disc:
             # With no title or no discipline there is no question to put: the
-            # row is a blank to repair, which `blank_*` already tags.
+            # row is a blank to repair, which the `aggregate` rung handles.
             continue
-        src = rec.get("discipline_source") or ""
-        disc_note = " (inferred from TOP, uncorroborated)" if src in TOP_DERIVED else ""
-        desc = _clean_desc(desc)
+        source = rec.get("discipline_source") or ""
+        note = " (inferred from TOP, uncorroborated)" if source in TOP_DERIVED else ""
         members = c.get("lev") or 1
         cip = _cip_for(rec.get("top_code"))
 
         # RUNG 1 — the title alone, against the discipline it is filed under.
-        rung1 = [f"title: {title}", f"discipline: {disc}{disc_note}",
-                 f"{members} member course(s) across the colleges that offer it"]
-        # RUNG 2 — the CIP colleges assigned, WITH how thin its majority is.
-        rung2 = list(rung1)
-        if cip:
-            agree = (f"{cip['cip']} {cip['title']}"
-                     f" (the modal CIP on {int(cip['share'] * 100)}% of "
-                     f"{cip['programs']} programs under this TOP"
-                     + (f", which carries {cip['cips']} CIPs in all)"
-                        if cip["cips"] > 1 else ", the only CIP under it)"))
-            rung2.append("CIP colleges assigned: " + agree)
-        # RUNG 3 — the course description, which is what separates a real miss
-        # from the token-overlap artifacts rung 1 cannot tell apart.
-        rung3 = list(rung2)
+        r1 = [f"title: {title}", f"discipline: {disc}{note}",
+              f"{members} member course(s) across the colleges that offer it"]
+        # RUNG 2 — the description, which is what separates a real miss from the
+        # token-overlap artifacts rung 1 cannot tell apart (Sam moved this ahead
+        # of CIP on 2026-09-21).
+        r2 = list(r1)
         if desc:
-            rung3.append(f"description: {desc[:300]}")
+            r2.append(f"description: {desc[:300]}")
+        # RUNG 3 — the CIP colleges assigned, WITH how thin its majority is.
+        r3 = list(r2)
+        if cip:
+            r3.append(
+                "CIP colleges assigned: "
+                f"{cip['cip']} {cip['title']} (the modal CIP on "
+                f"{int(cip['share'] * 100)}% of {cip['programs']} programs under this TOP"
+                + (f", which carries {cip['cips']} CIPs in all)" if cip["cips"] > 1
+                   else ", the only CIP under it)"))
+        rungs = {"title": " · ".join(r1), "description": " · ".join(r2), "cip": " · ".join(r3)}
 
         for tag in hits:
             out.append({
-                "id": f"{c['id']}||{tag}",
-                "rule": tag,
-                "item": title,
-                "rungs": {
-                    "title": " · ".join(rung1),
-                    "cip": " · ".join(rung2),
-                    "description": " · ".join(rung3),
-                },
-                # The default evidence is the LAST rung, so a caller that does
-                # not choose one is handed everything rather than silently the
-                # thinnest case.
-                "evidence": " · ".join(rung3),
+                "id": f"{c['id']}||{tag}", "rule": tag, "item": title,
+                "rungs": rungs,
+                # A caller that names no rung is handed the FULLEST evidence
+                # rather than silently the thinnest case.
+                "evidence": rungs["cip"],
                 "suggestion": f"review the discipline recorded for {c['id']}",
-                # The CCR's collapse-value analogue: how many local courses ride
-                # this identity. Ranking by it puts the widest rows first.
                 "weight": members,
             })
-    return out, "kb/row_audit/latest.json + kb/top_cip_map.json"
+    return out
+
+
+def _ccr_population(rung, cards, courses):
+    """Rungs 4-6: each its own population, its own question, its own gate."""
+    out = []
+    if rung == "units":
+        for c in cards:
+            if "unit_anomaly" not in (c.get("tags") or []):
+                continue
+            spread = _units_spread(c["id"])
+            # ⚠️ SAM'S RULE CLEARS 63% WITHOUT A CALL. A spread at or under two
+            # units is non-critical by his ruling, so it never becomes a
+            # question — spending a call there is spending it to be told what
+            # the rule already says.
+            if spread is None or spread <= UNITS_NONCRITICAL:
+                continue
+            rec = courses.get(c["id"]) or {}
+            title = (rec.get("common_title") or "").strip() or c["id"]
+            us = sorted({m.get("units") for m in _members(c["id"])
+                         if isinstance(m.get("units"), (int, float))})
+            out.append({
+                "id": f"{c['id']}||units", "rule": "units_spread", "item": title,
+                "evidence": (f"title: {title} · units across members: "
+                             f"{', '.join(str(u) for u in us)} · "
+                             f"spread {spread} units, against a non-critical range of "
+                             f"{UNITS_NONCRITICAL} · {len(us)} distinct values over "
+                             f"{len(_members(c['id']))} member course(s)"),
+                "suggestion": f"review whether {c['id']} holds one course or several",
+                "weight": c.get("lev") or 1,
+            })
+    elif rung == "subject":
+        for c in cards:
+            hits = [t for t in (c.get("tags") or []) if t in CCR_RANK_ONLY]
+            if not hits:
+                continue
+            rec = courses.get(c["id"]) or {}
+            title = (rec.get("common_title") or "").strip() or c["id"]
+            disc = (rec.get("discipline") or "").strip()
+            subj = (rec.get("subject") or "").strip()
+            canon = (rec.get("subject_4letter") or "").strip()
+            out.append({
+                "id": f"{c['id']}||{hits[0]}", "rule": hits[0], "item": title,
+                "evidence": (f"title: {title} · discipline: {disc} · its own subject code: "
+                             f"{subj or 'none'} · the discipline's canonical code: "
+                             f"{canon or 'none'} · {c.get('lev') or 1} member course(s)"),
+                # ⚠️ Never "re-mint": the suggestion names a review, because a
+                # code change is the playbook's call and never a model's.
+                "suggestion": f"a curator reviews the subject recorded for {c['id']}",
+                "weight": c.get("lev") or 1,
+            })
+    elif rung == "aggregate":
+        for c in cards:
+            if "cluster_blanks_when_aggregatable" not in (c.get("tags") or []):
+                continue
+            rec = courses.get(c["id"]) or {}
+            title = (rec.get("common_title") or "").strip() or c["id"]
+            have = (rec.get("description") or "").strip()
+            descs = [d.strip() for d in _member_descs(c["id"]) if (d or "").strip()]
+            # ⚠️ SAM'S QUALIFIER IS THE WHOLE SCOPE: "where there is something
+            # useful to work with in the aggregate". A cluster whose members
+            # supply nothing is excluded rather than asked about — 8,132
+            # blank/seed cards carry no members at all.
+            if have or not descs:
+                continue
+            # Do the members agree? Near-identical text is a mechanical fill; a
+            # split is the judgment worth a call.
+            norm = {" ".join(d.lower().split())[:200] for d in descs}
+            agree = len(norm) == 1
+            out.append({
+                "id": f"{c['id']}||aggregate", "rule": "aggregate_fill", "item": title,
+                "evidence": (
+                    f"title: {title} · this consolidated course has no description · "
+                    f"{len(descs)} member course(s) describe it"
+                    + (", all in the same words" if agree
+                       else f", in {len(norm)} different wordings") + " · "
+                    + " || ".join(f"member: {d[:220]}" for d in descs[:3])),
+                "suggestion": f"fill {c['id']}'s description from its members",
+                # Agreement is cheap to act on and split is where judgment sits,
+                # so weight by how many members back it.
+                "weight": len(descs),
+                "members_agree": agree,
+            })
+    return out
+
+
+# The population rungs' questions join the same table, so `run()` looks every
+# rule up in one place. They are registered here rather than beside CCR_RULES
+# because they are defined with the ladder they belong to.
+CCR_RULES["units_spread"] = CCR_UNITS_RULE
+CCR_RULES["subject_discipline_outlier"] = CCR_SUBJECT_RULE
+CCR_RULES["subject_collision_signal"] = CCR_SUBJECT_RULE
+CCR_RULES["aggregate_fill"] = CCR_AGGREGATE_RULE
 
 
 REFS = {
@@ -608,17 +853,22 @@ def sam_verdicts():
 
 def run(ref_key, limit, held, key, score_only=False, rung=None):
     title, loader, rules = REFS[ref_key]
-    findings, source = loader()
-    # ⚠️ ONE RUNG PER RUN. A finding that carries `rungs` is asked at exactly the
-    # rung named, so a sitting measures what THAT evidence settles. Asking every
-    # rung at once spends three calls per row and cannot say which one worked.
+    # ⚠️ ONE RUNG PER RUN, AND THE RUNG PICKS THE POPULATION. The CCR's loader
+    # takes the rung because rungs 4-6 each have their OWN population — asking
+    # the units question of the title rung's 1,237 rows would be asking it of
+    # rows that have no unit spread. Rungs 1-3 share one population and differ
+    # only in evidence, which is what `rungs` on each finding carries.
+    if rung and ref_key == "ccr":
+        findings, source = loader(rung)
+    else:
+        findings, source = loader()
     if rung:
         if any("rungs" in f for f in findings):
             missing = [f["id"] for f in findings if rung not in (f.get("rungs") or {})]
             if missing:
                 raise SystemExit(f"{len(missing)} finding(s) carry no '{rung}' rung")
             findings = [dict(f, evidence=f["rungs"][rung]) for f in findings]
-        else:
+        elif ref_key != "ccr":
             raise SystemExit(f"{ref_key} has no rungs — drop --rung")
     findings = [f for f in findings if f["id"] not in held]
     findings.sort(key=lambda f: -(f.get("weight") or 0))
@@ -626,7 +876,8 @@ def run(ref_key, limit, held, key, score_only=False, rung=None):
         findings = findings[:limit]
 
     gate = gate_for(ref_key)
-    at = f" at rung '{rung}'" if rung else ""
+    kind = CCR_RUNG_KIND.get(rung) if ref_key == "ccr" else None
+    at = (f" at rung '{rung}'" + (f" ({kind})" if kind else "")) if rung else ""
     print(f"{title} ({ref_key}) — {len(findings)} finding(s){at} from {source}")
     if gate is None:
         print(f"  NO CALIBRATED GATE for {ref_key} — this is a CALIBRATION run: "
