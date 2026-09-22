@@ -371,9 +371,10 @@ check("data: the maximum sits above the minimum (a ceiling under the floor is a 
   check("C7: the formula box explains the cap beside the base",
     /Cap:/.test(formula.textContent) && /Base award:/.test(formula.textContent));
   check("C7: …and says the two are solved together (why the base count moves)",
-    /solved together/.test(formula.textContent) && /back OFF the base/.test(formula.textContent));
-  check("C7: …and says the cap lowers the funding, not the bar",
-    /cap lowers an institution&#39;s funding, not its targets|cap lowers an institution's funding, not its targets/
+    /solves the base and the cap together/.test(formula.textContent) && /back above the base/.test(formula.textContent));
+  // Stated positively since 2026-09-22 (Sam: no "this, not that").
+  check("C7: …and says the targets stay proportional to the pre-cap share",
+    /targets stay proportional to each institution(&#39;|')s share of statewide [^.]* before the cap/
       .test(formula.innerHTML + formula.textContent));
 
   // Chips are ghosted WORDS, not glyphs (Sam's reaction round, 2026-08-31):
@@ -385,11 +386,11 @@ check("data: the maximum sits above the minimum (a ceiling under the floor is a 
     !!row && row.innerHTML.indexOf(">(at cap)<") !== -1 &&
     !!row.querySelector("td.cf-award .cplfund-bound") &&
     doc.getElementById("cplFundTable").textContent.indexOf("⬇") === -1);
-  // There is more than one .cplfund-foot (the feeder note + the main footer),
-  // so scan them all — querySelector picks the wrong one.
-  check("C7: the footer legend explains the chip words",
-    /\(at base\) beside an award figure = brought up to the base award; \(at cap\) = held at the cap/.test(
-      Array.from(doc.querySelectorAll(".cplfund-foot")).map(function (e) { return e.textContent; }).join(" ")));
+  // The footer legend retired with the notes block (Sam, 2026-09-22: "trim the
+  // notes to a sources line"); the chip carries its own meaning on hover, and
+  // the Summary's base-and-cap line states the rule in words.
+  check("C7: the chip words explain themselves",
+    !!row && /held at the cap/.test(row.querySelector("td.cf-award .cplfund-bound").getAttribute("title") || ""));
 
   // Row open-state is keyed by NAME since the one-pool port ("c:<college>",
   // R6 — rows' data-id carries the college, not the order).

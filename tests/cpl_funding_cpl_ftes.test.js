@@ -406,8 +406,8 @@ check("the two quantities are ~500x apart, so a mix-up could not hide",
   check("F: the $4.62-per-headcount card is retired under FTES metrics",
     !cardTexts.some(function (t) { return /Per-student rate/.test(t) && /headcount/.test(t); }));
   check("F: the rate card is denominated per CPL FTES", !!rate && /per CPL FTES/.test(rate));
-  check("F: the rate card states what the tranche buys, in CPL FTES",
-    !!rate && /CPL FTES the annual tranche buys/.test(rate));
+  check("F: the rate card states what the tranche supports, in CPL FTES",
+    !!rate && /CPL FTES the annual tranche supports/.test(rate));
   {
     // The card's own three numbers must reconcile: tranche ÷ rate = CPL FTES.
     const m = rate && rate.match(/\$([\d,]+) ÷ \$([\d,.]+) = ([\d,.]+) CPL FTES/);

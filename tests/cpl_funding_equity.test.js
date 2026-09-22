@@ -213,8 +213,11 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   T.render();
   check("front-load: window note explains roll-forward + the close-out year",
     doc.querySelector(".cplfund-years").textContent.indexOf("close out by 2028-29") !== -1);
-  check("front-load: footer explains the Combined-funding columns + roll-forward",
-    /Combined funding:/.test(footText(doc)) && /rolls forward/.test(footText(doc)));
+  // The footer's timing sentence retired with the notes block (Sam,
+  // 2026-09-22); the Summary's allocation line carries the roll-forward.
+  check("front-load: the Summary states that remaining funding rolls forward",
+    /rolls forward within the window/.test(doc.querySelector(".cplfund-summary").textContent) &&
+    !/Combined funding:/.test(footText(doc)));
   // The standalone-noncredit table is retired (R9, 2026-08-31): ONE table, one
   // row per institution — the trio's timing rides the same cells as everyone's.
   check("one college table only — no standalone noncredit table survives (R9)",
@@ -248,9 +251,9 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   const T = window.CPL_FUNDING_TAB;
   check("eligibility block renders the two built-in requirements as editable text",
     doc.querySelector(".cplfund-elig") &&
-    doc.querySelector('input[data-edit="coord-label"]') &&
-    doc.querySelector('input[data-edit="coord-label"]').value === "CPL Coordinator listed in MAP" &&
-    doc.querySelector('input[data-edit="part-label"]').value === "Participation request by");
+    doc.querySelector('textarea[data-edit="coord-label"]') &&
+    doc.querySelector('textarea[data-edit="coord-label"]').value === "CPL Coordinator listed in MAP" &&
+    doc.querySelector('textarea[data-edit="part-label"]').value === "Participation request by");
   check("deadline is editable and defaults to 2026-09-01",
     doc.querySelector('input[data-edit="deadline"]').value === "2026-09-01");
   check("Elig column renders with pending dashes before data loads",
@@ -265,8 +268,9 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
     asOf: "2026-07-06T06:00:00Z"
   });
   T.render();
-  check("summary counts coordinators (2 of " + D.colleges.length + ")",
-    doc.querySelector(".cplfund-elig").textContent.indexOf("2 of " + D.colleges.length) !== -1);
+  // 116 colleges: the credit colleges plus Calbright (Sam, 2026-09-22).
+  check("summary counts coordinators (2 of " + (D.colleges.length + 1) + ", Calbright included)",
+    doc.querySelector(".cplfund-elig").textContent.indexOf("2 of " + (D.colleges.length + 1)) !== -1);
   check("summary counts opt-ins (1 opted in)",
     doc.querySelector(".cplfund-elig").textContent.indexOf("1") !== -1);
   const alamedaRow = Array.from(doc.querySelectorAll("#cplFundTable tbody tr")).find(function (tr) {
@@ -315,8 +319,8 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   check("each requirement line carries a bullet (2 built-ins, 0 extras)",
     doc.querySelectorAll(".cplfund-elig .cplfund-bullet").length === 2);
   check("both built-in requirement labels are full-width editable inputs",
-    !!doc.querySelector('input[data-edit="coord-label"]') && !!doc.querySelector('input[data-edit="part-label"]') &&
-    !doc.querySelector('input[data-edit="coord-label"]').getAttribute("size"));
+    !!doc.querySelector('textarea[data-edit="coord-label"]') && !!doc.querySelector('textarea[data-edit="part-label"]') &&
+    !doc.querySelector('textarea[data-edit="coord-label"]').getAttribute("size"));
   // The live data lives on a status sub-line under each built-in (so the
   // requirement text itself is the whole editable row).
   check("coordinator live status renders on a sub-line",
@@ -327,11 +331,11 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   check("an ＋ Add requirement button renders", !!doc.getElementById("cplFundReqAdd"));
 
   // Built-in label edits persist (and keep their live-data sub-line intact).
-  commit(window, doc.querySelector('input[data-edit="coord-label"]'), "1. Coordinator on file in MAP");
+  commit(window, doc.querySelector('textarea[data-edit="coord-label"]'), "1. Coordinator on file in MAP");
   check("editing a built-in requirement label persists to the scenario",
     scenSlot(window).coordLabel === "1. Coordinator on file in MAP");
   check("the edited built-in label re-renders",
-    doc.querySelector('input[data-edit="coord-label"]').value === "1. Coordinator on file in MAP");
+    doc.querySelector('textarea[data-edit="coord-label"]').value === "1. Coordinator on file in MAP");
   check("the coordinator live status survives the label edit",
     doc.querySelector(".cplfund-elig").textContent.indexOf("checking MAP") !== -1 ||
     /\d+ of \d+/.test(doc.querySelector(".cplfund-elig").textContent));
@@ -405,7 +409,7 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   // appears, and Alameda (coordinator only) now meets ALL shown → ✓.
   click(window, doc.querySelector('[data-reqhide="part"]'));
   check("hiding a built-in removes its row from the box",
-    !doc.querySelector('input[data-edit="part-label"]') && !!doc.querySelector('input[data-edit="coord-label"]'));
+    !doc.querySelector('textarea[data-edit="part-label"]') && !!doc.querySelector('textarea[data-edit="coord-label"]'));
   check("a restore chip appears for the hidden requirement", !!doc.querySelector('[data-reqshow="part"]'));
   check("hide persists to the scenario", scenSlot(window).partHidden === true);
   check("badge follows: with only coordinator tracked, Alameda's pie is 1 green of 1",
@@ -416,7 +420,7 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   // Restore it.
   click(window, doc.querySelector('[data-reqshow="part"]'));
   check("restore brings the built-in row back",
-    !!doc.querySelector('input[data-edit="part-label"]') && !doc.querySelector('[data-reqshow="part"]') &&
+    !!doc.querySelector('textarea[data-edit="part-label"]') && !doc.querySelector('[data-reqshow="part"]') &&
     scenSlot(window).partHidden === false);
 
   // Copy requirements → formatted memo text via the builder.

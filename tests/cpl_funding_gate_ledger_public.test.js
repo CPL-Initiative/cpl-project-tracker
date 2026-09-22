@@ -168,10 +168,13 @@ function gateSub(row) { return row.querySelector("td.cf-award .cf-withheld"); }
   // the standalone "held in reserve" pool card folded into it), stating the
   // dollars are never redistributed.
   const summary = doc.querySelector(".cplfund-summary");
-  check("S6: the Summary surfaces the held-in-reserve total", !!summary &&
-    /held in reserve/i.test(summary.textContent));
-  check("S6: ...and states the dollars are never redistributed",
-    !!summary && /never redistributed|qualifying later/i.test(summary.textContent));
+  // Sam, 2026-09-22: the reserve bullet folds into the allocation bullet, which
+  // counts the held funding as demonstrated and ends on local confirmation.
+  check("S6: the Summary folds the held funding into the demonstrated figure", !!summary &&
+    !/held in reserve/i.test(summary.textContent) &&
+    /demonstrate \$[1-9]/.test(summary.textContent));
+  check("S6: ...and ends that line on local confirmation",
+    !!summary && /receives its demonstrated funding once it confirms local participation/.test(summary.textContent));
   check("S6: the standalone reserve pool card is retired into the Summary (R11)",
     !doc.querySelector(".cplfund-card.withheld"));
 

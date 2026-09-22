@@ -64,8 +64,10 @@ function storageKeys(window) {
   check("L5: the table's footnote sits under the table, inside the college section, not at the page foot",
     !!doc.querySelector('details.cplfund-sec[data-sec="college"] .cplfund-foot') &&
     !doc.querySelector("#cplFundingMount > .cplfund > .cplfund-foot"));
-  check("L5: ...and no longer points 'above' for the year or the requirements — they sit below the table now",
-    !/selected above|requirement above/.test(footText(doc)) && /funding outcomes below/.test(footText(doc)));
+  // Sam, 2026-09-22: "trim the notes to a sources line".
+  check("L5: ...and the footnote is ONE sources line",
+    doc.querySelectorAll('details.cplfund-sec[data-sec="college"] .cplfund-foot > div').length === 1 &&
+    /^Sources: MAP platform records/.test(doc.querySelector('details.cplfund-sec[data-sec="college"] .cplfund-foot').textContent.trim()));
   // A toggle THIS visit survives the re-render an edit triggers …
   const win = doc.querySelector('details.cplfund-sec[data-sec="window"]');
   win.open = true;
@@ -177,8 +179,9 @@ function storageKeys(window) {
   check("L7: ...as the PUBLIC rendering — embedding implies it, whatever the host forgot to set",
     !mount.querySelector("[data-edit]") && !mount.querySelector("[data-textedit]") &&
     !mount.querySelector("#cplFundReset") && !mount.querySelector("[data-viewmode]"));
-  check("L7: ...the footnote names Year 1 rather than a year selector the host page does not have",
-    /for Year 1\)/.test(footText(doc)) && !/selected/.test(footText(doc)));
+  check("L7: ...the footnote is the same one sources line on the host page",
+    /^Sources: MAP platform records/.test(mount.querySelector(".cplfund-foot").textContent.trim()) &&
+    !/selected/.test(footText(doc)));
   check("L7: ...and the search, the grouping and the export still travel with the table",
     !!mount.querySelector("#cplFundSearch") && !!mount.querySelector("#cplFundGroup") &&
     !!mount.querySelector("#cplFundCsv"));
