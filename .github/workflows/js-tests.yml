@@ -116,6 +116,13 @@ jobs:
       # through it. Pure-stdlib python; same non-required check.
       - name: M-ID short-code gate (corroborate, never gate on 1-2 chars)
         run: python3 tests/mid_short_code_gate_test.py
+      # The orphan-parent worklist (item 9 of the cross-list sheet): parents
+      # whose recorded discipline appears nowhere among their members. Its
+      # `decidable` column is what stops the list reading as a to-do — 93 of 111
+      # rows are undecidable because the members disagree among themselves.
+      # Pure-stdlib python; same non-required check.
+      - name: Orphan-parent worklist (the decidable column, and freshness)
+        run: python3 tests/orphan_parent_worklist_test.py
       # The PreToolUse guard that lets auto mode stop prompting on every read
       # (Session 277). It returns `allow` for read-only SQL, so the convenience
       # is only safe while every write case stays `deny` — a false allow is a

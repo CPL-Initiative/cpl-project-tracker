@@ -30,7 +30,7 @@ closes the PR path only; THIS lane stays open by design.
 | `cpl-landing-pages.yml` | `37 14 * * 1` | main (cron checkout) | `chatbox/college_landing_pages.json` |
 | `cpl-stories.yml` | `23 7 * * 1` | main (cron checkout) | `fact-sheet/cpl_stories.js` |
 | `cred-rename-apply.yml` | dispatch-only | main | `kb/credentials.json`, `kb/unified_titles.json`, `kb/coci_articulations.json`, `kb/credential_review_overlay.json`, `kb/cred_rename_dryrun/`, `kb/cred_rename_out/` |
-| `daily-dashboard.yml` | `17 6 * * *`; `17 9 * * *`; `17 12 * * *` | main | `index.html`, `CPL_Dashboard.html`, `CPL_Data.js`, `live_metrics.json`, `kpi_history.json`, `statewide_data.js`, `fact-sheet/statewide_recs.js`, `fact_sheet_metrics.json`, `statewide_prescriptive.js`, `college_activity.js`, `college_activity_template.html`, `kb/coci_curation.json`, `unified_courses_data.js`, `unified_courses_index.js`, `unified_courses_details.js`, `unified_courses_standalone.js`, `unified_courses_members.js`, `unified_courses_member_desc.js`, `unified_courses_suggestions.js`, `unified_courses_aligned.js`, `credential_reference_data.js`, `kb/row_audit/latest.json`, `kb/row_audit/*.md`, `exports/unified_courses.xlsx`, `cpl_pathways_membership_data.js`, `kb/discipline_canonical_subj4.json`, `prototype/ccr_atlas_data.json`, `prototype/skyview.html`, `prototype/ccr_cpl.json`, `prototype/ccr_cpl_universe.json`, `prototype/ccr_cpl_universe_members.json`, `prototype/ccr_sky.json`, `kb/discipline_blanks_worklist.json`, `kb/discipline_cpl_rollup.json`, `kb/credential_review_overlay.json`, `kb/governance_candidates.json`, `kb/cr_reference_worklist.json`, `kb/unclassified_assignments.json`, `kb/unified_titles.json`, `kb/credentials.json`, `kb/coci_articulations.json`, `kb/unclassified_fold/`, `kb/exhibit_audit/latest.json`, `kb/exhibit_audit/*.md`, `kb/unclassified_suggestions.json`, `kb/coci_title_corrections.json`, `kb/coci_duplicate_control_numbers.json`, `kb/cred_rename_dryrun/report.md`, `kb/cred_rename_dryrun/alias_map.json`, `kb/cred_rename_dryrun/collisions.json`, `cpl_funding_performance.js`, `cpl_funding_ess.js`, `veteran_jst.json`, `kb/workplan_goals_snapshot.json`, `kb/projects_snapshot.json`, `kb/project_lifecycle.json`, `kb/budget_snapshot.json`, `reports/CPL_Master_Report.docx`, `reports/projects/*.docx` |
+| `daily-dashboard.yml` | `17 6 * * *`; `17 9 * * *`; `17 12 * * *` | main | `index.html`, `CPL_Dashboard.html`, `CPL_Data.js`, `live_metrics.json`, `kpi_history.json`, `statewide_data.js`, `fact-sheet/statewide_recs.js`, `fact_sheet_metrics.json`, `statewide_prescriptive.js`, `college_activity.js`, `college_activity_template.html`, `kb/coci_curation.json`, `unified_courses_data.js`, `unified_courses_index.js`, `unified_courses_details.js`, `unified_courses_standalone.js`, `unified_courses_members.js`, `unified_courses_member_desc.js`, `unified_courses_suggestions.js`, `unified_courses_aligned.js`, `credential_reference_data.js`, `kb/row_audit/latest.json`, `kb/row_audit/*.md`, `exports/unified_courses.xlsx`, `cpl_pathways_membership_data.js`, `kb/discipline_canonical_subj4.json`, `prototype/ccr_atlas_data.json`, `prototype/skyview.html`, `prototype/ccr_cpl.json`, `prototype/ccr_cpl_universe.json`, `prototype/ccr_cpl_universe_members.json`, `prototype/ccr_sky.json`, `kb/discipline_blanks_worklist.json`, `kb/orphan_parent_worklist.json`, `kb/discipline_cpl_rollup.json`, `kb/credential_review_overlay.json`, `kb/governance_candidates.json`, `kb/cr_reference_worklist.json`, `kb/unclassified_assignments.json`, `kb/unified_titles.json`, `kb/credentials.json`, `kb/coci_articulations.json`, `kb/unclassified_fold/`, `kb/exhibit_audit/latest.json`, `kb/exhibit_audit/*.md`, `kb/unclassified_suggestions.json`, `kb/coci_title_corrections.json`, `kb/coci_duplicate_control_numbers.json`, `kb/cred_rename_dryrun/report.md`, `kb/cred_rename_dryrun/alias_map.json`, `kb/cred_rename_dryrun/collisions.json`, `cpl_funding_performance.js`, `cpl_funding_ess.js`, `veteran_jst.json`, `kb/workplan_goals_snapshot.json`, `kb/projects_snapshot.json`, `kb/project_lifecycle.json`, `kb/budget_snapshot.json`, `reports/CPL_Master_Report.docx`, `reports/projects/*.docx` |
 | `moc-crosswalk-sync.yml` | `17 8 5 * *` | main (cron checkout) | `kb/reference/moc_crosswalk.json` |
 | `overmerge-apply.yml` | dispatch-only | main | `kb/coci_minted_courses.json`, `kb/coci_minted_singletons.json`, `kb/coci_minted_memberships.json`, `kb/coci_articulations.json`, `kb/coci_unified_courses.json`, `kb/coci_curation.json`, `kb/overmerge_out/`, `kb/overmerge_apply/`, `kb/row_audit/` |
 | `phase-1e-apply.yml` | dispatch-only | main | `kb/coci_minted_courses.json`, `kb/coci_minted_singletons.json`, `kb/coci_minted_memberships.json`, `kb/coci_articulations.json`, `kb/coci_unified_courses.json`, `kb/coci_curation.json`, `kb/discipline_canonical_subj4.json`, `kb/subj4_dryrun/`, `kb/subj4_apply/`, `kb/row_audit/` |
@@ -249,7 +249,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `tmc_ge_patterns.js` | `CPL_TMC_GE_PATTERNS` | not stated in header | tabs: `tmc-builder` |
 | `tmc_templates.js` | `CPL_TMC_TEMPLATES` | `tmc/_parse_tmc_pdfs.py` | tabs: `tmc-builder` · scripts: `tmc/_build_college_adts.py`, `tmc/_parse_tmc_pdfs.py` |
 | `unified_courses_aligned.js` | `CPL_UC_ALIGNED` | not stated in header | tabs: `unified-courses` · scripts: `excel_to_dashboard.py`, `kb/_build_aligned_exhibits.py` |
-| `unified_courses_data.js` | `CPL_UNIFIED_COURSES` | not stated in header | tabs: `unified-courses` · scripts: `excel_to_dashboard.py`, `kb/_analyze_witness_kinship.py`, `kb/_build_ccr_atlas_extract.py`, `kb/_build_ccr_sky.py`, `kb/_build_ccr_universe.py`, `kb/_build_crosslist_decision_sheet.py`, `kb/_build_discipline_blanks_worklist.py`, `kb/_esl_ladder_relevel_dryrun.py`, `kb/_merge_candidate_queue.py`, `kb/_morphological_variant_dryrun.py`, `kb/_seed_college_short_names.py` |
+| `unified_courses_data.js` | `CPL_UNIFIED_COURSES` | not stated in header | tabs: `unified-courses` · scripts: `excel_to_dashboard.py`, `kb/_analyze_witness_kinship.py`, `kb/_build_ccr_atlas_extract.py`, `kb/_build_ccr_sky.py`, `kb/_build_ccr_universe.py`, `kb/_build_crosslist_decision_sheet.py`, `kb/_build_discipline_blanks_worklist.py`, `kb/_build_orphan_parent_worklist.py`, `kb/_esl_ladder_relevel_dryrun.py`, `kb/_merge_candidate_queue.py`, `kb/_morphological_variant_dryrun.py`, `kb/_seed_college_short_names.py` |
 | `unified_courses_index.js` | `CPL_UC_INDEX` | not stated in header | tabs: `unified-courses` · scripts: `excel_to_dashboard.py`, `kb/_build_esl_fold_preview.py`, `kb/_esl_package_actionable.py`, `kb/_esl_package_apply.py` |
 | `unified_courses_member_desc.js` | `CPL_UC_MEMBER_DESC` | not stated in header | tabs: `unified-courses` · scripts: `excel_to_dashboard.py`, `kb/_build_ccr_universe.py`, `kb/_jev_adjudicate.py` |
 | `unified_courses_members.js` | `CPL_UC_MEMBERS` | not stated in header | tabs: `unified-courses` · scripts: `excel_to_dashboard.py`, `kb/_build_ccr_atlas_extract.py`, `kb/_build_ccr_universe.py`, `kb/_build_esl_fold_preview.py`, `kb/_esl_ladder_relevel_dryrun.py`, `kb/_esl_package_apply.py` |
@@ -389,6 +389,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_build_discipline_blanks_worklist.py` | workflows: `daily-dashboard.yml` | — |
 | `kb/_build_docs_index.py` | workflows: `js-tests.yml` | — |
 | `kb/_build_governance_candidates.py` | workflows: `daily-dashboard.yml` | — |
+| `kb/_build_orphan_parent_worklist.py` | workflows: `daily-dashboard.yml` | — |
 | `kb/_build_peer_articulations.py` | workflows: `credential-catalog-sync.yml`, `daily-dashboard.yml` | — |
 | `kb/_build_program_course_graph.py` | workflows: `daily-dashboard.yml`, `program-course-fetch.yml` | — |
 | `kb/_build_remint_blast_radius.py` | workflows: `js-tests.yml` | — |
@@ -504,6 +505,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/nc_learning_partners.json` | tabs: `nc-learning-partners` | — |
 | `kb/noncredit_cip_categories.json` | scripts: `kb/_build_noncredit_cip_categories.py`, `kb/_classify_noncredit_programs.py` | scripts: `kb/_build_noncredit_cip_categories.py` |
 | `kb/occupation_credential_map.json` | scripts: `kb/_build_college_offering_crosswalk.py`, `kb/_build_partner_crosswalk.py` | — |
+| `kb/orphan_parent_worklist.json` | scripts: `kb/_build_orphan_parent_worklist.py` | scripts: `kb/_build_orphan_parent_worklist.py` · committed by: `daily-dashboard.yml` |
 | `kb/overmerge_apply` | none found | committed by: `overmerge-apply.yml` |
 | `kb/overmerge_out` | none found | committed by: `overmerge-apply.yml` |
 | `kb/overmerge_out/2026-05-29/coherence.json` | none found | scripts: `kb/_overmerge_dryrun.py` |
@@ -550,7 +552,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/reference/moc_crosswalk.json` | scripts: `kb/_sync_moc_crosswalk.py` | scripts: `kb/_sync_moc_crosswalk.py` · committed by: `moc-crosswalk-sync.yml` |
 | `kb/reference/mq_disciplines.json` | scripts: `excel_to_dashboard.py`, `kb/_apply_kin_pe_convergence.py`, `kb/_build_ccr_title_rung_sheet.py`, `kb/_build_crosslist_decision_sheet.py`, `kb/_infer_disciplines.py`, `kb/_infer_disciplines_from_desc.py`, `kb/_infer_disciplines_from_top.py`, `kb/_infer_disciplines_from_top_division.py`, `kb/_preseed_null_issuers.py`, `kb/_seed_coci_courses.py`, `kb/_seed_coci_minted_mids.py`, `kb/_seed_subject_discipline_map.py`, `kb/_verify_top_division_inference.py` | — |
 | `kb/reference/mq_sections.json` | tabs: `canonical-subj4` · scripts: `kb/_ccr_trail.py` | — |
-| `kb/reference/subject_discipline_map.json` | scripts: `excel_to_dashboard.py`, `kb/_apply_crossdisc_remint.py`, `kb/_build_ccr_title_rung_sheet.py`, `kb/_build_crosslist_decision_sheet.py`, `kb/_preseed_null_issuers.py`, `kb/_seed_coci_minted_mids.py`, `kb/_seed_subject_discipline_map.py` | scripts: `kb/_seed_subject_discipline_map.py` |
+| `kb/reference/subject_discipline_map.json` | scripts: `excel_to_dashboard.py`, `kb/_apply_crossdisc_remint.py`, `kb/_build_ccr_title_rung_sheet.py`, `kb/_build_crosslist_decision_sheet.py`, `kb/_build_orphan_parent_worklist.py`, `kb/_preseed_null_issuers.py`, `kb/_seed_coci_minted_mids.py`, `kb/_seed_subject_discipline_map.py` | scripts: `kb/_seed_subject_discipline_map.py` |
 | `kb/reference/swp_region_roster.json` | scripts: `kb/_build_regional_cpl_opportunity.py`, `kb/_emit_swp_region_data.py` | — |
 | `kb/reference/top_categories.json` | scripts: `kb/_authority_recode_dryrun.py`, `kb/_build_ccr_sky.py`, `kb/_build_ccr_universe.py`, `kb/_join_cte_from_top.py`, `kb/_seed_canonical_subj4.py` | — |
 | `kb/reference/topcip_2021_crosswalk.xlsx` | scripts: `kb/_build_cip_crosswalk.py` | — |
@@ -697,6 +699,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/merge_chain_flatten_test.py` | workflows: `js-tests.yml` | — |
 | `tests/mid_short_code_gate_test.py` | workflows: `js-tests.yml` | — |
 | `tests/occupation_matcher_stemming_test.py` | workflows: `js-tests.yml` | — |
+| `tests/orphan_parent_worklist_test.py` | workflows: `js-tests.yml` | — |
 | `tests/prefix_fold_apply_test.py` | workflows: `js-tests.yml` | — |
 | `tests/prefix_fold_dryrun_test.py` | workflows: `js-tests.yml` | — |
 | `tests/probe_lifecycle_checks_test.py` | workflows: `js-tests.yml` | — |
@@ -898,5 +901,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 499 file
-datasets · 145 external services · 355 consumers · 35 workflows · 37 tabs.
+Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 502 file
+datasets · 145 external services · 356 consumers · 35 workflows · 37 tabs.

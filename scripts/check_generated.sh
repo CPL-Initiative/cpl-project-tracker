@@ -38,6 +38,7 @@ run "Sierra rule defaults"    "node tests/sierra_rules.test.js >/dev/null 2>&1 |
 # The discipline-blank worklist (S243) derives from unified_courses_data.js AND
 # the subject map, so a map edit staled it in the same commit that made it.
 run "discipline blanks worklist" "python3 kb/_build_discipline_blanks_worklist.py --check"
+run "orphan-parent worklist"   "python3 kb/_build_orphan_parent_worklist.py --check"
 # ⚠️ AND IT MISSED ONE MORE, WHICH SHIPPED (2026-09-18, #1618). prototype/skyview.html
 # is assembled by prototype/build_ccr_atlas.py, and step 4d2 of daily-dashboard.yml
 # re-runs that build whenever the unified-courses artifacts move. A session edited the
