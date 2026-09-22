@@ -475,3 +475,97 @@ names as the hard one. The calibration stands.
 **CCR is deliberately not wired.** Its method half emits Trust Cards rather than
 findings, and it is the big kahuna; pointing an unvalidated routine at it before
 scoring against the 51 would be backwards.
+
+---
+
+## 2026-09-21 — S282 SkyLedger: the ladder, the CCR rung, and three things found by running rather than reasoning
+
+**Sam ruled item 1 of the ladder: the CCR gets the next sitting of verdicts.**
+It is the sheet's only `by: "sam"` verdict — the other nine came back
+`as_proposed`, which under opt-out is a verdict for each item together with the
+statement that nobody individually reviewed one.
+
+### The ranking rule this lane owns does not rank the centers
+
+The handoff said to prioritize the four centers by **collapse value** (rows ×
+colleges), the rule this lane established. Measured on
+`chatbox_peer_articulations`, the CER, CSR, CCR and CCRR each ride the **same
+9,413 articulation rows across the same 82 colleges** — they consolidate
+different COLUMNS of one corpus. The rule orders items WITHIN a center and is
+**undefined between them**; it would have returned a tidy-looking tie.
+
+**Third corpus, third rule.** The ACE lane found the mirror image on 2026-08-14
+(every head topic already at 80–100 of 108 colleges, so the multiplier is a
+constant). The durable version is now a KB note:
+[`methodology-a-ranking-rule-is-a-claim-about-where-variance-lives`](kb-notes/methodology-a-ranking-rule-is-a-claim-about-where-variance-lives.md).
+
+**What ranked them instead** is what ONE SITTING of verdicts buys: CCRR ~29 rows
+per verdict (51 verdicts settled 1,459 rows) · CER ~1.2 (all 59 findings reach
+**71 rows across 20 colleges**, and only 21 of its 38 keys touch the articulated
+corpus at all) · CCR **134,485 member rows over 16,478 identities**.
+
+### The CCR is wired, and the triage was the whole job
+
+`ccr_findings()` turns 27,580 Trust Cards into **1,237 questions** — the same
+shape as CER (239→59) and CSR (185→143), reached by asking which tags a curator
+would recognize as a question rather than by taking the biggest pile.
+
+⚠️ **6,621 rows fire on signals this repo has already ruled non-authoritative,
+and asking about them is the expensive mistake.** `unit_anomaly` (4,179) is the
+question the battery MEASURED Jev on at **AUC 0.281, below chance**;
+`top_discipline_disagreement` (1,189) and `member_top_divergence` (1,253) ask
+Jev to gate on TOP, which Rule 7 forbids. `CCR_NEVER_ASK` names all three with
+the reason, `CCR_RANK_ONLY` holds the two SUBJ4 tags, and
+`tests/jev_ccr_adapter.test.js` fails any re-addition.
+
+⚠️ **`discipline_title_mismatch` is mostly artifact, which is why the
+description rides every rule.** It fires on token overlap, so *Three-Dimensional
+Design* under Art and *Environmental Ethics* under Philosophy are both flagged
+and both right. The real misses are only visible in the description: an *Ethics*
+row under Philosophy whose description is **DEH-24's dental-hygiene
+prerequisites**. COCI's `_x000D_` escapes are stripped; the catalog boilerplate
+STAYS, because that prerequisite list IS the evidence.
+
+### Sam's rung design, and what CIP actually is
+
+> *"title then CIP then course description"* … *"course records do carry CIP"*
+> … *"the MIDs were minted a while back and new procedures might find a better
+> suited parent number and title"* … *"the MIDs are still experimental, so the
+> stakes are low for mistakes. We want to use these process explorations to
+> better configure decisions for faculty to respond to and curate where
+> needed."*
+
+**CIP is at PROGRAM level** (`coci_college_programs.cip_code`), and the observed
+one beats the CO's published crosswalk roughly 3x: mean **2.85** CIPs per TOP
+over 19,349 programs with the modal CIP holding **86.5%**, against the
+crosswalk's 8.4 and a worst case of 1,032. `kb/top_cip_map.json` holds it and it
+resolves for **1,235 of the 1,237** questions. It corroborates and never gates —
+a course's only route to a CIP is its TOP code.
+
+⚠️ **THE PARENT LAYER IS AN UNREVIEWED MAY DRAFT, AND SAM CALLED IT.** 15,513 of
+19,568 parents (**79%**) were minted 2026-05 by a "Phase B M-ID consolidation
+draft" pass; **ZERO carry a human `reviewed_by`**; 15,513 titles read
+`local catalog (representative/modal)`, the bottom rung of the CCRR naming
+cascade; 14,751 (75%) carry no `discipline_source`; and **zero carry a C-ID or
+CCN**, so the cascade's top two rungs fire on nothing at this layer.
+
+**So the rungs run membership first, parent second, and loop** — re-titling a
+parent before its membership is settled bakes the error into the new name.
+
+### Three catches, none from a test
+
+- **The ranking rule failed when measured**, not when reasoned about.
+- **The gate bug appeared when the runner was wired.** `act_bucket` read one
+  module-level `GATE`, so a CCR run would have printed `suggest` off 0.85 — a
+  number measured on the CCRR's question. `jev_ccr_adapter` was passing 15/15 at
+  the time. `GATES` is per-reference now, and a reference without one runs as a
+  **calibration sitting**: every row `uncalibrated`, nothing proposed, no second
+  look spent (a skeptic refutes a proposal, and a calibration run makes none).
+- **A stale dependency map cost a red CI run**, then the pre-push gate caught the
+  next two. `scripts/check_generated.sh` has existed since S242 and nothing in
+  `CLAUDE.md` named it; it does now.
+
+**NEXT:** dispatch `typesafe-smoke.yml` with `adjudicate=ccr`, `rung=title`,
+a small `adjudicate_limit`; build a decision sheet from the `jev-ccr` artifact;
+Sam's verdicts on it calibrate the title rung's gate and earn the CCR an entry
+in `GATES`.

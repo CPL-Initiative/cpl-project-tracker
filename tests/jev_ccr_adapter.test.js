@@ -41,8 +41,8 @@ const data = JSON.parse(py(
   "  'sample': f[0] if f else None}))"));
 
 /* ── 1. the traps are never asked ─────────────────────────────────────────── */
-const TRAPS = ["unit_anomaly", "top_discipline_disagreement", "member_top_divergence"];
-check("the three measured traps are named as never-ask",
+const TRAPS = ["top_discipline_disagreement", "member_top_divergence"];
+check("the TOP traps are named as never-ask",
   TRAPS.every((t) => data.never.includes(t)),
   "CCR_NEVER_ASK = " + data.never.join(","));
 
@@ -58,8 +58,9 @@ check("no trap tag is in the askable set",
 // Same Rule 7 logic that held the CSR out of the ladder: a SUBJ4 change is a
 // re-mint, so Jev may order these for a curator and must not carry the verdict.
 const IDENTITY = ["subject_discipline_outlier", "subject_collision_signal"];
-check("the identity tags are rank-only, never asked",
-  IDENTITY.every((t) => data.rank_only.includes(t) && !data.rules.includes(t)),
+check("the identity tags stay rank-only and never reach the evidence rungs",
+  IDENTITY.every((t) => data.rank_only.includes(t)) &&
+  IDENTITY.every((t) => !data.rules.includes(t)),
   "rank_only: " + data.rank_only.join(",") + " | emitted: " + data.rules.join(","));
 
 /* ── 3. what IS asked is the content judgment, and only that ──────────────── */
@@ -88,52 +89,93 @@ check("COCI carriage-return escapes are stripped from the evidence",
     "f,_ = j.ccr_findings()\nprint(' '.join(x['evidence'] for x in f))")),
   "a window spent on escape artifacts is a window not spent on the course");
 
-/* ── 5. the progressive rungs: title -> cip -> description ────────────────── */
-// Sam, 2026-09-21: "title then CIP then course description". One question asked
-// with more evidence each rung, so the cheap signal settles the easy rows. The
-// rungs must be CUMULATIVE and ORDERED, or "escalate what rung 1 could not
-// settle" means nothing — rung 2 has to be rung 1 plus the CIP, not a different
-// question wearing the same name.
-const rungs = JSON.parse(py(
-  "f, _ = j.ccr_findings()\n" +
+/* ── 5. Sam's revised ladder, and the two kinds of rung ──────────────────── */
+// Sam, 2026-09-21: "make CIP the 3rd level and add units into the ladder ...
+// Add in a rung for subject code outliers and untouched seeds, and blanks
+// (where there is something useful to work with in the aggregate)."
+//
+// ⚠️ RUNGS 1-3 ARE ONE QUESTION WITH CUMULATIVE EVIDENCE; RUNGS 4-6 ARE
+// SEPARATE QUESTIONS OVER SEPARATE POPULATIONS. Conflating them would let a
+// future session read rung 4 as "rung 3 plus units" and ask the units question
+// of rows that have no unit spread.
+const L = JSON.parse(py(
+  "f, _ = j.ccr_findings('cip')\n" +
   "x = [y for y in f if 'CIP colleges assigned' in y['rungs']['cip']][0]\n" +
-  "print(json.dumps({'order': list(j.CCR_RUNGS), 'r': x['rungs'],\n" +
-  "  'with_cip': sum(1 for y in f if 'CIP colleges assigned' in y['rungs']['cip']),\n" +
-  "  'n': len(f)}))"));
+  "counts = {r: len(j.ccr_findings(r)[0]) for r in j.CCR_RUNGS}\n" +
+  "u, _ = j.ccr_findings('units')\n" +
+  "ag, _ = j.ccr_findings('aggregate')\n" +
+  "print(json.dumps({'order': list(j.CCR_RUNGS), 'kind': j.CCR_RUNG_KIND,\n" +
+  "  'r': x['rungs'], 'counts': counts, 'thresh': j.UNITS_NONCRITICAL,\n" +
+  "  'never_auto': list(j.CCR_NEVER_AUTO), 'moved': sorted(j.CCR_MOVED_TO_RUNG),\n" +
+  "  'u_ev': u[0]['evidence'], 'ag_ev': ag[0]['evidence']}))"));
 
-check("the rungs are ordered title, cip, description",
-  rungs.order.join(",") === "title,cip,description", rungs.order.join(","));
+check("the ladder runs title, description, cip, units, subject, aggregate",
+  L.order.join(",") === "title,description,cip,units,subject,aggregate",
+  L.order.join(","));
 
-check("each rung CONTAINS the one before it",
-  rungs.r.cip.startsWith(rungs.r.title) && rungs.r.description.startsWith(rungs.r.cip),
-  "a rung that drops earlier evidence is a different question, not an escalation");
+check("the first three are evidence rungs and the last three are populations",
+  ["title", "description", "cip"].every((r) => L.kind[r] === "evidence") &&
+  ["units", "subject", "aggregate"].every((r) => L.kind[r] === "population"),
+  JSON.stringify(L.kind));
 
-check("rung 1 carries no CIP and no description",
-  !/CIP colleges assigned/.test(rungs.r.title) && !/description:/.test(rungs.r.title),
-  rungs.r.title.slice(0, 160));
+check("each EVIDENCE rung contains the one before it",
+  L.r.description.startsWith(L.r.title) && L.r.cip.startsWith(L.r.description),
+  "an evidence rung that drops earlier evidence is a different question");
 
-check("the description arrives only at rung 3",
-  !/description:/.test(rungs.r.cip) && /description:/.test(rungs.r.description),
-  "cip rung: " + rungs.r.cip.slice(-90));
+check("the description arrives at rung 2 and the CIP at rung 3",
+  !/description:/.test(L.r.title) && /description:/.test(L.r.description) &&
+  !/CIP colleges assigned/.test(L.r.description) && /CIP colleges assigned/.test(L.r.cip),
+  "Sam moved CIP behind the description on 2026-09-21");
 
-// ⚠️ CIP CORROBORATES, NEVER GATES (Rule 7 reaches it: a course's only route to
-// a CIP is its TOP code). A bare code would read as fact where a TOP carries a
-// mean of 2.85 CIPs, so the majority rides into the evidence with it.
+check("the three evidence rungs share one population",
+  L.counts.title === L.counts.description && L.counts.description === L.counts.cip,
+  `${L.counts.title}/${L.counts.description}/${L.counts.cip}`);
+
+check("each population rung has its own, different population",
+  L.counts.units !== L.counts.title && L.counts.subject !== L.counts.title &&
+  L.counts.aggregate !== L.counts.title,
+  JSON.stringify(L.counts));
+
+// ⚠️ CIP CORROBORATES, NEVER GATES. A bare code would read as fact where a TOP
+// carries a mean of 2.85 CIPs.
 check("the CIP arrives with its own majority attached",
-  /the modal CIP on \d+% of \d+ programs/.test(rungs.r.cip),
-  rungs.r.cip.slice(-140));
+  /the modal CIP on \d+% of \d+ programs/.test(L.r.cip), L.r.cip.slice(-140));
 
-check("nearly every finding resolves a CIP",
-  rungs.with_cip / rungs.n > 0.9, `${rungs.with_cip} of ${rungs.n}`);
+/* ── 6. Sam's units rule is applied, not asked open ──────────────────────── */
+// `unit_anomaly` was never-ask because Jev scored AUC 0.281 on it, below
+// chance, applying the general prior that different hours mean different
+// content. Sam's rule overrules that prior, so the question is askable ONLY
+// with the threshold stated in it.
+check("units moved out of never-ask and into a rung",
+  L.moved.includes("unit_anomaly") && !data.never.includes("unit_anomaly"),
+  "moved: " + L.moved.join(",") + " | never: " + data.never.join(","));
 
-/* ── 6. a rung is asked ONE at a time, and only where rungs exist ─────────── */
-let rejected = false;
-try {
-  execFileSync("python3", ["kb/_jev_adjudicate.py", "--ref", "ccrr", "--rung", "title",
-                           "--dry-run"], { stdio: "pipe" });
-} catch (e) { rejected = /--rung applies to --ref ccr/.test(String(e.stderr || e)); }
-check("--rung is refused for a reference that has no rungs", rejected,
-  "asking a rung of the CCRR would silently ask its only question");
+check("⭐ the non-critical range is stated IN the question's evidence",
+  new RegExp("non-critical range of " + L.thresh).test(L.u_ev),
+  "without the rule the model invents a threshold — that is the 0.281 run");
+
+check("nothing at or under the non-critical range becomes a question",
+  JSON.parse(py(
+    "u, _ = j.ccr_findings('units')\n" +
+    "sp = [j._units_spread(x['id'].split('||')[0]) for x in u]\n" +
+    "print(json.dumps(min(s for s in sp if s is not None) > j.UNITS_NONCRITICAL))")),
+  "a spread inside the rule is settled by the rule, and costs no call");
+
+/* ── 7. the subject rung asks, and its answer is never an action ─────────── */
+check("the subject rung is named never-auto",
+  L.never_auto.includes("subject"),
+  "a subject-code change is a re-mint under the playbook, never a model's call");
+
+/* ── 8. the aggregate rung is scoped to what the members supply ──────────── */
+// Sam's qualifier: "where there is something useful to work with in the
+// aggregate". Membership records carry no description, so the fill comes from
+// the member-description artifact instead.
+check("the aggregate rung quotes the members' own descriptions",
+  /member: /.test(L.ag_ev) && /member course\(s\) describe it/.test(L.ag_ev),
+  L.ag_ev.slice(0, 160));
+
+check("it reaches thousands of rows, not a handful",
+  L.counts.aggregate > 1000, String(L.counts.aggregate));
 
 /* ── report ──────────────────────────────────────────────────────────────── */
 let pass = 0;

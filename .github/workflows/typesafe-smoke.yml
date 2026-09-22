@@ -47,9 +47,9 @@ on:
         type: string
         default: ''
       rung:
-        description: 'CCR only — which evidence to ask with. Ordered and cumulative; run ONE, calibrate its gate on a curator''s verdicts, then escalate only what it left unsettled.'
+        description: 'CCR only — one rung per run. title/description/cip are ONE question with cumulative evidence (escalate only what the last left unsettled); units/subject/aggregate are separate questions over their own populations. Each earns its own gate.'
         type: choice
-        options: ['', 'title', 'cip', 'description']
+        options: ['', 'title', 'description', 'cip', 'units', 'subject', 'aggregate']
         default: ''
       battery:
         description: 'Variable battery over the below-gate band (26 calls; scores itself against Sam 51 verdicts)'

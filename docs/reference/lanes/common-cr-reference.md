@@ -82,77 +82,50 @@ anchor, this lane's named hard case.
 proposals. The 2026-09-20 receipt predates opt-out and is entirely his, which is
 why it is the ground truth.
 
-## SCORED against Sam's 51 verdicts (2026-09-21, S281) — `kb/_jev_score.py`
+## The gate, the band, and the battery (2026-09-21, S281)
 
-Arithmetic over a committed receipt, so anyone can reproduce it without a runner.
-**The inherited claim reproduces exactly:** p ≥ 0.85 folded **25/25**; below it,
-16/26. Sweeping the threshold, **0.85 is the highest-recall cut that suggests no
-wrong fold at all** (precision 1.00, recall 0.61) and precision degrades the
-moment it drops — 0.94 at 0.80, 0.87 at 0.70.
+**The gate is empirically right.** p ≥ 0.85 folded **25/25**; sweeping it, 0.85
+is the highest-recall cut with precision 1.00 (recall 0.61), degrading at once
+below (0.94 at 0.80, 0.87 at 0.70). `kb/_jev_score.py` reproduces it from the
+committed receipt — no runner needed.
 
-⚠️ **NOTHING JEV IS ASKED TODAY ORDERS THE BAND BELOW THE GATE** — 26 pairs, 838
-rows, the part that actually needs a curator. Measured within it: **AUC(p_same)
-0.441, AUC(care) 0.450** against 0.50 for chance (permutation p = 0.67 on care).
-The three LOWEST-scored pairs in the whole set (0.32, 0.44, 0.48) were all folds.
+⚠️ **NOTHING ORDERS THE BAND BELOW THE GATE** — 26 pairs, 838 rows, the part
+that needs a curator. Within it AUC(p_same) **0.441**, AUC(care) **0.450**
+against 0.50 for chance. The three LOWEST-scored pairs in the whole set (0.32,
+0.44, 0.48) were all folds. ⚠️ **A whole-set comparison of `care` flatters and
+must not be used** — it reports a +0.41 separation that is really "above-gate
+items are easy". The band is the only honest place to measure.
 
-⚠️ **A WHOLE-SET COMPARISON OF `care` FLATTERS AND MUST NOT BE USED.** All ten
-keeps sit below the gate and the above-gate folds are easy ones with low care, so
-comparing every fold against every keep reports a +0.41 separation that is really
-"above-gate items are easy". **The band is the only honest place to measure.**
-This reading was made and corrected the same hour.
+**The battery** (`kb/_jev_battery.py`, six variables, selection rule fixed in
+source before any answer existed, primary gating six Holm-corrected
+secondaries) **ran and nothing passed** — receipt
+`kb/receipts/jev_battery_2026-09-21_s281.json`.
 
-## The battery: six variables, pre-registered, and it failed (2026-09-21, S281)
+⚠️ **THE PRIMARY CAME BACK BELOW CHANCE — `any_reason` AUC 0.378.** Backwards,
+not weakly right: where Jev found a reason to hold two apart, Sam was MORE
+likely to fold them.
 
-`kb/_jev_battery.py` — six reasons to hold two recommendations apart (**level ·
-scope · units · lab · vendor · different_course**), all phrased in one direction,
-all riding ONE call per pair. ⚠️ **The selection rule is fixed IN THE SOURCE
-before any answer exists** (AUC ≥ 0.65, permutation p ≤ 0.05, 20,000 shuffles,
-seed 7), the primary `any_reason` GATES the six secondaries (six tests over 26
-rows handed a winner on 2 of 25 pure-noise runs; with the gate, 0 of 25), and the
-design detects only AUC ≥ ~0.75 — **so a null means "no large effect in 26
-pairs", never "no signal"**. Read the script before re-running it.
-
-## THE BATTERY RAN, AND NOTHING PASSED (2026-09-21, run 35632754128)
-
-Full per-variable table in the receipt, because an Actions log and artifact both
-age out: `kb/receipts/jev_battery_2026-09-21_s281.json`.
-
-⚠️ **THE PRIMARY IS BELOW CHANCE — `any_reason` AUC 0.378 (p 0.848).** The battery
-is **backwards**, not weakly right: when Jev found a reason to hold two
-recommendations apart, Sam was MORE likely to fold them.
-
-⚠️ **`units` AT 0.281 IS INTERPRETABLE, AND THIS LANE PREDICTED IT.** The lane
-already rules **units are NOT identity** (`SPAN 100` at 4/4.5/5 is one course;
-`Engine Performance` correctly merges 2/3-4/4/5). Jev applies the general prior
-that an hours difference means a content difference — the assumption CPL has
+⚠️ **`units` AT 0.281 IS THE DURABLE LESSON.** Jev applies the general prior
+that an hours difference means a content difference — the prior this domain has
 overruled. **Where a domain has overruled a general prior, a general model's
-confidence runs the wrong way.** That is the durable lesson, and it is why
-`unit_anomaly` is in `CCR_NEVER_ASK`.
+confidence runs the wrong way.** Sam's 2-unit rule (below) is what makes the
+question askable at all.
 
-⚠️ **`level` IS A LEAD, NOT A FINDING** — right direction, largest effect, raw
-p 0.023, **Holm 0.138**. "Level works" is what anyone who had not pre-registered
-would have reported. It earns **ONE** targeted re-test on a batch it did not pick,
-pre-registered as a single hypothesis; **never a re-analysis of these 26 rows**.
+⚠️ **`level` IS A LEAD, NOT A FINDING** — raw p 0.023, **Holm 0.138**. It earns
+ONE targeted re-test on a batch it did not pick; **never a re-analysis of these
+26 rows**.
 
-**WHAT DID NOT FAIL: the 0.85 gate** — 25 of 25, 346 rows, nothing wrong in it.
-The failure is confined to the 26 hard pairs, which is where curator judgment IS
-the product rather than a cost to automate away.
+**What did not fail: the 0.85 gate** — 25 of 25, 346 rows.
 
 ## The ladder sheet, and the ranking rule that failed on it (2026-09-21, S282 SkyLedger)
 
 Sheet: **https://claude.ai/artifact/BkxGoSkJUE22BWCGcw9pwB** — ten items,
 generator `kb/_build_jev_ladder_sheet.py`.
 
-⚠️ **ALL TEN CAME BACK ADOPTED, AND NONE OF THEM IS SAM'S.** He pressed Complete
-at 18:31:36Z, two minutes after the sheet was published: `replies/done` reads
-`ruled: 0 · as_proposed: 10`, and every row is stamped `by: "default"`. Under
-opt-out that is a verdict for each item together with the statement that nobody
-individually reviewed one. **So this sheet is worth nothing as calibration** —
-the scoring rule is `by: "sam"` rows only, and there are none. Nine items are
-being executed because adopting them costs him nothing; **item 1 is held**,
-because it is the only one that spends something of his (his next sitting of
-verdicts, on the CCR) and it carries the sheet's proposal rather than his
-choice. Asked back in the comment thread.
+⚠️ **TEN ADOPTED, NONE OF THEM HIS** — `replies/done` reads `ruled: 0 ·
+as_proposed: 10`, every row `by: "default"`. **Worth nothing as calibration**
+(the scoring rule is `by: "sam"` rows). Item 1 was held and asked back; he then
+ruled it directly: **the CCR gets the next sitting**, at **40-60 findings**.
 
 ⚠️ **COLLAPSE VALUE CANNOT RANK THE FOUR CENTERS — IT IS A CONSTANT BETWEEN
 THEM.** Measured on `chatbox_peer_articulations`: the CER, CSR, CCR and CCRR
@@ -222,21 +195,16 @@ an *Ethics* row under Philosophy whose description is **DEH-24's dental-hygiene
 prerequisites**. COCI's `_x000D_` escapes are stripped; the catalog boilerplate
 STAYS, because that DEH prerequisite list IS the evidence.
 
-### Sam's ladder design (2026-09-21, verbatim)
+### Sam's ladder design (2026-09-21)
 
-> *"For each ladder process (e.g., CCR), we will identify progressive steps make
-> Jev determinations, right?"* … *"title then CIP then course description..."* …
-> *"course records do carry CIP"* … *"the MIDs were minted a while back and new
-> procedures might find a better suited parent number and title, so think about
-> how/if we incorporate that"*
+His words verbatim, including the revision that reordered it, are in the
+`CPLBrain` braindump and `docs/common_cr_reference_lessons.md`.
 
-**CIP IS REAL AND IT IS AT THE PROGRAM LEVEL** — `coci_college_programs.cip_code`,
-reached by college + TOP. ⚠️ **The OBSERVED CIP beats the published crosswalk by
-3x:** across 19,349 real programs a TOP carries a mean of **2.85** CIPs (max 14)
-and the modal CIP holds **84%** of its programs, against the CO crosswalk file's
-mean 8.4 and max 1,032 (only 38 of 419 TOPs resolve to one CIP there). 192 of the
-193 TOP codes behind the CCR questions are covered. CIP **corroborates, never
-gates** — CLAUDE.md's standing posture until CIP earns trust.
+**CIP IS AT PROGRAM LEVEL** (`coci_college_programs.cip_code`), and what colleges
+actually assigned beats the CO's published crosswalk ~3x: mean **2.85** CIPs per
+TOP over 19,349 programs, modal share **86.5%**, against 8.4 and a worst case of
+1,032. `kb/top_cip_map.json` holds it (builder carries the refresh query) and it
+resolves for **1,235 of 1,237**. It corroborates, never gates.
 
 ⚠️ **THE PARENT LAYER IS AN UNREVIEWED MAY DRAFT, AND SAM CALLED IT.** Measured
 on `kb/coci_minted_courses.json`: **15,513 of 19,568 parents (79%)** were minted
@@ -248,18 +216,55 @@ or CCN**, so the cascade's top two rungs fire on nothing at this layer; the 243
 authority anchors sit in `common_courses.json`, which the auditor excludes by
 design as upstream authority.
 
-**SO THE LADDER HAS A SEQUENCING CONSTRAINT.** Asking *"does this course belong
-under this parent"* treats the parent as fixed, and re-titling a parent before
-its membership is settled bakes the error into the new name. Membership first,
-parent second, and **loop**:
+**So the rungs run membership first, parent second, and loop.**
 
-| Rung | Question | Evidence |
-|---|---|---|
-| 1 | Does this member belong under this parent? | title |
-| 2 | Does CIP corroborate? | program CIP (disagreement routes down, never decides) |
-| 3 | Does the description settle it? | course description |
-| 4 | Is the PARENT right — its title, then its number? | the settled membership |
-| 5 | Re-run, because a changed parent changes membership calls | — |
+| # | Rung | Population | Kind |
+|---|---|---|---|
+| 1 | **Title** — does this course belong under this discipline? | 1,237 | evidence |
+| 2 | **Course description** | 1,237 (same rows, + evidence) | evidence |
+| 3 | **CIP** | 1,237 (same rows, + evidence) | evidence |
+| 4 | **Units** — is the spread a content difference? | **1,538** | population |
+| 5 | **Subject-code outliers** | **435** | population |
+| 6 | **Blanks the aggregate can fill** | **4,065** | population |
+| 7 | The parent's own title, then its number | waits on settled membership | — |
+
+⚠️ **TWO KINDS OF RUNG, AND CONFLATING THEM COSTS A SITTING.** Rungs 1-3 are ONE
+question over ONE population with CUMULATIVE evidence, so "escalate what rung 1
+could not settle" is meaningful. Rungs 4-6 are DIFFERENT questions over DIFFERENT
+populations — they neither accumulate nor escalate into one another, and **each
+earns its own gate**. `CCR_RUNG_KIND` says which is which.
+
+⚠️ **SAM'S 2-UNIT RULE IS THE DOMAIN PRIOR THE BATTERY WAS MISSING**, and it is
+why `unit_anomaly` left `CCR_NEVER_ASK`. Jev scored **AUC 0.281** there — below
+chance — applying the general assumption that different hours mean different
+content. Sam: *"the range should be 2 units variation as a non-critical
+difference."* Measured across all 4,179 cards (every one carries 2+ member unit
+values): **2,641 (63%) clear mechanically at or under 2 units, spending no
+call**; **1,538 (37%) sit above it**, up to 33 apart. ⚠️ **The rule is STATED IN
+the question** — re-adding it as a bare "do these units differ?" reproduces
+0.281 exactly.
+
+⚠️ **THE SUBJECT RUNG ASKS AND NEVER ACTS.** `CCR_NEVER_AUTO` names it: a SUBJ4
+change is a re-mint under the mandatory playbook. Sam's low-stakes framing makes
+the exploration safe; it does not make a model's answer a decision.
+
+⚠️ **THE AGGREGATE RUNG'S FILL IS THE DESCRIPTION, AND IT COMES FROM A DIFFERENT
+FILE.** Membership records carry college, control number, subject, course
+number, units, credit status and TOP — **never a description**. 4,231 of the
+7,158 aggregatable rows are missing exactly that, and **4,065 have member
+descriptions** in `unified_courses_member_desc.js` (keyed by the same id, loaded
+lazily because it is 47 MB). Of those, **271 agree word-for-word** (a mechanical
+fill) and **3,794 differ** (the judgment). Sam's qualifier — *"where there is
+something useful to work with in the aggregate"* — excludes the 8,132 blank/seed
+cards that carry no members at all.
+
+⚠️ **THE TWO TOP TAGS STAY NEVER-ASK** (2,442 rows). No domain rule rescues a
+question whose whole premise is *"TOP disagrees"*; that is what separates them
+from units.
+
+**THE LADDER IS THE TEMPLATE, NOT A CCR SHAPE (Sam, 2026-09-21):** *"I will want
+similar rungs for the other datasets."* The CER, CSR and CCRR each get their own
+rungs on this pattern.
 
 Rung 4's **title** follows Sam's cascade (CCN > C-ID > M-ID > published line >
 modal wording); its **number** is a re-mint under the mandatory playbook, with
