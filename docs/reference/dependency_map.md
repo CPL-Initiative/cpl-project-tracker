@@ -339,6 +339,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `docs/research_workexp_crossdisc_remint_scope.md` | scripts: `kb/_crossdisc_dryrun.py` | — |
 | `docs/roadmap_archive.md` | scripts: `kb/_consolidation_loss_audit.py` | — |
 | `docs/session_<N>_handoff.md` | scripts: `kb/_build_docs_index.py` | — |
+| `docs/visuals/<date>-ccr-title-rung.html` | scripts: `kb/_build_ccr_title_rung_sheet.py` | scripts: `kb/_build_ccr_title_rung_sheet.py` |
 | `docs/visuals/<date>-decision-sheet-template.html` | none found | scripts: `kb/_build_decision_sheet_demo.py` |
 | `docs/visuals/<date>-jev-ladder.html` | scripts: `kb/_build_jev_ladder_sheet.py` | scripts: `kb/_build_jev_ladder_sheet.py` |
 | `docs/visuals/<date>-memory-audit-verdicts.html` | scripts: `kb/memory_audit/2026-09-05-sheet_builder.py` | scripts: `kb/memory_audit/2026-09-05-sheet_builder.py` |
@@ -522,6 +523,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/projects_validation.md` | none found | scripts: `kb/_validate_projects.py` · committed by: `projects-seed-apply.yml` |
 | `kb/promotions.json` | scripts: `excel_to_dashboard.py`, `kb/_analyze_official_fold_evidence.py`, `kb/_analyze_witness_kinship.py`, `kb/_build_remint_blast_radius.py`, `kb/_desc_consolidation_dryrun.py`, `kb/_esl_package_dryrun.py`, `kb/_rekey_promotions.py`, `kb/_remint_apply.py`, `kb/_seed_authority_codes.py`, `kb/_title_consolidation_dryrun.py`, `kb/_uc_cur_zscheme_dryrun.py` | scripts: `kb/_rekey_promotions.py` |
 | `kb/receipts/cr_reference_decisions_<date>_s280.json` | scripts: `kb/_build_decision_sheet_demo.py` | — |
+| `kb/receipts/jev_ccr_title_rung_<date>_s282.json` | scripts: `kb/_build_ccr_title_rung_sheet.py` | — |
 | `kb/reference/CIPCode2020.csv` | scripts: `kb/_build_cip_crosswalk.py` | — |
 | `kb/reference/authority_subject_codes.json` | scripts: `kb/_seed_authority_codes.py` | scripts: `kb/_seed_authority_codes.py` |
 | `kb/reference/cb_course_basic_fall2025.csv` | scripts: `kb/_build_futuro_hth_crosswalk.py`, `kb/_build_program_course_graph.py` | — |
@@ -894,5 +896,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 495 file
-datasets · 145 external services · 353 consumers · 35 workflows · 37 tabs.
+Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 497 file
+datasets · 145 external services · 354 consumers · 35 workflows · 37 tabs.
