@@ -76,20 +76,31 @@ READ_STARTS = ("select", "with", "explain", "show", "table", "values")
 # delete, a truncate, a drop, or a verb this file cannot place all keep the
 # original answer.
 #
-# cpl_memory is the right table to carve out and the only one: it is the
-# session's OWN memory, appended to by every checkpoint, keyed by slug, and it
-# holds no student data and no curator decisions. kb_curation is exactly the
-# table Rule 10 exists to protect and stays behind the prompt.
+# cpl_memory is the right table to carve out: it is the session's OWN memory,
+# appended to by every checkpoint, keyed by slug, and it holds no student data
+# and no curator decisions. kb_curation is exactly the table Rule 10 exists to
+# protect and stays behind the prompt.
+#
+# ⚠️ ITS AUDIT LOG TOO, INSERT ONLY (Sam, 2026-09-23: "i accepted your 3 recs",
+# evening sheet item 3). The playbook's step 6 logs every memory write to
+# cpl_memory_log and verifies the log landed, and this carve-out named
+# cpl_memory alone, so the step could not complete. S280 logged through
+# apply_migration instead (its log note says so, 2026-09-20), the route around
+# a refusing guard that S281 ruled out, and S284's eight rows sat unlogged. The
+# log takes appends only: an UPDATE or a DELETE of it rewrites the audit trail
+# and keeps the deny.
 MEMORY_TABLE = "cpl_memory"
+MEMORY_LOG_TABLE = "cpl_memory_log"
 
 
 def _memory_only_write(clean, hits):
-    """True when every write in this statement targets cpl_memory."""
+    """True when every write in this statement targets cpl_memory, or appends to its log."""
     if set(hits) - {"insert", "update"}:
         return False
     inserts = re.findall(r"\binsert\b", clean)
     updates = re.findall(r"\bupdate\b", clean)
-    ok_ins = re.findall(r"\binsert\s+into\s+(?:public\.)?" + MEMORY_TABLE + r"\b", clean)
+    ok_ins = re.findall(r"\binsert\s+into\s+(?:public\.)?(?:" + MEMORY_LOG_TABLE + "|"
+                        + MEMORY_TABLE + r")\b", clean)
     ok_upd = re.findall(r"\bupdate\s+(?:only\s+)?(?:public\.)?" + MEMORY_TABLE + r"\b", clean)
     if len(inserts) != len(ok_ins) or len(updates) != len(ok_upd):
         return False
@@ -210,7 +221,8 @@ def decide(sql):
     if hits and _memory_only_write(clean, hits):
         return "allow", (
             "Rule 8 memory write to cpl_memory (auto-approved by the repo's "
-            "guard). Every write in this statement targets cpl_memory."
+            "guard). Every write in this statement targets cpl_memory or "
+            "appends to cpl_memory_log."
         )
     if hits:
         return "deny", (

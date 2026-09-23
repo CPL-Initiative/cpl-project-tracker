@@ -95,6 +95,30 @@ CASES = [
      "-- Rollback: delete from cpl_memory where verified_by like '%S284%';\n"
      "insert into cpl_memory (slug, summary) values ('x', 'Sam''s ruling') "
      "on conflict (slug) do nothing;", "allow"),
+    # The playbook's step 6 logs every memory write and verifies the log, and
+    # the log insert read "deny" until 2026-09-23 (Sam's yes, evening sheet
+    # item 3): S280 logged through apply_migration instead, and S284's eight
+    # rows sat unlogged. The log takes appends only; an update or a delete of
+    # it rewrites the audit trail.
+    ("the playbook's log insert (step 6)",
+     "insert into public.cpl_memory_log (memory_id, actor, action, note, after) "
+     "select m.id, 'SkyWage-s284', 'create', 'checkpoint auto-write', to_jsonb(m) "
+     "from public.cpl_memory m where m.author = 'SkyWage-s284' and not exists "
+     "(select 1 from public.cpl_memory_log l where l.memory_id = m.id "
+     "and l.action = 'create');", "allow"),
+    ("a memory insert and its log insert in one call",
+     "insert into cpl_memory (slug) values ('x') on conflict (slug) do nothing; "
+     "insert into cpl_memory_log (memory_id, actor, action) "
+     "select id, 'S1', 'create' from cpl_memory where slug = 'x';", "allow"),
+    ("an update of the log rewrites the audit trail",
+     "update cpl_memory_log set note = 'x' where actor = 'S1';", "deny"),
+    ("a delete of the log rewrites the audit trail",
+     "delete from public.cpl_memory_log where actor = 'S1';", "deny"),
+    ("a log insert beside another table's insert",
+     "insert into cpl_memory_log (actor, action) values ('S1', 'create'); "
+     "insert into kb_curation (k) values ('x');", "deny"),
+    ("a table that only starts with the log's name",
+     "insert into cpl_memory_log_archive (actor) values ('S1');", "deny"),
 
     # ── writes: every one of these must be denied ────────────────────────────
     ("update", "update cobi_nav set audience='everyone' where key='admin';", "deny"),

@@ -1,7 +1,7 @@
 ---
 title: Playbook — auto-write cpl_memory at every checkpoint (Phase 3 of the memory loop)
 created: 2026-07-24
-updated: 2026-09-06
+updated: 2026-09-23
 tags: [playbook, memory, supabase, checkpoint, governance, obsidian-target]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -101,6 +101,15 @@ principles" (`d-mem-*`/`r-mem-*` in the table itself).
    Every row this run wrote must show `creates = 1`. Backfill with the same
    `insert ... select`, guarded by `not exists (... action='create')`, and say in
    the note that the entry is late.
+
+   ⚠️ **The repo's SQL guard lets this insert through, and only this one (Sam's
+   yes, 2026-09-23).** A session may INSERT into `cpl_memory_log`; an update or a
+   delete of the log keeps the deny, since either rewrites the audit trail.
+   Until that day the guard denied the insert: S280 logged through
+   `apply_migration` on 2026-09-20, and S281 ruled that route out. If the guard
+   ever refuses this step again, stage the insert in the run's receipt, hand it
+   to Sam, and say the rows are written and **unlogged**; never log through
+   another tool.
 
    ⚠️ **Do not fold the log insert into the same statement as the row insert.**
    A data-modifying CTE's rows are not visible to the rest of that statement's
