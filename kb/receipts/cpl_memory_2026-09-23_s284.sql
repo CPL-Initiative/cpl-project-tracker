@@ -21,8 +21,8 @@ on conflict (slug) do nothing;
 -- ── The playbook's step 6 log for the eight rows above ──
 -- The rows above were written 2026-09-23 20:56 UTC through execute_sql. This log insert was refused then:
 -- the guard allowed a session to write cpl_memory alone. Sam said yes to letting a session append to the
--- log (evening sheet item 3, accepted in session about 21:15 UTC), and the session runs this once that
--- guard change merges. Idempotent: a rerun adds nothing.
+-- log (evening sheet item 3, accepted in session about 21:15 UTC). The session ran this at 21:57:35 UTC,
+-- after that guard change merged (#1671); the verify query read creates = 1 for all eight. Idempotent.
 insert into public.cpl_memory_log (memory_id, actor, action, note, after)
 select m.id, 'SkyWage-s284', 'create', 'S284 checkpoint auto-write, logged late: the guard refused the log insert until Sam said yes', to_jsonb(m)
 from public.cpl_memory m
