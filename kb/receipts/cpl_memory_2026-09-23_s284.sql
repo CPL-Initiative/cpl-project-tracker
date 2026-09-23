@@ -33,3 +33,16 @@ where m.author = 'SkyWage-s284'
 --   left join public.cpl_memory_log l on l.memory_id = m.id where m.author = 'SkyWage-s284'
 --   group by m.slug order by m.slug;
 -- Rollback of this block alone: delete from public.cpl_memory_log where actor = 'SkyWage-s284' and action = 'create';
+
+-- ── Close-out, 2026-09-23 22:5x UTC: one more row (the stale-window pitfall, #1672), then its log ──
+-- Written and logged at close-out; verified creates = 1. Rollback of this block: delete the log row
+-- (actor SkyWage-s284, note S284 close-out write) and then the memory row by slug.
+insert into cpl_memory (slug, kind, title, summary, detail, tags, status, source, verified_by, event_date, author)
+values
+ ('a-window-saves-only-over-the-version-it-read', 'pitfall', 'A funding-tab window that loaded before a change saved its older copy over it', 'A second window of the funding tab, opened before Sam published Scenario 1, saved at 21:30 and erased the published marker because the tab saves the whole config; since #1672 every save names the version its window read.', 'Measured 2026-09-23: projects.cpl-implementation.published read ''Scenario 1'' at 21:15 and was absent after Sam''s 21:30 save (Career attainment factor 0.5, P2''s measure text), with the rest of the config intact. cpl_funding.js reads cpl_funding_config once at load and PATCHes the whole config, and no current code path drops the key, so the save came from a window that loaded before the 19:44 Publish. Colleges kept Scenario 1 only because an unset marker falls back to it. The row has no history table, only an updated_at touch trigger. #1672: the PATCH carries updated_at=eq.<the value the window last read or wrote>; RLS and a stale stamp both return 200 with no rows, so the window re-reads the row (unchanged = refused, newer = load it and ask for the change again), and one window sends one save at a time. Guard: tests/cpl_funding_save_over_newer.test.js (15 checks, 12 fail on the old code). Any page that reads a single-row document and writes it back whole has the same race.', array['implementation-funding','supabase','concurrency','cobi'], 'proposed', 'docs/kb-notes/methodology-a-window-saves-only-over-the-version-it-read.md', 'SkyWage S284', '2026-09-23'::date, 'SkyWage-s284')
+on conflict (slug) do nothing;
+insert into public.cpl_memory_log (memory_id, actor, action, note, after)
+select m.id, 'SkyWage-s284', 'create', 'S284 close-out write (Rule 9 step 10)', to_jsonb(m)
+from public.cpl_memory m
+where m.slug = 'a-window-saves-only-over-the-version-it-read'
+  and not exists (select 1 from public.cpl_memory_log l where l.memory_id = m.id and l.action = 'create');

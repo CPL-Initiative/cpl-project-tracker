@@ -81,7 +81,7 @@ No PR is open.
   direct yes before touching the guard, and **Sam answered in session about 21:15 UTC: *"i accepted your 3
   recs"***. Verdicts under SHEET VERDICTS below.
 - ✅ **S284's eight memory rows are WRITTEN (20:56 UTC, `proposed`, author `SkyWage-s284`) AND LOGGED (21:57 UTC,
-  `creates = 1` for all eight).** The first send failed on `cpl_memory_summary_check` (summary is one sentence, 1–400 chars); the receipt
+  `creates = 1` for all eight).** A ninth, `a-window-saves-only-over-the-version-it-read`, was written and logged at close-out. The first send failed on `cpl_memory_summary_check` (summary is one sentence, 1–400 chars); the receipt
   now puts the long text in `detail`. The playbook's step 6 log insert is denied by the guard, whose carve-out
   names `cpl_memory` alone. S280 logged through `apply_migration` on 09-20 (its log note says so), which S281
   ruled out. S284 wrote an INSERT-only carve-out for the log with six tests; the auto-mode classifier refused it
@@ -92,11 +92,12 @@ No PR is open.
   to 0.5 and changed P2's measure text (outcome B). The same save wrote the config back without
   `projects.cpl-implementation.published`, which read "Scenario 1" at 21:15. No current code path drops it, and the
   tab reads the config once at load and PATCHes it whole. So the save came from a window that loaded before the
-  19:44 Publish. Colleges still see Scenario 1, because an unset marker falls back to it. The fix names the version
+  19:44 Publish. Colleges still see Scenario 1, because an unset marker falls back to it. The fix (#1672) names the version
   a window read on every save: an older window loads the newer row and asks for the change again, and one window
   sends one save at a time. Guard `tests/cpl_funding_save_over_newer.test.js` (15 checks; 12 fail on the old
   code); note [`methodology-a-window-saves-only-over-the-version-it-read`](kb-notes/methodology-a-window-saves-only-over-the-version-it-read.md).
-  **Sam re-presses Publish on Scenario 1.**
+  **Sam re-presses Publish on Scenario 1.** At close-out (22:47 UTC) the marker was still unset and the six
+  strategies still sat on Career attainment (Completion 7, Career attainment 6).
 
 ## SAM'S WORDS THIS RUN
 
@@ -138,7 +139,8 @@ carry touched Year 1 only; Year 2 has no Career attainment row). ② **keep** th
    row against today before writing it, and each needs its log the same way. S283's
    `priority-4-career-attainment-zero-share-ca-u` is already false, since Scenario 1 funds Career attainment at 33%.
 3. **Grants verification** after the 2026-09-24 13:40 UTC promotion: the `map_data_loads` promote row and
-   `has_table_privilege` for anon, authenticated and service_role on the five tables (a check-in fires at 14:30Z).
+   `has_table_privilege` for anon, authenticated and service_role on the five tables. S284 canceled its 14:30Z
+   check-in at close-out, so arm your own or run it after 13:40.
    Detail: [`lanes/map-custom-reports`](reference/lanes/map-custom-reports.md) NEXT ⓪.
 4. Carryover: the ESL merging decision sheet; the college
    briefing's funding box vocabulary (*earned*, *drawable*, *the dollars*); ask Sam to retry Designate on the (D)
