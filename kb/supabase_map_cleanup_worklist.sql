@@ -244,6 +244,12 @@ begin
   create policy map_cleanup_worklist_select on public.map_cleanup_worklist
     for select to anon, authenticated
     using (is_allowed_reviewer() or team_pass_ok());
+  -- EXPLICIT GRANTS (2026-09-23). This body creates the table afresh on every
+  -- run, and from 2026-10-30 Supabase stops granting the API roles on a NEW
+  -- table in public. anon and authenticated read through the policy above;
+  -- service_role reads it for the daily publishers. Nothing writes here but
+  -- this function. Guarded by tests/supabase_table_grants_test.py.
+  grant select on public.map_cleanup_worklist to anon, authenticated, service_role;
 end $$;
 
 comment on table public.map_cleanup_worklist is

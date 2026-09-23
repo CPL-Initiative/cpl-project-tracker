@@ -98,6 +98,15 @@ create table if not exists public.map_student_key_sketch (
 revoke all on public.stg_map_college_cr_unit  from anon, authenticated;
 revoke all on public.stg_map_student_credit   from anon, authenticated;
 revoke all on public.map_student_key_sketch   from anon, authenticated;
+-- EXPLICIT GRANTS (2026-09-23). This file drops and recreates both staging
+-- tables, and from 2026-10-30 Supabase stops granting the API roles on a NEW
+-- table in public. The loader (kb/_sync_map_custom_reports.py) reads and
+-- writes all three with the service key, so service_role is granted them by
+-- name and anon/authenticated stay closed (above). Guarded by
+-- tests/supabase_table_grants_test.py.
+grant select, insert, update, delete on public.stg_map_college_cr_unit to service_role;
+grant select, insert, update, delete on public.stg_map_student_credit  to service_role;
+grant select, insert, update, delete on public.map_student_key_sketch  to service_role;
 
 -- ── D · clearing staging, server-side ──────────────────────────────────────
 -- WHY THIS FUNCTION EXISTS (session 172, 2026-08-19)

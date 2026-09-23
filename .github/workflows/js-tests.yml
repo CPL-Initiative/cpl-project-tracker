@@ -108,6 +108,13 @@ jobs:
       # the published anon key. Pure-stdlib python; same non-required check.
       - name: Supabase function-grant lint (revoke must name PUBLIC)
         run: python3 tests/supabase_function_grants_test.py
+      # Supabase table-grant lint (2026-09-23) — from 2026-10-30 Supabase stops
+      # granting the API roles on a NEW public table, and five functions here
+      # DROP + CREATE their table on every nightly promotion. Every table the
+      # SQL creates at run time, recreates, or adds new must carry its own
+      # grants. Pure-stdlib python; same non-required check.
+      - name: Supabase table-grant lint (new and recreated tables carry grants)
+        run: python3 tests/supabase_table_grants_test.py
       # A 1-2 character subject code never decides a discipline on its own
       # (Sam's cross-list sheet item 2, 2026-09-22). `ES` maps to Ethnic Studies
       # and means Exercise Science at many colleges, which is how 31

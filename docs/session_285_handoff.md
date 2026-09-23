@@ -68,11 +68,15 @@ a DRAFT under watch; this checkpoint was taken at the context warning line.
    checked"; Delete "Completion with Transcription" moving its 33% to Career attainment; Career attainment factor 0.5;
    Publish. His method note (CPL FTES per student record with a career improvement, from CO analysis) shapes the
    career import.
-3. **Supabase grants before 2026-10-30** — [`lanes/map-custom-reports`](reference/lanes/map-custom-reports.md)
-   NEXT ⓪. The live read (2026-09-23) found every existing table holding its grants; the exposure is
-   `rebuild_map_college_goal2()` and `rebuild_map_college_credit_summary()`, which DROP and CREATE their tables in
-   every nightly promotion and grant nothing. Add grants to both bodies and their schema-of-record files, re-apply
-   the two functions live (a DDL write: Sam's OK), and add `tests/supabase_table_grants_test.py`. Its own PR.
+3. **Supabase grants before 2026-10-30.** #1664 merged (e8b3582) and the daily run was dispatched. The grants
+   follow-up is its own PR: FIVE nightly rebuild functions (goal 2, credit summary, clean-up worklist, transcribed
+   gap, Cx guidance) DROP and CREATE their tables and granted nothing; the repo now grants each, and
+   `tests/supabase_table_grants_test.py` guards every created table (49 live ones baselined). ✅ **Applied live
+   2026-09-23** on Sam's "apply" (item 1 of https://claude.ai/artifact/2xc8Hik6di18kSqmP7vkCV; item 2, the Max award
+   column, sat past his last input again and stays unruled): the five `create or replace function` statements only,
+   live hashes equal the repo. Receipt `kb/receipts/supabase_rebuild_grants_2026-09-23.sql`. ⏭ After the
+   2026-09-24 13:40 UTC promotion, confirm its `map_data_loads` row and `has_table_privilege` on all five. Detail:
+   [`lanes/map-custom-reports`](reference/lanes/map-custom-reports.md) NEXT ⓪.
 4. Carryover: the ESL merging decision sheet; the college briefing's funding box vocabulary (*earned*, *drawable*,
    *the dollars*); ask Sam to retry Designate on the (D) card; the funding tab's pre-existing a11y findings (above).
 

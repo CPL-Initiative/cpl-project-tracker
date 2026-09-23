@@ -129,3 +129,8 @@ insert into public.map_mis_colleges (mis_college_code, mis_district_code, mis_co
 ('291','290','YUBA','YUBA CCD') on conflict (mis_college_code) do nothing;
 alter table public.map_mis_colleges enable row level security;
 create policy map_mis_colleges_select on public.map_mis_colleges for select to anon, authenticated using (true);
+-- EXPLICIT GRANTS (2026-09-23): this file drops and recreates the table, and
+-- from 2026-10-30 Supabase stops granting the API roles on a NEW table in
+-- public, so a re-run would otherwise leave it unreadable.
+-- Guarded by tests/supabase_table_grants_test.py.
+grant select on public.map_mis_colleges to anon, authenticated, service_role;

@@ -347,6 +347,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `docs/visuals/<date>-decision-sheet-template.html` | none found | scripts: `kb/_build_decision_sheet_demo.py` |
 | `docs/visuals/<date>-funding-review.html` | scripts: `kb/_build_funding_review_decision_sheet.py` | scripts: `kb/_build_funding_review_decision_sheet.py` |
 | `docs/visuals/<date>-funding-scenario-3.html` | scripts: `kb/_build_funding_scenario3_decision_sheet.py` | scripts: `kb/_build_funding_scenario3_decision_sheet.py` |
+| `docs/visuals/<date>-grants-and-max-award.html` | scripts: `kb/_build_grants_decision_sheet.py` | scripts: `kb/_build_grants_decision_sheet.py` |
 | `docs/visuals/<date>-jev-ladder.html` | scripts: `kb/_build_jev_ladder_sheet.py` | scripts: `kb/_build_jev_ladder_sheet.py` |
 | `docs/visuals/<date>-memory-audit-verdicts.html` | scripts: `kb/memory_audit/2026-09-05-sheet_builder.py` | scripts: `kb/memory_audit/2026-09-05-sheet_builder.py` |
 | `docs/visuals/<date>-open-asks.html` | scripts: `kb/_build_open_asks_decision_sheet.py` | scripts: `kb/_build_open_asks_decision_sheet.py` |
@@ -719,6 +720,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/stop_hook_git_check_test.py` | workflows: `js-tests.yml` | — |
 | `tests/supabase_function_grants_test.py` | workflows: `js-tests.yml` | — |
 | `tests/supabase_sql_guard_test.py` | workflows: `js-tests.yml` | — |
+| `tests/supabase_table_grants_test.py` | workflows: `js-tests.yml` | — |
 | `tests/uc_cur_promote_test.py` | workflows: `js-tests.yml` | — |
 | `tests/umbrella_codes_are_declared_test.py` | workflows: `js-tests.yml` | — |
 | `tests/video_context_test.py` | workflows: `js-tests.yml` | — |
@@ -910,5 +912,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 511 file
-datasets · 145 external services · 359 consumers · 35 workflows · 37 tabs.
+Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 513 file
+datasets · 145 external services · 360 consumers · 35 workflows · 37 tabs.
