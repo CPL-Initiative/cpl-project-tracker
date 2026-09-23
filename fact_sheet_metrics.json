@@ -1,14 +1,14 @@
 {
  "_about": "Snapshot-tier metrics for the public CPL Fact Sheet (fact-sheet/). Sourced from the same MAP Custom Reporting Module exhibit data as COBI's headline KPI cards, so the two never diverge. Refreshed by the daily dashboard cron.",
- "_as_of": "2026-09-23T14:16:44.112Z",
+ "_as_of": "2026-09-23T16:06:39.642Z",
  "credit_recommendations": {
-  "total": "13,353",
-  "ccc": "1,343",
-  "local": "12,010",
+  "total": "13,358",
+  "ccc": "1,345",
+  "local": "12,013",
   "by_type": [
    "Standardized Assessment: 6,915",
-   "Industry Certification: 3,708",
-   "Credit By Exam: 2,118",
+   "Industry Certification: 3,712",
+   "Credit By Exam: 2,119",
    "Portfolio Review: 401",
    "Military: 119"
   ]
@@ -22,8 +22,8 @@
  "statewide_exhibits": {
   "total": "137",
   "program_areas": "12",
-  "distinct_credit_recs": "1,164",
-  "adoptions": "1,337",
+  "distinct_credit_recs": "1,166",
+  "adoptions": "1,339",
   "adopting_colleges": "63",
   "by_sector": [
    {
@@ -50,8 +50,8 @@
    {
     "sector": "Computer Information Systems",
     "exhibits": 14,
-    "credit_recs": 100,
-    "adoptions": 104,
+    "credit_recs": 102,
+    "adoptions": 106,
     "could_adopt": 74
    },
    {
@@ -129,7 +129,7 @@
   "adopting_ccc": "63"
  },
  "veteran_sprint": {
-  "star_colleges": "58",
+  "star_colleges": "59",
   "basic_training_colleges": "91 Colleges"
  }
 }
