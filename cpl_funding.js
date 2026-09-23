@@ -353,7 +353,7 @@
     ".cplfund-yearsync { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin: 0 0 10px; font-size: .8rem; }",
     ".cplfund-yearsync label { display: inline-flex; align-items: center; gap: 5px; }",
     ".cplfund-prio-title-input { display: inline-block; width: auto; min-width: 100px; max-width: 210px; font-weight: 700; color: var(--navy-primary); border: none; border-bottom: 1px dashed var(--border-strong); background: transparent; font-size: 1rem; padding: 0 2px; }",
-    ".cplfund-prio-title-input:focus { outline: none; border-bottom-color: var(--gold-accent); background: var(--surface-subtle); }",
+    ".cplfund-prio-title-input:focus { border-bottom-color: var(--gold-accent); background: var(--surface-subtle); }",
     // Recommended-strategies list per priority box.
     ".cplfund-strat { margin-top: 8px; border-top: 1px dashed var(--border-strong); padding-top: 6px; font-size: .8rem; }",
     // The strategies are a FOLD (Sam, 2026-08-31): the summary IS the block
@@ -375,10 +375,10 @@
     ".cplfund-cardgoal-name { font-size: 1rem; font-weight: 700; color: var(--text-strong); }",
     ".cplfund-cardgoal-orphan { color: var(--red-alert); }",
     ".cplfund-cardgoal-cite { font-size: .76rem; font-weight: 600; color: var(--text-muted); }",
-    ".cplfund-cardgoal-lab { margin-left: auto; display: flex; align-items: center; gap: 5px;",
+    ".cplfund-cardgoal-lab { margin-left: auto; display: flex; align-items: center; gap: 5px; min-width: 0; max-width: 100%;",
     "  font-size: .72rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--text-muted); }",
     ".cplfund-cardgoal-sel { font: inherit; font-size: .82rem; text-transform: none; letter-spacing: 0;",
-    "  min-height: 24px; max-width: 100%; color: var(--text-strong); background: var(--surface-opaque);",
+    "  min-height: 24px; min-width: 0; max-width: 100%; flex: 0 1 auto; color: var(--text-strong); background: var(--surface-opaque);",
     "  border: 1px solid var(--border-strong); border-radius: 6px; padding: 2px 6px; }",
     ".cplfund-cardgoal-quote { flex-basis: 100%; margin: 2px 0 0; font-size: .82rem; font-style: italic; color: var(--text-muted); }",
     ".cplfund-cardgoal-src { flex-basis: 100%; font-size: .76rem; color: var(--text-muted); }",
@@ -463,7 +463,7 @@
     ".cplfund-formula ul.cplfund-formula-list li::marker { color: var(--gold-accent); }",
     ".cplfund-toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 0 0 10px; }",
     ".cplfund-toolbar input[type=search] { padding: 8px 12px; border: 1px solid var(--border-strong); border-radius: 6px; font-size: .9rem; min-width: 220px; }",
-    ".cplfund-toolbar input:focus { outline: none; border-color: var(--navy-secondary); }",
+    ".cplfund-toolbar input:focus { border-color: var(--navy-secondary); }",
     ".cplfund-seg { display: inline-flex; border: 1px solid var(--border-strong); border-radius: 6px; overflow: hidden; }",
     ".cplfund-seg button { background: var(--surface-opaque); color: var(--text-body); border: none; padding: 8px 12px; font-size: .85rem; cursor: pointer; font-family: inherit; }",
     ".cplfund-seg button + button { border-left: 1px solid var(--border-strong); }",
@@ -619,14 +619,19 @@
     ".cplfund-years label { font-size: .85rem; color: var(--text-muted); display: inline-flex; align-items: center; gap: 6px; }",
     ".cplfund-years select, .cplfund-ed-sel { padding: 5px 8px; border: 1px solid var(--border-strong); border-radius: 6px; font-size: .85rem; font-family: inherit; background: var(--surface-opaque); color: var(--text-body); }",
     // ── editable fields ──
+    // FOCUS SHOWS COBI'S OWN RING (2026-09-23). Every :focus rule here used to
+    // carry `outline: none`, which canceled the page's 3px --focus-ring on 62
+    // fields (`npm run a11y`: "focusable with no ring"), and the gold border it
+    // left behind sits under 3:1 on white. The border and fill stay as the
+    // field's editing state, beside the ring.
     ".cplfund-ed { font-size: 1.25rem; font-weight: 700; color: var(--navy-primary); border: none; border-bottom: 2px dashed var(--border-strong); background: transparent; width: 100%; padding: 0 0 2px; font-family: inherit; text-align: center; }",
-    ".cplfund-ed:focus { outline: none; border-bottom-color: var(--gold-accent); background: var(--surface-subtle); }",
+    ".cplfund-ed:focus { border-bottom-color: var(--gold-accent); background: var(--surface-subtle); }",
     ".cplfund-ed.neg { color: var(--text-strong); }",
     ".cplfund-ed-s { width: 68px; font-size: .8rem; font-weight: 700; color: var(--navy-primary); border: 1px solid var(--border-strong); border-radius: 4px; padding: 2px 6px; text-align: center; background: var(--surface-opaque); font-family: inherit; }",
-    ".cplfund-ed-s:focus { outline: none; border-color: var(--gold-accent); }",
+    ".cplfund-ed-s:focus { border-color: var(--gold-accent); }",
     ".cplfund-ed-t { width: 100%; font-size: inherit; color: inherit; border: 1px solid transparent; border-radius: 4px; padding: 2px 4px; background: var(--surface-opaque); font-family: inherit; }",
     ".cplfund-ed-t:hover { border-color: var(--border); }",
-    ".cplfund-ed-t:focus { outline: none; border-color: var(--gold-accent); background: var(--surface-subtle); }",
+    ".cplfund-ed-t:focus { border-color: var(--gold-accent); background: var(--surface-subtle); }",
     // Multi-line variant: priority description + metric wrap to 2 rows so long
     // text stays readable (and every card's boxes line up the same height).
     ".cplfund-ed-area { display: block; width: 100%; resize: vertical; line-height: 1.35; margin-top: 2px; }",
@@ -791,7 +796,7 @@
     ".cf-eligpie { vertical-align: middle; display: inline-block; }",
     ".cplfund-notewrap { grid-column: 1 / -1; }",
     ".cplfund-note { width: 100%; max-width: 560px; font-family: inherit; font-size: .83rem; color: var(--text-body); background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 6px; padding: 4px 8px; vertical-align: middle; }",
-    ".cplfund-note:focus { outline: none; border-color: var(--gold-accent); }",
+    ".cplfund-note:focus { border-color: var(--gold-accent); }",
     // Ghosted, not decorated: a quiet outlined word beside the title, no fill.
     ".cplfund-draftchip { display: inline-block; margin-left: 10px; vertical-align: middle; background: none; color: var(--text-muted); border: 1px solid var(--border-strong); font-size: .38em; font-weight: 600; letter-spacing: .08em; padding: 2px 8px; border-radius: 3px; text-transform: uppercase; }",
     // ── self-service opt-in (public + private) + the CO confirm lane ──────────
@@ -811,7 +816,7 @@
        measured exactly the same 21.7px. Fixing the rule you found is not fixing
        the rule that applies. */
     ".cplfund-optin-grid input, .cplfund-optin-grid select { font-family: inherit; font-size: .86rem; color: var(--text-body); background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 6px; padding: 5px 8px; min-height: 24px; box-sizing: border-box; }",
-    ".cplfund-optin-grid input:focus, .cplfund-optin-grid select:focus { outline: none; border-color: var(--gold-accent); }",
+    ".cplfund-optin-grid input:focus, .cplfund-optin-grid select:focus { border-color: var(--gold-accent); }",
     ".cplfund-optin-actions { margin-top: 9px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }",
     ".cplfund-optin-err:not(:empty) { color: var(--red-alert); font-size: .8rem; margin-top: 6px; }",
     ".cplfund-optin-note { color: var(--text-muted); font-size: .76rem; margin-top: 8px; line-height: 1.4; }",
