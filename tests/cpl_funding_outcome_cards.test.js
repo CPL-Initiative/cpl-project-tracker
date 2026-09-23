@@ -170,9 +170,11 @@ check("a goal priorities DO serve carries a Total Possible figure",
   check("a curator sees an outcome picker on the card", !!sel);
   check("the picker offers 'Derived from the metric' first",
     sel && sel.options[0] && /Derived from the metric/i.test(sel.options[0].textContent));
-  // The fifth option is not a courtesy: an `accepted` milestone resolves to (B)
-  // AND (C) (Sam, 2026-09-01) and no single-choice list can express a pair, so
-  // "derived" is the only way back to a two-goal card.
+  // The fifth option is not a courtesy: "derived" is the only way back to the
+  // measure's own reading once a curator has set one. It once had a second job
+  // — an `accepted` milestone resolved to (B) AND (C) from 2026-09-01, which no
+  // single-choice list can express — retired 2026-09-22, when career attainment
+  // got its own measure and the counselor step went back to (B) alone.
   check("the picker offers all four statutory goals beside it", sel && sel.options.length === 5);
   commit(window, sel, "D");
   const row0 = d.querySelectorAll("[data-priocard]")[0].querySelector(".cplfund-cardgoal");

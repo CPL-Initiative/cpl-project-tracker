@@ -86,9 +86,9 @@ function totalOf(T) {
 // ─────────────────────────────────────────────────────────────────────────────
 // Part A — the seam is a SEAM (every indexing site translates, exactly once)
 // ─────────────────────────────────────────────────────────────────────────────
-check("A: priorityOrder resolves through the config layers with an identity fallback",
+check("A: priorityOrder resolves through the config layers, extends an order that predates a priority, and falls back to identity",
   /function priorityOrder\(slot\)/.test(consumerSrc) &&
-  /isPermutation\(v, n\) \? v\.map\(Number\) : identityOrder\(n\)/.test(consumerSrc));
+  /isPermutation\(v, n\) \? v\.map\(Number\)[\s\S]{0,160}isPermutation\(v, v\.length\)\)[\s\S]{0,20}\? v\.map\(Number\)\.concat\(identityOrder\(n\)\.slice\(v\.length\)\)[\s\S]{0,20}: identityOrder\(n\)/.test(consumerSrc));
 ["prioField", "prioMetricSource", "prioUnit", "setPrio"].forEach(function (fn) {
   const body = (consumerSrc.match(new RegExp("function " + fn + "\\([^)]*\\) \\{[\\s\\S]*?\\n  \\}")) || [""])[0];
   check("A: " + fn + " translates display → source before touching yearPriorities",
@@ -117,9 +117,11 @@ check("A: reorderList is pure, so the DOM handlers are a thin shell over it",
   const naturalCaps = natural.map(function (p) { return Math.round(p.cap); });
   const naturalCard0 = cardText(doc, 0);
 
-  check("B: natural order labels the priorities 1..3 in config order",
-    natural.map(function (p) { return p.label; }).join("|") === "Priority 1|Priority 2|Priority 3" &&
-    natural.map(function (p) { return p.src; }).join("") === "012");
+  check("B: natural order labels the priorities 1..N in config order",
+    natural.length === D.year_priorities["1"].length &&
+    natural.map(function (p) { return p.label; }).join("|") ===
+      natural.map(function (_, i) { return "Priority " + (i + 1); }).join("|") &&
+    natural.map(function (p) { return p.src; }).join("") === natural.map(function (_, i) { return i; }).join(""));
 
   // Sam's actual ask: Priority 3 into the Priority 1 position.
   T._setScenario({ priorityOrder: [2, 0, 1] });
@@ -172,19 +174,28 @@ check("A: reorderList is pure, so the DOM handlers are a thin shell over it",
   boot(window);
   const T = window.CPL_FUNDING_TAB;
   const n = T._prios(D.colleges[0].college, "1").length;
-  [[0, 1, 5], [0, 1], [1, 1, 2], "nonsense", null, [0, 1, 2]].forEach(function (bad) {
+  const natural = Array.from({ length: n }, function (_, i) { return i; }).join("");
+  [[0, 1, 5], [0, 1], [1, 1, 2], "nonsense", null, [0, 1, 2], [0, 2, 1]].forEach(function (bad) {
     T._setScenario({ priorityOrder: bad });
     T.render();
     const got = T._prios(D.colleges[0].college, "1");
     const label = JSON.stringify(bad);
     check("C: order " + label + " still renders all " + n + " priorities exactly once",
       got.length === n &&
-      got.map(function (p) { return p.src; }).sort().join("") === "012");
+      got.map(function (p) { return p.src; }).sort().join("") === natural);
   });
   T._setScenario({ priorityOrder: [0, 1, 5] });
   T.render();
   check("C: an out-of-range order falls back to the natural order (not a partial one)",
-    T._prios(D.colleges[0].college, "1").map(function (p) { return p.src; }).join("") === "012");
+    T._prios(D.colleges[0].college, "1").map(function (p) { return p.src; }).join("") === natural);
+  // ⭐ Sam's live order was [0, 2, 1] when Priority 4 arrived (2026-09-22). The
+  // identity fallback would have swapped his Priority 2 and Priority 3 on the
+  // day a fourth card appeared, with nothing on screen saying why.
+  T._setScenario({ priorityOrder: [0, 2, 1] });
+  T.render();
+  check("C: an order that predates a newer priority keeps its order, and the newcomer joins at the end",
+    T._prios(D.colleges[0].college, "1").map(function (p) { return p.src; }).join("") ===
+      "021" + natural.slice(3));
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -194,12 +205,13 @@ check("A: reorderList is pure, so the DOM handlers are a thin shell over it",
   const { window } = freshDom();
   const doc = boot(window);
   const cards = doc.querySelectorAll("#cplFundingMount .cplfund-prio .p");
-  check("D: every priority card is a drop target", cards.length === 3 &&
+  const NP = D.year_priorities["1"].length;
+  check("D: every priority card is a drop target", cards.length === NP &&
     Array.prototype.every.call(cards, function (c) { return c.hasAttribute("data-priocard"); }));
-  check("D: each card carries a drag handle", doc.querySelectorAll('[data-priodrag][draggable="true"]').length === 3);
+  check("D: each card carries a drag handle", doc.querySelectorAll('[data-priodrag][draggable="true"]').length === NP);
   const sels = doc.querySelectorAll("[data-priopos]");
   check("D: each card carries a keyboard-reachable position picker with every position",
-    sels.length === 3 && sels[0].querySelectorAll("option").length === 3);
+    sels.length === NP && sels[0].querySelectorAll("option").length === NP);
   check("D: the position picker is labelled for a screen reader",
     Array.prototype.every.call(sels, function (s) { return (s.getAttribute("aria-label") || "").indexOf("Position of") === 0; }));
   check("D: the drag handle is a WORD, not a bare glyph (Admin-tab ruling)",
@@ -212,15 +224,16 @@ check("A: reorderList is pure, so the DOM handlers are a thin shell over it",
   const sel = doc.querySelectorAll("[data-priopos]")[2];
   sel.value = "0";
   sel.dispatchEvent(new window.Event("change", { bubbles: true }));
+  const nat = Array.from({ length: NP }, function (_, i) { return i; }).join("");
   check("D: choosing position 1 for the third card moves it there",
-    before === "012" &&
-    window.CPL_FUNDING_TAB._prios(D.colleges[0].college, "1").map(function (p) { return p.src; }).join("") === "201");
+    before === nat &&
+    window.CPL_FUNDING_TAB._prios(D.colleges[0].college, "1").map(function (p) { return p.src; }).join("") === "201" + nat.slice(3));
   const doc2 = window.document;
   check("D: a Reset order button appears once the order is custom",
     !!doc2.getElementById("cplFundOrderReset"));
   doc2.getElementById("cplFundOrderReset").dispatchEvent(new window.Event("click", { bubbles: true }));
   check("D: Reset order restores the config's own order",
-    window.CPL_FUNDING_TAB._prios(D.colleges[0].college, "1").map(function (p) { return p.src; }).join("") === "012" &&
+    window.CPL_FUNDING_TAB._prios(D.colleges[0].college, "1").map(function (p) { return p.src; }).join("") === nat &&
     !window.document.getElementById("cplFundOrderReset"));
 }
 {
@@ -246,8 +259,11 @@ check("A: reorderList is pure, so the DOM handlers are a thin shell over it",
   const txt = doc.getElementById("cplFundingMount").textContent;
   check("E: the priority cards say Funding factor", /Funding factor/.test(txt));
   check("E: nothing on the page still says Price factor", !/Price factor/i.test(txt));
+  // One factor input per CPL-FTES priority: P1 put on FTES above, and Priority 4
+  // (career attainment), which the bake carries in FTES since 2026-09-22.
   check("E: the stored field and the edit key are unchanged — only the label moved",
-    doc.querySelectorAll('[data-edit="priofactor"]').length === 1 &&
+    doc.querySelectorAll('[data-edit="priofactor"]').length ===
+      T._prios(D.colleges[0].college, "1").filter(function (p) { return p.unit === "FTES"; }).length &&
     D.year_priorities["1"].every(function (p) { return p.factor != null; }));
   // The recalculation Sam asked about: change the factor, the target follows.
   const before = T._prios(D.colleges[0].college, "1");
@@ -384,6 +400,17 @@ check("G: _prios publishes the source index consumers join on",
   const builtPrios = (built.programs[0] || {}).priorities || [];
   check("G: buildBriefing carries the identity through its remap",
     builtPrios.length === 3 && builtPrios.map(function (p) { return p.key; }).join("") === "012");
+  // The briefing reads the SHARED config's own priority list, so a fourth
+  // entry appears there once a curator edits Priority 4 — while the stored
+  // order still has three entries. It keeps the order, as the tab does.
+  const CFG4 = JSON.parse(JSON.stringify(CFG));
+  const sc4 = CFG4.projects["cpl-implementation"].scenarios["Scenario 1"];
+  sc4.yearPriorities["1"]["3"] = { share: 0, title: "Career attainment", strategies: ["Share EDD outcomes with faculty"] };
+  sc4.priorityOrder = [0, 2, 1];
+  const built4 = B._buildBriefing({ config: CFG4, college: null }, { scenario: "Scenario 1", year: "1" });
+  const b4 = ((built4.programs[0] || {}).priorities || []).map(function (p) { return p.key; }).join("");
+  check("G2: an order that predates Priority 4 keeps its order in the briefing, the newcomer last",
+    b4 === "0213");
 }
 
 let pass = 0;

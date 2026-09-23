@@ -28,6 +28,7 @@ const {
   D,
   finish,
 } = require("./lib/cpl_funding_harness.js");
+const { NPRIO } = require("./lib/cpl_funding_harness.js");
 
 const POOL = 25240308;
 
@@ -87,12 +88,14 @@ const POOL = 25240308;
   check("B4: the trio's noncredit priorities resolve 'undelivered' — never 'gap' (which would advance)",
     (function () {
       const ps = T._ncPrios("NOCE", "1");
-      return ps && ps.length === 3 && ps.every(function (p) {
-        return p.status === "undelivered" && p.earned === 0 && p.cap > 0;
+      // A 0% share (Priority 4 until Sam sets one) caps at $0; every funded
+      // priority keeps a real cap.
+      return ps && ps.length === NPRIO && ps.every(function (p) {
+        return p.status === "undelivered" && p.earned === 0 && (p.share > 0 ? p.cap > 0 : p.cap === 0);
       });
     })());
   check("B5: the retired 'NC:<short>' key form still resolves (consumer compatibility)",
-    (function () { const ps = T._ncPrios("NC:Calbright", "1"); return ps && ps.length === 3; })());
+    (function () { const ps = T._ncPrios("NC:Calbright", "1"); return ps && ps.length === NPRIO; })());
   check("B6: _ncAward is the decomposition share, not a second pool's figure",
     Math.abs(T._ncAward("Mt San Antonio") - mtSac.nc_award) < 0.5 &&
     Math.abs(T._ncAward("NOCE") - T._alloc("NOCE").total) < 0.5);
@@ -112,7 +115,9 @@ const POOL = 25240308;
     as_of: "2026-12-01",
     statewide: { pe: 100, p2: 10, p3: 50, pp: 5, pe_u: 1000, p3_u: 500, pp_u: 25,
       pa: 40, pa_u: 400, ppa: 20, ppa_u: 200,
-      nc_pe: 30, nc_pe_u: 300, nc_pa: 20, nc_pa_u: 200, nc_pt: 10, nc_pt_u: 3000 },
+      nc_pe: 30, nc_pe_u: 300, nc_pa: 20, nc_pa_u: 200, nc_pt: 10, nc_pt_u: 3000,
+      // career attainment arrives by the Chancellor's Office import (2026-09-22)
+      ca_u: 150, nc_ca_u: 90 },
     colleges: {
       Cypress: { pe: 20, pe_u: 200, p3: 10, p3_u: 100, ppa: 5, ppa_u: 50,
         nc_pe: 8, nc_pe_u: 240, nc_pa: 6, nc_pa_u: 180, nc_pt: 5, nc_pt_u: 900 }

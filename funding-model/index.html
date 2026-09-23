@@ -367,7 +367,7 @@ section[hidden]{display:none}
       <b id="f-capv">$400,000</b> across the two years.</p>
     <p><strong>An institution&rsquo;s CPL outcomes determine what it qualifies for.</strong> The model
       measures the prior-learning credit each institution puts on students&rsquo; records, from that
-      institution&rsquo;s own MAP data, against three priorities. An institution meets the baseline
+      institution&rsquo;s own MAP data, against <span id="l-nprio">four</span> priorities. An institution meets the baseline
       requirements to take part; from that point the funding follows the outcomes.</p>
     <div class="topline">
       <div class="v num" id="f-total">$35,000,000</div>
@@ -450,10 +450,10 @@ section[hidden]{display:none}
       <hr class="rule">
       <h2>Funding outcomes and milestones</h2>
     </div>
-    <p>Three priorities carry the funding, against the goals set out in
+    <p>The priorities below carry the funding, against the goals set out in
       <a href="https://california.public.law/codes/education_code_section_78093.2" target="_blank"
          rel="noopener">Ed. Code &sect;78093.2(d)(1)</a>. Each holds a share of every institution&rsquo;s
-      award and one measure, read from that institution&rsquo;s own MAP data. The shares and measures below
+      award and one measure of that institution&rsquo;s CPL outcomes. The shares and measures below
       are the ones currently set in the model; the strategies under each are what the Chancellor&rsquo;s
       Office recommends a college do about it.</p>
     <div id="prios"></div>
@@ -542,7 +542,7 @@ section[hidden]{display:none}
       <span class="fold-word" aria-hidden="true"></span>
     </summary>
     <div class="fold-body">
-    <p>The three priorities and their shares are above. This is the arithmetic underneath them.</p>
+    <p>The priorities and their shares are above. This is the arithmetic underneath them.</p>
     <p>The model measures outcomes by <strong>units of credit for prior learning converted to
       equivalent FTES</strong> at the college&rsquo;s own calendar &mdash; 30 semester units make one FTES, or 45 on a
       quarter calendar.</p>
@@ -778,9 +778,12 @@ window.CPL_PAINT_EXPLAINER = function (D) {
     box.appendChild(el);
   });
 
-  // ── outcomes the model funds but does not measure ─────────────────────
-  // Sam, 2026-09-11: goal (C) has no campus measure, so it is reported on
-  // designated projects instead. Built with createElement and textContent like
+  // ── outcomes the statewide projects carry ─────────────────────────────
+  // Sam, 2026-09-11: a goal no priority serves is reported on its designated
+  // projects. That was (C) until 2026-09-22, when the Chancellor's Office took
+  // on measuring career attainment from EDD wage records and Priority 4 began
+  // serving it; (D) is the one that remains. The heading states what the
+  // projects do (Sam, 2026-09-16: positive declarations, no "this, not that"). Built with createElement and textContent like
   // every other painter here — a curator types a project name and a college
   // reads it, so nothing on this path goes through innerHTML.
   //
@@ -793,11 +796,10 @@ window.CPL_PAINT_EXPLAINER = function (D) {
     D.reported.forEach(function (r) {
       var h = document.createElement("h3");
       h.style.marginTop = "1.6em";
-      h.textContent = "Reported, not measured: " + r.text;
+      h.textContent = "Reported through statewide work: " + r.text;
       var lead = document.createElement("p");
       lead.textContent = "The Chancellor\u2019s Office funds this outcome through the statewide project " +
-        "allocation rather than a campus measure, so no figure on this page prices it. The work is " +
-        "reported below.";
+        "allocation, and these projects carry the work:";
       host.appendChild(h);
       host.appendChild(lead);
       var ul = document.createElement("ul");
@@ -963,12 +965,16 @@ window.CPL_PAINT_EXPLAINER = function (D) {
     // replaced drew a CONCLUSION from the factors ("so every priority is paid at
     // the plain state rate") that stopped being true when they moved off 1.0.
     var uniq = facList.filter(function (v, i, a) { return a.indexOf(v) === i; });
+    // The count is the model's, never typed: Priority 4 arrived 2026-09-22 and
+    // "All three" would have been wrong from that render on.
+    var nw = word(D.prios.length).toLowerCase();
+    setText("l-nprio", nw);
     setText("l-factors", uniq.length === 1
       ? (uniq[0] === "1.0"
-          ? "All three factors are currently set to 1.0, so each priority is priced at the state rate and "
-            + "the three targets differ only because the shares do."
-          : "All three factors are currently set to " + uniq[0] + ", so each priority is priced at "
-            + uniq[0] + " times the state rate and the three targets differ only because the shares do.")
+          ? "All " + nw + " factors are currently set to 1.0, so each priority is priced at the state rate and "
+            + "the " + nw + " targets differ only because the shares do."
+          : "All " + nw + " factors are currently set to " + uniq[0] + ", so each priority is priced at "
+            + uniq[0] + " times the state rate and the " + nw + " targets differ only because the shares do.")
       : "The factors currently set in the model are " + facList.join(", ") + ".");
   }
 

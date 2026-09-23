@@ -28,6 +28,7 @@ const {
   D,
   finish,
 } = require("./lib/cpl_funding_harness.js");
+const { NPRIO } = require("./lib/cpl_funding_harness.js");
 
 // The three noncredit-only rows ride the one roster keyed by their shorts
 // (Mt. SAC NC rides the Mt San Antonio row and is NOT a key).
@@ -353,7 +354,7 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
   T.render();
   const dtl = doc.querySelector("tr.cplfund-detail .cplfund-dtl-table");
   const rows = dtl ? Array.from(dtl.querySelectorAll("tr")).slice(1) : [];
-  check("G: the expand renders one detail row per priority (three)", rows.length === 3);
+  check("G: the expand renders one detail row per priority", rows.length === NPRIO);
   const cells = function (i) { return Array.from(rows[i].querySelectorAll("td")).map(function (td) { return td.textContent; }); };
   check("G: the detail table stacks a Target column beside an Actual column",
     Array.from(dtl.querySelectorAll("th")).map(function (h) { return h.textContent; }).join("|").indexOf("Target|Actual") !== -1);
@@ -368,7 +369,7 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
   // The metric itself stays visible where the priority is defined — the card's
   // METRIC block (the retired column-header hover's successor).
   check("G: each priority card carries its METRIC block",
-    doc.querySelectorAll(".cplfund-prio .p .metric").length === 3 &&
+    doc.querySelectorAll(".cplfund-prio .p .metric").length === NPRIO &&
     /METRIC/.test(doc.querySelector(".cplfund-prio .p .metric").textContent));
   // The Elig pie: a college meeting both tracked reqs shows 2 numbered green slices.
   T._setElig({ coordOk: true, coord: { "Laney": true }, optin: { "Laney": true }, asOf: "2026-07-24" });

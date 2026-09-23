@@ -204,10 +204,14 @@ const UNITY = /\d\s*(FTES|stu)\b/;
   // ───────────────────────────────────────────────────────────────────────────
   const sys = tableOf(openSystem(window, doc));
   check("6a: the statewide expand renders", !!sys && sys.rows.length === col.rows.length);
+  // The FUNDED rows: a priority at a 0% share (Priority 4 until Sam sets one,
+  // 2026-09-22) has a $0 Total Possible and nothing for either claim to test.
+  const fundedRows = (t) => t.keyed.filter((r) => Number(String(r["total possible"]).replace(/[^\d.]/g, "")) > 0);
   check("6b: statewide Actual is past target, so a ratio reading would pay the full cap",
-    !!sys && sys.keyed.every((r) => Number(String(r.actual).replace(/.*·/, "").replace(/[^\d.]/g, "")) > 100));
+    !!sys && fundedRows(sys).length >= 3 &&
+    fundedRows(sys).every((r) => Number(String(r.actual).replace(/.*·/, "").replace(/[^\d.]/g, "")) > 100));
   check("6c: …but Current Total is well under Total Possible, because it SUMS institutions",
-    !!sys && sys.keyed.every((r) => {
+    !!sys && fundedRows(sys).length >= 3 && fundedRows(sys).every((r) => {
       const cur = Number(String(r["current total"]).replace(/[^\d.]/g, ""));
       const cap = Number(String(r["total possible"]).replace(/[^\d.]/g, ""));
       return cap > 0 && cur < cap;

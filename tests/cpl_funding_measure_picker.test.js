@@ -32,6 +32,7 @@
 // Run from repo root: `npm test` (or `node tests/cpl_funding_measure_picker.test.js`).
 const fs = require("fs");
 const { check, freshDom, boot, consumerSrc, finish } = require("./lib/cpl_funding_harness.js");
+const { NPRIO } = require("./lib/cpl_funding_harness.js");
 
 const LIVE_P2 = "Applied CPL units (FTES) for students  with Counselor checked and " +
   "originating from either CPL Portal, College CPL Landing Page, or batch upload";
@@ -112,7 +113,7 @@ function fire(window, sel, v) {
 // ── 1. it exists, one per credit priority ────────────────────────────────────
 {
   const { doc } = mount();
-  check("1a: a measure picker renders on every credit priority card", sels(doc).length === 3);
+  check("1a: a measure picker renders on every credit priority card", sels(doc).length === NPRIO);
   check("1b: each is a <select>", sels(doc).every((s) => s.tagName === "SELECT"));
   check("1c: it sits inside the METRIC block, with the metric text it resolves",
     sels(doc).every((s) => !!s.closest(".metric")));

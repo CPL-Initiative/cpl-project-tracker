@@ -56,6 +56,11 @@ const dataSrc = read("cpl_funding_data.js");
 const sandbox = { window: {} };
 new Function("window", dataSrc)(sandbox.window);
 const D = sandbox.window.CPL_FUNDING;
+// How many priorities the model carries — read from the data, never typed.
+// Four since 2026-09-22 (career attainment); a literal 3 broke eighteen suites
+// the day it changed.
+const NPRIO = D.year_priorities["1"].length;
+const FUNDED = D.year_priorities["1"].filter((p) => (Number(p.share) || 0) > 0).length;
 
 const results = [];
 function check(name, cond) { results.push([name, !!cond]); }
@@ -119,7 +124,7 @@ function pieSlices(el) {
 }
 
 module.exports = {
-  cpl, idx, consumerSrc, dataSrc, D,
+  cpl, idx, consumerSrc, dataSrc, D, NPRIO, FUNDED,
   results, check, finish,
   freshDom, boot, click, commit, scenSlot, footText, greenSlices, pieSlices,
 };

@@ -357,14 +357,18 @@
    * malformed — wrong length, out of range, a repeat — returns the natural
    * order rather than dropping or duplicating a priority. */
   function applyPriorityOrder(list, order) {
-    if (!Array.isArray(order) || order.length !== list.length) return list;
+    if (!Array.isArray(order) || !order.length || order.length > list.length) return list;
     var out = [], seen = {}, i, v;
     for (i = 0; i < order.length; i++) {
       v = Number(order[i]);
-      if (!(v >= 0 && v < list.length) || v !== Math.floor(v) || seen[v]) return list;
+      // A shorter order must be a permutation of its OWN length: [0, 2, 1]
+      // predates Priority 4 (2026-09-22) and keeps its order, the newcomer
+      // joining at the end — the same rule as cpl_funding.js priorityOrder().
+      if (!(v >= 0 && v < order.length) || v !== Math.floor(v) || seen[v]) return list;
       seen[v] = 1;
       out.push(list[v]);
     }
+    for (i = order.length; i < list.length; i++) out.push(list[i]);
     return out.map(function (pr, j) {
       var copy = {}; for (var k in pr) if (Object.prototype.hasOwnProperty.call(pr, k)) copy[k] = pr[k];
       copy.index = j;
@@ -1563,15 +1567,31 @@
    * which is where a structural change should fail. */
   function prioritiesAlign(prios, program) {
     if (!prios || !program || !program.priorities) return false;
-    if (!prios.length || prios.length !== program.priorities.length) return false;
+    var counted = prios.filter(function (p) { return !unlistedAndUnfunded(p, program); });
+    if (!counted.length || counted.length !== program.priorities.length) return false;
     // A reorder makes POSITION the wrong join (both lists still hold three
     // entries, so the count gate cannot see it). Where the funding module
     // reports a source index, every priority must resolve through it.
-    var withSrc = prios.filter(function (p) { return p && p.src != null; });
+    var withSrc = counted.filter(function (p) { return p && p.src != null; });
     if (!withSrc.length) return true;
-    return withSrc.length === prios.length && withSrc.every(function (p) {
+    return withSrc.length === counted.length && withSrc.every(function (p) {
       return !!programPriorityFor(program, p, -1);
     });
+  }
+
+  /* PURE. A funding priority the stored config does not list and that holds
+   * no share — Priority 4, career attainment, from 2026-09-22 until a curator
+   * edits it. The model carries it from its baked defaults, so it has no steps
+   * to nest and no funding to misattach: it stays out of the count gate above,
+   * and out of the funding box, until it is given a share or a config entry.
+   * Counting it would have sent every college's steps to the standalone list
+   * the day a fourth card appeared. */
+  function unlistedAndUnfunded(p, program) {
+    if (!p || p.src == null || (Number(p.share) || 0) > 0) return false;
+    var listed = program && program.priorities && program.priorities.some(function (pp) {
+      return String(pp.key) === String(p.src);
+    });
+    return !listed;
   }
 
   /* PURE. The program priority that belongs to THIS funding priority.
@@ -2613,12 +2633,13 @@
             + "measures, and never drawable by credit work.</div>";
         }
 
-        // ── What the cap is FOR — the three priorities, each with this
-        // college's own target. Caps and targets both come from the funding
+        // ── What the cap is FOR — the priorities, each with this college's
+        // own target. Caps and targets both come from the funding
         // module; nothing here multiplies a share by a pool.
         if (f.prios && f.prios.length) {
           fundBody += '<div class="cb-prios"><div class="cb-plab">What it is earned against</div>';
           f.prios.forEach(function (p, i) {
+            if (unlistedAndUnfunded(p, implProg)) return;
             var name = p.title || p.description || p.label;
             fundBody += '<div class="cb-prow"><div class="cb-whead"><b>' + esc(name) + "</b>"
               + '<span class="v">' + money(p.cap) + "</span></div>";

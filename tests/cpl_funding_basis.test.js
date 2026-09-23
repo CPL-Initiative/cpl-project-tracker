@@ -403,14 +403,17 @@ check("sizePct is COMPUTED, never read from a baked percentage",
     const say = ftesPrice
       ? Number(ftesPrice.replace(/,/g, ""))
       : (perStudent ? Number(perStudent.value) * nYears : NaN);
-    if (!w || !n || !(say > 0)) return;
+    // A 0% share (Priority 4 until Sam sets one) has no window funding and a
+    // zero target, so there is no rate to reproduce on it.
+    if (!w || !n || !(say > 0) || !(Number(w.replace(/,/g, "")) > 0)) return;
     const eff = Number(w.replace(/,/g, "")) / Number(n.replace(/,/g, ""));
     checked.push(card);
     // 2% tolerance on the rate, plus the rounding of a whole-dollar cap.
     if (Math.abs(eff - say) / say > 0.02) lying.push([eff, say, t.slice(0, 90)]);
   });
-  check("every stated rate matches its OWN card's window funding ÷ target (all 3 priority cards, no restating line)",
-    checked.length === 3 && lying.length === 0 && !doc.querySelector(".cplfund-prio .cplfund-fl-line"));
+  const funded = D.year_priorities["1"].filter(function (p) { return (Number(p.share) || 0) > 0; }).length;
+  check("every stated rate matches its OWN card's window funding ÷ target (every funded priority card, no restating line)",
+    funded >= 3 && checked.length === funded && lying.length === 0 && !doc.querySelector(".cplfund-prio .cplfund-fl-line"));
   T._setScenario({});
 }
 

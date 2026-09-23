@@ -2148,7 +2148,13 @@
     var n = prioSrcList(s).length;
     var v = firstDefined(SCENARIO.priorityOrder, SHARED.priorityOrder, base().priority_order);
     if (ORDER_CACHE.src === v && ORDER_CACHE.slot === s && ORDER_CACHE.n === n) return ORDER_CACHE.val;
-    var out = isPermutation(v, n) ? v.map(Number) : identityOrder(n);
+    // A stored order that predates a priority added later (Sam's [0, 2, 1] when
+    // P4 arrived, 2026-09-22) keeps its order, and the newcomer joins at the end.
+    // Falling back to the natural order there would have swapped his P2 and P3.
+    var out = isPermutation(v, n) ? v.map(Number)
+      : (Array.isArray(v) && v.length < n && isPermutation(v, v.length))
+        ? v.map(Number).concat(identityOrder(n).slice(v.length))
+        : identityOrder(n);
     ORDER_CACHE.src = v; ORDER_CACHE.slot = s; ORDER_CACHE.n = n; ORDER_CACHE.val = out;
     return out;
   }
@@ -2517,7 +2523,7 @@
   //    editable TIMING list, and the editable eligibility INTRO. Title +
   //    strategies ride the per-slot prioField/setPrio path (same layers as the
   //    metric/share); timing + intro are their own top-level config keys. ──
-  var DEFAULT_PRIORITY_TITLES = ["Access", "Success", "Capacity"];
+  var DEFAULT_PRIORITY_TITLES = ["Access", "Success", "Capacity", "Career attainment"];
   function prioTitle(slot, i) {
     var v = prioField(slot, i, "title");
     // The baked fallback belongs to the PRIORITY, not to the position it is
@@ -4435,6 +4441,10 @@
                 ? '<span class="cplfund-warn-text">Unit mismatch &mdash; this metric asks for ' +
                   (wantU ? "UNITS/FTES" : "a HEADCOUNT") + " but " + esc(meas.src) + " returns " +
                   esc(meas.unit) + '</span>'
+                : meas.undelivered && srcByCo(meas.src)
+                  ? '<span class="dk">Awaiting measurement &mdash; the Chancellor&rsquo;s Office measures ' +
+                    esc(meas.src) + " from EDD wage records and brings it into the model by import. It " +
+                    "counts <strong>$0</strong> until the first import, which needs no edit here.</span>"
                 : meas.undelivered
                   ? '<span class="dk">Declared, awaiting delivery &mdash; the daily feed carries no ' +
                     esc(meas.src) + " column, so this stays at <strong>$0</strong>. " +
@@ -4526,13 +4536,15 @@
     // caption and the dollars disagree about what this priority measures.
     var ms = (measureOf(p || priorities(slot)[i] || {}) || {}).milestone;
     if (ms === "transcribed") return { keys: ["B"], derived: true };
-    // The Counselor step (Sam, 2026-09-01). An accepted CPL Plan is a student
-    // committing prior learning toward a goal with a counselor, so it serves
-    // completion (B) AND is the step career attainment depends on — the only
-    // part of (C) a campus controls and can be measured on. It is deliberately
-    // BOTH: goal (C) has never had a campus measure, and claiming it here is
-    // honest only because the thing counted is the advising step, not attainment.
-    if (ms === "accepted") return { keys: ["B", "C"], derived: true };
+    // The Counselor step serves completion (B). Sam, 2026-09-22: "Change P2 B&C
+    // Completion to B Completion with Counseling ... also designated where the
+    // metric is derived." From 2026-09-01 it also claimed (C), because career
+    // attainment had no measure and the advising step was the part of it a
+    // campus controls. (C) now has its own measure, taken by the Chancellor's
+    // Office from EDD wage records (the `career` milestone below), so the
+    // counselor step returns to (B) and no goal carries two measures.
+    if (ms === "accepted") return { keys: ["B"], derived: true };
+    if (ms === "career") return { keys: ["C"], derived: true };
     if (ms === "eligible" || ms === "applied") return { keys: ["A"], derived: true };
     return { keys: [], derived: true };
   }
@@ -4772,9 +4784,15 @@
   function goalRowHtml(res, ctx, selAttr, opt) {
     opt = opt || {};
     var keys = (res.keys || []).filter(function (k) { return !!goalByKey(k); });
+    // A priority card is named by its own title, read from the live config
+    // (Sam, 2026-09-22: "B Completion with Counseling (read from live tab)").
+    // Two priorities can serve one goal, and "(B) Completion" twice told a
+    // reader nothing about which was which. A reported card, or a priority with
+    // no title, keeps the statute's short name for its goal.
+    var named = opt.name && String(opt.name).trim();
     var head = keys.length
       ? '<span class="cplfund-cardgoal-key">(' + keys.map(esc).join(") + (") + ")</span> " +
-        '<span class="cplfund-cardgoal-name">' + esc(keys.map(function (k) {
+        '<span class="cplfund-cardgoal-name">' + esc(named || keys.map(function (k) {
           return goalByKey(k).short;
         }).join(" and ")) + "</span> " +
         '<span class="cplfund-cardgoal-cite">' + goalCite(keys) + "</span>"
@@ -5359,6 +5377,15 @@
   // paint what the curator designated without loading the register itself.
   function setProjectGoal(id, gkey, on, name) {
     var ov = activeOverride();
+    // Signed in, the write lands in the SHARED layer, but projectGoals() reads
+    // the browser's held layer first, so a project this browser had released
+    // before signing in stayed released on screen whatever was designated.
+    // The newest write wins: drop the held copy for this one project.
+    if (ov === SHARED && isPlainObj(SCENARIO.projectGoals) && SCENARIO.projectGoals[id] !== undefined) {
+      delete SCENARIO.projectGoals[id];
+      if (isPlainObj(SCENARIO.projectNames)) delete SCENARIO.projectNames[id];
+      saveScenario();
+    }
     var keys = projectGoals(id).filter(function (k) { return k !== gkey; });
     if (on) keys.push(gkey);
     ov.projectGoals = isPlainObj(ov.projectGoals) ? ov.projectGoals : {};
@@ -5444,10 +5471,17 @@
     var measured = f.prios.filter(function (x) { return x.meas.src && !x.meas.bad_src && !x.meas.undelivered; });
     var broken = f.prios.filter(function (x) { return x.meas.bad_src || x.meas.undelivered; });
     if (measured.length) {
+      var allCo = measured.every(function (x) { return srcByCo(x.meas.src); });
       return { cls: "ok", word: "Performance-measured",
         text: "Determined by " + measured.map(function (x) {
           return "<strong>" + esc(x.p.title) + "</strong> (" + esc(x.meas.milestone || "measure") + ")";
-        }).join(" and ") + ", per the daily MAP feed." };
+        }).join(" and ") + (allCo ? ", per the Chancellor&rsquo;s Office import." : ", per the daily MAP feed.") };
+    }
+    // Career attainment before its first import (Sam, 2026-09-22). A measure
+    // the Chancellor's Office takes on a schedule is awaiting measurement; the
+    // "awaiting delivery" state below means a wiring fault, and it is not one.
+    if (broken.length && broken.every(function (x) { return x.meas.undelivered && srcByCo(x.meas.src); })) {
+      return { cls: "warn", word: "Awaiting measurement", text: CO_MEASURE_NOTE };
     }
     if (broken.length) {
       return { cls: "warn", word: "Declared, awaiting delivery",
@@ -5483,21 +5517,22 @@
     }
     var story = gkey === "C" ? storyEvidence() : null;
     if (!story) return "";
-    // Sam's items 3 + 12 rulings (2026-08-30): goal C is DEMONSTRATED, never
-    // directly measured ("not measurable at this time, and may never be") —
-    // stories touching career attainment plus funded infrastructure /
-    // interagency projects are the evidence, and the intake question now has
-    // his final wording.
-    return '<p class="cplfund-goal-limit"><strong>Demonstrated, not directly measured &mdash; by design.</strong> ' +
-      "The Initiative shows support for career-attainment outcomes without attempting to measure " +
-      "recipients&rsquo; attainment directly (not measurable at this time, and may never be). The " +
-      "evidence is qualitative: <strong>My CPL Stories</strong> that touch on career attainment, plus " +
-      "funded projects and innovations building infrastructure and interagency integration (Sam, 2026-08-30). " +
-      "The corpus is still catching up: of the <strong>" + fmtInt(story.total) + "</strong> published " +
-      "stories, <strong>" + fmtInt(story.edu) + "</strong> end at an educational destination and only " +
-      "<strong>" + fmtInt(story.job) + "</strong> name a job or role &mdash; today&rsquo;s corpus is " +
-      "evidence for (B), not yet for (C) &mdash; which is why every story collection now asks " +
-      "<em>&ldquo;What changed in your work or career path?&rdquo;</em> (his wording, items 3 + 12).</p>";
+    // Sam, 2026-09-22, superseding his 2026-08-30 "not measurable at this
+    // time, and may never be": "after speaking with CO research team, we can use
+    // EDD wage data to measure this. ... This would not be reported by the
+    // colleges but instead measured by the CO and reflected on our funding
+    // model with periodic updates (imports) of the data." The stories stay as
+    // the qualitative record beside the measure, and his intake question
+    // (items 3 + 12) keeps its wording.
+    return '<p class="cplfund-goal-limit"><strong>Measured by the Chancellor&rsquo;s Office.</strong> ' +
+      "The Chancellor&rsquo;s Office measures career attainment from EDD wage records and brings each " +
+      "update into the model by import, so the goal asks no reporting of colleges (Sam, 2026-09-22). " +
+      "<strong>My CPL Stories</strong> that touch on career attainment record the work in students&rsquo; own " +
+      "words, and the funded projects build the infrastructure and interagency integration behind it. Of the <strong>" +
+      fmtInt(story.total) + "</strong> published stories, <strong>" + fmtInt(story.edu) + "</strong> end at an " +
+      "educational destination and <strong>" + fmtInt(story.job) + "</strong> name a job or role; today&rsquo;s " +
+      "corpus is evidence for (B). Every story collection now asks <em>&ldquo;What changed in your work or " +
+      "career path?&rdquo;</em> (his wording, items 3 + 12).</p>";
   }
 
   // What funds this goal, as list items. The priorities are named but NOT
@@ -5514,7 +5549,7 @@
     });
     f.pools.forEach(function (x) {
       bits.push("<li><strong>" + esc(x.label) + "</strong> &mdash; " + fmtMoney(x.amount) +
-        ' <span class="dk">withheld from the institution funding for statewide work</span></li>');
+        ' <span class="dk">allocated to statewide work</span></li>');
     });
     if (f.projects.length) {
       bits.push("<li><strong>" + f.projects.length + " tagged " +
@@ -5892,7 +5927,8 @@
         // letter beside the title is RETIRED with the band: it existed to
         // stitch a card to a wrapper that no longer exists, and the row below
         // now names the same goal in words.
-        goalRowHtml(gres, p.label + (p.title ? " — " + p.title : ""), 'data-priogoal="' + i + '"') +
+        goalRowHtml(gres, p.label + (p.title ? " — " + p.title : ""), 'data-priogoal="' + i + '"',
+          { name: p.title }) +
         '<h4><span class="cplfund-prio-num">' + esc(p.label) + ":</span> " +
         edText("prio-title", p.title, { slot: slot, idx: i, ro: ro, cls: "cplfund-prio-title-input", label: p.label + " title", placeholder: "Title (e.g. Access)" }) +
         "</h4>" +
@@ -6363,6 +6399,9 @@
     }).join("");
   }
 
+  // One id per rendered picker: two cards can serve one goal (P2 and P3 both
+  // serve (B)), and a goal-keyed id gave both selects the same describedby.
+  var DESIG_SEQ = 0;
   function projectDesignateHtml(gkey) {
     if (publicMode() || !unlocked()) return "";
     var taken = {};
@@ -6392,13 +6431,14 @@
     // like a selection. So nothing is pre-selected, the rows already designated
     // say so in their own label, and taking one off is still the Remove word
     // beside it, where a removal is deliberate and singular.
+    var hid = "cplfund-multihint-" + esc(gkey) + "-" + (++DESIG_SEQ);
     return '<div class="cplfund-rprio-add">' +
       '<label class="cplfund-multil">Designate activities' +
       '<select class="cplfund-multi" multiple size="8" data-projsel="' + esc(gkey) +
-      '" aria-describedby="cplfund-multihint-' + esc(gkey) +
+      '" aria-describedby="' + hid +
       '" aria-label="Activities to designate to goal ' + esc(gkey) + '">' + opts + "</select></label>" +
       '<button type="button" class="cplfund-textbtn" data-projadd="' + esc(gkey) + '">Designate selected</button>' +
-      '<span class="dk" id="cplfund-multihint-' + esc(gkey) + '">Choose one or more from the ' +
+      '<span class="dk cplfund-multihint" id="' + hid + '" role="status">Choose one or more from the ' +
       "Activities register. Saves for everyone.</span></div>";
   }
 
@@ -6611,6 +6651,14 @@
     { test: function (m) { return wantsUnits(m) && saysCounselorAccepted(m); },
       src: "pac_u", unit: "units",
       basis: "units of APPLIED CPL on counselor-accepted Student CPL Plans" },
+    // CAREER ATTAINMENT (Sam, 2026-09-22) — the Chancellor's Office measure
+    // from EDD wage records. Ahead of the portal entry, so a career metric that
+    // also names a route is still read as the career measure. P4 carries the
+    // pin; this is the unpinned safety net, the same role the counselor entry
+    // plays, so a retyped career metric never falls through to a data gap.
+    { test: function (m) { return wantsUnits(m) && has(m, "career") && (has(m, "wage") || has(m, "edd")); },
+      src: "ca_u", unit: "units",
+      basis: "units of CPL for students who reach a career outcome in EDD wage records, per the Chancellor's Office import" },
     { test: function (m) { return wantsUnits(m) && (has(m, "portal") || has(m, "landing page")); },
       src: "pp_u", unit: "units",
       basis: "units of portal-origin transcribed CPL (via the CPL Student Portal / Landing Page)" },
@@ -6863,6 +6911,29 @@
              basis: "students whose CPL Plan a counselor accepted (the MAP Counselor lifecycle step)" },
     pac_u: { label: "Applied CPL with the Counselor step checked", unit: "units", milestone: "accepted",
              basis: "units of APPLIED CPL on counselor-accepted Student CPL Plans" },
+    // ── career attainment (Sam, 2026-09-22) ────────────────────────────────
+    // "we can use EDD wage data to measure this ... This would not be reported
+    // by the colleges but instead measured by the CO and reflected on our
+    // funding model with periodic updates (imports) of the data."
+    //
+    // DECLARED BEFORE IT IS DELIVERED, on the same pattern as the noncredit
+    // lane: srcDelivered() asks the published artifact whether `ca_u` is there,
+    // so until the Chancellor's Office's first import lands the measure reads
+    // awaiting measurement and counts $0, never a full cap. P4 ships at a 0%
+    // share for exactly that reason; a share set before the first import would
+    // sit at $0 until it lands.
+    //
+    // ⚠️ UNITS, LIKE THE OTHER THREE. Sam ruled headcount is not a metric in
+    // this tab (the measure picker offers units only), and the model sets every
+    // target in CPL FTES at the reimbursement rate; a student-count priority
+    // would reopen the retired headcount paths (the per-student rate, a reach %).
+    // So the import carries the CPL units of students who reach the career
+    // outcome, and the model converts them to FTES as it does for every other
+    // measure. Its milestone, `career`, is its own, and prioGoals() reads it as
+    // (C). `origin: "co"` marks a measure the Chancellor's Office takes and
+    // imports, so no surface tells a reader it arrives with MAP's daily refresh.
+    ca_u:  { label: "CPL for students with a career outcome in EDD wage records, measured by the Chancellor's Office", unit: "units", milestone: "career",
+             origin: "co", basis: "units of CPL for students who reach a career outcome in EDD wage records, per the Chancellor's Office import" },
     // ── noncredit lane (DECLARED, NOT YET DELIVERED) ───────────────────────
     // Sam ruled 2026-08-26 that the NC lane EARNS like credit: a cap earned
     // against the same three milestones, filtered to students who originated
@@ -6898,8 +6969,23 @@
     nc_pa_u: { unit: "units", lane: "nc", milestone: "applied",
                basis: "units of CPL APPLIED for students originating from a noncredit landing page" },
     nc_pt_u: { unit: "units", lane: "nc", milestone: "transcribed",
-               basis: "units of transcribed CPL for students originating from a noncredit landing page" }
+               basis: "units of transcribed CPL for students originating from a noncredit landing page" },
+    // P4's noncredit slice (2026-09-22): the same Chancellor's Office measure
+    // for students whose CPL originated in a noncredit program. ncPriorities()
+    // pairs lanes by milestone, so declaring the `career` rung here is the
+    // whole of the wiring.
+    nc_ca_u: { unit: "units", lane: "nc", milestone: "career", origin: "co",
+               basis: "units of CPL for noncredit-origin students who reach a career outcome in EDD wage records, per the Chancellor's Office import" }
   };
+  // A measure the Chancellor's Office takes and imports (career attainment,
+  // from EDD wage records) rather than one MAP's daily feed carries. Every
+  // surface that would say "per MAP" or "the daily feed" asks this first.
+  function srcByCo(src) {
+    var r = src && METRIC_SOURCES[src];
+    return !!(r && r.origin === "co");
+  }
+  var CO_MEASURE_NOTE = "The Chancellor&rsquo;s Office measures this outcome from EDD wage records " +
+    "and updates the model with each import.";
   // ── MILESTONE AGREEMENT (2026-08-27) ──────────────────────────────────────
   // MAP's funnel is eligible -> applied -> transcribed, and they are three
   // different quantities (statewide: 1,382,125 / 223,384 / 80,338 units). A
@@ -7175,6 +7261,10 @@
     function undeliveredLine() {
       // The feed key lives in the title, not the sentence (Sam, 2026-08-28) —
       // a reader should not need to know MAP's key names to read a card.
+      if (srcByCo(meas.src)) {
+        return '<p class="nums dk" title="' + esc("Chancellor's Office measure: " + meas.src) +
+          '">Awaiting measurement. ' + CO_MEASURE_NOTE + "</p>";
+      }
       return '<p class="nums dk" title="' + esc("MAP feed key: " + meas.src) + '">Awaiting actuals &mdash; ' +
         "this measure stays at <strong>$0</strong> today.</p>";
     }
@@ -7182,7 +7272,7 @@
       // Artifact not loaded. For CREDIT that is transient — those measures ARE
       // in the feed. For NONCREDIT it is not: those keys have never been carried,
       // so the honest line is the same one they get when the artifact IS loaded.
-      return meas.lane === "nc"
+      return meas.lane === "nc" || srcByCo(meas.src)
         ? undeliveredLine()
         : '<p class="nums dk">Actuals (per MAP) arrive with the next daily data refresh.</p>';
     }
@@ -7299,7 +7389,7 @@
         "<strong>total potential allocation equals its share of statewide " + basisLabel() +
         "</strong> applied to the " +
         fmtMoney(per) + " annual funding"
-      : "The three Year-" + state.viewSlot + " priority shares (" + parts + ") <span class=\"cplfund-warn-text\">sum to " +
+      : "The Year-" + state.viewSlot + " priority shares (" + parts + ") <span class=\"cplfund-warn-text\">sum to " +
         fmtPctTrim(shareSum) + " &mdash; the model " + (shareSum > 1 ? "over" : "under") +
         "-allocates the annual funding (see Balance)</span>";
     var bal = per * (1 - shareSum);
@@ -10256,7 +10346,13 @@
     document.querySelectorAll("#cplFundingMount [data-projadd]").forEach(function (b) {
       b.addEventListener("click", function () {
         var gkey = b.getAttribute("data-projadd");
-        var sel = document.querySelector('#cplFundingMount [data-projsel="' + gkey + '"]');
+        // The select on THIS card. Two cards can serve one goal (P2 and P3 both
+        // serve (B)), and a page-wide first match read the other card's list,
+        // so the second card's button did nothing (Sam, 2026-09-22: "the
+        // Designate Activities button on this card isn't working for me").
+        var box = b.closest(".cplfund-rprio-add");
+        var sel = (box && box.querySelector('[data-projsel="' + gkey + '"]')) ||
+          document.querySelector('#cplFundingMount [data-projsel="' + gkey + '"]');
         if (!sel) return;
         // Read .selected off every option rather than trusting selectedOptions:
         // the collection is not implemented everywhere the suites run, and an
@@ -10265,7 +10361,18 @@
         for (var i = 0; i < sel.options.length; i++) {
           if (sel.options[i].selected && sel.options[i].value) picked.push(sel.options[i].value);
         }
-        if (!picked.length) return;
+        if (!picked.length) {
+          // Nothing chosen: say so on THIS card. The button used to return
+          // without a word, and on 2026-09-22 the API logs showed Sam's
+          // Designate clicks sent no save at all.
+          var hint = box && box.querySelector(".cplfund-multihint");
+          if (hint) {
+            hint.textContent = "Choose one or more activities in the list, then Designate selected.";
+            hint.className = "cplfund-warn-text cplfund-multihint";
+          }
+          if (typeof sel.focus === "function") sel.focus();
+          return;
+        }
         var reg = {};
         registerProjects().forEach(function (pr) { reg[pr.id] = pr; });
         savingState = "";

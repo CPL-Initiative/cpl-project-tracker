@@ -27,6 +27,7 @@ const {
   idx,
   finish,
 } = require("./lib/cpl_funding_harness.js");
+const { NPRIO } = require("./lib/cpl_funding_harness.js");
 
 // ⚠️ LOCATE A PRIORITY CARD BY ITS DISPLAY INDEX, NOT BY DOM ORDINAL
 // (re-aimed 2026-09-01, Sam's band consolidation). Cards are now grouped under
@@ -99,7 +100,7 @@ const DISTRICTS = (function () {
   // The active year's metric moved from the drill-in to the priority CARDS —
   // still one click away, and the card is the surface the curator edits.
   check("the active year's metric shows on the priority cards (the drill-in's metric line moved there)",
-    doc.querySelectorAll(".cplfund-prio .p .metric").length === 3);
+    doc.querySelectorAll(".cplfund-prio .p .metric").length === NPRIO);
   click(window, doc.querySelector("tr.cplfund-row"));
   check("re-click collapses the drill-in", !doc.querySelector("tr.cplfund-detail"));
 

@@ -22,6 +22,7 @@
 // failure this file pins first: the fix is a span, and a span is invisible in
 // a screenshot the moment someone edits the grid.
 const H = require("./lib/cpl_funding_harness.js");
+const { NPRIO } = require("./lib/cpl_funding_harness.js");
 const { freshDom, boot, check, finish, consumerSrc } = H;
 
 function openDetail(window, doc, name) {
@@ -142,21 +143,21 @@ function detRows(det) {
   T.render();
   const R = detRows(openDetail(window, doc, "Laney"));
 
-  check("T2: the table carries a To go column", R.length === 3 && "to go" in R[0]);
+  check("T2: the table carries a To go column", R.length === NPRIO && "to go" in R[0]);
   check("T2a: under target — To go names the distance AND the funding still remaining",
-    R.length === 3 && /\d/.test(R[0]["to go"]) && /\$[\d,]+ remaining/.test(R[0]["to go"]));
+    R.length === NPRIO && /\d/.test(R[0]["to go"]) && /\$[\d,]+ remaining/.test(R[0]["to go"]));
   check("T2a2: …and the distance is not the whole target (the posted amount is subtracted)",
-    R.length === 3 && R[0]["to go"] !== R[0].target);
+    R.length === NPRIO && R[0]["to go"] !== R[0].target);
   check("T2b: at or over target — To go says target met, and offers no negative distance",
-    R.length === 3 && /target met/.test(R[1]["to go"]) && !/-/.test(R[1]["to go"]));
+    R.length === NPRIO && /target met/.test(R[1]["to go"]) && !/-/.test(R[1]["to go"]));
   // THE ONE THAT MATTERS. A masked actual plus a distance is the actual: a
   // reader subtracts. The privacy mask has to hold across the whole row, not
   // just the cell it was applied to.
   check("T2c: a privacy-suppressed actual gets NO distance — it would leak the value by subtraction",
-    R.length === 3 && /privacy/.test(R[2].actual) &&
+    R.length === NPRIO && /privacy/.test(R[2].actual) &&
     !/\d/.test(R[2]["to go"]) && !/remaining/.test(R[2]["to go"]));
   check("T2c2: …and the masked row's To go is a plain absence, not a zero",
-    R.length === 3 && !/^0\b/.test(R[2]["to go"]) && !/target met/.test(R[2]["to go"]));
+    R.length === NPRIO && !/^0\b/.test(R[2]["to go"]) && !/target met/.test(R[2]["to go"]));
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -181,11 +182,11 @@ function detRows(det) {
   const R = detRows(openDetail(window, doc, "Laney"));
 
   check("T3a: an undelivered source reads awaiting measurement and shows no distance",
-    R.length === 3 && /awaiting measurement/.test(R[0].actual) && !/\d/.test(R[0]["to go"]));
+    R.length === NPRIO && /awaiting measurement/.test(R[0].actual) && !/\d/.test(R[0]["to go"]));
   check("T3b: a miswired pin reads awaiting a known measure and shows no distance",
-    R.length === 3 && /awaiting a known measure/.test(R[1].actual) && !/\d/.test(R[1]["to go"]));
+    R.length === NPRIO && /awaiting a known measure/.test(R[1].actual) && !/\d/.test(R[1]["to go"]));
   check("T3c: the measured row beside them DOES show one — the column is not dead",
-    R.length === 3 && (/\d/.test(R[2]["to go"]) || /target met/.test(R[2]["to go"])));
+    R.length === NPRIO && (/\d/.test(R[2]["to go"]) || /target met/.test(R[2]["to go"])));
 }
 
 finish();
