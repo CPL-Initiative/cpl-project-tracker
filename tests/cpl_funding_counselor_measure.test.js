@@ -147,15 +147,18 @@ function renderWith(pin) {
   T._setShared({ yearPriorities: { "1": P, "2": P }, mirrorYears: true, disbursement: "frontload" });
   T.render();
   const diag = doc.querySelector(".cplfund-metricdiag");
-  const lis = diag ? Array.from(diag.querySelectorAll("li")).map((li) => li.textContent) : [];
-  return { T, lis, mm: lis.filter((t) => /milestone mismatch/i.test(t)) };
+  // Each line carries its words in the text and the MAP feed key in its hover
+  // (plain language, Sam 2026-09-23), so the key is read from the title.
+  const lis = diag ? Array.from(diag.querySelectorAll("li")).map((li) => li.textContent + " || " + (li.getAttribute("title") || "")) : [];
+  return { T, lis, mm: lis.filter((t) => /The wording names .+ CPL, but the measure counts/.test(t)) };
 }
 {
   const before = renderWith("ppa_u");
   check("5a: pinned to ppa_u, the diagnostic flags the metric/measure disagreement",
     before.mm.length > 0);
   check("5b: and it names the two rungs in Sam's own terms — accepted asked, applied returned",
-    before.mm.some((t) => /ACCEPTED/.test(t) && /ppa_u/.test(t) && /applied/.test(t)));
+    before.mm.some((t) => /counselor-accepted CPL/.test(t) && /measure counts applied CPL/.test(t) &&
+      /MAP feed key: ppa_u/.test(t)));
 }
 {
   const after = renderWith("pac_u");
@@ -187,6 +190,82 @@ function renderWith(pin) {
   const a = T._alloc("Norco College");
   check("6a: an UNPINNED counselor metric pays no advance — it resolves and is measured",
     a && a.earned_advance === 0);
+}
+
+// ── 7. transcribed CPL with the Counselor step (Sam, 2026-09-23) ────────────
+// His Scenario 3 sheet, item 1, verbatim: "We have the transcribed CPL in the
+// dataset as well as the counselor step boolean indicator, so combining them
+// should work." Priority 2's wording named this cut while its pin, p3_u,
+// counted every transcribed unit, and the rung check could not see the gap:
+// both measures report the transcribed rung.
+const S3_P2 = "Transcribed CPL units (FTES) for students with Counselor step checked";
+check("7a: Scenario 3's P2 wording resolves to ptc_u, the transcribed cut",
+  proseMeasure(S3_P2).src === "ptc_u");
+check("7b: the Counselor step without the transcript still resolves to the applied cut",
+  proseMeasure("Counselor-accepted CPL Units (FTES)").src === "pac_u" &&
+  proseMeasure(LIVE_P2).src === "pac_u");
+check("7c: metricMilestone reads the wording as the transcribed rung, the rung ptc_u reports",
+  metricMilestone(S3_P2) === "transcribed");
+check("7d: the headcount twin resolves to ptc",
+  proseMeasure("Headcount with transcribed CPL and Counselor checked").src === "ptc");
+check("7e: the transcribed-and-Counselor entry sits ahead of the applied-and-Counselor one",
+  idxOf("ptc_u") >= 0 && idxOf("ptc_u") < idxOf("pac_u"));
+
+function renderS3(pin, deliver) {
+  const { window } = freshDom();
+  new Function("window", fs.readFileSync("cpl_funding_performance.js", "utf8")).call(window, window);
+  if (deliver) {
+    // The feed as the builder emits it once this change runs: half of each
+    // college's transcribed units carry the Counselor step.
+    const PF = window.CPL_FUNDING_PERF;
+    PF.statewide.ptc_u = (PF.statewide.p3_u || 0) / 2;
+    Object.keys(PF.colleges).forEach(function (k) {
+      const r = PF.colleges[k];
+      if (r && r.p3_u != null) r.ptc_u = r.p3_u / 2;
+    });
+  }
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  const P = {
+    "0": { metric: "Applied CPL Units (FTES) included", share: 0.33, factor: 0.5, title: "Access" },
+    "1": { metric: S3_P2, share: 0.34, factor: 0.5, title: "Completion", metric_src: pin },
+    "2": { metric: "Transcribed CPL Units measured in FTES", share: 0.33, factor: 0.5, title: "Other" }
+  };
+  T._setShared({ yearPriorities: { "1": P, "2": P }, mirrorYears: true, disbursement: "frontload" });
+  T.render();
+  const diag = doc.querySelector(".cplfund-metricdiag");
+  const lis = diag ? Array.from(diag.querySelectorAll("li")).map((li) => li.textContent + " || " + (li.getAttribute("title") || "")) : [];
+  return { T, lis, p2: lis.filter((t) => /Completion/.test(t)) };
+}
+{
+  const r = renderS3("p3_u", false);
+  check("7f: pinned to p3_u, the wiring names the Counselor step the measure ignores",
+    r.p2.some((t) => /The wording names the Counselor step, and the measure counts transcribed CPL for every student/.test(t) &&
+      /MAP feed key: p3_u/.test(t)), JSON.stringify(r.p2));
+}
+{
+  const r = renderS3("ptc_u", false);
+  check("7g: pinned to ptc_u, no Counselor or rung disagreement is reported",
+    r.p2.length > 0 && !r.p2.some((t) => /The wording names|The measure counts only/.test(t)), JSON.stringify(r.p2));
+  check("7h: before the builder's next run the measure reads awaiting measurement",
+    r.p2.some((t) => /Awaiting measurement/.test(t)), JSON.stringify(r.p2));
+  const a = r.T._alloc("Norco College");
+  check("7i: and counts $0 meanwhile, never an advance",
+    a && a.earned_advance === 0);
+  // The noncredit slice pairs by rung, so it keeps nc_pt_u exactly as p3_u did.
+  const nc = r.T._ncPrios("Norco College", "1") || [];
+  check("7j: the noncredit slice of the Counselor-step priority pairs with nc_pt_u",
+    nc.some((q) => q.src === 1 && q.metric_src === "nc_pt_u"), JSON.stringify(nc.map((q) => [q.src, q.metric_src])));
+}
+{
+  const undelivered = renderS3("ptc_u", false).T._alloc("Norco College");
+  const delivered = renderS3("ptc_u", true);
+  const a = delivered.T._alloc("Norco College");
+  check("7k: once the feed carries ptc_u, Priority 2 is measured and counts toward the Current Total",
+    a && undelivered && a.earned_advance === 0 && a.earned_measured > undelivered.earned_measured,
+    JSON.stringify({ before: undelivered && undelivered.earned_measured, after: a && a.earned_measured }));
+  check("7l: and the wiring reads it as measured from its picker wording",
+    delivered.p2.some((t) => /Measured from Transcribed CPL with the Counselor step checked/.test(t)), JSON.stringify(delivered.p2));
 }
 
 finish();

@@ -83,6 +83,11 @@ const DISTRICTS = (function () {
   return s;
 })();
 
+// A detail-table column's index, found by its header.
+function colOf(tbl, name) {
+  return Array.from(tbl.querySelectorAll("th")).map(function (h) { return h.textContent.trim(); }).indexOf(name);
+}
+
 // C8 — district rollup + drill-ins + SYSTEM conservation (feature parity).
 {
   const { window } = freshDom();
@@ -93,7 +98,7 @@ const DISTRICTS = (function () {
   let detail = doc.querySelector("tr.cplfund-detail");
   check("college drill-in renders a detail row with per-priority math",
     detail && detail.textContent.indexOf("Priority 1") !== -1 && detail.textContent.indexOf("share") !== -1);
-  check("drill-in carries the 7-column detail table (Current Total / Total Possible)",
+  check("drill-in carries the six-column detail table (Current Total / Total Possible)",
     !!detail.querySelector(".cplfund-dtl-table") &&
     Array.from(detail.querySelectorAll(".cplfund-dtl-table th")).map(function (h) { return h.textContent; })
       .join("|").indexOf("Current Total|Total Possible") !== -1);
@@ -108,9 +113,14 @@ const DISTRICTS = (function () {
   // the pool — the per-year tranche under Annual funding, the full window under
   // Combined funding (the retired Yr1/Yr2/Total columns' invariants, on the
   // pair). ±$2 = two independently rounded cells.
-  const sysCells = function () { return doc.querySelector("tr.cplfund-systemrow").querySelectorAll("td.cf-award"); };
+  // The CR/NC pair by class: the Max award cell (cf-max) leads it since
+  // 2026-09-23 and carries the combined figure the pair adds up to.
+  const sysCells = function () { return doc.querySelector("tr.cplfund-systemrow").querySelectorAll("td.cf-award:not(.cf-max)"); };
+  const sysMax = function () { return doc.querySelector("tr.cplfund-systemrow td.cf-award.cf-max"); };
   check("ONE SYSTEM row renders (R6), carrying the CR/NC award pair",
     doc.querySelectorAll("tr.cplfund-systemrow").length === 1 && sysCells().length === 2);
+  check("and its Max award cell is the pair's sum",
+    !!sysMax() && Math.abs(firstMoney(sysMax()) - (firstMoney(sysCells()[0]) + firstMoney(sysCells()[1]))) <= 2);
   check("SYSTEM pair under Annual funding = the per-year tranche ($" + Math.round(NET / 2).toLocaleString("en-US") + ")",
     Math.abs((firstMoney(sysCells()[0]) + firstMoney(sysCells()[1])) - NET / 2) <= 2);
   click(window, doc.querySelector('#cplFundDisb button[data-val="frontload"]'));
@@ -142,7 +152,7 @@ const DISTRICTS = (function () {
   // Groups are ordered by their subtotal, largest first (Sam's explicit call).
   // The subtotal now reads as the CR/NC award pair on each header row.
   const gTotals = Array.from(hdrs).map(function (tr) {
-    const aw = tr.querySelectorAll("td.cf-award");
+    const aw = tr.querySelectorAll("td.cf-award:not(.cf-max)");
     return firstMoney(aw[0]) + firstMoney(aw[1]);
   });
   check("district groups are ordered by subtotal, largest first",
@@ -199,8 +209,9 @@ const DISTRICTS = (function () {
   T._state.open["c:" + D.colleges[0].college] = true;
   T.render();
   const dtl = doc.querySelector("tr.cplfund-detail .cplfund-dtl-table");
+  // Columns by header, never position (six columns since 2026-09-23).
   const act = function (i) {
-    return Array.from(dtl.querySelectorAll("tr"))[i + 1].querySelectorAll("td")[4].textContent;
+    return Array.from(dtl.querySelectorAll("tr"))[i + 1].querySelectorAll("td")[colOf(dtl, "Actual")].textContent;
   };
   check("P2 (gap) and P3 (pending) detail rows both read 'awaiting measurement' — never a measured zero",
     act(1).indexOf("awaiting measurement") !== -1 && act(1).indexOf("0 · 0%") === -1 &&
@@ -251,7 +262,7 @@ const DISTRICTS = (function () {
     .find(function (tr) { return tr.getAttribute("data-id") === "c:Alameda"; });
   const alaDtl = alaRow.nextElementSibling.querySelector(".cplfund-dtl-table");
   check("Alameda's P1 detail row shows the any-transcribed actual (300) beside its target",
-    Array.from(alaDtl.querySelectorAll("tr"))[1].querySelectorAll("td")[4].textContent.indexOf("300") !== -1);
+    Array.from(alaDtl.querySelectorAll("tr"))[1].querySelectorAll("td")[colOf(alaDtl, "Actual")].textContent.indexOf("300") !== -1);
   // Year 2: all three metrics are gaps today (units builder / MIS match-back).
   click(window, doc.querySelector('#cplFundYear button[data-val="2"]'));
   // The gap REASON ("MIS match-back") left the cards with the 2026-09-01

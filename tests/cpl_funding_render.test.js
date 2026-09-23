@@ -283,9 +283,13 @@ const money = function (n) { return "$" + Math.round(n).toLocaleString("en-US");
   // all retired — per-priority and per-year detail lives in the row expand.
   check("the money columns are the CR award / NC award pair",
     !!doc.querySelector('th[data-sort="cr_award"]') && !!doc.querySelector('th[data-sort="nc_award"]'));
-  check("no Yr 1 / Yr 2 / Total / Combined columns any more (the expand carries the detail)",
+  // One combined column came back on 2026-09-23 as MAX AWARD: the base and the
+  // cap bind the combined award, and Clovis read $149,321 "(at base)" off the
+  // credit share (item 4 on Sam's Scenario 3 sheet; it reverses part of R6/R7).
+  check("no Yr 1 / Yr 2 / Combined columns any more; the one combined column is Max award",
     !doc.querySelector('th[data-sort="y1"]') && !doc.querySelector('th[data-sort="y2"]') &&
-    !doc.querySelector('th[data-sort="total"]') && !doc.querySelector('th[data-sort="combined"]'));
+    !doc.querySelector('th[data-sort="combined"]') &&
+    /^Max award/.test(((doc.querySelector('th[data-sort="total"]') || {}).textContent || "").trim()));
   check("no per-priority P1/P2/P3 columns in the table", !doc.querySelector('th[data-sort="p1"]'));
   check("no period toggle (funding timing is a model dial, not a view toggle)",
     !doc.getElementById("cplFundPeriod"));
@@ -667,7 +671,9 @@ const money = function (n) { return "$" + Math.round(n).toLocaleString("en-US");
   const mtsacA = T._alloc("Mt San Antonio");
   const mtsac = Array.from(doc.querySelectorAll("tr.cplfund-row"))
     .find((tr) => tr.textContent.indexOf("Mt San Antonio") !== -1);
-  const cells = Array.from(mtsac.querySelectorAll("td.cf-award")).map((td) => td.textContent);
+  // The CR/NC pair, read by class: the Max award cell (cf-max) leads it.
+  const cells = Array.from(mtsac.querySelectorAll("td.cf-award:not(.cf-max)")).map((td) => td.textContent);
+  const maxCell = mtsac.querySelector("td.cf-award.cf-max");
   // Annual funding (the baked default) shows per-year figures: award ÷ 2.
   check("a college's noncredit award renders in ITS OWN labelled column, exactly once",
     cells.length === 2 &&
@@ -680,6 +686,8 @@ const money = function (n) { return "$" + Math.round(n).toLocaleString("en-US");
     cells[0].indexOf(money(mtsacA.cr_award / 2)) !== -1 &&
     cells[0].indexOf(money(mtsacA.total / 2)) === -1 &&
     Math.abs(mtsacA.cr_award + mtsacA.nc_award - mtsacA.total) < 1);
+  check("the combined total prints once, in the Max award cell",
+    !!maxCell && maxCell.textContent.indexOf(money(mtsacA.total / 2)) === 0);
 
   // ── the Mt. SAC dedup: excluded from the ROSTER, not deleted ───────────
   // Removing the institution outright erased a real $50,000 ESS 25-82 grant.

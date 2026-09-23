@@ -81,10 +81,14 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
   check("E: the Potential/Earned basis toggle is gone (no mode to get stuck in)",
     !doc.querySelector("#cplFundBasis") && !("basis" in T._state));
   const potRow = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row")).find(function (r) { return /Laney/.test(r.textContent); });
+  // The Max award cell leads the award cells since 2026-09-23 (Sam's base
+  // report); the CR/NC pair follows it. awardCells[0] is therefore the combined
+  // figure, and the pair is read by what it is, not by where it sits.
   const awardCells = potRow.querySelectorAll("td.cf-award");
-  check("E: one row carries the CR award / NC award pair (the retired Total/Yr columns' successor)",
-    awardCells.length === 2);
-  check("E: the CR award cell stacks the max award over the qualifying figure, unconditionally",
+  const pairCells = potRow.querySelectorAll("td.cf-award:not(.cf-max)");
+  check("E: one row carries the Max award and the CR award / NC award pair",
+    awardCells.length === 3 && pairCells.length === 2 && awardCells[0].classList.contains("cf-max"));
+  check("E: the Max award cell stacks the max award over the qualifying figure, unconditionally",
     !!awardCells[0].querySelector(".sub") &&
     // ⚠️ THE PRESENT PARTICIPLE, NEVER THE PAST (Sam, 2026-08-27): the funding is
     // not a done deal until the college qualifies, and the past tense read like a
@@ -96,10 +100,13 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
       awardCells[0].querySelector(".sub").textContent));
   // Reworded 2026-09-01 (Sam: no unshipped-feed references on the surface):
   // the F1 arithmetic shows as the STANDARD qualifying sub at $0.
-  check("E: the NC award cell carries the standard qualifying sub at $0 (F1 arithmetic; no feeds-waiting label)",
-    !!awardCells[1].querySelector(".sub") &&
-    /qualifying \$0/.test(awardCells[1].textContent) &&
-    !/until feeds report/.test(awardCells[1].textContent));
+  // The qualifying line reads ONCE, under the Max award (2026-09-23): the pair
+  // cells each printed it, so a gated college read "confirm participation"
+  // twice. The NC cell is its figure, and its hover carries the qualifying one.
+  check("E: the NC award cell is its figure alone, its qualifying figure in the hover (no feeds-waiting label)",
+    !pairCells[1].querySelector(".sub") &&
+    /qualifying so far: \$0/.test(pairCells[1].getAttribute("title") || "") &&
+    !/until feeds report/.test(pairCells[1].textContent + (pairCells[1].getAttribute("title") || "")));
 
   const la = T._alloc("Laney");   // in-feed, underachieving on the measurable P1
   const f = Math.min(1, 200 / la.p1_heads);
@@ -294,15 +301,18 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
   check("F: other columns are hideable (district, the FTES pair, the award pair)",
     keys.indexOf("district") !== -1 && keys.indexOf("cr_ftes") !== -1 && keys.indexOf("nc_ftes") !== -1 &&
     keys.indexOf("cr_award") !== -1 && keys.indexOf("nc_award") !== -1);
-  check("F: no retired money column lingers in the menu (total/combined/yr — R6/R7)",
-    keys.indexOf("total") === -1 && keys.indexOf("combined") === -1 && keys.indexOf("y1") === -1);
+  check("F: no retired money column lingers in the menu (combined/yr — R6/R7); the Max award is hideable",
+    keys.indexOf("combined") === -1 && keys.indexOf("y1") === -1 && keys.indexOf("total") !== -1);
   const waCb = doc.querySelector('.cplfund-colmenu input[data-colkey="working_adults"]');
   check("F: county (working adults) is unchecked/hidden by default", !!waCb && !waCb.checked);
   const distCb = doc.querySelector('.cplfund-colmenu input[data-colkey="district"]');
   check("F: District is unchecked/hidden by default too (the mock's default view)", !!distCb && !distCb.checked);
   const style0 = doc.querySelector("#cplFundTable style");
-  check("F: a hide <style> is injected for both default-hidden columns (District 3rd, county 9th)",
-    !!style0 && /nth-child\(3\)/.test(style0.textContent) && /nth-child\(9\)/.test(style0.textContent));
+  const countyPos = Array.from(doc.querySelectorAll("#cplFundTable thead th"))
+    .map(function (th) { return th.getAttribute("data-sort"); }).indexOf("working_adults") + 1;
+  check("F: a hide <style> is injected for both default-hidden columns (District 3rd, county " + countyPos + "th)",
+    !!style0 && countyPos > 3 && /nth-child\(3\)/.test(style0.textContent) &&
+    new RegExp("nth-child\\(" + countyPos + "\\)").test(style0.textContent));
   check("F: the hide rule excludes detail rows so a drill-in never collapses",
     style0.textContent.indexOf(":not(.cplfund-detail)") !== -1);
 
@@ -356,16 +366,19 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
   const rows = dtl ? Array.from(dtl.querySelectorAll("tr")).slice(1) : [];
   check("G: the expand renders one detail row per priority", rows.length === NPRIO);
   const cells = function (i) { return Array.from(rows[i].querySelectorAll("td")).map(function (td) { return td.textContent; }); };
+  // By HEADER: the table dropped its CR/NC funding columns on 2026-09-23.
+  const dh = Array.from(dtl.querySelectorAll("th")).map(function (h) { return h.textContent.trim().toLowerCase(); });
+  const col = function (i, k) { return cells(i)[dh.indexOf(k)] || ""; };
   check("G: the detail table stacks a Target column beside an Actual column",
     Array.from(dtl.querySelectorAll("th")).map(function (h) { return h.textContent; }).join("|").indexOf("Target|Actual") !== -1);
   check("G: the measurable P1 row shows the actual + a % of target",
-    cells(0)[4].indexOf("200") !== -1 && cells(0)[4].indexOf("%") !== -1);
+    col(0, "actual").indexOf("200") !== -1 && col(0, "actual").indexOf("%") !== -1);
   check("G: an unmeasured priority row reads a plain 'no data yet' — never a measured zero, and " +
         "never the retired advance wording (2026-09-01)",
-    cells(1)[4].indexOf("awaiting measurement") !== -1 && cells(1)[4].indexOf("advance") === -1 &&
-    cells(1)[4].indexOf("0 · 0%") === -1);
+    col(1, "actual").indexOf("awaiting measurement") !== -1 && col(1, "actual").indexOf("advance") === -1 &&
+    col(1, "actual").indexOf("0 · 0%") === -1);
   check("G: the priority rows carry funding ($ figures) alongside the measures",
-    /\$/.test(cells(0)[1]) && /\$/.test(cells(0)[6]));
+    /\$/.test(col(0, "current total")) && /\$/.test(col(0, "total possible")));
   // The metric itself stays visible where the priority is defined — the card's
   // METRIC block (the retired column-header hover's successor).
   check("G: each priority card carries its METRIC block",

@@ -159,7 +159,10 @@
     ".cf-ncwait { color: var(--text-muted); }",
     ".cplfund-ncorigin { font-size: .85rem; margin: 4px 0; }",
     ".cplfund-dtl-tscroll { overflow-x: auto; margin: 6px 0; }",
-    ".cplfund-dtl-table { border-collapse: collapse; width: 100%; min-width: 740px; table-layout: fixed; font-size: .8rem; }",
+    ".cplfund-dtl-table { border-collapse: collapse; width: 100%; min-width: 640px; table-layout: fixed; font-size: .8rem; }",
+    ".cplfund-dtl-table td:not(:first-child) { white-space: nowrap; }",
+    ".cplfund-dtl-table tr.cplfund-dtl-rep td { white-space: normal; }",
+    ".cplfund-dtl-table tr.cplfund-dtl-rep td.dk { text-align: left; font-style: italic; }",
     ".cplfund-dtl-table caption { text-align: left; caption-side: top; padding: 2px 0 4px; }",
     ".cplfund-dtl-table th { text-align: left; font-size: .68rem; text-transform: uppercase; letter-spacing: .04em; color: var(--text-muted); padding: 3px 6px; border-bottom: 1px solid var(--border-strong); }",
     ".cplfund-dtl-table th:not(:first-child), .cplfund-dtl-table td:not(:first-child) { text-align: right; }",
@@ -316,6 +319,33 @@
     ".cplfund-prio-move { display: flex; align-items: center; gap: 8px; margin: 0 0 8px; font-size: .75rem; color: var(--text-muted); }",
     ".cplfund-grip { cursor: grab; border: 1px solid var(--border-strong); border-radius: 999px; padding: 1px 9px; background: var(--surface-opaque); user-select: none; }",
     ".cplfund-grip:active { cursor: grabbing; }",
+    // The card controls of 2026-09-23: show-on-rows and Delete sit on the
+    // right of the control line; the priority number is the heading's picker.
+    ".cplfund-prio-tools { margin-left: auto; display: inline-flex; align-items: center; gap: 10px; flex-wrap: wrap; }",
+    ".cplfund-rowsl { display: inline-flex; align-items: center; gap: 5px; min-height: 24px; cursor: pointer; color: var(--text-body); }",
+    ".cplfund-rowsl input { margin: 0; }",
+    ".cplfund-prio h4 .cplfund-pos { font-size: .92rem; font-weight: 700; color: var(--navy-primary); margin: 0 1px; }",
+    ".cplfund-delpanel { border: 1px solid var(--border-strong); border-left: 3px solid var(--red-alert); border-radius: 6px; padding: 8px 10px; margin: 0 0 10px; background: var(--surface-opaque); font-size: .8rem; color: var(--text-body); }",
+    ".cplfund-delpanel-q { margin: 0 0 6px; }",
+    ".cplfund-delpanel-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 0 0 6px; min-height: 24px; }",
+    ".cplfund-delpanel-note { margin: 0; font-size: .76rem; }",
+    ".cplfund-prio-gone { display: inline-flex; align-items: center; gap: 5px; margin-right: 8px; }",
+    ".cplfund-sharesum { margin: 4px 0 8px; font-size: .8rem; }",
+    ".cplfund-pubstate { font-size: .78rem; }",
+    ".cplfund-measedit { border: 1px solid var(--border-strong); border-radius: 8px; padding: 8px 12px; margin: 0 0 10px; background: var(--surface-opaque); font-size: .8rem; }",
+    ".cplfund-measedit-h { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin: 0 0 6px; }",
+    ".cplfund-measedit-h .cplfund-textbtn { margin-left: auto; }",
+    ".cplfund-measrow { display: flex; align-items: center; gap: 8px; margin: 0 0 4px; }",
+    ".cplfund-measrow .cplfund-ed-t { flex: 1 1 auto; min-height: 24px; }",
+    ".cplfund-cardsrc-row { display: flex; align-items: flex-end; gap: 6px; flex-wrap: wrap; }",
+    ".cplfund-cardsrc-row .cplfund-cardsrc-lab { flex: 1 1 14rem; min-width: 0; }",
+    ".cplfund-cardsrc-row .cplfund-textbtn { flex: 0 0 auto; }",
+    // The heading is a row: the number picker, then the title filling the rest,
+    // so a long title reads whole instead of stopping at a fixed width.
+    ".cplfund-prio .p h4, .cplfund-prio .cplfund-rprio h4 { display: flex; align-items: center; gap: 6px; }",
+    ".cplfund-prio h4 .cplfund-prio-num { flex: 0 0 auto; white-space: nowrap; }",
+    ".cplfund-prio h4 .cplfund-prio-title-input { flex: 1 1 auto; min-width: 0; max-width: none; }",
+    ".cplfund-prio .cplfund-rprio .metric { font-size: .8rem; color: var(--text-muted); border-top: 1px dashed var(--border-strong); padding-top: 6px; text-align: left; }",
     ".cplfund-posl { display: inline-flex; align-items: center; gap: 4px; }",
     ".cplfund-pos { font-size: .75rem; padding: 1px 4px; min-height: 24px; border: 1px solid var(--border-strong); border-radius: 4px; background: var(--surface-opaque); color: var(--text-body); }",
     ".cplfund-prio .p.cplfund-dragging { opacity: .45; }",
@@ -323,7 +353,7 @@
     ".cplfund-yearsync { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin: 0 0 10px; font-size: .8rem; }",
     ".cplfund-yearsync label { display: inline-flex; align-items: center; gap: 5px; }",
     ".cplfund-prio-title-input { display: inline-block; width: auto; min-width: 100px; max-width: 210px; font-weight: 700; color: var(--navy-primary); border: none; border-bottom: 1px dashed var(--border-strong); background: transparent; font-size: 1rem; padding: 0 2px; }",
-    ".cplfund-prio-title-input:focus { outline: none; border-bottom-color: var(--gold-accent); background: var(--surface-subtle); }",
+    ".cplfund-prio-title-input:focus { border-bottom-color: var(--gold-accent); background: var(--surface-subtle); }",
     // Recommended-strategies list per priority box.
     ".cplfund-strat { margin-top: 8px; border-top: 1px dashed var(--border-strong); padding-top: 6px; font-size: .8rem; }",
     // The strategies are a FOLD (Sam, 2026-08-31): the summary IS the block
@@ -345,10 +375,10 @@
     ".cplfund-cardgoal-name { font-size: 1rem; font-weight: 700; color: var(--text-strong); }",
     ".cplfund-cardgoal-orphan { color: var(--red-alert); }",
     ".cplfund-cardgoal-cite { font-size: .76rem; font-weight: 600; color: var(--text-muted); }",
-    ".cplfund-cardgoal-lab { margin-left: auto; display: flex; align-items: center; gap: 5px;",
+    ".cplfund-cardgoal-lab { margin-left: auto; display: flex; align-items: center; gap: 5px; min-width: 0; max-width: 100%;",
     "  font-size: .72rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--text-muted); }",
     ".cplfund-cardgoal-sel { font: inherit; font-size: .82rem; text-transform: none; letter-spacing: 0;",
-    "  min-height: 24px; max-width: 100%; color: var(--text-strong); background: var(--surface-opaque);",
+    "  min-height: 24px; min-width: 0; max-width: 100%; flex: 0 1 auto; color: var(--text-strong); background: var(--surface-opaque);",
     "  border: 1px solid var(--border-strong); border-radius: 6px; padding: 2px 6px; }",
     ".cplfund-cardgoal-quote { flex-basis: 100%; margin: 2px 0 0; font-size: .82rem; font-style: italic; color: var(--text-muted); }",
     ".cplfund-cardgoal-src { flex-basis: 100%; font-size: .76rem; color: var(--text-muted); }",
@@ -433,7 +463,7 @@
     ".cplfund-formula ul.cplfund-formula-list li::marker { color: var(--gold-accent); }",
     ".cplfund-toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 0 0 10px; }",
     ".cplfund-toolbar input[type=search] { padding: 8px 12px; border: 1px solid var(--border-strong); border-radius: 6px; font-size: .9rem; min-width: 220px; }",
-    ".cplfund-toolbar input:focus { outline: none; border-color: var(--navy-secondary); }",
+    ".cplfund-toolbar input:focus { border-color: var(--navy-secondary); }",
     ".cplfund-seg { display: inline-flex; border: 1px solid var(--border-strong); border-radius: 6px; overflow: hidden; }",
     ".cplfund-seg button { background: var(--surface-opaque); color: var(--text-body); border: none; padding: 8px 12px; font-size: .85rem; cursor: pointer; font-family: inherit; }",
     ".cplfund-seg button + button { border-left: 1px solid var(--border-strong); }",
@@ -515,8 +545,9 @@
     ".cplfund-caret { display: inline; width: auto; color: inherit; background: none; border: none; padding: 3px 3px; margin: 0; font: inherit; line-height: inherit; cursor: pointer; text-align: left; }",
     ".cplfund-caret:hover { text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 2px; }",
     ".cplfund-caret:focus-visible { outline: 2px solid var(--gold-accent); outline-offset: 1px; border-radius: 3px; }",
-    "tr.cplfund-detail td { background: var(--surface-subtle); border-top: none; text-align: left; white-space: normal; padding: 10px 16px 12px 30px; cursor: default; }",
-    ".cplfund-detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 6px 22px; font-size: .83rem; }",
+    "tr.cplfund-detail td { background: var(--surface-subtle); border-top: none; text-align: left; white-space: normal; padding: 6px 14px 8px 26px; cursor: default; }",
+    ".cplfund-detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 4px 22px; font-size: .83rem; }",
+    ".cplfund-detail-grid > .cplfund-dtl-foot { grid-column: 1 / -1; margin: 0; font-size: .78rem; line-height: 1.4; }",
     ".cplfund-detail-grid .dk { color: var(--text-muted); }",
     ".cplfund-detail-grid > .cplfund-dtl-tscroll, .cplfund-detail-grid > .cplfund-optin, .cplfund-detail-grid > .cplfund-notewrap, .cplfund-detail-grid > .cplfund-basestatus { grid-column: 1 / -1; }",
     ".cplfund-foot { font-size: .78rem; color: var(--text-muted); margin: 10px 2px; }",
@@ -588,14 +619,19 @@
     ".cplfund-years label { font-size: .85rem; color: var(--text-muted); display: inline-flex; align-items: center; gap: 6px; }",
     ".cplfund-years select, .cplfund-ed-sel { padding: 5px 8px; border: 1px solid var(--border-strong); border-radius: 6px; font-size: .85rem; font-family: inherit; background: var(--surface-opaque); color: var(--text-body); }",
     // ── editable fields ──
+    // FOCUS SHOWS COBI'S OWN RING (2026-09-23). Every :focus rule here used to
+    // carry `outline: none`, which canceled the page's 3px --focus-ring on 62
+    // fields (`npm run a11y`: "focusable with no ring"), and the gold border it
+    // left behind sits under 3:1 on white. The border and fill stay as the
+    // field's editing state, beside the ring.
     ".cplfund-ed { font-size: 1.25rem; font-weight: 700; color: var(--navy-primary); border: none; border-bottom: 2px dashed var(--border-strong); background: transparent; width: 100%; padding: 0 0 2px; font-family: inherit; text-align: center; }",
-    ".cplfund-ed:focus { outline: none; border-bottom-color: var(--gold-accent); background: var(--surface-subtle); }",
+    ".cplfund-ed:focus { border-bottom-color: var(--gold-accent); background: var(--surface-subtle); }",
     ".cplfund-ed.neg { color: var(--text-strong); }",
     ".cplfund-ed-s { width: 68px; font-size: .8rem; font-weight: 700; color: var(--navy-primary); border: 1px solid var(--border-strong); border-radius: 4px; padding: 2px 6px; text-align: center; background: var(--surface-opaque); font-family: inherit; }",
-    ".cplfund-ed-s:focus { outline: none; border-color: var(--gold-accent); }",
+    ".cplfund-ed-s:focus { border-color: var(--gold-accent); }",
     ".cplfund-ed-t { width: 100%; font-size: inherit; color: inherit; border: 1px solid transparent; border-radius: 4px; padding: 2px 4px; background: var(--surface-opaque); font-family: inherit; }",
     ".cplfund-ed-t:hover { border-color: var(--border); }",
-    ".cplfund-ed-t:focus { outline: none; border-color: var(--gold-accent); background: var(--surface-subtle); }",
+    ".cplfund-ed-t:focus { border-color: var(--gold-accent); background: var(--surface-subtle); }",
     // Multi-line variant: priority description + metric wrap to 2 rows so long
     // text stays readable (and every card's boxes line up the same height).
     ".cplfund-ed-area { display: block; width: 100%; resize: vertical; line-height: 1.35; margin-top: 2px; }",
@@ -760,7 +796,7 @@
     ".cf-eligpie { vertical-align: middle; display: inline-block; }",
     ".cplfund-notewrap { grid-column: 1 / -1; }",
     ".cplfund-note { width: 100%; max-width: 560px; font-family: inherit; font-size: .83rem; color: var(--text-body); background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 6px; padding: 4px 8px; vertical-align: middle; }",
-    ".cplfund-note:focus { outline: none; border-color: var(--gold-accent); }",
+    ".cplfund-note:focus { border-color: var(--gold-accent); }",
     // Ghosted, not decorated: a quiet outlined word beside the title, no fill.
     ".cplfund-draftchip { display: inline-block; margin-left: 10px; vertical-align: middle; background: none; color: var(--text-muted); border: 1px solid var(--border-strong); font-size: .38em; font-weight: 600; letter-spacing: .08em; padding: 2px 8px; border-radius: 3px; text-transform: uppercase; }",
     // ── self-service opt-in (public + private) + the CO confirm lane ──────────
@@ -780,7 +816,7 @@
        measured exactly the same 21.7px. Fixing the rule you found is not fixing
        the rule that applies. */
     ".cplfund-optin-grid input, .cplfund-optin-grid select { font-family: inherit; font-size: .86rem; color: var(--text-body); background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 6px; padding: 5px 8px; min-height: 24px; box-sizing: border-box; }",
-    ".cplfund-optin-grid input:focus, .cplfund-optin-grid select:focus { outline: none; border-color: var(--gold-accent); }",
+    ".cplfund-optin-grid input:focus, .cplfund-optin-grid select:focus { border-color: var(--gold-accent); }",
     ".cplfund-optin-actions { margin-top: 9px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }",
     ".cplfund-optin-err:not(:empty) { color: var(--red-alert); font-size: .8rem; margin-top: 6px; }",
     ".cplfund-optin-note { color: var(--text-muted); font-size: .76rem; margin-top: 8px; line-height: 1.4; }",
@@ -1099,6 +1135,9 @@
   var WHATIF = {};                      // per-browser what-if overlays (localStorage)
   var activeProject = DEFAULT_PID;
   var activeScenario = "Scenario 1";
+  // Has this browser CHOSEN a scenario? Until it has, it reads the published
+  // one (publishedScenario). Set by a stored selection or any switch.
+  var selectionStored = false;
   var SHARED = {};      // → SUPA_CONFIG.projects[activeProject].scenarios[activeScenario]
   var SCENARIO = {};    // → WHATIF[activeProject + "::" + activeScenario]
   var remoteLoaded = false; // whether the shared fetch has resolved
@@ -1156,6 +1195,9 @@
         var scen = isPlainObj(p.scenarios) ? p.scenarios : {};
         if (!Object.keys(scen).length) scen = { "Scenario 1": {} };
         out.projects[pid] = { label: p.label || pid, area: p.area || "cpl", scenarios: scen };
+        // The scenario the public reads (publishedScenario). Kept only when it
+        // is a string; a name that no longer exists is resolved at read time.
+        if (typeof p.published === "string" && p.published) out.projects[pid].published = p.published;
       });
       return out;
     }
@@ -1184,14 +1226,50 @@
     var p = activeProjectObj();
     return Object.keys(p.scenarios).sort(function (a, b) { return a.localeCompare(b, undefined, { numeric: true }); });
   }
+  // ── the PUBLISHED scenario (Sam, 2026-09-23) ──────────────────────────
+  // "Confirm that when I create a new scenario it stays wired to everything
+  // needed--public view, explainer, report writer, etc." It was not. Every
+  // surface read the scenario THIS BROWSER had selected, so a college (no
+  // selection) read "Scenario 1" on the explainer while the curator's own
+  // browser showed his working scenario there, and the college briefing named
+  // "Scenario 1" in code. One stored name per project now says which scenario
+  // the public reads. It moves only when a curator presses Publish, and an
+  // unset name keeps "Scenario 1", so nothing a college sees changes until then.
+  //
+  // ⚠️ THE CURATOR'S PREVIEW IS NOT A PUBLIC SURFACE. It renders the scenario
+  // being edited, so unpublished work can be previewed before it is published.
+  function publicSurface() { return !!(window.CPL_FUNDING_PUBLIC || embedMode()); }
+  function publishedScenario() {
+    var p = activeProjectObj();
+    var v = typeof p.published === "string" ? p.published : "";
+    if (v && isPlainObj(p.scenarios[v])) return v;
+    if (isPlainObj(p.scenarios["Scenario 1"])) return "Scenario 1";
+    return scenarioNames()[0];
+  }
+  function publishScenario(name) {
+    if (!unlocked()) return;
+    var p = activeProjectObj();
+    if (!isPlainObj(p.scenarios[name])) return;
+    p.published = name;
+    saveShared();
+  }
   // Re-point SHARED + SCENARIO at the active project/scenario. Call after any
   // selection change, config load, or structural edit.
   function syncActive() {
+    // A public surface reads the flagship project's PUBLISHED scenario, never
+    // this browser's selection or its what-if overlay: the page has to show a
+    // college what the Chancellor's Office published. A browser that never
+    // chose a scenario starts on the published one too.
+    if (publicSurface() && SUPA_CONFIG && SUPA_CONFIG.projects && SUPA_CONFIG.projects[DEFAULT_PID]) {
+      activeProject = DEFAULT_PID;
+    }
     var p = activeProjectObj();
     if (!isPlainObj(p.scenarios) || !Object.keys(p.scenarios).length) p.scenarios = { "Scenario 1": {} };
+    if (publicSurface() || !selectionStored) activeScenario = publishedScenario();
     if (!p.scenarios[activeScenario]) activeScenario = scenarioNames()[0];
     if (!isPlainObj(p.scenarios[activeScenario])) p.scenarios[activeScenario] = {};
     SHARED = p.scenarios[activeScenario];
+    if (publicSurface()) { SCENARIO = {}; return; }
     var key = activeProject + "::" + activeScenario;
     if (!isPlainObj(WHATIF[key])) WHATIF[key] = {};
     SCENARIO = WHATIF[key];
@@ -1213,7 +1291,7 @@
       var sel = JSON.parse(localStorage.getItem(SELECTION_KEY) || "null");
       if (sel && typeof sel === "object") {
         if (sel.project) activeProject = sel.project;
-        if (sel.scenario) activeScenario = sel.scenario;
+        if (sel.scenario) { activeScenario = sel.scenario; selectionStored = true; }
       }
       var wf = JSON.parse(localStorage.getItem(WHATIF_KEY) || "null");
       if (isPlainObj(wf)) WHATIF = wf;
@@ -1229,6 +1307,7 @@
     LEGACY_SCEN_KEYS.forEach(function (k) { try { localStorage.removeItem(k); } catch (e) {} });
   }
   function saveSelection() {
+    selectionStored = true;   // every caller is a curator's explicit choice
     try { localStorage.setItem(SELECTION_KEY, JSON.stringify({ project: activeProject, scenario: activeScenario })); }
     catch (e) { /* ignore */ }
   }
@@ -1247,11 +1326,13 @@
   // ── project + scenario management ─────────────────────────────────────
   function switchProject(pid) {
     if (!SUPA_CONFIG.projects[pid]) return;
+    selectionStored = true;
     activeProject = pid;
     activeScenario = scenarioNames()[0];
     syncActive(); saveSelection(); render();
   }
   function switchScenario(name) {
+    selectionStored = true;
     activeScenario = name;
     syncActive(); saveSelection(); render();
   }
@@ -1264,6 +1345,7 @@
     while (p.scenarios["Scenario " + i]) i++;
     var name = "Scenario " + i;
     p.scenarios[name] = clone(SHARED);   // clone the CURRENT scenario's overrides
+    selectionStored = true;
     activeScenario = name;
     syncActive(); saveSelection(); saveShared();
   }
@@ -1271,8 +1353,12 @@
     if (!unlocked()) return;
     var p = activeProjectObj();
     if (Object.keys(p.scenarios).length <= 1) return;   // always keep at least one
+    // The published scenario stays until another is published: deleting it
+    // would move every college to whichever scenario sorts first.
+    if (activeScenario === publishedScenario()) return;
     delete p.scenarios[activeScenario];
-    activeScenario = scenarioNames()[0];
+    selectionStored = true;
+    activeScenario = publishedScenario();
     syncActive(); saveSelection(); saveShared();
   }
   // Add a project — clone the CPL template (the CURRENT active scenario) as the
@@ -1288,6 +1374,7 @@
     label = String(label || "").trim() || "New Project";
     var pid = slugPid(label);
     SUPA_CONFIG.projects[pid] = { label: label, area: area || "cpl", scenarios: { "Scenario 1": clone(SHARED) } };
+    selectionStored = true;
     activeProject = pid; activeScenario = "Scenario 1";
     syncActive(); saveSelection(); saveShared();
   }
@@ -2145,24 +2232,292 @@
   // new one), and `undefined === undefined` when no order is set, so the common
   // path allocates nothing at all. The returned array is shared, so every caller
   // treats it as READ-ONLY — reorderList() slices before mutating.
-  var ORDER_CACHE = { src: 0, slot: null, n: -1, val: null };
+  var ORDER_CACHE = { src: 0, slot: null, sig: null, val: null };
   function priorityOrder(slot) {
     var s = prioSlot(slot);
-    var n = prioSrcList(s).length;
+    var ids = prioSrcIds(s);
+    var sig = ids.join(",");
     var v = firstDefined(SCENARIO.priorityOrder, SHARED.priorityOrder, base().priority_order);
-    if (ORDER_CACHE.src === v && ORDER_CACHE.slot === s && ORDER_CACHE.n === n) return ORDER_CACHE.val;
+    if (ORDER_CACHE.src === v && ORDER_CACHE.slot === s && ORDER_CACHE.sig === sig) return ORDER_CACHE.val;
     // A stored order that predates a priority added later (Sam's [0, 2, 1] when
     // P4 arrived, 2026-09-22) keeps its order, and the newcomer joins at the end.
     // Falling back to the natural order there would have swapped his P2 and P3.
-    var out = isPermutation(v, n) ? v.map(Number)
-      : (Array.isArray(v) && v.length < n && isPermutation(v, v.length))
-        ? v.map(Number).concat(identityOrder(n).slice(v.length))
-        : identityOrder(n);
-    ORDER_CACHE.src = v; ORDER_CACHE.slot = s; ORDER_CACHE.n = n; ORDER_CACHE.val = out;
+    // A priority deleted from the scenario (2026-09-23) simply drops out of it.
+    var out = orderIsUsable(v, ids) ? storedOrderOver(v, ids) : ids.slice();
+    ORDER_CACHE.src = v; ORDER_CACHE.slot = s; ORDER_CACHE.sig = sig; ORDER_CACHE.val = out;
     return out;
   }
+  // Is a stored order one this priority set can honor? The same three refusals
+  // the permutation test made before priorities could be added or deleted: a
+  // repeat, a value that names no priority this scenario ever held, and a
+  // shorter order that is not a prefix of the set (a priority missing from the
+  // middle of it). A DELETED priority may still sit in a stored order; it is
+  // skipped, never counted against it.
+  function orderIsUsable(v, ids) {
+    if (!Array.isArray(v) || !v.length) return false;
+    var inIds = {}, removed = prioRemovedSet(), seen = {}, maxKept = -1, i, k;
+    ids.forEach(function (x) { inIds[x] = 1; });
+    for (i = 0; i < v.length; i++) {
+      k = Number(v[i]);
+      if (!(k >= 0) || k !== Math.floor(k) || seen[k]) return false;
+      seen[k] = 1;
+      if (inIds[k]) { if (k > maxKept) maxKept = k; }
+      else if (!removed[k]) return false;
+    }
+    for (i = 0; i < ids.length; i++) if (!seen[ids[i]] && ids[i] < maxKept) return false;
+    return true;
+  }
+  function storedOrderOver(v, ids) {
+    var inIds = {}, out = [];
+    ids.forEach(function (x) { inIds[x] = 1; });
+    v.forEach(function (x) { if (inIds[Number(x)]) out.push(Number(x)); });
+    ids.forEach(function (x) { if (out.indexOf(x) < 0) out.push(x); });
+    return out;
+  }
+
+  // ── ADDING and DELETING a priority (Sam, 2026-09-23) ─────────────────
+  // "I need to be able to Add/Delete a priority. In this case, I want to
+  // delete the 2nd completion priority and integrate it into P2. This will
+  // allow me to match the statute's 4 outcomes."
+  //
+  // The baked list in cpl_funding_data.js fixed HOW MANY priorities existed;
+  // a scenario could only override the fields of the ones it held. Two
+  // window-level lists now change the set, per scenario:
+  //   prioRemoved  source indices this scenario deleted. A deletion is
+  //                REVERSIBLE: the priority's own stored fields stay, and
+  //                Restore brings it back with them.
+  //   prioAdded    source indices this scenario added, numbered from
+  //                ADDED_PRIO_BASE so a priority baked into the data file
+  //                later can never collide with one a curator added.
+  // ⚠️ A DELETED SHARE MUST GO SOMEWHERE. A college's award is W times the SUM
+  // of the shares, so a share deleted without being moved removes that part of
+  // the funding from every college. removePriority() takes the priority that
+  // absorbs it, which is Sam's "integrate it into P2".
+  var ADDED_PRIO_BASE = 100;
+  function prioRemovedSet() {
+    var v = firstDefined(SCENARIO.prioRemoved, SHARED.prioRemoved, base().prio_removed);
+    var out = {};
+    if (Array.isArray(v)) v.forEach(function (k) { if (Number(k) >= 0) out[Number(k)] = 1; });
+    return out;
+  }
+  function prioAddedList() {
+    var v = firstDefined(SCENARIO.prioAdded, SHARED.prioAdded, base().prio_added);
+    return Array.isArray(v)
+      ? v.map(Number).filter(function (k) { return k >= ADDED_PRIO_BASE && k === Math.floor(k); })
+      : [];
+  }
+  // The source indices that exist in this scenario, in source order.
+  function prioSrcIds(slot) {
+    var n = prioSrcList(slot).length, removed = prioRemovedSet(), ids = [], i;
+    for (i = 0; i < n; i++) if (!removed[i]) ids.push(i);
+    prioAddedList().sort(function (a, b) { return a - b; }).forEach(function (k) {
+      if (!removed[k] && ids.indexOf(k) < 0) ids.push(k);
+    });
+    return ids;
+  }
+  // Every year slot a priority field can live in: one when the years mirror.
+  function prioSlots() {
+    var out = [];
+    selectedYears().forEach(function (_, i) {
+      var s = prioSlot(String(i + 1));
+      if (out.indexOf(s) < 0) out.push(s);
+    });
+    return out.length ? out : ["1"];
+  }
+  // The override row for one SOURCE index, created on demand. Writes land in
+  // the active layer, like setPrio().
+  function prioOvRow(slot, sIdx) {
+    var ov = activeOverride();
+    ov.yearPriorities = ov.yearPriorities || {};
+    ov.yearPriorities[slot] = ov.yearPriorities[slot] || {};
+    ov.yearPriorities[slot][sIdx] = ov.yearPriorities[slot][sIdx] || {};
+    return ov.yearPriorities[slot][sIdx];
+  }
+  // Delete the priority shown at display index `i`, moving its share (and,
+  // when asked, its recommended strategies) to the priority at display index
+  // `into`. One write, so the model never publishes the half-moved state.
+  function removePriority(slot, i, into, carryStrategies) {
+    var ps = priorities(slot);
+    var p = ps[i];
+    if (!p || ps.length <= 1) return false;          // a model keeps one priority
+    var tgt = (into != null && ps[Number(into)] && Number(into) !== i) ? ps[Number(into)] : null;
+    if (!tgt && (Number(p.share) || 0) > 0) return false;   // a share never just disappears
+    prioSlots().forEach(function (s) {
+      var disp = priorityOrder(s);
+      var di = disp.indexOf(p.src), dt = tgt ? disp.indexOf(tgt.src) : -1;
+      if (di < 0) return;
+      if (dt >= 0) {
+        var share = Number(prioField(s, di, "share")) || 0;
+        var tShare = Number(prioField(s, dt, "share")) || 0;
+        if (share > 0) prioOvRow(s, tgt.src).share = Math.round((tShare + share) * 1e6) / 1e6;
+        if (carryStrategies) {
+          var from = prioStrategies(s, di), onto = prioStrategies(s, dt);
+          from.forEach(function (t) { if (onto.indexOf(t) < 0) onto.push(t); });
+          prioOvRow(s, tgt.src).strategies = onto;
+        }
+      }
+    });
+    var ov = activeOverride();
+    var removed = Object.keys(prioRemovedSet()).map(Number);
+    if (removed.indexOf(p.src) < 0) removed.push(p.src);
+    ov.prioRemoved = removed.sort(function (a, b) { return a - b; });
+    persistActive();
+    return true;
+  }
+  // Bring a deleted priority back. Its own stored fields come back with it,
+  // share included, so the share line may then add up past 100% until the
+  // curator moves it; the totals row says so.
+  function restorePriority(sIdx) {
+    var ov = activeOverride();
+    ov.prioRemoved = Object.keys(prioRemovedSet()).map(Number)
+      .filter(function (k) { return k !== Number(sIdx); });
+    persistActive();
+  }
+  // Add a priority at the end of the set, at 0% so no college award moves
+  // until the curator sets its share.
+  function addPriority() {
+    var used = prioAddedList().concat(Object.keys(prioRemovedSet()).map(Number));
+    var next = ADDED_PRIO_BASE;
+    used.forEach(function (k) { if (k >= next) next = k + 1; });
+    var first = priorities("1")[0];
+    prioSlots().forEach(function (s) {
+      var row = prioOvRow(s, next);
+      row.title = "New priority";
+      row.share = 0;
+      row.factor = first ? first.factor : 1;
+      row.description = "";
+      row.metric = "";
+      row.metric_src = "";
+    });
+    var ov = activeOverride();
+    ov.prioAdded = prioAddedList().concat([next]);
+    persistActive();
+    return next;
+  }
+  // The deleted priorities, for the Restore list: their titles as they were.
+  function removedPriorities(slot) {
+    var s = prioSlot(slot), baked = prioSrcList(s);
+    return Object.keys(prioRemovedSet()).map(Number)
+      .filter(function (k) { return k < baked.length || prioAddedList().indexOf(k) >= 0; })
+      .map(function (k) {
+        var row = (SCENARIO.yearPriorities && SCENARIO.yearPriorities[s] && SCENARIO.yearPriorities[s][k]) ||
+          (SHARED.yearPriorities && SHARED.yearPriorities[s] && SHARED.yearPriorities[s][k]) || {};
+        var t = row.title != null ? row.title : ((baked[k] || {}).title || DEFAULT_PRIORITY_TITLES[k] || "");
+        return { src: k, title: String(t || "Untitled priority") };
+      });
+  }
+
+  // ── ONE NUMBERING for every card (Sam, 2026-09-23) ───────────────────
+  // "For P4, I want to edit the title to 'Innovation Projects' and be able to
+  // set the priority number like the other P cards." A reported card (the
+  // statute's (D), funded statewide) joins the measured priorities in one
+  // numbered sequence. Card ids: "m<source index>" for a measured priority,
+  // "r<goal>" for a reported card.
+  //
+  // ⚠️ priorityOrder() STAYS THE SOURCE OF TRUTH FOR THE MEASURED CARDS'
+  // RELATIVE ORDER; the stored `cardOrder` only says where the reported cards
+  // sit among them. mergeCardSeq() fills the measured slots of the stored
+  // sequence from priorityOrder(), so the two can never disagree about which
+  // measured priority comes first.
+  //
+  // ⚠️ AND IT DRIVES NO MATH. A reported card is still not an entry in
+  // priorities(slot); only the LABEL of a measured priority moves when a
+  // reported card is numbered ahead of it.
+  function mergeCardSeq(v, ms, rs) {
+    var mset = {}, rset = {}, seenR = {}, seq = [], mUsed = 0, lastM = -1;
+    ms.forEach(function (k) { mset[k] = 1; });
+    rs.forEach(function (k) { rset[k] = 1; });
+    (Array.isArray(v) ? v : []).forEach(function (k) {
+      k = String(k);
+      if (rset[k] && !seenR[k]) { seq.push(k); seenR[k] = 1; }
+      else if (mset[k] && mUsed < ms.length) { seq.push("M"); mUsed++; lastM = seq.length - 1; }
+    });
+    // A measured card the stored order predates joins after the last measured
+    // card; a reported card it predates joins at the end.
+    var extra = [];
+    while (mUsed < ms.length) { extra.push("M"); mUsed++; }
+    if (extra.length) Array.prototype.splice.apply(seq, [lastM + 1, 0].concat(extra));
+    rs.forEach(function (k) { if (!seenR[k]) seq.push(k); });
+    var mi = 0;
+    return seq.map(function (k) { return k === "M" ? ms[mi++] : k; });
+  }
+  function storedCardOrder() {
+    var v = firstDefined(SCENARIO.cardOrder, SHARED.cardOrder, base().card_order);
+    return Array.isArray(v) && v.length ? v : null;
+  }
+  // The measured labels are needed INSIDE priorities(), where deriving the
+  // reported set would recurse (derivedReportedGoals reads priorities()). So
+  // the label reads only STORED data: an interleaved order is stored together
+  // with an explicit reported list (moveCard writes both), and without one the
+  // reported cards follow the measured ones and nothing needs computing.
+  var SEQ_CACHE = { v: 0, rl: 0, order: 0, val: null };
+  function storedUnifiedSeq(slot) {
+    var v = storedCardOrder();
+    var rl = firstDefined(SCENARIO.reportedCards, SHARED.reportedCards, base().reported_cards);
+    if (!v || !Array.isArray(rl)) return null;
+    var order = priorityOrder(slot);
+    if (SEQ_CACHE.v === v && SEQ_CACHE.rl === rl && SEQ_CACHE.order === order) return SEQ_CACHE.val;
+    var seen = {}, rs = [];
+    rl.forEach(function (c) {
+      var k = c && (typeof c === "string" ? c : c.goal);
+      if (goalByKey(k) && !seen[k]) { seen[k] = 1; rs.push("r" + k); }
+    });
+    var out = mergeCardSeq(v, order.map(function (k) { return "m" + k; }), rs);
+    SEQ_CACHE.v = v; SEQ_CACHE.rl = rl; SEQ_CACHE.order = order; SEQ_CACHE.val = out;
+    return out;
+  }
+  // The render-time sequence: every card, measured and reported, in order.
+  function cardOrder(slot) {
+    var ms = priorityOrder(slot).map(function (k) { return "m" + k; });
+    var rs = reportedCards(slot).map(function (c) { return "r" + c.goal; });
+    var v = storedCardOrder();
+    return v ? mergeCardSeq(v, ms, rs) : ms.concat(rs);
+  }
+  // Move the card at unified position `from` to `to`. Writes the unified
+  // order, the measured order it implies, and — when the reported set is
+  // still derived — the reported list, so storedUnifiedSeq() can number the
+  // cards without deriving anything.
+  function moveCard(slot, from, to) {
+    var seq = reorderList(cardOrder(slot), Number(from), Number(to));
+    var ov = activeOverride();
+    ov.cardOrder = seq.slice();
+    ov.priorityOrder = seq.filter(function (k) { return k.charAt(0) === "m"; })
+      .map(function (k) { return Number(k.slice(1)); });
+    if (!Array.isArray(firstDefined(SCENARIO.reportedCards, SHARED.reportedCards, base().reported_cards))) {
+      ov.reportedCards = reportedCards(slot).map(function (c) { return c.goal; });
+    }
+    persistActive();
+  }
+  function cardNumber(slot, id) {
+    var i = cardOrder(slot).indexOf(id);
+    return i < 0 ? null : i + 1;
+  }
+
+  // ── SHOW ON COLLEGE ROWS (Sam, 2026-09-23) ───────────────────────────
+  // "Need a toggle on Priority cards to indicate whether to show the priority
+  // on college rows or not. For P4, I will toggle off." Keyed by card id,
+  // window-level like the order. A measured priority shows by default; a
+  // reported card, funded statewide, does not. Hiding a row hides a LINE in
+  // each institution's detail; the priority's funding still counts in every
+  // total.
+  function cardRowsMap() {
+    var v = firstDefined(SCENARIO.cardRows, SHARED.cardRows, base().card_rows);
+    return isPlainObj(v) ? v : {};
+  }
+  function cardRowsOn(id) {
+    var v = cardRowsMap()[id];
+    if (v === true || v === false) return v;
+    return String(id).charAt(0) === "m";
+  }
+  function setCardRows(id, on) {
+    var ov = activeOverride();
+    ov.cardRows = isPlainObj(ov.cardRows) ? ov.cardRows : {};
+    ov.cardRows[id] = !!on;
+    persistActive();
+  }
   function orderIsCustom(slot) {
-    return priorityOrder(slot).some(function (v, i) { return v !== i; });
+    var ids = prioSrcIds(prioSlot(slot));
+    return priorityOrder(slot).some(function (v, i) { return v !== ids[i]; }) || !!storedCardOrder();
   }
   function srcIdx(slot, i) {
     var o = priorityOrder(slot), n = Number(i);
@@ -2178,7 +2533,13 @@
   function resetPriorityOrder(slot) {
     var ov = activeOverride();
     delete ov.priorityOrder;
-    if (orderIsCustom(slot)) ov.priorityOrder = identityOrder(prioSrcList(prioSlot(slot)).length);
+    delete ov.cardOrder;
+    if (orderIsCustom(slot)) {
+      ov.priorityOrder = prioSrcIds(prioSlot(slot));
+      // A lower layer's interleaved order would surface otherwise; an empty
+      // list reads as "no stored order" (storedCardOrder).
+      if (storedCardOrder()) ov.cardOrder = [];
+    }
     persistActive();
   }
   // Move display position `from` to display position `to`. Pure over the order
@@ -2270,13 +2631,17 @@
     // the IDENTITY the config and every per-college cap are stored against —
     // reordering moves the first and never the second.
     var src = prioSrcList(prioSlot(slot));
+    // The NUMBER comes from the one sequence every card shares (reported cards
+    // included, 2026-09-23); `pos` stays the measured display index.
+    var seq = storedUnifiedSeq(slot);
     return priorityOrder(slot).map(function (sIdx, i) {
       var p = src[sIdx] || {};
       var share = prioField(slot, i, "share");
       var target_rate = prioTargetRate(slot, i, share);
       var metric = prioField(slot, i, "metric");
+      var num = seq ? seq.indexOf("m" + sIdx) + 1 : i + 1;
       return {
-        key: p.key || ("p" + (sIdx + 1)), label: "Priority " + (i + 1), pos: i, src: sIdx,
+        key: p.key || ("p" + (sIdx + 1)), label: "Priority " + (num > 0 ? num : i + 1), pos: i, src: sIdx,
         title: prioTitle(slot, i),
         description: prioField(slot, i, "description"),
         metric: metric,
@@ -3085,7 +3450,12 @@
     "data-secrename", "data-sectitle", "data-sectitlesave", "data-sectitlecancel",
     "data-sectitlereset", "data-sechide", "data-secshow",
     "data-projsel", "data-projadd", "data-projrelease", "data-priogoal", "data-priosrc",
-    "data-rcgoal", "data-rcdel", "data-rstratadd", "data-rstratdel"];
+    "data-rcgoal", "data-rcdel", "data-rstratadd", "data-rstratdel",
+    // The card controls of 2026-09-23: one numbering, show-on-rows, delete,
+    // restore, and the "Measured from" list editor.
+    "data-dragid", "data-carddrag", "data-cardpos", "data-priorows", "data-rcrows",
+    "data-priodel", "data-priodelinto", "data-priodelstrat", "data-priodelok", "data-priodelcancel",
+    "data-priorestore", "data-measedit", "data-measreset"];
   // PREVIEW-ONLY affordances, swept everywhere the curator is not previewing.
   // Kept OUT of CURATE_ATTRS rather than conditioned inside it, so the registry
   // above keeps meaning exactly one thing: every attribute in it leaves the DOM
@@ -3099,8 +3469,8 @@
   var CURATE_IDS = ["cplFundReqAdd", "cplFundTimingAdd", "cplFundReset",
     "cplFundPromote", "cplFundProjSel", "cplFundProjAdd", "cplFundProjArea",
     "cplFundProjCancel", "cplFundProjCreate", "cplFundProjName",
-    "cplFundScenSel", "cplFundScenNew", "cplFundScenDel",
-    "cplFundOrderReset", "cplFundMirror", "cplFundCopyYear1"];
+    "cplFundScenSel", "cplFundScenNew", "cplFundScenDel", "cplFundScenPublish",
+    "cplFundOrderReset", "cplFundMirror", "cplFundCopyYear1", "cplFundAddPrio"];
   function stripCurateAffordances(root) {
     if (!root) return;
     CURATE_ATTRS.concat(publicPreview() ? [] : PREVIEW_ATTRS).forEach(function (a) {
@@ -4209,17 +4579,29 @@
       (curator ? '<button type="button" class="rst" id="cplFundProjAdd" title="Add a new funding project (clones the current model as its starting point)">Add project</button>' : "") +
       "</div>";
     var scNames = scenarioNames();
+    var pub = publishedScenario();
     var scOpts = scNames.map(function (n) {
       var hasEdits = proj.scenarios[n] && Object.keys(proj.scenarios[n]).length;
-      return '<option value="' + esc(n) + '"' + (n === activeScenario ? " selected" : "") + ">" + esc(n) + (hasEdits ? " (edited)" : "") + "</option>";
+      return '<option value="' + esc(n) + '"' + (n === activeScenario ? " selected" : "") + ">" + esc(n) +
+        (n === pub ? " (published)" : hasEdits ? " (edited)" : "") + "</option>";
     }).join("");
+    // Which scenario the public reads, said on the strip where scenarios are
+    // chosen (Sam, 2026-09-23). The explainer, the college briefing and every
+    // browser that has not chosen a scenario read the published one.
+    var isPub = activeScenario === pub;
+    var pubLine = '<span class="dk cplfund-ctl-hint cplfund-pubstate" data-pubstate="' + (isPub ? "on" : "off") + '">' +
+      (isPub ? "Published: the public page and the college briefing read this scenario."
+        : "The public page reads " + esc(pub) + ".") + "</span>" +
+      (curator && !isPub
+        ? '<button type="button" class="rst" id="cplFundScenPublish" title="Make this the scenario the public page and the college briefing read">Publish this scenario</button>'
+        : "");
     var scBlock = '<div class="cplfund-ctl"><span class="cplfund-ctl-lbl">Scenario</span>' +
       '<select id="cplFundScenSel" class="cplfund-ed-sel" aria-label="Active scenario">' + scOpts + "</select>" +
       (curator
         ? '<button type="button" class="rst" id="cplFundScenNew" title="New scenario — copies the current scenario so you can tweak from it">New scenario</button>' +
-          (scNames.length > 1 ? '<button type="button" class="rst" id="cplFundScenDel" title="Delete this scenario">Delete scenario</button>' : "")
+          (scNames.length > 1 && !isPub ? '<button type="button" class="rst" id="cplFundScenDel" title="Delete this scenario">Delete scenario</button>' : "")
         : '<span class="dk cplfund-ctl-hint">sign in to add scenarios</span>') +
-      "</div>";
+      pubLine + "</div>";
     var addForm = "";
     if (curator && state.addingProject) {
       var areaOpts = orgAreas().map(function (a) {
@@ -4424,14 +4806,23 @@
     if (publicMode()) return "";
     var pf = perf();
     var rows = [], anyRisk = false;
-    selectedYears().forEach(function (yr, i) {
-      var slot = String(i + 1);
+    // PLAIN WORDS, ONE LINE PER PRIORITY (Sam, 2026-09-23: "Simplify and use
+    // plain language in the bullets"). The feed keys moved into each line's
+    // hover, and a mirrored year is not listed twice: with the years mirrored,
+    // every later year reads Year 1's set, so one list says everything.
+    var slots = [];
+    selectedYears().forEach(function (_, i) {
+      var y = String(i + 1);
+      if (!slots.some(function (s0) { return prioSlot(s0) === prioSlot(y); })) slots.push(y);
+    });
+    var rung = function (m) { return MILESTONE_WORDS[m] || m || "unnamed"; };
+    slots.forEach(function (slot) {
+      var yearWord = slots.length > 1 ? "Year " + slot + " " : "";
       priorities(slot).forEach(function (p, idx) {
         var meas = measureOf(p);
         var srcOf = prioMetricSource(slot, idx);
         var measurable = !!meas.src;
-        var live = (measurable && pf && pf.statewide && pf.statewide[meas.src] != null)
-          ? fmtInt(pf.statewide[meas.src]) + " statewide" : null;
+        var liveN = (measurable && pf && pf.statewide && pf.statewide[meas.src] != null) ? pf.statewide[meas.src] : null;
         // Under front-load a later year carries NO money, so its metric cannot
         // pay an advance — it is still worth showing (the curator may switch back
         // to even tranches) but it is not a live risk.
@@ -4456,52 +4847,62 @@
         var wantM = metricMilestone(p.metric);
         var msMismatch = measurable && wantM && meas.milestone && wantM !== meas.milestone;
         if (msMismatch) anyRisk = true;
+        // THE COUNSELOR AXIS (2026-09-23). The rung check cannot see it: p3_u and
+        // ptc_u both report transcribed CPL, so a wording naming the Counselor step
+        // beside a pin that counts every student read as agreement.
+        var wantC = saysCounselorAccepted(String(p.metric || "").toLowerCase());
+        var cMismatch = measurable && !msMismatch && wantC !== !!meas.counselor;
+        if (cMismatch) anyRisk = true;
         if (mismatch) anyRisk = true;
         // A BAD PIN is always a risk, in every year, front-loaded or not: it is a
         // typo in our own config, not a fact about the world, and unlike an
         // unmeasurable metric it silently pays $0 rather than advancing.
         if (meas.bad_src) anyRisk = true;
         if ((!measurable && !meas.bad_src && bearing) || srcOf === "baked") anyRisk = true;
-        rows.push('<li><strong>Y' + slot + " P" + (idx + 1) + "</strong> " +
-          (meas.bad_src
-            ? '<span class="cplfund-warn-text">Awaiting a known measure &mdash; <code>metric_src</code> is ' + esc(String(meas.bad_src)) +
-              ", which MAP does not report, so this priority stays at <strong>$0</strong> until it names one.</span>"
-            : measurable
-            ? (msMismatch
-                ? '<span class="cplfund-warn-text">Milestone mismatch &mdash; this metric asks for ' +
-                  esc(wantM.toUpperCase()) + " CPL but " + esc(meas.src) + " returns " +
-                  esc(meas.milestone) + ". These are different rungs of MAP&#39;s funnel and are not " +
-                  "interchangeable&#59; set <code>metric_src</code> on the priority, or reword it.</span>"
-                : mismatch
-                ? '<span class="cplfund-warn-text">Unit mismatch &mdash; this metric asks for ' +
-                  (wantU ? "UNITS/FTES" : "a HEADCOUNT") + " but " + esc(meas.src) + " returns " +
-                  esc(meas.unit) + '</span>'
-                : meas.undelivered && srcByCo(meas.src)
-                  ? '<span class="dk">Awaiting measurement &mdash; the Chancellor&rsquo;s Office measures ' +
-                    esc(meas.src) + " from EDD wage records and brings it into the model by import. It " +
-                    "counts <strong>$0</strong> until the first import, which needs no edit here.</span>"
-                : meas.undelivered
-                  ? '<span class="dk">Declared, awaiting delivery &mdash; the daily feed carries no ' +
-                    esc(meas.src) + " column, so this stays at <strong>$0</strong>. " +
-                    "It starts counting the day the feed carries it, with no edit here.</span>"
-                : wording
-                  ? '<span class="cf-ok">Measurable</span> <span class="cplfund-warn-text">&mdash; but the ' +
-                    "wording says " + (wantU ? "UNITS/FTES" : "a HEADCOUNT") + " while the measure counts " +
-                    esc(meas.unit) + "; reword the metric to match the measure</span>"
-                : '<span class="cf-ok">Measurable</span>') +
-              ' <span class="dk">&mdash; ' + esc(meas.src) +
-              (meas.unit ? " (" + esc(meas.unit) + ")" : "") +
-              (pinned ? ", pinned" : "") +
-              (live ? ", " + live : "") + "</span>"
-            : bearing
-              ? '<span class="cplfund-warn-text">Awaiting measurement &mdash; until MAP measures it, every institution would receive this share without demonstrating it</span> <span class="dk">(' +
-                esc(meas.gap_short || "awaiting a matching feed") + ")</span>"
-              : '<span class="dk">Awaiting measurement &mdash; funding is unaffected (front-loaded: Year ' +
-                esc(slot) + " is carryover)</span>") +
-          (srcOf === "baked"
-            ? ' <span class="cplfund-warn-text" title="This priority reads its metric from the hand-maintained default in cpl_funding_data.js. Setting the metric here makes this tab the source.">hand-maintained default</span>'
-            : ' <span class="dk">&middot; curated</span>') +
-          ' <span class="dk">&mdash; ' + esc(stripTags(p.metric || "(no metric set)")) + "</span></li>");
+        var unitWord = function (u) { return u === "units" ? "units" : "students"; };
+        var msg;
+        if (meas.bad_src) {
+          msg = '<span class="cplfund-warn-text">Counts <strong>$0</strong>: its measure is not one MAP reports. ' +
+            "Choose a measure on the card.</span>";
+        } else if (!measurable) {
+          msg = bearing
+            ? '<span class="cplfund-warn-text">No measure matches the wording, so every institution would receive ' +
+              "this share without demonstrating it. Choose a measure on the card.</span>"
+            : '<span class="dk">No measure yet. Funding is unaffected: Year ' + esc(slot) + " is carryover.</span>";
+        } else if (msMismatch) {
+          msg = '<span class="cplfund-warn-text">The wording names ' + esc(rung(wantM)) + " CPL, but the measure counts " +
+            esc(rung(meas.milestone)) + " CPL. Choose the measure you mean on the card, or reword the metric.</span>";
+        } else if (cMismatch) {
+          msg = '<span class="cplfund-warn-text">' + (wantC
+            ? "The wording names the Counselor step, and the measure counts " + esc(rung(meas.milestone)) +
+              " CPL for every student. Choose the measure you mean on the card, or reword the metric."
+            : "The measure counts only students with the Counselor step checked. Name the step in the " +
+              "metric, or choose the measure you mean on the card.") + "</span>";
+        } else if (mismatch) {
+          msg = '<span class="cplfund-warn-text">The wording asks for ' + (wantU ? "units" : "a student count") +
+            ", but the measure counts " + unitWord(meas.unit) + ".</span>";
+        } else if (meas.undelivered && srcByCo(meas.src)) {
+          msg = '<span class="dk">Awaiting measurement. The Chancellor&rsquo;s Office measures it from EDD wage records ' +
+            "and adds it by import; it counts <strong>$0</strong> until the first import.</span>";
+        } else if (meas.undelivered) {
+          msg = '<span class="dk">Awaiting measurement. The daily MAP feed does not carry this measure yet; it counts ' +
+            "<strong>$0</strong> until it does.</span>";
+        } else {
+          msg = '<span class="cf-ok">Measured</span> from ' + esc(measureLabel(meas.src) || meas.src) +
+            (liveN != null ? ", " + fmtInt(liveN) + " " + unitWord(meas.unit) + " statewide so far" : "") + "." +
+            (wording
+              ? ' <span class="cplfund-warn-text">The wording says ' + (wantU ? "units" : "a student count") +
+                " while the measure counts " + unitWord(meas.unit) + "; reword the metric to match.</span>"
+              : "");
+        }
+        if (srcOf === "baked") {
+          msg += ' <span class="cplfund-warn-text">The metric wording is the built-in default; type it on the card ' +
+            "to make it this scenario&rsquo;s.</span>";
+        }
+        var tip = "MAP feed key: " + (meas.bad_src || meas.src || "none") + (pinned ? " (chosen on the card)" : " (from the wording)") +
+          " \u2014 metric: " + stripTags(p.metric || "(no metric set)");
+        rows.push('<li title="' + esc(tip) + '"><strong>' + esc(yearWord + p.label) +
+          (p.title ? ": " + esc(p.title) : "") + "</strong> &mdash; " + msg + "</li>");
       });
     });
     if (!rows.length) return "";
@@ -4509,14 +4910,16 @@
       "<summary><strong>Metric wiring</strong> " +
       (anyRisk
         ? '<span class="cplfund-warn-text">&mdash; needs attention</span>'
-        : '<span class="cf-ok">&mdash; all measurable &amp; curated</span>') +
+        : '<span class="cf-ok">&mdash; every priority is measured</span>') +
       ' <span class="dk">(curator view only)</span></summary>' +
-      '<div class="dk" style="margin:6px 0;">Data used to measure real-time outcomes. The MAP measure named beside a ' +
-      "priority determines what counts toward it. A priority marked <em>hand-maintained default</em> reads its metric from " +
-      "<code>cpl_funding_data.js</code>; setting the metric here makes this tab the source.</div>" +
+      '<div class="dk" style="margin:6px 0;">What each priority counts, and anything to fix. Hover a line for its MAP feed key.' +
+      (slots.length === 1 && nYears() > 1 ? " Year 2 mirrors Year 1." : "") + "</div>" +
       "<ul style='margin:0;padding-left:20px;font-size:.8rem;line-height:1.7;'>" + rows.join("") + "</ul>" +
       unmatchedNoteHtml() + "</details>";
   }
+  // The rung names the diagnostic speaks in.
+  var MILESTONE_WORDS = { eligible: "eligible", applied: "applied", accepted: "counselor-accepted",
+    transcribed: "transcribed", career: "career-outcome" };
 
   // ── the statutory spine: Ed. Code §78093.2(d)(1) (Sam, 2026-08-28) ────────
   // The appropriation this tab models is not a blank grant. §78093.2(d)(1)
@@ -4770,6 +5173,50 @@
   }
   // `p` is the priority as priorities(slot) yields it; selAttr carries the
   // display index, exactly as the outcome picker's does.
+  // ── the list's WORDING is the curator's (Sam, 2026-09-23: "I want to tweak
+  //    the Metric Derived from language...so give me a way to edit the list") ─
+  // The options stay DERIVED from the registry; only their words are stored,
+  // keyed by measure, in the scenario like every other card text. `basis`
+  // (what the card prints under the Actual figure) is untouched: the label is
+  // the curator's name for a measure, the basis says what is computed.
+  function measureLabel(k) {
+    var v = firstDefined(
+      SCENARIO.measureLabels && SCENARIO.measureLabels[k],
+      SHARED.measureLabels && SHARED.measureLabels[k],
+      base().measure_labels && base().measure_labels[k]);
+    if (v != null && String(v).trim()) return String(v);
+    var r = METRIC_SOURCES[k];
+    return r ? (r.label || r.basis) : String(k);
+  }
+  function measureLabelIsCustom(k) {
+    var v = firstDefined(
+      SCENARIO.measureLabels && SCENARIO.measureLabels[k],
+      SHARED.measureLabels && SHARED.measureLabels[k]);
+    return v != null && String(v).trim() !== "";
+  }
+  function setMeasureLabel(k, v) {
+    var ov = activeOverride();
+    ov.measureLabels = isPlainObj(ov.measureLabels) ? ov.measureLabels : {};
+    ov.measureLabels[k] = String(v == null ? "" : v).trim();
+    persistActive();
+  }
+  // The editor: one line per measure the picker offers, shown once above the
+  // cards while a curator edits it.
+  function measureListEditorHtml() {
+    if (publicMode() || !state.measureEditing) return "";
+    var rows = pickableSources().map(function (k) {
+      return '<div class="cplfund-measrow">' +
+        edText("measlabel", measureLabel(k), { field: k, label: "Wording for the measure " + k,
+          title: "Counts: " + ((METRIC_SOURCES[k] || {}).basis || k) }) +
+        (measureLabelIsCustom(k)
+          ? '<button type="button" class="cplfund-textbtn" data-measreset="' + esc(k) + '">Restore</button>'
+          : "") + "</div>";
+    }).join("");
+    return '<div class="cplfund-measedit" role="group" aria-label="The Measured from list">' +
+      '<div class="cplfund-measedit-h"><strong>The &ldquo;Measured from&rdquo; list</strong> ' +
+      '<span class="dk">Each line is how a measure reads in every card&rsquo;s picker. Hover a line for what it counts.</span>' +
+      '<button type="button" class="cplfund-textbtn" data-measedit="close">Done</button></div>' + rows + "</div>";
+  }
   function srcPickerHtml(p, ctx, selAttr) {
     if (publicMode()) return "";
     var cur = (p && p.metric_src) || "";
@@ -4777,9 +5224,8 @@
     var opts = '<option value=""' + (cur ? "" : " selected") +
       ">Derived from the wording</option>" +
       pickableSources().map(function (k) {
-        var r = METRIC_SOURCES[k];
         return '<option value="' + esc(k) + '"' + (cur === k ? " selected" : "") + ">" +
-          esc(r.label || r.basis) + "</option>";
+          esc(measureLabel(k)) + "</option>";
       }).join("");
     // What the card is ACTUALLY measured on right now, named the same way the
     // Actual line names it — so the picker and the figure beneath it cannot
@@ -4790,11 +5236,14 @@
       : cur
         ? "Counts in CPL FTES."
         : "The wording decides: " + esc(meas.basis || "awaiting a measure this metric names") + ".";
-    return '<div class="cplfund-cardsrc">' +
+    return '<div class="cplfund-cardsrc"><div class="cplfund-cardsrc-row">' +
       '<label class="cplfund-cardsrc-lab">Measured from ' +
       '<select class="cplfund-cardsrc-sel" ' + selAttr +
       ' aria-label="' + esc("Measure for " + ctx) + '">' + opts + "</select></label>" +
-      '<span class="cplfund-cardsrc-foot">' + foot + "</span></div>";
+      (state.measureEditing ? "" :
+        '<button type="button" class="cplfund-textbtn" data-measedit="open" ' +
+        'title="Edit how each measure reads in this list, on every card">Edit list</button>') +
+      '</div><span class="cplfund-cardsrc-foot">' + foot + "</span></div>";
   }
 
   function goalCite(keys) {
@@ -4819,35 +5268,31 @@
   function goalRowHtml(res, ctx, selAttr, opt) {
     opt = opt || {};
     var keys = (res.keys || []).filter(function (k) { return !!goalByKey(k); });
-    // A priority card is named by its own title, read from the live config
-    // (Sam, 2026-09-22: "B Completion with Counseling (read from live tab)").
-    // Two priorities can serve one goal, and "(B) Completion" twice told a
-    // reader nothing about which was which. A reported card, or a priority with
-    // no title, keeps the statute's short name for its goal.
-    var named = opt.name && String(opt.name).trim();
-    var head = keys.length
-      ? '<span class="cplfund-cardgoal-key">(' + keys.map(esc).join(") + (") + ")</span> " +
-        '<span class="cplfund-cardgoal-name">' + esc(named || keys.map(function (k) {
-          return goalByKey(k).short;
-        }).join(" and ")) + "</span> " +
-        '<span class="cplfund-cardgoal-cite">' + goalCite(keys) + "</span>"
-      // Loud, never silent: a card whose goal does not resolve says so where
-      // the reader is, which is what the orphan BAND used to do.
-      : '<span class="cplfund-cardgoal-name cplfund-cardgoal-orphan">Awaiting a statutory outcome</span> ' +
-        '<span class="cplfund-cardgoal-cite">Set the metric, or choose an outcome, to place this card.</span>';
+    var goalNames = keys.map(function (k) { return goalByKey(k).short; }).join(" and ");
+    // THE OUTCOME'S NAME READS ONCE (Sam, 2026-09-23: "further simplify the top
+    // section of the Priority Cards to eliminate any redundancies in titles or
+    // designations"). The title sits in the card's heading and the outcome's
+    // name in the picker, so the line carries the key and the citation. With
+    // no picker (the public page) the name stays beside its key, unless the
+    // card's title already says it.
     var sel = "";
     if (selAttr && !publicMode()) {
-      // A REPORTED card has no metric, so "Derived from the metric" is not on
-      // offer there (opt.derivable false), and `opt.choices` narrows the list
-      // to the goals no OTHER reported card already holds — one card per goal,
-      // enforced by not offering the collision rather than by refusing it after
-      // the click.
+      // A REPORTED card has no metric, so "From the metric" is not on offer
+      // there (opt.derivable false), and `opt.choices` narrows the list to the
+      // goals no OTHER reported card already holds — one card per goal,
+      // enforced by not offering the collision rather than by refusing it
+      // after the click. The derived option names the outcome it resolves to,
+      // so the picker alone says both WHICH outcome and WHY: the retired
+      // "Set by the CPL team" line said the second half again.
       var offer = opt.choices
         ? STATUTORY_GOALS.filter(function (g) { return opt.choices.indexOf(g.key) >= 0; })
         : STATUTORY_GOALS;
+      var derivedWord = res.derived && keys.length
+        ? "From the metric: (" + keys.join(") + (") + ") " + goalNames
+        : "From the metric";
       var opts = (opt.derivable === false ? "" :
         '<option value="' + GOAL_DERIVED + '"' + (res.derived ? " selected" : "") +
-        ">Derived from the metric</option>") +
+        ">" + esc(derivedWord) + "</option>") +
         offer.map(function (g) {
           var on = !res.derived && keys.length === 1 && keys[0] === g.key;
           return '<option value="' + esc(g.key) + '"' + (on ? " selected" : "") +
@@ -4857,14 +5302,18 @@
         '<select class="cplfund-cardgoal-sel" ' + selAttr +
         ' aria-label="' + esc("Statutory outcome for " + ctx) + '">' + opts + "</select></label>";
     }
-    var src = keys.length
-      ? (res.derived
-          ? '<span class="dk">Derived from the metric.</span>'
-          : '<span class="cplfund-cardgoal-set">Set by the CPL team.</span>')
-      : "";
+    var named = String(opt.name || "").trim().toLowerCase();
+    var showName = !sel && goalNames && goalNames.toLowerCase() !== named;
+    var head = keys.length
+      ? '<span class="cplfund-cardgoal-key">(' + keys.map(esc).join(") + (") + ")</span> " +
+        (showName ? '<span class="cplfund-cardgoal-name">' + esc(goalNames) + "</span> " : "") +
+        '<span class="cplfund-cardgoal-cite">' + goalCite(keys) + "</span>"
+      // Loud, never silent: a card whose goal does not resolve says so where
+      // the reader is, which is what the orphan BAND used to do.
+      : '<span class="cplfund-cardgoal-name cplfund-cardgoal-orphan">Awaiting a statutory outcome</span> ' +
+        '<span class="cplfund-cardgoal-cite">Set the metric, or choose an outcome, to place this card.</span>';
     return '<div class="cplfund-cardgoal">' + head + sel +
-      (keys.length ? '<p class="cplfund-cardgoal-quote">' + goalQuote(keys) + "</p>" : "") +
-      (src ? '<span class="cplfund-cardgoal-src">' + src + "</span>" : "") + "</div>";
+      (keys.length ? '<p class="cplfund-cardgoal-quote">' + goalQuote(keys) + "</p>" : "") + "</div>";
   }
 
   // ── every card section below the Metric collapses (Sam, 2026-09-14) ───
@@ -5848,33 +6297,90 @@
       "term-length multiplier produces both.</p>");
   }
 
-  // Reorder affordance on each priority card (curator only). TWO controls on
-  // purpose. The drag handle is for the mouse; the POSITION picker is what makes
-  // the reorder reachable by keyboard and screen reader, and it is also the only
-  // one that stays truthful when three cards wrap onto two rows — "move left" is
-  // a lie at that width. It is Sam's own framing too ("moving Priority 3 to the
-  // Priority 1 position"). Plain words, no glyph-only control (Admin-tab ruling,
-  // #1212).
-  function prioMoveHtml(ps, i, p) {
+  // ── the card's controls (curator view) ───────────────────────────────
+  // TWO reorder controls on purpose. The drag handle is for the mouse; the
+  // NUMBER picker is what makes the reorder reachable by keyboard and screen
+  // reader, and it is also the only one that stays truthful when cards wrap
+  // onto two rows. Since 2026-09-23 the picker IS the priority number in the
+  // heading ("Priority [1]: Access"): Sam asked to "set the priority number",
+  // and a separate Position picker beside "Priority 1" said the same number
+  // twice. Plain words, no glyph-only control (Admin-tab ruling, #1212).
+  //
+  // `o` = { id, drag, rows, del } — the card id ("m<src>" / "r<goal>") and the
+  // attribute each control carries. Measured and reported cards use DIFFERENT
+  // attributes for the same controls: a reported card is not an entry in
+  // priorities(slot), and the measured handlers index that list.
+  function cardToolsHtml(o) {
     if (publicMode()) return "";
-    var opts = ps.map(function (_, j) {
-      return '<option value="' + j + '"' + (j === i ? " selected" : "") + ">" + (j + 1) + "</option>";
-    }).join("");
+    var rowsOn = cardRowsOn(o.id);
     return '<div class="cplfund-prio-move">' +
-      '<span class="cplfund-grip" draggable="true" data-priodrag="' + i +
-      '" title="Drag this priority onto the position you want it in">Drag</span>' +
-      '<label class="cplfund-posl">Position ' +
-      '<select class="cplfund-pos" data-priopos="' + i + '" aria-label="Position of ' +
-      esc(p.label) + (p.title ? " \u2014 " + esc(p.title) : "") + '">' + opts +
-      "</select></label></div>";
+      '<span class="cplfund-grip" draggable="true" ' + o.drag + ' data-dragid="' + esc(o.id) +
+      '" title="Drag this card onto the position you want it in">Drag</span>' +
+      '<span class="cplfund-prio-tools">' +
+      '<label class="cplfund-rowsl" title="' + esc(rowsOn
+        ? "Shown as a line in each institution's detail. Its funding counts in every total either way."
+        : "Not shown in the institutions' detail. Its funding still counts in every total.") + '">' +
+      '<input type="checkbox" ' + o.rows + (rowsOn ? " checked" : "") + "> Show on college rows</label>" +
+      (o.del ? o.del : "") + "</span></div>";
+  }
+  // The number in the card heading. A select for the curator, text for everyone
+  // else; `attr` routes the change to the handler for this kind of card.
+  function cardNumHtml(slot, id, attr, ctx) {
+    var seq = cardOrder(slot);
+    var at = seq.indexOf(id);
+    if (publicMode() || !attr) return "Priority " + (at + 1) + ":";
+    var opts = seq.map(function (_, j) {
+      return '<option value="' + j + '"' + (j === at ? " selected" : "") + ">" + (j + 1) + "</option>";
+    }).join("");
+    return 'Priority <select class="cplfund-pos" ' + attr + ' data-cardid="' + esc(id) +
+      '" aria-label="' + esc("Position of " + ctx) + '">' + opts + "</select>:";
+  }
+
+  // The DELETE confirmation for a measured priority, shown inside its card.
+  // Sam's words set the default: "delete the 2nd completion priority and
+  // integrate it into P2" — the share moves to the priority serving the same
+  // outcome when there is one, else to the one before it.
+  function prioDeletePanelHtml(slot, ps, i, p) {
+    var mine = prioGoals(slot, i, p).keys || [];
+    var into = -1;
+    ps.forEach(function (q, j) {
+      if (into >= 0 || j === i) return;
+      var theirs = prioGoals(slot, j, q).keys || [];
+      if (theirs.some(function (k) { return mine.indexOf(k) >= 0; })) into = j;
+    });
+    if (into < 0) into = i > 0 ? i - 1 : 1;
+    var share = Number(p.share) || 0;
+    var strat = prioStrategies(slot, i).length;
+    var opts = ps.map(function (q, j) {
+      if (j === i) return "";
+      return '<option value="' + j + '"' + (j === into ? " selected" : "") + ">" +
+        esc(q.label + (q.title ? ": " + q.title : "")) + "</option>";
+    }).join("");
+    return '<div class="cplfund-delpanel" role="group" aria-label="' + esc("Delete " + p.label) + '">' +
+      '<p class="cplfund-delpanel-q">Delete <strong>' + esc(p.label + (p.title ? ": " + p.title : "")) +
+      "</strong> from " + esc(activeScenario) + "?</p>" +
+      '<label class="cplfund-delpanel-row">' + (share > 0
+        ? "Move its " + fmtRatePct(share) + "% share to "
+        : "Add its work to ") +
+      '<select class="cplfund-multi" data-priodelinto="' + i + '" aria-label="Priority that takes this one&#39;s share">' +
+      opts + "</select></label>" +
+      (strat
+        ? '<label class="cplfund-delpanel-row"><input type="checkbox" data-priodelstrat="' + i + '" checked> ' +
+          "Add its " + fmtInt(strat) + " recommended " + (strat === 1 ? "strategy" : "strategies") + " to that priority</label>"
+        : "") +
+      '<div class="cplfund-delpanel-row">' +
+      '<button type="button" class="cplfund-textbtn primary" data-priodelok="' + i + '">Delete priority</button> ' +
+      '<button type="button" class="cplfund-textbtn" data-priodelcancel="' + i + '">Keep it</button></div>' +
+      '<p class="dk cplfund-delpanel-note">Restore brings it back, with its own settings, from the list under the cards.</p>' +
+      "</div>";
   }
 
   // The order is window-level, so say so where the reorder happens rather than
   // leaving the curator to discover it by switching years.
   function prioOrderToolbarHtml() {
     if (publicMode()) return "";
-    return '<span class="dk" style="font-size:.78rem;flex:1 1 240px;">Drag a priority card, or use its ' +
-      "Position picker, to reorder. The order applies to every year.</span>" +
+    return '<span class="dk" style="font-size:.78rem;flex:1 1 240px;">Drag a card, or choose its ' +
+      "number, to reorder. The order applies to every year.</span>" +
       (orderIsCustom(state.viewSlot)
         ? '<button type="button" class="cplfund-optbtn" id="cplFundOrderReset" ' +
           'title="Show the priorities in the order the configuration stores them">Reset order</button>'
@@ -5955,16 +6461,21 @@
         : '<p class="nums">Per-student rate $' + edNum("perstudent", (p.per_student || 0).toFixed(2), { small: true, slot: slot, idx: i, ro: ro, label: p.label + " funding dollars per student" }) +
           " per student, so " + fmtInt(sysHeads) + " students " +
           '<span class="dk">(' + fmtPctTrim(reachPct(null, sysHeads)) + " of statewide headcount)</span></p>";
-      return '<div class="p" data-priocard="' + i + '">' +
-        (ro ? "" : prioMoveHtml(ps, i, p)) +
+      var cid = "m" + p.src;
+      var ctx = p.label + (p.title ? " — " + p.title : "");
+      return '<div class="p" data-priocard="' + i + '" data-cardid="' + esc(cid) + '">' +
+        (ro ? "" : cardToolsHtml({ id: cid, drag: 'data-priodrag="' + i + '"',
+          rows: 'data-priorows="' + esc(cid) + '"',
+          del: unlocked() && ps.length > 1
+            ? '<button type="button" class="cplfund-textbtn" data-priodel="' + i + '">Delete</button>' : "" })) +
+        (state.prioDeleting === cid && unlocked() && !publicMode() ? prioDeletePanelHtml(slot, ps, i, p) : "") +
         // The outcome, at the TOP of the card, above the title — where Sam's
         // 2026-09-14 screenshot draws the arrow from the band head. The raised
         // letter beside the title is RETIRED with the band: it existed to
         // stitch a card to a wrapper that no longer exists, and the row below
         // now names the same goal in words.
-        goalRowHtml(gres, p.label + (p.title ? " — " + p.title : ""), 'data-priogoal="' + i + '"',
-          { name: p.title }) +
-        '<h4><span class="cplfund-prio-num">' + esc(p.label) + ":</span> " +
+        goalRowHtml(gres, ctx, 'data-priogoal="' + i + '"', { name: p.title }) +
+        '<h4><span class="cplfund-prio-num">' + cardNumHtml(slot, cid, ro ? "" : 'data-priopos="' + i + '"', ctx) + "</span> " +
         edText("prio-title", p.title, { slot: slot, idx: i, ro: ro, cls: "cplfund-prio-title-input", label: p.label + " title", placeholder: "Title (e.g. Access)" }) +
         "</h4>" +
         '<p class="desc">' + edArea("description", p.description, { slot: slot, idx: i, rows: 2, ro: ro, label: p.label + " description" }) + "</p>" +
@@ -6137,6 +6648,22 @@
     activeOverride().reportedCards = (list || []).map(function (c) { return c.goal; });
     persistActive();
   }
+  // A reported card's own TITLE (Sam, 2026-09-23: "Innovation Projects" for
+  // (D)). Goal-keyed, like its strategies; unset reads the statute's short name.
+  function reportedTitle(gkey) {
+    var v = firstDefined(
+      SCENARIO.reportedTitles && SCENARIO.reportedTitles[gkey],
+      SHARED.reportedTitles && SHARED.reportedTitles[gkey],
+      base().reported_titles && base().reported_titles[gkey]);
+    var g = goalByKey(gkey);
+    return (v != null && String(v).trim()) ? String(v) : (g ? g.short : String(gkey));
+  }
+  function setReportedTitle(gkey, v) {
+    var ov = activeOverride();
+    ov.reportedTitles = isPlainObj(ov.reportedTitles) ? ov.reportedTitles : {};
+    ov.reportedTitles[gkey] = String(v == null ? "" : v).trim();
+    persistActive();
+  }
   function pointReportedCard(slot, id, goal) {
     var list = reportedCards(slot);
     if (!goalByKey(goal)) return;
@@ -6164,21 +6691,6 @@
     return STATUTORY_GOALS.filter(function (g) { return !held[g.key]; })
       .map(function (g) { return g.key; });
   }
-  function addReportedCardHtml(slot) {
-    if (publicMode() || !unlocked()) return "";
-    var held = {};
-    reportedCards(slot).forEach(function (c) { held[c.goal] = 1; });
-    var free = STATUTORY_GOALS.filter(function (g) { return !held[g.key]; });
-    return '<div class="cplfund-rprio-add-card">' +
-      '<span class="cplfund-sec-pvlab">Curator only</span> ' +
-      (free.length
-        ? '<button type="button" class="cplfund-textbtn" id="cplFundAddReported">Add a reported outcome card</button> ' +
-          '<span class="dk">' + esc(free.map(function (g) { return "(" + g.key + ") " + g.short; }).join(" \u00b7 ")) +
-          " " + (free.length === 1 ? "has" : "have") + " no card.</span>"
-        : '<span class="dk">Every statutory outcome has a card.</span>') +
-      "</div>";
-  }
-
   // What this outcome is funded FROM, and how much of it — the control Sam
   // asked for on 2026-09-14. A field shared with another outcome is editable
   // here; a field this outcome holds alone just states its figure, because
@@ -6284,15 +6796,27 @@
     // the card look from its own rules instead.
     var noMeasure = '<div class="metric">METRIC (Year ' + esc(slot) + mirroredNote(slot) + "): " +
       "Awaiting a campus measure. This outcome reports through its designated activities.</div>";
-    return '<div class="cplfund-rprio" data-rprio="' + esc(gkey) + '" data-rcard="' + esc(card.id) + '">' +
-      (publicMode() || !unlocked() ? "" :
-        '<div class="cplfund-prio-move"><span class="cplfund-posl dk">Reported outcome</span>' +
-        '<button type="button" class="cplfund-textbtn" data-rcdel="' + esc(card.id) +
-        '" title="Remove this reported outcome card">Remove</button></div>') +
-      goalRowHtml({ keys: [gkey], derived: false }, g.short,
+    // Numbered with the priorities, titled by the curator (Sam, 2026-09-23:
+    // "For P4, I want to edit the title to 'Innovation Projects' and be able
+    // to set the priority number like the other P cards"). Its controls carry
+    // their OWN attributes — data-cardpos, data-carddrag, data-rcrows — never
+    // the measured ones, whose handlers index priorities(slot).
+    var cid = "r" + gkey;
+    var title = reportedTitle(gkey);
+    var ctx = "Priority " + (cardNumber(slot, cid) || "") + " \u2014 " + title;
+    return '<div class="cplfund-rprio" data-rprio="' + esc(gkey) + '" data-rcard="' + esc(card.id) +
+      '" data-cardid="' + esc(cid) + '">' +
+      cardToolsHtml({ id: cid, drag: 'data-carddrag="' + esc(cid) + '"', rows: 'data-rcrows="' + esc(cid) + '"',
+        del: unlocked()
+          ? '<button type="button" class="cplfund-textbtn" data-rcdel="' + esc(card.id) +
+            '" title="Delete this card. Add a reported outcome card brings it back.">Delete</button>'
+          : "" }) +
+      goalRowHtml({ keys: [gkey], derived: false }, ctx,
         'data-rcgoal="' + esc(card.id) + '"',
-        { derivable: false, choices: reportedChoices(slot, card.id) }) +
-      '<h4><span class="cplfund-prio-num">(' + esc(gkey) + "):</span> " + esc(g.short) + "</h4>" +
+        { derivable: false, choices: reportedChoices(slot, card.id), name: title }) +
+      '<h4><span class="cplfund-prio-num">' + cardNumHtml(slot, cid, 'data-cardpos="' + esc(cid) + '"', ctx) + "</span> " +
+      edText("rtitle", title, { field: gkey, cls: "cplfund-prio-title-input", label: ctx + " title", placeholder: "Title" }) +
+      "</h4>" +
       '<p class="desc">Funded through the statewide project allocation and reported based on the aligned activities.' +
       // The note the (D) band carried — why no college qualifies here — moves
       // onto the card the moment no measured card serves the goal.
@@ -6527,8 +7051,21 @@
           : '<span class="dk">reported through its designated activities</span>') +
         "</span>";
     }).join("");
+    // THE SHARES MUST ADD UP TO 100%, and nothing said so (2026-09-23). A
+    // college's max award is its bounded size figure times the SUM of the
+    // shares, so a deleted or lowered share leaves that part of the funding
+    // unallocated, and an overshoot allocates more than the total holds.
+    var ss = shareSum(slot);
+    var sumWarn = (!publicMode() && ps.length && Math.abs(ss - 1) > 0.0005)
+      ? '<p class="cplfund-warn-text cplfund-sharesum" role="status">The shares add up to ' + fmtRatePct(ss) + "%. " +
+        (ss < 1
+          ? "Each institution&rsquo;s award is scaled by that sum, so " + fmtRatePct(1 - ss) +
+            "% of the funding stays unallocated until the shares reach 100%."
+          : "Each institution&rsquo;s award is scaled by that sum, so the priorities allocate " +
+            fmtRatePct(ss - 1) + "% more than the funding holds.") + "</p>"
+      : "";
     return '<div class="cplfund-otot" role="group" aria-label="Total Possible by statutory outcome">' +
-      '<span class="cplfund-otot-lab">Total Possible by outcome</span>' + items + "</div>";
+      '<span class="cplfund-otot-lab">Total Possible by outcome</span>' + items + "</div>" + sumWarn;
   }
 
   // One flat grid: the measured cards in the curator's order, then a reported
@@ -6594,12 +7131,47 @@
 
   function outcomeGridHtml(slot, ps, cards) {
     var served = goalsServedByPriorities(slot);
-    var reported = reportedCards(slot).map(function (c) {
-      return reportedPrioHtml(slot, c, !!served[c.goal]);
-    }).filter(Boolean);
-    return cardSizeHtml() + outcomeTotalsHtml(slot, ps) +
-      '<div class="cplfund-prio"' + cardGridStyle() + ">" + cards.concat(reported).join("") + "</div>" +
-      addReportedCardHtml(slot);
+    // Every card in the one numbered sequence (cardOrder), measured and
+    // reported alike, so a card's number and its place in the grid agree.
+    var byId = {};
+    ps.forEach(function (p, i) { byId["m" + p.src] = cards[i]; });
+    reportedCards(slot).forEach(function (c) {
+      byId["r" + c.goal] = reportedPrioHtml(slot, c, !!served[c.goal]);
+    });
+    var html = cardOrder(slot).map(function (id) { return byId[id] || ""; }).join("");
+    return cardSizeHtml() + outcomeTotalsHtml(slot, ps) + measureListEditorHtml() +
+      '<div class="cplfund-prio"' + cardGridStyle() + ">" + html + "</div>" +
+      prioAddRowHtml(slot);
+  }
+  // Add a priority, and bring back one this scenario deleted (Sam, 2026-09-23).
+  function prioAddRowHtml(slot) {
+    if (publicMode() || !unlocked()) return "";
+    var gone = removedPriorities(slot);
+    // ONE curator line under the cards: add a priority, add a reported card,
+    // and bring back a deleted priority.
+    var held = {};
+    reportedCards(slot).forEach(function (c) { held[c.goal] = 1; });
+    var free = STATUTORY_GOALS.filter(function (g) { return !held[g.key]; });
+    return '<div class="cplfund-rprio-add-card cplfund-prio-addrow">' +
+      '<span class="cplfund-sec-pvlab">Curator only</span> ' +
+      '<button type="button" class="cplfund-textbtn" id="cplFundAddPrio" ' +
+      'title="Adds a priority at 0% share, so no award moves until you set one">Add a priority</button> ' +
+      // The outcomes without a card read as words, not a hover: a curator who
+      // just removed a reported card sees which outcome it left, on any screen.
+      (free.length
+        ? '<button type="button" class="cplfund-textbtn" id="cplFundAddReported" title="' +
+          esc("Adds a card for a statutory outcome that reports through its designated activities.") +
+          '">Add a reported outcome card</button> <span class="dk">' +
+          esc(free.map(function (g) { return "(" + g.key + ") " + g.short; }).join(" \u00b7 ")) +
+          " " + (free.length === 1 ? "has" : "have") + " no card.</span>"
+        : "") +
+      (gone.length
+        ? ' <span class="dk">Deleted in ' + esc(activeScenario) + ":</span> " + gone.map(function (g) {
+            return '<span class="cplfund-prio-gone">' + esc(g.title) +
+              ' <button type="button" class="cplfund-textbtn" data-priorestore="' + g.src + '">Restore</button></span>';
+          }).join(" ")
+        : "") +
+      "</div>";
   }
 
   // The earning rules for noncredit (the locked mock's fold, 2026-08-31) —
@@ -6683,6 +7255,14 @@
     // "Counselor-accepted CPL Units (FTES)" paid Norco its whole $51,699 share
     // with nothing measured behind it. See
     // docs/kb-notes/methodology-a-default-payout-masks-the-gap-beneath-it.md.
+    // TRANSCRIBED WITH THE COUNSELOR STEP (Sam, 2026-09-23, Scenario 3 sheet
+    // item 1) sits ahead of the applied cut, so a wording naming the transcript
+    // AND the Counselor step reads ptc_u; the Counselor step alone still reads
+    // pac_u. Same predicate as metricMilestone(), which reads that wording as the
+    // transcribed rung.
+    { test: function (m) { return wantsUnits(m) && saysCounselorAccepted(m) && has(m, "transcribed"); },
+      src: "ptc_u", unit: "units",
+      basis: "units of TRANSCRIBED CPL for students whose Counselor step is checked" },
     { test: function (m) { return wantsUnits(m) && saysCounselorAccepted(m); },
       src: "pac_u", unit: "units",
       basis: "units of APPLIED CPL on counselor-accepted Student CPL Plans" },
@@ -6751,6 +7331,9 @@
     // (Headcount metrics are dead policy per Sam, 2026-09-15: "we do not use
     // student headcount for any metrics in this tab." This entry exists so a
     // metric nobody should write cannot pay a full cap if somebody writes it.)
+    { test: function (m) { return saysCounselorAccepted(m) && has(m, "transcribed"); },
+      src: "ptc", unit: "students",
+      basis: "students with transcribed CPL whose Counselor step is checked" },
     { test: function (m) { return saysCounselorAccepted(m); },
       src: "pac", unit: "students",
       basis: "students whose CPL Plan a counselor accepted (the MAP Counselor lifecycle step)" },
@@ -6942,10 +7525,28 @@
     // Success band rather than Access. prioGoals() derives the statutory goal
     // from the milestone, never from a title, so the derivation has to know this
     // rung exists or an accepted-plan measure would silently read as (A).
-    pac:   { unit: "students", milestone: "accepted",
+    pac:   { unit: "students", milestone: "accepted", counselor: true,
              basis: "students whose CPL Plan a counselor accepted (the MAP Counselor lifecycle step)" },
-    pac_u: { label: "Applied CPL with the Counselor step checked", unit: "units", milestone: "accepted",
+    pac_u: { label: "Applied CPL with the Counselor step checked", unit: "units", milestone: "accepted", counselor: true,
              basis: "units of APPLIED CPL on counselor-accepted Student CPL Plans" },
+    // ── transcribed CPL with the Counselor step checked (Sam, 2026-09-23) ──
+    // His Scenario 3 sheet, item 1, verbatim: "We have the transcribed CPL in
+    // the dataset as well as the counselor step boolean indicator, so combining
+    // them should work." Priority 2's wording had named this cut ("Transcribed
+    // CPL units (FTES) for students with Counselor step checked") while its
+    // measure, p3_u, counted every transcribed unit.
+    //
+    // ⚠️ MILESTONE "transcribed", and the attestation rides `counselor: true`.
+    // The rung is the credit's state, so prioGoals() reads (B) and ncPriorities()
+    // pairs the noncredit slice with nc_pt_u exactly as it paired p3_u; the
+    // "accepted" rung has no noncredit source and would send that slice to
+    // nc_unmapped ($0). The Metric wiring compares the `counselor` flag with the
+    // wording on its own axis, because on the rung alone p3_u and ptc_u agree.
+    // Spans both cohorts (no is_potential condition in the builder), like pac.
+    ptc:   { unit: "students", milestone: "transcribed", counselor: true,
+             basis: "students with transcribed CPL whose Counselor step is checked" },
+    ptc_u: { label: "Transcribed CPL with the Counselor step checked", unit: "units", milestone: "transcribed", counselor: true,
+             basis: "units of TRANSCRIBED CPL for students whose Counselor step is checked" },
     // ── career attainment (Sam, 2026-09-22) ────────────────────────────────
     // "we can use EDD wage data to measure this ... This would not be reported
     // by the colleges but instead measured by the CO and reflected on our
@@ -7056,7 +7657,10 @@
     // compares it to `pac_u`'s "accepted", and reports a milestone mismatch
     // against a pin that is exactly right. A diagnostic that fires on the
     // correct configuration trains its reader to ignore it.
-    if (saysCounselorAccepted(m)) return "accepted";
+    // A wording naming the transcript beside the step (Scenario 3's P2) sits on
+    // the transcribed rung, the one its measure, ptc_u, reports; the Counselor
+    // step is then compared on its own axis in the Metric wiring.
+    if (saysCounselorAccepted(m)) return has(m, "transcribed") ? "transcribed" : "accepted";
     if (has(m, "applied")) return "applied";
     if (has(m, "eligible")) return "eligible";
     if (has(m, "transcribed")) return "transcribed";
@@ -7095,7 +7699,7 @@
                  gap_short: "unknown metric_src" };
       }
       return { src: pin, unit: reg.unit, basis: reg.basis, pinned: true,
-               milestone: reg.milestone, lane: reg.lane,
+               milestone: reg.milestone, lane: reg.lane, counselor: !!reg.counselor,
                undelivered: !srcDelivered(pin) };
     }
     // Prose-resolved: enrich from the registry so BOTH paths carry a milestone.
@@ -7106,6 +7710,7 @@
     if (m && m.src && METRIC_SOURCES[m.src] && m.milestone == null) {
       m = { src: m.src, unit: m.unit, basis: m.basis, gap: m.gap, gap_short: m.gap_short,
             milestone: METRIC_SOURCES[m.src].milestone, lane: METRIC_SOURCES[m.src].lane,
+            counselor: !!METRIC_SOURCES[m.src].counselor,
             undelivered: !srcDelivered(m.src) };
     }
     return m;
@@ -7579,10 +8184,18 @@
       // eligibility column stays visible by default; the Columns menu can hide it.
       { key: "elig", label: "Elig", cls: "c",
         title: "Baseline eligibility to PARTICIPATE (informational in this draft): a numbered pie, one sector per tracked requirement (CPL Coordinator in MAP + participation confirmed by the deadline + Veteran Star ≥75% JSTs — replaced for the three noncredit-only campuses by noncredit certificates posted as exhibits in MAP). A sector turns green when the institution meets it; a fully green glyph = all met. This is the participation gate; actual CPL then counts toward funding." },
+      // THE COMBINED FIGURE IS ITS OWN COLUMN (Sam, 2026-09-23: "Since Funding
+      // Base = 150K and Cap = $400K, take a look at the colleges at Base and
+      // notice that most approx 149k"). The base and the cap bind the COMBINED
+      // award, and the table showed only its two shares, so a college at the
+      // $150,000 base read $149,321 beside "(at base)". The bound word and the
+      // qualifying line sit with the figure they describe.
+      { key: "total", label: "Max award", cls: "c",
+        title: "The institution's max award, " + awardWhen + " — the most it can qualify for, with the Current Total beneath. The base and the cap apply to this figure. Awards are based on outcomes, not automatically awarded." },
       { key: "cr_award", label: "CR award", cls: "c",
-        title: "The credit share of the max award, " + awardWhen + " — the credit priority measures count toward it, with the Current Total beneath. Awards are based on outcomes, not automatically awarded." },
+        title: "The credit share of the max award, " + awardWhen + " — the credit priority measures count toward it. Awards are based on outcomes, not automatically awarded." },
       { key: "nc_award", label: "NC award", cls: "",
-        title: "The noncredit share of the max award, " + awardWhen + " — only the noncredit measures count toward it; the credit program cannot qualify for it. The pair's sum is the institution's one combined max award." },
+        title: "The noncredit share of the max award, " + awardWhen + " — only the noncredit measures count toward it; the credit program cannot qualify for it. The two shares add up to the max award." },
       { key: "working_adults", label: "Working adults*", cls: "" }
     ];
   }
@@ -7598,6 +8211,8 @@
     // first).
     sortKey: "college", sortDir: 1, open: {}, addingProject: false,
     subview: "model",   // "model" | "report"
+    prioDeleting: null, // card id ("m<src>") whose Delete confirmation is open
+    measureEditing: false, // the "Measured from" list's label editor is open
     previewPublic: false,   // reviewer previewing the public rendering (session-only, never persisted)
     docType: "memo",    // memo | letter | report | brief
     textEditing: null,  // key of the prose block a signed-in reviewer is editing, else null
@@ -8232,7 +8847,19 @@
     var title = earnedCellTitle("Credit share of the max award" +
         (frontloaded() ? " (" + windowLabel() + " window)" : " (per year)"),
       cap, earned, row.earned_measured || 0, row.earned_advance || 0, row.earned_withheld || 0);
-    return '<td class="cf-award c" title="' + esc(title) + '">' + fmtMoney(cap) + boundWordHtml(row) +
+    // The share alone: the bound word and the qualifying line moved to the
+    // Max award cell (2026-09-23), which is the figure they describe.
+    return '<td class="cf-award c" title="' + esc(title) + '">' + fmtMoney(cap) + "</td>";
+  }
+  // The MAX AWARD cell — the combined figure the base and the cap bind, with
+  // the bound word beside it and the one qualifying line beneath.
+  function maxAwardCellHtml(row) {
+    var cap = (row.total || 0) / awardDivisor();
+    var earned = row.earned_total || 0;
+    var title = earnedCellTitle("Max award" +
+        (frontloaded() ? " (" + windowLabel() + " window)" : " (per year)"),
+      cap, earned, row.earned_measured || 0, row.earned_advance || 0, row.earned_withheld || 0);
+    return '<td class="cf-award cf-max c" title="' + esc(title) + '">' + fmtMoney(cap) + boundWordHtml(row) +
       earnedSubHtml(cap, earned, row.earned_advance || 0, row.earned_withheld || 0, row.gate_blocked) + "</td>";
   }
   function ncAwardCellHtml(row) {
@@ -8251,13 +8878,15 @@
     var title = earnedCellTitle("Noncredit share of the max award" +
         (frontloaded() ? " (" + windowLabel() + " window)" : " (per year)"),
       cap, row.earned_nc || 0, row.earned_nc || 0, 0, 0);
-    return '<td class="cf-award" title="' + esc(title) + '">' + fmtMoney(cap) + boundWordHtml(row) +
-      earnedSubHtml(cap, row.earned_nc || 0, 0, 0, row.gate_blocked) + "</td>";
+    return '<td class="cf-award" title="' + esc(title) + '">' + fmtMoney(cap) + "</td>";
   }
-  // The bound word — (at base) / (at cap) — sits beside the award figures it
-  // qualifies, in parentheses, on both the CR and NC cells (Sam, 2026-09-02:
-  // "move the at cap and at base notes next to the CR and NC total funding on
-  // main rows and put the note in parens"). Ghosted word, hover explains.
+  // The bound word — (at base) / (at cap) — sits in parentheses beside the
+  // figure it qualifies (Sam, 2026-09-02: "move the at cap and at base notes
+  // next to the CR and NC total funding on main rows and put the note in
+  // parens"). Since 2026-09-23 that figure is the Max award: the base and the
+  // cap bind the combined award, and on the credit share the word read as a
+  // claim about the share ($149,321 "(at base)" at Clovis). Ghosted word,
+  // hover explains.
   // It also carries the institution's own proportional figure, which the
   // drill-in's base and cap cells printed until those cells left the expand
   // (Sam, 2026-09-23, funding review item 3).
@@ -8277,7 +8906,7 @@
   function rowChips(c) {
     var chips = "";
     // Chips are GHOSTED WORDS (Sam's reaction round, 2026-08-31): NC ONLY stays
-    // by the name (an identity); the bound word moved to the award cells.
+    // by the name (an identity); the bound word moved to the Max award cell.
     if (c.nco) chips += '<span class="cplfund-chip" title="A standalone noncredit institution. It holds the same award window as every college and qualifies by origination: CPL from its programs, transcribed at a credit college.">NC only</span>';
     // One-click entry (Sam, 2026-08-05): opens THIS row's drill-in with the
     // attestation form focused. Public + private; hidden once opted in.
@@ -8306,7 +8935,7 @@
         : "Annual noncredit FTES (MIS 2025-26) — sizes the award with the credit FTES and sets the award's noncredit share, restricted to noncredit outcomes") + ".") + '">' +
         fmtInt(c.nc_ftes) + "</td>" +
       '<td class="c" title="' + esc(eligTitle(c.college)) + '">' + eligGlyph(c.college) + "</td>" +
-      crAwardCellHtml(c) + ncAwardCellHtml(c) +
+      maxAwardCellHtml(c) + crAwardCellHtml(c) + ncAwardCellHtml(c) +
       "<td>" + (c.working_adults == null ? "—" : fmtInt(c.working_adults) +
         '<span class="sub">' + fmtPct(c.county_pop_pct, 1) + " of county</span>") + "</td>" +
       "</tr>" +
@@ -8329,7 +8958,19 @@
   // the second and $0 to the first, and every college's fraction is capped at
   // its own 100% before it is summed. Deriving it here would silently pick one.
   function prioDetailTableHtml(scope) {
+    // ONE LINE PER PRIORITY (Sam, 2026-09-23: "Further tighten detail row
+    // height and make sure the detail section under each college row is as
+    // clear and simple as possible"). Six columns: the CR/NC split of a
+    // priority's funding rides the Total Possible hover (the row's CR award and
+    // NC award columns carry the institution's split), and the funding left to
+    // qualify for rides the To go hover — it is Total Possible less Current
+    // Total, which the row already shows.
+    //
+    // A priority whose card says "Show on college rows" off has no line here;
+    // its funding still counts in every total (Sam, 2026-09-23). A reported
+    // card switched on gets a line saying it is funded statewide.
     var rowsHtml = priorities(scope.slot).map(function (p, i) {
+      if (!cardRowsOn("m" + p.src)) return "";
       var f = scope.figures(p, i);
       var fr = f.fr;
       var isF = prioIsFtes(p);
@@ -8355,38 +8996,56 @@
       // state has a distance: a suppressed actual is masked, so its gap would
       // leak the value by subtraction, and an unmeasured one has no number to
       // subtract. Both read the plain absence rather than a zero. The funding
-      // beside it is the measure's own remainder, never the gate's — a gated
-      // college's funding is held in reserve, a different fact with its own line.
-      var toGo;
+      // it would release is the measure's own remainder, never the gate's — a
+      // gated college's funding is held in reserve, a different fact with its
+      // own line.
+      var toGo, toGoTip = "";
       if (fr.status === "earned" || fr.status === "none") {
         var short = Math.max(0, f.target - (fr.status === "earned" ? fr.actual : 0));
-        toGo = short <= 0
-          ? '<span class="dk">target met</span>'
-          : (isF ? fmtNum1(short) + " FTES" : fmtInt(short) + " stu") +
-            '<span class="sub">' + earnedMoney(f.remaining) + " remaining</span>";
+        toGo = short <= 0 ? '<span class="dk">target met</span>'
+          : (isF ? fmtNum1(short) + " FTES" : fmtInt(short) + " stu");
+        if (short > 0) toGoTip = earnedMoney(f.remaining) + " remaining to qualify for";
       } else toGo = '<span class="dk">&mdash;</span>';
-      return "<tr><td>" + esc(p.label) + (p.title ? " " + esc(p.title) : "") + "</td><td>" + fmtMoney(f.cr) +
-        "</td><td>" + fmtMoney(f.nc) + "</td><td>" + (isF ? fmtNum1(f.target) + " FTES" : fmtInt(f.target) + " stu") +
-        "</td><td>" + act + "</td><td>" + toGo + "</td><td>" + earnedMoney(f.earned) +
-        // Total Possible defaults to the two shares added up, which is what it
-        // IS for a college. Statewide passes its own, because earnAgg() sums the
-        // whole-award slice and the two lane slices by three different calls and
-        // the priority card above prints that whole-award figure — so deriving
-        // it here would let the expand disagree with the card it opened under.
-        "</td><td>" + fmtMoney(f.totalPossible == null ? f.cr + f.nc : f.totalPossible) + "</td></tr>";
+      // Total Possible defaults to the two shares added up, which is what it
+      // IS for a college. Statewide passes its own, because earnAgg() sums the
+      // whole-award slice and the two lane slices by three different calls and
+      // the priority card above prints that whole-award figure — so deriving
+      // it here would let the expand disagree with the card it opened under.
+      var tp = f.totalPossible == null ? f.cr + f.nc : f.totalPossible;
+      var tpTip = "Credit share " + fmtMoney(f.cr) + " \u00b7 noncredit share " + fmtMoney(f.nc);
+      return "<tr><td>" + esc(p.label) + (p.title ? ": " + esc(p.title) : "") + "</td>" +
+        "<td>" + (isF ? fmtNum1(f.target) + " FTES" : fmtInt(f.target) + " stu") + "</td>" +
+        "<td>" + act + "</td>" +
+        "<td" + (toGoTip ? ' title="' + esc(toGoTip) + '"' : "") + ">" + toGo + "</td>" +
+        "<td>" + earnedMoney(f.earned) + "</td>" +
+        '<td title="' + esc(tpTip) + '">' + fmtMoney(tp) + "</td></tr>";
+    }).join("") + (scope.reported || []).map(function (r) {
+      return '<tr class="cplfund-dtl-rep"><td>' + esc(r.label) + '</td><td colspan="5" class="dk">' +
+        esc(r.note) + "</td></tr>";
     }).join("");
     return '<div class="cplfund-dtl-tscroll" role="region" aria-label="' + esc(scope.label) + '" tabindex="0">' +
       '<table class="cplfund-dtl-table"><caption class="dk">' + scope.caption + "</caption>" +
-      '<colgroup><col style="width:16%"><col style="width:11%"><col style="width:11%"><col style="width:12%"><col style="width:15%"><col style="width:14%"><col style="width:11%"><col style="width:10%"></colgroup>' +
+      '<colgroup><col style="width:29%"><col style="width:11%"><col style="width:20%"><col style="width:12%"><col style="width:14%"><col style="width:14%"></colgroup>' +
       '<tr><th scope="col">Priority</th>' +
-      '<th scope="col" title="The credit share of this priority&#39;s funding — the credit actuals count toward it.">CR funding</th>' +
-      '<th scope="col" title="The noncredit share of this priority&#39;s funding — restricted to the noncredit measures.">NC funding</th>' +
       '<th scope="col" title="What the credit share funds at the priority&#39;s price.">Target</th>' +
       '<th scope="col" title="What has been posted against the target so far, and that as a percent of it.">Actual</th>' +
-      '<th scope="col" title="How far this still is from the target, and the funding it would qualify for by closing it.">To go</th>' +
+      '<th scope="col" title="How far this still is from the target. Hover a figure for the funding it would qualify for.">To go</th>' +
       '<th scope="col" title="Demonstrated to date — actual ÷ target, capped at 100%, applied to the credit funding.">Current Total</th>' +
-      '<th scope="col" title="This priority&#39;s full funding — credit and noncredit shares together; remaining funding rolls forward.">Total Possible</th></tr>' +
+      '<th scope="col" title="This priority&#39;s full funding — credit and noncredit shares together; hover a figure for the split. Remaining funding rolls forward.">Total Possible</th></tr>' +
       rowsHtml + "</table></div>";
+  }
+  // The detail line for each reported card a curator switched on (2026-09-23).
+  function reportedDetailRows(slot, statewide) {
+    return reportedCards(slot).filter(function (c) { return cardRowsOn("r" + c.goal); })
+      .map(function (c) {
+        var n = cardNumber(slot, "r" + c.goal);
+        var amt = poolGoalKeys("scaling_projects_tech").indexOf(c.goal) >= 0
+          ? poolGoalAmount("scaling_projects_tech", c.goal) : 0;
+        return { label: "Priority " + n + ": " + reportedTitle(c.goal),
+          note: statewide && amt > 0
+            ? "Funded statewide through the project allocation, " + fmtMoney(amt) + "."
+            : "Funded statewide through the project allocation; it adds nothing to an institution's award." };
+      });
   }
 
   // ── the SYSTEM (statewide) row's expand ───────────────────────────────────
@@ -8418,6 +9077,7 @@
               (agg.gatedN === 1 ? " institution" : " institutions") + " until baseline participation is met"
             : "") +
           " &middot; Total Possible: " + fmtMoney(agg.winCap) + " &mdash; every institution's max award added up",
+        reported: reportedDetailRows(slot, true),
         figures: function (p, i) {
           var pp = agg.perPrio[i] || { cap: 0, crCap: 0, ncCap: 0, earned: 0, ncEarned: 0 };
           var crEarned = pp.earned - (pp.ncEarned || 0);
@@ -8469,6 +9129,7 @@
         // status line above, once.
         caption: "Current Total: " + earnedMoney(c.earned_total || 0) +
           " &middot; Total Possible: " + fmtMoney(c.total || 0) + ", its max award",
+        reported: reportedDetailRows(slot, false),
         figures: function (p) {
           var crM = c[p.key] || 0;
           var ncM = c["nc_" + p.key] || 0;
@@ -8483,17 +9144,22 @@
             remaining: crM * (1 - fr.f)
           };
         }
-      }) +
-        (c.nc_award > 0.5
-          ? '<div class="dk">Noncredit share of this award: ' + fmtMoney(c.nc_award) + " (" + fmtNum1(c.nc_ftes) +
-            " noncredit FTES) &mdash; the noncredit measures count toward it, and it is kept on its own line, so the " +
-            "credit program cannot quietly redirect it.</div>"
-          : "");
+      });
     }
-    var county = c.working_adults == null
-      ? '<div><span class="dk">County context:</span> not estimated (county &lt; 65K population)</div>'
-      : '<div><span class="dk">County context (' + esc(c.county) + "):</span> " + fmtInt(c.working_adults) +
-        " working adults with some college, no degree (" + fmtPct(c.county_pop_pct, 1) + " of county population)</div>";
+    // ONE FOOTER LINE (2026-09-23): the noncredit share, the county and the
+    // district were three grid cells that each wrapped to three or four lines.
+    // They are context for the table above, so they read as one sentence run.
+    var foot = [];
+    if (!c.nco && c.nc_award > 0.5) {
+      foot.push("Noncredit share " + fmtMoney(c.nc_award) + " from " + fmtNum1(c.nc_ftes) +
+        " noncredit FTES; the noncredit measures count toward it");
+    }
+    foot.push(c.working_adults == null
+      ? "County context not estimated (county under 65K people)"
+      : esc(c.county) + " County: " + fmtInt(c.working_adults) +
+        " working adults with some college and no degree (" + fmtPct(c.county_pop_pct, 1) + " of its people)");
+    if (c.district) foot.push(esc(c.district));
+    var county = '<p class="cplfund-dtl-foot dk">' + foot.join(" &middot; ") + "</p>";
     // The base and cap cells, the FTES-share cell and the baseline paragraph
     // are GONE (Sam, 2026-09-23, funding review item 3). Their figures ride
     // the row: the bound word's hover (boundWordHtml) and the CR FTES hover
@@ -8520,7 +9186,6 @@
       '<div class="cplfund-detail-grid">' +
       eligLine + noteLine +
       prio + county +
-      '<div><span class="dk">District:</span> ' + esc(c.district || "—") + "</div>" +
       "</div></td></tr>";
   }
   function baseCollege(name) {
@@ -8540,7 +9205,7 @@
       ' <span class="dk">&middot; ' + g.n + (g.n === 1 ? " institution" : " institutions") + "</span></td>" +
       "<td>" + fmtInt(g.cr_ftes) + "</td><td>" + fmtInt(g.nc_ftes) + "</td>" +
       '<td class="dk">district subtotal</td>' +
-      crAwardCellHtml(g) + ncAwardCellHtml(g) +
+      maxAwardCellHtml(g) + crAwardCellHtml(g) + ncAwardCellHtml(g) +
       "<td></td></tr>";
   }
   // Group the FILTERED institution rows by district. Groups are ordered by
@@ -8639,7 +9304,7 @@
         fmtInt(sys.nc_ftes) + "</td>" +
       '<td class="c" title="institutions satisfying ALL tracked baseline requirements (fully-green glyph)">' +
       (ELIG.coordOk ? eligAllMetCount() + "/" + oneRoster().length : "—") + "</td>" +
-      crAwardCellHtml(sysRow) + ncAwardCellHtml(sysRow) +
+      maxAwardCellHtml(sysRow) + crAwardCellHtml(sysRow) + ncAwardCellHtml(sysRow) +
       "<td>" + (base().system.working_adults == null ? "—" : fmtInt(base().system.working_adults)) + "</td></tr>" +
       (sysOpen ? systemDetailHtml() : "");
     // SYSTEM (statewide) total pinned as the FIRST body row (Sam, 2026-07-23:
@@ -8895,10 +9560,11 @@
   function unmatchedNoteHtml() {
     var pf = perf();
     var un = Object.keys((pf && pf.unmatched) || {});
+    // Plain words (Sam, 2026-09-23). The builder folds a MAP name's trailing
+    // "Credit" onto its institution, so NOCE and Calbright no longer land here.
     return un.length
-      ? '<div class="dk cplfund-unmatched" style="margin:6px 0;">MAP activity for ' + un.length +
-        " college name(s) could not be matched to a funding row: " + un.map(esc).join(", ") +
-        " &mdash; included in the statewide totals, not shown in any college row.</div>"
+      ? '<div class="dk cplfund-unmatched" style="margin:6px 0;">MAP activity from ' + un.map(esc).join(", ") +
+        " has no row in the table, so it counts in the statewide totals only.</div>"
       : "";
   }
 
@@ -9185,7 +9851,12 @@
       '<button type="button" class="cplfund-optbtn" id="cplFundMemoDocx" title="Download as an editable Word (.docx) file">Download as Word</button>' +
       "</div>" +
       '<div class="cplfund-repnote">Generated from <strong>' + esc(activeProjectObj().label) + " &middot; " +
-      esc(activeScenario) + "</strong>. Edit any text directly below, then export. Inline edits are for the export only " +
+      esc(activeScenario) + "</strong>" +
+      // A memo drafted from a working scenario says so, because the public
+      // page and the college briefing read the published one.
+      (activeScenario === publishedScenario() ? ", the published scenario"
+        : ". The public page reads " + esc(publishedScenario()) + ", so publish this scenario before the memo goes out") +
+      ". Edit any text directly below, then export. Inline edits are for the export only " +
       "&mdash; they reset when you regenerate or switch document type.</div>" +
       '<div class="cplfund-memo" id="cplFundMemo" contenteditable="true" spellcheck="true" aria-label="Editable ' +
       esc(state.docType) + '">' + buildMemo(state.docType) + "</div>";
@@ -10037,6 +10708,8 @@
     if (edit === "coord-label") { setCoordLabel(raw); return; }
     if (edit === "part-label") { setPartLabel(raw); return; }
     if (edit === "prio-title") { setPrio(slot, Number(idx), "title", raw); return; }
+    if (edit === "rtitle") { setReportedTitle(el.getAttribute("data-field"), raw); return; }
+    if (edit === "measlabel") { setMeasureLabel(el.getAttribute("data-field"), raw); return; }
     // A REPORTED outcome's strategy: goal-keyed, since a reported card is not
     // an entry in priorities(slot). field carries "<goalKey>::<index>".
     if (edit === "rstrategy") {
@@ -10146,6 +10819,8 @@
     if (scenNew) scenNew.addEventListener("click", function () { savingState = ""; newScenario(); });
     var scenDel = document.getElementById("cplFundScenDel");
     if (scenDel) scenDel.addEventListener("click", function () { savingState = ""; deleteScenario(); });
+    var scenPub = document.getElementById("cplFundScenPublish");
+    if (scenPub) scenPub.addEventListener("click", function () { savingState = ""; publishScenario(activeScenario); });
     // Report sub-view: sub-tabs + doc-type toggle + exports.
     document.querySelectorAll("#cplFundingMount [data-subview]").forEach(function (b) {
       b.addEventListener("click", function () {
@@ -10478,16 +11153,20 @@
         });
         return out;
       };
+      // DRAG and the NUMBER picker move a card through the ONE sequence every
+      // card shares (cardOrder, 2026-09-23). Both carry the card's id, so a
+      // measured and a reported card reorder through the same move.
       var dragFrom = null;
+      var cardSel = ".p, .cplfund-rprio";
       var clearDragCls = function () {
-        qsa(".p").forEach(function (c) {
+        qsa(cardSel).forEach(function (c) {
           c.classList.remove("cplfund-dragging", "cplfund-dropover");
         });
       };
-      qsa("[data-priodrag]").forEach(function (g) {
+      qsa("[data-dragid]").forEach(function (g) {
         g.addEventListener("dragstart", function (e) {
-          dragFrom = Number(g.getAttribute("data-priodrag"));
-          var card = g.closest(".p");
+          dragFrom = g.getAttribute("data-dragid");
+          var card = g.closest(cardSel);
           if (card) card.classList.add("cplfund-dragging");
           // The payload also rides in `dragFrom`: dataTransfer is unreadable
           // during dragover in several browsers (the admin.js note).
@@ -10498,7 +11177,8 @@
         });
         g.addEventListener("dragend", function () { dragFrom = null; clearDragCls(); });
       });
-      qsa("[data-priocard]").forEach(function (card) {
+      qsa("[data-cardid]").forEach(function (card) {
+        if (!card.matches(cardSel)) return;
         card.addEventListener("dragover", function (e) {
           if (dragFrom == null) return;
           e.preventDefault();
@@ -10511,18 +11191,50 @@
           clearDragCls();
           var from = dragFrom;
           if (from == null) {
-            try { from = Number(e.dataTransfer.getData("text/plain")); } catch (x) { from = null; }
+            try { from = e.dataTransfer.getData("text/plain"); } catch (x) { from = null; }
           }
-          var to = Number(card.getAttribute("data-priocard"));
-          if (from == null || isNaN(from) || isNaN(to) || from === to) return;
+          var seq = cardOrder(state.viewSlot);
+          var fi = seq.indexOf(String(from)), ti = seq.indexOf(card.getAttribute("data-cardid"));
+          if (fi < 0 || ti < 0 || fi === ti) return;
           savingState = "";
-          movePriority(state.viewSlot, from, to);
+          moveCard(state.viewSlot, fi, ti);
         });
       });
-      qsa("[data-priopos]").forEach(function (sel) {
+      qsa("[data-priopos], [data-cardpos]").forEach(function (sel) {
         sel.addEventListener("change", function () {
           savingState = "";
-          movePriority(state.viewSlot, Number(sel.getAttribute("data-priopos")), Number(sel.value));
+          var fi = cardOrder(state.viewSlot).indexOf(sel.getAttribute("data-cardid"));
+          if (fi < 0) return;
+          moveCard(state.viewSlot, fi, Number(sel.value));
+        });
+      });
+      // Show on college rows (Sam, 2026-09-23).
+      qsa("[data-priorows], [data-rcrows]").forEach(function (box) {
+        box.addEventListener("change", function () {
+          savingState = "";
+          setCardRows(box.getAttribute("data-priorows") || box.getAttribute("data-rcrows"), box.checked);
+        });
+      });
+      // Delete: open the confirmation, then move the share and delete.
+      qsa("[data-priodel]").forEach(function (b) {
+        b.addEventListener("click", function () {
+          var p = priorities(state.viewSlot)[Number(b.getAttribute("data-priodel"))];
+          state.prioDeleting = p ? "m" + p.src : null;
+          render();
+        });
+      });
+      qsa("[data-priodelcancel]").forEach(function (b) {
+        b.addEventListener("click", function () { state.prioDeleting = null; render(); });
+      });
+      qsa("[data-priodelok]").forEach(function (b) {
+        b.addEventListener("click", function () {
+          var i = Number(b.getAttribute("data-priodelok"));
+          var intoSel = document.querySelector('#cplFundingMount [data-priodelinto="' + i + '"]');
+          var carry = document.querySelector('#cplFundingMount [data-priodelstrat="' + i + '"]');
+          state.prioDeleting = null;
+          savingState = "";
+          removePriority(state.viewSlot, i, intoSel ? Number(intoSel.value) : null, !!(carry && carry.checked));
+          render();
         });
       });
       // The outcome, set on the card (Sam, 2026-09-14). "derived" is the
@@ -10584,6 +11296,32 @@
         var csr = document.getElementById("cplFundCardSizeReset");
         if (csr) csr.addEventListener("click", function () { setCardSize(0, 0); render(); });
       }
+      // The "Measured from" list's wording (Sam, 2026-09-23).
+      document.querySelectorAll("#cplFundingMount [data-measedit]").forEach(function (b) {
+        b.addEventListener("click", function () {
+          state.measureEditing = b.getAttribute("data-measedit") === "open";
+          render();
+        });
+      });
+      document.querySelectorAll("#cplFundingMount [data-measreset]").forEach(function (b) {
+        b.addEventListener("click", function () {
+          savingState = "";
+          setMeasureLabel(b.getAttribute("data-measreset"), "");
+        });
+      });
+      var addPr = document.getElementById("cplFundAddPrio");
+      if (addPr) addPr.addEventListener("click", function () {
+        savingState = "";
+        addPriority();
+        render();
+      });
+      document.querySelectorAll("#cplFundingMount [data-priorestore]").forEach(function (b) {
+        b.addEventListener("click", function () {
+          savingState = "";
+          restorePriority(Number(b.getAttribute("data-priorestore")));
+          render();
+        });
+      });
       var addRc = document.getElementById("cplFundAddReported");
       if (addRc) addRc.addEventListener("click", function () {
         savingState = "";
@@ -10883,7 +11621,10 @@
       STATUTORY_GOALS.forEach(function (g) {
         var ids = designatedProjects(g.key);
         if (!ids.length) return;
-        out.push({ key: g.key, short: g.short, text: g.text,
+        // The card's own title, when a curator gave it one (Sam, 2026-09-23:
+        // "Innovation Projects" for (D)); empty keeps the explainer's heading.
+        var t = reportedTitle(g.key);
+        out.push({ key: g.key, short: g.short, text: g.text, title: t !== g.short ? t : "",
           projects: ids.map(function (id) { return { id: id, name: projectName(id) || id }; }) });
       });
       return out;

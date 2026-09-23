@@ -76,8 +76,34 @@ check("the outcome row sits ABOVE the title, where Sam's screenshot puts it",
     const h4 = c.querySelector("h4");
     return row && h4 && (row.compareDocumentPosition(h4) & 4) !== 0;   // h4 FOLLOWS row
   }));
-check("every outcome row names its key and its short name",
-  rows.every((r) => r.querySelector(".cplfund-cardgoal-key") && r.querySelector(".cplfund-cardgoal-name")));
+// THE OUTCOME'S NAME READS ONCE (Sam, 2026-09-23: "eliminate any redundancies
+// in titles or designations"): beside the key, or in the card's own title when
+// the title already says it. A curator reads it in the picker.
+const GOAL_SHORT = { A: "Access", B: "Completion", C: "Career attainment", D: "Pilot projects" };
+const titleOf = (c) => {
+  const i = c.querySelector('input[data-edit="prio-title"]');
+  return i ? i.value : flat(c.querySelector("h4")).replace(/^Priority \d+:\s*/, "");
+};
+const keyLetters = (r) => flat(r.querySelector(".cplfund-cardgoal-key")).match(/[A-D]/g) || [];
+const pickedOf = (r) => {
+  const s = r.querySelector("select.cplfund-cardgoal-sel");
+  return s && s.selectedIndex >= 0 ? s.options[s.selectedIndex].textContent : "";
+};
+check("every outcome row names its key, and the card names the outcome: beside it, in the picker, or in its title",
+  rows.every((r, i) => {
+    const ks = keyLetters(r);
+    const where = (flat(r.querySelector(".cplfund-cardgoal-name")) + " | " + pickedOf(r) + " | " +
+      titleOf(cards(doc)[i])).toLowerCase();
+    return ks.length > 0 && ks.every((k) => where.indexOf(GOAL_SHORT[k].toLowerCase()) !== -1);
+  }));
+check("a card whose title already names its outcome carries no second copy beside the key",
+  (function () {
+    const same = cards(doc).filter((c, i) => {
+      const ks = keyLetters(rows[i]);
+      return ks.length === 1 && titleOf(c).trim().toLowerCase() === GOAL_SHORT[ks[0]].toLowerCase();
+    });
+    return same.length > 0 && same.every((c) => !c.querySelector(".cplfund-cardgoal-name"));
+  })());
 check("every outcome row cites its own subdivision of §78093.2(d)(1)",
   rows.every((r) => /78093\.2\(d\)\(1\)\([A-D]\)/.test(flat(r.querySelector(".cplfund-cardgoal-cite")))));
 // The statute's own words, verbatim — the same standard the goal spine holds.
@@ -99,10 +125,24 @@ check("the raised-letter goal marker is retired from the card title",
 // Completion measures transcribed. The proof it is not title matching: the card
 // whose goal is (B) Completion is placed by its measure, and every untouched
 // card reports itself as derived rather than as a curator's assignment.
-check("an untouched card says its outcome is derived from the metric",
-  rows.every((r) => /Derived from the metric/i.test(flat(r.querySelector(".cplfund-cardgoal-src")))));
-check("no untouched card claims a curator set it",
-  rows.every((r) => !/Set by the CPL team/i.test(flat(r))));
+// The curator's picker says it (2026-09-23): the derived option names the
+// outcome it resolves to, so one control says both WHICH outcome and WHY.
+{
+  const { window } = freshDom();
+  window.CPL_SESSION = reviewerSession();
+  const d = boot(window);
+  window.CPL_FUNDING_TAB.render();
+  const sels = cards(d).map((c) => c.querySelector("[data-priogoal]"));
+  const picked = (s) => (s && s.selectedIndex >= 0 ? s.options[s.selectedIndex].textContent : "");
+  check("an untouched card's picker reads 'From the metric' and names the outcome it resolves to",
+    sels.length === modelPrios && sels.every((s) => s && s.value === "derived" &&
+      /^From the metric: \([A-D]\)( \+ \([A-D]\))* \S/.test(picked(s))), JSON.stringify(sels.map(picked)));
+  check("and the key beside it agrees with the outcome the picker names",
+    cards(d).every((c, i) => {
+      const ks = keyLetters(c.querySelector(".cplfund-cardgoal"));
+      return ks.length > 0 && ks.join() === (picked(sels[i]).match(/\(([A-D])\)/g) || []).map((x) => x[1]).join();
+    }));
+}
 
 // ── 5. an unresolvable priority is LOUD, on its own face ────────────────────
 // The failure this whole suite exists for. A metric whose milestone resolves to
@@ -168,8 +208,8 @@ check("a goal priorities DO serve carries a Total Possible figure",
   T.render();
   const sel = d.querySelector("[data-priogoal]");
   check("a curator sees an outcome picker on the card", !!sel);
-  check("the picker offers 'Derived from the metric' first",
-    sel && sel.options[0] && /Derived from the metric/i.test(sel.options[0].textContent));
+  check("the picker offers 'From the metric' first",
+    sel && sel.options[0] && sel.options[0].value === "derived" && /^From the metric/.test(sel.options[0].textContent));
   // The fifth option is not a courtesy: "derived" is the only way back to the
   // measure's own reading once a curator has set one. It once had a second job
   // — an `accepted` milestone resolved to (B) AND (C) from 2026-09-01, which no
@@ -179,7 +219,9 @@ check("a goal priorities DO serve carries a Total Possible figure",
   commit(window, sel, "D");
   const row0 = d.querySelectorAll("[data-priocard]")[0].querySelector(".cplfund-cardgoal");
   check("the assignment moves the card's outcome", /\(D\)/.test(flat(row0.querySelector(".cplfund-cardgoal-key"))));
-  check("the card says a curator set it", /Set by the CPL team/i.test(flat(row0)));
+  const sel0 = d.querySelectorAll("[data-priocard]")[0].querySelector("[data-priogoal]");
+  check("the picker shows the curator's choice in place of 'From the metric'",
+    !!sel0 && sel0.value === "D" && !sel0.options[0].selected);
   check("the citation follows the assignment",
     /78093\.2\(d\)\(1\)\(D\)/.test(flat(row0.querySelector(".cplfund-cardgoal-cite"))));
   check("the statute quote follows the assignment",
@@ -188,10 +230,11 @@ check("a goal priorities DO serve carries a Total Possible figure",
   commit(window, d.querySelector("[data-priogoal]"), "derived");
   T.render();
   const row0b = d.querySelectorAll("[data-priocard]")[0].querySelector(".cplfund-cardgoal");
+  const sel0b = d.querySelectorAll("[data-priocard]")[0].querySelector("[data-priogoal]");
   check("clearing restores the measure-derived outcome",
-    /Derived from the metric/i.test(flat(row0b.querySelector(".cplfund-cardgoal-src"))));
+    !!sel0b && sel0b.value === "derived" && !/\(D\)/.test(flat(row0b.querySelector(".cplfund-cardgoal-key"))));
   check("and the restore survives a re-render rather than undoing itself",
-    !/Set by the CPL team/i.test(flat(row0b)));
+    !!sel0b && /^From the metric: \(/.test(sel0b.options[sel0b.selectedIndex].textContent));
 }
 
 // ── 8. reported cards are STORED, with their own identity ───────────────────

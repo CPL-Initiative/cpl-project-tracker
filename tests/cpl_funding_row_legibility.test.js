@@ -66,8 +66,9 @@ function openDetail(window, doc, name) {
         .map((tr) => tr.querySelector("td").textContent.replace(/\s+/g, " ").trim())
     : [];
   check("the expand's detail table has one row per priority", prioCells.length === NPRIO);
+  // "Priority 1: Access", the card heading's own form (2026-09-23).
   check("each carries its ordinal AND its name, not the ordinal alone",
-    prioCells.length === NPRIO && prioCells.every((t) => /^Priority \d+ \S/.test(t)));
+    prioCells.length === NPRIO && prioCells.every((t) => /^Priority \d+: \S/.test(t)));
   check("no priority row prints an undefined title",
     prioCells.every((t) => !/undefined|null/i.test(t)));
   // The name must be the priority's own, not a positional guess.
@@ -145,7 +146,7 @@ function openDetail(window, doc, name) {
 // that actually holds at runtime.
 {
   check("the detail row appends a name only when there is one",
-    /esc\(p\.label\) \+ \(p\.title \? " " \+ esc\(p\.title\) : ""\)/.test(consumerSrc));
+    /esc\(p\.label\) \+ \(p\.title \? ": " \+ esc\(p\.title\) : ""\)/.test(consumerSrc));
   check("the title fallback keys on the priority's SOURCE index, not its position",
     /DEFAULT_PRIORITY_TITLES\[srcIdx\(prioSlot\(slot\), i\)\] \|\| ""/.test(consumerSrc));
   // The runtime property: every title the model yields is non-empty, so no
@@ -174,10 +175,16 @@ function openDetail(window, doc, name) {
     /function earnedSubHtml\(cap, earned, adv, held, gated\)/.test(src));
   check("...and the prompt branch fires on it, not on held alone",
     /if \(held > 0\.5 \|\| gated\)/.test(src));
-  check("the CR award cell passes the college's gate state",
-    /earnedSubHtml\(cap, earned, row\.earned_advance \|\| 0, row\.earned_withheld \|\| 0, row\.gate_blocked\)/.test(src));
-  check("the NC award cell passes it too",
-    /earnedSubHtml\(cap, row\.earned_nc \|\| 0, 0, 0, row\.gate_blocked\)/.test(src));
+  // Since 2026-09-23 the qualifying line, and the prompt with it, renders once
+  // per row, in the Max award cell; the CR/NC pair cells carry their figures.
+  const fnBody = (name) => (src.match(new RegExp("function " + name + "\\([^)]*\\) \\{[\\s\\S]*?\\n  \\}")) || [""])[0];
+  check("the Max award cell passes the college's gate state",
+    /earnedSubHtml\(cap, earned, row\.earned_advance \|\| 0, row\.earned_withheld \|\| 0, row\.gate_blocked\)/
+      .test(fnBody("maxAwardCellHtml")));
+  check("and the pair cells repeat no qualifying line or prompt",
+    fnBody("crAwardCellHtml") !== "" && fnBody("ncAwardCellHtml") !== "" &&
+    fnBody("crAwardCellHtml").indexOf("earnedSubHtml(") === -1 &&
+    fnBody("ncAwardCellHtml").indexOf("earnedSubHtml(") === -1);
   // A gated college with nothing withheld must NOT be told money is held.
   // ⚠️ Guards the BRANCH, not the wording. This pinned the literal call-to-action
   // string, so it went red when Sam changed "opt in" to "confirm participation"

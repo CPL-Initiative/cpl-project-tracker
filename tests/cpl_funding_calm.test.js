@@ -190,10 +190,12 @@ function mountWords(doc) {
   check("the Draft word is ghosted (no mustard fill), and the explainer link is a plain link (no box)",
     /\.cplfund-draftchip \{[^}]*background: none/.test(css) && !/\.cplfund-draftchip \{[^}]*mustard-fill/.test(css) &&
     /\.cplfund-sanity \{[^}]*background: none/.test(css) && /\.cplfund-sanity \{[^}]*text-decoration: underline/.test(css));
-  check("the project strip's controls are words: Add project · New scenario · (edited) marks a scenario with edits",
+  // The published scenario reads "(published)" in the list (2026-09-23), so a
+  // scenario with edits reads "(edited)" only when it is not the published one.
+  check("the project strip's controls are words: Add project · New scenario · (published)/(edited) mark the scenarios",
     doc.getElementById("cplFundProjAdd").textContent.trim() === "Add project" &&
     doc.getElementById("cplFundScenNew").textContent.trim() === "New scenario" &&
-    /\(edited\)/.test(doc.getElementById("cplFundScenSel").textContent));
+    /\((published|edited)\)/.test(doc.getElementById("cplFundScenSel").textContent));
   check("the Summary's balanced state is ink, not green (green and red are for a state to act on)",
     /\.cplfund-summary \.ok \{[^}]*var\(--text-strong\)/.test(css));
   check("the page toolbar has one Save as PDF (the actions row), and Excel is 'Download as Excel'",

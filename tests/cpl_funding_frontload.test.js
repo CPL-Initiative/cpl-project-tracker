@@ -407,7 +407,8 @@ check("targets are NOT scaled by disbursement (per-student rate doubles, student
   // the award pair is the money surface now): under front-load a cell's figure
   // is the WHOLE window, so the hover must name the window rather than present
   // the doubled figure as an annual one.
-  const cell = doc.querySelector("#cplFundTable tbody tr.cplfund-row td.cf-award");
+  // The CR award cell, by what it is: the Max award leads the row (2026-09-23).
+  const cell = doc.querySelector("#cplFundTable tbody tr.cplfund-row td.cf-award:not(.cf-max)");
   const title = cell ? cell.getAttribute("title") || "" : "";
   check("front-load: the award-cell hover names the WINDOW (never the doubled figure as an annual one)",
     /Credit share of the max award \(.*window\)/.test(title) && title.indexOf("(per year)") === -1);
@@ -415,7 +416,7 @@ check("targets are NOT scaled by disbursement (per-student rate doubles, student
     (function () {
       T._setScenario({ disbursement: "even" });
       T.render();
-      const t = (doc.querySelector("#cplFundTable tbody tr.cplfund-row td.cf-award") || { getAttribute: function () { return ""; } })
+      const t = (doc.querySelector("#cplFundTable tbody tr.cplfund-row td.cf-award:not(.cf-max)") || { getAttribute: function () { return ""; } })
         .getAttribute("title") || "";
       T._setScenario({ disbursement: "frontload" });
       T.render();

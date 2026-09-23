@@ -42,7 +42,9 @@ const {
 {
   const { window } = freshDom();
   const doc = boot(window);
-  const sysAward = doc.querySelectorAll("#cplFundTable tr.cplfund-systemrow td.cf-award");
+  // The pair cells, read by class: the Max award cell (cf-max) leads them
+  // since 2026-09-23.
+  const sysAward = doc.querySelectorAll("#cplFundTable tr.cplfund-systemrow td.cf-award:not(.cf-max)");
   const csvO = window.CPL_FUNDING_TAB._csv().split("\r\n");
   const headO = (csvO[1] || "").split(",");
   const sysO = (csvO.find(function (l) { return l.indexOf("SYSTEM (statewide)") !== -1; }) || "").split(",");

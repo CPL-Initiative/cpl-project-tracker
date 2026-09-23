@@ -66,12 +66,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 5 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 489 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 490 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 79 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 81 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 49 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 256 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **959** | |
+| Session handoffs | 257 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **961** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -123,6 +123,7 @@ Authoritative external sources we've cached:
 
 ## Update history
 
+- **2026-09-23 — S284 (SkyWage):** Scenario 3's controls, a published scenario, and the Max award column (#1664); KB note `methodology-label-a-bound-where-it-binds`; handoff 285; the Scenario 3 decision sheet.
 - **2026-09-23 (S283, SkyFund — Rule 9 checkpoint, second pass)** — Priority 4 carries career attainment ([#1662](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1662)): 0% share, measured in CPL units by the Chancellor's Office from EDD wage records; P2 serves (B) alone; card headers read live titles; a stored order survives a new priority; the Designate button says what it needs. Then Sam's three funding rulings: P4 held at 0% until the first import, the EDD import receiver (`funding/career_attainment_import.json`), and the drill-in consolidated into one Baseline line. KB note: a control that does nothing — read the request log first.
 - **2026-09-22 (S283, SkyFund — Rule 9 checkpoint)** — The Implementation Funding tab ready for the CO leadership review ([#1660](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1660)): the Summary leads with the total allocated and ends on local confirmation, a base-and-cap equity bullet, 116 colleges with Calbright, one sources line, house-voice allocation prose, text headers on the explainer. Sam: the CO can measure career attainment from EDD wage data; four decisions on the [funding review sheet](https://claude.ai/artifact/9MfbN6jqio8as9mY4LwPB2). The standing open-asks sheet must not be republished as it stands (replies keyed to 21 cards, builder at 15). KB note updated: `methodology-key-a-side-table-by-the-write-key-not-by-position`. Handoff 284.
 - **2026-09-21 (S281)** — Decision sheets rebuilt around Sam's sixteen reversals (proposal as focal point, outcome-named chips, no intro, Complete, opt-out with verdict provenance); `sendToClaude()` measured unable to reach a Claude Code session, so the record is the mechanism; one Jev magic half (`kb/_jev_adjudicate.py`) for CSR, CER and CCRR with an independent second look. Two KB notes added.

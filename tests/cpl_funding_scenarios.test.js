@@ -68,8 +68,10 @@ const fmtM = function (v) { return "$" + Math.round(v).toLocaleString("en-US"); 
     /targets stay proportional[^.]* before the base/.test(doc.querySelector(".cplfund-formula").textContent));
   // Drill-in county context survives the hidden column.
   click(window, doc.querySelector("tr.cplfund-row"));
+  // The county rides the drill-in's one footer line since 2026-09-23:
+  // "<County> County: N working adults ..." or "County context not estimated".
   check("drill-in still shows the county context",
-    doc.querySelector("tr.cplfund-detail").textContent.indexOf("County context") !== -1);
+    /\bCounty(:| context)/.test((doc.querySelector("tr.cplfund-detail .cplfund-dtl-foot") || {}).textContent || ""));
   // Priority actuals render from the perf artifact. P1's live metric is the
   // ELIGIBLE headcount → `pe` (Sam's 2026-07-30 wording), so the fixture's pe
   // value is what the surfaces must show — the per-college figure in the
@@ -84,10 +86,15 @@ const fmtM = function (v) { return "$" + Math.round(v).toLocaleString("en-US"); 
   T.render();
   const dtl = doc.querySelector("tr.cplfund-detail .cplfund-dtl-table");
   check("Alameda's expand shows the measurable actual (777 eligible) in its Actual column",
-    !!dtl && Array.from(dtl.querySelectorAll("tr")).slice(1).some(function (tr) {
-      const tds = tr.querySelectorAll("td");
-      return tds[4] && /^777 stu/.test(tds[4].textContent);
-    }));
+    !!dtl && (function () {
+      // Read the column by its header, never its position (the table went to
+      // six columns on 2026-09-23).
+      const iAct = Array.from(dtl.querySelectorAll("th")).map(function (h) { return h.textContent; }).indexOf("Actual");
+      return iAct >= 0 && Array.from(dtl.querySelectorAll("tr")).slice(1).some(function (tr) {
+        const tds = tr.querySelectorAll("td");
+        return tds[iAct] && /^777 stu/.test(tds[iAct].textContent);
+      });
+    })());
   check("the priority card shows the statewide measurable actual (50,000 eligible per MAP)",
     /Actual 50,000 students per MAP/.test(doc.getElementById("cplFundingMount").textContent));
   delete window.CPL_FUNDING_PERF;

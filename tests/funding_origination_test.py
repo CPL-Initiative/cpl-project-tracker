@@ -175,6 +175,32 @@ def main():
     check("the published basis names the NC_* rungs and the origination block",
           "NC_PE" in p["basis"] and "origination" in p["basis"].lower())
 
+    # ── 3. A lane word on a noncredit institution's MAP name (2026-09-23) ──
+    # MAP spells the credit locations "North Orange Continuing Education
+    # Credit" and "Calbright College Credit"; the funding table carries both
+    # schools as rows. Sam: "NOCE and Calbright are on the table. LAUNCH is
+    # correctly NOT on the table." Twelve and eleven students keep both counts
+    # above the floor of 10, so the figure itself is checkable.
+    lane = []
+    for i in range(12):
+        lane.append(row("North Orange Continuing Education Credit", f"o{i}", ecr=4))
+    for i in range(11):
+        lane.append(row("Calbright College Credit", f"k{i}", ecr=3))
+    lane.append(row("Launch Apprenticeship", "l1", ecr=5))
+    lane.append(row("Bakersfield College", "b1", ecr=2, tcr=1))
+    pl = run_builder(lane)
+    check("a trailing 'Credit' folds onto the noncredit institution's row",
+          sorted((pl.get("unmatched") or {}).keys()) == ["Launch Apprenticeship"],
+          f"unmatched={sorted((pl.get('unmatched') or {}).keys())}")
+    check("NOCE's credit location counts toward NOCE (12 eligible students)",
+          (pl.get("feeders") or {}).get("NOCE", {}).get("pe") == 12,
+          f"feeders={pl.get('feeders')}")
+    check("Calbright's credit location counts toward Calbright (11 eligible students)",
+          (pl.get("feeders") or {}).get("Calbright", {}).get("pe") == 11,
+          f"feeders={pl.get('feeders')}")
+    check("a credit college is untouched by the fold",
+          "Bakersfield" in pl["colleges"], f"colleges={sorted(pl['colleges'].keys())}")
+
     print(f"\n{checks[0] - len(failures)}/{checks[0]} checks passed")
     return 1 if failures else 0
 

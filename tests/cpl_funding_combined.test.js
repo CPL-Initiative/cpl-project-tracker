@@ -1,5 +1,13 @@
-// CPL Implementation Funding tab — the Combined COLUMN is RETIRED; the pair's
-// sum IS the one award (one-pool adoption, R6/R7, ruled 2026-08-31).
+// CPL Implementation Funding tab — the pair's sum IS the one award (one-pool
+// adoption, R6/R7, ruled 2026-08-31), and since 2026-09-23 the table shows that
+// sum as its own MAX AWARD column beside the pair.
+//
+// Why the column came back: Sam, 2026-09-23 — "Since Funding Base = 150K and
+// Cap = $400K, take a look at the colleges at Base and notice that most approx
+// 149k". The base and the cap bind the COMBINED award, and a table showing only
+// the two shares printed "$149,321 (at base)". The spanning Combined cell and
+// the paired NC rows stay retired; what returns is one ordinary column whose
+// figure is the pair's sum, carrying the bound word the base describes.
 //
 // This file used to pin Sam's item-2 ruling (2026-08-30): a Combined cell
 // spanning each CR/NC row pair, with nth-child compensation for the NC rows'
@@ -63,16 +71,18 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
   const ths = Array.from(table.querySelectorAll("thead th"));
   check("R7: no Combined column in the header (the pair's sum IS the one award)",
     !ths.some(function (th) { return (th.getAttribute("data-sort") || "") === "combined"; }));
-  check("R6/R7: no Total column either — the money columns are the CR/NC award pair",
-    !ths.some(function (th) { return (th.getAttribute("data-sort") || "") === "total"; }) &&
+  check("2026-09-23: ONE combined column, the Max award, sits beside the CR/NC award pair",
+    ths.filter(function (th) { return (th.getAttribute("data-sort") || "") === "total"; }).length === 1 &&
+    /Max award/.test(table.querySelector('th[data-sort="total"]').textContent) &&
     !!table.querySelector('th[data-sort="cr_award"]') && !!table.querySelector('th[data-sort="nc_award"]'));
   check("R7: no spanning combined cell survives anywhere", !table.querySelector("td.cf-combined"));
   check("R6: no paired NC rows and no NC SYSTEM row — one row per institution",
     !table.querySelector(".cplfund-ncrow") && !table.querySelector(".cplfund-ncout") &&
     !table.querySelector(".cplfund-ncsysrow"));
-  check("R6: exactly ONE SYSTEM row, carrying the CR/NC award pair",
+  check("R6: exactly ONE SYSTEM row, carrying the Max award and the CR/NC award pair",
     table.querySelectorAll("tr.cplfund-systemrow").length === 1 &&
-    table.querySelector("tr.cplfund-systemrow").querySelectorAll("td.cf-award").length === 2);
+    table.querySelector("tr.cplfund-systemrow").querySelectorAll("td.cf-award").length === 3 &&
+    table.querySelector("tr.cplfund-systemrow").querySelectorAll("td.cf-max").length === 1);
 
   // THE SUM, at the model: cr_award + nc_award == the one combined award, for
   // every institution on the roster (trio included), and Σ awards == the pool.
@@ -96,17 +106,21 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
   const crRows = Array.from(table.querySelectorAll("tbody tr.cplfund-row"));
   check("institution rows render, one per institution", crRows.length === 118);
   const mtRow = crRows.find(function (r) { return /Mt San Antonio/.test(r.textContent); });
-  const mtCells = mtRow.querySelectorAll("td.cf-award");
+  const mtCells = mtRow.querySelectorAll("td.cf-award:not(.cf-max)");
+  const mtMax = mtRow.querySelector("td.cf-max");
   const mt = T._alloc("Mt San Antonio");
   check("row: the CR + NC award cells sum to the combined max award (per-year view; ±$2 rounding)",
     mtCells.length === 2 &&
     Math.abs((firstMoney(mtCells[0]) + firstMoney(mtCells[1])) - mt.total / 2) <= 2 &&
     firstMoney(mtCells[1]) > 0);
+  check("row: the Max award cell prints that sum, with the bound word beside it (at cap)",
+    !!mtMax && Math.abs(firstMoney(mtMax) - mt.total / 2) <= 1 && /\(at cap\)/.test(mtMax.textContent) &&
+    !/\(at cap\)/.test(mtCells[0].textContent + mtCells[1].textContent));
   // A no-noncredit institution: the pair is CR + an explicit $0 — never NaN,
   // never doubled, and the zero is a CHECKABLE CLAIM (Sam's data-quality
   // instrument, 2026-08-28), not a blank.
   const taftRow = crRows.find(function (r) { return /Taft/.test(r.textContent); });
-  const taftCells = taftRow.querySelectorAll("td.cf-award");
+  const taftCells = taftRow.querySelectorAll("td.cf-award:not(.cf-max)");
   const taft = T._alloc("Taft");
   check("row: a no-noncredit institution's pair is CR + $0 'credit only' (combined = CR alone)",
     taft.nc_award === 0 &&
@@ -114,17 +128,33 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
     firstMoney(taftCells[1]) === 0 && /credit only/.test(taftCells[1].textContent));
 
   // THE SUM, on the SYSTEM row: the statewide pair must reconstitute the pool.
-  const sysCells = table.querySelector("tr.cplfund-systemrow").querySelectorAll("td.cf-award");
+  const sysCells = table.querySelector("tr.cplfund-systemrow").querySelectorAll("td.cf-award:not(.cf-max)");
   check("SYSTEM row: the statewide CR + NC pair sums to the pool's annual tranche (±$2)",
     Math.abs((firstMoney(sysCells[0]) + firstMoney(sysCells[1])) - NET / 2) <= 2);
+  check("SYSTEM row: its Max award is that tranche (±$1)",
+    Math.abs(firstMoney(table.querySelector("tr.cplfund-systemrow td.cf-max")) - NET / 2) <= 1);
 
   // Under Combined (front-loaded) funding the same cells carry the window
   // figures — the pair must still reconstitute, now to the full pool.
   doc.querySelector('#cplFundDisb button[data-val="frontload"]')
     .dispatchEvent(new window.Event("click", { bubbles: true }));
-  const sysCellsFl = doc.querySelector("tr.cplfund-systemrow").querySelectorAll("td.cf-award");
+  const sysCellsFl = doc.querySelector("tr.cplfund-systemrow").querySelectorAll("td.cf-award:not(.cf-max)");
   check("SYSTEM row under Combined funding: the pair sums to the full $25,240,308 pool (±$2)",
     Math.abs((firstMoney(sysCellsFl[0]) + firstMoney(sysCellsFl[1])) - NET) <= 2);
+  // SAM'S REPORT, pinned (2026-09-23): an institution at the base reads the
+  // base. Its credit share alone printed $149,321 beside "(at base)".
+  const model = T._model();
+  const flooredName = names.find(function (n) {
+    const a = T._alloc(n);
+    return a.floored && a.nc_award > 1 && a.cr_award > 1;
+  });
+  const flRow = flooredName && Array.from(doc.querySelectorAll(".cplfund-table tbody tr.cplfund-row"))
+    .find(function (r) { return r.getAttribute("data-id") === "c:" + flooredName; });
+  const flMax = flRow && flRow.querySelector("td.cf-max");
+  const flCr = flRow && flRow.querySelector("td.cf-award:not(.cf-max)");
+  check("an institution at the base reads the base in its Max award cell, with (at base) beside it",
+    !!flMax && firstMoney(flMax) === Math.round(model.floor) && /\(at base\)/.test(flMax.textContent) &&
+    firstMoney(flCr) < Math.round(model.floor) && !/\(at base\)/.test(flCr.textContent));
   doc.querySelector('#cplFundDisb button[data-val="even"]')
     .dispatchEvent(new window.Event("click", { bubbles: true }));
 
@@ -133,7 +163,7 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
   crTh.dispatchEvent(new window.Event("click", { bubbles: true }));
   const after = doc.querySelector('.cplfund-table thead th[data-sort="cr_award"]');
   const sorted = Array.from(doc.querySelectorAll(".cplfund-table tbody tr.cplfund-row"))
-    .slice(0, 2).map(function (r) { return firstMoney(r.querySelectorAll("td.cf-award")[0]); });
+    .slice(0, 2).map(function (r) { return firstMoney(r.querySelectorAll("td.cf-award:not(.cf-max)")[0]); });
   check("clicking the CR award header engages the sort (descending money first)",
     !!after && after.getAttribute("aria-sort") !== "none" && sorted[0] >= sorted[1]);
 
@@ -205,7 +235,7 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
   // The DOM keeps the cells even when CSS hides them — the nth-child
   // arithmetic for every later column depends on them existing.
   check("a hidden NC award column still emits its DOM cell on every row",
-    table.querySelector("tbody tr.cplfund-row").querySelectorAll("td.cf-award").length === 2);
+    table.querySelector("tbody tr.cplfund-row").querySelectorAll("td.cf-award").length === 3);
   check("the CSV still exports the hidden pair member (scope, not shape)",
     /Noncredit share /.test(dom.window.CPL_FUNDING_TAB._csv()));
 }

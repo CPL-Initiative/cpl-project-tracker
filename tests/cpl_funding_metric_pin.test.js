@@ -66,9 +66,12 @@ function openDetail(window, doc, name) {
   const det = row2 && row2.nextElementSibling;
   return det && det.classList.contains("cplfund-detail") ? det : null;
 }
-const DTL_COL = { "priority": "priority", "cr funding": "crFunding", "nc funding": "ncFunding",
+// Six columns since 2026-09-23; the CR/NC split of a priority's funding rides
+// the Total Possible hover, kept per cell as `<key>Tip`.
+const DTL_COL = { "priority": "priority",
   "target": "target", "actual": "actual", "to go": "toGo", "current total": "current",
   "total possible": "possible" };
+const crShare = (cells) => ((cells.possibleTip || "").match(/^Credit share (\$[\d,]+)/) || [])[1];
 function detRows(det) {
   if (!det) return [];
   const trs = Array.from(det.querySelectorAll(".cplfund-dtl-table tr"));
@@ -81,9 +84,9 @@ function detRows(det) {
       return k;
     });
   return trs.slice(1).map((tr) => {
-    const cells = Array.from(tr.querySelectorAll("td"))
-      .map((td) => td.textContent.replace(/\s+/g, " ").trim());
-    keys.forEach((k, i) => { cells[k] = cells[i]; });
+    const tds = Array.from(tr.querySelectorAll("td"));
+    const cells = tds.map((td) => td.textContent.replace(/\s+/g, " ").trim());
+    keys.forEach((k, i) => { cells[k] = cells[i]; cells[k + "Tip"] = tds[i] ? tds[i].getAttribute("title") || "" : ""; });
     return cells;
   });
 }
@@ -217,7 +220,7 @@ check("2d: srcDelivered() asks the ARTIFACT, not the registry (a declared key ma
   // The data-gap row ADVANCES its whole CR funding; the undelivered row earns
   // strictly $0 — read straight off the Current Total column.
   check("3e4: the undelivered row earns strictly less than the data-gap row advances",
-    P.length === NPRIO && P[0].current === "$0" && P[1].current !== "$0" && P[1].current === P[1].crFunding);
+    P.length === NPRIO && P[0].current === "$0" && P[1].current !== "$0" && P[1].current === crShare(P[1]));
 }
 
 // ── 4. the two states that must never advance ────────────────────────────────
@@ -306,10 +309,12 @@ check("5d: an undelivered measure never falls through to the catch-all label",
   T.render();
   const diag = doc.querySelector(".cplfund-metricdiag");
   const txt = diag ? diag.textContent : "";
-  check("6a: an undelivered pin reads 'declared, awaiting delivery', not 'pays a FULL ADVANCE'",
-    /declared, awaiting delivery/i.test(txt));
-  check("6b: a bad pin reads AWAITING A KNOWN MEASURE and says it stays at $0",
-    /awaiting a known measure/i.test(txt) && /stays at \$0/.test(txt));
+  // Plain words since 2026-09-23 (Sam: "Simplify and use plain language in
+  // the bullets"); the feed key rides each line's hover.
+  check("6a: an undelivered pin reads awaiting measurement at $0, not 'pays a FULL ADVANCE'",
+    /Awaiting measurement\. The daily MAP feed does not carry this measure yet; it counts \$0 until it does/.test(txt));
+  check("6b: a bad pin says it counts $0 and names the fix",
+    /Counts \$0: its measure is not one MAP reports\. Choose a measure on the card/.test(txt));
   check("6c: neither new state is described as advancing",
     !/nc_pa_u[\s\S]{0,120}FULL ADVANCE/.test(txt) && !/nope_u[\s\S]{0,120}FULL ADVANCE/.test(txt));
   check("6d: a prose/pin wording disagreement is flagged as WORDING, not as a unit mismatch",
@@ -416,11 +421,13 @@ check("7a2: the BAKE carries no pin — its slot-2 metric is not the one the pin
     !p3vals.every((v) => v === "0"));
   const diag = doc.querySelector(".cplfund-metricdiag");
   const lis = Array.from(diag.querySelectorAll("li")).map((li) => li.textContent);
-  const mm = lis.filter((t) => /milestone mismatch/i.test(t));
+  // One list with the years mirrored, one line per priority, in plain words.
+  const MM = /The wording names .+ CPL, but the measure counts .+ CPL/;
+  const mm = lis.filter((t) => MM.test(t));
   check("7d: the diagnostic flags the unpinned slot and only that slot",
-    mm.length === 2 && mm.every((t) => /P1/.test(t)));
+    lis.length === T._prios(D.colleges[0].college, "1").length && mm.length === 1 && /^Priority 1\b/.test(mm[0]));
   check("7e: and the pinned Access slot is NOT flagged",
-    !lis.some((t) => /P3/.test(t) && /milestone mismatch/i.test(t)));
+    lis.some((t) => /^Priority 3\b/.test(t)) && !lis.some((t) => /^Priority 3\b/.test(t) && MM.test(t)));
 }
 // ── 8. the pin activates itself when the feed catches up ─────────────────────
 // `ppa_u` is emitted by funding/_build_funding_performance.py and the published
