@@ -43,114 +43,6 @@ shell-first, then new-files-only.
 > migration) on **2026-09-01** — each time because the doc crossed its size
 > budget and the checkpoint needed to append. Those phases are shipped and settled; read the archive only for the
 > reasoning behind a decision you are about to change.
-## 2026-08-30 — The Open Verdicts afternoon: four builds ruled and landed same day
-
-Sam ruled the 19-item Open Verdicts sheet live (reply-by-number, the first full
-exercise of the decision-sheets rule), and the funding tab took four of the
-builds the same afternoon (#1407, #1408):
-
-1. **The Combined award COLUMN (item 2, resolving the "third Award-range row"
-   question his way).** His spec: the pair's ONE total "centered vertically and
-   horizontally (like the total FTES)". Built as `combinedColDef()` /
-   `combinedCellHtml()` — a `rowspan="2"` cell on the CR row directly after
-   Total; all three NC row shapes emit NO cell in the column; `colHideStyleHtml()`
-   splits its nth-child rules at the combined position (NC rows sit one index
-   earlier to its right, and the combined rule never touches them); the
-   statewide pair included; sortable on the summed cap. **Not the retired NC $
-   column's defect**: that printed the same money twice; this prints the sum
-   that appeared nowhere (Mt. SAC $400,000 + $100,000 = $500,000).
-   `tests/cpl_funding_combined.test.js`, 19 checks.
-2. **The pair invariant MOVED, and an old test asserted the old truth.**
-   `cpl_funding_nc_lane` D2/D16 pinned "NC row carries exactly as many cells as
-   the credit row" — the very thing the spanning cell changes. CI caught it;
-   the assertions now pin the NEW invariant (exactly one fewer). ⚠️ **The local
-   full suite had "passed" first — because `npm test 2>&1 | tail -30` reports
-   TAIL's exit status, not the suite's.** The pipe masked a real failure and CI
-   told the truth. Check unpiped exit codes (`set -o pipefail`, or `$?` on the
-   command itself), and treat "green through a pipe" as unproven.
-3. **Frozen header + statewide pair (item 11: freeze, NO lazy loading).**
-   `pinFrozenRows()` measures the thead and system-CR-row heights into
-   `--cf-pin1/--cf-pin2` on every render + resize — the S203 catch (a typed
-   pixel breaks at other zoom/font sizes) is now a test assertion, and the
-   no-lazy-loading ruling is pinned by row count. `tests/cpl_funding_sticky.test.js`.
-4. **The project-pool card wired (item 5: "sourced from the jointly wired
-   Activities, Annual Targets, and Budget table" — never a hand-typed split).**
-   The ledger's `pool`-section rows (two program parents + children) fold behind
-   a word toggle on the card, framed as ONE $18,000,000 program (the $35M and
-   $15M shares join; per-share attribution would be the invented split he ruled
-   out), with an honest-empty state and a DRIFT LINE when the program rows stop
-   summing to the two shares. The live ledger sums to $18,000,000 exactly.
-   `tests/cpl_funding_pool_projects.test.js`.
-5. **Goal-card policy (items 12 + 3).** Goal (C): *demonstrated, not directly
-   measured — by design* (My CPL Stories touching career attainment + funded
-   infrastructure/interagency projects), while KEEPING the counted
-   evidence-for-(B) finding; goal (A): student-level equity belongs to the
-   system's 3-year legislative reports (MIS + CCCApply + MAP), not college
-   outcome funding. The story-intake question's final wording is his: *"What
-   changed in your work or career path?"*
-6. **Item 1 dissolved rather than decided**: threshold, minimums and buckets are
-   independent dials and the model's job is an over/under-budget readout. The
-   dials and the solver's feasibility figures already existed; the missing
-   surface is the consolidated readout — mocked with the REAL rosters + live
-   config (`docs/visuals/2026-08-30-budget-balance.html`; live finding: 42
-   institutions demand $1.68M of the $2M carve-out, and 242.7 FTES is the
-   frontier where 50 institutions consume exactly $2,000,000). Port on Sam's
-   reaction.
-
-## 2026-08-31 — The one-pool day: from morning hunch to adopted model (SkyLedger, S210 line continuing)
-
-**The arc, in one paragraph.** Sam opened with a hunch ("move the NC money into
-CR… let all the apportionment flow exactly how it is earned"), and by evening
-the one-pool model was **adopted** with its design questions ruled and its
-reaction visual built. The instrument chain that made that speed safe: scenario
-math validated **to the dollar** against the tab's own solver on both live
-lanes before any hypothetical ran; the Budget Balance mock grew a second mode
-rather than a second implementation; each ruling landed as a stamped
-scoreboard; and the port is sequenced behind its data dependency (the
-origination feed) rather than in front of it.
-
-- **Adopted (Sam, verbatim):** *"we should hold on 1 until we finalize
-  one-pool, which yes, I want to go with now."* One pool: $25.24M to 118
-  institutions sized by credit+noncredit FTES, floor $150K / cap $400K per
-  institution combined (his dials, chosen in the mock). The cap is **per
-  institution** (Mt San Antonio's pair trims $500K→$400K; Pasadena and Santa
-  Ana — big-NC colleges — rise to the cap: the pair sizing working as intended).
-- **The origination design (his, refined live):** the three noncredit-only
-  institutions hold ordinary max awards and earn by ORIGINATION — their CPL
-  transcribed at a credit college, district-scoped for NOCE/SDCCE, statewide
-  for Calbright, the same CPL crediting both institutions by design. His first
-  sketch (a separate Calbright carve-out) he folded back into the pool himself
-  minutes later — present the numbers, let the designer iterate.
-- **N1–N3 ruled by number on the mock:** N1 a (exhibits-in-MAP replaces the
-  veteran-JST gate) · N2 b (**no advance on origination** — the origin feed is
-  the gate to any funding, which re-prioritized the Custom Reports work:
-  instructions doc to Malone/Pedro shipped the same hour, formalizing the
-  standing 08-26 `Origin`+`LocID2` ask) · N3 a (nothing disburses on
-  Calbright's placeholder size; the both-sides credit confirmed for all three).
-- **The anti-usurpation answer is a restriction, not a second pool.** Sam's
-  worry — NC funding usurped by the CR program — was answered by decomposing
-  every award on its face (CR + NC by FTES share) and RESTRICTING the NC share
-  to noncredit outcomes. Two pools would have reopened the carve-out-sizing
-  problem the adoption killed. The residue is **F1** (hold vs label on the
-  $1,300,738 across 108 college awards), posed on the visual, awaiting Sam.
-- **Vocabulary is part of the model** (three rulings in one afternoon): the
-  per-institution figure is the **max award** (*"communicates that awards are
-  based on outcomes, not automatically awarded"*); the list is **alphabetical**
-  so colleges don't open on a league table; and **funding, never "money"**,
-  with CCC norms over business norms (allocated, restricted/designated,
-  redirect, brought up to the minimum; "double count" avoided as an MIS
-  audit-error term). Now doctrine in CLAUDE.md Naming.
-- **Instruments that carried the day:** the mock's dial persistence + "Copy
-  these settings" (built the hour his chosen dials proved browser-only and
-  volatile — the bench lesson recurring); the who-moves card ported to the
-  live tab (`cpl_funding_whomoves`, 13 floored checks, the saved solve being
-  the SAME pipeline with the overlay lifted); and the reaction visual carrying
-  every ruling within minutes of its making.
-- **PRs:** #1418 (Memo A on the GR tab) · #1419 (mock one-pool mode) · #1420
-  (N1–N3 stamped) · #1421 (who-moves + mock memory) · #1422 (adoption + the
-  phases 1–3 visual) · #1423 (two lanes on one face · max award · vocabulary —
-  in flight at checkpoint). Vault: CPLBrain #64–#67.
-
 ## 2026-08-31 — S215 (SkyPool): the labels ruled twice, and the mock became the whole tab
 
 - **Boot race, not a stale greeting**: Sam's greeting named
@@ -1883,3 +1775,41 @@ supersession explicitly.
 
 He held P4 at 0% until the first import, let CO research define the outcome, and took the drill-in
 consolidation as proposed. The follow-up PR shipped the one-line Baseline and the import receiver.
+
+## 2026-09-23 — S284 (SkyWage): Scenario 3, a base that read $149k, and a scenario nobody published
+
+**What Sam asked.** Scenario 3 matches the statute's four outcomes: delete the second completion priority, number
+Career attainment P3, retitle the (D) card "Innovation Projects" as P4, a per-card "show on college rows" toggle,
+an editable Measured-from list, plain-language Metric wiring, the NOCE/Calbright unmatched note, the ~$149k at the
+base, a tighter drill-in, and a check that a new scenario stays wired to every surface. Shipped as #1664.
+
+- **The ~$149k was a label on the wrong figure.** All 51 institutions at the base receive exactly $150,000; the
+  table showed only the credit share ($149,321 at Clovis) beside "(at base)" and the NC share beside it. The base
+  binds the COMBINED award, so the fix is a Max award column carrying the bound word and the one qualifying line.
+  It brings back a combined column R6/R7 retired on 2026-08-31, so it is item 4 on his sheet.
+  [note](kb-notes/methodology-label-a-bound-where-it-binds.md)
+- **A new scenario was NOT wired to the public.** Every surface read the scenario the viewer's browser had
+  selected: a college (no selection) saw Scenario 1 on the explainer, Sam's browser showed his working scenario
+  there, and `college_briefing.js` named "Scenario 1" in code. A stored `published` name per project now decides
+  what the explainer, the briefing and an unchosen browser read, with a Publish control on the strip; unset keeps
+  Scenario 1. The report writer says when it drafts from an unpublished scenario.
+- **A deleted share must move.** An award is W times the SUM of the shares, so a share deleted in place removes
+  that part of the funding from every award; Delete asks which priority takes it, and the totals row now warns
+  whenever the shares stop adding up to 100%. Sam, mid-session: *"I want to put the 33% into Career Attainment"*
+  (not into Completion). Measured on Scenario 3, the statewide Current Total goes from $2,613,990 to $1,354,241,
+  because Career attainment waits on the first EDD import; the sheet proposes holding Scenario 1 published until then.
+- **His NC base/cap idea is the live model.** Per-lane bounds proportional to each institution's NC FTES share,
+  the NC base taken from the CR base, reproduce every award to $0.00. NC gets parity (7.12% of FTES, 7.07% of the
+  funding); the cap on the combined award trims Mt. SAC's NC share to $115,102 against $237,441 proportional.
+  A weight is the clean lever (x1.25 gives $2,106,330). Calbright's data file says 21,438 NC FTES, which is 8.6 per
+  student and stays behind the 1,000 stand-in.
+- **The unmatched note was a lane-word gap in the builder.** MAP spells the credit locations "North Orange
+  Continuing Education Credit" and "Calbright College Credit"; `_feeder_resolver` now folds the trailing word, as
+  the shared identity file already does. The artifact moves on the next daily run.
+- **One numbering, two card kinds.** A reported card is still no entry in `priorities(slot)`; the label reads a
+  STORED unified order (`cardOrder` + an explicit `reportedCards`), because deriving the reported set inside
+  `priorities()` recurses. `priorityOrder()` stays the truth for the measured cards' relative order.
+- **Tests read columns by header now.** Thirteen suites indexed drill-in and row cells by position; the Max award
+  column and the six-column drill-in broke them for layout reasons alone.
+- **Supabase notice (Sam, 2026-09-23):** from 2026-10-30 a NEW table in `public` needs explicit grants for the Data
+  API. Next session: grants in every table-creating SQL file, and a lint beside the function-grants one.

@@ -1,9 +1,33 @@
 {
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
  "_as_of": "2026-09-23",
- "_session": 283,
- "_status": "The Implementation Funding tab is ready for the CO leadership review. Career attainment has its own priority, measured by the Chancellor's Office from EDD wage records, and it holds a 0% share until the first import lands. Sam ruled on all three funding decisions: hold Priority 4 at 0% until then, let CO research define the wage outcome, and consolidate each institution's drill-in into one Baseline line above its priority table. The tab now does both, and the import is ready to receive CO research's file.",
+ "_session": "S284 SkyWage",
+ "_status": "Scenario 3 can now match the statute's four outcomes: a scenario can delete and add priorities, every card shares one numbering, the (D) card takes a title, each card says whether it shows on college rows, and a published scenario decides what colleges and the public page read. The institution table shows each max award as its own column, so a college at the base reads $150,000. All of it waits in pull request 1664; four decisions are on the Scenario 3 sheet.",
  "items": [
+  {
+   "id": "s284-sam-scenario3-sheet",
+   "for": "Sam",
+   "tab": "implementation-funding",
+   "text": "Answer the four items on the Scenario 3 decision sheet: Priority 2's measure, when to publish Scenario 3, the noncredit share, and the Max award column."
+  },
+  {
+   "id": "s284-sam-scenario3-edits",
+   "for": "Sam",
+   "tab": "implementation-funding",
+   "text": "Once pull request 1664 is live, make your Scenario 3 edits in the tab: delete Completion with Transcription and move its 33% to Career attainment (factor 0.5), title the (D) card Innovation Projects, and switch its college rows off."
+  },
+  {
+   "id": "s284-fable-merge-1664",
+   "for": "Fable",
+   "tab": "implementation-funding",
+   "text": "Get pull request 1664 green and merge it, then run the daily dashboard so the NOCE and Calbright names match."
+  },
+  {
+   "id": "s284-fable-supabase-grants",
+   "for": "Fable",
+   "tab": "implementation-funding",
+   "text": "Supabase stops granting Data API access to new public tables on 30 October: add explicit grants to every table-creating SQL file and a check that fails a new table without them."
+  },
   {
    "id": "s283-sam-retry-designate",
    "for": "Sam",
@@ -15,12 +39,6 @@
    "for": "Sam",
    "tab": "activities-projects",
    "text": "Project 1.1.2, AI Apprenticeship CPL Tools, still lists Santiago Canyon College and Norco College on its team. You said the partners are Santiago Canyon and American River College, so change Norco to American River in Activities. Sessions cannot write that table."
-  },
-  {
-   "id": "s283-fable-build-funding-rulings",
-   "for": "Fable",
-   "tab": "implementation-funding",
-   "text": "When CO research sends the first career-attainment file, commit it as funding/career_attainment_import.json (the format is in docs/kb-notes/reference-career-attainment-import.md). The daily build merges it and a test checks it is masked. Then set Priority 4's share and a funding factor of 0.5 together, as Sam ruled."
   },
   {
    "id": "s283-fable-open-asks-renumbering",
@@ -57,24 +75,6 @@
    "for": "Fable",
    "tab": "cr-reference",
    "text": "The credential and subject scanners last ran on 10 July, so every count we quote for them is 73 days old and the course identity layer has been renumbered since. Re-run both and re-triage before spending a single call on either."
-  },
-  {
-   "id": "s281-sam-item-10-change-of-mind",
-   "for": "Sam",
-   "tab": "cr-reference",
-   "text": "On the template sheet you folded item 10, which is item 30 from the 2026-09-20 sheet — one you had kept separate after the review. If that is a real change of mind, say so and it goes into the decisions table; otherwise it reads as demo-clicking and the reference stays as it is."
-  },
-  {
-   "id": "s281-sam-framing-parameter",
-   "for": "Sam",
-   "tab": "cr-reference",
-   "text": "You asked to delete the intro from decision sheets and it is gone. The framing sentence can still be switched back on per sheet, because putting it in the header was your own earlier ruling. Say the word and that option goes too."
-  },
-  {
-   "id": "s280-fable-ci-shard-and-run-only-what-the-diff-touches",
-   "for": "Fable",
-   "tab": "all",
-   "text": "Sam, 2026-09-20, on the ten-minute merge: shard the JS suite across a runner matrix and run only the test files the diff touches on a pull request (the full suite stays on every push to main), plus the one hot spot, the funding tests that boot the whole dashboard in jsdom per file. Measure first: per-file timings from the last run, then the workflow change. A wholesale refactor of the monolith is not the lever for CI time. Also: the dependency map records line numbers, so a one-line edit above a mapped reference (Sam's, 2026-09-20, in the installer: 180 to 181) turned main red at the next push; make the staleness check ignore line drift, or drop the numbers from the map."
   }
  ],
  "_deferred": [

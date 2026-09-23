@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-256 document(s).
+257 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 285 | [Scenario 3's controls, a published scenario, and the base that read $149k](../session_285_handoff.md) | 2026-09-23 |
 | 284 | [Priority 4 carries career attainment, and the funding tab is ready for leadership](../session_284_handoff.md) | 2026-09-23 |
 | 283 | [the first sitting ran, and it found a different question](../session_283_handoff.md) | 2026-09-22 |
 | 282 | [the decision sheet is rebuilt and opt-out, and Jev has one magic half for every reference](../session_282_handoff.md) | 2026-09-21 |
