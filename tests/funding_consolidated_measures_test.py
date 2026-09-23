@@ -10,6 +10,9 @@ three need sources the builder did not emit:
   pac / pac_u   APPLIED units on an ACCEPTED Student CPL Plan — the MAP CPL
                 lifecycle attestation. The column does not exist yet (Sam ->
                 Pedro, 2026-09-01), so it is OMITTED, never zeroed.
+  ptc / ptc_u   TRANSCRIBED units for students whose Counselor step is checked
+                (Sam, 2026-09-23, Scenario 3 sheet item 1). Same attestation,
+                same omission, the transcribed rung.
 
 ⚠️ WHAT THIS SUITE PROTECTS, AND WHY IT IS A SEPARATE FILE FROM THE ppa ONE.
 Two distinct traps, both of which have already cost this project once:
@@ -159,6 +162,8 @@ def main():
           "pac_u" not in st, f"got {st.get('pac_u')!r}")
     check("the per-college record omits pac too, not just the statewide roll-up",
           "pac" not in p["colleges"][FUNDING_NAME])
+    check("ptc and ptc_u are OMITTED with it — the transcribed cut shares the column",
+          "ptc" not in st and "ptc_u" not in st and "ptc_u" not in p["colleges"][FUNDING_NAME])
 
     # ── part B: pac, once the attestation column arrives ───────────────────
     # The cutover has to work with NO consumer edit, so this proves the same
@@ -230,6 +235,34 @@ def main():
           abs(st4.get("pac_u", 0) - 24) < 1e-6, f"got {st4.get('pac_u')}")
     check("Student_Verified alone does not count — Counselor alone is the ruling",
           st4.get("pac") == 2 and abs(st4.get("pac_u", 0) - 24) < 1e-6)
+
+    # ── part E: ptc, transcribed CPL with the Counselor step checked ────────
+    # Sam, 2026-09-23 (Scenario 3 sheet, item 1): "We have the transcribed CPL
+    # in the dataset as well as the counselor step boolean indicator, so
+    # combining them should work." Priority 2's wording names this cut.
+    p5 = run_builder([
+        row("p1", ecr=10, acr=10, tcr=5, potential="Yes", accepted="True"),  # portal, checked: counted
+        row("d1", ecr=10, acr=10, tcr=7, accepted="1"),                       # checked: counted
+        row("d2", ecr=10, acr=10, tcr=9, accepted="Yes"),                     # checked: counted
+        row("d3", ecr=10, acr=10, tcr=50, accepted="False"),                  # transcribed, unchecked
+        row("d4", ecr=10, acr=10, tcr=0, accepted="True"),                    # checked, nothing transcribed
+        row("t1", ecr=99, acr=99, tcr=99, accepted="True", test="Yes"),       # test student
+    ], cols)
+    st5 = p5["statewide"]
+    check("ptc appears once the pull carries the attestation column",
+          "ptc" in st5 and "ptc_u" in st5, repr(sorted(st5)))
+    check("ptc counts only students with transcribed credit AND the Counselor step",
+          st5.get("ptc") == 3, f"got {st5.get('ptc')}")
+    check("ptc_u sums THEIR transcribed units only (5+7+9)",
+          abs(st5.get("ptc_u", 0) - 21) < 1e-6, f"got {st5.get('ptc_u')}")
+    check("ptc SPANS both cohorts, and p3 keeps the documented cohort (d1, d2, d3)",
+          st5.get("ptc") == 3 and st5.get("p3") == 3 and abs(st5.get("p3_u", 0) - 66) < 1e-6,
+          f"ptc={st5.get('ptc')} p3={st5.get('p3')} p3_u={st5.get('p3_u')}")
+    check("the unchecked student's 50 transcribed units stay out of ptc_u",
+          st5.get("ptc_u", 0) < 50)
+    check("pac and ptc are separate rungs: d4 is applied and checked, with nothing transcribed",
+          st5.get("pac") == 4 and st5.get("ptc") == 3,
+          f"pac={st5.get('pac')} ptc={st5.get('ptc')}")
 
     print()
     print(f"{checks[0] - len(failures)}/{checks[0]} checks passed")

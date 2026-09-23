@@ -86,9 +86,12 @@ function totalOf(T) {
 // ─────────────────────────────────────────────────────────────────────────────
 // Part A — the seam is a SEAM (every indexing site translates, exactly once)
 // ─────────────────────────────────────────────────────────────────────────────
-check("A: priorityOrder resolves through the config layers, extends an order that predates a priority, and falls back to identity",
+// Since priorities can be added and deleted (2026-09-23) the order is laid
+// over the scenario's own source ids; Part C holds the behavior.
+check("A: priorityOrder resolves through the config layers, keeps a usable stored order, and falls back to the source ids",
   /function priorityOrder\(slot\)/.test(consumerSrc) &&
-  /isPermutation\(v, n\) \? v\.map\(Number\)[\s\S]{0,160}isPermutation\(v, v\.length\)\)[\s\S]{0,20}\? v\.map\(Number\)\.concat\(identityOrder\(n\)\.slice\(v\.length\)\)[\s\S]{0,20}: identityOrder\(n\)/.test(consumerSrc));
+  /firstDefined\(SCENARIO\.priorityOrder, SHARED\.priorityOrder, base\(\)\.priority_order\)/.test(consumerSrc) &&
+  /var out = orderIsUsable\(v, ids\) \? storedOrderOver\(v, ids\) : ids\.slice\(\);/.test(consumerSrc));
 ["prioField", "prioMetricSource", "prioUnit", "setPrio"].forEach(function (fn) {
   const body = (consumerSrc.match(new RegExp("function " + fn + "\\([^)]*\\) \\{[\\s\\S]*?\\n  \\}")) || [""])[0];
   check("A: " + fn + " translates display → source before touching yearPriorities",
@@ -96,8 +99,11 @@ check("A: priorityOrder resolves through the config layers, extends an order tha
 });
 check("A: priorities() walks the ORDER, not the raw config array",
   /return priorityOrder\(slot\)\.map\(function \(sIdx, i\)/.test(consumerSrc));
-check("A: the ordinal label is positional and the key stays the identity",
-  /label: "Priority " \+ \(i \+ 1\)/.test(consumerSrc));
+// ONE numbering for every card (2026-09-23): a measured priority's number is
+// its place among ALL the cards, reported ones included.
+check("A: the ordinal label is the card's place in the one numbering, and the key stays the identity",
+  /var num = seq \? seq\.indexOf\("m" \+ sIdx\) \+ 1 : i \+ 1;/.test(consumerSrc) &&
+  /key: p\.key \|\| \("p" \+ \(sIdx \+ 1\)\), label: "Priority " \+ \(num > 0 \? num : i \+ 1\)/.test(consumerSrc));
 check("A: nothing else indexes the raw priority list any more",
   (consumerSrc.match(/base\(\)\.year_priorities\[slot\]/g) || []).length <= 1);
 check("A: reorderList is pure, so the DOM handlers are a thin shell over it",
@@ -147,8 +153,12 @@ check("A: reorderList is pure, so the DOM handlers are a thin shell over it",
   check("B: the rendered first card is the old third card",
     cardText(doc, 0).indexOf(String(natural[2].metric).slice(0, 30)) !== -1 &&
     cardText(doc, 0) !== naturalCard0);
+  // The number is the heading's own picker since 2026-09-23.
+  const h4 = cardAt(doc, 0).querySelector("h4");
+  const num = h4 && h4.querySelector("select.cplfund-pos");
   check("B: the card still reads 'Priority 1:' in its heading",
-    /Priority 1:/.test(cardText(doc, 0)));
+    !!num && /^Priority/.test(h4.textContent.trim()) && num.options[num.selectedIndex].textContent === "1" &&
+    /:\s*$/.test(h4.querySelector(".cplfund-prio-num").textContent));
 
   // The failure this whole design exists to prevent.
   const share0 = cardValue(doc, 0, "share");
@@ -196,6 +206,13 @@ check("A: reorderList is pure, so the DOM handlers are a thin shell over it",
   check("C: an order that predates a newer priority keeps its order, and the newcomer joins at the end",
     T._prios(D.colleges[0].college, "1").map(function (p) { return p.src; }).join("") ===
       "021" + natural.slice(3));
+  // A priority deleted from the scenario (2026-09-23) drops out of the order,
+  // and the rest keep theirs.
+  T._setScenario({ priorityOrder: [0, 2, 1], prioRemoved: [1] });
+  T.render();
+  check("C: a deleted priority drops out of a stored order and the rest keep their places",
+    T._prios(D.colleges[0].college, "1").map(function (p) { return p.src; }).join("") ===
+      "02" + natural.slice(3));
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -210,8 +227,11 @@ check("A: reorderList is pure, so the DOM handlers are a thin shell over it",
     Array.prototype.every.call(cards, function (c) { return c.hasAttribute("data-priocard"); }));
   check("D: each card carries a drag handle", doc.querySelectorAll('[data-priodrag][draggable="true"]').length === NP);
   const sels = doc.querySelectorAll("[data-priopos]");
+  // One numbering covers the reported cards too, so the picker offers every
+  // card's position.
+  const NCARDS = doc.querySelectorAll("#cplFundingMount [data-priocard], #cplFundingMount [data-rcard]").length;
   check("D: each card carries a keyboard-reachable position picker with every position",
-    sels.length === NP && sels[0].querySelectorAll("option").length === NP);
+    sels.length === NP && NCARDS >= NP && sels[0].querySelectorAll("option").length === NCARDS);
   check("D: the position picker is labelled for a screen reader",
     Array.prototype.every.call(sels, function (s) { return (s.getAttribute("aria-label") || "").indexOf("Position of") === 0; }));
   check("D: the drag handle is a WORD, not a bare glyph (Admin-tab ruling)",

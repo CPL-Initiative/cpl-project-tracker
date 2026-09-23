@@ -69,6 +69,12 @@ Metrics (per docs/funding_priority_metrics_scope.md; forks ratified by Sam
                   CPL Landing Page" metric. Achievement-based: a college earns on
                   its actual portal count and one with none earns $0 (#906). Tiny
                   & mostly test until the Portal launches.
+  PAC / PTC (added 2026-09-01 / 2026-09-23 per Sam) = APPLIED / TRANSCRIBED
+                  units for students whose Counselor step is checked (MAP's
+                  `Counselor_Verified`), both cohorts. PTC is his Scenario 3
+                  Priority 2 measure ("We have the transcribed CPL in the
+                  dataset as well as the counselor step boolean indicator, so
+                  combining them should work"). Omitted with the column.
   VET_STAR (added 2026-07-27) = a per-college Veteran Star flag (funding-name ->
                   bool) read from veteran_jst.json (>= star_threshold, 0.75, of
                   enrolled veterans have a JST uploaded). It is NOT a student
@@ -668,14 +674,20 @@ def main():
     # nc_* keys, because a present-but-all-zero key reads to earnFraction() as
     # "the feed published and this college posted nothing" and would pay every
     # college $0 on a column we never asked for.
+    # `ptc` = TRANSCRIBED units for students whose Counselor step is checked (Sam,
+    # 2026-09-23, his Scenario 3 sheet, item 1: "We have the transcribed CPL in
+    # the dataset as well as the counselor step boolean indicator, so combining
+    # them should work"). The same attestation as pac on the transcribed rung,
+    # omitted with it when the column is absent.
     has_accept = i_accept is not None
     if has_accept:
-        metrics = metrics + ("pac",)
+        metrics = metrics + ("pac", "ptc")
         print(f"funding-performance: attestation column {accept_col!r} is in this pull — "
-              "emitting pac/pac_u (applied units on a counselor-verified plan).")
+              "emitting pac/pac_u and ptc/ptc_u (applied and transcribed units with the "
+              "Counselor step checked).")
     else:
         print("funding-performance: NOTE — no CPL lifecycle attestation column in this pull; "
-              "pac/pac_u omitted (not zeroed). Expected `Counselor_Verified` on "
+              "pac/pac_u and ptc/ptc_u omitted (not zeroed). Expected `Counselor_Verified` on "
               "View_StudentAggregatedValues_APIDataset (fetched daily since 2026-09-02); "
               "srcDelivered() reads the absence as undelivered.")
     # ── ORIGINATION (2026-08-31, the N2 b gate) ──────────────────────────
@@ -722,10 +734,10 @@ def main():
     # (which is what the test fixture assumes). MAP's own per-college totals are
     # read below as an independent cross-check so the real grain is measured
     # rather than assumed.
-    UNIT_METRICS = tuple(m for m in ("pe", "pa", "ppa", "ppe", "pac", "p3", "pp",
+    UNIT_METRICS = tuple(m for m in ("pe", "pa", "ppa", "ppe", "pac", "ptc", "p3", "pp",
                                      "nc_pe", "nc_pa", "nc_pt") if m in metrics)
     unit_of = {"pe": "ecr", "pa": "acr", "ppa": "acr", "ppe": "ecr", "pac": "acr",
-               "p3": "tcr", "pp": "tcr",
+               "ptc": "tcr", "p3": "tcr", "pp": "tcr",
                "nc_pe": "ecr", "nc_pa": "acr", "nc_pt": "tcr"}
     units = {}                                  # funding-name -> {pe_u,p3_u,pp_u}
     unmatched_units = {}
@@ -861,6 +873,9 @@ def main():
                             # done for one student regardless of how they arrived,
                             # so it spans BOTH cohorts rather than picking a side.
                             ("pac", acr > 0 and accepted),
+                            # The same attestation on the TRANSCRIBED rung (Sam,
+                            # 2026-09-23). Both cohorts, like pac.
+                            ("ptc", tcr > 0 and accepted),
                             # Noncredit-origin cut (2026-08-31): the receiving
                             # college's funnel among students whose LocID2
                             # resolves to a known noncredit location. Guarded by
@@ -1067,6 +1082,9 @@ def main():
                   "PPA = APPLIED units among those same portal-origin students — the measure the "
                   "Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE "
                   "Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). "
+                  "PAC/PTC = APPLIED/TRANSCRIBED units for students whose Counselor step is "
+                  "checked (Counselor_Verified), both cohorts; present only when the pull "
+                  "carries that column. "
                   "NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 "
                   "resolves to a known noncredit origin (present only when the pull carries "
                   "LocID2; see the `origination` block for the per-origin scoped cuts). "

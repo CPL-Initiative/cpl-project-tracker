@@ -185,9 +185,12 @@ const POOL = 25240308;
   check("D2: no lane switch anywhere (R1)", !doc.querySelector("#cplFundLane"));
   check("D3: no paired noncredit rows and no NC SYSTEM row — one row per institution (R6)",
     !doc.querySelector(".cplfund-ncrow") && !doc.querySelector(".cplfund-ncsysrow"));
-  check("D4: exactly ONE SYSTEM row, carrying the CR/NC award pair",
+  // The Max award cell leads the pair (2026-09-23): the base and the cap bind
+  // the combined award, so the row prints it beside the two shares.
+  check("D4: exactly ONE SYSTEM row, carrying the Max award and the CR/NC award pair",
     doc.querySelectorAll(".cplfund-systemrow").length === 1 &&
-    doc.querySelectorAll(".cplfund-systemrow .cf-award").length === 2);
+    doc.querySelectorAll(".cplfund-systemrow .cf-award").length === 3 &&
+    doc.querySelectorAll(".cplfund-systemrow .cf-award.cf-max").length === 1);
   check("D5: the eligibility column is ON by default (Sam's R10 veto)",
     !!doc.querySelector('.cplfund-table th[data-sort="elig"]') &&
     !(JSON.parse(window.localStorage.getItem("cplfund_cols_v1") || "{}").college || {}).elig);
@@ -256,8 +259,10 @@ const POOL = 25240308;
       return !!det && /Qualifies by origination/.test(det.textContent) &&
         /stand-in/.test(det.textContent);   // N3 a on the Calbright expand
     })());
-  check("D16: a college row expands to the 7-column detail table (CR/NC funding · Target · " +
-        "Actual · Current Total · Total Possible)",
+  // Six columns since 2026-09-23 (Sam: "as clear and simple as possible"): the
+  // CR/NC split of a priority's funding moved into the Total Possible hover.
+  check("D16: a college row expands to the six-column detail table (Priority · Target · " +
+        "Actual · To go · Current Total · Total Possible), the CR/NC split in the Total Possible hover",
     (function () {
       const row = Array.from(doc.querySelectorAll(".cplfund-row"))
         .find(function (r) { return /Bakersfield/.test(r.textContent); });
@@ -266,8 +271,11 @@ const POOL = 25240308;
       const tbl = doc.querySelector(".cplfund-dtl-table");
       if (!tbl) return false;
       const heads = Array.from(tbl.querySelectorAll("th")).map(function (h) { return h.textContent; });
-      return heads.join("|").indexOf("CR funding") >= 0 && heads.join("|").indexOf("NC funding") >= 0 &&
-        heads.join("|").indexOf("Total Possible") >= 0;
+      const tpCol = heads.indexOf("Total Possible");
+      const firstRow = tbl.querySelectorAll("tr")[1];
+      const tpCell = firstRow && firstRow.children[tpCol];
+      return heads.join("|") === "Priority|Target|Actual|To go|Current Total|Total Possible" &&
+        !!tpCell && /^Credit share \$[\d,]+ · noncredit share \$[\d,]+$/.test(tpCell.getAttribute("title") || "");
     })());
   check("D17: the memo's allocation table is one-pool shaped (credit/noncredit shares, no carve-out)",
     (function () {

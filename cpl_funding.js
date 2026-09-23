@@ -4842,6 +4842,12 @@
         var wantM = metricMilestone(p.metric);
         var msMismatch = measurable && wantM && meas.milestone && wantM !== meas.milestone;
         if (msMismatch) anyRisk = true;
+        // THE COUNSELOR AXIS (2026-09-23). The rung check cannot see it: p3_u and
+        // ptc_u both report transcribed CPL, so a wording naming the Counselor step
+        // beside a pin that counts every student read as agreement.
+        var wantC = saysCounselorAccepted(String(p.metric || "").toLowerCase());
+        var cMismatch = measurable && !msMismatch && wantC !== !!meas.counselor;
+        if (cMismatch) anyRisk = true;
         if (mismatch) anyRisk = true;
         // A BAD PIN is always a risk, in every year, front-loaded or not: it is a
         // typo in our own config, not a fact about the world, and unlike an
@@ -4861,6 +4867,12 @@
         } else if (msMismatch) {
           msg = '<span class="cplfund-warn-text">The wording names ' + esc(rung(wantM)) + " CPL, but the measure counts " +
             esc(rung(meas.milestone)) + " CPL. Choose the measure you mean on the card, or reword the metric.</span>";
+        } else if (cMismatch) {
+          msg = '<span class="cplfund-warn-text">' + (wantC
+            ? "The wording names the Counselor step, and the measure counts " + esc(rung(meas.milestone)) +
+              " CPL for every student. Choose the measure you mean on the card, or reword the metric."
+            : "The measure counts only students with the Counselor step checked. Name the step in the " +
+              "metric, or choose the measure you mean on the card.") + "</span>";
         } else if (mismatch) {
           msg = '<span class="cplfund-warn-text">The wording asks for ' + (wantU ? "units" : "a student count") +
             ", but the measure counts " + unitWord(meas.unit) + ".</span>";
@@ -6674,21 +6686,6 @@
     return STATUTORY_GOALS.filter(function (g) { return !held[g.key]; })
       .map(function (g) { return g.key; });
   }
-  function addReportedCardHtml(slot) {
-    if (publicMode() || !unlocked()) return "";
-    var held = {};
-    reportedCards(slot).forEach(function (c) { held[c.goal] = 1; });
-    var free = STATUTORY_GOALS.filter(function (g) { return !held[g.key]; });
-    return '<div class="cplfund-rprio-add-card">' +
-      '<span class="cplfund-sec-pvlab">Curator only</span> ' +
-      (free.length
-        ? '<button type="button" class="cplfund-textbtn" id="cplFundAddReported">Add a reported outcome card</button> ' +
-          '<span class="dk">' + esc(free.map(function (g) { return "(" + g.key + ") " + g.short; }).join(" \u00b7 ")) +
-          " " + (free.length === 1 ? "has" : "have") + " no card.</span>"
-        : '<span class="dk">Every statutory outcome has a card.</span>') +
-      "</div>";
-  }
-
   // What this outcome is funded FROM, and how much of it — the control Sam
   // asked for on 2026-09-14. A field shared with another outcome is editable
   // here; a field this outcome holds alone just states its figure, because
@@ -7154,11 +7151,14 @@
       '<span class="cplfund-sec-pvlab">Curator only</span> ' +
       '<button type="button" class="cplfund-textbtn" id="cplFundAddPrio" ' +
       'title="Adds a priority at 0% share, so no award moves until you set one">Add a priority</button> ' +
+      // The outcomes without a card read as words, not a hover: a curator who
+      // just removed a reported card sees which outcome it left, on any screen.
       (free.length
         ? '<button type="button" class="cplfund-textbtn" id="cplFundAddReported" title="' +
-          esc("Adds a card for a statutory outcome that reports through its designated activities. Open: " +
-            free.map(function (g) { return "(" + g.key + ") " + g.short; }).join(", ")) +
-          '">Add a reported outcome card</button>'
+          esc("Adds a card for a statutory outcome that reports through its designated activities.") +
+          '">Add a reported outcome card</button> <span class="dk">' +
+          esc(free.map(function (g) { return "(" + g.key + ") " + g.short; }).join(" \u00b7 ")) +
+          " " + (free.length === 1 ? "has" : "have") + " no card.</span>"
         : "") +
       (gone.length
         ? ' <span class="dk">Deleted in ' + esc(activeScenario) + ":</span> " + gone.map(function (g) {
@@ -7250,6 +7250,14 @@
     // "Counselor-accepted CPL Units (FTES)" paid Norco its whole $51,699 share
     // with nothing measured behind it. See
     // docs/kb-notes/methodology-a-default-payout-masks-the-gap-beneath-it.md.
+    // TRANSCRIBED WITH THE COUNSELOR STEP (Sam, 2026-09-23, Scenario 3 sheet
+    // item 1) sits ahead of the applied cut, so a wording naming the transcript
+    // AND the Counselor step reads ptc_u; the Counselor step alone still reads
+    // pac_u. Same predicate as metricMilestone(), which reads that wording as the
+    // transcribed rung.
+    { test: function (m) { return wantsUnits(m) && saysCounselorAccepted(m) && has(m, "transcribed"); },
+      src: "ptc_u", unit: "units",
+      basis: "units of TRANSCRIBED CPL for students whose Counselor step is checked" },
     { test: function (m) { return wantsUnits(m) && saysCounselorAccepted(m); },
       src: "pac_u", unit: "units",
       basis: "units of APPLIED CPL on counselor-accepted Student CPL Plans" },
@@ -7318,6 +7326,9 @@
     // (Headcount metrics are dead policy per Sam, 2026-09-15: "we do not use
     // student headcount for any metrics in this tab." This entry exists so a
     // metric nobody should write cannot pay a full cap if somebody writes it.)
+    { test: function (m) { return saysCounselorAccepted(m) && has(m, "transcribed"); },
+      src: "ptc", unit: "students",
+      basis: "students with transcribed CPL whose Counselor step is checked" },
     { test: function (m) { return saysCounselorAccepted(m); },
       src: "pac", unit: "students",
       basis: "students whose CPL Plan a counselor accepted (the MAP Counselor lifecycle step)" },
@@ -7509,10 +7520,28 @@
     // Success band rather than Access. prioGoals() derives the statutory goal
     // from the milestone, never from a title, so the derivation has to know this
     // rung exists or an accepted-plan measure would silently read as (A).
-    pac:   { unit: "students", milestone: "accepted",
+    pac:   { unit: "students", milestone: "accepted", counselor: true,
              basis: "students whose CPL Plan a counselor accepted (the MAP Counselor lifecycle step)" },
-    pac_u: { label: "Applied CPL with the Counselor step checked", unit: "units", milestone: "accepted",
+    pac_u: { label: "Applied CPL with the Counselor step checked", unit: "units", milestone: "accepted", counselor: true,
              basis: "units of APPLIED CPL on counselor-accepted Student CPL Plans" },
+    // ── transcribed CPL with the Counselor step checked (Sam, 2026-09-23) ──
+    // His Scenario 3 sheet, item 1, verbatim: "We have the transcribed CPL in
+    // the dataset as well as the counselor step boolean indicator, so combining
+    // them should work." Priority 2's wording had named this cut ("Transcribed
+    // CPL units (FTES) for students with Counselor step checked") while its
+    // measure, p3_u, counted every transcribed unit.
+    //
+    // ⚠️ MILESTONE "transcribed", and the attestation rides `counselor: true`.
+    // The rung is the credit's state, so prioGoals() reads (B) and ncPriorities()
+    // pairs the noncredit slice with nc_pt_u exactly as it paired p3_u; the
+    // "accepted" rung has no noncredit source and would send that slice to
+    // nc_unmapped ($0). The Metric wiring compares the `counselor` flag with the
+    // wording on its own axis, because on the rung alone p3_u and ptc_u agree.
+    // Spans both cohorts (no is_potential condition in the builder), like pac.
+    ptc:   { unit: "students", milestone: "transcribed", counselor: true,
+             basis: "students with transcribed CPL whose Counselor step is checked" },
+    ptc_u: { label: "Transcribed CPL with the Counselor step checked", unit: "units", milestone: "transcribed", counselor: true,
+             basis: "units of TRANSCRIBED CPL for students whose Counselor step is checked" },
     // ── career attainment (Sam, 2026-09-22) ────────────────────────────────
     // "we can use EDD wage data to measure this ... This would not be reported
     // by the colleges but instead measured by the CO and reflected on our
@@ -7623,7 +7652,10 @@
     // compares it to `pac_u`'s "accepted", and reports a milestone mismatch
     // against a pin that is exactly right. A diagnostic that fires on the
     // correct configuration trains its reader to ignore it.
-    if (saysCounselorAccepted(m)) return "accepted";
+    // A wording naming the transcript beside the step (Scenario 3's P2) sits on
+    // the transcribed rung, the one its measure, ptc_u, reports; the Counselor
+    // step is then compared on its own axis in the Metric wiring.
+    if (saysCounselorAccepted(m)) return has(m, "transcribed") ? "transcribed" : "accepted";
     if (has(m, "applied")) return "applied";
     if (has(m, "eligible")) return "eligible";
     if (has(m, "transcribed")) return "transcribed";
@@ -7662,7 +7694,7 @@
                  gap_short: "unknown metric_src" };
       }
       return { src: pin, unit: reg.unit, basis: reg.basis, pinned: true,
-               milestone: reg.milestone, lane: reg.lane,
+               milestone: reg.milestone, lane: reg.lane, counselor: !!reg.counselor,
                undelivered: !srcDelivered(pin) };
     }
     // Prose-resolved: enrich from the registry so BOTH paths carry a milestone.
@@ -7673,6 +7705,7 @@
     if (m && m.src && METRIC_SOURCES[m.src] && m.milestone == null) {
       m = { src: m.src, unit: m.unit, basis: m.basis, gap: m.gap, gap_short: m.gap_short,
             milestone: METRIC_SOURCES[m.src].milestone, lane: METRIC_SOURCES[m.src].lane,
+            counselor: !!METRIC_SOURCES[m.src].counselor,
             undelivered: !srcDelivered(m.src) };
     }
     return m;
@@ -8842,10 +8875,13 @@
       cap, row.earned_nc || 0, row.earned_nc || 0, 0, 0);
     return '<td class="cf-award" title="' + esc(title) + '">' + fmtMoney(cap) + "</td>";
   }
-  // The bound word — (at base) / (at cap) — sits beside the award figures it
-  // qualifies, in parentheses, on both the CR and NC cells (Sam, 2026-09-02:
-  // "move the at cap and at base notes next to the CR and NC total funding on
-  // main rows and put the note in parens"). Ghosted word, hover explains.
+  // The bound word — (at base) / (at cap) — sits in parentheses beside the
+  // figure it qualifies (Sam, 2026-09-02: "move the at cap and at base notes
+  // next to the CR and NC total funding on main rows and put the note in
+  // parens"). Since 2026-09-23 that figure is the Max award: the base and the
+  // cap bind the combined award, and on the credit share the word read as a
+  // claim about the share ($149,321 "(at base)" at Clovis). Ghosted word,
+  // hover explains.
   // It also carries the institution's own proportional figure, which the
   // drill-in's base and cap cells printed until those cells left the expand
   // (Sam, 2026-09-23, funding review item 3).
@@ -8865,7 +8901,7 @@
   function rowChips(c) {
     var chips = "";
     // Chips are GHOSTED WORDS (Sam's reaction round, 2026-08-31): NC ONLY stays
-    // by the name (an identity); the bound word moved to the award cells.
+    // by the name (an identity); the bound word moved to the Max award cell.
     if (c.nco) chips += '<span class="cplfund-chip" title="A standalone noncredit institution. It holds the same award window as every college and qualifies by origination: CPL from its programs, transcribed at a credit college.">NC only</span>';
     // One-click entry (Sam, 2026-08-05): opens THIS row's drill-in with the
     // attestation form focused. Public + private; hidden once opted in.

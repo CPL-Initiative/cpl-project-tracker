@@ -41,9 +41,13 @@ function tableOf(det) {
     .map((th) => th.textContent.replace(/\s+/g, " ").trim());
   const rows = trs.slice(1).map((tr) =>
     Array.from(tr.querySelectorAll("td")).map((td) => td.textContent.replace(/\s+/g, " ").trim()));
-  const keyed = rows.map((cells) => {
+  // Each cell's hover rides beside it as "<header> tip": the CR/NC split of a
+  // priority's funding sits in the Total Possible hover since 2026-09-23.
+  const tips = trs.slice(1).map((tr) =>
+    Array.from(tr.querySelectorAll("td")).map((td) => td.getAttribute("title") || ""));
+  const keyed = rows.map((cells, j) => {
     const o = {};
-    heads.forEach((h, i) => { o[h.toLowerCase()] = cells[i]; });
+    heads.forEach((h, i) => { o[h.toLowerCase()] = cells[i]; o[h.toLowerCase() + " tip"] = tips[j][i]; });
     return o;
   });
   return { heads, rows, keyed, caption: tbl.querySelector("caption").textContent.replace(/\s+/g, " ").trim() };
@@ -126,7 +130,7 @@ const UNITY = /\d\s*(FTES|stu)\b/;
   check("2c: there is exactly ONE detail-table definition in the source",
     (consumerSrc.match(/<table class="cplfund-dtl-table">/g) || []).length === 1);
   check("2d: …and exactly one header row for it",
-    (consumerSrc.match(/>NC funding<\/th>/g) || []).length === 1);
+    (consumerSrc.match(/>Total Possible<\/th>/g) || []).length === 1);
 
   // ───────────────────────────────────────────────────────────────────────────
   // §3 — THE PARITY GUARD (the reported defect)
@@ -142,10 +146,17 @@ const UNITY = /\d\s*(FTES|stu)\b/;
   // §4 — the funding columns carry FUNDING (Sam's report)
   // ───────────────────────────────────────────────────────────────────────────
   [["statewide", sys], ["college", col]].forEach(([which, t]) => {
-    check("4a/" + which + ": NC funding is currency, never a unit figure",
-      !!t && t.keyed.every((r) => MONEY.test(r["nc funding"]) && !UNITY.test(r["nc funding"])));
-    check("4b/" + which + ": CR funding is currency too",
-      !!t && t.keyed.every((r) => MONEY.test(r["cr funding"])));
+    // The CR/NC split moved into the Total Possible hover (2026-09-23), where
+    // a unit figure would be as wrong as it was in the retired columns.
+    const SPLIT = /^Credit share (\$[\d,]+) · noncredit share (\$[\d,]+)$/;
+    const num = (v) => Number(String(v || "").replace(/[^\d.]/g, ""));
+    check("4a/" + which + ": the Total Possible hover splits the funding into credit and noncredit shares, in currency",
+      !!t && t.keyed.length > 0 && t.keyed.every((r) => SPLIT.test(r["total possible tip"]) && !UNITY.test(r["total possible tip"])));
+    check("4b/" + which + ": and the two shares add up to the Total Possible figure",
+      !!t && t.keyed.every((r) => {
+        const m = SPLIT.exec(r["total possible tip"]);
+        return !!m && Math.abs(num(m[1]) + num(m[2]) - num(r["total possible"])) <= 2;
+      }));
     check("4c/" + which + ": Total Possible is currency and present on every row",
       !!t && t.keyed.every((r) => MONEY.test(r["total possible"])));
     check("4d/" + which + ": Target carries the UNIT, so it cannot be mistaken for funding",
