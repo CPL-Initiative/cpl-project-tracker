@@ -25,8 +25,9 @@ classifier never sees it, and `deny` for a write, so Rule 10 is enforced by the
 harness rather than by recall.
 
 WARNING: THIS IS A GUARDRAIL AGAINST ACCIDENT, NOT A SECURITY BOUNDARY. It reads
-SQL with a regex; SQL is not a regular language, and anyone deliberately trying
-to get a write past it can. It stops the write a session did not mean to make.
+SQL with a small lexer and regexes, not a parser, and anyone deliberately trying
+to get a write past it can. The accident it must still catch is an ordinary
+one: a session's own comment with an apostrophe in it (see _lex). It stops the write a session did not mean to make.
 The durable control is a Postgres role with no write grants — see
 `docs/reference/lanes/org-phrase-scope-auth.md`.
 
@@ -95,26 +96,115 @@ def _memory_only_write(clean, hits):
     return bool(ok_ins or ok_upd)
 
 
-def strip_noise(sql):
-    """Remove comments and string/identifier literals.
+_DOLLAR_OPEN = re.compile(r"\$([A-Za-z_][A-Za-z0-9_]*)?\$")
 
-    Order matters: literals go first, because a comment marker inside a string
-    ('--' in a LIKE pattern) is not a comment, and a quote inside a comment is
-    not a literal. Dollar-quoting is handled before single quotes because a
-    $$...$$ body may contain unbalanced quotes.
+
+def _lex(sql):
+    """Replace comments and string/identifier literals, in ONE left-to-right pass.
+
+    Returns (clean, complete). `complete` is False when a string, identifier,
+    dollar body or block comment never closes, and the caller asks.
+
+    ⚠️ ONE PASS, BECAUSE TWO READINGS OF THE SAME TEXT DISAGREE (2026-09-23).
+    This used to be four regex passes, literals first so a `--` inside a string
+    stayed text. That ordering also made a quote inside a COMMENT open a
+    literal: `-- the curator's list` paired its apostrophe with the next quote
+    in the statement and swallowed everything between. Measured that day:
+    `select 1; -- the curator's list` + newline + `delete from kb_curation ...;
+    -- end'` came back `allow`, and three sessions' memory receipts, whose
+    headers said "the repo's", reduced to their last clause and were refused.
+    Postgres reads left to right and whichever construct opens first wins, so
+    this does too.
+
+    Block comments do not nest here, where Postgres nests them. Ending one
+    early only shows the guard MORE of the statement than runs, which can cost
+    a false deny and never hides a write.
     """
-    sql = re.sub(r"\$([A-Za-z_]\w*)?\$.*?\$\1?\$", " lit ", sql, flags=re.S)
-    sql = re.sub(r"'(?:[^']|'')*'", " lit ", sql, flags=re.S)
-    sql = re.sub(r'"(?:[^"]|"")*"', " ident ", sql, flags=re.S)
-    sql = re.sub(r"--[^\n]*", " ", sql)
-    sql = re.sub(r"/\*.*?\*/", " ", sql, flags=re.S)
-    return sql
+    out, i, n = [], 0, len(sql)
+    while i < n:
+        c = sql[i]
+        nxt = sql[i + 1] if i + 1 < n else ""
+        if c == "-" and nxt == "-":
+            j = sql.find("\n", i)
+            i = n if j < 0 else j
+            out.append(" ")
+            continue
+        if c == "/" and nxt == "*":
+            j = sql.find("*/", i + 2)
+            if j < 0:
+                return "".join(out), False
+            out.append(" ")
+            i = j + 2
+            continue
+        if c == "'":
+            # E'...' honors backslash escapes, so E'it\'s' is ONE string.
+            prev, prev2 = sql[i - 1] if i else "", sql[i - 2] if i > 1 else ""
+            esc = prev in ("e", "E") and not (prev2.isalnum() or prev2 == "_")
+            j = i + 1
+            while True:
+                if j >= n:
+                    return "".join(out), False
+                ch = sql[j]
+                if esc and ch == "\\":
+                    j += 2
+                    continue
+                if ch == "'":
+                    if j + 1 < n and sql[j + 1] == "'":
+                        j += 2
+                        continue
+                    break
+                j += 1
+            out.append(" lit ")
+            i = j + 1
+            continue
+        if c == '"':
+            j = i + 1
+            while True:
+                if j >= n:
+                    return "".join(out), False
+                if sql[j] == '"':
+                    if j + 1 < n and sql[j + 1] == '"':
+                        j += 2
+                        continue
+                    break
+                j += 1
+            out.append(" ident ")
+            i = j + 1
+            continue
+        if c == "$" and not (i and (sql[i - 1].isalnum() or sql[i - 1] == "_")):
+            m = _DOLLAR_OPEN.match(sql, i)   # `$1` is a parameter, never a quote
+            if m:
+                j = sql.find(m.group(0), m.end())
+                if j < 0:
+                    return "".join(out), False
+                out.append(" lit ")
+                i = j + len(m.group(0))
+                continue
+        out.append(c)
+        i += 1
+    return "".join(out), True
+
+
+def strip_noise(sql):
+    """Comments and literals removed; see _lex()."""
+    return _lex(sql)[0]
+
+
+# `INSERT ... ON CONFLICT (slug) DO NOTHING` is the INSERT-only, idempotent form
+# Rule 10 asks for, and its `do` is a clause, not a DO block. Only DO NOTHING
+# with a plain column list or a named constraint is read that way: DO UPDATE
+# overwrites a row that may carry a human's verdict, and keeps the deny.
+_ON_CONFLICT_NOTHING = re.compile(
+    r"\bon\s+conflict\b(\s*\([^()]*\)|\s+on\s+constraint\s+[a-z_][a-z0-9_$]*)?\s+do\s+nothing\b")
 
 
 def decide(sql):
     if not sql or not sql.strip():
         return "ask", "Empty query - nothing to classify."
-    clean = strip_noise(sql).lower()
+    clean, complete = _lex(sql)
+    if not complete:
+        return "ask", "A string, identifier or comment never closes - confirm by hand."
+    clean = _ON_CONFLICT_NOTHING.sub(" on conflict ", clean.lower())
 
     hits = [v for v in WRITE_VERBS if re.search(r"\b" + v + r"\b", clean)]
     if hits and _memory_only_write(clean, hits):
