@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-09-22T17:10:44.797942+00:00",
+  "scraped_at": "2026-09-23T11:43:58.698478+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 28310,
+    "jst": 28334,
     "star_colleges": 58
   },
   "computed_star_colleges": 58,
@@ -32,7 +32,7 @@
     },
     "City College of San Francisco": {
       "vets": 1197,
-      "jst": 1701,
+      "jst": 1722,
       "star": true
     },
     "San Diego Miramar College": {
@@ -127,7 +127,7 @@
     },
     "Santa Ana College": {
       "vets": 334,
-      "jst": 376,
+      "jst": 378,
       "star": true
     },
     "Barstow Community College": {
@@ -220,6 +220,11 @@
       "jst": 164,
       "star": true
     },
+    "Cerro Coso Community College": {
+      "vets": 115,
+      "jst": 182,
+      "star": true
+    },
     "Ventura College": {
       "vets": 254,
       "jst": 185,
@@ -228,11 +233,6 @@
     "Los Angeles Mission College": {
       "vets": 112,
       "jst": 152,
-      "star": true
-    },
-    "Cerro Coso Community College": {
-      "vets": 115,
-      "jst": 182,
       "star": true
     },
     "College of the Sequoias": {
@@ -312,7 +312,7 @@
     },
     "Irvine Valley College": {
       "vets": 217,
-      "jst": 131,
+      "jst": 132,
       "star": false
     },
     "Saddleback College": {
@@ -445,6 +445,11 @@
       "jst": 8,
       "star": false
     },
+    "Columbia College": {
+      "vets": 33,
+      "jst": 24,
+      "star": false
+    },
     "Rio Hondo College": {
       "vets": 172,
       "jst": 2,
@@ -503,11 +508,6 @@
     "Chabot College": {
       "vets": 304,
       "jst": 46,
-      "star": false
-    },
-    "Columbia College": {
-      "vets": 33,
-      "jst": 24,
       "star": false
     },
     "Taft College": {

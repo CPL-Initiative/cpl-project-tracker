@@ -1,30 +1,30 @@
 {
  "_about": "Snapshot-tier metrics for the public CPL Fact Sheet (fact-sheet/). Sourced from the same MAP Custom Reporting Module exhibit data as COBI's headline KPI cards, so the two never diverge. Refreshed by the daily dashboard cron.",
- "_as_of": "2026-09-22T17:10:44.482Z",
+ "_as_of": "2026-09-23T11:43:58.554Z",
  "credit_recommendations": {
-  "total": "13,336",
-  "ccc": "1,338",
-  "local": "11,998",
+  "total": "13,353",
+  "ccc": "1,343",
+  "local": "12,010",
   "by_type": [
-   "Standardized Assessment: 6,914",
-   "Industry Certification: 3,702",
-   "Credit By Exam: 2,111",
+   "Standardized Assessment: 6,915",
+   "Industry Certification: 3,708",
+   "Credit By Exam: 2,118",
    "Portfolio Review: 401",
-   "Military: 116"
+   "Military: 119"
   ]
  },
  "map_exhibits": {
-  "total": "2,665",
+  "total": "2,677",
   "ccc": "137",
-  "local": "2,528",
+  "local": "2,540",
   "originating_colleges": "87"
  },
  "statewide_exhibits": {
   "total": "137",
   "program_areas": "12",
-  "distinct_credit_recs": "1,159",
-  "adoptions": "1,332",
-  "adopting_colleges": "62",
+  "distinct_credit_recs": "1,164",
+  "adoptions": "1,337",
+  "adopting_colleges": "63",
   "by_sector": [
    {
     "sector": "Construction Technology",
@@ -57,8 +57,8 @@
    {
     "sector": "Automotive Technology",
     "exhibits": 11,
-    "credit_recs": 142,
-    "adoptions": 142,
+    "credit_recs": 144,
+    "adoptions": 144,
     "could_adopt": 65
    },
    {
@@ -106,8 +106,8 @@
    {
     "sector": "Kinesiology/Health",
     "exhibits": 1,
-    "credit_recs": 23,
-    "adoptions": 31,
+    "credit_recs": 26,
+    "adoptions": 34,
     "could_adopt": 40
    },
    {
@@ -126,10 +126,10 @@
  "articulating_colleges": {
   "total": "100",
   "originating": "87",
-  "adopting_ccc": "62"
+  "adopting_ccc": "63"
  },
  "veteran_sprint": {
   "star_colleges": "58",
-  "basic_training_colleges": "90 Colleges"
+  "basic_training_colleges": "91 Colleges"
  }
 }
