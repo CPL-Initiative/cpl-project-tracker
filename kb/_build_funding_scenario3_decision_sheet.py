@@ -136,13 +136,38 @@ def items():
                   ('Build the weight dial', 'dial'), CH_LATER],
     })
 
+    I.append({
+        'lane': 'implementation-funding',
+        'title': 'Keep the Max award column beside the CR/NC pair',
+        'ref': 'the institution table · your ruling R6/R7 of 2026-08-31 · your base report of 2026-09-23',
+        'facts': (
+            "You reported that colleges at the $150,000 base read about $149,000. Every one of the 51 "
+            "institutions at the base receives exactly $150,000; the table showed only its two shares, "
+            "so Clovis read <strong>$149,321 (at base)</strong> in CR award and <strong>$679</strong> "
+            "in NC award. The pull request adds a <strong>Max award</strong> column ahead of the pair: "
+            "it prints the combined figure the base and the cap bind, with <em>(at base)</em> or "
+            "<em>(at cap)</em> beside it and the one qualifying line under it, and the pair cells show "
+            "their figures. On 2026-08-31 you retired a combined column when the table went to one row "
+            "per institution (R6/R7), because the pair's sum is the award."),
+        'why': (
+            "A college reading its row sees the figure the base promises without adding two cells, and "
+            "the confirm-participation line reads once instead of twice. The table also fits a "
+            "1280-pixel screen again: the pair cells had carried the long qualifying line."),
+        'rec': (
+            "<strong>Keep the Max award column.</strong> <em>It might be wrong if</em> you want colleges "
+            "to read the credit and noncredit subtotals as the award itself, in which case the column "
+            "comes out and the bound word moves back to the pair."),
+        'chips': [('Keep the Max award column', 'keep'),
+                  ('Back to the pair only', 'pair'), CH_LATER],
+    })
+
     return I
 
 
 def build():
     I = items()
     framing = (
-        "Three decisions from the Scenario 3 build. The controls you asked for are live in the pull "
+        "Four decisions from the Scenario 3 build. The controls you asked for are live in the pull "
         "request: Add and Delete, one numbering for every card, the college-rows toggle, the editable "
         "Measured-from list, and a Publish control that says which scenario the public page reads. "
         "Nothing on this sheet has been acted on.")
