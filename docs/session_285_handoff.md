@@ -10,10 +10,12 @@ status: current
 
 Your moniker is **SkyGrant**. S284 (SkyWage) built the controls Sam asked for so Scenario 3 can match the statute's
 four outcomes, found that a new scenario never reached the public page, and traced the "~$149k at base" report to a
-label on the wrong figure. The work is [#1664](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1664),
-a DRAFT under watch; this checkpoint was taken at the context warning line.
+label on the wrong figure. [#1664](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1664) merged
+(e8b3582); the grants follow-up [#1665](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1665) (b5719bb)
+and the fixture fix [#1666](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1666) (dd63838) merged after
+it. The Delete fix below is the one PR still open.
 
-## ✅ WHAT SHIPPED (in #1664, not yet merged)
+## ✅ WHAT SHIPPED (in #1664, merged e8b3582)
 
 - **Add / Delete a priority** per scenario; Delete asks which priority takes the share (an award is W × Σshares);
   Restore; a totals-row warning whenever shares ≠ 100%.
@@ -34,6 +36,22 @@ a DRAFT under watch; this checkpoint was taken at the context warning line.
   prose line overflowing at 390px predate it (identical on `main`).
 - **Sheet**: `docs/visuals/2026-09-23-funding-scenario-3.html` (4 items), builder
   `kb/_build_funding_scenario3_decision_sheet.py`; published at https://claude.ai/artifact/3Fe1kqZKhzeKCQvtKAaB8U (store `replies`, empty at publish).
+
+## AFTER THE CHECKPOINT (2026-09-23, 17:40–18:40 UTC)
+
+- **`main` went red, and it was ours.** The first daily run after #1664 published `ptc_u`, and the counselor suite
+  had read the feed WITHOUT the key as its "before" state. #1666 sets the feed state in the fixture; ported into
+  #1665, both merged. A generated artifact's absence is a pinned figure too.
+- ⭐ **Sam: *"I tried to delete the P3 to assign P3 to Career Attainment but the Delete button doesn't fire."***
+  Reproduced in Chromium: he had just typed a share; pressing Delete blurred the field, the field committed and the
+  tab redrew under the pressed button, so the release reached a new button and no click fired (a second press works;
+  Enter or Tab first avoids it). Fix: `render()` waits while a press begun in the mount is open (selects exempt,
+  1.5 s fallback), guard `tests/cpl_funding_press_hold.test.js` (mutation-checked, 6 of 11 fail without it).
+- ⛔ **Scenario 3 is published and its shares sum to 133%** (config saved 17:42:36 UTC): P1 Access 33 · P2
+  Completion `ptc_u` 34 · P3 Career attainment 33 (factor still the baked 1.0) · P4 Completion with Transcription
+  33. An award is W × Σshares, so the 115 maximum awards total **$32,927,660 against $24,757,639** on the public
+  explainer and the college briefing until Sam's Delete lands. Given to him in session: Career attainment to 0 and
+  Enter, Delete P4 into Career attainment (clear the six transcription strategies unless wanted), factor 0.5.
 
 ## SAM'S WORDS THIS RUN
 
@@ -61,24 +79,18 @@ a DRAFT under watch; this checkpoint was taken at the context warning line.
 
 ## THE NEXT CONCRETE STEP
 
-1. **Merge #1664 once `test` succeeds on its head** (auto-merge doctrine), squash, then dispatch
-   `daily-dashboard.yml` so the builder emits `ptc_u` and the NOCE/Calbright fold. All 23 re-aimed suites pass
-   locally, and the whole funding family ran locally beside CI.
-2. **Sam's edits through the tab, in Scenario 3** (never SQL): P2's picker → "Transcribed CPL with the Counselor step
-   checked"; Delete "Completion with Transcription" moving its 33% to Career attainment; Career attainment factor 0.5;
-   Publish. His method note (CPL FTES per student record with a career improvement, from CO analysis) shapes the
-   career import.
-3. **Supabase grants before 2026-10-30.** #1664 merged (e8b3582) and the daily run was dispatched. The grants
-   follow-up is its own PR: FIVE nightly rebuild functions (goal 2, credit summary, clean-up worklist, transcribed
-   gap, Cx guidance) DROP and CREATE their tables and granted nothing; the repo now grants each, and
-   `tests/supabase_table_grants_test.py` guards every created table (49 live ones baselined). ✅ **Applied live
-   2026-09-23** on Sam's "apply" (item 1 of https://claude.ai/artifact/2xc8Hik6di18kSqmP7vkCV; item 2, the Max award
-   column, sat past his last input again and stays unruled): the five `create or replace function` statements only,
-   live hashes equal the repo. Receipt `kb/receipts/supabase_rebuild_grants_2026-09-23.sql`. ⏭ After the
-   2026-09-24 13:40 UTC promotion, confirm its `map_data_loads` row and `has_table_privilege` on all five. Detail:
-   [`lanes/map-custom-reports`](reference/lanes/map-custom-reports.md) NEXT ⓪.
-4. Carryover: the ESL merging decision sheet; the college briefing's funding box vocabulary (*earned*, *drawable*,
-   *the dollars*); ask Sam to retry Designate on the (D) card; the funding tab's pre-existing a11y findings (above).
+1. **Merge the Delete fix once `test` succeeds on its head** (auto-merge doctrine), squash. Then ask Sam to retry
+   his Delete if he has not finished it by hand.
+2. **Sam's Scenario 3 edits, through the tab** (never SQL): Delete Completion with Transcription into Career
+   attainment so the shares return to 100%, and Career attainment's factor to 0.5 (his sheet ruling). Re-read the
+   config afterward and confirm Σshares = 100% and the maximum awards total the allocation. His method note (CPL
+   FTES per student record with a career improvement, from CO analysis) shapes the career import.
+3. **Grants verification** after the 2026-09-24 13:40 UTC promotion: the `map_data_loads` promote row and
+   `has_table_privilege` for anon, authenticated and service_role on the five tables (a check-in fires at 14:30Z).
+   Detail: [`lanes/map-custom-reports`](reference/lanes/map-custom-reports.md) NEXT ⓪.
+4. Carryover: the Max award column (unruled, past the mark twice); the ESL merging decision sheet; the college
+   briefing's funding box vocabulary (*earned*, *drawable*, *the dollars*); ask Sam to retry Designate on the (D)
+   card; the funding tab's pre-existing a11y findings (four small targets, one prose line at 390px).
 
 ## ⚠️ Watch for
 
