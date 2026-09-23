@@ -689,6 +689,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/doctrine_lookup_test.py` | workflows: `js-tests.yml` | — |
 | `tests/esl_fold_spotcheck_test.py` | workflows: `js-tests.yml` | — |
 | `tests/esl_relevel_bands_test.py` | workflows: `js-tests.yml` | — |
+| `tests/funding_career_import_test.py` | workflows: `js-tests.yml` | — |
 | `tests/funding_origination_test.py` | workflows: `js-tests.yml` | — |
 | `tests/glyph_sweep_test.py` | workflows: `js-tests.yml` | — |
 | `tests/governance_docs_panel.test.js` | workflows: `js-tests.yml` | — |
@@ -760,7 +761,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `canadacollege.edu` | tabs: `map-queue`, `map-users` |
 | `cdn.jsdelivr.net` | tabs: `pipeline` |
 | `cdnjs.cloudflare.com` | scripts: `prototype/globe/build_globe.py` |
-| `claude.ai` | tabs: `admin` · scripts: `kb/_build_open_asks_decision_sheet.py`, `scripts/announce_session_hint.py` · workflows: `cpl-chat-health.yml`, `map-users-sync.yml` |
+| `claude.ai` | tabs: `admin` · scripts: `scripts/announce_session_hint.py` · workflows: `cpl-chat-health.yml`, `map-users-sync.yml` |
 | `code.claude.com` | scripts: `scripts/install_prompt_guards.py` |
 | `commons.wikimedia.org` | pages: `CPL_Dashboard.html` · scripts: `tools/source_first_light_art.mjs` |
 | `counseling.santarosa.edu` | tabs: `map-queue`, `map-users` |
@@ -908,5 +909,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 509 file
+Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 510 file
 datasets · 145 external services · 358 consumers · 35 workflows · 37 tabs.

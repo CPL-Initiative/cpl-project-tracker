@@ -85,12 +85,13 @@ function reviewerSession() {
   check("A0: public page leaks NO attestor PII even when handed some",
     !/Jane Admin/.test(mountHtml0) && !/jane@college\.edu/.test(mountHtml0));
 
-  click(pub.window, doc.querySelector("#cplFundTable tr.cplfund-row"));   // expand a row
+  // The row carries the one Confirm Participation button (Sam, 2026-09-23,
+  // funding review item 3: the drill-in's second copy is gone).
   const t1 = doc.getElementById("cplFundTable").innerHTML;
   check("A1: a public college row offers the self-service opt-in button",
-    /data-optinbtn=/.test(t1));
+    /data-optinjump=/.test(t1) && !/data-optinbtn=/.test(t1));
 
-  click(pub.window, doc.querySelector("[data-optinbtn]"));                // open the form
+  click(pub.window, doc.querySelector("[data-optinjump]"));               // open the form
   const t2 = doc.getElementById("cplFundTable").innerHTML;
   check("A2: the opt-in form (name/title/email + submit) survives stripCurateAffordances in public mode",
     /data-optinfield="name"/.test(t2) && /data-optinfield="title"/.test(t2) &&
@@ -183,10 +184,9 @@ function reviewerSession() {
   T._setElig({ coordOk: true, coord: {}, optinRow: {} });
   T.render();
 
-  click(dom.window, doc.querySelector("#cplFundTable tr.cplfund-row"));   // expand
-  const btn = doc.querySelector("[data-optinbtn]");
-  const rowCollege = btn.getAttribute("data-optinbtn");
-  click(dom.window, btn);                                                 // open the form
+  const btn = doc.querySelector("[data-optinjump]");
+  const rowCollege = btn.getAttribute("data-optinjump");
+  click(dom.window, btn);                                                 // expand + open the form
 
   const wrap = doc.querySelector("[data-optinwrap]");
   wrap.querySelector('[data-optinfield="name"]').value = "Jane Admin";
@@ -287,7 +287,7 @@ function reviewerSession() {
   check("F5: a locked (non-reviewer) drill-in shows NO CO confirm controls",
     !/cplfund-corow/.test(t) && !/data-optinconfirm/.test(t));
   check("F5b: the locked drill-in still shows the college-facing opted-in status",
-    /Opted in to participate/.test(t));
+    /Baseline: [^<]*confirmed locally/.test(t.replace(/<[^>]+>/g, "")));
 }
 
 // ── the participation-requirement join (2026-08-27) ─────────────────────────

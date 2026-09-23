@@ -4,7 +4,7 @@
   "supabase_tables": 85,
   "rpcs": 31,
   "edge_functions": 5,
-  "file_datasets": 509,
+  "file_datasets": 510,
   "external_services": 145,
   "consumers": 358,
   "workflows": 35,
@@ -421,7 +421,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 9690,
+     "line": 9687,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -508,13 +508,6 @@
      "tabs": [
       "admin"
      ]
-    },
-    {
-     "id": "script:kb/_build_open_asks_decision_sheet.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "url",
-     "line": 51
     },
     {
      "id": "script:scripts/announce_session_hint.py",
@@ -611,7 +604,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 8847,
+     "line": 8844,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -1252,7 +1245,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 8952,
+     "line": 8949,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -3023,7 +3016,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 139
+     "line": 132
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -3068,7 +3061,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 5291,
+     "line": 5326,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -3209,7 +3202,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 243
+     "line": 246
     },
     {
      "id": "script:kb/_sync_map_custom_reports.py",
@@ -4093,7 +4086,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 128
+     "line": 121
     },
     {
      "id": "script:scripts/stamp_asset_versions.py",
@@ -4426,7 +4419,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 128
+     "line": 121
     }
    ],
    "served": true,
@@ -4449,7 +4442,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 10825,
+     "line": 10822,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -4527,7 +4520,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 10772,
+     "line": 10769,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -4570,7 +4563,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 10757,
+     "line": 10754,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -5176,7 +5169,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 186
+     "line": 179
     }
    ],
    "served": false,
@@ -5189,7 +5182,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 182
+     "line": 175
     }
    ],
    "served": false,
@@ -5202,7 +5195,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 194
+     "line": 187
     }
    ],
    "served": false,
@@ -5476,7 +5469,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 9441,
+     "line": 9438,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -5591,7 +5584,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 5415,
+     "line": 5450,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -5928,7 +5921,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 128
+     "line": 121
     }
    ],
    "served": true,
@@ -13221,7 +13214,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 128
+     "line": 121
     }
    ],
    "served": true,
@@ -13623,7 +13616,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 148
+     "line": 141
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -13937,7 +13930,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 3112,
+     "line": 3115,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -14723,6 +14716,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/funding_career_import_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/funding_origination_test.py": {
    "consumers": [
     {
@@ -15493,7 +15499,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 162
+     "line": 155
     },
     {
      "id": "script:kb/_build_orphan_parent_worklist.py",
@@ -16793,7 +16799,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3272,
+     "line": 3275,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -17203,7 +17209,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 3216,
+     "line": 3219,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -17219,7 +17225,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3788,
+     "line": 3823,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -17230,7 +17236,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 3813,
+     "line": 3848,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -17257,7 +17263,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 3308,
+     "line": 3311,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -19728,6 +19734,7 @@
     "tests/custom_report_response_test.py",
     "tests/probe_lifecycle_checks_test.py",
     "tests/funding_origination_test.py",
+    "tests/funding_career_import_test.py",
     "tests/doctrine_lookup_test.py",
     "tests/context_budget_test.py",
     "tests/merge_chain_flatten_test.py",

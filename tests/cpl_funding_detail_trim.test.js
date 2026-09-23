@@ -67,18 +67,26 @@ function detRows(det) {
   const txt = det ? det.textContent.replace(/\s+/g, " ") : "";
 
   check("T1: a capped drill-in renders at all (the fixture still finds one)", !!det);
-  check("T1a: no headcount aside on the FTES-share line",
-    !/headcount, context only/.test(txt));
-  check("T1b: the cap line names the hold and stops there — no re-split, no 'not the bar'",
-    /At the cap:/.test(txt) && /held at the/.test(txt) &&
+  // Sam, 2026-09-23 (funding review item 3, "Consolidate as proposed"): the
+  // FTES-share, base and cap cells left the expand. Their figures ride the
+  // row — the CR FTES hover and the bound word's hover.
+  check("T1a: the FTES share left the expand, and rides the CR FTES hover with its statewide total",
+    !/FTES share:/.test(txt) && !/headcount, context only/.test(txt) &&
+    /FTES in all: [\d.]+% of the statewide [\d,]+, the allocation basis/
+      .test((det.previousElementSibling.querySelector("td.c") || {}).title || ""));
+  check("T1b: no cap cell in the expand — no re-split, no 'not the bar'",
+    !/At the cap:/.test(txt) && !/At the base:/.test(txt) &&
     !/re-splits across the institutions below the cap/.test(txt) &&
     !/lowers the funding, not the bar/.test(txt));
   check("T1b2: …and the base line's mirror tail came off with it",
     !/raises the funding, not the bar/.test(txt) && !/PRE-BASE share/.test(txt) &&
     !/PRE-CAP share/.test(txt));
-  check("T1c: 'Baseline eligibility' stands alone — the parenthetical restated the label",
-    /Baseline eligibility:/.test(txt) && !/the gate to participate/.test(txt) &&
-    !/Baseline eligibility \(/.test(txt));
+  check("T1c: the baseline is ONE line, 'Baseline:', and the old paragraph is gone",
+    det.querySelectorAll(".cplfund-basestatus").length === 1 && /^Baseline: /.test(
+      det.querySelector(".cplfund-basestatus").textContent.replace(/\s+/g, " ").trim()) &&
+    !/Baseline eligibility/.test(txt) && !/the gate to participate/.test(txt));
+  check("T1c2: …and the expand carries no second Confirm Participation control beside the row's",
+    !det.querySelector("[data-optinbtn]") && !/Confirm Participation/.test(txt));
   check("T1d: nothing in the expand restates the gate's roll-forward sentence twice",
     (txt.match(/qualifying later still counts toward it/g) || []).length <= 1 &&
     !/nothing is redistributed, so qualifying later/.test(txt));

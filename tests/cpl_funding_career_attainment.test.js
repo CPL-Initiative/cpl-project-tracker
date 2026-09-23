@@ -191,9 +191,15 @@ const goalNameText = (card) => flat(card && card.querySelector(".cplfund-cardgoa
   const perf2 = JSON.parse(JSON.stringify(perf));
   perf2.statewide.ca_u = 30000;
   perf2.colleges.Laney.ca_u = 600;
+  // The block funding/_build_funding_performance.py writes beside the units.
+  perf2.career_attainment = { as_of: "2027-02-01", source: "CCCCO Research, EDD wage records",
+    definition: "Employed in the second fiscal quarter after the CPL award", colleges: 1, unmatched: [] };
   const m2 = mount({ perf: perf2 });
   const q4 = m2.T._prios("Laney", "1").find((p) => p.src === 3);
   check("3e: the day the import lands, P4 is measured with no code change", !!q4 && q4.status !== "undelivered" && q4.lane !== "nc");
+  const t4b = flat(cardAt(m2.doc, 3));
+  check("3e2: the card dates the figure by the Chancellor's Office import, never MAP's pull",
+    /per the Chancellor.s Office import \(as of 2027-02-01\)/.test(t4b) && !/per MAP/.test(t4b));
   const cEvid = flat(m2.doc.getElementById("cplfund-goal-C"));
   check("3f: and goal (C) reads performance-measured per the Chancellor's Office import, never the daily MAP feed",
     /Performance-measured/.test(cEvid) && /per the Chancellor.s Office import/.test(cEvid) && !/daily MAP feed/.test(cEvid));
