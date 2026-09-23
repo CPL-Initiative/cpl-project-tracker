@@ -183,7 +183,8 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   const alaCr = function () {
     const row = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
       .find(function (r) { return /Alameda/.test(r.textContent); });
-    return row.querySelector("td.cf-award").textContent;
+    // The CR award cell, by what it is: the Max award leads the row (2026-09-23).
+    return row.querySelector("td.cf-award:not(.cf-max)").textContent;
   };
   check("even mode: the CR award cell reads the ANNUAL figure (cr_award ÷ 2)",
     alaCr().indexOf(fmtM(evenAlloc.cr_award / 2)) === 0);

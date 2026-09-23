@@ -46,6 +46,10 @@ function detRows(det) {
     const out = {};
     Array.from(tr.querySelectorAll("td")).forEach((td, i) => {
       out[keys[i]] = td.textContent.replace(/\s+/g, " ").trim();
+      // The hover rides along: since 2026-09-23 a row is one line, and the
+      // figures that would stack a second line (the funding remaining, the
+      // CR/NC split) read in the cell's title.
+      out[keys[i] + " (hover)"] = td.getAttribute("title") || "";
     });
     return out;
   });
@@ -152,8 +156,10 @@ function detRows(det) {
   const R = detRows(openDetail(window, doc, "Laney"));
 
   check("T2: the table carries a To go column", R.length === NPRIO && "to go" in R[0]);
-  check("T2a: under target — To go names the distance AND the funding still remaining",
-    R.length === NPRIO && /\d/.test(R[0]["to go"]) && /\$[\d,]+ remaining/.test(R[0]["to go"]));
+  check("T2a: under target — To go names the distance AND the funding still remaining (on its hover)",
+    R.length === NPRIO && /\d/.test(R[0]["to go"]) && /\$[\d,]+ remaining/.test(R[0]["to go (hover)"]));
+  check("T2a1: …on ONE line: the cell holds the distance alone (Sam, 2026-09-23: tighten the detail rows)",
+    R.length === NPRIO && !/remaining/.test(R[0]["to go"]));
   check("T2a2: …and the distance is not the whole target (the posted amount is subtracted)",
     R.length === NPRIO && R[0]["to go"] !== R[0].target);
   check("T2b: at or over target — To go says target met, and offers no negative distance",
@@ -163,7 +169,9 @@ function detRows(det) {
   // just the cell it was applied to.
   check("T2c: a privacy-suppressed actual gets NO distance — it would leak the value by subtraction",
     R.length === NPRIO && /privacy/.test(R[2].actual) &&
-    !/\d/.test(R[2]["to go"]) && !/remaining/.test(R[2]["to go"]));
+    !/\d/.test(R[2]["to go"]) && !/remaining/.test(R[2]["to go"]) &&
+    // The hover is part of the row: a remaining figure there leaks the same way.
+    !/remaining|\d/.test(R[2]["to go (hover)"]));
   check("T2c2: …and the masked row's To go is a plain absence, not a zero",
     R.length === NPRIO && !/^0\b/.test(R[2]["to go"]) && !/target met/.test(R[2]["to go"]));
 }

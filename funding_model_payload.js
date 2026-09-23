@@ -106,6 +106,7 @@
   // which paints nothing rather than a wrong list.
   const reported = (typeof T.reportedGoals === "function" ? T.reportedGoals() : []).map(function (r) {
     return { key: String(r.key || ""), short: String(r.short || ""), text: String(r.text || ""),
+             title: String(r.title || ""),
              projects: (r.projects || []).map(function (x) {
                return { id: String(x.id || ""), name: String(x.name || "") };
              }) };

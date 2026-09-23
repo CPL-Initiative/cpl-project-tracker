@@ -356,19 +356,31 @@
    * order. `order[i]` is the SOURCE index shown at display position i. Anything
    * malformed — wrong length, out of range, a repeat — returns the natural
    * order rather than dropping or duplicating a priority. */
-  function applyPriorityOrder(list, order) {
-    if (!Array.isArray(order) || !order.length || order.length > list.length) return list;
-    var out = [], seen = {}, i, v;
+  function applyPriorityOrder(list, order, removedKeys) {
+    // THE SAME RULE AS cpl_funding.js priorityOrder()/orderIsUsable(), keyed by
+    // the SOURCE index each entry carries (`key`), never by its place in the
+    // list: a scenario can delete a priority and add one since 2026-09-23, so
+    // the list's positions stop being source indices. Three refusals return the
+    // natural order: a repeat, a value that names no priority this scenario
+    // ever held, and a shorter order that is not a prefix of the set. A value
+    // naming a DELETED priority is skipped, and a priority the order predates
+    // joins at the end ([0, 2, 1] kept its order when P4 arrived, 2026-09-22).
+    if (!Array.isArray(order) || !order.length) return list;
+    var byKey = {}, removed = {}, seen = {}, maxKept = -1, i, v;
+    list.forEach(function (pr) { byKey[Number(pr.key)] = pr; });
+    (removedKeys || []).forEach(function (k) { removed[Number(k)] = 1; });
     for (i = 0; i < order.length; i++) {
       v = Number(order[i]);
-      // A shorter order must be a permutation of its OWN length: [0, 2, 1]
-      // predates Priority 4 (2026-09-22) and keeps its order, the newcomer
-      // joining at the end — the same rule as cpl_funding.js priorityOrder().
-      if (!(v >= 0 && v < order.length) || v !== Math.floor(v) || seen[v]) return list;
+      if (!(v >= 0) || v !== Math.floor(v) || seen[v]) return list;
       seen[v] = 1;
-      out.push(list[v]);
+      if (byKey[v]) { if (v > maxKept) maxKept = v; }
+      else if (!removed[v]) return list;
     }
-    for (i = order.length; i < list.length; i++) out.push(list[i]);
+    var out = [];
+    for (i = 0; i < order.length; i++) { v = Number(order[i]); if (byKey[v]) out.push(byKey[v]); }
+    var rest = list.filter(function (pr) { return !seen[Number(pr.key)]; });
+    if (rest.some(function (pr) { return Number(pr.key) < maxKept; })) return list;
+    out = out.concat(rest);
     return out.map(function (pr, j) {
       var copy = {}; for (var k in pr) if (Object.prototype.hasOwnProperty.call(pr, k)) copy[k] = pr[k];
       copy.index = j;
@@ -402,7 +414,12 @@
         unread.push({ id: pid, label: label, why: "No Year " + year + " priorities in “" + scenario + "”." });
         return;
       }
-      var priorities = Object.keys(yp).sort(function (a, b) { return Number(a) - Number(b); }).map(function (k, i) {
+      // A priority the scenario DELETED (2026-09-23) keeps its stored row, so
+      // the funding tab can restore it; it is not part of the set.
+      var removedKeys = Array.isArray(scen.prioRemoved) ? scen.prioRemoved.map(Number) : [];
+      var priorities = Object.keys(yp).filter(function (k) {
+        return removedKeys.indexOf(Number(k)) < 0;
+      }).sort(function (a, b) { return Number(a) - Number(b); }).map(function (k, i) {
         var pr = yp[k] || {};
         // An empty-string strategy is a curator typo, not a strategy. Drop it
         // from the list but COUNT it, so the page never silently shrinks.
@@ -425,7 +442,7 @@
       // SOURCE index — that is what joins a priority back to the funding module
       // — while `index` becomes the position the curator actually sees, so
       // "priority 2" names the same priority on both tabs.
-      priorities = applyPriorityOrder(priorities, scen.priorityOrder);
+      priorities = applyPriorityOrder(priorities, scen.priorityOrder, removedKeys);
       var total = priorities.reduce(function (n, pr) { return n + pr.strategies.length; }, 0);
       if (!total) {
         unread.push({ id: pid, label: label, why: "Year " + year + " of “" + scenario + "” has no strategies written yet." });
@@ -3835,7 +3852,32 @@
         contactKnown: Object.prototype.hasOwnProperty.call(raw.contactByName || {}, state.college)
       };
     }
-    state.data.briefing = buildBriefing({ config: raw.config, college: c }, { scenario: SCENARIO, year: YEAR });
+    state.data.briefing = buildBriefing({ config: raw.config, college: c }, { scenario: briefingScenario(raw.config), year: YEAR });
+  }
+
+  /* WHICH SCENARIO (Sam, 2026-09-23: a new scenario must stay "wired to
+   * everything needed"). The funding box reads cpl_funding.js, which follows
+   * the scenario THIS BROWSER chose, or the PUBLISHED one for a browser that
+   * never chose. The strategies have to come from that same scenario, or a
+   * curator working in an unpublished scenario reads one scenario's funding
+   * beside another's strategies. Until the model loads, the config's own
+   * published name decides; SCENARIO is the last fallback. */
+  function briefingScenario(config) {
+    var M = fundingModule();
+    var s = (M && typeof M._scenario === "function") ? M._scenario() : null;
+    if (s && s.project === IMPL_PROJECT && s.name) return s.name;
+    return publishedScenarioOf(config) || SCENARIO;
+  }
+  /* PURE. The flagship project's published scenario, read from the config the
+   * same way cpl_funding.js publishedScenario() reads it. */
+  function publishedScenarioOf(config) {
+    var p = config && config.projects && config.projects[IMPL_PROJECT];
+    var scen = p && p.scenarios;
+    if (!scen || typeof scen !== "object") return null;
+    if (typeof p.published === "string" && scen[p.published]) return p.published;
+    if (scen[SCENARIO]) return SCENARIO;
+    var names = Object.keys(scen).sort(function (a, b) { return a.localeCompare(b, undefined, { numeric: true }); });
+    return names[0] || null;
   }
 
   function loadAll() {
@@ -4084,6 +4126,8 @@
     _money: money,
     _state: state,
     _SCENARIO: SCENARIO,
+    _briefingScenario: briefingScenario,
+    _publishedScenarioOf: publishedScenarioOf,
     _YEAR: YEAR
   };
 

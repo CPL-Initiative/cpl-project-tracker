@@ -184,21 +184,26 @@ check("A6: the NC lane normalizes by its OWN share sum, never the credit one",
   // survives as the checkable-claim zero.
   function ncCell(id) {
     const r = doc.querySelector('tr[data-id="c:' + id + '"]');
-    return r ? r.querySelectorAll("td.cf-award")[1] : null;
+    // The NC award cell, by what it is: the Max award leads the row since
+    // 2026-09-23, and the qualifying line reads once, under it; each share's
+    // own qualifying figure rides its cell's hover.
+    return r ? r.querySelectorAll("td.cf-award:not(.cf-max)")[1] : null;
   }
   check("B14: a college's NC award cell reads its share with the STANDARD qualifying sub at $0 — the " +
         "retired feeds-waiting label is gone (2026-09-01)",
     (function () {
       const c = ncCell("Mt San Antonio");
+      const t = c ? c.textContent + " " + (c.getAttribute("title") || "") : "";
       return !!c && /\$57,551|\$115,102/.test(c.textContent) &&
-        /qualifying \$0/.test(c.textContent) &&
-        !/until feeds report/.test(c.textContent) && !/awaits origination/.test(c.textContent);
+        /qualifying so far: \$0/.test(t) &&
+        !/until feeds report/.test(t) && !/awaits origination/.test(t);
     })());
   check("B15: a trio row's NC award cell is the whole award qualifying at $0 — no 'awaits origination' " +
         "label, no advanced figure (N2 b arithmetic unchanged)",
     (function () {
       const c = ncCell("NOCE");
-      return !!c && /qualifying \$0/.test(c.textContent) && !/awaits origination/.test(c.textContent);
+      const t = c ? c.textContent + " " + (c.getAttribute("title") || "") : "";
+      return !!c && /qualifying so far: \$0/.test(t) && !/awaits origination/.test(t);
     })());
   check("B16: a no-noncredit college's cell is the checkable claim — '$0 · credit only', inviting the correction",
     (function () { const c = ncCell("Taft"); return !!c && /credit only/.test(c.textContent); })());

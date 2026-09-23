@@ -91,9 +91,16 @@ function matchCount(els, selectors) {
   const mainCells = Array.from(row.querySelectorAll(":scope > td"));
   check("2a: the rules still hide exactly TWO cells on the institution row",
     matchCount(mainCells, sels) === 2);
-  check("2b: and they are columns 3 and 9 — District and the county context",
+  // The positions come from the header, not from a typed number: the Max award
+  // column (2026-09-23) moved the county context one place right, and a typed
+  // "2,8" would have failed for a reason unrelated to the scope it guards.
+  const headKeys = Array.from(doc.querySelectorAll("#cplFundTable thead th"))
+    .map((th) => th.getAttribute("data-sort") || "");
+  const want = [headKeys.indexOf("district"), headKeys.indexOf("working_adults")].join(",");
+  check("2b: and they are the District and county-context columns (" + want + ")",
+    headKeys.indexOf("district") === 2 && headKeys.indexOf("working_adults") > 2 &&
     mainCells.filter((td) => sels.some((sl) => td.matches(sl)))
-      .map((td) => td.cellIndex).sort(function (a, b) { return a - b; }).join(",") === "2,8");
+      .map((td) => td.cellIndex).sort(function (a, b) { return a - b; }).join(",") === want);
 
   // ── THE REGRESSION ────────────────────────────────────────────────────────
   const dtlCells = Array.from(det.querySelectorAll(".cplfund-dtl-table td"));

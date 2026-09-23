@@ -147,15 +147,18 @@ function renderWith(pin) {
   T._setShared({ yearPriorities: { "1": P, "2": P }, mirrorYears: true, disbursement: "frontload" });
   T.render();
   const diag = doc.querySelector(".cplfund-metricdiag");
-  const lis = diag ? Array.from(diag.querySelectorAll("li")).map((li) => li.textContent) : [];
-  return { T, lis, mm: lis.filter((t) => /milestone mismatch/i.test(t)) };
+  // Each line carries its words in the text and the MAP feed key in its hover
+  // (plain language, Sam 2026-09-23), so the key is read from the title.
+  const lis = diag ? Array.from(diag.querySelectorAll("li")).map((li) => li.textContent + " || " + (li.getAttribute("title") || "")) : [];
+  return { T, lis, mm: lis.filter((t) => /The wording names .+ CPL, but the measure counts/.test(t)) };
 }
 {
   const before = renderWith("ppa_u");
   check("5a: pinned to ppa_u, the diagnostic flags the metric/measure disagreement",
     before.mm.length > 0);
   check("5b: and it names the two rungs in Sam's own terms — accepted asked, applied returned",
-    before.mm.some((t) => /ACCEPTED/.test(t) && /ppa_u/.test(t) && /applied/.test(t)));
+    before.mm.some((t) => /counselor-accepted CPL/.test(t) && /measure counts applied CPL/.test(t) &&
+      /MAP feed key: ppa_u/.test(t)));
 }
 {
   const after = renderWith("pac_u");

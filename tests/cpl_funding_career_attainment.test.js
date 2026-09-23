@@ -99,6 +99,17 @@ function detRows(det) {
 }
 const goalKeyText = (card) => flat(card && card.querySelector(".cplfund-cardgoal-key"));
 const goalNameText = (card) => flat(card && card.querySelector(".cplfund-cardgoal-name"));
+// The card's own title lives in its heading since 2026-09-23 (Sam: "eliminate
+// any redundancies in titles or designations"), and the outcome's name in the
+// outcome picker, so neither line repeats the other.
+const titleText = (card) => {
+  const inp = card && card.querySelector('h4 input[data-edit="prio-title"]');
+  return inp ? inp.value : flat(card && card.querySelector("h4"));
+};
+const goalPickText = (card) => {
+  const sel = card && card.querySelector("select.cplfund-cardgoal-sel");
+  return sel && sel.selectedIndex >= 0 ? sel.options[sel.selectedIndex].text : "";
+};
 
 // ── 1. P4 is a real priority, and it moves no award until it has a share ────
 {
@@ -149,22 +160,24 @@ const goalNameText = (card) => flat(card && card.querySelector(".cplfund-cardgoa
   const { doc, T } = mount({ signedIn: true });
   const srcs = T._prios(D.colleges[0].college, "1").map((p) => p.src).join("");
   check("2a: Sam's stored [0, 2, 1] keeps its order and Priority 4 joins at the end", srcs === "0213");
-  const names = [0, 1, 2, 3].map((i) => goalNameText(cardAt(doc, i)));
+  const names = [0, 1, 2, 3].map((i) => titleText(cardAt(doc, i)));
   check("2b: each card is named by its own live title",
     names.join("|") === "Outreach|Completion with Counseling|Completion with Transcription|Career attainment");
+  check("2b2: the outcome line does not repeat the title (2026-09-23) — its name reads in the picker",
+    [0, 1, 2, 3].every((i) => !cardAt(doc, i).querySelector(".cplfund-cardgoal .cplfund-cardgoal-name")));
   check("2c: Completion with Counseling serves (B) alone — the counselor step no longer claims (C)",
     goalKeyText(cardAt(doc, 1)) === "(B)");
   check("2d: Completion with Transcription serves (B)", goalKeyText(cardAt(doc, 2)) === "(B)");
   check("2e: Career attainment serves (C), derived from its measure",
     goalKeyText(cardAt(doc, 3)) === "(C)" &&
-    /Derived from the metric/i.test(flat(cardAt(doc, 3).querySelector(".cplfund-cardgoal-src"))));
+    /^From the metric: \(C\) Career attainment/.test(goalPickText(cardAt(doc, 3))));
   check("2f: the source says so — accepted is (B), career is (C)",
     /ms === "accepted"\) return \{ keys: \["B"\], derived: true \}/.test(consumerSrc) &&
     /ms === "career"\) return \{ keys: \["C"\], derived: true \}/.test(consumerSrc));
   // A card with no title keeps the statute's short name for its goal.
   const T2 = mount({ shared: { yearPriorities: { "1": Object.assign(liveShape().yearPriorities["1"],
     { "0": { title: "", share: 0.33, factor: 0.5, metric: "Eligible CPL Units measured in FTES", metric_src: "pe_u" } }) } } });
-  check("2g: an untitled card keeps the goal's statutory short name", /Access/.test(goalNameText(cardAt(T2.doc, 0))));
+  check("2g: an untitled card keeps the goal's statutory short name", /Access/.test(goalPickText(cardAt(T2.doc, 0))));
 }
 
 // ── 3. the Chancellor's Office measure, before and after its first import ────
@@ -185,8 +198,8 @@ const goalNameText = (card) => flat(card && card.querySelector(".cplfund-cardgoa
     !/MAP feed key: ca_u/.test(cardAt(doc, 3).innerHTML));
   const diag = flat(doc.querySelector(".cplfund-metricdiag") || doc.getElementById("cplFundingMount"));
   check("3d: the curator's metric diagnostic names the Chancellor's Office, not the daily feed, for ca_u",
-    /Awaiting measurement — the Chancellor.s Office measures ca_u from EDD wage records/.test(diag) &&
-    !/the daily feed carries no ca_u/.test(diag));
+    /Awaiting measurement\. The Chancellor.s Office measures it from EDD wage records/.test(diag) &&
+    !/daily MAP feed does not carry this measure/.test(diag));
   // After: the import lands in the published artifact, beside MAP's keys.
   const perf2 = JSON.parse(JSON.stringify(perf));
   perf2.statewide.ca_u = 30000;

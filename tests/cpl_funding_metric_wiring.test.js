@@ -120,8 +120,11 @@ check("every measurable MEASURES entry declares its unit",
 check("a headcount metric that mentions units still reaches its GAP, not a unit measure",
   (function () { const m = measure("Headcount with Completion and 3+ Transcribed CPL Units");
     return !!m && !m.src && /match-back/.test(m.gap_short || ""); })());
+// In plain words since 2026-09-23 ("The wording asks for units, but the measure
+// counts students"), so the check reads the branch, not a retired label.
 check("the diagnostic flags a unit mismatch (not just measurable-vs-gap)",
-  /Unit mismatch/.test(consumerSrc) && /function wantsUnits/.test(consumerSrc));
+  /\} else if \(mismatch\) \{\s*msg = '<span class="cplfund-warn-text">The wording asks for/.test(consumerSrc) &&
+  /function wantsUnits/.test(consumerSrc));
 
 // Every baked metric must at least MATCH a predicate — an unmatched metric falls
 // through to "no measure" and pays a silent advance with no explanation at all.

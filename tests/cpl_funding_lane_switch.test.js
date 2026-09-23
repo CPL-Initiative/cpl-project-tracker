@@ -61,9 +61,11 @@ const money = (n) => "$" + Math.round(n).toLocaleString("en-US");
   // R6 — one row per institution; the paired-NC-row machinery is gone.
   check("R6: no paired noncredit rows and no NC SYSTEM row render",
     !doc.querySelector("tr.cplfund-ncrow") && !doc.querySelector("tr.cplfund-ncsysrow"));
-  check("R6: exactly ONE SYSTEM row, carrying the CR/NC award pair on its face",
+  // The Max award (2026-09-23) leads the pair on every row, SYSTEM included.
+  check("R6: exactly ONE SYSTEM row, carrying the Max award and the CR/NC award pair on its face",
     doc.querySelectorAll(".cplfund-systemrow").length === 1 &&
-    doc.querySelectorAll(".cplfund-systemrow .cf-award").length === 2);
+    doc.querySelectorAll(".cplfund-systemrow .cf-award").length === 3 &&
+    doc.querySelectorAll(".cplfund-systemrow .cf-award:not(.cf-max)").length === 2);
 
   // R7 — the Award range section with its two separately-solved lane rows.
   check("R7: no Award range rows render (.cplfund-awardrow is gone)",

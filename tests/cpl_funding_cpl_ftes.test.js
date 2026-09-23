@@ -110,7 +110,13 @@ function dtlRow0(window, T, name) {
   const det = row && row.nextElementSibling;
   const dtl = det && det.querySelector(".cplfund-dtl-table");
   if (!dtl) return null;
-  return Array.from(dtl.querySelectorAll("tr"))[1].querySelectorAll("td");
+  // Cells are returned KEYED BY HEADER as well as by position: the drill-in
+  // dropped its CR/NC funding columns on 2026-09-23 (one line per priority),
+  // and a typed column number would fail on the layout, not on the arithmetic.
+  const heads = Array.from(dtl.querySelectorAll("th")).map(function (h) { return h.textContent.trim().toLowerCase(); });
+  const tds = Array.from(dtl.querySelectorAll("tr"))[1].querySelectorAll("td");
+  tds.byHead = function (k) { return tds[heads.indexOf(k)]; };
+  return tds;
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -170,8 +176,8 @@ check("the two quantities are ~500x apart, so a mix-up could not hide",
   // 900 units: semester -> 30.0 FTES, quarter -> 20.0 FTES.
   const ala = dtlRow0(window, T, "Alameda");
   const foo = dtlRow0(window, T, "Foothill");
-  const aline = function (cells) { return cells[4].textContent.replace(/\s+/g, " "); };
-  const tline = function (cells) { return cells[3].textContent.replace(/\s+/g, " "); };
+  const aline = function (cells) { return cells.byHead("actual").textContent.replace(/\s+/g, " "); };
+  const tline = function (cells) { return cells.byHead("target").textContent.replace(/\s+/g, " "); };
   check("semester college: 900 units reads 30.0 CPL FTES in its expand's Actual cell",
     !!ala && /(^|[^\d.])30\.0 FTES/.test(aline(ala)));
   check("QUARTER college: the same 900 units reads 20.0 CPL FTES (÷45, not ÷30)",

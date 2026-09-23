@@ -384,9 +384,27 @@ def _feeder_resolver():
             if nm:
                 lookup[_norm(nm)] = short
 
+    # MAP names an institution's credit location with a trailing lane word:
+    # "North Orange Continuing Education Credit", "Calbright College Credit".
+    # The shared identity file already folds that word away (its _meta note:
+    # "their Credit/Non-Credit variants fold to one short"); this resolver did
+    # not, so both schools' MAP activity landed in `unmatched` beside the rows
+    # the funding table carries for them (Sam, 2026-09-23: "NOCE and Calbright
+    # are on the table. LAUNCH is correctly NOT on the table").
     def resolve(map_name):
-        return lookup.get(_norm(map_name))
+        key = _norm(map_name)
+        return lookup.get(key) or lookup.get(_fold_lane(key))
     return resolve
+
+
+# A trailing lane word, normalized: "…credit" or "…noncredit".
+_LANE_SUFFIX_RE = re.compile(r"(?:non)?credit$")
+
+
+def _fold_lane(n):
+    """A normalized name without its trailing lane word, or unchanged."""
+    m = _LANE_SUFFIX_RE.search(n)
+    return (n[:m.start()] or n) if m else n
 
 
 NC_ORIGIN_LOCIDS = os.path.join(ROOT, "kb", "nc_origin_locids.json")
