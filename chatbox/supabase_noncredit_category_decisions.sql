@@ -110,6 +110,13 @@ create policy ncd_team_update
   using (public.team_pass_ok())
   with check (public.team_pass_ok());
 
+-- EXPLICIT GRANTS (2026-09-23). From 2026-10-30 Supabase stops granting the
+-- API roles on a NEW table in public, and this table is not live yet, so its
+-- grants ride with it: each role gets the commands its policies allow.
+-- Guarded by tests/supabase_table_grants_test.py.
+grant select, insert, update on public.noncredit_category_decisions to anon, authenticated;
+grant select, insert, update, delete on public.noncredit_category_decisions to service_role;
+
 -- NO DELETE POLICY, deliberately — same call as governance_owners and
 -- map_contact_proposals. Clearing a determination writes NULLs through the update
 -- path so the row keeps its history; it does not vanish. ⚠ A consequence worth

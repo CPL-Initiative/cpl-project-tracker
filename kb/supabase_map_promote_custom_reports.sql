@@ -107,6 +107,12 @@ begin
   create policy map_college_goal2_select on public.map_college_goal2
     for select to anon, authenticated
     using (is_allowed_reviewer() or team_pass_ok());
+  -- EXPLICIT GRANTS (2026-09-23). This body creates the table afresh on every
+  -- run, and from 2026-10-30 Supabase stops granting the API roles on a NEW
+  -- table in public. anon and authenticated read through the policy above;
+  -- service_role reads it for the daily publishers. Nothing writes here but
+  -- this function. Guarded by tests/supabase_table_grants_test.py.
+  grant select on public.map_college_goal2 to anon, authenticated, service_role;
 end $$;
 
 create or replace function public.rebuild_map_college_credit_summary()
@@ -139,6 +145,12 @@ begin
   create policy map_college_credit_summary_select on public.map_college_credit_summary
     for select to anon, authenticated
     using (is_allowed_reviewer() or team_pass_ok());
+  -- EXPLICIT GRANTS (2026-09-23). This body creates the table afresh on every
+  -- run, and from 2026-10-30 Supabase stops granting the API roles on a NEW
+  -- table in public. anon and authenticated read through the policy above;
+  -- service_role reads it for the daily publishers. Nothing writes here but
+  -- this function. Guarded by tests/supabase_table_grants_test.py.
+  grant select on public.map_college_credit_summary to anon, authenticated, service_role;
 end $$;
 
 -- ── The promotion ─────────────────────────────────────────────────────────
