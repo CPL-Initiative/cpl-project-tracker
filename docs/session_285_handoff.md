@@ -13,7 +13,8 @@ four outcomes, found that a new scenario never reached the public page, and trac
 label on the wrong figure. [#1664](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1664) merged
 (e8b3582); the grants follow-up [#1665](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1665) (b5719bb)
 and the fixture fix [#1666](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1666) (dd63838) merged after
-it. The Delete fix below is the one PR still open.
+it, and the Delete fix [#1667](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1667) (07d1c36) after
+those. The Delete confirmation rework below is the one PR still open.
 
 ## ✅ WHAT SHIPPED (in #1664, merged e8b3582)
 
@@ -47,6 +48,13 @@ it. The Delete fix below is the one PR still open.
   tab redrew under the pressed button, so the release reached a new button and no click fired (a second press works;
   Enter or Tab first avoids it). Fix: `render()` waits while a press begun in the mount is open (selects exempt,
   1.5 s fallback), guard `tests/cpl_funding_press_hold.test.js` (mutation-checked, 6 of 11 fail without it).
+  Merged in #1667.
+- ⭐ **Then: *"Clicked delete and it deleted the header (I think) but not the whole card."*** Nothing was deleted: the
+  confirmation opened inside the full card and read as a half-deleted one, and his browser was on **Scenario 1**
+  while Scenario 3 is published. While Delete asks now, the card is only the question; the question names the
+  published scenario when he is in another; focus moves into it and back on Keep it
+  (`tests/cpl_funding_delete_confirm.test.js`, 5 of 11 fail without it). Scenario 1 also measures Completion with
+  Transcription from `ptc_u`, the same measure as Completion; told Sam, his call.
 - ⛔ **Scenario 3 is published and its shares sum to 133%** (config saved 17:42:36 UTC): P1 Access 33 · P2
   Completion `ptc_u` 34 · P3 Career attainment 33 (factor still the baked 1.0) · P4 Completion with Transcription
   33. An award is W × Σshares, so the 115 maximum awards total **$32,927,660 against $24,757,639** on the public
@@ -79,8 +87,8 @@ it. The Delete fix below is the one PR still open.
 
 ## THE NEXT CONCRETE STEP
 
-1. **Merge the Delete fix once `test` succeeds on its head** (auto-merge doctrine), squash. Then ask Sam to retry
-   his Delete if he has not finished it by hand.
+1. **Merge the Delete confirmation rework once `test` succeeds on its head** (auto-merge doctrine), squash. Then
+   re-read the config: Scenario 3's shares at 100% means Sam's Delete landed.
 2. **Sam's Scenario 3 edits, through the tab** (never SQL): Delete Completion with Transcription into Career
    attainment so the shares return to 100%, and Career attainment's factor to 0.5 (his sheet ruling). Re-read the
    config afterward and confirm Σshares = 100% and the maximum awards total the allocation. His method note (CPL

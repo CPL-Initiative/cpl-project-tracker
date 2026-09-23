@@ -349,6 +349,9 @@
     ".cplfund-posl { display: inline-flex; align-items: center; gap: 4px; }",
     ".cplfund-pos { font-size: .75rem; padding: 1px 4px; min-height: 24px; border: 1px solid var(--border-strong); border-radius: 4px; background: var(--surface-opaque); color: var(--text-body); }",
     ".cplfund-prio .p.cplfund-dragging { opacity: .45; }",
+    // The question card keeps its own height rather than stretching to the row's
+    // full cards, where it read as an emptied card (2026-09-23).
+    ".cplfund-prio .p.cplfund-card-confirm { align-self: start; min-height: 0; }",
     ".cplfund-prio .p.cplfund-dropover { box-shadow: inset 0 0 0 2px var(--navy-secondary); }",
     ".cplfund-yearsync { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin: 0 0 10px; font-size: .8rem; }",
     ".cplfund-yearsync label { display: inline-flex; align-items: center; gap: 5px; }",
@@ -6356,9 +6359,17 @@
       return '<option value="' + j + '"' + (j === into ? " selected" : "") + ">" +
         esc(q.label + (q.title ? ": " + q.title : "")) + "</option>";
     }).join("");
+    // The strip already names the published scenario, at the top of the tab.
+    // Sam's first Delete was in Scenario 1 while Scenario 3 was published, so
+    // the question says it where the choice is made.
+    var pub = publishedScenario();
     return '<div class="cplfund-delpanel" role="group" aria-label="' + esc("Delete " + p.label) + '">' +
       '<p class="cplfund-delpanel-q">Delete <strong>' + esc(p.label + (p.title ? ": " + p.title : "")) +
       "</strong> from " + esc(activeScenario) + "?</p>" +
+      (activeScenario !== pub
+        ? '<p class="cplfund-delpanel-row cplfund-warn-text" data-delscen="other">This deletes it from ' +
+          esc(activeScenario) + " only. Colleges see " + esc(pub) + ", the published scenario.</p>"
+        : "") +
       '<label class="cplfund-delpanel-row">' + (share > 0
         ? "Move its " + fmtRatePct(share) + "% share to "
         : "Add its work to ") +
@@ -6424,6 +6435,15 @@
     var flPrio = frontloaded();
     var ro = false;
     var cards = ps.map(function (p, i) {
+      // WHILE ITS DELETE IS CONFIRMED, THE CARD IS THE QUESTION (Sam, 2026-09-23:
+      // "Clicked delete and it deleted the header (I think) but not the whole
+      // card"). The panel sat inside the full card, under the Delete button,
+      // and read as a card that had half gone. The card now shows only the
+      // question and its choices until Delete priority or Keep it.
+      if (state.prioDeleting === "m" + p.src && unlocked() && !publicMode()) {
+        return '<div class="p cplfund-card-confirm" data-priocard="' + i + '" data-cardid="' + esc("m" + p.src) + '">' +
+          prioDeletePanelHtml(slot, ps, i, p) + "</div>";
+      }
       // The ANNUAL policy figures stay annual — share, per-student rate and the
       // derived reach are the per-year target and front-load does not move them
       // (Sam: double the per-student amount, NOT the student count). What
@@ -6468,7 +6488,6 @@
           rows: 'data-priorows="' + esc(cid) + '"',
           del: unlocked() && ps.length > 1
             ? '<button type="button" class="cplfund-textbtn" data-priodel="' + i + '">Delete</button>' : "" })) +
-        (state.prioDeleting === cid && unlocked() && !publicMode() ? prioDeletePanelHtml(slot, ps, i, p) : "") +
         // The outcome, at the TOP of the card, above the title — where Sam's
         // 2026-09-14 screenshot draws the arrow from the band head. The raised
         // letter beside the title is RETIRED with the band: it existed to
@@ -8212,6 +8231,7 @@
     sortKey: "college", sortDir: 1, open: {}, addingProject: false,
     subview: "model",   // "model" | "report"
     prioDeleting: null, // card id ("m<src>") whose Delete confirmation is open
+    prioDeleteFocus: null, // that card id, or "back:<id>" after Keep it: where focus goes next render
     measureEditing: false, // the "Measured from" list's label editor is open
     previewPublic: false,   // reviewer previewing the public rendering (session-only, never persisted)
     docType: "memo",    // memo | letter | report | brief
@@ -11263,11 +11283,16 @@
         b.addEventListener("click", function () {
           var p = priorities(state.viewSlot)[Number(b.getAttribute("data-priodel"))];
           state.prioDeleting = p ? "m" + p.src : null;
+          state.prioDeleteFocus = state.prioDeleting;
           render();
         });
       });
       qsa("[data-priodelcancel]").forEach(function (b) {
-        b.addEventListener("click", function () { state.prioDeleting = null; render(); });
+        b.addEventListener("click", function () {
+          state.prioDeleteFocus = state.prioDeleting ? "back:" + state.prioDeleting : null;
+          state.prioDeleting = null;
+          render();
+        });
       });
       qsa("[data-priodelok]").forEach(function (b) {
         b.addEventListener("click", function () {
@@ -11280,6 +11305,18 @@
           render();
         });
       });
+      // Focus follows the question: into it when it opens, since the Delete that
+      // opened it is gone, and back to that Delete on Keep it.
+      if (state.prioDeleteFocus) {
+        var want = state.prioDeleteFocus;
+        state.prioDeleteFocus = null;
+        var back = want.indexOf("back:") === 0;
+        var target = back
+          ? document.querySelector('#cplFundingMount [data-cardid="' + want.slice(5) + '"] [data-priodel]')
+          : document.querySelector('#cplFundingMount [data-cardid="' + want + '"] .cplfund-delpanel select, ' +
+              '#cplFundingMount [data-cardid="' + want + '"] .cplfund-delpanel button');
+        if (target && typeof target.focus === "function") target.focus();
+      }
       // The outcome, set on the card (Sam, 2026-09-14). "derived" is the
       // sentinel that hands the card back to its metric's milestone — see
       // setPrioGoal() for why clearing stores a value rather than deleting one.
