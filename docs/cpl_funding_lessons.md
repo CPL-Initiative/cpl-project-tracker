@@ -1,7 +1,7 @@
 ---
 title: CPL Implementation Funding tab — workstream lessons
 created: 2026-06-11
-updated: 2026-09-15
+updated: 2026-09-22
 tags: [lessons, funding, implementation-funding, dashboard-tab, parallel-session]
 artifacts:
   - CPL_Dashboard.html / index.html (tab shell — PR #352)
@@ -1807,3 +1807,46 @@ along with 4b, 4e and three of section 5; pointing the portal prose rule at the 
 
 **Check that a mutation actually changed the output before drawing any conclusion from a green
 run** — in either direction. A no-op mutation looks exactly like a passing guard.
+
+## 2026-09-22 — S283 (SkyFund): the leadership-review pass
+
+Sam's last content edits before he reviews the tab with CO leadership, shipped in #1660; the four
+calls still his ride the [funding review sheet](https://claude.ai/artifact/9MfbN6jqio8as9mY4LwPB2).
+
+### "$0 demonstrated" was true of one number and false of the program
+
+In Sam's signed-in scenario every institution was gated (0 of 118 confirmed), so `winEarned` read
+$0 while $2,174,757 sat in `winHeld`: funding MAP had demonstrated, reserved until confirmation. The
+Summary printed *"$0 demonstrated so far"* over a reserve bullet saying the opposite. The allocation
+bullet now counts `winEarned + winHeld` as demonstrated and ends on local confirmation, which is the
+one fact the reserve line carried. **A figure that excludes gated funding reads as nothing
+happened.**
+
+### One word, two figures
+
+The formula box called the per-priority ceiling *"the cap"*, and the next bullet called the
+$400,000 bound *"Cap"*. A leadership reader has no way to tell them apart. The per-priority figure is
+now the **max award**, Sam's own term for it (2026-09-01), and *cap* names the bound alone.
+
+### The fifth identity-join miss
+
+The baseline counts ran over `base().colleges` (115) and so left out Calbright, which Sam counts as a
+college (116). The coordinator match had the same blind spot: its roster came from the same list, so
+no noncredit-only row could ever match, and MAP spells the institution *"Calbright College Credit"*
+and *"Calbright College Non-Credit"*. It changed nothing today (neither has a coordinator), which is
+exactly how a join failure stays invisible. `eligColleges()` is the one list now.
+
+### Ten suites pinned phrasing, not facts
+
+A style ruling (positive-first, no "this, not that") broke ten suites, because each asserted the
+retired sentence: *"not its targets"*, *"placed on the table"*, *"rather than a carve-out line"*,
+*"the annual tranche buys"*. Each now asserts the FACT the phrase carried (*targets stay proportional
+to the pre-cap share*), so the next wording ruling costs a sentence, not a suite.
+
+### Verify against Sam's screen
+
+The local render runs on baked defaults (no remote config on localhost), so it showed $10.9M
+demonstrated where Sam's scenario showed $0 and a reserve line. His screenshots were the ground
+truth for every Summary edit; the local render verified layout only. The tab's a11y failures were
+measured against `origin/main` in a worktree before any were called pre-existing.
+

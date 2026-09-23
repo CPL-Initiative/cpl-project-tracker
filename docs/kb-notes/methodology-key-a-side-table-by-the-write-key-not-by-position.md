@@ -1,7 +1,7 @@
 ---
 title: "Key a side table by the write key, never by list position"
 created: 2026-09-03
-updated: 2026-09-03
+updated: 2026-09-22
 tags: [methodology, data-shape, skyview, ccr, testing]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -13,6 +13,8 @@ artifacts:
   - kb/_build_ccr_universe.py
   - prototype/ccr_universe.js
   - tests/ccr_universe_orbits_test.py
+  - kb/_decision_sheet_replies.py
+  - kb/_build_open_asks_decision_sheet.py
 ---
 
 # Key a side table by the write key, never by list position
@@ -75,6 +77,21 @@ member must leave the third member's description on the third member.
   the write can happen.
 - Test the drop, not the happy path: a fixture with one filtered element and an
   assertion on the element AFTER it is the whole test.
+
+## A second occurrence: decision-sheet replies (2026-09-22)
+
+The same shape turned up in a place with no geometry at all. A decision sheet's
+`replies` collection stores each verdict under the card's NUMBER. The standing
+open-asks sheet was published with 21 cards and fully answered; the builder then
+dropped the six executed cards and renumbered the rest to 15. Nothing errored: a
+republish would have shown card 11 carrying the reply written for the old card 11,
+with every chip and note plausible and wrong. The list moved and the side table
+stayed where it was, which is this note's claim exactly.
+
+What differs is that the write key here is chosen by the page, so the fix is a
+choice made before the first publish: a new `SHEET_ID` and artifact when the card
+set changes, or a store keyed by something the card carries (its `ref` or title).
+Recorded in [`decision_sheets`](../reference/decision_sheets.md).
 
 ## Related
 
