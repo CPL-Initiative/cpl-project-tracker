@@ -133,11 +133,15 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   // Rows key their open state by NAME now (data-id "c:<college>", 2026-08-31).
   T._state.open["c:Copper Mountain"] = true;
   T.render();
-  const detail = Array.from(doc.querySelectorAll("tr.cplfund-detail")).find(function (tr) {
-    return tr.textContent.indexOf("At the base:") !== -1;
-  });
-  check("floored drill-in explains the base top-up vs the proportional share",
-    !!detail && /pure proportional share/.test(detail.textContent));
+  // The base cell left the drill-in (Sam, 2026-09-23, funding review item 3);
+  // the row's (at base) word carries the proportional figure on its hover.
+  const cmBound = cmRow && cmRow.querySelector(".cplfund-bound");
+  check("the floored row's (at base) hover gives the proportional share and says the model brings it up",
+    !!cmBound && /share of the funding by size is \$[\d,]+ for the window, below the \$[\d,]+ base award, so the model brings it up to the base/
+      .test(cmBound.getAttribute("title") || ""));
+  const detail = doc.querySelector("tr.cplfund-detail");
+  check("…and the drill-in no longer restates it",
+    !!detail && !/At the base:/.test(detail.textContent) && !/pure proportional share/.test(detail.textContent));
   T._state.open = {};
 
   // Setting the floor to 0 disables it (pure proportional, no floored rows).

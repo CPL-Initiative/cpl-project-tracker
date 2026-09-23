@@ -10,48 +10,48 @@
     "other": 150000
   },
   "summary": {
-    "files": 971,
-    "bytes": 10312649,
+    "files": 972,
+    "bytes": 10318374,
     "over_budget": 5,
     "handoff_max": 284,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 61592,
+    "always_loaded_bytes": 61515,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 61592,
+        "bytes": 61515,
         "over": 1
       },
       "other": {
         "files": 115,
-        "bytes": 3157880,
+        "bytes": 3158102,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 14072,
+        "bytes": 14265,
         "over": 0
       },
       "lessons": {
         "files": 75,
-        "bytes": 2134871,
+        "bytes": 2135110,
         "over": 1
       },
       "kb_note": {
-        "files": 490,
-        "bytes": 2486894,
+        "files": 491,
+        "bytes": 2491345,
         "over": 0
       },
       "roadmap_lane": {
         "files": 33,
-        "bytes": 239600,
+        "bytes": 239724,
         "over": 0
       },
       "handoff": {
         "files": 256,
-        "bytes": 2217740,
+        "bytes": 2218313,
         "over": 0
       }
     },
@@ -61,8 +61,8 @@
       "vault_heavy_path": 49
     },
     "vault": {
-      "files": 3076,
-      "bytes": 1485109006,
+      "files": 3078,
+      "bytes": 1485133877,
       "heavy_bytes": 644695265,
       "heavy_share": 0.434,
       "ignore_filters": [
@@ -123,13 +123,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 61592,
+        "bytes": 61515,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 1592,
+        "over_by": 1515,
         "ratio": 1.03
       },
-      "message": "61,592 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "61,515 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
       "path": "CLAUDE.md"
     },
     {

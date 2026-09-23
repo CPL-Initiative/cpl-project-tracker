@@ -1878,3 +1878,8 @@ request, or the server refused it) before any code was read.
 The (C) note quoted Sam's 2026-08-30 *"not measurable at this time, and may never be"*, and a test pinned
 it. His 2026-09-22 EDD ruling replaces it on the page with both dates named, and `cpl_memory` records the
 supersession explicitly.
+
+### Three rulings, built the same hour
+
+He held P4 at 0% until the first import, let CO research define the outcome, and took the drill-in
+consolidation as proposed. The follow-up PR shipped the one-line Baseline and the import receiver.

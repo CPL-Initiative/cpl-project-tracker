@@ -190,6 +190,9 @@ OUT_JS = os.path.join(ROOT, "cpl_funding_performance.js")
 SHORT_NAMES = os.path.join(ROOT, "kb", "college_short_names.json")
 FUNDING_DATA = os.path.join(ROOT, "cpl_funding_data.js")
 VETERAN_JST = os.path.join(ROOT, "veteran_jst.json")  # daily Vets/JST + Veteran Star
+# Goal (C), career attainment: the Chancellor's Office's EDD wage-record measure,
+# committed as an aggregate import (format: docs/kb-notes/reference-career-attainment-import.md).
+CAREER_IMPORT = os.path.join(ROOT, "funding", "career_attainment_import.json")
 VIEW = "View_StudentAggregatedValues_APIDataset"
 SUPPRESS_BELOW = 10  # raised 5 -> 10 (Sam, 2026-09-03: "to conform with ferpa practices often
                      # used"); the CR-backlog artifact moved on 2026-08-10. One floor for every
@@ -474,6 +477,85 @@ def read_veteran_stars(resolve):
         "threshold": vj.get("star_threshold"),
         "n": n,
     }
+
+
+def _career_import_problems(ci):
+    """Every reason a career-attainment import cannot be read, as plain strings.
+    Shared with tests/funding_career_import_test.py, which runs it over the
+    COMMITTED file so a malformed or unmasked import fails CI before it lands."""
+    out = []
+    if not isinstance(ci, dict):
+        return ["the file is not a JSON object"]
+    if not re.match(r"^\d{4}-\d{2}-\d{2}$", str(ci.get("as_of") or "")):
+        out.append("as_of must be the import's date, YYYY-MM-DD")
+    for key in ("definition", "source"):
+        if not str(ci.get(key) or "").strip():
+            out.append(key + " must name " + ("CO research's outcome" if key == "definition"
+                                              else "who produced the import"))
+    rows = ci.get("colleges")
+    if not isinstance(rows, dict) or not rows:
+        out.append("colleges must be a non-empty object keyed by college name")
+        return out
+    for name, rec in rows.items():
+        if not isinstance(rec, dict):
+            out.append(f"{name}: each row is an object")
+            continue
+        for key in ("cpl_units", "nc_cpl_units"):
+            v = rec.get(key)
+            if key == "cpl_units" and v is None:
+                out.append(f"{name}: cpl_units is required")
+            elif v is not None and (not isinstance(v, (int, float)) or isinstance(v, bool) or v < 0):
+                out.append(f"{name}: {key} must be a number of units, 0 or more")
+        for key in ("students", "nc_students"):
+            v = rec.get(key)
+            # A count under 10 is masked by CO research BEFORE the file is
+            # committed (the funding-counts ADR): null, never the number.
+            if v is not None and (not isinstance(v, int) or isinstance(v, bool) or 0 < v < SUPPRESS_BELOW):
+                out.append(f"{name}: {key} must be a whole count of {SUPPRESS_BELOW} or more, "
+                           f"or null when masked")
+    return out
+
+
+def read_career_attainment(resolve, path=None):
+    """Goal (C), career attainment, from the Chancellor's Office import.
+
+    Sam, 2026-09-22: "we can use EDD wage data to measure this ... measured by
+    the CO and reflected on our funding model with periodic updates (imports) of
+    the data." His 2026-09-23 ruling (funding review item 2): CO research defines
+    the outcome, and the import carries, per college, the CPL units of students
+    awarded CPL who reach it. The model funds on UNITS, so the units are all that
+    reach the artifact; any student counts in the file stay there.
+
+    Returns None when the file is absent: ca_u / nc_ca_u stay ABSENT, never zero,
+    so the tab reads "awaiting measurement" (srcDelivered() in cpl_funding.js asks
+    the artifact for the key). A file that fails its checks is skipped with the
+    reasons printed, and the MAP measures still build."""
+    path = path or CAREER_IMPORT
+    if not os.path.exists(path):
+        return None
+    try:
+        with open(path, encoding="utf-8") as f:
+            ci = json.load(f)
+    except (ValueError, OSError) as e:
+        print(f"funding-performance: career-attainment import unreadable ({e}) — skipped.")
+        return None
+    problems = _career_import_problems(ci)
+    if problems:
+        print("funding-performance: career-attainment import skipped — "
+              + "; ".join(problems[:6]) + (" …" if len(problems) > 6 else ""))
+        return None
+    units, nc_units, unmatched = {}, {}, []
+    for name, rec in sorted(ci["colleges"].items()):
+        fname = resolve(name)
+        if not fname:
+            unmatched.append(name)       # the NAME only, never its figures
+            continue
+        units[fname] = units.get(fname, 0.0) + float(rec["cpl_units"])
+        if rec.get("nc_cpl_units") is not None:
+            nc_units[fname] = nc_units.get(fname, 0.0) + float(rec["nc_cpl_units"])
+    return {"units": units, "nc_units": nc_units, "unmatched": unmatched,
+            "as_of": ci["as_of"], "source": ci["source"].strip(),
+            "definition": ci["definition"].strip()}
 
 
 def main():
@@ -1084,6 +1166,31 @@ def main():
         payload["vet_star_as_of"] = vet["as_of"]
         payload["vet_star_threshold"] = vet["threshold"]
         payload["vet_star_n"] = vet["n"]
+
+    # Goal (C) — the Chancellor's Office import (see read_career_attainment).
+    # A college the import does not name reads as a measured zero once ca_u is
+    # present statewide, which is what a complete import means.
+    career_path = None
+    if "--career-import" in sys.argv:
+        career_path = sys.argv[sys.argv.index("--career-import") + 1]
+    ca = read_career_attainment(resolve, career_path)
+    if ca:
+        payload["statewide"]["ca_u"] = round(sum(ca["units"].values()), 2)
+        for fname, u in ca["units"].items():
+            payload["colleges"].setdefault(fname, {})["ca_u"] = round(u, 2)
+        if ca["nc_units"]:
+            payload["statewide"]["nc_ca_u"] = round(sum(ca["nc_units"].values()), 2)
+            for fname, u in ca["nc_units"].items():
+                payload["colleges"].setdefault(fname, {})["nc_ca_u"] = round(u, 2)
+        payload["career_attainment"] = {
+            "as_of": ca["as_of"], "source": ca["source"], "definition": ca["definition"],
+            "colleges": len(ca["units"]), "unmatched": ca["unmatched"],
+        }
+        print(f"funding-performance: career attainment from the {ca['as_of']} import — "
+              f"{len(ca['units'])} colleges, ca_u={payload['statewide']['ca_u']:,.1f}"
+              + (f", nc_ca_u={payload['statewide']['nc_ca_u']:,.1f}" if ca["nc_units"] else "")
+              + (f", {len(ca['unmatched'])} unmatched name(s): " + ", ".join(ca["unmatched"])
+                 if ca["unmatched"] else ""))
     with open(out, "w", encoding="utf-8") as f:
         f.write(
             "// CPL funding priority-metric actuals (P2/P3 + the PE eligible-students\n"

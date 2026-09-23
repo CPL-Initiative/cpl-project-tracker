@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-488 document(s).
+489 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -468,6 +468,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [ADT acceptance & course-substitution rules (ASCCC C-ID guidance + STAR Act)](../kb-notes/reference-adt-acceptance-rules.md) | reference | published | 2026-06-20 |  |
 | [Authority-anchored credential naming — CareerOneStop / O*NET / COOL / Credential Engine for the CER](../kb-notes/reference-authority-anchored-credential-naming.md) | reference | published | 2026-07-07 | 2026-07-07 |
 | [Batch-uploaded transcribed credit — why transcribed counts are not comparable across colleges](../kb-notes/reference-batch-uploaded-transcribed-credit.md) | reference | published | 2026-08-10 | 2026-08-10 |
+| [Career-attainment import — the Chancellor's Office's EDD measure for goal (C)](../kb-notes/reference-career-attainment-import.md) | reference | published | 2026-09-23 | 2026-09-23 |
 | [CCR curation sync & live-merge durability (what's instant vs what waits for cron)](../kb-notes/reference-ccr-curation-sync-and-live-merge.md) | reference | published | 2026-06-23 | 2026-06-23 |
 | [CDCP, course-level, and the CIP-count rule](../kb-notes/reference-cdcp-and-the-cip-count-rule.md) | reference | published | 2026-07-28 |  |
 | [Common SUBJ vs Local SUBJ, and the real discipline↔subject invariant](../kb-notes/reference-common-vs-local-subj-and-discipline-cardinality.md) | reference | published | 2026-06-23 | 2026-06-23 |

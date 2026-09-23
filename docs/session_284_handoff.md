@@ -11,8 +11,9 @@ status: current
 Your moniker is **SkyWage**. S283 (SkyFund) spent the run on the Implementation Funding tab before Sam
 reviews it with CO leadership. First came his last content edits (#1660). Then came his ruling that the CO
 can measure career attainment from EDD wage data, and his asks built on it: P2 on (B) alone, P3 named by
-its live title, and a fourth priority for career attainment (#1662). The EDD import is the lane's next build,
-once he rules on its definition.
+its live title, and a fourth priority for career attainment (#1662). He then ruled all three funding
+decisions, and the follow-up PR built them: the one-line Baseline drill-in and the EDD import receiver, which
+waits on CO research's first file.
 
 ## ✅ WHAT SHIPPED
 
@@ -21,10 +22,11 @@ once he rules on its definition.
 | [#1660](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1660) | The leadership-review pass. Pages 23:20 UTC 2026-09-22 |
 | [#1661](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1661) | The first checkpoint |
 | [#1662](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1662) | **Priority 4**, P2 on (B), live-title headers, the order extension, three Designate fixes |
-| [CPLBrain#169](https://github.com/samueltlee/CPLBrain/pull/169) · [#170](https://github.com/samueltlee/CPLBrain/pull/170) | Sam's EDD statement, verbatim · the session note |
+| the follow-up PR (`claude/happy-pascal-wi9wre`) | Sam's sheet rulings: the drill-in as one Baseline line, the EDD import receiver + its format doc |
+| [CPLBrain#169](https://github.com/samueltlee/CPLBrain/pull/169) · [#170](https://github.com/samueltlee/CPLBrain/pull/170) · [#171](https://github.com/samueltlee/CPLBrain/pull/171) | Sam's EDD statement, verbatim · the session note and its second pass |
 
-**Funding review sheet (3 items, store empty, v2 republished 2026-09-23):**
-https://claude.ai/artifact/9MfbN6jqio8as9mY4LwPB2 · builder `kb/_build_funding_review_decision_sheet.py`.
+**Funding review sheet: RULED AND EXECUTED** (3 of 3, high-water mark 3; Sam: *"Decisions done"*):
+https://claude.ai/artifact/9MfbN6jqio8as9mY4LwPB2 · the follow-up PR carries items 2 and 3.
 
 ## SAM'S DECISIONS THIS RUN
 
@@ -37,25 +39,26 @@ https://claude.ai/artifact/9MfbN6jqio8as9mY4LwPB2 · builder `kb/_build_funding_
   reported by the colleges but instead measured by the CO and reflected on our funding model with periodic
   updates (imports) of the data. The Opportunities section would stay as is."* This **supersedes his
   2026-08-30 "not measurable at this time, and may never be"**.
+- ⭐ **Funding review sheet, 2026-09-23:** ① **hold** P4 at 0% until the first import, then set its share
+  and a factor of 0.5 together; ② **CO research defines** the wage outcome, and the import carries per-college
+  CPL units (masked under 10); ③ **consolidate the drill-in as proposed** (one Baseline line, then the table).
 - The #1660 rulings: lead positive with no restatement, 116 colleges with Calbright, black ink for the
   ledger, AI Apprenticeship Tools partners SCC and American River College. Full list in `docs/cpl_funding_lessons.md`.
 
 ## THE NEXT CONCRETE STEP
 
-1. **Ask Sam to retry Designate on the (D) card** once #1662 is live. The edge logs for 2026-09-22 show nine
-   200 PATCHes and **none after his four releases**, so his click never saved. The likeliest cause is an empty
-   selection, and the button now says so. If it still fails, read the logs again
+1. **Ask Sam to retry Designate on the (D) card.** The edge logs for 2026-09-22 show nine 200 PATCHes and
+   **none after his four releases**, so his click never saved. The likeliest cause is an empty selection, and
+   the button now says so. If it still fails, read the logs again
    ([note](kb-notes/methodology-a-control-that-does-nothing-read-the-request-log-first.md)).
-2. **Read the funding sheet's `replies`** (ArtifactData `list`, collection `replies`) and apply the high-water
-   rule ([`decision_sheets`](reference/decision_sheets.md)).
-   - Item 1: when P4 takes a share. It is at **0% and factor 1.0**; the other three run at 0.5.
-   - Item 2: whose wage definition.
-   - Item 3: the drill-in consolidation.
-3. **Build the EDD import** once he rules on item 2: a committed aggregate that adds `ca_u` / `nc_ca_u`
-   (statewide and per college, masked under 10) to `cpl_funding_performance.js`. The model needs no edit;
-   `srcDelivered()` picks the measure up.
-4. **The ESL merging decision sheet** Sam asked for on 2026-09-21 is still owed. Start from
+2. **When CO research sends the first career-attainment file**, commit it as
+   `funding/career_attainment_import.json` ([format](kb-notes/reference-career-attainment-import.md)). The daily
+   build merges it, and `tests/funding_career_import_test.py` lints it. Then **set P4's share and a factor of
+   0.5 together**, per his item-1 ruling. Nothing to do before the file exists.
+3. **The ESL merging decision sheet** Sam asked for on 2026-09-21 is still owed. Start from
    [`lanes/esl-packaging`](reference/lanes/esl-packaging.md).
+4. **The college briefing's funding box** still says *earned*, *drawable* and *the dollars*; sweep it to the
+   funding vocabulary.
 
 ## ⚠️ THE STANDING OPEN-ASKS SHEET MUST NOT BE REPUBLISHED AS IT STANDS
 

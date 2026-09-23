@@ -390,16 +390,21 @@ check("data: the maximum sits above the minimum (a ceiling under the floor is a 
   // notes to a sources line"); the chip carries its own meaning on hover, and
   // the Summary's base-and-cap line states the rule in words.
   check("C7: the chip words explain themselves",
-    !!row && /held at the cap/.test(row.querySelector("td.cf-award .cplfund-bound").getAttribute("title") || ""));
+    !!row && /holds it at the cap/.test(row.querySelector("td.cf-award .cplfund-bound").getAttribute("title") || ""));
+  // The drill-in's cap cell left the expand (Sam, 2026-09-23, funding review
+  // item 3): its proportional figure rides the chip's hover now.
+  check("C7: the chip names the institution's proportional figure, which the drill-in used to print",
+    !!row && /share of the funding by size is \$[\d,]+ for the window, above the \$[\d,]+ cap/
+      .test(row.querySelector("td.cf-award .cplfund-bound").getAttribute("title") || ""));
 
   // Row open-state is keyed by NAME since the one-pool port ("c:<college>",
   // R6 — rows' data-id carries the college, not the order).
   window.eval('CPL_FUNDING_TAB._state.open[' + JSON.stringify("c:" + cappedName) + '] = true;');
   T.render();
-  const detail = Array.from(doc.querySelectorAll("tr.cplfund-detail"))
-    .find(function (tr) { return tr.textContent.indexOf("At the cap:") !== -1; });
-  check("C7: the capped drill-in explains the hold vs the proportional share",
-    !!detail && /a pure proportional share would be/.test(detail.textContent));
+  const detail = doc.querySelector("tr.cplfund-detail");
+  check("C7: the capped drill-in opens on its Baseline line, with no cap cell restating the chip",
+    !!detail && !!detail.querySelector(".cplfund-basestatus") &&
+    !/At the cap:/.test(detail.textContent) && !/a pure proportional share would be/.test(detail.textContent));
   // Sam, 2026-09-01: the drill-in's explanatory tail was struck — it restated
   // the base/cap rule the formula box states in full, in a place meant to carry
   // THIS college's own figures. The fact stays pinned above, on the formula box.

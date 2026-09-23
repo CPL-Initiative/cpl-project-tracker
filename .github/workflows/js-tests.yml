@@ -378,6 +378,13 @@ jobs:
       # check.
       - name: Origination feed lint (funding/_build_funding_performance.py)
         run: python3 tests/funding_origination_test.py
+      # Career attainment (goal C, Sam 2026-09-22/23) — the Chancellor's Office
+      # EDD wage-record import. ca_u / nc_ca_u stay ABSENT (not zero) until an
+      # import is committed, only UNITS reach the artifact, an unmasked count
+      # under 10 stops the import, and the COMMITTED file, once there is one,
+      # must pass the same checks. Pure-stdlib python; same non-required check.
+      - name: Career-attainment import lint (funding/_build_funding_performance.py)
+        run: python3 tests/funding_career_import_test.py
       # Doctrine lookup (Session 179) — kb/doctrine.py answers "what has this
       # repo already decided about the files I am about to touch?", replacing
       # recall across 299 KB notes. It shipped with two silent-omission bugs

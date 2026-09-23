@@ -518,7 +518,7 @@
     "tr.cplfund-detail td { background: var(--surface-subtle); border-top: none; text-align: left; white-space: normal; padding: 10px 16px 12px 30px; cursor: default; }",
     ".cplfund-detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 6px 22px; font-size: .83rem; }",
     ".cplfund-detail-grid .dk { color: var(--text-muted); }",
-    ".cplfund-detail-grid > .cplfund-dtl-tscroll, .cplfund-detail-grid > .cplfund-optin, .cplfund-detail-grid > .cplfund-notewrap { grid-column: 1 / -1; }",
+    ".cplfund-detail-grid > .cplfund-dtl-tscroll, .cplfund-detail-grid > .cplfund-optin, .cplfund-detail-grid > .cplfund-notewrap, .cplfund-detail-grid > .cplfund-basestatus { grid-column: 1 / -1; }",
     ".cplfund-foot { font-size: .78rem; color: var(--text-muted); margin: 10px 2px; }",
     ".cplfund-foot div { margin: 2px 0; overflow-wrap: anywhere; }",
     ".cplfund-rprio-fold > summary { cursor: pointer; list-style-position: outside; }",
@@ -787,9 +787,8 @@
     // Row-level one-click opt-in CTA (Sam, 2026-08-05) — a chip beside the college name.
     ".cplfund-optin-jump { margin-left: 6px; padding: 1px 8px; min-height: 24px; font-size: .68rem; font-weight: 600; border: 1px solid var(--border-strong); border-radius: 11px; background: var(--surface-opaque); color: var(--navy-primary); cursor: pointer; font-family: inherit; vertical-align: middle; white-space: nowrap; }",
     ".cplfund-optin-jump:hover { background: var(--surface-subtle); border-color: var(--navy-secondary); }",
-    // CO confirm/revoke block shown inline in a reviewer's row drill-in.
-    ".cplfund-corow { border: 1px solid var(--border); border-radius: 8px; background: var(--surface-opaque); padding: 7px 10px; margin-top: 8px; }",
-    ".cplfund-corow-head { font-weight: 700; color: var(--navy-primary); font-size: .8rem; margin-bottom: 3px; }",
+    // The CO's controls ride the drill-in's Baseline line (2026-09-23), inline.
+    ".cplfund-corow { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-left: 6px; }",
     ".cplfund-colane { border: 1px solid var(--border); border-radius: 8px; background: var(--surface-opaque); padding: 10px 13px; margin: 4px 0 14px; }",
     ".cplfund-colane-head { font-weight: 700; color: var(--navy-primary); display: flex; align-items: center; gap: 9px; }",
     ".cplfund-colane-badge { background: none; border: 1px solid var(--mustard-text); color: var(--mustard-text); font-size: .68rem; font-weight: 700; padding: 1px 9px; border-radius: 11px; }",
@@ -1784,8 +1783,12 @@
   function sizeCellTitle(c) {
     var pct = fmtPct(c.size_pct, 2);
     return usesFtes()
-      ? fmtInt(c.credit_ftes) + " credit FTES (" + ftesVintage() + "). Combined with its noncredit FTES, " +
-        pct + " of the statewide allocation basis. Headcount: " + fmtInt(c.headcount) +
+      // The drill-in's FTES-share line moved here (Sam, 2026-09-23, funding
+      // review item 3): the combined figure and the statewide total it is a
+      // share of, at the precision the expand printed.
+      ? fmtInt(c.credit_ftes) + " credit FTES (" + ftesVintage() + "). With its noncredit FTES, " +
+        fmtInt(sizeOf(c)) + " FTES in all: " + fmtPct(c.size_pct, 3) + " of the statewide " +
+        fmtInt(totalSize()) + ", the allocation basis. Headcount: " + fmtInt(c.headcount) +
         " (" + (c.hc_vintage || "n/a") + "), context only."
       : fmtInt(c.headcount) + " headcount (" + (c.hc_vintage || "n/a") + ") — " + pct +
         " of statewide, the allocation basis. Credit FTES: " + fmtInt(c.credit_ftes) +
@@ -3659,40 +3662,77 @@
     for (var i = 0; i < list.length; i++) if (list[i].college === college) return list[i];
     return null;
   }
-  // The CO confirm / revoke actions shown INLINE in a college's row drill-in
-  // (Sam, 2026-08-05: "I don't see where to confirm" — the aggregate lane in the
-  // Baseline-eligibility section wasn't where he looked; the confirm action needs
-  // to live on the college's own row). Caller gates on unlocked(); the buttons
-  // reuse data-optinconfirm/revoke, bound holder-scoped in wireTable().
-  function coRowActionsHtml(college, row) {
-    var rev = optinReviewOf(college);
-    var who = rev
-      ? '<div class="cplfund-optin-note">Attested by <strong>' + esc(rev.name || "?") + "</strong> " +
-        '<span class="dk">(' + esc(rev.title || "?") + ")</span> &middot; " + esc(rev.email || "") +
-        (rev.requested_at ? ' <span class="dk">&middot; submitted ' + esc(String(rev.requested_at).slice(0, 10)) + "</span>" : "") + "</div>"
-      : "";
-    var actions = row.status === "confirmed"
-      ? '<strong>CO-confirmed</strong>' +
-        (rev && rev.confirmed_at ? ' <span class="dk">' + esc(String(rev.confirmed_at).slice(0, 10)) + "</span>" : "") +
-        ' <button type="button" class="cplfund-optbtn cplfund-colane-no" data-optinrevoke="' + esc(college) + '">Revoke</button>'
-      : '<button type="button" class="cplfund-optbtn cplfund-colane-ok" data-optinconfirm="' + esc(college) + '">Confirm</button>' +
-        '<button type="button" class="cplfund-optbtn cplfund-colane-no" data-optinrevoke="' + esc(college) + '">Reject</button>';
-    return '<div class="cplfund-corow"><div class="cplfund-corow-head">Chancellor&#39;s Office</div>' +
-      who + '<div class="cplfund-optin-actions">' + actions + "</div></div>";
+  // The baseline in ONE line, for the drill-in (Sam, 2026-09-23, funding review
+  // item 3: "Consolidate as proposed"). It replaces three cells and a second
+  // Confirm Participation control: the requirements in short words, the
+  // reserve with its figure, and the CO's control on the same line. The full
+  // gate sentence rides the reserve's hover, so nothing it said is lost.
+  function baselineStatusHtml(c) {
+    var college = c.college;
+    var row = ELIG.optinRow[college];
+    var active = !!(row && row.status !== "revoked");
+    var bits = [];
+    if (coordShown()) {
+      bits.push(!ELIG.coordOk ? '<span class="dk">coordinator pending</span>'
+        : ELIG.coord[college] ? "coordinator on file" : '<span class="cplfund-warn-text">coordinator not on file</span>');
+    }
+    if (partShown()) {
+      bits.push(active && row.status === "confirmed" ? esc(optinStateLabel(college))
+        : active || ELIG.optin[college] ? "confirmed locally, awaiting the Chancellor&rsquo;s Office"
+        : row && row.status === "revoked" ? '<span class="cplfund-warn-text">local confirmation withdrawn</span>'
+        : "local confirmation due " + esc(participationDeadline()));
+    }
+    var vsD = vetStar();
+    extraReqs().forEach(function (txt) {
+      if (isVetJstReq(txt)) {
+        bits.push(!vsD ? '<span class="dk">Veteran Star pending</span>'
+          : vsD[college] ? "Veteran Star met" : "Veteran Star not yet");
+      }
+    });
+    var g = baselineGate(college);
+    var coordMissing = coordShown() && !ELIG.coord[college];
+    var partMissing = partShown() && !ELIG.optin[college];
+    var held = c.earned_withheld || 0;
+    var gateWords = g.pending ? '<span class="dk">status pending</span>'
+      : !g.blocked ? "baseline met"
+      : (held > 0.5 ? fmtMoney(held) : "Demonstrated funding") + " reserved until " +
+        (partMissing && !coordMissing ? "confirmation"
+          : coordMissing && !partMissing ? "a coordinator is on file" : "the baseline is met");
+    bits.push('<span class="cplfund-basegate" title="' + esc(stripTags(baselineGateText(college, held))) + '">' +
+      gateWords + "</span>");
+    var ctl = "";
+    if (unlocked()) {
+      if (!active) {
+        // A reviewer mark writes a CO-confirmed row (setOptIn), so it says so.
+        ctl = ' <button type="button" class="cplfund-optbtn" data-optin="' + esc(college) +
+          '" data-on="1">Mark confirmed</button>';
+      } else {
+        var rev = optinReviewOf(college);
+        ctl = ' <span class="cplfund-corow">' +
+          (rev ? '<span class="dk">Attested by ' + esc(rev.name || "?") + " (" + esc(rev.title || "?") + ") &middot; " +
+            esc(rev.email || "") + (rev.requested_at ? " &middot; " + esc(String(rev.requested_at).slice(0, 10)) : "") +
+            "</span> " : "") +
+          (row.status === "confirmed"
+            ? '<button type="button" class="cplfund-optbtn cplfund-colane-no" data-optinrevoke="' + esc(college) + '">Revoke</button>'
+            : '<button type="button" class="cplfund-optbtn cplfund-colane-ok" data-optinconfirm="' + esc(college) + '">Confirm</button>' +
+              '<button type="button" class="cplfund-optbtn cplfund-colane-no" data-optinrevoke="' + esc(college) + '">Reject</button>') +
+          "</span>";
+      }
+    }
+    return '<div class="cplfund-basestatus"><span class="dk">Baseline:</span> ' + bits.join(" &middot; ") + ctl + "</div>";
   }
   // The per-college opt-in affordance shown in the row drill-in — a plain button
   // that expands to a short attestation form. Visible to EVERYONE (this is the
   // college-facing action), so it must not use a CURATE_ATTRS attribute (those
   // are swept in public mode). Idempotent: shows status once a row exists.
+  // ONE STATUS LINE (Sam, 2026-09-23, funding review item 3). The opted-in
+  // state and the CO's actions ride baselineStatusHtml(); the row carries the
+  // Confirm Participation button, so the drill-in shows only what that button
+  // opens — the form — and the thank-you after it.
   function optinAffordanceHtml(college) {
     var row = ELIG.optinRow[college];
     var ui = OPTIN_UI[college] || {};
-    if (row && row.status !== "revoked") {
-      var done = '<div class="cplfund-optin cplfund-optin-done">' +
-        "<strong>Opted in to participate</strong> <span class=\"dk\">(" + esc(optinStateLabel(college)) + ")</span></div>";
-      // Reviewers get the confirm/revoke controls right here on the college's row.
-      return unlocked() ? done + coRowActionsHtml(college, row) : done;
-    }
+    if (row && row.status !== "revoked") return "";
     if (ui.done) {
       return '<div class="cplfund-optin cplfund-optin-done">' +
         "<strong>Thank you — your participation is confirmed.</strong> " +
@@ -3701,12 +3741,7 @@
     var withdrawn = row && row.status === "revoked"
       ? '<div class="cplfund-optin-note cplfund-warn-text">A previous participation confirmation for this college was withdrawn by the Chancellor&#39;s Office. Contact the CO to re-open it.</div>'
       : "";
-    if (!ui.open) {
-      return '<div class="cplfund-optin">' + withdrawn +
-        '<button type="button" class="cplfund-optbtn cplfund-optin-open" data-optinbtn="' + esc(college) + '">' +
-        "Confirm Participation</button> " +
-        '<span class="dk">for your college&#39;s VPAA / VP of Student Services / President</span></div>';
-    }
+    if (!ui.open) return "";
     var titleOpts = OPTIN_TITLES.map(function (o) {
       return '<option value="' + esc(o.val) + '">' + esc(o.label) + "</option>";
     }).join("");
@@ -7284,8 +7319,12 @@
     var isFtes = meas.unit === "units";
     var act = isFtes ? unitsToCplFtes(null, raw) : raw;
     var pct = target ? act / target : null;
+    // A Chancellor's Office measure is dated by its import, never by MAP's pull.
+    var co = srcByCo(meas.src);
+    var asOf = co && pf.career_attainment && pf.career_attainment.as_of ? pf.career_attainment.as_of : pf.as_of;
     return '<p class="nums">Actual <strong>' + (isFtes ? fmtNum1(act) : fmtInt(act)) + "</strong> " +
-      (isFtes ? "CPL FTES" : "students") + " per MAP (as of " + esc(pf.as_of) + ")" +
+      (isFtes ? "CPL FTES" : "students") + (co ? " per the Chancellor&rsquo;s Office import" : " per MAP") +
+      " (as of " + esc(asOf) + ")" +
       (pct != null ? " &mdash; <strong>" + fmtPctTrim(pct) + "</strong> of target" : "") +
       // BOTH STAY. The conversion and meas.basis are where the figure comes
       // from, which Sam asked to see MORE of, not less. meas.basis reads as a
@@ -8219,14 +8258,21 @@
   // qualifies, in parentheses, on both the CR and NC cells (Sam, 2026-09-02:
   // "move the at cap and at base notes next to the CR and NC total funding on
   // main rows and put the note in parens"). Ghosted word, hover explains.
+  // It also carries the institution's own proportional figure, which the
+  // drill-in's base and cap cells printed until those cells left the expand
+  // (Sam, 2026-09-23, funding review item 3).
   function boundWordHtml(c) {
+    if (!c.floored && !c.capped) return "";
+    var m = allocModel();
+    var share = fmtMoney((c.size_pct || 0) * m.net);
     if (c.floored) return ' <span class="cplfund-chip cplfund-bound" title="' +
-      esc("This institution's share of the funding by size came out below " + fmtMoney(allocModel().floor) +
-        ", so it is brought up to the base award — funded from within the same total.") + '">(at base)</span>';
-    if (c.capped) return ' <span class="cplfund-chip cplfund-bound" title="' +
-      esc("This institution's share of the funding by size came out above " + fmtMoney(allocModel().cap) +
-        ", so it is held at the cap — the difference funds the other institutions.") + '">(at cap)</span>';
-    return "";
+      esc("This institution's share of the funding by size is " + share + " for the window, below the " +
+        fmtMoney(m.floor) + " base award, so the model brings it up to the base from within the same total.") +
+      '">(at base)</span>';
+    return ' <span class="cplfund-chip cplfund-bound" title="' +
+      esc("This institution's share of the funding by size is " + share + " for the window, above the " +
+        fmtMoney(m.cap) + " cap, so the model holds it at the cap and the difference funds the other institutions.") +
+      '">(at cap)</span>';
   }
   function rowChips(c) {
     var chips = "";
@@ -8395,7 +8441,6 @@
   }
 
   function collegeDetailHtml(c, alt) {
-    var m = allocModel();
     var slot = state.viewSlot;
     var prio;
     if (c.nco) {
@@ -8420,13 +8465,10 @@
       prio = prioDetailTableHtml({
         slot: slot,
         label: "Priority funding detail",
-        caption: "Where this college stands on each priority &mdash; its target, what it has posted so far, and what " +
-          "remains. Current Total: " + earnedMoney(c.earned_total || 0) +
-          (c.gate_blocked
-            ? " &middot; " + (c.earned_withheld > 0.5 ? earnedMoney(c.earned_withheld) + " held in reserve" : "funding held in reserve") +
-              " until baseline participation is met"
-            : "") +
-          " &middot; Total Possible: " + fmtMoney(c.total || 0) + " &mdash; its max award",
+        // The two totals alone (Sam, 2026-09-23): the reserve is on the
+        // status line above, once.
+        caption: "Current Total: " + earnedMoney(c.earned_total || 0) +
+          " &middot; Total Possible: " + fmtMoney(c.total || 0) + ", its max award",
         figures: function (p) {
           var crM = c[p.key] || 0;
           var ncM = c["nc_" + p.key] || 0;
@@ -8452,53 +8494,11 @@
       ? '<div><span class="dk">County context:</span> not estimated (county &lt; 65K population)</div>'
       : '<div><span class="dk">County context (' + esc(c.county) + "):</span> " + fmtInt(c.working_adults) +
         " working adults with some college, no degree (" + fmtPct(c.county_pop_pct, 1) + " of county population)</div>";
-    var floorLine = "";
-    if (c.floored) {
-      floorLine = '<div><span class="dk">At the base:</span> a pure proportional share would be ' +
-        fmtMoney((c.size_pct || 0) * m.net) + " for the window &mdash; brought up to the " + fmtMoney(m.floor) +
-        " base award.</div>";
-    }
-    // The cap's mirror of the base line. Both name the pure proportional
-    // share first, so the two read as one pair rather than two unrelated notes.
-    var capLine = "";
-    if (c.capped) {
-      capLine = '<div><span class="dk">At the cap:</span> a pure proportional share would be ' +
-        fmtMoney((c.size_pct || 0) * m.net) + " for the window &mdash; held at the " + fmtMoney(m.cap) +
-        " cap.</div>";
-    }
-    var eligBtns = "";
-    if (unlocked()) {
-      // Once a college has an active opt-in (self-service OR reviewer-marked), the
-      // confirm / revoke controls live in the drill-in affordance below (via
-      // coRowActionsHtml). Only offer the manual "Mark opted-in" (a reviewer opting
-      // a college in on its behalf) when there is no active row yet.
-      if (!ELIG.optin[c.college]) {
-        eligBtns += '<button type="button" class="cplfund-optbtn" data-optin="' + esc(c.college) +
-          '" data-on="1">Mark opted-in</button>';
-      }
-    }
-    var eligBits = [];
-    if (coordShown()) eligBits.push("CPL Coordinator in MAP &mdash; " +
-      (!ELIG.coordOk ? '<span class="dk">pending</span>' : ELIG.coord[c.college] ? "on file" : '<span class="cplfund-warn-text">not on file</span>'));
-    if (partShown()) eligBits.push("opted in by " + esc(participationDeadline()) + " &mdash; " +
-      (ELIG.optin[c.college]
-        ? "yes <span class=\"dk\">(" + (ELIG.optinRow[c.college] && ELIG.optinRow[c.college].status === "confirmed"
-            ? "CO-confirmed" : "self-attested") + ")</span>"
-        : '<span class="dk">not yet</span>'));
-    var vsD = vetStar();
-    extraReqs().forEach(function (txt) {
-      if (isVetJstReq(txt)) eligBits.push("Veteran Star (&ge;75% veteran JSTs) &mdash; " +
-        (!vsD ? '<span class="dk">pending</span>' : vsD[c.college] ? "met" : '<span class="dk">not yet</span>'));
-    });
-    // The held figure reads WITH the gate that holds it and, below, ahead of
-    // Total Possible in the priority table's caption — beside the figures it
-    // is part of, never as a floating item of its own that lands under the NC
-    // column (Sam, 2026-09-02: "put it before the $400k CR total and not on
-    // the NC total").
-    var eligLine = '<div><span class="dk">Baseline eligibility:</span> ' +
-      (eligBits.join(" &middot; ") || '<span class="dk">no tracked requirements</span>') +
-      ' <span class="dk">&mdash; ' + esc(baselineGateText(c.college, c.earned_withheld)) + '</span>' + eligBtns + "</div>" +
-      optinAffordanceHtml(c.college);
+    // The base and cap cells, the FTES-share cell and the baseline paragraph
+    // are GONE (Sam, 2026-09-23, funding review item 3). Their figures ride
+    // the row: the bound word's hover (boundWordHtml) and the CR FTES hover
+    // (sizeCellTitle). The baseline is one line, with the CO's control on it.
+    var eligLine = baselineStatusHtml(c) + optinAffordanceHtml(c.college);
     // CO Monitor's note — internal (gated read+write); editable when unlocked,
     // read-only for phrase-holders who haven't flipped team-editing on.
     var noteRec = NOTES[c.college];
@@ -8518,10 +8518,7 @@
     }
     return '<tr class="cplfund-detail' + (alt || "") + '"><td colspan="' + COLS_COLLEGE().length + '">' +
       '<div class="cplfund-detail-grid">' +
-      '<div><span class="dk">' + (usesFtes() ? "FTES share:" : "Headcount share:") + "</span> " +
-      fmtInt(sizeOf(c)) + (usesFtes() ? " FTES = " : " students = ") +
-      fmtPct(c.size_pct, 3) + " of the statewide " + fmtInt(totalSize()) + " " + basisLabel() + "</div>" +
-      floorLine + capLine + eligLine + noteLine +
+      eligLine + noteLine +
       prio + county +
       '<div><span class="dk">District:</span> ' + esc(c.district || "—") + "</div>" +
       "</div></td></tr>";

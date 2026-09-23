@@ -2,19 +2,13 @@
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
  "_as_of": "2026-09-23",
  "_session": 283,
- "_status": "The Implementation Funding tab is ready for the CO leadership review, and career attainment now has its own priority. Priority 4 sits on the tab with every control the other three carry, at a 0% share, and it counts the CPL units of students who reach a career outcome in EDD wage records, a figure the Chancellor's Office measures and imports. Priority 2 now serves completion alone, each card is named by its live title, and a stored card order no longer resets when a priority is added. Three decisions wait on the funding review sheet: when Priority 4 takes a share and at what factor, whose wage definition, and how the institution drill-in consolidates.",
+ "_status": "The Implementation Funding tab is ready for the CO leadership review. Career attainment has its own priority, measured by the Chancellor's Office from EDD wage records, and it holds a 0% share until the first import lands. Sam ruled on all three funding decisions: hold Priority 4 at 0% until then, let CO research define the wage outcome, and consolidate each institution's drill-in into one Baseline line above its priority table. The tab now does both, and the import is ready to receive CO research's file.",
  "items": [
   {
    "id": "s283-sam-retry-designate",
    "for": "Sam",
    "tab": "implementation-funding",
    "text": "Try Designate activities on the (D) card again once pull request 1662 is live: choose one or more rows in the list, then press Designate selected. The server logs show your earlier clicks never sent a save, and the button now says so when nothing is chosen."
-  },
-  {
-   "id": "s283-sam-funding-review-sheet",
-   "for": "Sam",
-   "tab": "implementation-funding",
-   "text": "Three decisions from the funding review wait on the funding review sheet (https://claude.ai/artifact/9MfbN6jqio8as9mY4LwPB2): when Priority 4 takes a share and at what factor (it is at 0% and 1.0, the other three at 0.5), whose definition of the wage outcome, and how the institution drill-in consolidates."
   },
   {
    "id": "s283-sam-register-norco",
@@ -26,7 +20,7 @@
    "id": "s283-fable-build-funding-rulings",
    "for": "Fable",
    "tab": "implementation-funding",
-   "text": "Read the funding review sheet's replies, then build what they rule. First is the EDD import: a committed aggregate that adds the career-attainment measure (ca_u, with its noncredit twin) to the published performance file, per college and statewide, masked under 10. The model reads it the day it lands with no code change."
+   "text": "When CO research sends the first career-attainment file, commit it as funding/career_attainment_import.json (the format is in docs/kb-notes/reference-career-attainment-import.md). The daily build merges it and a test checks it is masked. Then set Priority 4's share and a funding factor of 0.5 together, as Sam ruled."
   },
   {
    "id": "s283-fable-open-asks-renumbering",
@@ -75,15 +69,15 @@
    "for": "Sam",
    "tab": "cr-reference",
    "text": "You asked to delete the intro from decision sheets and it is gone. The framing sentence can still be switched back on per sheet, because putting it in the header was your own earlier ruling. Say the word and that option goes too."
-  }
- ],
- "_deferred": [
+  },
   {
    "id": "s280-fable-ci-shard-and-run-only-what-the-diff-touches",
    "for": "Fable",
    "tab": "all",
    "text": "Sam, 2026-09-20, on the ten-minute merge: shard the JS suite across a runner matrix and run only the test files the diff touches on a pull request (the full suite stays on every push to main), plus the one hot spot, the funding tests that boot the whole dashboard in jsdom per file. Measure first: per-file timings from the last run, then the workflow change. A wholesale refactor of the monolith is not the lever for CI time. Also: the dependency map records line numbers, so a one-line edit above a mapped reference (Sam's, 2026-09-20, in the installer: 180 to 181) turned main red at the next push; make the staleness check ignore line drift, or drop the numbers from the map."
-  },
+  }
+ ],
+ "_deferred": [
   {
    "id": "s280-sam-decide-the-execute-sql-read-path",
    "for": "Sam",

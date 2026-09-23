@@ -319,6 +319,9 @@ function mountWords(doc) {
 // "isn't clear when compared to 400k available", then "put it before the $400k
 // CR total and not on the NC total". So: inside the gate sentence, and in the
 // priority caption ahead of Total Possible; no standalone note of its own.
+// Sam, 2026-09-23 (funding review item 3, "Consolidate as proposed"): the
+// reserve reads ONCE, on the drill-in's Baseline line, and the caption keeps
+// the two totals. The gate sentence rides the reserve's hover.
 {
   const { window } = freshDom();
   window.CPL_FUNDING_PERF = { as_of: "2026-09-02", colleges: { "Alameda": { pe: 100, pe_u: 900, pa: 60, pa_u: 500, p3: 40, p3_u: 300 } } };
@@ -334,12 +337,17 @@ function mountWords(doc) {
   const held = a ? "$" + Math.round(a.earned_withheld).toLocaleString("en-US") : "";
   const total = a ? "$" + Math.round(a.total).toLocaleString("en-US") : "";
   check("the drill-in carries no standalone 'held in reserve' item (.cf-withheld div)", !!det && !det.querySelector("div.cf-withheld"));
+  const gate = det && det.querySelector(".cplfund-basestatus .cplfund-basegate");
   check("the gate sentence names the held figure as part of the max award, held not lost, before the numbered requirements",
-    !!det && new RegExp("Baseline not met\\. " + held.replace(/[$]/g, "\\$") + " of its max award[^.]*held in reserve, not lost, until it meets [^:]*: \\(1\\)").test(det.textContent));
+    !!gate && new RegExp("Baseline not met\\. " + held.replace(/[$]/g, "\\$") + " of its max award[^.]*held in reserve, not lost, until it meets [^:]*: \\(1\\)").test(gate.getAttribute("title") || ""));
+  const status = det && det.querySelector(".cplfund-basestatus");
+  check("the reserve reads once, on the Baseline line, with its figure",
+    !!status && status.textContent.indexOf(held + " reserved until") !== -1 &&
+    det.textContent.split(held + " reserved until").length === 2);
   const cap = det && det.querySelector(".cplfund-dtl-table caption");
-  check("the priority caption reads Current Total · <held> held in reserve until … · Total Possible: <max award>",
-    !!cap && cap.textContent.indexOf(held + " held in reserve until baseline participation is met") !== -1 &&
-    cap.textContent.indexOf(held) < cap.textContent.indexOf("Total Possible: " + total));
+  check("the priority caption keeps the two totals: Current Total · Total Possible, its max award",
+    !!cap && /^Current Total: \$[\d,]+ · Total Possible: /.test(cap.textContent.replace(/\s+/g, " ").trim()) &&
+    cap.textContent.indexOf("Total Possible: " + total) !== -1 && cap.textContent.indexOf("reserve") === -1);
   delete window.CPL_FUNDING_PERF;
 }
 
