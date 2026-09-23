@@ -1,14 +1,14 @@
 {
-  "scraped_at": "2026-09-23T14:16:44.476438+00:00",
+  "scraped_at": "2026-09-23T17:14:09.633779+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 28334,
-    "star_colleges": 58
+    "jst": 28343,
+    "star_colleges": 59
   },
-  "computed_star_colleges": 58,
+  "computed_star_colleges": 59,
   "colleges": {
     "Santiago Canyon College": {
       "vets": 288,
@@ -62,7 +62,7 @@
     },
     "Norco College": {
       "vets": 831,
-      "jst": 560,
+      "jst": 563,
       "star": false
     },
     "Long Beach City College": {
@@ -185,19 +185,24 @@
       "jst": 193,
       "star": true
     },
+    "Antelope Valley College": {
+      "vets": 281,
+      "jst": 282,
+      "star": true
+    },
     "Shasta College": {
       "vets": 343,
       "jst": 187,
       "star": false
     },
-    "Antelope Valley College": {
-      "vets": 281,
-      "jst": 281,
-      "star": true
-    },
     "Solano Community College": {
       "vets": 278,
       "jst": 161,
+      "star": false
+    },
+    "Los Angeles Pierce College": {
+      "vets": 296,
+      "jst": 143,
       "star": false
     },
     "Fullerton College": {
@@ -205,24 +210,19 @@
       "jst": 561,
       "star": true
     },
-    "Los Angeles Pierce College": {
-      "vets": 296,
-      "jst": 141,
-      "star": false
-    },
     "Victor Valley College": {
       "vets": 97,
       "jst": 339,
       "star": true
     },
+    "Cerro Coso Community College": {
+      "vets": 115,
+      "jst": 183,
+      "star": true
+    },
     "Mission College": {
       "vets": 158,
       "jst": 164,
-      "star": true
-    },
-    "Cerro Coso Community College": {
-      "vets": 115,
-      "jst": 182,
       "star": true
     },
     "Ventura College": {
@@ -447,8 +447,8 @@
     },
     "Columbia College": {
       "vets": 33,
-      "jst": 24,
-      "star": false
+      "jst": 25,
+      "star": true
     },
     "Rio Hondo College": {
       "vets": 172,
@@ -487,7 +487,7 @@
     },
     "Sacramento City College": {
       "vets": 203,
-      "jst": 112,
+      "jst": 113,
       "star": false
     },
     "Cuyamaca College": {
