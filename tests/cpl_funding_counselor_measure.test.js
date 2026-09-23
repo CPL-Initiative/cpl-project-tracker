@@ -214,10 +214,18 @@ check("7e: the transcribed-and-Counselor entry sits ahead of the applied-and-Cou
 function renderS3(pin, deliver) {
   const { window } = freshDom();
   new Function("window", fs.readFileSync("cpl_funding_performance.js", "utf8")).call(window, window);
+  // ⚠️ THE FEED STATE IS SET HERE, NEVER READ OFF THE FILE. The published feed
+  // gained ptc/ptc_u on the first daily run after #1664 (2026-09-23), and the
+  // "before" half of this section, which had taken the file as the feed
+  // without the key, went red on main. Strip both keys for "before"; write
+  // ptc_u for "after".
+  const PF = window.CPL_FUNDING_PERF;
+  [PF.statewide].concat(Object.keys(PF.colleges).map((k) => PF.colleges[k])).forEach(function (r) {
+    if (r) { delete r.ptc; delete r.ptc_u; }
+  });
   if (deliver) {
-    // The feed as the builder emits it once this change runs: half of each
-    // college's transcribed units carry the Counselor step.
-    const PF = window.CPL_FUNDING_PERF;
+    // The feed as the builder emits it: half of each college's transcribed
+    // units carry the Counselor step.
     PF.statewide.ptc_u = (PF.statewide.p3_u || 0) / 2;
     Object.keys(PF.colleges).forEach(function (k) {
       const r = PF.colleges[k];
