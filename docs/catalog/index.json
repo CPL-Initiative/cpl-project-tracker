@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 487,
+   "count": 488,
    "docs": [
     {
      "created": "2026-08-14",
@@ -952,6 +952,24 @@
      "title": "A control reported as broken may be live on a surface that draws nothing",
      "type": "methodology",
      "updated": "2026-09-05"
+    },
+    {
+     "created": "2026-09-23",
+     "governs": [
+      "cpl_funding.js",
+      "tests/cpl_funding_career_attainment.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-control-that-does-nothing-read-the-request-log-first.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "debugging",
+      "supabase",
+      "curation-ui"
+     ],
+     "title": "A control that does nothing \u2014 read the request log first",
+     "type": "methodology",
+     "updated": "2026-09-23"
     },
     {
      "created": "2026-08-22",
@@ -13592,7 +13610,7 @@
      ],
      "title": "Implementation Funding tab / the $35M model \u2014 lane state",
      "type": null,
-     "updated": "2026-09-22"
+     "updated": "2026-09-23"
     },
     {
      "created": "2026-08-28",
@@ -14076,7 +14094,7 @@
    "count": 256,
    "docs": [
     {
-     "created": "2026-09-22",
+     "created": "2026-09-23",
      "governs": [],
      "n": 284,
      "path": "docs/session_284_handoff.md",
@@ -14088,7 +14106,7 @@
       "edd",
       "career-attainment"
      ],
-     "title": "the funding tab is ready for leadership, and career attainment has a measure",
+     "title": "Priority 4 carries career attainment, and the funding tab is ready for leadership",
      "type": null,
      "updated": ""
     },
@@ -18420,5 +18438,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 957
+ "total": 958
 }

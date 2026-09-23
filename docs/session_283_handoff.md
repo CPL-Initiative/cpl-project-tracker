@@ -4,6 +4,8 @@ date: 2026-09-22
 session: 282 (SkyLedger)
 tags: [handoff, jev, ccr, cr-reference, calibration, decision-sheets]
 status: current
+superseded: true
+superseded_by: session_284_handoff.md
 ---
 
 # You are Session 283

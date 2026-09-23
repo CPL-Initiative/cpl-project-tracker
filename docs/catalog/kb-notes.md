@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-487 document(s).
+488 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -63,6 +63,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A conditional key breaks a bulk upsert, and it fails positionally](../kb-notes/methodology-a-conditional-key-breaks-a-bulk-upsert.md) | methodology | published | 2026-08-13 | 2026-08-13 |
 | [A conflicted pull request cannot produce a CI run, so read mergeable_state before blaming CI](../kb-notes/methodology-a-conflicted-pr-cannot-produce-a-ci-run.md) | methodology | published | 2026-08-28 | 2026-08-28 |
 | [A control reported as broken may be live on a surface that draws nothing](../kb-notes/methodology-a-control-can-be-live-on-a-surface-that-draws-nothing.md) | methodology | published | 2026-09-05 | 2026-09-05 |
+| [A control that does nothing — read the request log first](../kb-notes/methodology-a-control-that-does-nothing-read-the-request-log-first.md) | methodology | published | 2026-09-23 | 2026-09-23 |
 | [A conversation is scoped state — what you send must never exceed what you show](../kb-notes/methodology-a-conversation-is-scoped-state.md) | methodology | published | 2026-08-22 | 2026-08-22 |
 | [A copy detector must read the rendered string, not the lines the author typed](../kb-notes/methodology-a-copy-detector-must-read-the-rendered-string.md) | methodology | published | 2026-08-14 | 2026-08-14 |
 | [A copy with no refresh path is a fossil](../kb-notes/methodology-a-copy-with-no-refresh-path-is-a-fossil.md) | methodology | published | 2026-08-13 | 2026-08-13 |

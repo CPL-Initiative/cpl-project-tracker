@@ -292,7 +292,7 @@ The whole ecosystem, end-to-end:
    (`window.CPL_FUNDING_EMBED = "college"`) — the same rows, drill-in, search
    and Excel export, not a copy — given the window's width rather than the prose
    column, because the prose cap is what pushed its last column off the edge.
-   **Funding outcomes and milestones** follows: the three priorities and the
+   **Funding outcomes and milestones** follows: the four priorities and the
    milestone list together, open, with each priority's recommended strategies
    folded closed. The sections that explain the mechanics fold closed on open,
    each headed by its text title alone, and the titles are the model's own words
