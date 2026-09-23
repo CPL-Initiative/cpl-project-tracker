@@ -47,7 +47,8 @@ a DRAFT under watch; this checkpoint was taken at the context warning line.
    `one_pool`, `metric_pin`, `pool`, `outcome_cards`, `row_legibility`, `reorder`, `rollup`, `scenarios`,
    `statewide_expand`, `render` (all `tests/cpl_funding_*.test.js`). Run each with `node`, read its FAIL lines,
    re-aim by header or class, never by position. Then merge squash and dispatch `daily-dashboard.yml` so the
-   builder's NOCE/Calbright fold reaches the note.
+   builder's NOCE/Calbright fold reaches the note. ⚠️ **`npm run a11y` was NOT run on #1664**: run it on the
+   funding tab and `funding-model` before merging (new controls: number pickers, rows checkboxes, Delete panel).
 2. **Read the sheet's `replies` store before acting** (item 1: build the transcribed + Counselor measure — a new
    rung `tcr > 0 and accepted` in `funding/_build_funding_performance.py`, registry entry in `METRIC_SOURCES`).
 3. **Supabase grants**: grep `kb/`, `funding/`, `raci/` etc. for `create table` in `public`; add explicit grants;
