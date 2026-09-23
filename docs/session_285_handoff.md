@@ -25,7 +25,7 @@ a DRAFT under watch; this checkpoint was taken at the context warning line.
 - **Published scenario** per project; explainer, college briefing and unchosen browsers read it; Publish on the strip.
 - **Builder**: MAP's "… Credit" names fold onto NOCE and Calbright; Launch stays unmatched.
 - **Sheet**: `docs/visuals/2026-09-23-funding-scenario-3.html` (4 items), builder
-  `kb/_build_funding_scenario3_decision_sheet.py`. Link in the PR thread / this session's close.
+  `kb/_build_funding_scenario3_decision_sheet.py`; published at https://claude.ai/artifact/3Fe1kqZKhzeKCQvtKAaB8U (store `replies`, empty at publish).
 
 ## SAM'S WORDS THIS RUN
 
