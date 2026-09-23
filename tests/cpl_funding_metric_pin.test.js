@@ -30,6 +30,7 @@
 //
 // Run from repo root: `npm test` (or `node tests/cpl_funding_metric_pin.test.js`).
 const { check, freshDom, boot, consumerSrc, D, finish } = require("./lib/cpl_funding_harness.js");
+const { NPRIO } = require("./lib/cpl_funding_harness.js");
 
 // ⚠️ LOCATE A PRIORITY CARD BY ITS DISPLAY INDEX, NOT BY DOM ORDINAL
 // (re-aimed 2026-09-01, Sam's band consolidation). Cards are now grouped under
@@ -160,13 +161,13 @@ check("2d: srcDelivered() asks the ARTIFACT, not the registry (a declared key ma
   // config field, a 4,000x difference in what the college is judged on — and
   // neither row looks broken.
   check("3a: the pinned priority scores on pa_u (400 FTES), not on the prose's pp_u",
-    P.length === 3 && actFtes(P[0], 400));
+    P.length === NPRIO && actFtes(P[0], 400));
   check("3b: the UNPINNED twin, same prose, silently scores on the credit portal measure (0.1 FTES)",
-    P.length === 3 && /(^|[^\d.])0\.1 FTES/.test(P[1].actual));
+    P.length === NPRIO && /(^|[^\d.])0\.1 FTES/.test(P[1].actual));
   check("3b2: so the pin changes the answer — identical prose, different earning",
-    P.length === 3 && P[0].actual !== P[1].actual && P[0].current !== P[1].current);
+    P.length === NPRIO && P[0].actual !== P[1].actual && P[0].current !== P[1].current);
   check("3c: an unknown pin renders 'awaiting a known measure' rather than a plausible number",
-    P.length === 3 && /awaiting a known measure/.test(P[2].actual) && P[2].current === "$0");
+    P.length === NPRIO && /awaiting a known measure/.test(P[2].actual) && P[2].current === "$0");
   check("3d: a pinned unit source forces the FTES unit, whatever the prose sniffs",
     T._prios("Laney", "1")[0].unit === "FTES");
 
@@ -205,18 +206,18 @@ check("2d: srcDelivered() asks the ARTIFACT, not the registry (a declared key ma
   T.render();
   const P = detRows(openDetail(window, doc, "Laney"));
   check("3e: an undelivered NC source earns $0 and reads 'awaiting measurement' (2026-09-13 wording)",
-    P.length === 3 && /awaiting measurement/.test(P[0].actual) && P[0].current === "$0");
+    P.length === NPRIO && /awaiting measurement/.test(P[0].actual) && P[0].current === "$0");
   // Both statuses read "no data yet" on the SURFACE since 2026-09-01; the
   // contrast that matters (the gap row's Current Total pays, the undelivered
   // row's is strictly $0) is 3e4's check, on the dollars.
   check("3e2: the gap row beside it also reads 'awaiting measurement' — never a measured zero",
-    P.length === 3 && /awaiting measurement/.test(P[1].actual) && !/0 · 0%/.test(P[1].actual));
+    P.length === NPRIO && /awaiting measurement/.test(P[1].actual) && !/0 · 0%/.test(P[1].actual));
   check("3e3: and it is not reported as a measured zero ('0.0 FTES · 0%')",
-    P.length === 3 && !actFtes(P[0], 0));
+    P.length === NPRIO && !actFtes(P[0], 0));
   // The data-gap row ADVANCES its whole CR funding; the undelivered row earns
   // strictly $0 — read straight off the Current Total column.
   check("3e4: the undelivered row earns strictly less than the data-gap row advances",
-    P.length === 3 && P[0].current === "$0" && P[1].current !== "$0" && P[1].current === P[1].crFunding);
+    P.length === NPRIO && P[0].current === "$0" && P[1].current !== "$0" && P[1].current === P[1].crFunding);
 }
 
 // ── 4. the two states that must never advance ────────────────────────────────
@@ -451,7 +452,7 @@ check("7a2: the BAKE carries no pin — its slot-2 metric is not the one the pin
   const P = detRows(openDetail(window, doc, "Bakersfield"));
   check("8a: with ppa_u present the Access column starts earning, no code change",
     /Actual/.test(card3.textContent) && !/Awaiting actuals/.test(card3.textContent) &&
-    P.length === 3 && /[\d,.]+ FTES · /.test(P[2].actual) && !/no feed/.test(P[2].actual));
+    P.length === NPRIO && /[\d,.]+ FTES · /.test(P[2].actual) && !/no feed/.test(P[2].actual));
   // ⚠️ ASSERTED ON THE PARSED REGISTRY, NOT ON ITS SOURCE TEXT. This line used
   // to regex /ppa_u:\s*\{ unit: "units", milestone: "applied"/ against the
   // consumer, which meant it tested FIELD ORDER inside an object literal: adding
@@ -488,7 +489,7 @@ check("9a: an empty-string metric_src clears the pin rather than being an unknow
   T.render();
   const P = detRows(openDetail(window, doc, "Laney"));
   check("9b: a cleared pin returns to the prose matcher, not to 'awaiting a known measure'",
-    P.length === 3 && !/awaiting a known measure/.test(P[0].actual) && actFtes(P[0], 400));
+    P.length === NPRIO && !/awaiting a known measure/.test(P[0].actual) && actFtes(P[0], 400));
 }
 
 finish();

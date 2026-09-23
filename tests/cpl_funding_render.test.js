@@ -31,6 +31,7 @@ const {
   consumerSrc,
   finish,
 } = require("./lib/cpl_funding_harness.js");
+const { NPRIO } = require("./lib/cpl_funding_harness.js");
 
 // The one-pool roster: every college plus the noncredit-only institutions
 // (rows whose FTES does NOT ride a credit row — Mt. SAC NC's does).
@@ -98,23 +99,19 @@ const money = function (n) { return "$" + Math.round(n).toLocaleString("en-US");
         return /share of the/i.test(c.textContent) && /teaching/i.test(c.textContent); }) &&
       !/policy choice, not a formula/.test(cardsWrap.textContent));
   }
-  // The rate card FOLLOWS THE METRICS. This fixture boots the committed baked
-  // defaults, whose Year-1 metrics are headcount-denominated ("Headcount of
-  // students eligible for..."), so the per-student card is the CORRECT render
-  // here and Scenario 2 keeps working. The CPL-FTES rate card that replaces it
-  // under FTES metrics is asserted in cpl_funding_cpl_ftes.test.js, which boots
-  // the FTES metric strings.
+  // The rate card FOLLOWS THE METRICS. The committed baked defaults carry
+  // headcount-denominated Year-1 metrics for Priorities 1-3 and CPL FTES for
+  // Priority 4 (career attainment, 2026-09-22), so one priority in FTES puts
+  // the CPL-FTES rate card in play here. The all-headcount Scenario 2 path is
+  // C1a below, which re-points P4 at a headcount prose; the all-FTES render is
+  // asserted in cpl_funding_cpl_ftes.test.js.
   {
     const cards = Array.from(doc.querySelectorAll(".cplfund-card .l"))
       .map(function (l) { return l.textContent; });
-    check("headcount metrics keep the per-student rate card (Scenario 2 path)",
-      cards.some(function (t) { return /Per-student rate/.test(t); }));
-    check("...and say why it is headcount-denominated rather than asserting it bare",
-      cards.some(function (t) { return /metrics are headcount-denominated/.test(t); }));
-    check("the CPL-FTES rate card does NOT appear when no metric is in FTES",
-      !cards.some(function (t) { return /Reimbursement rate per/.test(t); }));
+    check("one priority in CPL FTES puts the CPL-FTES rate card in play (P4 in the bake)",
+      cards.some(function (t) { return /Reimbursement rate per/.test(t); }));
   }
-  check("renders 3 priority cards", doc.querySelectorAll(".cplfund-prio .p").length === 3);
+  check("renders one card per priority (" + NPRIO + ")", doc.querySelectorAll(".cplfund-prio .p").length === NPRIO);
   const tables = doc.querySelectorAll(".cplfund-table");
   // ONE table (R9, 2026-08-31): the standalone-NC / feeder section is retired —
   // the noncredit-only three are ordinary rows of the one institution table.
@@ -352,6 +349,27 @@ const money = function (n) { return "$" + Math.round(n).toLocaleString("en-US");
     doc.querySelector("#cplFundTable tbody").textContent.indexOf("Every institution is hidden by this search") !== -1);
 }
 
+// C1a — Scenario 2: with EVERY metric headcount-denominated the per-student
+// rate card returns. Priority 4 is un-pinned (the empty-string sentinel the
+// measure picker writes) and given a headcount prose, which is the only way the
+// bake reaches an all-headcount Year 1 now.
+{
+  const { window } = freshDom();
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  T._setShared({ yearPriorities: { "1": { "3": {
+    metric: "Headcount of students with a career outcome in EDD wage records", metric_src: "" } } } });
+  T.render();
+  const cards = Array.from(doc.querySelectorAll(".cplfund-card .l"))
+    .map(function (l) { return l.textContent; });
+  check("headcount metrics keep the per-student rate card (Scenario 2 path)",
+    cards.some(function (t) { return /Per-student rate/.test(t); }));
+  check("...and say why it is headcount-denominated rather than asserting it bare",
+    cards.some(function (t) { return /metrics are headcount-denominated/.test(t); }));
+  check("the CPL-FTES rate card does NOT appear when no metric is in FTES",
+    !cards.some(function (t) { return /Reimbursement rate per/.test(t); }));
+}
+
 // C1b — PR-A editable content (Sam, 2026-07-23): priority TITLE + STRATEGIES
 // (both YEAR-SPECIFIC), the TIMING milestone list, and the editable eligibility
 // INTRO. Locked mode → edits land in the active per-browser scenario override.
@@ -362,7 +380,7 @@ const money = function (n) { return "$" + Math.round(n).toLocaleString("en-US");
 
   // #1 — priority titles default Access / Success / Capacity (Year 1 shown).
   const titleInputs = doc.querySelectorAll('.cplfund-prio .p input[data-edit="prio-title"]');
-  check("each priority box has an editable title input", titleInputs.length === 3);
+  check("each priority box has an editable title input", titleInputs.length === NPRIO);
   check("priority titles default to Access / Success / Capacity",
     titleInputs[0].value === "Access" && titleInputs[1].value === "Success" && titleInputs[2].value === "Capacity");
   commit(window, titleInputs[0], "Access & Onboarding");
@@ -375,8 +393,8 @@ const money = function (n) { return "$" + Math.round(n).toLocaleString("en-US");
   // Scoped to `.p` since 2026-09-14: the reported outcome cards carry their own
   // strategies fold now, so an unscoped count is no longer "per priority box".
   check("Recommended strategies header + Add button per priority box",
-    doc.querySelectorAll(".cplfund-prio .p .cplfund-strat-h").length === 3 &&
-    doc.querySelectorAll("[data-stratadd]").length === 3);
+    doc.querySelectorAll(".cplfund-prio .p .cplfund-strat-h").length === NPRIO &&
+    doc.querySelectorAll("[data-stratadd]").length === NPRIO);
   check("no strategies by default", doc.querySelectorAll('.cplfund-strat input[data-edit="strategy"]').length === 0);
   click(window, doc.querySelector('[data-stratadd="1:0"]'));
   const stratInput = doc.querySelector('.cplfund-strat input[data-edit="strategy"]');

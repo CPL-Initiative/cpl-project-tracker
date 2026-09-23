@@ -5,12 +5,15 @@
 // demonstrating those four goals a precondition of a campus allocation, so this
 // section is the reporting artifact, not a caption.
 //
-// ⚠️ WHAT THESE ASSERTIONS PROTECT IS THE EMPTY HALF. Any build can render four
-// goal cards and fill them; the reason this one is worth shipping is that goal
-// (C) comes out FUNDED and UNMEASURED and says both, instead of being padded
-// with the nearest available number. Most of the checks below fail if a future
-// change collapses "funded" and "measured" into one status, or quietly derives
-// a statutory tag from the Workplan's own goal names.
+// ⚠️ WHAT THESE ASSERTIONS PROTECT IS THE HONEST STATE OF EACH GOAL. Any build
+// can render four goal cards and fill them; the reason this one is worth
+// shipping is that each goal says where its evidence comes from and how far it
+// has arrived, instead of being padded with the nearest available number. Goal
+// (C) is the sharpest case: funded through Priority 4 and measured by the
+// Chancellor's Office from EDD wage records (Sam, 2026-09-22), so it must
+// never read as a MAP measure. Most of the checks below fail if a future change
+// collapses "funded" and "measured" into one status, or quietly derives a
+// statutory tag from the Workplan's own goal names.
 //
 // ONE-POOL PORT (2026-08-31). The lane switch this suite used to flip is
 // retired (R1) — there is no per-lane spine to re-scope. Under one pool a
@@ -121,38 +124,45 @@ check("a derived goal tag is labelled as derived",
   check("the renamed priority still funds goal (B)", /Priority \d/.test(bAfter));
 })();
 
-// ── 4. (C) is funded and unmeasured, and says BOTH ──────────────────────────
-// ⚠️ The single most important behaviour in this file. Sam ruled career
-// attainment is carried by the project pool and reported qualitatively, with no
-// invented metric — sharpened by his items 3 + 12 rulings (2026-08-30): (C) is
-// DEMONSTRATED, never directly measured ("not measurable at this time, and may
-// never be"). So (C) must show money AND an explicit absence of measure.
+// ── 4. (C) is measured by the Chancellor's Office, and says so ──────────────
+// ⚠️ Sam's 2026-09-22 ruling supersedes his 2026-08-30 one ("not measurable at
+// this time, and may never be"): "after speaking with CO research team, we can
+// use EDD wage data to measure this ... This would not be reported by the
+// colleges but instead measured by the CO and reflected on our funding model
+// with periodic updates (imports) of the data." Priority 4 carries the goal, at
+// a 0% share until he sets one. What this section protects now is the SOURCE:
+// (C) must read as the Chancellor's Office's measure, never as MAP's daily
+// feed, never as a wiring fault, and never as a number it does not have before
+// the first import lands.
 const cCard = goalCard(doc, "C");
 const cFund = flat(axis(cCard, "what funds it"));
 const cMeas = flat(axis(cCard, "how it is evidenced"));
-check("goal (C) is shown as FUNDED", /\$[\d,]+/.test(cFund));
-check("goal (C) reports through statewide work, with no campus measure", /reported through statewide work/i.test(cMeas));
+check("goal (C) is served by its own priority, with its funding figure",
+  /Priority \d: Career attainment/.test(cFund) && /\$[\d,]+/.test(cFund));
+check("goal (C) is awaiting measurement by the Chancellor's Office, never 'awaiting delivery'",
+  /Awaiting measurement/i.test(cMeas) &&
+  /Chancellor.s Office measures this outcome from EDD wage records/.test(cMeas) &&
+  !/awaiting delivery/i.test(cMeas));
+check("goal (C) never names MAP's daily feed as its source", !/daily (MAP )?feed/i.test(cMeas));
 check("goal (C) does not claim a metric it does not have",
   !/earned against/i.test(cMeas));
 const cBand = evidenceCell(doc, "C");
 check("goal (C) has an evidence line in the (d)(2) account", !!cBand);
-check("goal (C) carries Sam's demonstrated-not-measured ruling in words (items 3 + 12)",
-  /Demonstrated, not directly measured/i.test(flat(cBand)));
+check("goal (C) carries Sam's 2026-09-22 ruling in words: the CO measures it, colleges report nothing",
+  /Measured by the Chancellor.s Office\./.test(flat(cBand)) && /asks no reporting of colleges/.test(flat(cBand)));
+check("the retired 'not directly measured' ruling is gone from the page",
+  !/not directly measured|may never be/i.test(flat(doc.querySelector("#cplFundingMount"))));
 // And the honest half: the qualitative evidence documents a different goal.
 check("goal (C) names what its qualitative evidence actually documents",
   /\bevidence for \(B\)/i.test(flat(cBand)));
 // ⚠️ ONE RENDERER, so there is nothing left to disagree. The account and the
-// band each printed this goal's evidence until 2026-09-14, and the check that
-// they agreed existed to catch a second copy appearing. With the bands retired
-// the account is the only place it renders — so the check becomes that the
-// phrase appears ONCE on the page, which is what would catch a second copy
+// band each printed this goal's evidence until 2026-09-14; the check is that
+// the ruling appears ONCE on the page, which is what would catch a second copy
 // coming back.
-check("(C)'s evidence state renders once, in the account, with no rival copy", (function () {
-  if (!/reported through statewide work/i.test(cMeas)) return false;
-  const inMount = (flat(doc.querySelector("#cplFundingMount")).match(/reported through statewide work/gi) || []).length;
-  const inAccount = (flat(doc.querySelector(".cplfund-goals")).match(/reported through statewide work/gi) || []).length;
-  // Every occurrence on the page is inside the (d)(2) account. A band printing
-  // its own copy — the shape this replaced — would make inMount exceed it.
+check("(C)'s ruling renders once, in the account, with no rival copy", (function () {
+  const rx = /Measured by the Chancellor.s Office\./g;
+  const inMount = (flat(doc.querySelector("#cplFundingMount")).match(rx) || []).length;
+  const inAccount = (flat(doc.querySelector(".cplfund-goals")).match(rx) || []).length;
   return inAccount > 0 && inMount === inAccount;
 })());
 // The figures are COUNTED, so they must agree with the corpus in the window —

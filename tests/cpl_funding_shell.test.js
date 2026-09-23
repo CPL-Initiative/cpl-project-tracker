@@ -70,10 +70,11 @@ check("data: year_options list + a 2-year default window",
   D && Array.isArray(D.year_options) && D.year_options.length >= 2 &&
   Array.isArray(D.default_years) && D.default_years.length === 2);
 
-// Year-specific priorities: two slots, each 3 priorities, each slot's shares
-// sum to 1, with year-1 vs year-2 metric text differing.
-check("data: year_priorities has slots 1 and 2, 3 priorities each",
-  D && D.year_priorities && D.year_priorities["1"].length === 3 && D.year_priorities["2"].length === 3);
+// Year-specific priorities: two slots, each 4 priorities (Priority 4, career
+// attainment, joined 2026-09-22 at a 0% share), each slot's shares sum to 1,
+// with year-1 vs year-2 metric text differing.
+check("data: year_priorities has slots 1 and 2, 4 priorities each",
+  D && D.year_priorities && D.year_priorities["1"].length === 4 && D.year_priorities["2"].length === 4);
 ["1", "2"].forEach(function (slot) {
   check("data: year " + slot + " shares sum to 1",
     D && Math.abs(D.year_priorities[slot].reduce(function (s, p) { return s + p.share; }, 0) - 1) < 1e-6);

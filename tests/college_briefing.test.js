@@ -1387,6 +1387,17 @@ check("(P) …but a strategy that IS measured still shows its figure",
   nestRoot.querySelectorAll(".cb-strat .cb-m").length > 0);
 check("(P) the nested steps are still closed by default",
   Array.prototype.every.call(nestRoot.querySelectorAll("details.cb-strat"), function (d) { return !d.open; }));
+// ⭐ THE LIVE SHAPE since 2026-09-22. THREE lists three priorities, as the live
+// config does, while the funding module carries a fourth (career attainment)
+// from its baked defaults at a 0% share. Counting it sent every college's steps
+// to the standalone list the moment the card appeared; the checks above are
+// what failed. A priority the config does not list and that holds no share has
+// no steps and no funding, so the funding box leaves it out.
+check("(P) ⭐ an unlisted priority at a 0% share stays out of the funding box and the count gate",
+  (FUND._prios("Mt San Antonio", "1") || []).length === 4 &&
+  nestRoot.querySelectorAll(".cb-prios .cb-prow").length === 3 &&
+  !/Career attainment/.test(nestRoot.querySelector(".cb-prios") ? nestRoot.querySelector(".cb-prios").textContent : ""),
+  "the model carries 4 priorities; the box shows the 3 the config lists");
 
 // ⭐ Guarantee (c) SURVIVES THE MOVE. Sam adds programs to the config and they
 // must appear with no code change. Only cpl-implementation nests into the

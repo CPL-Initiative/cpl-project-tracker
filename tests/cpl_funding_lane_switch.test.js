@@ -26,6 +26,7 @@
 //
 // Run from repo root: `npm test` (or `node tests/cpl_funding_lane_switch.test.js`).
 const { check, freshDom, boot, click, commit, consumerSrc, finish } = require("./lib/cpl_funding_harness.js");
+const { NPRIO } = require("./lib/cpl_funding_harness.js");
 
 const flat = (el) => (el ? el.textContent : "").replace(/\s+/g, " ").trim();
 const cards = (doc) => Array.from(doc.querySelectorAll(".cplfund-prio .p"));
@@ -47,8 +48,8 @@ const money = (n) => "$" + Math.round(n).toLocaleString("en-US");
 
   // R2 — ONE card set, and it is the EDITABLE one. The retired NC set was a
   // read-only clone with one editor of its own; neither half may come back.
-  check("R2: exactly three priority cards render — one set, not one per lane",
-    cards(doc).length === 3);
+  check("R2: exactly one set of priority cards renders — one card per priority, for every lane",
+    cards(doc).length === NPRIO);
   check("R2: the one set keeps its editors (title, share, factor, metric, description)",
     cards(doc).every((c) => c.querySelectorAll("[data-edit]").length >= 5 &&
       !!c.querySelector('[data-edit="prio-title"]')));
@@ -93,8 +94,14 @@ const money = (n) => "$" + Math.round(n).toLocaleString("en-US");
   // performance artifact, which is precisely the state that exposed the bug.
   check("with no artifact, the fixture really has none (the state that exposed it)",
     !win.CPL_FUNDING_PERF);
-  check("with no artifact, every CREDIT card says the refresh is pending",
-    cards(doc).every((c) => /next daily data refresh/i.test(flat(c))));
+  // A measure the Chancellor's Office imports (career attainment, 2026-09-22)
+  // does not arrive with MAP's refresh, and its card says who takes it.
+  const coCard = (c) => /Chancellor.s Office measures this outcome/.test(flat(c));
+  check("with no artifact, every MAP-measured CREDIT card says the refresh is pending",
+    cards(doc).filter((c) => !coCard(c)).every((c) => /next daily data refresh/i.test(flat(c))));
+  check("...and the Chancellor's Office measure names who takes it, never MAP's refresh",
+    cards(doc).filter(coCard).length === 1 &&
+    cards(doc).filter(coCard).every((c) => !/next daily data refresh/i.test(flat(c))));
   check("with no artifact, NO card claims its measure is uncarried",
     cards(doc).every((c) => !/not carry this measure/i.test(flat(c))));
   // (The noncredit half of the same conflation — undelivered → $0, never an

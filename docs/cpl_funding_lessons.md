@@ -1850,3 +1850,31 @@ demonstrated where Sam's scenario showed $0 and a reserve line. His screenshots 
 truth for every Summary edit; the local render verified layout only. The tab's a11y failures were
 measured against `origin/main` in a worktree before any were called pre-existing.
 
+
+## 2026-09-23 — S283 (SkyFund), second pass: a fourth priority, and a button that saved nothing
+
+Sam's P2/P3/P4 asks, shipped in #1662. The detail is in the lane file and the PR.
+
+### A count typed as three broke eighteen suites and two live surfaces
+
+Adding Priority 4 broke every test that had assumed three priorities, and it would also have broken two
+live surfaces the tests did not cover. The briefing's count gate would have sent every college's steps to
+the standalone list. The explainer typed "three" in three sentences. Sam's stored `[0, 2, 1]` failed
+`isPermutation(v, 4)` and fell back to the natural order, which swaps P2 and P3 with nothing on screen to
+say so. **An order written before a priority existed is extended, not reset**, in `cpl_funding.js` and
+`college_briefing.js` alike. Tests count from `NPRIO`.
+
+### Read the request log before the handler
+
+Sam said the (D) card's Designate button did nothing. In jsdom the code worked. The edge logs showed nine
+200 PATCHes, the last four his releases, and **no request after them**, so the click never reached a
+save. The likeliest cause is that nothing was selected in the list when he clicked, and the button returned
+without a word. It now says what it needs. The log split the problem in two (the client never sent a
+request, or the server refused it) before any code was read.
+[note](kb-notes/methodology-a-control-that-does-nothing-read-the-request-log-first.md)
+
+### A ruling superseded by the same person is replaced, and says so
+
+The (C) note quoted Sam's 2026-08-30 *"not measurable at this time, and may never be"*, and a test pinned
+it. His 2026-09-22 EDD ruling replaces it on the page with both dates named, and `cpl_memory` records the
+supersession explicitly.

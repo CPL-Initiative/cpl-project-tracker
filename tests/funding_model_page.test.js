@@ -500,6 +500,24 @@ check("the status line is empty on a successful paint",
   repaint();
 }
 
+// ── the priority COUNT is the model's (Priority 4, 2026-09-22) ────────────
+// Three sentences here typed "three" until the day a fourth priority joined;
+// the count is painted now, and no typed "three" survives beside it.
+{
+  const n = win.CPL_FUNDING_TAB._prios(win.CPL_FUNDING.colleges[0].college, "1").length;
+  const WORDS = ["no", "one", "two", "three", "four", "five", "six", "seven"];
+  const body = doc.body.textContent.replace(/\s+/g, " ");
+  check("the page states the model's own priority count, painted rather than typed",
+    !!doc.getElementById("l-nprio") && doc.getElementById("l-nprio").textContent === WORDS[n]);
+  check("no sentence on the page hard-codes 'three priorities', 'All three factors' or 'the three targets'",
+    !/\bthree priorities\b|All three factors|the three targets/i.test(body));
+  check("one card per priority in the funding outcomes list", doc.querySelectorAll("#prios .prio").length === n);
+  // House voice (Sam, 2026-09-16): state what carries the outcome.
+  check("a reported outcome's heading states what carries it, with no 'X, not Y'",
+    /Reported through statewide work: /.test(body) &&
+    !/Reported, not measured/.test(body) && !/rather than a campus measure/.test(body));
+}
+
 // ── a failed computation must SAY so, never leave stale figures standing ──
 {
   const dom2 = new JSDOM(html, { runScripts: "outside-only", url: "https://example.org/funding-model/" });

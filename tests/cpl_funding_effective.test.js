@@ -41,12 +41,16 @@ const CFG = (mirror) => ({
               "0": { share: 0.33, title: "Outreach", factor: 0.5, metric: "Eligible CPL Units measured in FTES" },
               "1": { share: 0.33, title: "Success", factor: 0.5, metric: "Transcribed CPL Units measured in FTES" },
               "2": { share: 0.34, title: "Access", factor: 0.5, metric: "Applied units measured in FTES" },
+              // Priority 4 (2026-09-22): every priority the model carries is in
+              // the fixture, or 1c would read the bake's factor for it.
+              "3": { share: 0, title: "Career", factor: 0.5, metric: "Career attainment units measured in FTES" },
             },
             // THE TRAP — every value here differs from Year 1.
             "2": {
               "0": { share: 0.10, title: "Y2Outreach", factor: 1, metric: "Y2 metric A" },
               "1": { share: 0.10, title: "Y2Success", factor: 1, metric: "Y2 metric B" },
               "2": { share: 0.80, title: "Y2Access", factor: 1, metric: "Y2 metric C" },
+              "3": { share: 0.05, title: "Y2Career", factor: 1, metric: "Y2 metric D" },
             },
           },
         },

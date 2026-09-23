@@ -176,6 +176,17 @@ window.CPL_FUNDING = {
     "metric": "Headcount of students with transcribed Credit from either CPL Student Portal or CPL Landing Page",
     "unit": "headcount",
     "target_rate": 0.046666666
+   },
+   {
+    "key": "p4",
+    "label": "Priority 4",
+    "title": "Career attainment",
+    "description": "Advancing career attainment through CPL, measured by the Chancellor's Office from EDD wage records.",
+    "share": 0,
+    "factor": 1.0,
+    "metric": "CPL units (FTES) for students who reach a career outcome in EDD wage records, measured by the Chancellor's Office",
+    "metric_src": "ca_u",
+    "unit": "ftes"
    }
   ],
   "2": [
@@ -207,6 +218,17 @@ window.CPL_FUNDING = {
     "metric": "Headcount with CPL Matched in MAP and MIS",
     "unit": "headcount",
     "target_rate": 0.046666666
+   },
+   {
+    "key": "p4",
+    "label": "Priority 4",
+    "title": "Career attainment",
+    "description": "Advancing career attainment through CPL, measured by the Chancellor's Office from EDD wage records.",
+    "share": 0,
+    "factor": 1.0,
+    "metric": "CPL units (FTES) for students who reach a career outcome in EDD wage records, measured by the Chancellor's Office",
+    "metric_src": "ca_u",
+    "unit": "ftes"
    }
   ]
  },

@@ -28,6 +28,7 @@
 //
 // Run from repo root: `npm test` (or `node tests/cpl_funding_lead_with_the_table.test.js`).
 const { check, freshDom, boot, click, finish, footText } = require("./lib/cpl_funding_harness.js");
+const { NPRIO } = require("./lib/cpl_funding_harness.js");
 
 function cssText(doc) {
   return Array.from(doc.querySelectorAll("style")).map((s) => s.textContent).join("\n");
@@ -47,8 +48,12 @@ function storageKeys(window) {
   const ids = secs.map((s) => s.getAttribute("data-sec"));
   check("L1: the introduction opens the tab and the institution table is the very next section",
     ids[0] === "about" && ids[1] === "college");
+  // "ftes-factors" is NESTED: it renders only while a priority is in CPL FTES
+  // (Priority 4 is, in the bake, since 2026-09-22) and always right after the
+  // priorities it prices.
   check("L1: ...and the model's mechanics follow the table, in their standing order",
-    ids.slice(2).join(">") === "window>pools>formula>eligibility>priorities>timing");
+    ids.slice(2).filter((id) => id !== "ftes-factors").join(">") === "window>pools>formula>eligibility>priorities>timing" &&
+    (ids.indexOf("ftes-factors") < 0 || ids.indexOf("ftes-factors") === ids.indexOf("priorities") + 1));
   check("L2: on open, only the introduction and the table are open",
     secs.length >= 8 &&
     secs.every((s) => s.open === (["about", "college"].indexOf(s.getAttribute("data-sec")) >= 0)));
@@ -108,7 +113,7 @@ function storageKeys(window) {
   T.render();
   const cards = Array.from(doc.querySelectorAll(".cplfund-prio .p"));
   check("L4: under front-load no Year-1 card carries the restating 'Combined funding' line",
-    cards.length === 3 && !doc.querySelector(".cplfund-prio .cplfund-fl-line") &&
+    cards.length === NPRIO && !doc.querySelector(".cplfund-prio .cplfund-fl-line") &&
     cards.every((c) => !/Combined funding/.test(c.textContent)));
   check("L4: ...while every figure it restated is still on the card — the window figure on the Current Total line, the target",
     cards.every((c) => /of \$[\d,]+ full-window Total Possible/.test(c.textContent) &&

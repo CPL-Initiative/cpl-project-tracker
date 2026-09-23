@@ -33,6 +33,7 @@
 //
 // Run from repo root: `npm test` (or `node tests/cpl_funding_nc_lane.test.js`).
 const { check, freshDom, boot, D, consumerSrc, finish } = require("./lib/cpl_funding_harness.js");
+const { NPRIO } = require("./lib/cpl_funding_harness.js");
 
 // ── A. the wiring, read out of the source ────────────────────────────────────
 check("A1: ncPriorities() ALWAYS emits a metric_src — there is no unpinned NC path",
@@ -105,15 +106,21 @@ check("A6: the NC lane normalizes by its OWN share sum, never the credit one",
   // The lane's earning rule, on a college that runs a real noncredit program.
   const ps = T._ncPrios("Mt San Antonio", "1");
   check("B1: every NC priority is pinned to a noncredit-lane source",
-    ps.length === 3 && ps.every(function (p) { return /^nc_/.test(p.metric_src) && p.metric_src !== "nc_unmapped"; }));
+    ps.length === NPRIO && ps.every(function (p) { return /^nc_/.test(p.metric_src) && p.metric_src !== "nc_unmapped"; }));
   check("B2: every NC priority reports lane 'nc' and is scored in FTES",
     ps.every(function (p) { return p.lane === "nc" && p.unit === "FTES"; }));
   check("B3: TODAY every NC priority is 'undelivered' — the feed carries no nc_* key",
     ps.every(function (p) { return p.status === "undelivered"; }));
   check("B4: and therefore earns exactly $0 — NOT the full-cap advance an unmeasurable credit metric gets (F1)",
     ps.every(function (p) { return p.earned === 0; }));
+  // A priority at a 0% share (Priority 4, career attainment, until Sam sets
+  // one — 2026-09-22) holds no funding and so sets no target: its $0 is the
+  // share's, not a measure's. Every FUNDED priority keeps both.
+  const funded = function (p) { return p.share > 0; };
   check("B5: but the TARGET and the CAP still stand (Sam: targets and potential shown)",
-    ps.every(function (p) { return p.target > 0 && p.cap > 0; }));
+    ps.filter(funded).length >= 3 && ps.filter(funded).every(function (p) { return p.target > 0 && p.cap > 0; }));
+  check("B5b: a priority at a 0% share holds a $0 cap and a zero target — no funding, nothing to reach",
+    ps.filter(function (p) { return !funded(p); }).every(function (p) { return p.cap === 0 && p.target === 0; }));
 
   // `share` splits the MONEY: the three caps summed across every year slot are
   // the award's whole NONCREDIT SHARE — instSplit(c).nc, the same figure
@@ -153,7 +160,7 @@ check("A6: the NC lane normalizes by its OWN share sum, never the credit one",
   check("B10: an NC priority key can never be read off a credit row — the keys are namespaced",
     ps.every(function (p) { return /^nc_/.test(p.key); }) && cs.every(function (p) { return !/^nc_/.test(p.key); }));
   check("B11: the NC target is the noncredit slice's own, never a copy of the credit target",
-    ps.every(function (p) { const c = cs.find(function (x) { return x.src === p.src; }); return c && Math.abs(c.target - p.target) > 1; }));
+    ps.filter(funded).every(function (p) { const c = cs.find(function (x) { return x.src === p.src; }); return c && Math.abs(c.target - p.target) > 1; }));
 
   // The noncredit-only trio: their WHOLE award is the nc slice, held by
   // origination (N2 b — no advances). This is where the old standalone-feeder
@@ -217,7 +224,7 @@ check("A6: the NC lane normalizes by its OWN share sum, never the credit one",
     ps.every(function (p) { return p.status === "undelivered" && p.earned === 0; }));
   const a = T._alloc("Mt San Antonio");
   check("C2: and the credit slice of the same award IS earning, so C1 is not just an empty artifact",
-    (T._prios("Mt San Antonio", "1") || []).length === 3 && a.earned_total > 0 && (a.earned_nc || 0) === 0);
+    (T._prios("Mt San Antonio", "1") || []).length === NPRIO && a.earned_total > 0 && (a.earned_nc || 0) === 0);
 })();
 
 // ── C'. and the cutover is zero-change: deliver the keys, earning starts ─────
@@ -225,7 +232,10 @@ check("A6: the NC lane normalizes by its OWN share sum, never the credit one",
   const { window } = freshDom();
   window.CPL_FUNDING_PERF = {
     as_of: "2026-08-27", suppress_below: 5,
-    statewide: { pe_u: 90000, pa_u: 80000, p3_u: 70000, nc_pe_u: 500, nc_pa_u: 400, nc_pt_u: 300 },
+    // ca_u / nc_ca_u arrive by the Chancellor's Office import rather than MAP's
+    // feed (career attainment, 2026-09-22); delivered here with the rest, so
+    // C4 tests an institution with NO value of its own on every source.
+    statewide: { pe_u: 90000, pa_u: 80000, p3_u: 70000, ca_u: 20000, nc_pe_u: 500, nc_pa_u: 400, nc_pt_u: 300, nc_ca_u: 100 },
     colleges: { "Mt San Antonio": { pe_u: 9000, pa_u: 8000, p3_u: 7000, nc_pe_u: 60, nc_pa_u: 45, nc_pt_u: 30 } }
   };
   boot(window);
@@ -330,19 +340,21 @@ check("A6: the NC lane normalizes by its OWN share sum, never the credit one",
     funded.length > 30 && T._ncAward("NOCE") > 0);
 
   const ps = T._ncPrios(funded[0], "1");
-  check("F2: three DISTINCT noncredit sources — one per milestone (the bake collapses two onto the transcribed rung; live does not)",
-    new Set(ps.map(function (p) { return p.metric_src; })).size === 3 &&
-    ["nc_pe_u", "nc_pa_u", "nc_pt_u"].every(function (k) { return ps.some(function (p) { return p.metric_src === k; }); }));
+  check("F2: one DISTINCT noncredit source per milestone (the bake collapses two onto the transcribed rung; live does not)",
+    new Set(ps.map(function (p) { return p.metric_src; })).size === NPRIO &&
+    ["nc_pe_u", "nc_pa_u", "nc_pt_u", "nc_ca_u"].every(function (k) { return ps.some(function (p) { return p.metric_src === k; }); }));
   check("F3: each NC priority sits on the SAME milestone as the credit priority it mirrors",
     ps.every(function (p) {
       const c = (T._prios(funded[0], "1") || []).find(function (x) { return x.src === p.src; });
-      const rung = { nc_pe_u: "Eligible", nc_pa_u: "Applied", nc_pt_u: "Transcribed" }[p.metric_src];
+      const rung = { nc_pe_u: "Eligible", nc_pa_u: "Applied", nc_pt_u: "Transcribed", nc_ca_u: "career" }[p.metric_src];
       return c && new RegExp(rung, "i").test(c.metric);
     }));
+  // The live shape sets three priorities at 0.5; Priority 4 carries no live
+  // override yet and inherits the bake's factor, on credit and noncredit alike.
   check("F4: NC inherits the live factor and shares from credit, priority by IDENTITY",
     ps.every(function (p) {
       const c = (T._prios(funded[0], "1") || []).find(function (x) { return x.src === p.src; });
-      return c && c.share === p.share && p.factor === 0.5;
+      return c && c.share === p.share && p.factor === c.factor && (p.src > 2 || p.factor === 0.5);
     }));
   // Front-load: the whole window is on the table in year 1, later years carry
   // nothing. The noncredit slice has to agree with the credit slice about this
@@ -354,8 +366,9 @@ check("A6: the NC lane normalizes by its OWN share sum, never the credit one",
     Math.abs(sum("2")) < 0.01);
   check("F7: EVERY institution with a noncredit share earns exactly $0 today — across the whole roster, not just the sampled one",
     funded.every(function (k) { return (T._ncPrios(k, "1") || []).every(function (p) { return p.status === "undelivered" && p.earned === 0; }); }));
-  check("F8: while every one of them carries a real target and a real cap",
-    funded.every(function (k) { return (T._ncPrios(k, "1") || []).every(function (p) { return p.target > 0 && p.cap > 0; }); }));
+  check("F8: while every FUNDED priority carries a real target and a real cap",
+    funded.every(function (k) { return (T._ncPrios(k, "1") || []).filter(function (p) { return p.share > 0; })
+      .every(function (p) { return p.target > 0 && p.cap > 0; }); }));
 
   // ⭐ THE COUPLING, stated so it is a decision rather than an accident. An NC
   // priority takes its RUNG from how the CREDIT priority resolved, so the two
@@ -368,7 +381,7 @@ check("A6: the NC lane normalizes by its OWN share sum, never the credit one",
   check("F9: un-pinning the CREDIT metric moves its NONCREDIT counterpart too — the lanes share one milestone by design",
     unpinned.find(function (p) { return p.src === 2; }).metric_src === "nc_pt_u");
   check("F10: and that collapses two NC priorities onto one source, which is why the credit pin is load-bearing for BOTH lanes",
-    new Set(unpinned.map(function (p) { return p.metric_src; })).size === 2);
+    new Set(unpinned.map(function (p) { return p.metric_src; })).size === NPRIO - 1);
 })();
 
 finish();
