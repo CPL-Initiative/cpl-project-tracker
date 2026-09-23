@@ -63,6 +63,20 @@ No PR is open.
   his call: Career attainment's factor is the baked 1.0 against his 0.5 ruling, and it carries the six
   transcription strategies from the deleted priority (the carry box was checked).
 
+- ⛔ **THE SQL GUARD HAD A BYPASS, AND IT HAD STALLED RULE 8 FOR THREE DAYS (fixed with this line).**
+  `scripts/supabase_sql_guard.py` stripped literals before comments in separate regex passes, so an apostrophe in
+  a `--` comment opened a phantom string: `select 1; -- the curator's list` + a newline + `delete from
+  kb_curation ...; -- end'` came back **allow**, and an `E'it\'s'` escape did the same. Separately, the `do` of
+  `ON CONFLICT (slug) DO NOTHING` matched the DO-block verb, so every memory receipt written the documented
+  INSERT-only way was refused while a bare insert passed. **None of the 20 staged rows from S281, S283 and S284
+  ever reached `cpl_memory`** (checked live 20:00 UTC). The guard now reads comments and literals in one pass as
+  Postgres does, asks on anything unterminated, and reads `ON CONFLICT ... DO NOTHING` as a clause
+  (`tests/supabase_sql_guard_test.py`, 47 cases, 8 failing on the old guard).
+- **Evening sheet** for Sam's two remaining calls: https://claude.ai/artifact/BXnZNKBGCYMnhUh6xefBqz (store
+  `replies`, empty at publish; builder `kb/_build_evening_asks_sheet.py`). Item 1: Career attainment's six carried
+  transcription strategies (proposed: move them to Completion, whose measure is transcribed CPL). Item 2: the
+  Max award column (proposed: keep).
+
 ## SAM'S WORDS THIS RUN
 
 - ⭐ *"I want to put the 33% into Career Attainment"* — delete Completion with Transcription, its 33% to Career
@@ -90,14 +104,20 @@ No PR is open.
 
 ## THE NEXT CONCRETE STEP
 
-1. **Sam's two open edits in published Scenario 1, through the tab** (never SQL): Career attainment's factor to 0.5
-   (his sheet ruling; it moves no award until the first EDD import, because `ca_u` counts $0 until then, and it
-   sets the rate per CPL FTES and so the target), and whether it keeps the six transcription strategies. His method
-   note (CPL FTES per student record with a career improvement, from CO analysis) shapes the career import.
-2. **Grants verification** after the 2026-09-24 13:40 UTC promotion: the `map_data_loads` promote row and
+1. **Read the evening sheet's `replies` first** (link above), then act: item 1 is Sam's tab edit either way, item 2
+   is code only if he chooses the pair. His standing edit, no call needed: **Career attainment's factor to 0.5**
+   in published Scenario 1 (it moves no award until the first EDD import, because `ca_u` counts $0 until then,
+   and it sets the rate per CPL FTES and so the target). His method note (CPL FTES per student record with a
+   career improvement, from CO analysis) shapes the career import.
+2. **The memory rows, now that the guard lets them through.** Write `kb/receipts/cpl_memory_2026-09-23_s284.sql`
+   (8 rows, current at 19:44 UTC) if S284 has not. The three older receipts (`..._2026-09-21_s281.sql`,
+   `..._2026-09-22_s283.sql`, `..._2026-09-23_s283.sql`, 15 rows) were written against earlier states: read each
+   row against today before writing it. S283's `priority-4-career-attainment-zero-share-ca-u` is already false,
+   since Scenario 1 funds Career attainment at 33%.
+3. **Grants verification** after the 2026-09-24 13:40 UTC promotion: the `map_data_loads` promote row and
    `has_table_privilege` for anon, authenticated and service_role on the five tables (a check-in fires at 14:30Z).
    Detail: [`lanes/map-custom-reports`](reference/lanes/map-custom-reports.md) NEXT ⓪.
-3. Carryover: the Max award column (unruled, past the mark twice); the ESL merging decision sheet; the college
+4. Carryover: the ESL merging decision sheet; the college
    briefing's funding box vocabulary (*earned*, *drawable*, *the dollars*); ask Sam to retry Designate on the (D)
    card; the funding tab's pre-existing a11y findings (four small targets, one prose line at 390px).
 

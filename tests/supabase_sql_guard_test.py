@@ -79,6 +79,22 @@ CASES = [
      "update cpl_memory set a=1; delete from cpl_memory;", "deny"),
     ("the carve-out is cpl_memory ALONE, not any table",
      "insert into kb_curation (k) values ('x');", "deny"),
+    # ON CONFLICT DO NOTHING is the idempotent INSERT-only form Rule 10 asks for,
+    # and read "deny" until 2026-09-23: its `do` looked like a DO block, so every
+    # checkpoint receipt written the documented way was refused while a bare
+    # insert passed. DO UPDATE overwrites a row that may carry a human's verdict.
+    ("cpl_memory insert, ON CONFLICT (slug) DO NOTHING",
+     "insert into cpl_memory (slug) values ('x') on conflict (slug) do nothing;", "allow"),
+    ("ON CONFLICT DO UPDATE on cpl_memory keeps the deny",
+     "insert into cpl_memory (slug) values ('x') on conflict (slug) "
+     "do update set summary = excluded.summary;", "deny"),
+    ("DO NOTHING opens nothing on another table",
+     "insert into kb_curation (k) values ('x') on conflict (k) do nothing;", "deny"),
+    ("a memory receipt whose header comment says the repo's",
+     "-- STAGED: the repo's guard refused it\n"
+     "-- Rollback: delete from cpl_memory where verified_by like '%S284%';\n"
+     "insert into cpl_memory (slug, summary) values ('x', 'Sam''s ruling') "
+     "on conflict (slug) do nothing;", "allow"),
 
     # ── writes: every one of these must be denied ────────────────────────────
     ("update", "update cobi_nav set audience='everyone' where key='admin';", "deny"),
@@ -99,6 +115,25 @@ CASES = [
     ("write inside a dollar-quoted body",
      "create function f() returns void as $body$ delete from t; $body$ "
      "language sql;", "deny"),
+
+    # ── a quote in a comment is not a literal, and a literal is read whole ───
+    # Measured 2026-09-23: the first case came back "allow". The guard stripped
+    # literals before comments, so the apostrophe opened a string that ran to
+    # the last quote and swallowed the delete between them.
+    ("an apostrophe in a comment cannot hide a delete",
+     "select 1; -- the curator's list\ndelete from kb_curation where true; -- end'", "deny"),
+    ("an apostrophe in a comment cannot hide an update",
+     "-- don't worry\nupdate kb_curation set status = 'x' where id = 1; -- '", "deny"),
+    ("an E-string escape cannot shift the reading",
+     "select E'it\\'s'; delete from kb_curation where id = 5; select '''';", "deny"),
+    ("a block comment ends no later than Postgres's does",
+     "/* a /* b */ delete from kb_curation; */ select 1;", "deny"),
+    ("a $$ inside a tagged dollar body is text",
+     "select $a$ x $$ delete from kb_curation; $$ y $a$;", "allow"),
+    ("a positional parameter is not a dollar quote",
+     "select * from cpl_memory where slug = $1 and status = $2;", "allow"),
+    ("an unterminated string asks", "select 'abc from cobi_nav;", "ask"),
+    ("an unterminated block comment asks", "select 1 /* never closed", "ask"),
 
     # ── ambiguous: must fall through to the prompt, never to allow ───────────
     ("select into materializes a table",

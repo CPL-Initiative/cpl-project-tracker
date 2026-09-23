@@ -4,9 +4,9 @@
   "supabase_tables": 85,
   "rpcs": 31,
   "edge_functions": 5,
-  "file_datasets": 513,
+  "file_datasets": 514,
   "external_services": 145,
-  "consumers": 360,
+  "consumers": 361,
   "workflows": 35,
   "data_js_files": 61,
   "tabs": 37
@@ -5347,6 +5347,26 @@
      "direction": "write",
      "how": "literal",
      "line": 54
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:docs/visuals/<date>-evening-asks.html": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_evening_asks_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 27
+    },
+    {
+     "id": "script:kb/_build_evening_asks_sheet.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 27
     }
    ],
    "served": false,
