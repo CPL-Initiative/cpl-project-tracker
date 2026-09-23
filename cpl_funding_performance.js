@@ -17,8 +17,8 @@ window.CPL_FUNDING_PERF = {
   "ppe": 116,
   "pac": 2856,
   "ptc": 2486,
-  "pe_u": 1421069.2,
-  "pa_u": 221904.4,
+  "pe_u": 1421070.2,
+  "pa_u": 222133.4,
   "ppa_u": 660.5,
   "ppe_u": 6771.5,
   "pac_u": 25037.2,
@@ -309,9 +309,9 @@ window.CPL_FUNDING_PERF = {
   },
   "Chaffey": {
    "pe": 1521,
-   "pe_u": 32956.5,
+   "pe_u": 32957.5,
    "pa": 1517,
-   "pa_u": 18618.5,
+   "pa_u": 18847.5,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 6.0,
@@ -3974,13 +3974,13 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1421025.2,
-   "pa_u": 221904.4,
+   "pe_u": 1421026.2,
+   "pa_u": 222133.4,
    "p3_u": 73521.2
   },
   "map": {
-   "pe_u": 1427796.7,
-   "pa_u": 222564.9,
+   "pe_u": 1427797.7,
+   "pa_u": 222793.9,
    "p3_u": 73584.7
   },
   "ratio": {
