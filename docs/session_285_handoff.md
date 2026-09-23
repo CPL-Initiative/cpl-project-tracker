@@ -80,14 +80,23 @@ No PR is open.
   null`), so under `decision_sheets` none of the three was a ruling. S284 asked in the Complete thread for a
   direct yes before touching the guard, and **Sam answered in session about 21:15 UTC: *"i accepted your 3
   recs"***. Verdicts under SHEET VERDICTS below.
-- ✅ **S284's eight memory rows are WRITTEN (20:56 UTC, `proposed`, author `SkyWage-s284`), and ⛔ THEIR LOG IS
-  NOT.** The first send failed on `cpl_memory_summary_check` (summary is one sentence, 1–400 chars); the receipt
+- ✅ **S284's eight memory rows are WRITTEN (20:56 UTC, `proposed`, author `SkyWage-s284`) AND LOGGED (21:57 UTC,
+  `creates = 1` for all eight).** The first send failed on `cpl_memory_summary_check` (summary is one sentence, 1–400 chars); the receipt
   now puts the long text in `detail`. The playbook's step 6 log insert is denied by the guard, whose carve-out
   names `cpl_memory` alone. S280 logged through `apply_migration` on 09-20 (its log note says so), which S281
   ruled out. S284 wrote an INSERT-only carve-out for the log with six tests; the auto-mode classifier refused it
   as `[Self-Modification]`, the human gate, and S284 reverted it. **Sam said yes (item 3)**, the change went back
-  in with its tests (53 cases, 2 failing on the old guard), and S284 runs the idempotent insert at the foot of
-  `kb/receipts/cpl_memory_2026-09-23_s284.sql` once it merges.
+  in with its tests (53 cases, 2 failing on the old guard) as #1671, and S284 ran the idempotent insert at the foot
+  of `kb/receipts/cpl_memory_2026-09-23_s284.sql` after the merge.
+- ⛔ **A WINDOW HOLDING AN OLDER COPY ERASED THE PUBLISHED MARKER (21:30 UTC).** Sam set Career attainment's factor
+  to 0.5 and changed P2's measure text (outcome B). The same save wrote the config back without
+  `projects.cpl-implementation.published`, which read "Scenario 1" at 21:15. No current code path drops it, and the
+  tab reads the config once at load and PATCHes it whole. So the save came from a window that loaded before the
+  19:44 Publish. Colleges still see Scenario 1, because an unset marker falls back to it. The fix names the version
+  a window read on every save: an older window loads the newer row and asks for the change again, and one window
+  sends one save at a time. Guard `tests/cpl_funding_save_over_newer.test.js` (15 checks; 12 fail on the old
+  code); note [`methodology-a-window-saves-only-over-the-version-it-read`](kb-notes/methodology-a-window-saves-only-over-the-version-it-read.md).
+  **Sam re-presses Publish on Scenario 1.**
 
 ## SAM'S WORDS THIS RUN
 
@@ -120,13 +129,11 @@ carry touched Year 1 only; Year 2 has no Career attainment row). ② **keep** th
 
 ## THE NEXT CONCRETE STEP
 
-1. **Sam's two tab edits in published Scenario 1, Year 1**, then read the config to confirm they landed: the six
-   strategies moved to Completion (evening sheet ①, accepted), and his standing edit, no call needed: **Career attainment's factor to 0.5**
-   in published Scenario 1 (it moves no award until the first EDD import, because `ca_u` counts $0 until then,
-   and it sets the rate per CPL FTES and so the target). His method note (CPL FTES per student record with a
-   career improvement, from CO analysis) shapes the career import.
-2. **The memory log.** Run the verify query at the foot of the S284 receipt: all eight read `creates = 1` once
-   S284 has logged them; if any reads 0, run the insert beside it. The three older receipts (`..._2026-09-21_s281.sql`,
+1. **Sam's two tab edits, then read the config to confirm them:** re-press **Publish** on Scenario 1
+   (`projects.cpl-implementation.published` must read "Scenario 1"), and move the six strategies to Completion in
+   Year 1 (evening sheet ①, accepted). ✅ Factor 0.5 on Career attainment landed at 21:30. His method note (CPL
+   FTES per student record with a career improvement, from CO analysis) shapes the career import.
+2. **The three older memory receipts.** S284's rows are written and logged. The three older receipts (`..._2026-09-21_s281.sql`,
    `..._2026-09-22_s283.sql`, `..._2026-09-23_s283.sql`, 15 rows) were written against earlier states: read each
    row against today before writing it, and each needs its log the same way. S283's
    `priority-4-career-attainment-zero-share-ca-u` is already false, since Scenario 1 funds Career attainment at 33%.

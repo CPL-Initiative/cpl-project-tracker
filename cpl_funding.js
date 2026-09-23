@@ -1135,6 +1135,7 @@
 
   var SUPA_CONFIG = { projects: {} };   // the whole shared blob (Supabase-persisted)
   var CONFIG_SAVED = { projects: {} };  // last server-confirmed copy (rollback)
+  var CONFIG_AT = "";                   // the row's updated_at as this window last read or wrote it
   var WHATIF = {};                      // per-browser what-if overlays (localStorage)
   var activeProject = DEFAULT_PID;
   var activeScenario = "Scenario 1";
@@ -3487,21 +3488,27 @@
   function remoteEnabled() {
     return !window.CPL_FUNDING_NO_REMOTE && typeof fetch === "function";
   }
-  function loadShared() {
-    if (!remoteEnabled()) { remoteLoaded = true; return; }
-    fetch(CONFIG_URL + "?id=eq.default&select=config", {
+  function fetchConfigRow() {
+    return fetch(CONFIG_URL + "?id=eq.default&select=config,updated_at", {
       headers: { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON }
     }).then(function (r) { return r.ok ? r.json() : []; })
-      .then(function (rows) {
-        var cfg = rows && rows[0] && rows[0].config;
-        SUPA_CONFIG = normalizeConfig(cfg);
-        CONFIG_SAVED = clone(SUPA_CONFIG);
-        syncActive();
-        remoteLoaded = true;
-        render();
-      }).catch(function () { remoteLoaded = true; /* keep the default config */ });
+      .then(function (rows) { return (rows && rows[0]) || null; });
   }
-  var savingState = "";      // "", "saving", "saved", "err"
+  function adoptConfigRow(row) {
+    SUPA_CONFIG = normalizeConfig(row && row.config);
+    CONFIG_SAVED = clone(SUPA_CONFIG);
+    CONFIG_AT = (row && row.updated_at) || "";
+    syncActive();
+  }
+  function loadShared() {
+    if (!remoteEnabled()) { remoteLoaded = true; return; }
+    fetchConfigRow().then(function (row) {
+      adoptConfigRow(row);
+      remoteLoaded = true;
+      render();
+    }).catch(function () { remoteLoaded = true; /* keep the default config */ });
+  }
+  var savingState = "";      // "", "saving", "saved", "err", "stale" (a newer row; see saveShared)
   var pendingPromotion = false;  // a local what-if is being promoted into SHARED on unlock
   // Does this browser hold edits that exist NOWHERE ELSE? (2026-08-28.)
   // Everything made while locked lands in SCENARIO, and SCENARIO WINS THE
@@ -3567,13 +3574,43 @@
     if (!r.ok) return Promise.resolve({ ok: false, status: r.status });
     return r.json().then(function (rows) {
       var wrote = !Array.isArray(rows) || rows.length > 0;
-      return { ok: wrote, status: wrote ? r.status : 403 };
+      var at = Array.isArray(rows) && rows[0] && rows[0].updated_at;
+      return { ok: wrote, status: wrote ? r.status : 403, at: at || "" };
     }).catch(function () {
       // No JSON body (a 204, or return=minimal) — nothing to count; trust r.ok.
       return { ok: true, status: r.status };
     });
   }
 
+  // ⚠️ A WINDOW SAVES ONLY OVER THE VERSION IT READ (Sam, 2026-09-23). The save
+  // writes the WHOLE config, and a window reads it once, at load. So a second
+  // window opened before a change and saved after it put its older copy back:
+  // Sam's 21:30 edit in one window removed the published scenario he had set at
+  // 19:44 in another, and neither screen said so. The PATCH names the
+  // updated_at this window last read or wrote. A newer row matches nothing, and
+  // the window loads the newer version and asks for the change again.
+  //
+  // One save at a time, for the same reason: two PATCHes in flight can land in
+  // either order, and the older state landing last is the same silent loss. A
+  // save asked for mid-flight waits, then sends the latest state, which holds
+  // every edit so far.
+  var saveBusy = false, saveAgain = false;
+  function saveSettled() {
+    saveBusy = false;
+    if (saveAgain) { saveAgain = false; saveShared(); return; }
+    render();
+  }
+  function saveRefused() {
+    // RLS/auth failure — roll back the WHOLE config, KEEP the what-if
+    // (nothing lost) and surface it. ⚠️ Deliberately does NOT delete the
+    // session: a 403 can mean "not on the roster", and dropping a live
+    // credential on a refusal is how a curator silently loses their work.
+    SUPA_CONFIG = clone(CONFIG_SAVED); syncActive();
+    pendingPromotion = false;
+    savingState = "err";
+    saveAgain = false;
+    saveSettled();
+  }
   function saveShared() {
     if (!remoteEnabled()) {
       // Offline / tests behave like a successful save.
@@ -3583,32 +3620,40 @@
       return;
     }
     savingState = "saving";
+    if (saveBusy) { saveAgain = true; render(); return; }
+    saveBusy = true;
     render();
     var headers = {
       apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON,
       "Content-Type": "application/json", Prefer: "return=representation"
     };
     applyWriteAuth(headers);
-    fetch(CONFIG_URL + "?id=eq.default", {
+    var readAt = CONFIG_AT;
+    fetch(CONFIG_URL + "?id=eq.default" + (readAt ? "&updated_at=eq." + encodeURIComponent(readAt) : ""), {
       method: "PATCH", headers: headers,
       body: JSON.stringify({ config: SUPA_CONFIG, updated_by: curatorEmail() })
     }).then(writeResult)
       .then(function (res) {
-        if (res.ok) { clearPromotedScenario(); CONFIG_SAVED = clone(SUPA_CONFIG); savingState = "saved"; render(); return; }
-        // RLS/auth failure — roll back the WHOLE config, KEEP the what-if
-        // (nothing lost) and surface it. ⚠️ Deliberately does NOT delete the
-        // session: a 403 can mean "not on the roster", and dropping a live
-        // credential on a refusal is how a curator silently loses their work.
-        SUPA_CONFIG = clone(CONFIG_SAVED); syncActive();
-        pendingPromotion = false;
-        savingState = "err";
-        render();
-      }).catch(function () {
-        SUPA_CONFIG = clone(CONFIG_SAVED); syncActive();
-        pendingPromotion = false;
-        savingState = "err";
-        render();
-      });
+        if (res.ok) {
+          // An unknown new version clears the stamp: the next save goes
+          // unchecked, which beats refusing it for a change this window made.
+          CONFIG_AT = res.at || "";
+          clearPromotedScenario(); CONFIG_SAVED = clone(SUPA_CONFIG); savingState = "saved";
+          saveSettled();
+          return;
+        }
+        // Nothing written. RLS and a newer row both answer 200 with no rows,
+        // so only the row itself tells a refused credential from a stale copy.
+        if (!readAt || res.status !== 403) { saveRefused(); return; }
+        return fetchConfigRow().then(function (row) {
+          if (!row || !row.updated_at || row.updated_at === readAt) { saveRefused(); return; }
+          adoptConfigRow(row);
+          pendingPromotion = false;
+          savingState = "stale";
+          saveAgain = false;
+          saveSettled();
+        });
+      }).catch(saveRefused);
   }
 
   // ── baseline eligibility (badges only — dollars unchanged) ────────────
@@ -4683,8 +4728,10 @@
     var saveLine = "";
     if (savingState) {
       saveLine = unlocked()
-        ? '<span class="cplfund-saving' + (savingState === "err" ? " err" : "") + '">' +
+        ? '<span class="cplfund-saving' + (savingState === "err" || savingState === "stale" ? " err" : "") + '">' +
           (savingState === "saving" ? "saving…" : savingState === "saved" ? "saved" :
+            savingState === "stale" ? "not saved: another window saved a newer version, which this page now " +
+              "shows; make your change again" :
             "could not save; your sign-in may have expired") + "</span>"
         // Never a bare "saved" here: it is true and it is what the reader
         // would misread. The destination is the whole message.

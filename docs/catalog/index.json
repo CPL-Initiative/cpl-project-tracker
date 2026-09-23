@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 490,
+   "count": 491,
    "docs": [
     {
      "created": "2026-08-14",
@@ -3904,6 +3904,24 @@
      "title": "A view swap that does not move the hash strands the user",
      "type": "methodology",
      "updated": "2026-09-06"
+    },
+    {
+     "created": "2026-09-23",
+     "governs": [
+      "cpl_funding.js",
+      "tests/cpl_funding_save_over_newer.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-window-saves-only-over-the-version-it-read.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "supabase",
+      "concurrency",
+      "implementation-funding"
+     ],
+     "title": "A window saves only over the version it read",
+     "type": "methodology",
+     "updated": "2026-09-23"
     },
     {
      "created": "2026-08-25",
@@ -18490,5 +18508,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 961
+ "total": 962
 }

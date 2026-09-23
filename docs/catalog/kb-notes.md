@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-490 document(s).
+491 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -216,6 +216,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A value can exist in the repo and never reach the payload — two minting paths, one inference pipeline](../kb-notes/methodology-a-discipline-can-exist-in-the-repo-and-never-reach-the-payload.md) | methodology | published | 2026-09-08 | 2026-09-08 |
 | [A view must not fly where it cannot draw](../kb-notes/methodology-a-view-must-not-fly-where-it-cannot-draw.md) | methodology | published | 2026-08-25 | 2026-08-25 |
 | [A view swap that does not move the hash strands the user](../kb-notes/methodology-a-view-swap-that-does-not-move-the-hash-strands-the-user.md) | methodology | published | 2026-09-06 | 2026-09-06 |
+| [A window saves only over the version it read](../kb-notes/methodology-a-window-saves-only-over-the-version-it-read.md) | methodology | published | 2026-09-23 | 2026-09-23 |
 | [A word in a request may have no referent yet](../kb-notes/methodology-a-word-in-a-request-may-have-no-referent-yet.md) | methodology | published | 2026-08-25 | 2026-08-25 |
 | [A write key must name exactly one thing, and you have to check](../kb-notes/methodology-a-write-key-must-name-exactly-one-thing.md) | methodology | published | 2026-08-25 | 2026-08-25 |
 | [A written backlog decays silently — measure it instead](../kb-notes/methodology-a-written-backlog-decays-silently.md) | methodology | published | 2026-08-09 | 2026-08-09 |
