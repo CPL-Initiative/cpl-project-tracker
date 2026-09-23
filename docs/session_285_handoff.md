@@ -39,6 +39,18 @@ a DRAFT under watch; this checkpoint was taken at the context warning line.
   `grant select … to anon; grant select, insert, update, delete … to authenticated, service_role;` as the table's
   RLS intends. ⚠️ Grant only what RLS already gates, and honor Rule 10 (b2).
 
+## SHEET VERDICTS (Sam, 2026-09-23 14:50Z, reviewed through item 3)
+
+1. **build** the combined measure — *"We have the transcribed CPL in the dataset as well as the counselor step
+   boolean indicator, so combining them should work"*. New rung `tcr > 0 and accepted` in the builder + a
+   `METRIC_SOURCES` entry (milestone `transcribed`, serves (B)); then P2 picks it.
+2. **publish** — *"Set P3 to 33% and .5 and I think we'll calculate the CPL FTES for each student record that
+   demonstrates a career attainment improvement based on CO analysis ported to you."* Career attainment 33%,
+   factor 0.5, Scenario 3 published: curator edits through the tab once #1664 is live (never SQL). His method
+   note reshapes the import: CPL FTES per student record with an improvement, from CO analysis.
+3. **parity** — keep NC at its FTES share. 4. **Not reached** (after the mark): the Max award column stays as
+   shipped, UNRULED.
+
 ## THE NEXT CONCRETE STEP
 
 1. **Get #1664 green and merge it** (auto-merge doctrine: `test` must succeed on the head). 13 suites were
