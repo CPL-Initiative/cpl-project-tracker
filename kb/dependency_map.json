@@ -4,9 +4,9 @@
   "supabase_tables": 85,
   "rpcs": 31,
   "edge_functions": 5,
-  "file_datasets": 512,
+  "file_datasets": 513,
   "external_services": 145,
-  "consumers": 359,
+  "consumers": 360,
   "workflows": 35,
   "data_js_files": 61,
   "tabs": 37
@@ -5387,6 +5387,26 @@
      "direction": "write",
      "how": "literal",
      "line": 40
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:docs/visuals/<date>-grants-and-max-award.html": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_grants_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 28
+    },
+    {
+     "id": "script:kb/_build_grants_decision_sheet.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 28
     }
    ],
    "served": false,
