@@ -10244,7 +10244,50 @@
     return sectionOrder().map(function (id) { return SEC[id] || ""; }).join("");
   }
 
+  // ── A REDRAW WAITS FOR THE PRESS IN PROGRESS (Sam, 2026-09-23) ────────────
+  // "I tried to delete the P3 to assign P3 to Career Attainment but the Delete
+  // button doesn't fire." He had just typed a share. Pressing Delete moved focus
+  // off that field, the field committed on the way out (a `change`, and a save),
+  // and the commit redrew the tab while the mouse button was still down. The
+  // release landed on a NEW Delete button, and a browser sends `click` only to
+  // the element the press began on, so the handler never ran: the share saved
+  // and the Delete did nothing. Every button on the tab sat one keystroke from
+  // the same trap. So while a press that began inside the mount is open,
+  // render() notes that it was asked and returns; the release lets the click
+  // run first, then redraws unless the click's own handler already did.
+  //
+  // A <select> is left out: its native list takes the release, so a press on
+  // one would hold every redraw until the fallback below, the redraw that
+  // paints the option just chosen included.
+  var PRESS_HOLD_MS = 1500;   // the fallback, for a release the page never sees
+  var press = { open: false, held: false, timer: null };
+  function pressEnd() {
+    if (!press.open) return;
+    press.open = false;
+    clearTimeout(press.timer);
+    // Runs after this release's click: a click handler that rendered cleared
+    // `held`, and then there is nothing left to draw.
+    setTimeout(function () { if (press.held) render(); }, 0);
+  }
+  function watchPresses() {
+    if (watchPresses.on) return;
+    watchPresses.on = true;
+    document.addEventListener("pointerdown", function (e) {
+      var mount = document.getElementById("cplFundingMount");
+      var t = e.target;
+      if (e.button !== 0 || !mount || !t || !t.closest || !mount.contains(t) || t.closest("select")) return;
+      press.open = true;
+      clearTimeout(press.timer);
+      press.timer = setTimeout(pressEnd, PRESS_HOLD_MS);
+    }, true);
+    ["pointerup", "pointercancel", "dragstart"].forEach(function (type) {
+      document.addEventListener(type, pressEnd, true);
+    });
+  }
+
   function render() {
+    if (press.open) { press.held = true; return; }
+    press.held = false;
     notifyModel();
     var mount = document.getElementById("cplFundingMount");
     if (!mount) return;
@@ -11552,6 +11595,7 @@
     // registered ONCE here, behind the booted guard, so re-boots never stack
     // listeners.
     try { window.addEventListener("resize", pinFrozenRows); } catch (e) {}
+    watchPresses();
     loadScenario();
     if (window.CPL_FUNDING) applyCollegeDeepLink();
     function loadRemotes() { loadShared(); loadPerf(); loadEss(); loadEligibility(); loadNotes(); loadLedger(); }
