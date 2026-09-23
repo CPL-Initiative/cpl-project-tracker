@@ -13,8 +13,9 @@ four outcomes, found that a new scenario never reached the public page, and trac
 label on the wrong figure. [#1664](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1664) merged
 (e8b3582); the grants follow-up [#1665](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1665) (b5719bb)
 and the fixture fix [#1666](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1666) (dd63838) merged after
-it, and the Delete fix [#1667](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1667) (07d1c36) after
-those. The Delete confirmation rework below is the one PR still open.
+it, then the Delete fix [#1667](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1667) (07d1c36) and
+the Delete confirmation rework [#1668](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1668) (cc04ae7).
+No PR is open.
 
 ## ✅ WHAT SHIPPED (in #1664, merged e8b3582)
 
@@ -53,13 +54,14 @@ those. The Delete confirmation rework below is the one PR still open.
   confirmation opened inside the full card and read as a half-deleted one, and his browser was on **Scenario 1**
   while Scenario 3 is published. While Delete asks now, the card is only the question; the question names the
   published scenario when he is in another; focus moves into it and back on Keep it
-  (`tests/cpl_funding_delete_confirm.test.js`, 5 of 11 fail without it). Scenario 1 also measures Completion with
-  Transcription from `ptc_u`, the same measure as Completion; told Sam, his call.
-- ⛔ **Scenario 3 is published and its shares sum to 133%** (config saved 17:42:36 UTC): P1 Access 33 · P2
-  Completion `ptc_u` 34 · P3 Career attainment 33 (factor still the baked 1.0) · P4 Completion with Transcription
-  33. An award is W × Σshares, so the 115 maximum awards total **$32,927,660 against $24,757,639** on the public
-  explainer and the college briefing until Sam's Delete lands. Given to him in session: Career attainment to 0 and
-  Enter, Delete P4 into Career attainment (clear the six transcription strategies unless wanted), factor 0.5.
+  (`tests/cpl_funding_delete_confirm.test.js`, 5 of 11 fail without it). Merged in #1668. Scenario 1 also
+  measures Completion with Transcription from `ptc_u`, the same measure as Completion; told Sam, his call.
+- ✅ **Published and at 100% (Sam, 19:44 UTC: *"Deleted on Scenario 1 and published"*).** He deleted Completion
+  with Transcription in **Scenario 1**, its 33% into Career attainment, and published Scenario 1: Access `ppa_u` 33
+  · Completion `ptc_u` 34 · Career attainment 33. Measured through the model, the 115 maximum awards total the
+  $24,757,639 allocation (at 133% they had totaled $32,927,660). Scenario 3 still sums to 133%, unpublished. Open,
+  his call: Career attainment's factor is the baked 1.0 against his 0.5 ruling, and it carries the six
+  transcription strategies from the deleted priority (the carry box was checked).
 
 ## SAM'S WORDS THIS RUN
 
@@ -80,23 +82,22 @@ those. The Delete confirmation rework below is the one PR still open.
    the Counselor step checked" on P2's card after the first daily run.
 2. **publish** — *"Set P3 to 33% and .5 and I think we'll calculate the CPL FTES for each student record that
    demonstrates a career attainment improvement based on CO analysis ported to you."* Career attainment 33%,
-   factor 0.5, Scenario 3 published: curator edits through the tab once #1664 is live (never SQL). His method
-   note reshapes the import: CPL FTES per student record with an improvement, from CO analysis.
+   factor 0.5, Scenario 3 published: curator edits through the tab once #1664 is live (never SQL). ✅ Done in
+   Scenario 1, which he published (19:44 UTC); the factor 0.5 is still open. His method note reshapes the import:
+   CPL FTES per student record with an improvement, from CO analysis.
 3. **parity** — keep NC at its FTES share. 4. **Not reached** (after the mark): the Max award column stays as
    shipped, UNRULED.
 
 ## THE NEXT CONCRETE STEP
 
-1. **Merge the Delete confirmation rework once `test` succeeds on its head** (auto-merge doctrine), squash. Then
-   re-read the config: Scenario 3's shares at 100% means Sam's Delete landed.
-2. **Sam's Scenario 3 edits, through the tab** (never SQL): Delete Completion with Transcription into Career
-   attainment so the shares return to 100%, and Career attainment's factor to 0.5 (his sheet ruling). Re-read the
-   config afterward and confirm Σshares = 100% and the maximum awards total the allocation. His method note (CPL
-   FTES per student record with a career improvement, from CO analysis) shapes the career import.
-3. **Grants verification** after the 2026-09-24 13:40 UTC promotion: the `map_data_loads` promote row and
+1. **Sam's two open edits in published Scenario 1, through the tab** (never SQL): Career attainment's factor to 0.5
+   (his sheet ruling; it moves no award until the first EDD import, because `ca_u` counts $0 until then, and it
+   sets the rate per CPL FTES and so the target), and whether it keeps the six transcription strategies. His method
+   note (CPL FTES per student record with a career improvement, from CO analysis) shapes the career import.
+2. **Grants verification** after the 2026-09-24 13:40 UTC promotion: the `map_data_loads` promote row and
    `has_table_privilege` for anon, authenticated and service_role on the five tables (a check-in fires at 14:30Z).
    Detail: [`lanes/map-custom-reports`](reference/lanes/map-custom-reports.md) NEXT ⓪.
-4. Carryover: the Max award column (unruled, past the mark twice); the ESL merging decision sheet; the college
+3. Carryover: the Max award column (unruled, past the mark twice); the ESL merging decision sheet; the college
    briefing's funding box vocabulary (*earned*, *drawable*, *the dollars*); ask Sam to retry Designate on the (D)
    card; the funding tab's pre-existing a11y findings (four small targets, one prose line at 390px).
 
