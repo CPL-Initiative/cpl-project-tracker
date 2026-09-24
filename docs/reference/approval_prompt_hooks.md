@@ -221,16 +221,18 @@ unattended. **Test it before relying on it.**
 
 ## Still open
 
-- ⚠️ **ONE LEVER THIS RECORD NEVER TRIED (S285, 2026-09-24): the connector's OWN per-tool permission.** Sam, with two
-  prompts arriving while he typed the note: *"I'm still getting a swarm of sql approves--been happening the last 10
-  days--very frustrating."* The platform's documentation page for a connector tool that asks or is turned off says the
-  person opens https://claude.ai/customize/connectors, opens the connector (Supabase), and sets that tool to allowed
-  under its tool permissions; an organization admin may have capped it, in which case allowing is not offered. That is
-  a per-tool control on the connector itself, distinct from the org-level *requires approval* the 2026-09-20 measurement
-  ruled out by the prompt's wording. Sam checks it once; the outcome decides whether section 15 of the team guide (*no
-  setting on our side changes that*) stands or is retired. Until then the session-side mitigation is fewer calls: one
-  statement per purpose, reads folded together, the memory write and its log in one call as two statements (the log
-  insert sees the rows the first statement wrote; only a data-modifying CTE cannot).
+- ⛔ **SAM'S RULING, 2026-09-24: DO NOT WORK ON THE SWARM.** Verbatim: *"Don't try and solve the swarm problem—I wasted
+  2 days of fable use and not changes helped. Look at the handoff prompt text for the solution that was supposed to
+  solve it. Probably had a dozen or more approve requests this session so far."* The handoff's opening line
+  (`check_hooks_live.py --fix`, paste the LIVE line) IS the solution, and it held that session: 33 rules, the
+  `execute_sql` rule present, and the LIVE line's own caveat that this one tool still asks once per call. The dozen
+  prompts were that session's twelve `execute_sql` calls plus one `list_projects`. **The session-side discipline is
+  therefore the whole remaining fix: one statement per purpose, reads folded together, a memory write with its log and
+  its verify as three statements in ONE call (the log insert sees the rows the first statement wrote; only a
+  data-modifying CTE cannot).** Budget a session's SQL in prompts before the first call.
+- Recorded, NOT to be pursued unless Sam asks: the platform's page for a connector tool that asks names a control this
+  record never tried, the connector's per-tool permission at claude.ai/customize/connectors (an organization admin may
+  cap it). It sits here so no session re-derives it; it is his call whether to ever look.
 - **`permissions.allow` is kept in the repo settings with a comment saying it
   does not work**, rather than deleted, so the next session does not re-add it
   expecting a different result.

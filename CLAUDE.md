@@ -37,7 +37,8 @@ Deep reference offloaded: `docs/reference/` — pipeline_reference ·
 kb_build_status · mid_lifecycle · troubleshooting · obsidian_vault_wiring ·
 finished_workstreams · skyview_invariants · live_session_banner ·
 [approval_prompt_hooks](docs/reference/approval_prompt_hooks.md) (the
-Allow-Once storm) · `lanes/` (stubs below).
+Allow-Once storm; ⛔ Sam, 2026-09-24: **do not work on it** — budget SQL in
+prompts and fold statements into as few `execute_sql` calls as possible) · `lanes/` (stubs below).
 
 **Skills** (`.claude/skills/`) are pull-side too, fired by their own
 `description` rather than by a pointer: **consult-doctrine** (what this repo has
