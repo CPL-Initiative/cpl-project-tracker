@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-257 document(s).
+258 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 286 | [the staged memory rows land, the briefing's funding box, and a budget on prompts](../session_286_handoff.md) | 2026-09-24 |
 | 285 | [Scenario 3's controls, a published scenario, and the base that read $149k](../session_285_handoff.md) | 2026-09-23 |
 | 284 | [Priority 4 carries career attainment, and the funding tab is ready for leadership](../session_284_handoff.md) | 2026-09-23 |
 | 283 | [the first sitting ran, and it found a different question](../session_283_handoff.md) | 2026-09-22 |

@@ -1,7 +1,7 @@
 ---
 title: Playbook — auto-write cpl_memory at every checkpoint (Phase 3 of the memory loop)
 created: 2026-07-24
-updated: 2026-09-23
+updated: 2026-09-24
 tags: [playbook, memory, supabase, checkpoint, governance, obsidian-target]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -110,6 +110,14 @@ principles" (`d-mem-*`/`r-mem-*` in the table itself).
    ever refuses this step again, stage the insert in the run's receipt, hand it
    to Sam, and say the rows are written and **unlogged**; never log through
    another tool.
+
+   ✅ **ONE CALL, THREE STATEMENTS (S285, 2026-09-24; Sam's SQL budget ruling).** The row
+   insert, the log insert and the verify query travel together in ONE `execute_sql`
+   call, separated by semicolons: a later statement sees an earlier one's rows, and
+   the tool returned the LAST statement's rows (the verify, `creates = 1` for both),
+   while a call whose later statement returned nothing showed the earlier RETURNING.
+   Each `execute_sql` call is one approval prompt on Sam's phone, so three calls where
+   one does is the failure now. Only the CTE fold below is the wrong shape.
 
    ⚠️ **Do not fold the log insert into the same statement as the row insert.**
    A data-modifying CTE's rows are not visible to the rest of that statement's

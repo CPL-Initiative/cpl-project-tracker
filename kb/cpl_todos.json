@@ -2,7 +2,7 @@
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
  "_as_of": "2026-09-24",
  "_session": "S285 SkyGrant",
- "_status": "The 15 memory rows that three sessions staged since 21 September are written and logged, each re-read against today's state before it was saved. The college briefing's funding box now uses the funding vocabulary: measures count toward funding, a college qualifies for its award, and results are demonstrated, with a guard that reads the source. Two funding-tab edits remain Sam's: publish Scenario 1 again and move the six strategies to Completion. The grants on the five nightly rebuilds are confirmed after today's 13:40 UTC promotion.",
+ "_status": "The 15 memory rows that three sessions staged since 21 September are written and logged, each re-read against today's state before it was saved (pull request 1674, merged). The college briefing's funding box now uses the funding vocabulary: measures count toward funding, a college qualifies for its award, and results are demonstrated, with a guard that reads the source (pull request 1675). Two funding-tab edits remain Sam's: publish Scenario 1 again and move the six strategies to Completion. The grants on the five nightly rebuilds are confirmed after today's 13:40 UTC promotion. Sam's ruling of the 24th stands: sessions budget their SQL calls and do not work the approval prompts.",
  "items": [
   {
    "id": "s285-sam-funding-tab-edits",

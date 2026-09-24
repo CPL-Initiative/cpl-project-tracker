@@ -4,6 +4,8 @@ date: 2026-09-23
 session: 283 (SkyFund)
 tags: [handoff, implementation-funding, decision-sheets, edd, career-attainment]
 status: current
+superseded: true
+superseded_by: session_286_handoff.md
 ---
 
 # You are Session 284

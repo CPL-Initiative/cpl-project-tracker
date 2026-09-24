@@ -853,3 +853,28 @@ sits right above it. Replies saved before the relabel carry `v: "yes"` on an
 entry and mean the batch's recommendation for that memory; his in-chat replies
 count as replies: the Board memory is retire + follow up, the $1 million memory
 is retire. Both fixes went out as one same-day PR and one republish.
+
+## 2026-09-24 — SkyGrant (Session 285): the fifteen staged rows land, and a session budgets its prompts
+
+- **Twenty rows had been staged and none written.** S284's guard fix (#1670) opened the door and its own nine went in
+  that evening; the fifteen from S281 (4) and S283 (6 + 5) were still absent at 00:0x UTC. Each was re-read against the
+  day's state before it was written, and six changed: the opt-out calibration rule now follows the 09-22 high-water mark;
+  the CCR was wired to Jev on 09-22; Career attainment is P3 in the published scenario; the zero-share P4 fact was already
+  false and went in as `superseded` with `superseded_by` set; ruling (1) of the review sheet was reversed by Sam the same
+  evening; the 1.1.2 team field was re-read live. Every summary was cut to one sentence under 400 characters with the
+  long text in `detail`, every row got `plain`, `verified_by` kept the staging session and Sam where he spoke, and
+  `author` named the writer so the log check and the rollback find the cohort. The log note says who staged and who wrote.
+  Receipt: `kb/receipts/cpl_memory_2026-09-24_s285.sql`; the three staged files carry a header pointing at it.
+- **Two statements in one call see each other; a CTE does not.** The update-then-log call for the counselor supersede
+  (S283's planned one) returned the UPDATE's rows and the log insert landed, verified afterward. So the playbook's three
+  steps (rows, log, verify) can travel as three statements in a single `execute_sql` call; only a data-modifying CTE hides
+  its rows from the rest of its own statement. This checkpoint's write ran rows, log and verify in that order in one call:
+  the tool returned the verify's rows (`creates = 1` for both), so the last statement's result set comes back
+  and one prompt covers the whole write.
+- **Sam, 2026-09-24, with two prompts arriving while he typed:** *"I'm still getting a swarm of sql approves--been happening
+  the last 10 days--very frustrating."* Then: *"Don't try and solve the swarm problem—I wasted 2 days of fable use and not
+  changes helped. Look at the handoff prompt text for the solution that was supposed to solve it. Probably had a dozen or
+  more approve requests this session so far."* The handoff's opening line is the solution and it held (33 rules, the
+  `execute_sql` rule present, and the LIVE line's own caveat that the one tool still asks per call). The dozen prompts were
+  this session's twelve `execute_sql` calls and one `list_projects`; five calls would have done. The ruling sits in
+  `docs/reference/approval_prompt_hooks.md` and beside its pointer in `CLAUDE.md`.

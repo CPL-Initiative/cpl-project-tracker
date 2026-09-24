@@ -459,7 +459,8 @@
      "governs": [
       "tests/cpl_funding_calm.test.js",
       "tests/cpl_funding_earn_retired.test.js",
-      "tests/funding_model_page.test.js"
+      "tests/funding_model_page.test.js",
+      "tests/college_briefing_earn_retired.test.js"
      ],
      "path": "docs/kb-notes/methodology-a-ban-is-only-as-wide-as-the-files-it-opens.md",
      "status": "published",
@@ -472,7 +473,7 @@
      ],
      "title": "A ban is only as wide as the files it opens",
      "type": "methodology",
-     "updated": "2026-09-15"
+     "updated": "2026-09-24"
     },
     {
      "created": "2026-08-24",
@@ -8600,7 +8601,7 @@
      ],
      "title": "Playbook \u2014 auto-write cpl_memory at every checkpoint (Phase 3 of the memory loop)",
      "type": "playbook",
-     "updated": "2026-09-23"
+     "updated": "2026-09-24"
     },
     {
      "created": "2026-07-20",
@@ -13716,7 +13717,7 @@
      ],
      "title": "Memory tab / Autogenerate + the Briefing \u2014 lane state",
      "type": null,
-     "updated": "2026-09-05"
+     "updated": "2026-09-24"
     },
     {
      "created": "2026-08-28",
@@ -14145,8 +14146,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 257,
+   "count": 258,
    "docs": [
+    {
+     "created": "2026-09-24",
+     "governs": [],
+     "n": 286,
+     "path": "docs/session_286_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "implementation-funding",
+      "cpl-memory",
+      "approval-prompts",
+      "supabase-grants"
+     ],
+     "title": "the staged memory rows land, the briefing's funding box, and a budget on prompts",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-23",
      "governs": [],
@@ -18508,5 +18526,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 962
+ "total": 963
 }

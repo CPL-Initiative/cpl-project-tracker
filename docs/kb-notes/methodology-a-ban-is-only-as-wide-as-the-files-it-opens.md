@@ -1,7 +1,7 @@
 ---
 title: A ban is only as wide as the files it opens
 created: 2026-09-15
-updated: 2026-09-15
+updated: 2026-09-24
 tags: [methodology, testing, vocabulary, funding, presentation]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -13,6 +13,7 @@ artifacts:
   - tests/cpl_funding_calm.test.js
   - tests/cpl_funding_earn_retired.test.js
   - tests/funding_model_page.test.js
+  - tests/college_briefing_earn_retired.test.js
 ---
 
 # A ban is only as wide as the files it opens
@@ -90,3 +91,17 @@ word with the sentence around it rather than a bare fail. It also asserts that
 the scan can fail, against a planted string: a scan that reports nothing
 because it is looking at nothing is the failure this note is about, one level
 down.
+
+## 2026-09-24 — the third file
+
+The rule found its third instance on the college briefing. `college_briefing.js`
+renders a funding box of its own for every college, and on 2026-09-24 it still
+said *earns against*, *drawable*, *the dollars*, *money* and *pool*, nine days
+after the words left the funding tab. Both guards were green the whole time:
+`cpl_funding_calm` reads the tab's mount and `cpl_funding_earn_retired` reads
+`cpl_funding.js`, and neither opens the briefing. The fix is the same shape as
+the explainer's: a third source-reading guard,
+`tests/college_briefing_earn_retired.test.js`, with the identifier-sparing
+lookarounds and one named exemption (a student earning credit is the academic
+sense). The file set the ban covers is now written down in three places, one per
+file, which is the only way "the guards together are the whole guard" stays true.
