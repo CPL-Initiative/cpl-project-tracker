@@ -1307,10 +1307,10 @@
    * top of it. Inline styles out-rank any selector, so `#college-briefing-root
    * {text-align:left}` in ensureCss() never won.
    *
-   * ⭐ THAT IS WHY THE PROSE LOOKED CENTRED INSIDE A LEFT-ALIGNED PAGE (Sam,
+   * ⭐ THAT IS WHY THE PROSE LOOKED CENTERED INSIDE A LEFT-ALIGNED PAGE (Sam,
    * 2026-08-21: "narrow paragraphs together with full width content… looks
    * awkward"). Every paragraph with a measure cap — the welcome line, Sierra's
-   * own description — rendered its text CENTRED inside a left-anchored box, so
+   * own description — rendered its text CENTERED inside a left-anchored box, so
    * it read as a ragged column floating in the middle of a wide tab. The cap
    * was never the problem; the inheritance was.
    *
@@ -1552,8 +1552,8 @@
   /* The team's strategies for ONE funding priority, nested inside that
    * priority's row. Sam, 2026-08-12: as a flat list of 22 they "look like a
    * long list of intimidating to-dos" — 19 of which carried a bare "not
-   * measured here" flag. Attached to the money they earn, in groups of six to
-   * ten, they read as what they are: the team's suggestions for this pool.
+   * measured here" flag. Attached to the funding they count toward, in groups of
+   * six to ten, they read as what they are: the team's suggestions for this priority.
    *
    * The "not measured here" flag is dropped in this view. It was honest and
    * it was noise: a reader opening a priority wants the advice, and a row of
@@ -1993,7 +1993,7 @@
    * Two appropriations, and they are not interchangeable:
    *   • the $50,000 ESS 25-82 seed grant — already distributed, Spring 2026
    *   • this college's share of the $35M implementation pool — an allocation
-   *     CAP earned against MAP performance, never a cheque in the post
+   *     CAP measured against MAP performance, never a check in the mail
    *
    * Both come from cpl_funding.js, which owns the model. NOTHING here
    * re-derives a dollar figure. The allocation is TWO-SIDED and solved as one
@@ -2555,8 +2555,8 @@
     } else if (state.funding === "ready" && !f) {
       fundBody += '<div class="cb-note">Loading the funding model…</div>';
     } else if (state.funding === "error") {
-      fundBody += '<div class="cb-warn">The funding model did not load. That is a <b>failed read, not a finding</b> — '
-        + "it does not mean this college has no allocation.</div>";
+      fundBody += '<div class="cb-warn">The funding model did not load, so this page cannot show an allocation for this college yet. '
+        + "Reload to read it.</div>";
     } else if (f && !f.onRoster) {
       fundBody += '<div class="cb-note">' + esc(state.college) + ' is not on the 115-college funding roster. '
         // The carve-out figure is read from the model, never typed. It said "$1M"
@@ -2565,7 +2565,7 @@
         // not on the roster — kept quoting the old number.
         + "The noncredit institutions are funded through the " + fundCarveLabel()
         + " noncredit carve-out, a separate mechanism from the "
-        + "college pool below — so this is <b>a different route to money, not an absence of it</b>.</div>";
+        + "college allocation below, so this institution has its own route to funding.</div>";
     } else if (f) {
       // (a) the $50,000 ESS 25-82 seed grant — already distributed
       fundBody += '<div class="cb-fund">';
@@ -2603,7 +2603,7 @@
       // session, not a label a college would recognize.
       fundBody += '<div class="cb-fbox"><header><h4>2026&ndash;2028 College Implementation Funding</h4><span class="cb-tag">allocation cap</span></header>';
       if (!f.alloc) {
-        fundBody += '<div class="cb-lab">No allocation modelled for this college yet.</div>';
+        fundBody += '<div class="cb-lab">No allocation modeled for this college yet.</div>';
       } else {
         fundBody += '<div class="cb-fbig">' + money(f.alloc.total) + "</div>";
         // Sam's 2026-08-22 ruling retired the old negative framing here: state
@@ -2612,13 +2612,13 @@
         // meanings of one word, in adjacent sentences. (The retired phrase is
         // deliberately not quoted anywhere in this file: the test greps the
         // SOURCE, so a comment quoting it would fail the guard it explains.)
-        fundBody += '<div class="cb-lab">What this college receives is driven by <b>its own CPL results, as they happen</b> — '
-          + "it earns against this figure on what MAP records it doing. It is modelled, and the model is under "
+        fundBody += '<div class="cb-lab">What this college receives is driven by <b>its own CPL results, as they happen</b>: '
+          + "the measures MAP records count toward this figure. It is modeled, and the model is under "
           + "active revision.</div>";
         var bits = [];
         if (f.alloc.floored) {
           bits.push("At the <b>" + money(f.floor) + " base award</b> — this institution's proportional share came "
-            + "out below the base, so it is brought up to it. Its allocation is <b>not</b> its proportional share of the funding.");
+            + "out below the base, so it is brought up to it, and the base award is its allocation.");
         }
         // The floor's mirror image. Say where the difference WENT, not just
         // that the college lost it — the same reason the funding explainer
@@ -2626,13 +2626,13 @@
         if (f.alloc.capped && f.cap) {
           bits.push("At the <b>" + money(f.cap) + " cap</b> — this institution's proportional share came "
             + "out above the maximum, so it is held there and the difference re-splits across the other colleges. "
-            + "Its performance targets scale down with it, so it earns at the same rate as every other college "
+            + "Its performance targets scale down with it, so it qualifies for funding at the same rate as every other college "
             + "above the minimum.");
         }
         if (f.alloc.gate_blocked) {
           bits.push("<b>Participation requirements are outstanding</b>" +
             (f.alloc.gate_missing && f.alloc.gate_missing.length ? " — " + esc(f.alloc.gate_missing.join(" and ")) : "") +
-            ". The cap is unchanged and the dollars roll forward; nothing is lost by fixing it late, but nothing is earned until it is.");
+            ". The cap is unchanged and the funding rolls forward; the college receives its demonstrated funding once it confirms.");
         } else if (f.alloc.gate_pending) {
           bits.push("Participation is recorded but not yet confirmed.");
         }
@@ -2646,15 +2646,15 @@
         // figure above, restricted to noncredit outcomes.
         if (f.nc != null && f.nc > 0) {
           fundBody += '<div class="cb-note cb-floor"><b>Noncredit share: ' + money(f.nc) + "</b> of the combined "
-            + "award above — set by this institution's own noncredit FTES, restricted to the noncredit "
-            + "measures, and never drawable by credit work.</div>";
+            + "award above, set by this institution's own noncredit FTES and restricted to the noncredit "
+            + "measures, so only noncredit results count toward it.</div>";
         }
 
         // ── What the cap is FOR — the priorities, each with this college's
         // own target. Caps and targets both come from the funding
         // module; nothing here multiplies a share by a pool.
         if (f.prios && f.prios.length) {
-          fundBody += '<div class="cb-prios"><div class="cb-plab">What it is earned against</div>';
+          fundBody += '<div class="cb-prios"><div class="cb-plab">What counts toward it</div>';
           f.prios.forEach(function (p, i) {
             if (unlistedAndUnfunded(p, implProg)) return;
             var name = p.title || p.description || p.label;
@@ -2663,8 +2663,8 @@
             fundBody += '<div class="cb-ptarget">Your target: <b>'
               + (p.target != null ? fmt(Math.round(p.target * 10) / 10) + " " + esc(p.unit) : "—")
               + "</b>" + (p.metric ? " · " + esc(p.metric) : "") + "</div>";
-            // The team's steps for THIS pool, nested under the money they
-            // earn (Sam, 2026-08-12). As one flat list of 22 they read as an
+            // The team's steps for THIS priority, nested under the funding they
+            // count toward (Sam, 2026-08-12). As one flat list of 22 they read as an
             // intimidating audit; six to ten attached to a priority read as
             // advice about that priority.
             var progPrio = stratsInline ? programPriorityFor(implProg, p, i) : null;
@@ -2672,8 +2672,8 @@
             fundBody += "</div>";
           });
           fundBody += "</div>";
-          fundBody += '<div class="cb-lab" style="margin-top:8px;">A target is what earns the <b>whole</b> share, not a '
-            + "pass mark — partial progress earns a proportional part of it, so there is no cliff to miss.</div>";
+          fundBody += '<div class="cb-lab" style="margin-top:8px;">Reaching a target qualifies the college for the <b>whole</b> share, '
+            + "and partial progress qualifies it for a proportional part, so there is no cliff to miss.</div>";
         }
       }
       fundBody += "</div></div>";
@@ -2922,8 +2922,8 @@
     }
 
     // ── Advice — only for programs NOT already nested in the funding box ──
-    // The implementation strategies now live inside the priority they earn
-    // against (Sam, 2026-08-12). Anything else the team adds to the config
+    // The implementation strategies now live inside the priority they count
+    // toward (Sam, 2026-08-12). Anything else the team adds to the config
     // still gets its own section here, so guarantee (c) — every project is
     // walked, a new program appears with no code change — survives the move.
     var restPrograms = b.programs.filter(function (p) {

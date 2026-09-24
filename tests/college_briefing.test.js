@@ -423,7 +423,7 @@ check("funding: carries the floor from the model", fB && fB.floor === 150000);
 
 const fC = M._fundingFor("Calbright College Non-Credit");
 check("funding: a noncredit feeder gets no college-pool allocation", fC && fC.onRoster && fC.alloc === null,
-  "it is funded by the $1M noncredit carve-out — a different route, not an absence");
+  "it is funded by the noncredit carve-out, its own route to funding");
 
 check("funding: an off-roster college is flagged, not zeroed",
   (function () { const r = M._fundingFor("Some Other College"); return r && r.onRoster === false && !("alloc" in r); })());
@@ -575,9 +575,12 @@ check("questions: nothing waiting → asks where to look instead",
   /Nothing is set up and waiting/.test(qZero.join(" ")) && !/fastest way to award/.test(qZero.join(" ")));
 check("questions: none without a college", M._sierraQuestions(null, null, null).length === 0);
 
-// A failed model read must read as a failed read.
-check("funding: a failed model load renders 'failed read', not an empty result",
-  /failed read, not a finding/.test(briefingSrc));
+// A failed model read must read as a failed read — stated positively since
+// 2026-09-24 (Sam's no-this-not-that rule): the page says the model did not
+// load and that the allocation is unread, and asks for a reload.
+check("funding: a failed model load says the allocation is unread, never that it is absent",
+  /The funding model did not load, so this page cannot show an allocation for this college yet/.test(briefingSrc)
+  && !/failed read, not a finding/.test(briefingSrc));
 // Sam retired "a cap, not a cheque" on 2026-08-22 (state positively what drives
 // the money), and the model gained a literal $400K cap the same day — so the
 // old phrase was both against the ruling and newly ambiguous. Guard the
@@ -630,8 +633,11 @@ check("render: the allocation appears as money", /\$175,000/.test(ftxt));
 check("render: a floored college is TOLD it is at the floor, not left to infer",
   // "base award" vocabulary (one pool, 2026-08-31; "pool" → "funding" is Sam's
   // sweep of the same day). The promise is unchanged: name the state AND say
-  // the figure is not the college's raw proportional share.
-  /base award/.test(ftxt) && /not its proportional share of the funding/i.test(ftxt));
+  // where the figure comes from. Since 2026-09-24 the sentence states it
+  // positively (Sam's no-this-not-that rule): the proportional share came out
+  // below the base, and the base award is the allocation.
+  /base award/.test(ftxt) && /proportional share came out below the base/i.test(ftxt)
+  && /the base award is its allocation/i.test(ftxt));
 // The rural allowance is retired (Sam, 2026-08-22) — a briefing that still
 // named it would promise a college money that no longer exists.
 check("render: no retired rural allowance is still promised",
@@ -678,8 +684,10 @@ Bn.render(nr);
 // element that carries a college's money, not via a "$" substring. The page
 // legitimately contains "$50k ESS 25-82" as a PROGRAM NAME, so a text-level
 // dollar match fails on correct output.
-check("render: a failed model read says so, and attributes NO money to the college",
-  /failed read, not a finding/.test(nr.textContent) && nr.querySelectorAll(".cb-fbig").length === 0);
+check("render: a failed model read says so, and attributes NO funding to the college",
+  /The funding model did not load/.test(nr.textContent)
+  && /cannot show an allocation for this college yet/.test(nr.textContent)
+  && nr.querySelectorAll(".cb-fbig").length === 0);
 
 // ── Part I — "transcribed" in MAP is a MARK, not a posting ──
 // Sam, 2026-08-11: a college checks the Transcribe step in MAP when it judges
