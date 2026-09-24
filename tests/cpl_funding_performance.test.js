@@ -48,6 +48,14 @@ const rows = [
   ["Bakersfield College", "6", "K2", "no", "no", "0"],
   ["RivTest City College", "9", "T1", "no", "no", "0"],   // test college → excluded
   ["Mystery University", "12", "M1", "no", "no", "0"],    // unresolvable name → unmatched
+  // MAP PARTNER AGENCIES (entity_kind "partner" in the identity crosswalk) are
+  // not CCCs, so the funding model skips them at the row (Sam, 2026-09-24: "should
+  // not be included in the college count or mentioned on the CCC CPL funding
+  // model"). Twelve rows clear the floor, so a leak would show as a visible
+  // unmatched entry and would move the statewide counts asserted below.
+  ...Array.from({ length: 12 }, (_, i) =>
+    ["Launch Apprenticeship", "6", "LA" + i, "no", "no", "3"]),
+  ["Futuro Health", "6", "FH1", "no", "no", "3"],
   // Noncredit FEEDER campuses (F1 = eligible headcount; not funding colleges).
   ...Array.from({ length: 10 }, (_, i) =>
     ["North Orange Continuing Education", "0", "F" + (i + 1), "no", "no", String(2 + (i % 5))]),  // NOCE eligible, F1..F10
@@ -112,6 +120,12 @@ if (P) {
     P.colleges["Bakersfield"].p3_suppressed === true && !ven.p3_complementary);
   check("test college excluded entirely",
     !P.colleges["RivTest City College"] && !P.unmatched["RivTest City College"]);
+  check("a MAP partner agency reaches no college, no unmatched entry and no statewide total",
+    !P.colleges["Launch Apprenticeship"] && !P.unmatched["Launch Apprenticeship"] &&
+    !P.unmatched["Futuro Health"] && JSON.stringify(P).indexOf("Launch") === -1);
+  check("the run log names the partners it skipped, so the exclusion is visible where it runs",
+    /skipped MAP partner agencies[^\n]*Launch Apprenticeship \(12 rows\)/.test(run.stdout) &&
+    /Futuro Health \(1 rows\)/.test(run.stdout));
   check("unresolvable college lands in unmatched (suppressed)",
     P.unmatched["Mystery University"] && P.unmatched["Mystery University"].p2 === null);
   // Statewide is computed independently (union of student ids), NOT the sum of
