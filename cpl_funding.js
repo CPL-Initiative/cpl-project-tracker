@@ -916,6 +916,10 @@
     ".cplfund-prose blockquote p { margin: 0; }",
     ".cplfund-college-intro { margin: 0 0 8px; }",
     ".cplfund-basis .cplfund-prose p { margin: 0; line-height: 1.5; }",
+    ".cplfund-faq-item { border-bottom: 1px solid var(--border); padding: 8px 0; }",
+    ".cplfund-faq-item > summary { cursor: pointer; font-weight: 600; color: var(--text-strong); }",
+    ".cplfund-faq-item > summary:focus-visible { outline: 2px solid var(--focus-ring, currentColor); outline-offset: 2px; }",
+    ".cplfund-faq-item > p { margin: 6px 0 0 1.2em; max-width: var(--cpl-measure,none); }",
     ".cplfund-prose-ctl { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; margin-top: 8px; font-size: .78rem; }",
     ".cplfund-textbtn { background: var(--surface-opaque); color: var(--navy-primary); border: 1px solid var(--border-strong); border-radius: 6px; padding: 2px 9px; cursor: pointer; font-size: .75rem; font-family: inherit; }",
     ".cplfund-textbtn:hover { border-color: var(--navy-secondary); }",
@@ -2992,8 +2996,79 @@
     elig_intro:    { label: "the eligibility introduction", rows: 3 },
     nc_rules:      { label: "the noncredit funding rules", rows: 7 },
     college_intro: { label: "the institution table introduction", rows: 4 },
-    timing_note:   { label: "the timeline note", rows: 2 }
+    timing_note:   { label: "the timeline note", rows: 2 },
+    faq:           { label: "the frequently asked questions", rows: 24 }
   };
+  // FREQUENTLY ASKED QUESTIONS (Sam, 2026-09-24: "Add an FAQ section to the
+  // tab that I can edit by adding and revising questions and answers").
+  // One editable prose block, so a curator's edit saves for everyone and
+  // Restore brings these back. The format is plain text: a paragraph that
+  // opens with "Q:" starts a question, and the paragraphs after it, up to the
+  // next "Q:", are its answer. Seeded from Sam's 2026-09-24 reply to a
+  // college's questions about MAP student records, with names left out.
+  var FAQ_DEFAULT_PLAIN = [
+    "Q: Has the Chancellor's Office released guidance for this funding?",
+    "The Chancellor's Office will release detailed guidance once the funding model is final. " +
+      "The outcomes respond to Education Code §78093.2(d), which directs the Chancellor's Office to allocate " +
+      "designated funds using four goals: increasing access to credit for prior learning equitably for all " +
+      "eligible students; increasing completion through credit for prior learning awards; advancing career " +
+      "attainment through credit for prior learning; and supporting credit for prior learning through the " +
+      "Chancellor's Office pilot projects, such as the MAP platform. Under §78093.2(d)(2), each campus " +
+      "demonstrates its implementation through those metrics before it receives an allocation.",
+    "Q: What qualifies as a student record in MAP for reporting purposes?",
+    "A minimally complete student record has the student's name, the college student ID, the CPL exhibit ID, " +
+      "the CPL document (for now, a JST or AFSC, for military credit only), the CPL type or types, the program " +
+      "of study, the transfer destination if known, and the academic year of the request. The academic year of " +
+      "the request is not necessarily the catalog year, which is authoritative only in the college's student " +
+      "information system.",
+    "Q: Should a college record students who receive a CPL consultation but do not submit a petition?",
+    "Record them only when the student qualifies for CPL and declines it, the articulation is denied, or the " +
+      "student appeals under Title 5 §55050. A student who qualifies and does not apply the credit still counts toward " +
+      "funding: in the first draft of the priorities, the model counts public CPL requests with faculty-approved " +
+      "CPL that arrive through the College Landing Page, the student portal (CreditforBeingYou.org), or a " +
+      "college's batch upload.",
+    "The Education Code envisions a CPL consultation for every incoming student as part of onboarding, as " +
+      "colleges already provide for AP and IB.",
+    "Q: How should a college distinguish consultations, submitted petitions, and transcribed CPL units?",
+    "The simplest method is the Request CPL function on the College Landing Page or the CPL Portal. It creates " +
+      "a MAP record and a CPL petition that the student and the college can process in MAP or locally. The " +
+      "college can then batch upload additional information to MAP in a simple Excel file, so the units count " +
+      "toward funding and toward reporting to the Legislature.",
+    "To show that units are ready or have been transcribed in the student information system, select Transcribe " +
+      "for the student in MAP. Colleges can also batch upload this.",
+    "Q: Will there be guidance on minimum data entry, so colleges report on a consistent basis?",
+    "Yes. The Chancellor's Office will release detailed guidance once the funding model is final.",
+    "Q: Where can a college get help setting up its MAP records?",
+    "The MAP team meets with colleges to set up their records, and holds office hours listed at " +
+      "https://map.rccd.edu/get-involved/."
+  ].join("\n\n");
+  // Plain text → question/answer pairs. Text before the first "Q:" becomes an
+  // untitled lead paragraph so nothing a curator types is ever dropped.
+  var FAQ_Q = /^Q:\s*/i;
+  function faqPairs(plain) {
+    var out = [], cur = null, lead = [];
+    plainNormalize(plain).split(/\n\n/).forEach(function (para) {
+      if (!para) return;
+      if (FAQ_Q.test(para)) { cur = { q: para.replace(FAQ_Q, ""), a: [] }; out.push(cur); }
+      else if (cur) cur.a.push(para);
+      else lead.push(para);
+    });
+    return { lead: lead, items: out };
+  }
+  function linkify(escaped) {
+    return escaped.replace(/https?:\/\/[^\s<]+[^\s<.,;)]/g, function (u) {
+      return '<a href="' + u + '" target="_blank" rel="noopener">' + u + "</a>";
+    });
+  }
+  function faqHtml(plain) {
+    var f = faqPairs(plain);
+    var para = function (t) { return "<p>" + linkify(esc(t)).replace(/\n/g, "<br>") + "</p>"; };
+    return '<div class="cplfund-faq">' + f.lead.map(para).join("") +
+      f.items.map(function (it) {
+        return '<details class="cplfund-faq-item"><summary>' + esc(it.q) + "</summary>" +
+          it.a.map(para).join("") + "</details>";
+      }).join("") + "</div>";
+  }
   // The Timeline's closing note, in Sam's words (2026-09-24, review sheet item
   // 4: "Add to bottom of Timeline"). An editable block like the others, so a
   // curator's rewording saves for everyone and Restore brings these words back.
@@ -3067,6 +3142,7 @@
     if (key === "nc_rules") return NC_RULES_DEFAULT_HTML;
     if (key === "college_intro") return COLLEGE_INTRO_DEFAULT_HTML;
     if (key === "timing_note") return TIMING_NOTE_DEFAULT_HTML;
+    if (key === "faq") return plainToHtml(FAQ_DEFAULT_PLAIN);
     if (key === "elig_intro") {
       var v = base().elig_intro;
       return "<p>" + esc(v == null ? DEFAULT_ELIG_INTRO : v) + "</p>";
@@ -3133,7 +3209,8 @@
     return (v == null || !String(v).trim()) ? null : String(v);
   }
   function textIsCustom(key) { return textOverride(key) != null; }
-  function textPlain(key) { var o = textOverride(key); return o != null ? plainNormalize(o) : htmlToPlain(textDefaultHtml(key)); }
+  function textPlain(key) { var o = textOverride(key);
+    if (key === "faq" && o == null) return plainNormalize(FAQ_DEFAULT_PLAIN); return o != null ? plainNormalize(o) : htmlToPlain(textDefaultHtml(key)); }
   function textHtml(key) { var o = textOverride(key); return o != null ? plainToHtml(o) : textDefaultHtml(key); }
   function setText(key, v) {
     var ov = activeOverride();
@@ -3211,7 +3288,7 @@
   // sections in September still sees their arrangement after we add a fifth,
   // with the new one last instead of the page silently reverting.
   var SECTION_HOUSE_ORDER = ["about", "college", "window", "pools", "formula",
-                             "eligibility", "priorities", "timing"];
+                             "eligibility", "priorities", "timing", "faq"];
 
   // The PUBLIC EXPLAINER's own sections (funding-model/index.html), declared
   // here so a curator can exclude and reorder them too — Sam's ask names the
@@ -3450,9 +3527,10 @@
         '<button type="button" class="cplfund-textbtn primary" data-textsave="' + esc(key) + '">Save</button>' +
         '<button type="button" class="cplfund-textbtn" data-textcancel="' + esc(key) + '">Cancel</button>' +
         (custom ? '<button type="button" class="cplfund-textbtn" data-textreset="' + esc(key) + '">Restore the default text</button>' : "") +
+        (key === "faq" ? '<span class="dk">Start each question on its own line with Q: and put its answer in the paragraphs below it.</span>' : "") +
         '<span class="dk">Plain text. A blank line starts a new paragraph; start every line with &gt; to set a passage as a quotation. Saves for everyone.</span></div>';
     } else {
-      html += textHtml(key);
+      html += key === "faq" ? faqHtml(textPlain(key)) : textHtml(key);
       if (canEdit) {
         html += '<div class="cplfund-prose-ctl">' +
           '<button type="button" class="cplfund-textbtn" data-textedit="' + esc(key) + '">Edit</button>' +
@@ -3825,6 +3903,17 @@
   // Per-college Veteran Star flag (>=75% of enrolled veterans' JSTs uploaded in
   // MAP), computed daily into cpl_funding_performance.js (Sam, 2026-07-27). Null
   // until the feed carries it (then the JST sector is pending, not green).
+  function vetStarCount() {
+    var vs = vetStar();
+    if (!vs) return null;
+    return eligColleges().filter(function (c) { return vs[c.college] === true || vs[c.short] === true; }).length;
+  }
+  function systemCountsHtml() {
+    var d = String(base().system.district || "").trim();
+    var n = eligColleges().length, v = vetStarCount();
+    return (d ? esc(d) + "<br>" : "") + fmtInt(n) + " colleges" +
+      (v == null ? "" : " &middot; " + fmtInt(v) + " Veteran Star");
+  }
   function vetStar() { var pf = perf(); return pf && pf.vet_star ? pf.vet_star : null; }
   // A free-text requirement whose per-college status we can AUTO-score off the
   // Veteran Star flag (the "75% of veteran JSTs uploaded" qualifier).
@@ -9564,7 +9653,11 @@
     var foot = '<tr class="cplfund-systemrow" data-id="sys">' +
       '<td></td><td class="t"><button type="button" class="cplfund-caret" aria-expanded="' +
       (sysOpen ? "true" : "false") + '" aria-label="Statewide totals, per-priority detail">SYSTEM (statewide)</button></td>' +
-      '<td class="t">' + esc(base().system.district || "") + "</td>" +
+      // THE COUNTS (Sam, 2026-09-24: "include count of colleges at the System
+      // row and count of Vet Star colleges"). Colleges are eligColleges(), the
+      // 116 that include Calbright; the Star count reads the same vet_star map
+      // the college rows do, so the two cannot disagree.
+      '<td class="t cplfund-syscounts">' + systemCountsHtml() + "</td>" +
       '<td class="c" title="Statewide credit FTES — Σ of every institution row.">' + fmtInt(sys.cr_ftes) + "</td>" +
       '<td class="c" title="Statewide noncredit FTES — Σ of every institution row (Mt. SAC Noncredit counted once, on the Mt. San Antonio row; Calbright at its stand-in size).">' +
         fmtInt(sys.nc_ftes) + "</td>" +
@@ -9929,8 +10022,35 @@
       institutionTotal: netCollege(),
       avg: s.avg, min: s.min, max: s.max, minCount: s.minCount,
       deadline: participationDeadline(), expendBy: expendYear ? "June 30, " + expendYear : "the end of the window",
-      priorities: priorities("1")
+      priorities: memoPriorityList("1")
     };
+  }
+  // EVERY CARD, IN THE TAB'S ORDER (Sam, 2026-09-24: "Need P4 on Reports").
+  // The memo listed priorities(slot) alone, so a reported card — P4,
+  // "Innovation Projects", the statute's (D) — never reached the document. The
+  // list walks cardOrder() so its numbers and titles match the cards on the
+  // tab. A reported card carries no metric: it reports through its designated
+  // activities and is funded statewide.
+  function memoPriorityList(slot) {
+    var byId = {};
+    priorities(slot).forEach(function (p) { byId["m" + p.src] = p; });
+    return cardOrder(slot).map(function (id) {
+      var n = cardNumber(slot, id);
+      if (id.charAt(0) === "m") {
+        var p = byId[id];
+        if (!p) return null;
+        var t = String(p.title || "").trim();
+        return { label: p.label + (t ? ": " + t : ""), description: p.description, metric: p.metric,
+          strategies: p.strategies };
+      }
+      var g = id.slice(1);
+      return { label: "Priority " + n + ": " + reportedTitle(g), reported: true,
+        description: "Funded through the statewide project allocation and reported based on the aligned activities.",
+        strategies: reportedStrategies(g) };
+    }).filter(Boolean);
+  }
+  function numWord(n) {
+    return ["no", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"][n] || String(n);
   }
   function memoMasthead() {
     return '<div class="masthead"><strong>California Community Colleges Chancellor&#39;s Office</strong><br>' +
@@ -9944,7 +10064,7 @@
       "available to the " + m.nInstitutions + " institutions (" + m.nColleges + " colleges and the noncredit-only campuses) across the <strong>" +
       esc(m.window) + "</strong> window. To receive these funds, each institution&#39;s Chief Instructional Officer must " +
       "submit the required participation request by <strong>" + esc(m.deadline) + "</strong>, confirming the institution&#39;s " +
-      "commitment to advancing the three systemwide priority outcomes below. Funds are expected to be fully expended by <strong>" +
+      "commitment to advancing the " + numWord(m.priorities.length) + " systemwide priority outcomes below. Funds are expected to be fully expended by <strong>" +
       esc(m.expendBy) + "</strong>.</p>";
   }
   function memoPriorities(m) {
@@ -10481,7 +10601,7 @@
   // memo and the PDF as one-click buttons at the top, and — for signed-in
   // reviewers — the Internal · Public view preview.
   function anySectionOpenNow() {
-    var ids = ["window", "pools", "formula", "eligibility", "priorities", "timing", "goals", "college"];
+    var ids = ["window", "pools", "formula", "eligibility", "priorities", "timing", "goals", "college", "faq"];
     for (var i = 0; i < ids.length; i++) if (sectionOpen(ids[i])) return true;
     return false;
   }
@@ -10707,6 +10827,7 @@
           ncEarningRulesFoldHtml() + ftesFactorsHtml());
         // Sam, 2026-08-28: the Timing block is independently collapsible.
         SEC.timing = collapseH3("timing", timingSectionHtml());
+        SEC.faq = section("faq", "Frequently asked questions", proseBlockHtml("faq"));
       }) +
       "</div>";
     updateCount();
