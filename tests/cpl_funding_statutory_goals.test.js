@@ -208,14 +208,15 @@ check("every marker names its goal in words on hover", sups.every((a) =>
   /78093\.2/.test(a.getAttribute("title") || "")));
 // ⚠️ THE RAISED LETTER IS RETIRED FROM THE CARD (Sam, 2026-09-14). It existed
 // to stitch a card to the band above it, and the band is gone; the card now
-// NAMES its outcome in words, in a row carrying the key, the short name, the
-// citation and the statute's own sentence. The markers themselves survive
-// elsewhere, which is why the checks above still run.
+// NAMES its outcome in words — since 2026-09-24 in its one-line head, which
+// carries the key, the short name, the citation and the statute's own
+// sentence. The markers themselves survive elsewhere, which is why the checks
+// above still run.
 check("a priority card names its outcome in words rather than a raised letter", (function () {
   const c = doc.querySelector(".cplfund-prio .p");
-  const row = c && c.querySelector(".cplfund-cardgoal");
-  return !!row && !c.querySelector("h4 .cplfund-goalsup") &&
-    /78093\.2\(d\)\(1\)\([ABCD]\)/.test(flat(row));
+  const head = c && c.querySelector(".cplfund-cardhead");
+  return !!head && !c.querySelector("h4 .cplfund-goalsup") &&
+    /78093\.2\(d\)\(1\)\([ABCD]\)/.test(flat(head));
 })());
 
 // ── 7. the Workplan register is honoured, not corrected ─────────────────────

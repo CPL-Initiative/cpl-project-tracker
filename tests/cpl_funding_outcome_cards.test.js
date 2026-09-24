@@ -141,6 +141,9 @@ check("the raised-letter goal marker is retired from the card title",
 // card reports itself as derived rather than as a curator's assignment.
 // The curator's picker says it (2026-09-23): the derived option names the
 // outcome it resolves to, so one control says both WHICH outcome and WHY.
+// Since 2026-09-24 the picker IS the heading's outcome ("Priority 1 · (A)
+// Access"), so its closed face reads the outcome alone and the WHY rides the
+// option's title, "Set by the metric".
 {
   const { window } = freshDom();
   window.CPL_SESSION = reviewerSession();
@@ -148,9 +151,11 @@ check("the raised-letter goal marker is retired from the card title",
   window.CPL_FUNDING_TAB.render();
   const sels = cards(d).map((c) => c.querySelector("[data-priogoal]"));
   const picked = (s) => (s && s.selectedIndex >= 0 ? s.options[s.selectedIndex].textContent : "");
-  check("an untouched card's picker reads 'From the metric' and names the outcome it resolves to",
+  const pickedTitle = (s) => (s && s.selectedIndex >= 0 ? s.options[s.selectedIndex].getAttribute("title") : "");
+  check("an untouched card's picker reads the outcome it resolves to, marked as set by the metric",
     sels.length === modelPrios && sels.every((s) => s && s.value === "derived" &&
-      /^From the metric: \([A-D]\)( \+ \([A-D]\))* \S/.test(picked(s))), JSON.stringify(sels.map(picked)));
+      /^\([A-D]\)( \+ \([A-D]\))* \S/.test(picked(s)) && pickedTitle(s) === "Set by the metric"),
+    JSON.stringify(sels.map(picked)));
   check("and the key beside it agrees with the outcome the picker names",
     cards(d).every((c, i) => {
       const ks = keyLetters(c.querySelector(".cplfund-cardhead"));
@@ -222,8 +227,9 @@ check("a goal priorities DO serve carries a Total Possible figure",
   T.render();
   const sel = d.querySelector("[data-priogoal]");
   check("a curator sees an outcome picker on the card", !!sel);
-  check("the picker offers 'From the metric' first",
-    sel && sel.options[0] && sel.options[0].value === "derived" && /^From the metric/.test(sel.options[0].textContent));
+  check("the picker offers the metric-derived outcome first, marked as set by the metric",
+    sel && sel.options[0] && sel.options[0].value === "derived" && /^\([A-D]\)/.test(sel.options[0].textContent) &&
+    sel.options[0].getAttribute("title") === "Set by the metric");
   // The fifth option is not a courtesy: "derived" is the only way back to the
   // measure's own reading once a curator has set one. It once had a second job
   // — an `accepted` milestone resolved to (B) AND (C) from 2026-09-01, which no
@@ -248,7 +254,8 @@ check("a goal priorities DO serve carries a Total Possible figure",
   check("clearing restores the measure-derived outcome",
     !!sel0b && sel0b.value === "derived" && !/\(D\)/.test(keyText(row0b)));
   check("and the restore survives a re-render rather than undoing itself",
-    !!sel0b && /^From the metric: \(/.test(sel0b.options[sel0b.selectedIndex].textContent));
+    !!sel0b && /^\([A-D]\)/.test(sel0b.options[sel0b.selectedIndex].textContent) &&
+    sel0b.options[sel0b.selectedIndex].getAttribute("title") === "Set by the metric");
 }
 
 // ── 8. reported cards are STORED, with their own identity ───────────────────
