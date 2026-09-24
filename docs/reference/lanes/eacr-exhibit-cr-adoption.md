@@ -38,9 +38,10 @@ NEXT ①). What the tab does now, in the order he asked:
 2. **ASCCC Area filter** beside SW Region, from `college_lookup.js`
    `ascccArea`, which `kb/_apply_asccc_areas.py` writes from
    [`kb/reference/asccc_area_map.json`](../../../kb/reference/asccc_area_map.json)
-   (`--check` runs in `scripts/check_generated.sh`). ⚠️ **PROVISIONAL — the
-   authoritative roster is Sam's to send; see the last section.** It narrows
-   rows and matrix columns exactly as District and SW Region do.
+   (`--check` runs in `scripts/check_generated.sh`). **Provisional, and
+   accepted as the working map by Sam's 2026-09-24 ruling — see the last
+   section.** It narrows rows and matrix columns exactly as District and SW
+   Region do.
 3. **Vertical college headers** (bottom to top, `writing-mode: vertical-rl`),
    so a column is 32px against the diagonal's 34; six-character figures such as
    `(10.5)` get a tighter setting rather than every column widening (43 such
@@ -114,17 +115,17 @@ order; sectioning that view too is one call away if he wants it.
 ④ Curation carryover, unchanged: 4 unclassified-only titles the CER knows · 2
 statewide cards matching no college · the 50-group credential-view cap.
 
-## The ASCCC Area map is provisional — the ask sits on the partner-crosswalks card
+## The ASCCC Area map is provisional, and that is the ruling
 
 `kb/reference/asccc_area_map.json` assigns all 118 colleges, but only 36 are
 anchored to asccc.org text (the Area A directory slice, Area B's M–S slice,
 Area C's four named bounds, Area D's six named colleges — read through search
 snippets, because the sandbox's egress policy blocks asccc.org, cccco.edu and
 web.archive.org). The other 82 follow the Areas' own geographic descriptions.
-Sam ruled *add* on the standing sheet's ASCCC card on 2026-09-22 and wrote that
-MAP carries every location's regions and Pedro can produce a MAP Custom Report
-of them; that card (lane `partner-crosswalks`) now asks him to say yes to the
-report, or to paste <https://asccc.org/area-college-list>. Either lands as an
-edit to the JSON's per-college rows, and `python3 kb/_apply_asccc_areas.py`
-re-applies it; the file's `basis` field says which rows it would confirm or
-correct.
+Sam, 2026-09-24: *"Go ahead and use what we have for ASCCC regions and we'll
+get the new report later."* So the map is the working map and nothing waits on
+him; the MAP Custom Report of locations by region (Pedro, per his 2026-09-22
+note) replaces it when it arrives — edit the JSON's per-college rows, run
+`python3 kb/_apply_asccc_areas.py`, and the file's `basis` field says which
+rows it confirmed or corrected. My College's "Academic Senate region" scope
+still reads not ready; wiring it to this field is a separate build.

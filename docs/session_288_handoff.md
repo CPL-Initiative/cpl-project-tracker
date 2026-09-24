@@ -42,8 +42,9 @@ All ten, verified in jsdom and in Chromium; the lane file has the per-item detai
 - **ASCCC Area** (`college_lookup.js` `ascccArea`, from `kb/reference/asccc_area_map.json` via
   `kb/_apply_asccc_areas.py`, `--check` in `scripts/check_generated.sh`): PROVISIONAL — 36 of 118 anchored to
   asccc.org text, 82 by the Areas' geographic descriptions. Sam had already ruled *add* on the sheet's ASCCC card
-  (2026-09-22) and named MAP as the source; the card now asks him to say yes to Pedro's Custom Report (or paste the
-  directory). `cpl_memory` row `asccc-areas-come-from-map-sam-2026-09-22`.
+  (2026-09-22) and named MAP as the source; on 2026-09-24 he ruled the provisional map the working map (*"use what we
+  have for ASCCC regions and we'll get the new report later"*), so the card left the sheet. `cpl_memory` rows
+  `asccc-areas-come-from-map-sam-2026-09-22` and `asccc-provisional-map-accepted-sam-2026-09-24`.
 - **Tests**: `eacr_matrix` 114 · `eacr_a11y` 63 · `eacr_scope` 44 (LOWERED from 50: the six checks that drove the
   scope chips went with the chips) · `eacr_filters` 30 · `eacr_handout` 16 (new; pins the storage-key literal to
   `college_briefing.js`) · floors updated by hand. `npm run a11y cobi:exhibit-adoption` passes at 390 and 1440.
@@ -53,7 +54,9 @@ All ten, verified in jsdom and in Chromium; the lane file has the per-item detai
 
 ## SAM'S DECISIONS THIS RUN (2026-09-24)
 
-His ten asks are in `cpl_memory` verbatim (`eacr-ten-tweaks-sam-2026-09-24`). Two readings were made as stated
+His ten asks are in `cpl_memory` verbatim (`eacr-ten-tweaks-sam-2026-09-24`). After the merge he ruled on the
+ASCCC map: *"Go ahead and use what we have for ASCCC regions and we'll get the new report later"* — the provisional
+map stands, the MAP Custom Report is a later delivery, nothing waits on him. Two readings were made as stated
 assumptions rather than asked, because his screen showed the answer: **every credential with an adopting college is a
 matrix row** (he had "1 adopter" selected when he removed the rows-threshold chips), and **the handout feature is My
 College's Report plus its occupation opportunity register** (his "I believe that's the one that has it"). Both are one
@@ -64,8 +67,8 @@ constant away from a different reading if he says otherwise.
 1. **Dispatch `daily-dashboard.yml` after the merge** (see READ FIRST) and confirm the CIP Sectors dropdown fills.
 2. **Sam looks at the grid in a browser**: the 52px rows, the two-line title clamp, the 0.62rem cell figures and the
    panel are his to judge; the Adoption table's own rows kept their opportunity-first order and can be sectioned too.
-3. **The ASCCC roster**: when Pedro's export or the directory paste arrives, edit the JSON's per-college rows, run
-   `python3 kb/_apply_asccc_areas.py`, and retire the provisional wording in both lanes and the sheet card.
+3. **The ASCCC roster**: no ask is open. When Pedro's MAP Custom Report arrives, edit the JSON's per-college rows and
+   run `python3 kb/_apply_asccc_areas.py`; My College's "Academic Senate region" scope can then be wired to the field.
 4. **Carryover from S286's handoff, unchanged**: the ESL merging decision sheet; the (D) card's Designate retry; the
    funding tab's pre-existing a11y findings; `applyPriorityOrder()`; Pedro's one request; CO research's first
    career-attainment file.
