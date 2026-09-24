@@ -1,7 +1,7 @@
 ---
 title: "Decision sheets — how to build one, and how to read the replies"
 created: 2026-09-09
-updated: 2026-09-21
+updated: 2026-09-24
 tags: [reference, governance]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference
@@ -358,3 +358,48 @@ hard way on earlier sheets:
 - ⭐ **Chips name the OUTCOME, never agreement.** *Re-mint them* / *Leave them*,
   never *Yes* / *No* — six months later the chip is the whole record, and "Yes"
   records assent to a proposal nobody will remember.
+
+## Review sheets: the tab itself, numbered, with edits in place (2026-09-24, S286)
+
+Sam, 2026-09-24, reviewing the Implementation Funding tab: *"revise the text in,
+say, 3.1 in the 3.1 box."* A review of a whole tab is a different sitting from a
+decision sheet: the items are the tab's own sections, and most of what he wants
+to say is a wording change to one line. So the sheet IS the tab, and the edit
+happens where the line is.
+
+**The pipeline** (`scripts/tab_review_sheet/`; worked example
+https://claude.ai/artifact/Ayp39ynE6Yw9cvsvQbH7eu, the funding tab as its live
+config painted it on 2026-09-24):
+
+1. **`capture.js`** loads the tab from the working tree in Chromium with the live
+   config snapshot (`fs/snapshot.json`; Supabase calls are answered from it, so
+   the capture runs without a sign-in and writes nothing), numbers every section
+   as an item and tags every paragraph, line, field and heading inside it
+   `N.k`, and writes `capture.json`. `tab.js` is the same loader with a probe,
+   for measuring the tab rather than capturing it.
+2. **`build_sheet.py`** wraps each section in the reply mechanics of
+   `kb/_decision_sheet_replies.py` (chips *Leave as is* / *Change it*, a note
+   asking for the reference and the wording), so a verdict per SECTION lands in
+   `replies`, and injects the edit layer below.
+3. **The edit layer.** Every tagged line is `contenteditable` (plaintext); a
+   field keeps its own input. An edit saves 700 ms after the last keystroke, or on
+   blur, to the artifact's **`edits`** collection as one document per line:
+   `{ref, item, before, after, t}`, keyed by the reference (`"3.1"`). The line
+   shows *Edited, saved* with an **Undo** beside it, and Undo deletes the document
+   rather than storing an empty edit. A browser without the store keeps the edit
+   in `localStorage` and says *saved in this browser only*; the first load with
+   the store uploads it once.
+
+**Reading it back:** `replies` per item as on any sheet, plus `edits` — and
+**`before`/`after` are the whole record**, so a session applies `after` verbatim
+where the text is a stored setting Sam types into the tab (a section title, a
+timeline line), and treats a line inside a control (a button, a table) as a
+note, since those are not editable in place. The 2026-09-24 sheet came back
+with Complete pressed and the mark at item 7; items 8 to 10 carry no verdict,
+and five timeline lines came back through `edits` (*Participation Request* →
+*Confirmation Deadline*; " in MAP" dropped from the four disbursement lines).
+
+⚠️ **Paths in `build_sheet.py` still point at S286's scratchpad** (`HERE`,
+`sys.path`); set them before reuse. ⚠️ The capture is of the INTERNAL tab: the
+sections marked hidden on the public page appear, and the reviewer-only
+confirmation controls do not, and the sheet's header says so.

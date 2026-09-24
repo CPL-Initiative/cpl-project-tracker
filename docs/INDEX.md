@@ -66,12 +66,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 5 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 492 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 493 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 79 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 81 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 49 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 260 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **966** | |
+| Session handoffs | 261 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **968** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -123,6 +123,7 @@ Authoritative external sources we've cached:
 
 ## Update history
 
+- **2026-09-24 — S287 (SkyLane, beside SkyMatrix):** the jsdom suite runs as four shards on four runners fanned into the one `test` check, 20 min to 7 ([#1682](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1682)); the funding drill-in's credit and noncredit lane tables and the one-line card head ([#1679](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1679)); the four rows S286 staged written; the review sheet's edit layer documented in the decision-sheets reference; KB note `methodology-a-memory-bound-suite-scales-across-machines-not-workers`. Handoff 289.
 - **2026-09-24 — S285 (SkyGrant):** the fifteen memory rows S281 and S283 staged are written and logged, each re-read against the day ([#1674](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1674)); the college briefing's funding box swept to the funding vocabulary with a source-reading guard ([#1675](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1675)); Sam's ruling to stop working the SQL prompt swarm and budget calls; funding lessons S215–S217 archived; KB note updated: `methodology-a-ban-is-only-as-wide-as-the-files-it-opens`. Handoff 286.
 - **2026-09-23 — S284 (SkyWage):** Scenario 3's controls, a published scenario, and the Max award column (#1664); KB note `methodology-label-a-bound-where-it-binds`; handoff 285; the Scenario 3 decision sheet.
 - **2026-09-23 (S283, SkyFund — Rule 9 checkpoint, second pass)** — Priority 4 carries career attainment ([#1662](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1662)): 0% share, measured in CPL units by the Chancellor's Office from EDD wage records; P2 serves (B) alone; card headers read live titles; a stored order survives a new priority; the Designate button says what it needs. Then Sam's three funding rulings: P4 held at 0% until the first import, the EDD import receiver (`funding/career_attainment_import.json`), and the drill-in consolidated into one Baseline line. KB note: a control that does nothing — read the request log first.

@@ -164,9 +164,26 @@ it a REQUIRED check at the platform level then failed on measured fact:
 
 Consequences for the merge flow: `merge on clean OR unstable` survives for
 every check EXCEPT `test`; the E gate's skip-list is what keeps the wait
-cheap (docs-only diffs ~1.5 min, code ~9); and `enable_pr_auto_merge`
+cheap (docs-only diffs ~2.5 min, code ~7 since the 2026-09-24 sharding, ~20
+before it); and `enable_pr_auto_merge`
 cannot do the waiting (with no required checks it merges immediately), so
 sessions poll `get_check_runs` and merge after success.
+
+## `test` is a fan-in over four shards (2026-09-24, #1682)
+
+Sam, 2026-09-24: *"would it make sense to chunk our npm tests for git--they're
+taking 20 mins + each now."* Measured before the change: the `npm test` step
+alone read 18 min, and `cpl_funding_*` was 56 files and 87% of the suite's
+serial time; `tests/run.js` is memory-bound at four files wide on one 16 GB
+runner, so more machines was the only lever left. `js-tests.yml` now runs
+`gate` → `suite` (a matrix of four shards, `node tests/run.js --shard i/N`)
+beside `lints` → **`test`**, the fan-in that keeps the name this doctrine
+polls for. It runs on `!cancelled()` and reads every need's result, so a
+failed or skipped shard still reports; the E gate's `if:` sits on the shard
+jobs and never on `test` (a skipped required check never reports).
+`tests/js_suite_gate_test.py` pins the shape. The shard count is the matrix
+list and nowhere else. Rationale and the timing table:
+[`methodology-a-memory-bound-suite-scales-across-machines-not-workers`](../kb-notes/methodology-a-memory-bound-suite-scales-across-machines-not-workers.md).
 
 ## Auto-merge procedure (relocated from `CLAUDE.md`, 2026-09-09)
 
