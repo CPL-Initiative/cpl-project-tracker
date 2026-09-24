@@ -242,6 +242,7 @@
     "retheme_tokens.test.js": null,
     "reviewer_signin.test.js": 42,
     "runner_capture.test.js": 6,
+    "shard.test.js": 14,
     "sierra_adopter_landing_pages.test.js": 20,
     "sierra_adopter_names.test.js": 19,
     "sierra_alignment.test.js": 26,
