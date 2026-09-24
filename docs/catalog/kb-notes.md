@@ -38,7 +38,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Unified memory table — one cross-repo store for facts, pitfalls, opportunities, wishlist, and timeline events](../kb-notes/adr-unified-memory-table.md) | adr | published | 2026-07-24 | 2026-07-24 |
 | [The CPL merge lens — the student-repeat test (anchored to Title 5 §55050's "similar" standard)](../kb-notes/glossary-cpl-merge-lens-student-repeat-test.md) | glossary | published | 2026-07-13 | 2026-07-13 |
 | [\"Not signed in\" and \"only these people\" cannot both hold](../kb-notes/methodology-not-signed-in-and-only-these-people-cannot-both-hold.md) | methodology | published | 2026-09-08 | 2026-09-08 |
-| [A ban is only as wide as the files it opens](../kb-notes/methodology-a-ban-is-only-as-wide-as-the-files-it-opens.md) | methodology | published | 2026-09-15 | 2026-09-15 |
+| [A ban is only as wide as the files it opens](../kb-notes/methodology-a-ban-is-only-as-wide-as-the-files-it-opens.md) | methodology | published | 2026-09-15 | 2026-09-24 |
 | [A blocked path hides every defect behind it — budget for a chain, not a fix](../kb-notes/methodology-a-blocked-path-hides-the-defects-behind-it.md) | methodology | published | 2026-08-24 | 2026-08-24 |
 | [A bound is tested by value, not by the model's clamp count](../kb-notes/methodology-a-bound-is-tested-by-value-not-by-the-clamp-count.md) | methodology | published | 2026-08-28 | 2026-08-28 |
 | [A bug report is evidence, not diagnosis — and the control that kills your favorite hypothesis](../kb-notes/methodology-a-bug-report-is-evidence-not-diagnosis.md) | methodology | published | 2026-09-07 | 2026-09-08 |
@@ -450,7 +450,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Playbook — a live Edge Function 502 is often a RETIRED model id (diagnose via logs, fix via model swap)](../kb-notes/playbook-edge-function-502-retired-model.md) | playbook | published | 2026-06-19 | 2026-06-19 |
 | [Playbook — a standalone public page on the COBI Pages site (sits alone, live data, prints to PDF)](../kb-notes/playbook-standalone-public-page.md) | playbook | published | 2026-06-25 | 2026-06-25 |
 | [Playbook — Auto-sync vault-side repo clones via Windows Task Scheduler](../kb-notes/playbook-vault-sync-setup.md) | playbook | published | 2026-05-27 | 2026-05-29 |
-| [Playbook — auto-write cpl_memory at every checkpoint (Phase 3 of the memory loop)](../kb-notes/playbook-cpl-memory-auto-write-at-checkpoint.md) | playbook | published | 2026-07-24 | 2026-09-23 |
+| [Playbook — auto-write cpl_memory at every checkpoint (Phase 3 of the memory loop)](../kb-notes/playbook-cpl-memory-auto-write-at-checkpoint.md) | playbook | published | 2026-07-24 | 2026-09-24 |
 | [Playbook — build a CPL executive/board deck, and fill an existing brand PPTX template](../kb-notes/playbook-building-cpl-executive-presentations.md) | playbook | published | 2026-07-20 | 2026-08-10 |
 | [Playbook — loading a Microsoft Access export into Supabase](../kb-notes/playbook-access-export-to-supabase.md) | playbook | published | 2026-08-08 | 2026-08-08 |
 | [Playbook — Merging two existing CER credentials (existing→existing fold)](../kb-notes/playbook-cer-credential-merge.md) | playbook | published | 2026-06-04 | 2026-06-04 |

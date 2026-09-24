@@ -1666,3 +1666,28 @@ base, a tighter drill-in, and a check that a new scenario stays wired to every s
   column and the six-column drill-in broke them for layout reasons alone.
 - **Supabase notice (Sam, 2026-09-23):** from 2026-10-30 a NEW table in `public` needs explicit grants for the Data
   API. Next session: grants in every table-creating SQL file, and a lint beside the function-grants one.
+
+## 2026-09-24 — S285 (SkyGrant): the config after the stale save, and the briefing's funding box
+
+**What Sam asked.** Nothing new in the tab; the queue was SkyWage's handoff, and two of its items touched this lane.
+
+- **The config had not moved since the stale-window save.** Read 2026-09-24 00:2x UTC: `updated_at` 2026-09-23 21:30:12,
+  `projects.cpl-implementation.published` unset, Scenario 1 Year 1 slot 3 (Career attainment) at share 0.33, factor 0.5,
+  six strategies; slot 2 (Completion) seven. Both of Sam's evening-sheet edits (press Publish on Scenario 1 again, move
+  the six strategies to Completion) remain his, and colleges see Scenario 1 by the unset-marker fallback. The read went
+  through the JSON path this lane records, with each `strategies` array reduced to its length so one query answered.
+- **The briefing's funding box carried the retired words** (handoff carryover; #1675): *earns against*, *drawable*, *the
+  dollars*, *money*, *pool*, *modelled*. The two guards that hold the funding tab read the tab's DOM and `cpl_funding.js`;
+  the briefing is a third file neither opens, the shape S265 met on the explainer. Swept by Sam's map: the measures count
+  toward the figure; a capped college qualifies for funding at the same rate; the funding rolls forward and the college
+  receives its demonstrated funding once it confirms; only noncredit results count toward the noncredit share; *What
+  counts toward it*; reaching a target qualifies the college for the whole share. Three sentences restated positively
+  (the base note, the off-roster note, the failed-load notice). *Credit students have earned that has not been acted on*
+  stays, by the subject test. Guard: `tests/college_briefing_earn_retired.test.js` reads the source with the
+  identifier-sparing lookarounds and one named exemption; two checks in `college_briefing.test.js` that pinned the old
+  sentences now pin the new ones. Text only inside an existing box, so no a11y re-measure.
+- **Four unfloored files got floors** by hand from isolated runs, twice each: the new guard at 9, and S284's
+  delete_confirm 11, press_hold 11, save_over_newer 15. The first commit wrote them beside `_readme` and `_note`; the
+  ledger reads `files`, so a second commit moved them. Read a JSON ledger's shape before writing to it.
+- **Sam's ruling on the SQL prompts,** recorded here because the config read spent two of the dozen: stop working the
+  swarm and budget the calls. The approval doc carries it verbatim; this lane's reads are one statement each from now on.
