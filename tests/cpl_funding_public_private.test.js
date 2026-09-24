@@ -147,10 +147,13 @@ function boot(window) {
     !/N2N/.test(pubTxt) && !/Remaining 2025-26/.test(pubTxt));
   check("W5: but the public view STILL reconciles to the $15M appropriation",
     /account for/.test(pubTxt) && /\$15,000,000/.test(pubTxt));
-  check("W6: the tab is renamed to the seed-funding framing",
+  check("W6: the seed-funding framing stays on the section heading",
     /\$50K Seed Funding/.test(privTxt));
-  check("W6: the model tab is renamed for a college audience",
-    /College Implementation Funding/.test(privTxt));
+  // Sam, 2026-09-24 (review sheet item 1): the tab buttons carry the short
+  // names; the long ones stay on the sections they head.
+  const subtabs = Array.from(privDoc.querySelectorAll(".cplfund-subtabs button")).map((b) => b.textContent);
+  check("W6: the two funding tabs read \"2026-28 Funding\" and \"2025-26 Funding\"",
+    subtabs[0] === "2026-28 Funding" && subtabs[1] === "2025-26 Funding");
 }
 
 

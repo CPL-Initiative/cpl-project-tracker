@@ -168,6 +168,24 @@
     ".cplfund-dtl-table th:not(:first-child), .cplfund-dtl-table td:not(:first-child) { text-align: right; }",
     ".cplfund-dtl-table td { padding: 3px 6px; border-bottom: 1px solid var(--border); font-variant-numeric: tabular-nums; }",
     ".cplfund-dtl-table td .sub { display: block; font-size: .75rem; color: var(--text-muted); }",
+    // ⚠️ THE DRILL-IN SITS INSIDE THE INSTITUTION TABLE, so two outer rules reach
+    // its cells through descendant combinators: `.cplfund-table th` (7px padding,
+    // every header right-aligned) and `tr.cplfund-detail td` (26px / 14px). Both
+    // beat the four rules above, on source order and on specificity. Measured
+    // 2026-09-24 in Chromium: every header sat 7px right of its figures and
+    // PRIORITY sat right-aligned over left-aligned names. Sam, same day: "make
+    // sure the college details row headers line up perfectly with the row data."
+    // These restate the horizontal geometry at (0,2,1) and up, which neither
+    // outer rule reaches, so a header and its column share one padding and one
+    // alignment. Vertical padding and the header's colors stay as they are.
+    // Guard: cpl_funding_dtl_align.test.js resolves the cascade per column.
+    ".cplfund-dtl-tscroll > .cplfund-dtl-table th, .cplfund-dtl-tscroll > .cplfund-dtl-table td { padding-left: 7px; padding-right: 7px; }",
+    ".cplfund-dtl-tscroll > .cplfund-dtl-table th:first-child, .cplfund-dtl-tscroll > .cplfund-dtl-table td:first-child { text-align: left; }",
+    ".cplfund-dtl-tscroll > .cplfund-dtl-table th:not(:first-child), .cplfund-dtl-tscroll > .cplfund-dtl-table td:not(:first-child) { text-align: right; }",
+    // ★ Veteran Star beside the institution's name (vetStarHtml). COBI's Veteran
+    // Star gold: college_activity.js paints star colleges in --mustard-text
+    // (#8B6800, 5.2:1 on white; #E3B341 on the dark palette).
+    ".cplfund-vstar { color: var(--mustard-text, #8B6800); margin: 0 3px 0 2px; font-size: .95em; cursor: help; }",
     ".cplfund-ftesfactors { display: grid; gap: 2px; font-size: .8rem; }",
     ".cplfund-ftesrow { display: grid; grid-template-columns: minmax(180px,auto) minmax(90px,auto) 1fr;" +
       " gap: 10px; align-items: baseline; padding: 3px 0; border-bottom: 1px dotted var(--border); }",
@@ -8983,6 +9001,25 @@
     }
     return chips;
   }
+  // ★ Veteran Star beside the name (Sam, 2026-09-24: "Add a veteran star icon on
+  // the college rows for the 59 colleges that meet that criteria"). It reads the
+  // same per-college flag as the Baseline requirement and the Elig pie
+  // (vetStar()), so the three cannot disagree. The Baseline line's count also
+  // takes in Calbright, which meets that REQUIREMENT with noncredit certificates;
+  // a noncredit-only institution carries no star, since the star names the
+  // veteran-JST measure itself. It sits OUTSIDE the name's button, so the
+  // button's accessible name and the print copy's flattened name stay the name.
+  // The words ride the accessible name and the hover: color is never the only
+  // signal.
+  function vetStarHtml(c) {
+    var vs = vetStar();
+    if (!vs || c.nco || vs[c.college] !== true) return "";
+    var pf = perf();
+    var tip = "Veteran Star: JSTs uploaded in MAP for at least " +
+      fmtPctTrim(pf.vet_star_threshold || 0.75) + " of enrolled veterans" +
+      (pf.vet_star_as_of ? " (as of " + String(pf.vet_star_as_of).slice(0, 10) + ")" : "");
+    return '<span class="cplfund-vstar" role="img" aria-label="Veteran Star" title="' + esc(tip) + '">★</span>';
+  }
   function collegeRowHtml(c, idx) {
     var id = "c:" + c.college;
     var alt = (idx % 2 === 1) ? " cplfund-alt" : "";
@@ -8993,7 +9030,7 @@
       // The NAME is the toggle (every control is a word): a real <button> for
       // keyboard users, aria-expanded for the state, no caret glyph.
       '<td class="t"><button type="button" class="cplfund-caret" aria-expanded="' + (state.open[id] ? "true" : "false") +
-      '" aria-label="' + esc(dispName(c.college) + ", per-priority detail") + '"><span class="cplfund-instname">' + esc(dispName(c.college)) + "</span></button>" + rowChips(c) + "</td>" +
+      '" aria-label="' + esc(dispName(c.college) + ", per-priority detail") + '"><span class="cplfund-instname">' + esc(dispName(c.college)) + "</span></button>" + vetStarHtml(c) + rowChips(c) + "</td>" +
       '<td class="t trunc" title="' + esc(c.district || "") + '">' + esc(districtShort(c.district) || "—") + "</td>" +
       '<td class="c" title="' + esc(sizeCellTitle(c)) + '">' + fmtInt(c.cr_ftes) + "</td>" +
       '<td class="c" title="' + esc((c.nco
@@ -9928,11 +9965,15 @@
       '<div class="cplfund-memo" id="cplFundMemo" contenteditable="true" spellcheck="true" aria-label="Editable ' +
       esc(state.docType) + '">' + buildMemo(state.docType) + "</div>";
   }
+  // The two tab names are Sam's, verbatim (2026-09-24, review sheet item 1):
+  // "change tab title to "2026-28 Funding" and "2025-26 Funding"". The long
+  // names stay on the sections themselves ("2025–2026 $50K Seed Funding — ESS
+  // 25-82 implementation grants") and in the college briefing's funding boxes.
   function subviewTabsHtml() {
     return '<div class="cplfund-subtabs">' +
-      '<button type="button" data-subview="model"' + (state.subview === "model" ? ' class="on"' : "") + ">2026&ndash;2028 College Implementation Funding</button>" +
+      '<button type="button" data-subview="model"' + (state.subview === "model" ? ' class="on"' : "") + ">2026-28 Funding</button>" +
       '<button type="button" data-subview="grants"' + (state.subview === "grants" ? ' class="on"' : "") +
-      ' title="The 2025-26 $15M appropriation: the $50,000 ESS 25-82 implementation grants + progress on the three priority outcomes">2025&ndash;2026 $50K Seed Funding</button>' +
+      ' title="The 2025-26 $15M appropriation: the $50,000 ESS 25-82 implementation grants + progress on the three priority outcomes">2025-26 Funding</button>' +
       // The Report is an internal drafting surface (an editable ESS memo), not
       // something a college audience should see mid-draft.
       (publicMode() ? ""
