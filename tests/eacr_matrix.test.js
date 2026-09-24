@@ -73,13 +73,27 @@ const exhibits = [
     adopter_units: { "Chaffey College": 1, "Norco College": 12, "Riverside City College": 4 },
     adopter_lines: { "Chaffey College": 1, "Norco College": 3, "Riverside City College": 1 },
     peer_units_median: 4, peer_units_max: 12, rec_units_total: 36,
+    // 2026-09-24 fields: the CIP sector (section header), each MAP record's
+    // title + total units (the drill-down), and what each college articulated
+    // (the cell panel), as indices into credit_recs.
+    cip_sector: "26",
+    exhibit_records: [
+      { id: "MAPSAS-AB-1-001", title: "AP Biology — College Board exam", units: 4, lines: 1 },
+      { id: "MAPCXO-BA-1-001", title: "AP Bio (CXO)", units: 8, lines: 2 }
+    ],
+    adopter_rec_idx: { "Chaffey College": [3], "Norco College": [0, 1, 2], "Riverside City College": [0] },
     // Citrus is the control: a non-adopter the M-ID layer does NOT name, so it
     // must stay blank. Palomar is a non-adopter on THIS card but an adopter on
     // the second one, which is what makes the row-grain merge checkable.
     potential: 6, potential_names: ["Moreno Valley College", "Palomar College",
       "Citrus College", "North Orange Continuing Education", "Norco College",
       "CA MAP INITIATIVE COLLEGE"],
-    raw_titles: ["AP Biology"], credit_recs: [{ course: "BIO 100", credit: "4 hours in Biology" }] },
+    raw_titles: ["AP Biology"], credit_recs: [
+      { course: "BIO 100", credit: "4 hours in Biology" },
+      { course: "BIO 200", credit: "4 hours in Cell Biology" },
+      { course: "BIO 300", credit: "4 hours in Genetics" },
+      { course: "BIO 50", credit: "1 hour in Biology Lab" }
+    ] },
   // A second card folding under the SAME common title, with an adopter the first
   // card does not carry — the row grain is the title, so the matrix must merge.
   { exhibit_id: "apbio-2", exhibit_ids: ["MAPSAH-AB(1-1-001"],
@@ -88,10 +102,23 @@ const exhibits = [
     adopters: 1, adopter_names: ["Palomar College"],
     adopter_units: { "Palomar College": 4 }, adopter_lines: { "Palomar College": 1 },
     peer_units_median: 4, peer_units_max: 4, rec_units_total: 4,
-    potential: 0, potential_names: [],
+    potential: 0, potential_names: [], cip_sector: "26",
     raw_titles: ["AP Bio local"], credit_recs: [{ course: "BIO 101", credit: "4 hours in Biology" }] },
-  // ONE adopter → below the default row threshold, reachable at "1 adopter".
-  { exhibit_id: "solo-1", exhibit_ids: ["MAPICI-SOLO-1-001"],
+  // A second title in the same CIP sector, to check the alphabetical order
+  // inside a section — and it sorts AFTER "AP Biology".
+  { exhibit_id: "apchem-1", exhibit_ids: ["MAPSAS-AC-1-001"],
+    title: "AP Chemistry", unified_title: "AP Chemistry", issuing_agency: "College Board",
+    is_classified: true, cpl_type: "Credit by Exam", collaborative_type: "CCC Collaborative",
+    adopters: 1, adopter_names: ["Chaffey College"],
+    adopter_units: { "Chaffey College": 3 }, adopter_lines: { "Chaffey College": 1 },
+    peer_units_median: 3, peer_units_max: 3, rec_units_total: 3,
+    potential: 0, potential_names: [], cip_sector: "26",
+    raw_titles: ["AP Chemistry"], credit_recs: [{ course: "CHEM 1", credit: "3 hours in Chemistry" }] },
+  // ONE adopter — a row like any other since 2026-09-24 (no threshold), and
+  // the only title in CIP sector 11, so it heads the grid. Built WITHOUT the
+  // 2026-09-24 fields, the way a card from an older payload arrives: the
+  // drill-down must fall back to the raw title and the panel to the units.
+  { exhibit_id: "solo-1", exhibit_ids: ["MAPICI-SOLO-1-001"], cip_sector: "11",
     title: "CompTIA Linux+", unified_title: "CompTIA Linux+", issuing_agency: "CompTIA",
     is_classified: true, cpl_type: "Industry Certification", collaborative_type: "CCC Collaborative",
     adopters: 1, adopter_names: ["Chaffey College"],
@@ -115,19 +142,22 @@ const prescriptive = {
 };
 
 const lookup = {
-  "Chaffey College": { district: "Chaffey CCD", swRegion: "Inland Empire/Desert" },
-  "Norco College": { district: "Riverside CCD", swRegion: "Inland Empire/Desert" },
-  "Riverside City College": { district: "Riverside CCD", swRegion: "Inland Empire/Desert" },
-  "Moreno Valley College": { district: "Riverside CCD", swRegion: "Inland Empire/Desert" },
-  "Palomar College": { district: "Palomar CCD", swRegion: "San Diego/Imperial" },
-  "Citrus College": { district: "Citrus CCD", swRegion: "Los Angeles" },
-  "North Orange Continuing Education": { district: "North Orange CCD", swRegion: "Orange County" },
+  "Chaffey College": { district: "Chaffey CCD", swRegion: "Inland Empire/Desert", ascccArea: "D" },
+  "Norco College": { district: "Riverside CCD", swRegion: "Inland Empire/Desert", ascccArea: "D" },
+  "Riverside City College": { district: "Riverside CCD", swRegion: "Inland Empire/Desert", ascccArea: "D" },
+  "Moreno Valley College": { district: "Riverside CCD", swRegion: "Inland Empire/Desert", ascccArea: "D" },
+  "Palomar College": { district: "Palomar CCD", swRegion: "San Diego/Imperial", ascccArea: "D" },
+  "Citrus College": { district: "Citrus CCD", swRegion: "Los Angeles", ascccArea: "C" },
+  "North Orange Continuing Education": { district: "North Orange CCD", swRegion: "Orange County", ascccArea: "D" },
 };
 
 const html = `<!DOCTYPE html><html><head></head><body>
 <div id="statewide-interactive-container"></div>
 <script>
-  window.CPL_STATEWIDE = ${JSON.stringify({ exhibits })};
+  window.CPL_STATEWIDE = ${JSON.stringify({ exhibits, cip_sectors: {
+    "11": "Computer and Information Sciences and Support Services",
+    "26": "Biological and Biomedical Sciences",
+    "43": "Homeland Security, Law Enforcement, Firefighting and Related Protective Services" } })};
   window.CPL_STATEWIDE_PRESCRIPTIVE = ${JSON.stringify(prescriptive)};
   window.CCC_COLLEGE_LOOKUP = ${JSON.stringify(lookup)};
 </script>
@@ -213,20 +243,32 @@ function run() {
     && val(() => doc.getElementById("sw-view-table").hidden) === true);
   check("the grid renders", !!doc.querySelector(".mx-table"));
 
-  // ── 2. Ruling 3 — the default row bound ──────────────────────────────────
-  check("rows default to credentials with >= 2 adopting colleges",
-    val(() => rowTitles().join("|")) === "AP Biology");
-  check("...so a single-adopter credential is out by default",
-    val(() => rowTitles().indexOf("CompTIA Linux+")) === -1);
-  check("the threshold control offers 1 adopter", !!doc.querySelector('.mx-min-radio[value="1"]'));
-  check("...and lowering it brings the single-adopter row in",
-    pick('.mx-min-radio[value="1"]') && val(() => rowTitles().indexOf("CompTIA Linux+")) >= 0);
+  // ── 2. Every adopted credential is a row (Sam, 2026-09-24) ──────────────
+  // The rows-threshold chips are gone; his screen had "1 adopter" selected
+  // when he asked. Rows sit under CIP-sector headers, alphabetical within.
+  check("every credential with an adopting college is a row — three of them",
+    val(() => rowTitles().length) === 3);
+  check("...including the single-adopter credential, with no control to reach it through",
+    val(() => rowTitles().indexOf("CompTIA Linux+")) >= 0 && !doc.querySelector(".mx-min-radio"));
+  check("the college-scope chips are gone too", !doc.querySelector(".sw-scopebar"));
+  const secs = () => Array.from(doc.querySelectorAll(".mx-table th.mx-sec"));
+  check("rows are grouped under CIP-sector section headers", val(() => secs().length) === 2);
+  check("...ordered by CIP code (11 before 26)",
+    /CIP Sector 11/.test(val(() => secs()[0].textContent) || "") && /CIP Sector 26/.test(val(() => secs()[1].textContent) || ""));
+  check("...each naming the sector in words, with its credential count",
+    /Biological and Biomedical Sciences/.test(val(() => secs()[1].textContent) || "")
+    && /2 credentials/.test(val(() => secs()[1].textContent) || ""));
+  check("...as <th scope=rowgroup>, so AT knows it heads the rows below",
+    val(() => secs().every((th) => th.tagName === "TH" && th.getAttribute("scope") === "rowgroup")));
+  check("...spanning the whole grid",
+    val(() => secs()[0].getAttribute("colspan")) === String(headers().length + 1));
+  check("titles are alphabetical inside a section (AP Biology before AP Chemistry)",
+    val(() => rowTitles().join("|")) === "CompTIA Linux+|AP Biology|AP Chemistry");
+  check("section headers stay put under the column header (sticky)",
+    /th\.mx-sec\{position:sticky;top:var\(--mx-head-h\)/.test(src));
   check("...without disturbing the other views' pagination",
     val(() => window.document.getElementById("sw-status")) === null
     || !/NaN/.test(val(() => doc.getElementById("sw-status").textContent) || ""));
-  pick('.mx-min-radio[value="2"]');
-  check("restoring the threshold restores the default row set",
-    val(() => rowTitles().join("|")) === "AP Biology");
 
   // ── 3. Ruling 2 — columns are colleges, and the axis is the payload's ────
   // Seven names reach the payload; the MAP sandbox org is not one of the six
@@ -273,7 +315,7 @@ function run() {
     /peer median 4u/.test(val(() => rowFor("AP Biology").querySelector(".mx-rmeta").textContent) || "")
     && /best 12u/.test(val(() => rowFor("AP Biology").querySelector(".mx-rmeta").textContent) || ""));
   check("the peer median is recomputed at the ROW grain, not lifted from a card",
-    /matrixRows[\s\S]{0,1400}vals\[mid - 1\]/.test(src));
+    /function matrixRows[\s\S]{0,6000}vals\[mid - 1\]/.test(src));
 
   // ── 5. Ruling 4 — brown only where it is credible ────────────────────────
   check("a non-adopter the M-ID layer names DOES get an opportunity figure",
@@ -307,10 +349,38 @@ function run() {
     /adopted — credit-recommendation units/i.test(val(() => doc.querySelector(".mx-key").textContent) || "")
     && /opportunity — units the median adopting peer obtained/i
       .test(val(() => doc.querySelector(".mx-key").textContent) || ""));
-  check("each inked cell carries a per-cell explanation naming the college",
-    /Chaffey College/.test(val(() => cell("AP Biology", "Chaffey College").getAttribute("title")) || ""));
-  check("...which says what the parenthesised half means",
-    /peers here reach/.test(val(() => cell("AP Biology", "Chaffey College").getAttribute("title")) || ""));
+  // The per-cell explanation is a PANEL on hover and focus (Sam, 2026-09-24:
+  // "hover over on green and mustard college units should show list of credit
+  // recommendations and units approved by college") — a title attribute
+  // reaches neither a keyboard nor a touch user.
+  const tip = () => doc.getElementById("mx-tip");
+  function hover(td) {
+    if (!td) return false;
+    td.dispatchEvent(new window.MouseEvent("mouseover", { bubbles: true }));
+    return true;
+  }
+  check("hovering an inked cell opens a panel naming the college",
+    hover(cell("AP Biology", "Norco College")) && !!tip() && tip().hidden === false
+    && /Norco College/.test(tip().textContent));
+  check("...as role=tooltip, tied to the cell by aria-describedby",
+    val(() => tip().getAttribute("role")) === "tooltip"
+    && val(() => cell("AP Biology", "Norco College").getAttribute("aria-describedby")) === "mx-tip");
+  check("⭐ an adopter's panel LISTS what it articulated — each course, its units and the recommendation",
+    /12 units/.test(tip().textContent) && /BIO 200/.test(tip().textContent)
+    && /Cell Biology/.test(tip().textContent) && val(() => tip().querySelectorAll("li").length) === 3);
+  check("a partial adopter's panel says what the parenthesised half means",
+    hover(cell("AP Biology", "Chaffey College")) && /\(3\)/.test(tip().textContent)
+    && /median adopting peer obtained 4/.test(tip().textContent) && /BIO 50/.test(tip().textContent));
+  check("a likely non-adopter's panel says it has not adopted and names the course it teaches",
+    hover(cell("AP Biology", "Moreno Valley College")) && /Has not adopted/.test(tip().textContent)
+    && /BIO 1 \(4u\)/.test(tip().textContent));
+  check("a card from an older payload (no rec indices) still opens a panel with its units",
+    hover(cell("CompTIA Linux+", "Chaffey College")) && /3 units/.test(tip().textContent)
+    && /next data build/.test(tip().textContent));
+  check("a no-signal cell carries no panel hook",
+    !cell("AP Biology", "Citrus College").classList.contains("mx-inked"));
+  check("no cell carries a title attribute (the panel replaced it)",
+    !doc.querySelector("td.mx-cell[title]"));
   check("the table has a caption describing the two colours",
     /median adopting peer/i.test(val(() => doc.querySelector(".mx-table caption").textContent) || ""));
   check("...visually hidden through a NAMESPACED class (.sr-only is not on this page)",
@@ -324,19 +394,62 @@ function run() {
     && val(() => doc.querySelector(".mx-box").getAttribute("tabindex")) === "0");
   check("the title column is frozen (sticky left) in BOTH the corner and the rows",
     /th\.mx-corner\{position:sticky;left:0/.test(src) && /th\.mx-row\{position:sticky;left:0/.test(src));
-  check("the header row is frozen (sticky top)", /th\.mx-col\{height:132px;vertical-align:bottom;position:sticky;top:0/.test(src));
+  check("the header row is frozen (sticky top)", /th\.mx-col\{height:var\(--mx-head-h\);vertical-align:bottom;position:sticky;top:0/.test(src));
   check("...and the corner outranks both, so it cannot be scrolled under",
     /th\.mx-corner\{position:sticky;left:0;top:0;z-index:5/.test(src));
-  check("column headers are rotated so a 34px column can carry a name",
-    /transform:rotate\(-60deg\)/.test(src));
-  check("rotation is presentation only — the text stays upright in the DOM",
+  check("column headers stand VERTICAL, reading bottom to top (Sam, 2026-09-24), not diagonal",
+    /writing-mode:vertical-rl;transform:rotate\(180deg\)/.test(src) && !/rotate\(-60deg\)/.test(src));
+  check("...so a column is as narrow as its numbers: the width is one token, below the diagonal's 34px",
+    (function () { const m = src.match(/--mx-col-w:(\d+)px/); return !!m && parseInt(m[1], 10) < 34; })());
+  check("vertical writing is presentation only — the text stays upright in the DOM",
     val(() => headers()[0].querySelector("abbr").textContent.trim().length) > 0);
-  check("the matrix ships mobile rules for the frozen column",
-    /\.mx-table thead th\.mx-corner,\.mx-table tbody th\.mx-row\{min-width:180px/.test(src));
+  check("the matrix ships mobile rules for the frozen column (one token, read by the colgroup too)",
+    /max-width: 640px\)\{[\s\S]{0,3000}\.mx-table\{--mx-title-w:180px;\}/.test(src)
+    && /<col style="width:var\(--mx-title-w\)"/.test(src));
+  // The window: only the rows near the scroll position exist in the DOM.
+  check("the grid renders a WINDOW of rows between two spacer rows",
+    val(() => doc.querySelectorAll(".mx-table tr.mx-spacer").length) === 2);
+  check("...and never pre-builds the whole table (no chunk queue survives)",
+    !/insertAdjacentHTML/.test(src) && /function mxWindow/.test(src));
+  check("every credential row is one fixed height, so any row's place is arithmetic",
+    /\.mx-table tr\.mx-r\{height:52px;\}/.test(src) && /MX_ROW_H = 52/.test(src));
+  check("a row outside the window can still be reached by the keyboard (scroll-then-render)",
+    /function mxRowEl/.test(src) && /mxWindow\(true\);\s*return tbody\.querySelector/.test(src));
   check("forced colours keeps the sticky panes opaque",
     /\.mx-table thead th\.mx-col,\.mx-table thead th\.mx-corner,\.mx-table tbody th\.mx-row\{background:Canvas;\}/.test(src));
   check("the matrix radios stay focusable (opacity, never display:none)",
     /\.mx-seg input\{position:absolute;opacity:0/.test(src) && !/\.mx-seg input\{[^}]*display:none/.test(src));
+  // Keyboard: the region is the one Tab stop; arrows move between cells.
+  const box = () => doc.querySelector(".mx-box");
+  function key(el, k) {
+    if (!el) return false;
+    el.dispatchEvent(new window.KeyboardEvent("keydown", { key: k, bubbles: true, cancelable: true }));
+    return true;
+  }
+  check("no cell is pre-marked focusable — 316,000 tab stops would be no keyboard at all",
+    !doc.querySelector("td.mx-cell[tabindex]"));
+  (function () { const b = box(); if (b) b.focus(); })();
+  check("ArrowDown on the region enters the grid at its first inked cell",
+    key(box(), "ArrowDown") && val(() => doc.activeElement.classList.contains("mx-inked")) === true);
+  const entered = doc.activeElement;
+  check("...which opens that cell's panel on focus",
+    val(() => tip().hidden) === false && val(() => doc.activeElement.getAttribute("aria-describedby")) === "mx-tip");
+  check("ArrowRight moves to the next cell in the row",
+    key(doc.activeElement, "ArrowRight") && doc.activeElement !== entered
+    && val(() => doc.activeElement.classList.contains("mx-cell")) === true);
+  check("ArrowDown moves to the same column in the next credential row",
+    (function () {
+      const before = doc.activeElement, ci = Array.from(before.parentNode.querySelectorAll("td.mx-cell")).indexOf(before);
+      key(before, "ArrowDown");
+      const after = doc.activeElement;
+      return after !== before && Array.from(after.parentNode.querySelectorAll("td.mx-cell")).indexOf(after) === ci;
+    })());
+  check("Escape closes the panel and returns to the region",
+    key(doc.activeElement, "Escape") && doc.activeElement === box() && val(() => tip().hidden) === true);
+  check("the note tells a reader the arrow keys work", /arrow keys move between cells/.test(
+    val(() => doc.getElementById("mx-keys").textContent) || ""));
+  check("focus on a cell shows a ring even when it arrived by script (:focus, not :focus-visible)",
+    /\.mx-table td\.mx-cell:focus\{outline/.test(src));
   check("the density is published, so the reader knows how sparse the grid is",
     /% inked/.test(val(() => doc.querySelector(".mx-stats").textContent) || ""));
 
@@ -352,14 +465,23 @@ function run() {
   pick('.mx-cells-radio[value="both"]');
   check("...and 'Both' restores them", /^1\s*\(3\)$/.test(cellText("AP Biology", "Chaffey College")));
 
-  // ── 10. The folded MAP exhibit IDs, per row ──────────────────────────────
+  // ── 10. The folded MAP exhibit records, per row ──────────────────────────
+  // Sam, 2026-09-24: "drill down on Exhibit links on rows should show Exhibit
+  // Title and Total units instead of MAP ID".
   const disc = () => val(() => rowFor("AP Biology").querySelector(".mx-disc"));
   check("the row offers the folded MAP exhibit records", !!disc());
   check("...counting all three across BOTH cards under the common title",
     /3 exhibits/.test(val(() => disc().textContent) || ""));
   check("...declaring its collapsed state to AT", val(() => disc().getAttribute("aria-expanded")) === "false");
-  check("clicking it reveals the exhibit IDs", click(disc())
-    && /MAPSAS-AB-1-001/.test(val(() => doc.querySelector(".mx-exp").textContent) || ""));
+  const expText = () => val(() => doc.querySelector(".mx-exp").textContent) || "";
+  check("clicking it reveals each record's TITLE", click(disc())
+    && /AP Biology — College Board exam/.test(expText()) && /AP Bio \(CXO\)/.test(expText()));
+  check("⭐ ...with each record's TOTAL UNITS", /AP Bio \(CXO\)8u/.test(expText()) && /exam4u/.test(expText()));
+  check("...and the MAP ID is no longer the visible text", !/MAPSAS-AB-1-001/.test(expText()));
+  check("...though it survives as the chip's title attribute, for tracing a record in MAP",
+    !!val(() => doc.querySelector('.mx-exrec[title="MAP ID MAPSAS-AB-1-001"]')));
+  check("a record from a card built before the field existed falls back to its raw title",
+    /AP Bio local/.test(expText()));
   check("...and re-announces itself as expanded", val(() => disc().getAttribute("aria-expanded")) === "true");
   check("the disclosure row spans the whole grid",
     val(() => doc.querySelector(".mx-exp td").getAttribute("colspan")) === String(headers().length + 1));
@@ -377,6 +499,19 @@ function run() {
     val(() => rowTitles().join("|")) === "AP Biology");
   state_setFilter("district", []);
   check("clearing the filter restores every column", headers().length === 7);
+  check("the ASCCC Area filter narrows the columns the same way", (function () {
+    state_setFilter("ascccArea", ["D"]);
+    const caps = headerCaps();
+    // Six of the seven columns are Area D; Citrus is the one Area C college.
+    return caps.length === 6 && caps.indexOf("CITRUS") === -1 && caps.indexOf("PALOMAR") >= 0;
+  })());
+  state_setFilter("ascccArea", []);
+  check("a CIP-sector filter narrows ROWS and never a column", (function () {
+    state_setFilter("cipSector", ["11"]);
+    const ok = rowTitles().join("|") === "CompTIA Linux+" && headers().length === 7;
+    state_setFilter("cipSector", []);
+    return ok;
+  })());
 
   // ── 12. The export cannot disagree with the screen ───────────────────────
   // This tab has already shipped that defect once, one layer down, and the
@@ -389,12 +524,14 @@ function run() {
     check("⭐ ...and says explicitly that it is NOT the recommendation total",
       /NOT the credential's full recommendation total/i.test(csv));
     check("CSV names the college scope it was taken under", /College scope:/.test(csv));
-    check("CSV records the row threshold it was taken under",
-      /at least 2 adopting college/.test(csv));
+    check("CSV says every adopted credential is a row, grouped by CIP sector",
+      /every credential with at least one adopting college, grouped by CIP sector/.test(csv));
+    check("CSV carries the CIP sector beside the title",
+      /^AP Biology,26 · Biological and Biomedical Sciences,/m.test(csv));
     check("CSV splits adopted and opportunity into separate labelled columns",
       /Chaffey — adopted/.test(csv) && /Chaffey — opportunity/.test(csv));
     const apRow = csv.split("\n").find((l) => l.indexOf("AP Biology") === 0);
-    check("CSV carries the row's peer median and best adopter", !!apRow && /^AP Biology,4,4,12,/.test(apRow));
+    check("CSV carries the row's peer median and best adopter", !!apRow && /^AP Biology,[^,]*,4,4,12,/.test(apRow));
     check("⭐ the CSV agrees with the grid cell-for-cell (both call matrixCell)",
       /exportMatrixCSV[\s\S]{0,2000}matrixCell\(r, c\.key, likely\)/.test(src));
     check("⭐ the line total never reaches the spreadsheet either",

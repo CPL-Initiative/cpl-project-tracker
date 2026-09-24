@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-09-24T14:15:22.999378+00:00",
+  "scraped_at": "2026-09-24T16:59:06.038436+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 28428,
+    "jst": 28443,
     "star_colleges": 59
   },
   "computed_star_colleges": 59,
@@ -42,7 +42,7 @@
     },
     "Moreno Valley College": {
       "vets": 916,
-      "jst": 1023,
+      "jst": 1033,
       "star": true
     },
     "Bakersfield College": {
@@ -145,14 +145,14 @@
       "jst": 443,
       "star": true
     },
+    "Cabrillo College": {
+      "vets": 102,
+      "jst": 183,
+      "star": true
+    },
     "Sierra College": {
       "vets": 326,
       "jst": 331,
-      "star": true
-    },
-    "Cabrillo College": {
-      "vets": 102,
-      "jst": 182,
       "star": true
     },
     "Mt. San Jacinto College": {
@@ -300,14 +300,14 @@
       "jst": 130,
       "star": true
     },
-    "Lassen College": {
-      "vets": 129,
+    "Los Angeles Harbor College": {
+      "vets": 109,
       "jst": 140,
       "star": true
     },
-    "Los Angeles Harbor College": {
-      "vets": 109,
-      "jst": 137,
+    "Lassen College": {
+      "vets": 129,
+      "jst": 140,
       "star": true
     },
     "Irvine Valley College": {
@@ -462,7 +462,7 @@
     },
     "Coalinga College": {
       "vets": 17,
-      "jst": 2,
+      "jst": 3,
       "star": false
     },
     "Monterey Peninsula College": {

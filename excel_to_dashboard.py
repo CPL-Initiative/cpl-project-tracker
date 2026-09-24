@@ -5282,9 +5282,13 @@ def _load_top_code_lookup():
         for row in ws.iter_rows(min_row=2, max_col=7, values_only=True):
             code = str(row[0]).strip() if row[0] is not None else ""
             disc = str(row[2]).strip() if row[2] else "Unknown"
+            # Column D (index 3) is the CCC 4-digit TOP code — the bridge from
+            # MAP's own integer TOP id to the COCI TOP codes every other
+            # reference file is keyed by (kb/top_cip_map.json, the crosswalk).
+            code4 = str(row[3]).strip() if len(row) > 3 and row[3] else ""
             sector = str(row[6]).strip() if len(row) > 6 and row[6] else ""
             if code:
-                lookup[code] = {"discipline": disc, "sector": sector}
+                lookup[code] = {"discipline": disc, "sector": sector, "code4": code4}
         wb.close()
         return lookup
     except Exception as e:
@@ -5307,6 +5311,132 @@ def _top_sector(top_lookup, code, default=""):
     if isinstance(entry, dict):
         return entry.get("sector") or default
     return default
+
+
+# ── CIP sector (the two-digit CIP family) for an exhibit ────────────────────
+# Sam, 2026-09-24: the EACR's "Career Cluster" filter becomes "CIP Sectors",
+# with the COMPLETE family list offered rather than only the values present.
+# "CIP Sector" is Sam's word for the two-digit CIP family — cip_crosswalk.js
+# and college_briefing.js use it for the same level, and this is the third
+# surface to, so the vocabulary is read from the same place the TOP to CIP tab
+# reads it (cip_crosswalk_data.js `fams`).
+#
+# The route from an exhibit to a CIP: MAP's integer TOP id → the CCC 4-digit
+# TOP code (TOP_Code_Lookup.xlsx column D) → the CIP family that colleges
+# actually assigned to programs under that TOP (kb/top_cip_map.json, Sam's
+# ruling 2026-09-21: the observed CIP beats the published crosswalk about 3x)
+# → the published TOP↔CIP crosswalk only where no college has assigned one.
+# Rule 7 reaches every step: a course's only route to a CIP is its TOP code, so
+# this is a filter/grouping aid, never a determination.
+_CIP_FAMILIES_CACHE = None
+
+
+def _load_cip_families():
+    """Return (by_code4, families).
+
+    by_code4: CCC 4-digit TOP code → {"exact": family or None, "fold": {family: weight}}.
+              `exact` is the family colleges assigned under the 4-digit code's
+              own 6-digit form (XXXX.00) — MAP's 4-digit TOP IS that code, so it
+              wins when observed. `fold` is every 6-digit code under the 4-digit
+              prefix, weighted by programs observed (kb/top_cip_map.json), or 1
+              per published crosswalk row where the observed map is silent.
+              Measured 2026-09-24: the fold alone sent TOP 4930 (AP exams and
+              general education) to CIP 32 Basic Skills, because 4930.1x–.8x are
+              noncredit programs; 4930.00 itself is 24 Liberal Arts.
+    families: the complete two-digit CIP family vocabulary {code: title}.
+
+    Empty on any failure — a missing reference file must degrade to
+    today's behaviour (no CIP sector on the card), never abort the daily build."""
+    global _CIP_FAMILIES_CACHE
+    if _CIP_FAMILIES_CACHE is not None:
+        return _CIP_FAMILIES_CACHE
+    by_code4, families = {}, {}
+    # The vocabulary — the same `fams` the TOP to CIP tab renders.
+    fam_path = os.path.join(SCRIPT_DIR, "cip_crosswalk_data.js")
+    if os.path.exists(fam_path):
+        try:
+            with open(fam_path, encoding="utf-8") as f:
+                raw = f.read()
+            doc = json.loads(raw[raw.index("=") + 1:].strip().rstrip(";"))
+            families = {str(k): str(v) for k, v in (doc.get("fams") or {}).items()}
+        except Exception as e:
+            print(f"  WARNING: could not read CIP families from cip_crosswalk_data.js: {e}")
+    if not families:
+        csv_path = os.path.join(SCRIPT_DIR, "kb", "reference", "CIPCode2020.csv")
+        if os.path.exists(csv_path):
+            try:
+                import csv as _csv
+                with open(csv_path, encoding="utf-8-sig") as f:
+                    for r in _csv.DictReader(f):
+                        code = (r.get("CIPCode") or "").strip().strip('="')
+                        if len(code) == 2:
+                            families[code] = (r.get("CIPTitle") or "").strip().rstrip(".").title()
+            except Exception as e:
+                print(f"  WARNING: could not read CIPCode2020.csv: {e}")
+    # Observed TOP → CIP, keyed by the 6-digit COCI TOP; folded to 4 digits.
+    obs_path = os.path.join(SCRIPT_DIR, "kb", "top_cip_map.json")
+    if os.path.exists(obs_path):
+        try:
+            with open(obs_path, encoding="utf-8") as f:
+                obs = (json.load(f) or {}).get("map") or {}
+            for top6, v in obs.items():
+                cip = str((v or {}).get("cip") or "")
+                if len(cip) < 2:
+                    continue
+                w = int((v or {}).get("programs") or 1)
+                code4 = str(top6)[:4]
+                slot = by_code4.setdefault(code4, {"exact": None, "fold": {}})
+                slot["fold"][cip[:2]] = slot["fold"].get(cip[:2], 0) + w
+                if str(top6).endswith(".00"):
+                    slot["exact"] = cip[:2]
+        except Exception as e:
+            print(f"  WARNING: could not read kb/top_cip_map.json: {e}")
+    # The published crosswalk, only for 4-digit TOPs the observed map lacks.
+    pub_path = os.path.join(SCRIPT_DIR, "kb", "reference", "topcip_2021_crosswalk.xlsx")
+    if os.path.exists(pub_path):
+        try:
+            wb = load_workbook(pub_path, read_only=True, data_only=True)
+            ws = wb.worksheets[0]
+            pub = {}
+            for row in ws.iter_rows(values_only=True):
+                top, cip = (row[0] if row else None), (row[2] if row and len(row) > 2 else None)
+                if not isinstance(top, (int, float)) or not isinstance(cip, (int, float)):
+                    continue
+                code4 = f"{float(top):07.2f}"[:4]
+                fam = f"{int(cip) // 10000:02d}"
+                pub.setdefault(code4, {})
+                pub[code4][fam] = pub[code4].get(fam, 0) + 1
+            wb.close()
+            for code4, fams in pub.items():
+                if code4 not in by_code4:
+                    by_code4[code4] = {"exact": None, "fold": fams}
+        except Exception as e:
+            print(f"  WARNING: could not read topcip_2021_crosswalk.xlsx: {e}")
+    _CIP_FAMILIES_CACHE = (by_code4, families)
+    return _CIP_FAMILIES_CACHE
+
+
+def _cip_sector_for_tops(tops, top_lookup, by_code4):
+    """Modal two-digit CIP family for a group of MAP TOP ids, "" when none of
+    them resolves. Each TOP resolves to ONE family first (its exact XXXX.00
+    family when observed, else the programs-weighted modal family under its
+    4-digit prefix), then the group takes one vote per TOP; ties break to the
+    lowest code for stability."""
+    tally = {}
+    for t in tops or []:
+        entry = top_lookup.get(t)
+        code4 = entry.get("code4") if isinstance(entry, dict) else ""
+        slot = by_code4.get(code4 or "")
+        if not slot:
+            continue
+        fam = slot.get("exact")
+        if not fam and slot.get("fold"):
+            fam = sorted(slot["fold"].items(), key=lambda kv: (-kv[1], kv[0]))[0][0]
+        if fam:
+            tally[fam] = tally.get(fam, 0) + 1
+    if not tally:
+        return ""
+    return sorted(tally.items(), key=lambda kv: (-kv[1], kv[0]))[0][0]
 
 
 # ── Statewide exhibit program-area categories ───────────────────────────
@@ -5795,6 +5925,7 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
     from collections import defaultdict
 
     top_lookup = _load_top_code_lookup()  # MAP code → discipline name
+    cip_by_code4, _cip_families = _load_cip_families()  # 4-digit TOP → CIP family weights
     # Sandbox orgs and duplicate spellings are resolved at every point a college
     # name ENTERS this payload — adopters, TOP potentials and C-ID potentials —
     # so no downstream consumer has to remember the rule.
@@ -5876,6 +6007,17 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
         "confidence_titles": [],  # per-row for modal
         "quality_flags": set(),  # any constituent flag rolls up
         "credit_recs": [],  # list of {course, credit} dicts (deduped) — ALL collab rows (EACR)
+        "rec_index": {},    # (course, credit) → its index in credit_recs
+        # Per MAP exhibit record (Sam, 2026-09-24: the matrix drill-down shows
+        # the record's TITLE and TOTAL UNITS, not its MAP ID): the title the
+        # record was entered under and the distinct recommendation lines it
+        # carries.
+        "exhibit_titles": {},                # eid → raw exhibit title
+        "exhibit_recs": defaultdict(set),    # eid → {(course, credit)}
+        # college → indices into credit_recs, so a consumer can list what THIS
+        # college articulated (the hover on a matrix cell) without a second
+        # copy of the recommendation text per college.
+        "adopter_rec_idx": defaultdict(list),
         # Authoritative statewide recs: ONLY rows tagged Collaborative Type == "CCC"
         # (the single MAP-published statewide exhibit — a lead college hosts it,
         # e.g. Lassen for POST), deduped by the recommendation TEXT (the local
@@ -5912,6 +6054,7 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
         e["collab_types"].append(collab)
         e["eids"].add(eid)
         e["raw_titles"].add(title)
+        e["exhibit_titles"].setdefault(eid, title)
         if ident["confidence_title"]:
             e["confidence_titles"].append(ident["confidence_title"])
         if ident["quality_flag"]:
@@ -5939,8 +6082,10 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
         credit = (row[i_credit] or "").strip()
         if course and credit:
             rec_key = (course, credit)
-            if rec_key not in {(r["course"], r["credit"]) for r in e["credit_recs"]}:
+            if rec_key not in e["rec_index"]:
+                e["rec_index"][rec_key] = len(e["credit_recs"])
                 e["credit_recs"].append({"course": course, "credit": credit})
+            e["exhibit_recs"][eid].add(rec_key)
             # Per-college articulated units. Guarded on the triple rather than on
             # the pair, so two colleges articulating the SAME recommendation both
             # count while one college's row repeated across merged exhibit IDs
@@ -5951,6 +6096,7 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
                     e["adopter_rec_keys"].add(trip)
                     e["adopter_units"][artic] += _rec_units(credit)
                     e["adopter_lines"][artic] += 1
+                    e["adopter_rec_idx"][artic].append(e["rec_index"][rec_key])
         # Authoritative statewide recs — only the CCC-tagged (MAP-published) rows,
         # deduped by recommendation text, C-ID backfilled.
         if credit and collab == "CCC":
@@ -5990,6 +6136,9 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
             sector = sorted(sector_counts.items(), key=lambda kv: (-kv[1], kv[0]))[0][0]
         else:
             sector = ""
+        # CIP sector — the two-digit CIP family, via the 4-digit TOP (see
+        # _load_cip_families). "" reads as "No CIP assigned yet" on the tab.
+        cip_sector = _cip_sector_for_tops(e["tops"], top_lookup, cip_by_code4)
 
         # Classify as Statewide (CCC Collaborative) or Local. CCC takes top billing
         # (EACR PR-2): the merged card is CCC Collaborative if ANY constituent row is
@@ -6033,6 +6182,8 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
             "cpl_type": cpl_type,
             "discipline": disc,
             "sector": sector,
+            "cip_sector": cip_sector,
+            "top_codes": tops_sorted,
             "collaborative_type": collab_label,
             "adopters": len(adopters),
             "adopter_names": sorted(adopters),
@@ -6041,6 +6192,16 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
             "total_addressable": len(adopters) + len(new_colleges),
             "credit_recs": e["credit_recs"],
             "authoritative_recs": e["authoritative_recs"],
+            # One entry per MAP exhibit record folded under this card: its title
+            # as entered and the total units of its distinct recommendation
+            # lines. The consumer's drill-down renders these instead of IDs.
+            "exhibit_records": [
+                {"id": eid,
+                 "title": e["exhibit_titles"].get(eid, ""),
+                 "units": round(sum(_rec_units(c) for _, c in e["exhibit_recs"].get(eid, ())), 2),
+                 "lines": len(e["exhibit_recs"].get(eid, ()))}
+                for eid in sorted(e["eids"])
+            ],
             # ── Matrix sub-tab payload ──
             # adopter_units: what each college ACTUALLY articulated (the green
             # number). peer_units_median: what adopting colleges typically get,
@@ -6056,6 +6217,8 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
             # leaves this tab as a CSV.
             "adopter_units": {c: round(u, 2) for c, u in sorted(e["adopter_units"].items())},
             "adopter_lines": dict(sorted(e["adopter_lines"].items())),
+            # college → indices into credit_recs (what this college articulated).
+            "adopter_rec_idx": {c: sorted(set(ix)) for c, ix in sorted(e["adopter_rec_idx"].items())},
             "peer_units_median": _median([e["adopter_units"][c] for c in adopters
                                           if c in e["adopter_units"]]),
             "peer_units_max": round(max([e["adopter_units"][c] for c in adopters
@@ -12148,6 +12311,9 @@ def main():
             },
             "generated_at": exhibit_tables.get("generated_at", ""),
             "total_credit_recs": exhibit_tables.get("total_credit_recs", 0),
+            # The COMPLETE two-digit CIP family list (Sam, 2026-09-24: offer every
+            # sector in the filter, not only the ones present), keyed by code.
+            "cip_sectors": _load_cip_families()[1],
         }
         sw_js = ("/* Statewide Exhibit Adoption Data — auto-generated */\n"
                  "window.CPL_STATEWIDE = " + json.dumps(sw_data, indent=2, ensure_ascii=False) + ";\n")
