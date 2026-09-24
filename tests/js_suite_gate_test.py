@@ -127,18 +127,55 @@ for fname in readers:
           ("node tests/" + fname) in workflow_text)
 
 # ── 3. The wiring, and the forever-block shape ────────────────────────────
-check("workflow pipes the diff through the gate script",
-      "scripts/js_suite_gate.sh" in workflow_text)
-check("npm test is conditioned on the gate decision",
-      "steps.gate.outputs.decision == 'run'" in workflow_text)
-check("skip branch is conditioned on the gate decision",
-      "steps.gate.outputs.decision == 'skip'" in workflow_text)
 # Comments are stripped first: the header WARNING against `paths-ignore`
 # must not trip the check that enforces it (same failure class as the
 # spelling rule that corrected its own word list — see CLAUDE.md).
 yaml_only = "\n".join(
     l for l in workflow_text.splitlines() if not l.lstrip().startswith("#")
 )
+
+
+def job_block(name):
+    """The YAML of one top-level job (two-space indent) with comments gone."""
+    m = re.search(r"^  %s:\n((?:(?:    .*|\s*)\n)*)" % re.escape(name), yaml_only, re.M)
+    return m.group(1) if m else None
+
+
+check("workflow pipes the diff through the gate script",
+      "scripts/js_suite_gate.sh" in workflow_text)
+# Since 2026-09-24 the suite is a matrix of shard jobs (one runner each) and
+# `test` is the fan-in. The gate's conditional therefore sits on the SHARD
+# jobs — the one place an `if:` cannot make the reporting check disappear.
+suite = job_block("suite")
+check("a `suite` job exists (the sharded jsdom suite)", suite is not None)
+check("the shard jobs are conditioned on the gate decision",
+      suite is not None and "if: needs.gate.outputs.decision == 'run'" in suite)
+check("the shard count is the matrix and nowhere else (strategy.job-total)",
+      suite is not None
+      and "node tests/run.js --shard ${{ matrix.shard }}/${{ strategy.job-total }}" in suite
+      and re.search(r"^\s+shard: \[\d+(?:, \d+)*\]", suite, re.M))
+check("every shard reports (fail-fast is off)",
+      suite is not None and "fail-fast: false" in suite)
+check("skip branch is conditioned on the gate decision",
+      "if: needs.gate.outputs.decision == 'skip'" in yaml_only)
+# The fan-in is the check the merge doctrine polls (CLAUDE.md: "the `test`
+# check must have SUCCEEDED on the current head"). It has to REPORT on every
+# run, which a bare `needs` chain does not give: a job whose needs failed or
+# were skipped is itself skipped, and a skipped required check blocks the PR
+# forever. `!cancelled()` is the one condition allowed on it.
+fanin = job_block("test")
+check("a job named `test` exists (the check the merge doctrine polls)",
+      fanin is not None)
+check("`test` needs the gate, the shards and the lints",
+      fanin is not None and re.search(r"needs:\s*\[gate, suite, lints\]", fanin))
+check("`test` runs on !cancelled(), so it reports when a need failed or was skipped",
+      fanin is not None and "if: ${{ !cancelled() }}" in fanin)
+check("no other `if:` on the `test` job (a skipped required check never reports)",
+      fanin is not None and len(re.findall(r"^\s+if:", fanin, re.M)) == 1)
+check("`test` reads every need's result and the gate's decision",
+      fanin is not None and all(s in fanin for s in (
+          "needs.gate.result", "needs.suite.result", "needs.lints.result",
+          "needs.gate.outputs.decision")))
 check("no paths-ignore/paths trigger filter (a skipped required check "
       "never reports and blocks the PR forever)",
       "paths-ignore" not in yaml_only

@@ -123,7 +123,10 @@ sandbox, fold = val(lambda: _rules(), (set(), {}))
 check("roster rules load", sandbox and fold, f"{len(sandbox)} sandbox, {len(fold)} fold")
 check("CA MAP INITIATIVE COLLEGE is listed sandbox", "CA MAP INITIATIVE COLLEGE" in sandbox)
 check("all 8 test orgs listed", len(sandbox) == 8, f"got {len(sandbox)}")
-check("3 fold pairs", len(fold) == 3, f"got {len(fold)}")
+# Four since 2026-08-17: the three " Credit" twins plus the Ca\u00f1ada mojibake
+# encoding (the rules file's `_mojibake` note). The count was left at 3 when
+# the fourth landed, so this check read FAIL on every run for a month.
+check("4 fold pairs", len(fold) == 4, f"got {len(fold)}")
 check("fold targets are canonical, not themselves folded",
       all(v not in fold for v in fold.values()),
       "a chained fold would depend on iteration order")
@@ -229,6 +232,48 @@ check("potential twin is folded to the canonical",
       "Calbright College Credit" not in pot and "Calbright College Non-Credit" in pot, str(pot))
 check("real potential survives", "Citrus College" in pot, str(pot))
 check("potential COUNT matches the cleaned list", val(lambda: e["potential"]) == len(pot))
+
+# ─────────────────────────── 8b. the 2026-09-24 fields ───────────────────────
+# Sam's EACR tweaks: the matrix drill-down shows each MAP record's TITLE and
+# TOTAL UNITS rather than its ID; a cell's hover lists what THAT college
+# articulated; the Career Cluster filter becomes CIP Sectors. Each needs a field
+# the payload did not carry.
+res = build([
+    row("E-6", "Bookkeeping Cert", "Chabot College", "ACCT 1", "3 hours in Accounting", top="5"),
+    row("E-6", "Bookkeeping Cert", "Citrus College", "ACCT 10", "3 hours in Accounting", top="5"),
+    row("E-6", "Bookkeeping Cert", "Chabot College", "ACCT 2", "4 hours in Bookkeeping", top="5"),
+    # a second MAP record under the same card, repeating one line
+    row("E-7", "Bookkeeping Cert", "Chabot College", "ACCT 1", "3 hours in Accounting", top="5"),
+])
+e = res.get("Bookkeeping Cert")
+recs = val(lambda: e["exhibit_records"], [])
+check("exhibit_records: one entry per MAP record", [r["id"] for r in recs] == ["E-6", "E-7"], str(recs))
+check("exhibit_records: carries the title as entered",
+      val(lambda: recs[0]["title"]) == "Bookkeeping Cert")
+check("exhibit_records: total units sum the record's DISTINCT lines (3+3+4)",
+      abs(val(lambda: recs[0]["units"], 0) - 10.0) < 1e-9, str(recs))
+check("exhibit_records: a one-line record totals that line",
+      abs(val(lambda: recs[1]["units"], 0) - 3.0) < 1e-9 and val(lambda: recs[1]["lines"]) == 1)
+idx = val(lambda: e["adopter_rec_idx"], {})
+cr = val(lambda: e["credit_recs"], [])
+check("adopter_rec_idx: indices point INTO credit_recs",
+      all(0 <= i < len(cr) for ix in idx.values() for i in ix), str(idx))
+check("adopter_rec_idx: a college lists only what IT articulated",
+      val(lambda: sorted(cr[i]["course"] for i in idx["Citrus College"])) == ["ACCT 10"], str(idx))
+check("adopter_rec_idx: ...and every line it articulated, once",
+      val(lambda: sorted(cr[i]["course"] for i in idx["Chabot College"])) == ["ACCT 1", "ACCT 2"], str(idx))
+check("top_codes: the group's MAP TOP ids travel with the card",
+      val(lambda: e["top_codes"]) == ["5"])
+check("cip_sector: a two-digit CIP family resolves through the 4-digit TOP",
+      val(lambda: e["cip_sector"]) == "52",
+      "MAP TOP 5 → CCC 0502 (Accounting) → CIP 52 Business; got %r" % val(lambda: e.get("cip_sector")))
+res = build([row("E-8", "Unmapped TOP Cert", "Chabot College", "X 1", "3 hours in X", top="no-such-code")])
+check("cip_sector: an unmapped TOP reads as empty, never as a crash",
+      val(lambda: res["Unmapped TOP Cert"]["cip_sector"]) == "")
+fam = val(lambda: gen._load_cip_families()[1], {})
+check("the complete CIP family vocabulary loads (50 two-digit families)", len(fam) == 50, f"got {len(fam)}")
+check("...keyed by two-digit code, titled in words",
+      all(len(k) == 2 and k.isdigit() for k in fam) and bool(fam.get("43")))
 
 # ─────────────────────────── 9. a card with no adopters ──────────────────────
 res = build([row("E-5", "Unadopted Cert", "", "X 1", "3 hours in Something")])

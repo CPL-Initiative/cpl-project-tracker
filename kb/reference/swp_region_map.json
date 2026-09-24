@@ -143,5 +143,5 @@
   "_total": 117,
   "_unmapped": "Calbright College Non-Credit (statewide / online)"
  },
- "_asccc_areas": "NOT FOUND. Sam says the dataset carries Academic Senate areas too. Searched every column in the public schema for area / senate / asccc / zone / region: only college_geo.region and the Governance Register's own gr_*.area_id, which are CO priority areas and unrelated. No repo file carries Area A-D values. ASCCC uses FOUR areas against Strong Workforce's nine, so it is a genuinely different cut and worth having. Needs the source named."
+ "_asccc_areas": "Carried since 2026-09-24 as college_lookup.js `ascccArea`, applied from kb/reference/asccc_area_map.json (provisional: 36 of 118 colleges anchored to asccc.org text, 82 by the Areas' geographic descriptions; accepted as the working map by Sam the same day, with MAP's own locations-by-region export to replace it later). Earlier note, kept for the record: no Supabase column carries Area A-D; the search over area / senate / asccc / zone / region found only college_geo.region and the Governance Register's gr_*.area_id, which are unrelated. ASCCC uses FOUR areas against Strong Workforce's nine, so it is a genuinely different cut."
 }

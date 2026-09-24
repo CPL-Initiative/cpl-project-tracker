@@ -1,0 +1,196 @@
+{
+  "_what": "Every California Community College by ASCCC Area (A–D), the Academic Senate for California Community Colleges' four geographic areas. Applied to college_lookup.js as `ascccArea` so the EACR's ASCCC Area filter (Sam, 2026-09-24: 'Add ASCCC Region Filter next to SW Region filter') can narrow rows and matrix columns the same way District and SW Region do.",
+  "_authored": "2026-09-24, session 287 (SkyMatrix), from asccc.org page text reachable only through search snippets: the sandbox's egress policy blocks asccc.org, cccco.edu and web.archive.org, so the College Directory (asccc.org/area-college-list) and the Area Map and List PDF could not be read directly.",
+  "_status": "ACCEPTED AS THE WORKING MAP — Sam, 2026-09-24: 'Go ahead and use what we have for ASCCC regions and we'll get the new report later.' 36 of 118 college assignments are anchored to asccc.org text (basis: 'asccc.org page text'); the rest follow the Areas' own geographic descriptions (Area A: 'the California/Oregon border … through the central valley to Bakersfield'; Area B: 'the entirety of the greater Bay Area'; Area C: 'Cuesta College … in the north to Los Angeles Harbor College … to the south and east to Mount San Antonio College … and Citrus College'; Area D: 'Imperial, Los Angeles, Orange, Riverside, San Bernardino and San Diego counties', naming Long Beach City College and Rio Hondo College). The authoritative roster is MAP's own: Sam says the dataset carries Academic Senate areas and Pedro can produce a MAP Custom Report of every location with its regions (his 2026-09-22 note on the standing sheet). When it arrives, correct the per-college rows here and re-run kb/_apply_asccc_areas.py; no ask is open on it.",
+  "_counts_claimed_by_asccc": {
+    "A": "28 colleges (page text; predates Madera and Calbright)",
+    "B": "34 (page text; counts district senates)",
+    "C": "27 (page text)",
+    "D": "35 college and district senates (page text)"
+  },
+  "_counts_here": {
+    "A": 30,
+    "B": 29,
+    "C": 24,
+    "D": 35
+  },
+  "_source": [
+    "https://asccc.org/area-college-list",
+    "https://asccc.org/sites/default/files/Area%20Map%20and%20List.pdf",
+    "https://asccc.org/communities/areas/area-a",
+    "https://asccc.org/communities/areas/area-b",
+    "https://asccc.org/communities/areas/area-c",
+    "https://asccc.org/communities/areas/area-d"
+  ],
+  "_not_ccc": [
+    "Humboldt State University",
+    "St. Mary's College of California",
+    "Santa Cruz County Office of Education Community Colleges",
+    "Santa Cruz County Office",
+    "Tulare County Office of Education Community Colleges",
+    "Tulare County"
+  ],
+  "_refresh": "Edit this file, then run: python3 kb/_apply_asccc_areas.py (rewrites the `ascccArea` field on every college_lookup.js entry from this record; --check verifies).",
+  "areas": {
+    "A": {
+      "confirmed": [
+        "College of the Siskiyous",
+        "College of the Redwoods",
+        "Shasta College",
+        "Lassen Community College",
+        "Feather River College",
+        "Butte College",
+        "Yuba College",
+        "Woodland Community College",
+        "Sierra College",
+        "Folsom Lake College",
+        "Lake Tahoe Community College",
+        "American River College",
+        "Calbright College Non-Credit"
+      ],
+      "geography": [
+        "Sacramento City College",
+        "Cosumnes River College",
+        "San Joaquin Delta College",
+        "Modesto Junior College",
+        "Columbia College",
+        "Merced College",
+        "Fresno City College",
+        "Reedley College",
+        "Clovis Community College",
+        "Madera Community College",
+        "Coalinga College",
+        "Lemoore College",
+        "College of the Sequoias",
+        "Porterville College",
+        "Bakersfield College",
+        "Cerro Coso Community College",
+        "Taft College"
+      ]
+    },
+    "B": {
+      "confirmed": [
+        "Mendocino College",
+        "College of Marin",
+        "Merritt College",
+        "Mission College",
+        "Monterey Peninsula College",
+        "Napa Valley College",
+        "Ohlone College",
+        "City College of San Francisco",
+        "San Jose City College",
+        "College of San Mateo",
+        "Santa Rosa Junior College",
+        "Skyline College",
+        "Solano Community College"
+      ],
+      "geography": [
+        "Contra Costa College",
+        "Diablo Valley College",
+        "Los Medanos College",
+        "College of Alameda",
+        "Berkeley City College",
+        "Laney College",
+        "Cañada College",
+        "Foothill College",
+        "De Anza College",
+        "Chabot College",
+        "Las Positas College",
+        "West Valley College",
+        "Evergreen Valley College",
+        "Gavilan College",
+        "Cabrillo College",
+        "Hartnell College"
+      ]
+    },
+    "C": {
+      "confirmed": [
+        "Cuesta College",
+        "Los Angeles Harbor College",
+        "Mt. San Antonio College",
+        "Citrus College"
+      ],
+      "geography": [
+        "Allan Hancock College",
+        "Santa Barbara City College",
+        "Moorpark College",
+        "Oxnard College",
+        "Ventura College",
+        "College of the Canyons",
+        "Antelope Valley College",
+        "Los Angeles City College",
+        "East Los Angeles College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade-Technical College",
+        "Los Angeles Valley College",
+        "West Los Angeles College",
+        "Santa Monica College",
+        "Glendale Community College",
+        "Pasadena City College",
+        "El Camino College",
+        "Compton College"
+      ]
+    },
+    "D": {
+      "confirmed": [
+        "Long Beach City College",
+        "San Diego City College",
+        "Barstow Community College",
+        "Copper Mountain College",
+        "Palo Verde College",
+        "Rio Hondo College"
+      ],
+      "geography": [
+        "Cerritos College",
+        "Fullerton College",
+        "Cypress College",
+        "North Orange Continuing Education",
+        "Santa Ana College",
+        "Santiago Canyon College",
+        "Orange Coast College",
+        "Golden West College",
+        "Coastline Community College",
+        "Irvine Valley College",
+        "Saddleback College",
+        "Riverside City College",
+        "Norco College",
+        "Moreno Valley College",
+        "Mt. San Jacinto College",
+        "College of the Desert",
+        "Chaffey College",
+        "San Bernardino Valley College",
+        "Crafton Hills College",
+        "Victor Valley College",
+        "Imperial Valley College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Diego College of Continuing Education",
+        "Grossmont College",
+        "Cuyamaca College",
+        "Southwestern College",
+        "Palomar College",
+        "MiraCosta College"
+      ]
+    }
+  },
+  "aliases": {
+    "Canada College": "Cañada College",
+    "Calbright College Credit": "Calbright College Non-Credit",
+    "Consumnes River College": "Cosumnes River College",
+    "Lassen College": "Lassen Community College",
+    "Madera College": "Madera Community College",
+    "Los Angeles Trade Technical College": "Los Angeles Trade-Technical College",
+    "San Mateo College of San Mateo": "College of San Mateo",
+    "Sequoias, College of the": "College of the Sequoias",
+    "Victorville, Victor Valley College": "Victor Valley College",
+    "North Orange Continuing Education Credit": "North Orange Continuing Education",
+    "San Diego College of Continuing Education Credit": "San Diego College of Continuing Education"
+  },
+  "district_level": {
+    "Los Rios Community College District": "A",
+    "State Center Community College District": "A",
+    "Rancho Santiago": "D"
+  }
+}

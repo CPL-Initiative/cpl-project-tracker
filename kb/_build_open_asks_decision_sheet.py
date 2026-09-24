@@ -181,10 +181,12 @@ EVIDENCE = {
     9:  [policy()],
     10: [policy()],
     11: [measured(p_phone_opening)],
-    12: [live("2026-09-22", "information_schema.columns for any area/senate column")],
-    13: [policy()],
-    14: [live("2026-09-22", "the mojibake count in chatbox_college_courses")],
-    15: [quoted("docs/reference/lanes/t5-55050-article-9.md", "2026-08-30")],
+    # 12 was the ASCCC-areas card, retired 2026-09-24 on Sam's ruling ("use what
+    # we have for ASCCC regions and we'll get the new report later"); the three
+    # below moved up one, as position keys must.
+    12: [policy()],
+    13: [live("2026-09-22", "the mojibake count in chatbox_college_courses")],
+    14: [quoted("docs/reference/lanes/t5-55050-article-9.md", "2026-08-30")],
 }
 
 PROVENANCE = {
@@ -468,25 +470,6 @@ def items():
     })
 
     # ══ the rest ═════════════════════════════════════════════════════════════
-
-    I.append({
-        'lane': 'partner-crosswalks',
-        'title': 'ASCCC areas are a separate taxonomy and are still missing',
-        'ref': 'partner-crosswalks · NEEDS SAM',
-        'facts': (
-            "No Supabase column carries ASCCC areas. The region work resolved the SWP consortium roster "
-            "(117 colleges, 9 regions) and proximity regions, and those two already disagree &mdash; "
-            "<code>--region &quot;Bay Area&quot;</code> returns 23 where the consortium holds 28. ASCCC "
-            "areas are a third taxonomy on top of that."),
-        'why': (
-            "Each taxonomy answers a different question, and a roster that silently drops five member "
-            "colleges is the shape of the error a missing third one would add."),
-        'rec': (
-            "<strong>Add ASCCC area as its own column, sourced from the ASCCC's own roster, and never "
-            "derive it from county.</strong> <em>It might be wrong if</em> nothing we ship is scoped by "
-            "ASCCC area, in which case the honest move is to say we do not carry it."),
-        'chips': chips(('Add the column', 'add'), ('We do not carry it', 'skip'), CH_LATER),
-    })
 
     I.append({
         'lane': 'partner-crosswalks',
