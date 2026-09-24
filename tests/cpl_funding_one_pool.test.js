@@ -261,21 +261,24 @@ const POOL = 25240308;
     })());
   // Six columns since 2026-09-23 (Sam: "as clear and simple as possible"): the
   // CR/NC split of a priority's funding moved into the Total Possible hover.
-  check("D16: a college row expands to the six-column detail table (Priority · Target · " +
-        "Actual · To go · Current Total · Total Possible), the CR/NC split in the Total Possible hover",
+  // One table per lane since 2026-09-24 (Sam's 7.9a/b), each in his six
+  // columns: the CR/NC split that rode a hover is now two tables, so the
+  // noncredit share has a table of its own rather than a tooltip.
+  check("D16: a college row expands to a credit and a noncredit table, each Outcomes · Max FTES · " +
+        "Max Funds · Actual FTES · Actual Funds · Difference",
     (function () {
       const row = Array.from(doc.querySelectorAll(".cplfund-row"))
         .find(function (r) { return /Bakersfield/.test(r.textContent); });
       if (!row) return false;
       row.querySelector(".cplfund-caret").dispatchEvent(new window.Event("click", { bubbles: true }));
-      const tbl = doc.querySelector(".cplfund-dtl-table");
-      if (!tbl) return false;
-      const heads = Array.from(tbl.querySelectorAll("th")).map(function (h) { return h.textContent; });
-      const tpCol = heads.indexOf("Total Possible");
-      const firstRow = tbl.querySelectorAll("tr")[1];
-      const tpCell = firstRow && firstRow.children[tpCol];
-      return heads.join("|") === "Priority|Target|Actual|To go|Current Total|Total Possible" &&
-        !!tpCell && /^Credit share \$[\d,]+ · noncredit share \$[\d,]+$/.test(tpCell.getAttribute("title") || "");
+      const det = doc.querySelector("tr.cplfund-detail");
+      const cr = det && det.querySelector(".cplfund-dtl-table.cplfund-dtl-cr");
+      const nc = det && det.querySelector(".cplfund-dtl-table.cplfund-dtl-nc");
+      if (!cr || !nc) return false;
+      const heads = function (t) { return Array.from(t.querySelectorAll("th")).map(function (h) { return h.textContent; }).join("|"); };
+      const want = "Outcomes|Max FTES|Max Funds|Actual FTES|Actual Funds|Difference";
+      return heads(cr) === want && heads(nc) === want &&
+        /^Credit/.test(cr.caption.textContent.trim()) && /^Noncredit/.test(nc.caption.textContent.trim());
     })());
   check("D17: the memo's allocation table is one-pool shaped (credit/noncredit shares, no carve-out)",
     (function () {

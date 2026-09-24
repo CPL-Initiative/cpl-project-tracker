@@ -5449,6 +5449,9 @@
       // The picker IS the outcome in the heading; its closed face reads
       // "(A) Access", and "From the metric" stays on the list.
       head += goalSelectHtml(res, o.ctx, o.selAttr, o.selOpt || {});
+      // Loud, never silent — the picker alone would read "From the metric" on
+      // a card whose goal resolves to nothing.
+      if (!keys.length) head += ' <span class="cplfund-cardhead-name cplfund-cardgoal-orphan">Awaiting a statutory outcome</span>';
       var renaming = state.cardRenaming === o.renameKey;
       if (custom || renaming) head += " &middot; " + o.titleInput();
       if (!o.ro) {
@@ -9219,8 +9222,12 @@
         measured = true;
       } else if (fr.status === "none") { act = unit(0); actTip = "0% of Max FTES"; measured = true; }
       else if (fr.status === "suppressed") act = maskLt(true) + " (privacy)";
+      // UNDELIVERED IS ITS OWN BRANCH, never the catch-all's: "the feed carries
+      // no such measure" and "this college posted nothing" are two different
+      // zeros, and a measured zero above reads as a number.
+      else if (fr.status === "undelivered") act = "awaiting measurement";
       else if (fr.status === "bad_src") act = "awaiting a known measure";
-      else act = "awaiting measurement";   // undelivered / gap / pending — plain absence (2026-09-01)
+      else act = "awaiting measurement";   // gap / pending — plain absence (2026-09-01)
       var gapFtes = measured ? Math.max(0, f.maxFtes - (fr.status === "earned" ? fr.actual : 0)) : null;
       var diffTip = gapFtes == null ? "" : (gapFtes <= 0 ? "Max FTES met" : unit(gapFtes) + " FTES to Max FTES");
       return "<tr><td>" + esc(p.label) + (p.title ? ": " + esc(p.title) : "") + "</td>" +

@@ -383,11 +383,25 @@ const money = function (n) { return "$" + Math.round(n).toLocaleString("en-US");
   const T = window.CPL_FUNDING_TAB;
 
   // #1 — priority titles default Access / Success / Capacity (Year 1 shown).
-  const titleInputs = doc.querySelectorAll('.cplfund-prio .p input[data-edit="prio-title"]');
-  check("each priority box has an editable title input", titleInputs.length === NPRIO);
+  // ⭐ The card head says each thing once (2026-09-24): a title that matches
+  // its outcome's name shows as the outcome's name, with Rename for a title of
+  // its own; a different title keeps its field in the heading.
+  const boxes = Array.from(doc.querySelectorAll(".cplfund-prio .p"));
+  const titleOf = (box) => {
+    const inp = box.querySelector('input[data-edit="prio-title"]');
+    if (inp) return inp.value;
+    const sel = box.querySelector("select.cplfund-cardgoal-sel");
+    return sel ? sel.options[sel.selectedIndex].text.replace(/^(\([A-D]\)\s*\+?\s*)+/, "") : "";
+  };
+  check("each priority box has a title control (its field, or Rename where the title is the outcome's name)",
+    boxes.length === NPRIO && boxes.every((b) => !!b.querySelector('input[data-edit="prio-title"], [data-cardrename]')));
   check("priority titles default to Access / Success / Capacity",
-    titleInputs[0].value === "Access" && titleInputs[1].value === "Success" && titleInputs[2].value === "Capacity");
-  commit(window, titleInputs[0], "Access & Onboarding");
+    titleOf(boxes[0]) === "Access" && titleOf(boxes[1]) === "Success" && titleOf(boxes[2]) === "Capacity");
+  // Rename opens the field on the card whose title is its outcome's name.
+  const ren = boxes[0].querySelector("[data-cardrename]");
+  if (ren) click(window, ren);
+  const titleInputs = doc.querySelectorAll('.cplfund-prio .p input[data-edit="prio-title"]');
+  commit(window, doc.querySelectorAll(".cplfund-prio .p")[0].querySelector('input[data-edit="prio-title"]') || titleInputs[0], "Access & Onboarding");
   check("editing a priority title persists to the active Year-1 slot",
     !!(T._getScenario().yearPriorities && T._getScenario().yearPriorities["1"] &&
        T._getScenario().yearPriorities["1"]["0"] &&

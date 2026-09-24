@@ -176,16 +176,19 @@ check("the two quantities are ~500x apart, so a mix-up could not hide",
   // 900 units: semester -> 30.0 FTES, quarter -> 20.0 FTES.
   const ala = dtlRow0(window, T, "Alameda");
   const foo = dtlRow0(window, T, "Foothill");
-  const aline = function (cells) { return cells.byHead("actual").textContent.replace(/\s+/g, " "); };
-  const tline = function (cells) { return cells.byHead("target").textContent.replace(/\s+/g, " "); };
-  check("semester college: 900 units reads 30.0 CPL FTES in its expand's Actual cell",
-    !!ala && /(^|[^\d.])30\.0 FTES/.test(aline(ala)));
+  // The unit rides the HEADER since 2026-09-24 (Sam's "Max FTES" / "Actual
+  // FTES"), so a cell holds the figure alone.
+  const aline = function (cells) { return cells.byHead("actual ftes").textContent.replace(/\s+/g, " "); };
+  const tline = function (cells) { return cells.byHead("max ftes").textContent.replace(/\s+/g, " "); };
+  const num = function (v) { return new RegExp("(^|[^\\d.])" + v.replace(".", "\\.") + "($|[^\\d])"); };
+  check("semester college: 900 units reads 30.0 CPL FTES in its expand's Actual FTES cell",
+    !!ala && num("30.0").test(aline(ala)));
   check("QUARTER college: the same 900 units reads 20.0 CPL FTES (÷45, not ÷30)",
-    !!foo && /(^|[^\d.])20\.0 FTES/.test(aline(foo)));
+    !!foo && num("20.0").test(aline(foo)));
   check("...so the quarter college is NOT credited 1.5x for identical work",
-    /(^|[^\d.])30\.0 FTES/.test(aline(ala)) && !/(^|[^\d.])30\.0 FTES/.test(aline(foo)));
+    num("30.0").test(aline(ala)) && !num("30.0").test(aline(foo)));
   check("the expand counts in FTES, not students, when the metric is FTES",
-    /[\d.,]+ FTES/.test(tline(ala)) && !/stu/.test(tline(ala)) && !/stu/.test(aline(ala)));
+    /^[\d.,]+$/.test(tline(ala).trim()) && !/stu/.test(tline(ala)) && !/stu/.test(aline(ala)));
   // The Tgt/Now label column went with the P-cells; the two lines are now two
   // NAMED COLUMNS. Without this, dropping the headers would leave the reader
   // two unlabelled numbers per priority — the exact failure the labels (and
@@ -193,8 +196,8 @@ check("the two quantities are ~500x apart, so a mix-up could not hide",
   {
     const heads = Array.from(window.document.querySelectorAll(".cplfund-dtl-table th"))
       .map(function (h) { return h.textContent; }).join("|");
-    check("the expand names its Target and Actual columns (the retired Tgt/Now labels' successor)",
-      heads.indexOf("Target|Actual") !== -1);
+    check("the expand names its FTES columns, unit and all (the retired Tgt/Now labels' successor)",
+      heads.indexOf("Max FTES|Max Funds|Actual FTES") !== -1);
   }
   // The WORKING — which divisor, and whose calendar — shows in the FTES-factors
   // box (the retired hover's successor): both derived divisors and the

@@ -68,31 +68,43 @@ check("the cards render in the curator's displayed order",
   cards(doc).map((_, i) => String(i)).join(","));
 
 // ── 3. the outcome rides the CARD — all four pieces the band used to hold ───
-const rows = cards(doc).map((c) => c.querySelector(".cplfund-cardgoal"));
-check("every priority card carries an outcome row", rows.every(Boolean));
-check("the outcome row sits ABOVE the title, where Sam's screenshot puts it",
+const rows = cards(doc).map((c) => c.querySelector(".cplfund-cardhead"));
+check("every priority card carries its head (the outcome, its law, its number)", rows.every(Boolean));
+// ⭐ ONE LINE, NOT A ROW ABOVE THE TITLE (Sam, 2026-09-24, approving the mock:
+// "I like your simplified priority card!"). The outcome reads IN the heading,
+// beside the number — the picker itself in the internal view — so the card
+// names it once; the law is the line under it.
+check("the outcome reads in the card's heading, beside its number",
   cards(doc).every((c) => {
-    const row = c.querySelector(".cplfund-cardgoal");
-    const h4 = c.querySelector("h4");
-    return row && h4 && (row.compareDocumentPosition(h4) & 4) !== 0;   // h4 FOLLOWS row
+    const h4 = c.querySelector(".cplfund-cardhead h4");
+    return !!h4 && !!h4.querySelector(".cplfund-prio-num") &&
+      !!(h4.querySelector("select.cplfund-cardgoal-sel") || h4.querySelector(".cplfund-cardgoal-key"));
   }));
 // THE OUTCOME'S NAME READS ONCE (Sam, 2026-09-23: "eliminate any redundancies
 // in titles or designations"): beside the key, or in the card's own title when
 // the title already says it. A curator reads it in the picker.
 const GOAL_SHORT = { A: "Access", B: "Completion", C: "Career attainment", D: "Pilot projects" };
+const pickedOf = (r) => {
+  const s = r && r.querySelector("select.cplfund-cardgoal-sel");
+  return s && s.selectedIndex >= 0 ? s.options[s.selectedIndex].textContent : "";
+};
+// The key: its span on the reader view, the picker's face in the internal view.
+const keyText = (r) => {
+  const k = r && r.querySelector(".cplfund-cardgoal-key");
+  return ((k ? flat(k) : pickedOf(r)).match(/\([A-D]\)/g) || []).join(" + ");
+};
+const keyLetters = (r) => keyText(r).match(/[A-D]/g) || [];
+// The card's title: its custom-title field, else the name the heading shows.
 const titleOf = (c) => {
   const i = c.querySelector('input[data-edit="prio-title"]');
-  return i ? i.value : flat(c.querySelector("h4")).replace(/^Priority \d+:\s*/, "");
-};
-const keyLetters = (r) => flat(r.querySelector(".cplfund-cardgoal-key")).match(/[A-D]/g) || [];
-const pickedOf = (r) => {
-  const s = r.querySelector("select.cplfund-cardgoal-sel");
-  return s && s.selectedIndex >= 0 ? s.options[s.selectedIndex].textContent : "";
+  if (i) return i.value;
+  const n = c.querySelector(".cplfund-cardhead-name");
+  return n ? flat(n) : pickedOf(c.querySelector(".cplfund-cardhead")).replace(/^(\([A-D]\)\s*\+?\s*)+/, "");
 };
 check("every outcome row names its key, and the card names the outcome: beside it, in the picker, or in its title",
   rows.every((r, i) => {
     const ks = keyLetters(r);
-    const where = (flat(r.querySelector(".cplfund-cardgoal-name")) + " | " + pickedOf(r) + " | " +
+    const where = (flat(r.querySelector(".cplfund-cardhead-name")) + " | " + pickedOf(r) + " | " +
       titleOf(cards(doc)[i])).toLowerCase();
     return ks.length > 0 && ks.every((k) => where.indexOf(GOAL_SHORT[k].toLowerCase()) !== -1);
   }));
@@ -102,7 +114,9 @@ check("a card whose title already names its outcome carries no second copy besid
       const ks = keyLetters(rows[i]);
       return ks.length === 1 && titleOf(c).trim().toLowerCase() === GOAL_SHORT[ks[0]].toLowerCase();
     });
-    return same.length > 0 && same.every((c) => !c.querySelector(".cplfund-cardgoal-name"));
+    // No name span beside the picker, and no title field repeating it.
+    return same.length > 0 && same.every((c) => !c.querySelector(".cplfund-cardhead-name") &&
+      !c.querySelector('.cplfund-cardhead input[data-edit="prio-title"]'));
   })());
 check("every outcome row cites its own subdivision of §78093.2(d)(1)",
   rows.every((r) => /78093\.2\(d\)\(1\)\([A-D]\)/.test(flat(r.querySelector(".cplfund-cardgoal-cite")))));
@@ -139,7 +153,7 @@ check("the raised-letter goal marker is retired from the card title",
       /^From the metric: \([A-D]\)( \+ \([A-D]\))* \S/.test(picked(s))), JSON.stringify(sels.map(picked)));
   check("and the key beside it agrees with the outcome the picker names",
     cards(d).every((c, i) => {
-      const ks = keyLetters(c.querySelector(".cplfund-cardgoal"));
+      const ks = keyLetters(c.querySelector(".cplfund-cardhead"));
       return ks.length > 0 && ks.join() === (picked(sels[i]).match(/\(([A-D])\)/g) || []).map((x) => x[1]).join();
     }));
 }
@@ -174,7 +188,7 @@ check("the raised-letter goal marker is retired from the card title",
   const orphan = Array.from(doc2.querySelectorAll(".cplfund-cardgoal-orphan"));
   check("the card says it is awaiting a statutory outcome", orphan.length === 1);
   check("and says how to place it",
-    /Set the metric, or choose an outcome/i.test(flat(orphan[0].parentNode)));
+    !!orphan[0] && /Set the metric, or choose an outcome/i.test(flat(orphan[0].closest(".cplfund-cardhead"))));
 }
 
 // ── 6. the totals row names EVERY statutory goal, served or not ─────────────
@@ -217,8 +231,8 @@ check("a goal priorities DO serve carries a Total Possible figure",
   // got its own measure and the counselor step went back to (B) alone.
   check("the picker offers all four statutory goals beside it", sel && sel.options.length === 5);
   commit(window, sel, "D");
-  const row0 = d.querySelectorAll("[data-priocard]")[0].querySelector(".cplfund-cardgoal");
-  check("the assignment moves the card's outcome", /\(D\)/.test(flat(row0.querySelector(".cplfund-cardgoal-key"))));
+  const row0 = d.querySelectorAll("[data-priocard]")[0].querySelector(".cplfund-cardhead");
+  check("the assignment moves the card's outcome", /\(D\)/.test(keyText(row0)));
   const sel0 = d.querySelectorAll("[data-priocard]")[0].querySelector("[data-priogoal]");
   check("the picker shows the curator's choice in place of 'From the metric'",
     !!sel0 && sel0.value === "D" && !sel0.options[0].selected);
@@ -229,10 +243,10 @@ check("a goal priorities DO serve carries a Total Possible figure",
   // Back to derived — and it STAYS back after a re-render.
   commit(window, d.querySelector("[data-priogoal]"), "derived");
   T.render();
-  const row0b = d.querySelectorAll("[data-priocard]")[0].querySelector(".cplfund-cardgoal");
+  const row0b = d.querySelectorAll("[data-priocard]")[0].querySelector(".cplfund-cardhead");
   const sel0b = d.querySelectorAll("[data-priocard]")[0].querySelector("[data-priogoal]");
   check("clearing restores the measure-derived outcome",
-    !!sel0b && sel0b.value === "derived" && !/\(D\)/.test(flat(row0b.querySelector(".cplfund-cardgoal-key"))));
+    !!sel0b && sel0b.value === "derived" && !/\(D\)/.test(keyText(row0b)));
   check("and the restore survives a re-render rather than undoing itself",
     !!sel0b && /^From the metric: \(/.test(sel0b.options[sel0b.selectedIndex].textContent));
 }
@@ -250,12 +264,12 @@ check("a goal priorities DO serve carries a Total Possible figure",
   const rc = reported(d);
   check("a reported card renders for a goal no priority measures", rc.length >= 1);
   check("every reported card carries the same outcome row as a measured one",
-    rc.every((c) => !!c.querySelector(".cplfund-cardgoal")));
+    rc.every((c) => !!c.querySelector(".cplfund-cardhead")));
   check("a reported card carries a Metric block saying it awaits a campus measure",
     rc.every((c) => /Awaiting a campus measure/i.test(flat(c.querySelector(".metric")))));
   // One card per goal: the picker does not OFFER a goal another card holds,
   // rather than refusing the click afterwards.
-  const goals = rc.map((c) => flat(c.querySelector(".cplfund-cardgoal-key")));
+  const goals = rc.map((c) => keyText(c));
   check("no two reported cards hold the same outcome", new Set(goals).size === goals.length);
   const rcSel = rc[0].querySelector("[data-rcgoal]");
   check("a reported card's picker is live", !!rcSel);
@@ -351,7 +365,7 @@ check("a goal priorities DO serve carries a Total Possible figure",
   T.render();
   const fundOf = (goal) => {
     const card = Array.from(d.querySelectorAll("[data-rcard]"))
-      .find((c) => flat(c.querySelector(".cplfund-cardgoal-key")) === "(" + goal + ")");
+      .find((c) => keyText(c) === "(" + goal + ")");
     if (!card) return null;
     const sec = Array.from(card.querySelectorAll(".cplfund-cardsec"))
       .find((x) => /Project allocation/i.test(flat(x.querySelector(".cplfund-cardsec-lab"))));

@@ -38,8 +38,9 @@ function openDetail(window, doc, name) {
 // Read the detail table BY HEADER — never by position. Adding "To go" shifted
 // every index in the metric-pin suite; that suite is header-keyed now and so
 // is this one, so the next column insert cannot quietly re-point an assertion.
+// The CREDIT table — one table per lane since 2026-09-24 (Sam's 7.9a/b).
 function detRows(det) {
-  const trs = Array.from(det.querySelectorAll(".cplfund-dtl-table tr"));
+  const trs = Array.from(det.querySelectorAll(".cplfund-dtl-table.cplfund-dtl-cr tr"));
   const keys = Array.from(trs[0].querySelectorAll("th"))
     .map((th) => th.textContent.replace(/\s+/g, " ").trim().toLowerCase());
   return trs.slice(1).map((tr) => {
@@ -155,25 +156,32 @@ function detRows(det) {
   T.render();
   const R = detRows(openDetail(window, doc, "Laney"));
 
-  check("T2: the table carries a To go column", R.length === NPRIO && "to go" in R[0]);
-  check("T2a: under target — To go names the distance AND the funding still remaining (on its hover)",
-    R.length === NPRIO && /\d/.test(R[0]["to go"]) && /\$[\d,]+ remaining/.test(R[0]["to go (hover)"]));
-  check("T2a1: …on ONE line: the cell holds the distance alone (Sam, 2026-09-23: tighten the detail rows)",
-    R.length === NPRIO && !/remaining/.test(R[0]["to go"]));
-  check("T2a2: …and the distance is not the whole target (the posted amount is subtracted)",
-    R.length === NPRIO && R[0]["to go"] !== R[0].target);
-  check("T2b: at or over target — To go says target met, and offers no negative distance",
-    R.length === NPRIO && /target met/.test(R[1]["to go"]) && !/-/.test(R[1]["to go"]));
+  // "To go" is RETIRED (Sam, 2026-09-24, review sheet item 7, naming the six
+  // columns: "Outcomes; Max FTES; Max Funds; Actual FTES; Actual Funds;
+  // Difference"). Difference is the FUNDING still to qualify for, and the FTES
+  // distance To go carried rides its hover — so every guard below still holds,
+  // on the column that now carries the distance.
+  check("T2: the table carries a Difference column, and To go has gone",
+    R.length === NPRIO && "difference" in R[0] && !("to go" in R[0]));
+  check("T2a: under target — Difference names the funding still to qualify for, its hover the FTES gap",
+    R.length === NPRIO && /^\$[\d,]+$/.test(R[0].difference) && /FTES to Max FTES/.test(R[0]["difference (hover)"]));
+  check("T2a1: …on ONE line: the cell holds the funding alone (Sam, 2026-09-23: tighten the detail rows)",
+    R.length === NPRIO && !/FTES/.test(R[0].difference));
+  check("T2a2: …and the difference is not the whole Max Funds (Actual Funds is subtracted)",
+    R.length === NPRIO && R[0].difference !== R[0]["max funds"] && R[0]["actual funds"] !== "$0");
+  check("T2b: at or over target — Difference reads $0, its hover Max FTES met, and never a negative",
+    R.length === NPRIO && R[1].difference === "$0" && /Max FTES met/.test(R[1]["difference (hover)"]) && !/-/.test(R[1].difference));
   // THE ONE THAT MATTERS. A masked actual plus a distance is the actual: a
-  // reader subtracts. The privacy mask has to hold across the whole row, not
-  // just the cell it was applied to.
-  check("T2c: a privacy-suppressed actual gets NO distance — it would leak the value by subtraction",
-    R.length === NPRIO && /privacy/.test(R[2].actual) &&
-    !/\d/.test(R[2]["to go"]) && !/remaining/.test(R[2]["to go"]) &&
-    // The hover is part of the row: a remaining figure there leaks the same way.
-    !/remaining|\d/.test(R[2]["to go (hover)"]));
-  check("T2c2: …and the masked row's To go is a plain absence, not a zero",
-    R.length === NPRIO && !/^0\b/.test(R[2]["to go"]) && !/target met/.test(R[2]["to go"]));
+  // reader subtracts. The privacy mask has to hold across the whole row — the
+  // funds and the difference included, since funds are the actual times a
+  // known price.
+  check("T2c: a privacy-suppressed actual gets NO distance and no funds to subtract",
+    R.length === NPRIO && /privacy/.test(R[2]["actual ftes"]) &&
+    R[2]["actual funds"] === "$0" && R[2].difference === R[2]["max funds"] &&
+    // The hover is part of the row: an FTES gap there leaks the same way.
+    !/FTES|\d/.test(R[2]["difference (hover)"]) && !/\d/.test(R[2]["actual ftes (hover)"]));
+  check("T2c2: …and the masked row's hover is a plain absence, never Max FTES met",
+    R.length === NPRIO && R[2]["difference (hover)"] === "");
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -198,11 +206,11 @@ function detRows(det) {
   const R = detRows(openDetail(window, doc, "Laney"));
 
   check("T3a: an undelivered source reads awaiting measurement and shows no distance",
-    R.length === NPRIO && /awaiting measurement/.test(R[0].actual) && !/\d/.test(R[0]["to go"]));
+    R.length === NPRIO && /awaiting measurement/.test(R[0]["actual ftes"]) && R[0]["difference (hover)"] === "");
   check("T3b: a miswired pin reads awaiting a known measure and shows no distance",
-    R.length === NPRIO && /awaiting a known measure/.test(R[1].actual) && !/\d/.test(R[1]["to go"]));
-  check("T3c: the measured row beside them DOES show one — the column is not dead",
-    R.length === NPRIO && (/\d/.test(R[2]["to go"]) || /target met/.test(R[2]["to go"])));
+    R.length === NPRIO && /awaiting a known measure/.test(R[1]["actual ftes"]) && R[1]["difference (hover)"] === "");
+  check("T3c: the measured row beside them DOES show one — the hover is not dead",
+    R.length === NPRIO && /FTES to Max FTES|Max FTES met/.test(R[2]["difference (hover)"]));
 }
 
 finish();

@@ -50,9 +50,14 @@ const money = (n) => "$" + Math.round(n).toLocaleString("en-US");
   // read-only clone with one editor of its own; neither half may come back.
   check("R2: exactly one set of priority cards renders — one card per priority, for every lane",
     cards(doc).length === NPRIO);
+  // The title's editor is Rename until a card has a title of its own, then the
+  // field itself (2026-09-24: the card head says each thing once).
   check("R2: the one set keeps its editors (title, share, factor, metric, description)",
-    cards(doc).every((c) => c.querySelectorAll("[data-edit]").length >= 5 &&
-      !!c.querySelector('[data-edit="prio-title"]')));
+    cards(doc).every((c) => {
+      const title = c.querySelector('[data-edit="prio-title"]') || c.querySelector("[data-cardrename]");
+      const others = Array.from(c.querySelectorAll("[data-edit]")).filter((el) => el.getAttribute("data-edit") !== "prio-title");
+      return !!title && others.length >= 4;
+    }));
   check("R2: no NC-lane strategy editor survives (data-edit='nc-strategy' / data-ncstratadd)",
     !doc.querySelector('[data-edit="nc-strategy"], [data-ncstratadd], [data-ncstratdel]'));
   check("R2: no lane chip is painted on a card or a row (.cf-lanechip is gone)",
