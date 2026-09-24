@@ -30,7 +30,7 @@
       "mcp__github__get_file_contents",
       "mcp__github__get_me"
     ],
-    "defaultMode": "acceptEdits"
+    "defaultMode": "bypassPermissions"
   },
   "hooks": {
     "SessionStart": [
