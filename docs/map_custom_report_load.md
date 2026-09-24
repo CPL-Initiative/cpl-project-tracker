@@ -95,6 +95,15 @@ transaction back — **live is untouched and the run fails loudly.**
 | **G7** | any college has exactly one suppressed `goal2` cell beside a visible sibling | **a disclosure.** Subtract the visible cells from the total and the hidden one falls out. Tests the *property* — asserting `suppressed = true` would pass on a broken implementation |
 | **G8** | a suppressed cell still carries numbers | same reason |
 
+The static half of G5 is a check constraint on the live table itself,
+`map_student_credit_key_range_ck` (`student_key` 1..250,000 since 2026-09-24;
+it was 1..50,000 from the table's creation and refused the 2026-09-24
+promotion, whose pull carried 50,027 students). A pull that crosses it fails
+closed with SQLSTATE 23514 and **no G number** — the whole transaction still
+rolls back. Widen it by migration and commit the receipt
+(`kb/receipts/map_student_credit_key_range_2026-09-24_s287.sql` is the worked
+example); never by loosening G5.
+
 **Warnings** (recorded, never blocking): a `course_type` MAP has newly invented,
 landing in `goal2 dest = 'UNKNOWN'`; and any shrink in `cr_unit`, whose expected
 cause is the catalog-year roll-forward.
