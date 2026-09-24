@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 492,
+   "count": 493,
    "docs": [
     {
      "created": "2026-08-14",
@@ -2327,6 +2327,29 @@
      "title": "A memory table goes stale in its claims, not its links \u2014 lint the structure, read the claims",
      "type": "methodology",
      "updated": "2026-09-05"
+    },
+    {
+     "created": "2026-09-24",
+     "governs": [
+      "tests/lib/shard.js",
+      "tests/run.js",
+      ".github/workflows/js-tests.yml",
+      "tests/js_suite_gate_test.py"
+     ],
+     "path": "docs/kb-notes/methodology-a-memory-bound-suite-scales-across-machines-not-workers.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "testing",
+      "ci",
+      "jsdom",
+      "memory",
+      "test-infra",
+      "github-actions"
+     ],
+     "title": "A memory-bound suite scales across machines, and the check keeps its name",
+     "type": "methodology",
+     "updated": "2026-09-24"
     },
     {
      "created": "2026-09-08",
@@ -14010,7 +14033,7 @@
      ],
      "title": "Decision sheets \u2014 how to build one, and how to read the replies",
      "type": null,
-     "updated": "2026-09-21"
+     "updated": "2026-09-24"
     },
     {
      "created": "2026-08-30",
@@ -14165,8 +14188,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 260,
+   "count": 261,
    "docs": [
+    {
+     "created": "2026-09-24",
+     "governs": [],
+     "n": 289,
+     "path": "docs/session_289_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "implementation-funding",
+      "ci",
+      "test-infra",
+      "decision-sheets"
+     ],
+     "title": "CI cut to seven minutes, the lane tables landed, the review sheet's edit layer documented",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-24",
      "governs": [],
@@ -18580,5 +18620,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 966
+ "total": 968
 }

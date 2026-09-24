@@ -1,20 +1,26 @@
 {
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
  "_as_of": "2026-09-24",
- "_session": "S285 SkyGrant",
- "_status": "The 15 memory rows that three sessions staged since 21 September are written and logged, each re-read against today's state before it was saved (pull request 1674, merged). The college briefing's funding box now uses the funding vocabulary: measures count toward funding, a college qualifies for its award, and results are demonstrated, with a guard that reads the source (pull request 1675). Two funding-tab edits remain Sam's: publish Scenario 1 again and move the six strategies to Completion. The grants on the five nightly rebuilds are confirmed after today's 13:40 UTC promotion. Sam's ruling of the 24th stands: sessions budget their SQL calls and do not work the approval prompts.",
+ "_session": "S287 SkyLane",
+ "_status": "Sam's review of the funding tab is built out through item 7: the Veteran Star on the college rows, the two baseline counts, his Timeline note, the partner agencies out of the feed, and now one drill-in table per lane in his six columns with the one-line priority card (pull requests 1677, 1678, 1679). The four rows the last session staged for the memory table are written. The automated test run that every pull request waits on took twenty minutes this morning and now takes about seven: it runs as four shards on four machines (pull request 1682). Still Sam's, in the tab: Publish on Scenario 1, the six strategies to Completion, two section renames and five timeline lines. The grants check waits on today's promotion, which had not run by late afternoon.",
  "items": [
   {
    "id": "s285-sam-funding-tab-edits",
    "for": "Sam",
    "tab": "implementation-funding",
-   "text": "Two edits in the funding tab are still yours, and the saved configuration showed neither this morning. Press Publish on Scenario 1 again: an older window's save at 21:30 UTC on the 23rd erased the published marker, and colleges see Scenario 1 today only because an unset marker falls back to it. Then move the six transcription strategies from Career attainment to Completion in Year 1, as accepted on the evening sheet."
+   "text": "Four edits in the funding tab are yours, and the saved configuration has not moved since 21:30 UTC on the 23rd. Press Publish on Scenario 1 again (an older window's save erased the published marker; colleges see Scenario 1 only because an unset marker falls back to it). Move the six transcription strategies from Career attainment to Completion in Year 1. Rename the two sections to Introduction and Minimum Conditions. Apply your five timeline edits from the review sheet: Participation Request becomes Confirmation Deadline, and \" in MAP\" drops from the four disbursement lines."
+  },
+  {
+   "id": "s287-sam-review-sheet-8-10",
+   "for": "Sam",
+   "tab": "implementation-funding",
+   "text": "Your review sheet of the funding tab stopped at item 7: items 8 to 10 carry no verdict. Everything through 7 has shipped (pull requests 1677, 1678 and 1679, the last one with the credit and noncredit drill-in tables and the one-line priority card). Open the sheet again for the last three, or say the numbers in chat."
   },
   {
    "id": "s284-fable-supabase-grants",
    "for": "Fable",
    "tab": "implementation-funding",
-   "text": "The five nightly rebuilds now grant their own Data API access (applied live on 23 September, ahead of Supabase's 30 October change). After today's 13:40 UTC promotion, confirm the promote row landed and that the API roles still read all five tables, then retire this item."
+   "text": "The five nightly rebuilds now grant their own Data API access (applied live on 23 September, ahead of Supabase's 30 October change). Today's 13:40 UTC promotion had not run by 16:5x UTC (no load row for the day; all five tables still readable by every API role). A 19:05 UTC check-in re-runs the one statement; once a promote row dated today exists and the roles still read all five tables, retire this item."
   },
   {
    "id": "s283-sam-retry-designate",

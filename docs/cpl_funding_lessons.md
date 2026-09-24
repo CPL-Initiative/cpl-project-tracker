@@ -1691,3 +1691,42 @@ base, a tighter drill-in, and a check that a new scenario stays wired to every s
   ledger reads `files`, so a second commit moved them. Read a JSON ledger's shape before writing to it.
 - **Sam's ruling on the SQL prompts,** recorded here because the config read spent two of the dozen: stop working the
   swarm and budget the calls. The approval doc carries it verbatim; this lane's reads are one statement each from now on.
+
+## 2026-09-24 — S286 (SkyTally) and S287 (SkyLane): the review sheet, the lane tables, and a suite cut to seven minutes
+
+**What Sam asked.** S286 opened the tab to him as a review sheet — the tab as its live config paints it, every section an
+item, every line tagged N.k, with reply chips and, at his ask (*"revise the text in, say, 3.1 in the 3.1 box"*), edits in
+place. He reviewed through item 7. S286 shipped two PRs from it and left a third in draft; S287 landed the third and,
+between the two, halved the wait every PR pays.
+
+- **From the sheet, on main the same day.** #1677: a gold Veteran Star beside the 59 flagged college names, the drill-in
+  headers over their columns (the outer `.cplfund-table th` and `tr.cplfund-detail td` rules had reached the nested cells;
+  three rules at `(0,2,1)+` restate the geometry), the tabs renamed *2026-28 Funding* and *2025-26 Funding*. #1678: the
+  Baseline line reads *60 of 116 colleges meet this. 59 hold the Veteran Star* (Calbright meets it with certificates); the
+  Timeline closes with his note as a `TEXT_BLOCKS` entry; MAP partner agencies (`entity_kind: "partner"`: Launch
+  Apprenticeship, Futuro Health) are skipped at the row by the builder, since they are not colleges and belong nowhere on
+  the CCC funding model; first column left, the rest centered — his house format for tables.
+- **The lane tables and the one-line card head (#1679).** One table per lane in his six columns, Outcomes · Max FTES ·
+  Max Funds · Actual FTES · Actual Funds · Difference, credit first, then noncredit or a *Credit only* line, so *"the NCs
+  [don't] get lost in the shuffle"*; the card head reads *Priority N · (A) Access* with the pickers inline and the law on one
+  line. Seven suites had pinned the old surface. The rewrite kept every check in force and moved each to where its fact now
+  lives: the percent that sat in the Actual cell rides the Actual FTES hover; *To go* is the Difference column with the FTES
+  gap in its hover; the CR/NC split that the Total Possible hover carried is the second table. Two crashes were selector
+  faults rather than assertion failures: `colOf(dtl, "Actual")` found no column named that, and `.cplfund-dtl-table tr`
+  returned the noncredit table's header row as a priority row — a suite that reads the drill-in selects the lane table.
+  Floors raised by hand for the four suites whose counts grew (statewide_expand 37 → 40). `npm run a11y` unchanged: the
+  pre-existing four small targets and the 390px prose line.
+- **The suite cut from twenty minutes to seven (#1682).** Sam: *"would it make sense to chunk our npm tests for
+  git--they're taking 20 mins + each now ... It's probably suite growth."* Timed file by file, this lane's family is
+  **56 files and 87% of the suite's 3,592 s** of serial work (28 files and 78% on 2026-08-28), and the runner was already
+  at one machine's memory ceiling, so the suite now runs as four shards on four runners fanned into the one check named
+  `test`. The cost that matters here: the next twenty `cpl_funding_*` files cost more than the next two hundred elsewhere,
+  and a slower boot in `tests/lib/cpl_funding_harness.js` moves every shard at once. The note:
+  [`methodology-a-memory-bound-suite-scales-across-machines-not-workers`](kb-notes/methodology-a-memory-bound-suite-scales-across-machines-not-workers.md).
+- **Two sessions, one number.** The EACR session ran beside this lane's and also called itself S287; it wrote handoff 288
+  and took the receipt name `cpl_memory_2026-09-24_s287.sql`. This session's handoff is 289 and its receipt carries a
+  `_skylane` suffix; the four rows S286 staged (partners outside the model; the six columns; the house table format; edits
+  in place) are written and logged, creates = 1 each, in one `execute_sql` call.
+- **Still Sam's, in the tab.** The config had no save after 2026-09-23 21:30 UTC: the two section renames, the five
+  timeline edits from the sheet's `edits` store, Publish on Scenario 1, and the six carried strategies to Completion in
+  Year 1. Items 8 to 10 of the sheet carry no verdict.

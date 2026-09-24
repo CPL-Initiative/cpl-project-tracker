@@ -558,7 +558,8 @@ against, and the toggle history are in
     pushes (measured live: a rules-active test declined all five of the
     cron's push attempts with GH013), so the requirement is DOCTRINE: poll
     `get_check_runs` on the head until `test` (from `js-tests.yml`) reports
-    success — a docs-only diff finishes in ~1.5 min, a code diff ~9 — and
+    success — a docs-only diff finishes in ~2.5 min, a code diff ~7 (four
+    shards, 2026-09-24) — and
     never merge past a pending or failing `test`. A failing `test` on your
     PR is yours to fix. Waiting for it is the ONE sanctioned merge wait.
   - **Beyond `test`, merge on `clean` OR `unstable`.** `unstable` from any
