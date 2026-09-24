@@ -221,6 +221,16 @@ unattended. **Test it before relying on it.**
 
 ## Still open
 
+- ⚠️ **ONE LEVER THIS RECORD NEVER TRIED (S285, 2026-09-24): the connector's OWN per-tool permission.** Sam, with two
+  prompts arriving while he typed the note: *"I'm still getting a swarm of sql approves--been happening the last 10
+  days--very frustrating."* The platform's documentation page for a connector tool that asks or is turned off says the
+  person opens https://claude.ai/customize/connectors, opens the connector (Supabase), and sets that tool to allowed
+  under its tool permissions; an organization admin may have capped it, in which case allowing is not offered. That is
+  a per-tool control on the connector itself, distinct from the org-level *requires approval* the 2026-09-20 measurement
+  ruled out by the prompt's wording. Sam checks it once; the outcome decides whether section 15 of the team guide (*no
+  setting on our side changes that*) stands or is retired. Until then the session-side mitigation is fewer calls: one
+  statement per purpose, reads folded together, the memory write and its log in one call as two statements (the log
+  insert sees the rows the first statement wrote; only a data-modifying CTE cannot).
 - **`permissions.allow` is kept in the repo settings with a comment saying it
   does not work**, rather than deleted, so the next session does not re-add it
   expecting a different result.
