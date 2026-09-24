@@ -1,3 +1,6 @@
+-- WRITTEN 2026-09-24 00:3x UTC by S285 (SkyGrant) through kb/receipts/cpl_memory_2026-09-24_s285.sql, which
+-- re-read every row against the state that day and restructured each into a one-sentence summary plus detail
+-- (the table holds summary to 400 characters). This file stays as staged; the changes are listed in that receipt.
 -- S283 (SkyFund) checkpoint memory rows. Rule 8 ingest; status='proposed' (own writes are not
 -- self-verified). INSERT-only, idempotent on slug: rerunning writes nothing.
 -- STAGED, NOT WRITTEN: the repo's execute_sql guard refuses session writes (same as S281's file).
