@@ -5,16 +5,38 @@ name: JS tests
 # regressions like the Session-32 raw_variants:null search/expand crash before
 # they ship.
 #
+# SHAPE (2026-09-24 — Sam: "chunk our npm tests… they're taking 20 mins + each
+# now"). Four jobs:
+#   gate    decides whether the jsdom suite runs at all (the E gate, below).
+#   suite   a matrix of N shards, each `node tests/run.js --shard i/N` on its
+#           own runner. `npm test` is MEMORY-bound: tests/run.js already runs
+#           4 files at once on a 16 GB machine and cannot go wider (the
+#           cpl_funding_* family peaks at 2–4 GB a file), so one machine's
+#           wall time is the suite's serial time over 4 and more machines is
+#           the only lever left. Measured before this shape: the `npm test`
+#           step alone read 18 min on 2026-09-24 (run 36013462480) against
+#           9–10 a month earlier; timed file by file, cpl_funding_* is 56 files
+#           and 3,111 s of the suite's 3,592 s serial time (87%), up from 28
+#           files and 967 s on 2026-08-28 (tests/lib/shard.js has the table).
+#   lints   the pure-stdlib python guards, beside the shards rather than after.
+#   test    fans everything into the ONE check the merge doctrine polls for
+#           (CLAUDE.md: "the `test` check must have SUCCEEDED on the current
+#           head"). It reports on every run the concurrency group does not
+#           cancel, exactly as the single `test` job before it did.
+#
 # E (Sam's ruling, 2026-08-29: "option 2!") — this check is meant to become
-# REQUIRED in branch protection, conditional-fast: the only expensive step is
-# `npm test` (~8.5 min), and it alone is skipped when every changed file is
-# docs-shaped (see the gate step). Every other step always runs, so the check
-# ALWAYS reports. Until Sam flips branch protection (a GitHub setting sessions
-# cannot change) it remains non-required: a failing run leaves the PR
-# `unstable`, which the auto-merge policy still merges.
-# ⚠️ NEVER convert this to `paths-ignore:`/`paths:` on the trigger, or an `if:`
-# on the JOB — a skipped required check never reports, which blocks the PR
-# FOREVER. The conditional must stay inside an always-run job.
+# REQUIRED in branch protection, conditional-fast: the only expensive job is
+# the suite, and it alone is skipped when every changed file is docs-shaped
+# (see the gate job). Everything else always runs, so `test` ALWAYS reports.
+# Until Sam flips branch protection (a GitHub setting sessions cannot change)
+# it remains non-required: a failing run leaves the PR `unstable`, which the
+# auto-merge policy still merges.
+# ⚠️ NEVER convert this to `paths-ignore:`/`paths:` on the trigger, or put an
+# `if:` on the `test` JOB — a skipped required check never reports, which
+# blocks the PR FOREVER. The gate's `if:` sits on the SHARD jobs, which are
+# never the required check; `test` needs them and runs whether they passed,
+# failed or were skipped, so the conditional stays inside an always-reporting
+# check. tests/js_suite_gate_test.py pins this shape from both sides.
 on:
   pull_request:
   push:
@@ -39,26 +61,25 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
+# `playwright` is a RUNTIME dependency of this package, but NOTHING under
+# tests/ requires it -- it is used only by the browser-check scripts in
+# prototype/, scripts/ and fact-sheet/, which are deliberately outside
+# `npm test` (see the SkyView launcher note below). Without this, every CI
+# job downloads Chromium + Firefox + WebKit before running a suite that
+# never launches a browser. Measured 2026-08-28: with the download skipped,
+# `npm install` is ~5s for 41 packages / 45 MB.
+env:
+  PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
+
 jobs:
-  test:
+  gate:
     runs-on: ubuntu-latest
-    # `playwright` is a RUNTIME dependency of this package, but NOTHING under
-    # tests/ requires it -- it is used only by the browser-check scripts in
-    # prototype/, scripts/ and fact-sheet/, which are deliberately outside
-    # `npm test` (see the SkyView launcher note below). Without this, every CI
-    # run downloads Chromium + Firefox + WebKit before running a suite that
-    # never launches a browser. Measured 2026-08-28: with the download skipped,
-    # `npm install` is ~5s for 41 packages / 45 MB.
-    env:
-      PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
+    outputs:
+      decision: ${{ steps.gate.outputs.decision }}
     steps:
       - uses: actions/checkout@v7
-      - uses: actions/setup-node@v6
-        with:
-          node-version: '20'
-      - run: npm install
-      # The E gate (Sam, 2026-08-29: "option 2!"): skip `npm test` alone when
-      # the whole diff is docs-shaped. The decision is a SKIP-LIST, not a
+      # The E gate (Sam, 2026-08-29: "option 2!"): skip the jsdom suite alone
+      # when the whole diff is docs-shaped. The decision is a SKIP-LIST, not a
       # run-list — measured 2026-08-30, the suite reads .js/.html/.json/.css/
       # .sql/.ts, so "run when JS changes" under-triggers silently; instead
       # anything unrecognized runs the suite (scripts/js_suite_gate.sh holds
@@ -79,13 +100,45 @@ jobs:
           fi
           echo "JS suite decision: $decision"
           echo "decision=$decision" >> "$GITHUB_OUTPUT"
-      # `tests/run.js` runs files CONCURRENTLY since 2026-08-28 (each still in
-      # its own process). It sizes the pool from measured peak RSS and the
-      # runner's RAM — 4 on a 16 GB ubuntu-latest. Measured before: 280 files,
-      # 1,245s serial, of which `cpl_funding_*` was 28 files and 967s (78%).
-      # If this job ever OOMs, set TEST_CONCURRENCY here rather than reverting.
-      - if: steps.gate.outputs.decision == 'run'
-        run: npm test
+
+  suite:
+    needs: gate
+    # The gate's conditional lives HERE, on the shard jobs, never on `test`
+    # (see the header). A skipped shard reads `skipped` in `needs.suite.result`
+    # and the fan-in accepts that only when the gate said skip.
+    if: needs.gate.outputs.decision == 'run'
+    runs-on: ubuntu-latest
+    strategy:
+      # Every shard reports, so a red run names every failing file rather than
+      # the first shard's.
+      fail-fast: false
+      matrix:
+        shard: [1, 2, 3, 4]
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+      - run: npm install
+      # `tests/run.js` runs its files CONCURRENTLY, each in its own process. It
+      # sizes the pool from measured peak RSS and the runner's RAM — 4 on a
+      # 16 GB ubuntu-latest — and that cap is what bounds one machine. Each
+      # shard is every N-th file of the sorted list (tests/lib/shard.js), so
+      # the heavy cpl_funding_* family is spread evenly across the runners.
+      # The shard count is the matrix above and nowhere else:
+      # `strategy.job-total` is that list's length. If a shard ever OOMs, set
+      # TEST_CONCURRENCY here rather than reverting.
+      - run: node tests/run.js --shard ${{ matrix.shard }}/${{ strategy.job-total }}
+
+  lints:
+    needs: gate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+      - run: npm install
       # The ONE suite input a docs-shaped diff can still change is
       # docs/catalog/** — regenerated beside the docs index on most docs PRs,
       # and read by exactly one test file. Run that file even when the suite
@@ -94,7 +147,7 @@ jobs:
       # tests/js_suite_gate_test.py fails if a future test starts reading
       # another inert path without being added here.
       - name: Docs-reading jsdom tests (run even when the suite is skipped)
-        if: steps.gate.outputs.decision == 'skip'
+        if: needs.gate.outputs.decision == 'skip'
         run: node tests/governance_docs_panel.test.js
       # First Light contrast lint (Session 49) — verifies the live :root in
       # both HTMLs matches the blessed spec (prototype v1.6) and measures AA
@@ -613,3 +666,32 @@ jobs:
       # failure mode #1541 was itself written about. Pure-stdlib python.
       - name: KPI history has no date gaps (Rule 3)
         run: python3 tests/kpi_history_no_gaps_test.py
+
+  test:
+    # The one check the merge doctrine polls (CLAUDE.md branch policy). It
+    # needs every other job and runs on `!cancelled()` rather than the bare
+    # `needs` chain: a job whose needs failed or were skipped is itself
+    # skipped by default, and a skipped required check never reports. The
+    # only run it does not report on is a superseded commit the concurrency
+    # group canceled — the same run the single job before it did not finish.
+    needs: [gate, suite, lints]
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Every shard and every lint passed (or the gate skipped the suite)
+        env:
+          GATE: ${{ needs.gate.result }}
+          DECISION: ${{ needs.gate.outputs.decision }}
+          SUITE: ${{ needs.suite.result }}
+          LINTS: ${{ needs.lints.result }}
+        run: |
+          echo "gate=$GATE decision=$DECISION suite=$SUITE lints=$LINTS"
+          ok=true
+          [ "$GATE" = success ] || { echo "::error::the gate job did not succeed ($GATE)"; ok=false; }
+          [ "$LINTS" = success ] || { echo "::error::the lints job did not succeed ($LINTS)"; ok=false; }
+          case "$DECISION:$SUITE" in
+            run:success) echo "suite: every shard passed" ;;
+            skip:skipped) echo "suite: skipped — every changed file is docs-shaped (the E gate)" ;;
+            *) echo "::error::suite result '$SUITE' under gate decision '$DECISION'"; ok=false ;;
+          esac
+          $ok

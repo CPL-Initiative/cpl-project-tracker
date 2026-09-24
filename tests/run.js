@@ -28,11 +28,26 @@ const TYPICAL_HEAVY_MB = 2200;   // the cpl_funding_* family, minus the outlier
 const OUTLIER_EXTRA_MB = 1700;   // what the one 3.8 GB file costs above that
 
 const dir = __dirname;
-const files = fs.readdirSync(dir)
+// `--shard i/N` runs every N-th file of the sorted list (tests/lib/shard.js).
+// js-tests.yml runs N of these on N runners at once and fans them into the one
+// `test` check, because a single machine is memory-bound at 4 files wide (the
+// budget below) and the suite had grown to an 18-minute step by 2026-09-24.
+const { parseShard, shardFiles } = require("./lib/shard.js");
+const SHARD = parseShard(process.argv);
+const allFiles = fs.readdirSync(dir)
   .filter((f) => f.endsWith(".test.js"))
   .sort();
+const files = SHARD ? shardFiles(allFiles, SHARD.index, SHARD.count) : allFiles;
+const SUITE_LABEL = SHARD ? " (shard " + SHARD.index + " of " + SHARD.count + ")" : "";
 
 if (!files.length) {
+  if (SHARD) {
+    // A shard with nothing in it is a misconfiguration (more shards than
+    // files), and a green over zero files is the one result it must not give.
+    console.log("runner: shard " + SHARD.index + " of " + SHARD.count +
+      " holds no files (" + allFiles.length + " in tests/) — lower the shard count.");
+    process.exit(1);
+  }
   console.log("No tests found in tests/.");
   process.exit(0);
 }
@@ -88,6 +103,14 @@ const failures = [];
 // a recorded floor. See tests/lib/check_ledger.js for the measurement.
 const ledgerLib = require("./lib/check_ledger.js");
 const UPDATE = process.argv.includes("--update-floor");
+if (UPDATE && SHARD) {
+  // writeLedger() replaces the whole of check_floor.json, so a re-baseline
+  // from one shard would erase every other shard's floors — a silent loss of
+  // cover for three quarters of the suite. Re-baseline unsharded only.
+  console.log("--update-floor cannot run on a shard: it would write a ledger holding " +
+    "only this shard's files. Run `npm run test:floor` without --shard.");
+  process.exit(2);
+}
 const ledger = ledgerLib.loadLedger();
 const observedCounts = {};
 const dropped = [];
@@ -202,7 +225,11 @@ async function main() {
 // from a serial one: the cap is derived from the RUNNER's RAM, so the same
 // commit legitimately runs 4-wide on a 16 GB machine and 1-wide on a small one,
 // and nothing in the log would tell you which happened.
-console.log("runner: " + files.length + " file(s), concurrency " + CONCURRENCY +
+console.log("runner: " +
+  (SHARD ? "shard " + SHARD.index + " of " + SHARD.count + " — " + files.length +
+           " of " + allFiles.length + " file(s)"
+         : files.length + " file(s)") +
+  ", concurrency " + CONCURRENCY +
   " (" + os.cpus().length + " cpu, " +
   Math.round(os.totalmem() / (1024 * 1024)) + " MB RAM" +
   (process.env.TEST_CONCURRENCY ? ", TEST_CONCURRENCY set" : "") + ")");
@@ -279,8 +306,8 @@ if (UPDATE) {
 cleanupTmp();
 console.log("\n════════════════════════════════════");
 console.log(failed === 0
-  ? `All ${files.length} test file(s) passed.`
-  : `${failed} of ${files.length} test file(s) FAILED:`);
+  ? `All ${files.length} test file(s) passed.${SUITE_LABEL}`
+  : `${failed} of ${files.length} test file(s) FAILED${SUITE_LABEL}:`);
 failures.forEach((f) => console.log("  ✗ " + f));
 if (dropped.length) {
   console.log("\n" + dropped.length + " file(s) ran FEWER checks than recorded. A check that stops");
