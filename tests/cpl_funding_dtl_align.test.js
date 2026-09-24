@@ -178,8 +178,10 @@ function misaligned(table, rules) {
   check("a2: ⭐ and every statewide drill-in header does too" +
     (badSys.length ? " — " + badSys.slice(0, 3).join("; ") : ""), badSys.length === 0);
   const th0 = collegeTable.rows[0].cells[0], th1 = collegeTable.rows[0].cells[1];
-  check("a3: the name column reads left and the figures read right",
-    resolve(th0, "text-align", rules, null) === "left" && resolve(th1, "text-align", rules, null) === "right");
+  // The house table format (Sam, 2026-09-24, review sheet item 7): "left
+  // justify the 1st column and center justify the rest."
+  check("a3: the name column reads left and the figures read centered",
+    resolve(th0, "text-align", rules, null) === "left" && resolve(th1, "text-align", rules, null) === "center");
 
   // ⚠️ A GUARD THAT CANNOT FAIL PROVES NOTHING. Drop the three restating rules
   // and the resolver must find the defect Chromium measured: the outer rules

@@ -189,8 +189,13 @@ def main():
     lane.append(row("Launch Apprenticeship", "l1", ecr=5))
     lane.append(row("Bakersfield College", "b1", ecr=2, tcr=1))
     pl = run_builder(lane)
-    check("a trailing 'Credit' folds onto the noncredit institution's row",
-          sorted((pl.get("unmatched") or {}).keys()) == ["Launch Apprenticeship"],
+    # Launch Apprenticeship once landed in `unmatched` here, the one name left
+    # over. Sam, 2026-09-24: a MAP partner agency "should not be included in the
+    # college count or mentioned on the CCC CPL funding model -- they are not a
+    # CCC", so the builder now skips it at the row and `unmatched` is EMPTY. The
+    # fold is what this check guards: neither "... Credit" location lands there.
+    check("a trailing 'Credit' folds onto the noncredit institution's row, and the partner is skipped",
+          sorted((pl.get("unmatched") or {}).keys()) == [],
           f"unmatched={sorted((pl.get('unmatched') or {}).keys())}")
     check("NOCE's credit location counts toward NOCE (12 eligible students)",
           (pl.get("feeders") or {}).get("NOCE", {}).get("pe") == 12,

@@ -178,10 +178,12 @@
     // These restate the horizontal geometry at (0,2,1) and up, which neither
     // outer rule reaches, so a header and its column share one padding and one
     // alignment. Vertical padding and the header's colors stay as they are.
+    // The alignment is the house table format (Sam, same day, review sheet
+    // item 7): "left justify the 1st column and center justify the rest."
     // Guard: cpl_funding_dtl_align.test.js resolves the cascade per column.
     ".cplfund-dtl-tscroll > .cplfund-dtl-table th, .cplfund-dtl-tscroll > .cplfund-dtl-table td { padding-left: 7px; padding-right: 7px; }",
     ".cplfund-dtl-tscroll > .cplfund-dtl-table th:first-child, .cplfund-dtl-tscroll > .cplfund-dtl-table td:first-child { text-align: left; }",
-    ".cplfund-dtl-tscroll > .cplfund-dtl-table th:not(:first-child), .cplfund-dtl-tscroll > .cplfund-dtl-table td:not(:first-child) { text-align: right; }",
+    ".cplfund-dtl-tscroll > .cplfund-dtl-table th:not(:first-child), .cplfund-dtl-tscroll > .cplfund-dtl-table td:not(:first-child) { text-align: center; }",
     // ★ Veteran Star beside the institution's name (vetStarHtml). COBI's Veteran
     // Star gold: college_activity.js paints star colleges in --mustard-text
     // (#8B6800, 5.2:1 on white; #E3B341 on the dark palette).
@@ -469,6 +471,8 @@
     ".cplfund-saving.local { color: var(--mustard-text); font-weight: 600; }",
     // Timing milestone list (below the priority boxes).
     ".cplfund-timing { background: var(--surface-subtle); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; font-size: .8rem; }",
+    ".cplfund-timing-note { margin: 8px 0 0; font-size: .8rem; }",
+    ".cplfund-timing-note p { margin: 0; }",
     ".cplfund-timing-row { display: flex; align-items: center; gap: 8px; margin: 4px 0; }",
     ".cplfund-timing-label { flex: 1 1 auto; min-width: 0; }",
     ".cplfund-timing-date { flex: 0 0 100px; width: 100px; text-align: right; }",
@@ -2960,8 +2964,15 @@
     reading:       { label: "Reading the funding", rows: 5 },
     elig_intro:    { label: "the eligibility introduction", rows: 3 },
     nc_rules:      { label: "the noncredit funding rules", rows: 7 },
-    college_intro: { label: "the institution table introduction", rows: 4 }
+    college_intro: { label: "the institution table introduction", rows: 4 },
+    timing_note:   { label: "the timeline note", rows: 2 }
   };
+  // The Timeline's closing note, in Sam's words (2026-09-24, review sheet item
+  // 4: "Add to bottom of Timeline"). An editable block like the others, so a
+  // curator's rewording saves for everyone and Restore brings these words back.
+  var TIMING_NOTE_DEFAULT_HTML =
+    "<p>Note: CPL data is housed in the MAP platform, which serves as the CPL solution supporting our " +
+    "communities, colleges, and system.</p>";
   var DEFAULT_ELIG_INTRO = "Proposed baseline requirements to qualify for implementation funding " +
     "(badges are informational in this draft — no dollar figure changes yet):";
   // WHAT THIS IS, before any figure about it (Sam asked for it, 2026-09-01).
@@ -3028,6 +3039,7 @@
     if (key === "reading") return READING_DEFAULT_HTML;
     if (key === "nc_rules") return NC_RULES_DEFAULT_HTML;
     if (key === "college_intro") return COLLEGE_INTRO_DEFAULT_HTML;
+    if (key === "timing_note") return TIMING_NOTE_DEFAULT_HTML;
     if (key === "elig_intro") {
       var v = base().elig_intro;
       return "<p>" + esc(v == null ? DEFAULT_ELIG_INTRO : v) + "</p>";
@@ -6316,7 +6328,8 @@
     return "<h3>Timing</h3>" +
       '<div class="cplfund-timing">' + rows +
       '<button type="button" class="cplfund-optbtn cplfund-timingadd" id="cplFundTimingAdd" ' +
-      'title="Add a timing item">Add item</button></div>';
+      'title="Add a timing item">Add item</button></div>' +
+      proseBlockHtml("timing_note", "dk cplfund-timing-note");
   }
 
   // ── FTES factors + the reimbursement rate ─────────────────────────────
@@ -9467,14 +9480,22 @@
         var vs = vetStar();
         if (vs) {
           // Calbright meets this line through its noncredit certificates (N1 a).
-          var starN = eligColleges().reduce(function (s, c) {
-            return s + ((c.nco ? ncExhibitsMet(c.college).met : vs[c.college]) ? 1 : 0);
-          }, 0);
+          // ⚠️ TWO COUNTS, AND THE LINE SAYS BOTH (Sam, 2026-09-24, review
+          // sheet item 3: "60 of 116 colleges qualify ... The MAP Dashboard
+          // shows 59 -- which is correct?"). Both were: 59 colleges hold the
+          // Veteran Star, and 60 meet the requirement because Calbright meets it
+          // with noncredit certificates. The old line printed the 60 beside the
+          // words "Veteran Star", which read as 60 stars.
+          var metN = 0, starN = 0;
+          eligColleges().forEach(function (c) {
+            if (c.nco ? ncExhibitsMet(c.college).met : vs[c.college] === true) metN++;
+            if (!c.nco && vs[c.college] === true) starN++;
+          });
           var pfv = perf();
-          status = '<div class="cplfund-reqstatus"><strong>' + starN + " of " + total +
-            "</strong> colleges qualify " +
-            '<span class="dk">(auto-measured &mdash; Veteran Star, &ge;75% of enrolled veterans&#39; JSTs uploaded in MAP' +
-            (pfv && pfv.vet_star_as_of ? ", live as of " + esc(String(pfv.vet_star_as_of).slice(0, 10)) : "") + ")</span></div>" +
+          status = '<div class="cplfund-reqstatus"><strong>' + metN + " of " + total +
+            "</strong> colleges meet this. " +
+            '<span class="dk">' + starN + " hold the Veteran Star, with at least 75% of enrolled veterans&#39; JSTs uploaded in MAP" +
+            (pfv && pfv.vet_star_as_of ? " (as of " + esc(String(pfv.vet_star_as_of).slice(0, 10)) + ")" : "") + ".</span></div>" +
             '<div class="dk">The three noncredit-only institutions meet this requirement with noncredit ' +
             "certificates posted as exhibits in MAP.</div>";
         } else {

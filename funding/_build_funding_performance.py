@@ -207,6 +207,9 @@ P2_MIN_UNITS = 6.0
 
 TEST_COLLEGES = {"RivTest City College", "MorTest City College", "Nortest City College",
                  "CA MAP INITIATIVE COLLEGE", "RivTest", "MorTest", "Nortest"}
+# MAP's own identity data names the agencies we host a CPL landing page for as
+# `entity_kind: "partner"` (kb/_build_college_identity_crosswalk.py).
+COLLEGE_IDENTITY_DIR = os.path.join(ROOT, "kb", "college_identity")
 
 
 def _norm(name):
@@ -215,6 +218,43 @@ def _norm(name):
 
 # A trailing institutional suffix, normalized: "…College" or "…Community College".
 _SUFFIX_RE = re.compile(r"(?:community)?college$")
+
+
+def _partner_stems():
+    """The stems of every MAP partner agency, read from the latest identity
+    crosswalk: `entity_kind == "partner"`, its name and every variant.
+
+    Sam, 2026-09-24 (review sheet item 5): "Launch is an agency partner we have
+    provided a CPL Landing page to and should not be included in the college
+    count or mentioned on the CCC CPL funding model -- they are not a CCC." The
+    funding model covers California Community Colleges, so a partner's MAP
+    activity is SKIPPED at the row, like a test college: it reaches no college,
+    no statewide total and no `unmatched` bucket. `unmatched` stays for what it
+    is for, a CCC name the resolver missed, where a curator has something to fix.
+
+    The list is MAP's own classification rather than one kept here, so a new
+    partner joins it the day the crosswalk is rebuilt. An absent crosswalk
+    returns an empty set and says so, because a silent empty set would put the
+    partners back into the statewide totals unannounced."""
+    try:
+        dates = sorted(d for d in os.listdir(COLLEGE_IDENTITY_DIR)
+                       if re.fullmatch(r"\d{4}-\d{2}-\d{2}", d)
+                       and os.path.exists(os.path.join(COLLEGE_IDENTITY_DIR, d, "crosswalk.json")))
+    except OSError:
+        dates = []
+    if not dates:
+        print("funding-performance: WARNING — no college identity crosswalk under "
+              "kb/college_identity/; MAP partner agencies are NOT excluded this run.")
+        return set()
+    with open(os.path.join(COLLEGE_IDENTITY_DIR, dates[-1], "crosswalk.json"), encoding="utf-8") as f:
+        cw = json.load(f)
+    stems = set()
+    for c in cw.get("colleges", []):
+        if c.get("entity_kind") == "partner":
+            for n in [c.get("college_name")] + list(c.get("variants") or []):
+                if n:
+                    stems.add(_stem(n))
+    return stems
 
 
 def _stem(name):
@@ -782,11 +822,16 @@ def main():
     type_seen = set()                           # per-(college,type,sid,metric) dedupe
     state_types = {}                            # type -> {pe,pa,p3}
     state_type_seen = set()                     # per-(type,sid,metric) dedupe
+    partner_stems = _partner_stems()
+    partners_skipped = {}                       # partner name -> rows skipped (names only on emit)
     rowno = 0
     for row in ds["rows"]:
         rowno += 1
         college = (row[i_col] or "").strip()
         if not college or college in TEST_COLLEGES:
+            continue
+        if _stem(college) in partner_stems:
+            partners_skipped[college] = partners_skipped.get(college, 0) + 1
             continue
         if i_test is not None and (row[i_test] or "").strip().lower() == "yes":
             continue
@@ -1250,6 +1295,9 @@ def main():
           + "| units "
           + " ".join(f"{m}_u={state_units[m]:,.0f}" for m in UNIT_METRICS)
           + f", as_of {payload['as_of']}")
+    if partners_skipped:
+        print("funding-performance: skipped MAP partner agencies (not CCCs, so outside the funding "
+              "model): " + ", ".join(f"{n} ({k} rows)" for n, k in sorted(partners_skipped.items())))
 
 
 if __name__ == "__main__":
