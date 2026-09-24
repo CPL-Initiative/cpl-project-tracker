@@ -52,16 +52,16 @@ const POOL = 25240308;
   const sumW = Object.keys(m.W).reduce(function (s, k) { return s + m.W[k]; }, 0);
   check("A5: the pool lands fully allocated — Σ awards = the pool (conservation)",
     Math.abs(sumW - POOL) < 1);
-  check("A6: 51 institutions at the base and 7 at the cap (the mock's figures of record)",
-    eff.pool.at_floor === 51 && eff.pool.at_cap === 7);
+  check("A6: 50 institutions at the base and 7 at the cap (figures of record, 2026-09-24 FTES refresh)",
+    eff.pool.at_floor === 50 && eff.pool.at_cap === 7);
   check("A7: every award respects the window",
     Object.keys(m.W).every(function (k) { return m.W[k] >= 150000 - 0.5 && m.W[k] <= 400000 + 0.5; }));
-  check("A8: the noncredit decomposition matches the figures of record — trio $482,669 held by " +
-        "origination, $1,300,738 riding college awards",
-    Math.abs(eff.pool.nc_only_held_by_origination - 482669) < 50 &&
-    Math.abs(eff.pool.nc_college_shares - 1300738) < 50);
-  check("A9: $1,783,407 of the pool is noncredit funding on its face (the SYSTEM NC figure)",
-    Math.abs((eff.pool.nc_only_held_by_origination + eff.pool.nc_college_shares) - 1783407) < 100);
+  check("A8: the noncredit decomposition matches the figures of record — trio $485,802 held by " +
+        "origination, $1,326,601 riding college awards",
+    Math.abs(eff.pool.nc_only_held_by_origination - 485802) < 50 &&
+    Math.abs(eff.pool.nc_college_shares - 1326601) < 50);
+  check("A9: $1,812,403 of the pool is noncredit funding on its face (the SYSTEM NC figure)",
+    Math.abs((eff.pool.nc_only_held_by_origination + eff.pool.nc_college_shares) - 1812403) < 100);
   // The decomposition is per-award arithmetic, not a second solve: CR + NC = W.
   const mtSac = T._alloc("Mt San Antonio");
   check("A10: an award's CR and NC shares sum to its one combined award (Mt. San Antonio, at the cap)",

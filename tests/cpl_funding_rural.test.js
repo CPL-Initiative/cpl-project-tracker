@@ -80,9 +80,12 @@ check("data: the retirement is recorded in the data file's own header",
   // $2,275,000 vs $2,038,594 — is history; see the header.)
   const rural13 = D.colleges.filter(function (c) { return c.rural; })
     .reduce(function (s, c) { return s + T._alloc(c.college).total; }, 0);
-  check("⭐ the 13 rural colleges all sit at the uniform base (13 × $150,000 = $1,950,000, no rural bound)",
-    Math.abs(rural13 - 1950000) < 1 &&
-    D.colleges.filter(function (c) { return c.rural; })
+  // The 2026-09-24 FTES refresh lifted Imperial (8,159 credit FTES) past the
+  // base on its own size; the other 12 stay at it. Still no rural bound: each
+  // rural college is floored or sized by the same rule as everyone else.
+  check("⭐ the 13 rural colleges ride the uniform base (12 × $150,000 + Imperial $157,435 = $1,957,435, no rural bound)",
+    Math.abs(rural13 - 1957435) < 1 &&
+    D.colleges.filter(function (c) { return c.rural && c.college !== "Imperial"; })
       .every(function (c) { return T._alloc(c.college).floored; }));
 
   // ── the row shape: no second, guaranteed component ─────────────────────
