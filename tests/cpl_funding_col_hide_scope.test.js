@@ -107,8 +107,11 @@ function matchCount(els, selectors) {
   check("3a: the detail table renders cells to test", dtlCells.length >= 8);
   check("3b: ⭐ NO cell of the nested detail table is matched by the hide rule",
     matchCount(dtlCells, sels) === 0);
-  check("3c: specifically, the NC funding cell survives — it is detail column 3",
-    Array.from(det.querySelectorAll(".cplfund-dtl-table tr")).slice(1).every((tr) => {
+  // Every DATA row of every lane table (one per lane since 2026-09-24): its
+  // third cell — Max Funds now — survives the main table's column-3 rule.
+  const dataRows = Array.from(det.querySelectorAll(".cplfund-dtl-table tr")).filter((tr) => tr.querySelector("td"));
+  check("3c: specifically, detail column 3 survives on every row of both lane tables (" + dataRows.length + ")",
+    dataRows.length >= 6 && dataRows.every((tr) => {
       const td = tr.querySelectorAll("td")[2];
       return td && !sels.some((s) => { try { return td.matches(s); } catch (e) { return false; } });
     }));

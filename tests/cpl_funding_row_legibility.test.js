@@ -61,8 +61,10 @@ function openDetail(window, doc, name) {
     doc.querySelectorAll("#cplFundTable td.cf-prio").length === 0);
 
   const det = openDetail(window, doc, "Bakersfield");
+  // The CREDIT lane table: since 2026-09-24 the expand holds one table per
+  // lane, and the noncredit table's own header row would read as a row here.
   const prioCells = det
-    ? Array.from(det.querySelectorAll(".cplfund-dtl-table tr")).slice(1)
+    ? Array.from(det.querySelectorAll(".cplfund-dtl-table.cplfund-dtl-cr tr")).slice(1)
         .map((tr) => tr.querySelector("td").textContent.replace(/\s+/g, " ").trim())
     : [];
   check("the expand's detail table has one row per priority", prioCells.length === NPRIO);
@@ -78,14 +80,21 @@ function openDetail(window, doc, name) {
       const nm = names[i] && names[i].title;
       return !nm || t.indexOf(nm) !== -1;
     }));
-  // The statewide priority CARDS name theirs the same way ("Priority 1:" +
-  // the editable title, defaulting Access / Success / Capacity / Career attainment).
+  // The statewide priority CARDS name theirs in one heading — "Priority 1 ·
+  // (A) Access" since 2026-09-24: the ordinal, a middot, then the outcome's
+  // key and the name (the outcome's own, or the curator's custom title).
   const cardH4s = Array.from(doc.querySelectorAll(".cplfund-prio .p h4"));
-  const cardTitles = Array.from(doc.querySelectorAll('.cplfund-prio .p input[data-edit="prio-title"]'))
-    .map((i) => i.value);
-  check("the priority cards pair the ordinal with the editable title",
-    cardH4s.length === NPRIO && cardH4s.every((h, i) => /Priority \d+:/.test(h.textContent)) &&
-    cardTitles.join("|") === "Access|Success|Capacity|Career attainment");
+  const headName = (h) => {
+    const n = h.querySelector(".cplfund-cardhead-name");
+    const s = h.querySelector("select.cplfund-cardhead-sel");
+    return n ? n.textContent.trim() : (s && s.selectedIndex >= 0 ? s.options[s.selectedIndex].textContent.trim() : "");
+  };
+  check("the priority cards pair the ordinal with the outcome in one heading",
+    cardH4s.length === NPRIO && cardH4s.every((h) => {
+      const numSpan = h.querySelector(".cplfund-prio-num");
+      return !!numSpan && /^Priority\s*\d+/.test(numSpan.textContent.trim()) &&
+        !!numSpan.nextSibling && /·/.test(numSpan.nextSibling.textContent) && headName(h) !== "";
+    }));
 
   // ───────────────────────────────────────────────────────────────────────────
   // L4 — the S215 one-row rulings (Sam, 2026-08-31): "Low-key rows: nothing

@@ -212,10 +212,12 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
   T._state.open["c:Laney"] = true;
   T.render();
   const det = doc.querySelector("tr.cplfund-detail");   // only Laney is open
-  check("E: drill-in shows the per-priority earning detail (7-column table, Current Total column)",
-    !!det && !!det.querySelector(".cplfund-dtl-table") &&
-    /Current Total: \$[\d,]+/.test(det.querySelector(".cplfund-dtl-table caption").textContent) &&
-    Array.from(det.querySelectorAll(".cplfund-dtl-table th")).some(function (h) { return /Current Total/.test(h.textContent); }));
+  // One table per lane since 2026-09-24, in Sam's columns; the totals line
+  // above them names what the college has qualified for.
+  check("E: drill-in shows the per-priority earning detail (lane tables, an Actual Funds column, the totals line)",
+    !!det && !!det.querySelector(".cplfund-dtl-table.cplfund-dtl-cr") &&
+    /Actual Funds: \$[\d,]+/.test((det.querySelector(".cplfund-dtl-sum") || {}).textContent || "") &&
+    Array.from(det.querySelectorAll(".cplfund-dtl-table th")).some(function (h) { return /^Actual Funds$/.test(h.textContent.trim()); }));
 }
 {
   // Feed not loaded → the CREDIT priorities advance at full cap (transient), so
@@ -362,23 +364,26 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
     !doc.querySelector("#cplFundTable td.cf-prio") && !doc.querySelector('th[data-sort="prio0"]'));
   T._state.open["c:Laney"] = true;
   T.render();
-  const dtl = doc.querySelector("tr.cplfund-detail .cplfund-dtl-table");
+  const dtl = doc.querySelector("tr.cplfund-detail .cplfund-dtl-table.cplfund-dtl-cr");
   const rows = dtl ? Array.from(dtl.querySelectorAll("tr")).slice(1) : [];
   check("G: the expand renders one detail row per priority", rows.length === NPRIO);
   const cells = function (i) { return Array.from(rows[i].querySelectorAll("td")).map(function (td) { return td.textContent; }); };
   // By HEADER: the table dropped its CR/NC funding columns on 2026-09-23.
   const dh = Array.from(dtl.querySelectorAll("th")).map(function (h) { return h.textContent.trim().toLowerCase(); });
   const col = function (i, k) { return cells(i)[dh.indexOf(k)] || ""; };
-  check("G: the detail table stacks a Target column beside an Actual column",
-    Array.from(dtl.querySelectorAll("th")).map(function (h) { return h.textContent; }).join("|").indexOf("Target|Actual") !== -1);
-  check("G: the measurable P1 row shows the actual + a % of target",
-    col(0, "actual").indexOf("200") !== -1 && col(0, "actual").indexOf("%") !== -1);
-  check("G: an unmeasured priority row reads a plain 'no data yet' — never a measured zero, and " +
+  // Sam's six columns, in his order (2026-09-24, review sheet item 7).
+  check("G: the detail table carries Outcomes · Max FTES · Max Funds · Actual FTES · Actual Funds · Difference",
+    Array.from(dtl.querySelectorAll("th")).map(function (h) { return h.textContent.trim(); }).join("|") ===
+      "Outcomes|Max FTES|Max Funds|Actual FTES|Actual Funds|Difference");
+  const tip = function (i, k) { const td = rows[i].querySelectorAll("td")[dh.indexOf(k)]; return td ? td.getAttribute("title") || "" : ""; };
+  check("G: the measurable P1 row shows the actual, and its hover the % of Max FTES",
+    col(0, "actual ftes").indexOf("200") !== -1 && /%/.test(tip(0, "actual ftes")));
+  check("G: an unmeasured priority row reads a plain 'awaiting measurement' — never a measured zero, and " +
         "never the retired advance wording (2026-09-01)",
-    col(1, "actual").indexOf("awaiting measurement") !== -1 && col(1, "actual").indexOf("advance") === -1 &&
-    col(1, "actual").indexOf("0 · 0%") === -1);
+    col(1, "actual ftes").indexOf("awaiting measurement") !== -1 && col(1, "actual ftes").indexOf("advance") === -1 &&
+    !/^0(\.0)?$/.test(col(1, "actual ftes").trim()));
   check("G: the priority rows carry funding ($ figures) alongside the measures",
-    /\$/.test(col(0, "current total")) && /\$/.test(col(0, "total possible")));
+    /\$/.test(col(0, "actual funds")) && /\$/.test(col(0, "max funds")) && /\$/.test(col(0, "difference")));
   // The metric itself stays visible where the priority is defined — the card's
   // METRIC block (the retired column-header hover's successor).
   check("G: each priority card carries its METRIC block",

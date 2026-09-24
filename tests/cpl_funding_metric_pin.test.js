@@ -66,15 +66,17 @@ function openDetail(window, doc, name) {
   const det = row2 && row2.nextElementSibling;
   return det && det.classList.contains("cplfund-detail") ? det : null;
 }
-// Six columns since 2026-09-23; the CR/NC split of a priority's funding rides
-// the Total Possible hover, kept per cell as `<key>Tip`.
-const DTL_COL = { "priority": "priority",
-  "target": "target", "actual": "actual", "to go": "toGo", "current total": "current",
-  "total possible": "possible" };
-const crShare = (cells) => ((cells.possibleTip || "").match(/^Credit share (\$[\d,]+)/) || [])[1];
+// Sam's six columns since 2026-09-24, one table per lane; this suite reads
+// the CREDIT table. Its Max Funds IS the credit share that the retired Total
+// Possible hover carried, so `crShare` reads it directly. Hovers are kept per
+// cell as `<key>Tip`.
+const DTL_COL = { "outcomes": "priority",
+  "max ftes": "target", "max funds": "maxFunds", "actual ftes": "actual", "actual funds": "current",
+  "difference": "diff" };
+const crShare = (cells) => cells.maxFunds;
 function detRows(det) {
   if (!det) return [];
-  const trs = Array.from(det.querySelectorAll(".cplfund-dtl-table tr"));
+  const trs = Array.from(det.querySelectorAll(".cplfund-dtl-table.cplfund-dtl-cr tr"));
   // Header → key, so a cell is addressed by NAME. Every unmapped header is a
   // loud failure rather than a silent shift: a new column must be named here.
   const keys = Array.from((trs[0] || { querySelectorAll: () => [] }).querySelectorAll("th"))
@@ -90,9 +92,10 @@ function detRows(det) {
     return cells;
   });
 }
-// "N FTES" on the ACTUAL cell (fmtNum1 renders one decimal — "400.0 FTES"),
-// not preceded by a digit or dot (so 400 does not match inside 1,400).
-const actFtes = (cells, n) => new RegExp("(^|[^\\d.])" + n + "(\\.0)? FTES").test(cells.actual || "");
+// N on the ACTUAL FTES cell (fmtNum1 renders one decimal — "400.0"; the unit
+// rides the header since 2026-09-24), not inside a longer number (so 400 does
+// not match inside 1,400 or 400.5).
+const actFtes = (cells, n) => new RegExp("(^|[^\\d.,])" + n + "(\\.0)?($|[^\\d.])").test(cells.actual || "");
 
 // ── 1. the defect itself, against the REAL predicates ────────────────────────
 // Rebuilt out of the consumer so this cannot drift into testing a copy.
@@ -166,7 +169,7 @@ check("2d: srcDelivered() asks the ARTIFACT, not the registry (a declared key ma
   check("3a: the pinned priority scores on pa_u (400 FTES), not on the prose's pp_u",
     P.length === NPRIO && actFtes(P[0], 400));
   check("3b: the UNPINNED twin, same prose, silently scores on the credit portal measure (0.1 FTES)",
-    P.length === NPRIO && /(^|[^\d.])0\.1 FTES/.test(P[1].actual));
+    P.length === NPRIO && /(^|[^\d.])0\.1$/.test(P[1].actual));
   check("3b2: so the pin changes the answer — identical prose, different earning",
     P.length === NPRIO && P[0].actual !== P[1].actual && P[0].current !== P[1].current);
   check("3c: an unknown pin renders 'awaiting a known measure' rather than a plausible number",
@@ -235,10 +238,12 @@ check("4c: a declared-but-undelivered source earns f=0 — Sam's NC ruling, not 
 // "The feed carries no such measure" and "this college posted nothing" are two
 // different zeros and the tab must not print them the same way. The surface is
 // the expand's Actual column now (one pool, 2026-08-31): "no feed" vs "0 · 0%".
+// The measured zero prints the NUMBER since 2026-09-24 (the unit rides the
+// header, the percent the hover); the undelivered label stays words.
 check("4d: undelivered is a separate LABEL from none (absent zero vs measured zero) — " +
-      "'no data yet' vs '0 · 0%' since the 2026-09-01 rewording",
+      "'awaiting measurement' vs a measured 0.0",
   /status === "undelivered"\) act = "awaiting measurement"/.test(consumerSrc) &&
-  /status === "none"\) act = "0 &middot; 0%"/.test(consumerSrc));
+  /status === "none"\) \{ act = unit\(0\);/.test(consumerSrc));
 
 // ── 5. one place decides whether a number is a measurement ───────────────────
 check("5a: earnIsMeasured() exists, so a new status cannot be forgotten at four sites",
@@ -459,7 +464,8 @@ check("7a2: the BAKE carries no pin — its slot-2 metric is not the one the pin
   const P = detRows(openDetail(window, doc, "Bakersfield"));
   check("8a: with ppa_u present the Access column starts earning, no code change",
     /Actual/.test(card3.textContent) && !/Awaiting actuals/.test(card3.textContent) &&
-    P.length === NPRIO && /[\d,.]+ FTES · /.test(P[2].actual) && !/no feed/.test(P[2].actual));
+    P.length === NPRIO && /^[\d,.]+$/.test(P[2].actual) && /% of Max FTES$/.test(P[2].actualTip) &&
+    !/no feed/.test(P[2].actual));
   // ⚠️ ASSERTED ON THE PARSED REGISTRY, NOT ON ITS SOURCE TEXT. This line used
   // to regex /ppa_u:\s*\{ unit: "units", milestone: "applied"/ against the
   // consumer, which meant it tested FIELD ORDER inside an object literal: adding

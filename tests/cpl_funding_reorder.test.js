@@ -153,12 +153,14 @@ check("A: reorderList is pure, so the DOM handlers are a thin shell over it",
   check("B: the rendered first card is the old third card",
     cardText(doc, 0).indexOf(String(natural[2].metric).slice(0, 30)) !== -1 &&
     cardText(doc, 0) !== naturalCard0);
-  // The number is the heading's own picker since 2026-09-23.
+  // The number is the heading's own picker since 2026-09-23; since 2026-09-24
+  // the heading joins it to the outcome with a middot ("Priority 1 · (A) Access").
   const h4 = cardAt(doc, 0).querySelector("h4");
   const num = h4 && h4.querySelector("select.cplfund-pos");
-  check("B: the card still reads 'Priority 1:' in its heading",
+  const numSpan = h4 && h4.querySelector(".cplfund-prio-num");
+  check("B: the card still reads 'Priority 1 ·' in its heading",
     !!num && /^Priority/.test(h4.textContent.trim()) && num.options[num.selectedIndex].textContent === "1" &&
-    /:\s*$/.test(h4.querySelector(".cplfund-prio-num").textContent));
+    !!numSpan && !!numSpan.nextSibling && /·/.test(numSpan.nextSibling.textContent));
 
   // The failure this whole design exists to prevent.
   const share0 = cardValue(doc, 0, "share");

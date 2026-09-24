@@ -87,9 +87,11 @@ function openDetail(window, doc, name) {
   const det = row2 && row2.nextElementSibling;
   return det && det.classList.contains("cplfund-detail") ? det : null;
 }
+// The CREDIT table: since 2026-09-24 the drill-in carries one table per lane
+// (Sam's CR / NC 7.9a/b), and the checks below read the credit measures.
 function detRows(det) {
   if (!det) return [];
-  const trs = Array.from(det.querySelectorAll(".cplfund-dtl-table tr"));
+  const trs = Array.from(det.querySelectorAll(".cplfund-dtl-table.cplfund-dtl-cr tr"));
   const keys = Array.from(trs[0].querySelectorAll("th")).map((th) => flat(th).toLowerCase());
   return trs.slice(1).map((tr) => {
     const out = {};
@@ -97,18 +99,26 @@ function detRows(det) {
     return out;
   });
 }
-const goalKeyText = (card) => flat(card && card.querySelector(".cplfund-cardgoal-key"));
-const goalNameText = (card) => flat(card && card.querySelector(".cplfund-cardgoal-name"));
-// The card's own title lives in its heading since 2026-09-23 (Sam: "eliminate
-// any redundancies in titles or designations"), and the outcome's name in the
-// outcome picker, so neither line repeats the other.
-const titleText = (card) => {
-  const inp = card && card.querySelector('h4 input[data-edit="prio-title"]');
-  return inp ? inp.value : flat(card && card.querySelector("h4"));
-};
 const goalPickText = (card) => {
   const sel = card && card.querySelector("select.cplfund-cardgoal-sel");
   return sel && sel.selectedIndex >= 0 ? sel.options[sel.selectedIndex].text : "";
+};
+// ⭐ THE CARD HEAD SAYS EACH THING ONCE (Sam, 2026-09-24: "I like your
+// simplified priority card!"). In the internal view the outcome IS the picker
+// in the heading ("Priority 1 · (A) Access"), so its key and name are read
+// from the picker's face; the reader view keeps a key span beside the name.
+const goalKeyText = (card) => {
+  const key = card && card.querySelector(".cplfund-cardgoal-key");
+  const src = key ? flat(key) : goalPickText(card);
+  return (src.match(/\([A-D]\)/g) || []).join(" + ");
+};
+// A card's title: the custom title's field when it has one; otherwise the
+// outcome's own name, which the heading shows in place of a matching title.
+const titleText = (card) => {
+  const inp = card && card.querySelector('h4 input[data-edit="prio-title"]');
+  if (inp) return inp.value;
+  const name = card && card.querySelector(".cplfund-cardhead-name");
+  return name ? flat(name) : goalPickText(card).replace(/^(\([A-D]\)\s*\+?\s*)+/, "");
 };
 
 // ── 1. P4 is a real priority, and it moves no award until it has a share ────
@@ -131,6 +141,9 @@ const goalPickText = (card) => {
   const controls = (card) => {
     const out = new Set();
     Array.from(card.querySelectorAll("[data-edit]")).forEach((el) => out.add("edit:" + el.getAttribute("data-edit")));
+    // The title control is Rename when the card has no custom title, and the
+    // field itself once it has one — the same control in two states.
+    if (out.delete("edit:prio-title") || card.querySelector("[data-cardrename]")) out.add("title");
     ["data-priosrc", "data-stratadd", "data-priogoal", "data-priodrag", "data-priopos", "data-projsel", "data-projadd"]
       .forEach((a) => { if (card.querySelector("[" + a + "]")) out.add(a); });
     return out;
@@ -139,8 +152,8 @@ const goalPickText = (card) => {
   const missing = Array.from(c1).filter((k) => !c4.has(k));
   check("1d: Priority 4 carries every control Priority 1 does (title, share, factor, measure, outcome, strategies, order, designate)",
     c1.size >= 6 && missing.length === 0);
-  check("1e: its title input reads Career attainment", !!p4 &&
-    (p4.querySelector('input[data-edit="prio-title"]') || {}).value === "Career attainment");
+  check("1e: its heading names Career attainment, with Rename for a title of its own", !!p4 &&
+    titleText(p4) === "Career attainment" && !!p4.querySelector("[data-cardrename]"));
   // A 0% share holds no funding, so every institution's award is what the
   // three funded priorities make it.
   const ps = T._prios(D.colleges[0].college, "1");
@@ -163,14 +176,15 @@ const goalPickText = (card) => {
   const names = [0, 1, 2, 3].map((i) => titleText(cardAt(doc, i)));
   check("2b: each card is named by its own live title",
     names.join("|") === "Outreach|Completion with Counseling|Completion with Transcription|Career attainment");
-  check("2b2: the outcome line does not repeat the title (2026-09-23) — its name reads in the picker",
-    [0, 1, 2, 3].every((i) => !cardAt(doc, i).querySelector(".cplfund-cardgoal .cplfund-cardgoal-name")));
+  check("2b2: the head never repeats the outcome's name — the picker says it, and no name span or matching title sits beside it",
+    [0, 1, 2, 3].every((i) => !cardAt(doc, i).querySelector(".cplfund-cardhead .cplfund-cardhead-name")) &&
+    !cardAt(doc, 3).querySelector('.cplfund-cardhead input[data-edit="prio-title"]'));
   check("2c: Completion with Counseling serves (B) alone — the counselor step no longer claims (C)",
     goalKeyText(cardAt(doc, 1)) === "(B)");
   check("2d: Completion with Transcription serves (B)", goalKeyText(cardAt(doc, 2)) === "(B)");
   check("2e: Career attainment serves (C), derived from its measure",
-    goalKeyText(cardAt(doc, 3)) === "(C)" &&
-    /^From the metric: \(C\) Career attainment/.test(goalPickText(cardAt(doc, 3))));
+    goalKeyText(cardAt(doc, 3)) === "(C)" && goalPickText(cardAt(doc, 3)) === "(C) Career attainment" &&
+    (cardAt(doc, 3).querySelector("select.cplfund-cardgoal-sel") || {}).value === "derived");
   check("2f: the source says so — accepted is (B), career is (C)",
     /ms === "accepted"\) return \{ keys: \["B"\], derived: true \}/.test(consumerSrc) &&
     /ms === "career"\) return \{ keys: \["C"\], derived: true \}/.test(consumerSrc));
@@ -190,7 +204,7 @@ const goalPickText = (card) => {
   const rows = detRows(openDetail(window, window.document, "Laney"));
   const r4 = rows[3] || {};
   check("3a: before the first import, P4's drill-in row reads awaiting measurement at $0 — never a full cap",
-    rows.length === 4 && /awaiting measurement/i.test(r4.actual || "") && (r4.current || r4["current total"]) === "$0");
+    rows.length === 4 && /awaiting measurement/i.test(r4["actual ftes"] || "") && r4["actual funds"] === "$0");
   const t4 = flat(cardAt(doc, 3));
   check("3b: its card says who measures it", /Awaiting measurement\. The Chancellor.s Office measures this outcome from EDD wage records/.test(t4));
   check("3c: and never points at MAP's refresh or a MAP feed key",

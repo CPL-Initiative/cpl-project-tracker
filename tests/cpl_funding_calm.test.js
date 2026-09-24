@@ -346,10 +346,14 @@ function mountWords(doc) {
   check("the reserve reads once, on the Baseline line, with its figure",
     !!status && status.textContent.indexOf(held + " reserved until") !== -1 &&
     det.textContent.split(held + " reserved until").length === 2);
-  const cap = det && det.querySelector(".cplfund-dtl-table caption");
-  check("the priority caption keeps the two totals: Current Total · Total Possible, its max award",
-    !!cap && /^Current Total: \$[\d,]+ · Total Possible: /.test(cap.textContent.replace(/\s+/g, " ").trim()) &&
-    cap.textContent.indexOf("Total Possible: " + total) !== -1 && cap.textContent.indexOf("reserve") === -1);
+  // The two totals keep one line above the lane tables, in the words Sam gave
+  // the drill-in's columns on 2026-09-24 (Max Funds, Actual Funds): the max
+  // award, then what it has qualified for. The reserve still reads once, on
+  // the Baseline line, never here.
+  const cap = det && det.querySelector(".cplfund-dtl-sum");
+  check("the drill-in's totals line keeps the two totals: Max Funds (its max award) · Actual Funds",
+    !!cap && /^Max Funds: \$[\d,]+, its max award · Actual Funds: /.test(cap.textContent.replace(/\s+/g, " ").trim()) &&
+    cap.textContent.indexOf("Max Funds: " + total) !== -1 && cap.textContent.indexOf("reserve") === -1);
   delete window.CPL_FUNDING_PERF;
 }
 

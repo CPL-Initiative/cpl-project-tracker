@@ -88,8 +88,9 @@ const fmtM = function (v) { return "$" + Math.round(v).toLocaleString("en-US"); 
   check("Alameda's expand shows the measurable actual (777 eligible) in its Actual column",
     !!dtl && (function () {
       // Read the column by its header, never its position (the table went to
-      // six columns on 2026-09-23).
-      const iAct = Array.from(dtl.querySelectorAll("th")).map(function (h) { return h.textContent; }).indexOf("Actual");
+      // six columns on 2026-09-23, and the measure column reads "Actual FTES"
+      // since the lane tables of 2026-09-24).
+      const iAct = Array.from(dtl.querySelectorAll("th")).map(function (h) { return h.textContent; }).indexOf("Actual FTES");
       return iAct >= 0 && Array.from(dtl.querySelectorAll("tr")).slice(1).some(function (tr) {
         const tds = tr.querySelectorAll("td");
         return tds[iAct] && /^777 stu/.test(tds[iAct].textContent);
