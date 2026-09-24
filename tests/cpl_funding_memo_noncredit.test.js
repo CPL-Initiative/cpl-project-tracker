@@ -80,8 +80,9 @@ check("the allocation table carries the one-pool columns (District / Institution
 check("the summary names the pool by Sam's label and the restricted noncredit line",
   memo.indexOf("Total credit and noncredit potential awards") !== -1 &&
   memo.indexOf("Noncredit shares (restricted to noncredit outcomes)") !== -1);
-check("the memo reports the roster the model funds — 118 (115 colleges + 3 noncredit-only institutions)",
-  (memo.match(/Funded institutions<\/td><td>([^<]*)</) || [])[1] === "118 (115 colleges + 3 noncredit-only institutions)");
+// Calbright counts as a college (Sam, 2026-09-24: "Calbright is a noncredit college").
+check("the memo reports the roster the model funds — 118 (116 colleges + 2 noncredit-only institutions)",
+  (memo.match(/Funded institutions<\/td><td>([^<]*)</) || [])[1] === "118 (116 colleges + 2 noncredit-only institutions)");
 check("one line per institution — all 118, no more, no fewer", rows.length === 118);
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -151,7 +152,7 @@ check("the memo does NOT print the retired re-split figures ($779,862 / $672,453
     !!row && !!award && award.total > 0 && row.nc === Math.round(award.total) && row.total === Math.round(award.total));
   check("…its Credit cell is — (no credit program), and the row is FLAGGED noncredit-only / origination " +
         "(the 'no advances' wording retired 2026-09-01 — Sam: no mention of the concept)",
-    !!row && row.cr === null && /noncredit-only/.test(row.name) &&
+    !!row && row.cr === null && (short === "Calbright" ? /noncredit college/ : /noncredit-only/).test(row.name) &&
     /qualifies by origination/.test(row.name) && !/no advances/.test(row.name));
 });
 // N3 a: Calbright's 1,000-FTES size is a stand-in — the memo must say nothing

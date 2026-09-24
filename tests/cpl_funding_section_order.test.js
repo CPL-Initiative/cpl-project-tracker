@@ -30,7 +30,7 @@
 // Run from repo root: `npm test` (or `node tests/cpl_funding_section_order.test.js`).
 const { check, finish, freshDom, boot, click, commit } = require("./lib/cpl_funding_harness.js");
 
-const HOUSE = ["about", "college", "window", "pools", "formula", "eligibility", "priorities", "timing"];
+const HOUSE = ["about", "college", "window", "pools", "formula", "eligibility", "priorities", "timing", "faq"];
 
 function reviewerSession() {
   return {

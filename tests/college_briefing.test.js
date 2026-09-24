@@ -1234,8 +1234,10 @@ const mtsacOpen = FUND._alloc("Mt San Antonio");
 // — so the largest institution's uncapped share is $711,567. Re-derived here
 // from the model rather than re-typed, so the NEXT model change fails loudly
 // instead of quietly agreeing with a stale literal.
+// Moved to $694,417 on 2026-09-24 with the fresh DataMart FTES pull (statewide
+// credit FTES 1,069,182 -> 1,108,508 shrinks every institution's share).
 check("(P) Mt. SAC's uncapped allocation is its share of the CURRENT funding",
-  !!mtsacOpen && Math.round(mtsacOpen.total) === 711567 &&
+  !!mtsacOpen && Math.round(mtsacOpen.total) === 694417 &&
   Math.round(mtsacOpen.total) > 400000,
   "the waterfall still runs underneath the ceiling; only the model's dials moved");
 FUND._setScenario({});

@@ -52,7 +52,7 @@ function storageKeys(window) {
   // (Priority 4 is, in the bake, since 2026-09-22) and always right after the
   // priorities it prices.
   check("L1: ...and the model's mechanics follow the table, in their standing order",
-    ids.slice(2).filter((id) => id !== "ftes-factors").join(">") === "window>pools>formula>eligibility>priorities>timing" &&
+    ids.slice(2).filter((id) => id !== "ftes-factors").join(">") === "window>pools>formula>eligibility>priorities>timing>faq" &&
     (ids.indexOf("ftes-factors") < 0 || ids.indexOf("ftes-factors") === ids.indexOf("priorities") + 1));
   check("L2: on open, only the introduction and the table are open",
     secs.length >= 8 &&
