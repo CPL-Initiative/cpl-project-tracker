@@ -181,10 +181,12 @@ EVIDENCE = {
     9:  [policy()],
     10: [policy()],
     11: [measured(p_phone_opening)],
-    12: [live("2026-09-22", "information_schema.columns for any area/senate column")],
-    13: [policy()],
-    14: [live("2026-09-22", "the mojibake count in chatbox_college_courses")],
-    15: [quoted("docs/reference/lanes/t5-55050-article-9.md", "2026-08-30")],
+    # 12 was the ASCCC-areas card, retired 2026-09-24 on Sam's ruling ("use what
+    # we have for ASCCC regions and we'll get the new report later"); the three
+    # below moved up one, as position keys must.
+    12: [policy()],
+    13: [live("2026-09-22", "the mojibake count in chatbox_college_courses")],
+    14: [quoted("docs/reference/lanes/t5-55050-article-9.md", "2026-08-30")],
 }
 
 PROVENANCE = {
@@ -468,32 +470,6 @@ def items():
     })
 
     # ══ the rest ═════════════════════════════════════════════════════════════
-
-    I.append({
-        'lane': 'partner-crosswalks',
-        'title': 'ASCCC areas: a provisional map is live; the authoritative one is yours to send',
-        'ref': 'partner-crosswalks · NEEDS SAM · your 2026-09-22 verdict on this card was "add"',
-        'facts': (
-            "You ruled <em>add</em> on 2026-09-22 and wrote that MAP carries the regions and Pedro can "
-            "produce a MAP Custom Report listing every location with its regions. On 2026-09-24 the "
-            "EACR's ASCCC Area filter shipped on <code>kb/reference/asccc_area_map.json</code>: all 118 "
-            "colleges assigned, <strong>36 anchored to asccc.org text and 82 placed by the Areas' own "
-            "geographic descriptions</strong>, because the sandbox's egress policy blocks asccc.org, "
-            "cccco.edu and web.archive.org. Every row names its basis; "
-            "<code>python3 kb/_apply_asccc_areas.py</code> re-applies a corrected file to "
-            "<code>college_lookup.js</code> in one run."),
-        'why': (
-            "A college placed in the wrong Area reads as absent from its own Area's filter, which is the "
-            "quiet failure a geographic guess invites. The authoritative roster costs you one message to "
-            "Pedro, or one paste of the ASCCC college directory into a session."),
-        'rec': (
-            "<strong>Yes to the Custom Report: ask Pedro for the location-by-region export, and a session "
-            "applies it the day it lands.</strong> The provisional map stays live until then. "
-            "<em>It might be wrong if</em> the MAP export carries no ASCCC column after all, in which "
-            "case a paste of the directory is the shorter road."),
-        'chips': chips(('Ask Pedro for the report', 'pedro'), ('I will paste the directory', 'paste'),
-                       ('The provisional map is enough', 'ok'), CH_LATER),
-    })
 
     I.append({
         'lane': 'partner-crosswalks',

@@ -66,8 +66,10 @@
    *
    * ⚠ STRONG WORKFORCE IS LIVE SINCE 2026-09-17; ACADEMIC SENATE IS NOT.
    * The consortium roster is `swp_region_data.js` (117 colleges, 9 regions,
-   * resolved from `map_colleges.swp_region`). ASCCC areas A–D still exist in no
-   * column we hold, so that one stays off with its reason.
+   * resolved from `map_colleges.swp_region`). ASCCC areas A–D exist since
+   * 2026-09-24 as college_lookup.js `ascccArea` (provisional, accepted by Sam as
+   * the working map; MAP's own export replaces it later) — this scope is not
+   * wired to that field yet, so it stays off with its reason.
    *
    * ⚠ THE REGION DATA WE HOLD ELSEWHERE IS A THIRD SCHEME — do not be tempted.
    * `college_geo.region` (Supabase, 120 colleges) is a hand-authored ~10-way
@@ -89,7 +91,7 @@
     { k: "district",  label: "My district",                   ready: true },
     { k: "swp",       label: "My Strong Workforce region",    ready: true },
     { k: "senate",    label: "My Academic Senate region",     ready: false,
-      why: "Needs the college-to-ASCCC-area list — same source, not yet located." },
+      why: "The area list exists (provisional, in college_lookup.js); this scope is not wired to it yet." },
     { k: "statewide", label: "Statewide",                     ready: true }
   ];
   // Scopes that need a second pick. Statewide is the whole set, so it does not.
