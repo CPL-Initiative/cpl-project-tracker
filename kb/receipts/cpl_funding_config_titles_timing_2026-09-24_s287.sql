@@ -9,6 +9,8 @@
 -- makes it update nothing), updated_at set to now() so an open tab window refuses its next stale save and reloads
 -- the newer config (#1672), and this receipt carrying the before-values.
 --
+-- EXECUTED by Sam in the Supabase SQL editor, 2026-09-24 20:15:13.934593+00 UTC: rows_updated 1; after read exactly the
+-- values above in both scenarios (his paste in the S287 session).
 -- EXECUTION: the repo's PreToolUse guard (scripts/supabase_sql_guard.py) refused the session's run, as designed (the
 -- statement contains update and replace), so Sam runs it in the Supabase SQL editor. A good result is one row:
 -- rows_updated = 1, new_updated_at = the run's own time, before/after listing both scenarios. rows_updated = 0 means
