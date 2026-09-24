@@ -210,7 +210,7 @@ const POOL = 25240308;
     /at base/.test(text) && /at cap/.test(text) && /NC only/.test(text) &&
     !/[⬆⬇]/.test(doc.getElementById("cplFundTable").textContent));
   check("D9: section titles carry Sam's renames (2026-08-31)",
-    /Funding Breakdown/.test(text) && /Eligibility Requirements/.test(text) &&
+    /Funding Breakdown/.test(text) && /Minimum Conditions/.test(text) &&
     /Funding Outcomes Required by/.test(text));
   // D9b (2026-09-01) — the BAND CONSOLIDATION's absence guard, in the R1-R11
   // shape. "Three Priority Outcome-Based Allocations" was one of two sections

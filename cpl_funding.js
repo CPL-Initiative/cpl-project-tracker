@@ -2954,15 +2954,19 @@
   }
   function setPrioStrategies(slot, i, list) { setPrio(slot, i, "strategies", (list || []).slice()); }
 
+  // Labels are Sam's, edited in place on the 2026-09-24 review sheet: the
+  // participation step is the Confirmation Deadline, and the disbursement
+  // lines no longer say "in MAP". A stored timing list (the tab's editor)
+  // still wins over this default.
   var DEFAULT_TIMING = [
     { label: "Funding Model Finalized", date: "Aug 2026" },
     { label: "Guidance Memo and Funding Model Release", date: "Sep 2026" },
-    { label: "Participation Request", date: "Oct 2026" },
-    { label: "First Disbursement based on cumulative CPL in MAP", date: "Feb 2027" },
-    { label: "Second Disbursement based on cumulative CPL in MAP", date: "Jul 2027" },
+    { label: "Confirmation Deadline", date: "Oct 2026" },
+    { label: "First Disbursement based on cumulative CPL", date: "Feb 2027" },
+    { label: "Second Disbursement based on cumulative CPL", date: "Jul 2027" },
     { label: "Undispersed Funds Rolled to Year 2 and Releveled", date: "Aug 2027" },
-    { label: "First Disbursement based on cumulative CPL in MAP", date: "Dec 2027" },
-    { label: "Second Disbursement based on cumulative CPL in MAP", date: "Jun 2028" },
+    { label: "First Disbursement based on cumulative CPL", date: "Dec 2027" },
+    { label: "Second Disbursement based on cumulative CPL", date: "Jun 2028" },
     { label: "Potential Year 3 Depending on Funding Availability", date: "" }
   ];
   function timingItems() {
@@ -10559,12 +10563,33 @@
     });
   }
 
+  // ⚠️ A REDRAW TAKES THE FOCUS WITH IT (Sam, 2026-09-24: "The scenario
+  // selector freezes after first use"). render() rebuilds the mount's HTML, so
+  // the control that asked for the redraw is gone by the time it finishes and
+  // focus lands on <body>: the first ArrowDown or wheel step on the scenario
+  // selector changed the scenario, the second went to the page. A mouse click
+  // re-focuses the new element, which is why it read as intermittent.
+  // Measured in Chromium on the live config: focus BODY after one change.
+  // So render() notes which control in the mount had focus, by id, and
+  // wire() puts focus back on its rebuilt namesake without scrolling.
+  var refocus = { id: null };
+  function restoreFocus() {
+    var id = refocus.id;
+    refocus.id = null;
+    if (!id) return;
+    var el = document.getElementById(id);
+    if (!el || el === document.activeElement) return;
+    try { el.focus({ preventScroll: true }); } catch (e) { try { el.focus(); } catch (e2) {} }
+  }
+
   function render() {
     if (press.open) { press.held = true; return; }
     press.held = false;
     notifyModel();
     var mount = document.getElementById("cplFundingMount");
     if (!mount) return;
+    var ae = document.activeElement;
+    refocus.id = (ae && ae.id && ae !== document.body && mount.contains(ae)) ? ae.id : null;
     // A re-render mid-edit (a remote load landing, a dial moved elsewhere on
     // the page) rebuilds the textarea; keep what the reviewer has typed so far.
     if (state.textEditing) {
@@ -10654,7 +10679,9 @@
         // text"). R11 (2026-08-31) kept the Summary out of every fold; it now
         // sits inside the one section that is open on every visit, still ahead
         // of every figure-bearing section — the readout is never hidden on open.
-        SEC.about = section("about", "About this funding model", aboutHtml() + summaryHtml());
+        // "Introduction" and "Minimum Conditions" are Sam's titles (review
+        // sheet items 2 and 3, 2026-09-24); a stored rename still wins.
+        SEC.about = section("about", "Introduction", aboutHtml() + summaryHtml());
         // The institution table comes FIRST (Sam, 2026-09-02: "so folks don't
         // have to scroll down through the steps to see it — most won't care
         // about the details, just their funding"): right after the introduction,
@@ -10664,7 +10691,7 @@
         SEC.window = section("window", "Funding window", yearControlsHtml() + basisNoteHtml());
         SEC.pools = section("pools", "Funding Breakdown", ledgerNoteHtml() + poolCardsHtml());
         SEC.formula = section("formula", "How an allocation is computed", formulaHtml());
-        SEC.eligibility = section("eligibility", "Eligibility Requirements", eligibilityHtml());
+        SEC.eligibility = section("eligibility", "Minimum Conditions", eligibilityHtml());
         // ONE section, not two (Sam, 2026-09-01). The priorities and the statutory
         // goals described the same allocation in two vocabularies, stitched by a
         // raised letter; the bands make the outcome the structure and the
@@ -11065,7 +11092,8 @@
     }
   }
 
-  function wire() {
+  function wire() { wireAll(); restoreFocus(); }
+  function wireAll() {
     // PUBLIC MODE: sweep every curate/edit affordance out of the DOM before any
     // handler binds. Done here because wire() is the single funnel every render
     // path ends with (model / grants / report), so a new sub-view cannot forget
