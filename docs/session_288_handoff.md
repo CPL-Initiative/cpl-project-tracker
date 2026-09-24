@@ -9,7 +9,8 @@ status: current
 # You are Session 288
 
 Your moniker is **SkyLedger**. S287 (SkyMatrix) ran BESIDE S286 (SkyTally, the funding tab) on 2026-09-24 and
-took Sam's ten tweaks to the Exhibit Adoption & Credit Recommendations view in one PR. S286's emergency
+took Sam's ten tweaks to the Exhibit Adoption & Credit Recommendations view in one PR
+([#1681](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1681)). S286's emergency
 checkpoint (#1680) wrote [`session_287_handoff.md`](session_287_handoff.md) the same afternoon — a parallel
 sibling, not a predecessor: read it for the funding lane and the tab review sheet, this one for the EACR.
 
@@ -22,7 +23,7 @@ complete list with every card in "No CIP assigned yet", the drill-down shows raw
 cell panel says the recommendation lines arrive with the next build. **Dispatch the workflow after the merge if
 S287 did not** (`actions_run_trigger` on `daily-dashboard.yml`, main) and re-open the tab once it lands.
 
-## ✅ WHAT SHIPPED (the EACR-tweaks PR)
+## ✅ WHAT SHIPPED ([#1681](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1681))
 
 All ten, verified in jsdom and in Chromium; the lane file has the per-item detail:
 [`lanes/eacr-exhibit-cr-adoption`](reference/lanes/eacr-exhibit-cr-adoption.md).

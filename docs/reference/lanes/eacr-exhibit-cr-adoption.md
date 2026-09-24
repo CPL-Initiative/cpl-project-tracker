@@ -19,7 +19,7 @@ related:
 
 ## Status
 
-✅ **SAM'S TEN TWEAKS OF 2026-09-24 ARE LIVE** (the EACR-tweaks PR; the data
+✅ **SAM'S TEN TWEAKS OF 2026-09-24 ARE LIVE** ([#1681](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1681); the data
 half arrives with the first `daily-dashboard.yml` run after it merges — see
 NEXT ①). What the tab does now, in the order he asked:
 
