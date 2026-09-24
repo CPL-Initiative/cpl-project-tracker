@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-09-23T17:14:09.633779+00:00",
+  "scraped_at": "2026-09-24T11:52:24.588786+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 28343,
+    "jst": 28428,
     "star_colleges": 59
   },
   "computed_star_colleges": 59,
@@ -17,7 +17,7 @@
     },
     "Chaffey College": {
       "vets": 182,
-      "jst": 347,
+      "jst": 348,
       "star": true
     },
     "San Diego Mesa College": {
@@ -32,7 +32,7 @@
     },
     "City College of San Francisco": {
       "vets": 1197,
-      "jst": 1722,
+      "jst": 1745,
       "star": true
     },
     "San Diego Miramar College": {
@@ -87,7 +87,7 @@
     },
     "Coastline Community College": {
       "vets": 231,
-      "jst": 898,
+      "jst": 984,
       "star": true
     },
     "Mt. San Antonio College": {
@@ -195,11 +195,6 @@
       "jst": 187,
       "star": false
     },
-    "Solano Community College": {
-      "vets": 278,
-      "jst": 161,
-      "star": false
-    },
     "Los Angeles Pierce College": {
       "vets": 296,
       "jst": 143,
@@ -215,25 +210,30 @@
       "jst": 339,
       "star": true
     },
+    "Mission College": {
+      "vets": 158,
+      "jst": 165,
+      "star": true
+    },
     "Cerro Coso Community College": {
       "vets": 115,
       "jst": 183,
       "star": true
     },
-    "Mission College": {
-      "vets": 158,
-      "jst": 164,
-      "star": true
-    },
     "Ventura College": {
       "vets": 254,
-      "jst": 185,
+      "jst": 186,
       "star": false
     },
     "Los Angeles Mission College": {
       "vets": 112,
       "jst": 152,
       "star": true
+    },
+    "Solano Community College": {
+      "vets": 278,
+      "jst": 133,
+      "star": false
     },
     "College of the Sequoias": {
       "vets": 260,
@@ -307,7 +307,7 @@
     },
     "Los Angeles Harbor College": {
       "vets": 109,
-      "jst": 136,
+      "jst": 137,
       "star": true
     },
     "Irvine Valley College": {
