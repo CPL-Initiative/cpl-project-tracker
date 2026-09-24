@@ -14146,8 +14146,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 258,
+   "count": 259,
    "docs": [
+    {
+     "created": "2026-09-24",
+     "governs": [],
+     "n": 287,
+     "path": "docs/session_287_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "implementation-funding",
+      "decision-sheets",
+      "review-sheet"
+     ],
+     "title": "the funding tab review sheet, three funding PRs, and an emergency checkpoint",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-24",
      "governs": [],
@@ -18526,5 +18542,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 963
+ "total": 964
 }

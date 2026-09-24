@@ -4,9 +4,9 @@
   "supabase_tables": 85,
   "rpcs": 31,
   "edge_functions": 5,
-  "file_datasets": 514,
+  "file_datasets": 516,
   "external_services": 145,
-  "consumers": 361,
+  "consumers": 363,
   "workflows": 35,
   "data_js_files": 61,
   "tabs": 37
@@ -205,6 +205,20 @@
      "direction": "read",
      "how": "url",
      "line": 113
+    },
+    {
+     "id": "module:scripts/tab_review_sheet/capture.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 12
+    },
+    {
+     "id": "module:scripts/tab_review_sheet/tab.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 15
     }
    ],
    "main_committers": []
@@ -14031,6 +14045,39 @@
     }
    ],
    "served": true,
+   "main_committers": []
+  },
+  "file:scripts/tab_review_sheet/fs/capture.json": {
+   "consumers": [
+    {
+     "id": "module:scripts/tab_review_sheet/capture.js",
+     "kind": "module",
+     "direction": "write",
+     "how": "literal",
+     "line": 121
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:scripts/tab_review_sheet/fs/snapshot.json": {
+   "consumers": [
+    {
+     "id": "module:scripts/tab_review_sheet/capture.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 5
+    },
+    {
+     "id": "module:scripts/tab_review_sheet/tab.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 6
+    }
+   ],
+   "served": false,
    "main_committers": []
   },
   "file:sierra/sierra.js": {
