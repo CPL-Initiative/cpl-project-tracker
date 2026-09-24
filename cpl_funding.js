@@ -10006,7 +10006,7 @@
       var sp = instSplit(c);
       return { name: c.nco ? (c.name || c.college) : dispName(c.college),
                district: c.district || (c.nco ? "Statewide (no district)" : "—"),
-               cr: sp.cr, nc: sp.nc, total: sp.w, nco: !!c.nco && c.short !== "Calbright",
+               cr: sp.cr, nc: sp.nc, total: sp.w, nco: !!c.nco, ncCollege: c.short === "Calbright",
                placeholder: !!(c.nco && c.feeder && feederIsPlaceholder(c.feeder)) };
     });
     var crSum = 0, ncSum = 0;
@@ -10133,7 +10133,8 @@
         "</strong></td><td><strong>" + cell(ncSub) + "</strong></td><td><strong>" + cell(sub) + "</strong></td></tr>" +
         grp.map(function (it) {
           return "<tr><td class='t' style='padding-left:1.5em;'>" + esc(it.name) +
-            (it.nco ? " <em>(noncredit-only &mdash; qualifies by origination)</em>" : "") +
+            // Calbright is a noncredit COLLEGE (Sam, 2026-09-24), so its flag says so.
+            (it.nco ? " <em>(" + (it.ncCollege ? "noncredit college" : "noncredit-only") + " &mdash; qualifies by origination)</em>" : "") +
             (it.placeholder ? " <em class='dk'>(size is a stand-in; disbursement waits for a measured figure)</em>" : "") +
             "</td><td>" + cell(it.cr) + "</td><td>" + cell(it.nc) + "</td><td>" + cell(it.total) + "</td></tr>";
         }).join("");

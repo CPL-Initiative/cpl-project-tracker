@@ -156,13 +156,17 @@ check("data: the maximum sits above the minimum (a ceiling under the floor is a 
       const now = capped.rows.find(function (x) { return x.college === r.college; });
       return now && now.capped;
     }));
-  check("C3: …and the one extra capped institution was pushed OVER by the release itself",
-    capped.m.cappedCount - overOpen.length === 1 &&
+  // How MANY the release pushes over is a property of the data (one at the
+  // 2025-26 FTES as first pulled, more after the 2026-09-24 refresh); the
+  // invariant is that every extra capped institution was under the ceiling
+  // until the release, and together with the open set they are the capped set.
+  check("C3: …and every extra capped institution was pushed OVER by the release itself",
+    capped.m.cappedCount - overOpen.length ===
     capped.rows.filter(function (r) {
       if (!r.capped) return false;
       const was = open.rows.find(function (x) { return x.college === r.college; });
       return was.total <= cap + 0.01;   // under the ceiling until the release
-    }).length === 1);
+    }).length);
 
   // ⭐ The reason the pin loop had to go: releasing the ceiling's money lifts
   // colleges back OFF the floor, and a pin-as-you-go algorithm never revisits a

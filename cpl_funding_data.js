@@ -293,7 +293,7 @@ window.CPL_FUNDING = {
   "county": "CALIFORNIA",
   "working_adults": 5106199,
   "county_pop_pct": 1,
-  "credit_ftes": 1069182.25
+  "credit_ftes": 1108508.14
  },
  "colleges": [
   {
