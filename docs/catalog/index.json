@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 491,
+   "count": 492,
    "docs": [
     {
      "created": "2026-08-14",
@@ -1788,6 +1788,25 @@
      "title": "A green check you did not scope is not evidence",
      "type": "methodology",
      "updated": "2026-08-23"
+    },
+    {
+     "created": "2026-09-24",
+     "governs": [
+      "statewide_interactive.js",
+      "tests/eacr_matrix.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-grid-past-a-few-hundred-thousand-cells-needs-a-window-not-chunks.md",
+     "status": "internal",
+     "tags": [
+      "methodology",
+      "performance",
+      "ui-design",
+      "cobi",
+      "eacr"
+     ],
+     "title": "A grid past a few hundred thousand cells needs a window, not chunks",
+     "type": "methodology",
+     "updated": "2026-09-24"
     },
     {
      "created": "2026-08-13",
@@ -13600,7 +13619,7 @@
      ],
      "title": "EACR \u2014 Exhibit & CR Adoption \u2014 lane state",
      "type": null,
-     "updated": "2026-08-28"
+     "updated": "2026-09-24"
     },
     {
      "created": "2026-08-28",
@@ -14146,8 +14165,27 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 259,
+   "count": 260,
    "docs": [
+    {
+     "created": "2026-09-24",
+     "governs": [],
+     "n": 288,
+     "path": "docs/session_288_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "eacr",
+      "adoption-matrix",
+      "cip",
+      "asccc",
+      "handout",
+      "performance"
+     ],
+     "title": "Sam's ten EACR tweaks land, the matrix becomes a window, ASCCC areas go provisional",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-24",
      "governs": [],
@@ -18542,5 +18580,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 964
+ "total": 966
 }

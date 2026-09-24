@@ -1,7 +1,7 @@
 ---
 title: "EACR — Exhibit & CR Adoption — lane state"
 created: 2026-08-28
-updated: 2026-08-28
+updated: 2026-09-24
 tags: [reference, roadmap-lane]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -11,14 +11,120 @@ related:
 
 # EACR — Exhibit & CR Adoption
 
-> **Relocated verbatim from `CLAUDE.md` §11 on 2026-08-28** (Session 206, the
-> consolidation). This is **always-current lane state, not an archive** —
-> update it at every checkpoint that moves this lane, exactly as you used to
-> update the §11 cell. `CLAUDE.md` keeps the one-line pointer; the detail is
-> here.
+> **Always-current lane state, not an archive** (relocated from `CLAUDE.md` §11
+> on 2026-08-28; rewritten to current truth 2026-09-24 when Sam's ten tweaks
+> landed). Update it at every checkpoint that moves this lane.
 
 **What this lane is:** One place to see every exhibit, its credit recommendations, and the colleges that could adopt it.
 
 ## Status
 
-✅ **FILTER REWORK + MATRIX SUB-TAB + CSV EXPORT ALL LIVE** (Sky162 #1221–#1223 · Sky163 #1226 · Sky165 #1229 · #1230). Three college scopes — `adopted` (default) · `likely` (the prescriptive M-ID layer, which **names the local course**) · `any` (*a lead, not a match* — TOP-derived, so Rule 7 forbids it as a primary determination); **Sam has used it and confirmed the arrangement** (2026-08-17). Matrix = CER titles × colleges, **green adopted / brown still-available** (in parentheses so it survives greyscale), default **434 rows × 118 cols, 17.0% inked**, 1.6s on tab select. **Sam's four rulings, locked:** brown is the **peer benchmark** · open on **colleges** · default rows **≥2 adopters** · brown on **credible cells only**. ⚠️ **FILTER, COLUMN AND EXPORTS MUST SHARE ONE SCOPE** — made structural, not remembered: `matrixCell()` is ONE function called by both grid and CSV, so the spreadsheet cannot drift from the screen. ⭐ **ONE COLLEGE WAS TWO COLUMNS — a fold at the LABEL layer is not a fold.** `CaÃ±ada` is `Cañada` read as latin-1 and `excel_to_dashboard.py` emits BOTH (26 pairs); invisible because every consumer counted *through* `cplCollegeShort()`, whose `normalize()` folds `Ã±`→`n` — the label count was right for the wrong reason. Would have rendered an empty twin column, **indistinguishable by eye from a college with no data**. Folded in the roster rules as a **SUM**, never a pick. [`methodology-a-fold-at-the-label-layer-is-not-a-fold`](docs/kb-notes/methodology-a-fold-at-the-label-layer-is-not-a-fold.md). ⚠️ **Roster rules (`kb/reference/map_college_roster_rules.json`) are the ONE place identity folds belong.** Axis = **118 = 115 credit + 3 noncredit**; the 4th, **Mt. SAC Noncredit, has no identity in `map_colleges`** (Learning Partners item 1). ⚠️ **BROWN CANNOT BE THE LINE TOTAL** — 83% of adoptions are PARTIAL (median **3.07 of 9.26**) and no college has ever reached the total. ⚠️ **`chatbox_peer_articulations` IS THE WRONG UNITS SOURCE** (32.5% coverage); the raw `View_ArticulatedMAPExhibits` row carries college+course+rec together, so `adopter_units` reads at 100%. NOT `map_college_cr_unit` (reviewer-gated, no k-anonymity). ⚠️ **A content filter must never drop a column** — that reads as "this college has nothing"; narrow only under college-shaped filters. **NEXT: Sam looks at the grid in a browser** — density is his call; then the tilde (`Canada College` today), then fix the mojibake at source in `_build_statewide_prescriptive()`. **Curation carryover:** 4 unclassified-only titles the CER knows · 2 statewide cards matching no college · sweep `{0,N}` test bounds · the 50-group credential-view cap. Story: [`docs/eacr_scope_lessons.md`](docs/eacr_scope_lessons.md).
+✅ **SAM'S TEN TWEAKS OF 2026-09-24 ARE LIVE** (the EACR-tweaks PR; the data
+half arrives with the first `daily-dashboard.yml` run after it merges — see
+NEXT ①). What the tab does now, in the order he asked:
+
+1. **CIP Sectors replaces Career Cluster**, and the filter offers the COMPLETE
+   two-digit family list (fifty, from the same `fams` the TOP to CIP tab reads)
+   with a count beside each. The route: MAP's integer TOP id → the CCC 4-digit
+   TOP (`TOP_Code_Lookup.xlsx` column D) → the family colleges actually
+   assigned under that TOP (`kb/top_cip_map.json`, the 4-digit code's own
+   `.00` entry first, then the programs-weighted fold), the published crosswalk
+   (`kb/reference/topcip_2021_crosswalk.xlsx`) only where no college has. 163
+   of 198 MAP TOP ids resolve; TOP 4930 (AP exams, general education) lands on
+   24 Liberal Arts, not on the 32 Basic Skills the raw fold sent it to. Every
+   filter is multi-select. Generator: `_load_cip_families()` /
+   `_cip_sector_for_tops()` in `excel_to_dashboard.py`; the card carries
+   `cip_sector` and `top_codes`, the payload `cip_sectors`.
+2. **ASCCC Area filter** beside SW Region, from `college_lookup.js`
+   `ascccArea`, which `kb/_apply_asccc_areas.py` writes from
+   [`kb/reference/asccc_area_map.json`](../../../kb/reference/asccc_area_map.json)
+   (`--check` runs in `scripts/check_generated.sh`). ⚠️ **PROVISIONAL — the
+   authoritative roster is Sam's to send; see the last section.** It narrows
+   rows and matrix columns exactly as District and SW Region do.
+3. **Vertical college headers** (bottom to top, `writing-mode: vertical-rl`),
+   so a column is 32px against the diagonal's 34; six-character figures such as
+   `(10.5)` get a tighter setting rather than every column widening (43 such
+   cells, measured).
+4. **The exhibit drill-down names each MAP record's TITLE and TOTAL UNITS**;
+   the MAP id survives only as the chip's title attribute. Generator field
+   `exhibit_records` (title, units, lines per id); until the data build lands,
+   the consumer pairs raw titles with ids where the two lists align.
+5. **No college-scope chips, no rows-threshold chips.** Filters match ADOPTERS
+   (Sam's 2026-08-16 ruling, now fixed rather than switchable); the could-adopt
+   column and every export carry the M-ID "already teaches a matching course"
+   layer; the broad TOP/C-ID lead list reaches no screen or export from this
+   tab (Rule 7). **Every credential with an adopting college is a matrix row**
+   (2,675 of 2,738 titles; his screen had "1 adopter" selected when he asked —
+   an assumption, stated in the PR).
+6. **Matrix rows sit under CIP-sector section headers** (code ascending, the
+   no-CIP bucket last, sticky under the column header), alphabetical within.
+7. **Hover or focus on an inked cell opens a panel** listing what that college
+   articulated — each course, its units, the recommendation text — plus the
+   opportunity line and, for a likely non-adopter, the course it already
+   teaches. Generator field `adopter_rec_idx` (college → indices into
+   `credit_recs`); older payloads show the units alone. A real element with
+   `role=tooltip` and `aria-describedby`, never a title attribute.
+8. **Verified, not claimed:** `npm run a11y` passes the route at 390 and 1440;
+   the jsdom suites are `eacr_matrix` (114), `eacr_a11y` (63), `eacr_scope`
+   (44), `eacr_filters` (30), `eacr_handout` (16), `eacr_common_titles` (6);
+   the generator half is `tests/eacr_matrix_payload_test.py` (52); the
+   dependency map was regenerated.
+9. **⭐ THE MATRIX IS A WINDOW, NOT A GRID.** 2,675 × 118 is ~316,000 cells. A
+   chunked render was measured first: the HTML is cheap, but the table costs
+   ~22 s to land in Chromium and 200–500 ms per scroll frame afterwards, with
+   or without the sticky headers. So the DOM only ever holds the rows within a
+   viewport-and-a-bit of the scroll position (25–40), two spacer rows carry the
+   rest of the height, every credential row is 52px (titles clamp to two
+   lines; the th's title attribute and DOM text carry the whole), and the
+   current section's header is rendered one line early so the sticky rule keeps
+   the sector named. Measured after: first paint 65–82 ms, wheel-sized scroll
+   frames 33 ms median / 133–168 ms max on a re-window, `table-layout: fixed`
+   with a colgroup so the phone's 180px title column reaches the layout.
+   Arrow keys move between cells (a row outside the window scrolls itself in
+   first), Escape returns to the region and is stopped there so the page's own
+   Escape handlers do not move focus. Lesson note:
+   [`methodology-a-grid-past-a-few-hundred-thousand-cells-needs-a-window-not-chunks`](../../kb-notes/methodology-a-grid-past-a-few-hundred-thousand-cells-needs-a-window-not-chunks.md).
+10. **Create Handout** (a word on a button, in the shared filter bar) opens My
+    College, where the handout is built — its Report builds the briefing
+    document and its occupation opportunity register is the port of the
+    per-college handout page. One college in the College filter travels as My
+    College's remembered choice (`MY_COLLEGE_SCOPE_KEY` mirrors
+    `college_briefing.js` `SCOPE_KEY`; `tests/eacr_handout.test.js` fails if
+    the literals drift); two or none → the tab opens and asks, as it always
+    does.
+
+**Standing rulings that survive:** brown is the PEER BENCHMARK, never
+`rec_units_total` · columns open on COLLEGES · brown on CREDIBLE cells only ·
+`matrixCell()` is ONE function for grid, panel and CSV · roster rules
+(`kb/reference/map_college_roster_rules.json`) are the one place identity folds
+belong (118 = 115 credit + 3 noncredit) · a content filter never drops a column.
+Story of the earlier rounds: [`docs/eacr_scope_lessons.md`](../../eacr_scope_lessons.md).
+
+## NEXT
+
+① **After the PR merges, dispatch `daily-dashboard.yml`** so `statewide_data.js`
+carries `cip_sector`, `top_codes`, `exhibit_records`, `adopter_rec_idx` and
+`cip_sectors`. Until then the CIP Sectors filter shows the complete list with
+every card in "No CIP assigned yet", the drill-down shows raw titles without
+units, and the panel says the recommendation lines arrive with the next build —
+all by design, none of it wrong. ② **Sam looks at the grid in a browser** —
+the 52px row, the two-line title clamp, the 0.62rem cell figures and the panel
+are his to judge. ③ The Adoption table's own rows keep their opportunity-first
+order; sectioning that view too is one call away if he wants it.
+④ Curation carryover, unchanged: 4 unclassified-only titles the CER knows · 2
+statewide cards matching no college · the 50-group credential-view cap.
+
+## The ASCCC Area map is provisional — the ask sits on the partner-crosswalks card
+
+`kb/reference/asccc_area_map.json` assigns all 118 colleges, but only 36 are
+anchored to asccc.org text (the Area A directory slice, Area B's M–S slice,
+Area C's four named bounds, Area D's six named colleges — read through search
+snippets, because the sandbox's egress policy blocks asccc.org, cccco.edu and
+web.archive.org). The other 82 follow the Areas' own geographic descriptions.
+Sam ruled *add* on the standing sheet's ASCCC card on 2026-09-22 and wrote that
+MAP carries every location's regions and Pedro can produce a MAP Custom Report
+of them; that card (lane `partner-crosswalks`) now asks him to say yes to the
+report, or to paste <https://asccc.org/area-college-list>. Either lands as an
+edit to the JSON's per-college rows, and `python3 kb/_apply_asccc_areas.py`
+re-applies it; the file's `basis` field says which rows it would confirm or
+correct.

@@ -471,21 +471,28 @@ def items():
 
     I.append({
         'lane': 'partner-crosswalks',
-        'title': 'ASCCC areas are a separate taxonomy and are still missing',
-        'ref': 'partner-crosswalks · NEEDS SAM',
+        'title': 'ASCCC areas: a provisional map is live; the authoritative one is yours to send',
+        'ref': 'partner-crosswalks · NEEDS SAM · your 2026-09-22 verdict on this card was "add"',
         'facts': (
-            "No Supabase column carries ASCCC areas. The region work resolved the SWP consortium roster "
-            "(117 colleges, 9 regions) and proximity regions, and those two already disagree &mdash; "
-            "<code>--region &quot;Bay Area&quot;</code> returns 23 where the consortium holds 28. ASCCC "
-            "areas are a third taxonomy on top of that."),
+            "You ruled <em>add</em> on 2026-09-22 and wrote that MAP carries the regions and Pedro can "
+            "produce a MAP Custom Report listing every location with its regions. On 2026-09-24 the "
+            "EACR's ASCCC Area filter shipped on <code>kb/reference/asccc_area_map.json</code>: all 118 "
+            "colleges assigned, <strong>36 anchored to asccc.org text and 82 placed by the Areas' own "
+            "geographic descriptions</strong>, because the sandbox's egress policy blocks asccc.org, "
+            "cccco.edu and web.archive.org. Every row names its basis; "
+            "<code>python3 kb/_apply_asccc_areas.py</code> re-applies a corrected file to "
+            "<code>college_lookup.js</code> in one run."),
         'why': (
-            "Each taxonomy answers a different question, and a roster that silently drops five member "
-            "colleges is the shape of the error a missing third one would add."),
+            "A college placed in the wrong Area reads as absent from its own Area's filter, which is the "
+            "quiet failure a geographic guess invites. The authoritative roster costs you one message to "
+            "Pedro, or one paste of the ASCCC college directory into a session."),
         'rec': (
-            "<strong>Add ASCCC area as its own column, sourced from the ASCCC's own roster, and never "
-            "derive it from county.</strong> <em>It might be wrong if</em> nothing we ship is scoped by "
-            "ASCCC area, in which case the honest move is to say we do not carry it."),
-        'chips': chips(('Add the column', 'add'), ('We do not carry it', 'skip'), CH_LATER),
+            "<strong>Yes to the Custom Report: ask Pedro for the location-by-region export, and a session "
+            "applies it the day it lands.</strong> The provisional map stays live until then. "
+            "<em>It might be wrong if</em> the MAP export carries no ASCCC column after all, in which "
+            "case a paste of the directory is the shorter road."),
+        'chips': chips(('Ask Pedro for the report', 'pedro'), ('I will paste the directory', 'paste'),
+                       ('The provisional map is enough', 'ok'), CH_LATER),
     })
 
     I.append({
