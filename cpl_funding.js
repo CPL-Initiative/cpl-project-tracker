@@ -10006,7 +10006,7 @@
       var sp = instSplit(c);
       return { name: c.nco ? (c.name || c.college) : dispName(c.college),
                district: c.district || (c.nco ? "Statewide (no district)" : "—"),
-               cr: sp.cr, nc: sp.nc, total: sp.w, nco: !!c.nco,
+               cr: sp.cr, nc: sp.nc, total: sp.w, nco: !!c.nco && c.short !== "Calbright",
                placeholder: !!(c.nco && c.feeder && feederIsPlaceholder(c.feeder)) };
     });
     var crSum = 0, ncSum = 0;
@@ -10016,7 +10016,8 @@
       totalAvailable: grossRevenue(),
       remaining: Number(poolField("remaining_2025_26")) || 0, oneTime: Number(poolField("one_time_2026_27")) || 0,
       collegePool: netCollege(), collegePoolMain: netCollege(),
-      nInstitutions: oneRoster().length, nColleges: base().colleges.length,
+      // Calbright is a college (Sam, 2026-09-22: 116), so the memo counts it with them.
+      nInstitutions: oneRoster().length, nColleges: eligColleges().length,
       instRows: instRows, crSum: crSum, ncSum: ncSum,
       floor: floorWindow(), cap: capWindow(),
       institutionTotal: netCollege(),
@@ -10239,6 +10240,8 @@
     return '<div class="cplfund-reptoolbar">' +
       '<span class="cplfund-ctl-lbl">Document type</span>' + segHtml("cplFundDocType", types, state.docType) +
       '<button type="button" class="cplfund-optbtn" id="cplFundMemoRegen" title="Regenerate from the current model (discards inline edits)">Regenerate</button>' +
+      (state.memoRegenAt ? '<span class="dk" role="status" id="cplFundMemoRegenAt">Regenerated from the current model at ' +
+        esc(state.memoRegenAt) + ".</span>" : "") +
       '<span style="flex:1 1 auto;"></span>' +
       '<button type="button" class="cplfund-optbtn" id="cplFundMemoCopy" title="Copy the document text">Copy text</button>' +
       '<button type="button" class="cplfund-optbtn" id="cplFundMemoPdf" title="Open a print-ready view, then use Print and choose Save as PDF">Save as PDF</button>' +
@@ -11297,7 +11300,14 @@
     });
     wireSeg("cplFundDocType", function (v) { if (v !== state.docType) { state.docType = v; render(); } });
     var memoRegen = document.getElementById("cplFundMemoRegen");
-    if (memoRegen) memoRegen.addEventListener("click", render);
+    // A VISIBLE RESULT (Sam, 2026-09-24, screen recording: "still
+    // unresponsive"). The click did rebuild the memo, but with no inline edits
+    // the rebuilt document is identical, so nothing on screen said it ran.
+    // The toolbar now names the time of the last rebuild.
+    if (memoRegen) memoRegen.addEventListener("click", function () {
+      state.memoRegenAt = new Date().toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", second: "2-digit" });
+      render();
+    });
     var memoCopy = document.getElementById("cplFundMemoCopy");
     if (memoCopy) memoCopy.addEventListener("click", copyMemo);
     var memoPdf = document.getElementById("cplFundMemoPdf");
