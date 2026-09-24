@@ -188,6 +188,18 @@
     // Star gold: college_activity.js paints star colleges in --mustard-text
     // (#8B6800, 5.2:1 on white; #E3B341 on the dark palette).
     ".cplfund-vstar { color: var(--mustard-text, #8B6800); margin: 0 3px 0 2px; font-size: .95em; cursor: help; }",
+    // The noncredit lane's table (Sam, 2026-09-24: "perhaps with a slight color
+    // difference between the two. I don't want the NCs to get lost"). Its
+    // header takes --dtl-nc-head, a role token defined in BOTH HTMLs: #0047AB
+    // light, #2B5C9E dark (white text 8.44:1 and 6.72:1). --cobalt could not
+    // serve: the dark palette lightens it to #7DA1D4, where white reads 2.5:1.
+    ".cplfund-dtl-tscroll > .cplfund-dtl-table.cplfund-dtl-nc th { background: var(--dtl-nc-head, #0047AB); }",
+    ".cplfund-dtl-tscroll + .cplfund-dtl-tscroll, .cplfund-dtl-tscroll + .cplfund-dtl-ncnone { margin-top: 12px; }",
+    ".cplfund-dtl-sum { margin: 2px 0 0; font-size: .85rem; font-variant-numeric: tabular-nums; }",
+    // The drill-in grid auto-fits 240px columns, so every part of the lane
+    // block spans the row, as the tables already do.
+    ".cplfund-detail-grid > .cplfund-dtl-sum, .cplfund-detail-grid > .cplfund-dtl-ncnone { grid-column: 1 / -1; }",
+    ".cplfund-dtl-ncnone { margin: 8px 0 0; font-size: .82rem; }",
     ".cplfund-ftesfactors { display: grid; gap: 2px; font-size: .8rem; }",
     ".cplfund-ftesrow { display: grid; grid-template-columns: minmax(180px,auto) minmax(90px,auto) 1fr;" +
       " gap: 10px; align-items: baseline; padding: 3px 0; border-bottom: 1px dotted var(--border); }",
@@ -409,6 +421,17 @@
        differ by what they say, so neither needs a hue to be told apart. */
     ".cplfund-cardgoal-set { color: var(--text-body); font-weight: 600; }",
     "@media (max-width: 560px) { .cplfund-cardgoal-lab { margin-left: 0; flex-basis: 100%; } }",
+    /* ── the card head (2026-09-24): number and outcome in one heading, the
+       law on one line under it. Same text/background pairs as the heading and
+       the goal row it replaces, so no new colour to verify. */
+    ".cplfund-cardhead { margin: 0 0 8px; }",
+    ".cplfund-prio .cplfund-cardhead h4 { flex-wrap: wrap; row-gap: 4px; margin: 0 0 4px; }",
+    ".cplfund-cardhead .cplfund-cardgoal-key, .cplfund-cardhead-name { font-weight: 700; color: var(--navy-primary); }",
+    ".cplfund-cardhead .cplfund-cardgoal-sel { font-size: .95rem; font-weight: 700; color: var(--navy-primary); min-height: 28px; padding: 2px 6px; max-width: 100%; }",
+    ".cplfund-cardhead .cplfund-prio-title-input { max-width: none; }",
+    ".cplfund-cardhead .cplfund-cardrename { margin-left: auto; }",
+    ".cplfund-cardhead .cplfund-cardgoal-quote { margin: 0; }",
+    ".cplfund-cardhead .cplfund-cardgoal-cite { font-style: normal; }",
 
     /* ── the MEASURE picker, in the metric block (Sam, 2026-09-15) ─────── */
     /* Deliberately quieter than the outcome picker above it: the measure is a
@@ -3481,7 +3504,7 @@
     "data-priodrag", "data-priopos",
     "data-pooladd", "data-pooldel", "data-poolhide", "data-poolshow", "data-poolkind",
     "data-textedit", "data-textsave", "data-textcancel", "data-textreset", "data-textarea",
-    "data-secrename", "data-sectitle", "data-sectitlesave", "data-sectitlecancel",
+    "data-secrename", "data-sectitle", "data-sectitlesave", "data-sectitlecancel", "data-cardrename",
     "data-sectitlereset", "data-sechide", "data-secshow",
     "data-projsel", "data-projadd", "data-projrelease", "data-priogoal", "data-priosrc",
     "data-rcgoal", "data-rcdel", "data-rstratadd", "data-rstratdel",
@@ -5396,6 +5419,83 @@
       (keys.length ? '<p class="cplfund-cardgoal-quote">' + goalQuote(keys) + "</p>" : "") + "</div>";
   }
 
+  // ⭐ THE CARD'S HEAD SAYS EACH THING ONCE (Sam, 2026-09-24, on 5.18-5.22 of
+  // the review sheet: "think of how we can consolidate these so that nothing
+  // is really repeating ... we're not repeating B completion, completion";
+  // then, of the mock: "I like your simplified priority card!"). The card had
+  // said its outcome three times: the key on the goal row, the Outcome
+  // picker's "(A) Access", and the heading's "Priority 1: Access".
+  //
+  // One heading carries the number and the outcome ("Priority 1 · (A)
+  // Access"); in the internal view those two parts ARE the pickers. One line
+  // under it carries the law: the citation and the statute's sentence. The
+  // title field appears only for a CUSTOM title — Rename opens it — and a
+  // stored title that matches its outcome's name counts as no custom title,
+  // so no curator's saved words are lost and none repeat. A custom title
+  // replaces the outcome's name in the heading, the key staying beside it.
+  //
+  // `o`: res {keys, derived}, ctx, selAttr + selOpt (the goal picker, as
+  // goalRowHtml took them), numHtml (cardNumHtml's output), title, renameKey,
+  // titleInput() (the edText for the title), ro.
+  function cardHeadHtml(o) {
+    var res = o.res || {};
+    var keys = (res.keys || []).filter(function (k) { return !!goalByKey(k); });
+    var goalNames = keys.map(function (k) { return goalByKey(k).short; }).join(" and ");
+    var custom = String(o.title || "").trim();
+    if (goalNames && custom.toLowerCase() === goalNames.toLowerCase()) custom = "";
+    var curator = !!o.selAttr && !publicMode();
+    var head = '<span class="cplfund-prio-num">' + o.numHtml + "</span> &middot; ";
+    if (curator) {
+      // The picker IS the outcome in the heading; its closed face reads
+      // "(A) Access", and "From the metric" stays on the list.
+      head += goalSelectHtml(res, o.ctx, o.selAttr, o.selOpt || {});
+      var renaming = state.cardRenaming === o.renameKey;
+      if (custom || renaming) head += " &middot; " + o.titleInput();
+      if (!o.ro) {
+        head += ' <button type="button" class="cplfund-textbtn cplfund-cardrename" data-cardrename="' + esc(o.renameKey) +
+          '" title="' + (custom || renaming
+            ? "Close the title field. A title that matches the outcome, or none, shows the outcome&#39;s name."
+            : "Give this priority a title of its own; the outcome&#39;s name shows until you do.") + '">' +
+          (custom || renaming ? "Done" : "Rename") + "</button>";
+      }
+    } else if (keys.length) {
+      head += '<span class="cplfund-cardgoal-key">(' + keys.map(esc).join(") + (") + ")</span> " +
+        '<span class="cplfund-cardhead-name">' + esc(custom || goalNames) + "</span>";
+    } else {
+      head += '<span class="cplfund-cardhead-name cplfund-cardgoal-orphan">Awaiting a statutory outcome</span>';
+    }
+    // Loud, never silent: a card whose goal does not resolve says so where the
+    // reader is, which is what the orphan BAND used to do.
+    var law = keys.length
+      ? '<p class="cplfund-cardgoal-quote"><span class="cplfund-cardgoal-cite">' + goalCite(keys) + ":</span> " +
+        goalQuote(keys) + "</p>"
+      : '<p class="cplfund-cardgoal-quote"><span class="cplfund-cardgoal-cite">Set the metric, or choose an outcome, to place this card.</span></p>';
+    return '<div class="cplfund-cardhead"><h4>' + head + "</h4>" + law + "</div>";
+  }
+  // The goal picker alone — goalRowHtml's list, without the row around it.
+  function goalSelectHtml(res, ctx, selAttr, opt) {
+    var keys = (res.keys || []).filter(function (k) { return !!goalByKey(k); });
+    var goalNames = keys.map(function (k) { return goalByKey(k).short; }).join(" and ");
+    var offer = opt.choices
+      ? STATUTORY_GOALS.filter(function (g) { return opt.choices.indexOf(g.key) >= 0; })
+      : STATUTORY_GOALS;
+    // The derived option names the outcome it resolves to, so the closed
+    // picker reads the same "(A) Access" whichever way the goal was set.
+    var derivedWord = res.derived && keys.length
+      ? "(" + keys.join(") + (") + ") " + goalNames
+      : "From the metric";
+    var opts = (opt.derivable === false ? "" :
+      '<option value="' + GOAL_DERIVED + '"' + (res.derived ? " selected" : "") +
+      ' title="Set by the metric">' + esc(derivedWord) + "</option>") +
+      offer.map(function (g) {
+        var on = !res.derived && keys.length === 1 && keys[0] === g.key;
+        return '<option value="' + esc(g.key) + '"' + (on ? " selected" : "") +
+          ">(" + esc(g.key) + ") " + esc(g.short) + "</option>";
+      }).join("");
+    return '<select class="cplfund-cardgoal-sel cplfund-cardhead-sel" ' + selAttr +
+      ' aria-label="' + esc("Statutory outcome for " + ctx + (res.derived ? ", set by the metric" : "")) + '">' + opts + "</select>";
+  }
+
   // ── every card section below the Metric collapses (Sam, 2026-09-14) ───
   // ⚠️ THE SUMMARY CARRIES THE FIGURE THE SECTION HOLDS, and that is what makes
   // collapsing safe rather than lossy: a closed "Progress" still reads
@@ -6409,12 +6509,12 @@
   function cardNumHtml(slot, id, attr, ctx) {
     var seq = cardOrder(slot);
     var at = seq.indexOf(id);
-    if (publicMode() || !attr) return "Priority " + (at + 1) + ":";
+    if (publicMode() || !attr) return "Priority " + (at + 1);
     var opts = seq.map(function (_, j) {
       return '<option value="' + j + '"' + (j === at ? " selected" : "") + ">" + (j + 1) + "</option>";
     }).join("");
     return 'Priority <select class="cplfund-pos" ' + attr + ' data-cardid="' + esc(id) +
-      '" aria-label="' + esc("Position of " + ctx) + '">' + opts + "</select>:";
+      '" aria-label="' + esc("Position of " + ctx) + '">' + opts + "</select>";
   }
 
   // The DELETE confirmation for a measured priority, shown inside its card.
@@ -6571,10 +6671,12 @@
         // letter beside the title is RETIRED with the band: it existed to
         // stitch a card to a wrapper that no longer exists, and the row below
         // now names the same goal in words.
-        goalRowHtml(gres, ctx, 'data-priogoal="' + i + '"', { name: p.title }) +
-        '<h4><span class="cplfund-prio-num">' + cardNumHtml(slot, cid, ro ? "" : 'data-priopos="' + i + '"', ctx) + "</span> " +
-        edText("prio-title", p.title, { slot: slot, idx: i, ro: ro, cls: "cplfund-prio-title-input", label: p.label + " title", placeholder: "Title (e.g. Access)" }) +
-        "</h4>" +
+        cardHeadHtml({ res: gres, ctx: ctx, selAttr: 'data-priogoal="' + i + '"', title: p.title, ro: ro,
+          numHtml: cardNumHtml(slot, cid, ro ? "" : 'data-priopos="' + i + '"', ctx), renameKey: cid,
+          titleInput: function () {
+            return edText("prio-title", p.title, { slot: slot, idx: i, ro: ro, cls: "cplfund-prio-title-input",
+              label: p.label + " title", placeholder: "Title of its own" });
+          } }) +
         '<p class="desc">' + edArea("description", p.description, { slot: slot, idx: i, rows: 2, ro: ro, label: p.label + " description" }) + "</p>" +
         '<p class="nums">Allocation share ' + edNum("share", fmtRatePct(p.share), { small: true, slot: slot, idx: i, ro: ro, label: p.label + " allocation share percent" }) +
         "% of each tranche &mdash; statewide " + fmtMoney(sysDollars) + "</p>" +
@@ -6908,12 +7010,12 @@
           ? '<button type="button" class="cplfund-textbtn" data-rcdel="' + esc(card.id) +
             '" title="Delete this card. Add a reported outcome card brings it back.">Delete</button>'
           : "" }) +
-      goalRowHtml({ keys: [gkey], derived: false }, ctx,
-        'data-rcgoal="' + esc(card.id) + '"',
-        { derivable: false, choices: reportedChoices(slot, card.id), name: title }) +
-      '<h4><span class="cplfund-prio-num">' + cardNumHtml(slot, cid, 'data-cardpos="' + esc(cid) + '"', ctx) + "</span> " +
-      edText("rtitle", title, { field: gkey, cls: "cplfund-prio-title-input", label: ctx + " title", placeholder: "Title" }) +
-      "</h4>" +
+      cardHeadHtml({ res: { keys: [gkey], derived: false }, ctx: ctx, selAttr: 'data-rcgoal="' + esc(card.id) + '"',
+        selOpt: { derivable: false, choices: reportedChoices(slot, card.id) }, title: title,
+        numHtml: cardNumHtml(slot, cid, 'data-cardpos="' + esc(cid) + '"', ctx), renameKey: cid,
+        titleInput: function () {
+          return edText("rtitle", title, { field: gkey, cls: "cplfund-prio-title-input", label: ctx + " title", placeholder: "Title of its own" });
+        } }) +
       '<p class="desc">Funded through the statewide project allocation and reported based on the aligned activities.' +
       // The note the (D) band carried — why no college qualifies here — moves
       // onto the card the moment no measured card serves the goal.
@@ -7908,7 +8010,7 @@
     var ps = priorities(slot);
     var ncPs = ncPriorities(slot);
     var perPrio = ps.map(function () {
-      return { cap: 0, crCap: 0, ncCap: 0, earned: 0, ncEarned: 0, statuses: {} };
+      return { cap: 0, crCap: 0, ncCap: 0, earned: 0, ncEarned: 0, crTarget: 0, ncTarget: 0, statuses: {} };
     });
     var winCap = 0, winEarned = 0, winHeld = 0, gatedN = 0;
     var winMeasured = 0, winAdvance = 0;
@@ -7929,6 +8031,11 @@
         perPrio[i].crCap += prioCap(sp.cr, slot, p);
         var fr = earnFraction(col, p);
         perPrio[i].earned += prioCap(sp.cr, slot, p) * fr.f;
+        // Each lane's statewide target is the SUM of the institutions' lane
+        // targets (the statewide drill-in's Max FTES, 2026-09-24); the
+        // statewide prioTarget(null, p) reads the full share, both lanes
+        // together, which is the card's figure and not a lane's.
+        if (sp.cr > 0) perPrio[i].crTarget += prioTarget(col, p);
         // Status counts describe the CREDIT measures; the noncredit-only rows
         // hold no credit slice, so counting their (empty) credit status would
         // add noise the diagnostic then reports.
@@ -7938,6 +8045,7 @@
         if (!(sp.nc > 0)) return;
         var capNc = ncPrioCap(sp.nc, slot, p);
         perPrio[i].ncCap += capNc;
+        perPrio[i].ncTarget += prioTarget(col, p);
         var fr = earnFraction(col, p);
         var paid = capNc * fr.f;
         perPrio[i].earned += paid;
@@ -8314,6 +8422,7 @@
     previewPublic: false,   // reviewer previewing the public rendering (session-only, never persisted)
     docType: "memo",    // memo | letter | report | brief
     textEditing: null,  // key of the prose block a signed-in reviewer is editing, else null
+    cardRenaming: null, // card id whose custom-title field Rename opened (2026-09-24), else null
     textDraft: {},      // what they have typed so far, kept across the re-renders an edit triggers
     titleEditing: null, // id of the section whose TITLE is being renamed, else null
     titleDraft: {},     // the same draft-preservation for a rename in flight
@@ -9075,81 +9184,84 @@
   // the second and $0 to the first, and every college's fraction is capped at
   // its own 100% before it is summed. Deriving it here would silently pick one.
   function prioDetailTableHtml(scope) {
-    // ONE LINE PER PRIORITY (Sam, 2026-09-23: "Further tighten detail row
-    // height and make sure the detail section under each college row is as
-    // clear and simple as possible"). Six columns: the CR/NC split of a
-    // priority's funding rides the Total Possible hover (the row's CR award and
-    // NC award columns carry the institution's split), and the funding left to
-    // qualify for rides the To go hover — it is Total Possible less Current
-    // Total, which the row already shows.
+    // ⭐ ONE TABLE PER LANE, SAM'S SIX COLUMNS (2026-09-24, review sheet item
+    // 7): "we need to provide a CR 7.9 table and a NC 7.9 table, perhaps with a
+    // slight color difference between the two. I don't want the NCs to get lost
+    // in the shuffle. Headers should be: Outcomes; Max FTES; Max Funds; Actual
+    // FTES; Actual Funds; Difference." The one table it replaces printed the
+    // COMBINED credit + noncredit Total Possible beside a CREDIT-only target and
+    // actual, so the noncredit share sat inside a total no other cell explained.
+    // Each table now reads one lane's slice end to end: its target, its funding,
+    // what its measures show, what it has qualified for, and what remains.
+    //
+    // `scope.lane` is "cr" or "nc"; `scope.prios` are that lane's priorities
+    // (priorities(slot) or ncPriorities(slot)); `figures(p, i)` returns
+    // {maxFtes, maxFunds, fr, actualFunds} for that lane. Difference is Max
+    // Funds less Actual Funds — the funding still to qualify for — with the FTES
+    // gap in its hover.
     //
     // A priority whose card says "Show on college rows" off has no line here;
     // its funding still counts in every total (Sam, 2026-09-23). A reported
-    // card switched on gets a line saying it is funded statewide.
-    var rowsHtml = priorities(scope.slot).map(function (p, i) {
+    // card switched on gets a line saying it is funded statewide (credit table).
+    var nc = scope.lane === "nc";
+    var rowsHtml = (scope.prios || []).map(function (p, i) {
       if (!cardRowsOn("m" + p.src)) return "";
       var f = scope.figures(p, i);
-      var fr = f.fr;
+      var fr = f.fr || {};
       var isF = prioIsFtes(p);
-      var act;
+      var unit = function (v) { return isF ? fmtNum1(v) : fmtInt(v) + " stu"; };
+      var act, actTip = "", measured = false;
       if (fr.status === "earned") {
-        // ⚠️ THE PERCENT IS THE TRUE RATIO, NOT THE CAPPED ONE (2026-09-14).
-        // This read Math.min(1, actual / target), so Alameda printed
-        // "17.6 FTES &middot; 100%" in the cell beside "Target 8.0 FTES" — two
-        // cells of one row contradicting each other, and the statewide priority
-        // card directly above prints that same ratio UNCAPPED (actualLineHtml),
-        // so the page disagreed with itself as well. The cap belongs to the
-        // MONEY and is already visible in the money: Current Total stops at
-        // Total Possible, and To go reads `target met`.
-        act = (isF ? fmtNum1(fr.actual) + " FTES" : fmtInt(fr.actual) + " stu") + " &middot; " +
-          fmtPctTrim(fr.target > 0 ? fr.actual / fr.target : 0);
-      } else if (fr.status === "none") act = "0 &middot; 0%";
+        // ⚠️ THE PERCENT IS THE TRUE RATIO, NOT THE CAPPED ONE (2026-09-14):
+        // the cap belongs to the funding and is visible in Actual Funds.
+        act = unit(fr.actual);
+        actTip = fmtPctTrim(f.maxFtes > 0 ? fr.actual / f.maxFtes : 0) + " of Max FTES";
+        measured = true;
+      } else if (fr.status === "none") { act = unit(0); actTip = "0% of Max FTES"; measured = true; }
       else if (fr.status === "suppressed") act = maskLt(true) + " (privacy)";
-      else if (fr.status === "undelivered") act = "awaiting measurement";
       else if (fr.status === "bad_src") act = "awaiting a known measure";
-      else act = "awaiting measurement";   // gap / pending — plain absence on the surface (2026-09-01)
-      // TO GO — the distance between where this scope is and where it could be,
-      // which is what Sam asked the detail to say (2026-09-01). Only a MEASURED
-      // state has a distance: a suppressed actual is masked, so its gap would
-      // leak the value by subtraction, and an unmeasured one has no number to
-      // subtract. Both read the plain absence rather than a zero. The funding
-      // it would release is the measure's own remainder, never the gate's — a
-      // gated college's funding is held in reserve, a different fact with its
-      // own line.
-      var toGo, toGoTip = "";
-      if (fr.status === "earned" || fr.status === "none") {
-        var short = Math.max(0, f.target - (fr.status === "earned" ? fr.actual : 0));
-        toGo = short <= 0 ? '<span class="dk">target met</span>'
-          : (isF ? fmtNum1(short) + " FTES" : fmtInt(short) + " stu");
-        if (short > 0) toGoTip = earnedMoney(f.remaining) + " remaining to qualify for";
-      } else toGo = '<span class="dk">&mdash;</span>';
-      // Total Possible defaults to the two shares added up, which is what it
-      // IS for a college. Statewide passes its own, because earnAgg() sums the
-      // whole-award slice and the two lane slices by three different calls and
-      // the priority card above prints that whole-award figure — so deriving
-      // it here would let the expand disagree with the card it opened under.
-      var tp = f.totalPossible == null ? f.cr + f.nc : f.totalPossible;
-      var tpTip = "Credit share " + fmtMoney(f.cr) + " \u00b7 noncredit share " + fmtMoney(f.nc);
+      else act = "awaiting measurement";   // undelivered / gap / pending — plain absence (2026-09-01)
+      var gapFtes = measured ? Math.max(0, f.maxFtes - (fr.status === "earned" ? fr.actual : 0)) : null;
+      var diffTip = gapFtes == null ? "" : (gapFtes <= 0 ? "Max FTES met" : unit(gapFtes) + " FTES to Max FTES");
       return "<tr><td>" + esc(p.label) + (p.title ? ": " + esc(p.title) : "") + "</td>" +
-        "<td>" + (isF ? fmtNum1(f.target) + " FTES" : fmtInt(f.target) + " stu") + "</td>" +
-        "<td>" + act + "</td>" +
-        "<td" + (toGoTip ? ' title="' + esc(toGoTip) + '"' : "") + ">" + toGo + "</td>" +
-        "<td>" + earnedMoney(f.earned) + "</td>" +
-        '<td title="' + esc(tpTip) + '">' + fmtMoney(tp) + "</td></tr>";
+        "<td>" + unit(f.maxFtes) + "</td>" +
+        "<td>" + fmtMoney(f.maxFunds) + "</td>" +
+        "<td" + (actTip ? ' title="' + esc(actTip) + '"' : "") + ">" + act + "</td>" +
+        "<td>" + earnedMoney(f.actualFunds) + "</td>" +
+        "<td" + (diffTip ? ' title="' + esc(diffTip) + '"' : "") + ">" + diffMoney(f.maxFunds, f.actualFunds) + "</td></tr>";
     }).join("") + (scope.reported || []).map(function (r) {
       return '<tr class="cplfund-dtl-rep"><td>' + esc(r.label) + '</td><td colspan="5" class="dk">' +
         esc(r.note) + "</td></tr>";
     }).join("");
     return '<div class="cplfund-dtl-tscroll" role="region" aria-label="' + esc(scope.label) + '" tabindex="0">' +
-      '<table class="cplfund-dtl-table"><caption class="dk">' + scope.caption + "</caption>" +
-      '<colgroup><col style="width:29%"><col style="width:11%"><col style="width:20%"><col style="width:12%"><col style="width:14%"><col style="width:14%"></colgroup>' +
-      '<tr><th scope="col">Priority</th>' +
-      '<th scope="col" title="What the credit share funds at the priority&#39;s price.">Target</th>' +
-      '<th scope="col" title="What has been posted against the target so far, and that as a percent of it.">Actual</th>' +
-      '<th scope="col" title="How far this still is from the target. Hover a figure for the funding it would qualify for.">To go</th>' +
-      '<th scope="col" title="Demonstrated to date — actual ÷ target, capped at 100%, applied to the credit funding.">Current Total</th>' +
-      '<th scope="col" title="This priority&#39;s full funding — credit and noncredit shares together; hover a figure for the split. Remaining funding rolls forward.">Total Possible</th></tr>' +
+      '<table class="cplfund-dtl-table' + (nc ? " cplfund-dtl-nc" : " cplfund-dtl-cr") + '">' +
+      '<caption class="dk">' + scope.caption + "</caption>" +
+      '<colgroup><col style="width:28%"><col style="width:12%"><col style="width:15%"><col style="width:15%"><col style="width:15%"><col style="width:15%"></colgroup>' +
+      '<tr><th scope="col">Outcomes</th>' +
+      '<th scope="col" title="The ' + (nc ? "noncredit" : "credit") + ' measure&#39;s target: this lane&#39;s funding at the priority&#39;s price.">Max FTES</th>' +
+      '<th scope="col" title="This priority&#39;s ' + (nc ? "noncredit" : "credit") + ' funding for the window.">Max Funds</th>' +
+      '<th scope="col" title="What the measure shows so far. Hover a figure for its share of Max FTES.">Actual FTES</th>' +
+      '<th scope="col" title="Demonstrated to date: Actual FTES ÷ Max FTES, capped at 100%, applied to Max Funds.">Actual Funds</th>' +
+      '<th scope="col" title="Max Funds less Actual Funds: the funding still to qualify for. Hover a figure for the FTES gap.">Difference</th></tr>' +
       rowsHtml + "</table></div>";
+  }
+  // Max Funds less Actual Funds, printed so that it never undoes the public
+  // coarsening of Actual Funds (the ADR: demonstrated figures coarsen to the
+  // nearest $1,000 on the public page, caps stay exact). An exact difference
+  // beside an exact cap would hand back the exact demonstrated figure by
+  // subtraction, so the public page subtracts the COARSE figure it shows.
+  function diffMoney(max, actual) {
+    var m = Number(max) || 0, a = Number(actual) || 0;
+    if (!publicMode() || Math.abs(a) < 0.5) return fmtMoney(Math.max(0, m - a));
+    if (Math.abs(a) < PUBLIC_MONEY_FLOOR) return "&gt;" + fmtMoney(Math.max(0, m - PUBLIC_MONEY_FLOOR));
+    return fmtMoney(Math.max(0, m - coarseDollars(a)));
+  }
+  // The two lane tables of one drill-in, credit first. A scope with no
+  // noncredit funding reads one plain line in place of the second table, so a
+  // credit-only college does not show a table of zeros.
+  function laneTablesHtml(cr, nc, ncNone) {
+    return prioDetailTableHtml(cr) + (nc ? prioDetailTableHtml(nc)
+      : '<p class="dk cplfund-dtl-ncnone">' + ncNone + "</p>");
   }
   // The detail line for each reported card a curator switched on (2026-09-23).
   function reportedDetailRows(slot, statewide) {
@@ -9184,29 +9296,46 @@
       prio = '<div><span class="dk">Year ' + esc(slot) + " is carryover under front-loaded disbursement " +
         "&mdash; the whole window is placed in Year 1 and counts against the Year-1 targets; remaining funding rolls forward.</span></div>";
     } else {
-      prio = prioDetailTableHtml({
-        slot: slot,
-        label: "Statewide priority funding detail",
-        caption: "Where the system stands on each priority &mdash; the target, what institutions have posted so far, " +
-          "and what remains. Current Total: " + earnedMoney(agg.winEarned) +
-          (agg.winHeld > 0.5
-            ? " &middot; " + earnedMoney(agg.winHeld) + " held in reserve at " + fmtInt(agg.gatedN) +
-              (agg.gatedN === 1 ? " institution" : " institutions") + " until baseline participation is met"
-            : "") +
-          " &middot; Total Possible: " + fmtMoney(agg.winCap) + " &mdash; every institution's max award added up",
-        reported: reportedDetailRows(slot, true),
-        figures: function (p, i) {
-          var pp = agg.perPrio[i] || { cap: 0, crCap: 0, ncCap: 0, earned: 0, ncEarned: 0 };
-          var crEarned = pp.earned - (pp.ncEarned || 0);
-          return {
-            cr: pp.crCap, nc: pp.ncCap, fr: earnFraction(null, p),
-            target: prioTarget(null, p),
-            earned: pp.earned,
-            totalPossible: pp.cap,
-            remaining: Math.max(0, pp.crCap - crEarned)
-          };
-        }
+      var pp0 = { cap: 0, crCap: 0, ncCap: 0, earned: 0, ncEarned: 0, crTarget: 0, ncTarget: 0 };
+      var crFunds = 0, crActual = 0, ncFunds = 0, ncActual = 0;
+      agg.perPrio.forEach(function (pp) {
+        crFunds += pp.crCap; crActual += pp.earned - (pp.ncEarned || 0);
+        ncFunds += pp.ncCap; ncActual += pp.ncEarned || 0;
       });
+      // ⚠️ STATEWIDE ACTUAL FUNDS IS WHAT THE INSTITUTIONS HAVE DEMONSTRATED,
+      // the same figure the priority cards' Progress line prints, and the lane
+      // tables below sum it. The reserve is a STATE of part of that figure, so
+      // the line says how much of it is held rather than subtracting it: a line
+      // reading "$0" above tables reading $722,017 was one surface contradicting
+      // itself (measured 2026-09-24, every institution still gated).
+      var allActual = crActual + ncActual;
+      prio = '<p class="cplfund-dtl-sum">Max Funds: <strong>' + fmtMoney(agg.winCap) + "</strong>, every institution&#39;s max award added up " +
+        "&middot; Actual Funds: <strong>" + earnedMoney(allActual) + "</strong>" +
+        (agg.winHeld > 0.5
+          ? ' <span class="dk">(' + (Math.abs(agg.winHeld - allActual) < 0.5 ? "all of it" : earnedMoney(agg.winHeld) + " of it") +
+            " held in reserve at " + fmtInt(agg.gatedN) +
+            (agg.gatedN === 1 ? " institution" : " institutions") + " until baseline participation is met)</span>"
+          : "") + "</p>" +
+        laneTablesHtml({
+          slot: slot, lane: "cr", prios: priorities(slot),
+          label: "Statewide credit priority funding",
+          caption: "<strong>Credit</strong> &middot; Max Funds " + fmtMoney(crFunds) + " &middot; Actual Funds " + earnedMoney(crActual),
+          reported: reportedDetailRows(slot, true),
+          figures: function (p, i) {
+            var pp = agg.perPrio[i] || pp0;
+            return { maxFtes: pp.crTarget, maxFunds: pp.crCap, fr: earnFraction(null, p),
+              actualFunds: pp.earned - (pp.ncEarned || 0) };
+          }
+        }, ncFunds > 0.5 ? {
+          slot: slot, lane: "nc", prios: ncPriorities(slot),
+          label: "Statewide noncredit priority funding",
+          caption: "<strong>Noncredit</strong> &middot; Max Funds " + fmtMoney(ncFunds) + " &middot; Actual Funds " + earnedMoney(ncActual) +
+            " &middot; counts CPL for students who originate from a noncredit landing page",
+          figures: function (p, i) {
+            var pp = agg.perPrio[i] || pp0;
+            return { maxFtes: pp.ncTarget, maxFunds: pp.ncCap, fr: earnFraction(null, p), actualFunds: pp.ncEarned || 0 };
+          }
+        } : null, "Credit only: the model holds no noncredit share.");
     }
     return '<tr class="cplfund-detail"><td colspan="' + COLS_COLLEGE().length + '">' +
       '<div class="cplfund-detail-grid">' +
@@ -9239,38 +9368,47 @@
       prio = '<div><span class="dk">Year ' + esc(slot) + " is carryover under front-loaded disbursement " +
         "&mdash; the whole window is placed in Year 1 and counts against the Year-1 targets; remaining funding rolls forward.</span></div>";
     } else {
-      prio = prioDetailTableHtml({
-        slot: slot,
-        label: "Priority funding detail",
-        // The two totals alone (Sam, 2026-09-23): the reserve is on the
-        // status line above, once.
-        caption: "Current Total: " + earnedMoney(c.earned_total || 0) +
-          " &middot; Total Possible: " + fmtMoney(c.total || 0) + ", its max award",
-        reported: reportedDetailRows(slot, false),
-        figures: function (p) {
-          var crM = c[p.key] || 0;
-          var ncM = c["nc_" + p.key] || 0;
-          var fr = earnFraction(c, p);
-          return {
-            cr: crM, nc: ncM, fr: fr,
-            target: c[p.key + "_heads"] || 0,
-            // The gate holds the FUNDING, never the measurement: a blocked
-            // college still shows what it posted, and its Current Total reads
-            // $0 with the reserve named in the caption above.
-            earned: c.gate_blocked ? 0 : crM * fr.f,
-            remaining: crM * (1 - fr.f)
-          };
-        }
-      });
+      // The two totals alone (Sam, 2026-09-23): the reserve is on the status
+      // line above, once. Worded in the table's own terms since 2026-09-24.
+      var crFunds = 0, crActual = 0, ncFunds = 0, ncActual = 0;
+      var ncPs = ncPriorities(slot);
+      var crFig = function (p) {
+        var fr = earnFraction(c, p), m = c[p.key] || 0;
+        // The gate holds the FUNDING, never the measurement: a blocked college
+        // still shows what it posted, and its Actual Funds read $0 with the
+        // reserve named on the status line above.
+        return { maxFtes: c[p.key + "_heads"] || 0, maxFunds: m, fr: fr, actualFunds: c.gate_blocked ? 0 : m * fr.f };
+      };
+      var ncFig = function (p) {
+        var fr = earnFraction(c, p), m = c[p.key] || 0;
+        // The target reads the ROSTER row, as _ncPrios() does — never a copy.
+        return { maxFtes: prioTarget(rosterRow(c.college) || c, p), maxFunds: m, fr: fr, actualFunds: c.gate_blocked ? 0 : m * fr.f };
+      };
+      priorities(slot).forEach(function (p) { var f = crFig(p); crFunds += f.maxFunds; crActual += f.actualFunds; });
+      ncPs.forEach(function (p) { var f = ncFig(p); ncFunds += f.maxFunds; ncActual += f.actualFunds; });
+      prio = '<p class="cplfund-dtl-sum">Max Funds: <strong>' + fmtMoney(c.total || 0) + "</strong>, its max award " +
+        "&middot; Actual Funds: <strong>" + earnedMoney(c.earned_total || 0) + "</strong></p>" +
+        laneTablesHtml({
+          slot: slot, lane: "cr", prios: priorities(slot),
+          label: "Credit priority funding",
+          caption: "<strong>Credit</strong> &middot; Max Funds " + fmtMoney(crFunds) + " &middot; Actual Funds " + earnedMoney(crActual),
+          reported: reportedDetailRows(slot, false),
+          figures: crFig
+        }, (c.nc_award || 0) > 0.5 ? {
+          slot: slot, lane: "nc", prios: ncPs,
+          label: "Noncredit priority funding",
+          caption: "<strong>Noncredit</strong> &middot; Max Funds " + fmtMoney(ncFunds) + " from " + fmtNum1(c.nc_ftes) +
+            " noncredit FTES &middot; Actual Funds " + earnedMoney(ncActual) +
+            " &middot; counts CPL for students who originate from a noncredit landing page",
+          figures: ncFig
+        } : null, "Credit only: " + esc(dispName(c.college)) + " reports no noncredit FTES, so its whole award is the credit share.");
     }
     // ONE FOOTER LINE (2026-09-23): the noncredit share, the county and the
     // district were three grid cells that each wrapped to three or four lines.
     // They are context for the table above, so they read as one sentence run.
+    // The noncredit share's sentence moved into the noncredit table's caption
+    // (2026-09-24), so the footer carries the county and the district only.
     var foot = [];
-    if (!c.nco && c.nc_award > 0.5) {
-      foot.push("Noncredit share " + fmtMoney(c.nc_award) + " from " + fmtNum1(c.nc_ftes) +
-        " noncredit FTES; the noncredit measures count toward it");
-    }
     foot.push(c.working_adults == null
       ? "County context not estimated (county under 65K people)"
       : esc(c.county) + " County: " + fmtInt(c.working_adults) +
@@ -11124,6 +11262,15 @@
     // Section titles (2026-09-09): Rename opens a one-line input; Save commits
     // to the active layer; Restore drops the override so the house title
     // returns. Hide/Show flips the section's PUBLIC visibility only.
+    // A card's custom title (2026-09-24): Rename opens the field, Done closes
+    // it. The field commits on its own change, like every edText.
+    document.querySelectorAll("#cplFundingMount [data-cardrename]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var id = b.getAttribute("data-cardrename");
+        state.cardRenaming = state.cardRenaming === id ? null : id;
+        render();
+      });
+    });
     document.querySelectorAll("#cplFundingMount [data-secrename]").forEach(function (b) {
       b.addEventListener("click", function () {
         var id = b.getAttribute("data-secrename");
