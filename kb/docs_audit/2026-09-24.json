@@ -11,8 +11,8 @@
   },
   "summary": {
     "files": 981,
-    "bytes": 10408747,
-    "over_budget": 6,
+    "bytes": 10412326,
+    "over_budget": 5,
     "handoff_max": 289,
     "always_loaded_files": 1,
     "always_loaded_bytes": 61679,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 115,
-        "bytes": 3186182,
+        "bytes": 3186725,
         "over": 3
       },
       "index": {
@@ -46,75 +46,75 @@
       },
       "roadmap_lane": {
         "files": 33,
-        "bytes": 246985,
-        "over": 1
+        "bytes": 247904,
+        "over": 0
       },
       "handoff": {
         "files": 261,
-        "bytes": 2261119,
+        "bytes": 2263236,
         "over": 0
       }
     },
     "by_rule": {
-      "oversized_doc": 6,
+      "oversized_doc": 5,
       "house_voice": 24,
       "vault_heavy_path": 49
     },
     "vault": {
-      "files": 3119,
-      "bytes": 1502764003,
-      "heavy_bytes": 647419627,
+      "files": 3123,
+      "bytes": 1502829606,
+      "heavy_bytes": 647420031,
       "heavy_share": 0.431,
       "ignore_filters": [
-        "ckpt-wt/kb/reference",
-        "ckpt-wt/cip_fitcheck",
-        "ckpt-wt/kb/unclassified_fold",
-        "ckpt-wt/kb/regional_cpl_out",
-        "ckpt-wt/tmc",
-        "ckpt-wt/unified_courses_member_desc.js",
-        "ckpt-wt/kb/coci_minted_singletons.json",
-        "ckpt-wt/kb/coci_minted_courses.json",
-        "ckpt-wt/unified_courses_details.js",
-        "ckpt-wt/kb/subj4_fold_out/2026-06-12/alias_map.json",
-        "ckpt-wt/kb/subj4_dryrun/alias_map.json",
-        "ckpt-wt/kb/subj4_apply/alias_map.json",
-        "ckpt-wt/kb/coci_minted_memberships.json",
-        "ckpt-wt/coci_lookup_data.js",
-        "ckpt-wt/unified_courses_standalone.js",
-        "ckpt-wt/kb/subj4_dryrun/collisions.json",
-        "ckpt-wt/unified_courses_members.js",
-        "ckpt-wt/statewide_data.js",
-        "ckpt-wt/kb/row_audit/latest.json",
-        "ckpt-wt/unified_courses_data.js",
-        "ckpt-wt/kb/remint_dryrun/alias_map.json",
-        "ckpt-wt/kb/cid_articulation_joins.json",
-        "ckpt-wt/coci_lookup_desc_A.js",
-        "ckpt-wt/tmc_college_courses.js",
-        "ckpt-wt/kb/coci_articulations.json",
-        "ckpt-wt/prototype/ccr_universe.json",
-        "ckpt-wt/coci_lookup_desc_C.js",
-        "ckpt-wt/coci_lookup_desc_E.js",
-        "ckpt-wt/kb/automerge_out/2026-06-13-titlelane/plan.json",
-        "ckpt-wt/exports/unified_courses.xlsx",
-        "ckpt-wt/kb/coci_curation.json",
-        "ckpt-wt/coci_lookup_desc_M.js",
-        "ckpt-wt/coci_lookup_desc_P.js",
-        "ckpt-wt/kb/automerge_out/2026-06-13-titlelane/supabase_ops.sql",
-        "ckpt-wt/tools/first_light_candidates.json",
-        "ckpt-wt/prototype/ccr_universe_members.json",
-        "ckpt-wt/unified_courses_index.js",
-        "ckpt-wt/unified_courses_suggestions.js",
-        "ckpt-wt/regional_cpl_opportunity_data.js",
-        "ckpt-wt/credential_reference_data.js",
-        "ckpt-wt/coci_lookup_desc_B.js",
-        "ckpt-wt/coci_lookup_desc_H.js",
-        "ckpt-wt/coci_lookup_desc_D.js",
-        "ckpt-wt/kb/remint_out/alias_map.json",
-        "ckpt-wt/coci_programs_data.js",
-        "ckpt-wt/kb/cr_reference_worklist.json",
-        "ckpt-wt/coci_lookup_desc_F.js",
-        "ckpt-wt/kb/authority_recode_out/2026-09-03/alias_map.json",
-        "ckpt-wt/coci_lookup_desc_K.js"
+        "cpl-project-tracker/kb/reference",
+        "cpl-project-tracker/cip_fitcheck",
+        "cpl-project-tracker/kb/unclassified_fold",
+        "cpl-project-tracker/kb/regional_cpl_out",
+        "cpl-project-tracker/tmc",
+        "cpl-project-tracker/unified_courses_member_desc.js",
+        "cpl-project-tracker/kb/coci_minted_singletons.json",
+        "cpl-project-tracker/kb/coci_minted_courses.json",
+        "cpl-project-tracker/unified_courses_details.js",
+        "cpl-project-tracker/kb/subj4_fold_out/2026-06-12/alias_map.json",
+        "cpl-project-tracker/kb/subj4_dryrun/alias_map.json",
+        "cpl-project-tracker/kb/subj4_apply/alias_map.json",
+        "cpl-project-tracker/kb/coci_minted_memberships.json",
+        "cpl-project-tracker/coci_lookup_data.js",
+        "cpl-project-tracker/unified_courses_standalone.js",
+        "cpl-project-tracker/kb/subj4_dryrun/collisions.json",
+        "cpl-project-tracker/unified_courses_members.js",
+        "cpl-project-tracker/statewide_data.js",
+        "cpl-project-tracker/kb/row_audit/latest.json",
+        "cpl-project-tracker/unified_courses_data.js",
+        "cpl-project-tracker/kb/remint_dryrun/alias_map.json",
+        "cpl-project-tracker/kb/cid_articulation_joins.json",
+        "cpl-project-tracker/coci_lookup_desc_A.js",
+        "cpl-project-tracker/tmc_college_courses.js",
+        "cpl-project-tracker/kb/coci_articulations.json",
+        "cpl-project-tracker/prototype/ccr_universe.json",
+        "cpl-project-tracker/coci_lookup_desc_C.js",
+        "cpl-project-tracker/coci_lookup_desc_E.js",
+        "cpl-project-tracker/kb/automerge_out/2026-06-13-titlelane/plan.json",
+        "cpl-project-tracker/exports/unified_courses.xlsx",
+        "cpl-project-tracker/kb/coci_curation.json",
+        "cpl-project-tracker/coci_lookup_desc_M.js",
+        "cpl-project-tracker/coci_lookup_desc_P.js",
+        "cpl-project-tracker/kb/automerge_out/2026-06-13-titlelane/supabase_ops.sql",
+        "cpl-project-tracker/tools/first_light_candidates.json",
+        "cpl-project-tracker/prototype/ccr_universe_members.json",
+        "cpl-project-tracker/unified_courses_index.js",
+        "cpl-project-tracker/unified_courses_suggestions.js",
+        "cpl-project-tracker/regional_cpl_opportunity_data.js",
+        "cpl-project-tracker/credential_reference_data.js",
+        "cpl-project-tracker/coci_lookup_desc_B.js",
+        "cpl-project-tracker/coci_lookup_desc_H.js",
+        "cpl-project-tracker/coci_lookup_desc_D.js",
+        "cpl-project-tracker/kb/remint_out/alias_map.json",
+        "cpl-project-tracker/coci_programs_data.js",
+        "cpl-project-tracker/kb/cr_reference_worklist.json",
+        "cpl-project-tracker/coci_lookup_desc_F.js",
+        "cpl-project-tracker/kb/authority_recode_out/2026-09-03/alias_map.json",
+        "cpl-project-tracker/coci_lookup_desc_K.js"
       ]
     }
   },
@@ -376,19 +376,6 @@
       "path": "docs/reference/kb_build_status.md"
     },
     {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
-        "bytes": 20002,
-        "limit": 20000,
-        "lane": "roadmap_lane",
-        "over_by": 2,
-        "ratio": 1.0
-      },
-      "message": "20,002 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
-      "path": "docs/reference/lanes/implementation-funding.md"
-    },
-    {
       "rule": "house_voice",
       "fixable": false,
       "detail": {
@@ -490,10 +477,10 @@
       "fixable": false,
       "path": "kb/reference",
       "detail": {
-        "bytes": 82235606,
+        "bytes": 82236015,
         "kind": "dir"
       },
-      "message": "directory totals 82,235,606 B inside the vault"
+      "message": "directory totals 82,236,015 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -780,10 +767,10 @@
       "fixable": false,
       "path": "exports/unified_courses.xlsx",
       "detail": {
-        "bytes": 6696810,
+        "bytes": 6696805,
         "kind": "file"
       },
-      "message": "6,696,810 B single file inside the vault"
+      "message": "6,696,805 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
