@@ -260,11 +260,12 @@ const fmtM = function (v) { return "$" + Math.round(v).toLocaleString("en-US"); 
     D.year_priorities["1"].every(function (p) { return memo.indexOf(p.label) !== -1; }));
   check("memo allocation table carries the statewide institution total", memo.indexOf("TOTAL (statewide") !== -1);
   // ONE POOL (2026-08-31): the allocation summary counts FUNDED INSTITUTIONS
-  // (115 colleges + the 3 noncredit-only) — the old carve-out-era "Funded
+  // (116 colleges, Calbright among them, + the 2 other noncredit-only; Sam,
+  // 2026-09-24: "Calbright is a noncredit college") — the old carve-out-era "Funded
   // Colleges / Funded Noncredit Campuses" split is retired with the carve-out.
   check("memo allocation summary counts the funded institutions (colleges + noncredit-only)",
     memo.indexOf("Funded institutions") !== -1 &&
-    memo.indexOf(ROSTER_N + " (" + D.colleges.length + " colleges + " + NCO_N + " noncredit-only institutions)") !== -1);
+    memo.indexOf(ROSTER_N + " (" + (D.colleges.length + 1) + " colleges + " + (NCO_N - 1) + " noncredit-only institutions)") !== -1);
   check("memo no longer splits the count into Funded Colleges / Funded Noncredit Campuses",
     memo.indexOf("Funded Colleges") === -1 && memo.indexOf("Funded Noncredit Campuses") === -1);
   // The one-pool allocation table: one combined max award per institution with
