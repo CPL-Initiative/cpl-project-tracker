@@ -177,7 +177,7 @@ const money = function (n) { return "$" + Math.round(n).toLocaleString("en-US");
   {
     const mountText = doc.getElementById("cplFundingMount").textContent;
     check("section titles carry Sam's renames (2026-08-31)",
-      /Funding Breakdown/.test(mountText) && /Eligibility Requirements/.test(mountText) &&
+      /Funding Breakdown/.test(mountText) && /Minimum Conditions/.test(mountText) &&
       /Funding Outcomes Required by/.test(mountText) &&
       /Outcomes-based awards/.test(mountText));
     // The band consolidation's absence guard (Sam, 2026-09-01). The priorities

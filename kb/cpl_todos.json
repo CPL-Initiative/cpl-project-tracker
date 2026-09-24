@@ -8,7 +8,7 @@
    "id": "s285-sam-funding-tab-edits",
    "for": "Sam",
    "tab": "implementation-funding",
-   "text": "Four edits in the funding tab are yours, and the saved configuration has not moved since 21:30 UTC on the 23rd. Press Publish on Scenario 1 again (an older window's save erased the published marker; colleges see Scenario 1 only because an unset marker falls back to it). Move the six transcription strategies from Career attainment to Completion in Year 1. Rename the two sections to Introduction and Minimum Conditions. Apply your five timeline edits from the review sheet: Participation Request becomes Confirmation Deadline, and \" in MAP\" drops from the four disbursement lines."
+   "text": "Three funding-tab items are yours. Run kb/receipts/cpl_funding_config_titles_timing_2026-09-24_s287.sql in the Supabase SQL editor: it writes your review-sheet verdicts into both stored scenarios (sections Introduction and Minimum Conditions; Participation Request becomes Confirmation Deadline; \" in MAP\" drops from the four disbursement lines), and the repo's guard refuses a session's UPDATE. A result of rows_updated 0 means the configuration was saved after 21:30 UTC on the 23rd; paste it and the statement is re-issued. Move the six transcription strategies from Career attainment to Completion in Year 1. Pressing Publish on Scenario 1 again is optional: an older window's save erased the marker, and an unset marker already falls back to Scenario 1, which is what colleges see."
   },
   {
    "id": "s287-sam-review-sheet-8-10",
