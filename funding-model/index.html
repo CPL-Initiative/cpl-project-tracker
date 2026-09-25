@@ -93,6 +93,7 @@ header{border-bottom:1px solid var(--border); background:var(--surface-opaque)}
   background:var(--surface-opaque); border:1px solid var(--cobalt); border-radius:4px;
   padding:9px 18px; min-height:44px; cursor:pointer}
 .pdfbtn:hover{background:var(--tint-cobalt)}
+a.pdfbtn{display:inline-flex; align-items:center; text-decoration:none}
 .pdf-note{font-size:.82rem; color:var(--text-muted)}
 
 /* ── sections ─────────────────────────────────────────────────────────── */
@@ -347,6 +348,8 @@ section[hidden]{display:none}
          the controls, and repeats the table header on each page, so what
          saves is the whole explanation and not the screen. -->
     <p class="head-actions">
+      <a class="pdfbtn" id="video-link" href="../prototype/funding_video/funding_in_motion.html">Watch the 90-second guide</a>
+      <a class="pdf-note" href="../prototype/funding_video/20260925_CPL_Funding_in_Motion.mp4">or download the video (MP4)</a>
       <button type="button" class="pdfbtn" id="pdf-btn">Download PDF</button>
       <span class="pdf-note">Opens your browser&rsquo;s print dialog &mdash; choose
         &ldquo;Save as PDF&rdquo;. The file carries the model as it currently stands.</span>

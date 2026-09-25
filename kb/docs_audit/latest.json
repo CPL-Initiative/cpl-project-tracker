@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 983,
-    "bytes": 10433496,
-    "over_budget": 5,
-    "handoff_max": 290,
+    "files": 985,
+    "bytes": 10440623,
+    "over_budget": 6,
+    "handoff_max": 291,
     "always_loaded_files": 1,
     "always_loaded_bytes": 61757,
     "superseded_files": 0,
@@ -26,52 +26,51 @@
       },
       "other": {
         "files": 115,
-        "bytes": 3190912,
+        "bytes": 3191194,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 11573,
+        "bytes": 11687,
         "over": 0
       },
       "lessons": {
         "files": 75,
-        "bytes": 2135277,
+        "bytes": 2136743,
         "over": 1
       },
       "kb_note": {
-        "files": 496,
-        "bytes": 2514083,
+        "files": 497,
+        "bytes": 2515661,
         "over": 0
       },
       "roadmap_lane": {
         "files": 33,
-        "bytes": 250165,
-        "over": 0
+        "bytes": 251240,
+        "over": 1
       },
       "handoff": {
-        "files": 262,
-        "bytes": 2269729,
+        "files": 263,
+        "bytes": 2272341,
         "over": 0
       }
     },
     "by_rule": {
-      "oversized_doc": 5,
+      "oversized_doc": 6,
       "house_voice": 24,
-      "vault_heavy_path": 51
+      "vault_heavy_path": 50
     },
     "vault": {
-      "files": 3141,
-      "bytes": 1587397148,
-      "heavy_bytes": 724648115,
-      "heavy_share": 0.457,
+      "files": 3142,
+      "bytes": 1517364264,
+      "heavy_bytes": 654606259,
+      "heavy_share": 0.431,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
         "cpl-project-tracker/cip_fitcheck",
         "cpl-project-tracker/kb/unclassified_fold",
         "cpl-project-tracker/kb/regional_cpl_out",
         "cpl-project-tracker/tmc",
-        "cpl-project-tracker/kb/program_course_graph.json",
         "cpl-project-tracker/unified_courses_member_desc.js",
         "cpl-project-tracker/kb/coci_minted_singletons.json",
         "cpl-project-tracker/kb/coci_minted_courses.json",
@@ -378,6 +377,19 @@
       "path": "docs/reference/kb_build_status.md"
     },
     {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 20844,
+        "limit": 20000,
+        "lane": "roadmap_lane",
+        "over_by": 844,
+        "ratio": 1.04
+      },
+      "message": "20,844 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "path": "docs/reference/lanes/implementation-funding.md"
+    },
+    {
       "rule": "house_voice",
       "fixable": false,
       "detail": {
@@ -527,16 +539,6 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": "kb/program_course_graph.json",
-      "detail": {
-        "bytes": 70042748,
-        "kind": "file"
-      },
-      "message": "70,042,748 B single file inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
       "path": "unified_courses_member_desc.js",
       "detail": {
         "bytes": 47884674,
@@ -659,10 +661,10 @@
       "fixable": false,
       "path": "statewide_data.js",
       "detail": {
-        "bytes": 11731407,
+        "bytes": 11732299,
         "kind": "file"
       },
-      "message": "11,731,407 B single file inside the vault"
+      "message": "11,732,299 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
