@@ -1,0 +1,657 @@
+{
+ "_about": "TOP_Code_Lookup.xlsx column D (CCC 4-digit TOP code) corrected against kb/reference/top_categories.json and topcip_2021_crosswalk.xlsx by kb/_correct_top_lookup_code4.py. Revert a row by writing `old` back to column D.",
+ "session": "S288 SkyZ, 2026-09-25",
+ "kept": {
+  "144": "column E reads General Work Experience (4932), but the notes name college success skills, which the existing 4930 fits; the title is the doubtful column"
+ },
+ "rows": [
+  {
+   "map_top_id": "20",
+   "title": "Multimedia",
+   "notes": "Digital video and film production (MULT, MEDIART)",
+   "old": "0612",
+   "new": "0614",
+   "basis": "column E names the TOP title 'Multimedia', category 0614"
+  },
+  {
+   "map_top_id": "22",
+   "title": "Multimedia",
+   "notes": "Video editing and game design (MULT, RTVF)",
+   "old": "0612",
+   "new": "0614",
+   "basis": "column E names the TOP title 'Multimedia', category 0614"
+  },
+  {
+   "map_top_id": "29",
+   "title": "Computer Infrastructure and Support",
+   "notes": "CompTIA A+ and hardware support (CIS)",
+   "old": "0706",
+   "new": "0708",
+   "basis": "column E names the TOP title 'Computer Infrastructure and Support', category 0708"
+  },
+  {
+   "map_top_id": "31",
+   "title": "Computer Science (Transfer)",
+   "notes": "AP Computer Science (CMPR, CS)",
+   "old": "0708",
+   "new": "0706",
+   "basis": "column E names the TOP title 'Computer Science (Transfer)', category 0706"
+  },
+  {
+   "map_top_id": "43",
+   "title": "Sign Language",
+   "notes": "American Sign Language I (ASL)",
+   "old": "1118",
+   "new": "0850",
+   "basis": "column E names the TOP title 'Sign Language', category 0850"
+  },
+  {
+   "map_top_id": "44",
+   "title": "Sign Language",
+   "notes": "American Sign Language II (ASL)",
+   "old": "1118",
+   "new": "0850",
+   "basis": "column E names the TOP title 'Sign Language', category 0850"
+  },
+  {
+   "map_top_id": "46",
+   "title": "Drafting Technology",
+   "notes": "Engineering graphics and AutoCAD (EGTECH, ETECH)",
+   "old": "0909",
+   "new": "0953",
+   "basis": "column E names the TOP title 'Drafting Technology', category 0953"
+  },
+  {
+   "map_top_id": "48",
+   "title": "Computer and Networking Technology",
+   "notes": "Cisco CCNA certification (MICROTK)",
+   "old": "0960",
+   "new": "0708",
+   "basis": "no exact TOP title; the notes name Cisco CCNA, so 0708.10 Computer Networking"
+  },
+  {
+   "map_top_id": "51",
+   "title": "Electrical",
+   "notes": "Industrial electrical (IET)",
+   "old": "0956",
+   "new": "0952",
+   "basis": "column E names the TOP title 'Electrical', category 0952"
+  },
+  {
+   "map_top_id": "54",
+   "title": "Graphic Communications",
+   "notes": "Graphic communications and printing (GC)",
+   "old": "0930",
+   "new": "0936",
+   "basis": "no exact TOP title; the notes name printing, so 0936.00 Printing and Lithography"
+  },
+  {
+   "map_top_id": "55",
+   "title": "Furniture and Cabinet Making",
+   "notes": "Furniture manufacturing technology (FMT)",
+   "old": "0958",
+   "new": "0952",
+   "basis": "0958 is Water and Wastewater Technology; furniture and cabinet making is 0952.50 Mill and Cabinet Work"
+  },
+  {
+   "map_top_id": "56",
+   "title": "Environmental Control Technology (HVAC)",
+   "notes": "HVAC/Refrigeration (HVAC/R, AIRE)",
+   "old": "0957",
+   "new": "0946",
+   "basis": "column E names the TOP title 'Environmental Control Technology (HVAC)', category 0946"
+  },
+  {
+   "map_top_id": "57",
+   "title": "Civil and Construction Management Technology",
+   "notes": "Sustainable construction and green building (CEM)",
+   "old": "0953",
+   "new": "0957",
+   "basis": "column E names the TOP title 'Civil and Construction Management Technology', category 0957"
+  },
+  {
+   "map_top_id": "60",
+   "title": "Construction Crafts Technology",
+   "notes": "Pre-apprenticeship and construction (PREAPP, CNSTR)",
+   "old": "0946",
+   "new": "0952",
+   "basis": "column E names the TOP title 'Construction Crafts Technology', category 0952"
+  },
+  {
+   "map_top_id": "61",
+   "title": "Electrical",
+   "notes": "IBEW electrical apprenticeship (ELE, ELTEC)",
+   "old": "0956",
+   "new": "0952",
+   "basis": "column E names the TOP title 'Electrical', category 0952"
+  },
+  {
+   "map_top_id": "62",
+   "title": "Drafting Technology",
+   "notes": "CAD/SolidWorks drafting (DFT, DRAFT, DR)",
+   "old": "0909",
+   "new": "0953",
+   "basis": "column E names the TOP title 'Drafting Technology', category 0953"
+  },
+  {
+   "map_top_id": "63",
+   "title": "Drafting Technology",
+   "notes": "Civil engineering drafting (DRAFT)",
+   "old": "0909",
+   "new": "0953",
+   "basis": "column E names the TOP title 'Drafting Technology', category 0953"
+  },
+  {
+   "map_top_id": "66",
+   "title": "Welding Technology",
+   "notes": "AWS welding certifications (WEL, WELD)",
+   "old": "0941",
+   "new": "0956",
+   "basis": "column E names the TOP title 'Welding Technology', category 0956"
+  },
+  {
+   "map_top_id": "68",
+   "title": "Construction Crafts Technology",
+   "notes": "Construction fundamentals (CEM)",
+   "old": "0946",
+   "new": "0952",
+   "basis": "column E names the TOP title 'Construction Crafts Technology', category 0952"
+  },
+  {
+   "map_top_id": "77",
+   "title": "Photography",
+   "notes": "Art photography (ART)",
+   "old": "1010",
+   "new": "1011",
+   "basis": "column E names the TOP title 'Photography', category 1011"
+  },
+  {
+   "map_top_id": "79",
+   "title": "Graphic Art and Design",
+   "notes": "Graphic design (ART, GD, MAD)",
+   "old": "1014",
+   "new": "1030",
+   "basis": "column E names the TOP title 'Graphic Art and Design', category 1030"
+  },
+  {
+   "map_top_id": "80",
+   "title": "Applied Design",
+   "notes": "Digital fabrication for studio arts (ART)",
+   "old": "1030",
+   "new": "1009",
+   "basis": "column E names the TOP title 'Applied Design', category 1009"
+  },
+  {
+   "map_top_id": "83",
+   "title": "Spanish",
+   "notes": "Spanish language (SPAN, SPA)",
+   "old": "1106",
+   "new": "1105",
+   "basis": "column E names the TOP title 'Spanish', category 1105"
+  },
+  {
+   "map_top_id": "85",
+   "title": "Chinese (Mandarin and Cantonese)",
+   "notes": "AP and college-level Chinese (CHI)",
+   "old": "1108",
+   "new": "1107",
+   "basis": "1108 is Japanese; Chinese is 1107.00"
+  },
+  {
+   "map_top_id": "86",
+   "title": "Japanese",
+   "notes": "AP and college-level Japanese (JA)",
+   "old": "1110",
+   "new": "1108",
+   "basis": "column E names the TOP title 'Japanese', category 1108"
+  },
+  {
+   "map_top_id": "88",
+   "title": "Portuguese",
+   "notes": "Portuguese language (PORT)",
+   "old": "1120",
+   "new": "1119",
+   "basis": "column E names the TOP title 'Portuguese', category 1119"
+  },
+  {
+   "map_top_id": "89",
+   "title": "Health Occupations, General",
+   "notes": "Allied health and EMT (ALD HTH, EMT)",
+   "old": "1203",
+   "new": "1201",
+   "basis": "column E names the TOP title 'Health Occupations, General', category 1201"
+  },
+  {
+   "map_top_id": "94",
+   "title": "Pharmacy Technology",
+   "notes": "Pharmacy technician (PHT, PHAR)",
+   "old": "1260",
+   "new": "1221",
+   "basis": "column E names the TOP title 'Pharmacy Technology', category 1221"
+  },
+  {
+   "map_top_id": "97",
+   "title": "Nursing (LVN)",
+   "notes": "Licensed vocational nursing (NRN)",
+   "old": "1220",
+   "new": "1230",
+   "basis": "1220 is Speech/Language Pathology and Audiology; LVN is 1230.20 Licensed Vocational Nursing"
+  },
+  {
+   "map_top_id": "98",
+   "title": "Nursing (RN)",
+   "notes": "Registered nursing (NURS, NURSE, NS)",
+   "old": "1211",
+   "new": "1230",
+   "basis": "1211 is Polysomnography; RN is 1230.10 Registered Nursing"
+  },
+  {
+   "map_top_id": "100",
+   "title": "Certified Nurse Assistant",
+   "notes": "Nurse assistant training (HS)",
+   "old": "1222",
+   "new": "1230",
+   "basis": "column E names the TOP title 'Certified Nurse Assistant', category 1230"
+  },
+  {
+   "map_top_id": "101",
+   "title": "Dental",
+   "notes": "Dental assisting (DEN AST)",
+   "old": "1201",
+   "new": "1240",
+   "basis": "1201 is Health Occupations, General; the notes name dental assisting, 1240.10 Dental Assistant"
+  },
+  {
+   "map_top_id": "102",
+   "title": "Dental Hygiene",
+   "notes": "Dental hygiene (DEN HY)",
+   "old": "1250",
+   "new": "1240",
+   "basis": "1250 is Emergency Medical Services; dental hygiene is 1240.20 Dental Hygienist"
+  },
+  {
+   "map_top_id": "103",
+   "title": "Paramedic",
+   "notes": "Paramedicine and EMT (EMGM, EMT, EMER)",
+   "old": "1270",
+   "new": "1251",
+   "basis": "column E names the TOP title 'Paramedic', category 1251"
+  },
+  {
+   "map_top_id": "104",
+   "title": "Emergency Medical Services",
+   "notes": "EMS and trauma (EMTP, EMS)",
+   "old": "1240",
+   "new": "1250",
+   "basis": "column E names the TOP title 'Emergency Medical Services', category 1250"
+  },
+  {
+   "map_top_id": "106",
+   "title": "Child Development/Early Care and Education",
+   "notes": "Child development (CDE, CHIL)",
+   "old": "1304",
+   "new": "1305",
+   "basis": "column E names the TOP title 'Child Development/Early Care and Education', category 1305"
+  },
+  {
+   "map_top_id": "108",
+   "title": "Nutrition, Foods, and Culinary Arts",
+   "notes": "Culinary arts and hospitality (CULART, HOSP, CACM)",
+   "old": "1305",
+   "new": "1306",
+   "basis": "column E names the TOP title 'Nutrition, Foods, and Culinary Arts', category 1306"
+  },
+  {
+   "map_top_id": "109",
+   "title": "Nutrition, Foods, and Culinary Arts",
+   "notes": "Culinary arts advanced and hospitality mgmt (CULART, HCTM)",
+   "old": "1305",
+   "new": "1306",
+   "basis": "column E names the TOP title 'Nutrition, Foods, and Culinary Arts', category 1306"
+  },
+  {
+   "map_top_id": "117",
+   "title": "Reading",
+   "notes": "Reading courses (READ)",
+   "old": "1507",
+   "new": "1520",
+   "basis": "column E names the TOP title 'Reading', category 1520"
+  },
+  {
+   "map_top_id": "123",
+   "title": "Geology",
+   "notes": "Geology (GEOL)",
+   "old": "1910",
+   "new": "1914",
+   "basis": "column E names the TOP title 'Geology', category 1914"
+  },
+  {
+   "map_top_id": "130",
+   "title": "Fire Technology",
+   "notes": "Fire technology — rescue and operations (FIPT, FIRE)",
+   "old": "2130",
+   "new": "2133",
+   "basis": "column E names the TOP title 'Fire Technology', category 2133"
+  },
+  {
+   "map_top_id": "131",
+   "title": "Fire Technology",
+   "notes": "Fire technology — officer certification (FIPT, FIRE)",
+   "old": "2130",
+   "new": "2133",
+   "basis": "column E names the TOP title 'Fire Technology', category 2133"
+  },
+  {
+   "map_top_id": "132",
+   "title": "Fire Technology",
+   "notes": "Fire fitness and physical testing (FIT, FIPT, FOT)",
+   "old": "2130",
+   "new": "2133",
+   "basis": "column E names the TOP title 'Fire Technology', category 2133"
+  },
+  {
+   "map_top_id": "134",
+   "title": "Anthropology",
+   "notes": "Anthropology (ANTHR, ANTH)",
+   "old": "2201",
+   "new": "2202",
+   "basis": "column E names the TOP title 'Anthropology', category 2202"
+  },
+  {
+   "map_top_id": "135",
+   "title": "History",
+   "notes": "History (HIS, HIST)",
+   "old": "2203",
+   "new": "2205",
+   "basis": "column E names the TOP title 'History', category 2205"
+  },
+  {
+   "map_top_id": "136",
+   "title": "Geography",
+   "notes": "Geography and human geography (GEG, GEOG)",
+   "old": "2204",
+   "new": "2206",
+   "basis": "column E names the TOP title 'Geography', category 2206"
+  },
+  {
+   "map_top_id": "137",
+   "title": "Geography",
+   "notes": "GIS and mapping technology (GISG, GEOG)",
+   "old": "2204",
+   "new": "2206",
+   "basis": "column E names the TOP title 'Geography', category 2206"
+  },
+  {
+   "map_top_id": "138",
+   "title": "Sociology",
+   "notes": "Sociology (SOC, SOCIO)",
+   "old": "2206",
+   "new": "2208",
+   "basis": "column E names the TOP title 'Sociology', category 2208"
+  },
+  {
+   "map_top_id": "139",
+   "title": "Cosmetology and Barbering",
+   "notes": "Barbering and cosmetology (COSM)",
+   "old": "2401",
+   "new": "3007",
+   "basis": "column E names the TOP title 'Cosmetology and Barbering', category 3007"
+  },
+  {
+   "map_top_id": "153",
+   "title": "Work Experience",
+   "notes": "General apprenticeship work experience (APP, ALD HTH)",
+   "old": "4935",
+   "new": "4932",
+   "basis": "4935 is not a TOP code; 4932.00 General Work Experience"
+  },
+  {
+   "map_top_id": "159",
+   "title": "Agricultural Business, Sales, and Service",
+   "notes": "Agribusiness management (AGEC)",
+   "old": "0106",
+   "new": "0112",
+   "basis": "0106 is not a TOP code; 0112.00 Agriculture Business, Sales, and Service"
+  },
+  {
+   "map_top_id": "160",
+   "title": "Agriculture and Natural Resources",
+   "notes": "Agriculture leadership (AG)",
+   "old": "0100",
+   "new": "0101",
+   "basis": "0100 is not a TOP code; 0101.00 Agriculture Technology and Sciences, General"
+  },
+  {
+   "map_top_id": "176",
+   "title": "Hmong",
+   "notes": "Hmong language (HMNG)",
+   "old": "1130",
+   "new": "1117",
+   "basis": "1130 is not a TOP code; Hmong falls under 1117.00 Asian, South Asian, and Pacific Islands"
+  },
+  {
+   "map_top_id": "189",
+   "title": "Construction Crafts Technology",
+   "notes": "Carpentry apprenticeship (ACA)",
+   "old": "0946",
+   "new": "0952",
+   "basis": "column E names the TOP title 'Construction Crafts Technology', category 0952"
+  },
+  {
+   "map_top_id": "200",
+   "title": "Community Health Care Worker",
+   "notes": "Community health work (HS)",
+   "old": "1280",
+   "new": "1261",
+   "basis": "column E names the TOP title 'Community Health Care Worker', category 1261"
+  },
+  {
+   "map_top_id": "201",
+   "title": "Construction Inspection",
+   "notes": "Construction inspection (INSPEC)",
+   "old": "0952",
+   "new": "0957",
+   "basis": "column E names the TOP title 'Construction Inspection', category 0957"
+  },
+  {
+   "map_top_id": "218",
+   "title": "Construction Crafts Technology",
+   "notes": "Advanced carpentry/print reading (ACA)",
+   "old": "0946",
+   "new": "0952",
+   "basis": "column E names the TOP title 'Construction Crafts Technology', category 0952"
+  },
+  {
+   "map_top_id": "222",
+   "title": "Economics",
+   "notes": "Economics — AP and college level (ECO, ECON)",
+   "old": "2202",
+   "new": "2204",
+   "basis": "column E names the TOP title 'Economics', category 2204"
+  },
+  {
+   "map_top_id": "236",
+   "title": "Fire Technology",
+   "notes": "Hazardous materials first responder (FST)",
+   "old": "2130",
+   "new": "2133",
+   "basis": "column E names the TOP title 'Fire Technology', category 2133"
+  },
+  {
+   "map_top_id": "239",
+   "title": "Ethnic Studies",
+   "notes": "African American studies (ETH S)",
+   "old": "2207",
+   "new": "2203",
+   "basis": "column E names the TOP title 'Ethnic Studies', category 2203"
+  },
+  {
+   "map_top_id": "248",
+   "title": "Film Studies",
+   "notes": "Film studies (FILM)",
+   "old": "0606",
+   "new": "0612",
+   "basis": "column E names the TOP title 'Film Studies', category 0612"
+  },
+  {
+   "map_top_id": "258",
+   "title": "German",
+   "notes": "German language (GER)",
+   "old": "1112",
+   "new": "1103",
+   "basis": "column E names the TOP title 'German', category 1103"
+  },
+  {
+   "map_top_id": "263",
+   "title": "Health Occupations, General",
+   "notes": "Personal health and wellness (HES, HE)",
+   "old": "1203",
+   "new": "1201",
+   "basis": "column E names the TOP title 'Health Occupations, General', category 1201"
+  },
+  {
+   "map_top_id": "268",
+   "title": "Hebrew",
+   "notes": "Hebrew language (HEBR)",
+   "old": "1132",
+   "new": "1111",
+   "basis": "column E names the TOP title 'Hebrew', category 1111"
+  },
+  {
+   "map_top_id": "273",
+   "title": "Nutrition, Foods, and Culinary Arts",
+   "notes": "Hospitality and tourism (HOSP, FN, CUL)",
+   "old": "1305",
+   "new": "1306",
+   "basis": "column E names the TOP title 'Nutrition, Foods, and Culinary Arts', category 1306"
+  },
+  {
+   "map_top_id": "279",
+   "title": "Child Development/Early Care and Education",
+   "notes": "Infant/child development (ECE, CLDV)",
+   "old": "1304",
+   "new": "1305",
+   "basis": "column E names the TOP title 'Child Development/Early Care and Education', category 1305"
+  },
+  {
+   "map_top_id": "282",
+   "title": "Interior Design and Merchandising",
+   "notes": "Interior design and LEED (ID)",
+   "old": "0202",
+   "new": "1302",
+   "basis": "column E names the TOP title 'Interior Design and Merchandising', category 1302"
+  },
+  {
+   "map_top_id": "286",
+   "title": "Korean",
+   "notes": "Korean language (KOR)",
+   "old": "1124",
+   "new": "1117",
+   "basis": "column E names the TOP title 'Korean', category 1117"
+  },
+  {
+   "map_top_id": "303",
+   "title": "Construction Crafts Technology",
+   "notes": "Marine technology — boatworks (APMT)",
+   "old": "0946",
+   "new": "0952",
+   "basis": "column E names the TOP title 'Construction Crafts Technology', category 0952"
+  },
+  {
+   "map_top_id": "304",
+   "title": "Construction Crafts Technology",
+   "notes": "Carpentry/drywall apprenticeship (ACA)",
+   "old": "0946",
+   "new": "0952",
+   "basis": "column E names the TOP title 'Construction Crafts Technology', category 0952"
+  },
+  {
+   "map_top_id": "314",
+   "title": "Mortuary Science",
+   "notes": "Funeral/mortuary science (MORT)",
+   "old": "2405",
+   "new": "1255",
+   "basis": "column E names the TOP title 'Mortuary Science', category 1255"
+  },
+  {
+   "map_top_id": "319",
+   "title": "Nutrition, Foods, and Culinary Arts",
+   "notes": "Foods and nutrition (CULN, NUTR, FN)",
+   "old": "1305",
+   "new": "1306",
+   "basis": "column E names the TOP title 'Nutrition, Foods, and Culinary Arts', category 1306"
+  },
+  {
+   "map_top_id": "320",
+   "title": "Physical Therapy Technology",
+   "notes": "Occupational therapy assistant (OTA)",
+   "old": "1290",
+   "new": "1222",
+   "basis": "1290 is not a TOP code; 1222.00 Physical Therapist Assistant (the notes name OTA, 1218.00, in the same CIP family)"
+  },
+  {
+   "map_top_id": "332",
+   "title": "Persian (Farsi)",
+   "notes": "Persian language (PRSN)",
+   "old": "1134",
+   "new": "1199",
+   "basis": "1134 is not a TOP code; Persian falls under 1199.00 Other Foreign Languages"
+  },
+  {
+   "map_top_id": "360",
+   "title": "Political Science",
+   "notes": "Political science and government (POLS, POL)",
+   "old": "2205",
+   "new": "2207",
+   "basis": "column E names the TOP title 'Political Science', category 2207"
+  },
+  {
+   "map_top_id": "362",
+   "title": "Child Development/Early Care and Education",
+   "notes": "Child literacy development (ECE)",
+   "old": "1304",
+   "new": "1305",
+   "basis": "column E names the TOP title 'Child Development/Early Care and Education', category 1305"
+  },
+  {
+   "map_top_id": "375",
+   "title": "Construction Crafts Technology",
+   "notes": "Marine craftsmanship — boatworks (APMT)",
+   "old": "0946",
+   "new": "0952",
+   "basis": "column E names the TOP title 'Construction Crafts Technology', category 0952"
+  },
+  {
+   "map_top_id": "384",
+   "title": "Construction Crafts Technology",
+   "notes": "Sheet metal and installation (SM, AIRC, IWAP)",
+   "old": "0946",
+   "new": "0952",
+   "basis": "column E names the TOP title 'Construction Crafts Technology', category 0952"
+  },
+  {
+   "map_top_id": "406",
+   "title": "Commercial Services, General",
+   "notes": "Tourism (TOUR)",
+   "old": "2401",
+   "new": "3009",
+   "basis": "2401 is not a TOP code; the notes name tourism, so 3009.00 Travel Services and Tourism"
+  },
+  {
+   "map_top_id": "412",
+   "title": "Vietnamese",
+   "notes": "Vietnamese language (VIET)",
+   "old": "1128",
+   "new": "1117",
+   "basis": "column E names the TOP title 'Vietnamese', category 1117"
+  },
+  {
+   "map_top_id": "413",
+   "title": "Viticulture, Enology, and Wine Business",
+   "notes": "Wine and hospitality (CAHM)",
+   "old": "0103",
+   "new": "0104",
+   "basis": "column E names the TOP title 'Viticulture, Enology, and Wine Business', category 0104"
+  }
+ ]
+}

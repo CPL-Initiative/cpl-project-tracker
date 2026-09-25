@@ -1036,9 +1036,13 @@ cards) but does not yet handle **title drift** — the same credential
 entered under multiple freehand titles by different colleges still
 produces multiple cards.
 
-**Career Cluster filter** uses the `CCC SW Sector` column in
-`TOP_Code_Lookup.xlsx` (CCC Strong Workforce 10-sector framework with
-an "Academic Transfer & General Education" catch-all).
+**CIP Sectors filter** (it replaced Career Cluster on 2026-09-24) routes
+MAP's integer TOP id through `TOP_Code_Lookup.xlsx` column D, the CCC
+4-digit TOP code, to a two-digit CIP family. Column D must name the TOP
+code of the program title in column E — `tests/top_code_lookup_code4_test.py`
+holds it to the TOP manual after 81 rows were found wrong on 2026-09-25.
+The card still carries `sector` (the `CCC SW Sector` column), which no
+EACR filter reads.
 
 **TOP code caveat — they vary for the same course.** Colleges assign TOP
 codes in COCI with discretion and no definitive guidance for ambiguous

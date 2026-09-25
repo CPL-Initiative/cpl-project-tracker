@@ -274,7 +274,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `CPL_Initiative_Project_List_v3.xlsx` | scripts: `excel_to_dashboard.py`, `kb/_validate_projects.py`, `kb/_validate_workplan_goals.py` | — |
 | `CustomReport_*.json` | scripts: `funding/_build_cr_backlog.py`, `funding/_build_funding_performance.py`, `kb/_sync_map_custom_reports.py` | — |
 | `README.md` | scripts: `excel_to_dashboard.py`, `kb/_build_docs_index.py`, `kb/_docs_audit.py`, `kb/_normalize_kb_note_frontmatter.py`, `kb/doctrine.py` | — |
-| `TOP_Code_Lookup.xlsx` | scripts: `excel_to_dashboard.py` | — |
+| `TOP_Code_Lookup.xlsx` | scripts: `excel_to_dashboard.py`, `kb/_correct_top_lookup_code4.py` | scripts: `kb/_correct_top_lookup_code4.py` |
 | `admin.js` | pages: `CPL_Dashboard.html` | — |
 | `annual_report.js` | pages: `CPL_Dashboard.html` | — |
 | `assoc_editor.js` | pages: `CPL_Dashboard.html` | — |
@@ -564,8 +564,8 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/reference/mq_sections.json` | tabs: `canonical-subj4` · scripts: `kb/_ccr_trail.py` | — |
 | `kb/reference/subject_discipline_map.json` | scripts: `excel_to_dashboard.py`, `kb/_apply_crossdisc_remint.py`, `kb/_build_ccr_title_rung_sheet.py`, `kb/_build_crosslist_decision_sheet.py`, `kb/_build_orphan_parent_worklist.py`, `kb/_preseed_null_issuers.py`, `kb/_seed_coci_minted_mids.py`, `kb/_seed_subject_discipline_map.py` | scripts: `kb/_seed_subject_discipline_map.py` |
 | `kb/reference/swp_region_roster.json` | scripts: `kb/_build_regional_cpl_opportunity.py`, `kb/_emit_swp_region_data.py` | — |
-| `kb/reference/top_categories.json` | scripts: `kb/_authority_recode_dryrun.py`, `kb/_build_ccr_sky.py`, `kb/_build_ccr_universe.py`, `kb/_join_cte_from_top.py`, `kb/_seed_canonical_subj4.py` | — |
-| `kb/reference/topcip_2021_crosswalk.xlsx` | scripts: `excel_to_dashboard.py`, `kb/_build_cip_crosswalk.py` | — |
+| `kb/reference/top_categories.json` | scripts: `kb/_authority_recode_dryrun.py`, `kb/_build_ccr_sky.py`, `kb/_build_ccr_universe.py`, `kb/_correct_top_lookup_code4.py`, `kb/_join_cte_from_top.py`, `kb/_seed_canonical_subj4.py` | — |
+| `kb/reference/topcip_2021_crosswalk.xlsx` | scripts: `excel_to_dashboard.py`, `kb/_build_cip_crosswalk.py`, `kb/_correct_top_lookup_code4.py` | — |
 | `kb/remint_blast_worklist.json` | scripts: `kb/_build_remint_blast_radius.py` | — |
 | `kb/row_audit` | none found | committed by: `overmerge-apply.yml`, `phase-1e-apply.yml` |
 | `kb/row_audit/*.md` | none found | committed by: `daily-dashboard.yml` |
@@ -696,6 +696,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/docs_audit_test.py` | workflows: `js-tests.yml` | — |
 | `tests/docs_index_build_test.py` | workflows: `js-tests.yml` | — |
 | `tests/doctrine_lookup_test.py` | workflows: `js-tests.yml` | — |
+| `tests/eacr_matrix_payload_test.py` | workflows: `js-tests.yml` | — |
 | `tests/esl_fold_spotcheck_test.py` | workflows: `js-tests.yml` | — |
 | `tests/esl_relevel_bands_test.py` | workflows: `js-tests.yml` | — |
 | `tests/funding_career_import_test.py` | workflows: `js-tests.yml` | — |
@@ -729,6 +730,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/supabase_function_grants_test.py` | workflows: `js-tests.yml` | — |
 | `tests/supabase_sql_guard_test.py` | workflows: `js-tests.yml` | — |
 | `tests/supabase_table_grants_test.py` | workflows: `js-tests.yml` | — |
+| `tests/top_code_lookup_code4_test.py` | workflows: `js-tests.yml` | — |
 | `tests/uc_cur_promote_test.py` | workflows: `js-tests.yml` | — |
 | `tests/umbrella_codes_are_declared_test.py` | workflows: `js-tests.yml` | — |
 | `tests/video_context_test.py` | workflows: `js-tests.yml` | — |
@@ -739,6 +741,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tools/first_light_verify.json` | none found | committed by: `first-light-art.yml` |
 | `tools/source_cpl_stories.mjs` | workflows: `cpl-stories.yml` | — |
 | `tools/source_first_light_art.mjs` | workflows: `first-light-art.yml` | — |
+| `top_code_lookup_code4_<date>_s288.json` | scripts: `kb/_correct_top_lookup_code4.py` | scripts: `kb/_correct_top_lookup_code4.py` |
 | `unified_courses.js` | pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py` | — |
 | `unified_courses_details.js` | tabs: `unified-courses` · scripts: `excel_to_dashboard.py`, `kb/_infer_disciplines_from_desc.py` | scripts: `excel_to_dashboard.py` · committed by: `daily-dashboard.yml` |
 | `veteran-sprint-map/ca_cpl_map_selfcontained.html` | pages: `CPL_Dashboard.html` · scripts: `veteran-sprint-map/build_selfcontained.py` | scripts: `veteran-sprint-map/build_selfcontained.py` |
@@ -921,5 +924,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 521 file
-datasets · 146 external services · 366 consumers · 35 workflows · 37 tabs.
+Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 524 file
+datasets · 146 external services · 367 consumers · 35 workflows · 37 tabs.

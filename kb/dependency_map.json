@@ -4,9 +4,9 @@
   "supabase_tables": 85,
   "rpcs": 31,
   "edge_functions": 5,
-  "file_datasets": 521,
+  "file_datasets": 524,
   "external_services": 146,
-  "consumers": 366,
+  "consumers": 367,
   "workflows": 35,
   "data_js_files": 61,
   "tabs": 37
@@ -3290,6 +3290,20 @@
      "direction": "read",
      "how": "literal",
      "line": 5272
+    },
+    {
+     "id": "script:kb/_correct_top_lookup_code4.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 36
+    },
+    {
+     "id": "script:kb/_correct_top_lookup_code4.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 36
     }
    ],
    "served": true,
@@ -12143,6 +12157,13 @@
      "line": 513
     },
     {
+     "id": "script:kb/_correct_top_lookup_code4.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 37
+    },
+    {
      "id": "script:kb/_join_cte_from_top.py",
      "kind": "script",
      "direction": "read",
@@ -12175,6 +12196,13 @@
      "direction": "read",
      "how": "literal",
      "line": 172
+    },
+    {
+     "id": "script:kb/_correct_top_lookup_code4.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 38
     }
    ],
    "served": true,
@@ -14903,6 +14931,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/eacr_matrix_payload_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/esl_fold_spotcheck_test.py": {
    "consumers": [
     {
@@ -15332,6 +15373,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/top_code_lookup_code4_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/uc_cur_promote_test.py": {
    "consumers": [
     {
@@ -15608,6 +15662,26 @@
     }
    ],
    "served": true,
+   "main_committers": []
+  },
+  "file:top_code_lookup_code4_<date>_s288.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_correct_top_lookup_code4.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 39
+    },
+    {
+     "id": "script:kb/_correct_top_lookup_code4.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 39
+    }
+   ],
+   "served": false,
    "main_committers": []
   },
   "file:unified_courses.js": {
@@ -19980,6 +20054,8 @@
     "tests/context_budget_test.py",
     "tests/merge_chain_flatten_test.py",
     "tests/legacy_anchor_duplicates_test.py",
+    "tests/top_code_lookup_code4_test.py",
+    "tests/eacr_matrix_payload_test.py",
     "tests/esl_fold_spotcheck_test.py",
     "tests/esl_relevel_bands_test.py",
     "tests/ccr_universe_members_test.py",
