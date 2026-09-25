@@ -484,6 +484,17 @@ jobs:
       # the generator, so it runs in the openpyxl step above.
       - name: Curated-anchor duplicates lane guard (legacy_anchor_duplicate_groups)
         run: python3 tests/legacy_anchor_duplicates_test.py
+      # EACR CIP sectors (Session 288) — TOP_Code_Lookup.xlsx column D routes
+      # every exhibit to its CIP family, and on 2026-09-25 it disagreed with its
+      # own program titles on 81 of 198 rows (History filed under Ethnic
+      # Studies; 611 cards in "No CIP assigned yet" behind codes that are not
+      # TOP codes). The first test holds the column to the TOP manual; the
+      # second is the EACR payload's own 52-check guard, which ran nowhere.
+      # Both import the generator, so they run in the openpyxl step above.
+      - name: EACR CIP route (TOP lookup column D + the matrix payload)
+        run: |
+          python3 tests/top_code_lookup_code4_test.py
+          python3 tests/eacr_matrix_payload_test.py
       # Beginning-ESL spot-check worklist (Session 188) — the description-level
       # detector proposes re-levels against live curation rows, so its failure
       # modes are confident-wrong writes: reading a PREREQUISITE clause as the

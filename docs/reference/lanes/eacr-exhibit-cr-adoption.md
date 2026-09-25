@@ -1,7 +1,7 @@
 ---
 title: "EACR — Exhibit & CR Adoption — lane state"
 created: 2026-08-28
-updated: 2026-09-24
+updated: 2026-09-25
 tags: [reference, roadmap-lane]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -20,8 +20,8 @@ related:
 ## Status
 
 ✅ **SAM'S TEN TWEAKS OF 2026-09-24 ARE LIVE** ([#1681](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1681); the data
-half arrives with the first `daily-dashboard.yml` run after it merges — see
-NEXT ①). What the tab does now, in the order he asked:
+half landed with the 2026-09-24 17:03 UTC build, and every card carries
+`cip_sector`). What the tab does now, in the order he asked:
 
 1. **CIP Sectors replaces Career Cluster**, and the filter offers the COMPLETE
    two-digit family list (fifty, from the same `fams` the TOP to CIP tab reads)
@@ -29,10 +29,22 @@ NEXT ①). What the tab does now, in the order he asked:
    TOP (`TOP_Code_Lookup.xlsx` column D) → the family colleges actually
    assigned under that TOP (`kb/top_cip_map.json`, the 4-digit code's own
    `.00` entry first, then the programs-weighted fold), the published crosswalk
-   (`kb/reference/topcip_2021_crosswalk.xlsx`) only where no college has. 163
-   of 198 MAP TOP ids resolve; TOP 4930 (AP exams, general education) lands on
-   24 Liberal Arts, not on the 32 Basic Skills the raw fold sent it to. Every
-   filter is multi-select. Generator: `_load_cip_families()` /
+   (`kb/reference/topcip_2021_crosswalk.xlsx`) only where no college has. TOP
+   4930 (AP exams, general education) lands on 24 Liberal Arts, not on the 32
+   Basic Skills the raw fold sent it to. Every filter is multi-select.
+   **All 198 MAP TOP ids resolve since 2026-09-25.** Column D had disagreed
+   with its own program title on 81 rows (History at 2203, which is Ethnic
+   Studies; Fire Technology at 2130, which is no TOP code), and nothing read
+   the column before #1681. `kb/_correct_top_lookup_code4.py` corrected it
+   against the TOP manual (receipt
+   `kb/receipts/top_code_lookup_code4_2026-09-25_s288.json`, old and new code
+   per row); `tests/top_code_lookup_code4_test.py` holds it there in CI.
+   Measured on the 2026-09-25 payload: matrix rows under "No CIP assigned yet"
+   fall from 890 to 379, and 328 cards move to the right sector (222
+   construction and apprenticeship cards leave Engineering for Construction
+   Trades; 20 History cards leave Ethnic Studies). Of the 379 left, 279 carry
+   no TOP id at all (mostly AP, CLEP, IB and DSST exams) and 100 carry one of
+   37 MAP TOP ids the lookup has no row for — see NEXT ⑤. Generator: `_load_cip_families()` /
    `_cip_sector_for_tops()` in `excel_to_dashboard.py`; the card carries
    `cip_sector` and `top_codes`, the payload `cip_sectors`.
 2. **ASCCC Area filter** beside SW Region, from `college_lookup.js`
@@ -103,17 +115,20 @@ Story of the earlier rounds: [`docs/eacr_scope_lessons.md`](../../eacr_scope_les
 
 ## NEXT
 
-① **After the PR merges, dispatch `daily-dashboard.yml`** so `statewide_data.js`
-carries `cip_sector`, `top_codes`, `exhibit_records`, `adopter_rec_idx` and
-`cip_sectors`. Until then the CIP Sectors filter shows the complete list with
-every card in "No CIP assigned yet", the drill-down shows raw titles without
-units, and the panel says the recommendation lines arrive with the next build —
-all by design, none of it wrong. ② **Sam looks at the grid in a browser** —
+① **The column-D correction reaches the tab with the next build** after its
+PR merges; dispatch `daily-dashboard.yml` rather than wait for the cron, then
+confirm the "No CIP assigned yet" section holds about 379 rows. ② **Sam looks at the grid in a browser** —
 the 52px row, the two-line title clamp, the 0.62rem cell figures and the panel
 are his to judge. ③ The Adoption table's own rows keep their opportunity-first
 order; sectioning that view too is one call away if he wants it.
 ④ Curation carryover, unchanged: 4 unclassified-only titles the CER knows · 2
 statewide cards matching no college · the 50-group credential-view cap.
+⑤ **37 MAP TOP ids have no row in `TOP_Code_Lookup.xlsx`** (3, 6, 18, 23, 99,
+347 and 31 more; 100 cards, the philosophy exams under 99 among them). Each
+needs its program title and 4-digit code from MAP's own TOP table (Pedro
+could export it) — a row inferred from course titles alone would be a guess.
+The 279 cards with no TOP id at all would need a title-based route, which is
+curation and is not built.
 
 ## The ASCCC Area map is provisional, and that is the ruling
 
