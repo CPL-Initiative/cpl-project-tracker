@@ -1730,3 +1730,13 @@ between the two, halved the wait every PR pays.
 - **Still Sam's, in the tab.** The config had no save after 2026-09-23 21:30 UTC: the two section renames, the five
   timeline edits from the sheet's `edits` store, Publish on Scenario 1, and the six carried strategies to Completion in
   Year 1. Items 8 to 10 of the sheet carry no verdict.
+
+## 2026-09-25 — S291 (SkyReel): a guide video for colleges, in three drafts
+
+Sam asked for a 30-second whimsical stipple explainer. That became a funding guide built on screenshots, and then a 90-second guide in animated text alone. He preferred the text, saying it explains more than a screenshot does. Three lessons:
+
+- **Pasted images reach the session as files only when they come in a message of their own.** Screenshots pasted into a message that arrived while a turn was running never reached the disk. A full-page capture arrives at thumbnail width (319 px) and can't be read.
+- **The preview panel would not play a 1.8 MB self-contained HTML file.** A 166 KB file played. Screenshots embedded as PNGs inflated the page, and recompressing them to WebP did not rescue it. The text-only version is 75 KB and plays.
+- **Rendering an MP4 from a page.** Drive Chromium over DevTools, seek the clock and capture each frame (about 15 frames per second), and render the Web Audio score with an OfflineAudioContext. Pull the 29 MB base64 WAV back in 1 MB slices, because one large DevTools message stalls without an error. Playwright's bundled ffmpeg has only VP8, so use the `imageio-ffmpeg` wheel for libx264 and aac. Details are in [`methodology-render-an-html-animation-to-mp4`](kb-notes/methodology-render-an-html-animation-to-mp4.md).
+
+Sam's rulings are in the lane file: Sample College, no releveling, and the figures and link cleared for his walk-through.

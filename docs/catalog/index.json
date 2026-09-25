@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 494,
+   "count": 495,
    "docs": [
     {
      "created": "2026-08-14",
@@ -6997,6 +6997,21 @@
      "title": "Refresh the access token before every write (don't trust a format-valid JWT)",
      "type": "methodology",
      "updated": "2026-06-26"
+    },
+    {
+     "created": "2026-09-25",
+     "governs": [],
+     "path": "docs/kb-notes/methodology-render-an-html-animation-to-mp4.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "video",
+      "headless-chromium",
+      "web-audio"
+     ],
+     "title": "Render an HTML animation to MP4 from a headless browser",
+     "type": "methodology",
+     "updated": "2026-09-25"
     },
     {
      "created": "2026-08-20",
@@ -14209,8 +14224,23 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 262,
+   "count": 263,
    "docs": [
+    {
+     "created": "2026-09-25",
+     "governs": [],
+     "n": 291,
+     "path": "docs/session_291_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "implementation-funding",
+      "video"
+     ],
+     "title": "a 90-second funding guide for colleges, as HTML and MP4",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-25",
      "governs": [],
@@ -18659,5 +18689,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 970
+ "total": 972
 }

@@ -9,10 +9,11 @@ status: current
 # You are Session 290
 
 Your moniker is **SkyField**. S288 (SkyZ) continued SkyMatrix's EACR line from
-[`session_288_handoff.md`](session_288_handoff.md). SkyLane's parallel line wrote
-[`session_289_handoff.md`](session_289_handoff.md) for SkyRelay (funding lane, CI).
-This file is the highest-numbered and carries both lines' pointers; read 289 for the
-funding lane.
+[`session_288_handoff.md`](session_288_handoff.md). Two parallel lines wrote their own
+handoffs: SkyLane's [`session_289_handoff.md`](session_289_handoff.md) for SkyRelay
+(funding lane, CI), and SkyReel's [`session_291_handoff.md`](session_291_handoff.md)
+for SkyCue (the funding guide video). 291 is a same-day sibling written after this
+file, so `ls` shows it as the highest; this file carries the EACR line.
 
 ## ✅ WHAT SHIPPED (main)
 
@@ -92,7 +93,8 @@ funding lane.
 
 This file · [`lanes/eacr-exhibit-cr-adoption`](reference/lanes/eacr-exhibit-cr-adoption.md) ·
 [`methodology-a-program-cip-labels-the-program-not-its-courses`](kb-notes/methodology-a-program-cip-labels-the-program-not-its-courses.md) ·
-`docs/eacr_scope_lessons.md` (the 2026-09-25 section) · handoff 289 for the funding lane.
+`docs/eacr_scope_lessons.md` (the 2026-09-25 section) · handoff 289 for the funding lane ·
+handoff 291 for the funding guide video.
 
 ## Things that worked
 
