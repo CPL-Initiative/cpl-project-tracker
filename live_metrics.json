@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-09-25T14:39:37.912Z",
+  "scraped_at": "2026-09-25T16:13:59.734Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -458,18 +458,18 @@
         },
         {
           "college": "Los Angeles Pierce College",
-          "students": 396,
-          "units": 1455,
-          "avgUnits": 3.6742424242424243,
-          "transcriptionRate": 70.5,
-          "avgTranscribed": 2.590909090909091,
+          "students": 398,
+          "units": 1461,
+          "avgUnits": 3.670854271356784,
+          "transcriptionRate": 70.4,
+          "avgTranscribed": 2.5854271356783918,
           "criteriaMetCount": 1,
-          "militaryStudents": 143,
+          "militaryStudents": 145,
           "nonMilitaryStudents": 253,
           "apprenticeStudents": 0,
-          "savings": 1641965,
-          "yearImpact": 6893454,
-          "transcribedUnits": 1026
+          "savings": 1652345,
+          "yearImpact": 6929856,
+          "transcribedUnits": 1029
         },
         {
           "college": "Los Angeles Valley College",
@@ -1757,11 +1757,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "52,015",
+      "value": "52,017",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "28,456"
+          "value": "28,458"
         },
         {
           "label": "Workforce/Other",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 52015,
-    "Units": 223706.40000000002,
-    "TranscribedUnits": 73945.7,
-    "Savings": 335462869,
-    "YearImpact": 1327202234.4,
-    "MilitaryStudents": 28456,
+    "Students": 52017,
+    "Units": 223712.40000000002,
+    "TranscribedUnits": 73948.7,
+    "Savings": 335473249,
+    "YearImpact": 1327238636.4,
+    "MilitaryStudents": 28458,
     "NonMilitaryStudents": 23645,
     "AprenticeStudents": 851,
-    "AverageUnits": 4.300805536864367,
-    "TranscribedAverage": 1.4216226088628279
+    "AverageUnits": 4.300755522233117,
+    "TranscribedAverage": 1.4216256223926793
   }
 }

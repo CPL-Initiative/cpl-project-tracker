@@ -1,6 +1,6 @@
 {
  "_about": "Snapshot-tier metrics for the public CPL Fact Sheet (fact-sheet/). Sourced from the same MAP Custom Reporting Module exhibit data as COBI's headline KPI cards, so the two never diverge. Refreshed by the daily dashboard cron.",
- "_as_of": "2026-09-25T14:39:37.912Z",
+ "_as_of": "2026-09-25T16:13:59.734Z",
  "credit_recommendations": {
   "total": "13,528",
   "ccc": "1,352",
