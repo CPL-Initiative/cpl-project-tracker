@@ -708,6 +708,21 @@ window.CPL_PAINT_EXPLAINER = function (D) {
   // prints and the scenario this browser has selected — never typed here.
   if (D.model_version) document.getElementById("x-version").textContent = D.model_version;
   if (D.scenario) document.getElementById("x-scenario").textContent = String(D.scenario).replace(/^Scenario\s+/i, "");
+  // A draft scenario opened by ?scenario= (Sam, 2026-09-25) says so in words
+  // at the top, so a preview link passed along is never mistaken for the
+  // published page.
+  (function () {
+    var pv = "";
+    try { pv = new URLSearchParams(window.location.search).get("scenario") || ""; } catch (e) {}
+    if (!pv || String(D.scenario) !== String(pv).trim()) return;
+    var note = document.createElement("div");
+    note.className = "x-preview-note";
+    note.setAttribute("role", "note");
+    note.textContent = "Preview: this page shows " + D.scenario + ", a draft scenario. The published page reads the published scenario.";
+    note.style.cssText = "padding:10px 16px;margin:0 0 12px;border:1px solid var(--border, currentColor);border-radius:6px;font-weight:600;";
+    var host = document.querySelector("main") || document.body;
+    host.insertBefore(note, host.firstChild);
+  })();
 
   // ── the appropriation and where it goes ───────────────────────────────
   // The boxes sum to the top line by construction and cannot drift apart on a
