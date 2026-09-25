@@ -920,6 +920,11 @@
     ".cplfund-faq-item > summary { cursor: pointer; font-weight: 600; color: var(--text-strong); }",
     ".cplfund-faq-item > summary:focus-visible { outline: 2px solid var(--focus-ring, currentColor); outline-offset: 2px; }",
     ".cplfund-faq-item > p { margin: 6px 0 0 1.2em; max-width: var(--cpl-measure,none); }",
+    ".cplfund-strathandle { cursor: grab; font-size: .72rem; color: var(--text-muted); border: 1px solid var(--border); border-radius: 10px; padding: 2px 8px; min-height: 24px; display: inline-flex; align-items: center; user-select: none; }",
+    ".cplfund-reqrow.dragging { opacity: .5; }",
+    ".cplfund-reqrow.dropover { outline: 2px dashed var(--focus-ring, currentColor); outline-offset: 2px; }",
+    ".cplfund-goalmulti { display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; margin: 4px 0 6px; font-size: .8rem; }",
+    ".cplfund-goalmulti label { display: inline-flex; gap: 4px; align-items: center; min-height: 24px; cursor: pointer; }",
     ".cplfund-prose-ctl { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; margin-top: 8px; font-size: .78rem; }",
     ".cplfund-textbtn { background: var(--surface-opaque); color: var(--navy-primary); border: 1px solid var(--border-strong); border-radius: 6px; padding: 2px 9px; cursor: pointer; font-size: .75rem; font-family: inherit; }",
     ".cplfund-textbtn:hover { border-color: var(--navy-secondary); }",
@@ -1292,12 +1297,31 @@
   // ⚠️ THE CURATOR'S PREVIEW IS NOT A PUBLIC SURFACE. It renders the scenario
   // being edited, so unpublished work can be previewed before it is published.
   function publicSurface() { return !!(window.CPL_FUNDING_PUBLIC || embedMode()); }
+  // A SCENARIO PREVIEW ON THE EXPLAINER (Sam, 2026-09-25: "Should be able to
+  // generate a version of the explainer page for any new scenario I add").
+  // funding-model/?scenario=Scenario%202 renders that scenario; without the
+  // parameter the page reads the published one, as before. The page says in
+  // words when it shows an unpublished scenario.
+  function previewScenarioParam() {
+    try {
+      var v = new URLSearchParams(window.location.search).get("scenario");
+      return v ? String(v).trim() : "";
+    } catch (e) { return ""; }
+  }
   function publishedScenario() {
     var p = activeProjectObj();
+    var pv = publicSurface() ? previewScenarioParam() : "";
+    if (pv && isPlainObj(p.scenarios[pv])) return pv;
     var v = typeof p.published === "string" ? p.published : "";
     if (v && isPlainObj(p.scenarios[v])) return v;
     if (isPlainObj(p.scenarios["Scenario 1"])) return "Scenario 1";
     return scenarioNames()[0];
+  }
+  function realPublishedScenario() {
+    var p = activeProjectObj();
+    var v = typeof p.published === "string" ? p.published : "";
+    if (v && isPlainObj(p.scenarios[v])) return v;
+    return isPlainObj(p.scenarios["Scenario 1"]) ? "Scenario 1" : scenarioNames()[0];
   }
   function publishScenario(name) {
     if (!unlocked()) return;
@@ -3594,7 +3618,9 @@
     // restore, and the "Measured from" list editor.
     "data-dragid", "data-carddrag", "data-cardpos", "data-priorows", "data-rcrows",
     "data-priodel", "data-priodelinto", "data-priodelstrat", "data-priodelok", "data-priodelcancel",
-    "data-priorestore", "data-measedit", "data-measreset"];
+    "data-priorestore", "data-measedit", "data-measreset",
+    // 2026-09-25: the Serves boxes and the strategy drag rows.
+    "data-priogoalmulti", "data-stratlist"];
   // PREVIEW-ONLY affordances, swept everywhere the curator is not previewing.
   // Kept OUT of CURATE_ATTRS rather than conditioned inside it, so the registry
   // above keeps meaning exactly one thing: every attribute in it leaves the DOM
@@ -4745,8 +4771,14 @@
     "toward the funding. Opens in a new tab.";
   function sanityLinkHtml() {
     if (publicMode()) return "";
-    return '<a class="cplfund-sanity" href="' + SANITY_URL + '" target="_blank" rel="noopener" title="' +
+    var pub = realPublishedScenario();
+    var link = '<a class="cplfund-sanity" href="' + SANITY_URL + '" target="_blank" rel="noopener" title="' +
       esc(SANITY_BLURB) + '">How this funding model works</a>';
+    if (activeScenario === pub) return link;
+    return link + ' <a class="cplfund-sanity" href="' + SANITY_URL + (SANITY_URL.indexOf("?") >= 0 ? "&" : "?") +
+      "scenario=" + encodeURIComponent(activeScenario) + '" target="_blank" rel="noopener" title="' +
+      esc("The explainer page drawn from " + activeScenario + ", which is not published. Opens in a new tab.") +
+      '">Preview the explainer with ' + esc(activeScenario) + "</a>";
   }
   // The title row lives in the tab SHELL, outside this module's mount, so the
   // link is painted into a slot the shell provides in both mirrored HTMLs
@@ -5486,7 +5518,7 @@
       var derivedWord = res.derived && keys.length
         ? "From the metric: (" + keys.join(") + (") + ") " + goalNames
         : "From the metric";
-      var opts = (opt.derivable === false ? "" :
+    var opts = (opt.derivable === false ? "" :
         '<option value="' + GOAL_DERIVED + '"' + (res.derived ? " selected" : "") +
         ">" + esc(derivedWord) + "</option>") +
         offer.map(function (g) {
@@ -5566,7 +5598,21 @@
       ? '<p class="cplfund-cardgoal-quote"><span class="cplfund-cardgoal-cite">' + goalCite(keys) + ":</span> " +
         goalQuote(keys) + "</p>"
       : '<p class="cplfund-cardgoal-quote"><span class="cplfund-cardgoal-cite">Set the metric, or choose an outcome, to place this card.</span></p>';
-    return '<div class="cplfund-cardhead"><h4>' + head + "</h4>" + law + "</div>";
+    // MORE THAN ONE OUTCOME (Sam, 2026-09-25: "Multi-select outcomes. In
+    // Scenario 2, want to combine P3 and 4 into just P3"). The picker above
+    // sets one; these boxes add the others. The stored list is the same
+    // `goals` array the picker writes, so one card can carry (C) and (D).
+    var multi = "";
+    if (curator && o.multiAttr && !o.ro) {
+      multi = '<div class="cplfund-goalmulti" role="group" aria-label="' + esc("Outcomes this card serves, " + o.ctx) + '">' +
+        '<span class="dk">Serves</span>' +
+        STATUTORY_GOALS.map(function (g) {
+          var on = keys.indexOf(g.key) >= 0;
+          return '<label><input type="checkbox" ' + o.multiAttr + ' value="' + esc(g.key) + '"' + (on ? " checked" : "") +
+            "> (" + esc(g.key) + ") " + esc(g.short) + "</label>";
+        }).join("") + "</div>";
+    }
+    return '<div class="cplfund-cardhead"><h4>' + head + "</h4>" + multi + law + "</div>";
   }
   // The goal picker alone — goalRowHtml's list, without the row around it.
   function goalSelectHtml(res, ctx, selAttr, opt) {
@@ -5580,7 +5626,13 @@
     var derivedWord = res.derived && keys.length
       ? "(" + keys.join(") + (") + ") " + goalNames
       : "From the metric";
-    var opts = (opt.derivable === false ? "" :
+    // A card carrying two or more outcomes (the Serves boxes) shows them all
+    // on the closed picker rather than falling back to "From the metric".
+    var multiOpt = (!res.derived && keys.length > 1)
+      ? '<option value="' + esc(keys.join(",")) + '" selected disabled>(' + keys.map(esc).join(") + (") + ") " +
+        esc(goalNames) + "</option>"
+      : "";
+    var opts = multiOpt + (opt.derivable === false ? "" :
       '<option value="' + GOAL_DERIVED + '"' + (res.derived ? " selected" : "") +
       ' title="Set by the metric">' + esc(derivedWord) + "</option>") +
       offer.map(function (g) {
@@ -6485,7 +6537,7 @@
     // (ncPriorities/ncPrioOverride still carry them), not lost.
     var list = prioStrategies(slot, i);
     var rows = list.map(function (s, j) {
-      return '<div class="cplfund-reqrow"><span class="cplfund-bullet">&bull;</span>' +
+      return '<div class="cplfund-reqrow"' + stratDragAttrs("m:" + slot + ":" + i, j) + ">" + stratHandleHtml(j) +
         edText("strategy", s, { slot: slot, idx: i, sidx: j, label: "Recommended strategy", placeholder: "Add a strategy…" }) +
         '<button type="button" class="cplfund-reqdel" data-stratdel="' + esc(slot + ":" + i + ":" + j) +
         '" title="Remove this strategy" aria-label="Remove strategy ' + (j + 1) + '">Remove</button></div>';
@@ -6503,6 +6555,31 @@
       (publicMode() ? "" :
         '<button type="button" class="cplfund-optbtn cplfund-stratadd" data-stratadd="' + esc(slot + ":" + i) +
         '" title="Add a recommended strategy">Add strategy</button>');
+  }
+  // DRAG TO REORDER (Sam, 2026-09-25: "Need to be able to drag to reorder
+  // strategies on card"). A row drags by its handle, the word Drag. The list id
+  // is "m:<slot>:<i>" for a measured card or "r:<goal>" for a reported card.
+  function stratDragAttrs(list, j) {
+    if (publicMode() || !unlocked()) return "";
+    return ' data-stratlist="' + esc(list) + '" data-stratidx="' + j + '"';
+  }
+  function stratHandleHtml(j) {
+    if (publicMode() || !unlocked()) return '<span class="cplfund-bullet">&bull;</span>';
+    // A keyboard reader moves a row with the arrow keys on the same handle.
+    return '<span class="cplfund-strathandle" draggable="true" tabindex="0" role="button" ' +
+      'title="Drag to reorder, or press the up or down arrow" aria-label="Move strategy ' +
+      (j + 1) + '. Drag, or press the up or down arrow.">Drag</span>';
+  }
+  function reorderStrategies(list, from, to) {
+    if (from === to || from < 0 || to < 0) return;
+    var parts = String(list).split(":");
+    if (parts[0] === "m") {
+      var sl = parts[1], pi = Number(parts[2]);
+      setPrioStrategies(sl, pi, reorderList(prioStrategies(sl, pi), from, to));
+    } else if (parts[0] === "r") {
+      setReportedStrategies(parts[1], reorderList(reportedStrategies(parts[1]), from, to));
+    }
+    render();
   }
   // How many strategies a card carries — the summary figure for its fold.
   function strategiesCount(slot, i) { return prioStrategies(slot, i).length; }
@@ -6768,6 +6845,7 @@
         // stitch a card to a wrapper that no longer exists, and the row below
         // now names the same goal in words.
         cardHeadHtml({ res: gres, ctx: ctx, selAttr: 'data-priogoal="' + i + '"', title: p.title, ro: ro,
+          multiAttr: 'data-priogoalmulti="' + i + '"',
           numHtml: cardNumHtml(slot, cid, ro ? "" : 'data-priopos="' + i + '"', ctx), renameKey: cid,
           titleInput: function () {
             return edText("prio-title", p.title, { slot: slot, idx: i, ro: ro, cls: "cplfund-prio-title-input",
@@ -6800,6 +6878,16 @@
           rateBody) +
         cardSectionHtml("Progress", progressSummary(i),
           frontLine + actualLineHtml(p, i, sysHeads) + earnedLineHtml(i)) +
+        // A measured card that also serves an outcome the project allocation
+        // funds (Sam, 2026-09-25: P3 taking over P4's (D)) carries that
+        // allocation too, the same block the reported card shows.
+        gres.keys.filter(function (k) {
+          return poolGoalKeys("scaling_projects_tech").indexOf(k) >= 0 &&
+            poolGoalAmount("scaling_projects_tech", k) > 0.5;
+        }).map(function (k) {
+          return cardSectionHtml("Project allocation (" + esc(k) + ")",
+            fmtMoney(poolGoalAmount("scaling_projects_tech", k)), reportedFundHtml(k), true);
+        }).join("") +
         cardSectionHtml("Recommended strategies",
           strategiesCount(slot, i)
             ? fmtInt(strategiesCount(slot, i)) + " for Year " + esc(slot)
@@ -7063,7 +7151,7 @@
   function reportedStrategiesHtml(gkey) {
     var list = reportedStrategies(gkey);
     var rows = list.map(function (str, j) {
-      return '<div class="cplfund-reqrow"><span class="cplfund-bullet">&bull;</span>' +
+      return '<div class="cplfund-reqrow"' + stratDragAttrs("r:" + gkey, j) + ">" + stratHandleHtml(j) +
         edText("rstrategy", str, { field: gkey + "::" + j, label: "Recommended strategy", placeholder: "Add a strategy\u2026" }) +
         (publicMode() ? "" :
           '<button type="button" class="cplfund-reqdel" data-rstratdel="' + esc(gkey + ":" + j) +
@@ -11217,7 +11305,72 @@
     }
   }
 
-  function wire() { wireAll(); restoreFocus(); }
+  // A CARD FOLD STAYS WHERE THE READER LEFT IT (Sam, 2026-09-25: "The
+  // Strategies editor is a little buggy — closes when click Add Strategy").
+  // Every redraw rebuilt each card section at its default, so the click that
+  // added a row also shut the fold holding it. The open state is remembered
+  // per card and section across redraws.
+  var CARDSEC_OPEN = {};
+  function cardSecKey(d) {
+    var card = d.closest("[data-cardid]");
+    var lab = d.querySelector(".cplfund-cardsec-lab");
+    return (card ? card.getAttribute("data-cardid") : "") + "|" + (lab ? lab.textContent : "");
+  }
+  var _stratFocus = null;   // the list whose new blank row should take focus
+  var _stratMoved = null;   // the handle that should keep focus after a keyboard move
+  function wireCardSections() {
+    document.querySelectorAll("#cplFundingMount details.cplfund-cardsec").forEach(function (d) {
+      var k = cardSecKey(d);
+      if (Object.prototype.hasOwnProperty.call(CARDSEC_OPEN, k)) d.open = CARDSEC_OPEN[k];
+      d.addEventListener("toggle", function () { CARDSEC_OPEN[k] = d.open; });
+    });
+    var drag = null;
+    document.querySelectorAll("#cplFundingMount [data-stratlist]").forEach(function (row) {
+      var h = row.querySelector(".cplfund-strathandle");
+      if (h) h.addEventListener("dragstart", function (e) {
+        drag = { list: row.getAttribute("data-stratlist"), idx: Number(row.getAttribute("data-stratidx")) };
+        try { e.dataTransfer.setData("text/plain", String(drag.idx)); e.dataTransfer.effectAllowed = "move"; } catch (x) {}
+        row.classList.add("dragging");
+      });
+      if (h) h.addEventListener("dragend", function () { row.classList.remove("dragging"); });
+      if (h) h.addEventListener("keydown", function (e) {
+        var dir = e.key === "ArrowUp" ? -1 : e.key === "ArrowDown" ? 1 : 0;
+        if (!dir) return;
+        e.preventDefault();
+        var li = row.getAttribute("data-stratlist"), from = Number(row.getAttribute("data-stratidx"));
+        var n = document.querySelectorAll('#cplFundingMount [data-stratlist="' + li + '"]').length;
+        var to = from + dir;
+        if (to < 0 || to >= n) return;
+        _stratMoved = { list: li, idx: to };
+        reorderStrategies(li, from, to);
+      });
+      row.addEventListener("dragover", function (e) {
+        if (drag && drag.list === row.getAttribute("data-stratlist")) { e.preventDefault(); row.classList.add("dropover"); }
+      });
+      row.addEventListener("dragleave", function () { row.classList.remove("dropover"); });
+      row.addEventListener("drop", function (e) {
+        row.classList.remove("dropover");
+        if (!drag || drag.list !== row.getAttribute("data-stratlist")) return;
+        e.preventDefault();
+        var d0 = drag; drag = null;
+        reorderStrategies(d0.list, d0.idx, Number(row.getAttribute("data-stratidx")));
+      });
+    });
+    if (_stratMoved) {
+      var mh = document.querySelector('#cplFundingMount [data-stratlist="' + _stratMoved.list + '"][data-stratidx="' +
+        _stratMoved.idx + '"] .cplfund-strathandle');
+      _stratMoved = null;
+      if (mh) { try { mh.focus({ preventScroll: true }); } catch (x) { mh.focus(); } }
+    }
+    if (_stratFocus) {
+      var rows = document.querySelectorAll('#cplFundingMount [data-stratlist="' + _stratFocus + '"] input, ' +
+        '#cplFundingMount [data-stratlist="' + _stratFocus + '"] textarea');
+      _stratFocus = null;
+      var last = rows[rows.length - 1];
+      if (last) { try { last.focus({ preventScroll: true }); } catch (x) { last.focus(); } }
+    }
+  }
+  function wire() { wireAll(); wireCardSections(); restoreFocus(); }
   function wireAll() {
     // PUBLIC MODE: sweep every curate/edit affordance out of the DOM before any
     // handler binds. Done here because wire() is the single funnel every render
@@ -11743,6 +11896,17 @@
       // The outcome, set on the card (Sam, 2026-09-14). "derived" is the
       // sentinel that hands the card back to its metric's milestone — see
       // setPrioGoal() for why clearing stores a value rather than deleting one.
+      qsa("[data-priogoalmulti]").forEach(function (cb) {
+        cb.addEventListener("change", function () {
+          var idx = cb.getAttribute("data-priogoalmulti");
+          var keys = [];
+          qsa('[data-priogoalmulti="' + idx + '"]').forEach(function (x) { if (x.checked) keys.push(x.value); });
+          savingState = "";
+          // None ticked hands the card back to its metric.
+          setPrio(state.viewSlot, Number(idx), "goals", keys.length ? keys : GOAL_DERIVED);
+          render();
+        });
+      });
       qsa("[data-priogoal]").forEach(function (sel) {
         sel.addEventListener("change", function () {
           savingState = "";
@@ -11861,6 +12025,7 @@
         savingState = "";
         var parts = b.getAttribute("data-stratadd").split(":");
         var pslot = parts[0], pi = Number(parts[1]);
+        _stratFocus = "m:" + pslot + ":" + pi;
         setPrioStrategies(pslot, pi, prioStrategies(pslot, pi).concat([""]));
       });
     });
@@ -11877,6 +12042,7 @@
       b.addEventListener("click", function () {
         savingState = "";
         var gk = b.getAttribute("data-rstratadd");
+        _stratFocus = "r:" + gk;
         setReportedStrategies(gk, reportedStrategies(gk).concat([""]));
         render();
       });
