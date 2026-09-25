@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-262 document(s).
+263 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 291 | [a 90-second funding guide for colleges, as HTML and MP4](../session_291_handoff.md) | 2026-09-25 |
 | 290 | [the TOP lookup corrected, exams sectored from their titles, the TOP/CIP question left to its own lane](../session_290_handoff.md) | 2026-09-25 |
 | 289 | [CI cut to seven minutes, the lane tables landed, the review sheet's edit layer documented](../session_289_handoff.md) | 2026-09-24 |
 | 288 | [Sam's ten EACR tweaks land, the matrix becomes a window, ASCCC areas go provisional](../session_288_handoff.md) | 2026-09-24 |

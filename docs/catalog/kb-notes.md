@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-494 document(s).
+495 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -370,6 +370,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Recompute a source's own summary statistics from its line items](../kb-notes/methodology-recompute-a-sources-own-summary-statistics.md) | methodology | published | 2026-07-30 |  |
 | [Recover a music bed from a mixed video by subtracting the clean voice stem](../kb-notes/methodology-recover-music-bed-by-voice-stem-subtraction.md) | methodology | published | 2026-07-23 | 2026-07-23 |
 | [Refresh the access token before every write (don't trust a format-valid JWT)](../kb-notes/methodology-refresh-token-before-write.md) | methodology | published | 2026-06-26 | 2026-06-26 |
+| [Render an HTML animation to MP4 from a headless browser](../kb-notes/methodology-render-an-html-animation-to-mp4.md) | methodology | published | 2026-09-25 | 2026-09-25 |
 | [Reorder by permutation, not by rewriting the config](../kb-notes/methodology-reorder-by-permutation-not-by-rewriting-the-config.md) | methodology | published | 2026-08-20 | 2026-08-20 |
 | [Reserved-key namespaces extend a key→override table with new block types (no schema migration)](../kb-notes/methodology-reserved-key-namespaces-on-overrides-table.md) | methodology | published | 2026-06-28 | 2026-06-28 |
 | [Resolve a redline as an edit list, not as retyped prose](../kb-notes/methodology-resolve-a-redline-as-an-edit-list.md) | methodology | published | 2026-08-26 | 2026-08-26 |

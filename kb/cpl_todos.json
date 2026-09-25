@@ -5,6 +5,18 @@
   "_status": "On Exhibit Adoption, every credential now sits under a CIP sector except three course codes. Sam ruled that the sector is for filtering and quick categorization only and asked the session to assign sectors from its own analysis rather than open the TOP and CIP question, which is its own project. Exams (AP, CLEP, IB, DSST) are now sectored from their titles, because MAP's TOP code for an exam is a general-education code that filed AP Chemistry under Liberal Arts; everything else reads MAP's TOP code, whose lookup had 81 wrong codes until pull request 1692. On the funding tab, Sam's review is built out through item 7, his titles and timeline paste ran on 24 September (pull request 1688), and the automated test run takes about seven minutes on four machines.",
   "items": [
     {
+      "id": "s291-sam-releveled-line",
+      "for": "Sam",
+      "tab": "implementation-funding",
+      "text": "The funding timeline still reads \"Undispersed Funds Rolled to Year 2 and Releveled\" for August 2027. You ruled that year-one funding carries forward to year two for the same college and isn't releveled. Edit that milestone's label on the tab so colleges read it the way the new guide video says it."
+    },
+    {
+      "id": "s291-sam-video-figures",
+      "for": "Sam",
+      "tab": "implementation-funding",
+      "text": "The 90-second guide video (linked from the explainer) types its figures in as of 24 September. If you change a dial before your walk-through, ask a session to update and re-render it; it takes about 5 minutes."
+    },
+    {
       "id": "s288-sam-eacr-grid-look",
       "for": "Sam",
       "tab": "exhibit-adoption",
