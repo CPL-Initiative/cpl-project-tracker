@@ -1,0 +1,271 @@
+<title>CPL Funding in Motion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,700&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+:root{
+  --paper:#F4F2ED;--ink:#1C1C1A;--ink-body:#3A3A36;--ink-muted:#5C5C55;--surface:#FFFFFF;
+  --cobalt:#0047AB;--cobalt-on-dark:#7DA1D4;--seal-blue:#002F6D;--mustard-fill:#E3B341;--mustard-text:#8B6800;
+  --stage-paper:#FBFAF6;--stage-ink:var(--ink);--stage-body:var(--ink-body);--stage-muted:var(--ink-muted);
+  --stage-blue:var(--cobalt);--stage-navy:var(--seal-blue);--stage-gold:var(--mustard-fill);--stage-gold-text:var(--mustard-text);
+  --stage-rule:rgba(28,28,26,.16);--stage-track:#E9E5DA;--stage-shadow:rgba(28,28,26,.30);--stage-seg3:#7DA1D4;
+  --page:var(--paper);--text:var(--ink);--text-body:var(--ink-body);--text-muted:var(--ink-muted);--card:var(--surface);
+  --line:rgba(28,28,26,.14);--line-strong:rgba(28,28,26,.32);--btn:var(--surface);--btn-text:var(--ink);
+  --btn-strong:var(--ink);--btn-strong-text:var(--paper);--focus:var(--cobalt);--accent-text:var(--mustard-text);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){color-scheme:dark;--page:#16171B;--text:#EDEBE5;--text-body:#D3D0C8;--text-muted:#A9A69D;--card:#202227;--line:rgba(237,235,229,.14);--line-strong:rgba(237,235,229,.34);--btn:#202227;--btn-text:#EDEBE5;--btn-strong:#EDEBE5;--btn-strong-text:#16171B;--focus:var(--cobalt-on-dark);--accent-text:var(--mustard-fill);--stage-shadow:rgba(0,0,0,.6)}}
+:root[data-theme="dark"]{color-scheme:dark;--page:#16171B;--text:#EDEBE5;--text-body:#D3D0C8;--text-muted:#A9A69D;--card:#202227;--line:rgba(237,235,229,.14);--line-strong:rgba(237,235,229,.34);--btn:#202227;--btn-text:#EDEBE5;--btn-strong:#EDEBE5;--btn-strong-text:#16171B;--focus:var(--cobalt-on-dark);--accent-text:var(--mustard-fill);--stage-shadow:rgba(0,0,0,.6)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--text);font:400 16px/1.55 "Source Sans 3",Arial,sans-serif}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:clamp(16px,4vw,32px);padding-block:clamp(20px,4vw,40px) 56px}
+.eyebrow{margin:0 0 6px;font-weight:700;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-text)}
+h1{margin:0;font:700 clamp(1.7rem,1.15rem + 2.2vw,2.7rem)/1.12 "Playfair Display",Georgia,serif;text-wrap:balance}
+.dek{margin:8px 0 0;color:var(--text-muted);max-width:62ch}
+.stage{position:relative;margin-top:clamp(16px,3vw,28px);width:100%;aspect-ratio:16/9;background:var(--stage-paper);border:1px solid var(--line);border-radius:6px;overflow:hidden;container-type:inline-size;box-shadow:0 14px 36px -22px var(--stage-shadow);color:var(--stage-ink)}
+.sc{position:absolute;inset:0;padding:5cqw 6cqw;visibility:hidden}
+.w,.ch{display:inline-block;will-change:transform,opacity}
+.hd{margin:0;font:700 4.6cqw/1.08 "Playfair Display",Georgia,serif;letter-spacing:-.01em}
+.ln{margin:0;font:400 2.5cqw/1.3 "Source Sans 3",Arial,sans-serif;color:var(--stage-body)}
+.ln b{color:var(--stage-ink);font-weight:700}
+.big{font:900 11cqw/1 "Playfair Display",Georgia,serif;letter-spacing:-.02em;font-variant-numeric:lining-nums tabular-nums}
+.gold{color:var(--stage-gold-text)}.blue{color:var(--stage-blue)}
+.kick{font:700 1.5cqw/1 "Source Sans 3",Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--stage-blue)}
+.abs{position:absolute}
+.bar{position:absolute;height:4.2cqw;border-radius:.6cqw;overflow:hidden;background:var(--stage-track)}
+.fill{position:absolute;top:0;bottom:0;left:0}
+.pill{display:inline-block;padding:.35cqw 1cqw;border-radius:99px;font:700 1.4cqw/1 "Source Sans 3",Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase}
+.logo{position:absolute;left:50%;transform:translateX(-50%);width:56cqw;height:auto}
+.bigplay{position:absolute;left:50%;top:88%;transform:translate(-50%,-50%);min-height:44px;padding:0 1.5em;border:0;border-radius:999px;background:var(--stage-ink);color:var(--stage-paper);font:700 clamp(14px,1.5cqw,18px)/1 "Source Sans 3",Arial,sans-serif;cursor:pointer;z-index:5}
+.controls{display:flex;flex-wrap:wrap;align-items:center;gap:10px 12px;margin-top:12px}
+.btn{min-height:44px;padding:0 18px;border-radius:8px;border:1px solid var(--line-strong);background:var(--btn);color:var(--btn-text);font:600 1rem/1 "Source Sans 3",Arial,sans-serif;cursor:pointer}
+.btn.strong{min-width:96px;background:var(--btn-strong);color:var(--btn-strong-text);border-color:var(--btn-strong)}
+.scrub{flex:1 1 220px;display:flex;min-width:0}.scrub input{width:100%;height:28px;margin:0;accent-color:var(--text)}
+output{min-width:7.5ch;font-variant-numeric:tabular-nums;color:var(--text-muted)}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.scenes{margin-top:clamp(28px,5vw,44px)}
+.scenes h2{margin:0 0 12px;font:700 1.35rem/1.2 "Playfair Display",Georgia,serif}
+.chapters{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:10px}
+.chap{width:100%;height:100%;display:grid;gap:4px;align-content:start;padding:12px 14px;text-align:left;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--text);font:inherit;cursor:pointer}
+.chap[aria-current="true"]{border-color:var(--text);box-shadow:inset 0 0 0 1px var(--text)}
+.chap .tc{font-size:.8rem;font-weight:700;letter-spacing:.08em;font-variant-numeric:tabular-nums;color:var(--accent-text)}
+.chap .nm{font-weight:700}.chap .tx{font-size:.95rem;line-height:1.45;color:var(--text-body)}
+</style>
+
+<main class="wrap">
+  <header>
+    <p class="eyebrow">CPL Initiative</p>
+    <h1>How CPL implementation funding works</h1>
+    <p class="dek">A 90-second guide for colleges, with music. The sound starts when you press Play.</p>
+  </header>
+  <div class="stage" id="stage" role="region" aria-label="Guide video">
+    <p class="vh" id="said" aria-live="polite"></p>
+    <button type="button" class="bigplay" id="bigplay">Play the guide</button>
+  </div>
+  <div class="controls">
+    <button type="button" class="btn strong" id="play">Play</button>
+    <button type="button" class="btn" id="replay">Replay</button>
+    <div class="scrub"><label for="pos" class="vh">Position in the guide</label><input type="range" id="pos" min="0" max="90" step="0.05" value="0"></div>
+    <output id="time" for="pos">0:00</output>
+    <button type="button" class="btn" id="sound">Mute</button>
+  </div>
+  <p style="margin:14px 0 0">The full explainer, with every institution’s figures: <a href="https://cpl-initiative.github.io/cpl-project-tracker/funding-model/" style="color:var(--focus);font-weight:600">CPL funding model</a></p>
+  <section class="scenes" aria-labelledby="sh"><h2 id="sh">Scenes</h2><ol class="chapters" id="chapters"></ol></section>
+</main>
+
+<script>
+(function(){
+'use strict';
+var DUR=90,LOGO='__LOGO__',EXPLAINER='https://cpl-initiative.github.io/cpl-project-tracker/funding-model/';
+var $=function(i){return document.getElementById(i);};
+var stage=$('stage'),said=$('said');
+var reduced=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+/* ---- motion helpers: every value is a pure function of the clock ---- */
+function cl(x){return x<0?0:x>1?1:x;}
+function eo(x){x=cl(x);return 1-Math.pow(1-x,3);}
+function eio(x){x=cl(x);return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;}
+function back(x){x=cl(x);var c=1.7;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2);}
+function k(t,a,b){return cl((t-a)/(b-a));}
+function E(tag,cls,html,par,css){var e=document.createElement(tag);if(cls)e.className=cls;if(html!=null)e.innerHTML=html;if(css)e.style.cssText=css;if(par)par.appendChild(e);return e;}
+function words(par,html,cls){var box=E('p',cls,null,par),tmp=document.createElement('div'),out=[];tmp.innerHTML=html;(function walk(src,dst){Array.prototype.slice.call(src.childNodes).forEach(function(n){if(n.nodeType===3){n.textContent.split(/(\s+)/).forEach(function(p){if(!p)return;if(/^\s+$/.test(p)){dst.appendChild(document.createTextNode(' '));return;}out.push(E('span','w',null,dst));out[out.length-1].textContent=p;});}else if(n.nodeType===1){var c=n.cloneNode(false);dst.appendChild(c);walk(n,c);}});})(tmp,box);box.ws=out;return box;}
+function chars(par,text,cls){var box=E('p',cls,null,par);box.cs=[];text.split('').forEach(function(c){if(c===' '){box.appendChild(document.createTextNode(' '));return;}box.cs.push(E('span','ch',c,box));});return box;}
+function reveal(arr,t,start,step,dur,style){arr.forEach(function(el,i){var p=eo(k(t,start+i*step,start+i*step+dur));if(reduced)p=t>=start+i*step?1:0;
+  if(style==='drop'){el.style.opacity=p;el.style.transform='translateY('+((1-p)*-0.9)+'em) scale('+(1+(1-p)*0.6)+')';el.style.filter='blur('+((1-p)*8)+'px)';}
+  else{el.style.opacity=p;el.style.transform='translateY('+((1-p)*0.55)+'em)';el.style.filter='blur('+((1-p)*5)+'px)';}});}
+function fade(el,t,a,b){var p=eo(k(t,a,b));el.style.opacity=p;el.style.transform='translateY('+((1-p)*1.2)+'cqw)';}
+function money(n){return '$'+Math.round(n).toLocaleString('en-US');}
+function count(el,t,a,b,v,fmt){el.textContent=(fmt||money)(v*eio(k(t,a,b)));}
+/* ---- the script ---- */
+var S=[];
+function scene(t0,t1,name,text,build,update){var root=E('div','sc',null,stage);var o={t0:t0,t1:t1,name:name,text:text,root:root,u:update};build(root,o);S.push(o);}
+
+scene(0,6,'Title','How CPL implementation funding works: a guide for colleges.',function(r,o){
+  o.logo=E('img','logo',null,r,'top:14%');o.logo.src=LOGO;o.logo.alt='California Community Colleges Credit for Prior Learning Initiative';
+  o.t=chars(r,'How CPL implementation funding works','hd');o.t.style.cssText='position:absolute;left:0;right:0;top:58%;text-align:center;font-size:5cqw';
+  o.s=E('p','kick','A guide for colleges',r,'position:absolute;left:0;right:0;top:75%;text-align:center');
+},function(o,t){o.logo.style.opacity=eo(k(t,0.2,1.4));reveal(o.t.cs,t,1.4,0.045,0.7,'drop');fade(o.s,t,3.4,4.2);});
+
+scene(6,15,'The funding','The state set aside 35 million dollars in one-time funding for 2026–27. 25.2 million goes directly to 118 institutions, 9.0 million funds statewide CPL projects and technology, and 800 thousand funds two Chancellor’s Office positions that support colleges.',function(r,o){
+  o.k=E('p','kick','One-time funding for 2026–27',r,'position:absolute;left:6cqw;top:6cqw');
+  o.n=E('div','big abs gold','$0',r,'left:6cqw;top:10cqw');
+  o.l=words(r,'set aside by the state to help colleges build <b>credit for prior learning</b>.','ln abs');o.l.style.cssText='left:6cqw;top:23cqw;width:80cqw';
+  o.bar=E('div','bar',null,r,'left:6cqw;right:6cqw;top:32cqw');
+  var segs=[[0,72.1,'var(--stage-blue)'],[72.1,25.6,'var(--stage-navy)'],[97.7,2.3,'var(--stage-seg3)']];
+  o.segs=segs.map(function(s){return{d:s,el:E('div','fill',null,o.bar,'left:'+s[0]+'%;width:0;background:'+s[2])};});
+  o.lab=[[6,'$25,240,308','directly to 118 institutions','var(--stage-blue)'],[47,'$8,959,692','statewide CPL projects and technology','var(--stage-navy)'],[76,'$800,000','two Chancellor’s Office positions supporting colleges','var(--stage-muted)']].map(function(a){var d=E('div','abs',null,r,'left:'+a[0]+'cqw;top:38cqw;width:22cqw');E('div',null,a[1],d,'font:900 3.3cqw/1 \'Playfair Display\',Georgia,serif;color:'+a[3]);E('div','ln',a[2],d,'font-size:1.9cqw;margin-top:.6cqw');return d;});
+},function(o,t){fade(o.k,t,0.1,0.8);count(o.n,t,0.2,2.4,35000000);o.n.style.transform='scale('+(1+0.08*Math.sin(Math.PI*k(t,2.2,2.9)))+')';reveal(o.l.ws,t,2.2,0.06,0.5);
+  o.segs.forEach(function(s,i){var p=eio(k(t,3.6+i*0.7,4.6+i*0.7));s.el.style.width=(s.d[1]*p)+'%';});o.lab.forEach(function(d,i){fade(d,t,4.0+i*0.7,4.8+i*0.7);});});
+
+scene(15,25,'Maximum allocation','Every institution has a maximum allocation, sized by its share of instruction, credit and noncredit together. It sits between a base of 150 thousand and a cap of 400 thousand across the two years. Sample College’s maximum allocation is 345,220 dollars.',function(r,o){
+  o.h=words(r,'Every institution has a <span class="blue">maximum allocation</span>','hd');
+  o.l=words(r,'sized by its share of instruction, credit and noncredit together, across the two years.','ln');o.l.style.marginTop='1.4cqw';
+  o.track=E('div','abs',null,r,'left:10cqw;right:10cqw;top:34cqw;height:.5cqw;background:var(--stage-ink);transform-origin:left');
+  o.ticks=[[0,'$150,000','base'],[8.9,'$172,314','typical'],[100,'$400,000','cap']].map(function(a,i){var d=E('div','abs',null,r,'left:calc(10cqw + '+a[0]+'% * 0.8);top:31.5cqw;transform:translateX('+(i===0?'-85%':i===2?'-15%':'-50%')+');text-align:'+(i===0?'right':i===2?'left':'center')+'');E('div',null,null,d,'width:.35cqw;height:5.5cqw;background:var(--stage-ink);margin:0 auto');E('div',null,a[1],d,'font:900 2.4cqw/1.1 \'Playfair Display\',Georgia,serif;margin-top:.6cqw');E('div','kick',a[2],d,'margin-top:.4cqw;color:var(--stage-muted)');if(i===1){d.style.top='27.2cqw';d.style.transform='translateX(-50%)';d.appendChild(d.firstChild);d.lastChild.style.height='2.8cqw';d.lastChild.style.marginTop='.3cqw';}return d;});
+  o.m=E('div','abs',null,r,'top:22.5cqw;transform:translateX(-50%);text-align:center');E('div','pill','Sample College',o.m,'background:var(--stage-gold);color:var(--stage-ink)');o.mv=E('div',null,'$345,220',o.m,'font:900 3.2cqw/1.2 \'Playfair Display\',Georgia,serif;margin-top:.4cqw');E('div',null,null,o.m,'width:.35cqw;height:3.4cqw;background:var(--stage-gold);margin:.2cqw auto 0');
+  o.b=words(r,'Smaller institutions are brought up to the base. The largest are held at the cap.','ln abs');o.b.style.cssText='left:6cqw;right:6cqw;bottom:4cqw';
+},function(o,t){reveal(o.h.ws,t,0.1,0.08,0.6);reveal(o.l.ws,t,0.8,0.04,0.5);var p=eio(k(t,1.6,2.6));o.track.style.transform='scaleX('+p+')';o.ticks.forEach(function(d,i){d.style.opacity=eo(k(t,2.0+i*0.35,2.7+i*0.35));});
+  var x=back(k(t,4.0,5.6));o.m.style.left='calc(10cqw + '+(78.1*x*0.8)+'%)';o.m.style.opacity=k(t,4.0,4.3);reveal(o.b.ws,t,6.2,0.06,0.5);});
+
+scene(25,32,'Credit and noncredit','Each maximum allocation splits into a credit share and a noncredit share, by the institution’s own instructional mix. Only noncredit outcomes count toward the noncredit share.',function(r,o){
+  o.h=words(r,'Every allocation splits in two','hd');
+  o.a=E('div','big abs','$345,220',r,'left:50%;top:15cqw;transform:translateX(-50%);font-size:9cqw');
+  o.c=E('div','abs',null,r,'top:15cqw;text-align:center;width:36cqw');o.cv=E('div','big blue',null,o.c,'font-size:7cqw');E('div','kick','credit share',o.c,'margin-top:1cqw');
+  o.n=E('div','abs',null,r,'top:15cqw;text-align:center;width:36cqw');o.nv=E('div','big gold',null,o.n,'font-size:7cqw');E('div','kick','noncredit share',o.n,'margin-top:1cqw;color:var(--stage-gold-text)');
+  o.l=words(r,'The split follows each institution’s own instructional mix. <b>Only noncredit outcomes count toward the noncredit share.</b>','ln abs');o.l.style.cssText='left:6cqw;right:6cqw;top:34cqw';
+},function(o,t){reveal(o.h.ws,t,0.1,0.08,0.6);var s=eio(k(t,1.8,3.0));o.a.style.opacity=1-k(t,1.8,2.2);o.a.style.transform='translateX(-50%) scale('+(1+0.15*Math.sin(Math.PI*k(t,1.2,1.8)))+')';
+  o.c.style.left=(32-24*s)+'cqw';o.n.style.left=(32+24*s)+'cqw';o.c.style.opacity=o.n.style.opacity=k(t,1.9,2.3);count(o.cv,t,1.9,3.4,340861);count(o.nv,t,1.9,3.4,4358);reveal(o.l.ws,t,3.8,0.05,0.5);});
+
+scene(32,46,'Three priorities','Three priorities carry the funding. Access, 33 percent, counts applied CPL units from students who start at the CPL Portal, a college CPL landing page, or a batch upload. Completion, 34 percent, counts transcribed CPL units with the counselor step checked. Career attainment, 33 percent, counts CPL units for students who reach a career outcome in EDD wage records, measured by the Chancellor’s Office.',function(r,o){
+  o.h=words(r,'Three priorities carry the funding','hd');
+  var P=[[33,'Access','Applied CPL units from students who start at the CPL Portal, your college’s CPL landing page, or a batch upload.'],[34,'Completion','Transcribed CPL units, with the MAP counselor step checked.'],[33,'Career attainment','CPL units for students who reach a career outcome in EDD wage records, measured by the Chancellor’s Office.']];
+  o.cols=P.map(function(p,i){var d=E('div','abs',null,r,'left:'+(6+i*30)+'cqw;top:13cqw;width:27cqw;padding:2cqw;border-top:.5cqw solid var(--stage-blue);background:var(--surface);border-radius:.4cqw;box-shadow:0 1cqw 2.5cqw -1.5cqw var(--stage-shadow)');
+    var n=E('div','big blue','0%',d,'font-size:6.5cqw');E('div',null,p[1],d,'font:700 2.8cqw/1.1 \'Playfair Display\',Georgia,serif;margin:.8cqw 0 1cqw');E('div','ln',p[2],d,'font-size:1.9cqw');return{d:d,n:n,v:p[0]};});
+},function(o,t){reveal(o.h.ws,t,0.1,0.08,0.6);o.cols.forEach(function(c,i){var a=1.2+i*4,p=back(k(t,a,a+0.9));c.d.style.opacity=k(t,a,a+0.3);c.d.style.transform='translateY('+((1-p)*6)+'cqw) rotate('+((1-p)*(i-1)*4)+'deg)';
+  count(c.n,t,a+0.2,a+1.4,c.v,function(v){return Math.round(v)+'%';});var on=t>=a&&t<a+4;c.d.style.filter=t>=13.2||on||t<a?'none':'saturate(.4) opacity(.55)';});});
+
+scene(46,56,'Targets','Every priority has a target in FTES: 30 semester units of CPL make one FTES, or 45 on a quarter calendar. Sample College’s Access target is 44.3 FTES behind 112,484 dollars. Reach half the target, 22.2 FTES, and it qualifies for 56,242 dollars. Going past the target adds nothing: the share is the ceiling.',function(r,o){
+  o.h=words(r,'Every priority has a target','hd');
+  o.l=words(r,'<b>30 semester units</b> of CPL make one FTES, or 45 on a quarter calendar.','ln');o.l.style.marginTop='1.2cqw';
+  o.card=E('div','abs',null,r,'left:6cqw;right:6cqw;top:19cqw');
+  E('div','kick','Sample College · Access · target 44.3 FTES · $112,484',o.card);
+  o.bar=E('div','bar',null,o.card,'position:relative;margin-top:1.4cqw;height:5cqw');o.fill=E('div','fill',null,o.bar,'background:var(--stage-gold);width:0');
+  o.half=E('div','abs',null,o.bar,'left:50%;top:0;bottom:0;width:.3cqw;background:var(--stage-ink)');
+  o.row=E('div',null,null,o.card,'display:flex;justify-content:space-between;align-items:baseline;margin-top:1.4cqw');
+  o.fte=E('div',null,'0.0 FTES',o.row,'font:900 4.6cqw/1 \'Playfair Display\',Georgia,serif');o.usd=E('div','gold',null,o.row,'font:900 4.6cqw/1 \'Playfair Display\',Georgia,serif');
+  o.cap=E('div','hd abs','',r,'left:6cqw;right:6cqw;bottom:3.5cqw;font-size:3.4cqw');
+},function(o,t){reveal(o.h.ws,t,0.1,0.08,0.6);reveal(o.l.ws,t,0.9,0.05,0.5);fade(o.card,t,2.0,2.6);
+  var f1=eio(k(t,3.0,5.0)),f2=eio(k(t,6.6,7.6)),v=f1*0.5+f2*0.5,over=t>7.6?Math.sin(k(t,7.6,8.4)*Math.PI*3)*(1-k(t,7.6,8.4)):0;
+  o.fill.style.width=(v*100)+'%';o.bar.style.transform='translateX('+(over*0.8)+'cqw)';
+  o.fte.textContent=(44.3*v).toFixed(1)+' FTES';o.usd.textContent=money(112484*v);
+  o.cap.textContent=t<6.4?(t>5.0?'Half the target qualifies for half the share.':''):'The share is the ceiling.';o.cap.style.opacity=t<6.4?k(t,5.0,5.4):k(t,7.6,8.0);});
+
+scene(56,65,'The baseline','Meet the baseline by November 1, 2026: a CPL coordinator assigned and listed in MAP and on the college CPL landing page; local confirmation on file; and at least 75 percent of enrolled veterans’ Joint Services Transcripts uploaded in MAP. Until then, the funding your college demonstrates is held in reserve for it.',function(r,o){
+  o.h=words(r,'Meet the baseline by <span class="blue">November 1, 2026</span>','hd');o.h.style.fontSize='4cqw';
+  var L=['A CPL coordinator assigned and listed in MAP and on your college’s CPL landing page','Local confirmation of participation on file','At least 75% of enrolled veterans’ Joint Services Transcripts uploaded in MAP'];
+  o.rows=L.map(function(s,i){var d=E('div','abs',null,r,'left:6cqw;right:6cqw;top:'+(12+i*7.4)+'cqw;display:flex;gap:2cqw;align-items:center');
+    var n=E('div',null,String(i+1),d,'flex:none;width:4.6cqw;height:4.6cqw;border-radius:50%;display:grid;place-items:center;font:900 2.6cqw/1 \'Playfair Display\',Georgia,serif;border:.3cqw solid var(--stage-ink)');
+    E('div','ln',s,d,'flex:1');var p=E('span','pill','Met',d,'flex:none;background:var(--stage-blue);color:var(--surface)');return{d:d,n:n,p:p};});
+  o.b=words(r,'Until then, the funding your college demonstrates is <b>held in reserve for it</b>.','ln abs');o.b.style.cssText='left:6cqw;right:6cqw;bottom:4cqw';
+},function(o,t){reveal(o.h.ws,t,0.1,0.08,0.6);o.rows.forEach(function(x,i){var a=1.3+i*1.3;fade(x.d,t,a,a+0.5);var m=back(k(t,a+0.7,a+1.2));x.p.style.transform='scale('+m+')';x.p.style.opacity=k(t,a+0.7,a+0.9);var fill=k(t,a+0.7,a+0.9);x.n.style.background=fill>0.5?'var(--stage-blue)':'transparent';x.n.style.color=fill>0.5?'var(--surface)':'var(--stage-ink)';x.n.style.borderColor=fill>0.5?'var(--stage-blue)':'var(--stage-ink)';});reveal(o.b.ws,t,6.0,0.06,0.5);});
+
+scene(65,75,'Timing','The full two-year amount is available from year one. Funding is released twice a year based on cumulative CPL: February and July 2027, then December 2027 and June 2028. What remains after year one carries forward to year two for your college.',function(r,o){
+  o.h=words(r,'Funding arrives in stages','hd');
+  o.line=E('div','abs',null,r,'left:8cqw;right:8cqw;top:22cqw;height:.45cqw;background:var(--stage-ink);transform-origin:left');
+  var N=[[0,'Sep 2026','Model released'],[18,'Nov 2026','Confirmation deadline'],[40,'Feb 2027','Release 1'],[58,'Jul 2027','Release 2'],[80,'Dec 2027','Release 3'],[100,'Jun 2028','Release 4']];
+  o.nodes=N.map(function(n,i){var d=E('div','abs',null,r,'left:calc(8cqw + '+n[0]+'% * 0.84);top:20.6cqw;transform:translateX(-50%);text-align:center;width:14cqw');
+    E('div',null,null,d,'width:3cqw;height:3cqw;border-radius:50%;margin:0 auto;background:'+(i>1?'var(--stage-gold)':'var(--stage-blue)')+';border:.4cqw solid var(--stage-paper)');
+    E('div',null,n[1],d,'font:900 2.3cqw/1.1 \'Playfair Display\',Georgia,serif;margin-top:.8cqw');E('div','ln',n[2],d,'font-size:1.7cqw');if(i%2){d.style.top='11.2cqw';d.insertBefore(d.lastChild,d.firstChild);d.insertBefore(d.lastChild,d.firstChild);}return d;});
+  o.a=words(r,'The <b>full two-year amount</b> is available from year one.','ln abs');o.a.style.cssText='left:6cqw;right:6cqw;top:33cqw';
+  o.b=words(r,'What remains after year one <b>carries forward to year two</b> for your college.','ln abs');o.b.style.cssText='left:6cqw;right:6cqw;top:37.5cqw';
+},function(o,t){reveal(o.h.ws,t,0.1,0.08,0.6);o.line.style.transform='scaleX('+eio(k(t,0.8,3.6))+')';o.nodes.forEach(function(d,i){var a=0.8+i*0.55,p=back(k(t,a,a+0.6));d.style.opacity=k(t,a,a+0.2);d.style.transform='translateX(-50%) scale('+p+')';});reveal(o.a.ws,t,4.6,0.05,0.5);reveal(o.b.ws,t,6.4,0.05,0.5);});
+
+scene(75,84,'Support','You won’t do this alone. Recommended strategies sit under every priority, a CPL Initiative help team supports every college, and detailed guidance will follow.',function(r,o){
+  o.h=words(r,'You won’t do this alone','hd');
+  o.k=E('p','kick','Recommended strategies under every priority',r,'position:absolute;left:6cqw;top:14cqw');
+  o.win=E('div','abs',null,r,'left:6cqw;right:6cqw;top:17.5cqw;height:5cqw;overflow:hidden;border-left:.6cqw solid var(--stage-gold);padding-left:2cqw');
+  o.list=E('div',null,null,o.win,'position:absolute;left:2cqw;right:0;top:0');
+  ['Adopt or adapt the statewide credit recommendations','Route your top 15 ACE credit recommendations to faculty','Configure your college’s CPL landing page and request email','Obtain Joint Services Transcripts for every enrolled military student','Batch upload transcribed CPL to MAP','Screen near-completers for CPL that would finish their award'].forEach(function(s){E('div',null,s,o.list,'height:5cqw;display:flex;align-items:center;font:700 2.9cqw/1.1 \'Playfair Display\',Georgia,serif')});
+  o.a=words(r,'A <b>CPL Initiative help team</b> supports every college.','ln abs');o.a.style.cssText='left:6cqw;right:6cqw;top:27cqw;font-size:3cqw';
+  o.b=words(r,'<b>Detailed guidance</b> will follow.','ln abs');o.b.style.cssText='left:6cqw;right:6cqw;top:32.5cqw;font-size:3cqw';
+},function(o,t){reveal(o.h.ws,t,0.1,0.08,0.6);fade(o.k,t,0.8,1.3);fade(o.win,t,0.9,1.4);var pos=0;for(var i=1;i<6;i++)pos+=eio(k(t,1.2+i*0.95,1.2+i*0.95+0.45));o.list.style.transform='translateY('+(-5*pos)+'cqw)';reveal(o.a.ws,t,5.2,0.06,0.5);reveal(o.b.ws,t,6.6,0.08,0.5);});
+
+scene(84,90,'Find your college','Find your college’s maximum allocation, targets, and progress on the CPL funding model page.',function(r,o){
+  o.logo=E('img','logo',null,r,'top:16%');o.logo.src=LOGO;o.logo.alt='California Community Colleges Credit for Prior Learning Initiative';
+  o.t=words(r,'Find your college on the <span class="blue">funding model page</span>','hd');o.t.style.cssText='position:absolute;left:0;right:0;top:57%;text-align:center;font-size:4.2cqw';
+  o.s=E('p',null,null,r,'position:absolute;left:0;right:0;top:72%;text-align:center;margin:0');var a=E('a',null,'Read the full explainer: cpl-initiative.github.io/cpl-project-tracker/funding-model',o.s,'font:700 2cqw/1.2 \'Source Sans 3\',Arial,sans-serif;color:var(--stage-blue);position:relative;z-index:6');a.href=EXPLAINER;a.target='_blank';a.rel='noopener';
+},function(o,t){o.logo.style.opacity=eo(k(t,0.1,1.0));reveal(o.t.ws,t,0.9,0.1,0.6);fade(o.s,t,2.4,3.0);});
+
+/* ---- render ---- */
+var T=0,playing=false,soundOn=true,t0=0,base=0,raf=0,scrubbing=false,lastSaid=-1;
+function render(){S.forEach(function(o,i){var on=T>=o.t0-0.001&&(T<o.t1||(i===S.length-1&&T<=DUR));var fo=i<S.length-1?cl((o.t1-T)/0.45):1;o.root.style.visibility=on?'visible':'hidden';if(on){o.root.style.opacity=fo;o.u(o,T-o.t0);if(i!==lastSaid){lastSaid=i;said.textContent=o.text;}}});}
+/* ---- music: celebratory, cinematic ---- */
+var Music=(function(){
+  var B=0.6,ctx=null,master=null,send=null,bus=null,idx=0,ev=[],noise=null;
+  function mtof(m){return 440*Math.pow(2,(m-69)/12);}
+  function compose(){
+    var e=[],bar=4*B,bars=Math.floor((DUR-4)/bar);
+    var CH=[[48,[60,64,67,72]],[43,[59,62,67,71]],[45,[60,64,69,72]],[41,[60,65,69,72]]];
+    var FAN=[[0,67,0.33],[0.33,67,0.33],[0.66,67,0.34],[1,72,1.5],[2.5,71,0.5],[3,69,0.5],[3.5,71,0.5]];
+    for(var b=0;b<bars;b++){
+      var c=CH[b%4],t=b*bar,lvl=Math.min(1,0.45+b/22);
+      e.push({t:t,k:'str',ms:c[1],d:bar,g:0.011+0.011*lvl});e.push({t:t,k:'str',ms:[c[0]-12,c[0]],d:bar,g:0.022});
+      for(var i=0;i<8;i++)e.push({t:t+i*B/2,k:'pulse',m:c[0]+12,g:(i%2?0.045:0.075)*lvl});
+      e.push({t:t,k:'timp',m:c[0]-12,g:0.55*lvl});e.push({t:t+2*B,k:'timp',m:c[0]-12,g:0.35*lvl});
+      if(b>=2&&b%4===0)FAN.forEach(function(n){e.push({t:t+n[0]*B,k:'brass',m:n[1],d:n[2]*B,g:0.05*lvl});});
+      if(b>=2&&b%4===2){e.push({t:t,k:'brass',m:c[1][3],d:2*B,g:0.045*lvl});e.push({t:t+2*B,k:'brass',m:c[1][2]+12,d:2*B,g:0.045*lvl});}
+      if(b>=6)for(var j=0;j<4;j++)e.push({t:t+j*B,k:'bell',m:c[1][j]+12,g:0.05*lvl});
+    }
+    var end=bars*bar;
+    for(var r=0;r<12;r++)e.push({t:end-1.2+r*0.1,k:'timp',m:36,g:0.15+r*0.04});
+    e.push({t:end,k:'str',ms:[36,48,55,60,64,67,72,76],d:3.4,g:0.02});e.push({t:end,k:'crash',g:0.25});
+    [[0,72,0.3],[0.3,76,0.3],[0.6,79,2.6]].forEach(function(n){e.push({t:end+n[0],k:'brass',m:n[1],d:n[2],g:0.07});});
+    [6,15,25,32,46,56,65,75,84].forEach(function(s){e.push({t:s-1.2,k:'swell',g:0.12});e.push({t:s,k:'crash',g:0.12});});
+    e.sort(function(a,b){return a.t-b.t;});return e;
+  }
+  function env(a,t,p,at,r){a.gain.setValueAtTime(0.0001,t);a.gain.exponentialRampToValueAtTime(p,t+at);a.gain.exponentialRampToValueAtTime(0.0001,t+r);}
+  function osc(type,f,t,stop){var o=ctx.createOscillator();o.type=type;o.frequency.value=f;o.start(t);o.stop(stop);return o;}
+  function str(ms,t,d,g){ms.forEach(function(m){[-9,0,9].forEach(function(det){var o=osc('sawtooth',mtof(m),t,t+d+1.2),a=ctx.createGain(),lp=ctx.createBiquadFilter();o.detune.value=det;lp.type='lowpass';lp.frequency.value=m<50?420:1800;a.gain.setValueAtTime(0.0001,t);a.gain.linearRampToValueAtTime(g,t+0.25);a.gain.setValueAtTime(g,t+d*0.9);a.gain.linearRampToValueAtTime(0.0001,t+d+1.1);o.connect(lp);lp.connect(a);a.connect(bus);});});}
+  function pulse(m,t,g){var o=osc('sawtooth',mtof(m),t,t+0.25),a=ctx.createGain(),lp=ctx.createBiquadFilter();lp.type='lowpass';lp.frequency.value=900;env(a,t,g,0.008,0.22);o.connect(lp);lp.connect(a);a.connect(bus);}
+  function timp(m,t,g){var o=osc('sine',mtof(m)*1.5,t,t+1.2),a=ctx.createGain();o.frequency.setValueAtTime(mtof(m)*1.5,t);o.frequency.exponentialRampToValueAtTime(mtof(m),t+0.12);env(a,t,g,0.004,1.1);o.connect(a);a.connect(bus);}
+  function brass(m,t,d,g){[0,7,-12].forEach(function(det,i){var o=osc('sawtooth',mtof(m),t,t+d+0.5),a=ctx.createGain(),lp=ctx.createBiquadFilter();o.detune.value=i===1?6:0;if(det<0)o.frequency.value=mtof(m-12);lp.type='lowpass';lp.frequency.setValueAtTime(600,t);lp.frequency.linearRampToValueAtTime(2600,t+0.08);lp.frequency.linearRampToValueAtTime(1500,t+d);var gg=i===2?g*0.6:g;a.gain.setValueAtTime(0.0001,t);a.gain.linearRampToValueAtTime(gg,t+0.04);a.gain.setValueAtTime(gg,t+d*0.85);a.gain.linearRampToValueAtTime(0.0001,t+d+0.35);o.connect(lp);lp.connect(a);a.connect(bus);});}
+  function bell(m,t,g){var o=osc('sine',mtof(m),t,t+1.2),m2=osc('sine',mtof(m)*3.5,t,t+1.2),mg=ctx.createGain(),a=ctx.createGain();mg.gain.setValueAtTime(mtof(m)*0.8,t);mg.gain.exponentialRampToValueAtTime(1,t+0.3);m2.connect(mg);mg.connect(o.frequency);env(a,t,g,0.005,1.1);o.connect(a);a.connect(bus);}
+  function nz(t,d){var s=ctx.createBufferSource();s.buffer=noise;s.start(t);s.stop(t+d);return s;}
+  function crash(t,g){var s=nz(t,2.6),hp=ctx.createBiquadFilter(),a=ctx.createGain();hp.type='highpass';hp.frequency.value=5000;env(a,t,g,0.004,2.4);s.connect(hp);hp.connect(a);a.connect(bus);}
+  function swell(t,g){var s=nz(t,1.3),bp=ctx.createBiquadFilter(),a=ctx.createGain();bp.type='bandpass';bp.Q.value=1.2;bp.frequency.setValueAtTime(800,t);bp.frequency.exponentialRampToValueAtTime(7000,t+1.2);a.gain.setValueAtTime(0.0001,t);a.gain.exponentialRampToValueAtTime(g,t+1.15);a.gain.linearRampToValueAtTime(0.0001,t+1.25);s.connect(bp);bp.connect(a);a.connect(bus);}
+  function play(e,t){var f={str:function(){str(e.ms,t,e.d,e.g);},pulse:function(){pulse(e.m,t,e.g);},timp:function(){timp(e.m,t,e.g);},brass:function(){brass(e.m,t,e.d,e.g);},bell:function(){bell(e.m,t,e.g);},crash:function(){crash(t,e.g);},swell:function(){swell(t,e.g);}}[e.k];if(f)f();}
+  function ensure(){if(ctx)return true;var AC=window.AudioContext||window.webkitAudioContext;if(!AC)return false;try{ctx=new AC();}catch(x){return false;}
+    master=ctx.createGain();master.gain.value=0.8;var comp=ctx.createDynamicsCompressor();comp.threshold.value=-16;comp.ratio.value=4;
+    var len=Math.floor(ctx.sampleRate*2.6),b=ctx.createBuffer(2,len,ctx.sampleRate);for(var c=0;c<2;c++){var d=b.getChannelData(c);for(var i=0;i<len;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/len,2.4);}
+    var verb=ctx.createConvolver();verb.buffer=b;noise=ctx.createBuffer(1,ctx.sampleRate*3,ctx.sampleRate);var nd=noise.getChannelData(0);for(var j=0;j<nd.length;j++)nd[j]=Math.random()*2-1;
+    send=ctx.createGain();send.gain.value=0.3;send.connect(verb);verb.connect(master);master.connect(comp);comp.connect(ctx.destination);ev=compose();return true;}
+  function drop(){if(!bus)return;var o=bus;bus=null;try{o.gain.setTargetAtTime(0,ctx.currentTime,0.05);}catch(x){}setTimeout(function(){try{o.disconnect();}catch(x){}},600);}
+  function fresh(){drop();bus=ctx.createGain();bus.connect(master);bus.connect(send);}
+  function find(T){var i=0;while(i<ev.length&&ev[i].t<T-0.01)i++;return i;}
+  function wav(buf){var n=buf.length,ch=2,dv=new DataView(new ArrayBuffer(44+n*ch*2)),w=function(o,s){for(var i=0;i<s.length;i++)dv.setUint8(o+i,s.charCodeAt(i));};w(0,'RIFF');dv.setUint32(4,36+n*ch*2,true);w(8,'WAVE');w(12,'fmt ');dv.setUint32(16,16,true);dv.setUint16(20,1,true);dv.setUint16(22,ch,true);dv.setUint32(24,buf.sampleRate,true);dv.setUint32(28,buf.sampleRate*ch*2,true);dv.setUint16(32,ch*2,true);dv.setUint16(34,16,true);w(36,'data');dv.setUint32(40,n*ch*2,true);var L=buf.getChannelData(0),R=buf.getChannelData(1),o=44;for(var i=0;i<n;i++){dv.setInt16(o,Math.max(-1,Math.min(1,L[i]))*32767,true);dv.setInt16(o+2,Math.max(-1,Math.min(1,R[i]))*32767,true);o+=4;}var u=new Uint8Array(dv.buffer),s='';for(var j=0;j<u.length;j+=32768)s+=String.fromCharCode.apply(null,u.subarray(j,j+32768));return btoa(s);}
+  return{offline:function(){var off=new OfflineAudioContext(2,44100*(DUR+3),44100);ctx=null;var AC0=window.AudioContext;window.AudioContext=function(){return off;};ensure();window.AudioContext=AC0;fresh();ev.forEach(function(e){play(e,e.t+0.05);});return ctx.startRendering().then(wav);},start:function(T){if(!ensure())return;if(ctx.state!=='running')ctx.resume().catch(function(){});if(!bus){fresh();idx=find(T);}},
+    seek:function(T){if(!ctx)return;fresh();idx=find(T);},pause:function(){if(ctx&&ctx.state==='running')ctx.suspend().catch(function(){});},silence:function(){if(ctx)drop();},
+    schedule:function(T){if(!ctx||!bus)return;var now=ctx.currentTime;while(idx<ev.length&&ev[idx].t<T+0.3){var e=ev[idx++],dt=e.t-T;if(dt<-0.05)continue;play(e,now+Math.max(0.01,dt));}}};
+})();
+/* ---- player ---- */
+function fmt(t){var s=Math.floor(t+1e-6);return Math.floor(s/60)+':'+String(s%60).padStart(2,'0');}
+var chapWrap=$('chapters'),chaps=[];
+S.forEach(function(o){var li=E('li',null,null,chapWrap),b=E('button','chap','<span class="tc">'+fmt(o.t0)+'</span><span class="nm">'+o.name+'</span><span class="tx">'+o.text+'</span>',li);b.type='button';b.addEventListener('click',function(){seek(playing?o.t0:Math.min(DUR,o.t1-0.6));});chaps.push({b:b,t:o.t0});});
+var btnPlay=$('play'),bigplay=$('bigplay'),pos=$('pos'),time=$('time'),btnSound=$('sound');
+function ui(){btnPlay.textContent=playing?'Pause':'Play';bigplay.hidden=playing||!(T<=0.001||T>=DUR-0.01);bigplay.textContent=T>=DUR-0.01?'Play again':'Play the guide';time.textContent=fmt(T)+' / '+fmt(DUR);if(!scrubbing)pos.value=T.toFixed(2);pos.setAttribute('aria-valuetext',Math.round(T)+' of '+DUR+' seconds');btnSound.textContent=soundOn?'Mute':'Unmute';
+  var c=0;chaps.forEach(function(o,i){if(o.t<=T+1e-6)c=i;});chaps.forEach(function(o,i){if(i===c)o.b.setAttribute('aria-current','true');else o.b.removeAttribute('aria-current');});}
+function tick(){if(!playing)return;T=base+(performance.now()/1000-t0);if(T>=DUR){T=DUR;playing=false;clearInterval(raf);}render();if(soundOn&&playing)Music.schedule(T);ui();}
+function play(){if(T>=DUR-0.01)seek(0);playing=true;if(soundOn)Music.start(T);base=T;t0=performance.now()/1000;clearInterval(raf);raf=setInterval(tick,33);ui();}
+function pause(){playing=false;clearInterval(raf);Music.pause();ui();}
+function seek(t){T=Math.max(0,Math.min(DUR,t));Music.seek(T);base=T;t0=performance.now()/1000;render();ui();}
+btnPlay.addEventListener('click',function(){playing?pause():play();});
+bigplay.addEventListener('click',play);
+$('replay').addEventListener('click',function(){seek(0);play();});
+btnSound.addEventListener('click',function(){soundOn=!soundOn;if(!soundOn)Music.silence();else if(playing)Music.start(T);ui();});
+pos.addEventListener('input',function(){seek(parseFloat(pos.value));});
+pos.addEventListener('pointerdown',function(){scrubbing=true;});window.addEventListener('pointerup',function(){scrubbing=false;});
+document.addEventListener('visibilitychange',function(){if(document.hidden&&playing)pause();});
+var m=/^#t(\d+)$/.exec(location.hash||'');if(m)T=parseFloat(m[1]);
+render();ui();
+window.__film={seek:function(t){T=t;render();},audio:function(){return Music.offline();}};
+})();
+</script>
