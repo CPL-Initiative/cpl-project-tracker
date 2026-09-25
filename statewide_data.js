@@ -2811,7 +2811,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Business and Management",
       "sector": "Business & Entrepreneurship",
-      "cip_sector": "52",
+      "cip_sector": "43",
       "top_codes": [
         "10",
         "103",
@@ -5634,7 +5634,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Social Sciences",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "05",
+      "cip_sector": "54",
       "top_codes": [
         "135"
       ],
@@ -6322,7 +6322,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Social Sciences",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "05",
+      "cip_sector": "54",
       "top_codes": [
         "135"
       ],
@@ -6843,7 +6843,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Standardized Assessment",
       "discipline": "Social Sciences",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "05",
+      "cip_sector": "54",
       "top_codes": [
         "135"
       ],
@@ -7015,7 +7015,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Standardized Assessment",
       "discipline": "Social Sciences",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "05",
+      "cip_sector": "54",
       "top_codes": [
         "135"
       ],
@@ -7187,7 +7187,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Standardized Assessment",
       "discipline": "Social Sciences",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "05",
+      "cip_sector": "54",
       "top_codes": [
         "135"
       ],
@@ -7359,7 +7359,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Standardized Assessment",
       "discipline": "Social Sciences",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "05",
+      "cip_sector": "54",
       "top_codes": [
         "135"
       ],
@@ -8766,7 +8766,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Family and Consumer Sciences",
       "sector": "Retail, Hospitality & Tourism",
-      "cip_sector": "",
+      "cip_sector": "19",
       "top_codes": [
         "106"
       ],
@@ -8954,7 +8954,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Family and Consumer Sciences",
       "sector": "Retail, Hospitality & Tourism",
-      "cip_sector": "",
+      "cip_sector": "19",
       "top_codes": [
         "106"
       ],
@@ -9306,7 +9306,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Family and Consumer Sciences",
       "sector": "Retail, Hospitality & Tourism",
-      "cip_sector": "",
+      "cip_sector": "19",
       "top_codes": [
         "106"
       ],
@@ -9489,7 +9489,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Family and Consumer Sciences",
       "sector": "Retail, Hospitality & Tourism",
-      "cip_sector": "",
+      "cip_sector": "19",
       "top_codes": [
         "106"
       ],
@@ -10008,7 +10008,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Family and Consumer Sciences",
       "sector": "Retail, Hospitality & Tourism",
-      "cip_sector": "",
+      "cip_sector": "19",
       "top_codes": [
         "106"
       ],
@@ -10387,7 +10387,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Social Sciences",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "54",
+      "cip_sector": "45",
       "top_codes": [
         "360"
       ],
@@ -10909,7 +10909,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Standardized Assessment",
       "discipline": "Social Sciences",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "05",
+      "cip_sector": "54",
       "top_codes": [
         "135"
       ],
@@ -11079,7 +11079,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Social Sciences",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "05",
+      "cip_sector": "54",
       "top_codes": [
         "135"
       ],
@@ -11249,7 +11249,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Social Sciences",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "05",
+      "cip_sector": "54",
       "top_codes": [
         "135"
       ],
@@ -12269,7 +12269,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Social Sciences",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "05",
+      "cip_sector": "54",
       "top_codes": [
         "135"
       ],
@@ -12779,7 +12779,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Social Sciences",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "05",
+      "cip_sector": "54",
       "top_codes": [
         "135"
       ],
@@ -12949,7 +12949,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Social Sciences",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "05",
+      "cip_sector": "54",
       "top_codes": [
         "135"
       ],
@@ -16134,7 +16134,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Social Sciences",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "05",
+      "cip_sector": "54",
       "top_codes": [
         "135"
       ],
@@ -17708,7 +17708,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Family and Consumer Sciences",
       "sector": "Retail, Hospitality & Tourism",
-      "cip_sector": "",
+      "cip_sector": "19",
       "top_codes": [
         "106"
       ],
@@ -17888,7 +17888,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Family and Consumer Sciences",
       "sector": "Retail, Hospitality & Tourism",
-      "cip_sector": "",
+      "cip_sector": "19",
       "top_codes": [
         "106"
       ],
@@ -18068,7 +18068,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Family and Consumer Sciences",
       "sector": "Retail, Hospitality & Tourism",
-      "cip_sector": "",
+      "cip_sector": "19",
       "top_codes": [
         "106"
       ],
@@ -18251,7 +18251,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Family and Consumer Sciences",
       "sector": "Retail, Hospitality & Tourism",
-      "cip_sector": "",
+      "cip_sector": "19",
       "top_codes": [
         "106"
       ],
@@ -18470,7 +18470,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Social Sciences",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "54",
+      "cip_sector": "45",
       "top_codes": [
         "360"
       ],
@@ -18974,7 +18974,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Family and Consumer Sciences",
       "sector": "Retail, Hospitality & Tourism",
-      "cip_sector": "",
+      "cip_sector": "19",
       "top_codes": [
         "106"
       ],
@@ -20990,7 +20990,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Social Sciences",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "54",
+      "cip_sector": "45",
       "top_codes": [
         "360"
       ],
@@ -23169,7 +23169,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Family and Consumer Sciences",
       "sector": "Retail, Hospitality & Tourism",
-      "cip_sector": "",
+      "cip_sector": "19",
       "top_codes": [
         "106"
       ],
@@ -23844,7 +23844,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Family and Consumer Sciences",
       "sector": "Retail, Hospitality & Tourism",
-      "cip_sector": "",
+      "cip_sector": "19",
       "top_codes": [
         "106"
       ],
@@ -24043,7 +24043,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Family and Consumer Sciences",
       "sector": "Retail, Hospitality & Tourism",
-      "cip_sector": "",
+      "cip_sector": "19",
       "top_codes": [
         "106"
       ],
@@ -24242,7 +24242,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Family and Consumer Sciences",
       "sector": "Retail, Hospitality & Tourism",
-      "cip_sector": "",
+      "cip_sector": "19",
       "top_codes": [
         "106",
         "279"
@@ -24460,7 +24460,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Family and Consumer Sciences",
       "sector": "Retail, Hospitality & Tourism",
-      "cip_sector": "",
+      "cip_sector": "19",
       "top_codes": [
         "106"
       ],
@@ -24659,7 +24659,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Standardized Assessment",
       "discipline": "Social Sciences",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "05",
+      "cip_sector": "54",
       "top_codes": [
         "135"
       ],
@@ -25327,7 +25327,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Standardized Assessment",
       "discipline": "Social Sciences",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "05",
+      "cip_sector": "54",
       "top_codes": [
         "135"
       ],
@@ -25499,7 +25499,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Standardized Assessment",
       "discipline": "Social Sciences",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "05",
+      "cip_sector": "54",
       "top_codes": [
         "135"
       ],
@@ -25833,7 +25833,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Social Sciences",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "05",
+      "cip_sector": "54",
       "top_codes": [
         "135"
       ],
@@ -26000,7 +26000,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Social Sciences",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "54",
+      "cip_sector": "45",
       "top_codes": [
         "360"
       ],
@@ -27179,7 +27179,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Standardized Assessment",
       "discipline": "Social Sciences",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "05",
+      "cip_sector": "54",
       "top_codes": [
         "135"
       ],
@@ -27346,7 +27346,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Standardized Assessment",
       "discipline": "Social Sciences",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "05",
+      "cip_sector": "54",
       "top_codes": [
         "135"
       ],
@@ -29923,7 +29923,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Standardized Assessment",
       "discipline": "Social Sciences",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "54",
+      "cip_sector": "45",
       "top_codes": [
         "360"
       ],
@@ -30089,7 +30089,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Standardized Assessment",
       "discipline": "Social Sciences",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "54",
+      "cip_sector": "45",
       "top_codes": [
         "360"
       ],
@@ -30587,7 +30587,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Standardized Assessment",
       "discipline": "Social Sciences",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "54",
+      "cip_sector": "45",
       "top_codes": [
         "360"
       ],
@@ -31368,7 +31368,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Standardized Assessment",
       "discipline": "Social Sciences",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "54",
+      "cip_sector": "45",
       "top_codes": [
         "360"
       ],
@@ -49720,7 +49720,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -49881,7 +49881,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -50042,7 +50042,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -50203,7 +50203,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -50364,7 +50364,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -50525,7 +50525,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -50686,7 +50686,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -57868,7 +57868,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Standardized Assessment",
       "discipline": "Social Sciences",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "05",
+      "cip_sector": "54",
       "top_codes": [
         "135"
       ],
@@ -83574,7 +83574,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189",
         "277",
@@ -86305,7 +86305,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Health",
       "sector": "Health",
-      "cip_sector": "31",
+      "cip_sector": "51",
       "top_codes": [
         "103",
         "153",
@@ -109252,7 +109252,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Health",
       "sector": "Health",
-      "cip_sector": "31",
+      "cip_sector": "51",
       "top_codes": [
         "103",
         "153",
@@ -109549,7 +109549,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "47",
+      "cip_sector": "43",
       "top_codes": [
         "130",
         "58"
@@ -113382,7 +113382,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Agriculture and Natural Resources",
       "sector": "Agriculture, Water & Environmental Technologies",
-      "cip_sector": "",
+      "cip_sector": "01",
       "top_codes": [
         "160"
       ],
@@ -113525,7 +113525,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Agriculture and Natural Resources",
       "sector": "Agriculture, Water & Environmental Technologies",
-      "cip_sector": "",
+      "cip_sector": "01",
       "top_codes": [
         "160"
       ],
@@ -114144,7 +114144,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Physical Sciences",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "40",
       "top_codes": [
         "123"
       ],
@@ -114570,7 +114570,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Other",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "44",
+      "cip_sector": "05",
       "top_codes": [
         "127",
         "239"
@@ -118542,7 +118542,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Standardized Assessment",
       "discipline": "Physical Sciences",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "40",
       "top_codes": [
         "123"
       ],
@@ -121993,7 +121993,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "ICT/Digital Media",
-      "cip_sector": "",
+      "cip_sector": "11",
       "top_codes": [
         "48"
       ],
@@ -122131,7 +122131,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "ICT/Digital Media",
-      "cip_sector": "",
+      "cip_sector": "11",
       "top_codes": [
         "48"
       ],
@@ -122269,7 +122269,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "ICT/Digital Media",
-      "cip_sector": "",
+      "cip_sector": "11",
       "top_codes": [
         "48"
       ],
@@ -122407,7 +122407,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "ICT/Digital Media",
-      "cip_sector": "",
+      "cip_sector": "11",
       "top_codes": [
         "48"
       ],
@@ -122545,7 +122545,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "ICT/Digital Media",
-      "cip_sector": "",
+      "cip_sector": "11",
       "top_codes": [
         "48"
       ],
@@ -134339,7 +134339,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Fine and Applied Arts",
       "sector": "ICT/Digital Media",
-      "cip_sector": "",
+      "cip_sector": "50",
       "top_codes": [
         "79"
       ],
@@ -134613,7 +134613,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Health",
       "sector": "Health",
-      "cip_sector": "31",
+      "cip_sector": "51",
       "top_codes": [
         "103",
         "89"
@@ -137203,7 +137203,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Other",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "47",
+      "cip_sector": "15",
       "top_codes": [
         "46",
         "58"
@@ -138343,7 +138343,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Standardized Assessment",
       "discipline": "Humanities (Letters)",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "05",
+      "cip_sector": "09",
       "top_codes": [
         "115",
         "135"
@@ -142345,7 +142345,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Standardized Assessment",
       "discipline": "Humanities (Letters)",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "05",
+      "cip_sector": "09",
       "top_codes": [
         "115",
         "135"
@@ -143950,7 +143950,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Standardized Assessment",
       "discipline": "Humanities (Letters)",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "05",
+      "cip_sector": "09",
       "top_codes": [
         "115",
         "135"
@@ -144833,7 +144833,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Standardized Assessment",
       "discipline": "Humanities (Letters)",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "05",
+      "cip_sector": "09",
       "top_codes": [
         "115",
         "135"
@@ -158529,7 +158529,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189",
         "201",
@@ -170323,7 +170323,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "31",
+      "cip_sector": "43",
       "top_codes": [
         "130",
         "132",
@@ -172890,7 +172890,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Health",
       "sector": "Health",
-      "cip_sector": "",
+      "cip_sector": "51",
       "top_codes": [
         "89"
       ],
@@ -173894,7 +173894,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Health",
       "sector": "Health",
-      "cip_sector": "",
+      "cip_sector": "51",
       "top_codes": [
         "89"
       ],
@@ -174405,7 +174405,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Military",
       "discipline": "Health",
       "sector": "Health",
-      "cip_sector": "",
+      "cip_sector": "51",
       "top_codes": [
         "89"
       ],
@@ -175031,7 +175031,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Health",
       "sector": "Health",
-      "cip_sector": "",
+      "cip_sector": "51",
       "top_codes": [
         "89"
       ],
@@ -175158,7 +175158,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Health",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "31",
+      "cip_sector": "43",
       "top_codes": [
         "103",
         "130",
@@ -176104,7 +176104,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -176237,7 +176237,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -176370,7 +176370,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -176493,7 +176493,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -176616,7 +176616,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -176882,7 +176882,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -177005,7 +177005,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -177128,7 +177128,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -177251,7 +177251,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -177374,7 +177374,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -177497,7 +177497,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -177743,7 +177743,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -177866,7 +177866,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -177989,7 +177989,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Other",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -178112,7 +178112,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Other",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -178235,7 +178235,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -178358,7 +178358,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -178481,7 +178481,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -178604,7 +178604,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -178727,7 +178727,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -178850,7 +178850,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -178973,7 +178973,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -179096,7 +179096,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -179219,7 +179219,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -179342,7 +179342,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -179465,7 +179465,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -179588,7 +179588,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -179711,7 +179711,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -179834,7 +179834,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -179957,7 +179957,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -180080,7 +180080,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -180203,7 +180203,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -180326,7 +180326,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -180449,7 +180449,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -180572,7 +180572,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -180695,7 +180695,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -180823,7 +180823,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -180951,7 +180951,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -181079,7 +181079,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -181207,7 +181207,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -181335,7 +181335,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -181463,7 +181463,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -181591,7 +181591,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -181715,7 +181715,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -181845,7 +181845,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -181975,7 +181975,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -182104,7 +182104,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -182350,7 +182350,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Other",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -182473,7 +182473,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -182596,7 +182596,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -182734,7 +182734,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -182857,7 +182857,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -182980,7 +182980,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -183103,7 +183103,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -183226,7 +183226,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -183349,7 +183349,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -183472,7 +183472,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -183595,7 +183595,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -183718,7 +183718,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -183841,7 +183841,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -183964,7 +183964,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -184087,7 +184087,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -184210,7 +184210,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -184333,7 +184333,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -185150,7 +185150,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -185313,7 +185313,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -185472,7 +185472,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -185617,7 +185617,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -185771,7 +185771,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -185937,7 +185937,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -186074,7 +186074,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -186220,7 +186220,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -186371,7 +186371,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130",
         "131"
@@ -186562,7 +186562,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -186684,7 +186684,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130",
         "132"
@@ -186827,7 +186827,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130",
         "132"
@@ -186965,7 +186965,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -187237,7 +187237,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -187507,7 +187507,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -187675,7 +187675,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -187843,7 +187843,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -188019,7 +188019,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -188337,7 +188337,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -188655,7 +188655,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -188815,7 +188815,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -188975,7 +188975,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -189126,7 +189126,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -189257,7 +189257,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -189378,7 +189378,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -189499,7 +189499,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -189620,7 +189620,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -189741,7 +189741,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -189862,7 +189862,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -189992,7 +189992,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -190139,7 +190139,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -190265,7 +190265,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -190386,7 +190386,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -190507,7 +190507,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -190633,7 +190633,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -190759,7 +190759,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -190880,7 +190880,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -191001,7 +191001,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -191124,7 +191124,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -191251,7 +191251,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -191372,7 +191372,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -191493,7 +191493,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -191614,7 +191614,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -191735,7 +191735,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -191862,7 +191862,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -192007,7 +192007,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -192152,7 +192152,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -192297,7 +192297,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -192442,7 +192442,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -192592,7 +192592,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -192742,7 +192742,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -192889,7 +192889,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -193050,7 +193050,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -193195,7 +193195,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -193334,7 +193334,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -193455,7 +193455,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -193576,7 +193576,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -193697,7 +193697,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -193818,7 +193818,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -193939,7 +193939,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -194060,7 +194060,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -194181,7 +194181,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Other",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -194302,7 +194302,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -194423,7 +194423,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -194546,7 +194546,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -194678,7 +194678,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -194803,7 +194803,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -194936,7 +194936,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -195057,7 +195057,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -195178,7 +195178,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -195299,7 +195299,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -195435,7 +195435,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -195692,7 +195692,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -195813,7 +195813,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -195934,7 +195934,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -196056,7 +196056,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -196188,7 +196188,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -196309,7 +196309,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -196430,7 +196430,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -196551,7 +196551,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -196672,7 +196672,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -196793,7 +196793,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -196914,7 +196914,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -197035,7 +197035,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -197156,7 +197156,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -197277,7 +197277,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -197398,7 +197398,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -197519,7 +197519,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -197640,7 +197640,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -197761,7 +197761,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -197882,7 +197882,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -198003,7 +198003,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -198134,7 +198134,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -198255,7 +198255,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -198376,7 +198376,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -198497,7 +198497,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -198618,7 +198618,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -198739,7 +198739,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -198860,7 +198860,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -199102,7 +199102,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -199352,7 +199352,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -199473,7 +199473,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -199594,7 +199594,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -199715,7 +199715,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -199836,7 +199836,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -199957,7 +199957,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -200078,7 +200078,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -200199,7 +200199,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -200320,7 +200320,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -200683,7 +200683,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -200804,7 +200804,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130",
         "132"
@@ -200941,7 +200941,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130",
         "132"
@@ -201078,7 +201078,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -201199,7 +201199,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -201320,7 +201320,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -201441,7 +201441,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -201562,7 +201562,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -201683,7 +201683,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -201804,7 +201804,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -201925,7 +201925,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -202046,7 +202046,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -202167,7 +202167,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -202288,7 +202288,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -202409,7 +202409,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -202530,7 +202530,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -202651,7 +202651,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -202772,7 +202772,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -202893,7 +202893,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -203014,7 +203014,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -203135,7 +203135,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -203256,7 +203256,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -203377,7 +203377,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -203498,7 +203498,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -203619,7 +203619,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -203740,7 +203740,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -203861,7 +203861,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Military",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -203982,7 +203982,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -204103,7 +204103,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -204224,7 +204224,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -204345,7 +204345,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -204466,7 +204466,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -204587,7 +204587,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -204708,7 +204708,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -204829,7 +204829,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -204950,7 +204950,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -205192,7 +205192,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -205313,7 +205313,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -205435,7 +205435,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -205562,7 +205562,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -205683,7 +205683,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -205804,7 +205804,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -205925,7 +205925,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -206046,7 +206046,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -206167,7 +206167,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -206288,7 +206288,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -206409,7 +206409,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -206970,7 +206970,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -207146,7 +207146,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -207346,7 +207346,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -207539,7 +207539,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -207718,7 +207718,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130",
         "131"
@@ -207874,7 +207874,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -208199,7 +208199,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -208329,7 +208329,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -208459,7 +208459,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -208593,7 +208593,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -208741,7 +208741,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -208895,7 +208895,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -209043,7 +209043,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -209178,7 +209178,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -209310,7 +209310,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -209446,7 +209446,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -209606,7 +209606,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -209738,7 +209738,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -209874,7 +209874,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -210004,7 +210004,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -210156,7 +210156,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -210294,7 +210294,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -210432,7 +210432,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -212688,7 +212688,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -212889,7 +212889,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130",
         "132"
@@ -213050,7 +213050,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -213223,7 +213223,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -213370,7 +213370,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130",
         "132"
@@ -213540,7 +213540,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -213697,7 +213697,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -213836,7 +213836,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130",
         "132"
@@ -215650,7 +215650,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -215870,7 +215870,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "66"
       ],
@@ -216084,7 +216084,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -216270,7 +216270,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -216464,7 +216464,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -216642,7 +216642,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -217255,7 +217255,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Fine and Applied Arts",
       "sector": "ICT/Digital Media",
-      "cip_sector": "",
+      "cip_sector": "50",
       "top_codes": [
         "79"
       ],
@@ -217373,7 +217373,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Fine and Applied Arts",
       "sector": "ICT/Digital Media",
-      "cip_sector": "",
+      "cip_sector": "50",
       "top_codes": [
         "79"
       ],
@@ -217491,7 +217491,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Fine and Applied Arts",
       "sector": "ICT/Digital Media",
-      "cip_sector": "",
+      "cip_sector": "50",
       "top_codes": [
         "79"
       ],
@@ -217609,7 +217609,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130",
         "132"
@@ -218052,7 +218052,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Fine and Applied Arts",
       "sector": "ICT/Digital Media",
-      "cip_sector": "",
+      "cip_sector": "50",
       "top_codes": [
         "79"
       ],
@@ -221444,7 +221444,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130",
         "131",
@@ -221843,7 +221843,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130",
         "132"
@@ -222048,7 +222048,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130",
         "132"
@@ -222956,7 +222956,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130",
         "131",
@@ -223504,7 +223504,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130",
         "132"
@@ -228658,7 +228658,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130",
         "131",
@@ -228880,7 +228880,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130",
         "132"
@@ -229122,7 +229122,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130",
         "132"
@@ -231425,7 +231425,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130",
         "132"
@@ -231633,7 +231633,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130"
       ],
@@ -231840,7 +231840,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130",
         "132"
@@ -232048,7 +232048,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "130",
         "132"
@@ -235457,7 +235457,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Standardized Assessment",
       "discipline": "Social Sciences",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "45",
+      "cip_sector": "05",
       "top_codes": [
         "239"
       ],
@@ -238856,7 +238856,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Social Sciences",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "45",
+      "cip_sector": "05",
       "top_codes": [
         "239"
       ],
@@ -241954,7 +241954,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "62",
         "63"
@@ -243551,7 +243551,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "60",
         "68"
@@ -243677,7 +243677,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "60",
         "68"
@@ -243807,7 +243807,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Health",
       "sector": "Health",
-      "cip_sector": "",
+      "cip_sector": "51",
       "top_codes": [
         "263"
       ],
@@ -243914,7 +243914,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Health",
       "sector": "Health",
-      "cip_sector": "",
+      "cip_sector": "51",
       "top_codes": [
         "263"
       ],
@@ -244027,7 +244027,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189",
         "201",
@@ -244301,7 +244301,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Health",
       "sector": "Health",
-      "cip_sector": "",
+      "cip_sector": "51",
       "top_codes": [
         "263"
       ],
@@ -244408,7 +244408,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Health",
       "sector": "Health",
-      "cip_sector": "",
+      "cip_sector": "51",
       "top_codes": [
         "263"
       ],
@@ -244622,7 +244622,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Health",
       "sector": "Health",
-      "cip_sector": "",
+      "cip_sector": "51",
       "top_codes": [
         "263"
       ],
@@ -245473,7 +245473,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "62"
       ],
@@ -245691,7 +245691,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "62"
       ],
@@ -245797,7 +245797,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "62"
       ],
@@ -245903,7 +245903,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "62"
       ],
@@ -246115,7 +246115,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "62"
       ],
@@ -246434,7 +246434,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "62"
       ],
@@ -246554,7 +246554,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "62"
       ],
@@ -246671,7 +246671,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Other",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "62"
       ],
@@ -246776,7 +246776,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "62"
       ],
@@ -246881,7 +246881,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "62"
       ],
@@ -246986,7 +246986,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "62"
       ],
@@ -247091,7 +247091,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "62"
       ],
@@ -247196,7 +247196,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "62"
       ],
@@ -247301,7 +247301,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "62"
       ],
@@ -247406,7 +247406,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "62"
       ],
@@ -247511,7 +247511,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "62"
       ],
@@ -247621,7 +247621,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "62"
       ],
@@ -247726,7 +247726,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "62"
       ],
@@ -247831,7 +247831,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "62"
       ],
@@ -247936,7 +247936,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "62"
       ],
@@ -248041,7 +248041,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "62"
       ],
@@ -248146,7 +248146,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "62"
       ],
@@ -248251,7 +248251,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "62"
       ],
@@ -248356,7 +248356,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "62"
       ],
@@ -251145,7 +251145,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Foreign Languages",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "16",
       "top_codes": [
         "43"
       ],
@@ -253415,7 +253415,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Foreign Languages",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "16",
       "top_codes": [
         "43"
       ],
@@ -255471,7 +255471,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Foreign Languages",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "16",
       "top_codes": [
         "43"
       ],
@@ -255575,7 +255575,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Foreign Languages",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "16",
       "top_codes": [
         "43"
       ],
@@ -255995,7 +255995,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Foreign Languages",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "16",
       "top_codes": [
         "43"
       ],
@@ -256197,7 +256197,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Media and Communications",
       "sector": "ICT/Digital Media",
-      "cip_sector": "50",
+      "cip_sector": "10",
       "top_codes": [
         "20"
       ],
@@ -256298,7 +256298,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Foreign Languages",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "16",
       "top_codes": [
         "43"
       ],
@@ -256399,7 +256399,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Foreign Languages",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "16",
       "top_codes": [
         "43"
       ],
@@ -256803,7 +256803,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Family and Consumer Sciences",
       "sector": "Retail, Hospitality & Tourism",
-      "cip_sector": "",
+      "cip_sector": "19",
       "top_codes": [
         "279"
       ],
@@ -256903,7 +256903,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Family and Consumer Sciences",
       "sector": "Retail, Hospitality & Tourism",
-      "cip_sector": "",
+      "cip_sector": "19",
       "top_codes": [
         "279"
       ],
@@ -257103,7 +257103,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Family and Consumer Sciences",
       "sector": "Retail, Hospitality & Tourism",
-      "cip_sector": "",
+      "cip_sector": "19",
       "top_codes": [
         "279"
       ],
@@ -257203,7 +257203,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Family and Consumer Sciences",
       "sector": "Retail, Hospitality & Tourism",
-      "cip_sector": "",
+      "cip_sector": "19",
       "top_codes": [
         "279"
       ],
@@ -260123,7 +260123,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Family and Consumer Sciences",
       "sector": "Retail, Hospitality & Tourism",
-      "cip_sector": "",
+      "cip_sector": "19",
       "top_codes": [
         "279"
       ],
@@ -260223,7 +260223,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Family and Consumer Sciences",
       "sector": "Retail, Hospitality & Tourism",
-      "cip_sector": "",
+      "cip_sector": "19",
       "top_codes": [
         "279"
       ],
@@ -260529,7 +260529,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Standardized Assessment",
       "discipline": "Interdisciplinary Studies",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "05",
+      "cip_sector": "24",
       "top_codes": [
         "0",
         "135"
@@ -269469,7 +269469,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Standardized Assessment",
       "discipline": "Interdisciplinary Studies",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "05",
+      "cip_sector": "09",
       "top_codes": [
         "0",
         "115",
@@ -270329,7 +270329,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Standardized Assessment",
       "discipline": "Interdisciplinary Studies",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "05",
+      "cip_sector": "09",
       "top_codes": [
         "0",
         "115",
@@ -271119,7 +271119,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "60"
       ],
@@ -272002,7 +272002,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "60"
       ],
@@ -272099,7 +272099,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "60"
       ],
@@ -272196,7 +272196,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "60"
       ],
@@ -272293,7 +272293,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "60"
       ],
@@ -273705,7 +273705,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Standardized Assessment",
       "discipline": "Interdisciplinary Studies",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "05",
+      "cip_sector": "24",
       "top_codes": [
         "0",
         "135"
@@ -275774,7 +275774,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "60"
       ],
@@ -275870,7 +275870,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "60"
       ],
@@ -275966,7 +275966,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "60"
       ],
@@ -276062,7 +276062,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Standardized Assessment",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "60"
       ],
@@ -276158,7 +276158,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Standardized Assessment",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "60"
       ],
@@ -276254,7 +276254,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Standardized Assessment",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "60"
       ],
@@ -276350,7 +276350,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Standardized Assessment",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "60"
       ],
@@ -276446,7 +276446,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Standardized Assessment",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "60"
       ],
@@ -276542,7 +276542,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Standardized Assessment",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "60"
       ],
@@ -276638,7 +276638,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Standardized Assessment",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "60"
       ],
@@ -276734,7 +276734,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Standardized Assessment",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "60"
       ],
@@ -276830,7 +276830,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Standardized Assessment",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "60"
       ],
@@ -276926,7 +276926,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Standardized Assessment",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "60"
       ],
@@ -277022,7 +277022,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Standardized Assessment",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "60"
       ],
@@ -277118,7 +277118,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Standardized Assessment",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "60"
       ],
@@ -277214,7 +277214,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Standardized Assessment",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "60"
       ],
@@ -277310,7 +277310,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Standardized Assessment",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "60"
       ],
@@ -277406,7 +277406,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Standardized Assessment",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "60"
       ],
@@ -277502,7 +277502,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "60"
       ],
@@ -277598,7 +277598,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "60"
       ],
@@ -279078,7 +279078,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Health",
       "sector": "Health",
-      "cip_sector": "",
+      "cip_sector": "51",
       "top_codes": [
         "263"
       ],
@@ -280325,7 +280325,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Health",
       "sector": "Health",
-      "cip_sector": "",
+      "cip_sector": "51",
       "top_codes": [
         "263"
       ],
@@ -286689,7 +286689,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Media and Communications",
       "sector": "ICT/Digital Media",
-      "cip_sector": "50",
+      "cip_sector": "10",
       "top_codes": [
         "20"
       ],
@@ -286905,7 +286905,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Media and Communications",
       "sector": "ICT/Digital Media",
-      "cip_sector": "50",
+      "cip_sector": "10",
       "top_codes": [
         "20"
       ],
@@ -287011,7 +287011,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Health",
       "sector": "Health",
-      "cip_sector": "31",
+      "cip_sector": "51",
       "top_codes": [
         "103"
       ],
@@ -287105,7 +287105,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Health",
       "sector": "Health",
-      "cip_sector": "31",
+      "cip_sector": "51",
       "top_codes": [
         "103"
       ],
@@ -287293,7 +287293,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Health",
       "sector": "Health",
-      "cip_sector": "31",
+      "cip_sector": "51",
       "top_codes": [
         "103"
       ],
@@ -290643,7 +290643,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Health",
       "sector": "Health",
-      "cip_sector": "31",
+      "cip_sector": "51",
       "top_codes": [
         "103"
       ],
@@ -290776,7 +290776,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "132"
       ],
@@ -290869,7 +290869,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Health",
       "sector": "Health",
-      "cip_sector": "31",
+      "cip_sector": "51",
       "top_codes": [
         "103"
       ],
@@ -290972,7 +290972,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Media and Communications",
       "sector": "ICT/Digital Media",
-      "cip_sector": "50",
+      "cip_sector": "10",
       "top_codes": [
         "20"
       ],
@@ -291065,7 +291065,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Health",
       "sector": "Health",
-      "cip_sector": "31",
+      "cip_sector": "51",
       "top_codes": [
         "103"
       ],
@@ -291158,7 +291158,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Health",
       "sector": "Health",
-      "cip_sector": "31",
+      "cip_sector": "51",
       "top_codes": [
         "103"
       ],
@@ -291253,7 +291253,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Military",
       "discipline": "Health",
       "sector": "Health",
-      "cip_sector": "31",
+      "cip_sector": "51",
       "top_codes": [
         "103"
       ],
@@ -291357,7 +291357,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Military",
       "discipline": "Health",
       "sector": "Health",
-      "cip_sector": "31",
+      "cip_sector": "51",
       "top_codes": [
         "103"
       ],
@@ -291450,7 +291450,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "132"
       ],
@@ -291543,7 +291543,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "132"
       ],
@@ -291636,7 +291636,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "132"
       ],
@@ -291729,7 +291729,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "132"
       ],
@@ -291822,7 +291822,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "132"
       ],
@@ -291915,7 +291915,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "132"
       ],
@@ -292008,7 +292008,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "132"
       ],
@@ -292101,7 +292101,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "132"
       ],
@@ -292194,7 +292194,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "132"
       ],
@@ -292287,7 +292287,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "132"
       ],
@@ -292380,7 +292380,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "132"
       ],
@@ -292478,7 +292478,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Health",
       "sector": "Health",
-      "cip_sector": "31",
+      "cip_sector": "51",
       "top_codes": [
         "103"
       ],
@@ -292576,7 +292576,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "132"
       ],
@@ -292669,7 +292669,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "132"
       ],
@@ -292762,7 +292762,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "132"
       ],
@@ -293041,7 +293041,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "132"
       ],
@@ -293134,7 +293134,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "132"
       ],
@@ -293227,7 +293227,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "132"
       ],
@@ -293320,7 +293320,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "132"
       ],
@@ -293506,7 +293506,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "132"
       ],
@@ -293599,7 +293599,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Media and Communications",
       "sector": "ICT/Digital Media",
-      "cip_sector": "50",
+      "cip_sector": "10",
       "top_codes": [
         "20"
       ],
@@ -293692,7 +293692,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Health",
       "sector": "Health",
-      "cip_sector": "31",
+      "cip_sector": "51",
       "top_codes": [
         "103"
       ],
@@ -293785,7 +293785,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Media and Communications",
       "sector": "ICT/Digital Media",
-      "cip_sector": "50",
+      "cip_sector": "10",
       "top_codes": [
         "20"
       ],
@@ -293878,7 +293878,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Health",
       "sector": "Health",
-      "cip_sector": "31",
+      "cip_sector": "51",
       "top_codes": [
         "103"
       ],
@@ -293971,7 +293971,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Health",
       "sector": "Health",
-      "cip_sector": "31",
+      "cip_sector": "51",
       "top_codes": [
         "103"
       ],
@@ -294069,7 +294069,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Health",
       "sector": "Health",
-      "cip_sector": "31",
+      "cip_sector": "51",
       "top_codes": [
         "103"
       ],
@@ -294162,7 +294162,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Health",
       "sector": "Health",
-      "cip_sector": "31",
+      "cip_sector": "51",
       "top_codes": [
         "103"
       ],
@@ -294260,7 +294260,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Media and Communications",
       "sector": "ICT/Digital Media",
-      "cip_sector": "50",
+      "cip_sector": "10",
       "top_codes": [
         "20"
       ],
@@ -294353,7 +294353,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Other",
       "discipline": "Health",
       "sector": "Health",
-      "cip_sector": "31",
+      "cip_sector": "51",
       "top_codes": [
         "103"
       ],
@@ -297656,7 +297656,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Health",
       "sector": "Health",
-      "cip_sector": "31",
+      "cip_sector": "51",
       "top_codes": [
         "103"
       ],
@@ -297806,7 +297806,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Not Mapped",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "358",
         "68"
@@ -297937,7 +297937,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "132"
       ],
@@ -298029,7 +298029,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "201",
         "68"
@@ -298137,7 +298137,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "132"
       ],
@@ -298229,7 +298229,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "132"
       ],
@@ -298321,7 +298321,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "132"
       ],
@@ -298413,7 +298413,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "132"
       ],
@@ -298597,7 +298597,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "132"
       ],
@@ -298689,7 +298689,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "132"
       ],
@@ -305089,7 +305089,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Other",
       "discipline": "Health",
       "sector": "Health",
-      "cip_sector": "",
+      "cip_sector": "51",
       "top_codes": [
         "200"
       ],
@@ -305180,7 +305180,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Health",
       "sector": "Health",
-      "cip_sector": "",
+      "cip_sector": "51",
       "top_codes": [
         "200"
       ],
@@ -306916,7 +306916,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Health",
       "sector": "Health",
-      "cip_sector": "",
+      "cip_sector": "51",
       "top_codes": [
         "200"
       ],
@@ -307006,7 +307006,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Health",
       "sector": "Health",
-      "cip_sector": "",
+      "cip_sector": "51",
       "top_codes": [
         "200"
       ],
@@ -307366,7 +307366,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Media and Communications",
       "sector": "ICT/Digital Media",
-      "cip_sector": "50",
+      "cip_sector": "10",
       "top_codes": [
         "22"
       ],
@@ -307456,7 +307456,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Agriculture and Natural Resources",
       "sector": "Agriculture, Water & Environmental Technologies",
-      "cip_sector": "",
+      "cip_sector": "01",
       "top_codes": [
         "160"
       ],
@@ -307546,7 +307546,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Agriculture and Natural Resources",
       "sector": "Agriculture, Water & Environmental Technologies",
-      "cip_sector": "",
+      "cip_sector": "01",
       "top_codes": [
         "160"
       ],
@@ -310454,7 +310454,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Media and Communications",
       "sector": "ICT/Digital Media",
-      "cip_sector": "50",
+      "cip_sector": "10",
       "top_codes": [
         "22"
       ],
@@ -314470,7 +314470,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Media and Communications",
       "sector": "ICT/Digital Media",
-      "cip_sector": "50",
+      "cip_sector": "10",
       "top_codes": [
         "22"
       ],
@@ -314559,7 +314559,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Agriculture and Natural Resources",
       "sector": "Agriculture, Water & Environmental Technologies",
-      "cip_sector": "",
+      "cip_sector": "01",
       "top_codes": [
         "160"
       ],
@@ -314826,7 +314826,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Media and Communications",
       "sector": "ICT/Digital Media",
-      "cip_sector": "50",
+      "cip_sector": "10",
       "top_codes": [
         "22"
       ],
@@ -316042,7 +316042,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Commercial Services",
       "sector": "Retail, Hospitality & Tourism",
-      "cip_sector": "",
+      "cip_sector": "12",
       "top_codes": [
         "139"
       ],
@@ -316240,7 +316240,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Commercial Services",
       "sector": "Retail, Hospitality & Tourism",
-      "cip_sector": "",
+      "cip_sector": "12",
       "top_codes": [
         "139"
       ],
@@ -316448,7 +316448,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -317076,7 +317076,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Commercial Services",
       "sector": "Retail, Hospitality & Tourism",
-      "cip_sector": "",
+      "cip_sector": "12",
       "top_codes": [
         "139"
       ],
@@ -317521,7 +317521,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -317641,7 +317641,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -317779,7 +317779,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -317935,7 +317935,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -318091,7 +318091,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -318247,7 +318247,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -318362,7 +318362,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -318468,7 +318468,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -318579,7 +318579,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -318699,7 +318699,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -318810,7 +318810,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -318970,7 +318970,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -319126,7 +319126,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -319273,7 +319273,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -319390,7 +319390,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -319488,7 +319488,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -319575,7 +319575,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -319662,7 +319662,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -319753,7 +319753,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -319852,7 +319852,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -319939,7 +319939,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -320058,7 +320058,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -320150,7 +320150,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -320242,7 +320242,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -320334,7 +320334,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -320426,7 +320426,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -320518,7 +320518,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -320610,7 +320610,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -320702,7 +320702,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -320803,7 +320803,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -320895,7 +320895,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -320987,7 +320987,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -321079,7 +321079,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -321180,7 +321180,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -321272,7 +321272,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -321364,7 +321364,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -321456,7 +321456,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -321548,7 +321548,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -321649,7 +321649,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -321750,7 +321750,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -321842,7 +321842,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -321934,7 +321934,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -322035,7 +322035,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -322136,7 +322136,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -322228,7 +322228,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -322320,7 +322320,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -322407,7 +322407,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -322494,7 +322494,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -322581,7 +322581,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -322668,7 +322668,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "68"
       ],
@@ -322755,7 +322755,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "61"
       ],
@@ -322886,7 +322886,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "61"
       ],
@@ -323002,7 +323002,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "61"
       ],
@@ -323093,7 +323093,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "61"
       ],
@@ -323184,7 +323184,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "61"
       ],
@@ -323275,7 +323275,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "61"
       ],
@@ -323366,7 +323366,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "61"
       ],
@@ -323457,7 +323457,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "46"
       ],
@@ -323543,7 +323543,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "61"
       ],
@@ -323629,7 +323629,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "61"
       ],
@@ -323715,7 +323715,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "61"
       ],
@@ -323801,7 +323801,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "61"
       ],
@@ -323887,7 +323887,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "61"
       ],
@@ -323973,7 +323973,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "61"
       ],
@@ -324059,7 +324059,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "61"
       ],
@@ -324145,7 +324145,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "61"
       ],
@@ -324582,7 +324582,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "61"
       ],
@@ -324673,7 +324673,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "61"
       ],
@@ -324764,7 +324764,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "61"
       ],
@@ -324855,7 +324855,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "61"
       ],
@@ -324946,7 +324946,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "61"
       ],
@@ -325037,7 +325037,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Agriculture and Natural Resources",
       "sector": "Agriculture, Water & Environmental Technologies",
-      "cip_sector": "",
+      "cip_sector": "01",
       "top_codes": [
         "159"
       ],
@@ -325209,7 +325209,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "46"
       ],
@@ -325295,7 +325295,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "46"
       ],
@@ -325381,7 +325381,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "46"
       ],
@@ -325467,7 +325467,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "46"
       ],
@@ -325553,7 +325553,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "46"
       ],
@@ -325639,7 +325639,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "46"
       ],
@@ -325725,7 +325725,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "46"
       ],
@@ -326069,7 +326069,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Agriculture and Natural Resources",
       "sector": "Agriculture, Water & Environmental Technologies",
-      "cip_sector": "",
+      "cip_sector": "01",
       "top_codes": [
         "159"
       ],
@@ -326155,7 +326155,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Agriculture and Natural Resources",
       "sector": "Agriculture, Water & Environmental Technologies",
-      "cip_sector": "",
+      "cip_sector": "01",
       "top_codes": [
         "159"
       ],
@@ -326241,7 +326241,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Agriculture and Natural Resources",
       "sector": "Agriculture, Water & Environmental Technologies",
-      "cip_sector": "",
+      "cip_sector": "01",
       "top_codes": [
         "159"
       ],
@@ -326412,7 +326412,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "55"
       ],
@@ -326497,7 +326497,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "46"
       ],
@@ -326583,7 +326583,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "46"
       ],
@@ -326674,7 +326674,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Agriculture and Natural Resources",
       "sector": "Agriculture, Water & Environmental Technologies",
-      "cip_sector": "",
+      "cip_sector": "01",
       "top_codes": [
         "160"
       ],
@@ -326759,7 +326759,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Agriculture and Natural Resources",
       "sector": "Agriculture, Water & Environmental Technologies",
-      "cip_sector": "",
+      "cip_sector": "01",
       "top_codes": [
         "160"
       ],
@@ -326844,7 +326844,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Agriculture and Natural Resources",
       "sector": "Agriculture, Water & Environmental Technologies",
-      "cip_sector": "",
+      "cip_sector": "01",
       "top_codes": [
         "160"
       ],
@@ -326929,7 +326929,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Agriculture and Natural Resources",
       "sector": "Agriculture, Water & Environmental Technologies",
-      "cip_sector": "",
+      "cip_sector": "01",
       "top_codes": [
         "160"
       ],
@@ -327014,7 +327014,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Agriculture and Natural Resources",
       "sector": "Agriculture, Water & Environmental Technologies",
-      "cip_sector": "",
+      "cip_sector": "01",
       "top_codes": [
         "160"
       ],
@@ -327099,7 +327099,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Agriculture and Natural Resources",
       "sector": "Agriculture, Water & Environmental Technologies",
-      "cip_sector": "",
+      "cip_sector": "01",
       "top_codes": [
         "160"
       ],
@@ -327184,7 +327184,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Agriculture and Natural Resources",
       "sector": "Agriculture, Water & Environmental Technologies",
-      "cip_sector": "",
+      "cip_sector": "01",
       "top_codes": [
         "159"
       ],
@@ -327269,7 +327269,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Agriculture and Natural Resources",
       "sector": "Agriculture, Water & Environmental Technologies",
-      "cip_sector": "",
+      "cip_sector": "01",
       "top_codes": [
         "160"
       ],
@@ -327354,7 +327354,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Agriculture and Natural Resources",
       "sector": "Agriculture, Water & Environmental Technologies",
-      "cip_sector": "",
+      "cip_sector": "01",
       "top_codes": [
         "160"
       ],
@@ -327439,7 +327439,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Agriculture and Natural Resources",
       "sector": "Agriculture, Water & Environmental Technologies",
-      "cip_sector": "",
+      "cip_sector": "01",
       "top_codes": [
         "160"
       ],
@@ -327779,7 +327779,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Agriculture and Natural Resources",
       "sector": "Agriculture, Water & Environmental Technologies",
-      "cip_sector": "",
+      "cip_sector": "01",
       "top_codes": [
         "160"
       ],
@@ -327864,7 +327864,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Agriculture and Natural Resources",
       "sector": "Agriculture, Water & Environmental Technologies",
-      "cip_sector": "",
+      "cip_sector": "01",
       "top_codes": [
         "160"
       ],
@@ -327959,7 +327959,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "46"
       ],
@@ -328090,7 +328090,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "46"
       ],
@@ -328211,7 +328211,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "46"
       ],
@@ -328297,7 +328297,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "46"
       ],
@@ -328388,7 +328388,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "46"
       ],
@@ -328473,7 +328473,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "46"
       ],
@@ -328558,7 +328558,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "46"
       ],
@@ -328643,7 +328643,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "46"
       ],
@@ -328728,7 +328728,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "46"
       ],
@@ -328813,7 +328813,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "46"
       ],
@@ -328898,7 +328898,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "46"
       ],
@@ -328983,7 +328983,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "46"
       ],
@@ -329068,7 +329068,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "46"
       ],
@@ -329153,7 +329153,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "46"
       ],
@@ -329238,7 +329238,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "46"
       ],
@@ -329323,7 +329323,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "46"
       ],
@@ -329663,7 +329663,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "55"
       ],
@@ -329918,7 +329918,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Agriculture and Natural Resources",
       "sector": "Agriculture, Water & Environmental Technologies",
-      "cip_sector": "",
+      "cip_sector": "01",
       "top_codes": [
         "160"
       ],
@@ -330003,7 +330003,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "55"
       ],
@@ -331023,7 +331023,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Agriculture and Natural Resources",
       "sector": "Agriculture, Water & Environmental Technologies",
-      "cip_sector": "",
+      "cip_sector": "01",
       "top_codes": [
         "159"
       ],
@@ -331193,7 +331193,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Agriculture and Natural Resources",
       "sector": "Agriculture, Water & Environmental Technologies",
-      "cip_sector": "",
+      "cip_sector": "01",
       "top_codes": [
         "160"
       ],
@@ -331278,7 +331278,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "55"
       ],
@@ -331363,7 +331363,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Agriculture and Natural Resources",
       "sector": "Agriculture, Water & Environmental Technologies",
-      "cip_sector": "",
+      "cip_sector": "01",
       "top_codes": [
         "160"
       ],
@@ -331448,7 +331448,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Agriculture and Natural Resources",
       "sector": "Agriculture, Water & Environmental Technologies",
-      "cip_sector": "",
+      "cip_sector": "01",
       "top_codes": [
         "160"
       ],
@@ -333673,7 +333673,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Architecture and Related Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "",
+      "cip_sector": "50",
       "top_codes": [
         "282"
       ],
@@ -333757,7 +333757,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Foreign Languages",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "16",
       "top_codes": [
         "44"
       ],
@@ -334019,7 +334019,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Architecture and Related Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "",
+      "cip_sector": "50",
       "top_codes": [
         "282"
       ],
@@ -334103,7 +334103,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Architecture and Related Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "",
+      "cip_sector": "50",
       "top_codes": [
         "282"
       ],
@@ -334996,7 +334996,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "57"
       ],
@@ -335078,7 +335078,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "57"
       ],
@@ -335324,7 +335324,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Family and Consumer Sciences",
       "sector": "Retail, Hospitality & Tourism",
-      "cip_sector": "",
+      "cip_sector": "19",
       "top_codes": [
         "362"
       ],
@@ -336160,7 +336160,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "277",
         "51"
@@ -337806,7 +337806,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "57"
       ],
@@ -344034,7 +344034,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "236"
       ],
@@ -344113,7 +344113,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "236"
       ],
@@ -344192,7 +344192,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "236"
       ],
@@ -344271,7 +344271,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "236"
       ],
@@ -344350,7 +344350,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "236"
       ],
@@ -344429,7 +344429,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "236"
       ],
@@ -344666,7 +344666,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "236"
       ],
@@ -344745,7 +344745,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "236"
       ],
@@ -344824,7 +344824,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "236"
       ],
@@ -344903,7 +344903,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "236"
       ],
@@ -344982,7 +344982,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "236"
       ],
@@ -345061,7 +345061,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "236"
       ],
@@ -345927,7 +345927,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Other",
       "discipline": "Media and Communications",
       "sector": "ICT/Digital Media",
-      "cip_sector": "09",
+      "cip_sector": "50",
       "top_codes": [
         "248"
       ],
@@ -348279,7 +348279,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "131"
       ],
@@ -348356,7 +348356,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "131"
       ],
@@ -348433,7 +348433,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "131"
       ],
@@ -348694,7 +348694,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "131"
       ],
@@ -348771,7 +348771,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "131"
       ],
@@ -348848,7 +348848,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "131"
       ],
@@ -348925,7 +348925,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "131"
       ],
@@ -349233,7 +349233,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "",
+      "cip_sector": "15",
       "top_codes": [
         "63"
       ],
@@ -349392,7 +349392,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "131"
       ],
@@ -350154,7 +350154,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "131"
       ],
@@ -350230,7 +350230,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "131"
       ],
@@ -350306,7 +350306,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "131"
       ],
@@ -350534,7 +350534,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "131"
       ],
@@ -350610,7 +350610,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "131"
       ],
@@ -350686,7 +350686,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "131"
       ],
@@ -350762,7 +350762,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "131"
       ],
@@ -350838,7 +350838,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Public and Protective Services",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "43",
       "top_codes": [
         "131"
       ],
@@ -354637,7 +354637,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189",
         "218",
@@ -355590,7 +355590,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Military",
       "discipline": "Health",
       "sector": "Health",
-      "cip_sector": "",
+      "cip_sector": "51",
       "top_codes": [
         "263"
       ],
@@ -355664,7 +355664,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Health",
       "sector": "Health",
-      "cip_sector": "",
+      "cip_sector": "51",
       "top_codes": [
         "263"
       ],
@@ -355738,7 +355738,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Health",
       "sector": "Health",
-      "cip_sector": "",
+      "cip_sector": "51",
       "top_codes": [
         "263"
       ],
@@ -355812,7 +355812,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Health",
       "sector": "Health",
-      "cip_sector": "",
+      "cip_sector": "51",
       "top_codes": [
         "263"
       ],
@@ -356048,7 +356048,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Health",
       "sector": "Health",
-      "cip_sector": "",
+      "cip_sector": "51",
       "top_codes": [
         "263"
       ],
@@ -356453,7 +356453,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Health",
       "sector": "Health",
-      "cip_sector": "",
+      "cip_sector": "51",
       "top_codes": [
         "263"
       ],
@@ -356601,7 +356601,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Health",
       "sector": "Health",
-      "cip_sector": "",
+      "cip_sector": "51",
       "top_codes": [
         "263"
       ],
@@ -357229,7 +357229,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "ICT/Digital Media",
-      "cip_sector": "",
+      "cip_sector": "11",
       "top_codes": [
         "48"
       ],
@@ -357324,7 +357324,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Military",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "ICT/Digital Media",
-      "cip_sector": "",
+      "cip_sector": "11",
       "top_codes": [
         "48"
       ],
@@ -357397,7 +357397,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "ICT/Digital Media",
-      "cip_sector": "",
+      "cip_sector": "11",
       "top_codes": [
         "48"
       ],
@@ -357470,7 +357470,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Military",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "ICT/Digital Media",
-      "cip_sector": "",
+      "cip_sector": "11",
       "top_codes": [
         "48"
       ],
@@ -357762,7 +357762,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -357835,7 +357835,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -357983,7 +357983,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189",
         "218",
@@ -358166,7 +358166,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189",
         "218",
@@ -358556,7 +358556,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "ICT/Digital Media",
-      "cip_sector": "",
+      "cip_sector": "11",
       "top_codes": [
         "48"
       ],
@@ -358629,7 +358629,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "ICT/Digital Media",
-      "cip_sector": "",
+      "cip_sector": "11",
       "top_codes": [
         "48"
       ],
@@ -358702,7 +358702,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "ICT/Digital Media",
-      "cip_sector": "",
+      "cip_sector": "11",
       "top_codes": [
         "48"
       ],
@@ -359281,7 +359281,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -359353,7 +359353,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -359425,7 +359425,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -359497,7 +359497,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -359569,7 +359569,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -359641,7 +359641,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -359713,7 +359713,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -359785,7 +359785,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -359857,7 +359857,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -359929,7 +359929,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -360001,7 +360001,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -360073,7 +360073,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -360145,7 +360145,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -360217,7 +360217,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -360289,7 +360289,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -360361,7 +360361,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -360433,7 +360433,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -360505,7 +360505,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -360577,7 +360577,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -360649,7 +360649,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -360721,7 +360721,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -360793,7 +360793,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -360865,7 +360865,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -360937,7 +360937,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -361009,7 +361009,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -361081,7 +361081,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -361153,7 +361153,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -361225,7 +361225,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -361297,7 +361297,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -361369,7 +361369,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -361441,7 +361441,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -361513,7 +361513,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -361585,7 +361585,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -361657,7 +361657,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -361729,7 +361729,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -361801,7 +361801,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -361873,7 +361873,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -361945,7 +361945,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -362017,7 +362017,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -362089,7 +362089,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -362161,7 +362161,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -362233,7 +362233,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -362305,7 +362305,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -362377,7 +362377,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -362449,7 +362449,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -362521,7 +362521,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -362593,7 +362593,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -362665,7 +362665,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -362737,7 +362737,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -362809,7 +362809,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -362881,7 +362881,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -362953,7 +362953,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -363025,7 +363025,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -363097,7 +363097,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -363169,7 +363169,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -363241,7 +363241,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -363313,7 +363313,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -363385,7 +363385,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -363457,7 +363457,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -363529,7 +363529,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -363601,7 +363601,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -363673,7 +363673,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -363745,7 +363745,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -363817,7 +363817,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -363889,7 +363889,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -363961,7 +363961,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -364033,7 +364033,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -364105,7 +364105,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -364177,7 +364177,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -364249,7 +364249,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -364321,7 +364321,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -364393,7 +364393,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -364465,7 +364465,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -364537,7 +364537,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -364609,7 +364609,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -364683,7 +364683,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189",
         "218"
@@ -364854,7 +364854,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -365109,7 +365109,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "51"
       ],
@@ -365181,7 +365181,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "51"
       ],
@@ -365397,7 +365397,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "51"
       ],
@@ -365469,7 +365469,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "51"
       ],
@@ -365541,7 +365541,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "51"
       ],
@@ -365613,7 +365613,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "51"
       ],
@@ -365685,7 +365685,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Advanced Manufacturing",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "51"
       ],
@@ -366078,7 +366078,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189",
         "218"
@@ -366291,7 +366291,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189",
         "218"
@@ -366720,7 +366720,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189",
         "218"
@@ -367166,7 +367166,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -367293,7 +367293,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -367420,7 +367420,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "189"
       ],
@@ -372603,7 +372603,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Health",
       "sector": "Health",
-      "cip_sector": "",
+      "cip_sector": "51",
       "top_codes": [
         "320"
       ],
@@ -372741,7 +372741,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "384"
       ],
@@ -372877,7 +372877,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "384"
       ],
@@ -372945,7 +372945,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "384"
       ],
@@ -373487,7 +373487,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "218",
         "304"
@@ -373855,7 +373855,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "218"
       ],
@@ -373921,7 +373921,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "218"
       ],
@@ -373987,7 +373987,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "218"
       ],
@@ -374053,7 +374053,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "218"
       ],
@@ -374119,7 +374119,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "218"
       ],
@@ -374185,7 +374185,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "218"
       ],
@@ -374251,7 +374251,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "218"
       ],
@@ -374317,7 +374317,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "218"
       ],
@@ -374383,7 +374383,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "218"
       ],
@@ -376271,7 +376271,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Foreign Languages",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "16",
       "top_codes": [
         "332"
       ],
@@ -376336,7 +376336,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Foreign Languages",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "16",
       "top_codes": [
         "332"
       ],
@@ -377168,7 +377168,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Interdisciplinary Studies",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "32",
       "top_codes": [
         "153"
       ],
@@ -377244,7 +377244,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Foreign Languages",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "16",
       "top_codes": [
         "412"
       ],
@@ -377628,7 +377628,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Commercial Services",
       "sector": "Retail, Hospitality & Tourism",
-      "cip_sector": "",
+      "cip_sector": "12",
       "top_codes": [
         "314"
       ],
@@ -377692,7 +377692,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Commercial Services",
       "sector": "Retail, Hospitality & Tourism",
-      "cip_sector": "",
+      "cip_sector": "12",
       "top_codes": [
         "314"
       ],
@@ -377756,7 +377756,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Commercial Services",
       "sector": "Retail, Hospitality & Tourism",
-      "cip_sector": "",
+      "cip_sector": "12",
       "top_codes": [
         "314"
       ],
@@ -377820,7 +377820,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Commercial Services",
       "sector": "Retail, Hospitality & Tourism",
-      "cip_sector": "",
+      "cip_sector": "12",
       "top_codes": [
         "314"
       ],
@@ -377884,7 +377884,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Commercial Services",
       "sector": "Retail, Hospitality & Tourism",
-      "cip_sector": "",
+      "cip_sector": "12",
       "top_codes": [
         "314"
       ],
@@ -378012,7 +378012,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Other",
       "discipline": "Interdisciplinary Studies",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "32",
       "top_codes": [
         "153"
       ],
@@ -378076,7 +378076,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Standardized Assessment",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "303"
       ],
@@ -378140,7 +378140,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Standardized Assessment",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "303"
       ],
@@ -378204,7 +378204,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Interdisciplinary Studies",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "32",
       "top_codes": [
         "153"
       ],
@@ -378268,7 +378268,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Foreign Languages",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "16",
       "top_codes": [
         "412"
       ],
@@ -378332,7 +378332,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Commercial Services",
       "sector": "Retail, Hospitality & Tourism",
-      "cip_sector": "",
+      "cip_sector": "12",
       "top_codes": [
         "314"
       ],
@@ -378396,7 +378396,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Commercial Services",
       "sector": "Retail, Hospitality & Tourism",
-      "cip_sector": "",
+      "cip_sector": "12",
       "top_codes": [
         "314"
       ],
@@ -378460,7 +378460,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Interdisciplinary Studies",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "32",
       "top_codes": [
         "153"
       ],
@@ -385761,7 +385761,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "46",
+      "cip_sector": "15",
       "top_codes": [
         "56"
       ],
@@ -385822,7 +385822,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "46",
+      "cip_sector": "15",
       "top_codes": [
         "56"
       ],
@@ -385883,7 +385883,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "46",
+      "cip_sector": "15",
       "top_codes": [
         "56"
       ],
@@ -386064,7 +386064,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Foreign Languages",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "16",
       "top_codes": [
         "176"
       ],
@@ -386125,7 +386125,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Foreign Languages",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "16",
       "top_codes": [
         "176"
       ],
@@ -386369,7 +386369,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Military",
       "discipline": "Fine and Applied Arts",
       "sector": "ICT/Digital Media",
-      "cip_sector": "",
+      "cip_sector": "50",
       "top_codes": [
         "77"
       ],
@@ -386430,7 +386430,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "46",
+      "cip_sector": "15",
       "top_codes": [
         "56"
       ],
@@ -386491,7 +386491,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "46",
+      "cip_sector": "15",
       "top_codes": [
         "56"
       ],
@@ -386552,7 +386552,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "46",
+      "cip_sector": "15",
       "top_codes": [
         "56"
       ],
@@ -386674,7 +386674,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "46",
+      "cip_sector": "15",
       "top_codes": [
         "56"
       ],
@@ -386735,7 +386735,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "46",
+      "cip_sector": "15",
       "top_codes": [
         "56"
       ],
@@ -386796,7 +386796,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Portfolio Review",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "46",
+      "cip_sector": "15",
       "top_codes": [
         "56"
       ],
@@ -386857,7 +386857,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "46",
+      "cip_sector": "15",
       "top_codes": [
         "56"
       ],
@@ -386918,7 +386918,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "46",
+      "cip_sector": "15",
       "top_codes": [
         "56"
       ],
@@ -386979,7 +386979,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "46",
+      "cip_sector": "15",
       "top_codes": [
         "56"
       ],
@@ -387040,7 +387040,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "46",
+      "cip_sector": "15",
       "top_codes": [
         "56"
       ],
@@ -387396,7 +387396,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Standardized Assessment",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "15",
+      "cip_sector": "46",
       "top_codes": [
         "375"
       ],
@@ -388637,7 +388637,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Other",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "46",
+      "cip_sector": "15",
       "top_codes": [
         "56"
       ],
@@ -388698,7 +388698,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Fine and Applied Arts",
       "sector": "ICT/Digital Media",
-      "cip_sector": "",
+      "cip_sector": "50",
       "top_codes": [
         "77"
       ],
@@ -389353,7 +389353,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "46",
+      "cip_sector": "15",
       "top_codes": [
         "56"
       ],
@@ -389414,7 +389414,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "46",
+      "cip_sector": "15",
       "top_codes": [
         "56"
       ],
@@ -389475,7 +389475,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "46",
+      "cip_sector": "15",
       "top_codes": [
         "56"
       ],
@@ -389536,7 +389536,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "46",
+      "cip_sector": "15",
       "top_codes": [
         "56"
       ],
@@ -389597,7 +389597,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "46",
+      "cip_sector": "15",
       "top_codes": [
         "56"
       ],
@@ -389658,7 +389658,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Foreign Languages",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "16",
       "top_codes": [
         "176"
       ],
@@ -389719,7 +389719,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Foreign Languages",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "16",
       "top_codes": [
         "176"
       ],
@@ -389780,7 +389780,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Foreign Languages",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "16",
       "top_codes": [
         "88"
       ],
@@ -389841,7 +389841,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Foreign Languages",
       "sector": "Academic Transfer & General Education",
-      "cip_sector": "",
+      "cip_sector": "16",
       "top_codes": [
         "88"
       ],
@@ -394038,7 +394038,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "46",
+      "cip_sector": "15",
       "top_codes": [
         "56"
       ],
@@ -394099,7 +394099,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "46",
+      "cip_sector": "15",
       "top_codes": [
         "56"
       ],
@@ -394160,7 +394160,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "46",
+      "cip_sector": "15",
       "top_codes": [
         "56"
       ],
@@ -394221,7 +394221,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "46",
+      "cip_sector": "15",
       "top_codes": [
         "56"
       ],
@@ -401747,7 +401747,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "46",
+      "cip_sector": "15",
       "top_codes": [
         "56"
       ],
@@ -401808,7 +401808,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "46",
+      "cip_sector": "15",
       "top_codes": [
         "56"
       ],
@@ -401869,7 +401869,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "46",
+      "cip_sector": "15",
       "top_codes": [
         "56"
       ],
@@ -401930,7 +401930,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "46",
+      "cip_sector": "15",
       "top_codes": [
         "56"
       ],
@@ -401991,7 +401991,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "46",
+      "cip_sector": "15",
       "top_codes": [
         "56"
       ],
@@ -402052,7 +402052,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "46",
+      "cip_sector": "15",
       "top_codes": [
         "56"
       ],
@@ -402113,7 +402113,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Engineering and Industrial Technologies",
       "sector": "Energy, Construction & Utilities",
-      "cip_sector": "46",
+      "cip_sector": "15",
       "top_codes": [
         "56"
       ],
@@ -408939,7 +408939,7 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-09-25T11:55:20",
+  "generated_at": "2026-09-25T13:16:54",
   "total_credit_recs": 13528,
   "cip_sectors": {
     "01": "Agricultural/Animal/Plant/Veterinary Science and Related Fields",
