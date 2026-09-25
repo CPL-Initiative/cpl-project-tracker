@@ -31,8 +31,14 @@ funding lane.
   applied FIRST for Standardized Assessment cards and as the FALLBACK for the rest. Measured on the
   2026-09-25 payload: cards without a sector 449 → 3, and 84 exams move out of TOP's general-education codes
   (09 Communication, 24 Liberal Arts) into their subjects; a random 25 all read right. Guard:
-  `tests/eacr_matrix_payload_test.py` §8c (73 checks; 54/73 on the old generator). It reaches the tab with
-  the first build after this PR merges.
+  `tests/eacr_matrix_payload_test.py` §8c (73 checks; 54/73 on the old generator). Merged as
+  [#1693](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1693); live since the 14:16 UTC build and confirmed in Chromium at 390 and 1440
+  ("No CIP assigned yet (3)"; AP Chemistry under 40).
+- **`check_hooks_live.py --fix` now applies the stop-hook patch.** The repo's SessionStart hook never loads in
+  a three-repo session, so the "N unpushed commit(s)" false positive returned after #1693's squash-merge
+  deleted the branch's remote. The opening line's `--fix` runs `scripts/patch_stop_hook.py` and prints a
+  `STOP HOOK:` line when it patched anything (tested end to end on an unpatched copy; wiring pinned in
+  `tests/install_prompt_guards_test.py`).
 - **This checkpoint:** the EACR lane and lessons doc; KB note
   `methodology-a-program-cip-labels-the-program-not-its-courses`; Rule 7's CIP line and the TOP note carry
   Sam's first ruling; memory rows.
@@ -63,11 +69,9 @@ funding lane.
 
 ## THE NEXT CONCRETE STEP
 
-1. **Dispatch `daily-dashboard.yml` after this PR merges** and confirm in Chromium that the CIP Sectors
-   dropdown reads "No CIP assigned yet (3)" and that AP Chemistry sits under 40.
-2. **Sam looks at the grid** (unchanged from 288): the 52px rows, the title clamp, the 0.62rem figures,
+1. **Sam looks at the grid** (unchanged from 288): the 52px rows, the title clamp, the 0.62rem figures,
    the panel.
-3. **Carryover, unchanged:** the ASCCC roster when Pedro's report lands; the ESL merging decision sheet;
+2. **Carryover, unchanged:** the ASCCC roster when Pedro's report lands; the ESL merging decision sheet;
    the funding lane's items in handoff 289.
 
 ## ⚠️ Watch for
@@ -78,7 +82,11 @@ funding lane.
 - **Check a random sample, not only the biggest disagreement groups.** The biggest
   groups were all career-technical and all favored the program route. The title rules
   passed the same test: a random 25 of the 84 moved exams all read right.
-- `CLAUDE.md` is still over its budget (1.03×); the Rule 7 edit added about 65 bytes.
+- `CLAUDE.md` is still over its budget (1.03×); this run's edits to Rule 7 and the stop-hook line
+  kept their length.
+- **If the stop hook says a branch level with `main` has unpushed commits**, it is the stale remote ref
+  of a squash-merged branch: `git rev-list HEAD --not --remotes --count` reads 0. Never push to quiet it
+  (a pushed branch identical to `main` cannot be deleted from a session); run `--fix` or drop the ref.
 
 ## Read in order
 

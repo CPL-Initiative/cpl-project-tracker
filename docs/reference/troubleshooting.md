@@ -94,6 +94,14 @@ scripts/patch_stop_hook.py` — or the harness hook changed shape, in which case
 the script says so on stderr and re-deriving its `TARGET` line is the fix.
 Guarded both ways by `tests/stop_hook_git_check_test.py`.
 
+⚠️ **In a three-repo session that SessionStart hook never runs** (the repo's
+settings file is INERT there; `scripts/check_hooks_live.py` says so), which is
+how the nag came back on 2026-09-25 (S288: "There are 2 unpushed commit(s)"
+after #1693's squash-merge deleted the branch's remote). Since then
+`check_hooks_live.py --fix`, the first command of every session's opening
+line, applies the patch too and prints a `STOP HOOK:` line when it did
+anything; `tests/install_prompt_guards_test.py` pins the wiring.
+
 **What was actually wrong (measured 2026-09-04, after it had fired in nearly
 every session since August).** Two faults, and only fixing both stops it:
 

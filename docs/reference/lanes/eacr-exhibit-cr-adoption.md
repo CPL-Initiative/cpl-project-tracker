@@ -49,9 +49,10 @@ half landed with the 2026-09-24 17:03 UTC build, and every card carries
    sector; the generator applies it FIRST for Standardized Assessment cards (an
    exam's MAP TOP id is a coarse general-education code, which filed AP
    Chemistry under 24 Liberal Arts and CLEP Spanish under 09 Communication) and
-   as the FALLBACK for every other card. Measured on the 2026-09-25 payload:
-   cards without a sector 449 → 3, and 84 exams move to their subject (a random
-   25 all read right). The three left are course codes the session could not
+   as the FALLBACK for every other card. Live since the 2026-09-25 14:16 UTC
+   build ([#1693](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1693)) and confirmed in Chromium at 390 and 1440: the
+   dropdown reads "No CIP assigned yet (3)", down from 449, and 84 exams moved
+   to their subject (a random 25 all read right). The three left are course codes the session could not
    place (AT 40, NC.MEA-108, NC.PTA-100). A new title that no rule names keeps
    its TOP sector, or reads "No CIP assigned yet": add a rule or a title to the
    JSON, never to code. Guard: `tests/eacr_matrix_payload_test.py` §8c.
@@ -137,7 +138,8 @@ Story of the earlier rounds: [`docs/eacr_scope_lessons.md`](../../eacr_scope_les
 
 ## NEXT
 
-① Nothing waits on a build: the column-D correction is live and verified. ② **Sam looks at the grid in a browser** —
+① Nothing waits on a build: the column-D correction and the title rules are
+live and verified. ② **Sam looks at the grid in a browser** —
 the 52px row, the two-line title clamp, the 0.62rem cell figures and the panel
 are his to judge. ③ The Adoption table's own rows keep their opportunity-first
 order; sectioning that view too is one call away if he wants it.

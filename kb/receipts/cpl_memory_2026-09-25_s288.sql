@@ -45,3 +45,19 @@ select m.slug, m.status, (m.detail like '%card 15%') as mentions_card_15,
 from public.cpl_memory m left join public.cpl_memory_log l on l.memory_id = m.id
 where m.author = 'SkyZ-s288'
 group by m.slug, m.status, m.detail order by m.slug;
+
+-- ── Checkpoint, end of the day (SkyZ S288): one row, its log and the verify in ONE execute_sql call.
+-- Rollback: delete the log row (actor SkyZ-s288, this slug), then the row by slug.
+insert into public.cpl_memory (slug, kind, title, summary, detail, plain, tags, source, related, status, scope, verified_by, event_date, author)
+values
+ ('three-repo-sessions-never-ran-the-stop-hook-patch', 'pitfall', 'Three-repo sessions never ran the stop-hook patch', 'The tracker''s SessionStart hook applies scripts/patch_stop_hook.py, and a three-repo session never loads the repo''s settings, so the Stop hook''s unpushed-commit false positive returned on 2026-09-25; since then scripts/check_hooks_live.py --fix, the first command of every session, applies the patch itself.', 'Seen in S288 (SkyZ): after #1693 squash-merged and GitHub deleted the branch, the local branch was reset to origin/main and the Stop hook reported ''There are 2 unpushed commit(s)'' (9bc5a30 and ed7247a, both on main) because the harness copy of ~/.claude/stop-hook-git-check.sh still counted $upstream..HEAD against a stale refs/remotes/origin/<branch>. git rev-list HEAD --not --remotes --count read 0. Pushing would have recreated a branch identical to main that a session cannot delete (the token 403s). Fix shipped: check_hooks_live.py runs patch_stop_hook.py when --fix is passed and prints a STOP HOOK: line when it patched anything; tested end to end on an unpatched copy (the patched result is byte-identical to a patched backup, exec bit kept) and pinned in tests/install_prompt_guards_test.py. docs/reference/troubleshooting.md carries the case.', 'At the end of a turn, an automatic check sometimes says there is unsaved work to upload when everything is already on the main branch. It was wrong because a repair meant to run when each session starts never ran in sessions that open all three repositories. The start-of-session check Sam pastes now applies the repair itself.', array['claude-code','stop-hook','session-practice','three-repo']::text[], 'docs/reference/troubleshooting.md; scripts/check_hooks_live.py', '{}'::text[], 'proposed', 'general', 'SkyZ S288', '2026-09-25'::date, 'SkyZ-s288')
+on conflict (slug) do nothing;
+insert into public.cpl_memory_log (memory_id, actor, action, note, after)
+select m.id, 'SkyZ-s288', 'create', 'S288 SkyZ end-of-day checkpoint (kb/receipts/cpl_memory_2026-09-25_s288.sql, third block)', to_jsonb(m)
+from public.cpl_memory m
+where m.slug = 'three-repo-sessions-never-ran-the-stop-hook-patch' and m.author = 'SkyZ-s288'
+  and not exists (select 1 from public.cpl_memory_log l where l.memory_id = m.id and l.action = 'create');
+select m.slug, m.status, count(l.id) as log_rows
+from public.cpl_memory m left join public.cpl_memory_log l on l.memory_id = m.id
+where m.author = 'SkyZ-s288'
+group by m.slug, m.status order by m.slug;
