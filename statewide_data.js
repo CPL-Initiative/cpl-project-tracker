@@ -63645,6 +63645,483 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 5.0
     },
     {
+      "exhibit_id": "MAPMM-BMT-1-001|MAPMM-BMT1-1-001|MAPMM-BMT2-1-001|MAPMM-CFBM-1-001",
+      "exhibit_ids": [
+        "MAPMM-BMT-1-001",
+        "MAPMM-BMT1-1-001",
+        "MAPMM-BMT2-1-001",
+        "MAPMM-CFBM-1-001"
+      ],
+      "title": "Basic Military Training",
+      "unified_title": "Basic Military Training",
+      "is_classified": true,
+      "issuing_agency": "American Council on Education (ACE)",
+      "training_agency": "U.S. Armed Forces",
+      "confidence_title": 0.92,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "Basic Military Training",
+        "Credit for Basic Military Service",
+        "Credit for Basic Military Service - HLTH 101 + PE 101 + (PE 102 or PE 215)"
+      ],
+      "cpl_type": "Military",
+      "discipline": "Interdisciplinary Studies",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "31",
+      "top_codes": [
+        "0",
+        "105",
+        "263",
+        "277",
+        "350",
+        "40",
+        "89"
+      ],
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 18,
+      "adopter_names": [
+        "Bakersfield College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "City College of San Francisco",
+        "Copper Mountain College",
+        "Foothill College",
+        "Fresno City College",
+        "Glendale Community College",
+        "Madera College",
+        "Mission College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Norco College",
+        "Riverside City College",
+        "San Bernardino Valley College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "West Los Angeles College"
+      ],
+      "potential": 95,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Barstow Community College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Alameda",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fullerton College",
+        "Gavilan College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Lassen College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "San Diego College of Continuing Education",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 113,
+      "credit_recs": [
+        {
+          "course": "KIN 104",
+          "credit": "3 hours in Fitness and Wellness"
+        },
+        {
+          "course": "PEX 122",
+          "credit": "1.5 hours in Cross Training and Functional Exercises"
+        },
+        {
+          "course": "PEX 124",
+          "credit": "1 hour in Personal Fitness Program"
+        },
+        {
+          "course": "PEX 126",
+          "credit": "1.5 hours in Physical Fitness Training"
+        },
+        {
+          "course": "HED 100",
+          "credit": "3 hours in Contemporary Health Problems"
+        },
+        {
+          "course": "KIN M01",
+          "credit": "1 hour in Personal Fitness Program"
+        },
+        {
+          "course": "HES 1",
+          "credit": "3 hours in Principles of Health Education"
+        },
+        {
+          "course": "KIN A81A",
+          "credit": "1 hour in Weight Training I"
+        },
+        {
+          "course": "KIN A81B",
+          "credit": "1 hour in Advanced Strength Training"
+        },
+        {
+          "course": "OSRM B4",
+          "credit": "3 hours in Principles of Health Education"
+        },
+        {
+          "course": "HEALTH 101",
+          "credit": "1 hour in Weight Training I"
+        },
+        {
+          "course": "KIN 231",
+          "credit": "1 hour in Advanced Strength Training"
+        },
+        {
+          "course": "KINF 138A",
+          "credit": "3 hours in Principles of Health Education"
+        },
+        {
+          "course": "EXSC 140A",
+          "credit": "1 hour in Advanced Strength Training"
+        },
+        {
+          "course": "EXSC 140B",
+          "credit": "1 hour in Weight Training I"
+        },
+        {
+          "course": "KINS B21FF",
+          "credit": "1 hour in Advanced Strength Training"
+        },
+        {
+          "course": "KINS B21WJ",
+          "credit": "1 hour in Weight Training I"
+        },
+        {
+          "course": "EMT 13",
+          "credit": "3 hours in Principles of Health Education"
+        },
+        {
+          "course": "PE 205A",
+          "credit": "1 hour in Weight Training I"
+        },
+        {
+          "course": "PE 211A",
+          "credit": "1 hour in Advanced Strength Training"
+        },
+        {
+          "course": "PE 6",
+          "credit": "1 hour in Advanced Strength Training"
+        },
+        {
+          "course": "PE 8",
+          "credit": "1 hour in Weight Training I"
+        },
+        {
+          "course": "KINS C105",
+          "credit": "1 hour in Weight Training I"
+        },
+        {
+          "course": "KINS C106",
+          "credit": "1 hour in Advanced Strength Training"
+        },
+        {
+          "course": "PE 16",
+          "credit": "1 hour in Advanced Strength Training"
+        },
+        {
+          "course": "PE 6",
+          "credit": "1 hour in Weight Training I"
+        },
+        {
+          "course": "KIN 039A",
+          "credit": "3 hours in Principles of Health Education"
+        },
+        {
+          "course": "KIN 055B",
+          "credit": "1 hour in Weight Training I"
+        },
+        {
+          "course": "KIN 079",
+          "credit": "1 hour in Advanced Strength Training"
+        },
+        {
+          "course": "HSCI C101",
+          "credit": "3 hours in Principles of Health Education"
+        },
+        {
+          "course": "LACCD GE 7",
+          "credit": "3 hours in Principles of Health Education"
+        },
+        {
+          "course": "HS 001",
+          "credit": "3 hours in Principles of Health Education"
+        },
+        {
+          "course": "PE 096",
+          "credit": "1 hour in Weight Training I"
+        },
+        {
+          "course": "HLTH 101",
+          "credit": "1 hour in FIRST AID"
+        },
+        {
+          "course": "PE 101",
+          "credit": "1 hour in FITNESS LAB I"
+        },
+        {
+          "course": "PE 102",
+          "credit": "1 hour in FITNESS LAB II"
+        },
+        {
+          "course": "PE 215",
+          "credit": "1 hour in Self Defense for Women I"
+        },
+        {
+          "course": "Local GE 7",
+          "credit": "4 hours in Lifelong Learning"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Principles of Health Education",
+          "cid": "HIST 150"
+        },
+        {
+          "credit": "1 hour in Weight Training I",
+          "cid": ""
+        },
+        {
+          "credit": "1 hour in Advanced Strength Training",
+          "cid": ""
+        }
+      ],
+      "exhibit_records": [
+        {
+          "id": "MAPMM-BMT-1-001",
+          "title": "Basic Military Training",
+          "units": 11.0,
+          "lines": 6
+        },
+        {
+          "id": "MAPMM-BMT1-1-001",
+          "title": "Credit for Basic Military Service",
+          "units": 43.0,
+          "lines": 27
+        },
+        {
+          "id": "MAPMM-BMT2-1-001",
+          "title": "Basic Military Training",
+          "units": 4.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPMM-CFBM-1-001",
+          "title": "Credit for Basic Military Service - HLTH 101 + PE 101 + (PE 102 or PE 215)",
+          "units": 4.0,
+          "lines": 4
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 5.0,
+        "Cerritos College": 10.0,
+        "Cerro Coso Community College": 5.0,
+        "City College of San Francisco": 5.0,
+        "Copper Mountain College": 4.0,
+        "Foothill College": 4.0,
+        "Fresno City College": 2.0,
+        "Glendale Community College": 4.0,
+        "Madera College": 2.0,
+        "Mission College": 5.0,
+        "Moorpark College": 1.0,
+        "Moreno Valley College": 5.0,
+        "Norco College": 5.0,
+        "Riverside City College": 5.0,
+        "San Bernardino Valley College": 5.0,
+        "San Diego Mesa College": 2.0,
+        "San Diego Miramar College": 2.0,
+        "West Los Angeles College": 3.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 3,
+        "Cerritos College": 5,
+        "Cerro Coso Community College": 3,
+        "City College of San Francisco": 3,
+        "Copper Mountain College": 2,
+        "Foothill College": 1,
+        "Fresno City College": 2,
+        "Glendale Community College": 4,
+        "Madera College": 2,
+        "Mission College": 3,
+        "Moorpark College": 1,
+        "Moreno Valley College": 3,
+        "Norco College": 3,
+        "Riverside City College": 3,
+        "San Bernardino Valley College": 3,
+        "San Diego Mesa College": 2,
+        "San Diego Miramar College": 2,
+        "West Los Angeles College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          9,
+          15,
+          16
+        ],
+        "Cerritos College": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "Cerro Coso Community College": [
+          22,
+          23,
+          29
+        ],
+        "City College of San Francisco": [
+          17,
+          18,
+          19
+        ],
+        "Copper Mountain College": [
+          31,
+          32
+        ],
+        "Foothill College": [
+          37
+        ],
+        "Fresno City College": [
+          20,
+          21
+        ],
+        "Glendale Community College": [
+          33,
+          34,
+          35,
+          36
+        ],
+        "Madera College": [
+          24,
+          25
+        ],
+        "Mission College": [
+          26,
+          27,
+          28
+        ],
+        "Moorpark College": [
+          5
+        ],
+        "Moreno Valley College": [
+          6,
+          7,
+          8
+        ],
+        "Norco College": [
+          6,
+          7,
+          8
+        ],
+        "Riverside City College": [
+          6,
+          7,
+          8
+        ],
+        "San Bernardino Valley College": [
+          10,
+          11,
+          12
+        ],
+        "San Diego Mesa College": [
+          13,
+          14
+        ],
+        "San Diego Miramar College": [
+          13,
+          14
+        ],
+        "West Los Angeles College": [
+          30
+        ]
+      },
+      "peer_units_median": 4.5,
+      "peer_units_max": 10.0,
+      "rec_units_total": 62.0
+    },
+    {
       "exhibit_id": "MAPSAH-ASA-2-1-001|MAPSAS-A3AA1-1-001|MAPSAS-A3AA2-1-001|MAPSAS-AAS3-1-001|MAPSAS-AESA2-1-001|MAPSAS-AESA5-1-001|MAPSAS-ASA-1-1-001|MAPSAS-ASA-4-1-001|MAPSAS-ASA-7-1-001|MAPSAS-ASA3-1-001",
       "exhibit_ids": [
         "MAPSAH-ASA-2-1-001",
@@ -65797,476 +66274,6 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 3.0,
       "peer_units_max": 3.0,
       "rec_units_total": 42.0
-    },
-    {
-      "exhibit_id": "MAPMM-BMT-1-001|MAPMM-BMT1-1-001|MAPMM-BMT2-1-001|MAPMM-CFBM-1-001",
-      "exhibit_ids": [
-        "MAPMM-BMT-1-001",
-        "MAPMM-BMT1-1-001",
-        "MAPMM-BMT2-1-001",
-        "MAPMM-CFBM-1-001"
-      ],
-      "title": "Basic Military Training",
-      "unified_title": "Basic Military Training",
-      "is_classified": true,
-      "issuing_agency": "American Council on Education (ACE)",
-      "training_agency": "U.S. Armed Forces",
-      "confidence_title": 0.92,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "Basic Military Training",
-        "Credit for Basic Military Service",
-        "Credit for Basic Military Service - HLTH 101 + PE 101 + (PE 102 or PE 215)"
-      ],
-      "cpl_type": "Military",
-      "discipline": "Interdisciplinary Studies",
-      "sector": "Academic Transfer & General Education",
-      "cip_sector": "31",
-      "top_codes": [
-        "0",
-        "105",
-        "263",
-        "277",
-        "350",
-        "40"
-      ],
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 18,
-      "adopter_names": [
-        "Bakersfield College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "City College of San Francisco",
-        "Copper Mountain College",
-        "Foothill College",
-        "Fresno City College",
-        "Glendale Community College",
-        "Madera College",
-        "Mission College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Norco College",
-        "Riverside City College",
-        "San Bernardino Valley College",
-        "San Diego Mesa College",
-        "San Diego Miramar College",
-        "West Los Angeles College"
-      ],
-      "potential": 94,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Barstow Community College",
-        "Butte College",
-        "Cabrillo College",
-        "Cañada College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "Clovis Community College",
-        "Coalinga College",
-        "Coastline Community College",
-        "College of Alameda",
-        "College of Marin",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Fullerton College",
-        "Gavilan College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Las Positas College",
-        "Lassen College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Ohlone College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Diego City College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "total_addressable": 112,
-      "credit_recs": [
-        {
-          "course": "KIN 104",
-          "credit": "3 hours in Fitness and Wellness"
-        },
-        {
-          "course": "PEX 122",
-          "credit": "1.5 hours in Cross Training and Functional Exercises"
-        },
-        {
-          "course": "PEX 124",
-          "credit": "1 hour in Personal Fitness Program"
-        },
-        {
-          "course": "PEX 126",
-          "credit": "1.5 hours in Physical Fitness Training"
-        },
-        {
-          "course": "HED 100",
-          "credit": "3 hours in Contemporary Health Problems"
-        },
-        {
-          "course": "KIN M01",
-          "credit": "1 hour in Personal Fitness Program"
-        },
-        {
-          "course": "HES 1",
-          "credit": "3 hours in Principles of Health Education"
-        },
-        {
-          "course": "KIN A81A",
-          "credit": "1 hour in Weight Training I"
-        },
-        {
-          "course": "KIN A81B",
-          "credit": "1 hour in Advanced Strength Training"
-        },
-        {
-          "course": "OSRM B4",
-          "credit": "3 hours in Principles of Health Education"
-        },
-        {
-          "course": "HEALTH 101",
-          "credit": "1 hour in Weight Training I"
-        },
-        {
-          "course": "KIN 231",
-          "credit": "1 hour in Advanced Strength Training"
-        },
-        {
-          "course": "KINF 138A",
-          "credit": "3 hours in Principles of Health Education"
-        },
-        {
-          "course": "EXSC 140A",
-          "credit": "1 hour in Advanced Strength Training"
-        },
-        {
-          "course": "EXSC 140B",
-          "credit": "1 hour in Weight Training I"
-        },
-        {
-          "course": "KINS B21FF",
-          "credit": "1 hour in Advanced Strength Training"
-        },
-        {
-          "course": "KINS B21WJ",
-          "credit": "1 hour in Weight Training I"
-        },
-        {
-          "course": "PE 205A",
-          "credit": "1 hour in Weight Training I"
-        },
-        {
-          "course": "PE 211A",
-          "credit": "1 hour in Advanced Strength Training"
-        },
-        {
-          "course": "PE 6",
-          "credit": "1 hour in Advanced Strength Training"
-        },
-        {
-          "course": "PE 8",
-          "credit": "1 hour in Weight Training I"
-        },
-        {
-          "course": "KINS C105",
-          "credit": "1 hour in Weight Training I"
-        },
-        {
-          "course": "KINS C106",
-          "credit": "1 hour in Advanced Strength Training"
-        },
-        {
-          "course": "PE 16",
-          "credit": "1 hour in Advanced Strength Training"
-        },
-        {
-          "course": "PE 6",
-          "credit": "1 hour in Weight Training I"
-        },
-        {
-          "course": "KIN 039A",
-          "credit": "3 hours in Principles of Health Education"
-        },
-        {
-          "course": "KIN 055B",
-          "credit": "1 hour in Weight Training I"
-        },
-        {
-          "course": "KIN 079",
-          "credit": "1 hour in Advanced Strength Training"
-        },
-        {
-          "course": "HSCI C101",
-          "credit": "3 hours in Principles of Health Education"
-        },
-        {
-          "course": "LACCD GE 7",
-          "credit": "3 hours in Principles of Health Education"
-        },
-        {
-          "course": "HS 001",
-          "credit": "3 hours in Principles of Health Education"
-        },
-        {
-          "course": "PE 096",
-          "credit": "1 hour in Weight Training I"
-        },
-        {
-          "course": "HLTH 101",
-          "credit": "1 hour in FIRST AID"
-        },
-        {
-          "course": "PE 101",
-          "credit": "1 hour in FITNESS LAB I"
-        },
-        {
-          "course": "PE 102",
-          "credit": "1 hour in FITNESS LAB II"
-        },
-        {
-          "course": "PE 215",
-          "credit": "1 hour in Self Defense for Women I"
-        },
-        {
-          "course": "Local GE 7",
-          "credit": "4 hours in Lifelong Learning"
-        }
-      ],
-      "authoritative_recs": [
-        {
-          "credit": "3 hours in Principles of Health Education",
-          "cid": "HIST 150"
-        },
-        {
-          "credit": "1 hour in Weight Training I",
-          "cid": ""
-        },
-        {
-          "credit": "1 hour in Advanced Strength Training",
-          "cid": ""
-        }
-      ],
-      "exhibit_records": [
-        {
-          "id": "MAPMM-BMT-1-001",
-          "title": "Basic Military Training",
-          "units": 11.0,
-          "lines": 6
-        },
-        {
-          "id": "MAPMM-BMT1-1-001",
-          "title": "Credit for Basic Military Service",
-          "units": 40.0,
-          "lines": 26
-        },
-        {
-          "id": "MAPMM-BMT2-1-001",
-          "title": "Basic Military Training",
-          "units": 4.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPMM-CFBM-1-001",
-          "title": "Credit for Basic Military Service - HLTH 101 + PE 101 + (PE 102 or PE 215)",
-          "units": 4.0,
-          "lines": 4
-        }
-      ],
-      "adopter_units": {
-        "Bakersfield College": 5.0,
-        "Cerritos College": 10.0,
-        "Cerro Coso Community College": 5.0,
-        "City College of San Francisco": 2.0,
-        "Copper Mountain College": 4.0,
-        "Foothill College": 4.0,
-        "Fresno City College": 2.0,
-        "Glendale Community College": 4.0,
-        "Madera College": 2.0,
-        "Mission College": 5.0,
-        "Moorpark College": 1.0,
-        "Moreno Valley College": 5.0,
-        "Norco College": 5.0,
-        "Riverside City College": 5.0,
-        "San Bernardino Valley College": 5.0,
-        "San Diego Mesa College": 2.0,
-        "San Diego Miramar College": 2.0,
-        "West Los Angeles College": 3.0
-      },
-      "adopter_lines": {
-        "Bakersfield College": 3,
-        "Cerritos College": 5,
-        "Cerro Coso Community College": 3,
-        "City College of San Francisco": 2,
-        "Copper Mountain College": 2,
-        "Foothill College": 1,
-        "Fresno City College": 2,
-        "Glendale Community College": 4,
-        "Madera College": 2,
-        "Mission College": 3,
-        "Moorpark College": 1,
-        "Moreno Valley College": 3,
-        "Norco College": 3,
-        "Riverside City College": 3,
-        "San Bernardino Valley College": 3,
-        "San Diego Mesa College": 2,
-        "San Diego Miramar College": 2,
-        "West Los Angeles College": 1
-      },
-      "adopter_rec_idx": {
-        "Bakersfield College": [
-          9,
-          15,
-          16
-        ],
-        "Cerritos College": [
-          0,
-          1,
-          2,
-          3,
-          4
-        ],
-        "Cerro Coso Community College": [
-          21,
-          22,
-          28
-        ],
-        "City College of San Francisco": [
-          17,
-          18
-        ],
-        "Copper Mountain College": [
-          30,
-          31
-        ],
-        "Foothill College": [
-          36
-        ],
-        "Fresno City College": [
-          19,
-          20
-        ],
-        "Glendale Community College": [
-          32,
-          33,
-          34,
-          35
-        ],
-        "Madera College": [
-          23,
-          24
-        ],
-        "Mission College": [
-          25,
-          26,
-          27
-        ],
-        "Moorpark College": [
-          5
-        ],
-        "Moreno Valley College": [
-          6,
-          7,
-          8
-        ],
-        "Norco College": [
-          6,
-          7,
-          8
-        ],
-        "Riverside City College": [
-          6,
-          7,
-          8
-        ],
-        "San Bernardino Valley College": [
-          10,
-          11,
-          12
-        ],
-        "San Diego Mesa College": [
-          13,
-          14
-        ],
-        "San Diego Miramar College": [
-          13,
-          14
-        ],
-        "West Los Angeles College": [
-          29
-        ]
-      },
-      "peer_units_median": 4.0,
-      "peer_units_max": 10.0,
-      "rec_units_total": 59.0
     },
     {
       "exhibit_id": "MAPSAH-AMT-1-001|MAPSAS-AE-M4-1-001|MAPSAS-AEMT-1-001|MAPSAS-AEMT1-1-001|MAPSAS-AEMT3-1-001|MAPSAS-AEMT4-1-001|MAPSAS-AMT-1-001|MAPSAS-AMT1-1-001|MAPSAS-AMT2-1-001|MAPSAS-AMT3-1-001|MAPSAS-AMT4-1-001|MAPSAS-AMT5-1-001|MAPSAS-AMT6-1-001|MAPSAS-AMT7-1-001|MAPSAS-AMT8-1-001|MAPSAS-AMT9-1-001",
@@ -294328,6 +294335,99 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
+      "exhibit_id": "MAPOH-EKHS-1-001",
+      "exhibit_ids": [
+        "MAPOH-EKHS-1-001"
+      ],
+      "title": "EMT-405 Kaiser High School",
+      "unified_title": "EMT-405 Kaiser High School",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "EMT-405 Kaiser High School"
+      ],
+      "cpl_type": "Other",
+      "discipline": "Health",
+      "sector": "Health",
+      "cip_sector": "31",
+      "top_codes": [
+        "103"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Chaffey College"
+      ],
+      "potential": 31,
+      "potential_names": [
+        "Barstow Community College",
+        "Cabrillo College",
+        "Chabot College",
+        "City College of San Francisco",
+        "College of Marin",
+        "College of the Desert",
+        "Columbia College",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "East Los Angeles College",
+        "Foothill College",
+        "Las Positas College",
+        "Los Angeles Harbor College",
+        "Los Angeles Southwest College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Saddleback College",
+        "Shasta College",
+        "Sierra College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Woodland Community College"
+      ],
+      "total_addressable": 32,
+      "credit_recs": [
+        {
+          "course": "EMT 405",
+          "credit": "3 hours in Emergency Medical Technician Preparation"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPOH-EKHS-1-001",
+          "title": "EMT-405 Kaiser High School",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Chaffey College": 3.0
+      },
+      "adopter_lines": {
+        "Chaffey College": 1
+      },
+      "adopter_rec_idx": {
+        "Chaffey College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
       "exhibit_id": "MAPSAH-AES-1-001|MAPSAS-A-ES-1-001|MAPSAS-A:ES-1-001|MAPSAS-AE-E1-1-001|MAPSAS-AEES-1-001|MAPSAS-AEES1-1-001|MAPSAS-AES(-1-001|MAPSAS-AES-1-001|MAPSAS-AES1-1-001|MAPSAS-AES10-1-001|MAPSAS-AES11-1-001|MAPSAS-AES14-1-001|MAPSAS-AES15-1-001|MAPSAS-AES16-1-001|MAPSAS-AES17-1-001|MAPSAS-AES3-1-001|MAPSAS-AES7-1-001|MAPSAS-AES8-1-001|MAPSAS-AES9-1-001",
       "exhibit_ids": [
         "MAPSAH-AES-1-001",
@@ -407195,8 +407295,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "Chaffey College",
-        "credit_recs": 542,
-        "exhibits": 458,
+        "credit_recs": 543,
+        "exhibits": 459,
         "disciplines": 18,
         "ccc_collaborative": 75,
         "industry_certs": 124,
@@ -407330,10 +407430,10 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "City College of San Francisco",
-        "credit_recs": 201,
+        "credit_recs": 202,
         "exhibits": 151,
         "disciplines": 13,
-        "ccc_collaborative": 72,
+        "ccc_collaborative": 73,
         "industry_certs": 100,
         "pct": 1.5
       },
@@ -408133,11 +408233,11 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Health",
-        "credit_recs": 473,
-        "exhibits": 235,
-        "courses": 319,
+        "credit_recs": 475,
+        "exhibits": 236,
+        "courses": 320,
         "colleges": 46,
-        "ccc_collaborative": 32,
+        "ccc_collaborative": 33,
         "pct": 3.5
       },
       {
@@ -408325,15 +408425,15 @@ window.CPL_STATEWIDE = {
       },
       {
         "cpl_type": "Military",
-        "credit_recs": 120,
+        "credit_recs": 121,
         "exhibits": 57,
         "colleges": 33,
         "pct": 0.9
       },
       {
         "cpl_type": "Other",
-        "credit_recs": 94,
-        "exhibits": 32,
+        "credit_recs": 95,
+        "exhibits": 33,
         "colleges": 10,
         "pct": 0.7
       }
@@ -408362,8 +408462,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "mode": "High school coursework (H)",
-        "credit_recs": 389,
-        "exhibits": 344,
+        "credit_recs": 390,
+        "exhibits": 345,
         "colleges": 20,
         "pct": 2.9
       },
@@ -408376,7 +408476,7 @@ window.CPL_STATEWIDE = {
       },
       {
         "mode": "Military training (M)",
-        "credit_recs": 183,
+        "credit_recs": 184,
         "exhibits": 73,
         "colleges": 34,
         "pct": 1.4
@@ -408413,15 +408513,15 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 11955,
-        "exhibits": 5486,
+        "credit_recs": 11956,
+        "exhibits": 5487,
         "colleges": 96,
         "disciplines": 23,
         "pct": 88.4
       },
       {
         "category": "CCC Collaborative",
-        "credit_recs": 1351,
+        "credit_recs": 1352,
         "exhibits": 167,
         "colleges": 64,
         "disciplines": 11,
@@ -408839,8 +408939,8 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-09-24T17:19:17",
-  "total_credit_recs": 13526,
+  "generated_at": "2026-09-25T11:55:20",
+  "total_credit_recs": 13528,
   "cip_sectors": {
     "01": "Agricultural/Animal/Plant/Veterinary Science and Related Fields",
     "03": "Natural Resources and Conservation",
