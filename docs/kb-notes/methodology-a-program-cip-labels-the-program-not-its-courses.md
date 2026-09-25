@@ -91,4 +91,4 @@ it, because those groups are all career-technical.
 ## See also
 
 - [`methodology-top-is-a-last-in-line-signal`](methodology-top-is-a-last-in-line-signal.md): why TOP sits last.
-- [`lanes/eacr-exhibit-cr-adoption`](../reference/lanes/eacr-exhibit-cr-adoption.md) NEXT ⑤: the course CIP source.
+- [`lanes/eacr-exhibit-cr-adoption`](../reference/lanes/eacr-exhibit-cr-adoption.md): what the EACR used instead, title rules for a filter-only sector (Sam, 2026-09-25).

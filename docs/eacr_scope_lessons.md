@@ -650,9 +650,25 @@ Calculus to Physical Sciences, MS Word to Health. It was not shipped. Checking
 only the biggest disagreement groups would have shipped it: those groups are
 career-technical credentials, whose courses live in their own programs.
 
-**Where the route goes.** The course's own CIP is the direct signal, and no
-file or table we hold carries it (the only CIP columns in Supabase are on
-`coci_college_programs`; the COCI course list and Program Course File have
-none). The ask is card 15 on the open-asks sheet. The measurement scripts ran
-from the session scratchpad; the method above reproduces them from committed
-files.
+**Sam's second ruling, same day, and what shipped.** *"CIP sector is best ... I don't
+want this to be a big deal. We only need the CIP sector on this tab for filter and
+quick categorization. I would be just as happy if you used your own analysis from
+your knowledge to create the sectors yourself. I don't want to get sucked into the
+top/CIP black hole, which is it's own project."* So the session withdrew its ask for
+a course-CIP source and wrote `kb/reference/eacr_cip_title_rules.json`: 37 ordered
+title patterns and an exact-title table, authored from the 669 titles that were
+exams or had no sector, every match read by sector before shipping. Exams read
+their title first, because an exam's MAP TOP id is a general-education code (AP
+Chemistry and AP Statistics sat under 24 Liberal Arts, CLEP Spanish under 09
+Communication); every other card reads TOP first and the title only as a fallback.
+Cards without a sector 449 → 3; 84 exams moved to their subject, and a random 25
+of them all read right. The reading error found in review was ordering: `PHIL`
+before social sciences, ESL before English, Engineering Drawing before the arts,
+Physical Education before Education, accident-reconstruction courses before
+automotive.
+
+**Lesson 3 — size the instrument to the question.** The filter needs a sector a
+reader agrees with at a glance, and a title a person can read carries that. The
+session reached for the most authoritative route (course CIP) when the question
+only needed a defensible grouping; Sam's scoping ruling cost one JSON file where
+the other path led into a lane of its own.

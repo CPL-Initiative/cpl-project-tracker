@@ -5439,6 +5439,50 @@ def _cip_sector_for_tops(tops, top_lookup, by_code4):
     return sorted(tally.items(), key=lambda kv: (-kv[1], kv[0]))[0][0]
 
 
+# ── CIP sector from the credential's TITLE ────────────────────────────────
+# Sam, 2026-09-25: "We only need the CIP sector on this tab for filter and
+# quick categorization. I would be just as happy if you used your own analysis
+# from your knowledge to create the sectors yourself." The judgment lives in
+# kb/reference/eacr_cip_title_rules.json (exact titles, then ordered patterns,
+# first match wins); this code only applies it. The card-level precedence is
+# at the call site: title first for Standardized Assessment, TOP first
+# otherwise.
+_CIP_TITLE_RULES_CACHE = None
+
+
+def _load_cip_title_rules():
+    """Return (titles, rules): {lower-cased title: family} and
+    [(compiled pattern, family)]. Empty on any failure, so the TOP route
+    answers alone rather than the daily build aborting."""
+    global _CIP_TITLE_RULES_CACHE
+    if _CIP_TITLE_RULES_CACHE is not None:
+        return _CIP_TITLE_RULES_CACHE
+    titles, rules = {}, []
+    path = os.path.join(SCRIPT_DIR, "kb", "reference", "eacr_cip_title_rules.json")
+    try:
+        with open(path, encoding="utf-8") as f:
+            doc = json.load(f) or {}
+        titles = {str(k).strip().lower(): str(v) for k, v in (doc.get("titles") or {}).items()}
+        rules = [(re.compile(r[0], re.I), str(r[1])) for r in (doc.get("rules") or [])]
+    except Exception as e:
+        print(f"  WARNING: EACR CIP title rules unavailable ({e}); CIP sectors read TOP only this run")
+        titles, rules = {}, []
+    _CIP_TITLE_RULES_CACHE = (titles, rules)
+    return _CIP_TITLE_RULES_CACHE
+
+
+def _cip_sector_for_title(title, title_rules):
+    """Two-digit CIP family the title rules give a credential title, or ""."""
+    titles, rules = title_rules
+    t = str(title or "").strip()
+    if t.lower() in titles:
+        return titles[t.lower()]
+    for rx, fam in rules:
+        if rx.search(t):
+            return fam
+    return ""
+
+
 # ── Statewide exhibit program-area categories ───────────────────────────
 # kb/statewide_exhibit_categories.json maps each statewide (CCC Collaborative)
 # exhibit title to the program-area categories listed on
@@ -5926,6 +5970,7 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
 
     top_lookup = _load_top_code_lookup()  # MAP code → discipline name
     cip_by_code4, _cip_families = _load_cip_families()  # 4-digit TOP → CIP family weights
+    cip_title_rules = _load_cip_title_rules()  # title → CIP family (Sam, 2026-09-25)
     # Sandbox orgs and duplicate spellings are resolved at every point a college
     # name ENTERS this payload — adopters, TOP potentials and C-ID potentials —
     # so no downstream consumer has to remember the rule.
@@ -6136,9 +6181,18 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
             sector = sorted(sector_counts.items(), key=lambda kv: (-kv[1], kv[0]))[0][0]
         else:
             sector = ""
-        # CIP sector — the two-digit CIP family, via the 4-digit TOP (see
-        # _load_cip_families). "" reads as "No CIP assigned yet" on the tab.
-        cip_sector = _cip_sector_for_tops(e["tops"], top_lookup, cip_by_code4)
+        # CIP sector — the two-digit CIP family. An exam's subject is in its
+        # title and its MAP TOP id is a coarse general-education code, so a
+        # Standardized Assessment reads the title rules first; every other
+        # card reads the 4-digit TOP route (_load_cip_families) first and the
+        # title rules only where TOP finds nothing. "" reads as "No CIP
+        # assigned yet" on the tab.
+        by_title = _cip_sector_for_title(unified_title, cip_title_rules)
+        by_top = _cip_sector_for_tops(e["tops"], top_lookup, cip_by_code4)
+        if cpl_type == "Standardized Assessment":
+            cip_sector = by_title or by_top
+        else:
+            cip_sector = by_top or by_title
 
         # Classify as Statewide (CCC Collaborative) or Local. CCC takes top billing
         # (EACR PR-2): the merged card is CCC Collaborative if ANY constituent row is

@@ -1,5 +1,5 @@
 ---
-title: Session 290 handoff — the TOP lookup corrected, the program-CIP route measured and not shipped, the course CIP asked for
+title: Session 290 handoff — the TOP lookup corrected, exams sectored from their titles, the TOP/CIP question left to its own lane
 date: 2026-09-25
 session: 288 (SkyZ)
 tags: [handoff, eacr, cip, top-code, program-course-graph, decision-sheets]
@@ -26,46 +26,49 @@ funding lane.
   `tests/eacr_matrix_payload_test.py`, which had run nowhere). Live since the
   2026-09-25 13:16 UTC build and confirmed in Chromium: matrix rows with no sector
   890 → 379 (dropdown: 449 cards), 328 cards re-sectored.
+- **Exams are sectored from their titles, and title rules fill every gap TOP leaves** (Sam's second
+  ruling, below). `kb/reference/eacr_cip_title_rules.json` (37 ordered patterns plus an exact-title table),
+  applied FIRST for Standardized Assessment cards and as the FALLBACK for the rest. Measured on the
+  2026-09-25 payload: cards without a sector 449 → 3, and 84 exams move out of TOP's general-education codes
+  (09 Communication, 24 Liberal Arts) into their subjects; a random 25 all read right. Guard:
+  `tests/eacr_matrix_payload_test.py` §8c (73 checks; 54/73 on the old generator). It reaches the tab with
+  the first build after this PR merges.
 - **This checkpoint:** the EACR lane and lessons doc; KB note
-  `methodology-a-program-cip-labels-the-program-not-its-courses`; Rule 7's CIP line
-  and the TOP note carry Sam's ruling; card 15 on the open-asks sheet; memory rows.
+  `methodology-a-program-cip-labels-the-program-not-its-courses`; Rule 7's CIP line and the TOP note carry
+  Sam's first ruling; memory rows.
 
 ## SAM'S DECISIONS THIS RUN (2026-09-25)
 
-Verbatim, unprompted, after #1692: *"TOP is not reliable since it is entered by the
-colleges with no effective checks. The new CIP system will be better. The course CIPs
-are only partially set now the the program CIPs are almost 100% reliable."* Captured
-in the vault (`03-professional/braindumps/braindump-2026-09-25-1315-program-cip-is-the-reliable-anchor.md`)
-and `cpl_memory`. The session withdrew its ask for MAP's TOP table on the strength of
-it.
+1. Verbatim, unprompted, after #1692: *"TOP is not reliable since it is entered by the colleges with no
+   effective checks. The new CIP system will be better. The course CIPs are only partially set now the the
+   program CIPs are almost 100% reliable."* Captured in the vault
+   (`03-professional/braindumps/braindump-2026-09-25-1315-program-cip-is-the-reliable-anchor.md`) and
+   `cpl_memory`.
+2. On the session's question of where to get course CIPs: *"CIP sector is best ... I don't want this to be
+   a big deal. We only need the CIP sector on this tab for filter and quick categorization. I would be just
+   as happy if you used your own analysis from your knowledge to create the sectors yourself. I don't want
+   to get sucked into the top/CIP black hole, which is it's own project."* So the course-CIP ask was
+   withdrawn (it never reached the published sheet) and the title rules shipped instead.
 
 ## ⛔ READ FIRST
 
-- **Do not route a course's CIP through the programs that list it.** Built and
-  measured before shipping: it sectors 2,244 of 3,000 rows and wins on career-technical
-  credentials, but a random 30 of the 682 rows it would move read 8 better, 15 worse,
-  7 the same (Elementary Italian → Culinary, Calculus → Physical Sciences). The method
-  is in `docs/eacr_scope_lessons.md` (2026-09-25); the scripts lived in the scratchpad.
-- **The course CIP is the route, and we hold no source for it.** The only CIP columns
-  in Supabase are on `coci_college_programs`; the COCI course list and Program Course
-  File have none. Card 15 asks Sam. Its premise `p_no_course_cip` retires the card
-  once `excel_to_dashboard.py` reads a `course_cip`.
-- **The open-asks sheet was rebuilt, not republished** (15 cards). Its store is keyed
-  to the 21 cards Sam answered; republishing needs a fresh `SHEET_ID` and artifact
-  (To-Do `s283-fable-open-asks-renumbering`).
+- **The EACR's CIP sector is a filter and a quick grouping, and nothing more (Sam's ruling 2).** Do not
+  open the TOP/CIP question from this tab: course CIPs, program membership and the crosswalk belong to the
+  TOP to CIP lane. A misfiled credential is one line in `kb/reference/eacr_cip_title_rules.json`.
+- **Do not route a course's CIP through the programs that list it.** Measured: a course takes the field of
+  every program that requires it (Elementary Italian → Culinary); 8 better, 15 worse on a random 30. KB note
+  above.
+- **The open-asks sheet holds 14 cards and was not republished**; its store is keyed to the 21 cards Sam
+  answered (To-Do `s283-fable-open-asks-renumbering`).
 
 ## THE NEXT CONCRETE STEP
 
-1. **Sam's answer on card 15.** When a COCI course export with a CIP field lands:
-   join it on the course control number (MAP course → COCI course: college by MIS code
-   through `kb/college_identity/<date>/crosswalk.json`, course number without leading
-   zeros; both recipes are in the lessons section), read the course CIP first and the
-   TOP route last, add `cip_source` to the card, and measure a random sample of moved
-   rows before shipping.
-2. **Sam looks at the grid** (unchanged from 288): the 52px rows, the title clamp, the
-   0.62rem figures, the panel.
-3. **Carryover, unchanged:** the ASCCC roster when Pedro's report lands; the ESL
-   merging decision sheet; the funding lane's items in handoff 289.
+1. **Dispatch `daily-dashboard.yml` after this PR merges** and confirm in Chromium that the CIP Sectors
+   dropdown reads "No CIP assigned yet (3)" and that AP Chemistry sits under 40.
+2. **Sam looks at the grid** (unchanged from 288): the 52px rows, the title clamp, the 0.62rem figures,
+   the panel.
+3. **Carryover, unchanged:** the ASCCC roster when Pedro's report lands; the ESL merging decision sheet;
+   the funding lane's items in handoff 289.
 
 ## ⚠️ Watch for
 
@@ -73,10 +76,8 @@ it.
   resolved; 46 of those resolved to the wrong program. Check a dormant column against
   its authority when a feature first reads it.
 - **Check a random sample, not only the biggest disagreement groups.** The biggest
-  groups were all career-technical and all favored the program route.
-- `kb/program_course_graph.json` is gitignored (70 MB) and built in
-  `daily-dashboard.yml` step 4a1b, after `excel_to_dashboard.py`; a generator that
-  needs it must move the build ahead of the generator.
+  groups were all career-technical and all favored the program route. The title rules
+  passed the same test: a random 25 of the 84 moved exams all read right.
 - `CLAUDE.md` is still over its budget (1.03×); the Rule 7 edit added about 65 bytes.
 
 ## Read in order

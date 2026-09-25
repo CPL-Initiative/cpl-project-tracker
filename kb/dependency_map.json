@@ -4,7 +4,7 @@
   "supabase_tables": 85,
   "rpcs": 31,
   "edge_functions": 5,
-  "file_datasets": 524,
+  "file_datasets": 525,
   "external_services": 146,
   "consumers": 367,
   "workflows": 35,
@@ -759,7 +759,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 12968
+     "line": 13022
     },
     {
      "id": "workflow:daily-dashboard.yml",
@@ -4267,7 +4267,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 12532
+     "line": 12586
     }
    ],
    "served": true,
@@ -4538,7 +4538,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 12866
+     "line": 12920
     },
     {
      "id": "script:funding/_build_funding_ess.py",
@@ -4981,7 +4981,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6903
+     "line": 6957
     },
     {
      "id": "script:funding/_build_funding_ess.py",
@@ -5128,7 +5128,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 12473
+     "line": 12527
     }
    ],
    "served": true,
@@ -5230,7 +5230,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 188
+     "line": 179
     }
    ],
    "served": false,
@@ -5243,7 +5243,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 184
+     "line": 175
     }
    ],
    "served": false,
@@ -5256,7 +5256,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 198
+     "line": 189
     }
    ],
    "served": false,
@@ -5625,7 +5625,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 12529
+     "line": 12583
     }
    ],
    "served": true,
@@ -5671,7 +5671,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 9676
+     "line": 9730
     }
    ],
    "producers": [
@@ -6015,7 +6015,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13180
+     "line": 13234
     },
     {
      "id": "workflow:daily-dashboard.yml",
@@ -6068,7 +6068,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13200
+     "line": 13254
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -7048,7 +7048,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8352
+     "line": 8406
     },
     {
      "id": "script:kb/_desc_consolidation_dryrun.py",
@@ -7405,7 +7405,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7904
+     "line": 7958
     },
     {
      "id": "script:kb/_analyze_official_fold_evidence.py",
@@ -7716,7 +7716,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8467
+     "line": 8521
     }
    ],
    "producers": [
@@ -7737,7 +7737,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6449
+     "line": 6503
     },
     {
      "id": "script:kb/_analyze_official_fold_evidence.py",
@@ -8148,7 +8148,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6561
+     "line": 6615
     },
     {
      "id": "script:kb/_analyze_official_fold_evidence.py",
@@ -8482,7 +8482,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6449
+     "line": 6503
     },
     {
      "id": "script:kb/_analyze_official_fold_evidence.py",
@@ -8858,14 +8858,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8432
+     "line": 8486
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 8432
+     "line": 8486
     }
    ],
    "producers": [
@@ -8886,7 +8886,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7188
+     "line": 7242
     },
     {
      "id": "script:kb/_infer_disciplines.py",
@@ -9071,7 +9071,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8094
+     "line": 8148
     },
     {
      "id": "script:kb/_add_descriptions.py",
@@ -9385,7 +9385,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6926
+     "line": 6980
     },
     {
      "id": "script:kb/_apply_credential_review.py",
@@ -9442,7 +9442,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 5601
+     "line": 5645
     },
     {
      "id": "script:kb/_apply_credential_review.py",
@@ -9608,7 +9608,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7984
+     "line": 8038
     },
     {
      "id": "script:kb/_detect_crnc_mirrors.py",
@@ -9700,7 +9700,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 9606
+     "line": 9660
     },
     {
      "id": "script:kb/_alias_canon.py",
@@ -9803,7 +9803,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7591
+     "line": 7645
     },
     {
      "id": "script:kb/_apply_canonical_subj4.py",
@@ -9977,7 +9977,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6508
+     "line": 6562
     },
     {
      "id": "script:kb/_build_cpl_by_discipline.py",
@@ -11068,7 +11068,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8483
+     "line": 8537
     },
     {
      "id": "script:kb/_analyze_official_fold_evidence.py",
@@ -11283,7 +11283,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6976
+     "line": 7030
     }
    ],
    "served": true,
@@ -11306,7 +11306,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8131
+     "line": 8185
     },
     {
      "id": "script:kb/_analyze_witness_kinship.py",
@@ -11446,7 +11446,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8163
+     "line": 8217
     },
     {
      "id": "script:kb/_add_descriptions.py",
@@ -11576,7 +11576,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8315
+     "line": 8369
     },
     {
      "id": "script:kb/_analyze_witness_kinship.py",
@@ -11837,6 +11837,19 @@
     "workflow:cos-authority-sync.yml"
    ]
   },
+  "file:kb/reference/eacr_cip_title_rules.json": {
+   "consumers": [
+    {
+     "id": "script:excel_to_dashboard.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 5461
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/reference/esl_level_sets.json": {
    "consumers": [
     {
@@ -11870,7 +11883,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 5500
+     "line": 5544
     },
     {
      "id": "script:kb/_audit_control_number_claims.py",
@@ -11931,7 +11944,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 9660
+     "line": 9714
     },
     {
      "id": "script:kb/_apply_kin_pe_convergence.py",
@@ -12320,7 +12333,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 5459
+     "line": 5503
     },
     {
      "id": "script:kb/_build_occupation_cpl_crosswalk.py",
@@ -12484,7 +12497,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 9167
+     "line": 9221
     },
     {
      "id": "script:kb/_morphological_variant_dryrun.py",
@@ -12886,7 +12899,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 5600
+     "line": 5644
     },
     {
      "id": "script:kb/_audit_exhibits.py",
@@ -14313,14 +14326,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 12301
+     "line": 12355
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 12301
+     "line": 12355
     },
     {
      "id": "script:fact-sheet/_build_statewide_recs.py",
@@ -14436,7 +14449,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 12531
+     "line": 12585
     }
    ],
    "served": true,
@@ -14459,14 +14472,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 12331
+     "line": 12385
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 12331
+     "line": 12385
     }
    ],
    "producers": [
@@ -15698,7 +15711,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 12533
+     "line": 12587
     }
    ],
    "served": true,
@@ -15721,7 +15734,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6401
+     "line": 6455
     },
     {
      "id": "script:kb/_build_aligned_exhibits.py",
@@ -15763,7 +15776,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7865
+     "line": 7919
     },
     {
      "id": "script:kb/_analyze_witness_kinship.py",
@@ -15812,7 +15825,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 164
+     "line": 155
     },
     {
      "id": "script:kb/_build_orphan_parent_worklist.py",
@@ -15886,14 +15899,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 9728
+     "line": 9782
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 9728
+     "line": 9782
     },
     {
      "id": "script:kb/_infer_disciplines_from_desc.py",
@@ -15931,14 +15944,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 9079
+     "line": 9133
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 9079
+     "line": 9133
     },
     {
      "id": "script:kb/_build_esl_fold_preview.py",
@@ -15994,14 +16007,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 9812
+     "line": 9866
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 9812
+     "line": 9866
     },
     {
      "id": "script:kb/_build_ccr_universe.py",
@@ -16050,14 +16063,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 9800
+     "line": 9854
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 9800
+     "line": 9854
     },
     {
      "id": "script:kb/_build_ccr_atlas_extract.py",
@@ -16127,14 +16140,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 9764
+     "line": 9818
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 9764
+     "line": 9818
     },
     {
      "id": "script:kb/_build_ccr_universe.py",
@@ -16215,14 +16228,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 9608
+     "line": 9662
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 9608
+     "line": 9662
     },
     {
      "id": "script:kb/_auto_merge_worklist.py",

@@ -39,30 +39,36 @@ half landed with the 2026-09-24 17:03 UTC build, and every card carries
    against the TOP manual (receipt
    `kb/receipts/top_code_lookup_code4_2026-09-25_s288.json`, old and new code
    per row); `tests/top_code_lookup_code4_test.py` holds it there in CI.
-   Live since the 2026-09-25 13:16 UTC build ([#1692](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1692)), confirmed in
-   Chromium: matrix rows under "No CIP assigned yet" fell from 890 to 379 (the
-   dropdown reads 449 cards), and 328 cards moved to the right sector (222
-   construction and apprenticeship cards left Engineering for Construction
-   Trades; 20 History cards left Ethnic Studies). Of the 379 left, 279 carry
-   no TOP id at all (mostly AP, CLEP, IB and DSST exams) and 100 carry one of
-   37 MAP TOP ids the lookup has no row for. Generator: `_load_cip_families()` /
-   `_cip_sector_for_tops()` in `excel_to_dashboard.py`; the card carries
-   `cip_sector` and `top_codes`, the payload `cip_sectors`.
-   **Why the route still starts from TOP — measured, 2026-09-25.** Sam: *"TOP
-   is not reliable since it is entered by the colleges with no effective
-   checks. The new CIP system will be better. The course CIPs are only
-   partially set now [and] the program CIPs are almost 100% reliable."* A
-   program-first route was built and measured before shipping: each
-   articulated course voted the CIP of the COCI programs listing it
-   (`kb/program_course_graph.json`, colleges joined on the MIS code). It
-   sectors 2,244 of 3,000 matrix rows and wins on career-technical
-   credentials (culinary 19 → 12, FAA pilot 47 → 49, water treatment 03 → 15),
-   but on a random 30 of the 682 rows it would move, 8 read better, 15 worse
-   and 7 no different. A course carries the family of every program that
-   requires it: Elementary Italian went to Culinary, Calculus to Physical
-   Sciences, AP US Government to Legal. It was not shipped. The program CIP
-   labels the program; the course's own CIP is the signal this filter needs,
-   and no file or table we hold carries it — see NEXT ⑤.
+   **The title rules come first for exams and fill every gap TOP leaves**
+   (Sam, 2026-09-25: *"We only need the CIP sector on this tab for filter and
+   quick categorization. I would be just as happy if you used your own
+   analysis from your knowledge to create the sectors yourself. I don't want
+   to get sucked into the top/CIP black hole, which is it's own project."*).
+   `kb/reference/eacr_cip_title_rules.json` holds 37 ordered title patterns and
+   an exact-title table, authored from the 669 titles that were exams or had no
+   sector; the generator applies it FIRST for Standardized Assessment cards (an
+   exam's MAP TOP id is a coarse general-education code, which filed AP
+   Chemistry under 24 Liberal Arts and CLEP Spanish under 09 Communication) and
+   as the FALLBACK for every other card. Measured on the 2026-09-25 payload:
+   cards without a sector 449 → 3, and 84 exams move to their subject (a random
+   25 all read right). The three left are course codes the session could not
+   place (AT 40, NC.MEA-108, NC.PTA-100). A new title that no rule names keeps
+   its TOP sector, or reads "No CIP assigned yet": add a rule or a title to the
+   JSON, never to code. Guard: `tests/eacr_matrix_payload_test.py` §8c.
+   Generator: `_load_cip_families()` / `_cip_sector_for_tops()` /
+   `_load_cip_title_rules()` / `_cip_sector_for_title()` in
+   `excel_to_dashboard.py`; the card carries `cip_sector` and `top_codes`, the
+   payload `cip_sectors`.
+   The TOP route itself was corrected first ([#1692](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1692)): `TOP_Code_Lookup.xlsx`
+   column D disagreed with its own program title on 81 of 198 rows, nothing
+   read the column before #1681, and `kb/_correct_top_lookup_code4.py` set it
+   from the TOP manual (receipt `kb/receipts/top_code_lookup_code4_2026-09-25_s288.json`;
+   guard `tests/top_code_lookup_code4_test.py`). A route through the programs
+   that list each articulated course was measured and not shipped: a course
+   carries the field of every program that requires it (8 better, 15 worse on
+   a random 30). [`methodology-a-program-cip-labels-the-program-not-its-courses`](../../kb-notes/methodology-a-program-cip-labels-the-program-not-its-courses.md).
+   The course and program CIP question is the TOP to CIP lane's, not this
+   tab's.
 2. **ASCCC Area filter** beside SW Region, from `college_lookup.js`
    `ascccArea`, which `kb/_apply_asccc_areas.py` writes from
    [`kb/reference/asccc_area_map.json`](../../../kb/reference/asccc_area_map.json)
@@ -137,18 +143,8 @@ are his to judge. ③ The Adoption table's own rows keep their opportunity-first
 order; sectioning that view too is one call away if he wants it.
 ④ Curation carryover, unchanged: 4 unclassified-only titles the CER knows · 2
 statewide cards matching no college · the 50-group credential-view cap.
-⑤ **NEEDS SAM — the course CIP is the next route, and its source is the open
-question** (card 15 on the open-asks sheet).
-Read the articulated course's own CIP first, the TOP route last. COCI holds
-course CIPs (partially set, per Sam), but neither `kb/reference/coci_course_list.xlsx`
-nor the Program Course File nor any Supabase table carries them (checked
-2026-09-25: the only CIP columns are on `coci_college_programs`). A COCI course
-export with the CIP field would let the generator join on the course control
-number. Until it arrives, the 37 MAP TOP ids with no lookup row (3, 6, 18,
-23, 99, 347 and 31 more; 100 cards) stay unsectored rather than gaining TOP
-rows: TOP is the signal Sam rates unreliable, and the course CIP would replace
-it. The program route's measurement is in the EACR lessons doc; the route can
-still serve as a corroborator.
+⑤ **The title rules are the place to curate a sector.** A misfiled exam or a
+new title no rule names is one line in `kb/reference/eacr_cip_title_rules.json`.
 
 ## The ASCCC Area map is provisional, and that is the ruling
 

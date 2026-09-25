@@ -272,6 +272,44 @@ check("cip_sector: an unmapped TOP reads as empty, never as a crash",
       val(lambda: res["Unmapped TOP Cert"]["cip_sector"]) == "")
 fam = val(lambda: gen._load_cip_families()[1], {})
 check("the complete CIP family vocabulary loads (50 two-digit families)", len(fam) == 50, f"got {len(fam)}")
+
+# ─────────────────────────── 8c. CIP sectors from the title (2026-09-25) ─────
+# Sam: "We only need the CIP sector on this tab for filter and quick
+# categorization. I would be just as happy if you used your own analysis from
+# your knowledge to create the sectors yourself." The rules live in
+# kb/reference/eacr_cip_title_rules.json. An exam reads its title first (MAP's
+# TOP id for an exam is a coarse general-education code: AP Chemistry sat under
+# 24 Liberal Arts); every other card reads TOP first and the title only where
+# TOP finds nothing.
+tr = val(lambda: gen._load_cip_title_rules(), ({}, []))
+check("the title rules load (30+ ordered rules)", len(tr[1]) >= 30, f"got {len(tr[1])}")
+check("every title-rule family is a real CIP family",
+      all(f in fam for _rx, f in tr[1]) and all(f in fam for f in tr[0].values()),
+      str(sorted({f for _rx, f in tr[1]} - set(fam))))
+for title, want in [("AP Chemistry", "40"), ("AP Statistics", "27"), ("AP U.S. History", "54"),
+                    ("CLEP Spanish with Writing 2", "16"), ("AP Art History", "50"),
+                    ("AP Environmental Science", "03"), ("AP African American Studies", "05"),
+                    ("DSST Ethics in America", "38"), ("IB Language A: Literature HL", "23"),
+                    ("Elementary Italian I", "16"), ("PHIL 1B: Social and Political Philosophy", "38"),
+                    ("Growth and Development of the Child", "19"), ("Engineering Drawing", "15"),
+                    ("Credit by Exam - ESL 083 F (High Intermediate)", "32"),
+                    ("Automotive Collision Investigation - Credit by Exam (ACRP 20 )", "43")]:
+    got = val(lambda: gen._cip_sector_for_title(title, tr))
+    check(f"title rule: {title} → {want}", got == want, f"got {got!r}")
+check("a title no rule names reads empty, so TOP keeps it (OSHA 10)",
+      val(lambda: gen._cip_sector_for_title("OSHA 10 — Outreach (10-hour)", tr)) == "")
+res = build([row("E-9", "AP Chemistry", "Chabot College", "CHEM 1A", "5 hours in Chemistry", top="5",
+                 cpl="Standardized Assessment"),
+             row("E-10", "Introduction to Philosophy", "Chabot College", "PHIL 1", "3 hours in Philosophy",
+                 top="no-such-code", cpl="Credit By Exam"),
+             row("E-11", "OSHA 10", "Chabot College", "CON 1", "1 hour in Safety", top="5",
+                 cpl="Standardized Assessment")])
+check("an exam reads its title before TOP (AP Chemistry → 40, TOP said 52)",
+      val(lambda: res["AP Chemistry"]["cip_sector"]) == "40", str(val(lambda: res["AP Chemistry"]["cip_sector"])))
+check("a card TOP cannot place reads its title (Introduction to Philosophy → 38)",
+      val(lambda: res["Introduction to Philosophy"]["cip_sector"]) == "38")
+check("an exam no title rule names keeps its TOP sector (OSHA 10 → 52)",
+      val(lambda: res["OSHA 10"]["cip_sector"]) == "52")
 check("...keyed by two-digit code, titled in words",
       all(len(k) == 2 and k.isdigit() for k in fam) and bool(fam.get("43")))
 
