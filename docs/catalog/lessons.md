@@ -56,7 +56,7 @@ Workstream scratchpads. A dated section is appended at every checkpoint.
 | [Dethroning TOP — from gatekeeper to last-in-line signal (lessons)](../top_dethroning_lessons.md) | `top_dethroning_lessons.md` | 2026-07-16 |  |
 | [Doctrine enforcement — lessons](../doctrine_enforcement_lessons.md) | `doctrine_enforcement_lessons.md` | 2026-08-21 |  |
 | [EACR Consolidation + Master-Detail Gallery — Lessons](../eacr_consolidation_lessons.md) | `eacr_consolidation_lessons.md` | 2026-06-01 |  |
-| [EACR — college scope, the CER fold, and the accessibility pass](../eacr_scope_lessons.md) | `eacr_scope_lessons.md` | 2026-08-16 | 2026-08-16 |
+| [EACR — college scope, the CER fold, and the accessibility pass](../eacr_scope_lessons.md) | `eacr_scope_lessons.md` | 2026-08-16 | 2026-09-25 |
 | [Engineering Practices — Decisions & Lessons (dev infra, testing, design system)](../engineering_practices_lessons.md) | `engineering_practices_lessons.md` | 2026-06-04 |  |
 | [Excel → Supabase Migration — Workstream Lessons](../excel_to_supabase_lessons.md) | `excel_to_supabase_lessons.md` | 2026-05-28 |  |
 | [Exhibit Canonicalization — Decisions & Lessons (credential-identity layer)](../exhibit_canonicalization_lessons.md) | `exhibit_canonicalization_lessons.md` | 2026-05-24 |  |

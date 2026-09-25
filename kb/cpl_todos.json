@@ -1,9 +1,15 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-09-24",
-  "_session": "S287 SkyLane",
-  "_status": "Sam's review of the funding tab is built out through item 7: the Veteran Star on the college rows, the two baseline counts, his Timeline note, the partner agencies out of the feed, and now one drill-in table per lane in his six columns with the one-line priority card (pull requests 1677, 1678, 1679). The four rows the last session staged for the memory table are written. The automated test run that every pull request waits on took twenty minutes this morning and now takes about seven: it runs as four shards on four machines (pull request 1682). Still Sam's, in the tab: Publish on Scenario 1, the six strategies to Completion, two section renames and five timeline lines. The grants check waits on today's promotion, which had not run by late afternoon.",
+  "_as_of": "2026-09-25",
+  "_session": "S288 SkyZ",
+  "_status": "On Exhibit Adoption, every credential now sits under a CIP sector except three course codes. Sam ruled that the sector is for filtering and quick categorization only and asked the session to assign sectors from its own analysis rather than open the TOP and CIP question, which is its own project. Exams (AP, CLEP, IB, DSST) are now sectored from their titles, because MAP's TOP code for an exam is a general-education code that filed AP Chemistry under Liberal Arts; everything else reads MAP's TOP code, whose lookup had 81 wrong codes until pull request 1692. On the funding tab, Sam's review is built out through item 7, his titles and timeline paste ran on 24 September (pull request 1688), and the automated test run takes about seven minutes on four machines.",
   "items": [
+    {
+      "id": "s288-sam-eacr-grid-look",
+      "for": "Sam",
+      "tab": "exhibit-adoption",
+      "text": "Open the Adoption matrix on Exhibit Adoption in a browser and judge the look: the row height, the two-line titles, the small cell figures and the panel that opens on hover. Every credential now sits under a CIP sector except three course codes: exams are sectored from their titles, everything else from MAP's TOP code. A misfiled title is one line in the title rules."
+    },
     {
       "id": "s285-sam-funding-tab-edits",
       "for": "Sam",
@@ -59,16 +65,16 @@
       "text": "The CCR has nowhere to record a verdict. Only the Common CR Reference has a decisions table, so a CCR sitting would produce judgments with no home and you would be asked the same questions again. You adopted this as item 4 of the ladder; it needs a Governance pass before it ships, because a first writer to a shared table is a decision-rights change."
     },
     {
-      "id": "s281-fable-harvest-the-gate",
-      "for": "Fable",
-      "tab": "cr-reference",
-      "text": "Harvest the value that is proven rather than chasing the hard band. The 0.85 gate scored 25 of 25 on Sam's verdicts, so run kb/_jev_adjudicate.py across the full rung-5 population instead of only the 55 anchored pairs, take everything above the gate as suggestions, and put the rest on a decision sheet. The band is 26 pairs and 838 rows — one sitting, not an automation problem."
-    },
-    {
       "id": "s282-fable-rerun-cer-csr-scanners",
       "for": "Fable",
       "tab": "cr-reference",
       "text": "The credential and subject scanners last ran on 10 July, so every count we quote for them is 73 days old and the course identity layer has been renumbered since. Re-run both and re-triage before spending a single call on either."
+    },
+    {
+      "id": "s281-fable-harvest-the-gate",
+      "for": "Fable",
+      "tab": "cr-reference",
+      "text": "Harvest the value that is proven rather than chasing the hard band. The 0.85 gate scored 25 of 25 on Sam's verdicts, so run kb/_jev_adjudicate.py across the full rung-5 population instead of only the 55 anchored pairs, take everything above the gate as suggestions, and put the rest on a decision sheet. The band is 26 pairs and 838 rows — one sitting, not an automation problem."
     }
   ],
   "_deferred": [

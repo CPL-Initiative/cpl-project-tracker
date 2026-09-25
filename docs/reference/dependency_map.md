@@ -555,6 +555,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/reference/coci_program_file.csv` | none found | committed by: `program-course-fetch.yml` |
 | `kb/reference/college_identity_rulings.json` | scripts: `kb/_build_college_identity_crosswalk.py` | — |
 | `kb/reference/cos_certifications.json` | scripts: `kb/_match_cos_authority.py`, `kb/_suggest_unclassified.py`, `kb/_sync_cos_certifications.py` | scripts: `kb/_sync_cos_certifications.py` · committed by: `cos-authority-sync.yml` |
+| `kb/reference/eacr_cip_title_rules.json` | scripts: `excel_to_dashboard.py` | — |
 | `kb/reference/esl_level_sets.json` | scripts: `kb/_esl_ladder_relevel_dryrun.py` | — |
 | `kb/reference/handout_logos.json` | scripts: `kb/_build_regional_cpl_opportunity.py` | — |
 | `kb/reference/map_college_roster_rules.json` | scripts: `excel_to_dashboard.py`, `kb/_audit_control_number_claims.py` | — |
@@ -924,5 +925,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 524 file
+Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 525 file
 datasets · 146 external services · 367 consumers · 35 workflows · 37 tabs.

@@ -39,14 +39,36 @@ half landed with the 2026-09-24 17:03 UTC build, and every card carries
    against the TOP manual (receipt
    `kb/receipts/top_code_lookup_code4_2026-09-25_s288.json`, old and new code
    per row); `tests/top_code_lookup_code4_test.py` holds it there in CI.
-   Measured on the 2026-09-25 payload: matrix rows under "No CIP assigned yet"
-   fall from 890 to 379, and 328 cards move to the right sector (222
-   construction and apprenticeship cards leave Engineering for Construction
-   Trades; 20 History cards leave Ethnic Studies). Of the 379 left, 279 carry
-   no TOP id at all (mostly AP, CLEP, IB and DSST exams) and 100 carry one of
-   37 MAP TOP ids the lookup has no row for — see NEXT ⑤. Generator: `_load_cip_families()` /
-   `_cip_sector_for_tops()` in `excel_to_dashboard.py`; the card carries
-   `cip_sector` and `top_codes`, the payload `cip_sectors`.
+   **The title rules come first for exams and fill every gap TOP leaves**
+   (Sam, 2026-09-25: *"We only need the CIP sector on this tab for filter and
+   quick categorization. I would be just as happy if you used your own
+   analysis from your knowledge to create the sectors yourself. I don't want
+   to get sucked into the top/CIP black hole, which is it's own project."*).
+   `kb/reference/eacr_cip_title_rules.json` holds 37 ordered title patterns and
+   an exact-title table, authored from the 669 titles that were exams or had no
+   sector; the generator applies it FIRST for Standardized Assessment cards (an
+   exam's MAP TOP id is a coarse general-education code, which filed AP
+   Chemistry under 24 Liberal Arts and CLEP Spanish under 09 Communication) and
+   as the FALLBACK for every other card. Measured on the 2026-09-25 payload:
+   cards without a sector 449 → 3, and 84 exams move to their subject (a random
+   25 all read right). The three left are course codes the session could not
+   place (AT 40, NC.MEA-108, NC.PTA-100). A new title that no rule names keeps
+   its TOP sector, or reads "No CIP assigned yet": add a rule or a title to the
+   JSON, never to code. Guard: `tests/eacr_matrix_payload_test.py` §8c.
+   Generator: `_load_cip_families()` / `_cip_sector_for_tops()` /
+   `_load_cip_title_rules()` / `_cip_sector_for_title()` in
+   `excel_to_dashboard.py`; the card carries `cip_sector` and `top_codes`, the
+   payload `cip_sectors`.
+   The TOP route itself was corrected first ([#1692](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1692)): `TOP_Code_Lookup.xlsx`
+   column D disagreed with its own program title on 81 of 198 rows, nothing
+   read the column before #1681, and `kb/_correct_top_lookup_code4.py` set it
+   from the TOP manual (receipt `kb/receipts/top_code_lookup_code4_2026-09-25_s288.json`;
+   guard `tests/top_code_lookup_code4_test.py`). A route through the programs
+   that list each articulated course was measured and not shipped: a course
+   carries the field of every program that requires it (8 better, 15 worse on
+   a random 30). [`methodology-a-program-cip-labels-the-program-not-its-courses`](../../kb-notes/methodology-a-program-cip-labels-the-program-not-its-courses.md).
+   The course and program CIP question is the TOP to CIP lane's, not this
+   tab's.
 2. **ASCCC Area filter** beside SW Region, from `college_lookup.js`
    `ascccArea`, which `kb/_apply_asccc_areas.py` writes from
    [`kb/reference/asccc_area_map.json`](../../../kb/reference/asccc_area_map.json)
@@ -115,20 +137,14 @@ Story of the earlier rounds: [`docs/eacr_scope_lessons.md`](../../eacr_scope_les
 
 ## NEXT
 
-① **The column-D correction reaches the tab with the next build** after its
-PR merges; dispatch `daily-dashboard.yml` rather than wait for the cron, then
-confirm the "No CIP assigned yet" section holds about 379 rows. ② **Sam looks at the grid in a browser** —
+① Nothing waits on a build: the column-D correction is live and verified. ② **Sam looks at the grid in a browser** —
 the 52px row, the two-line title clamp, the 0.62rem cell figures and the panel
 are his to judge. ③ The Adoption table's own rows keep their opportunity-first
 order; sectioning that view too is one call away if he wants it.
 ④ Curation carryover, unchanged: 4 unclassified-only titles the CER knows · 2
 statewide cards matching no college · the 50-group credential-view cap.
-⑤ **37 MAP TOP ids have no row in `TOP_Code_Lookup.xlsx`** (3, 6, 18, 23, 99,
-347 and 31 more; 100 cards, the philosophy exams under 99 among them). Each
-needs its program title and 4-digit code from MAP's own TOP table (Pedro
-could export it) — a row inferred from course titles alone would be a guess.
-The 279 cards with no TOP id at all would need a title-based route, which is
-curation and is not built.
+⑤ **The title rules are the place to curate a sector.** A misfiled exam or a
+new title no rule names is one line in `kb/reference/eacr_cip_title_rules.json`.
 
 ## The ASCCC Area map is provisional, and that is the ruling
 

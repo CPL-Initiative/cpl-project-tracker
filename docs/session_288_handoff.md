@@ -4,6 +4,8 @@ date: 2026-09-24
 session: 287 (SkyMatrix)
 tags: [handoff, eacr, adoption-matrix, cip, asccc, handout, performance]
 status: current
+superseded: true
+superseded_by: session_290_handoff.md
 ---
 
 # You are Session 288
