@@ -162,6 +162,8 @@ FIXTURES = {
     "p_surface_light":       (":root {\n--paper:#fff;\n}",        ":root {\n--surface-1: #F7F5F1;\n}"),
     "p_statewide_ring":      ("if(x){ctx.arc(1,2,3)}",            "if(isExhibits() && nd.sw && dr>1.8){ ctx.arc(p[0],p[1],dr+3.2,0,6) }"),
     "p_phone_opening":       ("var sph={half:Math.PI*94/180};",   "if(narrowScreen()){ sph.half = Math.PI*75/180; }"),
+    "p_no_course_cip":       ("# course_cip arrives later\ncip = _cip_sector_for_tops(tops)",
+                              "cip = _cip_sector_for_course_cips(course_cip_by_ccn, pairs)"),
 }
 _broken = []
 for _name, (_open_src, _closed_src) in FIXTURES.items():

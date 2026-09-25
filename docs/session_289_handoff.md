@@ -4,6 +4,8 @@ date: 2026-09-24
 session: 287 (SkyLane, beside SkyMatrix)
 tags: [handoff, implementation-funding, ci, test-infra, decision-sheets]
 status: current
+superseded: true
+superseded_by: session_290_handoff.md
 ---
 
 # You are Session 289

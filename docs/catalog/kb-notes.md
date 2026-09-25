@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-493 document(s).
+494 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -155,6 +155,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A place is an anchor, not a college — and the words that describe the ask are not the topic](../kb-notes/methodology-a-place-is-an-anchor-not-a-college.md) | methodology | published | 2026-09-18 | 2026-09-18 |
 | [A prefix match on a stem is not a match on the word](../kb-notes/methodology-a-prefix-match-on-a-stem-is-not-a-match-on-the-word.md) | methodology | published | 2026-09-17 | 2026-09-17 |
 | [A presentation rule is the purest push case there is](../kb-notes/methodology-a-presentation-rule-is-the-purest-push-case.md) | methodology | published | 2026-08-29 | 2026-08-29 |
+| [A program's CIP labels the program, not the courses it lists](../kb-notes/methodology-a-program-cip-labels-the-program-not-its-courses.md) | methodology | published | 2026-09-25 | 2026-09-25 |
 | [A proposal standing in for expert judgment needs two signals of different kinds](../kb-notes/methodology-two-signals-for-a-judgment-proposal.md) | methodology | published | 2026-08-13 | 2026-08-13 |
 | [A provenance label must say why, not what](../kb-notes/methodology-a-provenance-label-must-say-why-not-what.md) | methodology | published | 2026-08-13 | 2026-08-13 |
 | [A provenance tier must encode what you could NOT check](../kb-notes/methodology-a-tier-must-encode-what-you-could-not-check.md) | methodology | published | 2026-08-09 | 2026-08-09 |
@@ -411,7 +412,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [The text a reader sees is not the text a test reads](../kb-notes/methodology-the-text-a-reader-sees-is-not-the-text-a-test-reads.md) | methodology | published | 2026-09-02 | 2026-09-02 |
 | [The unit of curation work is the component, not the suggestion](../kb-notes/methodology-the-unit-of-curation-work-is-the-component-not-the-suggestion.md) | methodology | published | 2026-08-24 | 2026-08-24 |
 | [Title-similarity merge candidates — the guard suite and the licensure-spec lesson](../kb-notes/methodology-title-similarity-merge-guards.md) | methodology | published | 2026-06-12 | 2026-06-12 |
-| [TOP is a last-in-line signal, never a gatekeeper](../kb-notes/methodology-top-is-a-last-in-line-signal.md) | methodology | published | 2026-07-16 | 2026-09-03 |
+| [TOP is a last-in-line signal, never a gatekeeper](../kb-notes/methodology-top-is-a-last-in-line-signal.md) | methodology | published | 2026-07-16 | 2026-09-25 |
 | [Transitive closure is right for decisions and wrong for similarity](../kb-notes/methodology-transitive-closure-is-right-for-decisions-and-wrong-for-similarity.md) | methodology | published | 2026-08-24 | 2026-08-24 |
 | [Two expressions of one predicate will drift apart, and the drift is silent](../kb-notes/methodology-two-expressions-of-one-predicate-will-drift-apart.md) | methodology | published | 2026-09-09 | 2026-09-09 |
 | [Two sessions fixing one guard may both be right — measure before you pick](../kb-notes/methodology-two-fixes-to-one-guard-may-both-be-right.md) | methodology | published | 2026-09-10 | 2026-09-10 |

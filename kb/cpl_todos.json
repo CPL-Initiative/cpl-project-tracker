@@ -1,9 +1,21 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-09-24",
-  "_session": "S287 SkyLane",
-  "_status": "Sam's review of the funding tab is built out through item 7: the Veteran Star on the college rows, the two baseline counts, his Timeline note, the partner agencies out of the feed, and now one drill-in table per lane in his six columns with the one-line priority card (pull requests 1677, 1678, 1679). The four rows the last session staged for the memory table are written. The automated test run that every pull request waits on took twenty minutes this morning and now takes about seven: it runs as four shards on four machines (pull request 1682). Still Sam's, in the tab: Publish on Scenario 1, the six strategies to Completion, two section renames and five timeline lines. The grants check waits on today's promotion, which had not run by late afternoon.",
+  "_as_of": "2026-09-25",
+  "_session": "S288 SkyZ",
+  "_status": "On Exhibit Adoption, the CIP Sectors filter now files 328 more credentials under the right sector and leaves 379 of 3,000 rows without one, down from 890 (pull request 1692): the lookup that routes MAP's TOP code to a CIP family had 81 codes that did not match their own program titles. Sam ruled that TOP is unreliable and that program CIPs are almost fully reliable. A route through the programs that list each course was measured and not shipped, because a course takes the field of every program that requires it, so the next route is the course's own CIP, and card 15 on the open-asks sheet asks where to get it. On the funding tab, Sam's review is built out through item 7, his titles and timeline paste ran on 24 September (pull request 1688), and the automated test run takes about seven minutes on four machines.",
   "items": [
+    {
+      "id": "s288-sam-eacr-grid-look",
+      "for": "Sam",
+      "tab": "exhibit-adoption",
+      "text": "Open the Adoption matrix on Exhibit Adoption in a browser and judge the look: the row height, the two-line titles, the small cell figures and the panel that opens on hover. The sector sections are now right for 328 more credentials; 379 rows still sit under No CIP assigned yet, most of them AP, CLEP, IB and DSST exams."
+    },
+    {
+      "id": "s288-sam-course-cip-source",
+      "for": "Sam",
+      "tab": "exhibit-adoption",
+      "text": "Tell us where we can get course CIPs. The CIP Sectors filter on Exhibit Adoption still reads MAP's TOP code, because no file or table we hold carries a course's own CIP; only the program records do. A COCI course export with the CIP field, or a MAP Custom Report carrying it, would let the filter read each course's CIP first. It is card 15 on the open-asks sheet."
+    },
     {
       "id": "s285-sam-funding-tab-edits",
       "for": "Sam",
@@ -59,12 +71,6 @@
       "text": "The CCR has nowhere to record a verdict. Only the Common CR Reference has a decisions table, so a CCR sitting would produce judgments with no home and you would be asked the same questions again. You adopted this as item 4 of the ladder; it needs a Governance pass before it ships, because a first writer to a shared table is a decision-rights change."
     },
     {
-      "id": "s281-fable-harvest-the-gate",
-      "for": "Fable",
-      "tab": "cr-reference",
-      "text": "Harvest the value that is proven rather than chasing the hard band. The 0.85 gate scored 25 of 25 on Sam's verdicts, so run kb/_jev_adjudicate.py across the full rung-5 population instead of only the 55 anchored pairs, take everything above the gate as suggestions, and put the rest on a decision sheet. The band is 26 pairs and 838 rows — one sitting, not an automation problem."
-    },
-    {
       "id": "s282-fable-rerun-cer-csr-scanners",
       "for": "Fable",
       "tab": "cr-reference",
@@ -72,6 +78,12 @@
     }
   ],
   "_deferred": [
+    {
+      "id": "s281-fable-harvest-the-gate",
+      "for": "Fable",
+      "tab": "cr-reference",
+      "text": "Harvest the value that is proven rather than chasing the hard band. The 0.85 gate scored 25 of 25 on Sam's verdicts, so run kb/_jev_adjudicate.py across the full rung-5 population instead of only the 55 anchored pairs, take everything above the gate as suggestions, and put the rest on a decision sheet. The band is 26 pairs and 838 rows — one sitting, not an automation problem."
+    },
     {
       "id": "s280-sam-decide-the-execute-sql-read-path",
       "for": "Sam",

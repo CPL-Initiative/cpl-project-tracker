@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-09-24
+updated: 2026-09-25
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -66,12 +66,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 5 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 493 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 494 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 79 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 81 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 49 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 261 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **968** | |
+| Session handoffs | 262 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **970** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -123,6 +123,7 @@ Authoritative external sources we've cached:
 
 ## Update history
 
+- **2026-09-25 — S288 (SkyZ):** `TOP_Code_Lookup.xlsx` column D corrected against the TOP manual (81 of 198 codes disagreed with their titles), the EACR's unsectored rows 890 → 379, guard in CI ([#1692](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1692)); Sam's ruling that TOP is unreliable and program CIPs are almost fully reliable; a program-CIP route for courses measured and not shipped (8 better, 15 worse of 30); card 15 asks for a course-CIP source. KB note `methodology-a-program-cip-labels-the-program-not-its-courses`. Handoff 290.
 - **2026-09-24 — S287 (SkyLane, beside SkyMatrix):** the jsdom suite runs as four shards on four runners fanned into the one `test` check, 20 min to 7 ([#1682](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1682)); the funding drill-in's credit and noncredit lane tables and the one-line card head ([#1679](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1679)); the four rows S286 staged written; the review sheet's edit layer documented in the decision-sheets reference; KB note `methodology-a-memory-bound-suite-scales-across-machines-not-workers`. Handoff 289.
 - **2026-09-24 — S285 (SkyGrant):** the fifteen memory rows S281 and S283 staged are written and logged, each re-read against the day ([#1674](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1674)); the college briefing's funding box swept to the funding vocabulary with a source-reading guard ([#1675](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1675)); Sam's ruling to stop working the SQL prompt swarm and budget calls; funding lessons S215–S217 archived; KB note updated: `methodology-a-ban-is-only-as-wide-as-the-files-it-opens`. Handoff 286.
 - **2026-09-23 — S284 (SkyWage):** Scenario 3's controls, a published scenario, and the Max award column (#1664); KB note `methodology-label-a-bound-where-it-binds`; handoff 285; the Scenario 3 decision sheet.
@@ -130,5 +131,3 @@ Authoritative external sources we've cached:
 - **2026-09-22 (S283, SkyFund — Rule 9 checkpoint)** — The Implementation Funding tab ready for the CO leadership review ([#1660](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1660)): the Summary leads with the total allocated and ends on local confirmation, a base-and-cap equity bullet, 116 colleges with Calbright, one sources line, house-voice allocation prose, text headers on the explainer. Sam: the CO can measure career attainment from EDD wage data; four decisions on the [funding review sheet](https://claude.ai/artifact/9MfbN6jqio8as9mY4LwPB2). The standing open-asks sheet must not be republished as it stands (replies keyed to 21 cards, builder at 15). KB note updated: `methodology-key-a-side-table-by-the-write-key-not-by-position`. Handoff 284.
 - **2026-09-21 (S281)** — Decision sheets rebuilt around Sam's sixteen reversals (proposal as focal point, outcome-named chips, no intro, Complete, opt-out with verdict provenance); `sendToClaude()` measured unable to reach a Claude Code session, so the record is the mechanism; one Jev magic half (`kb/_jev_adjudicate.py`) for CSR, CER and CCRR with an independent second look. Two KB notes added.
 - **2026-09-20 (S280, SkyForge — Rule 9 checkpoint)** — Sam's 51 verdicts from the Jev sheet landed in `cr_reference_decisions` (41 fold, 10 keep, 30 rows, receipt in `kb/receipts/`); Jev's gate held 25 of 25 and the numbers under it carried no signal. Sam's decision-sheet rulings (the recommendation as focal point, chips that name the outcome, over-merge by default) in `docs/reference/decision_sheets.md`. The Allow-SQL storm diagnosed from the transcript: the guards load, a hook allow is advisory, one allow rule waits on Sam. KB notes: `reference-system-one-model-fit-by-lane`, `methodology-measure-a-guard-by-the-wait-it-removes`, `methodology-propose-the-decision-and-let-people-pull-it-back`. Handoff 281.
-- **2026-09-20 (S279, SkyKeeper)** — TypeSafe/Jev wired and verified end to end; CR Reference trial scored 51 anchored pairs in 10s and shipped a decision sheet for Sam's verdicts. Two KB notes: a typed answer is not a boolean; a curation table that cannot store a reason.
-- **2026-09-19 (S278, SkyWarden — Rule 9 checkpoint)** — ⭐ **SkyView is a deliberate PUBLIC read-only surface** ([#1632](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1632)): Sam's goal was *"allow public read only SkyView access but prevent any actions to be taken that would edit or access views where edits could be done"*, and asked to gray the menu items or hide them he chose **hide**. Four views moved behind STAGE — each reaches a staging control, and By discipline / By subject / ESL packaging share ONE workspace shell with ONE mode bar, so they travel together. ⚠️ **Gating the menu alone would have LOOKED right in a screenshot**: the views are also plain URLs, so `GATED_ROUTES` puts the same question on `__ccrRoute()`, the one funnel, and the suite asserts the two lists AGREE. ⛔ **A second curation surface lived in another file and the single-decider guard could not see it** — `ccr_atlas_graph.js`'s `__ccrDecision` has its own `moves[]`, and the suite's *"nothing outside curationRung() decides authorization"* passed throughout **because it only read `ccr_universe.js`**. Also: the band now NAMES the credential (rungs 0 and 1 opened on the same words) and answers the COBI half — one origin, one credential; and the pre-JS banner stopped shipping a COBI link it painted before its own gate could reach it. ⛔ **Then the prompt storm** ([#1633](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1633)): **this repo's `.claude/settings.json` has NEVER loaded in a three-repo session** — Claude Code reads the session's project root, which with three repos attached is their parent (`~/.claude/projects/` held one entry, `-home-user`). Documented behavior, and `~/.claude/settings.json` is not read in cloud sessions at all. ⚠️ **Two inherited premises were wrong**: `permissions.allow` DOES work in auto mode (*"allow, ask, or deny rules resolve immediately"*), and a stale `origin/main` made a working gate look broken — so a third of the guards were unnecessary and were removed on Sam's *"simplify it"*. Auto mode is the classifier, and it was turned on to stop the storm it caused. `roadmap_lane` budget 12,000 → 20,000 on Sam's call (measured: 28/32 fit, the 4 over were current truth, and `stacked_roadmap_cell` is the real guard). Two KB notes.

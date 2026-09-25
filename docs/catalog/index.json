@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 493,
+   "count": 494,
    "docs": [
     {
      "created": "2026-08-14",
@@ -2732,6 +2732,27 @@
      "title": "A presentation rule is the purest push case there is",
      "type": "methodology",
      "updated": "2026-08-29"
+    },
+    {
+     "created": "2026-09-25",
+     "governs": [
+      "kb/program_course_graph.json",
+      "kb/_build_program_course_graph.py",
+      "excel_to_dashboard.py"
+     ],
+     "path": "docs/kb-notes/methodology-a-program-cip-labels-the-program-not-its-courses.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "cip",
+      "top-code",
+      "program-course-graph",
+      "eacr",
+      "data-quality"
+     ],
+     "title": "A program's CIP labels the program, not the courses it lists",
+     "type": "methodology",
+     "updated": "2026-09-25"
     },
     {
      "created": "2026-08-13",
@@ -7833,7 +7854,7 @@
      ],
      "title": "TOP is a last-in-line signal, never a gatekeeper",
      "type": "methodology",
-     "updated": "2026-09-03"
+     "updated": "2026-09-25"
     },
     {
      "created": "2026-08-24",
@@ -10850,7 +10871,7 @@
      ],
      "title": "EACR \u2014 college scope, the CER fold, and the accessibility pass",
      "type": null,
-     "updated": "2026-08-16"
+     "updated": "2026-09-25"
     },
     {
      "created": "2026-06-04",
@@ -14188,8 +14209,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 261,
+   "count": 262,
    "docs": [
+    {
+     "created": "2026-09-25",
+     "governs": [],
+     "n": 290,
+     "path": "docs/session_290_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "eacr",
+      "cip",
+      "top-code",
+      "program-course-graph",
+      "decision-sheets"
+     ],
+     "title": "the TOP lookup corrected, the program-CIP route measured and not shipped, the course CIP asked for",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-24",
      "governs": [],
@@ -18620,5 +18659,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 968
+ "total": 970
 }

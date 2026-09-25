@@ -144,6 +144,15 @@ def p_statewide_ring():
                          else "ccr_universe.js already draws the statewide ring")
 
 
+def p_no_course_cip():
+    """Still open while the EACR generator reads no course CIP. The card asks
+    where course CIPs can come from; the route that reads them retires it."""
+    src = re.sub(r"^\s*#.*$", "", _read("excel_to_dashboard.py"), flags=re.M)
+    n = len(re.findall(r"\bcourse_cip", src))
+    return n == 0, ("the EACR generator reads a course CIP (%d site(s))" % n) if n else \
+        "the EACR generator reads no course CIP"
+
+
 def p_phone_opening():
     src = _read("prototype/ccr_universe.js")
     aware = bool(re.search(r"(narrowScreen|matchMedia|innerWidth)[\s\S]{0,400}?sph\.half", src))
@@ -187,6 +196,8 @@ EVIDENCE = {
     12: [policy()],
     13: [live("2026-09-22", "the mojibake count in chatbox_college_courses")],
     14: [quoted("docs/reference/lanes/t5-55050-article-9.md", "2026-08-30")],
+    15: [measured(p_no_course_cip),
+         live("2026-09-25", "the CIP columns in the Supabase schema")],
 }
 
 PROVENANCE = {
@@ -526,6 +537,31 @@ def items():
             "lives.</strong> <em>It might be wrong if</em> #2's ask for enacted law makes it a hold "
             "rather than a verdict, which would park it until the law exists."),
         'chips': chips(('Rule them on the tab', 'tab'), ('Park #2, rule #10 and #16', 'park2'), CH_LATER),
+    })
+
+    # ══ EACR ═════════════════════════════════════════════════════════════════
+
+    I.append({
+        'lane': 'eacr-exhibit-cr-adoption',
+        'title': 'Where we can get the course CIPs',
+        'ref': 'eacr · NEEDS SAM ⑤',
+        'facts': (
+            "The CIP Sectors filter reads MAP's TOP id today, because no file or table we hold "
+            "carries a course's own CIP: the COCI course files have none, and in Supabase only "
+            "<code>coci_college_programs</code> does. On 2026-09-25 you said course CIPs are only "
+            "partially set and program CIPs are almost 100% reliable. A route through the programs "
+            "that list each course was measured and not shipped: of 30 sampled rows it would have "
+            "moved, 8 read better and 15 worse, because a course takes the field of every program "
+            "that requires it (Elementary Italian went to Culinary)."),
+        'why': (
+            "The course's own CIP is the signal the filter needs, and it would retire the TOP route "
+            "rather than patch it."),
+        'rec': (
+            "<strong>Send a COCI course export that carries the CIP field</strong>, or ask Pedro for "
+            "a MAP Custom Report with it, and the generator reads the course CIP first and TOP last. "
+            "<em>It might be wrong if</em> the course CIPs are still too sparse to matter, in which "
+            "case the export can wait for the fall cutover."),
+        'chips': chips(('I will send an export', 'send'), ('Wait for the cutover', 'wait'), CH_LATER),
     })
 
     return I

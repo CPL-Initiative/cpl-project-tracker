@@ -132,8 +132,9 @@ nobody finds; `unreferenced_offload` flags any that stop being.
    and the **CIP↔TOP crosswalk** (TOP is the subject there). Full doctrine +
    the 24%-of-rows blast radius:
    [`docs/kb-notes/methodology-top-is-a-last-in-line-signal.md`](docs/kb-notes/methodology-top-is-a-last-in-line-signal.md).
-   The CO's **TOP→CIP** cutover (fall 2026) is the systemic exit from TOP —
-   apply the same "corroborate, don't gate" posture to CIP until it earns trust.
+   **TOP→CIP** (fall 2026) is the exit from TOP. A **program** CIP is reliable
+   (Sam, 2026-09-25) but labels the program, not its courses — never vote a
+   course's field from its programs; course CIP corroborates until it fills in.
 
 8. **READ the memory table BEFORE you work — Rule 8 had no query step until
    2026-08-10.** The very first thing a session does on a workstream, before

@@ -1,7 +1,7 @@
 ---
 title: EACR — college scope, the CER fold, and the accessibility pass
 created: 2026-08-16
-updated: 2026-08-16
+updated: 2026-09-25
 tags: [lessons, eacr, exhibit-adoption, filters, accessibility, cer]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -602,3 +602,57 @@ column + rotated short-caps headers + h-scroll are load-bearing, not a preferenc
 **Row grain is the unified TITLE, not `credentialKey()`** (which gives 431 — it
 splits titles carrying two *named* issuers); the peer benchmark is recomputed per
 ROW, since `peer_units_median` is per CARD and a row may fold several.
+
+## 2026-09-25 — Session 288 (SkyZ): the CIP route, a dormant column, and a better-sounding route that measured worse
+
+**What happened.** Confirming that #1681's CIP Sectors dropdown filled, the
+session found 890 of 3,000 matrix rows in "No CIP assigned yet", the largest
+section in the grid. The cause was `TOP_Code_Lookup.xlsx` column D, the CCC
+4-digit TOP code that routes MAP's TOP id to a CIP family. Nothing had read the
+column before #1681, and it disagreed with its own program title (column E) on
+81 of 198 rows: 35 codes that are no TOP code at all (Fire Technology 2130,
+Drafting 0909, Welding 0941) and 46 real codes naming another program (History
+at 2203, which is Ethnic Studies; Nursing (RN) at 1211, Polysomnography;
+Construction Crafts at 0946, HVAC). #1692 set column D from the TOP manual by
+title (`kb/_correct_top_lookup_code4.py`, receipt
+`kb/receipts/top_code_lookup_code4_2026-09-25_s288.json`) and guarded it
+(`tests/top_code_lookup_code4_test.py`, now in CI beside
+`tests/eacr_matrix_payload_test.py`, which had run nowhere). Live after the
+13:16 UTC build: 890 → 379 rows without a sector, 328 cards re-sectored,
+confirmed in Chromium (the dropdown reads 449 cards).
+
+**Lesson 1 — a join rate is not a correctness rate.** #1681 measured the
+column's coverage (163 of 198 ids resolve) and shipped. Of those 163, 46
+resolved to the wrong program. A dormant column's first consumer has to check
+it against its authority (here the TOP manual already in
+`kb/reference/top_categories.json`), not just count how many rows find a match.
+The harness that made the fix safe reproduced all 3,070 published sectors from
+the payload with the generator's own functions before measuring anything new.
+
+**Sam's ruling, same day:** *"TOP is not reliable since it is entered by the
+colleges with no effective checks. The new CIP system will be better. The
+course CIPs are only partially set now [and] the program CIPs are almost 100%
+reliable."*
+
+**Lesson 2 — a program's CIP labels the program, not its courses.** The
+session built a program-first route: each (college, articulated course) pair
+found the COCI programs listing that course (`kb/program_course_graph.json`,
+colleges joined on the MIS code through
+`kb/college_identity/<date>/crosswalk.json`, course numbers compared without
+leading zeros) and voted their CIP family, with umbrella programs (24, 30)
+voting only when alone. It sectored 2,244 of 3,000 rows, and the largest
+disagreement groups favored it (culinary 19 → 12, FAA pilot 47 → 49, water
+treatment 03 → 15, welding and ironworkers 15 → 48). A random 30 of the 682
+rows it would have moved told the other half: 8 better, 15 worse, 7 no
+different. A course takes the family of every program that requires it —
+Elementary Italian went to Culinary, Beginning Chinese to Area Studies,
+Calculus to Physical Sciences, MS Word to Health. It was not shipped. Checking
+only the biggest disagreement groups would have shipped it: those groups are
+career-technical credentials, whose courses live in their own programs.
+
+**Where the route goes.** The course's own CIP is the direct signal, and no
+file or table we hold carries it (the only CIP columns in Supabase are on
+`coci_college_programs`; the COCI course list and Program Course File have
+none). The ask is card 15 on the open-asks sheet. The measurement scripts ran
+from the session scratchpad; the method above reproduces them from committed
+files.

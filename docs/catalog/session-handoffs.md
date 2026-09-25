@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-261 document(s).
+262 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 290 | [the TOP lookup corrected, the program-CIP route measured and not shipped, the course CIP asked for](../session_290_handoff.md) | 2026-09-25 |
 | 289 | [CI cut to seven minutes, the lane tables landed, the review sheet's edit layer documented](../session_289_handoff.md) | 2026-09-24 |
 | 288 | [Sam's ten EACR tweaks land, the matrix becomes a window, ASCCC areas go provisional](../session_288_handoff.md) | 2026-09-24 |
 | 287 | [the funding tab review sheet, three funding PRs, and an emergency checkpoint](../session_287_handoff.md) | 2026-09-24 |

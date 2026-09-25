@@ -1,7 +1,7 @@
 ---
 title: "TOP is a last-in-line signal, never a gatekeeper"
 created: 2026-07-16
-updated: 2026-09-03
+updated: 2026-09-25
 tags: [methodology, top-code, discipline, subj4, identity, data-quality, cip]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -41,9 +41,17 @@ verifies the code is right for the course. The consequences we can measure:
   never a clean 1:1 field key.
 
 **CIP context (fall 2026):** the CO is transitioning course/program coding
-**TOP → CIP** systemwide this fall (ESS 26-06). CIP *may* be applied more
-consistently — but that is unproven, so treat CIP with the same "corroborate,
-don't gate" posture until the data earns more trust.
+**TOP → CIP** systemwide this fall (ESS 26-06). Sam, 2026-09-25: *"TOP is not
+reliable since it is entered by the colleges with no effective checks. The new
+CIP system will be better. The course CIPs are only partially set now [and] the
+program CIPs are almost 100% reliable."* So the **program** CIP is a reliable
+label for the program, and the **course** CIP is the course's own signal where
+it is set. ⚠️ A program's CIP does not carry over to the courses it lists:
+measured the same day, voting a course's field from its programs sent
+Elementary Italian to Culinary and Calculus to Physical Sciences
+([`methodology-a-program-cip-labels-the-program-not-its-courses`](methodology-a-program-cip-labels-the-program-not-its-courses.md)).
+Until course CIPs fill in, hold course-level CIP to the same "corroborate,
+don't gate" posture.
 
 ## The rule (three roles)
 
