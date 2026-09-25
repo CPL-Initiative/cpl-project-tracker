@@ -645,6 +645,9 @@ collapse to one `<date>` family so writer and reader edges join.
 | `prototype/ccr_universe.json` | scripts: `kb/_build_ccr_cpl.py`, `kb/_build_ccr_sky.py`, `kb/_build_ccr_universe.py`, `prototype/build_ccr_atlas.py`, `prototype/globe/extract_globe_data.py` | — |
 | `prototype/ccr_universe_members.json` | scripts: `kb/_audit_control_number_claims.py`, `kb/_build_ccr_universe.py`, `prototype/build_ccr_atlas.py` | — |
 | `prototype/check_contrast.py` | workflows: `js-tests.yml` | — |
+| `prototype/funding_video/.music.wav` | none found | scripts: `prototype/funding_video/render.mjs` |
+| `prototype/funding_video/funding_in_motion.html` | none found | scripts: `prototype/funding_video/build.py` |
+| `prototype/funding_video/funding_in_motion.src.html` | scripts: `prototype/funding_video/build.py` | — |
 | `prototype/skyview.html` | scripts: `prototype/build_ccr_atlas.py` | scripts: `prototype/build_ccr_atlas.py` · committed by: `daily-dashboard.yml` |
 | `quickstart.js` | pages: `CPL_Dashboard.html` | — |
 | `raci.js` | pages: `CPL_Dashboard.html` | — |
@@ -752,6 +755,7 @@ collapse to one `<date>` family so writer and reader edges join.
 |---|---|
 | `127.0.0.1` | `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
 | `127.0.0.1:` | modules: `prototype/check_ccr_atlas.js`, `prototype/check_funding_explainer.js`, `prototype/check_skyview_sweep.js`, `scripts/a11y.js`, `scripts/check_memory_briefing_layout.js`, `scripts/tab_review_sheet/capture.js`, `scripts/tab_review_sheet/tab.js` |
+| `127.0.0.1:9333` | scripts: `prototype/funding_video/render.mjs` |
 | `alameda.edu` | tabs: `map-queue`, `map-users` |
 | `api.anthropic.com` | tabs: `annual-report` · pages: `CPL_Dashboard.html` · `edgefn:cpl-chat`, `edgefn:cpl-news-harvest`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
 | `api.careeronestop.org` | scripts: `kb/_sync_cos_certifications.py`, `kb/_sync_moc_crosswalk.py` |
@@ -917,5 +921,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 518 file
-datasets · 145 external services · 364 consumers · 35 workflows · 37 tabs.
+Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 521 file
+datasets · 146 external services · 366 consumers · 35 workflows · 37 tabs.

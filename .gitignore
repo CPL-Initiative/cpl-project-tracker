@@ -127,3 +127,9 @@ kb/occupation_crosswalk_out/**/*.html
 # run receipt — is committed. It is the record of what a college was shown.
 kb/regional_cpl_out/**/*.xlsx
 kb/regional_cpl_out/**/*.html
+
+# funding video render byproducts
+prototype/funding_video/.fonts/
+prototype/funding_video/.frames/
+prototype/funding_video/.music.wav
+prototype/funding_video/render.html

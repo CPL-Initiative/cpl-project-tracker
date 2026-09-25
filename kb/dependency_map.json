@@ -4,9 +4,9 @@
   "supabase_tables": 85,
   "rpcs": 31,
   "edge_functions": 5,
-  "file_datasets": 518,
-  "external_services": 145,
-  "consumers": 364,
+  "file_datasets": 521,
+  "external_services": 146,
+  "consumers": 366,
   "workflows": 35,
   "data_js_files": 61,
   "tabs": 37
@@ -219,6 +219,18 @@
      "direction": "read",
      "how": "url",
      "line": 15
+    }
+   ],
+   "main_committers": []
+  },
+  "external:127.0.0.1:9333": {
+   "consumers": [
+    {
+     "id": "script:prototype/funding_video/render.mjs",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 8
     }
    ],
    "main_committers": []
@@ -13841,6 +13853,45 @@
      "direction": "run",
      "how": "yaml",
      "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:prototype/funding_video/.music.wav": {
+   "consumers": [
+    {
+     "id": "script:prototype/funding_video/render.mjs",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 19
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:prototype/funding_video/funding_in_motion.html": {
+   "consumers": [
+    {
+     "id": "script:prototype/funding_video/build.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 12
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:prototype/funding_video/funding_in_motion.src.html": {
+   "consumers": [
+    {
+     "id": "script:prototype/funding_video/build.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 10
     }
    ],
    "served": true,
