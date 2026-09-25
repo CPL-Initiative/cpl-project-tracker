@@ -205,5 +205,24 @@ def main():
     return 0
 
 
+def patch_stop_hook():
+    """Apply scripts/patch_stop_hook.py to this session's Stop hook.
+
+    The tracker's own SessionStart hook runs that patch, and in a three-repo
+    session the repo's settings never load (the INERT line), so the Stop hook's
+    unpushed-commit false positive came back: S288, 2026-09-25, "There are 2
+    unpushed commit(s)" on a branch level with main after a squash-merge
+    deleted its remote. `--fix` is the first command of every session, so it
+    applies the patch here. Idempotent, and silent when there is nothing to do."""
+    run = subprocess.run([sys.executable, os.path.join(REPO, "scripts", "patch_stop_hook.py")],
+                         capture_output=True, text=True)
+    out = (run.stdout + run.stderr).strip()
+    if out:
+        print("STOP HOOK:      " + out)
+
+
 if __name__ == "__main__":
-    sys.exit(main())
+    rc = main()
+    if "--fix" in sys.argv[1:]:
+        patch_stop_hook()
+    sys.exit(rc)

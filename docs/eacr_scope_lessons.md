@@ -672,3 +672,10 @@ reader agrees with at a glance, and a title a person can read carries that. The
 session reached for the most authoritative route (course CIP) when the question
 only needed a defensible grouping; Sam's scoping ruling cost one JSON file where
 the other path led into a lane of its own.
+
+**Verified live, same day.** The 14:16 UTC build after #1693 published exactly
+the measured result: 3 of 3,070 cards without a sector, AP Chemistry under 40,
+CLEP Spanish under 16; Chromium at 390 and 1440 reads "No CIP assigned yet (3)".
+The harness that recomputed sectors from the published payload with the
+generator's own functions predicted every number the build then produced,
+which is what made each step safe to ship without a trial build.

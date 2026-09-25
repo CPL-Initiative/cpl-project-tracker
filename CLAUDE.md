@@ -680,9 +680,9 @@ Read that before a UI rework, a First Light artifact, or a table layout.
   covers both HTMLs without a Rule-4 mirror. Only `:root` tokens need the mirror.
 - **Prototype UI in a fast-feedback canvas, then port.** Iterate the look in a
   Claude artifact, lock it with Sam, then implement into the monolith.
-- **Stop-hook:** patched in place by `scripts/patch_stop_hook.py` at
-  SessionStart; installing our own copy never worked remotely. See
-  [`troubleshooting`](docs/reference/troubleshooting.md).
+- **Stop-hook:** patched in place by `scripts/patch_stop_hook.py`, which
+  `check_hooks_live.py --fix` runs (a three-repo session never loads the
+  SessionStart hook). See [`troubleshooting`](docs/reference/troubleshooting.md).
 
 ## Deployed site
 

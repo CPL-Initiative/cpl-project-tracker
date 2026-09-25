@@ -11,32 +11,32 @@
   },
   "summary": {
     "files": 985,
-    "bytes": 10440623,
+    "bytes": 10442951,
     "over_budget": 6,
     "handoff_max": 291,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 61757,
+    "always_loaded_bytes": 61791,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 61757,
+        "bytes": 61791,
         "over": 1
       },
       "other": {
         "files": 115,
-        "bytes": 3191194,
+        "bytes": 3191709,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 11687,
+        "bytes": 11875,
         "over": 0
       },
       "lessons": {
         "files": 75,
-        "bytes": 2136743,
+        "bytes": 2137194,
         "over": 1
       },
       "kb_note": {
@@ -46,31 +46,32 @@
       },
       "roadmap_lane": {
         "files": 33,
-        "bytes": 251240,
+        "bytes": 251416,
         "over": 1
       },
       "handoff": {
         "files": 263,
-        "bytes": 2272341,
+        "bytes": 2273305,
         "over": 0
       }
     },
     "by_rule": {
       "oversized_doc": 6,
       "house_voice": 24,
-      "vault_heavy_path": 50
+      "vault_heavy_path": 51
     },
     "vault": {
-      "files": 3142,
-      "bytes": 1517364264,
-      "heavy_bytes": 654606259,
-      "heavy_share": 0.431,
+      "files": 3143,
+      "bytes": 1587413675,
+      "heavy_bytes": 724649007,
+      "heavy_share": 0.456,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
         "cpl-project-tracker/cip_fitcheck",
         "cpl-project-tracker/kb/unclassified_fold",
         "cpl-project-tracker/kb/regional_cpl_out",
         "cpl-project-tracker/tmc",
+        "cpl-project-tracker/kb/program_course_graph.json",
         "cpl-project-tracker/unified_courses_member_desc.js",
         "cpl-project-tracker/kb/coci_minted_singletons.json",
         "cpl-project-tracker/kb/coci_minted_courses.json",
@@ -124,13 +125,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 61757,
+        "bytes": 61791,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 1757,
+        "over_by": 1791,
         "ratio": 1.03
       },
-      "message": "61,757 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "61,791 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
       "path": "CLAUDE.md"
     },
     {
@@ -535,6 +536,16 @@
         "kind": "dir"
       },
       "message": "directory totals 14,868,311 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/program_course_graph.json",
+      "detail": {
+        "bytes": 70042748,
+        "kind": "file"
+      },
+      "message": "70,042,748 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

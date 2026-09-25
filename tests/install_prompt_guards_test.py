@@ -98,6 +98,13 @@ def main():
         checks.append(("checker --fix on a healthy root changes nothing",
                        out2.returncode == 0 and "FIXED" not in out2.stdout
                        and "execute_sql allow rule: yes" in out2.stdout))
+    # The repo's SessionStart hook (which runs patch_stop_hook.py) never loads in a
+    # three-repo session, so --fix, the first command of every session, applies it.
+    src = open(checker, encoding="utf-8").read()
+    main_block = src[src.index('if __name__ == "__main__":'):]
+    checks.append(("checker --fix applies the stop-hook patch (three-repo sessions never load the repo's SessionStart hook)",
+                   "patch_stop_hook.py" in src and "patch_stop_hook()" in main_block
+                   and '"--fix"' in main_block))
     failed = [label for label, ok in checks if not ok]
     for label, ok in checks:
         print(("ok   " if ok else "FAIL ") + label)
