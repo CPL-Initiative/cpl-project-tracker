@@ -64,6 +64,15 @@ function boot(file, reduced) {
   check(tag + "d2 a barrier shows at a scene seam", Array.from(inv).some((e) => e.style.visibility === "visible"));
   w.__film.seek(40);
   check(tag + "d3 and none mid-scene", Array.from(inv).every((e) => e.style.visibility !== "visible"));
+  // The targets scene (46 s) holds at half the target, then fills it. The
+  // figures on screen must be the ones typed from the engine: halving the
+  // ROUNDED target printed 22.1 FTES where the engine's half is 22.2.
+  const cfg = JSON.parse(/CFG=(\{[\s\S]*?\}),EXPLAINER=/.exec(raw)[1]);
+  const ftesShown = () => Array.from(d.querySelectorAll("#stage div")).map((e) => e.textContent).find((x) => /^\d+\.\d FTES$/.test(x));
+  w.__film.seek(51.8);
+  check(tag + "e1 the half-target hold shows the engine's half figure (" + cfg.target.halfFtesWords + ")", ftesShown() === cfg.target.halfFtesWords + " FTES");
+  w.__film.seek(55.5);
+  check(tag + "e2 the full target shows the engine's figure (" + cfg.target.ftesWords + ")", ftesShown() === cfg.target.ftesWords + " FTES");
   const wr = boot(file, true);
   wr.__film.seek(15.1);
   check(tag + "d4 reduced motion: no barriers", Array.from(wr.document.querySelectorAll("#fx .inv")).every((e) => e.style.visibility !== "visible"));

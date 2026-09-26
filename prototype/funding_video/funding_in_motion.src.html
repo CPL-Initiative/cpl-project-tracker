@@ -186,7 +186,7 @@ var S4=scene(32,46,CFG.prioName,CFG.prioText,function(r,o){
   o.h=words(r,CFG.prioHead,'hd');o.h.style.fontSize='5.6cqw';
   var P=CFG.prios;
   o.cols=P.map(function(p,i){var rep=p[0]==null;var d=E('div','abs',null,r,'left:'+(4.5+i*30.8)+'cqw;top:13.2cqw;width:29.2cqw;min-height:39cqw;padding:2.2cqw 2.2cqw 2cqw;border-top:.6cqw solid '+(rep?'var(--stage-gold)':'var(--stage-blue)')+';background:var(--surface);border-radius:.5cqw;box-shadow:0 1cqw 2.5cqw -1.5cqw var(--stage-shadow)');
-    var n=rep?E('div','pill','Reported',d,'background:var(--stage-gold);color:var(--stage-ink);margin:1.6cqw 0 2.2cqw'):E('div','big blue','0%',d,'font-size:9cqw');E('div',null,p[1],d,'font:700 '+(rep?'3.2':'3.8')+'cqw/1.08 '+PF+';margin:1cqw 0 1.2cqw');E('div','ln',p[2],d,'font-size:2.45cqw;line-height:1.3');return{d:d,n:n,v:p[0],rep:rep};});
+    var n=rep?E('div','pill','Reported',d,'background:var(--stage-gold);color:var(--stage-ink);margin:.6cqw 0 1cqw'):E('div','big blue','0%',d,'font-size:9cqw');E('div',null,p[1],d,'font:700 '+(rep?'2.9':'3.8')+'cqw/1.08 '+PF+';margin:1cqw 0 1.2cqw');E('div','ln',p[2],d,'font-size:'+(rep?'2.3':'2.45')+'cqw;line-height:1.3');return{d:d,n:n,v:p[0],rep:rep};});
 },function(o,t){reveal(o.h.ws,t,0.1,0.08,0.6);o.cols.forEach(function(c,i){var a=1.2+i*4,p=back(k(t,a,a+0.9));c.d.style.opacity=k(t,a,a+0.3);c.d.style.transform='translateY('+((1-p)*6)+'cqw) rotate('+((1-p)*(i-1)*4)+'deg)';
   if(!c.rep)count(c.n,t,a+0.2,a+1.4,c.v,function(v){return Math.round(v)+'%';});var on=t>=a&&t<a+4;c.d.style.filter=t>=13.2||on||t<a?'none':'saturate(.4) opacity(.55)';});});
 
@@ -203,7 +203,10 @@ var S5=scene(46,56,'Targets','Every priority has a target in FTES: 30 semester u
 },function(o,t){reveal(o.h.ws,t,0.1,0.08,0.6);reveal(o.l.ws,t,0.9,0.05,0.5);fade(o.card,t,2.0,2.6);
   var f1=eio(k(t,3.0,5.0)),f2=eio(k(t,6.6,7.6)),v=f1*0.5+f2*0.5,over=t>7.6?Math.sin(k(t,7.6,8.4)*Math.PI*3)*(1-k(t,7.6,8.4)):0;
   o.fill.style.width=(v*100)+'%';o.bar.style.transform='translateX('+(over*0.8)+'cqw)';
-  o.fte.textContent=(CFG.target.ftes*v).toFixed(1)+' FTES';o.usd.textContent=money(CFG.target.usd*v);
+  // On the hold at half and at the full target, show the figures typed from
+  // the engine: half of the ROUNDED target can round the other way (44.3 / 2
+  // prints 22.1 where the engine's half target is 22.2).
+  o.fte.textContent=(v===0.5?CFG.target.halfFtesWords:v===1?CFG.target.ftesWords:(CFG.target.ftes*v).toFixed(1))+' FTES';o.usd.textContent=money(CFG.target.usd*v);
   o.cap.textContent=t<6.4?(t>5.0?'Half the target qualifies for half the share.':''):'The share is the ceiling.';o.cap.style.opacity=t<6.4?k(t,5.0,5.4):k(t,7.6,8.0);});
 
 var S6=scene(56,65,'The baseline','Meet the baseline by November 1, 2026: a CPL coordinator assigned and listed in MAP and on the college CPL landing page; local confirmation on file; and at least 75 percent of enrolled veterans’ Joint Services Transcripts uploaded in MAP. Until then, the funding your college demonstrates is held in reserve for it.',function(r,o){
