@@ -6,7 +6,7 @@
   "edge_functions": 5,
   "file_datasets": 524,
   "external_services": 147,
-  "consumers": 368,
+  "consumers": 369,
   "workflows": 35,
   "data_js_files": 61,
   "tabs": 37
@@ -534,6 +534,20 @@
      "tabs": [
       "admin"
      ]
+    },
+    {
+     "id": "script:kb/_build_esl_merging_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 32
+    },
+    {
+     "id": "script:kb/_build_open_asks_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 53
     },
     {
      "id": "script:scripts/announce_session_hint.py",
@@ -3061,7 +3075,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 132
+     "line": 136
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -4152,7 +4166,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 121
+     "line": 125
     },
     {
      "id": "script:scripts/stamp_asset_versions.py",
@@ -4499,7 +4513,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 121
+     "line": 125
     }
    ],
    "served": true,
@@ -5249,20 +5263,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 179
-    }
-   ],
-   "served": false,
-   "main_committers": []
-  },
-  "file:docs/reference/lanes/esl-packaging.md": {
-   "consumers": [
-    {
-     "id": "script:kb/_build_open_asks_decision_sheet.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 175
+     "line": 183
     }
    ],
    "served": false,
@@ -5275,7 +5276,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 189
+     "line": 193
     }
    ],
    "served": false,
@@ -5427,6 +5428,26 @@
      "direction": "write",
      "how": "literal",
      "line": 54
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:docs/visuals/<date>-esl-merging-procedure.html": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_esl_merging_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 45
+    },
+    {
+     "id": "script:kb/_build_esl_merging_decision_sheet.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 45
     }
    ],
    "served": false,
@@ -6061,7 +6082,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 121
+     "line": 125
     }
    ],
    "served": true,
@@ -13415,7 +13436,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 121
+     "line": 125
     }
    ],
    "served": true,
@@ -13817,7 +13838,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 141
+     "line": 145
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -15831,7 +15852,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 155
+     "line": 159
     },
     {
      "id": "script:kb/_build_orphan_parent_worklist.py",

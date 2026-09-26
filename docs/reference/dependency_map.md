@@ -333,7 +333,6 @@ collapse to one `<date>` family so writer and reader edges join.
 | `docs/catalog/index.json` | tabs: `governance` · scripts: `kb/_build_docs_index.py` | — |
 | `docs/common_cr_reference_scope.md` | scripts: `kb/_build_cr_reference.py` | — |
 | `docs/military_cr_reference_scope.md` | scripts: `kb/_build_open_asks_decision_sheet.py` | — |
-| `docs/reference/lanes/esl-packaging.md` | scripts: `kb/_build_open_asks_decision_sheet.py` | — |
 | `docs/reference/lanes/t5-55050-article-9.md` | scripts: `kb/_build_open_asks_decision_sheet.py` | — |
 | `docs/reference/mid_lifecycle.md` | scripts: `kb/_doctrine_scenarios.py` | — |
 | `docs/reference/statute/README.md` | scripts: `kb/_doctrine_scenarios.py` | — |
@@ -345,6 +344,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `docs/visuals/<date>-ccr-title-rung.html` | scripts: `kb/_build_ccr_title_rung_sheet.py` | scripts: `kb/_build_ccr_title_rung_sheet.py` |
 | `docs/visuals/<date>-crosslist-options.html` | scripts: `kb/_build_crosslist_decision_sheet.py` | scripts: `kb/_build_crosslist_decision_sheet.py` |
 | `docs/visuals/<date>-decision-sheet-template.html` | none found | scripts: `kb/_build_decision_sheet_demo.py` |
+| `docs/visuals/<date>-esl-merging-procedure.html` | scripts: `kb/_build_esl_merging_decision_sheet.py` | scripts: `kb/_build_esl_merging_decision_sheet.py` |
 | `docs/visuals/<date>-evening-asks.html` | scripts: `kb/_build_evening_asks_sheet.py` | scripts: `kb/_build_evening_asks_sheet.py` |
 | `docs/visuals/<date>-funding-review.html` | scripts: `kb/_build_funding_review_decision_sheet.py` | scripts: `kb/_build_funding_review_decision_sheet.py` |
 | `docs/visuals/<date>-funding-scenario-3.html` | scripts: `kb/_build_funding_scenario3_decision_sheet.py` | scripts: `kb/_build_funding_scenario3_decision_sheet.py` |
@@ -776,7 +776,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `canadacollege.edu` | tabs: `map-queue`, `map-users` |
 | `cdn.jsdelivr.net` | tabs: `pipeline` |
 | `cdnjs.cloudflare.com` | scripts: `prototype/globe/build_globe.py` |
-| `claude.ai` | tabs: `admin` · scripts: `scripts/announce_session_hint.py` · workflows: `cpl-chat-health.yml`, `map-users-sync.yml` |
+| `claude.ai` | tabs: `admin` · scripts: `kb/_build_esl_merging_decision_sheet.py`, `kb/_build_open_asks_decision_sheet.py`, `scripts/announce_session_hint.py` · workflows: `cpl-chat-health.yml`, `map-users-sync.yml` |
 | `code.claude.com` | scripts: `scripts/install_prompt_guards.py` |
 | `commons.wikimedia.org` | pages: `CPL_Dashboard.html` · scripts: `tools/source_first_light_art.mjs` |
 | `counseling.santarosa.edu` | tabs: `map-queue`, `map-users` |
@@ -926,4 +926,4 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 
 Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 524 file
-datasets · 147 external services · 368 consumers · 35 workflows · 37 tabs.
+datasets · 147 external services · 369 consumers · 35 workflows · 37 tabs.

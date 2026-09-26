@@ -48,6 +48,10 @@ NEEDS = re.compile(r'NEEDS SAM', re.I)
 NO_OPEN_ASK = {
     'README':
         "the lanes index, which documents the marker rather than carrying one.",
+    'esl-packaging':
+        "its open asks ride their own sheet, the ESL merging procedure Sam asked for on "
+        "2026-09-21 (kb/_build_esl_merging_decision_sheet.py, nine items, https://claude.ai/artifact/LaZmu7NYj11DigAEbxsUMS); the four cards "
+        "this sheet carried were settled by his rulings of 2026-08-24.",
 }
 
 
@@ -172,21 +176,21 @@ def p_eths_misprefixed():
 EVIDENCE = {
     1:  [measured(p_eths_misprefixed)],
     2:  [policy()],
-    3:  [quoted("docs/reference/lanes/esl-packaging.md", "2026-08-29")],
-    4:  [quoted("docs/reference/lanes/esl-packaging.md", "2026-08-29")],
-    5:  [quoted("docs/reference/lanes/esl-packaging.md", "2026-08-29")],
-    6:  [quoted("docs/reference/lanes/esl-packaging.md", "2026-08-29")],
-    7:  [quoted("docs/military_cr_reference_scope.md", "2026-09-05")],
-    8:  [quoted("docs/military_cr_reference_scope.md", "2026-09-05")],
-    9:  [policy()],
-    10: [policy()],
-    11: [measured(p_phone_opening)],
-    # 12 was the ASCCC-areas card, retired 2026-09-24 on Sam's ruling ("use what
-    # we have for ASCCC regions and we'll get the new report later"); the three
-    # below moved up one, as position keys must.
-    12: [policy()],
-    13: [live("2026-09-22", "the mojibake count in chatbox_college_courses")],
-    14: [quoted("docs/reference/lanes/t5-55050-article-9.md", "2026-08-30")],
+    # 3-6 were the four ESL packaging cards, retired 2026-09-26 (S294): Sam had
+    # settled all four on 2026-08-24, and his ESL questions now ride their own
+    # sheet (kb/_build_esl_merging_decision_sheet.py). The cards below moved up
+    # four, as position keys must.
+    3:  [quoted("docs/military_cr_reference_scope.md", "2026-09-05")],
+    4:  [quoted("docs/military_cr_reference_scope.md", "2026-09-05")],
+    5:  [policy()],
+    6:  [policy()],
+    7:  [measured(p_phone_opening)],
+    # 8 took the ASCCC-areas card's place when it retired 2026-09-24 on Sam's
+    # ruling ("use what we have for ASCCC regions and we'll get the new report
+    # later").
+    8:  [policy()],
+    9:  [live("2026-09-22", "the mojibake count in chatbox_college_courses")],
+    10: [quoted("docs/reference/lanes/t5-55050-article-9.md", "2026-08-30")],
 }
 
 PROVENANCE = {
@@ -297,78 +301,6 @@ def items():
             "Governance maps it.</strong> <em>It might be wrong if</em> you want curators in from the "
             "start, in which case the Governance mapping is the first build rather than the second."),
         'chips': chips(('Sessions first', 'sessions'), ('Curators from the start', 'curators'), CH_LATER),
-    })
-
-    # ══ ESL packaging ════════════════════════════════════════════════════════
-    I.append({
-        'lane': 'esl-packaging',
-        'title': 'The 9 over-claims, or move the cut to 6+',
-        'ref': 'esl-packaging · ladder re-level',
-        'rows': 9,
-        'facts': (
-            "Nine rows claim a rung the evidence does not reach. Moving the cut to <code>6+</code> "
-            "removes the question instead of answering it, at the cost of the rows between."),
-        'why': (
-            "A threshold set to make a worklist empty stops measuring anything. Either the nine are "
-            "wrong, or the cut was."),
-        'rec': (
-            "<strong>Fix the nine; leave the cut where it is.</strong> <em>It might be wrong if</em> "
-            "you read the cut as the thing that was mis-set, in which case the nine are symptoms."),
-        'chips': chips(('Fix the nine', 'fix'), ('Move the cut to 6+', 'cut'), CH_LATER),
-    })
-
-    I.append({
-        'lane': 'esl-packaging',
-        'title': 'Does the numeric pinning survive',
-        'ref': 'esl-packaging · ladder re-level',
-        'facts': (
-            "The weakest reader tier is a bare trailing integer in the course title. "
-            "<strong>90 of 130</strong> re-levels rest on a SINGLE member course."),
-        'why': (
-            "A trailing integer is a real signal at many colleges and noise at others, and a rung "
-            "resting on one member course has no second voice to check it."),
-        'rec': (
-            "<strong>Keep the numeric pinning, and hold the 90 single-member rows out of the fold "
-            "until a second member agrees.</strong> <em>It might be wrong if</em> you read a single "
-            "catalog as sufficient evidence for a rung, which would clear all 90 now."),
-        'chips': chips(('Keep it, hold the 90', 'hold'), ('Keep it, fold all', 'fold'),
-                       ('Drop the pinning', 'drop'), CH_LATER),
-    })
-
-    I.append({
-        'lane': 'esl-packaging',
-        'title': 'Roll back the re-levels, or not',
-        'ref': 'esl-packaging · 22 reverts',
-        'rows': 22,
-        'facts': (
-            "<strong>All 22 reverts whose catalog speaks DISAGREE with the revert</strong> &mdash; the "
-            "catalogs say the band those rows sit at today, unanimously. Nothing was written to "
-            "Supabase."),
-        'why': (
-            "Blast radius argues for holding a ruling against noisy local variance. This is not noisy: "
-            "the catalogs agree with each other and against the revert."),
-        'rec': (
-            "<strong>Do not roll back.</strong> <em>It might be wrong if</em> you weight the original "
-            "ruling over the catalogs, which is the one reading that survives unanimity."),
-        'chips': chips(('Do not roll back', 'hold'), ('Roll back', 'rollback'), CH_LATER),
-    })
-
-    I.append({
-        'lane': 'esl-packaging',
-        'title': 'Extend the ladder table to L=2',
-        'ref': 'esl-packaging · 21 abstaining colleges',
-        'rows': 21,
-        'facts': (
-            "<strong>21 colleges read as 2-rung and the table has no L=2 row</strong>, so they abstain "
-            "&mdash; they contribute nothing to the ladder rather than contributing a short one."),
-        'why': (
-            "An abstention is invisible in the output; it looks like agreement. Ladders derive from the "
-            "whole ESL corpus, and a short ladder pushes rungs higher, so the 21 are not neutral."),
-        'rec': (
-            "<strong>Add the L=2 row so the 21 vote.</strong> <em>It might be wrong if</em> a 2-rung "
-            "reading is usually a parse failure rather than a real two-level program, in which case "
-            "their silence is correct."),
-        'chips': chips(('Add L=2', 'add'), ('Let them abstain', 'abstain'), CH_LATER),
     })
 
     # ══ Military ACE ═════════════════════════════════════════════════════════
