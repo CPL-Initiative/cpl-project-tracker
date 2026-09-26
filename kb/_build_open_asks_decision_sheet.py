@@ -49,9 +49,10 @@ NO_OPEN_ASK = {
     'README':
         "the lanes index, which documents the marker rather than carrying one.",
     'esl-packaging':
-        "its open asks ride their own sheet, the ESL merging procedure Sam asked for on "
-        "2026-09-21 (kb/_build_esl_merging_decision_sheet.py, nine items, https://claude.ai/artifact/LaZmu7NYj11DigAEbxsUMS); the four cards "
-        "this sheet carried were settled by his rulings of 2026-08-24.",
+        "Sam answered its own sheet, the ESL merging procedure (kb/_build_esl_merging_decision_sheet.py, "
+        "nine items, https://claude.ai/artifact/LaZmu7NYj11DigAEbxsUMS), on 2026-09-26; what waits is his run of "
+        "the SQL paste that carries those verdicts (kb/esl_sheet_out/2026-09-26/apply.sql), an action with no "
+        "choice left in it. The four cards this sheet carried were settled by his rulings of 2026-08-24.",
 }
 
 

@@ -4,9 +4,9 @@
   "supabase_tables": 85,
   "rpcs": 31,
   "edge_functions": 5,
-  "file_datasets": 526,
+  "file_datasets": 528,
   "external_services": 147,
-  "consumers": 369,
+  "consumers": 371,
   "workflows": 35,
   "data_js_files": 61,
   "tabs": 37
@@ -548,6 +548,20 @@
      "direction": "read",
      "how": "url",
      "line": 53
+    },
+    {
+     "id": "script:kb/_esl_new_identities_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 6
+    },
+    {
+     "id": "script:kb/_esl_sheet_apply_build.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 8
     },
     {
      "id": "script:scripts/announce_session_hint.py",
@@ -3075,7 +3089,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 136
+     "line": 137
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -4166,7 +4180,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 125
+     "line": 126
     },
     {
      "id": "script:scripts/stamp_asset_versions.py",
@@ -4513,7 +4527,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 125
+     "line": 126
     }
    ],
    "served": true,
@@ -5263,7 +5277,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 183
+     "line": 184
     }
    ],
    "served": false,
@@ -5276,7 +5290,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 193
+     "line": 194
     }
    ],
    "served": false,
@@ -6082,7 +6096,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 125
+     "line": 126
     }
    ],
    "served": true,
@@ -7910,7 +7924,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 181
+     "line": 198
     },
     {
      "id": "script:kb/_fl_subj4_dryrun.py",
@@ -8331,6 +8345,13 @@
      "line": 102
     },
     {
+     "id": "script:kb/_esl_new_identities_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 65
+    },
+    {
      "id": "script:kb/_fl_subj4_dryrun.py",
      "kind": "script",
      "direction": "read",
@@ -8627,7 +8648,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 182
+     "line": 199
     },
     {
      "id": "script:kb/_fl_subj4_dryrun.py",
@@ -9244,7 +9265,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 212
+     "line": 229
     },
     {
      "id": "script:kb/_seed_cx_common_courses.py",
@@ -10141,7 +10162,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 63
+     "line": 64
+    },
+    {
+     "id": "script:kb/_esl_sheet_apply_build.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 46
     }
    ],
    "served": false,
@@ -10154,7 +10182,7 @@
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 237
+     "line": 254
     }
    ],
    "served": true,
@@ -10167,7 +10195,7 @@
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 360
+     "line": 377
     }
    ],
    "served": true,
@@ -10236,11 +10264,25 @@
      "line": 104
     },
     {
+     "id": "script:kb/_esl_new_identities_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 41
+    },
+    {
      "id": "script:kb/_esl_relevel_dryrun.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 62
+     "line": 63
+    },
+    {
+     "id": "script:kb/_esl_sheet_apply_build.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 44
     }
    ],
    "served": false,
@@ -10263,6 +10305,13 @@
      "line": 105
     },
     {
+     "id": "script:kb/_esl_new_identities_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 42
+    },
+    {
      "id": "script:kb/_esl_package_actionable.py",
      "kind": "script",
      "direction": "read",
@@ -10275,6 +10324,13 @@
      "direction": "read",
      "how": "literal",
      "line": 103
+    },
+    {
+     "id": "script:kb/_esl_sheet_apply_build.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 45
     }
    ],
    "served": false,
@@ -10291,6 +10347,19 @@
     }
    ],
    "served": false,
+   "main_committers": []
+  },
+  "file:kb/esl_sheet_out/2026-09-26/new_identities.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_esl_new_identities_dryrun.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 161
+    }
+   ],
+   "served": true,
    "main_committers": []
   },
   "file:kb/exhibit_audit/*.md": {
@@ -10921,6 +10990,13 @@
   "file:kb/pols_remint_out/<date>/alias_map.json": {
    "consumers": [
     {
+     "id": "script:kb/_esl_new_identities_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 45
+    },
+    {
      "id": "script:kb/alias_chain.py",
      "kind": "script",
      "direction": "read",
@@ -11143,7 +11219,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 203
+     "line": 220
     },
     {
      "id": "script:kb/_rekey_promotions.py",
@@ -12133,6 +12209,13 @@
      "direction": "read",
      "how": "literal",
      "line": 68
+    },
+    {
+     "id": "script:kb/_esl_new_identities_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 111
     },
     {
      "id": "script:kb/_preseed_null_issuers.py",
@@ -13436,7 +13519,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 125
+     "line": 126
     }
    ],
    "served": true,
@@ -13838,7 +13921,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 145
+     "line": 146
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -15023,6 +15106,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/esl_reader_and_ladder_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/esl_relevel_bands_test.py": {
    "consumers": [
     {
@@ -15878,7 +15974,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 159
+     "line": 160
     },
     {
      "id": "script:kb/_build_orphan_parent_worklist.py",
@@ -15893,6 +15989,13 @@
      "direction": "read",
      "how": "literal",
      "line": 170
+    },
+    {
+     "id": "script:kb/_esl_new_identities_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 108
     },
     {
      "id": "script:kb/_merge_candidate_queue.py",
@@ -16152,6 +16255,13 @@
      "direction": "read",
      "how": "literal",
      "line": 171
+    },
+    {
+     "id": "script:kb/_esl_new_identities_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 109
     },
     {
      "id": "script:kb/_esl_package_apply.py",
@@ -20124,6 +20234,7 @@
     "tests/eacr_matrix_payload_test.py",
     "tests/esl_fold_spotcheck_test.py",
     "tests/esl_relevel_bands_test.py",
+    "tests/esl_reader_and_ladder_test.py",
     "tests/ccr_universe_members_test.py",
     "tests/ccr_universe_orbits_test.py",
     "tests/discipline_edge_fill_test.py",

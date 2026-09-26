@@ -773,7 +773,7 @@ Trust-Card auditor work, or CID/CIDx pathway decisions. The live Roadmap table
 > [FTEhLfMxhRfv4YH6DGSPhn](https://claude.ai/artifact/FTEhLfMxhRfv4YH6DGSPhn),
 > **refuses to build** while a lane's NEEDS-SAM marker has no card. ⚠️ **Do not
 > republish it as-is:** its store is keyed to the 21 cards Sam answered and the
-> builder now holds 15 ([`decision_sheets`](docs/reference/decision_sheets.md)).
+> builder now holds 10 ([`decision_sheets`](docs/reference/decision_sheets.md)).
 
 | Phase | What | Status |
 |---|---|---|

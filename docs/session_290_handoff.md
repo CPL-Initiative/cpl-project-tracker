@@ -4,6 +4,8 @@ date: 2026-09-25
 session: 288 (SkyZ)
 tags: [handoff, eacr, cip, top-code, program-course-graph, decision-sheets]
 status: current
+superseded: true
+superseded_by: session_295_handoff.md
 ---
 
 # You are Session 290
