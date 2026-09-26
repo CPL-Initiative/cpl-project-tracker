@@ -193,7 +193,16 @@
     // header takes --dtl-nc-head, a role token defined in BOTH HTMLs: #0047AB
     // light, #2B5C9E dark (white text 8.44:1 and 6.72:1). --cobalt could not
     // serve: the dark palette lightens it to #7DA1D4, where white reads 2.5:1.
-    ".cplfund-dtl-tscroll > .cplfund-dtl-table.cplfund-dtl-nc th { background: var(--dtl-nc-head, #0047AB); }",
+    // ⚠️ THE FILL WITHOUT ITS TEXT COLOR PAINTED DARK LETTERS ON BLUE (Sam's
+    // screenshot, 2026-09-26): the header kept `--text-muted` from the base
+    // rule and read at about 1.9:1. The two declarations are one rule so the
+    // pair can never separate again; cpl_funding_dtl_align.test.js resolves
+    // the cascade for both and fails if either goes missing.
+    // The credit table's header states its own fill and ink at the same
+    // specificity, so neither lane's header depends on which outer rule the
+    // cascade reaches first (`.cplfund-table th` paints seal-blue and white).
+    ".cplfund-dtl-tscroll > .cplfund-dtl-table th { background: transparent; color: var(--text-muted); }",
+    ".cplfund-dtl-tscroll > .cplfund-dtl-table.cplfund-dtl-nc th { background: var(--dtl-nc-head, #0047AB); color: var(--white, #FFFFFF); }",
     ".cplfund-dtl-tscroll + .cplfund-dtl-tscroll, .cplfund-dtl-tscroll + .cplfund-dtl-ncnone { margin-top: 12px; }",
     ".cplfund-dtl-sum { margin: 2px 0 0; font-size: .85rem; font-variant-numeric: tabular-nums; }",
     // The drill-in grid auto-fits 240px columns, so every part of the lane

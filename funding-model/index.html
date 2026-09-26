@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>How This Funding Model Works</title>
+<title>2026-2028 CPL Initiative Funding: How It Works</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
@@ -338,7 +338,7 @@ section[hidden]{display:none}
         <span class="tag">Version as of <b id="x-version">2026-08-31</b></span>
       </div>
     </div>
-    <h1>How this funding model works</h1>
+    <h1>2026-2028 CPL Initiative Funding: How It Works</h1>
     <!-- PDF (Sam, 2026-09-15: "Add a pdf download link to the top").
          It prints THIS page rather than fetching a file, and that is the
          point: every figure here is computed from the live model, so a PDF
@@ -349,7 +349,7 @@ section[hidden]{display:none}
          saves is the whole explanation and not the screen. -->
     <p class="head-actions">
       <a class="pdfbtn" id="video-link" href="../prototype/funding_video/funding_in_motion.html">Watch the 90-second guide</a>
-      <a class="pdf-note" href="../prototype/funding_video/20260925_CPL_Funding_in_Motion.mp4">or download the video (MP4)</a>
+      <a class="pdf-note" id="video-mp4" href="../prototype/funding_video/20260925_CPL_Funding_in_Motion.mp4">or download the video (MP4)</a>
       <button type="button" class="pdfbtn" id="pdf-btn">Download PDF</button>
       <span class="pdf-note">Opens your browser&rsquo;s print dialog &mdash; choose
         &ldquo;Save as PDF&rdquo;. The file carries the model as it currently stands.</span>
@@ -361,6 +361,24 @@ section[hidden]{display:none}
 
 <section data-fsec="lede">
   <div class="wrap">
+    <!-- The statutory ground, in one paragraph (Sam, 2026-09-26: "a brief
+         more formal intro that mentions SB 135 and new ed code background").
+         Article 9 quotations are primary-source verified against the
+         authenticated PDFs (docs/gr_sb135_row_sweep.md); the four goals are
+         the statute's own words, and the platform is named as the statute
+         names it. -->
+    <p class="intro">Senate Bill 135 (Statutes of 2026, Chapter 79), the 2026 education trailer bill, added
+      Article 9 to the Education Code, sections 78093 through 78093.2, effective July 13, 2026. The article
+      establishes the Credit for Prior Learning Initiative and directs the Chancellor&rsquo;s Office, upon
+      appropriation by the Legislature, to allocate designated funds to support implementation at each campus
+      using four goals: increasing access to credit for prior learning opportunities equitably for all eligible
+      students, increasing completion through credit for prior learning awards, advancing career attainment
+      through credit for prior learning, and supporting credit for prior learning opportunities through the
+      Chancellor&rsquo;s Office&rsquo;s pilot projects, &ldquo;such as the California Mapping Articulated
+      Pathways Initiative.&rdquo; Each campus demonstrates its implementation through those metrics
+      (&sect;&nbsp;78093.2(d)(2)). This page sets out how the Chancellor&rsquo;s Office proposes to allocate
+      the 2026-27 one-time appropriation across the 2026-27 and 2027-28 fiscal years under that article, and
+      how an institution&rsquo;s outcomes determine what it qualifies for.</p>
     <p>Most of the one-time appropriation is allocated <strong>directly to institutions</strong> &mdash;
       all 118 of them, the 115 colleges and the three noncredit-only campuses &mdash; in proportion to how
       much teaching each one does, credit and noncredit together. The rest funds the statewide CPL projects
@@ -708,6 +726,21 @@ window.CPL_PAINT_EXPLAINER = function (D) {
   // prints and the scenario this browser has selected — never typed here.
   if (D.model_version) document.getElementById("x-version").textContent = D.model_version;
   if (D.scenario) document.getElementById("x-scenario").textContent = String(D.scenario).replace(/^Scenario\s+/i, "");
+  // The guide video is per scenario: each one is typed from its scenario's
+  // dials, so a page showing Scenario 2 links Scenario 2's guide (Sam,
+  // 2026-09-26). Scenario 1's stays the default for every other name.
+  (function () {
+    var VIDEOS = {
+      "Scenario 2": { page: "../prototype/funding_video/funding_in_motion_s2.html",
+        mp4: "../prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2.mp4",
+        label: "Watch the 90-second guide (Scenario 2)" }
+    };
+    var v = VIDEOS[String(D.scenario || "").trim()];
+    var link = document.getElementById("video-link"), mp4 = document.getElementById("video-mp4");
+    if (!v || !link) return;
+    link.href = v.page; link.textContent = v.label;
+    if (mp4) mp4.href = v.mp4;
+  })();
   // A draft scenario opened by ?scenario= (Sam, 2026-09-25) says so in words
   // at the top, so a preview link passed along is never mistaken for the
   // published page.

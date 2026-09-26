@@ -410,7 +410,7 @@ check("the status line is empty on a successful paint",
 // the model's total (2026-08-31).
 {
   const body = html.slice(html.indexOf("<body"), html.indexOf("</footer>"));
-  const prose = body
+  let prose = body
     .replace(/<script[\s\S]*?<\/script>/g, " ")   // the painter is code, not prose
     .replace(/<!--[\s\S]*?-->/g, " ")             // a comment may name what it retired
     .replace(/<[^>]+>/g, " ")
@@ -422,6 +422,12 @@ check("the status line is empty on a successful paint",
     [/\bthe dollars\b/i, "the dollars"], [/\badvanc(e|es|ed|ing)\b/i, "advance"],
     [/\bapportion/i, "apportion"],
   ];
+  // The statute's own goal (C), "advancing career attainment", is the one
+  // allowed sense of the stem (CLAUDE.md, Naming: "'Advancing the priority
+  // outcomes' and the statute's 'Advancing career attainment' are the allowed
+  // senses"). The intro quotes the four goals, so that phrase is lifted out
+  // before the scan; every other advance stays banned.
+  prose = prose.replace(/\badvancing career attainment\b/gi, " ");
   const hits = BANNED.filter(([re]) => re.test(prose))
     .map(([re, name]) => name + ' @"' + (prose.match(re) ? prose.slice(
       Math.max(0, prose.search(re) - 40), prose.search(re) + 24).replace(/\s+/g, " ") : "") + '"');

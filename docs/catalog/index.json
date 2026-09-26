@@ -14224,8 +14224,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 263,
+   "count": 264,
    "docs": [
+    {
+     "created": "2026-09-26",
+     "governs": [],
+     "n": 292,
+     "path": "docs/session_292_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "implementation-funding",
+      "video",
+      "explainer"
+     ],
+     "title": "Scenario 2 guide video, the explainer's title and statutory intro, the noncredit header fix",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-25",
      "governs": [],
@@ -18689,5 +18705,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 972
+ "total": 973
 }
