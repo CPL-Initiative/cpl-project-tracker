@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-09-26T11:30:55.221Z",
+  "scraped_at": "2026-09-26T13:47:41.794Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -668,17 +668,17 @@
         },
         {
           "college": "Los Angeles Mission College",
-          "students": 166,
-          "units": 945,
-          "avgUnits": 5.692771084337349,
+          "students": 167,
+          "units": 946,
+          "avgUnits": 5.664670658682635,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 1,
           "militaryStudents": 152,
-          "nonMilitaryStudents": 14,
+          "nonMilitaryStudents": 15,
           "apprenticeStudents": 0,
-          "savings": 1603345,
-          "yearImpact": 5629578,
+          "savings": 1604310,
+          "yearImpact": 5634312,
           "transcribedUnits": 0
         },
         {
@@ -1757,7 +1757,7 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "52,066",
+      "value": "52,067",
       "breakdowns": [
         {
           "label": "Military",
@@ -1765,7 +1765,7 @@
         },
         {
           "label": "Workforce/Other",
-          "value": "23,651"
+          "value": "23,652"
         },
         {
           "label": "Apprentice",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 52066,
-    "Units": 223980.40000000002,
+    "Students": 52067,
+    "Units": 223981.40000000002,
     "TranscribedUnits": 73997.2,
-    "Savings": 335931369,
-    "YearImpact": 1328864131.4,
+    "Savings": 335932334,
+    "YearImpact": 1328868865.4,
     "MilitaryStudents": 28501,
-    "NonMilitaryStudents": 23651,
+    "NonMilitaryStudents": 23652,
     "AprenticeStudents": 851,
-    "AverageUnits": 4.301855337456306,
-    "TranscribedAverage": 1.4212192217570008
+    "AverageUnits": 4.301791921946723,
+    "TranscribedAverage": 1.421191925787927
   }
 }
