@@ -4,9 +4,9 @@
   "supabase_tables": 85,
   "rpcs": 31,
   "edge_functions": 5,
-  "file_datasets": 528,
+  "file_datasets": 529,
   "external_services": 147,
-  "consumers": 371,
+  "consumers": 372,
   "workflows": 35,
   "data_js_files": 61,
   "tabs": 37
@@ -534,6 +534,13 @@
      "tabs": [
       "admin"
      ]
+    },
+    {
+     "id": "script:kb/_build_esl_followup_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 5
     },
     {
      "id": "script:kb/_build_esl_merging_decision_sheet.py",
@@ -3089,7 +3096,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 137
+     "line": 138
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -4180,7 +4187,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 126
+     "line": 127
     },
     {
      "id": "script:scripts/stamp_asset_versions.py",
@@ -4527,7 +4534,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 126
+     "line": 127
     }
    ],
    "served": true,
@@ -5277,7 +5284,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 184
+     "line": 185
     }
    ],
    "served": false,
@@ -5290,7 +5297,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 194
+     "line": 195
     }
    ],
    "served": false,
@@ -5442,6 +5449,26 @@
      "direction": "write",
      "how": "literal",
      "line": 54
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:docs/visuals/<date>-esl-followup.html": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_esl_followup_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 34
+    },
+    {
+     "id": "script:kb/_build_esl_followup_decision_sheet.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 34
     }
    ],
    "served": false,
@@ -6096,7 +6123,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 126
+     "line": 127
     }
    ],
    "served": true,
@@ -13519,7 +13546,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 126
+     "line": 127
     }
    ],
    "served": true,
@@ -13921,7 +13948,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 146
+     "line": 147
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -15974,7 +16001,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 160
+     "line": 161
     },
     {
      "id": "script:kb/_build_orphan_parent_worklist.py",

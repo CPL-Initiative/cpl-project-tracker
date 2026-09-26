@@ -50,11 +50,13 @@ Four PRs merged: #1701, #1702, #1703, #1704.
   - A good run shows `esl-catalog` 6 · `esl-health` 18 · `esl-ladder` 30 · `esl-newfold` 89 · `esl-transfer` 3. Once it has run, resolve his Complete comment on the sheet (thread `ecbd0076`), and let the daily cron publish.
   - **If the counts come up short:** each UPDATE is guarded on the row's value and cohort, so a short count means a curator moved that row after the 19:40 UTC read. Compare the plan against a fresh read; never force a row.
 
+- **The ESL follow-up sheet**, two cards: https://claude.ai/artifact/PaozKqfruMT3hZ93vcg5gr. `ESOL M9309`, a noncredit composition course, and the two *Optical Technician* rows, held out of the fold. Read its `replies` store and `replies/done` before acting on either.
+
 ## The queue, in Sam's order
 
 1. **The narrated video:** built, waiting on his OK. The refinement he may ask for next is to cue each reveal to the word that names it. The layout carries cue times, but today `ft()` stretches each scene uniformly.
 2. **ESL:** verify the paste (above), then take up what stays open:
-   - the held identities. Three are new: `ESOL M9309` reads as transfer composition (unruled), and `M9267` and `M9272`, *Optical Technician*, carry HLTH member courses and belong outside ESL. Two more have waited since July as transfer composition: `M1205` and `M1239` (`M9192` folds under item 4);
+   - the follow-up sheet's two cards, once answered. Their writes travel as a paste, like the first. Item 4 already keeps the five transfer composition identities apart, `M1205` and `M1239` among them;
    - item 8, the monthly pass. `kb/_esl_new_identities_dryrun.py` is the pass. Scheduling it is a new standing cadence, so it waits until the paste lands.
 
    Then the Jev CCR's misfit ruling (nest or cross-list, [handoff 283](session_283_handoff.md) "first sitting") and its next rung.
@@ -63,7 +65,7 @@ Four PRs merged: #1701, #1702, #1703, #1704.
 
 ## Read in order
 
-1. The cohort count above, then `kb/esl_sheet_out/2026-09-26/plan.json`.
+1. The cohort count above, then `kb/esl_sheet_out/2026-09-26/plan.json`, then the follow-up sheet's `replies` store.
 2. [`lanes/esl-packaging.md`](reference/lanes/esl-packaging.md).
 3. `prototype/funding_video/README.md`, *The narrated draft*.
 4. [`lanes/implementation-funding.md`](reference/lanes/implementation-funding.md), the video paragraph.

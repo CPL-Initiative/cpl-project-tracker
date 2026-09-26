@@ -27,3 +27,12 @@ select m.slug, m.status, m.verified_by, m.plain is not null as has_plain,
 from public.cpl_memory m left join public.cpl_memory_log l on l.memory_id = m.id
 where m.author = 'SkyCadence-s294' or m.slug = 'esl-band-guards-test-the-superseded-dryrun'
 group by m.slug, m.status, m.verified_by, m.plain order by m.slug;
+
+-- Correction, 2026-09-26 23:49 UTC: the verdicts row's detail called the held transfer composition identity
+-- "unruled"; item 4 rules that transfer composition stays apart, and the two held asks now ride their own sheet
+-- (https://claude.ai/artifact/PaozKqfruMT3hZ93vcg5gr). The first send used the SQL function replace(), which the
+-- repo's SQL guard reads as a write verb and blocked; the detail is set in full instead. Logged as action 'update'.
+-- update public.cpl_memory set detail = $d$...Item 4 keeps the five transfer composition identities apart. Held out
+--   of item 5: three new identities, now two cards on their own sheet (...PaozKqfruMT3hZ93vcg5gr): ...$d$
+--   where slug = 'sam-esl-merging-sheet-verdicts-2026-09-26' and detail like '%one reads as transfer composition, unruled%';
+-- Verified: detail_updated true, creates 1, updates 1.

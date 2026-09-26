@@ -17,10 +17,16 @@
       "text": "Run the ESL paste in the Supabase SQL editor (sent in the session on 26 September; kb/esl_sheet_out/2026-09-26/apply.sql). It carries your ESL sheet verdicts: 18 healthcare moves, 36 re-levels, 92 new folds, and the film course out of Enrichment. A good run ends with a table of five counts: esl-catalog 6, esl-health 18, esl-ladder 30, esl-newfold 89, esl-transfer 3. rollback.sql beside it undoes the whole change."
     },
     {
+      "id": "s294-sam-esl-followup-sheet",
+      "for": "Sam",
+      "tab": "cr-reference",
+      "text": "Answer the ESL follow-up sheet: two cards, each with its recommendation selected. One is a noncredit composition course held out of the fold; the other is two optical technician courses that sit in ESL. https://claude.ai/artifact/PaozKqfruMT3hZ93vcg5gr"
+    },
+    {
       "id": "s294-fable-esl-verdicts",
       "for": "Fable",
       "tab": "cr-reference",
-      "text": "Check whether Sam ran the ESL paste: count kb_curation rows by reviewer_email like 'esl-%-s294@bot' (expect 6, 18, 30, 89, 3). If they are in, resolve his Complete comment on the sheet and let the daily run publish. Then the held identities (transfer composition is unruled for three; the two Optical Technician rows belong outside ESL) and item 8, the monthly pass, which starts only after the paste lands. kb/esl_sheet_out/2026-09-26/"
+      "text": "Check whether Sam ran the ESL paste: count kb_curation rows by reviewer_email like 'esl-%-s294@bot' (expect 6, 18, 30, 89, 3). If they are in, resolve his Complete comment on the sheet and let the daily run publish. Then read the ESL follow-up sheet's replies (https://claude.ai/artifact/PaozKqfruMT3hZ93vcg5gr) and carry its two verdicts the same way, as a paste. Item 8, the monthly pass, starts only after the paste lands. kb/esl_sheet_out/2026-09-26/"
     },
     {
       "id": "s291-sam-releveled-line",
