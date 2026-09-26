@@ -5,8 +5,8 @@
   "rpcs": 31,
   "edge_functions": 5,
   "file_datasets": 524,
-  "external_services": 146,
-  "consumers": 367,
+  "external_services": 147,
+  "consumers": 368,
   "workflows": 35,
   "data_js_files": 61,
   "tabs": 37
@@ -1122,6 +1122,18 @@
      "tabs": [
       "unified-courses"
      ]
+    }
+   ],
+   "main_committers": []
+  },
+  "external:huggingface.co": {
+   "consumers": [
+    {
+     "id": "script:prototype/funding_video/narrate.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 21
     }
    ],
    "main_committers": []

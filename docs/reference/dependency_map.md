@@ -801,6 +801,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `github.com/CPL-Initiative/cpl-project-tracker` | tabs: `governance`, `unified-courses` |
 | `github.com/CPL-Initiative/cpl-project-tracker;` | scripts: `tools/source_first_light_art.mjs` |
 | `github.com/cpl-initiative/cpl-project-tracker` | tabs: `unified-courses` |
+| `huggingface.co` | scripts: `prototype/funding_video/narrate.py` |
 | `icangotocollege.com` | tabs: `cpl-pathways` |
 | `laney.edu` | tabs: `map-queue`, `map-users` |
 | `launchapprenticeship.org` | tabs: `map-queue`, `map-users` |
@@ -925,4 +926,4 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 
 Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 524 file
-datasets · 146 external services · 367 consumers · 35 workflows · 37 tabs.
+datasets · 147 external services · 368 consumers · 35 workflows · 37 tabs.

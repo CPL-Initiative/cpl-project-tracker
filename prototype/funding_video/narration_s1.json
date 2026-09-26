@@ -1,15 +1,68 @@
 {
- "_about": "The narration the voice reads, Scenario 1, v2 (S293, 2026-09-26). SPOKEN FORM: acronyms said as letters are spaced (C P L, E D D, F T E S); MAP is written 'map' so it is said as the word (capitals make the voice spell it); numbers and years are spelled as said. Voice: Kokoro-82M af_heart, speed 1.0, one pass per scene. Sam approved the voice (Heart) and asked for a natural read; the v2 read awaits his OK.",
+ "_about": "The narration the voice reads, Scenario 1, v3 (S294, 2026-09-26). SPOKEN FORM: acronyms are written unspaced (CPL, EDD, FTES) so each reads as one quick word, the stress on its last letter; FTES also needs the phoneme fix below, because unspaced it reads as the word 'eftess'. MAP is written 'map' so it is said as the word. Years are said the way people say them aloud (twenty twenty-six through twenty-eight; the twenty-six, twenty-seven year, whose comma keeps the two years apart) with a lighter stress on the twenties, and the baseline reads 'by November first', as its headline does, leaving the year to the screen (November 1, 2026). Voice: Kokoro-82M af_heart, speed 1.0, one pass per scene. Sam chose the voice (Heart); v2 read stilted on the spaced letters and the years; v3 awaits his OK. narrate.py reads this file.",
  "voice": "af_heart",
  "speed": 1.0,
+ "gap_s": 1.1,
+ "phoneme_fixes": [
+  {
+   "find": "ˈɛftˈɛs",
+   "use": "ˌɛftˌiːˌiːˈɛs",
+   "why": "FTES unspaced reads as one word, 'eftess'; say the four letters quickly, as the tokenizer says CPL (sˌiːpˌiːˈɛl)"
+  },
+  {
+   "find": "twˈɛnti twˈɛntisˈɪks",
+   "use": "twˌɛnti twˌɛntisˈɪks",
+   "why": "a year: a lighter stress on both twenties, so twenty twenty-six runs as one phrase"
+  },
+  {
+   "find": "θɹuː twˈɛntiˈeɪt",
+   "use": "θɹuː twˌɛntiˈeɪt",
+   "why": "the short end year of the title's range"
+  },
+  {
+   "find": "twˈɛntisˈɪks, twˈɛntisˈɛvən",
+   "use": "twˌɛntisˈɪks, twˌɛntisˈɛvən",
+   "why": "the budget year said as people say it, twenty-six, twenty-seven; without the comma a listener hears one number (2627)"
+  }
+ ],
+ "never": [
+  {
+   "phonemes": "sˈiː pˈiː ˈɛl",
+   "why": "C P L spaced: three full stresses, the v2 read Sam called stilted"
+  },
+  {
+   "phonemes": "ˈiː dˈiː dˈiː",
+   "why": "E D D spaced, the same stilted read"
+  },
+  {
+   "phonemes": "ˈɛf tˈiː ˈiː ˈɛs",
+   "why": "F T E S spaced, the same stilted read"
+  },
+  {
+   "phonemes": "ˈɛftˈɛs",
+   "why": "FTES read as the word 'eftess'"
+  },
+  {
+   "phonemes": "ˌɛmˌeɪpˈiː",
+   "why": "MAP in capitals is spelled out; Sam: MAP is read as the word 'map'"
+  },
+  {
+   "phonemes": "twˈɛnti twˈɛnti",
+   "why": "a year with every twenty at full stress, the v2 read Sam called stilted"
+  },
+  {
+   "phonemes": "tˈuː θˈaʊzənd",
+   "why": "a year written in digits reads as 'two thousand'"
+  }
+ ],
  "scenes": [
   {
    "scene": "Title",
-   "text": "Let's walk through how C P L Initiative funding works for twenty twenty-six to twenty twenty-eight, and what it means for your college."
+   "text": "Let's walk through how CPL Initiative funding works for twenty twenty-six through twenty-eight, and what it means for your college."
   },
   {
    "scene": "The funding",
-   "text": "The state set aside thirty-five million dollars in one-time funding for twenty twenty-six, twenty-seven. Just over twenty-five million of it goes straight to a hundred and eighteen institutions. The rest funds statewide C P L projects and technology, plus two Chancellor's Office positions that support colleges."
+   "text": "The state set aside thirty-five million dollars in one-time funding for the twenty-six, twenty-seven year. Just over twenty-five million of it goes straight to a hundred and eighteen institutions. The rest funds statewide CPL projects and technology, plus two Chancellor's Office positions that support colleges."
   },
   {
    "scene": "Maximum allocation",
@@ -21,27 +74,27 @@
   },
   {
    "scene": "Three priorities",
-   "text": "Three priorities carry the funding. Access counts applied C P L units from students who start at the C P L Portal, at your college's landing page, or through a batch upload. Completion counts transcribed C P L units, with the map counselor step checked. And career attainment counts C P L units for students who go on to a career outcome, which the Chancellor's Office measures through E D D wage records."
+   "text": "Three priorities carry the funding. Access counts applied CPL units from students who start at the CPL Portal, at your college's landing page, or through a batch upload. Completion counts transcribed CPL units, with the map counselor step checked. And career attainment counts CPL units for students who go on to a career outcome, which the Chancellor's Office measures through EDD wage records."
   },
   {
    "scene": "Targets",
-   "text": "Each priority has a target, measured in F T E S. Thirty semester units of C P L make one F T E S, or forty-five if you're on the quarter system. Here's the part to remember: reach half of a target, and your college qualifies for half that share. Go past the target, and the share stays where it is. It's the ceiling."
+   "text": "Each priority has a target, measured in FTES. Thirty semester units of CPL make one FTES, or forty-five if you're on the quarter system. Here's the part to remember: reach half of a target, and your college qualifies for half that share. Go past the target, and the share stays where it is. It's the ceiling."
   },
   {
    "scene": "The baseline",
-   "text": "Before any funding is released, your college meets a baseline, due November first, twenty twenty-six. Name a C P L coordinator, then list that person in map and on your college's C P L landing page. Put your local confirmation of participation on file. And make sure at least seventy-five percent of your enrolled veterans have their Joint Services Transcripts uploaded in map. Until the baseline is met, the funding your college demonstrates is held in reserve for it."
+   "text": "Before any funding is released, your college meets a baseline by November first. Name a CPL coordinator, then list that person in map and on your college's CPL landing page. Put your local confirmation of participation on file. And make sure at least seventy-five percent of your enrolled veterans have their Joint Services Transcripts uploaded in map. Until the baseline is met, the funding your college demonstrates is held in reserve for it."
   },
   {
    "scene": "Timing",
-   "text": "The full two-year amount is available from year one. The Chancellor's Office releases funding twice a year, based on your college's C P L to date, and whatever remains after year one carries forward to year two for your college."
+   "text": "The full two-year amount is available from year one. The Chancellor's Office releases funding twice a year, based on your college's CPL to date, and whatever remains after year one carries forward to year two for your college."
   },
   {
    "scene": "Support",
-   "text": "And you won't be doing this alone. Every priority comes with recommended strategies, a C P L Initiative help team supports every college, and more detailed guidance is on the way."
+   "text": "And you won't be doing this alone. Every priority comes with recommended strategies, a CPL Initiative help team supports every college, and more detailed guidance is on the way."
   },
   {
    "scene": "Find your college",
-   "text": "To see your college's maximum allocation, targets, and progress, visit the C P L funding model page."
+   "text": "To see your college's maximum allocation, targets, and progress, visit the CPL funding model page."
   }
  ]
 }
