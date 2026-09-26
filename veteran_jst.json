@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-09-25T17:20:51.772219+00:00",
+  "scraped_at": "2026-09-26T11:30:55.772749+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 28458,
+    "jst": 28501,
     "star_colleges": 59
   },
   "computed_star_colleges": 59,
@@ -47,7 +47,7 @@
     },
     "Bakersfield College": {
       "vets": 416,
-      "jst": 574,
+      "jst": 575,
       "star": true
     },
     "Merced College": {
@@ -107,7 +107,7 @@
     },
     "Fresno City College": {
       "vets": 724,
-      "jst": 687,
+      "jst": 728,
       "star": true
     },
     "College of the Desert": {
@@ -332,7 +332,7 @@
     },
     "Laney College": {
       "vets": 96,
-      "jst": 50,
+      "jst": 51,
       "star": false
     },
     "Foothill College": {
