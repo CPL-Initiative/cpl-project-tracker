@@ -4,9 +4,9 @@
   "supabase_tables": 85,
   "rpcs": 31,
   "edge_functions": 5,
-  "file_datasets": 523,
+  "file_datasets": 524,
   "external_services": 146,
-  "consumers": 366,
+  "consumers": 367,
   "workflows": 35,
   "data_js_files": 61,
   "tabs": 37
@@ -660,6 +660,13 @@
      "direction": "read",
      "how": "url",
      "line": 413
+    },
+    {
+     "id": "script:prototype/funding_video/build.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 22
     },
     {
      "id": "worker:cloudflare-worker-proxy.js",
@@ -13910,6 +13917,19 @@
     }
    ],
    "served": false,
+   "main_committers": []
+  },
+  "file:prototype/funding_video/funding_in_motion.src.html": {
+   "consumers": [
+    {
+     "id": "script:prototype/funding_video/build.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 73
+    }
+   ],
+   "served": true,
    "main_committers": []
   },
   "file:prototype/skyview.html": {
