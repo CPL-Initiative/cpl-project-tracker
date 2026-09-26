@@ -79,6 +79,36 @@ full target, and checks e1/e2 fail on the old code.
   and Releveled" wording (a curator edit); `EXPLAINER` to the public repo's address
   before production; the video pages are still not in `a11y.config.js`.
 
+## ONE THREAD FROM HERE — the reconciled map (Sam, 2026-09-26)
+
+*"I was running simultaneous sessions last week so handoffs got disconnected. I would
+like to get back on a single threaded workstream on my session."* This handoff is the
+**only head**. How last week forked, so nothing it did is lost:
+
+| Handoffs | Thread | State now |
+|---|---|---|
+| 279 (SkyWarden, 9/19) | **SkyView** goes public read-only | Lane file current (9/23). Carryover: the pinch failure (`s278-fable-skyview-pinch-registry`); the sweep is not in CI |
+| 280–283 (9/20–9/22) | **Jev + the CCR** | First title-rung sitting: Sam reviewed 26 of 50, 7 moves / 19 keeps; Jev ranks well (AUC 0.865), no safe gate, so the CCR stays out of `GATES`. **Waiting on Sam:** nest or cross-list the misfits (283 §"first sitting"), which everything downstream of the misfit rung waits on. No CCR decisions table exists (needs Governance, Rule 10(a3)). CER/CSR scanners last ran 2026-07-10 |
+| 283 carryover | **ESL merging decision sheet** | **Asked for by name on 2026-09-21 and never built**; five sessions carried it forward. Build it first when the CCR work resumes: [`lanes/esl-packaging`](reference/lanes/esl-packaging.md) |
+| 283 | **Discipline cross-list** | 3 of 12 items landed per [the lane](reference/lanes/discipline-crosslist.md) (283's "6 of 12" predates it) |
+| 288 (SkyMatrix, 9/24) + 290 (SkyZ, 9/25) | **EACR exhibit matrix** | Ten tweaks, the windowed matrix, CIP sectors from title rules (Sam: sectors are a filter only, never the TOP/CIP project). **Waiting on Sam:** look at the grid in a browser (52px rows, title clamp, figures, the panel). ASCCC roster waits on Pedro's MAP Custom Report |
+| 284–287, 289, 291–293 | **Funding model** | Done except the narrated draft (below) and the timeline's "Releveled" wording |
+
+**Stranded work recovered:** eight CPLBrain files from 9/14–9/23 (seven session notes
+and Sam's 2026-09-16 braindump) sat on unmerged branches, so Obsidian never had them:
+[samueltlee/CPLBrain#182](https://github.com/samueltlee/CPLBrain/pull/182). Older draft
+PRs remain in the vault (#147, #133, #32, #16–19, July–August) and in the public KB
+(#14, #19, #20, #22; human-gated by design).
+
+**The queue, in Sam's order:** (1) the narrated funding video, once he approves the v2
+read (Heart voice, "map" said as a word, 2:55; audio sent 2026-09-26). The script is
+[`20260926_Narration_Script_Draft.md`](../prototype/funding_video/20260926_Narration_Script_Draft.md)
+and the spoken form the voice reads is `prototype/funding_video/narration_s1.json`. The
+Kokoro model (`fastrtc/kokoro-onnx` on Hugging Face) and `pip install kokoro-onnx` rebuild
+the voice in about a minute; (2) the
+ESL decision sheet, then the Jev CCR's misfit ruling and next rung; (3) SkyView;
+(4) the EACR grid review whenever he opens it.
+
 ## Read in order
 
 1. `docs/reference/lanes/implementation-funding.md` (the video paragraphs)
