@@ -14224,8 +14224,23 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 264,
+   "count": 265,
    "docs": [
+    {
+     "created": "2026-09-26",
+     "governs": [],
+     "n": 293,
+     "path": "docs/session_293_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "implementation-funding",
+      "video"
+     ],
+     "title": "the funding video becomes an introduction, fills the screen, shoots down barriers, and its score builds",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-26",
      "governs": [],
@@ -18705,5 +18720,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 973
+ "total": 974
 }
