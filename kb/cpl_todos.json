@@ -20,7 +20,7 @@
       "id": "s294-fable-esl-verdicts",
       "for": "Fable",
       "tab": "cr-reference",
-      "text": "Check whether Sam ran the ESL paste: count kb_curation rows by reviewer_email like 'esl-%-s294@bot' (expect 6, 18, 30, 89, 3). If they are in, resolve his Complete comment on the sheet and let the daily run publish. Then the six held identities (transfer composition is unruled; the two Optical Technician rows belong outside ESL) and item 8, the monthly pass, which starts only after the paste lands. kb/esl_sheet_out/2026-09-26/"
+      "text": "Check whether Sam ran the ESL paste: count kb_curation rows by reviewer_email like 'esl-%-s294@bot' (expect 6, 18, 30, 89, 3). If they are in, resolve his Complete comment on the sheet and let the daily run publish. Then the held identities (transfer composition is unruled for three; the two Optical Technician rows belong outside ESL) and item 8, the monthly pass, which starts only after the paste lands. kb/esl_sheet_out/2026-09-26/"
     },
     {
       "id": "s291-sam-releveled-line",
