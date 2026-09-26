@@ -647,8 +647,6 @@ collapse to one `<date>` family so writer and reader edges join.
 | `prototype/ccr_universe_members.json` | scripts: `kb/_audit_control_number_claims.py`, `kb/_build_ccr_universe.py`, `prototype/build_ccr_atlas.py` | — |
 | `prototype/check_contrast.py` | workflows: `js-tests.yml` | — |
 | `prototype/funding_video/.music.wav` | none found | scripts: `prototype/funding_video/render.mjs` |
-| `prototype/funding_video/funding_in_motion.html` | none found | scripts: `prototype/funding_video/build.py` |
-| `prototype/funding_video/funding_in_motion.src.html` | scripts: `prototype/funding_video/build.py` | — |
 | `prototype/skyview.html` | scripts: `prototype/build_ccr_atlas.py` | scripts: `prototype/build_ccr_atlas.py` · committed by: `daily-dashboard.yml` |
 | `quickstart.js` | pages: `CPL_Dashboard.html` | — |
 | `raci.js` | pages: `CPL_Dashboard.html` | — |
@@ -925,5 +923,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 525 file
-datasets · 146 external services · 367 consumers · 35 workflows · 37 tabs.
+Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 523 file
+datasets · 146 external services · 366 consumers · 35 workflows · 37 tabs.

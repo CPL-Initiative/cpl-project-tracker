@@ -183,6 +183,22 @@ function misaligned(table, rules) {
   check("a3: the name column reads left and the figures read centered",
     resolve(th0, "text-align", rules, null) === "left" && resolve(th1, "text-align", rules, null) === "center");
 
+  // ── (3) the noncredit header is readable ─────────────────────────────────
+  // Sam's screenshot, 2026-09-26: the noncredit table's header row painted its
+  // blue fill and kept the base rule's muted-ink text, dark on dark. A fill and
+  // its text color are one decision: resolve both on the same cell, and require
+  // the credit table's header to keep the plain muted ink.
+  const ncTable = doc.querySelector("#cplFundTable .cplfund-dtl-table.cplfund-dtl-nc");
+  check("c0: the statewide drill-in renders a noncredit table", !!ncTable);
+  const ncTh = ncTable && ncTable.rows[0].cells[1];
+  check("c1: ⭐ the noncredit header's text resolves to white wherever its fill resolves to the noncredit blue",
+    !!ncTh && /--dtl-nc-head/.test(resolve(ncTh, "background", rules, null)) &&
+    /--white/.test(resolve(ncTh, "color", rules, null)));
+  check("c2: the credit header keeps the muted ink on no fill",
+    /--text-muted/.test(resolve(th1, "color", rules, null)) && resolve(th1, "background", rules, null) === "transparent");
+  check("c3: the fill and the text color are declared in the ONE rule, so they cannot separate",
+    /\.cplfund-dtl-nc th \{ background: var\(--dtl-nc-head[^}]*color: var\(--white/.test(consumerSrc));
+
   // ⚠️ A GUARD THAT CANNOT FAIL PROVES NOTHING. Drop the three restating rules
   // and the resolver must find the defect Chromium measured: the outer rules
   // pulling the header and its column apart.

@@ -11,7 +11,7 @@ let id = 0; const pend = {}; ws.onmessage = m => { const d = JSON.parse(m.data);
 const cmd = (method, params = {}) => new Promise(r => { const i = ++id; pend[i] = r; ws.send(JSON.stringify({id: i, method, params})); });
 const val = async (expression, awaitPromise = false) => (await cmd('Runtime.evaluate', {expression, awaitPromise})).result.result.value;
 await cmd('Emulation.setDeviceMetricsOverride', {width: 1920, height: 1080, deviceScaleFactor: 1, mobile: false});
-await cmd('Page.enable'); await cmd('Page.navigate', {url: 'file://' + dir + '/render.html'});
+await cmd('Page.enable'); await cmd('Page.navigate', {url: 'file://' + dir + '/' + (process.env.PAGE || 'render.html')});
 await new Promise(r => setTimeout(r, 3000)); await val('document.fonts.ready.then(()=>1)', true);
 // The WAV comes back in 1 MB slices: one 29 MB DevTools message stalls.
 const L = await val('window.__film.audio().then(s=>{window.__w=s;return s.length;})', true); let b = '';
