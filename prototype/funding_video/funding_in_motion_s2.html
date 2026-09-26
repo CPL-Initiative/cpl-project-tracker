@@ -38,14 +38,18 @@ h1{margin:0;font:700 clamp(1.7rem,1.15rem + 2.2vw,2.7rem)/1.12 "Playfair Display
 /* The logo lockup: the MAP wordmark (its arrow cut out, so the flying arrow
    is the only one), the platform's long name, the tagline, and the CPL
    Initiative logo beneath. Sized in cqw so the arrow's home is a fixed point. */
-.lock{position:absolute;left:30cqw;top:5.5cqw;width:40cqw;text-align:center;color:var(--map-navy)}
+/* The CPL Initiative logo leads and is the largest mark; the MAP wordmark
+   sits beneath it at three-fifths the width, with the platform's long name
+   and tagline (Sam, 2026-09-26: "the CPL Initiative logo should still be the
+   most prominent but the MAP logo gets second fiddle and special treatment"). */
+.lock{position:absolute;left:25cqw;top:4cqw;width:50cqw;text-align:center;color:var(--map-navy)}
 .lock img{display:block;margin:0 auto}
-.lock .map{width:100%}
-.lock .l1{margin:.5cqw 0 0;font:700 2.05cqw/1.2 "Source Sans 3",Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase}
-.lock .l2{margin:.15cqw 0 0;font:italic 600 1.45cqw/1.25 "Source Sans 3",Arial,sans-serif}
-.lock .rule{height:.32cqw;background:var(--map-navy);margin:.7cqw 0 1.1cqw}
-.lock .cpl{width:74%}
-.arrow{position:absolute;left:0;top:0;width:4.68cqw;height:auto;z-index:4;pointer-events:none;transform-origin:50% 58%;will-change:transform}
+.lock .cpl{width:100%}
+.lock .rule{height:.32cqw;background:var(--map-navy);margin:1.2cqw 0 1.4cqw}
+.lock .map{width:58%}
+.lock .l1{margin:.4cqw 0 0;font:700 1.7cqw/1.2 "Source Sans 3",Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase}
+.lock .l2{margin:.1cqw 0 0;font:italic 600 1.3cqw/1.25 "Source Sans 3",Arial,sans-serif}
+.arrow{position:absolute;left:0;top:0;width:3.39cqw;height:auto;z-index:4;pointer-events:none;transform-origin:50% 58%;will-change:transform}
 .bigplay{position:absolute;left:50%;top:88%;transform:translate(-50%,-50%);min-height:44px;padding:0 1.5em;border:0;border-radius:999px;background:var(--stage-ink);color:var(--stage-paper);font:700 clamp(14px,1.5cqw,18px)/1 "Source Sans 3",Arial,sans-serif;cursor:pointer;z-index:5}
 .controls{display:flex;flex-wrap:wrap;align-items:center;gap:10px 12px;margin-top:12px}
 .btn{min-height:44px;padding:0 18px;border-radius:8px;border:1px solid var(--line-strong);background:var(--btn);color:var(--btn-text);font:600 1rem/1 "Source Sans 3",Arial,sans-serif;cursor:pointer}
@@ -108,15 +112,15 @@ function fade(el,t,a,b){var p=eo(k(t,a,b));el.style.opacity=p;el.style.transform
 function money(n){return '$'+Math.round(n).toLocaleString('en-US');}
 function count(el,t,a,b,v,fmt){el.textContent=(fmt||money)(v*eio(k(t,a,b)));}
 /* ---- the logo lockup, shared by the first and last scene ---- */
-function lockup(r){var d=E('div','lock',null,r);var m=E('img','map',null,d);m.src=MAP;m.alt='MAP Initiative';E('p','l1','Mapping Articulated Pathways',d);E('p','l2','With Credit for Prior Learning for Working Adults &amp; Veterans',d);E('div','rule',null,d);var c=E('img','cpl',null,d);c.src=LOGO;c.alt='California Community Colleges Credit for Prior Learning Initiative';return d;}
+function lockup(r){var d=E('div','lock',null,r);var c=E('img','cpl',null,d);c.src=LOGO;c.alt='California Community Colleges Credit for Prior Learning Initiative';E('div','rule',null,d);var m=E('img','map',null,d);m.src=MAP;m.alt='MAP Initiative';E('p','l1','Mapping Articulated Pathways',d);E('p','l2','With Credit for Prior Learning for Working Adults &amp; Veterans',d);d.map=m;return d;}
 /* ---- the script ---- */
 var S=[];
 function scene(t0,t1,name,text,build,update){var root=E('div','sc',null,stage);var o={t0:t0,t1:t1,name:name,text:text,root:root,u:update};build(root,o);S.push(o);}
 
 scene(0,6,'Title','2026 to 2028 CPL Initiative funding, how it works: a guide for colleges, Scenario 2.',function(r,o){
   o.lock=lockup(r);
-  o.t=chars(r,'2026-2028 CPL Initiative Funding: How It Works','hd');o.t.style.cssText='position:absolute;left:4cqw;right:4cqw;top:66%;text-align:center;font-size:4.2cqw';
-  o.s=E('p','kick','Scenario 2 · A guide for colleges',r,'position:absolute;left:0;right:0;top:83%;text-align:center');
+  o.t=chars(r,'2026-2028 CPL Initiative Funding: How It Works','hd');o.t.style.cssText='position:absolute;left:4cqw;right:4cqw;top:69%;text-align:center;font-size:4cqw';
+  o.s=E('p','kick','Scenario 2 · A guide for colleges',r,'position:absolute;left:0;right:0;top:85%;text-align:center');
 },function(o,t){o.lock.style.opacity=eo(k(t,0.2,1.4));reveal(o.t.cs,t,1.4,0.04,0.7,'drop');fade(o.s,t,3.6,4.4);});
 
 scene(6,15,'The funding','The state set aside 35 million dollars in one-time funding for 2026–27. 25.2 million goes directly to 118 institutions, 9.0 million funds statewide CPL projects and technology, and 800 thousand funds two Chancellor’s Office positions that support colleges.',function(r,o){
@@ -205,18 +209,23 @@ scene(75,84,'Support','You won’t do this alone. Recommended strategies sit und
 
 scene(84,90,'Find your college','Find your college’s maximum allocation, targets, and progress on the CPL funding model page for Scenario 2.',function(r,o){
   o.lock=lockup(r);
-  o.t=words(r,'Find your college on the <span class="blue">funding model page</span>','hd');o.t.style.cssText='position:absolute;left:0;right:0;top:64%;text-align:center;font-size:4cqw';
-  o.s=E('p',null,null,r,'position:absolute;left:0;right:0;top:78%;text-align:center;margin:0');var a=E('a',null,'Read the full explainer: cpl-initiative.github.io/cpl-project-tracker/funding-model/?scenario=Scenario 2',o.s,'font:700 1.9cqw/1.2 \'Source Sans 3\',Arial,sans-serif;color:var(--stage-blue);position:relative;z-index:6');a.href=EXPLAINER;a.target='_blank';a.rel='noopener';
+  o.t=words(r,'Find your college on the <span class="blue">funding model page</span>','hd');o.t.style.cssText='position:absolute;left:0;right:0;top:68%;text-align:center;font-size:3.8cqw';
+  o.s=E('p',null,null,r,'position:absolute;left:0;right:0;top:81%;text-align:center;margin:0');var a=E('a',null,'Read the full explainer: cpl-initiative.github.io/cpl-project-tracker/funding-model/?scenario=Scenario 2',o.s,'font:700 1.9cqw/1.2 \'Source Sans 3\',Arial,sans-serif;color:var(--stage-blue);position:relative;z-index:6');a.href=EXPLAINER;a.target='_blank';a.rel='noopener';
 },function(o,t){o.lock.style.opacity=eo(k(t,0.1,1.0));reveal(o.t.ws,t,0.9,0.1,0.6);fade(o.s,t,2.4,3.0);});
 
 /* ---- the arrow: the red mark from the MAP logo, flying the whole guide ----
    Its home is the cut-out in the A. Every position is a keyframe in stage
    units (cqw), rotation is the heading (0 up, 90 right), and the path between
    keyframes eases, so it darts and settles rather than drifting. */
-var LOCK_L=30,LOCK_T=5.5,LOCK_W=40,MAP_AR=466/1206;
-var HOME={x:LOCK_L+0.4843*LOCK_W,y:LOCK_T+0.2768*(LOCK_W*MAP_AR),r:0,s:1};
-function P(t,x,y,r,s){return{t:t,x:x,y:y,r:r,s:s==null?1:s};}
-var K=[P(0,HOME.x,HOME.y,0),P(4.3,HOME.x,HOME.y,0),P(4.6,HOME.x,HOME.y,-16),P(4.85,HOME.x,HOME.y,16),P(5.1,HOME.x,HOME.y,0),P(5.4,HOME.x,HOME.y-3,0,1.15),
+/* HOME is measured from the lockup's own layout (the MAP image's box in the
+   first scene), so a change to the lockup's CSS moves the nest with it. The
+   arrow's box is the wordmark's arrow cut-out: 584/1206 across, 129/466 down. */
+var HOME={x:49.5,y:19.5,r:0,s:1};
+function measureHome(){var st=stage.getBoundingClientRect(),m=S[0]&&S[0].lock&&S[0].lock.map;if(!m||!st.width)return;var b=m.getBoundingClientRect();if(!b.width)return;var u=100/st.width;
+  HOME.x=(b.left-st.left+b.width*584/1206)*u;HOME.y=(b.top-st.top+b.height*129/466)*u;arrow.style.width=(b.width*141/1206*u)+'cqw';K=buildK();}
+function P(t,x,y,r,s){return{t:t,x:x,y:y,r:r,s:s==null?1.35:s};}
+var K=[];
+function buildK(){var K=[P(0,HOME.x,HOME.y,0,1),P(4.3,HOME.x,HOME.y,0,1),P(4.6,HOME.x,HOME.y,-16,1),P(4.85,HOME.x,HOME.y,16,1),P(5.1,HOME.x,HOME.y,0,1),P(5.4,HOME.x,HOME.y-3,0,1.2),
   P(6.0,112,4,90),
   P(6.2,-10,40,90),P(7.2,77,14,270),P(11.4,77,14,270),P(12.4,30,28.5,180),P(14.3,30,28.5,180),P(15.0,-10,50,270,.9),
   P(16.4,10,19,180,.9),P(19.0,10,19,180,.9),P(20.6,72.5,19,180,.9),P(24.2,72.5,19,180,.9),P(25.0,112,10,90),
@@ -227,8 +236,9 @@ var K=[P(0,HOME.x,HOME.y,0),P(4.3,HOME.x,HOME.y,0),P(4.6,HOME.x,HOME.y,-16),P(4.
   P(65.6,-10,22,90,.8),P(65.8,8,22,90,.8),P(68.6,92,22,90,.8),P(74.2,92,22,90,.8),P(75.0,112,22,90),
   P(75.8,-10,20,90),P(76.4,1.5,20,90),P(83.2,1.5,20,90),P(84.0,-10,20,270)];
 /* the closing loop: one lap around the lockup, then home with a small bounce */
-(function(){var cx=50,cy=15,rx=27,ry=15;for(var i=0;i<=8;i++){var th=Math.PI*(0.5+i*0.25);K.push(P(84.4+i*0.28,cx+rx*Math.cos(th),cy+ry*Math.sin(th),(th*180/Math.PI+180)%360,.9));}
-  K.push(P(87.3,HOME.x,HOME.y-1.2,0,1.25));K.push(P(87.7,HOME.x,HOME.y,0,1));K.push(P(90,HOME.x,HOME.y,0,1));})();
+var cx=50,cy=19,rx=30,ry=15;for(var i=0;i<=8;i++){var th=Math.PI*(0.5+i*0.25);K.push(P(84.4+i*0.28,cx+rx*Math.cos(th),cy+ry*Math.sin(th),(th*180/Math.PI+180)%360,1.2));}
+  K.push(P(87.3,HOME.x,HOME.y-1.2,0,1.3));K.push(P(87.7,HOME.x,HOME.y,0,1));K.push(P(90,HOME.x,HOME.y,0,1));return K;}
+K=buildK();
 function arrowAt(T){var i=0;while(i<K.length-1&&K[i+1].t<=T)i++;var a=K[i],b=K[Math.min(i+1,K.length-1)];if(a===b||b.t<=a.t)return a;var p=eio(k(T,a.t,b.t));
   var dr=b.r-a.r;dr=((dr+540)%360)-180;return{x:a.x+(b.x-a.x)*p,y:a.y+(b.y-a.y)*p,r:a.r+dr*p,s:a.s+(b.s-a.s)*p};}
 function drawArrow(T){if(reduced){var home=T<6||T>=87.7;arrow.style.display=home?'block':'none';arrow.style.left=HOME.x+'cqw';arrow.style.top=HOME.y+'cqw';arrow.style.transform='';return;}
@@ -328,7 +338,9 @@ pos.addEventListener('input',function(){seek(parseFloat(pos.value));});
 pos.addEventListener('pointerdown',function(){scrubbing=true;});window.addEventListener('pointerup',function(){scrubbing=false;});
 document.addEventListener('visibilitychange',function(){if(document.hidden&&playing)pause();});
 var m=/^#t(\d+)$/.exec(location.hash||'');if(m)T=parseFloat(m[1]);
-render();ui();
-window.__film={seek:function(t){T=t;render();},audio:function(){return Music.offline();}};
+measureHome();render();ui();
+window.addEventListener('resize',function(){measureHome();render();});
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){measureHome();render();});
+window.__film={seek:function(t){measureHome();T=t;render();},audio:function(){return Music.offline();}};
 })();
 </script>

@@ -29,8 +29,10 @@ Session 289; the highest handoff on disk was 291, so this file is 292. Read
    the built page, and `20260926_CPL_Funding_in_Motion_Scenario_2.mp4`. Two priorities at
    50/50, the Career attainment and innovation projects card as a reported card, Sample
    College's Access target 67.1 FTES / $170,431. Orchestral score (horns, timpani,
-   strings, contrabass, pizzicato). The MAP wordmark with the CPL Initiative logo beneath
-   it; the logo's red arrow flies every scene and nests back into the A at the close.
+   strings, contrabass, pizzicato). The CPL Initiative logo leads, the MAP wordmark beneath it at three-fifths
+   the width (Sam's follow-up ruling: CPL Initiative most prominent, MAP second
+   fiddle with special treatment); the MAP logo's red arrow flies every scene and
+   nests back into the A at the close. Its home is measured from the layout.
    The explainer links the Scenario 2 guide when it shows Scenario 2.
 4. `build.py [s2] [--render]`, `render.sh [s2]`, `render.mjs` (`PAGE` env) take a variant.
    `prototype/funding_video/README.md` carries the details.
