@@ -4,7 +4,7 @@
   "supabase_tables": 85,
   "rpcs": 31,
   "edge_functions": 5,
-  "file_datasets": 524,
+  "file_datasets": 526,
   "external_services": 147,
   "consumers": 369,
   "workflows": 35,
@@ -1147,7 +1147,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 21
+     "line": 28
     }
    ],
    "main_committers": []
@@ -13939,6 +13939,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:prototype/funding_video/.dur": {
+   "consumers": [
+    {
+     "id": "script:prototype/funding_video/render.mjs",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 17
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:prototype/funding_video/.music.wav": {
    "consumers": [
     {
@@ -13946,7 +13959,7 @@
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 19
+     "line": 21
     }
    ],
    "served": false,
@@ -13959,7 +13972,20 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 75
+     "line": 92
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:prototype/funding_video/narration_s1_layout.json": {
+   "consumers": [
+    {
+     "id": "script:prototype/funding_video/build.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 76
     }
    ],
    "served": true,

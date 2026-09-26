@@ -1,0 +1,302 @@
+{
+ "_about": "The narrated cut's timeline, written by narrate.py from narration_s1.json: each scene lasts its lead-in, its clip and its air; captions are the scene text cut at sentences and long clauses, timed by phoneme count and snapped to the voice's pauses. build.py n1 reads it; do not edit by hand.",
+ "voice": "af_heart",
+ "speed": 1.0,
+ "layout": {
+  "lead_s": 1.0,
+  "tail_s": 0.8,
+  "first_lead_s": 1.4,
+  "last_tail_s": 3.4,
+  "_why": "The narrated cut paces each scene as its lead-in (the seam, its barrier and the first reveal), its clip, and its air; Sam, 2026-09-26: \"slow down and lengthen the timing a bit to accommodate readability and narration.\""
+ },
+ "total": 179.827,
+ "scenes": [
+  {
+   "scene": "Title",
+   "start": 0.0,
+   "speech_start": 1.4,
+   "speech_end": 8.973,
+   "end": 9.773
+  },
+  {
+   "scene": "The funding",
+   "start": 9.773,
+   "speech_start": 10.773,
+   "speech_end": 29.973,
+   "end": 30.773
+  },
+  {
+   "scene": "Maximum allocation",
+   "start": 30.773,
+   "speech_start": 31.773,
+   "speech_end": 50.845,
+   "end": 51.645
+  },
+  {
+   "scene": "Credit and noncredit",
+   "start": 51.645,
+   "speech_start": 52.645,
+   "speech_end": 63.803,
+   "end": 64.603
+  },
+  {
+   "scene": "Three priorities",
+   "start": 64.603,
+   "speech_start": 65.603,
+   "speech_end": 90.307,
+   "end": 91.107
+  },
+  {
+   "scene": "Targets",
+   "start": 91.107,
+   "speech_start": 92.107,
+   "speech_end": 111.819,
+   "end": 112.619
+  },
+  {
+   "scene": "The baseline",
+   "start": 112.619,
+   "speech_start": 113.619,
+   "speech_end": 139.411,
+   "end": 140.211
+  },
+  {
+   "scene": "Timing",
+   "start": 140.211,
+   "speech_start": 141.211,
+   "speech_end": 155.056,
+   "end": 155.856
+  },
+  {
+   "scene": "Support",
+   "start": 155.856,
+   "speech_start": 156.856,
+   "speech_end": 168.163,
+   "end": 168.963
+  },
+  {
+   "scene": "Find your college",
+   "start": 168.963,
+   "speech_start": 169.963,
+   "speech_end": 176.427,
+   "end": 179.827
+  }
+ ],
+ "cues": [
+  {
+   "start": 1.4,
+   "end": 7.2,
+   "text": "Let's walk through how CPL Initiative funding works for twenty twenty-six through twenty-eight,"
+  },
+  {
+   "start": 7.2,
+   "end": 8.973,
+   "text": "and what it means for your college."
+  },
+  {
+   "start": 10.773,
+   "end": 17.208,
+   "text": "The state set aside thirty-five million dollars in one-time funding for the twenty-six, twenty-seven year."
+  },
+  {
+   "start": 17.208,
+   "end": 22.293,
+   "text": "Just over twenty-five million of it goes straight to a hundred and eighteen institutions."
+  },
+  {
+   "start": 22.293,
+   "end": 26.258,
+   "text": "The rest funds statewide CPL projects and technology,"
+  },
+  {
+   "start": 26.258,
+   "end": 29.973,
+   "text": "plus two Chancellor's Office positions that support colleges."
+  },
+  {
+   "start": 31.773,
+   "end": 35.438,
+   "text": "Every institution has a maximum allocation for the two years."
+  },
+  {
+   "start": 35.438,
+   "end": 40.593,
+   "text": "It's based on the institution's share of instruction, credit and noncredit together,"
+  },
+  {
+   "start": 40.593,
+   "end": 45.358,
+   "text": "and it falls between a hundred and fifty thousand dollars and four hundred thousand."
+  },
+  {
+   "start": 45.358,
+   "end": 50.845,
+   "text": "Sample College's maximum, for example, is about three hundred forty-five thousand."
+  },
+  {
+   "start": 52.645,
+   "end": 56.445,
+   "text": "That maximum splits into a credit share and a noncredit share,"
+  },
+  {
+   "start": 56.445,
+   "end": 60.05,
+   "text": "following each institution's own mix of instruction."
+  },
+  {
+   "start": 60.05,
+   "end": 63.803,
+   "text": "And only noncredit outcomes count toward the noncredit share."
+  },
+  {
+   "start": 65.603,
+   "end": 67.663,
+   "text": "Three priorities carry the funding."
+  },
+  {
+   "start": 67.663,
+   "end": 72.363,
+   "text": "Access counts applied CPL units from students who start at the CPL Portal,"
+  },
+  {
+   "start": 72.363,
+   "end": 76.098,
+   "text": "at your college's landing page, or through a batch upload."
+  },
+  {
+   "start": 76.098,
+   "end": 81.538,
+   "text": "Completion counts transcribed CPL units, with the MAP counselor step checked."
+  },
+  {
+   "start": 81.538,
+   "end": 86.563,
+   "text": "And career attainment counts CPL units for students who go on to a career outcome,"
+  },
+  {
+   "start": 86.563,
+   "end": 90.307,
+   "text": "which the Chancellor's Office measures through EDD wage records."
+  },
+  {
+   "start": 92.107,
+   "end": 95.717,
+   "text": "Each priority has a target, measured in FTES."
+  },
+  {
+   "start": 95.717,
+   "end": 99.407,
+   "text": "Thirty semester units of CPL make one FTES,"
+  },
+  {
+   "start": 99.407,
+   "end": 101.997,
+   "text": "or forty-five if you're on the quarter system."
+  },
+  {
+   "start": 101.997,
+   "end": 103.647,
+   "text": "Here's the part to remember:"
+  },
+  {
+   "start": 103.647,
+   "end": 107.432,
+   "text": "reach half of a target, and your college qualifies for half that share."
+  },
+  {
+   "start": 107.432,
+   "end": 110.722,
+   "text": "Go past the target, and the share stays where it is."
+  },
+  {
+   "start": 110.722,
+   "end": 111.819,
+   "text": "It's the ceiling."
+  },
+  {
+   "start": 113.619,
+   "end": 118.014,
+   "text": "Before any funding is released, your college meets a baseline by November first."
+  },
+  {
+   "start": 118.014,
+   "end": 119.984,
+   "text": "Name a CPL coordinator,"
+  },
+  {
+   "start": 119.984,
+   "end": 124.329,
+   "text": "then list that person in MAP and on your college's CPL landing page."
+  },
+  {
+   "start": 124.329,
+   "end": 127.519,
+   "text": "Put your local confirmation of participation on file."
+  },
+  {
+   "start": 127.519,
+   "end": 134.369,
+   "text": "And make sure at least seventy-five percent of your enrolled veterans have their Joint Services Transcripts uploaded in MAP."
+  },
+  {
+   "start": 134.369,
+   "end": 136.149,
+   "text": "Until the baseline is met,"
+  },
+  {
+   "start": 136.149,
+   "end": 139.411,
+   "text": "the funding your college demonstrates is held in reserve for it."
+  },
+  {
+   "start": 141.211,
+   "end": 144.361,
+   "text": "The full two-year amount is available from year one."
+  },
+  {
+   "start": 144.361,
+   "end": 147.796,
+   "text": "The Chancellor's Office releases funding twice a year,"
+  },
+  {
+   "start": 147.796,
+   "end": 150.471,
+   "text": "based on your college's CPL to date,"
+  },
+  {
+   "start": 150.471,
+   "end": 155.056,
+   "text": "and whatever remains after year one carries forward to year two for your college."
+  },
+  {
+   "start": 156.856,
+   "end": 158.596,
+   "text": "And you won't be doing this alone."
+  },
+  {
+   "start": 158.596,
+   "end": 161.836,
+   "text": "Every priority comes with recommended strategies,"
+  },
+  {
+   "start": 161.836,
+   "end": 165.771,
+   "text": "a CPL Initiative help team supports every college,"
+  },
+  {
+   "start": 165.771,
+   "end": 168.163,
+   "text": "and more detailed guidance is on the way."
+  },
+  {
+   "start": 169.963,
+   "end": 174.063,
+   "text": "To see your college's maximum allocation, targets, and progress,"
+  },
+  {
+   "start": 174.063,
+   "end": 176.427,
+   "text": "visit the CPL funding model page."
+  }
+ ]
+}

@@ -2006,3 +2006,12 @@ Sound reasoning is not a measurement. Running the true baseline settled it:
 rather than left as a line in a PR comment. ⚠️ **The sweep is not in
 `js-tests.yml`**, so nothing in CI has ever gone red for it — which is exactly
 how it stayed unnoticed, and why it needed a To-Do row instead of a mention.
+
+## 2026-09-26 (SkyCadence, S294) — the ESL merging procedure sheet, and four cards that re-asked settled questions
+
+Sam asked on 2026-09-21 for a sheet "to manage the adjustments to what we currently use or have queued to use"; it is nine items at https://claude.ai/artifact/LaZmu7NYj11DigAEbxsUMS (`kb/_build_esl_merging_decision_sheet.py`). Three lessons:
+
+- **A NEEDS line has to leave the lane when its answer lands.** The lane's paragraph said "ALL SEVEN OF SAM'S CALLS ARE IN" and ended "NEEDS SAM ①–④" for four of those same questions; the standing open-asks sheet quoted the ask, Sam left all four cards as proposed on 2026-09-22, and card 3's proposal ("fix the nine") contradicts his own 2026-08-24 words ("leave them"). The cards are retired and item 7 of the new sheet asks which stands.
+- **A stored plan is compared to the live set through `kb/alias_chain.py`.** 428 of the 2026-07-15 plan's ids were re-keyed since; resolved, the plan covers 10 of today's 102 ESL identities. 91 of the other 92 came in on 2026-09-03 with the Z-band retirement (82 former Z ids, 9 legacy anchors), after the fold.
+- **A title reader built on the first corpus misses the next one's words.** Run over the 92, the fold's classifier misses `Careers` (its pattern is `\bcareer\b`), reads `High-Interm` as no level, and reads `Part 1` as rung 1; it also has no health words, so 17 health-titled folds sit in Beginning ESL and 1 in Intermediate. Item 1 and item 3 of the sheet carry the fixes.
+
