@@ -43,20 +43,38 @@ Sam's notes, verbatim in `cpl_memory`
    gained `download`.
 
 Both MP4s re-rendered (`20260926_*`). `tests/funding_video_page.test.js` (new,
-28 checks) guards the rename, the controls, the download targets, the barriers and
-that the built pages carry the current source.
+32 checks) guards the rename, the controls, the download targets, the barriers,
+that the built pages carry the current source, and the target figures below.
+
+Verifying the MP4s frame by frame turned up two defects, both fixed and
+re-rendered: Scenario 2's reported card ran past the bottom of the frame, and the
+targets scene halved the ROUNDED target, so its hold read 22.1 FTES (Scenario 2:
+33.5) where the engine's half target and the scene text say 22.2 (33.6). The second
+was present since S291; the page now shows the typed figures on the hold and at the
+full target, and checks e1/e2 fail on the old code.
 
 ## Verified
 
-- `funding_video_page` 28/28 · `funding_model_page` 84/84.
+- `funding_video_page` 32/32 · `funding_model_page` 84/84 · CI `test` green on the fix commit (full suite, four shards).
 - Frames sampled across all ten scenes, one iteration to clear six overlaps.
 - Live page at 1440×900 (stage 1408×792, controls on screen) and 390×844, no
   sideways scroll.
 
 ## Open
 
-- Sam has not yet seen or heard this version. Expect taste notes on the invaders
-  (size, how many) and the score.
+- **A narrated draft is next** (Sam, 2026-09-26: *"Keep these drafts...but can you
+  make a draft version with a natural feminine voice-over that follows a script your
+  write? We could tone down the music to just background level. Might need to slow
+  down and lengthen the timing a bit"*). The draft script and the build plan are in
+  [`prototype/funding_video/20260926_Narration_Script_Draft.md`](../prototype/funding_video/20260926_Narration_Script_Draft.md)
+  (339 words, about 2:15 to 2:30). Waiting on two things from Sam: edits or approval
+  of the script, and the environment's network access set to Custom with
+  `huggingface.co`, `*.huggingface.co`, `*.hf.co` allowed (defaults kept) so the
+  Kokoro-82M voice (`af_heart`, Apache-2.0) can run locally. He also shared an X post
+  (a video he says Opus 5.5 produced) that no route here can reach; allowing
+  `cdn.syndication.twimg.com` and `video.twimg.com` would let a session pull it.
+- Sam watched the Scenario 1 render and replied "Looks great!"; the two fixes above
+  came after, so he has not seen those frames.
 - Carried from S292: the explainer timeline's "Undispersed Funds Rolled to Year 2
   and Releveled" wording (a curator edit); `EXPLAINER` to the public repo's address
   before production; the video pages are still not in `a11y.config.js`.
