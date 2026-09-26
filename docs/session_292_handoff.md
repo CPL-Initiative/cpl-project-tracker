@@ -34,7 +34,11 @@ Session 289; the highest handoff on disk was 291, so this file is 292. Read
    fiddle with special treatment); the MAP logo's red arrow flies every scene and
    nests back into the A at the close. Its home is measured from the layout.
    The explainer links the Scenario 2 guide when it shows Scenario 2.
-4. `build.py [s2] [--render]`, `render.sh [s2]`, `render.mjs` (`PAGE` env) take a variant.
+4. **Then Sam asked for the same for Scenario 1, a trail on the arrow, louder horns and a
+   march snare.** The two sources became ONE (`funding_in_motion.src.html`) with a
+   per-scenario `CONFIG` in `build.py`; both MP4s re-rendered as `20260926_*`. His words
+   on the arrow (a student finding its pathway home) are a vault braindump and a
+   `cpl_memory` row. `build.py [s2] [--render]`, `render.sh [s2]`, `render.mjs` (`PAGE` env) take a variant.
    `prototype/funding_video/README.md` carries the details.
 
 ## How the Scenario 2 figures were computed
