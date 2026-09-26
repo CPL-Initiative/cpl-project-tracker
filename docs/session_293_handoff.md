@@ -8,7 +8,7 @@ status: current
 
 # You are Session 294
 
-Your moniker is **SkyForge**. SkyBeam (S293) took Sam's five notes on the funding
+Your moniker is **SkyCadence** (renamed from SkyForge, which S280 already carried). SkyBeam (S293) took Sam's five notes on the funding
 video and landed all five in one PR. Read
 [`session_292_handoff.md`](session_292_handoff.md) for the Scenario 2 video and the
 one-source build, and [`session_289_handoff.md`](session_289_handoff.md) for the
@@ -78,6 +78,52 @@ full target, and checks e1/e2 fail on the old code.
 - Carried from S292: the explainer timeline's "Undispersed Funds Rolled to Year 2
   and Releveled" wording (a curator edit); `EXPLAINER` to the public repo's address
   before production; the video pages are still not in `a11y.config.js`.
+
+## ONE THREAD FROM HERE — the reconciled map (Sam, 2026-09-26)
+
+*"I was running simultaneous sessions last week so handoffs got disconnected. I would
+like to get back on a single threaded workstream on my session."* This handoff is the
+**only head**. How last week forked, so nothing it did is lost:
+
+| Handoffs | Thread | State now |
+|---|---|---|
+| 279 (SkyWarden, 9/19) | **SkyView** goes public read-only | Lane file current (9/23). Carryover: the pinch failure (`s278-fable-skyview-pinch-registry`); the sweep is not in CI |
+| 280–283 (9/20–9/22) | **Jev + the CCR** | First title-rung sitting: Sam reviewed 26 of 50, 7 moves / 19 keeps; Jev ranks well (AUC 0.865), no safe gate, so the CCR stays out of `GATES`. **Waiting on Sam:** nest or cross-list the misfits (283 §"first sitting"), which everything downstream of the misfit rung waits on. No CCR decisions table exists (needs Governance, Rule 10(a3)). CER/CSR scanners last ran 2026-07-10 |
+| 283 carryover | **ESL merging decision sheet** | **Asked for by name on 2026-09-21 and never built**; five sessions carried it forward. Build it first when the CCR work resumes: [`lanes/esl-packaging`](reference/lanes/esl-packaging.md) |
+| 283 | **Discipline cross-list** | 3 of 12 items landed per [the lane](reference/lanes/discipline-crosslist.md) (283's "6 of 12" predates it) |
+| 288 (SkyMatrix, 9/24) + 290 (SkyZ, 9/25) | **EACR exhibit matrix** | Ten tweaks, the windowed matrix, CIP sectors from title rules (Sam: sectors are a filter only, never the TOP/CIP project). **Waiting on Sam:** look at the grid in a browser (52px rows, title clamp, figures, the panel). ASCCC roster waits on Pedro's MAP Custom Report |
+| 284–287, 289, 291–293 | **Funding model** | Done except the narrated draft (below) and the timeline's "Releveled" wording |
+
+**Stranded work recovered:** eight CPLBrain files from 9/14–9/23 (seven session notes
+and Sam's 2026-09-16 braindump) sat on unmerged branches, so Obsidian never had them:
+[samueltlee/CPLBrain#182](https://github.com/samueltlee/CPLBrain/pull/182). Older draft
+PRs remain in the vault (#147, #133, #32, #16–19, July–August) and in the public KB
+(#14, #19, #20, #22; human-gated by design).
+
+**The narration, Sam's verdict on v2 (2026-09-26):** *"Narration still a bit stilted,
+especially when sounding out C-P-L rather than just saying it quickly--same with sounding
+out the year numbers--too stilted. We can work on this in a later session."* The cause is
+measured, and so is the fix (Kokoro's tokenizer, `kokoro_onnx.tokenizer.Tokenizer().phonemize`):
+
+| Written | Phonemes | Read |
+|---|---|---|
+| `C P L` (v2) | `sˈiː pˈiː ˈɛl`, three primary stresses | stilted |
+| `CPL` | `sˌiːpˌiːˈɛl`, one word, stress on the last letter | quick, as people say it |
+| `twenty twenty-six` (v2) | `twˈɛnti twˈɛntisˈɪks`, two primary stresses | stilted |
+| `2026` | `tˈuː θˈaʊzənd twˈɛnti sˈɪks` | wrong (two thousand) |
+
+So: write `CPL`, `EDD` and `FTES` unspaced (keep `map` lowercase, since capitals spell it
+out); for years, either pass phonemes with a lighter first stress (`create(...,
+is_phonemes=True)`) or say "twenty-six to twenty-eight". Then re-read v3 and send it.
+
+**The queue, in Sam's order:** (1) the narrated funding video, once he approves the v2
+read (Heart voice, "map" said as a word, 2:55; audio sent 2026-09-26). The script is
+[`20260926_Narration_Script_Draft.md`](../prototype/funding_video/20260926_Narration_Script_Draft.md)
+and the spoken form the voice reads is `prototype/funding_video/narration_s1.json`. The
+Kokoro model (`fastrtc/kokoro-onnx` on Hugging Face) and `pip install kokoro-onnx` rebuild
+the voice in about a minute; (2) the
+ESL decision sheet, then the Jev CCR's misfit ruling and next rung; (3) SkyView;
+(4) the EACR grid review whenever he opens it.
 
 ## Read in order
 
