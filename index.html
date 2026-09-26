@@ -3662,6 +3662,9 @@
 
 
 
+
+
+
 /* ═══ MAP Articulation Analysis Cards ═══ */
 /* ─── Budget inline editor (budget_editor.js) ─── */
 .budget-auth-widget { display:flex; flex-wrap:wrap; gap:0.6rem; align-items:center;
@@ -4150,7 +4153,7 @@
             </div>
           </div>
         </span>
-        <div class="last-updated">Last Updated: September 26, 2026 at 6:48 AM PT</div>
+        <div class="last-updated">Last Updated: September 26, 2026 at 9:32 AM PT</div>
         <button id="refreshBtn" class="cobi-util-link" title="Re-scrape live MAP data and regenerate the dashboard now" onclick="if(!confirm('Manual Pipeline Run\n\nThis will re-scrape live data from the MAP CPL Dashboard, regenerate all charts and KPIs, and overwrite today\'s deployed dashboard.\n\nThe process typically takes 3-5 minutes.\n\nContinue?'))return;var b=this;b.disabled=true;b.textContent='Pipeline triggered — updating...';fetch('https://cpl-proxy.slee-548.workers.dev/trigger?secret=CPL_SCRAPE_2026',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({secret:'CPL_SCRAPE_2026'})}).then(function(r){return r.json()}).then(function(d){if(d.success){b.textContent='Pipeline running — page will refresh in 5 min';setTimeout(function(){location.reload()},300000)}else{b.textContent='Error: '+( d.error||'Unknown error');b.disabled=false}}).catch(function(e){b.textContent='Error: '+e.message;b.disabled=false})">Manually Refresh COBI</button>
       </div>
     </div>
@@ -4246,7 +4249,7 @@
     <div class="kpi-section-wrapper" id="kpiSectionWrapper">
         <div class="kpi-section-header" onclick="(function(){var w=document.getElementById('kpiSectionWrapper');w.classList.toggle('collapsed');})()"> 
             <span class="kpi-section-title">KPI Metrics</span>
-            <span class="kpi-section-updated">Live data refreshed Sep 26, 2026 · 6:47 AM PT</span>
+            <span class="kpi-section-updated">Live data refreshed Sep 26, 2026 · 9:32 AM PT</span>
             <span class="kpi-toggle-arrow">&#9650;</span>
         </div>
     <div class="kpi-section">
@@ -4665,7 +4668,7 @@
 <div class="kpi-section-wrapper" id="cplAnalyticsWrapper">
     <div class="kpi-section-header" onclick="(function(){var w=document.getElementById('cplAnalyticsWrapper');w.classList.toggle('collapsed');})()">
         <span class="kpi-section-title">CPL Analytics</span>
-        <span class="kpi-section-updated">Source: MAP Custom Reporting · Generated 2026-09-26T13:46:33</span>
+        <span class="kpi-section-updated">Source: MAP Custom Reporting · Generated 2026-09-26T16:31:07</span>
         <span class="kpi-toggle-arrow">&#9650;</span>
     </div>
     <div class="cpl-analytics-body" id="exhibitAnalysisSection">
@@ -10120,8 +10123,8 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
         <!-- DATA-START (auto-replaced by excel_to_dashboard.py — do not edit manually) -->
     <script>
     window.CPL_DATA = {
-  "last_updated": "September 26, 2026 at 6:48 AM PT",
-  "data_as_of": "September 26, 2026 at 6:48 AM PT",
+  "last_updated": "September 26, 2026 at 9:32 AM PT",
+  "data_as_of": "September 26, 2026 at 9:32 AM PT",
   "kpis": {
     "cumulative_students": {
       "value": "52,067",
@@ -10314,7 +10317,7 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
       ],
       "live": true
     },
-    "_live_updated": "2026-09-26T13:47:41.794Z",
+    "_live_updated": "2026-09-26T16:32:13.826Z",
     "map_exhibits": {
       "value": "2,816",
       "label": "Common Exhibit Titles",
@@ -10407,7 +10410,7 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
       ],
       "live": true
     },
-    "_exhibit_updated": "2026-09-26T13:46:33",
+    "_exhibit_updated": "2026-09-26T16:31:07",
     "_exhibit_source": "CustomReport_latest.json",
     "_exhibit_datasets": [
       "View_ArticulatedMAPExhibits_APIDataset",
