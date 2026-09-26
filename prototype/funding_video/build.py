@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the CPL Funding in Motion video pages.
+"""Build the CPL Funding in Motion video pages (a 90-second introduction per scenario).
 
   python3 prototype/funding_video/build.py               -> funding_in_motion.html (Scenario 1)
   python3 prototype/funding_video/build.py s2            -> funding_in_motion_s2.html (Scenario 2)
@@ -28,12 +28,13 @@ CONFIG = {
     # Scenario 1, the published scenario (config read 2026-09-24): Access 33 /
     # Completion 34 / Career attainment 33; Chaffey's Access target 44.3 FTES / $112,484.
     's1': {
-        'pageTitle': 'CPL Funding in Motion',
+        'pageTitle': 'CPL Funding in Motion: An Introduction',
         'eyebrow': 'CPL Initiative',
-        'dek': 'A 90-second guide for colleges, with music. The sound starts when you press Play.',
+        'dek': 'A 90-second introduction for colleges, with music. Play opens it full screen; press Esc to leave. Detailed guidance will follow.',
         'linkLabel': 'CPL funding model',
-        'kick': 'A guide for colleges',
-        'titleText': '2026 to 2028 CPL Initiative funding, how it works: a guide for colleges.',
+        'kick': 'An introduction for colleges',
+        'titleText': '2026 to 2028 CPL Initiative funding, how it works: an introduction for colleges.',
+        'mp4': '20260926_CPL_Funding_in_Motion.mp4',
         'explainer': BASE,
         'explainerShort': 'cpl-initiative.github.io/cpl-project-tracker/funding-model',
         'closingSuffix': '',
@@ -48,12 +49,13 @@ CONFIG = {
     # attainment and innovation projects as a reported card; Chaffey's Access
     # target 67.1 FTES / $170,431.
     's2': {
-        'pageTitle': 'CPL Funding in Motion: Scenario 2',
+        'pageTitle': 'CPL Funding in Motion: An Introduction, Scenario 2',
         'eyebrow': 'CPL Initiative · Scenario 2',
-        'dek': 'A 90-second guide for colleges, with music, for Scenario 2 of the funding model. The sound starts when you press Play.',
+        'dek': 'A 90-second introduction for colleges, with music, for Scenario 2 of the funding model. Play opens it full screen; press Esc to leave. Detailed guidance will follow.',
         'linkLabel': 'CPL funding model, Scenario 2',
-        'kick': 'Scenario 2 · A guide for colleges',
-        'titleText': '2026 to 2028 CPL Initiative funding, how it works: a guide for colleges, Scenario 2.',
+        'kick': 'Scenario 2 · An introduction for colleges',
+        'titleText': '2026 to 2028 CPL Initiative funding, how it works: an introduction for colleges, Scenario 2.',
+        'mp4': '20260926_CPL_Funding_in_Motion_Scenario_2.mp4',
         'explainer': BASE + '?scenario=Scenario%202',
         'explainerShort': 'cpl-initiative.github.io/cpl-project-tracker/funding-model/?scenario=Scenario 2',
         'closingSuffix': ' for Scenario 2',
@@ -76,7 +78,7 @@ def uri(p):
     return 'data:image/png;base64,' + base64.b64encode(pathlib.Path(p).read_bytes()).decode()
 
 page = (src.replace('__PAGETITLE__', cfg['pageTitle']).replace('__EYEBROW__', cfg['eyebrow'])
-        .replace('__DEK__', cfg['dek']).replace('__EXPLAINER__', cfg['explainer']).replace('__LINKLABEL__', cfg['linkLabel'])
+        .replace('__DEK__', cfg['dek']).replace('__EXPLAINER__', cfg['explainer']).replace('__LINKLABEL__', cfg['linkLabel']).replace('__MP4__', cfg['mp4'])
         .replace('__CFG__', json.dumps(cfg, ensure_ascii=False))
         .replace('__LOGO__', uri(LOGO)).replace('__MAP__', uri(ASSETS / 'map_wordmark.png')).replace('__ARROW__', uri(ASSETS / 'map_arrow.png')))
 (HERE / ('funding_in_motion%s.html' % suffix)).write_text(page, encoding='utf8')
@@ -90,7 +92,7 @@ if '--render' in sys.argv:
              ('Source Sans 3', 'italic', 600, 'source-sans-3', 'latin-600-italic'),
              ('Source Sans 3', 'normal', 700, 'source-sans-3', 'latin-700-normal')]
     css = ''.join("@font-face{font-family:'%s';font-style:%s;font-weight:%d;src:url(%s%s/files/%s-%s.woff2)}" % (f, s, w, F, pkg, pkg, file) for f, s, w, pkg, file in faces)
-    css += ('body{background:#FBFAF6}.wrap{max-width:none;padding:0}header,.controls,.scenes,.wrap>p,.bigplay{display:none!important}'
+    css += ('body{background:#FBFAF6}.player{width:1920px!important;padding:0!important;margin:0}.wrap,.controls,.bigplay{display:none!important}'
             '.stage{margin:0;border:0;border-radius:0;box-shadow:none;width:1920px}')
     (HERE / ('render%s.html' % suffix)).write_text(page.replace('</style>', '</style><style>' + css + '</style>', 1), encoding='utf8')
 print('built', variant)
