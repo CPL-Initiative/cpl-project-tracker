@@ -8,7 +8,7 @@ status: current
 
 # You are Session 294
 
-Your moniker is **SkyForge**. SkyBeam (S293) took Sam's five notes on the funding
+Your moniker is **SkyCadence** (renamed from SkyForge, which S280 already carried). SkyBeam (S293) took Sam's five notes on the funding
 video and landed all five in one PR. Read
 [`session_292_handoff.md`](session_292_handoff.md) for the Scenario 2 video and the
 one-source build, and [`session_289_handoff.md`](session_289_handoff.md) for the
@@ -99,6 +99,22 @@ and Sam's 2026-09-16 braindump) sat on unmerged branches, so Obsidian never had 
 [samueltlee/CPLBrain#182](https://github.com/samueltlee/CPLBrain/pull/182). Older draft
 PRs remain in the vault (#147, #133, #32, #16–19, July–August) and in the public KB
 (#14, #19, #20, #22; human-gated by design).
+
+**The narration, Sam's verdict on v2 (2026-09-26):** *"Narration still a bit stilted,
+especially when sounding out C-P-L rather than just saying it quickly--same with sounding
+out the year numbers--too stilted. We can work on this in a later session."* The cause is
+measured, and so is the fix (Kokoro's tokenizer, `kokoro_onnx.tokenizer.Tokenizer().phonemize`):
+
+| Written | Phonemes | Read |
+|---|---|---|
+| `C P L` (v2) | `sˈiː pˈiː ˈɛl`, three primary stresses | stilted |
+| `CPL` | `sˌiːpˌiːˈɛl`, one word, stress on the last letter | quick, as people say it |
+| `twenty twenty-six` (v2) | `twˈɛnti twˈɛntisˈɪks`, two primary stresses | stilted |
+| `2026` | `tˈuː θˈaʊzənd twˈɛnti sˈɪks` | wrong (two thousand) |
+
+So: write `CPL`, `EDD` and `FTES` unspaced (keep `map` lowercase, since capitals spell it
+out); for years, either pass phonemes with a lighter first stress (`create(...,
+is_phonemes=True)`) or say "twenty-six to twenty-eight". Then re-read v3 and send it.
 
 **The queue, in Sam's order:** (1) the narrated funding video, once he approves the v2
 read (Heart voice, "map" said as a word, 2:55; audio sent 2026-09-26). The script is

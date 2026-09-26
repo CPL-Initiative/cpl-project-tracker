@@ -18,6 +18,13 @@ reads is `narration_s1.json`.
 **Sam, 2026-09-26:** *"Voice Heart is a good sample to use. MAP should be read as the word
 'map', not sounded out letters. Make the script more natural, less stilted."*
 
+**Sam on v2 (2026-09-26):** *"Narration still a bit stilted, especially when sounding out
+C-P-L rather than just saying it quickly--same with sounding out the year numbers--too
+stilted."* Fix for v3, measured in the tokenizer: write `CPL`, `EDD`, `FTES` unspaced (one
+quick word each; the spaced form gives every letter a full stress), keep `map` lowercase,
+and soften the years (phoneme input with a lighter first stress, or "twenty-six to
+twenty-eight"). Details in `docs/session_293_handoff.md`.
+
 **Plan for the build:** the narration drives the clock (each scene lasts its clip
 plus air); reveals are cued to the words that name them; the score plays as a bed
 about 14 dB under the current mix and dips further under the voice; captions ship
