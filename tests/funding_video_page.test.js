@@ -1,7 +1,7 @@
 // tests/funding_video_page.test.js
 //
 // The funding introduction video pages (prototype/funding_video/). Guards the
-// four things Sam asked for on 2026-09-26 that a later edit could quietly undo:
+// five things Sam asked for on 2026-09-26 that a later edit could quietly undo:
 //
 //   1. It is an INTRODUCTION, not a guide ("a guide would be much longer and
 //      more detailed"): the page, the explainer's link and the video itself.
@@ -12,6 +12,11 @@
 //   4. The built pages match the one source (build.py fills placeholders; a
 //      left-over __PLACEHOLDER__ means someone edited a built page by hand or
 //      forgot to rebuild).
+//   5. The narration's spoken form (narration_s1.json) reads naturally: v2 read
+//      "stilted, especially when sounding out C-P-L rather than just saying it
+//      quickly--same with sounding out the year numbers". CI has no voice
+//      model, so this guards the text narrate.py feeds the voice; narrate.py
+//      --check guards the phonemes.
 //
 // Run from repo root: `npm test` (or `node tests/funding_video_page.test.js`).
 const fs = require("fs");
@@ -31,6 +36,16 @@ check("a2 the Scenario 2 label says introduction",
   explainer.includes('label: "Watch the 90-second introduction (Scenario 2)"'));
 check("a3 the explainer's MP4 link downloads", /id="video-mp4"[^>]*\sdownload[\s>]/.test(explainer));
 check("a4 the source never calls itself a guide for colleges", !/guide for colleges|Play the guide/i.test(src));
+
+const narration = JSON.parse(fs.readFileSync(path.join(DIR, "narration_s1.json"), "utf8"));
+const spoken = narration.scenes.map((s) => s.text).join(" ");
+check("n1 acronyms are written unspaced, so each reads as one quick word", !/\b[A-Z] [A-Z]\b/.test(spoken) && /\bCPL\b/.test(spoken));
+check("n2 MAP is written 'map', so it is said as the word", !/\bMAP\b/.test(spoken) && /\bmap\b/.test(spoken));
+check("n3 no digits: a year in digits reads as 'two thousand'", !/\d/.test(spoken));
+check("n4 FTES carries the letters fix (unspaced it reads 'eftess')",
+  (narration.phoneme_fixes || []).some((f) => f.find === "ˈɛftˈɛs" && f.use === "ˌɛftˌiːˌiːˈɛs"));
+check("n5 the stilted v2 readings stay banned",
+  ["sˈiː pˈiː ˈɛl", "twˈɛnti twˈɛnti", "ˌɛmˌeɪpˈiː"].every((b) => (narration.never || []).some((n) => n.phonemes === b)));
 
 function boot(file, reduced) {
   const html = fs.readFileSync(path.join(DIR, file), "utf8");
