@@ -4,6 +4,8 @@ date: 2026-09-25
 session: 291 (SkyReel)
 tags: [handoff, implementation-funding, video]
 status: current
+superseded: true
+superseded_by: session_295_handoff.md
 ---
 
 # You are Session 291

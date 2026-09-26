@@ -1,9 +1,27 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-09-25",
-  "_session": "S288 SkyZ",
-  "_status": "On Exhibit Adoption, every credential now sits under a CIP sector except three course codes, confirmed on the live dashboard on 25 September. Sam ruled that the sector is for filtering and quick categorization only and asked the session to assign sectors from its own analysis rather than open the TOP and CIP question, which is its own project. Exams (AP, CLEP, IB, DSST) are now sectored from their titles, because MAP's TOP code for an exam is a general-education code that filed AP Chemistry under Liberal Arts; everything else reads MAP's TOP code, whose lookup had 81 wrong codes until pull request 1692. On the funding tab, Sam's review is built out through item 7, his titles and timeline paste ran on 24 September (pull request 1688), and the automated test run takes about seven minutes on four machines.",
+  "_as_of": "2026-09-26",
+  "_session": "S294 SkyCadence",
+  "_status": "The funding introduction now has a narrated draft: three minutes, read by a synthetic voice, with the music under it as background and captions you can switch off. Its read was retuned after Sam heard the second one as stilted, so CPL, EDD and FTES are said as quick letters and the years the way people say them aloud; a speech recognizer running on the session's own machine heard every one as written. Sam answered the ESL merging sheet on 26 September, all nine items as proposed. The reading fixes and the tests for the ladder rules are in the code; the data changes wait on one SQL paste he runs, which moves 18 healthcare courses to Vocational ESL — Healthcare, re-levels 36 groups, and folds 92 more ESL identities into the comprehensives. The 90-second introductions, the funding tab and Exhibit Adoption are unchanged since 25 September.",
   "items": [
+    {
+      "id": "s294-sam-narrated-draft",
+      "for": "Sam",
+      "tab": "implementation-funding",
+      "text": "Watch the narrated draft of the funding introduction (three minutes, sent in the session on 26 September; prototype/funding_video/20260926_CPL_Funding_in_Motion_Narrated_Draft.mp4). Say whether the voice, the pacing and the music level work, or what to change. It is not linked from the explainer until you approve it."
+    },
+    {
+      "id": "s294-sam-esl-paste",
+      "for": "Sam",
+      "tab": "cr-reference",
+      "text": "Run the ESL paste in the Supabase SQL editor (sent in the session on 26 September; kb/esl_sheet_out/2026-09-26/apply.sql). It carries your ESL sheet verdicts: 18 healthcare moves, 36 re-levels, 92 new folds, and the film course out of Enrichment. A good run ends with a table of five counts: esl-catalog 6, esl-health 18, esl-ladder 30, esl-newfold 89, esl-transfer 3. rollback.sql beside it undoes the whole change."
+    },
+    {
+      "id": "s294-fable-esl-verdicts",
+      "for": "Fable",
+      "tab": "cr-reference",
+      "text": "Check whether Sam ran the ESL paste: count kb_curation rows by reviewer_email like 'esl-%-s294@bot' (expect 6, 18, 30, 89, 3). If they are in, resolve his Complete comment on the sheet and let the daily run publish. Then the six held identities (transfer composition is unruled; the two Optical Technician rows belong outside ESL) and item 8, the monthly pass, which starts only after the paste lands. kb/esl_sheet_out/2026-09-26/"
+    },
     {
       "id": "s291-sam-releveled-line",
       "for": "Sam",
@@ -56,14 +74,10 @@
       "id": "s283-fable-open-asks-renumbering",
       "for": "Fable",
       "tab": "all",
-      "text": "The standing open-asks sheet cannot be republished as it stands: its saved replies are numbered to the 21 cards Sam answered, and the builder now holds 15, so every reply would land on the wrong card. Give it a fresh sheet and store before the next rebuild. Two of Sam's replies on it still wait on a session: his Advise on item 7 (name the unit range, such as 1-3u, as a rule for all merges and mints) and his offer on item 18 to ask Pedro for a regions report."
-    },
-    {
-      "id": "s282-sam-esl-merging-sheet",
-      "for": "Sam",
-      "tab": "cr-reference",
-      "text": "You asked for a decision sheet next session to adjust the ESL merging procedure — covering both what we use now and what is queued to use. It is first on the next session's list and named in the handoff."
-    },
+      "text": "The standing open-asks sheet cannot be republished as it stands: its saved replies are numbered to the 21 cards Sam answered, and the builder now holds 10 (the four ESL cards moved to the ESL merging sheet), so every reply would land on the wrong card. Give it a fresh sheet and store before the next rebuild. Two of Sam's replies on it still wait on a session: his Advise on item 7 (name the unit range, such as 1-3u, as a rule for all merges and mints) and his offer on item 18 to ask Pedro for a regions report."
+    }
+  ],
+  "_deferred": [
     {
       "id": "s282-fable-rungs-for-other-centers",
       "for": "Fable",
@@ -87,9 +101,7 @@
       "for": "Fable",
       "tab": "cr-reference",
       "text": "Harvest the value that is proven rather than chasing the hard band. The 0.85 gate scored 25 of 25 on Sam's verdicts, so run kb/_jev_adjudicate.py across the full rung-5 population instead of only the 55 anchored pairs, take everything above the gate as suggestions, and put the rest on a decision sheet. The band is 26 pairs and 838 rows — one sitting, not an automation problem."
-    }
-  ],
-  "_deferred": [
+    },
     {
       "id": "s280-sam-decide-the-execute-sql-read-path",
       "for": "Sam",

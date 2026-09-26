@@ -71,7 +71,15 @@ CITIZENSHIP = re.compile(r"\bcitizenship\b|\bnaturaliz", re.I)
 VESL = re.compile(
     r"\bvocational\b|\bvesl\b|\bpre-?vocational\b|\bworkplace\b|\bworkforce\b"
     r"|\boccupational\b|\bfor the workplace\b|\bfor work\b|\bon the job\b"
-    r"|\bworkforce readiness\b|\bcareer\b|\bjob skills\b", re.I)
+    r"|\bworkforce readiness\b|\bcareers?\b|\bjob skills\b", re.I)
+# Healthcare is Vocational ESL's one named subject (Sam, 2026-08-24), and since the
+# ESL merging sheet (item 3, 2026-09-26) it is read BEFORE any level, like the rest
+# of the purpose words: 17 health-titled folds had fallen to Beginning and 1 to
+# Intermediate because the title named no vocational word (ESL for Healthcare 1,
+# ESL for Medical Terminology). _esl_package_apply.py imports this one pattern.
+HEALTHCARE = re.compile(
+    r"health scien|healthcare|health care|\bnurs|medical|patient|caregiv|"
+    r"dental|phlebot|\bcna\b", re.I)
 # Transfer-level: college/transfer/freshman composition — degree-applicable.
 TRANSFER = re.compile(
     r"\btransfer[- ]?level\b|\bcollege composition\b|\bfreshman composition\b"
@@ -85,12 +93,17 @@ TRANSFER = re.compile(
 BEG = re.compile(r"\bbeginning\b|\bbeginner\b|\bbasic\b|\bliteracy\b|\bfoundation"
                  r"|\bintroductory\b|\bintro\b|\belementary\b|\bnovice\b|\bsurvival\b"
                  r"|\blow-?beginning\b|\bhigh-?beginning\b", re.I)
-INT = re.compile(r"\bintermediate\b|\blow-?intermediate\b|\bhigh-?intermediate\b", re.I)
+# `Interm` is how several colleges abbreviate it (High-Interm Reading/Writing/Grammar).
+INT = re.compile(r"\bintermediate\b|\blow-?intermediate\b|\bhigh-?intermediate\b|\binterm\b", re.I)
 ADV = re.compile(r"\badvanced\b|\bhigh-?advanced\b", re.I)
 
 # numeric level: "level N", "stage/step N", "ESL N", roman I–VII, or a trailing
 # bare integer 1–7 (common ladder mark: "Academic Listening and Speaking 2")
-LEVEL_NUM = re.compile(r"\b(?:level|stage|step|esl|part)\s*[-:]?\s*(\d)\b", re.I)
+LEVEL_NUM = re.compile(r"\b(?:level|stage|step|esl)\s*[-:]?\s*(\d)\b", re.I)
+# `Part N` is the Nth half of one course, never a rung (ESL merging sheet item 1,
+# 2026-09-26): it is stripped before any number is read, so a trailing `Part 1`
+# cannot fall through to the bare-integer reading either.
+PART = re.compile(r"\bpart\s*[-:]?\s*(?:\d{1,2}|[IVX]{1,4})\b", re.I)
 ROMAN = re.compile(r"\b(VII|VI|IV|V|III|II|I)\b")
 TRAIL_INT = re.compile(r"\b([1-7])\b(?!\s*[A-Za-z])")
 ROMAN_MAP = {"I": 1, "II": 2, "III": 3, "IV": 4, "V": 5, "VI": 6, "VII": 7}
@@ -111,6 +124,9 @@ def classify(title):
     if CITIZENSHIP.search(t):
         return ("ESL Citizenship", _word_level(t), "carveout-citizenship",
                 "high", "ESL Citizenship carve-out (naturalization/civics purpose)")
+    if HEALTHCARE.search(t):
+        return ("Vocational ESL (VESL)", _word_level(t), "carveout-health",
+                "high", "Vocational-ESL carve-out (healthcare; Healthcare split at apply)")
     if VESL.search(t):
         return ("Vocational ESL (VESL)", _word_level(t), "carveout-vesl",
                 "high", "Vocational-ESL carve-out (workforce/CTE purpose)")
@@ -164,6 +180,7 @@ def _word_level(t):
 
 
 def _numeric_level(t):
+    t = PART.sub(" ", t)
     m = LEVEL_NUM.search(t)
     if m:
         return int(m.group(1))

@@ -14245,8 +14245,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 265,
+   "count": 266,
    "docs": [
+    {
+     "created": "2026-09-26",
+     "governs": [],
+     "n": 295,
+     "path": "docs/session_295_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "implementation-funding",
+      "video",
+      "esl-packaging"
+     ],
+     "title": "narration v3, the ESL merging sheet, and the narrated draft",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-26",
      "governs": [],
@@ -18741,5 +18757,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 975
+ "total": 976
 }

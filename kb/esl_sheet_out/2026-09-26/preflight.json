@@ -1,0 +1,39 @@
+{
+ "_about": "The reads run before the ESL merging sheet's paste went to Sam (Rule 10 a: a fresh read, the pending-confirm cross-check). All read-only, through the Supabase MCP.",
+ "_date": "2026-09-26",
+ "live_read": {
+  "read_at": "2026-09-26T19:40:32Z",
+  "rows": 59,
+  "transcription": "kb/esl_sheet_out/2026-09-26/live_lines.txt, md5 c237f3a478c4152ab8bdca203ae2b66b on the server and here",
+  "scope": "every kb_curation row on the 147 identities the paste touches"
+ },
+ "pending_confirms": {
+  "read_at": "2026-09-26, 19:55-20:00 UTC",
+  "query": "any merge field other than merge_into whose course_id or value is one of the 147 ids, the 7 survivors, or a current fold target",
+  "rows": 0
+ },
+ "survivors": {
+  "ids": ["ESOL M9168", "ESOL M9256", "ESOL M1141", "ESOL M91IL", "ESOL M9023", "ESOL M9177", "ESOL M1152"],
+  "merge_into_rows": 0,
+  "meaning": "every chain ends at a survivor, so the paste cannot close a cycle"
+ },
+ "chains": {
+  "ids_that_are_merge_targets": 88,
+  "by_item": {"5 (insert)": 80, "6 (update)": 6, "2 (update)": 2},
+  "meaning": "these identities already hold courses that earlier merges folded into them (June automerges, mostly); flatten_merge_chains in excel_to_dashboard.py carries those courses to the end of the chain, so they follow the identity to its survivor",
+  "curator_rows_pointing_in": {
+   "ESLN M9002": ["ESLN M90BE"],
+   "ESOL M9184": ["ESOL M9008", "ESOL M9183", "ESOL M9185", "ESOL M9186"],
+   "ESOL M9049": ["ESOL M91KA"],
+   "ESOL M9058": ["ESOL M91KV"],
+   "_note": "Sam's own June merges (map@rccd.edu). The paste leaves them untouched; all four targets are item 6 re-levels, so his courses move with the identity he merged them into."
+  }
+ },
+ "rule7": {
+  "resolved_through": "kb/alias_chain.py, every map after kb/pols_remint_out/2026-07-10/alias_map.json",
+  "fold_plan_ids_moved_since_2026_08_24": 0,
+  "new_ids_found_in_the_resolved_fold_plan": 0,
+  "new_ids_in_the_resolved_first_plan": ["ESOL M1205", "ESOL M1239", "ESOL M9192"],
+  "result": "the paste is byte-identical with and without the resolution (apply.sql md5 eb665b6134885da29ef4e6a34581ca84)"
+ }
+}

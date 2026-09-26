@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-265 document(s).
+266 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 295 | [narration v3, the ESL merging sheet, and the narrated draft](../session_295_handoff.md) | 2026-09-26 |
 | 293 | [the funding video becomes an introduction, fills the screen, shoots down barriers, and its score builds](../session_293_handoff.md) | 2026-09-26 |
 | 292 | [Scenario 2 guide video, the explainer's title and statutory intro, the noncredit header fix](../session_292_handoff.md) | 2026-09-26 |
 | 291 | [a 90-second funding guide for colleges, as HTML and MP4](../session_291_handoff.md) | 2026-09-25 |
