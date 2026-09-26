@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-495 document(s).
+496 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -293,6 +293,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Grounded lexical confidence: ranking a text against a taxonomy (finder-not-decider)](../kb-notes/methodology-grounded-lexical-cip-confidence.md) | methodology | published | 2026-07-17 |  |
 | [Group an audit by the decision, not by the symptom](../kb-notes/methodology-group-an-audit-by-the-decision-not-the-symptom.md) | methodology | published | 2026-09-09 | 2026-09-09 |
 | [Grouping a flat list into containers silently breaks every querySelector that assumed one](../kb-notes/methodology-grouping-a-flat-list-breaks-single-container-wiring.md) | methodology | published | 2026-09-01 | 2026-09-01 |
+| [Hear a synthetic voice through a recognizer before a person listens](../kb-notes/methodology-hear-a-synthetic-voice-through-a-recognizer.md) | methodology | published | 2026-09-26 | 2026-09-26 |
 | [Hiding a control also hides the way to get access](../kb-notes/methodology-hiding-a-control-also-hides-the-way-in.md) | methodology | published | 2026-08-20 | 2026-08-20 |
 | [In a parent/child ledger, totals sum PARENT rows only](../kb-notes/methodology-parent-child-ledger-totals.md) | methodology | published | 2026-07-30 |  |
 | [In-browser doc capture → Claude → tokenless GitHub write](../kb-notes/methodology-browser-doc-capture-to-claude-and-github.md) | methodology | published | 2026-06-19 | 2026-06-19 |

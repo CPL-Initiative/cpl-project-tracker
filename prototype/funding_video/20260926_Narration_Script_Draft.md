@@ -8,8 +8,11 @@ narrated cut is a separate draft beside them.
 
 **Status:** the voice is chosen: Heart (`af_heart`, Kokoro-82M, Apache-2.0, run locally
 in the container; the environment now allows `huggingface.co`, `*.huggingface.co` and
-`*.hf.co`). The v3 read (sent 2026-09-26, S294) awaits Sam's OK; then the video is built
-to it. A human recording can still replace it scene by scene.
+`*.hf.co`). The v3 read (sent 2026-09-26, S294) awaits Sam's OK, and the narrated draft
+is built to it: `funding_in_motion_n1.html` and
+`20260926_CPL_Funding_in_Motion_Narrated_Draft.mp4`, three minutes (see the README). A new
+read re-renders with `narrate.py`, `build.py n1` and `render.sh n1`. A human recording can
+still replace it scene by scene.
 
 **Length:** v3 measures 2:49 (158.8 s of speech at speed 1.0, plus 1.1 s between scenes; v2
 ran 2:55). The voice carries the ideas and the screen carries the exact figures. The spoken
@@ -31,11 +34,11 @@ through twenty-eight", the funding scene "the twenty-six, twenty-seven year", bo
 lighter stress on the twenties, and the baseline "by November first", as its headline does,
 leaving the year to the screen. A local transcription hears every one of them as written.
 
-**Plan for the build:** the narration drives the clock (each scene lasts its clip
-plus air); reveals are cued to the words that name them; the score plays as a bed
-about 14 dB under the current mix and dips further under the voice; captions ship
-on the page and as a soft subtitle track in the MP4; a one-line credit says the
-narration uses a synthetic voice, if the AI voice is used.
+**The build (done 2026-09-26, S294):** the narration drives the clock (each scene lasts a
+lead-in, its clip and air); each scene's reveals keep their place as the scene stretches,
+and cueing each to the word that names it is the next refinement; the score plays as a bed
+14 dB under the introductions' mix and dips 6 dB more under the voice; captions ship on the
+page and as a subtitle track in the MP4; the closing scene says the voice is synthetic.
 
 ## Scenario 1 (v3)
 

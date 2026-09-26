@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 495,
+   "count": 496,
    "docs": [
     {
      "created": "2026-08-14",
@@ -5444,6 +5444,27 @@
      "title": "Grouping a flat list into containers silently breaks every querySelector that assumed one",
      "type": "methodology",
      "updated": "2026-09-01"
+    },
+    {
+     "created": "2026-09-26",
+     "governs": [
+      "prototype/funding_video/narrate.py",
+      "prototype/funding_video/narration_s1.json",
+      "tests/funding_video_page.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-hear-a-synthetic-voice-through-a-recognizer.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "audio",
+      "video",
+      "voiceover",
+      "tts",
+      "accessibility"
+     ],
+     "title": "Hear a synthetic voice through a recognizer before a person listens",
+     "type": "methodology",
+     "updated": "2026-09-26"
     },
     {
      "created": "2026-08-20",
@@ -18720,5 +18741,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 974
+ "total": 975
 }

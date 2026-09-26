@@ -18,6 +18,10 @@
 //      model, so this guards the text narrate.py feeds the voice; narrate.py
 //      --check guards the phonemes.
 //
+//   6. The narrated draft (funding_in_motion_n1.html) runs on the narration's
+//      clock: each scene stretches across its lead-in, clip and air, captions
+//      follow the voice, and the closing scene says the voice is synthetic.
+//
 // Run from repo root: `npm test` (or `node tests/funding_video_page.test.js`).
 const fs = require("fs");
 const path = require("path");
@@ -93,6 +97,45 @@ function boot(file, reduced) {
   check(tag + "d4 reduced motion: no barriers", Array.from(wr.document.querySelectorAll("#fx .inv")).every((e) => e.style.visibility !== "visible"));
   w.close(); wr.close();
 });
+
+{
+  const tag = "n1 ", file = "funding_in_motion_n1.html";
+  const L = JSON.parse(fs.readFileSync(path.join(DIR, "narration_s1_layout.json"), "utf8"));
+  const raw = fs.readFileSync(path.join(DIR, file), "utf8");
+  const w = boot(file, false), d = w.document;
+  const mmss = (t) => Math.floor(t / 60) + ":" + String(Math.floor(t + 1e-6) % 60).padStart(2, "0");
+  check(tag + "g1 the player runs on the narration's length", w.__film.narrated === true && Math.abs(w.__film.dur - L.total) < 1e-6);
+  check(tag + "g2 each scene holds its whole clip, back to back",
+    L.scenes.length === 10 && L.scenes.every((s, i) => s.start < s.speech_start && s.speech_end < s.end
+      && (i === 0 || Math.abs(s.start - L.scenes[i - 1].end) < 1e-6)) && Math.abs(L.scenes[9].end - L.total) < 1e-6);
+  const tcs = Array.from(d.querySelectorAll(".chap .tc")).map((e) => e.textContent);
+  check(tag + "g3 the scrubber and the chapters follow the narrated clock",
+    Number(d.getElementById("pos").max) === L.total && tcs.length === 10 && tcs.every((t, i) => t === mmss(L.scenes[i].start)));
+  const c = L.cues[Math.floor(L.cues.length / 2)];
+  w.__film.seek((c.start + c.end) / 2);
+  const cc = d.querySelector(".cc");
+  check(tag + "g4 a caption shows the cue being spoken", !!cc && !cc.hidden && cc.textContent === c.text);
+  check(tag + "g5 captions write MAP where the voice reads map",
+    L.cues.some((q) => /\bMAP\b/.test(q.text)) && !L.cues.some((q) => /\bmap\b/.test(q.text)));
+  const btn = d.getElementById("cc");
+  if (btn) btn.click();
+  check(tag + "g6 the captions control turns them off", !!btn && btn.textContent === "Show captions" && cc.hidden);
+  if (btn) btn.click();
+  const S2 = L.scenes[2], inv = Array.from(d.querySelectorAll("#fx .inv")), shown = () => inv.some((e) => e.style.visibility === "visible");
+  w.__film.seek(S2.start + 0.8);
+  const atSeam = shown();
+  w.__film.seek((S2.speech_start + S2.speech_end) / 2);
+  check(tag + "g7 a barrier plays at the seam, and none mid-scene", atSeam && !shown());
+  w.__film.seek(L.total - 0.3);
+  check(tag + "g8 the closing scene says the voice is synthetic",
+    Array.from(d.querySelectorAll("#stage p")).some((e) => /synthetic voice/.test(e.textContent)));
+  check(tag + "g9 the page plays the committed voice track", /"audio": ?"narration_s1\.mp3"/.test(raw) && fs.existsSync(path.join(DIR, "narration_s1.mp3")));
+  const dl = d.getElementById("dl");
+  check(tag + "g10 Download MP4 points at the narrated draft, which exists",
+    !!dl && dl.getAttribute("href") === "20260926_CPL_Funding_in_Motion_Narrated_Draft.mp4" && fs.existsSync(path.join(DIR, dl.getAttribute("href"))));
+  check(tag + "b1 " + file + " has no unfilled placeholder", !/__[A-Z0-9]+__/.test(raw));
+  w.close();
+}
 
 let fail = 0;
 for (const [n, ok] of results) { console.log((ok ? "PASS " : "FAIL ") + n); if (!ok) fail++; }

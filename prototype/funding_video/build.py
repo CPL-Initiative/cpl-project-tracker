@@ -68,6 +68,23 @@ CONFIG = {
     },
 }
 
+# The narrated draft of Scenario 1 (Sam, 2026-09-26: "a natural feminine
+# voice-over that follows a script your write... tone down the music to just
+# background level... slow down and lengthen the timing"). The narration drives
+# the clock: narrate.py writes the track and its layout, each scene stretches to
+# its lead-in, clip and air, and the score plays as a bed under the voice.
+LAYOUT = HERE / 'narration_s1_layout.json'
+CONFIG['n1'] = dict(
+    CONFIG['s1'],
+    pageTitle='CPL Funding in Motion: Narrated Draft',
+    eyebrow='CPL Initiative · draft',
+    dek='A narrated draft of the introduction for colleges, about three minutes. Play opens it full screen; press Esc to leave. Captions are on; the Captions button turns them off.',
+    mp4='20260926_CPL_Funding_in_Motion_Narrated_Draft.mp4',
+    audio='narration_s1.mp3',
+    credit='Narrated with a synthetic voice (Kokoro-82M, Heart).',
+    narr=json.loads(LAYOUT.read_text(encoding='utf8')) if LAYOUT.exists() else None,
+)
+
 args = [a for a in sys.argv[1:] if not a.startswith('--')]
 variant = args[0] if args else 's1'
 cfg = CONFIG[variant]
@@ -93,6 +110,15 @@ if '--render' in sys.argv:
              ('Source Sans 3', 'normal', 700, 'source-sans-3', 'latin-700-normal')]
     css = ''.join("@font-face{font-family:'%s';font-style:%s;font-weight:%d;src:url(%s%s/files/%s-%s.woff2)}" % (f, s, w, F, pkg, pkg, file) for f, s, w, pkg, file in faces)
     css += ('body{background:#FBFAF6}.player{width:1920px!important;padding:0!important;margin:0}.wrap,.controls,.bigplay{display:none!important}'
-            '.stage{margin:0;border:0;border-radius:0;box-shadow:none;width:1920px}')
+            '.stage{margin:0;border:0;border-radius:0;box-shadow:none;width:1920px}'
+            # the MP4 carries the captions as a subtitle track a viewer can switch off
+            '.cc{display:none!important}')
     (HERE / ('render%s.html' % suffix)).write_text(page.replace('</style>', '</style><style>' + css + '</style>', 1), encoding='utf8')
+    if cfg.get('narr'):
+        def stamp(x):
+            ms = int(round(x * 1000))
+            return '%02d:%02d:%02d,%03d' % (ms // 3600000, ms // 60000 % 60, ms // 1000 % 60, ms % 1000)
+        srt = ''.join('%d\n%s --> %s\n%s\n\n' % (i, stamp(c['start']), stamp(c['end']), c['text'])
+                      for i, c in enumerate(cfg['narr']['cues'], 1))
+        (HERE / ('.captions%s.srt' % suffix)).write_text(srt, encoding='utf8')
 print('built', variant)

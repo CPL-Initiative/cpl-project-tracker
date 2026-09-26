@@ -2,7 +2,13 @@
  "_about": "The narration the voice reads, Scenario 1, v3 (S294, 2026-09-26). SPOKEN FORM: acronyms are written unspaced (CPL, EDD, FTES) so each reads as one quick word, the stress on its last letter; FTES also needs the phoneme fix below, because unspaced it reads as the word 'eftess'. MAP is written 'map' so it is said as the word. Years are said the way people say them aloud (twenty twenty-six through twenty-eight; the twenty-six, twenty-seven year, whose comma keeps the two years apart) with a lighter stress on the twenties, and the baseline reads 'by November first', as its headline does, leaving the year to the screen (November 1, 2026). Voice: Kokoro-82M af_heart, speed 1.0, one pass per scene. Sam chose the voice (Heart); v2 read stilted on the spaced letters and the years; v3 awaits his OK. narrate.py reads this file.",
  "voice": "af_heart",
  "speed": 1.0,
- "gap_s": 1.1,
+ "layout": {
+  "lead_s": 1.0,
+  "tail_s": 0.8,
+  "first_lead_s": 1.4,
+  "last_tail_s": 3.4,
+  "_why": "The narrated cut paces each scene as its lead-in (the seam, its barrier and the first reveal), its clip, and its air; Sam, 2026-09-26: \"slow down and lengthen the timing a bit to accommodate readability and narration.\""
+ },
  "phoneme_fixes": [
   {
    "find": "ˈɛftˈɛs",
