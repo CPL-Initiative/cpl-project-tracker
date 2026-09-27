@@ -17,6 +17,12 @@
       "text": "Rule GR register rows #2, #10 and #16 on the GR Priorities tab, your call of 27 September. Row #2 still asks for enacted law, and the tab also holds the 2026-27 timeline's five dates."
     },
     {
+      "id": "s296-sam-timeline-label",
+      "for": "Sam",
+      "tab": "implementation-funding",
+      "text": "On the funding tab's Timing list, the August 2027 line in Scenarios 1 and 2 still reads \"Undispersed Funds Rolled to Year 2 and Releveled\", your saved wording from 25 September. Your ruling that day was no releveling, and the default now reads \"Undispersed Funds Rolled to Year 2\". Edit that line on the tab. If you would rather a session change it, say so, and it will propose a reviewed write."
+    },
+    {
       "id": "s295-fable-cue-narrated-draft",
       "for": "Fable",
       "tab": "implementation-funding",
@@ -89,12 +95,6 @@
       "text": "Project 1.1.2, AI Apprenticeship CPL Tools, still lists Santiago Canyon College and Norco College on its team. You said the partners are Santiago Canyon and American River College, so change Norco to American River in Activities. Sessions cannot write that table."
     },
     {
-      "id": "s296-fable-course-title-cleanup",
-      "for": "Fable",
-      "tab": "chatbot",
-      "text": "Delete the 397 stored course titles carrying mojibake, Sam's verdict of 27 September. Each has a repaired twin from the 18 September sync with every other column identical. The delete runs through a reviewed apply workflow with full row images in its receipt, and the loader repair stays."
-    },
-    {
       "id": "s296-fable-unit-range-display",
       "for": "Fable",
       "tab": "cr-reference",
@@ -105,18 +105,6 @@
       "for": "Fable",
       "tab": "governance",
       "text": "Take the cpl_occupation_match verdict queue and the cross-list curator surface through Governance and the privacy ADRs before either ships, Sam's call of 27 September (Rule 10(a3))."
-    },
-    {
-      "id": "s296-fable-funding-text-fixes",
-      "for": "Fable",
-      "tab": "implementation-funding",
-      "text": "Two lines on the funding tab contradict rulings Sam already made: the 2025-26 view's partial state says fewer than 5 students where the cutoff is 10 (the under-10 ADR), and the timeline's code default still reads Rolled to Year 2 and Releveled (his no-releveling ruling of 25 September). Correct both, with a test."
-    },
-    {
-      "id": "s296-fable-annual-percent-year",
-      "for": "Fable",
-      "tab": "implementation-funding",
-      "text": "Under Annual funding, set the viewed year's qualifying figure against that year's max award in the Max award cell, so its percent stays at or under 100%, Sam's call of 27 September (funding asks card 1). The model already computes ey1 and ey2; add a jsdom test, then drop cards 1 and 2 from the sheet builder at its next rebuild."
     }
   ],
   "_deferred": [

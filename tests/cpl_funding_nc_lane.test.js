@@ -195,7 +195,7 @@ check("A6: the NC lane normalizes by its OWN share sum, never the credit one",
       const c = ncCell("Mt San Antonio");
       const t = c ? c.textContent + " " + (c.getAttribute("title") || "") : "";
       return !!c && /\$57,551|\$115,102/.test(c.textContent) &&
-        /qualifying so far: \$0/.test(t) &&
+        /qualifying so far( in \d{4}-\d{2})?: \$0/.test(t) &&
         !/until feeds report/.test(t) && !/awaits origination/.test(t);
     })());
   check("B15: a trio row's NC award cell is the whole award qualifying at $0 — no 'awaits origination' " +
@@ -203,7 +203,7 @@ check("A6: the NC lane normalizes by its OWN share sum, never the credit one",
     (function () {
       const c = ncCell("NOCE");
       const t = c ? c.textContent + " " + (c.getAttribute("title") || "") : "";
-      return !!c && /qualifying so far: \$0/.test(t) && !/awaits origination/.test(t);
+      return !!c && /qualifying so far( in \d{4}-\d{2})?: \$0/.test(t) && !/awaits origination/.test(t);
     })());
   check("B16: a no-noncredit college's cell is the checkable claim — '$0 · credit only', inviting the correction",
     (function () { const c = ncCell("Taft"); return !!c && /credit only/.test(c.textContent); })());

@@ -187,9 +187,12 @@ function openDetail(window, doc, name) {
   // Since 2026-09-23 the qualifying line, and the prompt with it, renders once
   // per row, in the Max award cell; the CR/NC pair cells carry their figures.
   const fnBody = (name) => (src.match(new RegExp("function " + name + "\\([^)]*\\) \\{[\\s\\S]*?\\n  \\}")) || [""])[0];
+  // `held` is the reserve for the span the award covers (cellFig: the window
+  // under Combined funding, the viewed year under Annual, 2026-09-27).
   check("the Max award cell passes the college's gate state",
-    /earnedSubHtml\(cap, earned, row\.earned_advance \|\| 0, row\.earned_withheld \|\| 0, row\.gate_blocked\)/
-      .test(fnBody("maxAwardCellHtml")));
+    /earnedSubHtml\(cap, earned, row\.earned_advance \|\| 0, held, row\.gate_blocked\)/
+      .test(fnBody("maxAwardCellHtml")) &&
+    /held = cellFig\(row, "earned_withheld"\)/.test(fnBody("maxAwardCellHtml")));
   check("and the pair cells repeat no qualifying line or prompt",
     fnBody("crAwardCellHtml") !== "" && fnBody("ncAwardCellHtml") !== "" &&
     fnBody("crAwardCellHtml").indexOf("earnedSubHtml(") === -1 &&
