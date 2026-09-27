@@ -1011,6 +1011,61 @@ def rule_checkpoint_overdue(root):
     }
 
 
+
+# ── esl_monthly_pass_due ─────────────────────────────────────────────────────
+# WHY (2026-09-27, S295): Sam's verdict on item 8 of the ESL merging sheet
+# (2026-09-26) made folding new ESL identities a MONTHLY pass that a session
+# runs (kb/_esl_monthly_pass.py). A cadence a session has to remember is not a
+# cadence: that is the open-asks sheet's lesson, where asks scattered across
+# lane files until the builder refused to build without them. So the lint every
+# checkpoint runs first says when the pass is due.
+#
+# The clock reads kb/esl_sheet_out/: the date of the newest ESL receipt
+# (applied_<date>T…json), or of a `<date>-monthly` plan dir holding a
+# plan.json, since a pass that finds nothing to apply writes a plan and no
+# receipt. The first ESL sheet apply (2026-09-27) starts it. Fail-soft like
+# checkpoint_overdue: no directory, no dates, no finding.
+ESL_PASS_DAYS = 31
+_ESL_DIR_RE = re.compile(r"^(\d{4}-\d{2}-\d{2})(-monthly)?$")
+_ESL_RECEIPT_RE = re.compile(r"^applied_(\d{4}-\d{2}-\d{2})T")
+
+
+def rule_esl_monthly_pass_due(root, today=None):
+    """The ESL monthly pass has not run for more than a month."""
+    base = os.path.join(root, "kb", "esl_sheet_out")
+    if not os.path.isdir(base):
+        return None
+    stamps = []
+    for name in os.listdir(base):
+        m = _ESL_DIR_RE.match(name)
+        d = os.path.join(base, name)
+        if not m or not os.path.isdir(d):
+            continue
+        for f in os.listdir(d):
+            r = _ESL_RECEIPT_RE.match(f)
+            if r:
+                stamps.append(r.group(1))
+        if m.group(2) and os.path.isfile(os.path.join(d, "plan.json")):
+            stamps.append(m.group(1))
+    if not stamps:
+        return None
+    last = max(stamps)
+    age = ((today or date.today()) - date.fromisoformat(last)).days
+    if age <= ESL_PASS_DAYS:
+        return None
+    return {
+        "rule": "esl_monthly_pass_due",
+        "fixable": False,
+        "path": "kb/esl_sheet_out/",
+        "detail": {"last_pass": last, "days": age, "budget": ESL_PASS_DAYS},
+        "message": (
+            f"The ESL monthly pass is due: the last pass or ESL write was {last}, "
+            f"{age} days ago (Sam's verdict on item 8 of the ESL merging sheet, "
+            f"2026-09-26: monthly). Run `python3 kb/_esl_monthly_pass.py --session <N>`, "
+            f"then dispatch `esl-sheet-apply.yml` with the plan dir it names; hand "
+            f"Sam what it lists."),
+    }
+
 # ── self_corrected_word_pair ─────────────────────────────────────────────────
 # WHY (2026-08-29): `american_spelling` rewrote `whilst` and `amongst` INSIDE the
 # parenthetical that existed to name them, leaving "while (not while) · among
@@ -1801,6 +1856,10 @@ def main():
     overdue = rule_checkpoint_overdue(ROOT)
     if overdue:
         findings.append(overdue)
+
+    esl_due = rule_esl_monthly_pass_due(ROOT)
+    if esl_due:
+        findings.append(esl_due)
 
     lanes = {}
     for e in entries:

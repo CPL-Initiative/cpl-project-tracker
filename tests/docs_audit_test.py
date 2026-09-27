@@ -887,6 +887,35 @@ check("citation drift: a lessons doc keeps its era's numbering",
       _cd("docs/noncredit_cpl_lessons.md",
           "The schema went through the MCP (Rule 9c).") is None)
 
+# ── esl_monthly_pass_due ──────────────────────────────────────────────────
+# Sam's item-8 verdict (2026-09-26) made the ESL fold a monthly pass a session
+# runs; the lint is what makes "monthly" fire. The clock is the newest receipt
+# date, or a `<date>-monthly` plan dir with a plan.json (a pass that applied
+# nothing still counts).
+from datetime import date as _date
+_ed = tempfile.mkdtemp()
+check("esl pass due: no kb/esl_sheet_out means no finding",
+      da.rule_esl_monthly_pass_due(_ed, _date(2026, 12, 1)) is None)
+_eo = os.path.join(_ed, "kb", "esl_sheet_out")
+os.makedirs(os.path.join(_eo, "2026-09-26"))
+open(os.path.join(_eo, "2026-09-26", "applied_2026-09-27T115648Z.json"), "w").write("{}")
+check("esl pass due: a receipt 31 days old is not yet due",
+      da.rule_esl_monthly_pass_due(_ed, _date(2026, 10, 28)) is None)
+_ef = da.rule_esl_monthly_pass_due(_ed, _date(2026, 10, 29))
+check("esl pass due: 32 days after the receipt it is due, dated from the receipt, not the dir",
+      bool(_ef) and _ef["detail"]["last_pass"] == "2026-09-27" and _ef["detail"]["days"] == 32)
+os.makedirs(os.path.join(_eo, "2026-10-27-monthly"))
+check("esl pass due: a monthly dir with no plan.json does not reset the clock",
+      da.rule_esl_monthly_pass_due(_ed, _date(2026, 10, 29)) is not None)
+open(os.path.join(_eo, "2026-10-27-monthly", "plan.json"), "w").write("{}")
+check("esl pass due: a pass that applied nothing (plan, no receipt) resets the clock",
+      da.rule_esl_monthly_pass_due(_ed, _date(2026, 11, 20)) is None)
+os.makedirs(os.path.join(_eo, "notes"))
+open(os.path.join(_eo, "notes", "applied_2027-01-01T000000Z.json"), "w").write("{}")
+check("esl pass due: a receipt outside a dated dir is not a pass",
+      da.rule_esl_monthly_pass_due(_ed, _date(2026, 12, 1))["detail"]["last_pass"] == "2026-10-27")
+shutil.rmtree(_ed)
+
 # ── summary ───────────────────────────────────────────────────────────────
 failed = [n for n, ok in results if not ok]
 for n, ok in results:
