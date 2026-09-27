@@ -48,13 +48,6 @@ NEEDS = re.compile(r'NEEDS SAM', re.I)
 NO_OPEN_ASK = {
     'README':
         "the lanes index, which documents the marker rather than carrying one.",
-    'esl-packaging':
-        "Sam answered its own sheet, the ESL merging procedure (kb/_build_esl_merging_decision_sheet.py, "
-        "nine items, https://claude.ai/artifact/LaZmu7NYj11DigAEbxsUMS), on 2026-09-26; he said go on 2026-09-27 "
-        "and does not run SQL, so the session applies the verdicts through .github/workflows/esl-sheet-apply.yml "
-        "(plans in kb/esl_sheet_out/2026-09-26/ and 2026-09-27/). The two asks his verdicts left open rode their own sheet "
-        "(kb/_build_esl_followup_decision_sheet.py, https://claude.ai/artifact/PaozKqfruMT3hZ93vcg5gr), which he answered on 2026-09-27. "
-        "The four cards this sheet carried were settled by his rulings of 2026-08-24.",
 }
 
 

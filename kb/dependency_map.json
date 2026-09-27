@@ -6,7 +6,7 @@
   "edge_functions": 5,
   "file_datasets": 532,
   "external_services": 147,
-  "consumers": 374,
+  "consumers": 375,
   "workflows": 36,
   "data_js_files": 61,
   "tabs": 37
@@ -550,11 +550,11 @@
      "line": 32
     },
     {
-     "id": "script:kb/_build_open_asks_decision_sheet.py",
+     "id": "script:kb/_esl_monthly_pass.py",
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 53
+     "line": 10
     },
     {
      "id": "script:kb/_esl_new_identities_dryrun.py",
@@ -3096,7 +3096,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 139
+     "line": 132
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -3391,6 +3391,13 @@
   },
   "file:applied_*.json": {
    "consumers": [
+    {
+     "id": "script:kb/_esl_monthly_pass.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 71
+    },
     {
      "id": "script:kb/_esl_sheet_apply.py",
      "kind": "script",
@@ -4200,7 +4207,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 128
+     "line": 121
     },
     {
      "id": "script:scripts/stamp_asset_versions.py",
@@ -4547,7 +4554,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 128
+     "line": 121
     }
    ],
    "served": true,
@@ -5297,7 +5304,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 186
+     "line": 179
     }
    ],
    "served": false,
@@ -5310,7 +5317,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 196
+     "line": 189
     }
    ],
    "served": false,
@@ -6136,7 +6143,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 128
+     "line": 121
     }
    ],
    "served": true,
@@ -10402,19 +10409,6 @@
    "served": false,
    "main_committers": []
   },
-  "file:kb/esl_sheet_out/2026-09-26/new_identities.json": {
-   "consumers": [
-    {
-     "id": "script:kb/_esl_new_identities_dryrun.py",
-     "kind": "script",
-     "direction": "write",
-     "how": "literal",
-     "line": 161
-    }
-   ],
-   "served": true,
-   "main_committers": []
-  },
   "file:kb/exhibit_audit/*.md": {
    "consumers": [],
    "producers": [
@@ -11075,6 +11069,13 @@
   },
   "file:kb/prefix_fold_out/<date>/alias_map.json": {
    "consumers": [
+    {
+     "id": "script:kb/_esl_monthly_pass.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 58
+    },
     {
      "id": "script:kb/alias_chain.py",
      "kind": "script",
@@ -13572,7 +13573,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 128
+     "line": 121
     }
    ],
    "served": true,
@@ -13974,7 +13975,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 148
+     "line": 141
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -15159,6 +15160,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/esl_monthly_pass_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/esl_reader_and_ladder_test.py": {
    "consumers": [
     {
@@ -16040,7 +16054,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 162
+     "line": 155
     },
     {
      "id": "script:kb/_build_orphan_parent_worklist.py",
@@ -20321,6 +20335,7 @@
     "tests/esl_relevel_bands_test.py",
     "tests/esl_reader_and_ladder_test.py",
     "tests/esl_sheet_apply_test.py",
+    "tests/esl_monthly_pass_test.py",
     "tests/ccr_universe_members_test.py",
     "tests/ccr_universe_orbits_test.py",
     "tests/discipline_edge_fill_test.py",

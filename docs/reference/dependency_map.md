@@ -278,7 +278,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `TOP_Code_Lookup.xlsx` | scripts: `excel_to_dashboard.py`, `kb/_correct_top_lookup_code4.py` | scripts: `kb/_correct_top_lookup_code4.py` |
 | `admin.js` | pages: `CPL_Dashboard.html` | — |
 | `annual_report.js` | pages: `CPL_Dashboard.html` | — |
-| `applied_*.json` | scripts: `kb/_esl_sheet_apply.py` | — |
+| `applied_*.json` | scripts: `kb/_esl_monthly_pass.py`, `kb/_esl_sheet_apply.py` | — |
 | `assoc_editor.js` | pages: `CPL_Dashboard.html` | — |
 | `budget-support/web/config.js` | pages: `budget-support/web/curator.html`, `budget-support/web/new-letter.html` | — |
 | `budget-support/web/curator.html` | pages: `CPL_Dashboard.html` | — |
@@ -491,7 +491,6 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/esl_package_out/<date>/esl_apply_plan.json` | scripts: `kb/_build_esl_fold_spotcheck.py`, `kb/_esl_new_identities_dryrun.py`, `kb/_esl_relevel_dryrun.py`, `kb/_esl_sheet_apply_build.py` | — |
 | `kb/esl_package_out/<date>/esl_package_plan.json` | scripts: `kb/_build_esl_fold_preview.py`, `kb/_build_esl_fold_spotcheck.py`, `kb/_esl_new_identities_dryrun.py`, `kb/_esl_package_actionable.py`, `kb/_esl_package_apply.py`, `kb/_esl_sheet_apply_build.py` | — |
 | `kb/esl_relevel_out/<date>/plan.json` | scripts: `kb/_esl_ladder_relevel_dryrun.py` | — |
-| `kb/esl_sheet_out/2026-09-26/new_identities.json` | none found | scripts: `kb/_esl_new_identities_dryrun.py` |
 | `kb/exhibit_audit/*.md` | none found | committed by: `daily-dashboard.yml` |
 | `kb/exhibit_audit/latest.json` | tabs: `credential-reference` | committed by: `daily-dashboard.yml` |
 | `kb/fire_electrical_domain_map.json` | scripts: `kb/_build_occupation_cpl_crosswalk.py`, `kb/_build_regional_cpl_opportunity.py` | — |
@@ -530,7 +529,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/plan.json` | none found | modules: `kb/_carp_apprentice_plan_s109.js` |
 | `kb/pols_remint_out/<date>/alias_map.json` | scripts: `kb/_esl_new_identities_dryrun.py`, `kb/alias_chain.py` | — |
 | `kb/prefix_fold_out/2026-09-03/held.json` | scripts: `kb/_prefix_fold_dryrun.py` | — |
-| `kb/prefix_fold_out/<date>/alias_map.json` | scripts: `kb/alias_chain.py` | — |
+| `kb/prefix_fold_out/<date>/alias_map.json` | scripts: `kb/_esl_monthly_pass.py`, `kb/alias_chain.py` | — |
 | `kb/preseed_out/2026-07-07/live_values.json` | scripts: `kb/_preseed_unclassified.py` | — |
 | `kb/program_course_graph.json` | none found | committed by: `program-course-fetch.yml` |
 | `kb/project_lifecycle.json` | scripts: `kb/_load_projects.py` | scripts: `kb/_load_projects.py` · committed by: `daily-dashboard.yml` |
@@ -705,6 +704,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/doctrine_lookup_test.py` | workflows: `js-tests.yml` | — |
 | `tests/eacr_matrix_payload_test.py` | workflows: `js-tests.yml` | — |
 | `tests/esl_fold_spotcheck_test.py` | workflows: `js-tests.yml` | — |
+| `tests/esl_monthly_pass_test.py` | workflows: `js-tests.yml` | — |
 | `tests/esl_reader_and_ladder_test.py` | workflows: `js-tests.yml` | — |
 | `tests/esl_relevel_bands_test.py` | workflows: `js-tests.yml` | — |
 | `tests/esl_sheet_apply_test.py` | workflows: `js-tests.yml` | — |
@@ -785,7 +785,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `canadacollege.edu` | tabs: `map-queue`, `map-users` |
 | `cdn.jsdelivr.net` | tabs: `pipeline` |
 | `cdnjs.cloudflare.com` | scripts: `prototype/globe/build_globe.py` |
-| `claude.ai` | tabs: `admin` · scripts: `kb/_build_esl_followup_decision_sheet.py`, `kb/_build_esl_merging_decision_sheet.py`, `kb/_build_open_asks_decision_sheet.py`, `kb/_esl_new_identities_dryrun.py`, `kb/_esl_sheet_apply_build.py`, `scripts/announce_session_hint.py` · workflows: `cpl-chat-health.yml`, `map-users-sync.yml` |
+| `claude.ai` | tabs: `admin` · scripts: `kb/_build_esl_followup_decision_sheet.py`, `kb/_build_esl_merging_decision_sheet.py`, `kb/_esl_monthly_pass.py`, `kb/_esl_new_identities_dryrun.py`, `kb/_esl_sheet_apply_build.py`, `scripts/announce_session_hint.py` · workflows: `cpl-chat-health.yml`, `map-users-sync.yml` |
 | `code.claude.com` | scripts: `scripts/install_prompt_guards.py` |
 | `commons.wikimedia.org` | pages: `CPL_Dashboard.html` · scripts: `tools/source_first_light_art.mjs` |
 | `counseling.santarosa.edu` | tabs: `map-queue`, `map-users` |
@@ -935,4 +935,4 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 
 Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 532 file
-datasets · 147 external services · 374 consumers · 36 workflows · 37 tabs.
+datasets · 147 external services · 375 consumers · 36 workflows · 37 tabs.
