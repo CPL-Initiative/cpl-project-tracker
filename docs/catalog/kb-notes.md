@@ -206,7 +206,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A test file is a memory budget, and the process boundary is the only allocator](../kb-notes/methodology-a-test-file-is-a-memory-budget.md) | methodology | published | 2026-08-20 | 2026-08-20 |
 | [A test must report a missing thing, not dereference it](../kb-notes/methodology-a-test-must-report-a-missing-thing-not-dereference-it.md) | methodology | published | 2026-08-25 | 2026-08-25 |
 | [A test that only fails under load is racing a timer the product owns](../kb-notes/methodology-a-test-that-only-fails-under-load-is-racing-a-timer.md) | methodology | published | 2026-09-06 | 2026-09-06 |
-| [A test that pins a figure from a regenerated artifact fails on a data refresh, not on a defect](../kb-notes/methodology-a-test-that-pins-a-generated-figure-fails-on-a-data-refresh.md) | methodology | published | 2026-09-17 | 2026-09-17 |
+| [A test that pins a figure from a regenerated artifact fails on a data refresh, not on a defect](../kb-notes/methodology-a-test-that-pins-a-generated-figure-fails-on-a-data-refresh.md) | methodology | published | 2026-09-17 | 2026-09-27 |
 | [A test that writes to the queue it monitors — CI noise is indistinguishable from user signal](../kb-notes/methodology-a-test-that-writes-to-the-queue-it-monitors.md) | methodology | published | 2026-08-07 | 2026-08-07 |
 | [A text measure must agree with what sits beside it](../kb-notes/methodology-a-text-measure-must-agree-with-what-sits-beside-it.md) | methodology | published | 2026-08-22 | 2026-08-22 |
 | [A threshold belongs to the question that measured it](../kb-notes/methodology-a-threshold-belongs-to-the-question-that-measured-it.md) | methodology | published | 2026-09-21 |  |
@@ -277,7 +277,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Derive theme tokens from brand seeds with a contrast script — the mock is the spec](../kb-notes/methodology-derived-aa-token-palette.md) | methodology | published | 2026-06-12 | 2026-06-12 |
 | [Detecting mis-disciplined minted identities via subject-code cohort outliers + a two-signals-agree gate](../kb-notes/methodology-subject-cohort-discipline-outlier.md) | methodology | published | 2026-07-13 |  |
 | [Emit the threshold with the label it prints](../kb-notes/methodology-emit-the-threshold-with-the-label-it-prints.md) | methodology | published | 2026-08-10 | 2026-08-10 |
-| [Every id-keyed artifact class belongs in the post-apply chain](../kb-notes/methodology-every-id-keyed-artifact-class-belongs-in-the-post-apply-chain.md) | methodology | published | 2026-09-04 | 2026-09-04 |
+| [Every id-keyed artifact class belongs in the post-apply chain](../kb-notes/methodology-every-id-keyed-artifact-class-belongs-in-the-post-apply-chain.md) | methodology | published | 2026-09-04 | 2026-09-27 |
 | [Every live database function needs a committed schema-of-record file](../kb-notes/methodology-live-db-functions-need-committed-schema.md) | methodology | published | 2026-07-02 | 2026-07-02 |
 | [EXPLAIN ANALYZE's own clock is a cost, and on a wide scan it dominates](../kb-notes/methodology-explain-analyze-timing-is-not-free.md) | methodology | published | 2026-09-19 | 2026-09-19 |
 | [Falsify a claim when falsification is cheap](../kb-notes/methodology-falsify-a-claim-when-falsification-is-cheap.md) | methodology | published | 2026-08-19 | 2026-08-19 |

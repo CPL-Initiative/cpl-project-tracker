@@ -528,3 +528,19 @@ tracker reader cannot see) and it is the cheaper side of the trade.
   against a main that had moved (#1414, the parallel PM checkpoint), and a
   conflicted PR cannot produce a `pull_request` run. The memory row and the
   S203 narrative both carry it; the fix is the merge, never a re-run.
+
+## 2026-09-27 — Session 295 (SkyHarbor): the CLAUDE.md prompt audit
+
+- **Sam asked for a cleanup, and the audit found almost nothing written for an older model.** Forty
+  commits touched the tracker's CLAUDE.md in three weeks; its dated text is patch accretion (incident
+  stories beside rules, "this used to say" wordings), not model fossils. Fifteen hunks moved verbatim to
+  `docs/reference/doctrine_provenance.md` with every rule in place, and the file fell from 61,867 to
+  59,436 bytes (#1708). `kb/_consolidation_loss_audit.py --baseline HEAD:CLAUDE.md` is the proof that
+  nothing was lost; run it on any future move out of the file.
+- **A stale fact is proposed, never applied, on a blanket request** (the audit procedure's rule, since
+  any committer can write the "current fact"). Eight such calls went to Sam as the CLAUDE.md Cleanup
+  sheet (https://claude.ai/artifact/Kd6K7yrAfGQKCtVyd4bhX5). The most consequential: Rule 9a says the
+  context meter fires from the repo's settings, and `scripts/check_hooks_live.py` records that those
+  settings never load in a three-repo session.
+- **Emphasis is Sam's dial.** 42 ⚠️ and about 240 capitalized words blur which rules failed twice, but
+  he asked for the checkpoint rule to stand out on 2026-09-09, so the sweep is a card, not an edit.

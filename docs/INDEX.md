@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-09-26
+updated: 2026-09-27
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 79 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 81 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 50 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 266 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **977** | |
+| Session handoffs | 267 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **978** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -123,6 +123,7 @@ Authoritative external sources we've cached:
 
 ## Update history
 
+- **2026-09-27 (S295 SkyHarbor):** the CLAUDE.md prompt audit (narratives to `docs/reference/doctrine_provenance.md`, eight calls on a sheet), main's lints fixed (#1709), the ESL apply and its monthly pass; handoff 296.
 - **2026-09-26 — S294 (SkyCadence):** narration v3 and `narrate.py` ([#1701](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1701)); the ESL merging procedure sheet, nine items, and four stale open-asks cards retired ([#1702](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1702)); the narrated draft of the funding introduction ([#1703](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1703)); Sam's ESL verdicts, all nine as proposed: the reader fixes, the ladder script's tests, and the data paste with its rollback ([#1704](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1704), `kb/esl_sheet_out/2026-09-26/`); KB note `methodology-hear-a-synthetic-voice-through-a-recognizer`; handoff 295.
 - 2026-09-25 (S291 SkyReel): the funding guide video, a KB note on rendering HTML animation to MP4, handoff 291.
 - **2026-09-25 — S288 (SkyZ):** `TOP_Code_Lookup.xlsx` column D corrected against the TOP manual (81 of 198 codes disagreed with their titles), the EACR's unsectored rows 890 → 379, guard in CI ([#1692](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1692)); Sam's ruling that TOP is unreliable and program CIPs are almost fully reliable; a program-CIP route for courses measured and not shipped (8 better, 15 worse of 30); on Sam's scoping ruling, exams sectored from their titles (`kb/reference/eacr_cip_title_rules.json`, unsectored cards 449 → 3, live and verified, [#1693](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1693)); `check_hooks_live.py --fix` now applies the stop-hook patch that three-repo sessions never ran. KB note `methodology-a-program-cip-labels-the-program-not-its-courses`. Handoff 290.

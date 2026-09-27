@@ -10,65 +10,65 @@
     "other": 150000
   },
   "summary": {
-    "files": 989,
-    "bytes": 10482593,
-    "over_budget": 6,
-    "handoff_max": 295,
+    "files": 991,
+    "bytes": 10498444,
+    "over_budget": 5,
+    "handoff_max": 296,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 61867,
-    "superseded_files": 0,
-    "superseded_bytes": 0,
+    "always_loaded_bytes": 59436,
+    "superseded_files": 3,
+    "superseded_bytes": 21612,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 61867,
-        "over": 1
+        "bytes": 59436,
+        "over": 0
       },
       "other": {
-        "files": 115,
-        "bytes": 3194924,
+        "files": 116,
+        "bytes": 3203877,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 11495,
+        "bytes": 11715,
         "over": 0
       },
       "lessons": {
         "files": 75,
-        "bytes": 2143908,
+        "bytes": 2146289,
         "over": 1
       },
       "kb_note": {
         "files": 498,
-        "bytes": 2520944,
+        "bytes": 2522327,
         "over": 0
       },
       "roadmap_lane": {
         "files": 33,
-        "bytes": 254701,
+        "bytes": 255133,
         "over": 1
       },
       "handoff": {
-        "files": 266,
-        "bytes": 2294754,
+        "files": 267,
+        "bytes": 2299667,
         "over": 0
       }
     },
     "by_rule": {
-      "oversized_doc": 6,
       "house_voice": 24,
-      "vault_heavy_path": 55
+      "oversized_doc": 5,
+      "superseded_handoff": 3,
+      "vault_heavy_path": 53
     },
     "vault": {
-      "files": 3748,
-      "bytes": 1592589527,
-      "heavy_bytes": 715700472,
-      "heavy_share": 0.449,
+      "files": 3193,
+      "bytes": 1564494859,
+      "heavy_bytes": 686450840,
+      "heavy_share": 0.439,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
         "cpl-project-tracker/cip_fitcheck",
-        "cpl-project-tracker/prototype/funding_video/.narration",
         "cpl-project-tracker/kb/unclassified_fold",
         "cpl-project-tracker/kb/regional_cpl_out",
         "cpl-project-tracker/tmc",
@@ -110,7 +110,6 @@
         "cpl-project-tracker/unified_courses_suggestions.js",
         "cpl-project-tracker/regional_cpl_opportunity_data.js",
         "cpl-project-tracker/credential_reference_data.js",
-        "cpl-project-tracker/prototype/funding_video/.fonts/fontsource-source-sans-3-5.3.0.tgz",
         "cpl-project-tracker/coci_lookup_desc_B.js",
         "cpl-project-tracker/coci_lookup_desc_H.js",
         "cpl-project-tracker/coci_lookup_desc_D.js",
@@ -125,19 +124,6 @@
     }
   },
   "findings": [
-    {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
-        "bytes": 61867,
-        "limit": 60000,
-        "lane": "always_loaded",
-        "over_by": 1867,
-        "ratio": 1.03
-      },
-      "message": "61,867 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
-      "path": "CLAUDE.md"
-    },
     {
       "rule": "house_voice",
       "fixable": false,
@@ -432,6 +418,39 @@
       "path": "docs/roadmap_archive.md"
     },
     {
+      "rule": "superseded_handoff",
+      "fixable": true,
+      "detail": {
+        "session": 292,
+        "authoritative": 296,
+        "has_frontmatter": true
+      },
+      "message": "handoff 292 is below the authoritative 296 but is not stamped `superseded: true`",
+      "path": "docs/session_292_handoff.md"
+    },
+    {
+      "rule": "superseded_handoff",
+      "fixable": true,
+      "detail": {
+        "session": 293,
+        "authoritative": 296,
+        "has_frontmatter": true
+      },
+      "message": "handoff 293 is below the authoritative 296 but is not stamped `superseded: true`",
+      "path": "docs/session_293_handoff.md"
+    },
+    {
+      "rule": "superseded_handoff",
+      "fixable": true,
+      "detail": {
+        "session": 295,
+        "authoritative": 296,
+        "has_frontmatter": true
+      },
+      "message": "handoff 295 is below the authoritative 296 but is not stamped `superseded: true`",
+      "path": "docs/session_295_handoff.md"
+    },
+    {
       "rule": "house_voice",
       "fixable": false,
       "detail": {
@@ -514,22 +533,12 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": "prototype/funding_video/.narration",
-      "detail": {
-        "bytes": 26513819,
-        "kind": "dir"
-      },
-      "message": "directory totals 26,513,819 B inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
       "path": "kb/unclassified_fold",
       "detail": {
-        "bytes": 23317601,
+        "bytes": 23606999,
         "kind": "dir"
       },
-      "message": "directory totals 23,317,601 B inside the vault"
+      "message": "directory totals 23,606,999 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -556,10 +565,10 @@
       "fixable": false,
       "path": "unified_courses_member_desc.js",
       "detail": {
-        "bytes": 47884674,
+        "bytes": 47883507,
         "kind": "file"
       },
-      "message": "47,884,674 B single file inside the vault"
+      "message": "47,883,507 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -586,10 +595,10 @@
       "fixable": false,
       "path": "unified_courses_details.js",
       "detail": {
-        "bytes": 21862796,
+        "bytes": 21821761,
         "kind": "file"
       },
-      "message": "21,862,796 B single file inside the vault"
+      "message": "21,821,761 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -656,10 +665,10 @@
       "fixable": false,
       "path": "unified_courses_standalone.js",
       "detail": {
-        "bytes": 14836687,
+        "bytes": 14835748,
         "kind": "file"
       },
-      "message": "14,836,687 B single file inside the vault"
+      "message": "14,835,748 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -676,10 +685,10 @@
       "fixable": false,
       "path": "unified_courses_members.js",
       "detail": {
-        "bytes": 14342424,
+        "bytes": 14341164,
         "kind": "file"
       },
-      "message": "14,342,424 B single file inside the vault"
+      "message": "14,341,164 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -696,20 +705,20 @@
       "fixable": false,
       "path": "kb/row_audit/latest.json",
       "detail": {
-        "bytes": 10477321,
+        "bytes": 10478667,
         "kind": "file"
       },
-      "message": "10,477,321 B single file inside the vault"
+      "message": "10,478,667 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": "unified_courses_data.js",
       "detail": {
-        "bytes": 10108153,
+        "bytes": 10062906,
         "kind": "file"
       },
-      "message": "10,108,153 B single file inside the vault"
+      "message": "10,062,906 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -826,20 +835,20 @@
       "fixable": false,
       "path": "exports/unified_courses.xlsx",
       "detail": {
-        "bytes": 6696804,
+        "bytes": 6697429,
         "kind": "file"
       },
-      "message": "6,696,804 B single file inside the vault"
+      "message": "6,697,429 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": "kb/coci_curation.json",
       "detail": {
-        "bytes": 5329764,
+        "bytes": 5333084,
         "kind": "file"
       },
-      "message": "5,329,764 B single file inside the vault"
+      "message": "5,333,084 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -896,20 +905,20 @@
       "fixable": false,
       "path": "unified_courses_index.js",
       "detail": {
-        "bytes": 3737074,
+        "bytes": 3729661,
         "kind": "file"
       },
-      "message": "3,737,074 B single file inside the vault"
+      "message": "3,729,661 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": "unified_courses_suggestions.js",
       "detail": {
-        "bytes": 3489843,
+        "bytes": 3479649,
         "kind": "file"
       },
-      "message": "3,489,843 B single file inside the vault"
+      "message": "3,479,649 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -930,16 +939,6 @@
         "kind": "file"
       },
       "message": "3,007,291 B single file inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
-      "path": "prototype/funding_video/.fonts/fontsource-source-sans-3-5.3.0.tgz",
-      "detail": {
-        "bytes": 2923285,
-        "kind": "file"
-      },
-      "message": "2,923,285 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -996,10 +995,10 @@
       "fixable": false,
       "path": "kb/cr_reference_worklist.json",
       "detail": {
-        "bytes": 2354219,
+        "bytes": 2354257,
         "kind": "file"
       },
-      "message": "2,354,219 B single file inside the vault"
+      "message": "2,354,257 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

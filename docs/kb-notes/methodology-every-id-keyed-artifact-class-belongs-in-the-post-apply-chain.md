@@ -1,7 +1,7 @@
 ---
 title: Every id-keyed artifact class belongs in the post-apply chain
 created: 2026-09-04
-updated: 2026-09-04
+updated: 2026-09-27
 tags: [methodology, remint, rule-7, identity, kb, pitfall]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -76,3 +76,13 @@ kind.
 `tests/rekey_crnc_mirrors_test.py`, the receipt under `kb/crnc_rekey_out/`, the
 artifact-class list in `docs/coursecontrolnumber_remint.md`, and
 `docs/ccr_atlas_lessons.md` §2026-09-04 for the story.
+
+## The daily run is a post-apply chain too (2026-09-27, S295)
+
+The ESL sheet verdicts reached `kb_curation` through `esl-sheet-apply.yml`, and the next daily
+run re-synced `kb/coci_curation.json` from it (2cc2f03). `prototype/ccr_remint_blast.json` is
+built from that file, and no step of the run rebuilt it, so `main` and every open PR went red on
+`kb/_build_remint_blast_radius.py --check`. A session PR had always rebuilt it before; this was the
+first curation change to arrive through the nightly sync instead. #1709 added Step 4d7. The rule
+extends past re-mints: **any committed artifact built from a file the daily run rewrites belongs in
+the run's own chain**, and the `--check` steps in `js-tests`' lints job name the candidates.
