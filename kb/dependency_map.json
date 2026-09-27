@@ -4,10 +4,10 @@
   "supabase_tables": 85,
   "rpcs": 31,
   "edge_functions": 5,
-  "file_datasets": 529,
+  "file_datasets": 532,
   "external_services": 147,
-  "consumers": 372,
-  "workflows": 35,
+  "consumers": 374,
+  "workflows": 36,
   "data_js_files": 61,
   "tabs": 37
  },
@@ -3389,6 +3389,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:applied_*.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_esl_sheet_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 231
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:assoc_editor.js": {
    "consumers": [
     {
@@ -6641,6 +6654,19 @@
     },
     {
      "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/_esl_sheet_apply.py": {
+   "consumers": [
+    {
+     "id": "workflow:esl-sheet-apply.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -15159,6 +15185,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/esl_sheet_apply_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/funding_career_import_test.py": {
    "consumers": [
     {
@@ -18467,6 +18506,13 @@
      "line": 257
     },
     {
+     "id": "script:kb/_esl_sheet_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 50
+    },
+    {
      "id": "script:kb/_overmerge_apply_supabase.py",
      "kind": "script",
      "direction": "read",
@@ -20194,6 +20240,18 @@
    "chain": [],
    "urls": []
   },
+  "esl-sheet-apply.yml": {
+   "name": "ESL sheet apply",
+   "crons": [],
+   "scripts": [
+    "kb/_esl_sheet_apply.py"
+   ],
+   "adds": [],
+   "push": "main",
+   "deploys": [],
+   "chain": [],
+   "urls": []
+  },
   "first-light-art.yml": {
    "name": "First Light art (source + verify)",
    "crons": [],
@@ -20262,6 +20320,7 @@
     "tests/esl_fold_spotcheck_test.py",
     "tests/esl_relevel_bands_test.py",
     "tests/esl_reader_and_ladder_test.py",
+    "tests/esl_sheet_apply_test.py",
     "tests/ccr_universe_members_test.py",
     "tests/ccr_universe_orbits_test.py",
     "tests/discipline_edge_fill_test.py",
