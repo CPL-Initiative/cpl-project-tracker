@@ -206,6 +206,12 @@ EVIDENCE = {
     # 2026-09-27 (S295), the funding asks sheet. The lane carried these as prose
     # ("Unruled, his call"), so no sheet asked them; the coverage audit could not
     # see an ask the lane never marked.
+    # ⚠️ CARDS 1 AND 2 ARE ANSWERED (Sam, 2026-09-27 19:55 UTC, read through card
+    # 2: 1 year against year, 2 wait for Pedro) and recorded in the lane. They stay
+    # here only because the sheet is mid-sitting: cards 3 and 4 wait on the same
+    # store. Drop both at the next rebuild, under a fresh SHEET_ID. Card 1's
+    # measured premise closes when its change lands, and the build then refuses
+    # until the card is gone.
     1:  [quoted("docs/cpl_funding_lessons_archive.md", "2026-09-01"),
          measured(p_annual_pct_mixes_window)],
     2:  [quoted("docs/reference/lanes/implementation-funding.md", "2026-09-03"),

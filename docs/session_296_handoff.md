@@ -59,10 +59,11 @@ points.
 
 ## Waiting on Sam
 
-**The funding asks sheet**, https://claude.ai/artifact/74AfMNmXPQYP5X7XKpjHfH (`SHEET_ID` `2026-09-27-funding-asks`,
-four cards; read `replies`, then `replies/done`, before acting): the Annual view's percent (191%), the one request
-to Pedro for CollegeID2, items 8–10 of the funding tab review, and the explainer's footer. The lane had carried
-them as prose, so no sheet asked them before. His on the tab: GR rows #2, #10 and #16 (To-Do
+**The funding asks sheet**, https://claude.ai/artifact/74AfMNmXPQYP5X7XKpjHfH (`SHEET_ID` `2026-09-27-funding-asks`;
+read `replies`, then `replies/done`, before acting). Sam answered it at 19:55 UTC through card 2: card 1 *year
+against year* (To-Do `s296-fable-annual-percent-year`) and card 2 *wait for Pedro* (his own call), both recorded
+in the lane. **Cards 3 and 4 wait on the same store** (items 8–10 of the funding tab review; the explainer's
+footer): do not republish mid-sitting, and drop cards 1 and 2 at the next rebuild under a fresh `SHEET_ID`. His on the tab: GR rows #2, #10 and #16 (To-Do
 `s296-sam-gr-rows-on-tab`).
 
 ## The queue, in Sam's order
