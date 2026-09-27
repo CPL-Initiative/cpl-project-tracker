@@ -6607,6 +6607,13 @@
   "file:kb/_build_remint_blast_radius.py": {
    "consumers": [
     {
+     "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
      "id": "workflow:js-tests.yml",
      "kind": "workflow",
      "direction": "run",
@@ -12407,8 +12414,16 @@
      "line": 85
     }
    ],
+   "producers": [
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
+    }
+   ],
    "served": true,
-   "main_committers": []
+   "main_committers": [
+    "workflow:daily-dashboard.yml"
+   ]
   },
   "file:kb/row_audit": {
    "consumers": [],
@@ -13943,8 +13958,16 @@
      "line": 84
     }
    ],
+   "producers": [
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
+    }
+   ],
    "served": true,
-   "main_committers": []
+   "main_committers": [
+    "workflow:daily-dashboard.yml"
+   ]
   },
   "file:prototype/ccr_sky.json": {
    "consumers": [
@@ -20155,7 +20178,8 @@
     "kb/_build_ccr_cpl_universe_members.py",
     "kb/_build_ccr_sky.py",
     "kb/_build_discipline_blanks_worklist.py",
-    "kb/_build_orphan_parent_worklist.py"
+    "kb/_build_orphan_parent_worklist.py",
+    "kb/_build_remint_blast_radius.py"
    ],
    "adds": [
     "index.html",
@@ -20192,6 +20216,8 @@
     "prototype/ccr_sky.json",
     "kb/discipline_blanks_worklist.json",
     "kb/orphan_parent_worklist.json",
+    "prototype/ccr_remint_blast.json",
+    "kb/remint_blast_worklist.json",
     "kb/discipline_cpl_rollup.json",
     "kb/credential_review_overlay.json",
     "kb/governance_candidates.json",
