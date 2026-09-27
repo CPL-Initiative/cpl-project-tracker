@@ -518,6 +518,8 @@ jobs:
         run: python3 tests/esl_reader_and_ladder_test.py
       - name: ESL sheet applier (holds, guarded writes, receipts, rollback)
         run: python3 tests/esl_sheet_apply_test.py
+      - name: ESL monthly pass (what it applies, lists and never re-asks)
+        run: python3 tests/esl_monthly_pass_test.py
       # SkyView member payload (Session 189) — the graph carried identities and NO
       # member courses, so there was nothing at course grain to drag and the one
       # verb the view exists for was unreachable. The payload's failure modes are

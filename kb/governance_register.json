@@ -374,6 +374,15 @@
       "owner": null,
       "state": "never-run",
       "note": "Ruled 2026-08-30 (the Fifteen Tables): a flag queue's failure mode is not a bad write but nobody triaging it — the same shape as CA-06. Flags are raised from the MAP data-quality view; each needs a fix in MAP or a reasoned dismissal. The register's own lesson applies as the gate: a queue nobody reads teaches the team their flags go nowhere."
+    },
+    {
+      "id": "CA-08",
+      "loop": "ESL monthly pass (new ESL identities into the seven comprehensives)",
+      "frequency": "Monthly (Sam, 2026-09-26, item 8 of the ESL merging sheet)",
+      "owner": "Claude sessions",
+      "state": "running",
+      "note": "A session runs kb/_esl_monthly_pass.py: what a level or purpose word places goes through esl-sheet-apply.yml under its own cohort and receipt, and the rest is listed for Sam on a sheet; identities he ruled apart are never re-listed. The docs lint's esl_monthly_pass_due says when it is due. First pass 2026-09-27: nothing new after the sheet's fold.",
+      "live": null
     }
   ],
   "open_questions": [
