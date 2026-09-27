@@ -27,6 +27,7 @@ closes the PR path only; THIS lane stays open by design.
 | Workflow | Schedule | Push shape | Commits |
 |---|---|---|---|
 | `cos-authority-sync.yml` | `17 8 3 * *` | main (cron checkout) | `kb/reference/cos_certifications.json`, `kb/cos_matches.json`, `kb/cos_match_out/` |
+| `course-title-cleanup-apply.yml` | dispatch-only | main | — |
 | `cpl-landing-pages.yml` | `37 14 * * 1` | main (cron checkout) | `chatbox/college_landing_pages.json` |
 | `cpl-stories.yml` | `23 7 * * 1` | main (cron checkout) | `fact-sheet/cpl_stories.js` |
 | `cred-rename-apply.yml` | dispatch-only | main | `kb/credentials.json`, `kb/unified_titles.json`, `kb/coci_articulations.json`, `kb/credential_review_overlay.json`, `kb/cred_rename_dryrun/`, `kb/cred_rename_out/` |
@@ -55,7 +56,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `allowed_reviewers` | `edgefn:cpl-news-harvest` | — |
 | `budget_funding` | tabs: `budget`, `college-briefing`, `implementation-funding` · scripts: `excel_to_dashboard.py`, `kb/_load_budget.py`, `kb/_test_budget_cutover.py` | tabs: `budget` |
 | `chat_interactions` | tabs: `sierra-training` | `edgefn:cpl-chat` |
-| `chatbox_college_courses` | `edgefn:cpl-chat` | scripts: `kb/_sync_college_courses.py` |
+| `chatbox_college_courses` | scripts: `kb/_course_title_cleanup_apply.py` · `edgefn:cpl-chat` | scripts: `kb/_sync_college_courses.py` |
 | `chatbox_college_profiles` | scripts: `map/sync_map_users.py` · `edgefn:cpl-chat` | — |
 | `chatbox_credential_recs` | none found | scripts: `kb/_sync_credential_recs.py` |
 | `chatbox_credentials` | tabs: `college-briefing` · `edgefn:cpl-chat` | scripts: `kb/_sync_credential_catalog.py` |
@@ -406,6 +407,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_build_peer_articulations.py` | workflows: `credential-catalog-sync.yml`, `daily-dashboard.yml` | — |
 | `kb/_build_program_course_graph.py` | workflows: `daily-dashboard.yml`, `program-course-fetch.yml` | — |
 | `kb/_build_remint_blast_radius.py` | workflows: `daily-dashboard.yml`, `js-tests.yml` | — |
+| `kb/_course_title_cleanup_apply.py` | workflows: `course-title-cleanup-apply.yml` | — |
 | `kb/_cred_rename_apply.py` | workflows: `cred-rename-apply.yml` | — |
 | `kb/_cred_rename_apply_supabase.py` | workflows: `cred-rename-apply.yml` | — |
 | `kb/_cred_rename_dryrun.py` | workflows: `cred-rename-apply.yml`, `daily-dashboard.yml` | — |
@@ -661,6 +663,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `reflections/build_reflections_summary.py` | workflows: `weekly-reflections-summary.yml` | — |
 | `reflections/summary.json` | scripts: `reflections/build_reflections_summary.py` | committed by: `weekly-reflections-summary.yml` |
 | `remint_series_readings_rulings_<date>.json` | scripts: `kb/_authority_recode_apply.py` | — |
+| `removed_*.json` | scripts: `kb/_course_title_cleanup_apply.py` | — |
 | `report_generator.js` | pages: `CPL_Dashboard.html` | — |
 | `reports/CPL_Master_Report.docx` | none found | committed by: `daily-dashboard.yml` |
 | `reports/projects/*.docx` | none found | committed by: `daily-dashboard.yml` |
@@ -694,6 +697,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/coci_program_cip_test.py` | workflows: `js-tests.yml` | — |
 | `tests/college_briefing_publish_suppression_test.py` | workflows: `college-briefing-publish.yml`, `js-tests.yml` | — |
 | `tests/context_budget_test.py` | workflows: `js-tests.yml` | — |
+| `tests/course_title_cleanup_apply_test.py` | workflows: `js-tests.yml` | — |
 | `tests/course_title_mojibake_test.py` | workflows: `js-tests.yml` | — |
 | `tests/custom_report_payload_test.py` | workflows: `map-custom-report-load.yml` | — |
 | `tests/custom_report_response_test.py` | workflows: `js-tests.yml` | — |
@@ -935,5 +939,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 533 file
-datasets · 147 external services · 376 consumers · 36 workflows · 37 tabs.
+Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 536 file
+datasets · 147 external services · 378 consumers · 37 workflows · 37 tabs.

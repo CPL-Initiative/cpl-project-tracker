@@ -1,0 +1,92 @@
+name: Course title cleanup apply
+
+# Manual dispatch only. Removes the garbled chatbox_college_courses rows that sit beside a repaired
+# twin, from the committed plan (kb/course_title_cleanup_out/<date>/plan.json): dry-run reads and
+# reports, commit removes, rollback re-inserts from the receipts. Sam's verdict of 2026-09-27
+# (open-asks sheet card 7): clean the stored titles once, under a receipt, and keep the loader
+# repair. The repo's Supabase guard denies a session's write to this table, so a session dispatches
+# this after his verdict, as it does esl-sheet-apply.yml. The applier refuses unless the set it
+# finds at write time matches the plan's fingerprint (Rule 10); receipts land in the plan dir and
+# are pushed to main.
+#
+# concurrency: credential-catalog-sync -> serializes against the nightly course sync, which writes
+# the same table.
+
+on:
+  workflow_dispatch:
+    inputs:
+      plan_dir:
+        description: "Plan directory, e.g. kb/course_title_cleanup_out/2026-09-27"
+        required: true
+        type: string
+      mode:
+        description: "dry-run reads and reports; commit removes; rollback re-inserts from the receipts"
+        required: true
+        default: dry-run
+        type: choice
+        options: [dry-run, commit, rollback]
+
+concurrency:
+  group: credential-catalog-sync
+  cancel-in-progress: false
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+
+      - name: Run the applier
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          PLAN_DIR: ${{ inputs.plan_dir }}
+          MODE: ${{ inputs.mode }}
+        run: |
+          set -euo pipefail
+          case "$PLAN_DIR" in
+            kb/course_title_cleanup_out/20[0-9][0-9]-[0-9][0-9]-[0-9][0-9]) ;;
+            *) echo "::error::plan_dir must be kb/course_title_cleanup_out/<YYYY-MM-DD>"; exit 1 ;;
+          esac
+          test -f "$PLAN_DIR/plan.json"
+          case "$MODE" in
+            dry-run)  python kb/_course_title_cleanup_apply.py "$PLAN_DIR" | tee -a "$GITHUB_STEP_SUMMARY" ;;
+            commit)   python kb/_course_title_cleanup_apply.py "$PLAN_DIR" --commit | tee -a "$GITHUB_STEP_SUMMARY" ;;
+            rollback) python kb/_course_title_cleanup_apply.py "$PLAN_DIR" --rollback | tee -a "$GITHUB_STEP_SUMMARY" ;;
+          esac
+
+      # always(): a commit that removed some rows and reported others still wrote a receipt, and a
+      # receipt that never reaches main cannot roll anything back.
+      - name: Commit the receipt
+        if: ${{ always() && inputs.mode != 'dry-run' }}
+        env:
+          PLAN_DIR: ${{ inputs.plan_dir }}
+          MODE: ${{ inputs.mode }}
+        run: |
+          set -euo pipefail
+          case "$PLAN_DIR" in
+            kb/course_title_cleanup_out/20[0-9][0-9]-[0-9][0-9]-[0-9][0-9]) ;;
+            *) echo "No receipt: plan_dir is not a plan directory."; exit 0 ;;
+          esac
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "$PLAN_DIR"
+          if git diff --cached --quiet; then echo "No receipt to commit."; exit 0; fi
+          git commit -m "Course title cleanup ($MODE): receipt for $PLAN_DIR"
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:main; then exit 0; fi
+            git fetch origin main
+            git rebase origin/main || { git rebase --abort; exit 1; }
+            sleep $((attempt * 2))
+          done
+          exit 1
