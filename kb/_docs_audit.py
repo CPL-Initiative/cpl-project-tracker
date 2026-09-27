@@ -647,6 +647,10 @@ LANE_OPEN_WORK_MARKERS = (
     r"Still queued", r"Gap backlog", r"\bParked\s*:",
     r"\bOutstanding\b", r"Needs Input",
     r"\bawaiting\b", r"NOT built", r"not yet built",
+    #   The `## Next` heading (2026-09-27, S295): discipline-crosslist's only
+    #   markers were two NEEDS SAM cells, and once Sam's rulings replaced them
+    #   its `## Next` list of open items read as quiet.
+    r"(?m)^#{2,}\s*Next\b",
 )
 
 

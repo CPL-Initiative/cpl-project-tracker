@@ -165,7 +165,7 @@ administration strip, placeholder text, and C-ID/CCN being unhandled. **Read the
 before touching the outline**; they are the kind of rule you only look up once you
 already suspect it, which is why the pointer is here.
 
-## NEEDS SAM
+## Sam's three rulings of 2026-09-22
 
 ⚠️ **TWO OF THESE THREE WERE ALREADY BUILT WHEN SAM RULED ON THEM (verified
 2026-09-22, open-asks sheet items 14-16).** They stayed on this list after the
@@ -184,13 +184,6 @@ work landed, so the sheet carried them to him and he spent a ruling on each.
 - **③ the phone opening — STILL OPEN, and the ruling stands.** See below.
 
 
-① **What the statewide exhibits are FOR.** His 2026-09-10 ask cut off at *"shown
-visibly on the sky so folks can easily see…"*. The data side is done (`sw` on all
-84); the treatment depends on the rest of the sentence — see which are statewide,
-see what a college could adopt, or see where they are already in use.
-② **The live `sierra_guidance` CHECK constraint** does not yet allow
-`skyview-ask` (the schema of record does). Not blocking; it only matters to scope
-a Sierra rule to this surface.
 ③ **The opening width on a phone — RULED "narrow" (Sam, 2026-09-22), NOT YET
 DONE.** `sph.half` is fixed at 94° (188° across) for every viewport; nothing
 reads the width.

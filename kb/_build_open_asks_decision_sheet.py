@@ -19,10 +19,22 @@ produce what a sheet needs — the ask in plain words, the measured context, and
 proposal with its draft reason. So the scan guards COVERAGE and a person writes
 the CARD. When a lane's ask changes, the card here is what has to change with it.
 
-⚠️ AND THIS SHEET REPORTS; IT NEVER RULES. Nine of these were asked before and
-have sat unanswered — restating them is the whole job. An item that has drifted
-out of its lane's wording is a bug in this file, never a license to update the
-lane from here.
+⚠️ AND THIS SHEET REPORTS; IT NEVER RULES. An item that has drifted out of its
+lane's wording is a bug in this file, never a license to update the lane from here.
+
+⚠️ A RULING LEAVES THE SHEET IN THE SAME CHANGE THAT RECORDS IT IN ITS LANE.
+Measured 2026-09-27 (S295): Sam completed the 2026-09-22 sheet through card 18,
+and seven of the cards this builder still carried five days later were at or
+below that mark, answered under his high-water rule. Their lanes still read
+NEEDS SAM, so the coverage audit kept them here as asks. Four of the seven had
+also been answered on 2026-08-14 (military scope §10), and two of the 09-22
+proposals contradicted those August answers. When a verdict lands, change the
+lane's marker in the same pull request, or the sheet asks again.
+
+Published: https://claude.ai/artifact/5sWY4QCCDfkAegZtZrW1oe (2026-09-27, SHEET_ID
+2026-09-27-open-asks, capabilities db + comments). The 2026-09-22 sheet
+(https://claude.ai/artifact/FTEhLfMxhRfv4YH6DGSPhn) keeps Sam's answers of that day;
+never republish onto it, and give any sheet whose cards change a fresh SHEET_ID.
 
 Run: python3 kb/_build_open_asks_decision_sheet.py
      python3 kb/_build_open_asks_decision_sheet.py --check   (coverage only)
@@ -38,8 +50,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-09-22-open-asks.html')
-SHEET_ID = '2026-09-22-open-asks'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-09-27-open-asks.html')
+SHEET_ID = '2026-09-27-open-asks'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -170,23 +182,19 @@ def p_eths_misprefixed():
 # Keyed by the item's POSITION on the sheet — the number Sam replies with, and
 # the only unique handle (two ESL cards share a `ref`).
 EVIDENCE = {
-    1:  [measured(p_eths_misprefixed)],
-    2:  [policy()],
-    # 3-6 were the four ESL packaging cards, retired 2026-09-26 (S294): Sam had
-    # settled all four on 2026-08-24, and his ESL questions now ride their own
-    # sheet (kb/_build_esl_merging_decision_sheet.py). The cards below moved up
-    # four, as position keys must.
-    3:  [quoted("docs/military_cr_reference_scope.md", "2026-09-05")],
-    4:  [quoted("docs/military_cr_reference_scope.md", "2026-09-05")],
+    # 2026-09-27 (S295): a fresh sheet. The 2026-09-22 cards 1, 2, 3-6 (military)
+    # and 7 (the phone width) were answered on that sheet, below Sam's high-water
+    # mark, and left it with their lanes' markers; see decision_sheets.md.
+    1:  [quoted("prototype/funding_video/README.md", "2026-09-26")],
+    2:  [live("2026-09-27", "the pull request's state on GitHub")],
+    3:  [quoted("docs/military_cr_reference_scope.md", "2026-08-14"),
+         live("2026-09-27", "the replies stored on the 2026-09-22 sheet")],
+    4:  [quoted("docs/military_cr_reference_scope.md", "2026-08-14"),
+         live("2026-09-27", "the replies stored on the 2026-09-22 sheet")],
     5:  [policy()],
     6:  [policy()],
-    7:  [measured(p_phone_opening)],
-    # 8 took the ASCCC-areas card's place when it retired 2026-09-24 on Sam's
-    # ruling ("use what we have for ASCCC regions and we'll get the new report
-    # later").
-    8:  [policy()],
-    9:  [live("2026-09-22", "the mojibake count in chatbox_college_courses")],
-    10: [quoted("docs/reference/lanes/t5-55050-article-9.md", "2026-08-30")],
+    7:  [live("2026-09-22", "the mojibake count in chatbox_college_courses")],
+    8:  [quoted("docs/reference/lanes/t5-55050-article-9.md", "2026-08-30")],
 }
 
 PROVENANCE = {
@@ -254,150 +262,115 @@ def audit_coverage(items):
 def items():
     I = []
 
-    # ══ held from the cross-list sheet ═══════════════════════════════════════
+    # ══ quick ones first: each asks for one look ═════════════════════════════
     I.append({
-        'lane': 'discipline-crosslist',
-        'title': 'Re-mint the 31 Ethnic Studies identities that are swimming and track courses',
-        'ref': 'crosslist item 3 · docs/reference/lanes/discipline-crosslist.md',
-        'rows': 31,
+        'lane': 'implementation-funding',
+        'title': 'The narrated draft of CPL Funding in Motion',
+        'ref': 'implementation-funding · prototype/funding_video/README.md',
         'facts': (
-            "<code>ES</code> maps to Ethnic Studies and appears on 82 rows, but at many colleges it "
-            "means <em>Exercise Science</em>. <strong>31 of the 226 ETHS-prefixed M-IDs are physical "
-            "activity courses</strong> &mdash; <em>Advanced Fencing</em>, <em>Swimming for "
-            "Nonswimmers</em>, <em>Intercollegiate Track</em>, <em>Advanced Golf</em>. Two read "
-            "<code>subj=['PE']</code>, so the prefix disagrees with the row's own mapping. The gate "
-            "that stops new ones landed in #1653; these 31 predate it."),
+            "The narrated cut of Scenario 1 is built: three minutes, a natural voice reading the script "
+            "you asked for on 2026-09-26, the music at background level, and captions on the page and in "
+            "the MP4 (<code>20260926_CPL_Funding_in_Motion_Narrated_Draft.mp4</code>, sent to you in "
+            "session 294). The explainer does not link it until you approve it."),
         'why': (
-            "The M-ID layer is AI-assisted staging rather than faculty-published, so Rule 7 permits a "
-            "principled re-mint under the playbook. It changes stored identifiers, which is why a "
-            "session holds it for you rather than taking the opt-out."),
+            "Colleges reach the video from the explainer, and today they see only the 90-second "
+            "introductions, which carry music and no voice."),
         'rec': (
-            "<strong>Re-mint the 31 under the playbook</strong> &mdash; dry run, alias map, "
-            "<code>kb/promotions.json</code> re-key, atomic land in one cron window. "
-            "<em>It might be wrong if</em> you would rather leave staging identifiers alone until "
-            "the layer is published, and carry the 31 as known-wrong in the meantime."),
-        'chips': chips(('Re-mint them', 'remint'), ('Leave them', 'leave'), CH_LATER),
+            "<strong>Link it from the explainer as it stands.</strong> <em>It might be wrong if</em> "
+            "each reveal should land on the word that names it; the layout carries the cue times for "
+            "that, and the draft does not use them yet."),
+        'chips': chips(('Link it as it stands', 'link'), ('Cue the reveals first', 'cue'), CH_LATER),
     })
 
     I.append({
-        'lane': 'discipline-crosslist',
-        'title': 'Who may add a cross-list',
-        'ref': 'crosslist item 10 · Rule 10(a3)',
+        'lane': 'governance-team-enablement',
+        'title': "Merge the knowledge base's instruction fix",
+        'ref': 'CLAUDE.md Cleanup sheet card 5 · cpl-knowledge-base #23',
         'facts': (
-            "The <code>xdisc</code> field carries 9 rows today and works. Opening it to curators makes "
-            "it a shared human-write surface, which is a decision-rights change rather than a code "
-            "detail &mdash; Rule 10(a3) routes the first writer to any shared table through Governance "
-            "and the privacy ADRs before it ships."),
+            "Your card 5 verdict was a pull request that touches no curated content. "
+            "<code>cpl-knowledge-base</code> #23 names the file for the knowledge base (it read "
+            "<em>CPL Project Tracker</em>), corrects the checkpoint's rule number to 9 in "
+            "<code>CLAUDE.md</code> and <code>CURATION.md</code>, and has sessions read the local clone "
+            "before the network. It waits as a draft, as #17 did."),
         'why': (
-            "Item 6 of the cross-list sheet (cross-listing kind C, 535 rows) is the work this gates. A "
-            "session can write the rows under a cohort <code>reviewer_email</code> with a receipt "
-            "today; a curator writing them needs the surface to exist."),
+            "A session leaves a merge to the public repository to you, and until this one lands every "
+            "session attached to the knowledge base reads a file titled for the tracker."),
         'rec': (
-            "<strong>Sessions write it under a cohort receipt; curators get the surface only after "
-            "Governance maps it.</strong> <em>It might be wrong if</em> you want curators in from the "
-            "start, in which case the Governance mapping is the first build rather than the second."),
-        'chips': chips(('Sessions first', 'sessions'), ('Curators from the start', 'curators'), CH_LATER),
+            "<strong>Merge it: pick this and a session merges it on your word.</strong> <em>It might be "
+            "wrong if</em> the local-clone line should wait until the file and its canonical copy, "
+            "<code>claude/CLAUDE.md</code>, are reconciled (they have drifted apart)."),
+        'chips': chips(('Merge #23', 'merge'), ('Hold it', 'hold'), CH_LATER),
     })
 
-    # ══ Military ACE ═════════════════════════════════════════════════════════
+    # ══ Military ACE: two answers from August that September contradicted ════
     I.append({
         'lane': 'military-ace-cr-reference',
-        'title': 'Are ACE unit variants one recommendation',
-        'ref': 'military scope §10 ①',
+        'title': 'The not-a-topic class: canonicalize it or auto-N/A it',
+        'ref': 'military scope §10 ④ · cpl_memory ace-not-a-topic-gets-canonical-crs',
         'facts': (
-            "<code>AR-2201-0552</code> issues <em>Orienteering</em> at 1, 2 AND 3 hours. "
-            "<strong>22.2% of the vocabulary turns on this question</strong> &mdash; the single largest "
-            "lever in the lane. An earlier units ruling exists but came from a different situation."),
+            "On 2026-08-14 you said: <em>&ldquo;We still need a canonicalized CR for it to account for "
+            "every CR in the corpus.&rdquo;</em> The class folds into three recommendations: "
+            "<em>Credit Is Not Recommended</em>, <em>Credit May Be Granted by Individualized "
+            "Assessment</em>, and <em>Credit Is Not Recommended Until Prerequisite Completed</em>. The "
+            "lane never recorded that answer, so the 2026-09-22 sheet asked again and proposed "
+            "<em>auto-N/A with a receipt</em>, which removes the class without a reviewer. You "
+            "completed that sheet past it, so the proposal stands as agreed under your high-water rule."),
         'why': (
-            "ACE is already a controlled vocabulary: 93.4% of (exhibit, units, topic) groups hold "
-            "exactly one text. Whether units are part of the identity decides whether that vocabulary "
-            "is one entry or three."),
+            "Individualized assessment is a <em>may</em>: ACE says credit can follow a review. When "
+            "measured on 2026-08-14 it held 2,730 rows across 95 colleges and had been granted "
+            "nowhere. Marking it N/A records a decision nobody made."),
         'rec': (
-            "<strong>One recommendation, with units as an attribute of it.</strong> <em>It might be "
-            "wrong if</em> a college awarding 3 hours is making a different decision from one awarding "
-            "1, in which case units are identity and the vocabulary is three times larger."),
-        'chips': chips(('One recommendation', 'one'), ('Units are identity', 'split'), CH_LATER),
-    })
-
-    I.append({
-        'lane': 'military-ace-cr-reference',
-        'title': 'The 767-string typographic class — upstream or downstream',
-        'ref': 'military scope §10 ② · cpl_memory o3',
-        'rows': 767,
-        'facts': (
-            "The 6.6% residue of the ACE vocabulary is <strong>case and punctuation, never wording</strong> "
-            "&mdash; 767 strings. Fixing it upstream repairs the source; absorbing it downstream "
-            "normalizes at read time and leaves the source as ACE published it."),
-        'why': (
-            "ACE is somebody else's system of record. A repair we make upstream is a divergence we then "
-            "maintain forever."),
-        'rec': (
-            "<strong>Absorb it downstream.</strong> <em>It might be wrong if</em> the normalization has "
-            "to be reimplemented by every consumer, which is the argument for fixing it once at the "
-            "source."),
-        'chips': chips(('Downstream', 'down'), ('Upstream', 'up'), CH_LATER),
+            "<strong>Keep the August answer: canonicalize the class into its three recommendations and "
+            "exclude none of it.</strong> <em>It might be wrong if</em> you meant September's auto-N/A "
+            "for the flat <em>no credit</em> rows alone, which your August words allow, while "
+            "individualized assessment stays open."),
+        'chips': chips(('Canonicalize it (August)', 'august'), ('Auto-N/A it (September)', 'september'), CH_LATER),
     })
 
     I.append({
         'lane': 'military-ace-cr-reference',
-        'title': 'How far to merge subject-area granularity',
+        'title': 'Subject-area granularity: suggestions or a merge rule',
         'ref': 'military scope §10 ③',
         'facts': (
-            "<em>supervision</em> and <em>principles of supervision</em> are either one topic or two. "
-            "The same question repeats across the 6,725 real topics."),
+            "On 2026-08-14 you ruled subject-area granularity <strong>suggestion-only</strong>: pairwise, "
+            "gated and never transitive, with a curator working the list family by family. The "
+            "2026-09-22 sheet asked again and proposed a rule: fold <em>principles of X</em> into "
+            "<em>X</em> wherever the qualifier adds no scope. You completed that sheet past it, so the "
+            "rule stands as agreed."),
         'why': (
-            "Merging raises the share that resolves with zero judgment; holding the distinction keeps "
-            "recommendations that a faculty reviewer would read as genuinely different."),
+            "The two answers differ in who decides. Under August a curator accepts each merge; under "
+            "September one class of merge happens without one. The September card never showed you "
+            "the August answer."),
         'rec': (
-            "<strong>Merge only where the qualifier adds no scope</strong> &mdash; "
-            "<em>principles of X</em> into <em>X</em>, never <em>advanced X</em> into <em>X</em>. "
-            "<em>It might be wrong if</em> <em>principles of</em> reliably signals a survey course, "
-            "which would make it scope after all."),
-        'chips': chips(('Merge empty qualifiers', 'merge'), ('Keep them distinct', 'keep'), CH_LATER),
+            "<strong>Keep the August answer: every merge stays a suggestion a curator "
+            "accepts.</strong> <em>It might be wrong if</em> you meant September's rule to sit on top, "
+            "folding <em>principles of X</em> without a curator while everything else stays a "
+            "suggestion."),
+        'chips': chips(('Suggestions only (August)', 'august'), ('Fold empty qualifiers (September)', 'september'), CH_LATER),
     })
 
     I.append({
         'lane': 'military-ace-cr-reference',
-        'title': 'Is the not-a-topic class auto-N/A',
-        'ref': 'military scope §10 ④',
+        'title': 'Name the unit range on every merge and mint',
+        'ref': 'military scope §10 ① · your note of 2026-09-22',
         'facts': (
-            "Some strings in the topic position are not topics at all. Auto-N/A takes them out of the "
-            "vocabulary without a reviewer seeing them."),
+            "You ruled that ACE unit variants stay one recommendation that names its range, and added: "
+            "<em>&ldquo;I think this should be a rule for all merges and mints. Advise.&rdquo;</em> "
+            "<code>AR-2201-0552</code> issues <em>Orienteering</em> at 1, 2 and 3 hours, so one "
+            "recommendation reads <em>Orienteering (1&ndash;3 units)</em>. The same question arises "
+            "wherever a merge or a mint joins records whose units differ."),
         'why': (
-            "It is the cheapest win in the lane if the class is clean, and an invisible data loss if it "
-            "is not."),
+            "Units that differ inside one identity are information a faculty reviewer uses. Naming "
+            "the range keeps it in view without splitting the identity."),
         'rec': (
-            "<strong>Auto-N/A it, and commit the list of what was removed.</strong> <em>It might be "
-            "wrong if</em> the class is mixed, in which case it wants a sitting rather than a rule."),
-        'chips': chips(('Auto-N/A with a receipt', 'auto'), ('Review them', 'review'), CH_LATER),
+            "<strong>Make it a display rule for every merge and mint: an identity shows the unit range "
+            "of what it joins, and units never split an identity.</strong> It follows your TOP ruling: "
+            "gate identity, keep display. <em>It might be wrong if</em> a C-ID descriptor's minimum "
+            "units should gate membership, since a course below the minimum cannot carry that C-ID."),
+        'chips': chips(('Make it the rule', 'rule'), ('ACE recommendations only', 'ace'), CH_LATER),
     })
 
-    # ══ COBI dark mode ═══════════════════════════════════════════════════════
-
-
-
-    # ══ SkyView ══════════════════════════════════════════════════════════════
-
-
-    I.append({
-        'lane': 'skyview-ccr-interface',
-        'title': 'The opening width on a phone',
-        'ref': 'skyview · NEEDS SAM ③',
-        'facts': (
-            "At 188&deg; across on a 390px canvas the discipline labels clip off both edges. Narrowing "
-            "is a real improvement, but <code>NODE_ZOOM</code> decides per island whether courses draw "
-            "at all, and the margin is what makes that work."),
-        'why': (
-            "This is a ruling rather than a sweep: a narrower opening trades legible labels against "
-            "islands that stop drawing their courses."),
-        'rec': (
-            "<strong>Narrow the opening on phone widths and let the affected islands open collapsed.</strong> "
-            "<em>It might be wrong if</em> a collapsed island reads as an empty one, which is the "
-            "failure the margin exists to prevent."),
-        'chips': chips(('Narrow it', 'narrow'), ('Keep the margin', 'keep'), CH_LATER),
-    })
-
-    # ══ the rest ═════════════════════════════════════════════════════════════
+    # ══ not reached on the 2026-09-22 sheet ══════════════════════════════════
 
     I.append({
         'lane': 'partner-crosswalks',
@@ -410,11 +383,12 @@ def items():
             "table</strong>."),
         'why': (
             "Rule 10(a3) routes a new write surface through Governance and the privacy ADRs before it "
-            "ships. Same gate as the cross-list surface above, and the two could go through together."),
+            "ships. The cross-list surface faces the same gate when curators get it, and your ruling of "
+            "2026-09-22 puts sessions first there."),
         'rec': (
-            "<strong>Take it through Governance alongside the cross-list surface</strong>, as one "
-            "decision-rights change covering both. <em>It might be wrong if</em> you would rather grow "
-            "the curated map by hand and add no table at all."),
+            "<strong>Take it through Governance before it ships</strong>, and bring the cross-list "
+            "curator surface with it when that one is ready. <em>It might be wrong if</em> you would "
+            "rather grow the curated map by hand and add no table at all."),
         'chips': chips(('Both through Governance', 'both'), ('Curated map only', 'map'), CH_LATER),
     })
 
@@ -447,8 +421,9 @@ def items():
             "2026-08-28, and Tier 2 is ruled &mdash; the four November items travel together as one "
             "filing."),
         'why': (
-            "These rode the Open Verdicts sheet and were not reached. They are the residue of a filing "
-            "that has otherwise shipped."),
+            "They rode the Open Verdicts sheet and the 2026-09-22 open-asks sheet, and your review "
+            "stopped before them both times. They are the residue of a filing that has otherwise "
+            "shipped."),
         'rec': (
             "<strong>Rule the three on the GR Priorities tab, where the procedure work already "
             "lives.</strong> <em>It might be wrong if</em> #2's ask for enacted law makes it a hold "
@@ -516,11 +491,12 @@ def build(check_only=False):
         return 0
 
     framing = (
-        "You asked for a sheet of everything outstanding for you, so this is all of it in one place "
-        f"rather than scattered through {len(lanes)} lane files. Nine of these were asked before and "
-        "have been sitting unanswered &mdash; that is the reason the sheet exists. Two carry a live "
-        "rendering bug behind them (items 13 and 14), and two are the same decision-rights question "
-        "asked twice (items 2 and 20), so they can travel together. Nothing here has been acted on.")
+        "You asked for a sheet of everything outstanding for you. This one replaces the sheet of "
+        "2026-09-22, and every answer you gave there stands: you completed it through card 18, so "
+        "seven of the cards it still listed are rulings that sessions now carry out, and the three "
+        "you did not reach return here. Two of those rulings contradict answers you gave on "
+        "2026-08-14 to the same military questions, which the lane never recorded; they come back as "
+        "items 3 and 4 with August proposed. Items 1 and 2 each ask for one look.")
     counts = (f"{len(I)} items across {len(lanes)} lanes · "
               f"every lane carrying an open ask is covered, by build-time audit")
 

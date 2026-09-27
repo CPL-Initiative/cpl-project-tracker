@@ -20,7 +20,7 @@ me..."* — so an ask is not delivered by sitting in a lane file. When he said i
 the open asks sat in **eleven** lane files and exactly **one** had reached §11.
 
 `kb/_build_open_asks_decision_sheet.py` gathers them into
-[the standing sheet](https://claude.ai/artifact/FTEhLfMxhRfv4YH6DGSPhn) (source `docs/visuals/2026-09-22-open-asks.html`)
+[the standing sheet](https://claude.ai/artifact/5sWY4QCCDfkAegZtZrW1oe) (source `docs/visuals/2026-09-27-open-asks.html`)
 and **refuses to build** while a lane carries a NEEDS-SAM marker that no item
 covers and no `NO_OPEN_ASK` reason dismisses. So:
 

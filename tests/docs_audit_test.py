@@ -769,6 +769,14 @@ if _os.path.isdir(_LANES):
             f"## Status\n\n✅ LIVE. {_txt}\n")
         check(f"lane retirement: recognizes {_label}",
               da.rule_lane_retirement_signal(_d) is None)
+    # A `## Next` heading is the list form (2026-09-27): the cross-list lane's
+    # only other markers were two NEEDS SAM cells, and once both were ruled its
+    # list of open items read as quiet.
+    open(_finished, "w").write(
+        "---\ntitle: done\n---\n\n> Relocated verbatim.\n\n# Done\n\n"
+        "## Status\n\n✅ LIVE.\n\n## Next\n\n1. item 4\n")
+    check("lane retirement: recognizes a `## Next` heading",
+          da.rule_lane_retirement_signal(_d) is None)
     _sh.rmtree(_d, ignore_errors=True)
 
 # ── probe_instrument_leak ─────────────────────────────────────────────────
