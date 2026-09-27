@@ -50,3 +50,16 @@ where m.slug = 'sam-esl-followup-verdicts-2026-09-27'
 select m.slug, m.status, m.verified_by, m.plain is not null as has_plain,
        (select count(*) from public.cpl_memory_log l where l.memory_id = m.id and l.action = 'create') as creates
 from public.cpl_memory m where m.slug = 'sam-esl-followup-verdicts-2026-09-27';
+
+-- Addition, 2026-09-27 11:1x UTC: Sam's words on the SQL pastes, captured verbatim. One row, logged.
+insert into public.cpl_memory (slug, kind, org, title, summary, detail, plain, tags, source, related, status, verified_by, verified_at, event_date, author)
+select x.slug, x.kind, 'cpl', x.title, x.summary, x.detail, x.plain, x.tags, x.source, array['sam-esl-merging-sheet-verdicts-2026-09-26','sam-esl-followup-verdicts-2026-09-27']::text[], x.status, x.verified_by, now(), date '2026-09-27', 'SkyCadence-s294'
+from jsonb_to_recordset($json$[{"slug": "sam-no-one-off-sql-procedures-2026-09-27", "kind": "decision", "title": "Sam: sessions run the writes, not him", "summary": "Sam, 2026-09-27, on the SQL pastes S294 handed him for the ESL sheets: \"Why do I need to run the apply.sql process in supabase? It's not feasible for me to run one-off procedures like this...\"", "detail": "Context: the repo's SQL guard (scripts/supabase_sql_guard.py) denies every execute_sql write except cpl_memory, and its refusal names Sam as the one who runs a reviewed write, so S294 handed him 150 kb_curation changes as apply.sql pastes (kb/esl_sheet_out/2026-09-26/ and 2026-09-27/). The repo already carries the path that keeps him out of it: a workflow_dispatch apply job with the service key and in-script gates, the pattern of cred-rename-apply and overmerge-apply. His verdict on a decision sheet is the decision; the session carries the write. An as-proposed Complete still needs his explicit go before data changes (the cross-list precedent); his own calls do not.", "plain": "Sam does not want to run database scripts by hand. When he decides something on a decision sheet, the session makes the change itself through the approved update process, checks it, and keeps the undo on file.", "tags": ["governance", "rule-10", "decision-sheet", "esl-packaging", "sam-ruling", "kb_curation"], "source": "Sam in session S294, 2026-09-27", "status": "verified", "verified_by": "Sam (session S294, 2026-09-27)"}]$json$::jsonb)
+  as x(slug text, kind text, title text, summary text, detail text, plain text, tags text[], source text, status text, verified_by text)
+where not exists (select 1 from public.cpl_memory m where m.slug = x.slug);
+insert into public.cpl_memory_log (memory_id, actor, action, note, after)
+select id, 'SkyCadence-s294', 'create', 'Sam, verbatim, on the ESL SQL pastes', to_jsonb(m) from public.cpl_memory m
+where m.slug = 'sam-no-one-off-sql-procedures-2026-09-27'
+  and not exists (select 1 from public.cpl_memory_log l where l.memory_id = m.id and l.action = 'create');
+select m.slug, m.status, (select count(*) from public.cpl_memory_log l where l.memory_id = m.id and l.action = 'create') as creates
+from public.cpl_memory m where m.slug = 'sam-no-one-off-sql-procedures-2026-09-27';

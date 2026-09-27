@@ -516,6 +516,8 @@ jobs:
         run: python3 tests/esl_relevel_bands_test.py
       - name: ESL reader fixes and the ladder script's own logic (sheet 2026-09-26)
         run: python3 tests/esl_reader_and_ladder_test.py
+      - name: ESL sheet applier (holds, guarded writes, receipts, rollback)
+        run: python3 tests/esl_sheet_apply_test.py
       # SkyView member payload (Session 189) — the graph carried identities and NO
       # member courses, so there was nothing at course grain to drag and the one
       # verb the view exists for was unreachable. The payload's failure modes are

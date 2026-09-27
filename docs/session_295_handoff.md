@@ -45,19 +45,17 @@ Four PRs merged: #1701, #1702, #1703, #1704.
 ## Waiting on Sam
 
 - **The narrated draft:** watch it and say OK or what to change. It is not linked from the explainer until he approves.
-- **The ESL paste.** Sam completed the ESL sheet on 2026-09-26: all nine items as proposed, none ruled one by one. The rule changes shipped in code. The data changes went to him in the session as one SQL paste, `kb/esl_sheet_out/2026-09-26/apply.sql`, with `rollback.sql`, `plan.json` and `preflight.json`. Running it is his go.
-  - **Before anything ESL, check whether it ran:** `select reviewer_email, count(*) from kb_curation where reviewer_email like 'esl-%-s294@bot' group by 1 order by 1;`
-  - A good run shows `esl-catalog` 6 · `esl-health` 18 · `esl-ladder` 30 · `esl-newfold` 89 · `esl-transfer` 3, plus `esl-vesl` 2 once the second paste runs. Once it has run, resolve his Complete comment on the sheet (thread `ecbd0076`), and let the daily cron publish.
-  - **If the counts come up short:** each UPDATE is guarded on the row's value and cohort, so a short count means a curator moved that row after the 19:40 UTC read. Compare the plan against a fresh read; never force a row.
-
-- **The second ESL paste.** Sam answered the follow-up sheet (https://claude.ai/artifact/PaozKqfruMT3hZ93vcg5gr) on 2026-09-27, both his own calls: `ESOL M9309` stays apart with transfer composition, and the two *Optical Technician* rows fold into Vocational ESL. The fold travels as `kb/esl_sheet_out/2026-09-27/apply.sql` (two rows, cohort `esl-vesl-s294@bot`, with `rollback.sql`), sent in the session. A good run shows `esl-vesl-s294@bot` 2. Resolve his Complete comment on that sheet (thread `19286036`) once it reads back.
+- **The ESL changes: Sam said go (2026-09-27), and he does not run SQL.** His words on the pastes S294 first handed him: *"Why do I need to run the apply.sql process in supabase? It's not feasible for me to run one-off procedures like this..."* (`cpl_memory` `sam-no-one-off-sql-procedures-2026-09-27`). **Never hand him SQL.** Sessions carry the writes through `.github/workflows/esl-sheet-apply.yml` (dispatch with `plan_dir` and `mode` dry-run, commit or rollback), which runs `kb/_esl_sheet_apply.py` with the service key: a fresh read, pending-confirm and curator-row holds, guarded updates, duplicate-ignoring inserts, and a receipt per run (`applied_<ts>.json` in the plan dir) that `--rollback` restores from.
+  - **First, read the receipts** in `kb/esl_sheet_out/2026-09-26/` and `2026-09-27/`, and the counts: `select reviewer_email, count(*) from kb_curation where reviewer_email like 'esl-%-s294@bot' group by 1 order by 1;` A full apply reads `esl-catalog` 6 · `esl-health` 18 · `esl-ladder` 30 · `esl-newfold` 89 · `esl-transfer` 3 · `esl-vesl` 2. If a plan dir has no commit receipt, dispatch it (dry-run, then commit).
+  - Then resolve his Complete comments on both sheets (threads `ecbd0076` and `19286036`); the daily run publishes.
 
 ## The queue, in Sam's order
 
+0. **Before the queue: clean up `CLAUDE.md` with a prompt audit** (Sam, 2026-09-27: *"Thinking we should clean up claude.md"*, asked at the end of S294, which had no runway left for it). Use `/claude-api` prompt-audit at the start of a fresh session, with the full budget.
 1. **The narrated video:** built, waiting on his OK. The refinement he may ask for next is to cue each reveal to the word that names it. The layout carries cue times, but today `ft()` stretches each scene uniformly.
-2. **ESL:** verify the paste (above), then take up what stays open:
-   - the second paste's two rows (`esl-vesl-s294@bot`), once Sam runs it. Item 4 and his follow-up verdict keep six transfer composition identities apart: the five item 4 names and `ESOL M9309`;
-   - item 8, the monthly pass. `kb/_esl_new_identities_dryrun.py` is the pass. Scheduling it is a new standing cadence, so it waits until the paste lands.
+2. **ESL:** confirm the apply (above), then take up what stays open:
+   - item 4 and his follow-up verdict keep six transfer composition identities apart: the five item 4 names and `ESOL M9309`;
+   - item 8, the monthly pass. `kb/_esl_new_identities_dryrun.py` is the pass. The apply workflow writes it; it starts once the first apply lands.
 
    Then the Jev CCR's misfit ruling (nest or cross-list, [handoff 283](session_283_handoff.md) "first sitting") and its next rung.
 3. **SkyView.**
