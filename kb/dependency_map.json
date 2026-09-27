@@ -4,7 +4,7 @@
   "supabase_tables": 85,
   "rpcs": 31,
   "edge_functions": 5,
-  "file_datasets": 537,
+  "file_datasets": 534,
   "external_services": 147,
   "consumers": 378,
   "workflows": 37,
@@ -3110,7 +3110,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 144
+     "line": 146
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -4221,7 +4221,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 133
+     "line": 135
     },
     {
      "id": "script:scripts/stamp_asset_versions.py",
@@ -4568,7 +4568,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 133
+     "line": 135
     }
    ],
    "served": true,
@@ -5311,32 +5311,6 @@
    "served": false,
    "main_committers": []
   },
-  "file:docs/military_cr_reference_scope.md": {
-   "consumers": [
-    {
-     "id": "script:kb/_build_open_asks_decision_sheet.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 190
-    }
-   ],
-   "served": false,
-   "main_committers": []
-  },
-  "file:docs/reference/lanes/t5-55050-article-9.md": {
-   "consumers": [
-    {
-     "id": "script:kb/_build_open_asks_decision_sheet.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 197
-    }
-   ],
-   "served": false,
-   "main_committers": []
-  },
   "file:docs/reference/mid_lifecycle.md": {
    "consumers": [
     {
@@ -5675,14 +5649,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 53
+     "line": 55
     },
     {
      "id": "script:kb/_build_open_asks_decision_sheet.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 53
+     "line": 55
     }
    ],
    "served": false,
@@ -6177,7 +6151,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 133
+     "line": 135
     }
    ],
    "served": true,
@@ -13635,7 +13609,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 133
+     "line": 135
     }
    ],
    "served": true,
@@ -14045,7 +14019,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 153
+     "line": 155
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -14170,19 +14144,6 @@
     }
    ],
    "served": false,
-   "main_committers": []
-  },
-  "file:prototype/funding_video/README.md": {
-   "consumers": [
-    {
-     "id": "script:kb/_build_open_asks_decision_sheet.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 188
-    }
-   ],
-   "served": true,
    "main_committers": []
   },
   "file:prototype/funding_video/funding_in_motion.src.html": {
@@ -16163,7 +16124,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 167
+     "line": 169
     },
     {
      "id": "script:kb/_build_orphan_parent_worklist.py",

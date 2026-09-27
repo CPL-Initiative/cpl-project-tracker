@@ -21,10 +21,10 @@ Run from repo root:  python3 tests/open_asks_sheet_coverage_test.py
 import importlib.util
 import os
 import sys
+import tempfile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BUILDER = os.path.join(ROOT, "kb", "_build_open_asks_decision_sheet.py")
-SHEET = os.path.join(ROOT, "docs", "visuals", "2026-09-27-open-asks.html")
 
 results = []
 
@@ -46,14 +46,26 @@ items = mod.items()
 found = mod.lanes_with_asks()
 
 # ── the sheet is built and complete ──────────────────────────────────────────
-check("the sheet is committed", os.path.exists(SHEET), SHEET)
-html = open(SHEET, encoding="utf-8").read() if os.path.exists(SHEET) else ""
-cards = html.count('class="card"')
-check("every item rendered a card", cards == len(items),
-      "%d cards vs %d items" % (cards, len(items)))
-check("⭐ every item carries a reply control",
-      html.count('class="reply" data-item=') == len(items),
-      "an item with no way to answer it is a status report, not a decision sheet")
+# The sheet lives at the builder's own OUT, so a fresh SHEET_ID moves this check
+# with it. With no marked lane there are no cards, and the builder writes nothing.
+SHEET = mod.OUT
+if items:
+    check("the sheet is committed", os.path.exists(SHEET), SHEET)
+    html = open(SHEET, encoding="utf-8").read() if os.path.exists(SHEET) else ""
+    cards = html.count('class="card"')
+    check("every item rendered a card", cards == len(items),
+          "%d cards vs %d items" % (cards, len(items)))
+    check("⭐ every item carries a reply control",
+          html.count('class="reply" data-item=') == len(items),
+          "an item with no way to answer it is a status report, not a decision sheet")
+else:
+    _before = os.path.getmtime(SHEET) if os.path.exists(SHEET) else None
+    check("an empty backlog builds cleanly", mod.build() == 0,
+          "no marked lane and no card is the answered state, not an error")
+    check("⭐ an empty backlog writes no sheet",
+          (os.path.getmtime(SHEET) if os.path.exists(SHEET) else None) == _before,
+          "an empty sheet would read as a decision to make, and would overwrite the "
+          "last published sheet's committed copy")
 
 # ── every item is answerable ─────────────────────────────────────────────────
 check("every item names its lane",
@@ -77,21 +89,40 @@ check("chips name an outcome, never agreement",
 _f, missing, _s, _d = mod.audit_coverage(items)
 check("coverage passes as committed", not missing, f"uncovered: {missing}")
 
-orphaned = [dict(it, lane=it["lane"] + "-NOPE") for it in items]
-_f2, missing2, _s2, _d2 = mod.audit_coverage(orphaned)
-check("⭐ THE GUARD REFUSES when no item covers a lane",
-      len(missing2) == len(set(found) - set(mod.NO_OPEN_ASK)) and len(missing2) > 0,
-      "orphaning every item must surface every lane that carries a marker — "
-      "otherwise the audit is decorative")
-
-one_lane = sorted(set(found) - set(mod.NO_OPEN_ASK))[:1]
-if one_lane:
-    dropped = [it for it in items if it["lane"] != one_lane[0]]
-    _f3, missing3, _s3, _d3 = mod.audit_coverage(dropped)
-    check("⭐ dropping ONE lane's items is caught",
-          missing3 == one_lane,
-          f"expected {one_lane}, got {missing3} — a partial miss is the realistic failure, "
-          "not a total one")
+# ⚠️ THE REFUSAL IS PROVEN ON SYNTHETIC LANES, NOT THE LIVE ONES. Until
+# 2026-09-27 these checks orphaned the live cards, which proves nothing on the
+# day every ask is answered: with no marked lane, "missing" is empty whether the
+# guard works or not, and the check failed on a correct tree. A fixture directory
+# always carries two marked lanes, a dismissed README and a quiet lane.
+_orig_lanes = mod.LANES
+with tempfile.TemporaryDirectory() as _d:
+    for _name, _body in (("alpha", "Open: NEEDS SAM (card pending)."),
+                         ("beta", "needs Sam, lower case, still an ask."),
+                         ("gamma", "Shipped; nothing waits."),
+                         ("README", "Writing NEEDS SAM in a lane breaks the build.")):
+        with open(os.path.join(_d, _name + ".md"), "w", encoding="utf-8") as _fh:
+            _fh.write(_body)
+    mod.LANES = _d
+    try:
+        _found = mod.lanes_with_asks()
+        check("the marker is found in any case, and only where written",
+              set(_found) == {"alpha", "beta", "README"}, str(sorted(_found)))
+        _f2, missing2, _s2, _d2 = mod.audit_coverage([])
+        check("⭐ THE GUARD REFUSES when no item covers a lane",
+              missing2 == ["alpha", "beta"],
+              f"got {missing2} — with no card, every marked lane that is not dismissed "
+              "must surface, or the audit is decorative")
+        _f3, missing3, _s3, _d3 = mod.audit_coverage([{"lane": "alpha"}])
+        check("⭐ dropping ONE lane's items is caught",
+              missing3 == ["beta"],
+              f"got {missing3} — a partial miss is the realistic failure, not a total one")
+        _f4, missing4, _s4, _d4 = mod.audit_coverage([{"lane": "alpha"}, {"lane": "beta"}])
+        check("covering every marked lane passes", missing4 == [], str(missing4))
+        check("⭐ the build itself refuses an uncovered lane",
+              mod.build(check_only=True) == 1,
+              "the audit's answer has to stop the build, or the sheet ships without the lane")
+    finally:
+        mod.LANES = _orig_lanes
 
 # ── every card declares what its premise rests on ────────────────────────────
 # ⚠️ THIS IS THE GUARD THE 2026-09-22 SHEET NEEDED AND DID NOT HAVE. Four of its
