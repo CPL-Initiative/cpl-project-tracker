@@ -298,10 +298,15 @@ than held back for a quorum.
 **Builder:** `kb/_build_open_asks_decision_sheet.py` →
 `docs/visuals/2026-09-27-open-asks.html`
 → published at https://claude.ai/artifact/5sWY4QCCDfkAegZtZrW1oe (`SHEET_ID`
-`2026-09-27-open-asks`, a fresh store). The 2026-09-22 sheet,
-https://claude.ai/artifact/FTEhLfMxhRfv4YH6DGSPhn, keeps Sam's answers of that
-day; never republish onto it.
-**Guard:** `tests/open_asks_sheet_coverage_test.py` (24 checks).
+`2026-09-27-open-asks`, a fresh store). Sam answered all eight of its cards on
+2026-09-27 (through card 8), and each ruling left with its lane's marker the same
+day, so the builder carries no cards until a lane marks a new ask: with none, it
+writes no sheet, because an empty one would read as a decision to make. The
+2026-09-22 sheet, https://claude.ai/artifact/FTEhLfMxhRfv4YH6DGSPhn, keeps Sam's
+answers of that day; never republish onto either.
+**Guard:** `tests/open_asks_sheet_coverage_test.py` (26 checks). It proves the
+refusal on a synthetic lanes directory, so it still bites on the day every ask
+is answered.
 
 ⚠️ **A REPLY IS KEYED TO THE CARD'S POSITION, SO A BUILDER THAT DROPS CARDS MUST
 NOT REPUBLISH ONTO A LIVE STORE (measured 2026-09-22, S283).** The `replies`

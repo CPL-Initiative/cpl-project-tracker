@@ -134,6 +134,11 @@ nobody finds; `unreferenced_offload` flags any that stop being.
    (Sam, 2026-09-25) but labels the program, not its courses — never vote a
    course's field from its programs; course CIP corroborates until it fills in.
 
+   **Units never split an identity (Sam, 2026-09-27).** A merge or a mint that
+   joins records whose units differ keeps one identity and shows the range it
+   joins (*Orienteering (1–3 units)*), for M-IDs and credit recommendations alike:
+   [`mid_lifecycle`](docs/reference/mid_lifecycle.md).
+
 8. **READ the memory table BEFORE you work.** The very first thing a session
    does on a workstream, before reading the handoff and before touching code:
 

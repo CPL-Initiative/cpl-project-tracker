@@ -46,31 +46,43 @@ points.
   Advise"*); the typographic class goes downstream; SkyView narrows its phone opening.
 - **Held, not ruled:** two September defaults that contradict his August answers (the not-a-topic class,
   subject-area granularity). August stands until he answers cards 3 and 4.
-- **2026-09-27, the fresh sheet:** card 1, his own call, *cue the reveals first* (each reveal lands on the
-  word that names it before the explainer links the draft). He pressed Complete with his mark at card 1, so
-  cards 2–8 carry no verdict: cpl-knowledge-base #23 stays unmerged. Thread e5cb50a3 answered and closed.
+- **2026-09-27, the fresh sheet, all eight cards** (card 1 his own call at 15:26 UTC; Complete through card 8 at
+  17:48 UTC, `cpl_memory` `open-asks-2026-09-27-rulings`), each recorded in its lane the same day:
+  1. *cue the reveals first* (implementation-funding; To-Do `s295-fable-cue-narrated-draft`);
+  2. merge cpl-knowledge-base #23: **merged** (`266c1b7`);
+  3. and 4. the August military answers stand: canonicalize the not-a-topic class, and granularity stays
+     suggestion-only (military lane and scope §10);
+  5. **units never split an identity**, for every merge and mint (`CLAUDE.md` Rule 7, `mid_lifecycle`);
+  6. the `cpl_occupation_match` queue and the cross-list curator surface go through Governance first;
+  7. clean the stored mojibake titles once, under a receipt (sierra lane);
+  8. he rules GR rows #2, #10 and #16 on the GR Priorities tab (t5-55050 lane).
 
 ## Waiting on Sam
 
-Cards 2–8 of the fresh sheet (read `replies`, then `replies/done`, before acting): the merge of
-cpl-knowledge-base #23, the two military conflicts, the unit-range advice, the occupation-match queue, the 381
-mojibake titles, and GR register rows #2, #10 and #16. He answers on the same sheet; do not republish it
-mid-sitting. Card 1 is answered and its lane marker is gone; the next rebuild drops the card under a fresh
-`SHEET_ID`.
+Nothing on a sheet: no lane carries a NEEDS-SAM marker, so the builder writes no sheet. His on the tab: GR rows
+#2, #10 and #16 (To-Do `s296-sam-gr-rows-on-tab`). Not yet on a sheet, and they should be: the funding lane's
+unruled asks (the queue's item 2).
 
 ## The queue, in Sam's order
 
-1. **The fresh sheet's replies**, when he answers: carry each out, and record it in its lane (and the
-   military scope's §10 for cards 3 and 4) **in the same PR that drops the marker**.
-2. **The rulings waiting on sessions:** the ETHS re-mint of 31 identities under
+1. **Card 7, the cleanup** (To-Do `s296-fable-course-title-cleanup`): 397 garbled rows in
+   `chatbox_college_courses`, each beside a repaired twin (`cpl_memory` `course-title-mojibake-397-twins-2026-09-27`).
+   The Supabase guard denies a session's delete, so it runs as a reviewed apply workflow on the
+   `esl-sheet-apply.yml` pattern, with full row images in the receipt.
+2. **The funding lane's unruled asks, marked and carded** (To-Do `s296-fable-funding-asks-to-cards`), on a fresh
+   `SHEET_ID`: the annual-view percent that can read 191%, when CollegeID2 lands, whether COBI keeps "<10" until the
+   split, the explainer's footer split, and items 8–10 of the funding tab review
+   (https://claude.ai/artifact/Ayp39ynE6Yw9cvsvQbH7eu, reviewed through 7).
+3. **The rulings waiting on sessions:** the ETHS re-mint of 31 identities under
    `docs/coursecontrolnumber_remint.md` (To-Do `s295-fable-eths-remint`), and SkyView's phone opening
    (measure at 390px through the `npm run a11y` harness first).
-3. **The narrated video: cue each reveal to its word** (Sam, card 1). The layout already carries the cue
+4. **The narrated video: cue each reveal to its word** (Sam, card 1). The layout already carries the cue
    times and `ft()` stretches each scene uniformly; make each reveal land on its cue, rebuild the MP4, and
    bring the draft back to him before the explainer links it.
-4. **ESL:** the next monthly pass after 2026-10-28; then the Jev CCR misfit rung (cross-list items 4–6 and
+5. **ESL:** the next monthly pass after 2026-10-28; then the Jev CCR misfit rung (cross-list items 4–6 and
    12 are proposals handed over, none ruled).
-5. **SkyView.** 6. **The EACR grid review**, whenever he opens it.
+6. **SkyView.** 7. **The EACR grid review**, whenever he opens it. 8. **Governance for the two write surfaces**
+   (To-Do `s296-fable-governance-two-surfaces`) and **the unit-range display check** (`s296-fable-unit-range-display`).
 
 ## Read in order
 
@@ -96,9 +108,6 @@ mid-sitting. Card 1 is answered and its lane marker is gone; the next rebuild dr
 
 ## Carryover
 
-- The funding lane's three *"Unruled, his call"* items carry no NEEDS-SAM marker, so the sheet does not
-  carry them: the annual-view earning percent (a cell can read 191%), when `CollegeID2` lands, and whether
-  COBI keeps "<10" until the split. Mark them in the lane and give each a card.
 - Prompt-audit flags not yet acted on: F13 (the `cpl_memory` briefing figures in CLAUDE.md need a
   re-measure) and F16 (the knowledge base's two CLAUDE.md copies have drifted apart).
 - Add *maths* to `BRITISH_FORMS` in `kb/_docs_audit.py` (it would flag the word corpus-wide).
