@@ -4,6 +4,8 @@ date: 2026-09-26
 session: 294 (SkyCadence)
 tags: [handoff, implementation-funding, video, esl-packaging]
 status: current
+superseded: true
+superseded_by: session_296_handoff.md
 ---
 
 # You are Session 295

@@ -3746,7 +3746,7 @@
      ],
      "title": "A test that pins a figure from a regenerated artifact fails on a data refresh, not on a defect",
      "type": "methodology",
-     "updated": "2026-09-17"
+     "updated": "2026-09-27"
     },
     {
      "created": "2026-08-07",
@@ -5150,7 +5150,7 @@
      ],
      "title": "Every id-keyed artifact class belongs in the post-apply chain",
      "type": "methodology",
-     "updated": "2026-09-04"
+     "updated": "2026-09-27"
     },
     {
      "created": "2026-07-02",
@@ -13738,7 +13738,7 @@
      ],
      "title": "Governance & team enablement \u2014 lane state",
      "type": null,
-     "updated": "2026-09-10"
+     "updated": "2026-09-27"
     },
     {
      "created": "2026-08-28",
@@ -14258,8 +14258,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 266,
+   "count": 267,
    "docs": [
+    {
+     "created": "2026-09-27",
+     "governs": [],
+     "n": 296,
+     "path": "docs/session_296_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "doctrine",
+      "esl-packaging",
+      "ci"
+     ],
+     "title": "the ESL apply, the CLAUDE.md prompt audit, and main's lints",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-26",
      "governs": [],
@@ -18770,5 +18786,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 977
+ "total": 978
 }

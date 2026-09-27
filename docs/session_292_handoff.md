@@ -4,6 +4,8 @@ date: 2026-09-26
 session: 292 (SkyRelay)
 tags: [handoff, implementation-funding, video, explainer]
 status: current
+superseded: true
+superseded_by: session_296_handoff.md
 ---
 
 # You are Session 293

@@ -31,7 +31,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [EACR — Exhibit & CR Adoption — lane state](../reference/lanes/eacr-exhibit-cr-adoption.md) | lanes | `eacr-exhibit-cr-adoption.md` | 2026-08-28 | 2026-09-25 |
 | [ESL packaging (the first fold) — lane state](../reference/lanes/esl-packaging.md) | lanes | `esl-packaging.md` | 2026-08-28 | 2026-09-26 |
 | [Excel→Supabase Phase 2-4 — lane state](../reference/lanes/excel-to-supabase.md) | lanes | `excel-to-supabase.md` | 2026-08-28 | 2026-08-28 |
-| [Governance & team enablement — lane state](../reference/lanes/governance-team-enablement.md) | lanes | `governance-team-enablement.md` | 2026-08-28 | 2026-09-10 |
+| [Governance & team enablement — lane state](../reference/lanes/governance-team-enablement.md) | lanes | `governance-team-enablement.md` | 2026-08-28 | 2026-09-27 |
 | [GR register / CO policy & regulation review — lane state](../reference/lanes/gr-register.md) | lanes | `gr-register.md` | 2026-08-28 | 2026-08-30 |
 | [Implementation Funding tab / the $35M model — lane state](../reference/lanes/implementation-funding.md) | lanes | `implementation-funding.md` | 2026-08-28 | 2026-09-24 |
 | [Local course ↔ CR alignment — lane state](../reference/lanes/local-course-cr-alignment.md) | lanes | `local-course-cr-alignment.md` | 2026-08-28 | 2026-08-28 |

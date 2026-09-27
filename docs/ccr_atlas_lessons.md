@@ -2015,3 +2015,15 @@ Sam asked on 2026-09-21 for a sheet "to manage the adjustments to what we curren
 - **A stored plan is compared to the live set through `kb/alias_chain.py`.** 428 of the 2026-07-15 plan's ids were re-keyed since; resolved, the plan covers 10 of today's 102 ESL identities. 91 of the other 92 came in on 2026-09-03 with the Z-band retirement (82 former Z ids, 9 legacy anchors), after the fold.
 - **A title reader built on the first corpus misses the next one's words.** Run over the 92, the fold's classifier misses `Careers` (its pattern is `\bcareer\b`), reads `High-Interm` as no level, and reads `Part 1` as rung 1; it also has no health words, so 17 health-titled folds sit in Beginning ESL and 1 in Intermediate. Item 1 and item 3 of the sheet carry the fixes.
 
+## 2026-09-27 (SkyHarbor, S295) — the ESL sheets applied through the workflow, and the monthly pass
+
+- **Dispatch one run at a time.** `esl-sheet-apply.yml` shares the daily cron's concurrency group; a
+  second queued run cancels a pending cron run. Dry-run then commit, per plan dir: 147 + 2 rows, none
+  held, and all six cohorts read back from the live table.
+- **The first curation change to arrive through the nightly sync turned `main` red twice**: a derived
+  file the run never rebuilt (the re-mint blast radius) and a test whose two counts disagreed about
+  merged anchors. The lints job stops at its first failing step, so the second was invisible until the
+  first was fixed: extract every step (`yaml` over `js-tests.yml`) and run them all locally (#1709).
+- **Item 8 as built** (#1710): `kb/_esl_monthly_pass.py` applies what a level or purpose word places,
+  lists the rest for Sam, and carries his six keep-apart rulings so no month re-asks them; the dry run
+  still labels those holds "unruled". The docs lint's `esl_monthly_pass_due` makes "monthly" fire.

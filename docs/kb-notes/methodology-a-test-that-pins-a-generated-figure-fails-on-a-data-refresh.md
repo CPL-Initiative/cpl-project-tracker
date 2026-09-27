@@ -1,7 +1,7 @@
 ---
 title: A test that pins a figure from a regenerated artifact fails on a data refresh, not on a defect
 created: 2026-09-17
-updated: 2026-09-17
+updated: 2026-09-27
 tags: [methodology, testing, funding, daily-pipeline]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -117,3 +117,12 @@ suites are the dense case because the performance artifact is rebuilt every day,
 but the same shape exists wherever a test pins a KPI, a college count, a row
 total or a percentage that a pipeline recomputes. The tell is a literal with a
 decimal point and a unit in an assertion's name.
+
+## A second instance: a count that forgot its own drain (2026-09-27, S295)
+
+`tests/legacy_anchor_duplicates_test.py` held two checks over one population, the Z-band
+receipt's anchors. The first accounted for each anchor as grouped, already merged, or explained;
+the second compared the lane's group count with the receipt minus the explained ones alone. When the
+ESL apply folded 8 receipt anchors, `main` read 122 < 129 while every anchor was accounted for.
+#1709 subtracts the merged anchors (122 ≥ 121), which section 6's own unit check already expected.
+**Two checks that describe one population derive from the same partition of it.**

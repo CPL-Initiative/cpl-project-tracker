@@ -4,6 +4,8 @@ date: 2026-09-26
 session: 293 (SkyBeam)
 tags: [handoff, implementation-funding, video]
 status: current
+superseded: true
+superseded_by: session_296_handoff.md
 ---
 
 # You are Session 294
