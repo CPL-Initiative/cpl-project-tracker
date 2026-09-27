@@ -33,16 +33,18 @@ CI (#1710), and the ESL writes are live.
 
 ## Waiting on Sam
 
-- **The CLAUDE.md Cleanup sheet**, https://claude.ai/artifact/Kd6K7yrAfGQKCtVyd4bhX5 (eight cards,
-  `kb/_build_claude_md_audit_decision_sheet.py`). **Read its replies first** (`ArtifactData list`,
-  collection `replies`, and `replies/done`), then execute: the proposed diff for each card is in the
-  report. Cards 4, 5, 7 and 8 edit `CPLBrain/CLAUDE.md` and `cpl-knowledge-base/CLAUDE.md`
-  (a PR in each; the knowledge-base one touches no curated content unless card 5 says curate).
+- **The CLAUDE.md Cleanup sheet is answered: all eight as proposed** (Complete at 12:36 UTC on
+  2026-09-27, none ruled one by one, `through: null`, so opt-out stands and nothing counts as a ruling
+  for calibration). Execute them first, one PR per repository, the proposed diff for each card being
+  in `kb/prompt_audit/20260927_claude_md_prompt_audit.md`: 1 `both` (fix Rule 9a's text **and** have
+  `check_hooks_live.py --fix` install the context meter at the root), 2 `fresh`, 3 `fix`, 4 `remove`,
+  5 `fix` (a PR in `cpl-knowledge-base`), 6 `sweep` (**its own PR**, so it reverts cleanly), 7 `line`,
+  8 `split`. S295 promised on thread `f438bc2d` to close it once they land: reply there, then resolve.
 - **The narrated draft** (S294): unchanged, waiting on his OK.
 
 ## The queue, in Sam's order
 
-1. **The CLAUDE.md sheet's verdicts** (above).
+1. **The CLAUDE.md sheet's verdicts** (above): all eight, as proposed.
 2. **The narrated video:** waiting on his OK.
 3. **ESL:** the next monthly pass when `esl_monthly_pass_due` fires (after 2026-10-28). Then the
    Jev CCR's misfit ruling (nest or cross-list, [handoff 283](session_283_handoff.md) "first
