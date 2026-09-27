@@ -21,12 +21,12 @@ That single test decides where anything goes:
   pointer per lane and the state lives in
   [`docs/reference/lanes/`](docs/reference/lanes/).
 
-⚠️ **Doctrine must never be relocated into `cpl_memory`.** Its briefing budget
+**Doctrine must never be relocated into `cpl_memory`.** Its briefing budget
 is 17,951 chars against ~85,500 of verified rows — **about 21% fits** — so a
 rule placed there can be present and silently unread, which is strictly worse
 than a large `CLAUDE.md` that at least loads completely.
 
-⚠️ **The pointer is the safety mechanism, not a courtesy.** A pulled store you
+**The pointer is the safety mechanism, not a courtesy.** A pulled store you
 were never told exists is the same as no store — the failure Rule 8 was written
 for, where a session re-derived three settled facts already written down. When
 you move something out of this file, leave the line that says it is out there.
@@ -50,7 +50,7 @@ nobody finds; `unreferenced_offload` flags any that stop being.
 
 ---
 
-## Critical Rules (do not violate)
+## Critical Rules
 
 1. **The daily GitHub Actions workflow regenerates the dashboard.**
    `.github/workflows/daily-dashboard.yml` runs daily on a 3-cron ladder
@@ -81,7 +81,7 @@ nobody finds; `unreferenced_offload` flags any that stop being.
 5. **Never force-push `main`** (GitHub Pages serves from it; the daily cron
    and concurrent sessions race against it). Feature branches (`claude/*`)
    may `--force-with-lease` freely — that's the normal post-squash flow.
-   The ONLY main-history rewrite ever permitted: a coordinated secret/PII
+   The only main-history rewrite ever permitted: a coordinated secret/PII
    scrub — cron paused, Sam's explicit go, all open sessions told to
    re-clone. Anything else uses `git revert`.
 
@@ -147,19 +147,19 @@ nobody finds; `unreferenced_offload` flags any that stop being.
    Skipping it re-derives facts the table already holds (2026-08-10: three in
    one run). Sam's framing: Rule 8 is **ingest**, sessions are **query**.
 
-   **Also: a row whose `source` or `verified_by` names a HUMAN may not be silently
+   **Also: a row whose `source` or `verified_by` names a human may not be silently
    superseded by a session's inference.** On 2026-08-08 Sam said *"Sierra only
    lives in COBY for now"*; a later session read the code (three callers, one
    shared function) and marked that row `superseded`. Both were true — his claim
    was about **where the widget is deployed**, the code finding about **what it
    calls** — but the fact left the default view, and he had to say it again on
    2026-08-10. Supersede a human-sourced row only by saying so explicitly, or file
-   a NEW row and flag the conflict.
+   a new row and flag the conflict.
 
-9. **Document at context checkpoints.** **Run `python3 kb/_docs_audit.py` FIRST
+9. **Document at context checkpoints.** **Run `python3 kb/_docs_audit.py` first
    at every checkpoint** — the docs **lint** pass (Rule 8 is *ingest*, sessions
    are *query*; this is the third operation, and its absence is why the corpus
-   accretes). READ-ONLY, ~2s, writes `kb/docs_audit/<date>.md`. Act on what it
+   accretes). Read-only, ~2s, writes `kb/docs_audit/<date>.md`. Act on what it
    flags **in scope for this run**. Rationale + the vault-weight finding:
    [`docs/kb-notes/methodology-a-knowledge-base-needs-a-lint-pass.md`](docs/kb-notes/methodology-a-knowledge-base-needs-a-lint-pass.md).
    **The trigger is a commit count.** The lint's `checkpoint_overdue` runs only
@@ -170,22 +170,22 @@ nobody finds; `unreferenced_offload` flags any that stop being.
        H=$(ls docs/session_*_handoff.md | sort -V | tail -1)
        git rev-list --count $(git log -1 --format=%H -- "$H")..HEAD
 
-   ⚠️ **Run `/checkpoint`; do not improvise one from memory** — an improvised
+   **Run `/checkpoint`; do not improvise one from memory** — an improvised
    checkpoint names a few of its artifacts and still reads as complete. **The
    artifact list is the checkpoint command, not this file** — all 13, none
    optional: [`.claude/commands/checkpoint.md`](.claude/commands/checkpoint.md)
    is the authority.
 
-   ⚠️ **THE USUAL CHECKPOINT EDIT is the LANE FILE, not the §11 row.** §11's
-   table is a POINTER INDEX; each lane's state lives in
+   **The usual checkpoint edit is the lane file, not the §11 row.** §11's
+   table is a pointer index; each lane's state lives in
    [`docs/reference/lanes/<lane>.md`](docs/reference/lanes/). A checkpoint that
    updates only the row leaves the lane files to go stale — that is the
-   failure mode. Deep memory lives in `docs/reference/`: update THOSE, and do
+   failure mode. Deep memory lives in `docs/reference/`: update those, and do
    **not** re-inflate this file. **Session-narrative budget:** a session's §11
    subsection is ≤ ~10 lines, **at most 2** kept inline; move older ones verbatim
    to `docs/roadmap_archive.md`.
 
-   **The authoritative handoff is the HIGHEST-numbered
+   **The authoritative handoff is the highest-numbered
    `docs/session_<N>_handoff.md`.** A greeting citing a lower number is stale
    (2026-07-10: "105" vs actual 111) — `ls docs/session_*_handoff.md`, read the
    highest, and confirm the number with Sam if they diverge. Sam's greeting
@@ -197,7 +197,7 @@ nobody finds; `unreferenced_offload` flags any that stop being.
    Better to checkpoint slightly early than slightly late — sessions end
    abruptly and what is not in a markdown file is effectively lost.
 
-9a. **Context pressure is MEASURABLE — warn Sam BEFORE the compact instead of
+9a. **Context pressure is measurable — warn Sam before the compact instead of
    discovering it after.** Claude Code writes the exact live context size to the
    session transcript every turn, and `compactMetadata.preTokens` at every
    compaction. `kb/_context_budget.py` reads it in ~50 ms; run it any time.
@@ -207,37 +207,37 @@ nobody finds; `unreferenced_offload` flags any that stop being.
    yourself at session start, after a long stretch, and before any sign-off.
    Mechanics: [`docs/reference/context_pressure_hook.md`](docs/reference/context_pressure_hook.md).
    - **WARN — ≤110,000 tokens left.** Finish the thought you are on, then run a
-     FULL `/checkpoint`. **Say the number to Sam** rather than checkpointing
+     full `/checkpoint`. **Say the number to Sam** rather than checkpointing
      silently; he may want to spend the runway differently.
-   - **EMERGENCY — ≤50,000 tokens left.** Room for ONE checkpoint and nothing
+   - **EMERGENCY — ≤50,000 tokens left.** Room for one checkpoint and nothing
      else. **Do not ask permission** — a compaction mid-question loses the
-     answer. Write ONLY: **`docs/session_<N+1>_handoff.md`** (stating it was an
-     emergency checkpoint and naming which of Rule 9's 13 artifacts were NOT
+     answer. Write only: **`docs/session_<N+1>_handoff.md`** (stating it was an
+     emergency checkpoint and naming which of Rule 9's 13 artifacts were not
      refreshed) · the **lane files this run actually moved** · the **`cpl_memory`
      rows** · **commit + push**. Everything else defers to the next session —
      which is exactly why the handoff has to name it.
 
-   ⚠️ **Both thresholds are measured, not chosen** — derivation and the
+   **Both thresholds are measured, not chosen** — derivation and the
    2026-09-11 post-mortem:
    [`methodology-context-pressure-is-measurable`](docs/kb-notes/methodology-context-pressure-is-measurable.md).
 
-10. **Supabase live-curation safety.** Sam curates LIVE beside sessions — his
-   rows always win. (a) The unit of caution is ANY bulk write to a shared
-   human-write table — `kb_curation` is the worked example, NOT the boundary;
+10. **Supabase live-curation safety.** Sam curates live beside sessions — his
+   rows always win. (a) The unit of caution is any bulk write to a shared
+   human-write table — `kb_curation` is the worked example, not the boundary;
    the [dependency map](docs/reference/dependency_map.md)'s write edges name
    the rest. Before one: fresh live read at write-time, re-measure any
    queue/worklist staged earlier in the session, and (for `kb_curation`)
-   cross-check pending `unified_title_merge_confirm` TARGETS (a rename
+   cross-check pending `unified_title_merge_confirm` targets (a rename
    whose key is a pending merge target fights the curator — hold it). Then
    INSERT-only `ON CONFLICT DO NOTHING` under a cohort `reviewer_email`
    (`<lane>-s<N>@bot`) with a committed receipt; guarded UPDATEs only where a
-   reviewed plan explicitly says so. (a2) A data write must be REVERSIBLE
-   FROM ITS RECEIPT — `git revert` covers code, and nothing covers data
+   reviewed plan explicitly says so. (a2) A data write must be reversible
+   from its receipt — `git revert` covers code, and nothing covers data
    unless the receipt does: an INSERT-only cohort rolls back by its
    `reviewer_email`; a guarded UPDATE's receipt captures before-values or the
    plan is not approvable. Procedure:
-   [`data_write_rollback`](docs/reference/data_write_rollback.md). (a3) A NEW
-   write surface routes through Governance and the privacy ADRs BEFORE it
+   [`data_write_rollback`](docs/reference/data_write_rollback.md). (a3) A new
+   write surface routes through Governance and the privacy ADRs before it
    ships — the first writer to any shared table, or a read-only surface
    gaining writes, is a decision-rights change, not a code detail: map or
    dismiss it in `kb/governance_surface_map.json` (the reason is the point)
@@ -245,17 +245,17 @@ nobody finds; `unreferenced_offload` flags any that stop being.
    ([`adr-student-detail-aggregate-disclosure-control`](docs/kb-notes/adr-student-detail-aggregate-disclosure-control.md);
    the CER-counts and funding-metrics privacy ADRs sit beside it).
    (b) `kb_curation` reads via PostgREST
-   MUST be Range-paginated (#718). (b2) **`revoke ... on function f() from anon,
-   authenticated` DOES NOT WORK** — Postgres grants EXECUTE to **PUBLIC** at
+   must be Range-paginated (#718). (b2) **`revoke ... on function f() from anon,
+   authenticated` does not work** — Postgres grants EXECUTE to **PUBLIC** at
    creation and anon inherits through it, so the statement protects nothing.
    **Name `public`**, and check `has_function_privilege('service_role', …)`
-   holds an EXPLICIT grant before you revoke PUBLIC, or the same statement
+   holds an explicit grant before you revoke PUBLIC, or the same statement
    breaks the cron; `tests/supabase_function_grants_test.py` lints it. (c) The
    sandbox cannot reach `*.supabase.co` — all Supabase access goes through the
    MCP tools. Worked examples:
    `docs/kb-notes/playbook-trail-crew-method-magic-audit.md`.
 
-## Naming & terminology (Sam's conventions — honor in ALL output)
+## Naming & terminology (Sam's conventions — honor in all output)
 
 - **New identity phase (Sam, 2026-07-03):** the program is the **CPL
   Initiative**; never "MAP Initiative" in new writing. The platform is the
@@ -266,27 +266,27 @@ nobody finds; `unreferenced_offload` flags any that stop being.
   `college_report_generator.js`; `annual_report.js` polish), the docx footers,
   a live `sierra_guidance` row (id `cb226a48`, deactivatable in the Sierra training tab),
   and the public KB's `claude/CLAUDE.md`. Historical titles/quotes stay verbatim.
-- **AMERICAN SPELLING, ALWAYS (Sam, 2026-08-21).** *"As a Yank, I prefer
+- **American spelling, always (Sam, 2026-08-21).** *"As a Yank, I prefer
   American, of course."* Use **color · behavior · normalize · organization ·
   analyze · center · judgment · program · catalog · license (n and v) · gray ·
   enroll · while (not `whilst`) · among (not `amongst`)** and the
-  `-ize`/`-ization` family. ⚠️ **The British form in a word pair MUST be in a code
+  `-ize`/`-ization` family. **The British form in a word pair must be in a code
   span** — bare, the sweeper rewrites it. **Rendered UI text first**, then docs,
   then comments. Enforced by `american_spelling` in `kb/_docs_audit.py`.
-  ⚠️ It scans PROSE only: `grey` is a valid CSS keyword and a token name is not
+  It scans prose only: `grey` is a valid CSS keyword and a token name is not
   a spelling, so never blind-replace inside code.
-- **REMEDIATE WITH [`/a11y-pass`](.claude/commands/a11y-pass.md) (Sam, 2026-09-09).**
-  Triage first: **findings are not problems** — and group by the COLOR PAIR, not
+- **Remediate with [`/a11y-pass`](.claude/commands/a11y-pass.md) (Sam, 2026-09-09).**
+  Triage first: **findings are not problems** — and group by the color pair, not
   the selector, or the biggest fault sorts to the bottom as many small ones.
 - **SkyView, not "Atlas" (Sam, 2026-08-24; tightened 2026-09-05).** The CCR curation
-  prototype is **SkyView**, and ⚠️ **when Sam says it he means the MAP ALONE, filling the
+  prototype is **SkyView**, and **when Sam says it he means the map alone, filling the
   window** — the canvas you pan, search and drag on, one row of controls, nothing else
   painted. The map with panes below is **the comprehensive view**, one Views-menu click
   away and never the default; the discipline and subject tables and the ESL card are the
-  **workspace** (*Disciplines and subjects* tab). Verify such an ask against the SCREEN,
+  **workspace** (*Disciplines and subjects* tab). Verify such an ask against the screen,
   not the code (`methodology-verify-an-ask-against-what-the-reader-sees`). Files keep
   `ccr_atlas_*` paths; the user-facing name is what changed.
-- **FUNDING VOCABULARY — CCC NORMS, NOT BUSINESS NORMS (Sam, 2026-08-31).** Say
+- **Funding vocabulary — CCC norms, not business norms (Sam, 2026-08-31).** Say
   **funding**, never "money," on any funding surface. Prefer sector terms:
   *allocated / fully allocated* (not "spent"/"apportioned" — apportionment is
   the SCFF term), *restricted / designated* (not "fenced"), *redirect* (not
@@ -296,8 +296,8 @@ nobody finds; `unreferenced_offload` flags any that stop being.
   (2026-09-01): *"maximum funding to be awarded based on measurable outcomes and
   allocated as credit and noncredit subtotals."* Say **funding**, not "pool," for
   the model's total (vary it — "the total", "the allocation" — rather than
-  drumming "funding"; the NAME "one-pool" and code identifiers stay); **never
-  "on its face"** — end the statement instead. **NEVER the concept of ADVANCES, and never a
+  drumming "funding"; the name "one-pool" and code identifiers stay); **never
+  "on its face"** — end the statement instead. **Never the concept of advances, and never a
   reference to a not-yet-live data feed, anywhere rendered (Sam, 2026-09-01):**
   *"I don't want to suggest that advances are possible in the model,
   regardless of current missing data feeds or any other factor"*. An unmeasured
@@ -305,37 +305,37 @@ nobody finds; `unreferenced_offload` flags any that stop being.
   positive-first ruling, 2026-09-13; a guard rejects the phrase). "Advancing the
   priority outcomes" and the statute's "Advancing career attainment" are the
   allowed senses; the D13 guard enforces it. Prose only, never identifiers.
-  ⚠️ **NEITHER THE BANKING SENSE OF "DRAW" (2026-09-09) NOR "EARN" (2026-09-13).**
+  **Neither the banking sense of "draw" (2026-09-09) nor "earn" (2026-09-13).**
   *"Earned still smacks of banking... better to use something like 'measured...
   or... qualified for'"*. **The map:** a measure **counts toward** funding · a
   college **qualifies for** its award · the result is **demonstrated** (the
   statute's verb, §78093.2(d)(2)) · unearned is **remaining**; **receives** fits
   where funding already qualified for is released. Also retired: **unspent**,
-  **the dollars** → *the funding*. ⚠️ **Award cells keep the PRESENT PARTICIPLE —
+  **the dollars** → *the funding*. **Award cells keep the present participle —
   *qualifying*:** his 2026-08-27 ruling (a past tense "read like a settled
-  award") survives the sweep. ⚠️ **"Students earn credit" STAYS — CHECK WHO THE
-  SUBJECT IS:** a COLLEGE earning FUNDING is the banking sense; a STUDENT earning
-  CREDIT is ordinary academic English. Same subject test as *expended*. ⚠️ **But
-  *expended* STAYS where the subject is a COLLEGE spending (his rule, same
+  award") survives the sweep. **"Students earn credit" stays — check who the
+  subject is:** a *college* earning *funding* is the banking sense; a *student* earning
+  *credit* is ordinary academic English. Same subject test as *expended*. **But
+  *expended* stays where the subject is a college spending (his rule, same
   day): *"expended should be kept if I am referring to the colleges spending
   the funds. Allocated should be used if I am referring to the CO awarding or
   dispensing the funds to colleges."* The two words are not interchangeable —
   check who the subject is before sweeping either. `cpl_funding_calm` bans
   the draw, *unspent* and earn stems in rendered text (the `\b` is load-bearing —
-  without it the ban forbids *credit for prior learning*). ⚠️ **A rendered-text
+  without it the ban forbids *credit for prior learning*). **A rendered-text
   ban covers only the branches a fixture paints** — `cpl_funding_earn_retired`
-  reads the SOURCE, and is what caught the CSV header no DOM test can see.
-- **HOUSE VOICE — write outward artifacts the way the CO writes (Sam,
+  reads the source, and is what caught the CSV header no DOM test can see.
+- **House voice — write outward artifacts the way the CO writes (Sam,
   2026-09-01).** He shared his VC of Academic Affairs' letter to CSU as the
   standard: *"the word choice and tone provide an extensive example of the tone
   and vocabulary and sentence variety I would like to see in our artifacts."*
   **Scope: letters, memos, board/legislative materials, college-facing
   communications, public explainer prose, report narrative, deck narration.**
-  NOT lane files, handoffs, commits or code comments — those are deliberately
+  Not lane files, handoffs, commits or code comments — those are deliberately
   dense, and register follows audience.
   - **Concede before you argue**, stating the other position at full strength;
     **preserve their authority explicitly** (what is not ours to decide);
-    ⚠️ **STATE IT POSITIVELY — NO "IT IS THIS, NOT THAT" (Sam, 2026-09-16).**
+    **State it positively — no "it is this, not that" (Sam, 2026-09-16).**
     *"I don't like the practice the saying, 'it's this, not that' Just make
     positive, active voice declarations."* The contrastive frame makes the reader
     hold a wrong idea in mind to discard it, and it spends a sentence on what you
@@ -350,7 +350,7 @@ nobody finds; `unreferenced_offload` flags any that stop being.
     synergy · operationalize · impactful*. Reach for *invite · partnership ·
     shared aim · complement · warrant · examine together · practical first step*.
   - **No bold, bullets or glyphs in outward prose.** The argument carries itself.
-  - ⚠️ **MANNERLY LANGUAGE POINTS AT THE WRITER (Sam, 2026-09-08).** *"no
+  - **Mannerly language points at the writer (Sam, 2026-09-08).** *"no
     mannerly language, avoiding adjective phrases, metaphors, and redundant
     asides. Mannerly language is irritating because it seeks to draw attention
     to the writer rather than the reader… the reader is not impressed and looks
@@ -358,7 +358,7 @@ nobody finds; `unreferenced_offload` flags any that stop being.
     whose job is to show the writing. **The test is who the sentence points at.**
     Scope is wider than the rest of this section: it covers explainers **and
     replies to Sam in session**.
-  - ⚠️ **ACTIVE VOICE, AND NAME THE ACTOR (Sam, 2026-09-09).** He asked for
+  - **Active voice, and name the actor (Sam, 2026-09-09).** He asked for
     revisions that use *"active voice, avoidance of adjective phrases and
     asides, and plain language or language consistent with the terminology used
     in the T5 revision."* A passive that hides the model as the actor is the
@@ -366,14 +366,14 @@ nobody finds; `unreferenced_offload` flags any that stop being.
     *"is produced by"*) — say **the model measures / applies / produces**. Say
     **model**, not *engine*. And prefer the regulation's own words over an
     invented gloss: *units of credit for prior learning*, not a metaphor like
-    *currency*. **Applies to ALL suggested revisions, not just outward prose.**
-  - ⚠️ **A voice, not a template** — copying its shapes onto a piece with no
+    *currency*. **Applies to all suggested revisions, not just outward prose.**
+  - **A voice, not a template** — copying its shapes onto a piece with no
     concession to make produces parody, and length is not seriousness. Moves +
     exemplars + before/after:
     [`reference-cccco-house-voice`](docs/kb-notes/reference-cccco-house-voice.md);
     exemplars in `CPLBrain/04-projects/cpl-initiative/resources/`. Mechanical
     floor linted by `house_voice` in `kb/_docs_audit.py`.
-- **"Activities" = activities AND their projects.** When Sam says
+- **"Activities" = activities and their projects.** When Sam says
   "Activities" he generally means both the workplan activities and the
   projects under them. The sidebar label is **Activities** (renamed from
   "Activities & Projects", Session 97); the tab hash stays
@@ -393,13 +393,13 @@ first day.** Do the remembering for them.
   **who and when** alongside it (the provenance tiers in `map_users.js` are the
   worked pattern). A curator's knowledge is a first-class input — attribute it,
   don't launder it into an anonymous value.
-- **VERIFY THE THREE-REPO SET AT SESSION START (Sam, ruled enforced
-  2026-08-30).** Sessions run with all THREE repos attached —
+- **Verify the three-repo set at session start (Sam, ruled enforced
+  2026-08-30).** Sessions run with all three repos attached —
   `cpl-knowledge-base` · `cpl-project-tracker` · `CPLBrain` — *"so they can
   stay informed and syncd."* Check all three are present before working; if
-  any is missing, say which in ONE line and ask whether to continue without
+  any is missing, say which in one line and ask whether to continue without
   it. The driver may be a teammate on day one — do the remembering for them.
-  (A session with NO repo attached loads no CLAUDE.md at all; the backstop
+  (A session with no repo attached loads no CLAUDE.md at all; the backstop
   there is per-machine: `scripts/install-three-repo-check.ps1` installs a
   one-time user-level check line. Human-facing:
   `docs/working_with_claude_code.md` §12.)
@@ -415,20 +415,20 @@ first day.** Do the remembering for them.
   that it is one.
 - **Show, don't describe.** Offer a visual/mock-up early for anything with a
   shape to it. Reacting is easier than specifying.
-- **DECISIONS ARRIVE AS DECISION SHEETS (Sam, 2026-08-30).** *"I'd like to
+- **Decisions arrive as decision sheets (Sam, 2026-08-30).** *"I'd like to
   handle all my current and future decisions this way."* When judgments only
-  Sam can make accumulate, build ONE numbered sheet rather than scattering
+  Sam can make accumulate, build one numbered sheet rather than scattering
   asks through chat: per item, what it is in plain words, the measured
-  context (from the maps and feeds, never guessed), a PROPOSED disposition
+  context (from the maps and feeds, never guessed), a proposed disposition
   with its draft reason, and reply-by-number verdicts. Hand it over as a
-  Claude artifact LINK. ⚠️ **Read the replies BEFORE executing** — they are
+  Claude artifact link. ⚠️ **Read the replies BEFORE executing** — they are
   the artifact's own store, not chat. Mechanics (the reply-chip injector,
   `capabilities: {db: {}}`, the `replies` collection, where the file lives,
   the worked example) are PULL:
   [`decision_sheets`](docs/reference/decision_sheets.md).
-  ⚠️ **AND IT IS "ALWAYS", NOT "WHEN THEY ACCUMULATE" (Sam, 2026-09-22).**
+  **And it is "always", not "when they accumulate" (Sam, 2026-09-22).**
   *"Always give me a decision sheet for any outstanding items for me..."* —
-  so the sheet is the STANDING form of the backlog, built whenever anything is
+  so the sheet is the standing form of the backlog, built whenever anything is
   waiting on him, never held back for a quorum.
   `kb/_build_open_asks_decision_sheet.py` **refuses to build** when a lane
   carries a NEEDS-SAM marker that no item covers and no `NO_OPEN_ASK` reason
@@ -436,11 +436,11 @@ first day.** Do the remembering for them.
   Rebuild it at every checkpoint and hand over the link. A sheet whose cards
   changed is published under a fresh `SHEET_ID` and artifact, because its replies
   are keyed to card position ([`decision_sheets`](docs/reference/decision_sheets.md)).
-- **CAPTURE UNPLANNED SUBSTANCE ON THE FLY (Sam, 2026-08-30).** His important
+- **Capture unplanned substance on the fly (Sam, 2026-08-30).** His important
   statements are never planned — *"just comes out of our interactions and I
   don't think to say specifically braindump."* When Sam or a team member says
   something substantive unasked — a decision rationale, a vision, a lesson, a
-  failure or success story — capture their words VERBATIM with who/when,
+  failure or success story — capture their words verbatim with who/when,
   unprompted, and say in one line that you did (veto stays with them). Where:
   the `CPLBrain` vault's braindump pipeline when the vault is attached (its
   `CLAUDE.md` + the `braindump` skill carry the mechanics); otherwise a
@@ -449,7 +449,7 @@ first day.** Do the remembering for them.
 - **Call the effort level.** At the top of a
   substantive piece of work, say in one line whether it warrants ultracode /
   multi-agent fan-out and why — don't make the user guess a dial they have no
-  way to calibrate. **The governing test is whether a hit is cheap to VERIFY**
+  way to calibrate. **The governing test is whether a hit is cheap to verify**
   (Sam's refinement, 2026-08-08, from *"sometimes better to be lucky than smart"*):
   fan-out is **manufactured luck** — more draws raise the odds one lands — and luck
   only pays when you can recognize the hit. A bug reproduces; a suppressed cell
@@ -468,7 +468,7 @@ first day.** Do the remembering for them.
 - **Flag cross-impact before acting, not after.** Shared Supabase tables, the
   public dashboard, the daily cron, the public KB, anything with staff/student
   PII, anything reaching colleges. Also ask whether another session is live —
-  Sam frequently runs several, and a later write silently wins. **COMPUTE the
+  Sam frequently runs several, and a later write silently wins. **Compute the
   impacts, don't guess:**
   [`docs/reference/dependency_map.md`](docs/reference/dependency_map.md) maps
   every dataset (Supabase table, generated JS, JSON) to its consuming tabs,
@@ -481,19 +481,19 @@ first day.** Do the remembering for them.
   ⚠️ **Asking first is the failure.** One taken too early costs a re-run; one
   deferred for an answer that never comes costs the session's reasoning. If work
   continues after, checkpoint again.
-- **DON'T LOCK IN (Sam, 2026-09-11).** *"I really don't like how you can get
+- **Don't lock in (Sam, 2026-09-11).** *"I really don't like how you can get
   locked in a long process (30-60 mins or more) without a way to interrupt and
   get you a note--escape doesn't work when you're locked in on something."*
-  When the next step waits on anything external, END THE TURN — a scheduled
+  When the next step waits on anything external, end the turn — a scheduled
   wake brings the session back. One batch of calls per turn during a wait.
-- **HAND OVER THE WHOLE PASTE (Sam, 2026-09-20).** A command for another
+- **Hand over the whole paste (Sam, 2026-09-20).** A command for another
   session goes to Sam as the full message he pastes there: the command, then
   *paste the output, no investigation*, then what a good result looks like.
   *"I doubt I'll remember this habit"* — the session remembers.
 - **Say what you can't do, early.** No Teams/email sending (drafts only, a human
   presses send), no MAP writes (read-only system of record), no unattached
   repos, no visibility into other sessions except through committed docs.
-- **SIGN OFF WITH THE EXACT OPENING LINE SAM PASTES INTO THE NEXT SESSION (Sam,
+- **Sign off with the exact opening line Sam pastes into the next session (Sam,
   2026-08-13; the template is his, ruled 2026-09-03).** At the end of a session —
   or anything that looks like the end (a checkpoint, a "thanks, that's it", a long
   quiet) — close with this line, filled in, on its own:
@@ -517,9 +517,9 @@ against, and the toggle history are in
 
 - Work on feature branches (`claude/<short-description>`); open a PR to `main`.
   **Sibling branches are authorized** — a session may open additional
-  `claude/*` branches off `main` for INDEPENDENT PRs rather than stacking
+  `claude/*` branches off `main` for independent PRs rather than stacking
   unrelated changes. One concern per branch.
-- **Artifact policy: prefer CODE-ONLY PRs.** Ship generator/consumer changes
+- **Artifact policy: prefer code-only PRs.** Ship generator/consumer changes
   without the regenerated `unified_courses_*.js` / `credential_reference_data.js`
   artifacts; merge, then dispatch `daily-dashboard.yml` and let the runner
   publish. Generated-file conflicts are never resolvable by picking sides.
@@ -528,27 +528,27 @@ against, and the toggle history are in
   small/clear issues, asking when ambiguous — until merged or closed.
 - **Auto-merge authorization (Sam, trust-expanded 2026-05-30).** Claude sessions
   merge **every** PR they open, as soon as the gates below are met. **Sam's
-  review is NOT a gate** — do not wait for him to review, and do not wait for an
+  review is not a gate** — do not wait for him to review, and do not wait for an
   explicit "merge" go-ahead. There is no carve-out for architecturally
   significant PRs: the real safety mechanisms live inside the workstream
   (dry-runs, in-script apply gates, `workflow_dispatch`), not at the merge button.
-  - **The `test` check must have SUCCEEDED on the current head before you
+  - **The `test` check must have succeeded on the current head before you
     merge (Sam's E ruling, amended to doctrine-level 2026-08-30).** GitHub
     cannot make it a required check without rejecting the cron's direct
     pushes (measured live: a rules-active test declined all five of the
-    cron's push attempts with GH013), so the requirement is DOCTRINE: poll
+    cron's push attempts with GH013), so the requirement is doctrine: poll
     `get_check_runs` on the head until `test` (from `js-tests.yml`) reports
     success — a docs-only diff finishes in ~2.5 min, a code diff ~7 (four
     shards, 2026-09-24) — and
     never merge past a pending or failing `test`. A failing `test` on your
-    PR is yours to fix. Waiting for it is the ONE sanctioned merge wait.
-  - **Beyond `test`, merge on `clean` OR `unstable`.** `unstable` from any
-    OTHER non-required check still merges — do NOT wait for it to flip to
+    PR is yours to fix. Waiting for it is the one sanctioned merge wait.
+  - **Beyond `test`, merge on `clean` or `unstable`.** `unstable` from any
+    other non-required check still merges — do not wait for it to flip to
     `clean`. Only `blocked`, `dirty` (conflict) or `behind` gate beyond that.
-  - **Poll CI via the MCP `github` tools, NOT `curl`** (the sandbox cannot reach
-    `api.github.com`), and ⚠️ **a `check_suite.completed` wake is NOT a green
-    light** — it routinely names a SUPERSEDED `head_sha`, so always re-read
-    `get_check_runs` on the CURRENT head. When to hold, and why never to park
+  - **Poll CI via the MCP `github` tools, not `curl`** (the sandbox cannot reach
+    `api.github.com`), and **a `check_suite.completed` wake is not a green
+    light** — it routinely names a superseded `head_sha`, so always re-read
+    `get_check_runs` on the current head. When to hold, and why never to park
     in draft: [`branch_policy`](docs/reference/branch_policy.md).
   - **Method: squash and merge** (`mcp__github__merge_pull_request`,
     `merge_method: "squash"`).
@@ -558,7 +558,7 @@ against, and the toggle history are in
   - The session-end handoff still notes any architecturally-significant PR that
     landed, even though no pre-merge pause happened.
 
-## Presentation rules — EVERY view we ship (non-negotiable)
+## Presentation rules — every view we ship
 
 These govern **anything a human looks at** — a COBI tab, a public page, a
 prototype, a Claude artifact, a docx — and they are PUSH because nobody stops to
@@ -569,35 +569,35 @@ ask "may I use an emoji here" before typing one. Spec detail:
 `presentation_doctrine` in `kb/_docs_audit.py` fails if any of them leaves this
 file.
 
-- **FIRST LIGHT, ALWAYS — INCLUDING ARTIFACTS AND PROTOTYPES (Sam, 2026-08-19).**
+- **First Light, always, including artifacts and prototypes (Sam, 2026-08-19).**
   *"Make sure it is based on our First Light design and make it always accessible
   and mobile friendly."* **Do not invent a palette.** Spec:
   [`reference-ui-design-system`](docs/kb-notes/reference-ui-design-system.md) +
   `prototype/first_light_theme_v1.html` v1.6; `var(--token)`, never a raw hex.
-  A **light** identity by default. ⚠️ Since 2026-09-08 one opt-in dark palette
-  exists (Sam's ask) — a TOKEN SWAP owned by `cpl_theme.js`, which owns the
+  A **light** identity by default. Since 2026-09-08 one opt-in dark palette
+  exists (Sam's ask) — a token swap owned by `cpl_theme.js`, which owns the
   contract themed components key on. **Dark is not license to invent a color**:
-  add the role to the dark `:root` in BOTH HTMLs (Rule 4), never a component
+  add the role to the dark `:root` in both HTMLs (Rule 4), never a component
   rule there. [lane](docs/reference/lanes/cobi-dark-mode.md)
-- **ACCESSIBLE TO TODAY'S STANDARDS — AND VERIFIED, NOT CLAIMED.** Compute every
+- **Accessible to today's standards — and verified, not claimed.** Compute every
   fg-on-bg pair actually used (zebra rows and glass composites included) against
   **AA 4.5:1 / 3:1** — `prototype/check_contrast.py` holds the math. **Color is
   never the only signal.** `th scope` on every header cell, an `aria-label`led
   region around any scrolling table, a skip link, `:focus-visible`, and
   `prefers-reduced-motion`.
-  ⚠️ **VERIFY WITH `npm run a11y`** (Sam, 2026-09-04: *"the simplest approach
+  **Verify with `npm run a11y`** (Sam, 2026-09-04: *"the simplest approach
   that sets us up for continued long term use on all projects"*). One command,
   ~100s, every view we ship — every COBI tab, discovered from its own nav, plus
   Sierra, the Fact Sheet, the veteran map, SkyView. **`npm test` passing proves
-  NOTHING here**: jsdom returns zeroes for every rectangle. Run it before you
+  nothing here**: jsdom returns zeroes for every rectangle. Run it before you
   ship a view; add a view in `a11y.config.js`, not a new script.
-- **MOBILE-FRIENDLY, ALWAYS.** Single column below ~560px, `clamp()` type, no
+- **Mobile-friendly, always.** Single column below ~560px, `clamp()` type, no
   fixed widths, and wide tables scroll **inside their own container** so the body
   never scrolls sideways.
-- **PROSE RUNS THE FULL WIDTH OF WHATEVER SITS BESIDE IT (Sam, 2026-08-22).**
-  The lever is `--cpl-measure: none` on `:root` in BOTH HTMLs (Rule 4); every
+- **Prose runs the full width of whatever sits beside it (Sam, 2026-08-22).**
+  The lever is `--cpl-measure: none` on `:root` in both HTMLs (Rule 4); every
   prose cap is `max-width:var(--cpl-measure,none)` — **the `,none` fallback is
-  load-bearing.** ⚠️ A cap below ~55ch is LAYOUT, not a measure, and must NOT be
+  load-bearing.** A cap below ~55ch is layout, not a measure, and must not be
   swept (`tests/cobi_prose_measure.test.js` pins a sample so a blanket sweep
   fails). Grep **px too**.
   [`methodology-a-text-measure-must-agree-with-what-sits-beside-it`](docs/kb-notes/methodology-a-text-measure-must-agree-with-what-sits-beside-it.md)
@@ -605,7 +605,7 @@ file.
   the viewport at desktop widths. `overflow-x: auto` is the narrow-screen safety
   net, never the default desktop experience. Use `table-layout:fixed` + an
   explicit colgroup — auto layout silently parks columns past the wrap's edge.
-- **PLAIN WORDS, NOT GLYPHS — AND THE GLYPH RULE IS STRICT (Sam, 2026-08-29,
+- **Plain words, not glyphs — and the glyph rule is strict (Sam, 2026-08-29,
   tightening #1212).** *"I think they are mostly noise… I prefer to eliminate
   every visual that doesn't prove its worth."* **The default is no glyph.** The
   burden of proof is on the mark, never on removing it: if you cannot say what a
@@ -615,22 +615,22 @@ file.
   - **A glyph that earns its place is ghosted, not decorated:** muted **CO blue
     on white** (`--cobalt-on-dark` #7DA1D4, or `--seal-blue` #002F6D where it
     must carry weight). It should read as the quietest thing in the row.
-  - **Green and red are for a STATE the user must act on**, nothing else
-    (`--green-progress`, `--red-alert`). ⚠️ **Muted by default even then** —
+  - **Green and red are for a state the user must act on**, nothing else
+    (`--green-progress`, `--red-alert`). **Muted by default even then** —
     full saturation is reserved for pulling focus deliberately, and a page where
     everything shouts has no way left to shout.
-  - ⚠️ **This does not conflict with "color is never the only signal" above.**
+  - **This does not conflict with "color is never the only signal" above.**
     That rule says a state already worth showing must not be shown by color
-    ALONE; this one says most states are not worth showing. Satisfy the first
+    alone; this one says most states are not worth showing. Satisfy the first
     with a **word** wherever you can, and a mark only when the word will not fit.
-  - ⚠️ **No exceptions for 📋 To-Do, 🧭 guidance or ⚖️ Governance** (Sam,
+  - **No exceptions for 📋 To-Do, 🧭 guidance or ⚖️ Governance** (Sam,
     2026-09-09): each has its word beside it. **Do not restore a mark there.**
     Sweep: [`/a11y-pass`](.claude/commands/a11y-pass.md).
   - ✅ **THE SWEEP IS CLOSED AT 26 (Sam, 2026-09-09: *"Keep all 26 glyphs as is
     for now."*)** — Star designations, `✕`, `✎`, `⛔`, `⚠`, copy, and arrows that
     carry sequence. ⚠️ **RULED, not pending — do not sweep them**; none is an
     emoji, and a plain-words reading does not override his ruling.
-- **AMERICAN SPELLING, ALWAYS** — rendered UI text first. Word list and the
+- **American spelling, always** — rendered UI text first. Word list and the
   code-safety caveat are in **Naming & terminology** below.
 
 ## Engineering & UI practices
@@ -645,10 +645,10 @@ Read that before a UI rework, a First Light artifact, or a table layout.
   under `tests/` (`npm test`; `tests/run.js` auto-discovers `tests/*.test.js`).
   Never a throwaway `/tmp` test — make it guard the *failure mode*. CI's
   `js-tests.yml` is **non-required** and never gates merge-on-green.
-- ⚠️ **`git add`, then `bash scripts/check_generated.sh`, is the LAST thing before
+- **`git add`, then `bash scripts/check_generated.sh`, is the last thing before
   a push** — `npm test` covers none of CI's generator `--check` steps.
 - **New CSS uses `var(--token)`, never a raw hex.** Missing role → add a token,
-  in **BOTH** HTMLs (Rule 4). Derived tints get their own tokens.
+  in **both** HTMLs (Rule 4). Derived tints get their own tokens.
 - **Prefer injecting tab CSS from the tab's JS** (the `ensureCerScopeCss()`
   pattern) over editing the HTML `<style>` blocks — JS is one static file, so it
   covers both HTMLs without a Rule-4 mirror. Only `:root` tokens need the mirror.
@@ -666,7 +666,7 @@ https://cpl-initiative.github.io/cpl-project-tracker/
 
 **Moved to [`docs/reference/obsidian_vault_wiring.md`](docs/reference/obsidian_vault_wiring.md)** (2026-08-28 consolidation).
 
-Read it BEFORE: vault-sync or vault-path work, Obsidian exclusion, or the
+Read it before: vault-sync or vault-path work, Obsidian exclusion, or the
 sparse-checkout fix. It holds the vault root, `scripts/sync-vault-clones.ps1`,
 and why exclusion is a relevance filter rather than a performance one.
 
@@ -691,7 +691,7 @@ deliberate, human-gated step — never a checkpoint side effect.
 
 **Moved to [`docs/reference/pipeline_reference.md`](docs/reference/pipeline_reference.md)**.
 
-Read it BEFORE: touching `excel_to_dashboard.py` or the daily workflow (§5–6);
+Read it before: touching `excel_to_dashboard.py` or the daily workflow (§5–6);
 adding/moving tabs or nav (§7b); working on CPL Assistant (§7c) or TMC Builder
 (§7d); **any Supabase schema/RLS/write work (§8 — table inventory + gating)**;
 EACR identity (§9); C-ID/CCN conventions (§10). Contents: 1 Architecture ·
@@ -703,7 +703,7 @@ EACR identity (§9); C-ID/CCN conventions (§10). Contents: 1 Architecture ·
 
 **Moved to [`docs/reference/kb_build_status.md`](docs/reference/kb_build_status.md)**.
 
-Read it BEFORE: KB/unified-courses curation work, the CCR worklists, or citing
+Read it before: KB/unified-courses curation work, the CCR worklists, or citing
 build-phase history. It holds the phase-by-phase build narrative, counts, and
 artifact locations. Current-phase quick state: the §11 pointer table below
 names each lane's state; its detail is in `docs/reference/lanes/`
@@ -718,34 +718,34 @@ pipeline toward ASCCC C-ID approval. The dual-score auditor at
 **Lifecycle/MC/CIDx prose + the Session-25 strategic roadmap and archived
 session narratives moved to
 [`docs/reference/mid_lifecycle.md`](docs/reference/mid_lifecycle.md)**
-(2026-07-10 pare-down). Read it BEFORE: re-mints, MC/TMC terminology calls,
+(2026-07-10 pare-down). Read it before: re-mints, MC/TMC terminology calls,
 Trust-Card auditor work, or CID/CIDx pathway decisions. The live Roadmap table
 stays here.
 
 ### Roadmap
 
-> **This table is a POINTER INDEX, not the state itself (2026-08-28, S206).**
+> **This table is a pointer index, not the state itself (2026-08-28, S206).**
 > Each lane's detail lives in [`docs/reference/lanes/<lane>.md`](docs/reference/lanes/);
 > the row carries only what a session **cannot know to ask for** — that the lane
 > exists, what it is, whether it is live, whether anything waits.
 >
-> **At checkpoint, update the LANE FILE, not the row.** Touch the row only when
-> the lane's *state* changes. ⚠️ **Do not re-inflate a cell** — that is how §11
+> **At checkpoint, update the lane file, not the row.** Touch the row only when
+> the lane's *state* changes. **Do not re-inflate a cell** — that is how §11
 > became 90 KB of a 151 KB always-loaded file.
 >
-> **A lane file states CURRENT TRUTH, not a log.** When a finding contradicts
+> **A lane file states current truth, not a log.** When a finding contradicts
 > it, **delete the superseded text**; never prefix `*Prior:*`. The cost of
-> stacking is not bloat but CONTRADICTION, and no reading order fixes one
+> stacking is not bloat but contradiction, and no reading order fixes one
 > inside a single document. `stacked_roadmap_cell` guards both surfaces.
 >
-> ⚠️ **Retiring a lane: do not grep for it** — `lane_retirement_signal` already
-> ran that test and names the candidates; hand-grepping has been wrong EVERY
+> **Retiring a lane: do not grep for it** — `lane_retirement_signal` already
+> ran that test and names the candidates; hand-grepping has been wrong every
 > time (four occasions). [`lanes/README.md`](docs/reference/lanes/README.md).
 
-> ⚠️ **ANYTHING WAITING ON SAM IS ALSO A CARD ON A SHEET.** The standing one,
+> **Anything waiting on Sam is also a card on a sheet.** The standing one,
 > `kb/_build_open_asks_decision_sheet.py` →
 > [FTEhLfMxhRfv4YH6DGSPhn](https://claude.ai/artifact/FTEhLfMxhRfv4YH6DGSPhn),
-> **refuses to build** while a lane's NEEDS-SAM marker has no card. ⚠️ **Do not
+> **refuses to build** while a lane's NEEDS-SAM marker has no card. **Do not
 > republish it as-is:** its store is keyed to the 21 cards Sam answered and the
 > builder now holds 10 ([`decision_sheets`](docs/reference/decision_sheets.md)).
 
@@ -800,13 +800,13 @@ from one readiness tier to the next.
 **Moved to [`docs/reference/troubleshooting.md`](docs/reference/troubleshooting.md)** (2026-08-19 pare-down — symptom-triggered reference only a broken run reads).
 
 Go there when: the **dashboard is not updating** · a **Pages deploy failed** or
-the site is stale after a merge (dispatch a FRESH `pages.yml` run — never
+the site is stale after a merge (dispatch a fresh `pages.yml` run — never
 `rerun_failed_jobs`) · the **scrape returns errors** · KPI values are stale but
 the date moved · **duplicate sections / HTML growing** on every run ·
 `kpi_history.json` shows a stale 1d delta · **CI dies at `npm install` with a
 404** (the lockfile is gitignored, so every range resolves live — pin exactly) ·
 **docx library errors**.
 
-⚠️ **The stop-hook nags** are covered there too — including the "Unverified
-`noreply@github.com`" false positive, where the fix is to do NOTHING (amending
+**The stop-hook nags** are covered there too — including the "Unverified
+`noreply@github.com`" false positive, where the fix is to do nothing (amending
 rewrites `main`, Rule 5).
