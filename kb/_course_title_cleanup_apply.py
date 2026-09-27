@@ -37,10 +37,14 @@ import argparse
 import datetime
 import glob
 import hashlib
+import http.client
 import json
 import os
 import re
+import socket
 import sys
+import time
+import urllib.error
 import urllib.parse
 import urllib.request
 
@@ -56,16 +60,39 @@ PAGE = 1000
 INSERT_CHUNK = 100
 # PostgREST `like` narrows the read to titles holding a lead mark; _MOJI_RE decides.
 LEAD_MARKS = ("Ã", "Â", "â")
+# A reset connection, a timeout, or a gateway 429/5xx is retried with backoff; anything else
+# (a 4xx from PostgREST) fails at once. Measured 2026-09-27: the first commit run died on one
+# "Connection reset by peer" among some 800 requests, before its first write.
+ATTEMPTS = 5
+TRANSIENT_HTTP = {429, 500, 502, 503, 504}
 
 
 class Rest:
     """The PostgREST calls this script makes, against chatbox_college_courses only."""
 
-    def __init__(self, url, key):
+    def __init__(self, url, key, sleep=time.sleep):
         self.base = url.rstrip("/") + "/rest/v1/" + TABLE
         self.key = key
+        self.sleep = sleep
+        self.retried = False
 
     def _call(self, method, params, body=None, prefer=None, rng=None):
+        """_send, retried on a transient failure; `retried` says whether the last call was."""
+        self.retried = False
+        for attempt in range(ATTEMPTS):
+            try:
+                return self._send(method, params, body, prefer, rng)
+            except urllib.error.HTTPError as e:
+                if e.code not in TRANSIENT_HTTP or attempt == ATTEMPTS - 1:
+                    raise
+            except (urllib.error.URLError, http.client.HTTPException, ConnectionError,
+                    socket.timeout, TimeoutError):
+                if attempt == ATTEMPTS - 1:
+                    raise
+            self.retried = True
+            self.sleep(2 ** attempt)
+
+    def _send(self, method, params, body=None, prefer=None, rng=None):
         qs = urllib.parse.urlencode(params, safe='(),."*', quote_via=urllib.parse.quote)
         headers = {"apikey": self.key, "Authorization": "Bearer " + self.key,
                    "Accept": "application/json"}
@@ -101,9 +128,15 @@ class Rest:
 
     def remove(self, row):
         """Delete one row, guarded on its id and its title as read. Returns what was deleted."""
-        return self._call("DELETE", {"id": "eq.%d" % row["id"],
-                                     "course_title": "eq." + row["course_title"]},
-                          prefer="return=representation")
+        got = self._call("DELETE", {"id": "eq.%d" % row["id"],
+                                    "course_title": "eq." + row["course_title"]},
+                         prefer="return=representation")
+        if not got and self.retried:
+            # A retried delete that finds nothing may mean the first attempt removed the row
+            # and its response was lost. The row's absence by id is the evidence.
+            if not self._call("GET", {"select": "id", "id": "eq.%d" % row["id"]}):
+                return [dict(row)]
+        return got
 
     def present(self, row):
         """Rows already holding this image's id, or its unique key."""

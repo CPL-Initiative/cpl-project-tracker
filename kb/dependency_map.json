@@ -14345,7 +14345,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 225
+     "line": 258
     }
    ],
    "served": false,
@@ -17530,7 +17530,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 65
+     "line": 74
     },
     {
      "id": "script:kb/_sync_college_courses.py",
