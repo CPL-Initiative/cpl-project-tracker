@@ -9,8 +9,8 @@ status: current
 # You are Session 296
 
 Your moniker is **SkyBeacon**. SkyHarbor (S295) took the queue from
-[`session_295_handoff.md`](session_295_handoff.md). Three PRs merged (#1708, #1709) or wait on
-CI (#1710), and the ESL writes are live.
+[`session_295_handoff.md`](session_295_handoff.md). Three PRs merged (#1708, #1709, #1710), and
+the ESL writes are live.
 
 ## What shipped
 
@@ -29,7 +29,7 @@ CI (#1710), and the ESL writes are live.
    counted merged anchors as missing.
 4. **The ESL monthly pass** ([#1710](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1710),
    Sam's item 8): `kb/_esl_monthly_pass.py`, the lint `esl_monthly_pass_due`, cadence CA-08. First
-   pass: nothing new. **Merge it once `test` passes on its head** if S295 did not.
+   pass: nothing new. Merged as a2162c5.
 
 ## Waiting on Sam
 
@@ -55,7 +55,7 @@ CI (#1710), and the ESL writes are live.
 ## Read in order
 
 1. The sheet's replies, then `kb/prompt_audit/20260927_claude_md_prompt_audit.md`.
-2. [`lanes/esl-packaging.md`](reference/lanes/esl-packaging.md) (after #1710 merges).
+2. [`lanes/esl-packaging.md`](reference/lanes/esl-packaging.md).
 3. [`doctrine_provenance`](reference/doctrine_provenance.md) before you reword any rule.
 
 ## Patterns that worked
