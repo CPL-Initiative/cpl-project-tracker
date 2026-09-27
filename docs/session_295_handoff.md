@@ -12,7 +12,7 @@ Your moniker is **SkyHarbor**. SkyCadence (S294) took the queue from
 [`session_293_handoff.md`](session_293_handoff.md) and, on Sam's one-word
 instruction **"Automate"** (2026-09-26), worked it without stopping for
 check-ins: end a turn only at a real wait, with a scheduled wake to resume.
-Three PRs merged: #1701, #1702, #1703.
+Four PRs merged: #1701, #1702, #1703, #1704.
 
 ## What shipped
 
@@ -31,7 +31,7 @@ Three PRs merged: #1701, #1702, #1703.
    https://claude.ai/artifact/LaZmu7NYj11DigAEbxsUMS, built by
    `kb/_build_esl_merging_decision_sheet.py`. Sam completed it the same day, all
    nine as proposed. S294 shipped the reader fixes and the ladder tests, and built
-   the data paste (see *Waiting on Sam*).
+   the data paste ([#1704](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1704); see *Waiting on Sam*).
    - **In use:** the level reader and its three misreads; the Beginning default (102 catalog re-levels); purpose before level, with 18 healthcare courses sitting in level groups; transfer composition (3 of 8 are not transfer courses).
    - **Queued:** the 92 ESL identities that arrived after the fold; the 30 re-levels the 2026-08-24 rulings clear, out of 122; the nine over-claims, where his 08-24 ruling and a 09-22 default disagree; a monthly pass; the film course FTVE M1018 inside Enrichment.
    - It retired the standing open-asks sheet's four ESL cards, which re-asked questions settled on 2026-08-24.
@@ -50,11 +50,13 @@ Three PRs merged: #1701, #1702, #1703.
   - A good run shows `esl-catalog` 6 · `esl-health` 18 · `esl-ladder` 30 · `esl-newfold` 89 · `esl-transfer` 3. Once it has run, resolve his Complete comment on the sheet (thread `ecbd0076`), and let the daily cron publish.
   - **If the counts come up short:** each UPDATE is guarded on the row's value and cohort, so a short count means a curator moved that row after the 19:40 UTC read. Compare the plan against a fresh read; never force a row.
 
+- **The ESL follow-up sheet**, two cards: https://claude.ai/artifact/PaozKqfruMT3hZ93vcg5gr. `ESOL M9309`, a noncredit composition course, and the two *Optical Technician* rows, held out of the fold. Read its `replies` store and `replies/done` before acting on either.
+
 ## The queue, in Sam's order
 
 1. **The narrated video:** built, waiting on his OK. The refinement he may ask for next is to cue each reveal to the word that names it. The layout carries cue times, but today `ft()` stretches each scene uniformly.
 2. **ESL:** verify the paste (above), then take up what stays open:
-   - the six held identities: transfer composition is unruled, and the two *Optical Technician* rows belong outside ESL;
+   - the follow-up sheet's two cards, once answered. Their writes travel as a paste, like the first. Item 4 already keeps the five transfer composition identities apart, `M1205` and `M1239` among them;
    - item 8, the monthly pass. `kb/_esl_new_identities_dryrun.py` is the pass. Scheduling it is a new standing cadence, so it waits until the paste lands.
 
    Then the Jev CCR's misfit ruling (nest or cross-list, [handoff 283](session_283_handoff.md) "first sitting") and its next rung.
@@ -63,7 +65,7 @@ Three PRs merged: #1701, #1702, #1703.
 
 ## Read in order
 
-1. The cohort count above, then `kb/esl_sheet_out/2026-09-26/plan.json`.
+1. The cohort count above, then `kb/esl_sheet_out/2026-09-26/plan.json`, then the follow-up sheet's `replies` store.
 2. [`lanes/esl-packaging.md`](reference/lanes/esl-packaging.md).
 3. `prototype/funding_video/README.md`, *The narrated draft*.
 4. [`lanes/implementation-funding.md`](reference/lanes/implementation-funding.md), the video paragraph.
@@ -74,6 +76,7 @@ Three PRs merged: #1701, #1702, #1703.
 - **Verify an agent's inventory before it reaches a sheet.** It said 84 renamed Z ids; the alias map says 91. It said 46 staged re-levels; the actionable file carries no such count.
 - **Resolve stored ids through `kb/alias_chain.py` (Rule 7).** 428 of the 2026-07-15 plan's ids were re-keyed since.
 - **`kb/_build_dependency_map.py` reads the git index.** Rebuild it after `git add` of new files, or `check_generated.sh` reads it as stale.
+- **`cpl_memory` rows:** five written and one superseded, all logged (receipt `kb/receipts/cpl_memory_2026-09-26_s294.sql`). The first send failed on `cpl_memory_summary_check` (one sentence, at most 400 characters) and wrote nothing.
 - **Loudness is measured, not assumed.** The narrated mix came out 5 dB under the introductions until `loudnorm` joined `render.sh`.
 
 ## Safety patterns
