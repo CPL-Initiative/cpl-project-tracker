@@ -8,7 +8,7 @@
       "id": "s296-sam-funding-sheet",
       "for": "Sam",
       "tab": "implementation-funding",
-      "text": "Four funding questions wait on a fresh sheet: https://claude.ai/artifact/74AfMNmXPQYP5X7XKpjHfH. The Annual view's percent, the request to Pedro for CollegeID2, the last three sections of the tab review, and the explainer's footer. Each choice saves as you make it; press Complete when done."
+      "text": "Two funding questions still wait on the sheet: https://claude.ai/artifact/74AfMNmXPQYP5X7XKpjHfH, cards 3 and 4 (the last three sections of your tab review, and the explainer's footer). Your answers on cards 1 and 2 are recorded. Pick up at card 3; each choice saves as you make it."
     },
     {
       "id": "s296-sam-gr-rows-on-tab",
@@ -111,6 +111,12 @@
       "for": "Fable",
       "tab": "implementation-funding",
       "text": "Two lines on the funding tab contradict rulings Sam already made: the 2025-26 view's partial state says fewer than 5 students where the cutoff is 10 (the under-10 ADR), and the timeline's code default still reads Rolled to Year 2 and Releveled (his no-releveling ruling of 25 September). Correct both, with a test."
+    },
+    {
+      "id": "s296-fable-annual-percent-year",
+      "for": "Fable",
+      "tab": "implementation-funding",
+      "text": "Under Annual funding, set the viewed year's qualifying figure against that year's max award in the Max award cell, so its percent stays at or under 100%, Sam's call of 27 September (funding asks card 1). The model already computes ey1 and ey2; add a jsdom test, then drop cards 1 and 2 from the sheet builder at its next rebuild."
     }
   ],
   "_deferred": [
