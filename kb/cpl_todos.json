@@ -2,7 +2,7 @@
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-27",
   "_session": "S295 SkyHarbor",
-  "_status": "The ESL sheets are applied (147 + 2 rows, six cohorts read back) and the monthly pass is built. CLAUDE.md is cleaned without changing a rule, and eight calls wait on the CLAUDE.md Cleanup sheet. Main's lints were red after the curation change reached the nightly sync; #1709 fixed both causes.",
+  "_status": "The ESL changes are live and the monthly pass is built. Sam's eight CLAUDE.md verdicts landed the same day, and the context warning now installs at the start of every cloud session. The standing decision sheet is fresh: seven answers from 22 September were already rulings, and two of them contradicted what Sam said in August, so the new sheet asks which stands.",
   "items": [
     {
       "id": "s295-sam-open-asks-sheet",
@@ -203,12 +203,6 @@
       "for": "Fable",
       "tab": "chatbot",
       "text": "One of our search files points at a test file that has never existed. The exhibit search names chatbox/verify_search_exhibits_v2.sql as the thing that proves it works, and git shows it was never written or deleted. Either write it or remove the claim — a pointer to nothing is worse than no pointer."
-    },
-    {
-      "id": "s266-sam-asccc-areas",
-      "for": "Sam",
-      "tab": "my-college",
-      "text": "Send the Academic Senate (ASCCC) area roster — which college sits in which area. Every Supabase column matching area, senate, asccc, zone or region was searched and none carries them. Strong Workforce regions are already solved."
     },
     {
       "id": "s266-fable-matcher-vocabulary",

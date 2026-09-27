@@ -544,3 +544,34 @@ tracker reader cannot see) and it is the cheaper side of the trade.
   settings never load in a three-repo session.
 - **Emphasis is Sam's dial.** 42 ⚠️ and about 240 capitalized words blur which rules failed twice, but
   he asked for the checkpoint rule to stand out on 2026-09-09, so the sweep is a card, not an edit.
+
+## 2026-09-27 (later) — Session 295 (SkyHarbor): the eight verdicts carried out, and a standing sheet that asked settled questions
+
+- **Sam took all eight cards as proposed, and all eight landed the same day**, one pull request per
+  repository with the emphasis sweep on its own: tracker #1712 (cards 1–3, card 8's checkpoint step) and
+  #1713 (card 6); vault #185 (cards 4, 7, 8) and #186 (card 6's headings); cpl-knowledge-base #23 (card 5),
+  left for his merge as #17 was.
+- **Card 1: the meter reaches the session root.** `install_prompt_guards.py` writes it as a PostToolUse
+  block, and `check_hooks_live.py --fix` adds it alone (`--meter-only`) to a root whose guards are live. The
+  meter grants nothing, so that repair may run on a healthy root; the guards and the allow list still wait
+  for the snapshot rebuild, and the test pins that the repair never widens the allow list (mutation-checked
+  both ways). The next session's opening LIVE line is the first live proof: it should read
+  `context meter: yes`.
+- **The sweep kept the marks on five rules and moved 114 phrases to sentence case.** The doctrine lints
+  read `CLAUDE.md` case-insensitively and key on bullet structure, so they needed no change; the loss audit
+  found only the two heading qualifiers gone.
+- **The standing open-asks sheet had been asking settled questions for five days.** Card 2's fresh
+  `SHEET_ID` step unblocked its rebuild, and reading the old store first showed seven of its ten cards
+  answered on 2026-09-22 under the high-water rule. Their lanes still read NEEDS SAM, and the coverage audit
+  demands a card for every marker. Four were the military questions Sam answered on 2026-08-14, which that
+  lane never recorded; on two of them the September proposals contradicted his August words, and his
+  untouched defaults let them through. The fresh sheet (https://claude.ai/artifact/5sWY4QCCDfkAegZtZrW1oe,
+  #1714) asks which answer stands, with August proposed, plus the advice he asked for, the three cards he
+  never reached, the narrated draft and the knowledge base's merge.
+- ⭐ **A ruling changes the machinery that asks, in the same change.** A verdict recorded in a chat, a store
+  or a scope doc leaves the lane's marker in place, and the marker re-asks.
+  [`methodology-a-settled-ruling-does-not-enforce-itself`](kb-notes/methodology-a-settled-ruling-does-not-enforce-itself.md)
+  carries the general form.
+- **`lane_retirement_signal` learned the `## Next` heading.** Once the cross-list lane's two NEEDS SAM cells
+  were ruled, its list of four open items read as quiet. The vocabulary grows only by re-reading the file
+  the lint got wrong.

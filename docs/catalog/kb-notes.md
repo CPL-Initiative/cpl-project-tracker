@@ -179,7 +179,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A second look shown the verdict rubber-stamps it — ask the negative instead](../kb-notes/methodology-a-second-look-shown-the-verdict-rubber-stamps-it.md) | methodology | published | 2026-09-21 | 2026-09-21 |
 | [A second PR stacked on a just-merged branch can squash to an empty commit — verify main](../kb-notes/methodology-stacked-pr-empty-squash.md) | methodology | published | 2026-06-23 | 2026-06-23 |
 | [A self-contained injected component must paint its own canvas, not just its text](../kb-notes/methodology-self-contained-injected-component-styling.md) | methodology | published | 2026-06-02 | 2026-06-02 |
-| [A settled ruling does not enforce itself — the consumer has to change](../kb-notes/methodology-a-settled-ruling-does-not-enforce-itself.md) | methodology | published | 2026-08-13 | 2026-08-13 |
+| [A settled ruling does not enforce itself — the consumer has to change](../kb-notes/methodology-a-settled-ruling-does-not-enforce-itself.md) | methodology | published | 2026-08-13 | 2026-09-27 |
 | [A share is not a fact until you have measured the whole](../kb-notes/methodology-a-share-is-not-a-fact-until-you-have-measured-the-whole.md) | methodology | published | 2026-09-11 | 2026-09-11 |
 | [A shared credential can only scope to a surface that is exclusive to its group](../kb-notes/methodology-a-shared-credential-can-only-scope-to-an-exclusive-surface.md) | methodology | published | 2026-08-12 | 2026-08-12 |
 | [A silent input cap is a content swap, and the model fills the vacuum with its own instructions](../kb-notes/methodology-a-silent-input-cap-is-a-content-swap.md) | methodology | published | 2026-08-24 | 2026-08-24 |

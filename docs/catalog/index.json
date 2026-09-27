@@ -3218,7 +3218,7 @@
      ],
      "title": "A settled ruling does not enforce itself \u2014 the consumer has to change",
      "type": "methodology",
-     "updated": "2026-08-13"
+     "updated": "2026-09-27"
     },
     {
      "created": "2026-09-11",
@@ -14272,10 +14272,11 @@
      "tags": [
       "handoff",
       "doctrine",
+      "decision-sheets",
       "esl-packaging",
-      "ci"
+      "hooks"
      ],
-     "title": "the ESL apply, the CLAUDE.md prompt audit, and main's lints",
+     "title": "the CLAUDE.md verdicts carried out, and a fresh standing sheet",
      "type": null,
      "updated": ""
     },

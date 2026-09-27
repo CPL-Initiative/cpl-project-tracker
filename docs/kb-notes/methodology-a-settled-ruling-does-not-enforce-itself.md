@@ -1,13 +1,14 @@
 ---
 title: A settled ruling does not enforce itself — the consumer has to change
 created: 2026-08-13
-updated: 2026-08-13
+updated: 2026-09-27
 kb-status: published
 tags: [methodology, memory, governance, data-quality, process, cpl-memory, pitfall]
 obsidian-folder: cpl-project-tracker
 related:
   - "[[docs/sierra_credit_recs_lessons]]"
   - "[[docs/kb-notes/playbook-cpl-memory-auto-write-at-checkpoint]]"
+  - "[[docs/reference/decision_sheets]]"
 ---
 
 # A settled ruling does not enforce itself — the consumer has to change
@@ -110,3 +111,25 @@ anything we just changed that would cause you to miss the checkpoint rule?"*
 Nothing in CI could have caught it — `--check` guards the file's CONTENT, and
 no guard reads prose for claims about a mechanism. This class stays human-caught
 until a doctrine linter exists (`doctrine-is-indexed-to-files-but-was-unqueryable`).
+
+## A consumer that asks: the standing decision sheet (2026-09-27, Session 295)
+
+The open-asks builder (`kb/_build_open_asks_decision_sheet.py`) is a consumer of
+rulings too. It reads every lane file for a NEEDS-SAM marker and refuses to build
+without a card for each one, so a ruling recorded anywhere but the marker leaves the
+question open to the machinery that asks.
+
+On 2026-08-14 Sam answered the four military CR questions. The scope doc recorded the
+answers; the lane's marker still read *"NEEDS SAM (4 questions)"*. On 2026-09-22 the
+standing sheet asked all four again, with proposals written fresh by a session that
+never saw August, and two of them contradicted him. He completed that sheet past
+them, and under his high-water rule an untouched card at or below his last input
+reads as agreement. So the September proposals became rulings that reversed his
+August words without anyone deciding to. Five days later seven answered cards still
+sat on the sheet for the same reason.
+
+⭐ **Record a ruling where the next ask would come from.** Remove the marker in the
+change that records the verdict. When a card has to ask again, put the earlier answer
+on the card: an untouched default on a card that never showed the decider his own
+earlier words is weaker evidence than those words, and a human-sourced ruling is not
+superseded by an inference (Rule 8).
