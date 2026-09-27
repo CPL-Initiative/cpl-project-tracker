@@ -86,21 +86,21 @@ handled. `cross_listing_group` sits on the CCR seed (`kb/common_courses.json`).
 |---|---|---|
 | 1 | the four-kind frame | ✅ recorded here |
 | 2 | a 1-2 char subject code never decides a discipline | ✅ **landed** #1653 — `discipline_for_modal()` + `mint_token()` in `kb/_seed_coci_minted_mids.py`, `tests/mid_short_code_gate_test.py` |
-| 3 | re-mint the 31 mis-prefixed ETHS identities | ⛔ **NEEDS SAM** — changes stored data under the playbook |
+| 3 | re-mint the 31 mis-prefixed ETHS identities | **ruled: re-mint** (open-asks sheet card 1, 2026-09-22) — run it under the playbook |
 | 4 | alias Kinesiology / Physical Education | open — **smaller than the sheet implied**, see below |
 | 5 | nest the specializations on the vocabulary | open |
 | 6 | cross-list kind C through `xdisc` | open — waits on 1, 5, 7 |
 | 7 | one primary for counting | ✅ recorded here |
 | 8 | a cross-list never re-mints | ✅ recorded here |
 | 9 | the orphan-parent worklist | ✅ **landed** #1655 — `kb/orphan_parent_worklist.json` |
-| 10 | who may add a cross-list | ⛔ **NEEDS SAM** — a new write surface, Rule 10(a3) routes it through Governance |
+| 10 | who may add a cross-list | **ruled: sessions first** (open-asks sheet card 2, 2026-09-22) — sessions write under a cohort receipt; curators after Governance maps a surface, Rule 10(a3) |
 | 11 | KIN/PE/ATHL C-ID and CCN fallout | ✅ **landed** #1654 — [`reference-kin-pe-athl-identifier-fallout`](../../kb-notes/reference-kin-pe-athl-identifier-fallout.md) |
 | 12 | the first sitting: 50 from kind C | open — waits on 1 through 7 |
 
 ⚠️ **Sam pressed Complete with NOTHING individually ruled** — `ruled: 0,
 as_proposed: 12, through: null`. Under opt-out the twelve proposals are handed
-over and none of them is a ruling, which is why 3 and 10 are held: one changes
-stored data, the other is a decision-rights change.
+over and none of them is a ruling. Items 3 and 10 went on to the standing
+open-asks sheet, where both are ruled (below).
 
 ## ⚠️ Item 4 is one map entry, not 107 rows
 
@@ -122,18 +122,20 @@ disagrees with the row's own mapping. Both senses are genuinely present
 cannot be resolved without reading the title.
 
 Item 2's gate stops FUTURE mints from repeating it. **The existing 31 stay wrong
-until item 3 is ruled.**
+until item 3's re-mint runs.**
 
-## The two held items are on the standing sheet
+## Items 3 and 10 are ruled
 
-Sam's 2026-09-22 rule — *"Always give me a decision sheet for any outstanding
-items for me..."* — means items **3** and **10** no longer wait in this file to be
-noticed. They are items 1 and 2 of [the standing open-asks sheet](https://claude.ai/artifact/FTEhLfMxhRfv4YH6DGSPhn),
-beside nineteen others gathered from eight more lanes. Answering either means
-editing both: this file states current truth, the sheet stops asking.
+Items **3** and **10** were cards 1 and 2 of [the 2026-09-22 open-asks sheet](https://claude.ai/artifact/FTEhLfMxhRfv4YH6DGSPhn).
+Sam completed it that day with his last input on card 18, and under his
+high-water rule (*"the last item showing some sort of input is an indicator that
+everything prior to it is good to go as is"*) both stand as proposed: re-mint the
+31 under the playbook, and sessions write cross-lists under a cohort receipt until
+Governance maps a curator surface. Read from the sheet's store on 2026-09-27; the
+lane recorded neither for five days, which kept both on the standing sheet.
 
 ## Next
 
-1. Sam's word on 3 and 10.
+1. Item 3's re-mint, under [`coursecontrolnumber_remint`](../../coursecontrolnumber_remint.md): dry run, alias map, `kb/promotions.json` re-key, one cron window.
 2. Items 5 and 4 — both vocabulary edits, and 5 is what item 6 sits on.
 3. Item 6, then the item-12 sitting at 50 rows from kind C.

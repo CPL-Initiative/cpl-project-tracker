@@ -24,7 +24,7 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BUILDER = os.path.join(ROOT, "kb", "_build_open_asks_decision_sheet.py")
-SHEET = os.path.join(ROOT, "docs", "visuals", "2026-09-22-open-asks.html")
+SHEET = os.path.join(ROOT, "docs", "visuals", "2026-09-27-open-asks.html")
 
 results = []
 

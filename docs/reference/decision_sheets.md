@@ -296,8 +296,11 @@ anything waiting on him belongs on it, and it is rebuilt and handed over rather
 than held back for a quorum.
 
 **Builder:** `kb/_build_open_asks_decision_sheet.py` →
-`docs/visuals/2026-09-22-open-asks.html`
-→ published at https://claude.ai/artifact/FTEhLfMxhRfv4YH6DGSPhn
+`docs/visuals/2026-09-27-open-asks.html`
+→ published at https://claude.ai/artifact/5sWY4QCCDfkAegZtZrW1oe (`SHEET_ID`
+`2026-09-27-open-asks`, a fresh store). The 2026-09-22 sheet,
+https://claude.ai/artifact/FTEhLfMxhRfv4YH6DGSPhn, keeps Sam's answers of that
+day; never republish onto it.
 **Guard:** `tests/open_asks_sheet_coverage_test.py` (24 checks).
 
 ⚠️ **A REPLY IS KEYED TO THE CARD'S POSITION, SO A BUILDER THAT DROPS CARDS MUST
@@ -309,9 +312,19 @@ standing sheet was published with 21 cards, Sam answered all 21 (Complete,
 reply stored for the old card 11 (the light surface tints), and so on down the
 sheet. Only card 7 still lines up. **Before republishing any sheet whose card
 count or order changed, start a fresh `SHEET_ID` and artifact, or migrate the
-store by title.** Until then new asks ride their own sheet: the funding lane's
-four are at https://claude.ai/artifact/9MfbN6jqio8as9mY4LwPB2
-(`kb/_build_funding_review_decision_sheet.py`), named in `NO_OPEN_ASK`.
+store by title.** The standing sheet took a fresh one on 2026-09-27 (S295).
+
+⚠️ **A RULING LEAVES THE SHEET IN THE SAME CHANGE THAT RECORDS IT IN ITS LANE
+(measured 2026-09-27, S295).** Five days after Sam completed the 2026-09-22 sheet
+through card 18, the builder still carried seven cards at or below that mark as
+open asks: their lanes still read NEEDS SAM, and the coverage audit demands a
+card for every marker. Four of the seven, the military questions of the scope's
+§10, had also been answered on 2026-08-14, and the lane never recorded August
+either. On two of them the 09-22 proposals contradicted his August answers, and
+his untouched defaults let them through. The fresh sheet asks which answer
+stands, with August proposed: his explicit words outrank an untouched default on
+a card that never showed him his earlier answer (Rule 8). When a verdict lands,
+record it in the lane, remove the marker and drop the card in one pull request.
 
 ### Why it audits itself
 

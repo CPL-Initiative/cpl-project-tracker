@@ -4,7 +4,7 @@
   "supabase_tables": 85,
   "rpcs": 31,
   "edge_functions": 5,
-  "file_datasets": 533,
+  "file_datasets": 534,
   "external_services": 147,
   "consumers": 376,
   "workflows": 36,
@@ -555,6 +555,13 @@
      "direction": "read",
      "how": "url",
      "line": 32
+    },
+    {
+     "id": "script:kb/_build_open_asks_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 34
     },
     {
      "id": "script:kb/_esl_monthly_pass.py",
@@ -3103,7 +3110,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 132
+     "line": 144
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -4214,7 +4221,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 121
+     "line": 133
     },
     {
      "id": "script:scripts/stamp_asset_versions.py",
@@ -4561,7 +4568,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 121
+     "line": 133
     }
    ],
    "served": true,
@@ -5311,7 +5318,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 179
+     "line": 190
     }
    ],
    "served": false,
@@ -5324,7 +5331,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 189
+     "line": 197
     }
    ],
    "served": false,
@@ -5668,14 +5675,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 41
+     "line": 53
     },
     {
      "id": "script:kb/_build_open_asks_decision_sheet.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 41
+     "line": 53
     }
    ],
    "served": false,
@@ -6170,7 +6177,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 121
+     "line": 133
     }
    ],
    "served": true,
@@ -13615,7 +13622,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 121
+     "line": 133
     }
    ],
    "served": true,
@@ -14025,7 +14032,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 141
+     "line": 153
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -14150,6 +14157,19 @@
     }
    ],
    "served": false,
+   "main_committers": []
+  },
+  "file:prototype/funding_video/README.md": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_open_asks_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 188
+    }
+   ],
+   "served": true,
    "main_committers": []
   },
   "file:prototype/funding_video/funding_in_motion.src.html": {
@@ -16104,7 +16124,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 155
+     "line": 167
     },
     {
      "id": "script:kb/_build_orphan_parent_worklist.py",
