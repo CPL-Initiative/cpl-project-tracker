@@ -296,12 +296,13 @@ anything waiting on him belongs on it, and it is rebuilt and handed over rather
 than held back for a quorum.
 
 **Builder:** `kb/_build_open_asks_decision_sheet.py` →
-`docs/visuals/2026-09-27-open-asks.html`
-→ published at https://claude.ai/artifact/5sWY4QCCDfkAegZtZrW1oe (`SHEET_ID`
-`2026-09-27-open-asks`, a fresh store). Sam answered all eight of its cards on
-2026-09-27 (through card 8), and each ruling left with its lane's marker the same
-day, so the builder carries no cards until a lane marks a new ask: with none, it
-writes no sheet, because an empty one would read as a decision to make. The
+`docs/visuals/2026-09-27-funding-asks.html`
+→ published at https://claude.ai/artifact/74AfMNmXPQYP5X7XKpjHfH (`SHEET_ID` `2026-09-27-funding-asks`, a fresh store, four
+funding cards the lane had carried as prose). The sheet before it,
+https://claude.ai/artifact/5sWY4QCCDfkAegZtZrW1oe (`2026-09-27-open-asks`), had all
+eight cards answered on 2026-09-27 (through card 8), and each ruling left with its
+lane's marker the same day. With no marked lane, the builder writes no sheet, because
+an empty one would read as a decision to make. The
 2026-09-22 sheet, https://claude.ai/artifact/FTEhLfMxhRfv4YH6DGSPhn, keeps Sam's
 answers of that day; never republish onto either.
 **Guard:** `tests/open_asks_sheet_coverage_test.py` (26 checks). It proves the

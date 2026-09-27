@@ -59,9 +59,11 @@ points.
 
 ## Waiting on Sam
 
-Nothing on a sheet: no lane carries a NEEDS-SAM marker, so the builder writes no sheet. His on the tab: GR rows
-#2, #10 and #16 (To-Do `s296-sam-gr-rows-on-tab`). Not yet on a sheet, and they should be: the funding lane's
-unruled asks (the queue's item 2).
+**The funding asks sheet**, https://claude.ai/artifact/74AfMNmXPQYP5X7XKpjHfH (`SHEET_ID` `2026-09-27-funding-asks`,
+four cards; read `replies`, then `replies/done`, before acting): the Annual view's percent (191%), the one request
+to Pedro for CollegeID2, items 8–10 of the funding tab review, and the explainer's footer. The lane had carried
+them as prose, so no sheet asked them before. His on the tab: GR rows #2, #10 and #16 (To-Do
+`s296-sam-gr-rows-on-tab`).
 
 ## The queue, in Sam's order
 
@@ -69,10 +71,9 @@ unruled asks (the queue's item 2).
    `chatbox_college_courses`, each beside a repaired twin (`cpl_memory` `course-title-mojibake-397-twins-2026-09-27`).
    The Supabase guard denies a session's delete, so it runs as a reviewed apply workflow on the
    `esl-sheet-apply.yml` pattern, with full row images in the receipt.
-2. **The funding lane's unruled asks, marked and carded** (To-Do `s296-fable-funding-asks-to-cards`), on a fresh
-   `SHEET_ID`: the annual-view percent that can read 191%, when CollegeID2 lands, whether COBI keeps "<10" until the
-   split, the explainer's footer split, and items 8–10 of the funding tab review
-   (https://claude.ai/artifact/Ayp39ynE6Yw9cvsvQbH7eu, reviewed through 7).
+2. **The funding asks sheet's replies**, when he answers: carry each out, and record it in the funding lane **in the
+   same PR that drops the marker**. The "<10" question is already his ruling (the under-10 ADR, 2026-09-03), so it
+   has no card. The two text fixes his rulings already require are To-Do `s296-fable-funding-text-fixes`.
 3. **The rulings waiting on sessions:** the ETHS re-mint of 31 identities under
    `docs/coursecontrolnumber_remint.md` (To-Do `s295-fable-eths-remint`), and SkyView's phone opening
    (measure at 390px through the `npm run a11y` harness first).

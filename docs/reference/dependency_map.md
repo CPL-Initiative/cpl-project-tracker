@@ -334,6 +334,8 @@ collapse to one `<date>` family so writer and reader edges join.
 | `docs/INDEX.md` | scripts: `kb/_build_docs_index.py`, `kb/_docs_audit.py`, `kb/doctrine.py` | — |
 | `docs/catalog/index.json` | tabs: `governance` · scripts: `kb/_build_docs_index.py` | — |
 | `docs/common_cr_reference_scope.md` | scripts: `kb/_build_cr_reference.py` | — |
+| `docs/cpl_funding_lessons_archive.md` | scripts: `kb/_build_open_asks_decision_sheet.py` | — |
+| `docs/reference/lanes/implementation-funding.md` | scripts: `kb/_build_open_asks_decision_sheet.py` | — |
 | `docs/reference/mid_lifecycle.md` | scripts: `kb/_doctrine_scenarios.py` | — |
 | `docs/reference/statute/README.md` | scripts: `kb/_doctrine_scenarios.py` | — |
 | `docs/reference/statute/t5_55050_55051_final_reg_text_<date>.txt` | scripts: `kb/_derive_55050_clean.py` | — |
@@ -348,12 +350,12 @@ collapse to one `<date>` family so writer and reader edges join.
 | `docs/visuals/<date>-esl-followup.html` | scripts: `kb/_build_esl_followup_decision_sheet.py` | scripts: `kb/_build_esl_followup_decision_sheet.py` |
 | `docs/visuals/<date>-esl-merging-procedure.html` | scripts: `kb/_build_esl_merging_decision_sheet.py` | scripts: `kb/_build_esl_merging_decision_sheet.py` |
 | `docs/visuals/<date>-evening-asks.html` | scripts: `kb/_build_evening_asks_sheet.py` | scripts: `kb/_build_evening_asks_sheet.py` |
+| `docs/visuals/<date>-funding-asks.html` | scripts: `kb/_build_open_asks_decision_sheet.py` | scripts: `kb/_build_open_asks_decision_sheet.py` |
 | `docs/visuals/<date>-funding-review.html` | scripts: `kb/_build_funding_review_decision_sheet.py` | scripts: `kb/_build_funding_review_decision_sheet.py` |
 | `docs/visuals/<date>-funding-scenario-3.html` | scripts: `kb/_build_funding_scenario3_decision_sheet.py` | scripts: `kb/_build_funding_scenario3_decision_sheet.py` |
 | `docs/visuals/<date>-grants-and-max-award.html` | scripts: `kb/_build_grants_decision_sheet.py` | scripts: `kb/_build_grants_decision_sheet.py` |
 | `docs/visuals/<date>-jev-ladder.html` | scripts: `kb/_build_jev_ladder_sheet.py` | scripts: `kb/_build_jev_ladder_sheet.py` |
 | `docs/visuals/<date>-memory-audit-verdicts.html` | scripts: `kb/memory_audit/2026-09-05-sheet_builder.py` | scripts: `kb/memory_audit/2026-09-05-sheet_builder.py` |
-| `docs/visuals/<date>-open-asks.html` | scripts: `kb/_build_open_asks_decision_sheet.py` | scripts: `kb/_build_open_asks_decision_sheet.py` |
 | `docx.min.js` | tabs: `annual-report`, `college-briefing`, `implementation-funding` · modules: `master_report.js` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py` | — |
 | `excel_to_dashboard.py` | workflows: `daily-dashboard.yml` | — |
 | `exports/20260826_T5_55050_Article9_Conformity_TrackedChanges_v5.docx` | none found | scripts: `kb/_build_55050_redline_docx.py`, `kb/_verify_55050_redline.py` |
@@ -933,5 +935,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 531 file
+Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 533 file
 datasets · 147 external services · 376 consumers · 36 workflows · 37 tabs.
