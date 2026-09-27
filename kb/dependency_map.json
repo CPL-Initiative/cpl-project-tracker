@@ -4,9 +4,9 @@
   "supabase_tables": 85,
   "rpcs": 31,
   "edge_functions": 5,
-  "file_datasets": 532,
+  "file_datasets": 533,
   "external_services": 147,
-  "consumers": 374,
+  "consumers": 375,
   "workflows": 36,
   "data_js_files": 61,
   "tabs": 37
@@ -534,6 +534,13 @@
      "tabs": [
       "admin"
      ]
+    },
+    {
+     "id": "script:kb/_build_claude_md_audit_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 12
     },
     {
      "id": "script:kb/_build_esl_followup_decision_sheet.py",
@@ -5429,6 +5436,26 @@
      "direction": "write",
      "how": "literal",
      "line": 38
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:docs/visuals/<date>-claude-md-audit.html": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_claude_md_audit_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 25
+    },
+    {
+     "id": "script:kb/_build_claude_md_audit_decision_sheet.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 25
     }
    ],
    "served": false,

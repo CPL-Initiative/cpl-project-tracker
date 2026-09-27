@@ -8,8 +8,7 @@ pays whether or not it turns out to be relevant.
 
 > **PUSH what a session cannot know to ask for. PULL everything else.**
 
-That single test decides where anything goes, and it is the reason this file
-went from 151 KB to under budget on 2026-08-28 without losing a byte:
+That single test decides where anything goes:
 
 - **PUSH — belongs here.** A rule that must fire *unprompted*, before you know
   you need it. *"Never force-push `main`"* cannot live in a queryable store:
@@ -20,8 +19,7 @@ went from 151 KB to under budget on 2026-08-28 without losing a byte:
   Anything you know you have a question about. *"What is the state of the
   funding lane"* is a question you arrive with — so §11 carries a one-line
   pointer per lane and the state lives in
-  [`docs/reference/lanes/`](docs/reference/lanes/). That was **62% of this
-  file**.
+  [`docs/reference/lanes/`](docs/reference/lanes/).
 
 ⚠️ **Doctrine must never be relocated into `cpl_memory`.** Its briefing budget
 is 17,951 chars against ~85,500 of verified rows — **about 21% fits** — so a
@@ -38,7 +36,9 @@ kb_build_status · mid_lifecycle · troubleshooting · obsidian_vault_wiring ·
 finished_workstreams · skyview_invariants · live_session_banner ·
 [approval_prompt_hooks](docs/reference/approval_prompt_hooks.md) (the
 Allow-Once storm; ⛔ Sam, 2026-09-24: **do not work on it** — budget SQL in
-prompts and fold statements into as few `execute_sql` calls as possible) · `lanes/` (stubs below).
+prompts and fold statements into as few `execute_sql` calls as possible) ·
+[doctrine_provenance](docs/reference/doctrine_provenance.md) (the incidents and
+measurements behind these rules) · `lanes/` (stubs below).
 
 **Skills** (`.claude/skills/`) are pull-side too, fired by their own
 `description` rather than by a pointer: **consult-doctrine** (what this repo has
@@ -109,13 +109,11 @@ nobody finds; `unreferenced_offload` flags any that stop being.
    THE LIVE SET — and never restate the chain (Sam's ruling 8, 2026-09-05).**
    PUSH because it fires *before* you know you need it: an id-keyed file read
    with a direct lookup does not error, it just reports dead rows that are
-   alive. Measured 2026-09-05 — welding CR ids read 44% dead directly and **27%**
-   through the chain; articulation identities 36% vs **22%**. `kb/alias_chain.py`
-   holds the one `ALIAS_MAPS`, the one `resolve` (a map is a *simultaneous
-   permutation*: one lookup per map, in order, never iterated within a map) and
-   the one era guard; import them, never copy them. The chain was copy-pasted
-   once and the copy drifted to 7 maps against 15 under a comment promising
-   lockstep — `tests/alias_chain_single_source_test.py` fails that now.
+   alive (measured 2026-09-05: welding CR ids read 44% dead directly, **27%**
+   through the chain). `kb/alias_chain.py` holds the one `ALIAS_MAPS`, the one
+   `resolve` (a map is a *simultaneous permutation*: one lookup per map, in
+   order, never iterated within a map) and the one era guard; import them, never
+   copy them — `tests/alias_chain_single_source_test.py` fails a copy.
 
    **TOP caveat — standing rule (2026-07-16).** TOP codes are faculty-entered
    in COCI during local curriculum approval with **no data-entry gatekeeper**,
@@ -136,9 +134,8 @@ nobody finds; `unreferenced_offload` flags any that stop being.
    (Sam, 2026-09-25) but labels the program, not its courses — never vote a
    course's field from its programs; course CIP corroborates until it fills in.
 
-8. **READ the memory table BEFORE you work — Rule 8 had no query step until
-   2026-08-10.** The very first thing a session does on a workstream, before
-   reading the handoff and before touching code:
+8. **READ the memory table BEFORE you work.** The very first thing a session
+   does on a workstream, before reading the handoff and before touching code:
 
    ```sql
    select slug, title, summary, status, event_date from cpl_memory
@@ -147,13 +144,8 @@ nobody finds; `unreferenced_offload` flags any that stop being.
    order by event_date desc nulls last limit 40;
    ```
 
-   ⚠️ **This exists because a session re-derived THREE settled facts in one run
-   (2026-08-10) while the answers sat in `cpl_memory` unread** — the `Student`
-   grouping counter, the MAP-student-id privacy constraint, and that 537k rows had
-   already been assessed. It wrote 8 rows that day and queried the table **zero**
-   times. The playbook is literally named *auto-write-at-checkpoint*; nothing ever
-   said read. Sam's own framing applies: Rule 8 is **ingest**, sessions are
-   **query** — and the memory table only ever got the ingest half.
+   Skipping it re-derives facts the table already holds (2026-08-10: three in
+   one run). Sam's framing: Rule 8 is **ingest**, sessions are **query**.
 
    **Also: a row whose `source` or `verified_by` names a HUMAN may not be silently
    superseded by a session's inference.** On 2026-08-08 Sam said *"Sierra only
@@ -170,28 +162,19 @@ nobody finds; `unreferenced_offload` flags any that stop being.
    accretes). READ-ONLY, ~2s, writes `kb/docs_audit/<date>.md`. Act on what it
    flags **in scope for this run**. Rationale + the vault-weight finding:
    [`docs/kb-notes/methodology-a-knowledge-base-needs-a-lint-pass.md`](docs/kb-notes/methodology-a-knowledge-base-needs-a-lint-pass.md).
-   ⚠️ **THE TRIGGER WAS UNREACHABLE WITHOUT A CHECKPOINT — Sam, 2026-09-09:
-   *"you have not prompted me for a checkpoint per our rules… the rule has been
-   demoted or is now buried."*** `checkpoint_overdue` is computed ONLY by the
-   lint, and the only instruction to run the lint is step 0 of `/checkpoint`, so
-   the signal that you are overdue fired only once you were already
-   checkpointing. It is two git commands — run them at session start, after a
-   long stretch, and before any sign-off, and **RUN `/checkpoint` above 6** —
-   run it, never offer it (his later ruling, same day):
+   **The trigger is a commit count.** The lint's `checkpoint_overdue` runs only
+   inside `/checkpoint`, so it cannot prompt one. Run these two git commands at
+   session start, after a long stretch, and before any sign-off, and **RUN
+   `/checkpoint` above 6** — run it, never offer it (Sam, 2026-09-09):
 
        H=$(ls docs/session_*_handoff.md | sort -V | tail -1)
        git rev-list --count $(git log -1 --format=%H -- "$H")..HEAD
 
-   ⚠️ Rule 9's ORIGINAL trigger (*"roughly every ~100K tokens… use proxies"*)
-   was unactionable and false (9a: it is on disk). **Twice the trigger has been
-   the broken part, not the rule.**
-
-   ⚠️ **Run `/checkpoint`; do not improvise one from memory.** Asked to describe
-   one under pressure on 2026-08-29 I named 2 of its 13 artifacts and hand-waved
-   the rest, and it looked competent. **The artifact list is the checkpoint
-   command, not this file** — all 13, none optional:
-   [`.claude/commands/checkpoint.md`](.claude/commands/checkpoint.md) is the
-   authority.
+   ⚠️ **Run `/checkpoint`; do not improvise one from memory** — an improvised
+   checkpoint names a few of its artifacts and still reads as complete. **The
+   artifact list is the checkpoint command, not this file** — all 13, none
+   optional: [`.claude/commands/checkpoint.md`](.claude/commands/checkpoint.md)
+   is the authority.
 
    ⚠️ **THE USUAL CHECKPOINT EDIT is the LANE FILE, not the §11 row.** §11's
    table is a POINTER INDEX; each lane's state lives in
@@ -265,13 +248,10 @@ nobody finds; `unreferenced_offload` flags any that stop being.
    creation and anon inherits through it, so the statement protects nothing.
    **Name `public`**, and check `has_function_privilege('service_role', …)`
    holds an EXPLICIT grant before you revoke PUBLIC, or the same statement
-   breaks the cron. Six definer functions that truncate live tables were
-   internet-reachable this way (2026-08-19); `tests/supabase_function_grants_test.py`
-   lints it now. (c) The sandbox cannot reach
-   `*.supabase.co` — all Supabase access goes through the MCP tools.
-   (Promoted 2026-07-10 from the rotating handoff "Safety patterns" blocks —
-   these are standing production-safety orders, not session lore. Worked
-   examples: `docs/kb-notes/playbook-trail-crew-method-magic-audit.md`.)
+   breaks the cron; `tests/supabase_function_grants_test.py` lints it. (c) The
+   sandbox cannot reach `*.supabase.co` — all Supabase access goes through the
+   MCP tools. Worked examples:
+   `docs/kb-notes/playbook-trail-crew-method-magic-audit.md`.
 
 ## Naming & terminology (Sam's conventions — honor in ALL output)
 
@@ -289,9 +269,8 @@ nobody finds; `unreferenced_offload` flags any that stop being.
   analyze · center · judgment · program · catalog · license (n and v) · gray ·
   enroll · while (not `whilst`) · among (not `amongst`)** and the
   `-ize`/`-ization` family. ⚠️ **The British form in a word pair MUST be in a code
-  span** — bare, the sweeper rewrites it (this list read `while (not while)`
-  for weeks). **Rendered UI text
-  first**, then docs, then comments. Enforced by `american_spelling` in `kb/_docs_audit.py`.
+  span** — bare, the sweeper rewrites it. **Rendered UI text first**, then docs,
+  then comments. Enforced by `american_spelling` in `kb/_docs_audit.py`.
   ⚠️ It scans PROSE only: `grey` is a valid CSS keyword and a token name is not
   a spelling, so never blind-replace inside code.
 - **REMEDIATE WITH [`/a11y-pass`](.claude/commands/a11y-pass.md) (Sam, 2026-09-09).**
@@ -320,9 +299,8 @@ nobody finds; `unreferenced_offload` flags any that stop being.
   reference to a not-yet-live data feed, anywhere rendered (Sam, 2026-09-01):**
   *"I don't want to suggest that advances are possible in the model,
   regardless of current missing data feeds or any other factor"*. An unmeasured
-  metric reads **awaiting measurement** — ⚠️ this line said *"no data yet"* until
-  2026-09-13, when his positive-first ruling BANNED that exact phrase, so the
-  doctrine file was instructing the words its own guard rejects. "Advancing the
+  metric reads **awaiting measurement**, never *"no data yet"* (his
+  positive-first ruling, 2026-09-13; a guard rejects the phrase). "Advancing the
   priority outcomes" and the statute's "Advancing career attainment" are the
   allowed senses; the D13 guard enforces it. Prose only, never identifiers.
   ⚠️ **NEITHER THE BANKING SENSE OF "DRAW" (2026-09-09) NOR "EARN" (2026-09-13).**
@@ -359,10 +337,9 @@ nobody finds; `unreferenced_offload` flags any that stop being.
     *"I don't like the practice the saying, 'it's this, not that' Just make
     positive, active voice declarations."* The contrastive frame makes the reader
     hold a wrong idea in mind to discard it, and it spends a sentence on what you
-    are not saying. Declare the thing. ⚠️ **This NARROWS the older rule that
-    survives beside it** — a genuine misreading may still be closed off, once,
-    where the reader would otherwise land on it; the ban is on the reflex, which
-    had become the house tic. Scope matches the mannerly-language rule: outward
+    are not saying. Declare the thing. A genuine misreading may still be closed
+    off, once, where the reader would otherwise land on it; the ban is on the
+    reflex. Scope matches the mannerly-language rule: outward
     artifacts **and replies to Sam in session**. Keep the **student as
     the subject** of the problem; **anchor claims to a named instrument** rather
     than asserting them; **vary sentence length and let a short declarative
@@ -400,7 +377,7 @@ nobody finds; `unreferenced_offload` flags any that stop being.
   "Activities & Projects", Session 97); the tab hash stays
   `activities-projects`.
 
-## Working with the MAP team (added Session 120, 2026-08-05)
+## Working with the MAP team
 
 The team is growing beyond Sam — **Ashley, Jessica, Malone** and others now use
 Claude Code directly, most of them new to it and expert in MAP. The human-facing
@@ -450,9 +427,7 @@ first day.** Do the remembering for them.
   ⚠️ **AND IT IS "ALWAYS", NOT "WHEN THEY ACCUMULATE" (Sam, 2026-09-22).**
   *"Always give me a decision sheet for any outstanding items for me..."* —
   so the sheet is the STANDING form of the backlog, built whenever anything is
-  waiting on him, never held back for a quorum. ⚠️ **An "always" a session has
-  to remember is not one**: the asks had scattered into eleven lane files'
-  NEEDS-SAM blocks and only ONE reached §11, so
+  waiting on him, never held back for a quorum.
   `kb/_build_open_asks_decision_sheet.py` **refuses to build** when a lane
   carries a NEEDS-SAM marker that no item covers and no `NO_OPEN_ASK` reason
   dismisses. Add the ask to a lane and the sheet breaks until it is asked.
@@ -467,7 +442,7 @@ first day.** Do the remembering for them.
   `CLAUDE.md` + the `braindump` skill carry the mechanics); otherwise a
   `cpl_memory` row plus the lane/lessons doc. The test: would the words be
   worth re-reading in six months? Routine task talk never qualifies.
-- **Call the effort level (added Session 128, 2026-08-08).** At the top of a
+- **Call the effort level.** At the top of a
   substantive piece of work, say in one line whether it warrants ultracode /
   multi-agent fan-out and why — don't make the user guess a dial they have no
   way to calibrate. **The governing test is whether a hit is cheap to VERIFY**
@@ -587,9 +562,8 @@ ask "may I use an emoji here" before typing one. Spec detail:
 [`engineering_ui_practices`](docs/reference/engineering_ui_practices.md) ·
 [`reference-ui-design-system`](docs/kb-notes/reference-ui-design-system.md).
 
-⚠️ **Recording a rule and having it fire are two events** — these kept scattering,
-and one was carried out of this file entirely by a relocation.
-`presentation_doctrine` in `kb/_docs_audit.py` fails if any of them leaves.
+`presentation_doctrine` in `kb/_docs_audit.py` fails if any of them leaves this
+file.
 
 - **FIRST LIGHT, ALWAYS — INCLUDING ARTIFACTS AND PROTOTYPES (Sam, 2026-08-19).**
   *"Make sure it is based on our First Light design and make it always accessible
@@ -603,7 +577,7 @@ and one was carried out of this file entirely by a relocation.
   rule there. [lane](docs/reference/lanes/cobi-dark-mode.md)
 - **ACCESSIBLE TO TODAY'S STANDARDS — AND VERIFIED, NOT CLAIMED.** Compute every
   fg-on-bg pair actually used (zebra rows and glass composites included) against
-  **AA 4.5:1 / 3:1** — `prototype/check_contrast.py` holds the maths. **Color is
+  **AA 4.5:1 / 3:1** — `prototype/check_contrast.py` holds the math. **Color is
   never the only signal.** `th scope` on every header cell, an `aria-label`led
   region around any scrolling table, a skip link, `:focus-visible`, and
   `prefers-reduced-motion`.
@@ -611,9 +585,8 @@ and one was carried out of this file entirely by a relocation.
   that sets us up for continued long term use on all projects"*). One command,
   ~100s, every view we ship — COBI's 38 tabs discovered from its own nav, plus
   Sierra, the Fact Sheet, the veteran map, SkyView. **`npm test` passing proves
-  NOTHING here**: jsdom returns zeroes for every rectangle, so 299 green suites
-  sat beside a masthead painting 240px of one cluster over another. Run it
-  before you ship a view; add a view in `a11y.config.js`, not a new script.
+  NOTHING here**: jsdom returns zeroes for every rectangle. Run it before you
+  ship a view; add a view in `a11y.config.js`, not a new script.
 - **MOBILE-FRIENDLY, ALWAYS.** Single column below ~560px, `clamp()` type, no
   fixed widths, and wide tables scroll **inside their own container** so the body
   never scrolls sideways.
@@ -646,24 +619,21 @@ and one was carried out of this file entirely by a relocation.
     That rule says a state already worth showing must not be shown by color
     ALONE; this one says most states are not worth showing. Satisfy the first
     with a **word** wherever you can, and a mark only when the word will not fit.
-  - ⚠️ **THE THREE APPROVED EXCEPTIONS ARE GONE — REMOVED, NOT RECOLORED** (Sam,
-    2026-09-09). 📋 To-Do · 🧭 guidance · ⚖️ Governance: all six rendered sites
-    deleted, because *if any are crucial* is a CONDITION and none was — each
-    already had its word beside it. **Do not restore a mark here.** Sweep:
-    [`/a11y-pass`](.claude/commands/a11y-pass.md).
+  - ⚠️ **No exceptions for 📋 To-Do, 🧭 guidance or ⚖️ Governance** (Sam,
+    2026-09-09): each has its word beside it. **Do not restore a mark there.**
+    Sweep: [`/a11y-pass`](.claude/commands/a11y-pass.md).
   - ✅ **THE SWEEP IS CLOSED AT 26 (Sam, 2026-09-09: *"Keep all 26 glyphs as is
     for now."*)** — Star designations, `✕`, `✎`, `⛔`, `⚠`, copy, and arrows that
     carry sequence. ⚠️ **RULED, not pending — do not sweep them**; none is an
-    emoji. Clearing one repeats the `⇄` error: a mark Sam chose in July, removed
-    on a plain-words reading, caught only by its own test.
+    emoji, and a plain-words reading does not override his ruling.
 - **AMERICAN SPELLING, ALWAYS** — rendered UI text first. Word list and the
   code-safety caveat are in **Naming & terminology** below.
 
-## Engineering & UI practices (added Session 32, 2026-06-04)
+## Engineering & UI practices
 
 Standing practices — honor them in normal work. Each rule below is the whole
 rule; the **evidence** behind it (measurements, the worked failures, the
-contrast maths, token names) is in
+contrast math, token names) is in
 [`docs/reference/engineering_ui_practices.md`](docs/reference/engineering_ui_practices.md).
 Read that before a UI rework, a First Light artifact, or a table layout.
 
@@ -688,7 +658,7 @@ Read that before a UI rework, a First Light artifact, or a table layout.
 
 https://cpl-initiative.github.io/cpl-project-tracker/
 
-## Obsidian vault wiring (added Session 11, 2026-05-27)
+## Obsidian vault wiring
 
 **Moved to [`docs/reference/obsidian_vault_wiring.md`](docs/reference/obsidian_vault_wiring.md)** (2026-08-28 consolidation).
 
