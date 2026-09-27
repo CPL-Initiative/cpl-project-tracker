@@ -81,3 +81,18 @@ where slug in ('open-asks-2026-09-22-rulings', 'claude-md-cleanup-verdicts-lande
                'a-ruled-card-stays-on-the-sheet-until-its-lane-marker-goes', 'ace-august-answers-stand-until-sam-rules-2026-09-27',
                'claude-md-prompt-audit-2026-09-27', 'esl-monthly-pass-procedure', 'context-meter-silent-in-three-repo-sessions')
 order by 1;
+-- Addendum (16:30 UTC): Sam answered card 1 of the fresh sheet; one decision row, logged.
+insert into public.cpl_memory (slug, kind, org, title, summary, detail, plain, tags, source, related, status, verified_by, verified_at, event_date, author)
+select 'narrated-draft-cue-reveals-first-2026-09-27', 'decision', 'cpl',
+       'Sam: cue the narrated video''s reveals to their words before it is linked',
+       'Sam, 2026-09-27 (open-asks card 1, his own call): before the explainer links the narrated draft of CPL Funding in Motion, cue each reveal to the word that names it; the draft then comes back to him. His review stopped at card 1, so cards 2-8 of that sheet carry no verdict.',
+       'The layout (narration_s1_layout.json) already carries the cue times; ft() stretches each scene uniformly today. Card 1 offered "Link it as it stands" (proposed) and "Cue the reveals first"; he flipped Later to cue. Sheet https://claude.ai/artifact/5sWY4QCCDfkAegZtZrW1oe, done record through 1.',
+       'Sam wants each part of the funding video to appear exactly when the narrator names it, before colleges see it.',
+       array['implementation-funding','funding-video','decision-sheet'],
+       'Sam, the 2026-09-27 open-asks sheet (card 1)', '{}'::text[], 'verified',
+       'Sam (the sheet''s reply store, by: sam)', now(), date '2026-09-27', 'SkyHarbor-s295b'
+where not exists (select 1 from public.cpl_memory where slug = 'narrated-draft-cue-reveals-first-2026-09-27');
+insert into public.cpl_memory_log (memory_id, actor, action, note, after)
+select id, 'SkyHarbor-s295b', 'create', 'S295 second checkpoint, addendum', to_jsonb(m) from public.cpl_memory m
+where m.slug = 'narrated-draft-cue-reveals-first-2026-09-27'
+  and not exists (select 1 from public.cpl_memory_log l where l.memory_id = m.id and l.action = 'create');

@@ -8,7 +8,13 @@
       "id": "s295-sam-open-asks-sheet",
       "for": "Sam",
       "tab": "governance",
-      "text": "Everything waiting on you is on one fresh sheet, eight decisions: https://claude.ai/artifact/5sWY4QCCDfkAegZtZrW1oe. The first two need one look each: the narrated video and the knowledge base's instruction fix. Your answers on the 22 September sheet stand. Press Complete when done."
+      "text": "Seven decisions wait on the standing sheet, cards 2 to 8: https://claude.ai/artifact/5sWY4QCCDfkAegZtZrW1oe. Card 1 is answered (cue the reveals first). Pick up at card 2; each choice saves as you make it, then press Complete."
+    },
+    {
+      "id": "s295-fable-cue-narrated-draft",
+      "for": "Fable",
+      "tab": "implementation-funding",
+      "text": "Cue each reveal of the narrated funding video to the word that names it (Sam's call, 27 September). The layout already carries the cue times; rebuild the MP4 and bring the draft back to Sam before the explainer links it."
     },
     {
       "id": "s295-fable-eths-remint",
@@ -27,12 +33,6 @@
       "for": "Fable",
       "tab": "cr-reference",
       "text": "The ESL monthly pass is due when the docs lint's esl_monthly_pass_due fires (after 28 October): python3 kb/_esl_monthly_pass.py --session N, then dispatch esl-sheet-apply.yml with the plan dir it names, and hand Sam what it lists."
-    },
-    {
-      "id": "s294-sam-narrated-draft",
-      "for": "Sam",
-      "tab": "implementation-funding",
-      "text": "Watch the narrated draft of the funding introduction (three minutes, sent in the session on 26 September; prototype/funding_video/20260926_CPL_Funding_in_Motion_Narrated_Draft.mp4). Say whether the voice, the pacing and the music level work, or what to change. It is not linked from the explainer until you approve it."
     },
     {
       "id": "s291-sam-releveled-line",

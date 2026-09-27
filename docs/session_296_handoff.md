@@ -46,12 +46,17 @@ points.
   Advise"*); the typographic class goes downstream; SkyView narrows its phone opening.
 - **Held, not ruled:** two September defaults that contradict his August answers (the not-a-topic class,
   subject-area granularity). August stands until he answers cards 3 and 4.
+- **2026-09-27, the fresh sheet:** card 1, his own call, *cue the reveals first* (each reveal lands on the
+  word that names it before the explainer links the draft). He pressed Complete with his mark at card 1, so
+  cards 2–8 carry no verdict: cpl-knowledge-base #23 stays unmerged. Thread e5cb50a3 answered and closed.
 
 ## Waiting on Sam
 
-Everything is on the fresh sheet (read `replies`, then `replies/done`, before acting): the narrated draft,
-the merge of cpl-knowledge-base #23, the two military conflicts, the unit-range advice, the occupation-match
-queue, the 381 mojibake titles, and GR register rows #2, #10 and #16.
+Cards 2–8 of the fresh sheet (read `replies`, then `replies/done`, before acting): the merge of
+cpl-knowledge-base #23, the two military conflicts, the unit-range advice, the occupation-match queue, the 381
+mojibake titles, and GR register rows #2, #10 and #16. He answers on the same sheet; do not republish it
+mid-sitting. Card 1 is answered and its lane marker is gone; the next rebuild drops the card under a fresh
+`SHEET_ID`.
 
 ## The queue, in Sam's order
 
@@ -60,7 +65,9 @@ queue, the 381 mojibake titles, and GR register rows #2, #10 and #16.
 2. **The rulings waiting on sessions:** the ETHS re-mint of 31 identities under
    `docs/coursecontrolnumber_remint.md` (To-Do `s295-fable-eths-remint`), and SkyView's phone opening
    (measure at 390px through the `npm run a11y` harness first).
-3. **The narrated video:** card 1 of the sheet.
+3. **The narrated video: cue each reveal to its word** (Sam, card 1). The layout already carries the cue
+   times and `ft()` stretches each scene uniformly; make each reveal land on its cue, rebuild the MP4, and
+   bring the draft back to him before the explainer links it.
 4. **ESL:** the next monthly pass after 2026-10-28; then the Jev CCR misfit rung (cross-list items 4–6 and
    12 are proposals handed over, none ruled).
 5. **SkyView.** 6. **The EACR grid review**, whenever he opens it.
