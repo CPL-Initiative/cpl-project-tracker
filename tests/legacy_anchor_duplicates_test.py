@@ -230,8 +230,14 @@ explained = [r for r in uncovered
 check("committed files: every receipt anchor (%d) has a group, already carries merge_into, or its twin was "
       "re-disciplined by a curator since (%d uncovered, %d explained by a curated discipline)"
       % (len(receipt), len(uncovered), len(explained)), len(uncovered) == len(explained))
-check("committed files: the lane offers at least as many groups as the receipt minus the explained (%d ≥ %d)"
-      % (len(real_groups), len(receipt) - len(explained)), len(real_groups) >= len(receipt) - len(explained))
+# An anchor that already carries merge_into has left the lane by design (it drains as merges
+# land; section 6 asserts the skip), so it counts against the receipt here as it does above.
+# Measured 2026-09-27: the ESL sheet apply folded 8 receipt anchors (ESOL M10XV-M10YD), and
+# the old count read 122 < 129 on main while every anchor was accounted for.
+merged = [r for r in receipt if r["new_id"] in real_mi]
+check("committed files: the lane offers at least as many groups as the receipt minus the explained and "
+      "the already merged (%d ≥ %d)" % (len(real_groups), len(receipt) - len(explained) - len(merged)),
+      len(real_groups) >= len(receipt) - len(explained) - len(merged))
 for r in uncovered:
     print("  receipt anchor not in the lane: %s (%s) — twin curated discipline %r vs anchor %r"
           % (r["new_id"], r["title"], [cur_disc(t) for t in r["catalog_twins"]], r["discipline"]))
