@@ -395,6 +395,19 @@ jobs:
           python3 kb/_build_orphan_parent_worklist.py \
             || echo "::warning title=Orphan-parent worklist not rebuilt::kb/_build_orphan_parent_worklist.py failed — the curator list describes the previous payload until the next run. Check the step log."
 
+      # ── Step 4d7: the re-mint blast radius (Session 295) ───────────
+      # What a re-mint would touch, per identity, for SkyView. It reads
+      # kb/coci_curation.json — re-synced from Supabase in Step 2 — so it has
+      # to be rebuilt HERE or it describes yesterday's curation. Measured
+      # 2026-09-27: the run that carried the ESL sheet writes into
+      # coci_curation.json left this file stale, and js-tests' lints job
+      # (`--check`) turned every PR red until a session rebuilt it.
+      # Read-only, under 1 s, local files only.
+      - name: Rebuild the re-mint blast radius
+        run: |
+          python3 kb/_build_remint_blast_radius.py \
+            || echo "::warning title=Re-mint blast radius not rebuilt::kb/_build_remint_blast_radius.py failed — SkyView's re-mint footprint reads the previous curation until the next run, and js-tests' lints job reports it stale. Check the step log."
+
       # ── Step 5: Prepare GitHub Pages entry point ─────────────────
       - name: Copy dashboard to index.html
         run: cp CPL_Dashboard.html index.html
@@ -446,6 +459,8 @@ jobs:
           # The orphan-parent worklist (Step 4d6): parents whose members all
           # disagree with them, for the same curator pass.
           git add kb/orphan_parent_worklist.json 2>/dev/null || true
+          # The re-mint blast radius (Step 4d7): rebuilt from today's curation.
+          git add prototype/ccr_remint_blast.json kb/remint_blast_worklist.json 2>/dev/null || true
           # CSR rollup: per-discipline CPL opportunities (mirror of EACR/CCR)
           git add kb/discipline_cpl_rollup.json 2>/dev/null || true
           # Cred-Ref PR-5a: credential-review curator-edit overlay

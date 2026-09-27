@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-09-26T16:32:13.826Z",
+  "scraped_at": "2026-09-27T12:08:07.998Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -213,14 +213,14 @@
         },
         {
           "college": "Modesto Junior College",
-          "students": 393,
+          "students": 394,
           "units": 2247,
-          "avgUnits": 5.717557251908397,
+          "avgUnits": 5.7030456852791875,
           "transcriptionRate": 63.5,
-          "avgTranscribed": 3.632315521628499,
+          "avgTranscribed": 3.6230964467005076,
           "criteriaMetCount": 3,
           "militaryStudents": 148,
-          "nonMilitaryStudents": 249,
+          "nonMilitaryStudents": 250,
           "apprenticeStudents": 38,
           "savings": 3009187.5,
           "yearImpact": 12670200.5,
@@ -1757,7 +1757,7 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "52,067",
+      "value": "52,068",
       "breakdowns": [
         {
           "label": "Military",
@@ -1765,7 +1765,7 @@
         },
         {
           "label": "Workforce/Other",
-          "value": "23,652"
+          "value": "23,653"
         },
         {
           "label": "Apprentice",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 52067,
+    "Students": 52068,
     "Units": 223981.40000000002,
     "TranscribedUnits": 73997.2,
     "Savings": 335932334,
     "YearImpact": 1328868865.4,
     "MilitaryStudents": 28501,
-    "NonMilitaryStudents": 23652,
+    "NonMilitaryStudents": 23653,
     "AprenticeStudents": 851,
-    "AverageUnits": 4.301791921946723,
-    "TranscribedAverage": 1.421191925787927
+    "AverageUnits": 4.3017093032188685,
+    "TranscribedAverage": 1.4211646308673274
   }
 }
