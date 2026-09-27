@@ -179,7 +179,7 @@ nobody finds; `unreferenced_offload` flags any that stop being.
    ⚠️ **THE USUAL CHECKPOINT EDIT is the LANE FILE, not the §11 row.** §11's
    table is a POINTER INDEX; each lane's state lives in
    [`docs/reference/lanes/<lane>.md`](docs/reference/lanes/). A checkpoint that
-   updates only the row leaves all 30 lane files to go stale — that is the
+   updates only the row leaves the lane files to go stale — that is the
    failure mode. Deep memory lives in `docs/reference/`: update THOSE, and do
    **not** re-inflate this file. **Session-narrative budget:** a session's §11
    subsection is ≤ ~10 lines, **at most 2** kept inline; move older ones verbatim
@@ -201,9 +201,11 @@ nobody finds; `unreferenced_offload` flags any that stop being.
    discovering it after.** Claude Code writes the exact live context size to the
    session transcript every turn, and `compactMetadata.preTokens` at every
    compaction. `kb/_context_budget.py` reads it in ~50 ms; run it any time.
-   ✅ **It fires from the repo's own `.claude/settings.json` (PostToolUse; tested)** —
-   mechanics:
-   [`docs/reference/context_pressure_hook.md`](docs/reference/context_pressure_hook.md).
+   It fires as a PostToolUse hook from the repo's settings in a session rooted
+   here, and from the session root once `check_hooks_live.py --fix` installs it
+   (the LIVE line reads `context meter: yes`); where it reads NO, run the meter
+   yourself at session start, after a long stretch, and before any sign-off.
+   Mechanics: [`docs/reference/context_pressure_hook.md`](docs/reference/context_pressure_hook.md).
    - **WARN — ≤110,000 tokens left.** Finish the thought you are on, then run a
      FULL `/checkpoint`. **Say the number to Sam** rather than checkpointing
      silently; he may want to spend the runway differently.
@@ -262,7 +264,7 @@ nobody finds; `unreferenced_offload` flags any that stop being.
   2017 launch name — history-only, never the current expansion.** Enforced in
   every report prompt (`NAMING_RULE` in `report_generator.js`;
   `college_report_generator.js`; `annual_report.js` polish), the docx footers,
-  a live `sierra_guidance` row (id `cb226a48`, deactivatable in the 🧭 pane),
+  a live `sierra_guidance` row (id `cb226a48`, deactivatable in the Sierra training tab),
   and the public KB's `claude/CLAUDE.md`. Historical titles/quotes stay verbatim.
 - **AMERICAN SPELLING, ALWAYS (Sam, 2026-08-21).** *"As a Yank, I prefer
   American, of course."* Use **color · behavior · normalize · organization ·
@@ -431,7 +433,9 @@ first day.** Do the remembering for them.
   `kb/_build_open_asks_decision_sheet.py` **refuses to build** when a lane
   carries a NEEDS-SAM marker that no item covers and no `NO_OPEN_ASK` reason
   dismisses. Add the ask to a lane and the sheet breaks until it is asked.
-  Rebuild it at every checkpoint and hand over the link.
+  Rebuild it at every checkpoint and hand over the link. A sheet whose cards
+  changed is published under a fresh `SHEET_ID` and artifact, because its replies
+  are keyed to card position ([`decision_sheets`](docs/reference/decision_sheets.md)).
 - **CAPTURE UNPLANNED SUBSTANCE ON THE FLY (Sam, 2026-08-30).** His important
   statements are never planned — *"just comes out of our interactions and I
   don't think to say specifically braindump."* When Sam or a team member says
@@ -583,7 +587,7 @@ file.
   `prefers-reduced-motion`.
   ⚠️ **VERIFY WITH `npm run a11y`** (Sam, 2026-09-04: *"the simplest approach
   that sets us up for continued long term use on all projects"*). One command,
-  ~100s, every view we ship — COBI's 38 tabs discovered from its own nav, plus
+  ~100s, every view we ship — every COBI tab, discovered from its own nav, plus
   Sierra, the Fact Sheet, the veteran map, SkyView. **`npm test` passing proves
   NOTHING here**: jsdom returns zeroes for every rectangle. Run it before you
   ship a view; add a view in `a11y.config.js`, not a new script.
@@ -716,7 +720,7 @@ session narratives moved to
 [`docs/reference/mid_lifecycle.md`](docs/reference/mid_lifecycle.md)**
 (2026-07-10 pare-down). Read it BEFORE: re-mints, MC/TMC terminology calls,
 Trust-Card auditor work, or CID/CIDx pathway decisions. The live Roadmap table
-+ the two most recent session narratives stay here (Rule 8 budget).
+stays here.
 
 ### Roadmap
 

@@ -13,6 +13,12 @@ beside it: PreToolUse hooks fire before any permission-mode check, and a hook
 the rule is consulted. Drop the hook and the rule auto-approves every write —
 exactly what #1617 did. This test pins the pairing, and pins that nothing
 mutating or outward-facing joins the allow list.
+
+Since 2026-09-27 (CLAUDE.md Cleanup sheet, card 1) the installer also writes
+Rule 9a's context meter as a PostToolUse block, and `check_hooks_live.py --fix`
+adds the meter alone to a root whose guards are live. The meter grants nothing,
+so that path must leave the permission rules and the guards exactly as found:
+the checks below pin that a meter-only repair never widens the allow list.
 """
 
 from __future__ import annotations
@@ -84,20 +90,80 @@ def main():
                       if any(ipg.MARK in (h.get("command") or "")
                              for h in (b.get("hooks") or []))]) == len(ipg.GUARDS)),
         ]
+        post = ((json.load(open(written)).get("hooks") or {}).get("PostToolUse") or [])
+        meter_cmds = [h.get("command") or "" for b in post if ipg.ours(b)
+                      for h in (b.get("hooks") or [])]
+        checks += [
+            ("the written settings carry exactly one context-meter block after two --apply runs",
+             len(meter_cmds) == 1),
+            ("the meter command is an absolute path to kb/_context_budget.py --hook",
+             bool(meter_cmds) and os.path.join(ROOT, "kb", "_context_budget.py") in meter_cmds[0]
+             and "--hook" in meter_cmds[0]),
+        ]
+
+    # --meter-only: the meter goes in; the permission rules, the guards and any
+    # block someone else wrote stay exactly as they were.
+    with tempfile.TemporaryDirectory() as tmp:
+        written = os.path.join(tmp, ".claude", "settings.json")
+        os.makedirs(os.path.dirname(written))
+        theirs_pre = {"matcher": "Read", "hooks": [{"type": "command", "command": "echo pre"}]}
+        theirs_post = {"matcher": "Edit", "hooks": [{"type": "command", "command": "echo post"}]}
+        before = {"permissions": {"allow": ["Bash(npm test)"]},
+                  "hooks": {"PreToolUse": [theirs_pre], "PostToolUse": [theirs_post]}}
+        json.dump(before, open(written, "w"))
+        out = subprocess.run([sys.executable, INSTALLER, tmp, "--apply", "--meter-only"],
+                             capture_output=True, text=True)
+        cfg = json.load(open(written))
+        post = (cfg.get("hooks") or {}).get("PostToolUse") or []
+        checks += [
+            ("--meter-only exits 0", out.returncode == 0),
+            ("--meter-only leaves the allow list and the PreToolUse blocks untouched",
+             cfg.get("permissions") == before["permissions"]
+             and cfg["hooks"].get("PreToolUse") == [theirs_pre]),
+            ("--meter-only keeps a PostToolUse block it did not write and adds the meter",
+             theirs_post in post and sum(1 for b in post if ipg.ours(b)) == 1),
+        ]
 
     checker = os.path.join(ROOT, "scripts", "check_hooks_live.py")
     with tempfile.TemporaryDirectory() as tmp:
         out = subprocess.run([sys.executable, checker, "--root", tmp, "--fix"],
                              capture_output=True, text=True)
-        checks.append(("checker --fix on an empty root writes the settings and reports the rule",
+        checks.append(("checker --fix on an empty root writes the settings and reports the rule and the meter",
                        out.returncode == 0 and "FIXED" in out.stdout
                        and "execute_sql allow rule: yes" in out.stdout
+                       and "context meter: yes" in out.stdout
                        and os.path.exists(os.path.join(tmp, ".claude", "settings.json"))))
         out2 = subprocess.run([sys.executable, checker, "--root", tmp, "--fix"],
                               capture_output=True, text=True)
         checks.append(("checker --fix on a healthy root changes nothing",
                        out2.returncode == 0 and "FIXED" not in out2.stdout
-                       and "execute_sql allow rule: yes" in out2.stdout))
+                       and "execute_sql allow rule: yes" in out2.stdout
+                       and "context meter: yes" in out2.stdout))
+
+        # A root the setup script wrote before the meter existed: guards live, no
+        # meter, and an allow list one entry short of the current one. --fix adds
+        # the meter and must not widen the allow list (that waits for the snapshot).
+        written = os.path.join(tmp, ".claude", "settings.json")
+        cfg = json.load(open(written))
+        cfg["hooks"].pop("PostToolUse", None)
+        cfg["permissions"]["allow"] = [t for t in cfg["permissions"]["allow"]
+                                       if t != "mcp__github__get_me"]
+        json.dump(cfg, open(written, "w"))
+        allow_before = list(cfg["permissions"]["allow"])
+        pre_before = cfg["hooks"]["PreToolUse"]
+        plain = subprocess.run([sys.executable, checker, "--root", tmp],
+                               capture_output=True, text=True)
+        checks.append(("checker without --fix says the meter is missing",
+                       "context meter: NO" in plain.stdout))
+        out3 = subprocess.run([sys.executable, checker, "--root", tmp, "--fix"],
+                              capture_output=True, text=True)
+        after = json.load(open(written))
+        checks.append(("checker --fix on live guards without the meter installs the meter",
+                       out3.returncode == 0 and "FIXED" in out3.stdout
+                       and "context meter: yes" in out3.stdout))
+        checks.append(("that repair leaves the allow list and the guards exactly as found",
+                       after["permissions"]["allow"] == allow_before
+                       and after["hooks"]["PreToolUse"] == pre_before))
     # The repo's SessionStart hook (which runs patch_stop_hook.py) never loads in a
     # three-repo session, so --fix, the first command of every session, applies it.
     src = open(checker, encoding="utf-8").read()

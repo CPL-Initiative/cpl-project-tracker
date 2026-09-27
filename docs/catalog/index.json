@@ -14049,7 +14049,10 @@
       "kb/_context_budget.py",
       "scripts/context-pressure-hook.sh",
       "scripts/install-context-hook.ps1",
-      "tests/context_budget_test.py"
+      "scripts/install_prompt_guards.py",
+      "scripts/check_hooks_live.py",
+      "tests/context_budget_test.py",
+      "tests/install_prompt_guards_test.py"
      ],
      "path": "docs/reference/context_pressure_hook.md",
      "status": null,
