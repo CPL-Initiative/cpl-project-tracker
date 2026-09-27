@@ -237,6 +237,60 @@ w.insert([GARBLED[0]])
 check("a rollback insert sends the full image, id included",
       calls[-1][0] == "POST" and calls[-1][2] == "return=representation")
 
+# ── a transient failure is retried; a real one is not ────────────────────────
+# ⚠️ MEASURED, NOT IMAGINED: the first commit run (2026-09-27) died on one
+# "Connection reset by peer" among some 800 requests, before its first write.
+import urllib.error  # noqa: E402
+
+
+class Flaky(app.Rest):
+    """_send answers from a script: an exception instance is raised, anything else returned."""
+
+    def __init__(self, script):
+        super().__init__("https://example.invalid", "k", sleep=lambda s: None)
+        self.script, self.sent = list(script), []
+
+    def _send(self, method, params, body=None, prefer=None, rng=None):
+        self.sent.append((method, dict(params)))
+        nxt = self.script.pop(0)
+        if isinstance(nxt, BaseException):
+            raise nxt
+        return nxt
+
+
+reset = urllib.error.URLError(ConnectionResetError(104, "Connection reset by peer"))
+f = Flaky([reset, [{"id": 1}]])
+check("⭐ a reset connection is retried, and the answer comes back",
+      f._call("GET", {}) == [{"id": 1}] and f.retried and len(f.sent) == 2)
+f = Flaky([urllib.error.HTTPError("u", 400, "bad request", {}, None)])
+try:
+    f._call("GET", {})
+    raised = False
+except urllib.error.HTTPError:
+    raised = True
+except Exception:  # a retried 400 runs the script dry; report it as a failure, not a crash
+    raised = False
+check("a 400 from PostgREST fails at once, unretried", raised and len(f.sent) == 1)
+f = Flaky([reset] * app.ATTEMPTS)
+try:
+    f._call("GET", {})
+    raised = False
+except urllib.error.URLError:
+    raised = True
+check("a failure that persists gives up after the last attempt",
+      raised and len(f.sent) == app.ATTEMPTS)
+
+f = Flaky([reset, [], []])
+check("⭐ a retried delete that finds nothing, and a row already gone, counts as removed",
+      f.remove(GARBLED[0]) == [GARBLED[0]] and f.sent[-1][0] == "GET",
+      "the first attempt removed the row and its answer was lost; the receipt must say removed")
+f = Flaky([reset, [], [{"id": 10}]])
+check("a retried delete that finds nothing, with the row still there, counts as not removed",
+      f.remove(GARBLED[0]) == [])
+f = Flaky([[]])
+check("an unretried delete that finds nothing asks nothing more",
+      f.remove(GARBLED[0]) == [] and len(f.sent) == 1)
+
 # ── the committed plan is the reviewed one ───────────────────────────────────
 plans = glob.glob(os.path.join(ROOT, "kb", "course_title_cleanup_out", "*", "plan.json"))
 check("the committed plan exists", bool(plans))
