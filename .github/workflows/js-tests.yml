@@ -520,6 +520,12 @@ jobs:
         run: python3 tests/esl_sheet_apply_test.py
       - name: ESL monthly pass (what it applies, lists and never re-asks)
         run: python3 tests/esl_monthly_pass_test.py
+      # Sam's card-7 verdict (2026-09-27): remove the garbled course rows that sit
+      # beside a repaired twin. A removal needs full row images in its receipt, so
+      # the suite pins the reviewed-set fingerprint, the receipt written before the
+      # first removal, the title guard on the wire, and the rollback.
+      - name: Course title cleanup applier (fingerprint, receipt first, title guard, rollback)
+        run: python3 tests/course_title_cleanup_apply_test.py
       # SkyView member payload (Session 189) — the graph carried identities and NO
       # member courses, so there was nothing at course grain to drag and the one
       # verb the view exists for was unreachable. The payload's failure modes are
