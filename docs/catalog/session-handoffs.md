@@ -19,7 +19,7 @@ One per session, newest first. **Only the highest-numbered handoff is authoritat
 
 | N | Handoff | Created |
 |---|---|---|
-| 296 | [the ESL apply, the CLAUDE.md prompt audit, and main's lints](../session_296_handoff.md) | 2026-09-27 |
+| 296 | [the CLAUDE.md verdicts carried out, and a fresh standing sheet](../session_296_handoff.md) | 2026-09-27 |
 | 295 | [narration v3, the ESL merging sheet, and the narrated draft](../session_295_handoff.md) | 2026-09-26 |
 | 293 | [the funding video becomes an introduction, fills the screen, shoots down barriers, and its score builds](../session_293_handoff.md) | 2026-09-26 |
 | 292 | [Scenario 2 guide video, the explainer's title and statutory intro, the noncredit header fix](../session_292_handoff.md) | 2026-09-26 |

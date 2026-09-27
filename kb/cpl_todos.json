@@ -2,13 +2,19 @@
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-27",
   "_session": "S295 SkyHarbor",
-  "_status": "The ESL sheets are applied (147 + 2 rows, six cohorts read back) and the monthly pass is built. CLAUDE.md is cleaned without changing a rule, and eight calls wait on the CLAUDE.md Cleanup sheet. Main's lints were red after the curation change reached the nightly sync; #1709 fixed both causes.",
+  "_status": "The ESL changes are live and the monthly pass is built. Sam's eight CLAUDE.md verdicts landed the same day, and the context warning now installs at the start of every cloud session. The standing decision sheet is fresh: seven answers from 22 September were already rulings, and two of them contradicted what Sam said in August, so the new sheet asks which stands.",
   "items": [
     {
       "id": "s295-sam-open-asks-sheet",
       "for": "Sam",
       "tab": "governance",
-      "text": "Everything waiting on you is on one fresh sheet, eight decisions: https://claude.ai/artifact/5sWY4QCCDfkAegZtZrW1oe. The first two need one look each: the narrated video and the knowledge base's instruction fix. Your answers on the 22 September sheet stand. Press Complete when done."
+      "text": "Seven decisions wait on the standing sheet, cards 2 to 8: https://claude.ai/artifact/5sWY4QCCDfkAegZtZrW1oe. Card 1 is answered (cue the reveals first). Pick up at card 2; each choice saves as you make it, then press Complete."
+    },
+    {
+      "id": "s295-fable-cue-narrated-draft",
+      "for": "Fable",
+      "tab": "implementation-funding",
+      "text": "Cue each reveal of the narrated funding video to the word that names it (Sam's call, 27 September). The layout already carries the cue times; rebuild the MP4 and bring the draft back to Sam before the explainer links it."
     },
     {
       "id": "s295-fable-eths-remint",
@@ -27,12 +33,6 @@
       "for": "Fable",
       "tab": "cr-reference",
       "text": "The ESL monthly pass is due when the docs lint's esl_monthly_pass_due fires (after 28 October): python3 kb/_esl_monthly_pass.py --session N, then dispatch esl-sheet-apply.yml with the plan dir it names, and hand Sam what it lists."
-    },
-    {
-      "id": "s294-sam-narrated-draft",
-      "for": "Sam",
-      "tab": "implementation-funding",
-      "text": "Watch the narrated draft of the funding introduction (three minutes, sent in the session on 26 September; prototype/funding_video/20260926_CPL_Funding_in_Motion_Narrated_Draft.mp4). Say whether the voice, the pacing and the music level work, or what to change. It is not linked from the explainer until you approve it."
     },
     {
       "id": "s291-sam-releveled-line",
@@ -203,12 +203,6 @@
       "for": "Fable",
       "tab": "chatbot",
       "text": "One of our search files points at a test file that has never existed. The exhibit search names chatbox/verify_search_exhibits_v2.sql as the thing that proves it works, and git shows it was never written or deleted. Either write it or remove the claim — a pointer to nothing is worse than no pointer."
-    },
-    {
-      "id": "s266-sam-asccc-areas",
-      "for": "Sam",
-      "tab": "my-college",
-      "text": "Send the Academic Senate (ASCCC) area roster — which college sits in which area. Every Supabase column matching area, senate, asccc, zone or region was searched and none carries them. Strong Workforce regions are already solved."
     },
     {
       "id": "s266-fable-matcher-vocabulary",
