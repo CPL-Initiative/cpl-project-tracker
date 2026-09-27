@@ -31,10 +31,11 @@ also been answered on 2026-08-14 (military scope §10), and two of the 09-22
 proposals contradicted those August answers. When a verdict lands, change the
 lane's marker in the same pull request, or the sheet asks again.
 
-Published: https://claude.ai/artifact/5sWY4QCCDfkAegZtZrW1oe (2026-09-27, SHEET_ID
-2026-09-27-open-asks, capabilities db + comments; all eight cards answered that day,
-through card 8, and recorded in their lanes). The next card list is published under a
-fresh SHEET_ID, OUT and artifact. The 2026-09-22 sheet
+Published: https://claude.ai/artifact/74AfMNmXPQYP5X7XKpjHfH (2026-09-27 evening, SHEET_ID
+2026-09-27-funding-asks, capabilities db + comments, four funding cards). Before it:
+https://claude.ai/artifact/5sWY4QCCDfkAegZtZrW1oe (SHEET_ID 2026-09-27-open-asks; all eight
+cards answered that day, through card 8, and recorded in their lanes). A card list that
+changes is published under a fresh SHEET_ID, OUT and artifact. The 2026-09-22 sheet
 (https://claude.ai/artifact/FTEhLfMxhRfv4YH6DGSPhn) keeps Sam's answers of that day;
 never republish onto it, and give any sheet whose cards change a fresh SHEET_ID.
 
@@ -52,8 +53,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-09-27-open-asks.html')
-SHEET_ID = '2026-09-27-open-asks'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-09-27-funding-asks.html')
+SHEET_ID = '2026-09-27-funding-asks'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -181,11 +182,36 @@ def p_eths_misprefixed():
     return n > 0, "%d ETHS-prefixed physical-activity identities" % n
 
 
+def p_annual_pct_mixes_window():
+    """Card 1: does the Max award cell set one year's award against the window's qualifying figure?"""
+    src = _code(_read("cpl_funding.js"))
+    m = re.search(r"function maxAwardCellHtml\(row\)\s*\{([\s\S]{0,500}?)\breturn\b", src)
+    body = m.group(1) if m else ""
+    mixes = bool(re.search(r"/\s*awardDivisor\(\)", body)) and "earned_total" in body
+    return mixes, ("the Max award cell sets one year's award against the window's qualifying figure"
+                   if mixes else "the Max award cell no longer mixes a year with the window")
+
+
+def p_fetch_lacks_collegeid2():
+    """Card 2: does the daily fetch still leave CollegeID2 out of every column list it requests?"""
+    lists = re.findall(r'"columnName"\s*:\s*\[([^\]]*)\]', _read("fetch_custom_report.py"))
+    lacks = not any('"CollegeID2"' in cols for cols in lists)
+    return lacks, ("the daily fetch requests no CollegeID2 column" if lacks
+                   else "the daily fetch already requests CollegeID2")
+
+
 # Keyed by the item's POSITION on the sheet — the number Sam replies with, and
 # the only unique handle (two ESL cards share a `ref`).
 EVIDENCE = {
-    # 2026-09-27 (S295): the 2026-09-27 sheet's eight cards were all answered
-    # (through card 8) and left with their lanes' markers; see items().
+    # 2026-09-27 (S295), the funding asks sheet. The lane carried these as prose
+    # ("Unruled, his call"), so no sheet asked them; the coverage audit could not
+    # see an ask the lane never marked.
+    1:  [quoted("docs/cpl_funding_lessons_archive.md", "2026-09-01"),
+         measured(p_annual_pct_mixes_window)],
+    2:  [quoted("docs/reference/lanes/implementation-funding.md", "2026-09-03"),
+         measured(p_fetch_lacks_collegeid2)],
+    3:  [live("2026-09-27", "the funding tab review sheet's stored replies (reviewed through item 7)")],
+    4:  [policy()],
 }
 
 PROVENANCE = {
@@ -251,19 +277,99 @@ def audit_coverage(items):
 
 # ── the items ────────────────────────────────────────────────────────────────
 def items():
-    """The cards. Empty while no lane carries a NEEDS-SAM marker.
+    """The cards: every ask a lane marks, one card each.
 
-    2026-09-27 (S295): Sam completed the 2026-09-27 sheet through card 8 at 17:48
-    UTC, so all eight cards are rulings, recorded in their lanes in the same pull
-    request that removed them here: 1 cue the narrated draft's reveals first
-    (implementation-funding), 2 merge cpl-knowledge-base #23 (merged), 3 and 4 the
-    August answers stand (military scope §10), 5 units never split an identity
-    (CLAUDE.md Rule 7), 6 the occupation-match queue and the cross-list curator
-    surface go through Governance first, 7 clean the 397 stored mojibake titles
-    under a receipt (sierra), 8 GR register rows #2, #10 and #16 are ruled on the
-    GR Priorities tab (t5-55050).
+    2026-09-27 (S295): Sam answered all eight cards of the 2026-09-27 open-asks
+    sheet that afternoon, and each ruling left with its lane's marker (#1716). The
+    funding lane's asks follow here. The lane had carried them as prose, so the
+    coverage audit never saw them; marking them is what brought them onto a sheet.
     """
     I = []
+
+    I.append({
+        'lane': 'implementation-funding',
+        'title': "The Annual view's percent: compare a year with a year",
+        'ref': 'implementation-funding · cpl_funding.js maxAwardCellHtml()',
+        'facts': (
+            "Under Annual funding, each Max award cell shows one year's max award, and the qualifying line "
+            "beneath it counts the whole two-year window, so its percent runs to 200%. On 2026-09-01 a "
+            "college read <em>qualifying $140,476 &middot; 191%</em>. The model already computes each "
+            "year's qualifying figure. The CSV export's <em>% of max award</em> sets the window against the "
+            "window, so the screen and the export disagree. Under Combined funding the two agree."),
+        'why': (
+            "A college that reads 191% of its award may take it to mean it qualified for more than its "
+            "award, and the percent it exports differs from the one it sees."),
+        'rec': (
+            "<strong>Compare like with like: set the viewed year's qualifying figure against that year's "
+            "max award</strong>, so the percent stays at or under 100%. <em>It might be wrong if</em> you "
+            "read the Annual view as progress toward the whole window; then the window's max award belongs "
+            "under it instead."),
+        'chips': chips(('Year against year', 'year'), ('Window against window', 'window'),
+                       ('Leave it', 'leave'), CH_LATER),
+    })
+
+    I.append({
+        'lane': 'implementation-funding',
+        'title': 'One request to Pedro: CollegeID2, completions and the units by type',
+        'ref': 'implementation-funding NEXT ⓪d · fetch_custom_report.py',
+        'facts': (
+            "Pedro said on 2 September that MAP would add CollegeID2, the field that names where a "
+            "student's CPL request began. As of 2026-09-03 it was on none of the four MAP views, so the "
+            "access outcome still reads <em>Potential Student</em> and leaves out batch uploads. The lane "
+            "holds one request for him that also asks for completions and for each CPL type's share of a "
+            "student's units, and no draft of it exists. The daily fetch asks MAP for a fixed list of "
+            "columns, so nothing in the pipeline notices the new field until a session adds it."),
+        'why': (
+            "Until the field lands, the access outcome counts a narrow slice of the credit colleges record, "
+            "and its arrival will go unseen unless someone asks."),
+        'rec': (
+            "<strong>A session drafts the one request, you send it, and the day Pedro answers, a session "
+            "adds the columns to the fetch and runs the probe.</strong> <em>It might be wrong if</em> Pedro "
+            "has already given you a date or a different field name."),
+        'chips': chips(('Draft it for me', 'draft'), ('I will wait for Pedro', 'wait'), CH_LATER),
+    })
+
+    I.append({
+        'lane': 'implementation-funding',
+        'title': 'The last three sections of your funding tab review',
+        'ref': 'implementation-funding ⓪b · the 2026-09-24 tab review sheet',
+        'facts': (
+            "You reviewed items 1 to 7 of the <a href=\"https://claude.ai/artifact/Ayp39ynE6Yw9cvsvQbH7eu\">"
+            "funding tab review</a> on 24 September, and sessions carried out each change. Items 8 to 10 "
+            "carry no verdict: the <em>Funding window</em> (the year pickers, the Annual and Combined "
+            "switch, and the reading note), the <em>Funding Breakdown</em> (the ledger lines and the total "
+            "for institution awards), and <em>How an allocation is computed</em> (FTES share times priority "
+            "share times the window's funding, then the base, the cap and the noncredit sentences)."),
+        'why': (
+            "All three show on the public explainer, and they are the only sections of the tab you have "
+            "not read through."),
+        'rec': (
+            "<strong>Let the three stand</strong>, and change any line in place on the review sheet if it "
+            "reads wrong. <em>It might be wrong if</em> your answer to card 1 changes the Annual view, "
+            "because the Funding window's reading note describes it."),
+        'chips': chips(('Let them stand', 'leave'), ('I will review them there', 'review'), CH_LATER),
+    })
+
+    I.append({
+        'lane': 'implementation-funding',
+        'title': "The explainer's footer: keep it whole or split it",
+        'ref': 'implementation-funding ⑧ · funding-model/index.html',
+        'facts': (
+            "The explainer's footer holds two paragraphs: where the figures come from, the committed FTES "
+            "roster for 118 institutions and the tab's saved settings; and the disclaimer, <em>&ldquo;a "
+            "working model for discussion, not adopted policy.&rdquo;</em> Curators can hide or reword every "
+            "section of the page except this footer, by design, and a test pins that. The question from "
+            "9 September: should the first paragraph become editable while the disclaimer stays fixed?"),
+        'why': (
+            "The disclaimer has to show wherever the page shows, and the first paragraph names a roster "
+            "count that will change."),
+        'rec': (
+            "<strong>Keep the footer whole and fixed.</strong> The named sources already appear in the "
+            "institution table's Sources line, which curators can hide. <em>It might be wrong if</em> you "
+            "want to reword the first paragraph, its count of 118 institutions among it, without waiting "
+            "on a code change."),
+        'chips': chips(('Keep it whole', 'keep'), ('Split it', 'split'), CH_LATER),
+    })
     return I
 
 
@@ -331,12 +437,11 @@ def build(check_only=False):
         return 0
 
     framing = (
-        "You asked for a sheet of everything outstanding for you. This one replaces the sheet of "
-        "2026-09-22, and every answer you gave there stands: you completed it through card 18, so "
-        "seven of the cards it still listed are rulings that sessions now carry out, and the three "
-        "you did not reach return here. Two of those rulings contradict answers you gave on "
-        "2026-08-14 to the same military questions, which the lane never recorded; they come back as "
-        "items 3 and 4 with August proposed. Items 1 and 2 each ask for one look.")
+        "Four funding questions wait on you. The funding lane carried them as prose, so no sheet asked "
+        "them until now; each card shows what the repo holds today. Your eight answers from this "
+        "afternoon's sheet are carried out. One question the lane still listed as open you settled on "
+        "3 September, when you ratified the under-10 ADR: COBI keeps \"<10\" until the public/private "
+        "split.")
     counts = (f"{len(I)} items across {len(lanes)} lanes · "
               f"every lane carrying an open ask is covered, by build-time audit")
 

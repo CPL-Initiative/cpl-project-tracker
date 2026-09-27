@@ -193,6 +193,14 @@ FIXTURES = {
     "p_surface_light":       (":root {\n--paper:#fff;\n}",        ":root {\n--surface-1: #F7F5F1;\n}"),
     "p_statewide_ring":      ("if(x){ctx.arc(1,2,3)}",            "if(isExhibits() && nd.sw && dr>1.8){ ctx.arc(p[0],p[1],dr+3.2,0,6) }"),
     "p_phone_opening":       ("var sph={half:Math.PI*94/180};",   "if(narrowScreen()){ sph.half = Math.PI*75/180; }"),
+    "p_annual_pct_mixes_window": (
+        "function maxAwardCellHtml(row) {\n var cap = (row.total || 0) / awardDivisor();\n"
+        " var earned = row.earned_total || 0;\n return cap; }",
+        "function maxAwardCellHtml(row) {\n var cap = (row.total || 0) / awardDivisor();\n"
+        " var earned = yearQualifying(row);\n return cap; }"),
+    "p_fetch_lacks_collegeid2": (
+        '"columnName": ["College", "Potential Student"]',
+        '"columnName": ["College", "CollegeID2", "Potential Student"]'),
 }
 _broken = []
 for _name, (_open_src, _closed_src) in FIXTURES.items():

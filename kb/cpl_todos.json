@@ -2,8 +2,14 @@
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-27",
   "_session": "S295 SkyHarbor",
-  "_status": "Sam answered the whole standing sheet on 27 September. Every card is carried out or queued: the knowledge base fix is merged, the August military answers stand, units never split an identity, two write surfaces go through Governance first, the 397 garbled course titles get cleaned, and the GR rows are his to rule on the tab.",
+  "_status": "Sam answered the whole standing sheet on 27 September, and every card is carried out or queued. Four funding questions the lane had carried as prose now wait on a fresh sheet, and the 397 garbled course titles are cleaned through a reviewed workflow.",
   "items": [
+    {
+      "id": "s296-sam-funding-sheet",
+      "for": "Sam",
+      "tab": "implementation-funding",
+      "text": "Four funding questions wait on a fresh sheet: https://claude.ai/artifact/74AfMNmXPQYP5X7XKpjHfH. The Annual view's percent, the request to Pedro for CollegeID2, the last three sections of the tab review, and the explainer's footer. Each choice saves as you make it; press Complete when done."
+    },
     {
       "id": "s296-sam-gr-rows-on-tab",
       "for": "Sam",
@@ -101,10 +107,10 @@
       "text": "Take the cpl_occupation_match verdict queue and the cross-list curator surface through Governance and the privacy ADRs before either ships, Sam's call of 27 September (Rule 10(a3))."
     },
     {
-      "id": "s296-fable-funding-asks-to-cards",
+      "id": "s296-fable-funding-text-fixes",
       "for": "Fable",
       "tab": "implementation-funding",
-      "text": "Mark each open funding ask in its lane and give it a card on a fresh standing sheet: the annual-view percent that can read 191%, when CollegeID2 lands, whether COBI keeps <10 until the split, the explainer's footer split, and items 8 to 10 of the funding tab review."
+      "text": "Two lines on the funding tab contradict rulings Sam already made: the 2025-26 view's partial state says fewer than 5 students where the cutoff is 10 (the under-10 ADR), and the timeline's code default still reads Rolled to Year 2 and Releveled (his no-releveling ruling of 25 September). Correct both, with a test."
     }
   ],
   "_deferred": [
