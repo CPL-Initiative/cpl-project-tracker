@@ -105,7 +105,7 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
   // twice. The NC cell is its figure, and its hover carries the qualifying one.
   check("E: the NC award cell is its figure alone, its qualifying figure in the hover (no feeds-waiting label)",
     !pairCells[1].querySelector(".sub") &&
-    /qualifying so far: \$0/.test(pairCells[1].getAttribute("title") || "") &&
+    /qualifying so far( in \d{4}-\d{2})?: \$0/.test(pairCells[1].getAttribute("title") || "") &&
     !/until feeds report/.test(pairCells[1].textContent + (pairCells[1].getAttribute("title") || "")));
 
   const la = T._alloc("Laney");   // in-feed, underachieving on the measurable P1

@@ -32,7 +32,11 @@ proposals contradicted those August answers. When a verdict lands, change the
 lane's marker in the same pull request, or the sheet asks again.
 
 Published: https://claude.ai/artifact/74AfMNmXPQYP5X7XKpjHfH (2026-09-27 evening, SHEET_ID
-2026-09-27-funding-asks, capabilities db + comments, four funding cards). Before it:
+2026-09-27-funding-asks, capabilities db + comments, four funding cards). Sam answered cards 1
+and 2 there and leaves off at card 3; cards 3 and 4 wait on that same store, so read its
+`replies` and `replies/done` for them, and NEVER republish onto it. This builder now carries
+only those two (SHEET_ID 2026-09-27-funding-asks-2, built to its own OUT and not published;
+publish it only if the live sheet is lost). Before it:
 https://claude.ai/artifact/5sWY4QCCDfkAegZtZrW1oe (SHEET_ID 2026-09-27-open-asks; all eight
 cards answered that day, through card 8, and recorded in their lanes). A card list that
 changes is published under a fresh SHEET_ID, OUT and artifact. The 2026-09-22 sheet
@@ -53,8 +57,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-09-27-funding-asks.html')
-SHEET_ID = '2026-09-27-funding-asks'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-09-27-funding-asks-2.html')
+SHEET_ID = '2026-09-27-funding-asks-2'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -182,42 +186,19 @@ def p_eths_misprefixed():
     return n > 0, "%d ETHS-prefixed physical-activity identities" % n
 
 
-def p_annual_pct_mixes_window():
-    """Card 1: does the Max award cell set one year's award against the window's qualifying figure?"""
-    src = _code(_read("cpl_funding.js"))
-    m = re.search(r"function maxAwardCellHtml\(row\)\s*\{([\s\S]{0,500}?)\breturn\b", src)
-    body = m.group(1) if m else ""
-    mixes = bool(re.search(r"/\s*awardDivisor\(\)", body)) and "earned_total" in body
-    return mixes, ("the Max award cell sets one year's award against the window's qualifying figure"
-                   if mixes else "the Max award cell no longer mixes a year with the window")
-
-
-def p_fetch_lacks_collegeid2():
-    """Card 2: does the daily fetch still leave CollegeID2 out of every column list it requests?"""
-    lists = re.findall(r'"columnName"\s*:\s*\[([^\]]*)\]', _read("fetch_custom_report.py"))
-    lacks = not any('"CollegeID2"' in cols for cols in lists)
-    return lacks, ("the daily fetch requests no CollegeID2 column" if lacks
-                   else "the daily fetch already requests CollegeID2")
-
-
 # Keyed by the item's POSITION on the sheet — the number Sam replies with, and
 # the only unique handle (two ESL cards share a `ref`).
 EVIDENCE = {
     # 2026-09-27 (S295), the funding asks sheet. The lane carried these as prose
     # ("Unruled, his call"), so no sheet asked them; the coverage audit could not
     # see an ask the lane never marked.
-    # ⚠️ CARDS 1 AND 2 ARE ANSWERED (Sam, 2026-09-27 19:55 UTC, read through card
-    # 2: 1 year against year, 2 wait for Pedro) and recorded in the lane. They stay
-    # here only because the sheet is mid-sitting: cards 3 and 4 wait on the same
-    # store. Drop both at the next rebuild, under a fresh SHEET_ID. Card 1's
-    # measured premise closes when its change lands, and the build then refuses
-    # until the card is gone.
-    1:  [quoted("docs/cpl_funding_lessons_archive.md", "2026-09-01"),
-         measured(p_annual_pct_mixes_window)],
-    2:  [quoted("docs/reference/lanes/implementation-funding.md", "2026-09-03"),
-         measured(p_fetch_lacks_collegeid2)],
-    3:  [live("2026-09-27", "the funding tab review sheet's stored replies (reviewed through item 7)")],
-    4:  [policy()],
+    # Cards 1 and 2 of the published sheet are answered (Sam, 2026-09-27 19:55
+    # UTC, read through card 2: year against year, and wait for Pedro), recorded
+    # in the lane, and gone from this list (S296): card 1's change landed, and its
+    # measured premise would have made the build refuse. What remains is the
+    # published sheet's cards 3 and 4, numbered 1 and 2 here.
+    1:  [live("2026-09-27", "the funding tab review sheet's stored replies (reviewed through item 7)")],
+    2:  [policy()],
 }
 
 PROVENANCE = {
@@ -294,49 +275,6 @@ def items():
 
     I.append({
         'lane': 'implementation-funding',
-        'title': "The Annual view's percent: compare a year with a year",
-        'ref': 'implementation-funding · cpl_funding.js maxAwardCellHtml()',
-        'facts': (
-            "Under Annual funding, each Max award cell shows one year's max award, and the qualifying line "
-            "beneath it counts the whole two-year window, so its percent runs to 200%. On 2026-09-01 a "
-            "college read <em>qualifying $140,476 &middot; 191%</em>. The model already computes each "
-            "year's qualifying figure. The CSV export's <em>% of max award</em> sets the window against the "
-            "window, so the screen and the export disagree. Under Combined funding the two agree."),
-        'why': (
-            "A college that reads 191% of its award may take it to mean it qualified for more than its "
-            "award, and the percent it exports differs from the one it sees."),
-        'rec': (
-            "<strong>Compare like with like: set the viewed year's qualifying figure against that year's "
-            "max award</strong>, so the percent stays at or under 100%. <em>It might be wrong if</em> you "
-            "read the Annual view as progress toward the whole window; then the window's max award belongs "
-            "under it instead."),
-        'chips': chips(('Year against year', 'year'), ('Window against window', 'window'),
-                       ('Leave it', 'leave'), CH_LATER),
-    })
-
-    I.append({
-        'lane': 'implementation-funding',
-        'title': 'One request to Pedro: CollegeID2, completions and the units by type',
-        'ref': 'implementation-funding NEXT ⓪d · fetch_custom_report.py',
-        'facts': (
-            "Pedro said on 2 September that MAP would add CollegeID2, the field that names where a "
-            "student's CPL request began. As of 2026-09-03 it was on none of the four MAP views, so the "
-            "access outcome still reads <em>Potential Student</em> and leaves out batch uploads. The lane "
-            "holds one request for him that also asks for completions and for each CPL type's share of a "
-            "student's units, and no draft of it exists. The daily fetch asks MAP for a fixed list of "
-            "columns, so nothing in the pipeline notices the new field until a session adds it."),
-        'why': (
-            "Until the field lands, the access outcome counts a narrow slice of the credit colleges record, "
-            "and its arrival will go unseen unless someone asks."),
-        'rec': (
-            "<strong>A session drafts the one request, you send it, and the day Pedro answers, a session "
-            "adds the columns to the fetch and runs the probe.</strong> <em>It might be wrong if</em> Pedro "
-            "has already given you a date or a different field name."),
-        'chips': chips(('Draft it for me', 'draft'), ('I will wait for Pedro', 'wait'), CH_LATER),
-    })
-
-    I.append({
-        'lane': 'implementation-funding',
         'title': 'The last three sections of your funding tab review',
         'ref': 'implementation-funding ⓪b · the 2026-09-24 tab review sheet',
         'facts': (
@@ -351,8 +289,8 @@ def items():
             "not read through."),
         'rec': (
             "<strong>Let the three stand</strong>, and change any line in place on the review sheet if it "
-            "reads wrong. <em>It might be wrong if</em> your answer to card 1 changes the Annual view, "
-            "because the Funding window's reading note describes it."),
+            "reads wrong. <em>It might be wrong if</em> the Annual view's new year-against-year percent "
+            "reads differently from the Funding window's reading note, which describes it."),
         'chips': chips(('Let them stand', 'leave'), ('I will review them there', 'review'), CH_LATER),
     })
 
@@ -443,11 +381,10 @@ def build(check_only=False):
         return 0
 
     framing = (
-        "Four funding questions wait on you. The funding lane carried them as prose, so no sheet asked "
-        "them until now; each card shows what the repo holds today. Your eight answers from this "
-        "afternoon's sheet are carried out. One question the lane still listed as open you settled on "
-        "3 September, when you ratified the under-10 ADR: COBI keeps \"<10\" until the public/private "
-        "split.")
+        "Two funding questions wait on you: the last three sections of your funding tab review, and the "
+        "explainer's footer. Your answers on the Annual view's percent and on Pedro's request are carried "
+        "out. One question the lane still listed as open you settled on 3 September, when you ratified "
+        "the under-10 ADR: COBI keeps \"<10\" until the public/private split.")
     counts = (f"{len(I)} items across {len(lanes)} lanes · "
               f"every lane carrying an open ask is covered, by build-time audit")
 

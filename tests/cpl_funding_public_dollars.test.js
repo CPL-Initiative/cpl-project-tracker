@@ -98,17 +98,23 @@ function earnFigure(t) {
 }
 const pubFig = earnFigure(pubEarn), privFig = earnFigure(privEarn);
 const pubNum = pubFig === "<$1,000" ? 0 : (pubFig ? Number(pubFig.replace(/[$,]/g, "")) : NaN);
-const exact = "$" + Math.round(pa.earned_total).toLocaleString("en-US");
-const nearestK = Math.round(pa.earned_total / 1000) * 1000;
+// The row prints the figure for the span its award covers (Sam, 2026-09-27,
+// funding asks card 1): under the default Annual funding that is the viewed
+// year's qualifying figure beside that year's tranche, so it is the one the
+// public page coarsens. The CSV below still carries the window (D4).
+const shown = pa["ey" + P._state.viewSlot];
+const exact = "$" + Math.round(shown).toLocaleString("en-US");
+const nearestK = Math.round(shown / 1000) * 1000;
 check("D2: the public row prints its earning as <$1,000 or a multiple of $1,000",
   pubFig === "<$1,000" || (Number.isFinite(pubNum) && pubNum % 1000 === 0));
 check("D2: ...and that figure is the earned total rounded to the nearest $1,000 (" +
   (pubFig || "none") + " for " + exact + ")",
-  pubFig === "<$1,000" ? pa.earned_total < 1000 : pubNum === nearestK);
-// The fixture's total (100,780.81) is deliberately NOT a multiple of 1,000, so
-// "coarse" and "exact" differ and the next two checks cannot pass vacuously.
+  pubFig === "<$1,000" ? shown < 1000 : pubNum === nearestK);
+// The figure the row shows is deliberately NOT a multiple of 1,000 (the check
+// asserts it), so "coarse" and "exact" differ and the next two checks cannot
+// pass vacuously.
 check("D2: the public row never prints the exact earned dollar figure",
-  Math.round(pa.earned_total) % 1000 !== 0 && pubFig !== null && pubFig !== exact);
+  Math.round(shown) % 1000 !== 0 && pubFig !== null && pubFig !== exact);
 check("D2: the curator row prints the exact earned figure (" + exact + ")",
   privFig === exact);
 

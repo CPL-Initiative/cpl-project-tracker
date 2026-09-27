@@ -3001,7 +3001,9 @@
     { label: "Confirmation Deadline", date: "Oct 2026" },
     { label: "First Disbursement based on cumulative CPL", date: "Feb 2027" },
     { label: "Second Disbursement based on cumulative CPL", date: "Jul 2027" },
-    { label: "Undispersed Funds Rolled to Year 2 and Releveled", date: "Aug 2027" },
+    // Not releveled (Sam, 2026-09-25): year-one funding carries forward to
+    // year two for the same college.
+    { label: "Undispersed Funds Rolled to Year 2", date: "Aug 2027" },
     { label: "First Disbursement based on cumulative CPL", date: "Dec 2027" },
     { label: "Second Disbursement based on cumulative CPL", date: "Jun 2028" },
     { label: "Potential Year 3 Depending on Funding Availability", date: "" }
@@ -8589,7 +8591,8 @@
       // $150,000 base read $149,321 beside "(at base)". The bound word and the
       // qualifying line sit with the figure they describe.
       { key: "total", label: "Max award", cls: "c",
-        title: "The institution's max award, " + awardWhen + " — the most it can qualify for, with the Current Total beneath. The base and the cap apply to this figure. Awards are based on outcomes, not automatically awarded." },
+        title: "The institution's max award, " + awardWhen + " — the most it can qualify for, with the Current Total" +
+          (win ? "" : " for " + viewYearName()) + " beneath. The base and the cap apply to this figure. Awards are based on outcomes, not automatically awarded." },
       { key: "cr_award", label: "CR award", cls: "c",
         title: "The credit share of the max award, " + awardWhen + " — the credit priority measures count toward it. Awards are based on outcomes, not automatically awarded." },
       { key: "nc_award", label: "NC award", cls: "",
@@ -8986,6 +8989,9 @@
     var out = { total: 0, w: W, main_w: W, cr_award: 0, nc_award: 0,
       floored: !!allocModel().floored[c.college], capped: !!allocModel().capped[c.college] };
     var ys = [], eys = [], earnTotal = 0;
+    // The held and lane figures year by year too, so an award cell under
+    // Annual funding can set one year against one year (cellFig()).
+    var hys = [], ecys = [], enys = [];
     // Earned splits two ways so the figure can be read honestly (Sam,
     // 2026-07-30): MEASURED (a MAP feed scored this college's actual against
     // its target) and ADVANCE (the metric isn't measurable yet — full cap paid
@@ -9018,11 +9024,11 @@
       //    rides this lane — no advance on origination (N2 b).
       // Goes through prioCap, so under front-load ALL of it is earnable in
       // Year 1 against the Year-1 targets and later years carry nothing.
-      var ey = 0;
+      var ey = 0, hy = 0, ecy = 0, eny = 0;
       var pay = function (paid, fr, lane) {
-        if (gate.blocked) { earnWithheld += paid; return; }   // held in reserve
+        if (gate.blocked) { earnWithheld += paid; hy += paid; return; }   // held in reserve
         ey += paid;
-        if (lane === "nc") earnNc += paid; else earnCr += paid;
+        if (lane === "nc") { earnNc += paid; eny += paid; } else { earnCr += paid; ecy += paid; }
         if (!earnIsMeasured(fr)) earnAdvance += paid;   // gap/pending advance; undelivered/bad_src contribute $0
         else earnMeasured += paid;
       };
@@ -9034,12 +9040,15 @@
         var fr = earnFraction(c, p);
         pay(ncPrioCap(ncW, slot, p) * fr.f, fr, "nc");
       });
-      eys.push(ey);
+      eys.push(ey); hys.push(hy); ecys.push(ecy); enys.push(eny);
       earnTotal += ey;
     });
     out.earned_withheld = earnWithheld;
     ys.forEach(function (v, i) { out["y" + (i + 1)] = fl ? (i === 0 ? out.total : 0) : v; });
     eys.forEach(function (v, i) { out["ey" + (i + 1)] = fl ? (i === 0 ? earnTotal : 0) : v; });
+    hys.forEach(function (v, i) { out["hy" + (i + 1)] = fl ? (i === 0 ? earnWithheld : 0) : v; });
+    ecys.forEach(function (v, i) { out["ecy" + (i + 1)] = fl ? (i === 0 ? earnCr : 0) : v; });
+    enys.forEach(function (v, i) { out["eny" + (i + 1)] = fl ? (i === 0 ? earnNc : 0) : v; });
     out.earned_total = earnTotal;
     out.earned_measured = earnMeasured;
     out.earned_advance = earnAdvance;
@@ -9058,6 +9067,19 @@
     });
     return out;
   }
+  // The per-year figures an award cell reads under Annual funding (cellFig):
+  // qualifying (ey), held in reserve (hy), and the credit and noncredit
+  // qualifying lanes (ecy, eny), keyed by year like the award's y1, y2. A
+  // subtotal adds them the way it adds the window figures.
+  function addYearFigs(dst, src) {
+    selectedYears().forEach(function (_, i) {
+      ["ey", "hy", "ecy", "eny"].forEach(function (f) {
+        var k = f + (i + 1);
+        dst[k] = (dst[k] || 0) + (src[k] || 0);
+      });
+    });
+    return dst;
+  }
   function systemAlloc() {
     var net = netCollege();
     var ny = nYears();
@@ -9073,7 +9095,7 @@
     // Earned totals = Σ institutions (the real disbursement, each on its own
     // actuals) — the noncredit-only rows included. The CR/NC decomposition
     // sums feed the ONE SYSTEM row's paired columns.
-    var eys = selectedYears().map(function () { return 0; }), earnTotal = 0;
+    var earnTotal = 0;
     var eMeas = 0, eAdv = 0, eHeld = 0, eCr = 0, eNc = 0;
     var crA = 0, ncA = 0, crF = 0, ncF = 0;
     oneRoster().forEach(function (col) {
@@ -9084,13 +9106,12 @@
       eHeld += a.earned_withheld || 0;
       eCr += a.earned_cr || 0;
       eNc += a.earned_nc || 0;
-      eys.forEach(function (_, i) { eys[i] += a["ey" + (i + 1)] || 0; });
+      addYearFigs(out, a);
       var sp = instSplit(col);
       crA += sp.cr; ncA += sp.nc;
       crF += Number(col.credit_ftes) || 0;
       ncF += col.nco ? (Number(col.ftes) || 0) : (Number(col.noncredit_ftes) || 0);
     });
-    eys.forEach(function (v, i) { out["ey" + (i + 1)] = v; });
     out.earned_total = earnTotal;
     out.earned_measured = eMeas;
     out.earned_advance = eAdv;
@@ -9222,15 +9243,31 @@
   }
   function earnedCellTitle(capLabel, cap, earned, meas, adv, held) {
     // meas/adv accepted for call-site stability; neither renders (2026-09-01).
-    var bits = [capLabel + ": " + fmtMoney(cap), "qualifying so far: " + earnedMoney(earned)];
+    var bits = [capLabel + ": " + fmtMoney(cap), qualifyingWords() + ": " + earnedMoney(earned)];
     if (held > 0.5) bits.push(earnedMoney(held) + " held in reserve — baseline participation not met; it rolls forward");
     return bits.join(" · ");
   }
   // ── the CR award / NC award cells (one row per institution — R6) ──────
   // Shown for the window under Combined funding, per year under Annual
-  // funding; the Current Total stacks beneath (cumulative to date in both
-  // views — earning is a window quantity).
+  // funding, and the qualifying figure beside each award covers the same
+  // span: the window's under Combined, the viewed year's under Annual (Sam,
+  // 2026-09-27, funding asks card 1: "Year against year"). Until then the
+  // Annual cells set one year's award over the whole window's qualifying
+  // figure, and a college read "qualifying $140,476 · 191%".
   function awardDivisor() { return frontloaded() ? 1 : nYears(); }
+  // The year the "Show priorities for" control names (2026-27, 2027-28).
+  function viewYearName() { return selectedYears()[Number(state.viewSlot || "1") - 1] || ""; }
+  // An award cell's figure for the span its award covers. `field` names the
+  // window figure; under Annual the cell reads that figure's per-year twin
+  // (collegeAlloc's ey1, hy1, ecy1, eny1 …) for the viewed year.
+  var YEAR_TWIN = { earned_total: "ey", earned_withheld: "hy", earned_cr: "ecy", earned_nc: "eny" };
+  function cellFig(row, field) {
+    if (frontloaded()) return row[field] || 0;
+    return row[YEAR_TWIN[field] + (state.viewSlot || "1")] || 0;
+  }
+  function qualifyingWords() {
+    return frontloaded() ? "qualifying so far" : "qualifying so far in " + viewYearName();
+  }
   // Does the daily feed CARRY the noncredit measures at all? Global — a
   // property of the feed, not of a row (srcDelivered asks the artifact).
   function ncFeedsDelivered() {
@@ -9243,10 +9280,10 @@
     if (row.nco) {
       return '<td class="cf-award dk c" title="A noncredit-only institution: its whole award is the noncredit share, qualified by origination (N2 b).">$0</td>';
     }
-    var earned = row.earned_cr || 0;
+    var earned = cellFig(row, "earned_cr");
     var title = earnedCellTitle("Credit share of the max award" +
         (frontloaded() ? " (" + windowLabel() + " window)" : " (per year)"),
-      cap, earned, row.earned_measured || 0, row.earned_advance || 0, row.earned_withheld || 0);
+      cap, earned, row.earned_measured || 0, row.earned_advance || 0, cellFig(row, "earned_withheld"));
     // The share alone: the bound word and the qualifying line moved to the
     // Max award cell (2026-09-23), which is the figure they describe.
     return '<td class="cf-award c" title="' + esc(title) + '">' + fmtMoney(cap) + "</td>";
@@ -9255,12 +9292,12 @@
   // the bound word beside it and the one qualifying line beneath.
   function maxAwardCellHtml(row) {
     var cap = (row.total || 0) / awardDivisor();
-    var earned = row.earned_total || 0;
+    var earned = cellFig(row, "earned_total"), held = cellFig(row, "earned_withheld");
     var title = earnedCellTitle("Max award" +
         (frontloaded() ? " (" + windowLabel() + " window)" : " (per year)"),
-      cap, earned, row.earned_measured || 0, row.earned_advance || 0, row.earned_withheld || 0);
+      cap, earned, row.earned_measured || 0, row.earned_advance || 0, held);
     return '<td class="cf-award cf-max c" title="' + esc(title) + '">' + fmtMoney(cap) + boundWordHtml(row) +
-      earnedSubHtml(cap, earned, row.earned_advance || 0, row.earned_withheld || 0, row.gate_blocked) + "</td>";
+      earnedSubHtml(cap, earned, row.earned_advance || 0, held, row.gate_blocked) + "</td>";
   }
   function ncAwardCellHtml(row) {
     var cap = (row.nc_award || 0) / awardDivisor();
@@ -9277,7 +9314,7 @@
     // unchanged.
     var title = earnedCellTitle("Noncredit share of the max award" +
         (frontloaded() ? " (" + windowLabel() + " window)" : " (per year)"),
-      cap, row.earned_nc || 0, row.earned_nc || 0, 0, 0);
+      cap, cellFig(row, "earned_nc"), cellFig(row, "earned_nc"), 0, 0);
     return '<td class="cf-award" title="' + esc(title) + '">' + fmtMoney(cap) + "</td>";
   }
   // The bound word — (at base) / (at cap) — sits in parentheses beside the
@@ -9689,6 +9726,7 @@
       g.earned_measured += r.earned_measured || 0;
       g.earned_advance += r.earned_advance || 0;
       g.earned_withheld += r.earned_withheld || 0;
+      addYearFigs(g, r);
       g.rows.push(r);
     });
     return order.map(function (k) { return by[k]; })
@@ -9728,12 +9766,12 @@
     // ONE SYSTEM row (R6, 2026-08-31) — the statewide CR/NC pair as columns on
     // one sticky line, shaped like an institution row so the award cells render
     // it unchanged.
-    var sysRow = { college: "SYSTEM", nco: false, gate_blocked: false,
+    var sysRow = addYearFigs({ college: "SYSTEM", nco: false, gate_blocked: false,
       cr_award: sys.cr_award, nc_award: sys.nc_award, total: sys.total,
       cr_ftes: sys.cr_ftes, nc_ftes: sys.nc_ftes,
       earned_cr: sys.earned_cr, earned_nc: sys.earned_nc,
       earned_total: sys.earned_total, earned_measured: sys.earned_measured,
-      earned_advance: sys.earned_advance, earned_withheld: sys.earned_withheld };
+      earned_advance: sys.earned_advance, earned_withheld: sys.earned_withheld }, sys);
     // The statewide row EXPANDS like an institution row (Sam, 2026-09-14), and
     // the NAME is the toggle here too — every control is a word.
     //
@@ -10441,7 +10479,10 @@
       if (tr > 0) bits.push(fmtInt(tr) + " with transcribed CPL");
       return { state: "met", why: bits.join(" · ") + " in MAP" };
     }
-    if (supp) return { state: "partial", why: "activity present but fewer than 5 students (privacy-suppressed)" };
+    // The floor comes from the feed (suppress_below, 10 under the under-10
+    // ADR), never a typed number: this line said "fewer than 5" for weeks
+    // after the floor moved.
+    if (supp) return { state: "partial", why: "activity present but fewer than " + suppressFloor() + " students (privacy-suppressed)" };
     return { state: "not", why: "no CPL eligibility or transcription recorded in MAP yet" };
   }
   function essGlyph(o) {
