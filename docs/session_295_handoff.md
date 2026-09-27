@@ -47,16 +47,16 @@ Four PRs merged: #1701, #1702, #1703, #1704.
 - **The narrated draft:** watch it and say OK or what to change. It is not linked from the explainer until he approves.
 - **The ESL paste.** Sam completed the ESL sheet on 2026-09-26: all nine items as proposed, none ruled one by one. The rule changes shipped in code. The data changes went to him in the session as one SQL paste, `kb/esl_sheet_out/2026-09-26/apply.sql`, with `rollback.sql`, `plan.json` and `preflight.json`. Running it is his go.
   - **Before anything ESL, check whether it ran:** `select reviewer_email, count(*) from kb_curation where reviewer_email like 'esl-%-s294@bot' group by 1 order by 1;`
-  - A good run shows `esl-catalog` 6 · `esl-health` 18 · `esl-ladder` 30 · `esl-newfold` 89 · `esl-transfer` 3. Once it has run, resolve his Complete comment on the sheet (thread `ecbd0076`), and let the daily cron publish.
+  - A good run shows `esl-catalog` 6 · `esl-health` 18 · `esl-ladder` 30 · `esl-newfold` 89 · `esl-transfer` 3, plus `esl-vesl` 2 once the second paste runs. Once it has run, resolve his Complete comment on the sheet (thread `ecbd0076`), and let the daily cron publish.
   - **If the counts come up short:** each UPDATE is guarded on the row's value and cohort, so a short count means a curator moved that row after the 19:40 UTC read. Compare the plan against a fresh read; never force a row.
 
-- **The ESL follow-up sheet**, two cards: https://claude.ai/artifact/PaozKqfruMT3hZ93vcg5gr. `ESOL M9309`, a noncredit composition course, and the two *Optical Technician* rows, held out of the fold. Read its `replies` store and `replies/done` before acting on either.
+- **The second ESL paste.** Sam answered the follow-up sheet (https://claude.ai/artifact/PaozKqfruMT3hZ93vcg5gr) on 2026-09-27, both his own calls: `ESOL M9309` stays apart with transfer composition, and the two *Optical Technician* rows fold into Vocational ESL. The fold travels as `kb/esl_sheet_out/2026-09-27/apply.sql` (two rows, cohort `esl-vesl-s294@bot`, with `rollback.sql`), sent in the session. A good run shows `esl-vesl-s294@bot` 2. Resolve his Complete comment on that sheet (thread `19286036`) once it reads back.
 
 ## The queue, in Sam's order
 
 1. **The narrated video:** built, waiting on his OK. The refinement he may ask for next is to cue each reveal to the word that names it. The layout carries cue times, but today `ft()` stretches each scene uniformly.
 2. **ESL:** verify the paste (above), then take up what stays open:
-   - the follow-up sheet's two cards, once answered. Their writes travel as a paste, like the first. Item 4 already keeps the five transfer composition identities apart, `M1205` and `M1239` among them;
+   - the second paste's two rows (`esl-vesl-s294@bot`), once Sam runs it. Item 4 and his follow-up verdict keep six transfer composition identities apart: the five item 4 names and `ESOL M9309`;
    - item 8, the monthly pass. `kb/_esl_new_identities_dryrun.py` is the pass. Scheduling it is a new standing cadence, so it waits until the paste lands.
 
    Then the Jev CCR's misfit ruling (nest or cross-list, [handoff 283](session_283_handoff.md) "first sitting") and its next rung.
@@ -65,7 +65,7 @@ Four PRs merged: #1701, #1702, #1703, #1704.
 
 ## Read in order
 
-1. The cohort count above, then `kb/esl_sheet_out/2026-09-26/plan.json`, then the follow-up sheet's `replies` store.
+1. The cohort count above, then `kb/esl_sheet_out/2026-09-26/plan.json`, then `kb/esl_sheet_out/2026-09-27/plan.json`.
 2. [`lanes/esl-packaging.md`](reference/lanes/esl-packaging.md).
 3. `prototype/funding_video/README.md`, *The narrated draft*.
 4. [`lanes/implementation-funding.md`](reference/lanes/implementation-funding.md), the video paragraph.
