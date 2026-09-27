@@ -13567,7 +13567,7 @@
   },
   {
    "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
-   "count": 49,
+   "count": 50,
    "docs": [
     {
      "created": "2026-08-28",
@@ -14108,6 +14108,19 @@
      "title": "Dependency map \u2014 dataset to consuming tabs, scripts, workflows and surfaces",
      "type": null,
      "updated": ""
+    },
+    {
+     "created": "2026-09-27",
+     "governs": [],
+     "path": "docs/reference/doctrine_provenance.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "doctrine"
+     ],
+     "title": "Doctrine provenance \u2014 the incidents behind CLAUDE.md's rules",
+     "type": null,
+     "updated": "2026-09-27"
     },
     {
      "created": "2026-08-28",
@@ -18757,5 +18770,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 976
+ "total": 977
 }
