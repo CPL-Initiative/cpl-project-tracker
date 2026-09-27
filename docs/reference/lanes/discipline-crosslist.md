@@ -93,7 +93,7 @@ handled. `cross_listing_group` sits on the CCR seed (`kb/common_courses.json`).
 | 7 | one primary for counting | ✅ recorded here |
 | 8 | a cross-list never re-mints | ✅ recorded here |
 | 9 | the orphan-parent worklist | ✅ **landed** #1655 — `kb/orphan_parent_worklist.json` |
-| 10 | who may add a cross-list | **ruled: sessions first** (open-asks sheet card 2, 2026-09-22) — sessions write under a cohort receipt; curators after Governance maps a surface, Rule 10(a3) |
+| 10 | who may add a cross-list | **ruled: sessions first** (open-asks sheet card 2, 2026-09-22) — sessions write under a cohort receipt; curators after Governance maps a surface, Rule 10(a3). The curator surface goes through Governance together with the `cpl_occupation_match` queue (Sam, 2026-09-27, open-asks card 6) |
 | 11 | KIN/PE/ATHL C-ID and CCN fallout | ✅ **landed** #1654 — [`reference-kin-pe-athl-identifier-fallout`](../../kb-notes/reference-kin-pe-athl-identifier-fallout.md) |
 | 12 | the first sitting: 50 from kind C | open — waits on 1 through 7 |
 

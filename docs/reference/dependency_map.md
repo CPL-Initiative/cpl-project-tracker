@@ -334,8 +334,6 @@ collapse to one `<date>` family so writer and reader edges join.
 | `docs/INDEX.md` | scripts: `kb/_build_docs_index.py`, `kb/_docs_audit.py`, `kb/doctrine.py` | — |
 | `docs/catalog/index.json` | tabs: `governance` · scripts: `kb/_build_docs_index.py` | — |
 | `docs/common_cr_reference_scope.md` | scripts: `kb/_build_cr_reference.py` | — |
-| `docs/military_cr_reference_scope.md` | scripts: `kb/_build_open_asks_decision_sheet.py` | — |
-| `docs/reference/lanes/t5-55050-article-9.md` | scripts: `kb/_build_open_asks_decision_sheet.py` | — |
 | `docs/reference/mid_lifecycle.md` | scripts: `kb/_doctrine_scenarios.py` | — |
 | `docs/reference/statute/README.md` | scripts: `kb/_doctrine_scenarios.py` | — |
 | `docs/reference/statute/t5_55050_55051_final_reg_text_<date>.txt` | scripts: `kb/_derive_55050_clean.py` | — |
@@ -653,7 +651,6 @@ collapse to one `<date>` family so writer and reader edges join.
 | `prototype/check_contrast.py` | workflows: `js-tests.yml` | — |
 | `prototype/funding_video/.dur` | none found | scripts: `prototype/funding_video/render.mjs` |
 | `prototype/funding_video/.music.wav` | none found | scripts: `prototype/funding_video/render.mjs` |
-| `prototype/funding_video/README.md` | scripts: `kb/_build_open_asks_decision_sheet.py` | — |
 | `prototype/funding_video/funding_in_motion.src.html` | scripts: `prototype/funding_video/build.py` | — |
 | `prototype/funding_video/narration_s1_layout.json` | scripts: `prototype/funding_video/build.py` | — |
 | `prototype/skyview.html` | scripts: `prototype/build_ccr_atlas.py` | scripts: `prototype/build_ccr_atlas.py` · committed by: `daily-dashboard.yml` |
@@ -936,5 +933,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 534 file
+Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 531 file
 datasets · 147 external services · 376 consumers · 36 workflows · 37 tabs.

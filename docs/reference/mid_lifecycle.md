@@ -527,6 +527,16 @@ become audit findings):
   the canonical SUBJ4 per discipline. (The MQ vocabulary
   `kb/reference/mq_disciplines.json` is the broader 248-title superset —
   re-discipline proposals must be exact-MQ-name; Session 112, #746.)
+- **Units never split an identity (Sam, 2026-09-27; open-asks sheet card 5).**
+  A merge or a mint that joins records whose units differ keeps one identity, and
+  the identity shows the unit range of what it joins: `AR-2201-0552` issues
+  *Orienteering* at 1, 2 and 3 hours, so one recommendation reads *Orienteering
+  (1–3 units)*. It began as his military ruling of 2026-08-14 (ACE unit variants
+  are one recommendation) and his note of 2026-09-22, *"I think this should be a
+  rule for all merges and mints. Advise"*; it holds for M-IDs and credit
+  recommendations alike. The keys already comply (an M-ID is SUBJ4 plus number, and
+  `kb/_build_cr_reference.py`'s `topic_key` discards units). Whether every surface
+  shows the range is To-Do `s296-fable-unit-range-display`.
 
 Authoritative old→new aliases for every re-mint live at
 `kb/remint_out/<date>/alias_map.json`. Rollback notes per the playbook.
