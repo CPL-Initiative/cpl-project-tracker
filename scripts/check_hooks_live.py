@@ -32,6 +32,10 @@ session unless something goes looking.
 
 ⚠️ IT CANNOT DEPEND ON A HOOK TO ANSWER, because "no hook ran" is the case it
 has to detect. So it reads the evidence Claude Code leaves on disk instead.
+
+The root file the setup script writes carries the guards and, since
+2026-09-27, the context meter (`install_prompt_guards.py`); the LIVE line says
+whether each is there.
 """
 import json
 import os
@@ -42,6 +46,7 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SETTINGS = os.path.join(REPO, ".claude", "settings.json")
 MARK = "# cpl-prompt-guard"      # what install_prompt_guards.py stamps on its blocks
 SQL_TOOL = "mcp__Supabase__execute_sql"
+METER = "_context_budget.py"         # Rule 9a's context meter, a PostToolUse block
 
 
 def root_report(root_dir=None):
@@ -68,8 +73,11 @@ def root_report(root_dir=None):
     pre = (cfg.get("hooks") or {}).get("PreToolUse") or []
     hooked = sorted(str(b.get("matcher")) for b in pre
                     if any(MARK in (h.get("command") or "") for h in (b.get("hooks") or [])))
+    post = (cfg.get("hooks") or {}).get("PostToolUse") or []
+    meter = any(MARK in (h.get("command") or "") and METER in (h.get("command") or "")
+                for b in post for h in (b.get("hooks") or []))
     allow = (cfg.get("permissions") or {}).get("allow") or []
-    return {"path": path, "present": True, "hooked": hooked,
+    return {"path": path, "present": True, "hooked": hooked, "meter": meter,
             "allow_n": len(allow), "sql_rule": SQL_TOOL in allow}
 
 
@@ -92,11 +100,13 @@ def healthy(root):
 
 def main():
     """`--fix` repairs the session at hand when the ROOT line is bad: it runs the
-    installer for this root and reports again. It does nothing when the guards
-    are live, so a list change still waits for the snapshot rebuild (the human
-    gate). `--root DIR` points both at another root; tests use it. Sam,
-    2026-09-20: "How am I going to remember this?" — the opening line runs
-    this with --fix, so nobody has to."""
+    installer for this root and reports again. When the guards are live it adds
+    only the context meter, if absent (`--meter-only`): the meter grants nothing,
+    so a change to the guards or the allow list still waits for the snapshot
+    rebuild (the human gate). `--root DIR` points both at another root; tests
+    use it. Sam, 2026-09-20: "How am I going to remember this?" — the opening
+    line runs this with --fix, so nobody has to. Sam, 2026-09-27 (CLAUDE.md
+    Cleanup sheet, card 1): install the meter here too."""
     args = sys.argv[1:]
     root_dir = None
     if "--root" in args:
@@ -114,14 +124,29 @@ def main():
             print((run.stdout + run.stderr).strip()[-600:])
         root = root_report(root_dir)
         fixed = True
+    elif fix and not root.get("meter"):
+        cmd = [sys.executable, os.path.join(REPO, "scripts", "install_prompt_guards.py"),
+               root_dir or os.path.dirname(REPO), "--apply", "--meter-only"]
+        run = subprocess.run(cmd, capture_output=True, text=True)
+        print("FIXED —         installed the context meter at the root (exit %d): %s"
+              % (run.returncode, " ".join(cmd[1:])))
+        if run.returncode != 0:
+            print((run.stdout + run.stderr).strip()[-600:])
+        root = root_report(root_dir)
+        fixed = True
     print("session root:   %s" % root["path"])
     if root.get("error"):
         print("ROOT BROKEN:    will not parse (%s)" % root["error"])
     elif root["present"] and root.get("hooked"):
         print("LIVE (root) —   guards installed: %s · %d allow rule(s) · "
-              "execute_sql allow rule: %s"
+              "execute_sql allow rule: %s · context meter: %s"
               % (", ".join(root["hooked"]), root["allow_n"],
-                 "yes" if root["sql_rule"] else "NO"))
+                 "yes" if root["sql_rule"] else "NO",
+                 "yes" if root.get("meter") else "NO"))
+        if not root.get("meter"):
+            print("                The context meter (Rule 9a) is not installed here, so no")
+            print("                warning will come: --fix installs it (it grants nothing);")
+            print("                until then run python3 kb/_context_budget.py by hand.")
         if root["sql_rule"]:
             print("                execute_sql still asks once per call, by an upstream mark on")
             print("                that one tool (measured 2026-09-20); every other listed tool")
@@ -194,9 +219,10 @@ def main():
     print("        subdirectory of it. What counts is the ROOT line above.")
     if not (root.get("present") and root.get("hooked")):
         print()
-        print("        Consequences, both silent:")
+        print("        Consequences, all silent:")
         print("          * the approval prompts these guards suppress keep coming")
         print("          * Rule 10's write discipline is unenforced by the harness")
+        print("          * Rule 9a's context meter never warns")
         print()
         print("        Fix: have the environment's setup script run")
         print("        python3 %s/scripts/install_prompt_guards.py --apply" % REPO)

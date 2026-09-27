@@ -5,6 +5,7 @@
     python3 scripts/install_prompt_guards.py --apply           # write it there
     python3 scripts/install_prompt_guards.py --user --apply    # LOCAL machine: persists
     python3 scripts/install_prompt_guards.py /some/root --apply
+    python3 scripts/install_prompt_guards.py --apply --meter-only  # the meter alone
 
 ⚠️ WHICH TARGET SURVIVES WHAT:
   --user  ~/.claude/settings.json. On a LOCAL machine this is ordinary
@@ -101,6 +102,22 @@ That split decides the design:
                       control has set to `ask` — that prompt says so in its
                       own text ("Your organization requires approval for this
                       tool") and only the org admin console changes it.
+
+THE CONTEXT METER (Rule 9a)
+---------------------------
+The repo's own settings run `kb/_context_budget.py --hook` after every tool call,
+and a three-repo session never loads them, so the warning Rule 9a promises never
+fired in a cloud session (prompt audit F1, 2026-09-27). This installer writes the
+same hook at the root as a PostToolUse block, with an absolute path for the same
+reason the guards use one. Sam's verdict on the CLAUDE.md Cleanup sheet, card 1
+(2026-09-27): correct the rule AND have `check_hooks_live.py --fix` install the
+meter beside the guards.
+
+The meter grants nothing: no permission rule, no allow, no deny. It reads the
+transcript and speaks only at WARN and EMERGENCY. So `--meter-only` writes that
+one block and leaves the permission rules and the guards exactly as they are,
+and `check_hooks_live.py --fix` runs it on a root whose guards are already live.
+A change to the guards or the allow list still waits for the snapshot rebuild.
 """
 import json
 import os
@@ -169,6 +186,9 @@ GUARDS = [
 ]
 MARK = "# cpl-prompt-guard"          # so a re-run replaces instead of duplicating
 
+# ── the context meter: PostToolUse on every tool (Rule 9a) ─────────────────
+METER = ("*", "kb/_context_budget.py", "--hook")
+
 
 def blocks():
     out = []
@@ -180,6 +200,17 @@ def blocks():
         out.append({"matcher": matcher,
                     "hooks": [{"type": "command", "command": cmd}]})
     return out
+
+
+def meter_block():
+    matcher, rel, arg = METER
+    cmd = 'python3 "%s" %s  %s' % (os.path.join(REPO, rel), arg, MARK)
+    return {"matcher": matcher, "hooks": [{"type": "command", "command": cmd}]}
+
+
+def ours(block):
+    """True for a hook block this script wrote (its command carries MARK)."""
+    return any(MARK in (h.get("command") or "") for h in (block.get("hooks") or []))
 
 
 def target_root():
@@ -215,10 +246,13 @@ def target_root():
 
 def main():
     apply = "--apply" in sys.argv
+    meter_only = "--meter-only" in sys.argv
     root = target_root()
     path = os.path.join(root, ".claude", "settings.json")
 
     missing = [r for _, r in GUARDS if not os.path.exists(os.path.join(REPO, r))]
+    if not os.path.exists(os.path.join(REPO, METER[1])):
+        missing.append(METER[1])
     if missing:
         print("refusing: guard script(s) missing from this repo: %s" % ", ".join(missing))
         return 1
@@ -231,33 +265,43 @@ def main():
             print("refusing: %s exists and will not parse (%s)" % (path, e))
             return 1
 
-    # Permission rules: union, so a rule someone added by hand survives.
-    perms = cfg.setdefault("permissions", {})
-    existing = perms.setdefault("allow", [])
-    added = [t for t in ALLOW_TOOLS if t not in existing]
-    perms["allow"] = existing + added
-
-    # Hooks: drop anything this script installed before, keep everything else.
     hooks = cfg.setdefault("hooks", {})
-    pre = hooks.setdefault("PreToolUse", [])
-    kept = [b for b in pre
-            if not any(MARK in (h.get("command") or "") for h in (b.get("hooks") or []))]
-    replaced = len(pre) - len(kept)
-    hooks["PreToolUse"] = kept + blocks()
-
     print("session root:  %s" % root)
     print("settings file: %s%s" % (path, "" if os.path.exists(path) else "  (will be created)"))
     print()
-    print("permissions.allow: %d read-only MCP tool(s) to add, %d already there"
-          % (len(added), len(existing)))
-    print("PreToolUse:        keeping %d existing block(s), replacing %d of ours, adding %d"
-          % (len(kept), replaced, len(GUARDS)))
-    for matcher, rel in GUARDS:
-        print("   %-34s -> %s" % (matcher, rel))
-    print()
-    print("⚠️  execute_sql is BOTH an allow rule and a hook: the rule stops the prompt")
-    print("    (a hook allow alone did not, measured 2026-09-20) and the hook's deny")
-    print("    still fires first on any write outside cpl_memory (Rule 10).")
+    if meter_only:
+        print("permissions.allow: untouched (--meter-only)")
+        print("PreToolUse:        untouched (--meter-only)")
+    else:
+        # Permission rules: union, so a rule someone added by hand survives.
+        perms = cfg.setdefault("permissions", {})
+        existing = perms.setdefault("allow", [])
+        added = [t for t in ALLOW_TOOLS if t not in existing]
+        perms["allow"] = existing + added
+
+        # Hooks: drop anything this script installed before, keep everything else.
+        pre = hooks.setdefault("PreToolUse", [])
+        kept = [b for b in pre if not ours(b)]
+        replaced = len(pre) - len(kept)
+        hooks["PreToolUse"] = kept + blocks()
+        print("permissions.allow: %d read-only MCP tool(s) to add, %d already there"
+              % (len(added), len(existing)))
+        print("PreToolUse:        keeping %d existing block(s), replacing %d of ours, adding %d"
+              % (len(kept), replaced, len(GUARDS)))
+        for matcher, rel in GUARDS:
+            print("   %-34s -> %s" % (matcher, rel))
+
+    post = hooks.setdefault("PostToolUse", [])
+    post_kept = [b for b in post if not ours(b)]
+    hooks["PostToolUse"] = post_kept + [meter_block()]
+    print("PostToolUse:       keeping %d existing block(s), replacing %d of ours, adding 1"
+          % (len(post_kept), len(post) - len(post_kept)))
+    print("   %-34s -> %s %s" % (METER[0], METER[1], METER[2]))
+    if not meter_only:
+        print()
+        print("⚠️  execute_sql is BOTH an allow rule and a hook: the rule stops the prompt")
+        print("    (a hook allow alone did not, measured 2026-09-20) and the hook's deny")
+        print("    still fires first on any write outside cpl_memory (Rule 10).")
 
     if not apply:
         print("\nDry run. Re-run with --apply to write it.")

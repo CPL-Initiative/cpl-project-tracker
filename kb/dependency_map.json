@@ -608,7 +608,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 24
+     "line": 25
     }
    ],
    "main_committers": []
@@ -2988,21 +2988,21 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 42
+     "line": 46
     },
     {
      "id": "script:scripts/install_prompt_guards.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 219
+     "line": 251
     },
     {
      "id": "script:scripts/install_prompt_guards.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 219
+     "line": 251
     }
    ],
    "served": true,

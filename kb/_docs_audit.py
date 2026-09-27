@@ -944,7 +944,7 @@ def rule_presentation_doctrine(entry):
 
 
 # ── checkpoint_overdue ───────────────────────────────────────────────────────
-# WHY (2026-08-29): Rule 9 says checkpoint "roughly every ~100K tokens of context
+# WHY (2026-08-29): Rule 9 said checkpoint "roughly every ~100K tokens of context
 # consumed... Claude Code doesn't expose an exact counter; use proxies". That is
 # a condition NOTHING CAN OBSERVE — the same defect that left
 # `04-projects/SESSION-NOTES.md` 41 days stale behind the words "when the run
@@ -1004,10 +1004,9 @@ def rule_checkpoint_overdue(root):
                    "handoff": newest},
         "message": (
             f"{n} commit(s) have landed since `{rel}` was last written "
-            f"(budget {CHECKPOINT_COMMIT_BUDGET}). Rule 9's own trigger — "
-            f"'roughly every ~100K tokens' — is a condition nothing can observe, "
-            f"so this is the observable stand-in. Run `/checkpoint`: improvising "
-            f"one from memory is how nine of its thirteen artifacts go missing."),
+            f"(budget {CHECKPOINT_COMMIT_BUDGET}), which is Rule 9's trigger. "
+            f"Run `/checkpoint`: improvising one from memory is how nine of its "
+            f"thirteen artifacts go missing."),
     }
 
 

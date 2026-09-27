@@ -6,7 +6,10 @@ artifacts:
   - kb/_context_budget.py
   - scripts/context-pressure-hook.sh
   - scripts/install-context-hook.ps1
+  - scripts/install_prompt_guards.py
+  - scripts/check_hooks_live.py
   - tests/context_budget_test.py
+  - tests/install_prompt_guards_test.py
 related:
   - docs/kb-notes/methodology-context-pressure-is-measurable.md
 ---
@@ -19,9 +22,11 @@ list). This carries what you look up when you actually install it.
 
 ## Install
 
-**Every session, every machine — it is in the repo now (2026-09-11).** The
-repo's own `.claude/settings.json` carries the hook as a `PostToolUse` entry
-beside the two `SessionStart` hooks:
+The route depends on where the session is rooted.
+
+**A session rooted at this repo** loads the repo's own `.claude/settings.json`,
+which carries the hook as a `PostToolUse` entry beside the two `SessionStart`
+hooks:
 
 ```json
 "PostToolUse": [ { "matcher": "*", "hooks": [
@@ -29,18 +34,33 @@ beside the two `SessionStart` hooks:
 ] } ]
 ```
 
-⚠️ **Why it moved.** The per-machine install below was the ONLY install, and a
-remote Claude Code session is a fresh container every time — never the machine
-the hook was installed on. On 2026-09-11 a 15-hour remote session (385 tool
-calls, about 1,200 tokens a turn, no single large read) compacted at 785,955
-tokens with the meter never having run once: nothing computed "tokens left"
-until it was run by hand afterwards, and Rule 9's commit-count proxy read zero
-because the handoff had just been touched inside a PR. The fallback ceiling was
-right to within 122 tokens; installed, the meter would have warned about ten
-turns early. Sam: *"make it so."* `tests/context_budget_test.py` now fails if
-the entry leaves the file. The per-machine routes below still work and are
-harmless beside it (announce-once is keyed by session, so two installs do not
-double-warn), but they are no longer required.
+`tests/context_budget_test.py` fails if the entry leaves the file.
+
+**A three-repo cloud session** roots at the parent of the clones and loads
+nothing from that file (`scripts/check_hooks_live.py` records the measurement).
+There `scripts/install_prompt_guards.py` writes the same hook into the session
+root's settings, with an absolute path, beside the approval-prompt guards. The
+environment's setup script runs it when the snapshot is built, and
+`check_hooks_live.py --fix`, the first command of every session, adds the meter
+alone (`--meter-only`) to a root that lacks it. The meter grants no permission,
+so that repair leaves the guards and the allow list as it found them;
+`tests/install_prompt_guards_test.py` pins both. The checker's LIVE line reads
+`context meter: yes` once the hook is in place.
+
+⚠️ **Why both.** On 2026-09-11 a 15-hour remote session (385 tool calls, about
+1,200 tokens a turn, no single large read) compacted at 785,955 tokens with the
+meter never having run once: nothing computed "tokens left" until it was run by
+hand afterwards, and Rule 9's commit-count proxy read zero because the handoff
+had just been touched inside a PR. The fallback ceiling was right to within 122
+tokens; installed, the meter would have warned about ten turns early. Sam:
+*"make it so."* The fix that day put the hook in the repo's settings, which
+reach a session rooted at the repo and not the three-repo cloud session that
+failed. The CLAUDE.md prompt audit found the gap (2026-09-27, finding F1), and
+Sam's verdict on its sheet, card 1, added the root install.
+
+**Per machine.** The routes below register the hook at user level on a local
+machine. They are harmless beside the others: announce-once is keyed by
+session, so two installs do not double-warn.
 
 **Windows** (Sam's machine — Windows PowerShell **5.1**, not 7):
 

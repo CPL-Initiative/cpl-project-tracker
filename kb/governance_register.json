@@ -344,7 +344,7 @@
     {
       "id": "CA-04",
       "loop": "Session checkpoint (docs, memory, To-Do feed)",
-      "frequency": "Every ~100K tokens + on request",
+      "frequency": "Above 6 commits since the newest handoff (Rule 9), at the context warning (Rule 9a), and on request",
       "owner": "Claude sessions",
       "state": "running",
       "live": null

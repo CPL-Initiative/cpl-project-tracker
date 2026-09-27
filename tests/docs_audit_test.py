@@ -438,7 +438,7 @@ check("unreferenced offload: ignores docs that are not CLAUDE.md",
       da.rule_unreferenced_offload({"rel": "docs/other.md", "path": __file__}, ".") is None)
 
 # ── checkpoint_overdue ────────────────────────────────────────────────────
-# Rule 9's own trigger is "roughly every ~100K tokens... Claude Code doesn't
+# Rule 9's trigger was "roughly every ~100K tokens... Claude Code doesn't
 # expose an exact counter" — a condition nothing can observe, which is the same
 # defect that left 04-projects/SESSION-NOTES.md 41 days stale. Commits since the
 # newest handoff IS observable. Threshold measured over ~220 commits: handoffs
