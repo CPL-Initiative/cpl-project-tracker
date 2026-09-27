@@ -3096,7 +3096,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 138
+     "line": 139
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -4187,7 +4187,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 127
+     "line": 128
     },
     {
      "id": "script:scripts/stamp_asset_versions.py",
@@ -4534,7 +4534,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 127
+     "line": 128
     }
    ],
    "served": true,
@@ -5284,7 +5284,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 185
+     "line": 186
     }
    ],
    "served": false,
@@ -5297,7 +5297,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 195
+     "line": 196
     }
    ],
    "served": false,
@@ -5461,14 +5461,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 34
+     "line": 35
     },
     {
      "id": "script:kb/_build_esl_followup_decision_sheet.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 34
+     "line": 35
     }
    ],
    "served": false,
@@ -6123,7 +6123,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 127
+     "line": 128
     }
    ],
    "served": true,
@@ -13546,7 +13546,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 127
+     "line": 128
     }
    ],
    "served": true,
@@ -13948,7 +13948,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 147
+     "line": 148
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -16001,7 +16001,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 161
+     "line": 162
     },
     {
      "id": "script:kb/_build_orphan_parent_worklist.py",

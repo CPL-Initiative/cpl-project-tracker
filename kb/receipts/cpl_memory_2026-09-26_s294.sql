@@ -36,3 +36,17 @@ group by m.slug, m.status, m.verified_by, m.plain order by m.slug;
 --   of item 5: three new identities, now two cards on their own sheet (...PaozKqfruMT3hZ93vcg5gr): ...$d$
 --   where slug = 'sam-esl-merging-sheet-verdicts-2026-09-26' and detail like '%one reads as transfer composition, unruled%';
 -- Verified: detail_updated true, creates 1, updates 1.
+
+-- Addition, 2026-09-27 00:25 UTC: Sam answered the ESL follow-up sheet (both his own calls). One row, logged.
+insert into public.cpl_memory (slug, kind, org, title, summary, detail, plain, tags, source, related, status, verified_by, verified_at, event_date, author)
+select x.slug, x.kind, 'cpl', x.title, x.summary, x.detail, x.plain, x.tags, x.source, array['sam-esl-merging-sheet-verdicts-2026-09-26']::text[], x.status, x.verified_by, now(), date '2026-09-27', 'SkyCadence-s294'
+from jsonb_to_recordset($json$[{"slug": "sam-esl-followup-verdicts-2026-09-27", "kind": "decision", "title": "Sam: optical courses to Vocational ESL; M9309 apart", "summary": "Sam ruled both cards of the ESL follow-up sheet himself on 2026-09-27, keeping the noncredit supplemental freshman composition course ESOL M9309 apart with transfer composition and folding the two Optical Technician groups (ESOL M9267 and M9272) into Vocational ESL.", "detail": "Sheet https://claude.ai/artifact/PaozKqfruMT3hZ93vcg5gr, replies/done 2026-09-27T00:02Z, ruled 2 of 2 (as_proposed 0): 1 keep (the card proposed folding into Advanced), 2 vesl (the card proposed Health). The fold travels as kb/esl_sheet_out/2026-09-27/apply.sql, two INSERT-only rows under esl-vesl-s294@bot with rollback.sql; the four June merges into the two groups follow the chain. Both verdicts depart from the proposal and are his domain calls.", "plain": "Sam decided the last two ESL questions himself. A noncredit course that supports freshman composition stays with the transfer composition courses, and two optical technician courses join Vocational ESL. The second change is ready as a two-line update he runs.", "tags": ["esl-packaging", "decision-sheet", "ccr", "sam-ruling"], "source": "https://claude.ai/artifact/PaozKqfruMT3hZ93vcg5gr (replies/done, 2026-09-27)", "status": "verified", "verified_by": "Sam (sheet Complete, 2026-09-27)"}]$json$::jsonb)
+  as x(slug text, kind text, title text, summary text, detail text, plain text, tags text[], source text, status text, verified_by text)
+where not exists (select 1 from public.cpl_memory m where m.slug = x.slug);
+insert into public.cpl_memory_log (memory_id, actor, action, note, after)
+select id, 'SkyCadence-s294', 'create', 'Sam answered the ESL follow-up sheet', to_jsonb(m) from public.cpl_memory m
+where m.slug = 'sam-esl-followup-verdicts-2026-09-27'
+  and not exists (select 1 from public.cpl_memory_log l where l.memory_id = m.id and l.action = 'create');
+select m.slug, m.status, m.verified_by, m.plain is not null as has_plain,
+       (select count(*) from public.cpl_memory_log l where l.memory_id = m.id and l.action = 'create') as creates
+from public.cpl_memory m where m.slug = 'sam-esl-followup-verdicts-2026-09-27';

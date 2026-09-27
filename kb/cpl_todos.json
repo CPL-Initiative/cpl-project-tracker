@@ -2,7 +2,7 @@
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-26",
   "_session": "S294 SkyCadence",
-  "_status": "The funding introduction now has a narrated draft: three minutes, read by a synthetic voice, with the music under it as background and captions you can switch off. Its read was retuned after Sam heard the second one as stilted, so CPL, EDD and FTES are said as quick letters and the years the way people say them aloud; a speech recognizer running on the session's own machine heard every one as written. Sam answered the ESL merging sheet on 26 September, all nine items as proposed. The reading fixes and the tests for the ladder rules are in the code; the data changes wait on one SQL paste he runs, which moves 18 healthcare courses to Vocational ESL — Healthcare, re-levels 36 groups, and folds 92 more ESL identities into the comprehensives. The 90-second introductions, the funding tab and Exhibit Adoption are unchanged since 25 September.",
+  "_status": "The funding introduction now has a narrated draft: three minutes, read by a synthetic voice, with the music under it as background and captions you can switch off. Its read was retuned after Sam heard the second one as stilted, so CPL, EDD and FTES are said as quick letters and the years the way people say them aloud; a speech recognizer running on the session's own machine heard every one as written. Sam answered the ESL merging sheet on 26 September, all nine items as proposed. The reading fixes and the tests for the ladder rules are in the code; the data changes wait on two SQL pastes he runs, which move 18 healthcare courses to Vocational ESL — Healthcare, re-levels 36 groups, and folds 92 more ESL identities into the comprehensives. The 90-second introductions, the funding tab and Exhibit Adoption are unchanged since 25 September.",
   "items": [
     {
       "id": "s294-sam-narrated-draft",
@@ -17,16 +17,16 @@
       "text": "Run the ESL paste in the Supabase SQL editor (sent in the session on 26 September; kb/esl_sheet_out/2026-09-26/apply.sql). It carries your ESL sheet verdicts: 18 healthcare moves, 36 re-levels, 92 new folds, and the film course out of Enrichment. A good run ends with a table of five counts: esl-catalog 6, esl-health 18, esl-ladder 30, esl-newfold 89, esl-transfer 3. rollback.sql beside it undoes the whole change."
     },
     {
-      "id": "s294-sam-esl-followup-sheet",
+      "id": "s294-sam-esl-second-paste",
       "for": "Sam",
       "tab": "cr-reference",
-      "text": "Answer the ESL follow-up sheet: two cards, each with its recommendation selected. One is a noncredit composition course held out of the fold; the other is two optical technician courses that sit in ESL. https://claude.ai/artifact/PaozKqfruMT3hZ93vcg5gr"
+      "text": "Run the second ESL paste in the Supabase SQL editor (kb/esl_sheet_out/2026-09-27/apply.sql, sent in the session on 27 September). It folds the two optical technician groups into Vocational ESL, as you ruled on the follow-up sheet. A good run ends with one count, esl-vesl 2; rollback.sql beside it undoes it."
     },
     {
       "id": "s294-fable-esl-verdicts",
       "for": "Fable",
       "tab": "cr-reference",
-      "text": "Check whether Sam ran the ESL paste: count kb_curation rows by reviewer_email like 'esl-%-s294@bot' (expect 6, 18, 30, 89, 3). If they are in, resolve his Complete comment on the sheet and let the daily run publish. Then read the ESL follow-up sheet's replies (https://claude.ai/artifact/PaozKqfruMT3hZ93vcg5gr) and carry its two verdicts the same way, as a paste. Item 8, the monthly pass, starts only after the paste lands. kb/esl_sheet_out/2026-09-26/"
+      "text": "Check whether Sam ran the ESL paste: count kb_curation rows by reviewer_email like 'esl-%-s294@bot' (expect 6, 18, 30, 89, 3, and esl-vesl 2 for the second paste). If they are in, resolve his Complete comment on the sheet and let the daily run publish. Sam answered the follow-up sheet (https://claude.ai/artifact/PaozKqfruMT3hZ93vcg5gr) on 27 September: ESOL M9309 stays apart, and the optical technician fold is the second paste. Item 8, the monthly pass, starts only after the paste lands. kb/esl_sheet_out/2026-09-26/"
     },
     {
       "id": "s291-sam-releveled-line",

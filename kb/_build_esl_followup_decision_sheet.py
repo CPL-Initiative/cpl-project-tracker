@@ -20,7 +20,8 @@ New asks ride their own sheet: the merging sheet's `replies` store is keyed to i
 positions (docs/reference/decision_sheets.md), so it is never republished with more cards.
 
 Published: https://claude.ai/artifact/PaozKqfruMT3hZ93vcg5gr (capabilities db + comments; its `replies`
-store is keyed to these two positions).
+store is keyed to these two positions). Answered 2026-09-27 00:02 UTC, both Sam's own calls: 1 keep,
+2 vesl. The one write is kb/esl_sheet_out/2026-09-27/apply.sql.
 
 Run: python3 kb/_build_esl_followup_decision_sheet.py
 """

@@ -51,8 +51,9 @@ NO_OPEN_ASK = {
     'esl-packaging':
         "Sam answered its own sheet, the ESL merging procedure (kb/_build_esl_merging_decision_sheet.py, "
         "nine items, https://claude.ai/artifact/LaZmu7NYj11DigAEbxsUMS), on 2026-09-26; what waits is his run of "
-        "the SQL paste that carries those verdicts (kb/esl_sheet_out/2026-09-26/apply.sql), an action with no "
-        "choice left in it. The two asks his verdicts left open ride their own sheet (kb/_build_esl_followup_decision_sheet.py, https://claude.ai/artifact/PaozKqfruMT3hZ93vcg5gr). "
+        "the SQL pastes that carry those verdicts (kb/esl_sheet_out/2026-09-26/apply.sql and 2026-09-27/apply.sql), "
+        "actions with no choice left in them. The two asks his verdicts left open rode their own sheet "
+        "(kb/_build_esl_followup_decision_sheet.py, https://claude.ai/artifact/PaozKqfruMT3hZ93vcg5gr), which he answered on 2026-09-27. "
         "The four cards this sheet carried were settled by his rulings of 2026-08-24.",
 }
 
