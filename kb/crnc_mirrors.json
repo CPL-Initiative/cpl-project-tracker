@@ -11392,7 +11392,7 @@
     ]
    ]
   },
-  "ETHS M1018": {
+  "PEDS M1041": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -24404,8 +24404,9 @@
   "kb/pols_remint_out/2026-07-10/alias_map.json",
   "kb/authority_recode_out/2026-09-03/alias_map.json",
   "kb/zband_retire_out/2026-09-03/alias_map.json",
-  "kb/prefix_fold_out/2026-09-03/alias_map.json"
+  "kb/prefix_fold_out/2026-09-03/alias_map.json",
+  "kb/eths_remint_out/2026-09-28/ruled/alias_map.json"
  ],
- "_rekeyed_at": "2026-09-04",
+ "_rekeyed_at": "2026-09-28",
  "_rekeyed_by": "kb/_rekey_crnc_mirrors.py"
 }

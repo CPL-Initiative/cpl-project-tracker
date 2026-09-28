@@ -165,6 +165,15 @@ drifted = live + [{"course_id": "KINE M10ZZ", "field": "merge_into", "value": "E
 check("P3 refuses a live row the overlay does not hold (a curator acted since the sync)",
       not er.fresh_read_check(drifted, curations, plan)["pass"])
 edited = [dict(r, value="Swimming I") if r["course_id"] == "ETHS M1001" else r for r in live]
+# A pointer child's own fields stay put, so the live read carries only its
+# merge_into row: P3 compares that field alone (ATHL M1131, 2026-09-28).
+titled = copy.deepcopy(curations)
+titled["KINE M10XY"]["unified_title"] = "Swim Conditioning"
+check("P3 compares a pointer child's merge_into alone, never its other fields",
+      er.fresh_read_check(live, titled, plan)["pass"])
+moved_extra = live + [{"course_id": "ETHS M1001", "field": "discipline", "value": "Kinesiology"}]
+check("P3 refuses a moved id carrying a live field the overlay lacks",
+      not er.fresh_read_check(moved_extra, curations, plan)["pass"])
 check("P3 refuses a live value that differs from the overlay",
       not er.fresh_read_check(edited, curations, plan)["pass"])
 
@@ -181,6 +190,21 @@ try:
 except SystemExit as e:
     refused = "--ruling" in str(e)
 check("--apply without a ruling, a receipt and a fresh read refuses", refused)
+
+# ── SkyView's hand-built layout: token-exact, idempotent ────────────────────
+with tempfile.TemporaryDirectory() as tmp:
+    os.makedirs(os.path.join(tmp, "prototype"))
+    lay = os.path.join(tmp, "prototype", "ccr_universe.json")
+    with open(lay, "w", encoding="utf-8") as f:
+        f.write('{"p":[{"i":"ETHS M1001","x":1.5},{"i":"ETHS M10011x"},{"i":"XETHS M1001"}],"o":"ETHS M1001"}')
+    done = er.rekey_skyview({"ETHS M1001": "KINE M2001"}, root=tmp)
+    text = open(lay, encoding="utf-8").read()
+    check("the SkyView re-key rewrites whole ids and keeps the coordinates",
+          done.get("prototype/ccr_universe.json") == 2 and text.count("KINE M2001") == 2 and '"x":1.5' in text)
+    check("the SkyView re-key never touches a longer token that contains an old id",
+          "ETHS M10011x" in text and "XETHS M1001" in text)
+    check("the SkyView re-key is idempotent", er.rekey_skyview({"ETHS M1001": "KINE M2001"}, root=tmp)
+          .get("prototype/ccr_universe.json") == 0)
 
 passed = sum(1 for _, ok in results if ok)
 print(f"\n{passed}/{len(results)} checks passed")

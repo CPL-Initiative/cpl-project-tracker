@@ -492,6 +492,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/esl_package_out/<date>/esl_apply_plan.json` | scripts: `kb/_build_esl_fold_spotcheck.py`, `kb/_esl_new_identities_dryrun.py`, `kb/_esl_relevel_dryrun.py`, `kb/_esl_sheet_apply_build.py` | — |
 | `kb/esl_package_out/<date>/esl_package_plan.json` | scripts: `kb/_build_esl_fold_preview.py`, `kb/_build_esl_fold_spotcheck.py`, `kb/_esl_new_identities_dryrun.py`, `kb/_esl_package_actionable.py`, `kb/_esl_package_apply.py`, `kb/_esl_sheet_apply_build.py` | — |
 | `kb/esl_relevel_out/<date>/plan.json` | scripts: `kb/_esl_ladder_relevel_dryrun.py` | — |
+| `kb/eths_remint_out/<date>/ruled/alias_map.json` | scripts: `kb/alias_chain.py` | — |
 | `kb/eths_remint_out/<date>/ruled/report.md` | scripts: `kb/_build_open_asks_decision_sheet.py` | — |
 | `kb/exhibit_audit/*.md` | none found | committed by: `daily-dashboard.yml` |
 | `kb/exhibit_audit/latest.json` | tabs: `credential-reference` | committed by: `daily-dashboard.yml` |
@@ -649,8 +650,8 @@ collapse to one `<date>` family so writer and reader edges join.
 | `prototype/ccr_remint_blast.json` | scripts: `kb/_build_remint_blast_radius.py` | committed by: `daily-dashboard.yml` |
 | `prototype/ccr_sky.json` | scripts: `kb/_build_ccr_sky.py` | committed by: `daily-dashboard.yml` |
 | `prototype/ccr_universe.js` | scripts: `kb/_build_open_asks_decision_sheet.py`, `kb/_glyph_sweep.py`, `prototype/build_ccr_atlas.py` | — |
-| `prototype/ccr_universe.json` | scripts: `kb/_build_ccr_cpl.py`, `kb/_build_ccr_sky.py`, `kb/_build_ccr_universe.py`, `prototype/build_ccr_atlas.py`, `prototype/globe/extract_globe_data.py` | — |
-| `prototype/ccr_universe_members.json` | scripts: `kb/_audit_control_number_claims.py`, `kb/_build_ccr_universe.py`, `prototype/build_ccr_atlas.py` | — |
+| `prototype/ccr_universe.json` | scripts: `kb/_build_ccr_cpl.py`, `kb/_build_ccr_sky.py`, `kb/_build_ccr_universe.py`, `kb/_eths_remint.py`, `prototype/build_ccr_atlas.py`, `prototype/globe/extract_globe_data.py` | — |
+| `prototype/ccr_universe_members.json` | scripts: `kb/_audit_control_number_claims.py`, `kb/_build_ccr_universe.py`, `kb/_eths_remint.py`, `prototype/build_ccr_atlas.py` | — |
 | `prototype/check_contrast.py` | workflows: `js-tests.yml` | — |
 | `prototype/funding_video/.dur` | none found | scripts: `prototype/funding_video/render.mjs` |
 | `prototype/funding_video/.music.wav` | none found | scripts: `prototype/funding_video/render.mjs` |
@@ -939,5 +940,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 536 file
+Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 537 file
 datasets · 147 external services · 379 consumers · 37 workflows · 37 tabs.

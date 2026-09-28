@@ -26040,7 +26040,7 @@
       "colleges_offering_count": 4,
       "_identities_rekeyed_from": "ESL M9017"
     },
-    "ETHS M1028": {
+    "KINE M2003": {
       "identity_system": "M-ID",
       "title": "Race and Ethnic Relations - Honors",
       "discipline": "Ethnic Studies",
@@ -26074,7 +26074,7 @@
       ],
       "colleges_offering_count": 1
     },
-    "ETHS M1138": {
+    "KINE M2008": {
       "identity_system": "M-ID",
       "title": "Beginning Physical Fitness",
       "discipline": "Ethnic Studies",
@@ -213428,7 +213428,7 @@
       "_remint_from": "M-ID PE 152"
     },
     {
-      "course_id": "ETHS M1138",
+      "course_id": "KINE M2008",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
