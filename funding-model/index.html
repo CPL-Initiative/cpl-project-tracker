@@ -1138,6 +1138,14 @@ window.CPL_TABS = {
 </script>
 <script src="../cpl_funding_data.js"></script>
 <script src="../funding_model_payload.js"></script>
+<!-- ⚠ THE NAME RESOLVER THE TAB JOINS MAP'S COORDINATOR ROWS THROUGH
+     (2026-09-28). MAP names a college "Antelope Valley College"; the model's
+     roster says "Antelope Valley". cpl_funding.js maps one to the other with
+     window.cplCollegeShort, which COBI loads and this page did not, so every
+     coordinator row missed and every college read "Coordinator not yet on
+     file" here, while the tab showed the truth. The pie now leads every row,
+     so the gap had to close. -->
+<script src="../college_short_names.js"></script>
 <script src="../cpl_funding.js"></script>
 <script>
 (function () {

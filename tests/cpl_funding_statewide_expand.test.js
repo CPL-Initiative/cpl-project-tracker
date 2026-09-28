@@ -57,7 +57,10 @@ function readTable(tbl) {
     heads.forEach((h, i) => { o[h.toLowerCase()] = cells[i]; o[h.toLowerCase() + " tip"] = tips[j][i]; });
     return o;
   });
-  return { heads, rows, keyed, caption: tbl.querySelector("caption").textContent.replace(/\s+/g, " ").trim() };
+  // The credit table carries no caption since 2026-09-28 (its first header
+  // names the lane); the noncredit table's states its rule.
+  const cap = tbl.querySelector("caption");
+  return { heads, rows, keyed, caption: cap ? cap.textContent.replace(/\s+/g, " ").trim() : "" };
 }
 // The CREDIT table — the first lane table of an expand.
 function tableOf(det) {
@@ -88,8 +91,9 @@ const MONEY = /^(\$[\d,]+|<\$[\d,]+|>\$[\d,]+)$/;
 // An FTES-column figure: fmtNum1 on an FTES priority ("8.0", "1,234.5"), a
 // headcount with its unit ("156 stu"), or the privacy mask ("<10 (privacy)").
 const FIGURE = /^(<?[\d,]+(\.\d+)?( stu| \(privacy\))?)$/;
-// The undelivered and unknown-measure branches print a status, not a number.
-const STATUS = /^awaiting (measurement|a known measure)$/;
+// The undelivered and unknown-measure branches print a status, not a number:
+// TBA since 2026-09-28 (Sam: "show TBA everywhere"), and the bad-source words.
+const STATUS = /^(TBA|awaiting a known measure)$/;
 const num = (v) => Number(String(v || "").replace(/[^\d.]/g, ""));
 // The Actual FTES hover: "112.5% of Max FTES".
 const SHARE = /% of Max FTES$/;
@@ -126,7 +130,7 @@ const pctOf = (tip) => Number(String(tip || "").replace(SHARE, "").replace(/[^\d
       .every((r) => r.getAttribute("data-id") !== "sys"));
   const btn = sysRow && sysRow.querySelector(".cplfund-caret");
   check("1b: its NAME is the toggle, as a button, with the collapsed state announced",
-    !!btn && /SYSTEM \(statewide\)/.test(btn.textContent) && btn.getAttribute("aria-expanded") === "false");
+    !!btn && btn.textContent === "Statewide" && btn.getAttribute("aria-expanded") === "false");
   check("1c: it keeps .cplfund-systemrow, so the sticky pin and fill are untouched",
     !!sysRow && sysRow.classList.contains("cplfund-systemrow"));
 
@@ -147,8 +151,9 @@ const pctOf = (tip) => Number(String(tip || "").replace(SHARE, "").replace(/[^\d
   check("2a: the college expand still renders its table", !!col && col.rows.length > 0);
   check("2b: statewide and college declare the SAME columns, in the same order",
     !!sys && !!col && sys.heads.join("|") === col.heads.join("|"));
-  check("2b2: …and they are Sam's six (2026-09-24)",
-    !!sys && sys.heads.join("|") === "Outcomes|Max FTES|Max Funds|Actual FTES|Actual Funds|Difference");
+  // The first header names the lane since 2026-09-28 (Sam's mockup).
+  check("2b2: …and they are Sam's six (2026-09-24), the first naming the lane",
+    !!sys && sys.heads.join("|") === "Credit outcomes|Max FTES|Max Funds|Actual FTES|Actual Funds|Difference");
   // One template, used once per lane: a second copy is how the statewide
   // surface once read 193,700% of target.
   check("2c: there is exactly ONE detail-table definition in the source",
@@ -181,7 +186,7 @@ const pctOf = (tip) => Number(String(tip || "").replace(SHARE, "").replace(/[^\d
         Math.abs(num(r["max funds"]) - num(r["actual funds"]) - num(r.difference)) <= 2));
     // The two FTES columns carry a FIGURE ("8.0", "1,234.5", "156 stu" on a
     // headcount priority) or a status word — an undelivered measure reads
-    // "awaiting measurement", never a number — and never currency.
+    // TBA, never a number — and never currency.
     check("4c/" + which + ": Max FTES and Actual FTES carry a figure or a status word, never currency",
       !!t && t.keyed.every((r) => FIGURE.test(r["max ftes"]) &&
         (FIGURE.test(r["actual ftes"]) || STATUS.test(r["actual ftes"]))));
@@ -196,7 +201,8 @@ const pctOf = (tip) => Number(String(tip || "").replace(SHARE, "").replace(/[^\d
     const nc = d && d.querySelector(".cplfund-dtl-table.cplfund-dtl-nc");
     const none = d && d.querySelector(".cplfund-dtl-ncnone");
     check("4e/" + which + ": the noncredit lane has its own six-column table, or one line saying the scope is credit only",
-      !!d && !!t && ((!!nc && readTable(nc).heads.join("|") === t.heads.join("|") &&
+      !!d && !!t && ((!!nc && readTable(nc).heads.slice(1).join("|") === t.heads.slice(1).join("|") &&
+        readTable(nc).heads[0] === "Noncredit outcomes" && t.heads[0] === "Credit outcomes" &&
         d.querySelector(".cplfund-dtl-table").classList.contains("cplfund-dtl-cr")) ||
         (!nc && !!none && /Credit only/.test(none.textContent))));
   });
@@ -281,7 +287,7 @@ const pctOf = (tip) => Number(String(tip || "").replace(SHARE, "").replace(/[^\d
   const T = window.CPL_FUNDING_TAB;
   const ph = T._printHtml();
   check("7a: the statewide row keeps its label in print (it is a toggle button now)",
-    ph.indexOf("SYSTEM (statewide)") !== -1);
+    /<span>Statewide<\/span>/.test(ph));
   check("7b: …and so does every INSTITUTION name — the defect the statewide row was hiding",
     ph.indexOf("Alameda") !== -1 && ph.indexOf("American River") !== -1);
   check("7c: no printed institution row has an empty name cell",

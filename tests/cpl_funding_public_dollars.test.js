@@ -77,26 +77,26 @@ check("D1: the public and curator views compute the SAME earned figure",
   !!ba && Math.abs(pa.earned_total - ba.earned_total) < 0.01);
 
 // 2. On the public page the earned figure is coarse; the curator view is exact.
-function rowSubs(doc) {
+// The qualifying figure reads in the Curr Total Funds column since the College
+// Dashboard (Sam, 2026-09-28), beside the award it is measured against.
+function curTotal(doc) {
   const row = doc.querySelector('tr[data-id="c:Alameda"]');
-  return row ? Array.from(row.querySelectorAll(".cf-award .sub")).map(function (e) { return e.textContent; }) : [];
+  return row ? row.querySelector("td.cf-cur-total") : null;
 }
-const pubSubs = rowSubs(pubDoc), privSubs = rowSubs(privDoc);
-const pubEarn = pubSubs.find(function (t) { return /qualifying/.test(t); }) || "";
-const privEarn = privSubs.find(function (t) { return /qualifying/.test(t); }) || "";
 // ⚠ THE WORD IS "qualifying", PRESENT TENSE, and both halves are rulings: Sam
 // retired "earn" on 2026-09-13, and on 2026-08-27 he required the present
-// participle because a past tense "read like a settled award".
-// Parse the figure the row prints after "qualifying " rather than pattern-match
-// it: a regex that forbids a trailing non-zero digit misread "$101,000" as
-// exact on the first run (the "1" before ",000"). The public figure must be the
-// earned total rounded to the nearest $1,000 (or "<$1,000" under the floor);
-// the curator figure must be the exact rounded dollar.
-function earnFigure(t) {
-  const m = /qualifying (<\$1,000|\$[\d,]+)/.exec(t);
-  return m ? m[1] : null;
+// participle because a past tense "read like a settled award". It rides the
+// cell's hover now.
+// Parse the figure the cell prints rather than pattern-match it: a regex that
+// forbids a trailing non-zero digit misread "$101,000" as exact on the first
+// run (the "1" before ",000"). The public figure must be the earned total
+// rounded to the nearest $1,000 (or "<$1,000" under the floor); the curator
+// figure must be the exact rounded dollar.
+function earnFigure(td) {
+  const t = td ? td.textContent.trim() : "";
+  return /^(<\$1,000|\$[\d,]+)$/.test(t) && /qualifying so far/.test(td.getAttribute("title") || "") ? t : null;
 }
-const pubFig = earnFigure(pubEarn), privFig = earnFigure(privEarn);
+const pubFig = earnFigure(curTotal(pubDoc)), privFig = earnFigure(curTotal(privDoc));
 const pubNum = pubFig === "<$1,000" ? 0 : (pubFig ? Number(pubFig.replace(/[$,]/g, "")) : NaN);
 // The row prints the figure for the span its award covers (Sam, 2026-09-27,
 // funding asks card 1): under the default Annual funding that is the viewed

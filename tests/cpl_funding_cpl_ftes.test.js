@@ -102,11 +102,11 @@ function bootWithUnits(window, units) {
 function dtlRow0(window, T, name) {
   T._state.open["c:" + name] = true;
   T.render();
+  // By the row's key: since the College Dashboard (2026-09-28) the name cell
+  // opens on the conditions pie and the Veteran Star, so its text no longer
+  // starts with the name.
   const row = Array.from(window.document.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
-    .find(function (r) {
-      const td = r.querySelectorAll("td")[1];
-      return td && td.textContent.trim().replace(/^▸/, "").indexOf(name) === 0;
-    });
+    .find(function (r) { return r.getAttribute("data-id") === "c:" + name; });
   const det = row && row.nextElementSibling;
   const dtl = det && det.querySelector(".cplfund-dtl-table");
   if (!dtl) return null;

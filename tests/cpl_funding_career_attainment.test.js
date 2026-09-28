@@ -203,8 +203,10 @@ const titleText = (card) => {
   const { window, doc, T } = mount({ perf: perf, signedIn: true });
   const rows = detRows(openDetail(window, window.document, "Laney"));
   const r4 = rows[3] || {};
-  check("3a: before the first import, P4's drill-in row reads awaiting measurement at $0 — never a full cap",
-    rows.length === 4 && /awaiting measurement/i.test(r4["actual ftes"] || "") && r4["actual funds"] === "$0");
+  // TBA since 2026-09-28 (Sam: "show TBA everywhere so when it changes, it
+  // will already be wired").
+  check("3a: before the first import, P4's drill-in row reads TBA at $0 — never a full cap",
+    rows.length === 4 && r4["actual ftes"] === "TBA" && r4["actual funds"] === "$0");
   const t4 = flat(cardAt(doc, 3));
   check("3b: its card says who measures it", /Awaiting measurement\. The Chancellor.s Office measures this outcome from EDD wage records/.test(t4));
   check("3c: and never points at MAP's refresh or a MAP feed key",

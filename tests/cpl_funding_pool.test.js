@@ -47,7 +47,8 @@ const {
   const sysAward = doc.querySelectorAll("#cplFundTable tr.cplfund-systemrow td.cf-award:not(.cf-max)");
   const csvO = window.CPL_FUNDING_TAB._csv().split("\r\n");
   const headO = (csvO[1] || "").split(",");
-  const sysO = (csvO.find(function (l) { return l.indexOf("SYSTEM (statewide)") !== -1; }) || "").split(",");
+  // The statewide line reads "Statewide" since 2026-09-28 (Sam's mockup).
+  const sysO = (csvO.find(function (l) { return l.split(",")[1] === "Statewide"; }) || "").split(",");
   const p1t = Number(sysO[headO.indexOf("P1 target")]);
   check("O2b: the statewide (null-c) per-priority path renders — SYSTEM award pair + CSV targets, no crash",
     sysAward.length === 2 && /Credit share of the max award/.test(sysAward[0].getAttribute("title") || "") &&

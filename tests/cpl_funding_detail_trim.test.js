@@ -86,25 +86,24 @@ function detRows(det) {
   check("T1b2: …and the base line's mirror tail came off with it",
     !/raises the funding, not the bar/.test(txt) && !/PRE-BASE share/.test(txt) &&
     !/PRE-CAP share/.test(txt));
-  check("T1c: the baseline is ONE line, 'Baseline:', and the old paragraph is gone",
-    det.querySelectorAll(".cplfund-basestatus").length === 1 && /^Baseline: /.test(
+  // "Minimum Conditions" since the College Dashboard (Sam, 2026-09-28: "a
+  // better term than baseline").
+  check("T1c: the conditions are ONE line, 'Minimum Conditions:', and the old paragraph is gone",
+    det.querySelectorAll(".cplfund-basestatus").length === 1 && /^Minimum Conditions:/.test(
       det.querySelector(".cplfund-basestatus").textContent.replace(/\s+/g, " ").trim()) &&
     !/Baseline eligibility/.test(txt) && !/the gate to participate/.test(txt));
   check("T1c2: …and the expand carries no second Confirm Participation control beside the row's",
     !det.querySelector("[data-optinbtn]") && !/Confirm Participation/.test(txt));
-  check("T1d: nothing in the expand restates the gate's roll-forward sentence twice",
-    (txt.match(/qualifying later still counts toward it/g) || []).length <= 1 &&
-    !/nothing is redistributed, so qualifying later/.test(txt));
-  // ⚠ THE COUNT ABOVE TOLERATES ZERO, and must — this fixture's college is not
-  // always gated. That is also exactly how the guard went dead on 2026-09-09:
-  // "draw" left the rendered vocabulary, the regex stopped matching anything,
-  // and it counted 0 and passed forever while guarding nothing. Demanding the
-  // phrase in `txt` would be wrong (it fails on an ungated fixture), so the
-  // phrase is asserted against the MODULE instead: reword the sentence and this
-  // fails, pointing at the count that needs re-aiming. Third occurrence of
-  // a-test-coupled-to-position-or-wording-breaks-on-correct-work.
-  check("T1d: …and that sentence still exists to be counted (the guard is not dead)",
-    /qualifying later still counts toward it/.test(consumerSrc));
+  // THE ROLL-FORWARD SENTENCE IS RETIRED (Sam, 2026-09-28: "we make it clear
+  // that colleges need to meet all 3 baselines to receive any funding"). The
+  // expand once risked stating it twice; the College Dashboard states it
+  // nowhere, and baselineGateText(), the hover that carried it, left with the
+  // reserve words. Both halves are asserted, so a sentence that comes back
+  // under new wording still has to get past the rendered-text half.
+  check("T1d: nothing in the expand speaks of reserve, roll-forward or qualifying later",
+    !/qualifying later still counts toward it|nothing is redistributed|held in reserve|rolls? forward/i.test(txt));
+  check("T1d: …and the gate's roll-forward sentence is retired from the module, with the hover that carried it",
+    !/qualifying later still counts toward it/.test(consumerSrc) && !/function baselineGateText\(/.test(consumerSrc));
 
   // THE SPAN. The table is a direct child of the detail grid, and the grid is
   // auto-fit minmax(240px, 1fr) — without the span rule it lands in one column
@@ -126,8 +125,12 @@ function detRows(det) {
   check("T1f: no red gate mark on the row — the Elig pie beside it says the same thing",
     !row.querySelector(".cf-gatechip") && row.innerHTML.indexOf("⛔") === -1 &&
     !/cf-gatechip/.test(consumerSrc));
-  check("T1g: the row control is the words Confirm Participation, with no pencil",
-    /Confirm Participation/.test(row.textContent) && row.innerHTML.indexOf("✎") === -1);
+  // The words carry the deadline since 2026-09-28 ("Confirm by MM-DD-YY",
+  // "Confirm now" once it passes); this fixture keeps the baked deadline.
+  check("T1g: the row control is a word, Confirm by its deadline (or Confirm now), with no pencil",
+    !!row.querySelector("button.cplfund-optin-jump") &&
+    /^Confirm (by \d\d-\d\d-\d\d|now)$/.test(row.querySelector("button.cplfund-optin-jump").textContent) &&
+    row.innerHTML.indexOf("✎") === -1);
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -205,8 +208,11 @@ function detRows(det) {
   T.render();
   const R = detRows(openDetail(window, doc, "Laney"));
 
-  check("T3a: an undelivered source reads awaiting measurement and shows no distance",
-    R.length === NPRIO && /awaiting measurement/.test(R[0]["actual ftes"]) && R[0]["difference (hover)"] === "");
+  // TBA since 2026-09-28 (Sam: "show TBA everywhere so when it changes, it
+  // will already be wired"), its meaning on hover.
+  check("T3a: an undelivered source reads TBA and shows no distance",
+    R.length === NPRIO && R[0]["actual ftes"] === "TBA" && R[0]["actual ftes (hover)"] === "To be announced once measured" &&
+    R[0]["difference (hover)"] === "");
   check("T3b: a miswired pin reads awaiting a known measure and shows no distance",
     R.length === NPRIO && /awaiting a known measure/.test(R[1]["actual ftes"]) && R[1]["difference (hover)"] === "");
   check("T3c: the measured row beside them DOES show one — the hover is not dead",

@@ -68,6 +68,13 @@ check("the page loads the engine and the shared payload builder",
   /src="\.\.\/cpl_funding\.js"/.test(html) &&
   /src="\.\.\/cpl_funding_data\.js"/.test(html) &&
   /src="\.\.\/funding_model_payload\.js"/.test(html));
+// The tab joins MAP's coordinator rows ("Antelope Valley College") to its
+// roster ("Antelope Valley") through window.cplCollegeShort. COBI loads the
+// resolver; until 2026-09-28 this page did not, so every college read
+// "Coordinator not yet on file" here while the tab showed the truth.
+check("the page loads the college-name resolver BEFORE the engine, so coordinator rows join the roster",
+  /src="\.\.\/college_short_names\.js"/.test(html) &&
+  html.indexOf('src="../college_short_names.js"') < html.indexOf('src="../cpl_funding.js"'));
 check("it is a complete document, not an artifact fragment",
   /^<!doctype html>/i.test(html) && /<html lang="en">/.test(html) && /<\/body>\s*<\/html>/.test(html));
 check("it repaints when the model changes, rather than painting once",

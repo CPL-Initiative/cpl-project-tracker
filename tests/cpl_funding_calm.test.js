@@ -324,6 +324,11 @@ function mountWords(doc) {
 // Sam, 2026-09-23 (funding review item 3, "Consolidate as proposed"): the
 // reserve reads ONCE, on the drill-in's Baseline line, and the caption keeps
 // the two totals. The gate sentence rides the reserve's hover.
+// Sam, 2026-09-28 (the College Dashboard): the reserve reads NOWHERE on screen
+// — "we make it clear that colleges need to meet all 3 baselines to receive
+// any funding" — the Baseline line became Minimum Conditions, and the Max
+// Funds line left the drill-in, its totals riding the row. The CSV's Withheld
+// column is the one place the held figure reads.
 {
   const { window } = freshDom();
   window.CPL_FUNDING_PERF = { as_of: "2026-09-02", colleges: { "Alameda": { pe: 100, pe_u: 900, pa: 60, pa_u: 500, p3: 40, p3_u: 300 } } };
@@ -337,23 +342,26 @@ function mountWords(doc) {
   if (row) click(window, row.querySelector(".cplfund-caret"));
   const det = doc.querySelector("tr.cplfund-detail");
   const held = a ? "$" + Math.round(a.earned_withheld).toLocaleString("en-US") : "";
-  const total = a ? "$" + Math.round(a.total).toLocaleString("en-US") : "";
   check("the drill-in carries no standalone 'held in reserve' item (.cf-withheld div)", !!det && !det.querySelector("div.cf-withheld"));
-  const gate = det && det.querySelector(".cplfund-basestatus .cplfund-basegate");
-  check("the gate sentence names the held figure as part of the max award, held not lost, before the numbered requirements",
-    !!gate && new RegExp("Baseline not met\\. " + held.replace(/[$]/g, "\\$") + " of its max award[^.]*held in reserve, not lost, until it meets [^:]*: \\(1\\)").test(gate.getAttribute("title") || ""));
-  const status = det && det.querySelector(".cplfund-basestatus");
-  check("the reserve reads once, on the Baseline line, with its figure",
-    !!status && status.textContent.indexOf(held + " reserved until") !== -1 &&
-    det.textContent.split(held + " reserved until").length === 2);
-  // The two totals keep one line above the lane tables, in the words Sam gave
-  // the drill-in's columns on 2026-09-24 (Max Funds, Actual Funds): the max
-  // award, then what it has qualified for. The reserve still reads once, on
-  // the Baseline line, never here.
+  const detWords = det ? Array.from(det.querySelectorAll("*")).map((e) => (e.getAttribute("title") || "") + " " +
+    (e.children.length ? "" : e.textContent)).join(" ") : "";
+  check("the drill-in names no held figure and no reserve, in its text or its hovers (no gate sentence at all)",
+    !!det && !det.querySelector(".cplfund-basegate") && detWords.indexOf(held) === -1 &&
+    !/held in reserve|reserved until|baseline met/i.test(detWords));
+  const status = det && det.querySelector(".cplfund-basestatus.cf-conds");
+  check("the Minimum Conditions line says which conditions are missing, in words, with no figure",
+    !!status && /Coordinator not yet on file/.test(status.textContent) &&
+    /Confirmation not yet on file/.test(status.textContent) && status.textContent.indexOf("$") === -1);
+  // The two totals ride the row now: Total Funds reads the max award and Curr
+  // Total Funds what is released ($0 while gated). The drill-in's Max Funds
+  // line is gone.
   const cap = det && det.querySelector(".cplfund-dtl-sum");
-  check("the drill-in's totals line keeps the two totals: Max Funds (its max award) · Actual Funds",
-    !!cap && /^Max Funds: \$[\d,]+, its max award · Actual Funds: /.test(cap.textContent.replace(/\s+/g, " ").trim()) &&
-    cap.textContent.indexOf("Max Funds: " + total) !== -1 && cap.textContent.indexOf("reserve") === -1);
+  const rowNow = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row")).find((r) => /Alameda/.test(r.textContent));
+  check("the drill-in's Max Funds line is gone; the row carries the max award and the $0 released",
+    !cap && !!rowNow &&
+    // the window's award under Combined funding, one year's under Annual (the baked default)
+    [a.total, a.total / 2].some((v) => rowNow.querySelector("td.cf-total").textContent.indexOf("$" + Math.round(v).toLocaleString("en-US")) === 0) &&
+    rowNow.querySelector("td.cf-cur-total").textContent.trim() === "$0");
   delete window.CPL_FUNDING_PERF;
 }
 

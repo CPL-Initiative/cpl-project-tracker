@@ -100,10 +100,11 @@ function colOf(tbl, name) {
   // lines carry their funding as Max Funds and Actual Funds.
   check("college drill-in renders a detail row with per-priority math",
     detail && detail.textContent.indexOf("Priority 1") !== -1 && detail.textContent.indexOf("Max Funds") !== -1);
+  // The first header names the lane since 2026-09-28 (Sam's mockup).
   check("drill-in carries the six-column detail table (Sam's columns, 2026-09-24)",
     !!detail.querySelector(".cplfund-dtl-table") &&
     Array.from(detail.querySelectorAll(".cplfund-dtl-table th")).map(function (h) { return h.textContent; })
-      .join("|").indexOf("Outcomes|Max FTES|Max Funds|Actual FTES|Actual Funds|Difference") !== -1);
+      .join("|").indexOf("Credit outcomes|Max FTES|Max Funds|Actual FTES|Actual Funds|Difference") !== -1);
   // The active year's metric moved from the drill-in to the priority CARDS —
   // still one click away, and the card is the surface the curator edits.
   check("the active year's metric shows on the priority cards (the drill-in's metric line moved there)",
@@ -147,8 +148,12 @@ function colOf(tbl, name) {
   // Subtotals conserve the size column (credit FTES — each header's cell is
   // independently rounded, so tolerance = one dollar per header).
   const listCrFtes = D.colleges.reduce(function (s, c) { return s + (c.credit_ftes || 0); }, 0);
+  // By the header's position: since 2026-09-28 a subtotal row holds one cell
+  // per column (no spanning name cell), so its CR FTES sits under CR FTES.
+  const iCrFtes = Array.from(doc.querySelectorAll("#cplFundTable thead th"))
+    .map(function (th) { return th.getAttribute("data-sort"); }).indexOf("cr_ftes");
   const gCrFtes = Array.from(hdrs).reduce(function (s, tr) {
-    return s + (Number(tr.querySelectorAll("td")[1].textContent.replace(/,/g, "")) || 0);
+    return s + (Number(tr.querySelectorAll("td")[iCrFtes].textContent.replace(/,/g, "")) || 0);
   }, 0);
   check("district subtotals conserve the roster's credit FTES", Math.abs(gCrFtes - listCrFtes) <= distinct);
   // Groups are ordered by their subtotal, largest first (Sam's explicit call).
@@ -198,11 +203,13 @@ function colOf(tbl, name) {
     cardAt(doc, 0).textContent.indexOf("next daily data refresh") !== -1);
   // Reworded 2026-09-01 (Sam): the card reads a plain "no data yet"; the WHY
   // lives only in the curator-only metric-wiring diagnostic.
-  check("Y1-P2 card reads a plain 'awaiting measurement' — the gap reason no longer renders on the card",
-    cardAt(doc, 1).textContent.indexOf("awaiting measurement") !== -1 &&
+  // TBA since 2026-09-28 (Sam: "show TBA everywhere so when it changes, it
+  // will already be wired").
+  check("Y1-P2 card reads a plain 'Actual: TBA.' — the gap reason no longer renders on the card",
+    cardAt(doc, 1).textContent.indexOf("Actual: TBA.") !== -1 &&
     cardAt(doc, 1).textContent.indexOf("STATEWIDE credit recommendation") === -1);
   check("Y1-P3 (Portal/Landing) is no longer a hard gap — it's the wired portal metric",
-    cardAt(doc, 2).textContent.indexOf("awaiting measurement") === -1 &&
+    cardAt(doc, 2).textContent.indexOf("Actual: TBA.") === -1 &&
     cardAt(doc, 2).textContent.indexOf("Portal") !== -1);
   // Per-priority detail (the expand — the P-columns' successor). Since the
   // 2026-09-01 rewording, gap and pending both read a plain "no data yet" on
@@ -216,9 +223,9 @@ function colOf(tbl, name) {
   const act = function (i) {
     return Array.from(dtl.querySelectorAll("tr"))[i + 1].querySelectorAll("td")[colOf(dtl, "Actual FTES")].textContent;
   };
-  check("P2 (gap) and P3 (pending) detail rows both read 'awaiting measurement' — never a measured zero",
-    act(1).indexOf("awaiting measurement") !== -1 && act(1).indexOf("0 · 0%") === -1 &&
-    act(2).indexOf("awaiting measurement") !== -1 && act(2).indexOf("0 · 0%") === -1);
+  check("P2 (gap) and P3 (pending) detail rows both read TBA — never a measured zero",
+    act(1) === "TBA" && act(1).indexOf("0 · 0%") === -1 &&
+    act(2) === "TBA" && act(2).indexOf("0 · 0%") === -1);
 }
 {
   // With a synthetic perf artifact.
@@ -245,8 +252,8 @@ function colOf(tbl, name) {
   const csvLines = T._csv().split("\r\n").map(splitCsv);
   const head = csvLines[1];
   const iP1a = head.indexOf("P1 actual");
-  const sysLine = csvLines.find(function (f) { return /SYSTEM/.test(f[1] || ""); });
-  check("the CSV SYSTEM line carries the deduplicated statewide P1 actual (20,000)",
+  const sysLine = csvLines.find(function (f) { return f[1] === "Statewide"; });
+  check("the CSV Statewide line carries the deduplicated statewide P1 actual (20,000)",
     iP1a >= 0 && !!sysLine && Number(sysLine[iP1a]) === 20000);
   check("the retired P1/P2/P3 table columns are gone (absence guard, 2026-08-31)",
     !doc.querySelector('th[data-sort="prio0"]') && !doc.querySelector("#cplFundTable td.cf-prio"));
@@ -270,8 +277,8 @@ function colOf(tbl, name) {
   click(window, doc.querySelector('#cplFundYear button[data-val="2"]'));
   // The gap REASON ("MIS match-back") left the cards with the 2026-09-01
   // rewording — it lives in the curator diagnostic; the card reads plainly.
-  check("Y2 cards read 'awaiting measurement' (their metrics are unmeasured today)",
-    cardAt(doc, 1).textContent.indexOf("awaiting measurement") !== -1);
+  check("Y2 cards read 'Actual: TBA.' (their metrics are unmeasured today)",
+    cardAt(doc, 1).textContent.indexOf("Actual: TBA.") !== -1);
 }
 
 // C9b — measurability follows the METRIC, not the slot position (Sam, 2026-07-23).
@@ -295,13 +302,13 @@ function colOf(tbl, name) {
   } } });
   window.CPL_FUNDING_TAB.render();
   const cards = allCards(doc);
-  check("reordered slot-0 (statewide eligibility) reads 'awaiting measurement', not a number",
-    cards[0].textContent.indexOf("awaiting measurement") !== -1 &&
+  check("reordered slot-0 (statewide eligibility) reads 'Actual: TBA.', not a number",
+    cards[0].textContent.indexOf("Actual: TBA.") !== -1 &&
     cards[0].textContent.indexOf("16,807") === -1);
   check("reordered slot-1 (any transcribed) now carries the measurable actual (16,807 of target)",
     cards[1].textContent.indexOf("16,807") !== -1 && cards[1].textContent.indexOf("of target") !== -1);
   check("reordered slot-2 (Portal/Landing) carries the wired portal metric, not the eligibility gap",
-    cards[2].textContent.indexOf("awaiting measurement") === -1 &&
+    cards[2].textContent.indexOf("Actual: TBA.") === -1 &&
     cards[2].textContent.indexOf("STATEWIDE credit recommendation") === -1 &&
     cards[2].textContent.indexOf("Portal") !== -1);
 }

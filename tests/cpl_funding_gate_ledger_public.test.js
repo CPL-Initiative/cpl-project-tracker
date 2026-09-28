@@ -55,9 +55,18 @@ function click(window, el) { el.dispatchEvent(new window.Event("click", { bubble
 function footText(doc) {
   return Array.from(doc.querySelectorAll(".cplfund-foot")).map(function (e) { return e.textContent; }).join(" ");
 }
-// The gate's money story lives in the CR award cell's stacked sub-line now
-// (one row per institution — the old td.tot money column is retired, R6).
-function gateSub(row) { return row.querySelector("td.cf-award .cf-withheld"); }
+// The gate's story on the row (the College Dashboard, Sam, 2026-09-28): the
+// Curr columns read what is released ($0 while gated), the pie says which
+// condition is missing, and the Confirm chip says what to do. The reserve
+// itself reads nowhere on screen — "we make it clear that colleges need to meet
+// all 3 baselines to receive any funding" — only the CSV's Withheld column.
+function curCell(row, lane) { return row.querySelector("td.cf-cur-" + lane); }
+function chipOf(row) { return row.querySelector("button.cplfund-optin-jump"); }
+function rowWords(row) {
+  return Array.from(row.querySelectorAll("td, td *")).map(function (e) {
+    return (e.getAttribute("title") || "") + " " + (e.children.length ? "" : e.textContent);
+  }).join(" ");
+}
 
 // Part S — the BASELINE PARTICIPATION GATE (Sam, 2026-07-30): "actual funding
 // total should only be above 0 if they've met all of the quals as well."
@@ -79,8 +88,9 @@ function gateSub(row) { return row.querySelector("td.cf-award .cf-withheld"); }
   // Pin the phase: the row wording is deadline-dependent (Sam, 2026-08-23),
   // and the baked 2026-09-01 deadline is about to pass in real time — a test
   // that reads the clock through the default would flip red on Sept 2 for a
-  // reason that has nothing to do with the gate.
-  T._setScenario({ participationDeadline: "2026-11-01" });
+  // reason that has nothing to do with the gate. (Moved to 2099 on 2026-09-28:
+  // the 2026-11-01 pin was five weeks from flipping the same way.)
+  T._setScenario({ participationDeadline: "2099-11-01" });
 
   // Fail-open first: with no coordinator feed, NOTHING is gated (the standing
   // rule — never a false "not qualified" from missing data).
@@ -120,7 +130,6 @@ function gateSub(row) { return row.querySelector("td.cf-award .cf-withheld"); }
   // "posted no CPL", a different and unfairer claim.
   const gatedRow = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
     .find(function (r) { return /Berkeley City/.test(r.textContent); });
-  const gatedSub = gateSub(gatedRow);
   // Sam, 2026-08-23: "a little worried about the message we're sending with the
   // Held label". Before the deadline EVERY college is gated — nobody has opted
   // in yet — so a dollar figure labelled "held" on all the rows says the state
@@ -131,21 +140,24 @@ function gateSub(row) { return row.querySelector("td.cf-award .cf-withheld"); }
   // — "opt in" is mailing-list language that presumes a default of OUT and makes
   // declining look like a normal choice, when nothing here is conditional on a
   // choice. Asserted BOTH ways so a revert is a failure, not a silent pass.
+  // Sam, 2026-09-28 (the College Dashboard): the chip carries the deadline,
+  // "Confirm by MM-DD-YY", and the Curr columns read the released $0 beside
+  // the pie that says which condition is missing.
   check("S5: before the deadline the row says what to DO, and names no held figure",
-    !!gatedSub && /confirm participation/i.test(gatedSub.textContent) &&
-    !/\bopt[- ]?in\b/i.test(gatedSub.textContent) &&
-    !/held/i.test(gatedSub.textContent) && !/\$/.test(gatedSub.textContent) &&
-    !/^\s*\$0\s*$/.test(gatedSub.textContent));
-  check("S5: ...and its hover says plainly that all of the max award remains available",
-    !!gatedSub && /all of the max award remains available/i.test(gatedSub.getAttribute("title") || ""));
-  check("S5: the gate is visible WITHOUT a hover — the Elig pie plus the award cell's own words",
-    !!gatedRow.querySelector("svg.cf-eligpie") &&
-    /confirm participation/i.test(gatedRow.querySelector("td.cf-award").textContent));
+    !!chipOf(gatedRow) && /^Confirm by 11-01-99$/.test(chipOf(gatedRow).textContent) &&
+    /confirm participation/i.test(chipOf(gatedRow).getAttribute("aria-label") || "") &&
+    !/\bopt[- ]?in\b/i.test(chipOf(gatedRow).textContent) &&
+    !/held|reserve/i.test(rowWords(gatedRow)));
+  check("S5: ...and its Curr hover says the whole award is still ahead ($0 of it so far)",
+    !!curCell(gatedRow, "total") && curCell(gatedRow, "total").textContent.trim() === "$0" &&
+    / \$0 of \$[\d,]+$/.test(curCell(gatedRow, "total").getAttribute("title") || ""));
+  check("S5: the gate is visible WITHOUT a hover — the pie plus the chip's own words",
+    !!gatedRow.querySelector("svg.cf-eligpie") && !!chipOf(gatedRow) &&
+    /Confirmation not yet on file \(due 11-01-2099\)/.test(gatedRow.querySelector("svg.cf-eligpie").textContent));
   check("S5: …and the ⛔ chip that duplicated the pie is gone (Sam, 2026-09-01)",
     !gatedRow.querySelector(".cf-gatechip") && gatedRow.innerHTML.indexOf("⛔") === -1);
-  check("S5: the gated cell's hover explains that the funding rolls forward",
-    /rolls? forward|held in reserve/i.test(gatedRow.querySelector("td.cf-award").getAttribute("title") || "") ||
-    /rolls? forward|reserve/i.test((gatedSub && gatedSub.getAttribute("title")) || ""));
+  check("S5: the gated row names no reserve and no rolled-forward funding, in text or hover",
+    !/held|reserve|rolls? forward/i.test(rowWords(gatedRow)));
 
   // AFTER the deadline the money genuinely is being held back, so the figure
   // returns. Driven by moving the deadline into the past rather than by mocking
@@ -156,11 +168,12 @@ function gateSub(row) { return row.querySelector("td.cf-award .cf-withheld"); }
     T.render();
     const lateRow = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
       .find(function (r) { return /Berkeley City/.test(r.textContent); });
-    const lateSub = gateSub(lateRow);
-    check("S5: after the deadline the row DOES name the held figure",
-      !!lateSub && /^held \$/.test(lateSub.textContent.trim()) &&
-      /was due/i.test(lateSub.getAttribute("title") || ""));
-    T._setScenario({ participationDeadline: "2026-11-01" });
+    // Sam, 2026-09-28: "Confirm Now is nice"; the reserve stays off the screen
+    // after the deadline too (its figure reads in the CSV, S7).
+    check("S5: after the deadline the chip reads Confirm now, and the row still names no held figure",
+      !!chipOf(lateRow) && chipOf(lateRow).textContent === "Confirm now" &&
+      !/held|reserve/i.test(rowWords(lateRow)));
+    T._setScenario({ participationDeadline: "2099-11-01" });
     T.render();
   })();
 
@@ -414,22 +427,22 @@ function shareSumAll(T) {
 
   const row = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
     .find(function (r) { return /Berkeley City/.test(r.textContent); });
-  // Sam, 2026-07-30: the cell reads "held $X" — "withheld · $X held" was redundant.
-  // NB: target the sub span, not the cell text — textContent concatenates the
-  // stacked lines with no separator ("$150,000held $147,606"), so a \b anchor
-  // never matches.
-  const sub = gateSub(row);
-  const heldDigits = String(Math.round(gated.earned_withheld));
-  // `sub` missing is a FAILURE, not a crash. Reading .textContent off a null
-  // threw a TypeError before finish() ever ran, so a regression here printed
-  // NOTHING — no passes, no failures, no summary — and looked like a broken
-  // harness rather than a broken guard. A test that dies takes every other
+  // Since the College Dashboard (Sam, 2026-09-28) the held figure reads in the
+  // CSV's Withheld column alone, so the WHOLE-window guard reads it there.
+  // Every read below fails by name rather than throwing: a TypeError before
+  // finish() prints nothing at all, and a guard that dies takes every other
   // result with it.
-  check("V1: a front-loaded award cell reporting a held figure exists at all", !!sub);
-  check("V1: the front-loaded award cell reports the FULL held amount",
-    !!sub && sub.textContent.replace(/[^0-9]/g, "") === heldDigits);
-  check("V1: the cell says 'held', not the redundant 'withheld · held'",
-    !!sub && /held/i.test(sub.textContent) && !/withheld/i.test(sub.textContent));
+  const csv = T._csv().split("\r\n");
+  const head = (csv[1] || "").split(",");
+  const iHeld = head.indexOf("Withheld (baseline not met)");
+  const line = (csv.find(function (l) { return l.split(",")[1] === "Berkeley City"; }) || "").split(",");
+  check("V1: the CSV reports a held figure for the front-loaded, gated college at all",
+    iHeld > 0 && Number(line[iHeld]) > 0);
+  check("V1: the CSV's Withheld column reports the FULL window's held amount, not half of it",
+    iHeld > 0 && Number(line[iHeld]) === Math.round(gated.earned_withheld));
+  check("V1: on screen the gated row reads $0 qualifying and names no held figure",
+    !!row && !!curCell(row, "total") && curCell(row, "total").textContent.trim() === "$0" &&
+    !/held|reserve/i.test(rowWords(row)));
   T._setScenario({});
 }
 {

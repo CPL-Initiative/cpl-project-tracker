@@ -385,10 +385,11 @@ check("data: the maximum sits above the minimum (a ceiling under the floor is a 
   // "at cap" replaced the ⬇ — and the glyph must not linger anywhere.
   const row = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
     .find(function (tr) { return tr.textContent.indexOf("Mt San Antonio") !== -1; });
-  check("C7: a capped row carries the 'at cap' word-chip (no ⬇ glyph anywhere)",
-    // In parentheses, beside the award figure, since 2026-09-02 (Sam).
-    !!row && row.innerHTML.indexOf(">(at cap)<") !== -1 &&
-    !!row.querySelector("td.cf-award .cplfund-bound") &&
+  check("C7: a capped row carries the 'Cap' word-chip beside Total Funds (no ⬇ glyph anywhere)",
+    // Beside the award figure since 2026-09-02 (Sam); a plain "Cap" chip in
+    // Total Funds since the College Dashboard (2026-09-28).
+    !!row && row.innerHTML.indexOf(">Cap<") !== -1 &&
+    !!row.querySelector("td.cf-award.cf-total .cplfund-bound.cf-boundchip") &&
     doc.getElementById("cplFundTable").textContent.indexOf("⬇") === -1);
   // The footer legend retired with the notes block (Sam, 2026-09-22: "trim the
   // notes to a sources line"); the chip carries its own meaning on hover, and
@@ -406,8 +407,8 @@ check("data: the maximum sits above the minimum (a ceiling under the floor is a 
   window.eval('CPL_FUNDING_TAB._state.open[' + JSON.stringify("c:" + cappedName) + '] = true;');
   T.render();
   const detail = doc.querySelector("tr.cplfund-detail");
-  check("C7: the capped drill-in opens on its Baseline line, with no cap cell restating the chip",
-    !!detail && !!detail.querySelector(".cplfund-basestatus") &&
+  check("C7: the capped drill-in opens on its Minimum Conditions line, with no cap cell restating the chip",
+    !!detail && !!detail.querySelector(".cplfund-basestatus.cf-conds") &&
     !/At the cap:/.test(detail.textContent) && !/a pure proportional share would be/.test(detail.textContent));
   // Sam, 2026-09-01: the drill-in's explanatory tail was struck — it restated
   // the base/cap rule the formula box states in full, in a place meant to carry

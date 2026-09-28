@@ -99,8 +99,8 @@ function reviewerSession() {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Part B — the private, UNLOCKED reviewer view renders the CO confirm lane with
-// the attestor identity and Confirm / Reject actions.
+// Part B — the private, UNLOCKED reviewer view renders the CO review lane with
+// the attestor identity and the Reject action (Confirm retired 2026-09-28).
 // ─────────────────────────────────────────────────────────────────────────────
 {
   const priv = freshDom();
@@ -116,8 +116,10 @@ function reviewerSession() {
   check("B1: the CO review lane renders for a reviewer", /cplfund-colane/.test(html));
   check("B2: the lane shows the attestor identity (reviewer-only PII)",
     /Jane Admin/.test(html) && /jane@college\.edu/.test(html));
-  check("B3: the lane offers Confirm and Reject",
-    /data-optinconfirm=/.test(html) && /data-optinrevoke=/.test(html));
+  // Sam, 2026-09-28: a self-attestation stands (attest-first), so the CO acts
+  // only to reject one; the CO Confirm is gone.
+  check("B3: the lane offers Reject on a self-attestation, and no Confirm",
+    !/data-optinconfirm=/.test(html) && /data-optinrevoke=/.test(html));
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -241,10 +243,11 @@ function reviewerSession() {
   check("F2b: other (not-opted-in) colleges still show the chip", stillThere.length > 0);
 }
 {
-  // F3/F4 — a reviewer sees Confirm/Reject INLINE in the row drill-in, with the
-  // attestor identity; and clicking inline Confirm actually confirms — proving the
-  // holder-scoped binding survives the expand's refreshTable (a dead button here
-  // was the real risk of moving the action onto the row).
+  // F3/F4 — a reviewer sees Reject INLINE in the row drill-in, with the
+  // attestor identity; and clicking inline Reject actually withdraws it — proving
+  // the holder-scoped binding survives the expand's refreshTable (a dead button
+  // here was the real risk of moving the action onto the row). The CO Confirm
+  // left both surfaces on 2026-09-28 (Sam's mockup).
   // Rows key by NAME since one-pool adoption (data-id "c:<college>", 2026-08-31).
   const priv = freshDom();
   priv.window.CPL_SESSION = reviewerSession();
@@ -261,16 +264,17 @@ function reviewerSession() {
   const t = doc.getElementById("cplFundTable").innerHTML;
   check("F3: the row drill-in shows the CO confirm block inline (where Sam looked)",
     /cplfund-corow/.test(t));
-  check("F3b: the inline block offers Confirm + Reject with the attestor identity",
-    /data-optinconfirm=/.test(t) && /data-optinrevoke=/.test(t) &&
+  check("F3b: the inline block offers Reject alone, with the attestor identity",
+    !/data-optinconfirm=/.test(t) && /data-optinrevoke=/.test(t) &&
     /Jane Admin/.test(t) && /jane@college\.edu/.test(t));
 
-  const confirmBtn = doc.querySelector("#cplFundTable [data-optinconfirm]");
-  check("F4: the inline Confirm button is present in the drill-in", !!confirmBtn);
-  if (confirmBtn) click(priv.window, confirmBtn);
-  const t2 = doc.getElementById("cplFundTable").innerHTML;
-  check("F4b: clicking inline Confirm confirms the opt-in (holder-scoped binding survives refreshTable)",
-    /CO-confirmed/.test(t2));
+  const rejectBtn = doc.querySelector("#cplFundTable [data-optinrevoke]");
+  check("F4: the inline Reject button is present in the drill-in, with no Confirm beside it",
+    !!rejectBtn && rejectBtn.textContent === "Reject" && !doc.querySelector("#cplFundTable [data-optinconfirm]"));
+  if (rejectBtn) click(priv.window, rejectBtn);
+  const t2 = doc.getElementById("cplFundTable").textContent;
+  check("F4b: clicking inline Reject withdraws the opt-in (holder-scoped binding survives refreshTable)",
+    /Confirmation withdrawn \(due /.test(t2) && P._optinActive(COL) === false);
 }
 {
   // F5 — a LOCKED (public / non-reviewer) drill-in never shows the CO controls,
@@ -287,7 +291,7 @@ function reviewerSession() {
   check("F5: a locked (non-reviewer) drill-in shows NO CO confirm controls",
     !/cplfund-corow/.test(t) && !/data-optinconfirm/.test(t));
   check("F5b: the locked drill-in still shows the college-facing opted-in status",
-    /Baseline: [^<]*confirmed locally/.test(t.replace(/<[^>]+>/g, "")));
+    /Minimum Conditions:[\s\S]*Confirmation on file/.test(t.replace(/<[^>]+>/g, " ")));
 }
 
 // ── the participation-requirement join (2026-08-27) ─────────────────────────

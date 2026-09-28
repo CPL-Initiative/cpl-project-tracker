@@ -371,8 +371,10 @@ const fmtM = function (v) { return "$" + Math.round(v).toLocaleString("en-US"); 
     ph.indexOf("<textarea") === -1);
   check("print HTML: priority metric textarea flattens to its text (survives print)",
     ph.indexOf("Headcount of students eligible for at least one course offered through CPL") !== -1);
+  // The statewide row reads "Statewide" since 2026-09-28; the flattened name
+  // cell carries it, and the Curr headers' screen-reader word stays unprinted.
   check("print HTML: the college table content survives",
-    ph.indexOf("SYSTEM (statewide)") !== -1);
+    /<span>Statewide<\/span>/.test(ph) && /\.cplfund-sr-only\{position:absolute/.test(ph));
 }
 
 // E5 — CO Monitor's notes (gated).
@@ -430,13 +432,13 @@ const fmtM = function (v) { return "$" + Math.round(v).toLocaleString("en-US"); 
   check("CSV: every institution line matches the header's field count",
     flat.bad === 0 && flat.n > 110);
   const cols = fields(T._csv().split("\r\n")[1]);
-  check("CSV: the SYSTEM total lands under the Max-award column, not one to its right",
+  check("CSV: the Statewide total lands under the Max-award column, not one to its right",
     (function () {
       const lines = T._csv().split("\r\n");
       const sys = fields(lines[lines.length - 1]);
       // The window column label follows windowLabel() ("Max award 2026–2028").
       const idx = cols.findIndex(function (c) { return /^Max award /.test(c); });
-      return sys[1] === "SYSTEM (statewide)" && idx !== -1 &&
+      return sys[1] === "Statewide" && idx !== -1 &&
         Number(sys[idx]) === Math.round(T._netCollege());
     })());
   check("CSV: the noncredit share is its own column, never folded into the credit figure",

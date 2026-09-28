@@ -70,7 +70,9 @@ function openDetail(window, doc, name) {
 // the CREDIT table. Its Max Funds IS the credit share that the retired Total
 // Possible hover carried, so `crShare` reads it directly. Hovers are kept per
 // cell as `<key>Tip`.
-const DTL_COL = { "outcomes": "priority",
+// The first header names its lane since 2026-09-28 (Credit outcomes /
+// Noncredit outcomes, Sam's mockup).
+const DTL_COL = { "outcomes": "priority", "credit outcomes": "priority", "noncredit outcomes": "priority",
   "max ftes": "target", "max funds": "maxFunds", "actual ftes": "actual", "actual funds": "current",
   "difference": "diff" };
 const crShare = (cells) => cells.maxFunds;
@@ -211,13 +213,13 @@ check("2d: srcDelivered() asks the ARTIFACT, not the registry (a declared key ma
   } } });
   T.render();
   const P = detRows(openDetail(window, doc, "Laney"));
-  check("3e: an undelivered NC source earns $0 and reads 'awaiting measurement' (2026-09-13 wording)",
-    P.length === NPRIO && /awaiting measurement/.test(P[0].actual) && P[0].current === "$0");
+  check("3e: an undelivered NC source earns $0 and reads TBA (2026-09-28 wording), its meaning on hover",
+    P.length === NPRIO && P[0].actual === "TBA" && P[0].actualTip === "To be announced once measured" && P[0].current === "$0");
   // Both statuses read "no data yet" on the SURFACE since 2026-09-01; the
   // contrast that matters (the gap row's Current Total pays, the undelivered
   // row's is strictly $0) is 3e4's check, on the dollars.
-  check("3e2: the gap row beside it also reads 'awaiting measurement' — never a measured zero",
-    P.length === NPRIO && /awaiting measurement/.test(P[1].actual) && !/0 · 0%/.test(P[1].actual));
+  check("3e2: the gap row beside it also reads TBA — never a measured zero",
+    P.length === NPRIO && P[1].actual === "TBA" && !/0 · 0%/.test(P[1].actual));
   check("3e3: and it is not reported as a measured zero ('0.0 FTES · 0%')",
     P.length === NPRIO && !actFtes(P[0], 0));
   // The data-gap row ADVANCES its whole CR funding; the undelivered row earns
@@ -241,8 +243,8 @@ check("4c: a declared-but-undelivered source earns f=0 — Sam's NC ruling, not 
 // The measured zero prints the NUMBER since 2026-09-24 (the unit rides the
 // header, the percent the hover); the undelivered label stays words.
 check("4d: undelivered is a separate LABEL from none (absent zero vs measured zero) — " +
-      "'awaiting measurement' vs a measured 0.0",
-  /status === "undelivered"\) act = "awaiting measurement"/.test(consumerSrc) &&
+      "TBA vs a measured 0.0",
+  /status === "undelivered"\) \{ act = "TBA"; actTip = TBA_TIP; \}/.test(consumerSrc) &&
   /status === "none"\) \{ act = unit\(0\);/.test(consumerSrc));
 
 // ── 5. one place decides whether a number is a measurement ───────────────────
@@ -288,9 +290,9 @@ check("5c: the CSV emits BLANK for an unmeasured priority, never 0",
 // measure still never renders as a college's measured zero (4d above), and
 // the undelivered branch still decides before the catch-all.
 check("5d: an undelivered measure never falls through to the catch-all label",
-  consumerSrc.indexOf('status === "undelivered") act = "awaiting measurement"') !== -1 &&
-  consumerSrc.indexOf('status === "undelivered") act = "awaiting measurement"') <
-    consumerSrc.indexOf('else act = "awaiting measurement"'));
+  consumerSrc.indexOf('status === "undelivered") { act = "TBA"') !== -1 &&
+  consumerSrc.indexOf('status === "undelivered") { act = "TBA"') <
+    consumerSrc.indexOf('else { act = "TBA"; actTip = TBA_TIP; }   // gap / pending'));
 
 // ── 6. the curator diagnostic must not lie about the new states ──────────────
 // It previously classified anything without a `src` as "not measurable — pays a
@@ -374,7 +376,7 @@ check("7a2: the BAKE carries no pin — its slot-2 metric is not the one the pin
   const csv = T._csv().split("\r\n");
   const head = csv[1].split(",");
   const iP1 = head.indexOf("P1 actual"), iP3 = head.indexOf("P3 actual");
-  const dataLines = csv.slice(2).filter((l) => l && !/SYSTEM/.test(l));
+  const dataLines = csv.slice(2).filter((l) => l && l.split(",")[1] !== "Statewide");
   const p1vals = dataLines.map((l) => l.split(",")[iP1]);
   const p3vals = dataLines.map((l) => l.split(",")[iP3]);
   const nonzero = (a) => a.filter((v) => v !== "" && v !== "0" && !/^</.test(v));
