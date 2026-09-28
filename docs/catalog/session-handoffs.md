@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-268 document(s).
+269 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 298 | [the SQL prompt's source found, and the opening line's check removed](../session_298_handoff.md) | 2026-09-28 |
 | 297 | [the Annual view's year, and the ETHS re-mint landed](../session_297_handoff.md) | 2026-09-28 |
 | 296 | [the CLAUDE.md verdicts carried out, and a fresh standing sheet](../session_296_handoff.md) | 2026-09-27 |
 | 295 | [narration v3, the ESL merging sheet, and the narrated draft](../session_295_handoff.md) | 2026-09-26 |

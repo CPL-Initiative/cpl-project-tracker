@@ -98,9 +98,10 @@ Guarded both ways by `tests/stop_hook_git_check_test.py`.
 settings file is INERT there; `scripts/check_hooks_live.py` says so), which is
 how the nag came back on 2026-09-25 (S288: "There are 2 unpushed commit(s)"
 after #1693's squash-merge deleted the branch's remote). Since then
-`check_hooks_live.py --fix`, the first command of every session's opening
-line, applies the patch too and prints a `STOP HOOK:` line when it did
-anything; `tests/install_prompt_guards_test.py` pins the wiring.
+`check_hooks_live.py --fix` applies the patch too and prints a `STOP HOOK:`
+line when it did anything; `tests/install_prompt_guards_test.py` pins the
+wiring. It opened every session from 2026-09-20 until Sam dropped it from the
+opening line on 2026-09-28, so run it when the nag appears.
 
 **What was actually wrong (measured 2026-09-04, after it had fired in nearly
 every session since August).** Two faults, and only fixing both stops it:

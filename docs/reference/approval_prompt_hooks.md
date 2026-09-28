@@ -2,6 +2,7 @@
 title: "Approval-prompt guards — why the allowlist never worked, and where the hooks must live"
 date: 2026-09-19
 session: 278 (SkyWarden)
+updated: 2026-09-28
 tags: [reference, hooks, permissions, settings, tooling]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference
@@ -12,6 +13,66 @@ related:
 ---
 
 # The approval-prompt storm
+
+## ⭐ 2026-09-28 (S297, SkyLantern): the source was the account's connector setting
+
+Sam, opening the session: *"Before anything our primary goal today is to do
+whatever it takes to enable SQL without approvals. Any changes we make will need
+to be tested with 3 operations that are requiring Allow in a new session before
+we consider this problem solved. Once we have a solution, I want to clean up
+anything in claude.md related."* That direction ends his 2026-09-24 ruling below.
+
+**The control is the Supabase connector's Tool permissions in the claude.ai
+account**, at Customize > Connectors > Supabase > Tool permissions
+([help center](https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities)).
+Sam found them *"all set to read only--that must be the source of all my
+travails these last 2 weeks!"* and changed them. The seven `execute_sql` calls
+S297 made afterward (three reads, four writes to `cpl_memory`) each executed
+within the seconds it took to write the statement; a call that asked had
+waited 15 s to 21 min (the S280 table below).
+
+What the help center says about the control (read 2026-09-28):
+
+- A connector's tools are grouped read-only and write/delete, and each group or
+  single tool is set to Always allow, Needs approval or Blocked.
+- On Team and Enterprise plans an Owner sets them for everyone in the
+  organization, and members cannot override the choice.
+- *"Connector permissions and Claude Code Managed Settings compose by
+  most-restrictive"*
+  ([roles](https://support.claude.com/en/articles/13930458-set-up-role-based-permissions-on-enterprise-plans)).
+- Cowork has its own organization switch, Allow "Always allow" for connector
+  tools, off by default
+  ([Cowork](https://support.claude.com/en/articles/13455879-use-claude-cowork-on-team-and-enterprise-plans)).
+
+**How it was found.** The auto-mode classifier refused the session's reads of
+the Claude Code install and of the session-root settings as `[Auto-Mode
+Bypass]`, rightly: those files grant permissions, so the fix belongs to the
+person who owns the permission. The platform's environment documentation for a
+connector tool that asks named the setting in one line. S280 had recorded the
+same control as not to be pursued unless Sam asked, and no session put it in
+front of him.
+
+**The opening line's check left the same day.** Sam: *"We can remove this
+tagline from the handoff prompts, 'First, run python3
+scripts/check_hooks_live.py --fix and paste its LIVE line, no investigation.' It
+was added to try to abate the allow storm."* The sign-off template in CLAUDE.md
+drops it. The checker stays and runs on demand: `--fix` still adds the context
+meter to a session root that lacks one and patches the stop hook. A snapshot
+built before #1712 carries no meter until the setup script's date line changes
+and it rebuilds; until then a session runs `python3 kb/_context_budget.py` by
+hand (Rule 9a).
+
+**What remains, for S298:**
+
+1. The three-call test in a new session; the paste is in handoff 298.
+2. On a pass, the rest of Sam's cleanup: condense this document's sections that
+   call the prompt unreachable into the lessons doc, rewrite the team guide's
+   section 15, correct the note printed under `check_hooks_live.py`'s LIVE
+   line, and supersede the 2026-09-20 memory rows that say no setting on our
+   side changes the prompt.
+3. The guard and the allow rule stay. With no prompt in front of
+   `execute_sql`, the guard is what stands between a session and a write
+   outside `cpl_memory`.
 
 Sam, 2026-09-19: *"the swarm of 'Allow Once' approval requests I am getting
 yesterday and today. It's making the work unsustainable."* Then, after the
@@ -221,18 +282,13 @@ unattended. **Test it before relying on it.**
 
 ## Still open
 
-- ⛔ **SAM'S RULING, 2026-09-24: DO NOT WORK ON THE SWARM.** Verbatim: *"Don't try and solve the swarm problem—I wasted
-  2 days of fable use and not changes helped. Look at the handoff prompt text for the solution that was supposed to
-  solve it. Probably had a dozen or more approve requests this session so far."* The handoff's opening line
-  (`check_hooks_live.py --fix`, paste the LIVE line) IS the solution, and it held that session: 33 rules, the
-  `execute_sql` rule present, and the LIVE line's own caveat that this one tool still asks once per call. The dozen
-  prompts were that session's twelve `execute_sql` calls plus one `list_projects`. **The session-side discipline is
-  therefore the whole remaining fix: one statement per purpose, reads folded together, a memory write with its log and
-  its verify as three statements in ONE call (the log insert sees the rows the first statement wrote; only a
-  data-modifying CTE cannot).** Budget a session's SQL in prompts before the first call.
-- Recorded, NOT to be pursued unless Sam asks: the platform's page for a connector tool that asks names a control this
-  record never tried, the connector's per-tool permission at claude.ai/customize/connectors (an organization admin may
-  cap it). It sits here so no session re-derives it; it is his call whether to ever look.
+- Sam's 2026-09-24 ruling to stop working the swarm ended with his 2026-09-28
+  direction (top section). Its discipline, one statement per purpose and a
+  memory write with its log in one call, stays good practice and stops being a
+  prompt budget once the new-session test passes.
+- The connector's per-tool permission at claude.ai/customize/connectors, recorded
+  here on 2026-09-20 as not to be pursued unless Sam asked, was the source (top
+  section).
 - **`permissions.allow` is kept in the repo settings with a comment saying it
   does not work**, rather than deleted, so the next session does not re-add it
   expecting a different result.

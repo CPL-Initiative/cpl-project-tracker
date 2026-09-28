@@ -8120,7 +8120,7 @@
      ],
      "title": "Verify the premise before you build on it",
      "type": "methodology",
-     "updated": "2026-09-19"
+     "updated": "2026-09-28"
     },
     {
      "created": "2026-08-20",
@@ -14025,7 +14025,7 @@
      ],
      "title": "Approval-prompt guards \u2014 why the allowlist never worked, and where the hooks must live",
      "type": null,
-     "updated": ""
+     "updated": "2026-09-28"
     },
     {
      "created": "2026-08-28",
@@ -14261,8 +14261,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 268,
+   "count": 269,
    "docs": [
+    {
+     "created": "2026-09-28",
+     "governs": [],
+     "n": 298,
+     "path": "docs/session_298_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "permissions",
+      "prompt-storm",
+      "decision-sheets",
+      "jev"
+     ],
+     "title": "the SQL prompt's source found, and the opening line's check removed",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-28",
      "governs": [],
@@ -18807,5 +18824,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 979
+ "total": 980
 }

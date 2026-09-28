@@ -1,7 +1,7 @@
 ---
 title: Verify the premise before you build on it
 created: 2026-09-19
-updated: 2026-09-19
+updated: 2026-09-28
 tags: [methodology, handoff, measurement, git]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -53,6 +53,22 @@ allow, ask, or deny rules resolve immediately."* Allow rules work. The
 allowlist had never failed — it had never **loaded**, for an unrelated reason.
 One cause, not two, and a third of the work was unnecessary.
 
+## Case 3 — five sessions reasoned about a setting nobody opened (2026-09-28)
+
+From 2026-09-19 to 2026-09-24 five sessions worked the Supabase `execute_sql`
+approval prompt from the session's side: allow rules, hooks, where the settings
+load, the environment snapshot. Each step was measured, and the conclusion they
+reached, that the prompt came from upstream where nothing on our side reached,
+was right as far as it went. The premise under it was that upstream meant out
+of reach. The connector's Tool permissions sit in the claude.ai account; on
+2026-09-28 Sam found them set read-only and changed them in about a minute, and
+the next seven SQL calls ran with no prompt.
+
+S280 had written the control down as untried and parked it under a ruling to
+stop spending session time on the storm. The ruling covered the sessions'
+effort. The check cost Sam a minute and the sessions nothing, and nobody asked
+him.
+
 ## Why a handoff is the high-risk source
 
 A handoff is written at the end of a session, often under context pressure —
@@ -80,6 +96,9 @@ accuracy does.**
   allowlisted five tools, prompts unchanged)"* invites the next session to
   check whether the measurement supports the claim. It does not — the tools
   were allowlisted in a file that never loaded.
+- **A last candidate only the person can try goes to them as a one-line ask.**
+  A ruling that stops a session's effort does not cover a check that costs the
+  person a minute; parking that check keeps the problem open.
 - **State confidence honestly in the artifact.** Where this session could not
   verify something (whether a local-path plugin marketplace auto-loads), the
   doc says *promising, unverified* rather than recommending it.

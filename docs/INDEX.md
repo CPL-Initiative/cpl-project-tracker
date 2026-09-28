@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-09-27
+updated: 2026-09-28
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 79 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 81 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 50 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 268 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **979** | |
+| Session handoffs | 269 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **980** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -123,11 +123,11 @@ Authoritative external sources we've cached:
 
 ## Update history
 
+- **2026-09-28 — S297 (SkyLantern):** the SQL approval prompt's source found: the Supabase connector's Tool permissions in Sam's claude.ai account, set read-only, which he changed; seven SQL calls then ran without a prompt, and S298's three-call test in a new session closes it. The opening line's `check_hooks_live.py --fix` sentence removed on Sam's ruling; the open-asks sheet published (https://claude.ai/artifact/C1uyRhneegqQ4XSPRKiC3B). KB note extended: `methodology-verify-the-premise-before-you-build-on-it` (case 3). Handoff 298.
+- **2026-09-28 — S296 (SkyBeacon, emergency checkpoint):** funding asks card 1, the Annual view compares a year with a year ([#1721](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1721)); the ETHS re-mint's dry run ([#1722](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1722)) and its land, 26 KINE, 4 ATHL and 1 PEDS with the first continuation-band-2 ids, `kb_curation` re-keyed by `supabase-rekey.yml` ([#1723](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1723)). Handoff 297.
 - **2026-09-27 (S295 SkyHarbor, second checkpoint):** Sam's eight CLAUDE.md verdicts carried out ([#1712](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1712): the context meter installs at the session root through `check_hooks_live.py --fix`; [#1713](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1713): the emphasis sweep; vault #185, #186; knowledge base #23 waits for his merge), and the standing open-asks sheet reconciled and published fresh ([#1714](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1714)): seven of its cards were answered rulings, two contradicting his August answers. KB note extended: `methodology-a-settled-ruling-does-not-enforce-itself`. Handoff 296.
 - **2026-09-27 (S295 SkyHarbor):** the CLAUDE.md prompt audit (narratives to `docs/reference/doctrine_provenance.md`, eight calls on a sheet), main's lints fixed (#1709), the ESL apply and its monthly pass; handoff 296.
 - **2026-09-26 — S294 (SkyCadence):** narration v3 and `narrate.py` ([#1701](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1701)); the ESL merging procedure sheet, nine items, and four stale open-asks cards retired ([#1702](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1702)); the narrated draft of the funding introduction ([#1703](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1703)); Sam's ESL verdicts, all nine as proposed: the reader fixes, the ladder script's tests, and the data paste with its rollback ([#1704](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1704), `kb/esl_sheet_out/2026-09-26/`); KB note `methodology-hear-a-synthetic-voice-through-a-recognizer`; handoff 295.
 - 2026-09-25 (S291 SkyReel): the funding guide video, a KB note on rendering HTML animation to MP4, handoff 291.
 - **2026-09-25 — S288 (SkyZ):** `TOP_Code_Lookup.xlsx` column D corrected against the TOP manual (81 of 198 codes disagreed with their titles), the EACR's unsectored rows 890 → 379, guard in CI ([#1692](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1692)); Sam's ruling that TOP is unreliable and program CIPs are almost fully reliable; a program-CIP route for courses measured and not shipped (8 better, 15 worse of 30); on Sam's scoping ruling, exams sectored from their titles (`kb/reference/eacr_cip_title_rules.json`, unsectored cards 449 → 3, live and verified, [#1693](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1693)); `check_hooks_live.py --fix` now applies the stop-hook patch that three-repo sessions never ran. KB note `methodology-a-program-cip-labels-the-program-not-its-courses`. Handoff 290.
 - **2026-09-24 — S287 (SkyLane, beside SkyMatrix):** the jsdom suite runs as four shards on four runners fanned into the one `test` check, 20 min to 7 ([#1682](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1682)); the funding drill-in's credit and noncredit lane tables and the one-line card head ([#1679](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1679)); the four rows S286 staged written; the review sheet's edit layer documented in the decision-sheets reference; KB note `methodology-a-memory-bound-suite-scales-across-machines-not-workers`. Handoff 289.
-- **2026-09-24 — S285 (SkyGrant):** the fifteen memory rows S281 and S283 staged are written and logged, each re-read against the day ([#1674](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1674)); the college briefing's funding box swept to the funding vocabulary with a source-reading guard ([#1675](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1675)); Sam's ruling to stop working the SQL prompt swarm and budget calls; funding lessons S215–S217 archived; KB note updated: `methodology-a-ban-is-only-as-wide-as-the-files-it-opens`. Handoff 286.
-- **2026-09-23 — S284 (SkyWage):** Scenario 3's controls, a published scenario, and the Max award column (#1664); KB note `methodology-label-a-bound-where-it-binds`; handoff 285; the Scenario 3 decision sheet.
