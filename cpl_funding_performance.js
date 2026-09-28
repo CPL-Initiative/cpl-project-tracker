@@ -8,20 +8,20 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). PAC/PTC = APPLIED/TRANSCRIBED units for students whose Counselor step is checked (Counselor_Verified), both cohorts; present only when the pull carries that column. NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 10,
  "statewide": {
-  "pe": 44032,
-  "pa": 40051,
-  "ppa": 105,
+  "pe": 44035,
+  "pa": 40054,
+  "ppa": 106,
   "p2": 3129,
   "p3": 14641,
   "pp": 6,
-  "ppe": 115,
-  "pac": 2913,
+  "ppe": 116,
+  "pac": 2918,
   "ptc": 2526,
-  "pe_u": 1430221.7,
-  "pa_u": 223406.9,
-  "ppa_u": 657.5,
-  "ppe_u": 6699.5,
-  "pac_u": 25415.2,
+  "pe_u": 1430209.7,
+  "pa_u": 223409.9,
+  "ppa_u": 661.5,
+  "ppe_u": 6703.5,
+  "pac_u": 25425.2,
   "ptc_u": 21779.0,
   "p3_u": 73936.7,
   "pp_u": 63.5
@@ -308,10 +308,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "Chaffey": {
-   "pe": 1522,
-   "pe_u": 32966.5,
-   "pa": 1518,
-   "pa_u": 19072.5,
+   "pe": 1521,
+   "pe_u": 32963.5,
+   "pa": 1517,
+   "pa_u": 19069.5,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 6.0,
@@ -703,10 +703,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "Foothill": {
-   "pe": 73,
-   "pe_u": 3300.0,
-   "pa": 73,
-   "pa_u": 292.0,
+   "pe": 72,
+   "pe_u": 3281.0,
+   "pa": 72,
+   "pa_u": 288.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 12.0,
@@ -923,10 +923,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "LA Mission": {
-   "pe": 165,
-   "pe_u": 6824.0,
-   "pa": 164,
-   "pa_u": 946.0,
+   "pe": 167,
+   "pe_u": 6825.0,
+   "pa": 166,
+   "pa_u": 947.0,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 0,
@@ -936,8 +936,8 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0,
    "ppe": 0,
    "ppe_u": 0.0,
-   "pac": 22,
-   "pac_u": 85.0,
+   "pac": 24,
+   "pac_u": 86.0,
    "ptc": 0,
    "ptc_u": 0.0
   },
@@ -1640,10 +1640,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "San Bernardino": {
-   "pe": 313,
-   "pe_u": 9521.0,
-   "pa": 308,
-   "pa_u": 2638.0,
+   "pe": 316,
+   "pe_u": 9530.0,
+   "pa": 311,
+   "pa_u": 2647.0,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 59,
@@ -1653,8 +1653,8 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0,
    "ppe": 0,
    "ppe_u": 0.0,
-   "pac": 103,
-   "pac_u": 859.0,
+   "pac": 106,
+   "pac_u": 868.0,
    "ptc": 87,
    "ptc_u": 748.0
   },
@@ -1810,7 +1810,7 @@ window.CPL_FUNDING_PERF = {
    "pa_u": 2060.2,
    "ppa": null,
    "ppa_suppressed": true,
-   "ppa_u": 4.0,
+   "ppa_u": 8.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -1818,7 +1818,7 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0,
    "ppe": null,
    "ppe_suppressed": true,
-   "ppe_u": 28.0,
+   "ppe_u": 32.0,
    "pac": 29,
    "pac_u": 374.2,
    "ptc": 0,
@@ -2378,8 +2378,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 344,
-    "pa": 342,
+    "pe": 343,
+    "pa": 341,
     "p3": 17
    },
    "Other": {
@@ -2611,8 +2611,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Foothill": {
    "Military": {
-    "pe": 73,
-    "pa": 73,
+    "pe": 72,
+    "pa": 72,
     "p3": 0
    }
   },
@@ -2696,8 +2696,8 @@ window.CPL_FUNDING_PERF = {
   },
   "LA Mission": {
    "Industry Certification": {
-    "pe": 12,
-    "pa": 12,
+    "pe": 14,
+    "pa": 14,
     "p3": 0
    },
    "Military": {
@@ -3363,8 +3363,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Industry Certification": {
-    "pe": 28,
-    "pa": 26,
+    "pe": 31,
+    "pa": 29,
     "p3": 13
    },
    "Industry Certification | Military": {
@@ -3882,8 +3882,8 @@ window.CPL_FUNDING_PERF = {
    "p3": 14
   },
   "Industry Certification": {
-   "pe": 1288,
-   "pa": 1266,
+   "pe": 1293,
+   "pa": 1271,
    "p3": 1160
   },
   "Industry Certification | Military": {
@@ -3928,8 +3928,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 27950,
-   "pa": 25753,
+   "pe": 27948,
+   "pa": 25751,
    "p3": 2557
   },
   "Military | Portfolio Review": {
@@ -3979,18 +3979,18 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1430221.7,
-   "pa_u": 223406.9,
+   "pe_u": 1430209.7,
+   "pa_u": 223409.9,
    "p3_u": 73936.7
   },
   "map": {
-   "pe_u": 1436921.2,
-   "pa_u": 224064.4,
+   "pe_u": 1436913.2,
+   "pa_u": 224071.4,
    "p3_u": 74000.2
   },
   "ratio": {
    "pe_u": 1.0047,
-   "pa_u": 1.0029,
+   "pa_u": 1.003,
    "p3_u": 1.0009
   }
  },

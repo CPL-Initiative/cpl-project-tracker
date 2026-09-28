@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-09-28T17:41:58.076287+00:00",
+  "scraped_at": "2026-09-28T19:45:11.108148+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 28514,
+    "jst": 28513,
     "star_colleges": 59
   },
   "computed_star_colleges": 59,
@@ -17,7 +17,7 @@
     },
     "Chaffey College": {
       "vets": 182,
-      "jst": 348,
+      "jst": 347,
       "star": true
     },
     "San Diego Mesa College": {
@@ -127,7 +127,7 @@
     },
     "Santa Ana College": {
       "vets": 334,
-      "jst": 378,
+      "jst": 379,
       "star": true
     },
     "Barstow Community College": {
@@ -337,7 +337,7 @@
     },
     "Foothill College": {
       "vets": 915,
-      "jst": 76,
+      "jst": 75,
       "star": false
     },
     "Copper Mountain College": {
