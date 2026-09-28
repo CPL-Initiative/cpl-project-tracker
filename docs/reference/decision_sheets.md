@@ -296,8 +296,11 @@ anything waiting on him belongs on it, and it is rebuilt and handed over rather
 than held back for a quorum.
 
 **Builder:** `kb/_build_open_asks_decision_sheet.py` →
-`docs/visuals/2026-09-27-funding-asks.html`
-→ published at https://claude.ai/artifact/74AfMNmXPQYP5X7XKpjHfH (`SHEET_ID` `2026-09-27-funding-asks`, a fresh store, four
+`docs/visuals/2026-09-28-open-asks.html` (three cards: the two funding questions still open,
+and the ETHS re-mint's extension; built S296, **not yet published** — publish it under a fresh
+store with `capabilities: {db: {}, comments: {}}` and hand Sam the link). Its predecessor,
+`docs/visuals/2026-09-27-funding-asks.html`, was
+published at https://claude.ai/artifact/74AfMNmXPQYP5X7XKpjHfH (`SHEET_ID` `2026-09-27-funding-asks`, a fresh store, four
 funding cards the lane had carried as prose). The sheet before it,
 https://claude.ai/artifact/5sWY4QCCDfkAegZtZrW1oe (`2026-09-27-open-asks`), had all
 eight cards answered on 2026-09-27 (through card 8), and each ruling left with its

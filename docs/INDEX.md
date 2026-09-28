@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 79 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 81 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 50 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 267 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **978** | |
+| Session handoffs | 268 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **979** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
