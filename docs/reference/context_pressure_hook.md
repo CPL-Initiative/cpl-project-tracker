@@ -41,8 +41,10 @@ nothing from that file (`scripts/check_hooks_live.py` records the measurement).
 There `scripts/install_prompt_guards.py` writes the same hook into the session
 root's settings, with an absolute path, beside the approval-prompt guards. The
 environment's setup script runs it when the snapshot is built, and
-`check_hooks_live.py --fix`, the first command of every session, adds the meter
-alone (`--meter-only`) to a root that lacks it. The meter grants no permission,
+`check_hooks_live.py --fix` adds the meter alone (`--meter-only`) to a root that
+lacks it. Since 2026-09-28 it runs on demand, no longer in the opening line, so
+a snapshot built before #1712 carries no meter until the setup script's date
+line changes and the snapshot rebuilds. The meter grants no permission,
 so that repair leaves the guards and the allow list as it found them;
 `tests/install_prompt_guards_test.py` pins both. The checker's LIVE line reads
 `context meter: yes` once the hook is in place.

@@ -35,8 +35,8 @@ Deep reference offloaded: `docs/reference/` — pipeline_reference ·
 kb_build_status · mid_lifecycle · troubleshooting · obsidian_vault_wiring ·
 finished_workstreams · skyview_invariants · live_session_banner ·
 [approval_prompt_hooks](docs/reference/approval_prompt_hooks.md) (the
-Allow-Once storm; ⛔ Sam, 2026-09-24: **do not work on it** — budget SQL in
-prompts and fold statements into as few `execute_sql` calls as possible) ·
+Allow-Once storm: its source was the Supabase connector's Tool permissions in
+the claude.ai account, changed 2026-09-28; S298's new-session test closes it) ·
 [doctrine_provenance](docs/reference/doctrine_provenance.md) (the incidents and
 measurements behind these rules) · `lanes/` (stubs below).
 
@@ -207,9 +207,10 @@ nobody finds; `unreferenced_offload` flags any that stop being.
    session transcript every turn, and `compactMetadata.preTokens` at every
    compaction. `kb/_context_budget.py` reads it in ~50 ms; run it any time.
    It fires as a PostToolUse hook from the repo's settings in a session rooted
-   here, and from the session root once `check_hooks_live.py --fix` installs it
-   (the LIVE line reads `context meter: yes`); where it reads NO, run the meter
-   yourself at session start, after a long stretch, and before any sign-off.
+   here, and from the session root where the environment's setup script
+   installed it (`python3 scripts/check_hooks_live.py` reports
+   `context meter: yes` or `NO`). Run the meter yourself at session start,
+   after a long stretch, and before any sign-off.
    Mechanics: [`docs/reference/context_pressure_hook.md`](docs/reference/context_pressure_hook.md).
    - **WARN — ≤110,000 tokens left.** Finish the thought you are on, then run a
      full `/checkpoint`. **Say the number to Sam** rather than checkpointing
@@ -503,11 +504,9 @@ first day.** Do the remembering for them.
   or anything that looks like the end (a checkpoint, a "thanks, that's it", a long
   quiet) — close with this line, filled in, on its own:
   > *Greetings, you are Sky**Next** (Session N+1), see Sky**You**'s handoff —
-  > `docs/session_<N+1>_handoff.md` (link) — let's keep rolling with our queue.
-  > First, run `python3 scripts/check_hooks_live.py --fix` and paste its LIVE
-  > line, no investigation.*
-  The check sentence is standing (Sam, 2026-09-20): the first turn shows him
-  whether the guards loaded, and `--fix` repairs the session if not. You **assign** the next moniker (one name, not a
+  > `docs/session_<N+1>_handoff.md` (link) — let's keep rolling with our queue.*
+  Sam removed the guard-check sentence that used to close it (2026-09-28): it was
+  added to abate the approval storm. You **assign** the next moniker (one name, not a
   menu) and it must be the one the handoff names. *"I just copy and paste the whole thing in the new session. If I
   need to change direction, I just add the new direction to the opening note"* —
   so the line must stand alone, and nothing may follow it but the sign-off. The
@@ -659,9 +658,10 @@ Read that before a UI rework, a First Light artifact, or a table layout.
   covers both HTMLs without a Rule-4 mirror. Only `:root` tokens need the mirror.
 - **Prototype UI in a fast-feedback canvas, then port.** Iterate the look in a
   Claude artifact, lock it with Sam, then implement into the monolith.
-- **Stop-hook:** patched in place by `scripts/patch_stop_hook.py`, which
-  `check_hooks_live.py --fix` runs (a three-repo session never loads the
-  SessionStart hook). See [`troubleshooting`](docs/reference/troubleshooting.md).
+- **Stop-hook:** a nag about unpushed commits that a squash-merge already
+  landed means the hook is unpatched; `python3 scripts/check_hooks_live.py --fix`
+  patches it through `scripts/patch_stop_hook.py` (a three-repo session never
+  loads the SessionStart hook). See [`troubleshooting`](docs/reference/troubleshooting.md).
 
 ## Deployed site
 
@@ -749,7 +749,7 @@ stays here.
 
 > **Anything waiting on Sam is also a card on a sheet.** The standing one,
 > `kb/_build_open_asks_decision_sheet.py` →
-> [74AfMNmXPQYP5X7XKpjHfH](https://claude.ai/artifact/74AfMNmXPQYP5X7XKpjHfH),
+> [C1uyRhneegqQ4XSPRKiC3B](https://claude.ai/artifact/C1uyRhneegqQ4XSPRKiC3B),
 > **refuses to build** while a lane's NEEDS-SAM marker has no card. When Sam
 > answers one, change that lane's marker in the same PR, or the sheet asks again
 > ([`decision_sheets`](docs/reference/decision_sheets.md)).

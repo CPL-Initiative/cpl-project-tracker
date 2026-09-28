@@ -31,14 +31,13 @@ also been answered on 2026-08-14 (military scope §10), and two of the 09-22
 proposals contradicted those August answers. When a verdict lands, change the
 lane's marker in the same pull request, or the sheet asks again.
 
-Published: https://claude.ai/artifact/74AfMNmXPQYP5X7XKpjHfH (2026-09-27 evening, SHEET_ID
-2026-09-27-funding-asks, capabilities db + comments, four funding cards). Sam answered cards 1
-and 2 there and leaves off at card 3; cards 3 and 4 wait on that same store, so read its
-`replies` and `replies/done` for them, and NEVER republish onto it. This builder carries
-those two beside the ETHS extension card (SHEET_ID 2026-09-28-open-asks; the two-card
-2026-09-27-funding-asks-2 was built, never published, and is gone). When the 2026-09-28 sheet
-is published, Sam answers cards 1 and 2 there or as cards 3 and 4 on the 2026-09-27 sheet:
-read both stores, and the later answer stands. Before it:
+Published: https://claude.ai/artifact/C1uyRhneegqQ4XSPRKiC3B (2026-09-28, S297, SHEET_ID
+2026-09-28-open-asks, capabilities db + comments, three cards). Its cards 1 and 2 are cards 3
+and 4 of https://claude.ai/artifact/74AfMNmXPQYP5X7XKpjHfH (2026-09-27 evening, SHEET_ID
+2026-09-27-funding-asks, four funding cards; Sam answered cards 1 and 2 there and left off at
+card 3), so read BOTH stores' `replies` and `replies/done`, and the later answer stands; NEVER
+republish onto either. The two-card 2026-09-27-funding-asks-2 was built, never published, and
+is gone. Before them:
 https://claude.ai/artifact/5sWY4QCCDfkAegZtZrW1oe (SHEET_ID 2026-09-27-open-asks; all eight
 cards answered that day, through card 8, and recorded in their lanes). A card list that
 changes is published under a fresh SHEET_ID, OUT and artifact. The 2026-09-22 sheet

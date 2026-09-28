@@ -426,7 +426,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Verify an ask against what the reader sees, not what the code does](../kb-notes/methodology-verify-an-ask-against-what-the-reader-sees.md) | methodology | published | 2026-09-05 | 2026-09-05 |
 | [Verify the consumer graph before migrating a data class — a dead reader means delete, not migrate](../kb-notes/methodology-verify-consumer-before-migrating.md) | methodology | published | 2026-05-31 | 2026-06-01 |
 | [Verify the last hop of a resolution chain](../kb-notes/methodology-verify-the-last-hop-of-a-resolution-chain.md) | methodology | published | 2026-08-09 | 2026-08-09 |
-| [Verify the premise before you build on it](../kb-notes/methodology-verify-the-premise-before-you-build-on-it.md) | methodology | published | 2026-09-19 | 2026-09-19 |
+| [Verify the premise before you build on it](../kb-notes/methodology-verify-the-premise-before-you-build-on-it.md) | methodology | published | 2026-09-19 | 2026-09-28 |
 | [Verify with the instrument that can see the defect](../kb-notes/methodology-verify-with-the-instrument-that-can-see-the-defect.md) | methodology | published | 2026-08-20 | 2026-08-24 |
 | [Warm a tinny voiceover with measured EQ — diagnose before you boost](../kb-notes/methodology-warm-a-tinny-voiceover-measured-eq.md) | methodology | published | 2026-07-23 | 2026-07-23 |
 | [What might qualify is a different question from who already grants it — answer it from the target program's course list](../kb-notes/methodology-what-might-qualify-is-a-different-question-from-who-already-grants-it.md) | methodology | published | 2026-09-18 | 2026-09-18 |

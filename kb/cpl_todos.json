@@ -1,20 +1,32 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-28",
-  "_session": "S296 SkyBeacon",
-  "_status": "The funding tab's Annual view now compares a year with a year, and the 31 physical-activity courses filed under Ethnic Studies were re-minted under Kinesiology on 28 September. Two funding questions and one re-mint question wait on Sam; the re-mint question's sheet is built and goes out next.",
+  "_session": "S297 SkyLantern",
+  "_status": "The approval prompts on database queries came from a setting in Sam's Claude account, set to read-only; he changed it on 28 September, and the next session confirms the fix with three test queries before the old workaround notes come out. Three decisions wait on the new sheet: two funding questions and one re-mint question. After the test, the work returns to Jev and the four references.",
   "items": [
     {
-      "id": "s297-fable-publish-open-asks",
+      "id": "s297-fable-sql-test-and-cleanup",
       "for": "Fable",
-      "tab": "cr-reference",
-      "text": "Publish the 28 September open-asks sheet (docs/visuals/2026-09-28-open-asks.html) with its reply store and comments, and hand Sam the link. Its third card asks whether the Exercise Science re-mint reaches the 85 more identities that carry the same mix-up."
+      "tab": "admin",
+      "text": "Run Sam's test first: three database queries in the new session that used to ask him to click Allow, plus one write the repo's guard must refuse. If none of the three asks, finish the cleanup he asked for: the reference note on the approval prompts, section 15 of the team guide, and the note under the settings check."
     },
     {
-      "id": "s296-sam-funding-sheet",
+      "id": "s297-fable-jev-next-step",
+      "for": "Fable",
+      "tab": "cr-reference",
+      "text": "Back to Jev, Sam's ask of 28 September: bring him a next step for each of the four references (subjects, courses, exhibits and credit recommendations). The course reference's first sitting of 40 to 60 findings is already ruled; the exhibit and subject scanners last ran on 10 July and need a fresh run before Jev sees them."
+    },
+    {
+      "id": "s297-sam-open-asks-sheet",
       "for": "Sam",
       "tab": "implementation-funding",
-      "text": "Two funding questions still wait on the sheet: https://claude.ai/artifact/74AfMNmXPQYP5X7XKpjHfH, cards 3 and 4 (the last three sections of your tab review, and the explainer's footer). Your answers on cards 1 and 2 are recorded. Pick up at card 3; each choice saves as you make it."
+      "text": "Three decisions wait on the new sheet: https://claude.ai/artifact/C1uyRhneegqQ4XSPRKiC3B. The last three sections of your funding tab review, the explainer's footer, and how far the Exercise Science re-mint reaches. The first two are the same questions as cards 3 and 4 of the 27 September sheet; answer them on either one."
+    },
+    {
+      "id": "s297-sam-which-connector-setting",
+      "for": "Sam",
+      "tab": "admin",
+      "text": "Tell the next session whether you changed the Supabase tool permissions for the whole organization or for your own account. The team guide's advice to Ashley, Jessica and Malone depends on it. Optional, one minute: change the date on the environment setup script's comment line so new sessions start with the context meter."
     },
     {
       "id": "s296-sam-gr-rows-on-tab",
@@ -47,17 +59,25 @@
       "text": "The ESL monthly pass is due when the docs lint's esl_monthly_pass_due fires (after 28 October): python3 kb/_esl_monthly_pass.py --session N, then dispatch esl-sheet-apply.yml with the plan dir it names, and hand Sam what it lists."
     },
     {
-      "id": "s291-sam-releveled-line",
-      "for": "Sam",
-      "tab": "implementation-funding",
-      "text": "The funding timeline still reads \"Undispersed Funds Rolled to Year 2 and Releveled\" for August 2027. You ruled that year-one funding carries forward to year two for the same college and isn't releveled. Edit that milestone's label on the tab so colleges read it the way the new guide video says it."
-    },
-    {
       "id": "s291-sam-video-figures",
       "for": "Sam",
       "tab": "implementation-funding",
       "text": "The 90-second guide video (linked from the explainer) types its figures in as of 24 September. If you change a dial before your walk-through, ask a session to update and re-render it; it takes about 5 minutes."
     },
+    {
+      "id": "s296-fable-unit-range-display",
+      "for": "Fable",
+      "tab": "cr-reference",
+      "text": "Check that every surface showing a merged or minted identity names the unit range of what it joins, Sam's rule of 27 September (units never split an identity). The keys already comply; the display is what to check."
+    },
+    {
+      "id": "s296-fable-governance-two-surfaces",
+      "for": "Fable",
+      "tab": "governance",
+      "text": "Take the cpl_occupation_match verdict queue and the cross-list curator surface through Governance and the privacy ADRs before either ships, Sam's call of 27 September (Rule 10(a3))."
+    }
+  ],
+  "_deferred": [
     {
       "id": "s288-sam-eacr-grid-look",
       "for": "Sam",
@@ -69,12 +89,6 @@
       "for": "Sam",
       "tab": "implementation-funding",
       "text": "Two funding-tab items are yours. Move the six transcription strategies from Career attainment to Completion in Year 1. Pressing Publish on Scenario 1 again is optional: an older window's save erased the marker, and an unset marker already falls back to Scenario 1, which is what colleges see. (Your review-sheet titles and timeline labels are in the saved configuration as of 2026-09-24 20:15 UTC.)"
-    },
-    {
-      "id": "s287-sam-review-sheet-8-10",
-      "for": "Sam",
-      "tab": "implementation-funding",
-      "text": "Your review sheet of the funding tab stopped at item 7: items 8 to 10 carry no verdict. Everything through 7 has shipped (pull requests 1677, 1678 and 1679, the last one with the credit and noncredit drill-in tables and the one-line priority card). Open the sheet again for the last three, or say the numbers in chat."
     },
     {
       "id": "s284-fable-supabase-grants",
@@ -94,20 +108,6 @@
       "tab": "activities-projects",
       "text": "Project 1.1.2, AI Apprenticeship CPL Tools, still lists Santiago Canyon College and Norco College on its team. You said the partners are Santiago Canyon and American River College, so change Norco to American River in Activities. Sessions cannot write that table."
     },
-    {
-      "id": "s296-fable-unit-range-display",
-      "for": "Fable",
-      "tab": "cr-reference",
-      "text": "Check that every surface showing a merged or minted identity names the unit range of what it joins, Sam's rule of 27 September (units never split an identity). The keys already comply; the display is what to check."
-    },
-    {
-      "id": "s296-fable-governance-two-surfaces",
-      "for": "Fable",
-      "tab": "governance",
-      "text": "Take the cpl_occupation_match verdict queue and the cross-list curator surface through Governance and the privacy ADRs before either ships, Sam's call of 27 September (Rule 10(a3))."
-    }
-  ],
-  "_deferred": [
     {
       "id": "s282-fable-rungs-for-other-centers",
       "for": "Fable",
@@ -131,12 +131,6 @@
       "for": "Fable",
       "tab": "cr-reference",
       "text": "Harvest the value that is proven rather than chasing the hard band. The 0.85 gate scored 25 of 25 on Sam's verdicts, so run kb/_jev_adjudicate.py across the full rung-5 population instead of only the 55 anchored pairs, take everything above the gate as suggestions, and put the rest on a decision sheet. The band is 26 pairs and 838 rows — one sitting, not an automation problem."
-    },
-    {
-      "id": "s280-sam-decide-the-execute-sql-read-path",
-      "for": "Sam",
-      "tab": "admin",
-      "text": "Settled 2026-09-20 about 21:15 UTC: with the allow rule loaded (checker: yes, 33 rules), the Supabase list_tables tool ran with no prompt and execute_sql alone asked (Deny / Allow once, no \"don't ask again\"); the harmless update was refused by the repo's guard. So the rules work for every other tool, and execute_sql carries an upstream mark that Claude Code honors past any allow rule; the public server source has no such mark, so it is added in the hosted connector or by the connector platform, and nothing on our side reaches it. Your call, recommended order: (1) keep the one prompt and ask Supabase support one question, does the hosted connector mark execute_sql as requiring user interaction and does read-only mode change it; (2) a read path that is not this tool (the npm Supabase MCP server in the sandbox in read-only mode from the setup script, a token among the environment's variables, two allowed hosts) only as a decision-sheet item with a security review first."
     },
     {
       "id": "s279-sam-kb-curation-reason-column",

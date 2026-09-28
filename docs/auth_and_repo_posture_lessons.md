@@ -371,3 +371,58 @@ per-call mark on `execute_sql` made SQL ask on every call once the runtime
 honored it; auto mode on 2026-09-18 changed neither. The lesson is the one
 Rule 8 already carries: when the person who lived it says the order was
 different, the record changes, and the inference is labeled as one.
+
+## 2026-09-28 (SkyLantern, S297) — the setting was in the account
+
+Sam made the storm the day's first job: *"Before anything our primary goal
+today is to do whatever it takes to enable SQL without approvals. Any changes
+we make will need to be tested with 3 operations that are requiring Allow in a
+new session before we consider this problem solved."*
+
+### ⭐ The last prompt was one setting in Sam's account
+
+The section above concluded the prompt was upstream and that no local setting
+reached it. Both halves held. What they left out is that upstream included a
+setting Sam owns: the Supabase connector's Tool permissions (claude.ai,
+Customize > Connectors > Supabase > Tool permissions), which group a
+connector's tools read-only and write/delete, each Always allow, Needs approval
+or Blocked. Sam found his *"all set to read only"* and changed them. The seven
+`execute_sql` calls that followed, three reads and four memory writes, each
+executed within the seconds it took to write the statement; a call that asked
+had waited 15 s to 21 min. Sam: *"that must be the source of all my travails
+these last 2 weeks!"*
+
+### ⚠️ The session's first move was refused, rightly
+
+To see why the tool asked, the session tried to read the Claude Code install
+and the session-root settings. The auto-mode classifier refused both as
+`[Auto-Mode Bypass]`. A session that reads permission internals in order to
+remove a prompt is working the permission from the wrong side. The platform's
+environment documentation, read next, has a page for a connector tool that
+asks, and its one line named the control. The person who owns a permission
+changes it; the session finds the setting and hands it over.
+
+### ⚠️ The answer had been written down since 2026-09-20
+
+S280 listed the connector's per-tool permission as a control this record never
+tried and parked it as not to be pursued unless Sam asked, and his 2026-09-24
+ruling to stop working the swarm kept it parked. The ruling was about session
+time. The parked check cost him about a minute and cost the sessions nothing,
+and nobody asked him. A last candidate that only the person can try belongs in
+front of that person as a one-line ask, whatever ruling covers the session's
+own effort. KB note: `methodology-verify-the-premise-before-you-build-on-it`,
+case 3.
+
+### The opening line's check came out
+
+Sam, the same day: *"We can remove this tagline from the handoff prompts...
+It was added to try to abate the allow storm."* It left the sign-off template.
+The checker stays and runs on demand for the two jobs it still does: adding
+the context meter to a session root that lacks one, and patching the stop
+hook.
+
+### Still to prove
+
+Sam's test: three calls that used to ask, run in a new session with no prompt.
+Handoff 298 carries the paste, and the cleanup of the notes that call the
+prompt unreachable waits on it.
