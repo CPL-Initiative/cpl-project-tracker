@@ -4020,10 +4020,17 @@
   // ── the BASELINE PARTICIPATION GATE (Sam, 2026-07-30) ─────────────────────
   // "Actual funding total should only be above 0 if they've met all of the quals
   // as well." Sam's four calls, made explicitly before this was built:
-  //   (1) ONLY the two baseline requirements gate — CPL Coordinator on file in
-  //       MAP + a participation request by the deadline. Veteran Star and the
-  //       ESS outcomes stay PERFORMANCE measures (they flex the earned amount
-  //       through earnFraction); they are not on/off switches.
+  //   (1) ALL THREE MINIMUM CONDITIONS GATE (Sam, 2026-09-28: "3 conditions but
+  //       the Star is a feel-good restatement of one of them"): a CPL Coordinator
+  //       on file in MAP, local confirmation by the deadline, and veteran JSTs
+  //       uploaded for 75% of enrolled veterans (the Veteran Star) — for the
+  //       noncredit-only campuses, noncredit certificates posted as exhibits in
+  //       MAP (N1 a). The third condition is whatever eligReqList() scores, so
+  //       the pie, the drill-in's condition line and the gate cannot disagree,
+  //       and a curator who removes the requirement removes it from all three.
+  //       This supersedes the 2026-07-30 call that only the first two gate. The
+  //       Veteran Star never entered earnFraction, so gating on it counts it
+  //       once. The ESS outcomes stay performance measures.
   //   (2) Once a college clears the gate it has cleared it FOR THE WINDOW —
   //       no clawback if a coordinator record lapses in month 9.
   //   (3) The gate withholds only the PERFORMANCE-EARNED allocation. Since the
@@ -4032,13 +4039,22 @@
   //       cap — including the floor — is always shown in full.
   //   (4) Withheld dollars are HELD IN RESERVE and roll forward, never
   //       redistributed: a college that qualifies mid-window can still draw.
-  // Returns pending:true while the coordinator feed hasn't loaded — fail-open,
+  // Returns pending:true while the coordinator feed hasn't loaded, or while the
+  // third condition's feed hasn't and nothing else is missing — fail-open,
   // never a false "not qualified" (the standing rule for every mark on this tab).
+  // A condition already known to be missing still blocks while the third pends.
   function baselineGate(college) {
     if (!ELIG.coordOk) return { pending: true, blocked: false, missing: [] };
     var missing = [];
     if (coordShown() && !ELIG.coord[college]) missing.push(coordLabel());
     if (partShown() && !ELIG.optin[college]) missing.push(partReqText());
+    var thirdPending = false;
+    eligReqList(college).forEach(function (r) {
+      if (!r.auto) return;               // the coordinator and confirmation, counted above
+      if (r.pending) thirdPending = true;
+      else if (!r.met) missing.push(r.label);
+    });
+    if (thirdPending && !missing.length) return { pending: true, blocked: false, missing: [] };
     return { pending: false, blocked: missing.length > 0, missing: missing };
   }
   // `held` — the dollars this college's posted CPL would already have earned
