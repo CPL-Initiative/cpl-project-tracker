@@ -17,11 +17,13 @@ Run from repo root: python3 tests/identities_rekey_test.py
 import copy
 import json
 import os
+import re
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "kb"))
 import _identities_rekey_dryrun as idr  # noqa: E402
+import alias_chain as ac  # noqa: E402
 
 results = []
 
@@ -137,8 +139,16 @@ for _d in sorted(os.listdir(os.path.join(ROOT, "kb/identities_rekey_out"))):
         continue
     _rekeys = {g: v["new_id"] for g, v in _r["aliases"].items() if v["action"] == "rekey"}
     _drops = [g for g, v in _r["aliases"].items() if v["action"] != "rekey"]
+    # A re-mint registered after this receipt may have moved an entry onward
+    # (the 2026-09-28 ETHS re-mint carried PE M1044's entry from ETHS M1138 to
+    # KINE M2008), so each new id resolves through the maps dated after the
+    # receipt before it is looked up. Never through the whole chain: an earlier
+    # map can hold the same id as an old key (Rule 7, the era guard).
+    _since = str(_r.get("_generated_at") or _d)[:10]
+    _later = ac.load_maps([m for m in ac.ALIAS_MAPS
+                           if (lambda x: bool(x) and x.group(1) > _since)(re.search(r"(\d{4}-\d{2}-\d{2})", m))])
     check("applied receipt %s: every re-keyed entry sits on its new id, stamped" % _d,
-          all(ident.get(n, {}).get(idr.STAMP) == g for g, n in _rekeys.items()))
+          all(ident.get(ac.resolve_id(n, _later), {}).get(idr.STAMP) == g for g, n in _rekeys.items()))
     check("applied receipt %s: no dropped or old key survives" % _d,
           not [g for g in list(_rekeys) + _drops if g in ident])
     check("applied receipt %s: the ruling is recorded on the file" % _d,

@@ -1,6 +1,6 @@
 {
  "_generated_by": "kb/_desc_consolidation_dryrun.py",
- "_generated_at": "2026-09-04",
+ "_generated_at": "2026-09-28",
  "_status": "DRY-RUN — measurement receipt; nothing applied",
  "_params": {
   "cosine_min": 0.6,
@@ -10,14 +10,14 @@
  },
  "population": {
   "dark_mids_with_desc": 6228,
-  "candidate_pairs": 24994,
+  "candidate_pairs": 25002,
   "passing_pairs": 354,
   "gate_rejections": {
-   "below_cosine": 7749,
-   "credit_mismatch": 4254,
+   "below_cosine": 7757,
+   "credit_mismatch": 4253,
    "level_risk": 1975,
-   "units_mismatch": 9674,
-   "variant_risk": 443,
+   "units_mismatch": 9671,
+   "variant_risk": 447,
    "sport_risk": 506,
    "gender_risk": 38,
    "year_risk": 1
@@ -142,10 +142,10 @@
    "cross_college": true,
    "shared_terms": [
     "recognized",
-    "simulated",
     "driver",
-    "positioning",
+    "simulated",
     "inspections",
+    "positioning",
     "apparatus"
    ]
   },
@@ -399,8 +399,8 @@
    "cos_max": 0.894,
    "cross_college": true,
    "shared_terms": [
-    "reciprocity",
     "ifsac",
+    "reciprocity",
     "congress",
     "pro",
     "firefighter",
@@ -695,8 +695,8 @@
    "cos_max": 0.851,
    "cross_college": true,
    "shared_terms": [
-    "organize",
     "operate",
+    "organize",
     "philosophies",
     "administrative",
     "childhood",
@@ -866,8 +866,8 @@
    "shared_terms": [
     "studying",
     "desiring",
-    "customs",
     "conversation",
+    "customs",
     "conversational"
    ]
   },
@@ -899,8 +899,8 @@
    "shared_terms": [
     "responded",
     "geog",
-    "exclusion",
     "segregation",
+    "exclusion",
     "intersections",
     "groups"
    ]
@@ -1203,7 +1203,7 @@
    ],
    "n": 5,
    "cos_min": 0.609,
-   "cos_max": 0.647,
+   "cos_max": 0.648,
    "cross_college": true,
    "shared_terms": [
     "communicative",
@@ -1275,8 +1275,8 @@
    "cos_max": 0.635,
    "cross_college": true,
    "shared_terms": [
-    "intrusion",
     "baselines",
+    "intrusion",
     "messaging",
     "cryptography",
     "infrastructure",
@@ -1372,8 +1372,8 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.604,
-   "cos_max": 0.604,
+   "cos_min": 0.605,
+   "cos_max": 0.605,
    "cross_college": true,
    "shared_terms": [
     "stream",
@@ -1426,8 +1426,8 @@
    "cos_max": 1.0,
    "cross_college": false,
    "shared_terms": [
-    "therefore",
     "formula",
+    "therefore",
     "detail",
     "interview",
     "disciplines",
@@ -1478,8 +1478,8 @@
    "cos_max": 1.0,
    "cross_college": false,
    "shared_terms": [
-    "therefore",
     "formula",
+    "therefore",
     "detail",
     "interview",
     "disciplines",
@@ -1537,10 +1537,10 @@
    "cos_max": 1.0,
    "cross_college": false,
    "shared_terms": [
-    "criterion",
     "noted",
-    "discontinue",
+    "criterion",
     "actually",
+    "discontinue",
     "submitted",
     "committee"
    ]
@@ -1613,11 +1613,11 @@
    "cos_max": 1.0,
    "cross_college": false,
    "shared_terms": [
+    "skim",
     "bazooka",
     "spotters",
-    "skim",
-    "butt",
     "coat",
+    "butt",
     "boxes"
    ]
   },
@@ -1722,8 +1722,8 @@
    "cos_max": 0.969,
    "cross_college": false,
    "shared_terms": [
-    "shin",
     "guards",
+    "shin",
     "cleats",
     "attire",
     "soccer",
@@ -1771,8 +1771,8 @@
     "mos",
     "similar",
     "thorough",
-    "coverage",
     "examinations",
+    "coverage",
     "specialist"
    ]
   },
@@ -1838,8 +1838,8 @@
    "shared_terms": [
     "hybrids",
     "guiding",
-    "cars",
     "elec",
+    "cars",
     "voltage",
     "hybrid"
    ]
@@ -1915,8 +1915,8 @@
    "shared_terms": [
     "mundane",
     "illuminate",
-    "paradigms",
     "accomplishments",
+    "paradigms",
     "constructs",
     "transnational"
    ]
@@ -1995,8 +1995,8 @@
     "mos",
     "similar",
     "thorough",
-    "coverage",
     "examinations",
+    "coverage",
     "specialist"
    ]
   },
@@ -2071,8 +2071,8 @@
    "cos_max": 0.945,
    "cross_college": false,
    "shared_terms": [
-    "due",
     "changed",
+    "due",
     "lifting",
     "condition",
     "adaptations",
@@ -2141,8 +2141,8 @@
    "cos_max": 0.943,
    "cross_college": false,
    "shared_terms": [
-    "reflection",
     "civic",
+    "reflection",
     "institution",
     "hrs",
     "work"
@@ -2250,7 +2250,7 @@
     "wines",
     "evaluations",
     "sensory",
-    "wine"
+    "old"
    ]
   },
   {
@@ -2536,8 +2536,8 @@
    "cross_college": false,
    "shared_terms": [
     "extended",
-    "pursue",
     "experiments",
+    "pursue",
     "regular",
     "available"
    ]
@@ -2616,8 +2616,8 @@
    "cross_college": false,
    "shared_terms": [
     "memorizing",
-    "choreographer",
     "hone",
+    "choreographer",
     "clean",
     "performer",
     "concert"
@@ -2786,8 +2786,8 @@
    "cos_max": 0.907,
    "cross_college": false,
    "shared_terms": [
-    "wants",
     "ferrous",
+    "wants",
     "electrode",
     "electric",
     "arc",
@@ -2823,10 +2823,10 @@
    "cos_max": 0.905,
    "cross_college": false,
    "shared_terms": [
-    "microphone",
     "intonation",
-    "outcome",
+    "microphone",
     "rehearsing",
+    "outcome",
     "articulation",
     "rehearse"
    ]
@@ -3106,8 +3106,8 @@
    "shared_terms": [
     "memorizing",
     "expectations",
-    "concert",
     "rehearsal",
+    "concert",
     "choreography",
     "stage"
    ]
@@ -3295,7 +3295,7 @@
     }
    ],
    "n": 5,
-   "cos_min": 0.634,
+   "cos_min": 0.635,
    "cos_max": 0.873,
    "cross_college": false,
    "shared_terms": [
@@ -3468,9 +3468,9 @@
    "cos_max": 0.864,
    "cross_college": false,
    "shared_terms": [
-    "consequential",
-    "relied",
     "perceived",
+    "relied",
+    "consequential",
     "interacted",
     "impacted",
     "technological"
@@ -3504,10 +3504,10 @@
    "cos_max": 0.863,
    "cross_college": false,
    "shared_terms": [
-    "provision",
     "brn",
-    "attributes",
+    "provision",
     "put",
+    "attributes",
     "inform",
     "adn"
    ]
@@ -4035,8 +4035,8 @@
    "cos_max": 0.831,
    "cross_college": false,
    "shared_terms": [
-    "microphone",
     "intonation",
+    "microphone",
     "outcome",
     "articulation",
     "rehearse",
@@ -4069,10 +4069,10 @@
    "cos_max": 0.827,
    "cross_college": false,
    "shared_terms": [
+    "erths",
     "pepperwood",
     "uneven",
     "steward",
-    "erths",
     "preserve",
     "hiking"
    ]
@@ -4106,8 +4106,8 @@
    "cos_max": 0.827,
    "cross_college": false,
    "shared_terms": [
-    "microphone",
     "intonation",
+    "microphone",
     "outcome",
     "articulation",
     "rehearse",
@@ -4180,8 +4180,8 @@
    "cos_max": 0.82,
    "cross_college": false,
    "shared_terms": [
-    "shin",
     "guards",
+    "shin",
     "cleats",
     "attire",
     "soccer",
@@ -4265,8 +4265,8 @@
     "maneuvers",
     "aeronautical",
     "contained",
-    "faa",
     "pilot",
+    "faa",
     "attain"
    ]
   },
@@ -4339,8 +4339,8 @@
    "cross_college": false,
    "shared_terms": [
     "ranked",
-    "kennedy",
     "kcactf",
+    "kennedy",
     "festival",
     "workshop",
     "theatrical"
@@ -4610,8 +4610,8 @@
    "shared_terms": [
     "counting",
     "listing",
-    "phrasing",
     "clarity",
+    "phrasing",
     "sense",
     "musicality"
    ]
@@ -4875,8 +4875,8 @@
    "cos_max": 0.738,
    "cross_college": false,
    "shared_terms": [
-    "indicate",
     "frequent",
+    "indicate",
     "reinforces",
     "feedback",
     "additional",
@@ -4945,8 +4945,8 @@
    "cos_max": 0.733,
    "cross_college": false,
    "shared_terms": [
-    "articulated",
     "miramar",
+    "articulated",
     "malfunctions",
     "repairing",
     "natef",
@@ -5096,8 +5096,8 @@
    "shared_terms": [
     "completions",
     "pevm",
-    "mentally",
     "allowed",
+    "mentally",
     "collegiate",
     "play"
    ]
@@ -5166,8 +5166,8 @@
    "shared_terms": [
     "bias",
     "exposed",
-    "surrounding",
     "cases",
+    "surrounding",
     "deep"
    ]
   },
@@ -5543,30 +5543,30 @@
     "suspended",
     "drywall",
     "ceilings",
-    "square",
     "ceiling",
+    "square",
     "suspension"
    ]
   },
   {
    "members": [
     {
-     "id": "ETHS M1018",
-     "title": "Adapted Physical Exercise",
-     "units": 1.0,
-     "disc": "Ethnic Studies",
-     "colleges": [
-      "Cuyamaca College",
-      "Grossmont College",
-      "Victor Valley College"
-     ]
-    },
-    {
      "id": "PEDS M1031",
      "title": "Advanced Adapted Physical Exercise",
      "units": 1.0,
      "disc": "Physical Education Disabled Students",
      "colleges": [
+      "Grossmont College",
+      "Victor Valley College"
+     ]
+    },
+    {
+     "id": "PEDS M1041",
+     "title": "Adapted Physical Exercise",
+     "units": 1.0,
+     "disc": "Physical Education Disabled Students",
+     "colleges": [
+      "Cuyamaca College",
       "Grossmont College",
       "Victor Valley College"
      ]
@@ -6003,7 +6003,7 @@
     }
    ],
    "n": 3,
-   "cos_min": 0.625,
+   "cos_min": 0.626,
    "cos_max": 0.656,
    "cross_college": false,
    "shared_terms": [
@@ -6081,8 +6081,8 @@
     "clubs",
     "shared",
     "governance",
-    "meetings",
-    "advocacy"
+    "advocacy",
+    "meetings"
    ]
   },
   {
@@ -6529,9 +6529,9 @@
    "shared_terms": [
     "nine",
     "campuses",
+    "holistic",
     "fund",
     "transformative",
-    "holistic",
     "education"
    ]
   },
@@ -6889,8 +6889,8 @@
    "cross_college": false,
    "shared_terms": [
     "icc",
-    "admissions",
     "council",
+    "admissions",
     "petition",
     "published",
     "repeat"

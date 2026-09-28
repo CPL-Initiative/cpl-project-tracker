@@ -1,5 +1,5 @@
 {
-  "_status": "ETHS re-mint old->new alias (receipt + rollback inverse) - DRY RUN, not applied",
+  "_status": "ETHS re-mint old->new alias (receipt + rollback inverse) - APPLIED",
   "_at": "2026-09-28",
   "_scope": [
     "ruled"
@@ -162,5 +162,14 @@
       "route": "KINE",
       "discipline": "Kinesiology"
     }
+  },
+  "_applied_at": "2026-09-28",
+  "_applied_ruling": "Sam, 2026-09-22 (open-asks card 1, cross-list item 3): re-mint the 31 under the playbook",
+  "_counts": {
+    "courses": 31,
+    "articulations": 1,
+    "identities": 2,
+    "pointers": 61,
+    "curation_keys": 23
   }
 }

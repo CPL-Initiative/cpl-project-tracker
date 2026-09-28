@@ -56,7 +56,9 @@ WHAT --apply MUTATES (indent=2, ensure_ascii=False, record order kept):
                                    on a landing key is dropped)
   kb/coci_curation.json            entry keys + merge_into pointers
 Register the receipt in kb/alias_chain.py ALIAS_MAPS in the same commit, then run
-kb/_post_apply_chain.py. Supabase kb_curation is re-keyed from the committed
+kb/_post_apply_chain.py and `--rekey-skyview` (SkyView's layout is hand-built, so
+its point ids follow a re-mint only through this step), then rebuild the SkyView
+payloads the lints check. Supabase kb_curation is re-keyed from the committed
 receipt by .github/workflows/supabase-rekey.yml, in the same cron window, before
 the next cron's curation sync.
 
@@ -71,7 +73,8 @@ GATES (all must pass or nothing is written):
   P0  this scope not already applied (the stamp on any moved record)
   P1  --apply only: the recomputed alias map equals the reviewed receipt's
   P3  --apply only: --fresh-read (live kb_curation rows for the moved ids and the
-      rows pointing at them) matches the committed overlay
+      rows pointing at them) matches the committed overlay: every field of a
+      moved id, and a pointer's merge_into
 
 Run:
   python3 kb/_eths_remint.py                    # dry run -> kb/eths_remint_out/<date>/<scope>/
@@ -367,23 +370,62 @@ def dump(path, obj):
 
 
 def fresh_read_check(live_rows, curations, plan):
-    """P3: the live kb_curation rows for the moved ids, and the rows pointing at
-    them, rebuild the committed overlay's view of those ids exactly."""
+    """P3: the live kb_curation rows rebuild the committed overlay's view of what
+    this re-mint touches. A moved id moves with every field, so all of its
+    fields must match exactly; a pointer at a moved id has only its merge_into
+    re-keyed, so that field alone is compared (its other fields stay put)."""
     moved = set(plan["alias"])
+
+    def norm(v):
+        return v if isinstance(v, str) else json.dumps(v)
+
     live = defaultdict(dict)
     for r in live_rows:
-        live[r["course_id"]][r["field"]] = r["value"]
-    git = {k: {f: v for f, v in e.items() if not f.startswith("reviewed")}
-           for k, e in curations.items() if isinstance(e, dict)
-           and (k in moved or e.get("merge_into") in moved)}
-    want = {k: {f: (v if isinstance(v, str) else json.dumps(v)) for f, v in e.items()} for k, e in git.items()}
-    have = {k: {f: (v if isinstance(v, str) else json.dumps(v)) for f, v in e.items()
-                if f in want.get(k, {})} for k, e in live.items()}
-    missing = sorted(set(want) - set(have))
-    extra = sorted(k for k in set(live) - set(want))
-    differ = sorted(k for k in set(want) & set(have) if want[k] != have[k])
+        live[r["course_id"]][r["field"]] = norm(r["value"])
+    want = {}
+    for k, e in curations.items():
+        if not isinstance(e, dict):
+            continue
+        if k in moved:
+            want[k] = {f: norm(v) for f, v in e.items() if not f.startswith("reviewed")}
+        elif e.get("merge_into") in moved:
+            want[k] = {"merge_into": e["merge_into"]}
+    missing = sorted(set(want) - set(live))
+    extra = sorted(set(live) - set(want))
+    differ = sorted(k for k in set(want) & set(live)
+                    if (live[k] if k in moved else {"merge_into": live[k].get("merge_into")}) != want[k])
     return {"pass": not missing and not extra and not differ,
             "entries": len(want), "missing_live": missing[:10], "live_only": extra[:10], "differ": differ[:10]}
+
+
+# SkyView's layout is hand-built (Sam, 2026-09-06: rebuild the atlas payload
+# nightly, never the universe layout), so its point ids do not follow a re-mint
+# on their own. This re-keys the ids in place, token for token, and leaves every
+# coordinate where it is. Idempotent: a file with no old id is left untouched.
+# The CER-derived payloads (ccr_cpl.json, ccr_cpl_universe*.json) are rebuilt by
+# their own builders from the re-keyed kb and the nightly CER, never re-keyed here.
+SKYVIEW_FILES = ("prototype/ccr_universe.json", "prototype/ccr_universe_members.json")
+
+
+def rekey_skyview(alias, root=ROOT):
+    """-> {file: replacements}. Exact id tokens only, never a substring."""
+    if not alias:
+        return {}
+    pat = re.compile(r"(?<![A-Za-z0-9])(" + "|".join(re.escape(k) for k in sorted(alias, key=len, reverse=True))
+                     + r")(?![A-Za-z0-9])")
+    done = {}
+    for rel in SKYVIEW_FILES:
+        path = os.path.join(root, rel)
+        if not os.path.exists(path):
+            continue
+        with open(path, encoding="utf-8") as f:
+            text = f.read()
+        new, n = pat.subn(lambda m: alias[m.group(1)], text)
+        if n:
+            with open(path, "w", encoding="utf-8") as f:
+                f.write(new)
+        done[rel] = n
+    return done
 
 
 def render_report(plan, today):
@@ -438,7 +480,19 @@ def main(argv=None):
     ap.add_argument("--receipt", help="the reviewed alias_map.json the apply must reproduce (P1)")
     ap.add_argument("--fresh-read", help="live kb_curation rows (JSON list of {course_id, field, value}) (P3)")
     ap.add_argument("--ruling", help="who said yes, and when (required with --apply)")
+    ap.add_argument("--rekey-skyview", action="store_true",
+                    help="after an apply: re-key SkyView's hand-built layout files from the APPLIED --receipt")
     args = ap.parse_args(argv)
+    if args.rekey_skyview:
+        if not args.receipt:
+            sys.exit("--rekey-skyview needs --receipt (an applied one)")
+        with open(args.receipt, encoding="utf-8") as f:
+            receipt = json.load(f)
+        if not receipt.get("_applied_at"):
+            sys.exit("--rekey-skyview reads an APPLIED receipt; this one is a dry run")
+        alias = {k: (v["new_id"] if isinstance(v, dict) else v) for k, v in receipt["aliases"].items()}
+        print("SkyView layout re-keyed:", rekey_skyview(alias))
+        return 0
     scopes = tuple(s.strip() for s in args.scope.split(",") if s.strip())
     if any(s not in SCOPES for s in scopes):
         sys.exit(f"--scope takes {', '.join(SCOPES)}")
