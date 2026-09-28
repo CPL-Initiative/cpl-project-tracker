@@ -3,11 +3,11 @@
   "_generated_by": "kb/_build_orphan_parent_worklist.py",
   "_read_this_first": "`decidable` is the column that matters. A false there means the payload holds nothing to check a proposed discipline against — the members disagree, or every signal rests on a one or two character subject code, or the row carries an approved identifier. Filling those from the modal member would reproduce the `ES`-reads-Ethnic-Studies error in reverse. ⚠ And `members_say` is what the colleges typed, never a verdict on the parent: AUTD M1040 Medium and Heavy Truck Drivetrain Service is recorded Diesel Mechanics while its members read Automotive Technology, and Diesel Mechanics is arguably the better answer. A decidable row is one a curator can settle from what is here, whichever way they settle it.",
   "_counts": {
-    "orphan_parents": 111,
-    "decidable": 18,
-    "undecidable": 93,
+    "orphan_parents": 115,
+    "decidable": 20,
+    "undecidable": 95,
     "members_disagree": 93,
-    "short_codes_only": 0,
+    "short_codes_only": 2,
     "carries_an_approved_identifier": 0
   },
   "rows": [
@@ -163,6 +163,27 @@
       "members_say": "Physical Education"
     },
     {
+      "id": "KINE M2021",
+      "title": "Intermediate Cardio Fitness and Resistance Training",
+      "id_system": "M-ID",
+      "recorded_discipline": "Kinesiology",
+      "members": 5,
+      "subject_codes": [
+        "ES",
+        "KINA"
+      ],
+      "member_disciplines": {
+        "Ethnic Studies": 1,
+        "Physical Education": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Physical Education": 1
+      },
+      "decidable": true,
+      "why": "every member that resolves on a code longer than 2 characters reads Physical Education (1 of them)",
+      "members_say": "Physical Education"
+    },
+    {
       "id": "PEDS M1020",
       "title": "Adapted Swimming for Total Fitness",
       "id_system": "M-ID",
@@ -265,6 +286,28 @@
       },
       "decidable": true,
       "why": "every member that resolves on a code longer than 2 characters reads Physical Education (1 of them)",
+      "members_say": "Physical Education"
+    },
+    {
+      "id": "KINE M2001",
+      "title": "Advanced Cardio Fitness and Resistance Training",
+      "id_system": "M-ID",
+      "recorded_discipline": "Kinesiology",
+      "members": 4,
+      "subject_codes": [
+        "ES",
+        "KINA",
+        "PEAC"
+      ],
+      "member_disciplines": {
+        "Physical Education": 2,
+        "Ethnic Studies": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Physical Education": 2
+      },
+      "decidable": true,
+      "why": "every member that resolves on a code longer than 2 characters reads Physical Education (2 of them)",
       "members_say": "Physical Education"
     },
     {
@@ -2287,6 +2330,25 @@
       "members_say": null
     },
     {
+      "id": "KINE M2020",
+      "title": "Beginning to Intermediate Swimming",
+      "id_system": "M-ID",
+      "recorded_discipline": "Kinesiology",
+      "members": 3,
+      "subject_codes": [
+        "ES",
+        "PE"
+      ],
+      "member_disciplines": {
+        "Ethnic Studies": 1,
+        "Physical Education": 1
+      },
+      "member_disciplines_on_long_codes": {},
+      "decidable": false,
+      "why": "every member signal rests on a subject code of one or two characters, which is ambiguous by construction — the subject map has to be repaired before this row can be read",
+      "members_say": null
+    },
+    {
       "id": "MULT M1083",
       "title": "Typography and Graphic Design",
       "id_system": "M-ID",
@@ -2482,6 +2544,25 @@
       },
       "decidable": false,
       "why": "the members disagree among themselves (Dance and Physical Education), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "KINE M2009",
+      "title": "Intermediate Fitness Boot Camp",
+      "id_system": "M-ID",
+      "recorded_discipline": "Kinesiology",
+      "members": 2,
+      "subject_codes": [
+        "ES",
+        "PE"
+      ],
+      "member_disciplines": {
+        "Ethnic Studies": 1,
+        "Physical Education": 1
+      },
+      "member_disciplines_on_long_codes": {},
+      "decidable": false,
+      "why": "every member signal rests on a subject code of one or two characters, which is ambiguous by construction — the subject map has to be repaired before this row can be read",
       "members_say": null
     },
     {

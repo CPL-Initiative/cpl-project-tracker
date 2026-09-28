@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-09-27T17:05:16.904Z",
+  "scraped_at": "2026-09-28T14:02:53.017Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -63,17 +63,17 @@
         },
         {
           "college": "Riverside City College",
-          "students": 888,
-          "units": 4334,
-          "avgUnits": 4.88063063063063,
-          "transcriptionRate": 92.1,
-          "avgTranscribed": 4.49436936936937,
+          "students": 900,
+          "units": 4409,
+          "avgUnits": 4.898888888888889,
+          "transcriptionRate": 90.5,
+          "avgTranscribed": 4.434444444444445,
           "criteriaMetCount": 4,
-          "militaryStudents": 870,
+          "militaryStudents": 882,
           "nonMilitaryStudents": 20,
           "apprenticeStudents": 0,
-          "savings": 7799155,
-          "yearImpact": 27460475,
+          "savings": 7928905,
+          "yearImpact": 27915500,
           "transcribedUnits": 3991
         },
         {
@@ -1757,11 +1757,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "52,068",
+      "value": "52,080",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "28,501"
+          "value": "28,513"
         },
         {
           "label": "Workforce/Other",
@@ -1835,7 +1835,7 @@
       "breakdowns": [
         {
           "label": "Military",
-          "value": "$782M"
+          "value": "$783M"
         },
         {
           "label": "Workforce/Other",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 52068,
-    "Units": 223981.40000000002,
+    "Students": 52080,
+    "Units": 224056.40000000002,
     "TranscribedUnits": 73997.2,
-    "Savings": 335932334,
-    "YearImpact": 1328868865.4,
-    "MilitaryStudents": 28501,
+    "Savings": 336062084,
+    "YearImpact": 1329323890.4,
+    "MilitaryStudents": 28513,
     "NonMilitaryStudents": 23653,
     "AprenticeStudents": 851,
-    "AverageUnits": 4.3017093032188685,
-    "TranscribedAverage": 1.4211646308673274
+    "AverageUnits": 4.30215821812596,
+    "TranscribedAverage": 1.420837173579109
   }
 }

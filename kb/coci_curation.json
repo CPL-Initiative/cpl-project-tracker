@@ -1,7 +1,7 @@
 {
   "_about": "Human curation overlay for the COCI staging KB. Git-canonical and reviewable. Synced from the Supabase kb_curation table by kb/_apply_curation.py, then applied on top of the AI-drafted coci_* files by excel_to_dashboard.py (export_unified_courses) so curation is regen-safe. Keyed by course_id (M-ID / UC cluster / C-ID). Does NOT touch curated common_courses.json / course_crosswalk.json.",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-09-27T17:05:28Z",
+  "_synced_at": "2026-09-28T14:02:58Z",
   "count": 30709,
   "curations": {
     "AERO M1001": {
@@ -14136,6 +14136,23 @@
       "unified_title": "Volleyball Team - Women's",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "ATHL M1454": {
+      "discipline": "Kinesiology",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "unified_title": "Intercollegiate Basketball (M)"
+    },
+    "ATHL M1455": {
+      "unified_title": "Intercollegiate Sports: Flag Football (Women)",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ATHL M1456": {
+      "discipline": "Kinesiology",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "unified_title": "Intercollegiate Tennis (W)"
     },
     "ATHL M14AT": {
       "merge_into": "KINE M1374",
@@ -74678,11 +74695,6 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
-    "KINE M1040": {
-      "unified_title": "Advanced Aquatic Fitness",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
     "ETHS M1020": {
       "discipline": "Kinesiology",
       "reviewed_by": "mismint-s113@bot",
@@ -74696,39 +74708,11 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00",
       "unified_title": "Advanced Fitness Boot Camp"
     },
-    "KINE M1997": {
-      "unified_title": "Advanced Cycling for Fitness - Stationary, Indoor",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "KINE M1999": {
-      "discipline": "Kinesiology",
-      "reviewed_by": "trailcrew-ccr3-s112@bot",
-      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
-      "unified_title": "Advanced Golf"
-    },
-    "KINE M2001": {
-      "unified_title": "Advanced Cardio Fitness and Resistance Training",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
     "ETHS M1026": {
       "discipline": "Kinesiology",
       "reviewed_by": "trailcrew-ccr3-s112@bot",
       "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
       "merge_into": "KINE M1098"
-    },
-    "KINE M2002": {
-      "discipline": "Kinesiology",
-      "reviewed_by": "trailcrew-ccr3-s112@bot",
-      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
-      "unified_title": "Softball - Advanced"
-    },
-    "KINE M2003": {
-      "discipline": "Kinesiology",
-      "reviewed_by": "trailcrew-ccr3-s112@bot",
-      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
-      "unified_title": "Yoga - Advanced"
     },
     "ETHS M1031": {
       "unified_title": "Perceptions of the African American Male in America",
@@ -76119,47 +76103,21 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "ATHL M1454": {
-      "discipline": "Kinesiology",
-      "reviewed_by": "trailcrew-ccr3-s112@bot",
-      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
-      "unified_title": "Intercollegiate Basketball (M)"
-    },
     "ETHS M1132": {
       "discipline": "Kinesiology",
       "reviewed_by": "trailcrew-ccr3-s112@bot",
       "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
       "merge_into": "KINE M1278"
     },
-    "KINE M2005": {
-      "unified_title": "Beginning Fitness Boot Camp",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
-    },
     "ETHS M1134": {
       "merge_into": "KINE M1288",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
-    "KINE M2006": {
-      "unified_title": "Adapted Indoor Cycling for Fitness",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
     "ETHS M1136": {
       "merge_into": "KINE M1509",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "KINE M2007": {
-      "unified_title": "Beginning Foil Fencing",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "KINE M2009": {
-      "unified_title": "Intermediate Fitness Boot Camp",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "ETHS M1155": {
       "merge_into": "KINE M1368",
@@ -76277,11 +76235,6 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "KINE M2010": {
-      "unified_title": "Intermediate Indoor Spin Cycling",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
     "ETHS M1191": {
       "discipline": "Kinesiology",
       "reviewed_by": "trailcrew-ccr3-s112@bot",
@@ -76368,28 +76321,6 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "KINE M2012": {
-      "unified_title": "Intermediate Foil Fencing",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "ATHL M1455": {
-      "unified_title": "Intercollegiate Sports: Flag Football (Women)",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "ATHL M1456": {
-      "discipline": "Kinesiology",
-      "reviewed_by": "trailcrew-ccr3-s112@bot",
-      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
-      "unified_title": "Intercollegiate Tennis (W)"
-    },
-    "KINE M2014": {
-      "discipline": "Kinesiology",
-      "reviewed_by": "trailcrew-ccr3-s112@bot",
-      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
-      "unified_title": "Softball - Intermediate"
-    },
     "ETHS M1235": {
       "merge_into": "ENGL M1336",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -76458,11 +76389,6 @@
     },
     "ETHS M1251": {
       "unified_title": "Advanced Techniques and Strategies of Intercollegiate Lacrosse",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "KINE M2016": {
-      "unified_title": "Advanced Trail Running",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -76546,28 +76472,8 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
-    "KINE M2017": {
-      "unified_title": "Conditioning for Athletes-Co-Ed",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "KINE M2018": {
-      "unified_title": "Conditioning and Injury Prevention for Beach Volleyball",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "KINE M2019": {
-      "unified_title": "Beginning Cardio Fitness and Resistance Training",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
     "ETHS M1272": {
       "unified_title": "Beginning Trail Hiking",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
-    },
-    "KINE M2020": {
-      "unified_title": "Beginning to Intermediate Swimming",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
@@ -76578,11 +76484,6 @@
     },
     "ETHS M1275": {
       "unified_title": "United States, Mexico and Other Borderlands",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "KINE M2021": {
-      "unified_title": "Intermediate Cardio Fitness and Resistance Training",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -76610,11 +76511,6 @@
       "unified_title": "Introduction to Pacific Islander History and Culture",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "KINE M2022": {
-      "unified_title": "Flexibility Fitness",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "ETHS M1283": {
       "unified_title": "Introduction to Gender, Sexuality, and Politics",
@@ -108502,6 +108398,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "KINE M1040": {
+      "unified_title": "Advanced Aquatic Fitness",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
     "KINE M1043": {
       "unified_title": "Aerobic Fitness 1",
       "reviewed_by": "automerge-v1@bot",
@@ -116953,6 +116854,105 @@
     },
     "KINE M1996": {
       "unified_title": "Theory of Yoga",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "KINE M1997": {
+      "unified_title": "Advanced Cycling for Fitness - Stationary, Indoor",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "KINE M1999": {
+      "discipline": "Kinesiology",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "unified_title": "Advanced Golf"
+    },
+    "KINE M2001": {
+      "unified_title": "Advanced Cardio Fitness and Resistance Training",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "KINE M2002": {
+      "discipline": "Kinesiology",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "unified_title": "Softball - Advanced"
+    },
+    "KINE M2003": {
+      "discipline": "Kinesiology",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "unified_title": "Yoga - Advanced"
+    },
+    "KINE M2005": {
+      "unified_title": "Beginning Fitness Boot Camp",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "KINE M2006": {
+      "unified_title": "Adapted Indoor Cycling for Fitness",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "KINE M2007": {
+      "unified_title": "Beginning Foil Fencing",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "KINE M2009": {
+      "unified_title": "Intermediate Fitness Boot Camp",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "KINE M2010": {
+      "unified_title": "Intermediate Indoor Spin Cycling",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "KINE M2012": {
+      "unified_title": "Intermediate Foil Fencing",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "KINE M2014": {
+      "discipline": "Kinesiology",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "unified_title": "Softball - Intermediate"
+    },
+    "KINE M2016": {
+      "unified_title": "Advanced Trail Running",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "KINE M2017": {
+      "unified_title": "Conditioning for Athletes-Co-Ed",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "KINE M2018": {
+      "unified_title": "Conditioning and Injury Prevention for Beach Volleyball",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "KINE M2019": {
+      "unified_title": "Beginning Cardio Fitness and Resistance Training",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "KINE M2020": {
+      "unified_title": "Beginning to Intermediate Swimming",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "KINE M2021": {
+      "unified_title": "Intermediate Cardio Fitness and Resistance Training",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "KINE M2022": {
+      "unified_title": "Flexibility Fitness",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
