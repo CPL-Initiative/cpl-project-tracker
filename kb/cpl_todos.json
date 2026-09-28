@@ -1,9 +1,15 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-09-27",
-  "_session": "S295 SkyHarbor",
-  "_status": "Sam answered the whole standing sheet on 27 September, and every card is carried out or queued. Four funding questions the lane had carried as prose now wait on a fresh sheet, and the 397 garbled course titles are cleaned through a reviewed workflow.",
+  "_as_of": "2026-09-28",
+  "_session": "S296 SkyBeacon",
+  "_status": "The funding tab's Annual view now compares a year with a year, and the 31 physical-activity courses filed under Ethnic Studies were re-minted under Kinesiology on 28 September. Two funding questions and one re-mint question wait on Sam; the re-mint question's sheet is built and goes out next.",
   "items": [
+    {
+      "id": "s297-fable-publish-open-asks",
+      "for": "Fable",
+      "tab": "cr-reference",
+      "text": "Publish the 28 September open-asks sheet (docs/visuals/2026-09-28-open-asks.html) with its reply store and comments, and hand Sam the link. Its third card asks whether the Exercise Science re-mint reaches the 85 more identities that carry the same mix-up."
+    },
     {
       "id": "s296-sam-funding-sheet",
       "for": "Sam",
@@ -27,12 +33,6 @@
       "for": "Fable",
       "tab": "implementation-funding",
       "text": "Cue each reveal of the narrated funding video to the word that names it (Sam's call, 27 September). The layout already carries the cue times; rebuild the MP4 and bring the draft back to Sam before the explainer links it."
-    },
-    {
-      "id": "s295-fable-eths-remint",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "Re-mint the 31 ETHS-prefixed identities that are physical-activity courses (swimming, track, fencing), Sam's ruling of 22 September. It changes stored identifiers, so it runs under the re-mint playbook: dry run, alias map, promotions re-key, one cron window."
     },
     {
       "id": "s295-fable-skyview-phone-narrow",

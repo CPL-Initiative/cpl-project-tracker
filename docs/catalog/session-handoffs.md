@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-267 document(s).
+268 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 297 | [the Annual view's year, and the ETHS re-mint landed](../session_297_handoff.md) | 2026-09-28 |
 | 296 | [the CLAUDE.md verdicts carried out, and a fresh standing sheet](../session_296_handoff.md) | 2026-09-27 |
 | 295 | [narration v3, the ESL merging sheet, and the narrated draft](../session_295_handoff.md) | 2026-09-26 |
 | 293 | [the funding video becomes an introduction, fills the screen, shoots down barriers, and its score builds](../session_293_handoff.md) | 2026-09-26 |

@@ -4,6 +4,8 @@ date: 2026-09-27
 session: 295 (SkyHarbor)
 tags: [handoff, doctrine, decision-sheets, esl-packaging, hooks]
 status: current
+superseded: true
+superseded_by: session_297_handoff.md
 ---
 
 # You are Session 296

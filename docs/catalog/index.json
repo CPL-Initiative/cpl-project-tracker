@@ -14261,8 +14261,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 267,
+   "count": 268,
    "docs": [
+    {
+     "created": "2026-09-28",
+     "governs": [],
+     "n": 297,
+     "path": "docs/session_297_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "implementation-funding",
+      "remint",
+      "discipline-crosslist",
+      "decision-sheets"
+     ],
+     "title": "the Annual view's year, and the ETHS re-mint landed",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-27",
      "governs": [],
@@ -18790,5 +18807,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 978
+ "total": 979
 }
