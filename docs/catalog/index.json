@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 496,
+   "count": 497,
    "docs": [
     {
      "created": "2026-08-14",
@@ -6476,6 +6476,24 @@
      "updated": "2026-08-19"
     },
     {
+     "created": "2026-09-28",
+     "governs": [
+      "cpl_funding.js",
+      "sierra_training.js"
+     ],
+     "path": "docs/kb-notes/methodology-mock-up-from-the-running-code.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "ui",
+      "mockup",
+      "first-light"
+     ],
+     "title": "Mock up a UI change with the running code, then port it",
+     "type": "methodology",
+     "updated": "2026-09-28"
+    },
+    {
      "created": "2026-08-01",
      "governs": [
       "funding/_build_funding_performance.py",
@@ -9996,7 +10014,7 @@
   },
   {
    "blurb": "Workstream scratchpads. A dated section is appended at every checkpoint.",
-   "count": 79,
+   "count": 80,
    "docs": [
     {
      "created": "2026-08-14",
@@ -11834,6 +11852,28 @@
       "workstream-lessons"
      ],
      "title": "TMC Builder \u2014 workstream lessons",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-09-28",
+     "governs": [
+      "https://claude.ai/artifact/2V1aWwtjwob5gSM6TEkfyQ",
+      "https://claude.ai/artifact/Agmbu7UNGRcdEf48Sx5PTi",
+      "cpl_funding.js",
+      "sierra_training.js"
+     ],
+     "path": "docs/ui_mockup_lessons.md",
+     "status": null,
+     "tags": [
+      "lessons",
+      "ui",
+      "mockup",
+      "implementation-funding",
+      "sierra-training",
+      "first-light"
+     ],
+     "title": "UI changes through a live mockup \u2014 lessons",
      "type": null,
      "updated": ""
     },
@@ -14261,8 +14301,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 269,
+   "count": 270,
    "docs": [
+    {
+     "created": "2026-09-28",
+     "governs": [],
+     "n": 299,
+     "path": "docs/session_299_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "implementation-funding",
+      "sierra-training",
+      "mockup",
+      "ui"
+     ],
+     "title": "the College Dashboard redesign locked, the gate at three conditions, Sierra Training in mockup",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-28",
      "governs": [],
@@ -18824,5 +18881,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 980
+ "total": 983
 }

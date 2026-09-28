@@ -15,7 +15,7 @@ related:
 
 Workstream scratchpads. A dated section is appended at every checkpoint.
 
-79 document(s).
+80 document(s).
 
 | Title | File | Created | Updated |
 |---|---|---|---|
@@ -95,6 +95,7 @@ Workstream scratchpads. A dated section is appended at every checkpoint.
 | [Test suite speed — lessons](../test_suite_speed_lessons.md) | `test_suite_speed_lessons.md` | 2026-08-29 | 2026-08-29 |
 | [Title 5 §55050 — conforming the regulation to Ed. Code Article 9 (lessons)](../t5_55050_lessons.md) | `t5_55050_lessons.md` | 2026-08-26 | 2026-08-26 |
 | [TMC Builder — workstream lessons](../tmc_builder_lessons.md) | `tmc_builder_lessons.md` | 2026-06-16 |  |
+| [UI changes through a live mockup — lessons](../ui_mockup_lessons.md) | `ui_mockup_lessons.md` | 2026-09-28 |  |
 | [Unified Courses Trust-Card Auditor — Decisions & Lessons](../unified_courses_audit_lessons.md) | `unified_courses_audit_lessons.md` | 2026-05-23 |  |
 | [Vault Auto-sync — Workstream Lessons](../vault_sync_lessons.md) | `vault_sync_lessons.md` | 2026-05-27 |  |
 | [Workplan single-source title/description editor + activity-linking cleanup — workstream lessons](../workplan_single_source_editor_lessons.md) | `workplan_single_source_editor_lessons.md` | 2026-07-27 | 2026-07-27 |
