@@ -1,0 +1,166 @@
+{
+  "_status": "ETHS re-mint old->new alias (receipt + rollback inverse) - DRY RUN, not applied",
+  "_at": "2026-09-28",
+  "_scope": [
+    "ruled"
+  ],
+  "_count": 31,
+  "_ruling": "Sam, 2026-09-22 (open-asks card 1, cross-list item 3): re-mint the 31",
+  "aliases": {
+    "ETHS M1018": {
+      "new_id": "PEDS M1041",
+      "route": "PEDS",
+      "discipline": "Physical Education Disabled Students"
+    },
+    "ETHS M1019": {
+      "new_id": "KINE M1040",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M1022": {
+      "new_id": "KINE M1997",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M1023": {
+      "new_id": "KINE M1998",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M1024": {
+      "new_id": "KINE M1999",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M1025": {
+      "new_id": "KINE M2001",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M1027": {
+      "new_id": "KINE M2002",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M1028": {
+      "new_id": "KINE M2003",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M1130": {
+      "new_id": "KINE M2004",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M1131": {
+      "new_id": "ATHL M1454",
+      "route": "ATHL",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M1133": {
+      "new_id": "KINE M2005",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M1135": {
+      "new_id": "KINE M2006",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M1137": {
+      "new_id": "KINE M2007",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M1138": {
+      "new_id": "KINE M2008",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M1153": {
+      "new_id": "KINE M2009",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M1190": {
+      "new_id": "KINE M2010",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M1220": {
+      "new_id": "KINE M2011",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M1224": {
+      "new_id": "KINE M2012",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M1226": {
+      "new_id": "KINE M2013",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M1227": {
+      "new_id": "ATHL M1455",
+      "route": "ATHL",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M1232": {
+      "new_id": "ATHL M1456",
+      "route": "ATHL",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M1233": {
+      "new_id": "ATHL M1457",
+      "route": "ATHL",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M1234": {
+      "new_id": "KINE M2014",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M1241": {
+      "new_id": "KINE M2015",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M1252": {
+      "new_id": "KINE M2016",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M1269": {
+      "new_id": "KINE M2017",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M1270": {
+      "new_id": "KINE M2018",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M1271": {
+      "new_id": "KINE M2019",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M1273": {
+      "new_id": "KINE M2020",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M1276": {
+      "new_id": "KINE M2021",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M1282": {
+      "new_id": "KINE M2022",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    }
+  }
+}

@@ -1,7 +1,7 @@
 ---
 title: "Discipline cross-listing — nest, alias or carry two homes — lane state"
 created: 2026-09-22
-updated: 2026-09-22
+updated: 2026-09-28
 tags: [reference, roadmap-lane]
 kb-status: internal
 related:
@@ -86,7 +86,7 @@ handled. `cross_listing_group` sits on the CCR seed (`kb/common_courses.json`).
 |---|---|---|
 | 1 | the four-kind frame | ✅ recorded here |
 | 2 | a 1-2 char subject code never decides a discipline | ✅ **landed** #1653 — `discipline_for_modal()` + `mint_token()` in `kb/_seed_coci_minted_mids.py`, `tests/mid_short_code_gate_test.py` |
-| 3 | re-mint the 31 mis-prefixed ETHS identities | **ruled: re-mint** (open-asks sheet card 1, 2026-09-22) — run it under the playbook |
+| 3 | re-mint the 31 mis-prefixed ETHS identities | **ruled: re-mint** (open-asks sheet card 1, 2026-09-22); **dry run built** (S296): `kb/_eths_remint.py`, receipt `kb/eths_remint_out/2026-09-28/ruled/`, `tests/eths_remint_test.py` — the apply lands in one cron window |
 | 4 | alias Kinesiology / Physical Education | open — **smaller than the sheet implied**, see below |
 | 5 | nest the specializations on the vocabulary | open |
 | 6 | cross-list kind C through `xdisc` | open — waits on 1, 5, 7 |
@@ -134,8 +134,31 @@ everything prior to it is good to go as is"*) both stand as proposed: re-mint th
 Governance maps a curator surface. Read from the sheet's store on 2026-09-27; the
 lane recorded neither for five days, which kept both on the standing sheet.
 
+## Item 3: the re-mint, and the same defect beyond the 31
+
+`kb/_eths_remint.py` routes each of the 31 by its members' title under the
+KIN/PE pass-2 rules (adapted to PEDS, intercollegiate to ATHL, the rest to
+KINE), requires a second signal beside the title (a kinesiology member code, a
+0835 TOP corroborating, or a child already merged under KINE/ATHL/PEDS; ES never
+counts), and allocates keep-number, then gap-fill. The dry run moves all 31: 26
+to KINE, 4 to ATHL, 1 to PEDS. KINE's band 1 holds 995 of 999 numbers, so 22 of
+the new ids open **continuation band 2** (`KINE M2001`–`M2022`), the first
+band-2 ids in the catalog (Sam's card 11, 2026-09-03). Two notes ride the
+receipt: M1135's curated title says *Adapted* where its members' title does not
+(it routes KINE), and M1220 is also listed as PSY 121 at Cuyamaca, a cross-list
+for item 6.
+
+Re-measured on the kb files, the card's 31 counted corroborated rows only. The
+same defect reaches **40 ETHS stand-alones and 3 corroborated rows the title list
+misses** (43 standing; 3 have no second signal and hold), plus **42 ETHS ids
+merged under Kinesiology-family parents** (11 under the 31, 31 already under
+KINE/ATHL/PEDS), which display under the right parent. NEEDS SAM: whether the
+43, and the 42 merged ones, re-mint the same way (card on the standing sheet).
+The script carries each class as a `--scope`, and `--apply` refuses any scope
+but `ruled` until he rules.
+
 ## Next
 
-1. Item 3's re-mint, under [`coursecontrolnumber_remint`](../../coursecontrolnumber_remint.md): dry run, alias map, `kb/promotions.json` re-key, one cron window.
+1. Item 3's apply: `--apply --receipt kb/eths_remint_out/2026-09-28/ruled/alias_map.json --fresh-read … --ruling …`, register the receipt in `kb/alias_chain.py` ALIAS_MAPS, run `kb/_post_apply_chain.py`, then `supabase-rekey.yml` from the receipt, all before the next cron's curation sync.
 2. Items 5 and 4 — both vocabulary edits, and 5 is what item 6 sits on.
 3. Item 6, then the item-12 sitting at 50 rows from kind C.

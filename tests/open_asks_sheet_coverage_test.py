@@ -193,6 +193,8 @@ FIXTURES = {
     "p_surface_light":       (":root {\n--paper:#fff;\n}",        ":root {\n--surface-1: #F7F5F1;\n}"),
     "p_statewide_ring":      ("if(x){ctx.arc(1,2,3)}",            "if(isExhibits() && nd.sw && dr>1.8){ ctx.arc(p[0],p[1],dr+3.2,0,6) }"),
     "p_phone_opening":       ("var sph={half:Math.PI*94/180};",   "if(narrowScreen()){ sph.half = Math.PI*75/180; }"),
+    "p_eths_extension_open": ('{"courses": {"ETHS M10AA": {"common_title": "Advanced Fencing"}}}',
+                              '{"courses": {"KINE M10AA": {"common_title": "Advanced Fencing"}}}'),
 }
 _broken = []
 for _name, (_open_src, _closed_src) in FIXTURES.items():

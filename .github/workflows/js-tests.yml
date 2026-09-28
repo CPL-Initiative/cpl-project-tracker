@@ -406,6 +406,11 @@ jobs:
       # without the ruling on its evidence. Pure-stdlib python, no network.
       - name: Prefix fold apply guard (kb/_prefix_fold_apply.py)
         run: python3 tests/prefix_fold_apply_test.py
+      # The ETHS re-mint (Session 296) — Sam's 2026-09-22 ruling on the 31
+      # physical-activity identities minted under Ethnic Studies: routing by the
+      # members' title, the two-signal gate, the ruled-only apply, the gates.
+      - name: ETHS re-mint guard (kb/_eths_remint.py)
+        run: python3 tests/eths_remint_test.py
       # crnc_mirrors re-key (Session 225) — the 6th id-keyed artifact class,
       # missing from the post-apply chain until the recode left 398 of its
       # keys on retired ids: one lookup per map (never iterated within a map),

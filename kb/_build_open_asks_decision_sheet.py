@@ -34,9 +34,11 @@ lane's marker in the same pull request, or the sheet asks again.
 Published: https://claude.ai/artifact/74AfMNmXPQYP5X7XKpjHfH (2026-09-27 evening, SHEET_ID
 2026-09-27-funding-asks, capabilities db + comments, four funding cards). Sam answered cards 1
 and 2 there and leaves off at card 3; cards 3 and 4 wait on that same store, so read its
-`replies` and `replies/done` for them, and NEVER republish onto it. This builder now carries
-only those two (SHEET_ID 2026-09-27-funding-asks-2, built to its own OUT and not published;
-publish it only if the live sheet is lost). Before it:
+`replies` and `replies/done` for them, and NEVER republish onto it. This builder carries
+those two beside the ETHS extension card (SHEET_ID 2026-09-28-open-asks; the two-card
+2026-09-27-funding-asks-2 was built, never published, and is gone). When the 2026-09-28 sheet
+is published, Sam answers cards 1 and 2 there or as cards 3 and 4 on the 2026-09-27 sheet:
+read both stores, and the later answer stands. Before it:
 https://claude.ai/artifact/5sWY4QCCDfkAegZtZrW1oe (SHEET_ID 2026-09-27-open-asks; all eight
 cards answered that day, through card 8, and recorded in their lanes). A card list that
 changes is published under a fresh SHEET_ID, OUT and artifact. The 2026-09-22 sheet
@@ -57,8 +59,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-09-27-funding-asks-2.html')
-SHEET_ID = '2026-09-27-funding-asks-2'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-09-28-open-asks.html')
+SHEET_ID = '2026-09-28-open-asks'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -186,6 +188,18 @@ def p_eths_misprefixed():
     return n > 0, "%d ETHS-prefixed physical-activity identities" % n
 
 
+def p_eths_extension_open():
+    """Card 3: do ETHS stand-alones still carry the Exercise Science mix-up?"""
+    from _build_crosslist_decision_sheet import PHYSICAL
+    try:
+        recs = (json.loads(_read("kb/coci_minted_singletons.json") or "{}").get("courses") or {})
+    except ValueError:
+        return True, "kb/coci_minted_singletons.json unparsed - premise unverified"
+    n = sum(1 for k, r in recs.items() if k.split(" ")[0] == "ETHS"
+            and any(w in (r.get("common_title") or "").lower() for w in PHYSICAL))
+    return n > 0, "%d ETHS stand-alones carry a physical-activity title" % n
+
+
 # Keyed by the item's POSITION on the sheet — the number Sam replies with, and
 # the only unique handle (two ESL cards share a `ref`).
 EVIDENCE = {
@@ -199,6 +213,10 @@ EVIDENCE = {
     # published sheet's cards 3 and 4, numbered 1 and 2 here.
     1:  [live("2026-09-27", "the funding tab review sheet's stored replies (reviewed through item 7)")],
     2:  [policy()],
+    # 2026-09-28 (S296): the ETHS re-mint's dry run measured the defect past the
+    # 31 Sam ruled on; the lane (discipline-crosslist) marks the ask.
+    3:  [measured(p_eths_extension_open),
+         quoted("kb/eths_remint_out/2026-09-28/ruled/report.md", "2026-09-28")],
 }
 
 PROVENANCE = {
@@ -314,6 +332,32 @@ def items():
             "on a code change."),
         'chips': chips(('Keep it whole', 'keep'), ('Split it', 'split'), CH_LATER),
     })
+
+    I.append({
+        'lane': 'discipline-crosslist',
+        'title': 'The Exercise Science mix-up beyond the 31',
+        'ref': 'discipline-crosslist item 3 · kb/eths_remint_out/2026-09-28/ruled/report.md',
+        'facts': (
+            "Your 22 September ruling re-mints 31 corroborated identities that the catalog files under "
+            "Ethnic Studies because the colleges' code ES means Exercise Science. Measured on the catalog "
+            "files, the same mix-up reaches 40 stand-alone identities (<em>Adapted Water Aerobics</em>, "
+            "<em>Advanced Techniques and Strategies of Water Polo</em>, <em>Intermediate Trail Running</em>) "
+            "and 3 corroborated rows the title list missed (<em>Self Defense for Women</em>, <em>Intermediate "
+            "Springboard Diving</em>, <em>Physical Education in the Elementary School</em>). Three of these 43 "
+            "have no second signal beside the title and would hold. Another 42 ETHS identities are already "
+            "merged under Kinesiology parents, 11 under the 31 and 31 under KINE, ATHL or PEDS parents; they "
+            "display under the right parent, and only their own ids read ETHS."),
+        'why': (
+            "Until they move, 42 of the 43 file under Ethnic Studies wherever the catalog shows a "
+            "discipline. The re-mint script already carries each group, and it moves none of them "
+            "without your ruling."),
+        'rec': (
+            "<strong>Re-mint the 43 the way the 31 move</strong>, and leave the 42 merged ones on their "
+            "ids. <em>It might be wrong if</em> you want every id in the catalog to name its discipline; "
+            "then the 42 move too."),
+        'chips': chips(('Re-mint the 43', 'remint'), ('All 85, the merged ones too', 'all'),
+                       ('Leave them', 'leave'), CH_LATER),
+    })
     return I
 
 
@@ -381,10 +425,11 @@ def build(check_only=False):
         return 0
 
     framing = (
-        "Two funding questions wait on you: the last three sections of your funding tab review, and the "
-        "explainer's footer. Your answers on the Annual view's percent and on Pedro's request are carried "
-        "out. One question the lane still listed as open you settled on 3 September, when you ratified "
-        "the under-10 ADR: COBI keeps \"<10\" until the public/private split.")
+        "Three questions wait on you: the last three sections of your funding tab review, the "
+        "explainer's footer, and how far the Exercise Science re-mint reaches. Cards 1 and 2 are the same "
+        "two questions as cards 3 and 4 of the 27 September sheet; answer them once, on either sheet. Your "
+        "answers on the Annual view's percent and on Pedro's request are carried out, and the 31 identities "
+        "you ruled on move this week.")
     counts = (f"{len(I)} items across {len(lanes)} lanes · "
               f"every lane carrying an open ask is covered, by build-time audit")
 

@@ -4,9 +4,9 @@
   "supabase_tables": 85,
   "rpcs": 31,
   "edge_functions": 5,
-  "file_datasets": 534,
+  "file_datasets": 536,
   "external_services": 147,
-  "consumers": 378,
+  "consumers": 379,
   "workflows": 37,
   "data_js_files": 61,
   "tabs": 37
@@ -3110,7 +3110,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 151
+     "line": 153
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -4221,7 +4221,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 140
+     "line": 142
     },
     {
      "id": "script:scripts/stamp_asset_versions.py",
@@ -4568,7 +4568,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 140
+     "line": 142
     }
    ],
    "served": true,
@@ -5542,26 +5542,6 @@
    "served": false,
    "main_committers": []
   },
-  "file:docs/visuals/<date>-funding-asks-2.html": {
-   "consumers": [
-    {
-     "id": "script:kb/_build_open_asks_decision_sheet.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 60
-    },
-    {
-     "id": "script:kb/_build_open_asks_decision_sheet.py",
-     "kind": "script",
-     "direction": "write",
-     "how": "literal",
-     "line": 60
-    }
-   ],
-   "served": false,
-   "main_committers": []
-  },
   "file:docs/visuals/<date>-funding-review.html": {
    "consumers": [
     {
@@ -5657,6 +5637,26 @@
      "direction": "write",
      "how": "literal",
      "line": 295
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:docs/visuals/<date>-open-asks.html": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_open_asks_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 62
+    },
+    {
+     "id": "script:kb/_build_open_asks_decision_sheet.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 62
     }
    ],
    "served": false,
@@ -6151,7 +6151,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 140
+     "line": 142
     }
    ],
    "served": true,
@@ -7374,6 +7374,13 @@
      "line": 36
     },
     {
+     "id": "script:kb/_eths_remint.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 350
+    },
+    {
      "id": "script:kb/_fold_unclassified.py",
      "kind": "script",
      "direction": "read",
@@ -7688,6 +7695,13 @@
      "direction": "read",
      "how": "literal",
      "line": 107
+    },
+    {
+     "id": "script:kb/_eths_remint.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 351
     },
     {
      "id": "script:kb/_hs_title_fold.py",
@@ -8013,6 +8027,13 @@
      "direction": "read",
      "how": "literal",
      "line": 198
+    },
+    {
+     "id": "script:kb/_eths_remint.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 349
     },
     {
      "id": "script:kb/_fl_subj4_dryrun.py",
@@ -8440,6 +8461,13 @@
      "line": 65
     },
     {
+     "id": "script:kb/_eths_remint.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 350
+    },
+    {
      "id": "script:kb/_fl_subj4_dryrun.py",
      "kind": "script",
      "direction": "read",
@@ -8711,6 +8739,13 @@
      "line": 236
     },
     {
+     "id": "script:kb/_build_open_asks_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 195
+    },
+    {
      "id": "script:kb/_ccr_trail.py",
      "kind": "script",
      "direction": "read",
@@ -8737,6 +8772,13 @@
      "direction": "read",
      "how": "literal",
      "line": 199
+    },
+    {
+     "id": "script:kb/_eths_remint.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 349
     },
     {
      "id": "script:kb/_fl_subj4_dryrun.py",
@@ -10432,6 +10474,19 @@
      "direction": "read",
      "how": "literal",
      "line": 104
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/eths_remint_out/<date>/ruled/report.md": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_open_asks_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 219
     }
    ],
    "served": false,
@@ -13609,7 +13664,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 140
+     "line": 142
     }
    ],
    "served": true,
@@ -14019,7 +14074,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 160
+     "line": 162
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -15282,6 +15337,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/eths_remint_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/funding_career_import_test.py": {
    "consumers": [
     {
@@ -16124,7 +16192,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 174
+     "line": 176
     },
     {
      "id": "script:kb/_build_orphan_parent_worklist.py",
@@ -20412,6 +20480,7 @@
     "tests/memory_audit_test.py",
     "tests/prefix_fold_dryrun_test.py",
     "tests/prefix_fold_apply_test.py",
+    "tests/eths_remint_test.py",
     "tests/rekey_crnc_mirrors_test.py",
     "tests/custom_report_response_test.py",
     "tests/probe_lifecycle_checks_test.py",
