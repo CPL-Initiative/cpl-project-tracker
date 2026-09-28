@@ -8,22 +8,22 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). PAC/PTC = APPLIED/TRANSCRIBED units for students whose Counselor step is checked (Counselor_Verified), both cohorts; present only when the pull carries that column. NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 10,
  "statewide": {
-  "pe": 44030,
-  "pa": 40049,
+  "pe": 44032,
+  "pa": 40051,
   "ppa": 105,
   "p2": 3129,
-  "p3": 14640,
+  "p3": 14641,
   "pp": 6,
   "ppe": 115,
-  "pac": 2911,
-  "ptc": 2525,
-  "pe_u": 1430318.7,
-  "pa_u": 223398.9,
+  "pac": 2913,
+  "ptc": 2526,
+  "pe_u": 1430221.7,
+  "pa_u": 223406.9,
   "ppa_u": 657.5,
   "ppe_u": 6699.5,
-  "pac_u": 25407.2,
-  "ptc_u": 21776.0,
-  "p3_u": 73933.7,
+  "pac_u": 25415.2,
+  "ptc_u": 21779.0,
+  "p3_u": 73936.7,
   "pp_u": 63.5
  },
  "colleges": {
@@ -108,10 +108,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "Bakersfield": {
-   "pe": 604,
-   "pe_u": 26407.5,
-   "pa": 596,
-   "pa_u": 8712.5,
+   "pe": 606,
+   "pe_u": 26442.5,
+   "pa": 598,
+   "pa_u": 8728.5,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 66.0,
@@ -123,8 +123,8 @@ window.CPL_FUNDING_PERF = {
    "ppe": null,
    "ppe_suppressed": true,
    "ppe_u": 180.0,
-   "pac": 191,
-   "pac_u": 2688.0,
+   "pac": 192,
+   "pac_u": 2693.0,
    "ptc": 53,
    "ptc_u": 988.0
   },
@@ -270,10 +270,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "Cerro Coso": {
-   "pe": 182,
-   "pe_u": 9257.5,
-   "pa": 178,
-   "pa_u": 986.0,
+   "pe": 181,
+   "pe_u": 9122.5,
+   "pa": 177,
+   "pa_u": 975.0,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 0,
@@ -2091,23 +2091,23 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "West Hills Coalinga": {
-   "pe": 51,
-   "pe_u": 407.0,
-   "pa": 51,
-   "pa_u": 354.0,
+   "pe": 52,
+   "pe_u": 410.0,
+   "pa": 52,
+   "pa_u": 357.0,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 23,
-   "p3": 45,
-   "p3_u": 317.0,
+   "p3": 46,
+   "p3_u": 320.0,
    "pp": 0,
    "pp_u": 0.0,
    "ppe": 0,
    "ppe_u": 0.0,
-   "pac": 45,
-   "pac_u": 317.0,
-   "ptc": 45,
-   "ptc_u": 317.0
+   "pac": 46,
+   "pac_u": 320.0,
+   "ptc": 46,
+   "ptc_u": 320.0
   },
   "West Hills Lemoore": {
    "pe": 313,
@@ -2252,8 +2252,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 560,
-    "pa": 556,
+    "pe": 562,
+    "pa": 558,
     "p3": 29
    }
   },
@@ -2351,8 +2351,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Cerro Coso": {
    "Military": {
-    "pe": 182,
-    "pa": 178,
+    "pe": 181,
+    "pa": 177,
     "p3": 0
    }
   },
@@ -3732,7 +3732,7 @@ window.CPL_FUNDING_PERF = {
    "Standardized Assessment": {
     "pe": null,
     "pa": null,
-    "p3": 45,
+    "p3": 46,
     "pe_suppressed": true,
     "pa_suppressed": true
    }
@@ -3928,8 +3928,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 27949,
-   "pa": 25752,
+   "pe": 27950,
+   "pa": 25753,
    "p3": 2557
   },
   "Military | Portfolio Review": {
@@ -3969,9 +3969,9 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Standardized Assessment": {
-   "pe": 4461,
-   "pa": 3106,
-   "p3": 1959
+   "pe": 4462,
+   "pa": 3107,
+   "p3": 1960
   }
  },
  "cpl_types_note": "Distinct-student counts per college per `CPL Type Description`, for the funnel rungs pe/pa/p3. COUNTS ONLY — no unit sums, because each source row carries the student's TOTAL credits rather than that type's portion, so a per-type unit sum would attribute the whole total to every type a student carries. A student holding two types counts once under each, so the types do NOT sum to the college's undifferentiated count. Batch Cx/AP/IB uploads arrive already-transcribed by construction (students already in the college SIS, surfaced in MAP), so read p3 by type before treating a transcribed figure as lifecycle work.",
@@ -3979,14 +3979,14 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1430318.7,
-   "pa_u": 223398.9,
-   "p3_u": 73933.7
+   "pe_u": 1430221.7,
+   "pa_u": 223406.9,
+   "p3_u": 73936.7
   },
   "map": {
-   "pe_u": 1437018.2,
-   "pa_u": 224056.4,
-   "p3_u": 73997.2
+   "pe_u": 1436921.2,
+   "pa_u": 224064.4,
+   "p3_u": 74000.2
   },
   "ratio": {
    "pe_u": 1.0047,

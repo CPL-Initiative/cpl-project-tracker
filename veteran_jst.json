@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-09-28T14:02:53.173402+00:00",
+  "scraped_at": "2026-09-28T17:41:58.076287+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 28513,
+    "jst": 28514,
     "star_colleges": 59
   },
   "computed_star_colleges": 59,
@@ -47,7 +47,7 @@
     },
     "Bakersfield College": {
       "vets": 416,
-      "jst": 575,
+      "jst": 577,
       "star": true
     },
     "Merced College": {
@@ -217,7 +217,7 @@
     },
     "Cerro Coso Community College": {
       "vets": 115,
-      "jst": 183,
+      "jst": 182,
       "star": true
     },
     "Ventura College": {
