@@ -608,6 +608,16 @@ as_proposed: 10`, every row `by: "default"`. **Worth nothing as calibration**
 (the scoring rule is `by: "sam"` rows). Item 1 was held and asked back; he then
 ruled it directly: **the CCR gets the next sitting**, at **40-60 findings**.
 
+## Moved from the lane (S301, 2026-09-29): the CIP measurement behind Sam's ladder design
+
+Moved verbatim to keep the lane under its size budget when cards 13–14 joined its NEEDS SAM section.
+
+**CIP IS AT PROGRAM LEVEL** (`coci_college_programs.cip_code`), and what colleges
+actually assigned beats the CO's published crosswalk ~3x: mean **2.85** CIPs per
+TOP over 19,349 programs, modal share **86.5%**, against 8.4 and a worst case of
+1,032. `kb/top_cip_map.json` holds it (builder carries the refresh query) and it
+resolves for **1,235 of 1,237**. It corroborates, never gates.
+
 ## S301 continued (2026-09-29): the unit range on three surfaces
 
 Sam's rule of 27 September (units never split an identity) was measured against eight surfaces; three shipped the range this session (#1742, #1743, #1744).

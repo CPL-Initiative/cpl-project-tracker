@@ -11,8 +11,8 @@
   },
   "summary": {
     "files": 1000,
-    "bytes": 10601006,
-    "over_budget": 6,
+    "bytes": 10604241,
+    "over_budget": 5,
     "handoff_max": 302,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59735,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 116,
-        "bytes": 3232861,
+        "bytes": 3244681,
         "over": 3
       },
       "index": {
@@ -36,8 +36,8 @@
       },
       "lessons": {
         "files": 76,
-        "bytes": 2165195,
-        "over": 3
+        "bytes": 2157963,
+        "over": 2
       },
       "kb_note": {
         "files": 500,
@@ -46,23 +46,23 @@
       },
       "roadmap_lane": {
         "files": 33,
-        "bytes": 258012,
+        "bytes": 257975,
         "over": 0
       },
       "handoff": {
         "files": 273,
-        "bytes": 2343233,
+        "bytes": 2341917,
         "over": 0
       }
     },
     "by_rule": {
       "house_voice": 24,
-      "oversized_doc": 6,
+      "oversized_doc": 5,
       "vault_heavy_path": 55
     },
     "vault": {
-      "files": 3402,
-      "bytes": 1645059136,
+      "files": 3401,
+      "bytes": 1645148242,
       "heavy_bytes": 751519052,
       "heavy_share": 0.457,
       "ignore_filters": [
@@ -227,26 +227,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 120384,
-        "limit": 120000,
-        "lane": "lessons",
-        "over_by": 384,
-        "ratio": 1.0
-      },
-      "message": "120,384 B is 1.0× the lessons budget (120,000 B) — candidate for compaction",
-      "path": "docs/cpl_funding_lessons.md"
-    },
-    {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
-        "bytes": 317749,
+        "bytes": 328821,
         "limit": 150000,
         "lane": "other",
-        "over_by": 167749,
-        "ratio": 2.12
+        "over_by": 178821,
+        "ratio": 2.19
       },
-      "message": "317,749 B is 2.1× the other budget (150,000 B) — candidate for compaction",
+      "message": "328,821 B is 2.2× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/cpl_funding_lessons_archive.md"
     },
     {

@@ -217,6 +217,20 @@ FIXTURES = {
                                   "      + '<button>My College</button>';\n  }",
                                   "function tryGroup(src, labelId) {\n    if (sierraHost() !== 'chatbot') return '';\n"
                                   "    return '<button>Sierra</button>';\n  }"),
+    # S301: the unit-range pass's two CR Reference calls.
+    "p_crr_canonical_units": ('{"groups": [{"units_differ": true, "canonical_source": "most_colleges", '
+                              '"canonical": "3 or 4 hours in Engine Performance"}]}',
+                              '{"groups": [{"units_differ": true, "canonical_source": "most_colleges", '
+                              '"canonical": "Engine Performance (2\u20135 units)"}]}'),
+    "p_crr_rung4_units_screen": ("        if rung == 4 and units_differ:\n            acts = False",
+                                 "        if not screen_ok:\n            acts = False"),
+    # S301: the narrated draft's three measured calls.
+    "p_video_narrated_unlinked": ('<a id="video-mp4" href="../prototype/funding_video/20260926_CPL_Funding_in_Motion_v2.mp4">',
+                                  '<a href="../prototype/funding_video/funding_in_motion_n1.html">'),
+    "p_video_timing_trails": ('{"scenes": [{"scene": "Timing", "cues": [{"word": "The full two-year amount", "skip": "late"}]}]}',
+                              '{"scenes": [{"scene": "Timing", "cues": [{"word": "The full two-year amount", "at": 0.1}]}]}'),
+    "p_video_sample_unnarrated": ('{"scenes": [{"scene": "Targets", "text": "Each priority has a target."}]}',
+                                  '{"scenes": [{"scene": "Targets", "text": "Sample College\'s Access target is 44 FTES."}]}'),
 }
 _broken = []
 for _name, (_open_src, _closed_src) in FIXTURES.items():

@@ -31,9 +31,11 @@ also been answered on 2026-08-14 (military scope §10), and two of the 09-22
 proposals contradicted those August answers. When a verdict lands, change the
 lane's marker in the same pull request, or the sheet asks again.
 
-Published: https://claude.ai/artifact/9Wikhf54XyJgWXDEw5AK7G (2026-09-29, S301, SHEET_ID
-2026-09-29-open-asks-2, capabilities db + comments, twelve cards: the seven below carried over,
-four Jev next steps, one Sierra Training call). Its cards 1-7 are the seven of
+Published: https://claude.ai/artifact/XzQMks96QszUDAyXADP3Ag (2026-09-29, S301, SHEET_ID
+2026-09-29-open-asks-3, capabilities db + comments, eighteen cards: sheet 2's twelve at the same
+positions, two unit-range calls and the narrated draft's four). Sheet 2,
+https://claude.ai/artifact/9Wikhf54XyJgWXDEw5AK7G (SHEET_ID 2026-09-29-open-asks-2, twelve
+cards), held no replies when sheet 3 replaced it. Its cards 1-7 are the seven of
 https://claude.ai/artifact/QiaDezD2AN6XDzctUCSCfw (2026-09-29, S300, SHEET_ID 2026-09-29-open-asks),
 where Sam pressed Complete at 03:34Z with no card touched (`through: null`, nothing reviewed); that
 sheet's thread points here, and a reply there still counts for its seven. Before it: https://claude.ai/artifact/C1uyRhneegqQ4XSPRKiC3B (2026-09-28, S297, SHEET_ID
@@ -64,8 +66,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-09-29-open-asks-2.html')
-SHEET_ID = '2026-09-29-open-asks-2'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-09-29-open-asks-3.html')
+SHEET_ID = '2026-09-29-open-asks-3'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -299,6 +301,71 @@ def p_sierra_try_both_buttons():
                    else "tryGroup already reads the side menu")
 
 
+# The unit range (Sam, 2026-09-27: units never split an identity), read from the
+# CR Reference worklist. Not memoized: the coverage fixtures swap _read per call.
+_UNIT_LEAD = re.compile(r"^\s*[\d.]+(?:\s*(?:or|-|\u2013|to)\s*[\d.]+)?\s*(?:hours?|units?)\s+in\s+", re.I)
+
+
+def _crr_units():
+    try:
+        groups = json.loads(_read("kb/cr_reference_worklist.json") or "{}").get("groups", [])
+    except ValueError:
+        groups = []
+    vary = [g for g in groups if g.get("units_differ")]
+    worded = [g for g in vary if g.get("canonical_source") in ("most_colleges", "published_statewide")
+              and _UNIT_LEAD.match(g.get("canonical") or "")]
+    held = [g for g in vary if g.get("rung") == 4 and "units" in (g.get("screens_objecting") or [])]
+    return {"vary": len(vary), "worded": len(worded), "held": len(held),
+            "published": sum(1 for g in worded if g.get("canonical_source") == "published_statewide")}
+
+
+def p_crr_canonical_units():
+    """A wording canonical still states one unit figure over wordings that differ."""
+    n = _crr_units()["worded"]
+    return n > 0, "%d wording canonicals state one figure over wordings that differ" % n
+
+
+def p_crr_rung4_units_screen():
+    """Units still hold a rung-4 twin merge for a curator."""
+    open_ = "if rung == 4 and units_differ:" in _read("kb/_build_cr_reference.py")
+    return open_, ("the rung-4 units screen is in the builder" if open_
+                   else "the rung-4 units screen is gone")
+
+
+# The narrated draft of CPL Funding in Motion (Sam, 2026-09-27: it comes back
+# to him before the explainer links it), read from the committed files.
+def p_video_narrated_unlinked():
+    """The explainer still does not link the narrated cut."""
+    page = _read("funding-model/index.html")
+    open_ = "Narrated_Draft" not in page and "funding_in_motion_n1" not in page
+    return open_, ("the explainer does not link the narrated cut" if open_
+                   else "the explainer links the narrated cut")
+
+
+def _video_scene(name):
+    try:
+        scenes = json.loads(_read("prototype/funding_video/narration_s1.json") or "{}").get("scenes", [])
+    except ValueError:
+        scenes = []
+    return next((s for s in scenes if s.get("scene") == name), {})
+
+
+def p_video_timing_trails():
+    """The Timing scene's two-year line still trails its words (its cue is skipped)."""
+    open_ = any(c.get("skip") and (c.get("word") or "").startswith("The full two-year amount")
+                for c in _video_scene("Timing").get("cues", []))
+    return open_, ("the two-year amount's cue is skipped" if open_
+                   else "the two-year amount's cue is pinned")
+
+
+def p_video_sample_unnarrated():
+    """The Targets scene's voice still does not name Sample College."""
+    text = _video_scene("Targets").get("text", "")
+    open_ = bool(text) and "Sample College" not in text
+    return open_, ("the Targets narration does not name Sample College" if open_
+                   else "the Targets narration names Sample College")
+
+
 # Keyed by the item's POSITION on the sheet — the number Sam replies with, and
 # the only unique handle (two ESL cards share a `ref`).
 EVIDENCE = {
@@ -335,6 +402,14 @@ EVIDENCE = {
     11: [measured(p_csr_autb_collision)],
     # The Sierra Training round-1 port (#1733) left two calls for Sam.
     12: [measured(p_sierra_try_both_buttons)],
+    # 2026-09-29 (S301): the unit-range pass, the CR Reference's two calls.
+    13: [measured(p_crr_canonical_units)],
+    14: [measured(p_crr_rung4_units_screen)],
+    # 2026-09-29 (S301): the narrated draft comes back to Sam (#1741, #1745).
+    15: [measured(p_video_narrated_unlinked)],
+    16: [measured(p_video_timing_trails)],
+    17: [measured(p_video_sample_unnarrated)],
+    18: [policy()],
 }
 
 PROVENANCE = {
@@ -708,6 +783,112 @@ def items():
             "assistant is Sierra in both tabs. <em>It might be wrong if</em> you want each button to name the tab "
             "it opens; then the first reads CPL Assistant."),
         'chips': chips(('As proposed', 'proposed'), ('Name it CPL Assistant', 'rename'), CH_LATER),
+    })
+
+    # 2026-09-29 (S301): the unit-range pass (Sam, 2026-09-27: units never split
+    # an identity) left two naming and merging calls in the CR Reference.
+    U = _crr_units()
+    I.append({
+        'lane': 'common-cr-reference',
+        'title': 'The name of a recommendation whose wordings award different units',
+        'ref': 'common-cr-reference · kb/_build_cr_reference.py, the naming cascade · #1744',
+        'facts': (
+            "The CR Reference names each group by the cascade you ruled on 13 August. %d groups join wordings "
+            "that award different units, and %d of them take their name from a wording, which states its own "
+            "figure: the group named <em>3 or 4 hours in Engine Performance</em> joins wordings at 2, 3 or 4, 4 "
+            "and 5 units. Since 29 September the line beside each name states the range, <em>2–5 units</em>."
+            % (U["vary"], U["worded"])),
+        'why': (
+            "Your rule of 27 September gives the form, <em>Orienteering (1–3 units)</em>, and a name that states "
+            "one figure contradicts the range beside it."),
+        'rec': (
+            "<strong>Name these groups by topic and range: Engine Performance (2–5 units).</strong> A group named "
+            "by an official title keeps it, and the ten you confirmed are all of that kind. <em>It might be wrong "
+            "if</em> you want a published statewide wording kept as written (%d of the groups); then only the "
+            "names taken from the most colleges' wording change." % U["published"]),
+        'chips': chips(('As proposed', 'proposed'), ('Keep the statewide wording', 'keep_published'), CH_LATER),
+    })
+    I.append({
+        'lane': 'common-cr-reference',
+        'title': 'Units as a reason to hold a merge',
+        'ref': 'common-cr-reference · kb/_build_cr_reference.py, the rung-4 units screen',
+        'facts': (
+            "A rung-4 group joins wordings whose topics match exactly. When their units differ, the builder holds "
+            "the group for a curator instead of merging it, and %d groups wait for that reason alone: "
+            "<em>Calculus I</em>, written at 4 and 5 units by 16 colleges, is one. The stronger rungs already "
+            "merge across units." % U["held"]),
+        'why': (
+            "The screen predates your rule of 27 September. While it holds, a recommendation your rule makes one "
+            "stays split until a curator confirms it."),
+        'rec': (
+            "<strong>Retire the units screen, so these groups merge and show their range.</strong> The level, "
+            "Honors, lab, sport and gender screens stay. <em>It might be wrong if</em> you want a person to see "
+            "every unit spread before a merge; then the screen stays and the held card shows the range."),
+        'chips': chips(('As proposed', 'proposed'), ('Keep the screen', 'keep'), CH_LATER),
+    })
+
+    # 2026-09-29 (S301): the narrated draft, brought back as Sam asked on 27
+    # September, with the four calls its cue pass left.
+    I.append({
+        'lane': 'implementation-funding',
+        'title': 'The narrated draft of CPL Funding in Motion',
+        'ref': 'implementation-funding · prototype/funding_video · #1741 · #1745',
+        'facts': (
+            "Draft 3 is built, three minutes long, with each reveal cued to the word that names it: 33 of 39 land "
+            "on their word and 37 within a quarter second. The seventh scene now says <em>minimum conditions</em> "
+            "in the voice and on screen, as do the two introductions the explainer links. The explainer does not "
+            "link the narrated cut. Cards 16 to 18 hold what the draft still leaves open."),
+        'why': "Your call of 27 September: the draft comes back to you before the explainer links it.",
+        'rec': (
+            "<strong>Make the changes on cards 16 and 17, then bring draft 4 back; the explainer links it once you "
+            "approve.</strong> <em>It might be wrong if</em> draft 3 already reads well to you; then it is linked "
+            "as it stands."),
+        'chips': chips(('As proposed', 'proposed'), ('Link draft 3 as it stands', 'link'), CH_LATER),
+    })
+    I.append({
+        'lane': 'implementation-funding',
+        'title': 'The Timing line that trails its words',
+        'ref': 'implementation-funding · prototype/funding_video/narration_s1.json, the Timing scene',
+        'facts': (
+            "In the Timing scene the voice opens with the full two-year amount, and the picture shows that line "
+            "after the two release dates, so it appears 7.6 seconds after its words. The picture keeps the "
+            "introductions' order, so the fix belongs to the voice."),
+        'why': "It is the one line in the draft that arrives well after the voice names it.",
+        'rec': (
+            "<strong>Re-read the Timing scene with its first two sentences swapped</strong>, so the voice names the "
+            "release dates first and the two-year amount second. <em>It might be wrong if</em> you want the "
+            "two-year amount heard first; then the narrated cut shows it ahead of the dates."),
+        'chips': chips(('As proposed', 'proposed'), ('Leave it', 'leave'), CH_LATER),
+    })
+    I.append({
+        'lane': 'implementation-funding',
+        'title': "Sample College's target, shown and never spoken",
+        'ref': 'implementation-funding · prototype/funding_video/narration_s1.json, the Targets scene',
+        'facts': (
+            "The Targets scene shows Sample College's Access target, 44.3 FTES behind $112,484, while the voice "
+            "speaks of targets in general. The Maximum allocation scene names Sample College's figure aloud."),
+        'why': "A figure on screen that the voice passes over reads as a gap to a viewer who follows by ear.",
+        'rec': (
+            "<strong>Add one sentence after the quarter-system line: <em>Sample College's Access target, for "
+            "example, is about forty-four FTES, behind about a hundred twelve thousand dollars.</em></strong> "
+            "<em>It might be wrong if</em> the card is there to be read rather than heard; then it stays silent."),
+        'chips': chips(('As proposed', 'proposed'), ('Leave it silent', 'leave'), CH_LATER),
+    })
+    I.append({
+        'lane': 'implementation-funding',
+        'title': 'The pacing choices in draft 3',
+        'ref': 'implementation-funding · prototype/funding_video/README.md, the cues',
+        'facts': (
+            "Where the voice and the picture disagree, draft 3 chose. The $35 million counter lands on "
+            "<em>million</em>, and each barrier keeps its own pace. The years 2026–2028 and <em>One-time funding "
+            "for 2026–27</em> appear about 3 and 3.7 seconds before the voice names them. The Minimum conditions "
+            "stage waits about 3 seconds for its heading, which types in on the words. Long stretches slow the "
+            "eased motion, and the arrow can point about 2 seconds before its figure appears."),
+        'why': "None of these breaks your rule of 27 September, and each has a one-line fix if one bothers you.",
+        'rec': (
+            "<strong>Keep them all.</strong> <em>It might be wrong if</em> one of them catches your eye when you "
+            "watch; name it in the note and it changes in draft 4."),
+        'chips': chips(('Keep them all', 'proposed'), ('Change some (name them in the note)', 'change'), CH_LATER),
     })
     return I
 
