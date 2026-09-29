@@ -88,6 +88,9 @@ reads `after`). Do not commit that plan.
   variable first, and compare a doc's size after any scripted write.
 - ⚠️ **A workflow that writes Supabase with the service key needs Sam's permission first.**
 - ⚠️ **Sam curates live**: re-read before any write; his saves win.
+- ⚠️ **`first-light-art.yml` can commit its report onto a `claude/*` PR branch with `[skip ci]`**
+  (it did on #1758 after a base merge), which leaves the head with no `test` run. Push the next
+  real commit on top; never an empty one.
 - ⚠️ **Background agents are this container's**: a new session cannot see their worktrees. Push WIP
   before a session ends.
 
