@@ -32,6 +32,8 @@
 // Run from repo root: `npm test`.
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
+// The shared drill-in reader only (this suite keeps its own check()).
+const H = require("./lib/cpl_funding_harness.js");
 
 const results = [];
 function check(name, cond) { results.push([name, !!cond]); }
@@ -107,16 +109,11 @@ function dtlRow0(window, T, name) {
   // starts with the name.
   const row = Array.from(window.document.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
     .find(function (r) { return r.getAttribute("data-id") === "c:" + name; });
-  const det = row && row.nextElementSibling;
-  const dtl = det && det.querySelector(".cplfund-dtl-table");
-  if (!dtl) return null;
-  // Cells are returned KEYED BY HEADER as well as by position: the drill-in
-  // dropped its CR/NC funding columns on 2026-09-23 (one line per priority),
-  // and a typed column number would fail on the layout, not on the arithmetic.
-  const heads = Array.from(dtl.querySelectorAll("th")).map(function (h) { return h.textContent.trim().toLowerCase(); });
-  const tds = Array.from(dtl.querySelectorAll("tr"))[1].querySelectorAll("td");
-  tds.byHead = function (k) { return tds[heads.indexOf(k)]; };
-  return tds;
+  // The first priority row, KEYED BY COLUMN (round 8, 2026-09-29: the
+  // priorities are rows of the institution table). A typed column number
+  // would fail on the layout, not on the arithmetic.
+  const d = H.drillOf(window.document, row);
+  return d.cells.length ? d.cells[0] : null;
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -176,10 +173,11 @@ check("the two quantities are ~500x apart, so a mix-up could not hide",
   // 900 units: semester -> 30.0 FTES, quarter -> 20.0 FTES.
   const ala = dtlRow0(window, T, "Alameda");
   const foo = dtlRow0(window, T, "Foothill");
-  // The unit rides the HEADER since 2026-09-24 (Sam's "Max FTES" / "Actual
-  // FTES"), so a cell holds the figure alone.
-  const aline = function (cells) { return cells.byHead("actual ftes").textContent.replace(/\s+/g, " "); };
-  const tline = function (cells) { return cells.byHead("max ftes").textContent.replace(/\s+/g, " "); };
+  // Each FTES line carries its unit beneath its figure since round 8
+  // (2026-09-29): the Max FTES under Max CR Funds, the Actual FTES under
+  // Curr CR Funds.
+  const aline = function (cells) { return cells.cr_current.line; };
+  const tline = function (cells) { return cells.cr_award.line; };
   const num = function (v) { return new RegExp("(^|[^\\d.])" + v.replace(".", "\\.") + "($|[^\\d])"); };
   check("semester college: 900 units reads 30.0 CPL FTES in its expand's Actual FTES cell",
     !!ala && num("30.0").test(aline(ala)));
@@ -188,16 +186,17 @@ check("the two quantities are ~500x apart, so a mix-up could not hide",
   check("...so the quarter college is NOT credited 1.5x for identical work",
     num("30.0").test(aline(ala)) && !num("30.0").test(aline(foo)));
   check("the expand counts in FTES, not students, when the metric is FTES",
-    /^[\d.,]+$/.test(tline(ala).trim()) && !/stu/.test(tline(ala)) && !/stu/.test(aline(ala)));
-  // The Tgt/Now label column went with the P-cells; the two lines are now two
-  // NAMED COLUMNS. Without this, dropping the headers would leave the reader
-  // two unlabelled numbers per priority — the exact failure the labels (and
-  // then the label column) existed to prevent.
+    /^[\d.,]+ FTES$/.test(tline(ala)) && !/stu/.test(tline(ala)) && !/stu/.test(aline(ala)));
+  // The Tgt/Now label column went with the P-cells, and the named Max FTES /
+  // Actual FTES columns with the lane tables (2026-09-29). Each line now
+  // carries its unit, and the band's hovers say which line is which. Without
+  // this, the reader would get two unlabelled numbers per priority, the exact
+  // failure the labels (and then the label column) existed to prevent.
   {
-    const heads = Array.from(window.document.querySelectorAll(".cplfund-dtl-table th"))
-      .map(function (h) { return h.textContent; }).join("|");
-    check("the expand names its FTES columns, unit and all (the retired Tgt/Now labels' successor)",
-      heads.indexOf("Max FTES|Max Funds|Actual FTES") !== -1);
+    const band = H.drillOf(window.document, window.document.querySelector('#cplFundTable tr[data-id="c:Alameda"]')).bandCells;
+    check("the expand names its FTES lines, unit and all (the retired Tgt/Now labels' successor)",
+      !!band && /with its Max FTES beneath/.test(band.cr_award.tip) && /with the Actual FTES beneath/.test(band.cr_current.tip) &&
+      / FTES$/.test(aline(ala)));
   }
   // The WORKING — which divisor, and whose calendar — shows in the FTES-factors
   // box (the retired hover's successor): both derived divisors and the

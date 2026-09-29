@@ -26,7 +26,7 @@
 //      sent no save at all, so the silent return is the likeliest thing he met.
 //
 // Run from repo root: `node tests/cpl_funding_career_attainment.test.js`.
-const { check, freshDom, boot, commit, click, D, consumerSrc, finish } = require("./lib/cpl_funding_harness.js");
+const { check, freshDom, boot, commit, click, D, consumerSrc, finish, drillOf } = require("./lib/cpl_funding_harness.js");
 
 const flat = (el) => (el ? el.textContent : "").replace(/\s+/g, " ").trim();
 const cardAt = (doc, i) => doc.querySelector('#cplFundingMount .cplfund-prio .p[data-priocard="' + i + '"]');
@@ -87,17 +87,13 @@ function openDetail(window, doc, name) {
   const det = row2 && row2.nextElementSibling;
   return det && det.classList.contains("cplfund-detail") ? det : null;
 }
-// The CREDIT table: since 2026-09-24 the drill-in carries one table per lane
-// (Sam's CR / NC 7.9a/b), and the checks below read the credit measures.
+// The credit lane of the drill-in's priority rows, read by column key (round
+// 8, 2026-09-29: the priorities are rows of the institution table): Curr CR
+// Funds' figure and the Actual FTES line beneath it.
 function detRows(det) {
   if (!det) return [];
-  const trs = Array.from(det.querySelectorAll(".cplfund-dtl-table.cplfund-dtl-cr tr"));
-  const keys = Array.from(trs[0].querySelectorAll("th")).map((th) => flat(th).toLowerCase());
-  return trs.slice(1).map((tr) => {
-    const out = {};
-    Array.from(tr.querySelectorAll("td")).forEach((td, i) => { out[keys[i]] = flat(td); });
-    return out;
-  });
+  return drillOf(det.ownerDocument, det.previousElementSibling).cells.map((c) => ({
+    "actual ftes": c.cr_current.line, "curr funds": c.cr_current.fig }));
 }
 const goalPickText = (card) => {
   const sel = card && card.querySelector("select.cplfund-cardgoal-sel");
@@ -206,7 +202,7 @@ const titleText = (card) => {
   // TBA since 2026-09-28 (Sam: "show TBA everywhere so when it changes, it
   // will already be wired").
   check("3a: before the first import, P4's drill-in row reads TBA at $0 — never a full cap",
-    rows.length === 4 && r4["actual ftes"] === "TBA" && r4["actual funds"] === "$0");
+    rows.length === 4 && r4["actual ftes"] === "TBA" && r4["curr funds"] === "$0");
   const t4 = flat(cardAt(doc, 3));
   check("3b: its card says who measures it", /Actual: TBA\. The Chancellor.s Office measures this outcome from EDD wage records/.test(t4));
   check("3c: and never points at MAP's refresh or a MAP feed key",

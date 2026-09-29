@@ -104,14 +104,13 @@ function openRow(window, doc, id) {
   if (!detOf(tr)) click(window, tr.querySelector(".cplfund-caret"));
   return detOf(find());
 }
-// A lane table's Actual Funds column, summed: header lookup, never position.
-function laneActualSum(det, cls) {
-  const tbl = det && det.querySelector("table." + cls);
-  if (!tbl) return null;
-  const trs = Array.from(tbl.querySelectorAll("tr"));
-  const heads = Array.from(trs[0].querySelectorAll("th")).map((th) => th.textContent.trim().toLowerCase());
-  const i = heads.indexOf("actual funds");
-  return trs.slice(1).reduce((s, tr) => s + num((tr.querySelectorAll("td")[i] || {}).textContent), 0);
+// A drill-in's Curr figures for one column, summed over its priority rows
+// (round 8: the rows sit in the table's own columns), read by column key.
+// null when the drill-in holds no priority rows, or the lane reads a dash.
+function drillSum(doc, id, key) {
+  const d = H.drillOf(doc, doc.querySelector('#cplFundTable tr[data-id="' + id + '"]'));
+  if (!d.cells.length || d.cells.some((c) => !c[key] || c[key].fig === "—")) return null;
+  return d.cells.reduce((s, c) => s + num(c[key].fig), 0);
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -222,18 +221,18 @@ function laneActualSum(det, cls) {
   const sd = openRow(window, doc, "sys");
   check("2o: the statewide drill-in opens, with no Max Funds summary line",
     !!sd && !sd.querySelector(".cplfund-dtl-sum") && !/Max Funds:/.test(sd.textContent));
-  check("2p: its credit Actual Funds add to the Statewide row's Curr CR Funds (released, never held)",
-    laneActualSum(sd, "cplfund-dtl-cr") !== null &&
-    Math.abs(laneActualSum(sd, "cplfund-dtl-cr") - num(cellByKey(doc, doc.querySelector("#cplFundTable tr.cplfund-systemrow"), "cr_current").textContent)) <= 3);
+  check("2p: its Curr CR Funds rows add to the Statewide row's Curr CR Funds (released, never held)",
+    drillSum(doc, "sys", "cr_current") !== null &&
+    Math.abs(drillSum(doc, "sys", "cr_current") - num(cellByKey(doc, doc.querySelector("#cplFundTable tr.cplfund-systemrow"), "cr_current").textContent)) <= 3);
   check("2q: and exclude HELD's measured funding, which the row excludes too",
-    laneActualSum(sd, "cplfund-dtl-cr") < q.earned_cr + h.earned_withheld - 1);
-  const ncSum = laneActualSum(sd, "cplfund-dtl-nc");
-  check("2r: its noncredit Actual Funds add to the Statewide row's Curr NC Funds",
+    drillSum(doc, "sys", "cr_current") < q.earned_cr + h.earned_withheld - 1);
+  const ncSum = drillSum(doc, "sys", "nc_current");
+  check("2r: its Curr NC Funds rows add to the Statewide row's Curr NC Funds",
     ncSum !== null && Math.abs(ncSum - num(cellByKey(doc, doc.querySelector("#cplFundTable tr.cplfund-systemrow"), "nc_current").textContent)) <= 3);
   // A college's own drill-in adds to its own row, the same unit.
   const qd = openRow(window, doc, "c:" + QUAL);
-  check("2s: a college's credit Actual Funds add to its row's Curr CR Funds",
-    Math.abs(laneActualSum(qd, "cplfund-dtl-cr") - q.earned_cr) <= 3);
+  check("2s: a college's Curr CR Funds rows add to its row's Curr CR Funds",
+    drillSum(doc, "c:" + QUAL, "cr_current") !== null && Math.abs(drillSum(doc, "c:" + QUAL, "cr_current") - q.earned_cr) <= 3);
   check("2t: and no Max Funds summary line in the college drill-in either",
     !qd.querySelector(".cplfund-dtl-sum"));
   // Annual funding: every cell reads the viewed year, and the statewide
@@ -247,7 +246,8 @@ function laneActualSum(det, cls) {
     cellByKey(doc, rowOf(doc, QUAL), "cr_current").textContent.trim() === money(T._alloc(QUAL).ecy1) &&
     T._alloc(QUAL).ecy1 > 0 && T._alloc(QUAL).ecy1 < T._alloc(QUAL).earned_cr);
   check("2v: …and the statewide drill-in still adds to the Statewide row's Curr CR Funds",
-    Math.abs(laneActualSum(sd2, "cplfund-dtl-cr") - num(cellByKey(doc, sys2, "cr_current").textContent)) <= 3);
+    !!sd2 && drillSum(doc, "sys", "cr_current") !== null &&
+    Math.abs(drillSum(doc, "sys", "cr_current") - num(cellByKey(doc, sys2, "cr_current").textContent)) <= 3);
 }
 function D_names(T) { return H.D.colleges.map((c) => c.college); }
 
@@ -418,7 +418,7 @@ function D_names(T) { return H.D.colleges.map((c) => c.college); }
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// 7. TBA, the lane tables' names, and the card's actual line
+// 7. TBA, the drill-in's lane bands, and the card's actual line
 // ─────────────────────────────────────────────────────────────────────────────
 {
   const { window, doc, T } = setup({ shared: { yearPriorities: { "1": {
@@ -426,27 +426,34 @@ function D_names(T) { return H.D.colleges.map((c) => c.college); }
     "1": { metric: "Headcount with Eligible CPL Based on Statewide Credit Recommendations" },
     "2": { metric: "Applied CPL Units as FTES", metric_src: "pa_u" } } } } });
   const det = openRow(window, doc, "c:" + QUAL);
-  const cr = det.querySelector("table.cplfund-dtl-cr"), nc = det.querySelector("table.cplfund-dtl-nc");
-  check("7a: the credit table has no caption; its first header names the lane",
-    !cr.querySelector("caption") && cr.querySelector("th").textContent === "Credit outcomes");
-  check("7b: the noncredit table's caption is its rule alone; its first header names the lane",
-    !!nc && nc.querySelector("caption").textContent === "Noncredit counts CPL for students who originate from a noncredit landing page." &&
-    nc.querySelector("th").textContent === "Noncredit outcomes");
-  check("7c: both lane tables keep their region names",
-    det.querySelector('[role="region"][aria-label="Credit priority funding"]') && det.querySelector('[role="region"][aria-label="Noncredit priority funding"]'));
-  const heads = Array.from(cr.querySelectorAll("tr")[0].querySelectorAll("th")).map((th) => th.textContent.trim().toLowerCase());
-  const actCell = (tbl, i) => tbl.querySelectorAll("tr")[i + 1].querySelectorAll("td")[heads.indexOf("actual ftes")];
+  const d = H.drillOf(doc, rowOf(doc, QUAL));
+  const b = d.bandCells;
+  // Since round 8 (2026-09-29) the lanes are columns of the table: the band
+  // names each over its own figures, and the noncredit columns keep the
+  // lighter header (Sam, 2026-09-24: "I don't want the NCs to get lost").
+  check("7a: the band's first cell names the scope; the credit columns keep the seal-blue band",
+    !!b && b.college.text === "Priority outcomes" && b.college.td.tagName === "TH" &&
+    !b.cr_award.td.classList.contains("cf-nchead") && !b.cr_current.td.classList.contains("cf-nchead"));
+  check("7b: the noncredit columns take the lighter band, and the closing line states their rule alone",
+    !!b && b.nc_award.td.classList.contains("cf-nchead") && b.nc_current.td.classList.contains("cf-nchead") &&
+    d.detail[d.detail.length - 1].querySelector(".cplfund-dtl-foot").textContent ===
+      "Noncredit counts CPL for students who originate from a noncredit landing page.");
+  check("7c: the band's cells are column headers, and each funding header explains its lines on hover",
+    !!b && ["cr_award", "cr_current", "nc_award", "nc_current", "total", "current_total"].every((k) =>
+      b[k].td.tagName === "TH" && b[k].td.getAttribute("scope") === "col" && !!b[k].tip) &&
+    /Max FTES beneath/.test(b.cr_award.tip) && /Actual FTES beneath/.test(b.cr_current.tip));
   check("7d: a measure with no source reads TBA, its meaning on hover",
-    actCell(cr, 1).textContent === "TBA" && actCell(cr, 1).getAttribute("title") === "To be announced once measured");
+    d.cells.length === H.NPRIO && d.cells[1].cr_current.line === "TBA" && d.cells[1].cr_current.lineTip === "To be announced once measured");
   check("7e: an undelivered noncredit measure reads TBA too",
-    actCell(nc, 0).textContent === "TBA" && actCell(nc, 0).getAttribute("title") === "To be announced once measured");
+    d.cells.length === H.NPRIO && d.cells[0].nc_current.line === "TBA" && d.cells[0].nc_current.lineTip === "To be announced once measured");
   check("7f: no drill-in cell reads 'awaiting measurement'",
-    !/awaiting measurement/.test(det.textContent));
+    !/awaiting measurement/.test(det.textContent) && !d.rows.some((tr) => /awaiting measurement/.test(tr.textContent)));
   check("7g: the priority card's actual line reads 'Actual: TBA.'",
     /Actual: TBA\./.test(doc.getElementById("cplFundingMount").textContent) &&
     !/Actual: awaiting measurement/.test(doc.getElementById("cplFundingMount").textContent));
-  check("7h: the credit header fills seal blue, with fallbacks for the public explainer",
-    /\.cplfund-dtl-tscroll > \.cplfund-dtl-table\.cplfund-dtl-cr th \{ background: var\(--seal-blue, #002F6D\); color: var\(--white, #FFFFFF\); \}/.test(consumerSrc));
+  check("7h: the band fills seal blue and the noncredit cells the noncredit blue, each with its ink and a fallback for the public explainer",
+    /tr\.cplfund-subhead > th \{ background: var\(--seal-blue, #002F6D\); color: var\(--white, #FFFFFF\);/.test(consumerSrc) &&
+    /tr\.cplfund-subhead > th\.cf-nchead \{ background: var\(--dtl-nc-head, #0047AB\); color: var\(--white, #FFFFFF\); \}/.test(consumerSrc));
   check("7i: the college intro is Sam's new text",
     /^The Dashboard lists the potential funding and FTES for each institution\. Total Funds is its max award/.test(
       doc.querySelector(".cplfund-college-intro").textContent.trim()) && !/Alphabetical/.test(doc.querySelector(".cplfund-college-intro").textContent));
