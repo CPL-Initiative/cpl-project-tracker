@@ -444,7 +444,7 @@ section[hidden]{display:none}
   <div class="wrap">
     <div class="sec-head">
       <hr class="rule">
-      <h2>Max award by institution</h2>
+      <h2>Funding by institution</h2>
     </div>
   </div>
   <!-- ⚠ THE TABLE GETS THE WINDOW, THE PROSE KEEPS ITS COLUMN (Sam,
@@ -550,9 +550,12 @@ section[hidden]{display:none}
     <p id="req-intro">Each requirement is verifiable from MAP:</p>
     <ol id="req-list"></ol>
     <div class="note">
-      <p><strong>Each institution keeps its full award while it meets the baseline.</strong> The model
-        reserves the funding an institution demonstrates for that institution, and the institution receives
-        it once it confirms local participation.</p>
+      <!-- Sam, 2026-09-29 (open-asks sheet 3, card 6): "The explainer is wrong. Colleges will be
+           funded for FTES that meet the priority outcomes. The full outcomes-based funding is
+           available within the two-year window once minimum conditions are met." -->
+      <p><strong>The Chancellor&rsquo;s Office allocates funding to each institution for the FTES that
+        meet the priority outcomes, up to its max award.</strong> Once an institution meets the minimum
+        conditions, it receives its full outcomes-based funding within the two-year window.</p>
     </div>
     </div>
     </details>
@@ -901,7 +904,7 @@ window.CPL_PAINT_EXPLAINER = function (D) {
       list.appendChild(li);
     });
     if (!list.children.length) {
-      setText("req-intro", "The baseline requirements arrive with the model.");
+      setText("req-intro", "The minimum conditions arrive with the model.");
     }
     // The same deadline, in the choices table's own cell. It was typed there as
     // "1 Nov 2026" while the model held 2026-11-01 — a date a curator can move

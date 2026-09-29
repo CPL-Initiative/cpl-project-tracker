@@ -5848,17 +5848,20 @@
         "Funding is fully allocated to institutions and ready for distribution based on measurable outcomes.</li>");
     }
     // 2 — the allocation, what MAP has demonstrated, and when it is received.
-    // Sam, 2026-09-22: start from the total allocated and end on the award
-    // following local confirmation; the reserve bullet folds in here, so the
+    // Sam, 2026-09-22: start from the total allocated and end on when the
+    // award is received; the reserve bullet folds in here, so the
     // demonstrated figure counts the funding held for a college that has not
     // yet confirmed (winHeld) beside the funding already released (winEarned).
-    // Positive declarations only — no "this, not that", no restatement.
+    // Positive declarations only — no "this, not that", no restatement. The
+    // closing sentence is Sam's premise of 2026-09-29 (open-asks sheet 3, card
+    // 6): the full outcomes-based funding is available within the two-year
+    // window once the minimum conditions are met (all three, since #1726).
     var shown = ea.winEarned + ea.winHeld;
     items.push("<li><strong>" + fmtMoney(pool) + " allocated</strong> to " + nInst + " institutions. " +
       (pf && pf.as_of ? "MAP records as of " + esc(pf.as_of) + " demonstrate " : "MAP records demonstrate ") +
       fmtMoney(shown) + " (" + fmtPctTrim(pool > 0 ? shown / pool : 0) + ") of it, and the remaining " +
       fmtMoney(Math.max(0, pool - shown)) + " rolls forward within the window. Each institution receives " +
-      "its demonstrated funding once it confirms local participation.</li>");
+      "its full outcomes-based funding within the two-year window once it meets the minimum conditions.</li>");
     // 3 — the noncredit share. Sam, 2026-09-22: it reaches every noncredit
     // program, the three noncredit-only institutions among them.
     items.push("<li><strong>" + fmtMoney(ncFace + trioHeld) +
@@ -10112,8 +10115,8 @@
       '<div class="cplfund-elig-intro">' + proseBlockHtml("elig_intro") + "</div>" +
       coReviewLaneHtml() +
       coordItem + partItem + extraHtml +
-      '<div class="dk" style="margin:4px 0 6px;">Funding an institution demonstrates before it meets its minimum ' +
-      "conditions stays reserved for that institution.</div>" +
+      '<div class="dk" style="margin:4px 0 6px;">Once an institution meets the minimum conditions, it receives ' +
+      "its full outcomes-based funding within the two-year window.</div>" +
       '<div class="cplfund-reqadd">' +
       '<button type="button" class="cplfund-optbtn" id="cplFundReqAdd" ' +
       'title="Add another minimum condition">Add requirement</button>' +
