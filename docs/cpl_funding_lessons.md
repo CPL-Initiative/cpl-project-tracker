@@ -1582,3 +1582,38 @@ dropped "Releveled"; the live label is Sam's saved wording (To-Do
 - **Re-read only the scene that changed.** The other nine clips came out sample-identical, so the cue pass carried over (39 pinned, 33 on their word).
 - **NEXT ③, measured with `npm run a11y` before and after:** four targets under 24px, fixed with the house patterns (`padding-block`; padding with negative margins for a raised letter; `min-height` on a wrapping label). Every dead class was checked across the repo and against names built by concatenation before 22 rules went.
 - ⚠️ **A test loop with a 120-second cap reports false failures on this tab.** `cpl_funding_calm` alone takes 2 min 11 s; run the funding suites uncapped and read each file's exit code.
+
+## 2026-09-29 — S302 (SkyWeft): sheet 3's funding verdicts, in the cards' own words
+
+Sam answered all eighteen cards of sheet 3 ([XzQMks96QszUDAyXADP3Ag](https://claude.ai/artifact/XzQMks96QszUDAyXADP3Ag), `replies/done` through 18
+at 12:39Z). The lane records each ruling; the words the cards proposed, which the work
+uses verbatim, are here.
+
+- **Card 4, *demonstrated*.** Each Priority Outcomes card reads *Demonstrated: $X of $Y
+  Total Possible*. Demonstrated is the statute's verb, §78093.2(d)(2); the Curr columns
+  keep the qualifying figure.
+- **Card 5, *use*.** The thank-you: *"Thank you. Your participation is confirmed, and your
+  college counts as participating from today."* The form's note: *"Your name and email are
+  recorded for the Chancellor's Office and are not shown publicly."*
+- **Card 6, a note with no chip.** *"The explainer is wrong. Colleges will be funded for FTES
+  that meet the priority outcomes. The full outcomes-based funding is available within the
+  two-year window once minimum conditions are met."* The card had proposed *"Every
+  institution keeps its full max award. The model counts every outcome an institution
+  demonstrates toward that award, and the institution receives the funding once it meets
+  all three minimum conditions."* and the heading *Funding by institution*; his note
+  replaces the premise, so the rewrite starts from his words.
+- **Card 7, *write*.** The timeline's August 2027 entry becomes *"Remaining Funds Carried
+  Forward to Year 2"*; the Minimum Conditions introduction becomes *"Minimum conditions to
+  qualify for implementation funding:"*. Both scenarios, a receipt of the before-values.
+- **Card 16, as proposed.** Re-read the Timing scene with its first two sentences swapped, so
+  the voice names the release dates first and the two-year amount second.
+- **Card 17, as proposed.** After the quarter-system line: *"Sample College's Access target,
+  for example, is about forty-four FTES, behind about a hundred twelve thousand dollars."*
+- **Card 18, *keep them all*.** The counter on *million*, the barriers' own pace, the years
+  and *One-time funding for 2026–27* arriving about 3 and 3.7 seconds early, the Minimum
+  conditions heading typing in on its words, the eased motion, and the arrow pointing about
+  2 seconds before its figure.
+
+**Moved verbatim from the lane (S302), the 2026-09-24 dial read:**
+
+⭐ **THE DIALS (config read 2026-09-24 00:2x UTC; unchanged since the 21:30 UTC save of 2026-09-23).** **Scenario 1 is the published scenario** (a stale window's 21:30 save cleared the marker; unset falls back to it): P1 Access `ppa_u` 33% · P2 Completion `ptc_u` 34%, outcome B · P3 Career attainment `ca_u` 33%, factor 0.5, carrying the six transcription strategies of the deleted slot 1 (`prioRemoved: [1]`) · (D) Innovation Projects. The 115 maximum awards total the $24,757,639 allocation. Scenario 3 sums to 133%, unpublished. ⭐ Do not build a combined ORIGIN+counselor source (Sam split them 2026-09-15; `pa_u` + `ppa_u` buys 0.3%).

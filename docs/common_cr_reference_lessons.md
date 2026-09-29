@@ -629,3 +629,22 @@ Sam's rule of 27 September (units never split an identity) was measured against 
 - **A rename that other measurements group by goes to a sheet.** Naming a varying group *Engine Performance (2–5 units)* moves the typesafe trial's and Jev's grouping by `canonical`, so it is card 13, with card 9 re-measured after.
 - **A code-only PR needs its dispatch.** The runner published the regenerated artifacts about 25 minutes after `daily-dashboard.yml` was dispatched; the live values were read back after (AGAS M1001 2–3, WELD M1109 0–5).
 
+## Moved from the lane (S302, 2026-09-29): the aggregate rung's fill
+
+Moved verbatim to keep the lane under its size budget when sheet 3's rulings replaced its NEEDS SAM section.
+
+⚠️ **THE AGGREGATE RUNG'S FILL IS THE DESCRIPTION, AND IT COMES FROM A DIFFERENT
+FILE.** Membership records carry college, control number, subject, course
+number, units, credit status and TOP — **never a description**. 4,231 of the
+7,158 aggregatable rows are missing exactly that, and **4,065 have member
+descriptions** in `unified_courses_member_desc.js` (keyed by the same id, loaded
+lazily because it is 47 MB). Of those, **271 agree word-for-word** (a mechanical
+fill) and **3,794 differ** (the judgment). Sam's qualifier — *"where there is
+something useful to work with in the aggregate"* — excludes the 8,132 blank/seed
+cards that carry no members at all.
+
+⚠️ **`level` IS A LEAD, NOT A FINDING** — raw p 0.023, **Holm 0.138**. It earns
+ONE targeted re-test on a batch it did not pick; **never a re-analysis of these
+26 rows**.
+
+**What did not fail: the 0.85 gate** — 25 of 25, 346 rows.

@@ -353,7 +353,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `docs/visuals/<date>-grants-and-max-award.html` | scripts: `kb/_build_grants_decision_sheet.py` | scripts: `kb/_build_grants_decision_sheet.py` |
 | `docs/visuals/<date>-jev-ladder.html` | scripts: `kb/_build_jev_ladder_sheet.py` | scripts: `kb/_build_jev_ladder_sheet.py` |
 | `docs/visuals/<date>-memory-audit-verdicts.html` | scripts: `kb/memory_audit/2026-09-05-sheet_builder.py` | scripts: `kb/memory_audit/2026-09-05-sheet_builder.py` |
-| `docs/visuals/<date>-open-asks-3.html` | scripts: `kb/_build_open_asks_decision_sheet.py` | scripts: `kb/_build_open_asks_decision_sheet.py` |
+| `docs/visuals/<date>-open-asks-4.html` | scripts: `kb/_build_open_asks_decision_sheet.py` | scripts: `kb/_build_open_asks_decision_sheet.py` |
 | `docx.min.js` | tabs: `annual-report`, `college-briefing`, `implementation-funding` · modules: `master_report.js` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py` | — |
 | `excel_to_dashboard.py` | workflows: `daily-dashboard.yml` | — |
 | `exports/20260826_T5_55050_Article9_Conformity_TrackedChanges_v5.docx` | none found | scripts: `kb/_build_55050_redline_docx.py`, `kb/_verify_55050_redline.py` |
@@ -494,7 +494,6 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/esl_package_out/<date>/esl_package_plan.json` | scripts: `kb/_build_esl_fold_preview.py`, `kb/_build_esl_fold_spotcheck.py`, `kb/_esl_new_identities_dryrun.py`, `kb/_esl_package_actionable.py`, `kb/_esl_package_apply.py`, `kb/_esl_sheet_apply_build.py` | — |
 | `kb/esl_relevel_out/<date>/plan.json` | scripts: `kb/_esl_ladder_relevel_dryrun.py` | — |
 | `kb/eths_remint_out/<date>/ruled/alias_map.json` | scripts: `kb/alias_chain.py` | — |
-| `kb/eths_remint_out/<date>/ruled/report.md` | scripts: `kb/_build_open_asks_decision_sheet.py` | — |
 | `kb/exhibit_audit/*.md` | none found | committed by: `daily-dashboard.yml` |
 | `kb/exhibit_audit/latest.json` | tabs: `credential-reference` | committed by: `daily-dashboard.yml` |
 | `kb/fire_electrical_domain_map.json` | scripts: `kb/_build_occupation_cpl_crosswalk.py`, `kb/_build_regional_cpl_opportunity.py` | — |
@@ -544,7 +543,6 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/promotions.json` | scripts: `excel_to_dashboard.py`, `kb/_analyze_official_fold_evidence.py`, `kb/_analyze_witness_kinship.py`, `kb/_build_remint_blast_radius.py`, `kb/_desc_consolidation_dryrun.py`, `kb/_esl_package_dryrun.py`, `kb/_rekey_promotions.py`, `kb/_remint_apply.py`, `kb/_seed_authority_codes.py`, `kb/_title_consolidation_dryrun.py`, `kb/_uc_cur_zscheme_dryrun.py` | scripts: `kb/_rekey_promotions.py` |
 | `kb/receipts/cr_reference_decisions_<date>_s280.json` | scripts: `kb/_build_decision_sheet_demo.py` | — |
 | `kb/receipts/jev_ccr_title_rung_<date>_s282.json` | scripts: `kb/_build_ccr_title_rung_sheet.py` | — |
-| `kb/receipts/jev_ccr_title_rung_calibration_<date>_s282.json` | scripts: `kb/_build_open_asks_decision_sheet.py` | — |
 | `kb/reference/CIPCode2020.csv` | scripts: `excel_to_dashboard.py`, `kb/_build_cip_crosswalk.py` | — |
 | `kb/reference/asccc_area_map.json` | scripts: `kb/_apply_asccc_areas.py` | — |
 | `kb/reference/authority_subject_codes.json` | scripts: `kb/_seed_authority_codes.py` | scripts: `kb/_seed_authority_codes.py` |
@@ -947,5 +945,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 545 file
+Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 543 file
 datasets · 147 external services · 380 consumers · 37 workflows · 37 tabs.

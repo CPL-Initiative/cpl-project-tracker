@@ -155,13 +155,10 @@ Re-measured on the kb files, the card's 31 counted corroborated rows only. The
 same defect reaches **40 ETHS stand-alones and 3 corroborated rows the title list
 misses** (43 standing; 3 have no second signal and hold), plus **42 ETHS ids
 merged under Kinesiology-family parents** (11 under the 31, 31 already under
-KINE/ATHL/PEDS), which display under the right parent. NEEDS SAM: whether the
-43, and the 42 merged ones, re-mint the same way (card on the standing sheet).
-The script carries each class as a `--scope`, and `--apply` refuses any scope
-but `ruled` until he rules.
+KINE/ATHL/PEDS), which display under the right parent. **RULED (Sam, 2026-09-29, sheet 3 card 3, *remint*):** the 43 re-mint the way the 31 moved, under the same second-signal rule, so the three with no second signal beside the title hold; the 42 merged ones stay on their ids. The script carries each class as a `--scope`; `--apply` admits `standalone,missed` once the ruling is written into it.
 
 ## Next
 
-1. Sam's answer on the extension (the 43 standing, the 42 merged): `--scope standalone,missed` (and `children,merged_elsewhere` if he says all) runs the same dry run, apply and chain once `--apply` admits the scope he rules.
+1. Card 3: `--scope standalone,missed` runs the same dry run, apply and chain as the 31, in one cron window; the 42 merged (`children,merged_elsewhere`) stay.
 2. Items 5 and 4 — both vocabulary edits, and 5 is what item 6 sits on.
 3. Item 6, then the item-12 sitting at 50 rows from kind C.

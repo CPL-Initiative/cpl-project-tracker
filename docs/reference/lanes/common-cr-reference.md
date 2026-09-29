@@ -110,12 +110,6 @@ overruled. **Where a domain has overruled a general prior, a general model's
 confidence runs the wrong way.** Sam's 2-unit rule (below) is what makes the
 question askable at all.
 
-⚠️ **`level` IS A LEAD, NOT A FINDING** — raw p 0.023, **Holm 0.138**. It earns
-ONE targeted re-test on a batch it did not pick; **never a re-analysis of these
-26 rows**.
-
-**What did not fail: the 0.85 gate** — 25 of 25, 346 rows.
-
 ## The ladder sheet, and the ranking rule that failed on it (2026-09-21, S282 SkyLedger)
 
 Sheet: **https://claude.ai/artifact/BkxGoSkJUE22BWCGcw9pwB** — ten items,
@@ -160,17 +154,27 @@ hold a ruling.
 the database. Each other center needs one before its first sheet, routed through
 Governance under Rule 10(a3).
 
-## NEEDS SAM — a Jev next step per reference, and the unit range (2026-09-29, S301)
+## RULED — a Jev next step per reference, and the unit range (Sam, 2026-09-29)
 
-Cards 8–11 of the standing sheet (`2026-09-29-open-asks-3`), counts measured by
-`kb/_jev_next_steps.py`: **CCR** ask where a course belongs (a
-choice among its members' disciplines), then 50 from cross-list kind C ·
-**CCRR** pair by shared course identity behind the course-count guard · **CER** a
-decisions store through Governance, then the 38 · **CSR** fix AUTB (AGAB), then
-the 15. Cards 13–14, Sam's unit rule of 2026-09-27: name 87 wording groups by
-topic and range (*Engine Performance (2–5 units)*; renaming moves the typesafe
-trial's grouping by `canonical`, so re-measure card 9 after), and retire the
-rung-4 units screen that holds 30 groups (*Calculus I* at 4 and 5).
+Sheet 3's cards 8–11 and 13–14, each his own call; the work waits on sessions.
+**8 placement (CCR):** Jev chooses among the disciplines a course's member
+colleges name (title and description as evidence), scored against his 26 answers
+before any card reaches him; if it agrees, the next sitting takes 50 of cross-list
+kind C, most member rows first, Keep · Move · Cross-list with Jev's choice
+selected. **9 course (CCRR):** pair by shared course identity behind the
+course-count guard (POST's every line to AJ 110 fails it); Jev runs the new pairs,
+the unanchored clusters and the newer anchored pairs under the 0.85 gate, then a
+sheet of 40–60. Measure after card 13's renames land. **10 store (CER):** a
+decisions store with a reason column, through Governance first (DR-07's
+`maintained_in` gains the table; Rule 10(a3)); then the 38 as a Jev calibration
+sitting, each issuer checked against the credential registry; mechanical fixes by
+July's clean-rename path under a receipt. **11 as proposed (CSR):** *Import Body
+Customizing* to Auto Body Technology, AGAB for Agricultural Business, and AUTB
+M1006 re-minted under it by the playbook; then the 15 to Jev and a short ranked
+sheet. **13 as proposed:** name the varying groups by topic and range (*Engine
+Performance (2–5 units)*); an official title keeps its name. **14 as proposed:**
+retire the rung-4 units screen, so its groups (*Calculus I* at 4 and 5) merge and
+show the range; the level, Honors, lab, sport and gender screens stay.
 
 ## The CCR rung, and Sam's ladder design (2026-09-21, S282 SkyLedger)
 
@@ -249,15 +253,7 @@ the question** — re-adding it as a bare "do these units differ?" reproduces
 change is a re-mint under the mandatory playbook. Sam's low-stakes framing makes
 the exploration safe; it does not make a model's answer a decision.
 
-⚠️ **THE AGGREGATE RUNG'S FILL IS THE DESCRIPTION, AND IT COMES FROM A DIFFERENT
-FILE.** Membership records carry college, control number, subject, course
-number, units, credit status and TOP — **never a description**. 4,231 of the
-7,158 aggregatable rows are missing exactly that, and **4,065 have member
-descriptions** in `unified_courses_member_desc.js` (keyed by the same id, loaded
-lazily because it is 47 MB). Of those, **271 agree word-for-word** (a mechanical
-fill) and **3,794 differ** (the judgment). Sam's qualifier — *"where there is
-something useful to work with in the aggregate"* — excludes the 8,132 blank/seed
-cards that carry no members at all.
+The aggregate rung's fill, and why it comes from `unified_courses_member_desc.js`: [`common_cr_reference_lessons`](../../common_cr_reference_lessons.md), moved S302.
 
 ⚠️ **THE TWO TOP TAGS STAY NEVER-ASK** (2,442 rows). No domain rule rescues a
 question whose whole premise is *"TOP disagrees"*; that is what separates them

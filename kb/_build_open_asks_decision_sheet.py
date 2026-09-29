@@ -31,9 +31,14 @@ also been answered on 2026-08-14 (military scope §10), and two of the 09-22
 proposals contradicted those August answers. When a verdict lands, change the
 lane's marker in the same pull request, or the sheet asks again.
 
+Next: SHEET_ID 2026-09-29-open-asks-4, built once a lane marks a new ask. Sam answered
+all eighteen cards of sheet 3 on 2026-09-29 (through 18, each his own call), and S302
+recorded every ruling in its lane, so no card remains.
+
 Published: https://claude.ai/artifact/XzQMks96QszUDAyXADP3Ag (2026-09-29, S301, SHEET_ID
 2026-09-29-open-asks-3, capabilities db + comments, eighteen cards: sheet 2's twelve at the same
-positions, two unit-range calls and the narrated draft's four). Sheet 2,
+positions, two unit-range calls and the narrated draft's four). Its store keeps his answers;
+never republish onto it. Sheet 2,
 https://claude.ai/artifact/9Wikhf54XyJgWXDEw5AK7G (SHEET_ID 2026-09-29-open-asks-2, twelve
 cards), held no replies when sheet 3 replaced it. Its cards 1-7 are the seven of
 https://claude.ai/artifact/QiaDezD2AN6XDzctUCSCfw (2026-09-29, S300, SHEET_ID 2026-09-29-open-asks),
@@ -66,8 +71,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-09-29-open-asks-3.html')
-SHEET_ID = '2026-09-29-open-asks-3'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-09-29-open-asks-4.html')
+SHEET_ID = '2026-09-29-open-asks-4'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -366,51 +371,16 @@ def p_video_sample_unnarrated():
                    else "the Targets narration names Sample College")
 
 
-# Keyed by the item's POSITION on the sheet — the number Sam replies with, and
-# the only unique handle (two ESL cards share a `ref`).
-EVIDENCE = {
-    # 2026-09-27 (S295), the funding asks sheet. The lane carried these as prose
-    # ("Unruled, his call"), so no sheet asked them; the coverage audit could not
-    # see an ask the lane never marked.
-    # Cards 1 and 2 of the published sheet are answered (Sam, 2026-09-27 19:55
-    # UTC, read through card 2: year against year, and wait for Pedro), recorded
-    # in the lane, and gone from this list (S296): card 1's change landed, and its
-    # measured premise would have made the build refuse. What remains is the
-    # published sheet's cards 3 and 4, numbered 1 and 2 here.
-    1:  [live("2026-09-27", "the funding tab review sheet's stored replies (reviewed through item 7)")],
-    2:  [policy()],
-    # 2026-09-28 (S296): the ETHS re-mint's dry run measured the defect past the
-    # 31 Sam ruled on; the lane (discipline-crosslist) marks the ask.
-    3:  [measured(p_eths_extension_open),
-         quoted("kb/eths_remint_out/2026-09-28/ruled/report.md", "2026-09-28")],
-    # 2026-09-29 (S300): the College Dashboard port's four asks. S299 carried
-    # two of them in its handoff; the lane marks all four.
-    4:  [measured(p_cards_current_total),
-         quoted("docs/ui_mockup_lessons.md (the 2026-09-28 mockup data)", "2026-09-29")],
-    5:  [measured(p_thankyou_acknowledge)],
-    6:  [measured(p_explainer_reserve)],
-    7:  [live("2026-09-29", "cpl_funding_config, Scenarios 1 and 2: the timeline's August 2027 "
-              "line and the Minimum Conditions introduction")],
-    # 2026-09-29 (S301): Sam's ask of 28 September, a Jev next step per reference.
-    # Every count on these four cards is recomputed here by kb/_jev_next_steps.py.
-    8:  [measured(p_ccr_no_gate),
-         quoted("kb/receipts/jev_ccr_title_rung_calibration_2026-09-22_s282.json", "2026-09-22")],
-    9:  [measured(p_ccrr_course_pairing)],
-    10: [measured(p_cer_judgment_open),
-         live("2026-09-29", "the database's decision tables: cr_reference_decisions and "
-              "kb_curation are the only two")],
-    11: [measured(p_csr_autb_collision)],
-    # The Sierra Training round-1 port (#1733) left two calls for Sam.
-    12: [measured(p_sierra_try_both_buttons)],
-    # 2026-09-29 (S301): the unit-range pass, the CR Reference's two calls.
-    13: [measured(p_crr_canonical_units)],
-    14: [measured(p_crr_rung4_units_screen)],
-    # 2026-09-29 (S301): the narrated draft comes back to Sam (#1741, #1745).
-    15: [measured(p_video_narrated_unlinked)],
-    16: [measured(p_video_timing_trails)],
-    17: [measured(p_video_sample_unnarrated)],
-    18: [policy()],
-}
+# ⚠️ EACH CARD CARRIES ITS OWN EVIDENCE (S302, 2026-09-29), under the key
+# `evidence`. Until then a dict keyed by the card's POSITION held it, and every
+# pull request that dropped one card renumbered every card after it, so two
+# parallel verdict PRs could not both land without a hand-merged renumbering.
+# The position is still the number Sam replies with; it is simply no longer a
+# key anything else depends on.
+def evidence_of(I):
+    """The evidence each card declares, by the number the sheet shows it under."""
+    return {n: list(it.get("evidence") or []) for n, it in enumerate(I, 1)}
+
 
 PROVENANCE = {
     "measured": "Measured from the repo when this sheet was built.",
@@ -439,7 +409,7 @@ def check_premises(I):
     """Run every measured premise. Returns the cards whose premise has moved."""
     settled = []
     for n, it in enumerate(I, 1):
-        for e in EVIDENCE.get(n, []):
+        for e in it.get("evidence") or []:
             if e["kind"] != "measured":
                 continue
             still_open, detail = e["fn"]()
@@ -477,419 +447,17 @@ def audit_coverage(items):
 def items():
     """The cards: every ask a lane marks, one card each.
 
-    2026-09-27 (S295): Sam answered all eight cards of the 2026-09-27 open-asks
-    sheet that afternoon, and each ruling left with its lane's marker (#1716). The
-    funding lane's asks follow here. The lane had carried them as prose, so the
-    coverage audit never saw them; marking them is what brought them onto a sheet.
+    2026-09-29 (S302): Sam answered all eighteen cards of sheet 3
+    (`2026-09-29-open-asks-3`, `replies/done` through 18 at 12:39Z), and each
+    ruling left with its lane's marker in one pull request. The predicates the
+    cards rested on stay above: a later card may rest on the same premise, and
+    the fixtures in `tests/open_asks_sheet_coverage_test.py` keep each one honest
+    both ways.
+
+    A card is a dict: lane, title, ref, facts, why, rec, chips, and `evidence`,
+    a list of measured() / live() / quoted() / policy() entries.
     """
     I = []
-
-    I.append({
-        'lane': 'implementation-funding',
-        'title': 'The last three sections of your funding tab review',
-        'ref': 'implementation-funding ⓪b · the 2026-09-24 tab review sheet',
-        'facts': (
-            "You reviewed items 1 to 7 of the <a href=\"https://claude.ai/artifact/Ayp39ynE6Yw9cvsvQbH7eu\">"
-            "funding tab review</a> on 24 September, and sessions carried out each change. Items 8 to 10 "
-            "carry no verdict: the <em>Funding window</em> (the year pickers, the Annual and Combined "
-            "switch, and the reading note), the <em>Funding Breakdown</em> (the ledger lines and the total "
-            "for institution awards), and <em>How an allocation is computed</em> (FTES share times priority "
-            "share times the window's funding, then the base, the cap and the noncredit sentences)."),
-        'why': (
-            "All three show on the public explainer, and they are the only sections of the tab you have "
-            "not read through."),
-        'rec': (
-            "<strong>Let the three stand</strong>, and change any line in place on the review sheet if it "
-            "reads wrong. <em>It might be wrong if</em> the Annual view's new year-against-year percent "
-            "reads differently from the Funding window's reading note, which describes it."),
-        'chips': chips(('Let them stand', 'leave'), ('I will review them there', 'review'), CH_LATER),
-    })
-
-    I.append({
-        'lane': 'implementation-funding',
-        'title': "The explainer's footer: keep it whole or split it",
-        'ref': 'implementation-funding ⑧ · funding-model/index.html',
-        'facts': (
-            "The explainer's footer holds two paragraphs: where the figures come from, the committed FTES "
-            "roster for 118 institutions and the tab's saved settings; and the disclaimer, <em>&ldquo;a "
-            "working model for discussion, not adopted policy.&rdquo;</em> Curators can hide or reword every "
-            "section of the page except this footer, by design, and a test pins that. The question from "
-            "9 September: should the first paragraph become editable while the disclaimer stays fixed?"),
-        'why': (
-            "The disclaimer has to show wherever the page shows, and the first paragraph names a roster "
-            "count that will change."),
-        'rec': (
-            "<strong>Keep the footer whole and fixed.</strong> The named sources already appear in the "
-            "institution table's Sources line, which curators can hide. <em>It might be wrong if</em> you "
-            "want to reword the first paragraph, its count of 118 institutions among it, without waiting "
-            "on a code change."),
-        'chips': chips(('Keep it whole', 'keep'), ('Split it', 'split'), CH_LATER),
-    })
-
-    I.append({
-        'lane': 'discipline-crosslist',
-        'title': 'The Exercise Science mix-up beyond the 31',
-        'ref': 'discipline-crosslist item 3 · kb/eths_remint_out/2026-09-28/ruled/report.md',
-        'facts': (
-            "Your 22 September ruling re-mints 31 corroborated identities that the catalog files under "
-            "Ethnic Studies because the colleges' code ES means Exercise Science. Measured on the catalog "
-            "files, the same mix-up reaches 40 stand-alone identities (<em>Adapted Water Aerobics</em>, "
-            "<em>Advanced Techniques and Strategies of Water Polo</em>, <em>Intermediate Trail Running</em>) "
-            "and 3 corroborated rows the title list missed (<em>Self Defense for Women</em>, <em>Intermediate "
-            "Springboard Diving</em>, <em>Physical Education in the Elementary School</em>). Three of these 43 "
-            "have no second signal beside the title and would hold. Another 42 ETHS identities are already "
-            "merged under Kinesiology parents, 11 under the 31 and 31 under KINE, ATHL or PEDS parents; they "
-            "display under the right parent, and only their own ids read ETHS."),
-        'why': (
-            "Until they move, 42 of the 43 file under Ethnic Studies wherever the catalog shows a "
-            "discipline. The re-mint script already carries each group, and it moves none of them "
-            "without your ruling."),
-        'rec': (
-            "<strong>Re-mint the 43 the way the 31 move</strong>, and leave the 42 merged ones on their "
-            "ids. <em>It might be wrong if</em> you want every id in the catalog to name its discipline; "
-            "then the 42 move too."),
-        'chips': chips(('Re-mint the 43', 'remint'), ('All 85, the merged ones too', 'all'),
-                       ('Leave them', 'leave'), CH_LATER),
-    })
-
-    # ── the College Dashboard port's asks (S300, 2026-09-29) ─────────────────
-    I.append({
-        'lane': 'implementation-funding',
-        'title': 'Current Total now names two figures',
-        'ref': 'implementation-funding · cpl_funding.js earnedLineHtml() and the Curr columns',
-        'facts': (
-            "Since the College Dashboard, a Curr column shows the funding an institution qualifies for: "
-            "$0 until it meets all three minimum conditions. Each Priority Outcomes card still reads "
-            "<em>Current Total: $X of $Y Total Possible</em>, your 31 August label, and its $X is what "
-            "institutions have demonstrated, the conditions aside. In the 28 September mockup data the "
-            "cards added to $758,725 while the Statewide row's Curr Total Funds read $338. The download "
-            "carries both, as <em>Current total</em> and <em>Demonstrated</em>."),
-        'why': (
-            "A reader who sees Current Total on a card and Curr Total Funds on the Statewide row will "
-            "expect one figure."),
-        'rec': (
-            "<strong>The cards say Demonstrated</strong>: <em>Demonstrated: $X of $Y Total Possible</em>. "
-            "Demonstrated is the statute's verb, §78093.2(d)(2), and the cards keep reporting the "
-            "outcomes. <em>It might be wrong if</em> you want every figure on screen to be funding a "
-            "college can receive today; then the cards read the qualifying figure too."),
-        'chips': chips(('Cards say Demonstrated', 'demonstrated'), ('Cards read the qualifying figure', 'qualifying'),
-                       ('Both stand as they are', 'both'), CH_LATER),
-    })
-
-    I.append({
-        'lane': 'implementation-funding',
-        'title': "The college's thank-you still promises the CO will acknowledge it",
-        'ref': 'implementation-funding · cpl_funding.js optinAffordanceHtml()',
-        'facts': (
-            "When an administrator confirms participation, the page thanks them: <em>&ldquo;The "
-            "Chancellor&rsquo;s Office will acknowledge it; your college is counted as participating in "
-            "the meantime.&rdquo;</em> The form's note says their name and email are recorded "
-            "<em>&ldquo;for the Chancellor&rsquo;s Office to acknowledge.&rdquo;</em> Your 28 September "
-            "ruling removed Mark confirmed and the CO's Confirm, and the review lane already offers only "
-            "Reject on a self-attested request (S298's port). No acknowledgment step remains."),
-        'why': "Colleges read both lines, and the promised step no longer exists.",
-        'rec': (
-            "<strong>Say what happens.</strong> The thank-you: <em>&ldquo;Thank you. Your participation "
-            "is confirmed, and your college counts as participating from today.&rdquo;</em> The note: "
-            "<em>&ldquo;Your name and email are recorded for the Chancellor&rsquo;s Office and are not "
-            "shown publicly.&rdquo;</em> <em>It might be wrong if</em> the Chancellor's Office will write "
-            "to each college that confirms; then the thank-you should say so."),
-        'chips': chips(('Use these words', 'use'), ('Keep as is', 'keep'), CH_LATER),
-    })
-
-    I.append({
-        'lane': 'implementation-funding',
-        'title': "The explainer's Step two note and the table's heading",
-        'ref': 'implementation-funding · funding-model/index.html (public)',
-        'facts': (
-            "The public explainer's Step two note reads: <em>&ldquo;Each institution keeps its full award "
-            "while it meets the baseline. The model reserves the funding an institution demonstrates for "
-            "that institution, and the institution receives it once it confirms local "
-            "participation.&rdquo;</em> Three words have moved: Minimum Conditions replaced baseline, "
-            "your ruling took every reserve figure off the screen, and funding now waits on all three "
-            "conditions rather than confirmation alone. The table's heading, <em>Max award by "
-            "institution</em>, now sits over the Curr columns as well."),
-        'why': "The explainer is the page colleges read, and public wording comes to you before it ships.",
-        'rec': (
-            "<strong>The note:</strong> <em>&ldquo;Every institution keeps its full max award. The model "
-            "counts every outcome an institution demonstrates toward that award, and the institution "
-            "receives the funding once it meets all three minimum conditions.&rdquo;</em> <strong>The "
-            "heading:</strong> <em>Funding by institution</em>. <em>It might be wrong if</em> you want the "
-            "note to name the three conditions; they are listed just above it."),
-        'chips': chips(('Use both', 'both'), ('The note only', 'note'), ('Keep as is', 'keep'), CH_LATER),
-    })
-
-    I.append({
-        'lane': 'implementation-funding',
-        'title': 'Two of your saved texts use words you have since retired',
-        'ref': 'implementation-funding · cpl_funding_config, Scenarios 1 and 2',
-        'facts': (
-            "Both scenarios store the same two lines. The timeline's August 2027 entry reads "
-            "<em>&ldquo;Undispersed Funds Rolled to Year 2 and Releveled&rdquo;</em>; on 25 September you "
-            "ruled that year-one funding carries forward to the same college and is not releveled. The "
-            "Minimum Conditions introduction reads <em>&ldquo;Baseline outcomes to accrue implementation "
-            "funding:&rdquo;</em>; you replaced baseline with Minimum Conditions on 28 September, and "
-            "accrue is the banking sense your vocabulary map retires. The code's defaults already read "
-            "correctly; your saved text overrides them."),
-        'why': "Both lines show on the public explainer, in both scenarios.",
-        'rec': (
-            "<strong>A session writes both, in both scenarios, with a receipt of the old text:</strong> "
-            "<em>&ldquo;Remaining Funds Carried Forward to Year 2&rdquo;</em> and <em>&ldquo;Minimum "
-            "conditions to qualify for implementation funding:&rdquo;</em> <em>It might be wrong if</em> "
-            "you would rather edit them yourself on the tab; then choose that."),
-        'chips': chips(('Write both for me', 'write'), ("I'll edit them on the tab", 'self'), CH_LATER),
-    })
-
-    # ── Jev: a next step per reference (S301, Sam's ask of 2026-09-28) ───────
-    # Every number below is measured at build time (kb/_jev_next_steps.py), so a
-    # card cannot quote a count that has moved while the sheet waited.
-    N = _next_steps()
-    cc, cr, ce, cs = N["ccr"], N["ccrr"], N["cer"], N["csr"]
-    from _build_crosslist_decision_sheet import measure as crosslist_measure
-    kind_c = crosslist_measure()["kinds"]["C"]
-
-    I.append({
-        'lane': 'common-cr-reference',
-        'title': 'The course reference: ask where a course belongs',
-        'ref': 'common-cr-reference · the CCR ladder · kb/_jev_next_steps.py',
-        'facts': (
-            f"On 22 September you ruled {cc['scored']} of the 50 title-rung cards: {cc['moves']} moves and "
-            f"{cc['keeps']} keeps. Jev ranked them well (AUC {cc['auc']:.3f}), and no cut-off separates the two: "
-            f"your lowest-scored move sat at {cc['lowest_move_p']:.2f} and your highest-scored keep at "
-            f"{cc['highest_keep_p']:.2f}. Jev was asked whether a title matches its discipline, and each move you "
-            "made answered where the course belongs: Photography out of Art, Theater out of Music twice, Ethnic "
-            "Studies out of Sociology, Office Technology out of Computer Information Systems. Measured today, the "
-            f"course's own member colleges name {cc['destinations_named']} of the {cc['destinations']} destinations "
-            f"you gave, and their plurality alone picks {cc['plurality_matches']} of them (Photography, 7 members "
-            "against Art's 5), so the title and the description settle the rest. The cross-list sheet of 22 "
-            f"September holds the population this question fits: {kind_c:,} identities whose member colleges "
-            "genuinely disagree (its kind C)."),
-        'why': (
-            "The course reference is the largest of the four. A sitting spent on the title question calibrates "
-            "nothing, because your answers are about placement."),
-        'rec': (
-            "<strong>Ask where the course belongs.</strong> Jev chooses among the disciplines the course's member "
-            "colleges name, with the title and the description as evidence, and a session scores that choice "
-            "against your 26 answers before you see a card; it costs cents and writes nothing. If it agrees with "
-            f"you, the next sitting takes 50 of the {kind_c:,}, most member rows first, each card offering Keep, "
-            "Move or Cross-list with Jev's choice selected. <em>It might be wrong if</em> you want the ladder as "
-            "designed first: rung 2 re-asks the title question with descriptions added."),
-        'chips': chips(('Ask where it belongs', 'placement'), ('Keep the ladder', 'ladder'), CH_LATER),
-    })
-
-    I.append({
-        'lane': 'common-cr-reference',
-        'title': 'The credit recommendation reference: a second way to pair wordings',
-        'ref': 'common-cr-reference · kb/_typesafe_cr_trial.py build_pairs() · kb/_jev_next_steps.py',
-        'facts': (
-            "Your 51 verdicts of 20 September gave this reference the only measured gate: above 0.85, Jev agreed "
-            "with you 25 times in 25. Those pairs came from grouping wordings under a shared published line, C-ID "
-            f"or course identity, and that way in is spent: {cr['anchored_pairs']} pairs, 51 of them ruled. Of the "
-            f"{cr['groups']:,} recommendation groups, {cr['rung5_groups']:,} stand alone. Pairing groups that "
-            f"articulate to the same course identity yields {cr['course_pairs']} pairs over {cr['course_groups']} "
-            f"groups, {cr['course_rung5_groups']} of them among the stand-alones ({cr['course_rung5_rows']:,} "
-            f"articulation rows), nearly twice the {cr['anchored_rows']:,} rows your first sitting settled. One "
-            "guard comes first: a credential that articulates every line to one course, as POST does to AJ 110, "
-            "pairs unrelated lines, and the credential's course count is the test that catches it. Another "
-            f"{cr['unanchored_clusters']} small clusters share a wording with no anchor ({cr['unanchored_groups']} "
-            f"groups, {cr['unanchored_rows']} rows)."),
-        'why': (
-            "This is the one reference with a measured gate, so each verdict here settles the most rows: about 29 "
-            "on the first sitting."),
-        'rec': (
-            "<strong>Pair by course, with the course-count guard,</strong> and run Jev on the new pairs, the "
-            f"{cr['unanchored_clusters']} unanchored clusters and the {cr['anchored_pairs'] - 51} newer anchored "
-            "pairs under the 0.85 gate. A sheet of 40 to 60 then comes to you, most rows first, with Jev's "
-            "proposal selected. <em>It might be wrong if</em> you would rather finish the head by hand: the top 50 "
-            "wordings carry half of all articulations."),
-        'chips': chips(('Pair by course', 'course'), ('Head by hand first', 'head'), CH_LATER),
-    })
-
-    by = ce['jev_by_rule']
-    I.append({
-        'lane': 'common-cr-reference',
-        'title': 'The exhibit reference: the same questions as July, and nowhere to keep the answers',
-        'ref': 'common-cr-reference · ' + (ce['file'] or 'kb/trail_crew_out/'),
-        'facts': (
-            "The exhibit scanner ran today for the first time since 10 July. Its findings fell from 239 to "
-            f"{ce['findings']}, because July's clean renames cleared the roman numerals and the duplicate titles. "
-            f"The {ce['jev_askable']} that need judgment are the ones July found: {by.get('issuer_variant_cluster', 0)} "
-            "issuer names that look like spellings of one organization (<em>International Code Council</em> "
-            f"beside <em>International Code Council (ICC)</em>), {by.get('level_notation_twins', 0)} titles that "
-            f"differ only in how the level is written, {by.get('issuer_family_mixed', 0)} credential families "
-            f"carrying more than one issuer, and {by.get('bare_vs_leveled', 0)} bare titles beside leveled "
-            f"siblings. The other {ce['findings'] - ce['jev_askable']} are mechanical under your canon. The exhibit "
-            "reference has no decisions store, so a ruling has nowhere to live, and a new store is a write surface "
-            "that goes through Governance first (Rule 10(a3))."),
-        'why': (
-            "The exhibit reference is the vocabulary MAP will prompt with at data entry, so each spelling left "
-            "standing becomes a fork in tomorrow's data."),
-        'rec': (
-            "<strong>Governance maps a decisions store first.</strong> Jev then reads the "
-            f"{ce['jev_askable']} as a calibration sitting, with no gate yet, and they come to you on one sheet "
-            "with each issuer name checked against the credential registry you shared on 16 September. The "
-            "mechanical fixes go through the clean-rename path July's did, under a receipt. <em>It might be wrong "
-            "if</em> you want the issuer names settled against the registry before any sitting; the national "
-            "sample holds 974 of its 6,738 credentials."),
-        'chips': chips(('Store first, then the sitting', 'store'), ('Registry first', 'registry'), CH_LATER),
-    })
-
-    jb = cs['jev_by_rule']
-    autb = next((c for c in cs['collisions'] if c['code'] == 'AUTB'), {})
-    I.append({
-        'lane': 'common-cr-reference',
-        'title': 'The subject reference: the backlog was a misread, and one code names two disciplines',
-        'ref': 'common-cr-reference · ' + (cs['file'] or 'kb/csr_out/') + ' · PR #1735',
-        'facts': (
-            "The subject scanner read the anchor's old key format, so it compared each anchor's local code and "
-            "never its identifier. Fixed today (#1735): 121 of its 136 questions for Jev were anchors whose "
-            "identifiers already carry the canonical code, or languages that keep their own code under Foreign "
-            "Languages by design. Your FTVE ruling of 3 September also read as a collision and now reads as "
-            f"ruled. What remains is {cs['jev_askable']} questions for Jev ({jb.get('cs6_weak_mnemonic', 0)} codes "
-            "that are hard to recognize from the discipline's name, and Commercial Music and Health Information "
-            "Technology leaving an official CCN prefix unused) and one real collision. AUTB is Auto Body "
-            f"Technology's code ({autb.get('mids_b') or 221} identities), and Agricultural Business and Related "
-            "Services took it from its own two: <em>Supervision and Management in Agriculture</em> carries "
-            "AUTB M1006 because the subject map reads its college's two-letter code AB as Auto Body, and "
-            "<em>Import Body Customizing</em>, an auto body course, is filed under Agricultural Business."),
-        'why': (
-            "Every new identifier is minted from these codes, so a shared code reaches every course minted after "
-            "it. Your two-letter gate of 22 September stops new mints from repeating this; these two stay until "
-            "they move."),
-        'rec': (
-            "<strong>File <em>Import Body Customizing</em> under Auto Body Technology, give Agricultural Business "
-            "its own code, AGAB, beside the agriculture umbrella's other codes, and re-mint <em>Supervision and "
-            "Management in Agriculture</em> under it through the re-mint playbook.</strong> The "
-            f"{cs['jev_askable']} then go to Jev and come to you ranked on a short sheet. <em>It might be wrong "
-            "if</em> Agricultural Business belongs inside Agriculture itself; then its course re-mints under AGRI."),
-        'chips': chips(('As proposed', 'proposed'), ('Fold it into Agriculture', 'fold'), CH_LATER),
-    })
-
-    # ── Sierra Training's round-1 port left two calls (S300, #1733) ──────────
-    I.append({
-        'lane': 'sierra-retrieval-corpus',
-        'title': 'Sierra Training: the Try it in buttons',
-        'ref': 'sierra-retrieval-corpus · sierra_training.js tryGroup() and sierraHost() · #1733',
-        'facts': (
-            "Round 1 shipped on 29 September as you approved it: <em>Try it in: Sierra · My College</em>. The "
-            "Sierra button opens the tab the side menu calls CPL Assistant. Where a site hides that tab, the "
-            "Sierra button already falls back to My College, which mounts the same assistant, so both buttons "
-            "open the same place there."),
-        'why': (
-            "A reader who looks for a Sierra tab in the side menu finds CPL Assistant, and two buttons that open "
-            "one place read as a fault."),
-        'rec': (
-            "<strong>Keep the word Sierra, and show only My College where CPL Assistant is hidden.</strong> The "
-            "assistant is Sierra in both tabs. <em>It might be wrong if</em> you want each button to name the tab "
-            "it opens; then the first reads CPL Assistant."),
-        'chips': chips(('As proposed', 'proposed'), ('Name it CPL Assistant', 'rename'), CH_LATER),
-    })
-
-    # 2026-09-29 (S301): the unit-range pass (Sam, 2026-09-27: units never split
-    # an identity) left two naming and merging calls in the CR Reference.
-    U = _crr_units()
-    I.append({
-        'lane': 'common-cr-reference',
-        'title': 'The name of a recommendation whose wordings award different units',
-        'ref': 'common-cr-reference · kb/_build_cr_reference.py, the naming cascade · #1744',
-        'facts': (
-            "The CR Reference names each group by the cascade you ruled on 13 August. %d groups join wordings "
-            "that award different units, and %d of them take their name from a wording, which states its own "
-            "figure: the group named <em>3 or 4 hours in Engine Performance</em> joins wordings at 2, 3 or 4, 4 "
-            "and 5 units. Since 29 September the line beside each name states the range, <em>2–5 units</em>."
-            % (U["vary"], U["worded"])),
-        'why': (
-            "Your rule of 27 September gives the form, <em>Orienteering (1–3 units)</em>, and a name that states "
-            "one figure contradicts the range beside it."),
-        'rec': (
-            "<strong>Name these groups by topic and range: Engine Performance (2–5 units).</strong> A group named "
-            "by an official title keeps it, and the ten you confirmed are all of that kind. <em>It might be wrong "
-            "if</em> you want a published statewide wording kept as written (%d of the groups); then only the "
-            "names taken from the most colleges' wording change." % U["published"]),
-        'chips': chips(('As proposed', 'proposed'), ('Keep the statewide wording', 'keep_published'), CH_LATER),
-    })
-    I.append({
-        'lane': 'common-cr-reference',
-        'title': 'Units as a reason to hold a merge',
-        'ref': 'common-cr-reference · kb/_build_cr_reference.py, the rung-4 units screen',
-        'facts': (
-            "A rung-4 group joins wordings whose topics match exactly. When their units differ, the builder holds "
-            "the group for a curator instead of merging it, and %d groups wait for that reason alone: "
-            "<em>Calculus I</em>, written at 4 and 5 units by 16 colleges, is one. The stronger rungs already "
-            "merge across units." % U["held"]),
-        'why': (
-            "The screen predates your rule of 27 September. While it holds, a recommendation your rule makes one "
-            "stays split until a curator confirms it."),
-        'rec': (
-            "<strong>Retire the units screen, so these groups merge and show their range.</strong> The level, "
-            "Honors, lab, sport and gender screens stay. <em>It might be wrong if</em> you want a person to see "
-            "every unit spread before a merge; then the screen stays and the held card shows the range."),
-        'chips': chips(('As proposed', 'proposed'), ('Keep the screen', 'keep'), CH_LATER),
-    })
-
-    # 2026-09-29 (S301): the narrated draft, brought back as Sam asked on 27
-    # September, with the four calls its cue pass left.
-    I.append({
-        'lane': 'implementation-funding',
-        'title': 'The narrated draft of CPL Funding in Motion',
-        'ref': 'implementation-funding · prototype/funding_video · #1741 · #1745',
-        'facts': (
-            "Draft 3 is built, three minutes long, with each reveal cued to the word that names it: 33 of 39 land "
-            "on their word and 37 within a quarter second. The seventh scene now says <em>minimum conditions</em> "
-            "in the voice and on screen, as do the two introductions the explainer links. The explainer does not "
-            "link the narrated cut. Cards 16 to 18 hold what the draft still leaves open."),
-        'why': "Your call of 27 September: the draft comes back to you before the explainer links it.",
-        'rec': (
-            "<strong>Make the changes on cards 16 and 17, then bring draft 4 back; the explainer links it once you "
-            "approve.</strong> <em>It might be wrong if</em> draft 3 already reads well to you; then it is linked "
-            "as it stands."),
-        'chips': chips(('As proposed', 'proposed'), ('Link draft 3 as it stands', 'link'), CH_LATER),
-    })
-    I.append({
-        'lane': 'implementation-funding',
-        'title': 'The Timing line that trails its words',
-        'ref': 'implementation-funding · prototype/funding_video/narration_s1.json, the Timing scene',
-        'facts': (
-            "In the Timing scene the voice opens with the full two-year amount, and the picture shows that line "
-            "after the two release dates, so it appears 7.6 seconds after its words. The picture keeps the "
-            "introductions' order, so the fix belongs to the voice."),
-        'why': "It is the one line in the draft that arrives well after the voice names it.",
-        'rec': (
-            "<strong>Re-read the Timing scene with its first two sentences swapped</strong>, so the voice names the "
-            "release dates first and the two-year amount second. <em>It might be wrong if</em> you want the "
-            "two-year amount heard first; then the narrated cut shows it ahead of the dates."),
-        'chips': chips(('As proposed', 'proposed'), ('Leave it', 'leave'), CH_LATER),
-    })
-    I.append({
-        'lane': 'implementation-funding',
-        'title': "Sample College's target, shown and never spoken",
-        'ref': 'implementation-funding · prototype/funding_video/narration_s1.json, the Targets scene',
-        'facts': (
-            "The Targets scene shows Sample College's Access target, 44.3 FTES behind $112,484, while the voice "
-            "speaks of targets in general. The Maximum allocation scene names Sample College's figure aloud."),
-        'why': "A figure on screen that the voice passes over reads as a gap to a viewer who follows by ear.",
-        'rec': (
-            "<strong>Add one sentence after the quarter-system line: <em>Sample College's Access target, for "
-            "example, is about forty-four FTES, behind about a hundred twelve thousand dollars.</em></strong> "
-            "<em>It might be wrong if</em> the card is there to be read rather than heard; then it stays silent."),
-        'chips': chips(('As proposed', 'proposed'), ('Leave it silent', 'leave'), CH_LATER),
-    })
-    I.append({
-        'lane': 'implementation-funding',
-        'title': 'The pacing choices in draft 3',
-        'ref': 'implementation-funding · prototype/funding_video/README.md, the cues',
-        'facts': (
-            "Where the voice and the picture disagree, draft 3 chose. The $35 million counter lands on "
-            "<em>million</em>, and each barrier keeps its own pace. The years 2026–2028 and <em>One-time funding "
-            "for 2026–27</em> appear about 3 and 3.7 seconds before the voice names them. The Minimum conditions "
-            "stage waits about 3 seconds for its heading, which types in on the words. Long stretches slow the "
-            "eased motion, and the arrow can point about 2 seconds before its figure appears."),
-        'why': "None of these breaks your rule of 27 September, and each has a one-line fix if one bothers you.",
-        'rec': (
-            "<strong>Keep them all.</strong> <em>It might be wrong if</em> one of them catches your eye when you "
-            "watch; name it in the note and it changes in draft 4."),
-        'chips': chips(('Keep them all', 'proposed'), ('Change some (name them in the note)', 'change'), CH_LATER),
-    })
     return I
 
 
@@ -898,7 +466,8 @@ def build(check_only=False):
     found, missing, stale, dead = audit_coverage(I)
 
     # ── every card declares its evidence ─────────────────────────────────────
-    undeclared = [n for n in range(1, len(I) + 1) if not EVIDENCE.get(n)]
+    EV = evidence_of(I)
+    undeclared = [n for n in range(1, len(I) + 1) if not EV[n]]
     if undeclared:
         print("REFUSING TO BUILD — these cards declare no evidence: %s\n"
               "Every card says what its premise rests on: measured(), live(), "
@@ -948,7 +517,7 @@ def build(check_only=False):
     if check_only:
         kinds = {}
         for n in range(1, len(I) + 1):
-            for e in EVIDENCE[n]:
+            for e in EV[n]:
                 kinds[e["kind"]] = kinds.get(e["kind"], 0) + 1
         print(f"coverage ok — {len(I)} items across {len(lanes)} lanes; "
               f"{len(found)} lane(s) carry a marker, {len(NO_OPEN_ASK)} dismissed by name")
@@ -957,17 +526,14 @@ def build(check_only=False):
         return 0
 
     framing = (
-        "Twelve questions wait on you. Cards 1 to 7 are the 29 September sheet's, unchanged: you pressed "
-        "Complete there without touching a card, so none of them is reviewed yet (cards 1 and 2 are also "
-        "cards 3 and 4 of the 27 September sheet; answer them once). Cards 8 to 11 answer your ask of 28 "
-        "September, a next step for each Jev reference: courses, credit recommendations, exhibits and "
-        "subjects. Card 12 is Sierra Training's Try it in buttons.")
+        "%d question%s wait%s on you. Your eighteen answers on the 29 September sheet are carried out "
+        "in their lanes." % (len(I), "" if len(I) == 1 else "s", "s" if len(I) == 1 else ""))
     counts = (f"{len(I)} items across {len(lanes)} lanes · "
               f"every lane carrying an open ask is covered, by build-time audit")
 
     # The reader sees where each claim came from, in their own words.
     I = [dict(it, facts=it["facts"]
-              + '<p class="prov"><em>' + m.E(provenance_line(EVIDENCE[n]))
+              + '<p class="prov"><em>' + m.E(provenance_line(EV[n]))
               + '</em></p>')
          for n, it in enumerate(I, 1)]
 

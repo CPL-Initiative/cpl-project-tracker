@@ -295,7 +295,14 @@ accumulate*; this one makes the sheet the **standing form of the backlog** —
 anything waiting on him belongs on it, and it is rebuilt and handed over rather
 than held back for a quorum.
 
-**Builder:** `kb/_build_open_asks_decision_sheet.py` →
+**Builder:** `kb/_build_open_asks_decision_sheet.py`. ⭐ **Sheet 3 is answered and
+carried into the lanes (S302, 2026-09-29):** Sam completed all eighteen cards at 12:39Z
+(`through: "18"`, each his own call; 14 and 15 stood as proposed under the high-water
+rule), and every ruling left with its lane's marker in one pull request, so the builder
+holds no card and writes no sheet until a lane marks a new ask. The next sheet builds as
+`2026-09-29-open-asks-4`, a fresh store. ⭐ **Each card carries its own `evidence`
+list** (S302); a table keyed by position renumbered every card after a dropped one, so
+parallel verdict PRs collided. Sheet 3 was
 `docs/visuals/2026-09-29-open-asks-3.html` (eighteen cards: sheet 2's twelve at the same
 positions, then two unit-range calls and the narrated draft's four), published S301 at
 https://claude.ai/artifact/XzQMks96QszUDAyXADP3Ag (`SHEET_ID` `2026-09-29-open-asks-3`, a fresh
