@@ -4,7 +4,7 @@
   "supabase_tables": 85,
   "rpcs": 31,
   "edge_functions": 5,
-  "file_datasets": 538,
+  "file_datasets": 539,
   "external_services": 147,
   "consumers": 379,
   "workflows": 37,
@@ -3972,7 +3972,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 110
+     "line": 114
     }
    ],
    "producers": [
@@ -9303,7 +9303,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 117
+     "line": 121
     },
     {
      "id": "script:kb/_curation_01.py",
@@ -10056,7 +10056,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 125
+     "line": 188
     },
     {
      "id": "script:kb/_kin_pe_pass2.py",
@@ -15190,6 +15190,19 @@
    "main_committers": []
   },
   "file:tests/course_title_mojibake_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/csr_trail_rules_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -20499,6 +20512,7 @@
     "tests/supabase_table_grants_test.py",
     "tests/mid_short_code_gate_test.py",
     "tests/orphan_parent_worklist_test.py",
+    "tests/csr_trail_rules_test.py",
     "kb/_build_open_asks_decision_sheet.py",
     "tests/open_asks_sheet_coverage_test.py",
     "tests/supabase_sql_guard_test.py",

@@ -17,6 +17,8 @@ CSR CANON (encoded rules)
   CS2 uniqueness    — one canonical per discipline; no two disciplines share a
                       canonical (umbrella disciplines FL**/KINE+ATHL are the
                       documented exception at the IDENTITY layer, not here).
+                      A ruled fan-in, both entries naming each other in
+                      `fan_in_with` (FTVE, Sam 2026-09-03), is exempt.
   CS3 no-squat      — a canonical MUST NOT equal an official CCN subject prefix
                       while meaning something different (semantic squatting).
                       Official prefixes come from the COCI extract's CCN column
@@ -38,8 +40,10 @@ CSR CANON (encoded rules)
                       producer consults is decoration.
   CS9 anchor        — common_courses.json (CURATED ANCHOR, firewalled) M-ID
                       entries: keys in the dead pre-remint `M-ID SUBJ NNN`
-                      format and subjects diverging from the CSR canonical are
-                      staged evidence for the promote-time re-key.
+                      format and id prefixes diverging from the CSR canonical
+                      (umbrellas exempt) are staged evidence for the
+                      promote-time re-key. The `subject` field is the modal
+                      LOCAL code and never the comparison.
 
 Usage:  python3 kb/_csr_trail.py            # writes kb/csr_out/<date>/findings.{json,csv}
 """
@@ -121,6 +125,65 @@ def load_official_ccn_prefixes():
     return prefixes
 
 
+def cs2_dups(disciplines):
+    """Pairs of disciplines sharing one canonical: [(first, second, code)].
+
+    A RULED FAN-IN IS NOT A DUPLICATE. Sam's 2026-09-03 rulings (item 13) put
+    Film and Media Studies and Media Production on the C-ID code FTVE on
+    purpose: two MQ disciplines, both names kept, one Common SUBJ. The registry
+    records it on both entries (`fan_in_with`, `_fan_in_note`), and Rule 7 names
+    the fan-in beside the umbrella as a structural exception. Only a MUTUAL
+    declaration exempts a pair, so one entry cannot silence a collision alone."""
+    seen, out = {}, []
+    for disc, e in sorted(disciplines.items()):
+        c = e.get("canonical_subj4") or ""
+        if c in seen:
+            first = seen[c]
+            mine = e.get("fan_in_with") or []
+            theirs = (disciplines.get(first) or {}).get("fan_in_with") or []
+            if not (first in mine and disc in theirs):
+                out.append((first, disc, c))
+        else:
+            seen[c] = disc
+    return out
+
+
+DEAD_ANCHOR_KEY = re.compile(r"M-ID ([A-Z/&\- ]+?) \d")
+
+
+def cs9_anchor(anchor, disciplines):
+    """The curated anchor's M-ID entries against the CSR: (dead, diverged).
+
+    ⚠️ COMPARE THE IDENTITY, NEVER THE `subject` FIELD. The anchor was re-keyed
+    from `M-ID SUBJ NNN` to `SUBJ4 M####`, and the old rule, finding no dead
+    key to read, fell back to `rec["subject"]` -- the MODAL LOCAL code colleges
+    typed (`ACCT` on `BUSI M11TR`, `MUS` on the 23 `MUSI` rows). On 2026-09-29
+    that reported 108 anchors as re-mint questions whose ids already carried the
+    canonical, and counted all 218 M-ID anchors as dead-format when 3 were.
+
+    Umbrella disciplines are the documented exception at the identity layer
+    (the module docstring's CS2 note): a language keeps its own code under
+    Foreign Languages, ATHL sits under Kinesiology. CS6 skips them for the same
+    reason, and so does this rule."""
+    dead, diverged = [], []
+    for key, rec in anchor.items():
+        if not (isinstance(rec, dict) and rec.get("id_system") == "M-ID"):
+            continue
+        m = DEAD_ANCHOR_KEY.match(key)
+        if m:
+            dead.append(key)
+            prefix = m.group(1).strip()
+        else:
+            prefix = key.split()[0] if key.split() else ""
+        disc = rec.get("discipline")
+        if not disc or disc in UMBRELLA_DISCIPLINES:
+            continue
+        canon = (disciplines.get(disc) or {}).get("canonical_subj4")
+        if canon and prefix and prefix != canon:
+            diverged.append((key, prefix, canon))
+    return dead, diverged
+
+
 def main():
     reg = json.load(open(os.path.join(HERE, "discipline_canonical_subj4.json")))
     disciplines = reg["disciplines"]
@@ -139,15 +202,13 @@ def main():
         })
 
     # ── CS1 + CS2 ──
-    seen = {}
     for disc, e in sorted(disciplines.items()):
         c = e.get("canonical_subj4") or ""
         if not re.fullmatch(r"[A-Z]{4}", c):
             add("cs1_format", disc, "canonical_subj4=%r violates ^[A-Z]{4}$" % c, False)
-        if c in seen:
-            add("cs2_dup", "%s ↔ %s" % (seen[c], disc),
-                "both map to %s" % c, True, group="dup:%s" % c)
-        seen[c] = disc
+    for first, disc, c in cs2_dups(disciplines):
+        add("cs2_dup", "%s ↔ %s" % (first, disc),
+            "both map to %s" % c, True, group="dup:%s" % c)
 
     # ── CS3 squat / CS4 alignment ──
     twins = {  # official prefix -> substring the discipline name must contain to be its twin
@@ -221,24 +282,15 @@ def main():
             True, suggestion="wire the seeder: after discipline resolution, key new M-IDs under the canonical SUBJ4")
 
     # ── CS9 anchor ──
-    dead, diverged = [], []
-    for key, rec in anchor.items():
-        if isinstance(rec, dict) and rec.get("id_system") == "M-ID":
-            m = re.match(r"M-ID ([A-Z/&\- ]+?) \d", key)
-            subj = (m.group(1).strip() if m else rec.get("subject") or "")
-            dead.append(key)
-            disc = rec.get("discipline")
-            canon = (disciplines.get(disc) or {}).get("canonical_subj4") if disc else None
-            if canon and subj and subj != canon:
-                diverged.append((key, subj, canon))
+    dead, diverged = cs9_anchor(anchor, disciplines)
     if dead:
         add("cs9_anchor_dead_format", "common_courses.json",
             "%d anchor entries keyed in the dead pre-remint 'M-ID SUBJ NNN' format" % len(dead),
             True, suggestion="promote-time re-key plan (Rule-7); anchor stays firewalled until then",
             group="anchor")
-    for key, subj, canon in diverged[:200]:
+    for key, prefix, canon in diverged[:200]:
         add("cs9_anchor_subj_diverge", key,
-            "anchor subject %s vs CSR canonical %s" % (subj, canon), True,
+            "anchor id prefix %s vs CSR canonical %s" % (prefix, canon), True,
             suggestion="fold to %s at promote-time" % canon, group="anchor")
 
     os.makedirs(OUT_DIR, exist_ok=True)
