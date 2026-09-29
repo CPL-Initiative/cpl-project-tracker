@@ -350,7 +350,6 @@
     ".cplfund-goal-key { font-weight: 700; }",
     ".cplfund-goal-cite { font-size: .7rem; font-weight: 400; color: var(--text-muted); letter-spacing: .02em; }",
     ".cplfund-goal-quote { margin: 0 0 10px; padding: 6px 10px; border-left: 3px solid var(--border-strong); background: var(--surface-opaque); font-size: .8rem; font-style: italic; color: var(--text-body); border-radius: 0 4px 4px 0; }",
-    ".cplfund-goal-axes { display: grid; gap: 10px; }",
     ".cplfund-goal-ax h5 { margin: 0 0 4px; font-size: .72rem; text-transform: uppercase; letter-spacing: .05em; color: var(--text-muted); font-weight: 700; }",
     ".cplfund-goal-ax ul { margin: 0; padding-left: 18px; font-size: .8rem; line-height: 1.6; }",
     ".cplfund-goal-ax p { margin: 0; font-size: .8rem; line-height: 1.55; }",
@@ -377,11 +376,6 @@
     ".cplfund-goaltable .cplfund-goal-ax { font-size: .8rem; line-height: 1.55; }",
     ".cplfund-goaltable .cplfund-goal-ax ul { margin: 0; padding-left: 18px; }",
     // ── the evidence strip inside a band ──
-    ".cplfund-band-evid { margin: 10px 2px 0; padding-top: 8px; border-top: 1px dashed var(--border-strong); }",
-    ".cplfund-band-evid h5 { margin: 0 0 6px; font-size: .72rem; text-transform: uppercase; letter-spacing: .05em; color: var(--text-muted); font-weight: 700; }",
-    ".cplfund-evrow { font-size: .84rem; line-height: 1.55; margin: 5px 0; }",
-    ".cplfund-evk { font-weight: 700; color: var(--text-strong); }",
-    ".cplfund-evtext { color: var(--text-body); }",
     ".cplfund-evwhy { display: inline; }",
     ".cplfund-evwhy > summary { display: inline; cursor: pointer; font-size: .78rem; color: var(--link,var(--accent-link)); margin-left: 4px; }",
     ".cplfund-evwhy > summary::-webkit-details-marker { display: none; }",
@@ -390,7 +384,10 @@
     ".cplfund-evwhy .cplfund-goal-limit { display: block; margin-top: 6px !important; }",
     // The superscript marker. Underlined AND raised, so it is not colour alone,
     // and it keeps a real focus ring — it is a link, and a curator tabs to it.
-    ".cplfund-goalsup { font-size: .8em; vertical-align: super; line-height: 0; color: var(--link,var(--accent-link)); text-decoration: underline; text-decoration-style: dotted; margin-left: 1px; }",
+    // 24px target (WCAG 2.2 SC 2.5.8): the raised letter measured 4x12. The padding
+    // is the hit area and the negative margins give its width back, so the
+    // letter keeps its place in the line.
+    ".cplfund-goalsup { font-size: .8em; vertical-align: super; line-height: 0; color: var(--link,var(--accent-link)); text-decoration: underline; text-decoration-style: dotted; padding: 7px 11px; margin: 0 -11px 0 -10px; }",
     ".cplfund-goalsup:focus-visible { outline: 2px solid var(--navy-secondary); outline-offset: 2px; border-radius: 2px; }",
     "@media (max-width: 560px) { .cplfund-goals { grid-template-columns: 1fr; } }",
     ".cplfund-prio .p { background: var(--surface-subtle); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; }",
@@ -446,7 +443,8 @@
     ".cplfund-prio .p.cplfund-card-confirm { align-self: start; min-height: 0; }",
     ".cplfund-prio .p.cplfund-dropover { box-shadow: inset 0 0 0 2px var(--navy-secondary); }",
     ".cplfund-yearsync { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin: 0 0 10px; font-size: .8rem; }",
-    ".cplfund-yearsync label { display: inline-flex; align-items: center; gap: 5px; }",
+    // 24px target: the label is the checkbox's hit area, and it measured 20.4px.
+    ".cplfund-yearsync label { display: inline-flex; align-items: center; gap: 5px; min-height: 24px; }",
     ".cplfund-prio-title-input { display: inline-block; width: auto; min-width: 100px; max-width: 210px; font-weight: 700; color: var(--navy-primary); border: none; border-bottom: 1px dashed var(--border-strong); background: transparent; font-size: 1rem; padding: 0 2px; }",
     ".cplfund-prio-title-input:focus { border-bottom-color: var(--gold-accent); background: var(--surface-subtle); }",
     // Recommended-strategies list per priority box.
@@ -476,10 +474,6 @@
     "  min-height: 24px; min-width: 0; max-width: 100%; flex: 0 1 auto; color: var(--text-strong); background: var(--surface-opaque);",
     "  border: 1px solid var(--border-strong); border-radius: 6px; padding: 2px 6px; }",
     ".cplfund-cardgoal-quote { flex-basis: 100%; margin: 2px 0 0; font-size: .82rem; font-style: italic; color: var(--text-muted); }",
-    ".cplfund-cardgoal-src { flex-basis: 100%; font-size: .76rem; color: var(--text-muted); }",
-    /* Words, not colour: "Set by the CPL team" and "Derived from the metric"
-       differ by what they say, so neither needs a hue to be told apart. */
-    ".cplfund-cardgoal-set { color: var(--text-body); font-weight: 600; }",
     "@media (max-width: 560px) { .cplfund-cardgoal-lab { margin-left: 0; flex-basis: 100%; } }",
     /* ── the card head (2026-09-24): number and outcome in one heading, the
        law on one line under it. Same text/background pairs as the heading and
@@ -640,7 +634,6 @@
     // slide UNDER, never through; the th outranks both.
     ".cplfund-table th { z-index: 3; }",
     ".cplfund-table tbody tr.cplfund-systemrow td { position: sticky; top: var(--cf-pin1, auto); z-index: 2; }",
-    ".cplfund-table tbody tr.cplfund-ncsysrow td { top: var(--cf-pin2, auto); }",
     ".cplfund-table td .sub { display: block; font-weight: 400; font-size: .75rem; color: var(--text-muted); }",
     // The caret is a real <button> (a11y, 2026-07-28) — reset the button chrome
     // so it still reads as a bare caret glyph, keep it keyboard-focusable.
@@ -694,7 +687,8 @@
     ".cplfund-authbar button.rst.primary { background: var(--seal-blue); color: var(--white); border-color: var(--seal-blue); }",
     // ── calculation sanity-check link (private tab only) ──
     // A plain link, not a boxed strip: the explainer is a reference, not a control.
-    ".cplfund-sanity { display: inline-block; background: none; border: 0; padding: 0; font-size: .88rem; font-weight: 600; color: var(--accent-link); text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }",
+    // 24px target (WCAG 2.2 SC 2.5.8): the explainer link measured 22.5px tall.
+    ".cplfund-sanity { display: inline-block; background: none; border: 0; padding: 2px 0; font-size: .88rem; font-weight: 600; color: var(--accent-link); text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }",
     "#cplFundTitleLink:empty { display: none; }",
     // ── top control strip: project + area + scenario (Sam, 2026-07-23) ──
     ".cplfund-strip { display: flex; flex-wrap: wrap; gap: 8px 22px; align-items: center; margin: 0 0 12px; padding: 0; background: none; border: 0; }",
@@ -757,11 +751,8 @@
     ".cplfund-ed-area { display: block; width: 100%; resize: vertical; line-height: 1.35; margin-top: 2px; }",
     ".cplfund-warn-text { color: var(--red-alert); font-weight: 600; }",
     ".cplfund .dk { color: var(--text-muted); font-weight: 400; }",
-    ".cplfund-est { font-size: .72rem; color: var(--mustard-text); font-weight: 600; }",
     ".cplfund-chip { display: inline-block; font-size: .72rem; margin-left: 4px; font-weight: 400; cursor: help; }",
     ".cplfund-bound { color: var(--text-muted); margin-left: 3px; }",
-    // so it reads as a quiet marker, not a bright emoji.
-    ".cplfund-carry { color: var(--text-muted); font-size: .75rem; font-weight: 400; }",
     ".cplfund-elig { background: var(--surface-subtle); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; font-size: .88rem; line-height: 1.55; text-align: left; }",
     ".cplfund-elig-intro { margin-bottom: 8px; }",
     // Requirement list: a bullet + one full-width editable line per item, all
@@ -805,7 +796,7 @@
        control that appears under a curator state no sweep has reached is
        already floored. Checkboxes are NOT here: their wrapping label is the
        measured box (see .cplfund-colmenu-item). */
-    ".cplfund-ed, .cplfund-ed-s, .cplfund-ed-t, .cplfund-ed-area, .cplfund-ed-sel, .cplfund-pool-label-input, .cplfund-prio-title-input, .cplfund-reqdel, .cplfund-timing-date, .cplfund-timing-label, .cplfund-sec-ti, .cplfund-prose-ta, .cplfund-textbtn, .cplfund-card-eye, .cplfund-card-x, .cplfund-pos, .cplfund-multi, .cplfund-note, .cplfund-stratadd, .cplfund-timingadd, .cplfund-optin-open, .cplfund-optin-submit, .cplfund-kindtoggle, .cplfund-colane-ok, .cplfund-colane-no, .cplfund-pvchip { min-height: 24px; box-sizing: border-box; }",
+    ".cplfund-ed, .cplfund-ed-s, .cplfund-ed-t, .cplfund-ed-area, .cplfund-ed-sel, .cplfund-pool-label-input, .cplfund-prio-title-input, .cplfund-reqdel, .cplfund-timing-date, .cplfund-timing-label, .cplfund-sec-ti, .cplfund-prose-ta, .cplfund-textbtn, .cplfund-card-eye, .cplfund-card-x, .cplfund-pos, .cplfund-multi, .cplfund-note, .cplfund-stratadd, .cplfund-timingadd, .cplfund-optin-submit, .cplfund-kindtoggle, .cplfund-colane-ok, .cplfund-colane-no, .cplfund-pvchip { min-height: 24px; box-sizing: border-box; }",
     // Column show/hide menu (Sam, 2026-07-24) — a ⚙ Columns dropdown of checkboxes.
     ".cplfund-colmenu { position: relative; display: inline-block; }",
     ".cplfund-colmenu > summary { list-style: none; cursor: pointer; display: inline-block; }",
@@ -869,7 +860,6 @@
     // grouping conclusion from the zebra striping. The lane is named in words by
     // the CR/NC chips, so the rules and the stripe only carry the grouping.
     ".cplfund-table tbody tr.cplfund-row > td { border-top: 1px solid var(--border-strong); }",
-    ".cplfund-table tr.cplfund-ncrow > td { border-top: 1px solid var(--border); }",
     // The TGT/NOW label column. Narrow, muted, and deliberately NOT right
     // aligned — Sam asked for the labels left justified so they read as a key
     // to the two lines beside them rather than as another column of values.
@@ -894,12 +884,6 @@
     ".cf-lanechip { display: inline-block; font-size: .62rem; font-weight: 700; letter-spacing: .06em; " +
       "padding: 1px 5px; margin-left: 5px; border: 0; border-radius: 3px; " +
       "background: var(--surface-muted); color: var(--navy-secondary); cursor: default; vertical-align: middle; }",
-    ".cplfund-ncrow .cf-lanename, .cplfund-ncsysrow .cf-lanename { color: var(--text-muted); font-weight: 600; }",
-    // ⚠️ The statewide noncredit row deliberately does NOT carry .cplfund-ncrow.
-    // That class means "a college's noncredit row" to several selectors and to
-    // the guards that sample them; widening it made three assertions fail on a
-    // row they were never written about. A new kind of row gets a new class.
-    ".cplfund-table tr.cplfund-ncsysrow > td { border-top: 1px solid var(--border); }",
     // Matches .cplfund-caret exactly — width AND the 1px right margin. If that
     // rule's width changes, this one has to follow, which is why they sit in the
     // same stylesheet a few lines apart.
@@ -911,7 +895,6 @@
     ".cf-belowchip { display: inline-block; font-size: .6rem; font-weight: 600; letter-spacing: .03em; " +
       "padding: 1px 5px; margin-left: 5px; border: 1px solid var(--border); border-radius: 3px; " +
       "background: transparent; color: var(--text-muted); cursor: help; vertical-align: middle; }",
-    ".cplfund-table tr.cplfund-ncout > td { color: var(--text-muted); }",
     // Numbered pie glyph for the Elig column (Sam, 2026-07-24).
     ".cf-eligpie { vertical-align: middle; display: inline-block; }",
     ".cplfund-notewrap { grid-column: 1 / -1; }",
@@ -923,7 +906,6 @@
     ".cplfund-optin { grid-column: 1 / -1; margin-top: 8px; }",
     ".cplfund-optin-done { color: var(--text-body); font-weight: 600; }",
     ".cplfund-optin-done .dk { font-weight: 400; }",
-    ".cplfund-optin-tick { font-weight: 700; }",
         ".cplfund-optin-form { background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 8px; padding: 10px 12px; max-width: 640px; }",
     ".cplfund-optin-head { font-weight: 600; color: var(--navy-secondary); margin-bottom: 8px; }",
     ".cplfund-optin-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 12px; }",
@@ -1051,8 +1033,6 @@
     ".cplfund-rprio-upd { margin: 4px 0 0; font-size: .78rem; color: var(--text-muted); }",
     ".cplfund-rprio-drift { display: block; margin-top: 3px; font-size: .75rem; color: var(--mustard-text); }",
     ".cplfund-rprio-add { display: flex; flex-wrap: wrap; gap: 6px 8px; align-items: center; margin-top: 8px; font-size: .78rem; }",
-    ".cplfund-desig-row { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: center; margin-top: 10px; padding: 8px 12px; border: 1px dashed var(--border-strong); border-radius: 8px; background: var(--surface-subtle); font-size: .8rem; color: var(--text-body); }",
-    ".cplfund-desig-row .cplfund-rprio-add { margin-top: 0; }",
     ".cplfund-multil { display: flex; flex-direction: column; gap: 3px; flex: 1 1 260px; min-width: 0; }",
     /* ASK 2 (Sam, 2026-09-13): the picker sits on EVERY card, below the
        Recommended-strategies fold and always visible to a curator — his choice
@@ -1076,11 +1056,6 @@
     ".cf-ess.pend { color: var(--text-muted); font-weight: 400; }",
     ".cplfund-table th.c, .cplfund-table td.c { text-align: center; }",
     ".cplfund-declined td { background: var(--surface-subtle); }",
-    // Noncredit feeder measurables ladder (F1 / F2).
-    ".cplfund-fmeas { margin-top: 10px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface-subtle); font-size: .8rem; }",
-    ".cplfund-fmeas-h { font-weight: 600; margin-bottom: 4px; }",
-    ".cplfund-fmeas-list { margin: 0 0 6px; padding-left: 18px; }",
-    ".cplfund-fmeas-list li { margin: 2px 0; }",
     // Sortable headers are keyboard-focusable (a11y, 2026-07-28) — give them a
     // clear focus ring and an aria-sort arrow that mirrors the visible one.
     ".cplfund-table th[tabindex]:focus-visible { outline: 2px solid var(--gold-accent); outline-offset: -2px; }",
@@ -11297,7 +11272,7 @@
     var wrap = document.querySelector("#cplFundTable .cplfund-tablewrap");
     if (!wrap) return;
     var thead = wrap.querySelector("thead");
-    var sysCr = wrap.querySelector("tbody tr.cplfund-systemrow:not(.cplfund-ncsysrow)");
+    var sysCr = wrap.querySelector("tbody tr.cplfund-systemrow");
     var h1 = thead ? thead.getBoundingClientRect().height : 0;
     var h2 = sysCr ? sysCr.getBoundingClientRect().height : 0;
     wrap.style.setProperty("--cf-pin1", h1 + "px");
