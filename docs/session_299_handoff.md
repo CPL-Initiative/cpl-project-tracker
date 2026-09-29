@@ -14,13 +14,10 @@ way": he talked the changes through while a mockup drawn by COBI's own code upda
 him. Method: [`methodology-mock-up-from-the-running-code`](kb-notes/methodology-mock-up-from-the-running-code.md);
 story: [`ui_mockup_lessons`](ui_mockup_lessons.md).
 
-## First thing: two things in flight
+## First thing: the College Dashboard port
 
-1. **[#1726](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1726), funding waits on all
-   three minimum conditions.** 21 lines in `baselineGate()` (the third condition read from
-   `eligReqList()`, fail-open while its feed pends) plus the regenerated `kb/dependency_map.json`.
-   Local tests were refused by the auto-mode classifier; Sam chose CI on the draft PR. Read the
-   `test` check on the current head; fix what it names; merge on green (squash).
+1. **[#1726](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1726) merged 2026-09-28** (`1f55f60`, every check green):
+   funding waits on all three minimum conditions, live in production.
 2. **The College Dashboard port.** A background agent built it in a worktree on branch
    `claude/funding-dashboard-ui-s298`. If that branch is on GitHub, open or finish its PR: merge
    `main` in after #1726 lands, regenerate `kb/dependency_map.json` (never pick a side), run the
@@ -35,8 +32,10 @@ Sam's second priority. [Mockup](https://claude.ai/artifact/Agmbu7UNGRcdEf48Sx5PT
 today's tab; round 1 applies his five asks of 2026-09-28: the five number cards filter the list
 below by category; every Sierra response left-justified; "Try it on Sierra" offers the Sierra tab
 or the My College tab; the whole tab to First Light, AA and phone width, with the clip-art glyphs
-gone; "pretty, simple, and user friendly". Keep taking his rounds, then port to
-`sierra_training.js` the same way (consumer map first, tests, `npm run a11y`).
+gone; "pretty, simple, and user friendly". **Sam approved round 1** ("Sierra looks good", `cpl_memory`
+`sam-approves-sierra-training-mockup-round-1-2026-09-28`). Port it to `sierra_training.js` the same way
+(consumer map first, tests, `npm run a11y`); the page source, CSS and `mock.js` are inside the published
+mockup (read it with the Artifact tool).
 
 ## Sam's decisions, recorded (2026-09-28)
 
