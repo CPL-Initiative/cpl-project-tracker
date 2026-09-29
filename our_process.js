@@ -29,16 +29,6 @@
     border-radius:16px; background:var(--op-bg); color:var(--op-ink);
     font-family:var(--op-sans); font-size:16.5px; line-height:1.62; margin:8px 0 6px;
   }
-  @media (prefers-color-scheme: dark) {
-    .opv {
-      --op-bg:#0A1C27; --op-panel:#0F2733; --op-panel-2:#143140;
-      --op-ink:#E9EFEC; --op-ink-soft:#AEC1C4; --op-ink-faint:#70878E;
-      --op-line:rgba(180,205,210,0.14); --op-line-2:rgba(180,205,210,0.27);
-      --op-amber:#E7AB53; --op-amber-2:#F2C578; --op-teal:#46C2B2;
-      --op-indigo:#7BA7CE; --op-coral:#E87C5C;
-      --op-contour:rgba(120,180,190,0.06); --op-glow:rgba(231,171,83,0.16);
-    }
-  }
   .opv * { box-sizing:border-box; }
   .op-contour { position:absolute; top:0; left:0; width:100%; height:100%; z-index:0; pointer-events:none; }
   .op-inner { position:relative; z-index:2; max-width:1000px; margin:0 auto; padding:0 clamp(18px,4vw,54px); }
@@ -186,6 +176,31 @@
   .op-ta p { font-size:14px; margin:0; max-width:none; }
   .op-foot2 { margin-top:34px; padding-top:20px; border-top:1px solid var(--op-line); font-family:var(--op-mono); font-size:11px; letter-spacing:.06em; color:var(--op-ink-faint); text-align:center; }
   .op-foot2 b { color:var(--op-amber); }
+  `;
+
+  /* ── dark (cpl_theme.js's contract) ────────────────────────────────────────
+   * ⚠️ THIS TAB USED TO FOLLOW THE OS AND NOTHING ELSE. Its only dark rule was
+   * `@media (prefers-color-scheme:dark)`, so an OS-dark reader got a dark Our
+   * Process inside an otherwise light COBI, and the header's Theme control
+   * could not say otherwise — the exact split Sam's "one control" ask names.
+   *
+   * The values are unchanged; what changed is WHEN they apply:
+   *   · media query, guarded by :not([data-theme="light"]) — follow the OS, but
+   *     yield the moment a reader chooses light explicitly;
+   *   · :root[data-theme="dark"] — an explicit dark choice on a light OS.
+   * The guard is what the old rule was missing; dropping it puts the bug back.
+   */
+  var OP_DARK = `
+      --op-bg:#0A1C27; --op-panel:#0F2733; --op-panel-2:#143140;
+      --op-ink:#E9EFEC; --op-ink-soft:#AEC1C4; --op-ink-faint:#70878E;
+      --op-line:rgba(180,205,210,0.14); --op-line-2:rgba(180,205,210,0.27);
+      --op-amber:#E7AB53; --op-amber-2:#F2C578; --op-teal:#46C2B2;
+      --op-indigo:#7BA7CE; --op-coral:#E87C5C;
+      --op-contour:rgba(120,180,190,0.06); --op-glow:rgba(231,171,83,0.16);
+  `;
+  CSS += `
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) .opv{${OP_DARK}} }
+  :root[data-theme="dark"] .opv{${OP_DARK}}
   `;
 
   var HTML = `
@@ -353,7 +368,7 @@
           </div>
         </div>
         <div class="op-livecta op-reveal">
-          <a class="op-livebtn" href="#tmc-builder"><span class="op-livedot"></span> See the TMC Builder live <span aria-hidden="true">↗</span></a>
+          <a class="op-livebtn" href="#tmc-builder"><span class="op-livedot"></span> See the TMC Builder live</a>
           <div class="op-livenote">Opens the live tool · Reference &amp; Curation → TMC Builder</div>
         </div>
       </div>
@@ -426,6 +441,16 @@
     size();
     opv._opResize = function () { size(); if (reduce) draw(0); };
     window.addEventListener("resize", opv._opResize);
+
+    // ⚠️ A CANVAS CANNOT BE THEMED BY CSS — IT HAS TO BE REPAINTED, AND UNDER
+    // prefers-reduced-motion THIS ONE DRAWS EXACTLY ONCE. contourColor() reads
+    // the live --op-contour, so the animated path self-corrects on the next
+    // frame and hid this: a reduced-motion reader who switched the theme kept
+    // the OLD theme's contour until they resized the window. cpl_theme.js
+    // dispatches cpl:themechange for consumers that PAINT rather than style —
+    // this is the first one to listen, which is why the event had no listeners.
+    opv._opTheme = function () { draw(0); };
+    window.addEventListener("cpl:themechange", opv._opTheme);
 
     if (reduce || typeof window.requestAnimationFrame !== "function") { draw(0); return; }
     var start = null;

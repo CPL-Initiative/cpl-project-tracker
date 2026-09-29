@@ -55,6 +55,7 @@ WHEN_LABEL = {
     "alignment": "When it is about articulating a credential at a college",
     "volume": "When it is about how many students",
     "credit": "When it is about what credit a college has acted on",
+    "prospective": "When the visitor holds a credential and asks what it could count toward",
 }
 
 

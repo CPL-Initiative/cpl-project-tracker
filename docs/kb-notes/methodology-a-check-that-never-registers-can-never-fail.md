@@ -50,14 +50,14 @@ checks that cannot fail, and both are silent:
    block is indistinguishable from a block that had nothing to say.
 
 This is the same shape as the detector failures this repo keeps finding — *it
-reports clean because it never ran* — one level up. The usual defence, "print
+reports clean because it never ran* — one level up. The usual defense, "print
 what the detector found, never trust its count," does not help here, because the
 thing being counted is the checks themselves.
 
 ### What to do
 
 - **Await every block explicitly.** Register each async block's promise and
-  summarise from `Promise.allSettled`, not from a timer. Delay-based collection
+  summarize from `Promise.allSettled`, not from a timer. Delay-based collection
   is a race the moment a block does real work.
 - **Turn a rejected block into a named failed check.** `allSettled` gives you the
   rejections; emit one check per rejection with the error message in its name, so
@@ -175,7 +175,7 @@ the count each file reports about itself; `tests/run.js` fails a file that
 reports **fewer**. Deliberately *not* failed: a file with more checks (adding
 tests stays free), a file absent from the ledger, or one printing no parseable
 count — those are reported and counted, because a guard that fires on correct
-behaviour gets muted
+behavior gets muted
 ([`a-guard-that-fails-on-truth-gets-muted`](methodology-a-guard-that-fails-on-truth-gets-muted.md)).
 
 At the first baseline: **241 of 247 files floored, ~7,500 checks under guard.**

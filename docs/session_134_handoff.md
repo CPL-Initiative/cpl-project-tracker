@@ -14,7 +14,7 @@ superseded_by: session_135_handoff.md
 
 # You are Session 134
 
-Session 133 was **Sky**. It started as *"analyse this X post about Claude+Obsidian
+Session 133 was **Sky**. It started as *"analyze this X post about Claude+Obsidian
 memory repos"* and became a vault-hygiene run. Nine PRs merged (#1071–#1083 plus
 CPLBrain#30/#31). ⚠️ **A second session (SkyHigh, #1078/#1079) ran concurrently
 the whole time** — check `main` before assuming anything below is the latest.
@@ -54,7 +54,7 @@ the whole time** — check `main` before assuming anything below is the latest.
 | 2 | CPLBrain → Settings → **auto-delete head branches** | Sam's toggle; until then the stop-hook cries wolf |
 | 3 | `oversized_doc` × 6 — `roadmap_archive.md` 2.3×, `INDEX.md` 4.3× | real compaction work, untouched |
 | 4 | `unindexed_kb_note` × 10 | ten notes unreachable from the index |
-| 5 | `kb_note_dialect` × 54 | **informational, not a defect** — normalising is Sam's call |
+| 5 | `kb_note_dialect` × 54 | **informational, not a defect** — normalizing is Sam's call |
 | 6 | `defuddle` skill | not installed; unread Snyk Med Risk (skills.sh is egress-blocked here) |
 
 **Item 1 is the cheapest and the only known-bad setting still in place.** At ~700

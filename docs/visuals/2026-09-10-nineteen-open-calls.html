@@ -1,0 +1,774 @@
+<title>Nineteen Open Calls</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+  /* First Light v1.6 tokens — values from prototype/first_light_theme_v1.html.
+     Deliberately single-theme: First Light is a light identity with no dark
+     page palette, so every surface and color is painted explicitly. The sheet
+     is about a dark canvas; the page around it stays light, as the product does. */
+  :root {
+    --paper: #F4F2ED;
+    --text-strong: #1C1C1A;
+    --text-body: #3A3A36;
+    --text-muted: #5C5C55;
+    --surface-opaque: #FFFFFF;
+    --surface-subtle: #F7F5F1;
+    --border: rgba(28,28,26,.14);
+    --border-strong: rgba(28,28,26,.30);
+    --crimson: #920000;
+    --cobalt: #0047AB;
+    --seal-blue: #002F6D;
+    --hunter: #2C601A;
+    --mustard-text: #8B6800;
+    --night: #15171A;
+    --night-ink: #ECE9E2;
+    --day: #A8C3E8;
+    --focus-ring: var(--cobalt);
+    --radius: 14px;
+  }
+  html { color-scheme: light; }
+  body {
+    background: var(--paper);
+    color: var(--text-body);
+    font-family: 'Source Sans 3', Arial, sans-serif;
+    font-size: 16px; line-height: 1.55;
+    margin: 0; padding: 0 16px 64px;
+  }
+  .wrap { max-width: 780px; margin: 0 auto; }
+  a { color: var(--cobalt); }
+  :focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 2px; border-radius: 4px; }
+  .skip { position: absolute; left: -9999px; top: 0; background: var(--surface-opaque); color: var(--cobalt); padding: 8px 14px; z-index: 10; }
+  .skip:focus { left: 8px; }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+  h1, h2 { font-family: 'Playfair Display', Georgia, serif; color: var(--text-strong); text-wrap: balance; }
+  h1 { font-size: clamp(1.7rem, 5vw, 2.4rem); line-height: 1.15; margin: 40px 0 6px; }
+  h2 { font-size: 1.25rem; margin: 40px 0 4px; }
+  h3 { font-family: 'Source Sans 3', Arial, sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--text-strong); margin: 0; }
+  .kicker { text-transform: uppercase; letter-spacing: .09em; font-size: .78rem; font-weight: 700; color: var(--text-muted); margin-top: 34px; }
+  .lede { font-size: 1.05rem; }
+  .subhead { color: var(--text-muted); margin: 0 0 4px; font-size: .95rem; }
+
+  .howto {
+    background: var(--surface-opaque); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 16px 20px; margin: 22px 0 8px;
+  }
+  .howto p { margin: 6px 0; }
+  .howto code, .assume code {
+    background: var(--surface-subtle); border: 1px solid var(--border);
+    border-radius: 5px; padding: 1px 6px; font-size: .92em;
+  }
+
+  .tally { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 22px; padding: 0; list-style: none; }
+  .tally li {
+    background: var(--surface-opaque); border: 1px solid var(--border); border-radius: 999px;
+    padding: 5px 14px; font-size: .9rem; color: var(--text-body);
+  }
+  .tally b { color: var(--text-strong); font-variant-numeric: tabular-nums; }
+
+  /* the ground the calls stand on: engineering, listed so the calls are the only open ground */
+  .assume { border-left: 3px solid var(--seal-blue); padding: 2px 0 2px 18px; margin: 8px 0 34px; }
+  .assume h2 { font-size: 1.05rem; margin: 0 0 6px; }
+  .assume p { margin: 0 0 6px; }
+  .assume ul { margin: 6px 0 0; padding-left: 20px; }
+  .assume li { margin: 4px 0; }
+
+  .card {
+    background: var(--surface-opaque); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 18px 20px 16px; margin: 14px 0;
+  }
+  .card header { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 2px; }
+  .num {
+    font-family: 'Playfair Display', Georgia, serif; font-weight: 700;
+    font-size: 1.35rem; color: var(--text-strong); font-variant-numeric: tabular-nums; min-width: 1.4em;
+  }
+  .chip {
+    margin-left: auto; font-size: .8rem; font-weight: 700; letter-spacing: .04em;
+    border: 1.5px solid; border-radius: 999px; padding: 3px 12px; white-space: nowrap;
+  }
+  .chip.build   { color: var(--cobalt);       border-color: var(--cobalt);       background: var(--surface-opaque); }
+  .chip.ask     { color: var(--mustard-text); border-color: var(--mustard-text); background: var(--surface-opaque); }
+  .card dl { margin: 8px 0 0; }
+  .card dt {
+    text-transform: uppercase; letter-spacing: .08em; font-size: .72rem; font-weight: 700;
+    color: var(--text-muted); margin-top: 12px;
+  }
+  .card dd { margin: 2px 0 0; }
+  .card dd.ask { font-weight: 600; color: var(--text-strong); }
+  .card dd p { margin: 6px 0 0; }
+  .words { margin: 4px 0 0; padding: 8px 14px; border-left: 3px solid var(--border-strong); color: var(--text-body); font-style: italic; }
+  .words span { font-style: normal; color: var(--text-muted); font-size: .88rem; }
+
+  .tw { overflow-x: auto; margin-top: 6px; }
+  table { border-collapse: collapse; font-size: .9rem; min-width: 100%; }
+  th, td { text-align: left; padding: 5px 14px 5px 0; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-size: .72rem; text-transform: uppercase; letter-spacing: .07em; color: var(--text-muted); font-weight: 700; }
+  tbody th[scope="row"] { font-size: .9rem; text-transform: none; letter-spacing: 0; color: var(--text-body); font-weight: 600; }
+  td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; padding-right: 18px; white-space: nowrap; }
+  td.low { color: var(--crimson); font-weight: 700; }
+  .cap { color: var(--text-muted); font-size: .88rem; margin: 6px 0 0; }
+  /* the two skies, shown as what they are rather than described */
+  .swatch { display: inline-block; width: 12px; height: 12px; border-radius: 50%; vertical-align: -1px; margin-right: 6px; border: 1px solid var(--border-strong); box-sizing: border-box; }
+  .swatch.night { background: var(--night); }
+  .swatch.day { background: var(--day); }
+  .fate td:first-child { font-weight: 600; color: var(--text-strong); width: 38%; }
+  .fate td:last-child em { font-style: normal; font-weight: 700; }
+  .quiet { color: var(--text-muted); font-size: .92rem; }
+  @media (max-width: 560px) {
+    .card header { gap: 8px; }
+    .chip { margin-left: 0; }
+    .fate td:first-child { width: auto; }
+  }
+/* replies:css:start */
+  /* ── replies: chips, a note, a follow-up flag (Sam, 2026-09-05) ── */
+  .reply { margin: 12px 0 0; padding-top: 10px; border-top: 1px dashed var(--border); }
+  .reply-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .reply-lbl { font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; font-weight: 700;
+    color: var(--text-muted); margin-right: 4px; }
+  .reply-chip { font: inherit; font-size: .86rem; font-weight: 600; min-height: 30px; padding: 3px 12px;
+    border: 1px solid var(--border-strong); border-radius: 6px; background: var(--surface-opaque);
+    color: var(--text-body); cursor: pointer; }
+  .reply-chip:hover { background: var(--surface-subtle); }
+  /* ⚠️ --seal-blue is a First Light token the HOST SHEET may not define — this
+     block has to stand on its own. Without the fallback the declaration is
+     invalid at computed-value time, background falls back to transparent, and
+     `color:#fff` paints white on the card's white: 1.00:1, so the SELECTED
+     chip is invisible and the reader cannot see which verdict they picked.
+     Measured 2026-09-06 on the seven-open-calls sheet. #002F6D on white is
+     12.90:1. */
+  .reply-chip[aria-pressed="true"] { background: var(--seal-blue, #002F6D); border-color: var(--seal-blue, #002F6D); color: #fff; }
+  .reply-chip.reply-fu { margin-left: auto; }
+  .reply-notelbl { display: block; font-size: .78rem; color: var(--text-muted); margin: 8px 0 3px; }
+  .reply-note { width: 100%; box-sizing: border-box; font: inherit; font-size: .92rem; padding: 7px 9px;
+    border: 1px solid var(--border-strong); border-radius: 6px; background: var(--surface-opaque);
+    color: var(--text-body); resize: vertical; min-height: 34px; }
+  .reply-state { margin: 4px 0 0; font-size: .76rem; color: var(--text-muted); min-height: 1em; }
+  .reply-compact { margin-top: 8px; padding-top: 8px; }
+  .glist li .reply { margin: 6px 0 4px; padding-top: 6px; border-top: 1px dotted var(--border); }
+  .glist li .reply-chip { font-size: .8rem; min-height: 26px; padding: 2px 9px; }
+  .glist li .reply-note { font-size: .86rem; min-height: 30px; }
+  .glist li .reply-lbl { font-size: .66rem; }
+  .reply-compact .reply-notelbl { position: absolute; left: -9999px; }
+  .reply-compact .reply-note { margin-top: 6px; }
+  ol.done li { position: relative; }
+  .reply-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 5; background: var(--surface-opaque);
+    border-top: 1px solid var(--border-strong); padding: 8px 16px; display: flex; flex-wrap: wrap;
+    gap: 6px 14px; align-items: center; font-size: .9rem; box-shadow: 0 -6px 18px rgba(28,28,26,.08); }
+  .reply-count { font-weight: 700; color: var(--text-strong); font-variant-numeric: tabular-nums; }
+  .reply-where { color: var(--text-muted); font-size: .82rem; flex: 1 1 240px; }
+  .reply-show { margin: 0; flex: 1 1 100%; }
+  .reply-show summary { font-size: .82rem; padding: 2px 0; }
+  .reply-line { width: 100%; box-sizing: border-box; font: inherit; font-size: .86rem; padding: 6px 8px;
+    border: 1px solid var(--border-strong); border-radius: 6px; background: var(--surface-subtle); color: var(--text-body); }
+  body { padding-bottom: 120px; }
+  @media (max-width: 560px) { .reply-chip { padding: 3px 9px; } .reply-chip.reply-fu { margin-left: 0; } }
+/* replies:css:end */</style>
+<a class="skip" href="#calls">Skip to the calls</a>
+
+<div class="wrap">
+
+<h1>Nineteen Open Calls</h1>
+<p class="sub">Everything waiting on you as of 10 September 2026, in one place, with
+the steps for the two that need you to look at something. Reply on any item and the
+next session reads it here &mdash; no paste, no chat.</p>
+
+<ul class="tally">
+<li><b>2</b> look-ups</li>
+<li><b>17</b> decisions</li>
+<li><b>5</b> cost nothing either way</li>
+<li><b>0</b> block anything today</li>
+</ul>
+
+<div class="howto">
+<p><strong>How to reply.</strong> Each item has chips: <strong>Yes</strong> takes the
+proposal as written &middot; <strong>Edit</strong> reshapes it &mdash; put your wording
+in the note and I use it verbatim &middot; <strong>Later</strong> defers it &middot;
+<strong>Dismiss</strong> drops it. <strong>Follow up</strong> is separate from the
+verdict: tick it and the item stays on my list whatever you decide.</p>
+<p>An item you leave blank has <strong>no verdict</strong> &mdash; I will not read
+silence as a yes. If you answer twelve and stop, I execute twelve and ask about the rest.</p>
+<!-- replies:start --><p><strong>Or click your reply under each item — and under each memory a batch item lists.</strong> Yes takes the recommendation. Under a single memory the first chip names what the batch would do to it — <em>Verify</em> or <em>Retire</em> — so the word says what happens to that memory; Hold out and Rewrite keep one back from a verify batch, Keep holds one back from a retire batch. Follow up marks an item the session should come back to whatever the verdict; the note is for anything a word cannot carry. The line under each reply says what was saved. On the artifact your replies save to the sheet itself and the session reads them from there. Opened anywhere else they stay in this browser, and <em>Copy replies</em> at the foot of the page builds the numbered line for you to paste.</p><!-- replies:end --></div>
+
+<div class="assume">
+<h2>What is already done, so the calls are the only open ground</h2>
+<p>Today shipped six pull requests. None of these need you:</p>
+<ul>
+<li>The cron is repaired and has run clean four times since.</li>
+<li>CPL mode is built <em>and</em> drawn &mdash; 1,987 credentials, 97 islands.</li>
+<li>Sierra runs on <strong>Sonnet 5</strong>, deployed and verified at version 63.</li>
+<li>Pedro's Student Aggregate columns are back; counselor verified is restored.</li>
+<li>Four guards that read green while blind to what they checked now fail properly.</li>
+</ul>
+</div>
+
+<h2 id="calls">The calls</h2>
+
+<section class="group">
+<h2>Still open &mdash; two look-ups, five minutes</h2>
+
+<article class="card" id="i1">
+<h3>1 &middot; Is a model secret still set on Supabase?</h3>
+<dl>
+<dt>What this is</dt>
+<dd>Sierra's code now defaults to Sonnet 5, deployed and verified. But a Supabase
+<em>secret</em> named <code>CPL_CHAT_MODEL</code> overrides that default, and I cannot
+read secrets &mdash; only you can. If one is set to Haiku, today's deploy changed
+nothing about which model actually answers.</dd>
+<dt>What I propose</dt>
+<dd class="ask">Open
+<code>supabase.com/dashboard/project/hvuwhnbuahrtptokpqfh/functions/secrets</code>
+&mdash; that is the <strong>Work Plan</strong> project, not cpl-budget-support. In the
+left sidebar it is <strong>Edge Functions</strong>, then the <strong>Secrets</strong>
+tab; it is <em>not</em> under Project Settings, which is where I sent you wrongly
+earlier. Look for a row named <code>CPL_CHAT_MODEL</code>. <strong>If it exists,
+delete it.</strong> Then reply with what you saw in the note.</dd>
+<dt>Why</dt>
+<dd>Deleting it makes <em>unset</em> mean Sonnet 5 &mdash; the whole reason the default
+moved instead of a secret being set and forgotten. Setting a secret stays available
+as the instant way back to Haiku with no deploy.</dd>
+</dl>
+<!-- replies:start --><div class="reply" data-item="1" data-ref="1 &amp;middot; Is a model secret still set on Supabase?" data-title="1 &amp;middot; Is a model secret still set on Supabase?" data-kind="item" data-parent=""><div class="reply-row" role="group" aria-label="Your reply to item 1"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="yes" aria-pressed="false">Yes</button><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-1">Notes for the session</label><textarea id="note-1" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+
+<article class="card" id="i2">
+<h3>2 &middot; Which model is answering, and is the prompt caching?</h3>
+<dl>
+<dt>What this is</dt>
+<dd>You asked how to check the log for the Sonnet version. <strong>You cannot, yet</strong>
+&mdash; nothing in Sierra names the model in a log or a response. That is item 3. What
+you <em>can</em> check settles both the model question and the more valuable one:
+whether the repeated part of every Sierra prompt is being cached. On Haiku 4.5 it was
+not, because the prefix is about 3,234 tokens and that model's floor is 4,096.</dd>
+<dt>What I propose</dt>
+<dd class="ask">In the Anthropic Console for the corporate account, open
+<strong>Usage</strong>. Two things: (a) the breakdown <strong>by model</strong> &mdash;
+after today, Sierra's requests should appear under Sonnet, not Haiku; (b) the
+<strong>cache read</strong> tokens. If cache reads are zero across a stretch where
+Sierra was used, the prefix still is not caching and I want to know. Reply with both
+numbers in the note, roughly is fine.</dd>
+<dt>Why</dt>
+<dd>Sonnet 5 costs $2 per million input tokens against Haiku's $1, so on paper this
+looks like a doubling. If the prefix caches, that repeated 3,234 tokens drops to about
+a tenth of its price and the endpoint gets <em>cheaper</em> overall &mdash; it is
+input-dominated, with answers capped at 2,048 tokens. The Console is the only place
+that number is visible.</dd>
+</dl>
+<!-- replies:start --><div class="reply" data-item="2" data-ref="2 &amp;middot; Which model is answering, and is the prompt caching?" data-title="2 &amp;middot; Which model is answering, and is the prompt caching?" data-kind="item" data-parent=""><div class="reply-row" role="group" aria-label="Your reply to item 2"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="yes" aria-pressed="false">Yes</button><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-2">Notes for the session</label><textarea id="note-2" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+</section>
+
+<section class="group">
+<h2>What to build &mdash; so you never have to ask me which model again</h2>
+
+<article class="card" id="i3">
+<h3>3 &middot; Have Sierra name her model in the log</h3>
+<dl>
+<dt>What this is</dt>
+<dd>One line, written once when the function starts. Today the only ways to tell which
+model is answering are to read a secret, read the Console, or infer it from how an
+answer reads &mdash; and I proved that last one unreliable this afternoon by proposing
+a test that passed for the wrong reason.</dd>
+<dt>What I propose</dt>
+<dd class="ask">Add a single line at startup naming the model and whether it came from
+the secret or the default. Then &ldquo;which model is Sierra on&rdquo; is a glance at
+the Edge Function logs. It costs one deploy of the shared function.</dd>
+<dt>Why</dt>
+<dd>This is the item that would have prevented the mistake I made today. I told you a
+smoke assertion would prove the switch took; it passed before the deploy, against the
+old model, because it asks whether an answer happens to contain a phrase. A boot line
+is direct evidence rather than a behavioral guess.</dd>
+</dl>
+<!-- replies:start --><div class="reply" data-item="3" data-ref="3 &amp;middot; Have Sierra name her model in the log" data-title="3 &amp;middot; Have Sierra name her model in the log" data-kind="item" data-parent=""><div class="reply-row" role="group" aria-label="Your reply to item 3"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="yes" aria-pressed="false">Yes</button><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-3">Notes for the session</label><textarea id="note-3" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+</section>
+
+<section class="group">
+<h2>Still open &mdash; the CPL map and SkyView</h2>
+
+<article class="card" id="i4">
+<h3>4 &middot; A permanent name beside each statewide credential?</h3>
+<dl>
+<dt>What this is</dt>
+<dd>Your message about the statewide exhibits cut off at &ldquo;so folks can easily
+see&hellip;&rdquo;. They are now marked: each of the 84 wears a second ring and the word
+statewide on its label and card. They are also the tidiest part of the map &mdash; all 84
+have a discipline, all 84 already have a college course articulated to them, and 61 group
+several local exhibits.</dd>
+<dt>What I propose</dt>
+<dd class="ask">Print the name permanently beside all 84. At that count it fits; at 1,987
+it does not, which is why the rest stay as dots until you hover. And finish the sentence:
+is the seeing for telling which are statewide, for showing a college what it could adopt,
+or for showing where they are already in use? The answer changes what the card leads with.</dd>
+<dt>Why</dt>
+<dd>A word beside the mark satisfies your own rule that color is never the only signal,
+without adding a glyph. The three purposes want different cards, so guessing wastes a
+build.</dd>
+</dl>
+<!-- replies:start --><div class="reply" data-item="4" data-ref="4 &amp;middot; A permanent name beside each statewide credential?" data-title="4 &amp;middot; A permanent name beside each statewide credential?" data-kind="item" data-parent=""><div class="reply-row" role="group" aria-label="Your reply to item 4"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="yes" aria-pressed="false">Yes</button><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-4">Notes for the session</label><textarea id="note-4" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+
+<article class="card" id="i5">
+<h3>5 &middot; Five refinements on the CPL view</h3>
+<dl>
+<dt>What this is</dt>
+<dd>The CPL view shipped as a first cut. Five things want your eye rather than a
+measurement: inside a big discipline the labels crowd at close zoom (Computer Information
+Systems holds 74); the 543 credentials with no discipline draw as the largest group on the
+map; a card lists at most 40 courses and one page of exhibits; a typed question on the CPL
+map still answers in course vocabulary; and the two joins agree today with nothing checking
+that they keep agreeing.</dd>
+<dt>What I propose</dt>
+<dd class="ask">Take them in that order &mdash; crowding first, because it is what you will
+notice; the no-discipline pile second, because at 543 it dominates the composition. The
+last one I would just build: a check that the joins agree, since silent disagreement is the
+expensive kind.</dd>
+<dt>Why</dt>
+<dd>Four of the five are look and feel on a canvas you are the reader of. The fifth is a
+correctness guard, and today produced five separate examples of what an unchecked agreement
+costs.</dd>
+</dl>
+<!-- replies:start --><div class="reply" data-item="5" data-ref="5 &amp;middot; Five refinements on the CPL view" data-title="5 &amp;middot; Five refinements on the CPL view" data-kind="item" data-parent=""><div class="reply-row" role="group" aria-label="Your reply to item 5"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="yes" aria-pressed="false">Yes</button><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-5">Notes for the session</label><textarea id="note-5" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+
+<article class="card" id="i6">
+<h3>6 &middot; Six observations from the full SkyView sweep</h3>
+<dl>
+<dt>What this is</dt>
+<dd>A sweep of every action a reader or curator can take &mdash; 222 checks on the live page
+&mdash; passes, and it fixed two real things on the way: a question naming a discipline and a
+term now means that term <em>within</em> that discipline, and a course picked up with the
+mouse can be put back with Escape. Six more it saw are calls, not defects: typing a
+discipline and picking it from the list land at two different zooms; the mouse wheel does not
+stop the sky turning; with the details panel hidden a selection gets no words; a chip can be
+cut to a single letter; Close after editing an outline lands on the map rather than the
+button; and the older checker script disagrees with the page.</dd>
+<dt>What I propose</dt>
+<dd class="ask">Retire the older checker script &mdash; it disagrees with the page and a
+disagreeing check is worse than none. On the other five, say which bother you when you use
+it; I would not change any on my own reading.</dd>
+<dt>Why</dt>
+<dd>These are all judgments about how the thing feels to operate, and you are the only person
+who operates it daily.</dd>
+</dl>
+<!-- replies:start --><div class="reply" data-item="6" data-ref="6 &amp;middot; Six observations from the full SkyView sweep" data-title="6 &amp;middot; Six observations from the full SkyView sweep" data-kind="item" data-parent=""><div class="reply-row" role="group" aria-label="Your reply to item 6"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="yes" aria-pressed="false">Yes</button><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-6">Notes for the session</label><textarea id="note-6" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+
+<article class="card" id="i7">
+<h3>7 &middot; How wide the sky opens on a phone</h3>
+<dl>
+<dt>What this is</dt>
+<dd>On a phone the sky opens wide enough that discipline names are cut off at both edges.
+Narrowing fixes that, but the width also decides whether each discipline's individual courses
+draw at all &mdash; too narrow on a small screen and some disciplines lose their stars.</dd>
+<dt>What I propose</dt>
+<dd class="ask">Open SkyView on your own phone and tell me whether the clipped names or the
+missing stars bother you more. I will set the width from that.</dd>
+<dt>Why</dt>
+<dd>Every number we have was measured on a machine that is not yours. This one genuinely
+needs your eye.</dd>
+</dl>
+<!-- replies:start --><div class="reply" data-item="7" data-ref="7 &amp;middot; How wide the sky opens on a phone" data-title="7 &amp;middot; How wide the sky opens on a phone" data-kind="item" data-parent=""><div class="reply-row" role="group" aria-label="Your reply to item 7"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="yes" aria-pressed="false">Yes</button><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-7">Notes for the session</label><textarea id="note-7" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+</section>
+
+<section class="group">
+<h2>Still open &mdash; look and readability</h2>
+
+<article class="card" id="i8">
+<h3>8 &middot; Twenty-four places ask for a color that was never defined</h3>
+<dl>
+<dt>What this is</dt>
+<dd>A real bug found during the dark-mode work, and it is wrong in <em>both</em> themes.
+Twenty-four places name a color that does not exist and give no fallback, which browsers
+treat as &ldquo;skip this line.&rdquo; On the College Briefing tab the progress bar inside
+the briefing draws nothing at all, and two accent borders never appear.</dd>
+<dt>What I propose</dt>
+<dd class="ask">Fix it, which means those bars and borders start showing in normal light mode
+too. That is a visible change to a tab you look at, which is why it is yours and not a
+silent repair.</dd>
+<dt>Why</dt>
+<dd>Right now the tab is quietly missing pieces it was designed to have. The fix is
+straightforward; the only question is whether you want what appears.</dd>
+</dl>
+<!-- replies:start --><div class="reply" data-item="8" data-ref="8 &amp;middot; Twenty-four places ask for a color that was never defined" data-title="8 &amp;middot; Twenty-four places ask for a color that was never defined" data-kind="item" data-parent=""><div class="reply-row" role="group" aria-label="Your reply to item 8"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="yes" aria-pressed="false">Yes</button><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-8">Notes for the session</label><textarea id="note-8" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+
+<article class="card" id="i9">
+<h3>9 &middot; Six panel tints, or one?</h3>
+<dl>
+<dt>What this is</dt>
+<dd>Six tabs paint their panels in slightly different pale tints &mdash; a blue-grey on Team
+and RACI, a cream on the sign-in gate, a plain grey on Budget &mdash; because each was written
+with its own color rather than a shared name. In dark mode they now all resolve to one dark
+panel, correctly. The question is only about light.</dd>
+<dt>What I propose</dt>
+<dd class="ask">Leave the six as they are. Nothing is broken, and unifying them is a look
+change across six tabs rather than a fix.</dd>
+<dt>Why</dt>
+<dd>I have no evidence the variation bothers anyone, and six tabs changing appearance for
+tidiness is the kind of change that gets noticed and questioned. Say Yes only if the
+inconsistency bothers <em>you</em>.</dd>
+</dl>
+<!-- replies:start --><div class="reply" data-item="9" data-ref="9 &amp;middot; Six panel tints, or one?" data-title="9 &amp;middot; Six panel tints, or one?" data-kind="item" data-parent=""><div class="reply-row" role="group" aria-label="Your reply to item 9"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="yes" aria-pressed="false">Yes</button><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-9">Notes for the session</label><textarea id="note-9" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+
+<article class="card" id="i10">
+<h3>10 &middot; The faintest grey on the Implementation Funding tab</h3>
+<dl>
+<dt>What this is</dt>
+<dd>About a dozen small grey notes on that tab &mdash; the source line under the title, the
+notes under the cards, the goal citations, the footer &mdash; use the palette's faintest grey.
+It is meant for decoration, not for text anyone is expected to read, and in dark mode it falls
+below the accessibility floor.</dd>
+<dt>What I propose</dt>
+<dd class="ask">Move them one step darker. It fixes dark mode and also darkens them slightly
+on the light tab you have been working in.</dd>
+<dt>Why</dt>
+<dd>They are text you intend people to read &mdash; sources and citations especially. The
+faintest grey is the wrong role for them in either theme.</dd>
+</dl>
+<!-- replies:start --><div class="reply" data-item="10" data-ref="10 &amp;middot; The faintest grey on the Implementation Funding tab" data-title="10 &amp;middot; The faintest grey on the Implementation Funding tab" data-kind="item" data-parent=""><div class="reply-row" role="group" aria-label="Your reply to item 10"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="yes" aria-pressed="false">Yes</button><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-10">Notes for the session</label><textarea id="note-10" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+
+<article class="card" id="i11">
+<h3>11 &middot; Split the explainer footer so sources can hide?</h3>
+<dl>
+<dt>What this is</dt>
+<dd>The public explainer's footer holds two different things in one block: where the numbers
+come from, and the line saying this is a working model for discussion and not adopted policy.
+Section hiding works everywhere else on that page; the footer is deliberately excluded,
+because hiding the disclaimer would be the wrong outcome.</dd>
+<dt>What I propose</dt>
+<dd class="ask">Split the sources paragraph off so it can be hidden on its own, and leave the
+disclaimer always visible with no control on it.</dd>
+<dt>Why</dt>
+<dd>The two paragraphs serve different purposes. One is provenance you might reasonably hide
+from a public reader; the other is the sentence that keeps a draft from being read as policy,
+and it should not be possible to remove it by accident.</dd>
+</dl>
+<!-- replies:start --><div class="reply" data-item="11" data-ref="11 &amp;middot; Split the explainer footer so sources can hide?" data-title="11 &amp;middot; Split the explainer footer so sources can hide?" data-kind="item" data-parent=""><div class="reply-row" role="group" aria-label="Your reply to item 11"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="yes" aria-pressed="false">Yes</button><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-11">Notes for the session</label><textarea id="note-11" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+</section>
+
+<section class="group">
+<h2>Still open &mdash; data we do not hold yet</h2>
+
+<article class="card" id="i12">
+<h3>12 &middot; Who at ASCCC has the C-ID descriptor text?</h3>
+<dl>
+<dt>What this is</dt>
+<dd>You asked that a course carrying a C-ID or CCN designation take its description from the
+statewide template rather than from the colleges. We cannot yet: MAP holds the designation but
+not the wording, on 541 courses &mdash; 484 C-ID and 57 CCN. Those cards now say so plainly,
+naming the statewide descriptor as the authority and noting that MAP does not hold its text,
+rather than presenting a consolidation as if it were official.</dd>
+<dt>What I propose</dt>
+<dd class="ask">Tell me who to ask, or ask them yourself, whether ASCCC publishes the
+descriptor text in a form we can load. Once we have it, using it is a small change.</dd>
+<dt>Why</dt>
+<dd>This is the one ask of yours from the outline work that is not built, and it is blocked on
+a fact only a person at ASCCC can supply. A web search will not name the right individual;
+you know who answers.</dd>
+</dl>
+<!-- replies:start --><div class="reply" data-item="12" data-ref="12 &amp;middot; Who at ASCCC has the C-ID descriptor text?" data-title="12 &amp;middot; Who at ASCCC has the C-ID descriptor text?" data-kind="item" data-parent=""><div class="reply-row" role="group" aria-label="Your reply to item 12"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="yes" aria-pressed="false">Yes</button><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-12">Notes for the session</label><textarea id="note-12" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+
+<article class="card" id="i13">
+<h3>13 &middot; Which published standard do we start with?</h3>
+<dl>
+<dt>What this is</dt>
+<dd>Your ruling on where skill statements come from unblocked the outline's skills layer:
+published agency standards are the text of record, an ACE exhibit fills a gap they leave, the
+MAP team overrides either, and a genuine conflict shows both side by side. But we hold none of
+that text &mdash; of 1,987 credentials classified, 64 of them welding, not one carries a skill
+field. So this is a fetching problem now, not a decision.</dd>
+<dt>What I propose</dt>
+<dd class="ask">Start with an AWS welding certification as the pilot. Welding is the deepest
+part of the corpus at 64 credentials, so one standard proves the whole path.</dd>
+<dt>Why</dt>
+<dd>A pilot on the densest discipline tells us the most about whether the approach holds
+before we go looking for standards across the rest.</dd>
+</dl>
+<!-- replies:start --><div class="reply" data-item="13" data-ref="13 &amp;middot; Which published standard do we start with?" data-title="13 &amp;middot; Which published standard do we start with?" data-kind="item" data-parent=""><div class="reply-row" role="group" aria-label="Your reply to item 13"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="yes" aria-pressed="false">Yes</button><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-13">Notes for the session</label><textarea id="note-13" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+
+<article class="card" id="i14">
+<h3>14 &middot; Add the third spelling for Pierce College</h3>
+<dl>
+<dt>What this is</dt>
+<dd>Los Angeles Pierce College is recorded under &ldquo;LA PIERCE&rdquo; and &ldquo;LA
+Pierce&rdquo;, but not under its own name, &ldquo;Pierce College&rdquo;. Every internal table
+spells it the long way today, so nothing is broken.</dd>
+<dt>What I propose</dt>
+<dd class="ask">Add the third spelling now. It costs nothing and changes nothing today.</dd>
+<dt>Why</dt>
+<dd>If a file ever arrives from outside using the college's own name, it matches nothing and
+Pierce is simply absent &mdash; with no error to notice. That is the failure shape that costs
+the most to find later.</dd>
+</dl>
+<!-- replies:start --><div class="reply" data-item="14" data-ref="14 &amp;middot; Add the third spelling for Pierce College" data-title="14 &amp;middot; Add the third spelling for Pierce College" data-kind="item" data-parent=""><div class="reply-row" role="group" aria-label="Your reply to item 14"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="yes" aria-pressed="false">Yes</button><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-14">Notes for the session</label><textarea id="note-14" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+</section>
+
+<section class="group">
+<h2>Still open &mdash; checks and housekeeping</h2>
+
+<article class="card" id="i15">
+<h3>15 &middot; A production check that asks the wrong question</h3>
+<dl>
+<dt>What this is</dt>
+<dd>The check that runs after we deploy the shared assistant asks whether the answer about the
+Los Angeles district happens to spell out two particular college names out of nine. Sierra
+answers well &mdash; she says there are nine, then names five with the right coordinators and
+figures &mdash; she simply chooses a different five each time. <strong>It passed today.</strong>
+So it is not failing, it is intermittent, which is worse: a green run proves nothing.</dd>
+<dt>What I propose</dt>
+<dd class="ask">Change it to ask whether the district roster was looked up, instead of whether
+the prose contains a particular name. The script's own notes already predicted this and name
+that fix; a sibling check was moved the same way for the same reason.</dd>
+<dt>Why</dt>
+<dd>I made this exact mistake myself today, on a different assertion, and it cost us a wrong
+conclusion about whether Sierra had switched models. A check that name-matches a model's free
+prose is a coin flip dressed as evidence.</dd>
+</dl>
+<!-- replies:start --><div class="reply" data-item="15" data-ref="15 &amp;middot; A production check that asks the wrong question" data-title="15 &amp;middot; A production check that asks the wrong question" data-kind="item" data-parent=""><div class="reply-row" role="group" aria-label="Your reply to item 15"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="yes" aria-pressed="false">Yes</button><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-15">Notes for the session</label><textarea id="note-15" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+
+<article class="card" id="i16">
+<h3>16 &middot; Stop the phantom &ldquo;unpushed commit&rdquo; warning</h3>
+<dl>
+<dt>What this is</dt>
+<dd>Twice this evening the session-end check told me there was an unpushed commit when there
+was not. The cause: when a branch is squash-merged, GitHub deletes it, but the local pointer to
+the deleted branch survives &mdash; and counting from that stale pointer to the squash commit
+gives exactly one.</dd>
+<dt>What I propose</dt>
+<dd class="ask">Add one command to the check so it clears deleted branch pointers before
+counting. The repo's troubleshooting notes already record this warning as fixed, which is true
+for the case it covered and not for this one.</dd>
+<dt>Why</dt>
+<dd>A warning that cries wolf gets ignored, and this one will fire on every merged branch from
+now on. It is one line.</dd>
+</dl>
+<!-- replies:start --><div class="reply" data-item="16" data-ref="16 &amp;middot; Stop the phantom &amp;ldquo;unpushed commit&amp;rdquo; warning" data-title="16 &amp;middot; Stop the phantom &amp;ldquo;unpushed commit&amp;rdquo; warning" data-kind="item" data-parent=""><div class="reply-row" role="group" aria-label="Your reply to item 16"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="yes" aria-pressed="false">Yes</button><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-16">Notes for the session</label><textarea id="note-16" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+
+<article class="card" id="i17">
+<h3>17 &middot; Scope the phrase people type before moving a course</h3>
+<dl>
+<dt>What this is</dt>
+<dd>You asked for a phrase people type before they can move a course on the map, shifting to a
+team phrase later. That would be the first time anything is written <em>from</em> the map, which
+today writes nothing at all &mdash; so it goes through Governance and the privacy review before
+it ships rather than after. The register entry already carries your name as owner.</dd>
+<dt>What I propose</dt>
+<dd class="ask">Say go and the phrase gets scoped through Governance first. I would not ship the
+write surface ahead of that review.</dd>
+<dt>Why</dt>
+<dd>A read-only surface gaining its first write is a decision-rights change, not a code detail.
+Your own rule says it routes through Governance before it ships.</dd>
+</dl>
+<!-- replies:start --><div class="reply" data-item="17" data-ref="17 &amp;middot; Scope the phrase people type before moving a course" data-title="17 &amp;middot; Scope the phrase people type before moving a course" data-kind="item" data-parent=""><div class="reply-row" role="group" aria-label="Your reply to item 17"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="yes" aria-pressed="false">Yes</button><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-17">Notes for the session</label><textarea id="note-17" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+
+<article class="card" id="i18">
+<h3>18 &middot; Let a Sierra instruction be scoped to SkyView questions</h3>
+<dl>
+<dt>What this is</dt>
+<dd>Housekeeping, blocking nothing. The SkyView question surface is registered everywhere in the
+code, but the live database rule listing which surfaces an instruction can be scoped to has not
+been widened to include it.</dd>
+<dt>What I propose</dt>
+<dd class="ask">Widen it, as a one-line change, next time anything else touches that table.</dd>
+<dt>Why</dt>
+<dd>It only matters the day you want to write an instruction that applies to SkyView questions
+and nothing else. Doing it now costs a line; discovering it then costs a detour.</dd>
+</dl>
+<!-- replies:start --><div class="reply" data-item="18" data-ref="18 &amp;middot; Let a Sierra instruction be scoped to SkyView questions" data-title="18 &amp;middot; Let a Sierra instruction be scoped to SkyView questions" data-kind="item" data-parent=""><div class="reply-row" role="group" aria-label="Your reply to item 18"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="yes" aria-pressed="false">Yes</button><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-18">Notes for the session</label><textarea id="note-18" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+
+<article class="card" id="i19">
+<h3>19 &middot; The To-Do feed is at 26 against a guideline of about 12</h3>
+<dl>
+<dt>What this is</dt>
+<dd>The feed behind the To-Do button holds 26 items, 14 of them yours. The guideline is around a
+dozen. I have not trimmed it because guessing which of your standing asks are finished would
+lose your queue &mdash; and several on it are years-deep context I cannot verify from code.</dd>
+<dt>What I propose</dt>
+<dd class="ask">This sheet <em>is</em> the triage for the 14 that are yours. Answer them here and
+I delete every one you settle, which takes the feed to roughly the guideline without either of us
+guessing.</dd>
+<dt>Why</dt>
+<dd>The feed was never meant to be the place decisions wait. It points at a sheet like this one;
+it does not replace it.</dd>
+</dl>
+<!-- replies:start --><div class="reply" data-item="19" data-ref="19 &amp;middot; The To-Do feed is at 26 against a guideline of about 12" data-title="19 &amp;middot; The To-Do feed is at 26 against a guideline of about 12" data-kind="item" data-parent=""><div class="reply-row" role="group" aria-label="Your reply to item 19"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="yes" aria-pressed="false">Yes</button><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-19">Notes for the session</label><textarea id="note-19" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+</section>
+
+<p class="sub" style="margin-top:28px">Reply on any item above. Nothing here is urgent, and
+nothing blocks the next session &mdash; but items 1 and 2 are the only two where I am working
+without evidence until you look.</p>
+
+</div>
+<!-- replies:start --><div class="reply-bar" id="reply-bar" role="region" aria-label="Your replies so far"><span class="reply-count" id="reply-count">0 replied</span><span class="reply-where" id="reply-where"></span><button type="button" class="reply-chip reply-copy" id="reply-copy">Copy replies</button><details class="reply-show"><summary>Show the reply line</summary><textarea id="reply-line" class="reply-line" rows="4" readonly aria-label="The reply line, ready to paste"></textarea></details></div>
+<script>
+(function(){
+  "use strict";
+  var SHEET = "2026-09-10-nineteen-open-calls";
+  var LS = "sheet-replies:" + SHEET;
+  var els = Array.prototype.slice.call(document.querySelectorAll(".reply[data-item]"));
+  if (!els.length) return;
+  var state = {};        // item -> {item, ref, title, v, note, fu, t}; always this page's own objects
+  var col = null;        // the artifact's shared store, once this view can reach it
+  var where = "local";   // "db" once the store answers
+  var pending = {};      // item -> "saving" | "failed" | ""
+  var saved = {};        // item -> the `t` the store is known to hold
+
+  // What a snapshot delivers is FROZEN (the store's contract: "clone a body
+  // before editing it for a write"). The first version adopted the echoed body
+  // as state and assigned into it; outside strict mode the assignment is
+  // silently ignored, so from an item's first save on, every click painted
+  // nothing and wrote the unchanged document back (Sam, 2026-09-05: "I click
+  // Follow Up and it doesn't turn blue but does say response was saved").
+  // copy() means state is never the store's object; strict mode makes any
+  // such write throw instead of pass.
+  function copy(r){ var o = {}; if (r) for (var k in r) if (Object.prototype.hasOwnProperty.call(r, k)) o[k] = r[k]; return o; }
+
+  function read(){ try { var s = JSON.parse(localStorage.getItem(LS) || "{}"); if (s && typeof s === "object") state = s; } catch (e) {} }
+  function keep(){ try { localStorage.setItem(LS, JSON.stringify(state)); } catch (e) {} }
+  function byItem(item){ for (var i = 0; i < els.length; i++) if (els[i].getAttribute("data-item") === item) return els[i]; return null; }
+  function rec(item){
+    if (state[item]) return copy(state[item]);
+    var el = byItem(item);
+    return { item: item, ref: el ? el.getAttribute("data-ref") : "", title: el ? el.getAttribute("data-title") : "", v: "", note: "", fu: false };
+  }
+  function empty(r){ return !r || (!r.v && !r.fu && !r.note); }
+  function chipWord(el, v){
+    var bs = el ? el.querySelectorAll(".reply-chip[data-v]") : [];
+    for (var i = 0; i < bs.length; i++) if (bs[i].getAttribute("data-v") === v) return bs[i].textContent;
+    return v;
+  }
+  function words(el, r){
+    var w = [];
+    if (r.v) w.push(chipWord(el, r.v));
+    if (r.fu) w.push("follow up");
+    if (r.note) w.push("a note");
+    return w.join(", ");
+  }
+  function stateWords(el, item, r){
+    if (empty(r)) return "";
+    if (pending[item] === "saving") return "Saving…";
+    if (pending[item] === "failed") return "Could not save to the sheet; kept in this browser. Use Copy replies.";
+    var w = words(el, r);
+    return where === "db" ? "Saved to the sheet: " + w + "." : "Saved in this browser only: " + w + ". Use Copy replies to send it.";
+  }
+  function paint(el){
+    if (!el) return;
+    var item = el.getAttribute("data-item"), r = state[item] || {};
+    Array.prototype.forEach.call(el.querySelectorAll(".reply-chip[data-v]"), function(b){
+      b.setAttribute("aria-pressed", r.v && r.v === b.getAttribute("data-v") ? "true" : "false");
+    });
+    var fu = el.querySelector(".reply-fu"); if (fu) fu.setAttribute("aria-pressed", r.fu ? "true" : "false");
+    var note = el.querySelector(".reply-note");
+    if (note && document.activeElement !== note && (r.note || "") !== note.value) note.value = r.note || "";
+    var st = el.querySelector(".reply-state"); if (st) st.textContent = stateWords(el, item, r);
+  }
+  function paintAll(){ els.forEach(paint); bar(); }
+  function set(item, patch){
+    var r = rec(item); for (var k in patch) if (Object.prototype.hasOwnProperty.call(patch, k)) r[k] = patch[k];
+    r.t = new Date().toISOString();
+    state[item] = r; keep();
+    paint(byItem(item)); bar(); push(item);
+  }
+  function push(item){
+    if (!col) return;
+    var r = state[item]; if (!r) return;
+    var t = r.t;
+    pending[item] = "saving"; paint(byItem(item));
+    col.doc(item).set(copy(r)).then(function(){
+      // A newer change may have gone up meanwhile; its own callbacks settle it.
+      if (state[item] && state[item].t === t) { pending[item] = ""; saved[item] = t; }
+      paint(byItem(item)); bar();
+    }, function(){ pending[item] = "failed"; paint(byItem(item)); bar(); });
+  }
+
+  /* ── the bar: how many, where they are, the line to paste ── */
+  function line(){
+    var parts = [];
+    els.forEach(function(el){
+      var item = el.getAttribute("data-item"), r = state[item];
+      if (empty(r)) return;
+      var s = item + " " + (r.v ? r.v : "(no verdict)");
+      if (r.fu) s += ", follow up";
+      if (r.note) s += " — “" + String(r.note).replace(/\s+/g, " ").trim() + "”";
+      parts.push(s);
+    });
+    return parts.length ? parts.join(" · ") : "No replies yet.";
+  }
+  function bar(){
+    var n = { item: [0, 0], entry: [0, 0], done: [0, 0] }, fu = 0;
+    els.forEach(function(el){
+      var k = el.getAttribute("data-kind") || "item"; if (!n[k]) n[k] = [0, 0];
+      var r = state[el.getAttribute("data-item")];
+      n[k][1]++; if (!empty(r)) n[k][0]++; if (r && r.fu) fu++;
+    });
+    var parts = [];
+    if (n.item[1]) parts.push(n.item[0] + " of " + n.item[1] + " items");
+    if (n.entry[1]) parts.push(n.entry[0] + " of " + n.entry[1] + " memories");
+    if (n.done[1]) parts.push(n.done[0] + " of " + n.done[1] + " retired rows");
+    var c = document.getElementById("reply-count");
+    if (c) c.textContent = parts.join(" · ") + " replied" + (fu ? " · " + fu + " to follow up" : "");
+    var w = document.getElementById("reply-where");
+    if (w) w.textContent = where === "db"
+      ? "Replies save to this sheet; the session reads them from here."
+      : "Replies stay in this browser until you copy them into the session.";
+    var t = document.getElementById("reply-line"); if (t) t.value = line();
+  }
+  var copyBtn = document.getElementById("reply-copy");
+  if (copyBtn) copyBtn.addEventListener("click", function(){
+    var text = line(), done = function(ok){
+      copyBtn.textContent = ok ? "Copied" : "Select the line below and copy it";
+      setTimeout(function(){ copyBtn.textContent = "Copy replies"; }, 2200);
+      if (!ok) { var d = document.querySelector(".reply-show"); if (d) d.open = true; }
+    };
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(function(){ done(true); }, function(){ done(false); });
+      else done(false);
+    } catch (e) { done(false); }
+  });
+
+  /* ── wire each item ── */
+  els.forEach(function(el){
+    var item = el.getAttribute("data-item");
+    Array.prototype.forEach.call(el.querySelectorAll(".reply-chip[data-v]"), function(b){
+      b.addEventListener("click", function(){
+        var v = b.getAttribute("data-v"), cur = state[item] && state[item].v;
+        set(item, { v: cur === v ? "" : v });          // the pressed chip clears on a second click
+      });
+    });
+    var fu = el.querySelector(".reply-fu");
+    if (fu) fu.addEventListener("click", function(){ set(item, { fu: !(state[item] && state[item].fu) }); });
+    var note = el.querySelector(".reply-note"), tm = null;
+    if (note) {
+      note.addEventListener("input", function(){ clearTimeout(tm); tm = setTimeout(function(){ set(item, { note: note.value }); }, 500); });
+      note.addEventListener("blur", function(){ clearTimeout(tm); if ((state[item] ? state[item].note : "") !== note.value) set(item, { note: note.value }); });
+    }
+  });
+
+  /* ── the artifact's store, when this view has one ── */
+  function light(){
+    var C = window.claude;
+    if (!C || typeof C.use !== "function") return;
+    var p; try { p = C.use("db"); } catch (e) { return; }
+    if (!p || typeof p.then !== "function") return;
+    p.then(function(db){
+      if (!db) return;
+      col = db.collection("replies"); where = "db";
+      col.onSnapshot(function(snap){
+        var seen = {};
+        snap.docs.forEach(function(d){
+          var r = d.data(); if (!r || !r.item) return;
+          seen[r.item] = 1;
+          var cur = state[r.item];
+          // The store's copy wins when it is at least as new as this page's;
+          // COPIED, because the delivered body is frozen and stays the store's.
+          if (!cur || String(r.t || "") >= String(cur.t || "")) {
+            state[r.item] = copy(r); saved[r.item] = r.t || "";
+            if (pending[r.item] !== "saving") pending[r.item] = "";
+          }
+        });
+        // Anything this browser holds that the store does not: send it up once.
+        Object.keys(state).forEach(function(item){
+          if (!seen[item] && !pending[item] && !empty(state[item]) && saved[item] !== state[item].t) push(item);
+        });
+        keep(); paintAll();
+      }, function(){ where = "local"; col = null; paintAll(); });
+      paintAll();
+    }, function(){});
+  }
+
+  read(); paintAll(); light();
+})();
+</script>
+<!-- replies:end -->

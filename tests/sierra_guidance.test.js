@@ -69,7 +69,7 @@ const iso = (i) => new Date(Date.now() - i * 3600000).toISOString();
   api._state.guidance = [];
   api.render(root);
   check("Guidance pane renders with the production-widget warning",
-    /🧭 Instructions for Sierra/.test(root.innerHTML) && /public assistant/.test(root.innerHTML));
+    /Instructions for Sierra/.test(root.innerHTML) && /public assistant/.test(root.innerHTML));
   check("composer (textarea + add button) present", root.querySelector(".sit-guid-input") && root.querySelector("[data-guid-add]"));
   check("empty state invites the first rule", /No instructions yet/.test(root.innerHTML));
 
@@ -158,7 +158,7 @@ function step2() {
     check("display rules do not evict directives — every row still sent",
       (mixedHtml.match(/Sierra is using this/g) || []).length === CAP + 3
       && (mixedHtml.match(/not reaching Sierra/g) || []).length === 0);
-    /* ⚠ COUNT THE ROW CHIP, NOT THE STRING. The first cut of this check matched
+    /* COUNT THE ROW CHIP, NOT THE STRING. The first cut of this check matched
      * /Display rule</ and read 4 for 3 display rows: the composer's own
      * <option>Display rule</option> matches too. A check that also matches a
      * control that is ALWAYS present cannot go to zero, so it would have passed
@@ -294,7 +294,7 @@ function finish() {
     && /fetchGuidanceKind\([^;)]*\bGUIDANCE_MAX_DISPLAY\b/.test(fnSrc)
     && /\.eq\("kind", kind\)/.test(fnSrc));
 
-  /* ⚠ THE DEPLOY-ORDER FALLBACK IS THE HIGHEST-STAKES LINE IN THIS FILE.
+  /* THE DEPLOY-ORDER FALLBACK IS THE HIGHEST-STAKES LINE IN THIS FILE.
    * fetchTeamGuidance fails soft, so if the function is deployed against a
    * database without the kind column, EVERY team instruction stops reaching
    * Sierra and nothing reports it — the naming rule included. The kind-less

@@ -6,7 +6,7 @@
 // Sam's design: "if we doubled the per-student amount when Front Load is
 // selected (rather than doubling the students, which would make it twice as
 // hard) … offer big funding up front for a big push the first year and then roll
-// the unspent funds to Year 2. I would love to be out of funding at the end of
+// the unearned funding to Year 2. I would love to be out of funding at the end of
 // Year 1 because it would mean everyone is up and running."
 //
 // The mechanism is NOT a special-case multiplier. Front-load already puts the
@@ -69,13 +69,18 @@ function boot(window) {
   window.CPL_FUNDING_TAB.boot();
   return window.document;
 }
-// The tab exports _alloc(name) (one college's shaped allocation) but no row
-// list — build one over the baked roster.
+// The tab exports _alloc(name) (one institution's shaped allocation) but no row
+// list — build one over the ONE-POOL roster (2026-08-31): the 115 college rows
+// plus the noncredit-only three by their shorts (Mt. SAC NC rides the
+// Mt San Antonio row and is not a name here).
+const TRIO = D.feeders.filter(function (f) { return !f.nc_ftes_on_credit_row; })
+  .map(function (f) { return f.short; });
+const ROSTER = D.colleges.map(function (c) { return c.college; }).concat(TRIO);
 function allRows(T) {
-  return D.colleges.map(function (c) {
-    var a = T._alloc(c.college);
+  return ROSTER.map(function (n) {
+    var a = T._alloc(n);
     if (!a) return null;
-    a.college = c.college; a.rural = !!c.rural;
+    a.college = n;
     return a;
   }).filter(Boolean);
 }
@@ -119,7 +124,25 @@ check("slotIsCarryover names the front-loaded later years",
     /function capScale/.test(consumerSrc) &&
     /m\.capped\[c\.college\]/.test((consumerSrc.match(/function capScale\(c\)[\s\S]*?\n  \}/) || [""])[0]));
 
-  const strays = (consumerSrc.replace(entBody, "").match(/\*\s*p\.share\s*\/\s*nYears\(\)/g) || []).length +
+  // The SECOND named exemption (ncPrioEntitlement, 2026-08-27) is RETIRED with
+  // the second solve (one-pool adoption, R3–R5, 2026-08-31): there is no
+  // carve-out for an NC entitlement to ride. Its INTENT survives inside
+  // prioEntitlement itself, which now serves BOTH lanes — the lane slice is the
+  // award's own FTES-share decomposition (laneShareOf: .nc for a noncredit
+  // priority, .cr for a credit one), statewide (c = null) reads the FULL pool
+  // share — so the pre-bounds / front-load-blind / capScale-only properties
+  // asserted above already cover the NC targets. Guard the retirement AND the
+  // lane routing, so the exemption cannot quietly re-widen.
+  check("ncPrioEntitlement / ncCapScale are GONE — the second solve is retired (one pool, 2026-08-31)",
+    !/function ncPrioEntitlement/.test(consumerSrc) && !/function ncCapScale/.test(consumerSrc) &&
+    !/function ncSizePct/.test(consumerSrc));
+  check("prioEntitlement carries BOTH lanes via laneShareOf (nc share for lane 'nc', cr otherwise)",
+    /lane === "nc"\) \? laneShareOf\(c\)\.nc : laneShareOf\(c\)\.cr/.test(entBody));
+  check("...and statewide (c = null) reads the FULL pool share — Total Possible is CR+NC together",
+    /var laneFrac = 1;/.test(entBody) && /if \(c\) laneFrac =/.test(entBody));
+
+  const strays = (consumerSrc.replace(entBody, "")
+      .match(/\*\s*p\.share\s*\/\s*nYears\(\)/g) || []).length +
     (consumerSrc.match(/\*\s*p\.share\s*\/\s*ny\b/g) || []).length;
   check("no OTHER site computes W × p.share ÷ nYears on its own (all go through prioCap)",
     strays === 0);
@@ -202,10 +225,18 @@ check("targets are NOT scaled by disbursement (per-student rate doubles, student
 
   // The payoff Sam is buying: a college that hits its Year-1 target draws the
   // WHOLE window in Year 1. ("I would love to be out of funding at the end of
-  // Year 1 because it would mean everyone is up and running.")
-  check("front-load: hitting the Year-1 target draws the whole window",
-    near(flRow.earned_total, flRow.total, 1));
-  // Under even, hitting the same Year-1 target draws only Year 1's half on the
+  // Year 1 because it would mean everyone is up and running.") Under ONE POOL
+  // (2026-08-31) "the whole window" is the whole CREDIT window: the credit
+  // slice earns on the credit priorities, while the award's noncredit share
+  // earns ONLY on the noncredit measures — listed from day one, $0 until those
+  // feeds report (F1), never an advance — so this feed (no nc_* keys) pays the
+  // CR slice in full and holds exactly the NC share back.
+  check("front-load: hitting the Year-1 target draws the whole CREDIT window",
+    near(flRow.earned_total, flRow.cr_award, 1));
+  check("front-load: the noncredit share is the F1 hold — earned stops short of the total by exactly it",
+    flRow.nc_award > 0 && near(flRow.total - flRow.earned_total, flRow.nc_award, 1) &&
+    (flRow.earned_nc || 0) === 0);
+  // Under even, hitting the same Year-1 target earns only Year 1's half on the
   // measured side — the rest is a Year-2 advance, not an achievement.
   check("even: the same performance earns measurably LESS on achievement",
     (evenRow.earned_measured || 0) < (flRow.earned_measured || 0) - 1);
@@ -229,12 +260,14 @@ check("targets are NOT scaled by disbursement (per-student rate doubles, student
   const rows = allRows(T);
   const poster = rows.find(function (r) { return r.college === "Alameda"; });
   const nonPoster = rows.find(function (r) {
-    return r.college !== "Alameda" && r.total > 0 && !r.rural && !r.gate_blocked;
+    return r.college !== "Alameda" && r.total > 0 && TRIO.indexOf(r.college) === -1 && !r.gate_blocked;
   });
   check("front-load: a college posting nothing still earns $0 on the main allocation",
     nonPoster && near(nonPoster.earned_total - (nonPoster.earned_guaranteed || 0), 0, 0.5));
-  check("front-load: a college over its target is capped at its window cap",
-    poster && near(poster.earned_total, poster.total, 1));
+  // "Its window cap" is the CREDIT window under one pool — the NC share is not
+  // earnable by credit posting, however far over target (F1 restriction).
+  check("front-load: a college over its target is capped at its CREDIT window cap",
+    poster && near(poster.earned_total, poster.cr_award, 1) && poster.earned_total <= poster.total);
   check("front-load: unearned money is real (Σ earned < Σ cap while colleges lag)",
     rows.reduce(function (s, r) { return s + (r.earned_total || 0); }, 0) <
     rows.reduce(function (s, r) { return s + r.total; }, 0) - 1);
@@ -252,24 +285,54 @@ check("targets are NOT scaled by disbursement (per-student rate doubles, student
   T.render();
 
   check("front-load: the year filter marks the carryover year",
-    doc.querySelector("#cplFundYear").textContent.indexOf("↻") !== -1);
-  const flLine = doc.querySelector(".cplfund-prio .cplfund-fl-line");
-  check("front-load: the priority card states the window is on the table in Year 1",
-    !!flLine && /full .* window/i.test(flLine.textContent) &&
-    flLine.textContent.indexOf("Effective") !== -1);
-  check("front-load: the priority card names the SAME student target",
-    !!flLine && /same .*-student target|that same/.test(flLine.textContent));
+    /carryover/i.test(doc.querySelector("#cplFundYear").textContent));
+  // The "Combined funding: $W for the full window … Effective $E" card line is
+  // RETIRED (Sam, 2026-09-02 — it restated the band head's Total Possible, the
+  // Target line and the price line). The window figure has to survive on the
+  // card regardless: the Demonstrated line reads "of $W full-window Total
+  // Possible", and the band head above carries the same figure.
+  const card1 = doc.querySelector(".cplfund-prio .p");
+  check("front-load: the Year-1 priority card carries NO restating 'Combined funding' line (retired 2026-09-02)",
+    !!card1 && !doc.querySelector(".cplfund-prio .cplfund-fl-line"));
+  // The band head is retired (Sam, 2026-09-14) — the per-outcome Total Possible
+  // it carried is the one figure no single card can state, so it moved to the
+  // totals row above the grid. The CARD half of this check is unchanged.
+  check("front-load: the card still states the window figure — its Demonstrated line reads the full-window Total Possible",
+    !!card1 && /of \$[\d,]+ full-window Total Possible/.test(card1.textContent) &&
+    /Total Possible/.test((doc.querySelector(".cplfund-otot") || {}).textContent || ""));
 
-  // Switch the viewed year to the carryover year.
+  // Switch the viewed year to the carryover year. The in-table P-cells are
+  // retired (one-pool port, 2026-08-31) — per-priority money lives in the row
+  // EXPAND, and the award columns show the window figure under front-load —
+  // so the "never a wall of $0" guard re-aims at both surfaces.
   setViewSlot(T, "2");
-  const cells = doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row td.cf-prio");
-  check("carryover year: P-cells read ↻ carryover, not a wall of $0",
-    cells.length > 0 &&
-    Array.from(cells).every(function (td) { return td.textContent.indexOf("↻ carryover") !== -1; }));
+  T._state.open["c:Alameda"] = true;
+  T.render();
+  const aDet = doc.querySelector("tr.cplfund-detail");
+  check("carryover year: the row expand reads carryover, not a wall of $0",
+    !!aDet && /carryover/.test(aDet.textContent) && !/\$0 of \$0/.test(aDet.textContent) &&
+    !aDet.querySelector(".cplfund-dtl-table"));
+  const awardCells = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row td.cf-award"));
+  check("carryover year: the award columns still show the window money (front-load re-times, never zeroes)",
+    awardCells.length > 0 &&
+    !awardCells.every(function (td) { return /^\$0/.test(td.textContent.trim()); }));
+  T._state.open = {};
+  T.render();
   check("carryover year: no misleading 'earned $0 of $0 cap' line",
     !doc.querySelector(".cplfund-prio .cplfund-earned-line"));
+  // ⚠️ ASK THE CARDS, NOT THE FIRST GRID. This read
+  // `doc.querySelector(".cplfund-prio")` — the first priority grid in the
+  // document — and broke on a CORRECT change: ask 2 (2026-09-13) gives a
+  // measureless goal a reported card always, so bands that rendered no grid at
+  // all now render one, and the first grid became the Access band's instead of
+  // the band holding the carryover cards. Measured at the time of the fix: the
+  // line was still on the cards (Success and the orphan band both carried it),
+  // and only the selector had moved off them. Fourth occurrence of
+  // a-test-coupled-to-position-breaks-on-correct-work — so this asks every
+  // priority CARD, which is what the assertion's own name claims.
   check("carryover year: the priority card explains where the money went",
-    doc.querySelector(".cplfund-prio").textContent.indexOf("carryover") !== -1);
+    Array.from(doc.querySelectorAll(".cplfund-prio .p"))
+      .some(function (c) { return c.textContent.indexOf("carryover") !== -1; }));
 
   // The money columns themselves are unchanged by the viewed year.
   const row = T._alloc("Alameda");
@@ -292,19 +355,24 @@ check("targets are NOT scaled by disbursement (per-student rate doubles, student
   const r = rows.find(function (c) { return c.college === "Alameda"; });
   const key = Object.keys(r).find(function (k) { return /_heads$/.test(k); }).replace(/_heads$/, "");
   // prioCap(W, slot, p) must reduce EXACTLY to the historical W × share ÷ nYears
-  // under even tranches. Rebuild it from the baked share so the reduction is
+  // under even tranches — where W is now the CREDIT SLICE of the one combined
+  // award (one pool, 2026-08-31: instSplit(c).cr = W × laneShareOf(c).cr).
+  // Rebuild the slice from the DATA's own FTES split so the reduction is
   // checked against an independent source, not restated from the same call.
   {
     const share = D.year_priorities["1"][0].share;
     const pKeyName = D.year_priorities["1"][0].key;
-    check("even: a priority's cap is still the historical W × share ÷ nYears",
-      r[pKeyName] > 0 && near(r[pKeyName], r.w * share / ny, 0.01));
+    const al = D.colleges.find(function (c) { return c.college === "Alameda"; });
+    const laneCr = al.credit_ftes / (al.credit_ftes + (Number(al.noncredit_ftes) || 0));
+    check("even: a priority's cap is still the historical (CR slice) × share ÷ nYears",
+      r[pKeyName] > 0 && near(r[pKeyName], r.w * laneCr * share / ny, 0.01));
   }
   check("even: Σ per-year caps == the window cap",
     near((r.y1 || 0) + (r.y2 || 0), r.total, 0.01));
   check("even: each year carries an equal tranche", near(r.y1, r.total / ny, 1));
-  check("even: Σ college rows still equals the whole distributed college pool",
-    // No rural component to add back since 2026-08-22 — the pool IS netCollege().
+  check("even: Σ institution rows still equals the whole ONE pool (all 118)",
+    // No carve-out to add back (folded in, R3 2026-08-31) — and the sum runs
+    // over the FULL roster: the pool IS netCollege() only with the trio in.
     near(rows.reduce(function (s, x) { return s + x.total; }, 0), T._netCollege(), 5));
 }
 
@@ -332,24 +400,36 @@ check("targets are NOT scaled by disbursement (per-student rate doubles, student
   check("front-load: the explainer stops quoting an annual tranche",
     flExplain.textContent.indexOf("one annual tranche") === -1);
   check("front-load: the explainer names the full window + the multiplied per-student rate",
-    /full .* window, placed on the table in Year 1/.test(flExplain.textContent) &&
+    /full .* window, available in Year 1/.test(flExplain.textContent) &&
     /effective rate per student is \d+×/.test(flExplain.textContent));
 
-  // The P-cell hover: a plain college's cap is nYears× the annual base rate, so
-  // calling that "the statewide base rate" without saying front-load is false.
-  const cell = doc.querySelector("#cplFundTable tbody tr.cplfund-row td.cf-prio");
+  // The money-cell hover (the P-cells are retired — one-pool port, 2026-08-31 —
+  // the award pair is the money surface now): under front-load a cell's figure
+  // is the WHOLE window, so the hover must name the window rather than present
+  // the doubled figure as an annual one.
+  // The CR award cell, by what it is: the Max award leads the row (2026-09-23).
+  const cell = doc.querySelector("#cplFundTable tbody tr.cplfund-row td.cf-award:not(.cf-max)");
   const title = cell ? cell.getAttribute("title") || "" : "";
-  check("front-load: the P-cell hover discloses the front-loaded base rate",
-    title.indexOf("Front-loaded") !== -1 && /statewide base works out to/.test(title));
-  check("front-load: the hover does NOT claim the doubled cap sits at the annual base rate",
-    !/at the \$[\d,.]+\/student statewide base rate\.$/.test(title));
+  check("front-load: the award-cell hover names the WINDOW (never the doubled figure as an annual one)",
+    /Credit share of the max award \(.*window\)/.test(title) && title.indexOf("(per year)") === -1);
+  check("...and flipping back to even re-labels the same cell per year",
+    (function () {
+      T._setScenario({ disbursement: "even" });
+      T.render();
+      const t = (doc.querySelector("#cplFundTable tbody tr.cplfund-row td.cf-award:not(.cf-max)") || { getAttribute: function () { return ""; } })
+        .getAttribute("title") || "";
+      T._setScenario({ disbursement: "frontload" });
+      T.render();
+      return t.indexOf("(per year)") !== -1;
+    })());
 
   // The rural allowance is retired (2026-08-22), so no hover may still offer one
-  // — a stale promise of money is worse than no explanation at all.
-  const hovers = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row td.cf-prio"))
-    .map(function (td) { return td.getAttribute("title") || ""; }).join(" ");
-  check("front-load: no hover still promises a guaranteed rural allowance",
-    hovers.length > 0 && !/rural allowance/.test(hovers));
+  // — a stale promise of money is worse than no explanation at all. Scan EVERY
+  // title the college table renders, not one retired cell class.
+  const hovers = Array.from(doc.querySelectorAll("#cplFundTable [title]"))
+    .map(function (el) { return el.getAttribute("title") || ""; }).join(" ");
+  check("front-load: no hover anywhere in the table still promises a guaranteed rural allowance",
+    hovers.length > 1000 && !/rural allowance/.test(hovers));
 }
 
 let pass = 0;

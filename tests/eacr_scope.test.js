@@ -10,9 +10,12 @@
 // 1,790 cards and had adopted 44). The median card carries 1 adopter and 41
 // potentials.
 //
-// Three scopes now, not a binary, because the middle one is a genuinely stronger
-// signal that no filter could previously reach: the prescriptive M-ID layer names
-// the local course the college already teaches (4,972 pairs vs 122,836).
+// 2026-09-24 (Sam: "Don't need the College Filter Matches chips"): the three-way
+// scope control is gone. What is FIXED now is what the chips used to switch —
+// the filters match adopters, the could-adopt column is the prescriptive M-ID
+// layer (4,972 pairs, and it names the local course), and the broad TOP/C-ID
+// lead list (122,836 pairs; TOP is a last-in-line signal under Rule 7) reaches
+// no screen and no export from this tab. These checks pin all three.
 //
 // Also guarded: the CER fold. The card grain is (title, issuer, CPL type) but the
 // CER's grain is the title, so 8 credentials rendered as TWO cards — a classified
@@ -132,11 +135,6 @@ const container = () => doc.getElementById("statewide-interactive-container");
 function rowTitles() {
   return Array.from(doc.querySelectorAll("#sw-tbody tr .exhibit-cell-name")).map((e) => txt(e));
 }
-function setScope(scope) {
-  // Drive the real control the way a user does: check the radio, fire change.
-  const r = doc.querySelector('.sw-scope-radio[value="' + scope + '"]');
-  if (r) { r.checked = true; r.dispatchEvent(new window.Event("change", { bubbles: true })); }
-}
 function showView(v) {
   const b = doc.querySelector('.sw-subtab[data-view="' + v + '"]');
   if (b) b.dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
@@ -151,57 +149,47 @@ function pickCollege(name) {
 setTimeout(runAssertions, 80);
 
 function runAssertions() {
-  // ── 1. The control exists and defaults to real adoptions ─────────────────
-  check("a college-scope control renders", !!val(() => doc.querySelector(".sw-scopebar")));
-  check("it offers exactly three scopes",
-    val(() => doc.querySelectorAll(".sw-scope-radio").length) === 3);
-  check("it DEFAULTS to adopted (not the old adopted∪potential union)",
-    val(() => doc.querySelector(".sw-scope-radio:checked").value) === "adopted");
-  check("the default scope's hint says it means articulated",
-    /articulated/i.test(val(() => txt(doc.getElementById("sw-scope-hint"))) || ""));
-  check("the broad scope discloses that TOP is a weak signal",
-    /weak signal|leads, not matches/i.test(src));
+  // ── 1. No scope control; the doctrine is stated where the chips were ─────
+  check("the college-scope chips are gone", !val(() => doc.querySelector(".sw-scopebar")));
+  check("...and nothing named scope survives in the source", !/collegeScope|sw-scope-radio/.test(src));
+  check("the filter-bar hint says filters match colleges that ARTICULATED the exhibit",
+    /match colleges that have articulated/i.test(val(() => txt(doc.querySelector(".sw-filterbar-hint"))) || ""));
+  check("...and says what could-adopt means (a course that maps, named on the card)",
+    /already teaching a course that maps/i.test(val(() => txt(doc.querySelector(".sw-filterbar-hint"))) || ""));
 
-  // ── 2. Scope actually changes the result set ─────────────────────────────
+  // ── 2. The College filter matches adopters, and only adopters ────────────
   showView("table");
   pickCollege("College C");
-
-  // adopted: College C has articulated only Cisco CCNA.
   const adoptedRows = rowTitles();
-  check("scope=adopted returns ONLY what College C articulated",
+  check("filtering to College C returns ONLY what College C articulated",
     adoptedRows.length === 1 && adoptedRows[0] === "Cisco CCNA");
-  check("scope=adopted does NOT return the TOP/C-ID lead (Aligned Only Cert)",
+  check("...never the TOP/C-ID lead (Aligned Only Cert)",
     adoptedRows.indexOf("Aligned Only Cert") === -1);
-  check("scope=adopted does NOT return the prescriptive match (CompTIA A+)",
+  check("...and not even the prescriptive match (CompTIA A+) — a filter returns adoptions",
     adoptedRows.indexOf("CompTIA A+") === -1);
 
-  // likely: + the credential whose mapping course College C already teaches.
-  setScope("likely");
-  const likelyRows = rowTitles();
-  check("scope=likely ADDS the prescriptive match (CompTIA A+)",
-    likelyRows.indexOf("CompTIA A+") !== -1);
-  check("scope=likely still EXCLUDES the bare TOP/C-ID lead",
-    likelyRows.indexOf("Aligned Only Cert") === -1);
-  check("scope=likely keeps the real adoption", likelyRows.indexOf("Cisco CCNA") !== -1);
-
-  // any: + the broad TOP/C-ID overlap. This is the OLD behaviour, now opt-in.
-  setScope("any");
-  const anyRows = rowTitles();
-  check("scope=any ADDS the broad TOP/C-ID lead", anyRows.indexOf("Aligned Only Cert") !== -1);
-  check("scope=any is the widest of the three", anyRows.length > likelyRows.length);
-  check("the three scopes are strictly nested (adopted ⊂ likely ⊂ any)",
-    adoptedRows.length < likelyRows.length && likelyRows.length < anyRows.length);
-
-  // ── 3. The column can never disagree with the filter that returned the row ─
-  setScope("adopted");
+  // ── 3. The could-adopt column is the M-ID layer, and nothing broader ─────
+  // Clear the college filter so every card is in view.
+  const grp0 = doc.querySelector('.sw-filter-group[data-filter="college"]');
+  Array.from(grp0.querySelectorAll("input[type=checkbox]")).forEach((i) => { i.checked = false; });
+  grp0.querySelector("input[type=checkbox]").dispatchEvent(new window.Event("change", { bubbles: true }));
   // td[8] is the could-adopt cell (0 checkbox, 1 title, 2 type, 3 cpl,
   // 4 discipline, 5 adopted#, 6 potential#, 7 adopted-colleges, 8 could-adopt).
-  const couldCell = () => val(() => doc.querySelectorAll("#sw-tbody tr")[0].querySelectorAll("td")[8]);
-  check("scope=adopted says so in the could-adopt column, rather than showing potentials",
-    /showing adoptions only/i.test(val(() => couldCell().textContent) || ""));
-  setScope("any");
-  check("a likely match is chipped differently from a broad lead",
-    /sw-potential-likely/.test(src));
+  function couldCellFor(title) {
+    return val(() => Array.from(doc.querySelectorAll("#sw-tbody tr")).find((tr) =>
+      txt(tr.querySelector(".exhibit-cell-name")) === title).querySelectorAll("td")[8]);
+  }
+  check("CompTIA A+ names College C as could-adopt (it teaches CIS 110)",
+    /College C|\bC\b/.test(val(() => txt(couldCellFor("CompTIA A+"))) || ""));
+  check("...under the text label that says WHY",
+    /Already teaches a matching course/i.test(val(() => txt(couldCellFor("CompTIA A+"))) || ""));
+  check("⭐ CompTIA A+ does NOT name College D — a TOP/C-ID potential is not could-adopt here",
+    !/College D|\bD\b/.test(val(() => txt(couldCellFor("CompTIA A+"))) || ""));
+  check("Aligned Only Cert (TOP lead only, no M-ID match) reads 'none identified'",
+    /none identified/i.test(val(() => txt(couldCellFor("Aligned Only Cert"))) || ""));
+  check("the 'Same TOP code or C-ID (a lead)' group is gone from the tab",
+    !/Same TOP code or C-ID/.test(src));
+  check("a likely match is chipped as such", /sw-potential-likely/.test(src));
 
   // ── 4. The CER fold ──────────────────────────────────────────────────────
   showView("credentials");
@@ -233,25 +221,33 @@ function runAssertions() {
     /same credential/i.test(val(() => txt(ffCard.querySelector(".cv-ex-hint"))) || ""));
 
   // ── 6. The student view folded in as a MODE, losing nothing ──────────────
+  // The near-me band classifies the filtered colleges against each card on the
+  // credential view. With the filter matching adopters, the cards in view are
+  // College C's adoptions; the band still names the two states a college can
+  // be in on THIS card — Adopted, or could adopt with the course named.
   showView("credentials");
   pickCollege("College C");
-  setScope("likely");
-  const comptia = val(() => titled("CompTIA A+")[0]);
-  check("near-me: the prescriptive match is stated on the credential card",
-    /already teaches a matching course/i.test(val(() => txt(comptia.querySelector(".sv-maybe"))) || ""));
-  check("near-me: it NAMES the local course (CIS 110)",
-    /CIS\s*110/.test(val(() => txt(comptia.querySelector(".sv-maybe"))) || ""));
-  check("near-me: a prescriptive match is NOT mislabelled as an aligned-program lead",
-    !val(() => comptia.querySelector(".sv-prog")));
   const cisco = val(() => titled("Cisco CCNA")[0]);
   check("near-me: an adopter college reads as Adopted",
     /Adopted/.test(val(() => txt(cisco.querySelector(".sv-yes"))) || ""));
-  setScope("any");
-  const alignedCard = val(() => titled("Aligned Only Cert")[0]);
-  check("near-me: a bare TOP/C-ID lead reads as 'Aligned program only'",
-    /Aligned program only/i.test(val(() => txt(alignedCard.querySelector(".sv-prog"))) || ""));
-  check("near-me: ...and discloses it is a lead, not a match",
-    /a lead, not a match/i.test(val(() => txt(alignedCard.querySelector(".sv-prog"))) || ""));
+  check("near-me: the card in view is the one College C articulated", !!cisco);
+  // The prescriptive state shows on a card College C has NOT adopted — reached
+  // by district, which College C shares with College D.
+  const grpD = doc.querySelector('.sw-filter-group[data-filter="college"]');
+  Array.from(grpD.querySelectorAll("input[type=checkbox]")).forEach((i) => { i.checked = false; });
+  grpD.querySelector("input[type=checkbox]").dispatchEvent(new window.Event("change", { bubbles: true }));
+  const grpDist = doc.querySelector('.sw-filter-group[data-filter="district"]');
+  const d2 = Array.from(grpDist.querySelectorAll("input[type=checkbox]")).find((i) => i.value === "D2");
+  if (d2) { d2.checked = true; d2.dispatchEvent(new window.Event("change", { bubbles: true })); }
+  const comptiaD = val(() => titled("CompTIA A+")[0]);
+  check("near-me (district D2): CompTIA A+ is in view through College C's could-adopt… no — through its adopter",
+    // District D2 holds C and D; neither adopted CompTIA A+ (College A did), so the
+    // card is OUT of view: a filter returns adoptions, never prescriptive matches.
+    !comptiaD);
+  Array.from(grpDist.querySelectorAll("input[type=checkbox]")).forEach((i) => { i.checked = false; });
+  grpDist.querySelector("input[type=checkbox]").dispatchEvent(new window.Event("change", { bubbles: true }));
+  check("near-me: the 'Aligned program only' state (TOP leads) no longer exists",
+    !/Aligned program only/.test(src) && !/sv-prog\b/.test(src.replace(/\.sv-prog\{[^}]*\}/g, "").replace(/\.sv-prog b\{[^}]*\}/g, "").replace(/\.sv-chip-prog\{[^}]*\}/g, "")));
 
   // ── 7. Sub-tabs replaced three collapsibles; only one renders ────────────
   // Asserted by NAME, not by count. This check read "exactly two sub-tabs" and
@@ -313,24 +309,17 @@ function runAssertions() {
     return b;
   };
 
-  setScope("any");
   doc.getElementById("sw-export-excel").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
   const csvAny = lastBlobText();
-  check("the CSV states which could-adopt scope produced it",
-    /Could-adopt scope:/i.test(csvAny));
-  check("...naming the broad scope when the broad scope is active",
-    /any could-adopt/i.test(csvAny));
+  check("the CSV states what could-adopt means in it",
+    /Could-adopt scope:/i.test(csvAny) && /already teaching a course that maps/i.test(csvAny));
   check("the CSV header no longer says the ambiguous 'Potential Adopters'",
     /Colleges Could Adopt/.test(csvAny) && !/Potential Adopters/.test(csvAny));
-  check("a likely match is marked as such in the export, not pooled with leads",
-    /teaches a matching course/.test(csvAny));
-
-  setScope("adopted");
-  doc.getElementById("sw-export-excel").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
-  const csvAdopted = lastBlobText();
-  check("scope=adopted exports a NARROWER could-adopt list than scope=any",
-    csvAdopted.length < csvAny.length);
-  check("...and says so in its provenance line", /Adopted —/.test(csvAdopted));
+  check("a likely match is marked as such in the export",
+    /College C \(teaches a matching course\)/.test(csvAny));
+  check("⭐ the TOP/C-ID potential (College D) never reaches the export's could-adopt column",
+    !/College D/.test(csvAny.split("\n").find((l) => l.indexOf("CompTIA A+") === 0) || ""));
+  check("the provenance line leads with Adopted", /Adopted —/.test(csvAny));
 
   doc.getElementById("sw-export-json").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
   const json = val(() => JSON.parse(lastBlobText()));

@@ -420,3 +420,153 @@ arriving tomorrow. The structural guard is for the Edge Function to refuse to
 surface a college absent from (or flagged `test` in) the authoritative roster.
 Not built here: it needs a deploy and a smoke verification, and Sierra was down
 for most of this run.
+
+---
+
+## 2026-09-11 — SkyBeat (S257): the tab's main table had never rendered, for anyone
+
+**Sam opened the tab** and said it *"only shows the colleges with problems that
+need to be fixed. The main view should be a complete table of all MAP locations
+(college, district, variation names, including any noncredit entities and
+agencies like LAUNCH and Furuto, etc.)"*
+
+**That table was already built.** `Every entity (N of M · K suppressed)` —
+filterable by name, district or variant, `continuing_education` and `partner`
+rows beside the colleges, `th scope`, a fixed colgroup, an `aria-label`led
+scrolling region. It is his own 2026-08-21 ask, quoted in the file's header:
+*"the college/district table that should list loc IDs and all variations of the
+names found in the DB."*
+
+⭐ **IT HAD NEVER RENDERED, BECAUSE `authHeaders()` SENT NOTHING.**
+
+```js
+if (window.CPL_TEAM_PHRASE && window.CPL_TEAM_PHRASE.headers) {
+  h = window.CPL_TEAM_PHRASE.headers() || {};
+}
+```
+
+`CPL_TEAM_PHRASE` exposes **`decorateHeaders`**. It has never exposed `headers`.
+So the guard was **always false**, `h` stayed `{}`, every fetch went out with no
+`apikey`, PostgREST answered **401**, `state.live` stayed null — and the roster
+draws under `if (live)`. Signed in or not, phrase or not, since the tab shipped.
+
+⚠️ **THE ELSE-BRANCH IS WHY IT SURVIVED.** The tab is deliberately built to
+"degrade politely and say which half you lost" rather than render a confident
+wrong zero — good design that, pointed at a *typo*, reports the symptom as an
+expected state. A missing method and an unmounted module are indistinguishable
+to a truthiness guard, so the page calmly explained a gate that was not the
+problem. The fix mirrors `cr_reference.js`: apikey never conditional, bearer
+carries the reviewer JWT when there is one, phrase applied via `decorateHeaders`.
+
+⚠️ **AND THE FILE'S HEADER HAD DRIFTED TO DESCRIBE THE BROKEN SCREEN.** It read
+*"a LINT SURFACE, not a lookup"* — directly contradicting the ask quoted three
+lines below it. Nobody mis-specified anything; the lint was simply the only half
+that rendered, and the prose caught up to it. **A comment that describes what you
+observe rather than what was asked for will ratify a bug.**
+
+**Sam's ruling on order:** *"Yes, above the findings. Better yet, show the full
+table and just give a link to the discrepancies."* Roster leads; findings below
+under `id="cid-findings"`; a one-line jump link above the table names the count,
+and is not drawn when there is nothing to link to. A **link, not a disclosure** —
+the findings stay in the DOM and in document order, so Ctrl-F, a screen reader's
+heading list and a deep link all still reach them.
+
+**a11y:** the view's only failure, in both themes, was `headings skips: h1 -> h3`.
+Every sibling tab (`cr_reference`, `governance`, `map_users`) opens at h2; this
+file alone opened at h3, so its sections sat at h4. Fixed, and re-verified by
+re-running the sweep: the view leaves the output and the total falls 38 → 36.
+
+⚠️ **MAP USERS IS NOT WIRED TO THIS TAXONOMY.** Sam assumed it was ("I'm sure it
+already is"). `map_users.js` holds **zero** references to `map_colleges`,
+`college_id` or `variants`. It keys on the college **name string** —
+`map_college_users?college=eq.<name>` — plus three hardcoded name-keyed objects:
+`FALLBACK_CONTACTS` (78), `CPL_PAGES` (16), `CPL_LIAISONS` (1). No duplicate keys
+(checked; the repeats are the same college across two different objects). Name-
+string keying is the weak link he has been noticing across sessions, and the
+`variants` column exists precisely to end it. Not started — it is his call.
+
+---
+
+## 2026-09-11 — SkyBeat (S257), part 2: wiring MAP Users to the taxonomy, and what that was actually worth
+
+Sam: *"do both a and b"* — (a) run the identity lint daily in the cron against
+what we pull from MAP and flag any diffs; (b) make MAP Users resolve through
+`college_id`/variants instead of name strings. Both shipped in #1561.
+
+⭐ **THE MEASUREMENT CAME FIRST, AND IT CHANGED WHAT (b) WAS WORTH.**
+
+| | |
+|---|---:|
+| `map_college_users` names matching a canonical `college_name` | **128 / 128** |
+| distinct hardcoded keys that are canonical | **74 / 78** |
+| non-canonical names in `map_college_contacts` | **3 / 123** |
+
+**Nothing was broken.** Every lookup in the tab worked. It worked because MAP
+happens to spell things canonically, and nothing anywhere enforced that it keeps
+doing so. Reporting that plainly mattered more than the code did: the honest
+framing is *the wiring replaced luck*, not *the wiring fixed a pile of breakage*.
+
+⚠️ **WHAT `normCollege()` COULD NEVER DO.** It already folded case, Unicode form
+and whitespace — so `Cypress College ` already found `Cypress College`. It can
+**never** bridge a VARIANT to its canonical name: `San Diego College of Continuing
+Education Credit` and `…Continuing Education` normalize to different strings, and
+only `map_colleges.variants` knows they are one institution. That is the whole
+capability the taxonomy adds, and it is why "we already normalize" was not an
+answer to Sam's question.
+
+**One concrete recovery.** `map_college_contacts` stores SDCCE's contacts on the
+canonical row and a `landing_page_url` on the `… Credit` variant row. The old
+`eq.<canonical>` read returned one row and dropped the URL silently. Contacts now
+merge across spellings, canonical-first, and the merged row names which rows
+contributed — an invisible merge cannot be questioned.
+
+⭐ **THE RULING DOES THE WORK, NOT A SPECIAL CASE.** Merging rows across spellings
+is only safe because the taxonomy encodes Sam's 2026-08-21 ruling: Calbright and
+LAUNCH are two entities each, San Diego and North Orange one. The
+continuing-education arms merge because the data says they are one identity.
+`Calbright College Credit` does **not** merge into `Calbright College Non-Credit`
+— not because the code checks for Calbright, but because it resolves to no
+identity at all. **There is no mention of Calbright anywhere in the logic.** If he
+ever revises that ruling, the behavior follows from the data with no code change.
+
+⚠️ **A VARIANT MUST NEVER SHADOW A CANONICAL NAME**, and this is where the index
+build earns its shape. `Mission College` is BOTH — its own college in West
+Valley-Mission, and a variant of Los Angeles Mission College. Canonicals are
+indexed in their own pass first; the variant pass refuses to overwrite them. The
+first cut did this with three passes and a null-and-refill, which was hard to
+reason about; it is two clean passes now, and the test asserts the answer is the
+same with the payload reversed.
+
+## Two of my own regressions, both caught by guards
+
+⚠️ **A CACHE THAT CHANGES THE THING IT CACHES IS NOT A CACHE.** My first
+`pickByIdentity` stored its normalized index as `map.__norm` — mutating
+`FALLBACK_CONTACTS`, which then grew an entry with no provenance.
+`map_users.test.js`'s *"every entry declares a provenance"* went red immediately.
+**A test I did not write caught it on the first run.** The index sits beside the
+map now, and `map_users_taxonomy.test.js` guards the property directly.
+
+⚠️ **THE DEPENDENCY MAP WENT STALE TWICE IN ONE SESSION, SAME CAUSE BOTH TIMES.**
+It records LINE OFFSETS into the files it maps, so any edit moves it — and both
+times I rebuilt it and *then* made one more edit. The rule already sits in the
+session handoff's safety patterns; knowing it is not the same as sequencing it.
+**Rebuild it as the genuinely last step before a push**, and check every generated
+artifact together (`_build_dependency_map.py --check`, `_build_docs_index.py
+--check`, and `admin_tab.test.js` for `cobi_admin_surface.js`) rather than only
+the one CI happened to name.
+
+## The daily lint (a)
+
+It lives in `map-users-sync.yml` rather than its own workflow because that job
+already runs daily, already holds `SUPABASE_SERVICE_KEY`, and is the one that
+pulls from MAP — a second scheduled workflow would be a second cron reading the
+same rows minutes apart. **Read-only; it never commits.** It reports whether the
+FINDING SET moved and raises one reusable issue. Landing regenerated identity
+decisions by schedule is exactly what `college_identity_rulings.json` exists to
+prevent, and a daily commit would also race the dashboard cron (Rule 6's lesson).
+
+⚠️ Its two guards are the interesting part: it **refuses on a short read** (<100
+colleges or <100 names), because a failed read would otherwise report the entire
+roster as findings — a failure wearing the shape of a catastrophic result. And it
+restores `college_identity_data.js` from git afterwards, because the builder
+writes that file at the repo root regardless of `--out`.

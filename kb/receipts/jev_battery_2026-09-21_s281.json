@@ -1,0 +1,28 @@
+{
+ "_doc": "Jev variable battery over the below-gate band, scored against Sam's 51 verdicts. NOTHING PASSED the pre-registered rule. Recorded here because an Actions log and artifact both age out, and this is the measurement.",
+ "run": "https://github.com/CPL-Initiative/cpl-project-tracker/actions/runs/35632754128",
+ "artifact": "jev-battery, id 10654572189 (raw per-pair profiles)",
+ "commit": "afd00e57b98445fcefe18284e23f58d769337d27",
+ "at": "2026-09-21T17:33:56Z",
+ "band": {"pairs": 26, "fold": 16, "keep": 10},
+ "pre_registered": {"min_auc": 0.65, "alpha": 0.05, "correction": "holm",
+                    "permutations": 20000, "seed": 7, "primary_gates_secondaries": true},
+ "power": {"primary_detectable_auc": 0.75, "secondary_detectable_auc": 0.80,
+           "note": "a null means NO LARGE EFFECT in 26 pairs, never 'no signal'"},
+ "primary": {"variable": "any_reason", "auc": 0.378, "p": 0.848, "passes": false},
+ "secondary": [
+  {"variable": "level",            "auc": 0.738, "p": 0.023, "p_holm": 0.138, "kept": false},
+  {"variable": "vendor",           "auc": 0.684, "p": 0.062, "p_holm": 0.310, "kept": false},
+  {"variable": "different_course", "auc": 0.537, "p": 0.384, "p_holm": 1.000, "kept": false},
+  {"variable": "lab",              "auc": 0.459, "p": 0.640, "p_holm": 1.000, "kept": false},
+  {"variable": "scope",            "auc": 0.366, "p": 0.871, "p_holm": 1.000, "kept": false},
+  {"variable": "units",            "auc": 0.281, "p": 0.972, "p_holm": 1.000, "kept": false}
+ ],
+ "baseline": {"p_same": 0.441, "care": 0.450},
+ "readings": [
+  "The PRIMARY is 0.378 - BELOW chance. The max across the battery is anti-correlated with keeping: when Jev found a reason to hold two apart, Sam was MORE likely to fold. The battery is not weakly right, it is backwards.",
+  "`units` at 0.281 is the strongest anti-correlation and it is interpretable, not noise. This lane already ruled that units are NOT identity (SPAN 100 at 4/4.5/5 units is one course; Engine Performance correctly merges 2/3-4/4/5). Jev is applying a general-purpose assumption the domain has already decided against.",
+  "`level` at 0.738 is the one lead: right direction, largest effect, raw p 0.023. Holm kills it at 0.138 and the pre-registered rule discards it. Without the pre-registration this run would have been reported as 'level works'. It is a hypothesis for ONE targeted re-test on a batch it did not pick, never a finding from this set.",
+  "WHAT DID NOT FAIL: the 0.85 gate on the ORIGINAL question. 25 of 25, 346 articulation rows, nothing wrong in it. The failure is confined to the 26 hard pairs, which is where curator judgment IS the product."
+ ]
+}

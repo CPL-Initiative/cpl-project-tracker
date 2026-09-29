@@ -137,7 +137,7 @@ grain.
   `methodology-a-negative-result-needs-a-positive-control`.
 - ⚠️ **An odd one out is a lead, not a tally entry.** On that same sweep 500 meant
   *real* and 400 meant absent; the single 500 was the real view, printed as `✗`.
-- ⚠️ **The payload IS the PII boundary.** `fetch_custom_report.py`'s minimisation
+- ⚠️ **The payload IS the PII boundary.** `fetch_custom_report.py`'s minimization
   is the *absence* of entries — one plausible edit from being undone in a PUBLIC
   repo. `tests/custom_report_payload_test.py` pins it; it was verified to FAIL,
   not just to pass. Keep it that way.

@@ -69,7 +69,7 @@ reactive one written that afternoon.
 
 20 was chosen to be **unreachable on purpose**: above what 9,000 chars can carry
 (~17 at the observed ~525-char average). So a curator who runs out of room is
-*told* by the meter rather than quietly losing work. Generalises past this table.
+*told* by the meter rather than quietly losing work. Generalizes past this table.
 
 Both cap pairs are now compared **file-to-file** in `tests/sierra_guidance.test.js`
 rather than pinned to a literal, and the sent-cap fixture is sized from the

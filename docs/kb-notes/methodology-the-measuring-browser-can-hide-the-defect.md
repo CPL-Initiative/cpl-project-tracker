@@ -16,10 +16,10 @@ artifacts:
 
 # The measuring browser can hide the defect
 
-> **One-sentence summary** — a behavioural check runs in ONE engine, and that
+> **One-sentence summary** — a behavioral check runs in ONE engine, and that
 > engine's forgiveness becomes your test's blind spot, so when the browser is
 > more permissive than the browsers you ship to, the ATTRIBUTE is the check and
-> the behaviour is only a regression guard.
+> the behavior is only a regression guard.
 
 ## Context
 
@@ -35,7 +35,7 @@ and `submit()` **removes them after the first question**. So the log was
 reachable while it was empty and had nothing to scroll, and stopped being
 reachable the moment it filled up.
 
-Two behavioural checks were written for it. Both passed against the **pre-fix**
+Two behavioral checks were written for it. Both passed against the **pre-fix**
 page.
 
 ## The claim
@@ -56,7 +56,7 @@ accessible name**, so even where it works it is not the same thing as the fix.
 The rule that follows:
 
 > When the instrument is more permissive than the population you ship to, assert
-> the **attribute**, and label the behavioural check a **regression guard**.
+> the **attribute**, and label the behavioral check a **regression guard**.
 
 This is the inverse of the Session-173 lesson and completes it. There, the
 instrument was too *weak* to see the defect (jsdom, no layout). Here it is too
@@ -81,13 +81,13 @@ one?* If you cannot make a check fail on purpose, you do not know what it tests.
 
 ## Caveats
 
-- This does **not** demote behavioural checks in general. Where the engines
-  agree, behaviour is the better check — the map's markers were genuinely
+- This does **not** demote behavioral checks in general. Where the engines
+  agree, behavior is the better check — the map's markers were genuinely
   mouse-only, and `Enter` on a focused pin failing pre-fix and passing after is
   a real proof.
 - The Fact Sheet's `.tbl-wrap` region has the same nuance and is unaffected in
   practice: `factsheet.js` sets `tabindex` explicitly, and its check reads the
   attribute.
-- Chromium's behaviour is a genuine improvement for users of Chromium. The point
+- Chromium's behavior is a genuine improvement for users of Chromium. The point
   is only that it cannot be relied on as *the* fix, and must not be allowed to
   stand in for one during verification.

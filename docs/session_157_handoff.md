@@ -158,7 +158,7 @@ dismissal with a reason** in `kb/governance_surface_map.json`. Do not bulk-dismi
 appended after SkyGate wrote the rest, so nothing above mentions it.
 
 **Merged:** #1191 (`EITHER` badge + tooltip · Browse/Find nav entries hidden ·
-Program/Award/CIP-Sector multi-select pickers · TOP unbolded, CIP labelled) ·
+Program/Award/CIP-Sector multi-select pickers · TOP unbolded, CIP labeled) ·
 #1192 **reverted by** #1194 · #1198 (the scope doc).
 
 ⭐ **Read [`docs/noncredit_cip_category_scope.md`](noncredit_cip_category_scope.md)

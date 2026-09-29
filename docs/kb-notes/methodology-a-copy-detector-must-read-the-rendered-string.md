@@ -62,11 +62,11 @@ function renderedText(src) { return joinConcats(stripComments(src)); }
 Order matters: strip comments **first**, or a commented-out example gets joined
 and matched. The loop matters: fragments chain, so one pass leaves seams.
 
-## The generalisation
+## The generalization
 
 This is the string-literal case of a broader rule: **a static check must operate
 on the artifact it is making a claim about.** A guard about what a *user sees*
-cannot analyse what an *author wrote* unless it first performs the assembly the
+cannot analyze what an *author wrote* unless it first performs the assembly the
 runtime performs. The same applies to template literals, `join()`ed arrays,
 i18n keys resolved at render, and HTML built by fragment.
 

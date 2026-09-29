@@ -1,0 +1,298 @@
+---
+title: "SkyView / the CCR curation interface — lane state"
+created: 2026-08-28
+updated: 2026-09-29
+tags: [reference, roadmap-lane]
+kb-status: internal
+obsidian-folder: cpl-project-tracker/reference/lanes
+related:
+  - "[[CLAUDE]]"
+---
+
+# SkyView / the CCR curation interface
+
+> **Always-current lane state, not an archive.** The shipped history — every
+> round, every measurement, every wrong reading — lives in
+> [`ccr_atlas_lessons`](../../ccr_atlas_lessons.md) and its
+> [archive](../../ccr_atlas_lessons_archive.md); the queue behind the priority is
+> [`skyview_backlog`](../../skyview_backlog.md).
+>
+> ⭐ **Compacted 2026-09-09 (2.75×) and 2026-09-10. Do not re-inflate a rule
+> with its evidence** — the story goes to the lessons doc; a pointer comes back.
+
+**What this lane is:** An interactive view of the Common Course Reference —
+common courses by discipline, their constituent local courses, and moving a
+course to where it belongs. **"SkyView" is the map ALONE, filling the window**
+(Sam, 2026-08-24, tightened 2026-09-05); the map with its panes is **the
+comprehensive view**, and the discipline table, the subject table and the ESL
+card are the **workspace** (*Disciplines and subjects*), a tab of their own. The
+lane also carries the **re-mint series** — the CSR's codes key SkyView's islands.
+
+## Status
+
+✅ **Built and stable.** Sam's five goals are met: the whole universe on one
+canvas (16,482 identities, 33,423 stand-alone courses, 159 islands); keyword jump
+to anything; hover is a quick look and click the docked inspector; every
+stand-alone orbits its best-matching identity; drag and drop is real with a
+keyboard path. **`#skyview` OPENS AS THE SKY** since S239 — **Sky · Globe** as
+places to stand on ONE canvas. A course opens its outline of record (S235); a
+staged move is marked on the course itself (S239).
+
+**Swept end to end:** `npm run sweep` drives the served page through every reader
+and curator action — **230 of 231 as of 2026-09-19**. The one failure is
+INHERITED, not this lane's recent work: *"one finger after the pinch still turns
+the sky (the registry is clean)"* fails identically on the parent commit
+(226/227), so a pointer id survives a two-finger spread somewhere older.
+⚠️ **The sweep is not in `js-tests.yml`**, so CI has never gone red for it —
+which is how it stayed unnoticed. Filed as `s278-fable-skyview-pinch-registry`.
+What the sweep observed and did not change is
+[`skyview_backlog` ⑩](../../skyview_backlog.md).
+
+⚠️ **`prototype/skyview.html` IS GENERATED — edit `ccr_universe.js` (behavior and
+markup) or `ccr_atlas_v1.html` (CSS), then `python3 prototype/build_ccr_atlas.py`.**
+A hand-patch survives review and deploy and dies on the next rebuild; it did, on
+2026-09-18 (#1618, reverted by #1617's rebuild within the hour). Guarded now by
+`tests/skyview_built_from_source_test.py`, in CI and in `scripts/check_generated.sh`.
+[`methodology-a-generated-file-accepts-your-edit`](../../kb-notes/methodology-a-generated-file-accepts-your-edit.md)
+
+**A three-rung curation ladder (2026-09-18, #1625; widened 2026-09-19).** Sam
+specified it across three messages: *"To position courses to merge needs at
+least team code auth to do"*, *"magic link can do any of the three"*, *"Team
+code or magic should be able to navigate to all links"*. On 2026-09-19 he named
+the goal the ladder serves: *"allow public read only SkyView access but prevent
+any actions to be taken that would edit or access views where edits could be
+done."*
+
+| Rung | Credential | Opens |
+|---|---|---|
+| 0 VIEW | the link alone | the map, search, details, the Ask, the course outline of record, How SkyView works |
+| 1 STAGE | the team phrase | positioning a course; the comprehensive view, By discipline, By subject, ESL packaging, the decision surface, the outline's reviewer panel; the COBI and CCR-table links |
+| 2 EXECUTE | a magic-link reviewer | Save, writing `kb_curation` |
+
+⭐ **RUNG 0 IS A DELIBERATE PUBLIC SURFACE (2026-09-19).** Four views need
+STAGE because each reaches a staging control — the comprehensive view embeds
+the forest (*Open this one* → the decision surface), By discipline carries a
+**Decisions** button to the same place, and By subject / ESL packaging share
+**one workspace shell with one mode bar** with it, so ESL is one click from the
+Disciplines table. Asked to gray or hide, Sam chose **hide**. The outline of
+record stays open as reading matter; its reviewer panel carries the rung.
+
+⚠️ **THE MENU IS NOT THE ONLY DOOR.** Those views are also plain URLs, so
+`GATED_ROUTES` puts the same question on `__ccrRoute()`, the one funnel, and
+`refreshAuthChrome()` re-runs it on credential loss. The suite asserts the menu
+list and the route list AGREE — a view gated in one and not the other is
+invisible on screen.
+
+⛔ **`ccr_atlas_graph.js`'s `__ccrDecision` IS A SECOND CURATION SURFACE**, and
+had no gate: `curationRung()` never saw it because it lives in another file,
+and the suite's *"nothing outside curationRung() decides authorization"* passed
+for the same reason. It asks the exported `window.__ccrRung` now, failing
+CLOSED. **A single-decider guard is only as wide as the files it reads.**
+
+⚠️ **THE BAND NAMES THE CREDENTIAL** (**Read only** · **Team phrase** · **Magic
+link**) — rungs 0 and 1 used to open on the same words. Rungs 1 and 2 add
+*"here and in COBI"*: one origin, one credential. The static `u-ro-line` markup
+no longer ships a COBI link, which painted before the gate could reach it.
+
+Story, measurements and two attribution failures:
+[`ccr_atlas_lessons`](../../ccr_atlas_lessons.md) (2026-09-19).
+
+`curationRung()` is the ONLY place any of it is decided — the rungs moved twice
+inside one conversation, and nothing else reads the storage keys. Its ranking
+matches `nav_overlay.js`'s `AUDIENCE_RANK`, so rung 2 satisfying rung 1 falls out
+rather than being special-cased. **Re-mint is NOT built**: Sam called it the
+process *after* merge execution, and his 2026-09-05 ruling makes a re-mint view a
+queue he approves, never a fire button.
+
+Sign-in and the curation line live in the band inside `#u-full` — the only chrome
+surviving both `body.u-solo` and browser full screen. ⚠️ The staged list
+(`#u-writes`) is in `#u-below`, which solo HIDES, so a Save control there would be
+invisible in the default view. The band's older sentence stays exactly true below
+rung 2: nothing under EXECUTE sends anything anywhere, and Sam shared the page on
+that sentence.
+
+⚠️ **The rung gate is a convenience, not a boundary, and the code says so.**
+Staging writes nothing, so gating it in the browser IS the mechanism; for EXECUTE
+the button is a courtesy and `kb_curation`'s RLS is the real refusal. Withholding
+a view or a COBI link removes the OFFER rather than the access — `pages.yml` serves
+`prototype/` and COBI alike, so anyone holding an address walks in. 12 of the 29
+Everyone-rung tabs render live internal data to a signed-out reader; closing that
+is RLS or the [public/private split](public-private-repo-split.md).
+
+Governance: `tab:skyview-merge-execution` → **DR-04**, the row already governing
+`kb_curation` (Rule 10 a3). The dependency map now derives the same edge —
+`prototype/ccr_universe.js` writes `kb_curation`, and all three phrase RPCs gain
+both SkyView pages as readers.
+
+**Current behavior worth knowing before you touch it:** rotation `SPIN` 0.018; a
+dropped course PARKS; a drop that stages nothing ANSWERS (the
+silent `fromNode` exit was the "stops responding on the second or third merge",
+2026-09-18) and a staged course queues on its own arc against the parent circle,
+labeled *staged, awaiting a curator*; courses gather by level on the ring score
+already chose;
+**CTE vs academic** is three Show switches (25,857 · 16,470 · **7,569 with no
+verdict**); **Isolate** is a toggle; the phone header is 114px at 390×844 (map
+86%) and pinch zooms; a question typed in the search box becomes a map selection
+AND answers in a `role="status"` panel inside the search form.
+
+⚠️ Session-by-session narrative for all of the above lives in
+[`docs/ccr_atlas_lessons.md`](../../ccr_atlas_lessons.md) — this file states
+current truth, so do not re-inflate it with a log.
+
+## Invariants — in their own file
+
+⚠️ **[`docs/reference/skyview_invariants.md`](../skyview_invariants.md) — READ
+IT BEFORE TOUCHING THE CODE.** Around forty rules, each written because a session got it
+wrong once, grouped as: the payload and the model · building and serving · the
+window, the row and the canvas · pointer, touch and the turn · the sphere ·
+labels and the frame budget · search, the ask and the lists · the outline, the
+skills and the CPL universe. Moved out of THIS file on 2026-09-09 (reference, not
+state); a store nobody names is a store nobody finds, so this pointer is the
+safety mechanism.
+
+The ones most often needed first: the canvas height is **JS-owned** by
+`fitCanvas()` and CSS cannot take it; `npm test` proves **nothing** about layout
+*and* does not run the dependency-map check; the served page inlines
+`ccr_universe.js`, so a JS change needs `prototype/build_ccr_atlas.py`; and
+**nothing the model names is trusted as a key** on the ask path.
+
+## The outline of record — BUILT (S235, CPL layer S238)
+
+`#outline/<id>`, six layers, `tests/ccr_skyview_outline.test.js`. ⚠️ **Its invariants moved to**
+[`skyview_invariants.md`](../skyview_invariants.md) **at the S251 checkpoint** — the
+consolidated description that names no college, complete-link at Dice 0.3, the
+administration strip, placeholder text, and C-ID/CCN being unhandled. **Read them
+before touching the outline**; they are the kind of rule you only look up once you
+already suspect it, which is why the pointer is here.
+
+## Sam's three rulings of 2026-09-22
+
+⚠️ **TWO OF THESE THREE WERE ALREADY BUILT WHEN SAM RULED ON THEM (verified
+2026-09-22, open-asks sheet items 14-16).** They stayed on this list after the
+work landed, so the sheet carried them to him and he spent a ruling on each.
+
+- **① the statewide treatment — ALREADY SHIPPED.** `ccr_universe.js` draws the
+  second ring today, and its comment cites the ask by date: *"A statewide
+  exhibit wears a second ring (Sam, 2026-09-10: 'shown visibly on the sky') — a
+  mark, not a color, so it reads by day and by night; the word rides the label
+  and the card."* The word is on the label (`nd.sw` in the head line) and on the
+  card. Sam's ruling — a persistent mark on the node — describes what exists.
+- **② the `sierra_guidance` CHECK constraint — ALREADY ALIGNED.** Read live:
+  `sierra_guidance_surface_ck` allows `my-college · cobi-assistant · public ·
+  fact-sheet · memory-autogen · memory-briefing · gr-analysis · skyview-ask`.
+  There is no migration to run and no save failure to fix.
+- **③ the phone opening — DONE (S301, 2026-09-29).** See below.
+
+
+③ **The opening width on a phone — RULED "narrow" (Sam, 2026-09-22), DONE
+(S301, 2026-09-29).** Measured on the served page at 390×844 (`__ccrSkyAcross`,
+`skyWindow`): the stereographic scale is proportional to the canvas's width, so
+188° across drew 100 of the 117 islands in view with no stars, and cut 11 of 17
+names at the edges. Every island in view shows its stars at 75° and narrower,
+through a turn of the sky; 80° loses 10 of 43. Narrowing alone never fixed the
+names: about half ran past an edge at every width.
+
+So a phone (a viewport under 700px) opens at the desktop opening's SCALE, 65°
+across at 390px (31 of 31 with stars), and a name there is drawn whole or not at
+all. At 700px and wider the opening stays 188°. The test reads the viewport,
+because the canvas has not settled when the view resets (a tablet read 489px). Screenshots before and after: the S301
+session note. Mechanics: [`skyview_invariants`](../skyview_invariants.md).
+
+⚠️ **Measured, not changed:** a 768px tablet still opens at 188°, where the
+center islands sit below `NODE_ZOOM` (the scale there is about half the
+desktop's), and the desktop cuts 6 of 34 names at 188°. The phone rules would
+apply to both unchanged; neither was in Sam's ruling.
+
+⚠️ **"An emptied discipline stays DRAWN" is a BUILDER change, not a renderer
+tweak.** `build_islands()` walks `all_discs`, so an emptied discipline is absent
+from the payload and never reaches `islandPass`. Drawing it needs a roster to
+emit from, a radius, and a ghost lifetime. ⚠️ Do **not** "fix" it in `islandPass`
+— hiding an island whose points are all *filtered off* is deliberate and
+`healShow` depends on it. Two different empties; only one is Sam's.
+
+⚠️ The Pages deploy prunes `docs/`, so a sheet is handed over as an artifact
+link, never a github.io URL.
+
+## NEXT
+
+⭐ **CPL MODE IS A SECOND UNIVERSE, NOT A RELABELING** (Sam's ruling, 2026-09-10).
+Exhibits grouped into discipline islands the way courses are, CER canonical titles
+as the entities, local exhibits as their members, a ring where courses are
+articulated to them. His words verbatim: `cpl_memory`
+`sam-cpl-mode-is-an-exhibit-universe-2026-09-10`.
+
+This is not the shipped CPL face, which renames the same points. It is a second
+payload with the same shape as `ccr_universe.json`: **CER canonical titles as
+identities, local MAP exhibits as their members, disciplines as islands, and a
+ring where a course articulates to the exhibit.** ⚠️ `prototype/ccr_cpl.json` is
+keyed the INVERSE way — course identity → credentials — so it cannot be reused
+directly; the builder is a new one. Lane-sized, not a session's work.
+
+✅ **BUILT (S251)** — `kb/_build_ccr_cpl_universe.py` → `prototype/ccr_cpl_universe.json`
+(0.36 MB), rebuilt by the daily cron beside its siblings, guarded by
+`tests/ccr_cpl_universe_test.py` (25 checks). **1,987 exhibit identities folding
+3,813 local exhibits in 97 islands · 1,603 with a ring · 534 grouped / 1,453
+singleton · 84 statewide, all articulated · 543 in the pile.**
+
+**Builder invariants are PULL** — the CER supplies every axis and agencies come
+from it, never the crosswalk's inlined issuer; the credit funnel's count is never
+mixed in; the layout is IMPORTED from the course universe; `slug()` truncates at
+60 and `ident_id()` appends a digest; a singleton draws as any identity and the
+543-credential pile ships visible (Sam's two rulings). Each is a check in
+`tests/ccr_cpl_universe_test.py`; the story is the SkyLedger section of
+[`ccr_atlas_lessons`](../../ccr_atlas_lessons.md).
+
+✅ **THE VIEW SHIPPED (S252)** — the CPL word swaps the universe under the same
+map (`bindUniverse` + a full re-render; hash · legend · Show menu · corpus · light
+all this universe's). A credential's card lists the courses articulated to it,
+each a door onto the Courses map, and the local exhibits folded in; a statewide
+credential wears a second ring and the word on its label. Nothing moves there.
+Members payload: `kb/_build_ccr_cpl_universe_members.py` (0.99 MB, cron beside
+4d3b, `tests/ccr_cpl_universe_members_test.py`). Swept: `npm run sweep` §K + §R.
+[invariants](../skyview_invariants.md#the-outline-the-skills-and-the-cpl-universe)
+
+**NEXT: refine in prod.** Sam's statewide ask (*"shown visibly on the sky so
+folks can easily see…"*, truncated) is met with the ring and the label word; a
+PERMANENT label for the 84 is the next call (1,987 cannot be labeled, 84 can).
+The 543-credential pile island draws as *(no discipline yet)*; the card caps the
+course list at 40 and the members at a page. Ask SkyView still resolves against
+the course vocabulary on the CPL map (the envelope's discipline list is the
+same; the terms are not).
+
+⓪ **DR-24's write surface** — the curate phrase and the propose/second gate. The
+register row exists with Sam as owner; the phrase's SCOPE is what is open.
+① **The skills layer's fetch problem.** Unblocked by his ruling: use all three
+sources, union them, *"err on the side of including anything possibly relevant,
+as the faculty will revise and keep or toss."*
+② **The blanks — RULED AND NARROWED: 93 → 86.** Five codes went into the subject
+map (BSOT · HUMA · GRAF · BCST · BARB); HOSP is genuinely split four ways.
+⚠️ **The remaining 86 are NOT fillable and the payload says so** (37 of their 45
+codes have no other identity carrying that prefix). A **curator pass, never an
+inference**: `kb/discipline_blanks_worklist.json`.
+③ **The disagreements: 9 → 2, and neither survivor is a map problem.** Left:
+**PHTO** (the map is right, its twelve courses mis-filed) and **ESLN** (③b's
+rename). ⭐ All nine printed NOTHING until S243 — `standingHtml()` appended the
+note to ONE of four exits.
+⭐ **WHICH MECHANISM A CASE NEEDS IS ONE QUESTION — NOW IN DR-25**: does the MQ
+list already carry the distinction? No → **umbrella**, mint codes. Yes and the
+courses split → **fan-in**, one Common SUBJ, both names kept. Yes and they do not
+→ a plain **correction**. ⚠️ Asking it re-sorts cases. A real MQ discipline
+carrying NO courses folds into its parent through `kb/discipline_aliases.json`.
+⚠️ **ATHL IS AN UMBRELLA CODE, NOT A KINE VARIANT** (Sam, 2026-09-08) — 1,468
+M-IDs, and the Phase 1e fold was caught re-keying them once. Now declared in the
+CSR (`is_umbrella`), which survives a reseed and a Supabase sync.
+③b ⚠️ **EIGHT MQ DISCIPLINE NAMES CARRY A TITLE 5 SECTION NUMBER** — an
+extraction artifact, not a vocabulary question. 45 live rows but **1,183
+occurrences across 33 files**. **An id-keyed corpus change: its own dry-run,
+alias map and receipt, in a separate PR.**
+④ **Grab bags** — vocational, work experience, interdisciplinary studies, and the
+no-discipline pile. None may vote in a modal decision; today they all do.
+⑤ **Legacy anchors: RETIRE** (`M-ID HOSP 100`, `104`, `102`) — id-keyed, so a
+re-mint under [`coursecontrolnumber_remint.md`](../../coursecontrolnumber_remint.md).
+⑥ **The frame budget, if Sam still sees it step.** The remaining named JS is the
+per-node loop (14%) and the island loop (10%) — the irreducible walk. **Fewer
+points per frame is the lever that has worked three times running.**
+⑦ The rest of the queue: [`skyview_backlog`](../../skyview_backlog.md).
+
+⚠️ Whatever changes, `npm run sweep` and `npm run a11y skyview` run again in the
+same PR — and `scripts/check_generated.sh` LAST before a push.

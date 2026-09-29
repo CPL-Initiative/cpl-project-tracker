@@ -90,15 +90,29 @@ check("ghost layer honors reduced transparency", fl.includes("prefers-reduced-tr
 check("First Light dialog stays opaque", fl.includes(".cplfl-dialog{background:var(--surface-opaque"));
 
 // ── (g) PR-3 glass-quiet chips (spec v1.6) ──
-check("uc-badge wears the glass-quiet recipe",
-  /\.uc-badge \{[^}]*background:rgba\(255,255,255,\.5\)[^}]*border:1px solid var\(--border-strong\)/.test(cpl));
+// ⚠️ THE RECIPE NOW CARRIES A DARK BRANCH, AND THE LIGHT VALUE IS THE FALLBACK
+// (S249). `rgba(255,255,255,.5)` is a light-only construct: over the night
+// ground it composites to a mid grey (#8A8A8A and #8F8F8E, measured) that
+// fought every themed ink on it — 7 of the dark sweep's findings from these
+// three declarations alone. `var(--glass-quiet, rgba(255,255,255,.5))` renders
+// byte-identically in light, because --glass-quiet is defined in the DARK
+// blocks only. So these pins still require the spec's exact light value; they
+// require it in the fallback slot. Removing the fallback is the regression to
+// catch, and so is dropping --border-strong, which is what keeps the chip
+// boundary from being color-only on a fill that is 1.21:1 against the ground.
+const GLASS_QUIET = "background:var(--glass-quiet, rgba(255,255,255,.5))";
+check("uc-badge wears the glass-quiet recipe, themed",
+  /\.uc-badge \{[^}]*background:var\(--glass-quiet, rgba\(255,255,255,\.5\)\)[^}]*border:1px solid var\(--border-strong\)/.test(cpl));
 check("uc-badge.warn is crimson TEXT (no tinted bg)",
   cpl.includes(".uc-badge.warn { color:var(--crimson); }"));
-check("cs-badge wears the glass-quiet recipe",
-  /\.cs-badge \{[^}]*background:rgba\(255,255,255,\.5\)/.test(cpl));
+check("cs-badge wears the glass-quiet recipe, themed",
+  /\.cs-badge \{[^}]*background:var\(--glass-quiet, rgba\(255,255,255,\.5\)\)/.test(cpl));
 const cer = fs.readFileSync("credential_reference.js", "utf8");
-check("cr-chip base is glass-quiet",
-  cer.includes(".cr-chip{display:inline-block;padding:2px 8px;border-radius:8px;font-size:.72rem;font-weight:600;background:rgba(255,255,255,.5);border:1px solid var(--border-strong);}"));
+check("cr-chip base is glass-quiet, themed",
+  cer.includes(".cr-chip{display:inline-block;padding:2px 8px;border-radius:8px;font-size:.72rem;font-weight:600;" + GLASS_QUIET + ";border:1px solid var(--border-strong);}"));
+check("⭐ --glass-quiet is defined in the DARK blocks only — light keeps the recipe",
+  (cpl.match(/--glass-quiet:\s*#262624/g) || []).length === 2
+    && !/:root \{[^}]*--glass-quiet:/.test(cpl));
 check("cr-chip-gen rides the violet machine lane", cer.includes(".cr-chip-gen{color:var(--violet);}"));
 const todos = fs.readFileSync("cpl_todos.js", "utf8");
 check("To-Do FAB is the cobalt primary action", todos.includes("background:var(--cobalt);"));

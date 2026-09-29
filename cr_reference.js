@@ -94,6 +94,17 @@
     });
   }
   function fmt(n) { return (n == null ? "—" : String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ",")); }
+  // The low–high of the units a group's wordings award ("2–5 units"); "units
+  // vary" only when no wording states a figure the builder could read.
+  function unitRange(members) {
+    var lo = null, hi = null;
+    (members || []).forEach(function (m) {
+      if (m.units_lo != null && (lo == null || m.units_lo < lo)) lo = m.units_lo;
+      if (m.units_hi != null && (hi == null || m.units_hi > hi)) hi = m.units_hi;
+    });
+    if (lo == null || hi == null) return "units vary";
+    return (lo === hi ? String(lo) : lo + "\u2013" + hi) + " unit" + (lo === 1 && hi === 1 ? "" : "s");
+  }
 
   // ── CSS injected from JS (Rule 4 sidestep: one static file covers both HTMLs) ──
   var CSS_ID = "cr-reference-css";
@@ -114,7 +125,7 @@
       "  border:1px solid var(--border);border-radius:8px;background:var(--surface-subtle)}",
       ".crr-chip{border:1px solid var(--border-strong);background:var(--surface);color:var(--text-body);",
       "  border-radius:999px;padding:5px 12px;font-size:12.5px;cursor:pointer}",
-      ".crr-chip.on{background:var(--cobalt);border-color:var(--cobalt);color:#fff;font-weight:600}",
+      ".crr-chip.on{background:var(--cobalt);border-color:var(--cobalt);color:var(--on-accent);font-weight:600}",
       ".crr-search{flex:1;min-width:200px;padding:7px 10px;border:1px solid var(--border-strong);",
       "  border-radius:6px;background:var(--surface);color:var(--text-body);font-size:13px}",
       ".crr-row{border:1px solid var(--border);border-radius:9px;margin-bottom:9px;background:var(--surface);overflow:hidden}",
@@ -128,7 +139,7 @@
       ".crr-badges{display:flex;gap:6px;flex-wrap:wrap;align-items:center;padding-top:1px}",
       ".crr-b{border-radius:5px;padding:2px 8px;font-size:11px;font-weight:600;white-space:nowrap;border:1px solid transparent}",
       ".crr-b.ok{background:rgba(31,107,61,.13);color:var(--hunter);border-color:rgba(31,107,61,.3)}",
-      ".crr-b.warn{background:var(--mustard-fill);color:var(--mustard-text);border-color:rgba(160,120,10,.32)}",
+      ".crr-b.warn{background:var(--mustard-fill);color:var(--on-mustard);border-color:rgba(160,120,10,.32)}",
       ".crr-b.muted{background:var(--surface-muted);color:var(--text-muted);border-color:var(--border)}",
       ".crr-b.held{background:rgba(155,35,53,.11);color:var(--crimson);border-color:rgba(155,35,53,.3)}",
       ".crr-b.set{background:rgba(43,74,138,.12);color:var(--cobalt);border-color:rgba(43,74,138,.3)}",
@@ -147,7 +158,7 @@
       ".crr-btn{border:1px solid var(--border-strong);background:var(--surface);color:var(--text-body);",
       "  border-radius:6px;padding:7px 13px;font-size:12.5px;cursor:pointer;font-weight:600}",
       ".crr-btn:hover{border-color:var(--cobalt);color:var(--cobalt)}",
-      ".crr-btn.primary{background:var(--cobalt);border-color:var(--cobalt);color:#fff}",
+      ".crr-btn.primary{background:var(--cobalt);border-color:var(--cobalt);color:var(--on-accent)}",
       ".crr-btn:disabled{opacity:.5;cursor:default}",
       ".crr-note{width:100%;box-sizing:border-box;margin-top:9px;padding:7px 9px;border:1px solid var(--border-strong);",
       "  border-radius:6px;background:var(--surface);color:var(--text-body);font:inherit;font-size:12.5px}",
@@ -497,12 +508,15 @@
       + " &middot; " + fmt(g.credentials) + " credential" + (g.credentials === 1 ? "" : "s")
       + " &middot; " + fmt(g.rows) + " articulations"
       + (g.collapse_value ? " &middot; collapse value <b>" + fmt(g.collapse_value) + "</b>" : "")
-      // The unit spread is shown even when it did NOT block the merge. Rung 1
-      // and 2 override the units screen by design (units are an attribute, not
-      // identity — SPAN 100 is one recommendation at 4, 4.5 and 5 units), but a
-      // curator still has to be able to SEE that Engine Performance is written
-      // at 2, 3-4, 4 and 5 units before confirming it.
-      + (g.units_differ ? ' &middot; <span title="These wordings award different unit counts. Units are an attribute of the line, not part of the identity — but check it is really one recommendation.">units vary</span>' : "")
+      // The unit spread is shown on every group whose wordings differ. Units
+      // never split an identity (Sam, 2026-09-27; SPAN 100 is one
+      // recommendation at 4, 4.5 and 5 units), so no rung holds a merge for
+      // them since card 14 retired the rung-4 screen, but a curator confirming
+      // Engine Performance has to SEE its 2, 3-4, 4 and 5 units. The line states
+      // the range it joins ("2–5 units"); a group named by a wording carries the
+      // same range in its name (card 13), one named by an official title here.
+      + (g.units_differ ? ' &middot; <span title="The wordings joined here award different units. Units never split a recommendation, so it shows the range it joins.">'
+          + unitRange(g.members) + "</span>" : "")
       + "</div></div>");
     out.push('<div class="crr-badges">' + badges.join("") + "</div>");
     out.push("</div>");
@@ -716,5 +730,6 @@
     _render: render,
     _visible: visibleGroups,
     _needsDecision: needsDecision,
+    _unitRange: unitRange,
   };
 })();

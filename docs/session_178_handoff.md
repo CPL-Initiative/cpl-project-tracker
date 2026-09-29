@@ -81,7 +81,7 @@ College again"*. A remembered scope with no entity is not offered.
 
 **② `shedPlaceholder()`.** ⭐ The pane's **inline** `text-align:center` (the
 "Loading…" placeholder, in both HTMLs) out-ranks the `text-align:left` the module
-injects, so every measure-capped paragraph rendered *centred inside a
+injects, so every measure-capped paragraph rendered *centered inside a
 left-anchored box*. That was the "narrow paragraphs" complaint. The caps were
 innocent.
 
@@ -90,7 +90,7 @@ Sierra growing back for the **third** time, one level higher each time. There is
 comment where it was; please do not let it grow back a fourth.
 
 **④ Sierra's intro + `.cplchat-note`.** No yellow box. The Note is distinguished
-by a neutral left rule and inherits the description's colour exactly, so there is
+by a neutral left rule and inherits the description's color exactly, so there is
 no new contrast pair to verify — Sky175 found the least legible text on the public
 Sierra page was its caution, rendered in a third fainter grey. **This changes both
 COBI surfaces** (My College + CPL Assistant); the public standalone page and the
@@ -131,7 +131,7 @@ and is re-pointed by `build()`.
 |---|---|---|
 | 1 | **Sam opens My College in a browser** and asks Sierra the Cabrillo snapshot question | New. The guidance row is live, so his next answer is the test of it. |
 | 2 | Does the public Sierra page + Fact Sheet drawer take the new intro wording? | New. Different audience — deliberately unchanged. |
-| 3 | Is the centred 760px scope card right for a landing screen? | New, minor. One line either way. |
+| 3 | Is the centered 760px scope card right for a landing screen? | New, minor. One line either way. |
 | 4 | **Sam opens the three public pages on a phone** | Carried since handoff 174. Still the one thing no session can do. |
 | 5 | Sam reads the funding-model explainer before sending it out | Carried from 177. |
 | 6 | The two region lists (SWP, ASCCC) | Unchanged since Sky167 — on the MAP Dashboard, in no export we hold. |

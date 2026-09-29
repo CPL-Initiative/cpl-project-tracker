@@ -499,6 +499,15 @@ function signInRefreshTest() {
   // The noise guard, as a number. 39 was the unfiltered first draft; if the list
   // ever climbs back there the filters have stopped doing their job and the strip
   // is on its way to being ignored.
+  //
+  // Raised 25 -> 30 on 2026-08-30 for the dependency-map burst (15 human-write
+  // tables surfaced at once — the detector improving, not the filters
+  // decaying), and TIGHTENED BACK to 25 the same day after Sam ruled all 15
+  // (the Fifteen Tables judgment: DR-19..DR-23 + CA-07, four folds, one
+  // reasoned dismissal — kb/governance_surface_map.json carries the reasons).
+  // Measured count after the rulings: 11. If the list climbs back toward this
+  // ceiling without a detector improvement to explain it, that is real noise —
+  // tighten the filters, not this number.
   check("⚠ the candidate list stays readable (< 25)", (d.candidates || []).length < 25);
 })();
 

@@ -2,7 +2,7 @@
    Memory tab — Briefing panel: real-layout + real-interaction check
    ---------------------------------------------------------------------------
    Chromium, on demand. NOT in tests/ and NOT run by `npm test`, deliberately —
-   the split scripts/check_public_page_layout.js and fact-sheet/
+   the split scripts/a11y.js and fact-sheet/
    check_mobile_layout.js established: CI has jsdom only, jsdom has no layout
    engine, and adding playwright to package.json would make CI download a
    browser for a check it never runs.

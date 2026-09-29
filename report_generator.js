@@ -212,12 +212,12 @@
 
         var html = '';
         html += '<div id="reportModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.5);overflow-y:auto;padding:2rem;">';
-        html += '<div style="max-width:700px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.2);overflow:hidden;font-family:\'Source Sans 3\',Arial,sans-serif;">';
+        html += '<div style="max-width:700px;margin:0 auto;background:var(--surface-opaque);border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.2);overflow:hidden;font-family:\'Source Sans 3\',Arial,sans-serif;">';
 
         // Header
         html += '<div style="background:linear-gradient(135deg,var(--navy-primary) 0%,var(--navy-secondary) 100%);padding:1.2rem 1.5rem;display:flex;justify-content:space-between;align-items:center;">';
-        html += '<h2 style="margin:0;color:#fff;font-size:1.1rem;">Custom Report Generator</h2>';
-        html += '<button id="reportModalClose" style="background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer;padding:0;line-height:1;">&times;</button>';
+        html += '<h2 style="margin:0;color:var(--on-accent);font-size:1.1rem;">Custom Report Generator</h2>';
+        html += '<button id="reportModalClose" style="background:none;border:none;color:var(--on-accent);font-size:1.5rem;cursor:pointer;padding:0;line-height:1;">&times;</button>';
         html += '</div>';
 
         // Body
@@ -249,7 +249,7 @@
         html += '<label style="font-weight:700;color:var(--text-strong);font-size:0.9rem;display:block;margin-bottom:0.2rem;">Elevation &nbsp;<span id="reportElevOut" style="font-weight:600;color:var(--navy-secondary);"></span></label>';
         html += '<input type="range" id="reportElevation" min="0" max="30000" step="2500" value="' + savedElev + '" style="width:100%;accent-color:var(--accent-link);cursor:pointer;">';
         html += '<div style="display:flex;justify-content:space-between;font-size:0.72rem;color:#888;"><span>Sea level — every data point, explained</span><span>30,000 ft — high points only</span></div>';
-        html += '<div id="reportElevHint" style="font-size:0.78rem;color:#666;margin-top:0.25rem;"></div>';
+        html += '<div id="reportElevHint" style="font-size:0.78rem;color:var(--text-muted);margin-top:0.25rem;"></div>';
         html += '</div>';
 
         // Select All / None
@@ -277,7 +277,7 @@
             // Project checkboxes
             html += '<div style="padding:0.3rem 0.8rem 0.5rem 2rem;">';
             projects.forEach(function (p) {
-                html += '<label style="display:flex;align-items:flex-start;gap:0.4rem;padding:0.2rem 0;cursor:pointer;font-size:0.82rem;color:#333;">';
+                html += '<label style="display:flex;align-items:flex-start;gap:0.4rem;padding:0.2rem 0;cursor:pointer;font-size:0.82rem;color:var(--text-strong);">';
                 html += '<input type="checkbox" class="rpt-project-cb" data-pid="' + p.id + '" data-activity="' + actId + '" checked style="margin-top:2px;accent-color:var(--accent-link);cursor:pointer;">';
                 html += '<span><strong style="color:var(--navy-secondary);">' + p.id + '</strong> ' + p.name + '</span>';
                 html += '</label>';
@@ -295,10 +295,10 @@
         html += '<div id="reportProgressWrap" style="display:none;height:8px;background:#e8e8e8;border-radius:4px;overflow:hidden;margin-bottom:5px;">';
         html += '<div id="reportProgressBar" style="height:100%;width:0%;background:var(--cobalt);border-radius:4px;transition:width 0.4s ease;"></div>';
         html += '</div>';
-        html += '<div id="reportStatus" style="font-size:0.8rem;color:#666;"></div>';
+        html += '<div id="reportStatus" style="font-size:0.8rem;color:var(--text-muted);"></div>';
         html += '</div>';
         html += '<div style="display:flex;gap:0.5rem;">';
-        html += '<button id="reportGenBtn" style="padding:8px 20px;background:var(--cobalt);color:#fff;border:none;border-radius:4px;font-weight:600;font-size:0.85rem;cursor:pointer;font-family:inherit;">Generate Report</button>';
+        html += '<button id="reportGenBtn" style="padding:8px 20px;background:var(--cobalt);color:var(--on-accent);border:none;border-radius:4px;font-weight:600;font-size:0.85rem;cursor:pointer;font-family:inherit;">Generate Report</button>';
         html += '</div></div>';
 
         html += '</div></div>';
@@ -805,7 +805,7 @@
         btn.id = 'customReportBtn';
         btn.innerHTML = '&#128202; Custom Report';
         btn.type = 'button';
-        btn.style.cssText = "display:inline-flex;align-items:center;gap:0.3rem;background:var(--cobalt);color:#fff;border:none;padding:7px 16px;font-weight:600;cursor:pointer;border-radius:4px;font-size:0.85rem;font-family:'Source Sans 3',Arial,sans-serif;line-height:1.2;margin-left:0.5rem;transition:background 0.2s;";
+        btn.style.cssText = "display:inline-flex;align-items:center;gap:0.3rem;background:var(--cobalt);color:var(--on-accent);border:none;padding:7px 16px;font-weight:600;cursor:pointer;border-radius:4px;font-size:0.85rem;font-family:'Source Sans 3',Arial,sans-serif;line-height:1.2;margin-left:0.5rem;transition:background 0.2s;";
         btn.onmouseover = function () { this.style.background = '#003B8E'; };
         btn.onmouseout = function () { this.style.background = 'var(--cobalt)'; };
         btn.addEventListener('click', openModal);

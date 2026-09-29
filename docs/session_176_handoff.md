@@ -75,7 +75,7 @@ rings, reduced motion, and functional keyboard checks).
 | # | Item | Status |
 |---|---|---|
 | 1 | **Sam opens all three public pages on a phone** | **The one thing no session can do** — the sandbox is egress-blocked from `cpl-initiative.github.io`. Fact Sheet, Sierra, veteran map. |
-| 2 | The map's 52/48 phone split | A judgement call. Easy to change — one line in the generator's media query. |
+| 2 | The map's 52/48 phone split | A judgment call. Easy to change — one line in the generator's media query. |
 | 3 | Map pins stay 7px at 390px | Deliberate: SC 2.5.8 Essential, with a **guarded** equivalent route. Enlarging the hit radius trades against neighbour overlap in dense metros and needs a human eye. |
 | 4 | Sierra's `--sierra-faint` is now near `--sierra-muted` | Unavoidable at 12–13px. If it reads flat, the fix is a **larger** disclaimer, not a lighter one. |
 | 5 | Everything in handoff 174 / 173 | The 13:40 UTC cron, the P5 Cx surface decision, the clean-up worklist lanes — untouched by this run. |

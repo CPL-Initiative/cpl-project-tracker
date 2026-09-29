@@ -59,7 +59,7 @@ up by id. During the mismatch window:
 So the end state is **two live shared phrases, one of them invisible to whoever
 rotated the other.** Rotating away from someone would appear to work and would
 not. A credential surface fails in exactly the direction that is hardest to
-notice: quietly, in favour of more access.
+notice: quietly, in favor of more access.
 
 ⚠️ **Note how much worse the consequence is than the change.** The rename was
 cosmetic. The window was a security defect. These are not proportional, and
@@ -113,7 +113,7 @@ have demonstrated it rather than argued it.
 6. Leave the alias in place with a comment explaining the era. It costs four
    lines and it makes the rollback safe too.
 
-## Where this generalises
+## Where this generalizes
 
 Any identifier crossing the code/data boundary: enum values, storage keys,
 column names read by string, RPC names, cache keys, and the alias-map re-mints

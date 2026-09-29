@@ -107,6 +107,42 @@
       audEl.appendChild(b);
     });
   }
+  // ── About Sierra (the header panel) ──
+  // The introduction and the beta note lived above the conversation and took
+  // most of a phone's first screen (Sam, 2026-09-11). They sit behind a header
+  // control now. Hover-only content fails WCAG 1.4.13 and every touch and
+  // keyboard user, so hover is a convenience on pointer devices and never the
+  // only way in: click or Enter toggles, Escape closes and returns focus, a
+  // click outside closes. The panel stays open until dismissed (1.4.13:
+  // dismissible, hoverable, persistent).
+  var aboutBtn, aboutPanel;
+  function setAbout(open) {
+    if (!aboutBtn || !aboutPanel) return;
+    aboutBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    aboutPanel.hidden = !open;
+  }
+  function wireAbout() {
+    aboutBtn = document.getElementById('s-about-btn');
+    aboutPanel = document.getElementById('s-about');
+    if (!aboutBtn || !aboutPanel) return;
+    aboutBtn.addEventListener('click', function () {
+      setAbout(aboutBtn.getAttribute('aria-expanded') !== 'true');
+    });
+    var hoverable = false;
+    try { hoverable = !!(window.matchMedia && window.matchMedia('(hover: hover)').matches); } catch (e) { /* no matchMedia → click only */ }
+    if (hoverable) aboutBtn.addEventListener('mouseenter', function () { setAbout(true); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== 'Escape' || aboutPanel.hidden) return;
+      setAbout(false);
+      try { aboutBtn.focus(); } catch (e2) { /* focus is best effort */ }
+    });
+    document.addEventListener('click', function (e) {
+      if (aboutPanel.hidden) return;
+      if (aboutBtn.contains(e.target) || aboutPanel.contains(e.target)) return;
+      setAbout(false);
+    });
+  }
+
   // Flash the selector when a send is attempted without a pick.
   function needAudience() {
     setStatus('First, tap who you are above — it helps Sierra tailor the answer for you.', 'error');
@@ -690,6 +726,7 @@
 
     loadAudience();
     renderAudience();
+    wireAbout();
 
     // Fill starter chips
     if (suggestEl) {
@@ -724,6 +761,7 @@
 
   // Expose the pure helpers for the jsdom test.
   window.CPL_SIERRA_PAGE = {
+    setAbout: setAbout,
     escapeHtml: escapeHtml, inlineMd: inlineMd, renderMarkdown: renderMarkdown,
     parseSse: parseSse, CHAT_URL: CHAT_URL, SUGGESTED: SUGGESTED,
     AUDIENCES: AUDIENCES, AUD_KEY: AUD_KEY, feedbackPayload: feedbackPayload,

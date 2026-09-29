@@ -1,0 +1,409 @@
+{
+  "_note": "Occupation-anchored scope + matching map for the SJCOE (San Joaquin County Office of Education, Department of Adult Education) statewide Electrical / Fire / Wildland Fire CPL crosswalk. Companion to kb/_build_occupation_cpl_crosswalk.py. Data lives here; the generator holds no occupation knowledge, so the same tool can be pointed at another partner's occupation list.",
+  "_authored": "2026-09-14",
+  "_requested_by": "Ashley (MAP team) for San Joaquin Department of Adult Education",
+  "_source_list": "594f49d1-SJCOE_Occupations.xlsx — 160 occupation / program-area names, Sheet1 column 'Program Name'",
+  "_lineage": [
+    "kb/_build_partner_crosswalk.py — a partner's occupations -> CPL, statewide",
+    "kb/_build_college_offering_crosswalk.py — those occupations -> ONE college's offerings",
+    "kb/_build_domain_cpl_crosswalk.py — a DOMAIN -> every college, and where the chain breaks",
+    "kb/_build_occupation_cpl_crosswalk.py — THIS ONE: occupation -> every verified exhibit/college/course row, field-facing"
+  ],
+  "_why_a_fourth_instrument": "Per docs/kb-notes/methodology-a-scoped-question-may-need-a-different-instrument.md. The domain tool's best outcome is a DEFECT IN THE CHAIN (analysis, for the MAP team). This one's best outcome is 'a student in this occupation can walk into THIS college and present THIS credential for THIS course' — a referral, for a student. A chain-break analysis is the wrong artifact to hand a student, and a referral list is the wrong artifact to plan from.",
+  "scope_decisions": {
+    "_note": "Ashley scoped the request to Electrical, Fire and Wildland Fire ONLY, explicitly excluding unrelated occupations in the source list. These are the judgment calls that scoping required; they are recorded so the boundary can be argued with rather than guessed at.",
+    "ems_included_only_for_fire_service_occupations": "SUPERSEDED 2026-09-14 by Ashley: 'only provide information on Electrical and Fire/Wildland occupations'. MAP's own statewide program areas (map.rccd.edu/statewidecpl, mirrored in kb/statewide_exhibit_categories.json) file 'Firefighter EMT Certificate', 'Fire Fighter Paramedic Journeyperson Certificate', 'EMT Certification', 'Paramedic License' and 'Paramedic Journeyperson Certificate' under EMERGENCY MEDICAL SERVICES — a category distinct from Fire Technology — and its fallback patterns test paramedic/emt/emergency-medical BEFORE fire. The earlier judgment that EMS credentials should attach to fire-service occupations was mine, not MAP's, and it is withdrawn. FIRE MEDIC, FIRE FIGHTER PARAMEDIC and Firefighter EMT stay in scope as fire occupations; they draw fire credentials only.",
+    "low_voltage_and_utility_classifications_are_electrical": "'Communication Technician GC', 'SOUND AND COMMUNICATIONS SYSTEMS INSTALLER (Voice-Data-Video)', 'TELECOMMUNICATIONS TECHNICIAN' and 'TELECOM-TECH' are IBEW / utility electrical classifications, not IT roles; they are in scope as Electrical.",
+    "plant_and_mechanical_operations_excluded": "'Gas Plant Operators', 'STATION OPERATOR', 'Plant Operator', 'Hydro Plant Operator', 'Hydro Stationary Engineer', 'HYDRO PLANT MECHANIC', 'Nuclear Power Reactor Operators', 'Nuclear Monitoring Technicians', 'CORROSION MECHANIC' and 'Generator Technician' are power-generation or mechanical roles rather than the electrical trade. Out of scope. The hydro roles that ARE electrical ('HYDRO ELECTRICIAN', 'HYDRO ELECTRICAL TECHNICIAN', 'Electrician - Electric & Hydro') are in scope.",
+    "heavy_fire_equipment_operator_carries_wildland": "Heavy fire equipment operation (dozer / engine) is primarily a wildland-fire assignment, so this occupation draws both apparatus and wildland credentials.",
+    "duplicate_occupation_names_collapsed": "The source list repeats several names with different capitalization ('PLUMBER'/'Plumber', 'Electrical Technician'/'ELECTRICAL TECHNICIAN') and repeats SOC-style titles verbatim. In-scope duplicates are collapsed to one occupation row set, using the source list's own wording.",
+    "scoping_authority_is_maps_own_program_areas": "Ashley, 2026-09-14: 'use the knowledge base in the MAP Platform'. Exhibit scoping now resolves in MAP's order — MAP's explicit title->category assignment first, then MAP's own fallback patterns, and only for titles MAP's logic does not reach does this repo's committed lane regex apply. In scope: 'Fire Technology', 'Fire Technology - Wildland', and the electrical-trade members of 'Construction Technology' (C-10, C-46, NCCER Commercial/Industrial Electrician 1-4, Commercial and Residential Electrical Apprenticeship). Every other MAP category is out, and 'Emergency Medical Services' is a hard exclusion that overrides the fallback."
+  },
+  "extra_electrical_false_positives": {
+    "_note": "ADDED 2026-09-14, on top of scoping.electrical_false_positives in kb/fire_electrical_domain_map.json. The committed list caught automotive and AP Physics; these survived it and are equally not the electrical trade. Kept here rather than edited into the domain map so the domain map keeps meaning what it meant on 2026-09-09.",
+    "pattern": "planets and the solar system|astronomy|airframe|powerplant|\\byacht\\b|boatworks|heavy machinery electrical|exit and electrical security|passive solar design",
+    "why": "'Planets and the Solar System with Lab' (Astronomy) and 'Passive Solar Design and Construction' match /solar/; 'Basic Electricity for Airframe and Powerplant' (Aviation), 'Boatworks 101 - Yacht Electrical Systems' (Industrial Technology), 'Heavy Machinery Electrical Systems' (Agriculture) and 'Exit and Electrical Security Devices' (Carpentry) match /electric/. All six are real credentials in real disciplines; none is an electrical-trade CPL opportunity, and each would have shipped as one."
+  },
+  "families": {
+    "_note": "Credential families, matched against the unified exhibit title. Regexes are anchored on how MAP actually spells these credentials (see kb/domain_crosswalk_out/ for the surveyed titles), not on how the occupation is spelled.",
+    "FF_BASIC": "^firefighter (1|1a|i|ii|2|journeyperson)|^sft firefighter|firefighter i academy|fire academy experience|fire recruit academy|fire control 3b|fire fighter survival|pre-service academy",
+    "FF_CORE": "^fire technology$|^fire science|^fire service$|^firefighting technology$|fire behavior and combustion|building construction for fire protection|fire protection organization|fire protection systems|fire protection equipment and systems|fire hydraulics and water supply|principles of fire and emergency services|professional fire service experience|^fire service in-service training",
+    "DRIVER_OP": "fire apparatus driver/operator|fire apparatus and equipment|driver/operator",
+    "OFFICER": "fire officer|company officer|fire management 1",
+    "CHIEF": "chief fire officer",
+    "INSPECTOR": "fire inspector|fire prevention",
+    "INVESTIGATOR": "fire investigation",
+    "INSTRUCTOR": "fire instructor|training instructor|ethical leadership",
+    "HAZMAT": "hazardous materials|first responder awareness",
+    "RESCUE": "rescue system|rope rescue|trench rescue|confined space rescue|auto extrication|swiftwater rescue|open water rescuer",
+    "WATER_RESCUE": "swiftwater rescue|open water rescuer",
+    "WILDLAND": "wildland|nwcg|s-190|s-290|s-130|s-212",
+    "ELEC_APPRENTICE": "ibew electrician apprenticeship|^general electrician certification$|electrician certificate of proficiency",
+    "ELEC_FUNDAMENTALS": "fundamentals of electricity and electronics|^introduction to electricity$|electrical safety|blueprint reading for electricians|cal-osha 30-hour construction industry training for electrical",
+    "ELEC_CONTROLS": "electrical motors and controls|electrical control of (hydraulic|pneumatic) systems",
+    "ELEC_SOLAR": "general electrician certification . solar|solar installer level",
+    "_solar_note": "ELEC_APPRENTICE is anchored with ^...$ on 'General Electrician Certification' so the separate 'General Electrician Certification - Solar' exhibit reaches only occupations carrying ELEC_SOLAR. Unanchored, it put Solar Photovoltaic Design and Installation in front of cable splicers and line workers.",
+    "_ems_note": "EMS families removed 2026-09-14. See scope_decisions.ems_included_only_for_fire_service_occupations."
+  },
+  "occupations": {
+    "_note": "SJCOE occupation name (verbatim from their list) -> lane + the credential families that meaningfully align with it. An occupation appears here ONLY if it is an Electrical, Fire or Wildland Fire program area.",
+    "ARSON & BOMB INVESTIGATOR": {
+      "lane": "Fire",
+      "families": [
+        "INVESTIGATOR"
+      ]
+    },
+    "Fire Apparatus Engineer": {
+      "lane": "Fire",
+      "families": [
+        "DRIVER_OP",
+        "FF_BASIC"
+      ]
+    },
+    "Fire Dept. TRAINING OFFICER": {
+      "lane": "Fire",
+      "families": [
+        "INSTRUCTOR",
+        "OFFICER"
+      ]
+    },
+    "FIRE ENGINEER": {
+      "lane": "Fire",
+      "families": [
+        "DRIVER_OP",
+        "FF_BASIC"
+      ]
+    },
+    "FIRE EQUIPMENT SPECIALIST": {
+      "lane": "Fire",
+      "families": [
+        "DRIVER_OP"
+      ]
+    },
+    "FIRE FIGHTER": {
+      "lane": "Fire",
+      "families": [
+        "FF_BASIC",
+        "FF_CORE"
+      ]
+    },
+    "FIRE FIGHTER DIVER": {
+      "lane": "Fire",
+      "families": [
+        "FF_BASIC",
+        "WATER_RESCUE"
+      ]
+    },
+    "FIRE FIGHTER I I": {
+      "lane": "Fire",
+      "families": [
+        "FF_BASIC",
+        "FF_CORE"
+      ]
+    },
+    "FIRE FIGHTER PARAMEDIC": {
+      "lane": "Fire",
+      "families": [
+        "FF_BASIC"
+      ]
+    },
+    "FIRE INSPECTOR": {
+      "lane": "Fire",
+      "families": [
+        "INSPECTOR"
+      ]
+    },
+    "Fire Investigator": {
+      "lane": "Fire",
+      "families": [
+        "INVESTIGATOR",
+        "INSPECTOR"
+      ]
+    },
+    "FIRE MARSHAL": {
+      "lane": "Fire",
+      "families": [
+        "OFFICER",
+        "CHIEF",
+        "INSPECTOR"
+      ]
+    },
+    "FIRE MEDIC": {
+      "lane": "Fire",
+      "families": [
+        "FF_BASIC"
+      ]
+    },
+    "FIRE OFFICER": {
+      "lane": "Fire",
+      "families": [
+        "OFFICER",
+        "CHIEF"
+      ]
+    },
+    "FIRE PREVENTION OFFICER": {
+      "lane": "Fire",
+      "families": [
+        "INSPECTOR"
+      ]
+    },
+    "FIRE SUPPRESSION TECHNICIAN": {
+      "lane": "Fire",
+      "families": [
+        "FF_BASIC",
+        "FF_CORE"
+      ]
+    },
+    "Firefighter EMT": {
+      "lane": "Fire",
+      "families": [
+        "FF_BASIC"
+      ]
+    },
+    "HAZARDOUS MATERIALS TECHNICIAN": {
+      "lane": "Fire",
+      "families": [
+        "HAZMAT"
+      ]
+    },
+    "HEAVY FIRE EQUIPMENT OPERATOR": {
+      "lane": "Fire",
+      "families": [
+        "DRIVER_OP",
+        "WILDLAND"
+      ]
+    },
+    "WILDLAND FIRE FIGHTER SPECIALIST": {
+      "lane": "Wildland Fire",
+      "families": [
+        "WILDLAND"
+      ]
+    },
+    "Cable Splicer": {
+      "lane": "Electrical",
+      "families": [
+        "ELEC_APPRENTICE",
+        "ELEC_FUNDAMENTALS"
+      ]
+    },
+    "CABLE SPLICER GC": {
+      "lane": "Electrical",
+      "families": [
+        "ELEC_APPRENTICE",
+        "ELEC_FUNDAMENTALS"
+      ]
+    },
+    "Communication Technician GC": {
+      "lane": "Electrical",
+      "families": [
+        "ELEC_APPRENTICE",
+        "ELEC_FUNDAMENTALS"
+      ]
+    },
+    "Control Technician": {
+      "lane": "Electrical",
+      "families": [
+        "ELEC_CONTROLS",
+        "ELEC_FUNDAMENTALS"
+      ]
+    },
+    "Electrical Machinist": {
+      "lane": "Electrical",
+      "families": [
+        "ELEC_CONTROLS",
+        "ELEC_FUNDAMENTALS"
+      ]
+    },
+    "Electrical Technician": {
+      "lane": "Electrical",
+      "families": [
+        "ELEC_FUNDAMENTALS",
+        "ELEC_CONTROLS"
+      ]
+    },
+    "Electrical Technician GC": {
+      "lane": "Electrical",
+      "families": [
+        "ELEC_FUNDAMENTALS",
+        "ELEC_CONTROLS"
+      ]
+    },
+    "Electrician - Electric & Hydro": {
+      "lane": "Electrical",
+      "families": [
+        "ELEC_APPRENTICE",
+        "ELEC_FUNDAMENTALS"
+      ]
+    },
+    "ELECTRICIAN CONSTRUCTION": {
+      "lane": "Electrical",
+      "families": [
+        "ELEC_APPRENTICE",
+        "ELEC_FUNDAMENTALS"
+      ]
+    },
+    "Electrician GC": {
+      "lane": "Electrical",
+      "families": [
+        "ELEC_APPRENTICE",
+        "ELEC_FUNDAMENTALS"
+      ]
+    },
+    "Electronics Engineering Technologists": {
+      "lane": "Electrical",
+      "families": [
+        "ELEC_FUNDAMENTALS",
+        "ELEC_CONTROLS"
+      ]
+    },
+    "HYDRO ELECTRICAL TECHNICIAN": {
+      "lane": "Electrical",
+      "families": [
+        "ELEC_FUNDAMENTALS",
+        "ELEC_CONTROLS"
+      ]
+    },
+    "HYDRO ELECTRICIAN": {
+      "lane": "Electrical",
+      "families": [
+        "ELEC_APPRENTICE",
+        "ELEC_FUNDAMENTALS"
+      ]
+    },
+    "Line Technician": {
+      "lane": "Electrical",
+      "families": [
+        "ELEC_APPRENTICE",
+        "ELEC_FUNDAMENTALS"
+      ]
+    },
+    "LINEMAN - TRANSMISSION": {
+      "lane": "Electrical",
+      "families": [
+        "ELEC_APPRENTICE",
+        "ELEC_FUNDAMENTALS"
+      ]
+    },
+    "Lineman GC": {
+      "lane": "Electrical",
+      "families": [
+        "ELEC_APPRENTICE",
+        "ELEC_FUNDAMENTALS"
+      ]
+    },
+    "Lineworker": {
+      "lane": "Electrical",
+      "families": [
+        "ELEC_APPRENTICE",
+        "ELEC_FUNDAMENTALS"
+      ]
+    },
+    "METER TECHNICIAN": {
+      "lane": "Electrical",
+      "families": [
+        "ELEC_FUNDAMENTALS",
+        "ELEC_CONTROLS"
+      ]
+    },
+    "Metering Systems Technician": {
+      "lane": "Electrical",
+      "families": [
+        "ELEC_FUNDAMENTALS",
+        "ELEC_CONTROLS"
+      ]
+    },
+    "Power Lineman": {
+      "lane": "Electrical",
+      "families": [
+        "ELEC_APPRENTICE",
+        "ELEC_FUNDAMENTALS"
+      ]
+    },
+    "Power System Operator": {
+      "lane": "Electrical",
+      "families": [
+        "ELEC_FUNDAMENTALS"
+      ]
+    },
+    "RESIDENTIAL WIREMAN": {
+      "lane": "Electrical",
+      "families": [
+        "ELEC_APPRENTICE",
+        "ELEC_FUNDAMENTALS",
+        "ELEC_SOLAR"
+      ]
+    },
+    "SOUND AND COMMUNICATIONS SYSTEMS INSTALLER (Voice-Data-Video)": {
+      "lane": "Electrical",
+      "families": [
+        "ELEC_APPRENTICE",
+        "ELEC_FUNDAMENTALS"
+      ]
+    },
+    "SUBSTATION ELECTRICIAN": {
+      "lane": "Electrical",
+      "families": [
+        "ELEC_APPRENTICE",
+        "ELEC_FUNDAMENTALS",
+        "ELEC_CONTROLS"
+      ]
+    },
+    "TELECOMMUNICATIONS TECHNICIAN": {
+      "lane": "Electrical",
+      "families": [
+        "ELEC_APPRENTICE",
+        "ELEC_FUNDAMENTALS"
+      ]
+    },
+    "TELECOM-TECH": {
+      "lane": "Electrical",
+      "families": [
+        "ELEC_APPRENTICE",
+        "ELEC_FUNDAMENTALS"
+      ]
+    },
+    "Electrical Power-Line Installers and Repairers": {
+      "lane": "Electrical",
+      "families": [
+        "ELEC_APPRENTICE",
+        "ELEC_FUNDAMENTALS"
+      ]
+    },
+    "Electricians": {
+      "lane": "Electrical",
+      "families": [
+        "ELEC_APPRENTICE",
+        "ELEC_FUNDAMENTALS",
+        "ELEC_CONTROLS"
+      ]
+    },
+    "Electrical and Electronic Engineering Technologists and Technicians": {
+      "lane": "Electrical",
+      "families": [
+        "ELEC_FUNDAMENTALS",
+        "ELEC_CONTROLS"
+      ]
+    },
+    "Electrical and Electronics Repairers, Powerhouse, Substation, and Relay": {
+      "lane": "Electrical",
+      "families": [
+        "ELEC_APPRENTICE",
+        "ELEC_FUNDAMENTALS",
+        "ELEC_CONTROLS"
+      ]
+    },
+    "Electro-Mechanical and Mechatronics Technologists and Technicians": {
+      "lane": "Electrical",
+      "families": [
+        "ELEC_CONTROLS",
+        "ELEC_FUNDAMENTALS"
+      ]
+    },
+    "Power Distributors and Dispatchers": {
+      "lane": "Electrical",
+      "families": [
+        "ELEC_FUNDAMENTALS"
+      ]
+    }
+  }
+}

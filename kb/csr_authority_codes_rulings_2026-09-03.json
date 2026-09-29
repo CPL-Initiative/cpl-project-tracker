@@ -1,0 +1,322 @@
+{
+ "_about": "Sam's rulings on the authority-codes decision sheet (docs/visuals/2026-09-03-csr-authority-codes.html), replied by number in chat on 2026-09-03. This file is the PLAN the re-mint series consumes; nothing here is applied. The canonical seed (kb/discipline_canonical_subj4.json) changes only through the measure-first dry run + apply pull requests of item 22, under docs/coursecontrolnumber_remint.md.",
+ "_ruled_by": "Sam Lee, chat, 2026-09-03",
+ "_recorded_by": "session-223-skyorbit",
+ "_status": "RULED - not applied. Three readings await Sam's confirmation (see to_confirm).",
+ "_sheet": "https://claude.ai/code/artifact/589e20cd-e6ed-4c07-ba44-514e92572278",
+ "rules": {
+  "1_seed_from_authorities": {
+   "verdict": "yes",
+   "rule": "Where CCN or C-ID publishes a subject code for a discipline's courses the canonical Common SUBJ follows the authority (as shaped by rule 3); the CSR mints its own only where neither has one. The seed records canonical_source in {ccn, c-id, csr}."
+  },
+  "2_precedence": {
+   "verdict": "yes",
+   "order": [
+    "ccn",
+    "c-id",
+    "csr"
+   ]
+  },
+  "3_shape": {
+   "verdict": "edit",
+   "sam": "My gut says use CCN if available; if not, stay with 4-characters and add a CID chip with the verbatim CID code showing; eliminate hyphens.",
+   "rule": "canonical_subj4 stays ^[A-Z]{4}$. Use the CCN code when one exists (all are four letters). Otherwise use the C-ID code only when it is exactly four letters with no hyphen; otherwise keep the CSR's four-letter code and show the C-ID chip with the verbatim C-ID code. No hyphen ever enters a canonical code.",
+   "consequence": "The seed invariant, the id parsers, the fold and the tests that pin four letters are unchanged; the chip is a data field plus a display."
+  },
+  "4_retire_not_a_claim": {
+   "verdict": "yes"
+  },
+  "19_c_id_chip": {
+   "verdict": "ruled through 3, 5, 6, 8 and 16",
+   "rule": "Wherever a canonical code differs from the authority's code, the CSR tab, the CCR tab and SkyView show a chip carrying the verbatim C-ID code(s): a word label ('C-ID'), muted CO blue, one chip per discipline to start and per identity once members are classified. CCN codes never need a chip because they are the canonical code.",
+   "seed_fields": [
+    "ccn_subject_code",
+    "cid_subject_codes",
+    "canonical_source"
+   ]
+  }
+ },
+ "changes": [
+  {
+   "item": 5,
+   "discipline": "Music",
+   "from": "MUSI",
+   "to": "MUSI",
+   "authority": {
+    "c-id": [
+     "MUS",
+     "CMUS"
+    ]
+   },
+   "chip": "C-ID MUS; C-ID CMUS on commercial-music identities",
+   "verdict": "edit",
+   "sam": "I think we use the inverse of your recommendation: list CMUS with a CID chip next it so faculty see both while we standardize on 4 characters."
+  },
+  {
+   "item": 6,
+   "discipline": "Business",
+   "from": "BUSI",
+   "to": "BUSI",
+   "authority": {
+    "c-id": [
+     "BUS",
+     "ACCT",
+     "BSOT"
+    ]
+   },
+   "chip": "C-ID BUS; ACCT and BSOT where members align",
+   "verdict": "edit",
+   "sam": "same as 5."
+  },
+  {
+   "item": 7,
+   "discipline": "Drama/Theater Arts",
+   "from": "THEA",
+   "to": "THTR",
+   "authority": {
+    "c-id": [
+     "THTR"
+    ]
+   },
+   "verdict": "yes",
+   "rows": {
+    "identities": 308,
+    "singletons": 1379
+   }
+  },
+  {
+   "item": 8,
+   "discipline": "Administration of Justice",
+   "from": "CRIM",
+   "to": "CRIM",
+   "authority": {
+    "c-id": [
+     "AJ",
+     "LPPS"
+    ]
+   },
+   "chip": "C-ID AJ",
+   "verdict": "yes, with the chip",
+   "sam": "Yes, with adding the CID chip",
+   "reading": "Under rule 3 a two-letter code cannot be canonical, so CRIM stays and the chip reads C-ID AJ. To confirm."
+  },
+  {
+   "item": 9,
+   "discipline": "Child Development/Early Childhood Education",
+   "from": "ECED",
+   "to": "CDEV",
+   "authority": {
+    "ccn": "CDEV",
+    "c-id": [
+     "ECE"
+    ]
+   },
+   "verdict": "yes",
+   "rows": {
+    "identities": 247,
+    "singletons": 1102
+   }
+  },
+  {
+   "item": 10,
+   "discipline": "Foreign Languages",
+   "from": "FLxx",
+   "to": "per language: SPAN on C-ID's authority; otherwise the language's dominant four-letter local code (FREN, CHIN, ITAL, JAPN, GERM, RUSS, ARAB, VIET, PORT ...); where the dominant code is not four letters (Korean's KOR) a CSR code, flagged; FLNG stays the residual",
+   "authority": {
+    "c-id": [
+     "SPAN"
+    ]
+   },
+   "verdict": "yes",
+   "rows": {
+    "total": 1492,
+    "identities": 365
+   }
+  },
+  {
+   "item": 11,
+   "discipline": "Computer Information Systems",
+   "from": "CSIS",
+   "to": "ITIS",
+   "authority": {
+    "c-id": [
+     "ITIS"
+    ]
+   },
+   "verdict": "yes",
+   "rows": {
+    "identities": 532,
+    "singletons": 1924
+   }
+  },
+  {
+   "item": 12,
+   "discipline": "Office Technologies",
+   "from": "OTEC",
+   "to": "BSOT",
+   "authority": {
+    "c-id": [
+     "BSOT"
+    ]
+   },
+   "verdict": "yes",
+   "rows": {
+    "identities": 355,
+    "singletons": 676
+   }
+  },
+  {
+   "item": 13,
+   "discipline": "Film and Media Studies",
+   "from": "FIMS",
+   "to": "FTVE",
+   "authority": {
+    "c-id": [
+     "FTVE"
+    ]
+   },
+   "verdict": "yes, no hyphens",
+   "rows": {
+    "identities": 105,
+    "singletons": 394
+   },
+   "also": {
+    "discipline": "Media Production",
+    "from": "FIMP",
+    "to": "FTVE",
+    "rows": {
+     "identities": 21,
+     "singletons": 170
+    },
+    "reading": "Media Production shares FTVE as a fan-in pair (the Theater precedent). To confirm."
+   }
+  },
+  {
+   "item": 14,
+   "discipline": "Agriculture (+ Agricultural Production)",
+   "from": "AGRI / AGPR",
+   "to": "umbrella: AGAB, AGAS, AGPS, AGEH, AGMA by classification; AGRI the residual",
+   "authority": {
+    "c-id": [
+     "AG-AB",
+     "AG-AS",
+     "AG-PS",
+     "AG-EH",
+     "AG-MA"
+    ]
+   },
+   "chip": "C-ID AG-AB etc., verbatim with the hyphen",
+   "verdict": "yes",
+   "rows": {
+    "total": 1013
+   },
+   "reading": "Rule 3 bans hyphens, so the family codes drop theirs: AG-AB becomes AGAB, which is exactly four letters; the chip keeps the hyphenated original. To confirm."
+  },
+  {
+   "item": 15,
+   "discipline": "Psychology",
+   "from": "PSYC",
+   "to": "PSYC",
+   "authority": {
+    "ccn": "PSYC",
+    "c-id": [
+     "PSY"
+    ]
+   },
+   "verdict": "yes, CCN wins"
+  },
+  {
+   "item": 16,
+   "discipline": "Computer Science",
+   "from": "CISC",
+   "to": "COMP",
+   "authority": {
+    "c-id": [
+     "COMP"
+    ]
+   },
+   "verdict": "yes",
+   "rows": {
+    "identities": 175,
+    "singletons": 533
+   },
+   "also": {
+    "discipline": "Health Information Technology",
+    "from": "HEIT",
+    "to": "HEIT",
+    "authority": {
+     "c-id": [
+      "HIT"
+     ]
+    },
+    "chip": "C-ID HIT",
+    "verdict": "edit",
+    "sam": "Yes but HIT needs a 4-character canonical with the CID chip."
+   }
+  }
+ ],
+ "noise": {
+  "17": {
+   "verdict": "yes",
+   "disposition": "dismissed: authority codes seen on mis-filed rows are discipline-inference cleanup, not code decisions"
+  },
+  "18": {
+   "verdict": "yes, with a proposed SUBJ and a flag",
+   "sam": "Yes but add a proposed SUBJ and flag",
+   "disposition": "the 95 disciplines with no authority code keep the CSR code as proposed_subj with canonical_source csr and a visible flag on the CSR and CCR tabs"
+  }
+ },
+ "namespace": {
+  "20": {
+   "verdict": "yes",
+   "disposition": "retire the Z band: 4,024 Unified identities become SUBJ M<band><seq:03d> by gap-filling; the band digit stays; lineage kept as origin 'machine cluster'",
+   "measured": {
+    "z_ids": 4024,
+    "subject_bands": 226,
+    "lacking_free_numbers": 0,
+    "tightest": "KINE band 1: 193 to place, 380 free"
+   }
+  },
+  "21": {
+   "verdict": "yes",
+   "disposition": "the 221 legacy 'M-ID SUBJ ###' rows fold to SUBJ M#### or SUBJ M##XX by member count"
+  }
+ },
+ "mechanics": {
+  "22": {
+   "verdict": "yes",
+   "disposition": "one scoped re-mint series under docs/coursecontrolnumber_remint.md: measure-first dry run reviewed in its own pull request, then the apply, landed atomically in one cron window; kb_curation re-keyed through kb/_rekey_kb_curation_supabase.py + supabase-rekey.yml from the committed alias map",
+   "measured_plan": {
+    "plain_prefix_rekeys": 7921,
+    "foreign_language_rows": 1492,
+    "agriculture_rows_to_classify": 1013,
+    "z_band_ids": 4024,
+    "legacy_ids": 221,
+    "total_ids_about": 14671,
+    "number_collisions_if_numbers_kept": 10,
+    "kb_curation_rows_keyed_by_z": 4083,
+    "merge_targets_pointing_at_z": 10704
+   }
+  }
+ },
+ "to_confirm": [
+  {
+   "item": 8,
+   "reading": "CRIM stays canonical (AJ is two letters); chip C-ID AJ."
+  },
+  {
+   "item": 13,
+   "reading": "Media Production shares FTVE with Film and Media Studies as a fan-in pair."
+  },
+  {
+   "item": 14,
+   "reading": "The agriculture families take hyphen-stripped four-letter codes AGAB, AGAS, AGPS, AGEH, AGMA; AGRI is the residual; chips keep the hyphenated C-ID originals."
+  }
+ ],
+ "next": [
+  "item 19 chip fields in the seed + display on the CSR, CCR and SkyView",
+  "canonical fold dry run for items 7, 9, 10, 11, 12, 13, 14, 16",
+  "Z-to-M dry run (new script; the reverse of kb/_uc_cur_zscheme_dryrun.py) + legacy fold",
+  "apply pull requests, one cron window"
+ ]
+}

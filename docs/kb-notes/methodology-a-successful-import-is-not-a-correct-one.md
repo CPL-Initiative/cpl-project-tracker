@@ -31,7 +31,7 @@ closed exactly: `220,588 + 2,058 = 222,646`. The Access query was
 `SELECT DISTINCT` over precisely the five exported columns, so the file could not
 contain a genuine duplicate; Sam then re-imported the CSV back into Access and
 got 220,588 again, isolating the fault to the loader. Supabase Studio commits in
-batches, and a batch that commits without returning an acknowledgement gets
+batches, and a batch that commits without returning an acknowledgment gets
 re-sent.
 
 ## The claim

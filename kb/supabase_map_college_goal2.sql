@@ -106,6 +106,11 @@ alter table public.map_college_goal2 enable row level security;
 create policy map_college_goal2_select on public.map_college_goal2
   for select to anon, authenticated
   using (is_allowed_reviewer() or team_pass_ok());
+-- EXPLICIT GRANTS (2026-09-23): this file drops and recreates the table, and
+-- from 2026-10-30 Supabase stops granting the API roles on a NEW table in
+-- public, so a re-run would otherwise leave it unreadable.
+-- Guarded by tests/supabase_table_grants_test.py.
+grant select on public.map_college_goal2 to anon, authenticated, service_role;
 
 -- Record the rebuild so every surface can state its own freshness.
 insert into public.map_data_loads (table_name, source_rows, loaded_rows, reconciled, note)

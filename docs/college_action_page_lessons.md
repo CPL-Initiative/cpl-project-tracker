@@ -1588,3 +1588,50 @@ and the drafting block together.
 **Next:** Sam re-asks the RCCD question in a browser and confirms Moreno Valley now
 reads ~2,887 students. No session can — the sandbox is egress-blocked from
 `*.supabase.co`.
+
+## 2026-09-17 — My College opens to the public without un-gating anything
+
+Sam set the tab's menu audience to Everyone and it still demanded the team
+phrase. The Admin control governs the MENU — its own help text says so — while
+two other things governed the PAGE: `if (!signedIn())` in `render()`, and the
+same check in `activate()`.
+
+⚠️ **Three of the tab's four gated tables cannot be un-gated.** Measured before
+designing anything: `map_college_cr_unit` holds 210,171 rows, 202,618 below
+k=10, and **145,554 describing exactly one student** at a named college, course
+and credit recommendation with that student's exact credit total;
+`map_college_credit_summary` publishes exact sub-threshold headcounts (three
+colleges at `students = 1`); `map_college_contacts` is a statewide CCC executive
+directory with emails.
+
+So the ratified ADR's shape applied instead of an RLS switch — **two objects,
+not one**. Four `_pub` mirrors carry only what may be public; every base keeps
+its gate and is never written; rollback is `drop table`. Suppression moved from
+render time (which the ADR calls decoration) into
+`kb/_publish_college_briefing.py`, the one implementation, with its properties
+tested without a database.
+
+**Two ways the client could have failed silently, both now guarded:**
+
+- A **remainder row** fed through the existing grouping lands as "Not
+  categorized" / "(no recommendation named in MAP)" — this data's own words for
+  MAP being blank. A deliberate withholding would have rendered as somebody's
+  oversight. It is now its own row inside the list, with its units still in the
+  total so the breakdown reconciles to the headline.
+- **A role this reader may not see is not an empty role.** `contactRoster`
+  classified by falsiness, so every executive role absent from the public read
+  would have read as "Not filled in" — telling a college its VP is missing when
+  we simply did not ask.
+
+⚠️ **Mutation-testing found a hole in the TEST, not the code:** deleting the
+complementary-suppression loop left the planner SAFE while publishing less, so
+every privacy assertion still passed. A privacy test cannot see a utility
+regression.
+
+⚠️ **Ordering corollary learned the hard way.** `cobi_admin_surface.js` is
+DERIVED from `kb/dependency_map.json`, so the order is stage → rebuild the map →
+rebuild the admin surface → run the suite. A local run that passed before the
+final map rebuild hid a real regression: `sources()` puts the table name behind a
+variable, `REST_CONCAT_RE` needs it to follow `REST + "`, and college-briefing's
+read set lost four tables and gained none. Fixed with a SEED pinned to
+`function sources\(\)`.

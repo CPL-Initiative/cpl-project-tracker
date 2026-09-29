@@ -105,17 +105,17 @@
     if (state.sess) {
       widget.appendChild(el("span", { "style": "font-weight:600;" },
         ["Signed in as ", state.sess.email || "(no email)"]));
-      widget.appendChild(el("span", { "style": "color:#666;" },
+      widget.appendChild(el("span", { "style": "color:var(--text-muted);" },
         ["Click any project field to edit • Enter saves • Esc cancels"]));
       var btnOut = el("button", { "class": "proj-btn proj-btn-out", "style": "margin-left:auto;" }, ["Sign out"]);
       btnOut.addEventListener("click", function () { signOut(); onChange(); });
       widget.appendChild(btnOut);
     } else {
-      widget.appendChild(el("span", { "style": "color:#666;" },
+      widget.appendChild(el("span", { "style": "color:var(--text-muted);" },
         ["Sign in (CCCCO MAP only) to edit project details."]));
       var emailInput = el("input", { "type": "email", "placeholder": "you@example.edu" }, []);
       var btnIn = el("button", { "class": "proj-btn" }, ["Sign in"]);
-      var status = el("span", { "style": "color:#666;flex-basis:100%;font-size:0.8rem;" }, []);
+      var status = el("span", { "style": "color:var(--text-muted);flex-basis:100%;font-size:0.8rem;" }, []);
 
       btnIn.addEventListener("click", function () {
         var email = (emailInput.value || "").trim();

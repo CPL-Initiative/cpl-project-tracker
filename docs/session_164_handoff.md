@@ -35,7 +35,7 @@ Plus, earlier in the run:
   altogether—it's our sandbox."** → shipped in #1226.
 - **"OK to use short names for colleges…"** → rotated ALL-CAPS headers.
 - **Green = adopted, brown = still available.** Parentheses on the brown numbers
-  as well as colour — WCAG 1.4.1, and the standing a11y expectation from 08-16.
+  as well as color — WCAG 1.4.1, and the standing a11y expectation from 08-16.
 
 His opening line — *"I like how the EACR is arranged now"* — **closes Sky162's
 carried question** about the `Adopted` default. Don't re-ask it.

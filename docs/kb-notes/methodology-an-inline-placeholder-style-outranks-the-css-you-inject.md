@@ -18,7 +18,7 @@ artifacts:
 
 > **One-sentence summary** — Every COBI tab pane ships a "Loading…" placeholder
 > styled with an **inline** `style=` attribute, and inline beats any selector, so
-> the pane's centring, padding and colour keep applying to everything your module
+> the pane's centring, padding and color keep applying to everything your module
 > renders on top of it — for as long as nobody clears them.
 
 ## Context
@@ -43,18 +43,18 @@ mirrored HTMLs ship every lazy tab's root like this:
 That is correct for the placeholder and correct nowhere else. The module then
 injects `#college-briefing-root{text-align:left;}` — an ID selector, which loses
 to an inline `style` attribute in every browser. So the tab rendered left-aligned
-*boxes* whose *text* was centred.
+*boxes* whose *text* was centered.
 
 ⭐ **The visible symptom is a capped paragraph, which is why it reads as a layout
-bug rather than an inheritance bug.** A full-width element with centred text looks
-centred-and-fine. A paragraph capped at 70ch inside a 1,400px container, with its
-text centred inside that cap, reads as "a ragged narrow column floating in the
+bug rather than an inheritance bug.** A full-width element with centered text looks
+centered-and-fine. A paragraph capped at 70ch inside a 1,400px container, with its
+text centered inside that cap, reads as "a ragged narrow column floating in the
 middle of a wide page" — and the obvious suspect is the cap. Removing the cap
-would have produced full-width centred prose, which is worse, and the next session
+would have produced full-width centered prose, which is worse, and the next session
 would have put the cap back.
 
 ⚠️ **The direction of the failure is what hides it.** Nothing is missing and
-nothing throws. A centred paragraph is a plausible design choice, so no one files
+nothing throws. A centered paragraph is a plausible design choice, so no one files
 a bug against it; they file a vague aesthetic complaint, months later, and the
 person who reads it goes looking at the CSS the module owns.
 
@@ -86,7 +86,7 @@ function shedPlaceholder(root) {
 A test that renders into a bare `<div id="…-root">` will pass against the broken
 code and against the fixed code equally — the classic unfailable check. Build the
 fixture from the pane as the HTML actually ships it, and add a **precondition
-assertion** that the fixture itself is centred, so a future edit to the fixture
+assertion** that the fixture itself is centered, so a future edit to the fixture
 cannot silently disarm the guard:
 
 ```js
@@ -101,7 +101,7 @@ Every lazily-mounted COBI tab uses this placeholder pattern —
 `map-queue-root`, `cip-crosswalk-root` and the rest all ship the same inline
 `text-align:center`. Any of them that renders left-aligned prose has the same
 latent defect; the ones that render only cards and tables do not show it, because
-a full-width block hides centred text.
+a full-width block hides centered text.
 
 ## Related
 

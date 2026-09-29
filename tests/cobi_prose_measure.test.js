@@ -31,7 +31,7 @@ const HTMLS = ["CPL_Dashboard.html", "index.html"];
 // Every file that carried a prose measure before the 2026-08-22 sweep.
 const SWEPT = HTMLS.concat([
   "budget_ledger.js", "cip_crosswalk.js", "college_identity.js", "cpl_chat.js",
-  "cpl_funding_public.html", "cpl_memory.js", "cr_reference.js",
+  "cpl_memory.js", "cr_reference.js",
   "credential_reference.js", "first_light.js", "gr_priorities.js",
   "map_cleanup_views.js", "nc_learning_partners.js", "our_process.js",
   "raci.js", "team_phrases.js", "tmc_builder.js",
@@ -91,6 +91,16 @@ check("the token's rationale names Sam and the date, so the next session can fin
     (bare.length ? bare.join(", ") : "all do"), bare.length === 0);
   check("the sweep actually reached every file it claims to (each has >=1 use)",
     SWEPT.every((f) => /var\(--cpl-measure/.test(src[f])));
+
+  // cpl_funding_public.html was on that list until 2026-09-09, when Sam retired
+  // it to a redirect (decision sheet item 9) and its stylesheet went with its
+  // content. It is NOT quietly dropped: a stub has no prose to measure, and if
+  // prose ever comes back here this fails and says to put the file back on the
+  // list — which is the whole failure mode the list guards against.
+  const stub = fs.readFileSync("cpl_funding_public.html", "utf8");
+  check("the retired public page is still a redirect stub, with no prose to sweep",
+    /http-equiv="refresh"/.test(stub) && !/var\(--cpl-measure/.test(stub) &&
+    !/<p>[\s\S]{400,}<\/p>/.test(stub));
 }
 
 // ── Part C — the narrow LAYOUT caps are not prose and must survive ──

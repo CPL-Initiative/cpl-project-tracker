@@ -45,7 +45,7 @@ narrative slide (a pathway).
 Move the tables to appendix slides — real tables, legible, un-clipped, referenced from the main
 slide as "12 courses crosswalked — see appendix." That alone removes most of the ink.
 
-Then pace what's left. The build that worked, and generalises:
+Then pace what's left. The build that worked, and generalizes:
 
 | Click | What appears | Why |
 |---|---|---|

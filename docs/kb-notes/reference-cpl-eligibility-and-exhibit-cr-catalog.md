@@ -4,7 +4,6 @@ created: 2026-06-09
 updated: 2026-06-09
 tags: [reference, cpl, eligibility, military, ace, jst, exhibit, cer, map, data-pipeline]
 kb-status: published
-kb-type: reference
 obsidian-folder: cpl-project-tracker/kb-notes
 related:
   - "[[CLAUDE]]"

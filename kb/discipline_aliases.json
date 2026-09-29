@@ -6,6 +6,12 @@
     ],
     "Drama/Theater Arts": [
       "Theater Arts"
+    ],
+    "Ethnic Studies": [
+      "African American Studies",
+      "Asian American Studies"
     ]
-  }
+  },
+  "_updated_at": "2026-09-08",
+  "_updated_by": "Sam, 2026-09-08 (the hard-ones sheet, item 2): \"Put these in ethnic studies.\" African American Studies and Asian American Studies are MQ disciplines carrying ZERO courses anywhere on the map, while their three siblings carry 534 (Ethnic Studies, ETHS), 35 (Chicano Studies, ETHN) and 33 (Native American/American Indian Studies, ETHA). The two with courses stay distinct; the two empty ones fold in. ⚠️ They are real MQ disciplines, not alternate spellings — this records where we FILE such a course, not that the names are synonyms."
 }

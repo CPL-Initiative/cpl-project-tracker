@@ -47,7 +47,7 @@ already observed in this project:
 2. **Transcription.** Inline means the exact bytes are re-emitted by hand, and the
    file contains non-ASCII (Cañada, box-drawing rules, arrows), tabs inside string
    literals, and ~9 KB of prompt text **where a single dropped line changes ANSWER
-   BEHAVIOUR without breaking syntax** — caught only by the post-deploy byte-verify,
+   BEHAVIOR without breaking syntax** — caught only by the post-deploy byte-verify,
    after it is already live on six surfaces.
 
 `--no-verify-jwt` is pinned **inside the workflow** precisely so it cannot be

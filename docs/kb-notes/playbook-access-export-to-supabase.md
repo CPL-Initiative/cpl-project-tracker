@@ -73,7 +73,7 @@ GROUP BY k;
 
 ⚠️ **An equi-join on a NULL column silently returns nothing in Access.** Text
 fields like `ExhibitID` and `College Course` are frequently empty, so a join
-across eight key columns quietly drops rows. Normalise once, concatenate a key,
+across eight key columns quietly drops rows. Normalize once, concatenate a key,
 join on that alone:
 
 ```sql
@@ -99,7 +99,7 @@ IIf(Trim(Nz([ExhibitID],'')) In ('','-'), '<sentinel>', Trim([ExhibitID]))
 
 ### Route the unknown to a visible bucket
 
-When deriving a value, give unrecognised input its **own distinct value**
+When deriving a value, give unrecognized input its **own distinct value**
 (`'Unspecified'`, `'UNKNOWN'`) rather than folding it into a legitimate one. It
 costs nothing and it turns "did we cover every case?" into a countable query
 after load. On the first run both came back `0` — but only because they *could*
@@ -173,7 +173,7 @@ dialog pointed at the wrong one.
 **The step that must never be skipped.** On the first run the importer landed
 **222,646 rows from a 220,588-row file** — 2,058 groups duplicated exactly twice
 — and **reported success**. Supabase Studio commits in batches and re-sends a
-batch that commits without returning an acknowledgement.
+batch that commits without returning an acknowledgment.
 
 ```sql
 select count(*) from public.<name>_staging;   -- must equal the source count
@@ -262,6 +262,6 @@ a chat transcript, which is how a nightly rebuild quietly stops happening.
 ## What this playbook does NOT cover
 
 The manual dashboard import is a **curator-scale** procedure. Once the source
-system publishes an API view, this retires in favour of a scheduled fetch on the
+system publishes an API view, this retires in favor of a scheduled fetch on the
 runner writing via the service key — which also removes the duplicate-batch
 hazard entirely, since a scripted truncate-and-reload is idempotent.

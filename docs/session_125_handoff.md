@@ -52,7 +52,7 @@ materially changes a seeker's outcome; never volunteer editorial comparison. Get
 **(b) Mode 7's intent.** Live smoke 44: `7 home college detected` **passes** (detection works end-to-end);
 `7 nearby construction college` **fails** because Sierra names **Norco + Barstow** — who have actually
 *articulated* NCCER — over El Camino / Trade Tech, who merely *teach* construction. **No LA-county college has a
-construction exhibit at all.** The assertion encodes the pre-#1027 intent. Both behaviours are defensible; ask
+construction exhibit at all.** The assertion encodes the pre-#1027 intent. Both behaviors are defensible; ask
 which he wants, then fix the assertion to match the **decision**. Greening it to match the code is precisely the
 failure `methodology-assert-what-retrieval-returns` exists to prevent.
 

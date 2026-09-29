@@ -154,7 +154,14 @@ function makeWin(opts) {
       heard && heard.site === "fin");
   }
 
-  // ── (c) the masthead control ──
+  // ── (c) the phrase box — MOUNTED, not a masthead control of its own ──
+  //
+  // ⭐ Sam, 2026-09-04: "move the team phrase stuff in proximity to the magic
+  // link login stuff … no need for the cheesy unlock glyph". The 🔒/🔓 button in
+  // .cobi-brand is gone; the module now exposes mountInto(), the same shape
+  // reviewer_signin.js uses, and cobi_identity.js mounts it beside the sign-in
+  // box. The SITE-SCOPE logic must survive the move intact — that is what the
+  // rest of this block checks.
   {
     const w = makeWin();
     w.CPL_ORGS = { current: function () { return { id: "cpl", label: "CPL" }; } };
@@ -164,20 +171,42 @@ function makeWin(opts) {
     // module's DOMContentLoaded hook has not fired yet — mount it directly.
     w.CPL_TEAM_PHRASE_HEADER.init();
     const H = w.CPL_TEAM_PHRASE_HEADER;
-    check("header: control is injected into the masthead brand",
-      !!w.document.querySelector(".header .cobi-brand .cobi-tph"));
+    check("header: no 🔒/🔓 control is injected into the masthead brand any more",
+      !w.document.querySelector(".header .cobi-brand .cobi-tph"));
+    // Scoped to what RENDERS: the docstring quotes 🔒/🔓 while explaining the
+    // removal, and a check that forbade the prose would be a check that
+    // punishes documenting the change.
+    check("header: the button class is gone from the module entirely",
+      !/cobi-tph-btn/.test(hdrSrc));
+
+    const host = w.document.createElement("div");
+    w.document.body.appendChild(host);
+    H.mountInto(host);
+    check("header: mountInto renders the box where it is asked to",
+      !!host.querySelector(".cobi-tph"));
+    check("header: the mounted box carries no button of its own — it IS the box",
+      !host.querySelector(".cobi-tph-btn"));
     check("header: on the CPL site the scope is the shared phrase", H._scope() === null);
     check("header: labels it 'Team' on a shared site", H._scopeLabel(H._scope()) === "Team");
-    check("header: shows LOCKED before any phrase is held",
-      /🔒/.test(w.document.querySelector(".cobi-tph-btn").textContent));
+    check("header: offers an unlock row before any phrase is held",
+      !!host.querySelector(".cobi-tph-in") && !!host.querySelector(".cobi-tph-go"));
+
+    // ⭐ THE SCOPING MUST BE STATED, NOT IMPLIED BY POSITION. That was the whole
+    // objection to nesting this inside the identity chip: the old separation was
+    // what told the reader the phrase is site-scoped and the sign-in is not.
+    check("header: the shared box says what the shared phrase opens",
+      /Opens the shared team tabs/.test(host.textContent));
 
     // Follow the Site dropdown.
     w.CPL_ORGS.current = function () { return { id: "fin", label: "FIN" }; };
     H.render();
     check("header: on the Finance site the scope becomes fin", H._scope() === "fin");
     check("header: labels the site phrase by name, not 'Team'",
-      H._scopeLabel(H._scope()) === "Finance"
-      && /Finance/.test(w.document.querySelector(".cobi-tph-btn").textContent));
+      H._scopeLabel(H._scope()) === "Finance");
+    check("header: a site box names its site and says it also opens the shared tabs",
+      /Opens the Finance tabs, plus every shared team tab/.test(host.textContent));
+    check("header: the input asks for the SITE phrase by name",
+      host.querySelector(".cobi-tph-in").placeholder === "finance phrase…");
 
     // GR is the site that already had its own phrase before this change.
     w.CPL_ORGS.current = function () { return { id: "gr", label: "GR" }; };
@@ -204,10 +233,12 @@ function makeWin(opts) {
     const H = w.CPL_TEAM_PHRASE_HEADER;
     let refreshed = null;
     w.addEventListener("cpl-tab-activated", function (e) { refreshed = e.detail && e.detail.tab; });
-    H._setOpen(true); H.render();
-    const input = w.document.querySelector(".cobi-tph-in");
-    const go = w.document.querySelector(".cobi-tph-go");
-    check("header: open pane offers a password input (never a visible one)",
+    const host = w.document.createElement("div");
+    w.document.body.appendChild(host);
+    H.mountInto(host);
+    const input = host.querySelector(".cobi-tph-in");
+    const go = host.querySelector(".cobi-tph-go");
+    check("header: the box offers a password input (never a visible one)",
       input && input.type === "password");
     input.value = PHRASES.fin_pass_ok;
     go.dispatchEvent(new w.Event("click"));
@@ -216,14 +247,24 @@ function makeWin(opts) {
       w.__fetches.some((f) => /rpc\/fin_pass_ok/.test(f.url)));
     check("header: stored in the Finance slot",
       w.localStorage.getItem("cpl_fin_pass") === PHRASES.fin_pass_ok);
-    check("header: flips to unlocked", H._held("fin") === true
-      && /🔓/.test(w.document.querySelector(".cobi-tph-btn").textContent));
+    check("header: flips to unlocked", H._held("fin") === true);
     check("header: re-dispatches cpl-tab-activated for the LIVE tab (no 're-open this tab')",
       refreshed === "contracts");
-    check("header: pane closes after a successful unlock", H._isOpen() === false);
+    // Unlocked, the box stops asking and offers the way back out instead.
+    check("header: the unlocked box drops the input and offers 'Lock again'",
+      !host.querySelector(".cobi-tph-in") &&
+      /Lock again/.test(host.textContent));
+
+    // ⭐ Re-locking has to work FROM THE MOUNTED BOX, or unlocking is one-way
+    // from the only surface that now offers it.
+    host.querySelector(".cobi-tph-lock").dispatchEvent(new w.Event("click"));
+    check("header: 'Lock again' clears the site slot and restores the input",
+      w.localStorage.getItem("cpl_fin_pass") === null &&
+      H._held("fin") === false &&
+      !!host.querySelector(".cobi-tph-in"));
   }
 
-  // a wrong phrase through the control reports, stores nothing, stays open
+  // a wrong phrase through the mounted box reports, stores nothing, keeps state
   {
     const w = makeWin();
     w.CPL_ORGS = { current: function () { return { id: "fin", label: "FIN" }; } };
@@ -233,28 +274,52 @@ function makeWin(opts) {
     // module's DOMContentLoaded hook has not fired yet — mount it directly.
     w.CPL_TEAM_PHRASE_HEADER.init();
     const H = w.CPL_TEAM_PHRASE_HEADER;
-    H._setOpen(true); H.render();
-    w.document.querySelector(".cobi-tph-in").value = "wrong";
-    w.document.querySelector(".cobi-tph-go").dispatchEvent(new w.Event("click"));
+    const host = w.document.createElement("div");
+    w.document.body.appendChild(host);
+    H.mountInto(host);
+    host.querySelector(".cobi-tph-in").value = "wrong";
+    host.querySelector(".cobi-tph-go").dispatchEvent(new w.Event("click"));
     await new Promise((r) => setTimeout(r, 20));
     check("header: a wrong phrase stores nothing",
       w.localStorage.getItem("cpl_fin_pass") === null);
     check("header: a wrong phrase says so inline",
-      /doesn't match/.test(w.document.querySelector(".cobi-tph-msg").textContent));
+      /doesn't match/.test(host.querySelector(".cobi-tph-msg").textContent));
 
-    // The pane is re-rendered from rAF, tab activation and the site switcher.
-    // With state in the DOM, any of those arriving mid-typing swallowed both the
-    // half-typed phrase and the error line — the control looked like it had
-    // ignored the click entirely.
+    // The box is re-rendered from tab activation, the site switcher and the
+    // identity pane re-opening. With state in the DOM, any of those arriving
+    // mid-typing swallowed both the half-typed phrase and the error line — the
+    // control looked like it had ignored the click entirely. State lives on the
+    // MOUNT RECORD, which is what makes the move to a re-rendered pane safe.
     H.render();
     check("header: a re-render KEEPS the inline message",
-      /doesn't match/.test(w.document.querySelector(".cobi-tph-msg").textContent));
-    w.document.querySelector(".cobi-tph-in").value = "half-typ";
-    w.document.querySelector(".cobi-tph-in").dispatchEvent(new w.Event("input"));
+      /doesn't match/.test(host.querySelector(".cobi-tph-msg").textContent));
+    host.querySelector(".cobi-tph-in").value = "half-typ";
+    host.querySelector(".cobi-tph-in").dispatchEvent(new w.Event("input"));
     H.render();
     check("header: a re-render KEEPS what the user was typing",
-      w.document.querySelector(".cobi-tph-in").value === "half-typ");
-    check("header: the pane stays open across a re-render", H._isOpen() === true);
+      host.querySelector(".cobi-tph-in").value === "half-typ");
+
+    // ⭐ THE DETACHED-NODE BUG. say() must write to the node that is live when
+    // the SERVER answers, not the one captured when the click happened — a
+    // render landing in between (the identity pane re-renders on its own
+    // events) detaches the captured node, and the verdict is written to
+    // nothing while "Checking…" sits on screen forever.
+    host.querySelector(".cobi-tph-in").value = "wrong-again";
+    host.querySelector(".cobi-tph-go").dispatchEvent(new w.Event("click"));
+    H.render();                       // a re-render arrives mid-flight
+    await new Promise((r) => setTimeout(r, 20));
+    check("header: the verdict lands on the LIVE node even if a render arrives mid-flight",
+      /doesn't match/.test(host.querySelector(".cobi-tph-msg").textContent));
+
+    // ⭐ A DETACHED MOUNT MUST NOT ACCUMULATE. The identity pane hands the module
+    // a FRESH host every time it opens, so without pruning the mount list grows
+    // without bound and every stale record is re-rendered on every event.
+    host.parentNode.removeChild(host);
+    const host2 = w.document.createElement("div");
+    w.document.body.appendChild(host2);
+    H.mountInto(host2);
+    check("header: a detached mount is pruned rather than accumulating",
+      H._mounts().length === 1 && H._mounts()[0].el === host2);
   }
 
   // ── (d) source pins ──

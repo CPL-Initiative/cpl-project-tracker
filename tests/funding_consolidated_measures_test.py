@@ -1,0 +1,273 @@
+"""The two measure sources the consolidated three bands need (Sam, 2026-09-01).
+
+Sam's restructure re-aims the same three priorities into three statutory bands —
+Eligible under Access, Accepted and Transcribed under Success — and two of the
+three need sources the builder did not emit:
+
+  ppe / ppe_u   ELIGIBLE units among PORTAL-ORIGIN students. Sam ruled "filter
+                now" on the Access measure. Needs no new column: Potential
+                Student is already in the pull.
+  pac / pac_u   APPLIED units on an ACCEPTED Student CPL Plan — the MAP CPL
+                lifecycle attestation. The column does not exist yet (Sam ->
+                Pedro, 2026-09-01), so it is OMITTED, never zeroed.
+  ptc / ptc_u   TRANSCRIBED units for students whose Counselor step is checked
+                (Sam, 2026-09-23, Scenario 3 sheet item 1). Same attestation,
+                same omission, the transcribed rung.
+
+⚠️ WHAT THIS SUITE PROTECTS, AND WHY IT IS A SEPARATE FILE FROM THE ppa ONE.
+Two distinct traps, both of which have already cost this project once:
+
+  1. `ppe` IS NOT `pe` FILTERED. Every pe/pa/p2/p3 hit carries
+     `and not is_potential`, so those metrics EXCLUDE portal-origin students.
+     `ppe` is pe's DISJOINT SIBLING, exactly as `ppa` is pa's. A future session
+     "simplifying" one into a filter of the other would silently swap the
+     population under the largest band — the same swap
+     tests/funding_portal_applied_test.py was written to stop at the applied rung.
+
+  2. AN ABSENT COLUMN MUST PRODUCE ABSENT KEYS, NOT ZEROS. A present-but-zero
+     `pac` reads to earnFraction() in cpl_funding.js as "the feed published and
+     this college posted nothing" — which pays every college $0 on a measure
+     nobody was ever asked for, and looks identical on screen to a college that
+     genuinely did no work. Absent keys are what make srcDelivered() able to say
+     "undelivered" instead. This is the `pa` / `nc_*` pattern and it is the
+     difference between an honest zero and a silent one.
+
+Run: python3 tests/funding_consolidated_measures_test.py
+"""
+import json
+import os
+import subprocess
+import sys
+import tempfile
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(HERE)
+BUILDER = os.path.join(ROOT, "funding", "_build_funding_performance.py")
+VIEW = "View_StudentAggregatedValues_APIDataset"
+COLLEGE = "Bakersfield College"
+FUNDING_NAME = "Bakersfield"
+BASE_COLUMNS = ["College", "Catalog Year", "Applied Credits", "Eligible Credits",
+                "Transcribed Credits", "MAP Internal StudentID",
+                "Potential Student", "Test Student"]
+ACCEPT_COLUMN = "Counselor Step"
+
+failures = []
+checks = [0]
+
+
+def check(label, cond, detail=""):
+    checks[0] += 1
+    if cond:
+        print(f"PASS  {label}")
+    else:
+        print(f"FAIL  {label}" + (f"  — {detail}" if detail else ""))
+        failures.append(label)
+
+
+def row(sid, ecr, acr, tcr, potential="", test="", accepted=None):
+    r = [COLLEGE, "2025-2026", str(acr), str(ecr), str(tcr), sid, potential, test]
+    if accepted is not None:
+        r.append(accepted)
+    return r
+
+
+def run_builder(rows, columns):
+    payload = [{"viewName": VIEW, "generatedAt": "2026-09-01T00:00:00+00:00",
+                "columnName": list(columns), "columnValue": rows}]
+    with tempfile.TemporaryDirectory() as td:
+        src = os.path.join(td, "CustomReport_latest.json")
+        out = os.path.join(td, "out.js")
+        with open(src, "w", encoding="utf-8") as f:
+            json.dump(payload, f)
+        proc = subprocess.run([sys.executable, BUILDER, src, "--out", out],
+                              capture_output=True, text=True, cwd=td)
+        if proc.returncode != 0:
+            raise AssertionError(f"builder exited {proc.returncode}\n{proc.stderr}")
+        text = open(out, encoding="utf-8").read()
+    return json.loads(text[text.index("{"):text.rindex("};") + 1])
+
+
+def main():
+    # ── part A: ppe, with no attestation column in the pull ────────────────
+    # Three portal-origin students with eligible credit, three documented ones
+    # with different eligible totals, one test student (excluded throughout).
+    rows = []
+    for sid, ecr in (("p1", 10), ("p2", 20), ("p3", 30)):
+        rows.append(row(sid, ecr=ecr, acr=5, tcr=0, potential="Yes"))
+    for sid, ecr in (("d1", 1), ("d2", 2), ("d3", 3)):
+        rows.append(row(sid, ecr=ecr, acr=5, tcr=0))
+    rows.append(row("t1", ecr=99, acr=99, tcr=99, potential="Yes", test="Yes"))
+    p = run_builder(rows, BASE_COLUMNS)
+    st = p["statewide"]
+
+    check("ppe counts the three portal-origin students with eligible credit",
+          st.get("ppe") == 3, f"got {st.get('ppe')}")
+    check("ppe_u sums THEIR eligible units only (10+20+30)",
+          abs(st.get("ppe_u", 0) - 60) < 1e-6, f"got {st.get('ppe_u')}")
+
+    # The trap: pe is the COMPLEMENT, not the superset.
+    check("pe excludes portal-origin students entirely (3 documented only)",
+          st.get("pe") == 3, f"got {st.get('pe')}")
+    check("pe_u carries only the documented cohort's units (1+2+3)",
+          abs(st.get("pe_u", 0) - 6) < 1e-6, f"got {st.get('pe_u')}")
+    check("pe and ppe are DISJOINT — neither contains the other",
+          st.get("pe") == 3 and st.get("ppe") == 3 and
+          abs(st.get("pe_u", 0) - st.get("ppe_u", 0)) > 1e-6)
+    check("a test student is excluded from ppe as it is from pe",
+          st.get("ppe") == 3 and st.get("pe") == 3)
+
+    # COUNTS MASK, UNITS CARRY THE MONEY (Sam, 2026-09-03). Three portal
+    # students and three documented ones are both under the floor of 10, so
+    # both counts bake as null + flag — every metric alike, no portal carve-out
+    # — while both unit sums bake raw, because units are what the tab prices.
+    # (A null ppe beside a raw ppa had read as "applied but no eligible" on
+    # 2026-09-02; no such rows exist at either grain.)
+    col = p["colleges"][FUNDING_NAME]
+    check("ppe (3 students) is masked at the college level like every other count",
+          col.get("ppe") is None and col.get("ppe_suppressed") is True, repr(col.get("ppe")))
+    check("ppe_u bakes RAW beside the masked count (10+20+30)",
+          abs((col.get("ppe_u") or 0) - 60) < 1e-6, repr(col.get("ppe_u")))
+    check("pe (3 students) is masked, and pe_u is kept (1+2+3)",
+          col.get("pe") is None and col.get("pe_suppressed") is True
+          and abs((col.get("pe_u") or 0) - 6) < 1e-6,
+          f"pe={col.get('pe')!r} pe_u={col.get('pe_u')!r}")
+    check("no unit key is ever nulled or flagged",
+          not any(k.endswith("_u_suppressed") for k in col) and
+          all(col.get(k) is not None for k in col if k.endswith("_u")), repr(sorted(col)))
+
+    # ── part D: COMPLEMENTARY masking across colleges ──────────────────────
+    # Exactly one masked college for a metric is recoverable from the statewide
+    # figure minus the visible ones, so the smallest visible college is masked
+    # too (counts only; its units stay). Three colleges: 15, 12 and 3 students.
+    def crow(college, sid, ecr):
+        return [college, "2025-2026", "0", str(ecr), "0", sid, "", ""]
+    rows_c = ([crow("Bakersfield College", f"b{i}", 10) for i in range(15)] +
+              [crow("Cerritos College", f"c{i}", 10) for i in range(12)] +
+              [crow("Cuesta College", f"q{i}", 10) for i in range(3)])
+    pc = run_builder(rows_c, BASE_COLUMNS)
+    cc = pc["colleges"]
+    check("the 3-student college is masked",
+          cc["Cuesta"].get("pe") is None and cc["Cuesta"].get("pe_suppressed") is True)
+    check("the smallest VISIBLE college (12) is masked too, flagged complementary",
+          cc["Cerritos"].get("pe") is None and cc["Cerritos"].get("pe_complementary") is True,
+          repr(cc.get("Cerritos")))
+    check("the largest college stays visible (15)", cc["Bakersfield"].get("pe") == 15)
+    check("units stay on every masked college",
+          abs((cc["Cuesta"].get("pe_u") or 0) - 30) < 1e-6 and abs((cc["Cerritos"].get("pe_u") or 0) - 120) < 1e-6)
+
+    # The absent-keys contract, which is what lets the tab say "undelivered".
+    check("pac is OMITTED — not zeroed — when the pull has no attestation column",
+          "pac" not in st, f"got {st.get('pac')!r}")
+    check("pac_u is likewise absent rather than 0.0",
+          "pac_u" not in st, f"got {st.get('pac_u')!r}")
+    check("the per-college record omits pac too, not just the statewide roll-up",
+          "pac" not in p["colleges"][FUNDING_NAME])
+    check("ptc and ptc_u are OMITTED with it — the transcribed cut shares the column",
+          "ptc" not in st and "ptc_u" not in st and "ptc_u" not in p["colleges"][FUNDING_NAME])
+
+    # ── part B: pac, once the attestation column arrives ───────────────────
+    # The cutover has to work with NO consumer edit, so this proves the same
+    # builder emits the key the moment the column is present.
+    cols = BASE_COLUMNS + [ACCEPT_COLUMN]
+    rows = [
+        # Portal-origin AND attested — proves pac spans both cohorts.
+        row("p1", ecr=10, acr=11, tcr=0, potential="Yes", accepted="True"),
+        # Documented and attested.
+        row("d1", ecr=10, acr=13, tcr=0, accepted="Yes"),
+        row("d2", ecr=10, acr=17, tcr=0, accepted="1"),
+        # Applied credit but NOT attested — the whole point of the measure.
+        row("d3", ecr=10, acr=99, tcr=0, accepted="False"),
+        row("d4", ecr=10, acr=99, tcr=0, accepted=""),
+        # Attested but no applied credit — nothing to count.
+        row("d5", ecr=10, acr=0, tcr=0, accepted="True"),
+        # A test student is excluded even when attested.
+        row("t1", ecr=99, acr=99, tcr=99, accepted="True", test="Yes"),
+    ]
+    p2 = run_builder(rows, cols)
+    st2 = p2["statewide"]
+
+    check("pac appears once the pull carries the attestation column",
+          "pac" in st2 and "pac_u" in st2)
+    check("pac counts only students with applied credit AND an attestation",
+          st2.get("pac") == 3, f"got {st2.get('pac')}")
+    check("pac_u sums THEIR applied units only (11+13+17)",
+          abs(st2.get("pac_u", 0) - 41) < 1e-6, f"got {st2.get('pac_u')}")
+    # This is the divergence from pa/ppa and it is deliberate: the attestation is
+    # something done for one student regardless of how that student arrived, so
+    # the measure must not pick a side of the potential partition.
+    check("pac SPANS both cohorts — the portal-origin student is counted",
+          st2.get("pac") == 3 and st2.get("ppa") == 1,
+          f"pac={st2.get('pac')} ppa={st2.get('ppa')}")
+    check("an un-attested student with applied credit is NOT counted",
+          st2.get("pac") == 3 and st2.get("pa") == 4,
+          f"pac={st2.get('pac')} pa={st2.get('pa')}")
+    check("an attested student with no applied credit is NOT counted",
+          st2.get("pac") == 3)
+    check("a test student is excluded even when attested", st2.get("pac") == 3)
+    # Truthiness is a closed set: an unexpected value must read False and show up
+    # as a missing measure rather than as a silently inflated one.
+    p3 = run_builder([row("x1", ecr=10, acr=10, tcr=0, accepted="maybe")], cols)
+    check("an unrecognized attestation value reads False, never truthy",
+          p3["statewide"].get("pac", 0) == 0, f"got {p3['statewide'].get('pac')}")
+
+    # ── part C: the REAL column, as MAP serves it (2026-09-02) ─────────────
+    # Sam ruled the funding measure reads `Counselor_Verified`, which the API
+    # renders as '0'/'1' strings on View_StudentAggregatedValues_APIDataset.
+    # Pin the spelling and the rendering: a renamed sweep or a stricter truthy
+    # set would drop the measure silently, and `Student_Verified` beside it
+    # must never be mistaken for the attestation (Counselor ALONE is the ruling).
+    cols_real = BASE_COLUMNS + ["Student_Verified", "Counselor_Verified"]
+
+    def row_real(sid, acr, student, counselor):
+        return row(sid, ecr=10, acr=acr, tcr=0) + [student, counselor]
+
+    p4 = run_builder([
+        row_real("r1", 11, "1", "1"),   # both checks: counted
+        row_real("r2", 13, "0", "1"),   # counselor only: counted
+        row_real("r3", 17, "1", "0"),   # student only: NOT counted
+        row_real("r4", 19, "0", "0"),
+        row_real("r5", 0, "1", "1"),    # attested, no applied credit: NOT counted
+    ], cols_real)
+    st4 = p4["statewide"]
+    check("Counselor_Verified is recognized as the attestation column ('0'/'1' strings)",
+          "pac" in st4 and st4.get("pac") == 2, f"got {st4.get('pac')!r}")
+    check("pac_u sums the counselor-verified students' applied units only (11+13)",
+          abs(st4.get("pac_u", 0) - 24) < 1e-6, f"got {st4.get('pac_u')}")
+    check("Student_Verified alone does not count — Counselor alone is the ruling",
+          st4.get("pac") == 2 and abs(st4.get("pac_u", 0) - 24) < 1e-6)
+
+    # ── part E: ptc, transcribed CPL with the Counselor step checked ────────
+    # Sam, 2026-09-23 (Scenario 3 sheet, item 1): "We have the transcribed CPL
+    # in the dataset as well as the counselor step boolean indicator, so
+    # combining them should work." Priority 2's wording names this cut.
+    p5 = run_builder([
+        row("p1", ecr=10, acr=10, tcr=5, potential="Yes", accepted="True"),  # portal, checked: counted
+        row("d1", ecr=10, acr=10, tcr=7, accepted="1"),                       # checked: counted
+        row("d2", ecr=10, acr=10, tcr=9, accepted="Yes"),                     # checked: counted
+        row("d3", ecr=10, acr=10, tcr=50, accepted="False"),                  # transcribed, unchecked
+        row("d4", ecr=10, acr=10, tcr=0, accepted="True"),                    # checked, nothing transcribed
+        row("t1", ecr=99, acr=99, tcr=99, accepted="True", test="Yes"),       # test student
+    ], cols)
+    st5 = p5["statewide"]
+    check("ptc appears once the pull carries the attestation column",
+          "ptc" in st5 and "ptc_u" in st5, repr(sorted(st5)))
+    check("ptc counts only students with transcribed credit AND the Counselor step",
+          st5.get("ptc") == 3, f"got {st5.get('ptc')}")
+    check("ptc_u sums THEIR transcribed units only (5+7+9)",
+          abs(st5.get("ptc_u", 0) - 21) < 1e-6, f"got {st5.get('ptc_u')}")
+    check("ptc SPANS both cohorts, and p3 keeps the documented cohort (d1, d2, d3)",
+          st5.get("ptc") == 3 and st5.get("p3") == 3 and abs(st5.get("p3_u", 0) - 66) < 1e-6,
+          f"ptc={st5.get('ptc')} p3={st5.get('p3')} p3_u={st5.get('p3_u')}")
+    check("the unchecked student's 50 transcribed units stay out of ptc_u",
+          st5.get("ptc_u", 0) < 50)
+    check("pac and ptc are separate rungs: d4 is applied and checked, with nothing transcribed",
+          st5.get("pac") == 4 and st5.get("ptc") == 3,
+          f"pac={st5.get('pac')} ptc={st5.get('ptc')}")
+
+    print()
+    print(f"{checks[0] - len(failures)}/{checks[0]} checks passed")
+    return 1 if failures else 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

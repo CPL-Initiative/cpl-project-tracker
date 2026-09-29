@@ -1,8 +1,7 @@
 ---
 title: "Crowd consensus beats a single-item signal (the two-signals-agree gate, via the crowd)"
-date: 2026-07-17
+created: 2026-07-17
 kb-status: published
-kb-type: methodology
 tags: [methodology, cip, top, consensus, two-signals-agree, corroboration, cip-crosswalk]
 artifacts:
   - kb/_build_course_top_consensus.py

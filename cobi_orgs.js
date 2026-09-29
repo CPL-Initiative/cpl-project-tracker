@@ -7,9 +7,13 @@
  *
  * v1 = presentation only, NO GATING (Sam: "a dropdown to choose from existing
  * sites … no gating out folks for now … still pilot"):
- *   - a compact site-switcher <select> injected into the masthead,
- *   - a per-site identity tag on the COBI wordmark (reuses cobi_brand.js's
- *     gold .cobi-num superscript — CPL → "CPL", C&I → "C&I"),
+ *   - a compact site-switcher <select> injected into the masthead, each option
+ *     reading "<code> — <full title>" so a reader who does not know the codes
+ *     can still pick (Sam, 2026-09-04: "add the org titles next to the org
+ *     codes"). The control is width-capped: it sits in a grid track that must
+ *     be able to shrink, and a 40-character option would otherwise widen the
+ *     masthead until the clusters collide. The open list is sized by the
+ *     browser to the longest option, which is where the titles are read.
  *   - the nav rail filtered to the active site's tabs (others hidden; empty
  *     nav groups hidden). Filtering is cosmetic — deep-links still resolve
  *     (no gating). Per-site CURATION isolation (a per-area team phrase) is a
@@ -21,6 +25,14 @@
  * STATIC — NOT a daily-cron artifact. Runtime-injected (kpi_cards/cobi_brand
  * pattern), so the daily regen of the masthead/nav can never strand it. Only
  * the <script> tag is mirrored in BOTH HTMLs (Rule 4); everything else is here.
+ * ⚠️ NO WORDMARK TAG. Until 2026-09-04 this also wrote a per-site .cobi-num
+ * superscript onto the <h1> (CPL → "CPL", C&I → "C&I"). Sam removed it with
+ * cobi_brand.js's gold CPL superscript in the same breath — "delete the CPL
+ * superscript and all the other org tags for the logo". `tag` is kept on each
+ * ORGS entry because nothing else supplies a short code and a later surface
+ * may want one; it is simply not painted on the wordmark. cobi_brand.js
+ * sweeps any .cobi-num that a cached copy of this file puts back.
+ *
  * Loads AFTER nav_groups.js + cobi_brand.js so it re-asserts last.
  * Tests: tests/cobi_orgs.test.js
  */
@@ -36,7 +48,11 @@
 
   var ORGS = [
     // tabs:null → show ALL tabs (the flagship, unchanged for CPL/default users)
-    { id: "cpl", label: "CPL", tag: "CPL", full: "CPL Initiative", tabs: null, home: "dashboard" },
+    // `full` is the title shown beside the code in the switcher. CPL expands to
+    // the acronym rather than to "CPL Initiative" — the code already says CPL,
+    // so repeating it would explain nothing to the reader who needs the line.
+    { id: "cpl", label: "CPL", tag: "CPL", full: "Credit for Prior Learning Initiative",
+      tabs: null, home: "dashboard" },
     { id: "ci",  label: "C&I", tag: "C&I", full: "Curriculum & Instruction",
       tabs: ["our-process", "tmc-builder"], home: "our-process" },
     { id: "cip", label: "CIP", tag: "CIP", full: "TOP-to-CIP Transition",
@@ -99,14 +115,26 @@
     var st = document.createElement("style");
     st.id = "cobi-orgs-css";
     st.textContent =
-      ".cobi-orgswitch{display:inline-flex;align-items:center;gap:7px;margin-left:14px;font-family:inherit;}" +
+      // ⚠️ min-width:0 IS THE FIX, not tidiness. This is a flex item inside
+      // .cobi-brand, so its default min-width:auto refuses to shrink below its
+      // own min-content — and it drags the whole brand cluster past its grid
+      // track with it (measured: 580px of content in a 322px track at 768px
+      // wide, painting 240px straight over the utility cluster). The select's
+      // max-width caps how wide it gets; this is what lets it get narrower.
+      ".cobi-orgswitch{display:inline-flex;align-items:center;gap:7px;margin-left:14px;" +
+        "font-family:inherit;min-width:0;flex:0 1 auto;}" +
       ".cobi-orgswitch-lbl{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted,#8a8a86);}" +
+      // max-width + ellipsis: the OPTIONS carry the full titles, but the closed
+      // control must not size itself to the longest one — that is precisely how
+      // a masthead cluster grows until it overlaps its neighbour under zoom.
       ".cobi-orgswitch-sel{font-size:.82rem;font-weight:700;color:var(--text-strong,#243b53);" +
         "background:var(--surface-2,rgba(20,20,30,0.05));border:1px solid var(--border,#cdd5dd);" +
-        "border-radius:6px;padding:3px 8px;cursor:pointer;font-family:inherit;line-height:1.35;}" +
+        "border-radius:6px;padding:3px 8px;cursor:pointer;font-family:inherit;line-height:1.35;" +
+        "max-width:15rem;min-width:0;text-overflow:ellipsis;}" +
       ".cobi-orgswitch-sel:hover{border-color:var(--seal-blue,#00356B);}" +
       ".cobi-orgswitch-sel:focus-visible{outline:2px solid var(--seal-blue,#00356B);outline-offset:1px;}" +
-      "@media (max-width:640px){.cobi-orgswitch-lbl{display:none;}.cobi-orgswitch{margin-left:8px;}}";
+      "@media (max-width:640px){.cobi-orgswitch-lbl{display:none;}.cobi-orgswitch{margin-left:8px;}" +
+        ".cobi-orgswitch-sel{max-width:9rem;}}";
     document.head.appendChild(st);
   }
 
@@ -128,8 +156,10 @@
       if (o.unlisted && o.id !== current.id) return;
       var op = document.createElement("option");
       op.value = o.id;
-      op.textContent = o.label;
-      op.title = o.full;
+      // Code FIRST so the closed control still reads correctly when the cap
+      // ellipsizes it, and so the list sorts the way the codes are spoken.
+      op.textContent = o.full ? o.label + " \u2014 " + o.full : o.label;
+      op.title = o.full || o.label;
       sel.appendChild(op);
     });
     sel.value = current.id;
@@ -137,20 +167,6 @@
     wrap.appendChild(lbl);
     wrap.appendChild(sel);
     brand.appendChild(wrap);
-  }
-
-  // The identity tag = cobi_brand.js's gold superscript on the wordmark.
-  function setTag(org) {
-    var h1 = document.querySelector(".header h1");
-    if (!h1) return;
-    var sup = h1.querySelector(".cobi-num");
-    if (!sup) {
-      sup = document.createElement("span");
-      sup.className = "cobi-num";
-      h1.appendChild(sup);
-    }
-    sup.textContent = org.tag;
-    sup.setAttribute("aria-label", org.full);
   }
 
   function applyNav(org) {
@@ -221,7 +237,6 @@
       else url.searchParams.set("org", org.id);
       history.replaceState(null, "", url.toString());
     } catch (e) { /* ignore */ }
-    setTag(org);
     applyNav(org);
     var sel = document.querySelector(".cobi-orgswitch-sel");
     if (sel && sel.value !== org.id) sel.value = org.id;
@@ -244,7 +259,6 @@
     var fromParam = paramOrg();
     current = orgById(resolveInitial()) || ORGS[0];
     injectSwitcher();
-    setTag(current);
     applyNav(current);
     // A shared ?org=<area> link with no explicit #tab: land on that area's home
     // (its default tab, e.g. Dashboard, is hidden in the org view, so don't strand
@@ -258,7 +272,7 @@
     // Re-assert after nav_groups.js builds the groups + cobi_brand.js adds its
     // superscript (both may run in the same tick); belt-and-suspenders.
     if (typeof requestAnimationFrame === "function") {
-      requestAnimationFrame(function () { setTag(current); applyNav(current); });
+      requestAnimationFrame(function () { applyNav(current); });
     }
     window.addEventListener("cpl-tab-activated", function () { applyNav(current); });
   }

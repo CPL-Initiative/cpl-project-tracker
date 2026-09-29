@@ -477,3 +477,27 @@ than the bug.
 1. **Sam on #2 and #12** — both legal calls, nothing written.
 2. The four candidate new rows; the sweep proposes them.
 3. The verification pass, now that authenticated text exists for Article 9.
+
+## 2026-08-30 (the ruling sitting) — 22 of 22 in one evening, and the sequencing doctrine
+
+- **The sheet worked exactly as the method promises.** Built by one session
+  line (#1413), ruled by Sam reply-by-number in a guided evening sitting,
+  executed by another session as receipted `gr_revisions` edits
+  (`docs/receipts/2026-08-30-register-reanalysis-receipts.md`), sheet
+  republished as the scoreboard. The best verdicts were again edits: #4's
+  softening (prohibition → clarification, plus the accreditation point) and
+  the two verbatim doctrines that landed mid-ruling.
+- **Sam's sequencing SC re-founded the memo plan:** the CO issues guidance on
+  regulation supported by Ed Code, not on bare statute — Title 5 revised and
+  BOG-adopted first, memos after, drafting may precede. A draft that cannot
+  cite its regulation is a November amendment found in time. (Held-in-pocket
+  distinction: clarifications of EXISTING regulation could technically issue
+  sooner; one clean post-adoption wave was chosen.)
+- **Numbering is the guided sitting's one recurring trap** — batch 2's replies
+  came back renumbered consecutively from the first label; four content
+  anchors decoded it. Batch 3 switched to letters and the problem vanished.
+  Decode by content, state the mapping, then execute.
+- **A batch can silently drop an item** — row 13's citation adds were in the
+  ruled proposal but missed the transaction; caught while writing the
+  receipts, applied as a follow-up guarded UPDATE. The receipt-writing pass
+  doubles as the execution audit — another reason receipts are not optional.

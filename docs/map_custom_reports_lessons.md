@@ -93,7 +93,7 @@ The run was not useless — it was **backwards**. The API validates the name
 first: an invalid name is rejected with 400 before the empty column list can
 crash it; a *valid* name passes and then 500s. On that sweep **500 meant real**.
 Exactly one candidate got a 500 — `View_StudentDetailsCredits_APIDataset`, the
-one real view in the list — and the probe printed it as `✗` and summarised it in
+one real view in the list — and the probe printed it as `✗` and summarized it in
 with the rejections.
 
 Two misses, both now encoded in `kb/_probe_new_custom_reports.py` rather than
@@ -118,7 +118,7 @@ bare hash of the id. Two independent signals agree.
 rotating salt leaks nothing — it silently makes distinct-student counts
 incomparable across refreshes, with no error anywhere. Sam asked Pedro directly.
 **Build the key-set overlap check at load time regardless**: an assurance
-describes today's behaviour, and `cpl_memory: statewide-is-138-not-84` is the
+describes today's behavior, and `cpl_memory: statewide-is-138-not-84` is the
 precedent for a correct ruling sitting unenforced because no consumer changed.
 
 `Notes` is held permanently — free text at student grain, written by staff, read
@@ -129,7 +129,7 @@ interchangeable: `Status` (workflow stage) · `CPLStatusPlan` (what the college
 decided — the entire reason the view was wanted) · `CPLPlanStatus` (**not a
 status**; a pipe-delimited checklist, `"CPL Docs |Ed Plan |Analysis |Counselor |"`).
 
-**The payload IS the PII boundary.** `fetch_custom_report.py`'s minimisation is
+**The payload IS the PII boundary.** `fetch_custom_report.py`'s minimization is
 not a filter or a redactor — it is *what the request does not ask for*, which is
 one plausible edit from being undone in a public repo.
 `tests/custom_report_payload_test.py` pins the banned contact views, identity-
@@ -169,7 +169,7 @@ it is now answered rather than inferred. Consequences worth stating plainly:
   `docs/map_dataset_sql_for_malone.md` asked for ("use the same salt each run so
   counts stay comparable over time").
 - The key-set overlap check is now a **regression check, not an open question.**
-  Build it anyway: an assurance describes today's behaviour, and this failure is
+  Build it anyway: an assurance describes today's behavior, and this failure is
   silent by construction — a rotated salt raises no error, the numbers just
   quietly stop matching. `cpl_memory: statewide-is-138-not-84` is the standing
   precedent for a correct ruling sitting unenforced because no consumer changed.
@@ -313,7 +313,7 @@ what is billed as a refresh, and `count(distinct catalog_year)` silently goes
 **A load must reproduce its source, not improve it.** NULL is arguably the
 better representation of absent; that is a separate change, argued on its own,
 not a side effect of a refresh. `_clean()` now passes `""` through, the test
-pins all four columns, and the mutation back to the old behaviour fails on all
+pins all four columns, and the mutation back to the old behavior fails on all
 four.
 
 ### (d3) The decreases are a catalog-year ROLL-FORWARD, not deletions
@@ -442,7 +442,7 @@ patience.
 every numeric; the API sends blanks. The blanks are not scattered —
 `sum_applied_credits` is blank on **exactly** the 26,953 `Not Applicable` rows
 and on no other disposition. That is caveat 4 of the spec: *"all four credit
-fields are 0 on unapproved rows. That is correct behaviour, not missing data."*
+fields are 0 on unapproved rows. That is correct behavior, not missing data."*
 
 But `map_student_credit` is *nullable* on `applied_credits`/`transcribed_credits`
 and **holds nulls** (31,467 / 19,533). So a house-style rule would have been
@@ -697,7 +697,7 @@ exactly like a closed one, which is the whole reason this class looked dead.
 ⭐ **A well-chosen rule dissolves the question it was asked.** The brief argued
 this needed *two* rulings, because swimming (95% cumulative) might not rule with
 individualized assessment (75%). Under Cx it never comes up: **the college's own
-Cx policy for that course decides swimming**, which is where that judgement
+Cx policy for that course decides swimming**, which is where that judgment
 belonged. When an answer makes a sub-question disappear rather than answering it,
 that is evidence the frame was wrong, not that the answer was lucky.
 
@@ -748,12 +748,12 @@ data.
 
 ⭐ **The row is not empty; the RECOMMENDATION is.** Each still carries the exhibit
 — the training ACE reviewed. And `fetch_custom_report.py` **already asks the
-exhibit catalogue for `AceID` and `Title`** and stores neither, while
-`map_student_credit.exhibit_id` is in the ACE namespace. *Minimisation happens
+exhibit catalog for `AceID` and `Title`** and stores neither, while
+`map_student_credit.exhibit_id` is in the ACE namespace. *Minimization happens
 twice*, and this is the cost side of it: a column dropped for having no consumer
 is invisible until something needs it.
 
-⚠️ **The join rate is deliberately unmeasured.** The catalogue is fetched on the
+⚠️ **The join rate is deliberately unmeasured.** The catalog is fetched on the
 runner and never written down, so it can only be counted on the next run. Stated
 as an open number rather than an assumed one.
 
@@ -786,7 +786,7 @@ about two tables, not one.
 
 ### (b) The titles: 97.3%, after I read the wrong key
 
-`fetch_custom_report.py` had asked the catalogue for `AceID` **and** `Title`
+`fetch_custom_report.py` had asked the catalog for `AceID` **and** `Title`
 since 2026-08-14 and stored neither. **25,794 titles now load; 219 of 225
 exhibits resolve.**
 
@@ -845,3 +845,230 @@ against **33 distinct military exhibits**.
    or three.
 3. Send the **1,310 `cx-course-named`** rows as the Cx offer.
 4. Unchanged carryover: Ashley's Delta outcome, the second occupation list.
+
+## 2026-08-26 (Session 197, SkyVerdict) — three nights of failure, and the answer was in a field nothing read
+
+**Sam, from memory:** *"I got a message in a session yesterday … something like
+double records and that it might heal itself on the next cron."*
+
+It did not heal. **Runs 12, 13 and 14 all failed** — 24, 25 and 26 August. Last
+clean run was 23 August at 13:57 UTC.
+
+### What the runs said, and why it pointed at the wrong view
+
+Every failing run reported the same shape: 10 datasets returned,
+`View_StudentDetailsCredits_APIDataset` listed **twice**, and
+`View_CollegeExhibitCRByCatalogYear_APIDataset` **absent**. So the obvious
+reading — and the one three nights of logs supported — was that the *exhibit* view
+had been renamed or retired.
+
+I reasoned my way further down that path than I should have. The payload had
+halved (341 MB → 157 MB), and between 25 and 26 August the two duplicate slots
+each grew by 820 rows while the payload grew 233,321 bytes — **142 bytes/row**,
+which back-solves the student row to ~357 bytes. Conclusion: both slots carry
+exhibit-CR data and the student data is gone. The second half was right. The
+first half was inference dressed as measurement.
+
+### Sam pulled the report by hand and MAP answered in one sentence
+
+```
+"columnValue": null,
+"responseCode": "400",
+"responseMessage": "View_StudentDetailsCredits_APIDataset is not Valid"
+```
+
+⭐ **MAP had been saying exactly what was wrong, per dataset, every night.**
+`fetch_custom_report.py` read neither `responseCode` nor `responseMessage`. It
+printed `dataCount` — MAP's **claim** — rather than the rows it parsed, which is
+how an empty dataset advertised "204,491 rows" for three nights running.
+
+⚠️ **And the dead view was the STUDENT one, not the exhibit one.** The batch
+response's labels are precisely what cannot be trusted here: one invalid view
+makes MAP put the invalid name on a *neighbour's* dataset, so the name that
+vanished belonged to a healthy view. My byte arithmetic was sound and my
+conclusion from the labels was not.
+
+### The fix, and the part of it that is not obvious (#1358)
+
+`summarize_response()` is pure, so the outage reproduces as a fixture rather than
+a live request. Three checks:
+
+- **`responseCode`** — an ABSENT code is normal; only a PRESENT non‑2xx fails.
+  Treating absence as an error would fail every healthy pull (mutation M2).
+- **`dataCount` is a claim.** Rows are counted from `columnValue`; disagreement
+  prints as `[MAP claims N]`.
+- **A duplicate `viewName` is fatal**, because every consumer keys on it.
+
+⭐ **PRINTING IS UNCONDITIONAL, FAILING IS OPT‑IN, and the split is load-bearing.**
+`daily-dashboard.yml` runs the *same* fetcher and falls back on a non-zero exit,
+while consuming **none** of the views involved. Failing by default would have
+dropped the public dashboard to its fallback path over datasets it never reads —
+a regression caused by the fix. `--strict` is passed only by the Supabase load.
+
+Six mutations, all caught. All 21 funding suites and the three custom-report
+suites green.
+
+### What Sam asked ITPI, and the second ask
+
+Pedro has both requests and will correct the report overnight. The second is the
+one that matters for the noncredit funding lane: **an origination LocID** on the
+student-detail view.
+
+⭐ **Framed as the identity of a route MAP already records the type of** — the
+credit P1 metric already says "originating from either CPL Portal, College CPL
+Landing Page, or batch upload". That is a field addition to an existing concept,
+not a request to build noncredit tracking.
+
+Three requirements, each earned: same namespace as `CollegeID`; **NULL when
+unknown, never defaulted to the enrolling college** (a default silently
+manufactures credit-lane attribution); and on the **catalog-year view too**, or
+NC earning can only ever be computed at student grain.
+
+⚠️ **One question only ITPI can answer:** can a college have a second, noncredit
+landing page with its own LocID, or is that only available to standalone
+entities like NOCE and SDCCE? That decides whether this reaches the ~108 credit
+colleges carrying noncredit FTES or only the standalone few.
+
+⚠️ **`course_type` cannot substitute.** All ten values in `map_student_credit`
+are credit types (Course credit, Area credit, Elective credit, Credit for Basic
+Military Service ×3). There is no noncredit marker anywhere in the data we hold.
+
+### Durable
+
+- [`methodology-read-the-per-item-verdict-not-just-the-envelope`] — `cpl_memory`
+  `read-the-per-item-verdict-not-just-the-envelope`.
+
+## 2026-09-02 — Session 222 (SkyCheck): the six checks arrived as booleans, on the other view
+
+Sam's ask: Pedro had just added CPL lifecycle boolean checks to the student
+Custom Reports and is adding `CollegeID2` (where a student originated before
+the CR college; the NC FTES key). Find the Counselor stage — *"signifies the
+student met with a counselor and accepted their CPL"* — on the student
+aggregated report.
+
+### (a) What the runner found (PR #1437, runs 33693966335 / 33694399728 / 33694773606)
+
+`View_StudentAggregatedValues_APIDataset` gained six columns, all `'0'`/`'1'`
+strings at 100% fill over 53,267 rows:
+
+| column | TRUE | colleges with any TRUE |
+|---|---:|---:|
+| `CPL_Docs_Verified` | 27,949 | 102 |
+| `Transcribed` | 17,342 | 30 |
+| `Ed_Plan_Created` | 4,423 | 32 |
+| `Analysis_Completed` | 4,267 | 26 |
+| `Counselor_Verified` | 3,429 | 25 |
+| `Student_Verified` | 3,293 | 23 |
+
+They are the six `CPLPlanStatus` checks split out — same names, same order —
+but on the AGGREGATED view, not the CR-row view, which is unchanged at 30
+columns. **`Counselor_Verified` is the counselor stage.** Of its 3,429 rows,
+2,820 carry applied units and 2,478 transcribed units; none is a Test Student.
+Nothing origin-shaped (`CollegeID2` / `LocID2` / `Origin`) is on any of the
+four views yet. The catalog-year view gained `RecCreatedOn`, one refresh stamp
+on every row.
+
+### (b) How the checks nest
+
+Pairwise overlap (both / A-only / B-only): Counselor × Student **3,072 / 357 /
+221** — two steps that usually travel together, not one attestation recorded
+twice. Analysis × Counselor 3,412 / 855 / 17, so Counselor sits almost entirely
+inside Analysis. Counselor × Transcribed 3,010 / 419 / **14,332**: most
+transcribed CPL never carried the counselor step, which is the batch-loaded
+population Sam described on 2026-09-01. `Transcribed` is a CHECK at this grain
+too: 17,342 flagged, 14,455 with units.
+
+### (c) The instrument changed under us
+
+`columnName: []` — the enumeration trick behind the June and August probes —
+now answers HTTP 500 on every view, the two known-good controls included;
+omitting `columnName` also 500s. `["*"]` returns the real schema. The probe
+runs its control first and tries all three, so the negative would have been
+reported AS a failed control rather than as absence. The four identity columns
+`fetch_custom_report.py` holds by name are no longer on the live view (25 =
+our 19 + the 6).
+
+### (d) A probe silenced by its own success
+
+Run 12 printed "NEW: none" one commit after the six joined the daily request,
+because the diff is live-schema minus what the fetch asks for — so wiring a
+column stopped its profile, overlap block included. A `WATCH` list now names
+the already-wired columns profiled every run; the test pins it to columns the
+fetch really requests. `cpl_memory: wiring-a-column-silences-the-probes-diff`.
+
+### (e) What is wired, and what is deliberately not
+
+The six columns are in the daily fetch (data lands from the next run). The
+funding builder's sweep does NOT yet name `Counselor_Verified`: one line adds
+it, and the moment it does the public explainer prices every college's
+Accepted earning on that flag — so the meaning is confirmed with Pedro first
+(funding lane NEEDS SAM ⑤). Nine `cpl_memory` rows under
+`author = 'session-222-skycheck'`; braindump in the vault
+(`braindump-2026-09-02-2319-lifecycle-booleans-and-collegeid2`).
+
+### (f) The ruling, the same evening
+
+Sam confirmed `Potential Student` (YES/NO) as the public-upload flag and ruled
+the funding attestation: *"the one we are focused on for the funding is
+counselor verified, which shows us that they met with a counselor and
+discussed their options."* Counselor alone. The cutover is the one line the
+lane predicted — `Counselor_Verified` leads the builder's sweep — plus a test
+that pins the real spelling, the `'0'`/`'1'` rendering, and that
+`Student_Verified` beside it never counts. `pac`/`pac_u` emit from the first
+daily run after the merge, and the Accepted priority prices on them.
+
+### (g) The anomaly that was ours
+
+Sam asked for a worklist Malone and Pedro could use to hunt down "the records
+that have applied units but no apparent eligible units" — a shape reported
+earlier the same evening as 47 colleges of public-upload students. Measured
+before writing a word of it: **zero such rows at the CR-row grain** (94,041
+applied rows in `map_student_credit`) and **zero on the aggregated view**
+(53,267 rows, run 33699032028, test students excluded). Nothing to hunt.
+
+The shape was the funding artifact. `pp` and `ppa` bake raw by ruling (Sam,
+2026-07-27; the small portal count is the signal), but `ppe` — added
+2026-09-01 as the Access band's measure — was never added to `NO_SUPPRESS`, so
+a college with one to four portal-origin students carried `ppa = 3` beside
+`ppe = null`. Read side by side, that is "applied but no eligible". And because
+`earnFraction()` reads a suppressed source as f=0, 54 colleges earned nothing
+on Access for the same reason. `ppe` now bakes raw with the other two (test
+pinned, `pe` on the same college still masked). ⭐ Two keys of one artifact
+cannot be compared until they are known to share a suppression rule.
+`cpl_memory: a-masked-key-beside-a-raw-one-reads-as-a-data-anomaly`. The probe
+counts applied-without-eligible on the aggregated view every run, so a real
+instance would surface with its colleges.
+
+### (h) The under-10 package
+
+Sam's ruling on the masking question, verbatim: *"On the public view, the
+student count for low numbers should actually be changed to <10 to conform
+with ferpa practices often used. That said, I would still like to compute the
+numbers in the FTES total and funding. I think this is sufficiently buried to
+protect privacy."* He floated hiding the rate and the explanations; the
+session's view was to keep them — dollars deconstruct to units, never to
+students, the rate is derivable from figures public by statute, and the
+explainer exists to explain — and to coarsen public dollars instead. He asked
+whether *"the total as <1000"* would work; yes, as a floor on top of rounding
+to the nearest $1,000, or larger amounts stay exact. *"Yes, go for it!"*
+
+What shipped (PR #1439): the builder's floor is 10, every metric alike, the
+portal carve-outs retired; unit sums are never masked; a lone masked college
+gets a complementary mask; the tab's `earnedMoney` / `earnedCsv` floor and
+round a college's earned figures on the public page while caps, dials and
+the curator view stay exact. The 2026-06-11 ADR is superseded in part by
+`adr-funding-counts-mask-under-10-units-carry-the-money`. ⭐ The lesson under
+the lesson: a privacy mask that also zeroes a payment is a funding error
+wearing a privacy badge — separate what is hidden from what is computed.
+
+**What the floor change touched that the builder suites did not.** Raising the
+floor from 5 to 10 broke four jsdom suites the Python suites never see:
+`cpl_funding_applied` and `cpl_funding_performance` carried fixtures sized 5
+to 8 students (visible under the old floor, masked under the new one, and one
+lone masked college then pulled the smallest visible one down by complementary
+masking, which is the builder working as ruled); `cpl_funding_row_legibility`
+pinned the formatter's NAME in a source regex that guards a branch; and the
+`suppression_floor` lint caught the typed `"<1000"` in the CSV rule, exactly the
+drift it exists for, so the label is built from `PUBLIC_MONEY_FLOOR` now. The
+check-floor ledger records the new suite and the two raised counts. A floor is
+a number that lives in fixtures as well as in code.

@@ -17,7 +17,7 @@ artifacts:
 
 # Search the awarding body, not just the credential's name
 
-> **One-sentence summary** — 90% of credentials in the catalogue have an issuer
+> **One-sentence summary** — 90% of credentials in the catalog have an issuer
 > carrying a word that appears in neither the credential's title nor any of its
 > raw variants, so a name-only search cannot find them by the term people
 > actually use.
@@ -45,7 +45,7 @@ ironworker signal is the issuer: **Field Ironworkers Local 416**. Before the
 issuer rung existed, *no query could reach them* — not by title, not by
 variant, not by topic.
 
-This is not an edge case. Measured across the catalogue:
+This is not an edge case. Measured across the catalog:
 
 | | |
 |---|---|
@@ -72,7 +72,7 @@ Orientation` as though the college named it for ironwork, putting words in the
 college's mouth.
 
 Ranking still scores the **best single name**, never the concatenation —
-length-normalised similarity over a concatenated field ranks the best-curated
+length-normalized similarity over a concatenated field ranks the best-curated
 record worst.
 
 ## Two smaller traps in the same family

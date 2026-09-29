@@ -13,7 +13,10 @@ Recommendation + CID Number + Course), already aggregated into statewide_data.js
 by excel_to_dashboard.py's _build_statewide_adoption(). No scraping.
 
 Output: window.CPL_STATEWIDE_RECS = { "<exhibit unified_title>": [ {t,u,cid}, ... ] }
-  t = course/title text, u = units (e.g. "3.0"), cid = C-ID or "".
+  t = course/title text, cid = C-ID or "", u = units as published ("3"), or
+  the low–high range ("6–7") when the statewide rows publish one
+  recommendation at different units. Units never split an identity (Sam,
+  2026-09-27): a merge that joins differing units shows the range it joins.
 
 Run: python3 fact-sheet/_build_statewide_recs.py  (reads ./statewide_data.js)
 """
@@ -43,6 +46,26 @@ def split_units(credit):
     return "", (credit or "").strip()
 
 
+def unit_span(values):
+    """The published unit strings of one recommendation -> one display value.
+
+    One figure prints as published, the first spelling winning ("3" over
+    "3.0"). Differing figures print low–high with an en dash, each end as
+    published ("6–7"). Before 2026-09-29 the first figure seen won, so the
+    Fact Sheet told a reader "6 units" for an EMT line published at 6 and 7."""
+    first = {}
+    for v in values:
+        try:
+            first.setdefault(float(v), v)
+        except ValueError:
+            continue
+    if not first:
+        return values[0] if values else ""
+    lo, hi = min(first), max(first)
+    pub = lambda v: "0" + v if v.startswith(".") else v
+    return pub(first[lo]) if lo == hi else pub(first[lo]) + "\u2013" + pub(first[hi])
+
+
 def norm_title(t):
     """Collapse phrasing variants of the same course to one key."""
     t = re.sub(r"[^a-z0-9]+", " ", (t or "").lower()).strip()
@@ -68,7 +91,8 @@ def build(sw):
         if not src:
             no_ccc.append(title)
             continue
-        seen = {}  # norm_title -> rec dict (first wins; backfill cid/units)
+        seen = {}  # norm_title -> rec dict (first wins; backfill cid)
+        units_of = {}  # norm_title -> every published unit string, for the span
         order = []
         for r in src:
             credit = (r.get("credit") or "").strip()
@@ -78,14 +102,15 @@ def build(sw):
             key = norm_title(body) or norm_title(credit)
             cid = (r.get("cid") or "").strip()
             if key not in seen:
-                seen[key] = {"t": body or credit, "u": units, "cid": cid}
+                seen[key] = {"t": body or credit, "u": "", "cid": cid}
+                units_of[key] = []
                 order.append(key)
-            else:
-                cur = seen[key]
-                if cid and not cur["cid"]:
-                    cur["cid"] = cid
-                if units and not cur["u"]:
-                    cur["u"] = units
+            elif cid and not seen[key]["cid"]:
+                seen[key]["cid"] = cid
+            if units:
+                units_of[key].append(units)
+        for k in order:
+            seen[k]["u"] = unit_span(units_of[k])
         if order:
             # Stable, readable order: by title.
             recs = [seen[k] for k in order]

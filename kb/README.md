@@ -41,6 +41,9 @@ There are **two** layers:
 | `_desc_consolidation_dryrun.py` | Course | **Re-runnable description-similarity consolidator for DARK M-IDs** (no C-ID/CCN claim, no c-id.net coverage, no promotions, no curation — 13.9k of 16.1k post-#379). TF-IDF cosine over catalog descriptions; gates = cosine ≥0.60 + credit + units(±0.5) + not-the-title-lane's + the shared `_consolidation_guards.py` title-safety suite. Receipt `desc_consolidation_out/candidates.json` (416 groups post-twin-merge; 121 cross-college) — **committed input** the generator joins into the worklist as `desc_groups`; re-run termly like the c-id.net refresh + after any twin-merge apply. Never auto-applies. | — |
 | `_consolidation_guards.py` | Course | **Shared title-safety guard suite (Session 46)** imported by BOTH consolidation receipt builders so they can't drift: **two-axis level marks** (word-levels vs digit-levels — kills the "Elementary X 2" / "Intermediate X 1" flat-set collision; digits, romans, **cardinal word-numbers**, A/B + context-marked session letters), **strict-equality variant-type marks** (refresher/update/supplemental/instructor/supervisor/module/bridge/honors — a variant never pairs with its base), **year edition marks** (15xx–20xx), gender + sport marks. `docs/kb-notes/methodology-title-similarity-merge-guards.md`. | — |
 | `_title_consolidation_dryrun.py` | Course | **Re-runnable title-similarity consolidator (Session 46 — the AUTO/smog over-mint case)** over dark M-IDs **+ Stand-Alone singletons** (66.9k titles — the desc lane can't see singletons, and 42 of the 52 smog fragments were singletons). IDF-weighted title-token cosine ≥0.62; gates = credit + discipline-OR-TOP-division corroboration + ≥2 shared content tokens + the shared guard suite; **NO units gate** (licensure-spec courses pack 1–7u by college — spread is reported, not gated); **clique-consistent components** (unmarked titles can't chain Level 1 + Level 2). Receipt `title_consolidation_out/candidates.json` (5,584 groups post-twin-merge; 4,358 cross-college; 2,215 mixed) — **committed input** joined as `title_groups` (🏷, the 6th worklist section; mixed groups merge into the M-ID, all-singleton groups mint new). Re-run termly + after any twin-merge apply. Never auto-applies. | — |
+| `common_courses.json` → `legacy_groups` | Course | **Curated-anchor duplicates lane (Session 226, #1465).** The 218 May 2026 curated common-course anchors (M ids since the Z-band retirement, `_zband_retired_from` stamps) render as locked rows; the ones whose title and discipline exactly match a catalog identity (130 at the land, the retirement's `zband_retire_out/2026-09-03/duplicates.json`) are recomputed EVERY build by `legacy_anchor_duplicate_groups()` in `excel_to_dashboard.py` and emitted as the worklist's `legacy_groups` — the live twin first, the anchor last, so the tab's survivor rule folds the anchor into the catalog course (a Stand-Alone-only twin leaves the anchor as survivor). Strict title key, the displayed discipline, `discipline_aliases.json`, the flattened merge map. Never auto-applied; guard `tests/legacy_anchor_duplicates_test.py`. | — |
+| `_uc_cur_promote.py` | Course | **UC-CUR placeholder promotion (Session 226).** A client mint (`doConsolidate`) or the auto-merge bot writes a transient `UC-CUR-*` target into kb_curation; this promotes each to a REAL M-ID record the way the Z-band retirement materialized a machine cluster: the discipline's canonical SUBJ4 (an umbrella keeps the members' split code), band 9 noncredit / 1 credit, the lowest free number with every id ever minted reserved (courses ∪ singletons ∪ curation ∪ identities ∪ common ∪ every ALIAS_MAPS id ∪ the CCN/C-ID reservations), continuation band when full (Sam, 2026-09-03, card 11); origin `curator mint` or `machine cluster`, `_promoted_from`, no membership entry of its own. HELD, never guessed: one pointer, no discipline, no code, no band. Dry run by default → receipt `uc_cur_promote_out/<date>/`; `--apply --receipt … --fresh-read …` under P0 · P1 · P3 · G1-G8; then register in `_rekey_promotions.py` ALIAS_MAPS, `supabase-rekey.yml`, the chain. 0 placeholders on 2026-09-04. Guard `tests/uc_cur_promote_test.py`. | — |
+| `_identities_rekey_dryrun.py` | Course | **Articulation identities map re-key (Session 226).** `coci_articulations.json`'s `identities` side table carried 1,597 of 2,346 keys on ids no longer in the catalog (the S110 class the applies never re-keyed). Resolves each ghost through the full ALIAS_MAPS chain (`_rekey_promotions.resolve`): 1,369 re-key onto a live id with no entry, 44 drop because the live id already carries an entry, 9 lose a convergence (title agreement, then colleges, then alphabetical), 175 are dead. Dry run by default → receipt `identities_rekey_out/<date>/` (its report carries the five-item sheet for Sam); `--apply --receipt … --ruling "…"` under P0 · P1 · G1-G5. NOT an ALIAS_MAPS receipt (a side table, nothing minted). Guard `tests/identities_rekey_test.py`. | — |
 | `_similar_family_dryrun.py` | Course | **Measure-first dry-run for the consolidation loosening (Session 57).** Groups minted M-IDs + Stand-Alone singletons by a **level-COLLAPSING same-subject** signature (folds the level axis — level words, roman/word/digit ordinals, a–h section letters — mirroring `_consolidation_guards`); reports family yield + quality (units spread, cross-college, discipline agreement). It MEASURED the level-collapse before Sam's call to make it the worklist default: 7,849 raw families / 24,060 ids, 99% discipline-unanimous. The decision shipped by making `excel_to_dashboard.py`'s `_sug_sig` level-collapsing (#442) so the worklist itself merges across levels (suggestions-only / curator-confirmed). Receipt `similar_family_out/candidates.json` is **gitignored** (regenerable; not consumed — unlike the title/desc receipts). Scope: `docs/similar_course_family_scope.md`; ADR: `docs/kb-notes/adr-level-collapsing-consolidation.md`. | — |
 | `_sug_segment_dryrun.py` | Course | **Measure-first dry-run for the worklist signature (`_sug_sig`) — Session 58.** Replicates the generator's signature (segment-fold + synonym-map) over minted M-IDs + singletons and prints regrouping impact + a biggest-group over-merge guard. Loads **`synonym_map.json`** (curated abbreviation↔expansion — ESL≡English as a Second Language, ASL/PE/Math/AJ — because a similarity threshold can't bridge a zero-overlap synonym; add a pair only after grepping the bare canonical token for collisions) plus the `_SUG_SEGMENT` divider words (part/semester/module/half/level). Measurement-only; the worklist is suggestions-only / curator-confirmed. KB note: `docs/kb-notes/methodology-synonym-map-vs-similarity-threshold.md`. | — |
 | `_synonym_candidate_dryrun.py` | Course | **Re-runnable synonym-candidate validator (Session 62).** Automates the Session-58 rule *grep the bare canonical token for collisions before adding a `synonym_map.json` pair*: scans the title corpus for each candidate's standalone abbreviation and reports whether every hit is genuinely that subject. Cleared ECE/EMT/CNA/HVAC/LVN (#461); **rejected** `cis`/`cd`/`ma` (ambiguous). Measurement-only; the worklist stays suggestions-only / curator-confirmed. | — |
@@ -49,6 +52,7 @@ There are **two** layers:
 | `top_division_discipline_map.json` | Course | Authored 2-digit TOP **division** → MQ-verified umbrella discipline (19 mapped: `49`→Interdisciplinary Studies, `12`→Health, `09`→Industrial Technology, …; 5 skipped — Media/Fine-Arts/Commercial/2-untitled — no honest umbrella → stay blank). Division titles from `TOP_Code_Lookup.xlsx`. The pass aborts if any target isn't in `mq_disciplines.json`. | TOP division |
 | `_apply_curation.py` | Course | Sync Supabase `kb_curation` → `coci_curation.json` (needs `SUPABASE_SERVICE_KEY`). Run in the daily workflow; safe to run manually. | — |
 | `_rekey_promotions.py` | Course | **Re-runnable, idempotent — MANDATORY after every re-mint (Rule 7 checklist / fan-in guard 7).** Re-keys `promotions.json` (the Phase A/B official-ID fold evidence) through every applied alias map; folds converged keys (witnesses sum, colleges union); V1–V4 conservation gates; receipts `promotions_rekey_out/<date>/`. Added 2026-06-11 after four re-mints skipped the manifest and silently severed 53% of the fold evidence (`docs/official_id_fold_scope.md`). Dry-run default; `--apply` writes. | — |
+| `_rekey_crnc_mirrors.py` | Course | **Re-keys `crnc_mirrors.json` through the applied alias chain** (the 6th id-keyed artifact class, read by the dashboard's D-3 mirror suppression). A re-key, never a regeneration: the file carries the eleven curated cross-college mirrors of 2026-07-12. Same semantics as `_rekey_promotions.py` (one lookup per map, chronological, `_rekeyed_through` era list; `--baseline-through` on a first run); V1 count conserved, V2 every key live in memberships, V3 idempotent. Step `crnc-mirrors` of `_post_apply_chain.py` since 2026-09-04, when the 2026-09-03 recode was found to have left 398 of its 2,836 keys on retired ids. Receipt `crnc_rekey_out/<date>/rekey_receipt.json`. | `tests/rekey_crnc_mirrors_test.py` |
 | `_analyze_official_fold_evidence.py` | Course | **Read-only drift detector** for the promotions evidence: resolves keys through the alias chain, reports severance counts, R2 evidence tiers, the Spanish-family table, and validation against existing curator merges. Its re-keyed-resolvable count should stay ~0 while the Rule-7 checklist is honored. | — |
 | `_analyze_witness_kinship.py` | Course | **Read-only measure-first analyzer for the WITNESS-KINSHIP gate** (Session 41): per promotions record, resolves each witness's claimant course from the raw list and scores title kinship vs the remnant (and vs the official catalog title). The gate it models is live in `_official_match()`/`_row_official()` (excel_to_dashboard.py): a witness only drives an auto-fold if kin-valid — receipts describe the FAMILY THAT EXISTED AT THE RE-MINT, and ids that survive a later split keep receipts that no longer describe them (no re-key can fix that; 781/1,635 edges were stale, incl. one with 40 unanimous stale witnesses). Also the recovery path for the 340 blocked singleton receipts R4 left un-laned. `docs/kb-notes/methodology-witness-kinship-gate.md`. | — |
 | `discipline_canonical_subj4.json` | Course | **Phase 1e** — curator-confirmed canonical 4-letter SUBJ4 per M-ID discipline + per-discipline TOP/CTE/CIP + `local_subject_variants` (raw college subject codes joined from memberships, added in PR #109). Consumed by the SUBJ4-canonicalization re-mint to fold same-discipline SUBJ4 variants (e.g. ASL/AMSL/DEAF/SIGN/… → one canonical). Edited via the dashboard's **Common Subject Code** tab (writes to Supabase `kb_curation` with synthesized `_CANON_SUBJ4::<discipline>` namespace). | discipline |
@@ -83,6 +87,13 @@ There are **two** layers:
 | `_apply_kine_flsp_twin_merge.py` | Course | **KINE/FLSP strict twin-merge (Rule 7, Session 39, Sam-authorized).** Merges ONLY the strictest twin class the convergences exposed — same discipline + band + STRICT level-safe fam (roman-fixed) + `credit_status` + `typical_units`; winner = most corroborated; merge-only (no re-numbering). 70 groups / 74 losers (16,217 → 16,143). Prints any curation rows needing the **Supabase `kb_curation` mirror** (fan-in guard 6 — the local overlay is a rebuild target). ⚠ Do NOT extend to `CISC` without the single-letter guard (`R Programming` ≠ `C# Programming` — `docs/cis_cs_convergence_scope.md` §3). Receipt `kb/twin_merge_out/<date>/alias_map.json`. | — |
 | `_subj4_apply_supabase.py` | Course | **Phase 1e Supabase row renames.** Pre-fetches the curated `course_id` set (so we only PATCH the ~7 aliases with live rows instead of fanning out 13k network calls — caught 2026-05-23). Best-effort per record with verbose log at `kb/subj4_apply/supabase_log.json`. | — |
 | `_uc_cur_zscheme_dryrun.py` | Unified | **UC-CUR → Z-scheme re-mint dry-run (Rule 7, Session 56).** Re-keys the synthetic `UC-CUR-AUTO*` unified-course ids → `SUBJ Z<band><seq:03d>` (e.g. `BIOL Z9001`). SUBJ4 = canonical of members' modal discipline **+ umbrella exception** (FL/KIN keep splits); band 9/1 from credit_status; seq by title-sort. `compute_plan()` is the shared allocator (apply == spec). 7 validation gates; emits `kb/uc_cur_zscheme_out/<date>/{alias_map.json, zseq_seed.json, collisions.json, supabase_apply.sql, report.md}`. Re-runnable, deterministic. | — |
+| `_seed_authority_codes.py` | CSR | **Item 19 of the 2026-09-03 rulings — the C-ID / CCN chip data.** Attributes every authority subject code to a discipline from `promotions.json` evidence plus the rulings (ruled > canonical > majority above item 17's floor > name home) and writes `ccn_subject_code`, `cid_subject_codes`, `canonical_source`, `authority_chips`, `authority_flag` into `discipline_canonical_subj4.json`; receipt `reference/authority_subject_codes.json`. Re-run after any fold (`_post_apply_chain.py` step `authority`). `--check` writes nothing. | `tests/authority_codes_seed_test.py` |
+| `_authority_recode_dryrun.py` | Course | **Authority recode dry run (items 7–16 of the rulings, Rule 7).** A keep-number prefix re-key for the ruled Common SUBJ changes, the per-language codes and the agriculture families (two signals agree, TOP never alone); Z ids move with their namespace; two-pass allocation (no cascade); identities-map ghosts reported, not counted. `compute_plan()` is the shared allocator. Receipts `authority_recode_out/<date>/{alias_map, collisions, fl_classification, ag_classification, seed_edits}.json + supabase_ops.sql + report.md`. | `tests/authority_recode_dryrun_test.py` |
+| `_authority_recode_apply.py` | Course | **Authority recode APPLY (items 7, 9, 10, 11, 12, 13, 14, 16; readings ruled yes to all 2026-09-03).** Recomputes the dry run's plan (apply == spec), gates it against the frozen receipt (P1) and a fresh read of `kb_curation` at write-time (P3), then re-keys the catalog, memberships, articulations + identities, curation keys + pointers, the zseq counters, the seed (ruled codes, umbrella flags, the FTVE fan-in pair) and `foreign_language_subj4.json`; `_authority_recode_from` stamps. Receipt restamped APPLIED + `supabase_ops.json` (the re-key workflow + the `_CANON_SUBJ4::` pick updates). | `tests/authority_recode_apply_test.py` |
+| `_zband_retire_apply.py` | Unified | **Z-band retirement APPLY (items 20-21; readings cards 11-13).** Same gate pattern; re-keys the overlay's Z self-rows and pointers, MATERIALIZES every retired identity as an M-ID record (`origin: machine cluster`, the members' aggregate, no membership entry of its own), folds the legacy anchors in `common_courses.json` (+ `origin`) and the crosswalk, and retires `uc_cur_zseq.json`. Receipt restamped APPLIED + `materialized.json`. | `tests/zband_retire_apply_test.py` |
+| `_zband_retire_dryrun.py` | Unified | **Z-band retirement dry run (items 20–21, Rule 7).** Every `SUBJ Z<band><seq>` takes the lowest free M number in its bucket in Z-sequence order (the band digit stays); the legacy `M-ID SUBJ ###` anchors in `common_courses.json` fold by member count; `--after-recode <dir>` composes with the recode receipt. Reports capacity per bucket (Kinesiology credit: 996 of 999). Receipts `zband_retire_out/<date>/{alias_map, capacity, duplicates}.json + supabase_ops.sql + report.md`. | `tests/zband_retire_dryrun_test.py` |
+| `_prefix_fold_dryrun.py` | Course | **Prefix fold dry run (the worklist the 2026-09-03 land surfaced, Rule 7).** A keep-number prefix re-key for every row fold-verify wants to re-key — the materialized machine clusters minted in June under a prefix their members' discipline does not own, and the legacy strays the July cohorts re-disciplined without the prefix following. Reuses the recode's allocator (two passes, continuation bands, CCN / C-ID reservations, overlay keys on the collision surface); a row whose discipline rests on TOP alone, or on nothing, is HELD; umbrella spans (KINE/ATHL, the languages, agriculture) never move; V8 proves parity with fold-verify's `re_key` set; `--scope materialized|legacy` cuts a receipt per verdict. Receipts `prefix_fold_out/<date>/{alias_map, collisions, held}.json + supabase_ops.sql + report.md`. | `tests/prefix_fold_dryrun_test.py` |
+| `_prefix_fold_apply.py` | Course | **Prefix fold APPLY (the receipted half of the dry run; Rule 7).** Recomputes the plan through the dry run's `compute_plan` (apply == spec) under the receipt's own flags (`--scope`, `--ruled-held`) and refuses a receipt cut under others (P1), gates it against the frozen alias map (P1) and a fresh read of `kb_curation` at write-time (P3), refuses a second run of the same receipt (P0: the receipt's stamp + the docs' `_prefix_fold_applied` era list), then re-keys the catalog, memberships, articulations + identities (a moved entry wins its key; a stale entry on a landing key is dropped), the overlay's keys + pointers, and the materialized records' `_machine_cluster_members` lists; `_prefix_fold_from` stamps beside the earlier ones. Thirteen conservation gates; `--apply` needs `--ruling`. Receipt restamped APPLIED + `supabase_ops.json` (the re-key workflow; no picks — a fold changes no canonical code) + `validation.md`, which states the `re_key` count fold-verify must read after the land (the held rows + the rows outside the scope). | `tests/prefix_fold_apply_test.py` |
 | `_uc_cur_zscheme_apply.py` | Unified | **UC-CUR → Z-scheme apply (Rule 7, Session 56).** Imports `compute_plan`, asserts the alias == the dry-run receipt, re-keys `kb/coci_curation.json` in place (0 UC-CUR left), writes `kb/uc_cur_zseq.json` (option B persisted counter), restamps the receipt → APPLIED, V-validates. The Supabase half runs via `_rekey_kb_curation_supabase.py`. | — |
 | `_rekey_kb_curation_supabase.py` | — | **Reusable Supabase `kb_curation` re-key (Session 56).** Reads a committed `alias_map.json` and PATCHes `course_id` + `merge_into` value via PostgREST with `SUPABASE_SERVICE_KEY`; idempotent (clean bijection), retried, self-verifies 0 old keys remain. Run via `.github/workflows/supabase-rekey.yml` (the only place the service key lives). For EVERY future re-mint's Supabase half (the alias map is too large to hand-pass as SQL). `docs/kb-notes/playbook-rekey-shared-db-from-alias-map.md`. | — |
 | `_overmerge_dryrun.py` | Course | **Over-merge re-mint dry-run (Session 18).** Reads the auditor's `member_top_divergence`-flagged M-IDs (1,299) and plans a 1:N **split** into discipline-pure pieces. Pass-1 split brain is title/subject/description-aware (first-match-wins): review-hold → title→discipline keep-whole (`overmerge_title_discipline.json`) → container-by-subject → member-discipline cascade (SUBJ4→subject_map→TOP→description, raw-subject fallback). Collapses members sharing a CourseControlNumber into atomic units (cross-listed = one course). V1–V4 gates; writes `kb/overmerge_out/<date>/{report.md, alias_map.json, review_hold.json, collisions.json}`. Re-runnable. | discipline |
@@ -90,6 +101,8 @@ There are **two** layers:
 | `overmerge_title_discipline.json` | Course | **Curator title→discipline keep-whole map** for the over-merge re-mint (data, not a generator). Seeded from Sam's dry-run review notes (Social Media→Multimedia, Death & Dying→Gerontology, …). A flagged M-ID whose title matches is kept WHOLE at the mapped discipline (single course whose TOP/subject varies by college). Grows as curation continues. | discipline |
 | `_build_aligned_exhibits.py` | Course | **Re-runnable, deterministic.** Standalone generator for `unified_courses_aligned.js` (`window.CPL_UC_ALIGNED`) — the **CCR inverse view** (one row per course → the aligned exhibits/credentials that articulate to it; mirror of the EACR). Pivots `coci_articulations.json` by `course_id`; imports `excel_to_dashboard._write_aligned_exhibits_js` so the committed file is byte-identical to the daily regen. No timestamp → no-op daily diff. (Session 29, #259) | — |
 | `_build_cpl_by_discipline.py` | Course | **Re-runnable, deterministic.** Standalone generator for `kb/discipline_cpl_rollup.json` — the **CSR rollup** (one row per discipline → how many exhibits/credentials articulate to its courses, across how many colleges). Rolls `coci_articulations.json` up by discipline (discipline sourced from the minted catalogs). Imports `excel_to_dashboard._write_cpl_by_discipline_json`. Sorted keys, no timestamp. (Session 29, #260) | — |
+| `_build_dependency_map.py` | — | **Re-runnable, deterministic (Session 209, #1396 — Sam's remediation A).** Derives the dataset → consumers dependency map FROM THE CODE: Supabase tables/RPCs/edge functions across all three PostgREST base conventions, helper call-site harvesting (verb-first args included), URL-const direction followed to the fetch sites, runtime `fetch()` of files, loadScript/global chains, Node fs helpers, Python literal paths, workflow run/git-add/push-shape parsing, and anchor-verified seeds for dynamic reads (a rotted anchor drops its edges WITH a warning). Emits `dependency_map.json` + `docs/reference/dependency_map.md`; `--check` runs in CI (js-tests). Content guards: `tests/dependency_map_test.py`, each perturbation-tested. **Projected by** `_build_governance_candidates.py` (#1397) and `_build_cobi_admin_surface.py` (#1398) — one derivation, many projections. | dataset id |
+| `dependency_map.json` | — | **GENERATED by `_build_dependency_map.py` — do not hand-edit.** Full edge list with file:line evidence: every dataset's consumers (with tab/page attribution + read/write direction), producers, main-committing workflows, stale-copy risks, and the unmeasured tail. The machine-readable half of `docs/reference/dependency_map.md`; the two are written together and drift-checked together. | dataset id |
 | `_seed_top50.py` | Credential | One-shot generator for the Phase 2 hand-curated credential seed. **Do not re-run** — would overwrite human edits. Kept for provenance. | — |
 | `_seed_cx_common_courses.py` | Course | One-shot generator for the Phase 2 Cx seed (AI-assisted draft). **Do not re-run** — would overwrite human edits. Kept for provenance. | — |
 | `_seed_coci_unified_courses.py` | Course | One-shot generator for the `coci_unified_courses.json` variant-unification clusters (`UC-XXXXX`). **Output DISSOLVED 2026-05-30** — the token-sorted title key collapsed distinct course levels (e.g. "Algebra 1: Part 2" == "Algebra 2: Part 1"), the clusters were never curator-reviewed, double-emitted their members as Stand-Alone rows, and carried zero articulations. The curator-confirmed **Suggested-merges worklist** supersedes it (itself level-COLLAPSING since Session 57 — but every merge is human-confirmed, the safety the auto-applied clusters lacked). `clusters` dict now empty (archived at `archive/coci_unified_courses_clusters_2026-05-30_pre-dissolution.json`). The `id_system: Cluster` category was then **retired entirely**: curator `merge_into` targets keep their native identity (M-ID/C-ID/CCN) or, when synthetic (`UC-CUR-*`), get the new `id_system: Unified`. **Do not re-run.** | — |
@@ -98,6 +111,7 @@ There are **two** layers:
 | `_probe_new_custom_reports.py` | Pipeline | **Candidate-name sweep for an unknown MAP viewName (Session 170, #1246).** Same cron-as-window mechanism. ⚠️ Its 2026-08-19 run reported "NONE exposed" and was WRONG: `columnName: []` had silently stopped enumerating (it now 500s on known-good views), so the success condition could not fire for ANY view. Now runs a POSITIVE CONTROL first and stamps a warning over its own verdict if that fails, and collects 5xx responses separately — on that run 500 meant *real* and the single 500 was the one real view, printed as ✗. Kept for the next unknown view; off by default. | — |
 | `_probe_new_custom_reports_followup.py` | Pipeline | **The control that caught the above (Session 170).** Asks a known-good view the same question in the same run, and repeats the odd-one-out 5xx to tell a fault attached to the NAME from one attached to the moment. Off by default; its questions are answered. | — |
 | `_probe_confirmed_custom_reports.py` | Pipeline | **Serve-check for the three CONFIRMED reports (Session 170, #1246/#1247).** A header pasted from the report BUILDER proves the report exists in the builder, not that the API serves it — and only the API makes it self-refreshing on the cron. Confirmed all three (dataCount matching the builder exactly) and reconciles each against what Supabase holds. Profiles a view only after its schema passes a PII denylist, printing what was withheld. | — |
+| `_probe_lifecycle_checks.py` | Pipeline | **Runner-side schema probe for the student views (Session 222, #1437).** Same cron-as-window mechanism, first step of `discover-map-datasets.yml`: a positive control, then enumeration by `["*"]` (`columnName: []` answers 500 on every view now), a diff against the daily fetch's request plus a WATCH list (a wired column would otherwise silence the diff), a bisect fallback, and a PII-denylisted profile of new columns — types, fill, values on ≥25 rows, within-student constancy, pairwise overlap, and the applied-without-eligible count by college. Found the six CPL lifecycle booleans and confirmed `CollegeID2` absent. `tests/probe_lifecycle_checks_test.py` (76 checks). | — |
 | `_verify_exhibit_cr_eligible.py` | Pipeline | **Synthetic-payload test (Session 36, #318–#320)** for `excel_to_dashboard._rollup_exhibit_cr_catalog` — the egress wall blocks the real catalog, so this guards the rollup LOGIC (Title→unified_title bridge, MAX-per-(exhibit,skill,CR) de-dupe, credit-UNIT sum, MAX-per-exhibit-then-sum student headcount, military-title exclusion). 10 checks. Run `python3 kb/_verify_exhibit_cr_eligible.py`. | — |
 
 ## Course identifiers — precedence CCN-ID > C-ID > M-ID
@@ -195,6 +209,41 @@ before build). Conflicts stay safely surfaced via the "C-ID conflict" badge;
 Phase B clean consolidation is the automatic stopping point. See CLAUDE.md
 "Crosswalk re-key initiative" for the full diagnosis.
 
+**Memory-table auditor (2026-09-05, `kb/_memory_audit.py`)** — the third
+lint, over the shared team memory `cpl_memory`. `_row_audit.py` keeps the DATA
+honest and `_docs_audit.py` the PROSE; governance row DR-19 had recorded that
+"the memory table has no lint". Same shape as the other two: READ-ONLY, never
+writes to the database, dated JSON + markdown receipts under `kb/memory_audit/`.
+It reads an EXPORT (the sandbox cannot reach Supabase — `--from-json` on the
+`json_agg` result of the query in its docstring, or `--fetch` where
+`SUPABASE_SERVICE_KEY` exists). Twelve rules, the structural half of "is this
+row still true": `dead_path` (a cited file that no longer exists in any of the
+three repos), `dangling_related` (a `related` slug naming no row; KB-note and
+lane-file names are recognized as a convention, not a typo), `related_to_retired`,
+`stale_stamp` (a stale row still wearing `verified_by`), `unattributed_verified`,
+`pr_not_on_main` / `pr_reverted` (against `git log`), `near_duplicate` (a pure-
+Python port of pg_trgm similarity at Session 190's 0.55 cut), `snapshot_claim`
+(a count-carried fact with no date — memory should hold the ruling, not the
+value), `null_slug`, `author_alias`, `proposed_with_human_verifier` (real
+attribution, never swept — Sam's to promote), `question_resolved`. The
+SEMANTIC half — a claim overturned by a later ruling — is still a read against
+`docs/reference/lanes/`, done by a session under a receipt
+(`kb/memory_audit/2026-09-05-receipt.json` is the worked example: 527 proposed
+rows tested, every write logged to `cpl_memory_log` with its before-image).
+First run: 3 dead paths in 653 citations and 1 near-duplicate pair — structural
+rot is rare; the staleness is semantic. Guarded by `tests/memory_audit_test.py`
+(47 checks, each rule both ways). Run: `python3 kb/_memory_audit.py --from-json <export>`.
+
+**Decision-sheet replies (2026-09-05, `kb/_decision_sheet_replies.py`)** — the
+reply controls every decision sheet carries: a verdict chip per item (Yes takes
+the recommendation), a *Follow up* toggle, a note; saved to the artifact's own
+store (published with `capabilities: {db: {}}`, read back with the Artifact
+tool's `read_db`, collection `replies`) or, off the artifact, kept in the
+browser with a *Copy replies* line. `--inject <sheet.html>` adds them to a
+finished sheet idempotently (marker-guarded); `replies_block()` is for a builder
+that wants them at source. Playbook:
+`docs/kb-notes/playbook-decision-sheet-replies.md`.
+
 **Docs-corpus auditor (2026-08-09, `kb/_docs_audit.py`)** — the PROSE
 counterpart to `_row_audit.py`, and deliberately the same shape: READ-ONLY by
 default, dated JSON + markdown receipts under `kb/docs_audit/`, one narrowly
@@ -203,20 +252,156 @@ nothing kept the docs honest, and the docs corpus is the larger of the two.
 Wired as **step 0 of `/checkpoint`** so its findings shape what the checkpoint
 writes rather than arriving after.
 
-Seven rules: `superseded_handoff` (FIXABLE — stamps `superseded: true` on every
+Eleven rules: `superseded_handoff` (FIXABLE — stamps `superseded: true` on every
 `session_<N>_handoff.md` below the highest, so search can filter them),
 `oversized_doc` (per-LANE budgets — an always-loaded file, a KB note and a
-lessons doc have different economics), `kb_note_frontmatter`,
-`kb_note_dialect` (informational, not a defect — the corpus states a note's
-type three ways and its date two), `frontmatter_log_chain` (a frontmatter field
-being used as a changelog), `unindexed_kb_note`, and `vault_heavy_path` (emits a
-paste-able Obsidian `userIgnoreFilters` block from what is actually on disk).
+lessons doc have different economics), `stacked_roadmap_cell` (a §11 cell that
+has become an append-only log), `kb_note_frontmatter`, `kb_note_dialect`
+(informational — the corpus stated a note's type three ways and its date two;
+**normalized to one dialect 2026-08-28, so this now reads 0**),
+`american_spelling`, `frontmatter_log_chain` (a frontmatter field being used as
+a changelog), `unindexed_kb_note` (satisfied by `docs/INDEX.md` **or any
+`docs/catalog/*.md` INDEX links to** — reachability is the invariant, not a
+filename), and `vault_heavy_path` (emits a paste-able Obsidian
+`userIgnoreFilters` block from what is actually on disk).
+
+⚠️ **Two rules added 2026-08-28 (Session 206), both guarding a RELOCATION.**
+Moving content is only half a move; the other half is the pointer left behind,
+and a missing pointer is silent by construction — the offloaded file is fine, the
+always-loaded file is fine, and only the LINK between them is gone.
+
+- **`unreferenced_offload`** — an offload under `docs/reference/` that
+  `CLAUDE.md` never names. It exists because the consolidation itself got this
+  wrong: Rule 9's checkpoint list still named only the three 2026-07-10
+  pare-downs after 30 lane files had moved. **Reachability is the invariant, not
+  a direct mention** — one hop through a doc `CLAUDE.md` points at counts, the
+  same standard `unindexed_kb_note` applies. ⚠️ It matches the PATH, never the
+  bare directory name: the first cut tested for `lanes` and passed on a
+  deliberately broken file, because `CLAUDE.md` says *"Three doc lanes in this
+  repo"* for an unrelated reason.
+- **`presentation_doctrine`** — a rule governing what a human LOOKS AT that has
+  left the always-loaded file. *"PLAIN WORDS, NO GLYPHS"* has now been lost twice
+  the same way: recorded in `cpl_memory` on 2026-08-14 while the Admin tab
+  shipped covered in emoji that week, then carried out of `CLAUDE.md` entirely
+  when a §11 row was relocated. ⚠️ It reads the rule BULLETS only — searching the
+  whole file was satisfied by the section's own *post-mortem naming the lost
+  rule*. ⚠️ Patterns anchor on directive-only phrasing (`AA 4.5`, `focus-visible`,
+  `single column below`), never on words a neighbouring rule might quote: bare
+  `accessib` and `mobile-friendly` were satisfied by Sam's QUOTE inside the First
+  Light bullet, so either rule could have been deleted in full. The suite runs
+  the check against the REAL `CLAUDE.md`, deleting each live bullet in turn and
+  asserting exactly one topic is reported.
+
+⚠️ **THE MASK ITSELF WENT BLIND, 2026-09-09 (Session 245).** `prose_only()` —
+which every prose rule (`american_spelling`, `house_voice`,
+`self_corrected_word_pair`) masks through — built its mask by looping patterns
+and calling `re.finditer(pat, text, re.S | re.M)`: **DOTALL for every pattern**,
+including the line-anchored indented-code rule `^\s{4,}\S.*$`. Under DOTALL that
+`.*` runs past the newline and masks **to end of file**, so ONE four-space block
+exempted the whole remainder of a doc. Measured on
+`docs/reference/lanes/cobi-dark-mode.md`: last unmasked character **byte 1,996 of
+11,749**, and twelve British spellings below it went unreported. The loop was
+already computing a per-pattern `flags` on the line above and ignoring it; now
+only the fenced-block rule spans lines. Corpus went `american_spelling` 0 → 1,
+`house_voice` 21 → 23. ⚠️ **Found only by writing the error the rule exists to
+catch** — the word table's FIRST pair is `("colour", "color")` and it said
+nothing. This is the second unfailable check this file has shipped (2026-08-21:
+a rule reading `entry["text"]` when no such key existed). **A rule sitting at
+zero is unverified, not passing** — see
+[`methodology-a-check-that-cannot-fail-reads-as-a-clean-result`](../docs/kb-notes/methodology-a-check-that-cannot-fail-reads-as-a-clean-result.md).
+
+**Glyph sweep (2026-09-09, `kb/_glyph_sweep.py`)** — the plain-words rule, swept.
+Reports every RENDERED glyph in three classes: **control** (inside a button /
+link / summary label or an `aria-label`; `--apply` strips a leading mark and its
+space, the only mechanical class), **status** and **decoration** (reported only —
+removing one needs a reworded sentence or a judgment about a legend). A comment
+line is never a finding: this repo's ⚠️/⭐ comment style renders to nobody.
+`--check` exits 1 on any control-class glyph and is deliberately NOT yet a CI
+gate — red on day one trains everyone to ignore it.
+
+Three corrections it needed, all the same shape as the mask bug above:
+
+- ⚠️ **A count that mixes OWNERS overstates the work.** `--apply` already refused
+  any site inside a section `excel_to_dashboard.py` rewrites (Rule 1) — but the
+  REPORT counted them, so after the generator was fixed the control class read
+  **401 when 348 were stale HTML the next cron clears**. Findings carry
+  `generator_owned` now, the report counts the two apart, and `--check` gates
+  only on what a session can actually fix.
+- ⚠️ **A generated data payload is not a surface.** `tmc_college_courses.js` and
+  `unified_courses_suggestions.js` are single lines of JSON where any `title` key
+  trips `CONTROL_HINT`; eight arrows **inside course titles** were being reported
+  as controls to fix, and rewriting them corrupts data. `classify()` treats a
+  large data assignment as decoration.
+- ⚠️ **A JS unicode escape renders as an emoji and reads as ASCII.**
+  `"\u{1F512}"` is a padlock on screen and seven plain characters to a scanner,
+  so the sweep saw **none of the thirteen** stale lock references telling readers
+  to click a header button moved into the About pane months earlier — found by
+  chasing a CONTRAST finding, not a glyph one. It decodes `\u{...}` and surrogate
+  pairs now, which is why the corpus total ROSE: it sees more than it did.
+
+⚠️ **`stacked_roadmap_cell` guards TWO surfaces since 2026-08-28** — §11's
+pointer table in `CLAUDE.md` *and* every lane file under
+`docs/reference/lanes/`, which is where the detail moved (Session 206, #1381).
+It had hard-coded `rel == "CLAUDE.md"`, so it would have gone silently green
+over an unguarded corpus the moment the cells moved. It also split rows on a
+bare `|` and skipped anything with fewer than four, which **silently exempted
+the two largest cells in the live table** — one row was missing its trailing
+pipe, the other carried `` `1|2,3|4` `` inside a code span. Rows are now split
+code-span-aware (`split_table_row`), and **a row the rule cannot parse is a
+finding, not an exemption**. The lane files carry their own `roadmap_lane`
+budget (12,000 B) so they cannot grow unwatched.
+
+⚠️ **`citation_drift` added 2026-08-30 (Session 210, remediation F).** A living
+doc citing a Critical Rule by a number it no longer has — the S208 ablation
+found Supabase safety cited as both Rule 9 and Rule 10, and the drift turned
+out to be one systematic shift from a pre-split numbering (checkpoints 8→9,
+Supabase 9→10), live in current code. Deliberately NARROW (two measured
+patterns + one sentence-scoped vocabulary test); dated capsules — handoffs,
+lessons, archives — keep their era's numbering verbatim and are excluded.
+Scans the BODY only (a frontmatter title is a name, not a citation), and
+"Rule 9 checkpoint(s)" is exempt as the correct post-split form. Its first
+corpus run found 4 drifted files the hand-inventory had missed.
 
 Zero third-party dependencies — no PyYAML anywhere in `kb/*.py`, so the
 frontmatter reader is a minimal hand-roll. Receipts are date-only (no wall-clock
 stamp) and the scan excludes its own output directory, so two runs on the same
 day are byte-identical and never dirty the tree. Guarded by
-`tests/docs_audit_test.py` (56 checks). Run: `python3 kb/_docs_audit.py`.
+`tests/docs_audit_test.py` (132 checks). Run: `python3 kb/_docs_audit.py`.
+
+⚠️ `prose_only()` lives here and defines what counts as PROSE — code spans,
+markdown link targets, wikilinks, `*.md` filenames and QUOTED spans are masked.
+`american_spelling` and its fixer BOTH read it, so the rule can never report a
+hit the fixer refuses to touch. Quoted spans are excluded on Sam's ruling
+(2026-08-28): *"No need to fix any spellings we import…like COCI catalog or MAP
+Custom Reports data"* — a quotation is someone else's text, including a person's
+own words.
+
+**Three consumers of the auditor (2026-08-28, Session 204)** — the lint had
+reported this debt for weeks and nothing applied it. All dry-run by default:
+
+- **`kb/_normalize_kb_note_frontmatter.py`** — canonicalizes KB-note frontmatter
+  to `created:` + a type tag in `tags:`. Imports `KB_TYPE_TAGS`/`kb_type_of`
+  from the auditor rather than re-declaring them. Also folds a REDUNDANT
+  `type:`/`kb-type:` the linter structurally cannot see (`kb_type_of` returns
+  the tag and stops), resolving conflicts with the filename as an independent
+  third signal. `--apply` to write.
+- **`kb/_build_docs_index.py`** — generates `docs/INDEX.md`'s marker block and
+  the per-lane catalogs under `docs/catalog/` from each doc's own frontmatter.
+  Hand prose outside `<!-- generated:corpus -->` survives byte-for-byte.
+  `--check` exits 1 when a rebuild would change anything and runs in CI.
+  ⚠️ **Six lanes since 2026-08-28** — a recursive `Reference (pull-side)` lane
+  was added over `docs/reference/**` because every other lane globs `docs/*.md`,
+  which is **flat**: the pare-down files `CLAUDE.md` tells sessions to read had
+  **never once appeared in the corpus index** (0 → 37 docs). Recurse; do not add
+  a second flat glob.
+- **`kb/_fix_american_spelling.py`** — applies `american_spelling` over prose
+  only. Never renames a FILE (a filename is an identifier referenced from
+  `CLAUDE.md`, `related:` wikilinks and `cpl_memory`); it lists those and stops.
+  `--skip <relpath>` leaves another live session's lane alone.
+
+Guarded by `tests/docs_index_build_test.py` (25) and
+`tests/american_spelling_test.py` (32); both, plus the auditor's own suite and
+`_build_docs_index.py --check`, run in `.github/workflows/js-tests.yml`.
 
 **Row Trust-Card auditor (2026-05-23, `kb/_row_audit.py`)** — read-only
 auditor over every M-ID + Cluster, producing per-row Trust Cards with two
@@ -613,32 +798,64 @@ The doctrine-driven campaign to converge the suggested-merge worklist into a
   same schema the future batch pass 2 plans in), `calibration_review.md`
   (the human review doc Sam reacts to).
 
-## SkyView universe payloads (2026-08-24, Session 189)
+## SkyView universe payloads (2026-08-24, Session 189 · orbits and shards 2026-09-03, Session 223)
 
-The prototype graph view (`prototype/ccr_atlas_v1.html`) is fed by two generated payloads. They
-are separate on purpose: the layout is what every reader needs, the members are what only the
-drag needs, and keeping the 2.5 MB visible stops it becoming a silent doubling of a file nobody
-re-measures.
+Since #1460 (Session 224, Sam's eight drive notes) the view reads the members payload on the canvas too: a
+selected or hovered identity (all of them past 4.2×) **opens**, ringing the college courses it carries as
+squares on spokes, each named by code and college, hover for the title and units, drag one for the same
+`CN:` move the panel writes. Controls sit above the canvas, the legend and hint below, the details panel
+docked beside it; labels sit on leader lines and lead with the title and units; Pan and Move are chips;
+the zoom buttons zoom about the searched subject. `prototype/skyview.html` is rebuilt by
+`python3 prototype/build_ccr_atlas.py` — the daily run does not rebuild it.
+
+The graph view (`prototype/skyview.html`, assembled by `prototype/build_ccr_atlas.py` from
+`prototype/ccr_atlas_v1.html` + `prototype/ccr_universe.js`) is fed by two committed payloads and
+one set of shards that is published rather than committed. They are separate on purpose: the
+layout is what every reader needs, the members are what only the drag needs, and the descriptions
+are what only an opened identity needs.
 
 | File | What |
 |---|---|
-| `kb/_build_ccr_universe.py` | READ-ONLY. Emits **both** payloads from `unified_courses_data.js` + `unified_courses_members.js`. |
-| `prototype/ccr_universe.json` | Precomputed island layout — 16,484 identities in 158 discipline islands, ~1.7 MB. Coordinates only; the browser draws, it does not solve a layout. |
-| `prototype/ccr_universe_members.json` | The **draggable** member college courses — 101,063 over 16,240 identities, ~2.5 MB. Record is `[control_number, course code, college index]`. |
-| `tests/ccr_universe_members_test.py` | Payload invariants; wired into `js-tests.yml`. |
+| `kb/_build_ccr_universe.py` | READ-ONLY, ~20 s. Emits the layout, the members and the description shards from `unified_courses_data.js` + `unified_courses_standalone.js` + `unified_courses_members.js` + `unified_courses_member_desc.js`. `--shards-only` rewrites only the shards (what the publisher runs). |
+| `prototype/ccr_universe.json` | Precomputed island layout — 16,482 identities + 33,423 stand-alone courses in 159 discipline islands, ~6.7 MB. **Every stand-alone is a hollow point in orbit around the identity it is most aligned to** (`o` parent · `q` score · `w` why-bits; a point with `a` and no `o` sits on the island's rim). Coordinates only; the browser draws, it does not solve a layout. |
+| `prototype/ccr_universe_members.json` | The **draggable** member college courses — 134,483 over 49,650 identities, ~3.8 MB. Record is `[control_number, course code, college index]`. |
+| `prototype/ccr_desc/<subject>.json` | **Gitignored; published to the PUBLIC Supabase Storage bucket `ccr-desc`** by `scripts/publish_skyview_desc_shards.sh` (`.github/workflows/skyview-desc-shards.yml`, and the daily run's Step 4d when the unified-courses artifacts changed). `{ "<cn digits>": [description, title, units] }` — 159 shards, 50 MB. Schema of record: `kb/supabase_ccr_desc_bucket.sql`. |
+| `tests/ccr_universe_members_test.py` · `tests/ccr_universe_orbits_test.py` | Payload invariants, and the orbit layout (alignment floor, both weight directions, ring geometry, shard keying, the committed payload); both wired into `js-tests.yml`. |
+| `kb/_build_ccr_cpl.py` → `prototype/ccr_cpl.json` | READ-ONLY, ~5 s (Session 238). The CPL face and the articulations light: for every identity on the map, the MAP exhibits that reach it through the receiving college course — the articulation crosswalk's join (the same one the `ar` badge counts) with the curated issuer and trainer from `credential_reference_data.js` and the articulated-exhibit universe from `statewide_data.js`. Fetched on demand, ~0.5 MB, structural counts only. Rebuilt every daily run (Step 4d3); `--check` compares a fresh build to the committed file. |
+| `kb/_build_ccr_cpl_universe.py` → `prototype/ccr_cpl_universe.json` | READ-ONLY, ~2 s (Session 252). SkyView's **CPL universe** — the second universe Sam ruled on 2026-09-10, where the entities are EXHIBITS rather than courses. Reads ONE file, `credential_reference_data.js`: each curated unified title is an identity, its `raw_variants` are the local MAP exhibits it folds in, `disc_modal` is its island, `n_articulation_lines` is the ring, and `issuer`/`issuers`/`trainer` are its agencies. ⚠️ Agencies come from the CER and NEVER from `kb/coci_articulations.json`, whose inlined `issuing_agency` is a 2026-05-21 snapshot wrong on 1,743 of 4,592 records — asserted at runtime by recording what the build opens. The layout (`layout_island`/`build_islands`) is IMPORTED from `kb/_build_ccr_universe.py` via its `point_fn` hook, never copied. 0.36 MB; 1,987 identities / 3,813 members / 97 islands. Rebuilt every daily run (Step 4d3b); `--check` compares a fresh build to the committed file and `tests/ccr_cpl_universe_test.py` fails CI on a stale one. |
+| `kb/_build_ccr_cpl_universe_members.py` → `prototype/ccr_cpl_universe_members.json` | READ-ONLY, ~2 s (Session 252). The ROWS behind the CPL universe's counts, fetched beside it the way `ccr_universe_members.json` sits beside the course layout: per credential identity, `m` lists the local MAP exhibits folded in (`raw_variants` as `[title, confidence, quality flag]`, best confidence first) and `courses` lists the course identities articulated to it (`articulations` as `[course id, id system, title, discipline, [[code, title, [colleges]]]]`, most-local first) — the same join as the point's `ar` ring, so the card and the ring agree. Imports `ident_id` from the universe builder rather than restating it (a members file keyed one character differently is a universe with no members, silently). 0.99 MB; 3,813 exhibits under 1,987 identities, 3,419 articulated course identities under 1,603. Rebuilt every daily run beside Step 4d3b; `--check` compares a fresh build and `tests/ccr_cpl_universe_members_test.py` fails CI on a stale one or a key the universe does not carry. |
+| `kb/_build_ccr_sky.py` → `prototype/ccr_sky.json` | READ-ONLY (Session 239). SkyView's sphere placement: each of the 159 discipline islands' center on the sphere three ways (committed · spread · by kind, as longitude/latitude) with the CTE share per discipline and its base — TOP's one sanctioned use, the manual's CTE flag via each identity's TOP code, as a display arrangement never a classification. ~34 KB; points are placed in the browser from their island's center. The relaxation is ~90 s of pure Python, so the builder fingerprints its inputs and rebuilds only on a change; `--check` and `tests/ccr_sky_payload_test.py` run in half a second (Step 4d4). A discipline's side is held across 0.6/0.4 by a 0.05 margin. `prototype/globe/globe_layout.py` imports the relaxation from here. |
+| `kb/ccr_cpl_funnel.json` | A dated, hand-refreshed read of MAP's credit funnel (`public.map_college_cr_unit`) through the Supabase MCP — rows, exhibits, colleges, and how many of the map's exhibits the funnel holds (570 of 1,924). For the record, never the coverage line's denominator. |
+| `tests/ccr_cpl_payload_test.py` | The join reaches exactly the points carrying `ar`; the coverage line's two numbers share one universe; no student-grain figure; the trainer only where it differs from the issuer; the committed payload is a fresh build. In `js-tests.yml`. |
+| `tests/ccr_skyview_universe.test.js` | jsdom over the REAL template + client with a six-point fixture (66 checks). Under `npm test`. |
 | `prototype/check_ccr_atlas.js` | Chromium behavior harness (on demand, **not** `npm test`) — a drag needs a layout engine. |
 
-⚠️ **No title is carried on a member record.** Measured: 9.9 MB as full dicts · 5.5 MB with the
-title · **2.5 MB without**, and the drag list renders code + college. Adding one back buys
-3.1 MB to show nothing.
+⭐ **An orbit is a placement suggestion, never a curation decision.** The alignment scores a
+shared local subject code (1.5), title words in common (8 × Dice over stemmed tokens) and — only
+after one of those fired — TOP (0.5), units (0.15) and credit type (0.05): Rule 7's two-signals
+gate, made numeric. Floor: Dice ≥ 0.25, or a shared local subject with any title overlap. A
+stand-alone that clears no floor sits on the rim, individually. **Orbits may cross disciplines** (Sam,
+2026-09-03): a course filed under a grab bag (`GRAB_BAG` = Vocational, the no-discipline pile) is
+scored against the whole reference with a bonus for staying home (`HOME_BONUS`); any other course
+crosses only when nothing at home fits and the title match is strong (`CROSS_MIN_DICE`); such a
+point carries `h`, the discipline it is filed under. Nothing is written from the page.
+
+⚠️ **No title is carried on a member record** (measured: 9.9 MB as full dicts · 5.5 MB with the
+title · 2.5 MB without). Titles and units travel in the description shards instead, keyed by
+control number, so they appear once an identity's shard loads.
 
 ⚠️ **A member with no usable control number is DROPPED and counted** (2 today). The write key is
 `CN:<control_number>`; coercing a blank to zero would ship a course that writes against
-`CCC000000000`.
+`CCC000000000`. Keying the shards by control number is what keeps that drop from shifting every
+later description onto the wrong course.
 
-⚠️ **1,122 control numbers sit under more than one identity** — the forward join surfaces an
+⚠️ **1,165 control numbers sit under more than one identity** — the forward join surfaces an
 over-merged course on every card claiming it. The write is one row per control number, so a
-re-home is a **global** statement and the course must leave every card it was showing on.
+re-home is a **global** statement and the course must leave every card it was showing on. A
+further 1,761 keys name more than one COURSE (3,634 draggable rows); those moves are refused.
+
+⚠️ `unified_courses_data.js` carries two identity ids twice (`ENGL 100`, `ITIS 160`); the builder
+keeps the first and names the duplicates in its log.
 
 Merge chains need no handling here: `unified_courses_members.js` is built after
 `flatten_merge_chains()` and honors `CN:`, so a merged-away identity's members already sit on
@@ -691,6 +908,7 @@ Two files here back the **🤝 Noncredit & Learning Partners** tab:
 | `supabase_sierra_feedback_ci_status.sql` | **Applied 2026-08-09** to `hvuwhnbuahrtptokpqfh`. Keeps the CI smoke test's rows out of the human feedback queue by fixing it at the WRITE path, not at display time: widens the `status` CHECK to allow `'ci'` and has `sierra_feedback_upsert` stamp it when `page='smoke'` (43 rows backfilled). `ON CONFLICT` still never touches `status`, so a human's triage survives a visitor re-rating. The predicate was measured before it was encoded — `page='smoke'` ⟺ `session_id LIKE 'smoke%'` on 43/43 rows, and no real row carries either marker. Header states the residual risk: `page` is caller-supplied, so it is a LABEL, never an authorisation. |
 | `map_team_tracked.json` | The 📥 MAP Team Queue's **hand-tracked lane** — the only items on that tab not measured live, kept deliberately small and rendered WITH their staleness (`last_confirmed`) so an unconfirmed item looks unreliable rather than authoritative. **Add here only after confirming no live source could answer it; delete the item the day it becomes measurable.** The list should shrink over time — if it grows, the discipline has inverted. |
 | `supabase_alignment_routes.sql` | **Applied 2026-08-13** to `hvuwhnbuahrtptokpqfh` (Session 148). Receipt of record for route **ALIGN** — `credential_alignment_for_college(credential, college, per_rec)` returns BOTH signals in one round trip, discriminated by `row_kind`: `peer` (FACT — a named college really articulated that course against that rec, from `chatbox_peer_articulations`) and `candidate` (PROPOSAL — the college's own courses ranked by title match, from `chatbox_college_courses`). **Neither is sufficient alone**: Santa Ana articulated `WELD 240 Structural Welding SMAW` against an **FCAW** rec, so title similarity is structurally blind to the broader-course pattern. ⚠️ **The content-token gate was earned by a failing result** — plain overlap ranked `ART 100 Introduction To World Art` third for the FCAW rec on "introduction"+"to"; `cx_align_tokens()` drops structural words and the scorer requires ≥1 content token. `advanced`/`beginning`/`basic` deliberately NOT stopped (they separate the Intro rec from the Advanced one). ⚠️ Candidates come from the college's WHOLE catalogue — scoping by TOP would gate on TOP (Rule 7). Builders: `_build_peer_articulations.py`, `_build_college_courses.py`; syncs ride `credential-catalog-sync.yml`. |
+- `_text_repair.py` — the one mojibake repair (`fix_moji`) both COCI loaders import and apply to the course TITLE: cp1252 with a C1 passthrough, latin-1 fallback, up to three passes; repair runs before `clean()` (S274, 2026-09-18).
 | `supabase_credential_recs_routes.sql` | **Applied 2026-08-13** to `hvuwhnbuahrtptokpqfh` (Session 148). The CONSUMER half of `chatbox_credential_recs`: `credential_recs_for_titles(titles)` batches the full credit-recommendation set for titles a route has ALREADY matched — deliberately not a second search function, because a second matcher over the same vocabulary would drift from the first and attach recommendations to a credential Sierra never named. Also widens `search_statewide_recommendations`' gate from `ccc_rec is not null` to `ccc_rec OR a published statewide rec set`: **`ccc_rec` is derived from ADOPTIONS, so the clause silently meant "has any college already adopted this?" and excluded 38 never-adopted statewide credentials, 36 of them carrying 75 published rec lines.** And splits `college_adoption_opportunities` into two labelled bands (`peer_leverage` / `ready_to_adopt`) with reserved slots rather than one popularity-sorted list — merging them would let Sierra claim "N peers already articulate it" about a zero-adopter credential. |
 | `supabase_nc_partner_notes.sql` | Schema of record for the **write layer** (`public.nc_partner_notes`), **applied 2026-08-05** to `hvuwhnbuahrtptokpqfh`. Keyed by item ID so one ✎ affordance covers every section. Enforces two rulings structurally: a revision **supersedes** (there is **no DELETE policy** — answering never closes), and notes sit **alongside** the register, reaching it only via an explicit promotion packet. |
 
@@ -784,3 +1002,36 @@ Outputs land in `kb/partner_crosswalk_out/<date>-<slug>/`. The workbook is a
 regenerable artifact and is **not committed**; `summary.json` / `unmapped.json`
 are the run receipt, and `unmapped.json` **is the curator worklist**. Method:
 [`docs/kb-notes/methodology-partner-occupation-crosswalk.md`](../docs/kb-notes/methodology-partner-occupation-crosswalk.md).
+
+## `college_cr_evidence/` — a CR for a course a college already approved (2026-08-27)
+
+A college names courses it will award for a CPL type but holds no credit recommendation, and
+MAP needs one before an articulation can exist. Jessica: *"This is a common problem we have
+with colleges."*
+
+- **`_match_courses_to_ace_recs.py`** — matches a college's course list to the ACE credit
+  recommendation vocabulary in `map_college_cr_unit`. Two signals kept separate: the
+  recommendation EXISTS (a proposal) vs a named peer college USED it (a fact). Reuses the
+  Supabase `cx_align_tokens()` stopword list, adds a WEAK set (generic nouns may contribute
+  to a score but never carry a match alone) and a domain gate.
+- **`college_cr_evidence/<college>_<lane>_<date>.{json,html}`** — the payload and the
+  rendered worklist. First run: LATTC military CPL, 139 courses → 87 peer-backed /
+  46 recommendation-only / 6 needing a faculty call.
+- Guard: `tests/lattc_worklist_page_test.py` (browser, 51 checks; needs Chromium, skips
+  cleanly without it — it is NOT part of `npm test`).
+
+⚠️ **The unit rule (Jessica, 2026-08-27):** recommendation hours more than **1 unit** from
+the course are not listed; exactly one apart stay at a lower score. Applied **only** where
+COCI supplied units — a course with no units is never filtered, because an absent
+measurement must not read as a failed one.
+
+## `receipts/` — committed receipts for data writes (2026-09-20, Session 280)
+
+Every bulk write to a shared Supabase table leaves two files here, named for
+the table, the date and the session: a JSON receipt (what was decided, by whom,
+from which source, with the rows as written and the verification result) and
+the SQL beside it. The receipt is what makes the write reversible (Rule 10(a2)):
+an INSERT-only batch carries one `updated_by` or `reviewer_email` value, and
+rollback is one delete on it. First entry:
+`cr_reference_decisions_2026-09-20_s280.{json,sql}`, Sam Lee's 51 verdicts from
+the Jev decision sheet, 30 rows, verified member-by-member against the live table.

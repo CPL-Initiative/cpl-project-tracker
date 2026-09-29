@@ -21,7 +21,7 @@ is the reason this run produced a correct answer instead of a shipped mistake.
 ### What happened, in order — the whole lesson is the sequence
 
 1. Measured the vocabulary. `credit_rec` fits `<units-expr> <unit-word> in
-   <topic>` at 99.1%, 100% with range parsing. Aggressive normalisation —
+   <topic>` at 99.1%, 100% with range parsing. Aggressive normalization —
    units discarded entirely — collapses **6.9%**. Confirmed Sam's framing:
    curation, not string-cleaning.
 2. Noticed a factor nobody had named. Every peer articulation already carries
@@ -47,7 +47,7 @@ is the reason this run produced a correct answer instead of a shipped mistake.
    per-line information anywhere.
 7. Nearly concluded rung 3 was dead — then checked whether the *good* merges
    live across credentials rather than within one. `HIST 130`'s six wordings all
-   sit under **`AP United States History`**: denormalised, but every wording
+   sit under **`AP United States History`**: denormalized, but every wording
    belongs to one credential and one course, so they genuinely are six
    phrasings of one recommendation. `POST` differs only because it spans 43
    lines and many courses.
@@ -65,8 +65,8 @@ solved" from "the gate does not fire on the example I invented it for."
 
 ⭐ **A label that names the disease is not a test for it.** `attribution`
 already carries `per_course` / `group_wide`, and the builder's own header
-documents the denormalisation risk in detail. Every poisoned `AJ 110` row is
-labelled `per_course`. The column is more optimistic than the data; a consumer
+documents the denormalization risk in detail. Every poisoned `AJ 110` row is
+labeled `per_course`. The column is more optimistic than the data; a consumer
 trusting it passes the exact case it appears to catch.
 
 ⭐ **The strongest-looking factor can be the smallest rung.** Course identity
@@ -91,7 +91,7 @@ a correct measurement of the wrong grain.
 **The deliverable is a curation workbench with a small automated spine, not a
 merge engine.** Automation reaches ~10% (rung 1: 351 published statewide lines;
 rung 2: 36 C-ID-declared; rung 3: 40; rung 4: ~160 mechanical). ~90% is curator
-judgement and no achievable matcher changes that — *Racial Issues and the
+judgment and no achievable matcher changes that — *Racial Issues and the
 Police* and *Community Relations* are one POST topic in unrelated words.
 
 That should drive build order: **worklist, grouping affordance, curator
@@ -103,7 +103,7 @@ the run on the tenth that is easy.
 Build the tab as a **worklist**, not a report: the ~2,180 topics ranked by how
 much they would collapse (wordings × colleges affected), each row offering
 group / split / confirm with curator attribution, plus the four automated rungs
-pre-applied and labelled by rung. Model the affordances on the CCR merge
+pre-applied and labeled by rung. Model the affordances on the CCR merge
 workspace (`docs/ccr_merge_workspace_epic_scope.md`), which already solved the
 curator-confirm pattern for course identity.
 
@@ -144,7 +144,7 @@ Justice` (5 wordings / 26 colleges), Principles & Procedures (5 / 16), Criminal
 Investigation (3 / 24). ⭐ **A ranking rule that needs a special case to avoid an
 absurd result is usually the wrong rule.** The fix was not an exclusion list.
 
-### Three bugs, one shape: two places normalising the same text differently
+### Three bugs, one shape: two places normalizing the same text differently
 
 1. **`screen_profile()` judged the RAW topic while the group key used the
    ABBREVIATION-FOLDED one.** `Intro to Administration of Justice` read as
@@ -168,7 +168,7 @@ absurd result is usually the wrong rule.** The fix was not an exclusion list.
 Applying the official title wherever a C-ID resolves would have renamed
 **`3 hours in Physical Training and Health Education` → `AJ 110 — Introduction
 to Criminal Justice`**. `AJ 110` reaches that group only through the
-denormalised (credential, course) pairing — the POST cross-join the scope doc
+denormalized (credential, course) pairing — the POST cross-join the scope doc
 names. That is not a mislabel; it **asserts that Physical Training is
 Introduction to Criminal Justice**.
 
@@ -201,7 +201,7 @@ Supervision` (2,986 rows) · `Computer Applications` · `Communications` ·
 `Industrial Safety` · `Leadership` · `1 hour in First Aid`. **There is no C-ID
 for "Supervision".** So the entire cascade — CCN, C-ID, and M-ID when it comes —
 has nothing to bite on, and the military lane falls through to rung 5, curator
-judgement, almost in full. The local MAP lane by contrast is course-shaped
+judgment, almost in full. The local MAP lane by contrast is course-shaped
 (`Criminal Investigation`, `Academic Reading and Writing`, `Introduction to
 Corrections`) and is exactly what the worklist already resolves.
 
@@ -252,7 +252,7 @@ ACE recommendation ACE's own published text *is* the published line. The
 authority was there the whole time, one rung lower. Checking the ruling we
 already had saved inventing a new one.
 
-**3. The ranking rule is corpus-specific, and that generalises.** SkyCall's
+**3. The ranking rule is corpus-specific, and that generalizes.** SkyCall's
 hard-won finding was that ranking by spread is backwards and collapse value
 (wordings × colleges) is right. In this lane collapse value is **also** wrong,
 for the mirror-image reason: every head topic already sits at 80–100 of 108
@@ -277,7 +277,7 @@ recommendation itself. Reading the memory table first is what connected them.
 
 **6. I re-ran two measurements that were wrong, and both were wrong the same
 way.** A `\b` word boundary in Postgres is a *backspace* (`\y` is the boundary),
-so a normalisation step silently matched nothing and reported no change — which
+so a normalization step silently matched nothing and reported no change — which
 looks exactly like "that step doesn't help." And a containment join reported
 908,451 rows in a 200,840-row lane, because a topic in many pairs was counted
 once per pair. **Both were caught by a figure being impossible, not by
@@ -309,3 +309,370 @@ several** — 22.2% of the vocabulary turns on it, and the existing
 units-are-not-identity ruling came from a genuinely different situation
 (colleges writing one course at different units, versus ACE issuing different
 amounts for different training). The other three can be answered alongside.
+
+## 2026-09-20 — what a model can and cannot be asked (S279, SkyKeeper)
+
+**The lane's own headline number meant something other than it looked like.**
+"156 of 2,159 groups carry a decision" reads as curator judgments. It counts the
+mechanical rung ladder. `cr_reference_decisions` has never held a row. The
+doctrine rule that caught this is the one that says a figure from a lane file is
+a claim, not a measurement — reproducing it took one query and changed the whole
+plan, because the trial I had designed scored Jev against a gold set that does
+not exist.
+
+**The shape of the problem was wrong in the same way.** Every rung-5 group holds
+exactly one wording, so there is nothing to merge inside one. Ninety percent of
+this lane is a cross-group question, and nobody had said so in those words.
+Brute force is 1.87M pairs; blocking on the shared canonical is 51. **The
+leverage was in the blocking, not in the matcher** — a better similarity metric
+over 1.87M pairs would still have been unusable.
+
+**A typed answer is not a boolean, and reading it as one fails silently.**
+TypeSafe's noul returns a probability, 0 to 1. The trial filtered `x is True`,
+which no float satisfies, so it would have printed "MERGE on 0 of 55 pairs"
+whatever Jev said — a confidently wrong negative that reads exactly like a clean
+result. It was caught only because Sam opened egress to the vendor's docs and
+the schema could finally be read rather than inferred from their SDK. **The
+cheapest fix for a class of silent failure was network access, not code.**
+
+**Jev discriminates where string distance cannot.** *Introduction to Criminology*
+sat at 0.48 against the same AJ 110 anchor that *Introduction to Criminal
+Justice* scored 0.89 on, with near-identical row counts. Algebra-based physics
+mechanics (0.64) ranked above electricity and magnetism (0.44) against
+INTRO PHYSICS — the correct ordering, and the reverse of what shared tokens
+would give.
+
+**But it never says no.** Nothing fell below 0.32 across 51 pairs. Whatever
+else it is, it is not a filter: the usable signal is the top of the range, and
+everything else is still a curator's afternoon.
+
+
+## 2026-09-20 — S280 (SkyForge): the twenty-one Jev use cases, mapped against our lanes
+
+Sam shared @shannholmberg's thread and the *Jev + Claude Code* infographic. The
+map, the three tests that decide fit (cheap to verify · ranks, does not filter ·
+one more signal under the TOP posture), the data rule (public catalog text is
+all that leaves the building) and what the two posts get wrong are in
+[`reference-system-one-model-fit-by-lane`](kb-notes/reference-system-one-model-fit-by-lane.md).
+The next Jev build is Sierra's semantic smoke assertions, advisory column
+first; the CR variable battery still waits on the 51 verdicts, and the
+`replies` collection held none at the start of this session.
+
+## 2026-09-20 — S280 (SkyForge): the verdicts landed, and what they said about Jev and about sheets
+
+Sam answered all 51 items in two sittings of a few minutes each: 33 fold, 18
+keep, no notes. Shown the eight anchors carrying both a fold and a keep, he
+flipped eight keeps to fold, so the lane's first curator decisions are
+**41 fold, 10 keep**, written as 30 rows in `cr_reference_decisions` and
+verified against the committed receipt
+(`kb/receipts/cr_reference_decisions_2026-09-20_s280.json`).
+
+**The gate is right; the ordering under it is noise.** Every pair Jev put at
+0.85 or above folded, 25 of 25. Below the gate, Sam first kept the four
+highest pairs (all 0.84) and folded the three lowest (0.32, 0.44, 0.48). A
+probability in that band told us nothing about his verdict.
+
+**A Yes relative to a proposal that flips per section is not a verdict.** The
+sheet's how-to defined Yes as "take the proposal"; the review band proposed
+hold-separate; Sam read Yes as fold throughout and said so: *"I found myself
+saying yes to things that I later had to flip keep because I didn't pay
+attention to your rec."* Items 26–41 all sat at version 2 — a Yes, then a flip
+to Keep — answered bottom-up in one minute. That is the fatigue click made
+visible, and his rulings follow from it: the recommendation line is the focal
+point, chips name the outcome, the fold is proposed by default and pulled out,
+the framing sits in the header.
+
+**Over-merge by design.** *"It is better to over merge and give faculty the
+chance to pull them out rather than the other way around. It's easier to
+respond to a decision than to make one."* The `split` and `excluded`
+affordances in the decisions table are the pull-out; the sheet is the
+proposal. He wants the flow for CER, CSR, CCRR and CCR, and CCR is *"the big
+kahuna with its thousands of decisions"*. The prerequisite there is a
+decisions store with a reason column, which the CCR does not have yet.
+
+## 2026-09-21 (S281, SkyAnvil) — the decision sheet rebuilt, and one magic half for four references
+
+### The sheet, rebuilt around what the 51-item run cost
+
+Sam reversed sixteen of his 51 verdicts on 2026-09-20 and named the cause:
+*"make your recommendation line more visually a focal point. I found myself
+saying yes to things that I later had to flip keep because I didn't pay
+attention to your rec."* Two faults were in play at once, and both are now
+prevented by construction rather than by care:
+
+- **The proposal read as a fact.** It was `<dd class="ask">` in the same gray as
+  the facts around it, with *Why* sitting between it and the chips. It is a
+  tinted panel now, with its own rule and label word, and it is the last thing
+  before the chip row. `promote_rec()` does the same to a sheet that already
+  exists.
+- **A bare Yes reads two ways.** The sheet defined Yes as "take the proposal"
+  and its review band proposed hold-separate, so a Yes there meant *keep* by the
+  sheet and *fold* to Sam. The stored value names the OUTCOME now — `fold` means
+  fold whatever was proposed — and the label names the action.
+
+Three further asks landed the same day: the intro deleted so the sheet opens on
+item 1; a **Complete** button at the end; and **opt-out** — *"set the decision
+button for each item to your recommended and I will change only if needed"*.
+
+### Opt-out's one hazard, and the shape that contains it
+
+A pre-selected chip is indistinguishable from an answered one, so a sheet
+abandoned at item 30 hands over verdicts for 31–51 that nobody read. They are
+still handed over — that is what opt-out IS — but never as his: an item with no
+stored reply is carrying the proposal, a stored reply is always a person's
+(`by: "sam"`), and Complete commits the rest marked `by: "default"`. The split
+rides the message, the `replies/done` record and the paste line.
+
+⚠️ **This changes what the calibration measurement means.** *"Jev was right 25
+of 25 above p 0.85"* only holds over items a person actually judged. Score the
+variable battery against `by: "sam"` rows; an as-proposed row measures the
+default, never the model.
+
+### `sendToClaude()` does not reach a Claude Code session — measured
+
+Sam pressed Complete and asked whether it had reached the session. It had not.
+The record said so (`replies/done` carried `sent: false`), which is what the
+db-write-first design is for, but the page said it too quietly to notice.
+
+The first diagnosis was wrong in an instructive way: the artifact watch HAD
+lapsed on a session restart, so re-registering it looked like the fix. It was
+not. Watch confirmed live at 13:42:11Z, pressed at 13:43:24Z, same
+`no_session`. **A remote-container Claude Code session is not a session
+`sendToClaude` can reach**, and no amount of watch hygiene changes that.
+
+So the mechanism inverts: `replies/done` is a durable record that needs nothing
+alive at the moment of the press, which means a sheet finished at midnight is
+read by whatever session runs next. The send is a bonus that works from a
+claude.ai chat session. **Arm a `send_later` that reads `replies/done` and
+compares its `at`** — that is the hand-over procedure now.
+
+### One magic half, and the second look the trial lacked
+
+`playbook-trail-crew-method-magic-audit` already ran this pattern twice on
+2026-07-10 (CER, then CSR). Every reference owns a METHOD half; what differs is
+the MAGIC half, and the playbook records that the CCR *"has never had the magic
+half at scale — the backlog is adjudication, not detection."* Jev is the cheap
+magic half, so `kb/_jev_adjudicate.py` is the one place it lives — four trial
+scripts would drift as the alias chain's copy drifted to 7 maps against 15.
+
+⚠️ **The second look never sees the verdict it checks.** The playbook demands a
+skeptic on every merge, and its own working version *"re-derived the numbers"*
+rather than re-reading the claim. Jev cannot read a registry, so re-derivation
+here means the NEGATIVE question put to the same evidence in a separate call
+with the first answer withheld. "Critique this proposal" hands a model a
+conclusion and asks for fault, which is the shape that rubber-stamps. A refuted
+proposal goes to the curator however confident the first look was, and a 0.5
+hedge is not a refutation.
+
+**Triage, measured:** CER 239 findings → 59 worth a call (180 are roman-numeral
+renames and style nits); CSR 185 → 143; CCRR 55 anchored pairs.
+
+**Reconciled rather than assumed:** the receipt holds 51 pairs and
+`build_pairs()` now yields 55. All 51 are still present, none lost, and the four
+new ones all sit under the `community relations` anchor — the case this lane
+names as the hard one. The calibration stands.
+
+**CCR is deliberately not wired.** Its method half emits Trust Cards rather than
+findings, and it is the big kahuna; pointing an unvalidated routine at it before
+scoring against the 51 would be backwards.
+
+---
+
+## 2026-09-21 — S282 SkyLedger: the ladder, the CCR rung, and three things found by running rather than reasoning
+
+**Sam ruled item 1 of the ladder: the CCR gets the next sitting of verdicts.**
+It is the sheet's only `by: "sam"` verdict — the other nine came back
+`as_proposed`, which under opt-out is a verdict for each item together with the
+statement that nobody individually reviewed one.
+
+### The ranking rule this lane owns does not rank the centers
+
+The handoff said to prioritize the four centers by **collapse value** (rows ×
+colleges), the rule this lane established. Measured on
+`chatbox_peer_articulations`, the CER, CSR, CCR and CCRR each ride the **same
+9,413 articulation rows across the same 82 colleges** — they consolidate
+different COLUMNS of one corpus. The rule orders items WITHIN a center and is
+**undefined between them**; it would have returned a tidy-looking tie.
+
+**Third corpus, third rule.** The ACE lane found the mirror image on 2026-08-14
+(every head topic already at 80–100 of 108 colleges, so the multiplier is a
+constant). The durable version is now a KB note:
+[`methodology-a-ranking-rule-is-a-claim-about-where-variance-lives`](kb-notes/methodology-a-ranking-rule-is-a-claim-about-where-variance-lives.md).
+
+**What ranked them instead** is what ONE SITTING of verdicts buys: CCRR ~29 rows
+per verdict (51 verdicts settled 1,459 rows) · CER ~1.2 (all 59 findings reach
+**71 rows across 20 colleges**, and only 21 of its 38 keys touch the articulated
+corpus at all) · CCR **134,485 member rows over 16,478 identities**.
+
+### The CCR is wired, and the triage was the whole job
+
+`ccr_findings()` turns 27,580 Trust Cards into **1,237 questions** — the same
+shape as CER (239→59) and CSR (185→143), reached by asking which tags a curator
+would recognize as a question rather than by taking the biggest pile.
+
+⚠️ **6,621 rows fire on signals this repo has already ruled non-authoritative,
+and asking about them is the expensive mistake.** `unit_anomaly` (4,179) is the
+question the battery MEASURED Jev on at **AUC 0.281, below chance**;
+`top_discipline_disagreement` (1,189) and `member_top_divergence` (1,253) ask
+Jev to gate on TOP, which Rule 7 forbids. `CCR_NEVER_ASK` names all three with
+the reason, `CCR_RANK_ONLY` holds the two SUBJ4 tags, and
+`tests/jev_ccr_adapter.test.js` fails any re-addition.
+
+⚠️ **`discipline_title_mismatch` is mostly artifact, which is why the
+description rides every rule.** It fires on token overlap, so *Three-Dimensional
+Design* under Art and *Environmental Ethics* under Philosophy are both flagged
+and both right. The real misses are only visible in the description: an *Ethics*
+row under Philosophy whose description is **DEH-24's dental-hygiene
+prerequisites**. COCI's `_x000D_` escapes are stripped; the catalog boilerplate
+STAYS, because that prerequisite list IS the evidence.
+
+### Sam's rung design, and what CIP actually is
+
+> *"title then CIP then course description"* … *"course records do carry CIP"*
+> … *"the MIDs were minted a while back and new procedures might find a better
+> suited parent number and title"* … *"the MIDs are still experimental, so the
+> stakes are low for mistakes. We want to use these process explorations to
+> better configure decisions for faculty to respond to and curate where
+> needed."*
+
+**CIP is at PROGRAM level** (`coci_college_programs.cip_code`), and the observed
+one beats the CO's published crosswalk roughly 3x: mean **2.85** CIPs per TOP
+over 19,349 programs with the modal CIP holding **86.5%**, against the
+crosswalk's 8.4 and a worst case of 1,032. `kb/top_cip_map.json` holds it and it
+resolves for **1,235 of the 1,237** questions. It corroborates and never gates —
+a course's only route to a CIP is its TOP code.
+
+⚠️ **THE PARENT LAYER IS AN UNREVIEWED MAY DRAFT, AND SAM CALLED IT.** 15,513 of
+19,568 parents (**79%**) were minted 2026-05 by a "Phase B M-ID consolidation
+draft" pass; **ZERO carry a human `reviewed_by`**; 15,513 titles read
+`local catalog (representative/modal)`, the bottom rung of the CCRR naming
+cascade; 14,751 (75%) carry no `discipline_source`; and **zero carry a C-ID or
+CCN**, so the cascade's top two rungs fire on nothing at this layer.
+
+**So the rungs run membership first, parent second, and loop** — re-titling a
+parent before its membership is settled bakes the error into the new name.
+
+### Three catches, none from a test
+
+- **The ranking rule failed when measured**, not when reasoned about.
+- **The gate bug appeared when the runner was wired.** `act_bucket` read one
+  module-level `GATE`, so a CCR run would have printed `suggest` off 0.85 — a
+  number measured on the CCRR's question. `jev_ccr_adapter` was passing 15/15 at
+  the time. `GATES` is per-reference now, and a reference without one runs as a
+  **calibration sitting**: every row `uncalibrated`, nothing proposed, no second
+  look spent (a skeptic refutes a proposal, and a calibration run makes none).
+- **A stale dependency map cost a red CI run**, then the pre-push gate caught the
+  next two. `scripts/check_generated.sh` has existed since S242 and nothing in
+  `CLAUDE.md` named it; it does now.
+
+**NEXT:** dispatch `typesafe-smoke.yml` with `adjudicate=ccr`, `rung=title`,
+a small `adjudicate_limit`; build a decision sheet from the `jev-ccr` artifact;
+Sam's verdicts on it calibrate the title rung's gate and earn the CCR an entry
+in `GATES`.
+
+## 2026-09-29 — S301 SkyShuttle: a next step per reference, on measured ground
+
+Sam's ask of 2026-09-28 went to him as cards 8–11 of the standing sheet
+(`2026-09-29-open-asks-2`), after the two stale scanners re-ran.
+
+**What worked.**
+- **Re-run a stale scanner before trusting its triage.** The CER fell 239 → 116
+  and the CSR 185 → 63, and neither drop was the headline: the CER's 38 judgment
+  findings are July's 38 untouched (no store holds a ruling), and 121 of the
+  CSR's 136 Jev questions were a scanner misread.
+- **Classify a surprising finding before arguing with it.** The 121 split cleanly:
+  108 ids already carrying the canonical, 13 umbrella languages. One `if` on the
+  key shape explained all of them.
+- **Measure the population a new question fits before proposing it.** The CCR's
+  26 answers were placement calls; the members of those courses name 4 of Sam's 5
+  destinations, and plurality alone picks 1, which is the case for asking Jev to
+  choose rather than to vote.
+- **A card's numbers come from a script at build time** (`kb/_jev_next_steps.py`),
+  and each card's premise is a fixture-tested predicate, so the sheet refuses to
+  build once the work lands.
+
+**What bit.**
+- **A rule written against an old key falls back to a descriptive field after a
+  re-key, and reports settled work as open.** CS9's regex matched `M-ID SUBJ NNN`;
+  after the re-key it read `rec["subject"]`, the modal local code, and counted all
+  218 M-ID anchors as dead-format.
+- **A ruled exception the scanner never learned reads as a defect.** CS2 flagged
+  Sam's FTVE fan-in of 2026-09-03 until it honored `fan_in_with`.
+- **AUTB is the `AB` short-code defect in the CSR itself:** an agriculture course
+  minted under Auto Body's code, and the discipline's canonical derived from it.
+
+**Moved verbatim from the lane (2026-09-29, the budget trim):**
+
+⚠️ **TEN ADOPTED, NONE OF THEM HIS** — `replies/done` reads `ruled: 0 ·
+as_proposed: 10`, every row `by: "default"`. **Worth nothing as calibration**
+(the scoring rule is `by: "sam"` rows). Item 1 was held and asked back; he then
+ruled it directly: **the CCR gets the next sitting**, at **40-60 findings**.
+
+## Moved from the lane (S301, 2026-09-29): the CIP measurement behind Sam's ladder design
+
+Moved verbatim to keep the lane under its size budget when cards 13–14 joined its NEEDS SAM section.
+
+**CIP IS AT PROGRAM LEVEL** (`coci_college_programs.cip_code`), and what colleges
+actually assigned beats the CO's published crosswalk ~3x: mean **2.85** CIPs per
+TOP over 19,349 programs, modal share **86.5%**, against 8.4 and a worst case of
+1,032. `kb/top_cip_map.json` holds it (builder carries the refresh query) and it
+resolves for **1,235 of 1,237**. It corroborates, never gates.
+
+## S301 continued (2026-09-29): the unit range on three surfaces
+
+Sam's rule of 27 September (units never split an identity) was measured against eight surfaces; three shipped the range this session (#1742, #1743, #1744).
+
+- **A fold keeps one figure unless told otherwise, and each fold loses it its own way.** The Fact Sheet builder kept the first figure it saw (EMT "6" over 6 and 7); the Unified Courses bake read memberships narrower than the table beside it (2,358 merged rows printed "—" or one figure); the CR Reference said only "units vary". Measure each against what the row displays.
+- **List every consumer before changing a field's shape.** `u` went from "6" to "6–7": the Fact Sheet and Sierra read it as text, but the domain crosswalk parsed it as a number and would have read a range as unknown.
+- **Retiring an alarm means searching for its glyph as well as its words.** No test named the ⚠'s tooltip text, but `uc_subj4_member_sort.test.js` #5 asserted the ⚠ itself; CI's shard 2 caught it.
+- ⚠️ **A mutation check can pass on stale bytecode.** A same-length edit within one second leaves Python's cached `.pyc` valid (it checks mtime and size), so the restored file ran the mutant. Run mutation checks with `python3 -B`.
+- **A rename that other measurements group by goes to a sheet.** Naming a varying group *Engine Performance (2–5 units)* moves the typesafe trial's and Jev's grouping by `canonical`, so it is card 13, with card 9 re-measured after.
+- **A code-only PR needs its dispatch.** The runner published the regenerated artifacts about 25 minutes after `daily-dashboard.yml` was dispatched; the live values were read back after (AGAS M1001 2–3, WELD M1109 0–5).
+
+## Moved from the lane (S302, 2026-09-29): the aggregate rung's fill
+
+Moved verbatim to keep the lane under its size budget when sheet 3's rulings replaced its NEEDS SAM section.
+
+⚠️ **THE AGGREGATE RUNG'S FILL IS THE DESCRIPTION, AND IT COMES FROM A DIFFERENT
+FILE.** Membership records carry college, control number, subject, course
+number, units, credit status and TOP — **never a description**. 4,231 of the
+7,158 aggregatable rows are missing exactly that, and **4,065 have member
+descriptions** in `unified_courses_member_desc.js` (keyed by the same id, loaded
+lazily because it is 47 MB). Of those, **271 agree word-for-word** (a mechanical
+fill) and **3,794 differ** (the judgment). Sam's qualifier — *"where there is
+something useful to work with in the aggregate"* — excludes the 8,132 blank/seed
+cards that carry no members at all.
+
+⚠️ **`level` IS A LEAD, NOT A FINDING** — raw p 0.023, **Holm 0.138**. It earns
+ONE targeted re-test on a batch it did not pick; **never a re-analysis of these
+26 rows**.
+
+**What did not fail: the 0.85 gate** — 25 of 25, 346 rows.
+
+## S302 (2026-09-29): the unit range reaches the name, and a rebuild that disagreed with itself
+
+Cards 13 and 14 of sheet 3 landed in #1754 (lane state: the RULED section).
+
+- **Rebuild the committed artifact before changing its builder, and diff the two.** The unchanged builder reproduced the worklist byte for byte; the changed one then moved a group the change never touched. Under 20 hash seeds the unchanged builder wrote two different worklists: the title-divergence check joined Python sets, whose order changes per run, so *Pre-Calculus Mathematics* read as divergent from MATH 155 *Precalculus* under 15 seeds and not under 5. Enumerating every token order for the 333 groups with an official title found no other group that depended on it. The squash now keeps written order, and the output is identical under all 20 seeds.
+- **A test of a cron artifact cannot assert the builder change of the PR that ships it.** The worklist is rebuilt by `daily-dashboard.yml`, so a code-only PR's CI reads the old file. The builder's behavior is tested on a fixture corpus (C1–C11 in `tests/cr_reference.test.js`); the real-corpus checks (A25–A29) wait for `_stats.groups_named_by_range`, which only the new builder writes, and skip loudly until the dispatch.
+- **A card's count is its predicate's, and the predicate can be narrower than the ruling.** Card 13 counted groups whose `canonical_source` was exactly `most_colleges` or `published_statewide` (87). Two more took their name from a wording while an official title was only proposed; the rule renames them too, and the fix above moved one of them under its C-ID, so 88 renamed.
+- **A zero a Counter drops reads as a missing stat.** `groups_held_by_a_screen` fell from 30 to 0 and left `_stats`; both unit stats are now set to zero before counting.
+
+## Moved from the lane (S302, 2026-09-29): the first trial's scores, the first decisions, the battery's primary
+
+Moved verbatim to keep the lane under its size budget when cards 13–14 landed.
+
+Jev answered
+all 51 in 10 seconds (`kb/_typesafe_cr_trial.py`, run 35516193054) and it
+discriminates: *Introduction to Criminal Justice* 0.89 against *Introduction to
+Criminology* 0.48 on the same `AJ 110` anchor with near-identical row counts —
+the designated discriminator, and it passed. Spanish 1/2 at 0.84/0.86, Spanish 3
+at **0.32**.
+
+**These are the lane's first curator decisions** — before
+them the table had never held data, and the lane's old "156 groups carry a
+decision" counted the MECHANICAL rung ladder (108/28/46/41), not judgments.
+
+⚠️ **THE PRIMARY CAME BACK BELOW CHANCE — `any_reason` AUC 0.378.** Backwards,
+not weakly right: where Jev found a reason to hold two apart, Sam was MORE
+likely to fold them.

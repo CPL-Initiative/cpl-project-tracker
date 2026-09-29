@@ -56,6 +56,7 @@ import datetime
 import json
 import os
 import re
+import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -87,21 +88,21 @@ def band_for(n):
 
 # ── the reader, with the three guards ───────────────────────────────────────
 GRADE_RANGE = re.compile(r"\bK\s*-\s*\d{1,2}\b", re.I)   # guard 2
-LEVEL_NUM = re.compile(r"\b(?:level|stage|step|esl|part)\s*[-:]?\s*(\d{1,2})\b", re.I)
+LEVEL_NUM = re.compile(r"\b(?:level|stage|step|esl)\s*[-:]?\s*(\d{1,2})\b", re.I)
 ROMAN = re.compile(r"\b(VII|VI|IV|V|III|II|I)\b")        # guard 3 — stops at VII
 ROMAN_MAP = {"I": 1, "II": 2, "III": 3, "IV": 4, "V": 5, "VI": 6, "VII": 7}
 TRAIL_INT = re.compile(r"\b(\d{1,2})\b(?!\s*[A-Za-z])")
 
-BEG = re.compile(r"\bbeginning\b|\bbeginner\b|\bbasic\b|\bliteracy\b|\bfoundation"
-                 r"|\bintroductory\b|\bintro\b|\belementary\b|\bnovice\b|\bsurvival\b"
-                 r"|\blow-?beginning\b|\bhigh-?beginning\b", re.I)
-INT = re.compile(r"\bintermediate\b|\blow-?intermediate\b|\bhigh-?intermediate\b", re.I)
-ADV = re.compile(r"\badvanced\b|\bhigh-?advanced\b", re.I)
+# The level words and the Part marker come from the fold's own classifier, so the
+# fold and every re-level read a title the same way (they had drifted into two
+# copies; the ESL merging sheet's reader fixes of 2026-09-26 land in one place).
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from _esl_package_dryrun import BEG, INT, ADV, PART  # noqa: E402
 
 
 def read_level(title):
     """(number_or_None, why). Applies guard 2 and guard 3; guard 1 lives in classify()."""
-    t = GRADE_RANGE.sub(" ", title or "")          # guard 2
+    t = PART.sub(" ", GRADE_RANGE.sub(" ", title or ""))   # guard 2; a Part is never a rung
     m = LEVEL_NUM.search(t)
     if m:
         return int(m.group(1)), "level-word-number"

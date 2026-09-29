@@ -1029,8 +1029,16 @@
       "padding:.3rem .8rem;cursor:pointer;font-size:.8rem;font-weight:600;color:var(--text-body,#3A3A36)}" +
       ".cplfl-nav:hover{background:var(--surface-muted,#ECE9E2)}" +
       ".cplfl-count{font-size:.82rem;font-weight:700;color:var(--text-strong,#1C1C1A);min-width:5.5rem;text-align:center}" +
-      ".cplfl-imgfallback{display:none;padding:3rem 1rem;color:rgba(255,255,255,.88);font-size:.85rem;" +
-      "background:linear-gradient(160deg,#8a6d2e 0%,#a8842f 30%,#6e7d52 65%,#43523f 100%)}" +
+      /* ⚠️ The two mid stops were #a8842f and #6e7d52, and white text over
+       * them measured 3.08:1 against AA 4.5 — on every one of COBI's 38
+       * views, because this panel is part of the shared chrome. Pure white
+       * would not have fixed it either (3.50:1 over #a8842f); the gradient
+       * itself had to come down. Found by `npm run a11y`, which scores text
+       * over a gradient at its LIGHTEST stop rather than calling it
+       * unmeasurable. This panel only paints when the Wikimedia image does
+       * not load — which is exactly when someone is on a poor connection. */
+      ".cplfl-imgfallback{display:none;padding:3rem 1rem;color:#fff;font-size:.85rem;" +
+      "background:linear-gradient(160deg,#7e6323 0%,#7e6323 30%,#5a6743 65%,#43523f 100%)}" +
       ".cplfl-body{padding:1rem 1.3rem 1.2rem}" +
       ".cplfl-title{font-family:'Playfair Display',Georgia,serif;font-size:1.25rem;font-weight:700;color:var(--text-strong,#1C1C1A)}" +
       ".cplfl-byline{font-size:.86rem;color:var(--text-muted,#5C5C55);margin-bottom:.6rem}" +
@@ -1045,10 +1053,14 @@
       ".cplfl-reflect-msg{font-size:.78rem;color:var(--text-muted,#5C5C55)}" +
       ".cplfl-actions{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;margin:.4rem 0 .6rem}" +
       ".cplfl-btn{display:inline-flex;align-items:center;gap:.4rem;cursor:pointer;font-family:inherit;font-size:.85rem;" +
-      "font-weight:600;background:var(--cobalt,#0047AB);color:#fff;border:none;border-radius:9px;padding:.5rem 1rem;min-height:32px}" +
-      ".cplfl-btn:hover{background:#003B8E}" +
+      "font-weight:600;background:var(--cobalt,#0047AB);color:var(--on-accent,#fff);border:none;border-radius:9px;padding:.5rem 1rem;min-height:32px}" +
+      ".cplfl-btn:hover{background:var(--btn-primary-hover,#003B8E)}" +
       ".cplfl-btn.cplfl-ghost{background:transparent;color:var(--accent-link,#0047AB);border:1.5px solid var(--accent-link,#0047AB)}" +
-      ".cplfl-optout{font-size:.78rem;color:var(--text-muted,#5C5C55);display:flex;align-items:center;gap:.4rem}" +
+      // min-height 24px is WCAG 2.2 SC 2.5.8: the checkbox is 15px and its LABEL
+      // wraps it, so the label box IS the hit area — it measured 182.1x19.9 and
+      // failed the 24px floor on every COBI route, first_light.js being loaded on
+      // all of them. Same fix and same reason as .cobi-ident-btn.
+      ".cplfl-optout{font-size:.78rem;color:var(--text-muted,#5C5C55);display:flex;align-items:center;gap:.4rem;min-height:24px}" +
       ".cplfl-optout input{width:15px;height:15px}" +
       ".cplfl-lic{font-size:.73rem;color:var(--text-muted,#5C5C55);border-top:1px solid var(--border,rgba(28,28,26,.14));padding-top:.6rem}" +
       ".cplfl-chip{display:inline-flex;align-items:center;gap:.45rem;font-size:.78rem;font-weight:600;cursor:pointer;" +
@@ -1106,7 +1118,7 @@
       '<div class="cplfl-actions">' +
       '<button class="cplfl-btn" id="cplfl-done" type="button">Begin the day</button>' +
       '<button class="cplfl-btn cplfl-ghost" id="cplfl-reflect-send" type="button">Share reflection</button>' +
-      '<button class="cplfl-btn cplfl-ghost" id="cplfl-speak" type="button" aria-pressed="false">🔊 Read aloud</button>' +
+      '<button class="cplfl-btn cplfl-ghost" id="cplfl-speak" type="button" aria-pressed="false">Read aloud</button>' +
       '<label class="cplfl-optout" id="cplfl-optout-lbl"><input type="checkbox" id="cplfl-optout"> Don’t greet me with paintings</label>' +
       '<span class="cplfl-reflect-msg" id="cplfl-reflect-msg" role="status"></span>' +
       '</div><div class="cplfl-lic" id="cplfl-lic"></div></div></div>';
@@ -1199,7 +1211,7 @@
     if (lsGet(KEY_REFLECTED) === todayKey()) {
       ta.disabled = true;
       btn.disabled = true;
-      btn.textContent = "✓ Shared — thank you";
+      btn.textContent = "Shared — thank you";
     } else {
       ta.disabled = false;
       btn.disabled = false;
@@ -1247,7 +1259,7 @@
   function stopSpeaking() {
     if ("speechSynthesis" in window) window.speechSynthesis.cancel();
     var b = overlay && byId("cplfl-speak");
-    if (b) { b.setAttribute("aria-pressed", "false"); b.textContent = "🔊 Read aloud"; }
+    if (b) { b.setAttribute("aria-pressed", "false"); b.textContent = "Read aloud"; }
   }
   function wireSpeak() {
     var b = byId("cplfl-speak");
@@ -1265,7 +1277,7 @@
       u.onend = stopSpeaking;
       u.onerror = stopSpeaking;
       b.setAttribute("aria-pressed", "true");
-      b.textContent = "⏹ Stop";
+      b.textContent = "Stop";
       window.speechSynthesis.speak(u);
     });
   }

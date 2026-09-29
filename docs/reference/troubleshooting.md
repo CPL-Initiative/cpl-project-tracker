@@ -84,14 +84,51 @@ So in a remote session:
   `noreply@github.com` (or the cron bot) and that it is an ancestor of
   `origin/main`, then ignore it.** `git log -1 --format='%h %ce %s' <sha>`.
 
-**Variant — "There are N unpushed commit(s) on branch `claude/...`" (added
-Session 128, 2026-08-08, after it fired twice in one session).** Same root cause,
-different message, and **the answer is still: do not push.** After a squash-merge
-GitHub **auto-deletes the head branch** (Sam's toggle ②), so a session that then
-runs `git reset --hard origin/main` is left on a local branch whose remote is
-*gone* — and the hook reads "local has commits the remote doesn't" as unpushed
-work. The commit is the squash-merge itself, already on `main`. Pushing would
-recreate a merged branch for nothing.
+**Variant — "There are N unpushed commit(s) on branch `claude/...`" — FIXED,
+Session 228, 2026-09-04.** A SessionStart hook now runs
+[`scripts/patch_stop_hook.py`](scripts/patch_stop_hook.py), which patches the
+harness's own copy so the unpushed check counts **commits on no remote ref**
+(`git rev-list HEAD --not --remotes`) instead of a range against a stale
+upstream. If the nag returns, the patch did not run — `python3
+scripts/patch_stop_hook.py` — or the harness hook changed shape, in which case
+the script says so on stderr and re-deriving its `TARGET` line is the fix.
+Guarded both ways by `tests/stop_hook_git_check_test.py`.
+
+⚠️ **In a three-repo session that SessionStart hook never runs** (the repo's
+settings file is INERT there; `scripts/check_hooks_live.py` says so), which is
+how the nag came back on 2026-09-25 (S288: "There are 2 unpushed commit(s)"
+after #1693's squash-merge deleted the branch's remote). Since then
+`check_hooks_live.py --fix` applies the patch too and prints a `STOP HOOK:`
+line when it did anything; `tests/install_prompt_guards_test.py` pins the
+wiring. It opened every session from 2026-09-20 until Sam dropped it from the
+opening line on 2026-09-28, so run it when the nag appears.
+
+**What was actually wrong (measured 2026-09-04, after it had fired in nearly
+every session since August).** Two faults, and only fixing both stops it:
+
+1. **The predicate.** The environment manager creates a **local**
+   `refs/remotes/origin/claude/<slug>` pinned at the session's *starting*
+   commit, for a branch that has never existed on GitHub. `git rev-parse
+   "origin/$branch"` resolves that local ref, so the hook believes there is a
+   published upstream frozen at session start, and anything landing on the
+   branch afterwards — *including a fast-forward onto already-published `main`* —
+   counts as unpushed. On `claude/teleport-k4v8f3`: `origin/<branch>..HEAD` = 1,
+   `HEAD --not --remotes` = 0. (The earlier Session-128 reading — "the branch
+   auto-deletes at merge, so the remote is gone" — describes a real adjacent
+   case, but the ref here was never deleted; it was never *created* on the
+   remote at all.)
+2. **The fix could not reach it.** The repo copy's Session-32 guard (`HEAD is an
+   ancestor of origin/main → exit 0`) already handles this — and **has never
+   once run in a remote session**, because the harness copy is what executes.
+   ⚠️ Consequence for testing: an end-to-end test against
+   `scripts/stop-hook-git-check.sh` passes *with or without* the fix, since that
+   guard masks the case. The guard test uses a vendor-shaped hook instead; this
+   was caught by perturbation, not by reasoning.
+
+Do **not** fix it by copying the repo hook over the harness one: theirs carries
+SSH-signature detection (`%G?` reports `N` for correctly SSH-signed CCR commits,
+so our check is wrong under CCR), `--not --remotes` scoping on the signature
+check, and non-linear-history rebase advice. Patch one line; keep their work.
 
 Confirm in one command, all local except the last:
 
@@ -106,7 +143,49 @@ git ls-remote --heads origin <branch> | wc -l         # 0 = auto-deleted at merg
 the next merge. ⚠️ Wrap any networked git call in `timeout` — `git fetch --prune`
 hung for the full 2-minute limit in this sandbox at least once.
 
+### CI dies at `npm install` with a 404 on a package tarball
+
+**Symptom.** Every workflow on every branch fails three seconds in, at
+`Run npm install`, before a single test body runs:
+
+```
+npm error 404 Not Found - GET https://registry.npmjs.org/playwright/-/playwright-1.63.0.tgz
+```
+
+**Cause — and it is not the branch you are on.** `package-lock.json` is
+**gitignored** in this repo (`.gitignore:20`), so CI has no lockfile and
+`npm install` resolves every RANGE against the registry *at run time*. A caret
+(`^1.62.1`) therefore means "whatever npm calls latest this minute". On
+2026-09-04 playwright published 1.63.0 with a tarball that 404s, and every run
+after that moment died — including runs whose diff touched nothing near it. The
+run half an hour earlier on the same branch had passed.
+
+**Fix.** Pin each direct dependency EXACTLY in `package.json` — there are only
+two, so a lockfile would add nothing a pin does not. Verify the way CI does:
+
+```bash
+rm -rf node_modules && npm install
+```
+
+Bump a pin deliberately when you want a newer version; never widen one back to a
+range while the lockfile stays ignored. ⚠️ **A red run whose failure names a
+package rather than a test is almost never the PR's** — check whether the base
+branch fails the same way before debugging your own diff.
+
 ### docx library errors
 - Local `docx.min.js` is v8.0.4 UMD, 334KB. CDN versions were unreliable — do
   **not** switch back to CDN. To refresh the local copy:
   `npm pack docx@8.0.4`, extract, copy `umd/docx.min.js`.
+
+## The stop-hook nags
+
+*Relocated from `CLAUDE.md` at the 2026-09-09 checkpoint — symptom-triggered
+reference, read only once you have seen the nag, so it is PULL. The pointer in
+`CLAUDE.md`'s Troubleshooting section stays.*
+
+⚠️ **The "N unpushed commits on `claude/...`" nag is FIXED (Session 228)** — the
+SessionStart patch makes the hook count commits on NO remote ref, which is what
+"unpushed" means. If it returns, the patch did not run:
+`python3 scripts/patch_stop_hook.py`. The "Unverified `noreply@github.com`"
+variant is still a false positive — **do not amend, do not push**; amending
+rewrites `main` (Rule 5). Both are covered there with the confirming commands.

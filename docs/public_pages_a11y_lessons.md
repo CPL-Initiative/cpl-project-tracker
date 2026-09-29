@@ -1,8 +1,8 @@
 ---
 title: Public standalone pages — accessibility and mobile lessons
 created: 2026-08-20
-updated: 2026-08-20
-tags: [lessons, accessibility, mobile, sierra, veteran-sprint-map, fact-sheet, public-surface]
+updated: 2026-09-09
+tags: [lessons, accessibility, mobile, sierra, veteran-sprint-map, fact-sheet, public-surface, cobi]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
 related:
@@ -10,7 +10,10 @@ related:
   - "[[docs/fact_sheet_lessons]]"
   - "[[docs/kb-notes/methodology-the-measuring-browser-can-hide-the-defect]]"
 artifacts:
-  - scripts/check_public_page_layout.js
+  - scripts/a11y.js
+  - a11y.config.js
+  - cobi_a11y.js
+  - tests/cobi_a11y_baseline.test.js
   - tests/public_pages_a11y.test.js
   - sierra/sierra.css
   - veteran-sprint-map/build_selfcontained.py
@@ -118,9 +121,9 @@ the other half — **when a new check PASSES, suspect it too.**
 ⭐ **And one that could not fail at all — see
 [`methodology-the-measuring-browser-can-hide-the-defect`](kb-notes/methodology-the-measuring-browser-can-hide-the-defect.md).**
 Chromium 127+ makes an **overflowing** scroll container focusable with **no
-tabindex**, so both behavioural checks for Sierra's log passed against the
-unfixed page. The attribute is the check; the behaviour is a regression guard,
-and it is labelled as one in the code.
+tabindex**, so both behavioral checks for Sierra's log passed against the
+unfixed page. The attribute is the check; the behavior is a regression guard,
+and it is labeled as one in the code.
 
 ### The target-size exemption is guarded, not silent
 
@@ -142,6 +145,416 @@ because you started showing something is a false finding.
   from `cpl-initiative.github.io`; everything here is headless Chromium.
 - Map markers stay **7px at 390px**. Enlarging the hit radius trades against
   neighbour overlap in dense metros and needs a human eye — not changed.
-- The map's stacked phone layout (52/48) is a judgement call Sam should see.
+- The map's stacked phone layout (52/48) is a judgment call Sam should see.
 - Sierra's `--sierra-faint` is now nearly `--sierra-muted`; if that reads flat,
   the answer is a larger disclaimer, not a lighter one.
+
+---
+
+## 2026-09-04 — SkyMint S227: the scope widens to COBI's own views, and the first sweep across all 38
+
+⚠️ **This doc was about the standalone public pages. It now also covers COBI's
+tabs**, because the masthead audit (PR #1469) showed the same defect classes
+live there, and a second doc would drift from this one.
+
+### The masthead: seven real AA failures, three of them written that day
+
+Sam: *"can you ensure that the masthead is accessible and mobile friendly?"* —
+so it was measured on the painted page rather than asserted:
+
+| element | measured | what it is |
+|---|---|---|
+| `.cobi-util-link` | 3.53:1 | the About control |
+| `.cobi-ident-btn` | 3.53:1 · 60×19 | who you are signed in as |
+| `.last-updated` | 3.53:1 | how fresh the figures are |
+| `.cobi-ident-lbl` | 3.62:1 | "Magic link" / "Team phrase" |
+| `.cobi-ident-note` | 3.62:1 | the line keeping the pane honest |
+| `.cobi-tph-lock` | 65×22 | "Lock again" |
+
+Six were `--text-faint` (`#87877F`) against a 4.5:1 floor — the token the
+palette itself marks *"decorative only — never essential text"* — and every one
+is essential: a control label, or data a reader acts on. All six moved to
+`--text-muted` (6.58:1 composited); the two undersized targets took
+`min-height:24px` (WCAG 2.2 SC 2.5.8).
+
+⭐ **Three were written earlier the same session, one of them minutes after a
+comment saying not to do it.** Recorded in
+[`methodology-a-rule-you-wrote-is-not-a-rule-you-applied`](kb-notes/methodology-a-rule-you-wrote-is-not-a-rule-you-applied.md).
+
+### Two harness lessons that cost real time
+
+- **Composite the glass.** The masthead is `rgba(255,255,255,.78)` over the page
+  ground. Treating a declared background as opaque overstates contrast; the
+  honest figure came from compositing the whole ancestor stack (6.74 → 6.58).
+- **Open the panes first.** Most of this header's text and *every* one of its
+  forms lives inside a popover. The first audit pass reported "no failures"
+  because it measured a closed pane — a check that passes by not looking. Four
+  more failures appeared once the panes were opened and a credential held.
+
+### The sweep across all 38 views — the shape is right, the totals were not
+
+Derived the view list from the tab registry (never a hardcoded array) and walked
+every tab in one page load. Clustered by text color:
+
+| color | rendered | worst | source sites |
+|---|---|---|---|
+| `#94a3b8` | 4,827 | 2.34:1 | **32 occurrences, 4 files** |
+| `#87877F` (`--text-faint`) | 571 | 2.99:1 | 22 occurrences, 17 files |
+| `#64748b` | 486 | 4.23:1 | 44, 4 files |
+| `#6b7280` | 207 | 4.32:1 | 82, 11 files |
+| `#cbd5e1` | 194 | 1.33:1 | 73, 5 files |
+
+⭐ **The prediction was half wrong, and the wrongness is the finding.**
+`--text-faint` was expected to dominate; it is second. The top offenders are a
+**Tailwind-family slate/grey palette in raw hex** — not First Light tokens at
+all — living in `credential_reference.js` and `unified_courses.js`. That is an
+*unreconciled second palette*, and `CLAUDE.md` already forbids raw hex in new
+CSS. So the fix is palette reconciliation, not thousands of edits:
+[`methodology-audit-by-rendered-value-not-by-file`](kb-notes/methodology-audit-by-rendered-value-not-by-file.md).
+
+⚠️ **The sweep's totals are NOT quotable and were retracted the same day.** Two
+harness defects: the pane selector fell back too broadly, so the shared nav rail
+and masthead were re-measured on each of 38 tabs; and of 4,057 undersized
+controls on `credential-reference`, **3,975 are `display:inline`**, where SC
+2.5.8's inline-target exception likely applies. The *ranking* is sound (its
+source-site counts come from grep, not the DOM walk); the absolute numbers are
+inflated. Fix both before the sweep becomes an instrument. The one control
+number that survived triage: **338 controls with no accessible name.**
+
+### `#94a3b8` is four roles, not one — awaiting Sam's ruling
+
+1. **"No value here"** — `.cr-null` *"— no articulations"*, `.uc-member-empty`,
+   `.cr-chip-none`, "No matches", "Loading…". ~4,000+ renders, the bulk.
+2. **Disabled controls** — `.uc-merge-disabled`, `.cr-wl-input:disabled`.
+   **Leave**: WCAG 1.4.3 exempts inactive controls.
+3. **Supplementary text** — `.cr-served-sup`, `.cr-wl-band`, sort indicator, the
+   ⓘ hint. → `--text-muted`.
+4. **Borders** — dashed/dotted underlines. **Leave**: non-text, decorative.
+
+Role 1 is the judgment: absence markers at full `--text-muted` would make
+**absence the loudest thing on a dense grid**, which is backwards. Proposed a
+new `--text-quiet` at the AA floor. ⚠️ Measured across the three grounds
+actually used (white rows, `#F1F5F9` chips/zebra, page ground) the lightest
+neutral clearing 4.5:1 is **`#6B6B66`** (4.89:1 worst-case) — an earlier
+`#75756D` figure was computed against a single ground and only reaches 4.24:1 on
+the zebra. **Measure against the worst ground in use, never one sample.**
+
+### Enforcement: Sam ruled it down to one command
+
+A three-mechanism shape was proposed here — detection, a Stop hook to fire it, a
+skill holding the remediation playbook. Sam, 2026-09-04: *"For accessibility, use
+the simplest approach that sets us up for continued long term use on all
+projects."* What shipped is the first third and nothing else: **`npm run a11y`**.
+
+The hook and the skill were the parts that would have to be installed per
+machine, kept in step with the checker, and remembered by a teammate on their
+first day — three ways to be half-installed, guarding a check that already runs
+in 100 seconds. A command anyone can type, that a session can run unprompted
+before it ships a view, is the whole mechanism. ⚠️ **Never auto-remediate to
+`main`** still stands, and now has nothing to attach to: Rule 6 (two schedulers
+racing, 2026-04-19), and because picking a replacement color is a design decision
+— the masthead fix turned on whether each element was essential text or
+decoration. A run reports; a session fixes with context.
+
+## 2026-09-04 — SkyMint S227 (continued): one command, and the harness gets audited first
+
+Sam: *"For accessibility, use the simplest approach that sets us up for continued
+long term use on all projects."* That ruling is what shipped, and it is smaller
+than what was proposed the same morning.
+
+### `npm run a11y` — 42 views, ~100 seconds
+
+`scripts/check_public_page_layout.js` became **`scripts/a11y.js`**. The rename is
+not tidiness: "public page layout" would have told every future session that
+COBI's own views were somebody else's problem, which is exactly the belief the
+sweep exists to end. Its page list moved out to **`a11y.config.js`** — the only
+file another project rewrites — so the engine is now project-agnostic and the
+command is the same everywhere.
+
+The part that keeps it honest as the app grows is **`discover`**: COBI's entry
+names no routes at all. The engine loads `index.html`, reads
+`nav.cpl-tabs .cpl-tab[data-tab]` out of the running page (the same query
+`tabs.js` uses to derive its own `VALID_TABS`), and measures every one. ⚠️ **A
+hand-maintained list of 37 tabs is a list that silently stops being 37, and the
+tab it stops at is the new one nobody has audited.** A discovery that returns
+nothing is a hard FAIL, not a quiet zero-route sweep — the repo has recorded "a
+check that never registers can never fail" three times now.
+
+Cost, measured: 42 routes in 1m41s. COBI's 38 run at two widths (390 and 1440)
+rather than nine; nine widths on a 38-route target is a ten-minute run nobody
+starts, and a breakpoint that breaks, breaks on a phone. Contrast, headings and
+the focus ring are properties of what is painted rather than of the width, so
+they are measured once per route inside the widest pass instead of in a second
+page load.
+
+### Six of the first run's loudest findings were the instrument
+
+This is the finding worth carrying forward, and it has its own note:
+[`methodology-the-first-run-of-a-new-instrument-measures-the-instrument`](kb-notes/methodology-the-first-run-of-a-new-instrument-measures-the-instrument.md).
+In short: text under an `opacity:0` scroll-reveal scored 1:1 (30 phantom findings
+on `our-process` alone); a `<textarea>` was reported as an unreachable scroll
+region (29 more); `23.95px` printed as `24` against a 24px floor; the two halves
+of the reduced-motion check disagreed at `> 0` vs `> 0.01`, so the *correct*
+stand-down read as "still animating"; and a Google Fonts sheet failed forever on
+a CORS rule nothing in this repo can change (now declared in the config, with its
+reason — anything undeclared still fails).
+
+⚠️ **The sixth would have caused a regression.** The target-size check
+substituted an associated `<label>`'s box for its control's. That is right for a
+label that WRAPS the control — a 13px checkbox is pressed by the whole label —
+and wrong for a `label[for]` sitting beside it: the harness reported the masthead
+search box as 91×21 **after** it had been fixed to 32px tall, because the "Where
+To?" label next to it is 21.7px. The obvious next move was to enlarge a control
+that was already passing. Either box clearing the floor is now enough.
+
+### The chrome-wide fixes: five source lines, about 200 findings
+
+Every one of these appeared on all 38 COBI routes, because they live in the
+chrome every route paints — so each was one defect wearing 38 hats:
+
+| What | Was | Now |
+|---|---|---|
+| `.cpl-nav-group-head` ("Workplan", "Funding") | `#8a8a86` — 3.38:1, and 23.9px tall | `var(--text-muted)` + `min-height:24px` |
+| `.cpl-nav-caret` ▼ | inherited the same 3.38:1 | inherits the fix |
+| `.cpl-rail-auth-off` ("— not unlocked") | `#888` — 3.33:1 | `var(--text-muted)` |
+| `.cpl-sidebar-brand a` | 21.7px tall | `min-height:24px` |
+| `.qs-input` (Where To?) | 21.7px tall | `min-height:24px` |
+| `.cplfl-imgfallback` | white-on-gradient, 3.08:1 | gradient darkened; text full white |
+| five animations | `prefers-reduced-motion` honored in **none** | stood down app-wide |
+
+Two of those deserve a note of their own. `#8a8a86` was a raw hex sitting on
+`--text-faint`, whose own token comment reserves it for *"decorative only — never
+essential text"* — and a group heading is the word that says what the tabs under
+it are. And the First Light fallback could not be fixed by removing the text's
+`.88` alpha: **pure white over `#a8842f` is 3.50:1**, so the gradient itself had
+to come down. That panel paints exactly when the network is poor.
+
+`prefers-reduced-motion` now lives in **`cobi_a11y.js`**, a runtime-injected
+sheet rather than an edit to both HTMLs. Two reasons, and the second is
+load-bearing: Rule 4 makes every CSS edit two edits, and a runtime sheet lands
+after every static one, so it wins on cascade order without an `!important` arms
+race and without sitting downstream of a generator that rewrites whole sections
+(Rule 1). ⚠️ It sweeps `*` rather than naming today's five animations — a named
+list goes stale the first time someone adds a sixth, and nobody adding one thinks
+about that file — and it uses `0.001ms`, never `animation: none`, so handlers
+waiting on `animationend` still fire.
+
+### What the sweep still reports, named rather than hidden
+
+38 of COBI's 38 routes still have findings. Sierra and the veteran map pass
+clean. The backlog, clustered:
+
+- **5 routes scroll sideways on a 390px phone** — `dashboard` by 887px, `raci`
+  392, `budget` 218, `memory` 203, `activities-projects` 179. This is the
+  presentation rule ("the body never scrolls sideways") failing outright, and it
+  is the highest-value lane of the three.
+- **18 routes carry 86 sub-AA text pairs** — worst `dashboard` (15), `raci` (11),
+  `pipeline` (10), `canonical-subj4` (9), `implementation-funding` (8). Several
+  sit in sections the daily generator owns, so the fix is in
+  `excel_to_dashboard.py`, not the HTML (Rule 1).
+- **4,042 sub-24px targets — which are 54 selectors.** `button.cr-title-toggle`
+  alone accounts for 2,200 renders. The remediation list is 54 lines long.
+- **21 scroll regions with no keyboard route**, across 5 routes; most are
+  `div.exhibit-card-body`.
+
+⚠️ **Shipping a red sweep is the correct state, not a failure to finish.** The
+alternative — quietly narrowing what it measures until it prints green — is the
+one outcome that would make it useless.
+
+## 2026-09-05 — SkyQuiet S228: the new default had no heading, and the CCR tab's one finding is chrome
+
+SkyView's default became the map alone (`body.u-solo`), and the first sweep of
+it said *headings start at h—(none)*: the page's only h1 lived in the panes
+the solo view does not paint. The row's "SkyView" title is the h1 now, sized
+to the row, with the panes' headings stepped down beneath it. `a11y.config.js`
+sweeps SkyView's five routes (`#skyview` · `#comprehensive` · `#disciplines` ·
+`#subjects` · `#esl`) and all five pass at 390, 768 and 1440.
+
+COBI's Common Course Reference tab, swept in its new map mode, reports exactly
+one target under 24px: First Light's greeting opt-out checkbox
+(`.cplfl-optout input`, 15px, `first_light.js`). It is chrome on every tab,
+not the tab's, and it joins the 54-selector backlog rather than this lane.
+
+⚠️ Same lesson as 2026-09-04, from the other side: a view that changes its
+DEFAULT must be swept again as the default. The masthead-less page had passed
+before because the masthead was there.
+
+
+
+## 2026-09-09 — the first real remediation run, and the guard that had to be written twice
+
+Sam authorized the glyph clean-up on the decision sheet (*"run the glyph
+clean-up"*, and *yes*, the three previously-approved exceptions were in scope
+too). This is what running it actually taught.
+
+**The authorized number and the executed number were not the same, and saying so
+was the work.** The sheet said the run "rewrites 516 button and link labels".
+516 is the count of control-class **findings**; the tool's mechanical rule is
+narrower — a *leading* glyph followed by a space and a letter, inside a quoted
+string, on a non-comment control line — and only **117** sites matched it. The
+other 399 are control-class marks that need a reworded sentence, a decision
+about a lone glyph, or a human eye. Final: **115 stripped in the scanned files**
+(two of the 117 held back, correctly) plus **16 in the generator**, taking
+control-class findings 516 → 401. ⚠️ **A count of findings is not a count of
+work, and a tool that reports one while a sheet promises the other will
+overpromise every time.** Same family as the `--cobalt` "~140" figure corrected
+the day before: *a figure is only wrong relative to the payload it names.*
+
+**13 of 16 rewritable sites in the dashboard HTML belonged to the generator.**
+`excel_to_dashboard.py` replaces whole sections daily, so stripping a mark there
+passes every test and is reverted overnight with nobody told. The sweep had no
+notion of Rule 1 at all — it was written to scan rendered output and never asked
+who writes it. The generator's own labels (`👥 RACI`, `📝 Update`, `📢 Nudge`,
+`📄 Report`, `📎 Attach`, `♻ Restore`, `🗄 Tabled`, `📈 KPI Trends`) were fixed
+at the source instead: 16 sites, in two shapes — an entity directly inside the
+anchor, and a mark wrapped in a sizing `<span>` that had to be removed whole.
+
+⚠️ **The guard was written twice, and the second version is the lesson.** The
+first asked "is this glyph+label a literal in the generator source?" — correct,
+tested, and it held 13 of 16. Then the generator was fixed first and the same
+guard on the same HTML held **2**, with no error and no warning: the fragment
+was gone from the generator, so the HTML's stale copies read as unowned. The
+replacement is the **union** of a positional test (inside a replaced region) and
+the fragment test, because each covers the other's blind spot — the region list
+is only as complete as its markers (`render_algo_details()` sits inside none of
+them), and the fragment test expires the moment the generator is fixed. Pinned
+by an **order-independence** test and a **marker-drift** test, the latter
+verified by renaming a marker and watching it go red. Full write-up:
+[`methodology-a-guard-that-depends-on-order-is-worse-than-none`](kb-notes/methodology-a-guard-that-depends-on-order-is-worse-than-none.md).
+
+**Two tests failed, and they were right to.** `✓ Saved` became `Saved` on save
+buttons and status lines in `credential_reference.js` and `unified_courses.js`,
+and five test files asserted the old string. The label change is correct — the
+word is complete without the mark — so the assertions moved with it, **including
+the `check()` names and comments**, or the tests would describe a guard they no
+longer hold. ⚠️ Editing those files while the suite was mid-run invalidated that
+run; it was killed and re-run clean rather than trusted.
+
+**The three approved exceptions cost six edits, not a redesign.** 📋 To-Do (5
+occurrences), 🧭 guidance (2), ⚖️ Governance (0). Every one already had its word
+beside it, so Sam's own rule decided the disposition: *remove all emoji glyphs
+and **if any are crucial** replace with a muted glyph* — none was crucial, so
+none was replaced. The one 📋 left is a different control (the MQ badge in
+`canonical_subj4.js`, a lone glyph carrying its whole meaning) and belongs to the
+808-item decorative backlog, not here.
+
+## 2026-09-09 — SkyPlain S245: a triage keyed on the wrong thing, and three checks that could not fail
+
+Sam's ask was four lines: the CC session banner he could not see, keep sweeping
+COBI for dark mode, fix AA / mobile / glyphs as I go, and **leave the
+Implementation Funding tab alone** — he was working it in a parallel session.
+Dark contrast findings **184 → 120 (−35%)**; light **18 throughout, eight
+passes**; glyph control-class ours **26**; `npm test` 316/316.
+
+### The triage was ranking by the selector, and the cause is the color pair
+
+`scripts/a11y_triage.js` grouped findings by SELECTOR and ranked by route count.
+The largest single dark fault — **25 findings across 11 routes** — wore **12
+different selectors at one route each**, so it printed as twelve
+`one route — that tab's own CSS` lines at the BOTTOM of the list, below faults a
+tenth its size. Its own section header already said *"a ratio repeated exactly
+across routes is ONE color, not many"*; it applied that insight along the route
+axis and nowhere else.
+
+⭐ **And a ratio without its two colors is not actionable.** `scripts/a11y.js`
+computed the composited background — `worstBg`, right there in the loop — and
+then did not put it on the finding. So a report named `1.21:1` on `h3` and left
+the reader to grep for which of forty greys that was. Recording `fg`/`bg` and
+printing `#FG on #BG` collapsed **193 "distinct causes" into a handful**, and
+turned the whole remediation from selector-chasing into ten color decisions.
+The triage regex takes the pair as OPTIONAL so reports saved before the change
+still parse — a triage that silently matches nothing is worse than one that says
+less.
+
+### Three ink roles, not two — and the obvious token regresses light
+
+`--on-accent` (#FFFFFF light / #141413 dark) is correct for a fill that FLIPS:
+cobalt, crimson, hunter and violet all pass AA on both sides of it. The trap is
+`--gold-accent`, which resolves to `#E3B341` in **both** themes because
+`--mustard-on-dark` is never redefined. Badges painted `--navy-primary` on it,
+and that token flips `#1C1C1A → #ECE9E2`: **8.77:1 in light, 1.61:1 in dark.**
+Reaching for `--on-accent` — the obvious move, and the one a future session will
+make — paints white on gold at **1.95:1 and regresses LIGHT.** Hence
+`--on-mustard`, defined once at `:root` and never redefined: the `--seal-blue`
+family, for the same reason.
+
+Guarded by seven checks in `tests/cpl_theme.test.js`, each verified by reverting
+its own fix one at a time; each fails exactly its own check and nothing else.
+
+### Every sweep contained a site that must not move
+
+A match count larger than the fault you set out to fix is a signal, not a
+windfall. Five times, in one run:
+
+| Sweep | The site that had to stay |
+|---|---|
+| white grounds | `coci_lookup_desc_*.js` — a college's own pasted HTML inside **course-description data** |
+| white grounds | two archived decision sheets and a `kb/college_cr_evidence/` record |
+| `#6b7280` | `project_lifecycle.js` paints it as a **background** under white text |
+| `#4b5563` | one sits on `background:#f3f4f6` — text on an explicit fill |
+| `#555` | **64 of 69** are inside the regenerated Activity KPI section (Rule 1) |
+
+That last row is the shape worth remembering: the fix was five edits in the
+HTMLs and **twelve in `excel_to_dashboard.py`**, because a hand-edit inside a
+regenerated section is undone by the next cron. The split is the job.
+
+### `--text-faint` says "decorative only" in its own comment
+
+`#7A7A74 on #262624` at 3.51:1, six findings — RACI's legend, its item count,
+its auth hint, and the annual report's column headers. All essential text on a
+token whose declaration reads *"decorative only — never essential text"*. The
+fix is `--text-muted`; the lesson is that a token's comment is a constraint
+nobody enforces.
+
+### A stale instruction is worse than a glyph
+
+Chasing a 1.38:1 finding on *"You are not signed in."* I read the rest of the
+sentence: *"Unlock with the team phrase — the 🔒 button in the header."* That
+button moved into the About pane months ago; `cobi_identity.js` says so in the
+past tense in its own comment. **Thirteen occurrences across six files** were
+sending locked-out readers to a control that does not exist.
+
+⚠️ **They were invisible to the glyph sweep because they are written
+`"\u{1F512}"`** — a padlock on screen, seven plain ASCII characters to a scanner
+matching literal emoji and HTML entities. `kb/_glyph_sweep.py` now decodes JS
+escapes and surrogate pairs, which is why the corpus total ROSE 1,380 → 1,398:
+it sees more than it did.
+
+### A glyph the tests guard is somebody's decision
+
+Clearing `cip_crosswalk`'s `✓`/`⇄` turned CI red. The guarding comment reads *"a
+calm '⇄' glyph (distinct from the review '?', **Sam 2026-07-18**)"* — his own
+design call, a typographic mark rather than an emoji, and exactly the muted glyph
+his 2026-09-09 rule preserves when one is crucial. **Reverted the code, left the
+test.** The other failure — `Common subjects ✓` on a dropdown optgroup — carried
+no such history and the group is already named, so the assertion moved instead.
+Control-class ours is **26, not 24**: over-removed by two, and the tests were the
+thing that caught it.
+
+### The counting bug: 401 findings, 26 of them ours
+
+`--apply` already refused any site inside a section `excel_to_dashboard.py`
+rewrites — the Rule 1 guard, working exactly as designed. But the **report
+counted them anyway**, so after the generator was fixed the control class read
+401 when **348 were stale HTML the next cron clears** and 8 more were arrows
+inside COURSE TITLES in one-line generated JSON payloads, where any `title` key
+trips `CONTROL_HINT` and a rewrite would corrupt data. Findings now carry
+`generator_owned`, the report counts the two apart, `classify()` treats a large
+data payload as decoration, and `--check` gates only on what a session can fix.
+
+### Method notes
+
+- ⚠️ **Grep hexes case-insensitively.** `#6B7280` found nothing; `#6b7280` found
+  the largest remaining cause. A negative grep is not evidence.
+- ⚠️ **The ROUTE count is too coarse to steer by.** It sat at 26 dark / 18 light
+  through the entire run while findings fell 184 → 120, because a route fails on
+  any one finding. Steer by the finding count and the color-pair ranking.
+- ⚠️ **`--surface-opaque` IS `#FFFFFF` in light**, so swapping a literal white
+  ground for it is provably a no-op there. That is what let a 154-site change
+  ship with light unchanged across eight measured passes.
+- ⚠️ **Never edit a file while a suite is reading it.** Reverting three data
+  files mid-run invalidated that run; it was killed and re-run clean.
+- ⚠️ **`check_generated.sh` LAST means as its OWN step.** Chaining it with the
+  push in one command sent a stale docs index to the remote while the check was
+  still printing STALE — the fourth stale-artifact catch of the run and the only
+  one that escaped.

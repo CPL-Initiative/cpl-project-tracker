@@ -37,7 +37,7 @@ residue, because the classes need different fixes:
 
 | Class | Meaning | Fix |
 |---|---|---|
-| `whitespace` | Normalises to a known identity but is not byte-identical | **A defect in one row's data.** Silently breaks exact-match joins |
+| `whitespace` | Normalizes to a known identity but is not byte-identical | **A defect in one row's data.** Silently breaks exact-match joins |
 | `spelling` | A genuine alias | Fold into `variants` |
 | `credit_twin` | `X Credit` beside `X` | **A curator decides** — never fold automatically |
 | `unknown` | Claimed by nothing | Test rows, out-of-scope institutions, real gaps |

@@ -56,6 +56,11 @@ const dataSrc = read("cpl_funding_data.js");
 const sandbox = { window: {} };
 new Function("window", dataSrc)(sandbox.window);
 const D = sandbox.window.CPL_FUNDING;
+// How many priorities the model carries — read from the data, never typed.
+// Four since 2026-09-22 (career attainment); a literal 3 broke eighteen suites
+// the day it changed.
+const NPRIO = D.year_priorities["1"].length;
+const FUNDED = D.year_priorities["1"].filter((p) => (Number(p.share) || 0) > 0).length;
 
 const results = [];
 function check(name, cond) { results.push([name, !!cond]); }
@@ -107,11 +112,13 @@ function scenSlot(window, name) {
 function footText(doc) {
   return Array.from(doc.querySelectorAll(".cplfund-foot")).map(function (e) { return e.textContent; }).join(" ");
 }
-// The Elig column is a numbered pie: count met (green-filled) slices in an
-// element's pie glyph (met requirements) and its total slice count.
+// The conditions pie (the Elig column's, leading the Institution cell since
+// 2026-09-28): count met (green-filled) slices in an element's pie glyph (met
+// requirements) and its total slice count. A fill may carry its fallback
+// ("var(--green-progress, #2C601A)", for host pages without the token).
 function greenSlices(el) {
   const pie = el && el.querySelector(".cf-eligpie");
-  return pie ? (pie.innerHTML.match(/var\(--green-progress\)/g) || []).length : -1;
+  return pie ? (pie.innerHTML.match(/var\(--green-progress(?:,[^)]*)?\)/g) || []).length : -1;
 }
 function pieSlices(el) {
   const pie = el && el.querySelector(".cf-eligpie");
@@ -119,7 +126,7 @@ function pieSlices(el) {
 }
 
 module.exports = {
-  cpl, idx, consumerSrc, dataSrc, D,
+  cpl, idx, consumerSrc, dataSrc, D, NPRIO, FUNDED,
   results, check, finish,
   freshDom, boot, click, commit, scenSlot, footText, greenSlices, pieSlices,
 };

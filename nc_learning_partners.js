@@ -68,7 +68,7 @@
   var REVISE_RPC = SUPABASE_URL + "/rest/v1/rpc/nc_partner_note_revise";
   // ── Artifact layer (kb/supabase_nc_artifacts.sql) ─────────────────────────
   // Artifacts are LINKS, not uploaded bytes: a file uploaded to Supabase Storage
-  // is one a Claude session can never read back (Rule 9c — the sandbox cannot
+  // is one a Claude session can never read back (Rule 10c — the sandbox cannot
   // reach *.supabase.co, there is no storage MCP tool, and the public object URL
   // 403s through the proxy), which would put the artifact one inch beyond the
   // thing meant to analyze it. A Drive link or a public URL is readable today.
@@ -239,7 +239,7 @@
       R + " .nclp-filters button{font:inherit;font-size:.79rem;padding:.28rem .68rem;cursor:pointer;",
       "border:1px solid var(--border-strong);border-radius:999px;background:var(--surface-opaque);color:var(--text-muted);}",
       R + " .nclp-filters button:hover{border-color:var(--cobalt);color:var(--text-body);}",
-      R + " .nclp-filters button[aria-pressed=true]{background:var(--cobalt);border-color:var(--cobalt);color:var(--white);}",
+      R + " .nclp-filters button[aria-pressed=true]{background:var(--cobalt);border-color:var(--cobalt);color:var(--on-accent);}",
       // cards
       R + " .nclp-card{border:1px solid var(--border);border-radius:8px;background:var(--surface-opaque);",
       "padding:.8rem .9rem;margin:0 0 .55rem;}",
@@ -1300,7 +1300,7 @@
     btn("⧉ Copy report", function (b) {
       var txt = buildReport(d, state.dorm, state.live);
       function done(ok) {
-        b.textContent = ok ? "✓ Copied" : "Copy failed";
+        b.textContent = ok ? "Copied" : "Copy failed";
         setTimeout(function () { b.textContent = "⧉ Copy report"; }, 1600);
       }
       if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -1323,7 +1323,7 @@
       var packet = buildPromotionPacket(d);
       if (!packet) {
         b.textContent = canWrite() ? "Nothing to promote" : "Unlock to use";
-        setTimeout(function () { b.textContent = "↑ Promote notes"; }, 1800);
+        setTimeout(function () { b.textContent = "Promote notes"; }, 1800);
         return;
       }
       downloadBlob(new Blob([packet], { type: "text/markdown;charset=utf-8" }),

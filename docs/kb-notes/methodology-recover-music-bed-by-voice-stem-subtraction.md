@@ -53,7 +53,7 @@ ducking), or add an end fade — all freely.
 The CPL Student Portal "Credit for Being You" video (SkyVid, 2026-07-23). The mix
 and the clean `.m4a` voice were sample-aligned (lag 0) with `g = 1.30` — **identical
 in two separate speech windows**, which is what proved the mix carried the same VO
-take. Voice cancelled 15–20 dB; the intro bed measured identically before and after
+take. Voice canceled 15–20 dB; the intro bed measured identically before and after
 (−44.6 dB → −44.6 dB), confirming the music was untouched. The warm voice was then
 re-laid on top and the bed raised +7 dB with ducking. Full story:
 `docs/cpl_portal_video_lessons.md`.

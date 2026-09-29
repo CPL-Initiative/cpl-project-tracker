@@ -52,7 +52,7 @@ test. Report a survival as *corroboration*, never as proof — and name what the
 test could not reach.
 
 This is the cheap-to-verify half of the fan-out heuristic in `CLAUDE.md`, applied
-to a claim rather than a search: a hit is instantly recognisable (a hash either
+to a claim rather than a search: a hit is instantly recognizable (a hash either
 matches or does not), so the check is worth running and its result is worth
 trusting.
 
@@ -69,7 +69,7 @@ A survived test rarely closes everything. Here, "salted" does not mean "salted
 with the **same** salt every run" — which is what the spec actually asked for, and
 which no amount of hashing arithmetic can reveal from one sample.
 
-That residual is a different *kind* of failure and must be labelled as such: a
+That residual is a different *kind* of failure and must be labeled as such: a
 rotating salt **leaks nothing**. It silently makes distinct-student counts
 incomparable across refreshes, so a headcount wanders with no error raised
 anywhere.
@@ -77,7 +77,7 @@ anywhere.
 The response is not to ask again. It is to make it **detectable**: compare the
 incoming key set against the previous pull — a stable salt gives a large
 overlap, a rotated one essentially zero. An assurance describes today's
-behaviour; a detector keeps it true. `cpl_memory: statewide-is-138-not-84` is the
+behavior; a detector keeps it true. `cpl_memory: statewide-is-138-not-84` is the
 standing precedent — *a settled ruling does not enforce itself, the consumer has
 to change.*
 

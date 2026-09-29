@@ -405,12 +405,12 @@
       ".mc-count{font-size:.78rem;color:var(--text-muted,#667);font-weight:600;}" +
       ".mc-status-line{margin:.45rem 0 .2rem;font-size:.82rem;color:var(--text-muted,#556);font-style:italic;}" +
       ".mc-auth-hint{font-size:.75rem;color:var(--text-muted,#667);margin-top:.25rem;}" +
-      ".mc-prog{height:7px;border-radius:5px;background:var(--surface-2,#eef3f9);overflow:hidden;margin:.4rem 0;min-width:90px;flex:1 1 90px;}" +
+      ".mc-prog{height:7px;border-radius:5px;background:var(--surface-2,#eef3f9);overflow:hidden;margin:.4rem 0;min-width:0;flex:1 1 90px;}"  /* the 90px floor plus the label exceeded a phone row; flex-basis still asks for 90 */ +
       ".mc-prog-fill{height:100%;background:var(--ok,#2e7d32);border-radius:5px;transition:width .3s;}" +
       ".mc-phase{border-top:1px solid var(--border,#e3e9f0);padding:.35rem 0;}" +
       ".mc-phase>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.6rem;padding:.4rem .1rem;}" +
       ".mc-phase>summary::-webkit-details-marker{display:none;}" +
-      ".mc-phase-label{font-weight:700;color:var(--navy-secondary,#1c3d5a);font-size:.9rem;flex:0 0 auto;}" +
+      ".mc-phase-label{font-weight:700;color:var(--navy-secondary,#1c3d5a);font-size:.9rem;flex:1 1 auto;min-width:0;overflow-wrap:anywhere;}"  /* flex:0 0 auto held a 396px label on one line at 390px */ +
       ".mc-phase-count{font-size:.74rem;color:var(--text-muted,#667);font-weight:600;}" +
       ".mc-gate{font-size:.74rem;color:var(--text-muted,#667);background:var(--surface-2,#f4f7fb);border-radius:6px;padding:.3rem .5rem;margin:.2rem 0 .5rem;}" +
       ".mc-list{display:flex;flex-direction:column;gap:.35rem;}" +
@@ -431,8 +431,14 @@
       ".mc-st-skip{background:#f0f0f2;color:#999;}" +
       ".mc-status-sel{font-size:.7rem;border:1px solid var(--border,#d4dde7);border-radius:5px;padding:.1rem .2rem;background:var(--surface,#fff);color:var(--text,#243b53);}" +
       ".mc-chip{font-size:.66rem;border-radius:4px;padding:.12rem .4rem;white-space:nowrap;}" +
-      ".mc-lane{background:var(--surface-2,#eef3f9);color:#4a5b70;}" +
-      ".mc-owner{background:var(--navy-secondary,#1c3d5a);color:#fff;}" +
+      // ⚠️ RAW INK, NOT A TOKEN, on a surface that now flips: --surface-2 was a
+      // phantom until this run, so #4a5b70 sat on a permanently light fill and
+      // read fine. The moment the surface goes dark it is 1.5:1. It is the ONLY
+      // one of the 26 --surface-1/-2 sites with an unthemed color; the rest
+      // inherit or already use a token, which is why they were merely low
+      // contrast rather than wrong.
+      ".mc-lane{background:var(--surface-2,#eef3f9);color:var(--text-body,#4a5b70);}" +
+      ".mc-owner{background:var(--navy-secondary,#1c3d5a);color:var(--on-accent);}" +
       ".mc-decision{border:1px solid var(--gold-accent,#B8860B);border-radius:8px;background:var(--gold-soft,#fbf3d9);padding:.5rem .6rem;}" +
       ".mc-decided{border-color:var(--ok,#2e7d32);background:#eef7f0;}" +
       ".mc-decision-head{display:flex;align-items:center;gap:.4rem;flex-wrap:wrap;}" +

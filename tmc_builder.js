@@ -165,8 +165,8 @@
   // Coming soon' bucket was retired in Session 60 — all 45 TMCs are encoded, so
   // it was an empty, confusing category.
   var STATUS_META = {
-    official: { label: "✓ Official", cls: "ok" },
-    draft:    { label: "⚠ Draft", cls: "warn" },
+    official: { label: "Official", cls: "ok" },
+    draft:    { label: "Draft", cls: "warn" },
     pathway:  { label: "◆ UC Transfer Pathway", cls: "path" }
   };
   function tmcStatus(t) {
@@ -190,9 +190,9 @@
    *   activation) · ⏳ In progress · ◐ Teachout
    * (Inactive is kept in the data but hidden in the UI per Sam, 2026-06-18). */
   var ADT_BADGE = {
-    active:      { label: "✓ Active",      cls: "adt-ok" },
-    approved:    { label: "✓ Approved",    cls: "adt-appr" },
-    in_progress: { label: "⏳ In progress", cls: "adt-prog" },
+    active:      { label: "Active",      cls: "adt-ok" },
+    approved:    { label: "Approved",    cls: "adt-appr" },
+    in_progress: { label: "In progress", cls: "adt-prog" },
     teachout:    { label: "◐ Teachout",    cls: "adt-teach" },
     inactive:    { label: "○ Inactive",    cls: "adt-off" }
   };
@@ -237,15 +237,20 @@
       "#tab-tmc-builder .tmc-wrap{max-width:1100px;}" +
       "#tab-tmc-builder h2{margin:0 0 12px;}" +
       "#tab-tmc-builder .tmc-sub{font-weight:400;color:var(--text-muted);font-size:1rem;}" +
-      "#tab-tmc-builder .tmc-draftnote{color:#92400e;font-weight:600;}" +
-      "#tab-tmc-builder .tmc-intro{color:#4b5563;margin:0 0 16px;max-width:var(--cpl-measure,none);}" +
+      // ⚠️ A bare caution ink on the themed ground: #92400e measured 2.58:1 on the
+      // night palette. --mustard-text is the caution TEXT grade and is themed in
+      // both blocks (#8B6800 light, #E3B341 dark). The sweep only catches this
+      // when the builder has already drawn a draft, which is why it reads as
+      // intermittent rather than as the standing defect it is.
+      "#tab-tmc-builder .tmc-draftnote{color:var(--mustard-text);font-weight:600;}" +
+      "#tab-tmc-builder .tmc-intro{color:var(--text-body);margin:0 0 16px;max-width:var(--cpl-measure,none);}" +
       // consolidated filter block (College · Show · Find · Curator) — replaces the old topbar + pickers
       "#tab-tmc-builder .tmc-filters{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;background:var(--surface-subtle,#f8fafc);border:1px solid var(--border-strong,#cbd5e1);border-radius:10px;padding:12px 16px;margin-bottom:16px;}" +
       "#tab-tmc-builder .tmc-filters .tmc-auth{margin-left:auto;align-self:center;}" +
       "#tab-tmc-builder .tmc-pick-find{flex:1 1 180px;min-width:150px;}" +
       "#tab-tmc-builder .tmc-pick-find input{width:100%;box-sizing:border-box;padding:8px 10px;border:1px solid var(--border-strong,#cbd5e1);border-radius:7px;font-size:.9rem;}" +
       // TMC directory (list view)
-      "#tab-tmc-builder .tmc-listhead{font-size:.9rem;color:#4b5563;margin:0 2px 12px;}" +
+      "#tab-tmc-builder .tmc-listhead{font-size:.9rem;color:var(--text-body);margin:0 2px 12px;}" +
       "#tab-tmc-builder .tmc-listcount{display:inline-block;font-weight:700;color:var(--navy-primary);background:#eef2fb;border:1px solid #d6e0f5;border-radius:20px;padding:1px 10px;margin-right:8px;font-size:.82rem;}" +
       "#tab-tmc-builder .tmc-listbox{border:1px solid var(--border-strong,#cbd5e1);border-radius:10px;overflow:hidden;}" +
       "#tab-tmc-builder .tmc-listtable{width:100%;border-collapse:collapse;font-size:.9rem;}" +
@@ -266,29 +271,29 @@
       "#tab-tmc-builder .tmc-reviewbar{background:#eef6ff;border:1px solid #c7ddff;border-radius:8px;padding:9px 14px;font-size:.84rem;color:#1e3a5f;margin-bottom:12px;}" +
       "#tab-tmc-builder .tmc-pickhint{color:var(--text-muted);font-size:.84rem;font-style:italic;padding:8px 2px;}" +
       // GE Breadth companion panel (the GE half of the ADT)
-      "#tab-tmc-builder .tmc-ge{margin-top:22px;border:1px solid var(--border-strong,#cbd5e1);border-top:3px solid var(--gold-accent,#e3b341);border-radius:10px;background:#fff;overflow:hidden;}" +
+      "#tab-tmc-builder .tmc-ge{margin-top:22px;border:1px solid var(--border-strong,#cbd5e1);border-top:3px solid var(--gold-accent,#e3b341);border-radius:10px;background:var(--surface-opaque);overflow:hidden;}" +
       "#tab-tmc-builder .tmc-ge-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding:12px 18px;background:#fbf7ec;border-bottom:1px solid #eee3c5;}" +
       "#tab-tmc-builder .tmc-ge-head h3{margin:0;font-size:1.1rem;color:var(--navy-primary);}" +
       "#tab-tmc-builder .tmc-ge-sub{font-weight:400;color:var(--text-muted);font-size:.86rem;}" +
       "#tab-tmc-builder .tmc-ge-pick{display:flex;align-items:center;gap:8px;}" +
       "#tab-tmc-builder .tmc-ge-pick label{font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;color:var(--text-muted);font-weight:700;}" +
-      "#tab-tmc-builder .tmc-ge-pick select{padding:7px 10px;border:1px solid var(--border-strong,#cbd5e1);border-radius:7px;font-size:.9rem;background:#fff;}" +
-      "#tab-tmc-builder .tmc-ge-note{padding:9px 18px;font-size:.82rem;color:#4b5563;background:#fffdf6;border-bottom:1px solid #f0e8d6;}" +
+      "#tab-tmc-builder .tmc-ge-pick select{padding:7px 10px;border:1px solid var(--border-strong,#cbd5e1);border-radius:7px;font-size:.9rem;background:var(--surface-opaque);}" +
+      "#tab-tmc-builder .tmc-ge-note{padding:9px 18px;font-size:.82rem;color:var(--text-body);background:#fffdf6;border-bottom:1px solid #f0e8d6;}" +
       "#tab-tmc-builder .tmc-ge-note em{color:#92400e;font-style:italic;}" +
       "#tab-tmc-builder .tmc-ge-legacy{display:inline-block;font-size:.66rem;font-weight:700;color:#92400e;background:#fffbeb;border:1px solid #fcd34d;border-radius:20px;padding:0 8px;}" +
       "#tab-tmc-builder .tmc-ge-tag{display:inline-block;font-family:ui-monospace,Menlo,monospace;font-size:.7rem;font-weight:700;color:#7a5c00;background:#fdf3d4;border:1px solid var(--gold-accent,#e3b341);border-radius:5px;padding:1px 7px;margin-right:6px;}" +
       "#tab-tmc-builder .tmc-ge .tmc-body{border:none;}" +
       "#tab-tmc-builder .tmc-pickers{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;background:var(--surface-subtle,#f8fafc);border:1px solid var(--border-strong,#cbd5e1);border-radius:10px;padding:14px 16px;margin-bottom:18px;}" +
       "#tab-tmc-builder .tmc-pick label{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;color:var(--text-muted);font-weight:700;margin-bottom:4px;}" +
-      "#tab-tmc-builder .tmc-pick select{padding:8px 10px;border:1px solid var(--border-strong,#cbd5e1);border-radius:7px;font-size:.95rem;background:#fff;min-width:260px;max-width:100%;}" +
+      "#tab-tmc-builder .tmc-pick select{padding:8px 10px;border:1px solid var(--border-strong,#cbd5e1);border-radius:7px;font-size:.95rem;background:var(--surface-opaque);min-width:260px;max-width:100%;}" +
       "#tab-tmc-builder .tmc-empty{color:var(--text-muted);text-align:center;border:1px dashed var(--border-strong,#cbd5e1);border-radius:10px;padding:36px 18px;background:var(--surface-subtle,#f8fafc);}" +
       "#tab-tmc-builder .tmc-formhead{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;background:var(--seal-blue);color:#fff;border-radius:10px 10px 0 0;padding:14px 18px;}" +
       "#tab-tmc-builder .tmc-formhead h3{margin:0;font-size:1.18rem;color:#fff;}" +
-      "#tab-tmc-builder .tmc-formhead .tmc-deg{display:inline-block;background:var(--gold-accent);color:var(--navy-primary);font-weight:700;font-size:.72rem;padding:2px 9px;border-radius:20px;margin-left:8px;vertical-align:middle;}" +
+      "#tab-tmc-builder .tmc-formhead .tmc-deg{display:inline-block;background:var(--gold-accent);color:var(--on-mustard);font-weight:700;font-size:.72rem;padding:2px 9px;border-radius:20px;margin-left:8px;vertical-align:middle;}" +
       "#tab-tmc-builder .tmc-formhead .tmc-collegelbl{font-size:.84rem;color:var(--light-blue,#bcd);}" +
       "#tab-tmc-builder .tmc-meter{font-size:.82rem;color:#fff;text-align:right;}" +
       "#tab-tmc-builder .tmc-meter b{font-size:1.05rem;}" +
-      "#tab-tmc-builder .tmc-body{border:1px solid var(--border-strong,#cbd5e1);border-top:none;border-radius:0 0 10px 10px;background:#fff;}" +
+      "#tab-tmc-builder .tmc-body{border:1px solid var(--border-strong,#cbd5e1);border-top:none;border-radius:0 0 10px 10px;background:var(--surface-opaque);}" +
       "#tab-tmc-builder .tmc-section{border-top:1px solid #eef2f7;}" +
       "#tab-tmc-builder .tmc-section:first-child{border-top:none;}" +
       "#tab-tmc-builder .tmc-sechead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:10px 16px;background:var(--surface-subtle,#f5f7fa);font-weight:700;color:var(--navy-primary);font-size:.92rem;}" +
@@ -301,7 +306,7 @@
       "#tab-tmc-builder .tmc-left .tmc-ctitle{font-weight:600;color:#1f2937;}" +
       "#tab-tmc-builder .tmc-left .tmc-units{display:block;font-size:.76rem;color:var(--text-muted);margin-top:2px;}" +
       "#tab-tmc-builder .tmc-right{position:relative;}" +
-      "#tab-tmc-builder .tmc-picker-btn{width:100%;text-align:left;background:#fff;border:1px solid var(--border-strong,#cbd5e1);border-radius:7px;padding:8px 10px;font-size:.85rem;cursor:pointer;color:#1f2937;line-height:1.3;}" +
+      "#tab-tmc-builder .tmc-picker-btn{width:100%;text-align:left;background:var(--surface-opaque);border:1px solid var(--border-strong,#cbd5e1);border-radius:7px;padding:8px 10px;font-size:.85rem;cursor:pointer;color:#1f2937;line-height:1.3;}" +
       "#tab-tmc-builder .tmc-picker-btn:hover{border-color:var(--navy-primary);}" +
       "#tab-tmc-builder .tmc-picker-btn.empty{color:var(--text-muted);}" +
       "#tab-tmc-builder .tmc-picker-btn .tmc-pc-code{font-family:ui-monospace,Menlo,monospace;font-weight:700;color:var(--navy-primary);}" +
@@ -312,7 +317,7 @@
       "#tab-tmc-builder .tmc-status.none{color:#475569;background:#f1f5f9;border:1px solid #cbd5e1;}" +
       "#tab-tmc-builder .tmc-status.empty{color:#9ca3af;background:transparent;border:1px dashed #cbd5e1;}" +
       "#tab-tmc-builder .tmc-clear{margin-left:8px;color:#9ca3af;cursor:pointer;font-size:.72rem;text-decoration:underline;}" +
-      "#tab-tmc-builder .tmc-pop{position:absolute;z-index:50;left:0;right:0;top:calc(100% + 4px);background:#fff;border:1px solid var(--navy-primary);border-radius:8px;box-shadow:0 12px 32px rgba(0,0,0,.18);overflow:hidden;}" +
+      "#tab-tmc-builder .tmc-pop{position:absolute;z-index:50;left:0;right:0;top:calc(100% + 4px);background:var(--surface-opaque);border:1px solid var(--navy-primary);border-radius:8px;box-shadow:0 12px 32px rgba(0,0,0,.18);overflow:hidden;}" +
       "#tab-tmc-builder .tmc-pop input{width:100%;border:none;border-bottom:1px solid #e5e7eb;padding:9px 11px;font-size:.85rem;outline:none;box-sizing:border-box;}" +
       "#tab-tmc-builder .tmc-pop-list{max-height:240px;overflow:auto;}" +
       "#tab-tmc-builder .tmc-opt{padding:7px 11px;font-size:.82rem;cursor:pointer;border-top:1px solid #f1f5f9;line-height:1.3;}" +
@@ -353,7 +358,7 @@
       "#tab-tmc-builder .tmc-opt-none{padding:10px 11px;color:var(--text-muted);font-size:.8rem;}" +
       "#tab-tmc-builder .tmc-opt-group{padding:5px 11px;font-size:.68rem;text-transform:uppercase;letter-spacing:.04em;color:var(--text-muted);font-weight:700;background:var(--surface-subtle,#f8fafc);}" +
       "#tab-tmc-builder .tmc-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:16px;}" +
-      "#tab-tmc-builder .tmc-btn{border:1px solid var(--navy-primary);background:#fff;color:var(--navy-primary);font-weight:600;font-size:.85rem;padding:8px 14px;border-radius:7px;cursor:pointer;}" +
+      "#tab-tmc-builder .tmc-btn{border:1px solid var(--navy-primary);background:var(--surface-opaque);color:var(--navy-primary);font-weight:600;font-size:.85rem;padding:8px 14px;border-radius:7px;cursor:pointer;}" +
       "#tab-tmc-builder .tmc-btn:hover{background:var(--seal-blue);color:#fff;}" +
       "#tab-tmc-builder .tmc-btn.primary{background:var(--seal-blue);color:var(--gold-accent);}" +
       "#tab-tmc-builder .tmc-btn.primary:hover{background:#0d2c52;}" +
@@ -407,9 +412,9 @@
       "#tab-tmc-builder .tmc-reqlist td{padding:7px 12px;border-top:1px solid #eef2f7;}" +
       "#tab-tmc-builder .tmc-reqlist tr:hover td{background:#f8fafc;}" +
       "#tab-tmc-builder .tmc-modal-bg{position:fixed;inset:0;background:rgba(28,28,26,.5);z-index:100000;display:flex;align-items:flex-start;justify-content:center;padding:5rem 1rem;}" +
-      "#tab-tmc-builder .tmc-modal{background:#fff;max-width:520px;width:100%;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.35);padding:20px 22px;}" +
+      "#tab-tmc-builder .tmc-modal{background:var(--surface-opaque);max-width:520px;width:100%;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.35);padding:20px 22px;}" +
       "#tab-tmc-builder .tmc-modal h3{margin:0 0 10px;color:var(--navy-primary);}" +
-      "#tab-tmc-builder .tmc-modal label{display:block;font-size:.78rem;font-weight:700;color:#374151;margin:8px 0 3px;}" +
+      "#tab-tmc-builder .tmc-modal label{display:block;font-size:.78rem;font-weight:700;color:var(--text-body);margin:8px 0 3px;}" +
       "#tab-tmc-builder .tmc-modal input,#tab-tmc-builder .tmc-modal textarea{width:100%;box-sizing:border-box;border:1px solid var(--border-strong,#cbd5e1);border-radius:6px;padding:7px 9px;font-size:.85rem;font-family:inherit;}" +
       "@media (max-width:720px){#tab-tmc-builder .tmc-slot,#tab-tmc-builder .tmc-colhead{grid-template-columns:1fr;}}" +
       "@media print{body *{visibility:hidden;}#tab-tmc-builder,#tab-tmc-builder *{visibility:visible;}#tab-tmc-builder .tmc-pickers,#tab-tmc-builder .tmc-actions,#tab-tmc-builder .tmc-pop{display:none!important;}#tab-tmc-builder{position:absolute;left:0;top:0;width:100%;}}";
@@ -616,12 +621,12 @@
       var gr = unitRange(slot.units);
       var gcu = course.units == null ? null : parseFloat(course.units);
       if (gr && gcu != null && !isNaN(gcu) && gcu + 0.01 < gr[0])
-        return { cls: "warn", label: "⚠ below the " + slot.units + "-unit minimum (" + fmtU(course.units) + ")" };
-      return { cls: "ok", label: "✓ selected" };
+        return { cls: "warn", label: "below the " + slot.units + "-unit minimum (" + fmtU(course.units) + ")" };
+      return { cls: "ok", label: "selected" };
     }
     if (slot.noncid && !slot.cid) {
-      if (ur === false) return { cls: "warn", label: "⚠ units differ (" + fmtU(course.units) + " vs " + slot.units + ")" };
-      return { cls: "ok", label: "✓ selected" };
+      if (ur === false) return { cls: "warn", label: "units differ (" + fmtU(course.units) + " vs " + slot.units + ")" };
+      return { cls: "ok", label: "selected" };
     }
     if (hasCid) {
       // title-inferred C-ID (tcid): the c-id.net approval names a retired or
@@ -632,9 +637,9 @@
       // synthesized c-id.net row: the approval is official, but the course has
       // no row in our COCI extract (units unknown) — aligned, with a verify nudge
       if (course.src === "cidnet")
-        return { cls: "ok", label: "✓ C-ID aligned · per c-id.net — verify course & units (not in our COCI extract)" };
-      if (ur === false) return { cls: "warn", label: "⚠ C-ID match · units differ (" + fmtU(course.units) + " vs " + slot.units + ")" };
-      return { cls: "ok", label: "✓ C-ID aligned" };
+        return { cls: "ok", label: "C-ID aligned · per c-id.net — verify course & units (not in our COCI extract)" };
+      if (ur === false) return { cls: "warn", label: "C-ID match · units differ (" + fmtU(course.units) + " vs " + slot.units + ")" };
+      return { cls: "ok", label: "C-ID aligned" };
     }
     // No C-ID on file, but the local title closely matches this slot's course — a
     // recovered "title match" (verify), distinct from a C-ID-aligned slot.
@@ -979,8 +984,8 @@
       var sm = statusMeta(t), pathway = !!t._pathway;
       var nslots = pathway ? null : countSlots(t), cov = (showCov && !pathway) ? coverageFor(t) : null;
       var src = tmcSource(t), pdf = pdfPath(t);
-      var links = (src ? "<a class='tmc-srclink' href='" + esc(src) + "' target='_blank' rel='noopener' onclick='event.stopPropagation()'>official ↗</a>" : "") +
-                  (pdf ? " <a class='tmc-srclink' href='" + esc(pdf) + "' target='_blank' rel='noopener' onclick='event.stopPropagation()'>📎 PDF</a>" : "");
+      var links = (src ? "<a class='tmc-srclink' href='" + esc(src) + "' target='_blank' rel='noopener' onclick='event.stopPropagation()'>official</a>" : "") +
+                  (pdf ? " <a class='tmc-srclink' href='" + esc(pdf) + "' target='_blank' rel='noopener' onclick='event.stopPropagation()'>PDF</a>" : "");
       var tr = el("tr", "tmc-listrow");
       tr.tabIndex = 0;
       tr.setAttribute("role", "button");
@@ -1139,8 +1144,8 @@
       (t.degree ? "<span class='tmc-deg'>" + esc(t.degree) + "</span>" : "") +
       "<span class='tmc-stchip " + st.cls + "'>" + esc(st.label) + "</span></h3>" +
       "<div class='tmc-collegelbl'>" + (reviewMode ? "All colleges · review view" : esc(state.college)) + " · " + esc(t.version || "draft") +
-      (src ? " · <a class='tmc-srclink' href='" + esc(src) + "' target='_blank' rel='noopener'>official template ↗</a>" : "") +
-      (pdf ? " <span class='tmc-pdf'>· <a href='" + esc(pdf) + "' target='_blank' rel='noopener'>📎 PDF</a></span>" : "") + "</div>";
+      (src ? " · <a class='tmc-srclink' href='" + esc(src) + "' target='_blank' rel='noopener'>official template</a>" : "") +
+      (pdf ? " <span class='tmc-pdf'>· <a href='" + esc(pdf) + "' target='_blank' rel='noopener'>PDF</a></span>" : "") + "</div>";
     head.appendChild(left);
     var meterBox = el("div", "tmc-meter");
     meterBox.id = "tmc-meter";
@@ -1327,12 +1332,12 @@
   function renderAuthInto(node) {
     node.innerHTML = "";
     if (state.email) {
-      node.innerHTML = "<span class='tmc-auth-on'>✓ Curator: " + esc(state.email) + "</span> · <a class='tmc-link' id='tmc-signout'>Sign out</a>";
+      node.innerHTML = "<span class='tmc-auth-on'>Curator: " + esc(state.email) + "</span> · <a class='tmc-link' id='tmc-signout'>Sign out</a>";
       var so = node.querySelector("#tmc-signout");
       if (so) so.onclick = function () { signOut(); renderAuthInto(node); renderBody(); };
     } else if (teamMode()) {
       // Phrase mode: notes unlock; approve/return stays magic-link-only.
-      node.innerHTML = "<span class='tmc-auth-on'>✓ Team unlocked (phrase)</span> — notes only · <a class='tmc-link' id='tmc-signout'>Lock</a>";
+      node.innerHTML = "<span class='tmc-auth-on'>Team unlocked (phrase)</span> — notes only · <a class='tmc-link' id='tmc-signout'>Lock</a>";
       var lk = node.querySelector("#tmc-signout");
       if (lk) lk.onclick = function () { signOut(); renderAuthInto(node); renderBody(); };
     } else {
@@ -1343,7 +1348,7 @@
         node.appendChild(document.createTextNode(" · "));
         node.appendChild(window.CPL_TEAM_PHRASE.unlockRow({
           blurb: "or:",
-          label: "🔓 Unlock notes",
+          label: "Unlock notes",
           placeholder: "team phrase…",
           onUnlocked: function () { renderAuthInto(node); renderBody(); }
         }));
@@ -1359,7 +1364,7 @@
       if (!em) { msg.textContent = "Enter your email."; msg.className = "tmc-msg err"; return; }
       msg.textContent = "Sending…"; msg.className = "tmc-msg";
       signIn(em).then(function (r) {
-        msg.textContent = r.ok ? "✓ Check your email for the sign-in link." : "Sign-in failed (" + r.status + ").";
+        msg.textContent = r.ok ? "Check your email for the sign-in link." : "Sign-in failed (" + r.status + ").";
         msg.className = "tmc-msg " + (r.ok ? "ok" : "err");
       }).catch(function () { msg.textContent = "Network error."; msg.className = "tmc-msg err"; });
     });
@@ -1618,7 +1623,7 @@
   function renderBacklogProxy() {
     var det = document.createElement("details");
     det.className = "tmc-backlog";
-    det.innerHTML = "<summary>⏳ In progress in COCI — the statewide backlog proxy (expand to rank by computed alignment)</summary>";
+    det.innerHTML = "<summary>In progress in COCI — the statewide backlog proxy (expand to rank by computed alignment)</summary>";
     var bodyEl = el("div", "tmc-backlog-body", "");
     det.appendChild(bodyEl);
     var computed = false;
@@ -1693,7 +1698,7 @@
     } else {
       var cidHtml = slot.cid
         ? "<span class='tmc-cid'>" + esc(slot.cid) + "</span>" +
-          (slot.cid_unverified ? "<span class='tmc-unv' title='This C-ID is not in our C-ID reference — a possible C-ID update signal'>⚠ not in C-ID ref</span>" : "")
+          (slot.cid_unverified ? "<span class='tmc-unv' title='This C-ID is not in our C-ID reference — a possible C-ID update signal'>not in C-ID ref</span>" : "")
         : "<span class='tmc-cid noncid'>non-C-ID</span>";
       var altHtml = slot.alts && slot.alts.length ? " <span class='tmc-units'>or " + slot.alts.map(esc).join(", ") + "</span>" : "";
       leftc.innerHTML = cidHtml + "<span class='tmc-ctitle'>" + esc(slot.title) + "</span>" +

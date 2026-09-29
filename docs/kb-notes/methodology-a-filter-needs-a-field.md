@@ -1,7 +1,6 @@
 ---
 title: A filter needs a field — prose is not a facet
-date: 2026-08-18
-type: methodology
+created: 2026-08-18
 kb-status: published
 tags: [methodology, data-model, filters, search, provenance, gr]
 obsidian-folder: cpl-project-tracker
@@ -43,14 +42,14 @@ Ed. Code*. Applied to this corpus that rule is **wrong on §11342.2**, which is
 counts as a "regulation". Filed under Ed. Code it would have been a fabricated
 citation, displayed as a fact, in a tool being shown to lawyers.
 
-Two rules follow, and they generalise past citations to any parsed field:
+Two rules follow, and they generalize past citations to any parsed field:
 
 1. **Assign by explicit membership, never by `else`.** Each code gets its own
    range test; anything matching none of them is left *unassigned* rather than
    swept into the largest bucket. A residual category defined as "whatever is
    left" will silently absorb the cases you did not know existed — and those are
    exactly the ones worth seeing.
-2. **A derived value is labelled as derived.** The backfilled citations carry
+2. **A derived value is labeled as derived.** The backfilled citations carry
    `citations_derived` and render with a dashed border and a "extracted from the
    text — not curator-confirmed" title, until a human edits the row. This is the
    same discipline as the TOP-code caveat and the `curator-set` contact chips:

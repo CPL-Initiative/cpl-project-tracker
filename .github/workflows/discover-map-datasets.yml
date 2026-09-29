@@ -26,6 +26,21 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: '3.11'
+      # Sam, 2026-09-02: Pedro has added CPL lifecycle BOOLEAN checks to the
+      # student Custom Reports and is adding CollegeID2 (origination college,
+      # the noncredit-FTES key). The funding model's `pac` measure reads the
+      # counselor step and the builder SWEEPS candidate spellings for it, so
+      # this asks the API for the real column names and the wire rendering.
+      # Enumerates with `columnName: []` (bounded reads), bisects the view that
+      # 500s on that, then profiles the NEW columns PII-denylisted. Commits
+      # nothing; prints no student identifier.
+      - name: Probe the student views for the CPL lifecycle booleans + CollegeID2
+        env:
+          MAP_API_KEY: ${{ secrets.MAP_API_KEY }}
+          MAP_API_AUTH_HEADER: ${{ secrets.MAP_API_AUTH_HEADER }}
+          MAP_API_AUTH_SCHEME: ${{ secrets.MAP_API_AUTH_SCHEME }}
+        run: python kb/_probe_lifecycle_checks.py
+
       # Sam, 2026-08-19: three new Custom Reports (exhibit CRs, the same BY
       # CATALOG YEAR, student details). Runs FIRST and alone-fast — it answers a
       # yes/no that decides a whole workstream (three lines in REQUEST_PAYLOAD vs
@@ -44,6 +59,7 @@ jobs:
       # This asks whether the API SERVES them — a builder header proves only that
       # the report exists in the builder, and the cron pulls the API.
       - name: Serve-check the three confirmed Custom Reports
+        if: ${{ false }}   # answered 2026-08-19; the 13:40 UTC load serve-checks them nightly
         run: python kb/_probe_confirmed_custom_reports.py
 
       # Run 1 found all 51 candidates "not Valid" — but it had no positive

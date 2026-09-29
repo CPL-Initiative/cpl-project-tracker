@@ -69,7 +69,7 @@ id** — same exposure applies to `tblStudentKey.StudentKey`.
 Sam's catch, still unbuilt. `statewide_prescriptive.js` knows *the likely local
 course each college already teaches*, turning "adopt CompTIA A+" into "adopt it
 against CIS-25, which you already run." Sync it the way
-`kb/_sync_credential_catalog.py` syncs the catalogue. **CER is already in**;
+`kb/_sync_credential_catalog.py` syncs the catalog. **CER is already in**;
 EACR is not.
 
 ## ✅ What shipped — #1113, Sierra **v38** live

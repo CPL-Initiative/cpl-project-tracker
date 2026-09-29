@@ -129,7 +129,7 @@ tab needs a page behind it and a table cannot write one. Say so up front.
   writing (asserted a count was "not 2"; 2 was correct for unrelated reasons).
   Third session running this move has caught something.
 - **Verify against the PRE-FIX source, and count.** 15 of 17 new admin checks
-  fail there. Checks that pass **both** ways are labelled regression guards, not
+  fail there. Checks that pass **both** ways are labeled regression guards, not
   counted as proof.
 - **Fingerprint what must not change.** `md5(secret)` before and after the rename
   proved nobody was locked out, in one query.

@@ -144,3 +144,30 @@ alter table public.gr_revisions add column if not exists verified_note text;
 -- ⚠️ That view carries `security_invoker = on`. A Postgres view runs with the
 -- DEFINER's rights by default, which would bypass RLS on the underlying tables
 -- and hand out precisely what the column exists to protect.
+
+-- ── GUIDANCE MEMOS (2026-08-31) ────────────────────────────────────────────
+-- See migration gr_memos_guidance_surface. Sam, 2026-08-31: "incorporate the
+-- memo in the GR Priorities tab... wire it into the current memo generator
+-- there? So I can iterate?" — the register rows are the SOURCE OF RECORD the
+-- guidance memos draw from (his item-7 ruling, 2026-08-30), so the memos live
+-- beside the rows they cite:
+--   gr_memos (area_id → gr_areas, memo_key 'A'/'B'/'C', TO/FROM/DATE lines,
+--             status draft|hold_for_adoption|issued, hold_note, purpose)
+--   gr_memo_sections (memo_id → gr_memos, n, heading, body, citations text[]
+--             in the canonical form, revision_ns integer[] — the register rows
+--             a section draws from — authority class, confirm_note)
+-- Same gate posture (phrase/reviewer read, reviewer-only write), same
+-- gr_capture_history audit triggers, sensitivity defaults 'restricted'.
+--
+-- ⚠️ SEQUENCING IS DOCTRINE, NOT MACHINERY (Sam, 2026-08-30): Title 5 revised
+-- and BOG-adopted first, guidance after; drafting may precede. Nothing here
+-- can verify BOG adoption, so the gate is a human flipping status to
+-- 'issued' — until then the tab and every Word export carry the hold banner
+-- and the internal drafting annex (authority classes + pre-issuance
+-- confirms), which render ONLY while unissued.
+--
+-- Seeded 2026-08-31 (INSERT-only, reversible by created_by): Memo A "What
+-- Existing Law and Regulation Already Provide" (7 sections from the ruled
+-- 2026-08-30 Register Re-analysis: rows #12, #4, #1, #2, #8, #14, #6) under
+-- created_by 'SkyLedgerS210 (Memo A draft 1 seed, 2026-08-31)'; Memo B and C
+-- stubs under 'SkyLedgerS210 (three-memo plan stub, 2026-08-31)'.

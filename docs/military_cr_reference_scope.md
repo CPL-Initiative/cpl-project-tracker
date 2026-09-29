@@ -52,7 +52,7 @@ The freehand lane's problem is that *Racial Issues and the Police* and
 not have that problem at the wording level**, because ACE publishes the
 recommendation and MAP stores it.
 
-Measured directly — group every ACE row by `(exhibit_id, units, normalised
+Measured directly — group every ACE row by `(exhibit_id, units, normalized
 topic)` and count how many distinct raw texts each group holds:
 
 | | |
@@ -299,14 +299,26 @@ casings of the same string, 0 holding only one). **A workbench that asks
 curators to hand-merge `3 hours in supervision` into `3 hours in Supervision`
 would be asking humans to do a parser's job, 767 times.**
 
-## 10. Open questions for Sam — ALL FOUR ANSWERED 2026-08-14
+## 10. Open questions for Sam — ALL FOUR ANSWERED 2026-08-14, REAFFIRMED 2026-09-27
 
 Sam ruled on all four at the top of session 154. Recorded here so this section
 is no longer read as open. `cpl_memory`: `ace-unit-variants-are-one-ccrr`,
 `ace-not-a-topic-gets-canonical-crs`, `ace-individualized-assessment-never-granted`.
 
+**Reaffirmed 2026-09-27.** The 2026-09-22 open-asks sheet asked all four again
+without showing these answers, and two of its defaults contradicted them (③ *merge
+empty qualifiers*, ④ *auto-N/A with a receipt*). On the 2026-09-27 sheet, completed
+through card 8, Sam chose the August answers on ③ (card 4) and ④ (card 3), and made
+①'s spread a rule for every merge and mint (card 5). `cpl_memory`:
+`open-asks-2026-09-27-rulings`, `units-never-split-an-identity`.
+
 1. ✅ **ACE unit variants are ONE recommendation**, units displayed as a spread.
    Unblocks rung 2 — 2,244 strings, 22.2% of the vocabulary.
+   Since 2026-09-27 this holds for **every merge and mint**, M-ID and credit
+   recommendation alike: an identity shows the unit range of what it joins
+   (`AR-2201-0552` issues *Orienteering* at 1, 2 and 3 hours, so one
+   recommendation reads *Orienteering (1–3 units)*), and units never split an
+   identity.
 2. ✅ **The typographic class is absorbed downstream** by our fold; the upstream
    MAP-ingest fix stays proposed as `cpl_memory` row `o3` rather than blocking.
 3. ✅ **Subject-area granularity is SUGGESTION-ONLY** — pairwise, gated, never

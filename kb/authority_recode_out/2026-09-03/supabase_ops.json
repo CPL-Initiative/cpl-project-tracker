@@ -1,0 +1,103 @@
+{
+  "_about": "The Supabase half of the recode, same cron window. (1) kb_curation self-keys + merge_into pointers: dispatch .github/workflows/supabase-rekey.yml with alias_map_path = this receipt's alias_map.json (a clean bijection, idempotent). (2) The _CANON_SUBJ4:: picks below: guarded UPDATEs through the MCP lane; capture the before-values into picks_before.json in this dir first (Rule 10 a2).",
+  "_emitted_at": "2026-09-03T20:19:16Z",
+  "rekey": {
+    "workflow": ".github/workflows/supabase-rekey.yml",
+    "alias_map_path": "kb/authority_recode_out/2026-09-03/alias_map.json",
+    "pairs": 10296
+  },
+  "picks": [
+    {
+      "discipline": "Child Development/Early Childhood Education",
+      "field": "canonical_subj4",
+      "from": "ECED",
+      "to": "CDEV",
+      "sql": "update public.kb_curation set value = 'CDEV' where course_id = '_CANON_SUBJ4::Child Development/Early Childhood Education' and field = 'canonical_subj4' and value = 'ECED';"
+    },
+    {
+      "discipline": "Child Development/Early Childhood Education",
+      "field": "canonical_subj4_notes",
+      "to": "Recoded ECED -> CDEV (Sam, 2026-09-03 rulings, item 9; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.",
+      "sql": "update public.kb_curation set value = 'Recoded ECED -> CDEV (Sam, 2026-09-03 rulings, item 9; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.' where course_id = '_CANON_SUBJ4::Child Development/Early Childhood Education' and field = 'canonical_subj4_notes';\ninsert into public.kb_curation (course_id, field, value, reviewer_email, reviewed_at) select '_CANON_SUBJ4::Child Development/Early Childhood Education', 'canonical_subj4_notes', 'Recoded ECED -> CDEV (Sam, 2026-09-03 rulings, item 9; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.', 'authority-recode-s224@bot', now() where not exists (select 1 from public.kb_curation where course_id = '_CANON_SUBJ4::Child Development/Early Childhood Education' and field = 'canonical_subj4_notes');"
+    },
+    {
+      "discipline": "Computer Information Systems",
+      "field": "canonical_subj4",
+      "from": "CSIS",
+      "to": "ITIS",
+      "sql": "update public.kb_curation set value = 'ITIS' where course_id = '_CANON_SUBJ4::Computer Information Systems' and field = 'canonical_subj4' and value = 'CSIS';"
+    },
+    {
+      "discipline": "Computer Information Systems",
+      "field": "canonical_subj4_notes",
+      "to": "Recoded CSIS -> ITIS (Sam, 2026-09-03 rulings, item 11; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.",
+      "sql": "update public.kb_curation set value = 'Recoded CSIS -> ITIS (Sam, 2026-09-03 rulings, item 11; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.' where course_id = '_CANON_SUBJ4::Computer Information Systems' and field = 'canonical_subj4_notes';\ninsert into public.kb_curation (course_id, field, value, reviewer_email, reviewed_at) select '_CANON_SUBJ4::Computer Information Systems', 'canonical_subj4_notes', 'Recoded CSIS -> ITIS (Sam, 2026-09-03 rulings, item 11; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.', 'authority-recode-s224@bot', now() where not exists (select 1 from public.kb_curation where course_id = '_CANON_SUBJ4::Computer Information Systems' and field = 'canonical_subj4_notes');"
+    },
+    {
+      "discipline": "Computer Science",
+      "field": "canonical_subj4",
+      "from": "CISC",
+      "to": "COMP",
+      "sql": "update public.kb_curation set value = 'COMP' where course_id = '_CANON_SUBJ4::Computer Science' and field = 'canonical_subj4' and value = 'CISC';"
+    },
+    {
+      "discipline": "Computer Science",
+      "field": "canonical_subj4_notes",
+      "to": "Recoded CISC -> COMP (Sam, 2026-09-03 rulings, item 16; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.",
+      "sql": "update public.kb_curation set value = 'Recoded CISC -> COMP (Sam, 2026-09-03 rulings, item 16; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.' where course_id = '_CANON_SUBJ4::Computer Science' and field = 'canonical_subj4_notes';\ninsert into public.kb_curation (course_id, field, value, reviewer_email, reviewed_at) select '_CANON_SUBJ4::Computer Science', 'canonical_subj4_notes', 'Recoded CISC -> COMP (Sam, 2026-09-03 rulings, item 16; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.', 'authority-recode-s224@bot', now() where not exists (select 1 from public.kb_curation where course_id = '_CANON_SUBJ4::Computer Science' and field = 'canonical_subj4_notes');"
+    },
+    {
+      "discipline": "Drama/Theater Arts",
+      "field": "canonical_subj4",
+      "from": "THEA",
+      "to": "THTR",
+      "sql": "update public.kb_curation set value = 'THTR' where course_id = '_CANON_SUBJ4::Drama/Theater Arts' and field = 'canonical_subj4' and value = 'THEA';"
+    },
+    {
+      "discipline": "Drama/Theater Arts",
+      "field": "canonical_subj4_notes",
+      "to": "Recoded THEA -> THTR (Sam, 2026-09-03 rulings, item 7; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.",
+      "sql": "update public.kb_curation set value = 'Recoded THEA -> THTR (Sam, 2026-09-03 rulings, item 7; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.' where course_id = '_CANON_SUBJ4::Drama/Theater Arts' and field = 'canonical_subj4_notes';\ninsert into public.kb_curation (course_id, field, value, reviewer_email, reviewed_at) select '_CANON_SUBJ4::Drama/Theater Arts', 'canonical_subj4_notes', 'Recoded THEA -> THTR (Sam, 2026-09-03 rulings, item 7; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.', 'authority-recode-s224@bot', now() where not exists (select 1 from public.kb_curation where course_id = '_CANON_SUBJ4::Drama/Theater Arts' and field = 'canonical_subj4_notes');"
+    },
+    {
+      "discipline": "Film and Media Studies",
+      "field": "canonical_subj4",
+      "from": "FIMS",
+      "to": "FTVE",
+      "sql": "update public.kb_curation set value = 'FTVE' where course_id = '_CANON_SUBJ4::Film and Media Studies' and field = 'canonical_subj4' and value = 'FIMS';"
+    },
+    {
+      "discipline": "Film and Media Studies",
+      "field": "canonical_subj4_notes",
+      "to": "Recoded FIMS -> FTVE (Sam, 2026-09-03 rulings, item 13; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.",
+      "sql": "update public.kb_curation set value = 'Recoded FIMS -> FTVE (Sam, 2026-09-03 rulings, item 13; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.' where course_id = '_CANON_SUBJ4::Film and Media Studies' and field = 'canonical_subj4_notes';\ninsert into public.kb_curation (course_id, field, value, reviewer_email, reviewed_at) select '_CANON_SUBJ4::Film and Media Studies', 'canonical_subj4_notes', 'Recoded FIMS -> FTVE (Sam, 2026-09-03 rulings, item 13; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.', 'authority-recode-s224@bot', now() where not exists (select 1 from public.kb_curation where course_id = '_CANON_SUBJ4::Film and Media Studies' and field = 'canonical_subj4_notes');"
+    },
+    {
+      "discipline": "Media Production",
+      "field": "canonical_subj4",
+      "from": "FIMP",
+      "to": "FTVE",
+      "sql": "update public.kb_curation set value = 'FTVE' where course_id = '_CANON_SUBJ4::Media Production' and field = 'canonical_subj4' and value = 'FIMP';"
+    },
+    {
+      "discipline": "Media Production",
+      "field": "canonical_subj4_notes",
+      "to": "Recoded FIMP -> FTVE (Sam, 2026-09-03 rulings, item 13; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.",
+      "sql": "update public.kb_curation set value = 'Recoded FIMP -> FTVE (Sam, 2026-09-03 rulings, item 13; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.' where course_id = '_CANON_SUBJ4::Media Production' and field = 'canonical_subj4_notes';\ninsert into public.kb_curation (course_id, field, value, reviewer_email, reviewed_at) select '_CANON_SUBJ4::Media Production', 'canonical_subj4_notes', 'Recoded FIMP -> FTVE (Sam, 2026-09-03 rulings, item 13; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.', 'authority-recode-s224@bot', now() where not exists (select 1 from public.kb_curation where course_id = '_CANON_SUBJ4::Media Production' and field = 'canonical_subj4_notes');"
+    },
+    {
+      "discipline": "Office Technologies",
+      "field": "canonical_subj4",
+      "from": "OTEC",
+      "to": "BSOT",
+      "sql": "update public.kb_curation set value = 'BSOT' where course_id = '_CANON_SUBJ4::Office Technologies' and field = 'canonical_subj4' and value = 'OTEC';"
+    },
+    {
+      "discipline": "Office Technologies",
+      "field": "canonical_subj4_notes",
+      "to": "Recoded OTEC -> BSOT (Sam, 2026-09-03 rulings, item 12; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.",
+      "sql": "update public.kb_curation set value = 'Recoded OTEC -> BSOT (Sam, 2026-09-03 rulings, item 12; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.' where course_id = '_CANON_SUBJ4::Office Technologies' and field = 'canonical_subj4_notes';\ninsert into public.kb_curation (course_id, field, value, reviewer_email, reviewed_at) select '_CANON_SUBJ4::Office Technologies', 'canonical_subj4_notes', 'Recoded OTEC -> BSOT (Sam, 2026-09-03 rulings, item 12; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.', 'authority-recode-s224@bot', now() where not exists (select 1 from public.kb_curation where course_id = '_CANON_SUBJ4::Office Technologies' and field = 'canonical_subj4_notes');"
+    }
+  ],
+  "sql": "begin;\nupdate public.kb_curation set value = 'CDEV' where course_id = '_CANON_SUBJ4::Child Development/Early Childhood Education' and field = 'canonical_subj4' and value = 'ECED';\nupdate public.kb_curation set value = 'Recoded ECED -> CDEV (Sam, 2026-09-03 rulings, item 9; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.' where course_id = '_CANON_SUBJ4::Child Development/Early Childhood Education' and field = 'canonical_subj4_notes';\ninsert into public.kb_curation (course_id, field, value, reviewer_email, reviewed_at) select '_CANON_SUBJ4::Child Development/Early Childhood Education', 'canonical_subj4_notes', 'Recoded ECED -> CDEV (Sam, 2026-09-03 rulings, item 9; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.', 'authority-recode-s224@bot', now() where not exists (select 1 from public.kb_curation where course_id = '_CANON_SUBJ4::Child Development/Early Childhood Education' and field = 'canonical_subj4_notes');\nupdate public.kb_curation set value = 'ITIS' where course_id = '_CANON_SUBJ4::Computer Information Systems' and field = 'canonical_subj4' and value = 'CSIS';\nupdate public.kb_curation set value = 'Recoded CSIS -> ITIS (Sam, 2026-09-03 rulings, item 11; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.' where course_id = '_CANON_SUBJ4::Computer Information Systems' and field = 'canonical_subj4_notes';\ninsert into public.kb_curation (course_id, field, value, reviewer_email, reviewed_at) select '_CANON_SUBJ4::Computer Information Systems', 'canonical_subj4_notes', 'Recoded CSIS -> ITIS (Sam, 2026-09-03 rulings, item 11; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.', 'authority-recode-s224@bot', now() where not exists (select 1 from public.kb_curation where course_id = '_CANON_SUBJ4::Computer Information Systems' and field = 'canonical_subj4_notes');\nupdate public.kb_curation set value = 'COMP' where course_id = '_CANON_SUBJ4::Computer Science' and field = 'canonical_subj4' and value = 'CISC';\nupdate public.kb_curation set value = 'Recoded CISC -> COMP (Sam, 2026-09-03 rulings, item 16; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.' where course_id = '_CANON_SUBJ4::Computer Science' and field = 'canonical_subj4_notes';\ninsert into public.kb_curation (course_id, field, value, reviewer_email, reviewed_at) select '_CANON_SUBJ4::Computer Science', 'canonical_subj4_notes', 'Recoded CISC -> COMP (Sam, 2026-09-03 rulings, item 16; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.', 'authority-recode-s224@bot', now() where not exists (select 1 from public.kb_curation where course_id = '_CANON_SUBJ4::Computer Science' and field = 'canonical_subj4_notes');\nupdate public.kb_curation set value = 'THTR' where course_id = '_CANON_SUBJ4::Drama/Theater Arts' and field = 'canonical_subj4' and value = 'THEA';\nupdate public.kb_curation set value = 'Recoded THEA -> THTR (Sam, 2026-09-03 rulings, item 7; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.' where course_id = '_CANON_SUBJ4::Drama/Theater Arts' and field = 'canonical_subj4_notes';\ninsert into public.kb_curation (course_id, field, value, reviewer_email, reviewed_at) select '_CANON_SUBJ4::Drama/Theater Arts', 'canonical_subj4_notes', 'Recoded THEA -> THTR (Sam, 2026-09-03 rulings, item 7; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.', 'authority-recode-s224@bot', now() where not exists (select 1 from public.kb_curation where course_id = '_CANON_SUBJ4::Drama/Theater Arts' and field = 'canonical_subj4_notes');\nupdate public.kb_curation set value = 'FTVE' where course_id = '_CANON_SUBJ4::Film and Media Studies' and field = 'canonical_subj4' and value = 'FIMS';\nupdate public.kb_curation set value = 'Recoded FIMS -> FTVE (Sam, 2026-09-03 rulings, item 13; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.' where course_id = '_CANON_SUBJ4::Film and Media Studies' and field = 'canonical_subj4_notes';\ninsert into public.kb_curation (course_id, field, value, reviewer_email, reviewed_at) select '_CANON_SUBJ4::Film and Media Studies', 'canonical_subj4_notes', 'Recoded FIMS -> FTVE (Sam, 2026-09-03 rulings, item 13; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.', 'authority-recode-s224@bot', now() where not exists (select 1 from public.kb_curation where course_id = '_CANON_SUBJ4::Film and Media Studies' and field = 'canonical_subj4_notes');\nupdate public.kb_curation set value = 'FTVE' where course_id = '_CANON_SUBJ4::Media Production' and field = 'canonical_subj4' and value = 'FIMP';\nupdate public.kb_curation set value = 'Recoded FIMP -> FTVE (Sam, 2026-09-03 rulings, item 13; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.' where course_id = '_CANON_SUBJ4::Media Production' and field = 'canonical_subj4_notes';\ninsert into public.kb_curation (course_id, field, value, reviewer_email, reviewed_at) select '_CANON_SUBJ4::Media Production', 'canonical_subj4_notes', 'Recoded FIMP -> FTVE (Sam, 2026-09-03 rulings, item 13; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.', 'authority-recode-s224@bot', now() where not exists (select 1 from public.kb_curation where course_id = '_CANON_SUBJ4::Media Production' and field = 'canonical_subj4_notes');\nupdate public.kb_curation set value = 'BSOT' where course_id = '_CANON_SUBJ4::Office Technologies' and field = 'canonical_subj4' and value = 'OTEC';\nupdate public.kb_curation set value = 'Recoded OTEC -> BSOT (Sam, 2026-09-03 rulings, item 12; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.' where course_id = '_CANON_SUBJ4::Office Technologies' and field = 'canonical_subj4_notes';\ninsert into public.kb_curation (course_id, field, value, reviewer_email, reviewed_at) select '_CANON_SUBJ4::Office Technologies', 'canonical_subj4_notes', 'Recoded OTEC -> BSOT (Sam, 2026-09-03 rulings, item 12; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.', 'authority-recode-s224@bot', now() where not exists (select 1 from public.kb_curation where course_id = '_CANON_SUBJ4::Office Technologies' and field = 'canonical_subj4_notes');\ncommit;"
+}

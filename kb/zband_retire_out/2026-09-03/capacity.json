@@ -1,0 +1,1391 @@
+{
+  "_about": "per (SUBJ4, band) bucket the fold adds to: corroborated M numbers used before, added by the fold, free afterwards (of 999). Sorted tightest first.",
+  "buckets": [
+    {
+      "bucket": "KINE M1",
+      "used_before": 797,
+      "added": 199,
+      "free_after": 3
+    },
+    {
+      "bucket": "ARTS M1",
+      "used_before": 505,
+      "added": 157,
+      "free_after": 339
+    },
+    {
+      "bucket": "MUSI M1",
+      "used_before": 548,
+      "added": 120,
+      "free_after": 352
+    },
+    {
+      "bucket": "ITIS M1",
+      "used_before": 481,
+      "added": 163,
+      "free_after": 366
+    },
+    {
+      "bucket": "BUSI M1",
+      "used_before": 440,
+      "added": 85,
+      "free_after": 477
+    },
+    {
+      "bucket": "DANC M1",
+      "used_before": 394,
+      "added": 126,
+      "free_after": 486
+    },
+    {
+      "bucket": "FIRE M1",
+      "used_before": 390,
+      "added": 88,
+      "free_after": 521
+    },
+    {
+      "bucket": "ATHL M1",
+      "used_before": 365,
+      "added": 88,
+      "free_after": 546
+    },
+    {
+      "bucket": "ENGL M1",
+      "used_before": 360,
+      "added": 69,
+      "free_after": 570
+    },
+    {
+      "bucket": "CRIM M1",
+      "used_before": 312,
+      "added": 108,
+      "free_after": 582
+    },
+    {
+      "bucket": "ESOL M1",
+      "used_before": 361,
+      "added": 27,
+      "free_after": 620
+    },
+    {
+      "bucket": "THTR M1",
+      "used_before": 296,
+      "added": 81,
+      "free_after": 622
+    },
+    {
+      "bucket": "IDST M9",
+      "used_before": 314,
+      "added": 44,
+      "free_after": 641
+    },
+    {
+      "bucket": "MATH M1",
+      "used_before": 301,
+      "added": 57,
+      "free_after": 644
+    },
+    {
+      "bucket": "ESOL M9",
+      "used_before": 264,
+      "added": 62,
+      "free_after": 673
+    },
+    {
+      "bucket": "AUTO M1",
+      "used_before": 219,
+      "added": 119,
+      "free_after": 678
+    },
+    {
+      "bucket": "BIOL M1",
+      "used_before": 257,
+      "added": 63,
+      "free_after": 680
+    },
+    {
+      "bucket": "CDEV M1",
+      "used_before": 213,
+      "added": 80,
+      "free_after": 706
+    },
+    {
+      "bucket": "NRSR M1",
+      "used_before": 194,
+      "added": 102,
+      "free_after": 710
+    },
+    {
+      "bucket": "ETHS M1",
+      "used_before": 246,
+      "added": 41,
+      "free_after": 712
+    },
+    {
+      "bucket": "BSOT M1",
+      "used_before": 244,
+      "added": 19,
+      "free_after": 740
+    },
+    {
+      "bucket": "HIST M1",
+      "used_before": 187,
+      "added": 52,
+      "free_after": 760
+    },
+    {
+      "bucket": "HLTH M1",
+      "used_before": 162,
+      "added": 64,
+      "free_after": 773
+    },
+    {
+      "bucket": "CULN M1",
+      "used_before": 162,
+      "added": 61,
+      "free_after": 787
+    },
+    {
+      "bucket": "COUN M1",
+      "used_before": 161,
+      "added": 56,
+      "free_after": 791
+    },
+    {
+      "bucket": "IDST M1",
+      "used_before": 169,
+      "added": 36,
+      "free_after": 794
+    },
+    {
+      "bucket": "WELD M1",
+      "used_before": 123,
+      "added": 57,
+      "free_after": 819
+    },
+    {
+      "bucket": "BUSI M9",
+      "used_before": 160,
+      "added": 16,
+      "free_after": 823
+    },
+    {
+      "bucket": "ARCH M1",
+      "used_before": 138,
+      "added": 42,
+      "free_after": 824
+    },
+    {
+      "bucket": "MULT M1",
+      "used_before": 136,
+      "added": 39,
+      "free_after": 826
+    },
+    {
+      "bucket": "FTVE M1",
+      "used_before": 122,
+      "added": 44,
+      "free_after": 836
+    },
+    {
+      "bucket": "INDT M1",
+      "used_before": 112,
+      "added": 46,
+      "free_after": 841
+    },
+    {
+      "bucket": "DENT M1",
+      "used_before": 106,
+      "added": 36,
+      "free_after": 857
+    },
+    {
+      "bucket": "PSYC M1",
+      "used_before": 130,
+      "added": 12,
+      "free_after": 857
+    },
+    {
+      "bucket": "PHOT M1",
+      "used_before": 118,
+      "added": 26,
+      "free_after": 859
+    },
+    {
+      "bucket": "SPAN M1",
+      "used_before": 109,
+      "added": 28,
+      "free_after": 864
+    },
+    {
+      "bucket": "FASH M1",
+      "used_before": 99,
+      "added": 36,
+      "free_after": 866
+    },
+    {
+      "bucket": "ANTH M1",
+      "used_before": 98,
+      "added": 35,
+      "free_after": 868
+    },
+    {
+      "bucket": "CNST M1",
+      "used_before": 94,
+      "added": 35,
+      "free_after": 870
+    },
+    {
+      "bucket": "HUMA M1",
+      "used_before": 110,
+      "added": 17,
+      "free_after": 872
+    },
+    {
+      "bucket": "HVAC M1",
+      "used_before": 74,
+      "added": 53,
+      "free_after": 874
+    },
+    {
+      "bucket": "BSOT M9",
+      "used_before": 111,
+      "added": 13,
+      "free_after": 875
+    },
+    {
+      "bucket": "PHIL M1",
+      "used_before": 112,
+      "added": 9,
+      "free_after": 878
+    },
+    {
+      "bucket": "COMP M1",
+      "used_before": 97,
+      "added": 17,
+      "free_after": 885
+    },
+    {
+      "bucket": "HORT M1",
+      "used_before": 79,
+      "added": 42,
+      "free_after": 885
+    },
+    {
+      "bucket": "HTEC M1",
+      "used_before": 87,
+      "added": 21,
+      "free_after": 891
+    },
+    {
+      "bucket": "SLNA M1",
+      "used_before": 86,
+      "added": 26,
+      "free_after": 891
+    },
+    {
+      "bucket": "COSM M1",
+      "used_before": 68,
+      "added": 39,
+      "free_after": 892
+    },
+    {
+      "bucket": "ESCI M1",
+      "used_before": 86,
+      "added": 21,
+      "free_after": 892
+    },
+    {
+      "bucket": "COMM M1",
+      "used_before": 92,
+      "added": 13,
+      "free_after": 894
+    },
+    {
+      "bucket": "EMST M1",
+      "used_before": 76,
+      "added": 29,
+      "free_after": 894
+    },
+    {
+      "bucket": "VOCE M9",
+      "used_before": 79,
+      "added": 20,
+      "free_after": 900
+    },
+    {
+      "bucket": "JOUR M1",
+      "used_before": 86,
+      "added": 13,
+      "free_after": 901
+    },
+    {
+      "bucket": "GEOG M1",
+      "used_before": 85,
+      "added": 11,
+      "free_after": 903
+    },
+    {
+      "bucket": "POLS M1",
+      "used_before": 85,
+      "added": 10,
+      "free_after": 904
+    },
+    {
+      "bucket": "CHEM M1",
+      "used_before": 82,
+      "added": 12,
+      "free_after": 905
+    },
+    {
+      "bucket": "AVIA M1",
+      "used_before": 51,
+      "added": 42,
+      "free_after": 906
+    },
+    {
+      "bucket": "ELET M1",
+      "used_before": 74,
+      "added": 19,
+      "free_after": 906
+    },
+    {
+      "bucket": "AUTO M9",
+      "used_before": 71,
+      "added": 16,
+      "free_after": 912
+    },
+    {
+      "bucket": "DRAF M1",
+      "used_before": 55,
+      "added": 37,
+      "free_after": 912
+    },
+    {
+      "bucket": "ENGR M1",
+      "used_before": 74,
+      "added": 12,
+      "free_after": 913
+    },
+    {
+      "bucket": "FCSH M9",
+      "used_before": 79,
+      "added": 6,
+      "free_after": 914
+    },
+    {
+      "bucket": "RADT M1",
+      "used_before": 50,
+      "added": 34,
+      "free_after": 915
+    },
+    {
+      "bucket": "SOCI M1",
+      "used_before": 79,
+      "added": 4,
+      "free_after": 916
+    },
+    {
+      "bucket": "HLTH M9",
+      "used_before": 65,
+      "added": 16,
+      "free_after": 918
+    },
+    {
+      "bucket": "MACH M1",
+      "used_before": 55,
+      "added": 26,
+      "free_after": 919
+    },
+    {
+      "bucket": "AGRI M1",
+      "used_before": 56,
+      "added": 23,
+      "free_after": 920
+    },
+    {
+      "bucket": "GEOL M1",
+      "used_before": 50,
+      "added": 29,
+      "free_after": 920
+    },
+    {
+      "bucket": "MANU M1",
+      "used_before": 65,
+      "added": 15,
+      "free_after": 922
+    },
+    {
+      "bucket": "COMP M9",
+      "used_before": 73,
+      "added": 3,
+      "free_after": 923
+    },
+    {
+      "bucket": "RSPT M1",
+      "used_before": 49,
+      "added": 26,
+      "free_after": 924
+    },
+    {
+      "bucket": "AGAS M1",
+      "used_before": 55,
+      "added": 19,
+      "free_after": 925
+    },
+    {
+      "bucket": "CARP M1",
+      "used_before": 61,
+      "added": 12,
+      "free_after": 926
+    },
+    {
+      "bucket": "SOCS M1",
+      "used_before": 65,
+      "added": 8,
+      "free_after": 926
+    },
+    {
+      "bucket": "AUTB M1",
+      "used_before": 46,
+      "added": 25,
+      "free_after": 928
+    },
+    {
+      "bucket": "EDUC M1",
+      "used_before": 50,
+      "added": 18,
+      "free_after": 931
+    },
+    {
+      "bucket": "PHYS M1",
+      "used_before": 63,
+      "added": 5,
+      "free_after": 931
+    },
+    {
+      "bucket": "DSPS M9",
+      "used_before": 61,
+      "added": 5,
+      "free_after": 933
+    },
+    {
+      "bucket": "GRAF M1",
+      "used_before": 54,
+      "added": 16,
+      "free_after": 933
+    },
+    {
+      "bucket": "ITIS M9",
+      "used_before": 48,
+      "added": 16,
+      "free_after": 935
+    },
+    {
+      "bucket": "PLGL M1",
+      "used_before": 54,
+      "added": 12,
+      "free_after": 935
+    },
+    {
+      "bucket": "ELEC M9",
+      "used_before": 53,
+      "added": 10,
+      "free_after": 936
+    },
+    {
+      "bucket": "OLAD M9",
+      "used_before": 37,
+      "added": 25,
+      "free_after": 937
+    },
+    {
+      "bucket": "FREN M1",
+      "used_before": 48,
+      "added": 15,
+      "free_after": 938
+    },
+    {
+      "bucket": "MATH M9",
+      "used_before": 34,
+      "added": 26,
+      "free_after": 939
+    },
+    {
+      "bucket": "MUSI M9",
+      "used_before": 48,
+      "added": 12,
+      "free_after": 939
+    },
+    {
+      "bucket": "ELEC M1",
+      "used_before": 47,
+      "added": 12,
+      "free_after": 940
+    },
+    {
+      "bucket": "CHIN M1",
+      "used_before": 48,
+      "added": 12,
+      "free_after": 941
+    },
+    {
+      "bucket": "BCST M1",
+      "used_before": 23,
+      "added": 33,
+      "free_after": 943
+    },
+    {
+      "bucket": "HEIT M1",
+      "used_before": 44,
+      "added": 11,
+      "free_after": 944
+    },
+    {
+      "bucket": "EDUC M9",
+      "used_before": 36,
+      "added": 18,
+      "free_after": 945
+    },
+    {
+      "bucket": "PHSC M1",
+      "used_before": 46,
+      "added": 8,
+      "free_after": 945
+    },
+    {
+      "bucket": "BSKL M9",
+      "used_before": 48,
+      "added": 4,
+      "free_after": 947
+    },
+    {
+      "bucket": "CULN M9",
+      "used_before": 42,
+      "added": 10,
+      "free_after": 947
+    },
+    {
+      "bucket": "REAL M1",
+      "used_before": 44,
+      "added": 8,
+      "free_after": 947
+    },
+    {
+      "bucket": "ASTR M1",
+      "used_before": 43,
+      "added": 12,
+      "free_after": 948
+    },
+    {
+      "bucket": "ENGL M9",
+      "used_before": 42,
+      "added": 9,
+      "free_after": 948
+    },
+    {
+      "bucket": "INTD M1",
+      "used_before": 38,
+      "added": 24,
+      "free_after": 949
+    },
+    {
+      "bucket": "FCSH M1",
+      "used_before": 39,
+      "added": 10,
+      "free_after": 950
+    },
+    {
+      "bucket": "NUTR M1",
+      "used_before": 37,
+      "added": 9,
+      "free_after": 953
+    },
+    {
+      "bucket": "LEGL M1",
+      "used_before": 39,
+      "added": 5,
+      "free_after": 955
+    },
+    {
+      "bucket": "LIBR M1",
+      "used_before": 32,
+      "added": 12,
+      "free_after": 955
+    },
+    {
+      "bucket": "AUTD M1",
+      "used_before": 28,
+      "added": 16,
+      "free_after": 958
+    },
+    {
+      "bucket": "CDEV M9",
+      "used_before": 34,
+      "added": 6,
+      "free_after": 959
+    },
+    {
+      "bucket": "CNSM M1",
+      "used_before": 20,
+      "added": 20,
+      "free_after": 959
+    },
+    {
+      "bucket": "CNST M9",
+      "used_before": 34,
+      "added": 6,
+      "free_after": 959
+    },
+    {
+      "bucket": "JAPN M1",
+      "used_before": 33,
+      "added": 7,
+      "free_after": 959
+    },
+    {
+      "bucket": "PEDS M1",
+      "used_before": 36,
+      "added": 4,
+      "free_after": 959
+    },
+    {
+      "bucket": "ECON M1",
+      "used_before": 36,
+      "added": 3,
+      "free_after": 960
+    },
+    {
+      "bucket": "MUSC M1",
+      "used_before": 29,
+      "added": 10,
+      "free_after": 960
+    },
+    {
+      "bucket": "ENGT M1",
+      "used_before": 31,
+      "added": 7,
+      "free_after": 961
+    },
+    {
+      "bucket": "ARTS M9",
+      "used_before": 24,
+      "added": 13,
+      "free_after": 962
+    },
+    {
+      "bucket": "ETHN M1",
+      "used_before": 34,
+      "added": 3,
+      "free_after": 962
+    },
+    {
+      "bucket": "PUBS M1",
+      "used_before": 17,
+      "added": 20,
+      "free_after": 962
+    },
+    {
+      "bucket": "AGPS M1",
+      "used_before": 20,
+      "added": 16,
+      "free_after": 963
+    },
+    {
+      "bucket": "ARTH M1",
+      "used_before": 31,
+      "added": 5,
+      "free_after": 963
+    },
+    {
+      "bucket": "ITAL M1",
+      "used_before": 35,
+      "added": 3,
+      "free_after": 963
+    },
+    {
+      "bucket": "MULT M9",
+      "used_before": 32,
+      "added": 4,
+      "free_after": 963
+    },
+    {
+      "bucket": "PTAS M1",
+      "used_before": 28,
+      "added": 8,
+      "free_after": 963
+    },
+    {
+      "bucket": "PLMB M1",
+      "used_before": 30,
+      "added": 4,
+      "free_after": 965
+    },
+    {
+      "bucket": "BIOT M1",
+      "used_before": 24,
+      "added": 9,
+      "free_after": 966
+    },
+    {
+      "bucket": "ENVR M1",
+      "used_before": 26,
+      "added": 7,
+      "free_after": 966
+    },
+    {
+      "bucket": "MGMT M1",
+      "used_before": 31,
+      "added": 2,
+      "free_after": 966
+    },
+    {
+      "bucket": "GERM M1",
+      "used_before": 24,
+      "added": 8,
+      "free_after": 969
+    },
+    {
+      "bucket": "COUN M9",
+      "used_before": 26,
+      "added": 3,
+      "free_after": 970
+    },
+    {
+      "bucket": "FASH M9",
+      "used_before": 26,
+      "added": 3,
+      "free_after": 970
+    },
+    {
+      "bucket": "NRSV M1",
+      "used_before": 18,
+      "added": 11,
+      "free_after": 970
+    },
+    {
+      "bucket": "ESLN M9",
+      "used_before": 24,
+      "added": 4,
+      "free_after": 971
+    },
+    {
+      "bucket": "KINE M9",
+      "used_before": 22,
+      "added": 6,
+      "free_after": 971
+    },
+    {
+      "bucket": "ELCT M1",
+      "used_before": 18,
+      "added": 11,
+      "free_after": 973
+    },
+    {
+      "bucket": "ELET M9",
+      "used_before": 24,
+      "added": 2,
+      "free_after": 973
+    },
+    {
+      "bucket": "AGPR M1",
+      "used_before": 17,
+      "added": 8,
+      "free_after": 974
+    },
+    {
+      "bucket": "HTEC M9",
+      "used_before": 22,
+      "added": 3,
+      "free_after": 974
+    },
+    {
+      "bucket": "STMF M1",
+      "used_before": 20,
+      "added": 5,
+      "free_after": 974
+    },
+    {
+      "bucket": "LSKL M1",
+      "used_before": 23,
+      "added": 1,
+      "free_after": 976
+    },
+    {
+      "bucket": "READ M1",
+      "used_before": 20,
+      "added": 3,
+      "free_after": 976
+    },
+    {
+      "bucket": "CSTF M1",
+      "used_before": 3,
+      "added": 19,
+      "free_after": 977
+    },
+    {
+      "bucket": "FDNT M1",
+      "used_before": 19,
+      "added": 5,
+      "free_after": 977
+    },
+    {
+      "bucket": "NRSR M9",
+      "used_before": 20,
+      "added": 1,
+      "free_after": 978
+    },
+    {
+      "bucket": "THES M1",
+      "used_before": 15,
+      "added": 6,
+      "free_after": 978
+    },
+    {
+      "bucket": "GSMI M1",
+      "used_before": 2,
+      "added": 18,
+      "free_after": 979
+    },
+    {
+      "bucket": "PHMT M9",
+      "used_before": 17,
+      "added": 2,
+      "free_after": 980
+    },
+    {
+      "bucket": "CNSR M1",
+      "used_before": 16,
+      "added": 9,
+      "free_after": 981
+    },
+    {
+      "bucket": "SONO M1",
+      "used_before": 7,
+      "added": 11,
+      "free_after": 981
+    },
+    {
+      "bucket": "RUSS M1",
+      "used_before": 11,
+      "added": 5,
+      "free_after": 983
+    },
+    {
+      "bucket": "ARAB M1",
+      "used_before": 12,
+      "added": 5,
+      "free_after": 984
+    },
+    {
+      "bucket": "NUTR M9",
+      "used_before": 7,
+      "added": 8,
+      "free_after": 984
+    },
+    {
+      "bucket": "OCTA M1",
+      "used_before": 2,
+      "added": 13,
+      "free_after": 984
+    },
+    {
+      "bucket": "PHOT M9",
+      "used_before": 14,
+      "added": 1,
+      "free_after": 984
+    },
+    {
+      "bucket": "THTR M9",
+      "used_before": 10,
+      "added": 5,
+      "free_after": 984
+    },
+    {
+      "bucket": "EMST M9",
+      "used_before": 8,
+      "added": 6,
+      "free_after": 985
+    },
+    {
+      "bucket": "ENTR M1",
+      "used_before": 11,
+      "added": 3,
+      "free_after": 985
+    },
+    {
+      "bucket": "INDT M9",
+      "used_before": 13,
+      "added": 1,
+      "free_after": 985
+    },
+    {
+      "bucket": "OSHA M1",
+      "used_before": 11,
+      "added": 3,
+      "free_after": 985
+    },
+    {
+      "bucket": "TRNS M1",
+      "used_before": 6,
+      "added": 8,
+      "free_after": 985
+    },
+    {
+      "bucket": "IMNT M1",
+      "used_before": 11,
+      "added": 2,
+      "free_after": 986
+    },
+    {
+      "bucket": "MAKR M9",
+      "used_before": 3,
+      "added": 10,
+      "free_after": 986
+    },
+    {
+      "bucket": "PHMT M1",
+      "used_before": 11,
+      "added": 2,
+      "free_after": 986
+    },
+    {
+      "bucket": "VETT M1",
+      "used_before": 10,
+      "added": 3,
+      "free_after": 986
+    },
+    {
+      "bucket": "WEXP M1",
+      "used_before": 2,
+      "added": 11,
+      "free_after": 986
+    },
+    {
+      "bucket": "AGMA M1",
+      "used_before": 10,
+      "added": 2,
+      "free_after": 987
+    },
+    {
+      "bucket": "GEOG M9",
+      "used_before": 10,
+      "added": 2,
+      "free_after": 987
+    },
+    {
+      "bucket": "HORT M9",
+      "used_before": 9,
+      "added": 3,
+      "free_after": 987
+    },
+    {
+      "bucket": "SLPA M1",
+      "used_before": 5,
+      "added": 7,
+      "free_after": 987
+    },
+    {
+      "bucket": "ARTD M1",
+      "used_before": 9,
+      "added": 2,
+      "free_after": 988
+    },
+    {
+      "bucket": "EDTC M1",
+      "used_before": 7,
+      "added": 4,
+      "free_after": 988
+    },
+    {
+      "bucket": "ETHA M1",
+      "used_before": 7,
+      "added": 4,
+      "free_after": 988
+    },
+    {
+      "bucket": "FLKO M1",
+      "used_before": 10,
+      "added": 1,
+      "free_after": 988
+    },
+    {
+      "bucket": "RECR M1",
+      "used_before": 9,
+      "added": 2,
+      "free_after": 988
+    },
+    {
+      "bucket": "AGEH M1",
+      "used_before": 7,
+      "added": 3,
+      "free_after": 989
+    },
+    {
+      "bucket": "AGEQ M1",
+      "used_before": 4,
+      "added": 6,
+      "free_after": 989
+    },
+    {
+      "bucket": "CTRP M1",
+      "used_before": 2,
+      "added": 8,
+      "free_after": 989
+    },
+    {
+      "bucket": "HVAC M9",
+      "used_before": 8,
+      "added": 2,
+      "free_after": 989
+    },
+    {
+      "bucket": "MORT M1",
+      "used_before": 9,
+      "added": 1,
+      "free_after": 989
+    },
+    {
+      "bucket": "SPAN M9",
+      "used_before": 8,
+      "added": 2,
+      "free_after": 989
+    },
+    {
+      "bucket": "AGAB M1",
+      "used_before": 8,
+      "added": 1,
+      "free_after": 990
+    },
+    {
+      "bucket": "AGRI M9",
+      "used_before": 6,
+      "added": 3,
+      "free_after": 990
+    },
+    {
+      "bucket": "CSAI M1",
+      "used_before": 6,
+      "added": 3,
+      "free_after": 990
+    },
+    {
+      "bucket": "DRAF M9",
+      "used_before": 7,
+      "added": 2,
+      "free_after": 990
+    },
+    {
+      "bucket": "DSPS M1",
+      "used_before": 7,
+      "added": 2,
+      "free_after": 990
+    },
+    {
+      "bucket": "VIET M1",
+      "used_before": 8,
+      "added": 1,
+      "free_after": 990
+    },
+    {
+      "bucket": "BARB M1",
+      "used_before": 6,
+      "added": 2,
+      "free_after": 991
+    },
+    {
+      "bucket": "LABR M1",
+      "used_before": 4,
+      "added": 4,
+      "free_after": 991
+    },
+    {
+      "bucket": "SLNG M1",
+      "used_before": 3,
+      "added": 5,
+      "free_after": 991
+    },
+    {
+      "bucket": "TRNS M9",
+      "used_before": 4,
+      "added": 4,
+      "free_after": 991
+    },
+    {
+      "bucket": "CTRP M9",
+      "used_before": 0,
+      "added": 7,
+      "free_after": 992
+    },
+    {
+      "bucket": "GRAF M9",
+      "used_before": 6,
+      "added": 1,
+      "free_after": 992
+    },
+    {
+      "bucket": "PUBS M9",
+      "used_before": 6,
+      "added": 1,
+      "free_after": 992
+    },
+    {
+      "bucket": "CNSC M1",
+      "used_before": 2,
+      "added": 4,
+      "free_after": 993
+    },
+    {
+      "bucket": "COSM M9",
+      "used_before": 1,
+      "added": 5,
+      "free_after": 993
+    },
+    {
+      "bucket": "GERO M1",
+      "used_before": 5,
+      "added": 1,
+      "free_after": 993
+    },
+    {
+      "bucket": "REAL M9",
+      "used_before": 4,
+      "added": 2,
+      "free_after": 993
+    },
+    {
+      "bucket": "SURG M1",
+      "used_before": 4,
+      "added": 2,
+      "free_after": 993
+    },
+    {
+      "bucket": "AERO M1",
+      "used_before": 4,
+      "added": 1,
+      "free_after": 994
+    },
+    {
+      "bucket": "ARCH M9",
+      "used_before": 3,
+      "added": 2,
+      "free_after": 994
+    },
+    {
+      "bucket": "ARME M1",
+      "used_before": 1,
+      "added": 4,
+      "free_after": 994
+    },
+    {
+      "bucket": "BIOL M9",
+      "used_before": 3,
+      "added": 2,
+      "free_after": 994
+    },
+    {
+      "bucket": "CRIM M9",
+      "used_before": 4,
+      "added": 1,
+      "free_after": 994
+    },
+    {
+      "bucket": "HIST M9",
+      "used_before": 4,
+      "added": 1,
+      "free_after": 994
+    },
+    {
+      "bucket": "LIBT M1",
+      "used_before": 2,
+      "added": 3,
+      "free_after": 994
+    },
+    {
+      "bucket": "PORT M1",
+      "used_before": 4,
+      "added": 2,
+      "free_after": 994
+    },
+    {
+      "bucket": "READ M9",
+      "used_before": 4,
+      "added": 1,
+      "free_after": 994
+    },
+    {
+      "bucket": "CHEM M9",
+      "used_before": 3,
+      "added": 1,
+      "free_after": 995
+    },
+    {
+      "bucket": "NURP M1",
+      "used_before": 3,
+      "added": 1,
+      "free_after": 995
+    },
+    {
+      "bucket": "NURP M9",
+      "used_before": 3,
+      "added": 1,
+      "free_after": 995
+    },
+    {
+      "bucket": "ROBO M1",
+      "used_before": 3,
+      "added": 1,
+      "free_after": 995
+    },
+    {
+      "bucket": "SOCS M9",
+      "used_before": 3,
+      "added": 1,
+      "free_after": 995
+    },
+    {
+      "bucket": "TOUR M1",
+      "used_before": 0,
+      "added": 4,
+      "free_after": 995
+    },
+    {
+      "bucket": "ESCI M9",
+      "used_before": 2,
+      "added": 1,
+      "free_after": 996
+    },
+    {
+      "bucket": "JAPA M1",
+      "used_before": 2,
+      "added": 1,
+      "free_after": 996
+    },
+    {
+      "bucket": "MCOM M1",
+      "used_before": 1,
+      "added": 2,
+      "free_after": 996
+    },
+    {
+      "bucket": "WMST M1",
+      "used_before": 2,
+      "added": 1,
+      "free_after": 996
+    },
+    {
+      "bucket": "ATXX M1",
+      "used_before": 0,
+      "added": 2,
+      "free_after": 997
+    },
+    {
+      "bucket": "AVIA M9",
+      "used_before": 1,
+      "added": 1,
+      "free_after": 997
+    },
+    {
+      "bucket": "CNMA M1",
+      "used_before": 1,
+      "added": 1,
+      "free_after": 997
+    },
+    {
+      "bucket": "FLGH M1",
+      "used_before": 1,
+      "added": 1,
+      "free_after": 997
+    },
+    {
+      "bucket": "FLHM M1",
+      "used_before": 0,
+      "added": 2,
+      "free_after": 997
+    },
+    {
+      "bucket": "INTD M9",
+      "used_before": 1,
+      "added": 1,
+      "free_after": 997
+    },
+    {
+      "bucket": "LATN M1",
+      "used_before": 1,
+      "added": 1,
+      "free_after": 997
+    },
+    {
+      "bucket": "THES M9",
+      "used_before": 0,
+      "added": 2,
+      "free_after": 997
+    },
+    {
+      "bucket": "AFXX M1",
+      "used_before": 0,
+      "added": 1,
+      "free_after": 998
+    },
+    {
+      "bucket": "AGMA M9",
+      "used_before": 0,
+      "added": 1,
+      "free_after": 998
+    },
+    {
+      "bucket": "CARP M9",
+      "used_before": 0,
+      "added": 1,
+      "free_after": 998
+    },
+    {
+      "bucket": "DBAX M1",
+      "used_before": 0,
+      "added": 1,
+      "free_after": 998
+    },
+    {
+      "bucket": "DGME M1",
+      "used_before": 0,
+      "added": 1,
+      "free_after": 998
+    },
+    {
+      "bucket": "EPHO M9",
+      "used_before": 0,
+      "added": 1,
+      "free_after": 998
+    },
+    {
+      "bucket": "ESTI M1",
+      "used_before": 0,
+      "added": 1,
+      "free_after": 998
+    },
+    {
+      "bucket": "FILI M1",
+      "used_before": 0,
+      "added": 1,
+      "free_after": 998
+    },
+    {
+      "bucket": "GREE M1",
+      "used_before": 0,
+      "added": 1,
+      "free_after": 998
+    },
+    {
+      "bucket": "LEGL M9",
+      "used_before": 0,
+      "added": 1,
+      "free_after": 998
+    },
+    {
+      "bucket": "PLGL M9",
+      "used_before": 0,
+      "added": 1,
+      "free_after": 998
+    }
+  ]
+}

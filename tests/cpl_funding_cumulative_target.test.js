@@ -1,5 +1,12 @@
 // Cumulative targets + the per-priority PRICE FACTOR (Sam & Malone, 2026-08-04).
 //
+// ONE-POOL form (Sam adopted 2026-08-31): the pot behind a credit priority is
+// the CR SLICE of the institution's pre-bounds entitlement — sizePct × capScale
+// × laneShareOf(c).cr — over the ONE pool ($25,240,308, 118 institutions sized
+// by combined credit + noncredit FTES). For a college row that product reduces
+// to credit_ftes ÷ statewide COMBINED FTES, so the cumulative-target identity
+// below now carries the combined denominator and the one-pool net.
+//
 // The single global "target multiplier" is RETIRED. Each priority now carries its
 // own `factor`: a priority's PRICE per CPL FTES = factor × the base rate, and its
 // target = pot ÷ price. So a HIGHER factor pays MORE per FTES and the pot is
@@ -75,12 +82,22 @@ function targetOf(T, college) {
   const m = T._model();
   const rate = D.pool.ftes_rate_2026_27;
   const net = T._netCollege();
-  const totFtes = D.colleges.reduce(function (s, c) { return s + c.credit_ftes; }, 0);
+  // ONE POOL (2026-08-31): the statewide basis is COMBINED credit + noncredit
+  // FTES over all 118 institutions — the 115 college rows plus the noncredit-only
+  // three (Calbright at its 1,000-FTES stand-in, N3 a; Mt. SAC NC rides the
+  // Mt San Antonio row's noncredit_ftes). A credit priority's pot is the CR
+  // slice: sizePct × laneShareOf.cr = credit_ftes ÷ that combined total.
+  const totCombined = D.colleges.reduce(function (s, c) {
+    return s + (c.credit_ftes || 0) + (Number(c.noncredit_ftes) || 0);
+  }, 0) + D.feeders.filter(function (f) { return !f.nc_ftes_on_credit_row; })
+    .reduce(function (s, f) { return s + (f.noncredit_ftes_placeholder || f.noncredit_ftes); }, 0);
   const share = 0.50;   // P1 (the first _heads on the row)
-  const col = D.colleges.find(function (c) { return !m.floored[c.college] && !c.rural; });
+  // Unbound both ways: a floored college's target rides its pre-base share and a
+  // capped one's is scaled by capScale — the plain identity needs a plain row.
+  const col = D.colleges.find(function (c) { return !m.floored[c.college] && !m.capped[c.college]; });
   const tgt = targetOf(T, col.college);
-  const cumulative = (col.credit_ftes / totFtes) * net * share / rate;   // NO ÷ nYears
-  check("A: at factor 1.0 an unfloored college's target is its CUMULATIVE entitlement ÷ rate",
+  const cumulative = (col.credit_ftes / totCombined) * net * share / rate;   // NO ÷ nYears
+  check("A: at factor 1.0 an unbound college's target is its CUMULATIVE CR-slice entitlement ÷ rate",
     near(tgt, cumulative, 0.01));
   check("A: the global target multiplier is retired — the ×nYears is structural in prioTarget",
     D.default_years.length === 2 && !/targetMultiplier/.test(consumerSrc) && D.target_multiplier === undefined);

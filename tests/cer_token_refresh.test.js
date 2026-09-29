@@ -101,7 +101,7 @@ async function scenario1() {
   check("s1: exactly ONE refresh-token exchange (single-flight)", log.refreshCalls === 1);
   check("s1: both writes fired", log.writes.length === 2);
   check("s1: writes carry the RENEWED token", log.writes.every((w) => /\.bmV3$/.test(w.auth || "")));
-  check("s1: row shows ✓ Saved", txt(tr.querySelector(".cr-wl-save")) === "✓ Saved");
+  check("s1: row shows Saved", txt(tr.querySelector(".cr-wl-save")) === "Saved");
   const stored = JSON.parse(window.sessionStorage.getItem("cpl_sb"));
   check("s1: renewed session persisted (rotated refresh token)", stored && stored.refresh_token === "rt-2");
 }

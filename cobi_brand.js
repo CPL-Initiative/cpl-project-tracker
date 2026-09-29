@@ -6,19 +6,37 @@
 // <script src="cobi_brand.js"> tag lives in both HTMLs (plus the static
 // masthead structure the template carries).
 //
-// Layout (single-row "app bar"):  seal + COBI / tagline  |  "Where To?" search
-// (mounted into #cobiQsSlot by quickstart.js)  |  subtle utility cluster
-// (ℹ About popover · Manually Refresh COBI · Updated stamp).
+// Layout (single-row "app bar"):  seal + COBI  |  "Where To?" search (mounted
+// into #cobiQsSlot by quickstart.js)  |  utility cluster (Hi … identity chip ·
+// ℹ About popover · Updated stamp).
 //
 // Brand touches:
-//   * COBI wordmark in seal-navy with a gold "CPL" superscript.
+//   * COBI wordmark in seal-navy, bare.
 //   * ALPHA chip on the wordmark + a one-line alpha-testing notice row,
 //     both injected at runtime so the daily <h1> regen can't strand them.
 //   * ℹ About popover holding the generator-injected Project Description /
-//     Attachments / Cheat Sheet (anchored on the hidden #cobi-mamba) plus the
-//     static "Today's painting" link (→ window.CPL_FIRST_LIGHT.open()).
+//     Attachments / Cheat Sheet (anchored on the hidden #cobi-mamba), the
+//     static "Today's painting" link (→ window.CPL_FIRST_LIGHT.open()), and
+//     the relocated "Manually Refresh COBI" button.
 //
-// (The Kobe "Mamba" subtitle + 8→24 wink were retired 2026-06-22 — Sam.)
+// ⚠️ THE MASTHEAD IS A GRID THAT MUST BE ABLE TO SHRINK (Sam, 2026-09-04:
+// "the header is all a mess when I zoom in or out, it gets messed up and
+// ugly"). Zoom changes the CSS-pixel width, so a track that cannot shrink
+// below its content does not wrap — it OVERFLOWS, and the neighbouring
+// cluster is painted straight through it. That is what put the site
+// switcher and the 🔒 control on top of the "Where To?" box. Two rules keep
+// it honest, and neither is cosmetic:
+//   * every flexible track is minmax(0,1fr), never a bare 1fr — a bare `1fr`
+//     is minmax(AUTO,1fr), so it silently refuses to go below its content;
+//   * every nowrap cluster carries min-width:0 so it may shrink and, at the
+//     bottom, ellipsize.
+// The clutter was the other half: the tagline, the CPL superscript and the
+// org tag left with this change, and Refresh moved into About, so the row
+// now carries four things instead of eight.
+//
+// (The Kobe "Mamba" subtitle + 8→24 wink were retired 2026-06-22 — Sam.
+// The gold "CPL" superscript and the per-site org tag went 2026-09-04 —
+// Sam: "delete the CPL superscript and all the other org tags for the logo".)
 (function () {
   "use strict";
 
@@ -34,49 +52,109 @@
       // positioned About popover (z-index:300, trapped inside that context)
       // rendered BEHIND the cards. 150 clears all page content but stays under
       // the mobile rail/hamburger (z 199-201) so they still cover the header.
-      // Left brand | flexible spacer | right search | right utility. The search
-      // moved OFF-center to the right (Sam, 2026-07-14) so the site-switcher in
-      // the brand cluster can't overlap it at intermediate widths.
-      ".header{display:grid;grid-template-columns:auto 1fr auto auto;",
+      // Brand | search (absorbs the slack) | utility. THREE tracks, not four:
+      // the old `auto 1fr auto auto` gave the search AND the utility a track
+      // that could not shrink, with a spacer between them that could not
+      // shrink either (a bare 1fr is minmax(auto,1fr)). Under zoom the row
+      // overflowed and the clusters painted over each other. Now the middle
+      // track is the elastic one and it is allowed to reach zero.
+      ".header{display:grid;grid-template-columns:auto minmax(0,1fr) auto;",
       "position:relative;z-index:150;",
       "align-items:center;column-gap:1.1rem;row-gap:.5rem;padding:.6rem 1.5rem;}",
       ".cobi-brand{grid-column:1;justify-self:start;display:flex;align-items:center;gap:.7rem;min-width:0;}",
-      ".cobi-seal{flex:0 0 auto;width:60px;height:60px;object-fit:contain;display:block;}",
+      // The seal is hidden (Sam, 2026-09-08: "hide the CO logo on the COBI
+      // header ... We'll just leave it plain COBI for now"). Hidden here rather
+      // than deleted from the two HTMLs: this file is one static asset that
+      // covers both (Rule 4) and the daily regen cannot undo it, and putting the
+      // mark back is one word. display:none also takes it out of the
+      // accessibility tree, which is right for a mark that names nothing the
+      // <h1> does not already say.
+      ".cobi-seal{display:none;}",
       ".cobi-brandtext{display:flex;flex-direction:column;line-height:1.12;min-width:0;}",
       ".header h1{font-family:'Playfair Display',Georgia,serif;font-size:1.6rem;font-weight:800;",
-      "letter-spacing:.08em;color:var(--seal-blue,#00356B);margin:0;white-space:nowrap;}",
-      ".header h1 .cobi-num{font-size:.40em;vertical-align:super;margin-left:.16em;font-weight:800;",
-      "letter-spacing:.05em;color:var(--mustard-text,#8B6800);}",
+      "letter-spacing:.08em;color:var(--seal-blue-text,#002F6D);margin:0;white-space:nowrap;}",
       ".cobi-alpha{display:inline-block;margin-left:.5rem;padding:.08rem .38rem;vertical-align:.18em;",
       "font-family:'Source Sans 3',Arial,sans-serif;font-size:.58rem;font-weight:800;letter-spacing:.10em;",
+      // ⚠️ --seal-blue, NOT the text grade: this ink sits on the MUSTARD FILL, not
+      // on the page ground, so it stays navy in both themes (5.2:1 either way).
+      // The on-dark grade here would be #7DA1D4 on #E3B341 — 1.9:1.
       "text-transform:uppercase;color:var(--seal-blue,#00356B);background:var(--mustard-fill,#E3B341);",
       "border-radius:3px;white-space:nowrap;}",
-      ".cobi-alpha-note{grid-column:1 / -1;order:8;margin:0;padding:.35rem .1rem .1rem;",
-      "border-top:1px solid var(--border,rgba(28,28,26,.14));text-align:center;",
-      "font-family:'Source Sans 3',Arial,sans-serif;font-size:.88rem;font-style:italic;",
-      "font-weight:600;line-height:1.4;color:var(--mustard-text,#8B6800);}",
-      ".cobi-tagline{font-family:'Source Sans 3',Arial,sans-serif;font-size:.8rem;font-weight:600;",
-      "letter-spacing:.02em;color:var(--text-muted,#5C5C55);margin:.1rem 0 0;white-space:nowrap;}",
+      // LOW-KEY, deliberately (Sam, 2026-09-04: "remove the formatting around
+      // the text and shrink the font and make it unbold so it's just a low-key
+      // part of the header"). This reverses his 2026-08-18 call for a bordered,
+      // italic, gold line a step LARGER than the rest — that treatment made a
+      // standing condition shout on every tab, and a page where everything
+      // shouts has no way left to shout.
+      //
+      // ⚠️ --text-muted, NOT --text-faint. The token table calls faint
+      // "decorative only — never essential text", and an accuracy caution the
+      // reader is expected to act on is essential text however quiet it looks.
+      ".cobi-alpha-note{grid-column:1 / -1;order:8;margin:0;padding:.15rem .1rem .1rem;",
+      "text-align:center;",
+      "font-family:'Source Sans 3',Arial,sans-serif;font-size:.74rem;",
+      "font-weight:400;line-height:1.45;color:var(--text-muted,#5C5C55);}",
       // ── center search slot (quickstart mounts here) ──
-      ".cobi-qs-slot{grid-column:3;justify-self:end;width:min(360px,40vw);min-width:0;}",
+      // grid-column 2 = the elastic track. width:100% with a max, NOT a fixed
+      // width: the track may shrink to nothing, and the slot has to follow it
+      // down rather than overflow into the utility cluster.
+      ".cobi-qs-slot{grid-column:2;justify-self:end;width:100%;max-width:360px;min-width:0;}",
       "#cobiQsSlot #qs-chat{margin:0;padding:0;background:none;border:none;box-shadow:none;position:static;}",
-      "#cobiQsSlot .qs-label{display:inline-flex;align-items:center;gap:.3rem;margin:0;",
-      "font-size:.85rem;font-weight:700;color:var(--text-strong,#1C1C1A);white-space:nowrap;}",
-      "#cobiQsSlot .qs-row{display:flex;align-items:center;gap:.5rem;}",
+      "#cobiQsSlot .qs-label{display:inline-flex;align-items:center;gap:.3rem;margin:0;flex:0 1 auto;",
+      "font-size:.85rem;font-weight:700;color:var(--text-strong,#1C1C1A);white-space:nowrap;",
+      "overflow:hidden;text-overflow:ellipsis;}",
+      "#cobiQsSlot .qs-row{display:flex;align-items:center;gap:.5rem;min-width:0;}",
       "#cobiQsSlot .qs-status{font-size:.72rem;margin:.15rem 0 0;min-height:0;}",
       // ── utility cluster (right) ──
-      ".cobi-utility{grid-column:4;justify-self:end;display:flex;align-items:center;justify-content:flex-end;",
-      "flex-wrap:wrap;gap:.1rem .55rem;}",
+      ".cobi-utility{grid-column:3;justify-self:end;display:flex;align-items:center;justify-content:flex-end;",
+      "flex-wrap:wrap;gap:.1rem .55rem;min-width:0;}",
+      // ⚠️ --text-muted, NOT --text-faint. Measured on the rendered page, faint
+      // gave these 3.53:1 against the 4.5:1 small-text floor — a genuine AA
+      // failure on a CONTROL LABEL, and the token table already says faint is
+      // "decorative only — never essential text". min-height 24px meets WCAG
+      // 2.2 SC 2.5.8 (target size); these were 19px tall.
       ".cobi-util-link,.header #refreshBtn{font-family:'Source Sans 3',Arial,sans-serif!important;",
-      "font-size:.74rem!important;font-weight:600!important;color:var(--text-faint,#87877F)!important;",
+      "font-size:.74rem!important;font-weight:600!important;color:var(--text-muted,#5C5C55)!important;",
       "background:none!important;border:none!important;cursor:pointer;text-decoration:none!important;",
-      "padding:.15rem .3rem!important;display:inline-flex!important;align-items:center;gap:.25rem;",
+      "padding:.25rem .3rem!important;min-height:24px;box-sizing:border-box;",
+      "display:inline-flex!important;align-items:center;gap:.25rem;",
       "transition:color .15s;white-space:nowrap;letter-spacing:0!important;border-radius:0!important;}",
       ".cobi-util-link:hover,.header #refreshBtn:hover{color:var(--cobalt,#0047AB)!important;background:none!important;}",
       ".cobi-about{position:relative;order:1;}",
-      ".header #refreshBtn{order:2;}",
-      ".cobi-utility .last-updated{order:9;flex-basis:100%;text-align:right;font-size:.7rem!important;",
-      "color:var(--text-faint,#87877F)!important;margin:.05rem 0 0!important;font-weight:400;}",
+      // The About caret is DRAWN, matching the Theme selector's exactly, so the
+      // two "opens something" controls in the strip read as one set — Sam,
+      // 2026-09-08: "as clean and consistent as possible". It replaces a typed
+      // ▾ (and a typed ℹ before the word), which the plain-words rule bars and
+      // which a screen reader read out as part of the button's name:
+      // "black down-pointing small triangle". currentColor keeps it right on
+      // the night ground with no second rule.
+      "#cobiAboutBtn{position:relative;padding-right:.85rem!important;}",
+      "#cobiAboutBtn::after{content:\"\";position:absolute;right:.2rem;top:50%;",
+      "width:0;height:0;border-left:3.5px solid transparent;border-right:3.5px solid transparent;",
+      "border-top:4px solid currentColor;transform:translateY(-2px);pointer-events:none;}",
+      // Open state points the caret up — the state is then carried by shape as
+      // well as by aria-expanded, which is "color is never the only signal"
+      // applied to a control that has no color change at all.
+      "#cobiAboutBtn[aria-expanded=\"true\"]::after{border-top:0;border-bottom:4px solid currentColor;}",
+      // Refresh lives INSIDE the About panel now (Sam, 2026-09-04). It keeps
+      // .cobi-util-link for the shared hover/focus treatment, so give it the
+      // panel's own block-link geometry rather than the strip's inline one.
+      ".cobi-about-panel #refreshBtn{order:0;display:flex!important;width:100%;",
+      "font-size:.82rem!important;font-weight:600!important;color:var(--cobalt,#0047AB)!important;",
+      "padding:.3rem 0!important;}",
+      ".cobi-about-panel #refreshBtn:hover{text-decoration:underline;}",
+      // The stamp says how fresh the figures are — that is data a reader acts
+      // on, so it takes the muted TEXT token too (was 3.53:1 on faint).
+      // ⚠️ NO flex-basis:100% any more (Sam, 2026-09-08: "as clean and
+      // consistent as possible"). It forced the stamp onto a LINE OF ITS OWN,
+      // so the masthead carried three rows for two rows of content. Inline it
+      // and the row count drops by one without hiding the figure — and hiding
+      // it was the alternative, which the 2026-09-04 note rules out: the stamp
+      // says how fresh the numbers are, and that is data a reader acts on.
+      // It still wraps on its own below the breakpoint, because the cluster is
+      // flex-wrap:wrap and it is last.
+      ".cobi-utility .last-updated{order:9;font-size:.7rem!important;",
+      "color:var(--text-muted,#5C5C55)!important;margin:0!important;font-weight:400;white-space:nowrap;}",
       // ── About popover ──
       ".cobi-about-panel{position:absolute;right:0;top:calc(100% + .4rem);z-index:300;width:320px;",
       "background:var(--surface-opaque,#fff);border:1px solid var(--border-strong,rgba(28,28,26,.30));",
@@ -101,33 +179,89 @@
       ".cobi-about-panel .attach-btn:hover{text-decoration:underline!important;background:none!important;}",
       ".cobi-about-panel>div[style]{margin-top:.1rem!important;}",
       // ── responsive: search drops to its own row under ~1000px ──
-      "@media (max-width:1180px){.header{grid-template-columns:1fr auto;}",
-      ".cobi-brand{grid-column:1;order:1;}.cobi-utility{grid-column:2;order:2;}",
-      ".cobi-qs-slot{grid-column:1 / -1;order:5;justify-self:stretch;width:auto;",
-      "border-top:1px solid var(--border,rgba(28,28,26,.14));padding-top:.5rem;}}"
+      // Below ~1000px the search takes its own full-width row. minmax(0,…) on
+      // both tracks again — the brand and the utility cluster must be able to
+      // shrink past their content rather than push the row wide.
+      "@media (max-width:1000px){.header{grid-template-columns:minmax(0,1fr) minmax(0,auto);",
+      "padding:.6rem 1rem;}",
+      // justify-self:stretch, NOT the wide layout's `start`: a non-stretch
+      // justification sizes the item to its own content, which is how the brand
+      // cluster came to be wider than the track it sits in.
+      ".cobi-brand{grid-column:1;order:1;justify-self:stretch;}",
+      ".cobi-utility{grid-column:2;order:2;justify-self:stretch;justify-content:flex-end;}",
+      ".cobi-qs-slot{grid-column:1 / -1;order:5;justify-self:stretch;width:auto;max-width:none;",
+      "border-top:1px solid var(--border,rgba(28,28,26,.14));padding-top:.5rem;}}",
+      // Single column below ~560px (presentation rule: mobile-friendly, always).
+      "@media (max-width:560px){.header{grid-template-columns:minmax(0,1fr);}",
+      ".cobi-brand{grid-column:1;justify-self:stretch;}",
+      ".cobi-utility{grid-column:1;justify-self:stretch;justify-content:flex-start;}",
+      ".header h1{font-size:1.35rem;}}",
+      // ── the live-session banner (DR-26) ──
+      // A strip above the header, not inside it: the header is a three-column
+      // grid whose tracks are already tight, and a fourth thing in that row is
+      // what put controls on top of each other before.
+      ".cobi-live{display:flex;align-items:center;flex-wrap:wrap;gap:.5rem .9rem;",
+      "padding:.5rem 1.5rem;background:var(--seal-blue,#00356B);color:#fff;",
+      "font-family:'Source Sans 3',Arial,sans-serif;font-size:.86rem;line-height:1.4;}",
+      ".cobi-live b{font-weight:700;}",
+      ".cobi-live a{color:#fff;text-decoration:underline;text-underline-offset:2px;font-weight:600;}",
+      ".cobi-live a:hover{text-decoration-thickness:2px;}",
+      ".cobi-live .cobi-live-note{opacity:.88;}",
+      ".cobi-live button{margin-left:auto;background:transparent;border:1px solid rgba(255,255,255,.45);",
+      "color:#fff;font:inherit;font-size:.8rem;padding:3px 10px;border-radius:4px;cursor:pointer;}",
+      ".cobi-live button:hover{background:rgba(255,255,255,.14);}",
+      ".cobi-live :focus-visible{outline:3px solid #fff;outline-offset:2px;}",
+      /* The curator-only expiry note reuses .cobi-live wholesale and adds NO
+         color of its own. A quieter ground was drafted and cut: it would have
+         needed a fill role neither palette defines, and the burden of proof is
+         on the mark. Nobody reads "Your live-session banner expired" as an
+         announcement that one is live — the words carry it, which is what the
+         plain-words rule asks for. */
+      "@media (max-width:560px){.cobi-live{padding:.5rem .9rem;}",
+      ".cobi-live button{margin-left:0;}}",
+      /* ── dark (cpl_theme.js's contract) ──────────────────────────────────
+       * NOTHING HERE, and that is the point. The wordmark WAS overridden here
+       * with a scoped `:root[data-theme="dark"] .header h1` rule, because
+       * --seal-blue stays the navy in dark (200+ fills depend on it) and
+       * #002F6D on the night ground is 1.29:1 — an invisible brand on all 38
+       * tabs. That override is gone: the palette now carries --seal-blue-text
+       * as its own token, the h1 above reads it, and one token beats a special
+       * case bolted onto one selector. The alpha chip and the live banner need
+       * nothing either — both are ink on the navy FILL, which the ground never
+       * touches. */
     ].join("");
     document.head.appendChild(s);
   }
 
-  // The gold "CPL" superscript, injected at runtime so the daily regen of the
-  // <h1> (which resets it to a bare "COBI") can never strand it.
-  function addSuperscript() {
+  // The gold "CPL" superscript and the per-site org tag were REMOVED 2026-09-04
+  // (Sam: "delete the CPL superscript and all the other org tags for the logo").
+  // Both wrote a .cobi-num span into the <h1>; this sweeps any that survives a
+  // cached copy of cobi_orgs.js, so a stale asset cannot put the tag back.
+  function dropWordmarkTags() {
     var h1 = document.querySelector(".header h1");
-    if (!h1 || h1.querySelector(".cobi-num") || !/COBI/i.test(h1.textContent || "")) return;
-    var sup = document.createElement("span");
-    sup.className = "cobi-num";
-    sup.textContent = "CPL";
-    sup.setAttribute("aria-label", "Credit for Prior Learning");
-    h1.appendChild(sup);
+    if (!h1) return;
+    var tags = h1.querySelectorAll(".cobi-num");
+    Array.prototype.forEach.call(tags, function (t) { t.parentNode.removeChild(t); });
   }
 
   // Alpha-testing notice. COBI is not a finished product and its figures are
   // not yet trustworthy enough to quote, so the masthead says so on every tab:
   // an ALPHA chip on the wordmark (survives the daily <h1> regen, same reason
   // as the CPL superscript) plus one centered, italic line under the brand.
-  var ALPHA_NOTE = "COBI is an experimental data suite in Alpha development " +
-                   "phase. Features and figures may be incomplete or wrong \u2014 " +
-                   "please don\u2019t cite or share them outside the team.";
+  // ⚠️ NOT "don't cite or share them outside the team" — that was the wording
+  // until 2026-09-04, and Sam corrected it as FALSE: COBI's figures are shared
+  // outward by design, through Sierra and the CPL Fact Sheet among others. A
+  // banner forbidding what the product does daily teaches readers to ignore the
+  // banner. The true caution is about VERIFYING an alpha figure, not withholding
+  // it — "always doublecheck and revise outputs as needed" (his words).
+  //
+  // The second sentence is his other ask: say what COBI answers FROM, and that
+  // the knowledge base is governed rather than open — no personal information
+  // enters it, and it reaches no outside data source.
+  var ALPHA_NOTE = "Alpha: figures may be incomplete or wrong \u2014 always " +
+                   "double-check and revise outputs as needed. COBI answers from " +
+                   "our own curated knowledge base: no personal information in, " +
+                   "no outside data sources.";
 
   function addAlphaNotice() {
     var h1 = document.querySelector(".header h1");
@@ -165,6 +299,20 @@
     document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
   }
 
+  // "Manually Refresh COBI" belongs in the About menu, not the masthead strip
+  // (Sam, 2026-09-04). MOVED at runtime rather than re-homed in the markup,
+  // because the generator re-injects this button after .last-updated on every
+  // daily run (excel_to_dashboard.py) — an HTML edit would be undone by the
+  // next cron, while a move survives it and needs no Rule-4 mirror. If this
+  // script never runs the button simply stays where the generator put it,
+  // which is the honest fallback.
+  function relocateRefresh() {
+    var btn = document.getElementById("refreshBtn");
+    var links = document.querySelector("#cobiAboutPanel .cobi-about-links");
+    if (!btn || !links || btn.closest("#cobiAboutPanel")) return;
+    links.insertBefore(btn, links.firstChild);
+  }
+
   // The static "Today's painting" link in About opens First Light's modal.
   function wirePainting() {
     var link = document.getElementById("cobiPaintingLink");
@@ -178,18 +326,264 @@
   }
 
   var inited = false;
+  /* ── the live-session banner (DR-26; Sam, 2026-09-08) ───────────────────────
+   * "a banner ... that notes when I am working in a cloud session in CC and
+   * include a link to the session for any team member who might want to hop in
+   * and observe."
+   *
+   * ⚠️ IT ANNOUNCES A SHARED SESSION; IT DOES NOT SHARE ONE. A Claude Code
+   * cloud session is PRIVATE to the account that created it, and sharing is a
+   * per-session toggle in claude.ai. So the banner is driven by a row Sam sets
+   * AFTER he has set that toggle — option A of the two he was offered — and it
+   * can never hand the team a link they cannot open. The table's own checks
+   * refuse an active row with no link, and refuse any link that is not a
+   * claude.ai session.
+   *
+   * ⚠️ AND IT DOES NOT SAY "WATCH". The docs are plain that a recipient sees
+   * the session's state when they OPEN the link and their view does not update
+   * in real time. Promising live observation would be promising something the
+   * product does not do, so the wording says to reload.
+   *
+   * Fails closed at every step: no row, an inactive row, an expired one, or a
+   * fetch that does not answer all render nothing. */
+  var LIVE_URL = "https://hvuwhnbuahrtptokpqfh.supabase.co/rest/v1/cobi_live_session"
+               + "?id=eq.1&select=active,session_url,note,expires_at";
+  var LIVE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2dXdobmJ1YWhydHB0b2twcWZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1NzI0ODEsImV4cCI6MjA5MTE0ODQ4MX0.p0q-93iTM0GkF2z8_q7Vvl1tsX9SFGMM-W7Wdx7WfmM";
+  var LIVE_DISMISS = "cobi_live_dismissed";
+  /* ⚠️ A SEPARATE KEY, ON PURPOSE. Dismissing the expired-row diagnostic must
+   * not hide the real banner a fresh row produces, and the two are keyed on
+   * different values — the diagnostic on the expiry it is reporting, so a new
+   * expiry reports itself again. */
+  var LIVE_DISMISS_EXPIRED = "cobi_live_expired_dismissed";
+
+  /* ⭐ THE BANNER IS FOR THE TEAM, NOT FOR COLLEGES (Sam, 2026-09-08:
+   * "limit the folks who can use the banner link to users on the MAP Team
+   * Users (not MAP College Users)").
+   *
+   * ⚠️ THE GATE IS IN RLS, NOT HERE. `cobi_live_session` reads under
+   * `is_map_team() OR team_pass_ok()`: a signed-in member of `team_members`
+   * (org='MAP'), the roster on the TEAM & RACI tab — not map_college_users,
+   * which is College Users & Roles and a different 2,801 people — or a holder
+   * of the shared team phrase. So a plain visitor gets ZERO rows and the banner
+   * cannot render for the public even if this code were wrong. Verified against
+   * the live table as anon with no phrase: 0 rows. What follows only decides
+   * whether the reader's own credentials travel with the read.
+   *
+   * TWO WAYS IN, AND NEITHER IS A SIGN-IN EACH VISIT (Sam, 2026-09-08: "they
+   * wouldn't need to be signed in to see the header, just ensure that they are
+   * on the team table"):
+   *   * the reader's own magic-link token in `cpl_sb` — exact, matched by
+   *     email against the Team & RACI roster;
+   *   * the shared team phrase in `cpl_team_pass` — entered ONCE and kept in
+   *     the browser, which is COBI's existing team credential and the reason a
+   *     team member does not have to log in every time.
+   *
+   * ⚠️ THE PHRASE IS A SHARED SECRET, NOT AN IDENTITY. It admits whoever holds
+   * it: wider than the 42-row roster, narrower than the public. That is the
+   * trade low friction buys, and it is why WRITING the banner does not accept
+   * it — a phrase holder may see the banner and must never be able to point it
+   * somewhere.
+   *
+   * ⚠️ PostgREST rejects an empty or garbled Bearer with 401, so with no
+   * reviewer token the anon key rides in its place and the phrase header is
+   * what opens the row. With neither we do not ask at all: the row is
+   * unreadable, and a guaranteed empty request on every page load is noise for
+   * anyone reading a network panel. */
+  function liveAuthHeaders() {
+    var tok = null, pass = null;
+    try {
+      var sess = JSON.parse(sessionStorage.getItem("cpl_sb") || "null");
+      if (sess && typeof sess.access_token === "string" &&
+          sess.access_token.split(".").length === 3 && sess.access_token.length > 40) {
+        tok = sess.access_token;
+      }
+    } catch (e) {}
+    try { pass = localStorage.getItem("cpl_team_pass") || null; } catch (e) {}
+    if (!tok && !pass) return null;
+    var h = { apikey: LIVE_ANON, Authorization: "Bearer " + (tok || LIVE_ANON) };
+    if (pass) h["x-team-pass"] = pass;
+    return h;
+  }
+
+  /* How long ago, in the words a person would use. Rounds DOWN past the hour so
+   * the number is never larger than the elapsed time. Returns null for a date
+   * this engine cannot read — there is nothing truthful to say about NaN, and
+   * the caller has a different sentence for that case. */
+  function liveAgo(ms) {
+    if (isNaN(ms)) return null;
+    var s = Math.max(0, Math.round((Date.now() - ms) / 1000));
+    if (s < 3600) { var m = Math.max(1, Math.round(s / 60)); return m + (m === 1 ? " minute ago" : " minutes ago"); }
+    if (s < 86400) { var h = Math.max(1, Math.floor(s / 3600)); return h + (h === 1 ? " hour ago" : " hours ago"); }
+    var d = Math.max(1, Math.floor(s / 86400));
+    return d + (d === 1 ? " day ago" : " days ago");
+  }
+
+  /* The curator-only line that replaces a silent nothing.
+   *
+   * ⚠️ ITS OWN id, NOT "cobi-live". Two suites assert `!getElementById(
+   * "cobi-live")` on an expired row and on an unreadable one, and both mean
+   * exactly what they say: the banner that CARRIES THE LINK must never render
+   * for a dead session. That stays true. Reusing the id would have flipped two
+   * green checks red and, worse, made the wrong thing pass later. The class IS
+   * shared, so the strip inherits every rule the banner already proved. */
+  function liveExpiredNote(row) {
+    var header = document.querySelector(".header");
+    if (!header || document.getElementById("cobi-live")
+        || document.getElementById("cobi-live-stale")) return null;
+    try {
+      if (window.localStorage &&
+          localStorage.getItem(LIVE_DISMISS_EXPIRED) === String(row.expires_at)) return null;
+    } catch (e) { /* private window: show it */ }
+
+    var ago = liveAgo(new Date(row.expires_at).getTime());
+
+    var bar = document.createElement("div");
+    bar.id = "cobi-live-stale";
+    bar.className = "cobi-live cobi-live-stale";
+    bar.setAttribute("role", "status");
+
+    var lead = document.createElement("b");
+    lead.textContent = ago
+      ? "Your live-session banner expired " + ago + "."
+      : "Your live-session banner is hidden: its expiry is not a readable date.";
+    bar.appendChild(lead);
+
+    var note = document.createElement("span");
+    note.className = "cobi-live-note";
+    note.textContent = ago
+      ? "Only the MAP team sees this line. Set a new expires_at on the "
+        + "cobi_live_session row to announce a session again."
+      : "Only the MAP team sees this line. expires_at on the cobi_live_session "
+        + "row reads " + String(row.expires_at) + "; a full ISO timestamp brings "
+        + "the banner back.";
+    bar.appendChild(note);
+
+    var x = document.createElement("button");
+    x.type = "button";
+    x.textContent = "Hide";
+    x.setAttribute("aria-label", "Hide this notice");
+    x.onclick = function () {
+      try { localStorage.setItem(LIVE_DISMISS_EXPIRED, String(row.expires_at)); } catch (e) {}
+      if (bar.parentNode) bar.parentNode.removeChild(bar);
+    };
+    bar.appendChild(x);
+
+    header.parentNode.insertBefore(bar, header);
+    return bar;
+  }
+
+  function liveBannerRender(row) {
+    if (!row || !row.active || !row.session_url) return null;
+    /* ⚠️ AN UNPARSEABLE EXPIRY FAILED *OPEN*, WHICH IS THE ONE THING THIS BLOCK
+     * PROMISES NOT TO DO. `NaN <= Date.now()` is false, so a date this engine
+     * cannot read skipped the check and the banner would have announced a dead
+     * session forever. PostgREST returns +00:00 today and parses fine — the bug
+     * was latent, not live — but "fails closed at every step" has to be true of
+     * the value the server MIGHT send, not only the one it sends now: drop the
+     * colon (a legal-looking `+00`) and V8 returns Invalid Date. Ask for a
+     * future instant and let every other answer, NaN included, hide it. */
+    /* ⭐ AN EXPIRED ROW AND AN UNBUILT FEATURE LOOK IDENTICAL TO THE PERSON WHO
+     * SET THE ROW. Sam set this one, saw nothing, and reported the banner as
+     * never built (2026-09-10); it had simply expired two days earlier and was
+     * failing closed exactly as designed. Failing closed is right — a stale link
+     * must stop advertising itself — but failing SILENTLY costs the only person
+     * who can fix it the time to diagnose it.
+     *
+     * ⚠️ THE DIAGNOSTIC IS SAFE BY CONSTRUCTION, NOT BY A CHECK HERE. Reaching
+     * this line means the reader already read the row, and `cobi_live_session`
+     * is gated in RLS by `is_map_team() OR team_pass_ok()`. A plain visitor gets
+     * ZERO rows and never enters this function, so there is no audience to leak
+     * to and no second gate to keep in step with the first.
+     * ⚠️ It does NOT link the session. The link is what expired; offering it
+     * would invite the team into a dead session, which is the thing the expiry
+     * exists to prevent. It names the state and what to do about it. */
+    if (row.expires_at && !(new Date(row.expires_at).getTime() > Date.now()))
+      return liveExpiredNote(row);
+    // A viewer who closed THIS banner does not see it again; a new link is a
+    // new banner. Keyed on the url so dismissing one never hides the next.
+    try {
+      if (window.localStorage &&
+          localStorage.getItem(LIVE_DISMISS) === row.session_url) return null;
+    } catch (e) { /* private window: show it */ }
+
+    var header = document.querySelector(".header");
+    if (!header || document.getElementById("cobi-live")) return null;
+
+    var bar = document.createElement("div");
+    bar.id = "cobi-live";
+    bar.className = "cobi-live";
+    bar.setAttribute("role", "status");
+
+    var lead = document.createElement("b");
+    lead.textContent = "Working in Claude Code right now.";
+    bar.appendChild(lead);
+
+    var a = document.createElement("a");
+    a.href = row.session_url;
+    a.target = "_blank";
+    a.rel = "noopener";
+    a.textContent = "Open the session";
+    bar.appendChild(a);
+
+    var note = document.createElement("span");
+    note.className = "cobi-live-note";
+    /* ⚠️ THE SECOND SENTENCE IS THE WHOLE COST OF DR-26 OPTION B (Sam,
+     * 2026-09-10). A session announces itself now, and it CANNOT read its own
+     * claude.ai visibility — no API exposes it — so this banner may point at a
+     * session that is still Private. Under Option A that could not happen,
+     * because a human turned the banner on only after sharing. The failure is
+     * a link that will not open, and a reader who is told why is merely mildly
+     * put out rather than confused; a reader who is not told files a bug. Do
+     * not trim this back to the old one-liner without restoring Option A. */
+    note.textContent = row.note
+      ? row.note
+      : "You will see where it has got to when you open it. Reload for anything "
+        + "newer. If it will not open, it has not been shared yet.";
+    bar.appendChild(note);
+
+    var x = document.createElement("button");
+    x.type = "button";
+    x.textContent = "Hide";
+    x.setAttribute("aria-label", "Hide this notice");
+    x.onclick = function () {
+      try { localStorage.setItem(LIVE_DISMISS, row.session_url); } catch (e) {}
+      if (bar.parentNode) bar.parentNode.removeChild(bar);
+    };
+    bar.appendChild(x);
+
+    header.parentNode.insertBefore(bar, header);
+    return bar;
+  }
+
+  function liveBanner() {
+    if (typeof fetch !== "function") return;
+    var headers = liveAuthHeaders();
+    if (!headers) return;              // not team: no read, no banner
+    var p;
+    try { p = fetch(LIVE_URL, { headers: headers }); }
+    catch (e) { return; }
+    p.then(function (r) { return r.ok ? r.json() : []; })
+     .then(function (rows) { liveBannerRender(rows && rows[0]); })
+     .catch(function () { /* no banner is the right answer to a failed read */ });
+  }
+
   function init() {
     if (inited) return;
     inited = true;
     ensureCss();
-    addSuperscript();
+    dropWordmarkTags();
     addAlphaNotice();
+    relocateRefresh();
     wireAbout();
     wirePainting();
+    liveBanner();
   }
 
-  window.COBI_BRAND = { init: init, addSuperscript: addSuperscript,
-                        addAlphaNotice: addAlphaNotice };
+  window.COBI_BRAND = { init: init, liveBanner: liveBanner,
+                        liveAuthHeaders: liveAuthHeaders,
+                        liveBannerRender: liveBannerRender, dropWordmarkTags: dropWordmarkTags,
+                        addAlphaNotice: addAlphaNotice,
+                        relocateRefresh: relocateRefresh };
 
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);

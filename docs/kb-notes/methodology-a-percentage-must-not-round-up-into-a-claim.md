@@ -23,7 +23,7 @@ artifacts:
 ## Context
 
 The My College tab breaks its lead figure — credit already articulated and
-waiting on a decision — into what that credit consists of, then summarises:
+waiting on a decision — into what that credit consists of, then summarizes:
 *"N% of it is credit for basic military service."* On a college with 4,488 +
 500 military units out of 5,000, the summary printed **"100% of it is credit
 for basic military service"** while a row reading *"Elective credit · 12 units

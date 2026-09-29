@@ -103,7 +103,7 @@ Tests **104 → 183**; full suite green.
 1. **`prefill()` must stay send-free.** The Sierra Training tab's "Test in
    Sierra" replay depends on a reviewer being able to edit a logged question
    first. The one-click fix added a **sibling** (`ask()`) rather than retuning
-   the shared helper. When two callers need different behaviour from one
+   the shared helper. When two callers need different behavior from one
    helper, add the sibling — the existing caller's requirement is invisible
    from the call site that wants the change.
 2. **A classification label must ship with its scheme.** "Advancing" alone is a
@@ -168,7 +168,7 @@ waterfall — call `_alloc()`); join college names through `cplCollegeShort()`;
   lead figure. The build was easy; knowing what to say was the work.
 - **Render it and read it.** The only bug that escaped 163 assertions died in one
   glance at the output.
-- **Assert the behaviour, not the comment.** The `_prios` test greps the function
+- **Assert the behavior, not the comment.** The `_prios` test greps the function
   body for `state.viewSlot` rather than trusting a comment that says it doesn't.
 - **Reconcile against the authority.** The tier list is display-only; the count
   stays the worker's `criteriaMetCount`, and the list is *withheld* if the two

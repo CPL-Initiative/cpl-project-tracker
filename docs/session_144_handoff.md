@@ -54,9 +54,9 @@ here*), **Current MAP Users and Contacts**, **Statewide CPL Benchmarks**.
 
 **1. ⭐ Five colleges were being told they have no implementation funding.**
 Mt. San Antonio, Norco, Reedley, MiraCosta, Los Angeles Southwest. `fundingFor()`
-normalised MAP's name through `cplCollegeShort()`; `cpl_funding.js`'s
+normalized MAP's name through `cplCollegeShort()`; `cpl_funding.js`'s
 `baseCollege()` compared it to the roster's **raw** string. Only one side of the
-join was normalised. Mt. SAC now renders **$522,239**, matching the Sep-BOG
+join was normalized. Mt. SAC now renders **$522,239**, matching the Sep-BOG
 reconciliation.
 
 ⚠️ **The existing join test asserted `S(roster)` against `S(roster)`** and
@@ -104,7 +104,7 @@ state.
 - Never commit a MAP export — this repo is public.
 - Merge on `clean` OR `unstable`; **never force-push `main`**.
 - **Contacts and staff are NOT PII** (Sam, 2026-08-12) — they are directory
-  information for a public programme. Don't invent caution he hasn't asked for.
+  information for a public program. Don't invent caution he hasn't asked for.
 - Sam runs several sessions at once. Fetch before assuming your base is current.
 - ⚠️ The stop hook fires *"N unpushed commits"* after every squash-merge. **False
   positive** — verify committer = `noreply@github.com`, `origin/main..HEAD` = 0.

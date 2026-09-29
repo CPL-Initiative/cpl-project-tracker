@@ -61,8 +61,8 @@ const html = `<!DOCTYPE html><html><head></head><body>
   window.CPL_STATEWIDE = ${JSON.stringify({ exhibits })};
   window.CPL_STATEWIDE_PRESCRIPTIVE = {};
   window.CCC_COLLEGE_LOOKUP = {
-    "College A": { district: "D1", swRegion: "R1" },
-    "Calbright College Non-Credit": { district: "Calbright College", swRegion: "Capital (Region 2)" }
+    "College A": { district: "D1", swRegion: "R1", ascccArea: "C" },
+    "Calbright College Non-Credit": { district: "Calbright College", swRegion: "Capital (Region 2)", ascccArea: "A" }
   };
 </script>
 </body></html>`;
@@ -81,13 +81,29 @@ check("init does not throw", !threwOnInit);
 setTimeout(() => {
   const doc = window.document;
 
-  // All eight filter groups render.
+  // All nine filter groups render — CIP Sectors in Career Cluster's place and
+  // ASCCC Area beside SW Region (Sam, 2026-09-24).
   const groups = Array.from(doc.querySelectorAll(".sw-filter-group"))
     .map(function (g) { return g.getAttribute("data-filter"); });
-  ["collabType", "cplType", "sector", "discipline", "issuer", "college", "district", "swRegion"]
+  ["collabType", "cplType", "cipSector", "discipline", "issuer", "college", "district", "swRegion", "ascccArea"]
     .forEach(function (key) {
       check("filter group renders: " + key, groups.indexOf(key) !== -1);
     });
+  check("the Career Cluster filter is gone (renamed, not duplicated)", groups.indexOf("sector") === -1);
+  check("ASCCC Area sits immediately after SW Region",
+    groups.indexOf("ascccArea") === groups.indexOf("swRegion") + 1);
+  check("every filter is a multi-select (checkboxes, never radios or a <select>)",
+    Array.from(doc.querySelectorAll(".sw-filter-options input")).every(function (i) { return i.type === "checkbox"; })
+    && !doc.querySelector(".sw-filter-dropdown select"));
+  const areaOpts = Array.from(
+    doc.querySelectorAll('.sw-filter-group[data-filter="ascccArea"] input[type=checkbox]')
+  ).map(function (i) { return i.value; });
+  check("ASCCC Area options come from the lookup's ascccArea field",
+    areaOpts.join(",") === "A,C");
+  check("...worded as Area A, not a bare letter",
+    /Area A/.test(doc.querySelector('.sw-filter-group[data-filter="ascccArea"] label').textContent));
+  check("the live college_lookup.js carries an ASCCC Area on every CCC college",
+    (lookupSrc.match(/ascccArea: "[A-D]"/g) || []).length >= 118);
 
   // Every group has an openable dropdown with at least one option.
   let emptyGroups = [];

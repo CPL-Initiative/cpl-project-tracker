@@ -37,6 +37,9 @@ const SIERRA = fs.readFileSync("sierra/sierra.js", "utf8");
 const FACTSHEET = fs.readFileSync("fact-sheet/factsheet_sierra.js", "utf8");
 const MEMORY = fs.readFileSync("cpl_memory.js", "utf8");
 const GR_PRI = fs.readFileSync("gr_priorities.js", "utf8");
+/* SkyView's question box is the fourth drafting client and the first one that
+ * is not a COBI tab — it lives in the prototype page's module. */
+const SKYVIEW = fs.readFileSync("prototype/ccr_universe.js", "utf8");
 
 // The request handler only — module-level constants above it carry the word
 // `drafting` for documentation reasons and are not behavior.
@@ -104,17 +107,25 @@ block("(2)", function () {
     ["the guidance filter", /fetchTeamGuidance\([^;]*\bhostSurface\b[^;]*\)/],
     ["the system prompt", /if \(drafting\) systemPrompt\.volatile \+= DRAFTING_BLOCK/],
     ["the interactions log", /if \(!drafting\) await sb\.from\("chat_interactions"\)/],
+    /* v66 (2026-09-12): the surface is now FILED with the turn and ECHOED to the
+     * caller in the meta frame, so a read of chat_interactions can separate the
+     * COBI tabs from the public page and a COBI reader can see how the server
+     * normalized its surface. Both widened on purpose — tests/sierra_viewer.test.js
+     * carries the reasoning and the rest of that change. */
+    ["the interactions log's surface column", /surface: hostSurface,/],
+    ["the meta frame", /event: meta\\ndata: \$\{JSON\.stringify\(\{ surface: hostSurface, viewer: viewer\.kind \}\)\}/],
   ];
   consumers.forEach(([label, re]) =>
     check("(2) consumer present — " + label, re.test(HANDLER)));
 
   // Count every mention in the handler's CODE and reconcile it against the list
-  // above: 4 consumers + 2 definitions (`hostSurface`, `drafting`) + the 1 use
-  // of hostSurface inside the derivation = 7.
+  // above: 6 consumers + 2 definitions (`hostSurface`, `drafting`) + the 1 use
+  // of hostSurface inside the derivation = 9 (7 until v66 added the log column
+  // and the meta frame).
   const mentions = (HANDLER_CODE.match(/hostSurface|\bdrafting\b/g) || []).length;
-  check("(2) ⭐ the surface reaches these four places and no others",
-    mentions === 7,
-    "found " + mentions + " code mentions, expected 7 (4 consumers + 2 definitions + 1 derivation). "
+  check("(2) ⭐ the surface reaches these six places and no others",
+    mentions === 9,
+    "found " + mentions + " code mentions, expected 9 (6 consumers + 2 definitions + 1 derivation). "
     + "If you widened the surface deliberately, add it to the list above and update this count.");
   // ⚠ And prove the stripper did not simply delete everything it was counting —
   // a codeOnly() that ate the handler would make the line above read 0 and the
@@ -196,7 +207,8 @@ block("(5)", function () {
    * a few lines up. What belongs here is only that nothing is orphaned: a
    * drafting surface no client sends is a prompt path with no caller, and a
    * surface sent by a file not listed here is one nobody vetted. */
-  const DRAFT_OWNERS = { "memory-autogen": MEMORY, "memory-briefing": MEMORY, "gr-analysis": GR_PRI };
+  const DRAFT_OWNERS = { "memory-autogen": MEMORY, "memory-briefing": MEMORY,
+                         "gr-analysis": GR_PRI, "skyview-ask": SKYVIEW };
   check("(5) ⭐ every drafting surface is claimed by exactly one vetted client",
     drafts.every((d) => DRAFT_OWNERS[d] && DRAFT_OWNERS[d].includes(d)),
     "unowned: " + drafts.filter((d) => !(DRAFT_OWNERS[d] && DRAFT_OWNERS[d].includes(d))).join(", "));

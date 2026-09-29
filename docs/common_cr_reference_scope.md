@@ -50,7 +50,7 @@ field carries exactly the freehand-typo class the CER dealt with —
 `Advance Flux Cored Arc Weliding (FCAW)`, `Advanced to Gas Tungsten Arc
 Welding`, `3-4 hour in`.
 
-## 2. Mechanical normalisation is nearly worthless here — this is curation
+## 2. Mechanical normalization is nearly worthless here — this is curation
 
 The single most important measurement in this document:
 
@@ -58,15 +58,15 @@ The single most important measurement in this document:
 |---|---|
 | Raw `credit_rec` | **2,344** |
 | Topic + raw units expression | 2,312 (−1.4%) |
-| **Topic only, aggressively normalised** — units *discarded entirely*, lowercased, punctuation stripped, `Intro`→`Introduction`, `Advance`→`Advanced`, whitespace collapsed | **2,183 (−6.9%)** |
+| **Topic only, aggressively normalized** — units *discarded entirely*, lowercased, punctuation stripped, `Intro`→`Introduction`, `Advance`→`Advanced`, whitespace collapsed | **2,183 (−6.9%)** |
 
 Throwing the units away completely and folding the two commonest word variants
 still collapses under 7%. **The vocabulary is genuinely ~2,183 distinct
 topics.** There is no string-cleaning pass that solves this, which is precisely
 the CER's situation and precisely why Sam framed it as a *reference* rather
-than a normaliser.
+than a normalizer.
 
-⚠️ Do not re-litigate this by trying a better normaliser. The reason the
+⚠️ Do not re-litigate this by trying a better normalizer. The reason the
 collapse is small is not a weak regex — it is that `Racial Issues and the
 Police`, `Community and the Justice System` and `Community Relations` are the
 same POST topic in three unrelated sets of words. **No string metric reaches
@@ -112,7 +112,7 @@ never the identity).
 
 ### The pairing carries no per-line information. Anywhere.
 
-The course↔rec-line pairing in `chatbox_peer_articulations` is **denormalised
+The course↔rec-line pairing in `chatbox_peer_articulations` is **denormalized
 everywhere it is multi-line**, and that is measurable exactly:
 
 ```
@@ -128,7 +128,7 @@ recommendations, which is how *Physical Training and Health Education* ends up
 attached to *Introduction to Administration of Justice*.
 
 ⚠️ **`attribution = 'per_course'` does NOT catch this** — every one of those
-`AJ 110` rows is labelled `per_course`. The column is more optimistic than
+`AJ 110` rows is labeled `per_course`. The column is more optimistic than
 reality. **Do not use it as the gate; it passes the exact case it appears to
 catch.**
 
@@ -142,7 +142,7 @@ with all of it.
 The good merges are real but they live somewhere narrower. `HIST 130`'s six
 wordings — *The United States to 1877* · *United States History through 1877* ·
 *United States History, 1550-1877* … — all sit under **one credential**,
-`AP United States History`. The denormalisation destroyed which college wrote
+`AP United States History`. The denormalization destroyed which college wrote
 which wording, but every wording belongs to the same credential and the same
 course, so they are unambiguously **six phrasings of one recommendation**.
 
@@ -159,7 +159,7 @@ So the usable gate is **the credential's course count**, not the line fraction:
 | **Strings this rung collapses** | **40** |
 
 **40 of 2,344 — 1.7%.** The strongest-*looking* factor, once it is not allowed
-to lean on denormalisation, is the smallest rung in the ladder. It is still
+to lean on denormalization, is the smallest rung in the ladder. It is still
 worth having (its merges are unimpeachable, and they are ones no string metric
 reaches) but it is a rounding error against the problem.
 
@@ -198,7 +198,7 @@ strictest rule in the system. Transposed to recommendations:
 | **1** | **The published set says so.** A line in `statewide_authoritative` — MAP's own curated recommendation, already public on the Fact Sheet. | Yes — it is the authority |
 | **2** | **The exhibit names a C-ID** and a second factor agrees (subject or CCR course identity). Two-signals-agree, per Rule 7's posture. | Yes |
 | **3** | **CCR course identity agrees** *within a credential that resolves to exactly ONE course* (§3) — so the wordings are unambiguously phrasings of one recommendation. | Yes — but only **40 strings** |
-| **4** | **Twin merge** — same word set after normalisation (order, punctuation, `&`/`and`, Roman/Arabic, `Intro`/`Introduction` aside), same subject, and no safety screen objects (level, Honors/Lab variant, sport, gender). | Yes — strictest rule, mirrors the CCR twin merge exactly |
+| **4** | **Twin merge** — same word set after normalization (order, punctuation, `&`/`and`, Roman/Arabic, `Intro`/`Introduction` aside), same subject, and no safety screen objects (level, Honors/Lab variant, sport, gender). | Yes — strictest rule, mirrors the CCR twin merge exactly |
 | **5** | Title similarity · description similarity · issuer · units agreement | **Suggestion only — never merges** |
 
 **Units are never a merge criterion** (§3, `SPAN 100`) but they *are* a safety
@@ -225,7 +225,7 @@ Measured, not projected:
 | 5 | Title / description / issuer similarity | **0 — suggestions only** |
 
 **Automation reaches roughly a tenth of the problem. Around 90% of the 2,344 is
-curator judgement, and no achievable matcher changes that** — because
+curator judgment, and no achievable matcher changes that** — because
 *Racial Issues and the Police* and *Community Relations* are one POST topic in
 unrelated words.
 

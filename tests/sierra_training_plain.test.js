@@ -123,8 +123,15 @@ function makeWin() {
   api._state.open = { t1: true };
   api._state.turns = [];
   const row = api._feedbackRow({ turn_id: "t1", question: "does CPR count?", rating: "down", status: "new" });
+  // Read by ROLE since round 1 (2026-09-28): the statuses are one segmented
+  // control, a role="group" named by its "Mark this" label (no colon now).
+  const holder = w.document.createElement("div");
+  holder.innerHTML = row;
+  const statusBtn = holder.querySelector("[data-status]");
+  const group = statusBtn && statusBtn.closest('[role="group"]');
+  const groupLabel = group && holder.querySelector('[id="' + group.getAttribute("aria-labelledby") + '"]');
   check("the triage row is labelled as bookkeeping, not as an action on Sierra",
-    /Mark this:/.test(row) && !/Triage:/.test(row));
+    !!groupLabel && groupLabel.textContent.trim() === "Mark this" && !/Triage:/.test(row));
   check("the label says outright it does not change Sierra",
     /does not change how Sierra answers/.test(row));
   check("each status button carries its hover-over",

@@ -45,7 +45,7 @@ human-sourced row, so it is flagged rather than retired.
   / CSR / CER). Confirm / split out / **+ Add a wording** / not-a-topic / defer,
   curator attribution, CSV receipt.
 - Gated Supabase `cr_reference_decisions`, keyed on `group_key` — a rebuild can
-  never overwrite a judgement.
+  never overwrite a judgment.
 - `tests/cr_reference.test.js` — **42 checks**, verified against the pre-fix
   builder (A4 + A5 fail there).
 - Cron rebuilds + commits the worklist; `pages.yml` asserts both files are
@@ -80,7 +80,7 @@ is sticky is structural: **ACE recommendations are SUBJECT AREAS, not courses** 
 `3 hours in Supervision` (2,986 rows), `Computer Applications`,
 `Communications`, `Industrial Safety`, `Leadership`, `1 hour in First Aid`.
 There is no C-ID for "Supervision", so the entire CCN → C-ID → M-ID cascade
-resolves to nothing and the whole lane falls to curator judgement. That is a
+resolves to nothing and the whole lane falls to curator judgment. That is a
 different problem shape and deserves the same scoping-before-building treatment
 that made this one come out right.
 
@@ -127,7 +127,7 @@ already calls "a free auto-N/A win".
   wrong rule.** Collapse value fixed the placeholder problem with no exclusion
   list.
 - **Emit what you computed; don't let a consumer re-derive it.** Three separate
-  drifts in one run came from re-implementing one normalisation.
+  drifts in one run came from re-implementing one normalization.
 - **A safety mechanism firing on an obviously-fine case is usually mis-wired,
   not right.** Genuine screen hits look genuinely ambiguous.
 - **Run the new test against the OLD file.** 2 of 42 fail pre-fix; that is the

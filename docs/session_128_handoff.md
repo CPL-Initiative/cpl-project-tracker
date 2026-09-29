@@ -175,7 +175,7 @@ your queue"*, and it gives the honest denominator — how many **distinct** stud
    `"CPR For The Healthcare Provider"` vs `"Cpr..."`. ⚠️ And the casing **correlates perfectly with disposition**
    in the sample (upper = Needs Action, title = Not Applicable) — too consistent to be random, likely two write
    paths in MAP. Harmless while disposition separates them; **fragments any group-by on CR text alone.**
-   Normalise for grouping, keep the original for display. Sam is raising the nulls with the MAP team.
+   Normalize for grouping, keep the original for display. Sam is raising the nulls with the MAP team.
 3. **`AppliedCredits` / `TranscribedCredits` are NULL, not 0**, on Not Applicable rows. Nulls propagate through
    SUM differently. Coerce.
 4. The known grain of the first export is

@@ -49,6 +49,9 @@ SURFACE_MAP = os.path.join(ROOT, "kb", "governance_surface_map.json")
 OUT = os.path.join(ROOT, "kb", "governance_candidates.json")
 WORKFLOWS = os.path.join(ROOT, ".github", "workflows")
 DASHBOARD = os.path.join(ROOT, "CPL_Dashboard.html")
+# The table/tab scans project from the dependency map (2026-08-30, Sam's go)
+# instead of a local regex — one derivation, CI-checked, adversarially sampled.
+DEP_MAP = os.path.join(ROOT, "kb", "dependency_map.json")
 
 # Quality gates, not governance loops. A scheduled job only earns a cadence row
 # when a HUMAN owns its outcome; nobody is accountable for "CodeQL ran".
@@ -111,79 +114,113 @@ def scan_workflows(register):
     return out
 
 
-def scan_tables():
-    """Tables a human writes to THROUGH THE DASHBOARD.
+def _human_write_surfaces():
+    """(table -> surfaces, tab -> tables) a HUMAN writes through, from the map.
 
-    Rule: a table referenced from consumer JS in the same file as a write method,
-    excluding derived-name shapes. This is the filter that keeps the scan honest —
-    the schema has dozens of write-policied tables, but the overwhelming majority
-    are written by pipelines, not people. A surface where a *person* changes
-    shared state is what needs a named owner.
+    Since 2026-08-30 these come from kb/dependency_map.json rather than a local
+    regex, because the local regex had measurably stopped seeing surfaces: it
+    required a slash after the REST base (missing cpl_memory and
+    map_data_quality, whose modules use the trailing-slash convention), it
+    required `method:` adjacency (missing every verb-first helper wrapper —
+    raci's sbWrite, cpl_memory's writeReq), and it walked only root JS (missing
+    the fact-sheet edit mode's factsheet_overrides). Eight human-write surfaces
+    were invisible to the whole governance layer at once — not on the register,
+    not judged in the surface map, not proposed. One derivation, one place to
+    fix it: the map (which is itself CI-checked and adversarially sampled).
+
+    "Human" keeps its old meaning: the write comes from a tab module or a
+    served page, not from a pipeline script or workflow — artifacts OF
+    decisions still do not count as surfaces WHERE decisions are made.
     """
-    hits = {}
-    for fn in js_files():
-        try:
-            body = open(os.path.join(ROOT, fn), encoding="utf-8").read()
-        except OSError:
+    doc = read_json(DEP_MAP, None)
+    if doc is None or not doc.get("datasets"):
+        # Fail LOUD. A missing map reading as "no table candidates" would be a
+        # false clean on the exact scan the map was built to strengthen.
+        sys.stderr.write("ERROR: %s missing or empty — run "
+                         "python3 kb/_build_dependency_map.py first\n" % DEP_MAP)
+        raise SystemExit(2)
+    tables, tabs = {}, {}
+    for ds, d in sorted(doc["datasets"].items()):
+        is_table = ds.startswith("supabase:")
+        is_rpc = ds.startswith("rpc:")
+        if not (is_table or is_rpc):
             continue
-        if not any(m in body for m in WRITE_METHODS):
+        name = ds.split(":", 1)[1]
+        if is_table and name.endswith(DERIVED_SUFFIXES):
             continue
-        # The write must belong to THIS table's call, not merely exist somewhere
-        # in the file. Without the window, governance.js — which POSTs to
-        # governance_owners — flagged every table it merely READS, including the
-        # read-only map_contact_gaps view. Precision matters more than recall
-        # here: a missed table is a quiet gap a human can still add by hand, but
-        # a false positive is noise, and noise is what makes the whole strip
-        # ignorable.
-        for m in re.finditer(r'(?:REST\s*\+\s*"|/rest/v1)/([a-z0-9_]+)', body):
-            t = m.group(1)
-            if t in ("rpc",) or t.endswith(DERIVED_SUFFIXES):
+        # An RPC is a write surface by its NAME SHAPE, because the map records
+        # every rpc uniformly as a call: a definer function that revises,
+        # upserts or reviews changes shared state exactly like a PATCH, and the
+        # nc-learning-partners tab writes ONLY through such RPCs — a
+        # tables-only projection read it as a pure view. This is a heuristic in
+        # a PROPOSER: a wrong guess costs one row a human dismisses once.
+        if is_rpc and not re.search(
+                r"replace|upsert|revise|apply|promote|clear|set_status|review",
+                name):
+            continue
+        for e in d.get("consumers", []):
+            if is_table and e.get("direction") != "write":
                 continue
-            window = body[m.end():m.end() + WRITE_WINDOW]
-            if not re.search(r'method:\s*["\'](%s)["\']' % "|".join(WRITE_METHODS), window):
+            surfaces = e.get("tabs") or e.get("pages")
+            if not surfaces:
                 continue
-            hits.setdefault(t, set()).add(fn)
+            module = e.get("id", "").split(":", 1)[-1]
+            if is_table:
+                slot = tables.setdefault(name, {"surfaces": set(), "where": module})
+                slot["surfaces"].update(surfaces)
+            for tb in e.get("tabs", []):
+                slot = tabs.setdefault(tb, {"tables": set(), "rpcs": set(),
+                                            "where": module})
+                (slot["tables"] if is_table else slot["rpcs"]).add(name)
+    return tables, tabs
+
+
+def scan_tables():
+    """Tables a human writes to through a tab or a served page.
+
+    A surface where a *person* changes shared state is what needs a named
+    owner; the schema's dozens of pipeline-written tables are not that. The
+    write edges and their tab/page attribution come from the dependency map —
+    see _human_write_surfaces() for why the local regex was retired.
+    """
+    tables, _ = _human_write_surfaces()
     return [{
         "key": "table:" + t,
         "kind": "decision_right",
         "label": t,
-        "detail": "Written from " + ", ".join(sorted(files)),
-        "where": sorted(files)[0],
-    } for t, files in sorted(hits.items())]
+        "detail": "Written from " + ", ".join(sorted(info["surfaces"])),
+        "where": info["where"],
+    } for t, info in sorted(tables.items())]
 
 
 def scan_tabs():
     """Dashboard tabs through which a human CHANGES shared state.
 
-    Rule: a tab whose lazy-loaded JS performs a write. A read-only chart is not a
-    governance surface no matter how prominent — this is the scan most at risk of
-    noise, so the write requirement does the heavy lifting (most tabs are views).
+    A read-only chart is not a governance surface no matter how prominent, so
+    the write requirement does the heavy lifting (most tabs are views). Tab
+    attribution and write direction come from the dependency map, which reads
+    the boot dispatch through the admin surface's parser and — unlike the old
+    proximity regex here — also sees eager modules, chained loadScript
+    modules, helper-wrapper writes, and write-shaped RPCs.
+
+    NOISE RULE: a tab whose only writes are TABLES is not proposed — every one
+    of those tables is already a row of its own in scan_tables (or already
+    judged in the surface map), and two proposals for one decision are how the
+    strip climbs back toward the unreadable 39. A tab earns its own row only
+    for what a table row cannot represent: writes through RPCs.
     """
+    _, tabs = _human_write_surfaces()
     out = []
-    try:
-        html = open(DASHBOARD, encoding="utf-8").read()
-    except OSError:
-        return out
-    # tab -> js comes from the BOOT dispatch, not from proximity in the document:
-    # a tab's nav button and its loadScript sit ~1.2M characters apart, so any
-    # window-based match silently finds nothing (it did).
-    pairs = re.findall(r"onActivate\('([a-z0-9-]+)'[\s\S]{0,800}?loadScript\('([a-z0-9_]+\.js)'", html)
-    for tab, js in sorted(set(pairs)):
-        path = os.path.join(ROOT, js)
-        if not os.path.exists(path):
+    for tb, info in sorted(tabs.items()):
+        if not info["rpcs"]:
             continue
-        try:
-            body = open(path, encoding="utf-8").read()
-        except OSError:
-            continue
-        if not any('"%s"' % m in body or "'%s'" % m in body for m in WRITE_METHODS):
-            continue
+        state = sorted(info["rpcs"]) + sorted(info["tables"])
         out.append({
-            "key": "tab:" + tab,
+            "key": "tab:" + tb,
             "kind": "decision_right",
-            "label": tab,
-            "detail": "Writes shared state from " + js,
-            "where": js,
+            "label": tb,
+            "detail": "Writes shared state via " + ", ".join(state),
+            "where": info["where"],
         })
     return out
 

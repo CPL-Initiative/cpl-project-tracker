@@ -1,8 +1,8 @@
 ---
-title: Minimisation happens twice — what you request, and what you keep
+title: Minimization happens twice — what you request, and what you keep
 created: 2026-08-19
 updated: 2026-08-19
-tags: [methodology, privacy, pii, data-pipeline, map-api, supabase, minimisation]
+tags: [methodology, privacy, pii, data-pipeline, map-api, supabase, minimization]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
 related:
@@ -15,15 +15,15 @@ artifacts:
   - tests/map_custom_report_sync_test.py
 ---
 
-# Minimisation happens twice — what you request, and what you keep
+# Minimization happens twice — what you request, and what you keep
 
 > **One-sentence summary** — a pipeline that fetches and then stores has *two*
-> independent minimisation boundaries, and treating the fetch as the only one
+> independent minimization boundaries, and treating the fetch as the only one
 > quietly makes every fetched column a stored column.
 
 ## Context
 
-`fetch_custom_report.py` is guarded as "the PII boundary": its minimisation is
+`fetch_custom_report.py` is guarded as "the PII boundary": its minimization is
 the *absence* of entries in `REQUEST_PAYLOAD`, and a test pins it. That framing
 is right about the file and wrong about the system. A second boundary exists
 wherever the fetched data lands, and nothing had ever named it.

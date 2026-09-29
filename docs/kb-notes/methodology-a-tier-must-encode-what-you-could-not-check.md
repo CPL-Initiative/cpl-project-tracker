@@ -71,7 +71,7 @@ A boolean `verified: false` would not have been enough. The tier has to name
 *which* check is missing, because that is what tells the next reader what work
 remains.
 
-## Why this generalises
+## Why this generalizes
 
 The failure it prevents is **laundering**: an unchecked value acquires
 authority purely by sitting in a field that implies it was checked. This
@@ -81,7 +81,7 @@ project keeps meeting the same shape —
 - a temporary contact fill sitting in a column that means *what MAP holds*;
 - a queue reporting itself **clear** from a source that failed to load.
 
-Each is a gap wearing the costume of a value. The defence is always the same:
+Each is a gap wearing the costume of a value. The defense is always the same:
 **give the gap its own representation, and make the code that consumes values
 unable to consume it.** Prose in a comment does not survive; a branch does.
 

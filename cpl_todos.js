@@ -107,9 +107,9 @@
     var css =
       ".cpl-todo-btn{position:fixed;right:18px;bottom:56px;z-index:900;display:flex;align-items:center;gap:6px;" +
         "padding:8px 14px;border-radius:20px;border:none;background:var(--cobalt);" +
-        "color:#fff;font-size:.88rem;cursor:pointer;box-shadow:0 4px 12px rgba(20,20,30,0.25);}" +
-      ".cpl-todo-btn:hover{background:#003B8E;}" +
-      ".cpl-todo-badge{background:var(--gold-accent);color:var(--navy-primary);border-radius:10px;font-size:.72rem;" +
+        "color:var(--on-accent,#fff);font-size:.88rem;cursor:pointer;box-shadow:0 4px 12px rgba(20,20,30,0.25);}" +
+      ".cpl-todo-btn:hover{background:var(--btn-primary-hover,#003B8E);}" +
+      ".cpl-todo-badge{background:var(--gold-accent);color:var(--on-mustard);border-radius:10px;font-size:.72rem;" +
         "font-weight:700;padding:1px 7px;}" +
       ".cpl-todo-panel{display:none;position:fixed;right:18px;bottom:104px;z-index:901;width:380px;max-width:92vw;" +
         "max-height:70vh;overflow-y:auto;background:var(--surface-opaque);border:1px solid var(--border-strong);" +
@@ -155,7 +155,7 @@
     var close = el("button", { class: "cpl-todo-close", type: "button", "aria-label": "Close" }, ["×"]);
     close.onclick = togglePanel;
     panel.appendChild(close);
-    panel.appendChild(el("h4", null, ["📋 Daily To-Do"]));
+    panel.appendChild(el("h4", null, ["Daily To-Do"]));
     panel.appendChild(el("p", { class: "cpl-todo-meta" },
       ["as of " + (feed._as_of || "—") + (feed._session ? " · Session " + feed._session : "") +
        " · " + tabLabel(tab)]));
@@ -227,7 +227,7 @@
         var btn = el("button", {
           class: "cpl-todo-btn", id: "cpl-todo-btn", type: "button",
           title: "Daily to-do list — curation work for Sam + the engineering queue for Fable, refreshed each work session.",
-        }, ["📋 To-Do", badge]);
+        }, ["To-Do", badge]);
         btn.onclick = togglePanel;
         document.body.appendChild(btn);
         document.body.appendChild(el("div", { class: "cpl-todo-panel", id: "cpl-todo-panel" }));

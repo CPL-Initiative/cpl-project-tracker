@@ -101,7 +101,7 @@ re-home to 4.1/4.2 by content); `4.1.3` Statewide Adoption Sprint (→ 3.3).
 
 ### Phase 2 — Supabase re-key (guarded, atomic)
 Apply the alias-map `rekey` as a **two-phase permutation** (temp `TMP__` prefix →
-final) inside one transaction, per Rule 9 (fresh live read at write-time; Sam
+final) inside one transaction, per Rule 10 (fresh live read at write-time; Sam
 holds edits for the ~20-min window). Tables: `projects.id`, `item_raci.item_id`,
 `item_updates.item_id`, `project_lifecycle.project_id`, and `workplan_goals`
 associations. Add `projects.sprint_tag text` and populate from the map. Insert

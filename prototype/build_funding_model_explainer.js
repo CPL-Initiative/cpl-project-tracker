@@ -74,14 +74,14 @@ const money = function (n) { return "$" + Math.round(n).toLocaleString("en-US");
   const expect = {
     "f-floorv":  money(payload.pool.floor),
     "f-floor":   String(payload.model.floorCount),
-    "f-floor-k": "colleges land on the " + money(payload.pool.floor) + " minimum",
+    "f-floor-k": "institutions are brought up to the " + money(payload.pool.floor) + " base award",
     "r-min":     money(payload.min),
     "l-floor":   money(payload.pool.floor),
     "t-floor":   money(payload.pool.floor),
     "g-floor":   money(payload.pool.floor),
-    "f-nc":      money(payload.pool.feeder),
-    "l-nc-count": String(payload.nc.count),
-    "t-nc":      money(payload.pool.feeder),
+    "f-nc":      money(payload.nc.face),
+    "l-nc-count": String(payload.nc.ncColleges),
+    "t-nc":      money(payload.nc.face),
   };
   const stale = [];
   Object.keys(expect).forEach(function (id) {
@@ -100,20 +100,19 @@ const money = function (n) { return "$" + Math.round(n).toLocaleString("en-US");
 
 console.log("wrote " + path.relative(ROOT, PAGE));
 console.log("  colleges           " + payload.rows.length);
-console.log("  to the colleges    " + money(pool("one_time_2026_27") - pool("admin_cost") -
-  pool("scaling_projects_tech") - pool("feeder_carveout")));
+console.log("  to institutions    " + money(pool("one_time_2026_27") - pool("admin_cost") -
+  pool("scaling_projects_tech")));
 console.log("  main pot           " + money(payload.net_main));
 console.log("  average offer      " + money(payload.avg));
 console.log("  median offer       " + money(payload.median));
 console.log("  range              " + money(payload.min) + " – " + money(payload.max) + " (" + payload.maxName + ")");
-console.log("  at the minimum     " + payload.model.floorCount + " colleges");
-console.log("  at the maximum     " + payload.atMax + " colleges" +
+console.log("  at the base        " + payload.model.floorCount + " institutions");
+console.log("  at the cap         " + payload.atMax + " institutions" +
   (payload.pool.cap ? " (ceiling " + money(payload.pool.cap) + ", releasing " +
     money(payload.model.capReleased) + ")" : " (no ceiling set)"));
-console.log("  noncredit lane     " + payload.nc.count + " institutions (" + payload.nc.colleges +
-  " colleges + " + payload.nc.standalone + " standalone) sharing " + money(payload.nc.pool) +
-  " · " + payload.nc.floorCount + " at the " + money(payload.nc.floor) + " minimum" +
-  " · threshold " + payload.nc.threshold + " NC FTES");
+console.log("  noncredit face     " + money(payload.nc.face) + " of the one pool — " +
+  money(payload.nc.collegeShares) + " riding " + payload.nc.ncColleges + " college awards + " +
+  money(payload.nc.trioHeld) + " held by origination at the noncredit-only three");
 console.log("  effective rate     " + money(payload.effRate) + " per CPL FTES for an unbound college" +
   " (statewide base " + money(pool("ftes_rate_2026_27")) + ")");
 console.log("  worked example     " + payload.exampleName +

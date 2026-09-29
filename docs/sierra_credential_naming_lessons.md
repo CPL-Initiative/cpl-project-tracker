@@ -395,7 +395,7 @@ provenance, so `missing` is carried and stated.
 Angeles Community College District" is inside a question about Los Angeles City
 College. An acronym resolves alone; a stem needs "district" or a plural cue.
 
-### 2. "Students Awarded" was WRONG, not just badly labelled
+### 2. "Students Awarded" was WRONG, not just badly labeled
 
 Sam asked for the column to read "Students in MAP". It is a correctness fix:
 **Los Angeles City College reads 0 applied units, 0 transcribed units, and 147

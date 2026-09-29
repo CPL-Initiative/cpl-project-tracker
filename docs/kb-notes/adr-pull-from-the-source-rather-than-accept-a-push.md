@@ -58,7 +58,7 @@ path they just shipped.
 **A pull declares what we take; a push decides what we receive — and we already
 rely on that.** `REQUEST_PAYLOAD` names every dataset *and every column*. Session
 34 used that to drop `View_CollegeContacts` and `View_CollegeUsersRoles` from the
-payload entirely — a deliberate PII data-minimisation decision, so that staff
+payload entirely — a deliberate PII data-minimization decision, so that staff
 names, emails and phones **never land on the Action runner at all**. That posture
 is not a policy document; it is implemented as the absence of two entries in a
 Python list. Hand the write to the other side and it evaporates silently: we
@@ -78,7 +78,7 @@ validate what lands, and now without controlling how it got there), and no
 schedule (the 06:17/09:17/12:17 UTC ladder exists for reasons of its own).
 
 Set against that: the schedule becomes theirs, the column set becomes theirs, the
-transform becomes unreadable to us, and the data-minimisation above is undone.
+transform becomes unreadable to us, and the data-minimization above is undone.
 **The trade is a few lines of config against every control we currently hold over
 this pipeline.** It is not close.
 
@@ -98,7 +98,7 @@ rows through a JSON API has a ceiling. If that ceiling is reached, the shape is:
 The distinction is that the vendor delivers *data* to a quarantine we control,
 rather than delivering *state* to the tables our users read.
 
-## The generalisation
+## The generalization
 
 A collaborator offering to do work for you is offering to take on a
 responsibility — but responsibilities in a data pipeline come with write

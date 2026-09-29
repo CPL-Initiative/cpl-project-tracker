@@ -40,7 +40,7 @@ The first guardrail shipped as prohibitions:
 
 Read literally by a compliant model, that instructs the assistant to **withhold**. A learner asks about a
 credential their college has not articulated and gets a polite dead end — to protect the host's feelings. That is
-**worse than the behaviour it prevents**: it fails the learner, *and* it fails the college, which never learns
+**worse than the behavior it prevents**: it fails the learner, *and* it fails the college, which never learns
 there was demand for something it doesn't offer.
 
 The evidence arrived within the hour. A live end-to-end run showed the assistant opening with the host college,
@@ -64,7 +64,7 @@ the learner *and* market intelligence for the host.
 Where they genuinely cannot be reconciled, **pick the party the system exists to serve** and state the tie-break
 out loud in the rule, so the model is not left to infer it.
 
-## The generalisable pattern
+## The generalizable pattern
 
 Any rule of the form *"never do X"* aimed at protecting a stakeholder should ship as a **pair**:
 
@@ -94,17 +94,17 @@ check("still allows comparison when they have no college", /says they have not c
 - **Yes/And beats both/and.** An early draft split two routes by *function* — "compare over there, act over
   here" — which was factually wrong: the user could do both things in both places. Saying *yes* to the incumbent
   and *adding* is a different instruction from presenting a balanced menu, and produces different prose.
-- **A behavioural rule needs a phrasing pattern, not just a policy.** "Mention both" still reads as a choice
+- **A behavioral rule needs a phrasing pattern, not just a policy.** "Mention both" still reads as a choice
   between them. Giving the model the shape of the sentence — *"Yes — you can do that at &lt;host&gt;, and you can
   also…"* — is what makes the intent survive generation.
 
 ## When a test goes red because policy changed
 
 The same episode produced a related trap. An end-to-end assertion encoded the *previous* product intent ("route
-to a nearby teaching college") and went red once the anti-poaching rule deliberately de-prioritised that.
+to a nearby teaching college") and went red once the anti-poaching rule deliberately de-prioritized that.
 
 **Do not green it by editing the assertion.** A red test after a deliberate policy change is a question — *which
-behaviour do we actually want?* — and that question belongs to the product owner. Rewriting the check to match
+behavior do we actually want?* — and that question belongs to the product owner. Rewriting the check to match
 the new code is how a test stops encoding the goal and starts merely encoding the implementation.
 
 ## Resolution — both halves shipped 2026-08-07 (Session 126, #1029)
@@ -118,7 +118,7 @@ changes what the visitor can do; never editorialise. If the host college has not
 say so, say where it **is** available today, and say the host can adopt it. When the two interests genuinely
 cannot be reconciled, the visitor's outcome wins — *stated plainly, never sold*.
 
-**The red assertion.** Both candidate behaviours were defensible, and he chose **both, in order** — which is the
+**The red assertion.** Both candidate behaviors were defensible, and he chose **both, in order** — which is the
 outcome the "ask, don't edit" rule exists to make reachable. A single answer now has three parts:
 
 1. **the host** — named, affirmed, invited to adopt;
@@ -128,7 +128,7 @@ outcome the "ask, don't edit" rule exists to make reachable. A single answer now
 Part 3 is the one the prohibition had silently removed, and the only part that gives a seeker somewhere to go
 this month. The rule now names stopping early *a failure of the answer, not politeness*.
 
-⭐ **The generalisable half of the resolution:** the two rules had been written in different places and were in
+⭐ **The generalizable half of the resolution:** the two rules had been written in different places and were in
 direct conflict, with nothing saying which governed. Encoding the tie-break was necessary but not sufficient —
 the *downstream* rule had to cross-reference it explicitly (*"naming a nearer teaching college is NOT poaching;
 it is the factual completion of the answer"*). **A tie-break stated only where the conflict is defined does not

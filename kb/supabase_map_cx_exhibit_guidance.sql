@@ -64,6 +64,11 @@ create policy map_ace_exhibit_titles_select on public.map_ace_exhibit_titles
   for select to anon, authenticated using (true);
 
 revoke all on public.stg_map_ace_exhibit_titles from anon, authenticated;
+-- EXPLICIT GRANTS (2026-09-23). This file drops and recreates the staging
+-- titles, and from 2026-10-30 Supabase stops granting the API roles on a NEW
+-- table in public. The loader writes them with the service key. Guarded by
+-- tests/supabase_table_grants_test.py.
+grant select, insert, update, delete on public.stg_map_ace_exhibit_titles to service_role;
 
 -- ── B · the guidance list ──────────────────────────────────────────────────
 create or replace function public.rebuild_map_cx_exhibit_guidance()
@@ -181,6 +186,12 @@ begin
   create policy map_cx_exhibit_guidance_select on public.map_cx_exhibit_guidance
     for select to anon, authenticated
     using (is_allowed_reviewer() or team_pass_ok());
+  -- EXPLICIT GRANTS (2026-09-23). This body creates the table afresh on every
+  -- run, and from 2026-10-30 Supabase stops granting the API roles on a NEW
+  -- table in public. anon and authenticated read through the policy above;
+  -- service_role reads it for the daily publishers. Nothing writes here but
+  -- this function. Guarded by tests/supabase_table_grants_test.py.
+  grant select on public.map_cx_exhibit_guidance to anon, authenticated, service_role;
 end $fn$;
 
 comment on table public.map_cx_exhibit_guidance is

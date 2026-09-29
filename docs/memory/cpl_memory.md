@@ -95,7 +95,7 @@ move with it. Reverse-queryable by `affects` ("what touches `annual_report.js`?"
 | `f4` | The statewide "eligible students/credits" flag = **`has_ccc`**, which is **not** "on the statewide CPL page" | `has_ccc` = has a CCC-Collaborative *articulation*; e.g. Paramedic License reads *local*. Read before quoting statewide-vs-local eligibility splits. | cer, metrics | verified | [[docs/kb-notes/methodology-area-eligibility-rollup-from-cer]] |
 | `f5` | **Small curated scenario batches beat the thousands-strong panel** for eliciting curation doctrine | ≤3 forks/batch, profile-before-edges; Sam bounced off the firehose. | ccr, method | verified | [[docs/kb-notes/methodology-curated-scenario-batches-doctrine-elicitation]] |
 | `f6` | CPL **units double-count competencies** (4 courses → 1 ASE area) — course counts read as coverage | Sam flagged units as "sus"; the Pathways metric is course counts, not units. | pathways | verified | [[docs/cpl_pathways_lessons]] |
-| `f7` | **All Supabase access goes through the MCP tools** — the sandbox can't reach `*.supabase.co` | a direct curl/psql from a session fails; MCP is the only path. Read before any Supabase work. | integration, supabase, security | verified | `CLAUDE.md` Rule 9c |
+| `f7` | **All Supabase access goes through the MCP tools** — the sandbox can't reach `*.supabase.co` | a direct curl/psql from a session fails; MCP is the only path. Read before any Supabase work. | integration, supabase, security | verified | `CLAUDE.md` Rule 10c |
 | `oh1` | **MAP launched in 2017 as the "Military Articulation Platform"** — its original name; today the "Mapping Articulated Pathways (MAP) platform" | history-only for the old name; never present it as the current expansion. Pairs with `d1`. | history, map-platform, naming | verified | public KB · research/map-platform-evolution |
 | `oh2` | **AB 123 was chaptered July 2025** — statutory backing for CPL | key legislative anchor for the CPL Initiative. | legislation, cpl-background | verified | public KB glossary |
 | `oh3` | **CPL = Credit for Prior Learning; the CPL Initiative belongs to the CCCCO** | program identity; the platform is the MAP platform. | cpl-background, glossary | verified | public KB glossary |
@@ -156,7 +156,7 @@ pointing (`source`) at its canonical home.*
 
 | # | Summary | Detail & trigger | Tags | Status | Source |
 |---|---|---|---|---|---|
-| `w1` | Run the **ESL packaging apply** from the committed dry-run on Sam's green-light | 2,364 ESL → Beginning/Intermediate/Advanced + Citizenship/VESL/Transfer carve-outs; Rule 9 apply. | ccr | proposed | `kb/esl_package_out/2026-07-15/` |
+| `w1` | Run the **ESL packaging apply** from the committed dry-run on Sam's green-light | 2,364 ESL → Beginning/Intermediate/Advanced + Citizenship/VESL/Transfer carve-outs; Rule 10 apply. | ccr | proposed | `kb/esl_package_out/2026-07-15/` |
 | `w2` | Run the **wave-4 adjudication fan-out** | 2,000 multi-college IDs staged (ranks 2,001–4,000, 50 batches). | ccr | proposed | `kb/ccr_out/2026-07-14/wave4_manifest.json` |
 
 ---

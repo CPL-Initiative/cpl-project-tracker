@@ -1,9 +1,8 @@
 ---
 title: "Paginate every PostgREST read that can outgrow 1,000 rows"
-date: 2026-07-08
+created: 2026-07-08
 kb-status: published
-type: methodology
-tags: [supabase, postgrest, pagination, overlay, cer, silent-truncation]
+tags: [methodology, supabase, postgrest, pagination, overlay, cer, silent-truncation]
 artifacts:
   - credential_reference.js
   - tests/cer_overlay_pagination.test.js

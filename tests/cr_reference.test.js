@@ -143,8 +143,9 @@ if (!haveArtifact) {
   const varies = groups.filter(g => g.units_differ && g.wordings > 1);
   check("A13 groups with a varying unit spread are flagged for the curator",
     varies.length > 0);
-  check("A14 rung 4 (mechanical) never auto-merges across differing units",
-    groups.filter(g => g.rung === 4 && g.units_differ).every(g => !g.acts_automatically));
+  // A14 asserted that rung 4 never merged across differing units. Sam retired
+  // that screen on 2026-09-29 (card 14), so its successors are A25-A29 and the
+  // fixture checks C1-C11 below.
 }
 
 // ═════════ B. The tab ══════════════════════════════════════════════════════
@@ -298,7 +299,11 @@ const pendingEmptyWrite = (function () {
   w.CPL_CR_REFERENCE._render();
   const html = w.document.getElementById("cr-reference-root").innerHTML;
   check("B9 a group whose units vary says so even though rung 1 overrode the screen",
-    /units vary/.test(html));
+    /3\u20135 units/.test(html));
+  // Units never split an identity (Sam, 2026-09-27): the line states the range
+  // its wordings join, never a bare "units vary" where the figures are known.
+  check("B9b the range reads from the wordings' own figures, not a bare 'units vary'",
+    !/>units vary</.test(html));
 })();
 
 // ── B10. A curator decision must never be dressed as automation ───────────
@@ -357,6 +362,179 @@ const pendingEmptyWrite = (function () {
 (function () {
   check("B17 activate() re-loads when sign-in state changed since last load",
     /loadedSignedIn\s*!==\s*signedIn\(\)/.test(SRC));
+})();
+
+// ═════════ C. Units never split an identity (Sam, 2026-09-27) ═══════════════
+// Cards 13 and 14 of his sheet of 2026-09-29, both "as proposed":
+//   13  a group whose wordings award different units, named by a wording, is
+//       named by topic and range: "Engine Performance (2–5 units)". An official
+//       title keeps its name.
+//   14  the rung-4 units screen retires, so Calculus I (4 and 5 units) merges;
+//       the level, Honors, lab, sport and gender screens stay.
+//
+// C1-C11 run the BUILDER on a small fixture corpus, so they hold whatever
+// worklist is committed. That matters because the worklist is a cron artifact:
+// a code-only PR ships the builder while the committed file still predates it.
+// A25-A29 then check the real corpus once daily-dashboard.yml rebuilds it.
+const { execFileSync } = require("child_process");
+
+const FIXTURE_PY = String.raw`
+import sys, json, os, tempfile
+sys.path.insert(0, "kb")
+import _build_cr_reference as b
+d = tempfile.mkdtemp()
+def put(name, obj):
+    p = os.path.join(d, name)
+    with open(p, "w") as fh:
+        json.dump(obj, fh)
+    return p
+def row(cred, college, rec, course=None, system=None, subject=None):
+    return {"unified_title": cred, "college": college, "credit_rec": rec,
+            "course_id": course, "identity_system": system, "subject": subject}
+peers = [
+    row("Calc Cred", "C1", "5 hours in Calculus I", "MATH M1001", "M-ID", "MATH"),
+    row("Calc Cred", "C2", "5 hours in Calculus I", "MATH M1002", "M-ID", "MATH"),
+    row("Calc Cred", "C3", "4 hours in Calculus I", "MATH M1003", "M-ID", "MATH"),
+    row("ASE A8", "E1", "3 or 4 hours in Engine Performance"),
+    row("ASE A8", "E2", "3 or 4 hours in Engine Performance"),
+    row("ASE A8", "E3", "2 hours in Engine Performance"),
+    row("ASE A8", "E4", "5 hours in Engine Performance"),
+    row("AP Spanish", "S1", "4 hours in Elementary Spanish I"),
+    row("AP Spanish", "S2", "4 hours in Elementary Spanish I"),
+    row("AP Spanish", "S3", "5 hours in Elementary Spanish I"),
+    row("AWS Welder", "W1", "3 hours in Welding (Advanced)"),
+    row("AWS Welder", "W2", "4 hours in Welding"),
+    row("AWS Welder", "W3", "4 hours in Welding"),
+    row("POST Basic", "R1", "3 hours in Community Relations"),
+    row("POST Basic", "R2", "3 hours in Community Relations"),
+    row("POST Basic", "R3", "3.0 hours in Community Relations"),
+    row("ASE A1", "X1", "Engine Repair"),
+    row("ASE A1", "X2", "Engine Repair"),
+    row("ASE A1", "X3", "3 hours in Engine Repair"),
+    row("ASE A1", "X4", "4 hours in Engine Repair"),
+    row("AP English", "A1", "4 hours in Academic Reading and Writing"),
+    row("AP English", "A2", "3 hours in Academic Reading and Writing"),
+    row("Precalc Cred", "P1", "4 hours in Pre-Calculus Mathematics", "MATH 155", "C-ID", "MATH"),
+    row("Precalc Cred", "P2", "5 hours in PRE-CALCULUS MATHEMATICS", "MATH 155", "C-ID", "MATH"),
+]
+creds = [
+    {"rec_kind": "statewide_authoritative", "unified_title": "ASE A8",
+     "recs": [{"credit": "3 or 4 hours in Engine Performance", "cid": None}]},
+    {"rec_kind": "statewide_authoritative", "unified_title": "AP Spanish",
+     "recs": [{"credit": "4 hours in Elementary Spanish I", "cid": "SPAN 100"}]},
+    {"rec_kind": "statewide_authoritative", "unified_title": "AP English",
+     "recs": [{"credit": "4 hours in Academic Reading and Writing", "cid": "ENGL 100"}]},
+]
+b.PEERS = put("peers.json", {"peer_articulations": peers})
+b.CREDS = put("creds.json", {"rows": creds})
+b.CIDS = put("cids.json", {"descriptors": [
+    {"descriptor": "SPAN 100", "title": "Elementary Spanish I"},
+    {"descriptor": "ENGL 100", "title": "College Composition"},
+    {"descriptor": "MATH 155", "title": "Precalculus"}]})
+b.CCNS = put("ccns.json", {"courses": []})
+groups, stats = b.build()
+F = ("canonical", "canonical_source", "rung", "acts_automatically", "screens_objecting",
+     "units_differ", "official_applied")
+lab = getattr(b, "unit_range_label", None)
+U = lambda lo, hi: {"units_lo": lo, "units_hi": hi}
+print(json.dumps({
+    "groups": {g["key"]: {k: g[k] for k in F} for g in groups},
+    "named": stats.get("groups_named_by_range"),
+    "labels": None if lab is None else {
+        "equal": lab([U(3.0, 3.0), U(3.0, 3.0)]), "one": lab([U(1.0, 1.0)]),
+        "none": lab([U(None, None)]), "half": lab([U(0.5, 0.5), U(1.0, 1.0)])},
+}, sort_keys=True))
+`;
+
+// A fixed seed per run: Python orders a set of strings by a per-process hash,
+// and C11 exists because a set-order comparison once made the rebuild disagree
+// with itself.
+function fixtureRun(seed) {
+  return execFileSync("python3", ["-B", "-c", FIXTURE_PY], {
+    stdio: "pipe", env: Object.assign({}, process.env, { PYTHONHASHSEED: String(seed) }),
+  }).toString();
+}
+
+(function () {
+  const raw = fixtureRun(0);
+  const F = JSON.parse(raw);
+  const G = F.groups;
+  const calc = G["calculus i"] || {};
+  check("C1 a varying group named by the most colleges' wording states topic and range",
+    calc.canonical === "Calculus I (4–5 units)" && calc.canonical_source === "most_colleges");
+  const eng = G["engine performance"] || {};
+  check("C2 ...and so does one named by a published statewide wording (Sam chose both)",
+    eng.canonical === "Engine Performance (2–5 units)" && eng.canonical_source === "published_statewide");
+  const span = G["elementary spanish i"] || {};
+  check("C3 an official title keeps its name though its wordings award 4 and 5 units",
+    span.canonical === "SPAN 100 — Elementary Spanish I" && span.units_differ === true);
+  check("C4 a rung-4 twin whose units differ merges, and units are no screen",
+    calc.rung === 4 && calc.acts_automatically === true && (calc.screens_objecting || []).length === 0);
+  const weld = G["welding"] || {};
+  check("C5 the level screen still holds a group, and units are not named beside it",
+    weld.acts_automatically === false && JSON.stringify(weld.screens_objecting) === '["level"]');
+  const cr = G["community relations"] || {};
+  check("C6 a group whose wordings agree on units keeps its wording",
+    cr.canonical === "3 hours in Community Relations" && cr.units_differ === false);
+  const rep = G["engine repair"] || {};
+  check("C7 a wording that states no figure neither widens nor narrows the range",
+    rep.canonical === "Engine Repair (3–4 units)");
+  const ac = G["academic reading writing"] || {};
+  check("C8 a wording whose official title is only proposed is renamed; the proposal stays",
+    ac.canonical === "Academic Reading and Writing (3–4 units)"
+      && /_official_proposed$/.test(ac.canonical_source || ""));
+  const L = F.labels || {};
+  check("C9 equal ends state one figure; no figure states no range",
+    L.equal === "3 units" && L.one === "1 unit" && L.none === null && L.half === "0.5–1 units");
+  check("C10 _stats.groups_named_by_range counts the renamed groups",
+    F.named === 5);
+  // Seeds 1, 2, 4, 5 and 6 read Pre-Calculus Mathematics as divergent from
+  // MATH 155 "Precalculus" under the set-order squash; seeds 0, 3 and 7 did not.
+  const again = [1, 2, 3].map(fixtureRun);
+  const pre = G["pre calculus mathematics"] || {};
+  check("C11 the build is identical under four hash seeds, and Pre-Calculus takes MATH 155's title",
+    again.every(r => r === raw) && pre.canonical === "MATH 155 — Precalculus");
+})();
+
+// ── A25-A29: the same rules on the real corpus ────────────────────────────
+// The builder stamps _stats.groups_named_by_range. A committed worklist
+// without it predates cards 13-14, and the next daily-dashboard.yml run
+// rebuilds it: skip loudly until then, never silently.
+(function () {
+  if (!haveArtifact) return;
+  const groups = W.groups || [];
+  const stats = W._stats || {};
+  if (!("groups_named_by_range" in stats)) {
+    console.log("  … A25-A29 SKIPPED — the committed worklist predates the unit-range builder; "
+      + "daily-dashboard.yml rebuilds it (C1-C11 prove the builder meanwhile)\n");
+    return;
+  }
+  // The tab's own range, so the name and the line beside it are compared,
+  // never a third derivation written here.
+  const unitRange = makeWin().CPL_CR_REFERENCE._unitRange;
+  const named = groups.filter(g => g.units_differ && !g.official_applied);
+  check("A25 every varying group named by a wording ends in the range the tab prints beside it",
+    named.length > 0 && named.length === stats.groups_named_by_range
+      && named.every(g => g.canonical.endsWith(" (" + unitRange(g.members) + ")")));
+  // Read with the builder's own shape, never a copy of it here.
+  const oneFigure = Number(execFileSync("python3", ["-B", "-c",
+    "import sys, json\nsys.path.insert(0, 'kb')\nimport _build_cr_reference as b\n"
+    + "W = json.load(open('kb/cr_reference_worklist.json', encoding='utf-8'))\n"
+    + "print(sum(1 for g in W['groups'] if g['units_differ'] and not g['official_applied']"
+    + " and b.SHAPE_RE.match(g['canonical'])))"], { stdio: "pipe" }).toString().trim());
+  check("A26 no group named by a wording states one figure over wordings that differ",
+    oneFigure === 0);
+  check("A27 no group is held for its units; a varying rung-4 twin merges unless another screen objects",
+    groups.every(g => (g.screens_objecting || []).indexOf("units") < 0)
+      && groups.filter(g => g.rung === 4 && g.units_differ)
+        .every(g => g.acts_automatically || (g.screens_objecting || []).length > 0));
+  const calc = groups.find(g => g.key === "calculus i");
+  check("A28 Calculus I (4 and 5 units) merges and states its range",
+    !!calc && calc.acts_automatically === true && calc.canonical === "Calculus I (4–5 units)");
+  const offVary = groups.filter(g => g.official_applied && g.units_differ);
+  check("A29 an official title keeps its name where its wordings' units vary",
+    offVary.length > 0 && offVary.every(g => g.canonical.indexOf(g.official_id + " — ") === 0
+      && !/units?\)$/.test(g.canonical)));
 })();
 
 // ═════════ report ══════════════════════════════════════════════════════════

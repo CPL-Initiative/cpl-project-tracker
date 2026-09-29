@@ -38,8 +38,10 @@ check("template literals balanced (no escaped closing backtick)",
 
 /* ── 2. The lookups use the handler's real client variable ─────────────────── */
 check("credential lookups receive the handler's client (`sb`, not `supabase`)",
-      /fetchStatewideRecommendations\(searchText,\s*sb\)/.test(src) &&
-      /fetchAnyCredentials\(searchText,\s*sb\)/.test(src),
+      // routeText since v68: the retrieval text with a named PLACE stripped out
+      // (tests/sierra_place_anchor.test.js). The pin here is the CLIENT.
+      /fetchStatewideRecommendations\((?:searchText|routeText),\s*sb\)/.test(src) &&
+      /fetchAnyCredentials\((?:searchText|routeText),\s*sb\)/.test(src),
       "the handler client is `sb`; passing `supabase` is a ReferenceError per request");
 
 /* ── 3. Both RPCs are called, by their real names ──────────────────────────── */
@@ -55,16 +57,26 @@ check("probes adjacent word PAIRS, not just single tokens",
       /\$\{kws\[i\]\}\s\$\{kws\[i\s*\+\s*1\]\}/.test(src),
       "without pair probes, 'peace officer' and 'real estate' never match");
 
-/* ── 5. The fallback only runs when statewide is empty ─────────────────────── */
-check("catalogue-wide lookup runs only when the statewide lens is empty",
-      /stdRecs\s*&&\s*stdRecs\.length\s*>\s*0\s*\?\s*null/.test(src),
-      "the fallback should not cost a round-trip on the common path");
+/* ── 5. Both lenses run, concurrently (S274) ───────────────────────────────── */
+// Until 2026-09-18 the catalogue-wide lookup ran only when the statewide lens
+// was empty, so ONE statewide hit — including a false friend such as Cisco's
+// CCNA matching the "cna" inside its own acronym — hid every local credential
+// and the Chaffey CNA-to-LVN precedent with them. The two lookups are
+// independent and now run side by side; the guard that keeps the round-trip
+// cheap is that they share one Promise.all, never a sequential await.
+check("catalogue-wide lookup runs BESIDE the statewide lens, never gated on it (S274)",
+      /Promise\.all\(\[\s*fetchStatewideRecommendations\(routeText, sb\),\s*fetchAnyCredentials\(routeText, sb\),\s*\]\)/.test(src)
+      && !/stdRecs\s*&&\s*stdRecs\.length\s*>\s*0\s*\?\s*null/.test(src),
+      "a statewide hit must not switch the local route off — that is how the CCNA false friend hid the CNA precedent");
 
 /* ── 6. Rule is wired, and conditionally ───────────────────────────────────── */
 check("CREDENTIAL_RULE is injected only when there is credential context",
       /body: CREDENTIAL_RULE, appliesWhen: "credential"/.test(src));
 check("credentialContext reaches the prompt template",
-      /\$\{offeringsContext\}\$\{credentialContext\}/.test(src));
+      // programsContext was inserted ahead of it in S272 (the COCI program
+      // catalog), so the adjacency moved; credentialContext still has to reach
+      // the chain, which is what this check is for.
+      /\$\{programsContext\}\$\{credentialContext\}/.test(src));
 
 /* ── 7. The contract the route exists to honour ────────────────────────────── */
 const rule = (src.match(/const CREDENTIAL_RULE = `[\s\S]*?`;/) || [""])[0];

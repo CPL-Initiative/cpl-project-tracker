@@ -1,0 +1,34 @@
+{
+ "mode": "commit",
+ "at": "2026-09-27T12:03:26+00:00",
+ "plan_dir": "kb/esl_sheet_out/2026-09-27",
+ "states": {
+  "applied": {
+   "insert (item None)": 2
+  }
+ },
+ "cohort_counts": {
+  "esl-vesl-s294@bot": 2
+ },
+ "_about": "What this commit run wrote, with each row's before-values; --rollback restores from it.",
+ "rows": [
+  {
+   "op": "insert",
+   "item": null,
+   "id": "ESOL M9267",
+   "to": "ESOL M9023",
+   "cohort": "esl-vesl-s294@bot",
+   "before": null,
+   "state": "applied"
+  },
+  {
+   "op": "insert",
+   "item": null,
+   "id": "ESOL M9272",
+   "to": "ESOL M9023",
+   "cohort": "esl-vesl-s294@bot",
+   "before": null,
+   "state": "applied"
+  }
+ ]
+}

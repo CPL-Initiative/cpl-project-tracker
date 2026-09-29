@@ -378,7 +378,7 @@
       // Let the action bar wrap so the added button never forces horizontal scroll.
       '.actionbar .wrap{flex-wrap:wrap;}' +
       '.fs-sierra-launch{border-color:var(--cobalt);color:var(--cobalt);background:rgba(0,71,171,.06);}' +
-      '.fs-sierra-launch:hover{background:var(--cobalt);color:#fff;border-color:var(--cobalt);}' +
+      '.fs-sierra-launch:hover{background:var(--cobalt);color:var(--on-accent);border-color:var(--cobalt);}' +
       '.fs-sra-backdrop{position:fixed;inset:0;z-index:80;background:rgba(28,28,26,.42);opacity:0;visibility:hidden;' +
         'transition:opacity .18s,visibility .18s;}' +
       '.fs-sra-backdrop.on{opacity:1;visibility:visible;}' +
@@ -425,7 +425,7 @@
       '.fs-sra-input{flex:1;font:.92rem var(--font-data);padding:9px 12px;border:1px solid var(--border-strong);' +
         'border-radius:var(--radius-sm);background:var(--surface);color:var(--ink);}' +
       '.fs-sra-input:focus-visible{outline:2px solid var(--cobalt);outline-offset:1px;}' +
-      '.fs-sra-send{border:1px solid var(--cobalt);background:var(--cobalt);color:#fff;cursor:pointer;' +
+      '.fs-sra-send{border:1px solid var(--cobalt);background:var(--cobalt);color:var(--on-accent);cursor:pointer;' +
         'border-radius:var(--radius-sm);padding:9px 16px;font:600 .9rem var(--font-data);}' +
       '.fs-sra-send:hover{background:var(--seal-blue);border-color:var(--seal-blue);}' +
       '.fs-sra-send[disabled]{opacity:.5;cursor:default;}' +

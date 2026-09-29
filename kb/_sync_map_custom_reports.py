@@ -419,7 +419,7 @@ def report_cr_unit(ds, rows):
         print("   ⚠️  parsed rows != dataCount — the pull is short or padded. STOP.")
     pc = per_college(rows)
     print(f"   colleges            {len([c for c in pc if c is not None])}")
-    print(f"   live table          map_college_cr_unit (204,714 rows at last count)")
+    print(f"   live table          map_college_cr_unit")
     disp = Counter(r.get("cpl_status_plan") for r in rows)
     print("   CPLStatusPlan       " + ", ".join(
         f"{k or '(null)'} {v:,}" for k, v in disp.most_common(8)))
@@ -436,8 +436,10 @@ def report_student(ds, rows, stats):
         print("   ⚠️  parsed rows != dataCount — the pull is short or padded. STOP.")
     pc = per_college(rows)
     print(f"   colleges            {len([c for c in pc if c is not None])}")
-    print(f"   distinct students   {stats['distinct_students']:,}  "
-          f"[live map_student_credit holds 42,346]")
+    # No baked live figure here: the promotion's gates measure live at run time,
+    # and a stale bracket ("live holds 42,346") made a 50,027 pull read as an
+    # 18% jump on 2026-09-24 when live held 49,965.
+    print(f"   distinct students   {stats['distinct_students']:,}")
     if stats["rows_without_key"]:
         print(f"   ⚠️  rows with no StudentMAPID: {stats['rows_without_key']:,}")
     print(f"   hash lengths        {dict(stats['hash_lengths'])}  (expect 64 hex)")

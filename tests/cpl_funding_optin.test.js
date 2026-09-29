@@ -44,12 +44,21 @@ function boot(window) {
 }
 function click(window, el) { el.dispatchEvent(new window.MouseEvent("click", { bubbles: true })); }
 // A reviewer session: unlocked() === !!(tp() && tp().session()).
-function teamPhrase() {
+// ⚠️ THE CREDENTIAL CHANGED, THE INTENT DID NOT (2026-08-28). These blocks have
+// always meant "the private, UNLOCKED reviewer view" — the team phrase was just
+// what unlocked it at the time. Curating funding now requires a magic-link
+// reviewer (RLS narrowed to is_allowed_reviewer() alone), so the fixture supplies
+// what unlocked() actually reads. Swapping this back to a phrase turns all seven
+// of these red, which is the point.
+function reviewerSession() {
   return {
-    session: function () { return { user: "co@cccco.edu" }; },
-    decorateHeaders: function () {},
-    checkWrite: function (r) { return { ok: !!(r && r.ok), status: r ? r.status : 200 }; },
-    handleWriteFailure: function () {}
+    get: function () { return { access_token: "header.payload.sig", email: "co@cccco.edu" }; },
+    isFresh: function () { return true; },
+    authHeaders: function (extra) {
+      var h = { apikey: "anon", Authorization: "Bearer header.payload.sig" };
+      if (extra) for (var k in extra) h[k] = extra[k];
+      return h;
+    }
   };
 }
 
@@ -76,12 +85,13 @@ function teamPhrase() {
   check("A0: public page leaks NO attestor PII even when handed some",
     !/Jane Admin/.test(mountHtml0) && !/jane@college\.edu/.test(mountHtml0));
 
-  click(pub.window, doc.querySelector("#cplFundTable tr.cplfund-row"));   // expand a row
+  // The row carries the one Confirm Participation button (Sam, 2026-09-23,
+  // funding review item 3: the drill-in's second copy is gone).
   const t1 = doc.getElementById("cplFundTable").innerHTML;
   check("A1: a public college row offers the self-service opt-in button",
-    /data-optinbtn=/.test(t1));
+    /data-optinjump=/.test(t1) && !/data-optinbtn=/.test(t1));
 
-  click(pub.window, doc.querySelector("[data-optinbtn]"));                // open the form
+  click(pub.window, doc.querySelector("[data-optinjump]"));               // open the form
   const t2 = doc.getElementById("cplFundTable").innerHTML;
   check("A2: the opt-in form (name/title/email + submit) survives stripCurateAffordances in public mode",
     /data-optinfield="name"/.test(t2) && /data-optinfield="title"/.test(t2) &&
@@ -89,12 +99,12 @@ function teamPhrase() {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Part B — the private, UNLOCKED reviewer view renders the CO confirm lane with
-// the attestor identity and Confirm / Reject actions.
+// Part B — the private, UNLOCKED reviewer view renders the CO review lane with
+// the attestor identity and the Reject action (Confirm retired 2026-09-28).
 // ─────────────────────────────────────────────────────────────────────────────
 {
   const priv = freshDom();
-  priv.window.CPL_TEAM_PHRASE = teamPhrase();
+  priv.window.CPL_SESSION = reviewerSession();
   const doc = boot(priv.window);
   const P = priv.window.CPL_FUNDING_TAB;
   P._setElig({ coordOk: true, coord: {}, optinRow: {}, optinReview: [
@@ -106,8 +116,10 @@ function teamPhrase() {
   check("B1: the CO review lane renders for a reviewer", /cplfund-colane/.test(html));
   check("B2: the lane shows the attestor identity (reviewer-only PII)",
     /Jane Admin/.test(html) && /jane@college\.edu/.test(html));
-  check("B3: the lane offers Confirm and Reject",
-    /data-optinconfirm=/.test(html) && /data-optinrevoke=/.test(html));
+  // Sam, 2026-09-28: a self-attestation stands (attest-first), so the CO acts
+  // only to reject one; the CO Confirm is gone.
+  check("B3: the lane offers Reject on a self-attestation, and no Confirm",
+    !/data-optinconfirm=/.test(html) && /data-optinrevoke=/.test(html));
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -174,10 +186,9 @@ function teamPhrase() {
   T._setElig({ coordOk: true, coord: {}, optinRow: {} });
   T.render();
 
-  click(dom.window, doc.querySelector("#cplFundTable tr.cplfund-row"));   // expand
-  const btn = doc.querySelector("[data-optinbtn]");
-  const rowCollege = btn.getAttribute("data-optinbtn");
-  click(dom.window, btn);                                                 // open the form
+  const btn = doc.querySelector("[data-optinjump]");
+  const rowCollege = btn.getAttribute("data-optinjump");
+  click(dom.window, btn);                                                 // expand + open the form
 
   const wrap = doc.querySelector("[data-optinwrap]");
   wrap.querySelector('[data-optinfield="name"]').value = "Jane Admin";
@@ -214,6 +225,11 @@ function teamPhrase() {
   if (chip) click(dom.window, chip);
   const t1 = doc.getElementById("cplFundTable").innerHTML;
   const wrap = doc.querySelector('[data-optinwrap="' + (chipCollege || "") + '"]');
+  // Was KNOWN-RED for a real product bug (found by this port, 2026-08-31):
+  // the chip's handler set state.open["c:" + c.order] while rows key their
+  // open state by "c:" + c.college — the drill-in never opened, so Sam's
+  // one-click "✎ Confirm" (2026-08-05) was a dead click. Fixed same day
+  // (handler re-keyed by name); this check is the regression guard.
   check("F1b: clicking the chip opens that row's attestation form (name field present)",
     !!wrap && !!wrap.querySelector('[data-optinfield="name"]'));
 
@@ -227,13 +243,14 @@ function teamPhrase() {
   check("F2b: other (not-opted-in) colleges still show the chip", stillThere.length > 0);
 }
 {
-  // F3/F4 — a reviewer sees Confirm/Reject INLINE in the row drill-in, with the
-  // attestor identity; and clicking inline Confirm actually confirms — proving the
-  // holder-scoped binding survives the expand's refreshTable (a dead button here
-  // was the real risk of moving the action onto the row).
-  const order = D.colleges[0].order;
+  // F3/F4 — a reviewer sees Reject INLINE in the row drill-in, with the
+  // attestor identity; and clicking inline Reject actually withdraws it — proving
+  // the holder-scoped binding survives the expand's refreshTable (a dead button
+  // here was the real risk of moving the action onto the row). The CO Confirm
+  // left both surfaces on 2026-09-28 (Sam's mockup).
+  // Rows key by NAME since one-pool adoption (data-id "c:<college>", 2026-08-31).
   const priv = freshDom();
-  priv.window.CPL_TEAM_PHRASE = teamPhrase();
+  priv.window.CPL_SESSION = reviewerSession();
   const doc = boot(priv.window);
   const P = priv.window.CPL_FUNDING_TAB;
   const selfRow = {}; selfRow[COL] = { college: COL, status: "self_attested", source: "self" };
@@ -242,39 +259,73 @@ function teamPhrase() {
       status: "self_attested", requested_at: "2026-08-05" }
   ] });
   P.render();
-  const row = doc.querySelector('#cplFundTable tr.cplfund-row[data-id="c:' + order + '"]');
+  const row = doc.querySelector('#cplFundTable tr.cplfund-row[data-id="c:' + COL + '"]');
   click(priv.window, row);   // expand COL's drill-in (it's opted in → no chip)
   const t = doc.getElementById("cplFundTable").innerHTML;
   check("F3: the row drill-in shows the CO confirm block inline (where Sam looked)",
     /cplfund-corow/.test(t));
-  check("F3b: the inline block offers Confirm + Reject with the attestor identity",
-    /data-optinconfirm=/.test(t) && /data-optinrevoke=/.test(t) &&
+  check("F3b: the inline block offers Reject alone, with the attestor identity",
+    !/data-optinconfirm=/.test(t) && /data-optinrevoke=/.test(t) &&
     /Jane Admin/.test(t) && /jane@college\.edu/.test(t));
 
-  const confirmBtn = doc.querySelector("#cplFundTable [data-optinconfirm]");
-  check("F4: the inline Confirm button is present in the drill-in", !!confirmBtn);
-  if (confirmBtn) click(priv.window, confirmBtn);
-  const t2 = doc.getElementById("cplFundTable").innerHTML;
-  check("F4b: clicking inline Confirm confirms the opt-in (holder-scoped binding survives refreshTable)",
-    /CO-confirmed/.test(t2));
+  const rejectBtn = doc.querySelector("#cplFundTable [data-optinrevoke]");
+  check("F4: the inline Reject button is present in the drill-in, with no Confirm beside it",
+    !!rejectBtn && rejectBtn.textContent === "Reject" && !doc.querySelector("#cplFundTable [data-optinconfirm]"));
+  if (rejectBtn) click(priv.window, rejectBtn);
+  const t2 = doc.getElementById("cplFundTable").textContent;
+  check("F4b: clicking inline Reject withdraws the opt-in (holder-scoped binding survives refreshTable)",
+    /Confirmation withdrawn \(due /.test(t2) && P._optinActive(COL) === false);
 }
 {
   // F5 — a LOCKED (public / non-reviewer) drill-in never shows the CO controls,
   // but still shows the college-facing opted-in status.
-  const order = D.colleges[0].order;
   const dom = freshDom();
   const doc = boot(dom.window);
   const T = dom.window.CPL_FUNDING_TAB;
   const selfRow = {}; selfRow[COL] = { college: COL, status: "self_attested", source: "self" };
   T._setElig({ coordOk: true, coord: {}, optinRow: selfRow });
   T.render();
-  const row = doc.querySelector('#cplFundTable tr.cplfund-row[data-id="c:' + order + '"]');
+  const row = doc.querySelector('#cplFundTable tr.cplfund-row[data-id="c:' + COL + '"]');
   click(dom.window, row);
   const t = doc.getElementById("cplFundTable").innerHTML;
   check("F5: a locked (non-reviewer) drill-in shows NO CO confirm controls",
     !/cplfund-corow/.test(t) && !/data-optinconfirm/.test(t));
   check("F5b: the locked drill-in still shows the college-facing opted-in status",
-    /Opted in to participate/.test(t));
+    /Minimum Conditions:[\s\S]*Confirmation on file/.test(t.replace(/<[^>]+>/g, " ")));
+}
+
+// ── the participation-requirement join (2026-08-27) ─────────────────────────
+// `partLabel()` is curator-editable and TWO of its three call sites appended
+// their own " by ", so the live label "Opt-in participation by" rendered
+// "Opt-in participation by by 2026-11-01" in the eligibility hover and the
+// baseline-gate text. The third site appended nothing, so NO single label value
+// could be correct in all three places. The joiner adapts to the label now.
+//
+// ⚠️ Tested through a hook rather than the screen: both render surfaces need
+// live eligibility data (baselineGate() short-circuits to "pending" when the
+// coordinator feed has not loaded), so this join is unreachable from jsdom —
+// which is exactly why it shipped wrong and stayed wrong.
+{
+  const { window } = freshDom();
+  boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  const withLabel = (l) => { T._setScenario({ partLabel: l }); return T._partReqText(); };
+
+  const endsInBy = withLabel("Opt-in participation by");
+  check("a label already ending in 'by' is not given a second one",
+    /participation by \d{4}-\d{2}-\d{2}$/.test(endsInBy) && !/by\s+by/i.test(endsInBy));
+  const noBy = withLabel("Participation confirmed");
+  check("a label NOT ending in 'by' still reads as a deadline, not two facts jammed together",
+    /^Participation confirmed by \d{4}-\d{2}-\d{2}$/.test(noBy));
+  check("Sam's new label composes cleanly (2026-08-27)",
+    /^Participation confirmed by \d{4}-\d{2}-\d{2}$/.test(withLabel("Participation confirmed by")));
+  check("case does not defeat it — 'By' is the same word",
+    !/by\s+by/i.test(withLabel("Participation confirmed By")));
+  check("an empty label degrades to the bare deadline, not a dangling 'by'",
+    !/\bby\b/i.test(withLabel("")) && /\d{4}-\d{2}-\d{2}/.test(withLabel("")));
+  check("every call site composes through partReqText() — none keeps its own concatenation",
+    !/partLabel\(\)\s*\+\s*" by "/.test(consumerSrc) &&
+    (consumerSrc.match(/partReqText\(\)/g) || []).length >= 4);
 }
 
 let pass = 0;

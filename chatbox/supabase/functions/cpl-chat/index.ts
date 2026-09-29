@@ -16,43 +16,223 @@ const ALLOWED_ORIGINS = [
 
 const MATCH_THRESHOLD = 0.5;
 const MATCH_COUNT = 5;
-const MAX_TOKENS = 2048;
+/* 8,192 by Sam's ruling on the 2026-09-11 decision sheet ("Two Calls on Sierra",
+ * item 2): "Let's make it high for now so folks playing around with it always get
+ * a complete answer." A ceiling, not a spend: an answer costs what it uses, and
+ * the log's `stop_reason` names any turn that reaches it. It was 2,048 from launch
+ * until then; Sonnet 5's tokenizer counts ~27% more tokens for the same text, so
+ * 2,048 had come to hold about 6,000 characters, and one answer in nine on v64 sat
+ * within a fifth of it. With thinking OFF (item 1, same sheet) nothing but the
+ * answer itself reaches this ceiling. */
+const MAX_TOKENS = 8192;
 
-/* ── WHICH MODEL ANSWERS (2026-08-25) ─────────────────────────────────────────
+/* ── WHICH MODEL ANSWERS (2026-09-10) ─────────────────────────────────────────
  *
- * ⚠ TEMPORARY: Sam, 2026-08-25, hours after Sierra went down on an exhausted
- * Anthropic credit balance for the THIRD time — "set Sierra to run on Haiku 4.5
- * rather than Opus or Sonnet… a temporary fix until we can get our corporate
- * billing released." It was Sonnet 4.6, never Opus.
+ * ⭐ SONNET 5, and the temporary Haiku window is CLOSED. Sam, 2026-08-25, hours
+ * after Sierra went down on an exhausted Anthropic credit balance for the THIRD
+ * time: "set Sierra to run on Haiku 4.5 rather than Opus or Sonnet… a temporary
+ * fix until we can get our corporate billing released." It was Sonnet 4.6, never
+ * Opus. He set the revert condition himself on 2026-08-30 — "revert immediately
+ * if it disappoints, else when corporate billing lands" — and the corporate
+ * account landed 2026-09-10. This is that revert.
  *
- * ⭐ REVERTING NEEDS NO DEPLOY. Set the `CPL_CHAT_MODEL` secret on the Supabase
- * project and it wins over the default below; unset it to come back here. That
- * matters because the person who will want Sonnet back is the one who gets the
- * billing news, and he should not have to wait for a session to ship a one-line
- * PR. The default stays Haiku so an unset secret is the intended state rather
- * than an accident.
+ * ⚠ IT DID NOT COME BACK CHEAPER. This block claimed it did, reasoning that the
+ * cached stable prefix would cover the 2x step from Haiku 4.5's $1/$5 to Sonnet 5's
+ * $2/$10. MEASURED 2026-09-11 from function_logs, split at the deploy, cache working:
+ *
+ *                 requests   input tokens   cached   blended $/MTok in
+ *     Haiku 4.5        48        760,274      0.0%        $1.00
+ *     Sonnet 5         23        554,161     18.6%        $1.72
+ *
+ * Sonnet 5 costs 1.72x Haiku 4.5 per input token — 2.00x with no cache, so the
+ * cache recovers 28% of the step and does not close it. THE PREFIX IS NOT THE BILL:
+ * 4,476 cached tokens against a 24,093-token average request is 19%, and the other
+ * 81% is retrieval, different every request by design and never cached. Reasoning
+ * about the prefix as though it were the input is the error — it is a fifth of it.
+ *
+ * ⭐ THE ABSOLUTE NUMBERS ARE SMALL, AND THAT IS THE POINT. Those 23 requests cost
+ * $1.21 all in. At this volume the bill is a rounding error either way, so choose on
+ * ANSWER QUALITY and let price break a tie. Against the Sonnet 4.6 this endpoint ran
+ * before 2026-08-25, Sonnet 5 IS a cut: $2/$10 against $3/$15.
+ *
+ * ⚠ NOTHING HERE KNOWS WHICH ACCOUNT PAYS. Line 6 reads a Supabase secret NAMED
+ * `ANTHROPIC_API_KEY`; which Console key that VALUE is, no code and no log on this
+ * side can see. A Console figure therefore corroborates these numbers only once
+ * someone has confirmed the key filter matches the value in that secret — the two
+ * `ANTHROPIC_API_KEY` names are different namespaces and matching them is not
+ * evidence. I compared against the wrong key once already (2026-09-11, caught by
+ * Sam); the table above does not depend on it, because function_logs are Sierra's
+ * own requests whatever key authenticates them. To check where the spend lands,
+ * filter the Console by key and look for traffic in this endpoint's window.
+ *
+ * ⭐ THE 81% IS RETRIEVAL, AND WHETHER IT HAS A LEVER IS UNMEASURED. I first wrote
+ * here that it was conversation history re-paid every turn, and that a breakpoint on
+ * the last history message would fix it. WRONG, and the code three thousand lines
+ * down says so: history is capped at the last 6 turns and 2,000 chars each (~3,000
+ * tokens at the absolute ceiling), and THE PRODUCTION WIDGET OMITS `history`
+ * ENTIRELY — single-turn, so in production it is zero. History cannot be 81% of
+ * anything here.
+ *
+ * So `uncached_input` running 3,536 to 48,271 is the RETRIEVAL block sizing itself to
+ * the question, not a conversation accumulating. Whether any of it repeats enough to
+ * cache is an open question and not one to guess at a third time: break the input down
+ * IN THE LOG LINE (prefix / retrieval / history / question) and read it off. Until
+ * then the honest statement is that 81% of the spend is retrieval and nobody has
+ * looked at its composition.
+ *
+ * ⭐ CHANGING MODEL NEEDS NO DEPLOY. Set the `CPL_CHAT_MODEL` secret on the
+ * Supabase project and it wins over the default below; unset it to come back
+ * here. The default is now Sonnet 5 so an unset secret is the INTENDED state
+ * rather than an accident — that is the whole point of the default, and it is
+ * why the default moved rather than the secret being set and forgotten. To go
+ * back to Haiku in a hurry, set the secret; no code change, no deploy.
+ *
+ * ⭐ THE ROUTE TIME LIMIT NEEDS NO DEPLOY EITHER (2026-09-18). Every retrieval
+ * read runs under a client-side limit, 5,000 ms by default; the
+ * `CPL_ROUTE_TIMEOUT_MS` secret overrides it and `0` disables it. The block
+ * above ROUTE_TIMEOUT_MS says what it covers and how a cut reads in the logs.
  *
  * ⚠ THE PRICE CUT IS REAL BUT IT IS NOT THE WHOLE BILL. Haiku 4.5 is $1/$5 per
  * MTok against Sonnet 4.6's $3/$15 — 3× both directions. This endpoint is
  * INPUT-dominated (MAX_TOKENS caps every answer at 2,048), so the saving lands
  * where the spend is.
  *
- * ⚠ PROMPT CACHING STILL WORKS, AND THAT IS NOT AUTOMATIC. Haiku's minimum
- * cacheable prefix is 2,048 tokens — DOUBLE Sonnet's 1,024 — and a breakpoint on
- * a shorter prefix is accepted while caching nothing, silently. The `stable`
- * block is ~3,234 tokens, so it clears the higher bar with room; if it is ever
- * trimmed below 2,048 the cache stops paying on Haiku before anyone notices.
- * tests/sierra_model_choice.test.js pins that reasoning.
+ * ⛔ PROMPT CACHING IS OFF ON THIS MODEL, AND THAT WAS NOT NOTICED FOR WEEKS.
+ * The line above used to read "Haiku's minimum cacheable prefix is 2,048 tokens
+ * — DOUBLE Sonnet's 1,024 … so it clears the higher bar with room." Both halves
+ * were wrong for the model actually configured. THE FLOOR IS PER-MODEL, NOT PER
+ * FAMILY: Haiku 4.5 is 4,096 (2,048 is Haiku 3.5), Sonnet 5 and Sonnet 4.6 are
+ * 1,024, Opus 5 is 512 — and within one family Opus ranges 512 to 4,096 across
+ * versions, so no family-keyed number can be right.
  *
- * ⚠ CONTEXT IS 200K, NOT 1M. Nothing here needs more: the largest caller is the
- * GR area sweep at a 40,000-CHARACTER cap (~10K tokens) on top of a system
- * prompt in the single-digit thousands.
+ * The `stable` block is 4,476 tokens — MEASURED, see below — clearing Sonnet 5's
+ * 1,024 floor with room. A cache read costs ~0.1x base input, so on this
+ * INPUT-DOMINATED endpoint the repeated prefix is CHEAPER on Sonnet 5 than the
+ * uncached prefix was on Haiku 4.5. ⚠ TRUE OF THE PREFIX AND ONLY THE PREFIX — it
+ * is 19% of an average request, so this does NOT make the endpoint cheaper; see the
+ * measured table at the top. That was the projection on 2026-09-10; the log lines
+ * below are the measurement, and they cost more than they saved.
+ *
+ * ⚠ THE MEASUREMENT BROKE THE ESTIMATE'S ARITHMETIC (2026-09-11). This block read
+ * "~3,234 tokens (12,938 chars / 4), BELOW Haiku 4.5's 4,096 floor, so the
+ * breakpoint caches nothing." The live figure is 4,476 — chars/4 ran 28% LOW — and
+ * 4,476 is ABOVE 4,096, so "the prefix is under the floor" does NOT survive as the
+ * explanation. What the `function_logs` DO establish: 12 consecutive `⚠ NEITHER`
+ * on Haiku 4.5, the last 13 seconds before the v63 deploy finished, then
+ * write=4476 six seconds after it and read=4476 on every request through the
+ * 5-minute TTL — and that deploy changed no cache code, only MODEL. The prediction
+ * held; the mechanism is unconfirmed. NEVER reason from chars/4 near a floor: the
+ * decisive evidence is the log line at the `message_start` handler, which is
+ * exactly why it is there. tests/sierra_model_choice.test.js keys the floor to the
+ * exact model id and FAILS CLOSED on an id it does not know.
+ *
+ * ⚠ CONTEXT IS 1M, AND NOTHING HERE NEEDS IT. The largest caller is
+ * the GR area sweep at a 40,000-CHARACTER cap (~10K tokens) on top of a system
+ * prompt in the single-digit thousands. This line named 200K
+ * through the Haiku 4.5 window — 200K was that model's ceiling, and it stopped
+ * being true the moment the model changed. ⚠ A MODEL SWITCH CARRIES STALE FACTS
+ * WITH IT: the context window, the cache floor and the per-token price are all
+ * properties of the MODEL, and every one of them was written down here as though
+ * it were a property of this endpoint. Re-read this block whenever MODEL moves.
+ *
+ * ⛔ THINKING IS ON BY DEFAULT ON SONNET 5, AND IT IS BILLED AGAINST max_tokens
+ * (2026-09-11). The one property of a model switch no price table shows: on
+ * Sonnet 5 (and Opus 5) a request with NO `thinking` field runs ADAPTIVE
+ * thinking; on Haiku 4.5 and Sonnet 4.6 the same request runs none. Thinking
+ * tokens are output tokens under the same `max_tokens` cap, so for two hours
+ * after the 2026-09-10 deploy a quarter of answers came back blank — the model
+ * reasoned through the whole 2,048-token budget and never reached the text —
+ * while HTTP 200, the cache line and the error log all read healthy. The
+ * request body sends `thinking: { type: "disabled" }` explicitly now; see the
+ * note beside it. ⭐ SAM RULED IT STAYS OFF (decision sheet "Two Calls on
+ * Sierra", item 1, 2026-09-11): "Let's keep it off but test for better options
+ * if they exist. Currently, it's giving fantastic answers!" Turning it ON is a
+ * product decision (latency before the first word, output spend, answer style),
+ * never a default to inherit: if it is ever tried, use `{ type: "adaptive" }`
+ * with `output_config.effort` on the PREVIEW slug first (cpl-chat-preview-ab.yml),
+ * and MAX_TOKENS must hold the thinking as well as the answer.
+ * ⚠ IF MODEL EVER MOVES TO FABLE OR MYTHOS, `disabled` IS REJECTED WITH A 400
+ * (thinking is always on there): the field must go and MAX_TOKENS must grow, or
+ * every request fails. tests/sierra_model_choice.test.js keys the thinking
+ * default to the exact model id, like the cache floor, and fails closed.
+ * ⚠ AND THE TOKENIZER CHANGED. Sonnet 5 counts ~30% more tokens for the same
+ * text than Sonnet 4.6 / Haiku 4.5, which is most of why the cached prefix
+ * measured 4,476 tokens against the 3,234 that chars/4 predicted (the same
+ * breakpoint read 3,027 on Sonnet 4.6 on 2026-08-23), and why 2,048 output
+ * tokens had come to hold roughly 6,000 characters of answer rather than 8,000
+ * — the reason MAX_TOKENS moved to 8,192 (see its own note).
  *
  * ⚠ WHAT TO WATCH. The most demanding thing on this endpoint is not a student
  * question — it is the GR area sweep, which asks for a legal instrument
  * determination across sixteen rows returned as strict JSON and nothing else.
  * If quality slips anywhere first, it will slip there. */
-const MODEL = Deno.env.get("CPL_CHAT_MODEL") || "claude-haiku-4-5-20251001";
+const MODEL = Deno.env.get("CPL_CHAT_MODEL") || "claude-sonnet-5";
+
+// ── EVERY RETRIEVAL READ HAS ITS OWN TIME LIMIT (2026-09-18, S275) ─────────────
+// The retrieval routes run together in one Promise.all and the answer waits for
+// the slowest. Until now the only limit was the database's: the authenticator
+// role's 8 s statement_timeout, which every PostgREST call inherits. So one slow
+// route — search_college_programs under two concurrent smoke suites, five times
+// in the 24 hours to 2026-09-18 — held the whole answer for eight seconds
+// before failing safe. The one-pass rewrite of that route (S273) is the fix;
+// this is the backstop: a client-side limit on every READ the function makes
+// through supabase-js, applied in ONE place (the client's fetch) rather than
+// at each of the fourteen call sites, so a route added later is covered on the
+// day it lands.
+//
+// What it covers: every GET, and every POST to /rest/v1/rpc/ (a PostgREST
+// function call). What it leaves alone: table writes (the interaction log, a
+// feedback row) — a write that is cut leaves nothing behind, and a slow write
+// holds no answer, so it keeps the database's own limit. The vector search
+// runs through the same client and is covered too; it already turned a
+// database timeout into a 500, and it still does, sooner.
+//
+// A cut request surfaces as an error the route already handles (supabase-js
+// returns `{ error: { message: "TimeoutError: …" } }` rather than throwing), so
+// every route fails safe exactly as it does on a statement timeout, and the
+// function logs carry one line per cut: `route time limit: 5000 ms cut POST
+// /rest/v1/rpc/search_college_programs after 5003 ms`. Read them after every
+// A/B and deploy; a cut is a route to fix, never a setting to raise blindly.
+//
+// ⭐ THE VALUE NEEDS NO DEPLOY: the `CPL_ROUTE_TIMEOUT_MS` secret overrides the
+// committed default (5,000 ms — twice the slowest route measured after the
+// one-pass rewrite, 2.6 s, and well under the database's 8 s); `0` disables the
+// limit. Pure helpers below are lifted by tests/sierra_route_time_limit.test.js.
+const ROUTE_TIMEOUT_MS = routeTimeoutMs(Deno.env.get("CPL_ROUTE_TIMEOUT_MS"));
+
+// Route time limit — pure helpers (lifted by the test; no Deno reference here)
+function routeTimeoutMs(raw: string | undefined | null): number {
+  if (raw === undefined || raw === null || String(raw).trim() === "") return 5000;
+  const n = Number(raw);
+  if (!Number.isFinite(n) || n < 0) return 5000;
+  return Math.floor(n);   // 0 disables the limit
+}
+function routeLimitApplies(url: string, method: string): boolean {
+  const m = String(method || "GET").toUpperCase();
+  if (m === "GET" || m === "HEAD") return true;
+  return m === "POST" && /\/rest\/v1\/rpc\//.test(String(url || ""));
+}
+function routePath(url: string): string {
+  try { return new URL(url).pathname; } catch { return String(url); }
+}
+// The fetch supabase-js is handed. `limitMs` and `doFetch` are parameters so the
+// test can prove the cut with a fake fetch that never answers.
+function fetchWithRouteLimit(input: any, init: any, limitMs: number, doFetch: any): Promise<any> {
+  const url = typeof input === "string" ? input : (input && input.href) ? input.href : (input && input.url) || "";
+  const method = (init && init.method) || (input && input.method) || "GET";
+  if (!(limitMs > 0) || !routeLimitApplies(url, method)) return doFetch(input, init);
+  const timeout = AbortSignal.timeout(limitMs);
+  const signal = init && init.signal ? AbortSignal.any([init.signal, timeout]) : timeout;
+  const started = Date.now();
+  return doFetch(input, { ...(init || {}), signal }).catch((e: any) => {
+    if (timeout.aborted) {
+      console.error(`route time limit: ${limitMs} ms cut ${String(method).toUpperCase()} ${routePath(url)} after ${Date.now() - started} ms`);
+    }
+    throw e;
+  });
+}
+// End of the route time limit helpers
+const routeLimitedFetch = (input: any, init?: any) => fetchWithRouteLimit(input, init, ROUTE_TIMEOUT_MS, fetch);
 const RATE_LIMIT_PER_MIN = 20;
 
 const rateLimits = new Map<string, { count: number; resetAt: number }>();
@@ -74,7 +254,10 @@ function corsHeaders(origin: string) {
   return {
     "Access-Control-Allow-Origin": allowed ? origin : "",
     "Access-Control-Allow-Methods": "POST, OPTIONS",
-    "Access-Control-Allow-Headers": "Content-Type, Authorization, x-client-info, apikey",
+    // x-team-pass (v66): the shared team phrase a COBI reader may hold, so the
+    // function can ask team_pass_ok() who is asking. A preflight that does not
+    // list it drops the header silently and every phrase holder reads as public.
+    "Access-Control-Allow-Headers": "Content-Type, Authorization, x-client-info, apikey, x-team-pass",
   };
 }
 
@@ -554,8 +737,42 @@ const TOPIC_SYNONYMS: Record<string, string[]> = {
   security: ["homeland", "hls", "protective", "transportation"],
   homeland: ["security", "hls", "protective"],
   welding: ["weld", "welder", "fabrication", "smaw", "fcaw"],
-  nursing: ["nurse", "lpn", "cna", "health", "clinical"],
-  nurse: ["nursing", "lpn", "cna", "health", "clinical"],
+  nursing: ["nurse", "lvn", "lpn", "cna", "health", "clinical"],
+  nurse: ["nursing", "lvn", "lpn", "cna", "health", "clinical"],
+  // ⚠️ CALIFORNIA SAYS LVN. This table carried `lpn` — the term used in other
+  // states — and had no `lvn` key at all, so "How do I become an LVN?" expanded
+  // to NOTHING: extractTopicKeywords gives ["become","lvn"], no key resolved,
+  // and nearestSynonymKey("lvn") returned null so even the fuzzy last resort
+  // missed. Measured on the program catalog, the query reached 28 of the 53
+  // colleges its title surface can find.
+  //
+  // THE VALUES ARE PHRASES ON PURPOSE, and single tokens were measured and
+  // rejected. "vocational" pulls in vocational education and vocational ESL
+  // (82 colleges against a 56 ideal). "practical" is worse in a subtler way:
+  // it is 9 characters, so it takes the stemmed prefix path, `practical:*`
+  // becomes `'practic':*`, and that matches Architectural PRACTICE, Teaching
+  // PRACTICES and PRACTICUM in Machine Shorthand — 30 of the 36 title rows it
+  // added were not nursing at all. Same family of defect as the `aed` → `'a':*`
+  // failure that search_exhibits_by_topic_v2's header records: a prefix match on
+  // a stem, not a match on the word.
+  //
+  // The phrases hit it exactly. Measured against the ground truth (program
+  // titles matching /\mlvn\M|vocational nurs/): 53 title colleges, 44 code
+  // colleges, 56 in union, and ZERO non-nursing title rows. search_college_programs
+  // routes any whitespace-bearing term through phraseto_tsquery.
+  lvn: ["practical nursing", "vocational nursing"],
+  // ⚠️ CNA HAD NO KEY (2026-09-18, S273). `nursing` and `nurse` carry "cna" as a
+  // VALUE, so a nursing question reached CNA rows, but "cna" itself resolved to
+  // nothing — nearestSynonymKey guards tokens under 6 characters — and the
+  // catalog routes matched only titles that spell out "CNA". Measured on the
+  // Orange County program export: "ESL for CNA and Caregiving" and the HHA
+  // course matched; "Certified Nurse Assistant" (Golden West, Saddleback) and
+  // "Nursing Assistant" (Santa Ana) did not. Phrases, for the reason lvn is:
+  // "assistant" alone is Medical Assisting, Dental Assistant and Administrative
+  // Assistant. `'nurs' <-> 'assist'` matches "Nurse Assistant", "Nursing
+  // Assistant" and "Certified Nursing Assistant (CNA)" under the english
+  // stemmer (verified live).
+  cna: ["nurse assistant", "certified nurse assistant"],
   automotive: ["auto", "ase", "mechanic", "vehicle", "engine"],
   mechanic: ["automotive", "ase", "engine", "vehicle"],
   apprentice: ["apprenticeship", "journeyperson", "ibew"],
@@ -624,6 +841,33 @@ const TOPIC_STOP_WORDS = new Set([
   // anticipated; this list is the cheap first pass for the ones we know.
   "cert", "certs", "certificate", "certification", "certifications",
   "cpl", "ccc", "cccs", "articulation", "articulated",
+  // "HOW DO I BECOME A ..." is one of the most common student phrasings, and
+  // `become` was a live search term in every one of them. Measured 2026-09-17
+  // on the program catalog: the LVN question returned "BECOMING a Social Media
+  // Influencer" — `become` stems to 'becom' and prefix-matches it. It was the
+  // only non-nursing row in 118, and it came from the question's shape rather
+  // than its subject. The DF filter cannot catch this class: `become` is rare
+  // enough to pass a frequency test and still says nothing about the topic,
+  // which is exactly the division of labor this list's header describes.
+  // extractTopicKeywords does not stem, so each surface form is needed.
+  "become", "becomes", "becoming",
+  // ASK-SHAPE WORDS (2026-09-18, S273). Sam's test question — "I have a cna cert
+  // and I want to go to a college in orange county. What CNA courses at the
+  // colleges match LVN courses so I can ask for credit?" — extracted [cna, want,
+  // orange, county, cna, courses, match, lvn, courses, ask]. Three of the ten
+  // named the topic. The rest reached every route as live terms: "courses"
+  // matched "Courses in ESL", "Golf Course", "UC 7 Course Pattern" and "Regular
+  // Basic Course: Police Academy" in the program export, and the credential
+  // probes — built from the FIRST four keywords — were spent on "cna want",
+  // "want orange", "orange county" and "county cna", so "lvn" was never asked
+  // and the one CNA-to-LVN precedent in MAP (Chaffey, NURVN 414) never reached
+  // the model. The county itself is stripped earlier, by resolveAskedPlace;
+  // these are the words that describe the ASK. Contraction stems ("don" from
+  // "don't") are here because the tokenizer splits on the apostrophe.
+  "want", "wants", "wanted", "ask", "asking", "asked", "request", "requests",
+  "requested", "match", "matches", "matching", "course", "courses", "program",
+  "programs", "yet", "don", "didn", "doesn", "isn", "aren", "wasn", "weren",
+  "won", "wouldn", "couldn", "shouldn", "haven", "hasn", "hadn",
 ]);
 
 function extractTopicKeywords(query: string): string[] {
@@ -774,6 +1018,31 @@ function expandWithSynonyms(keywords: string[]): string[] {
   return [...expanded];
 }
 
+// A term carrying whitespace is a PHRASE, meant for a route that can express one
+// (search_college_programs, via phraseto_tsquery). The `k + ":*"` builders below
+// cannot: `to_tsquery('english', 'lvn:* | practical nursing:*')` is a hard
+// syntax error (42601, verified against the live database), which would make the
+// whole call return null rather than drop the one term. Any builder that
+// concatenates terms into a tsquery string filters them out through this.
+const singleTokenTerms = (terms: string[]): string[] =>
+  terms.filter((t) => !/\s/.test(t.trim()));
+
+// THE OFFERINGS BUILDER CAN EXPRESS A PHRASE (2026-09-18, S273). `a:* <-> b:*`
+// is valid tsquery syntax — verified live: to_tsquery('english', 'vocational:*
+// <-> nursing:*') parses to 'vocat':* <-> 'nurs':* and matches "Licensed
+// Vocational Nursing" and "Transition to Vocational Nursing", not "Vocational
+// ESL" and not "Nursing: Vocational/Practical" (adjacency is directional).
+// Until this, the offerings route dropped every phrase through singleTokenTerms,
+// so an LVN question reached the Vocational Nursing TOP (44 colleges) only where
+// a course title happened to spell "LVN" — the RN bridges — and no LVN course
+// list ever reached the model. Each phrase is parenthesized so the OR-join
+// cannot rebind it. singleTokenTerms stays for the v1 exhibit fallback.
+const tsQueryFromTerms = (terms: Array<string>): string =>
+  terms.map((t) => t.trim()).filter(Boolean).map((t) =>
+    /\s/.test(t)
+      ? "(" + t.split(/\s+/).map((w) => `${w}:*`).join(" <-> ") + ")"
+      : `${t}:*`).join(" | ");
+
 // ── Topic-based exhibit search ─────────────────────────────────
 async function searchExhibitsByTopic(
   query: string,
@@ -815,7 +1084,7 @@ async function searchExhibitsByTopic(
   // Strategy 1b: v1 fallback — only reached if v2 is missing (not yet migrated)
   // or errored. Carries the original stemmer defect, so it is a safety net for
   // availability, not a co-equal path.
-  const tsQuery = keywords.map((k) => `${k}:*`).join(" | ");
+  const tsQuery = singleTokenTerms(keywords).map((k) => `${k}:*`).join(" | ");
 
   const { data: ftsResults, error: ftsError } = await sb
     .rpc("search_exhibits_by_topic", {
@@ -883,18 +1152,67 @@ async function searchExhibitsByTopic(
 // for an adoption recommendation when a college teaches a discipline but hasn't
 // articulated the credential yet (e.g. NCCER carpentry). Reads coci_college_offerings
 // via search_college_offerings (rollup by college x TOP program, + region/county).
-async function searchCollegeOfferings(query: string, sb: any): Promise<any[] | null> {
+async function searchCollegeOfferings(query: string, sb: any, anchor: any | null = null): Promise<any[] | null> {
   const rawKeywords = extractTopicKeywords(query);
   if (rawKeywords.length === 0) return null;
   const keywords = expandWithSynonyms(rawKeywords);
-  const tsQuery = keywords.map((k) => `${k}:*`).join(" | ");
+  const tsQuery = tsQueryFromTerms(keywords);
   const { data, error } = await sb.rpc("search_college_offerings", {
     search_query: tsQuery,
     college_filter: null,
     result_limit: 150, // generous — a noisy multi-keyword query must not truncate a
                        // relevant college out (the Q1 El-Camino false-negative)
+    // A PLACE named in the question orders the rows nearest it INSIDE the RPC
+    // (2026-09-18), so the limit above cannot cut the local colleges out.
+    anchor_county: anchor?.county ?? null,
+    anchor_region: anchor?.region ?? null,
   });
   if (error || !data || data.length === 0) return null;
+  return data;
+}
+
+// ── College PROGRAMS search (the AWARDS a college confers) ─────────────────────
+// The third of Sierra's three views of a college, and the one she was missing
+// entirely until 2026-09-17: chatbox_exhibits is what a college has ARTICULATED,
+// coci_college_offerings is what it TEACHES (a course rollup), and this is what
+// it AWARDS. She declined a real student question about LVN programs while
+// coci_college_programs sat unread at 22,335 rows over 118 colleges.
+//
+// A course rollup cannot answer it. "Does anyone teach nursing courses" and
+// "which colleges confer an LVN certificate" are different questions, and only
+// the second is what a student choosing a college is asking.
+//
+// RAW TERMS, not a caller-built tsquery — the reason is in
+// searchExhibitsByTopic's header: `aed:*` parsed as 'english' becomes `'a':*`.
+// "LVN" is that same class, three letters with no stem, and here it is the
+// headline query rather than an edge case.
+//
+// ⚠️ MEASURED, and it is the whole design: by program title the LVN question
+// finds 53 colleges, by either code 44, and the union is 56 — 12 colleges only
+// the title finds, 3 only a code finds. So the RPC matches BOTH surfaces and
+// reports `matched_via` per row. Never gate on a code.
+//
+// Returns null when the RPC is absent, which is the state until the migration in
+// chatbox/supabase_search_college_programs.sql is applied. That is deliberate:
+// an unmigrated database costs Sierra this one section and nothing else.
+async function searchCollegePrograms(query: string, sb: any, anchor: any | null = null): Promise<any[] | null> {
+  const rawKeywords = extractTopicKeywords(query);
+  if (rawKeywords.length === 0) return null;
+  const keywords = expandWithSynonyms(rawKeywords);
+  const { data, error } = await sb.rpc("search_college_programs", {
+    search_terms: keywords,
+    college_filter: null,
+    result_limit: 150,
+    // A PLACE named in the question orders the rows nearest it INSIDE the RPC
+    // (2026-09-18), so the limit above cannot cut the local colleges out.
+    anchor_county: anchor?.county ?? null,
+    anchor_region: anchor?.region ?? null,
+  });
+  if (error) {
+    console.error("search_college_programs unavailable:", error.message);
+    return null;
+  }
+  if (!data || data.length === 0) return null;
   return data;
 }
 
@@ -909,7 +1227,10 @@ async function fetchCollegeGeoMap(sb: any): Promise<Map<string, any>> {
   const { data } = await sb.from("college_geo").select("college, region, county");
   const m = new Map<string, any>();
   for (const r of data || []) {
-    m.set(r.college, { region: r.region || null, county: r.county || null });
+    m.set(r.college, {
+      college: r.college, region: r.region || null, county: r.county || null,
+      point: collegePoint(r.college),   // campus coordinates (v70) — null for an online college
+    });
   }
   return m;
 }
@@ -1148,6 +1469,44 @@ function fmtN(n: any): string {
  * tokens are useless on their own — "peace" and "officer" separately match
  * nothing a person meant. We probe pairs FIRST for that reason.
  */
+// PHRASE SYNONYMS RIDE ALONG AS PROBES (2026-09-18, S273). The curated names use
+// the long form — "Acute Care Nursing Assistant", "Licensed Vocational Nurse
+// (LVN) License" — and a student writes "cna" and "lvn". The synonym families
+// bridge the two, and a PHRASE from a family is precise where a single-token
+// synonym ("health", "clinical") would drag in neighbors. Measured live:
+// search_credentials_any('cna') returns the CNA certification and Cisco's CCNA;
+// ('nursing assistant') returns Acute Care Nursing Assistant — the one
+// CNA-to-LVN precedent in MAP (Chaffey, 6 units in NURVN 414 Vocational Nursing
+// Foundations) — which the raw probes never asked for.
+function phraseSynonymProbes(kws: Array<string>): Array<string> {
+  return expandWithSynonyms(kws).filter((t) => /\s/.test(t));
+}
+
+// A SUBSTRING INSIDE A WORD IS NOT A MATCH ON THE WORD (2026-09-18, S274).
+// search_statewide_recommendations and search_credentials_any match tier 3 by
+// `title LIKE '%needle%'` and tier 4 by the same test on a college-entered
+// variant, so "cna" matched Cisco Certified Network Associate (CCNA) at tier 3
+// — the "cna" inside "ccna". And because a statewide hit used to switch the
+// local route off, that one false friend hid the CNA credentials, the LVN
+// license credentials and the only CNA-to-LVN precedent in MAP (Chaffey, 6
+// units in NURVN 414) on Sam's Orange County question. Same family as
+// `practical:*` becoming 'practic':* (methodology-a-prefix-match-on-a-stem-is-
+// not-a-match-on-the-word). A substring hit is kept only when the probe appears
+// as a WHOLE WORD in the text that matched: the title at tier 3, the matching
+// variant at tier 4. Exact hits (tiers 1–2) and fuzzy tiers are untouched, and
+// a tier-4 row that does not say which variant matched cannot be judged, so it
+// is kept — dropping it would re-create the false zero this route exists to end.
+function isFalseFriend(asked: string, row: any): boolean {
+  const tier = Number(row?.match_tier);
+  if (tier !== 3 && tier !== 4) return false;
+  if (tier === 4 && !row.matched_via) return false;
+  const hay = String(tier === 3 ? row.unified_title || "" : row.matched_via || "");
+  const needle = String(asked || "").trim().toLowerCase();
+  if (!needle) return false;
+  const esc = needle.replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/\s+/g, "\\s+");
+  return !new RegExp("(^|[^a-z0-9])" + esc + "($|[^a-z0-9])", "i").test(hay);
+}
+
 async function fetchStatewideRecommendations(query: string, sb: any): Promise<any[] | null> {
   const kws = extractTopicKeywords(query);
   if (kws.length === 0) return null;
@@ -1155,16 +1514,20 @@ async function fetchStatewideRecommendations(query: string, sb: any): Promise<an
   // Adjacent pairs first (longest, most specific), then singles. Capped so a
   // rambling question cannot fan out into a dozen round-trips.
   const probes: string[] = [];
-  for (let i = 0; i < kws.length - 1 && probes.length < 4; i++) probes.push(`${kws[i]} ${kws[i + 1]}`);
+  for (let i = 0; i < kws.length - 1 && probes.length < 4; i++) {
+    if (kws[i] !== kws[i + 1]) probes.push(`${kws[i]} ${kws[i + 1]}`);
+  }
   for (const k of kws.slice(0, 4)) if (!probes.includes(k)) probes.push(k);
+  for (const p of phraseSynonymProbes(kws)) if (!probes.includes(p)) probes.push(p);
 
   const byTitle = new Map<string, any>();
-  for (const asked of probes.slice(0, 8)) {
+  for (const asked of probes.slice(0, 10)) {
     const { data, error } = await sb.rpc("search_statewide_recommendations", {
       asked, result_limit: 4,
     });
     if (error || !data) continue;
     for (const r of data) {
+      if (isFalseFriend(asked, r)) continue;
       const prev = byTitle.get(r.unified_title);
       // Keep the STRONGEST evidence across probes: a pair matching at tier 3
       // beats a single token matching at tier 4 for the same credential.
@@ -1196,22 +1559,36 @@ async function fetchAnyCredentials(query: string, sb: any): Promise<any[] | null
   // worker, license] and "iron" was NEVER asked — while search_credentials_any
   // ('iron') returns 25 rows. The subject of the sentence fell off the end.
   const probes: string[] = [];
-  for (let i = 0; i < kws.length - 1 && probes.length < 4; i++) probes.push(`${kws[i]} ${kws[i + 1]}`);
+  for (let i = 0; i < kws.length - 1 && probes.length < 4; i++) {
+    if (kws[i] !== kws[i + 1]) probes.push(`${kws[i]} ${kws[i + 1]}`);
+  }
   for (const k of kws.slice(0, 4)) if (!probes.includes(k)) probes.push(k);
+  for (const p of phraseSynonymProbes(kws)) if (!probes.includes(p)) probes.push(p);
 
   const byTitle = new Map<string, any>();
-  for (const asked of probes.slice(0, 8)) {
+  for (const asked of probes.slice(0, 10)) {
     const { data, error } = await sb.rpc("search_credentials_any", { asked, result_limit: 3 });
     if (error || !data) continue;
     for (const r of data) {
+      if (isFalseFriend(asked, r)) continue;
       const prev = byTitle.get(r.unified_title);
       if (!prev || r.match_tier < prev.match_tier) byTitle.set(r.unified_title, r);
     }
   }
   if (byTitle.size === 0) return null;
+  // AN ARTICULATED CREDENTIAL OUTRANKS A CATALOG ENTRY NOBODY HAS ADOPTED,
+  // whatever the match tier (2026-09-18, S274): an adopter is the precedent a
+  // student can point to at a college that has not granted it. Measured on the
+  // Orange County probes: Acute Care Nursing Assistant — the one CNA-to-LVN
+  // precedent in MAP (Chaffey, 6 units in NURVN 414) — matched at tier 4 behind
+  // four tier-3 hits and a cap of four, so the v69 candidate told the student
+  // no college had articulated it. Adopted first, then tier, then adopters;
+  // six kept, not four. The statewide route keeps its own order: every row it
+  // returns is a published standard whether or not anyone has adopted it yet.
   return [...byTitle.values()]
-    .sort((a, b) => a.match_tier - b.match_tier || b.n_adopters - a.n_adopters)
-    .slice(0, 4);
+    .sort((a, b) => ((b.n_adopters > 0 ? 1 : 0) - (a.n_adopters > 0 ? 1 : 0))
+      || a.match_tier - b.match_tier || b.n_adopters - a.n_adopters)
+    .slice(0, 6);
 }
 
 /**
@@ -1240,16 +1617,20 @@ async function fetchCollegeCredentials(
   const kws = extractTopicKeywords(query);
   if (kws.length === 0) return null;
   const probes: string[] = [];
-  for (let i = 0; i < kws.length - 1 && probes.length < 4; i++) probes.push(`${kws[i]} ${kws[i + 1]}`);
+  for (let i = 0; i < kws.length - 1 && probes.length < 4; i++) {
+    if (kws[i] !== kws[i + 1]) probes.push(`${kws[i]} ${kws[i + 1]}`);
+  }
   for (const k of kws.slice(0, 4)) if (!probes.includes(k)) probes.push(k);
+  for (const p of phraseSynonymProbes(kws)) if (!probes.includes(p)) probes.push(p);
 
   const byTitle = new Map<string, any>();
-  for (const asked of probes.slice(0, 8)) {
+  for (const asked of probes.slice(0, 10)) {
     const { data, error } = await sb.rpc("search_college_credentials", {
       asked, college, result_limit: 8,
     });
     if (error || !data) continue;
     for (const r of data) {
+      if (isFalseFriend(asked, r)) continue;
       const prev = byTitle.get(r.unified_title);
       if (!prev || r.match_tier < prev.match_tier) byTitle.set(r.unified_title, r);
     }
@@ -1331,14 +1712,18 @@ async function fetchCredentialVolume(query: string, sb: any): Promise<any[] | nu
   const kws = extractTopicKeywords(query);
   if (kws.length === 0) return null;
   const probes: string[] = [];
-  for (let i = 0; i < kws.length - 1 && probes.length < 4; i++) probes.push(`${kws[i]} ${kws[i + 1]}`);
+  for (let i = 0; i < kws.length - 1 && probes.length < 4; i++) {
+    if (kws[i] !== kws[i + 1]) probes.push(`${kws[i]} ${kws[i + 1]}`);
+  }
   for (const k of kws.slice(0, 4)) if (!probes.includes(k)) probes.push(k);
+  for (const p of phraseSynonymProbes(kws)) if (!probes.includes(p)) probes.push(p);
 
   const byTitle = new Map<string, any>();
-  for (const asked of probes.slice(0, 8)) {
+  for (const asked of probes.slice(0, 10)) {
     const { data, error } = await sb.rpc("search_credential_volume", { asked, result_limit: 6 });
     if (error || !data) continue;
     for (const r of data) {
+      if (isFalseFriend(asked, r)) continue;
       const prev = byTitle.get(r.unified_title);
       if (!prev || r.match_tier < prev.match_tier) byTitle.set(r.unified_title, r);
     }
@@ -1940,21 +2325,379 @@ function buildCreditContext(cs: any): string {
   return out;
 }
 
-// Proximity band for ranking: same county (2) > same region (1) > elsewhere (0).
-// Returns 0 for every college when no home college is known, which leaves the
-// pre-existing volume ordering untouched.
+// ── Place anchor: a county or region named in the question (2026-09-18) ──────
+// ⚠ A PLACE IS AN ANCHOR, NOT A COLLEGE (S273). Sam's test question on v67 —
+// "I have a cna cert and I want to go to a college in orange county. What CNA
+// courses at the colleges match LVN courses so I can ask for credit?" — went
+// three ways wrong at once, and all three came from the same gap:
+//   · "orange" ilike-matched Orange Coast College and North Orange Continuing
+//     Education, so the answer was about two colleges nobody had asked about;
+//   · askedGeo comes only from a RESOLVED college, so the county anchored
+//     nothing and both catalog lists fell back to volume order — the seven LVN
+//     programs she named were in Sacramento, Butte, Humboldt, Madera, Siskiyou
+//     and Los Angeles counties;
+//   · "orange" and "county" went to every keyword route as live terms.
+// college_geo already holds a county and a region for every college. This
+// recognizes one named in the question, anchors on it, and STRIPS it from the
+// text the college matcher and the keyword routes see. A named college still
+// wins: its own geography is the anchor, and a college name never carries the
+// word "county" (which is why a county needs that word beside it — "Riverside"
+// alone is a college). Regions match as bare phrases of two or more words, and
+// never one that is part of a college name ("Los Angeles" is in nine).
+const PLACE_ALIASES: Record<string, string> = {
+  "la county": "Los Angeles", "l.a. county": "Los Angeles", "oc": "Orange",
+};
+// A SUB-REGION IS A PLACE TOO (2026-09-18, S277). Measured failure: a visitor
+// wrote "I have a cna cert and live in the San Gabriel Valley … compare typical
+// CNA courses to LVN". resolveAskedPlace matched nothing — the text carries no
+// "<county> county", no alias, and no bare REGION name ("Los Angeles" is skipped
+// because nine colleges contain it) — so askedGeo was null, both catalog RPCs
+// fell back to volume order, and Sierra offered Los Medanos College (Contra
+// Costa, ~370 mi) as "one of the nearer matches I can confirm" while telling the
+// visitor the catalog data showed no San Gabriel Valley college teaching an LVN
+// entry program. The catalog holds FIVE, with 87 course rows between them:
+// Pasadena City (NURS 102/125 Fundamentals of Vocational Nursing, 28 rows),
+// Citrus (VNRS 150 Fundamentals of Nursing, 20), Glendale (NS 110, 19),
+// Mt. San Antonio (VOC VN101, 12) and Rio Hondo (VN 61, 8). The answer then
+// named Pasadena and Rio Hondo itself, from the model's own knowledge, and said
+// "my data doesn't confirm their course lists here" — the data held 28 rows and
+// 8. A false zero is the worst answer she gives: it closes the conversation, and
+// nobody files feedback about a door they were told wasn't there.
+//
+// A county is too coarse to be the whole instrument here — Los Angeles County
+// runs from Lancaster to Long Beach — so a sub-region carries its OWN anchor
+// colleges: the band still comes from the county (every LA college ranks above
+// every non-LA one), and the centroid of the named campuses orders WITHIN the
+// band, which is what puts Pasadena and Citrus above Antelope Valley.
+//
+// Only names a student would actually type, and only where the name points at
+// one place: "South Bay" is omitted because it is Torrance to a Los Angeles
+// student and San Jose to a Bay Area one, and a confidently wrong anchor is
+// worse than none. Every college named here is asserted to exist in
+// college_geo by tests/sierra_place_anchor.test.js — a typo would silently
+// shrink a sub-region.
+const SUBREGIONS: Array<{ names: string[]; label: string; county: string; colleges: string[] }> = [
+  { names: ["san gabriel valley", "sgv"], label: "the San Gabriel Valley", county: "Los Angeles",
+    colleges: ["Pasadena City College", "Citrus College", "Mt. San Antonio College", "Rio Hondo College",
+               "East Los Angeles College", "Glendale Community College"] },
+  { names: ["san fernando valley"], label: "the San Fernando Valley", county: "Los Angeles",
+    colleges: ["Los Angeles Valley College", "Los Angeles Mission College", "Los Angeles Pierce College",
+               "College of the Canyons"] },
+  { names: ["santa clarita valley"], label: "the Santa Clarita Valley", county: "Los Angeles",
+    colleges: ["College of the Canyons"] },
+  { names: ["antelope valley"], label: "the Antelope Valley", county: "Los Angeles",
+    colleges: ["Antelope Valley College"] },
+  { names: ["gateway cities"], label: "the Gateway Cities", county: "Los Angeles",
+    colleges: ["Cerritos College", "Compton College", "Long Beach City College", "Rio Hondo College"] },
+  { names: ["westside", "west side of los angeles"], label: "the Westside", county: "Los Angeles",
+    colleges: ["Santa Monica College", "West Los Angeles College"] },
+  { names: ["high desert", "victor valley"], label: "the High Desert", county: "San Bernardino",
+    colleges: ["Victor Valley College", "Barstow Community College", "Copper Mountain College"] },
+  { names: ["coachella valley"], label: "the Coachella Valley", county: "Riverside",
+    colleges: ["College of the Desert"] },
+  { names: ["north county san diego", "north san diego county"], label: "North County San Diego",
+    county: "San Diego", colleges: ["MiraCosta College", "Palomar College"] },
+  { names: ["silicon valley"], label: "Silicon Valley", county: "Santa Clara",
+    colleges: ["De Anza College", "Foothill College", "Mission College", "San Jose City College",
+               "West Valley College", "Evergreen Valley College"] },
+  { names: ["east bay"], label: "the East Bay", county: "Alameda",
+    colleges: ["Berkeley City College", "Chabot College", "College of Alameda", "Laney College",
+               "Las Positas College", "Merritt College", "Ohlone College", "Contra Costa College",
+               "Diablo Valley College", "Los Medanos College"] },
+  { names: ["north bay"], label: "the North Bay", county: "Sonoma",
+    colleges: ["Santa Rosa Junior College", "College of Marin", "Napa Valley College",
+               "Solano Community College"] },
+  { names: ["the peninsula", "san francisco peninsula"], label: "the Peninsula", county: "San Mateo",
+    colleges: ["Cañada College", "College of San Mateo", "Skyline College"] },
+];
+// Region names a visitor uses that college_geo does not spell that way. A bare
+// region name already matches as a phrase (resolveAskedPlace), so these are only
+// the synonyms — never a name that is also part of a college's name.
+const REGION_ALIASES: Record<string, string> = {
+  "central valley": "San Joaquin Valley",
+  "sf bay area": "Bay Area",
+  "san francisco bay area": "Bay Area",
+};
+
+function resolveAskedPlace(text: string, geoMap: Map<string, any> | null): any | null {
+  if (!text || !geoMap || geoMap.size === 0) return null;
+  const regionOf = new Map<string, string>();
+  const regions = new Set<string>();
+  for (const g of geoMap.values()) {
+    if (g && g.county && g.region && !regionOf.has(g.county)) regionOf.set(g.county, g.region);
+    if (g && g.region) regions.add(g.region);
+  }
+  const collegeNames: Array<string> = [];
+  for (const name of geoMap.keys()) collegeNames.push(String(name).toLowerCase());
+  const esc = (s: string) => s.toLowerCase()
+    .replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/\s+/g, "\\s+");
+  let best: any = null;
+  const consider = (county: any, region: any, pattern: string) => {
+    const m = new RegExp("\\b" + pattern + "\\b", "i").exec(text);
+    if (m && (!best || m[0].length > best.match.length)) {
+      best = { county, region, match: m[0], index: m.index };
+    }
+  };
+
+  // A SUB-REGION WINS OVER THE COUNTY THAT CONTAINS IT — it is the more specific
+  // statement of where the visitor is, and its own campuses are the anchor.
+  // Longest match inside this pass, so "north san diego county" beats a bare
+  // county read of the same words.
+  let sub: any = null;
+  for (const sr of SUBREGIONS) {
+    const here = sr.colleges.filter((c) => geoMap.has(c));
+    if (here.length === 0) continue;
+    for (const name of sr.names) {
+      const m = new RegExp("\\b" + esc(name) + "\\b", "i").exec(text);
+      if (m && (!sub || m[0].length > sub.match.length)) {
+        sub = { county: sr.county, region: regionOf.get(sr.county) || null, label: sr.label,
+                colleges: here, match: m[0], index: m.index };
+      }
+    }
+  }
+  if (sub) {
+    const stripped = (text.slice(0, sub.index) + " " + text.slice(sub.index + sub.match.length))
+      .replace(/\s{2,}/g, " ").trim();
+    return { county: sub.county, region: sub.region, label: sub.label, colleges: sub.colleges, stripped };
+  }
+  for (const [alias, region] of Object.entries(REGION_ALIASES)) {
+    if (regions.has(region)) consider(null, region, esc(alias));
+  }
+  for (const [county, region] of regionOf) consider(county, region, esc(county) + "\\s+county");
+  for (const [alias, county] of Object.entries(PLACE_ALIASES)) {
+    if (regionOf.has(county)) consider(county, regionOf.get(county) || null, esc(alias));
+  }
+  if (!best) {
+    for (const region of regions) {
+      if (!/\s/.test(region)) continue;
+      const low = region.toLowerCase();
+      if (collegeNames.some((n) => n.includes(low))) continue;
+      consider(null, region, esc(region));
+    }
+  }
+  if (!best) return null;
+  const stripped = (text.slice(0, best.index) + " " + text.slice(best.index + best.match.length))
+    .replace(/\s{2,}/g, " ").trim();
+  return {
+    county: best.county,
+    region: best.region,
+    label: best.county ? `${best.county} County` : best.region,
+    stripped,
+  };
+}
+
+// The block the model reads where a college profile would have been: which
+// colleges ARE in the place, and what to do when none of them has the thing.
+function buildPlaceContext(place: any | null, geoMap: Map<string, any> | null): string {
+  if (!place || !geoMap) return "";
+  const named: Set<string> | null = place.colleges && place.colleges.length
+    ? new Set<string>(place.colleges) : null;
+  const here: Array<string> = [];
+  for (const [college, g] of geoMap) {
+    if (!g) continue;
+    if (named ? named.has(college) : (place.county ? g.county === place.county : g.region === place.region)) here.push(college);
+  }
+  here.sort();
+  let s = `\n\n--- THE VISITOR'S PLACE: ${place.label}`;
+  if (place.county && place.region && place.region !== place.label) s += ` (${place.region} region)`;
+  s += ` ---\n`;
+  s += `The visitor named a PLACE, not a college. Treat it as home: every ranked list below is ordered nearest this place first.\n`;
+  s += here.length
+    ? `Community colleges in ${place.label} (${here.length}): ${here.join("; ")}.\n`
+    : `No community college in the geography table sits in ${place.label}; rank by the nearest region instead.\n`;
+  if (named && place.county) {
+    s += `${place.label} is part of ${place.county} County, and the rest of that county is still close: the ranked lists below carry those colleges next, with their distance. Never read the ${here.length} above as the only colleges within reach.\n`;
+  }
+  s += `Lead with what the colleges in ${place.label} teach and award. When none of them has what was asked, the catalog sections say the catalog lists none — say what the catalog shows (never that no college in ${place.label} has it), name the related programs it does list there, then name the nearest colleges that do, with their county and distance, so the visitor can judge the trip. Never present a college outside ${place.label} as if it were local, and never guess at a college's catalog: name only courses and programs that appear in the context.\n`;
+  return s;
+}
+
+// Proximity band for ranking: same county (3) > same region (2) > a NEIGHBORING
+// region (1) > elsewhere (0). Returns 0 for every college when no home college
+// or place is known, which leaves the pre-existing volume ordering untouched.
+//
+// THE NEIGHBOR BAND (2026-09-18, S274). college_geo carries ten regions and no
+// notion of adjacency, so once a place's own county and region were exhausted
+// every remaining college tied at 0 and VOLUME decided: an Orange County LVN
+// question — a county with NO Vocational Nursing entry program in COCI, and a
+// region of one county — listed Sacramento, Butte and Humboldt ahead of Long
+// Beach, Rio Hondo and Chaffey. A static map of which regions border which is
+// the smallest instrument that fixes it. It is geography, not policy: each
+// region names the regions it shares a border with, and the test asserts the
+// map is symmetric. "Statewide / Online" (Calbright) is nobody's neighbor and
+// everybody's option; the lists still carry it on volume.
+const REGION_NEIGHBORS: Record<string, string[]> = {
+  "Orange County": ["Los Angeles", "Inland Empire", "San Diego – Imperial"],
+  "Los Angeles": ["Orange County", "Inland Empire", "Central Coast", "San Joaquin Valley"],
+  "Inland Empire": ["Orange County", "Los Angeles", "San Diego – Imperial", "San Joaquin Valley"],
+  "San Diego – Imperial": ["Orange County", "Inland Empire"],
+  "Central Coast": ["Los Angeles", "San Joaquin Valley", "Bay Area"],
+  "San Joaquin Valley": ["Central Coast", "Bay Area", "Greater Sacramento", "Los Angeles", "Inland Empire"],
+  "Bay Area": ["Central Coast", "San Joaquin Valley", "Greater Sacramento", "Far North"],
+  "Greater Sacramento": ["Bay Area", "San Joaquin Valley", "Far North"],
+  "Far North": ["Greater Sacramento", "Bay Area"],
+};
+function regionsNeighbor(a: string | null, b: string | null): boolean {
+  if (!a || !b || a === b) return false;
+  return (REGION_NEIGHBORS[a] || []).includes(b);
+}
 function proximityBand(geo: any | null, askedGeo: any | null): number {
   if (!askedGeo || !geo) return 0;
-  if (askedGeo.county && geo.county && geo.county === askedGeo.county) return 2;
-  if (askedGeo.region && geo.region && geo.region === askedGeo.region) return 1;
+  if (askedGeo.county && geo.county && geo.county === askedGeo.county) return 3;
+  if (askedGeo.region && geo.region && geo.region === askedGeo.region) return 2;
+  if (regionsNeighbor(askedGeo.region || null, geo.region || null)) return 1;
   return 0;
 }
 
+// ── "NEAREST" NEEDS A DISTANCE (2026-09-18, S275) ────────────────────────────
+// The bands say which colleges are IN the place the visitor named (county,
+// region, a neighboring region) and nothing about how far the rest are: inside
+// a band the order fell to volume, so an Orange County LVN question led with
+// Pasadena and Southwestern (the largest programs in the neighboring regions)
+// ahead of Long Beach City and Rio Hondo, twenty-five miles away. A campus
+// coordinate per college gives "nearest" a distance. It orders WITHIN a band —
+// the bands still come first, because a place the visitor named is a fact the
+// lists must honor before geometry — and it falls back to volume whenever
+// either side has no point, so a fixture or a table row without coordinates
+// behaves exactly as before.
+//
+// The anchor point is the named college's campus, or for a place the mean of
+// the campuses inside it (placePoint) — a county's colleges cluster where its
+// people live, which is what a student means by "in Orange County". Distances
+// are great-circle (haversine), rendered to the model in miles, rounded (to the
+// mile under ten, to five miles above), and labeled "about", because the
+// coordinates are campus points to three decimals: entered 2026-09-18 from the
+// colleges' public campus locations, approximate to about a mile, never
+// authoritative — the sandbox cannot reach IPEDS to verify them, and a session
+// that can should. Online colleges (Calbright) have no point and no distance.
+//
+// Keys are the college_geo names (the COCI full names). A college missing here
+// sorts by volume inside its band, never errors. tests/sierra_prospective_credit
+// .test.js block 8 asserts full coverage of chatbox/college_geo.json, the
+// California bounding box, and the Orange County picks. ⚠ Types here are
+// Array<number>, never a tuple type: tests/lib/lift_ts.js strips the former.
+const COLLEGE_POINTS: Record<string, Array<number>> = {
+  "Allan Hancock College": [34.941, -120.420], "American River College": [38.649, -121.348],
+  "Antelope Valley College": [34.664, -118.170], "Bakersfield College": [35.410, -118.965],
+  "Barstow Community College": [34.902, -117.055], "Berkeley City College": [37.870, -122.271],
+  "Butte College": [39.589, -121.659], "Cabrillo College": [36.991, -121.926],
+  "Cañada College": [37.449, -122.267], "Cerritos College": [33.885, -118.096],
+  "Cerro Coso Community College": [35.630, -117.660], "Chabot College": [37.645, -122.105],
+  "Chaffey College": [34.144, -117.582], "Citrus College": [34.130, -117.890],
+  "City College of San Francisco": [37.726, -122.451], "Clovis Community College": [36.835, -119.698],
+  "Coalinga College": [36.140, -120.364], "Coastline Community College": [33.715, -117.944],
+  "College of Alameda": [37.786, -122.287], "College of Marin": [37.950, -122.546],
+  "College of San Mateo": [37.535, -122.336], "College of the Canyons": [34.404, -118.565],
+  "College of the Desert": [33.735, -116.377], "College of the Redwoods": [40.698, -124.192],
+  "College of the Sequoias": [36.325, -119.301], "College of the Siskiyous": [41.419, -122.386],
+  "Columbia College": [38.029, -120.396], "Compton College": [33.887, -118.207],
+  "Contra Costa College": [37.970, -122.335], "Copper Mountain College": [34.116, -116.310],
+  "Cosumnes River College": [38.472, -121.431], "Crafton Hills College": [34.046, -117.076],
+  "Cuesta College": [35.320, -120.736], "Cuyamaca College": [32.735, -116.930],
+  "Cypress College": [33.831, -118.033], "De Anza College": [37.319, -122.045],
+  "Diablo Valley College": [37.971, -122.072], "East Los Angeles College": [34.044, -118.151],
+  "El Camino College": [33.887, -118.331], "Evergreen Valley College": [37.306, -121.776],
+  "Feather River College": [39.938, -120.928], "Folsom Lake College": [38.664, -121.138],
+  "Foothill College": [37.362, -122.129], "Fresno City College": [36.765, -119.806],
+  "Fullerton College": [33.876, -117.920], "Gavilan College": [36.986, -121.590],
+  "Glendale Community College": [34.166, -118.236], "Golden West College": [33.720, -118.011],
+  "Grossmont College": [32.815, -117.005], "Hartnell College": [36.681, -121.661],
+  "Imperial Valley College": [32.829, -115.502], "Irvine Valley College": [33.685, -117.781],
+  "Lake Tahoe Community College": [38.925, -119.968], "Laney College": [37.796, -122.260],
+  "Las Positas College": [37.691, -121.794], "Lassen College": [40.427, -120.639],
+  "Lemoore College": [36.312, -119.796], "Long Beach City College": [33.832, -118.137],
+  "Los Angeles City College": [34.088, -118.292], "Los Angeles Harbor College": [33.785, -118.287],
+  "Los Angeles Mission College": [34.290, -118.425], "Los Angeles Pierce College": [34.184, -118.575],
+  "Los Angeles Southwest College": [33.925, -118.300], "Los Angeles Trade Technical College": [34.030, -118.270],
+  "Los Angeles Valley College": [34.180, -118.415], "Los Medanos College": [38.004, -121.893],
+  "Madera College": [36.986, -120.056], "Mendocino College": [39.144, -123.202],
+  "Merced College": [37.331, -120.475], "Merritt College": [37.787, -122.166],
+  "MiraCosta College": [33.191, -117.301], "Mission College": [37.391, -121.979],
+  "Modesto Junior College": [37.646, -121.005], "Monterey Peninsula College": [36.591, -121.887],
+  "Moorpark College": [34.290, -118.855], "Moreno Valley College": [33.911, -117.204],
+  "Mt. San Antonio College": [34.048, -117.847], "Mt. San Jacinto College": [33.801, -116.985],
+  "Napa Valley College": [38.270, -122.270], "Norco College": [33.921, -117.560],
+  "North Orange Continuing Education": [33.850, -117.946], "North Orange Continuing Education Credit": [33.850, -117.946],
+  "Ohlone College": [37.530, -121.917], "Orange Coast College": [33.670, -117.911],
+  "Oxnard College": [34.169, -119.174], "Palo Verde College": [33.613, -114.605],
+  "Palomar College": [33.150, -117.186], "Pasadena City College": [34.145, -118.121],
+  "Porterville College": [36.059, -119.020], "Reedley College": [36.607, -119.445],
+  "Rio Hondo College": [33.990, -118.030], "Riverside City College": [33.970, -117.385],
+  "Sacramento City College": [38.541, -121.500], "Saddleback College": [33.586, -117.661],
+  "San Bernardino Valley College": [34.085, -117.315], "San Diego City College": [32.720, -117.155],
+  "San Diego College of Continuing Education": [32.701, -117.100], "San Diego College of Continuing Education Credit": [32.701, -117.100],
+  "San Diego Mesa College": [32.805, -117.171], "San Diego Miramar College": [32.895, -117.131],
+  "San Joaquin Delta College": [37.975, -121.316], "San Jose City College": [37.314, -121.930],
+  "Santa Ana College": [33.756, -117.891], "Santa Barbara City College": [34.406, -119.698],
+  "Santa Monica College": [34.016, -118.471], "Santa Rosa Junior College": [38.455, -122.719],
+  "Santiago Canyon College": [33.811, -117.787], "Shasta College": [40.605, -122.306],
+  "Sierra College": [38.791, -121.230], "Skyline College": [37.630, -122.466],
+  "Solano Community College": [38.234, -122.127], "Southwestern College": [32.640, -117.010],
+  "Taft College": [35.145, -119.454], "Ventura College": [34.276, -119.256],
+  "Victor Valley College": [34.488, -117.315], "West Los Angeles College": [33.999, -118.395],
+  "West Valley College": [37.264, -122.011], "Woodland Community College": [38.680, -121.740],
+  "Yuba College": [39.127, -121.560],
+};
+function collegePoint(college: string | null): Array<number> | null {
+  return (college && COLLEGE_POINTS[college]) || null;
+}
+function haversineKm(a: Array<number>, b: Array<number>): number {
+  const R = 6371.0, toRad = (d: number) => d * Math.PI / 180;
+  const dLat = toRad(b[0] - a[0]), dLon = toRad(b[1] - a[1]);
+  const h = Math.sin(dLat / 2) ** 2
+    + Math.cos(toRad(a[0])) * Math.cos(toRad(b[0])) * Math.sin(dLon / 2) ** 2;
+  return 2 * R * Math.asin(Math.sqrt(h));
+}
+// The anchor point of a PLACE: the mean of the campuses inside it (county when
+// the place is a county, else region). Null when nothing inside it has a point.
+function placePoint(place: any | null, geoMap: Map<string, any> | null): Array<number> | null {
+  if (!place || !geoMap || (!place.county && !place.region)) return null;
+  // A sub-region anchors on the campuses it names, never on its whole county:
+  // Los Angeles County runs from Lancaster to Long Beach, and its centroid puts
+  // the San Gabriel Valley's own colleges no closer than anyone else's.
+  const named: Set<string> | null = place.colleges && place.colleges.length
+    ? new Set<string>(place.colleges) : null;
+  let lat = 0, lon = 0, n = 0;
+  for (const [college, g] of geoMap) {
+    if (!g) continue;
+    if (named ? named.has(college) : (place.county ? g.county === place.county : g.region === place.region)) {
+      const p = collegePoint(college);
+      if (!p) continue;
+      lat += p[0]; lon += p[1]; n++;
+    }
+  }
+  return n > 0 ? [lat / n, lon / n] : null;
+}
+// Kilometers from the anchor to a college's campus, or null when either side has
+// no point — and null means "unknown", never "far": cmpKm sorts it last.
+function proximityKm(college: string | null, askedGeo: any | null): number | null {
+  const anchor = askedGeo && askedGeo.point ? askedGeo.point : null;
+  const p = collegePoint(college);
+  return anchor && p ? haversineKm(anchor, p) : null;
+}
+function cmpKm(a: number | null, b: number | null): number {
+  const an = a === null || a === undefined, bn = b === null || b === undefined;
+  if (an || bn) return an && bn ? 0 : an ? 1 : -1;
+  return a - b;
+}
+// "about 15 miles from the center of Orange County" / "about 12 miles from Long
+// Beach City College" — what the model can quote, or "" when nothing is known.
+function distanceText(college: string | null, askedGeo: any | null): string {
+  const km = proximityKm(college, askedGeo);
+  if (km === null || !askedGeo) return "";
+  const from = askedGeo.college ? askedGeo.college : (askedGeo.label ? `the center of ${askedGeo.label}` : "");
+  if (!from || askedGeo.college === college) return "";
+  const mi = km * 0.621371;
+  const shown = mi < 10 ? Math.max(1, Math.round(mi)) : Math.round(mi / 5) * 5;
+  return `about ${shown} mile${shown === 1 ? "" : "s"} from ${from}`;
+}
+
 // "Riverside County, Inland Empire" — the label that lets the model actually say
-// "nearby" instead of guessing from a college name.
-function geoLabel(geo: any | null): string {
-  if (!geo || (!geo.county && !geo.region)) return "";
-  return ` (${[geo.county && geo.county + " County", geo.region].filter(Boolean).join(", ")})`;
+// "nearby" instead of guessing from a college name. A distance, when known, rides
+// inside the same parentheses so every heading parser keeps working.
+function geoLabel(geo: any | null, distance: string = ""): string {
+  const parts = [geo && geo.county && geo.county + " County", geo && geo.region, distance].filter(Boolean);
+  return parts.length ? ` (${parts.join(", ")})` : "";
 }
 
 // ── Build offerings context (what colleges TEACH — the adoption basis) ──────────
@@ -2000,21 +2743,24 @@ function buildOfferingsContext(
   // volume term of `min(courses, 39)` — so a college in another region with 39+
   // courses scored 239 and a same-region college with none scored 240. One point
   // apart is not an ordering, it is a coin flip, and volume won it often enough
-  // to matter. Volume is now only ever a tie-breaker WITHIN a proximity band.
-  const rank = (g: any) => {
-    const p = (g.core ? 1000 : 0) + proximityBand(g, askedGeo) * 100;
-    return p + Math.min(g.courses, 39);
-  };
+  // to matter. Volume is now only ever a tie-breaker WITHIN a proximity band —
+  // and since v70 the distance from the anchor comes before it there, so two
+  // colleges in the same band sort nearest first and volume decides only when
+  // neither has a point (cmpKm sorts an unknown distance last, never first).
+  const rank = (g: any) => (g.core ? 1000 : 0) + proximityBand(g, askedGeo) * 100;
+  const volume = (g: any) => Math.min(g.courses, 39);
 
   const askedRaw = askedCollege ? byCollege.get(askedCollege) : null;
   // Only treat the asked college as "teaches this" when it has a CORE match.
   const asked = askedRaw && askedRaw.core ? askedRaw : null;
   const others = [...byCollege.entries()]
     .filter(([c]) => c !== askedCollege)
-    .sort((a, b) => rank(b[1]) - rank(a[1]));
+    .sort((a, b) => (rank(b[1]) - rank(a[1]))
+      || cmpKm(proximityKm(a[0], askedGeo), proximityKm(b[0], askedGeo))
+      || (volume(b[1]) - volume(a[1])));
 
   const fmtCollege = (college: string, g: any) => {
-    let s = `\n## ${college}${geoLabel(g)}`;
+    let s = `\n## ${college}${geoLabel(g, distanceText(college, askedGeo))}`;
     s += ` — teaches ${g.courses} course(s) in this area:\n`;
     for (const o of g.rows.slice(0, 4)) {
       s += `  - ${o.top_title || o.top_code} (${o.course_count} course(s)`;
@@ -2028,7 +2774,7 @@ function buildOfferingsContext(
     return s;
   };
 
-  let ctx = "\n\n--- Course Catalog: WHICH COLLEGES TEACH THIS (COCI offerings — what a college teaches, NOT whether it has a CPL articulation yet) ---\n";
+  let ctx = "\n\n--- Course Catalog: WHICH COLLEGES TEACH THIS (college catalog data — what a college teaches, NOT whether it has a CPL articulation yet) ---\n";
   ctx += `${byCollege.size} college(s) shown below currently teach course(s) in this area (TOP matches — NOT an exhaustive list; more colleges may teach it).\n`;
 
   if (askedCollege) {
@@ -2039,16 +2785,791 @@ function buildOfferingsContext(
       ctx += `\n### ${askedCollege} teaches only RELATED programs (not the core discipline) — mention these lightly, then point to the nearest colleges that teach the core discipline (below):`;
       ctx += fmtCollege(askedCollege, askedRaw);
     } else {
-      ctx += `\n### ${askedCollege} does NOT appear to teach courses in this area in the current COCI catalog — point to the nearest colleges that do (below).\n`;
+      ctx += `\n### ${askedCollege} does NOT appear to teach courses in this area in the current catalog data — point to the nearest colleges that do (below).\n`;
     }
   }
 
+  // A PLACE anchor with no college in it is a fact the model must be TOLD, not
+  // left to infer from a list ordered nearest-first (2026-09-18): the header
+  // says the list is not exhaustive, so without this line the model hedges
+  // ("my data only surfaced two") instead of saying what the catalog shows.
+  if (askedGeo && askedGeo.label && !askedCollege) {
+    const here = others.filter(([, g]) => proximityBand(g, askedGeo) >= (askedGeo.county ? 3 : 2));
+    ctx += here.length
+      ? `\n### In ${askedGeo.label}: ${here.length} college(s) teach in this area — they are listed first below.\n`
+      : `\n### The current catalog data lists no college in ${askedGeo.label} teaching courses matching this. Say what the catalog data shows — never that no college in ${askedGeo.label} has or teaches it — name any related programs the program catalog section lists there, then offer the nearest colleges below (county and distance shown) as the realistic route, with the standing caveat that teaching is not a guarantee of credit.\n`;
+  }
   if (others.length) {
     ctx += `\n### ${askedCollege ? "Other colleges" : "Colleges"} that teach this (nearest first when a home college is known):\n`;
     for (const [college, g] of others.slice(0, 10)) ctx += fmtCollege(college, g);
     if (others.length > 10) ctx += `\n  ... and ${others.length - 10} more college(s) teach in this area.\n`;
   }
   return ctx;
+}
+
+// ── Build programs context (what colleges AWARD) ──────────────────────────────
+// Ranked on the same askedGeo anchor as the offerings list, so a student gets
+// nearest-first in both sections rather than two differently-sorted lists.
+//
+// ⚠️ THE SPLIT THAT MATTERS IS `matched_via`, NOT THE RANKING. A program whose
+// TITLE names what was asked is the thing; a program matched only by its CODE is
+// in the same field and may be for somebody else entirely. The LVN case is the
+// worked example: "LVN to RN" is coded Registered Nursing in both taxonomies, so
+// a code-matched row can be a BRIDGE FOR PEOPLE WHO ALREADY HOLD the credential
+// the asker wants to earn. Collapsing the two would have Sierra answer an
+// aspiring LVN with a program that requires an LVN license to enter.
+function buildProgramsContext(
+  programs: any[],
+  askedCollege: string | null,
+  askedGeo: any | null,
+  geoMap: Map<string, any> | null = null,
+): string {
+  if (!programs || programs.length === 0) return "";
+
+  const byCollege = new Map<string, { named: any[]; field: any[]; region: string | null; county: string | null }>();
+  for (const r of programs) {
+    const fb = geoMap?.get(r.college) || null;
+    const g = byCollege.get(r.college) || {
+      named: [], field: [],
+      region: r.region || fb?.region || null,
+      county: r.county || fb?.county || null,
+    };
+    // 'title' and 'title+code' mean the program's own name carries the ask.
+    if (r.matched_via === "code") g.field.push(r);
+    else g.named.push(r);
+    byCollege.set(r.college, g);
+  }
+
+  // Named-program match first, then the proximity band, then (v70) the distance
+  // from the anchor, then how many programs match — the offerings builder's keys.
+  const rank = (g: any) => (g.named.length > 0 ? 1000 : 0) + proximityBand(g, askedGeo) * 100;
+  const volume = (g: any) => Math.min(g.named.length + g.field.length, 39);
+
+  const fmtProgram = (r: any) => {
+    let s = `  - ${r.program_title}`;
+    if (r.award) s += ` — ${r.award}`;
+    const codes = [];
+    if (r.top_title) codes.push(`TOP ${r.top_code} ${r.top_title}`);
+    if (r.cip_title) codes.push(`CIP ${r.cip_code} ${r.cip_title}`);
+    if (codes.length) s += ` [${codes.join("; ")}]`;
+    if (r.status && r.status !== "Active") s += ` (status ${r.status})`;
+    return s + `\n`;
+  };
+
+  const fmtCollege = (college: string, g: any) => {
+    let s = `\n## ${college}${geoLabel(g, distanceText(college, askedGeo))}\n`;
+    if (g.named.length) {
+      s += `  AWARDS THIS (the program name says so):\n`;
+      for (const r of g.named.slice(0, 6)) s += fmtProgram(r);
+      if (g.named.length > 6) s += `  ... and ${g.named.length - 6} more.\n`;
+    }
+    if (g.field.length) {
+      s += `  SAME FIELD BY CODE ONLY — verify this is the right program before offering it:\n`;
+      for (const r of g.field.slice(0, 3)) s += fmtProgram(r);
+      if (g.field.length > 3) s += `  ... and ${g.field.length - 3} more.\n`;
+    }
+    return s;
+  };
+
+  const askedRaw = askedCollege ? byCollege.get(askedCollege) : null;
+  const others = [...byCollege.entries()]
+    .filter(([c]) => c !== askedCollege)
+    .sort((a, b) => (rank(b[1]) - rank(a[1]))
+      || cmpKm(proximityKm(a[0], askedGeo), proximityKm(b[0], askedGeo))
+      || (volume(b[1]) - volume(a[1])));
+
+  let ctx = "\n\n--- Program Catalog: WHICH COLLEGES AWARD THIS (program catalog data — the degrees and certificates a college confers, NOT a CPL articulation) ---\n";
+  ctx += `${byCollege.size} college(s) below have a matching program. This is the TOP matching set, NOT an exhaustive list.\n`;
+
+  if (askedCollege) {
+    if (askedRaw) ctx += `\n### ${askedCollege} — what it awards in this area:` + fmtCollege(askedCollege, askedRaw);
+    else ctx += `\n### ${askedCollege} has no matching program in the current program catalog data — say you are not certain from the data at hand rather than that it has none.\n`;
+  }
+  // Same fact, same reason as the offerings builder: a county with no matching
+  // program is an ANSWER, and the model must not soften it into "not certain".
+  if (askedGeo && askedGeo.label && !askedCollege) {
+    const here = others.filter(([, g]) => proximityBand(g, askedGeo) >= (askedGeo.county ? 3 : 2));
+    ctx += here.length
+      ? `\n### In ${askedGeo.label}: ${here.length} college(s) have a matching program — they are listed first below. Read each title and award before calling any of them the program asked for (a bridge such as "LVN to RN" is for people who already hold the license). When another section says the catalog lists no college in ${askedGeo.label} for the entry program, these are the related programs it does list there — name them.\n`
+      : `\n### The current program catalog data lists no college in ${askedGeo.label} with a matching program. Say what the catalog data shows — never that no college in ${askedGeo.label} offers it — then name the nearest colleges below that award it, with their county and distance.\n`;
+  }
+  if (others.length) {
+    ctx += `\n### ${askedCollege ? "Other colleges" : "Colleges"} with a matching program (nearest first when a home college is known):\n`;
+    for (const [college, g] of others.slice(0, 10)) ctx += fmtCollege(college, g);
+    if (others.length > 10) ctx += `\n  ... and ${others.length - 10} more college(s) have a matching program.\n`;
+  }
+  return ctx;
+}
+
+// ── Prospective credit: the courses a held credential could count toward ──────
+// (2026-09-18, S274.) Sam, on v67's answer to his Orange County question — "I
+// have a cna cert and I want to go to a college in orange county. What CNA
+// courses at the colleges match LVN courses so I can ask for credit?":
+//
+//   "I was asking her to compare CNA courses to LVN courses so the user could
+//    ask for credit. Both she and the last session seemed to confuse this ask
+//    with the typical ask for which existing exhibits offer CPL for CNA, which
+//    is not the question... The question is what might qualify so the user
+//    could ask for it at a college that has not yet granted it."
+//
+// That is a PROSPECTIVE question. The visitor holds a credential, the college
+// holds no exhibit, and the answer is the target program's courses whose content
+// the credential plausibly covers — stated as what to ask the CPL coordinator to
+// review. The exhibit and credential routes answer a different question ("who
+// already grants it"), and a correct answer to that one reads as a miss.
+//
+// The instrument is the course list itself. coci_college_offerings carries only
+// a SAMPLE of courses per (college × TOP); chatbox_college_courses carries them
+// all (141,696 rows over 120 colleges, the alignment route's own table). So: for
+// every TOP program the question matched as a core discipline, pick the colleges
+// nearest the anchor that teach it — those IN the place first, then the nearest
+// outside it — and read their full course list for that TOP. The model then
+// compares the credential's content with the program's entry-level courses, with
+// the precedent lines in the credential record (how another college mapped the
+// same credential) as the evidence, and presents the match as a REQUEST.
+//
+// Never a determination: every line this block renders is a course the college
+// TEACHES, not a course the credential is worth. PROSPECTIVE_RULE says so twice.
+const PROSPECTIVE_COLLEGES_PER_TOP = 3;
+const PROSPECTIVE_COURSES_PER_COLLEGE = 12;
+
+// THE VISITOR'S OWN WORDS SAY WHICH CREDENTIAL THEY HOLD (v71, 2026-09-18, S275).
+// The credential record matches every credential the question names. For the
+// Orange County question — "I have a CNA certificate … what CNA courses match
+// LVN courses" — the local route returns the CNA certifications AND the LVN
+// license (measured: search_credentials_any('lvn') returns Licensed Vocational
+// Nurse (LVN) License at tier 3 with three adopters, which the adopted-first
+// sort ranks FIRST of the six), so v70's block opened "The visitor holds a
+// credential (matched … as Licensed Vocational Nurse (LVN) License; …)", and the
+// model, told to name a course first, named the nearest CNA course — Golden West
+// NURS G060N, then Santa Ana VHLTH 101 — ahead of every LVN course, twice on
+// production. The record cannot say which credential is held. The question can:
+// a first-person holding phrase ("I have a", "I hold", "I'm a", "as a", "with my")
+// names it, and the phrase is what marks the program that trains it BACKGROUND.
+// Pure — lifted by tests/sierra_prospective_credit.test.js.
+//
+// A holding phrase is a verb, then the words up to a credential noun or a clause
+// boundary. STRONG verbs accept a short phrase with no noun ("I'm a CNA");
+// WEAK ones need the noun ("with my CNA certificate", never "with a college").
+const HELD_VERBS_STRONG: Array<Array<string>> = [
+  ["i", "ve", "got"], ["i", "ve", "earned"], ["i", "ve", "completed"], ["i", "ve", "finished"], ["i", "ve", "been"],
+  ["i", "have", "been"], ["i", "work", "as"], ["i", "have"], ["i", "hold"], ["i", "got"], ["i", "earned"],
+  ["i", "completed"], ["i", "finished"], ["i", "am"], ["i", "m"], ["as", "a"], ["as", "an"], ["being", "a"], ["being", "an"],
+];
+const HELD_VERBS_WEAK: Array<Array<string>> = [
+  ["with", "my"], ["with", "a"], ["with", "an"], ["have", "my"], ["got", "my"], ["hold", "my"], ["holding", "my"],
+  ["holding", "a"], ["holding", "an"], ["hold", "a"], ["hold", "an"], ["my"],
+];
+// Words that close the phrase: the credential noun.
+const HELD_NOUNS = new Set([
+  "cert", "certs", "certificate", "certificates", "certification", "certifications", "license", "licenses",
+  "licence", "licences", "credential", "credentials", "card", "cards", "diploma", "degree", "training",
+  "ticket", "endorsement", "registration", "rating", "ratings",
+]);
+// Words inside the phrase that name nothing (articles, adjectives, time).
+const HELD_SKIP = new Set([
+  "a", "an", "the", "my", "our", "own", "current", "currently", "active", "valid", "new", "recent", "recently",
+  "already", "also", "just", "now", "still", "been", "worked", "working", "certified", "licensed", "registered",
+  "state", "california", "ca", "first", "second", "years", "year", "months", "month", "one", "two", "three",
+]);
+// Words that end the phrase without naming a credential.
+const HELD_BOUNDARY = new Set([
+  "and", "but", "or", "so", "who", "which", "that", "where", "when", "while", "because", "since", "if", "then",
+  "than", "in", "at", "from", "for", "to", "of", "on", "near", "into", "toward", "towards", "about", "by",
+  "through", "via", "within", "around", "before", "after", "during", "want", "wanted", "wanting", "would",
+  "like", "looking", "trying", "hoping", "need", "needs", "question", "questions", "some", "few", "couple",
+  "lot", "lots", "list", "interest", "idea", "problem", "issue", "trouble", "time", "plan", "plans", "goal",
+  "goals", "chance", "option", "options", "experience", "background", "no", "not", "never", "nothing",
+  "am", "is", "are", "was", "were", "be", "can", "could", "will", "should", "do", "does", "did", "don", "t",
+]);
+function heldCredentialPhrases(text: string): Array<string> {
+  const toks = String(text || "").toLowerCase().replace(/['’]/g, " ")
+    .replace(/[^a-z0-9\s]/g, " | ").split(/\s+/).filter(Boolean);
+  const out: Array<string> = [];
+  const at = (i: number, verbs: Array<Array<string>>): Array<string> | null => {
+    let best: Array<string> | null = null;
+    for (const v of verbs) {
+      if (v.every((w, j) => toks[i + j] === w) && (!best || v.length > best.length)) best = v;
+    }
+    return best;
+  };
+  for (let i = 0; i < toks.length; i++) {
+    let verb = at(i, HELD_VERBS_STRONG);
+    const strong = !!verb;
+    if (!verb) verb = at(i, HELD_VERBS_WEAK);
+    if (!verb) continue;
+    let j = i + verb.length;
+    const words: Array<string> = [];
+    let closed = false;
+    while (j < toks.length && words.length < 4) {
+      const w = toks[j++];
+      if (w === "|" || HELD_BOUNDARY.has(w)) break;
+      if (HELD_NOUNS.has(w)) { closed = true; break; }
+      if (HELD_SKIP.has(w) || /^[0-9]+$/.test(w)) continue;
+      words.push(w);
+    }
+    if (words.length > 0 && (closed || (strong && words.length <= 3))) {
+      const phrase = words.join(" ");
+      if (!out.includes(phrase)) out.push(phrase);
+    }
+    i = Math.max(i, j - 1);
+  }
+  return out;
+}
+
+// Content stems of a title, for "the same program / the same kind of credential":
+// credential-type words and articles carry nothing, and a light stem folds
+// nurse/nursing and assistant/assisting. Consistency is the point, never English.
+const STEM_NOISE = new Set([
+  "a", "an", "the", "of", "and", "for", "in", "to", "with", "or", "by", "cert", "certs", "certificate",
+  "certificates", "certification", "certifications", "certified", "license", "licenses", "licensed", "licence",
+  "credential", "credentials", "card", "program", "programs", "course", "courses", "level", "generic",
+  "state", "california", "ca", "department", "board",
+]);
+function stemToken(w: string): string {
+  const m = /^(.{3,}?)(ations?|ings?|ions?|ants?|ers?|ies|ied|ed|es|s|e)$/.exec(w);
+  return m ? m[1] : w;
+}
+function contentStems(text: string): Set<string> {
+  const out = new Set<string>();
+  for (const w of String(text || "").toLowerCase().replace(/[^a-z0-9\s]/g, " ").split(/\s+/)) {
+    if (w.length < 2 || STEM_NOISE.has(w)) continue;
+    out.add(stemToken(w));
+  }
+  return out;
+}
+// Two titles are the same thing when they share two content stems, or every
+// stem of the shorter one when it has fewer than two.
+function sameKind(a: string, b: string): boolean {
+  const A = contentStems(a), B = contentStems(b);
+  if (A.size === 0 || B.size === 0) return false;
+  let shared = 0;
+  for (const s of A) if (B.has(s)) shared++;
+  return shared >= Math.min(2, A.size, B.size);
+}
+// A held term appears in a title as a WHOLE word or phrase (the isFalseFriend test).
+function namesHeld(title: string, terms: Array<string>): boolean {
+  const hay = String(title || "").toLowerCase();
+  for (const t of terms) {
+    const needle = String(t || "").trim().toLowerCase();
+    if (!needle) continue;
+    const esc = needle.replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/\s+/g, "\\s+");
+    if (new RegExp("(^|[^a-z0-9])" + esc + "($|[^a-z0-9])").test(hay)) return true;
+  }
+  return false;
+}
+// The matched credential titles the visitor HOLDS: those naming a held phrase (or
+// its words) — and, so the precedent survives, those of the same kind as one of
+// them (Acute Care Nursing Assistant, for a CNA holder). With no holding phrase
+// in the question every matched title is kept, as before v71.
+function pickHeldTitles(titles: Array<string>, phrases: Array<string>): Array<string> {
+  const list = (titles || []).filter(Boolean);
+  if (!phrases || phrases.length === 0) return list;
+  const terms = [...phrases, ...phrases.flatMap((p) => p.split(/\s+/))].filter((t) => t.length >= 2);
+  const direct = list.filter((t) => namesHeld(t, terms) || phrases.some((p) => sameKind(t, p)));
+  if (direct.length === 0) return [];
+  return list.filter((t) => direct.includes(t) || direct.some((d) => sameKind(t, d)));
+}
+
+// The (college × TOP) pairs to read course lists for. Per core TOP: a named
+// college first, then by proximity band (in the county, in the region, in a
+// neighboring region, elsewhere), then (v70) by distance from the anchor where
+// both sides have a campus point, then by how much of the program the college
+// teaches. Returns [{ college, top_code, top_title, band, km, county, region }]
+// in render order. Pure — lifted by tests/sierra_prospective_credit.test.js.
+function pickProspectivePairs(
+  offerings: any[] | null,
+  coreKeywords: Array<string>,
+  askedCollege: string | null,
+  askedGeo: any | null,
+  geoMap: Map<string, any> | null,
+): Array<any> {
+  if (!offerings || offerings.length === 0) return [];
+  const isCore = (o: any) => {
+    const t = (o.top_title || "").toLowerCase();
+    return coreKeywords.some((k) => k.length >= 4 && t.includes(k));
+  };
+  const byTop = new Map<string, any[]>();
+  for (const o of offerings) {
+    if (!o || !o.college || !o.top_code || !isCore(o)) continue;
+    const fb = geoMap?.get(o.college) || null;
+    const geo = { region: o.region || fb?.region || null, county: o.county || fb?.county || null };
+    const list = byTop.get(o.top_code) || [];
+    if (list.some((p) => p.college === o.college)) continue;
+    list.push({
+      college: o.college, top_code: o.top_code, top_title: o.top_title || o.top_code,
+      band: proximityBand(geo, askedGeo), km: proximityKm(o.college, askedGeo),
+      county: geo.county, region: geo.region,
+      courses: o.course_count || 0,
+    });
+    byTop.set(o.top_code, list);
+  }
+  const out: Array<any> = [];
+  for (const [, list] of byTop) {
+    list.sort((a, b) =>
+      ((b.college === askedCollege ? 1 : 0) - (a.college === askedCollege ? 1 : 0))
+      || (b.band - a.band) || cmpKm(a.km, b.km) || (b.courses - a.courses)
+      || (a.college < b.college ? -1 : a.college > b.college ? 1 : 0));
+    for (const p of list.slice(0, PROSPECTIVE_COLLEGES_PER_TOP)) out.push(p);
+  }
+  return out;
+}
+
+// One PostgREST read for every picked pair. `.in()` on both columns returns the
+// cross product (a college picked for one TOP may teach another picked TOP too),
+// so the builder filters back to the pairs it was given. Fails safe to null:
+// an unavailable read costs this one section and nothing else.
+async function fetchProgramCourses(pairs: Array<any>, sb: any): Promise<any[] | null> {
+  if (!pairs || pairs.length === 0) return null;
+  const colleges = [...new Set(pairs.map((p) => p.college))];
+  const tops = [...new Set(pairs.map((p) => p.top_code))];
+  const { data, error } = await sb.from("chatbox_college_courses")
+    .select("college, top_code, subject, course_number, course_title, units, credit_type, cid")
+    .in("college", colleges)
+    .in("top_code", tops)
+    .order("college").order("top_code").order("subject").order("course_number")
+    .limit(400);
+  if (error) {
+    console.error("program course list unavailable:", error.message);
+    return null;
+  }
+  return data && data.length > 0 ? data : null;
+}
+
+// ── THE QUICK LIST, THE PRECEDENT IN THE BLOCK, THE FLYER (v72, 2026-09-18, S276) ──
+// Sam, after reading v71's Orange County answer ("it's returning expected
+// results now"):
+//
+//   "Goal now would be for her to be able to add near the start of her detailed
+//    answer a quick list view of the typical CNA course next to typical LVN
+//    courses. The user did not say where they did their CNA, so being able to
+//    generalize is an added skill level for Sierra. Response could be thought
+//    of as a flyer — Have a CNA Cert? Ask for your credit toward LVN, Rad Tech,
+//    ADN, Med Asst, Surgical Tech, Sterilization Tech, Phlebotomy… if Sierra
+//    were a counselor, she would have this at her fingertips for the student."
+//
+// Three instruments, all retrieval, none prose:
+//
+//   THE QUICK LIST. program_typical_courses() (chatbox/supabase_program_typical_
+//   courses.sql) aggregates chatbox_college_courses STATEWIDE per TOP program:
+//   for every normalized course title, how many of the colleges teaching the
+//   program list it (49 of 65 CNA colleges list a Nurse Assistant course;
+//   Fundamentals of Nursing, Vocational Nursing I and Pharmacology lead the 44
+//   LVN colleges — measured 2026-09-18). The block renders the held program's
+//   typical courses (what the credential covers, generalized because nobody
+//   named the CNA's college) beside the target program's (what to ask about),
+//   and PROSPECTIVE_RULE asks for a two-column table right after the first
+//   paragraph. Counts are in COLLEGES, never rows.
+//
+//   THE PRECEDENT, IN THE BLOCK. Three of the last four Orange County answers
+//   dropped Chaffey's NURVN 414 while the credential record carried it: the
+//   rule said "cite the precedent" and the record sat in another section.
+//   buildPrecedentLines renders the held credentials' recommendation lines and
+//   adopter names HERE, and says "none on record" in words only when the record
+//   was read and holds none — never when the read failed.
+//
+//   THE FLYER. RELATED_PROGRAMS is the CPL team's counselor list, keyed by the
+//   TOP program that trains the credential held: the programs whose first
+//   courses the credential's training commonly overlaps (Sam's list, above).
+//   Curated knowledge, attributed; the catalog data checks every line — how
+//   many colleges teach the program statewide, whether one is in the visitor's
+//   place, the nearest that do, its typical first courses. Never a
+//   determination: every line is a request to a CPL coordinator.
+//
+// TOP is the KEY here, never a gate: it is how the catalog data groups a program
+// (the grouping the block has used since v69), and a crosswalk entry is the
+// curator's judgment, not an inference from a code.
+const TYPICAL_COURSES_PER_PROGRAM = 8;
+const FLYER_COURSES_PER_PROGRAM = 2;
+const FLYER_NAMES = 2;
+// { [heldTop]: { label, aliases (the visitor's words that name the credential,
+// lower-case), targets: [{ top, label }] } }. Codes from the program catalog
+// data's own titles (coci_college_offerings, 2026-09-18): Sterile Processing
+// programs are coded Hospital Central Service Technician (1209.00), Surgical
+// Technology is Surgical Technician (1217.00), Phlebotomy has its own code
+// (1205.10), Medical Assisting is 1208.00 (its clinical and administrative
+// options sit under 1208.10 and 1208.20 and are not listed separately).
+const RELATED_PROGRAMS: Record<string, any> = {
+  "1230.30": {
+    label: "Certified Nurse Assistant (CNA)",
+    aliases: ["cna", "nurse assistant", "nursing assistant", "certified nurse assistant", "certified nursing assistant", "nurse aide", "nursing aide"],
+    targets: [
+      { top: "1230.20", label: "Vocational Nursing (LVN)" },
+      { top: "1230.10", label: "Registered Nursing (ADN / RN)" },
+      { top: "1208.00", label: "Medical Assisting" },
+      { top: "1205.10", label: "Phlebotomy" },
+      { top: "1225.00", label: "Radiologic Technology (Rad Tech)" },
+      { top: "1217.00", label: "Surgical Technology" },
+      { top: "1209.00", label: "Sterile Processing (Central Service Technician)" },
+    ],
+  },
+};
+
+// The program that trains the credential the visitor holds: its title names a
+// held term, or it is the same kind of thing as a held phrase or a held title.
+// Shared by the block's BACKGROUND mark and the flyer's held-program lookup, so
+// the two can never disagree about which program is the visitor's own.
+function isBackgroundTitle(title: string, terms: Array<string>, heldPhrases: Array<string>, credentials: Array<string>): boolean {
+  const ts = (terms || []).filter(Boolean);
+  if (ts.length === 0) return false;
+  return namesHeld(title, ts)
+    || (heldPhrases || []).some((p) => sameKind(title, p))
+    || (credentials || []).some((c) => sameKind(title, c));
+}
+
+// The TOP programs that train the credential held. The picked programs the
+// BACKGROUND mark falls on — with the block's own fail-safe: when every picked
+// program would be background, none is (a visitor who says "I have nursing
+// experience" has named no program), and only a crosswalk alias the visitor's
+// words name exactly ("cna") can still say which. With no picks at all, the
+// alias is the only path.
+function heldProgramTops(pairs: Array<any>, heldPhrases: Array<string>, heldTerms: Array<string>, credentials: Array<string>): Array<string> {
+  const terms = [...(heldTerms || []), ...(heldPhrases || [])].filter(Boolean);
+  const tops: Array<string> = [];
+  const background: Array<string> = [];
+  for (const p of pairs || []) {
+    if (!p || !p.top_code) continue;
+    if (!tops.includes(p.top_code)) tops.push(p.top_code);
+    if (!background.includes(p.top_code) && isBackgroundTitle(p.top_title || "", terms, heldPhrases || [], credentials || [])) background.push(p.top_code);
+  }
+  if (background.length > 0 && background.length < tops.length) return background;
+  const out: Array<string> = [];
+  const lower = terms.map((t) => String(t).toLowerCase().trim());
+  for (const top of Object.keys(RELATED_PROGRAMS)) {
+    const aliases: Array<string> = RELATED_PROGRAMS[top].aliases || [];
+    if (aliases.some((a) => lower.includes(a))) out.push(top);
+  }
+  return out;
+}
+
+// The flyer's targets for the held programs, in the team's order, each once.
+function relatedProgramTops(heldTops: Array<string>): Array<any> {
+  const out: Array<any> = [];
+  for (const t of heldTops || []) {
+    const entry = RELATED_PROGRAMS[t];
+    if (!entry) continue;
+    for (const x of entry.targets || []) {
+      if (!out.some((o) => o.top === x.top)) out.push({ top: x.top, label: x.label, from: t });
+    }
+  }
+  return out;
+}
+
+// A title the college typed in capitals renders in title case; a mixed-case
+// title is left as the college wrote it.
+const TITLE_SMALL_WORDS = new Set(["of", "and", "for", "to", "in", "the", "a", "an", "with", "or", "on", "at", "by"]);
+function titleCaseIfShouting(t: string): string {
+  const s = String(t || "").trim();
+  if (!s || s !== s.toUpperCase() || !/[A-Z]/.test(s)) return s;
+  const parts = s.toLowerCase().split(/(\s+|\/)/);
+  let word = 0;
+  return parts.map((w) => {
+    if (!w.trim() || w === "/") return w;
+    word++;
+    if (/^(i|ii|iii|iv|v|vi|vii|viii|ix|x)$/.test(w)) return w.toUpperCase();
+    if (word > 1 && TITLE_SMALL_WORDS.has(w)) return w;
+    return w.charAt(0).toUpperCase() + w.slice(1);
+  }).join("");
+}
+
+// The same content stems in any order are one course family: the RPC's rows are
+// folded on that key and their college arrays unioned, so a count stays a count
+// of colleges after the fold.
+function typicalFoldKey(norm: string): string {
+  return [...contentStems(norm)].sort().join(" ");
+}
+// Groups the RPC's rows per program, folds same-stem rows, ranks by colleges and
+// caps. Returns Map top_code → { top_code, top_title, program_colleges,
+// courses: [{ title, n, units, example, credit, noncredit }] }.
+function foldTypicalRows(rows: any[] | null, cap: number = TYPICAL_COURSES_PER_PROGRAM): Map<string, any> {
+  const out = new Map<string, any>();
+  for (const r of rows || []) {
+    if (!r || !r.top_code || !r.norm) continue;
+    if (!out.has(r.top_code)) {
+      out.set(r.top_code, { top_code: r.top_code, top_title: r.top_title || r.top_code, program_colleges: Number(r.program_colleges) || 0, groups: new Map<string, any>() });
+    }
+    const prog = out.get(r.top_code);
+    const key = typicalFoldKey(r.norm) || r.norm;
+    let g = prog.groups.get(key);
+    if (!g) {
+      // The first row for a key is the largest (the RPC orders by colleges): its
+      // title, units and example lead the family.
+      g = { title: titleCaseIfShouting(r.modal_title || r.norm), colleges: new Set<string>(), n: 0, units: r.modal_units,
+            example: r.example_college && r.example_code ? `${r.example_college} · ${r.example_code}` : "", credit: 0, noncredit: 0 };
+      prog.groups.set(key, g);
+    }
+    for (const c of (Array.isArray(r.colleges) ? r.colleges : [])) g.colleges.add(c);
+    g.n = Math.max(g.n, g.colleges.size, Number(r.n_colleges) || 0);
+    g.credit += Number(r.credit_rows) || 0;
+    g.noncredit += Number(r.noncredit_rows) || 0;
+  }
+  for (const prog of out.values()) {
+    prog.courses = [...prog.groups.values()]
+      .map((g) => ({ title: g.title, n: Math.max(g.colleges.size, g.n), units: g.units, example: g.example, credit: g.credit, noncredit: g.noncredit }))
+      .sort((a, b) => (b.n - a.n) || (a.title < b.title ? -1 : a.title > b.title ? 1 : 0))
+      .slice(0, cap);
+    delete prog.groups;
+  }
+  return out;
+}
+function typicalUnitsText(c: any): string {
+  const u = Number(c.units);
+  if (u > 0) return `usually ${u} unit${u === 1 ? "" : "s"}`;
+  if (c.credit > 0 && c.noncredit > 0) return "credit at some colleges, noncredit at others";
+  return "usually noncredit";
+}
+
+// The QUICK LIST the model turns into the two-column table. `programs` are the
+// block's sections with their role (background true = the program that trains
+// the credential held; false = the program the visitor wants to enter; null =
+// unknown, the fail-safe case). The held program renders first — what the
+// credential covers, then what to ask about. A program the RPC returned no
+// rows for is skipped; one column is better than none.
+function buildQuickList(typical: Map<string, any>, programs: Array<any>): string {
+  const list = [...(programs || [])].sort((a, b) => ((b.background === true ? 1 : 0) - (a.background === true ? 1 : 0)));
+  const parts: Array<string> = [];
+  for (const p of list) {
+    const prog = typical.get(p.top_code);
+    if (!prog || !prog.courses || prog.courses.length === 0) continue;
+    const role = p.background === true
+      ? "the program that trains the credential held — what the credential covers"
+      : p.background === false ? "the program the visitor wants to enter — what to ask about" : "a program the question matched";
+    let s = `## Typical ${prog.top_title} courses (${role}; ${prog.program_colleges} colleges teach the program statewide):\n`;
+    for (const c of prog.courses) {
+      s += `  - ${c.title} — at ${c.n} of ${prog.program_colleges} colleges (`;
+      s += c.example ? `e.g. ${c.example}; ${typicalUnitsText(c)})\n` : `${typicalUnitsText(c)})\n`;
+    }
+    parts.push(s);
+  }
+  if (parts.length === 0) return "";
+  return `\nQUICK LIST — typical courses in each program, STATEWIDE, from the college catalog data: for each course name, how many of the colleges teaching the program list it (counted in colleges — the theory, lab and clinical sections of one course count once). The visitor did not say where they trained, so the held program's list generalizes across every college that teaches it. Render it as the two-column table the rule describes, right after the first paragraph.\n` + parts.join("");
+}
+
+// PRECEDENT ON RECORD, rendered inside the block. A college is paired with a
+// course only when the record names exactly one adopter for the line (the
+// alignment rule's "never pair a specific college to a specific course" holds
+// otherwise). A null record means it was not read this turn — say nothing
+// rather than "none"; an empty held list means the visitor named no credential.
+function buildPrecedentLines(heldTitles: Array<string>, recs: Map<string, any> | null, adopters: Map<string, any> | null): string {
+  if (!recs || !heldTitles || heldTitles.length === 0) return "";
+  const lines: Array<string> = [];
+  for (const t of heldTitles) {
+    const rec = recs.get(t);
+    if (!rec || !Array.isArray(rec.recs) || rec.recs.length === 0) continue;
+    const names: Array<string> = (adopters && adopters.get(t) ? adopters.get(t) : []).map((a: any) => a && a.name).filter(Boolean);
+    for (const line of rec.recs) {
+      const credit = line.title || line.credit || "";
+      if (!credit) continue;
+      const course = line.example_course ? ` (${line.example_course})` : "";
+      const n = Number(line.colleges) || Number(rec.n_adopter_colleges) || 0;
+      if (n === 1 && names.length === 1) lines.push(`  - ${names[0]} articulated ${t} against ${credit}${course}`);
+      else lines.push(`  - ${n || "some"} college(s) articulated ${t} as ${credit}${course}${names.length ? ` — adopters on record: ${names.slice(0, 5).join(", ")}` : ""}`);
+    }
+  }
+  if (lines.length === 0) {
+    return `\nPRECEDENT ON RECORD for the credential held: none — the credential record holds no college that has articulated it against a named course yet. Say so in words and say the request would be a first; never invent one.\n`;
+  }
+  return `\nPRECEDENT ON RECORD for the credential held (from the credential record — cite the college, the course and the units as the evidence that the match has been made before; a general-education award is a precedent for credit, not for a program course):\n${lines.join("\n")}\n`;
+}
+
+// The FLYER: other programs the held credential commonly counts toward — the
+// team's list, checked against the catalog data. `teachers` are
+// coci_college_offerings rows for the target programs (college, top_code,
+// top_title, course_count); geography comes from geoMap and the campus points.
+// `skipTops` are the programs the block already renders in full.
+function buildRelatedPrograms(
+  heldTops: Array<string>, targets: Array<any>, teachers: any[] | null, typical: Map<string, any>,
+  askedCollege: string | null, askedGeo: any | null, geoMap: Map<string, any> | null, skipTops: Array<string> = [],
+): string {
+  if (!heldTops || heldTops.length === 0 || !targets || targets.length === 0) return "";
+  const heldLabel = heldTops.map((t) => (RELATED_PROGRAMS[t] && RELATED_PROGRAMS[t].label) || t).join(" / ");
+  const byTop = new Map<string, any[]>();
+  for (const r of teachers || []) {
+    if (!r || !r.college || !r.top_code) continue;
+    const list = byTop.get(r.top_code) || [];
+    if (!list.some((x) => x.college === r.college)) list.push(r);
+    byTop.set(r.top_code, list);
+  }
+  const lines: Array<string> = [];
+  for (const t of targets) {
+    if ((skipTops || []).includes(t.top)) continue;
+    const rows = byTop.get(t.top) || [];
+    const prog = typical.get(t.top);
+    const statewide = Math.max(rows.length, (prog && prog.program_colleges) || 0);
+    // Nothing in the catalog data for it: leave the line out rather than name a
+    // program no college teaches.
+    if (!statewide) continue;
+    const withGeo = rows.map((r) => {
+      const g = geoMap ? geoMap.get(r.college) : null;
+      return { college: r.college, band: proximityBand(g || null, askedGeo), km: proximityKm(r.college, askedGeo), courses: Number(r.course_count) || 0 };
+    }).sort((a, b) =>
+      ((b.college === askedCollege ? 1 : 0) - (a.college === askedCollege ? 1 : 0))
+      || (b.band - a.band) || cmpKm(a.km, b.km) || (b.courses - a.courses)
+      || (a.college < b.college ? -1 : a.college > b.college ? 1 : 0));
+    let s = `  - ${t.label} — ${statewide} college(s) teach it statewide`;
+    let placed = false;
+    if (askedCollege) {
+      s += withGeo.some((r) => r.college === askedCollege) ? `; ${askedCollege} teaches it` : `; the catalog data lists no course in it at ${askedCollege}`;
+    } else if (askedGeo && askedGeo.label) {
+      const here = withGeo.filter((r) => r.band >= (askedGeo.county ? 3 : 2));
+      if (here.length) {
+        s += `; in ${askedGeo.label}: ${here.length} (${here.slice(0, FLYER_NAMES).map((r) => r.college).join(", ")}${here.length > FLYER_NAMES ? ", …" : ""})`;
+        placed = true;
+      } else {
+        s += `; the catalog data lists none in ${askedGeo.label}`;
+      }
+    }
+    const nearest = withGeo.filter((r) => r.college !== askedCollege).slice(0, FLYER_NAMES);
+    if (!placed && nearest.length && (askedGeo || askedCollege)) {
+      s += `; nearest: ${nearest.map((r) => { const d = distanceText(r.college, askedGeo); return r.college + (d ? ` (${d})` : ""); }).join(", ")}`;
+    }
+    if (prog && prog.courses && prog.courses.length) {
+      s += `; typical first courses: ${prog.courses.slice(0, FLYER_COURSES_PER_PROGRAM).map((c: any) => c.title).join(", ")}`;
+    }
+    lines.push(s + ".");
+  }
+  if (lines.length === 0) return "";
+  return `\nOTHER PROGRAMS A ${heldLabel.toUpperCase()} COMMONLY COUNTS TOWARD — the CPL team's counselor list (Sam Lee, 2026-09-18), checked against the catalog data: the training behind the credential overlaps the first courses of these programs, so each is a request to that college's CPL coordinator, never a determination. Offer them briefly at the END of the answer, one line each with the nearest college and the first course to ask about, as what else is worth asking; the visitor can ask about any of them next.\n${lines.join("\n")}\n`;
+}
+
+// One RPC for the typical-courses lists of every program the block will name.
+// Fails safe to null: no QUICK LIST and no flyer courses, nothing else lost.
+async function fetchTypicalCourses(tops: Array<string>, sb: any): Promise<any[] | null> {
+  const codes = [...new Set((tops || []).filter(Boolean))];
+  if (codes.length === 0) return null;
+  const { data, error } = await sb.rpc("program_typical_courses", { top_codes: codes, min_colleges: 2, per_top: 40 });
+  if (error) {
+    console.error("typical courses unavailable:", error.message);
+    return null;
+  }
+  return data && data.length > 0 ? data : null;
+}
+// Who teaches the flyer's programs: one PostgREST read of the offerings rollup
+// (a row per college × program). Fails safe to null: the flyer then carries the
+// statewide counts from the typical-courses read and no nearest college.
+async function fetchProgramTeachers(tops: Array<string>, sb: any): Promise<any[] | null> {
+  const codes = [...new Set((tops || []).filter(Boolean))];
+  if (codes.length === 0) return null;
+  const { data, error } = await sb.from("coci_college_offerings")
+    .select("college, top_code, top_title, course_count")
+    .in("top_code", codes)
+    .order("top_code").order("college")
+    .limit(1000);
+  if (error) {
+    console.error("program teachers unavailable:", error.message);
+    return null;
+  }
+  return data && data.length > 0 ? data : null;
+}
+
+// The block the model reads. Grouped by TOP program, then by college in the
+// order pickProspectivePairs chose; a place with no college teaching the program
+// is TOLD, in words, for the reason buildOfferingsContext gives — without the
+// line, the "not exhaustive" rule makes the model hedge instead of answering.
+function buildProspectiveContext(
+  pairs: Array<any>,
+  courses: any[] | null,
+  credentials: Array<string>,
+  askedCollege: string | null,
+  askedGeo: any | null,
+  heldPhrases: Array<string> = [],
+  heldTerms: Array<string> = [],
+  // v72: { typical (foldTypicalRows), teachers, recs, adopters, geoMap } — each
+  // optional, each fail-safe; a null extras renders the v71 block plus the
+  // college on every course line.
+  extras: any = null,
+): string {
+  if (!pairs || pairs.length === 0 || !courses || courses.length === 0) return "";
+  const pairKey = (c: string, t: string) => `${c}||${t}`;
+  const byPair = new Map<string, any[]>();
+  for (const r of courses) {
+    if (!r || !r.college || !r.top_code) continue;
+    const k = pairKey(r.college, r.top_code);
+    const list = byPair.get(k) || [];
+    list.push(r);
+    byPair.set(k, list);
+  }
+  const byTop = new Map<string, any[]>();
+  for (const p of pairs) {
+    const list = byTop.get(p.top_code) || [];
+    list.push(p);
+    byTop.set(p.top_code, list);
+  }
+  const who = askedCollege || (askedGeo && askedGeo.label) || "the visitor";
+  // The program that trains the credential the visitor holds is BACKGROUND: its
+  // title names a held phrase, or it is the same kind of thing as a held phrase
+  // or a held credential title. Never every section — with nothing left to be
+  // the target, no section is marked and the order is the picks' own.
+  const terms = [...(heldTerms || []), ...(heldPhrases || [])].filter(Boolean);
+  const isBackground = (title: string): boolean => isBackgroundTitle(title, terms, heldPhrases || [], credentials || []);
+  const sections: Array<any> = [];
+  for (const [top, plist] of byTop) {
+    const title = plist[0]?.top_title || top;
+    let section = "";
+    if (askedGeo && askedGeo.label && !askedCollege) {
+      const here = plist.filter((p) => p.band >= (askedGeo.county ? 3 : 2));
+      section += here.length > 0
+        ? `In ${askedGeo.label}: ${here.length} of the colleges below.\n`
+        : `The catalog data lists no college in ${askedGeo.label} teaching this program. State it as what the catalog data shows, never as a fact about ${askedGeo.label}; the program catalog section names any related programs there (a bridge such as LVN to RN is for people who already hold the license) — name them. The colleges below are the nearest that do teach it — name them with their county and distance so the visitor can judge the trip.\n`;
+    }
+    let sectionRendered = 0;
+    for (const p of plist) {
+      const rows = byPair.get(pairKey(p.college, p.top_code)) || [];
+      if (rows.length === 0) continue;
+      sectionRendered++;
+      section += `### ${p.college}${geoLabel(p, distanceText(p.college, askedGeo))} — ${rows.length} course(s) in this program:\n`;
+      for (const r of rows.slice(0, PROSPECTIVE_COURSES_PER_COLLEGE)) {
+        // THE COLLEGE IS ON EVERY LINE (v72): v71 attached Mt. San Antonio's VOC VN1
+        // to Golden West once (chat_interactions 39a328be) — a course under a heading
+        // with no college on the line can be re-attached to a nearer college.
+        section += `  - ${p.college} · ${r.subject} ${r.course_number} — ${r.course_title}`;
+        const units = Number(r.units);
+        if (units > 0) section += ` (${units} units)`;
+        else if (/noncredit|non-enhanced|enhanced funding/i.test(String(r.credit_type || ""))) section += ` (noncredit)`;
+        if (r.cid) section += ` [C-ID ${r.cid}]`;
+        section += `\n`;
+      }
+      if (rows.length > PROSPECTIVE_COURSES_PER_COLLEGE) {
+        section += `  ... and ${rows.length - PROSPECTIVE_COURSES_PER_COLLEGE} more course(s) in this program.\n`;
+      }
+    }
+    if (sectionRendered > 0) {
+      const background = isBackground(title);
+      const head = `\n## ${title} (TOP ${top})`
+        + (background ? ` — BACKGROUND: the program that trains the credential the visitor holds; never the course to ask about` : ``)
+        + `\n`;
+      sections.push({ text: head + section, background, top, title });
+    }
+  }
+  if (sections.length === 0) return "";
+  const targets = sections.filter((x) => !x.background);
+  // Fail-safe: a block with no target section is rendered unmarked, in order.
+  const marked = targets.length > 0 && targets.length < sections.length;
+  let out = `\n\n--- PROSPECTIVE CREDIT: what a credential could count toward (course lists from the college catalog data for the programs asked about) ---\n`;
+  out += `The visitor holds a credential`;
+  if (heldPhrases && heldPhrases.length > 0) out += ` — ${heldPhrases.map((p) => `"${p}"`).join(", ")} in their words`;
+  if (credentials.length > 0) out += ` (matched in the credential record above as ${credentials.join("; ")})`;
+  out += ` and is asking which courses it might count toward. Below, for each program the question matched, the course list at the colleges nearest ${who} that teach it, nearest first, with the distance in miles where it is known. Every course line names its college first — a course belongs to the college on its own line and to no other. `;
+  if (marked) {
+    out += `The section marked BACKGROUND is the program that trains the credential the visitor already holds: read it to see what the credential covers, and never name one of its courses as the course to ask about — the first course you name comes from a section without that mark, which is listed first. `;
+  }
+  out += `Compare the credential's content with the program's ENTRY-LEVEL courses (fundamentals, foundations, introduction, transition, basic, level I) and present the closest as what to ASK that college's CPL coordinator to review — the college decides. `;
+  out += `Where the credential record carries a precedent (a college that articulated this credential against a named course), cite it as the evidence that the match has been made before.\n`;
+  const ordered = marked ? [...targets, ...sections.filter((x) => x.background)] : sections;
+  // v72: the QUICK LIST, the PRECEDENT ON RECORD and the FLYER render BEFORE the
+  // course lists, so the model reads them where it reads the courses. The
+  // precedent needs a holding phrase (with none, the held titles are every
+  // matched title and an LVN award would read as the CNA holder's precedent).
+  const typical: Map<string, any> = extras && extras.typical instanceof Map ? extras.typical : new Map<string, any>();
+  out += buildQuickList(typical, ordered.map((x) => ({ top_code: x.top, background: marked ? x.background : null })));
+  if (extras && extras.recs && (heldPhrases || []).length > 0) out += buildPrecedentLines(credentials, extras.recs, extras.adopters || null);
+  const heldTops = heldProgramTops(pairs, heldPhrases || [], heldTerms || [], credentials || []);
+  out += buildRelatedPrograms(heldTops, relatedProgramTops(heldTops), extras ? extras.teachers || null : null, typical,
+    askedCollege, askedGeo, extras ? extras.geoMap || null : null, ordered.map((x) => x.top));
+  for (const x of ordered) {
+    out += marked ? x.text : x.text.replace(/ — BACKGROUND: the program that trains the credential the visitor holds; never the course to ask about\n/, "\n");
+  }
+  return out;
 }
 
 // ── Build topic context (organized by college) ─────────────────
@@ -2124,6 +3645,7 @@ function buildTopicContext(
     const geoOf = (c: string) => (geoMap ? geoMap.get(c) || null : null);
     const sortedColleges = [...byCollege.entries()].sort((a, b) =>
       (proximityBand(geoOf(b[0]), askedGeo) - proximityBand(geoOf(a[0]), askedGeo)) ||
+      cmpKm(proximityKm(a[0], askedGeo), proximityKm(b[0], askedGeo)) ||
       (b[1].length - a[1].length));
 
     ctx += `\n### LOCAL EXHIBITS by college${askedGeo ? " (nearest first)" : ""}\n`;
@@ -2131,7 +3653,7 @@ function buildTopicContext(
     for (const [college, exhibits] of sortedColleges) {
       const url = exhibits[0]?.landing_page_url;
       const collegeRecTotal = exhibits.reduce((sum: number, e: any) => sum + (e.rec_count || 0), 0);
-      ctx += `\n## ${college}${geoLabel(geoOf(college))} — ${exhibits.length} exhibit(s), ${collegeRecTotal} credit recommendation(s)`;
+      ctx += `\n## ${college}${geoLabel(geoOf(college), distanceText(college, askedGeo))} — ${exhibits.length} exhibit(s), ${collegeRecTotal} credit recommendation(s)`;
       if (url) ctx += ` | CPL Landing Page: ${url}`;
       ctx += `\n`;
 
@@ -2269,6 +3791,27 @@ function buildCollegeContext(profile: any, includeContacts: boolean = true): str
   // Declared INSIDE this function on purpose: the Node tests lift the block that
   // starts at this signature, so a module-level const it references falls outside
   // the lifted range and the lift dies with "TABLE_COLUMN_RULE is not defined".
+  //
+  // ⚠ AND THAT IS NOT HYPOTHETICAL — I PUT TWO CONSTANTS ABOVE THIS SIGNATURE ON
+  // 2026-09-22 AND CI CAUGHT IT: sierra_candidate_census and
+  // sierra_district_roster both died with "SNAPSHOT_SUPPRESS is not defined",
+  // 13 checks between them, while the suite that covers the feature passed. The
+  // comment above was already here. Read it before adding a const.
+
+  // The snapshot's capture date, emitted with any contact that comes from it.
+  // One source for the date, so the line a visitor reads and the guard that
+  // checks it can never disagree.
+  const SNAPSHOT_CAPTURED = "2026-06-25";
+
+  // ⚠ A TEST ROW MUST NEVER ROUTE A STUDENT. MAP's own suppression field is
+  // map_colleges.entity_kind (the mechanism #1171 established for the sandbox
+  // orgs that leaked into Custom Reports), but that column is not on the profile
+  // row this branch holds, and the profile fetch does not filter on it — an
+  // ilike search for "map" or "college" can surface the test profile. So the one
+  // test college that reaches the snapshot branch is named here.
+  // Keep this in step with entity_kind; do not grow it by hand for anything else.
+  const SNAPSHOT_SUPPRESS = new Set(["ca map initiative college"]);
+
   /* Column rules for any per-college table the model builds.
    *
    * ⚠ "STUDENTS AWARDED" IS A WRONG LABEL, NOT A STYLE PREFERENCE, and it was
@@ -2437,15 +3980,37 @@ function buildCollegeContext(profile: any, includeContacts: boolean = true): str
             + `after the name, never a substitute for it.\n`;
       } else {
         // Fallback: the 2026-06-25 snapshot. Reached only when the live read
-        // failed or the college has no map_college_contacts row at all (8 such
-        // profiles, all test rows, a partner and two non-CCC institutions).
+        // failed or the college has no map_college_contacts row at all.
+        //
+        // ⚠ RE-MEASURED 2026-09-22, AND THE POPULATION IS NOT WHAT IT WAS
+        // DESCRIBED AS. This comment used to read "8 such profiles"; five
+        // profiles have no map_college_contacts row today, and not one of them
+        // is a California Community College whose contact went blank:
+        //   CA MAP INITIATIVE COLLEGE  — a TEST row (map_colleges.entity_kind)
+        //   Launch Apprenticeship Non-Credit, Pima Medical Institute,
+        //   Sage College                — a partner and two non-CCC institutions
+        //   San Diego Continuing Education — a NAME VARIANT of a college that
+        //     does have a row, so this one is an identity-join failure rather
+        //     than a missing contact. Fourth occurrence of that class.
+        // A college whose primary_contact_email is merely blank NEVER reaches
+        // here: it takes the live branch and lands further down the cascade.
+        //
+        // Sam ruled 2026-09-22 (open-asks sheet item 17): keep showing these,
+        // labelled with the date they were captured, so a visitor can weigh a
+        // months-old name for themselves rather than being told nothing.
         const contacts = p.contacts || {};
         const coordinator = contacts.cpl_coordinator || contacts.primary_contact;
         const email = contacts.cpl_coordinator_email || contacts.primary_contact_email;
-        if (coordinator && coordinator !== "" && coordinator !== "NA") {
+        const suppressed = SNAPSHOT_SUPPRESS.has(String(p.college ?? "").trim().toLowerCase());
+        if (!suppressed && coordinator && coordinator !== "" && coordinator !== "NA") {
           ctx += `\nCPL Contact: ${coordinator}`;
           if (email && email !== "" && email !== "NA") ctx += ` (${email})`;
-          ctx += `\n`;
+          // The date is the whole point of the ruling: an undated name reads as
+          // current, and this one is not.
+          ctx += ` — from a MAP snapshot taken ${SNAPSHOT_CAPTURED}, not a live lookup\n`;
+          ctx += `⚠ SAY THAT THIS CONTACT COMES FROM A SNAPSHOT DATED `
+              + `${SNAPSHOT_CAPTURED} and may have changed. Give the name and email `
+              + `plainly first, then the date. Never present it as current.\n`;
         }
       }
     }
@@ -2509,6 +4074,7 @@ const CREDIT_LIST_RULE = `\n\nWHEN DESCRIBING WHAT CREDIT IS AVAILABLE: do NOT j
 // redirect to the nearest teaching college. This is the key upgrade for detailed
 // questions like "which nearby college could give my students CPL for NCCER?"
 const OFFERINGS_RULE = `\n\nABOUT THE "COURSE CATALOG / WHICH COLLEGES TEACH THIS" SECTION (if present): this shows which colleges currently TEACH courses in a discipline (their curriculum). This is DIFFERENT from a CPL exhibit/articulation — teaching a course does NOT mean the college has set up CPL credit for a credential yet. Use it to reason like a CPL advisor:
+- CALL THE SOURCE "THE COLLEGE CATALOG DATA" (or "the catalog data"), never "COCI" — that is the name of an internal Chancellor's Office system the visitor does not know (Sam, 2026-09-18).
 - If a college TEACHES the relevant discipline but has NO matching CPL exhibit, present it as a strong ADOPTION OPPORTUNITY: e.g. "El Camino already teaches construction courses (CTEC 170, CTEC 503 OSHA), so it's well positioned to award CPL for NCCER — the college's CPL coordinator would set up that articulation." Frame it invitingly, never as a deficiency.
 - If the college the visitor named does NOT teach the discipline, say so warmly and point them to the NEAREST colleges that DO (use the county/region provided — closest first).
 - When a peer college has ALREADY articulated the credential (from the exhibit results), name it as proof it can be done ("Barstow and Norco have already set up NCCER credit").
@@ -2520,7 +4086,20 @@ const OFFERINGS_RULE = `\n\nABOUT THE "COURSE CATALOG / WHICH COLLEGES TEACH THI
 - DISTANCE IS A FACT, NOT A FILTER. Never suppress the nearest teaching college just because it is far. Name it and STATE THE DISTANCE PLAINLY using the county/region provided — "the nearest college teaching this is <college>, in <county>, which is a fair way from you" — and let the visitor judge whether it is worth it. Withholding a distant option leaves someone who would happily travel, or study online, with nothing at all. State it honestly; do not sell it, and do not apologise for it.
 - IF ALL THREE PARTS COME UP EMPTY — no college has articulated it, and no nearby college teaches it — SAY SO PLAINLY rather than padding the answer. Then give the two things that still help: (a) Credit for Being You, where they can record the credential and see their options across every California community college as they change; and (b) an invitation to email the MAP team at MAP@rccd.edu so the gap is on record. Be explicit that flagging it is genuinely useful — an unmet request is how the system learns a credential is in demand and worth building. Never invent a college, a course or an articulation to avoid an empty answer.
 - ALWAYS add that teaching a course is not a guarantee of credit — the student/organization should contact the college's CPL coordinator to request a review. Never claim an articulation exists when only a course is taught.
+- WHEN THE VISITOR NAMED A PLACE (a county, a region or a named sub-region such as the San Gabriel Valley) RATHER THAN A COLLEGE, the context carries a "THE VISITOR'S PLACE" block and each catalog section says whether any college IN that place matches. Treat the place as home: lead with its colleges, and when a section says the catalog lists none of them, say what the catalog shows (never that no college in the place has it), name the related programs the catalog does list there, and name the nearest colleges that do, with their county and distance. Never answer a county question from whichever college happens to share a word with it.
+  - ⚠️ EVERY TIME YOU MENTION THE ABSENCE, ATTRIBUTE IT TO THE CATALOG — the closing caveat as much as the opening sentence. One answer opened correctly with "the catalog data lists no college in Orange County currently teaching an LVN entry program" and then closed with "since no Orange County college currently teaches an LVN entry program", which is the flat claim about the county Sam called wrong. The short restatement is the one that slips; write the attribution into it, or leave the absence out of the later paragraph entirely.
+  - A SUB-REGION IS NOT A FENCE. Its block names the colleges inside it and says the rest of its county is still close. The colleges beyond it are real options, ranked by distance — name them as such, and never imply the visitor's choices end at the sub-region's edge.
+- WHEN ASKED WHICH COURSES A CREDENTIAL COULD COUNT TOWARD ("what CNA courses match LVN courses"), work from the data in front of you: the course lines in the catalog section for the program asked about, and the credit-recommendation precedents in the credential record (how adopter colleges articulated it — course and units). Name only courses that appear in the context, and present matches as what to ask the college's CPL coordinator to review — faculty decide the award. Where the context carries no course list for that program, say which college teaches it and that the course-level match is the college's to confirm.
 - The catalog list shows the TOP matching colleges, NOT an exhaustive list. NEVER conclude that a college does NOT teach a subject just because it isn't shown — many colleges that teach it may not appear. If a specific college the visitor named is not in the list, do NOT say it lacks the courses; say you're not certain from the data at hand and suggest checking that college's catalog or CPL coordinator.`;
+
+const PROGRAMS_RULE = `\n\nABOUT THE "PROGRAM CATALOG / WHICH COLLEGES AWARD THIS" SECTION (if present): this is the set of DEGREES AND CERTIFICATES a college confers, from the program catalog data. It is a THIRD thing, distinct from both sections above — the exhibit list is what a college has already ARTICULATED for CPL, the course catalog is what it TEACHES, and this is what a student can actually EARN there. A college can teach courses in a field and confer no award in it.
+- WHEN SOMEONE ASKS WHERE THEY CAN STUDY OR TRAIN FOR SOMETHING, this section is the direct answer. Lead with it, name the colleges, and name the AWARD (a certificate and a degree are different commitments, and the visitor is choosing between them).
+- HONOR THE SPLIT INSIDE EACH COLLEGE. Programs under "AWARDS THIS" are named for what was asked. Programs under "SAME FIELD BY CODE ONLY" matched on their TOP or CIP code and MAY BE A DIFFERENT PROGRAM FOR A DIFFERENT PERSON — the standing example is an "LVN to RN" bridge, which is coded Registered Nursing and REQUIRES the visitor to already hold the license they were asking how to get. Never present a code-only match as though it were the program asked for. If a code-only match is all a college has, say what it is and who it is for.
+- A CODE NAMES THE FIELD, NOT THE AUDIENCE. TOP and CIP say what a program is about. Neither can say who it is for, what it requires, or where it leads. Read the program TITLE and the AWARD for that, and when the data cannot settle it, say so and point at the college.
+- NEVER TREAT A MISSING CIP AS A MISSING DISCIPLINE. CIP is blank on about one in eight active programs and TOP is never blank. A program with no CIP is a program whose CIP was not entered, nothing more.
+- THE LIST IS NOT EXHAUSTIVE. It is the top matching set. Never conclude a college awards nothing in a field because it is not shown — say you are not certain from the data at hand and point to that college catalog or CPL coordinator.
+- PROGRAMS ARE NOT CPL. A college conferring an award in a field has not thereby set up CPL credit for a credential in it. Keep the two separate, and apply the same invitation as the course catalog: a college that awards in the field is well positioned to articulate CPL for a related credential.
+- STATUS IS SHOWN WHEN IT IS NOT SIMPLY ACTIVE. A program marked teachout is closing to new students — say so plainly if you name it.`;
 
 // #6 — Missing/unconfigured CPL landing pages (v23 — Sam, 2026-07-01: "not all
 // colleges have configured their CPL Landing pages"). Never invent a link;
@@ -2625,6 +4204,24 @@ This is the most actionable thing you can give a college. Walk the recommendatio
 - IF THE COLLEGE HAS NO SIMILARLY-TITLED COURSE, say so honestly rather than stretching for a match, and point at what peers used — they may teach it under a different name.
 - NEVER invent a course, a course number, or a college. If the section does not list it, we do not have it.`;
 
+// Prospective credit (2026-09-18, S274). Sam: "The question is what might
+// qualify so the user could ask for it at a college that has not yet granted
+// it." The section it governs is built by buildProspectiveContext.
+const PROSPECTIVE_RULE = `\n\nABOUT THE "PROSPECTIVE CREDIT" SECTION (if present) — WHAT A HELD CREDENTIAL COULD COUNT TOWARD:
+This answers a DIFFERENT question from every section above. The exhibit and credential sections say who ALREADY grants credit for a credential. This section is for the visitor who holds a credential and wants to know which courses in a program it MIGHT count toward, so they can ask for a review at a college that has never granted it. Answer that question. Do not swap in the "who already grants it" answer, and do not decline because no exhibit exists: a college that has not articulated a credential can still review a request, and such requests are how articulations begin.
+- LEAD WITH THE ANSWER. The first sentence names a course to ask about — college, course number, title — from the program the visitor wants to enter (a section without the BACKGROUND mark), and the same paragraph carries the rest of the courses and how to ask. Nothing comes before that first course: no "first, the limits", no "note first", no paragraph about the catalog or the bridges, no table of who has articulated what, no remark about the question. When the catalog lists no college in the visitor's place for the program, the first sentence still names the nearest college's course, and the sentence about the catalog and the related programs FOLLOWS it in the same paragraph. Existing articulations come AFTER the courses, as the precedent line below, briefly, and only for the credential the visitor holds or one of the same kind (for a CNA holder: Nurse Assistant and Acute Care Nursing Assistant articulations count) — an award for a different credential (an LVN license award, for a CNA holder) is not evidence and is not listed.
+- THEN THE QUICK LIST. Right after the first paragraph, give a two-column markdown table from the section's QUICK LIST: the left column the typical courses of the program that trains the credential held (what a CNA's training covers — the visitor did not say where they trained, so the section generalizes across every college that teaches the program), the right column the typical courses of the program they want to enter (what to ask about). Head the columns in plain words, for example "What a CNA typically covers" and "LVN courses to ask about". Course names with the college count in parentheses where it helps, no course numbers (those belong to the college lists below).
+  - TAKE THE ROWS THE QUICK LIST GIVES YOU AND STOP. Use every course the section lists for a program, in its order, and never invent, split or restate one to reach a row count — the two columns are almost always different lengths, and a short column is the true answer. A training program is often ONE course plus a few add-ons: the CNA list is Nurse Assistant at 50 of 65 colleges and then a short tail, while the LVN list runs to eight. Pad the short side and you produce the same course under four names, which reads as four things a CNA studied and is false. Leave the extra cells of the shorter column empty.
+  - THE COLUMNS ARE TWO INDEPENDENT LISTS, NOT PAIRINGS. A markdown table invites the reader to pair each row across, so say in the line before it that the left column is what the training typically covers and the right is what to ask about, and that the rows do not line up one to one. Where one course genuinely does answer another — a nurse assistant's patient-care and clinical hours against an LVN fundamentals course — say that in the prose, where you can give the reason, never by placing them on the same row and leaving the reader to guess.
+- THE COLLEGE IS ON EVERY COURSE LINE. A course belongs to the college named on its own line and to no other college — never attach a course to a different college, even one in the visitor's place (one answer named Mt. San Antonio's VOC VN1 as Golden West's).
+- WORK FROM THE COURSE LIST. For the program the visitor wants to enter, read its courses at the colleges shown and name the ones whose content the credential plausibly covers — usually the entry-level courses (fundamentals, foundations, introduction, transition, basic, level I), never the advanced or specialty ones. Say in a phrase WHY each is a candidate: what the credential trains that the course teaches. Name only courses that appear in the context, with their course number.
+- THE PROGRAM THEY WANT TO ENTER IS THE TARGET. When the lists include the program that trains the credential they already hold (a nurse assistant program for a CNA holder), that section is marked BACKGROUND and comes last: it is background, not the answer — they do not need credit for what they hold; they need credit toward what they are entering. Never name a course from a BACKGROUND section as the course to ask about, and never open with one; its courses show what the credential covers, and that is all they are for.
+- PRESENT EVERY MATCH AS A REQUEST, NEVER A DETERMINATION. Say "ask the CPL coordinator at <college> to review your <credential> against <course>"; never that it "qualifies", "counts", "is equivalent" or "will be accepted". Faculty decide, and a college that has not granted it before can still say yes.
+- CITE THE PRECEDENT WHEN THERE IS ONE, AND NEVER SAY THERE IS NONE WHEN THE RECORD SHOWS ONE. If the credential record shows a college that articulated this credential — or one of the same kind — against a named course in the target program's field (Chaffey College articulated Acute Care Nursing Assistant, 6 units, against NURVN 414 Acute Care Nursing Assistant: Vocational Nursing Foundations), say so with the college, the course and the units; it is the evidence that makes the request credible at a college that has not done it yet. The PRECEDENT ON RECORD lines inside the section are that record, rendered where you read the courses — cite them by college, course and units; only when the section says none is on record say that the request would be a first.
+- WHEN THE CATALOG LISTS NO COLLEGE IN THE VISITOR'S PLACE FOR THE TARGET PROGRAM, the section says so. State it as what the catalog shows, never as a fact about the place: "the catalog data lists no LVN entry program at an Orange County community college", never "no Orange County college has LVN" or "teaches LVN". Name the related programs the program catalog section lists in the place (an LVN-to-RN bridge at Cypress, Golden West and Saddleback is for people who already hold the license), so a reader who knows those programs sees that you saw them. Then give the same course-level answer for the nearest colleges shown, naming each college's county and its distance (the heading gives it in miles, where known) so the visitor can judge the trip.
+- CLOSE WITH THE FLYER when the section carries OTHER PROGRAMS the credential commonly counts toward: after the course-level answer, one short list — "Also worth asking about with a CNA:" — one line per program with the nearest college that teaches it and the first course to ask about; brief, no table; the visitor can ask about any of them next.
+- NEVER invent a course, a course number or a college, and never guess at a college's catalog beyond the lists shown.`;
+
 const CREDIT_STATUS_RULE = `\n\nABOUT THE "CPL CREDIT DISPOSITION" SECTION (if present) — WHAT COLLEGES HAVE ACTED ON:
 This is the newest and least-known part of the picture: not what credit EXISTS, but what has been DONE with it. Use it whenever someone asks how a college (or the system) is doing on CPL, what is outstanding, or where to focus.
 
@@ -2674,6 +4271,7 @@ type RuleContext = {
   credentialContext: string;
   volumeContext: string;
   alignmentContext: string;
+  prospectiveContext: string;
   creditContext: string;
 };
 
@@ -2704,6 +4302,7 @@ const RULE_PREDICATES: Record<string, any> = {
   credential: (c) => !!c.credentialContext,
   credential_or_volume: (c) => !!(c.credentialContext || c.volumeContext),
   alignment: (c) => !!c.alignmentContext,
+  prospective: (c: any) => !!c.prospectiveContext,
   volume: (c) => !!c.volumeContext,
   credit: (c) => !!c.creditContext,
 };
@@ -2835,9 +4434,11 @@ const RULE_DEFAULTS: Array<RuleDefault> = [
   { key: "statewide", title: "Statewide collaborative credit recommendations", body: STATEWIDE_RULE, appliesWhen: "always", sortOrder: 10 },
   { key: "credit_list", title: "List course titles and units, never a bare count", body: CREDIT_LIST_RULE, appliesWhen: "always", sortOrder: 20 },
   { key: "offerings", title: "Course catalog — teaching is not articulating", body: OFFERINGS_RULE, appliesWhen: "always", sortOrder: 30 },
+  { key: "programs", title: "Program catalog — a code names the field, not the audience", body: PROGRAMS_RULE, appliesWhen: "always", sortOrder: 35 },
   { key: "credential", title: "Canonical credential record", body: CREDENTIAL_RULE, appliesWhen: "credential", sortOrder: 40 },
   { key: "credit_recs", title: "Credit recommendation lines — the full set", body: CREDIT_RECS_RULE, appliesWhen: "credential_or_volume", sortOrder: 50 },
   { key: "alignment", title: "Articulation worklist for a college", body: ALIGNMENT_RULE, appliesWhen: "alignment", sortOrder: 60 },
+  { key: "prospective", title: "Prospective credit — what a held credential could count toward", body: PROSPECTIVE_RULE, appliesWhen: "prospective", sortOrder: 65 },
   { key: "volume", title: "Student volume by credential", body: VOLUME_RULE, appliesWhen: "volume", sortOrder: 70 },
   { key: "credit_status", title: "CPL credit disposition", body: CREDIT_STATUS_RULE, appliesWhen: "credit", sortOrder: 80 },
   { key: "portal", title: "Credit for Being You — the student portal", body: PORTAL_RULE, appliesWhen: "always", sortOrder: 90 },
@@ -2939,7 +4540,7 @@ type HostScope = { kind: "college" | "district" | "statewide"; label: string };
  * tests/sierra_surface.test.js pins them equal. */
 const KNOWN_SURFACES = new Set([
   "my-college", "cobi-assistant", "public", "fact-sheet", "memory-autogen",
-  "memory-briefing", "gr-analysis",
+  "memory-briefing", "gr-analysis", "skyview-ask",
 ]);
 
 function normalizeSurface(raw: any): string | null {
@@ -2967,7 +4568,16 @@ function normalizeSurface(raw: any): string | null {
  * the call site: tests/cpl_memory_autogen.test.js reads QUERY_CAP_DRAFTING out
  * of this file and asserts the client's envelope still fits under it, which is
  * the check that was missing when the envelope grew to 984. */
-const DRAFTING_SURFACES = new Set(["memory-autogen", "memory-briefing", "gr-analysis"]);
+/* ⭐ `skyview-ask` IS THE LEAST CONVERSATIONAL CALLER OF ALL — it does not want
+ * an ANSWER, it wants a SELECTION. SkyView's payload (16,482 identities, 33,423
+ * stand-alone courses, 159 disciplines) is not in the knowledge base this
+ * function retrieves from, so a prose reply about it would be composed from a
+ * corpus that does not contain it. The model's job there is to turn a question
+ * into the map's own token grammar and let the MAP answer, by moving. The
+ * answer doctrine above — lead with a table, name colleges in two bands, close
+ * with the coordinator — is the wrong instruction for that, which is exactly
+ * what DRAFTING_BLOCK exists to replace. */
+const DRAFTING_SURFACES = new Set(["memory-autogen", "memory-briefing", "gr-analysis", "skyview-ask"]);
 function isDraftingSurface(surface: string | null): boolean {
   return !!surface && DRAFTING_SURFACES.has(surface);
 }
@@ -3010,10 +4620,21 @@ const QUERY_CAP_GR_ANALYSIS = 40000;
  * one; tests/sierra_surface.test.js pins this keyset equal to
  * DRAFTING_SURFACES, so a surface declared in one and forgotten in the other is
  * a failing test rather than a caller quietly capped at 1,000. */
+/* SkyView's envelope is the CONTRACT plus the 159 discipline names with their
+ * counts — the vocabulary the model is allowed to answer in, so it cannot name
+ * an island that does not exist. Measured at 6,356 characters against the
+ * committed payload (159 islands = 4,286 of vocabulary, 2,070 of contract) —
+ * just OVER QUERY_CAP_DRAFTING's 6,000, which would have eaten the tail of the
+ * discipline list and taught the model that the corpus stops in the middle of
+ * the alphabet. That is the silent content swap the cap note above describes,
+ * and it would have looked like the model refusing to name real disciplines. tests/ccr_skyview_ask.test.js reads this number out of this file and
+ * asserts the client's real envelope still fits under it. */
+const QUERY_CAP_SKYVIEW = 20000;
 const SURFACE_QUERY_CAPS: Record<string, number> = {
   "memory-autogen": QUERY_CAP_DRAFTING,
   "memory-briefing": QUERY_CAP_BRIEFING,
   "gr-analysis": QUERY_CAP_GR_ANALYSIS,
+  "skyview-ask": QUERY_CAP_SKYVIEW,
 };
 function queryCapFor(surface: string | null): number {
   return (surface && SURFACE_QUERY_CAPS[surface]) || QUERY_CAP_CHAT;
@@ -3033,6 +4654,91 @@ function normalizeHostScope(raw: any) {
   const label = typeof raw.label === "string" ? raw.label.trim().slice(0, 200) : "";
   if (!label) return null;
   return { kind, label };
+}
+
+/* ── WHO IS ASKING — the viewer, derived server-side (v66, 2026-09-12) ─────────
+ *
+ * ⭐ THE ACCESS BIT IS NEVER SENT BY THE PAGE. Sam's ask (2026-09-11; ruled
+ * "Yes" 2026-09-12) is one assistant on every COBI surface that may, in a LATER
+ * build, use non-public data. A body field saying "I am the internal bubble" is
+ * a claim any caller can make with the public anon key, which would turn this
+ * public endpoint into a read API for COBI's internals. So the flag is
+ * PER-VIEWER, derived here from the credential the request actually carries:
+ *
+ *   reviewer — the Authorization bearer is a user JWT (the magic-link session
+ *              COBI holds) whose email is on allowed_reviewers
+ *   team     — the request carries the shared team phrase in x-team-pass
+ *   public   — everything else, including every error path
+ *
+ * ⚠ VERIFIED BY THE DATABASE'S OWN PREDICATES, NOT BY DECODING THE TOKEN. The
+ * check calls is_allowed_reviewer() and team_pass_ok() through PostgREST from a
+ * client signed with the ANON key and carrying only the caller's credential —
+ * the same two functions every RLS gate in this project evaluates, so
+ * "reviewer" means exactly what it means on every gated table, and an expired
+ * or forged JWT is a 401 from PostgREST rather than a judgment this code makes.
+ * The SERVICE key is never used for the check: under it auth.jwt() names nobody
+ * and team_pass_ok() reads no header, so its answer would be meaningless.
+ *
+ * ⚠ FAIL CLOSED. Any error, timeout or missing key resolves to public. The flag
+ * can only ever GRANT, so its failure mode is a reviewer treated as the public,
+ * a nuisance — never the public treated as a reviewer.
+ *
+ * ⚠ AND IT WIDENS NOTHING BY ITSELF. This build derives the flag, files it
+ * beside the turn (chat_interactions.viewer) and reports it in an `event: meta`
+ * frame so a COBI reader can see the server recognized their sign-in. Retrieval
+ * is unchanged: every viewer reads the same purpose-built chatbox tables.
+ * Letting a verified reviewer see COBI data is a second, separate build — the
+ * boundary inside COBI is aggregate vs student-detail — and it routes through
+ * Governance and the student-detail disclosure ADR (Rule 10 a3) first.
+ * tests/sierra_viewer.test.js pins every claim in this comment. */
+const VIEWER_KINDS = new Set(["reviewer", "team", "public"]);
+const VIEWER_PUBLIC = Object.freeze({ kind: "public" });
+const TEAM_PASS_MAX = 200;
+
+/* Split the credential out of the request headers. Pure, so a Node test can
+ * call it. A bearer equal to the anon key is the public key every page sends,
+ * not a user credential, and is dropped here so the reviewer RPC is only spent
+ * when there is a user JWT to check. */
+function viewerCredentials(headers: any, anonKey: string) {
+  const read = (name: string) => {
+    try {
+      const v = headers && typeof headers.get === "function" ? headers.get(name) : null;
+      return typeof v === "string" ? v.trim() : "";
+    } catch { return ""; }
+  };
+  const m = /^Bearer\s+(\S+)$/i.exec(read("authorization"));
+  const bearer = m ? m[1] : "";
+  const looksLikeJwt = bearer.split(".").length === 3 && bearer.length > 40;
+  const jwt = looksLikeJwt && anonKey && bearer !== anonKey ? bearer : null;
+  const pass = read("x-team-pass");
+  const teamPass = pass && pass.length <= TEAM_PASS_MAX ? pass : null;
+  return { jwt, teamPass };
+}
+
+/* A PostgREST client that is exactly a browser request: the anon key, plus the
+ * one credential header the caller sent. Injectable so the test can stand in a
+ * fake and prove which key and headers the check is made with. */
+function userScopedClient(anonKey: string, extraHeaders: any) {
+  return createClient(SUPABASE_URL, anonKey, { global: { headers: extraHeaders, fetch: routeLimitedFetch } });
+}
+
+async function deriveViewer(headers: any, makeClient: any = userScopedClient) {
+  try {
+    const anonKey = Deno.env.get("SUPABASE_ANON_KEY") || "";
+    if (!anonKey) return VIEWER_PUBLIC;   // nothing to sign the check with: nobody is anybody
+    const { jwt, teamPass } = viewerCredentials(headers, anonKey);
+    if (jwt) {
+      const { data, error } = await makeClient(anonKey, { Authorization: `Bearer ${jwt}` }).rpc("is_allowed_reviewer");
+      if (!error && data === true) return { kind: "reviewer" };
+    }
+    if (teamPass) {
+      const { data, error } = await makeClient(anonKey, { "x-team-pass": teamPass }).rpc("team_pass_ok");
+      if (!error && data === true) return { kind: "team" };
+    }
+  } catch (e) {
+    console.error("cpl-chat: viewer check failed — treating the caller as public:", e);
+  }
+  return VIEWER_PUBLIC;
 }
 
 function hostScopeBlock(scope: any) {
@@ -3073,12 +4779,14 @@ function buildSystemPrompt(
   searchMode: "college" | "topic" | "college_topic" | "general",
   multiTurn: boolean = false,
   offeringsContext: string = "",
+  programsContext: string = "",
   audienceRule: string = "",
   teamGuidance: string = "",
   creditContext: string = "",
   credentialContext: string = "",
   volumeContext: string = "",
   alignmentContext: string = "",
+  prospectiveContext: string = "",
   // The curator overlay, or null to run entirely on code defaults.
   rulesOverlay: Map<string, RuleOverlay> | null = null,
   // Filled with the rule keys that actually fired, so the caller can record
@@ -3154,7 +4862,7 @@ function buildSystemPrompt(
   // therefore whose precedence — was invisible and unchangeable without a PR
   // and a deploy.
   const assembled = assembleRules(RULE_DEFAULTS, rulesOverlay, {
-    credentialContext, volumeContext, alignmentContext, creditContext,
+    credentialContext, volumeContext, alignmentContext, creditContext, prospectiveContext,
   });
   if (report) {
     report.fired = assembled.fired;
@@ -3174,8 +4882,9 @@ function buildSystemPrompt(
    * ~1024-token minimum cacheable prefix, so caching it alone would silently do
    * nothing) and the rule block LAST, after every volatile context. So there was
    * no zero-reorder option: the always-rules had to move ahead of the retrieved
-   * sources. Measured: preamble 968 + always-rules 11,970 = 12,938 chars
-   * (~3,234 tokens), comfortably over the minimum.
+   * sources. Measured: preamble 968 + always-rules 11,970 = 12,938 chars, which
+   * the API counts as 4,476 tokens (NOT the 3,234 that chars/4 predicts — 28%
+   * low; see the cache-floor block at the top of this file).
    *
    * ⚠ WHAT IS IN `stable` MUST BE INVARIANT ACROSS QUESTIONS, not merely
    * "mostly stable". Putting the WHOLE rule block here would look right and hit
@@ -3195,12 +4904,14 @@ Your knowledge comes from the sources below. Answer based on these sources. If t
 
 Be concise, friendly, and professional. Use plain language.
 
+THE FIRST SENTENCE IS THE ANSWER. Never open with a remark about the question — no "Great question", "Good question", "That's a great question to be asking", no thanks, no "let's line this up", no preamble of any kind — and never comment on the question before answering it. Answer the question that was asked, directly, before anything else; the supporting facts, the limits of the data and the next steps come after the answer, never in front of it.
+
 IMPORTANT: When citing any numbers or metrics (student counts, units, savings, college counts, etc.), ALWAYS use the "LIVE CPL Dashboard Metrics" section below. These live numbers are scraped directly from the CCCCO Dashboard and are the most current. If a vault source below mentions a different number for the same metric, the live dashboard number is correct and the vault source is outdated. This applies especially to military/veteran student counts, savings figures, and unit totals.
 ${assembled.alwaysText}`;
 
   const volatilePart = `
 ${hostScopeBlock(hostScope)}
-${context}${metricsContext}${collegeContext}${topicContext}${offeringsContext}${credentialContext}${volumeContext}${alignmentContext}${creditContext}${assembled.conditionalText}${specialInstruction}${audienceRule}${teamGuidance}`;
+${context}${metricsContext}${collegeContext}${topicContext}${offeringsContext}${programsContext}${credentialContext}${volumeContext}${alignmentContext}${prospectiveContext}${creditContext}${assembled.conditionalText}${specialInstruction}${audienceRule}${teamGuidance}`;
 
   return { stable, volatile: volatilePart };
 }
@@ -3352,7 +5063,7 @@ async function fetchTeamGuidance(sb: any, surface: string | null = null): Promis
 
     let out = "";
     if (directiveText) {
-      out += `\n\nTEAM GUIDANCE (directives added by the CPL/MAP team — follow them; if one conflicts with the general instructions above, the team guidance wins):${directiveText}`;
+      out += `\n\nTEAM GUIDANCE (directives added by the CPL/MAP team — follow them; if one conflicts with the general instructions above, the team guidance wins. Each directive governs the question shape it names: when the context carries a "PROSPECTIVE CREDIT" section, the visitor holds a credential and is asking what it MIGHT count toward at a college that has not granted it, so a directive about where a credential ALREADY earns credit answers a different question — lead with the course-level answer, and keep the already-articulated colleges to the precedent line that section describes):${directiveText}`;
     }
     if (displayText) {
       out += `\n\nTEAM DISPLAY RULES (how the CPL/MAP team wants structured output shaped — tables, columns, labels, ordering. Apply them whenever you build the output they describe; they do not override a factual instruction above):${displayText}`;
@@ -3478,31 +5189,51 @@ Deno.serve(async (req: Request) => {
     const searchText = (retrievalText
       || (isRefinement ? `${trimmedQuery}  ${priorUserText}` : trimmedQuery)).slice(0, 1000);
 
-    const sb = createClient(SUPABASE_URL, SUPABASE_SERVICE_KEY);
+    const sb = createClient(SUPABASE_URL, SUPABASE_SERVICE_KEY, { global: { fetch: routeLimitedFetch } });
 
-    // 1. Generate query embedding (over the retrieval text)
+    // 1. Generate query embedding (over the retrieval text) — and read the
+    //    geography table beside it, because the PLACE parse below needs the
+    //    county and region names BEFORE college detection runs (2026-09-18).
+    //    Concurrent with the embedding, so the read costs no wall time.
     // @ts-ignore
     const session = new Supabase.ai.Session("gte-small");
-    const queryEmbedding = await session.run(searchText, {
-      mean_pool: true,
-      normalize: true,
-    });
+    const [queryEmbedding, geoMap] = await Promise.all([
+      session.run(searchText, { mean_pool: true, normalize: true }),
+      fetchCollegeGeoMap(sb),                 // region/county for every college (v30) — now before detection
+    ]);
+
+    /* ⚠ A PLACE IS AN ANCHOR, NOT A COLLEGE (2026-09-18, S273; the measured
+     * failure is on resolveAskedPlace). The place anchors askedGeo and the
+     * anchor_county/anchor_region the catalog RPCs order by, and is STRIPPED
+     * from the text the college matcher and the keyword routes see — "orange"
+     * and "county" are never topic words. A place named in an EARLIER turn
+     * still counts: Sam's second question, "What CNA courses match LVN courses
+     * so I can ask for credit…", carried no place and v67 forgot Orange County
+     * entirely. A college named in the question still wins over the place. */
+    const placeNow = resolveAskedPlace(searchText, geoMap);
+    const placePrior = placeNow ? null : resolveAskedPlace(priorUserText, geoMap);
+    const askedPlace = placeNow || placePrior;
+    const placeAnchor = askedPlace
+      ? { county: askedPlace.county, region: askedPlace.region, label: askedPlace.label, point: placePoint(askedPlace, geoMap) }
+      : null;
+    const routeText = placeNow ? placeNow.stripped : searchText;
 
     // 2. Vector search + college detection + live metrics + topic search +
     //    course-catalog offerings + team guidance (parallel)
-    const [searchResult, collegeProfile, liveMetrics, topicResults, offeringsResults, teamGuidance, geoMap, creditData] = await Promise.all([
+    const [searchResult, collegeProfile, liveMetrics, topicResults, offeringsResults, programsResults, teamGuidance, creditData, viewer] = await Promise.all([
       sb.rpc("match_document_sections", {
         query_embedding: Array.from(queryEmbedding),
         match_threshold: MATCH_THRESHOLD,
         match_count: MATCH_COUNT,
       }),
-      detectAndFetchCollegeProfile(searchText, sb),
+      detectAndFetchCollegeProfile(routeText, sb),
       fetchLiveMetrics(),
-      searchExhibitsByTopic(searchText, sb), // earned-exhibit set (no college filter)
-      searchCollegeOfferings(searchText, sb), // course catalog: who TEACHES this
+      searchExhibitsByTopic(routeText, sb), // earned-exhibit set (no college filter)
+      searchCollegeOfferings(routeText, sb, placeAnchor), // course catalog: who TEACHES this (place-anchored v68)
+      searchCollegePrograms(routeText, sb, placeAnchor),  // program catalog: who AWARDS this (v67; place-anchored v68)
       fetchTeamGuidance(sb, hostSurface),     // sierra_guidance active rows (v25; surface-scoped v56)
-      fetchCollegeGeoMap(sb),                 // region/county for every college (v30)
       fetchCreditData(sb),                    // published credit-disposition aggregates (v36)
+      deriveViewer(req.headers),              // who is asking, from the credential — never the body (v66)
     ]);
 
     const sections = searchResult.data;
@@ -3571,7 +5302,7 @@ Deno.serve(async (req: Request) => {
     // The home college's own region/county — the anchor BOTH lists rank against.
     // Null whenever the question names no college, which leaves every list in its
     // previous volume-first order.
-    const askedGeo = singleProfile ? geoMap.get(singleProfile.college) || null : null;
+    const askedGeo = singleProfile ? geoMap.get(singleProfile.college) || null : placeAnchor;
 
     if (singleProfile && topicResults && topicResults.length > 0) {
       // COMBINED MODE: both college and topic detected
@@ -3613,14 +5344,29 @@ Deno.serve(async (req: Request) => {
     }
     // else: GENERAL MODE — just RAG + live metrics
 
+    // A PLACE with no college resolved: the anchor block goes where the college
+    // profile would have gone, so the model reads "home" before any list (v68).
+    if (askedPlace && !singleProfile && !(Array.isArray(resolvedProfile) && resolvedProfile.length > 0)) {
+      collegeContext = buildPlaceContext(askedPlace, geoMap) + collegeContext;
+    }
+
     // Course-catalog offerings context — WHAT colleges teach (the adoption basis).
     // Available in every mode; ranked against the same askedGeo anchor as the
     // exhibit list above, with geoMap filling in any row the RPC left ungeocoded.
     let offeringsContext = "";
     if (offeringsResults && offeringsResults.length > 0) {
       const askedCollege = singleProfile?.college || null;
-      const coreKeywords = expandWithSynonyms(extractTopicKeywords(searchText));
+      const coreKeywords = expandWithSynonyms(extractTopicKeywords(routeText));
       offeringsContext = buildOfferingsContext(offeringsResults, askedCollege, askedGeo, coreKeywords, geoMap);
+    }
+
+    // Program-catalog context — what colleges AWARD. Ranked against the same
+    // askedGeo anchor, so the two catalog sections agree about what "nearest"
+    // means. Empty until the search_college_programs migration is applied.
+    let programsContext = "";
+    if (programsResults && programsResults.length > 0) {
+      programsContext = buildProgramsContext(
+        programsResults, singleProfile?.college || null, askedGeo, geoMap);
     }
 
     // Credit disposition — shaped once detection has resolved, so "at MY college"
@@ -3657,16 +5403,28 @@ Deno.serve(async (req: Request) => {
     let credentialContext = "";
     let volumeContext = "";
     let alignmentContext = "";
+    let prospectiveContext = "";
     let stdRecs: any = null, anyCreds: any = null, vol: any = null, adopt: any = null;
     let collegeCreds: any = null;
 
     await Promise.all([
+      // BOTH CREDENTIAL ROUTES, ALWAYS, CONCURRENTLY (2026-09-18, S274). The
+      // local route used to run only when the statewide one came back empty, so
+      // ONE statewide hit — a false friend included (isFalseFriend) — hid every
+      // local credential. A prospective question ("what could my CNA count
+      // toward in an LVN program?") is answered by LOCAL precedents, Chaffey's
+      // NURVN 414 articulation of Acute Care Nursing Assistant among them, and
+      // those were exactly what the gate withheld. buildCredentialContext already
+      // labels the two lists; Sam's statewide-only rule governs the REC LINES
+      // within one credential, never which credentials are named.
       (async () => {
         try {
-          stdRecs = await fetchStatewideRecommendations(searchText, sb);
-          anyCreds = stdRecs && stdRecs.length > 0
-            ? null
-            : await fetchAnyCredentials(searchText, sb);
+          const routes = await Promise.all([
+            fetchStatewideRecommendations(routeText, sb),
+            fetchAnyCredentials(routeText, sb),
+          ]);
+          stdRecs = routes[0];
+          anyCreds = routes[1];
         } catch (e) {
           console.error("credential lookup failed:", e);
         }
@@ -3678,7 +5436,7 @@ Deno.serve(async (req: Request) => {
       (async () => {
         try {
           collegeCreds = await fetchCollegeCredentials(
-            searchText, singleProfile?.college || null, sb);
+            routeText, singleProfile?.college || null, sb);
         } catch (e) {
           console.error("college credential lookup failed:", e);
         }
@@ -3686,7 +5444,7 @@ Deno.serve(async (req: Request) => {
       (async () => {
         try {
           const both = await Promise.all([
-            fetchCredentialVolume(searchText, sb),
+            fetchCredentialVolume(routeText, sb),
             fetchAdoptionOpportunities(singleProfile?.college || null, sb),
           ]);
           vol = both[0];
@@ -3734,6 +5492,46 @@ Deno.serve(async (req: Request) => {
         const align = await fetchAlignment(topTitle, college, sb);
         alignmentContext = buildAlignmentContext(align, topTitle, college);
       }
+
+      // Route PROSPECTIVE (v69, 2026-09-18, S274) — "which courses could what I
+      // hold count toward, at a college that has not granted it?" Fires when a
+      // credential matched, a place or a college anchors the question, and the
+      // course catalog matched a core program; one PostgREST read, fail-safe.
+      // v71: the visitor's own words say which of the matched credentials they
+      // HOLD (the record matches the target's credential too — see
+      // heldCredentialPhrases). The held titles are the ones the block names,
+      // and the held terms (the phrase, its words, its phrase synonyms) are
+      // what marks the program that trains it BACKGROUND.
+      const matchedTitles = [...(stdRecs || []), ...(anyCreds || [])]
+        .map((r: any) => r?.unified_title).filter(Boolean);
+      const heldPhrases = heldCredentialPhrases(routeText);
+      const heldTerms = [...new Set([
+        ...heldPhrases, ...heldPhrases.flatMap((p) => p.split(/\s+/)),
+        ...phraseSynonymProbes(heldPhrases.flatMap((p) => p.split(/\s+/))),
+      ])].filter((t) => t.length >= 2);
+      const heldTitles = pickHeldTitles(matchedTitles, heldPhrases).slice(0, 4);
+      if ((askedGeo || college) && matchedTitles.length > 0 && offeringsResults && offeringsResults.length > 0) {
+        const coreKw = expandWithSynonyms(extractTopicKeywords(routeText));
+        const pairs = pickProspectivePairs(offeringsResults, coreKw, college, askedGeo, geoMap);
+        if (pairs.length > 0) {
+          // v72: beside the course lists, the QUICK LIST (typical courses
+          // statewide for every program the block names) and the FLYER (the
+          // programs the held credential commonly counts toward, from
+          // RELATED_PROGRAMS, checked against the catalog data) — three reads,
+          // concurrent, each fail-safe on its own.
+          const heldTops = heldProgramTops(pairs, heldPhrases, heldTerms, heldTitles);
+          const sectionTops: Array<string> = [...new Set(pairs.map((p: any) => String(p.top_code)))];
+          const related = relatedProgramTops(heldTops).filter((t: any) => !sectionTops.includes(t.top));
+          const typicalTops = [...new Set([...sectionTops, ...related.map((t: any) => String(t.top))])];
+          const [courseRows, typicalRows, teacherRows] = await Promise.all([
+            fetchProgramCourses(pairs, sb),
+            fetchTypicalCourses(typicalTops, sb),
+            fetchProgramTeachers(related.map((t: any) => String(t.top)), sb),
+          ]);
+          prospectiveContext = buildProspectiveContext(pairs, courseRows, heldTitles, college, askedGeo, heldPhrases, heldTerms,
+            { typical: foldTypicalRows(typicalRows), teachers: teacherRows, recs, adopters, geoMap });
+        }
+      }
     } catch (e) {
       // The lines are an enrichment. Losing them must cost the DETAIL, never the
       // credential sections themselves — so rebuild without them rather than
@@ -3761,9 +5559,9 @@ Deno.serve(async (req: Request) => {
 
     const systemPrompt = buildSystemPrompt(
       sections || [], liveMetrics, collegeContext, topicContext, searchMode,
-      multiTurn, offeringsContext, audienceKey ? AUDIENCE_RULES[audienceKey] : "",
+      multiTurn, offeringsContext, programsContext, audienceKey ? AUDIENCE_RULES[audienceKey] : "",
       teamGuidance || "", creditContext, credentialContext, volumeContext, alignmentContext,
-      rulesOverlay, ruleReport, hostScope);
+      prospectiveContext, rulesOverlay, ruleReport, hostScope);
 
     /* A drafting caller gets the answer doctrine REPLACED — see DRAFTING_BLOCK.
      * Appended to `volatile` on purpose: `stable` is the prompt-cache
@@ -3783,9 +5581,20 @@ Deno.serve(async (req: Request) => {
         model: MODEL,
         max_tokens: MAX_TOKENS,
         stream: true,
+        /* ⛔ THINKING OFF, EXPLICITLY (2026-09-11). On Sonnet 5 a request that
+         * OMITS `thinking` runs adaptive thinking, and `max_tokens` caps thinking
+         * and text TOGETHER — so on a question the model chose to reason about it
+         * spent the whole 2,048-token budget before the first word and the answer
+         * came back blank (35 of 35 blanks: output_tokens=2048, zero text). Haiku
+         * 4.5 and Sonnet 4.6 ran thinking-off by omission; on Sonnet 5 omission
+         * means ON. This line is the request Sierra always made, spelled out,
+         * and Sam ruled it stays this way (2026-09-11).
+         * ⚠ Fable / Mythos REJECT `disabled` with a 400 — see the header block
+         * before pointing CPL_CHAT_MODEL at one of those. */
+        thinking: { type: "disabled" },
         // TWO system blocks, breakpoint on the first — see buildSystemPrompt.
-        // The first is byte-identical on every request (~3,234 tokens of
-        // preamble + always-rules) and is the only thing cached; the second
+        // The first is byte-identical on every request (4,476 tokens of
+        // preamble + always-rules, measured) and is the only thing cached; the second
         // carries the retrieval, which is different every time and must not be.
         system: [
           {
@@ -3811,6 +5620,32 @@ Deno.serve(async (req: Request) => {
     // 5. Stream response
     const encoder = new TextEncoder();
     let fullResponse = "";
+    /* ⛔ THE BLANK ANSWERS WERE ADAPTIVE THINKING SPENDING THE OUTPUT CAP
+     * (2026-09-11). Diagnosed twice before it was seen: first as an unhandled
+     * `error` event (there was no error), then as "MAX_TOKENS = 2048 is the bug"
+     * (the same cap produced zero blanks in fourteen days on Haiku 4.5).
+     * chat_interactions, every turn in the first two hours on Sonnet 5:
+     *
+     *                      turns   hit the 2048 cap   min_out   max_out
+     *     blank answer        35                 35      2048      2048
+     *     real answer         98                 28       100      2048
+     *
+     * 35 of 35 blanks spent the FULL budget and emitted zero characters of text.
+     * What consumed it was THINKING: Sonnet 5 runs adaptive thinking when the
+     * request omits `thinking` (Haiku 4.5 and Sonnet 4.6 ran thinking-off by
+     * omission), thinking tokens count against `max_tokens`, and this loop —
+     * correctly — collects only text deltas. On a question the model chose to
+     * reason about, the budget was gone before the first text frame; on the 28
+     * capped real answers it was partly gone. The request now sends
+     * `thinking: { type: "disabled" }`, which is the pre-switch request spelled
+     * out. MAX_TOKENS was left at 2048 in that fix — raising it would have PAID
+     * for the thinking rather than stopped it — and moved to 8,192 afterwards on
+     * Sam's ruling, with thinking off, as a ceiling for complete answers.
+     * ⚠ The `error` branch below is still correct and still worth having — it
+     * just does not fire for THIS. `stop_reason` settles it: on a blank turn it
+     * reads `max_tokens`; on a real upstream failure it never arrives. */
+    let streamError = "";   // upstream mid-stream error type, "" if none
+    let stopReason = "";    // the model's own stop_reason, "" if never sent
     let responseTokens = 0;
     let cacheRead = 0;
     let cacheWrite = 0;
@@ -3824,6 +5659,13 @@ Deno.serve(async (req: Request) => {
         }));
         controller.enqueue(
           encoder.encode(`event: sources\ndata: ${JSON.stringify(sourcesData)}\n\n`)
+        );
+        /* Who the server took the caller to be, and which surface asked (v66) —
+         * so a COBI reader can see their sign-in was recognized, and a caller
+         * can see how its surface normalized. A client that dispatches by
+         * event name and never listens for `meta` is unchanged. */
+        controller.enqueue(
+          encoder.encode(`event: meta\ndata: ${JSON.stringify({ surface: hostSurface, viewer: viewer.kind })}\n\n`)
         );
 
         const reader = anthropicRes.body!.getReader();
@@ -3855,6 +5697,30 @@ Deno.serve(async (req: Request) => {
                   if (event.type === "message_delta" && event.usage) {
                     responseTokens = event.usage.output_tokens || 0;
                   }
+                  /* stop_reason is the other half of an empty answer's cause: an
+                   * upstream `error` and a model that produced no text look the
+                   * same from outside, and they are different bugs. Captured
+                   * here because message_delta is the only event carrying it. */
+                  if (event.type === "message_delta" && event.delta?.stop_reason) {
+                    stopReason = event.delta.stop_reason;
+                  }
+                  /* ⚠ AN UPSTREAM ERROR ARRIVES AS A STREAM EVENT, NOT A BAD
+                   * STATUS. The request is already 200 and `message_start` has
+                   * already been logged when it lands, so nothing above notices:
+                   * this branch is the ONLY thing standing between an
+                   * `overloaded_error` and a blank answer with clean logs. It
+                   * did not exist until 2026-09-11, and the loop handled exactly
+                   * three types — an "error" matched none of them, fell through
+                   * every `if`, and the stream then closed with `event: done`.
+                   * Measured cost of that: 5 of 22 smoke modes came back empty
+                   * with 200s in the edge log and not one line saying why. */
+                  if (event.type === "error") {
+                    streamError = event.error?.type || "unknown";
+                    console.error(
+                      "cpl-chat: UPSTREAM STREAM ERROR — " +
+                      JSON.stringify(event.error || {}).slice(0, 300)
+                    );
+                  }
                   /* PROMPT-CACHE TELEMETRY (2026-08-23).
                    *
                    * ⚠ A CACHE THAT NEVER HITS IS WORSE THAN NO CACHE — a write
@@ -3868,8 +5734,21 @@ Deno.serve(async (req: Request) => {
                     const u = event.message.usage;
                     cacheRead = u.cache_read_input_tokens || 0;
                     cacheWrite = u.cache_creation_input_tokens || 0;
+                    /* ⚠ NAME THE MODEL THAT ANSWERED — Sam's ruling, decision sheet
+                     * item 3, 2026-09-11. Taken from `event.message.model`, the
+                     * model the API says it SERVED, never the MODEL constant we
+                     * asked for: a typo'd secret, a fallback or an override all
+                     * differ from the request, and the request is the one thing
+                     * we already know. Without this the only ways to learn which
+                     * model is answering are to read a secret or infer it from
+                     * cache behaviour across a deploy boundary — which is what
+                     * this cost on 2026-09-10, and the inference was wrong twice.
+                     * ⚠ Keep `cache:` and the `read=`/`write=`/`uncached_input=`
+                     * tokens — session_186's log query prefix-matches the first
+                     * and the cost analysis parses the rest. */
                     console.log(
-                      `cpl-chat cache: read=${cacheRead} write=${cacheWrite} ` +
+                      `cpl-chat cache: model=${event.message.model || MODEL} ` +
+                      `read=${cacheRead} write=${cacheWrite} ` +
                       `uncached_input=${u.input_tokens || 0}` +
                       (cacheRead === 0 && cacheWrite === 0
                         ? " ⚠ NEITHER — the breakpoint is not taking effect"
@@ -3882,6 +5761,25 @@ Deno.serve(async (req: Request) => {
           }
         } finally {
           reader.releaseLock();
+        }
+
+        /* ⚠ ZERO TEXT FRAMES IS A FAILED ANSWER, AND IT USED TO LOOK LIKE A
+         * SUCCESSFUL ONE — 200, a cache line, `event: done`, and a caller left
+         * to infer from an empty string. Say it in the log, and tell the client
+         * so a surface can show something other than blank. `error` is a new
+         * frame type; SSE clients dispatch by name, so one that only listens for
+         * text/sources/done ignores it exactly as before. */
+        if (!fullResponse) {
+          console.error(
+            "cpl-chat: EMPTY ANSWER — 0 text frames" +
+            (streamError ? ` after upstream ${streamError}` : " with NO upstream error") +
+            `; stop_reason=${stopReason || "(never sent)"}` +
+            ` output_tokens=${responseTokens}` +
+            `; input=${cacheRead + cacheWrite ? "cached" : "uncached"} model=${MODEL}`
+          );
+          controller.enqueue(encoder.encode(
+            `event: error\ndata: ${JSON.stringify({ error: streamError || "empty_answer" })}\n\n`
+          ));
         }
 
         controller.enqueue(encoder.encode(`event: done\ndata: {}\n\n`));
@@ -3905,6 +5803,11 @@ Deno.serve(async (req: Request) => {
             response_tokens: responseTokens,
             topic_match: searchMode === "topic" || searchMode === "college_topic",
             audience: audienceKey,
+            // Who the server took the caller to be (v66) — derived from the
+            // credential, never the body — and which surface asked. Both
+            // nullable and additive: a row from before the migration has neither.
+            viewer: viewer.kind,
+            surface: hostSurface,
             // Which rules were actually in play for THIS answer, and which of
             // them a curator had overridden. Recorded per turn because the
             // question that matters is asked about a turn that misbehaved, and

@@ -49,9 +49,9 @@ import re as _re
 # example that prompted the question — does not exist in the corpus at all.
 # Healthcare is the one subject with mass and a clear credit story; the rest
 # stay generic and can be split later by dragging, once the map shows them.
-_HEALTHCARE = _re.compile(
-    r"health scien|healthcare|health care|\bnurs|medical|patient|caregiv|"
-    r"dental|phlebot|\bcna\b", _re.I)
+# The pattern lives in _esl_package_dryrun.py, which reads it before any level.
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from _esl_package_dryrun import HEALTHCARE as _HEALTHCARE  # noqa: E402
 
 def is_healthcare(title):
     return bool(_HEALTHCARE.search(title or ""))

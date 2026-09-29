@@ -85,6 +85,21 @@
    * agreed to flip the view so it opens first and there is a button on SkyView
    * to go to the CCR List View."
    *
+   * ⭐ AND SINCE 2026-09-05 IT LEADS AS THE WHOLE TAB. Sam: "Make sure the CCR
+   * menu button opens the full screen SkyView, not the version it currently
+   * opens to. I've made several requests for this so far and none of them
+   * have worked." Three earlier attempts each landed a different thing — the
+   * iframe as the landing view (S192), `allow="fullscreen"` on it (S223), a
+   * separate side-menu link to the page (S227) — and none of them changed what
+   * this tab SHOWED: a boxed frame under a banner, a heading, a toggle row and
+   * a note. In map mode the pane now hides all of that (`uc-map-on`), drops
+   * the container's padding, and sizes the frame to what the viewport has
+   * left, so the map is the tab. SkyView's own top row carries the title, the
+   * Views menu, the search and a close; close and "CCR table view" post a
+   * message to this page, which swaps the frame for the list. The list keeps
+   * its toggle and its corner launcher, and `#unified-courses/list` is the
+   * hash that lands on it directly.
+   *
    * He is right and the earlier flip missed him: Session 192 made SkyView the
    * landing view INSIDE the prototype page, while the COBI tab kept opening on
    * the table with a launcher in the corner. Two different surfaces, one
@@ -105,6 +120,10 @@
    */
   var VIEW_SKYVIEW = "map", VIEW_LIST = "list";
   var ccrView = null, listBooted = false, authReturn = false;
+  /* Full window is the default every time the map opens; the map's own "show
+   * COBI around the map" control (a postMessage "dock") turns it off until the
+   * next open. The body class is on only while the map is the CURRENT tab. */
+  var soloWanted = true;
 
   function ccrPane() { return document.getElementById("tab-unified-courses"); }
 
@@ -140,7 +159,6 @@
 
     var mapWrap = document.createElement("div");
     mapWrap.id = "uc-map-pane";
-    mapWrap.innerHTML = '<div class="uc-map-note" id="uc-map-note"></div>';
     host.insertBefore(mapWrap, listWrap);
 
     ensureCcrShellCss();
@@ -158,16 +176,36 @@
       "#tab-unified-courses .uc-viewseg{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:10px 0 14px;}" +
       "#tab-unified-courses .uc-vbtn{font:inherit;font-size:.88rem;font-weight:700;cursor:pointer;" +
       "padding:8px 15px;border-radius:8px;border:1px solid var(--border-strong,rgba(28,28,26,.30));" +
-      "background:#fff;color:var(--seal-blue,#0b3d61);}" +
+      "background:var(--surface-opaque);color:var(--seal-blue,#0b3d61);}" +
       "#tab-unified-courses .uc-vbtn[aria-pressed=\"true\"]{background:var(--seal-blue,#0b3d61);" +
       "color:#fff;border-color:var(--seal-blue,#0b3d61);}" +
       "#tab-unified-courses .uc-vbtn:focus-visible{outline:2px solid var(--cobalt,#0047AB);outline-offset:2px;}" +
-      "#tab-unified-courses .uc-vnote{font-size:.82rem;color:#5a6478;}" +
-      "#tab-unified-courses #uc-map-pane{margin:0 0 8px;}" +
-      "#tab-unified-courses .uc-map-frame{width:100%;height:calc(100vh - 260px);min-height:520px;" +
-      "border:1px solid var(--border-strong,rgba(28,28,26,.30));border-radius:10px;background:#fff;display:block;}" +
-      "#tab-unified-courses .uc-map-note{font-size:.84rem;color:#5a6478;margin:0 0 8px;}" +
-      "@media (max-width:700px){#tab-unified-courses .uc-map-frame{height:70vh;}}";
+      "#tab-unified-courses .uc-vnote{font-size:.82rem;color:var(--text-muted);}" +
+      "#tab-unified-courses #uc-map-pane{margin:0;}" +
+      "#tab-unified-courses .uc-map-frame{display:block;width:100%;height:calc(100vh - 80px);min-height:480px;" +
+      "border:0;background:var(--surface-opaque);}" +
+      /* Map mode: SkyView is the whole tab. The banner, the heading with its
+         launcher and the toggle row go; the container's padding and width cap
+         go with them so the frame reaches the column's edges. */
+      "#tab-unified-courses.uc-map-on > .main-container{max-width:none;padding:0;}" +
+      "#tab-unified-courses.uc-map-on .uc-beta-banner,#tab-unified-courses.uc-map-on .uc-head," +
+      "#tab-unified-courses.uc-map-on .uc-viewseg{display:none;}" +
+      /* FULL WINDOW (Sam, 2026-09-05: "I want the Full Window (without the COBI
+         header) to open on the side menu CCR click"; and "add a hamburger menu
+         glyph in upper left that can open the COBI side bar — should be default
+         collapsed on open"). While the map is the tab, COBI's own header, rail,
+         hamburger and To-Do button are not painted and the frame is the whole
+         viewport. The rail becomes the same slide-over it already is below
+         900px, opened from the map's own menu control through postMessage. */
+      "body.cpl-skyview-solo > .header,body.cpl-skyview-solo #cpl-hamburger,body.cpl-skyview-solo .cpl-todo-btn," +
+      "body.cpl-skyview-solo .cpl-todo-panel{display:none !important;}" +
+      "body.cpl-skyview-solo .cpl-layout{grid-template-columns:1fr;}" +
+      "body.cpl-skyview-solo .cpl-sidebar{position:fixed;top:0;bottom:0;left:0;width:240px;max-height:100vh;" +
+      "transform:translateX(-100%);transition:transform .2s ease;z-index:200;box-shadow:2px 0 12px rgba(0,0,0,.15);}" +
+      "body.cpl-skyview-solo.cpl-rail-open .cpl-sidebar{transform:translateX(0);}" +
+      "body.cpl-skyview-solo.cpl-rail-open::before{content:\"\";position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:199;}" +
+      "@media (prefers-reduced-motion:reduce){body.cpl-skyview-solo .cpl-sidebar{transition:none;}}" +
+      "body.cpl-skyview-solo #tab-unified-courses.uc-map-on .uc-map-frame{height:100vh;min-height:100vh;}";
     document.head.appendChild(st);
   }
 
@@ -175,6 +213,7 @@
     if (!ensureCcrShell()) return;
     ccrView = (v === VIEW_LIST) ? VIEW_LIST : VIEW_SKYVIEW;
     var pane = ccrPane();
+    pane.classList.toggle("uc-map-on", ccrView === VIEW_SKYVIEW);
     var mapPane = pane.querySelector("#uc-map-pane");
     var listPane = pane.querySelector("#uc-list-pane");
     Array.prototype.forEach.call(pane.querySelectorAll(".uc-vbtn"), function (b) {
@@ -182,6 +221,8 @@
     });
     if (mapPane) mapPane.style.display = ccrView === VIEW_SKYVIEW ? "" : "none";
     if (listPane) listPane.style.display = ccrView === VIEW_LIST ? "" : "none";
+    if (ccrView === VIEW_SKYVIEW) soloWanted = true;   // every open of the map is full window
+    paintSolo();
     var note = pane.querySelector("#uc-vnote");
     if (note) note.textContent = ccrView === VIEW_SKYVIEW
       ? "Every course identity on one canvas. The list has the filters, the flags and the Merge actions."
@@ -191,24 +232,118 @@
     // nothing, so it belongs to the list view.
     var launch = pane.querySelector(".uc-skyview");
     if (launch) launch.style.display = ccrView === VIEW_LIST ? "" : "none";
-    if (ccrView === VIEW_SKYVIEW) mountMapFrame();
+    if (ccrView === VIEW_SKYVIEW) {
+      mountMapFrame();
+      // The frame starts at the top of the pane; a reader who toggled from
+      // halfway down the list would otherwise see its lower half.
+      if (isCcrCurrent() && (window.scrollY || window.pageYOffset)) { try { window.scrollTo(0, 0); } catch (e) {} }
+      sizeMapFrame();
+      // Measured too early the frame keeps a stale height: the header above it
+      // moves as fonts and the seal arrive. Measure again once layout settles.
+      if (window.requestAnimationFrame) requestAnimationFrame(sizeMapFrame);
+      setTimeout(sizeMapFrame, 400);
+    }
     else bootList();
+    syncCcrHash();
+  }
+
+  function isCcrCurrent() {
+    return !!(window.CPL_TABS && CPL_TABS.current && CPL_TABS.current() === "unified-courses");
+  }
+  function railOpen() { return document.body.classList.contains("cpl-rail-open"); }
+  function closeRail() {
+    if (window.CPL_TABS && CPL_TABS.closeRail) CPL_TABS.closeRail();
+    else document.body.classList.remove("cpl-rail-open");
+  }
+  /* The body class that takes COBI's chrome away: on only while the map is the
+   * tab on screen and nobody has docked it. Leaving the tab takes it off. */
+  function paintSolo() {
+    var on = soloWanted && ccrView === VIEW_SKYVIEW && isCcrCurrent();
+    var was = document.body.classList.contains("cpl-skyview-solo");
+    document.body.classList.toggle("cpl-skyview-solo", on);
+    if (!on && was) closeRail();
+    if (on !== was) { sizeMapFrame(); if (window.requestAnimationFrame) requestAnimationFrame(sizeMapFrame); }
+    postHostState();
+  }
+  function mapFrame() { return ccrPane() && ccrPane().querySelector("#uc-map-pane iframe"); }
+  /* The frame's window controls paint themselves from this: whether COBI has
+   * docked the map inside its chrome, and whether the rail is open. */
+  function postHostState() {
+    var f = mapFrame();
+    if (!f || !f.contentWindow) return;
+    try {
+      f.contentWindow.postMessage({ type: "skyview-host",
+        docked: !document.body.classList.contains("cpl-skyview-solo"), menu: railOpen() }, "*");
+    } catch (e) {}
+  }
+  window.addEventListener("cpl-tab-activated", function () { paintSolo(); });
+  // The rail can open or close from COBI's own side (its hamburger, a click
+  // outside, Escape); the frame's menu control keeps in step through this.
+  if (window.MutationObserver) {
+    try {
+      new MutationObserver(function () { postHostState(); })
+        .observe(document.body, { attributes: true, attributeFilter: ["class"] });
+    } catch (e) {}
+  }
+  /* `#unified-courses` is the map (what the side menu opens); `#unified-courses/list`
+   * is the list, so a reload — and SkyView's own "CCR table view" link out —
+   * lands on the table rather than on another copy of the map. replaceState,
+   * never a hash assignment: an assignment fires hashchange and tabs.js would
+   * re-activate the tab under us. */
+  function syncCcrHash() {
+    if (!isCcrCurrent() || !/^#unified-courses(\/|$)/.test(location.hash || "")) return;
+    var want = ccrView === VIEW_LIST ? "#unified-courses/list" : "#unified-courses";
+    if (location.hash === want) return;
+    try { history.replaceState(null, "", location.pathname + location.search + want); } catch (e) {}
   }
 
   function mountMapFrame() {
     var host = ccrPane() && ccrPane().querySelector("#uc-map-pane");
     if (!host || host.querySelector("iframe")) return;
-    var note = host.querySelector("#uc-map-note");
-    if (note) note.innerHTML = 'SkyView \u2014 the whole reference as a map. ' +
-      '<a href="prototype/skyview.html" target="_blank" rel="noopener">Open it in its own tab \u2197</a> ' +
-      'to keep it beside the list.';
     var f = document.createElement("iframe");
     f.className = "uc-map-frame";
     f.src = "prototype/skyview.html";
     f.title = "SkyView \u2014 every course identity in the Common Course Reference, as a map";
     f.loading = "lazy";
+    // The map's own "Full screen" button calls requestFullscreen() inside this
+    // frame; without the permission the call is refused and the button can only
+    // apologize (Sam, 2026-09-03: "have SkyView open full screen").
+    f.setAttribute("allow", "fullscreen");
+    f.allowFullscreen = true;
+    f.addEventListener("load", function () { sizeMapFrame(); postHostState(); });
     host.appendChild(f);
   }
+  /* The frame takes what the viewport has left below where it starts — the
+   * COBI header at scroll 0 — so the map fills the screen the way its own
+   * window does and the legend strip at its foot stays on screen. Measured,
+   * not assumed: the header's height is not this file's to know. */
+  function sizeMapFrame() {
+    var f = ccrPane() && ccrPane().querySelector("#uc-map-pane iframe");
+    if (!f || ccrView !== VIEW_SKYVIEW) return;
+    var top = 0;
+    try { top = Math.max(0, f.getBoundingClientRect().top); } catch (e) {}
+    var h = Math.max(480, Math.round((window.innerHeight || 0) - top));
+    if (window.innerHeight && f.style.height !== h + "px") f.style.height = h + "px";
+  }
+  window.addEventListener("resize", sizeMapFrame);
+  window.addEventListener("load", sizeMapFrame);
+  try { if (document.fonts && document.fonts.ready) document.fonts.ready.then(sizeMapFrame); } catch (e) {}
+  /* The frame's own controls hand off to this page: SkyView's close (item 5)
+   * and its "CCR table view" menu item post a message rather than navigating,
+   * because the page around the frame is the one that owns the list. Only a
+   * message from OUR frame is honored. */
+  window.addEventListener("message", function (e) {
+    var m = e && e.data;
+    if (!m || m.type !== "skyview") return;
+    var f = ccrPane() && ccrPane().querySelector("#uc-map-pane iframe");
+    if (!f || !f.contentWindow || e.source !== f.contentWindow) return;
+    if (m.action === "close" || m.action === "list") { soloWanted = true; setCcrView(VIEW_LIST); return; }
+    // The map's own menu, dock and undock controls (Sam, 2026-09-05).
+    if (m.action === "menu") { document.body.classList.toggle("cpl-rail-open"); postHostState(); return; }
+    if (m.action === "dock") { soloWanted = false; paintSolo(); return; }
+    if (m.action === "undock") { soloWanted = true; paintSolo(); return; }
+    if (m.action === "ready") { postHostState(); return; }
+  });
 
   function bootList() {
     if (listBooted) return;
@@ -218,10 +353,12 @@
     else init();
   }
 
-  /* The tab's entry point. SkyView unless a returning curator asked for the pen. */
+  /* The tab's entry point. SkyView unless a returning curator asked for the
+   * pen, or the hash names the list outright. */
   function openCcr() {
     if (!ensureCcrShell()) return;
-    setCcrView(authReturn ? VIEW_LIST : VIEW_SKYVIEW);
+    var wantList = authReturn || /^#unified-courses\/list(\/|$)/i.test(location.hash || "");
+    setCcrView(wantList ? VIEW_LIST : VIEW_SKYVIEW);
     authReturn = false;
   }
   // Exposed so the harness can drive the flip without a browser, and so a future
@@ -229,7 +366,10 @@
   window.CPL_CCR_VIEW = {
     open: openCcr, set: setCcrView, current: function () { return ccrView; },
     _listBooted: function () { return listBooted; },
+    _size: sizeMapFrame,
     _setAuthReturn: function (v) { authReturn = !!v; },
+    _solo: function () { return document.body.classList.contains("cpl-skyview-solo"); },
+    _hostState: postHostState,
   };
 
   function consumeAuthHash() {
@@ -541,7 +681,7 @@
     var mic = null, rec = null, recording = false;
     if (SR) {
       mic = el("button", { type: "button",
-        style: "padding:4px 12px;border:1px solid #cbd5e1;border-radius:6px;background:#fff;font-size:.82rem;cursor:pointer;",
+        style: "padding:4px 12px;border:1px solid #cbd5e1;border-radius:6px;background:var(--surface-opaque);font-size:.82rem;cursor:pointer;",
         title: "Dictate — speech-to-text in your browser; nothing is uploaded until you Save" }, ["🎤 Dictate"]);
       mic.onclick = function () {
         if (recording) { try { rec.stop(); } catch (e) {} return; }
@@ -554,13 +694,13 @@
             }
           }
         };
-        rec.onend = function () { recording = false; mic.textContent = "🎤 Dictate"; mic.style.background = "#fff"; };
-        rec.onerror = function () { recording = false; mic.textContent = "🎤 Dictate"; mic.style.background = "#fff"; };
-        try { rec.start(); recording = true; mic.textContent = "⏹ Stop"; mic.style.background = "#fee2e2"; } catch (e) {}
+        rec.onend = function () { recording = false; mic.textContent = "Dictate"; mic.style.background = "#fff"; };
+        rec.onerror = function () { recording = false; mic.textContent = "Dictate"; mic.style.background = "#fff"; };
+        try { rec.start(); recording = true; mic.textContent = "Stop"; mic.style.background = "#fee2e2"; } catch (e) {}
       };
       row.appendChild(mic);
     } else {
-      row.appendChild(el("span", { style: "font-size:.75rem;color:#94a3b8;" },
+      row.appendChild(el("span", { style: "font-size:.75rem;color:var(--text-muted);" },
         ["(voice unavailable in this browser — type instead)"]));
     }
     var stance = el("select", { style: "padding:4px 6px;border:1px solid #cbd5e1;border-radius:6px;font-size:.8rem;",
@@ -573,7 +713,7 @@
       style: "padding:4px 14px;border:none;border-radius:6px;background:#4f46e5;color:#fff;font-size:.82rem;font-weight:600;cursor:pointer;" },
       ["Save note"]);
     row.appendChild(save);
-    var status = el("span", { class: "uc-mm-status", style: "font-size:.75rem;color:#64748b;" });
+    var status = el("span", { class: "uc-mm-status", style: "font-size:.75rem;color:var(--text-muted);" });
     row.appendChild(status);
     save.onclick = function () {
       var text = ta.value.trim();
@@ -598,7 +738,7 @@
             return;
           }
           ta.value = "";
-          status.textContent = "✓ Saved — this trains the doctrine. Keep going!";
+          status.textContent = "Saved — this trains the doctrine. Keep going!";
         }).catch(function () {
           save.disabled = false;
           status.textContent = "Could not save — network error.";
@@ -921,7 +1061,7 @@
     var toolbar = pane.querySelector("#uc-toolbar");
     var summary = pane.querySelector("#uc-summary");
     if (!data || !data.rows || !data.rows.length) {
-      if (wrap) wrap.innerHTML = '<p style="padding:1rem;color:#666;">Unified course data is not available in this build.</p>';
+      if (wrap) wrap.innerHTML = '<p style="padding:1rem;color:var(--text-muted);">Unified course data is not available in this build.</p>';
       return;
     }
     var colleges = data.colleges || [];
@@ -1291,8 +1431,8 @@
         // WkExp band row filters the candidate POOL instead. The dock shell
         // mirrors openSuggestions' (a small presentational duplication — the
         // load-bearing merge UX lives once in buildMergeEditor).
-        var dim = "position:fixed;top:0;right:0;height:100vh;z-index:9999;display:flex;background:#fff;box-shadow:-4px 0 24px rgba(0,0,0,.18);";
-        var boxCss = "flex:1;min-width:0;display:flex;flex-direction:column;overflow:auto;background:#fff;padding:18px 20px;font-size:.9rem;";
+        var dim = "position:fixed;top:0;right:0;height:100vh;z-index:9999;display:flex;background:var(--surface-opaque);box-shadow:-4px 0 24px rgba(0,0,0,.18);";
+        var boxCss = "flex:1;min-width:0;display:flex;flex-direction:column;overflow:auto;background:var(--surface-opaque);padding:18px 20px;font-size:.9rem;";
         var DOCK_KEY = "cplWorklistDock.v1", RAIL = 44;
         var dockState = (function () { try { return JSON.parse(localStorage.getItem(DOCK_KEY)) || {}; } catch (e) { return {}; } })();
         var dockW = Math.min(Math.max(dockState.width || 470, 360), 900);
@@ -1322,12 +1462,12 @@
         function close() { if (overlay.parentNode) document.body.removeChild(overlay); pageReflow(0); }
         var head = el("div", { style: "display:flex;align-items:center;gap:8px;margin:-18px -20px 12px;padding:9px 10px 9px 20px;border-bottom:1px solid #e5e7eb;background:#f8fafc;user-select:none;" });
         head.appendChild(el("strong", { style: "color:var(--text-strong);font-size:.9rem;white-space:nowrap;" }, ["⚇ Merge"]));
-        head.appendChild(el("span", { style: "font-size:.8rem;color:#64748b;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;", title: seed.title || seed.id }, [seed.title || seed.id]));
+        head.appendChild(el("span", { style: "font-size:.8rem;color:var(--text-muted);font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;", title: seed.title || seed.id }, [seed.title || seed.id]));
         head.appendChild(el("span", { style: "flex:1;" }, []));
-        var collapseBtn = el("button", { type: "button", "aria-label": "Collapse", title: "Collapse to a rail", style: "border:none;background:none;cursor:pointer;font-size:1.05rem;line-height:1;color:#64748b;padding:2px 7px;" }, ["»"]);
+        var collapseBtn = el("button", { type: "button", "aria-label": "Collapse", title: "Collapse to a rail", style: "border:none;background:none;cursor:pointer;font-size:1.05rem;line-height:1;color:var(--text-muted);padding:2px 7px;" }, ["»"]);
         collapseBtn.onclick = function () { collapsed = true; applyDockSize(); saveDock(); };
         head.appendChild(collapseBtn);
-        var closeX = el("button", { type: "button", "aria-label": "Close", title: "Close", style: "border:none;background:none;cursor:pointer;font-size:1.05rem;line-height:1;color:#64748b;padding:2px 7px;" }, ["✕"]);
+        var closeX = el("button", { type: "button", "aria-label": "Close", title: "Close", style: "border:none;background:none;cursor:pointer;font-size:1.05rem;line-height:1;color:var(--text-muted);padding:2px 7px;" }, ["✕"]);
         closeX.onclick = close;
         head.appendChild(closeX);
         shell.appendChild(head);
@@ -1342,7 +1482,7 @@
         // Band filter row — the one piece of worklist chrome that's meaningful
         // for a single course (it filters the candidate POOL, not a queue).
         var bands = { beg: true, int: true, adv: true, lab: true, wkexp: true };
-        var bandRow = el("div", { style: "display:flex;align-items:center;flex-wrap:wrap;gap:4px 10px;margin:0 0 10px;font-size:.76rem;color:#64748b;" });
+        var bandRow = el("div", { style: "display:flex;align-items:center;flex-wrap:wrap;gap:4px 10px;margin:0 0 10px;font-size:.76rem;color:var(--text-muted);" });
         bandRow.appendChild(el("span", { style: "font-weight:600;", title: "Show only candidates in the checked level/format bands (Common-Course level convention): Beg = Introduction/Elementary/Beginning/I/1 (incl. unqualified) · Int = Intermediate/Second/II/2 · Adv = Advanced/Third/III/3+ (long sequences pack 1-2/3-4/5-6 → Beg/Int/Adv). Lab isolates lab-only courses (kept separate from Lec)." }, ["Levels:"]));
         var editorApi = null;
         [["beg", "Beg"], ["int", "Int"], ["adv", "Adv"], ["lab", "Lab"], ["wkexp", "WkExp"]].forEach(function (pair) {
@@ -1354,7 +1494,7 @@
         });
         shell.appendChild(bandRow);
         var content = el("div", { style: "flex:1;" }); shell.appendChild(content);
-        var cancel = el("button", { type: "button", style: "padding:7px 14px;border:1px solid #cbd5e1;border-radius:6px;background:#fff;cursor:pointer;" }, ["Cancel"]);
+        var cancel = el("button", { type: "button", style: "padding:7px 14px;border:1px solid #cbd5e1;border-radius:6px;background:var(--surface-opaque);cursor:pointer;" }, ["Cancel"]);
         cancel.onclick = close;
         editorApi = buildMergeEditor(content, {
           members: members,
@@ -1398,14 +1538,16 @@
         // Merging into an existing identity keeps that identity's native
         // kind/id_system (an M-ID gaining members is still that M-ID). A
         // synthetic Unified target is a brand-new "Unified" course (the
-        // "Cluster" label was retired 2026-05-30, Session 19) — either the
-        // settled `SUBJ Z<band><seq>` form (the 2026-06-15 UC-CUR→Z re-mint)
-        // or a transient `UC-CUR-*` placeholder a client mint hasn't yet had
-        // promoted to Z by the daily generator. A row-less OFFICIAL target
+        // "Cluster" label was retired 2026-05-30, Session 19): a transient
+        // `UC-CUR-*` placeholder a client mint hasn't yet had promoted to an
+        // M-ID by the generator. The `SUBJ Z<band><seq>` form retired on
+        // 2026-09-03 (items 20-21): every machine cluster is a real M-ID record
+        // now, so a row-less `SUBJ M####` target is an M-ID by shape (below).
+        // A row-less OFFICIAL target
         // (#342 — a descriptor-catalog C-ID, or a CCN) gets its official
         // id_system inferred from the id shape so it renders — and is
         // title-firewalled — like the anchor it stands in for.
-        if (/^UC-CUR-/.test(target) || /\sZ\d{4}\b/.test(target)) { urow.kind = "Unified"; urow.id_system = "Unified"; }
+        if (/^UC-CUR-/.test(target)) { urow.kind = "Unified"; urow.id_system = "Unified"; }
         else if (/\sC\d{4}/.test(target)) { urow.kind = "Course"; urow.id_system = "CCN-ID"; }
         else if (/\sM[0-9A-Z]{4}\b/.test(target)) { urow.kind = "Course"; urow.id_system = "M-ID"; }
         else { urow.kind = "Course"; urow.id_system = "C-ID"; }
@@ -1596,7 +1738,7 @@
         var cand = findCandidates({ id: "CN:" + e.cn, title: e.t, subj: [subj], units: e.u });
         var target = "";   // "" = mint a new standalone course
         var overlay = el("div", { style: "position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:10000;display:flex;align-items:flex-start;justify-content:center;overflow:auto;" });
-        var box = el("div", { style: "background:#fff;max-width:680px;width:92%;margin:40px 0;border-radius:10px;padding:18px 20px;box-shadow:0 10px 40px rgba(0,0,0,.3);font-size:.9rem;" });
+        var box = el("div", { style: "background:var(--surface-opaque);max-width:680px;width:92%;margin:40px 0;border-radius:10px;padding:18px 20px;box-shadow:0 10px 40px rgba(0,0,0,.3);font-size:.9rem;" });
         overlay.appendChild(box);
         function close() { if (overlay.parentNode) document.body.removeChild(overlay); }
         overlay.onclick = function (ev) { if (ev.target === overlay) close(); };
@@ -1619,7 +1761,7 @@
         var go;
         function pick(id) { target = id; syncTarget(); }
         function syncTarget() {
-          chosenLine.textContent = target ? ("→ merge into " + target) : "→ mint a NEW standalone course";
+          chosenLine.textContent = target ? ("merge into " + target) : "mint a NEW standalone course";
           mintWrap.style.display = target ? "none" : "";
           if (go) go.textContent = target ? ("Re-home into " + target) : "Re-home into NEW course";
         }
@@ -1630,7 +1772,7 @@
           return b;
         }
         if (cand.exact.length || cand.near.length) {
-          box.appendChild(el("div", { style: "font-size:.78rem;color:#94a3b8;margin-top:4px;" }, ["Suggested existing courses:"]));
+          box.appendChild(el("div", { style: "font-size:.78rem;color:var(--text-muted);margin-top:4px;" }, ["Suggested existing courses:"]));
           var sug = el("div", { style: "max-height:160px;overflow:auto;border:1px solid #e5e7eb;border-radius:6px;padding:4px;margin:2px 0;" });
           cand.exact.forEach(function (en) { sug.appendChild(sugRow(en, "  · exact")); });
           cand.near.slice(0, 12).forEach(function (en) { sug.appendChild(sugRow(en, "")); });
@@ -1663,9 +1805,9 @@
         resetBtn.onclick = function () { pick(""); };
         box.appendChild(resetBtn);
         var actions = el("div", { style: "margin-top:16px;display:flex;gap:10px;justify-content:flex-end;" });
-        var cancel = el("button", { type: "button", style: "padding:7px 14px;border:1px solid #cbd5e1;border-radius:6px;background:#fff;cursor:pointer;" }, ["Cancel"]);
+        var cancel = el("button", { type: "button", style: "padding:7px 14px;border:1px solid #cbd5e1;border-radius:6px;background:var(--surface-opaque);cursor:pointer;" }, ["Cancel"]);
         cancel.onclick = close;
-        go = el("button", { type: "button", style: "padding:7px 14px;border:none;border-radius:6px;background:var(--cobalt);color:#fff;font-weight:600;cursor:pointer;" }, ["Re-home"]);
+        go = el("button", { type: "button", style: "padding:7px 14px;border:none;border-radius:6px;background:var(--cobalt);color:var(--on-accent);font-weight:600;cursor:pointer;" }, ["Re-home"]);
         go.onclick = function () { doRehome(e, srcRow.id, target, titleIn.value.trim(), (target ? "" : discSel.value), close, onDone); };
         actions.appendChild(cancel); actions.appendChild(go);
         box.appendChild(actions);
@@ -1720,13 +1862,13 @@
       // through opts.deps; goCss is a constant. Scope: docs/ccr_merge_workspace_epic_scope.md.
       var byId = (opts.deps && opts.deps.byId) || {};
       var rowPassesCcr = (opts.deps && opts.deps.rowPassesCcr) || function () { return true; };
-      var goCss = "padding:7px 14px;border:none;border-radius:6px;background:var(--cobalt);color:#fff;font-weight:600;cursor:pointer;";
+      var goCss = "padding:7px 14px;border:none;border-radius:6px;background:var(--cobalt);color:var(--on-accent);font-weight:600;cursor:pointer;";
       // Compact ⓘ that holds explanatory copy in a hover tooltip instead of an
       // always-on gray paragraph — reclaims vertical space in the panel (Sam,
       // S72 #4). Returns the span so callers that carry DYNAMIC copy (the
       // Candidates guidance) can update its `title` in place.
       function infoIcon(text) {
-        return el("span", { title: text, style: "cursor:help;color:#94a3b8;font-size:.82rem;font-weight:400;margin-left:5px;user-select:none;" }, ["ⓘ"]);
+        return el("span", { title: text, style: "cursor:help;color:var(--text-muted);font-size:.82rem;font-weight:400;margin-left:5px;user-select:none;" }, ["ⓘ"]);
       }
       // PROPOSAL framing (Sam, 2026-06-12): the pre-filled title used to
       // read like "these courses already belong to this common course."
@@ -1769,7 +1911,7 @@
       // ONLY when this Confirm mints a brand-new course (no ★ target). For a
       // merge into an existing ★ identity it's inherited from that identity
       // and ignored here — so disable it then, rather than silently drop it.
-      var discNote = el("div", { style: "margin:3px 0 0;font-size:.76rem;color:#94a3b8;" }, []);
+      var discNote = el("div", { style: "margin:3px 0 0;font-size:.76rem;color:var(--text-muted);" }, []);
       container.appendChild(discNote);
       // Completion note (Session 58, Sam 2026-06-16, task 3): an optional
       // curator annotation written onto the surviving target — for a course
@@ -1840,7 +1982,7 @@
           title: "Detected course level/format (from the title): " + bTags.join(" · ") + ". Levels follow the Common-Course convention — Beg = Introduction/Elementary/Beginning/I/1 (incl. unqualified) · Int = Intermediate/Second/II/2 · Adv = Advanced/Third/III/3+. A bare number is a hint; override it where a long sequence packs 1-2/3-4/5-6 into Beg/Int/Adv." },
           [bTags.join("·")]));
         var isOfficial = m.k === "C-ID" || m.k === "CCN-ID";
-        row.appendChild(el("span", { style: "color:#64748b;font-family:monospace;font-size:.78rem;",
+        row.appendChild(el("span", { style: "color:var(--text-muted);font-family:monospace;font-size:.78rem;",
           title: "This course's CURRENT identity — its own id today; it changes only if you Confirm a merge that folds it" },
           [m.id + " · " + (m.s || "") + (m.u != null ? " · " + m.u + "u" : "") + (m.g ? " · Stand-Alone" : "")
            + (isOfficial ? " · " + m.k : "")]));
@@ -1983,7 +2125,7 @@
       searchWrap.appendChild(el("label", { style: "display:block;font-weight:600;margin:0 0 2px;font-size:.85rem;" },
         ["Add more courses",
          infoIcon("Drag the Tight↔Loose slider toward Loose to surface courses similar to this one — ranked by title, and by catalog description once it loads. To find specific courses regardless of similarity, type in the Search box at the top of this panel (comma separates terms). Matches appear in the Candidates list above as unchecked rows — tick the ones to fold in, ignore the rest. The CCR table filters carry over.")]));
-      var looseRow = el("div", { style: "display:flex;align-items:center;gap:6px;font-size:.76rem;color:#64748b;margin:0 0 4px;" });
+      var looseRow = el("div", { style: "display:flex;align-items:center;gap:6px;font-size:.76rem;color:var(--text-muted);margin:0 0 4px;" });
       looseRow.appendChild(el("span", { style: "font-weight:600;white-space:nowrap;" }, ["Find similar:"]));
       looseRow.appendChild(el("span", {}, ["Tight"]));
       var loosen = el("input", { type: "range", min: "0", max: "100", step: "1", value: String(loosenDefault), style: "flex:1;min-width:80px;cursor:pointer;" });
@@ -1991,7 +2133,7 @@
       looseRow.appendChild(el("span", {}, ["Loose"]));
       var countOut = el("span", { style: "font-variant-numeric:tabular-nums;color:var(--text-strong);white-space:nowrap;min-width:5.5em;text-align:right;" }, [""]);
       looseRow.appendChild(countOut);
-      var addNoHits = el("div", { style: "display:none;font-size:.78rem;color:#94a3b8;padding:3px 2px;" }, ["No more matches — drag toward Loose or search a different term up top."]);
+      var addNoHits = el("div", { style: "display:none;font-size:.78rem;color:var(--text-muted);padding:3px 2px;" }, ["No more matches — drag toward Loose or search a different term up top."]);
       searchWrap.appendChild(looseRow); searchWrap.appendChild(addNoHits);
       container.appendChild(searchWrap);
       // Drop the search-added rows the curator DIDN'T tick (a changed slider/query
@@ -2119,7 +2261,7 @@
         // assigned at the next build, so the live id is a UC-CUR placeholder).
         if (!hasTgt) {
           var md0 = discSel.value, cs0 = md0 ? DISC_COMMON_SUBJ[md0] : "";
-          mintHint.textContent = "✨ No existing identity checked — Confirm will mint a brand-new unified course"
+          mintHint.textContent = "No existing identity checked — Confirm will mint a brand-new unified course"
             + (md0
                 ? (cs0 ? " under Common SUBJ " + cs0 : " under a new Common SUBJ for " + md0)
                 : "; pick a discipline to set its Common SUBJ")
@@ -2187,10 +2329,10 @@
           var discChanged = !discSel.disabled && !!discSel.value && discSel.value !== oneCur;
           var renameMode = !overrideTarget && !isSingleton && nChk === 1 && (titleChanged || discChanged);
           if (renameMode) {
-            go.textContent = "✓ Save";
+            go.textContent = "Save";
             go.disabled = false;
           } else {
-            go.textContent = isSingleton ? "✓ Create unified course"
+            go.textContent = isSingleton ? "Create unified course"
               : (overrideTarget ? ("✓ Fold into " + overrideTarget[0]) : "✓ Confirm merge");
             go.disabled = nChk < (overrideTarget ? 1 : 2);
           }
@@ -2288,15 +2430,15 @@
           } else {
             titleIn.value = cleanTitle(entry[1] || entry[0]) || titleIn.value;
             titleIn.disabled = false; titleIn.style.opacity = "";
-            ovBanner.appendChild(el("div", { style: "margin-top:2px;font-size:.76rem;color:#64748b;" },
+            ovBanner.appendChild(el("div", { style: "margin-top:2px;font-size:.76rem;color:var(--text-muted);" },
               ["Editing the Proposed title above renames this course when you fold in."]));
           }
-          go.textContent = "✓ Fold into " + entry[0];
+          go.textContent = "Fold into " + entry[0];
         } else {
           ovBanner.style.display = "none";
           titleIn.value = titleDefault;
           titleIn.disabled = false; titleIn.style.opacity = "";
-          go.textContent = isSingleton ? "✓ Create unified course" : "✓ Confirm merge";
+          go.textContent = isSingleton ? "Create unified course" : "Confirm merge";
         }
         refreshTarget();
       }
@@ -2324,7 +2466,7 @@
               ovRes.appendChild(b);
             }
           }
-          if (!hits) ovRes.appendChild(el("div", { style: "font-size:.78rem;color:#94a3b8;padding:4px;" }, ["No matches — type 3+ characters of a title or id."]));
+          if (!hits) ovRes.appendChild(el("div", { style: "font-size:.78rem;color:var(--text-muted);padding:4px;" }, ["No matches — type 3+ characters of a title or id."]));
         }, 200);
       };
       (opts.extraActions || []).forEach(function (b) { actions.appendChild(b); });
@@ -2365,13 +2507,25 @@
       // padding-right), it doesn't overlay the table; width + collapsed persist
       // per-browser. `dim` is now the dock wrapper (no full-screen backdrop);
       // `boxCss` is the scrollable content column that fills it.
-      var dim = "position:fixed;top:0;right:0;height:100vh;z-index:9999;display:flex;background:#fff;box-shadow:-4px 0 24px rgba(0,0,0,.18);";
-      var boxCss = "flex:1;min-width:0;display:flex;flex-direction:column;overflow:auto;background:#fff;padding:18px 20px;font-size:.9rem;";
-      var goCss = "padding:7px 14px;border:none;border-radius:6px;background:var(--cobalt);color:#fff;font-weight:600;cursor:pointer;";
-      var skipCss = "padding:7px 14px;border:1px solid #cbd5e1;border-radius:6px;background:#fff;cursor:pointer;";
+      var dim = "position:fixed;top:0;right:0;height:100vh;z-index:9999;display:flex;background:var(--surface-opaque);box-shadow:-4px 0 24px rgba(0,0,0,.18);";
+      var boxCss = "flex:1;min-width:0;display:flex;flex-direction:column;overflow:auto;background:var(--surface-opaque);padding:18px 20px;font-size:.9rem;";
+      var goCss = "padding:7px 14px;border:none;border-radius:6px;background:var(--cobalt);color:var(--on-accent);font-weight:600;cursor:pointer;";
+      var skipCss = "padding:7px 14px;border:1px solid #cbd5e1;border-radius:6px;background:var(--surface-opaque);cursor:pointer;";
       Promise.all([loadSuggestions(), fetchDismissals()]).then(function (res) {
         var data = res[0], dismissed = res[1];
         var anchored = (data.groups || []).map(function (g) { g._kind = "anchored"; return g; });
+        // Curated-anchor duplicates lane (2026-09-04): the May 2026 curated
+        // common-course anchors — the locked, read-only rows — whose title and
+        // discipline exactly match a catalog identity (the Z-band retirement's
+        // duplicates.json, 130 at the land, recomputed live by the generator so
+        // it shrinks as the curator confirms). It LEADS the queue: an exact
+        // match on two signals with a human-curated anchor is the strongest
+        // evidence any lane carries. The generator lists the catalog twin first
+        // and the anchor last, so the ★ survivor rule (targetMemberOf) keeps the
+        // catalog course and folds the anchor into it; when the only twin is a
+        // Stand-Alone the anchor is the survivor and gains that course. The
+        // curator can flip the star. Nothing is applied until Confirm.
+        var legacy = (data.legacy_groups || []).map(function (g) { g._kind = "legacy"; return g; });
         // Co-articulation family groups (2026-06-04): near-duplicate M-IDs the
         // level-safe signature misses, surfaced because they co-articulate to one
         // credential AND share the ordinal-rule family key (e.g. EMT's 9 "Academy"/
@@ -2401,10 +2555,10 @@
         // target) start UNCHECKED.
         var evidence = (data.evidence_groups || []).map(function (g) { g._kind = "evidence"; return g; });
         var singles = (data.singleton_groups || []).map(function (g) { g._kind = "singleton"; return g; });
-        var groups = anchored.concat(family).concat(desc).concat(titleEv).concat(evidence).concat(singles);
+        var groups = legacy.concat(anchored).concat(family).concat(desc).concat(titleEv).concat(evidence).concat(singles);
         if (!groups.length) { alert("No suggested merges available in this build."); return; }
         // Singleton (new-mint) section starts after anchored + family + desc + title + evidence.
-        var nNonSingleton = anchored.length + family.length + desc.length + titleEv.length + evidence.length;
+        var nNonSingleton = legacy.length + anchored.length + family.length + desc.length + titleEv.length + evidence.length;
         var byId = {}; rows.forEach(function (r) { byId[r.id] = r; });
         // liveMergePending covers members with no in-payload row (e.g. a
         // Stand-Alone folded this cycle) so a confirmed group can't re-offer.
@@ -2527,6 +2681,7 @@
         var cohesionFloor = DEFAULT_FLOOR;
         function groupAggrScore(g) {
           if (g._kind === "evidence") return null;            // witness count → never slider-gated
+          if (g._kind === "legacy") return null;              // an exact duplicate is not a similarity score
           return (typeof g.score === "number") ? g.score : null;   // null = ungated, always shows
         }
         function passesAggr(g) { var s = groupAggrScore(g); return s == null || s >= cohesionFloor; }
@@ -2557,14 +2712,14 @@
         // 2026-06-16) — renderGroup() updates it per group; the old in-box
         // "Suggested merge N of M" subtitle + "drag to move" hint were dropped
         // as redundant (the move-cursor on this bar is self-evident).
-        var headCount = el("span", { style: "font-size:.8rem;color:#64748b;font-weight:600;" }, [""]);
+        var headCount = el("span", { style: "font-size:.8rem;color:var(--text-muted);font-weight:600;" }, [""]);
         head.appendChild(headCount);
         // Prev/Next at the TOP next to the counter (Sam, S72 followup item 4 —
         // the bottom pager was below the fold on a long candidate list, so there
         // was no visible way to step BACKWARD). Jumps to the adjacent PASSING
         // group; disabled state is refreshed per render. nextPassing/renderGroup/i
         // are hoisted in this scope, resolved at click time.
-        var headNavCss = "border:1px solid #cbd5e1;background:#fff;border-radius:5px;cursor:pointer;font-size:.85rem;line-height:1;color:#334155;padding:2px 7px;";
+        var headNavCss = "border:1px solid #cbd5e1;background:var(--surface-opaque);border-radius:5px;cursor:pointer;font-size:.85rem;line-height:1;color:#334155;padding:2px 7px;";
         var headPrev = el("button", { type: "button", "aria-label": "Previous suggestion", title: "Previous suggestion", style: headNavCss }, ["‹"]);
         var headNext = el("button", { type: "button", "aria-label": "Next suggestion", title: "Next suggestion", style: headNavCss }, ["›"]);
         headPrev.onclick = function () { var p = nextPassing(i, -1); if (p >= 0) { i = p; renderGroup(); } };
@@ -2583,7 +2738,7 @@
         // recalibrates how many suggestions surface across all scored lanes.
         var loosenWrap = el("label", {
           title: "Recalibrate how aggressive the suggestions are. Slide RIGHT = more aggressive (lower bar → more, looser merges surface across every lane); LEFT = conservative (only tight matches). Gates anchored/singleton/family (cohesion) and description/title (similarity) groups by their 0–1 score; the 🧾 COCI-evidence lane is always shown. Nothing is auto-applied — every merge stays your one-click Confirm.",
-          style: "display:flex;align-items:center;gap:5px;font-size:.74rem;color:#64748b;font-weight:600;cursor:pointer;white-space:nowrap;" });
+          style: "display:flex;align-items:center;gap:5px;font-size:.74rem;color:var(--text-muted);font-weight:600;cursor:pointer;white-space:nowrap;" });
         loosenWrap.appendChild(el("span", {}, ["Cons."]));
         var loosen = el("input", { type: "range", min: "0", max: "100", step: "1", value: String(aggrFromFloor(cohesionFloor)), style: "width:90px;cursor:pointer;" });
         loosen.onmousedown = function (e) { e.stopPropagation(); };   // drag the thumb, not the popup
@@ -2601,11 +2756,11 @@
         head.appendChild(loosenWrap);
         // Collapse to the rail (PR-3) — parks the panel without losing the queue.
         var collapseBtn = el("button", { type: "button", "aria-label": "Collapse", title: "Collapse to a rail",
-          style: "border:none;background:none;cursor:pointer;font-size:1.05rem;line-height:1;color:#64748b;padding:2px 7px;" }, ["»"]);
+          style: "border:none;background:none;cursor:pointer;font-size:1.05rem;line-height:1;color:var(--text-muted);padding:2px 7px;" }, ["»"]);
         collapseBtn.onclick = function () { collapsed = true; applyDockSize(); saveDock(); };
         head.appendChild(collapseBtn);
         var closeX = el("button", { type: "button", "aria-label": "Close", title: "Close",
-          style: "border:none;background:none;cursor:pointer;font-size:1.05rem;line-height:1;color:#64748b;padding:2px 7px;" }, ["✕"]);
+          style: "border:none;background:none;cursor:pointer;font-size:1.05rem;line-height:1;color:var(--text-muted);padding:2px 7px;" }, ["✕"]);
         closeX.onclick = close;
         head.appendChild(closeX);
         shell.appendChild(head);
@@ -2636,7 +2791,7 @@
         // §55050 level convention (S72 #9) drives the classification underneath; the
         // labels stay Beg/Int/Adv (Sam). Beg includes unqualified titles; Lab
         // isolates lab-only merges (Lab ≠ Lec).
-        var bandRow = el("div", { style: "display:flex;align-items:center;flex-wrap:wrap;gap:4px 10px;margin:7px 0 0;font-size:.76rem;color:#64748b;" });
+        var bandRow = el("div", { style: "display:flex;align-items:center;flex-wrap:wrap;gap:4px 10px;margin:7px 0 0;font-size:.76rem;color:var(--text-muted);" });
         bandRow.appendChild(el("span", { style: "font-weight:600;",
           title: "Show only merge candidates in the checked course-level/format bands (Common-Course convention): Beg = Introduction/Elementary/Beginning/Foundations/I/1 AND any title with no level qualifier · Int = Intermediate/Second/II/2 · Adv = Advanced/Third/III/3+ (long sequences pack 1-2/3-4/5-6 → Beg/Int/Adv; a bare number is a hint). Lab = only Lab/Laboratory courses (kept separate from Lec). Uncheck a level to exclude it; a group needs ≥2 matching members to surface." }, ["Levels:"]));
         [["beg", "Beg"], ["int", "Int"], ["adv", "Adv"], ["lab", "Lab"], ["wkexp", "WkExp"]].forEach(function (pair) {
@@ -2658,7 +2813,7 @@
         groups.forEach(function (g) { groupDiscs(g).forEach(function (d) { discCount[d] = (discCount[d] || 0) + 1; }); });
         var discFilter = "";
         function groupMatchesDisc(g) { return !discFilter || groupDiscs(g).indexOf(discFilter) >= 0; }
-        var discRow = el("div", { style: "margin:7px 0 0;font-size:.78rem;color:#64748b;display:flex;align-items:center;gap:5px;" });
+        var discRow = el("div", { style: "margin:7px 0 0;font-size:.78rem;color:var(--text-muted);display:flex;align-items:center;gap:5px;" });
         discRow.appendChild(el("span", { style: "font-weight:600;" }, ["Discipline:"]));
         var discSel = el("select", { class: "uc-filter", style: "max-width:75%;font-size:.8rem;" });
         discSel.appendChild(el("option", { value: "" }, ["All disciplines"]));
@@ -2671,7 +2826,7 @@
         // CCR list so you can scroll to adjacent courses. On by default; toggling
         // off restores the table's own sort.
         var syncCcr = true;
-        var syncRow = el("label", { style: "display:flex;align-items:center;gap:6px;margin:6px 0 0;font-size:.78rem;color:#64748b;cursor:pointer;" });
+        var syncRow = el("label", { style: "display:flex;align-items:center;gap:6px;margin:6px 0 0;font-size:.78rem;color:var(--text-muted);cursor:pointer;" });
         var syncCb = el("input", { type: "checkbox" }); syncCb.checked = syncCcr;
         syncCb.onchange = function () {
           syncCcr = this.checked;
@@ -2759,9 +2914,21 @@
           var isEvidence = g._kind === "evidence";
           var isDesc = g._kind === "desc";
           var isTitle = g._kind === "title";
+          var isLegacy = g._kind === "legacy";
+          // The legacy lane's copy needs the twin's size and which side survives.
+          var legacyTwin = isLegacy ? mems.filter(function (m) { return !m.anchor; })[0] : null;
+          var legacyAnchorSurvives = isLegacy && mems.every(function (m) { return m.anchor || m.k === "Stand-Alone"; });
+          // Seven anchors are ALSO catalog records (unlocked rows with members);
+          // only the locked, firewalled anchor is the memberless one.
+          var legacyAnchorRow = isLegacy ? byId[g.anchor] : null;
+          var legacyAnchorLocked = !legacyAnchorRow || !!legacyAnchorRow.locked;
           // Section badge so the curator knows whether this merges into an
           // existing identity or mints a brand-new unified course.
-          var badge = isSingleton
+          var badge = isLegacy
+            // Words, not a glyph (Sam, 2026-08-29); ghosted CO blue on white.
+            ? el("span", { style: "display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:10px;background:var(--surface-opaque);border:1px solid var(--cobalt-on-dark);color:var(--seal-blue-text,#002F6D);margin:0 0 8px;" },
+                ["Curated common course · same title and discipline as a catalog course"])
+            : isSingleton
             ? el("span", { style: "display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:10px;background:#ede9fe;color:#5b21b6;margin:0 0 8px;" },
                 ["✨ New unified course · stand-alone matches (" + (i - nNonSingleton + 1) + " of " + (groups.length - nNonSingleton) + ")"])
             : isFamily
@@ -2781,7 +2948,18 @@
                       // its meaning leads the paragraph below instead.
           if (badge) box.appendChild(badge);
           box.appendChild(el("p", { style: "margin:0 0 10px;color:#6b7280;" },
-            [isSingleton
+            [isLegacy
+              ? "“" + (g.sig || "This course") + "” is a curated common course from the May 2026 draft"
+                + (g.reviewed_by ? " (reviewed by " + g.reviewed_by + (g.reviewed_at ? " on " + g.reviewed_at : "") + ")" : "")
+                + (legacyAnchorLocked ? ", a read-only anchor that carries no college courses of its own." : ", carried today as a catalog record.")
+                + " A catalog identity carries the same title in the same discipline"
+                + (legacyTwin && legacyTwin.n ? " with " + legacyTwin.n + " college course" + (legacyTwin.n === 1 ? "" : "s") : "") + "."
+                + (legacyAnchorSurvives
+                    ? " The only match is a single-college course, so the anchor is the ★ survivor here and gains that course as its member."
+                    : " Confirming folds the anchor into the ★ catalog course, which keeps that course's college courses, articulations and evidence under one identity.")
+                + " If the two are genuinely different courses, use Keep as-is. Nothing is applied until you confirm."
+                + (g.note ? " Curation note on the anchor: " + g.note : "")
+              : isSingleton
               ? "Single-college courses that share a title but match no existing identity (confidence score " + g.score + "). Check the ones that are the same course, then Confirm to create a NEW unified course from them — or Skip."
               : isFamily
               ? "These identities co-articulate to “" + (g.credential || "the same credential") + "” and share a course family the level-safe worklist skips (level/format title drift — e.g. “Academy” / “Basic” / “I” / “Training”). Confirming MERGES the checked members into one identity. Uncheck any genuinely different course, then Confirm — or Skip."
@@ -2880,7 +3058,7 @@
           // ── Pager (Sam, S72 #1) ── A ‹ Prev · position · Next › selector at the
           // sidebar bottom so you can step BACKWARD/forward through the queue, not
           // only Skip-forward. Prev/Next jump to the adjacent PASSING group.
-          var pagerCss = "padding:4px 12px;border:1px solid #cbd5e1;border-radius:6px;background:#fff;font-size:.82rem;";
+          var pagerCss = "padding:4px 12px;border:1px solid #cbd5e1;border-radius:6px;background:var(--surface-opaque);font-size:.82rem;";
           var prevIdx = nextPassing(i, -1), nextIdx = nextPassing(i, 1);
           var pager = el("div", { style: "display:flex;align-items:center;justify-content:space-between;gap:8px;margin:14px 0 2px;padding-top:10px;border-top:1px solid #eef2f7;" });
           var prevB = el("button", { type: "button", style: pagerCss + (prevIdx < 0 ? "opacity:.45;cursor:not-allowed;" : "cursor:pointer;") }, ["‹ Prev"]);
@@ -2890,7 +3068,7 @@
           nextB.disabled = nextIdx < 0;
           nextB.onclick = function () { if (nextIdx >= 0) { i = nextIdx; renderGroup(); } };
           pager.appendChild(prevB);
-          pager.appendChild(el("span", { style: "font-size:.78rem;color:#64748b;font-weight:600;white-space:nowrap;" }, [headCount.textContent]));
+          pager.appendChild(el("span", { style: "font-size:.78rem;color:var(--text-muted);font-weight:600;white-space:nowrap;" }, [headCount.textContent]));
           pager.appendChild(nextB);
           box.appendChild(pager);
           syncCcrFocus(mems);   // S72 #3: float this group's course to the CCR top
@@ -2929,7 +3107,7 @@
     // ---- row-details modal (ⓘ) — full record + lazy, editable description ----
     function openDetailModal(r) {
       var overlay = el("div", { style: "position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:9999;display:flex;align-items:flex-start;justify-content:center;overflow:auto;" });
-      var box = el("div", { style: "background:#fff;max-width:720px;width:92%;margin:40px 0;border-radius:10px;padding:18px 22px;box-shadow:0 10px 40px rgba(0,0,0,.3);font-size:.9rem;" });
+      var box = el("div", { style: "background:var(--surface-opaque);max-width:720px;width:92%;margin:40px 0;border-radius:10px;padding:18px 22px;box-shadow:0 10px 40px rgba(0,0,0,.3);font-size:.9rem;" });
       overlay.appendChild(box);
       function close() { if (overlay.parentNode) document.body.removeChild(overlay); }
       overlay.onclick = function (e) { if (e.target === overlay) close(); };
@@ -2941,7 +3119,7 @@
       var dl = el("div", { style: "display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:baseline;" });
       function field(label, value) {
         if (value == null || value === "" || (Array.isArray(value) && !value.length)) return;
-        dl.appendChild(el("div", { style: "color:#64748b;font-weight:600;white-space:nowrap;" }, [label]));
+        dl.appendChild(el("div", { style: "color:var(--text-muted);font-weight:600;white-space:nowrap;" }, [label]));
         dl.appendChild(el("div", {}, [Array.isArray(value) ? value.join(", ") : String(value)]));
       }
       field("Discipline", r.disc);
@@ -2961,14 +3139,14 @@
 
       box.appendChild(el("div", { style: "display:flex;align-items:baseline;justify-content:space-between;margin:16px 0 4px;" }, [
         el("label", { style: "font-weight:600;color:var(--text-strong);" }, ["Description"]),
-        el("span", { id: "uc-desc-src", style: "font-size:.78rem;color:#94a3b8;" }, [""])
+        el("span", { id: "uc-desc-src", style: "font-size:.78rem;color:var(--text-muted);" }, [""])
       ]));
       var descWrap = el("div", {});
-      descWrap.appendChild(el("div", { style: "color:#94a3b8;" }, ["Loading description…"]));
+      descWrap.appendChild(el("div", { style: "color:var(--text-muted);" }, ["Loading description…"]));
       box.appendChild(descWrap);
 
       var actions = el("div", { style: "margin-top:16px;display:flex;gap:10px;justify-content:flex-end;" });
-      var closeBtn = el("button", { type: "button", style: "padding:7px 14px;border:1px solid #cbd5e1;border-radius:6px;background:#fff;cursor:pointer;" }, ["Close"]);
+      var closeBtn = el("button", { type: "button", style: "padding:7px 14px;border:1px solid #cbd5e1;border-radius:6px;background:var(--surface-opaque);cursor:pointer;" }, ["Close"]);
       closeBtn.onclick = close;
       actions.appendChild(closeBtn);
       box.appendChild(actions);
@@ -2984,8 +3162,8 @@
           ta.value = text || "";
           descWrap.appendChild(ta);
           var saveRow = el("div", { style: "margin-top:6px;display:flex;align-items:center;gap:10px;" });
-          var save = el("button", { type: "button", style: "padding:6px 12px;border:none;border-radius:6px;background:var(--cobalt);color:#fff;font-weight:600;cursor:pointer;" }, ["Save description"]);
-          var note = el("span", { style: "font-size:.78rem;color:#94a3b8;" }, []);
+          var save = el("button", { type: "button", style: "padding:6px 12px;border:none;border-radius:6px;background:var(--cobalt);color:var(--on-accent);font-weight:600;cursor:pointer;" }, ["Save description"]);
+          var note = el("span", { style: "font-size:.78rem;color:var(--text-muted);" }, []);
           save.onclick = function () {
             var val = ta.value.trim();
             if (!val) { note.textContent = "Description can't be empty."; return; }
@@ -3055,6 +3233,15 @@
     // Used for the worklist's "will mint under …" preview. Built from the loaded
     // M-ID rows (their subj4Of IS the Common SUBJ); blank ⇒ no existing M-ID, so
     // the build assigns a fresh one. (FL/KIN umbrellas resolve to their plurality.)
+    // Authority chips (item 19, Sam 2026-09-03) from the canonical seed: per
+    // Common SUBJ, the C-ID / CCN code the authority uses where it differs
+    // ("C-ID AJ" beside CRIM), and "proposed" where the CSR minted the code
+    // itself (item 18). Filled by regroupSubjFilter once the seed loads; the
+    // Subject dropdown labels and the Common SUBJ cell's hover read them.
+    var SUBJ_AUTHORITY = {}, DISC_AUTHORITY = {};
+    function subjOptLabel(c) {
+      return SUBJ_AUTHORITY[c] ? c + " — " + SUBJ_AUTHORITY[c].join(" · ") : c;
+    }
     var DISC_COMMON_SUBJ = (function () {
       var tally = {};
       rows.forEach(function (r) {
@@ -3099,10 +3286,14 @@
           // canonical_subj4 — so the forward-looking Common SUBJ (commonSubjOf) and
           // the mint preview can't be skewed by a wave of re-disciplined-but-not-
           // yet-folded rows tallying their stale prefix under the new discipline.
-          var canonChanged = false;
+          var canonChanged = false, authLoaded = false;
           Object.keys(seed.disciplines).forEach(function (d) {
-            var cs = (seed.disciplines[d] || {}).canonical_subj4;
+            var rec = seed.disciplines[d] || {}, cs = rec.canonical_subj4;
             if (cs && DISC_COMMON_SUBJ[d] !== cs) { DISC_COMMON_SUBJ[d] = cs; canonChanged = true; }
+            if (!cs) return;
+            var words = (rec.authority_chips || []).map(function (c) { return c.system + " " + c.code; });
+            if (rec.authority_flag === "proposed") words.push("proposed");
+            if (words.length) { SUBJ_AUTHORITY[cs] = words; DISC_AUTHORITY[d] = words; authLoaded = true; }
           });
           var known = {};
           Object.keys(seed.disciplines).forEach(function (d) {
@@ -3129,14 +3320,14 @@
           [["Common subjects ✓", g1], ["Official C-ID & CCN", g2], ["Local-derived (awaiting fold)", g3]]
             .forEach(function (pair) {
               var og = el("optgroup", { label: pair[0] });
-              pair[1].forEach(function (c) { og.appendChild(el("option", { value: c }, [c])); });
+              pair[1].forEach(function (c) { og.appendChild(el("option", { value: c }, [subjOptLabel(c)])); });
               fSubj.appendChild(og);
             });
           fSubj.value = cur;   // preserve the selection across the rebuild
           // If the authoritative canonical moved any DISC_COMMON_SUBJ entry, re-render
           // so the forward-looking Common SUBJ column reflects it (render() does not
           // re-run this regroup, so there's no loop).
-          if (canonChanged) render();
+          if (canonChanged || authLoaded) render();
         })
         .catch(function () { /* fail-soft: the flat list stays */ });
     }
@@ -3272,7 +3463,7 @@
             memberIds.forEach(function (m) { delete liveMergePending[m]; if (byId[m]) byId[m]._mergedAway = false; });
             var stillMerged = Object.keys(liveMergePending).filter(function (id) { return liveMergePending[id] === target; });
             var trow = byId[target];
-            var sessionMint = /^UC-CUR-/.test(target) || /\sZ\d{4}\b/.test(target);
+            var sessionMint = /^UC-CUR-/.test(target);
             if (trow) {
               if (sessionMint && !stillMerged.length) {
                 trow._mergedAway = true;   // a course minted this session, now emptied → remove it
@@ -3294,7 +3485,7 @@
       var byId = {}; rows.forEach(function (r) { byId[r.id] = r; });
       function titleOf(id) { var r = byId[id]; return (r && r.title) ? r.title : id; }
       var overlay = el("div", { style: "position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:9999;display:flex;align-items:flex-start;justify-content:center;overflow:auto;" });
-      var box = el("div", { style: "background:#fff;max-width:760px;width:92%;margin:40px 0;border-radius:10px;padding:18px 20px;box-shadow:0 10px 40px rgba(0,0,0,.3);font-size:.9rem;" });
+      var box = el("div", { style: "background:var(--surface-opaque);max-width:760px;width:92%;margin:40px 0;border-radius:10px;padding:18px 20px;box-shadow:0 10px 40px rgba(0,0,0,.3);font-size:.9rem;" });
       overlay.appendChild(box);
       function close() { if (overlay.parentNode) document.body.removeChild(overlay); }
       overlay.onclick = function (e) { if (e.target === overlay) close(); };
@@ -3325,7 +3516,7 @@
         if (!listWrap) return;
         listWrap.innerHTML = "";
         if (all.length && !ts.length) {
-          listWrap.appendChild(el("p", { style: "margin:8px 0;color:#94a3b8;font-style:italic;" }, ["No pending merges match “" + filterQ + "”."]));
+          listWrap.appendChild(el("p", { style: "margin:8px 0;color:var(--text-muted);font-style:italic;" }, ["No pending merges match “" + filterQ + "”."]));
         }
         ts.forEach(function (t) {
           var members = g[t];
@@ -3333,7 +3524,7 @@
           var hd = el("div", { style: "display:flex;align-items:center;gap:8px;margin:0 0 6px;" });
           hd.appendChild(el("span", { style: "flex:1;font-weight:600;color:var(--text-strong);" },
             ["★ " + titleOf(t) + "  ",
-             el("span", { style: "font-weight:400;font-family:monospace;font-size:.78rem;color:#64748b;" }, ["[" + t + "]"])]));
+             el("span", { style: "font-weight:400;font-family:monospace;font-size:.78rem;color:var(--text-muted);" }, ["[" + t + "]"])]));
           if (session) {
             var undoAll = el("button", { style: "padding:4px 10px;border:1px solid #fecaca;border-radius:6px;background:#fef2f2;color:#b91c1c;cursor:pointer;font-size:.8rem;font-weight:600;white-space:nowrap;" },
               ["↶ Undo all (" + members.length + ")"]);
@@ -3345,7 +3536,7 @@
             var row = el("div", { style: "display:flex;align-items:center;gap:8px;padding:2px 0 2px 10px;border-top:1px solid #f1f5f9;" });
             row.appendChild(el("span", { style: "flex:1;" },
               ["↳ " + titleOf(m) + "  ",
-               el("span", { style: "font-family:monospace;font-size:.76rem;color:#94a3b8;" }, ["[" + m + "]"])]));
+               el("span", { style: "font-family:monospace;font-size:.76rem;color:var(--text-muted);" }, ["[" + m + "]"])]));
             if (session) {
               var u = el("a", { href: "#", title: "Undo this one merge", style: "color:#b91c1c;text-decoration:none;font-weight:700;font-size:.82rem;white-space:nowrap;" }, ["✕ undo"]);
               u.onclick = function (e) { e.preventDefault(); undoMergeGroup(t, [m], renderList); };
@@ -3359,10 +3550,10 @@
       function rebuild() {
         box.innerHTML = "";
         var head = el("div", { style: "display:flex;align-items:center;gap:8px;margin:-18px -20px 12px;padding:9px 10px 9px 20px;border-bottom:1px solid #e5e7eb;border-radius:10px 10px 0 0;background:#f8fafc;" });
-        head.appendChild(el("strong", { style: "color:var(--text-strong);font-size:.9rem;" }, ["📋 Pending merges"]));
+        head.appendChild(el("strong", { style: "color:var(--text-strong);font-size:.9rem;" }, ["Pending merges"]));
         head.appendChild(el("span", { style: "flex:1;" }, []));
         var closeX = el("button", { type: "button", "aria-label": "Close", title: "Close",
-          style: "border:none;background:none;cursor:pointer;font-size:1.05rem;line-height:1;color:#64748b;padding:2px 7px;" }, ["✕"]);
+          style: "border:none;background:none;cursor:pointer;font-size:1.05rem;line-height:1;color:var(--text-muted);padding:2px 7px;" }, ["✕"]);
         closeX.onclick = close; head.appendChild(closeX);
         box.appendChild(head);
         // Search bar — filter the ~200 groups by course title or id.
@@ -3375,7 +3566,7 @@
         countSpan = el("p", { style: "margin:0 0 12px;color:#6b7280;" }, []);
         box.appendChild(countSpan);
         listWrap = el("div", {}); box.appendChild(listWrap);
-        var done = el("button", { style: "padding:7px 14px;border:none;border-radius:6px;background:var(--cobalt);color:#fff;font-weight:600;cursor:pointer;margin-top:4px;" }, ["Done"]);
+        var done = el("button", { style: "padding:7px 14px;border:none;border-radius:6px;background:var(--cobalt);color:var(--on-accent);font-weight:600;cursor:pointer;margin-top:4px;" }, ["Done"]);
         done.onclick = close; box.appendChild(done);
         renderList();
         if (search.focus) try { search.focus(); } catch (e) {}
@@ -3423,7 +3614,7 @@
       if (nMerges) {
         var rev = el("a", { href: "#", class: "uc-auth-link",
           title: "Review and undo this session's merges before the daily build folds them in" },
-          ["📋 Review merges (" + nMerges + ")"]);
+          ["Review merges (" + nMerges + ")"]);
         rev.onclick = function (e) { e.preventDefault(); openPendingMerges(); };
         syncBadge.appendChild(rev);
       }
@@ -3770,7 +3961,7 @@
         // A: curated sub-area (e.g. Business → Accounting). Only anchors carry a
         // refining discipline_provisional; the broad MQ discipline stays official.
         if (r.disc_prov) {
-          td.appendChild(el("span", { style: "color:#94a3b8;font-size:.82em;margin-left:5px;white-space:nowrap;",
+          td.appendChild(el("span", { style: "color:var(--text-muted);font-size:.82em;margin-left:5px;white-space:nowrap;",
             title: "Curated sub-area (provisional). “" + r.disc_prov + "” isn’t on the MQ discipline vocabulary, so the broad label above is the official one." },
             ["→ " + r.disc_prov]));
         }
@@ -4041,7 +4232,7 @@
                 [e.p ? (e.p + (topmap[e.p] ? ": " + topmap[e.p] : "")) : ""]));
               mb.appendChild(mr);
               if (dsLoaded) {
-                var dtd = el("td", { colspan: String(MCOLS.length), class: "uc-member-desc", style: "font-size:.8rem;color:#64748b;padding:2px 8px 8px 28px;" },
+                var dtd = el("td", { colspan: String(MCOLS.length), class: "uc-member-desc", style: "font-size:.8rem;color:var(--text-muted);padding:2px 8px 8px 28px;" },
                   [dsLoaded[e._oi] || "—"]);
                 var dr = el("tr"); dr.appendChild(dtd); mb.appendChild(dr);
               }
@@ -4076,7 +4267,7 @@
       st.textContent =
         "#tab-unified-courses .uc-aligned-wrap{margin-top:12px;padding-top:10px;border-top:1px dashed #cbd5e1;}" +
         "#tab-unified-courses .uc-aligned-head{font-size:.82rem;font-weight:700;color:#0f3d6e;margin-bottom:6px;}" +
-        "#tab-unified-courses .uc-aligned-head .uc-aligned-sub{font-weight:400;color:#64748b;}" +
+        "#tab-unified-courses .uc-aligned-head .uc-aligned-sub{font-weight:400;color:var(--text-muted);}" +
         "#tab-unified-courses .uc-aligned-badge{display:inline-block;font-size:.72rem;font-weight:600;color:var(--hunter);background:rgba(255,255,255,.5);border:1px solid var(--border-strong);border-radius:8px;padding:1px 7px;margin-left:6px;vertical-align:middle;}";
       document.head.appendChild(st);
     }
@@ -4091,8 +4282,8 @@
       st.id = "uc-merge-css";
       st.textContent =
         "#tab-unified-courses .uc-merge-link{display:inline-block;margin-right:8px;padding:1px 7px;border:1px solid var(--gold-accent);border-radius:4px;text-decoration:none;white-space:nowrap;}" +
-        "#tab-unified-courses a.uc-merge-link:hover{background:var(--gold-accent);color:var(--navy-primary);}" +
-        "#tab-unified-courses .uc-merge-disabled{color:#94a3b8;border-color:#cbd5e1;cursor:not-allowed;}";
+        "#tab-unified-courses a.uc-merge-link:hover{background:var(--gold-accent);color:var(--on-mustard);}" +
+        "#tab-unified-courses .uc-merge-disabled{color:var(--text-muted);border-color:#cbd5e1;cursor:not-allowed;}";
       document.head.appendChild(st);
     }
 
@@ -4120,7 +4311,7 @@
       st.id = "uc-fix-css";
       st.textContent =
         "#tab-unified-courses .uc-table td:nth-child(3) .uc-trunc{white-space:normal;overflow:visible;text-overflow:clip;}" +
-        "#tab-unified-courses .uc-member-table th{color:#fff;background:var(--navy-primary,#1C1C1A);}" +
+        "#tab-unified-courses .uc-member-table th{color:var(--on-accent);background:var(--navy-primary,#1C1C1A);}" +
         "#tab-unified-courses table.uc-table{table-layout:fixed;min-width:900px;}" +
         // Clip only the text-bearing columns (id/title/subj/disc/TOP/flags) —
         // numeric/enum cells can't overflow a fixed column, and a clip context
@@ -4171,7 +4362,7 @@
         list.forEach(function (x) {
           var ar = el("tr");
           var credTd = el("td", {}, [x.c || "—"]);
-          if (x.i) credTd.appendChild(el("div", { style: "font-size:.74rem;color:#64748b;font-style:italic;" }, [x.i]));
+          if (x.i) credTd.appendChild(el("div", { style: "font-size:.74rem;color:var(--text-muted);font-style:italic;" }, [x.i]));
           if (x.x === "CCC") credTd.appendChild(el("span", { class: "uc-aligned-badge", title: "A statewide CCC-collaborative articulation exists for this credential" }, ["CCC standard"]));
           ar.appendChild(credTd);
           ar.appendChild(el("td", {}, [x.p || "—"]));
@@ -4252,7 +4443,7 @@
       }).length : 0;
       if (nVerify) {
         verifyAllBtn.style.display = "";
-        verifyAllBtn.textContent = "✓ Verify " + nVerify.toLocaleString() + " filtered";
+        verifyAllBtn.textContent = "Verify " + nVerify.toLocaleString() + " filtered";
         verifyAllBtn.title = "Accept the machine-inferred discipline as-is for all " + nVerify +
           " filtered Generated rows and mark them Verified. The ⚙ badge flags the lower-confidence fills to scrutinize first.";
       } else {
@@ -4311,7 +4502,12 @@
         // letters still read the old prefix — a ⟲ pending marker flags that lag.
         var hasDisc = hasDiscipline(r);
         var csv = hasDisc ? commonSubjOf(r) : "—", csPend = hasDisc && commonSubjPending(r);
+        var authWords = hasDisc && DISC_AUTHORITY[r.disc] ? DISC_AUTHORITY[r.disc] : null;
         var csTitle = "Local SUBJ code(s): " + (localCodes || "—") + (subjTitle ? "\n" + subjTitle : "")
+          + (authWords ? "\nAuthority: " + authWords.join(" · ")
+              + (authWords.indexOf("proposed") >= 0
+                  ? " (no C-ID or CCN code names this discipline yet; the CSR proposes this Common SUBJ)"
+                  : " (the authority's subject code; the Common SUBJ stays four letters, rule 3, 2026-09-03)") : "")
           + (csPend ? "\nM-ID still keyed " + subj4Of(r) + " — re-keys to " + csv + " at the next canonical-SUBJ4 fold (discipline already set)." : "")
           + (!hasDisc ? "\nNo discipline yet — Common SUBJ is a function of discipline, so it stays blank until one is assigned (provisional local prefix: " + (subj4Of(r) || "—") + ")." : "");
         var csTd = el("td", { title: csTitle }, [csv]);
@@ -4322,16 +4518,13 @@
         tr.appendChild(disciplineCell(r));
         tr.appendChild(el("td", {}, [r.credit || "—"]));
         // Units: show a RANGE (lo–hi) when member colleges disagree (umin/umax baked by
-        // the generator); a spread > 2.0 is surfaced as an over-merge ⚠ alarm (not a
-        // silent tolerance band — a wide spread likely conflates different unit-load
-        // variants, which is exactly what the auditor's unit_anomaly flag catches).
-        // Falls back to the scalar typical (r.units) when the range isn't baked yet.
+        // the generator from the members the row displays). Units never split an
+        // identity (Sam, 2026-09-27), so a wide range is the identity's own range and
+        // carries no alarm; the ⚠ that called a spread over 2 an over-merge to split
+        // left on 2026-09-29. Falls back to the scalar typical (r.units).
         var uTd = el("td", {});
         if (r.umin != null && r.umax != null && r.umin !== r.umax) {
           uTd.appendChild(document.createTextNode(r.umin + "–" + r.umax));
-          if (r.umax - r.umin > 2.0) uTd.appendChild(el("span",
-            { title: "Unit spread > 2.0 across member colleges — likely an over-merge of different unit-load variants; review/split.",
-              style: "margin-left:4px;color:var(--mustard-text);cursor:help;" }, ["⚠"]));
         } else {
           uTd.appendChild(document.createTextNode(r.units == null ? "—" : String(r.units)));
         }

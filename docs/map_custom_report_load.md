@@ -95,6 +95,15 @@ transaction back — **live is untouched and the run fails loudly.**
 | **G7** | any college has exactly one suppressed `goal2` cell beside a visible sibling | **a disclosure.** Subtract the visible cells from the total and the hidden one falls out. Tests the *property* — asserting `suppressed = true` would pass on a broken implementation |
 | **G8** | a suppressed cell still carries numbers | same reason |
 
+The static half of G5 is a check constraint on the live table itself,
+`map_student_credit_key_range_ck` (`student_key` 1..250,000 since 2026-09-24;
+it was 1..50,000 from the table's creation and refused the 2026-09-24
+promotion, whose pull carried 50,027 students). A pull that crosses it fails
+closed with SQLSTATE 23514 and **no G number** — the whole transaction still
+rolls back. Widen it by migration and commit the receipt
+(`kb/receipts/map_student_credit_key_range_2026-09-24_s287.sql` is the worked
+example); never by loosening G5.
+
 **Warnings** (recorded, never blocking): a `course_type` MAP has newly invented,
 landing in `goal2 dest = 'UNKNOWN'`; and any shrink in `cr_unit`, whose expected
 cause is the catalog-year roll-forward.
@@ -170,7 +179,7 @@ is used as a time dimension.
 ## What the loader keeps, and what it drops
 
 `fetch_custom_report.py` decides what we **ask for**; the loader decides what we
-**keep**, and it keeps less. Minimisation happens twice
+**keep**, and it keeps less. Minimization happens twice
 ([`methodology-minimisation-happens-twice`](kb-notes/methodology-minimisation-happens-twice.md)).
 
 **Stored from the student view (18 columns):** the 16 `map_student_credit`
@@ -207,7 +216,7 @@ this one.
 Zero is the source's own meaning, not an invention: `sum_applied_credits` is
 blank on **exactly** the `Not Applicable` rows and no other disposition, which is
 caveat 4 of `map_dataset_sql_for_malone` — *"all four credit fields are 0 on
-unapproved rows. That is correct behaviour, not missing data."*
+unapproved rows. That is correct behavior, not missing data."*
 
 Staging carries the live NOT NULL constraints, so a future mismatch fails at
 **load**, with a clear message, instead of at promotion.

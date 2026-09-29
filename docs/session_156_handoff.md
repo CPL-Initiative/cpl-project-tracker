@@ -175,7 +175,7 @@ Riverside's and Lemoore's ARE AWS-issued D1.1 — those are the real misses.
 ## Patterns that worked
 
 - **Measure the join before building on it.** 86/86 exact matches said an
-  exact-key `.in()` was right and normalising would have been needless machinery.
+  exact-key `.in()` was right and normalizing would have been needless machinery.
   The scar creates a reflex to always fold both sides; over-folding is the mirror
   error.
 - **Check whether a rule is even FOLLOWABLE before treating it as compliance.**

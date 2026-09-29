@@ -92,7 +92,7 @@ passes of prompt rewriting followed.
 |---|---|
 | **07-23 "How many colleges have a CPL Counselor or Coordinator listed?"** | ⭐ **Best value.** A *build*, not a bug — Sierra names contacts one at a time but can't aggregate. The data exists from SkyMail (#991–#993, #1001, `map_college_contacts`). |
 | 07-06 MJC: Sierra said 75 ECE credit recs, landing page shows 4 | Investigate — count-source mismatch, possibly a real data question worth answering properly. |
-| 07-06 Fullerton catalogue read in one answer, not the next | Plausibly the **non-determinism #1023 fixed** (`.limit(3)` with no `ORDER BY`). Re-run the pair; if stable, mark addressed. |
+| 07-06 Fullerton catalog read in one answer, not the next | Plausibly the **non-determinism #1023 fixed** (`.limit(3)` with no `ORDER BY`). Re-run the pair; if stable, mark addressed. |
 | 07-02 ×2 student counts per certificate | Known data gap Sam owns — ties to **Malone's view** → `fetch_custom_report.py` → `_build_cr_backlog.py`. |
 | 07-02 College of the Canyons articulations (employer, no note) | Re-run and judge. |
 

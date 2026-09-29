@@ -4,19 +4,27 @@
 // pull. Aggregate, small-cell-suppressed counts ONLY (see
 // docs/kb-notes/adr-funding-priority-metrics-privacy.md). Do not hand-edit.
 window.CPL_FUNDING_PERF = {
- "as_of": "2026-08-26",
- "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch) (per MAP). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
- "suppress_below": 5,
+ "as_of": "2026-09-29",
+ "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). PAC/PTC = APPLIED/TRANSCRIBED units for students whose Counselor step is checked (Counselor_Verified), both cohorts; present only when the pull carries that column. NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
+ "suppress_below": 10,
  "statewide": {
-  "pe": 42914,
-  "pa": 40247,
-  "p2": 3733,
-  "p3": 15778,
-  "pp": 5,
-  "pe_u": 1379890.45,
-  "pa_u": 223033.65,
-  "p3_u": 80337.95,
-  "pp_u": 25.0
+  "pe": 44047,
+  "pa": 40076,
+  "ppa": 105,
+  "p2": 3129,
+  "p3": 14641,
+  "pp": 6,
+  "ppe": 115,
+  "pac": 2919,
+  "ptc": 2526,
+  "pe_u": 1430446.2,
+  "pa_u": 223452.4,
+  "ppa_u": 654.5,
+  "ppe_u": 6667.5,
+  "pac_u": 25440.2,
+  "ptc_u": 21779.0,
+  "p3_u": 73936.7,
+  "pp_u": 63.5
  },
  "colleges": {
   "Alameda": {
@@ -24,1238 +32,2180 @@ window.CPL_FUNDING_PERF = {
    "pe_u": 529.0,
    "pa": 13,
    "pa_u": 78.0,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 6.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 30.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Allan Hancock": {
-   "pe": 142,
-   "pe_u": 6323.0,
-   "pa": 142,
-   "pa_u": 568.0,
+   "pe": 143,
+   "pe_u": 6355.0,
+   "pa": 143,
+   "pa_u": 572.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "American River": {
    "pe": 44,
    "pe_u": 2377.0,
    "pa": 44,
    "pa_u": 132.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Antelope Valley": {
-   "pe": 278,
-   "pe_u": 9474.0,
-   "pa": 278,
-   "pa_u": 1127.0,
+   "pe": 280,
+   "pe_u": 9555.0,
+   "pa": 280,
+   "pa_u": 1135.0,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 4.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 42.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Bakersfield": {
-   "pe": 592,
-   "pe_u": 25977.5,
-   "pa": 585,
-   "pa_u": 8605.5,
-   "p2": 50,
-   "p3": 51,
-   "p3_u": 974.5,
+   "pe": 606,
+   "pe_u": 26443.5,
+   "pa": 598,
+   "pa_u": 8732.5,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 66.0,
+   "p2": 52,
+   "p3": 53,
+   "p3_u": 988.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 180.0,
+   "pac": 192,
+   "pac_u": 2693.0,
+   "ptc": 53,
+   "ptc_u": 988.0
   },
   "Barstow": {
    "pe": 137,
    "pe_u": 4865.0,
    "pa": 137,
    "pa_u": 1894.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Berkeley City": {
    "pe": 16,
    "pe_u": 887.0,
    "pa": 16,
    "pa_u": 96.0,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 6.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 30.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Butte": {
-   "pe": 9,
+   "pe": null,
+   "pe_suppressed": true,
    "pe_u": 435.0,
    "pa": 0,
    "pa_u": 0.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 12.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Cabrillo": {
-   "pe": 213,
-   "pe_u": 8805.5,
-   "pa": 208,
-   "pa_u": 1256.5,
+   "pe": 217,
+   "pe_u": 8890.0,
+   "pa": 212,
+   "pa_u": 1285.5,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 17,
    "p3": 44,
-   "p3_u": 258.5,
+   "p3_u": 255.5,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": 56,
+   "pac_u": 325.0,
+   "ptc": 44,
+   "ptc_u": 255.5
   },
   "Canada": {
    "pe": 29,
    "pe_u": 1066.0,
    "pa": 29,
    "pa_u": 87.0,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 3.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 27.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Canyons": {
-   "pe": 512,
-   "pe_u": 21567.0,
-   "pa": 512,
-   "pa_u": 1536.0,
+   "pe": 519,
+   "pe_u": 21822.0,
+   "pa": 519,
+   "pa_u": 1557.0,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 23.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 23.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Cerritos": {
    "pe": 169,
    "pe_u": 6817.0,
    "pa": 169,
    "pa_u": 572.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Cerro Coso": {
-   "pe": 175,
-   "pe_u": 8962.5,
-   "pa": 171,
-   "pa_u": 855.0,
+   "pe": 181,
+   "pe_u": 9122.5,
+   "pa": 177,
+   "pa_u": 975.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Chabot": {
-   "pe": 15,
-   "pe_u": 983.0,
+   "pe": 46,
+   "pe_u": 2043.0,
    "pa": 0,
    "pa_u": 0.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Chaffey": {
-   "pe": 1518,
-   "pe_u": 32923.5,
-   "pa": 1514,
-   "pa_u": 18582.0,
-   "p2": 17,
-   "p3": 36,
-   "p3_u": 274.0,
+   "pe": 1522,
+   "pe_u": 32966.5,
+   "pa": 1518,
+   "pa_u": 19020.0,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 6.0,
+   "p2": 20,
+   "p3": 47,
+   "p3_u": 330.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 91.0,
+   "pac": 33,
+   "pac_u": 227.5,
+   "ptc": 29,
+   "ptc_u": 196.5
   },
   "Citrus": {
    "pe": 214,
    "pe_u": 8282.0,
    "pa": 214,
    "pa_u": 856.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Clovis": {
-   "pe": 187,
-   "pe_u": 8090.0,
-   "pa": 187,
-   "pa_u": 1129.0,
+   "pe": 189,
+   "pe_u": 8181.0,
+   "pa": 189,
+   "pa_u": 1141.0,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 12.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 159.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Coastline": {
-   "pe": 896,
-   "pe_u": 63462.0,
-   "pa": 527,
-   "pa_u": 3280.0,
+   "pe": 980,
+   "pe_u": 68730.0,
+   "pa": 556,
+   "pa_u": 3443.0,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 10.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 24.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Columbia": {
-   "pe": 23,
-   "pe_u": 1377.0,
-   "pa": 0,
-   "pa_u": 0.0,
+   "pe": 25,
+   "pe_u": 1414.0,
+   "pa": 14,
+   "pa_u": 17.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Compton": {
    "pe": 21,
    "pe_u": 600.0,
    "pa": 21,
    "pa_u": 131.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": 21,
+   "pac_u": 131.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Contra Costa": {
    "pe": null,
    "pe_suppressed": true,
-   "pe_u": null,
-   "pe_u_suppressed": true,
+   "pe_u": 89.0,
    "pa": 0,
    "pa_u": 0.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Copper Mountain": {
    "pe": 80,
    "pe_u": 3770.0,
    "pa": 79,
    "pa_u": 288.0,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 3.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 201.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Crafton Hills": {
    "pe": 21,
    "pe_u": 1045.0,
    "pa": 20,
    "pa_u": 140.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Cuesta": {
-   "pe": 109,
-   "pe_u": 4532.5,
-   "pa": 7,
-   "pa_u": 66.0,
+   "pe": 111,
+   "pe_u": 4641.5,
+   "pa": null,
+   "pa_suppressed": true,
+   "pa_u": 69.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": null,
    "p2_suppressed": true,
    "p3": null,
    "p3_suppressed": true,
-   "p3_u": null,
-   "p3_u_suppressed": true,
+   "p3_u": 58.5,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": null,
+   "pac_suppressed": true,
+   "pac_u": 61.5,
+   "ptc": null,
+   "ptc_suppressed": true,
+   "ptc_u": 58.5
   },
   "Cuyamaca": {
    "pe": 93,
    "pe_u": 6939.0,
    "pa": 0,
    "pa_u": 0.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 29.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Cypress": {
    "pe": 640,
    "pe_u": 17353.5,
    "pa": 640,
    "pa_u": 2323.5,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 10,
    "p3": 19,
    "p3_u": 131.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": null,
+   "pac_suppressed": true,
+   "pac_u": 1.0,
+   "ptc": null,
+   "ptc_suppressed": true,
+   "ptc_u": 1.0
   },
   "De Anza": {
-   "pe": 976,
-   "pe_u": 24241.5,
-   "pa": 976,
-   "pa_u": 4955.0,
+   "pe": 988,
+   "pe_u": 24913.5,
+   "pa": 988,
+   "pa_u": 5019.5,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": null,
    "p2_suppressed": true,
    "p3": null,
    "p3_suppressed": true,
-   "p3_u": null,
-   "p3_u_suppressed": true,
+   "p3_u": 58.5,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Desert": {
-   "pe": 417,
-   "pe_u": 17445.5,
-   "pa": 417,
-   "pa_u": 2351.5,
+   "pe": 439,
+   "pe_u": 18222.5,
+   "pa": 439,
+   "pa_u": 2439.5,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 4.0,
    "p2": 37,
    "p3": 37,
    "p3_u": 831.5,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 202.0,
+   "pac": null,
+   "pac_suppressed": true,
+   "pac_u": 61.5,
+   "ptc": null,
+   "ptc_suppressed": true,
+   "ptc_u": 61.5
   },
   "Diablo Valley": {
-   "pe": 172,
-   "pe_u": 7441.0,
-   "pa": 172,
-   "pa_u": 516.0,
+   "pe": 185,
+   "pe_u": 8062.0,
+   "pa": 185,
+   "pa_u": 564.0,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 3.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 201.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "East LA": {
-   "pe": 235,
-   "pe_u": 9200.0,
-   "pa": 234,
-   "pa_u": 702.0,
+   "pe": 234,
+   "pe_u": 9197.0,
+   "pa": 233,
+   "pa_u": 699.0,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 3.0,
    "p2": 0,
    "p3": 26,
    "p3_u": 78.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 32.0,
+   "pac": 38,
+   "pac_u": 114.0,
+   "ptc": 26,
+   "ptc_u": 78.0
   },
   "El Camino": {
    "pe": 460,
    "pe_u": 21892.0,
    "pa": 460,
    "pa_u": 4140.0,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 9.0,
    "p2": null,
    "p2_suppressed": true,
    "p3": null,
    "p3_suppressed": true,
-   "p3_u": null,
-   "p3_u_suppressed": true,
+   "p3_u": 9.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 26.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Evergreen Valley": {
    "pe": 111,
-   "pe_u": 5100.5,
+   "pe_u": 5205.5,
    "pa": 110,
    "pa_u": 663.5,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 6.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 30.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Feather River": {
    "pe": 11,
    "pe_u": 454.0,
    "pa": 0,
    "pa_u": 0.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Foothill": {
-   "pe": 73,
-   "pe_u": 3300.0,
-   "pa": 73,
-   "pa_u": 292.0,
+   "pe": 72,
+   "pe_u": 3281.0,
+   "pa": 72,
+   "pa_u": 288.0,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 12.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 213.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Fresno City": {
-   "pe": 577,
-   "pe_u": 21792.0,
-   "pa": 577,
-   "pa_u": 1666.0,
+   "pe": 722,
+   "pe_u": 27532.0,
+   "pa": 722,
+   "pa_u": 2548.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Fullerton": {
    "pe": 555,
    "pe_u": 21595.0,
    "pa": 236,
    "pa_u": 1083.0,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 7.0,
    "p2": null,
    "p2_suppressed": true,
    "p3": null,
    "p3_suppressed": true,
-   "p3_u": null,
-   "p3_u_suppressed": true,
+   "p3_u": 7.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 75.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Gavilan": {
    "pe": 46,
    "pe_u": 1891.0,
    "pa": 0,
    "pa_u": 0.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Glendale": {
-   "pe": 223,
-   "pe_u": 9963.5,
-   "pa": 223,
-   "pa_u": 1213.5,
+   "pe": 226,
+   "pe_u": 10070.5,
+   "pa": 226,
+   "pa_u": 1348.5,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Golden West": {
    "pe": 98,
    "pe_u": 5306.0,
    "pa": 98,
    "pa_u": 588.0,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 6.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 30.0,
+   "pac": 59,
+   "pac_u": 354.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Grossmont": {
    "pe": 0,
    "pe_u": 0.0,
    "pa": 0,
    "pa_u": 0.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 17.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Hartnell": {
-   "pe": 61,
-   "pe_u": 2523.0,
-   "pa": 60,
-   "pa_u": 180.0,
+   "pe": 63,
+   "pe_u": 2545.0,
+   "pa": 62,
+   "pa_u": 186.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Irvine": {
-   "pe": 130,
-   "pe_u": 5715.0,
-   "pa": 129,
-   "pa_u": 387.0,
+   "pe": 134,
+   "pe_u": 5919.0,
+   "pa": 133,
+   "pa_u": 399.0,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 3.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 26.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "LA City": {
    "pe": 154,
    "pe_u": 6192.0,
    "pa": 0,
    "pa_u": 0.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "LA Harbor": {
-   "pe": 135,
-   "pe_u": 5172.0,
-   "pa": 135,
-   "pa_u": 405.0,
+   "pe": 140,
+   "pe_u": 5412.0,
+   "pa": 140,
+   "pa_u": 420.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "LA Mission": {
-   "pe": 153,
-   "pe_u": 6818.0,
-   "pa": 152,
-   "pa_u": 940.0,
+   "pe": 167,
+   "pe_u": 6825.0,
+   "pa": 166,
+   "pa_u": 947.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": 24,
+   "pac_u": 86.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "LA Pierce": {
-   "pe": 342,
-   "pe_u": 6014.0,
-   "pa": 306,
-   "pa_u": 1245.0,
+   "pe": 394,
+   "pe_u": 6749.0,
+   "pa": 371,
+   "pa_u": 1452.0,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 9.0,
    "p2": 20,
-   "p3": 229,
-   "p3_u": 907.0,
+   "p3": 270,
+   "p3_u": 1029.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 36.0,
+   "pac": null,
+   "pac_suppressed": true,
+   "pac_u": 76.0,
+   "ptc": null,
+   "ptc_suppressed": true,
+   "ptc_u": 64.0
   },
   "LA Trade": {
-   "pe": 415,
-   "pe_u": 15392.0,
-   "pa": 414,
-   "pa_u": 1242.0,
+   "pe": 408,
+   "pe_u": 15165.0,
+   "pa": 407,
+   "pa_u": 1221.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "LA Valley": {
    "pe": 364,
    "pe_u": 15980.0,
    "pa": 363,
    "pa_u": 1815.0,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 5.0,
    "p2": 0,
    "p3": 189,
    "p3_u": 945.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 38.0,
+   "pac": 193,
+   "pac_u": 965.0,
+   "ptc": 189,
+   "ptc_u": 945.0
   },
   "Laney": {
-   "pe": 49,
-   "pe_u": 2181.0,
-   "pa": 49,
-   "pa_u": 294.0,
+   "pe": 50,
+   "pe_u": 2198.0,
+   "pa": 50,
+   "pa_u": 300.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Las Positas": {
    "pe": 18,
    "pe_u": 1266.0,
    "pa": 18,
    "pa_u": 118.0,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 18.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 42.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Lassen": {
    "pe": 140,
    "pe_u": 5743.0,
    "pa": 140,
    "pa_u": 420.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Long Beach": {
-   "pe": 808,
-   "pe_u": 36365.5,
-   "pa": 808,
-   "pa_u": 5637.5,
+   "pe": 809,
+   "pe_u": 36440.5,
+   "pa": 809,
+   "pa_u": 5647.5,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 42.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 332.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Los Medanos": {
    "pe": 221,
    "pe_u": 8966.0,
-   "pa": 22,
-   "pa_u": 80.0,
+   "pa": 29,
+   "pa_u": 105.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Madera": {
-   "pe": 43,
-   "pe_u": 1751.0,
-   "pa": 43,
-   "pa_u": 95.0,
+   "pe": 49,
+   "pe_u": 1995.0,
+   "pa": 49,
+   "pa_u": 125.0,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 5.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 136.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Mendocino": {
-   "pe": 7,
+   "pe": null,
+   "pe_suppressed": true,
    "pe_u": 62.0,
-   "pa": 7,
+   "pa": null,
+   "pa_suppressed": true,
    "pa_u": 35.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Merced": {
-   "pe": 3343,
-   "pe_u": 29500.5,
-   "pa": 3319,
-   "pa_u": 19540.0,
-   "p2": 1780,
-   "p3": 3281,
-   "p3_u": 19350.0,
+   "pe": 3344,
+   "pe_u": 29623.5,
+   "pa": 1965,
+   "pa_u": 10051.0,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 5.0,
+   "p2": 911,
+   "p3": 1926,
+   "p3_u": 9856.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 26.0,
+   "pac": null,
+   "pac_suppressed": true,
+   "pac_u": 27.0,
+   "ptc": null,
+   "ptc_suppressed": true,
+   "ptc_u": 27.0
   },
   "Merritt": {
-   "pe": 13,
-   "pe_u": 671.0,
-   "pa": 13,
-   "pa_u": 66.0,
+   "pe": 16,
+   "pe_u": 796.0,
+   "pa": 16,
+   "pa_u": 84.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 0,
    "p3": null,
    "p3_suppressed": true,
-   "p3_u": null,
-   "p3_u_suppressed": true,
+   "p3_u": 6.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "MiraCosta": {
    "pe": null,
    "pe_suppressed": true,
-   "pe_u": null,
-   "pe_u_suppressed": true,
+   "pe_u": 30.0,
    "pa": 0,
    "pa_u": 0.0,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 18.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 301.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Mission": {
-   "pe": 146,
-   "pe_u": 6661.0,
-   "pa": 146,
-   "pa_u": 876.0,
+   "pe": 167,
+   "pe_u": 7748.0,
+   "pa": 167,
+   "pa_u": 1002.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": null,
    "p2_suppressed": true,
    "p3": null,
    "p3_suppressed": true,
-   "p3_u": null,
-   "p3_u_suppressed": true,
+   "p3_u": 6.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Modesto": {
-   "pe": 348,
-   "pe_u": 8240.0,
-   "pa": 336,
-   "pa_u": 2217.0,
+   "pe": 349,
+   "pe_u": 8365.0,
+   "pa": 337,
+   "pa_u": 2222.0,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 25.0,
    "p2": 73,
    "p3": 191,
    "p3_u": 1417.5,
-   "pp": 2,
-   "pp_u": 10.0
+   "pp": null,
+   "pp_suppressed": true,
+   "pp_u": 10.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 35.0,
+   "pac": 196,
+   "pac_u": 1469.0,
+   "ptc": 193,
+   "ptc_u": 1427.5
   },
   "Monterey": {
    "pe": 126,
    "pe_u": 5582.5,
    "pa": null,
    "pa_suppressed": true,
-   "pa_u": null,
-   "pa_u_suppressed": true,
+   "pa_u": 4.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 132.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Moorpark": {
-   "pe": 226,
-   "pe_u": 9582.0,
+   "pe": 229,
+   "pe_u": 9669.0,
    "pa": null,
    "pa_suppressed": true,
-   "pa_u": null,
-   "pa_u_suppressed": true,
+   "pa_u": 14.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 0,
    "p3": null,
    "p3_suppressed": true,
-   "p3_u": null,
-   "p3_u_suppressed": true,
+   "p3_u": 4.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Moreno Valley": {
-   "pe": 2434,
-   "pe_u": 51791.0,
-   "pa": 2105,
-   "pa_u": 12407.5,
-   "p2": 438,
-   "p3": 1989,
-   "p3_u": 11518.0,
-   "pp": 0,
-   "pp_u": 0.0
+   "pe": 2497,
+   "pe_u": 53516.5,
+   "pa": 2168,
+   "pa_u": 12963.0,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 53.5,
+   "p2": 478,
+   "p3": 2105,
+   "p3_u": 12407.5,
+   "pp": null,
+   "pp_suppressed": true,
+   "pp_u": 38.5,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 265.5,
+   "pac": 698,
+   "pac_u": 2206.5,
+   "ptc": 698,
+   "ptc_u": 2206.5
   },
   "Mt San Antonio": {
    "pe": 732,
    "pe_u": 31389.5,
    "pa": 731,
    "pa_u": 2924.0,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 8.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 96.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Mt. San Jacinto": {
-   "pe": 533,
-   "pe_u": 30779.0,
-   "pa": 532,
-   "pa_u": 1596.0,
+   "pe": 538,
+   "pe_u": 31375.0,
+   "pa": 537,
+   "pa_u": 1611.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Napa": {
-   "pe": 52,
-   "pe_u": 2253.0,
-   "pa": 14,
-   "pa_u": 42.0,
+   "pe": 55,
+   "pe_u": 2264.0,
+   "pa": 17,
+   "pa_u": 53.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": null,
+   "pac_suppressed": true,
+   "pac_u": 11.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Norco College": {
-   "pe": 756,
-   "pe_u": 25855.5,
-   "pa": 755,
-   "pa_u": 6385.5,
+   "pe": 777,
+   "pe_u": 26648.0,
+   "pa": 776,
+   "pa_u": 6532.5,
+   "ppa": 12,
+   "ppa_u": 69.0,
    "p2": 153,
    "p3": 438,
    "p3_u": 3997.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 12,
+   "ppe_u": 585.0,
+   "pac": 318,
+   "pac_u": 3426.5,
+   "ptc": 303,
+   "ptc_u": 3254.0
   },
   "Ohlone": {
    "pe": 130,
    "pe_u": 5231.0,
    "pa": 0,
    "pa_u": 0.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Orange Coast": {
    "pe": 0,
    "pe_u": 0.0,
    "pa": 0,
    "pa_u": 0.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 94.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Oxnard": {
-   "pe": 157,
-   "pe_u": 8495.0,
-   "pa": 156,
-   "pa_u": 624.0,
+   "pe": 159,
+   "pe_u": 8625.0,
+   "pa": 158,
+   "pa_u": 632.0,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 4.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 30.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Palo Verde": {
-   "pe": 17,
-   "pe_u": 601.75,
-   "pa": 17,
-   "pa_u": 178.75,
-   "p2": 8,
-   "p3": 8,
-   "p3_u": 151.75,
+   "pe": 20,
+   "pe_u": 707.0,
+   "pa": 20,
+   "pa_u": 284.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
+   "p2": 11,
+   "p3": 11,
+   "p3_u": 257.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": 11,
+   "pac_u": 257.0,
+   "ptc": 11,
+   "ptc_u": 257.0
   },
   "Pasadena": {
-   "pe": 130,
-   "pe_u": 5926.0,
-   "pa": 130,
-   "pa_u": 266.0,
+   "pe": 139,
+   "pe_u": 6306.0,
+   "pa": 139,
+   "pa_u": 284.0,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 4.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 222.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Porterville": {
    "pe": 27,
    "pe_u": 675.0,
    "pa": 27,
    "pa_u": 135.0,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 5.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 28.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Redwoods": {
    "pe": 33,
    "pe_u": 1432.0,
    "pa": 33,
    "pa_u": 99.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Reedley College": {
-   "pe": 130,
-   "pe_u": 4819.5,
-   "pa": 111,
-   "pa_u": 534.5,
+   "pe": 133,
+   "pe_u": 4997.5,
+   "pa": 113,
+   "pa_u": 541.5,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": null,
+   "pac_suppressed": true,
+   "pac_u": 24.0,
+   "ptc": 0,
+   "ptc_u": 0.0
+  },
+  "Rio Hondo": {
+   "pe": null,
+   "pe_suppressed": true,
+   "pe_u": 68.0,
+   "pa": null,
+   "pa_suppressed": true,
+   "pa_u": 12.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
+   "p2": 0,
+   "p3": 0,
+   "p3_u": 0.0,
+   "pp": 0,
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Riverside": {
-   "pe": 832,
-   "pe_u": 36332.0,
-   "pa": 818,
-   "pa_u": 3991.0,
+   "pe": 899,
+   "pe_u": 39328.0,
+   "pa": 885,
+   "pa_u": 4404.0,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 5.0,
    "p2": 12,
    "p3": 818,
    "p3_u": 3991.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 83.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Sacramento City": {
-   "pe": 63,
-   "pe_u": 2442.0,
+   "pe": 75,
+   "pe_u": 2906.0,
    "pa": 0,
    "pa_u": 0.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 148.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Saddleback": {
    "pe": 57,
    "pe_u": 2683.0,
    "pa": 57,
    "pa_u": 342.0,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 12.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 175.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "San Bernardino": {
-   "pe": 307,
-   "pe_u": 9502.0,
-   "pa": 302,
-   "pa_u": 2617.0,
+   "pe": 316,
+   "pe_u": 9530.0,
+   "pa": 311,
+   "pa_u": 2647.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 59,
    "p3": 87,
    "p3_u": 748.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": 106,
+   "pac_u": 868.0,
+   "ptc": 87,
+   "ptc_u": 748.0
   },
   "San Diego City": {
-   "pe": 4300,
-   "pe_u": 95887.5,
-   "pa": 4299,
-   "pa_u": 14721.0,
-   "p2": 121,
+   "pe": 4346,
+   "pe_u": 98468.5,
+   "pa": 4345,
+   "pa_u": 15306.0,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 12.0,
+   "p2": 190,
    "p3": 2837,
-   "p3_u": 8844.0,
+   "p3_u": 9245.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 415.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "San Diego Mesa": {
-   "pe": 4677,
-   "pe_u": 104243.5,
-   "pa": 4677,
-   "pa_u": 15575.5,
-   "p2": 117,
+   "pe": 4708,
+   "pe_u": 106174.5,
+   "pa": 4708,
+   "pa_u": 15993.5,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 4.0,
+   "p2": 150,
    "p3": 3095,
-   "p3_u": 9249.5,
+   "p3_u": 9543.5,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 33.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "San Diego Miramar": {
-   "pe": 3127,
-   "pe_u": 94439.2,
-   "pa": 3127,
-   "pa_u": 11916.7,
-   "p2": 85,
+   "pe": 3161,
+   "pe_u": 97041.2,
+   "pa": 3161,
+   "pa_u": 12952.7,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 8.0,
+   "p2": 177,
    "p3": 1502,
-   "p3_u": 5390.7,
+   "p3_u": 6290.7,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 226.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "San Francisco": {
-   "pe": 1329,
-   "pe_u": 61916.5,
-   "pa": 1327,
-   "pa_u": 9096.5,
-   "p2": 8,
-   "p3": 15,
-   "p3_u": 118.0,
+   "pe": 1759,
+   "pe_u": 79735.5,
+   "pa": 1758,
+   "pa_u": 12594.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
+   "p2": null,
+   "p2_suppressed": true,
+   "p3": 12,
+   "p3_u": 75.5,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": 49,
+   "pac_u": 394.5,
+   "ptc": 12,
+   "ptc_u": 75.5
   },
   "San Joaquin Delta": {
    "pe": 493,
    "pe_u": 20764.0,
    "pa": 492,
    "pa_u": 1476.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 30.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "San Jose City": {
    "pe": 120,
    "pe_u": 6198.0,
    "pa": 102,
    "pa_u": 630.0,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 6.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 187.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "San Mateo": {
    "pe": 180,
    "pe_u": 9420.0,
    "pa": 180,
    "pa_u": 540.0,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 6.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 175.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Santa Ana": {
-   "pe": 453,
-   "pe_u": 16477.0,
-   "pa": 448,
-   "pa_u": 2002.2,
+   "pe": 462,
+   "pe_u": 16664.0,
+   "pa": 457,
+   "pa_u": 2060.2,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 8.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 32.0,
+   "pac": 29,
+   "pac_u": 374.2,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Santa Barbara": {
    "pe": 86,
    "pe_u": 4016.0,
    "pa": 0,
    "pa_u": 0.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Santa Monica": {
    "pe": null,
    "pe_suppressed": true,
-   "pe_u": null,
-   "pe_u_suppressed": true,
+   "pe_u": 37.0,
    "pa": null,
    "pa_suppressed": true,
-   "pa_u": null,
-   "pa_u_suppressed": true,
-   "p2": 0,
-   "p3": 0,
-   "p3_u": 0.0,
+   "pa_u": 37.0,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 24.0,
+   "p2": null,
+   "p2_suppressed": true,
+   "p3": null,
+   "p3_suppressed": true,
+   "p3_u": 37.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 213.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Santa Rosa": {
-   "pe": 440,
-   "pe_u": 19050.0,
-   "pa": 440,
-   "pa_u": 1760.0,
+   "pe": 442,
+   "pe_u": 19207.0,
+   "pa": 442,
+   "pa_u": 1768.0,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 4.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 147.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Santiago Canyon": {
    "pe": 682,
    "pe_u": 29064.5,
    "pa": 680,
-   "pa_u": 15964.0,
+   "pa_u": 15958.0,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 7.0,
    "p2": 208,
    "p3": 262,
    "p3_u": 3378.5,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 31.0,
+   "pac": 265,
+   "pac_u": 3416.5,
+   "ptc": 262,
+   "ptc_u": 3378.5
   },
   "Sequoias": {
    "pe": 174,
    "pe_u": 8132.0,
    "pa": 174,
    "pa_u": 870.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Shasta": {
-   "pe": 179,
-   "pe_u": 7715.0,
-   "pa": 179,
-   "pa_u": 1089.0,
+   "pe": 186,
+   "pe_u": 7957.0,
+   "pa": 186,
+   "pa_u": 1131.0,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 6.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 24.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Sierra": {
    "pe": 331,
    "pe_u": 11461.0,
    "pa": 331,
    "pa_u": 1655.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Skyline": {
    "pe": 105,
    "pe_u": 3966.0,
    "pa": 105,
    "pa_u": 315.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Solano": {
-   "pe": 158,
-   "pe_u": 7634.0,
-   "pa": 158,
-   "pa_u": 1089.0,
+   "pe": 131,
+   "pe_u": 6374.0,
+   "pa": 131,
+   "pa_u": 914.0,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 12.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
-   "pp": 2,
-   "pp_u": 12.0
+   "pp": null,
+   "pp_suppressed": true,
+   "pp_u": 12.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 24.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Southwestern": {
-   "pe": 571,
-   "pe_u": 37156.0,
-   "pa": 552,
-   "pa_u": 2764.0,
+   "pe": 572,
+   "pe_u": 37161.0,
+   "pa": 553,
+   "pa_u": 2769.0,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 10.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 131.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Taft": {
    "pe": 12,
    "pe_u": 403.0,
    "pa": 0,
    "pa_u": 0.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Ventura": {
-   "pe": 183,
-   "pe_u": 10557.0,
-   "pa": 183,
-   "pa_u": 930.0,
+   "pe": 186,
+   "pe_u": 10735.0,
+   "pa": 186,
+   "pa_u": 945.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Victor Valley": {
    "pe": 336,
    "pe_u": 13366.0,
    "pa": 336,
    "pa_u": 1008.0,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 6.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 22.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "West Hills Coalinga": {
-   "pe": null,
-   "pe_suppressed": true,
-   "pe_u": null,
-   "pe_u_suppressed": true,
-   "pa": null,
-   "pa_suppressed": true,
-   "pa_u": null,
-   "pa_u_suppressed": true,
-   "p2": 0,
-   "p3": 0,
-   "p3_u": 0.0,
+   "pe": 52,
+   "pe_u": 410.0,
+   "pa": 52,
+   "pa_u": 357.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
+   "p2": 23,
+   "p3": 46,
+   "p3_u": 320.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": 46,
+   "pac_u": 320.0,
+   "ptc": 46,
+   "ptc_u": 320.0
   },
   "West Hills Lemoore": {
    "pe": 313,
    "pe_u": 2714.0,
    "pa": 306,
    "pa_u": 1053.0,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 21.0,
    "p2": 16,
    "p3": 47,
    "p3_u": 189.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 30.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "West LA": {
-   "pe": 741,
-   "pe_u": 14740.0,
-   "pa": 741,
-   "pa_u": 8663.0,
+   "pe": 752,
+   "pe_u": 14941.5,
+   "pa": 752,
+   "pa_u": 8816.0,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 35.0,
    "p2": 497,
    "p3": 563,
    "p3_u": 7446.5,
-   "pp": 1,
-   "pp_u": 3.0
+   "pp": null,
+   "pp_suppressed": true,
+   "pp_u": 3.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 239.0,
+   "pac": 568,
+   "pac_u": 7550.5,
+   "ptc": 562,
+   "ptc_u": 7437.0
   },
   "West Valley": {
    "pe": 55,
    "pe_u": 2020.0,
    "pa": 55,
    "pa_u": 330.0,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 6.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 204.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   },
   "Woodland": {
-   "pe": 8,
+   "pe": null,
+   "pe_suppressed": true,
    "pe_u": 222.0,
-   "pa": 8,
+   "pa": null,
+   "pa_suppressed": true,
    "pa_u": 17.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
-   "pp_u": 0.0
+   "pp_u": 0.0,
+   "ppe": 0,
+   "ppe_u": 0.0,
+   "pac": 0,
+   "pac_u": 0.0,
+   "ptc": 0,
+   "ptc_u": 0.0
   }
  },
- "unmatched": {
-  "Calbright College Credit": {
-   "pe": 117,
-   "pe_u": 417.0,
-   "pa": 0,
-   "pa_u": 0.0,
-   "p2": 0,
-   "p3": 0,
-   "p3_u": 0.0,
-   "pp": 0,
-   "pp_u": 0.0
-  },
-  "Launch Apprenticeship": {
-   "pe": null,
-   "pe_suppressed": true,
-   "pe_u": null,
-   "pe_u_suppressed": true,
-   "pa": 0,
-   "pa_u": 0.0,
-   "p2": 0,
-   "p3": 0,
-   "p3_u": 0.0,
-   "pp": 0,
-   "pp_u": 0.0
-  },
-  "North Orange Continuing Education Credit": {
-   "pe": null,
-   "pe_suppressed": true,
-   "pe_u": null,
-   "pe_u_suppressed": true,
-   "pa": 0,
-   "pa_u": 0.0,
-   "p2": 0,
-   "p3": 0,
-   "p3_u": 0.0,
-   "pp": 0,
-   "pp_u": 0.0
-  }
- },
+ "unmatched": {},
  "feeders": {
+  "Calbright": {
+   "pe": 117
+  },
   "NOCE": {
    "pe": null,
    "pe_suppressed": true
   },
   "SD Cont. Ed": {
-   "pe": 5
+   "pe": null,
+   "pe_suppressed": true
   }
  },
  "cpl_types": {
@@ -1268,8 +2218,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Allan Hancock": {
    "Military": {
-    "pe": 142,
-    "pa": 142,
+    "pe": 143,
+    "pa": 143,
     "p3": 0
    }
   },
@@ -1282,8 +2232,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Antelope Valley": {
    "Military": {
-    "pe": 278,
-    "pa": 278,
+    "pe": 280,
+    "pa": 280,
     "p3": 0
    }
   },
@@ -1295,15 +2245,15 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Industry Certification | Military": {
-    "pe": 9,
-    "pa": 9,
+    "pe": 11,
+    "pa": 11,
     "p3": null,
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 550,
-    "pa": 547,
-    "p3": 27
+    "pe": 562,
+    "pa": 558,
+    "p3": 29
    }
   },
   "Barstow": {
@@ -1322,15 +2272,16 @@ window.CPL_FUNDING_PERF = {
   },
   "Butte": {
    "Military": {
-    "pe": 9,
+    "pe": null,
+    "pe_suppressed": true,
     "pa": 0,
     "p3": 0
    }
   },
   "Cabrillo": {
    "Credit By Exam": {
-    "pe": 17,
-    "pa": 17,
+    "pe": 18,
+    "pa": 18,
     "p3": 15
    },
    "Credit By Exam | Industry Certification": {
@@ -1341,9 +2292,10 @@ window.CPL_FUNDING_PERF = {
     "p3": 0
    },
    "Industry Certification": {
-    "pe": 8,
-    "pa": 8,
-    "p3": 5
+    "pe": 10,
+    "pa": 10,
+    "p3": null,
+    "p3_suppressed": true
    },
    "Industry Certification | Military": {
     "pe": null,
@@ -1362,8 +2314,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 179,
-    "pa": 174,
+    "pe": 180,
+    "pa": 175,
     "p3": 18
    },
    "Portfolio Review": {
@@ -1384,8 +2336,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Canyons": {
    "Military": {
-    "pe": 512,
-    "pa": 512,
+    "pe": 519,
+    "pa": 519,
     "p3": 0
    }
   },
@@ -1398,23 +2350,30 @@ window.CPL_FUNDING_PERF = {
   },
   "Cerro Coso": {
    "Military": {
-    "pe": 175,
-    "pa": 171,
+    "pe": 181,
+    "pa": 177,
     "p3": 0
    }
   },
   "Chabot": {
    "Military": {
-    "pe": 15,
+    "pe": 46,
     "pa": 0,
     "p3": 0
    }
   },
   "Chaffey": {
+   "Credit By Exam": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": 0
+   },
    "Industry Certification": {
-    "pe": 21,
-    "pa": 19,
-    "p3": 18
+    "pe": 25,
+    "pa": 23,
+    "p3": 21
    },
    "Industry Certification | Military": {
     "pe": null,
@@ -1425,9 +2384,9 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 345,
-    "pa": 343,
-    "p3": 9
+    "pe": 343,
+    "pa": 341,
+    "p3": 17
    },
    "Other": {
     "pe": null,
@@ -1440,7 +2399,8 @@ window.CPL_FUNDING_PERF = {
    "Standardized Assessment": {
     "pe": 1148,
     "pa": 1148,
-    "p3": 6
+    "p3": null,
+    "p3_suppressed": true
    }
   },
   "Citrus": {
@@ -1452,22 +2412,22 @@ window.CPL_FUNDING_PERF = {
   },
   "Clovis": {
    "Military": {
-    "pe": 187,
-    "pa": 187,
+    "pe": 189,
+    "pa": 189,
     "p3": 0
    }
   },
   "Coastline": {
    "Military": {
-    "pe": 896,
-    "pa": 527,
+    "pe": 980,
+    "pa": 556,
     "p3": 0
    }
   },
   "Columbia": {
    "Military": {
-    "pe": 23,
-    "pa": 0,
+    "pe": 25,
+    "pa": 14,
     "p3": 0
    }
   },
@@ -1524,7 +2484,7 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 101,
+    "pe": 103,
     "pa": null,
     "pa_suppressed": true,
     "p3": 0
@@ -1613,22 +2573,22 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 380,
-    "pa": 380,
+    "pe": 402,
+    "pa": 402,
     "p3": 0
    }
   },
   "Diablo Valley": {
    "Military": {
-    "pe": 172,
-    "pa": 172,
+    "pe": 185,
+    "pa": 185,
     "p3": 0
    }
   },
   "East LA": {
    "Military": {
-    "pe": 235,
-    "pa": 234,
+    "pe": 234,
+    "pa": 233,
     "p3": 26
    }
   },
@@ -1656,15 +2616,15 @@ window.CPL_FUNDING_PERF = {
   },
   "Foothill": {
    "Military": {
-    "pe": 73,
-    "pa": 73,
+    "pe": 72,
+    "pa": 72,
     "p3": 0
    }
   },
   "Fresno City": {
    "Military": {
-    "pe": 577,
-    "pa": 577,
+    "pe": 722,
+    "pa": 722,
     "p3": 0
    }
   },
@@ -1685,8 +2645,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Glendale": {
    "Military": {
-    "pe": 223,
-    "pa": 223,
+    "pe": 226,
+    "pa": 226,
     "p3": 0
    }
   },
@@ -1699,8 +2659,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Hartnell": {
    "Military": {
-    "pe": 60,
-    "pa": 60,
+    "pe": 62,
+    "pa": 62,
     "p3": 0
    }
   },
@@ -1713,7 +2673,7 @@ window.CPL_FUNDING_PERF = {
    },
    "Military": {
     "pe": null,
-    "pa": 129,
+    "pa": 133,
     "p3": 0,
     "pe_suppressed": true
    }
@@ -1734,12 +2694,17 @@ window.CPL_FUNDING_PERF = {
   },
   "LA Harbor": {
    "Military": {
-    "pe": 135,
-    "pa": 135,
+    "pe": 140,
+    "pa": 140,
     "p3": 0
    }
   },
   "LA Mission": {
+   "Industry Certification": {
+    "pe": 14,
+    "pa": 14,
+    "p3": 0
+   },
    "Military": {
     "pe": 152,
     "pa": 152,
@@ -1748,9 +2713,9 @@ window.CPL_FUNDING_PERF = {
   },
   "LA Pierce": {
    "Credit By Exam": {
-    "pe": 209,
-    "pa": 209,
-    "p3": 208
+    "pe": 247,
+    "pa": 247,
+    "p3": 246
    },
    "Industry Certification": {
     "pe": null,
@@ -1771,8 +2736,8 @@ window.CPL_FUNDING_PERF = {
   },
   "LA Trade": {
    "Military": {
-    "pe": 414,
-    "pa": 414,
+    "pe": 407,
+    "pa": 407,
     "p3": 0
    }
   },
@@ -1792,8 +2757,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Laney": {
    "Military": {
-    "pe": 49,
-    "pa": 49,
+    "pe": 50,
+    "pa": 50,
     "p3": 0
    }
   },
@@ -1813,8 +2778,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Long Beach": {
    "Military": {
-    "pe": 808,
-    "pa": 808,
+    "pe": 809,
+    "pa": 809,
     "p3": 0
    }
   },
@@ -1836,15 +2801,17 @@ window.CPL_FUNDING_PERF = {
   },
   "Madera": {
    "Military": {
-    "pe": 43,
-    "pa": 43,
+    "pe": 49,
+    "pa": 49,
     "p3": 0
    }
   },
   "Mendocino": {
    "Military": {
-    "pe": 7,
-    "pa": 7,
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
     "p3": 0
    }
   },
@@ -1869,11 +2836,6 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Industry Certification": {
-    "pe": 8,
-    "pa": 7,
-    "p3": 7
-   },
-   "Industry Certification | Standardized Assessment": {
     "pe": null,
     "pe_suppressed": true,
     "pa": null,
@@ -1881,9 +2843,15 @@ window.CPL_FUNDING_PERF = {
     "p3": null,
     "p3_suppressed": true
    },
+   "Industry Certification | Standardized Assessment": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": 0,
+    "p3": 0
+   },
    "Military": {
-    "pe": 271,
-    "pa": 271,
+    "pe": 272,
+    "pa": 272,
     "p3": 233
    },
    "Military | Standardized Assessment": {
@@ -1909,8 +2877,8 @@ window.CPL_FUNDING_PERF = {
    },
    "Standardized Assessment": {
     "pe": 2985,
-    "pa": 2985,
-    "p3": 2985
+    "pa": 1631,
+    "p3": 1631
    }
   },
   "Merritt": {
@@ -1940,8 +2908,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Mission": {
    "Military": {
-    "pe": 146,
-    "pa": 146,
+    "pe": 167,
+    "pa": 167,
     "p3": null,
     "p3_suppressed": true
    }
@@ -1953,9 +2921,12 @@ window.CPL_FUNDING_PERF = {
     "p3": 66
    },
    "Credit By Exam | Industry Certification": {
-    "pe": 8,
-    "pa": 7,
-    "p3": 7
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": null,
+    "p3_suppressed": true
    },
    "Credit By Exam | Industry Certification | Other": {
     "pe": null,
@@ -2024,9 +2995,12 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Industry Certification | Portfolio Review": {
-    "pe": 8,
-    "pa": 8,
-    "p3": 8
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": null,
+    "p3_suppressed": true
    },
    "Industry Certification | Standardized Assessment": {
     "pe": null,
@@ -2037,9 +3011,10 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 140,
-    "pa": 140,
-    "p3": 5
+    "pe": 141,
+    "pa": 141,
+    "p3": null,
+    "p3_suppressed": true
    },
    "Portfolio Review": {
     "pe": 22,
@@ -2077,7 +3052,7 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 223,
+    "pe": 226,
     "pa": null,
     "pa_suppressed": true,
     "p3": 0
@@ -2098,9 +3073,9 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Industry Certification": {
-    "pe": 140,
-    "pa": 140,
-    "p3": 125
+    "pe": 141,
+    "pa": 141,
+    "p3": 130
    },
    "Industry Certification | Military": {
     "pe": 16,
@@ -2120,14 +3095,16 @@ window.CPL_FUNDING_PERF = {
     "pe_suppressed": true,
     "pa": null,
     "pa_suppressed": true,
-    "p3": 0
+    "p3": null,
+    "p3_suppressed": true
    },
    "Industry Certification | Portfolio Review": {
     "pe": null,
     "pe_suppressed": true,
     "pa": null,
     "pa_suppressed": true,
-    "p3": 0
+    "p3": null,
+    "p3_suppressed": true
    },
    "Industry Certification | Standardized Assessment": {
     "pe": null,
@@ -2138,14 +3115,14 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 978,
-    "pa": 978,
-    "p3": 881
+    "pe": 1013,
+    "pa": 1013,
+    "p3": 961
    },
    "Standardized Assessment": {
-    "pe": 222,
-    "pa": 222,
-    "p3": 221
+    "pe": 249,
+    "pa": 249,
+    "p3": 249
    }
   },
   "Mt San Antonio": {
@@ -2169,17 +3146,45 @@ window.CPL_FUNDING_PERF = {
     "pa": 0,
     "p3": 0
    },
-   "Military": {
+   "Industry Certification | Military": {
     "pe": null,
-    "pa": 532,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": 0
+   },
+   "Military": {
+    "pe": 535,
+    "pa": null,
     "p3": 0,
-    "pe_suppressed": true
+    "pa_suppressed": true
    }
   },
   "Napa": {
+   "Credit By Exam": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": 0
+   },
    "Military": {
     "pe": 49,
     "pa": 14,
+    "p3": 0
+   },
+   "Other": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": 0
+   },
+   "Portfolio Review": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
     "p3": 0
    }
   },
@@ -2213,8 +3218,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 523,
-    "pa": 523,
+    "pe": 544,
+    "pa": 544,
     "p3": 249
    },
    "Portfolio Review": {
@@ -2232,27 +3237,31 @@ window.CPL_FUNDING_PERF = {
   },
   "Oxnard": {
    "Military": {
-    "pe": 156,
-    "pa": 156,
+    "pe": 158,
+    "pa": 158,
     "p3": 0
    }
   },
   "Palo Verde": {
    "Industry Certification": {
-    "pe": 8,
-    "pa": 8,
-    "p3": 8
+    "pe": null,
+    "pa": null,
+    "p3": 11,
+    "pe_suppressed": true,
+    "pa_suppressed": true
    },
    "Military": {
-    "pe": 9,
-    "pa": 9,
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
     "p3": 0
    }
   },
   "Pasadena": {
    "Military": {
-    "pe": 130,
-    "pa": 130,
+    "pe": 139,
+    "pa": 139,
     "p3": 0
    }
   },
@@ -2286,11 +3295,20 @@ window.CPL_FUNDING_PERF = {
     "p3": 0
    },
    "Military": {
-    "pe": 125,
-    "pa": 107,
+    "pe": 128,
+    "pa": 109,
     "p3": 0
    },
    "Portfolio Review": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": 0
+   }
+  },
+  "Rio Hondo": {
+   "Military": {
     "pe": null,
     "pe_suppressed": true,
     "pa": null,
@@ -2316,14 +3334,14 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 812,
-    "pa": 798,
+    "pe": 879,
+    "pa": 865,
     "p3": 798
    }
   },
   "Sacramento City": {
    "Military": {
-    "pe": 63,
+    "pe": 75,
     "pa": 0,
     "p3": 0
    }
@@ -2350,8 +3368,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Industry Certification": {
-    "pe": 23,
-    "pa": 21,
+    "pe": 31,
+    "pa": 29,
     "p3": 13
    },
    "Industry Certification | Military": {
@@ -2362,8 +3380,10 @@ window.CPL_FUNDING_PERF = {
     "p3": 0
    },
    "Industry Certification | Portfolio Review": {
-    "pe": 5,
-    "pa": 5,
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
     "p3": null,
     "p3_suppressed": true
    },
@@ -2381,9 +3401,12 @@ window.CPL_FUNDING_PERF = {
     "p3": 0
    },
    "Portfolio Review": {
-    "pe": 6,
-    "pa": 5,
-    "p3": 5
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": null,
+    "p3_suppressed": true
    }
   },
   "San Diego City": {
@@ -2393,16 +3416,20 @@ window.CPL_FUNDING_PERF = {
     "p3": 2823
    },
    "Credit By Exam | Military": {
-    "pe": 8,
-    "pa": 8,
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
     "p3": null,
     "p3_suppressed": true
    },
    "Industry Certification": {
-    "pe": 6,
+    "pe": null,
+    "pe_suppressed": true,
     "pa": null,
-    "p3": 6,
-    "pa_suppressed": true
+    "pa_suppressed": true,
+    "p3": null,
+    "p3_suppressed": true
    },
    "Industry Certification | Military": {
     "pe": null,
@@ -2413,8 +3440,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 1453,
-    "pa": 1453,
+    "pe": 1499,
+    "pa": 1499,
     "p3": 0
    },
    "Standardized Assessment": {
@@ -2431,16 +3458,20 @@ window.CPL_FUNDING_PERF = {
     "p3": 3089
    },
    "Credit By Exam | Military": {
-    "pe": 6,
-    "pa": 6,
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
     "p3": null,
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 1576,
-    "pa": 1576,
+    "pe": null,
+    "pa": null,
     "p3": null,
-    "p3_suppressed": true
+    "p3_suppressed": true,
+    "pe_suppressed": true,
+    "pa_suppressed": true
    }
   },
   "San Diego Miramar": {
@@ -2471,8 +3502,8 @@ window.CPL_FUNDING_PERF = {
     "p3": 29
    },
    "Military": {
-    "pe": 1610,
-    "pa": 1610,
+    "pe": 1644,
+    "pa": 1644,
     "p3": 0
    }
   },
@@ -2482,11 +3513,14 @@ window.CPL_FUNDING_PERF = {
     "pe_suppressed": true,
     "pa": null,
     "pa_suppressed": true,
-    "p3": 0
+    "p3": null,
+    "p3_suppressed": true
    },
    "Industry Certification": {
-    "pe": 9,
-    "pa": 9,
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
     "p3": null,
     "p3_suppressed": true
    },
@@ -2495,13 +3529,13 @@ window.CPL_FUNDING_PERF = {
     "pe_suppressed": true,
     "pa": null,
     "pa_suppressed": true,
-    "p3": null,
-    "p3_suppressed": true
+    "p3": 0
    },
    "Military": {
-    "pe": 1313,
-    "pa": 1312,
-    "p3": 9
+    "pe": 1742,
+    "pa": 1741,
+    "p3": null,
+    "p3_suppressed": true
    },
    "Military | Standardized Assessment": {
     "pe": null,
@@ -2542,13 +3576,13 @@ window.CPL_FUNDING_PERF = {
   },
   "Santa Ana": {
    "Credit By Exam": {
-    "pe": 63,
-    "pa": 63,
+    "pe": 62,
+    "pa": 62,
     "p3": 0
    },
    "Industry Certification": {
-    "pe": 11,
-    "pa": 10,
+    "pe": 15,
+    "pa": 14,
     "p3": 0
    },
    "Industry Certification | Other": {
@@ -2565,8 +3599,8 @@ window.CPL_FUNDING_PERF = {
     "p3": 0
    },
    "Military": {
-    "pe": 371,
-    "pa": 371,
+    "pe": 377,
+    "pa": 377,
     "p3": 0
    },
    "Portfolio Review": {
@@ -2590,13 +3624,14 @@ window.CPL_FUNDING_PERF = {
     "pe_suppressed": true,
     "pa": null,
     "pa_suppressed": true,
-    "p3": 0
+    "p3": null,
+    "p3_suppressed": true
    }
   },
   "Santa Rosa": {
    "Military": {
-    "pe": 440,
-    "pa": 440,
+    "pe": 442,
+    "pa": 442,
     "p3": 0
    }
   },
@@ -2637,8 +3672,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Shasta": {
    "Military": {
-    "pe": 179,
-    "pa": 179,
+    "pe": 186,
+    "pa": 186,
     "p3": 0
    }
   },
@@ -2658,15 +3693,15 @@ window.CPL_FUNDING_PERF = {
   },
   "Solano": {
    "Military": {
-    "pe": 158,
-    "pa": 158,
+    "pe": 131,
+    "pa": 131,
     "p3": 0
    }
   },
   "Southwestern": {
    "Military": {
-    "pe": 552,
-    "pa": 552,
+    "pe": 553,
+    "pa": 553,
     "p3": 0
    }
   },
@@ -2679,8 +3714,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Ventura": {
    "Military": {
-    "pe": 183,
-    "pa": 183,
+    "pe": 186,
+    "pa": 186,
     "p3": 0
    }
   },
@@ -2698,6 +3733,13 @@ window.CPL_FUNDING_PERF = {
     "pa": null,
     "pa_suppressed": true,
     "p3": 0
+   },
+   "Standardized Assessment": {
+    "pe": null,
+    "pa": null,
+    "p3": 46,
+    "pe_suppressed": true,
+    "pa_suppressed": true
    }
   },
   "West Hills Lemoore": {
@@ -2740,8 +3782,8 @@ window.CPL_FUNDING_PERF = {
     "p3": 14
    },
    "Industry Certification": {
-    "pe": 556,
-    "pa": 556,
+    "pe": 566,
+    "pa": 566,
     "p3": 537
    },
    "Industry Certification | Military": {
@@ -2768,17 +3810,19 @@ window.CPL_FUNDING_PERF = {
   },
   "Woodland": {
    "Military": {
-    "pe": 8,
-    "pa": 8,
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
     "p3": 0
    }
   }
  },
  "cpl_types_statewide": {
   "Credit By Exam": {
-   "pe": 9484,
-   "pa": 9122,
-   "p3": 8687
+   "pe": 9524,
+   "pa": 9162,
+   "p3": 8726
   },
   "Credit By Exam | Industry Certification": {
    "pe": 44,
@@ -2822,8 +3866,10 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Credit By Exam | Portfolio Review": {
-   "pe": 5,
-   "pa": 5,
+   "pe": null,
+   "pe_suppressed": true,
+   "pa": null,
+   "pa_suppressed": true,
    "p3": null,
    "p3_suppressed": true
   },
@@ -2841,14 +3887,14 @@ window.CPL_FUNDING_PERF = {
    "p3": 14
   },
   "Industry Certification": {
-   "pe": 1255,
-   "pa": 1233,
-   "p3": 1144
+   "pe": 1301,
+   "pa": 1279,
+   "p3": 1160
   },
   "Industry Certification | Military": {
-   "pe": 46,
-   "pa": 45,
-   "p3": 28
+   "pe": 52,
+   "pa": 51,
+   "p3": 29
   },
   "Industry Certification | Military | Portfolio Review": {
    "pe": null,
@@ -2863,20 +3909,20 @@ window.CPL_FUNDING_PERF = {
    "pe_suppressed": true,
    "pa": null,
    "pa_suppressed": true,
-   "p3": null,
-   "p3_suppressed": true
+   "p3": 0
   },
   "Industry Certification | Other": {
    "pe": null,
    "pe_suppressed": true,
    "pa": null,
    "pa_suppressed": true,
-   "p3": 0
+   "p3": null,
+   "p3_suppressed": true
   },
   "Industry Certification | Portfolio Review": {
-   "pe": 25,
-   "pa": 23,
-   "p3": 17
+   "pe": 26,
+   "pa": 24,
+   "p3": 19
   },
   "Industry Certification | Standardized Assessment": {
    "pe": null,
@@ -2887,9 +3933,9 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 26867,
-   "pa": 24753,
-   "p3": 2471
+   "pe": 27950,
+   "pa": 25763,
+   "p3": 2557
   },
   "Military | Portfolio Review": {
    "pe": null,
@@ -2907,14 +3953,16 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Other": {
-   "pe": 6,
-   "pa": 5,
+   "pe": null,
+   "pe_suppressed": true,
+   "pa": null,
+   "pa_suppressed": true,
    "p3": null,
    "p3_suppressed": true
   },
   "Portfolio Review": {
-   "pe": 581,
-   "pa": 575,
+   "pe": 582,
+   "pa": 576,
    "p3": 115
   },
   "Portfolio Review | Standardized Assessment": {
@@ -2926,9 +3974,9 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Standardized Assessment": {
-   "pe": 4386,
-   "pa": 4384,
-   "p3": 3240
+   "pe": 4462,
+   "pa": 3107,
+   "p3": 1960
   }
  },
  "cpl_types_note": "Distinct-student counts per college per `CPL Type Description`, for the funnel rungs pe/pa/p3. COUNTS ONLY — no unit sums, because each source row carries the student's TOTAL credits rather than that type's portion, so a per-type unit sum would attribute the whole total to every type a student carries. A student holding two types counts once under each, so the types do NOT sum to the college's undifferentiated count. Batch Cx/AP/IB uploads arrive already-transcribed by construction (students already in the college SIS, surfaced in MAP), so read p3 by type before treating a transcribed figure as lifecycle work.",
@@ -2936,31 +3984,31 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1379413.95,
-   "pa_u": 223033.65,
-   "p3_u": 80337.95
+   "pe_u": 1430446.2,
+   "pa_u": 223452.4,
+   "p3_u": 73936.7
   },
   "map": {
-   "pe_u": 1386540.45,
-   "pa_u": 223695.15,
-   "p3_u": 80362.95
+   "pe_u": 1437113.7,
+   "pa_u": 224106.9,
+   "p3_u": 74000.2
   },
   "ratio": {
-   "pe_u": 1.0052,
-   "pa_u": 1.003,
-   "p3_u": 1.0003
+   "pe_u": 1.0047,
+   "pa_u": 1.0029,
+   "p3_u": 1.0009
   }
  },
  "vet_star": {
   "Santiago Canyon": false,
-  "Merced": true,
   "Chaffey": true,
   "San Diego Mesa": true,
   "San Diego City": true,
-  "Moreno Valley": true,
-  "San Diego Miramar": true,
-  "Bakersfield": true,
   "San Francisco": true,
+  "San Diego Miramar": true,
+  "Moreno Valley": true,
+  "Bakersfield": true,
+  "Merced": true,
   "West LA": true,
   "Norco College": false,
   "Long Beach": true,
@@ -2970,48 +4018,48 @@ window.CPL_FUNDING_PERF = {
   "Coastline": true,
   "Mt San Antonio": true,
   "Southwestern": true,
-  "San Bernardino": false,
+  "San Bernardino": true,
+  "Fresno City": true,
   "Desert": true,
-  "Cypress": true,
   "Modesto": true,
+  "Cypress": true,
   "Santa Ana": true,
   "Barstow": true,
   "LA Valley": true,
   "Santa Rosa": true,
   "Cabrillo": true,
-  "Fresno City": true,
   "Sierra": true,
   "Mt. San Jacinto": true,
   "Canyons": true,
   "San Joaquin Delta": true,
-  "LA Trade": true,
   "Glendale": true,
+  "LA Trade": true,
   "Clovis": true,
   "Antelope Valley": true,
-  "Solano": false,
   "Shasta": false,
+  "LA Pierce": false,
   "Fullerton": true,
   "Victor Valley": true,
-  "LA Pierce": false,
+  "Mission": true,
+  "Cerro Coso": true,
   "Ventura": false,
   "LA Mission": true,
-  "Mission": true,
+  "Solano": false,
   "Sequoias": false,
   "Citrus": true,
-  "Cerro Coso": true,
   "West Hills Lemoore": false,
   "East LA": false,
   "Evergreen Valley": true,
-  "San Jose City": true,
   "Oxnard": true,
+  "San Jose City": true,
   "Golden West": false,
   "Cerritos": true,
   "Allan Hancock": false,
-  "San Mateo": true,
   "Diablo Valley": true,
+  "San Mateo": true,
   "Reedley College": true,
-  "Lassen": true,
   "LA Harbor": true,
+  "Lassen": true,
   "Irvine": false,
   "Saddleback": false,
   "West Valley": true,
@@ -3020,27 +4068,29 @@ window.CPL_FUNDING_PERF = {
   "Foothill": false,
   "Copper Mountain": true,
   "Pasadena": false,
+  "West Hills Coalinga": false,
+  "Palo Verde": false,
   "Hartnell": false,
   "Crafton Hills": false,
-  "Palo Verde": false,
   "Porterville": false,
   "American River": false,
+  "Madera": true,
   "Las Positas": false,
+  "Los Medanos": true,
   "Compton": false,
   "Redwoods": false,
   "Berkeley City": false,
-  "Madera": true,
   "Canada": false,
-  "Los Medanos": true,
-  "Alameda": false,
   "Merritt": false,
+  "Alameda": false,
   "Cuesta": true,
   "Napa": true,
   "Santa Monica": false,
   "Mendocino": false,
+  "Columbia": true,
   "Woodland": false,
+  "Rio Hondo": false,
   "Moorpark": true,
-  "West Hills Coalinga": false,
   "Monterey": false,
   "MiraCosta": false,
   "LA City": false,
@@ -3049,26 +4099,24 @@ window.CPL_FUNDING_PERF = {
   "Cuyamaca": false,
   "Santa Barbara": true,
   "Gavilan": false,
-  "Columbia": false,
   "Chabot": false,
   "Taft": false,
   "Feather River": true,
   "Butte": false,
   "Imperial": false,
   "Contra Costa": false,
-  "Rio Hondo": false,
-  "Orange Coast": false,
-  "Yuba": false,
   "Grossmont": false,
+  "Marin": false,
+  "Yuba": false,
+  "Orange Coast": false,
+  "Siskiyous": false,
+  "Palomar": false,
   "Lake Tahoe": false,
   "LA Swest": false,
   "Cosumnes River": false,
-  "Folsom Lake": false,
-  "Palomar": false,
-  "Marin": false,
-  "Siskiyous": false
+  "Folsom Lake": false
  },
- "vet_star_as_of": "2026-08-26",
+ "vet_star_as_of": "2026-09-29",
  "vet_star_threshold": 0.75,
- "vet_star_n": 57
+ "vet_star_n": 59
 };

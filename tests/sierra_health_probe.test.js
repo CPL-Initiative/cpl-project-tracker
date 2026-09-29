@@ -58,10 +58,22 @@ const SHAPES = {
 // A synchronous test runner cannot await a Node http server, so the mock is a
 // short-lived python3 child — the same interpreter the script already needs for
 // its SSE parser, so this adds no new dependency.
+// ⚠ IT MUST ANSWER OPTIONS TOO (2026-09-17). The script now preflights before it
+// asks anything, because a browser does and curl does not — see the block in
+// chatbox/health_check.sh. The allow-list is the 4th argument so a shape can
+// reproduce a function deployed BEHIND its page, which is the failure this
+// addition was written for and which every other shape here would pass through.
 const MOCK_PY = `
 import sys, http.server
 BODY = sys.argv[1].encode(); CT = sys.argv[2]; PORT = int(sys.argv[3])
+ALLOW = sys.argv[4]
 class H(http.server.BaseHTTPRequestHandler):
+    def do_OPTIONS(self):
+        self.send_response(204)
+        self.send_header("Access-Control-Allow-Origin", self.headers.get("Origin", "*"))
+        self.send_header("Access-Control-Allow-Methods", "POST, OPTIONS")
+        self.send_header("Access-Control-Allow-Headers", ALLOW)
+        self.end_headers()
     def do_POST(self):
         self.send_response(200); self.send_header("Content-Type", CT)
         self.send_header("Content-Length", str(len(BODY))); self.end_headers(); self.wfile.write(BODY)
@@ -69,11 +81,17 @@ class H(http.server.BaseHTTPRequestHandler):
 http.server.HTTPServer(("127.0.0.1", PORT), H).serve_forever()
 `;
 
+// What the function allows TODAY (cpl-chat v66). A shape may override it.
+const ALLOW_CURRENT = "Content-Type, Authorization, x-client-info, apikey, x-team-pass";
+// What v65 allowed — deployed from 2026-09-11 to 2026-09-17 while the page was
+// already sending x-team-pass. This exact string is the outage.
+const ALLOW_V65 = "Content-Type, Authorization, x-client-info, apikey";
+
 function probe(shape, port) {
   const { spawn } = require("child_process");
   let mock = null;
   if (shape) {
-    mock = spawn("python3", ["-c", MOCK_PY, shape.body, shape.ct, String(port)], { stdio: "ignore" });
+    mock = spawn("python3", ["-c", MOCK_PY, shape.body, shape.ct, String(port), shape.allow || ALLOW_CURRENT], { stdio: "ignore" });
     // Give the listener a moment. spawnSync below blocks, so a plain busy-wait
     // is the only option available in a synchronous runner.
     const until = Date.now() + 1500;
@@ -110,6 +128,25 @@ block("1. probe behavior", () => {
     empty.code !== 0 && /STATUS: down/.test(empty.out),
     "a 200 with well-formed frames and no answer is still a failed visit");
 
+  // ⭐ THE PREFLIGHT CLASS (2026-09-17). Same healthy answer as `ok` above — the
+  // model is fine, the POST below succeeds, and this probe used to pass. What a
+  // BROWSER does with this deployment is refuse to send the request at all, so
+  // every reader holding x-team-pass got nothing for five days under a green
+  // tick. The liveness half cannot see it; only the preflight can.
+  const stale = probe(Object.assign({}, SHAPES.ok, { allow: ALLOW_V65 }), 8176);
+  check("(1) ⭐ a function deployed BEHIND its page reports DOWN, though it answers fine",
+    stale.code !== 0 && /STATUS: down/.test(stale.out),
+    "got exit " + stale.code + " / " + (stale.out.match(/STATUS: \w+/) || [""])[0]
+    + " — an allow-list missing a header the page sends is an outage for whoever holds it");
+  check("(1) ⚠ …and names the DEPLOY as the remedy, and the header",
+    /x-team-pass/.test(stale.out) && /cpl-chat-deploy\.yml/.test(stale.out),
+    "the fix is dispatching a deploy, not touching code or topping up an account — "
+    + "an alert that says only 'CORS' sends the reader to the wrong drawer");
+  check("(1) ⚠ …and scopes the blast radius rather than claiming every surface",
+    /SCOPE: .*team phrase/.test(stale.out) && !/SCOPE: Every Sierra surface/.test(stale.out),
+    "the public page and the Fact Sheet keep answering through this one; saying "
+    + "'every surface is down' would send someone looking for a total outage");
+
   const unreachable = probe(null, 8175);   // nothing listening
   check("(1) ⚠ an unreachable function reports DOWN, not 'inconclusive'",
     unreachable.code !== 0 && /STATUS: down/.test(unreachable.out),
@@ -120,8 +157,14 @@ block("1. probe behavior", () => {
 // ── 2. The script's own shape ────────────────────────────────────────────────
 block("2. script shape", () => {
   check("(2) it asks ONE question, not a battery",
-    (SH.match(/curl -sS/g) || []).length === 1,
-    "the whole point of this probe over cpl-chat-smoke.yml is one model call");
+    (SH.match(/-X POST/g) || []).length === 1,
+    "the whole point of this probe over cpl-chat-smoke.yml is one model call. "
+    + "⚠ Counted as POSTs, not curls: the preflight added 2026-09-17 is a second "
+    + "curl and costs nothing, and counting curls would price it like a question.");
+  check("(2) ⚠ the free check runs before the paid one",
+    SH.indexOf("-X OPTIONS") < SH.indexOf("-X POST"),
+    "a preflight failure means no browser reaches the model anyway; paying for a "
+    + "model call first buys nothing");
   check("(2) ⚠ it asserts nothing about the answer's content",
     !/El Camino|Norco|Barstow|answer_must_match/.test(SH),
     "a content grep here would make uptime go red on a rephrasing");

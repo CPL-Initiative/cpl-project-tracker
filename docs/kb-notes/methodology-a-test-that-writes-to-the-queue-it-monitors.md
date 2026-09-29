@@ -87,7 +87,7 @@ function isSmoke(f) { return (f && f.page) === "smoke"; }
 const rows = state.fSmoke ? all : all.filter((f) => !isSmoke(f));
 ```
 
-## The generalisable rule
+## The generalizable rule
 
 > **Any telemetry a test writes must be separable, by a field, from telemetry a human wrote — and the reading
 > surface must separate it by default.**
@@ -98,7 +98,7 @@ test is *right* to use the real path, and the burden therefore falls on the read
 
 The failure mode is quiet and slow, so name it explicitly when reviewing a new end-to-end test:
 
-- **Ask at write time:** does this test write anywhere a person reads? If yes, how is its row labelled?
+- **Ask at write time:** does this test write anywhere a person reads? If yes, how is its row labeled?
 - **Ask at read time:** does every count on this surface exclude synthetic rows, or only the list?
 - **Watch the ratio.** CI runs on a schedule; humans give feedback occasionally. Left alone, the synthetic
   share only ever goes **up**. 53% was reached in five weeks from a standing start.

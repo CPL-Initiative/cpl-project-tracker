@@ -122,7 +122,7 @@ the HTML. Reading memory before working paid for itself in one query.
 Her Top-10 guide scores **CPL Readiness Levels 1–3 from public website review**.
 Sessions are **egress-blocked from college domains**, so that method was
 unavailable. This sheet's readiness is **A–D derived from MAP itself** (exhibits +
-credit recommendations). Different instrument, different scale — labelled
+credit recommendations). Different instrument, different scale — labeled
 explicitly so the two are not read as the same number. A tier must encode what you
 could not check.
 

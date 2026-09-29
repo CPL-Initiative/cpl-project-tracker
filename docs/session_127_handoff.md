@@ -67,7 +67,7 @@ the Governance tab (CA-06). 4 marked addressed. What remains:
 - ⭐ **"How many colleges have a CPL Counselor or Coordinator listed?"** (07-23) — a *build*, not a bug. The data
   exists from SkyMail (`map_college_contacts`). Best value in the queue.
 - MJC showing 75 ECE credit recs vs 4 on its landing page (07-06) — count-source mismatch.
-- Fullerton catalogue read in one answer, not the next (07-06) — plausibly the non-determinism #1023 fixed;
+- Fullerton catalog read in one answer, not the next (07-06) — plausibly the non-determinism #1023 fixed;
   re-run the pair and close it if stable.
 - College of the Canyons articulations (07-02, employer, no note) — re-run and judge.
 - Student counts per certificate ×2 — known gap, ties to **Malone's view** → `fetch_custom_report.py`.

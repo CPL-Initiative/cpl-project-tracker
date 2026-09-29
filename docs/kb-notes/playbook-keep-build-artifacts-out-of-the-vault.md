@@ -104,7 +104,7 @@ sync script survived and auto-reverts if it did not.
   exists, and fails loudly if not. A sparse checkout that silently dropped the
   docs would be worse than no sparse checkout.
 
-## Verified behaviour
+## Verified behavior
 
 Measured on the real repo before shipping, not assumed:
 

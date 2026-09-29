@@ -2,7 +2,7 @@
 title: A one-rule class must be checked against its own text
 created: 2026-08-19
 updated: 2026-08-19
-tags: [methodology, worklist, cleanup, prioritisation, data-quality, ace, disposition]
+tags: [methodology, worklist, cleanup, prioritization, data-quality, ace, disposition]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
 related:

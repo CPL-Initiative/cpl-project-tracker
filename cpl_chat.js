@@ -259,7 +259,7 @@
   var hostSurface = null;
 
   // ── Chat transcript helpers ──
-  var logEl, inputEl, sendBtn, statusEl, audEl;
+  var logEl, inputEl, sendBtn, statusEl, audEl, viewerEl;
 
   // ── Audience (primary population) ──
   // Required before the first question (Sam, 2026-07-01): the visitor picks who
@@ -683,6 +683,8 @@
     if (document.getElementById('cplchat-aud-css')) return;
     var css = [
       '.cplchat-audience { display:flex; flex-wrap:wrap; align-items:center; gap:7px; margin:8px 0 2px; padding:8px 11px; background:var(--surface-subtle, #f2f6fb); border:1px solid var(--border, #d8dde6); border-radius:10px; }',
+      '.cplchat-viewer { margin:4px 0 0; font-size:.78rem; color:var(--text-muted, #5C5C55); }',
+      '.cplchat-viewer[hidden] { display:none; }',
       '.cplchat-aud-label { font-size:.82rem; font-weight:600; color:var(--text-muted, #5a6478); margin-right:2px; }',
       '.cplchat-aud-chip { border:1px solid var(--border-strong, #cdd6e3); background:var(--surface-opaque, #fff); color:var(--text-body, #1c2433); border-radius:999px; padding:6px 12px; font-size:.82rem; font-weight:600; cursor:pointer; }',
       '.cplchat-aud-chip:hover { border-color:var(--cobalt, #0047AB); }',
@@ -691,7 +693,7 @@
       // as provisional. Dashed + unfilled so it cannot be mistaken for `.on` at
       // a glance, and never the only signal — .cplchat-aud-note carries it in
       // words for anyone who does not see the difference.
-      '.cplchat-aud-chip.remembered { background:var(--surface-opaque, #fff); border:1px dashed var(--seal-blue, #002F6D); color:var(--seal-blue, #002F6D); }',
+      '.cplchat-aud-chip.remembered { background:var(--surface-opaque, #fff); border:1px dashed var(--seal-blue, #002F6D); color:var(--seal-blue-text,#002F6D); }',
       '.cplchat-aud-note { flex-basis:100%; font-size:.78rem; color:var(--text-muted, #5a6478); }',
       '.cplchat-audience.need { outline:2px solid var(--crimson, #920000); }',
       // Waiting on a tap is not an error, so it is cobalt, not crimson.
@@ -726,7 +728,7 @@
       '.cplchat-fb-note { display:flex; flex:1 1 100%; gap:6px; margin-top:4px; }',
       '.cplchat-fb-note[hidden] { display:none; }',
       '.cplchat-fb-note input { flex:1; border:1px solid var(--border-strong, #cdd6e3); border-radius:8px; padding:6px 10px; font-size:.82rem; background:var(--surface-opaque, #fff); color:var(--text-body, #1c2433); }',
-      '.cplchat-fb-note button { border:none; border-radius:8px; padding:6px 12px; cursor:pointer; background:var(--cobalt, #0047AB); color:#fff; font-size:.8rem; font-weight:600; }',
+      '.cplchat-fb-note button { border:none; border-radius:8px; padding:6px 12px; cursor:pointer; background:var(--cobalt, #0047AB); color:var(--on-accent); font-size:.8rem; font-weight:600; }',
       '.cplchat-fb-note button:disabled { opacity:.6; cursor:default; }',
       '.cplchat-fb-done { color:var(--text-muted, #5a6478); font-weight:600; }',
       '.cplchat-fb-sending { color:var(--text-faint, #8a94a6); font-weight:600; }',
@@ -892,6 +894,49 @@
     statusEl.className = 'cplchat-status' + (kind ? ' cplchat-' + kind : '');
   }
 
+  /* The credential this COBI reader holds, sent so the FUNCTION can decide who
+   * is asking (v66, 2026-09-12). The magic-link session's JWT replaces the anon
+   * bearer when one is held; the shared team phrase rides in x-team-pass — the
+   * same two shapes every gated tab already sends to PostgREST
+   * (college_briefing.js authHeaders()). ⚠ THE PAGE NEVER DECLARES A VIEWER —
+   * no body field, no header of our own. It carries the credential, and the
+   * function asks the database what that credential is worth; that is what
+   * keeps "I am internal" from being a claim any caller can make. The public
+   * Sierra page holds no credential and is untouched: it keeps the anon key. */
+  function credentialHeaders() {
+    var h = { 'Content-Type': 'application/json', 'apikey': SUPABASE_ANON, 'Authorization': 'Bearer ' + SUPABASE_ANON };
+    var sess = null;
+    try {
+      var K = window.CPL_SESSION;
+      sess = (K && typeof K.get === 'function') ? K.get() : null;
+    } catch (e) { sess = null; }
+    var tok = sess && sess.access_token;
+    if (typeof tok === 'string' && tok.split('.').length === 3 && tok.length > 40) h['Authorization'] = 'Bearer ' + tok;
+    try {
+      var P = window.CPL_TEAM_PHRASE;
+      if (P && typeof P.decorateHeaders === 'function') P.decorateHeaders(h, sess);
+    } catch (e) { /* helper absent — the bearer above stands */ }
+    return h;
+  }
+
+  // ── Who the FUNCTION took us to be (v66) ──
+  // The masthead's "Signed in" reports what the BROWSER holds; this line reports
+  // what the function concluded from the credential it was sent — the check no
+  // page can make for itself, and the reason the flag is derived server-side.
+  // Words only, and nothing at all for a public reader: the line's default
+  // state is empty and hidden, which is the plain-words rule's default too.
+  var VIEWER_WORDS = {
+    reviewer: 'Recognized by the assistant as a signed-in reviewer.',
+    team: 'Recognized by the assistant as CPL team.'
+  };
+  function noteViewer(meta) {
+    if (!viewerEl) return;
+    var kind = meta && typeof meta.viewer === 'string' ? meta.viewer : 'public';
+    var words = Object.prototype.hasOwnProperty.call(VIEWER_WORDS, kind) ? VIEWER_WORDS[kind] : '';
+    viewerEl.textContent = words;
+    viewerEl.hidden = !words;
+  }
+
   // ── Call the Edge Function + stream the SSE response ──
   async function ask(query) {
     var msg = addAssistantMsg();
@@ -903,11 +948,7 @@
     try {
       resp = await fetch(CHAT_URL, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'apikey': SUPABASE_ANON,
-          'Authorization': 'Bearer ' + SUPABASE_ANON,
-        },
+        headers: credentialHeaders(),
         // Send the PRIOR turns; the function appends this query as the final
         // user turn. The empty [] on turn 1 still opts us into multi-turn mode.
         // `scope` names the institution whose page this is, so the function
@@ -964,6 +1005,9 @@
                 scrollDown();
               }
             } catch (e) { /* skip malformed delta */ }
+          } else if (evt.event === 'meta') {
+            // Who the FUNCTION took us to be — see noteViewer().
+            try { noteViewer(JSON.parse(evt.data)); } catch (e) { /* skip malformed meta */ }
           } else if (evt.event === 'done') {
             // stream complete
           }
@@ -1126,6 +1170,11 @@
 
     statusEl = el('div', { className: 'cplchat-status', id: 'cplchat-status', 'aria-live': 'polite' });
     wrap.appendChild(statusEl);
+    // The recognition line (v66) — empty and hidden until a turn's `meta` frame
+    // says the function recognized a sign-in. See noteViewer().
+    viewerEl = el('p', { className: 'cplchat-viewer' });
+    viewerEl.hidden = true;
+    wrap.appendChild(viewerEl);
 
     var row = el('div', { className: 'cplchat-inputrow' });
     inputEl = el('input', {
@@ -1191,11 +1240,45 @@
     return (mc && mc.querySelector('#cplchat-input, .cplchat-input')) || null;
   }
 
-  function consumeTestQuestion() {
+  // ── Where a hand-off is addressed (Sierra Training "Try it in", round 1,
+  // Sam's approval 2026-09-28) ──────────────────────────────────────────────
+  // The question stays a plain string under TEST_Q_KEY; college_briefing.js and
+  // the tests write it that way. A SECOND key names the destination, and only
+  // "Try it in: My College" writes one. ABSENT means the default, which behaves
+  // exactly as it did before this key existed: the CPL Assistant pane, or My
+  // College when that tab is suppressed.
+  //
+  // ⚠ The destination cannot be read off the activated tab. chatbotInputEl()
+  // picks the pane by SUPPRESSION, so a My College hand-off consumed on
+  // activation would type the question into the HIDDEN CPL Assistant input and
+  // burn the key. And My College builds its box lazily — after data loads, inside a
+  // collapsible section — so its hand-off is delivered from mountInto(), the
+  // moment that box exists, and never on activation.
+  var TEST_DEST_KEY = 'cplSierraTestDest.v1';
+  var DEST_MY_COLLEGE = 'college-briefing';
+  function testDest() {
+    try { return sessionStorage.getItem(TEST_DEST_KEY) || ''; } catch (e) { return ''; }
+  }
+  // My College's own input, and only inside the host a mount just built.
+  function myCollegeInputEl(host) {
+    var pane = document.getElementById('tab-' + DEST_MY_COLLEGE);
+    if (!host || !pane || !pane.contains(host)) return null;
+    return host.querySelector('#cplchat-input, .cplchat-input');
+  }
+  // My College's Sierra is a collapsible section, and Collapse all closes her.
+  // A question typed into a closed section is a question nobody can see.
+  function openSectionsAround(el) {
+    for (var n = el && el.parentNode; n && n.nodeType === 1; n = n.parentNode) {
+      if (n.tagName === 'DETAILS' && !n.open) n.open = true;
+    }
+  }
+
+  function consumeTestQuestion(host) {
     var q = null;
     try { q = sessionStorage.getItem(TEST_Q_KEY); } catch (e) { return; }
     if (!q) return;
-    var el = chatbotInputEl() || inputEl;
+    var toMyCollege = testDest() === DEST_MY_COLLEGE;
+    var el = toMyCollege ? myCollegeInputEl(host) : (chatbotInputEl() || inputEl);
     // KEY IS NOT REMOVED ON FAILURE. It used to be deleted before the input was
     // known to exist, so an activation that fired before the widget was built
     // consumed the question and dropped it — and because the key was gone, the
@@ -1203,7 +1286,11 @@
     // handoff now survives until it is actually delivered.
     if (!el) return;
     el.value = q.slice(0, 1000);
-    try { sessionStorage.removeItem(TEST_Q_KEY); } catch (e) { /* storage unavailable */ }
+    try {
+      sessionStorage.removeItem(TEST_Q_KEY);
+      sessionStorage.removeItem(TEST_DEST_KEY);
+    } catch (e) { /* storage unavailable */ }
+    if (toMyCollege) openSectionsAround(el);
     try { el.focus(); } catch (e) { /* hidden pane */ }
   }
   window.addEventListener('cpl-tab-activated', function (e) {
@@ -1250,6 +1337,15 @@
   var _host = null;
   function mountInto(host, surface) {
     if (!host || host === _host) return;
+    /* ⚠ CARRY UNSENT TYPING ACROSS A RE-MOUNT. The embedding tab re-renders for
+     * reasons that are not the reader's — My College repaints when its roster,
+     * the live metrics or the funding model arrive — and every repaint hands
+     * this a NEW host, which build() fills with a new, EMPTY input. A question
+     * half-typed there, or handed over from Sierra Training, would vanish a
+     * second later.
+     * Only the previous mount's own input is carried: if the CPL Assistant pane
+     * built last, `inputEl` is that pane's and stays where it is. */
+    var carried = (_host && inputEl && _host.contains(inputEl)) ? inputEl.value : '';
     _host = host;
     /* The embedding tab declares which surface it is. Absent -> null -> every
      * guidance rule, i.e. exactly today's behavior, so an older host that has
@@ -1258,6 +1354,10 @@
     host.innerHTML = '';
     host.setAttribute('data-cplchat-mounted', '1');
     build(host);
+    if (carried && inputEl && !inputEl.value) inputEl.value = carried;
+    // A Sierra Training hand-off addressed to My College lands in the box this
+    // mount just built. The default hand-off is still never consumed here.
+    if (testDest() === DEST_MY_COLLEGE) consumeTestQuestion(host);
   }
 
   if (document.readyState === 'loading') {
@@ -1271,8 +1371,9 @@
   window.CPL_CHAT = {
     AUDIENCES: AUDIENCES, AUD_KEY: AUD_KEY, AUD_OK_KEY: AUD_OK_KEY,
     feedbackPayload: feedbackPayload,
+    credentialHeaders: credentialHeaders, noteViewer: noteViewer, VIEWER_WORDS: VIEWER_WORDS,
     escapeHtml: escapeHtml, inlineMd: inlineMd, renderMarkdown: renderMarkdown,
-    SIERRA_MARK: SIERRA_MARK, TEST_Q_KEY: TEST_Q_KEY,
+    SIERRA_MARK: SIERRA_MARK, TEST_Q_KEY: TEST_Q_KEY, TEST_DEST_KEY: TEST_DEST_KEY,
     consumeTestQuestion: consumeTestQuestion,
     // The growing-log follow (tests/my_college_refinement.test.js). jsdom has no
     // layout, so the only way to exercise the below-the-fold branch is to stub

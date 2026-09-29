@@ -195,7 +195,7 @@
     var TP = tp();
     if (TP && TP.unlockRow) {
       authBar.appendChild(TP.unlockRow({
-        label: "🔓 Unlock", placeholder: "team phrase…",
+        label: "Unlock", placeholder: "team phrase…",
         blurb: "MAP Data Quality register — unlock to view + curate",
         onUnlocked: function (s) { sess = s; writeErrMsg = null; refresh(); },
       }));
@@ -372,13 +372,13 @@
   function doExport(btn) {
     var text = buildExportText();
     var restore = function () { setTimeout(function () { btn.textContent = "⧉ Copy for MAP devs"; }, 1600); };
-    var ok = function () { btn.textContent = "Copied ✓"; restore(); };
+    var ok = function () { btn.textContent = "Copied"; restore(); };
     var fail = function () {
       try {
         var ta = document.createElement("textarea"); ta.value = text; ta.style.position = "absolute"; ta.style.left = "-9999px";
         (document.body || document.documentElement).appendChild(ta); ta.select();
         var done = document.execCommand && document.execCommand("copy"); if (ta.parentNode) ta.parentNode.removeChild(ta);
-        btn.textContent = done ? "Copied ✓" : "Copy unavailable"; restore();
+        btn.textContent = done ? "Copied" : "Copy unavailable"; restore();
       } catch (e) { btn.textContent = "Copy unavailable"; restore(); }
     };
     try {
@@ -423,7 +423,7 @@
       ".cpl-mdq .mdq-metaactions{display:flex;gap:8px;flex-wrap:wrap;}",
       ".cpl-mdq .mdq-btn{font:inherit;font-size:.8rem;font-weight:600;cursor:pointer;padding:6px 12px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface-muted);color:var(--text-strong);white-space:nowrap;}",
       ".cpl-mdq .mdq-btn:hover{background:var(--surface-subtle);color:var(--accent-link);border-color:var(--accent-link);}",
-      ".cpl-mdq .mdq-btn-primary{background:var(--accent-link);color:#fff;border-color:var(--accent-link);}",
+      ".cpl-mdq .mdq-btn-primary{background:var(--accent-link);color:var(--on-accent);border-color:var(--accent-link);}",
       ".cpl-mdq .mdq-btn-sm{font-size:.74rem;padding:4px 9px;}",
       ".cpl-mdq .mdq-list{display:flex;flex-direction:column;gap:10px;margin-top:6px;}",
       ".cpl-mdq .mdq-card{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--sev-medium);border-radius:11px;padding:12px 14px;}",

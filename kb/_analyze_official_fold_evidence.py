@@ -34,47 +34,13 @@ from collections import defaultdict
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# APPLY-CONFIRMED re-mints only, in chronological order. Must stay in lockstep
-# with kb/_rekey_promotions.py ALIAS_MAPS (see its module docstring for the
-# resolution semantics and why kb/overmerge_out/2026-05-29/alias_map.json — a
-# STAGED, never-dispatched plan — is excluded).
-ALIAS_MAPS = [
-    "kb/subj4_apply/alias_map.json",
-    "kb/crossdisc_out/alias_map.json",
-    "kb/fl_subj4_out/2026-06-09/alias_map.json",
-    "kb/kin_pe_out/2026-06-10/alias_map.json",
-    "kb/drama_theater_out/2026-06-10/alias_map.json",
-    "kb/convergence_singletons_out/2026-06-10/alias_map.json",
-    "kb/twin_merge_out/2026-06-10/alias_map.json",
-]
+# The chain, the loader and the hop semantics come from kb/alias_chain.py — the
+# ONE declaration (Sam's ruling 8, 2026-09-05). This file used to carry its own
+# copy under a comment promising lockstep, and drifted eight applies behind it.
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from alias_chain import ALIAS_MAPS, load, load_alias, resolve_id  # noqa: E402
 
-
-def _load(rel):
-    with open(os.path.join(ROOT, rel), encoding="utf-8") as f:
-        return json.load(f)
-
-
-def load_alias(rel):
-    """Every receipt wraps its map differently (alias / aliases / alias_map)."""
-    m = _load(rel)
-    for k in ("alias", "aliases", "alias_map"):
-        if isinstance(m, dict) and k in m:
-            return m[k]
-    return m
-
-
-def _step(v):
-    """One alias-map hop: flat string, {new_id}, or an over-merge split
-    (follow the plurality split — the identity-continuity branch)."""
-    if isinstance(v, str):
-        return v
-    if isinstance(v, dict):
-        if v.get("new_id"):
-            return v["new_id"]
-        if v.get("splits"):
-            pl = [s for s in v["splits"] if s.get("is_plurality")]
-            return (pl or v["splits"])[0]["new_id"]
-    return None
+_load = load
 
 
 def main():
@@ -89,17 +55,7 @@ def main():
               f"resolving through {len(pending)} pending")
 
     def resolve(old):
-        # Chronological single-step: each map applied AT MOST ONCE, in order.
-        # An alias map is a simultaneous permutation — iterating it follows
-        # slot-occupancy chains across unrelated rows (the Session-42
-        # telescoping defect). Lockstep with kb/_rekey_promotions.py.
-        cur = old
-        for m in maps:
-            if cur in m:
-                nxt = _step(m[cur])
-                if nxt and nxt != cur:
-                    cur = nxt
-        return cur
+        return resolve_id(old, maps)
 
     promotions = promo_doc["promotions"]
     courses = _load("kb/coci_minted_courses.json")["courses"]

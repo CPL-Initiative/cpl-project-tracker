@@ -53,10 +53,14 @@ print(f"wrote {os.path.relpath(out, os.path.dirname(HERE))}  ({len(html)/1024:.0
 # page is small enough to commit and therefore reachable on the deployed site.
 # The built page above is 9.9 MB and gitignored; a button in COBI cannot link to
 # something that is not deployed, which is the whole reason this second output
-# exists. It opens straight on the graph, because that is what "SkyView" names.
+# exists. It opens straight on the graph, alone in the window, because that is
+# what "SkyView" names (Sam, 2026-09-05); the hash can pick another view.
 loader = """
 <script>
 (function(){
+  // Tells the template's boot() to wait: the payloads are on their way and the
+  // view is routed below once they land, so nothing paints twice.
+  window.CPL_SKYVIEW_LOADING=true;
   var V=document.getElementById("view");
   function say(h){ if(V) V.innerHTML=h; }
   say('<p style="padding:2em 0;color:var(--text-muted)">Loading the reference \u2014 '+
@@ -67,7 +71,10 @@ loader = """
     .then(function(a){
       window.CPL_CCR_UNIVERSE=a[0];
       window.CPL_CCR_UNIVERSE_MEMBERS=a[1];
-      window.__ccrUniverse();
+      window.CPL_SKYVIEW_LOADING=false;
+      // The hash picks the view (#skyview is the default and the map alone);
+      // a page built before routing existed opened straight on the graph.
+      if(window.__ccrRoute) window.__ccrRoute(); else window.__ccrUniverse();
     })
     .catch(function(e){
       // Never a blank canvas: a graph that fails to load and a corpus with nothing

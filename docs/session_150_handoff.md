@@ -74,7 +74,7 @@ renderer verified clean, and the loss was between them.
    saying *"showing 9 of 261"*. A cap the consumer cannot see becomes a census.
 3. **Don't pin prompt wording in a test.** Two assertions have now had to be
    rewritten in two sessions because they pinned a sentence rather than the
-   guarantee. Guard the behaviour.
+   guarantee. Guard the behavior.
 4. **`adoption_leverage` ≠ this question.** It means "teaches the same course
    IDENTITY". Cerritos is still absent from welding adoption there, correctly.
 5. **`tests/cpl_funding.test.js` hangs** (pre-existing) so `node tests/run.js`
@@ -85,7 +85,7 @@ renderer verified clean, and the loss was between them.
 
 - **The CR Reference itself** — scope it against the CCR's *actual* matching
   factors before building. Numbers to start from: 2,344 distinct `credit_rec`
-  strings, only ~7% collapse under mechanical normalisation (so: curation, not
+  strings, only ~7% collapse under mechanical normalization (so: curation, not
   string-cleaning); 402 carry a C-ID → 175 distinct C-IDs; `AJ 110` alone has
   **10 wordings**; the curated spine is 351 statewide lines / 134 credentials.
 - 12 adoption-file statewide titles absent from `chatbox_credentials`.
@@ -107,7 +107,7 @@ renderer verified clean, and the loss was between them.
   `AUTO 160` row settled a design argument that no reasoning about thresholds
   would have settled.
 - **Report a fix as narrower than it is only if it IS narrower.** The ironworker
-  fix looked Cerritos-shaped; measuring showed 90% / 30% of the catalogue.
+  fix looked Cerritos-shaped; measuring showed 90% / 30% of the catalog.
 
 ## Safety patterns to honour
 

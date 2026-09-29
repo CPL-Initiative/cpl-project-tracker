@@ -117,7 +117,7 @@ plainly he does not want to lose control of how, when and what is fetched.
 
 **Recommendation: decline the mechanism, accept the help.** `fetch_custom_report.py`
 already pulls **eight** datasets from the MAP API on the cron; three more is three
-entries in `REQUEST_PAYLOAD`. ⭐ **The decisive argument is data minimisation, not
+entries in `REQUEST_PAYLOAD`. ⭐ **The decisive argument is data minimization, not
 risk:** `REQUEST_PAYLOAD` names every dataset *and every column*, and Session 34
 used that to drop `View_CollegeContacts` and `View_CollegeUsersRoles` entirely so
 staff PII **never lands on the Action runner**. That posture is implemented as the

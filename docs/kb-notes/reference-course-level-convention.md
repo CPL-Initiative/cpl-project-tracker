@@ -1,9 +1,8 @@
 ---
 title: Common-Course level convention (Beg/Int/Adv)
-date: 2026-06-25
+created: 2026-06-25
 kb-status: published
-kb-type: reference
-tags: [ccr, levels, course-identity, cpl, title-5, convention, curation]
+tags: [reference, ccr, levels, course-identity, cpl, title-5, convention, curation]
 obsidian-folder: cpl-project-tracker/kb-notes
 artifacts:
   - unified_courses.js   # courseBands() + the Beg/Int/Adv band filter/chip

@@ -58,6 +58,11 @@
     // overlay and mutated locally; nothing reaches the database until Save, so
     // a mis-drag costs a click on Discard rather than everyone's menu.
     draft: null,         // {containers:[{id,label,isTop,hidden,tabs:[…]}]}
+    // ── Blast Radius (Sam's Open Verdicts item 19, 2026-08-30: "blast away") ──
+    // The impact map's viewer state. The map itself is FETCHED live from
+    // kb/dependency_map.json, never carried — a carried copy would be the
+    // stale list this tab exists to refuse.
+    blast: { load: "idle", map: null, q: "", kind: "all", sel: null },
     dirty: false,
     saving: false,
     saveMsg: null,
@@ -744,8 +749,26 @@
       ".adm h2 { color: var(--navy-primary); margin: 16px 0 4px; }",
       ".adm h3 { color: var(--navy-primary); margin: 22px 0 8px; font-size: 1.02rem; }",
       ".adm-intro { color: var(--text-muted); max-width: 900px; margin: 0 0 12px; font-size: .92rem; }",
-      ".adm-chip { display:inline-block; margin-left:8px; background: var(--mustard-fill, #f2dca0); color: var(--text-strong, #4a3a00); font-size:.62rem; font-weight:700; letter-spacing:.08em; padding:2px 8px; border-radius:10px; text-transform:uppercase; vertical-align:middle; }",
-      ".adm-warn { font-size:.85rem; color: var(--text-body); background: var(--mustard-fill, #f2dca0); border-radius:8px; padding:10px 13px; max-width:900px; margin:0 0 14px; }",
+      // ── the live-session banner control (DR-26) ──
+      ".adm-live { border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px;",
+      "margin: 22px 0; background: var(--surface-subtle, #F7F5F1); max-width: 720px; }",
+      ".adm-live h3 { margin-top: 0; }",
+      ".adm-live-note { color: var(--text-muted); font-size: .88rem; margin: 4px 0 10px; }",
+      ".adm-live-state { margin: 0 0 12px; font-size: .92rem; }",
+      ".adm-live-lbl { display: block; font-size: .82rem; font-weight: 700;",
+      "color: var(--text-strong, #1C1C1A); margin: 10px 0 3px; }",
+      ".adm-live-url { width: 100%; max-width: 520px; padding: 6px 9px; font: inherit;",
+      "font-size: .9rem; border: 1px solid var(--border-strong, rgba(28,28,26,.30)); border-radius: 5px; }",
+      ".adm-live-hours { padding: 6px 9px; font: inherit; font-size: .9rem;",
+      "border: 1px solid var(--border-strong, rgba(28,28,26,.30)); border-radius: 5px; }",
+      ".adm-live-btns { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }",
+      ".adm-live-auto { display: flex; align-items: center; gap: 8px; margin: 14px 0 4px; font-size: .92rem; cursor: pointer; }",
+      ".adm-live-auto input { width: 16px; height: 16px; cursor: pointer; }",
+      ".adm-live-autonote { margin: 0 0 2px 24px; }",
+      ".adm-live-msg { margin: 10px 0 0; font-size: .88rem; color: var(--text-body); min-height: 1.2em; }",
+      "@media (max-width: 560px) { .adm-live-url { max-width: 100%; } }",
+      ".adm-chip { display:inline-block; margin-left:8px; background: var(--mustard-fill, #f2dca0); color: var(--on-mustard); font-size:.62rem; font-weight:700; letter-spacing:.08em; padding:2px 8px; border-radius:10px; text-transform:uppercase; vertical-align:middle; }",
+      ".adm-warn { font-size:.85rem; color: var(--on-mustard); background: var(--mustard-fill, #f2dca0); border-radius:8px; padding:10px 13px; max-width:900px; margin:0 0 14px; }",
       ".adm-empty { border:1px dashed var(--border-strong); border-radius:8px; background: var(--surface-subtle); color: var(--text-muted); padding:26px; text-align:center; }",
       // The shared reviewer sign-in mounts here. Left-aligned and narrowed so
       // the form reads as a form inside the centred explanatory block.
@@ -758,6 +781,39 @@
       ".adm-input { padding:6px 10px; border:1px solid var(--border-strong); border-radius:6px; font-size:.82rem; background: var(--surface-opaque); color: var(--text-body); min-width:220px; }",
       ".adm-check { font-size:.82rem; color: var(--text-body); display:flex; align-items:center; gap:5px; }",
       ".adm-count { font-size:.8rem; color: var(--text-muted); margin-left:auto; }",
+      // ── Blast Radius (item 19) — the impact-map pane ──
+      ".adm-blast-bar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:0 0 10px; }",
+      ".adm-blast-kinds { display:flex; flex-wrap:wrap; gap:5px; }",
+      ".adm-blast-kind { border:1px solid var(--border-strong); background: var(--surface-opaque); color: var(--text-body); border-radius:10px; padding:3px 10px; font-size:.76rem; font-weight:600; cursor:pointer; }",
+      ".adm-blast-kind[aria-pressed=\"true\"] { background: var(--navy-primary); border-color: var(--navy-primary); color: var(--on-accent); }",
+      ".adm-blast-panes { display:grid; grid-template-columns:minmax(230px,300px) 1fr; gap:12px; align-items:start; }",
+      "@media (max-width:700px) { .adm-blast-panes { grid-template-columns:1fr; } }",
+      ".adm-blast-list { background: var(--surface-opaque); border:1px solid var(--border); border-radius:10px; max-height:60vh; overflow-y:auto; padding:4px; }",
+      ".adm-blast-grp { font-size:.68rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color: var(--text-muted); padding:8px 8px 3px; }",
+      ".adm-blast-ds { display:flex; width:100%; justify-content:space-between; align-items:baseline; gap:8px; border:0; background:none; text-align:left; padding:5px 8px; font:inherit; font-size:.85rem; color: var(--text-body); border-radius:7px; cursor:pointer; }",
+      ".adm-blast-ds:hover { background: var(--surface-subtle); }",
+      ".adm-blast-ds[aria-pressed=\"true\"] { background: var(--surface-muted); color: var(--text-strong); font-weight:600; }",
+      ".adm-blast-ds .n { overflow-wrap:anywhere; }",
+      ".adm-blast-ds .c { color: var(--text-muted); font-size:.72rem; font-variant-numeric:tabular-nums; flex:none; }",
+      ".adm-blast-card { background: var(--surface-opaque); border:1px solid var(--border); border-radius:10px; padding:14px 16px 16px; }",
+      ".adm-blast-chips { display:flex; flex-wrap:wrap; gap:5px; margin:0 0 6px; }",
+      ".adm-blast-chip { border-radius:10px; font-size:.68rem; font-weight:600; padding:2px 8px; background: var(--surface-muted); color: var(--text-body); border:1px solid var(--border); }",
+      ".adm-blast-chip.public { color: var(--green-progress, #2C601A); }",
+      ".adm-blast-name { color: var(--navy-primary); font-size:1.15rem; margin:0 0 4px; overflow-wrap:anywhere; }",
+      ".adm-blast-sum { margin:0 0 10px; font-size:.9rem; }",
+      // Red is an act-on state and stays muted: a border and a bold lead-in,
+      // never a filled box (the glyph/color doctrine).
+      ".adm-blast-strip { border:1px solid var(--border); border-left:3px solid var(--red-alert, #920000); background: var(--surface-subtle); border-radius:8px; padding:7px 11px; margin:0 0 8px; font-size:.85rem; }",
+      ".adm-blast-strip b { color: var(--red-alert, #920000); }",
+      ".adm-blast-strip.caution { border-left-color: var(--border-strong); }",
+      ".adm-blast-strip.caution b { color: var(--text-strong); }",
+      ".adm-blast-sec { font-size:.68rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color: var(--text-muted); margin:12px 0 4px; }",
+      ".adm-blast-cons { display:flex; flex-wrap:wrap; gap:5px; margin:0; padding:0; list-style:none; }",
+      ".adm-blast-cons li { border:1px solid var(--border); background: var(--surface-subtle); border-radius:10px; padding:3px 9px; font-size:.8rem; color: var(--text-body); overflow-wrap:anywhere; }",
+      ".adm-blast-cons li .w { font-weight:700; color: var(--red-alert, #920000); }",
+      ".adm-blast-how { color: var(--text-muted); font-size:.74rem; }",
+      ".adm-blast-empty { color: var(--text-muted); font-size:.85rem; }",
+      ".adm-blast-foot { color: var(--text-muted); font-size:.8rem; margin:10px 0 0; max-width:900px; }",
       // table-layout:fixed + an explicit colgroup — auto layout has silently
       // parked columns past the wrapper's right edge here before (the CCR).
       ".adm-tablewrap { overflow-x:auto; border:1px solid var(--border); border-radius:8px; }",
@@ -773,7 +829,7 @@
       ".adm-table .gatecol { border-left:3px solid var(--navy-secondary, #1c3d5a); }",
       ".adm-g { font-size:.7rem; border-radius:10px; padding:1px 8px; white-space:nowrap; cursor:help; background: var(--surface-muted); color: var(--text-muted); }",
       ".adm-g-open, .adm-g-public { color: var(--brick, #8c2f22); background: rgba(140,47,34,.10); font-weight:700; }",
-      ".adm-g-team, .adm-g-gr, .adm-g-fin { color: var(--text-strong, #4a3a00); background: var(--mustard-fill, #f2dca0); }",
+      ".adm-g-team, .adm-g-gr, .adm-g-fin { color: var(--on-mustard); background: var(--mustard-fill, #f2dca0); }",
       ".adm-g-reviewer, .adm-g-server { color: var(--hunter, #2c601a); background: rgba(44,96,26,.10); font-weight:700; }",
       // Neither a pass nor a fail: two states that are not findings about a tab.
       ".adm-g-nodata, .adm-g-unread, .adm-g-unknown, .adm-g-link { color: var(--text-muted); background: var(--surface-muted); }",
@@ -833,7 +889,7 @@
       ".adm-dirty { font-size:.78rem; color: var(--brick, #8c2f22); font-weight:600; }",
       ".adm-g-aud { color: var(--navy-primary); background: var(--surface-muted); font-weight:600; }",
       ".adm-audnote { flex:1 1 100%; font-size:.75rem; color: var(--text-muted); margin-top:2px; }",
-      ".adm-audwarn { flex:1 1 100%; font-size:.75rem; color: var(--text-body); background: var(--mustard-fill, #f2dca0); border-radius:6px; padding:5px 9px; margin-top:2px; }",
+      ".adm-audwarn { flex:1 1 100%; font-size:.75rem; color: var(--on-mustard); background: var(--mustard-fill, #f2dca0); border-radius:6px; padding:5px 9px; margin-top:2px; }",
       ".adm-select { padding:3px 7px; border:1px solid var(--border-strong); border-radius:5px; font-size:.76rem; background: var(--surface-opaque); color: var(--text-body); }",
       ".adm-saved { font-size:.78rem; color: var(--hunter, #2c601a); font-weight:600; }",
       ".adm-addcat { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin:10px 0 4px; }",
@@ -1063,6 +1119,363 @@
   }
 
   // ── Render ──
+  // ── Blast Radius (Sam's Open Verdicts item 19, 2026-08-30: "blast away") ──
+  // The impact map's human face, ported from the S209 mock he approved: pick a
+  // dataset and see every tab, page, module, script and scheduled job touching
+  // it, who WRITES it, and whether the daily cron commits it straight to main
+  // (which Pages serves — so a bad value ships without review). Check here
+  // before a bulk write, a schema change, or a rename.
+  var BLAST_KINDS = [
+    ["all", "All"],
+    ["supabase", "Supabase tables"],
+    ["rpc", "RPCs"],
+    ["edgefn", "Edge functions"],
+    ["datajs", "Generated JS"],
+    ["file", "Files"],
+    ["external", "External services"],
+    ["other", "Other"]
+  ];
+  var BLAST_GROUP = {
+    supabase: "Supabase tables", rpc: "RPCs", edgefn: "Edge functions",
+    datajs: "Generated JS artifacts", file: "JSON, Excel and other files",
+    external: "External services", other: "Storage and inline data"
+  };
+  var BLAST_KIND_ORDER = { supabase: 0, rpc: 1, edgefn: 2, datajs: 3, file: 4, external: 5, other: 6 };
+  var BLAST_CONSUMER_ORDER = ["tab", "page", "module", "script", "workflow", "edgefn"];
+  function blastShort(id) { var i = String(id).indexOf(":"); return i > 0 ? String(id).slice(i + 1) : String(id); }
+  function blastKindOf(id) {
+    var i = String(id).indexOf(":");
+    var p = i > 0 ? String(id).slice(0, i) : "file";
+    if (p === "inline" || p === "storage") return "other";
+    if (p === "file") return /\.js$/.test(blastShort(id)) ? "datajs" : "file";
+    if (p === "supabase" || p === "rpc" || p === "edgefn" || p === "external") return p;
+    return "other";
+  }
+  // Served on GitHub Pages? Only file datasets can be, and the map records the
+  // NOT-served patterns rather than a served flag. When a pattern cannot be
+  // read, claim nothing — the missing "Public" chip is the safe direction.
+  function blastServed(id) {
+    var k = blastKindOf(id);
+    if (k !== "file" && k !== "datajs") return false;
+    var name = blastShort(id);
+    var pats = (state.blast.map && state.blast.map.not_served) || [];
+    for (var i = 0; i < pats.length; i++) {
+      var p = String(pats[i]);
+      try {
+        if (p === name || name.indexOf(p + "/") === 0) return false;
+        var rx = new RegExp("^" + p.split("*").map(function (s) {
+          return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+        }).join(".*") + "$");
+        if (rx.test(name)) return false;
+      } catch (e) { return false; }
+    }
+    return true;
+  }
+  function loadBlast() {
+    if (state.blast.load === "loading" || state.blast.load === "ok") return Promise.resolve();
+    state.blast.load = "loading";
+    // Promise.resolve() first, so a test stub that returns nothing for this
+    // URL lands in the catch as an honest error state instead of throwing
+    // through activate().
+    return Promise.resolve()
+      .then(function () { return fetch("kb/dependency_map.json", { cache: "no-store" }); })
+      .then(function (r) { if (!r || !r.ok) throw new Error("http"); return r.json(); })
+      .then(function (m) {
+        if (!m || !m.datasets) throw new Error("shape");
+        state.blast.map = m;
+        state.blast.load = "ok";
+      })
+      .catch(function () { state.blast.load = "error"; });
+  }
+  function blastRows() {
+    var b = state.blast;
+    if (!b.map) return [];
+    var q = String(b.q || "").toLowerCase();
+    var ids = Object.keys(b.map.datasets).filter(function (id) {
+      if (b.kind !== "all" && blastKindOf(id) !== b.kind) return false;
+      return blastShort(id).toLowerCase().indexOf(q) >= 0;
+    });
+    ids.sort(function (a, b2) {
+      var ka = BLAST_KIND_ORDER[blastKindOf(a)], kb = BLAST_KIND_ORDER[blastKindOf(b2)];
+      if (ka !== kb) return ka - kb;
+      return blastShort(a) < blastShort(b2) ? -1 : 1;
+    });
+    return ids;
+  }
+  function blastDetailHtml(id) {
+    var m = state.blast.map, d = m.datasets[id];
+    if (!d) return '<p class="adm-blast-empty">Pick a dataset from the list.</p>';
+    var cons = d.consumers || [];
+    var surfaces = {}, writers = {}, tabsTouched = {}, tabWrites = {};
+    cons.forEach(function (c) {
+      surfaces[c.id] = 1;
+      if (c.direction === "write") writers[c.id] = 1;
+      (c.tabs || []).forEach(function (t) {
+        tabsTouched[t] = 1;
+        if (c.direction === "write") tabWrites[t] = 1;
+      });
+      if (c.kind === "tab") {
+        tabsTouched[blastShort(c.id)] = 1;
+        if (c.direction === "write") tabWrites[blastShort(c.id)] = 1;
+      }
+    });
+    var nSurf = Object.keys(surfaces).length, nW = Object.keys(writers).length;
+    var chips = '<span class="adm-blast-chip">' + esc(BLAST_GROUP[blastKindOf(id)]) + "</span>";
+    if (blastServed(id)) chips += '<span class="adm-blast-chip public">Public on GitHub Pages</span>';
+    var h = '<div class="adm-blast-chips">' + chips + "</div>" +
+      '<h4 class="adm-blast-name">' + esc(blastShort(id)) + "</h4>" +
+      '<p class="adm-blast-sum">Consumed by ' + nSurf + " surface" + (nSurf === 1 ? "" : "s") +
+      (nW ? " — <b>" + nW + " of them write" + (nW === 1 ? "s" : "") + "</b>." : " — none of them write.") + "</p>";
+    var mainBy = d.main_committers || [];
+    if (mainBy.length) {
+      h += '<p class="adm-blast-strip"><b>Bypasses pull requests.</b> Committed directly to main by ' +
+        mainBy.map(function (x) { return esc(blastShort(x)); }).join(", ") +
+        " — and GitHub Pages serves from main, so a bad value ships without review.</p>";
+    }
+    (m.stale_risk || []).forEach(function (r) {
+      if (String(r).indexOf(blastShort(id)) === 0) {
+        h += '<p class="adm-blast-strip caution"><b>Stale-copy risk.</b> ' + esc(r) + ".</p>";
+      }
+    });
+    var tabs = Object.keys(tabsTouched).sort();
+    if (tabs.length) {
+      h += '<h5 class="adm-blast-sec">Tabs that touch it</h5><ul class="adm-blast-cons">' +
+        tabs.map(function (t) {
+          return "<li>" + esc(t) + (tabWrites[t] ? ' <span class="w">writes</span>' : "") + "</li>";
+        }).join("") + "</ul>";
+    }
+    var kinds = BLAST_CONSUMER_ORDER.concat(["other"]);
+    kinds.forEach(function (gk) {
+      var items = [], seen = {};
+      cons.forEach(function (c) {
+        var ck = BLAST_CONSUMER_ORDER.indexOf(c.kind) >= 0 ? c.kind : "other";
+        if (ck !== gk) return;
+        if (!seen[c.id]) { seen[c.id] = { name: blastShort(c.id), write: false }; items.push(seen[c.id]); }
+        if (c.direction === "write") seen[c.id].write = true;
+      });
+      if (!items.length) return;
+      var label = gk === "tab" ? "Tabs" : gk === "page" ? "Pages" : gk === "module" ? "Modules"
+        : gk === "script" ? "Scripts" : gk === "workflow" ? "Workflows"
+        : gk === "edgefn" ? "Edge functions" : "Other consumers";
+      h += '<h5 class="adm-blast-sec">' + label + '</h5><ul class="adm-blast-cons">' +
+        items.map(function (it) {
+          return "<li>" + esc(it.name) + (it.write ? ' <span class="w">writes</span>' : "") + "</li>";
+        }).join("") + "</ul>";
+    });
+    if ((d.producers || []).length) {
+      h += '<h5 class="adm-blast-sec">Produced by</h5><ul class="adm-blast-cons">' +
+        d.producers.map(function (p) {
+          var by = p && p.by != null ? p.by : p;
+          return "<li>" + esc(blastShort(String(by))) +
+            (p && p.how ? ' <span class="adm-blast-how">' + esc(String(p.how)) + "</span>" : "") + "</li>";
+        }).join("") + "</ul>";
+    }
+    return h;
+  }
+  function blastShellHtml() {
+    return '<h3>Blast Radius</h3>' +
+      '<p class="adm-intro">Pick a dataset and see everything that consumes it — tabs, pages, scripts, ' +
+      "workflows — with who writes it and whether the daily cron commits it straight to main. Check here " +
+      "before a bulk write, a schema change, or a rename. Read live from the impact map " +
+      "(<code>kb/dependency_map.json</code>, derived from the code and drift-checked in CI).</p>" +
+      '<div id="admBlast"></div>';
+  }
+  function renderBlast() {
+    var host = document.getElementById("admBlast");
+    if (!host) return;
+    var b = state.blast;
+    if (b.load === "idle" || b.load === "loading") {
+      host.innerHTML = '<div class="adm-empty">Loading the impact map…</div>';
+      return;
+    }
+    if (b.load === "error" || !b.map) {
+      host.innerHTML = '<div class="adm-empty">Could not load the impact map — no list rather than a stale ' +
+        "copy. Re-open the tab to try again; the map itself lives at <code>kb/dependency_map.json</code>.</div>";
+      return;
+    }
+    if (!b.sel || !b.map.datasets[b.sel]) {
+      var first = blastRows()[0];
+      b.sel = first || null;
+    }
+    var kindsBar = BLAST_KINDS.map(function (k) {
+      return '<button type="button" class="adm-blast-kind" data-blastkind="' + k[0] + '" aria-pressed="' +
+        (b.kind === k[0]) + '">' + k[1] + "</button>";
+    }).join("");
+    var ids = blastRows(), listH = "", lastGrp = "";
+    ids.forEach(function (id) {
+      var g = BLAST_GROUP[blastKindOf(id)];
+      if (g !== lastGrp) { listH += '<div class="adm-blast-grp">' + esc(g) + "</div>"; lastGrp = g; }
+      var n = (b.map.datasets[id].consumers || []).length;
+      listH += '<button type="button" class="adm-blast-ds" data-blastid="' + esc(id) + '" aria-pressed="' +
+        (b.sel === id) + '"><span class="n">' + esc(blastShort(id)) + '</span><span class="c">' + n + "</span></button>";
+    });
+    if (!listH) listH = '<p class="adm-blast-empty" style="padding:.6rem">Nothing matches. Clear the search or pick another kind.</p>';
+    var s = b.map.stats || {};
+    host.innerHTML =
+      '<div class="adm-blast-bar"><input type="search" class="adm-input" data-blastq placeholder="Search datasets" ' +
+        'aria-label="Search datasets" value="' + esc(b.q) + '">' +
+        '<div class="adm-blast-kinds" role="group" aria-label="Filter by dataset kind">' + kindsBar + "</div></div>" +
+      '<div class="adm-blast-panes">' +
+        '<nav class="adm-blast-list" aria-label="Datasets">' + listH + "</nav>" +
+        '<section class="adm-blast-card" aria-label="Selected dataset">' + blastDetailHtml(b.sel) + "</section>" +
+      "</div>" +
+      '<p class="adm-blast-foot">Coverage: ' + esc(String(s.supabase_tables || 0)) + " Supabase tables · " +
+        esc(String(s.rpcs || 0)) + " RPCs · " + esc(String(s.edge_functions || 0)) + " edge functions · " +
+        esc(String(s.file_datasets || 0)) + " file datasets · " + esc(String(s.workflows || 0)) +
+        " workflows · " + esc(String(s.tabs || 0)) + " tabs. Regenerate with " +
+        "<code>python3 kb/_build_dependency_map.py</code>.</p>";
+    var q = host.querySelector("[data-blastq]");
+    if (q) q.addEventListener("input", function () {
+      state.blast.q = q.value;
+      renderBlast();
+      var again = document.querySelector("[data-blastq]");
+      if (again) { again.focus(); again.setSelectionRange(again.value.length, again.value.length); }
+    });
+    host.querySelectorAll("[data-blastkind]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        state.blast.kind = btn.getAttribute("data-blastkind");
+        renderBlast();
+      });
+    });
+    host.querySelectorAll("[data-blastid]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        state.blast.sel = btn.getAttribute("data-blastid");
+        renderBlast();
+      });
+    });
+  }
+
+  /* ── DR-26: the live-session banner control ─────────────────────────────────
+   * Sam, 2026-09-08. He sets a Claude Code session's visibility to Team in
+   * claude.ai, then turns the banner on here rather than asking a session to
+   * write the row for him.
+   *
+   * ⚠️ THIS DOES NOT SHARE THE SESSION AND CANNOT. Visibility is a claude.ai
+   * control on the session itself; nothing in COBI can reach it. So the copy
+   * says so at the point of use, because the failure this guards against is
+   * turning the banner on for a session that is still Private and sending the
+   * whole organization at a link only its author can open.
+   *
+   * The table refuses an active row with no link and refuses any link that is
+   * not a claude.ai session, so a slip here is caught server-side too. */
+  var LIVE_REST = REST + "/cobi_live_session";
+  var liveRow = null;
+
+  function liveHtml() {
+    var on = !!(liveRow && liveRow.active);
+    var url = (liveRow && liveRow.session_url) || "";
+    var exp = liveRow && liveRow.expires_at ? new Date(liveRow.expires_at) : null;
+    var live = on && (!exp || exp.getTime() > Date.now());
+    // Absent on a row written before the column existed: treat that as ON, which
+    // is the column default, so the panel never claims a preference nobody set.
+    var auto = !liveRow || liveRow.auto_announce !== false;
+    return '<section class="adm-live"><h3>Live-session banner</h3>'
+      + '<p class="adm-live-note">Puts a line at the top of every COBI page saying you are working in '
+      + 'Claude Code, with a link to the session. <b>Set the session to Team visibility in claude.ai '
+      + 'first</b> — this control announces a session, it cannot share one.</p>'
+      + '<p class="adm-live-state">Now: <b>' + (live ? "showing" : "not showing") + '</b>'
+      + (on && exp && exp.getTime() <= Date.now() ? ' <span class="adm-live-note">(the link expired)</span>' : '')
+      + (live && exp ? ' <span class="adm-live-note">until ' + esc(exp.toLocaleString()) + '</span>' : '')
+      + '</p>'
+      + '<label class="adm-live-lbl" for="adm-live-url">Session link</label>'
+      + '<input id="adm-live-url" class="adm-live-url" type="url" spellcheck="false" '
+      + 'placeholder="https://claude.ai/code/session_..." value="' + esc(url) + '">'
+      + '<label class="adm-live-lbl" for="adm-live-hours">Show for</label>'
+      + '<select id="adm-live-hours" class="adm-live-hours">'
+      + '<option value="2">2 hours</option><option value="4" selected>4 hours</option>'
+      + '<option value="8">8 hours</option></select>'
+      + '<label class="adm-live-auto"><input type="checkbox" id="adm-live-auto"'
+      + (auto ? ' checked' : '') + '> Announce my sessions automatically</label>'
+      + '<p class="adm-live-note adm-live-autonote">On by default. A Claude Code session '
+      + 'sets this banner when it starts, so you do not have to. '
+      + '<b>It cannot tell whether you have shared the session</b> \u2014 nothing exposes that \u2014 '
+      + 'so if you have not set it to Team visibility, the team sees a link that will not '
+      + 'open for them. Untick to go back to setting the banner by hand.</p>'
+      + '<div class="adm-live-btns">'
+      + '<button type="button" class="adm-btn" id="adm-live-on">Show the banner</button>'
+      + '<button type="button" class="adm-btn" id="adm-live-off">Hide it</button>'
+      + '</div><p class="adm-live-msg" id="adm-live-msg" role="status"></p></section>';
+  }
+
+  function loadLive(done) {
+    fetch(LIVE_REST + "?id=eq.1&select=active,session_url,expires_at,auto_announce", { headers: authHeaders() })
+      .then(function (r) { return r.ok ? r.json() : []; })
+      .then(function (rows) { liveRow = (rows && rows[0]) || null; if (done) done(); })
+      .catch(function () { if (done) done(); });
+  }
+
+  function saveLive(on, root) {
+    var msg = root.querySelector("#adm-live-msg");
+    var url = (root.querySelector("#adm-live-url") || {}).value || "";
+    var hrs = parseInt((root.querySelector("#adm-live-hours") || {}).value || "4", 10);
+    url = url.trim();
+    // Said here as well as enforced in the table: the reader gets the reason,
+    // not a rejected request.
+    if (on && !/^https:\/\/claude\.ai\/code\/[A-Za-z0-9_-]+/.test(url)) {
+      if (msg) msg.textContent = "That is not a claude.ai session link. Copy it from the session's address bar.";
+      return;
+    }
+    var body = on
+      ? { active: true, session_url: url, updated_by: "admin-tab",
+          expires_at: new Date(Date.now() + hrs * 3600000).toISOString() }
+      : { active: false, session_url: null, expires_at: null, updated_by: "admin-tab" };
+    if (msg) msg.textContent = "Saving…";
+    fetch(LIVE_REST + "?id=eq.1", {
+      method: "PATCH",
+      headers: Object.assign({ "Content-Type": "application/json", Prefer: "return=representation" }, authHeaders()),
+      body: JSON.stringify(body)
+    }).then(function (r) {
+      if (!r.ok) throw new Error(String(r.status));
+      return r.json();
+    }).then(function (rows) {
+      liveRow = (rows && rows[0]) || null;
+      if (msg) msg.textContent = on
+        ? "Showing. Anyone on COBI sees it — check the session is set to Team visibility."
+        : "Hidden.";
+      var host = root.querySelector(".adm-live");
+      if (host) { host.outerHTML = liveHtml(); wireLive(root); }
+    }).catch(function (e) {
+      if (msg) msg.textContent = "Could not save (" + e.message + "). Sign in on this tab and try again.";
+    });
+  }
+
+  /* The opt-out is a PREFERENCE, not a show/hide, so it saves on its own rather
+   * than riding saveLive(): ticking it must not also re-announce a stale link,
+   * and unticking it must not take the current banner down. */
+  function saveAutoAnnounce(want, root) {
+    var msg = root.querySelector("#adm-live-msg");
+    if (msg) msg.textContent = "Saving\u2026";
+    fetch(LIVE_REST + "?id=eq.1", {
+      method: "PATCH",
+      headers: Object.assign({ "Content-Type": "application/json", Prefer: "return=representation" }, authHeaders()),
+      body: JSON.stringify({ auto_announce: !!want, updated_by: "admin-tab" })
+    }).then(function (r) {
+      if (!r.ok) throw new Error(String(r.status));
+      return r.json();
+    }).then(function (rows) {
+      if (rows && rows[0]) liveRow = rows[0];
+      if (msg) {
+        msg.textContent = want
+          ? "On. Sessions will announce themselves \u2014 remember to set each one to Team visibility, or the link will not open for the team."
+          : "Off. The banner only appears when you set it here.";
+      }
+    }).catch(function (e) {
+      // Put the box back where the row actually is, or it lies about a save
+      // that did not happen.
+      var box = root.querySelector("#adm-live-auto");
+      if (box) box.checked = !want;
+      if (msg) msg.textContent = "Could not save that (" + e.message + ").";
+    });
+  }
+
+  function wireLive(root) {
+    var on = root.querySelector("#adm-live-on"), off = root.querySelector("#adm-live-off");
+    if (on) on.onclick = function () { saveLive(true, root); };
+    if (off) off.onclick = function () { saveLive(false, root); };
+    var auto = root.querySelector("#adm-live-auto");
+    if (auto) auto.onchange = function () { saveAutoAnnounce(auto.checked, root); };
+  }
+
   function render(root) {
     ensureCss();
     var h = '<div class="adm">';
@@ -1295,9 +1708,20 @@
       + "is on it. Folding it in here would hide the fact that the phrases exist from the people who most need "
       + "to know they do.</p>";
 
+    h += liveHtml();
+    h += blastShellHtml();
+
     h += "</div>";
     root.innerHTML = h;
     wire(root);
+    wireLive(root);
+    renderBlast();
+    // Repaint the one section once the live row lands, rather than blocking the
+    // whole tab on a read it does not need.
+    loadLive(function () {
+      var host = root.querySelector(".adm-live");
+      if (host) { host.outerHTML = liveHtml(); wireLive(root); }
+    });
   }
 
   function wire(root) {
@@ -1511,14 +1935,18 @@
     wireOverlay();
     var root = document.getElementById("admin-root");
     if (!root) return;
-    if (state.loadState === "ok") { render(root); return; }
+    if (state.loadState === "ok") { render(root); loadBlast().then(renderBlast); return; }
     render(root);
     loadGates().then(function () { render(root); });
+    loadBlast().then(renderBlast);
   }
 
   window.CPL_ADMIN_TAB = {
     activate: activate,
     render: render,
+    _liveHtml: liveHtml,
+    _saveLive: saveLive,
+    _setLiveRow: function (r) { liveRow = r; },
     _state: state,
     _classify: classify,
     _gateById: gateById,
@@ -1533,6 +1961,17 @@
     _loadGates: loadGates,
     _authHeaders: authHeaders,
     _GATES: GATES,
+    // blast radius (item 19)
+    _loadBlast: loadBlast,
+    _renderBlast: renderBlast,
+    _blastKindOf: blastKindOf,
+    _blastShort: blastShort,
+    _blastServed: blastServed,
+    _blastRows: blastRows,
+    // test hook: hand the pane a map without a network — the fetch stub in
+    // tests falls through for unknown URLs, which loadBlast reads as its
+    // honest error state.
+    _setBlastMap: function (m) { state.blast.map = m || null; state.blast.load = m ? "ok" : "error"; },
     // arrange (drag and drop)
     _buildDraft: buildDraft,
     _ensureDraft: ensureDraft,

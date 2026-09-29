@@ -52,14 +52,17 @@ function paneHtml() {
 function boot(opts) {
   opts = opts || {};
   const dom = new JSDOM(`<!DOCTYPE html><html><head></head><body>${paneHtml()}</div></body></html>`,
-    { runScripts: "outside-only", url: "https://example.org/" });
+    { runScripts: "outside-only", url: "https://example.org/" + (opts.hash || "") });
   const { window } = dom;
   const loaded = [];
+  let cur = "unified-courses";
   window.CPL_TABS = {
     onActivate: function (tab, fn) { window.__activate = fn; },
     loadScript: function (f, g, cb) { loaded.push(f); if (opts.dataArrives) { window[g] = { rows: [] }; cb && cb(); } },
-    current: function () { return "unified-courses"; },
+    current: function () { return cur; },
+    closeRail: function () { window.document.body.classList.remove("cpl-rail-open"); },
   };
+  window.__setCurrent = function (t) { cur = t; };
   window.__loaded = loaded;
   window.eval(src);
   return window;
@@ -152,6 +155,118 @@ const attr = (w, sel, a) => { const e = q(w, sel); return e ? (e.getAttribute(a)
     check("(F) re-activating the tab does not stack shells",
       w.document.querySelectorAll(".uc-viewseg").length === 1);
     check("(F) …nor stack iframes", w.document.querySelectorAll("#uc-map-pane iframe").length === 1);
+  }
+
+  // ── (G) map mode is the whole tab ────────────────────────────────────────
+  // Sam, 2026-09-05: "Make sure the CCR menu button opens the full screen
+  // SkyView, not the version it currently opens to. I've made several requests
+  // for this so far and none of them have worked." What the tab SHOWED never
+  // changed across those attempts: a boxed frame under a banner, a heading, a
+  // toggle row and a note. Map mode now hides that chrome and sizes the frame
+  // to the viewport; the frame's own close and "CCR table view" post back.
+  {
+    const w = boot();
+    w.__activate();
+    const pane = q(w, "#tab-unified-courses");
+    check("(G) ⭐ map mode marks the pane, so the CSS can take the tab's chrome away", pane.classList.contains("uc-map-on"));
+    // Read the INJECTED sheet, not the source: the rule is assembled from
+    // several strings, and the sheet is what the browser applies.
+    const css = (q(w, "#uc-viewseg-css") || {}).textContent || "";
+    check("(G) ⭐ the CSS hides the banner, the heading and the toggle row, and lifts the container's padding and width cap",
+      /#tab-unified-courses\.uc-map-on > \.main-container\{max-width:none;padding:0;\}/.test(css) &&
+      /#tab-unified-courses\.uc-map-on \.uc-beta-banner,#tab-unified-courses\.uc-map-on \.uc-head,#tab-unified-courses\.uc-map-on \.uc-viewseg\{display:none;\}/.test(css),
+      css.slice(0, 200));
+    check("(G) the frame is sized to what the viewport has left, not boxed at calc(100vh - 200px)",
+      !/calc\(100vh - 200px\)/.test(src) && /function sizeMapFrame/.test(src) && /border:0/.test(src));
+    check("(G) the note above the frame is gone", !q(w, "#uc-map-note") && !/uc-map-note/.test(src));
+    w.CPL_CCR_VIEW.set("list");
+    check("(G) the list takes the chrome back", !pane.classList.contains("uc-map-on"));
+    w.CPL_CCR_VIEW.set("map");
+    const f = q(w, "#uc-map-pane iframe");
+    if (f && f.contentWindow) {
+      w.dispatchEvent(new w.MessageEvent("message", { data: { type: "skyview", action: "close" }, source: f.contentWindow }));
+      check("(G) ⭐ SkyView's close, posted from the frame, swaps the frame for the list", w.CPL_CCR_VIEW.current() === "list");
+      w.CPL_CCR_VIEW.set("map");
+      w.dispatchEvent(new w.MessageEvent("message", { data: { type: "skyview", action: "list" }, source: w }));
+      check("(G) …and the same message from anywhere else is ignored", w.CPL_CCR_VIEW.current() === "map");
+    } else {
+      check("(G) the frame has a window to post from in this harness", false, "no contentWindow — the source check cannot be exercised");
+    }
+    check("(G) the listener honors only our frame, at the source", /e\.source !== f\.contentWindow\) return;/.test(src));
+  }
+
+  // ── (H) #unified-courses/list lands on the list ──────────────────────────
+  // SkyView's "CCR table view" link out points here: the tab itself lands on
+  // the map, so a link to the bare tab would open another copy of the map.
+  {
+    const w = boot({ hash: "#unified-courses/list" });
+    w.__activate();
+    check("(H) ⭐ the /list hash opens the table", w.CPL_CCR_VIEW.current() === "list");
+    w.CPL_CCR_VIEW.set("map");
+    check("(H) …and switching to the map drops the /list from the hash", w.location.hash === "#unified-courses", w.location.hash);
+    w.CPL_CCR_VIEW.set("list");
+    check("(H) …and the list puts it back", w.location.hash === "#unified-courses/list", w.location.hash);
+  }
+
+  // ── (I) full window: the CCR click takes COBI's chrome away ──────────────
+  // Sam, 2026-09-05: "I want the Full Window (without the COBI header) to open
+  // on the side menu CCR click" and "add a hamburger menu glyph in upper left
+  // that can open the COBI side bar — should be default collapsed on open."
+  {
+    const w = boot();
+    w.__activate();
+    check("(I) ⭐ opening the map puts the full-window class on the body",
+      w.document.body.classList.contains("cpl-skyview-solo") && w.CPL_CCR_VIEW._solo());
+    const css = (q(w, "#uc-viewseg-css") || {}).textContent || "";
+    check("(I) ⭐ the CSS hides COBI's header, hamburger and To-Do button, collapses the rail into a slide-over, and gives the frame the viewport",
+      /body\.cpl-skyview-solo > \.header,body\.cpl-skyview-solo #cpl-hamburger,body\.cpl-skyview-solo \.cpl-todo-btn/.test(css) &&
+      /body\.cpl-skyview-solo \.cpl-sidebar\{position:fixed/.test(css) &&
+      /body\.cpl-skyview-solo\.cpl-rail-open \.cpl-sidebar\{transform:translateX\(0\)/.test(css) &&
+      /uc-map-frame\{height:100vh/.test(css) && /prefers-reduced-motion/.test(css), css.slice(-300));
+    check("(I) the rail starts collapsed", !w.document.body.classList.contains("cpl-rail-open"));
+    w.CPL_CCR_VIEW.set("list");
+    check("(I) the list gives the chrome back", !w.document.body.classList.contains("cpl-skyview-solo"));
+    w.CPL_CCR_VIEW.set("map");
+    check("(I) …and the map takes it away again", w.document.body.classList.contains("cpl-skyview-solo"));
+  }
+
+  // ── (J) the frame's menu, dock and undock controls ───────────────────────
+  {
+    const w = boot(); w.__activate();
+    const f = q(w, "#uc-map-pane iframe");
+    const posted = [];
+    if (f && f.contentWindow) {
+      f.contentWindow.postMessage = function (m) { posted.push(m); };
+      const last = () => posted[posted.length - 1] || {};
+      const send = (action) => w.dispatchEvent(new w.MessageEvent("message", { data: { type: "skyview", action: action }, source: f.contentWindow }));
+      send("menu");
+      check("(J) ⭐ the map's menu control opens COBI's rail", w.document.body.classList.contains("cpl-rail-open"));
+      check("(J) …and the frame is told the rail is open", last().type === "skyview-host" && last().menu === true, JSON.stringify(last()));
+      send("menu");
+      check("(J) a second press closes it", !w.document.body.classList.contains("cpl-rail-open"));
+      send("dock");
+      check("(J) ⭐ dock shows COBI around the map without leaving the map",
+        !w.document.body.classList.contains("cpl-skyview-solo") && w.CPL_CCR_VIEW.current() === "map" && last().docked === true, JSON.stringify(last()));
+      send("undock");
+      check("(J) undock fills the window again", w.document.body.classList.contains("cpl-skyview-solo") && last().docked === false);
+      posted.length = 0; send("ready");
+      check("(J) a frame that says ready is answered with the state", last().type === "skyview-host");
+      w.dispatchEvent(new w.MessageEvent("message", { data: { type: "skyview", action: "menu" }, source: w }));
+      check("(J) a menu message from anywhere else is ignored", !w.document.body.classList.contains("cpl-rail-open"));
+    } else {
+      check("(J) the frame has a window to post from in this harness", false, "no contentWindow");
+    }
+  }
+
+  // ── (K) leaving the tab gives the chrome back; the CCR click takes it again
+  {
+    const w = boot(); w.__activate();
+    w.__setCurrent("dashboard");
+    w.dispatchEvent(new w.CustomEvent("cpl-tab-activated", { detail: { tab: "dashboard" } }));
+    check("(K) ⭐ another tab takes the full-window class off", !w.document.body.classList.contains("cpl-skyview-solo"));
+    w.__setCurrent("unified-courses");
+    w.dispatchEvent(new w.CustomEvent("cpl-tab-activated", { detail: { tab: "unified-courses" } }));
+    check("(K) …and coming back to the CCR tab puts it back", w.document.body.classList.contains("cpl-skyview-solo"));
   }
 
   let pass = 0;

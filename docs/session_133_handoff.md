@@ -94,7 +94,7 @@ prints:
 | P1 metric | Headcount eligible | **Applied CPL Units as FTES** |
 | Strategies | none | **23** |
 
-Both places are corrected now, but the lesson generalises: **an overlay exists to
+Both places are corrected now, but the lesson generalizes: **an overlay exists to
 be edited by people who never touch your docs, so "it's empty" is the least
 durable sentence you can write about one.** Read every hop.
 

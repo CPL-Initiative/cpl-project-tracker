@@ -1,7 +1,7 @@
 ---
 title: Playbook — auto-write cpl_memory at every checkpoint (Phase 3 of the memory loop)
 created: 2026-07-24
-updated: 2026-07-24
+updated: 2026-09-24
 tags: [playbook, memory, supabase, checkpoint, governance, obsidian-target]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -37,7 +37,7 @@ principles" (`d-mem-*`/`r-mem-*` in the table itself).
 1. **Fresh read (MCP).** `select slug,kind,summary,status from cpl_memory order by
    updated_at desc` — know what's already there (dedupe; it's also the
    corroboration check). The sandbox can't reach `*.supabase.co` — **MCP only**
-   (Rule 9c).
+   (Rule 10c).
 2. **Decide what to write — a handful, not dozens.** Only learnings that cross the
    KB-note bar: **durable · reusable · distilled · genuinely uncaptured.** A
    `fact`/`pitfall`/`decision`/`procedure`/`risk`/`question`/`opportunity`/`milestone`
@@ -83,10 +83,57 @@ principles" (`d-mem-*`/`r-mem-*` in the table itself).
    `summary`/`detail`.) In the dashboard, the **✨ Autogenerate** button on the
    Add/Edit form drafts all of these from a typed topic via the cpl-chat RAG
    function — a curator convenience, still session-reviewed before save.
-6. **Log every write** to `cpl_memory_log` (actor = your session moniker).
+6. **Log every write** to `cpl_memory_log` (actor = your session moniker), then
+   **VERIFY the log actually landed before you say the rows were written.**
+   ⚠️ This step failed silently on 2026-09-06: the checkpoint wrote 8 rows, its
+   commit body said so, and **not one had a `cpl_memory_log` entry** — the log
+   `insert ... select` is a separate statement, so skipping it is invisible from
+   the `cpl_memory` side, and nothing in the suite can see it (the sandbox cannot
+   reach `*.supabase.co`). The check is one query and it belongs in the same call:
+
+   ```sql
+   select m.slug, count(l.id) filter (where l.action='create') as creates
+   from public.cpl_memory m
+   left join public.cpl_memory_log l on l.memory_id = m.id
+   where m.author = '<MonikerSNN>' group by m.slug order by m.slug;
+   ```
+
+   Every row this run wrote must show `creates = 1`. Backfill with the same
+   `insert ... select`, guarded by `not exists (... action='create')`, and say in
+   the note that the entry is late.
+
+   ⚠️ **The repo's SQL guard lets this insert through, and only this one (Sam's
+   yes, 2026-09-23).** A session may INSERT into `cpl_memory_log`; an update or a
+   delete of the log keeps the deny, since either rewrites the audit trail.
+   Until that day the guard denied the insert: S280 logged through
+   `apply_migration` on 2026-09-20, and S281 ruled that route out. If the guard
+   ever refuses this step again, stage the insert in the run's receipt, hand it
+   to Sam, and say the rows are written and **unlogged**; never log through
+   another tool.
+
+   ✅ **ONE CALL, THREE STATEMENTS (S285, 2026-09-24; Sam's SQL budget ruling).** The row
+   insert, the log insert and the verify query travel together in ONE `execute_sql`
+   call, separated by semicolons: a later statement sees an earlier one's rows, and
+   the tool returned the LAST statement's rows (the verify, `creates = 1` for both),
+   while a call whose later statement returned nothing showed the earlier RETURNING.
+   Each `execute_sql` call is one approval prompt on Sam's phone, so three calls where
+   one does is the failure now. Only the CTE fold below is the wrong shape.
+
+   ⚠️ **Do not fold the log insert into the same statement as the row insert.**
+   A data-modifying CTE's rows are not visible to the rest of that statement's
+   snapshot, so `with ins as (insert ... returning id) insert into
+   cpl_memory_log ... join ins` logs NOTHING and returns an empty set — which
+   looks like success if you are not reading the return. Two statements, then
+   the query above. (Measured 2026-09-06, the same day this step was added; the
+   verification caught it immediately, which is the argument for having it.)
 7. **Keep it lean (`d-mem-retrieval-first`).** If the table grows past
    browsability, that's the signal to supersede/archive aggressively — not to pile
    on. It's a retrieval surface (query by scope), not an infinite feed.
+8. **`scope` is a TWO-VALUE vocabulary (Sam's ruling, 2026-08-30, Open Verdicts
+   item 13): `general` | `workstream-specific`** — tags keep the topic. Never
+   write any other value; leave it blank when unsure (blanks are legitimate and
+   stay blank until touched). The 68 legacy free-form values were migrated that
+   day with per-row before/after receipts in `cpl_memory_log`.
 
 ### SQL patterns (via `mcp__Supabase__execute_sql`, project `hvuwhnbuahrtptokpqfh`)
 
@@ -129,6 +176,15 @@ from public.cpl_memory m where m.slug in ('<slug1>','<slug2>');
   *trickle* of what this run genuinely learned.
 - **Never** write secrets/PII; sessions only ever set `visibility='internal'`
   (public promotion is curation-gated, `r1`).
+- **Lint it when the hopper is worked (added 2026-09-05).** `kb/_memory_audit.py`
+  is the table's structural lint — dead paths, dangling `related` pointers, a
+  stale row still wearing a stamp, PRs not on `main`, null slugs, near-duplicates
+  — READ-ONLY, over an export (`--from-json`; the query is in its docstring).
+  Run it before a hopper sweep and after one; its `snapshot_claim` list is the
+  set of rows whose numbers will drift. The semantic test — is the claim still
+  true against `docs/reference/lanes/`? — stays a session's read, applied under
+  a committed receipt with one `cpl_memory_log` row per write
+  (`kb/memory_audit/2026-09-05-receipt.json`, Session 229).
 - **Optionally** regenerate the Obsidian mirror `docs/memory/cpl_memory.md` from
   the live table at checkpoint (keeps the vault copy fresh) — nice-to-have, not
   required.

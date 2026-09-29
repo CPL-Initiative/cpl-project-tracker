@@ -74,7 +74,7 @@ green in its own tab; the downstream join was in a different file with its own
 passing suite.
 
 The dropped key was caught by that file's **existing** assertions (the ones that
-check the strategies actually nest, and are labelled by count), which is exactly
+check the strategies actually nest, and are labeled by count), which is exactly
 what they were written for. Without them the strategies would have quietly left
 the funding box and the page would still have rendered.
 

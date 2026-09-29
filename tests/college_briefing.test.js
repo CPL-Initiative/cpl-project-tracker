@@ -54,7 +54,11 @@ function load(signedIn) {
   );
   const w = dom.window;
   if (signedIn) w.localStorage.setItem("cpl_team_pass", "phrase");
-  w.fetch = function () { return new Promise(function () {}); }; // never resolves
+  // Never resolves, and records what was asked for: which TABLE a credential-less
+  // reader hits is the whole disclosure boundary, and it cannot be seen from the
+  // rendered page.
+  w.__fetched = [];
+  w.fetch = function (u) { w.__fetched.push(String(u)); return new Promise(function () {}); };
   // Shared phrase helper first — production ships both, and the locked state
   // renders its banner (with a working input) rather than the bare fallback.
   const tp = w.document.createElement("script");
@@ -76,11 +80,34 @@ check("defaults to Sam's answer: Scenario 1 / Year 1", M._SCENARIO === "Scenario
 const out = load(false);
 const gRoot = out.document.getElementById("college-briefing-root");
 out.CPL_COLLEGE_BRIEFING.render(gRoot);
-// Was: /sign in/i against copy that never said WHERE. The banner states the
-// lock and carries the input, so assert the input.
-check("team-gated: no figures logged out", /not signed in/i.test(gRoot.textContent));
-check("team-gated: …and an unlock box is offered right there",
-  !!gRoot.querySelector('[data-tp-locked] input[type="password"]'));
+// ⭐ THE GATE IS GONE (Sam, 2026-09-17: My College is open to colleges and the
+// public). These two checks asserted the OLD contract — logged out meant a
+// locked banner and no figures — which is exactly what he asked to change.
+//
+// What replaces them is the assertion that actually carries the privacy now:
+// a credential-less reader reads the `_pub` MIRRORS and never a gated base. The
+// mirrors are built with suppression applied before publication
+// (kb/_publish_college_briefing.py); the bases still hold 145,554 rows that each
+// describe one student. Which table was asked for cannot be seen from the
+// rendered page, so it is asserted on the request.
+out.CPL_COLLEGE_BRIEFING.activate();
+const pubUrls = out.__fetched.join(" ");
+check("public: ⭐ the tab renders with no credential at all",
+  !/not signed in/i.test(gRoot.textContent),
+  "the Admin audience control governs the MENU; this gate governed the PAGE");
+check("public: ⭐ figures come from the published mirrors",
+  /map_college_credit_summary_pub/.test(pubUrls) && /map_college_contacts_pub/.test(pubUrls));
+check("public: ⚠ NEVER reads a gated base",
+  !/map_college_credit_summary\?/.test(pubUrls) && !/map_college_contacts\?/.test(pubUrls),
+  "a credential-less read of the base answers 200 + [] under RLS, so this is "
+  + "silent by construction and only visible on the request");
+
+// …and a signed-in reader still reads the bases, which is what the split is for.
+const inWin = load(true);
+inWin.CPL_COLLEGE_BRIEFING.activate();
+const gatedUrls = inWin.__fetched.join(" ");
+check("signed in: ⭐ still reads the gated bases, not the mirrors",
+  /map_college_credit_summary\?/.test(gatedUrls) && !/map_college_credit_summary_pub/.test(gatedUrls));
 
 // ── Part C — the strategy library ──
 // Two programs: one shaped like the live cpl-implementation, one standing in
@@ -396,7 +423,7 @@ check("funding: carries the floor from the model", fB && fB.floor === 150000);
 
 const fC = M._fundingFor("Calbright College Non-Credit");
 check("funding: a noncredit feeder gets no college-pool allocation", fC && fC.onRoster && fC.alloc === null,
-  "it is funded by the $1M noncredit carve-out — a different route, not an absence");
+  "it is funded by the noncredit carve-out, its own route to funding");
 
 check("funding: an off-roster college is flagged, not zeroed",
   (function () { const r = M._fundingFor("Some Other College"); return r && r.onRoster === false && !("alloc" in r); })());
@@ -548,9 +575,12 @@ check("questions: nothing waiting → asks where to look instead",
   /Nothing is set up and waiting/.test(qZero.join(" ")) && !/fastest way to award/.test(qZero.join(" ")));
 check("questions: none without a college", M._sierraQuestions(null, null, null).length === 0);
 
-// A failed model read must read as a failed read.
-check("funding: a failed model load renders 'failed read', not an empty result",
-  /failed read, not a finding/.test(briefingSrc));
+// A failed model read must read as a failed read — stated positively since
+// 2026-09-24 (Sam's no-this-not-that rule): the page says the model did not
+// load and that the allocation is unread, and asks for a reload.
+check("funding: a failed model load says the allocation is unread, never that it is absent",
+  /The funding model did not load, so this page cannot show an allocation for this college yet/.test(briefingSrc)
+  && !/failed read, not a finding/.test(briefingSrc));
 // Sam retired "a cap, not a cheque" on 2026-08-22 (state positively what drives
 // the money), and the model gained a literal $400K cap the same day — so the
 // old phrase was both against the ruling and newly ambiguous. Guard the
@@ -560,7 +590,9 @@ check("funding: the allocation is stated positively — driven by the college's 
 check("funding: the retired 'not a cheque' framing is gone",
   !/not a cheque/.test(briefingSrc) && !/ceiling, not a check/.test(briefingSrc));
 check("funding: a college held to the maximum is told where the difference went",
-  /maximum allocation<\/b>/.test(briefingSrc) && /re-splits across the other colleges/.test(briefingSrc));
+  // "cap" vocabulary (one pool + Sam's funding-vocabulary sweep, 2026-08-31);
+  // the promise is unchanged — say where the difference WENT.
+  / cap<\/b>/.test(briefingSrc) && /re-splits across the other colleges/.test(briefingSrc));
 
 // ⭐ The floor waterfall must not be re-implemented here. The handoff's
 // worked example — Bakersfield at 1.83% of a $23.24M pool — is a FLAT
@@ -599,7 +631,13 @@ const ftxt = fr.textContent;
 check("render: the seed grant appears as money", /\$50,000/.test(ftxt));
 check("render: the allocation appears as money", /\$175,000/.test(ftxt));
 check("render: a floored college is TOLD it is at the floor, not left to infer",
-  /minimum-viable floor/.test(ftxt) && /not.{0,3} its share of the pool/i.test(ftxt));
+  // "base award" vocabulary (one pool, 2026-08-31; "pool" → "funding" is Sam's
+  // sweep of the same day). The promise is unchanged: name the state AND say
+  // where the figure comes from. Since 2026-09-24 the sentence states it
+  // positively (Sam's no-this-not-that rule): the proportional share came out
+  // below the base, and the base award is the allocation.
+  /base award/.test(ftxt) && /proportional share came out below the base/i.test(ftxt)
+  && /the base award is its allocation/i.test(ftxt));
 // The rural allowance is retired (Sam, 2026-08-22) — a briefing that still
 // named it would promise a college money that no longer exists.
 check("render: no retired rural allowance is still promised",
@@ -646,8 +684,10 @@ Bn.render(nr);
 // element that carries a college's money, not via a "$" substring. The page
 // legitimately contains "$50k ESS 25-82" as a PROGRAM NAME, so a text-level
 // dollar match fails on correct output.
-check("render: a failed model read says so, and attributes NO money to the college",
-  /failed read, not a finding/.test(nr.textContent) && nr.querySelectorAll(".cb-fbig").length === 0);
+check("render: a failed model read says so, and attributes NO funding to the college",
+  /The funding model did not load/.test(nr.textContent)
+  && /cannot show an allocation for this college yet/.test(nr.textContent)
+  && nr.querySelectorAll(".cb-fbig").length === 0);
 
 // ── Part I — "transcribed" in MAP is a MARK, not a posting ──
 // Sam, 2026-08-11: a college checks the Transcribe step in MAP when it judges
@@ -1188,16 +1228,18 @@ JOIN_CASES.forEach(function (c) {
 FUND._setScenario({ pool: { cap_window: 0 } });
 FUND._model();
 const mtsacOpen = FUND._alloc("Mt San Antonio");
-// ⚠ The Sep-BOG cross-check figure MOVED, and legitimately: it was derived when
-// the college pool was $23,240,308 behind a $150K floor. Retiring the rural
-// carve-out folded $1M back in and the floor rose to $175K (2026-08-22), so the
-// largest college's uncapped share is now $471,834. Re-derived here from the
-// pool rather than re-typed, so the NEXT pool change fails loudly instead of
-// quietly agreeing with a stale literal.
-check("(P) Mt. SAC's uncapped allocation is its share of the CURRENT pool",
-  !!mtsacOpen && Math.round(mtsacOpen.total) === 471834 &&
+// ⚠ The Sep-BOG cross-check figure MOVED AGAIN, and legitimately: one-pool
+// adoption (2026-08-31) put $25,240,308 behind a $150K base over 118
+// institutions, and Mt. SAC's own noncredit FTES (10,829.3) now rides its row
+// — so the largest institution's uncapped share is $711,567. Re-derived here
+// from the model rather than re-typed, so the NEXT model change fails loudly
+// instead of quietly agreeing with a stale literal.
+// Moved to $694,417 on 2026-09-24 with the fresh DataMart FTES pull (statewide
+// credit FTES 1,069,182 -> 1,108,508 shrinks every institution's share).
+check("(P) Mt. SAC's uncapped allocation is its share of the CURRENT funding",
+  !!mtsacOpen && Math.round(mtsacOpen.total) === 694417 &&
   Math.round(mtsacOpen.total) > 400000,
-  "the waterfall still runs underneath the ceiling; only the pool and floor moved");
+  "the waterfall still runs underneath the ceiling; only the model's dials moved");
 FUND._setScenario({});
 FUND._model();
 const mtsac = FUND._alloc("Mt San Antonio");
@@ -1225,7 +1267,8 @@ check("(P) ⭐ Mt. San Antonio is NOT told it is off the funding roster",
   "the roster row was always there — the join dropped it");
 check("(P) …and its real allocation renders", /\$400,000/.test(jTxt));
 check("(P) …and it is told it is held to the maximum, and where the difference went",
-  /maximum allocation/.test(jTxt) && /re-splits across the other colleges/.test(jTxt));
+  // "cap" vocabulary (one pool, 2026-08-31); the where-it-went promise holds.
+  /cap/.test(jTxt) && /re-splits across the other colleges/.test(jTxt));
 
 // ── The collapsed shape ──
 // RESCOPED 2026-08-17 (Sky167). Sierra is a `details.cb-sec` now too — Sam
@@ -1354,6 +1397,17 @@ check("(P) …but a strategy that IS measured still shows its figure",
   nestRoot.querySelectorAll(".cb-strat .cb-m").length > 0);
 check("(P) the nested steps are still closed by default",
   Array.prototype.every.call(nestRoot.querySelectorAll("details.cb-strat"), function (d) { return !d.open; }));
+// ⭐ THE LIVE SHAPE since 2026-09-22. THREE lists three priorities, as the live
+// config does, while the funding module carries a fourth (career attainment)
+// from its baked defaults at a 0% share. Counting it sent every college's steps
+// to the standalone list the moment the card appeared; the checks above are
+// what failed. A priority the config does not list and that holds no share has
+// no steps and no funding, so the funding box leaves it out.
+check("(P) ⭐ an unlisted priority at a 0% share stays out of the funding box and the count gate",
+  (FUND._prios("Mt San Antonio", "1") || []).length === 4 &&
+  nestRoot.querySelectorAll(".cb-prios .cb-prow").length === 3 &&
+  !/Career attainment/.test(nestRoot.querySelector(".cb-prios") ? nestRoot.querySelector(".cb-prios").textContent : ""),
+  "the model carries 4 priorities; the box shows the 3 the config lists");
 
 // ⭐ Guarantee (c) SURVIVES THE MOVE. Sam adds programs to the config and they
 // must appear with no code change. Only cpl-implementation nests into the

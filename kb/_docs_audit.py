@@ -14,7 +14,7 @@ That asymmetry has a cost with a specific shape. Rule 8 gives us **ingest**
 third operation — **lint** — has never existed, so the corpus accretes. The
 failure mode is not "we lost something"; it is "a session finds the stale copy
 and believes it", which has already happened once (a greeting citing session
-handoff 105 when the authoritative one was 111 — see CLAUDE.md Rule 8).
+handoff 105 when the authoritative one was 111 — see CLAUDE.md Rule 9).
 
 This auditor is READ-ONLY by default. It reports; it does not tidy. The single
 exception is `--apply`, which performs exactly one mutation (R1 below) and
@@ -24,7 +24,7 @@ Rules
 -----
   R1 superseded_handoff    — a `session_<N>_handoff.md` below the highest N that
                              is not stamped `superseded: true`. **FIXABLE.**
-                             CLAUDE.md Rule 8 already declares only the highest
+                             CLAUDE.md Rule 9 already declares only the highest
                              authoritative; this makes that machine-readable so
                              Obsidian search and future sessions can filter.
   R2 oversized_doc         — a file past its lane's compaction threshold. Lanes
@@ -49,9 +49,10 @@ Rules
   R4 frontmatter_log_chain — a frontmatter scalar that has become an append-only
                              log. `docs/INDEX.md`'s `updated:` is the worked
                              example: one line chaining six `prior:` entries.
-  R5 unindexed_kb_note     — a KB note absent from `docs/INDEX.md`. The index is
-                             the declared Obsidian entry point; a note missing
-                             from it is effectively unreachable by browsing.
+  R5 unindexed_kb_note     — a KB note reachable from neither `docs/INDEX.md`
+                             nor a `docs/catalog/*.md` that INDEX links to. The
+                             index is the declared Obsidian entry point; a note
+                             missing from it is unreachable by browsing.
   R6 vault_heavy_path      — a heavy non-markdown path that an Obsidian vault
                              containing this repo has to watch. This repo is
                              cloned INTO the vault, so its working tree is vault
@@ -102,6 +103,22 @@ THRESHOLDS = {
     "index":         40_000,   # a landing page you must scroll is not a landing page
     "lessons":      120_000,   # scratchpads may be long, not unbounded
     "handoff":       60_000,   # ~4500 chars is the documented sweet spot
+    # 12_000 -> 20_000 on 2026-09-19 (Sam: "May need to change the budget for
+    # docs since it's all required and current truth"). MEASURED before the
+    # change: 28 of 32 lanes fit, and all four over it were dense CURRENT TRUTH
+    # rather than logs — cobi-dark-mode 18.4K, implementation-funding 18.4K,
+    # skyview-ccr-interface 16.8K, partner-crosswalks 14.7K. A limit that three
+    # unrelated lanes cross while saying nothing stale is measuring the wrong
+    # thing.
+    #
+    # ⚠️ SIZE WAS A PROXY FOR STALENESS, AND THE REAL GUARD ALREADY EXISTS.
+    # "past this it is a log" is the actual failure, and `stacked_roadmap_cell`
+    # tests for it DIRECTLY on this same lane — it reported 0 on the day this
+    # was raised. A lane file is also PULL: it costs tokens only to the session
+    # that chose to open it, unlike always_loaded, which every session in three
+    # repos pays whether or not it is relevant. So this budget can be generous
+    # where that one cannot, and 60_000 above stays put for exactly that reason.
+    "roadmap_lane":  20_000,   # one §11 lane's state; past this it is a log
     "other":        150_000,
 }
 
@@ -198,6 +215,8 @@ def lane_of(relpath: str) -> str:
     """Classify a doc into a budget lane. Order matters — the first match wins."""
     if relpath in ("CLAUDE.md",):
         return "always_loaded"
+    if relpath.startswith("docs/reference/lanes/"):
+        return "roadmap_lane"
     if relpath.startswith("docs/kb-notes/"):
         return "kb_note"
     if relpath in ("docs/INDEX.md",) or relpath.endswith("/INDEX.md"):
@@ -232,11 +251,27 @@ def collect(root: str):
 # Rules
 # ══════════════════════════════════════════════════════════════════════════
 def find_handoff_max(docs):
-    """Highest session_<N>_handoff.md — the one CLAUDE.md Rule 8 calls
+    """Highest session_<N>_handoff.md — the one CLAUDE.md Rule 9 calls
     authoritative. Returns None when the lane is empty."""
     ns = [int(m.group(1)) for p in docs
           if (m := HANDOFF_RE.match(os.path.basename(p)))]
     return max(ns) if ns else None
+
+
+def handoff_day(fm):
+    """The day a handoff was written, whichever spelling its frontmatter uses.
+
+    ⚠️ THE SIBLING TEST READ ONE SPELLING AND THE COLLISION USED THE OTHER
+    (2026-09-10). rule_superseded_handoff has treated same-day handoffs as
+    parallel siblings since 2026-08-10, and it worked by comparing `created`.
+    Handoffs in this repo carry EITHER `created:` (the docs-lane frontmatter) or
+    `date:` (the older handoff shape), so on the day two sessions actually
+    collided — SkyLabel's 252 with `date:`, SkyTouch's 253 with `created:` — the
+    comparison read None against a date, missed, and offered to stamp a live
+    sibling `superseded`. The fix the rule already had could not fire on the
+    frontmatter it was pointed at.
+    """
+    return fm.get("created") or fm.get("date")
 
 
 def rule_superseded_handoff(entry, handoff_max, authoritative_created=None):
@@ -263,7 +298,7 @@ def rule_superseded_handoff(entry, handoff_max, authoritative_created=None):
     n = int(HANDOFF_RE.match(os.path.basename(entry["path"])).group(1))
     if n >= handoff_max:
         return None
-    if authoritative_created and entry["fm"].get("created") == authoritative_created:
+    if authoritative_created and handoff_day(entry["fm"]) == authoritative_created:
         return None   # parallel sibling, not superseded
     if str(entry["fm"].get("superseded", "")).lower() == "true":
         return None
@@ -318,9 +353,472 @@ def rule_oversized_doc(entry):
 CELL_MAX_CHARS = 4_000     # a cell you cannot read in one breath is a log
 CELL_MAX_PRIOR = 1         # one "*Prior:*" is context; two is an unretired log
 
+# 2026-08-28 (Session 206, the consolidation): §11's detail moved to
+# docs/reference/lanes/<lane>.md, so this rule follows it. Two failures found
+# while moving it, both of the same shape — a guard that passes because it is
+# not looking:
+#
+#   1. It hard-coded `rel != "CLAUDE.md"`, so the moment the cells moved it
+#      would have gone silently green over an unguarded corpus.
+#   2. It split rows on a bare `|`, then skipped any row with fewer than four
+#      of them. The TWO LARGEST CELLS IN THE TABLE were both invisible to it:
+#      "Implementation Funding" (4,930 chars, over the cap) was missing its
+#      trailing pipe so the row was skipped outright, and "ESL packaging"
+#      (4,447 chars) carries `1|2,3|4` inside a code span, so cells[3] read
+#      1,289 chars of it. A malformed row is now a FINDING, not an exemption.
+
+
+def split_table_row(line):
+    """Split a markdown table row on pipes that are NOT inside a backtick code
+    span. `1|2,3|4` in a cell is content, not two column breaks."""
+    cells, buf, i, n, tick = [], [], 0, len(line), 0
+    while i < n:
+        ch = line[i]
+        if ch == "`":
+            j = i
+            while j < n and line[j] == "`":
+                j += 1
+            run = j - i
+            if tick == 0:
+                tick = run
+            elif run == tick:
+                tick = 0
+            buf.append(line[i:j]); i = j; continue
+        if ch == "|" and tick == 0:
+            cells.append("".join(buf)); buf = []; i += 1; continue
+        buf.append(ch); i += 1
+    cells.append("".join(buf))
+    if cells and not cells[0].strip():
+        cells = cells[1:]
+    if cells and not cells[-1].strip():
+        cells = cells[:-1]
+    return cells
+
+
+def _roadmap_offenders(text):
+    """§11 pointer rows in CLAUDE.md that have grown back into paragraphs."""
+    try:
+        sec = text[text.index("### Roadmap"):]
+    except ValueError:
+        return []
+    sec = sec.split("The auditor is the foundational instrument")[0]
+    offenders = []
+    for line in sec.split("\n"):
+        if not line.startswith("|"):
+            continue
+        cells = split_table_row(line)
+        name = (cells[0].strip().replace("*", "")[:40] if cells else "?")
+        if name in ("Phase", "---", "?"):
+            continue
+        if len(cells) != 3:
+            offenders.append({"row": name, "chars": len(line), "priors": 0,
+                              "corrections": 0, "malformed": len(cells)})
+            continue
+        status = cells[2]
+        priors = status.count("*Prior:*")
+        if len(status) > CELL_MAX_CHARS or priors > CELL_MAX_PRIOR:
+            offenders.append({"row": name, "chars": len(status), "priors": priors,
+                              "corrections": status.count("CORRECT"),
+                              "malformed": 0})
+    return offenders
+
+
+def _lane_offenders(rel, text):
+    """A lane file that has become an append-only log. Size is covered by the
+    `roadmap_lane` budget; this catches the stacking that precedes it."""
+    priors = text.count("*Prior:*")
+    if priors <= CELL_MAX_PRIOR:
+        return []
+    return [{"row": os.path.basename(rel), "chars": len(text), "priors": priors,
+             "corrections": text.count("CORRECT"), "malformed": 0}]
+
 
 def rule_stacked_roadmap_cell(entry):
-    """Roadmap cells that have become append-only logs rather than current state."""
+    """Roadmap state that has become an append-only log rather than current
+    truth — in CLAUDE.md's §11 pointer table, or in any lane file it points to."""
+    rel = entry["rel"]
+    is_claude = rel == "CLAUDE.md"
+    is_lane = rel.startswith("docs/reference/lanes/") and rel.endswith(".md")
+    if not (is_claude or is_lane):
+        return None
+    try:
+        text = read(entry["path"])
+    except Exception:
+        return None
+
+    offenders = (_roadmap_offenders(text) if is_claude
+                 else _lane_offenders(rel, text))
+    if not offenders:
+        return None
+    offenders.sort(key=lambda o: -o["chars"])
+    worst = offenders[0]
+    if worst.get("malformed"):
+        detail = (f"\"{worst['row']}\" is a malformed table row "
+                  f"({worst['malformed']} cells, expected 3) — a row this rule "
+                  f"cannot parse is a row it cannot guard")
+    else:
+        detail = (f"worst is \"{worst['row']}\" at {worst['chars']:,} chars / "
+                  f"{worst['priors']} *Prior:* markers")
+    return {
+        "rule": "stacked_roadmap_cell",
+        "fixable": False,
+        "detail": {"cells": offenders, "cell_max": CELL_MAX_CHARS,
+                   "prior_max": CELL_MAX_PRIOR},
+        "message": (
+            f"{len(offenders)} roadmap cell(s)/lane file(s) have become "
+            f"append-only logs — {detail}. State must be CURRENT truth; retire "
+            f"superseded text to the lessons doc instead of prefixing it. "
+            f"Contradictory claims inside one auto-loaded file are why the same "
+            f"correction gets made twice."),
+    }
+
+
+def _flat(s):
+    """Collapse whitespace so a doctrine pattern survives a line wrap.
+
+    ⚠️ 2026-08-29: `critical_rule_doctrine` reported "Rule 10 — fresh live read
+    at write-time" MISSING on a file that states it, because CLAUDE.md wraps it
+    as "fresh live read\n   at write-time". Handoff 207 flagged line-rewraps as
+    a false-positive class in the consolidation shingle audit; this is the same
+    defect inside a guard, where it is worse — a rule reported missing gets
+    "restored" by pasting a second copy in.
+    """
+    return re.sub(r"\s+", " ", s)
+
+
+# ── probe_instrument_leak ────────────────────────────────────────────────────
+# WHY (2026-08-29, Session 208): the doctrine-probe protocol was committed to
+# the repository the probes clone. A probe gets `CLAUDE.md` plus the repo — the
+# honest control condition — and the repo held `docs/scenarios/rubric.md` (109
+# lines: every pass criterion for all five probes, plus the advance predictions)
+# and all five probe prompts.
+#
+# The leak is not subtle. A probe's most natural first action is to search for
+# the topic it was handed, and for P5 its distinctive topic phrase - held in
+# the vault, deliberately NOT repeated here, and note that this very comment
+# carried it verbatim until the self-check below caught it -
+# matched EXACTLY ONE FILE in the whole repository — its own probe prompt. P5
+# found it, recognized it was inside a test, and void-flagged its own result.
+#
+# Handoff 207 anticipated leakage but located it in the PROMPT ("re-read the
+# probe prompt for a cue"). It was in the REPOSITORY.
+#
+# The instruments now live in the private vault
+# (`CPLBrain/04-projects/cpl-initiative/doctrine-probes/`), which probe sessions
+# do not clone. The tracker keeps only docs/scenarios/README.md — the method,
+# which names no criterion and is reusable knowledge.
+#
+# ⚠️ This rule exists because the natural repair for "the docs reference a file
+# that isn't here" is to put the file back, and doing so silently re-breaks
+# every future probe. THE INSTRUMENT MAY NOT LIVE INSIDE THE SYSTEM UNDER TEST.
+# ⚠️ THE POST-MORTEM RE-LEAKED THE THING (2026-08-29, later the same day).
+# Moving the instruments out of the repo closed the leak; then the write-ups
+# EXPLAINING the leak quoted the probe topic phrases verbatim, and P5's phrase
+# was back on `main` in four files within the hour - in documents that also
+# explain what the probe is scored on, which is strictly worse than the prompt
+# alone. This is the third instance of the same recursive shape in this repo:
+# `presentation_doctrine`'s first cut was satisfied by the POST-MORTEM about
+# losing the rule, and `american_spelling` corrupted the very word list that
+# documented it.
+#
+# So the phrases cannot be stored here in plaintext - a lint holding the secrets
+# it detects IS the leak. Salted hashes instead; the phrases live only in the
+# vault beside the prompts.
+#
+# ⚠️ Scanned ONLY in docs that discuss the probe protocol. "relevel bands" is
+# real ESL content and must not be flagged where it legitimately belongs; the
+# defect is a probe topic quoted inside a document about probes.
+PROBE_TOPIC_SALT = b"cpl-probe-topic-v1:"
+PROBE_TOPIC_HASHES = {
+    "940d1bc5b0b1b70d",
+    "f1211527cb2787f1",
+    "1cd16189141c0453",
+    "c53cf76c63c82dfc",
+}
+
+
+def _probe_topic_hits(text):
+    """Normalized word n-grams of `text` whose hash is a known probe topic."""
+    import hashlib
+    words = re.sub(r"[^a-z0-9]+", " ", text.lower()).split()
+    hits = set()
+    for n in range(2, 9):
+        for i in range(len(words) - n + 1):
+            gram = " ".join(words[i:i + n])
+            d = hashlib.sha256(PROBE_TOPIC_SALT + gram.encode()).hexdigest()[:16]
+            if d in PROBE_TOPIC_HASHES:
+                hits.add(d)
+    return hits
+
+
+PROBE_INSTRUMENT_PATHS = (
+    r"docs/scenarios/rubric\.md",
+    r"docs/scenarios/probes/",
+)
+
+
+def rule_probe_instrument_leak(root):
+    """A probe rubric or prompt has reappeared in the repo probes clone."""
+    hits = []
+    for rel in ("docs/scenarios/rubric.md",):
+        if os.path.isfile(os.path.join(root, rel)):
+            hits.append(rel)
+    pdir = os.path.join(root, "docs", "scenarios", "probes")
+    if os.path.isdir(pdir):
+        hits.append("docs/scenarios/probes/")
+    # A probe topic quoted inside a document ABOUT the probes is the same leak
+    # one level up: the phrase is what a probe searches for, and the document
+    # explains the test. Only such documents are scanned - see the note above.
+    # ⚠️ THE HANDOFF IS A LEAK CHANNEL TOO (2026-08-29). CLAUDE.md tells every
+    # session the highest-numbered handoff is authoritative, so a handoff that
+    # describes the experiment hands it to its own subjects. session_209 carried
+    # 22 lines about the probes and named a probe by number; caught only while
+    # about to spawn that very probe against it. Its state lives in the vault
+    # now and the handoff keeps a pointer.
+    quoted = []
+    for dirpath, dirnames, filenames in os.walk(os.path.join(root, "docs")):
+        dirnames[:] = [d for d in dirnames if d not in (".git", "node_modules")]
+        for fn in filenames:
+            if not fn.endswith(".md"):
+                continue
+            fp = os.path.join(dirpath, fn)
+            try:
+                body = read(fp)
+            except Exception:
+                continue
+            low = body.lower()
+            if "probe" not in low or ("rubric" not in low and "scenario" not in low):
+                continue
+            if _probe_topic_hits(body):
+                quoted.append(os.path.relpath(fp, root))
+    if not hits and not quoted:
+        return None
+    return {
+        "rule": "probe_instrument_leak", "fixable": False,
+        "detail": {"paths": hits, "topic_quoted_in": sorted(quoted)},
+        "message": (
+            f"Probe instrument(s) present in the repo probes clone: "
+            f"{', '.join(hits)}. A probe searching for the topic it was handed "
+            f"finds the document describing the test — measured 2026-08-29, "
+            f"where one probe's topic phrase matched its own prompt and nothing "
+            f"else. The rubric and prompts belong in the private vault at "
+            f"`CPLBrain/04-projects/cpl-initiative/doctrine-probes/`; keep only "
+            f"`docs/scenarios/README.md` (the method) here."
+            + (f" ALSO: {len(quoted)} doc(s) about the probes quote a probe's own "
+               f"topic phrase verbatim, which puts it back in the repo probes "
+               f"search: {', '.join(sorted(quoted))}. Describe the phrase, do not "
+               f"reproduce it." if quoted else "")),
+    }
+
+
+# ── lane_retirement_signal ───────────────────────────────────────────────────
+# WHY (2026-08-29, Session 208): §11's preamble states the retirement test as
+# three literal tokens — "no NEXT, no NEEDS SAM, no BLOCKED in the row's own
+# text" — one line after warning "read the lane file; do not grep for a tick".
+# The phrasing invites exactly the grep it forbids, and the grep is wrong.
+#
+# Measured: THREE consecutive hand-greps for this in one session, each wrong a
+# different way, before a per-file read got the true answer (0 of 30 retirable).
+#   1. anchored the marker to line-start   -> 0 hits across all 30 lanes
+#   2. searched `NEXT`, case-sensitive     -> missed `Next:` (4 lanes)
+#   3. required a trailing colon           -> missed bare `BLOCKED` (3 lanes)
+# Runs 2 and 3 each produced a plausible, confident, WRONG retirement list. The
+# handoff before this one recorded the same mistake at a larger grain: five rows
+# measured "retirable with no judgment calls", four of which carried an explicit
+# open-work list in their own text.
+#
+# So the vocabulary below is MEASURED from the live corpus, not imagined, and
+# the rule is deliberately FAIL-SAFE: any marker at all means "has open work".
+# A false "has open work" costs nothing (the lane stays listed, which it already
+# is); a false "retirable" costs a live workstream being filed as finished.
+# This rule therefore never says "retire this" — it says "nothing in this file
+# claims open work; go READ it", which is the §11 instruction, arrived at
+# mechanically instead of by a fresh wrong grep every time.
+LANE_OPEN_WORK_MARKERS = (
+    r"NEXT\b", r"\bNext(?:\s+by\b[^:\n]{0,30})?\s*:",   # `NEXT:` and `Next by value/effort:`
+    r"NEEDS SAM", r"(?i:blocked)",                       # incl. bare `BLOCKED ON JENNI`
+    #   ⚠️ `blocked` is case-INSENSITIVE and `Remaining:` is here because the
+    #   first cut of this list flagged `excel-to-supabase` as having no open
+    #   work while its own text reads "Remaining: P3 ... blocked only by
+    #   read_projects". Both were added by re-reading the file the lint was
+    #   wrong about — which is the only way this vocabulary ever gets right.
+    r"\bRemaining\s*:",
+    r"\bOpen\s*:", r"\bOPEN\b",
+    r"Still queued", r"Gap backlog", r"\bParked\s*:",
+    r"\bOutstanding\b", r"Needs Input",
+    r"\bawaiting\b", r"NOT built", r"not yet built",
+    #   The `## Next` heading (2026-09-27, S295): discipline-crosslist's only
+    #   markers were two NEEDS SAM cells, and once Sam's rulings replaced them
+    #   its `## Next` list of open items read as quiet.
+    r"(?m)^#{2,}\s*Next\b",
+)
+
+
+def rule_lane_retirement_signal(root):
+    """Lane files whose own text claims no open work — read them, per §11."""
+    lanes_dir = os.path.join(root, "docs", "reference", "lanes")
+    if not os.path.isdir(lanes_dir):
+        return None
+    names = [f for f in sorted(os.listdir(lanes_dir)) if f.endswith(".md")]
+    quiet = []
+    for fn in names:
+        try:
+            body = read(os.path.join(lanes_dir, fn))
+        except Exception:
+            continue
+        # Strip frontmatter and the relocation banner: the banner is boilerplate
+        # on every lane file and must never decide whether a lane has open work.
+        body = re.sub(r"\A---.*?\n---\n", "", body, flags=re.S)
+        body = "\n".join(l for l in body.splitlines() if not l.lstrip().startswith(">"))
+        if not any(re.search(m, body) for m in LANE_OPEN_WORK_MARKERS):
+            quiet.append(fn[:-3])
+    if not quiet:
+        return None
+    return {
+        "rule": "lane_retirement_signal", "fixable": False,
+        "detail": {"lanes": quiet, "checked": len(names)},
+        "message": (
+            f"{len(quiet)} of {len(names)} lane file(s) state no open work: "
+            f"{', '.join(quiet)}. This is NOT a retirement instruction — it is "
+            f"the §11 test run for you so you do not re-derive it with a fresh "
+            f"wrong grep. READ each one. A lane with no NEXT / NEEDS SAM / "
+            f"BLOCKED and no load-bearing invariants moves verbatim to "
+            f"`docs/reference/finished_workstreams.md` and its §11 row leaves "
+            f"the table; anything else stays."),
+    }
+
+
+# ── citation_drift ───────────────────────────────────────────────────────────
+# WHY (2026-08-30, Session 210 — remediation F, Sam's ruling 2026-08-29): the
+# S208 ablation control rebuilt the Critical Rules from ~400 citations across
+# docs/ and reported the numbering DISAGREES across them — Supabase safety
+# cited as both Rule 9 and Rule 10. Measured this session: the drift is one
+# systematic shift from a pre-split numbering (checkpoints 8→9, Supabase
+# 9→10), and it was live in current code too — `kb/_esl_package_dryrun.py`
+# cited as Rule 9 the same rule `kb/_esl_package_actionable.py` cites as 10.
+#
+# Scope: LIVING docs only. Dated capsules (session handoffs, lessons docs,
+# archives, workstream *_handoff.md plans, docs/scenarios/) keep their era's
+# numbering verbatim — they were correct when written, and rewriting history
+# is worse than reading it with its date on. The authority is CLAUDE.md's
+# CURRENT numbered list; this rule pins living prose to it.
+#
+# ⚠️ Deliberately NARROW — two measured patterns plus one sentence-scoped
+# vocabulary test. `.claude/skills/exhibit-canonicalization/` carries its own
+# internal Rule 5g/8b/9 numbering (outside collect(), but the lesson stands):
+# a broad "Rule N near keyword" match drowns in false positives, and a lint
+# that cries wolf gets deleted. Grow this one measured pattern at a time.
+CITATION_DRIFT = (
+    (r"\bRule 9c\b",
+     "Rule 9 has no (c); the sandbox/MCP sub-point is Rule 10 (c)"),
+    (r"\bRule 8 checkpoints?\b|\bRule 8 / `/checkpoint`",
+     "the checkpoint imperative is Rule 9 (Rule 8 is the memory read/ingest)"),
+)
+_SUPABASE_VOCAB = re.compile(
+    r"Supabase|kb_curation|PostgREST|cohort reviewer|live.curation"
+    r"|merge_confirm|fresh live read", re.I)
+# "Rule 9 checkpoint(s)" is the CORRECT post-split citation, so it is exempt
+# from the bare match — without the exemption, pipeline_reference.md's
+# frontmatter title ("… Supabase …") and its correct "Rule 9 checkpoints
+# update THIS file" line landed in one pseudo-sentence (`).** ` does not
+# split) and produced this rule's first false positive.
+_RULE9_BARE = re.compile(r"\bRule 9\b(?!['’a-z0-9]| checkpoints?\b)")
+
+
+def rule_citation_drift(entry):
+    """A living doc citing a Critical Rule by a number it no longer has."""
+    if entry["lane"] in ("handoff", "lessons"):
+        return None
+    r = entry["rel"]
+    if (r.endswith(("_handoff.md", "_archive.md"))
+            or r.startswith("docs/scenarios/")):
+        return None
+    # main() supplies "text"; other callers (the scenario harness builds bare
+    # entries) get the file read here — a rule that KeyErrors in a harness
+    # whose dispatch swallows exceptions is a guard that silently never runs.
+    text = entry.get("text")
+    if text is None:
+        try:
+            text = read(entry["path"])
+        except Exception:
+            return None
+    # Body only: a frontmatter title is a name, not a prose citation.
+    _fm, body_start, _has_fm = split_frontmatter(text)
+    flat = _flat("\n".join(text.split("\n")[body_start:]))
+    hits = [why for pat, why in CITATION_DRIFT if re.search(pat, flat)]
+    # Supabase vocabulary beside a bare "Rule 9", sentence-scoped: the rule's
+    # own text may legitimately sit near the vocabulary elsewhere in a file.
+    # Possessives ("Rule 9's") and lettered/decimal forms never match.
+    for sent in re.split(r"(?<=[.!?])\s+", flat):
+        if _RULE9_BARE.search(sent) and _SUPABASE_VOCAB.search(sent):
+            hits.append("Supabase live-curation safety is Rule 10, cited "
+                        "here as Rule 9: “" + sent[:110] + "”")
+            break
+    if not hits:
+        return None
+    return {
+        "rule": "citation_drift", "fixable": False,
+        "detail": {"hits": hits},
+        "message": (r + ": a rule-number citation contradicts CLAUDE.md's "
+                    "current numbering — " + "; ".join(hits)),
+    }
+
+
+# ── critical_rule_doctrine ───────────────────────────────────────────────────
+# WHY (2026-08-29, Session 208): `presentation_doctrine` guards one section
+# against one failure — a rule carried out of the always-loaded file by a
+# relocation. That failure is not specific to presentation rules, and the
+# Critical Rules are where it costs most.
+#
+# ⚠️ `unreferenced_offload` CANNOT see this class. It asks whether CLAUDE.md
+# still POINTS AT the file content moved into — a FILE-level question. When
+# Rule 7's structural invariants move to `docs/reference/mid_lifecycle.md`,
+# that pointer is present and correct, so the guard stays green whether or not
+# the TOP caveat rode along into the same file. Scored empirically before this
+# was written: `kb/_doctrine_scenarios.py` scenarios "Rule 7's TOP caveat
+# relocated, pointer intact" and "Rule 9's /checkpoint imperative relocated"
+# both reported — NOTHING —.
+#
+# The registry is deliberately SHORT. It holds claims that are (a) PUSH — a
+# session cannot know to ask for them — and (b) covered by no other guard.
+# Growing it into a summary of every rule would make it a second copy of
+# CLAUDE.md that drifts, which is the defect this whole lane exists to fix.
+#
+# ⚠️ Anchor each claim on phrasing only the DIRECTIVE uses. Patterns keyed on a
+# rule's NAME are satisfied by a post-mortem ABOUT losing it — that mistake
+# gave `presentation_doctrine` four false passes, one of them satisfied by a
+# quotation from Sam sitting inside a neighbouring bullet.
+CRITICAL_RULE_DOCTRINE = {
+    "Rule 4 — the two HTMLs stay identical": (
+        r"`?index\.html`?\s+must stay identical", r"must stay identical"),
+    "Rule 5 — never force-push main": (r"[Nn]ever force-push",),
+    "Rule 7 — TOP is never a gatekeeper": (
+        r"[Nn]ever use TOP for gatekeeping", r"last-in-line corroborator"),
+    "Rule 7 — re-mints follow the playbook": (
+        r"[Nn]ever re-mint casually", r"playbook is\s+mandatory"),
+    "Rule 8 — read the memory table before you work": (
+        r"READ the memory table BEFORE", r"before you work"),
+    "Rule 9 — run /checkpoint, do not improvise": (
+        r"do not improvise", r"improvise one from memory"),
+    "Rule 9 — update the lane file, not the row": (
+        r"update the LANE FILE", r"THE USUAL CHECKPOINT EDIT"),
+    "Rule 9 — the highest-numbered handoff is authoritative": (
+        r"HIGHEST-numbered", r"highest-numbered"),
+    "Rule 10 — fresh live read at write-time": (
+        r"fresh live read at write-time", r"fresh-read at write-time"),
+    # The three below are remediations B, C, D (Sam, 2026-08-29 — cpl_memory:
+    # sam-approved-five-doctrine-remediations-2026-08-29), added S210.
+    "Rule 10 — any shared table, not just kb_curation": (
+        r"worked example, NOT the boundary", r"ANY bulk write to a shared"),
+    "Rule 10 — a data write is reversible from its receipt": (
+        r"REVERSIBLE\s+FROM ITS RECEIPT", r"reversible from its receipt"),
+    "Rule 10 — a new write surface routes through Governance": (
+        r"routes through Governance and the privacy ADRs",),
+}
+
+
+def rule_critical_rule_doctrine(entry):
+    """A Critical Rule claim that has left the always-loaded file."""
     if entry["rel"] != "CLAUDE.md":
         return None
     try:
@@ -328,37 +826,391 @@ def rule_stacked_roadmap_cell(entry):
     except Exception:
         return None
     try:
-        sec = text[text.index("### Roadmap"):]
+        sec = text[text.index("## Critical Rules"):]
     except ValueError:
-        return None
-    sec = sec.split("The auditor is the foundational instrument")[0]
+        return {
+            "rule": "critical_rule_doctrine", "fixable": False,
+            "detail": {"missing": ["(the whole section)"],
+                       "checked": len(CRITICAL_RULE_DOCTRINE)},
+            "message": ("CLAUDE.md has no `## Critical Rules` section."),
+        }
+    nxt = sec.find("\n## ", 1)
+    if nxt != -1:
+        sec = sec[:nxt]
 
-    offenders = []
-    for line in sec.split("\n"):
-        if not line.startswith("| ") or line.count("|") < 4:
-            continue
-        cells = line.split("|")
-        name = cells[1].strip().replace("*", "")[:40]
-        status = cells[3] if len(cells) > 3 else ""
-        priors = status.count("*Prior:*")
-        if len(status) > CELL_MAX_CHARS or priors > CELL_MAX_PRIOR:
-            offenders.append({"row": name, "chars": len(status), "priors": priors,
-                              "corrections": status.count("CORRECT")})
-    if not offenders:
+    flat = _flat(sec)
+    missing = [claim for claim, pats in CRITICAL_RULE_DOCTRINE.items()
+               if not any(re.search(_flat(p), flat, re.I) for p in pats)]
+    if not missing:
         return None
-    offenders.sort(key=lambda o: -o["chars"])
-    worst = offenders[0]
     return {
-        "rule": "stacked_roadmap_cell",
+        "rule": "critical_rule_doctrine",
         "fixable": False,
-        "detail": {"cells": offenders, "cell_max": CELL_MAX_CHARS,
-                   "prior_max": CELL_MAX_PRIOR},
+        "detail": {"missing": missing, "checked": len(CRITICAL_RULE_DOCTRINE)},
         "message": (
-            f"{len(offenders)} roadmap cell(s) have become append-only logs — worst is "
-            f"\"{worst['row']}\" at {worst['chars']:,} chars / {worst['priors']} *Prior:* "
-            f"markers. A cell must state CURRENT truth; retire superseded text to the "
-            f"lessons doc instead of prefixing it. Contradictory claims inside one "
-            f"auto-loaded file are why the same correction gets made twice."),
+            f"{len(missing)} Critical Rule claim(s) are no longer stated in "
+            f"CLAUDE.md\u00a7Critical Rules: {'; '.join(missing)}. Each is PUSH — a "
+            f"session cannot know to ask for it — and none is covered by another "
+            f"guard. Moving one into a pulled store leaves `unreferenced_offload` "
+            f"green (the FILE is still pointed at) while the rule itself stops "
+            f"firing. Restore it, or delete it from CRITICAL_RULE_DOCTRINE "
+            f"deliberately and say why."),
+    }
+
+
+# ── presentation_doctrine ────────────────────────────────────────────────────
+# WHY (added 2026-08-28, at Sam's request): the rules that govern what a human
+# LOOKS AT are the purest push case in the corpus — nobody stops to query "may I
+# use an emoji here" before typing one. They are also the ones that scatter,
+# because each arrives attached to whatever tab was being built that week.
+#
+# "PLAIN WORDS, NO GLYPHS" is the worked example, and it has now failed twice the
+# same way. It was recorded in `cpl_memory` on 2026-08-14 and the Admin tab
+# shipped covered in emoji that same week. It was then written into a §11 roadmap
+# ROW, and the 2026-08-28 consolidation relocated that row to a lane file —
+# carrying the rule out of the always-loaded file entirely, where it went from
+# firing on every session to firing only for someone who opened one lane doc.
+#
+# Neither loss was visible: no file was deleted, no link broke, nothing went red.
+# So presence in the PUSHED file is asserted here. Patterns are deliberately
+# loose — several alternatives per topic — because this must survive rewording
+# and only fail when a topic genuinely leaves.
+# Patterns are matched case-INSENSITIVELY against the rule bullets only, and each
+# is anchored to phrasing unique to its own rule. `tests/docs_audit_test.py`
+# deletes each bullet in turn and asserts EXACTLY that topic is reported, so a
+# pattern that drifts onto a neighbouring bullet fails the suite rather than
+# quietly satisfying itself from the wrong rule.
+PRESENTATION_DOCTRINE = {
+    "First Light design": (r"first light",),
+    # ⚠️ NOT a bare "accessib" / "mobile-friendly": Sam's quote inside the First
+    # Light bullet ("make it always accessible and mobile friendly") contains
+    # both, so those two rules could be deleted entirely and this stayed silent.
+    # Anchor on phrasing only the DIRECTIVE uses, never wording a neighbouring
+    # rule might quote.
+    "accessibility": (r"AA 4\.5", r"aria-label", r"focus-visible",
+                      r"verified,? not claimed"),
+    "mobile-friendly": (r"single column below", r"clamp\(\) type"),
+    "plain words / no decorative glyphs": (
+        r"plain words", r"n[o|ot] glyphs", r"cheesy glyph", r"decorative\W{0,3}emoji"),
+    "American spelling": (r"american spelling",),
+    "no horizontal scroll": (r"horizontal scroll",),
+    "text measure": (r"cpl-measure", r"full width"),
+}
+
+
+def rule_presentation_doctrine(entry):
+    """A presentation rule that has left the always-loaded file."""
+    if entry["rel"] != "CLAUDE.md":
+        return None
+    try:
+        text = read(entry["path"])
+    except Exception:
+        return None
+    # ⚠️ Search the RULE BULLETS ONLY, never the whole file. The first cut
+    # searched all of CLAUDE.md and did not fire when the glyph bullet was
+    # deleted, because the section's own preamble NAMES the rule while
+    # explaining how it was once lost — a doctrine-presence check keyed on a
+    # rule's name is satisfied by the post-mortem about losing it.
+    try:
+        sec = text[text.index("## Presentation rules"):]
+    except ValueError:
+        return {
+            "rule": "presentation_doctrine", "fixable": False,
+            "detail": {"missing": ["(the whole section)"],
+                       "checked": len(PRESENTATION_DOCTRINE)},
+            "message": ("CLAUDE.md has no `## Presentation rules` section. Every "
+                        "rule governing what a human looks at is PUSH and belongs "
+                        "in the always-loaded file."),
+        }
+    nxt = sec.find("\n## ", 1)
+    if nxt != -1:
+        sec = sec[:nxt]
+    first = sec.find("\n- **")
+    bullets = sec[first:] if first != -1 else ""
+
+    flat = _flat(bullets)
+    missing = [topic for topic, pats in PRESENTATION_DOCTRINE.items()
+               if not any(re.search(_flat(p), flat, re.I) for p in pats)]
+    if not missing:
+        return None
+    return {
+        "rule": "presentation_doctrine",
+        "fixable": False,
+        "detail": {"missing": missing, "checked": len(PRESENTATION_DOCTRINE)},
+        "message": (
+            f"{len(missing)} presentation rule(s) are no longer stated in CLAUDE.md: "
+            f"{', '.join(missing)}. These govern every view we ship and are PUSH — "
+            f"nobody queries a formatting rule before typing. Relocating one to a "
+            f"lane file or `cpl_memory` silently stops it firing (that is exactly "
+            f"how \"PLAIN WORDS, NO GLYPHS\" was lost twice). Restore it to the "
+            f"\u00a7Presentation rules section."),
+    }
+
+
+# ── checkpoint_overdue ───────────────────────────────────────────────────────
+# WHY (2026-08-29): Rule 9 said checkpoint "roughly every ~100K tokens of context
+# consumed... Claude Code doesn't expose an exact counter; use proxies". That is
+# a condition NOTHING CAN OBSERVE — the same defect that left
+# `04-projects/SESSION-NOTES.md` 41 days stale behind the words "when the run
+# worked inside a project folder". A rule whose trigger cannot be checked decays
+# silently, because there is no state in which it looks wrong.
+#
+# Commits since the newest handoff was last written IS observable, and it is a
+# good proxy: a session that has landed work has consumed context. Measured over
+# the last ~220 commits, handoffs land every 1-3 commits (median 2, p75 3, p90 5,
+# max 9), so 6 fires on the tail rather than the normal rhythm.
+#
+# FAIL-SOFT BY DESIGN: no git, a shallow clone, or a repo with no handoffs yields
+# NO finding rather than a wrong one. A lint that cannot measure should say
+# nothing — claiming "you are fine" without looking is how the other guards in
+# this file failed.
+CHECKPOINT_COMMIT_BUDGET = 6
+
+
+def rule_checkpoint_overdue(root):
+    """Work has landed since the handoff was last refreshed."""
+    import subprocess
+    def git(*args):
+        try:
+            r = subprocess.run(["git", *args], cwd=root, capture_output=True,
+                               text=True, timeout=10)
+            return r.stdout.strip() if r.returncode == 0 else None
+        except Exception:
+            return None
+
+    docs = os.path.join(root, "docs")
+    if not os.path.isdir(docs):
+        return None
+    ns = [(int(m.group(1)), f) for f in os.listdir(docs)
+          if (m := HANDOFF_RE.match(f))]
+    if not ns:
+        return None
+    newest = max(ns)[1]
+    rel = f"docs/{newest}"
+
+    last = git("log", "-1", "--format=%H", "--", rel)
+    if not last:
+        return None
+    head = git("rev-parse", "HEAD")
+    if not head:
+        return None
+    count = git("rev-list", "--count", f"{last}..{head}")
+    if count is None or not count.isdigit():
+        return None
+    n = int(count)
+    if n <= CHECKPOINT_COMMIT_BUDGET:
+        return None
+    return {
+        "rule": "checkpoint_overdue",
+        "fixable": False,
+        "path": rel,
+        "detail": {"commits_since": n, "budget": CHECKPOINT_COMMIT_BUDGET,
+                   "handoff": newest},
+        "message": (
+            f"{n} commit(s) have landed since `{rel}` was last written "
+            f"(budget {CHECKPOINT_COMMIT_BUDGET}), which is Rule 9's trigger. "
+            f"Run `/checkpoint`: improvising one from memory is how nine of its "
+            f"thirteen artifacts go missing."),
+    }
+
+
+
+# ── esl_monthly_pass_due ─────────────────────────────────────────────────────
+# WHY (2026-09-27, S295): Sam's verdict on item 8 of the ESL merging sheet
+# (2026-09-26) made folding new ESL identities a MONTHLY pass that a session
+# runs (kb/_esl_monthly_pass.py). A cadence a session has to remember is not a
+# cadence: that is the open-asks sheet's lesson, where asks scattered across
+# lane files until the builder refused to build without them. So the lint every
+# checkpoint runs first says when the pass is due.
+#
+# The clock reads kb/esl_sheet_out/: the date of the newest ESL receipt
+# (applied_<date>T…json), or of a `<date>-monthly` plan dir holding a
+# plan.json, since a pass that finds nothing to apply writes a plan and no
+# receipt. The first ESL sheet apply (2026-09-27) starts it. Fail-soft like
+# checkpoint_overdue: no directory, no dates, no finding.
+ESL_PASS_DAYS = 31
+_ESL_DIR_RE = re.compile(r"^(\d{4}-\d{2}-\d{2})(-monthly)?$")
+_ESL_RECEIPT_RE = re.compile(r"^applied_(\d{4}-\d{2}-\d{2})T")
+
+
+def rule_esl_monthly_pass_due(root, today=None):
+    """The ESL monthly pass has not run for more than a month."""
+    base = os.path.join(root, "kb", "esl_sheet_out")
+    if not os.path.isdir(base):
+        return None
+    stamps = []
+    for name in os.listdir(base):
+        m = _ESL_DIR_RE.match(name)
+        d = os.path.join(base, name)
+        if not m or not os.path.isdir(d):
+            continue
+        for f in os.listdir(d):
+            r = _ESL_RECEIPT_RE.match(f)
+            if r:
+                stamps.append(r.group(1))
+        if m.group(2) and os.path.isfile(os.path.join(d, "plan.json")):
+            stamps.append(m.group(1))
+    if not stamps:
+        return None
+    last = max(stamps)
+    age = ((today or date.today()) - date.fromisoformat(last)).days
+    if age <= ESL_PASS_DAYS:
+        return None
+    return {
+        "rule": "esl_monthly_pass_due",
+        "fixable": False,
+        "path": "kb/esl_sheet_out/",
+        "detail": {"last_pass": last, "days": age, "budget": ESL_PASS_DAYS},
+        "message": (
+            f"The ESL monthly pass is due: the last pass or ESL write was {last}, "
+            f"{age} days ago (Sam's verdict on item 8 of the ESL merging sheet, "
+            f"2026-09-26: monthly). Run `python3 kb/_esl_monthly_pass.py --session <N>`, "
+            f"then dispatch `esl-sheet-apply.yml` with the plan dir it names; hand "
+            f"Sam what it lists."),
+    }
+
+# ── self_corrected_word_pair ─────────────────────────────────────────────────
+# WHY (2026-08-29): `american_spelling` rewrote `whilst` and `amongst` INSIDE the
+# parenthetical that existed to name them, leaving "while (not while) · among
+# (not among)" in the always-loaded file for weeks. The sentence still scans, so
+# a reader skims past it as a formatting oddity rather than a destroyed rule, and
+# NOTHING can flag it by spelling — both halves are correct American English.
+#
+# The general shape: any document that teaches a transformation contains examples
+# of that transformation's INPUT, which is exactly what the transformation eats.
+# Style guides, lint docs and glossaries are all self-consuming this way. The fix
+# is to put the named form in a code span (prose_only masks those); this rule is
+# how you find out you forgot.
+SELF_CORRECTED_RE = re.compile(r"\b(\w{3,})\b\s*\(\s*not\s+\1\s*\)", re.I)
+
+
+def rule_self_corrected_word_pair(entry):
+    """A word pair that now names the same word on both sides.
+
+    ⚠️ SCANS PROSE ONLY, and this rule shipped without doing so (Session 206).
+    Its own message told you to "put the named form in a code span, which
+    `prose_only()` masks" -- advice the implementation did not honor, because it
+    matched raw text. So the documented fix did not silence it, and the repo's
+    own post-mortem QUOTING the corruption was reported as the corruption. A
+    guard whose remedy does not work is the muted-guard failure again: the only
+    way to clear it would have been to delete the explanation.
+    """
+    try:
+        text = prose_only(read(entry["path"]))
+    except Exception:
+        return None
+    hits = [m.group(0) for m in SELF_CORRECTED_RE.finditer(text)]
+    if not hits:
+        return None
+    return {
+        "rule": "self_corrected_word_pair",
+        "fixable": False,
+        "detail": {"hits": hits[:8], "count": len(hits)},
+        "message": (
+            f"{len(hits)} word pair(s) name the same word on both sides: "
+            f"{', '.join(hits[:3])}. A normalizer corrected the form the rule "
+            f"existed to NAME — put the named form in a code span, which "
+            f"`prose_only()` masks, or it will be eaten again on the next sweep."),
+    }
+
+
+# ── unreferenced_offload ─────────────────────────────────────────────────────
+# WHY (added 2026-08-28, Session 206, the hour after the consolidation shipped):
+# moving content into `docs/reference/` is only half the move. The other half is
+# the POINTER left in CLAUDE.md — and the pointer is the safety mechanism, not a
+# courtesy, because a pull store nobody was told exists is the same as no store.
+#
+# This rule exists because the consolidation itself got it wrong. It relocated
+# §11's 29 lane cells to `docs/reference/lanes/`, updated
+# `.claude/commands/checkpoint.md`, and left Rule 9's own checkpoint list in
+# CLAUDE.md still naming only the three 2026-07-10 pare-down files. The slash
+# command is the PULLED path and fires only when someone types it; Rule 9 is the
+# PUSHED path and fires unprompted. So a checkpoint run from the rule would have
+# refreshed the pointer table and left all 30 lane files to go stale — the exact
+# failure the same session had just written a KB note about.
+#
+# A missing pointer is silent by construction: the offloaded file is fine, the
+# always-loaded file is fine, and only the LINK between them is absent. Nothing
+# else in this corpus can see that, so it is checked here.
+REFERENCE_DIR = "docs/reference"
+
+
+def rule_unreferenced_offload(entry, root):
+    """An offload under docs/reference/ that CLAUDE.md never points at."""
+    if entry["rel"] != "CLAUDE.md":
+        return None
+    try:
+        text = read(entry["path"])
+    except Exception:
+        return None
+    # ⚠️ No early return on a missing docs/reference/: skills and commands are
+    # offloads in their own right, and a repo can have those without it. The
+    # first cut returned here and scored "a SKILL nobody points at" as caught by
+    # NOTHING in kb/_doctrine_scenarios.py — the exact gap the extension was for.
+    ref_root = os.path.join(root, REFERENCE_DIR)
+
+    targets = []
+    # `.claude/skills/` and `.claude/commands/` are offloads too — a skill is
+    # PULL content reached by a trigger, exactly like a reference doc. Added
+    # 2026-08-29 after `kb/_doctrine_scenarios.py` scored "a SKILL nobody points
+    # at" as caught by NOTHING, while the M-ID re-mint rules were about to be
+    # moved into one.
+    for extra in (".claude/skills", ".claude/commands"):
+        ed = os.path.join(root, extra)
+        if not os.path.isdir(ed):
+            continue
+        for name in sorted(os.listdir(ed)):
+            sub = os.path.join(ed, name)
+            if os.path.isdir(sub) and any(f.endswith(".md") for f in os.listdir(sub)):
+                if name not in text:
+                    targets.append(f"{extra}/{name}/")
+            elif name.endswith(".md") and os.path.splitext(name)[0] not in text:
+                targets.append(f"{extra}/{name}")
+
+    for name in (sorted(os.listdir(ref_root)) if os.path.isdir(ref_root) else []):
+        full = os.path.join(ref_root, name)
+        if os.path.isdir(full):
+            # a directory counts only when it actually holds prose
+            if any(f.endswith(".md") for _, _, fs in os.walk(full) for f in fs):
+                targets.append(name.rstrip("/") + "/")
+        elif name.endswith(".md"):
+            targets.append(name)
+
+    # ⚠️ Match the PATH, never the bare name. The first cut tested for "lanes"
+    # and passed on a deliberately broken file, because CLAUDE.md says "Three
+    # doc lanes in this repo" for an unrelated reason — a guard passing on a
+    # common English word is a guard that never fires.
+    # REACHABILITY is the invariant, not a direct mention — the same standard
+    # `unindexed_kb_note` already applies. An offload named by a doc CLAUDE.md
+    # itself points at is findable, so one hop counts.
+    hop = text
+    for m in set(re.findall(r"docs/(?:reference|kb-notes)/[\w./-]+\.md", text)):
+        fp = os.path.join(root, m)
+        if os.path.isfile(fp):
+            try:
+                hop += read(fp)
+            except Exception:
+                pass
+
+    def referenced(name):
+        stem = name.rstrip("/")
+        return (f"reference/{stem}" in hop
+                or f"reference/{os.path.splitext(stem)[0]}" in hop)
+
+    missing = [n for n in targets if n.startswith(".claude/") or not referenced(n)]
+    if not missing:
+        return None
+    return {
+        "rule": "unreferenced_offload",
+        "fixable": False,
+        "detail": {"missing": missing, "checked": len(targets)},
+        "message": (
+            f"{len(missing)} of {len(targets)} offload(s) under `{REFERENCE_DIR}/` "
+            f"are never named in CLAUDE.md: {', '.join(missing)}. Content was moved "
+            f"out without leaving the pointer, so the always-loaded file no longer "
+            f"says the store exists — and a pull store nobody was told about is the "
+            f"same as no store. Name it in Rule 9's checkpoint list (so it is "
+            f"refreshed) and in the read-before stub (so it is found)."),
     }
 
 
@@ -481,17 +1333,68 @@ BRITISH_FORMS = [
 ]
 
 
+def prose_only(text):
+    """Blank every region of a markdown doc that is NOT prose, keeping offsets.
+
+    ⭐ THE LINT AND THE FIXER MUST SHARE ONE DEFINITION OF PROSE. Before this
+    existed the rule scanned raw text, so it reported 25 findings that
+    `kb/_fix_american_spelling.py` deliberately refuses to touch — a filename in
+    link text, a word inside a code span, Sam quoted verbatim. A guard that
+    reports work nobody can do is the muted-guard failure this corpus already
+    documented (methodology-a-guard-that-fails-on-truth-gets-muted).
+
+    Masked: fenced blocks, inline code, indented code, wikilinks, markdown link
+    TARGETS, bare URLs, `*.md` filenames, and quoted spans.
+
+    ⚠ QUOTED SPANS ARE PROSE TO A READER BUT NOT OURS TO EDIT. Sam, 2026-08-28:
+    *"No need to fix any spellings we import...like COCI catalog or MAP Custom
+    Reports data."* A quotation is someone else's text — an imported COCI title,
+    a MAP field, or a person's own words — and correcting it makes our record
+    disagree with its source.
+    """
+    out = list(text)
+
+    def blank(m, g=0):
+        for i in range(m.start(g), m.end(g)):
+            out[i] = "\0"
+
+    # ⚠ FLAGS ARE PER-PATTERN, AND re.S ON THE INDENTED-CODE RULE MASKED THE REST
+    # OF THE FILE. `^\s{4,}\S.*$` under DOTALL lets `.*` run past the newline and
+    # swallow everything to EOF, so one indented block silently exempted the whole
+    # remainder of a doc from american_spelling, house_voice and
+    # self_corrected_word_pair. Measured 2026-09-09 on the cobi-dark-mode lane:
+    # the last unmasked character was at byte 1,996 of 11,749 — the four-space
+    # `<html data-theme=...>` contract block on line 44 — and "colour" written
+    # below it went unreported. Only the fenced-block pattern spans lines; every
+    # other one is line-local, and the loop was already computing a per-pattern
+    # `flags` it then ignored on the very next line.
+    for pat, grp, flags in ((r"```.*?```|~~~.*?~~~", 0, re.S | re.M),
+                            (r"`[^`\n]*`", 0, re.M),
+                            (r"\[\[[^\]]*\]\]", 0, re.M),
+                            (r"\]\(([^)]*)\)", 1, re.M),
+                            (r"https?://\S+", 0, re.M),
+                            (r"^\s{4,}\S.*$", 0, re.M),
+                            (r"[\w./-]+\.md\b", 0, re.M),
+                            (r"\"[^\"\n]*\"|\u201c[^\u201d\n]*\u201d", 0, re.M)):
+        for m in re.finditer(pat, text, flags):
+            blank(m, grp)
+    return "".join(out)
+
+
 def rule_american_spelling(entry):
     """Informational: British spellings in a doc Sam reads.
 
     Never a defect — it reports so a pass can be made deliberately, in the same
     spirit as kb_note_dialect. Case-insensitive on the stem; reports the forms
     found and their count, not every offset.
+
+    Scans `prose_only()` — the SAME mask `kb/_fix_american_spelling.py` applies,
+    so the rule can never report a hit the fixer refuses to touch.
     """
     text = entry.get("text") or ""
     if not text:
         return None
-    low = text.lower()
+    low = prose_only(text).lower()
     hits = {}
     for brit, amer in BRITISH_FORMS:
         # Plain stems stay a substring count (cheap, and "normalis" is meant to
@@ -520,6 +1423,66 @@ def rule_american_spelling(entry):
     }
 
 
+# ── the house-voice mechanical floor (Sam, 2026-09-01) ──────────────────────
+# Sam shared the CO VC of Academic Affairs' letter to CSU as the standard for
+# our outward writing. Voice itself is NOT lintable — concession, preserved
+# authority, a short declarative landing after a long qualified one are
+# judgments, and the moves live in docs/kb-notes/reference-cccco-house-voice.md.
+#
+# ⚠️ WHAT IS LINTABLE IS THE FLOOR: business register that the CO register never
+# uses. This rides `prose_only()`, the same mask american_spelling uses, so it
+# can never flag a word inside a code span or an identifier.
+#
+# ⚠️ AND IT IS INFORMATIONAL, NEVER A DEFECT — same posture as american_spelling
+# and kb_note_dialect. A quoted source may legitimately say "leverage", and a
+# rule that failed on a quotation would make the corpus lie to satisfy a lint.
+# ⚠️ `robust` IS DELIBERATELY ABSENT. It has a legitimate technical sense the CO
+# register shares — "make the flaky test robust" is CLAUDE.md's own CI doctrine —
+# and it was 7 of the 27 hits on the first run. A rule whose false positives are
+# a quarter of its output trains people to ignore it.
+BUSINESS_REGISTER = (
+    "leverage", "utilize", "utilise", "deep dive", "deep-dive",
+    "synergy", "synergies", "operationalize", "operationalise", "impactful",
+    "circle back", "low-hanging fruit", "best-in-class", "best in class",
+    "move the needle", "boil the ocean", "at the end of the day",
+)
+
+
+def rule_house_voice(entry):
+    """Informational: business register in a doc that faces outward.
+
+    Scoped to the lanes a reader outside the team judges us by. Lane files,
+    handoffs, lessons docs and commit-adjacent notes are deliberately dense and
+    are NOT scanned — register follows audience, and flattening internal working
+    memory to correspondence voice would make it worse.
+    """
+    lane = entry.get("lane")
+    if lane in ("handoff", "lessons", "roadmap_lane", "always_loaded"):
+        return None
+    text = entry.get("text") or ""
+    if not text:
+        return None
+    low = prose_only(text).lower()
+    hits = {}
+    for term in BUSINESS_REGISTER:
+        n = len(re.findall(r"\b" + re.escape(term) + r"\b", low))
+        if n:
+            hits[term] = n
+    if not hits:
+        return None
+    total = sum(hits.values())
+    top = sorted(hits.items(), key=lambda kv: -kv[1])[:6]
+    return {
+        "rule": "house_voice",
+        "fixable": False,
+        "detail": {"total": total, "terms": hits},
+        "message": "%d business-register term%s — %s (house voice: "
+                   "docs/kb-notes/reference-cccco-house-voice.md)" % (
+            total, "" if total == 1 else "s",
+            ", ".join("%s x%d" % (k, v) for k, v in top)),
+    }
+
+
 def rule_frontmatter_log_chain(entry):
     if not entry["has_fm"]:
         return None
@@ -544,6 +1507,29 @@ def rule_frontmatter_log_chain(entry):
     }
 
 
+def read_browsable_index():
+    """The text a human can reach by BROWSING from `docs/INDEX.md`.
+
+    INDEX.md is the landing page; the full per-lane listings live in the
+    generated `docs/catalog/*.md` (`kb/_build_docs_index.py`), because 340
+    KB-note rows cannot fit a 40,000 B landing-page budget at any width.
+
+    A catalog counts only when INDEX actually LINKS to it — reachability is the
+    invariant, not the file's existence. Unlink a catalog and every note in it
+    correctly reports as unreachable again.
+    """
+    index_path = os.path.join(ROOT, "docs", "INDEX.md")
+    if not os.path.isfile(index_path):
+        return None
+    text = read(index_path)
+    parts = [text]
+    for href in set(re.findall(r"\]\((catalog/[^)]+\.md)\)", text)):
+        p = os.path.join(ROOT, "docs", href)
+        if os.path.isfile(p):
+            parts.append(read(p))
+    return "\n".join(parts)
+
+
 def rule_unindexed_kb_note(entry, index_text):
     if entry["lane"] != "kb_note" or index_text is None:
         return None
@@ -556,7 +1542,8 @@ def rule_unindexed_kb_note(entry, index_text):
         "rule": "unindexed_kb_note",
         "fixable": False,
         "detail": {"stem": base[:-3]},
-        "message": "not referenced anywhere in docs/INDEX.md — unreachable by browsing",
+        "message": "not referenced from docs/INDEX.md or any catalog it "
+                   "links to — unreachable by browsing",
     }
 
 
@@ -811,8 +1798,7 @@ def main():
 
     docs = collect(ROOT)
     handoff_max = find_handoff_max(docs)
-    index_path = os.path.join(ROOT, "docs", "INDEX.md")
-    index_text = read(index_path) if os.path.isfile(index_path) else None
+    index_text = read_browsable_index()
 
     entries = []
     for path in docs:
@@ -835,7 +1821,7 @@ def main():
         if e["lane"] == "handoff" and handoff_max is not None:
             m = HANDOFF_RE.match(os.path.basename(e["path"]))
             if m and int(m.group(1)) == handoff_max:
-                auth_created = e["fm"].get("created")
+                auth_created = handoff_day(e["fm"])
 
     findings = []
     for e in entries:
@@ -844,15 +1830,39 @@ def main():
                   rule_kb_note_frontmatter(e),
                   rule_kb_note_dialect(e),
                   rule_american_spelling(e),
+                  rule_house_voice(e),
                   rule_frontmatter_log_chain(e),
                   rule_unindexed_kb_note(e, index_text),
-                  rule_stacked_roadmap_cell(e)):
+                  rule_stacked_roadmap_cell(e),
+                  rule_unreferenced_offload(e, ROOT),
+                  rule_presentation_doctrine(e),
+                  rule_critical_rule_doctrine(e),
+                  rule_citation_drift(e),
+                  rule_self_corrected_word_pair(e)):
             if f:
                 f["path"] = e["rel"]
                 findings.append(f)
 
     vault_findings, vault_stats = scan_vault_weight(ROOT)
     findings.extend(vault_findings)
+
+    leak = rule_probe_instrument_leak(ROOT)
+    if leak:
+        leak["path"] = "docs/scenarios/"
+        findings.append(leak)
+
+    quiet_lanes = rule_lane_retirement_signal(ROOT)
+    if quiet_lanes:
+        quiet_lanes["path"] = "docs/reference/lanes/"
+        findings.append(quiet_lanes)
+
+    overdue = rule_checkpoint_overdue(ROOT)
+    if overdue:
+        findings.append(overdue)
+
+    esl_due = rule_esl_monthly_pass_due(ROOT)
+    if esl_due:
+        findings.append(esl_due)
 
     lanes = {}
     for e in entries:
@@ -914,7 +1924,23 @@ def main():
 
     if args.apply:
         if not sup:
-            print("--apply: nothing to stamp (all handoffs already marked).")
+            # Say WHY there is nothing to stamp. "All handoffs already marked" is
+            # false whenever the rule spared same-day parallel siblings, which is
+            # the common case on a day two sessions checkpoint — and a lint tool
+            # reporting a clean bill for a reason it did not check is exactly the
+            # failure this file exists to catch.
+            same_day = [e for e in entries
+                        if e["lane"] == "handoff" and auth_created
+                        and handoff_day(e["fm"]) == auth_created
+                        and HANDOFF_RE.match(os.path.basename(e["path"]))
+                        and int(HANDOFF_RE.match(
+                            os.path.basename(e["path"])).group(1)) < handoff_max]
+            if same_day:
+                print(f"--apply: nothing to stamp — {len(same_day)} lower-numbered "
+                      f"handoff(s) share the authoritative one's `created` date and "
+                      f"are treated as PARALLEL SIBLINGS, not superseded.")
+            else:
+                print("--apply: nothing to stamp (all handoffs already marked).")
         else:
             print(f"--apply: stamping {len(sup)} superseded handoff(s) "
                   f"(authoritative = session {handoff_max})")

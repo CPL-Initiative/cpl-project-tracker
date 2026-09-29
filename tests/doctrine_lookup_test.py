@@ -190,7 +190,61 @@ def t_output():
           "silence would read as 'nothing to know'")
 
 
-for label, fn in [("(1)", t_parse), ("(2)", t_lookup), ("(3)", t_changed), ("(4)", t_output)]:
+def t_read():
+    """(5) --read: the analysis side (Sam's ruling 11, 2026-09-05).
+
+    `--changed` reads the diff, so it is silent until code exists. The costly
+    errors happen while READING — a number measured against the wrong set — and
+    `--read` takes the files the session actually opened, from the transcript."""
+    import json as _json
+    import tempfile
+    sys.path.insert(0, os.path.join(ROOT, "kb"))
+    import doctrine as doc  # noqa: E402
+
+    def tool(name, inp):
+        return _json.dumps({"message": {"content": [
+            {"type": "tool_use", "name": name, "input": inp}]}})
+
+    with tempfile.TemporaryDirectory() as td:
+        tpath = os.path.join(td, "s.jsonl")
+        with open(tpath, "w", encoding="utf-8") as fh:
+            fh.write(tool("Read", {"file_path": "kb/doctrine.py"}) + "\n")
+            fh.write(tool("Bash", {"command": "sed -n '1,20p' kb/_context_budget.py"}) + "\n")
+            fh.write(tool("Bash", {"command": "grep -n x kb/_docs_audit.py | head"}) + "\n")
+            fh.write(tool("Bash", {"command": "ls -la"}) + "\n")
+            fh.write(tool("Read", {"file_path": "kb/does_not_exist_xyz.py"}) + "\n")
+            fh.write("{ this is not json\n")
+            fh.write(tool("Bash", {"command": "cat <<'EOF' > /tmp/x\nsee cpl_chat.js and tests/lib/check_ledger.js\nEOF"}) + "\n")
+            fh.write(tool("Grep", {"path": "kb/alias_chain.py"}) + "\n")
+        got = doc.read_files(tpath)
+
+    check("(5) a structured Read is picked up", "kb/doctrine.py" in got)
+    check("(5) a path inside a Bash command is picked up (auto mode never calls Read)",
+          "kb/_context_budget.py" in got and "kb/_docs_audit.py" in got,
+          "an auto-mode session can open 40 files with zero Read calls")
+    check("(5) a heredoc BODY is not a read", 
+          "cpl_chat.js" not in got and "tests/lib/check_ledger.js" not in got,
+          "a session that WRITES about a path never opened it")
+    check("(5) a path that does not exist in the repo is dropped",
+          "kb/does_not_exist_xyz.py" not in got)
+    check("(5) a malformed transcript line does not stop the scan",
+          "kb/alias_chain.py" in got, "the line after the bad one must still be read")
+    check("(5) newest first — the tail is what the current conclusion rests on",
+          got.index("kb/alias_chain.py") < got.index("kb/doctrine.py"))
+    check("(5) no duplicates", len(got) == len(set(got)))
+    check("(5) a missing transcript fails soft, never raises",
+          doc.read_files(os.path.join(ROOT, "no", "such", "file.jsonl")) == [])
+
+    r = subprocess.run([sys.executable, os.path.join(ROOT, "kb", "doctrine.py"),
+                        "--read", "--transcript", os.path.join(ROOT, "nope.jsonl")],
+                       capture_output=True, text=True, cwd=ROOT)
+    check("(5) --read with no transcript exits 0 and says why",
+          r.returncode == 0 and "transcript" in (r.stderr + r.stdout).lower(),
+          "an advisory tool must never be the thing that breaks the run")
+
+
+for label, fn in [("(1)", t_parse), ("(2)", t_lookup), ("(3)", t_changed), ("(4)", t_output),
+                  ("(5)", t_read)]:
     block(label, fn)
 
 PASSED = 0

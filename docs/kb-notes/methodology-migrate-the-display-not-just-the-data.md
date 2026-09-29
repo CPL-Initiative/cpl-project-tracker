@@ -1,7 +1,6 @@
 ---
 title: Migrate the display, not just the data — a faithful migration can still lose everything that mattered
-date: 2026-08-19
-type: methodology
+created: 2026-08-19
 kb-status: published
 tags: [methodology, migration, data-loss, audit, disclosure, gr]
 obsidian-folder: cpl-project-tracker

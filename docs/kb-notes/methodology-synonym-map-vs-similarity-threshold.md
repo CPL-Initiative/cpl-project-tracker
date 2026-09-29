@@ -1,10 +1,9 @@
 ---
 title: A similarity threshold can't bridge a zero-overlap synonym — use a curated synonym map
-date: 2026-06-16
+created: 2026-06-16
 updated: 2026-06-18 (Session 62 — the candidate-validator script)
 kb-status: published
-type: methodology
-tags: [kb, ccr, suggested-merges, consolidation, signature, synonyms, similarity]
+tags: [methodology, kb, ccr, suggested-merges, consolidation, signature, synonyms, similarity]
 artifacts:
   - kb/synonym_map.json (the curated abbreviation↔expansion map)
   - excel_to_dashboard.py (_sug_sig — applies the map before tokenizing)

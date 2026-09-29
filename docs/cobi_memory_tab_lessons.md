@@ -636,3 +636,245 @@ the body that was *sent*; it now fails with the observed order in its message.
 `npm run test:floor` re-baselines *every* file, which would silently accept a
 drop anywhere else — the exact thing the floor exists to catch. The entry for
 `cpl_memory_briefing.test.js` was edited from 61 to 75 by hand instead.
+
+## 2026-09-05 — SkyGrain (Session 229): the hopper tested end to end, and what a lint can and cannot see
+
+Sam's ask, after SkyView's queue turned out to be gated on his own reactions:
+*"test all the unverified memories we have stored to test them against what we
+know is most current knowledge and clear out anything stale."* Then two
+rulings mid-run: *"We probably have lots of unverified recent memories that
+I'm not so worried about. It's the older ones."* and *"The sheet needs to be
+plain English, especially since the mems are so technical."*
+
+### What was there
+
+527 `proposed` rows against 303 verified — 249 pitfalls, 114 facts, 60
+decisions, 50 procedures, the rest milestones, opportunities, questions, risks,
+wishes — written by 97 author strings since July 24. 202 were older than three
+weeks. The lane's own NEXT list still carried the false stamp, the 26 (now 38)
+unattributed verified rows, and "Sam works the hopper".
+
+### The structural pass found almost nothing
+
+`kb/_memory_audit.py` — the lint DR-19 said the table lacked — over 852 rows:
+3 dead paths in 653 file citations (`scripts/check_public_page_layout.js`
+renamed to the a11y engine; a KB note renamed; a test split), 1 near-duplicate
+pair at pg_trgm 0.55, no row still asserting a reverted change, 8 dangling
+`related` pointers (18 more turned out to be KB-note and lane-file names, a
+convention the lint now recognizes rather than flags), 1 false stamp, 6 null
+slugs, 118 count-carried claims with no date. ⭐ **The first run reported 110
+dead paths and 2 PRs not on main; 107 of the paths were the regex reading
+`.js` as the start of `.json` and `.ts` as the start of `.tsv`, and one "PR"
+was the First Light token `#0047AB`.** Each rule is tested both ways now (47
+checks) — a guard that fails on truth gets muted within a week.
+
+### The semantic pass found the staleness
+
+Thirteen read-only auditors, one per workstream slice (funding split in two,
+CCR in two, Sierra in two, governance in two), each given the lane files as
+tier-1 truth, `CLAUDE.md`, the code, read-only SQL, the KB notes, the latest
+handoff and the verified rows — with lessons docs demoted to "proves the event
+happened, not that the claim still holds" (`r-mem-corpus-not-truth`). Every
+verdict had to carry a citation; `unverifiable` was an allowed answer. Cost:
+about 3.8M tokens, 14 to 27 minutes each, in parallel.
+
+Result over 527: **461 confirmed, 11 stale, 31 superseded by a named row, 8
+snapshots, 2 unverifiable — after my own rulings on the twelve medium-confidence
+stale/superseded verdicts (seven accepted, four left as "true but needs a
+rewrite").** The stale ones are what a regex cannot see: the one-pool funding
+model (2026-08-31) and the September 1 priority bands overturned seven earlier
+funding rows; the re-mint series that was a plan became a milestone; the
+authority-code counts were re-cut by the recode; the guidance cap was raised
+from 10 to 20 the same day a row called it a fossil; the contact-refresh
+cadence a pitfall said never ran has run for two colleges.
+
+⭐ **The evidence was spot-checked mechanically before anything was applied**:
+every file citation opened, the quote searched for. 1,150 of 1,240 held
+verbatim once three false negatives in the checker itself were fixed — markdown
+emphasis (`**`) inside lane-file quotes, quotes spliced with "…", and the same
+`.js`-inside-`.json` regex mistake the lint had made an hour earlier.
+
+⚠️ **Paging a slice with `order by created_at` is unstable on ties.** Two
+auditors got one duplicate and one skipped row on 8-row pages and re-listed
+with an id tiebreak. Coverage was verified as the union of parts against the
+bucket: 527 of 527, no duplicates.
+
+### What was written, and what was held
+
+**31 rows cleared** (11 stale, 20 superseded with `superseded_by` set to the
+newer slug): one statement, `VALUES → UPDATE … WHERE status='proposed' →
+INSERT INTO cpl_memory_log`, keyed on `id`, actor `SkyGrain S229`, planned =
+updated = logged = 31, before-images in the log and in
+`kb/memory_audit/2026-09-05-receipt.json`. Session-sourced rows only.
+
+**352 rows corroborated at high confidence and HELD.** The corroboration gate
+lets a second session promote them, and every one carries a citation — but
+promoting 352 at once takes the tab's default list from 303 to 655 entries and
+the Briefing's share per entry from about 12% to 6%. That is a change to what
+the team reads, so it is item 1 on Sam's sheet, SQL ready.
+
+**144 rows to the sheet:** 86 human-sourced (a session never writes those, even
+when the contradicting source is Sam's own later ruling — DR-19), 13 open
+direction items (questions, wishes, opportunities are never auto-promoted), 33
+confirmed only at medium confidence, the rest snapshots and unverifiables.
+
+⚠️ **The auto-mode permission layer declined the bulk write twice** — once
+delegated to a subagent, once as the command that regenerated the SQL and
+printed it — and also declined copying the audit's helper scripts into the
+repo. The direct statement through the database tool, receipted and
+status-guarded, went through. Read as: a bulk write to a shared table is the
+session's own hand, one statement, never delegated; and a permission denial is
+a reason to narrow the write to what was literally asked (the 31 clear-outs),
+not to route around it.
+
+### Findings outside the rows, for the next session
+
+- The nightly `map_cleanup_worklist` holds only P2/P3/P4 (11,601 / 412 /
+  2,257): the zero-unit Needs Action rows on the cron-loaded
+  `map_student_credit` carry `credit_rec ''` (18,679) and the ACE "0 hours in …"
+  text matches 0 rows, so the text-keyed P1 and P5 classes vanish silently. The
+  cleanup lane still quotes P1 12,283 and P5 5,311.
+- `docs/reference/lanes/disposition-grain-student-detail.md` quotes the
+  pre-promotion figures (537,908 rows, 42,346 students); the live table reads
+  600,716 rows, 1,215,131 / 74,345 units, 48,913 students and is replaced nightly.
+- `prose_only()` in `kb/_docs_audit.py` blanks about 92% of `CLAUDE.md` (with
+  `re.S` the code-fence mask runs to end of file), so `american_spelling` and
+  `self_corrected_word_pair` see 8% of its words; the proposed row that says
+  CLAUDE.md is safe is wrong today.
+- Two `superseded_by` pointers from 2026-08-30 name no row (one names a vault
+  lane in prose, one an id).
+
+Story artifacts: `kb/memory_audit/2026-09-05-brief.md` (the auditors' brief),
+`2026-09-05-verdicts/` (all 527 verdicts with evidence), `2026-09-05-plan.json`,
+`2026-09-05-overrides.json` (my twelve rulings), `2026-09-05-receipt.json`.
+
+
+## 2026-09-05 — SkyKeep (Session 230): the sheet takes replies
+
+Sam, opening the session: *"add decision chips on each memory decision sheet
+item so I can record my responses for you and add any clarifying notes needed.
+Some of the unfinished memories are important to follow up on and I don't want
+to leave them hanging while I'm in the decision flow."*
+
+### What a reply is
+
+Three parts, under every numbered item and every retired row: a verdict chip
+(Yes takes the recommendation, then the words the how-to box already accepts —
+Keep · Retire · Edit · Later; item 1 adds *Older only*; the class rulings offer
+Yes · No; the retired rows offer *Undo*), a **Follow up** toggle that is
+independent of the verdict (his "don't leave them hanging"), and a note. A
+pressed chip clears on a second press. The bar at the foot counts replies and
+follow-ups and builds the numbered line (`3 yes · 4 keep, follow up — "…"`)
+for a paste.
+
+### Where a reply goes
+
+On the artifact, the page asks for its own store (`claude.use("db")`) and
+writes one document per item under `replies/<item>` — verdict, note,
+follow-up, the reference the session needs, and a timestamp; the store is
+organization-internal and the session reads it with the Artifact tool's
+`read_db`. Opened from the repo or the vault there is no store, so the replies
+stay in `localStorage` and *Copy replies* is the way out. The words are the
+same either way. The artifact service refused this session's wake
+subscription ("subscribing requires a session credential"), so a reply does
+not wake anyone: the next session reads the store when it arrives.
+
+### The builder was older than the sheet
+
+The committed `kb/memory_audit/2026-09-05-sheet_builder.py` cannot produce
+the committed sheet: the sheet has item 2 (the 73 human-sourced rows that still
+hold) and a section order the builder never emits, and its input export is
+not on disk. S229 evolved the builder in-session and committed an earlier
+version. So "change the generator, not the HTML" (Rule 1) would have REGRESSED
+the sheet. The reply controls are therefore added by a pass over the finished
+HTML — `kb/_decision_sheet_replies.py --inject`, marker-guarded so a second
+run replaces the first (the same shape as Rule 2's CSS guard) — and the module
+also exposes `replies_block()` for a builder that wants them at source. The
+durable lesson is its own KB note: a generator committed without the output
+it produced is a trap, not a convenience.
+
+### Checked before publishing
+
+A Chromium drive of the file: a chip presses and clears, the follow-up toggle
+holds, a note survives a reload, the bar reads "2 of 74 replied · 1 to follow
+up", the reply line reads as the how-to box says, and nothing scrolls sideways
+at 390px. Published to the same artifact URL with `capabilities: {db: {}}`;
+`read_db` on `replies` answered empty, which is the store existing.
+
+### Replies on each memory, not just the batch
+
+Sam, after the first republish: *"Decision sheet is almost there, but I need the
+response controls on each memory, not just on the whole batch."* Items 2 (73
+memories) and 3 (three) list their memories as rows with a reference each; the
+injector now puts a compact block under every such row — id `<item>.<reference>`
+(`2.o3`, `3.bog-amendment-is-funding-authority`), kind `entry`, parent the item
+— with chips read off the batch's own ask: Verify · Hold out · Rewrite · Later
+under a verify batch, Retire · Keep · Later under a retire batch. The bar counts by
+kind (*2 of 43 items · 2 of 76 memories · 1 of 31 retired rows replied*), and an
+entry reply in the store overrides its batch for that one memory. 150 blocks
+now; the second pass still changes nothing.
+
+### The hour after: the frozen echo, and the Yes that read both ways
+
+Sam, an hour in, with a screenshot of item 3: *"On Board memory I clicked Yes
+but also wanted to Follow up, but I click Follow Up and it doesn't turn blue but
+does give say response was saved--unsure if it really saved."* The store
+answered before the code did: `3.bog-amendment-is-funding-authority` sat at
+version 1, `v: "yes"`, `fu: false` — and five memories under item 2 sat at
+versions 2 to 6 with ONE `t` each, every later write carrying the first
+write's timestamp. That is the signature of a write that changed nothing.
+
+The cause was one clause of the store's contract, unread: *"delivered
+snapshots and their `data()` are frozen … clone a body before editing it for a
+write."* The script had done `state[item] = d.data()` on every echo and then
+`r[k] = patch[k]` on every click. Outside strict mode an assignment into a
+frozen object is silently ignored, so from an item's first save on, nothing
+painted and the unchanged body went back up, resolved, and said *Saved*. The
+follow-up flags Sam set on memories with no verdict all saved, because no echo
+had replaced those items yet — which is why the bug looked like "Follow up
+after Yes" and not "everything".
+
+Fixed by copying in both directions, `"use strict"` so the same mistake throws
+next time, and a state line in words — *Saved to the sheet: Retire, follow up.*
+The guard, `tests/decision_sheet_replies.test.js`, runs the COMMITTED sheet in
+jsdom against a store stub that `Object.freeze`s what it delivers: save once,
+let the echo land, click again, expect a pressed control and a second, newer
+write. The Chromium drive that shipped the feature had pressed one chip and
+reloaded; it never edited an item twice. Durable form:
+`methodology-a-stores-echo-is-not-your-state`.
+
+His second report was about words: *"On Keep $1M, I said Yes, but unclear if I
+am saying Yes to Keep $1M NC funding...Or...Yes that it is no longer true. Yes
+to mean means that I agree it is no longer true."* Under a retire batch the
+chips read Yes · Keep · Later beneath a title that is itself an imperative
+claim. Now the first chip under a memory names the batch's action — Retire, or
+Verify under a verify batch — and Yes stays only at item level, where the ask
+sits right above it. Replies saved before the relabel carry `v: "yes"` on an
+entry and mean the batch's recommendation for that memory; his in-chat replies
+count as replies: the Board memory is retire + follow up, the $1 million memory
+is retire. Both fixes went out as one same-day PR and one republish.
+
+## 2026-09-24 — SkyGrant (Session 285): the fifteen staged rows land, and a session budgets its prompts
+
+- **Twenty rows had been staged and none written.** S284's guard fix (#1670) opened the door and its own nine went in
+  that evening; the fifteen from S281 (4) and S283 (6 + 5) were still absent at 00:0x UTC. Each was re-read against the
+  day's state before it was written, and six changed: the opt-out calibration rule now follows the 09-22 high-water mark;
+  the CCR was wired to Jev on 09-22; Career attainment is P3 in the published scenario; the zero-share P4 fact was already
+  false and went in as `superseded` with `superseded_by` set; ruling (1) of the review sheet was reversed by Sam the same
+  evening; the 1.1.2 team field was re-read live. Every summary was cut to one sentence under 400 characters with the
+  long text in `detail`, every row got `plain`, `verified_by` kept the staging session and Sam where he spoke, and
+  `author` named the writer so the log check and the rollback find the cohort. The log note says who staged and who wrote.
+  Receipt: `kb/receipts/cpl_memory_2026-09-24_s285.sql`; the three staged files carry a header pointing at it.
+- **Two statements in one call see each other; a CTE does not.** The update-then-log call for the counselor supersede
+  (S283's planned one) returned the UPDATE's rows and the log insert landed, verified afterward. So the playbook's three
+  steps (rows, log, verify) can travel as three statements in a single `execute_sql` call; only a data-modifying CTE hides
+  its rows from the rest of its own statement. This checkpoint's write ran rows, log and verify in that order in one call:
+  the tool returned the verify's rows (`creates = 1` for both), so the last statement's result set comes back
+  and one prompt covers the whole write.
+- **Sam, 2026-09-24, with two prompts arriving while he typed:** *"I'm still getting a swarm of sql approves--been happening
+  the last 10 days--very frustrating."* Then: *"Don't try and solve the swarm problem—I wasted 2 days of fable use and not
+  changes helped. Look at the handoff prompt text for the solution that was supposed to solve it. Probably had a dozen or
+  more approve requests this session so far."* The handoff's opening line is the solution and it held (33 rules, the
+  `execute_sql` rule present, and the LIVE line's own caveat that the one tool still asks per call). The dozen prompts were
+  this session's twelve `execute_sql` calls and one `list_projects`; five calls would have done. The ruling sits in
+  `docs/reference/approval_prompt_hooks.md` and beside its pointer in `CLAUDE.md`.

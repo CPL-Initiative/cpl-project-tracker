@@ -16,7 +16,7 @@ artifacts:
 
 # A copy with no refresh path is a fossil
 
-> **One-sentence summary** — when a consumer reads a denormalised copy of an
+> **One-sentence summary** — when a consumer reads a denormalized copy of an
 > authoritative table, find the job that refreshes that copy; if no such job
 > exists, the copy is a snapshot of the day it was seeded and the consumer is
 > already wrong.
@@ -84,7 +84,7 @@ is ~123 rows — small enough to fetch whole per request.
 The copy had been flattened; the source has not. Four things the live read had to
 handle that the fossil had already smoothed away, each now a committed test:
 
-1. **Normalise both sides of the join.** MAP's college names are hand-typed and
+1. **Normalize both sides of the join.** MAP's college names are hand-typed and
    two real colleges carry a trailing space — `"Cypress College "`, `"San Jose
    City College "`. Exact matching drops them *silently back to the fossil*,
    which is precisely the bug being fixed. (Third occurrence in this repo; see

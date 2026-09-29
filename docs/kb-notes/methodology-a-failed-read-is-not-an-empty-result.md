@@ -60,7 +60,7 @@ The optimistic local write lived *inside* `saveOwner`, so the repaint ran before
 success either — only the `.catch` re-rendered.
 
 The reported symptom was *"the save button doesn't work the first time; reopen and click again and it takes."*
-The real behaviour was worse and more general: **the UI was always exactly one write behind.** A third save
+The real behavior was worse and more general: **the UI was always exactly one write behind.** A third save
 typing a new name still displayed the previous one. It only *reads* as "second time works" because the dialog
 pre-fills from the same state, so the user re-submits the identical string and the stale paint coincidentally
 matches what they intended.
@@ -102,7 +102,7 @@ dlg.querySelector("[data-own-save]").dispatchEvent(new w.Event("click", { bubble
 check("⚠ the name is VISIBLE after a single Save", /Jessica/.test(r.innerHTML));
 ```
 
-## The generalisable pattern
+## The generalizable pattern
 
 These are three instances of one class: **the interface asserting something it has no basis for.**
 

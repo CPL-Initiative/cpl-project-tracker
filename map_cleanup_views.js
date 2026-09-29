@@ -180,7 +180,7 @@
     b.onclick = function () {
       var text = textFn();
       var done = function (ok) {
-        b.textContent = ok ? "Copied ✓" : "Copy unavailable";
+        b.textContent = ok ? "Copied" : "Copy unavailable";
         setTimeout(function () { b.textContent = label; }, 1600);
       };
       try {
@@ -238,7 +238,7 @@
     var TP = tp();
     if (TP && TP.unlockRow) {
       authEl.appendChild(TP.unlockRow({
-        label: "🔓 Unlock", placeholder: "team phrase…",
+        label: "Unlock", placeholder: "team phrase…",
         blurb: "CSM clean-up worklist — unlock to view",
         onUnlocked: function () { refresh(); },
       }));

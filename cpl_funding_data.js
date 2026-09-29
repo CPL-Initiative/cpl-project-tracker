@@ -84,12 +84,25 @@
 // is $25,240,308 ÷ 119. Under this file's model the correct figures are
 // avg $210,785 / min $150,000 / max $623,871.
 //
+// 2026-08-31 — ONE POOL ADOPTED (Sam). The two-lane model above is HISTORY:
+// the $25,240,308 to institutions is ONE pool over every institution — the 115
+// colleges plus the noncredit-only three — sized by combined credit +
+// noncredit FTES, base $150,000 / cap $400,000 per institution on the COMBINED
+// award (floor_window/cap_window below). The noncredit carve-out and the three
+// NC dials (feeder_carveout / nc_threshold_ftes / nc_floor_window /
+// nc_cap_window) are RETIRED — the fields remain below for config-shape
+// stability but cpl_funding.js reads none of them. Every award decomposes into
+// credit and noncredit shares by FTES share; the noncredit share is restricted
+// to the noncredit measures, and the noncredit-only institutions earn by
+// origination (no advances — N2 b). Feeders carry `origin_scope`/`district`
+// for the origination feed's ruled scoping.
+//
 // To refresh the headcount vintage: edit the `colleges` headcounts + SYSTEM
 // total here directly (a rare modeling decision), keep headcount_pct in sync,
 // and bump model_version. The prior builder lives in git history if a full
 // workbook re-derive is ever needed again.
 window.CPL_FUNDING = {
- "model_version": "2026-07-30.1",
+ "model_version": "2026-08-31",
  "source": "Sept-2026 BOG budget amendment (20260729_CPL_Amendment_Sep_BOG.xlsx) · MIS annual headcount (2025-26 update, 2026-07-03)",
  "headcount_label": "2025-2026 MIS ANNUAL HEADCOUNT (refreshed 2026-07-31; 10 colleges not in that pull carry their prior vintage)",
  "headcount_source": {
@@ -107,10 +120,10 @@ window.CPL_FUNDING = {
   "college_funding_before_feeder_label": "AVAILABLE COLLEGE FUNDING (before noncredit carve-out)",
   "feeder_carveout": 1000000.0,
   "feeder_carveout_label": "NONCREDIT SUPPORT (carve-out)",
-  "floor_window": 175000.0,
-  "floor_window_label": "MINIMUM VIABLE ALLOCATION (per college, window floor)",
+  "floor_window": 150000.0,
+  "floor_window_label": "BASE AWARD (per institution, combined, window floor)",
   "cap_window": 400000.0,
-  "cap_window_label": "MAXIMUM ALLOCATION (per college, window ceiling)",
+  "cap_window_label": "CAP (per institution, combined, window ceiling)",
   "nc_threshold_ftes": 500.0,
   "nc_threshold_ftes_label": "NONCREDIT ENTRY THRESHOLD (annual noncredit FTES)",
   "nc_floor_window": 25000.0,
@@ -163,6 +176,17 @@ window.CPL_FUNDING = {
     "metric": "Headcount of students with transcribed Credit from either CPL Student Portal or CPL Landing Page",
     "unit": "headcount",
     "target_rate": 0.046666666
+   },
+   {
+    "key": "p4",
+    "label": "Priority 4",
+    "title": "Career attainment",
+    "description": "Advancing career attainment through CPL, measured by the Chancellor's Office from EDD wage records.",
+    "share": 0,
+    "factor": 1.0,
+    "metric": "CPL units (FTES) for students who reach a career outcome in EDD wage records, measured by the Chancellor's Office",
+    "metric_src": "ca_u",
+    "unit": "ftes"
    }
   ],
   "2": [
@@ -194,6 +218,17 @@ window.CPL_FUNDING = {
     "metric": "Headcount with CPL Matched in MAP and MIS",
     "unit": "headcount",
     "target_rate": 0.046666666
+   },
+   {
+    "key": "p4",
+    "label": "Priority 4",
+    "title": "Career attainment",
+    "description": "Advancing career attainment through CPL, measured by the Chancellor's Office from EDD wage records.",
+    "share": 0,
+    "factor": 1.0,
+    "metric": "CPL units (FTES) for students who reach a career outcome in EDD wage records, measured by the Chancellor's Office",
+    "metric_src": "ca_u",
+    "unit": "ftes"
    }
   ]
  },
@@ -204,15 +239,19 @@ window.CPL_FUNDING = {
    "headcount": 15560,
    "vintage": "2025-26",
    "noncredit_ftes": 3828.02,
-   "ftes_vintage": "2025-26"
+   "ftes_vintage": "2025-26",
+   "origin_scope": "district",
+   "district": "North Orange County Community College District"
   },
   {
    "name": "San Diego College of Continuing Education",
    "short": "SD Cont. Ed",
    "headcount": 21561,
    "vintage": "2025-26",
-   "noncredit_ftes": 9337.8,
-   "ftes_vintage": "2025-26"
+   "noncredit_ftes": 9785.01,
+   "ftes_vintage": "2025-26",
+   "origin_scope": "district",
+   "district": "San Diego Community College District"
   },
   {
    "name": "Mt. San Antonio College — Noncredit",
@@ -221,7 +260,9 @@ window.CPL_FUNDING = {
    "vintage": "2022-23",
    "noncredit_ftes": 10829.3,
    "ftes_vintage": "2025-26",
-   "nc_ftes_on_credit_row": "Mt San Antonio"
+   "nc_ftes_on_credit_row": "Mt San Antonio",
+   "origin_scope": "district",
+   "district": "Mt. San Antonio Community College District"
   },
   {
    "name": "Calbright College",
@@ -231,12 +272,13 @@ window.CPL_FUNDING = {
    "noncredit_ftes": 21438.17,
    "noncredit_ftes_placeholder": 1000,
    "noncredit_ftes_placeholder_basis": "Sam's stand-in (2026-08-06), inside the peer-plausible band: the other three feeders run 0.25-0.43 noncredit FTES per student, which puts Calbright's 2,484 headcount at 611-1,076 FTES. The reported 21,438.17 implies 8.63 FTES per student, which is not physically possible (a full-time year is ~1.0) and most plausibly counts enrollments, not FTES. Pending Malone's verification.",
-   "ftes_vintage": "2025-26"
+   "ftes_vintage": "2025-26",
+   "origin_scope": "statewide"
   }
  ],
  "feeder_metric": "CPL-ready noncredit completions handed off to a partner credit college",
  "rural_source": "The 13 California Community Colleges federally categorized as rural (superseding the 10-college CCCCO Rural College Transfer Collaborative demo cohort, which was invitation-based); edit the per-college rural flags here (or via the in-tab override when unlocked) to true up",
- "participation_deadline": "2026-09-01",
+ "participation_deadline": "2026-11-01",
  "extra_reqs": [],
  "coord_req_label": "CPL Coordinator listed in MAP",
  "participation_req_label": "Participation request by",
@@ -251,7 +293,7 @@ window.CPL_FUNDING = {
   "county": "CALIFORNIA",
   "working_adults": 5106199,
   "county_pop_pct": 1,
-  "credit_ftes": 1069182.25
+  "credit_ftes": 1108508.14
  },
  "colleges": [
   {
@@ -277,7 +319,7 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.004703527,
    "county_pop_pct": 0.03285908,
    "hc_vintage": "2025-26",
-   "credit_ftes": 3833.0,
+   "credit_ftes": 3833,
    "noncredit_ftes": 62.17
   },
   {
@@ -290,8 +332,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.002758884,
    "county_pop_pct": 0.03285908,
    "hc_vintage": "2025-26",
-   "credit_ftes": 5862.2,
-   "noncredit_ftes": 152.79
+   "credit_ftes": 9957.77,
+   "noncredit_ftes": 277.68
   },
   {
    "order": 54,
@@ -316,8 +358,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.001804038,
    "county_pop_pct": 0.03285908,
    "hc_vintage": "2025-26",
-   "credit_ftes": 4070.7,
-   "noncredit_ftes": 72.14
+   "credit_ftes": 6958.96,
+   "noncredit_ftes": 126.59
   },
   {
    "order": 63,
@@ -342,7 +384,7 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.006544107,
    "county_pop_pct": 0.03285908,
    "hc_vintage": "2025-26",
-   "credit_ftes": 7585.0,
+   "credit_ftes": 7585,
    "noncredit_ftes": 185.6
   },
   {
@@ -407,8 +449,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.003677585,
    "county_pop_pct": 0.007368103,
    "hc_vintage": "2022-23",
-   "credit_ftes": 3860.86,
-   "noncredit_ftes": 63.71
+   "credit_ftes": 5513.51,
+   "noncredit_ftes": 92.21
   },
   {
    "order": 17,
@@ -420,7 +462,7 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.00769159,
    "county_pop_pct": 0.02704262,
    "hc_vintage": "2025-26",
-   "credit_ftes": 7590.0,
+   "credit_ftes": 7590,
    "noncredit_ftes": 34.53
   },
   {
@@ -490,8 +532,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.004653084,
    "county_pop_pct": 0.004547414,
    "hc_vintage": "2022-23",
-   "credit_ftes": 3966.9,
-   "noncredit_ftes": 27.58
+   "credit_ftes": 8158.61,
+   "noncredit_ftes": 132.49
   },
   {
    "order": 5,
@@ -623,8 +665,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.002421669,
    "county_pop_pct": 0.235164356,
    "hc_vintage": "2022-23",
-   "credit_ftes": 2591.34,
-   "noncredit_ftes": 31.21
+   "credit_ftes": 4197.13,
+   "noncredit_ftes": 47.36
   },
   {
    "order": 31,
@@ -636,8 +678,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.025486508,
    "county_pop_pct": 0.235164356,
    "hc_vintage": "2025-26",
-   "credit_ftes": 19065.69,
-   "noncredit_ftes": 1138.17
+   "credit_ftes": 19208.87,
+   "noncredit_ftes": 1215.14
   },
   {
    "order": 32,
@@ -649,8 +691,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.012144093,
    "county_pop_pct": 0.235164356,
    "hc_vintage": "2022-23",
-   "credit_ftes": 12613.2,
-   "noncredit_ftes": 1.54
+   "credit_ftes": 21095.9,
+   "noncredit_ftes": 76.42
   },
   {
    "order": 40,
@@ -675,8 +717,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.012295422,
    "county_pop_pct": 0.235164356,
    "hc_vintage": "2025-26",
-   "credit_ftes": 9609.71,
-   "noncredit_ftes": 791.18
+   "credit_ftes": 9616.42,
+   "noncredit_ftes": 795.49
   },
   {
    "order": 47,
@@ -688,8 +730,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.008341393,
    "county_pop_pct": 0.235164356,
    "hc_vintage": "2025-26",
-   "credit_ftes": 6405.29,
-   "noncredit_ftes": 96.94
+   "credit_ftes": 6407.87,
+   "noncredit_ftes": 94.57
   },
   {
    "order": 48,
@@ -701,8 +743,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.009625509,
    "county_pop_pct": 0.235164356,
    "hc_vintage": "2025-26",
-   "credit_ftes": 6777.9,
-   "noncredit_ftes": 693.02
+   "credit_ftes": 6802.09,
+   "noncredit_ftes": 694.74
   },
   {
    "order": 49,
@@ -714,12 +756,13 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.012403458,
    "county_pop_pct": 0.235164356,
    "hc_vintage": "2025-26",
-   "credit_ftes": 12216.86,
-   "noncredit_ftes": 607.73
+   "credit_ftes": 12229.9,
+   "noncredit_ftes": 612.3
   },
   {
    "order": 50,
    "college": "LA Swest",
+   "display": "LA Southwest",
    "headcount": 12270,
    "district": "Los Angeles Community College District",
    "county": "Los Angeles",
@@ -727,7 +770,7 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.004873525,
    "county_pop_pct": 0.235164356,
    "hc_vintage": "2025-26",
-   "credit_ftes": 3008.91,
+   "credit_ftes": 3009.05,
    "noncredit_ftes": 249.38
   },
   {
@@ -740,8 +783,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.009136568,
    "county_pop_pct": 0.235164356,
    "hc_vintage": "2025-26",
-   "credit_ftes": 10570.39,
-   "noncredit_ftes": 233.75
+   "credit_ftes": 10576.93,
+   "noncredit_ftes": 241.58
   },
   {
    "order": 52,
@@ -753,8 +796,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.013016323,
    "county_pop_pct": 0.235164356,
    "hc_vintage": "2025-26",
-   "credit_ftes": 10920.37,
-   "noncredit_ftes": 991.68
+   "credit_ftes": 10940.45,
+   "noncredit_ftes": 1000.69
   },
   {
    "order": 57,
@@ -831,8 +874,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.008345762,
    "county_pop_pct": 0.235164356,
    "hc_vintage": "2025-26",
-   "credit_ftes": 6016.22,
-   "noncredit_ftes": 234.7
+   "credit_ftes": 6027.19,
+   "noncredit_ftes": 240.36
   },
   {
    "order": 59,
@@ -987,8 +1030,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.008092752,
    "county_pop_pct": 0.078191626,
    "hc_vintage": "2022-23",
-   "credit_ftes": 5754.09,
-   "noncredit_ftes": 901.97
+   "credit_ftes": 9722.81,
+   "noncredit_ftes": 1485.05
   },
   {
    "order": 76,
@@ -1013,8 +1056,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.01448116,
    "county_pop_pct": 0.078191626,
    "hc_vintage": "2022-23",
-   "credit_ftes": 8580.18,
-   "noncredit_ftes": 2890.53
+   "credit_ftes": 14515.6,
+   "noncredit_ftes": 4686.07
   },
   {
    "order": 97,
@@ -1066,8 +1109,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.001087904,
    "county_pop_pct": null,
    "hc_vintage": "2022-23",
-   "credit_ftes": 1098.21,
-   "noncredit_ftes": 25.62
+   "credit_ftes": 1879.21,
+   "noncredit_ftes": 48.58
   },
   {
    "order": 29,
@@ -1132,12 +1175,13 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.002570615,
    "county_pop_pct": 0.074107178,
    "hc_vintage": "2022-23",
-   "credit_ftes": 1414.04,
-   "noncredit_ftes": 10.76
+   "credit_ftes": 2260.65,
+   "noncredit_ftes": 18.8
   },
   {
    "order": 85,
    "college": "Riverside",
+   "display": "Riverside City",
    "headcount": 33234,
    "district": "Riverside Community College District",
    "county": "Riverside",
@@ -1158,7 +1202,7 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.019562018,
    "county_pop_pct": 0.050447897,
    "hc_vintage": "2025-26",
-   "credit_ftes": 20744.56,
+   "credit_ftes": 20752.09,
    "noncredit_ftes": 0
   },
   {
@@ -1171,7 +1215,7 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.010940606,
    "county_pop_pct": 0.050447897,
    "hc_vintage": "2025-26",
-   "credit_ftes": 11359.02,
+   "credit_ftes": 11371.56,
    "noncredit_ftes": 0
   },
   {
@@ -1184,7 +1228,7 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.007823457,
    "county_pop_pct": 0.050447897,
    "hc_vintage": "2025-26",
-   "credit_ftes": 7835.21,
+   "credit_ftes": 7841.07,
    "noncredit_ftes": 3.7
   },
   {
@@ -1197,7 +1241,7 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.013867898,
    "county_pop_pct": 0.050447897,
    "hc_vintage": "2025-26",
-   "credit_ftes": 14386.74,
+   "credit_ftes": 14395.16,
    "noncredit_ftes": 1.51
   },
   {
@@ -1224,7 +1268,7 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.014537164,
    "county_pop_pct": 0.061009765,
    "hc_vintage": "2025-26",
-   "credit_ftes": 17951.0,
+   "credit_ftes": 17951,
    "noncredit_ftes": 229.53
   },
   {
@@ -1355,7 +1399,7 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.012621118,
    "county_pop_pct": 0.091767477,
    "hc_vintage": "2025-26",
-   "credit_ftes": 16732.18,
+   "credit_ftes": 16729.3,
    "noncredit_ftes": 0
   },
   {
@@ -1407,8 +1451,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.012737098,
    "county_pop_pct": 0.02089284,
    "hc_vintage": "2025-26",
-   "credit_ftes": 17034.4,
-   "noncredit_ftes": 183.06
+   "credit_ftes": 17033.3,
+   "noncredit_ftes": 183.08
   },
   {
    "order": 25,
@@ -1513,8 +1557,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.005322747,
    "county_pop_pct": 0.033590935,
    "hc_vintage": "2022-23",
-   "credit_ftes": 3189.31,
-   "noncredit_ftes": 61.25
+   "credit_ftes": 5595.29,
+   "noncredit_ftes": 86.39
   },
   {
    "order": 36,
@@ -1566,8 +1610,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.005176184,
    "county_pop_pct": 0.033590935,
    "hc_vintage": "2022-23",
-   "credit_ftes": 2722.08,
-   "noncredit_ftes": 110.77
+   "credit_ftes": 4787.9,
+   "noncredit_ftes": 172.65
   },
   {
    "order": 115,
@@ -1751,7 +1795,7 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.002908624,
    "county_pop_pct": 0.004998434,
    "hc_vintage": "2025-26",
-   "credit_ftes": 2589.18,
+   "credit_ftes": 2752.41,
    "noncredit_ftes": 53.07
   },
   {
@@ -1764,8 +1808,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.004289655,
    "county_pop_pct": 0.002764679,
    "hc_vintage": "2025-26",
-   "credit_ftes": 4419.1,
-   "noncredit_ftes": 81.09
+   "credit_ftes": 4403.73,
+   "noncredit_ftes": 81.53
   }
  ],
  "footnotes": [
@@ -1776,7 +1820,8 @@ window.CPL_FUNDING = {
  "ftes_source": {
   "name": "CCCCO MIS DataMart — Annual FTES Summary",
   "url": "https://datamart.cccco.edu/Outcomes/FTES_Summary.aspx",
-  "selection": "Annual 2025-2026, by college"
+  "selection": "Annual 2025-2026, by college",
+  "pulled": "2026-09-24"
  },
  "allocation_basis": "ftes",
  "ftes_vintage": "2025-26",

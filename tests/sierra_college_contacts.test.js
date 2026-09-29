@@ -206,6 +206,53 @@ function fakeSb(rows, opts = {}) {
   })();
 }
 
+// ── 6b. The snapshot names its own age, and a test row never routes ────────
+// Sam ruled 2026-09-22 (open-asks item 17) that a snapshot contact keeps
+// showing, labelled with the date it was captured. An undated name reads as
+// current; that is the whole reason the ruling exists, so the date is asserted
+// rather than assumed.
+//
+// ⚠ AND THE POPULATION WAS NOT WHAT THE ITEM SAID. Re-measured live that day,
+// five profiles lack a map_college_contacts row: one is a MAP TEST row, three
+// are a partner and two non-CCC institutions, and one is a name variant of a
+// college that does have a row. None is a community college whose contact went
+// blank. The test row is the part that cannot wait for a ruling — a sandbox
+// org must never be handed to a student as somewhere to send a CPL request.
+{
+  (async () => {
+    const noRow = await withLiveContacts(RCC_PROFILE, fakeSb([SISKIYOUS]), true);
+    const ctx = buildCollegeContext(noRow, true);
+    // ⚠ ANCHOR THIS TO THE CONTACT LINE. A bare /2026-06-25/ over the whole
+    // context passed with the date stripped from the contact line, because the
+    // instruction line below it also names the date — the assertion was
+    // measuring the wrong string. Caught by mutation, 2026-09-22.
+    check("⭐ a snapshot contact carries the date it was captured",
+      /CPL Contact:[^\n]*Rene Felix[^\n]*snapshot taken 2026-06-25/.test(ctx),
+      "an undated snapshot name reads as a current lookup");
+    check("⭐ the model is told to say the contact is a snapshot",
+      /snapshot dated/i.test(ctx) && /never present it as current/i.test(ctx),
+      "the date in the context is worth nothing if the answer drops it");
+
+    const testRow = { college: "CA MAP INITIATIVE COLLEGE",
+                      contacts: { primary_contact: "Test Person",
+                                  primary_contact_email: "test@example.org" } };
+    const outTest = await withLiveContacts(testRow, fakeSb([SISKIYOUS]), true);
+    const ctxTest = buildCollegeContext(outTest, true);
+    check("⭐ A TEST ROW IS NEVER OFFERED AS A CONTACT",
+      !/Test Person/.test(ctxTest) && !/test@example\.org/.test(ctxTest),
+      "map_colleges.entity_kind is not on the profile row and the profile fetch "
+      + "does not filter it, so an ilike for 'map' or 'college' can surface this one");
+
+    const realRow = { college: "Sage College",
+                      contacts: { primary_contact: "Real Person",
+                                  primary_contact_email: "real@sage.edu" } };
+    const outReal = await withLiveContacts(realRow, fakeSb([SISKIYOUS]), true);
+    check("a genuine no-row college still gets its dated snapshot",
+      /Real Person/.test(buildCollegeContext(outReal, true)),
+      "suppression must be the test row alone, never the whole branch");
+  })();
+}
+
 // ── 7. The external/vendor gate still suppresses, and costs nothing ─────────
 {
   (async () => {

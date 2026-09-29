@@ -42,7 +42,7 @@ running in parallel are what broke the To-Do feed described below.
 
 ## What Sam asked for
 
-SkySort's handoff left one item explicitly to a successor's judgement rather than
+SkySort's handoff left one item explicitly to a successor's judgment rather than
 an assumption: *"the cap raise buys headroom, it doesn't fix the file.
 cpl_funding.test.js is 2,900 lines and ~60 jsdom windows in one process, and
 those windows are never reclaimed — window.close() doesn't release them, which is

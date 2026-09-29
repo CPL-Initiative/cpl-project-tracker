@@ -138,7 +138,7 @@ block("3. the reorder moved content, it did not delete it", () => {
                        SRC.indexOf("async function fetchLiveMetrics("));
   for (const piece of ["hostScopeBlock(hostScope)", "${context}", "${metricsContext}",
                        "${collegeContext}", "${topicContext}", "${offeringsContext}",
-                       "${credentialContext}", "${volumeContext}", "${alignmentContext}",
+                       "${credentialContext}", "${volumeContext}", "${alignmentContext}", "${prospectiveContext}",
                        "${creditContext}", "${specialInstruction}", "${audienceRule}",
                        "${teamGuidance}"]) {
     check("(3) still assembled: " + piece, fn.indexOf(piece) !== -1,

@@ -47,11 +47,11 @@ originally proposed failed its own test case. Then the lessons doc for *why*.
 | 4 | Twin merge (mechanical) | ~160 |
 | 5 | Title / description / issuer similarity | **0 — suggestions only** |
 
-**~90% of the 2,344 is curator judgement and no achievable matcher changes
+**~90% of the 2,344 is curator judgment and no achievable matcher changes
 that.** So **do not build the matcher first.** Build the worklist: ~2,180
 topics ranked by collapse value (wordings × colleges affected), each row
 offering group / split / confirm with curator attribution, the four rungs
-pre-applied and labelled. **Model the affordances on
+pre-applied and labeled. **Model the affordances on
 [`docs/ccr_merge_workspace_epic_scope.md`](ccr_merge_workspace_epic_scope.md)**
 — the CCR already solved curator-confirm for course identity.
 

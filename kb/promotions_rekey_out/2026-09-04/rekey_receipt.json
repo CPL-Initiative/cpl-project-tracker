@@ -1,0 +1,192 @@
+{
+ "date": "2026-09-04",
+ "baseline": "kb/promotions.json",
+ "maps_applied": [
+  "kb/prefix_fold_out/2026-09-03/alias_map.json"
+ ],
+ "witness_total": 9826,
+ "targets": 446,
+ "stamp_gate": {
+  "checked": 0,
+  "conflicts": 0
+ },
+ "counts": {
+  "rekeyed": 24,
+  "folded": 0,
+  "unresolved": 0,
+  "unchanged": 1962
+ },
+ "rekeyed": [
+  {
+   "old": "ANTH M1099",
+   "new": "SOCI M1099",
+   "hops": [
+    "SOCI M1099"
+   ]
+  },
+  {
+   "old": "ARTS M1065",
+   "new": "ARTH M1065",
+   "hops": [
+    "ARTH M1065"
+   ]
+  },
+  {
+   "old": "ARTS M1102",
+   "new": "ARTH M1102",
+   "hops": [
+    "ARTH M1102"
+   ]
+  },
+  {
+   "old": "ARTS M1103",
+   "new": "ARTH M1103",
+   "hops": [
+    "ARTH M1103"
+   ]
+  },
+  {
+   "old": "ARTS M1151",
+   "new": "ARTH M1151",
+   "hops": [
+    "ARTH M1151"
+   ]
+  },
+  {
+   "old": "ARTS M1166",
+   "new": "MULT M1174",
+   "hops": [
+    "MULT M1174"
+   ]
+  },
+  {
+   "old": "ARTS M1187",
+   "new": "PHOT M1187",
+   "hops": [
+    "PHOT M1187"
+   ]
+  },
+  {
+   "old": "ARTS M1300",
+   "new": "GRAF M1300",
+   "hops": [
+    "GRAF M1300"
+   ]
+  },
+  {
+   "old": "ARTS M1306",
+   "new": "GRAF M1306",
+   "hops": [
+    "GRAF M1306"
+   ]
+  },
+  {
+   "old": "BUSI M1357",
+   "new": "BSOT M1262",
+   "hops": [
+    "BSOT M1262"
+   ]
+  },
+  {
+   "old": "CISC M1073",
+   "new": "MULT M1175",
+   "hops": [
+    "MULT M1175"
+   ]
+  },
+  {
+   "old": "COMM M1089",
+   "new": "JOUR M1106",
+   "hops": [
+    "JOUR M1106"
+   ]
+  },
+  {
+   "old": "CULN M1054",
+   "new": "RMGT M1054",
+   "hops": [
+    "RMGT M1054"
+   ]
+  },
+  {
+   "old": "ENGL M1320",
+   "new": "FTVE M1320",
+   "hops": [
+    "FTVE M1320"
+   ]
+  },
+  {
+   "old": "ENGL M1329",
+   "new": "FTVE M1329",
+   "hops": [
+    "FTVE M1329"
+   ]
+  },
+  {
+   "old": "FIMS M1031",
+   "new": "FTVE M1166",
+   "hops": [
+    "FTVE M1166"
+   ]
+  },
+  {
+   "old": "FIMS M1032",
+   "new": "FTVE M1167",
+   "hops": [
+    "FTVE M1167"
+   ]
+  },
+  {
+   "old": "FIMS M1039",
+   "new": "BCST M1057",
+   "hops": [
+    "BCST M1057"
+   ]
+  },
+  {
+   "old": "HUMA M1109",
+   "new": "JOUR M1109",
+   "hops": [
+    "JOUR M1109"
+   ]
+  },
+  {
+   "old": "MUSI M1512",
+   "new": "MUSC M1512",
+   "hops": [
+    "MUSC M1512"
+   ]
+  },
+  {
+   "old": "MUSI M1542",
+   "new": "MUSC M1542",
+   "hops": [
+    "MUSC M1542"
+   ]
+  },
+  {
+   "old": "PHSC M1012",
+   "new": "GEOL M1075",
+   "hops": [
+    "GEOL M1075"
+   ]
+  },
+  {
+   "old": "SOCI M1069",
+   "new": "WMST M1069",
+   "hops": [
+    "WMST M1069"
+   ]
+  },
+  {
+   "old": "THEA M1295",
+   "new": "THES M1295",
+   "hops": [
+    "THES M1295"
+   ]
+  }
+ ],
+ "folded": [],
+ "unresolved": [],
+ "unchanged": 1962
+}

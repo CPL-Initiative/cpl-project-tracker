@@ -1,9 +1,8 @@
 ---
 title: TMC confidence score & near-auto-approval — what data we hold vs still need
-date: 2026-07-01
+created: 2026-07-01
 kb-status: published
-type: reference
-tags: [tmc, adt, co-review, confidence-score, coci, c-id, mis, program-course-file, contact-hours, curriculum-institute]
+tags: [reference, tmc, adt, co-review, confidence-score, coci, c-id, mis, program-course-file, contact-hours, curriculum-institute]
 artifacts:
   - tmc_college_courses.js            # COCI ∪ c-id.net per-college index (join ladder + graded provenance, #642)
   - tmc_templates.js                  # 45 ASCCC templates: slots, units, select-N, OR alts, flexible provisos

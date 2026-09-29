@@ -8,14 +8,46 @@
 // Adding a test = drop a `tests/<name>.test.js` that exits non-zero on failure.
 const fs = require("fs");
 const path = require("path");
-const { spawnSync } = require("child_process");
+const { spawn } = require("child_process");
+
+// Peak RSS measured 2026-08-28 by polling VmHWM per child, because the cap has
+// to come from what the files actually use rather than from the core count —
+// memory is what binds here, not CPU. What the numbers showed:
+//
+//   cpl_funding_render        3,825 MB   <- a single outlier
+//   cpl_funding_lane_switch   2,147 MB
+//   cpl_funding_cpl_ftes      2,064 MB
+//   cpl_funding_equity        1,927 MB
+//   admin_tab                   258 MB   <- a typical file
+//
+// The first model here was `N x worst-file`, which said 3 concurrent needed
+// 11.5 GB and forced the cap down to 2. That was wrong: only ONE file is 3.8 GB
+// and the rest of the heavy family sits near 2.1 GB, so the real worst case is
+// "one outlier plus (N-1) heavy" — 9.9 GB at N=4, on a 16 GB runner.
+const TYPICAL_HEAVY_MB = 2200;   // the cpl_funding_* family, minus the outlier
+const OUTLIER_EXTRA_MB = 1700;   // what the one 3.8 GB file costs above that
 
 const dir = __dirname;
-const files = fs.readdirSync(dir)
+// `--shard i/N` runs every N-th file of the sorted list (tests/lib/shard.js).
+// js-tests.yml runs N of these on N runners at once and fans them into the one
+// `test` check, because a single machine is memory-bound at 4 files wide (the
+// budget below) and the suite had grown to an 18-minute step by 2026-09-24.
+const { parseShard, shardFiles } = require("./lib/shard.js");
+const SHARD = parseShard(process.argv);
+const allFiles = fs.readdirSync(dir)
   .filter((f) => f.endsWith(".test.js"))
   .sort();
+const files = SHARD ? shardFiles(allFiles, SHARD.index, SHARD.count) : allFiles;
+const SUITE_LABEL = SHARD ? " (shard " + SHARD.index + " of " + SHARD.count + ")" : "";
 
 if (!files.length) {
+  if (SHARD) {
+    // A shard with nothing in it is a misconfiguration (more shards than
+    // files), and a green over zero files is the one result it must not give.
+    console.log("runner: shard " + SHARD.index + " of " + SHARD.count +
+      " holds no files (" + allFiles.length + " in tests/) — lower the shard count.");
+    process.exit(1);
+  }
   console.log("No tests found in tests/.");
   process.exit(0);
 }
@@ -31,9 +63,11 @@ let failed = 0;
 // look for it.
 const failures = [];
 // jsdom-heavy files can exceed Node's default old-space cap and OOM. Give each
-// child a generous, uniform ceiling. Files run sequentially (spawnSync blocks),
-// so only one child holds memory at a time; the cap only permits growth, it does
-// not reserve, so small files are unaffected.
+// child a generous, uniform ceiling. ⚠️ Files ran SEQUENTIALLY when this was
+// written, so only one child held memory at a time; since 2026-08-28 up to
+// CONCURRENCY children run at once, so the relevant budget is now
+// CONCURRENCY x peak-RSS against the runner's RAM, not one file's peak. The cap
+// only permits growth, it does not reserve, so small files are unaffected.
 //
 // RAISED 8192 -> 12288 on 2026-08-20, because 8 GB had stopped being generous:
 // cpl_funding.test.js reached 7,740 MB by assertion 525 of 575, and at that
@@ -69,19 +103,144 @@ const failures = [];
 // a recorded floor. See tests/lib/check_ledger.js for the measurement.
 const ledgerLib = require("./lib/check_ledger.js");
 const UPDATE = process.argv.includes("--update-floor");
+if (UPDATE && SHARD) {
+  // writeLedger() replaces the whole of check_floor.json, so a re-baseline
+  // from one shard would erase every other shard's floors — a silent loss of
+  // cover for three quarters of the suite. Re-baseline unsharded only.
+  console.log("--update-floor cannot run on a shard: it would write a ledger holding " +
+    "only this shard's files. Run `npm run test:floor` without --shard.");
+  process.exit(2);
+}
 const ledger = ledgerLib.loadLedger();
 const observedCounts = {};
 const dropped = [];
 const unfloored = [];
 const unparsed = [];
 
+// ─── execution ────────────────────────────────────────────────────────────
+// Files run CONCURRENTLY, each still in its own process. The isolation is not
+// new — it is what this runner has always done, and it is what makes running
+// them at the same time safe: the only thing that reclaims a jsdom window is
+// the process ending, so one file can never leak into another.
+//
+// Why it was worth doing (measured 2026-08-28, every file timed individually):
+// the suite is 280 files / 1,245s, and `cpl_funding_*` is 28 of those files and
+// 967s of that time — 78%. So "serialize the heavy family, parallelize the
+// rest" is bounded at 967s no matter how many workers you add; the heavy files
+// have to run alongside each other or nothing improves. That makes MEMORY the
+// gating constraint rather than scheduling, which is why the cap below is
+// chosen from measured peak RSS and not from the core count.
+//
+// EXECUTION is parallel; BOOKKEEPING below is untouched — it still walks
+// `files` in alphabetical order, prints each file's output as one unbroken
+// block, and applies the check-ledger exactly as before. The log a human reads
+// and the exit status are identical to the serial runner's.
+const os = require("os");
+// Concurrency limiting lives in tests/lib/limiter.js so it can be tested —
+// run.js executes the suite on load, so nothing can require it. A limiter that
+// leaks a slot runs unbounded (an OOM); one that fails to release deadlocks (a
+// hung job with no output). See that file for why it is a limiter, not a pool.
+const { makeLimiter } = require("./lib/limiter.js");
+const CONCURRENCY = (() => {
+  const raw = process.env.TEST_CONCURRENCY;
+  if (raw) {
+    const n = parseInt(raw, 10);
+    if (Number.isFinite(n) && n > 0) return n;
+  }
+  // Derived, not guessed. An OOM'd child reads as a TEST FAILURE, so trading a
+  // slow green for an intermittent red is strictly worse than being slow — and
+  // this repo has been there: the 12 GB cap exists because a funding file hit
+  // 7,740 MB and "green CI on that file had been partly luck".
+  //
+  // Budget against the RAM the machine actually has, keeping 25% back for the
+  // OS, this parent, and the fact that a peak is a measurement rather than a
+  // promise; then reserve the outlier's extra so one 3.8 GB file in the mix is
+  // always covered. A 16 GB runner yields 4; a smaller machine degrades to 2 or
+  // 1 on its own rather than dying. Override with TEST_CONCURRENCY.
+  const usableMB = (os.totalmem() / (1024 * 1024)) * 0.75 - OUTLIER_EXTRA_MB;
+  const byMemory = Math.floor(usableMB / TYPICAL_HEAVY_MB);
+  return Math.max(1, Math.min(byMemory, os.cpus().length, 4));
+})();
+
+// ⚠️ Children write to a temp FILE, not a pipe, and this is not a detail.
+//
+// `console.log` to a PIPE is asynchronous in Node, so a script that ends in
+// `process.exit()` discards whatever is still sitting in its stdout buffer. The
+// old `spawnSync` runner never saw this: the parent was blocked, so the OS pipe
+// filled, and the child blocked on write instead of getting ahead. Draining the
+// pipe from an async parent removes that back-pressure — the child races ahead,
+// buffers, and exits with output still unwritten.
+//
+// It cost a real failure before it was understood. In the first full parallel
+// run `cip_crosswalk.test.js` reported 178 of its 354 assertions and the
+// check-ledger called it "178 checks ran, floor is 354 — 176 stopped running".
+// The assertions had all run; only the report of them was cut off. Four copies
+// run concurrently WITH THEIR OUTPUT REDIRECTED TO FILES all printed 354/354,
+// which is what isolated the pipe as the cause rather than contention.
+//
+// Writes to a file descriptor are synchronous, so `process.exit()` cannot
+// truncate them. That restores exactly the completeness the serial runner had.
+const MAX_OUTPUT_BYTES = 64 * 1024 * 1024;
+const tmpdir = fs.mkdtempSync(path.join(os.tmpdir(), "cpl-tests-"));
+
+function cleanupTmp() {
+  try { fs.rmSync(tmpdir, { recursive: true, force: true }); } catch (e) { /* best effort */ }
+}
+
+function runOne(f) {
+  return new Promise((resolve) => {
+    const logPath = path.join(tmpdir, f.replace(/[^\w.-]/g, "_") + ".log");
+    const fd = fs.openSync(logPath, "w");
+    const child = spawn("node", ["--max-old-space-size=12288", path.join(dir, f)],
+      { stdio: ["ignore", fd, fd] });
+    const finish = (status, signal) => {
+      try { fs.closeSync(fd); } catch (e) { /* already closed */ }
+      let out = "";
+      try {
+        const size = fs.statSync(logPath).size;
+        if (size > MAX_OUTPUT_BYTES) {
+          const buf = Buffer.alloc(MAX_OUTPUT_BYTES);
+          const h = fs.openSync(logPath, "r");
+          fs.readSync(h, buf, 0, MAX_OUTPUT_BYTES, 0);
+          fs.closeSync(h);
+          out = buf.toString("utf8") +
+            "\n[runner: output exceeded " + (MAX_OUTPUT_BYTES / 1048576) +
+            " MB and was truncated]\n";
+        } else {
+          out = fs.readFileSync(logPath, "utf8");
+        }
+      } catch (err) {
+        out = "[runner: could not read this file's output — " + err.message + "]";
+      }
+      try { fs.unlinkSync(logPath); } catch (e) { /* best effort */ }
+      resolve({ out, status, signal });
+    };
+    child.on("error", (err) => finish(1, null));
+    child.on("close", (status, signal) => finish(status, signal));
+  });
+}
+
+async function main() {
+// Say what was chosen and why. Without this a slow CI run is indistinguishable
+// from a serial one: the cap is derived from the RUNNER's RAM, so the same
+// commit legitimately runs 4-wide on a 16 GB machine and 1-wide on a small one,
+// and nothing in the log would tell you which happened.
+console.log("runner: " +
+  (SHARD ? "shard " + SHARD.index + " of " + SHARD.count + " — " + files.length +
+           " of " + allFiles.length + " file(s)"
+         : files.length + " file(s)") +
+  ", concurrency " + CONCURRENCY +
+  " (" + os.cpus().length + " cpu, " +
+  Math.round(os.totalmem() / (1024 * 1024)) + " MB RAM" +
+  (process.env.TEST_CONCURRENCY ? ", TEST_CONCURRENCY set" : "") + ")");
+const limit = makeLimiter(Math.max(1, Math.min(CONCURRENCY, files.length)));
+const pending = {};
+for (const f of files) pending[f] = limit(() => runOne(f));
+
 for (const f of files) {
   console.log("\n──────── " + f + " ────────");
-  // Captured rather than inherited so the summary line can be read back. The
-  // child's output is written straight through, so the log is unchanged.
-  const r = spawnSync("node", ["--max-old-space-size=12288", path.join(dir, f)],
-    { encoding: "utf8", maxBuffer: 64 * 1024 * 1024 });
-  const out = (r.stdout || "") + (r.stderr || "");
+  const r = await pending[f];
+  const out = r.out;
   process.stdout.write(out);
   if (r.status !== 0) {
     failed++;
@@ -118,13 +277,24 @@ for (const f of files) {
   }
 }
 
+
 if (UPDATE) {
   // Deliberate re-baseline. A file that prints no readable count is stored as
   // null rather than omitted, so the unprotected set stays countable.
   const next = {};
   for (const f of files) next[f] = observedCounts[f];
-  const p = ledgerLib.writeLedger(next, "Re-baselined by `npm run test:floor`.");
+  /* ⭐ THE NOTE IS THE ONE THING A RE-BASELINE MUST NOT REWRITE (S242). It
+     carries the accumulated history of who floored what, and — load-bearing —
+     the warning that an interrupted run has written a LOWER floor before, so
+     diff this file for lowered numbers before committing. Passing a fresh
+     one-liner here erased both, and the next run would erase whatever a
+     session restored by hand: a file whose safety instruction is deleted by
+     the tool that writes it loses that instruction silently. Carry the
+     existing note through and let a session edit it deliberately. */
+  const p = ledgerLib.writeLedger(
+    next, ledgerLib.loadLedger()._note || "Re-baselined by `npm run test:floor`.");
   const floored = files.filter((f) => next[f] !== null).length;
+  cleanupTmp();
   console.log("\n════════════════════════════════════");
   console.log("Check floor written: " + p);
   console.log("  " + floored + " of " + files.length + " file(s) floored; " +
@@ -133,10 +303,11 @@ if (UPDATE) {
   process.exit(failed === 0 ? 0 : 1);
 }
 
+cleanupTmp();
 console.log("\n════════════════════════════════════");
 console.log(failed === 0
-  ? `All ${files.length} test file(s) passed.`
-  : `${failed} of ${files.length} test file(s) FAILED:`);
+  ? `All ${files.length} test file(s) passed.${SUITE_LABEL}`
+  : `${failed} of ${files.length} test file(s) FAILED${SUITE_LABEL}:`);
 failures.forEach((f) => console.log("  ✗ " + f));
 if (dropped.length) {
   console.log("\n" + dropped.length + " file(s) ran FEWER checks than recorded. A check that stops");
@@ -156,3 +327,7 @@ if (unparsed.length) {
     "`N/M checks passed` line brings a file under the floor.");
 }
 process.exit(failed === 0 ? 0 : 1);
+
+}
+
+main();

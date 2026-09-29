@@ -4,7 +4,6 @@ created: 2026-06-22
 updated: 2026-06-22
 tags: [methodology, generator, idempotency, regen-safe, header, css-injection, rule-1, rule-4]
 kb-status: published
-kb-type: methodology
 obsidian-folder: cpl-project-tracker/kb-notes
 related:
   - "[[CLAUDE]]"
