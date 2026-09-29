@@ -3010,6 +3010,14 @@
    * appeared on one path. setAssistantQuestions() derives it from the same two
    * inputs render() uses, via standingFor(). */
   function finish(root, h) {
+    /* ⚠ A RE-RENDER THE READER DID NOT ASK FOR MUST NOT TAKE THEIR PLACE IN
+     * SIERRA'S BOX. This tab repaints when the roster, the live metrics or the
+     * funding model arrive, and when the router re-activates it on hashchange;
+     * each repaint rebuilds the box. cpl_chat.js carries the typed text across
+     * (mountInto); focus is carried here, because this is where the markup is
+     * replaced, so this is the one place that can see it was in the box. */
+    var ae = document.activeElement;
+    var inBox = !!(ae && ae !== root && root.contains(ae) && ae.classList && ae.classList.contains("cplchat-input"));
     root.innerHTML = h;
     // The pickers move INSIDE the Sierra AI box (Sam: "put all the college
     // selectors in the CPL Assistant box for simplicity"). They are built in
@@ -3047,6 +3055,19 @@
      * conversation alive under LACCD's heading, which is the defect itself. */
     var mounted = mountAssistant(root);
     setAssistantScope();
+    /* ⚠ A SIERRA TRAINING HAND-OFF CAN OPEN THIS SECTION FROM INSIDE THE MOUNT.
+     * "Try it in: My College" is delivered by cpl_chat.js mountInto() into the
+     * box just built, and it opens the collapsed Sierra section around it. The
+     * <details> toggle event that would tell wire() arrives a task LATER, and a
+     * render in between (the roster, live metrics or funding model landing)
+     * would read state.open.sierra and shut the section on the question. So the
+     * open state is recorded here, synchronously, from the element itself. */
+    var sierraSec = root.querySelector('details[data-sec="sierra"]');
+    if (sierraSec && sierraSec.open) state.open.sierra = true;
+    if (inBox) {
+      var box = root.querySelector("#cb-assistant-mount .cplchat-input");
+      if (box) { try { box.focus({ preventScroll: true }); } catch (e) { /* hidden pane */ } }
+    }
     if (!mounted || !setAssistantQuestions()) fallbackAsks(root);
     hoistAssistantIntro(root);
     wire(root);

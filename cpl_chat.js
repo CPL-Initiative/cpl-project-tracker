@@ -1240,11 +1240,45 @@
     return (mc && mc.querySelector('#cplchat-input, .cplchat-input')) || null;
   }
 
-  function consumeTestQuestion() {
+  // ── Where a hand-off is addressed (Sierra Training "Try it in", round 1,
+  // Sam's approval 2026-09-28) ──────────────────────────────────────────────
+  // The question stays a plain string under TEST_Q_KEY; college_briefing.js and
+  // the tests write it that way. A SECOND key names the destination, and only
+  // "Try it in: My College" writes one. ABSENT means the default, which behaves
+  // exactly as it did before this key existed: the CPL Assistant pane, or My
+  // College when that tab is suppressed.
+  //
+  // ⚠ The destination cannot be read off the activated tab. chatbotInputEl()
+  // picks the pane by SUPPRESSION, so a My College hand-off consumed on
+  // activation would type the question into the HIDDEN CPL Assistant input and
+  // burn the key. And My College builds its box lazily — after data loads, inside a
+  // collapsible section — so its hand-off is delivered from mountInto(), the
+  // moment that box exists, and never on activation.
+  var TEST_DEST_KEY = 'cplSierraTestDest.v1';
+  var DEST_MY_COLLEGE = 'college-briefing';
+  function testDest() {
+    try { return sessionStorage.getItem(TEST_DEST_KEY) || ''; } catch (e) { return ''; }
+  }
+  // My College's own input, and only inside the host a mount just built.
+  function myCollegeInputEl(host) {
+    var pane = document.getElementById('tab-' + DEST_MY_COLLEGE);
+    if (!host || !pane || !pane.contains(host)) return null;
+    return host.querySelector('#cplchat-input, .cplchat-input');
+  }
+  // My College's Sierra is a collapsible section, and Collapse all closes her.
+  // A question typed into a closed section is a question nobody can see.
+  function openSectionsAround(el) {
+    for (var n = el && el.parentNode; n && n.nodeType === 1; n = n.parentNode) {
+      if (n.tagName === 'DETAILS' && !n.open) n.open = true;
+    }
+  }
+
+  function consumeTestQuestion(host) {
     var q = null;
     try { q = sessionStorage.getItem(TEST_Q_KEY); } catch (e) { return; }
     if (!q) return;
-    var el = chatbotInputEl() || inputEl;
+    var toMyCollege = testDest() === DEST_MY_COLLEGE;
+    var el = toMyCollege ? myCollegeInputEl(host) : (chatbotInputEl() || inputEl);
     // KEY IS NOT REMOVED ON FAILURE. It used to be deleted before the input was
     // known to exist, so an activation that fired before the widget was built
     // consumed the question and dropped it — and because the key was gone, the
@@ -1252,7 +1286,11 @@
     // handoff now survives until it is actually delivered.
     if (!el) return;
     el.value = q.slice(0, 1000);
-    try { sessionStorage.removeItem(TEST_Q_KEY); } catch (e) { /* storage unavailable */ }
+    try {
+      sessionStorage.removeItem(TEST_Q_KEY);
+      sessionStorage.removeItem(TEST_DEST_KEY);
+    } catch (e) { /* storage unavailable */ }
+    if (toMyCollege) openSectionsAround(el);
     try { el.focus(); } catch (e) { /* hidden pane */ }
   }
   window.addEventListener('cpl-tab-activated', function (e) {
@@ -1299,6 +1337,15 @@
   var _host = null;
   function mountInto(host, surface) {
     if (!host || host === _host) return;
+    /* ⚠ CARRY UNSENT TYPING ACROSS A RE-MOUNT. The embedding tab re-renders for
+     * reasons that are not the reader's — My College repaints when its roster,
+     * the live metrics or the funding model arrive — and every repaint hands
+     * this a NEW host, which build() fills with a new, EMPTY input. A question
+     * half-typed there, or handed over from Sierra Training, would vanish a
+     * second later.
+     * Only the previous mount's own input is carried: if the CPL Assistant pane
+     * built last, `inputEl` is that pane's and stays where it is. */
+    var carried = (_host && inputEl && _host.contains(inputEl)) ? inputEl.value : '';
     _host = host;
     /* The embedding tab declares which surface it is. Absent -> null -> every
      * guidance rule, i.e. exactly today's behavior, so an older host that has
@@ -1307,6 +1354,10 @@
     host.innerHTML = '';
     host.setAttribute('data-cplchat-mounted', '1');
     build(host);
+    if (carried && inputEl && !inputEl.value) inputEl.value = carried;
+    // A Sierra Training hand-off addressed to My College lands in the box this
+    // mount just built. The default hand-off is still never consumed here.
+    if (testDest() === DEST_MY_COLLEGE) consumeTestQuestion(host);
   }
 
   if (document.readyState === 'loading') {
@@ -1322,7 +1373,7 @@
     feedbackPayload: feedbackPayload,
     credentialHeaders: credentialHeaders, noteViewer: noteViewer, VIEWER_WORDS: VIEWER_WORDS,
     escapeHtml: escapeHtml, inlineMd: inlineMd, renderMarkdown: renderMarkdown,
-    SIERRA_MARK: SIERRA_MARK, TEST_Q_KEY: TEST_Q_KEY,
+    SIERRA_MARK: SIERRA_MARK, TEST_Q_KEY: TEST_Q_KEY, TEST_DEST_KEY: TEST_DEST_KEY,
     consumeTestQuestion: consumeTestQuestion,
     // The growing-log follow (tests/my_college_refinement.test.js). jsdom has no
     // layout, so the only way to exercise the below-the-fold branch is to stub
