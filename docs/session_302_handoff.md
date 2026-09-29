@@ -48,8 +48,28 @@ premises, so the builder refuses to build once their work lands: remove each car
   unlinked from the explainer. If the branch is not on the remote, the work was lost with the
   container: redo it from the To-Do `s295-fable-cue-narrated-draft` (word timings from
   `narration_s1.mp3` through faster-whisper `small`; huggingface.co is reachable).
-- **The unit-range display audit** ran read-only; if its table is not in the lane
-  [`mid_lifecycle`](reference/mid_lifecycle.md) or this file, re-run it.
+- **The unit-range display audit** (read-only, data of 2026-09-28) is below. The rule, Sam's of
+  2026-09-27: a merge or mint that joins differing units shows the range it joins.
+
+## The unit-range audit (S301): eight surfaces fall short
+
+| Surface | Where | What it prints for a merge whose members differ | Fix |
+|---|---|---|---|
+| Unified Courses table and detail | `excel_to_dashboard.py` L9042-9079 bake | The M-ID bake reads `kb/coci_minted_memberships.json` only, which lacks merged-in singletons: 2,358 merge targets print "—" (1,874) or one figure (484); 578 print too narrow a range (AGAS M1001 "—"; ENGL M1107 "3") | Bake from `_row_ents(r)`, as the C-ID/CCN branch already does (L9084-9101) |
+| Unified Courses .xlsx | `excel_to_dashboard.py` `xrow` L9900 | `typical_units` (WELD M1109: 2) | Write the baked range |
+| SkyView label, tooltip, card, outline | `kb/_build_ccr_universe.py` `point_of` L532; `ccr_universe.js` | One `u`: 8,065 of 16,478 identities differ; 4,937 print one figure, 3,128 "units not given" | Emit low and high in `point_of`; render "0–5u" (check the label at phone width) |
+| Common CR Reference | `cr_reference.js` `rowHtml` L505 | The canonical wording's own figure plus "units vary" (113 groups) | Store the group's low and high; "Engine Performance (2–5 units)" |
+| EACR | `statewide_interactive.js` `typicalAward` L1820 | One line per unit value for one recommendation (109 credentials) | Group by title: "Introduction to Statistics (3–5 units)" |
+| Common Exhibit Reference | `credential_reference.js` L3401 | The modal wording (31 credentials: ASE A1 "3 hours in Engine Repair", awarded at 3 and 4) | Group by topic and print the range |
+| Dashboard card, Articulations by Unified Course | `excel_to_dashboard.py` L6352 | The modal wording (114 identities) | Same grouping |
+| Public Fact Sheet + Sierra statewide lines | `fact-sheet/_build_statewide_recs.py` `build` L71 | The first figure seen (9 recommendations: EMT "6 units", awarded at 6 and 7) | Keep every value; print low–high. **One fix corrects both, and they reach the most readers** |
+
+Also Sierra's `local_set` (edge function L163) lists one recommendation once per unit value for 51
+credentials. Complying: `map_export.js` (min and max units). The Unified Courses Units tooltip
+(L4529) still calls a spread over 2 "likely an over-merge", which contradicts the rule. **Order:**
+the Fact Sheet builder first (reach), then the Unified Courses bake (volume, and SkyView reads a
+correct range only after it). The Fact Sheet is public wording: its display change is Sam's to
+see before it ships.
 
 ## Then: the queue
 
