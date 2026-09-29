@@ -342,6 +342,36 @@ const CX = 480, CY = 300;                        // jsdom's rects are zero; the 
   check("(4) ⭐ a reader who asked for reduced motion gets a still sky: no turn, Rotate not pressed",
     w3.__ccrUniverseState().reduceMotion === true && w3.__ccrUniverseState().rotating === false && w3.document.querySelector("#u-rotate").getAttribute("aria-pressed") === "false");
 
+  // ── 9 · a phone opens at the desktop's SCALE, not its angle (S301) ────────
+  // Sam's ruling "narrow" (2026-09-22). The stereographic scale is proportional
+  // to the canvas's width, so 188° across on a 390px canvas drew 100 of the 117
+  // islands in view with no stars (measured on the served page, 2026-09-29).
+  // Below 700px the opening is the width whose center scale equals 188° at
+  // 1440px: 2·atan(tan(47°)·390/1440) doubled, 64.8° across. jsdom has no
+  // layout, so the canvas is handed a phone's width directly.
+  const d5 = build({ reduce: true }); const w5 = d5.window;
+  await new Promise((r) => { if (d5.window.document.readyState === "complete") r(); else w5.addEventListener("load", r); });
+  w5.location.hash = "#skyview"; w5.__ccrRoute(); await tick(20);
+  const across5 = () => w5.__ccrUniverseState().sph.half * 360 / Math.PI;
+  // The phone test reads the VIEWPORT (fitCanvas's `innerWidth<700`); the canvas
+  // picks the angle inside it. A tablet's canvas measured 489px before it
+  // settled, so a canvas-width test opened a 768px screen at 80° across.
+  const atWidth = (px, vw) => {
+    Object.defineProperty(w5, "innerWidth", { configurable: true, get: () => (vw == null ? px : vw) });
+    Object.defineProperty(w5.document.getElementById("u-cvs"), "clientWidth", { configurable: true, get: () => px });
+    w5.document.getElementById("u-reset").click();
+    return across5();
+  };
+  const phone = atWidth(390);
+  check("(9) ⭐ on a 390px canvas the Sky opens about 65° across, at the desktop opening's scale",
+    Math.abs(phone - 64.8) < 0.2 && /65° across/.test(w5.document.querySelector("#u-zoom").textContent), phone.toFixed(2));
+  check("(9) a narrower phone opens narrower still (360px → 60°), a wider one wider (430px → 71°)",
+    Math.abs(atWidth(360) - 60.1) < 0.3 && Math.abs(atWidth(430) - 70.9) < 0.3);
+  check("(9) at 700px and wider the opening stays Sam's desktop 188° across",
+    Math.abs(atWidth(700) - 188) < 0.01 && Math.abs(atWidth(1440) - 188) < 0.01);
+  check("(9) ⭐ an unsettled canvas on a tablet never narrows it: 489px of canvas in a 768px viewport opens 188°",
+    Math.abs(atWidth(489, 768) - 188) < 0.01);
+
   // ── the harness hook: a flat-map suite names what #skyview opens ───────────
   check("(harness) the flat-map suites declare CPL_SKYVIEW_OPENS=\"map\"; production opens the Sky",
     /var OPENS = \(window\.CPL_SKYVIEW_OPENS==="map"\|\|window\.CPL_SKYVIEW_OPENS==="globe"\) \? window\.CPL_SKYVIEW_OPENS : "sky";/.test(ujs));

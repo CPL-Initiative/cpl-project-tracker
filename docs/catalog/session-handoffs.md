@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-272 document(s).
+273 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 302 | [Jev's next steps on one sheet, fresh scans, SkyView on a phone](../session_302_handoff.md) | 2026-09-29 |
 | 301 | [two ports reconciled, Sierra Training redesigned, seven asks on one sheet](../session_301_handoff.md) | 2026-09-29 |
 | 300 | [the College Dashboard ported, two calls for Sam, Sierra Training next](../session_300_handoff.md) | 2026-09-29 |
 | 299 | [the College Dashboard redesign locked, the gate at three conditions, Sierra Training in mockup](../session_299_handoff.md) | 2026-09-28 |
