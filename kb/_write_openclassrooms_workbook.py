@@ -11,6 +11,7 @@ Run:  python3 kb/_write_openclassrooms_workbook.py [OUT.xlsx]
 import datetime as dt
 import json
 import os
+import re
 import sys
 
 from openpyxl import Workbook
@@ -250,6 +251,13 @@ def write_v2(d, out):
     wb = Workbook()
     ws = wb.active
     ws.title = "Crosswalk"
+    title = "Digital Marketer"   # Ashley, 2026-09-29: no O*NET code in column A
+
+    def disc(v):
+        # Ashley, 2026-09-29: the discipline name only -- drop the TOP code and marker.
+        v = clean(v)
+        v = re.sub(r"^\s*\d{4}\.\d{2}\s*:\s*", "", v)
+        return re.sub(r"\s*\(TOP; verify\)\s*$", "", v).strip()
     cols = ["Title", "Certificate Name", "Region", "Credit Recommendation Title", "Discipline",
             "Exhibit ID", "Exhibit Title", "College Name", "Course Name", "Course ID",
             "Alignment Strength", "Opportunity Type"]
@@ -258,7 +266,7 @@ def write_v2(d, out):
     def course_row(c):
         typ = ("Potential: on MAP through another exhibit" if c["on_map"]
                else "Potential: not in MAP (new exhibit, faculty review)")
-        ws.append([d["title"], d["certificate"], c["region"], NO_CR, clean(c["discipline"]),
+        ws.append([title, d["certificate"], c["region"], NO_CR, disc(c["discipline"]),
                    NO_EX, NO_EX, c["college"], clean(c["course_title"]), clean(c["course_id"]),
                    c["strength"], typ])
 
@@ -267,9 +275,9 @@ def write_v2(d, out):
         if c["strength"] == "Direct match":
             course_row(c)
     for m in d["map_rows"]:
-        ws.append([d["title"], d["certificate"], m["region"],
+        ws.append([title, d["certificate"], m["region"],
                    f"{clean(m['credit_rec'])} (local; no statewide credit recommendation)",
-                   clean(m["discipline"]), m["exhibit_id"], clean(m["exhibit_title"]), m["college"],
+                   disc(m["discipline"]), m["exhibit_id"], clean(m["exhibit_title"]), m["college"],
                    clean(m["course_title"]), clean(m["course_id"]),
                    "Existing", "Existing MAP exhibit / articulation (related credential)"])
     for c in d["courses"]:
@@ -316,7 +324,7 @@ def write_v2(d, out):
         "Partial = one strand only (branding, public relations, UX design). A title match alone never makes a row "
         "Strong.",
         "Region is the Strong Workforce Program region. Discipline is the Minimum Qualifications discipline where the "
-        "subject code maps without ambiguity; otherwise the TOP code, marked 'verify'.",
+        "subject code maps without ambiguity; otherwise the name of the course's TOP code, which faculty should verify.",
         f"Also found: {dm} active digital-marketing certificates and degrees in COCI, and 12 ACE (military) credit "
         "recommendations in MAP in related subjects with no college course attached. Both are in the fuller "
         "workbook (20260929_OpenClassrooms_Digital_Marketer_CPL_Crosswalk.xlsx) with course descriptions and "
