@@ -304,6 +304,10 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
   #cplFundingMount .cplfund-caret{padding:0; text-decoration:none; cursor:auto}
   #cplFundingMount .cplfund-tablewrap{overflow:visible !important; border:0}
   #cplFundingMount table.cplfund-table{font-size:7.5pt; width:100%}
+  /* The College Dashboard's table states its screen minimum inline (898px at
+     the default columns, 2026-09-28), which outranks any rule here but an
+     !important one: the printed table ran 898px wide in a 720px page box. */
+  #cplFundingMount table.cplfund-table{min-width:0 !important}
   #cplFundingMount .cplfund-table thead{display:table-header-group}
   #cplFundingMount .cplfund-table th,
   #cplFundingMount .cplfund-table tbody tr.cplfund-systemrow td{position:static !important}

@@ -385,7 +385,7 @@ function mountWords(doc) {
   // Sam, 2026-09-13: no "baked", "scored", "falling back" or "pin it" in what a
   // curator reads, and an unmeasured metric reads "awaiting measurement" rather
   // than "no data yet" — the plain-absence ruling of 2026-09-01 kept, its
-  // wording turned to face forward.
+  // wording turned to face forward. (Since 2026-09-28 it reads TBA.)
   // ⚠ THE EARN FAMILY JOINED THE BAN THE SAME DAY, reversing his 2026-09-09
   // choice of "earns" over "draws" (Sam: "Earned still smacks of banking... would
   // be better to use something like 'measured... or... qualified for'"). The map

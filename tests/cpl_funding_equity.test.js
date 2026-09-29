@@ -65,7 +65,9 @@ check("data: exactly the 13 federally-rural colleges are still rural-flagged (co
   }));
 check("data: rural roster provenance cites the federal rural categorization",
   /federally categorized as rural/.test(D.rural_source || ""));
-check("data: participation deadline default Sept 1, 2026", D.participation_deadline === "2026-09-01");
+// The live model sets 2026-11-01 in both scenarios (read 2026-09-29); the
+// baked default matches it, so a config that fails to load moves no chip.
+check("data: participation deadline default Nov 1, 2026 (the live model's date)", D.participation_deadline === "2026-11-01");
 
 // D1 — base-award floor: waterfall math (model-level, via test hooks).
 // The CAP is switched OFF for this whole block. These assertions are about the
@@ -260,8 +262,8 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
     doc.querySelector('textarea[data-edit="coord-label"]') &&
     doc.querySelector('textarea[data-edit="coord-label"]').value === "CPL Coordinator listed in MAP" &&
     doc.querySelector('textarea[data-edit="part-label"]').value === "Participation request by");
-  check("deadline is editable and defaults to 2026-09-01",
-    doc.querySelector('input[data-edit="deadline"]').value === "2026-09-01");
+  check("deadline is editable and defaults to 2026-11-01 (the live model's date)",
+    doc.querySelector('input[data-edit="deadline"]').value === "2026-11-01");
   // The pie leads each Institution cell since 2026-09-28 (its column is gone);
   // before the coordinator feed loads its slot holds the pending dash, and the
   // Statewide count reads a dash too (fail-open, never a false zero).
@@ -438,7 +440,7 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   const txt = T._requirementsText();
   check("requirements text is a numbered list with both built-ins + funding line",
     /1\. CPL Coordinator listed in MAP/.test(txt) &&
-    /2\. Participation request by 2026-09-01/.test(txt) &&
+    /2\. Participation request by 2026-11-01/.test(txt) &&
     /1 of \d+ colleges currently have one on file/.test(txt) &&
     /Mapping Articulated Pathways \(MAP\) platform/.test(txt));
   // Clicking Copy must not throw even without a clipboard API (jsdom).
@@ -458,7 +460,7 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
     brief.indexOf("Proposed baseline requirements") !== -1 &&
     brief.indexOf("CPL Coordinator listed in MAP") !== -1 &&
     brief.indexOf("What your college should do") !== -1 &&
-    brief.indexOf("participation request by 2026-09-01") !== -1);
+    brief.indexOf("participation request by 2026-11-01") !== -1);
   check("brief reflects an edited requirement (regenerable after revisions)", (function () {
     T._setScenario({ extraReqs: ["75% of veteran JSTs uploaded in MAP"] });
     T.render();

@@ -31,8 +31,11 @@ also been answered on 2026-08-14 (military scope §10), and two of the 09-22
 proposals contradicted those August answers. When a verdict lands, change the
 lane's marker in the same pull request, or the sheet asks again.
 
-Published: https://claude.ai/artifact/C1uyRhneegqQ4XSPRKiC3B (2026-09-28, S297, SHEET_ID
-2026-09-28-open-asks, capabilities db + comments, three cards). Its cards 1 and 2 are cards 3
+Published: see SHEET_ID below for the live sheet (2026-09-29, S300, SHEET_ID 2026-09-29-open-asks,
+seven cards: the three below carried over unanswered, and four from the College Dashboard
+port). Before it: https://claude.ai/artifact/C1uyRhneegqQ4XSPRKiC3B (2026-09-28, S297, SHEET_ID
+2026-09-28-open-asks, capabilities db + comments, three cards; its store held no replies when
+S300 read it on 2026-09-29). Its cards 1 and 2 are cards 3
 and 4 of https://claude.ai/artifact/74AfMNmXPQYP5X7XKpjHfH (2026-09-27 evening, SHEET_ID
 2026-09-27-funding-asks, four funding cards; Sam answered cards 1 and 2 there and left off at
 card 3), so read BOTH stores' `replies` and `replies/done`, and the later answer stands; NEVER
@@ -58,8 +61,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-09-28-open-asks.html')
-SHEET_ID = '2026-09-28-open-asks'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-09-29-open-asks.html')
+SHEET_ID = '2026-09-29-open-asks'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -199,6 +202,28 @@ def p_eths_extension_open():
     return n > 0, "%d ETHS stand-alones carry a physical-activity title" % n
 
 
+def p_cards_current_total():
+    """Card 4: does the priority card still call the demonstrated figure Current Total?"""
+    src = _code(_read("cpl_funding.js"))
+    m = re.search(r"function earnedLineHtml[\s\S]{0,1500}?'\">Current Total: <strong>'", src)
+    return bool(m), ("the priority card labels the demonstrated figure Current Total" if m
+                     else "the priority card no longer says Current Total")
+
+
+def p_thankyou_acknowledge():
+    """Card 5: does the college thank-you still promise the CO will acknowledge it?"""
+    n = len(re.findall(r"will acknowledge it", _code(_read("cpl_funding.js"))))
+    return n > 0, "%d thank-you line(s) promise an acknowledgment" % n
+
+
+def p_explainer_reserve():
+    """Card 6: does the explainer's Step two note still say the model reserves funding?"""
+    html = _read("funding-model/index.html")
+    hit = "reserves the funding an institution demonstrates" in html
+    return hit, ("the explainer's Step two note still says the model reserves funding" if hit
+                 else "the explainer's Step two note no longer says reserves")
+
+
 # Keyed by the item's POSITION on the sheet — the number Sam replies with, and
 # the only unique handle (two ESL cards share a `ref`).
 EVIDENCE = {
@@ -216,6 +241,14 @@ EVIDENCE = {
     # 31 Sam ruled on; the lane (discipline-crosslist) marks the ask.
     3:  [measured(p_eths_extension_open),
          quoted("kb/eths_remint_out/2026-09-28/ruled/report.md", "2026-09-28")],
+    # 2026-09-29 (S300): the College Dashboard port's four asks. S299 carried
+    # two of them in its handoff; the lane marks all four.
+    4:  [measured(p_cards_current_total),
+         quoted("docs/ui_mockup_lessons.md (the 2026-09-28 mockup data)", "2026-09-29")],
+    5:  [measured(p_thankyou_acknowledge)],
+    6:  [measured(p_explainer_reserve)],
+    7:  [live("2026-09-29", "cpl_funding_config, Scenarios 1 and 2: the timeline's August 2027 "
+              "line and the Minimum Conditions introduction")],
 }
 
 PROVENANCE = {
@@ -357,6 +390,94 @@ def items():
         'chips': chips(('Re-mint the 43', 'remint'), ('All 85, the merged ones too', 'all'),
                        ('Leave them', 'leave'), CH_LATER),
     })
+
+    # ── the College Dashboard port's asks (S300, 2026-09-29) ─────────────────
+    I.append({
+        'lane': 'implementation-funding',
+        'title': 'Current Total now names two figures',
+        'ref': 'implementation-funding · cpl_funding.js earnedLineHtml() and the Curr columns',
+        'facts': (
+            "Since the College Dashboard, a Curr column shows the funding an institution qualifies for: "
+            "$0 until it meets all three minimum conditions. Each Priority Outcomes card still reads "
+            "<em>Current Total: $X of $Y Total Possible</em>, your 31 August label, and its $X is what "
+            "institutions have demonstrated, the conditions aside. In the 28 September mockup data the "
+            "cards added to $758,725 while the Statewide row's Curr Total Funds read $338. The download "
+            "carries both, as <em>Current total</em> and <em>Demonstrated</em>."),
+        'why': (
+            "A reader who sees Current Total on a card and Curr Total Funds on the Statewide row will "
+            "expect one figure."),
+        'rec': (
+            "<strong>The cards say Demonstrated</strong>: <em>Demonstrated: $X of $Y Total Possible</em>. "
+            "Demonstrated is the statute's verb, §78093.2(d)(2), and the cards keep reporting the "
+            "outcomes. <em>It might be wrong if</em> you want every figure on screen to be funding a "
+            "college can receive today; then the cards read the qualifying figure too."),
+        'chips': chips(('Cards say Demonstrated', 'demonstrated'), ('Cards read the qualifying figure', 'qualifying'),
+                       ('Both stand as they are', 'both'), CH_LATER),
+    })
+
+    I.append({
+        'lane': 'implementation-funding',
+        'title': "The college's thank-you still promises the CO will acknowledge it",
+        'ref': 'implementation-funding · cpl_funding.js optinAffordanceHtml()',
+        'facts': (
+            "When an administrator confirms participation, the page thanks them: <em>&ldquo;The "
+            "Chancellor&rsquo;s Office will acknowledge it; your college is counted as participating in "
+            "the meantime.&rdquo;</em> The form's note says their name and email are recorded "
+            "<em>&ldquo;for the Chancellor&rsquo;s Office to acknowledge.&rdquo;</em> Your 28 September "
+            "ruling removed Mark confirmed and the CO's Confirm, and the review lane already offers only "
+            "Reject on a self-attested request (S298's port). No acknowledgment step remains."),
+        'why': "Colleges read both lines, and the promised step no longer exists.",
+        'rec': (
+            "<strong>Say what happens.</strong> The thank-you: <em>&ldquo;Thank you. Your participation "
+            "is confirmed, and your college counts as participating from today.&rdquo;</em> The note: "
+            "<em>&ldquo;Your name and email are recorded for the Chancellor&rsquo;s Office and are not "
+            "shown publicly.&rdquo;</em> <em>It might be wrong if</em> the Chancellor's Office will write "
+            "to each college that confirms; then the thank-you should say so."),
+        'chips': chips(('Use these words', 'use'), ('Keep as is', 'keep'), CH_LATER),
+    })
+
+    I.append({
+        'lane': 'implementation-funding',
+        'title': "The explainer's Step two note and the table's heading",
+        'ref': 'implementation-funding · funding-model/index.html (public)',
+        'facts': (
+            "The public explainer's Step two note reads: <em>&ldquo;Each institution keeps its full award "
+            "while it meets the baseline. The model reserves the funding an institution demonstrates for "
+            "that institution, and the institution receives it once it confirms local "
+            "participation.&rdquo;</em> Three words have moved: Minimum Conditions replaced baseline, "
+            "your ruling took every reserve figure off the screen, and funding now waits on all three "
+            "conditions rather than confirmation alone. The table's heading, <em>Max award by "
+            "institution</em>, now sits over the Curr columns as well."),
+        'why': "The explainer is the page colleges read, and public wording comes to you before it ships.",
+        'rec': (
+            "<strong>The note:</strong> <em>&ldquo;Every institution keeps its full max award. The model "
+            "counts every outcome an institution demonstrates toward that award, and the institution "
+            "receives the funding once it meets all three minimum conditions.&rdquo;</em> <strong>The "
+            "heading:</strong> <em>Funding by institution</em>. <em>It might be wrong if</em> you want the "
+            "note to name the three conditions; they are listed just above it."),
+        'chips': chips(('Use both', 'both'), ('The note only', 'note'), ('Keep as is', 'keep'), CH_LATER),
+    })
+
+    I.append({
+        'lane': 'implementation-funding',
+        'title': 'Two of your saved texts use words you have since retired',
+        'ref': 'implementation-funding · cpl_funding_config, Scenarios 1 and 2',
+        'facts': (
+            "Both scenarios store the same two lines. The timeline's August 2027 entry reads "
+            "<em>&ldquo;Undispersed Funds Rolled to Year 2 and Releveled&rdquo;</em>; on 25 September you "
+            "ruled that year-one funding carries forward to the same college and is not releveled. The "
+            "Minimum Conditions introduction reads <em>&ldquo;Baseline outcomes to accrue implementation "
+            "funding:&rdquo;</em>; you replaced baseline with Minimum Conditions on 28 September, and "
+            "accrue is the banking sense your vocabulary map retires. The code's defaults already read "
+            "correctly; your saved text overrides them."),
+        'why': "Both lines show on the public explainer, in both scenarios.",
+        'rec': (
+            "<strong>A session writes both, in both scenarios, with a receipt of the old text:</strong> "
+            "<em>&ldquo;Remaining Funds Carried Forward to Year 2&rdquo;</em> and <em>&ldquo;Minimum "
+            "conditions to qualify for implementation funding:&rdquo;</em> <em>It might be wrong if</em> "
+            "you would rather edit them yourself on the tab; then choose that."),
+        'chips': chips(('Write both for me', 'write'), ("I'll edit them on the tab", 'self'), CH_LATER),
+    })
     return I
 
 
@@ -424,11 +545,12 @@ def build(check_only=False):
         return 0
 
     framing = (
-        "Three questions wait on you: the last three sections of your funding tab review, the "
-        "explainer's footer, and how far the Exercise Science re-mint reaches. Cards 1 and 2 are the same "
-        "two questions as cards 3 and 4 of the 27 September sheet; answer them once, on either sheet. Your "
-        "answers on the Annual view's percent and on Pedro's request are carried out, and the 31 identities "
-        "you ruled on move this week.")
+        "Seven questions wait on you. Cards 1 to 3 carry over from the 28 September sheet, unanswered: "
+        "the last three sections of your funding tab review, the explainer's footer, and how far the "
+        "Exercise Science re-mint reaches (cards 1 and 2 are also cards 3 and 4 of the 27 September "
+        "sheet; answer them once). Cards 4 to 7 come from the College Dashboard port: which figure "
+        "Current Total names, the college thank-you, the explainer's Step two note, and two of your "
+        "saved texts.")
     counts = (f"{len(I)} items across {len(lanes)} lanes · "
               f"every lane carrying an open ask is covered, by build-time audit")
 

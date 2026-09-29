@@ -278,7 +278,7 @@ window.CPL_FUNDING = {
  ],
  "feeder_metric": "CPL-ready noncredit completions handed off to a partner credit college",
  "rural_source": "The 13 California Community Colleges federally categorized as rural (superseding the 10-college CCCCO Rural College Transfer Collaborative demo cohort, which was invitation-based); edit the per-college rural flags here (or via the in-tab override when unlocked) to true up",
- "participation_deadline": "2026-09-01",
+ "participation_deadline": "2026-11-01",
  "extra_reqs": [],
  "coord_req_label": "CPL Coordinator listed in MAP",
  "participation_req_label": "Participation request by",

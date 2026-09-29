@@ -370,6 +370,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `fetch_custom_report.py` | workflows: `daily-dashboard.yml`, `map-custom-report-load.yml` | — |
 | `fetch_veteran_jst.py` | workflows: `daily-dashboard.yml` | — |
 | `first_light.js` | pages: `CPL_Dashboard.html` | — |
+| `funding-model/index.html` | scripts: `kb/_build_open_asks_decision_sheet.py` | — |
 | `funding/_build_funding_ess.py` | workflows: `daily-dashboard.yml` | — |
 | `funding/_build_funding_performance.py` | workflows: `daily-dashboard.yml` | — |
 | `funding_model_payload.js` | pages: `funding-model/index.html` | — |
@@ -940,5 +941,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 537 file
+Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 538 file
 datasets · 147 external services · 379 consumers · 37 workflows · 37 tabs.

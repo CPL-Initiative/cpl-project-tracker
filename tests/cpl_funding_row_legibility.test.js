@@ -217,7 +217,7 @@ function openDetail(window, doc, name) {
   // Sam, 2026-09-28: no mention of held funding on screen at all; the CSV's
   // Withheld column is the one place the reserve reads.
   check("no cell renders a held figure (no 'held $X' anywhere in the renderer)",
-    !/"held " \+ (?:fmtMoney|earnedMoney)\(/.test(src) && /"Withheld \(baseline not met\)"/.test(src));
+    !/"held " \+ (?:fmtMoney|earnedMoney)\(/.test(src) && /"Withheld \(minimum conditions not met\)"/.test(src));
   // The old unconditional wording would have printed "held $0" after the
   // deadline for exactly the colleges this change is for.
   check("no branch can emit a bare `held $0`",

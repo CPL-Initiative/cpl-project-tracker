@@ -591,7 +591,7 @@ def read_career_attainment(resolve, path=None):
     reach the artifact; any student counts in the file stay there.
 
     Returns None when the file is absent: ca_u / nc_ca_u stay ABSENT, never zero,
-    so the tab reads "awaiting measurement" (srcDelivered() in cpl_funding.js asks
+    so the tab reads "TBA" (srcDelivered() in cpl_funding.js asks
     the artifact for the key). A file that fails its checks is skipped with the
     reasons printed, and the MAP measures still build."""
     path = path or CAREER_IMPORT
