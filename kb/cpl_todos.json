@@ -2,19 +2,25 @@
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-29",
   "_session": "301",
-  "_status": "Jev is back on the queue: on 29 September the exhibit and subject scanners re-ran for the first time since July, and each of the four references has a proposed next step waiting on Sam, on the same sheet as the seven decisions he has not yet reviewed. The funding brief now says minimum conditions, the public download's percentage follows the rounded figure, and SkyView on a phone opens narrow enough that every discipline shows its courses.",
+  "_status": "On 29 September three surfaces began showing the unit range Sam ruled for on the 27th: the public Fact Sheet with Sierra's statewide lines, the Unified Courses table and its export, and the CR Reference. The narrated funding video's draft 3 lands each reveal on its word and says minimum conditions, and it waits on Sam with seventeen other decisions on one sheet. The funding tab's last four small targets now meet the 24-pixel floor.",
   "items": [
     {
       "id": "s301-sam-open-asks-sheet",
       "for": "Sam",
       "tab": "cr-reference",
-      "text": "Twelve decisions on one sheet: https://claude.ai/artifact/9Wikhf54XyJgWXDEw5AK7G. Cards 1 to 7 are the seven from 29 September, unchanged and not yet reviewed. Cards 8 to 11 propose a next step for each Jev reference (courses, credit recommendations, exhibits, subjects), and card 12 is Sierra Training's Try it in buttons."
+      "text": "Eighteen decisions on one sheet: https://claude.ai/artifact/XzQMks96QszUDAyXADP3Ag. Cards 1 to 7 are the seven from 29 September, not yet reviewed; 8 to 11 are a next step for Jev on each reference; 12 is Sierra Training's Try it in buttons; 13 and 14 ask how the CR Reference names and merges recommendations whose units differ; 15 to 18 are the narrated video's draft 3, which was sent to you."
     },
     {
       "id": "s301-fable-sheet-verdicts",
       "for": "Fable",
       "tab": "cr-reference",
-      "text": "Carry out Sam's answers on the twelve-card sheet as they arrive, each with its lane marker in the same change, and merge the SkyView phone opening (#1738) if it is still open."
+      "text": "Carry out Sam's answers on the eighteen-card sheet as they arrive, each with its lane marker in the same change. Cards 15 to 18 re-read or re-render the narrated video; the explainer links it only on his approval."
+    },
+    {
+      "id": "s301-fable-unit-range-rest",
+      "for": "Fable",
+      "tab": "cr-reference",
+      "text": "Show the unit range on the surfaces still short of Sam's rule of 27 September (units never split an identity): SkyView, the EACR, the Common Exhibit Reference, the dashboard card and Sierra's local lines. The Fact Sheet, Sierra's statewide lines, Unified Courses and the CR Reference comply since 29 September."
     },
     {
       "id": "s298-sam-sql-test-answer",
@@ -27,12 +33,6 @@
       "for": "Sam",
       "tab": "gr-priorities",
       "text": "Rule GR register rows #2, #10 and #16 on the GR Priorities tab, your call of 27 September. Row #2 still asks for enacted law, and the tab also holds the 2026-27 timeline's five dates."
-    },
-    {
-      "id": "s295-fable-cue-narrated-draft",
-      "for": "Fable",
-      "tab": "implementation-funding",
-      "text": "Cue each reveal of the narrated funding video to the word that names it (Sam's call, 27 September), using word timings from the recorded voice. A draft render is under way on branch claude/funding-video-cues; review it, then bring it to Sam before the explainer links it."
     }
   ],
   "_deferred": [

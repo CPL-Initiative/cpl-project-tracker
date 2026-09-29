@@ -617,3 +617,15 @@ actually assigned beats the CO's published crosswalk ~3x: mean **2.85** CIPs per
 TOP over 19,349 programs, modal share **86.5%**, against 8.4 and a worst case of
 1,032. `kb/top_cip_map.json` holds it (builder carries the refresh query) and it
 resolves for **1,235 of 1,237**. It corroborates, never gates.
+
+## S301 continued (2026-09-29): the unit range on three surfaces
+
+Sam's rule of 27 September (units never split an identity) was measured against eight surfaces; three shipped the range this session (#1742, #1743, #1744).
+
+- **A fold keeps one figure unless told otherwise, and each fold loses it its own way.** The Fact Sheet builder kept the first figure it saw (EMT "6" over 6 and 7); the Unified Courses bake read memberships narrower than the table beside it (2,358 merged rows printed "—" or one figure); the CR Reference said only "units vary". Measure each against what the row displays.
+- **List every consumer before changing a field's shape.** `u` went from "6" to "6–7": the Fact Sheet and Sierra read it as text, but the domain crosswalk parsed it as a number and would have read a range as unknown.
+- **Retiring an alarm means searching for its glyph as well as its words.** No test named the ⚠'s tooltip text, but `uc_subj4_member_sort.test.js` #5 asserted the ⚠ itself; CI's shard 2 caught it.
+- ⚠️ **A mutation check can pass on stale bytecode.** A same-length edit within one second leaves Python's cached `.pyc` valid (it checks mtime and size), so the restored file ran the mutant. Run mutation checks with `python3 -B`.
+- **A rename that other measurements group by goes to a sheet.** Naming a varying group *Engine Performance (2–5 units)* moves the typesafe trial's and Jev's grouping by `canonical`, so it is card 13, with card 9 re-measured after.
+- **A code-only PR needs its dispatch.** The runner published the regenerated artifacts about 25 minutes after `daily-dashboard.yml` was dispatched; the live values were read back after (AGAS M1001 2–3, WELD M1109 0–5).
+
