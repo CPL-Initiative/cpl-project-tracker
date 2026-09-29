@@ -1,14 +1,14 @@
 {
-  "about": "Sam's verdict on open-asks sheet 3, card 7 (2026-09-29, 12:32Z, 'Write both for me', flipped from 'I'll edit them on the tab'): the two saved texts in retired words, in both scenarios. The timeline's August 2027 entry contradicted his no-releveling ruling of 2026-09-25; the Minimum Conditions introduction still said baseline (replaced 2026-09-28) and accrue (the banking sense his vocabulary map retires).",
-  "ruling": "Sam Lee, 2026-09-29, open-asks sheet 3 (2026-09-29-open-asks-3) card 7: write",
+  "about": "Sam's verdict on open-asks sheet 4, card 6 (2026-09-29, 22:25Z, 'Carry both over'): Scenario 1's two condition phrases carry to Scenario 2. He added 'configured' to Scenario 1's first condition and 'and processed for CPL' to its veteran condition on 2026-09-29 (13:58Z); Scenario 2 lacked both. This plan replaces card 7's plan (sheet 3), which was only ever dry-run: Sam typed card 7's texts on the tab himself. That plan stays in git history. Card 5 (Year 2 follows P1 and P2) needs no write: mirrorYears is on in both scenarios, so prioSlot() gives Year 2 Year 1's priorities, and Scenario 2's Year 2 already runs on Access 50% and Completion 50%.",
+  "ruling": "Sam Lee, 2026-09-29, open-asks sheet 4 (2026-09-29-open-asks-4) card 6: carry; the config-edit workflow at his word in session ('go ahead with the config-edit workflow for 5 and 6')",
   "row_id": "default",
-  "cohort": "implementation-funding-s302@bot",
+  "cohort": "implementation-funding-s303@bot",
   "read_by_session": {
-    "at": "2026-09-29T13:5xZ",
-    "updated_at": "2026-09-25 15:16:33.607528+00",
+    "at": "2026-09-29T22:4xZ",
+    "updated_at": "2026-09-29 13:59:35.623295+00",
     "updated_by": "slee@cccco.edu",
-    "config_md5": "4c9a2a5c29e7bd6a75d081d470185f31",
-    "how": "read-only select through the Supabase MCP tool, S302"
+    "config_md5": "9585c97a8f24445c4ae4eea536710dbf",
+    "how": "read-only select through the Supabase MCP tool, S303"
   },
   "edits": [
     {
@@ -16,25 +16,11 @@
         "projects",
         "cpl-implementation",
         "scenarios",
-        "Scenario 1",
-        "timing",
-        5,
-        "label"
+        "Scenario 2",
+        "coordLabel"
       ],
-      "before": "Undispersed Funds Rolled to Year 2 and Releveled",
-      "after": "Remaining Funds Carried Forward to Year 2"
-    },
-    {
-      "path": [
-        "projects",
-        "cpl-implementation",
-        "scenarios",
-        "Scenario 1",
-        "text",
-        "elig_intro"
-      ],
-      "before": "Baseline outcomes to accrue implementation funding:",
-      "after": "Minimum conditions to qualify for implementation funding:"
+      "before": "CPL Coordinator assigned and primary CPL contact listed in MAP and the college public CPL Landing Page",
+      "after": "CPL Coordinator assigned and primary CPL contact listed in MAP and the college public CPL Landing Page configured."
     },
     {
       "path": [
@@ -42,24 +28,11 @@
         "cpl-implementation",
         "scenarios",
         "Scenario 2",
-        "timing",
-        5,
-        "label"
+        "extraReqs",
+        0
       ],
-      "before": "Undispersed Funds Rolled to Year 2 and Releveled",
-      "after": "Remaining Funds Carried Forward to Year 2"
-    },
-    {
-      "path": [
-        "projects",
-        "cpl-implementation",
-        "scenarios",
-        "Scenario 2",
-        "text",
-        "elig_intro"
-      ],
-      "before": "Baseline outcomes to accrue implementation funding:",
-      "after": "Minimum conditions to qualify for implementation funding:"
+      "before": "Minimum of 75% of enrolled veteran Joint Services Transcripts uploaded in MAP",
+      "after": "Minimum of 75% of enrolled veteran Joint Services Transcripts uploaded in MAP and processed for CPL"
     }
   ]
 }

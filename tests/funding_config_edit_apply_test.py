@@ -14,6 +14,7 @@ import copy
 import glob
 import json
 import os
+import re
 import shutil
 import sys
 import tempfile
@@ -184,6 +185,10 @@ shutil.rmtree(d)
 plans = glob.glob(os.path.join(ROOT, "kb", "funding_config_edits_out", "*", "plan.json"))
 check("a committed plan exists", bool(plans))
 RETIRED = ("accrue", "relevel", "undispersed", "baseline", "rolled")
+# Whole words: "rolled" is retired ("Rolled to Year 2"), and "enrolled veteran" is
+# the veteran condition's own wording (S303, sheet 4 card 6). A word may carry a
+# suffix (accrues, releveled); it may not sit inside another word.
+_RETIRED_RE = re.compile(r"\b(?:%s)\w*" % "|".join(RETIRED), re.I)
 for p in plans:
     pl = json.load(open(p, encoding="utf-8"))
     name = os.path.relpath(p, ROOT)
@@ -192,7 +197,11 @@ for p in plans:
     check("%s writes only strings into existing text paths" % name,
           all(isinstance(e["after"], str) and isinstance(e["before"], str) for e in pl["edits"]))
     check("%s writes none of the retired words" % name,
-          not any(w in e["after"].lower() for e in pl["edits"] for w in RETIRED))
+          not any(_RETIRED_RE.search(e["after"]) for e in pl["edits"]))
+check("the retired-word check reads whole words, and still catches each one",
+      not _RETIRED_RE.search("uploaded for enrolled veterans")
+      and all(_RETIRED_RE.search(t) for t in ("Rolled to Year 2", "Releveled", "accrue funding",
+                                              "Undispersed Funds", "Baseline outcomes")))
 
 passed = 0
 for name, ok, why in results:
