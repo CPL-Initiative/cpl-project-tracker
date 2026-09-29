@@ -362,6 +362,25 @@ check("KINE M12TP: stored before KIN/PE pass 2 it names ATHL M12TP; stored after
       and [through(ac.pending_maps(chain[:k43 + 1], None, chain)[0], "KINE M12TP")]
       == stamped[(er.STAMP, "ETHS M10PO")])
 
+# The June fold by name (S302's check before the merge): it vacated every one of the
+# 32 reused slots. Stored after the apply, a reference stays on the new course; stored
+# before the fold, it reaches the row the fold stamped `_subj4_fold_from` with that id.
+fold = "kb/subj4_fold_out/2026-06-12/alias_map.json"
+before_fold = ac.pending_maps(chain[:chain.index(fold)], None, chain)[0]
+fold_ok = []
+for receipt in (p for p in chain if p.startswith("kb/eths_remint_out/")):
+    after = ac.pending_maps(chain[:chain.index(receipt) + 1], None, chain)[0]
+    for old, v in sorted(alias_maps[receipt].items()):
+        new = ac.step(v)
+        if new not in alias_maps[fold]:
+            continue
+        pre = through(before_fold, new)
+        fold_ok.append(through(after, new) == new and stamped[(er.STAMP, old)] == [new]
+                       and pre != new and stamped[("_subj4_fold_from", new)] == [pre])
+check("the June fold vacated all 32 reused slots: stored after the apply each stays on its new course, "
+      "stored before the fold each reaches the row the fold moved",
+      len(fold_ok) == 32 and all(fold_ok))
+
 passed = sum(1 for _, ok in results if ok)
 print(f"\n{passed}/{len(results)} checks passed")
 sys.exit(0 if passed == len(results) else 1)
