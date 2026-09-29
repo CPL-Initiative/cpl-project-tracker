@@ -141,14 +141,16 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
     })(doc.querySelector(".cplfund-summary")));
 
   const pcards = doc.querySelectorAll(".cplfund-prio .p");
-  check("E: measurable priority card shows a Current Total line (not full advance)",
-    pcards[0].textContent.indexOf("Current Total") !== -1 && pcards[0].textContent.indexOf("full advance") === -1);
+  // The line reads Demonstrated (Sam, 2026-09-29, sheet 3 card 4); Current
+  // names the Curr columns' qualifying figure alone.
+  check("E: measurable priority card shows a Demonstrated line (not full advance)",
+    pcards[0].textContent.indexOf("Demonstrated:") !== -1 && pcards[0].textContent.indexOf("full advance") === -1);
   // The "full advance until the feed lands" suffix RETIRED 2026-09-01 (Sam:
   // no mention of the advance concept on any rendered surface; the model's
   // internal accounting is unchanged and guarded below at the API level).
-  check("E: unmeasured priority cards carry a Current Total line with NO advance wording",
-    pcards[1].textContent.indexOf("Current Total") !== -1 &&
-    pcards[2].textContent.indexOf("Current Total") !== -1 &&
+  check("E: unmeasured priority cards carry a Demonstrated line with NO advance wording",
+    pcards[1].textContent.indexOf("Demonstrated:") !== -1 &&
+    pcards[2].textContent.indexOf("Demonstrated:") !== -1 &&
     pcards[1].textContent.indexOf("full advance") === -1 &&
     pcards[2].textContent.indexOf("full advance") === -1);
 

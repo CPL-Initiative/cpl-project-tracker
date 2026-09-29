@@ -289,7 +289,7 @@ check("targets are NOT scaled by disbursement (per-student rate doubles, student
   // The "Combined funding: $W for the full window … Effective $E" card line is
   // RETIRED (Sam, 2026-09-02 — it restated the band head's Total Possible, the
   // Target line and the price line). The window figure has to survive on the
-  // card regardless: the Current Total line reads "of $W full-window Total
+  // card regardless: the Demonstrated line reads "of $W full-window Total
   // Possible", and the band head above carries the same figure.
   const card1 = doc.querySelector(".cplfund-prio .p");
   check("front-load: the Year-1 priority card carries NO restating 'Combined funding' line (retired 2026-09-02)",
@@ -297,7 +297,7 @@ check("targets are NOT scaled by disbursement (per-student rate doubles, student
   // The band head is retired (Sam, 2026-09-14) — the per-outcome Total Possible
   // it carried is the one figure no single card can state, so it moved to the
   // totals row above the grid. The CARD half of this check is unchanged.
-  check("front-load: the card still states the window figure — its Current Total line reads the full-window Total Possible",
+  check("front-load: the card still states the window figure — its Demonstrated line reads the full-window Total Possible",
     !!card1 && /of \$[\d,]+ full-window Total Possible/.test(card1.textContent) &&
     /Total Possible/.test((doc.querySelector(".cplfund-otot") || {}).textContent || ""));
 
