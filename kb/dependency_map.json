@@ -4,7 +4,7 @@
   "supabase_tables": 85,
   "rpcs": 31,
   "edge_functions": 5,
-  "file_datasets": 537,
+  "file_datasets": 538,
   "external_services": 147,
   "consumers": 379,
   "workflows": 37,
@@ -447,7 +447,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 11125,
+     "line": 11159,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -561,7 +561,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 34
+     "line": 36
     },
     {
      "id": "script:kb/_esl_monthly_pass.py",
@@ -679,7 +679,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 10172,
+     "line": 10206,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -1339,7 +1339,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3136,
+     "line": 3149,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -3110,7 +3110,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 152
+     "line": 155
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -3155,7 +3155,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 6180,
+     "line": 6206,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -4221,7 +4221,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 141
+     "line": 144
     },
     {
      "id": "script:scripts/stamp_asset_versions.py",
@@ -4375,7 +4375,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1148
+     "line": 1152
     },
     {
      "id": "script:kb/_seed_college_short_names.py",
@@ -4568,14 +4568,14 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1149
+     "line": 1153
     },
     {
      "id": "script:kb/_build_open_asks_decision_sheet.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 141
+     "line": 144
     }
    ],
    "served": true,
@@ -4598,7 +4598,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 12430,
+     "line": 12464,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -4626,7 +4626,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1139
+     "line": 1143
     },
     {
      "id": "script:excel_to_dashboard.py",
@@ -4676,7 +4676,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 12376,
+     "line": 12410,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -4719,7 +4719,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 12361,
+     "line": 12395,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -5656,14 +5656,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 61
+     "line": 64
     },
     {
      "id": "script:kb/_build_open_asks_decision_sheet.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 61
+     "line": 64
     }
    ],
    "served": false,
@@ -5706,7 +5706,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 10810,
+     "line": 10844,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -5821,7 +5821,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 6304,
+     "line": 6330,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -6085,6 +6085,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:funding-model/index.html": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_open_asks_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 221
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:funding/_build_funding_ess.py": {
    "consumers": [
     {
@@ -6118,7 +6131,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1140
+     "line": 1144
     }
    ],
    "served": true,
@@ -6158,7 +6171,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 141
+     "line": 144
     }
    ],
    "served": true,
@@ -8750,7 +8763,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 194
+     "line": 197
     },
     {
      "id": "script:kb/_ccr_trail.py",
@@ -10506,7 +10519,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 218
+     "line": 243
     }
    ],
    "served": false,
@@ -13684,7 +13697,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 141
+     "line": 144
     }
    ],
    "served": true,
@@ -14094,7 +14107,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 161
+     "line": 164
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -14487,7 +14500,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 3728,
+     "line": 3744,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -16226,7 +16239,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 175
+     "line": 178
     },
     {
      "id": "script:kb/_build_orphan_parent_worklist.py",
@@ -17540,7 +17553,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3932,
+     "line": 3948,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -17957,7 +17970,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 3871,
+     "line": 3887,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -17973,7 +17986,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4461,
+     "line": 4477,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -17984,7 +17997,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 4486,
+     "line": 4502,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -18011,7 +18024,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 3968,
+     "line": 3984,
      "tabs": [
       "college-briefing",
       "implementation-funding"
