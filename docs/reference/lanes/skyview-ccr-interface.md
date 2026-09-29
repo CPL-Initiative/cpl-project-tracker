@@ -1,7 +1,7 @@
 ---
 title: "SkyView / the CCR curation interface — lane state"
 created: 2026-08-28
-updated: 2026-09-19
+updated: 2026-09-29
 tags: [reference, roadmap-lane]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -181,31 +181,27 @@ work landed, so the sheet carried them to him and he spent a ruling on each.
   `sierra_guidance_surface_ck` allows `my-college · cobi-assistant · public ·
   fact-sheet · memory-autogen · memory-briefing · gr-analysis · skyview-ask`.
   There is no migration to run and no save failure to fix.
-- **③ the phone opening — STILL OPEN, and the ruling stands.** See below.
+- **③ the phone opening — DONE (S301, 2026-09-29).** See below.
 
 
-③ **The opening width on a phone — RULED "narrow" (Sam, 2026-09-22), NOT YET
-DONE.** `sph.half` is fixed at 94° (188° across) for every viewport; nothing
-reads the width.
+③ **The opening width on a phone — RULED "narrow" (Sam, 2026-09-22), DONE
+(S301, 2026-09-29).** Measured on the served page at 390×844 (`__ccrSkyAcross`,
+`skyWindow`): the stereographic scale is proportional to the canvas's width, so
+188° across drew 100 of the 117 islands in view with no stars, and cut 11 of 17
+names at the edges. Every island in view shows its stars at 75° and narrower,
+through a turn of the sky; 80° loses 10 of 43. Narrowing alone never fixed the
+names: about half ran past an edge at every width.
 
-⚠️ **THE RISK I PUT ON THE SHEET WAS THE WRONG WAY ROUND.** The card warned that
-narrowing might leave islands "collapsed", reading as empty. The invariant says
-the opposite: `NODE_ZOOM` fails islands as the window WIDENS, because the
-stereographic scale falls with width. Narrowing RAISES scale, so stars get
-safer; what narrowing costs is islands in view at once, never their stars.
+So a phone (a viewport under 700px) opens at the desktop opening's SCALE, 65°
+across at 390px (31 of 31 with stars), and a name there is drawn whole or not at
+all. At 700px and wider the opening stays 188°. The test reads the viewport,
+because the canvas has not settled when the view resets (a tablet read 489px). Screenshots before and after: the S301
+session note. Mechanics: [`skyview_invariants`](../skyview_invariants.md).
 
-⚠️ **AND IT NEEDS A MEASUREMENT NOBODY HAS TAKEN AT PHONE WIDTH.** The table in
-`ccr_universe.js` (150/188/226/240 across) was measured at desktop. Two attempts
-at a 390px harness on 2026-09-22 returned IDENTICAL numbers at every angle with
-every label stat zero — the page never rendered under them, so those runs are a
-result about the harness rather than about the sky. `npm run a11y` renders
-SkyView fine (11 routes pass), so the working path is that harness rather than a
-bare Playwright script. Do not pick an angle off the desktop table.
-
-③ *(original wording)* **The opening width on a phone.** At 188° across on a 390px canvas the
-discipline labels clip off both edges. Narrowing is a real improvement but
-`NODE_ZOOM` decides per island whether courses draw at all, and the margin is the
-point (see the invariant), so this is a ruling, not a sweep.
+⚠️ **Measured, not changed:** a 768px tablet still opens at 188°, where the
+center islands sit below `NODE_ZOOM` (the scale there is about half the
+desktop's), and the desktop cuts 6 of 34 names at 188°. The phone rules would
+apply to both unchanged; neither was in Sam's ruling.
 
 ⚠️ **"An emptied discipline stays DRAWN" is a BUILDER change, not a renderer
 tweak.** `build_islands()` walks `all_discs`, so an emptied discipline is absent

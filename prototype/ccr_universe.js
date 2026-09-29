@@ -643,8 +643,34 @@ var SKY_URL = window.CPL_SKYVIEW_SKY_URL || "ccr_sky.json";
  * 226 keeps them today but sits a whisker above the threshold, and an island's
  * scale DRIFTS as the sky turns — the S240 flicker was exactly that band. 188
  * is a step wider with a real margin, so nothing winks out mid-turn. */
-var sph={yaw:0, pitch:0.15, half:Math.PI*94/180, dist:3.0, spin:0};   // 188° across; where you look, how wide, how far, how far it has turned
+var OPEN_HALF=Math.PI*94/180;                                            // 188° across, measured at 1440px
+var sph={yaw:0, pitch:0.15, half:OPEN_HALF, dist:3.0, spin:0};   // where you look, how wide, how far, how far it has turned
 var SKY_HALF_MIN=Math.PI*2/180, SKY_HALF_MAX=Math.PI*120/180;            // 4° to 240° across
+/* ⭐ ON A PHONE THE OPENING HOLDS THE DESKTOP'S SCALE, NOT ITS ANGLE (Sam's
+ * ruling "narrow", 2026-09-22; measured S301, 2026-09-29, on the served page).
+ * The stereographic scale is proportional to the canvas's width, so 188° across
+ * on a 390px canvas draws every island at about a quarter of the desktop's
+ * scale: 117 islands in view, 100 of them under NODE_ZOOM with no stars, and
+ * the 17 that drew stars sat at the window's edge, where the projection
+ * enlarges. At 390x844 every island in view shows its stars at 75° across and
+ * narrower, through a turn of the sky, and 80° loses 10 of 43.
+ *
+ * So on a phone the opening is the width whose center scale equals the desktop
+ * opening's at OPEN_REF_W: 65° across at 390px, 60° at 360, 71° at 430, with
+ * the same margin over NODE_ZOOM the desktop keeps. Wider screens keep 188°
+ * across, Sam's desktop ruling of 2026-09-08.
+ *
+ * ⚠️ THE PHONE TEST READS THE VIEWPORT, NEVER THE CANVAS. When resetView() first
+ * runs, the canvas has not settled: a 768px tablet measured 489px there and
+ * opened at 80° across. `window.innerWidth<700` is the test fitCanvas() already
+ * uses for a phone; only inside it does the canvas's width pick the angle. */
+var OPEN_REF_W=1440, PHONE_MAX=700;
+function phoneView(){ return window.innerWidth<PHONE_MAX; }
+function openingHalf(){
+  if(!phoneView()) return OPEN_HALF;
+  var w=Math.min(cw(), window.innerWidth);
+  return Math.max(SKY_HALF_MIN, Math.min(OPEN_HALF, 2*Math.atan(Math.tan(OPEN_HALF/2)*w/OPEN_REF_W)));
+}
 var GLOBE_DIST_MIN=0.15, GLOBE_DIST_MAX=6;
 // Radians per second. Sam, 2026-09-09: "Slow the rotation". 0.045 turned the
 // sky in ~140 s, which reads as motion you watch rather than drift you stop
@@ -1243,6 +1269,16 @@ function setProj(p, quiet){
   if(sphereOn()) startTurn(); else stopTurn();
 }
 window.__ccrSetProj=function(p){ setProj(p); };
+/* Set the Sky's window to a width in degrees across, for a harness that measures
+ * it; the zoom control steps by factors and cannot land on a chosen width.
+ * Returns the width now held. No reader path calls it. */
+window.__ccrSkyAcross=function(deg){
+  if(deg!=null && proj==="sky"){
+    sph.half=Math.max(SKY_HALF_MIN, Math.min(SKY_HALF_MAX, deg*Math.PI/360));
+    syncViewK(); draw();
+  }
+  return sph.half*360/Math.PI;
+};
 /* For the harness: the projection by name, both ways. */
 /* For the harness: what the page finds under a canvas point — the same pick() the pointer uses. */
 /* ⚠️ `forDrop` is the SECOND rule pick() carries, and a harness that cannot ask
@@ -2707,8 +2743,14 @@ function labelSize(q, raw){
 }
 /* Biggest first, reject anything that would overlap an already-placed label.
    Hover/selection always wins a slot — it is the one the reader asked for. */
+/* How the island names landed on the last frame: placed, and how many of those
+ * ran past an edge of the canvas (a box wholly off the canvas is skipped, so a
+ * CLIPPED name is one drawn and cut). A phone at 188° across cut the discipline
+ * names off both edges; this is the count that measures it. */
+var islandLabelStats={placed:0, clipped:0};
 function placeLabels(queue, showAll){
   var boxes=[];
+  islandLabelStats={placed:0, clipped:0};
   queue.sort(function(a,b){
     if(a.force!==b.force) return a.force?-1:1;
     return (b.isl?b.isl.n:9e9)-(a.isl?a.isl.n:9e9);
@@ -2719,9 +2761,24 @@ function placeLabels(queue, showAll){
     var size=labelSize(q, Math.max(11,Math.min(19,q.r*0.17))*tx()); if(q.region) size=Math.round(15*tx());
     ctx.font=(q.force||q.region?"700 ":"600 ")+size+"px 'Source Sans 3',system-ui,sans-serif";
     var lab=q.text || islandLabel(q.isl);
-    var w=textW(lab), h=size*1.25;
+    var w=textW(lab), h=size*1.25, lx=q.cx;
     var box=[q.cx-w/2-3, q.cy-h, q.cx+w/2+3, q.cy+4];
     if(box[2]<0||box[0]>cw()||box[3]<0||box[1]>ch()) return;
+    /* ON A PHONE A NAME IS DRAWN WHOLE OR NOT AT ALL (S301). An island at the
+     * window's edge centers its name there, so on a 390px canvas about half the
+     * names ran past an edge at every width (13 of 23 at 75° across): narrowing
+     * alone never fixed it. A name whose island's center is on the canvas is
+     * nudged inside; one whose center is off it is dropped, unless the reader
+     * asked for it (hover, selection), which is nudged in whatever. The
+     * course labels already keep this rule (placeNodeLabels). */
+    var ly=q.cy;
+    if(!q.region && phoneView() && (box[0]<0 || box[2]>cw() || box[1]<0 || box[3]>ch())){
+      if(!q.force && (q.cx<0 || q.cx>cw() || q.cy<0 || q.cy>ch())) return;
+      var nx = box[0]<0 ? -box[0] : box[2]>cw() ? cw()-box[2] : 0;
+      var ny = box[1]<0 ? -box[1] : box[3]>ch() ? ch()-box[3] : 0;
+      box[0]+=nx; box[2]+=nx; box[1]+=ny; box[3]+=ny; lx+=nx; ly+=ny;
+      if(box[0]<0 || box[2]>cw()) return;                 // wider than the canvas itself
+    }
     var clash=false;
     for(var i=0;i<boxes.length;i++){
       var b=boxes[i];
@@ -2729,10 +2786,11 @@ function placeLabels(queue, showAll){
     }
     if(clash && !q.force) return;
     boxes.push(box);
+    if(!q.region){ islandLabelStats.placed++; if(box[0]<0||box[2]>cw()||box[1]<0||box[3]>ch()) islandLabelStats.clipped++; }
     ctx.lineWidth=3.5; ctx.strokeStyle=pal.halo;
-    ctx.strokeText(lab,q.cx,q.cy);
+    ctx.strokeText(lab,lx,ly);
     ctx.fillStyle=q.force?pal.inkForce:q.region?pal.inkMuted:pal.ink;
-    ctx.fillText(lab,q.cx,q.cy);
+    ctx.fillText(lab,lx,ly);
   });
   return boxes;   // course labels are placed into the gaps these leave
 }
@@ -3329,9 +3387,11 @@ function resetView(){
     sph.yaw=0; sph.pitch=0.15;
     /* ⚠️ THE OPENING WINDOW IS SET IN TWO PLACES — `sph`'s initializer and here,
      * and resetView() is what actually runs on open, so changing only the
-     * initializer changes nothing (measured: still 150° across). Both say 94°
-     * half = 188° across; see the initializer for why that width. */
-    if(proj==="globe") sph.dist=3.0; else sph.half=Math.PI*94/180;   // 188° across
+     * initializer changes nothing (measured: still 150° across). Both read
+     * OPEN_HALF (188° across); here a phone's canvas narrows it through
+     * openingHalf(), which needs the canvas's width and so cannot run in the
+     * initializer. */
+    if(proj==="globe") sph.dist=3.0; else sph.half=openingHalf();
     syncViewK(); return;
   }
   var b=U.bounds, W=cw(), H=ch();
@@ -4276,6 +4336,19 @@ window.__ccrUniverseState = function(){
            * about, so this is the only way a test can see that a switch reached
            * the map — which is the failure Sam reported on 2026-09-05. */
           islandsShown:U?U.islands.filter(function(I){ return islandPass(I)>0; }).length:0,
+          /* What the sky's window holds on the last frame: islands whose disc
+           * reaches the canvas, how many of those draw their stars, and how the
+           * names landed. The phone opening was chosen on these (S301). */
+          skyWindow:(function(){
+            var inView=0, stars=0, W=cw(), H=ch();
+            if(U && proj==="sky") U.islands.forEach(function(I){
+              var c=islCenter(I); if(!c) return;
+              var k=islScale(I), r=I.r*k;
+              if(c[0]+r<0 || c[0]-r>W || c[1]+r<0 || c[1]-r>H) return;
+              inView++; if(nodesOnScreen(I,k)) stars++;
+            });
+            return {inView:inView, stars:stars, names:islandLabelStats.placed, namesClipped:islandLabelStats.clipped};
+          })(),
           islandsTotal:U?U.islands.length:0,
           coursesShown:(function(){ var n=0; if(U) U.islands.forEach(function(I){ n+=islandPass(I); }); return n; })(),
           solo:solo, curView:curView, framed:framed(), ringMax:RING_MAX,

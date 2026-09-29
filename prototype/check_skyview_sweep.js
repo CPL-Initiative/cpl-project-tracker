@@ -912,6 +912,10 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
     ok("the row folds behind the word Controls; the bar is hidden until pressed", await visible(p4, "#u-ctl") && !(await visible(p4, "#u-bar")));
     ok("the header is short and the map takes most of the screen", top.height <= 130 && cv.height >= 844 * 0.75, `header ${Math.round(top.height)}px, map ${Math.round(cv.height)}px`);
     ok("the legend starts shut on a phone", r.legendOpen === false);
+    // Sam's ruling "narrow" (2026-09-22): the phone opens at the desktop's scale.
+    const win4 = await p4.evaluate(() => window.__ccrUniverseState().skyWindow);
+    ok("⭐ a phone opens narrower than 188°, and every island in view shows its stars", parseInt(await zoom(p4)) < 188 && win4.inView > 0 && win4.stars === win4.inView, `${await zoom(p4)} · ${win4.stars}/${win4.inView} with stars`);
+    ok("a phone draws every discipline name whole", win4.names > 0 && win4.namesClipped === 0, `${win4.namesClipped} of ${win4.names} cut at an edge`);
     ok("no sideways scroll", (await p4.evaluate(() => document.documentElement.scrollWidth)) <= 391);
     await p4.click("#u-ctl"); await sleep(250);
     ok("Controls opens the bar as a sheet", await visible(p4, "#u-bar") && (await p4.getAttribute("#u-ctl", "aria-expanded")) === "true");

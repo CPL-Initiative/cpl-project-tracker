@@ -1,7 +1,7 @@
 ---
 title: "SkyView — the engineering invariants"
 created: 2026-09-09
-updated: 2026-09-10
+updated: 2026-09-29
 tags: [reference, skyview]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference
@@ -224,11 +224,26 @@ the slow path can legitimately light the window from off screen.
 memory via `nodesOnScreen()` and never re-tests**, or eye and hand disagree.
 
 ⚠️ **THE OPENING WIDTH IS WRITTEN IN TWO PLACES** — `sph`'s initializer and
-`resetView()` — and **`resetView` is the one that runs.** Both say 94° half =
-**188° across** (Sam, 2026-09-08). The constraint is `NODE_ZOOM`: as the window
-widens the per-island scale falls, and past ~226° islands start losing their
-stars (150°: 70/70 · **188°: 99/99** · 240°: 128/**124**). An island's scale
-drifts as the sky turns, so the margin is the point.
+`resetView()` — and **`resetView` is the one that runs.** Both read `OPEN_HALF`,
+94° half = **188° across** (Sam, 2026-09-08). The constraint is `NODE_ZOOM`: as
+the window widens the per-island scale falls, and past ~226° islands start losing
+their stars (150°: 70/70 · **188°: 99/99** · 240°: 128/**124**). An island's
+scale drifts as the sky turns, so the margin is the point.
+
+⭐ **THE SCALE IS PROPORTIONAL TO THE CANVAS'S WIDTH, SO A PHONE OPENS BY SCALE,
+NOT BY ANGLE (S301, Sam's "narrow" of 2026-09-22).** 188° across on a 390px
+canvas drew every island at about a quarter of the desktop's scale: 117 islands in
+view, 100 of them with no stars, and the 17 that drew stars sat at the window's
+edge, where the projection enlarges. On a phone (`phoneView()`, the viewport under
+700px, fitCanvas's own test) `resetView()` takes `openingHalf()`, the width whose
+center scale equals 188° at `OPEN_REF_W` (1440px): **65° across at 390px** (31 of
+31 islands with stars, held through a turn), 60° at 360, 71° at 430. ⚠️ **The test
+reads the VIEWPORT, never the canvas:** the canvas has not settled when
+`resetView()` first runs, and a 768px tablet measured 489px there, which opened it
+at 80°. On a phone an island name is drawn whole or not at all (`placeLabels`):
+nudged inside when its island's center is on the canvas, dropped when it is not. `__ccrUniverseState().skyWindow` reports in view,
+stars, names and names clipped; `__ccrSkyAcross(deg)` sets a width for a harness.
+Guards: `tests/ccr_skyview_sky.test.js` (9) and the sweep's phone section.
 
 ⭐ **A TINT THAT FILLS THE WINDOW IS NOT A TINT, IT IS THE SKY.** The selected
 island's fill reads against the ground AT ITS EDGE; past the zoom where that edge
