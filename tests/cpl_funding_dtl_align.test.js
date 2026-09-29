@@ -202,7 +202,7 @@ function misaligned(table, rules) {
     /--seal-blue/.test(resolve(th1, "background", rules, null)) && /--white/.test(resolve(th1, "color", rules, null)));
   check("c3: each lane's fill and text color are declared in ONE rule, so they cannot separate",
     /\.cplfund-dtl-nc th \{ background: var\(--dtl-nc-head[^}]*color: var\(--white/.test(consumerSrc) &&
-    /\.cplfund-dtl-cr th \{ background: var\(--seal-blue\)[^}]*color: var\(--white/.test(consumerSrc));
+    /\.cplfund-dtl-cr th \{ background: var\(--seal-blue(, #[0-9A-Fa-f]{6})?\)[^}]*color: var\(--white/.test(consumerSrc));
   check("c2b: and the first header cell names the lane",
     th0.textContent === "Credit outcomes" && ncTable.rows[0].cells[0].textContent === "Noncredit outcomes");
 
