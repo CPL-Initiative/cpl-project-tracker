@@ -132417,7 +132417,7 @@ window.CPL_STATEWIDE = {
         "58"
       ],
       "collaborative_type": "CCC Collaborative",
-      "adopters": 25,
+      "adopters": 26,
       "adopter_names": [
         "Antelope Valley College",
         "Bakersfield College",
@@ -132443,6 +132443,7 @@ window.CPL_STATEWIDE = {
         "Rio Hondo College",
         "San Diego Miramar College",
         "Santa Ana College",
+        "Santiago Canyon College",
         "Woodland Community College"
       ],
       "potential": 75,
@@ -132523,7 +132524,7 @@ window.CPL_STATEWIDE = {
         "West Los Angeles College",
         "Yuba College"
       ],
-      "total_addressable": 100,
+      "total_addressable": 101,
       "credit_recs": [
         {
           "course": "EMGM 105A",
@@ -132623,6 +132624,10 @@ window.CPL_STATEWIDE = {
         },
         {
           "course": "EMED 110",
+          "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
+        },
+        {
+          "course": "EMTEC 101",
           "credit": "7.5-14 hours in Emergency Medical Technician (EMT)"
         },
         {
@@ -132730,8 +132735,8 @@ window.CPL_STATEWIDE = {
         {
           "id": "MAPICA-EMT(-1-001",
           "title": "Emergency Medical Technician (EMT)",
-          "units": 163.0,
-          "lines": 22
+          "units": 170.5,
+          "lines": 23
         },
         {
           "id": "MAPICA-EMTR-1-001",
@@ -132873,6 +132878,7 @@ window.CPL_STATEWIDE = {
         "Rio Hondo College": 9.0,
         "San Diego Miramar College": 21.35,
         "Santa Ana College": 11.0,
+        "Santiago Canyon College": 7.5,
         "Woodland Community College": 7.5
       },
       "adopter_lines": {
@@ -132900,6 +132906,7 @@ window.CPL_STATEWIDE = {
         "Rio Hondo College": 1,
         "San Diego Miramar College": 6,
         "Santa Ana College": 2,
+        "Santiago Canyon College": 1,
         "Woodland Community College": 1
       },
       "adopter_rec_idx": {
@@ -132907,19 +132914,19 @@ window.CPL_STATEWIDE = {
           20
         ],
         "Bakersfield College": [
-          39
+          40
         ],
         "Cabrillo College": [
           11,
           16,
-          42,
           43,
-          44
+          44,
+          45
         ],
         "Chabot College": [
-          34,
           35,
-          41
+          36,
+          42
         ],
         "Chaffey College": [
           4,
@@ -132948,7 +132955,7 @@ window.CPL_STATEWIDE = {
           13
         ],
         "Los Angeles Pierce College": [
-          25
+          26
         ],
         "Los Medanos College": [
           14
@@ -132959,29 +132966,29 @@ window.CPL_STATEWIDE = {
         "Merced College": [
           6,
           10,
-          26,
-          27
+          27,
+          28
         ],
         "Modesto Junior College": [
-          30,
-          31
+          31,
+          32
         ],
         "Moreno Valley College": [
-          32,
-          33
+          33,
+          34
         ],
         "Mt. San Antonio College": [
-          36,
-          37
+          37,
+          38
         ],
         "Napa Valley College": [
           17
         ],
         "Palo Verde College": [
-          40
+          41
         ],
         "Rio Hondo College": [
-          38
+          39
         ],
         "San Diego Miramar College": [
           0,
@@ -132992,8 +132999,11 @@ window.CPL_STATEWIDE = {
           8
         ],
         "Santa Ana College": [
-          28,
-          29
+          29,
+          30
+        ],
+        "Santiago Canyon College": [
+          25
         ],
         "Woodland Community College": [
           15
@@ -133001,7 +133011,7 @@ window.CPL_STATEWIDE = {
       },
       "peer_units_median": 7.5,
       "peer_units_max": 27.0,
-      "rec_units_total": 254.35
+      "rec_units_total": 261.85
     },
     {
       "exhibit_id": "MAPICI-C–CC1-1-001",
@@ -421339,6 +421349,124 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 4.0
     },
     {
+      "exhibit_id": "MAPSAH-AEE3-1-001",
+      "exhibit_ids": [
+        "MAPSAH-AEE3-1-001"
+      ],
+      "title": "AP English Exam 3 Units",
+      "unified_title": "AP English Exam 3 Units",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP English Exam 3 Units"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "23",
+      "top_codes": [],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Napa Valley College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "Cal-GETC Area 1A",
+          "credit": "3 hours in English Composition"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAH-AEE3-1-001",
+          "title": "AP English Exam 3 Units",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Napa Valley College": 3.0
+      },
+      "adopter_lines": {
+        "Napa Valley College": 1
+      },
+      "adopter_rec_idx": {
+        "Napa Valley College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPSAH-ACE3-1-001",
+      "exhibit_ids": [
+        "MAPSAH-ACE3-1-001"
+      ],
+      "title": "AP Calculus Exam 3 Units",
+      "unified_title": "AP Calculus Exam 3 Units",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Calculus Exam 3 Units"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "27",
+      "top_codes": [],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Napa Valley College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "Cal-GETC Area 2",
+          "credit": "3 hours in Mathematical Concepts and Quantitative Reasoning"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAH-ACE3-1-001",
+          "title": "AP Calculus Exam 3 Units",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Napa Valley College": 3.0
+      },
+      "adopter_lines": {
+        "Napa Valley College": 1
+      },
+      "adopter_rec_idx": {
+        "Napa Valley College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
       "exhibit_id": "MAPCBEN-PP-1-001",
       "exhibit_ids": [
         "MAPCBEN-PP-1-001"
@@ -424421,11 +424549,11 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "Santiago Canyon College",
-        "credit_recs": 477,
-        "exhibits": 22,
-        "disciplines": 2,
-        "ccc_collaborative": 0,
-        "industry_certs": 477,
+        "credit_recs": 478,
+        "exhibits": 23,
+        "disciplines": 3,
+        "ccc_collaborative": 1,
+        "industry_certs": 478,
         "pct": 3.4
       },
       {
@@ -424681,6 +424809,15 @@ window.CPL_STATEWIDE = {
         "pct": 1.0
       },
       {
+        "college": "Napa Valley College",
+        "credit_recs": 140,
+        "exhibits": 123,
+        "disciplines": 16,
+        "ccc_collaborative": 3,
+        "industry_certs": 19,
+        "pct": 1.0
+      },
+      {
         "college": "Lake Tahoe Community College",
         "credit_recs": 139,
         "exhibits": 104,
@@ -424705,15 +424842,6 @@ window.CPL_STATEWIDE = {
         "disciplines": 11,
         "ccc_collaborative": 0,
         "industry_certs": 0,
-        "pct": 1.0
-      },
-      {
-        "college": "Napa Valley College",
-        "credit_recs": 138,
-        "exhibits": 121,
-        "disciplines": 16,
-        "ccc_collaborative": 3,
-        "industry_certs": 19,
         "pct": 1.0
       },
       {
@@ -425305,8 +425433,8 @@ window.CPL_STATEWIDE = {
     "by_discipline": [
       {
         "discipline": "Not Mapped",
-        "credit_recs": 6002,
-        "exhibits": 2168,
+        "credit_recs": 6004,
+        "exhibits": 2170,
         "courses": 328,
         "colleges": 86,
         "ccc_collaborative": 25,
@@ -425350,11 +425478,11 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Health",
-        "credit_recs": 475,
+        "credit_recs": 476,
         "exhibits": 236,
-        "courses": 320,
-        "colleges": 46,
-        "ccc_collaborative": 33,
+        "courses": 321,
+        "colleges": 47,
+        "ccc_collaborative": 34,
         "pct": 3.4
       },
       {
@@ -425514,14 +425642,14 @@ window.CPL_STATEWIDE = {
     "by_cpl_type": [
       {
         "cpl_type": "Standardized Assessment",
-        "credit_recs": 7358,
-        "exhibits": 2672,
+        "credit_recs": 7360,
+        "exhibits": 2674,
         "colleges": 84,
         "pct": 52.9
       },
       {
         "cpl_type": "Industry Certification",
-        "credit_recs": 3729,
+        "credit_recs": 3730,
         "exhibits": 1162,
         "colleges": 79,
         "pct": 26.8
@@ -425572,15 +425700,15 @@ window.CPL_STATEWIDE = {
       },
       {
         "mode": "Apprenticeships, internships, work-based learning, industry-based experiential learning (A)",
-        "credit_recs": 1371,
+        "credit_recs": 1372,
         "exhibits": 401,
         "colleges": 42,
         "pct": 9.9
       },
       {
         "mode": "High school coursework (H)",
-        "credit_recs": 390,
-        "exhibits": 345,
+        "credit_recs": 392,
+        "exhibits": 347,
         "colleges": 20,
         "pct": 2.8
       },
@@ -425630,17 +425758,17 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 12325,
-        "exhibits": 5751,
+        "credit_recs": 12327,
+        "exhibits": 5753,
         "colleges": 96,
         "disciplines": 23,
         "pct": 88.7
       },
       {
         "category": "CCC Collaborative",
-        "credit_recs": 1352,
+        "credit_recs": 1353,
         "exhibits": 167,
-        "colleges": 64,
+        "colleges": 65,
         "disciplines": 11,
         "pct": 9.7
       },
@@ -426056,8 +426184,8 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-09-29T18:13:06",
-  "total_credit_recs": 13897,
+  "generated_at": "2026-09-29T20:46:39",
+  "total_credit_recs": 13900,
   "cip_sectors": {
     "01": "Agricultural/Animal/Plant/Veterinary Science and Related Fields",
     "03": "Natural Resources and Conservation",
