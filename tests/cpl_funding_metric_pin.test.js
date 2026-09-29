@@ -70,7 +70,8 @@ function openDetail(window, doc, name) {
 // the CREDIT table. Its Max Funds IS the credit share that the retired Total
 // Possible hover carried, so `crShare` reads it directly. Hovers are kept per
 // cell as `<key>Tip`.
-const DTL_COL = { "outcomes": "priority",
+// The first header names the lane since 2026-09-28 ("Credit outcomes").
+const DTL_COL = { "outcomes": "priority", "credit outcomes": "priority", "noncredit outcomes": "priority",
   "max ftes": "target", "max funds": "maxFunds", "actual ftes": "actual", "actual funds": "current",
   "difference": "diff" };
 const crShare = (cells) => cells.maxFunds;
@@ -211,13 +212,15 @@ check("2d: srcDelivered() asks the ARTIFACT, not the registry (a declared key ma
   } } });
   T.render();
   const P = detRows(openDetail(window, doc, "Laney"));
-  check("3e: an undelivered NC source earns $0 and reads 'awaiting measurement' (2026-09-13 wording)",
-    P.length === NPRIO && /awaiting measurement/.test(P[0].actual) && P[0].current === "$0");
+  // TBA wherever a measure has yet to arrive (Sam, 2026-09-28; it replaced the
+  // 2026-09-13 "awaiting measurement").
+  check("3e: an undelivered NC source earns $0 and reads 'TBA' (2026-09-28 wording)",
+    P.length === NPRIO && P[0].actual === "TBA" && P[0].current === "$0");
   // Both statuses read "no data yet" on the SURFACE since 2026-09-01; the
   // contrast that matters (the gap row's Current Total pays, the undelivered
   // row's is strictly $0) is 3e4's check, on the dollars.
-  check("3e2: the gap row beside it also reads 'awaiting measurement' — never a measured zero",
-    P.length === NPRIO && /awaiting measurement/.test(P[1].actual) && !/0 · 0%/.test(P[1].actual));
+  check("3e2: the gap row beside it also reads 'TBA' — never a measured zero",
+    P.length === NPRIO && P[1].actual === "TBA" && !/0 · 0%/.test(P[1].actual));
   check("3e3: and it is not reported as a measured zero ('0.0 FTES · 0%')",
     P.length === NPRIO && !actFtes(P[0], 0));
   // The data-gap row ADVANCES its whole CR funding; the undelivered row earns
@@ -241,8 +244,8 @@ check("4c: a declared-but-undelivered source earns f=0 — Sam's NC ruling, not 
 // The measured zero prints the NUMBER since 2026-09-24 (the unit rides the
 // header, the percent the hover); the undelivered label stays words.
 check("4d: undelivered is a separate LABEL from none (absent zero vs measured zero) — " +
-      "'awaiting measurement' vs a measured 0.0",
-  /status === "undelivered"\) act = "awaiting measurement"/.test(consumerSrc) &&
+      "'TBA' vs a measured 0.0",
+  /status === "undelivered"\) \{ act = "TBA";/.test(consumerSrc) &&
   /status === "none"\) \{ act = unit\(0\);/.test(consumerSrc));
 
 // ── 5. one place decides whether a number is a measurement ───────────────────
@@ -288,9 +291,9 @@ check("5c: the CSV emits BLANK for an unmeasured priority, never 0",
 // measure still never renders as a college's measured zero (4d above), and
 // the undelivered branch still decides before the catch-all.
 check("5d: an undelivered measure never falls through to the catch-all label",
-  consumerSrc.indexOf('status === "undelivered") act = "awaiting measurement"') !== -1 &&
-  consumerSrc.indexOf('status === "undelivered") act = "awaiting measurement"') <
-    consumerSrc.indexOf('else act = "awaiting measurement"'));
+  consumerSrc.indexOf('status === "undelivered") { act = "TBA"') !== -1 &&
+  consumerSrc.indexOf('status === "undelivered") { act = "TBA"') <
+    consumerSrc.indexOf('else { act = "TBA"'));
 
 // ── 6. the curator diagnostic must not lie about the new states ──────────────
 // It previously classified anything without a `src` as "not measurable — pays a
@@ -316,8 +319,8 @@ check("5d: an undelivered measure never falls through to the catch-all label",
   const txt = diag ? diag.textContent : "";
   // Plain words since 2026-09-23 (Sam: "Simplify and use plain language in
   // the bullets"); the feed key rides each line's hover.
-  check("6a: an undelivered pin reads awaiting measurement at $0, not 'pays a FULL ADVANCE'",
-    /Awaiting measurement\. The daily MAP feed does not carry this measure yet; it counts \$0 until it does/.test(txt));
+  check("6a: an undelivered pin reads TBA at $0, not 'pays a FULL ADVANCE'",
+    /\bTBA\. The daily MAP feed does not carry this measure yet; it counts \$0 until it does/.test(txt));
   check("6b: a bad pin says it counts $0 and names the fix",
     /Counts \$0: its measure is not one MAP reports\. Choose a measure on the card/.test(txt));
   check("6c: neither new state is described as advancing",
@@ -463,7 +466,7 @@ check("7a2: the BAKE carries no pin — its slot-2 metric is not the one the pin
   const card3 = cardAt(doc, 2);
   const P = detRows(openDetail(window, doc, "Bakersfield"));
   check("8a: with ppa_u present the Access column starts earning, no code change",
-    /Actual/.test(card3.textContent) && !/Awaiting actuals/.test(card3.textContent) &&
+    /Actual/.test(card3.textContent) && !/Awaiting actuals|Actual: TBA/.test(card3.textContent) &&
     P.length === NPRIO && /^[\d,.]+$/.test(P[2].actual) && /% of Max FTES$/.test(P[2].actualTip) &&
     !/no feed/.test(P[2].actual));
   // ⚠️ ASSERTED ON THE PARSED REGISTRY, NOT ON ITS SOURCE TEXT. This line used

@@ -271,7 +271,7 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
         position:sticky. Sticky in paged media parks those rows over the body
         text on page two onward; thead as a table-header-group repeats them
         properly instead, once per page.
-     3. CONTROLS. Search, Columns, Download as Excel, Confirm Participation,
+     3. CONTROLS. Search, Columns, Download as Excel, the Confirm chip,
         the carets and the PDF button itself are screen affordances. They
         print as dead boxes and eat the column width the figures need.
      4. WIDTH. The widened table goes back to the page box — a sheet of paper
@@ -303,7 +303,7 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
      as plain text instead: same element, none of the affordance. */
   #cplFundingMount .cplfund-caret{padding:0; text-decoration:none; cursor:auto}
   #cplFundingMount .cplfund-tablewrap{overflow:visible !important; border:0}
-  #cplFundingMount table.cplfund-table{font-size:7.5pt; width:100%}
+  #cplFundingMount table.cplfund-table{font-size:7.5pt; width:100%; min-width:0}
   #cplFundingMount .cplfund-table thead{display:table-header-group}
   #cplFundingMount .cplfund-table th,
   #cplFundingMount .cplfund-table tbody tr.cplfund-systemrow td{position:static !important}
@@ -954,8 +954,8 @@ window.CPL_PAINT_EXPLAINER = function (D) {
   setText("r-min", money(D.min));
   setText("r-med", money(D.median));
   setText("r-max", money(D.max));
-  // "base award" and "cap", the words the model's own table uses ("(at base)",
-  // "(at cap)") — the page said minimum / maximum / base / cap interchangeably
+  // "base award" and "cap", the words the model's own table uses (its Base and
+  // Cap chips) — the page said minimum / maximum / base / cap interchangeably
   // for the same two dials, and the painter's own sentence said "guaranteed
   // minimum" while the box above it said "base award". Institutions, not
   // colleges: the roster is 118 institutions, three of which are not colleges.

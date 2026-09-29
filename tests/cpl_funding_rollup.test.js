@@ -84,6 +84,13 @@ const DISTRICTS = (function () {
 })();
 
 // A detail-table column's index, found by its header.
+// The main table's cell under a column, by its header's sort key (every row
+// renders one cell per column; a hidden column is hidden by CSS, not omitted).
+function colCell(row, key) {
+  const ths = Array.from(row.ownerDocument.querySelectorAll("#cplFundTable thead th"));
+  const i = ths.findIndex(function (th) { return th.getAttribute("data-sort") === key; });
+  return i >= 0 ? row.children[i] : null;
+}
 function colOf(tbl, name) {
   return Array.from(tbl.querySelectorAll("th")).map(function (h) { return h.textContent.trim(); }).indexOf(name);
 }
@@ -100,10 +107,11 @@ function colOf(tbl, name) {
   // lines carry their funding as Max Funds and Actual Funds.
   check("college drill-in renders a detail row with per-priority math",
     detail && detail.textContent.indexOf("Priority 1") !== -1 && detail.textContent.indexOf("Max Funds") !== -1);
+  // The first header names the lane since 2026-09-28 (Credit outcomes).
   check("drill-in carries the six-column detail table (Sam's columns, 2026-09-24)",
     !!detail.querySelector(".cplfund-dtl-table") &&
     Array.from(detail.querySelectorAll(".cplfund-dtl-table th")).map(function (h) { return h.textContent; })
-      .join("|").indexOf("Outcomes|Max FTES|Max Funds|Actual FTES|Actual Funds|Difference") !== -1);
+      .join("|").indexOf("Credit outcomes|Max FTES|Max Funds|Actual FTES|Actual Funds|Difference") !== -1);
   // The active year's metric moved from the drill-in to the priority CARDS —
   // still one click away, and the card is the surface the curator edits.
   check("the active year's metric shows on the priority cards (the drill-in's metric line moved there)",
@@ -115,13 +123,17 @@ function colOf(tbl, name) {
   // the pool — the per-year tranche under Annual funding, the full window under
   // Combined funding (the retired Yr1/Yr2/Total columns' invariants, on the
   // pair). ±$2 = two independently rounded cells.
-  // The CR/NC pair by class: the Max award cell (cf-max) leads it since
-  // 2026-09-23 and carries the combined figure the pair adds up to.
-  const sysCells = function () { return doc.querySelector("tr.cplfund-systemrow").querySelectorAll("td.cf-award:not(.cf-max)"); };
-  const sysMax = function () { return doc.querySelector("tr.cplfund-systemrow td.cf-award.cf-max"); };
+  // The CR/NC pair by column: Max CR Funds and Max NC Funds since the College
+  // Dashboard redesign (2026-09-28), and Total Funds (cf-max) the combined
+  // figure the pair adds up to.
+  const sysCells = function () {
+    const r = doc.querySelector("tr.cplfund-systemrow");
+    return [colCell(r, "cr_award"), colCell(r, "nc_award")];
+  };
+  const sysMax = function () { return colCell(doc.querySelector("tr.cplfund-systemrow"), "total"); };
   check("ONE SYSTEM row renders (R6), carrying the CR/NC award pair",
-    doc.querySelectorAll("tr.cplfund-systemrow").length === 1 && sysCells().length === 2);
-  check("and its Max award cell is the pair's sum",
+    doc.querySelectorAll("tr.cplfund-systemrow").length === 1 && sysCells().every(function (c) { return !!c; }));
+  check("and its Total Funds cell is the pair's sum",
     !!sysMax() && Math.abs(firstMoney(sysMax()) - (firstMoney(sysCells()[0]) + firstMoney(sysCells()[1]))) <= 2);
   check("SYSTEM pair under Annual funding = the per-year tranche ($" + Math.round(NET / 2).toLocaleString("en-US") + ")",
     Math.abs((firstMoney(sysCells()[0]) + firstMoney(sysCells()[1])) - NET / 2) <= 2);
@@ -144,18 +156,20 @@ function colOf(tbl, name) {
   check("grouping adds one district header per district (" + distinct + ")", hdrs.length === distinct);
   check("grouping KEEPS every institution row visible (the point of retiring the toggle)",
     doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row").length === flatN);
-  // Subtotals conserve the size column (credit FTES — each header's cell is
-  // independently rounded, so tolerance = one dollar per header).
+  // Subtotals conserve the size column (credit FTES — each subtotal is
+  // independently rounded, so tolerance = one per district). The FTES pair
+  // left the table's face with the College Dashboard redesign (2026-09-28);
+  // the grouped CSV's district subtotal lines still carry it.
   const listCrFtes = D.colleges.reduce(function (s, c) { return s + (c.credit_ftes || 0); }, 0);
-  const gCrFtes = Array.from(hdrs).reduce(function (s, tr) {
-    return s + (Number(tr.querySelectorAll("td")[1].textContent.replace(/,/g, "")) || 0);
-  }, 0);
-  check("district subtotals conserve the roster's credit FTES", Math.abs(gCrFtes - listCrFtes) <= distinct);
+  const csvG = window.CPL_FUNDING_TAB._csv().split("\r\n").map(splitCsv)
+    .filter(function (f) { return /^DISTRICT SUBTOTAL/.test(f[1] || ""); });
+  const gCrFtes = csvG.reduce(function (s, f) { return s + (Number(f[4]) || 0); }, 0);
+  check("district subtotals conserve the roster's credit FTES (grouped CSV, " + csvG.length + " districts)",
+    csvG.length === distinct && Math.abs(gCrFtes - listCrFtes) <= distinct);
   // Groups are ordered by their subtotal, largest first (Sam's explicit call).
   // The subtotal now reads as the CR/NC award pair on each header row.
   const gTotals = Array.from(hdrs).map(function (tr) {
-    const aw = tr.querySelectorAll("td.cf-award:not(.cf-max)");
-    return firstMoney(aw[0]) + firstMoney(aw[1]);
+    return firstMoney(colCell(tr, "cr_award")) + firstMoney(colCell(tr, "nc_award"));
   });
   check("district groups are ordered by subtotal, largest first",
     gTotals.every(function (v, i) { return i === 0 || gTotals[i - 1] >= v - 2; }));
@@ -198,11 +212,15 @@ function colOf(tbl, name) {
     cardAt(doc, 0).textContent.indexOf("next daily data refresh") !== -1);
   // Reworded 2026-09-01 (Sam): the card reads a plain "no data yet"; the WHY
   // lives only in the curator-only metric-wiring diagnostic.
-  check("Y1-P2 card reads a plain 'awaiting measurement' — the gap reason no longer renders on the card",
-    cardAt(doc, 1).textContent.indexOf("awaiting measurement") !== -1 &&
+  // TBA wherever a measure has yet to arrive (Sam, 2026-09-28). A gap reads
+  // "Actual: TBA." and a wired measure the feed has yet to deliver reads
+  // "Actual: TBA — this measure stays at $0 today.", so the period tells the
+  // two states apart.
+  check("Y1-P2 card reads a plain 'Actual: TBA.' — the gap reason no longer renders on the card",
+    cardAt(doc, 1).textContent.indexOf("Actual: TBA.") !== -1 &&
     cardAt(doc, 1).textContent.indexOf("STATEWIDE credit recommendation") === -1);
   check("Y1-P3 (Portal/Landing) is no longer a hard gap — it's the wired portal metric",
-    cardAt(doc, 2).textContent.indexOf("awaiting measurement") === -1 &&
+    cardAt(doc, 2).textContent.indexOf("Actual: TBA.") === -1 &&
     cardAt(doc, 2).textContent.indexOf("Portal") !== -1);
   // Per-priority detail (the expand — the P-columns' successor). Since the
   // 2026-09-01 rewording, gap and pending both read a plain "no data yet" on
@@ -216,9 +234,9 @@ function colOf(tbl, name) {
   const act = function (i) {
     return Array.from(dtl.querySelectorAll("tr"))[i + 1].querySelectorAll("td")[colOf(dtl, "Actual FTES")].textContent;
   };
-  check("P2 (gap) and P3 (pending) detail rows both read 'awaiting measurement' — never a measured zero",
-    act(1).indexOf("awaiting measurement") !== -1 && act(1).indexOf("0 · 0%") === -1 &&
-    act(2).indexOf("awaiting measurement") !== -1 && act(2).indexOf("0 · 0%") === -1);
+  check("P2 (gap) and P3 (pending) detail rows both read 'TBA' — never a measured zero",
+    act(1).trim() === "TBA" && act(1).indexOf("0 · 0%") === -1 &&
+    act(2).trim() === "TBA" && act(2).indexOf("0 · 0%") === -1);
 }
 {
   // With a synthetic perf artifact.
@@ -270,8 +288,8 @@ function colOf(tbl, name) {
   click(window, doc.querySelector('#cplFundYear button[data-val="2"]'));
   // The gap REASON ("MIS match-back") left the cards with the 2026-09-01
   // rewording — it lives in the curator diagnostic; the card reads plainly.
-  check("Y2 cards read 'awaiting measurement' (their metrics are unmeasured today)",
-    cardAt(doc, 1).textContent.indexOf("awaiting measurement") !== -1);
+  check("Y2 cards read 'Actual: TBA.' (their metrics are unmeasured today)",
+    cardAt(doc, 1).textContent.indexOf("Actual: TBA.") !== -1);
 }
 
 // C9b — measurability follows the METRIC, not the slot position (Sam, 2026-07-23).
@@ -295,13 +313,13 @@ function colOf(tbl, name) {
   } } });
   window.CPL_FUNDING_TAB.render();
   const cards = allCards(doc);
-  check("reordered slot-0 (statewide eligibility) reads 'awaiting measurement', not a number",
-    cards[0].textContent.indexOf("awaiting measurement") !== -1 &&
+  check("reordered slot-0 (statewide eligibility) reads 'Actual: TBA.', not a number",
+    cards[0].textContent.indexOf("Actual: TBA.") !== -1 &&
     cards[0].textContent.indexOf("16,807") === -1);
   check("reordered slot-1 (any transcribed) now carries the measurable actual (16,807 of target)",
     cards[1].textContent.indexOf("16,807") !== -1 && cards[1].textContent.indexOf("of target") !== -1);
   check("reordered slot-2 (Portal/Landing) carries the wired portal metric, not the eligibility gap",
-    cards[2].textContent.indexOf("awaiting measurement") === -1 &&
+    cards[2].textContent.indexOf("Actual: TBA.") === -1 &&
     cards[2].textContent.indexOf("STATEWIDE credit recommendation") === -1 &&
     cards[2].textContent.indexOf("Portal") !== -1);
 }

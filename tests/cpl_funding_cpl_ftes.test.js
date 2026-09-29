@@ -102,10 +102,12 @@ function bootWithUnits(window, units) {
 function dtlRow0(window, T, name) {
   T._state.open["c:" + name] = true;
   T.render();
+  // Found by the name itself: the name cell was the second cell until the
+  // College Dashboard redesign (2026-09-28) retired the # column.
   const row = Array.from(window.document.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
     .find(function (r) {
-      const td = r.querySelectorAll("td")[1];
-      return td && td.textContent.trim().replace(/^▸/, "").indexOf(name) === 0;
+      const nm = r.querySelector(".cplfund-instname");
+      return nm && nm.textContent.trim().indexOf(name) === 0;
     });
   const det = row && row.nextElementSibling;
   const dtl = det && det.querySelector(".cplfund-dtl-table");

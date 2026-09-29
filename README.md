@@ -126,10 +126,13 @@ The whole ecosystem, end-to-end:
    all 118 institutions** (the one-pool model, adopted 2026-08-31: $150K base
    to $400K cap on the combined credit + noncredit award; the three
    noncredit-only campuses — NOCE / SD Continuing Ed / Calbright — are ordinary
-   rows earning by origination, no advances), one row per institution with
-   **CR/NC FTES and award columns**, its max award decomposing into credit and
-   noncredit shares, per-priority drill-ins, district rollups, and one
-   statewide row under a **frozen header** (measured pins, no lazy loading) —
+   rows earning by origination, no advances), one row per institution led by
+   its **minimum-conditions pie and Veteran Star** and reading **Max and Curr
+   funding by lane and in total** (the College Dashboard, locked by Sam
+   2026-09-28: Curr is the funding qualifying so far, and no reserve figure
+   shows), its max award decomposing into credit and noncredit shares,
+   per-priority drill-ins opening on the Minimum Conditions line, district
+   rollups, and one statewide row under a **frozen header** (measured pins, no lazy loading) —
    the table is the first section after the introduction, and every other
    section is folded on open (per visit, since 2026-09-02) —
    with the project card's named projects folded in **live from the Budget

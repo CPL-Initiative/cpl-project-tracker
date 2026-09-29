@@ -371,8 +371,10 @@ const fmtM = function (v) { return "$" + Math.round(v).toLocaleString("en-US"); 
     ph.indexOf("<textarea") === -1);
   check("print HTML: priority metric textarea flattens to its text (survives print)",
     ph.indexOf("Headcount of students eligible for at least one course offered through CPL") !== -1);
-  check("print HTML: the college table content survives",
-    ph.indexOf("SYSTEM (statewide)") !== -1);
+  // The statewide row reads "Statewide" since the College Dashboard redesign
+  // (Sam, 2026-09-28), with its count in words.
+  check("print HTML: the college table content survives, the statewide row's name flattened to text",
+    ph.indexOf("<span>Statewide</span>") !== -1 && ph.indexOf("<span>Alameda</span>") !== -1);
 }
 
 // E5 — CO Monitor's notes (gated).

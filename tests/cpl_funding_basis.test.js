@@ -278,15 +278,15 @@ check("sizePct is COMPUTED, never read from a baked percentage",
     !doc.querySelector("#cplFundAllocBasis"));
   // ⚠️ Assert the CONTRACT, not Sam's current wording — a pinned label string
   // goes red on a routine rename. Under ONE POOL (2026-08-31) the single
-  // basis-flipping size column is RETIRED: the table carries the CR FTES / NC
-  // FTES pair (the two halves of the combined basis and of every award's
-  // decomposition), and the basis in force is named by the size cell's hover
-  // ("the allocation basis") and by the explainer's formula — those flip with
-  // the control; the FTES pair does not.
+  // basis-flipping size column was RETIRED for a CR FTES / NC FTES pair, and
+  // Sam's College Dashboard redesign (locked 2026-09-28) retired the pair "in
+  // place of" the max and current funding columns. The size and the basis in
+  // force ride the Total Funds hover ("the allocation basis", below) and the
+  // explainer's formula; the table's face carries funding.
   const sizeTh = (k) => doc.querySelector('#cplFundTable thead th[data-sort="' + k + '"]');
-  check("the table carries the CR FTES / NC FTES pair — the combined basis on the face",
-    !!sizeTh("cr_ftes") && /FTES/i.test(sizeTh("cr_ftes").textContent) &&
-    !!sizeTh("nc_ftes") && /FTES/i.test(sizeTh("nc_ftes").textContent));
+  check("the FTES pair left the table's face with the redesign; Total Funds carries the size in its hover",
+    !sizeTh("cr_ftes") && !sizeTh("nc_ftes") && !!sizeTh("total") &&
+    !!doc.querySelector("#cplFundTable tbody tr.cplfund-row td.cf-total[title*='allocation basis']"));
   check("the explainer names the COMBINED basis in the allocation formula",
     /credit \+ noncredit FTES share/.test(doc.body.textContent));
   // Both figures must be reachable regardless of which one is the basis, and

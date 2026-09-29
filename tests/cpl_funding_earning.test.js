@@ -81,32 +81,39 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
   check("E: the Potential/Earned basis toggle is gone (no mode to get stuck in)",
     !doc.querySelector("#cplFundBasis") && !("basis" in T._state));
   const potRow = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row")).find(function (r) { return /Laney/.test(r.textContent); });
-  // The Max award cell leads the award cells since 2026-09-23 (Sam's base
-  // report); the CR/NC pair follows it. awardCells[0] is therefore the combined
-  // figure, and the pair is read by what it is, not by where it sits.
+  // Since Sam's College Dashboard redesign (locked 2026-09-28) each max figure
+  // has its current one beside it: Max CR Funds · Curr CR Funds · Max NC Funds
+  // · Curr NC Funds · Total Funds · Curr Total Funds. Cells are read by their
+  // column's sort key, never by where they sit.
+  const ths = Array.from(doc.querySelectorAll("#cplFundTable thead th"));
+  const cell = function (row, key) {
+    const i = ths.findIndex(function (th) { return th.getAttribute("data-sort") === key; });
+    return i >= 0 ? row.children[i] : null;
+  };
   const awardCells = potRow.querySelectorAll("td.cf-award");
-  const pairCells = potRow.querySelectorAll("td.cf-award:not(.cf-max)");
-  check("E: one row carries the Max award and the CR award / NC award pair",
-    awardCells.length === 3 && pairCells.length === 2 && awardCells[0].classList.contains("cf-max"));
-  check("E: the Max award cell stacks the max award over the qualifying figure, unconditionally",
-    !!awardCells[0].querySelector(".sub") &&
+  const totCell = cell(potRow, "total"), curTot = cell(potRow, "current_total");
+  const ncCell = cell(potRow, "nc_award");
+  check("E: one row carries Total Funds and the Max CR / Max NC pair, each beside its Curr column",
+    awardCells.length === 6 && potRow.querySelectorAll("td.cf-cur").length === 3 &&
+    !!totCell && totCell.classList.contains("cf-max") && !!curTot && curTot.classList.contains("cf-cur"));
+  check("E: Total Funds is its figure alone; the qualifying figure has its own column, unconditionally",
+    !totCell.querySelector(".sub") && /^\$[\d,]+$/.test(curTot.textContent.trim()) &&
     // ⚠️ THE PRESENT PARTICIPLE, NEVER THE PAST (Sam, 2026-08-27): the funding is
     // not a done deal until the college qualifies, and the past tense read like a
     // settled award. His 2026-09-13 sweep retired "earn", so the word is now
     // "qualifying" — the TENSE ruling is what survives, and both are load-bearing.
-    // Asserted BOTH ways so a revert to a past tense fails rather than passing on
-    // a loose match.
+    // Asserted BOTH ways, on the cell's hover and its header, so a revert to a
+    // past tense fails rather than passing on a loose match.
     (function (t) { return /qualifying/i.test(t) && !/\b(earned|qualified|demonstrated)\b/i.test(t); })(
-      awardCells[0].querySelector(".sub").textContent));
+      (curTot.getAttribute("title") || "") + " " + (ths.find(function (th) {
+        return th.getAttribute("data-sort") === "current_total"; }).getAttribute("title") || "")));
   // Reworded 2026-09-01 (Sam: no unshipped-feed references on the surface):
-  // the F1 arithmetic shows as the STANDARD qualifying sub at $0.
-  // The qualifying line reads ONCE, under the Max award (2026-09-23): the pair
-  // cells each printed it, so a gated college read "confirm participation"
-  // twice. The NC cell is its figure, and its hover carries the qualifying one.
-  check("E: the NC award cell is its figure alone, its qualifying figure in the hover (no feeds-waiting label)",
-    !pairCells[1].querySelector(".sub") &&
-    /qualifying so far( in \d{4}-\d{2})?: \$0/.test(pairCells[1].getAttribute("title") || "") &&
-    !/until feeds report/.test(pairCells[1].textContent + (pairCells[1].getAttribute("title") || "")));
+  // the F1 arithmetic shows as the STANDARD qualifying figure at $0. A max
+  // cell is its figure, and its hover carries the qualifying one.
+  check("E: the Max NC Funds cell is its figure alone, its qualifying figure in the hover (no feeds-waiting label)",
+    !!ncCell && !ncCell.querySelector(".sub") &&
+    /qualifying so far( in \d{4}-\d{2})?: \$0/.test(ncCell.getAttribute("title") || "") &&
+    !/until feeds report/.test(ncCell.textContent + (ncCell.getAttribute("title") || "")));
 
   const la = T._alloc("Laney");   // in-feed, underachieving on the measurable P1
   const f = Math.min(1, 200 / la.p1_heads);
@@ -149,13 +156,13 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
     pcards[1].textContent.indexOf("full advance") === -1 &&
     pcards[2].textContent.indexOf("full advance") === -1);
 
-  const crTxt = awardCells[0].textContent;
-  check("E: the CR award cell carries BOTH the max award and the qualifying figure",
-    (crTxt.match(/\$/g) || []).length >= 2 && /qualifying/i.test(crTxt) &&
-    !/\b(earned|qualified|demonstrated)\b/i.test(crTxt));
-  check("E: the CR award cell hover names the qualifying figure — the measured/advance breakdown is retired",
-    /qualifying so far/.test(awardCells[0].getAttribute("title") || "") &&
-    !/advance|measured on actual/.test(awardCells[0].getAttribute("title") || ""));
+  const crCell = cell(potRow, "cr_award"), crCur = cell(potRow, "cr_current");
+  check("E: the credit lane reads its max figure and its qualifying figure, one to a cell",
+    /^\$[\d,]+$/.test(crCell.textContent.trim()) && /^\$[\d,]+$/.test(crCur.textContent.trim()) &&
+    !/\b(earned|qualified|demonstrated)\b/i.test(crCell.textContent + crCur.textContent));
+  check("E: the Max CR Funds hover names the qualifying figure — the measured/advance breakdown is retired",
+    /qualifying so far/.test(crCell.getAttribute("title") || "") &&
+    !/advance|measured on actual/.test(crCell.getAttribute("title") || ""));
 
   // Earned splits TWO ways since the guaranteed rural slice was retired
   // (2026-08-22), and the parts must reconstitute the whole — this is what keeps
@@ -165,8 +172,8 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
     Math.abs((la.earned_measured + la.earned_advance) - la.earned_total) < 1);
   check("E: the data-gap priorities land in the ADVANCE bucket, not measured",
     la.earned_advance > 0);
-  check("E: no adv chip renders in the cell (retired 2026-09-01 with the advance wording)",
-    !/\badv\b/.test(awardCells[0].textContent));
+  check("E: no adv chip renders in the row (retired 2026-09-01 with the advance wording)",
+    !/\badv\b/.test(potRow.textContent));
 
   const csv = T._csv().split("\r\n");
   // The CSV export is READ BY A HUMAN, so the 2026-09-13 vocabulary sweep reaches
@@ -212,11 +219,11 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
   T._state.open["c:Laney"] = true;
   T.render();
   const det = doc.querySelector("tr.cplfund-detail");   // only Laney is open
-  // One table per lane since 2026-09-24, in Sam's columns; the totals line
-  // above them names what the college has qualified for.
-  check("E: drill-in shows the per-priority earning detail (lane tables, an Actual Funds column, the totals line)",
-    !!det && !!det.querySelector(".cplfund-dtl-table.cplfund-dtl-cr") &&
-    /Actual Funds: \$[\d,]+/.test((det.querySelector(".cplfund-dtl-sum") || {}).textContent || "") &&
+  // One table per lane since 2026-09-24, in Sam's columns. The totals line
+  // above them went with the College Dashboard redesign (2026-09-28): the row
+  // states the totals.
+  check("E: drill-in shows the per-priority earning detail (lane tables with an Actual Funds column, no totals line)",
+    !!det && !!det.querySelector(".cplfund-dtl-table.cplfund-dtl-cr") && !det.querySelector(".cplfund-dtl-sum") &&
     Array.from(det.querySelectorAll(".cplfund-dtl-table th")).some(function (h) { return /^Actual Funds$/.test(h.textContent.trim()); }));
 }
 {
@@ -300,20 +307,23 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
   check("F: ⚙ Columns menu renders", !!doc.querySelector(".cplfund-colmenu"));
   const keys = Array.from(doc.querySelectorAll(".cplfund-colmenu input[data-colkey]")).map(function (cb) { return cb.getAttribute("data-colkey"); });
   check("F: the Institution identity column is NOT hideable (absent from the menu)", keys.indexOf("college") === -1);
-  check("F: other columns are hideable (district, the FTES pair, the award pair)",
-    keys.indexOf("district") !== -1 && keys.indexOf("cr_ftes") !== -1 && keys.indexOf("nc_ftes") !== -1 &&
-    keys.indexOf("cr_award") !== -1 && keys.indexOf("nc_award") !== -1);
-  check("F: no retired money column lingers in the menu (combined/yr — R6/R7); the Max award is hideable",
-    keys.indexOf("combined") === -1 && keys.indexOf("y1") === -1 && keys.indexOf("total") !== -1);
+  check("F: other columns are hideable (district, each lane's max and current, the county context)",
+    ["district", "cr_award", "cr_current", "nc_award", "nc_current", "total", "current_total", "working_adults"]
+      .every(function (k) { return keys.indexOf(k) !== -1; }));
+  check("F: no retired column lingers in the menu (combined/yr — R6/R7; #, the FTES pair and Elig — 2026-09-28)",
+    ["combined", "y1", "order", "cr_ftes", "nc_ftes", "elig"].every(function (k) { return keys.indexOf(k) === -1; }));
   const waCb = doc.querySelector('.cplfund-colmenu input[data-colkey="working_adults"]');
   check("F: county (working adults) is unchecked/hidden by default", !!waCb && !waCb.checked);
   const distCb = doc.querySelector('.cplfund-colmenu input[data-colkey="district"]');
   check("F: District is unchecked/hidden by default too (the mock's default view)", !!distCb && !distCb.checked);
   const style0 = doc.querySelector("#cplFundTable style");
-  const countyPos = Array.from(doc.querySelectorAll("#cplFundTable thead th"))
-    .map(function (th) { return th.getAttribute("data-sort"); }).indexOf("working_adults") + 1;
-  check("F: a hide <style> is injected for both default-hidden columns (District 3rd, county " + countyPos + "th)",
-    !!style0 && countyPos > 3 && /nth-child\(3\)/.test(style0.textContent) &&
+  const headKeys = Array.from(doc.querySelectorAll("#cplFundTable thead th"))
+    .map(function (th) { return th.getAttribute("data-sort"); });
+  const countyPos = headKeys.indexOf("working_adults") + 1;
+  const distPos = headKeys.indexOf("district") + 1;
+  check("F: a hide <style> is injected for both default-hidden columns (District " + distPos + ", county " + countyPos + ")",
+    !!style0 && distPos === 2 && countyPos > distPos &&
+    new RegExp("nth-child\\(" + distPos + "\\)").test(style0.textContent) &&
     new RegExp("nth-child\\(" + countyPos + "\\)").test(style0.textContent));
   check("F: the hide rule excludes detail rows so a drill-in never collapses",
     style0.textContent.indexOf(":not(.cplfund-detail)") !== -1);
@@ -321,19 +331,24 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
   // Toggle District back ON, then OFF again — the rule follows, and the choice persists.
   distCb.checked = true; distCb.dispatchEvent(new window.Event("change", { bubbles: true }));
   const style1 = doc.querySelector("#cplFundTable style");
-  check("F: re-showing District removes its nth-child(3) hide rule",
-    !!style1 && style1.textContent.indexOf("nth-child(3)") === -1);
+  check("F: re-showing District removes its nth-child(" + distPos + ") hide rule",
+    !!style1 && style1.textContent.indexOf("nth-child(" + distPos + ")") === -1);
   const distCb2 = doc.querySelector('.cplfund-colmenu input[data-colkey="district"]');
   distCb2.checked = false; distCb2.dispatchEvent(new window.Event("change", { bubbles: true }));
   const style2 = doc.querySelector("#cplFundTable style");
-  check("F: hiding District re-injects the nth-child(3) hide rule",
-    !!style2 && style2.textContent.indexOf("nth-child(3)") !== -1);
-  check("F: the column choice persists to localStorage",
-    JSON.parse(window.localStorage.getItem("cplfund_cols_v1")).college.district === true);
+  check("F: hiding District re-injects the nth-child(" + distPos + ") hide rule",
+    !!style2 && style2.textContent.indexOf("nth-child(" + distPos + ")") !== -1);
+  // v2 since the redesign: v1 hid the old Max award under the key `total`,
+  // which Total Funds now holds.
+  check("F: the column choice persists to localStorage, under the v2 key",
+    JSON.parse(window.localStorage.getItem("cplfund_cols_v2")).college.district === true);
 
-  const eligTh = doc.querySelector('#cplFundTable th[data-sort="elig"]');
-  check("F: the Elig column renders by default (Sam's R10 veto) and its tooltip clarifies participate-vs-earn",
-    !!eligTh && (eligTh.getAttribute("title") || "").indexOf("PARTICIPATE") !== -1);
+  // The Elig column (on by default since Sam's R10 veto) moved INTO the name
+  // cell on 2026-09-28: the pie leads each name, and each slice says which
+  // condition it counts, so the column header's tooltip has no column left.
+  check("F: the Elig pie leads the name cell, with no Elig column left behind",
+    !doc.querySelector('#cplFundTable th[data-sort="elig"]') &&
+    !!doc.querySelector("#cplFundTable tbody tr.cplfund-row td.t .cf-lead"));
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -372,15 +387,17 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
   const dh = Array.from(dtl.querySelectorAll("th")).map(function (h) { return h.textContent.trim().toLowerCase(); });
   const col = function (i, k) { return cells(i)[dh.indexOf(k)] || ""; };
   // Sam's six columns, in his order (2026-09-24, review sheet item 7).
-  check("G: the detail table carries Outcomes · Max FTES · Max Funds · Actual FTES · Actual Funds · Difference",
+  // The first header names the lane since 2026-09-28 (Credit outcomes).
+  check("G: the detail table carries Credit outcomes · Max FTES · Max Funds · Actual FTES · Actual Funds · Difference",
     Array.from(dtl.querySelectorAll("th")).map(function (h) { return h.textContent.trim(); }).join("|") ===
-      "Outcomes|Max FTES|Max Funds|Actual FTES|Actual Funds|Difference");
+      "Credit outcomes|Max FTES|Max Funds|Actual FTES|Actual Funds|Difference");
   const tip = function (i, k) { const td = rows[i].querySelectorAll("td")[dh.indexOf(k)]; return td ? td.getAttribute("title") || "" : ""; };
   check("G: the measurable P1 row shows the actual, and its hover the % of Max FTES",
     col(0, "actual ftes").indexOf("200") !== -1 && /%/.test(tip(0, "actual ftes")));
-  check("G: an unmeasured priority row reads a plain 'awaiting measurement' — never a measured zero, and " +
+  // TBA wherever a measure has yet to arrive (Sam, 2026-09-28).
+  check("G: an unmeasured priority row reads a plain 'TBA' — never a measured zero, and " +
         "never the retired advance wording (2026-09-01)",
-    col(1, "actual ftes").indexOf("awaiting measurement") !== -1 && col(1, "actual ftes").indexOf("advance") === -1 &&
+    col(1, "actual ftes").trim() === "TBA" && col(1, "actual ftes").indexOf("advance") === -1 &&
     !/^0(\.0)?$/.test(col(1, "actual ftes").trim()));
   check("G: the priority rows carry funding ($ figures) alongside the measures",
     /\$/.test(col(0, "actual funds")) && /\$/.test(col(0, "max funds")) && /\$/.test(col(0, "difference")));

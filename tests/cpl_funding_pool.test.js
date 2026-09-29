@@ -42,9 +42,13 @@ const {
 {
   const { window } = freshDom();
   const doc = boot(window);
-  // The pair cells, read by class: the Max award cell (cf-max) leads them
-  // since 2026-09-23.
-  const sysAward = doc.querySelectorAll("#cplFundTable tr.cplfund-systemrow td.cf-award:not(.cf-max)");
+  // The pair cells, read by column: Max CR Funds and Max NC Funds since the
+  // College Dashboard redesign (2026-09-28), each with its Curr cell beside it.
+  const ths = Array.from(doc.querySelectorAll("#cplFundTable thead th"));
+  const sysTr = doc.querySelector("#cplFundTable tr.cplfund-systemrow");
+  const sysAward = ["cr_award", "nc_award"].map(function (k) {
+    return sysTr.children[ths.findIndex(function (th) { return th.getAttribute("data-sort") === k; })];
+  }).filter(Boolean);
   const csvO = window.CPL_FUNDING_TAB._csv().split("\r\n");
   const headO = (csvO[1] || "").split(",");
   const sysO = (csvO.find(function (l) { return l.indexOf("SYSTEM (statewide)") !== -1; }) || "").split(",");

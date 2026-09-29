@@ -57,7 +57,6 @@ function footText(doc) {
 }
 // The gate's money story lives in the CR award cell's stacked sub-line now
 // (one row per institution — the old td.tot money column is retired, R6).
-function gateSub(row) { return row.querySelector("td.cf-award .cf-withheld"); }
 
 // Part S — the BASELINE PARTICIPATION GATE (Sam, 2026-07-30): "actual funding
 // total should only be above 0 if they've met all of the quals as well."
@@ -116,50 +115,48 @@ function gateSub(row) { return row.querySelector("td.cf-award .cf-withheld"); }
     Math.abs(ok.total - T._alloc("Laney").total) < 0.01 &&
     ok.earned_total > 0);
 
-  // The cell must say "withheld", never a bare $0 — a plain zero would read as
-  // "posted no CPL", a different and unfairer claim.
+  // The row says what to DO. Sam, 2026-08-23: "a little worried about the
+  // message we're sending with the Held label"; 2026-08-27: the call to action
+  // is "confirm participation", never "opt in" (mailing-list language that
+  // presumes a default of OUT). His College Dashboard redesign (locked
+  // 2026-09-28) put the call on the row's one control, with its date, and took
+  // every reserve figure off the screen: the Curr columns read the qualifying
+  // figure, and the pie and the chip carry the gate without a hover.
   const gatedRow = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
     .find(function (r) { return /Berkeley City/.test(r.textContent); });
-  const gatedSub = gateSub(gatedRow);
-  // Sam, 2026-08-23: "a little worried about the message we're sending with the
-  // Held label". Before the deadline EVERY college is gated — nobody has opted
-  // in yet — so a dollar figure labelled "held" on all the rows says the state
-  // is withholding from the whole system, when the requirement is not yet due.
-  // The rule is now phase-dependent, and the never-a-bare-$0 ruling still holds
-  // in both phases.
-  // Sam, 2026-08-27: the call to action is "confirm participation", not "opt in"
-  // — "opt in" is mailing-list language that presumes a default of OUT and makes
-  // declining look like a normal choice, when nothing here is conditional on a
-  // choice. Asserted BOTH ways so a revert is a failure, not a silent pass.
-  check("S5: before the deadline the row says what to DO, and names no held figure",
-    !!gatedSub && /confirm participation/i.test(gatedSub.textContent) &&
-    !/\bopt[- ]?in\b/i.test(gatedSub.textContent) &&
-    !/held/i.test(gatedSub.textContent) && !/\$/.test(gatedSub.textContent) &&
-    !/^\s*\$0\s*$/.test(gatedSub.textContent));
-  check("S5: ...and its hover says plainly that all of the max award remains available",
-    !!gatedSub && /all of the max award remains available/i.test(gatedSub.getAttribute("title") || ""));
-  check("S5: the gate is visible WITHOUT a hover — the Elig pie plus the award cell's own words",
-    !!gatedRow.querySelector("svg.cf-eligpie") &&
-    /confirm participation/i.test(gatedRow.querySelector("td.cf-award").textContent));
+  const chip = gatedRow && gatedRow.querySelector(".cplfund-optin-jump");
+  const hovers = function (el) {
+    return el ? el.textContent + " " + Array.from(el.querySelectorAll("[title]"))
+      .map(function (x) { return x.getAttribute("title"); }).join(" ") : "";
+  };
+  check("S5: before the deadline the row's control says what to DO, with its date, never 'opt in'",
+    !!chip && chip.textContent.trim() === "Confirm by 11-01-26" &&
+    /confirm .*participation/i.test(chip.getAttribute("title") || "") &&
+    !/\bopt[- ]?in\b/i.test(chip.textContent));
+  check("S5: ...and the row names no held figure, in its text or its hovers",
+    !!gatedRow && !/\bheld\b|\breserve[ds]?\b|\bwithheld\b/i.test(hovers(gatedRow)) &&
+    hovers(gatedRow).indexOf(String(Math.round(gated.earned_withheld)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")) === -1);
+  check("S5: the gate is visible WITHOUT a hover — the Elig pie plus the Confirm chip",
+    !!gatedRow.querySelector("svg.cf-eligpie") && !!chip);
   check("S5: …and the ⛔ chip that duplicated the pie is gone (Sam, 2026-09-01)",
     !gatedRow.querySelector(".cf-gatechip") && gatedRow.innerHTML.indexOf("⛔") === -1);
-  check("S5: the gated cell's hover explains that the funding rolls forward",
-    /rolls? forward|held in reserve/i.test(gatedRow.querySelector("td.cf-award").getAttribute("title") || "") ||
-    /rolls? forward|reserve/i.test((gatedSub && gatedSub.getAttribute("title")) || ""));
+  const curTh = doc.querySelector('#cplFundTable th[data-sort="current_total"]');
+  check("S5: the Curr header explains the gate: the model counts the funding once the conditions are met",
+    !!curTh && /The model counts it once the institution meets its minimum conditions\./.test(curTh.getAttribute("title") || ""));
 
-  // AFTER the deadline the money genuinely is being held back, so the figure
-  // returns. Driven by moving the deadline into the past rather than by mocking
-  // a clock — the deadline is a real editable dial, so this is the same path a
-  // curator takes.
+  // AFTER the deadline the chip's words change; the row still names no held
+  // figure (the redesign's ruling holds in both phases). Driven by moving the
+  // deadline into the past rather than by mocking a clock — the deadline is a
+  // real editable dial, so this is the same path a curator takes.
   (function () {
     T._setScenario({ participationDeadline: "2020-01-01" });
     T.render();
     const lateRow = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
       .find(function (r) { return /Berkeley City/.test(r.textContent); });
-    const lateSub = gateSub(lateRow);
-    check("S5: after the deadline the row DOES name the held figure",
-      !!lateSub && /^held \$/.test(lateSub.textContent.trim()) &&
-      /was due/i.test(lateSub.getAttribute("title") || ""));
+    const lateChip = lateRow && lateRow.querySelector(".cplfund-optin-jump");
+    check("S5: after the deadline the chip reads Confirm now, and the row still names no held figure",
+      !!lateChip && lateChip.textContent.trim() === "Confirm now" &&
+      !/\bheld\b|\breserve[ds]?\b/i.test(hovers(lateRow)));
     T._setScenario({ participationDeadline: "2026-11-01" });
     T.render();
   })();
@@ -282,8 +279,9 @@ function shareSumAll(T) {
   // The actual product still works — this is a lean render, not a crippled one.
   check("U3: every institution row still renders (the one-pool roster of " + ROSTER_N + ")",
     doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row").length === ROSTER_N);
-  check("U3: the award cells still stack the max award over the earning line",
-    !!doc.querySelector("#cplFundTable td.cf-award .sub"));
+  check("U3: the funding cells still render, each max figure beside its Curr figure",
+    !!doc.querySelector("#cplFundTable tbody tr.cplfund-row td.cf-total") &&
+    doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row td.cf-cur").length === ROSTER_N * 3);
   check("U3: grouping still works for a public reader",
     !!doc.querySelector("#cplFundGroup"));
 
@@ -414,22 +412,25 @@ function shareSumAll(T) {
 
   const row = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
     .find(function (r) { return /Berkeley City/.test(r.textContent); });
-  // Sam, 2026-07-30: the cell reads "held $X" — "withheld · $X held" was redundant.
-  // NB: target the sub span, not the cell text — textContent concatenates the
-  // stacked lines with no separator ("$150,000held $147,606"), so a \b anchor
-  // never matches.
-  const sub = gateSub(row);
-  const heldDigits = String(Math.round(gated.earned_withheld));
-  // `sub` missing is a FAILURE, not a crash. Reading .textContent off a null
-  // threw a TypeError before finish() ever ran, so a regression here printed
-  // NOTHING — no passes, no failures, no summary — and looked like a broken
-  // harness rather than a broken guard. A test that dies takes every other
-  // result with it.
-  check("V1: a front-loaded award cell reporting a held figure exists at all", !!sub);
-  check("V1: the front-loaded award cell reports the FULL held amount",
-    !!sub && sub.textContent.replace(/[^0-9]/g, "") === heldDigits);
-  check("V1: the cell says 'held', not the redundant 'withheld · held'",
-    !!sub && /held/i.test(sub.textContent) && !/withheld/i.test(sub.textContent));
+  // Until the College Dashboard redesign (Sam, locked 2026-09-28) the gated
+  // cell read "held $X" after the deadline, and this block pinned that the
+  // front-loaded figure was the WHOLE window's. The redesign took every
+  // reserve figure off the screen, so the arithmetic is pinned at the model
+  // (above) and the row is pinned to name none of it: the Curr columns read
+  // the qualifying figure, $0 for a gated college, over the whole window.
+  check("V1: the model still holds the WHOLE window's withheld amount in Year 1 under front-load",
+    gated.earned_withheld > 0 && Math.abs((gated.hy1 || 0) - gated.earned_withheld) < 1 && (gated.hy2 || 0) === 0);
+  // By its words: this fixture demonstrates the whole credit share, so the
+  // held figure equals Max CR Funds and a dollar match would find the share.
+  const rowWords = row ? row.textContent + " " + Array.from(row.querySelectorAll("[title]"))
+    .map(function (x) { return x.getAttribute("title"); }).join(" ") : "";
+  check("V1: the front-loaded gated row names no held figure, in text or hover",
+    !!row && !/\bheld\b|\bwithheld\b|\breserve/i.test(rowWords));
+  const ths = Array.from(doc.querySelectorAll("#cplFundTable thead th"));
+  const curTot = row && row.children[ths.findIndex(function (th) { return th.getAttribute("data-sort") === "current_total"; })];
+  check("V1: its Curr Total Funds reads $0 over the window, with the window's wording",
+    !!curTot && curTot.textContent.trim() === "$0" &&
+    /qualifying so far, credit and noncredit together: \$0 of \$/.test(curTot.getAttribute("title") || ""));
   T._setScenario({});
 }
 {

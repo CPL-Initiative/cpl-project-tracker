@@ -126,17 +126,21 @@ function openDetail(window, doc, name) {
     const i = ths.findIndex((th) => th.getAttribute("data-sort") === key);
     return i >= 0 ? tds[i] : null;
   };
-  check("CR FTES · NC FTES · Elig · CR award are CENTERED (Sam's ruling)",
-    ["cr_ftes", "nc_ftes", "elig", "cr_award"].every(
+  // The College Dashboard redesign (Sam, locked 2026-09-28) retired the FTES
+  // and Elig columns and carries the house format (2026-09-24: the first
+  // column left, the rest centered) to every money column, the rightmost too.
+  check("every money column is CENTERED (the house format)",
+    ["cr_award", "cr_current", "nc_award", "nc_current", "total", "current_total"].every(
       (k) => colTd(k) && cs(colTd(k)).textAlign === "center"));
-  check("...and NC award, the rightmost visible column, stays right-justified",
-    !!colTd("nc_award") && cs(colTd("nc_award")).textAlign === "right");
-  // The SYSTEM row alone keeps its weight (the mock keeps it bold), and chips
-  // are ghosted words at normal weight.
-  check("the SYSTEM row alone stays bold; chips stay ghosted words",
+  check("...and the name column, the first, reads left",
+    !!colTd("college") && cs(colTd("college")).textAlign === "left");
+  // The SYSTEM row alone keeps its weight (the mock keeps it bold), and the
+  // ghosted chips (NC only) are words at normal weight. The Base / Cap chip is
+  // the one drawn at 600 in the locked mockup (round 4), and is left out.
+  check("the SYSTEM row alone stays bold; the ghosted chips stay normal weight",
     isBold(cs(doc.querySelector("tr.cplfund-systemrow td")).fontWeight) &&
     (function () {
-      const chip = doc.querySelector(".cplfund-chip");
+      const chip = doc.querySelector(".cplfund-chip:not(.cf-boundchip)");
       return !!chip && !isBold(cs(chip).fontWeight);
     })());
 }
@@ -169,49 +173,35 @@ function openDetail(window, doc, name) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// L3 — the opt-in prompt is driven by the GATE, not by the withheld amount
+// L3 — the call to action is driven by the GATE, never by a withheld figure
 // ─────────────────────────────────────────────────────────────────────────────
 // The harness has no coordinator/participation feed, so the gate reads PENDING
 // and no row is blocked — which is why this defect could never be reproduced by
-// rendering the table offline. Assert on the function's contract instead: it is
-// exported through the same module surface the table calls. Under one pool the
-// money cells are the CR award / NC award pair (crAwardCellHtml /
-// ncAwardCellHtml) — both must pass the college's gate state.
+// rendering the table offline. Assert on the functions' contracts instead.
+// Until the College Dashboard redesign (Sam, locked 2026-09-28) the prompt was
+// a line under the Max award (earnedSubHtml), which named a held figure after
+// the deadline. The redesign put the prompt on the row's one control (Confirm
+// by MM-DD-YY, Confirm now after it) and took every reserve figure off the
+// screen; these guard both halves.
 {
   const src = consumerSrc;
-  // The signature carries the gate.
-  check("earnedSubHtml takes a `gated` argument",
-    /function earnedSubHtml\(cap, earned, adv, held, gated\)/.test(src));
-  check("...and the prompt branch fires on it, not on held alone",
-    /if \(held > 0\.5 \|\| gated\)/.test(src));
-  // Since 2026-09-23 the qualifying line, and the prompt with it, renders once
-  // per row, in the Max award cell; the CR/NC pair cells carry their figures.
   const fnBody = (name) => (src.match(new RegExp("function " + name + "\\([^)]*\\) \\{[\\s\\S]*?\\n  \\}")) || [""])[0];
-  // `held` is the reserve for the span the award covers (cellFig: the window
-  // under Combined funding, the viewed year under Annual, 2026-09-27).
-  check("the Max award cell passes the college's gate state",
-    /earnedSubHtml\(cap, earned, row\.earned_advance \|\| 0, held, row\.gate_blocked\)/
-      .test(fnBody("maxAwardCellHtml")) &&
-    /held = cellFig\(row, "earned_withheld"\)/.test(fnBody("maxAwardCellHtml")));
-  check("and the pair cells repeat no qualifying line or prompt",
-    fnBody("crAwardCellHtml") !== "" && fnBody("ncAwardCellHtml") !== "" &&
-    fnBody("crAwardCellHtml").indexOf("earnedSubHtml(") === -1 &&
-    fnBody("ncAwardCellHtml").indexOf("earnedSubHtml(") === -1);
-  // A gated college with nothing withheld must NOT be told money is held.
-  // ⚠️ Guards the BRANCH, not the wording. This pinned the literal call-to-action
-  // string, so it went red when Sam changed "opt in" to "confirm participation"
-  // (2026-08-27) — a rename that says nothing about whether the figure is
-  // conditional, which is what this assertion exists for. The words are guarded
-  // where they are RENDERED, by cpl_funding_gate_ledger_public S5. The
-  // formatter is earnedMoney() since 2026-09-03 (public dollars coarsen to
-  // "<$1,000" / the nearest $1,000); either formatter satisfies the BRANCH.
-  check("the figure renders only when there IS one to hold",
-    /var showFig = due && held > 0\.5;/.test(src) &&
-    /showFig \? "held " \+ (?:fmtMoney|earnedMoney)\(held\) : "[^"]+"/.test(src));
+  check("the retired sub-line is gone from the source (earnedSubHtml)",
+    !/function earnedSubHtml\(/.test(src) && src.indexOf("earnedSubHtml(") === -1);
+  check("the row's call to action fires on the confirmation state alone",
+    /partShown\(\) && !ELIG\.optin\[c\.college\]/.test(fnBody("rowChips")) &&
+    fnBody("rowChips").indexOf("earned_withheld") === -1);
+  check("...and its words carry the deadline: Confirm by the date, Confirm now after it",
+    /partDeadlinePassed\(\) \? "Confirm now" : "Confirm by " \+ esc\(deadlineShort\(\)\)/.test(fnBody("rowChips")));
+  check("no row cell reads the withheld figure",
+    ["crAwardCellHtml", "crCurrentCellHtml", "ncAwardCellHtml", "ncCurrentCellHtml", "totalCellHtml",
+      "currentTotalCellHtml", "curCellHtml", "awardCellTitle"].every((f) => fnBody(f) !== "" && fnBody(f).indexOf("earned_withheld") === -1));
+  check("the max cells state one figure each, no qualifying line beneath",
+    ["crAwardCellHtml", "ncAwardCellHtml", "totalCellHtml"].every((f) => !/class="sub">qualifying/.test(fnBody(f))));
   // The old unconditional wording would have printed "held $0" after the
-  // deadline for exactly the colleges this change is for.
-  check("no branch can emit a bare `held $0`",
-    !/due \? "held " \+ (?:fmtMoney|earnedMoney)\(held\)/.test(src));
+  // deadline for exactly the colleges the gate is for.
+  check("no branch can emit a held figure",
+    !/"held " \+ (?:fmtMoney|earnedMoney)\(/.test(src));
 }
 
 finish();

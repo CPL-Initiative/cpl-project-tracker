@@ -156,9 +156,12 @@ const POOL = 25240308;
       const row = Array.from(doc.querySelectorAll("#cplFundTable tr.cplfund-row"))
         .find(function (r) { return /NOCE/.test(r.textContent); });
       if (!row) return false;
-      const elig = row.querySelector("td[title*='exhibits in MAP']");
-      // The F1 feed carries NOCE pe=8 → the exhibits sector reads "yes".
-      return !!elig && /exhibits in MAP.*: yes/.test(elig.getAttribute("title"));
+      // The pie leads the name cell since 2026-09-28, and each slice names its
+      // condition: the F1 feed carries NOCE pe=8, so the third reads as met,
+      // in the noncredit words, with no veteran-JST slice at all.
+      const titles = Array.from(row.querySelectorAll(".cf-eligpie title")).map(function (t) { return t.textContent; });
+      return titles.indexOf("3. Noncredit certificates posted in MAP") !== -1 &&
+        !titles.some(function (t) { return /Veteran/.test(t); });
     })());
 }
 
@@ -185,30 +188,37 @@ const POOL = 25240308;
   check("D2: no lane switch anywhere (R1)", !doc.querySelector("#cplFundLane"));
   check("D3: no paired noncredit rows and no NC SYSTEM row — one row per institution (R6)",
     !doc.querySelector(".cplfund-ncrow") && !doc.querySelector(".cplfund-ncsysrow"));
-  // The Max award cell leads the pair (2026-09-23): the base and the cap bind
-  // the combined award, so the row prints it beside the two shares.
-  check("D4: exactly ONE SYSTEM row, carrying the Max award and the CR/NC award pair",
+  // The combined figure rides the row beside the two shares (2026-09-23): the
+  // base and the cap bind it. Since the College Dashboard redesign
+  // (2026-09-28) it is Total Funds, and each max figure has its Curr figure.
+  check("D4: exactly ONE SYSTEM row, carrying Total Funds and each lane's max and current",
     doc.querySelectorAll(".cplfund-systemrow").length === 1 &&
-    doc.querySelectorAll(".cplfund-systemrow .cf-award").length === 3 &&
+    doc.querySelectorAll(".cplfund-systemrow .cf-award").length === 6 &&
     doc.querySelectorAll(".cplfund-systemrow .cf-award.cf-max").length === 1);
-  check("D5: the eligibility column is ON by default (Sam's R10 veto)",
-    !!doc.querySelector('.cplfund-table th[data-sort="elig"]') &&
-    !(JSON.parse(window.localStorage.getItem("cplfund_cols_v1") || "{}").college || {}).elig);
+  // Sam's R10 veto kept eligibility on screen by default; since 2026-09-28 the
+  // pie leads every name, so no column setting can hide it.
+  check("D5: the eligibility pie is ON by default (Sam's R10 veto), leading every name",
+    !doc.querySelector('.cplfund-table th[data-sort="elig"]') &&
+    doc.querySelectorAll(".cplfund-row td.t .cf-lead .cf-elig").length === 118);
   check("D6: CR award and NC award columns head the table",
     !!doc.querySelector('th[data-sort="cr_award"]') && !!doc.querySelector('th[data-sort="nc_award"]'));
   check("D7: the institution list is alphabetical by default (Alameda before Bakersfield, " +
         "and the trio interleaved — Calbright between Cabrillo and Canada)",
     (function () {
-      const names = Array.from(doc.querySelectorAll(".cplfund-row td:nth-child(2) .cplfund-instname"))
+      // The name cell is the first since the # column retired (2026-09-28).
+      const names = Array.from(doc.querySelectorAll(".cplfund-row td:nth-child(1) .cplfund-instname"))
         .map(function (e) { return e.textContent; });
       const iCal = names.indexOf("Calbright");
       return names.length === 118 && iCal > 0 &&
         names[iCal - 1].localeCompare("Calbright") < 0 &&
         names[iCal + 1].localeCompare("Calbright") > 0;
     })());
-  check("D8: chips are ghosted WORDS — 'at base' / 'at cap' / 'NC only' (no ⬆/⬇ glyphs)",
-    /at base/.test(text) && /at cap/.test(text) && /NC only/.test(text) &&
-    !/[⬆⬇]/.test(doc.getElementById("cplFundTable").textContent));
+  // Base and Cap since 2026-09-28, beside Total Funds, in place of "(at base)"
+  // and "(at cap)".
+  const chipWords = Array.from(doc.querySelectorAll("#cplFundTable .cf-boundchip")).map(function (c) { return c.textContent; });
+  check("D8: chips are ghosted WORDS — 'Base' / 'Cap' / 'NC only' (no ⬆/⬇ glyphs)",
+    chipWords.indexOf("Base") !== -1 && chipWords.indexOf("Cap") !== -1 && /NC only/.test(text) &&
+    !/\(at (base|cap)\)/.test(text) && !/[⬆⬇]/.test(doc.getElementById("cplFundTable").textContent));
   check("D9: section titles carry Sam's renames (2026-08-31)",
     /Funding Breakdown/.test(text) && /Minimum Conditions/.test(text) &&
     /Funding Outcomes Required by/.test(text));
@@ -264,7 +274,10 @@ const POOL = 25240308;
   // One table per lane since 2026-09-24 (Sam's 7.9a/b), each in his six
   // columns: the CR/NC split that rode a hover is now two tables, so the
   // noncredit share has a table of its own rather than a tooltip.
-  check("D16: a college row expands to a credit and a noncredit table, each Outcomes · Max FTES · " +
+  // Since 2026-09-28 the first header names the lane (Credit outcomes,
+  // Noncredit outcomes), the credit caption is gone and the noncredit caption
+  // keeps only its rule.
+  check("D16: a college row expands to a credit and a noncredit table, each <Lane> outcomes · Max FTES · " +
         "Max Funds · Actual FTES · Actual Funds · Difference",
     (function () {
       const row = Array.from(doc.querySelectorAll(".cplfund-row"))
@@ -276,9 +289,10 @@ const POOL = 25240308;
       const nc = det && det.querySelector(".cplfund-dtl-table.cplfund-dtl-nc");
       if (!cr || !nc) return false;
       const heads = function (t) { return Array.from(t.querySelectorAll("th")).map(function (h) { return h.textContent; }).join("|"); };
-      const want = "Outcomes|Max FTES|Max Funds|Actual FTES|Actual Funds|Difference";
-      return heads(cr) === want && heads(nc) === want &&
-        /^Credit/.test(cr.caption.textContent.trim()) && /^Noncredit/.test(nc.caption.textContent.trim());
+      const want = "outcomes|Max FTES|Max Funds|Actual FTES|Actual Funds|Difference";
+      return heads(cr) === "Credit " + want && heads(nc) === "Noncredit " + want &&
+        !cr.caption && !!nc.caption &&
+        nc.caption.textContent.trim() === "Noncredit counts CPL for students who originate from a noncredit landing page.";
     })());
   check("D17: the memo's allocation table is one-pool shaped (credit/noncredit shares, no carve-out)",
     (function () {
@@ -330,16 +344,19 @@ const POOL = 25240308;
         "(ec_78093_2_initiative.txt is the source of record)",
     /Supporting credit for prior learning opportunities through the chancellor’s office’s pilot projects/
       .test(text));
-  check("D23: CR FTES · NC FTES · Elig · CR award are centered columns (th.c + td.c); " +
-        "NC award, the last column, stays right-aligned",
+  // The house table format since 2026-09-24 (Sam: the first column left, the
+  // rest centered), which the College Dashboard redesign (2026-09-28) carries
+  // to every money column, the last one included.
+  check("D23: every money column is centered (th.c + td.c), the name column left",
     (function () {
       const th = function (k) { return doc.querySelector('th[data-sort="' + k + '"]'); };
-      const centered = ["cr_ftes", "nc_ftes", "elig", "cr_award"].every(function (k) {
+      const money = ["cr_award", "cr_current", "nc_award", "nc_current", "total", "current_total"];
+      const centered = money.every(function (k) {
         return th(k) && th(k).className.split(/\s+/).indexOf("c") !== -1;
       });
-      const ncRight = th("nc_award") && th("nc_award").className.split(/\s+/).indexOf("c") === -1;
-      const sysC = doc.querySelectorAll(".cplfund-systemrow td.c").length >= 3;
-      return centered && ncRight && sysC;
+      const nameLeft = th("college") && th("college").className.split(/\s+/).indexOf("t") !== -1;
+      const sysC = doc.querySelectorAll(".cplfund-systemrow td.c").length === money.length;
+      return centered && nameLeft && sysC;
     })());
   check("D24: no rendered 'on its face' anywhere on the tab (Sam's ban, 2026-08-31)",
     !/on its face/.test(doc.getElementById("cplFundingMount").textContent));

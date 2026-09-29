@@ -188,23 +188,29 @@ const money = function (n) { return "$" + Math.round(n).toLocaleString("en-US");
           "statutory title appears exactly once (Sam's band consolidation, 2026-09-01)",
       !/Three Priority Outcome-Based Allocations/.test(mountText) &&
       (mountText.match(/Funding Outcomes Required by/g) || []).length === 1);
-    check("chips are ghosted WORDS — at base / at cap / NC only, no ⬆/⬇ glyphs in the table",
-      /at base/.test(mountText) && /at cap/.test(mountText) && /NC only/.test(mountText) &&
-      !/[⬆⬇]/.test(doc.getElementById("cplFundTable").textContent));
+    // Base and Cap beside Total Funds since the College Dashboard redesign
+    // (Sam, 2026-09-28), in place of "(at base)" and "(at cap)".
+    const chipWords = Array.from(doc.querySelectorAll("#cplFundTable .cf-boundchip")).map(function (c) { return c.textContent; });
+    check("chips are ghosted WORDS — Base / Cap / NC only, no ⬆/⬇ glyphs in the table",
+      chipWords.indexOf("Base") !== -1 && chipWords.indexOf("Cap") !== -1 && /NC only/.test(mountText) &&
+      !/\(at (base|cap)\)/.test(mountText) && !/[⬆⬇]/.test(doc.getElementById("cplFundTable").textContent));
   }
-  // Sam, 2026-08-04: the noncredit FTES rides the surface, LABELLED. The old
-  // advisory sub-line (then the paired NC row's size cell) is now a COLUMN of
-  // its own — "NC FTES" — beside the credit one (the reaction round's CR/NC
-  // columns, 2026-08-31). The label is what is being protected: a bare number
-  // under a generic size header does not say it is noncredit.
+  // Sam, 2026-08-04: the noncredit FTES rides the surface, LABELLED. It was an
+  // NC FTES column from 2026-08-31 until the College Dashboard redesign
+  // (2026-09-28) retired the FTES pair "in place of" the funding columns; the
+  // size now rides the Total Funds hover, which names each lane's FTES. The
+  // label is what is being protected: a bare number that does not say it is
+  // noncredit.
   {
     const sf = D.colleges.find(function (c) { return c.college === "San Francisco"; });
     const sfRow = Array.from(tables[0].querySelectorAll("tbody tr.cplfund-row"))
       .find(function (tr) { return tr.textContent.indexOf("San Francisco") !== -1; });
-    check("the NC FTES column carries a college's own noncredit FTES (San Francisco)",
-      !!doc.querySelector('th[data-sort="nc_ftes"]') &&
-      doc.querySelector('th[data-sort="nc_ftes"]').textContent.indexOf("NC FTES") !== -1 &&
-      !!sfRow && sfRow.textContent.indexOf(Math.round(sf.noncredit_ftes).toLocaleString("en-US")) !== -1);
+    const sfTot = sfRow && sfRow.querySelector("td.cf-total");
+    const sfSize = Math.round((Number(sf.credit_ftes) || 0) + (Number(sf.noncredit_ftes) || 0)).toLocaleString("en-US");
+    check("the Total Funds hover carries a college's size, credit FTES labelled and the noncredit FTES in it (San Francisco)",
+      !doc.querySelector('th[data-sort="nc_ftes"]') && !!sfTot &&
+      (sfTot.getAttribute("title") || "").indexOf(Math.round(sf.credit_ftes).toLocaleString("en-US") + " credit FTES") !== -1 &&
+      (sfTot.getAttribute("title") || "").indexOf("With its noncredit FTES, " + sfSize + " FTES in all") !== -1);
     check("De Anza renders via the display override 'DeAnza' (no space)",
       tables[0].textContent.indexOf("DeAnza") !== -1 &&
       D.colleges.some(function (c) { return c.college === "De Anza" && c.display === "DeAnza"; }));
@@ -214,7 +220,7 @@ const money = function (n) { return "$" + Math.round(n).toLocaleString("en-US");
   check("SYSTEM pinned as the FIRST body row (one row, moved from tfoot)",
     !tables[0].querySelector("tfoot") &&
     tables[0].querySelector("tbody tr").classList.contains("cplfund-systemrow") &&
-    tables[0].querySelector("tbody tr.cplfund-systemrow").textContent.indexOf("SYSTEM") !== -1 &&
+    tables[0].querySelector("tbody tr.cplfund-systemrow .cplfund-caret").textContent === "Statewide" &&
     doc.querySelectorAll(".cplfund-systemrow").length === 1);
   // PR-1 (Sam, 2026-07-23): Total Available Funds; the Award range section is
   // retired (R7) — its successor is the window card's bounds fold.
@@ -286,10 +292,11 @@ const money = function (n) { return "$" + Math.round(n).toLocaleString("en-US");
   // One combined column came back on 2026-09-23 as MAX AWARD: the base and the
   // cap bind the combined award, and Clovis read $149,321 "(at base)" off the
   // credit share (item 4 on Sam's Scenario 3 sheet; it reverses part of R6/R7).
-  check("no Yr 1 / Yr 2 / Combined columns any more; the one combined column is Max award",
+  // Named Total Funds since the College Dashboard redesign (2026-09-28).
+  check("no Yr 1 / Yr 2 / Combined columns any more; the one combined column is Total Funds",
     !doc.querySelector('th[data-sort="y1"]') && !doc.querySelector('th[data-sort="y2"]') &&
     !doc.querySelector('th[data-sort="combined"]') &&
-    /^Max award/.test(((doc.querySelector('th[data-sort="total"]') || {}).textContent || "").trim()));
+    /^Total Funds/.test(((doc.querySelector('th[data-sort="total"]') || {}).textContent || "").trim()));
   check("no per-priority P1/P2/P3 columns in the table", !doc.querySelector('th[data-sort="p1"]'));
   check("no period toggle (funding timing is a model dial, not a view toggle)",
     !doc.getElementById("cplFundPeriod"));
@@ -333,14 +340,15 @@ const money = function (n) { return "$" + Math.round(n).toLocaleString("en-US");
   // Provenance surfaces.
   check("footnote cites the DataMart headcount source",
     footText(doc).indexOf("DataMart") !== -1);
-  // The size PAIR follows the one-pool basis: each column cites its own source
-  // and says what it sizes (the share of the ONE pool).
-  check("the CR FTES header cites its source + the combined sizing it feeds",
-    /DataMart/.test(doc.querySelector('th[data-sort="cr_ftes"]').getAttribute("title") || "") &&
-    /Combined with its noncredit FTES/.test(doc.querySelector('th[data-sort="cr_ftes"]').getAttribute("title") || ""));
-  check("the NC FTES header cites MIS + the noncredit restriction",
-    /MIS/.test(doc.querySelector('th[data-sort="nc_ftes"]').getAttribute("title") || "") &&
-    /noncredit/.test(doc.querySelector('th[data-sort="nc_ftes"]').getAttribute("title") || ""));
+  // The size follows the one-pool basis. The FTES pair cited its sources in its
+  // headers until the College Dashboard redesign (2026-09-28) retired the pair;
+  // the sources line cites the FTES summary, and the Total Funds hover says
+  // what the size sizes (the share of the ONE pool).
+  check("the sources line cites the FTES source (MIS DataMart, Annual FTES Summary)",
+    /MIS DataMart — Annual FTES Summary/.test(footText(doc)));
+  check("the Total Funds hover names the combined size the allocation basis",
+    /With its noncredit FTES, [\d,]+ FTES in all: [\d.]+% of the statewide [\d,]+, the allocation basis/
+      .test((doc.querySelector("#cplFundTable tbody tr.cplfund-row td.cf-total") || { getAttribute: function () { return ""; } }).getAttribute("title") || ""));
   // The vintage note retired with the notes block (Sam, 2026-09-22); the
   // headcount source is still cited on the sources line.
   check("the sources line cites the headcount source",
@@ -611,11 +619,15 @@ const money = function (n) { return "$" + Math.round(n).toLocaleString("en-US");
   check("year 2 shows the year-2 P1 metric", m2 && m2.value === "Units of Transcribed CPL");
   check("metric label names the active year", doc.querySelector(".cplfund-prio .p .metric").textContent.indexOf("Year 2") !== -1);
   // default shares equal both years → the award pair on a row is unchanged.
-  const awardsY2 = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row td.cf-award"))
-    .slice(0, 2).map(function (td) { return td.textContent; }).join("|");
+  // The pair is the Max CR / Max NC cells, read without the Curr cells between
+  // them (2026-09-28).
+  const pairOf = function () {
+    return Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row td.cf-award:not(.cf-cur):not(.cf-max)"))
+      .slice(0, 2).map(function (td) { return td.textContent; }).join("|");
+  };
+  const awardsY2 = pairOf();
   click(window, doc.querySelector('#cplFundYear button[data-val="1"]'));
-  const awardsY1 = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row td.cf-award"))
-    .slice(0, 2).map(function (td) { return td.textContent; }).join("|");
+  const awardsY1 = pairOf();
   check("a row's CR/NC award pair is stable across years at default shares", awardsY1 === awardsY2);
 }
 
@@ -685,8 +697,9 @@ const money = function (n) { return "$" + Math.round(n).toLocaleString("en-US");
   const mtsacA = T._alloc("Mt San Antonio");
   const mtsac = Array.from(doc.querySelectorAll("tr.cplfund-row"))
     .find((tr) => tr.textContent.indexOf("Mt San Antonio") !== -1);
-  // The CR/NC pair, read by class: the Max award cell (cf-max) leads it.
-  const cells = Array.from(mtsac.querySelectorAll("td.cf-award:not(.cf-max)")).map((td) => td.textContent);
+  // The CR/NC pair, read by class: the max cells that are neither the combined
+  // figure (cf-max) nor a Curr figure (cf-cur, since 2026-09-28).
+  const cells = Array.from(mtsac.querySelectorAll("td.cf-award:not(.cf-max):not(.cf-cur)")).map((td) => td.textContent);
   const maxCell = mtsac.querySelector("td.cf-award.cf-max");
   // Annual funding (the baked default) shows per-year figures: award ÷ 2.
   check("a college's noncredit award renders in ITS OWN labelled column, exactly once",
@@ -700,7 +713,7 @@ const money = function (n) { return "$" + Math.round(n).toLocaleString("en-US");
     cells[0].indexOf(money(mtsacA.cr_award / 2)) !== -1 &&
     cells[0].indexOf(money(mtsacA.total / 2)) === -1 &&
     Math.abs(mtsacA.cr_award + mtsacA.nc_award - mtsacA.total) < 1);
-  check("the combined total prints once, in the Max award cell",
+  check("the combined total prints once, in the Total Funds cell",
     !!maxCell && maxCell.textContent.indexOf(money(mtsacA.total / 2)) === 0);
 
   // ── the Mt. SAC dedup: excluded from the ROSTER, not deleted ───────────
@@ -722,12 +735,18 @@ const money = function (n) { return "$" + Math.round(n).toLocaleString("en-US");
   check("the placeholder records WHY it exists (a bare number would become fact)",
     typeof cal.noncredit_ftes_placeholder_basis === "string" &&
     cal.noncredit_ftes_placeholder_basis.length > 40);
+  // The row's size cell retired with the FTES pair (2026-09-28); Calbright's
+  // drill-in states the stand-in, and the reported figure appears nowhere.
   const calRow = Array.from(doc.querySelectorAll("tr.cplfund-row")).find((tr) => /Calbright/.test(tr.textContent));
+  if (calRow) calRow.querySelector(".cplfund-caret").dispatchEvent(new window.Event("click", { bubbles: true }));
+  const calDet = Array.from(doc.querySelectorAll("tr.cplfund-row")).find((tr) => /Calbright/.test(tr.textContent));
+  const calOrigin = calDet && calDet.nextElementSibling && calDet.nextElementSibling.querySelector(".cplfund-ncorigin");
   check("the placeholder, not the reported figure, sizes Calbright's row",
-    !!calRow && calRow.textContent.indexOf("1,000") !== -1 &&
+    !!calOrigin && calOrigin.textContent.indexOf("1,000-FTES size") !== -1 &&
     doc.querySelector("#cplFundTable").textContent.indexOf("21,438") === -1);
-  check("...and the size cell SAYS it is a stand-in (N3 a) rather than a bare number",
-    !!Array.from(calRow.querySelectorAll("td")).find((td) => /stand-in/.test(td.getAttribute("title") || "")));
+  check("...and the drill-in SAYS it is a stand-in (N3 a) rather than a bare number",
+    !!calOrigin && /stand-in/.test(calOrigin.textContent) && /N3 a/.test(calOrigin.textContent));
+  if (calDet) calDet.querySelector(".cplfund-caret").dispatchEvent(new window.Event("click", { bubbles: true }));
 
   // ── no carve-out arithmetic left to move ───────────────────────────────
   // The retired pool field is still in the data (config-shape stability) and

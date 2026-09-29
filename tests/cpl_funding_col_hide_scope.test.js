@@ -62,10 +62,17 @@ function matchCount(els, selectors) {
   // the COBI tab and on the public explainer that embeds the same table. The
   // fixture therefore asserts the DEFAULT rather than arranging one.
   const bootSels = hideSelectors(doc);
+  // District's position comes from the header, never a typed number: it was
+  // main column 3 until the College Dashboard redesign (2026-09-28) retired
+  // the # column, and it is column 2 now, which collides with the drill-in's
+  // Max FTES instead of its Max Funds. The regression is the same either way.
+  const headKeys = Array.from(doc.querySelectorAll("#cplFundTable thead th"))
+    .map((th) => th.getAttribute("data-sort") || "");
+  const dPos = headKeys.indexOf("district") + 1;   // nth-child is 1-based
   check("0a: the shipped default already hides two columns, with no user action",
     bootSels.length === 2);
-  check("0b: and District is one of them — main column 3, the position that collides",
-    bootSels.join(",").indexOf("nth-child(3)") !== -1);
+  check("0b: and District is one of them — main column " + dPos + ", a position the drill-in's tables also have",
+    dPos >= 2 && bootSels.join(",").indexOf("nth-child(" + dPos + ")") !== -1);
   check("0c: the Columns menu shows both as unchecked, so the default is visible to a curator",
     Array.from(doc.querySelectorAll(".cplfund-colmenu input[data-colkey]"))
       .filter((c) => !c.checked).map((c) => c.getAttribute("data-colkey")).sort().join(",")
@@ -73,8 +80,8 @@ function matchCount(els, selectors) {
 
   const sels = bootSels;
   check("1a: hiding a column emits a hide rule", sels.length >= 1);
-  check("1b: District is main-table column 3, so the rule targets :nth-child(3)",
-    sels.join(",").indexOf("nth-child(3)") !== -1);
+  check("1b: District is main-table column " + dPos + ", so the rule targets :nth-child(" + dPos + ")",
+    sels.join(",").indexOf("nth-child(" + dPos + ")") !== -1);
 
   const openRow = () => {
     const find = () => Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
@@ -94,11 +101,9 @@ function matchCount(els, selectors) {
   // The positions come from the header, not from a typed number: the Max award
   // column (2026-09-23) moved the county context one place right, and a typed
   // "2,8" would have failed for a reason unrelated to the scope it guards.
-  const headKeys = Array.from(doc.querySelectorAll("#cplFundTable thead th"))
-    .map((th) => th.getAttribute("data-sort") || "");
   const want = [headKeys.indexOf("district"), headKeys.indexOf("working_adults")].join(",");
   check("2b: and they are the District and county-context columns (" + want + ")",
-    headKeys.indexOf("district") === 2 && headKeys.indexOf("working_adults") > 2 &&
+    headKeys.indexOf("district") >= 1 && headKeys.indexOf("working_adults") > headKeys.indexOf("district") &&
     mainCells.filter((td) => sels.some((sl) => td.matches(sl)))
       .map((td) => td.cellIndex).sort(function (a, b) { return a - b; }).join(",") === want);
 
@@ -108,11 +113,11 @@ function matchCount(els, selectors) {
   check("3b: ⭐ NO cell of the nested detail table is matched by the hide rule",
     matchCount(dtlCells, sels) === 0);
   // Every DATA row of every lane table (one per lane since 2026-09-24): its
-  // third cell — Max Funds now — survives the main table's column-3 rule.
+  // cell at District's position survives the main table's rule for it.
   const dataRows = Array.from(det.querySelectorAll(".cplfund-dtl-table tr")).filter((tr) => tr.querySelector("td"));
-  check("3c: specifically, detail column 3 survives on every row of both lane tables (" + dataRows.length + ")",
+  check("3c: specifically, detail column " + dPos + " survives on every row of both lane tables (" + dataRows.length + ")",
     dataRows.length >= 6 && dataRows.every((tr) => {
-      const td = tr.querySelectorAll("td")[2];
+      const td = tr.querySelectorAll("td")[dPos - 1];
       return td && !sels.some((s) => { try { return td.matches(s); } catch (e) { return false; } });
     }));
 

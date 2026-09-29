@@ -184,10 +184,12 @@ check("A6: the NC lane normalizes by its OWN share sum, never the credit one",
   // survives as the checkable-claim zero.
   function ncCell(id) {
     const r = doc.querySelector('tr[data-id="c:' + id + '"]');
-    // The NC award cell, by what it is: the Max award leads the row since
-    // 2026-09-23, and the qualifying line reads once, under it; each share's
-    // own qualifying figure rides its cell's hover.
-    return r ? r.querySelectorAll("td.cf-award:not(.cf-max)")[1] : null;
+    // The Max NC Funds cell, by its column's sort key: since the College
+    // Dashboard redesign (2026-09-28) each max figure has its Curr figure
+    // beside it, so a position among the money cells names nothing.
+    const ths = Array.from(doc.querySelectorAll("#cplFundTable thead th"));
+    const i = ths.findIndex(function (th) { return th.getAttribute("data-sort") === "nc_award"; });
+    return r && i >= 0 ? r.children[i] : null;
   }
   check("B14: a college's NC award cell reads its share with the STANDARD qualifying sub at $0 — the " +
         "retired feeds-waiting label is gone (2026-09-01)",

@@ -255,8 +255,9 @@ function renderS3(pin, deliver) {
   const r = renderS3("ptc_u", false);
   check("7g: pinned to ptc_u, no Counselor or rung disagreement is reported",
     r.p2.length > 0 && !r.p2.some((t) => /The wording names|The measure counts only/.test(t)), JSON.stringify(r.p2));
-  check("7h: before the builder's next run the measure reads awaiting measurement",
-    r.p2.some((t) => /Awaiting measurement/.test(t)), JSON.stringify(r.p2));
+  // TBA wherever a measure has yet to arrive (Sam, 2026-09-28).
+  check("7h: before the builder's next run the measure reads TBA",
+    r.p2.some((t) => /\bTBA\. The daily MAP feed does not carry this measure yet/.test(t)), JSON.stringify(r.p2));
   const a = r.T._alloc("Norco College");
   check("7i: and counts $0 meanwhile, never an advance",
     a && a.earned_advance === 0);

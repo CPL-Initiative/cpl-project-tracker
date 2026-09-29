@@ -241,10 +241,12 @@ function reviewerSession() {
   check("F2b: other (not-opted-in) colleges still show the chip", stillThere.length > 0);
 }
 {
-  // F3/F4 — a reviewer sees Confirm/Reject INLINE in the row drill-in, with the
-  // attestor identity; and clicking inline Confirm actually confirms — proving the
-  // holder-scoped binding survives the expand's refreshTable (a dead button here
-  // was the real risk of moving the action onto the row).
+  // F3/F4 — a reviewer sees the CO's control INLINE in the row drill-in, with
+  // the attestor identity. Since Sam's College Dashboard redesign (locked
+  // 2026-09-28) that control is Reject alone: "Mark confirmed and the CO
+  // Confirm deleted, Reject kept". Clicking it actually rejects — proving the
+  // holder-scoped binding survives the expand's refreshTable (a dead button
+  // here was the real risk of moving the action onto the row).
   // Rows key by NAME since one-pool adoption (data-id "c:<college>", 2026-08-31).
   const priv = freshDom();
   priv.window.CPL_SESSION = reviewerSession();
@@ -261,16 +263,17 @@ function reviewerSession() {
   const t = doc.getElementById("cplFundTable").innerHTML;
   check("F3: the row drill-in shows the CO confirm block inline (where Sam looked)",
     /cplfund-corow/.test(t));
-  check("F3b: the inline block offers Confirm + Reject with the attestor identity",
-    /data-optinconfirm=/.test(t) && /data-optinrevoke=/.test(t) &&
+  check("F3b: the inline block offers Reject alone, with the attestor identity",
+    !/data-optinconfirm=/.test(t) && /data-optinrevoke=/.test(t) && !/Mark confirmed/.test(t) &&
     /Jane Admin/.test(t) && /jane@college\.edu/.test(t));
 
-  const confirmBtn = doc.querySelector("#cplFundTable [data-optinconfirm]");
-  check("F4: the inline Confirm button is present in the drill-in", !!confirmBtn);
-  if (confirmBtn) click(priv.window, confirmBtn);
-  const t2 = doc.getElementById("cplFundTable").innerHTML;
-  check("F4b: clicking inline Confirm confirms the opt-in (holder-scoped binding survives refreshTable)",
-    /CO-confirmed/.test(t2));
+  const rejectBtn = doc.querySelector("#cplFundTable [data-optinrevoke]");
+  check("F4: the inline Reject button is present in the drill-in, and it is the only CO control there",
+    !!rejectBtn && rejectBtn.textContent === "Reject" &&
+    doc.querySelectorAll("#cplFundTable .cplfund-corow button").length === 1);
+  if (rejectBtn) click(priv.window, rejectBtn);
+  check("F4b: clicking inline Reject withdraws the opt-in (holder-scoped binding survives refreshTable)",
+    !P._optinActive(COL) && /Confirmation withdrawn/.test(doc.getElementById("cplFundTable").textContent));
 }
 {
   // F5 — a LOCKED (public / non-reviewer) drill-in never shows the CO controls,
@@ -286,8 +289,10 @@ function reviewerSession() {
   const t = doc.getElementById("cplFundTable").innerHTML;
   check("F5: a locked (non-reviewer) drill-in shows NO CO confirm controls",
     !/cplfund-corow/.test(t) && !/data-optinconfirm/.test(t));
+  // "Minimum Conditions is a better term than baseline" (Sam, 2026-09-28): the
+  // confirmation reads as a condition met, on the drill-in's first line.
   check("F5b: the locked drill-in still shows the college-facing opted-in status",
-    /Baseline: [^<]*confirmed locally/.test(t.replace(/<[^>]+>/g, "")));
+    /Minimum Conditions:.*Confirmation on file/.test(t.replace(/<[^>]+>/g, "")));
 }
 
 // ── the participation-requirement join (2026-08-27) ─────────────────────────

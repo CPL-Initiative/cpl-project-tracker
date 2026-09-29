@@ -316,14 +316,15 @@ function mountWords(doc) {
   T.render();
 }
 
-// ── 4b. the held figure sits with the figures it belongs to ─────────────────
+// ── 4b. no reserve figure anywhere on screen ────────────────────────────────
 // Sam, 2026-09-02, on a drill-in reading "$400,000 … $132,000 held in reserve":
-// "isn't clear when compared to 400k available", then "put it before the $400k
-// CR total and not on the NC total". So: inside the gate sentence, and in the
-// priority caption ahead of Total Possible; no standalone note of its own.
-// Sam, 2026-09-23 (funding review item 3, "Consolidate as proposed"): the
-// reserve reads ONCE, on the drill-in's Baseline line, and the caption keeps
-// the two totals. The gate sentence rides the reserve's hover.
+// "isn't clear when compared to 400k available". The reserve then moved into
+// the gate sentence, and on 2026-09-23 onto the drill-in's Baseline line. His
+// College Dashboard redesign (locked 2026-09-28) took it off the screen: no
+// reserve figure anywhere, the Max Funds summary line gone, and "Minimum
+// Conditions" in place of Baseline. A college short of its conditions reads
+// its qualifying figure ($0) in the Curr columns and Actual Funds; what it has
+// demonstrated shows as the measure, never as money set aside.
 {
   const { window } = freshDom();
   window.CPL_FUNDING_PERF = { as_of: "2026-09-02", colleges: { "Alameda": { pe: 100, pe_u: 900, pa: 60, pa_u: 500, p3: 40, p3_u: 300 } } };
@@ -337,23 +338,20 @@ function mountWords(doc) {
   if (row) click(window, row.querySelector(".cplfund-caret"));
   const det = doc.querySelector("tr.cplfund-detail");
   const held = a ? "$" + Math.round(a.earned_withheld).toLocaleString("en-US") : "";
-  const total = a ? "$" + Math.round(a.total).toLocaleString("en-US") : "";
-  check("the drill-in carries no standalone 'held in reserve' item (.cf-withheld div)", !!det && !det.querySelector("div.cf-withheld"));
-  const gate = det && det.querySelector(".cplfund-basestatus .cplfund-basegate");
-  check("the gate sentence names the held figure as part of the max award, held not lost, before the numbered requirements",
-    !!gate && new RegExp("Baseline not met\\. " + held.replace(/[$]/g, "\\$") + " of its max award[^.]*held in reserve, not lost, until it meets [^:]*: \\(1\\)").test(gate.getAttribute("title") || ""));
+  // Text AND hovers: a figure moved into a title is still on screen.
+  const words = (el) => el ? el.textContent + " " + Array.from(el.querySelectorAll("[title]"))
+    .map((x) => x.getAttribute("title")).join(" ") + " " + (el.getAttribute("title") || "") : "";
+  const table = doc.getElementById("cplFundTable");
+  check("the table names no reserve, in its text or its hovers",
+    !!table && !/\breserve[ds]?\b|\bheld\b|\bwithheld\b/i.test(words(table)));
+  check("the held figure appears nowhere in the table (" + held + ")",
+    !!table && !!held && words(table).indexOf(held) === -1);
   const status = det && det.querySelector(".cplfund-basestatus");
-  check("the reserve reads once, on the Baseline line, with its figure",
-    !!status && status.textContent.indexOf(held + " reserved until") !== -1 &&
-    det.textContent.split(held + " reserved until").length === 2);
-  // The two totals keep one line above the lane tables, in the words Sam gave
-  // the drill-in's columns on 2026-09-24 (Max Funds, Actual Funds): the max
-  // award, then what it has qualified for. The reserve still reads once, on
-  // the Baseline line, never here.
-  const cap = det && det.querySelector(".cplfund-dtl-sum");
-  check("the drill-in's totals line keeps the two totals: Max Funds (its max award) · Actual Funds",
-    !!cap && /^Max Funds: \$[\d,]+, its max award · Actual Funds: /.test(cap.textContent.replace(/\s+/g, " ").trim()) &&
-    cap.textContent.indexOf("Max Funds: " + total) !== -1 && cap.textContent.indexOf("reserve") === -1);
+  check("the drill-in opens on the Minimum Conditions line, which carries no figure",
+    !!status && /^Minimum Conditions:/.test(status.textContent.trim()) && !/\$/.test(status.textContent) &&
+    det.querySelector(".cplfund-detail-grid").firstElementChild === status);
+  check("the Max Funds summary line is gone from the drill-in",
+    !!det && !det.querySelector(".cplfund-dtl-sum") && !/Max Funds: \$/.test(det.textContent));
   delete window.CPL_FUNDING_PERF;
 }
 
@@ -377,7 +375,7 @@ function mountWords(doc) {
   // Sam, 2026-09-13: no "baked", "scored", "falling back" or "pin it" in what a
   // curator reads, and an unmeasured metric reads "awaiting measurement" rather
   // than "no data yet" — the plain-absence ruling of 2026-09-01 kept, its
-  // wording turned to face forward.
+  // wording turned to face forward. (Since 2026-09-28 it reads TBA.)
   // ⚠ THE EARN FAMILY JOINED THE BAN THE SAME DAY, reversing his 2026-09-09
   // choice of "earns" over "draws" (Sam: "Earned still smacks of banking... would
   // be better to use something like 'measured... or... qualified for'"). The map

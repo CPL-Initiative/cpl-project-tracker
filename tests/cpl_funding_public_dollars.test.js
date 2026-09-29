@@ -77,25 +77,33 @@ check("D1: the public and curator views compute the SAME earned figure",
   !!ba && Math.abs(pa.earned_total - ba.earned_total) < 0.01);
 
 // 2. On the public page the earned figure is coarse; the curator view is exact.
-function rowSubs(doc) {
+// Since the College Dashboard redesign (Sam, locked 2026-09-28) the figure has
+// its own column, Curr Total Funds, in place of a "qualifying $X" line under
+// the max award; the rule is unchanged.
+function curTotalCell(doc) {
   const row = doc.querySelector('tr[data-id="c:Alameda"]');
-  return row ? Array.from(row.querySelectorAll(".cf-award .sub")).map(function (e) { return e.textContent; }) : [];
+  const ths = Array.from(doc.querySelectorAll("#cplFundTable thead th"));
+  const i = ths.findIndex(function (th) { return th.getAttribute("data-sort") === "current_total"; });
+  return row && i >= 0 ? row.children[i] : null;
 }
-const pubSubs = rowSubs(pubDoc), privSubs = rowSubs(privDoc);
-const pubEarn = pubSubs.find(function (t) { return /qualifying/.test(t); }) || "";
-const privEarn = privSubs.find(function (t) { return /qualifying/.test(t); }) || "";
+const pubCell = curTotalCell(pubDoc), privCell = curTotalCell(privDoc);
 // ⚠ THE WORD IS "qualifying", PRESENT TENSE, and both halves are rulings: Sam
 // retired "earn" on 2026-09-13, and on 2026-08-27 he required the present
-// participle because a past tense "read like a settled award".
-// Parse the figure the row prints after "qualifying " rather than pattern-match
-// it: a regex that forbids a trailing non-zero digit misread "$101,000" as
-// exact on the first run (the "1" before ",000"). The public figure must be the
-// earned total rounded to the nearest $1,000 (or "<$1,000" under the floor);
-// the curator figure must be the exact rounded dollar.
-function earnFigure(t) {
-  const m = /qualifying (<\$1,000|\$[\d,]+)/.exec(t);
+// participle because a past tense "read like a settled award". It rides the
+// cell's hover now.
+check("D2: the Curr cell's hover names the figure in the present participle",
+  !!pubCell && /qualifying so far/.test(pubCell.getAttribute("title") || "") &&
+  !/\b(earned|qualified)\b/.test(pubCell.getAttribute("title") || ""));
+// Parse the figure the cell prints rather than pattern-match it: a regex that
+// forbids a trailing non-zero digit misread "$101,000" as exact on the first
+// run (the "1" before ",000"). The public figure must be the earned total
+// rounded to the nearest $1,000 (or "<$1,000" under the floor); the curator
+// figure must be the exact rounded dollar.
+function earnFigure(cell) {
+  const m = cell && /^(<\$1,000|\$[\d,]+)$/.exec(cell.textContent.trim());
   return m ? m[1] : null;
 }
+const pubEarn = pubCell, privEarn = privCell;
 const pubFig = earnFigure(pubEarn), privFig = earnFigure(privEarn);
 const pubNum = pubFig === "<$1,000" ? 0 : (pubFig ? Number(pubFig.replace(/[$,]/g, "")) : NaN);
 // The row prints the figure for the span its award covers (Sam, 2026-09-27,

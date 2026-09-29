@@ -9,11 +9,14 @@
 // already carried each year's qualifying figure (collegeAlloc's ey1, ey2), so
 // the fix reads the viewed year's figure: the one the "Show priorities for"
 // control names. Under Combined funding the award is the window's, and the
-// window's qualifying figure stays beneath it.
+// window's qualifying figure stands beside it.
 //
-// The same scope rule covers the held-in-reserve figure, the CR and NC cells'
-// hovers, and the district and SYSTEM subtotal rows, which render through the
-// same cells.
+// Since Sam's College Dashboard redesign (locked 2026-09-28) the qualifying
+// figure has its own columns, Curr CR Funds, Curr NC Funds and Curr Total
+// Funds, beside the max figures they are read against. The rule is the same:
+// a Curr cell reads the span its max cell covers. It covers the CR and NC
+// cells and their hovers, and the district and statewide subtotal rows, which
+// render through the same cells.
 //
 // Also here: the two lines the funding asks sheet found contradicting Sam's
 // earlier rulings (To-Do s296-fable-funding-text-fixes): the timeline's code
@@ -49,13 +52,18 @@ function allRows(T) {
 }
 
 function near(a, b, eps) { return Math.abs(a - b) <= (eps == null ? 0.5 : eps); }
-// fmtPctTrim's shape, so an expected percent compares as the screen prints it.
-function pctText(v) { return String(parseFloat((v * 100).toFixed(2))) + "%"; }
-// The percent at the end of a cell's qualifying line ("qualifying $X · 53.2%").
-function subPct(cell) {
-  const sub = cell && cell.querySelector(".sub");
-  const m = (sub ? sub.textContent : "").match(/([\d.]+)%\s*$/);
-  return m ? m[1] + "%" : null;
+// A money cell's figure, as the screen prints it ("$140,476" -> 140476).
+function money(cell) {
+  const m = cell && cell.textContent.match(/\$([\d,]+)/);
+  return m ? Number(m[1].replace(/,/g, "")) : null;
+}
+// The cell under a column, found by its header's sort key: every row renders
+// one cell per column (a hidden column's cells are hidden by CSS, not
+// omitted), so the header's position is the cell's.
+function colCell(doc, row, key) {
+  const ths = Array.from(doc.querySelectorAll("#cplFundTable thead th"));
+  const i = ths.findIndex(function (th) { return th.getAttribute("data-sort") === key; });
+  return row && i >= 0 ? row.children[i] : null;
 }
 // Alameda posts far past every Year-1 target, so it qualifies for all of its
 // Year-1 credit share; Year 2 is pinned to named gaps (the earning suite's
@@ -89,11 +97,11 @@ function pinYears(T) {
     }
   } });
 }
-function rowCell(doc, name, sel) {
-  const row = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
-    .find(function (r) { return new RegExp(name).test(r.textContent); });
-  return row ? row.querySelector(sel) : null;
+function rowOf(doc, name) {
+  return Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
+    .find(function (r) { return new RegExp(name).test(r.textContent); }) || null;
 }
+function rowCell(doc, name, key) { return colCell(doc, rowOf(doc, name), key); }
 
 // ── Window 1: Annual funding (the default) ──────────────────────────────────
 {
@@ -122,38 +130,43 @@ function rowCell(doc, name, sel) {
   check("A2: the fixture reproduces the defect (the window's figure over one year's tranche > 100%)",
     a.earned_total / tranche > 1 && a.ey1 > 0 && a.ey2 > 0);
 
-  const max = rowCell(doc, "Alameda", "td.cf-max");
-  check("A3: under Annual funding the Max award cell prints the viewed year's percent (Year 1)",
-    !!max && subPct(max) === pctText(a.ey1 / tranche));
-  check("A3: ...which stays at or under 100%",
-    !!max && parseFloat(subPct(max)) <= 100);
+  const tot = rowCell(doc, "Alameda", "total");
+  const cur = rowCell(doc, "Alameda", "current_total");
+  check("A3: under Annual funding Curr Total Funds prints the viewed year's figure (Year 1), not the window's",
+    !!cur && money(cur) === Math.round(a.ey1) && Math.round(a.ey1) !== Math.round(a.earned_total));
+  check("A3: ...which stays at or under the year's Total Funds beside it",
+    !!cur && !!tot && money(tot) === Math.round(tranche) && money(cur) <= money(tot));
   check("A3: the hover names the year the qualifying figure covers",
-    !!max && /qualifying so far in 2026-27: \$/.test(max.getAttribute("title") || ""));
-  const cr = rowCell(doc, "Alameda", "td.cf-award:not(.cf-max)");
-  check("A4: the CR award hover reads the viewed year's credit figure beside the per-year share",
+    !!cur && /qualifying so far in 2026-27, credit and noncredit together: \$/.test(cur.getAttribute("title") || ""));
+  const cr = rowCell(doc, "Alameda", "cr_award");
+  const crCur = rowCell(doc, "Alameda", "cr_current");
+  check("A4: the Max CR Funds hover reads the viewed year's credit figure beside the per-year share",
     !!cr && (cr.getAttribute("title") || "").indexOf("qualifying so far in 2026-27: $" +
       Math.round(a.ecy1).toLocaleString("en-US")) !== -1);
-  const th = doc.querySelector('#cplFundTable th[data-sort="total"]');
-  check("A5: the Max award header says the Current Total beneath is the viewed year's",
-    !!th && /Current Total for 2026-27 beneath/.test(th.getAttribute("title") || ""));
+  check("A4: Curr CR Funds prints the viewed year's credit figure",
+    !!crCur && money(crCur) === Math.round(a.ecy1));
+  const th = doc.querySelector('#cplFundTable th[data-sort="current_total"]');
+  check("A5: the Curr Total Funds header names the viewed year",
+    !!th && /qualifying so far in 2026-27/.test(th.getAttribute("title") || ""));
 
   // Year 2 on the same control: the cell follows it.
   T._state.viewSlot = "2";
   T.render();
-  const max2 = rowCell(doc, "Alameda", "td.cf-max");
-  check("A6: viewing Year 2 prints Year 2's percent against the same tranche",
-    !!max2 && subPct(max2) === pctText(a.ey2 / tranche) &&
-    /qualifying so far in 2027-28: \$/.test(max2.getAttribute("title") || ""));
+  const cur2 = rowCell(doc, "Alameda", "current_total");
+  check("A6: viewing Year 2 prints Year 2's figure against the same tranche",
+    !!cur2 && money(cur2) === Math.round(a.ey2) &&
+    /qualifying so far in 2027-28, credit and noncredit together: \$/.test(cur2.getAttribute("title") || ""));
 
-  // The SYSTEM row reads the statewide sum of the viewed year.
+  // The statewide row reads the statewide sum of the viewed year.
   T._state.viewSlot = "1";
   T.render();
-  const sysMax = doc.querySelector(".cplfund-systemrow td.cf-max");
+  const sysRow = doc.querySelector("#cplFundTable tr.cplfund-systemrow");
+  const sysCur = colCell(doc, sysRow, "current_total");
   const rows = allRows(T);
   const sumEy1 = rows.reduce(function (s, r) { return s + (r.ey1 || 0); }, 0);
   const sumTot = rows.reduce(function (s, r) { return s + (r.total || 0); }, 0);
-  check("A7: the SYSTEM row's percent is Year 1's statewide figure over the statewide tranche",
-    !!sysMax && sumEy1 > 0 && subPct(sysMax) === pctText(sumEy1 / (sumTot / 2)));
+  check("A7: the statewide row's Curr Total Funds is Year 1's statewide figure, within the statewide tranche",
+    !!sysCur && sumEy1 > 0 && Math.abs(money(sysCur) - Math.round(sumEy1)) <= 1 && money(sysCur) <= sumTot / 2);
 
   // A district subtotal adds its members' Year-1 figures.
   T._state.group = "district";
@@ -162,9 +175,8 @@ function rowCell(doc, name, sel) {
     .find(function (r) { return /Peralta/.test(r.textContent); });
   const peralta = rows.filter(function (r) { return /Peralta/.test(r.district || ""); });
   const pEy1 = peralta.reduce(function (s, r) { return s + (r.ey1 || 0); }, 0);
-  const pTot = peralta.reduce(function (s, r) { return s + (r.total || 0); }, 0);
-  check("A8: a district subtotal's percent is its members' Year-1 figure over their tranche",
-    !!hdr && peralta.length > 1 && subPct(hdr.querySelector("td.cf-max")) === pctText(pEy1 / (pTot / 2)));
+  check("A8: a district subtotal's Curr Total Funds is its members' Year-1 figure",
+    !!hdr && peralta.length > 1 && Math.abs(money(colCell(doc, hdr, "current_total")) - Math.round(pEy1)) <= 1);
   T._state.group = "none";
   T.render();
 
@@ -195,15 +207,16 @@ function rowCell(doc, name, sel) {
   T.render();
 
   const a = T._alloc("Alameda");
-  const max = rowCell(doc, "Alameda", "td.cf-max");
-  check("B1: under Combined funding the Max award cell prints the window's figure over the window's award",
-    !!max && a.total > 0 && subPct(max) === pctText(a.earned_total / a.total));
+  const tot = rowCell(doc, "Alameda", "total");
+  const cur = rowCell(doc, "Alameda", "current_total");
+  check("B1: under Combined funding Curr Total Funds prints the window's figure beside the window's award",
+    !!cur && !!tot && a.total > 0 && money(cur) === Math.round(a.earned_total) && money(tot) === Math.round(a.total));
   check("B1: the hover keeps the window wording, with no year named",
-    !!max && /qualifying so far: \$/.test(max.getAttribute("title") || "") &&
-    !/qualifying so far in /.test(max.getAttribute("title") || ""));
-  const th = doc.querySelector('#cplFundTable th[data-sort="total"]');
-  check("B2: the Max award header keeps 'the Current Total beneath' under Combined funding",
-    !!th && /with the Current Total beneath/.test(th.getAttribute("title") || ""));
+    !!cur && /qualifying so far, credit and noncredit together: \$/.test(cur.getAttribute("title") || "") &&
+    !/qualifying so far in /.test(cur.getAttribute("title") || ""));
+  const th = doc.querySelector('#cplFundTable th[data-sort="current_total"]');
+  check("B2: the Curr Total Funds header keeps the window wording under Combined funding",
+    !!th && /^Funding qualifying so far, credit and noncredit together\./.test(th.getAttribute("title") || ""));
 }
 
 finish();

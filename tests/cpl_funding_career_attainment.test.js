@@ -203,16 +203,18 @@ const titleText = (card) => {
   const { window, doc, T } = mount({ perf: perf, signedIn: true });
   const rows = detRows(openDetail(window, window.document, "Laney"));
   const r4 = rows[3] || {};
-  check("3a: before the first import, P4's drill-in row reads awaiting measurement at $0 — never a full cap",
-    rows.length === 4 && /awaiting measurement/i.test(r4["actual ftes"] || "") && r4["actual funds"] === "$0");
+  // TBA wherever a measure has yet to arrive (Sam, 2026-09-28: "so when it
+  // changes, it will already be wired"); it replaced "awaiting measurement".
+  check("3a: before the first import, P4's drill-in row reads TBA at $0 — never a full cap",
+    rows.length === 4 && /^TBA$/.test((r4["actual ftes"] || "").trim()) && r4["actual funds"] === "$0");
   const t4 = flat(cardAt(doc, 3));
-  check("3b: its card says who measures it", /Awaiting measurement\. The Chancellor.s Office measures this outcome from EDD wage records/.test(t4));
+  check("3b: its card says who measures it", /Actual: TBA\. The Chancellor.s Office measures this outcome from EDD wage records/.test(t4));
   check("3c: and never points at MAP's refresh or a MAP feed key",
     !/daily data refresh|Awaiting actuals/i.test(t4) &&
     !/MAP feed key: ca_u/.test(cardAt(doc, 3).innerHTML));
   const diag = flat(doc.querySelector(".cplfund-metricdiag") || doc.getElementById("cplFundingMount"));
   check("3d: the curator's metric diagnostic names the Chancellor's Office, not the daily feed, for ca_u",
-    /Awaiting measurement\. The Chancellor.s Office measures it from EDD wage records/.test(diag) &&
+    /TBA\. The Chancellor.s Office measures it from EDD wage records/.test(diag) &&
     !/daily MAP feed does not carry this measure/.test(diag));
   // After: the import lands in the published artifact, beside MAP's keys.
   const perf2 = JSON.parse(JSON.stringify(perf));

@@ -116,7 +116,9 @@ function footText(doc) {
 // element's pie glyph (met requirements) and its total slice count.
 function greenSlices(el) {
   const pie = el && el.querySelector(".cf-eligpie");
-  return pie ? (pie.innerHTML.match(/var\(--green-progress\)/g) || []).length : -1;
+  // The fill carries a fallback since 2026-09-29 (var(--green-progress, #…),
+  // for the public explainer), so the token is matched up to its comma too.
+  return pie ? (pie.innerHTML.match(/var\(--green-progress[,)]/g) || []).length : -1;
 }
 function pieSlices(el) {
   const pie = el && el.querySelector(".cf-eligpie");

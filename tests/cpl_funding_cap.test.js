@@ -382,13 +382,16 @@ check("data: the maximum sits above the minimum (a ceiling under the floor is a 
       .test(formula.innerHTML + formula.textContent));
 
   // Chips are ghosted WORDS, not glyphs (Sam's reaction round, 2026-08-31):
-  // "at cap" replaced the ⬇ — and the glyph must not linger anywhere.
+  // "at cap" replaced the ⬇ — and the glyph must not linger anywhere. Since
+  // his College Dashboard redesign (locked 2026-09-28) the word is a plain Cap
+  // chip beside Total Funds, the combined figure the cap binds, in place of
+  // "(at cap)".
   const row = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
     .find(function (tr) { return tr.textContent.indexOf("Mt San Antonio") !== -1; });
-  check("C7: a capped row carries the 'at cap' word-chip (no ⬇ glyph anywhere)",
-    // In parentheses, beside the award figure, since 2026-09-02 (Sam).
-    !!row && row.innerHTML.indexOf(">(at cap)<") !== -1 &&
-    !!row.querySelector("td.cf-award .cplfund-bound") &&
+  check("C7: a capped row carries the Cap chip beside Total Funds (no ⬇ glyph anywhere)",
+    !!row && !!row.querySelector("td.cf-total .cplfund-bound.cf-boundchip") &&
+    row.querySelector("td.cf-total .cplfund-bound").textContent === "Cap" &&
+    row.innerHTML.indexOf("(at cap)") === -1 &&
     doc.getElementById("cplFundTable").textContent.indexOf("⬇") === -1);
   // The footer legend retired with the notes block (Sam, 2026-09-22: "trim the
   // notes to a sources line"); the chip carries its own meaning on hover, and
@@ -406,7 +409,7 @@ check("data: the maximum sits above the minimum (a ceiling under the floor is a 
   window.eval('CPL_FUNDING_TAB._state.open[' + JSON.stringify("c:" + cappedName) + '] = true;');
   T.render();
   const detail = doc.querySelector("tr.cplfund-detail");
-  check("C7: the capped drill-in opens on its Baseline line, with no cap cell restating the chip",
+  check("C7: the capped drill-in opens on its Minimum Conditions line, with no cap cell restating the chip",
     !!detail && !!detail.querySelector(".cplfund-basestatus") &&
     !/At the cap:/.test(detail.textContent) && !/a pure proportional share would be/.test(detail.textContent));
   // Sam, 2026-09-01: the drill-in's explanatory tail was struck — it restated

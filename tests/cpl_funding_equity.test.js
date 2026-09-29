@@ -128,15 +128,18 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   const cmRow = Array.from(doc.querySelectorAll("#cplFundTable tbody tr")).find(function (tr) {
     return tr.textContent.indexOf("Copper Mountain") !== -1;
   });
-  check("floored row carries the 'at base' word chip, no ⬆ glyph",
-    cmRow && cmRow.textContent.indexOf("at base") !== -1 && cmRow.innerHTML.indexOf("⬆") === -1);
+  // A plain Base chip beside Total Funds since the College Dashboard redesign
+  // (Sam, locked 2026-09-28), in place of "(at base)".
+  check("floored row carries the Base word chip beside Total Funds, no ⬆ glyph",
+    !!cmRow && !!cmRow.querySelector("td.cf-total .cf-boundchip") &&
+    cmRow.querySelector("td.cf-total .cf-boundchip").textContent === "Base" && cmRow.innerHTML.indexOf("⬆") === -1);
   // Rows key their open state by NAME now (data-id "c:<college>", 2026-08-31).
   T._state.open["c:Copper Mountain"] = true;
   T.render();
   // The base cell left the drill-in (Sam, 2026-09-23, funding review item 3);
-  // the row's (at base) word carries the proportional figure on its hover.
+  // the row's Base chip carries the proportional figure on its hover.
   const cmBound = cmRow && cmRow.querySelector(".cplfund-bound");
-  check("the floored row's (at base) hover gives the proportional share and says the model brings it up",
+  check("the floored row's Base chip hover gives the proportional share and says the model brings it up",
     !!cmBound && /share of the funding by size is \$[\d,]+ for the window, below the \$[\d,]+ base award, so the model brings it up to the base/
       .test(cmBound.getAttribute("title") || ""));
   const detail = doc.querySelector("tr.cplfund-detail");
@@ -261,9 +264,11 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
     doc.querySelector('textarea[data-edit="part-label"]').value === "Participation request by");
   check("deadline is editable and defaults to 2026-09-01",
     doc.querySelector('input[data-edit="deadline"]').value === "2026-09-01");
-  check("Elig column renders with pending dashes before data loads",
-    doc.querySelector('th[data-sort="elig"]') &&
-    doc.querySelector("#cplFundTable tbody tr").innerHTML.indexOf("—") !== -1);
+  // The pie leads the name cell since 2026-09-28; before the data loads its
+  // slot holds a pending dash, never a false "not met".
+  check("the Elig pie slot renders a pending dash before data loads",
+    !doc.querySelector('th[data-sort="elig"]') &&
+    /—/.test((doc.querySelector("#cplFundTable tbody tr.cplfund-row .cf-elig") || {}).textContent || ""));
 
   // Seed eligibility (the RPC + participation reads, minus the network).
   T._setElig({
@@ -289,8 +294,8 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   // SYSTEM row Elig = institutions meeting ALL tracked requirements (Sam,
   // 2026-07-27) — over the 118-row one-pool roster, not just the colleges:
   // only Alameda has BOTH coordinator + participation here, so 1 of 118.
-  check("SYSTEM row shows the all-requirements-met fraction over the one-pool roster",
-    doc.querySelector("#cplFundTable .cplfund-systemrow").textContent.indexOf("1/" + ROSTER_N) !== -1);
+  check("the Statewide row counts the institutions meeting every condition, in words, over the roster",
+    doc.querySelector("#cplFundTable .cplfund-systemrow").textContent.indexOf("1 of " + ROSTER_N + " meet all conditions") !== -1);
   check("deadline edit writes to the scenario", (function () {
     commit(window, doc.querySelector('input[data-edit="deadline"]'), "2026-10-01");
     return T._getScenario().participationDeadline === "2026-10-01";
@@ -402,8 +407,8 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   T.render();
   const alamedaEligCell = () => {
     const tr = Array.from(doc.querySelectorAll("#cplFundTable tbody tr")).find(t => t.textContent.indexOf("Alameda") !== -1);
-    // Elig column = the td whose title is the eligTitle string ("… the participation gate …").
-    return Array.from(tr.querySelectorAll("td")).find(td => (td.getAttribute("title") || "").indexOf("participation gate") !== -1);
+    // The pie's slot at the head of the name cell (2026-09-28; the Elig column before).
+    return tr && tr.querySelector(".cf-elig");
   };
   check("each built-in requirement has a ✕ (hide) control",
     doc.querySelectorAll('[data-reqhide="coord"]').length === 1 && doc.querySelectorAll('[data-reqhide="part"]').length === 1);
@@ -419,8 +424,8 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   check("hide persists to the scenario", scenSlot(window).partHidden === true);
   check("badge follows: with only coordinator tracked, Alameda's pie is 1 green of 1",
     greenSlices(alamedaEligCell()) === 1 && pieSlices(alamedaEligCell()) === 1);
-  check("SYSTEM row still shows the coordinator fraction over the roster (coord not hidden)",
-    doc.querySelector("#cplFundTable .cplfund-systemrow").textContent.indexOf("1/" + ROSTER_N) !== -1);
+  check("the Statewide row still counts over the roster with only the coordinator tracked (coord not hidden)",
+    doc.querySelector("#cplFundTable .cplfund-systemrow").textContent.indexOf("1 of " + ROSTER_N + " meet all conditions") !== -1);
 
   // Restore it.
   click(window, doc.querySelector('[data-reqshow="part"]'));
@@ -487,20 +492,33 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
         const ph = Number(f.noncredit_ftes_placeholder);
         return s + ((isFinite(ph) && ph > 0) ? ph : (Number(f.noncredit_ftes) || 0));
       }, 0);
+  // Since the College Dashboard redesign (Sam, locked 2026-09-28) the FTES
+  // pair has left the row's face: the statewide drill-in states the combined
+  // basis, and the CSV's statewide line carries each lane's total. Both must
+  // still reconcile to the rows they add up.
   const sysText = function () {
     return doc.querySelector("#cplFundTable .cplfund-systemrow").textContent;
   };
-  check("SYSTEM row totals credit FTES under the CR FTES header",
-    sysText().indexOf(Math.round(collegeFtes).toLocaleString("en-US")) !== -1);
-  check("SYSTEM row totals ALL noncredit (college rows + standalone trio, Mt. SAC once) under NC FTES",
-    sysText().indexOf(Math.round(allNoncredit).toLocaleString("en-US")) !== -1);
+  const sysDetail = function () {
+    if (!doc.querySelector("#cplFundTable tr.cplfund-systemrow + tr.cplfund-detail")) {
+      click(window, doc.querySelector("#cplFundTable .cplfund-systemrow .cplfund-caret"));
+    }
+    const d = doc.querySelector("#cplFundTable tr.cplfund-systemrow + tr.cplfund-detail");
+    return d ? d.textContent.replace(/\s+/g, " ") : "";
+  };
+  const combined = Math.round(collegeFtes + allNoncredit).toLocaleString("en-US");
+  check("the statewide drill-in totals credit plus ALL noncredit FTES (college rows + trio, Mt. SAC once)",
+    sysDetail().indexOf("FTES: " + combined + " statewide credit + noncredit FTES") !== -1);
+  const csvSys = window.CPL_FUNDING_TAB._csv().split("\r\n").find(function (l) { return /SYSTEM/.test(l); }) || "";
+  check("the CSV's statewide line carries both lane totals (credit, then ALL noncredit)",
+    csvSys.split(",").indexOf(String(Math.round(collegeFtes))) !== -1 &&
+    csvSys.split(",").indexOf(String(Math.round(allNoncredit))) !== -1);
   // The regression that shipped: the headcount total must NOT be a row figure.
   check("SYSTEM row never prints the context headcount as a column total",
     sysText().indexOf(D.system.headcount.toLocaleString("en-US")) === -1);
   click(window, doc.querySelector('#cplFundGroup button[data-val="district"]'));
-  check("the SYSTEM row still carries both lane totals when grouped by district",
-    sysText().indexOf(Math.round(collegeFtes).toLocaleString("en-US")) !== -1 &&
-    sysText().indexOf(Math.round(allNoncredit).toLocaleString("en-US")) !== -1);
+  check("the statewide drill-in keeps the combined total when grouped by district",
+    sysDetail().indexOf("FTES: " + combined + " statewide") !== -1);
 }
 
 // D6 — consumer wiring for the eligibility reads (static greps).

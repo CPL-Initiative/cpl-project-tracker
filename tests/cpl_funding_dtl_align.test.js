@@ -186,18 +186,25 @@ function misaligned(table, rules) {
   // ── (3) the noncredit header is readable ─────────────────────────────────
   // Sam's screenshot, 2026-09-26: the noncredit table's header row painted its
   // blue fill and kept the base rule's muted-ink text, dark on dark. A fill and
-  // its text color are one decision: resolve both on the same cell, and require
-  // the credit table's header to keep the plain muted ink.
+  // its text color are one decision: resolve both on the same cell, for both
+  // lanes.
   const ncTable = doc.querySelector("#cplFundTable .cplfund-dtl-table.cplfund-dtl-nc");
   check("c0: the statewide drill-in renders a noncredit table", !!ncTable);
   const ncTh = ncTable && ncTable.rows[0].cells[1];
   check("c1: ⭐ the noncredit header's text resolves to white wherever its fill resolves to the noncredit blue",
     !!ncTh && /--dtl-nc-head/.test(resolve(ncTh, "background", rules, null)) &&
     /--white/.test(resolve(ncTh, "color", rules, null)));
-  check("c2: the credit header keeps the muted ink on no fill",
-    /--text-muted/.test(resolve(th1, "color", rules, null)) && resolve(th1, "background", rules, null) === "transparent");
-  check("c3: the fill and the text color are declared in the ONE rule, so they cannot separate",
-    /\.cplfund-dtl-nc th \{ background: var\(--dtl-nc-head[^}]*color: var\(--white/.test(consumerSrc));
+  // Since the College Dashboard redesign (Sam, locked 2026-09-28) the credit
+  // header is the dark blue of the main table's header, white on navy, and the
+  // noncredit header keeps its lighter blue: the two lanes differ by a color as
+  // well as the word their first header cell names.
+  check("c2: the credit header resolves to white on the dark blue, the main header's pair",
+    /--seal-blue/.test(resolve(th1, "background", rules, null)) && /--white/.test(resolve(th1, "color", rules, null)));
+  check("c3: each lane's fill and text color are declared in ONE rule, so they cannot separate",
+    /\.cplfund-dtl-nc th \{ background: var\(--dtl-nc-head[^}]*color: var\(--white/.test(consumerSrc) &&
+    /\.cplfund-dtl-cr th \{ background: var\(--seal-blue\)[^}]*color: var\(--white/.test(consumerSrc));
+  check("c2b: and the first header cell names the lane",
+    th0.textContent === "Credit outcomes" && ncTable.rows[0].cells[0].textContent === "Noncredit outcomes");
 
   // ⚠️ A GUARD THAT CANNOT FAIL PROVES NOTHING. Drop the three restating rules
   // and the resolver must find the defect Chromium measured: the outer rules

@@ -307,8 +307,9 @@ nobody finds; `unreferenced_offload` flags any that stop being.
   reference to a not-yet-live data feed, anywhere rendered (Sam, 2026-09-01):**
   *"I don't want to suggest that advances are possible in the model,
   regardless of current missing data feeds or any other factor"*. An unmeasured
-  metric reads **awaiting measurement**, never *"no data yet"* (his
-  positive-first ruling, 2026-09-13; a guard rejects the phrase). "Advancing the
+  metric reads **TBA** on every surface (Sam, 2026-09-28: *"so when it changes,
+  it will already be wired"*; it replaced the *awaiting measurement* of his
+  2026-09-13 ruling), never *"no data yet"* (a guard rejects the phrase). "Advancing the
   priority outcomes" and the statute's "Advancing career attainment" are the
   allowed senses; the D13 guard enforces it. Prose only, never identifiers.
   **Neither the banking sense of "draw" (2026-09-09) nor "earn" (2026-09-13).**

@@ -29,7 +29,7 @@ srv.listen(0, async () => {
   await page.goto(`${base}/index.html#implementation-funding`, { waitUntil: "load" });
   await page.waitForTimeout(6000);
   const clicked = [];
-  for (const t of ["SYSTEM (statewide)", "Allan Hancock"]) {
+  for (const t of ["Statewide", "Allan Hancock"]) {
     try { await page.locator("#tab-implementation-funding .cplfund-caret", { hasText: t }).first().click({ timeout: 3000 }); clicked.push(t); await page.waitForTimeout(1200); }
     catch (e) { try { await page.locator("#tab-implementation-funding td", { hasText: t }).first().click({ timeout: 3000 }); clicked.push(t + " (td)"); await page.waitForTimeout(1200); } catch (e2) { clicked.push(t + " FAILED"); } }
   }
