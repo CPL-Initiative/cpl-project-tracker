@@ -26,6 +26,10 @@
 //      burning the key. My College builds its box lazily inside a collapsible
 //      section, so the question must land from mountInto(), open the section,
 //      and survive the re-renders that follow. The default hand-off is unchanged.
+//      (5d) ONE BUTTON WHERE THE SITE HIDES CPL ASSISTANT (Sam's ruling,
+//      2026-09-29, sheet 3 card 12): only My College, and it still delivers
+//      into My College's box, never the hidden CPL Assistant input; both
+//      buttons return on the next render where the site shows CPL Assistant.
 //  (6) FIRST LIGHT TOKENS ONLY: every var(--x) the tab's stylesheet uses is
 //      defined in index.html's LIGHT :root or is one of the tab's own
 //      `--sit-*` locals — the undefined --brick/--danger-text/--mustard/
@@ -38,7 +42,7 @@
 //      box is focusable and named exactly while it overflows.
 //
 // ⚠ Budget: ~44 MB per booted jsdom window (docs/kb-notes/methodology-a-test-
-// file-is-a-memory-budget.md). This file boots six.
+// file-is-a-memory-budget.md). This file boots ten.
 //
 // Run from repo root: `npm test` (or `node tests/sierra_training_round1.test.js`).
 const fs = require("fs");
@@ -316,6 +320,8 @@ function click(w, el) { el.dispatchEvent(new w.MouseEvent("click", { bubbles: tr
     check("(5) \"Try it in:\" is a named group of two buttons, Sierra and My College",
       !!group && qs(root, '[id="' + group.getAttribute("aria-labelledby") + '"]').textContent === "Try it in:"
       && buttons.map((b) => b.textContent).join() === "Sierra,My College");
+    check("(5) …where CPL Assistant shows, so the group keeps its two-column phone layout",
+      !!group && !group.classList.contains("sit-try-one"));
     click(w, buttons[1]);
     check("(5) ⭐ My College writes the question AND names the destination",
       w.sessionStorage.getItem(Q_KEY) === "what about comptia" && w.sessionStorage.getItem(DEST_KEY) === "college-briefing");
@@ -419,6 +425,116 @@ function click(w, el) { el.dispatchEvent(new w.MouseEvent("click", { bubbles: tr
     const cb = w.document.querySelector("#tab-chatbot .cplchat-input");
     check("(5) ⭐ the default still lands in the CPL Assistant input on its activation",
       cb.value === "default question" && w.sessionStorage.getItem(Q_KEY) === null && mc.value === "");
+  });
+
+  // ── (5d) one button where the site hides CPL Assistant ──
+  // Sam's ruling, 2026-09-29 (sheet 3, card 12, as proposed): keep the word
+  // Sierra, and where a site hides CPL Assistant show only My College. There
+  // sierraHost() already sent the Sierra button to My College, so the two
+  // buttons opened one place. The fixture is the live page's shape: the CPL
+  // Assistant pane is in the DOM and mounted (so a hidden input exists to fill
+  // by mistake), and cobi_orgs.js has marked its nav button data-org-hidden="1".
+  await block("(5d)", async function () {
+    const dom = new JSDOM('<!doctype html><html><head></head><body>'
+      + '<div class="cpl-tab-pane" id="tab-chatbot"><div class="main-container"></div></div>'
+      + '<nav class="cpl-tabs"><button class="cpl-tab" data-tab="chatbot" data-org-hidden="1" style="display:none"></button></nav>'
+      + '<div class="cpl-tab-pane" id="tab-college-briefing"><div id="college-briefing-root">Loading</div></div>'
+      + '<div class="cpl-tab-pane" id="tab-sierra-training"><div class="main-container">'
+      + '<div id="sierra-training-root" style="' + PANE_STYLE + '">Loading</div></div></div>'
+      + "</body></html>", { url: "https://example.org/", runScripts: "dangerously" });
+    const w = dom.window;
+    w.localStorage.setItem("cpl_team_pass", "phrase");
+    w.localStorage.setItem("cplSierraAudience.v1", "student");
+    w.sessionStorage.setItem("cplSierraAudienceOk.v1", "student");
+    w.alert = function () {};
+    w.confirm = function () { return true; };
+    w.fetch = function () { return new Promise(function () {}); };
+    w.requestAnimationFrame = function (cb) { return setTimeout(cb, 0); };
+    [TEAM, CHAT].forEach(function (src) {
+      const s = w.document.createElement("script"); s.textContent = src; w.document.body.appendChild(s);
+    });
+    w.document.dispatchEvent(new w.Event("DOMContentLoaded"));
+    [DEFAULTS, SRC].forEach(function (src) {
+      const s = w.document.createElement("script"); s.textContent = src; w.document.body.appendChild(s);
+    });
+    const api = w.CPL_SIERRA_TRAINING_TAB;
+    api._state.feedback = JSON.parse(JSON.stringify(FEEDBACK));
+    api._state.turns = JSON.parse(JSON.stringify(TURNS));
+    api._state.turnReviews = JSON.parse(JSON.stringify(REVIEWS));
+    api._state.guidance = JSON.parse(JSON.stringify(GUIDANCE));
+    api._state.open = { f1: true };
+    api._state.gOpen = { 1: true };
+    const root = w.document.getElementById("sierra-training-root");
+    api.render(root);
+    const chatbotInput = () => w.document.querySelector("#tab-chatbot .cplchat-input");
+    const mcInput = () => w.document.querySelector("#tab-college-briefing .cplchat-input");
+    const tryIn = () => qs(root, '[data-open="f1"] + .sit-row-body .sit-try[role="group"]');
+    const offered = () => (tryIn() ? Array.from(tryIn().querySelectorAll('[data-qact="test"]')) : []);
+
+    check("(5d) positive control: the hidden CPL Assistant pane mounted, so there IS an input to fill by mistake",
+      !!chatbotInput() && chatbotInput().value === "");
+    let group = tryIn(), buttons = offered();
+    const label = group && qs(root, '[id="' + group.getAttribute("aria-labelledby") + '"]');
+    check("(5d) ⭐ where the site hides CPL Assistant, the group offers ONE button: My College",
+      buttons.length === 1 && buttons[0].textContent === "My College"
+      && buttons[0].getAttribute("data-host") === "college-briefing",
+      buttons.length + " buttons: " + JSON.stringify(buttons.map((b) => b.textContent)));
+    check("(5d) ⭐ …and the word Sierra is gone from the group, never renamed (no button still aims at #chatbot)",
+      !buttons.some((b) => b.textContent === "Sierra") && !root.querySelector('[data-host="chatbot"]'));
+    check("(5d) the control still reads \"Try it in: My College\": a named group around a real button",
+      !!label && label.textContent === "Try it in:" && group.getAttribute("role") === "group"
+      && buttons.length === 1 && buttons[0].tagName === "BUTTON" && buttons[0].getAttribute("type") === "button"
+      && (label.textContent + " " + buttons[0].textContent) === "Try it in: My College");
+    check("(5d) the lone button keeps the tab's one focus ring (it sits inside .sit)",
+      buttons.length === 1 && !!buttons[0].closest(".sit"));
+    const gapTest = root.querySelectorAll('[data-qsrc="gap:1"][data-qact="test"]');
+    check("(5d) the questions she struggled with offer the same one button",
+      gapTest.length === 1 && gapTest[0].getAttribute("data-host") === "college-briefing", gapTest.length + " buttons");
+    const css = (w.document.getElementById("sierra-training-css") || {}).textContent || "";
+    const phone = css.slice(Math.max(0, css.indexOf("@media (max-width: 560px)")));
+    check("(5d) on a phone the lone button takes the row (a one-column grid, after the two-column rule)",
+      !!group && group.classList.contains("sit-try-one") && css.indexOf("@media (max-width: 560px)") >= 0
+      && phone.indexOf(".sit-try { display:grid") >= 0
+      && phone.indexOf(".sit-try-one { grid-template-columns: minmax(0, 1fr); }") > phone.indexOf(".sit-try { display:grid"));
+
+    // The hand-off. The button the group offers first: here My College. On the
+    // two-button code this was Sierra, whose default hand-off met no My College
+    // box on activation and typed the question into the hidden input instead.
+    click(w, buttons[0]);
+    check("(5d) ⭐ the button hands off: the question AND the My College destination, then goes there",
+      w.sessionStorage.getItem(Q_KEY) === "what about comptia" && w.sessionStorage.getItem(DEST_KEY) === "college-briefing"
+      && w.location.hash === "#college-briefing",
+      "q=" + JSON.stringify(w.sessionStorage.getItem(Q_KEY)) + " dest=" + JSON.stringify(w.sessionStorage.getItem(DEST_KEY))
+      + " hash=" + w.location.hash);
+    w.dispatchEvent(new w.CustomEvent("cpl-tab-activated", { detail: { tab: "college-briefing" } }));
+    check("(5d) ⭐ activating My College before its box exists leaves the hidden CPL Assistant input empty",
+      chatbotInput().value === "" && w.sessionStorage.getItem(Q_KEY) === "what about comptia",
+      "hidden input=" + JSON.stringify(chatbotInput().value));
+    const s = w.document.createElement("script"); s.textContent = BRIEFING; w.document.body.appendChild(s);
+    const M = w.CPL_COLLEGE_BRIEFING;
+    M._state.data = { colleges: ["Cabrillo College"], summaryByName: {}, raw: {},
+      briefing: { unread: [], leads: [], programs: [], strategyTotal: 0, scenario: "Scenario 1", year: "1" } };
+    M._state.scope = "college";
+    M._state.college = "Cabrillo College";
+    M.render(w.document.getElementById("college-briefing-root"));
+    check("(5d) ⭐ …and the question lands in My College's own box once it is built",
+      !!mcInput() && mcInput().value === "what about comptia" && chatbotInput().value === ""
+      && w.sessionStorage.getItem(Q_KEY) === null && w.sessionStorage.getItem(DEST_KEY) === null,
+      "My College=" + JSON.stringify(mcInput() && mcInput().value) + " hidden=" + JSON.stringify(chatbotInput().value));
+
+    // Asked on every render: the site shows CPL Assistant again, then drops its pane.
+    w.document.querySelector('.cpl-tab[data-tab="chatbot"]').setAttribute("data-org-hidden", "0");
+    api.render(root);
+    group = tryIn(); buttons = offered();
+    check("(5d) ⭐ where the site shows CPL Assistant again, the next render draws both, Sierra first",
+      buttons.map((b) => b.textContent).join() === "Sierra,My College"
+      && buttons[0].getAttribute("data-host") === "chatbot" && !!group && !group.classList.contains("sit-try-one"),
+      JSON.stringify(buttons.map((b) => b.textContent)));
+    w.document.getElementById("tab-chatbot").remove();
+    api.render(root);
+    buttons = offered();
+    check("(5d) a page with no CPL Assistant pane at all draws only My College",
+      buttons.map((b) => b.textContent).join() === "My College", JSON.stringify(buttons.map((b) => b.textContent)));
   });
 
   // ── (6) First Light tokens only ──

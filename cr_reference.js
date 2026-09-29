@@ -508,13 +508,13 @@
       + " &middot; " + fmt(g.credentials) + " credential" + (g.credentials === 1 ? "" : "s")
       + " &middot; " + fmt(g.rows) + " articulations"
       + (g.collapse_value ? " &middot; collapse value <b>" + fmt(g.collapse_value) + "</b>" : "")
-      // The unit spread is shown even when it did NOT block the merge. Rung 1
-      // and 2 override the units screen by design (units are an attribute, not
-      // identity — SPAN 100 is one recommendation at 4, 4.5 and 5 units), but a
-      // curator still has to be able to SEE that Engine Performance is written
-      // at 2, 3-4, 4 and 5 units before confirming it. Units never split an
-      // identity (Sam, 2026-09-27), so the line states the range it joins
-      // ("2–5 units") where it used to say only "units vary".
+      // The unit spread is shown on every group whose wordings differ. Units
+      // never split an identity (Sam, 2026-09-27; SPAN 100 is one
+      // recommendation at 4, 4.5 and 5 units), so no rung holds a merge for
+      // them since card 14 retired the rung-4 screen, but a curator confirming
+      // Engine Performance has to SEE its 2, 3-4, 4 and 5 units. The line states
+      // the range it joins ("2–5 units"); a group named by a wording carries the
+      // same range in its name (card 13), one named by an official title here.
       + (g.units_differ ? ' &middot; <span title="The wordings joined here award different units. Units never split a recommendation, so it shows the range it joins.">'
           + unitRange(g.members) + "</span>" : "")
       + "</div></div>");
@@ -730,5 +730,6 @@
     _render: render,
     _visible: visibleGroups,
     _needsDecision: needsDecision,
+    _unitRange: unitRange,
   };
 })();
