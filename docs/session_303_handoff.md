@@ -11,14 +11,23 @@ status: current
 Your moniker is **SkyWarp**. SkyWeft (S302) took the queue from
 [`session_302_handoff.md`](session_302_handoff.md) and checkpointed at the context warning.
 
+> ⚠️ **EMERGENCY CHECKPOINT (S302, 46,700 tokens left).** After the first checkpoint Sam wrote
+> *"merge prs"* and *"mockup looks good!"* (14:3xZ). Round 8 is **approved**: two background agents
+> took the merges (#1753, #1756, the cards 4-5 PR, #1755 after its id-reuse check, then the ETHS
+> re-key before 06:17 UTC; this checkpoint PR; the vault PR) and the round 8 port. **Check each on
+> its current head before trusting it.** Not refreshed after the first checkpoint commit: the To-Do
+> feed, INDEX/catalog, lessons, KB notes, the Pipeline tab, `kb/README.md`, `README.md`; the vault
+> session note (step 11) is the merge agent's to write. The round 8 questions stay open: gray cells
+> keep $0 as the mockup showed, the first condition's check is unchanged (coordinator alone), and
+> the Reporting box is a sketch, not built.
+
 ## First: what waits on Sam (put it on sheet 4)
 
 The builder holds no card (sheet 3's eighteen rulings are recorded in their lanes, #1750), and
 nothing marks NEEDS SAM, so no sheet exists yet. **Build sheet 4 first** (`SHEET_ID`
 `2026-09-29-open-asks-4`, each card carrying its own `evidence`), marking each ask in its lane in
 the same PR, unless Sam has answered in chat:
-1. **Round 8 of the College Dashboard mockup**, https://claude.ai/artifact/2V1aWwtjwob5gSM6TEkfyQ
-   (code on `claude/college-dashboard-round8`). Its three questions: gray Curr cells keep $0 or
+1. **Round 8 is approved** ("mockup looks good!"); its three questions stay open: gray Curr cells keep $0 or
    show the demonstrated figure; whether the first condition's check requires all three parts
    (coordinator, primary contact, landing page: 49 meet the coordinator alone, 43 all three;
    `cpl_memory` `sam-first-condition-three-parts-2026-09-29` names the six); what a college reports
