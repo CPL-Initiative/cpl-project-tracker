@@ -31,9 +31,12 @@ also been answered on 2026-08-14 (military scope §10), and two of the 09-22
 proposals contradicted those August answers. When a verdict lands, change the
 lane's marker in the same pull request, or the sheet asks again.
 
-Next: SHEET_ID 2026-09-29-open-asks-4, built once a lane marks a new ask. Sam answered
-all eighteen cards of sheet 3 on 2026-09-29 (through 18, each his own call), and S302
-recorded every ruling in its lane, so no card remains.
+Sheet 4 (S303, 2026-09-29, SHEET_ID 2026-09-29-open-asks-4): nine cards from the S303
+handoff's list, less the gray-cell question Sam settled in session (round 9). JUST THE ITEMS:
+no framing, count line or how-to box (Sam, 2026-09-29). Sam answered all nine that
+evening (22:26Z, through 9, each his own call); the lanes record them. Published at
+https://claude.ai/artifact/PzVQ6KftWPtbk8afPXbZmf (capabilities db + comments). Read its
+replies before anything else; sheet 3's store keeps his eighteen answers, never republish onto it.
 
 Published: https://claude.ai/artifact/XzQMks96QszUDAyXADP3Ag (2026-09-29, S301, SHEET_ID
 2026-09-29-open-asks-3, capabilities db + comments, eighteen cards: sheet 2's twelve at the same
@@ -371,6 +374,19 @@ def p_video_sample_unnarrated():
                    else "the Targets narration names Sample College")
 
 
+_ZERO_RANGE = re.compile(r"\(0\s*[\u2013-]\s*[\d.]+ units?\)|^0(?:\.0+)?\s+hours?\s+in\s", re.I)
+
+
+def p_crr_zero_hours():
+    """Sheet 4, card 3: CR Reference groups still name a range or a figure of 0."""
+    try:
+        groups = json.loads(_read("kb/cr_reference_worklist.json") or "{}").get("groups", [])
+    except ValueError:
+        return True, "kb/cr_reference_worklist.json unparsed - premise unverified"
+    n = sum(1 for g in groups if _ZERO_RANGE.search(g.get("canonical") or ""))
+    return n > 0, "%d CR Reference group(s) named with a figure of 0" % n
+
+
 # ⚠️ EACH CARD CARRIES ITS OWN EVIDENCE (S302, 2026-09-29), under the key
 # `evidence`. Until then a dict keyed by the card's POSITION held it, and every
 # pull request that dropped one card renumbered every card after it, so two
@@ -458,6 +474,10 @@ def items():
     a list of measured() / live() / quoted() / policy() entries.
     """
     I = []
+
+    # Sheet 4's nine cards (S303) left with their rulings: Sam answered all nine
+    # on 2026-09-29 (through 9, each his own call), and each lane records its
+    # ruling in the same change. p_crr_zero_hours stays for a later card.
     return I
 
 
@@ -525,21 +545,16 @@ def build(check_only=False):
               + "  (every measured premise re-checked and still open)")
         return 0
 
-    framing = (
-        "%d question%s wait%s on you. Your eighteen answers on the 29 September sheet are carried out "
-        "in their lanes." % (len(I), "" if len(I) == 1 else "s", "s" if len(I) == 1 else ""))
-    counts = (f"{len(I)} items across {len(lanes)} lanes · "
-              f"every lane carrying an open ask is covered, by build-time audit")
-
     # The reader sees where each claim came from, in their own words.
     I = [dict(it, facts=it["facts"]
               + '<p class="prov"><em>' + m.E(provenance_line(EV[n]))
               + '</em></p>')
          for n, it in enumerate(I, 1)]
 
-    out = m.build_sheet(
-        "Everything outstanding for you", I,
-        framing=framing, curator="Sam Lee", counts=counts, sheet_id=SHEET_ID)
+    # JUST THE ITEMS (Sam, 2026-09-29): "Per our rules, no need for instruction
+    # section on decision sheets; just the items." No framing, no count line,
+    # no how-to box: build_sheet() draws its intro only when one is passed.
+    out = m.build_sheet("Everything outstanding for you", I, sheet_id=SHEET_ID)
     open(OUT, 'w', encoding='utf-8').write(out)
     print(f"{len(I)} items · {len(lanes)} lanes · {len(out):,} bytes "
           f"→ {os.path.relpath(OUT, ROOT)}")

@@ -86,7 +86,7 @@ handled. `cross_listing_group` sits on the CCR seed (`kb/common_courses.json`).
 |---|---|---|
 | 1 | the four-kind frame | ✅ recorded here |
 | 2 | a 1-2 char subject code never decides a discipline | ✅ **landed** #1653 — `discipline_for_modal()` + `mint_token()` in `kb/_seed_coci_minted_mids.py`, `tests/mid_short_code_gate_test.py` |
-| 3 | re-mint the mis-prefixed ETHS identities | the 31: **ruled** (open-asks card 1, 2026-09-22), ✅ **applied** 2026-09-28 (S296), `kb_curation` re-keyed · the 43 beyond them: **ruled** (sheet 3 card 3, 2026-09-29), ✅ **applied in git** 2026-09-29 (S302); their `kb_curation` re-key runs after the merge · the 42 merged ones stay on their ids (the same ruling). Detail below |
+| 3 | re-mint the mis-prefixed ETHS identities | the 31: **ruled** (open-asks card 1, 2026-09-22), ✅ **applied** 2026-09-28 (S296), `kb_curation` re-keyed · the 43 beyond them: **ruled** (sheet 3 card 3, 2026-09-29), ✅ **applied** 2026-09-29 (#1755; `kb_curation` re-keyed by run 36631294479, read back 0/0/4/3) · **Ruled (sheet 4, card 9, 2026-09-29):** Grossmont's four *Advanced Techniques and Strategies of …* titles on KINE (Baseball, Football, Softball, Water Polo) move to ATHL; a re-mint under the playbook · the 42 merged ones stay on their ids (the same ruling). Detail below |
 | 4 | alias Kinesiology / Physical Education | open — **smaller than the sheet implied**, see below |
 | 5 | nest the specializations on the vocabulary | open |
 | 6 | cross-list kind C through `xdisc` | open — waits on 1, 5, 7 |
