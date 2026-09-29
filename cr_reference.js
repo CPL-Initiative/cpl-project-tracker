@@ -94,6 +94,17 @@
     });
   }
   function fmt(n) { return (n == null ? "—" : String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ",")); }
+  // The low–high of the units a group's wordings award ("2–5 units"); "units
+  // vary" only when no wording states a figure the builder could read.
+  function unitRange(members) {
+    var lo = null, hi = null;
+    (members || []).forEach(function (m) {
+      if (m.units_lo != null && (lo == null || m.units_lo < lo)) lo = m.units_lo;
+      if (m.units_hi != null && (hi == null || m.units_hi > hi)) hi = m.units_hi;
+    });
+    if (lo == null || hi == null) return "units vary";
+    return (lo === hi ? String(lo) : lo + "\u2013" + hi) + " unit" + (lo === 1 && hi === 1 ? "" : "s");
+  }
 
   // ── CSS injected from JS (Rule 4 sidestep: one static file covers both HTMLs) ──
   var CSS_ID = "cr-reference-css";
@@ -501,8 +512,11 @@
       // and 2 override the units screen by design (units are an attribute, not
       // identity — SPAN 100 is one recommendation at 4, 4.5 and 5 units), but a
       // curator still has to be able to SEE that Engine Performance is written
-      // at 2, 3-4, 4 and 5 units before confirming it.
-      + (g.units_differ ? ' &middot; <span title="These wordings award different unit counts. Units are an attribute of the line, not part of the identity — but check it is really one recommendation.">units vary</span>' : "")
+      // at 2, 3-4, 4 and 5 units before confirming it. Units never split an
+      // identity (Sam, 2026-09-27), so the line states the range it joins
+      // ("2–5 units") where it used to say only "units vary".
+      + (g.units_differ ? ' &middot; <span title="The wordings joined here award different units. Units never split a recommendation, so it shows the range it joins.">'
+          + unitRange(g.members) + "</span>" : "")
       + "</div></div>");
     out.push('<div class="crr-badges">' + badges.join("") + "</div>");
     out.push("</div>");
