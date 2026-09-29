@@ -1,5 +1,5 @@
 {
- "_about": "The narration the voice reads, Scenario 1, v3 (S294, 2026-09-26). SPOKEN FORM: acronyms are written unspaced (CPL, EDD, FTES) so each reads as one quick word, the stress on its last letter; FTES also needs the phoneme fix below, because unspaced it reads as the word 'eftess'. MAP is written 'map' so it is said as the word. Years are said the way people say them aloud (twenty twenty-six through twenty-eight; the twenty-six, twenty-seven year, whose comma keeps the two years apart) with a lighter stress on the twenties, and the baseline reads 'by November first', as its headline does, leaving the year to the screen (November 1, 2026). Voice: Kokoro-82M af_heart, speed 1.0, one pass per scene. Sam chose the voice (Heart); v2 read stilted on the spaced letters and the years; v3 awaits his OK. narrate.py reads this file. Each scene's `cues` name its reveals (Sam, 2026-09-27: cue each reveal to the word that names it): `at` is the reveal's film time in its scene (where it begins, or where a count lands), `word` the phrase in the text that names it, once; cues.py pins each to the moment the voice says it. A cue with `skip` stays off the clock for the reason it gives.",
+ "_about": "The narration the voice reads, Scenario 1, v3 (S294, 2026-09-26). SPOKEN FORM: acronyms are written unspaced (CPL, EDD, FTES) so each reads as one quick word, the stress on its last letter; FTES also needs the phoneme fix below, because unspaced it reads as the word 'eftess'. MAP is written 'map' so it is said as the word. Years are said the way people say them aloud (twenty twenty-six through twenty-eight; the twenty-six, twenty-seven year, whose comma keeps the two years apart) with a lighter stress on the twenties, and the Minimum conditions scene reads 'by November first', as its headline does, leaving the year to the screen (November 1, 2026). Voice: Kokoro-82M af_heart, speed 1.0, one pass per scene. Sam chose the voice (Heart); v2 read stilted on the spaced letters and the years; v3 awaits his OK. narrate.py reads this file. Each scene's `cues` name its reveals (Sam, 2026-09-27: cue each reveal to the word that names it): `at` is the reveal's film time in its scene (where it begins, or where a count lands), `word` the phrase in the text that names it, once; cues.py pins each to the moment the voice says it. A cue with `skip` stays off the clock for the reason it gives.",
  "voice": "af_heart",
  "speed": 1.0,
  "layout": {
@@ -247,13 +247,13 @@
    ]
   },
   {
-   "scene": "The baseline",
-   "text": "Before any funding is released, your college meets a baseline by November first. Name a CPL coordinator, then list that person in map and on your college's CPL landing page. Put your local confirmation of participation on file. And make sure at least seventy-five percent of your enrolled veterans have their Joint Services Transcripts uploaded in map. Until the baseline is met, the funding your college demonstrates is held in reserve for it.",
+   "scene": "Minimum conditions",
+   "text": "Before any funding is released, your college meets three minimum conditions by November first. Name a CPL coordinator, then list that person in map and on your college's CPL landing page. Put your local confirmation of participation on file. And make sure at least seventy-five percent of your enrolled veterans have their Joint Services Transcripts uploaded in map. Until all three are met, the funding your college demonstrates is held in reserve for it.",
    "cues": [
     {
      "at": 0.1,
-     "word": "meets a baseline",
-     "why": "the heading, Meet the baseline by November 1, 2026"
+     "word": "meets three minimum conditions",
+     "why": "the heading, Meet the minimum conditions by November 1, 2026"
     },
     {
      "at": 1.3,
@@ -272,7 +272,7 @@
     },
     {
      "at": 6.0,
-     "word": "Until the baseline is met",
+     "word": "Until all three are met",
      "why": "the closing line, the funding your college demonstrates is held in reserve for it"
     }
    ]

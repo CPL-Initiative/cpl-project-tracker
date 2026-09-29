@@ -7,7 +7,7 @@ A 90-second animated introduction for colleges to how CPL implementation funding
 - `funding_in_motion.src.html`: THE source. The animation, the score and the arrow's flight live here once. Placeholders (`__CFG__`, `__LOGO__`, `__MAP__`, `__ARROW__`, the page chrome) are filled by `build.py`.
 - `build.py`: holds `CONFIG`, one entry per scenario: the priorities scene, Sample College's target, the explainer link and the page chrome. `python3 prototype/funding_video/build.py` builds Scenario 1; `build.py s2` builds Scenario 2.
 - `funding_in_motion.html`, `funding_in_motion_s2.html`: the built pages, every image inlined.
-- `20260926_CPL_Funding_in_Motion.mp4`, `20260926_CPL_Funding_in_Motion_Scenario_2.mp4`: 1920×1080, 30 fps, 91 seconds, with music.
+- `20260926_CPL_Funding_in_Motion_v2.mp4`, `20260926_CPL_Funding_in_Motion_Scenario_2_v2.mp4`: 1920×1080, 30 fps, 91 seconds, with music.
 - `assets/map_wordmark.png`: the MAP wordmark, cut from Sam's logo file with the red arrow removed and the background made transparent. `assets/map_arrow.png`: the arrow.
 
 ## The scenarios
@@ -16,6 +16,8 @@ A 90-second animated introduction for colleges to how CPL implementation funding
 - **Scenario 2** (stored 2026-09-25): Access 50%, Completion 50%; Career attainment and innovation projects is a reported card, funded statewide through the project allocation. Sample College's Access target 67.1 FTES behind $170,431; half is 33.6 FTES for $85,216.
 
 Sample College uses Chaffey College's figures. Every figure is typed from the engine under the stored scenario config on its date; nothing is read live. If a dial moves, update `CONFIG` in `build.py` and re-render.
+
+The seventh scene has said minimum conditions since 2026-09-29, Sam's term of 2026-09-28, and its heading is set at 3.9cqw, down from 5.2, so the longer phrase fits on one line.
 
 ## The page
 
@@ -30,7 +32,7 @@ The player opens filling the window: the stage takes the largest 16:9 box that l
 
 ## The narrated draft
 
-A narrated cut of Scenario 1 is in draft beside the introductions (Sam, 2026-09-26: "a natural feminine voice-over that follows a script your write... tone down the music to just background level... slow down and lengthen the timing a bit to accommodate readability and narration"). It is built from the same source as variant `n1`: `funding_in_motion_n1.html` and `20260926_CPL_Funding_in_Motion_Narrated_Draft_2.mp4`, three minutes long. Draft 2 (2026-09-29) cues each reveal to the word that names it (Sam, 2026-09-27). It waits on Sam's review, and the explainer does not link the narrated cut until he approves it. The script and the build plan are in `20260926_Narration_Script_Draft.md`.
+A narrated cut of Scenario 1 is in draft beside the introductions (Sam, 2026-09-26: "a natural feminine voice-over that follows a script your write... tone down the music to just background level... slow down and lengthen the timing a bit to accommodate readability and narration"). It is built from the same source as variant `n1`: `funding_in_motion_n1.html` and `20260926_CPL_Funding_in_Motion_Narrated_Draft_3.mp4`, three minutes long. Draft 2 (2026-09-29) cues each reveal to the word that names it (Sam, 2026-09-27), and draft 3 reads the seventh scene as minimum conditions. It waits on Sam's review, and the explainer does not link the narrated cut until he approves it. The script and the build plan are in `20260926_Narration_Script_Draft.md`.
 
     pip install kokoro-onnx soundfile imageio-ffmpeg faster-whisper
     python3 prototype/funding_video/narrate.py --check   # the phonemes only, in seconds
