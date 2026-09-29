@@ -196,7 +196,7 @@ function rowWords(row) {
 
   const csv = T._csv().split("\r\n");
   check("S7: CSV carries the withheld column",
-    csv[1].indexOf("Withheld (baseline not met)") !== -1);
+    csv[1].indexOf("Withheld (minimum conditions not met)") !== -1);
 }
 function shareSumAll(T) {
   // Σ of the viewed window's per-year share sums ÷ nYears — the same factor
@@ -437,7 +437,7 @@ function shareSumAll(T) {
   // result with it.
   const csv = T._csv().split("\r\n");
   const head = (csv[1] || "").split(",");
-  const iHeld = head.indexOf("Withheld (baseline not met)");
+  const iHeld = head.indexOf("Withheld (minimum conditions not met)");
   const line = (csv.find(function (l) { return l.split(",")[1] === "Berkeley City"; }) || "").split(",");
   check("V1: the CSV reports a held figure for the front-loaded, gated college at all",
     iHeld > 0 && Number(line[iHeld]) > 0);

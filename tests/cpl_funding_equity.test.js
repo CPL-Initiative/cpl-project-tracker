@@ -65,7 +65,9 @@ check("data: exactly the 13 federally-rural colleges are still rural-flagged (co
   }));
 check("data: rural roster provenance cites the federal rural categorization",
   /federally categorized as rural/.test(D.rural_source || ""));
-check("data: participation deadline default Sept 1, 2026", D.participation_deadline === "2026-09-01");
+// The live model sets 2026-11-01 in both scenarios (read 2026-09-29); the
+// baked default matches it, so a config that fails to load moves no chip.
+check("data: participation deadline default Nov 1, 2026 (the live model's date)", D.participation_deadline === "2026-11-01");
 
 // D1 — base-award floor: waterfall math (model-level, via test hooks).
 // The CAP is switched OFF for this whole block. These assertions are about the

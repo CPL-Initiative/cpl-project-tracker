@@ -40,7 +40,7 @@
 //   • BASELINE ELIGIBILITY badges (informational — dollars unchanged):
 //     ① a CPL Coordinator listed in MAP (live, PII-free boolean via the anon
 //     map_coordinator_summary() RPC) + ② a participation request by the
-//     deadline (default 2026-09-01; editable) — a college's VPAA/VPSS/CEO
+//     deadline (default 2026-11-01; editable) — a college's VPAA/VPSS/CEO
 //     self-serves an opt-in from its own row (public + private page). ATTEST-
 //     FIRST: the request clears the gate on submit; the CO confirms/revokes in
 //     a review lane. cpl_funding_participation: anon status read + a constrained
@@ -255,10 +255,9 @@
     // The search box shows its whole prompt.
     ".cplfund-toolbar input[type=\"search\"] { width: 40ch; max-width: 100%; }",
     ".cplfund-dtl-tscroll + .cplfund-dtl-tscroll, .cplfund-dtl-tscroll + .cplfund-dtl-ncnone { margin-top: 12px; }",
-    ".cplfund-dtl-sum { margin: 2px 0 0; font-size: .85rem; font-variant-numeric: tabular-nums; }",
     // The drill-in grid auto-fits 240px columns, so every part of the lane
     // block spans the row, as the tables already do.
-    ".cplfund-detail-grid > .cplfund-dtl-sum, .cplfund-detail-grid > .cplfund-dtl-ncnone { grid-column: 1 / -1; }",
+    ".cplfund-detail-grid > .cplfund-dtl-ncnone { grid-column: 1 / -1; }",
     ".cplfund-dtl-ncnone { margin: 8px 0 0; font-size: .82rem; }",
     ".cplfund-ftesfactors { display: grid; gap: 2px; font-size: .8rem; }",
     ".cplfund-ftesrow { display: grid; grid-template-columns: minmax(180px,auto) minmax(90px,auto) 1fr;" +
@@ -578,10 +577,16 @@
     ".cplfund-seg button.on { background: var(--seal-blue); color: var(--white); font-weight: 600; }",
     ".cplfund-count { font-size: .85rem; color: var(--text-muted); }",
     ".cplfund-tablewrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 8px; background: var(--surface-opaque); }",
+    "table.cplfund-table { border-collapse: collapse; width: 100%; font-size: .82rem; }",
     // FIXED LAYOUT (Sam's College Dashboard mockup, 2026-09-28): tableHtml()
     // emits one <col> per shown column and a min-width below which the wrap
     // scrolls inside its own container.
-    "table.cplfund-table { border-collapse: collapse; width: 100%; font-size: .82rem; table-layout: fixed; }",
+    // ⚠️ THE COLLEGE DASHBOARD'S TABLE ALONE (.cplfund-coltable). The $50K
+    // grants table shares .cplfund-table and writes no colgroup, so the fixed
+    // layout split it into five equal columns and three recipient names ran
+    // over the Grant column (measured 2026-09-29 at 1440px: "San Diego College
+    // of Continuing Education" 302px in a 219px cell).
+    "table.cplfund-table.cplfund-coltable { table-layout: fixed; }",
     ".cplfund-table th { background: var(--seal-blue); color: var(--white); padding: 6px 7px; text-align: right; white-space: nowrap; cursor: pointer; user-select: none; position: sticky; top: 0; }",
     ".cplfund-table th.t, .cplfund-table td.t { text-align: left; }",
     // Centered numeric columns (Sam, 2026-08-31): CR FTES · NC FTES · Elig ·
@@ -1088,6 +1093,11 @@
     "  .cplfund h3 { font-size: 1.05rem; }",
     "  .cplfund-formula { font-size: .85rem; }",
     "  .cplfund-formula code { white-space: normal; overflow-wrap: anywhere; }",
+    // The reading note's formula is nowrap on a desktop; on a 390px phone it
+    // ran past the note and pushed the page 27px wide (measured by npm run
+    // a11y, 2026-09-29).
+    "  .cplfund-basis-note { min-width: 0; }",
+    "  .cplfund-basis-note code, .cplfund-earned-line code { white-space: normal; overflow-wrap: anywhere; }",
     "  table.cplfund-table { font-size: .76rem; }",
     "  .cplfund-table th, .cplfund-table td { padding: 4px 5px; }",
     "  .cf-prio .cf-lbl { font-size: .62rem; }",
@@ -2895,9 +2905,12 @@
   // Is the viewed year pure carryover — front-loaded, with no new money on the
   // table? Drives the "↻ carryover" states so a $0 cap never reads as a defect.
   function slotIsCarryover(slot) { return frontloaded() && String(slot) !== "1"; }
+  // The fallback is the live model's date (2026-11-01, both scenarios, read
+  // 2026-09-29). It fires only when the shared config fails to load, and an
+  // older date there turned every Confirm chip to "Confirm now".
   function participationDeadline() {
     return firstDefined(SCENARIO.participationDeadline, SHARED.participationDeadline,
-      base().participation_deadline) || "2026-09-01";
+      base().participation_deadline) || "2026-11-01";
   }
   // Extra baseline-eligibility requirements — free-text quals beyond the two
   // data-backed built-ins (① coordinator, ② participation). Editable in-tab;
@@ -3208,9 +3221,12 @@
     "funding ensure sustainable support for every participant. The model calculates the priority " +
     "outcomes required by Ed. Code &sect;78093.2(d)(1) from records in the MAP platform, which serves as " +
     "the Chancellor&rsquo;s Office systemwide CPL infrastructure.</p>";
+  // The first sentence follows the College Dashboard (Sam, 2026-09-28), where
+  // each max figure has its Curr figure in the column beside it. No saved text
+  // overrides this block (cpl_funding_config, both scenarios, read 2026-09-29).
   var READING_DEFAULT_HTML =
-    "<p>Every funding cell shows the <strong>max award</strong> on top and its <strong>Current Total</strong> " +
-    "&mdash; what the institution has qualified for to date &mdash; beneath it. Awards are based on outcomes, not " +
+    "<p>The Dashboard sets each <strong>max award</strong> beside its <strong>Curr</strong> (current) figure, " +
+    "the funding qualifying so far. Awards are based on outcomes, not " +
     "automatically awarded: the CPL an institution actually posts in MAP counts toward its award &mdash; " +
     "<code>Current Total = cap &times; (actual &divide; target)</code>, capped at 100% (an institution at half its " +
     "target qualifies for half its cap; it never needs the full target to be funded). Remaining funding rolls " +
@@ -4527,19 +4543,27 @@
     // split, and the county context.
     // The measured/advance breakdown columns retired 2026-09-01 (Sam: no
     // mention of the advance concept); the earned total already carries both.
-    var earnHead = ["Demonstrated " + windowLabel(), "% of max award", "Withheld (baseline not met)"];
+    // DEMONSTRATED IS WHAT THE MEASURES SHOW, the minimum conditions aside
+    // (2026-09-29): the qualifying figure plus the part held while an
+    // institution has yet to meet its minimum conditions, the figure the
+    // Priority Outcomes cards report. Until this date the column repeated
+    // Current total, and a held institution's row read $0 demonstrated.
+    // "Minimum conditions" is Sam's term for the old baseline (2026-09-28).
+    var earnHead = ["Demonstrated " + windowLabel(), "Withheld (minimum conditions not met)"];
     function earnCells(row) {
-      var pct = row.total > 0 ? Math.round((row.earned_total || 0) / row.total * 1000) / 10 + "%" : "";
       // Earned figures follow the public-view dollar rule (earnedCsv): the
       // export never carries a figure the screen withholds.
-      return [earnedCsv(row.earned_total || 0), pct, earnedCsv(row.earned_withheld || 0)];
+      return [earnedCsv((row.earned_total || 0) + (row.earned_withheld || 0)), earnedCsv(row.earned_withheld || 0)];
     }
     // The Curr columns' twins (2026-09-28): what qualifies so far against each
     // share and against the max award, window figures like every CSV column,
-    // through the same public coarsening as the screen.
-    var curHead = ["Current credit " + windowLabel(), "Current noncredit " + windowLabel(), "Current total " + windowLabel()];
+    // through the same public coarsening as the screen. The percentage names
+    // its figure, since Demonstrated follows it.
+    var curHead = ["Current credit " + windowLabel(), "Current noncredit " + windowLabel(), "Current total " + windowLabel(),
+      "Current total as % of max award"];
     function curCells(row) {
-      return [earnedCsv(row.earned_cr || 0), earnedCsv(row.earned_nc || 0), earnedCsv(row.earned_total || 0)];
+      var pct = row.total > 0 ? Math.round((row.earned_total || 0) / row.total * 1000) / 10 + "%" : "";
+      return [earnedCsv(row.earned_cr || 0), earnedCsv(row.earned_nc || 0), earnedCsv(row.earned_total || 0), pct];
     }
     var lines = [];
     lines.push(["#", "Institution", "District", "County", "Credit FTES", "Noncredit FTES", "Headcount (context)"]
@@ -5067,9 +5091,9 @@
   }
 
   // The Potential⇄Earned basis TOGGLE was retired 2026-07-30 (Sam). Both numbers
-  // now ride in every money cell — cap on top, earned beneath — so nothing has to
-  // be toggled to be compared, and the money columns can no longer disagree
-  // invisibly with the per-priority cells. This box just explains the two lines.
+  // show at once — since the College Dashboard (2026-09-28) each max figure has
+  // its Curr figure in the column beside it — so nothing has to be toggled to be
+  // compared. This box explains the pair.
   function basisNoteHtml() {
     return '<div class="cplfund-basis">' +
       '<span class="cplfund-basis-lbl">Reading the funding</span>' +
@@ -5099,7 +5123,9 @@
   // costs the reader the thing they came for.
   function progressSummary(i) {
     var pp = earnAgg().perPrio[i];
-    if (!pp || pp.cap <= 0) return "Awaiting measurement";
+    // TBA wherever a measure has yet to arrive (Sam, 2026-09-28: "so when it
+    // changes, it will already be wired").
+    if (!pp || pp.cap <= 0) return "TBA";
     return fmtMoney(pp.earned) + " &middot; " + fmtPctTrim(pp.earned / pp.cap);
   }
 
@@ -5187,10 +5213,10 @@
           msg = '<span class="cplfund-warn-text">The wording asks for ' + (wantU ? "units" : "a student count") +
             ", but the measure counts " + unitWord(meas.unit) + ".</span>";
         } else if (meas.undelivered && srcByCo(meas.src)) {
-          msg = '<span class="dk">Awaiting measurement. The Chancellor&rsquo;s Office measures it from EDD wage records ' +
+          msg = '<span class="dk">TBA. The Chancellor&rsquo;s Office measures it from EDD wage records ' +
             "and adds it by import; it counts <strong>$0</strong> until the first import.</span>";
         } else if (meas.undelivered) {
-          msg = '<span class="dk">Awaiting measurement. The daily MAP feed does not carry this measure yet; it counts ' +
+          msg = '<span class="dk">TBA. The daily MAP feed does not carry this measure yet; it counts ' +
             "<strong>$0</strong> until it does.</span>";
         } else {
           msg = '<span class="cf-ok">Measured</span> from ' + esc(measureLabel(meas.src) || meas.src) +
@@ -6367,10 +6393,10 @@
         }).join(" and ") + (allCo ? ", per the Chancellor&rsquo;s Office import." : ", per the daily MAP feed.") };
     }
     // Career attainment before its first import (Sam, 2026-09-22). A measure
-    // the Chancellor's Office takes on a schedule is awaiting measurement; the
-    // "awaiting delivery" state below means a wiring fault, and it is not one.
+    // the Chancellor's Office takes on a schedule reads TBA (Sam, 2026-09-28);
+    // the "awaiting delivery" state below means a wiring fault, and it is not one.
     if (broken.length && broken.every(function (x) { return x.meas.undelivered && srcByCo(x.meas.src); })) {
-      return { cls: "warn", word: "Awaiting measurement", text: CO_MEASURE_NOTE };
+      return { cls: "warn", word: "TBA", text: CO_MEASURE_NOTE };
     }
     if (broken.length) {
       return { cls: "warn", word: "Declared, awaiting delivery",
@@ -8015,7 +8041,7 @@
     // DECLARED BEFORE IT IS DELIVERED, on the same pattern as the noncredit
     // lane: srcDelivered() asks the published artifact whether `ca_u` is there,
     // so until the Chancellor's Office's first import lands the measure reads
-    // awaiting measurement and counts $0, never a full cap. P4 ships at a 0%
+    // TBA and counts $0, never a full cap. P4 ships at a 0%
     // share for exactly that reason; a share set before the first import would
     // sit at $0 until it lands.
     //
@@ -8378,9 +8404,11 @@
       // a reader should not need to know MAP's key names to read a card.
       if (srcByCo(meas.src)) {
         return '<p class="nums dk" title="' + esc("Chancellor's Office measure: " + meas.src) +
-          '">Awaiting measurement. ' + CO_MEASURE_NOTE + "</p>";
+          '">Actual: TBA. ' + CO_MEASURE_NOTE + "</p>";
       }
-      return '<p class="nums dk" title="' + esc("MAP feed key: " + meas.src) + '">Awaiting actuals &mdash; ' +
+      // TBA wherever a measure has yet to arrive (Sam, 2026-09-28), as the
+      // gap branch above and the drill-in read.
+      return '<p class="nums dk" title="' + esc("MAP feed key: " + meas.src) + '">Actual: TBA &mdash; ' +
         "this measure stays at <strong>$0</strong> today.</p>";
     }
     if (!pf || !pf.statewide) {
@@ -8569,11 +8597,13 @@
         ". Front-loading changes timing only; each institution&#39;s window total is unchanged."
       : "The Chancellor&#39;s Office disburses the same " + fmtMoney(per) + " tranche in each of the " + nYears() +
         " years (" + windowLabel() + "), in <strong>equal annual amounts</strong>.";
-    var basisSentence = " That allocation is the institution&#39;s <strong>max award</strong>, the top line of every " +
-      "funding cell. The model awards <code>max award &times; (actual &divide; target)</code>, up to 100%, where each " +
+    // The College Dashboard (2026-09-28) gives the max award its own column,
+    // Total Funds, and what qualifies so far the Curr columns beside it.
+    var basisSentence = " That allocation is the institution&#39;s <strong>max award</strong>, the Dashboard&#39;s " +
+      "Total Funds. The model awards <code>max award &times; (actual &divide; target)</code>, up to 100%, where each " +
       "priority&#39;s <em>target</em> is its funding &divide; the reimbursement rate and MAP actuals measure progress " +
       "toward it. An institution at half its target qualifies for half its max award, and remaining funding rolls " +
-      "forward. The second line of each cell shows the Current Total.";
+      "forward. The Curr columns show the funding qualifying so far.";
     // Bulleted, left-justified explainer (Sam, 2026-07-28) — one idea per bullet
     // instead of a single running paragraph. Each variable above is one <li>.
     var trim = function (s) { return String(s).replace(/^\s+/, ""); };
@@ -9466,8 +9496,10 @@
   function rowChips(c) {
     var chips = "";
     // Chips are GHOSTED WORDS (Sam's reaction round, 2026-08-31): NC ONLY stays
-    // by the name (an identity); the bound word sits in Total Funds.
-    if (c.nco) chips += '<span class="cplfund-chip" title="A standalone noncredit institution. It holds the same award window as every college and qualifies by origination: CPL from its programs, transcribed at a credit college.">NC only</span>';
+    // by the name (an identity); the bound word sits in Total Funds. The space
+    // before it is text, not margin: the print copy has no .cplfund-chip rule,
+    // and without it the page printed "CalbrightNC only" (2026-09-29).
+    if (c.nco) chips += ' <span class="cplfund-chip" title="A standalone noncredit institution. It holds the same award window as every college and qualifies by origination: CPL from its programs, transcribed at a credit college.">NC only</span>';
     // One-click entry (Sam, 2026-08-05): opens THIS row's drill-in with the
     // attestation form focused. Public + private; hidden once opted in. The
     // words carry the deadline (Sam, 2026-09-28: "Confirm by MM-DD-YY", and
@@ -9969,8 +10001,10 @@
       return '<col data-colw="' + esc(col.key) + '" style="width:' +
         (Math.floor((COL_WEIGHT[col.key] || 10) / wsum * 1000) / 10) + '%">';
     }).join("") + "</colgroup>";
+    // .cplfund-coltable carries the fixed layout, so the rule reaches this
+    // table and no other that shares .cplfund-table (the grants table).
     return colHideStyleHtml() + '<div class="cplfund-tablewrap" role="region" aria-label="' + esc(caption) +
-      '" tabindex="0"><table class="cplfund-table" style="min-width:' + minPx + 'px">' +
+      '" tabindex="0"><table class="cplfund-table cplfund-coltable" style="min-width:' + minPx + 'px">' +
       '<caption class="cplfund-sr-only">' + esc(caption) + "</caption>" + colgroup +
       "<thead><tr>" + head + "</tr></thead>" +
       "<tbody>" + foot + body + "</tbody>" +

@@ -497,4 +497,78 @@ function D_names(T) { return H.D.colleges.map((c) => c.college); }
     head.some((x) => /^Withheld/.test(x)));
 }
 
+// ─────────────────────────────────────────────────────────────────────────────
+// 9. The port's follow-ups (S300, 2026-09-29): what the second port (#1731)
+//    carried that #1729 lacked, and the five the S299 handoff listed.
+// ─────────────────────────────────────────────────────────────────────────────
+{
+  const { window, doc, T } = setup({});
+  // The fixed layout is the College Dashboard's alone. The $50K grants table
+  // shares .cplfund-table and writes no colgroup, so the unscoped rule split it
+  // into five equal columns and three recipient names ran over the Grant column
+  // (measured in Chromium at 1440px, 2026-09-29).
+  check("9a: the fixed layout rule is scoped to the College Dashboard's table",
+    /"table\.cplfund-table\.cplfund-coltable \{ table-layout: fixed; \}"/.test(consumerSrc) &&
+    !/"table\.cplfund-table \{[^"]*table-layout/.test(consumerSrc));
+  check("9b: the College Dashboard's table carries the class the rule names",
+    !!doc.querySelector("#cplFundTable table.cplfund-table.cplfund-coltable"));
+  const gb = doc.querySelector('button[data-subview="grants"]');
+  if (gb) click(window, gb);
+  const grants = doc.querySelector("table.cplfund-grants");
+  check("9c: the grants table does not carry it, so it keeps its own column widths",
+    !!grants && !grants.classList.contains("cplfund-coltable"));
+  const mb = doc.querySelector('button[data-subview="model"]');
+  if (mb) click(window, mb);
+  // The reading note's formula ran 27px past a 390px phone (npm run a11y).
+  check("9d: on a phone the reading note may shrink and its formula wraps",
+    /"  \.cplfund-basis-note \{ min-width: 0; \}"/.test(consumerSrc) &&
+    /"  \.cplfund-basis-note code, \.cplfund-earned-line code \{ white-space: normal; overflow-wrap: anywhere; \}"/.test(consumerSrc));
+  const reading = doc.querySelector('.cplfund-prose[data-textblock="reading"]');
+  check("9e: the reading note describes the Dashboard's columns, not a two-line cell",
+    !!reading && /^The Dashboard sets each max award beside its Curr \(current\) figure, the funding qualifying so far\./.test(reading.textContent.trim()) &&
+    !/on top|beneath it/.test(reading.textContent));
+  check("9f: the allocation sentence names Total Funds and the Curr columns, not a cell's two lines",
+    /the Dashboard&#39;s " \+\s*"Total Funds\./.test(consumerSrc) &&
+    !/top line of every/.test(consumerSrc) && !/second line of each cell/.test(consumerSrc));
+  // TBA wherever a measure has yet to arrive (Sam, 2026-09-28). A source check
+  // reaches the branches no fixture here paints (the curator's diagnostic, the
+  // card's status word, the fold summary).
+  check("9g: no rendered string says 'Awaiting measurement' or 'Awaiting actuals'",
+    !/["'>]Awaiting (measurement|actuals)/.test(consumerSrc) && !/Awaiting (measurement|actuals)/.test(doc.getElementById("cplFundingMount").textContent));
+  check("9h: the deadline fallback is the live model's date, so a failed config load moves no chip",
+    /base\(\)\.participation_deadline\) \|\| "2026-11-01";/.test(consumerSrc));
+  check("9i: the retired drill-in summary line leaves no CSS behind",
+    !/\.cplfund-dtl-sum/.test(consumerSrc));
+  // The print copy has no .cplfund-chip rule, so the chip's margin never
+  // reached paper: the page printed "CalbrightNC only".
+  const JSDOM = require("jsdom").JSDOM;
+  const pd = new JSDOM(T._printHtml()).window.document;
+  const pRow = Array.from(pd.querySelectorAll("table.cplfund-table tbody tr")).find((r) => /Calbright/.test(r.textContent));
+  check("9j: the printed name and its NC only chip stay two words",
+    !!pRow && /Calbright\s+NC only/.test(pRow.textContent) && !/CalbrightNC only/.test(pRow.textContent));
+}
+{
+  // THE CSV (S300): Demonstrated is what the measures show, the minimum
+  // conditions aside; it repeated Current total until 2026-09-29, so a held
+  // institution read $0 demonstrated. Sam's term replaces "baseline".
+  const { T } = setup({ signedIn: true });
+  const csv = T._csv().split("\r\n");
+  const head = csv[1].split(",");
+  const iTot = head.findIndex((x) => /^Current total /.test(x));
+  const iPct = head.indexOf("Current total as % of max award");
+  const iDem = head.findIndex((x) => /^Demonstrated /.test(x));
+  const iHeld = head.indexOf("Withheld (minimum conditions not met)");
+  check("9k: the percentage follows Current total and names it; Demonstrated and Withheld follow",
+    iTot > 0 && iPct === iTot + 1 && iDem === iPct + 1 && iHeld === iDem + 1);
+  check("9l: no CSV header says baseline", !head.some((x) => /baseline/i.test(x)));
+  const lineOf = (name) => csv.find((l) => l.split(",")[1] === name).split(",");
+  const q = T._alloc(QUAL), h = T._alloc(HELD);
+  const ql = lineOf(QUAL), hl = lineOf(HELD);
+  check("9m: an institution meeting all three conditions demonstrates what it qualifies for, none held",
+    Number(ql[iDem]) === Math.round(q.earned_total) && Number(ql[iDem]) === Number(ql[iTot]) && Number(ql[iHeld]) === 0);
+  check("9n: a held institution qualifies for $0 and still demonstrates what its measures show",
+    Number(hl[iTot]) === 0 && Number(hl[iDem]) === Math.round(h.earned_withheld) && Number(hl[iDem]) > 0 &&
+    Number(hl[iHeld]) === Number(hl[iDem]));
+}
+
 finish();

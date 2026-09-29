@@ -318,8 +318,9 @@ check("5d: an undelivered measure never falls through to the catch-all label",
   const txt = diag ? diag.textContent : "";
   // Plain words since 2026-09-23 (Sam: "Simplify and use plain language in
   // the bullets"); the feed key rides each line's hover.
-  check("6a: an undelivered pin reads awaiting measurement at $0, not 'pays a FULL ADVANCE'",
-    /Awaiting measurement\. The daily MAP feed does not carry this measure yet; it counts \$0 until it does/.test(txt));
+  // TBA wherever a measure has yet to arrive (Sam, 2026-09-28).
+  check("6a: an undelivered pin reads TBA at $0, not 'pays a FULL ADVANCE'",
+    /\bTBA\. The daily MAP feed does not carry this measure yet; it counts \$0 until it does/.test(txt));
   check("6b: a bad pin says it counts $0 and names the fix",
     /Counts \$0: its measure is not one MAP reports\. Choose a measure on the card/.test(txt));
   check("6c: neither new state is described as advancing",
@@ -465,7 +466,7 @@ check("7a2: the BAKE carries no pin — its slot-2 metric is not the one the pin
   const card3 = cardAt(doc, 2);
   const P = detRows(openDetail(window, doc, "Bakersfield"));
   check("8a: with ppa_u present the Access column starts earning, no code change",
-    /Actual/.test(card3.textContent) && !/Awaiting actuals/.test(card3.textContent) &&
+    /Actual/.test(card3.textContent) && !/Awaiting actuals|Actual: TBA/.test(card3.textContent) &&
     P.length === NPRIO && /^[\d,.]+$/.test(P[2].actual) && /% of Max FTES$/.test(P[2].actualTip) &&
     !/no feed/.test(P[2].actual));
   // ⚠️ ASSERTED ON THE PARSED REGISTRY, NOT ON ITS SOURCE TEXT. This line used

@@ -139,8 +139,9 @@ const cFund = flat(axis(cCard, "what funds it"));
 const cMeas = flat(axis(cCard, "how it is evidenced"));
 check("goal (C) is served by its own priority, with its funding figure",
   /Priority \d: Career attainment/.test(cFund) && /\$[\d,]+/.test(cFund));
-check("goal (C) is awaiting measurement by the Chancellor's Office, never 'awaiting delivery'",
-  /Awaiting measurement/i.test(cMeas) &&
+// TBA wherever a measure has yet to arrive (Sam, 2026-09-28).
+check("goal (C) reads TBA, measured by the Chancellor's Office, never 'awaiting delivery'",
+  /\bTBA\b/.test(cMeas) &&
   /Chancellor.s Office measures this outcome from EDD wage records/.test(cMeas) &&
   !/awaiting delivery/i.test(cMeas));
 check("goal (C) never names MAP's daily feed as its source", !/daily (MAP )?feed/i.test(cMeas));

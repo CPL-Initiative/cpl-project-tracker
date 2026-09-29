@@ -144,8 +144,10 @@ function alamedaCsvEarned(T) {
 const pubCsv = alamedaCsvEarned(B), privCsv = alamedaCsvEarned(P);
 check("D4: the public CSV earned column is <1000 or a multiple of 1000",
   pubCsv === "<1000" || (/^\d+$/.test(pubCsv) && Number(pubCsv) % 1000 === 0));
-check("D4: the curator CSV earned column is the exact figure",
-  /^\d+$/.test(privCsv) && Math.abs(Number(privCsv) - Math.round(pa.earned_total)) <= 1);
+// Demonstrated is what the measures show, the minimum conditions aside
+// (2026-09-29): the qualifying figure plus any part held.
+check("D4: the curator CSV Demonstrated column is the exact figure",
+  /^\d+$/.test(privCsv) && Math.abs(Number(privCsv) - Math.round(pa.earned_total + (pa.earned_withheld || 0))) <= 1);
 
 // 5. The mask label follows the artifact's floor: 10, never a literal 5.
 const pubText = pubDoc.getElementById("cplFundingMount").textContent;

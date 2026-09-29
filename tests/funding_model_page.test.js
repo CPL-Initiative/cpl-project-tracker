@@ -395,6 +395,11 @@ check("the status line is empty on a successful paint",
     /cplfund-optin-jump/.test(print) && /input\[type="search"\]/.test(print));
   check("...and the PDF button prints nothing of itself",
     /\.head-actions/.test(print));
+  // The College Dashboard's table states its screen minimum INLINE (tableHtml,
+  // 2026-09-28), and an inline style outranks every rule but an !important one:
+  // before 2026-09-29 the printed table ran 898px wide in a 720px page box.
+  check("print releases the table's inline screen minimum, so it fits the page box",
+    /#cplFundingMount table\.cplfund-table\{min-width:0 !important\}/.test(print));
   // Sticky headers park over the body text from page two onward; the header
   // group repeats them properly instead.
   check("the table header repeats per page, and sticky is switched off",
