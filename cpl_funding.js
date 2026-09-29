@@ -3979,6 +3979,35 @@
       })
       .catch(function () { /* fail-soft: the committed values stand */ });
   }
+  // The first part of the first condition a college lacks, in the order the
+  // label names them; "" when it has all three.
+  function coordPartMissing(row) {
+    if (!row.has_coordinator) return "coord";
+    if (row.has_primary_contact === false) return "primary";
+    if (row.has_landing_page === false) return "page";
+    return "";
+  }
+  // map_coordinator_summary() rows into ELIG.coord (met) and ELIG.coordMissing
+  // (the part a college lacks). One path for the live fetch and the tests.
+  function ingestCoord(coord, roster) {
+    ELIG.coord = {}; ELIG.coordN = 0; ELIG.coordMissing = {};
+    coord.forEach(function (row) {
+      // MAP carries Calbright as "Calbright College Credit" / "Non-Credit";
+      // either one is the Calbright row's contact (Sam, 2026-09-22: 116).
+      var f = roster[shortName(row.college)] || (/^calbright/i.test(String(row.college || "")) ? "Calbright" : null);
+      if (!f || ELIG.coord[f]) return;
+      // THE FIRST CONDITION HAS THREE PARTS (Sam, 2026-09-29, sheet 4 card 1):
+      // a coordinator, a primary CPL contact and the landing page configured.
+      // The RPC answers each as a boolean, never a name. A part the RPC does
+      // not answer (a deploy that predates the column) reads as met, so the
+      // check falls back to the coordinator alone and never fails a college
+      // on a missing column.
+      var miss = coordPartMissing(row);
+      if (!miss) { ELIG.coord[f] = true; ELIG.coordN++; delete ELIG.coordMissing[f]; }
+      else if (!ELIG.coordMissing[f]) ELIG.coordMissing[f] = miss;
+      if (row.last_synced) ELIG.asOf = row.last_synced;
+    });
+  }
   function loadEligibility() {
     if (!remoteEnabled()) return;
     var h = { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON };
@@ -4012,14 +4041,7 @@
       var coord = res[0], part = res[1], review = res[2], contacts = res[3];
       if (Array.isArray(contacts)) ELIG.contact = ingestContacts(contacts, roster);
       if (Array.isArray(coord)) {
-        ELIG.coord = {}; ELIG.coordN = 0;
-        coord.forEach(function (row) {
-          // MAP carries Calbright as "Calbright College Credit" / "Non-Credit";
-          // either one is the Calbright row's contact (Sam, 2026-09-22: 116).
-          var f = roster[shortName(row.college)] || (/^calbright/i.test(String(row.college || "")) ? "Calbright" : null);
-          if (f && row.has_coordinator && !ELIG.coord[f]) { ELIG.coord[f] = true; ELIG.coordN++; }
-          if (row.last_synced) ELIG.asOf = row.last_synced;
-        });
+        ingestCoord(coord, roster);
         ELIG.coordOk = true;
       }
       if (Array.isArray(part)) {
@@ -4130,7 +4152,11 @@
     var due = " (due " + deadlineMdy(false) + ")";
     if (r.kind === "coord") {
       if (r.pending) return { text: "Coordinator status pending", pending: true };
-      return { text: r.met ? "Coordinator on file" : "Coordinator not yet on file" };
+      if (r.met) return { text: "Coordinator on file" };
+      // Name the part that is missing (Sam, 2026-09-29: the condition has three).
+      var miss = (ELIG.coordMissing || {})[college];
+      return { text: miss === "primary" ? "Primary CPL contact not yet on file"
+        : miss === "page" ? "CPL landing page not yet configured" : "Coordinator not yet on file" };
     }
     if (r.kind === "part") {
       if (r.met) return { text: "Confirmation on file" };
@@ -13016,6 +13042,9 @@
       ELIG.coordOk = !!o.coordOk;
       ELIG.coord = o.coord || {};
       ELIG.coordN = Object.keys(ELIG.coord).length;
+      ELIG.coordMissing = {};
+      // coordRows: raw map_coordinator_summary() rows, read by the live path.
+      if (o.coordRows) { ingestCoord(o.coordRows, rosterByShortName()); ELIG.coordOk = true; }
       ELIG.optinRow = o.optinRow || {};
       ELIG.optin = o.optin || {};
       if (o.optinRow && !o.optin) {   // derive the active map from the rows
