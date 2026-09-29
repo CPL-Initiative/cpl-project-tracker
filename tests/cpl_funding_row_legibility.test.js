@@ -33,7 +33,7 @@
 //
 // Run from repo root: `npm test` (or `node tests/cpl_funding_row_legibility.test.js`).
 const { check, freshDom, boot, D, consumerSrc, finish } = require("./lib/cpl_funding_harness.js");
-const { NPRIO } = require("./lib/cpl_funding_harness.js");
+const { NPRIO, drillOf, rowById } = require("./lib/cpl_funding_harness.js");
 
 // Open one institution row's expand through the public path (the caret) and
 // return its detail row. The click re-renders the table, so the row is
@@ -65,13 +65,13 @@ function openDetail(window, doc, name) {
     doc.querySelectorAll("#cplFundTable td.cf-prio").length === 0);
 
   const det = openDetail(window, doc, "Bakersfield");
-  // The CREDIT lane table: since 2026-09-24 the expand holds one table per
-  // lane, and the noncredit table's own header row would read as a row here.
-  const prioCells = det
-    ? Array.from(det.querySelectorAll(".cplfund-dtl-table.cplfund-dtl-cr tr")).slice(1)
-        .map((tr) => tr.querySelector("td").textContent.replace(/\s+/g, " ").trim())
+  // Since round 8 (Sam, 2026-09-29) each priority is a row of the college
+  // table itself; its name is the first cell, under the band's "Priority
+  // outcomes".
+  const prioCells = det && det.previousElementSibling
+    ? drillOf(doc, det.previousElementSibling).cells.map((c) => (c.college ? c.college.text : ""))
     : [];
-  check("the expand's detail table has one row per priority", prioCells.length === NPRIO);
+  check("the expand has one priority row per priority", prioCells.length === NPRIO);
   // "Priority 1: Access", the card heading's own form (2026-09-23).
   check("each carries its ordinal AND its name, not the ordinal alone",
     prioCells.length === NPRIO && prioCells.every((t) => /^Priority \d+: \S/.test(t)));
@@ -197,10 +197,12 @@ function openDetail(window, doc, name) {
     fnBody("rowChips").indexOf("earned_withheld") === -1);
   // `cellFig` reads the span the award covers (the window under Combined
   // funding, the viewed year under Annual, 2026-09-27).
-  check("the Curr cells read the RELEASED figure for the award's span ($0 while gated), never a held one",
-    /fig = cellFig\(row, "earned_cr"\)/.test(fnBody("curCellHtml")) &&
-    /fig = cellFig\(row, "earned_total"\)/.test(fnBody("curCellHtml")) &&
-    fnBody("curCellHtml").indexOf("earned_withheld") === -1 &&
+  // Round 9 (Sam, 2026-09-29): a gated row's Curr cells read the computed
+  // figure, in gray, through GATED_FIELD; the Total Funds cell never does.
+  check("the Curr cells read the figure for the award's span: qualifying, or computed in gray while gated",
+    /fig = figOf\("earned_cr"\)/.test(fnBody("curCellHtml")) &&
+    /fig = figOf\("earned_total"\)/.test(fnBody("curCellHtml")) &&
+    /cellFig\(row, gated \? GATED_FIELD\[field\] : field\)/.test(fnBody("curCellHtml")) &&
     fnBody("totalFundsCellHtml").indexOf("earned_withheld") === -1);
   check("and the pair cells repeat no qualifying line or prompt",
     fnBody("crAwardCellHtml") !== "" && fnBody("ncAwardCellHtml") !== "" &&

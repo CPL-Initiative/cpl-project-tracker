@@ -295,7 +295,7 @@ check("a goal priorities DO serve carries a Total Possible figure",
 // ── 9. every section below the Metric collapses, and carries its figure ─────
 // ⚠️ THE SUMMARY VALUE IS THE POINT. A fold whose summary is only a label hides
 // its content; these relocate it, so a reader who never opens "Progress" has
-// still been given the Current Total.
+// still been given the demonstrated figure.
 {
   const secs = Array.from(cards(doc)[0].querySelectorAll(".cplfund-cardsec"));
   check("the first card carries collapsing sections below its metric", secs.length >= 3);

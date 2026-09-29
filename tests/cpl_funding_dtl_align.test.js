@@ -22,12 +22,24 @@
 // are not in this DOM, which is why the fix sits at a specificity (0,2,1)+ that
 // no plain class-plus-type rule reaches.
 //
+// ROUND 8 (Sam, 2026-09-29: "Line up and use the same column fields in drill
+// down as the college row") retired the nested tables. The priorities are rows
+// of the institution table under a header band, so the band's cell and the
+// figures beneath it share one column by construction; what can still pull
+// them apart is the cascade, and a breakpoint most of all. The band once set
+// `padding: 4px 7px` at (0,2,3), which outranks the table's 640px rule
+// (`.cplfund-table th, td { padding: 4px 5px }`): on a phone the band's labels
+// sat 2px off the figures under them. The resolver below checks every column
+// of the band against every priority row, in the base cascade and in each
+// @media block. The name column is the one deliberate difference: the
+// priorities indent under the band's first label (26px), as in the mockup.
+//
 // (2) "Add a veteran star icon on the college rows for the 59 colleges that meet
 // that criteria." The star reads vetStar(), the same flag as the Baseline
 // requirement and the Elig pie. A noncredit-only institution meets that
 // requirement with certificates and carries NO star, even if a flag names it.
 const H = require("./lib/cpl_funding_harness.js");
-const { freshDom, boot, click, check, finish, consumerSrc } = H;
+const { freshDom, boot, click, check, finish, consumerSrc, drillOf } = H;
 
 // ── a small cascade resolver ────────────────────────────────────────────────
 function splitSelectors(text) {                  // top-level commas only
@@ -99,23 +111,29 @@ function resolve(el, prop, rules, media) {
   return best ? best.val : "(initial)";
 }
 const PROPS = ["padding-left", "padding-right", "text-align"];
-// Every column where a header and a data cell resolve differently, per context.
-function misaligned(table, rules) {
+// Every column where the band's cell and a priority row's cell resolve
+// differently, per context. The name column (index `nameAt`) compares its
+// alignment alone: its indent is the design.
+function misaligned(drill, rules, nameAt) {
   const contexts = [null].concat(Array.from(new Set(rules.map((r) => r.media).filter(Boolean))));
-  const rows = Array.from(table.rows);
-  const head = Array.from(rows[0].cells);
-  const data = rows.slice(1).filter((tr) => !tr.classList.contains("cplfund-dtl-rep"));
+  const head = Array.from(drill.band.cells);
   const bad = [];
-  contexts.forEach((ctx) => head.forEach((th, i) => PROPS.forEach((p) => {
-    const want = resolve(th, p, rules, ctx);
-    data.forEach((tr) => {
-      const td = tr.cells[i];
-      if (td && resolve(td, p, rules, ctx) !== want)
-        bad.push((ctx || "base") + " · column " + (i + 1) + " · " + p + ": th " + want + ", td " + resolve(td, p, rules, ctx));
+  contexts.forEach((ctx) => head.forEach((th, i) => {
+    if (th.tagName !== "TH") return;   // a hidden-by-default column's blank band cell
+    PROPS.forEach((p) => {
+      if (i === nameAt && p !== "text-align") return;
+      const want = resolve(th, p, rules, ctx);
+      drill.rows.forEach((tr) => {
+        const td = tr.cells[i];
+        if (td && resolve(td, p, rules, ctx) !== want)
+          bad.push((ctx || "base") + " · column " + (i + 1) + " · " + p + ": th " + want + ", td " + resolve(td, p, rules, ctx));
+      });
     });
-  })));
+  }));
   return bad;
 }
+// A declaration block for a planted rule: the resolver reads a CSSStyleDeclaration.
+function styleOf(doc, css) { const el = doc.createElement("div"); el.setAttribute("style", css); return el.style; }
 
 {
   const { window } = freshDom();
@@ -162,58 +180,64 @@ function misaligned(table, rules) {
 
   // ── (1) the drill-in alignment ───────────────────────────────────────────
   click(window, rowOf("Laney").querySelector(".cplfund-caret"));
-  const collegeTable = rowOf("Laney").nextElementSibling.querySelector(".cplfund-dtl-table");
+  const college = drillOf(doc, rowOf("Laney"));
   const sysRow = doc.querySelector("#cplFundTable tbody tr.cplfund-systemrow");
   click(window, sysRow.querySelector(".cplfund-caret"));
-  const sysTable = doc.querySelector("#cplFundTable tbody tr.cplfund-systemrow").nextElementSibling
-    .querySelector(".cplfund-dtl-table");
-  check("a0: both drill-ins render a table with a header row and data rows",
-    !!collegeTable && !!sysTable && collegeTable.rows.length >= 2 && sysTable.rows.length >= 2);
+  const sys = drillOf(doc, doc.querySelector("#cplFundTable tbody tr.cplfund-systemrow"));
+  check("a0: both drill-ins render a header band and priority rows",
+    !!college.band && !!sys.band && college.rows.length >= 3 && sys.rows.length >= 3);
 
+  const keys = Array.from(doc.querySelectorAll("#cplFundTable thead th")).map((th) => th.getAttribute("data-sort"));
+  const nameAt = keys.indexOf("college");
   const rules = sheetRules(doc);
-  const badCollege = misaligned(collegeTable, rules);
-  const badSys = misaligned(sysTable, rules);
-  check("a1: ⭐ every college drill-in header resolves to its column's padding and alignment" +
+  const badCollege = misaligned(college, rules, nameAt);
+  const badSys = misaligned(sys, rules, nameAt);
+  check("a1: ⭐ every college drill-in band cell resolves to its column's padding and alignment" +
     (badCollege.length ? " — " + badCollege.slice(0, 3).join("; ") : ""), badCollege.length === 0);
-  check("a2: ⭐ and every statewide drill-in header does too" +
+  check("a2: ⭐ and every statewide drill-in band cell does too" +
     (badSys.length ? " — " + badSys.slice(0, 3).join("; ") : ""), badSys.length === 0);
-  const th0 = collegeTable.rows[0].cells[0], th1 = collegeTable.rows[0].cells[1];
+  const bandName = college.band.cells[nameAt], bandFig = college.band.cells[keys.indexOf("cr_award")];
+  const rowName = college.rows[0].cells[nameAt];
   // The house table format (Sam, 2026-09-24, review sheet item 7): "left
   // justify the 1st column and center justify the rest."
   check("a3: the name column reads left and the figures read centered",
-    resolve(th0, "text-align", rules, null) === "left" && resolve(th1, "text-align", rules, null) === "center");
+    resolve(bandName, "text-align", rules, null) === "left" && resolve(rowName, "text-align", rules, null) === "left" &&
+    resolve(bandFig, "text-align", rules, null) === "center");
+  check("a3b: the priorities indent under the band's first label, as in the mockup",
+    resolve(rowName, "padding-left", rules, null) === "26px" && resolve(bandName, "padding-left", rules, null) === "7px");
 
-  // ── (3) the noncredit header is readable ─────────────────────────────────
-  // Sam's screenshot, 2026-09-26: the noncredit table's header row painted its
-  // blue fill and kept the base rule's muted-ink text, dark on dark. A fill and
-  // its text color are one decision: resolve both on the same cell, for both
-  // lanes' headers.
-  const ncTable = doc.querySelector("#cplFundTable .cplfund-dtl-table.cplfund-dtl-nc");
-  check("c0: the statewide drill-in renders a noncredit table", !!ncTable);
-  const ncTh = ncTable && ncTable.rows[0].cells[1];
-  check("c1: ⭐ the noncredit header's text resolves to white wherever its fill resolves to the noncredit blue",
+  // ── (3) the band is readable ─────────────────────────────────────────────
+  // Sam's screenshot, 2026-09-26: the noncredit header painted its blue fill
+  // and kept a muted-ink text color, dark on dark. A fill and its text color
+  // are one decision: resolve both on the same cell, for both lanes.
+  const ncTh = sys.band.cells[keys.indexOf("nc_award")];
+  check("c0: the statewide band carries noncredit cells", !!ncTh && ncTh.classList.contains("cf-nchead"));
+  check("c1: ⭐ the noncredit band's text resolves to white wherever its fill resolves to the noncredit blue",
     !!ncTh && /--dtl-nc-head/.test(resolve(ncTh, "background", rules, null)) &&
     /--white/.test(resolve(ncTh, "color", rules, null)));
-  // Since 2026-09-28 the credit header fills too, in seal blue (Sam: "the
-  // credit table's header is dark blue; the noncredit header keeps the lighter
-  // blue"), and it takes white ink by the same one-rule discipline.
-  check("c2: the credit header resolves to white ink on the seal-blue fill",
-    /--white/.test(resolve(th1, "color", rules, null)) && /--seal-blue/.test(resolve(th1, "background", rules, null)));
+  // The credit cells fill seal blue (Sam, 2026-09-28: "the credit table's
+  // header is dark blue; the noncredit header keeps the lighter blue"), with
+  // white ink by the same one-rule discipline.
+  check("c2: the credit band resolves to white ink on the seal-blue fill",
+    /--white/.test(resolve(bandFig, "color", rules, null)) && /--seal-blue/.test(resolve(bandFig, "background", rules, null)));
   check("c3: each lane's fill and text color are declared in ONE rule, so they cannot separate",
-    /\.cplfund-dtl-nc th \{ background: var\(--dtl-nc-head[^}]*color: var\(--white/.test(consumerSrc) &&
-    /\.cplfund-dtl-cr th \{ background: var\(--seal-blue[^}]*color: var\(--white/.test(consumerSrc));
+    /tr\.cplfund-subhead > th\.cf-nchead \{ background: var\(--dtl-nc-head[^}]*color: var\(--white/.test(consumerSrc) &&
+    /tr\.cplfund-subhead > th \{ background: var\(--seal-blue[^}]*color: var\(--white/.test(consumerSrc));
 
-  // ⚠️ A GUARD THAT CANNOT FAIL PROVES NOTHING. Drop the three restating rules
-  // and the resolver must find the defect Chromium measured: the outer rules
-  // pulling the header and its column apart.
-  const without = sheetRules(doc, (t) => t.indexOf(".cplfund-dtl-tscroll > .cplfund-dtl-table") !== -1);
-  const badBefore = misaligned(collegeTable, without);
-  check("a4: without the fix the resolver reports the misalignment (" + badBefore.length + " cells)",
-    badBefore.length > 0 && badBefore.some((b) => /padding-left/.test(b)) && badBefore.some((b) => /text-align/.test(b)));
+  // ⚠️ A GUARD THAT CANNOT FAIL PROVES NOTHING. Plant the round-8 draft's band
+  // padding (4px 7px at the band's specificity) and the resolver must find the
+  // phone breakpoint pulling the band 2px off the figures under it.
+  const planted = rules.concat([{ sels: [".cplfund-table > tbody > tr.cplfund-subhead > th"],
+    style: styleOf(doc, "padding: 4px 7px"), order: 1e9, media: null }]);
+  const badBefore = misaligned(college, planted, nameAt);
+  check("a4: with the draft's band padding the resolver reports the breakpoint misalignment (" + badBefore.length + " cells)",
+    badBefore.length > 0 && badBefore.every((b) => /max-width: 640px/.test(b) && /padding-(left|right)/.test(b)));
 
   // ── source guard ─────────────────────────────────────────────────────────
-  check("s1: the restating rules walk a CHILD combinator from the drill-in's scroll wrapper",
-    consumerSrc.indexOf('".cplfund-dtl-tscroll > .cplfund-dtl-table th, .cplfund-dtl-tscroll > .cplfund-dtl-table td {') !== -1);
+  check("s1: the band and row rules walk CHILD combinators from .cplfund-table, and the band sets no horizontal padding",
+    consumerSrc.indexOf('".cplfund-table > tbody > tr.cplfund-subhead > th { background:') !== -1 &&
+    consumerSrc.indexOf('".cplfund-table > tbody > tr.cplfund-subrow > td { background:') !== -1 &&
+    !/tr\.cplfund-subhead > th \{[^}]*padding:/.test(consumerSrc));
 
   // ── no flag, no star ─────────────────────────────────────────────────────
   delete window.CPL_FUNDING_PERF.vet_star;

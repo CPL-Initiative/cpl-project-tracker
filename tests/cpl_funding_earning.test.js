@@ -27,6 +27,9 @@ const {
   pieSlices,
   D,
   finish,
+  drillOf,
+  rowById,
+  remainingOf,
 } = require("./lib/cpl_funding_harness.js");
 const { NPRIO } = require("./lib/cpl_funding_harness.js");
 
@@ -141,14 +144,16 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
     })(doc.querySelector(".cplfund-summary")));
 
   const pcards = doc.querySelectorAll(".cplfund-prio .p");
-  check("E: measurable priority card shows a Current Total line (not full advance)",
-    pcards[0].textContent.indexOf("Current Total") !== -1 && pcards[0].textContent.indexOf("full advance") === -1);
+  // The line reads Demonstrated (Sam, 2026-09-29, sheet 3 card 4); Current
+  // names the Curr columns' qualifying figure alone.
+  check("E: measurable priority card shows a Demonstrated line (not full advance)",
+    pcards[0].textContent.indexOf("Demonstrated:") !== -1 && pcards[0].textContent.indexOf("full advance") === -1);
   // The "full advance until the feed lands" suffix RETIRED 2026-09-01 (Sam:
   // no mention of the advance concept on any rendered surface; the model's
   // internal accounting is unchanged and guarded below at the API level).
-  check("E: unmeasured priority cards carry a Current Total line with NO advance wording",
-    pcards[1].textContent.indexOf("Current Total") !== -1 &&
-    pcards[2].textContent.indexOf("Current Total") !== -1 &&
+  check("E: unmeasured priority cards carry a Demonstrated line with NO advance wording",
+    pcards[1].textContent.indexOf("Demonstrated:") !== -1 &&
+    pcards[2].textContent.indexOf("Demonstrated:") !== -1 &&
     pcards[1].textContent.indexOf("full advance") === -1 &&
     pcards[2].textContent.indexOf("full advance") === -1);
 
@@ -216,12 +221,14 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
   T._state.open["c:Laney"] = true;
   T.render();
   const det = doc.querySelector("tr.cplfund-detail");   // only Laney is open
-  // One table per lane since 2026-09-24, in Sam's columns. The totals line
-  // above them left the drill-in on 2026-09-28: the row's Curr columns carry
+  // Since round 8 (Sam, 2026-09-29) each priority is a row of the college
+  // table itself, under a header band in the row's own columns; the totals
+  // line left the drill-in on 2026-09-28, since the row's Curr columns carry
   // what the college qualifies for.
-  check("E: drill-in shows the per-priority earning detail (lane tables, an Actual Funds column; the totals ride the row)",
-    !!det && !!det.querySelector(".cplfund-dtl-table.cplfund-dtl-cr") && !det.querySelector(".cplfund-dtl-sum") &&
-    Array.from(det.querySelectorAll(".cplfund-dtl-table th")).some(function (h) { return /^Actual Funds$/.test(h.textContent.trim()); }));
+  const drillE = drillOf(doc, rowById(doc, "c:Laney"));
+  check("E: drill-in shows the per-priority earning detail (priority rows under a Curr CR Funds band; the totals ride the row)",
+    !!det && drillE.rows.length > 0 && !!drillE.band && !det.querySelector(".cplfund-dtl-sum") &&
+    Array.from(drillE.band.querySelectorAll("th")).some(function (h) { return /^Curr(Current)? CR Funds$/.test(h.textContent.trim()); }));
 }
 {
   // Feed not loaded → the CREDIT priorities advance at full cap (transient), so
@@ -262,11 +269,12 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
     Math.abs(yu.earned_total - (yu.cr_award - yu.p1)) < 1);
   T._state.open["c:Yuba"] = true;
   T.render();
-  const det = doc.querySelector("tr.cplfund-detail");   // only Yuba is open
-  // The drill-in's Actual cell masks the count (<5) and names privacy — the
+  // The drill-in's Actual FTES line masks the count (<5) and names privacy — the
   // suppression is FLAGGED, never rendered as a measured zero or blind-credited.
+  // Since round 8 (2026-09-29) the priority rows follow the detail row.
+  const yuRows = drillOf(doc, rowById(doc, "c:Yuba")).rows.map(function (r) { return r.textContent; }).join(" ");
   check("E: suppressed shows the masked count + a privacy flag in the drill-in",
-    !!det && det.textContent.indexOf("(privacy)") !== -1 && det.textContent.indexOf("<5") !== -1);
+    yuRows.indexOf("(privacy)") !== -1 && yuRows.indexOf("<5") !== -1);
 }
 {
   // Conservation over the ONE ROSTER (118 institutions, trio included):
@@ -338,11 +346,12 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
 
   // Sam's R10 veto kept the eligibility pie on screen; since the College
   // Dashboard (2026-09-28) it leads the Institution cell instead of holding a
-  // column, and the Curr headers say funding counts once the conditions are met.
+  // column, and the Curr headers say why a figure reads gray: funding counts
+  // once the conditions are met (round 8, Sam 2026-09-29).
   const firstRow = doc.querySelector("#cplFundTable tbody tr.cplfund-row");
   check("F: the Elig column is gone; the pie leads the Institution cell, and the Curr headers say when funding counts",
     !doc.querySelector('#cplFundTable th[data-sort="elig"]') && !!firstRow && !!firstRow.querySelector("td.t > .cf-lead > .cf-elig") &&
-    /once the institution meets its minimum conditions/.test(
+    /A gray figure means the institution has yet to meet all its minimum conditions; it shows the funding its measures compute to, available once it meets them/.test(
       (doc.querySelector('#cplFundTable th[data-sort="cr_current"]') || { getAttribute: () => "" }).getAttribute("title") || ""));
 }
 
@@ -374,27 +383,24 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
     !doc.querySelector("#cplFundTable td.cf-prio") && !doc.querySelector('th[data-sort="prio0"]'));
   T._state.open["c:Laney"] = true;
   T.render();
-  const dtl = doc.querySelector("tr.cplfund-detail .cplfund-dtl-table.cplfund-dtl-cr");
-  const rows = dtl ? Array.from(dtl.querySelectorAll("tr")).slice(1) : [];
-  check("G: the expand renders one detail row per priority", rows.length === NPRIO);
-  const cells = function (i) { return Array.from(rows[i].querySelectorAll("td")).map(function (td) { return td.textContent; }); };
-  // By HEADER: the table dropped its CR/NC funding columns on 2026-09-23.
-  const dh = Array.from(dtl.querySelectorAll("th")).map(function (h) { return h.textContent.trim().toLowerCase(); });
-  const col = function (i, k) { return cells(i)[dh.indexOf(k)] || ""; };
-  // Sam's six columns, in his order (2026-09-24, review sheet item 7).
-  // The first header names the lane since 2026-09-28 (Sam's mockup).
-  check("G: the detail table carries Credit outcomes · Max FTES · Max Funds · Actual FTES · Actual Funds · Difference",
-    Array.from(dtl.querySelectorAll("th")).map(function (h) { return h.textContent.trim(); }).join("|") ===
-      "Credit outcomes|Max FTES|Max Funds|Actual FTES|Actual Funds|Difference");
-  const tip = function (i, k) { const td = rows[i].querySelectorAll("td")[dh.indexOf(k)]; return td ? td.getAttribute("title") || "" : ""; };
-  check("G: the measurable P1 row shows the actual, and its hover the % of Max FTES",
-    col(0, "actual ftes").indexOf("200") !== -1 && /%/.test(tip(0, "actual ftes")));
+  // The priority rows (round 8, 2026-09-29), read by column key: a Max cell
+  // holds the funding with its Max FTES beneath, a Curr cell what it has
+  // qualified for with its Actual FTES beneath and what remains on hover.
+  const drill = drillOf(doc, rowById(doc, "c:Laney"));
+  const rows = drill.rows;
+  check("G: the expand renders one priority row per priority", rows.length === NPRIO);
+  const band = drill.band ? Array.from(drill.band.querySelectorAll("th")).map(function (h) { return h.textContent.trim(); }) : [];
+  check("G: the priority rows sit under the row's own column heads (Max CR · Curr CR · Max NC · Curr NC · Total · Curr Total)",
+    band.join("|") === "Priority outcomes|Max CR Funds|CurrCurrent CR Funds|Max NC Funds|CurrCurrent NC Funds|Total Funds|CurrCurrent Total Funds");
+  const c0 = drill.cells[0] || {}, c1 = drill.cells[1] || {};
+  check("G: the measurable P1 row shows the actual beneath its Curr figure, and the hover the % of Max FTES",
+    !!c0.cr_current && c0.cr_current.line.indexOf("200") !== -1 && /% of Max FTES/.test(c0.cr_current.tip));
   check("G: an unmeasured priority row reads a plain TBA — never a measured zero, and " +
         "never the retired advance wording (2026-09-01; TBA since 2026-09-28)",
-    col(1, "actual ftes").trim() === "TBA" && col(1, "actual ftes").indexOf("advance") === -1 &&
-    !/^0(\.0)?$/.test(col(1, "actual ftes").trim()));
-  check("G: the priority rows carry funding ($ figures) alongside the measures",
-    /\$/.test(col(0, "actual funds")) && /\$/.test(col(0, "max funds")) && /\$/.test(col(0, "difference")));
+    !!c1.cr_current && c1.cr_current.line === "TBA" && c1.cr_current.text.indexOf("advance") === -1 &&
+    !/^0(\.0)?( FTES)?$/.test(c1.cr_current.line));
+  check("G: the priority rows carry funding ($ figures) alongside the measures, and the hover what remains",
+    !!c0.cr_current && /\$/.test(c0.cr_current.fig) && /\$/.test(c0.cr_award.fig) && remainingOf(c0.cr_current) !== null);
   // The metric itself stays visible where the priority is defined — the card's
   // METRIC block (the retired column-header hover's successor).
   check("G: each priority card carries its METRIC block",

@@ -1617,3 +1617,29 @@ uses verbatim, are here.
 **Moved verbatim from the lane (S302), the 2026-09-24 dial read:**
 
 ⭐ **THE DIALS (config read 2026-09-24 00:2x UTC; unchanged since the 21:30 UTC save of 2026-09-23).** **Scenario 1 is the published scenario** (a stale window's 21:30 save cleared the marker; unset falls back to it): P1 Access `ppa_u` 33% · P2 Completion `ptc_u` 34%, outcome B · P3 Career attainment `ca_u` 33%, factor 0.5, carrying the six transcription strategies of the deleted slot 1 (`prioRemoved: [1]`) · (D) Innovation Projects. The 115 maximum awards total the $24,757,639 allocation. Scenario 3 sums to 133%, unpublished. ⭐ Do not build a combined ORIGIN+counselor source (Sam split them 2026-09-15; `pa_u` + `ppa_u` buys 0.3%).
+
+## 2026-09-29 — S302 (SkyWeft): round 8 of the College Dashboard, and a write that needs Sam's permission
+
+**What worked.**
+- **Draw the mockup from the running code again, and keep the harness this time.** `prototype/mockup_harness/` renders the tab in Chromium with Supabase answered from fixtures, opens every shown drill-in and captures markup plus matching CSS. The priority rows became rows of the college table itself, so they line up by construction and the Columns menu hides them with the same child-combinator rules.
+- **Look for a published copy before building a new read.** The CPL Coordinator's name was already public in `map_college_contacts_pub` (My College reads it); only the primary contact needs the reviewer-gated table.
+- **Measure what a condition's wording claims against what its check reads.** Sam defined the first condition as three parts; the check reads the coordinator alone (49 against 43).
+
+**What bit.**
+- ⚠️ **A new workflow that writes Supabase with the service key is refused by the session's permission check.** Card 7's applier is built; its workflow is Sam's call. Ask before building one.
+- **The live config moves while a session plans a write** (Sam saved at 13:58Z, after the plan's read). The applier guards every path on its before-value and writes only over the version it reads.
+- **The npm Playwright's browser path does not exist in this container**; launch at `/opt/pw-browsers/chromium`.
+
+**Moved verbatim from the lane (S302, to stay under the 20,000-byte budget):**
+
+⚠️ **THE ORIGINATION CUTOVER IS ASYMMETRIC.** The **NC side** (`LocID2`) is wired downstream and lands once a session adds the column to the daily fetch (`fetch_custom_report.py` asks MAP for a fixed list; a column a view lacks fails the whole view). The **credit side waits on a person**: the builder prints *"the ppa cutover … stays PENDING"* with an `origin_values` histogram, so the switch is made on CONFIRMED spellings. ⚠️ **A lane file is a summary of a measurement, not the measurement** (`scripts/funding_effective.js`; [note](../../kb-notes/methodology-a-lane-file-is-a-summary-of-a-measurement.md)). Full text before the S300 compaction: the lessons archive.
+
+✅ **The explainer is titled "2026-2028 CPL Initiative Funding: How It Works"** (S292), with a statutory intro (SB 135; Ed. Code §78093–78093.2); three suites pin the tab's own link text. ⚠️ `funding_model_page.test.js`'s vocabulary scan lifts the statute's "advancing career attainment" out before scanning; every other *advance* stays banned.
+
+✅ **SCENARIO 3'S CONTROLS (#1664, 2026-09-23).** A **published scenario** per project (`projects.<pid>.published`) is what the explainer, the college briefing and an unchosen browser read; unset keeps Scenario 1. ⚠️ **A window saves only over the version it read** (the PATCH names `updated_at`; [note](../../kb-notes/methodology-a-window-saves-only-over-the-version-it-read.md)). Add/Delete a priority (`prioRemoved`, `prioAdded`; ⚠️ **a deleted share must move**, so Delete asks which priority takes it). One numbering for reported cards (`cardOrder`, `reportedCards`; ⚠️ the label inside `priorities()` reads stored data only). ⚠️ **A redraw during a press swallows the click**: `render()` waits while a press begun in the mount is open (`cpl_funding_press_hold`). Full text before the S300 compaction: the lessons archive.
+
+## 2026-09-29 — S302 close-out: the lessons doc that one line erased
+
+- ⚠️ **`open(p, 'w').write(rd(p) + more)` erases the file before it reads it.** Python opens, and truncates, before it evaluates the argument, so the S302 checkpoint wrote 847 bytes over this 113,895-byte doc. `docs_index_build_test`'s frontmatter-less check caught it: the doc lost its frontmatter, so its title fell back to its slug. The doc was rebuilt from main plus the S302 passages, recovered verbatim from the session transcript. Read into a variable first, or append with mode `'a'`, and compare a doc's size after any scripted write.
+- **Sam allowed `funding-config-edit-apply.yml` (2026-09-29): *"Allow workflow and I'll type in myself."*** The workflow landed for reviewed config edits (#1757); he types card 7's two lines himself, and a dry run confirms them. The permission check passed the same file once he had said so.
+- **A Dependabot PR's runs get no repository secrets.** #854's red `sync` check read `SUPABASE_SERVICE_KEY unset`; setup-python v7 itself installed and ran. Merging a bump that touches a workflow triggered by its own file runs that workflow on main with the real key (`coci-offerings-sync.yml` writes).

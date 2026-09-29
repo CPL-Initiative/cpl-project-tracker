@@ -26,6 +26,8 @@ const {
   consumerSrc,
   idx,
   finish,
+  drillOf,
+  rowById,
 } = require("./lib/cpl_funding_harness.js");
 const { NPRIO } = require("./lib/cpl_funding_harness.js");
 
@@ -96,15 +98,15 @@ function colOf(tbl, name) {
   // 7-column detail table replaced the in-row P1/P2/P3 math (2026-08-31).
   click(window, doc.querySelector("tr.cplfund-row"));
   let detail = doc.querySelector("tr.cplfund-detail");
-  // One table per lane in Sam's six columns since 2026-09-24: the priority
-  // lines carry their funding as Max Funds and Actual Funds.
-  check("college drill-in renders a detail row with per-priority math",
-    detail && detail.textContent.indexOf("Priority 1") !== -1 && detail.textContent.indexOf("Max Funds") !== -1);
-  // The first header names the lane since 2026-09-28 (Sam's mockup).
-  check("drill-in carries the six-column detail table (Sam's columns, 2026-09-24)",
-    !!detail.querySelector(".cplfund-dtl-table") &&
-    Array.from(detail.querySelectorAll(".cplfund-dtl-table th")).map(function (h) { return h.textContent; })
-      .join("|").indexOf("Credit outcomes|Max FTES|Max Funds|Actual FTES|Actual Funds|Difference") !== -1);
+  // Since round 8 (Sam, 2026-09-29) each priority is a row of the college
+  // table itself, under a header band in the row's own columns.
+  const drill0 = drillOf(doc, doc.querySelector("tr.cplfund-row"));
+  check("college drill-in renders a detail row and its priority rows with per-priority math",
+    !!detail && drill0.rows.length > 0 && drill0.rows[0].textContent.indexOf("Priority 1") !== -1 &&
+    !!drill0.band && drill0.band.textContent.indexOf("Max CR Funds") !== -1);
+  check("drill-in lines its priorities up under the row's own columns (round 8, 2026-09-29)",
+    !!drill0.band && Array.from(drill0.band.querySelectorAll("th")).map(function (h) { return h.textContent.trim(); })
+      .join("|") === "Priority outcomes|Max CR Funds|CurrCurrent CR Funds|Max NC Funds|CurrCurrent NC Funds|Total Funds|CurrCurrent Total Funds");
   // The active year's metric moved from the drill-in to the priority CARDS —
   // still one click away, and the card is the surface the curator edits.
   check("the active year's metric shows on the priority cards (the drill-in's metric line moved there)",
@@ -217,11 +219,12 @@ function colOf(tbl, name) {
   // diagnostic); the durable guard is that neither reads as a measured zero.
   T._state.open["c:" + D.colleges[0].college] = true;
   T.render();
-  const dtl = doc.querySelector("tr.cplfund-detail .cplfund-dtl-table");
-  // Columns by header, never position (six columns since 2026-09-23; the
-  // measure column reads "Actual FTES" since the lane tables of 2026-09-24).
+  // Columns by key, never position: a priority's actual is the line beneath
+  // its Curr CR Funds figure (round 8, 2026-09-29).
+  const drillA = drillOf(doc, rowById(doc, "c:" + D.colleges[0].college));
   const act = function (i) {
-    return Array.from(dtl.querySelectorAll("tr"))[i + 1].querySelectorAll("td")[colOf(dtl, "Actual FTES")].textContent;
+    const c = drillA.cells[i];
+    return c && c.cr_current ? c.cr_current.line : "";
   };
   check("P2 (gap) and P3 (pending) detail rows both read TBA — never a measured zero",
     act(1) === "TBA" && act(1).indexOf("0 · 0%") === -1 &&
@@ -268,11 +271,9 @@ function colOf(tbl, name) {
   // Alameda's expand: the P1 detail row stacks the actual (300) under its target.
   T._state.open["c:Alameda"] = true;
   T.render();
-  const alaRow = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
-    .find(function (tr) { return tr.getAttribute("data-id") === "c:Alameda"; });
-  const alaDtl = alaRow.nextElementSibling.querySelector(".cplfund-dtl-table");
+  const alaP1 = drillOf(doc, rowById(doc, "c:Alameda")).cells[0];
   check("Alameda's P1 detail row shows the any-transcribed actual (300) beside its target",
-    Array.from(alaDtl.querySelectorAll("tr"))[1].querySelectorAll("td")[colOf(alaDtl, "Actual FTES")].textContent.indexOf("300") !== -1);
+    !!alaP1 && !!alaP1.cr_current && alaP1.cr_current.line.indexOf("300") !== -1);
   // Year 2: all three metrics are gaps today (units builder / MIS match-back).
   click(window, doc.querySelector('#cplFundYear button[data-val="2"]'));
   // The gap REASON ("MIS match-back") left the cards with the 2026-09-01

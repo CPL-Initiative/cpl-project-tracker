@@ -1,0 +1,65 @@
+{
+  "about": "Sam's verdict on open-asks sheet 3, card 7 (2026-09-29, 12:32Z, 'Write both for me', flipped from 'I'll edit them on the tab'): the two saved texts in retired words, in both scenarios. The timeline's August 2027 entry contradicted his no-releveling ruling of 2026-09-25; the Minimum Conditions introduction still said baseline (replaced 2026-09-28) and accrue (the banking sense his vocabulary map retires).",
+  "ruling": "Sam Lee, 2026-09-29, open-asks sheet 3 (2026-09-29-open-asks-3) card 7: write",
+  "row_id": "default",
+  "cohort": "implementation-funding-s302@bot",
+  "read_by_session": {
+    "at": "2026-09-29T13:5xZ",
+    "updated_at": "2026-09-25 15:16:33.607528+00",
+    "updated_by": "slee@cccco.edu",
+    "config_md5": "4c9a2a5c29e7bd6a75d081d470185f31",
+    "how": "read-only select through the Supabase MCP tool, S302"
+  },
+  "edits": [
+    {
+      "path": [
+        "projects",
+        "cpl-implementation",
+        "scenarios",
+        "Scenario 1",
+        "timing",
+        5,
+        "label"
+      ],
+      "before": "Undispersed Funds Rolled to Year 2 and Releveled",
+      "after": "Remaining Funds Carried Forward to Year 2"
+    },
+    {
+      "path": [
+        "projects",
+        "cpl-implementation",
+        "scenarios",
+        "Scenario 1",
+        "text",
+        "elig_intro"
+      ],
+      "before": "Baseline outcomes to accrue implementation funding:",
+      "after": "Minimum conditions to qualify for implementation funding:"
+    },
+    {
+      "path": [
+        "projects",
+        "cpl-implementation",
+        "scenarios",
+        "Scenario 2",
+        "timing",
+        5,
+        "label"
+      ],
+      "before": "Undispersed Funds Rolled to Year 2 and Releveled",
+      "after": "Remaining Funds Carried Forward to Year 2"
+    },
+    {
+      "path": [
+        "projects",
+        "cpl-implementation",
+        "scenarios",
+        "Scenario 2",
+        "text",
+        "elig_intro"
+      ],
+      "before": "Baseline outcomes to accrue implementation funding:",
+      "after": "Minimum conditions to qualify for implementation funding:"
+    }
+  ]
+}
