@@ -1,5 +1,5 @@
 {
- "_about": "The narration the voice reads, Scenario 1, v3 (S294, 2026-09-26). SPOKEN FORM: acronyms are written unspaced (CPL, EDD, FTES) so each reads as one quick word, the stress on its last letter; FTES also needs the phoneme fix below, because unspaced it reads as the word 'eftess'. MAP is written 'map' so it is said as the word. Years are said the way people say them aloud (twenty twenty-six through twenty-eight; the twenty-six, twenty-seven year, whose comma keeps the two years apart) with a lighter stress on the twenties, and the baseline reads 'by November first', as its headline does, leaving the year to the screen (November 1, 2026). Voice: Kokoro-82M af_heart, speed 1.0, one pass per scene. Sam chose the voice (Heart); v2 read stilted on the spaced letters and the years; v3 awaits his OK. narrate.py reads this file.",
+ "_about": "The narration the voice reads, Scenario 1, v3 (S294, 2026-09-26). SPOKEN FORM: acronyms are written unspaced (CPL, EDD, FTES) so each reads as one quick word, the stress on its last letter; FTES also needs the phoneme fix below, because unspaced it reads as the word 'eftess'. MAP is written 'map' so it is said as the word. Years are said the way people say them aloud (twenty twenty-six through twenty-eight; the twenty-six, twenty-seven year, whose comma keeps the two years apart) with a lighter stress on the twenties, and the baseline reads 'by November first', as its headline does, leaving the year to the screen (November 1, 2026). Voice: Kokoro-82M af_heart, speed 1.0, one pass per scene. Sam chose the voice (Heart); v2 read stilted on the spaced letters and the years; v3 awaits his OK. narrate.py reads this file. Each scene's `cues` name its reveals (Sam, 2026-09-27: cue each reveal to the word that names it): `at` is the reveal's film time in its scene (where it begins, or where a count lands), `word` the phrase in the text that names it, once; cues.py pins each to the moment the voice says it. A cue with `skip` stays off the clock for the reason it gives.",
  "voice": "af_heart",
  "speed": 1.0,
  "layout": {
@@ -64,43 +64,288 @@
  "scenes": [
   {
    "scene": "Title",
-   "text": "Let's walk through how CPL Initiative funding works for twenty twenty-six through twenty-eight, and what it means for your college."
+   "text": "Let's walk through how CPL Initiative funding works for twenty twenty-six through twenty-eight, and what it means for your college.",
+   "cues": [
+    {
+     "at": 1.0,
+     "word": "twenty twenty-six through twenty-eight",
+     "why": "the years, 2026–2028",
+     "skip": "the picture shows the years before the title, and the voice names them after it; the title takes the cue"
+    },
+    {
+     "at": 1.4,
+     "word": "CPL Initiative funding works",
+     "why": "the title, CPL Initiative Funding: How It Works, letter by letter"
+    },
+    {
+     "at": 3.6,
+     "word": "for your college",
+     "why": "the kicker, An introduction for colleges"
+    }
+   ]
   },
   {
    "scene": "The funding",
-   "text": "The state set aside thirty-five million dollars in one-time funding for the twenty-six, twenty-seven year. Just over twenty-five million of it goes straight to a hundred and eighteen institutions. The rest funds statewide CPL projects and technology, plus two Chancellor's Office positions that support colleges."
+   "text": "The state set aside thirty-five million dollars in one-time funding for the twenty-six, twenty-seven year. Just over twenty-five million of it goes straight to a hundred and eighteen institutions. The rest funds statewide CPL projects and technology, plus two Chancellor's Office positions that support colleges.",
+   "cues": [
+    {
+     "at": 0.1,
+     "word": "one-time funding",
+     "why": "the kicker, One-time funding for 2026–27",
+     "skip": "the picture shows it before the $35,000,000 counter, and the voice names it after; the counter takes the cue"
+    },
+    {
+     "at": 2.2,
+     "word": "set aside",
+     "why": "the line, set aside by the state to help colleges build credit for prior learning",
+     "skip": "the voice says it 1.3 seconds before the counter lands, and the picture needs 2.2 seconds of film before it; pinned, it would hurry the count, so the counter takes the cue"
+    },
+    {
+     "at": 2.4,
+     "word": "million dollars",
+     "why": "the counter lands on $35,000,000 as the voice says thirty-five million"
+    },
+    {
+     "at": 3.6,
+     "word": "twenty-five million",
+     "why": "the bar's first segment and its label, $25,240,308 directly to 118 institutions"
+    },
+    {
+     "at": 4.3,
+     "word": "The rest funds",
+     "why": "the second segment and its label, $8,959,692 for statewide CPL projects and technology"
+    },
+    {
+     "at": 5.0,
+     "word": "plus two Chancellor's Office positions",
+     "why": "the third segment and its label, $800,000 for two Chancellor’s Office positions"
+    }
+   ]
   },
   {
    "scene": "Maximum allocation",
-   "text": "Every institution has a maximum allocation for the two years. It's based on the institution's share of instruction, credit and noncredit together, and it falls between a hundred and fifty thousand dollars and four hundred thousand. Sample College's maximum, for example, is about three hundred forty-five thousand."
+   "text": "Every institution has a maximum allocation for the two years. It's based on the institution's share of instruction, credit and noncredit together, and it falls between a hundred and fifty thousand dollars and four hundred thousand. Sample College's maximum, for example, is about three hundred forty-five thousand.",
+   "cues": [
+    {
+     "at": 0.1,
+     "word": "Every institution has a maximum allocation",
+     "why": "the heading, Every institution has a maximum allocation"
+    },
+    {
+     "at": 0.8,
+     "word": "It's based on the institution's share",
+     "why": "the line, sized by its share of instruction, credit and noncredit together"
+    },
+    {
+     "at": 1.6,
+     "word": "falls between",
+     "why": "the range line the figures sit on"
+    },
+    {
+     "at": 2.0,
+     "word": "a hundred and fifty thousand",
+     "why": "the base, $150,000"
+    },
+    {
+     "at": 2.7,
+     "word": "four hundred thousand",
+     "why": "the cap, $400,000"
+    },
+    {
+     "at": 4.0,
+     "word": "Sample College's maximum",
+     "why": "the Sample College marker, $345,220, slides onto the range"
+    }
+   ]
   },
   {
    "scene": "Credit and noncredit",
-   "text": "That maximum splits into a credit share and a noncredit share, following each institution's own mix of instruction. And only noncredit outcomes count toward the noncredit share."
+   "text": "That maximum splits into a credit share and a noncredit share, following each institution's own mix of instruction. And only noncredit outcomes count toward the noncredit share.",
+   "cues": [
+    {
+     "at": 0.1,
+     "word": "That maximum splits",
+     "why": "the heading, Every allocation splits in two"
+    },
+    {
+     "at": 1.8,
+     "word": "credit share",
+     "why": "$345,220 splits into the credit share and the noncredit share, which count up"
+    },
+    {
+     "at": 3.8,
+     "word": "following each institution's own mix",
+     "why": "the line, The split follows each institution’s own instructional mix"
+    },
+    {
+     "at": 4.2,
+     "word": "only noncredit outcomes count",
+     "why": "its bold sentence, Only noncredit outcomes count toward the noncredit share"
+    }
+   ]
   },
   {
    "scene": "Three priorities",
-   "text": "Three priorities carry the funding. Access counts applied CPL units from students who start at the CPL Portal, at your college's landing page, or through a batch upload. Completion counts transcribed CPL units, with the map counselor step checked. And career attainment counts CPL units for students who go on to a career outcome, which the Chancellor's Office measures through EDD wage records."
+   "text": "Three priorities carry the funding. Access counts applied CPL units from students who start at the CPL Portal, at your college's landing page, or through a batch upload. Completion counts transcribed CPL units, with the map counselor step checked. And career attainment counts CPL units for students who go on to a career outcome, which the Chancellor's Office measures through EDD wage records.",
+   "cues": [
+    {
+     "at": 0.1,
+     "word": "Three priorities carry the funding",
+     "why": "the heading, Three priorities carry the funding"
+    },
+    {
+     "at": 1.2,
+     "word": "Access counts",
+     "why": "the Access card, 33 percent"
+    },
+    {
+     "at": 5.2,
+     "word": "Completion counts",
+     "why": "the Completion card, 34 percent"
+    },
+    {
+     "at": 9.2,
+     "word": "career attainment",
+     "why": "the Career attainment card, 33 percent"
+    }
+   ]
   },
   {
    "scene": "Targets",
-   "text": "Each priority has a target, measured in FTES. Thirty semester units of CPL make one FTES, or forty-five if you're on the quarter system. Here's the part to remember: reach half of a target, and your college qualifies for half that share. Go past the target, and the share stays where it is. It's the ceiling."
+   "text": "Each priority has a target, measured in FTES. Thirty semester units of CPL make one FTES, or forty-five if you're on the quarter system. Here's the part to remember: reach half of a target, and your college qualifies for half that share. Go past the target, and the share stays where it is. It's the ceiling.",
+   "cues": [
+    {
+     "at": 0.1,
+     "word": "Each priority has a target",
+     "why": "the heading, Every priority has a target"
+    },
+    {
+     "at": 0.9,
+     "word": "Thirty semester units",
+     "why": "the line, 30 semester units of CPL make one FTES, or 45 on a quarter calendar"
+    },
+    {
+     "at": 3.0,
+     "word": "reach half of a target",
+     "why": "Sample College’s Access bar fills to half its target"
+    },
+    {
+     "at": 5.0,
+     "word": "qualifies for half that share",
+     "why": "the caption, Half the target qualifies for half the share"
+    },
+    {
+     "at": 6.6,
+     "word": "Go past the target",
+     "why": "the bar fills to the whole target"
+    },
+    {
+     "at": 7.6,
+     "word": "the share stays where it is",
+     "why": "the bar stops at its ceiling and the caption turns to The share is the ceiling"
+    }
+   ]
   },
   {
    "scene": "The baseline",
-   "text": "Before any funding is released, your college meets a baseline by November first. Name a CPL coordinator, then list that person in map and on your college's CPL landing page. Put your local confirmation of participation on file. And make sure at least seventy-five percent of your enrolled veterans have their Joint Services Transcripts uploaded in map. Until the baseline is met, the funding your college demonstrates is held in reserve for it."
+   "text": "Before any funding is released, your college meets a baseline by November first. Name a CPL coordinator, then list that person in map and on your college's CPL landing page. Put your local confirmation of participation on file. And make sure at least seventy-five percent of your enrolled veterans have their Joint Services Transcripts uploaded in map. Until the baseline is met, the funding your college demonstrates is held in reserve for it.",
+   "cues": [
+    {
+     "at": 0.1,
+     "word": "meets a baseline",
+     "why": "the heading, Meet the baseline by November 1, 2026"
+    },
+    {
+     "at": 1.3,
+     "word": "Name a CPL coordinator",
+     "why": "the first condition, a CPL coordinator assigned and listed in MAP and on the landing page"
+    },
+    {
+     "at": 2.6,
+     "word": "Put your local confirmation",
+     "why": "the second condition, local confirmation of participation on file"
+    },
+    {
+     "at": 3.9,
+     "word": "at least seventy-five percent",
+     "why": "the third condition, at least 75% of enrolled veterans’ Joint Services Transcripts uploaded in MAP"
+    },
+    {
+     "at": 6.0,
+     "word": "Until the baseline is met",
+     "why": "the closing line, the funding your college demonstrates is held in reserve for it"
+    }
+   ]
   },
   {
    "scene": "Timing",
-   "text": "The full two-year amount is available from year one. The Chancellor's Office releases funding twice a year, based on your college's CPL to date, and whatever remains after year one carries forward to year two for your college."
+   "text": "The full two-year amount is available from year one. The Chancellor's Office releases funding twice a year, based on your college's CPL to date, and whatever remains after year one carries forward to year two for your college.",
+   "cues": [
+    {
+     "at": 0.1,
+     "word": "releases funding twice a year",
+     "why": "the heading, Funding arrives in stages",
+     "skip": "the voice names it in the second sentence; pinned there, the first sentence would play over an empty stage, so the heading opens the scene"
+    },
+    {
+     "at": 1.9,
+     "word": "releases funding",
+     "why": "the release dates, Feb 2027 Release 1 through Jun 2028 Release 4"
+    },
+    {
+     "at": 4.6,
+     "word": "The full two-year amount",
+     "why": "the line, The full two-year amount is available from year one",
+     "skip": "the voice says it first, and the picture shows it after the release dates; the release dates take the cue, so this line comes late"
+    },
+    {
+     "at": 6.4,
+     "word": "whatever remains after year one",
+     "why": "the line, What remains after year one carries forward to year two for your college"
+    }
+   ]
   },
   {
    "scene": "Support",
-   "text": "And you won't be doing this alone. Every priority comes with recommended strategies, a CPL Initiative help team supports every college, and more detailed guidance is on the way."
+   "text": "And you won't be doing this alone. Every priority comes with recommended strategies, a CPL Initiative help team supports every college, and more detailed guidance is on the way.",
+   "cues": [
+    {
+     "at": 0.1,
+     "word": "you won't be doing this alone",
+     "why": "the heading, You won’t do this alone"
+    },
+    {
+     "at": 0.8,
+     "word": "Every priority comes with recommended strategies",
+     "why": "the kicker, Recommended strategies under every priority, and the strategies scrolling beneath it"
+    },
+    {
+     "at": 5.2,
+     "word": "a CPL Initiative help team",
+     "why": "the line, A CPL Initiative help team supports every college"
+    },
+    {
+     "at": 6.6,
+     "word": "more detailed guidance",
+     "why": "the line, Detailed guidance will follow"
+    }
+   ]
   },
   {
    "scene": "Find your college",
-   "text": "To see your college's maximum allocation, targets, and progress, visit the CPL funding model page."
+   "text": "To see your college's maximum allocation, targets, and progress, visit the CPL funding model page.",
+   "cues": [
+    {
+     "at": 0.9,
+     "word": "To see your college's",
+     "why": "the heading, Find your college on the funding model page"
+    },
+    {
+     "at": 2.4,
+     "word": "visit the CPL funding model page",
+     "why": "the link to the full explainer"
+    }
+   ]
   }
  ]
 }

@@ -79,7 +79,7 @@ CONFIG['n1'] = dict(
     pageTitle='CPL Funding in Motion: Narrated Draft',
     eyebrow='CPL Initiative · draft',
     dek='A narrated draft of the introduction for colleges, about three minutes. Play opens it full screen; press Esc to leave. Captions are on; the Captions button turns them off.',
-    mp4='20260926_CPL_Funding_in_Motion_Narrated_Draft.mp4',
+    mp4='20260926_CPL_Funding_in_Motion_Narrated_Draft_2.mp4',
     audio='narration_s1.mp3',
     credit='Narrated with a synthetic voice (Kokoro-82M, Heart).',
     narr=json.loads(LAYOUT.read_text(encoding='utf8')) if LAYOUT.exists() else None,

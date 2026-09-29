@@ -10,9 +10,11 @@ narrated cut is a separate draft beside them.
 in the container; the environment now allows `huggingface.co`, `*.huggingface.co` and
 `*.hf.co`). The v3 read (sent 2026-09-26, S294) awaits Sam's OK, and the narrated draft
 is built to it: `funding_in_motion_n1.html` and
-`20260926_CPL_Funding_in_Motion_Narrated_Draft.mp4`, three minutes (see the README). A new
-read re-renders with `narrate.py`, `build.py n1` and `render.sh n1`. A human recording can
-still replace it scene by scene.
+`20260926_CPL_Funding_in_Motion_Narrated_Draft_2.mp4`, three minutes (see the README). Draft 2
+(2026-09-29) cues each reveal to the word that names it; it goes back to Sam, and the explainer
+does not link it until he approves it. A new read re-renders with `narrate.py` (which ends by
+running `cues.py --listen`), `build.py n1` and `render.sh n1`. A human recording can still
+replace it scene by scene.
 
 **Length:** v3 measures 2:49 (158.8 s of speech at speed 1.0, plus 1.1 s between scenes; v2
 ran 2:55). The voice carries the ideas and the screen carries the exact figures. The spoken
@@ -34,9 +36,11 @@ through twenty-eight", the funding scene "the twenty-six, twenty-seven year", bo
 lighter stress on the twenties, and the baseline "by November first", as its headline does,
 leaving the year to the screen. A local transcription hears every one of them as written.
 
-**The build (done 2026-09-26, S294):** the narration drives the clock (each scene lasts a
-lead-in, its clip and air); each scene's reveals keep their place as the scene stretches,
-and cueing each to the word that names it is the next refinement; the score plays as a bed
+**The build (done 2026-09-26, S294; cued 2026-09-29):** the narration drives the clock (each
+scene lasts a lead-in, its clip and air); each reveal a word names lands on that word (Sam,
+2026-09-27: "cue each reveal to the word that names it"; `cues` in `narration_s1.json`, pinned
+by `cues.py`) unless the picture shows it in another order (five, each with its reason), and the
+reveals between two cues keep their order and spacing; the score plays as a bed
 14 dB under the introductions' mix and dips 6 dB more under the voice; captions ship on the
 page and as a subtitle track in the MP4; the closing scene says the voice is synthetic.
 
