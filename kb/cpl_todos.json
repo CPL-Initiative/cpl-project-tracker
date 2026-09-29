@@ -2,31 +2,31 @@
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-29",
   "_session": 302,
-  "_status": "Sam's eighteen answers on the 29 September sheet are carried into their lanes. Landed the same day: Sierra Training shows one Try it in button where a site hides CPL Assistant, and the CR Reference names recommendations whose wordings award different units by topic and range (Engine Performance (2-5 units)). Waiting on Sam: round 8 of the College Dashboard mockup (gray Curr figures, the drill-in in the row's own columns, the people behind the first condition), the explainer's rewritten funding note (#1753), and how card 7's two saved texts get written.",
+  "_status": "Sam's eighteen answers on the 29 September sheet are carried out. Landed: the priority cards read Demonstrated, the opt-in thank-you says what happens, the explainer's funding note says what Sam wrote (funding follows the FTES that meet the priority outcomes), draft 4 of the narrated video (waiting on his review), Sierra's single Try it in button, the CR Reference's topic-and-range names, and the workflow for reviewed funding-config edits. Next: the ETHS re-mint and its re-key in one cron window, then sheet 4 for round 8's three questions.",
   "items": [
     {
       "id": "s302-sam-round8-mockup",
       "for": "Sam",
       "tab": "implementation-funding",
-      "text": "React to round 8 of the College Dashboard mockup: https://claude.ai/artifact/2V1aWwtjwob5gSM6TEkfyQ. Three questions sit on the page: gray cells at $0 or the demonstrated figure; whether the first condition needs all three parts (43 institutions meet all three, 49 the coordinator alone); what a college reports in the Reporting box."
+      "text": "Round 8 of the College Dashboard is approved; three of its questions wait for you on sheet 4, which the next session builds first: gray Curr cells keep $0 or show the demonstrated figure; whether the first condition needs all three parts (43 institutions meet all three, 49 the coordinator alone); what a college reports in the Reporting box (your NOVA idea)."
     },
     {
-      "id": "s302-sam-explainer-wording",
+      "id": "s302-sam-card7-type",
       "for": "Sam",
       "tab": "implementation-funding",
-      "text": "Approve the explainer's rewritten Minimum conditions note and the Funding by institution heading (PR #1753, held for you). It says what you wrote on card 6: funding follows the FTES that meet the priority outcomes and arrives within the two-year window once the minimum conditions are met."
-    },
-    {
-      "id": "s302-sam-card7-how",
-      "for": "Sam",
-      "tab": "implementation-funding",
-      "text": "Card 7's two saved texts are not written yet: allow the apply workflow, or type them on the tab in both scenarios (Remaining Funds Carried Forward to Year 2; Minimum conditions to qualify for implementation funding:)."
+      "text": "Type card 7's two lines on the Implementation Funding tab, in both scenarios: the timeline's August 2027 entry reads Remaining Funds Carried Forward to Year 2, and the Minimum Conditions introduction reads Minimum conditions to qualify for implementation funding: (with the colon). A session can confirm both with a dry run of the new workflow."
     },
     {
       "id": "s302-fable-agent-prs",
       "for": "Fable",
       "tab": "cr-reference",
-      "text": "Land the open verdict PRs on green test: #1755 (ETHS re-mint of the 43; re-key kb_curation with supabase-rekey.yml and read back before the next cron), the funding card 4-5 wording PR, and draft 4 of the narrated video (it goes back to Sam). Then card 11 (AUTB and AGAB), and the Jev cards 8, 9 and 10."
+      "text": "First, in one cron window: merge #1755 (the ETHS re-mint of the 43), dispatch supabase-rekey.yml with its alias map, read back 0, 0, 4, 3, then dispatch daily-dashboard.yml. Then merge #854 (setup-python 7), finish the round 8 port from its WIP commit on claude/college-dashboard-round8, and check that #853, #855 and #1090 landed. Then card 11 (AUTB and AGAB) and the Jev cards 8, 9 and 10."
+    },
+    {
+      "id": "s302-fable-round9-vet-jst",
+      "for": "Fable",
+      "tab": "implementation-funding",
+      "text": "Round 9 of the College Dashboard, Sam's ask of 29 September: next to Vet JST not yet at 75%, show the college's veteran count against its JST count and the percent. Check it against the rule that masks counts under 10."
     },
     {
       "id": "s301-fable-unit-range-rest",

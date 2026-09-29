@@ -380,7 +380,7 @@ check("sizePct is COMPUTED, never read from a baked percentage",
   // restated figures the card already carried). The surviving stated-rate
   // surface is the card's own price — "$P per CPL FTES" on an FTES metric, the
   // per-student rate on a headcount one — read against the SAME card's window
-  // figure ("of $W full-window Total Possible", the Current Total line) and
+  // figure ("of $W full-window Total Possible", the Demonstrated line) and
   // its target ("Target N CPL FTES" / "so N students"). Under front-load the
   // window figure divided by the target IS the price, and a reader has to be
   // able to reproduce that from the card alone.

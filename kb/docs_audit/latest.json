@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1001,
-    "bytes": 10504649,
+    "bytes": 10624032,
     "over_budget": 5,
     "handoff_max": 303,
     "always_loaded_files": 1,
@@ -26,17 +26,17 @@
       },
       "other": {
         "files": 116,
-        "bytes": 3245140,
+        "bytes": 3245275,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 11732,
+        "bytes": 12740,
         "over": 0
       },
       "lessons": {
         "files": 76,
-        "bytes": 2051788,
+        "bytes": 2169462,
         "over": 2
       },
       "kb_note": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 33,
-        "bytes": 258292,
+        "bytes": 258358,
         "over": 0
       },
       "handoff": {
         "files": 274,
-        "bytes": 2347724,
+        "bytes": 2348224,
         "over": 0
       }
     },
@@ -61,10 +61,10 @@
       "vault_heavy_path": 53
     },
     "vault": {
-      "files": 3244,
-      "bytes": 1579957870,
-      "heavy_bytes": 686434425,
-      "heavy_share": 0.434,
+      "files": 3245,
+      "bytes": 1580539612,
+      "heavy_bytes": 686879653,
+      "heavy_share": 0.435,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
         "cpl-project-tracker/cip_fitcheck",
@@ -80,7 +80,7 @@
         "cpl-project-tracker/kb/subj4_apply/alias_map.json",
         "cpl-project-tracker/kb/coci_minted_memberships.json",
         "cpl-project-tracker/coci_lookup_data.js",
-        "cpl-project-tracker/prototype/funding_video/20260926_CPL_Funding_in_Motion_Narrated_Draft_3.mp4",
+        "cpl-project-tracker/prototype/funding_video/20260926_CPL_Funding_in_Motion_Narrated_Draft_4.mp4",
         "cpl-project-tracker/unified_courses_standalone.js",
         "cpl-project-tracker/kb/subj4_dryrun/collisions.json",
         "cpl-project-tracker/unified_courses_members.js",
@@ -619,12 +619,12 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": "prototype/funding_video/20260926_CPL_Funding_in_Motion_Narrated_Draft_3.mp4",
+      "path": "prototype/funding_video/20260926_CPL_Funding_in_Motion_Narrated_Draft_4.mp4",
       "detail": {
-        "bytes": 15498830,
+        "bytes": 15865434,
         "kind": "file"
       },
-      "message": "15,498,830 B single file inside the vault"
+      "message": "15,865,434 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -981,10 +981,10 @@
       "fixable": false,
       "path": "prototype/funding_video/narration_s1.mp3",
       "detail": {
-        "bytes": 2163500,
+        "bytes": 2242124,
         "kind": "file"
       },
-      "message": "2,163,500 B single file inside the vault"
+      "message": "2,242,124 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

@@ -1,103 +1,100 @@
 ---
-title: Session 303 handoff — sheet 3 carried out, round 8 of the College Dashboard, four verdict PRs in flight
+title: Session 303 handoff — sheet 3 carried out; the ETHS re-key, one setup-python bump and sheet 4 come first
 date: 2026-09-29
 session: 302 (SkyWeft)
-tags: [handoff, decision-sheet, college-dashboard, mockup, implementation-funding, eths-remint, common-cr-reference]
+tags: [handoff, decision-sheet, college-dashboard, implementation-funding, eths-remint, dependabot]
 status: current
 ---
 
 # You are Session 303
 
 Your moniker is **SkyWarp**. SkyWeft (S302) took the queue from
-[`session_302_handoff.md`](session_302_handoff.md) and checkpointed at the context warning.
+[`session_302_handoff.md`](session_302_handoff.md) and closed out at Sam's word (*"Let's close out
+and move to new session"*, ~16:00Z). Sam stopped S302's merge agent and its round 8 port agent before
+they finished, so **check every PR below on its current head before you trust it.**
 
-> ⚠️ **EMERGENCY CHECKPOINT (S302, 46,700 tokens left).** After the first checkpoint Sam wrote
-> *"merge prs"* and *"mockup looks good!"* (14:3xZ). Round 8 is **approved**: two background agents
-> took the merges (#1753, #1756, the cards 4-5 PR, #1755 after its id-reuse check, then the ETHS
-> re-key before 06:17 UTC; this checkpoint PR; the vault PR) and the round 8 port. **Check each on
-> its current head before trusting it.** Not refreshed after the first checkpoint commit: the To-Do
-> feed, INDEX/catalog, lessons, KB notes, the Pipeline tab, `kb/README.md`, `README.md`; the vault
-> session note (step 11) is the merge agent's to write. The round 8 questions stay open: gray cells
-> keep $0 as the mockup showed, the first condition's check is unchanged (coordinator alone), and
-> the Reporting box is a sketch, not built.
+## First, in this order
 
-## First: what waits on Sam (put it on sheet 4)
+1. **#1755, the ETHS re-mint of the 43** (40 move, 3 hold; head `d208faa8`, green, carries the
+   id-reuse check). Merge it and run the chain **in one cron window, before the next 06:17 UTC run**:
+   dispatch `supabase-rekey.yml` with
+   `alias_map_path=kb/eths_remint_out/2026-09-29/standalone+missed/alias_map.json`, read back
+   (`self_on_old, ptr_on_old, self_on_new, ptr_on_new` expected 0, 0, 4, 3), then dispatch
+   `daily-dashboard.yml`. Main has moved since its checks: update the branch and re-check `test`.
+2. **#854, setup-python 6 → 7** (29 workflows), only after step 1 (`supabase-rekey.yml` and
+   `daily-dashboard.yml` use it). Its red `sync` check was a Dependabot run with no secrets
+   (`SUPABASE_SERVICE_KEY unset`); v7 installed and ran. Its red `smoke` check (`cpl-chat-smoke`)
+   was being diagnosed by S302's dependabot agent. Merging runs `coci-offerings-sync.yml` on main
+   (a Supabase write from committed data) and four read-only checks; watch them.
+3. **Check S302's dependabot agent's work:** #853 (setup-node), #855 (upload-artifact), #1090
+   (supabase/setup-cli; its only users deploy the chat function, so never dispatch them to test).
+   It was told to merge those three on a green `test` and leave #854.
+4. **Build sheet 4** (`SHEET_ID` `2026-09-29-open-asks-4`, each card carrying its own `evidence`),
+   marking each ask in its lane in the same PR:
+   - Round 8 is approved (*"mockup looks good!"*); three questions stay open: gray Curr cells keep
+     $0 or show the demonstrated figure; whether the first condition's check requires all three
+     parts (49 meet the coordinator alone, 43 all three; `cpl_memory`
+     `sam-first-condition-three-parts-2026-09-29` names the six); what a college reports in the
+     sketched Reporting box (his NOVA idea, `sam-nova-reporting-idea-2026-09-29`).
+   - Ten CR wordings state "0 hours", so some ranges start at 0 (*Oral Radiology (0–2 units)*):
+     treat 0 as no figure?
+   - Draft 4 of the narrated video (#1756) waits on his review (card 15: the explainer links it once
+     he approves).
+5. **Finish the round 8 port** from WIP `3890680a` on `claude/college-dashboard-round8`: most
+   suites are moved to the drill-in's new rows; two College Dashboard (block 7) checks still fail.
+   Then the guards and the consumers (the explainer embeds the section).
+6. **Round 9, Sam's ask (2026-09-29):** *"Next to Vet JST not yet at 75%, show the college vet
+   count vs. their JST count and the %."* Check it against the mask-under-10 rule
+   ([adr](kb-notes/adr-funding-counts-mask-under-10-units-carry-the-money.md)).
 
-The builder holds no card (sheet 3's eighteen rulings are recorded in their lanes, #1750), and
-nothing marks NEEDS SAM, so no sheet exists yet. **Build sheet 4 first** (`SHEET_ID`
-`2026-09-29-open-asks-4`, each card carrying its own `evidence`), marking each ask in its lane in
-the same PR, unless Sam has answered in chat:
-1. **Round 8 is approved** ("mockup looks good!"); its three questions stay open: gray Curr cells keep $0 or
-   show the demonstrated figure; whether the first condition's check requires all three parts
-   (coordinator, primary contact, landing page: 49 meet the coordinator alone, 43 all three;
-   `cpl_memory` `sam-first-condition-three-parts-2026-09-29` names the six); what a college reports
-   in the sketched Reporting box (his NOVA idea, `sam-nova-reporting-idea-2026-09-29`).
-2. **#1753, the explainer's funding note and heading**, held for his approval of the public
-   wording (card 6's premise, his words).
-3. **Card 7's two saved texts**: the permission check refused creating
-   `funding-config-edit-apply.yml`. Applier and plan on `claude/funding-config-texts-card7`. He
-   chooses: allow the workflow, or type both lines on the tab. Re-read the config first: he saved
-   at 13:58Z (Scenario 1's deadline is now 12-01; only Scenario 1's first condition says
-   "configured").
-4. From #1754's agent: ten wordings state "0 hours", so some ranges start at 0 (*Oral Radiology
-   (0–2 units)*). Treat 0 as no figure?
+## Card 7 is settled
+
+Sam, ~15:55Z: *"Allow workflow and I'll type in myself."* He types both lines on the tab in both
+scenarios. `funding-config-edit-apply.yml` and its applier landed (#1757) for later reviewed edits;
+a dry run with `plan_dir=kb/funding_config_edits_out/2026-09-29` confirms his typing (every path
+reads `after`). Do not commit that plan.
 
 ## What shipped (S302)
 
-- **#1750** sheet 3's rulings in their lanes; evidence rides each card (no position-keyed table).
+- **#1750** sheet 3's rulings in their lanes; evidence rides each card.
 - **#1751** Sierra Training: one Try it in button where CPL Assistant is hidden.
-- **#1754** CR Reference: 88 varying groups named by topic and range; the rung-4 units screen
-  retired (30 groups merge); a determinism fix (Pre-Calculus). `daily-dashboard.yml` dispatched.
-- `cpl_memory`: `open-asks-3-rulings-2026-09-29`, the first-condition, NOVA and round 8 rows; the
-  card 6 premise row verified. Vault braindump on `claude/s302-skyweft-vault`.
-
-## In flight (check each PR on its current head)
-
-- **#1755 the ETHS re-mint of the 43** (40 move, 3 hold). Its agent is checking that reused
-  vacated ids resolve correctly through `kb/alias_chain.py` (and switching to the reserved-set
-  allocator if not) and dropping the unrelated title-consolidation churn. After merge, **before the
-  06:17 UTC cron**: dispatch `supabase-rekey.yml` with
-  `alias_map_path=kb/eths_remint_out/2026-09-29/standalone+missed/alias_map.json`, read back
-  (expected `self_on_old, ptr_on_old, self_on_new, ptr_on_new` = 0, 0, 4, 3), then dispatch
-  `daily-dashboard.yml`. Then **card 11 (AUTB/AGAB)** on its own branch, never interleaved.
-- **Cards 4–5 (Demonstrated; the thank-you words)** and **draft 4 of the narrated video (cards
-  15–17)**: two agents were finishing their PRs at the checkpoint. Merge on green `test`; draft 4
-  goes back to Sam on sheet 4 (the explainer does not link it until he approves).
-- **Round 8 port** waits on Sam: update the suites that pin the drill-in lane tables
-  (`cplfund-dtl-table`), add guards, map consumers (the explainer embeds the section).
-
-## Then the queue
-
-The Jev verdicts: **8** placement (a choice among the members' disciplines, scored against his 26
-answers; `typesafe-smoke.yml` needs a `placement` rung option), **9** pair CCRR by course (the
-numbers are unchanged after #1754: 600 course pairs over 465 groups), **10** a CER decisions store
-through Governance (DR-07), then the 38. The unit range's four surfaces (To-Do
-`s301-fable-unit-range-rest`). Agent follow-up: "Save and test" in the Sierra instruction editor
-types into the hidden CPL Assistant input on a site that hides it (same fix as #1751).
+- **#1752** the priority cards read Demonstrated; the opt-in thank-you and note in Sam's words.
+- **#1753** the explainer's funding note and heading on Sam's premise (card 6).
+- **#1754** CR Reference: 88 varying groups named by topic and range.
+- **#1756** draft 4 of the narrated video.
+- **#1757** card 7's workflow, applier and test.
+- `cpl_memory`: the sheet 3 rulings, the first-condition, NOVA and round 8 rows, and Sam's
+  permission for the workflow.
 
 ## Read in order
 
 1. This file. 2. [`implementation-funding`](reference/lanes/implementation-funding.md) lane.
-3. [`cpl_funding_lessons`](cpl_funding_lessons.md), the S302 sections.
+3. [`cpl_funding_lessons`](cpl_funding_lessons.md), the three S302 sections.
 4. [`decision_sheets`](reference/decision_sheets.md), the sheet 3 paragraph.
 
 ## Patterns that worked
 
 - **Record every ruling in its lane in one PR, and drop every card**, so verdict PRs run in
   parallel without touching the builder.
-- **Background agents per verdict, each in a scratchpad worktree**, the parent merging on green.
-  Stage with `git add -A ':!node_modules'` (the symlink is not ignored).
-- **The mockup harness is committed now** (`prototype/mockup_harness/`; fixtures never
-  committed, they hold MAP names).
+- **The mockup harness is committed** (`prototype/mockup_harness/`; fixtures never committed, they
+  hold MAP names).
+- **A failing lint is a finding.** The docs-index test's frontmatter check caught a script that
+  had erased the lessons doc (next section).
 
 ## Safety patterns
 
+- ⚠️ **`open(p, 'w').write(rd(p) + more)` erases the file before it reads it.** S302's checkpoint
+  wrote 847 bytes over the 113,895-byte lessons doc; it was rebuilt before merge. Read into a
+  variable first, and compare a doc's size after any scripted write.
 - ⚠️ **A workflow that writes Supabase with the service key needs Sam's permission first.**
 - ⚠️ **Sam curates live**: re-read before any write; his saves win.
-- ⚠️ **The context meter reached WARN at about 680,000 tokens**: large MCP results (the config
-  JSON, a 220 KB artifact read) cost most of it. Read with filters.
+- ⚠️ **Background agents are this container's**: a new session cannot see their worktrees. Push WIP
+  before a session ends.
 
 ## Carryover
 
-Not refreshed: `kb/README.md`, `README.md` (no structure change) and the Pipeline tab (no re-mint
-landed; #1755 will move it).
+Not refreshed: `kb/README.md` and `README.md` (no structure change), the Pipeline tab (no re-mint
+landed; #1755 will move it), KB notes (none crossed the bar). The queue after the list above: card
+11 (AUTB/AGAB, its own branch after #1755), the Jev cards 8, 9 and 10, the unit range's four
+surfaces (To-Do `s301-fable-unit-range-rest`), and "Save and test" in the Sierra instruction editor
+(it types into the hidden CPL Assistant input on a site that hides it; same fix as #1751).

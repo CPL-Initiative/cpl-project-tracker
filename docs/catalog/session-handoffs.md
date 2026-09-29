@@ -19,7 +19,7 @@ One per session, newest first. **Only the highest-numbered handoff is authoritat
 
 | N | Handoff | Created |
 |---|---|---|
-| 303 | [sheet 3 carried out, round 8 of the College Dashboard, four verdict PRs in flight](../session_303_handoff.md) | 2026-09-29 |
+| 303 | [sheet 3 carried out; the ETHS re-key, one setup-python bump and sheet 4 come first](../session_303_handoff.md) | 2026-09-29 |
 | 302 | [eighteen asks on one sheet, the unit range on three surfaces, draft 3 of the video](../session_302_handoff.md) | 2026-09-29 |
 | 301 | [two ports reconciled, Sierra Training redesigned, seven asks on one sheet](../session_301_handoff.md) | 2026-09-29 |
 | 300 | [the College Dashboard ported, two calls for Sam, Sierra Training next](../session_300_handoff.md) | 2026-09-29 |

@@ -10701,6 +10701,35 @@
      "updated": "2026-09-24"
     },
     {
+     "created": "2026-06-11",
+     "governs": [
+      "CPL_Dashboard.html / index.html",
+      "funding/CPL_Funding_Model_2026.xlsx",
+      "funding/_build_funding_data.py",
+      "cpl_funding_data.js",
+      "cpl_funding.js",
+      "tests/cpl_funding_*.test.js",
+      "tests/lib/cpl_funding_harness.js",
+      "tests/cpl_funding_reorder.test.js",
+      "prototype/funding_model_explainer.html",
+      "prototype/build_funding_model_explainer.js",
+      "tests/cobi_prose_measure.test.js",
+      "college_briefing.js"
+     ],
+     "path": "docs/cpl_funding_lessons.md",
+     "status": null,
+     "tags": [
+      "lessons",
+      "funding",
+      "implementation-funding",
+      "dashboard-tab",
+      "parallel-session"
+     ],
+     "title": "CPL Implementation Funding tab \u2014 workstream lessons",
+     "type": null,
+     "updated": "2026-09-24"
+    },
+    {
      "created": "2026-06-21",
      "governs": [
       "cpl_news.js",
@@ -10766,16 +10795,6 @@
       "sky-vid"
      ],
      "title": "CPL Student Portal \"Credit for Being You\" video \u2014 audio restoration & accessibility lessons",
-     "type": null,
-     "updated": ""
-    },
-    {
-     "created": "",
-     "governs": [],
-     "path": "docs/cpl_funding_lessons.md",
-     "status": null,
-     "tags": [],
-     "title": "cpl_funding_lessons",
      "type": null,
      "updated": ""
     },
@@ -14314,12 +14333,11 @@
       "handoff",
       "decision-sheet",
       "college-dashboard",
-      "mockup",
       "implementation-funding",
       "eths-remint",
-      "common-cr-reference"
+      "dependabot"
      ],
-     "title": "sheet 3 carried out, round 8 of the College Dashboard, four verdict PRs in flight",
+     "title": "sheet 3 carried out; the ETHS re-key, one setup-python bump and sheet 4 come first",
      "type": null,
      "updated": ""
     },
