@@ -220,6 +220,15 @@ def topic_key(topic):
     return t
 
 
+def _squash(text):
+    """The topic key's distinct words, joined in the order they were written.
+
+    Deterministic by construction: a set's iteration order changes with the
+    hash seed from one run to the next, and a comparison built on one made the
+    daily rebuild disagree with itself."""
+    return "".join(dict.fromkeys(topic_key(text).split()))
+
+
 def screen_profile(topic):
     """Which safety screens a topic trips, as a comparable signature.
 
@@ -238,6 +247,51 @@ def screens_agree(profiles):
     return all(p == first for p in profiles[1:])
 
 
+# ── A group whose units vary is named by topic and range (Sam, 2026-09-29) ──
+# Units never split an identity (Sam, 2026-09-27): a merge that joins wordings
+# whose units differ keeps one identity and shows the range it joins, his form
+# *Orienteering (1–3 units)*. A group named by a wording stated that wording's
+# one figure — "3 or 4 hours in Engine Performance" over wordings at 2, 3 or 4,
+# 4 and 5 units — so card 13 of his sheet of 2026-09-29 names it by topic and
+# range instead: "Engine Performance (2–5 units)".
+#
+# The range reads units_lo/units_hi the way cr_reference.js unitRange() does,
+# so the name and the line beside it agree; tests/cr_reference.test.js compares
+# the two on every renamed group.
+#   · A wording that states no figure neither widens nor narrows the range.
+#   · Equal ends state one figure, "(3 units)", or "(1 unit)". Under
+#     `units_differ` that cannot happen today, since two distinct unit pairs
+#     always span two figures; the rule is written down for the day it can.
+#   · The word is "units", Sam's form, whatever the wording said (every member
+#     of a varying group in the 2026-09-29 corpus writes "hours").
+def _figure(x):
+    """A unit figure the way the tab prints it: 3.0 → "3", 1.5 → "1.5"."""
+    x = float(x)
+    return str(int(x)) if x.is_integer() else repr(x)
+
+
+def unit_range_label(members):
+    """The range as the tab words it, "2–5 units", from the members' own
+    figures, low to high; None when no member states a figure."""
+    los = [m["units_lo"] for m in members if m.get("units_lo") is not None]
+    his = [m["units_hi"] for m in members if m.get("units_hi") is not None]
+    if not los or not his:
+        return None
+    lo, hi = min(los), max(his)
+    fig = _figure(lo) if lo == hi else _figure(lo) + "–" + _figure(hi)
+    return fig + (" unit" if lo == hi == 1 else " units")
+
+
+def unit_range_name(wording, members):
+    """Name a group by its topic and range: the wording's unit lead stripped by
+    the shape parse_rec() reads, then the range its members join. A wording
+    that does not fit the shape keeps its whole text as the topic."""
+    label = unit_range_label(members)
+    if not label:
+        return wording
+    return "%s (%s)" % (parse_rec(wording)[3], label)
+
+
 def load(path, label):
     if not os.path.exists(path):
         sys.exit(f"✗ missing {label}: {path}\n  build it first (see kb/README.md)")
@@ -252,6 +306,10 @@ def build():
     creds = load(CREDS, "credential recs")["rows"]
 
     stats = collections.Counter()
+    # Present even at zero: tests/cr_reference.test.js reads it to know the
+    # artifact was built under the unit-range naming (cards 13-14, 2026-09-29).
+    stats["groups_named_by_range"] = 0
+    stats["groups_held_by_a_screen"] = 0   # 0 since card 14: a zero, not a missing key
 
     # ── The published statewide lines: rung 1, the authority ───────────────
     # These are MAP's own curated recommendations, already public on the Fact
@@ -378,14 +436,16 @@ def build():
                 if len({p[name] for p in profiles}) > 1:
                     objecting.append(name)
 
-        # Units are a SCREEN on rung 4, never identity (scope §3: SPAN 100 is
-        # written at 4, 4.5 and 5 units by different colleges and is one
-        # recommendation). A stronger rung overrides the screen; rung 4 does not.
+        # Units never split an identity (Sam, 2026-09-27), so no rung holds a
+        # merge for them: SPAN 100 is written at 4, 4.5 and 5 units by
+        # different colleges and is one recommendation (scope §3). Rung 4 held
+        # its twins for a curator when their units differed until Sam retired
+        # that screen on card 14 of his sheet of 2026-09-29; *Calculus I*, at
+        # 4 and 5 units from 16 colleges, now merges as the stronger rungs do
+        # and shows its range. `units_differ` stays: it names the range below
+        # and drives the line the tab prints beside the name.
         unit_vals = {(m["units_lo"], m["units_hi"]) for m in members if m["units_lo"] is not None}
         units_differ = len(unit_vals) > 1
-        if rung == 4 and units_differ:
-            acts = False
-            objecting.append("units")
         if not screen_ok:
             acts = False
 
@@ -424,12 +484,16 @@ def build():
             off_toks = set(topic_key(official_title).split())
             mod_toks = set(topic_key(members[0]["topic"]).split())
             # Compare squashed forms too, so "Pre-Calculus Mathematics" is not
-            # called divergent from "Precalculus" over a hyphen.
-            off_sq = "".join(sorted(off_toks)).replace(" ", "")
-            mod_sq = "".join(mod_toks)
-            squash_hit = any(t in mod_sq.replace(" ", "") or mod_sq.replace(" ", "") in t
-                             for t in ["".join(off_toks)]) or \
-                         any(o in "".join(sorted(mod_toks)) for o in [off_sq] if o)
+            # called divergent from "Precalculus" over a hyphen. The words are
+            # squashed in the order they were written. An earlier cut joined the
+            # token SETS, whose order is Python's per-run hash order, so this
+            # very group read applied under 5 of 20 hash seeds and proposed
+            # under 15, and the daily rebuild flipped its name (measured
+            # 2026-09-29: the one group in the corpus whose result hung on it).
+            off_w, mod_w = _squash(official_title), _squash(members[0]["topic"])
+            off_sq = "".join(sorted(off_toks))
+            squash_hit = (off_w in mod_w or mod_w in off_w
+                          or (bool(off_sq) and off_sq in "".join(sorted(mod_toks))))
             title_divergent = bool(off_toks) and not (off_toks & mod_toks) and not squash_hit
 
         # ⚠️ A DIVERGENT OFFICIAL TITLE IS OFFERED, NOT APPLIED.
@@ -463,6 +527,19 @@ def build():
         if title_divergent:
             canonical = pub["credit"] if pub else members[0]["rec"]
             canonical_source = ("published_statewide" if pub else "most_colleges") + "_official_proposed"
+
+        # A group named by a wording states the range its wordings join, never
+        # the one figure that wording carries (card 13). Both wording sources
+        # rename, the published statewide line included: Sam chose this over
+        # keeping that line as written. So does a wording whose official title
+        # is only proposed (ENGL 100 on Academic Reading and Writing today): its
+        # name is still the wording, and the proposal rides beside it. An applied
+        # official title keeps its name, and so does a group whose wordings all
+        # award the same units, where the wording's figure is the group's.
+        # canonical_source still says which wording the topic came from.
+        if units_differ and not official_applied:
+            canonical = unit_range_name(canonical, members)
+            stats["groups_named_by_range"] += 1
 
         # COLLAPSE VALUE — the ranking rule. (wordings − 1) × colleges touched.
         # The −1 is the real gain: collapsing N wordings removes N−1 of them.
@@ -598,11 +675,28 @@ def main():
             print(f"      {g['key']!r}: {[m['rec'] for m in g['members']][:3]}")
         sys.exit("✗ safety screen failed — a merging group crossed a level/Honors/lab/sport/gender line")
 
-    # 2b. And the screens must actually be DOING something, or they are decoration.
+    # 2b. What the screens hold. Measured 2026-09-29: 30 groups, all held for
+    # units alone, until that screen retired; the level, Honors, lab, sport and
+    # gender screens hold none in today's corpus. They guard wordings it does
+    # not yet contain, and tests/cr_reference.test.js runs them on a fixture.
     held = [g for g in groups if g["screens_objecting"] and g["wordings"] > 1]
     print(f"  groups a screen actively held back from merging: {len(held)}")
     for g in held[:3]:
         print(f"      held by {'+'.join(g['screens_objecting'])}: {[m['rec'] for m in g['members']][:2]}")
+
+    # 2c. Units never split an identity (Sam, 2026-09-27; cards 13-14 of his
+    # sheet of 2026-09-29): no group is held for its units, and no group named
+    # by a wording states one figure over wordings that differ.
+    held_units = [g for g in groups if "units" in g["screens_objecting"]]
+    one_figure = [g for g in groups if g["units_differ"] and not g["official_applied"]
+                  and SHAPE_RE.match(g["canonical"])]
+    print(f"  named by topic and range: {stats['groups_named_by_range']} · held for units: "
+          f"{len(held_units)} (must be 0) · still stating one figure: {len(one_figure)} (must be 0)")
+    calc = next((g for g in groups if g["key"] == "calculus i"), None)
+    if calc:
+        print(f"      {calc['canonical']!r}: rung {calc['rung']}, auto={calc['acts_automatically']}")
+    if held_units or one_figure:
+        sys.exit("✗ a group whose units differ is held for them or named by one figure")
 
     # 3. The Community Relations twin (3 hours / 3.0 hours) must be one group.
     cr = next((g for g in groups if g["key"] == "community relations"), None)
