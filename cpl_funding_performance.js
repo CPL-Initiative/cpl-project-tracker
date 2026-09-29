@@ -4,24 +4,24 @@
 // pull. Aggregate, small-cell-suppressed counts ONLY (see
 // docs/kb-notes/adr-funding-priority-metrics-privacy.md). Do not hand-edit.
 window.CPL_FUNDING_PERF = {
- "as_of": "2026-09-28",
+ "as_of": "2026-09-29",
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). PAC/PTC = APPLIED/TRANSCRIBED units for students whose Counselor step is checked (Counselor_Verified), both cohorts; present only when the pull carries that column. NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 10,
  "statewide": {
-  "pe": 44035,
-  "pa": 40054,
-  "ppa": 106,
+  "pe": 44047,
+  "pa": 40076,
+  "ppa": 105,
   "p2": 3129,
   "p3": 14641,
   "pp": 6,
-  "ppe": 116,
-  "pac": 2918,
+  "ppe": 115,
+  "pac": 2919,
   "ptc": 2526,
-  "pe_u": 1430209.7,
-  "pa_u": 223409.9,
-  "ppa_u": 661.5,
-  "ppe_u": 6703.5,
-  "pac_u": 25425.2,
+  "pe_u": 1430446.2,
+  "pa_u": 223452.4,
+  "ppa_u": 654.5,
+  "ppe_u": 6667.5,
+  "pac_u": 25440.2,
   "ptc_u": 21779.0,
   "p3_u": 73936.7,
   "pp_u": 63.5
@@ -109,9 +109,9 @@ window.CPL_FUNDING_PERF = {
   },
   "Bakersfield": {
    "pe": 606,
-   "pe_u": 26442.5,
+   "pe_u": 26443.5,
    "pa": 598,
-   "pa_u": 8728.5,
+   "pa_u": 8732.5,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 66.0,
@@ -191,7 +191,7 @@ window.CPL_FUNDING_PERF = {
   },
   "Cabrillo": {
    "pe": 217,
-   "pe_u": 8889.0,
+   "pe_u": 8890.0,
    "pa": 212,
    "pa_u": 1285.5,
    "ppa": 0,
@@ -308,10 +308,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "Chaffey": {
-   "pe": 1521,
-   "pe_u": 32963.5,
-   "pa": 1517,
-   "pa_u": 19069.5,
+   "pe": 1522,
+   "pe_u": 32966.5,
+   "pa": 1518,
+   "pa_u": 19020.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 6.0,
@@ -323,8 +323,8 @@ window.CPL_FUNDING_PERF = {
    "ppe": null,
    "ppe_suppressed": true,
    "ppe_u": 91.0,
-   "pac": 32,
-   "pac_u": 212.5,
+   "pac": 33,
+   "pac_u": 227.5,
    "ptc": 29,
    "ptc_u": 196.5
   },
@@ -391,10 +391,9 @@ window.CPL_FUNDING_PERF = {
   },
   "Columbia": {
    "pe": 25,
-   "pe_u": 1419.0,
-   "pa": null,
-   "pa_suppressed": true,
-   "pa_u": 12.0,
+   "pe_u": 1414.0,
+   "pa": 14,
+   "pa_u": 17.0,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 0,
@@ -864,10 +863,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "Irvine": {
-   "pe": 132,
-   "pe_u": 5798.0,
-   "pa": 131,
-   "pa_u": 393.0,
+   "pe": 134,
+   "pe_u": 5919.0,
+   "pa": 133,
+   "pa_u": 399.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 3.0,
@@ -2131,13 +2130,13 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "West LA": {
-   "pe": 743,
-   "pe_u": 14826.0,
-   "pa": 743,
-   "pa_u": 8739.0,
+   "pe": 752,
+   "pe_u": 14941.5,
+   "pa": 752,
+   "pa_u": 8816.0,
    "ppa": null,
    "ppa_suppressed": true,
-   "ppa_u": 42.0,
+   "ppa_u": 35.0,
    "p2": 497,
    "p3": 563,
    "p3_u": 7446.5,
@@ -2146,7 +2145,7 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 3.0,
    "ppe": null,
    "ppe_suppressed": true,
-   "ppe_u": 275.0,
+   "ppe_u": 239.0,
    "pac": 568,
    "pac_u": 7550.5,
    "ptc": 562,
@@ -2364,6 +2363,13 @@ window.CPL_FUNDING_PERF = {
    }
   },
   "Chaffey": {
+   "Credit By Exam": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": 0
+   },
    "Industry Certification": {
     "pe": 25,
     "pa": 23,
@@ -2421,8 +2427,7 @@ window.CPL_FUNDING_PERF = {
   "Columbia": {
    "Military": {
     "pe": 25,
-    "pa": null,
-    "pa_suppressed": true,
+    "pa": 14,
     "p3": 0
    }
   },
@@ -2668,7 +2673,7 @@ window.CPL_FUNDING_PERF = {
    },
    "Military": {
     "pe": null,
-    "pa": 131,
+    "pa": 133,
     "p3": 0,
     "pe_suppressed": true
    }
@@ -3777,8 +3782,8 @@ window.CPL_FUNDING_PERF = {
     "p3": 14
    },
    "Industry Certification": {
-    "pe": 558,
-    "pa": 558,
+    "pe": 566,
+    "pa": 566,
     "p3": 537
    },
    "Industry Certification | Military": {
@@ -3815,8 +3820,8 @@ window.CPL_FUNDING_PERF = {
  },
  "cpl_types_statewide": {
   "Credit By Exam": {
-   "pe": 9523,
-   "pa": 9161,
+   "pe": 9524,
+   "pa": 9162,
    "p3": 8726
   },
   "Credit By Exam | Industry Certification": {
@@ -3882,13 +3887,13 @@ window.CPL_FUNDING_PERF = {
    "p3": 14
   },
   "Industry Certification": {
-   "pe": 1293,
-   "pa": 1271,
+   "pe": 1301,
+   "pa": 1279,
    "p3": 1160
   },
   "Industry Certification | Military": {
-   "pe": 51,
-   "pa": 50,
+   "pe": 52,
+   "pa": 51,
    "p3": 29
   },
   "Industry Certification | Military | Portfolio Review": {
@@ -3928,8 +3933,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 27948,
-   "pa": 25751,
+   "pe": 27950,
+   "pa": 25763,
    "p3": 2557
   },
   "Military | Portfolio Review": {
@@ -3979,18 +3984,18 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1430209.7,
-   "pa_u": 223409.9,
+   "pe_u": 1430446.2,
+   "pa_u": 223452.4,
    "p3_u": 73936.7
   },
   "map": {
-   "pe_u": 1436913.2,
-   "pa_u": 224071.4,
+   "pe_u": 1437113.7,
+   "pa_u": 224106.9,
    "p3_u": 74000.2
   },
   "ratio": {
    "pe_u": 1.0047,
-   "pa_u": 1.003,
+   "pa_u": 1.0029,
    "p3_u": 1.0009
   }
  },
@@ -4082,8 +4087,8 @@ window.CPL_FUNDING_PERF = {
   "Napa": true,
   "Santa Monica": false,
   "Mendocino": false,
-  "Woodland": false,
   "Columbia": true,
+  "Woodland": false,
   "Rio Hondo": false,
   "Moorpark": true,
   "Monterey": false,
@@ -4111,7 +4116,7 @@ window.CPL_FUNDING_PERF = {
   "Cosumnes River": false,
   "Folsom Lake": false
  },
- "vet_star_as_of": "2026-09-28",
+ "vet_star_as_of": "2026-09-29",
  "vet_star_threshold": 0.75,
  "vet_star_n": 59
 };
