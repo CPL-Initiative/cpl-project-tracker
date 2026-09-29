@@ -71,9 +71,11 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
   const ths = Array.from(table.querySelectorAll("thead th"));
   check("R7: no Combined column in the header (the pair's sum IS the one award)",
     !ths.some(function (th) { return (th.getAttribute("data-sort") || "") === "combined"; }));
-  check("2026-09-23: ONE combined column, the Max award, sits beside the CR/NC award pair",
+  // Titled Total Funds since the College Dashboard (Sam, 2026-09-28): the max
+  // award, set on the right after the two shares and their Curr columns.
+  check("2026-09-23: ONE combined column, the max award (Total Funds), sits beside the CR/NC award pair",
     ths.filter(function (th) { return (th.getAttribute("data-sort") || "") === "total"; }).length === 1 &&
-    /Max award/.test(table.querySelector('th[data-sort="total"]').textContent) &&
+    /^Total Funds/.test(table.querySelector('th[data-sort="total"]').textContent.trim()) &&
     !!table.querySelector('th[data-sort="cr_award"]') && !!table.querySelector('th[data-sort="nc_award"]'));
   check("R7: no spanning combined cell survives anywhere", !table.querySelector("td.cf-combined"));
   check("R6: no paired NC rows and no NC SYSTEM row — one row per institution",
@@ -113,9 +115,10 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
     mtCells.length === 2 &&
     Math.abs((firstMoney(mtCells[0]) + firstMoney(mtCells[1])) - mt.total / 2) <= 2 &&
     firstMoney(mtCells[1]) > 0);
-  check("row: the Max award cell prints that sum, with the bound word beside it (at cap)",
-    !!mtMax && Math.abs(firstMoney(mtMax) - mt.total / 2) <= 1 && /\(at cap\)/.test(mtMax.textContent) &&
-    !/\(at cap\)/.test(mtCells[0].textContent + mtCells[1].textContent));
+  check("row: the Total Funds cell prints that sum, with the Cap chip beside it",
+    !!mtMax && Math.abs(firstMoney(mtMax) - mt.total / 2) <= 1 &&
+    (mtMax.querySelector(".cf-boundchip") || {}).textContent === "Cap" &&
+    !/\bCap\b/.test(mtCells[0].textContent + mtCells[1].textContent));
   // A no-noncredit institution: the pair is CR + an explicit $0 — never NaN,
   // never doubled, and the zero is a CHECKABLE CLAIM (Sam's data-quality
   // instrument, 2026-08-28), not a blank.
@@ -152,9 +155,10 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
     .find(function (r) { return r.getAttribute("data-id") === "c:" + flooredName; });
   const flMax = flRow && flRow.querySelector("td.cf-max");
   const flCr = flRow && flRow.querySelector("td.cf-award:not(.cf-max)");
-  check("an institution at the base reads the base in its Max award cell, with (at base) beside it",
-    !!flMax && firstMoney(flMax) === Math.round(model.floor) && /\(at base\)/.test(flMax.textContent) &&
-    firstMoney(flCr) < Math.round(model.floor) && !/\(at base\)/.test(flCr.textContent));
+  check("an institution at the base reads the base in its Total Funds cell, with the Base chip beside it",
+    !!flMax && firstMoney(flMax) === Math.round(model.floor) &&
+    (flMax.querySelector(".cf-boundchip") || {}).textContent === "Base" &&
+    firstMoney(flCr) < Math.round(model.floor) && !/\bBase\b/.test(flCr.textContent));
   doc.querySelector('#cplFundDisb button[data-val="even"]')
     .dispatchEvent(new window.Event("click", { bubbles: true }));
 
@@ -185,8 +189,8 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
   });
   check("CSV: Credit + Noncredit == Max award on every line (118 institutions + SYSTEM; ±$1 rounding)",
     dataLines.length >= 119 && badSum.length === 0);
-  const sysLine = dataLines.find(function (f) { return /SYSTEM/.test(f[1]); });
-  check("CSV: the SYSTEM line's pair reconstitutes the pool exactly",
+  const sysLine = dataLines.find(function (f) { return f[1] === "Statewide"; });
+  check("CSV: the Statewide line's pair reconstitutes the pool exactly",
     !!sysLine && Number(sysLine[iCr]) + Number(sysLine[iNc]) === NET && Number(sysLine[iMax]) === NET);
   check("CSV: the trio ride as ordinary institution lines",
     TRIO.every(function (n) { return dataLines.some(function (f) { return f[1] === n || f[1].indexOf(n) === 0; }); }));
@@ -216,8 +220,9 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
 {
   const dom = freshDom();
   // Hide the NC award column and the county column from stored prefs — the
-  // adjacent-column state that used to shear the paired rows.
-  dom.window.localStorage.setItem("cplfund_cols_v1",
+  // adjacent-column state that used to shear the paired rows. (The store is
+  // v2 since the College Dashboard, 2026-09-28.)
+  dom.window.localStorage.setItem("cplfund_cols_v2",
     JSON.stringify({ college: { nc_award: true, working_adults: true } }));
   const doc = boot(dom.window);
   const table = doc.querySelector(".cplfund-table");

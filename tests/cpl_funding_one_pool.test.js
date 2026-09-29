@@ -153,12 +153,15 @@ const POOL = 25240308;
       T._setShared({ extraReqs: ["Minimum of 75% of enrolled veteran Joint Services Transcripts uploaded in MAP"] });
       T._setSubview("model");   // re-render with eligibility loaded
       const doc = window.document;
-      const row = Array.from(doc.querySelectorAll("#cplFundTable tr.cplfund-row"))
-        .find(function (r) { return /NOCE/.test(r.textContent); });
+      const row = doc.querySelector('#cplFundTable tr.cplfund-row[data-id="c:NOCE"]');
       if (!row) return false;
-      const elig = row.querySelector("td[title*='exhibits in MAP']");
-      // The F1 feed carries NOCE pe=8 → the exhibits sector reads "yes".
-      return !!elig && /exhibits in MAP.*: yes/.test(elig.getAttribute("title"));
+      // The pie's third slice names the condition since 2026-09-28 (a hover per
+      // slice). The F1 feed carries NOCE pe=8 → the exhibits slice is met.
+      const slices = row.querySelectorAll("svg.cf-eligpie g.cf-slice");
+      const third = slices[2];
+      return slices.length === 3 && !!third &&
+        third.querySelector("title").textContent === "3. Noncredit certificates posted in MAP" &&
+        /var\(--green-progress(?:,[^)]*)?\)/.test(third.innerHTML);
     })());
 }
 
@@ -191,9 +194,14 @@ const POOL = 25240308;
     doc.querySelectorAll(".cplfund-systemrow").length === 1 &&
     doc.querySelectorAll(".cplfund-systemrow .cf-award").length === 3 &&
     doc.querySelectorAll(".cplfund-systemrow .cf-award.cf-max").length === 1);
-  check("D5: the eligibility column is ON by default (Sam's R10 veto)",
-    !!doc.querySelector('.cplfund-table th[data-sort="elig"]') &&
-    !(JSON.parse(window.localStorage.getItem("cplfund_cols_v1") || "{}").college || {}).elig);
+  // Sam's R10 veto kept the eligibility pie on screen by default; since the
+  // College Dashboard (2026-09-28) it leads every Institution cell, so no
+  // Columns choice can hide it.
+  check("D5: the eligibility pie is ON by default (Sam's R10 veto) — it leads every Institution cell",
+    !doc.querySelector('.cplfund-table th[data-sort="elig"]') &&
+    Array.from(doc.querySelectorAll(".cplfund-table tr.cplfund-row")).every(function (r) {
+      return !!r.querySelector("td.t > .cf-lead > .cf-elig");
+    }));
   check("D6: CR award and NC award columns head the table",
     !!doc.querySelector('th[data-sort="cr_award"]') && !!doc.querySelector('th[data-sort="nc_award"]'));
   check("D7: the institution list is alphabetical by default (Alameda before Bakersfield, " +
@@ -206,8 +214,13 @@ const POOL = 25240308;
         names[iCal - 1].localeCompare("Calbright") < 0 &&
         names[iCal + 1].localeCompare("Calbright") > 0;
     })());
-  check("D8: chips are ghosted WORDS — 'at base' / 'at cap' / 'NC only' (no ⬆/⬇ glyphs)",
-    /at base/.test(text) && /at cap/.test(text) && /NC only/.test(text) &&
+  // "Base" / "Cap" since 2026-09-28 (Sam: plain chips that explain themselves on hover).
+  check("D8: chips are ghosted WORDS — 'Base' / 'Cap' / 'NC only' (no ⬆/⬇ glyphs)",
+    (function () {
+      const chips = Array.from(doc.querySelectorAll("#cplFundTable .cf-boundchip")).map(function (c) { return c.textContent; });
+      return chips.indexOf("Base") !== -1 && chips.indexOf("Cap") !== -1 &&
+        chips.every(function (t) { return t === "Base" || t === "Cap"; });
+    })() && /NC only/.test(text) &&
     !/[⬆⬇]/.test(doc.getElementById("cplFundTable").textContent));
   check("D9: section titles carry Sam's renames (2026-08-31)",
     /Funding Breakdown/.test(text) && /Minimum Conditions/.test(text) &&
@@ -264,7 +277,9 @@ const POOL = 25240308;
   // One table per lane since 2026-09-24 (Sam's 7.9a/b), each in his six
   // columns: the CR/NC split that rode a hover is now two tables, so the
   // noncredit share has a table of its own rather than a tooltip.
-  check("D16: a college row expands to a credit and a noncredit table, each Outcomes · Max FTES · " +
+  // The first header names the lane since 2026-09-28; the credit caption is
+  // gone and the noncredit one states its rule.
+  check("D16: a college row expands to a credit and a noncredit table, each <lane> outcomes · Max FTES · " +
         "Max Funds · Actual FTES · Actual Funds · Difference",
     (function () {
       const row = Array.from(doc.querySelectorAll(".cplfund-row"))
@@ -276,9 +291,9 @@ const POOL = 25240308;
       const nc = det && det.querySelector(".cplfund-dtl-table.cplfund-dtl-nc");
       if (!cr || !nc) return false;
       const heads = function (t) { return Array.from(t.querySelectorAll("th")).map(function (h) { return h.textContent; }).join("|"); };
-      const want = "Outcomes|Max FTES|Max Funds|Actual FTES|Actual Funds|Difference";
-      return heads(cr) === want && heads(nc) === want &&
-        /^Credit/.test(cr.caption.textContent.trim()) && /^Noncredit/.test(nc.caption.textContent.trim());
+      const want = "|Max FTES|Max Funds|Actual FTES|Actual Funds|Difference";
+      return heads(cr) === "Credit outcomes" + want && heads(nc) === "Noncredit outcomes" + want &&
+        !cr.caption && !!nc.caption && /^Noncredit counts CPL/.test(nc.caption.textContent.trim());
     })());
   check("D17: the memo's allocation table is one-pool shaped (credit/noncredit shares, no carve-out)",
     (function () {
@@ -330,16 +345,18 @@ const POOL = 25240308;
         "(ec_78093_2_initiative.txt is the source of record)",
     /Supporting credit for prior learning opportunities through the chancellor’s office’s pilot projects/
       .test(text));
-  check("D23: CR FTES · NC FTES · Elig · CR award are centered columns (th.c + td.c); " +
-        "NC award, the last column, stays right-aligned",
+  // Every funding column centered since 2026-09-28 (Sam's mockup: "first
+  // left, the rest centered (house format)"); NC award is no longer the
+  // right-aligned last column.
+  check("D23: CR FTES · NC FTES and all six funding columns are centered (th.c + td.c)",
     (function () {
       const th = function (k) { return doc.querySelector('th[data-sort="' + k + '"]'); };
-      const centered = ["cr_ftes", "nc_ftes", "elig", "cr_award"].every(function (k) {
+      const keys = ["cr_ftes", "nc_ftes", "cr_award", "cr_current", "nc_award", "nc_current", "total", "current_total"];
+      const centered = keys.every(function (k) {
         return th(k) && th(k).className.split(/\s+/).indexOf("c") !== -1;
       });
-      const ncRight = th("nc_award") && th("nc_award").className.split(/\s+/).indexOf("c") === -1;
-      const sysC = doc.querySelectorAll(".cplfund-systemrow td.c").length >= 3;
-      return centered && ncRight && sysC;
+      const sysC = doc.querySelectorAll(".cplfund-systemrow td.c").length >= 8;
+      return centered && sysC;
     })());
   check("D24: no rendered 'on its face' anywhere on the tab (Sam's ban, 2026-08-31)",
     !/on its face/.test(doc.getElementById("cplFundingMount").textContent));

@@ -169,9 +169,11 @@ const {
   T._setElig({ coordOk: true, coord: { "Alameda": true, "Butte": true },
     optin: { "Alameda": { college: "Alameda" }, "Butte": { college: "Butte" } }, asOf: "2026-07-27" });
   T.render();
+  // The pie's slot leads the Institution cell since 2026-09-28 (the Elig
+  // column retired; each slice carries its own hover).
   const eligCell = function (name) {
-    const tr = Array.from(doc.querySelectorAll("#cplFundTable tbody tr")).find(function (t) { return t.textContent.indexOf(name) !== -1; });
-    return Array.from(tr.querySelectorAll("td")).find(function (td) { return (td.getAttribute("title") || "").indexOf("participation gate") !== -1; });
+    const tr = doc.querySelector('#cplFundTable tr[data-id="c:' + name + '"]');
+    return tr && tr.querySelector(".cf-lead .cf-elig");
   };
   check("I: the veteran-JST requirement adds a 3rd pie sector (auto-scored via Veteran Star)",
     pieSlices(eligCell("Alameda")) === 3);
@@ -179,8 +181,9 @@ const {
     greenSlices(eligCell("Alameda")) === 3);
   check("I: a non-star college is 2 of 3 (JST sector not green)",
     pieSlices(eligCell("Butte")) === 3 && greenSlices(eligCell("Butte")) === 2);
-  check("I: SYSTEM Elig counts institutions meeting ALL 3 (only Alameda) → 1 of the 118-row roster",
-    doc.querySelector("#cplFundTable .cplfund-systemrow").textContent.indexOf("1/" + (D.colleges.length + 3)) !== -1);
+  check("I: the Statewide count takes institutions meeting ALL 3 (only Alameda) → 1 of the 118-row roster",
+    doc.querySelector("#cplFundTable .cplfund-systemrow .cf-sys-elig").textContent ===
+      "1 of " + (D.colleges.length + 3) + " meet all conditions");
   check("I: the eligibility section shows the Veteran Star auto-score status line",
     doc.querySelector(".cplfund-elig").textContent.indexOf("Veteran Star") !== -1 &&
     doc.querySelector(".cplfund-elig").textContent.indexOf("qualify") !== -1);
@@ -190,8 +193,7 @@ const {
   T2._setShared({ extraReqs: ["75% of enrolled veteran JSTs uploaded in MAP"] });
   T2._setElig({ coordOk: true, coord: { "Alameda": true }, optin: { "Alameda": { college: "Alameda" } }, asOf: "2026-07-27" });
   T2.render();
-  const aCell = Array.from(doc2.querySelectorAll("#cplFundTable tbody tr")).find(function (t) { return t.textContent.indexOf("Alameda") !== -1; });
-  const aElig = Array.from(aCell.querySelectorAll("td")).find(function (td) { return (td.getAttribute("title") || "").indexOf("participation gate") !== -1; });
+  const aElig = doc2.querySelector('#cplFundTable tr[data-id="c:Alameda"] .cf-lead .cf-elig');
   check("I: feed-less → the JST sector shows but isn't green (pending), so no college is all-3",
     pieSlices(aElig) === 3 && greenSlices(aElig) === 2);
 }

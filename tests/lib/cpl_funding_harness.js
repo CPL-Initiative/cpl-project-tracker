@@ -112,11 +112,13 @@ function scenSlot(window, name) {
 function footText(doc) {
   return Array.from(doc.querySelectorAll(".cplfund-foot")).map(function (e) { return e.textContent; }).join(" ");
 }
-// The Elig column is a numbered pie: count met (green-filled) slices in an
-// element's pie glyph (met requirements) and its total slice count.
+// The conditions pie (the Elig column's, leading the Institution cell since
+// 2026-09-28): count met (green-filled) slices in an element's pie glyph (met
+// requirements) and its total slice count. A fill may carry its fallback
+// ("var(--green-progress, #2C601A)", for host pages without the token).
 function greenSlices(el) {
   const pie = el && el.querySelector(".cf-eligpie");
-  return pie ? (pie.innerHTML.match(/var\(--green-progress\)/g) || []).length : -1;
+  return pie ? (pie.innerHTML.match(/var\(--green-progress(?:,[^)]*)?\)/g) || []).length : -1;
 }
 function pieSlices(el) {
   const pie = el && el.querySelector(".cf-eligpie");

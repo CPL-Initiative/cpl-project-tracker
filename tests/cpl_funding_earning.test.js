@@ -81,15 +81,18 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
   check("E: the Potential/Earned basis toggle is gone (no mode to get stuck in)",
     !doc.querySelector("#cplFundBasis") && !("basis" in T._state));
   const potRow = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row")).find(function (r) { return /Laney/.test(r.textContent); });
-  // The Max award cell leads the award cells since 2026-09-23 (Sam's base
-  // report); the CR/NC pair follows it. awardCells[0] is therefore the combined
-  // figure, and the pair is read by what it is, not by where it sits.
+  // Since the College Dashboard (Sam, 2026-09-28) the award cells read Max CR
+  // Funds · Max NC Funds · Total Funds (the max award, class cf-max), and each
+  // sits beside a Curr cell (.cf-cur) that carries what qualifies so far. Every
+  // cell is read by what it is, not by where it sits.
   const awardCells = potRow.querySelectorAll("td.cf-award");
   const pairCells = potRow.querySelectorAll("td.cf-award:not(.cf-max)");
-  check("E: one row carries the Max award and the CR award / NC award pair",
-    awardCells.length === 3 && pairCells.length === 2 && awardCells[0].classList.contains("cf-max"));
-  check("E: the Max award cell stacks the max award over the qualifying figure, unconditionally",
-    !!awardCells[0].querySelector(".sub") &&
+  const curTotal = potRow.querySelector("td.cf-cur-total");
+  check("E: one row carries the Max award (Total Funds), the CR / NC award pair, and three Curr cells",
+    awardCells.length === 3 && pairCells.length === 2 && !!potRow.querySelector("td.cf-award.cf-max") &&
+    potRow.querySelectorAll("td.cf-cur").length === 3);
+  check("E: Curr Total Funds carries the qualifying figure beside the max award, unconditionally",
+    !!curTotal && /^\$[\d,]+$/.test(curTotal.textContent.trim()) &&
     // ⚠️ THE PRESENT PARTICIPLE, NEVER THE PAST (Sam, 2026-08-27): the funding is
     // not a done deal until the college qualifies, and the past tense read like a
     // settled award. His 2026-09-13 sweep retired "earn", so the word is now
@@ -97,7 +100,7 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
     // Asserted BOTH ways so a revert to a past tense fails rather than passing on
     // a loose match.
     (function (t) { return /qualifying/i.test(t) && !/\b(earned|qualified|demonstrated)\b/i.test(t); })(
-      awardCells[0].querySelector(".sub").textContent));
+      curTotal.getAttribute("title") || ""));
   // Reworded 2026-09-01 (Sam: no unshipped-feed references on the surface):
   // the F1 arithmetic shows as the STANDARD qualifying sub at $0.
   // The qualifying line reads ONCE, under the Max award (2026-09-23): the pair
@@ -149,10 +152,11 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
     pcards[1].textContent.indexOf("full advance") === -1 &&
     pcards[2].textContent.indexOf("full advance") === -1);
 
-  const crTxt = awardCells[0].textContent;
-  check("E: the CR award cell carries BOTH the max award and the qualifying figure",
-    (crTxt.match(/\$/g) || []).length >= 2 && /qualifying/i.test(crTxt) &&
-    !/\b(earned|qualified|demonstrated)\b/i.test(crTxt));
+  const curCr = potRow.querySelector("td.cf-cur-cr");
+  check("E: the CR award sits beside its Curr cell, which reads the credit qualifying figure in the present participle",
+    /^\$[\d,]+$/.test(pairCells[0].textContent.trim()) && !!curCr && /^\$[\d,]+$/.test(curCr.textContent.trim()) &&
+    /^Credit funding qualifying/.test(curCr.getAttribute("title") || "") &&
+    !/\b(earned|qualified|demonstrated)\b/i.test(curCr.getAttribute("title") || ""));
   check("E: the CR award cell hover names the qualifying figure — the measured/advance breakdown is retired",
     /qualifying so far/.test(awardCells[0].getAttribute("title") || "") &&
     !/advance|measured on actual/.test(awardCells[0].getAttribute("title") || ""));
@@ -212,11 +216,11 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
   T._state.open["c:Laney"] = true;
   T.render();
   const det = doc.querySelector("tr.cplfund-detail");   // only Laney is open
-  // One table per lane since 2026-09-24, in Sam's columns; the totals line
-  // above them names what the college has qualified for.
-  check("E: drill-in shows the per-priority earning detail (lane tables, an Actual Funds column, the totals line)",
-    !!det && !!det.querySelector(".cplfund-dtl-table.cplfund-dtl-cr") &&
-    /Actual Funds: \$[\d,]+/.test((det.querySelector(".cplfund-dtl-sum") || {}).textContent || "") &&
+  // One table per lane since 2026-09-24, in Sam's columns. The totals line
+  // above them left the drill-in on 2026-09-28: the row's Curr columns carry
+  // what the college qualifies for.
+  check("E: drill-in shows the per-priority earning detail (lane tables, an Actual Funds column; the totals ride the row)",
+    !!det && !!det.querySelector(".cplfund-dtl-table.cplfund-dtl-cr") && !det.querySelector(".cplfund-dtl-sum") &&
     Array.from(det.querySelectorAll(".cplfund-dtl-table th")).some(function (h) { return /^Actual Funds$/.test(h.textContent.trim()); }));
 }
 {
@@ -328,12 +332,18 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
   const style2 = doc.querySelector("#cplFundTable style");
   check("F: hiding District re-injects the nth-child(3) hide rule",
     !!style2 && style2.textContent.indexOf("nth-child(3)") !== -1);
+  // The store is v2 since the College Dashboard (2026-09-28).
   check("F: the column choice persists to localStorage",
-    JSON.parse(window.localStorage.getItem("cplfund_cols_v1")).college.district === true);
+    JSON.parse(window.localStorage.getItem("cplfund_cols_v2")).college.district === true);
 
-  const eligTh = doc.querySelector('#cplFundTable th[data-sort="elig"]');
-  check("F: the Elig column renders by default (Sam's R10 veto) and its tooltip clarifies participate-vs-earn",
-    !!eligTh && (eligTh.getAttribute("title") || "").indexOf("PARTICIPATE") !== -1);
+  // Sam's R10 veto kept the eligibility pie on screen; since the College
+  // Dashboard (2026-09-28) it leads the Institution cell instead of holding a
+  // column, and the Curr headers say funding counts once the conditions are met.
+  const firstRow = doc.querySelector("#cplFundTable tbody tr.cplfund-row");
+  check("F: the Elig column is gone; the pie leads the Institution cell, and the Curr headers say when funding counts",
+    !doc.querySelector('#cplFundTable th[data-sort="elig"]') && !!firstRow && !!firstRow.querySelector("td.t > .cf-lead > .cf-elig") &&
+    /once the institution meets its minimum conditions/.test(
+      (doc.querySelector('#cplFundTable th[data-sort="cr_current"]') || { getAttribute: () => "" }).getAttribute("title") || ""));
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -372,15 +382,16 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
   const dh = Array.from(dtl.querySelectorAll("th")).map(function (h) { return h.textContent.trim().toLowerCase(); });
   const col = function (i, k) { return cells(i)[dh.indexOf(k)] || ""; };
   // Sam's six columns, in his order (2026-09-24, review sheet item 7).
-  check("G: the detail table carries Outcomes · Max FTES · Max Funds · Actual FTES · Actual Funds · Difference",
+  // The first header names the lane since 2026-09-28 (Sam's mockup).
+  check("G: the detail table carries Credit outcomes · Max FTES · Max Funds · Actual FTES · Actual Funds · Difference",
     Array.from(dtl.querySelectorAll("th")).map(function (h) { return h.textContent.trim(); }).join("|") ===
-      "Outcomes|Max FTES|Max Funds|Actual FTES|Actual Funds|Difference");
+      "Credit outcomes|Max FTES|Max Funds|Actual FTES|Actual Funds|Difference");
   const tip = function (i, k) { const td = rows[i].querySelectorAll("td")[dh.indexOf(k)]; return td ? td.getAttribute("title") || "" : ""; };
   check("G: the measurable P1 row shows the actual, and its hover the % of Max FTES",
     col(0, "actual ftes").indexOf("200") !== -1 && /%/.test(tip(0, "actual ftes")));
-  check("G: an unmeasured priority row reads a plain 'awaiting measurement' — never a measured zero, and " +
-        "never the retired advance wording (2026-09-01)",
-    col(1, "actual ftes").indexOf("awaiting measurement") !== -1 && col(1, "actual ftes").indexOf("advance") === -1 &&
+  check("G: an unmeasured priority row reads a plain TBA — never a measured zero, and " +
+        "never the retired advance wording (2026-09-01; TBA since 2026-09-28)",
+    col(1, "actual ftes").trim() === "TBA" && col(1, "actual ftes").indexOf("advance") === -1 &&
     !/^0(\.0)?$/.test(col(1, "actual ftes").trim()));
   check("G: the priority rows carry funding ($ figures) alongside the measures",
     /\$/.test(col(0, "actual funds")) && /\$/.test(col(0, "max funds")) && /\$/.test(col(0, "difference")));

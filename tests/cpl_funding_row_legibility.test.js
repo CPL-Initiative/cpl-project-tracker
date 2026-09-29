@@ -21,11 +21,15 @@
 //     computes to zero rendered no prompt, no explanation, an ordinary-looking
 //     row. The prompt is driven by the GATE, and under one pool the money
 //     cells it rides are the CR award / NC award pair.
+//     Since the College Dashboard (Sam, 2026-09-28) the prompt is the row's
+//     Confirm chip, driven by the participation state, and the Curr columns
+//     read the released figure: $0 while gated, never a held one.
 //
 // (3) THE S215 REACTION RULINGS — the one-row shape (Sam, 2026-08-31, the
 //     locked mock's own comment): "Low-key rows: nothing bold, FTES and
 //     funding centered, the rightmost column right-justified." Chips are
-//     ghosted words; the SYSTEM row alone stays bold.
+//     ghosted words; the SYSTEM row alone stays bold. The College Dashboard
+//     (2026-09-28) centers every funding column, the last one included.
 //
 // Run from repo root: `npm test` (or `node tests/cpl_funding_row_legibility.test.js`).
 const { check, freshDom, boot, D, consumerSrc, finish } = require("./lib/cpl_funding_harness.js");
@@ -126,17 +130,19 @@ function openDetail(window, doc, name) {
     const i = ths.findIndex((th) => th.getAttribute("data-sort") === key);
     return i >= 0 ? tds[i] : null;
   };
-  check("CR FTES · NC FTES · Elig · CR award are CENTERED (Sam's ruling)",
-    ["cr_ftes", "nc_ftes", "elig", "cr_award"].every(
+  check("CR FTES · NC FTES and the six funding columns are CENTERED (Sam's ruling)",
+    ["cr_ftes", "nc_ftes", "cr_award", "cr_current", "nc_award", "nc_current", "total"].every(
       (k) => colTd(k) && cs(colTd(k)).textAlign === "center"));
-  check("...and NC award, the rightmost visible column, stays right-justified",
-    !!colTd("nc_award") && cs(colTd("nc_award")).textAlign === "right");
+  check("...and Curr Total Funds, the rightmost visible column, is centered too (2026-09-28)",
+    !!colTd("current_total") && cs(colTd("current_total")).textAlign === "center");
   // The SYSTEM row alone keeps its weight (the mock keeps it bold), and chips
   // are ghosted words at normal weight.
+  // The identity chip (NC only) stays a normal-weight word; the Base / Cap
+  // chip is Sam's 2026-09-28 mockup design, a small bordered word.
   check("the SYSTEM row alone stays bold; chips stay ghosted words",
     isBold(cs(doc.querySelector("tr.cplfund-systemrow td")).fontWeight) &&
     (function () {
-      const chip = doc.querySelector(".cplfund-chip");
+      const chip = doc.querySelector(".cplfund-chip:not(.cf-boundchip)");
       return !!chip && !isBold(cs(chip).fontWeight);
     })());
 }
@@ -179,20 +185,23 @@ function openDetail(window, doc, name) {
 // ncAwardCellHtml) — both must pass the college's gate state.
 {
   const src = consumerSrc;
-  // The signature carries the gate.
-  check("earnedSubHtml takes a `gated` argument",
-    /function earnedSubHtml\(cap, earned, adv, held, gated\)/.test(src));
-  check("...and the prompt branch fires on it, not on held alone",
-    /if \(held > 0\.5 \|\| gated\)/.test(src));
-  // Since 2026-09-23 the qualifying line, and the prompt with it, renders once
-  // per row, in the Max award cell; the CR/NC pair cells carry their figures.
   const fnBody = (name) => (src.match(new RegExp("function " + name + "\\([^)]*\\) \\{[\\s\\S]*?\\n  \\}")) || [""])[0];
-  // `held` is the reserve for the span the award covers (cellFig: the window
-  // under Combined funding, the viewed year under Annual, 2026-09-27).
-  check("the Max award cell passes the college's gate state",
-    /earnedSubHtml\(cap, earned, row\.earned_advance \|\| 0, held, row\.gate_blocked\)/
-      .test(fnBody("maxAwardCellHtml")) &&
-    /held = cellFig\(row, "earned_withheld"\)/.test(fnBody("maxAwardCellHtml")));
+  // Since the College Dashboard (Sam, 2026-09-28) no award cell carries a
+  // qualifying line or a prompt: the row's Confirm chip is the prompt, and it
+  // keys on the participation state, never on the size of a withheld figure.
+  check("the award cells' qualifying line is retired (earnedSubHtml is gone)",
+    !/function earnedSubHtml\(/.test(src) && fnBody("totalFundsCellHtml") !== "" &&
+    fnBody("totalFundsCellHtml").indexOf("sub") === -1);
+  check("...and the prompt is the Confirm chip, which fires on the participation state alone",
+    /if \(partShown\(\) && !ELIG\.optin\[c\.college\]\)/.test(fnBody("rowChips")) &&
+    fnBody("rowChips").indexOf("earned_withheld") === -1);
+  // `cellFig` reads the span the award covers (the window under Combined
+  // funding, the viewed year under Annual, 2026-09-27).
+  check("the Curr cells read the RELEASED figure for the award's span ($0 while gated), never a held one",
+    /fig = cellFig\(row, "earned_cr"\)/.test(fnBody("curCellHtml")) &&
+    /fig = cellFig\(row, "earned_total"\)/.test(fnBody("curCellHtml")) &&
+    fnBody("curCellHtml").indexOf("earned_withheld") === -1 &&
+    fnBody("totalFundsCellHtml").indexOf("earned_withheld") === -1);
   check("and the pair cells repeat no qualifying line or prompt",
     fnBody("crAwardCellHtml") !== "" && fnBody("ncAwardCellHtml") !== "" &&
     fnBody("crAwardCellHtml").indexOf("earnedSubHtml(") === -1 &&
@@ -205,9 +214,10 @@ function openDetail(window, doc, name) {
   // where they are RENDERED, by cpl_funding_gate_ledger_public S5. The
   // formatter is earnedMoney() since 2026-09-03 (public dollars coarsen to
   // "<$1,000" / the nearest $1,000); either formatter satisfies the BRANCH.
-  check("the figure renders only when there IS one to hold",
-    /var showFig = due && held > 0\.5;/.test(src) &&
-    /showFig \? "held " \+ (?:fmtMoney|earnedMoney)\(held\) : "[^"]+"/.test(src));
+  // Sam, 2026-09-28: no mention of held funding on screen at all; the CSV's
+  // Withheld column is the one place the reserve reads.
+  check("no cell renders a held figure (no 'held $X' anywhere in the renderer)",
+    !/"held " \+ (?:fmtMoney|earnedMoney)\(/.test(src) && /"Withheld \(baseline not met\)"/.test(src));
   // The old unconditional wording would have printed "held $0" after the
   // deadline for exactly the colleges this change is for.
   check("no branch can emit a bare `held $0`",

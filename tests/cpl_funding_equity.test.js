@@ -128,15 +128,16 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   const cmRow = Array.from(doc.querySelectorAll("#cplFundTable tbody tr")).find(function (tr) {
     return tr.textContent.indexOf("Copper Mountain") !== -1;
   });
-  check("floored row carries the 'at base' word chip, no ⬆ glyph",
-    cmRow && cmRow.textContent.indexOf("at base") !== -1 && cmRow.innerHTML.indexOf("⬆") === -1);
+  // A plain "Base" chip beside Total Funds since 2026-09-28 (Sam's mockup).
+  check("floored row carries the 'Base' word chip, no ⬆ glyph",
+    cmRow && (cmRow.querySelector(".cf-boundchip") || {}).textContent === "Base" && cmRow.innerHTML.indexOf("⬆") === -1);
   // Rows key their open state by NAME now (data-id "c:<college>", 2026-08-31).
   T._state.open["c:Copper Mountain"] = true;
   T.render();
   // The base cell left the drill-in (Sam, 2026-09-23, funding review item 3);
   // the row's (at base) word carries the proportional figure on its hover.
   const cmBound = cmRow && cmRow.querySelector(".cplfund-bound");
-  check("the floored row's (at base) hover gives the proportional share and says the model brings it up",
+  check("the floored row's Base chip hover gives the proportional share and says the model brings it up",
     !!cmBound && /share of the funding by size is \$[\d,]+ for the window, below the \$[\d,]+ base award, so the model brings it up to the base/
       .test(cmBound.getAttribute("title") || ""));
   const detail = doc.querySelector("tr.cplfund-detail");
@@ -261,9 +262,13 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
     doc.querySelector('textarea[data-edit="part-label"]').value === "Participation request by");
   check("deadline is editable and defaults to 2026-09-01",
     doc.querySelector('input[data-edit="deadline"]').value === "2026-09-01");
-  check("Elig column renders with pending dashes before data loads",
-    doc.querySelector('th[data-sort="elig"]') &&
-    doc.querySelector("#cplFundTable tbody tr").innerHTML.indexOf("—") !== -1);
+  // The pie leads each Institution cell since 2026-09-28 (its column is gone);
+  // before the coordinator feed loads its slot holds the pending dash, and the
+  // Statewide count reads a dash too (fail-open, never a false zero).
+  check("the pie slot renders a pending dash before data loads, and so does the Statewide count",
+    !doc.querySelector('th[data-sort="elig"]') &&
+    /—/.test((doc.querySelector("#cplFundTable tbody tr.cplfund-row .cf-lead .cf-elig") || {}).textContent || "") &&
+    (doc.querySelector("#cplFundTable .cplfund-systemrow .cf-sys-elig") || {}).textContent === "—");
 
   // Seed eligibility (the RPC + participation reads, minus the network).
   T._setElig({
@@ -289,8 +294,8 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   // SYSTEM row Elig = institutions meeting ALL tracked requirements (Sam,
   // 2026-07-27) — over the 118-row one-pool roster, not just the colleges:
   // only Alameda has BOTH coordinator + participation here, so 1 of 118.
-  check("SYSTEM row shows the all-requirements-met fraction over the one-pool roster",
-    doc.querySelector("#cplFundTable .cplfund-systemrow").textContent.indexOf("1/" + ROSTER_N) !== -1);
+  check("the Statewide row counts, in words, the institutions meeting every condition over the one-pool roster",
+    doc.querySelector("#cplFundTable .cplfund-systemrow .cf-sys-elig").textContent === "1 of " + ROSTER_N + " meet all conditions");
   check("deadline edit writes to the scenario", (function () {
     commit(window, doc.querySelector('input[data-edit="deadline"]'), "2026-10-01");
     return T._getScenario().participationDeadline === "2026-10-01";
@@ -401,9 +406,9 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   T._setElig({ coordOk: true, coord: { "Alameda": true }, optin: {}, asOf: "2026-07-20T06:00:00Z" });
   T.render();
   const alamedaEligCell = () => {
-    const tr = Array.from(doc.querySelectorAll("#cplFundTable tbody tr")).find(t => t.textContent.indexOf("Alameda") !== -1);
-    // Elig column = the td whose title is the eligTitle string ("… the participation gate …").
-    return Array.from(tr.querySelectorAll("td")).find(td => (td.getAttribute("title") || "").indexOf("participation gate") !== -1);
+    // The pie's slot in the Institution cell (the Elig column retired 2026-09-28).
+    const tr = doc.querySelector('#cplFundTable tr[data-id="c:Alameda"]');
+    return tr && tr.querySelector(".cf-lead .cf-elig");
   };
   check("each built-in requirement has a ✕ (hide) control",
     doc.querySelectorAll('[data-reqhide="coord"]').length === 1 && doc.querySelectorAll('[data-reqhide="part"]').length === 1);
@@ -419,8 +424,8 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   check("hide persists to the scenario", scenSlot(window).partHidden === true);
   check("badge follows: with only coordinator tracked, Alameda's pie is 1 green of 1",
     greenSlices(alamedaEligCell()) === 1 && pieSlices(alamedaEligCell()) === 1);
-  check("SYSTEM row still shows the coordinator fraction over the roster (coord not hidden)",
-    doc.querySelector("#cplFundTable .cplfund-systemrow").textContent.indexOf("1/" + ROSTER_N) !== -1);
+  check("the Statewide count follows: the coordinator alone over the roster (coord not hidden)",
+    doc.querySelector("#cplFundTable .cplfund-systemrow .cf-sys-elig").textContent === "1 of " + ROSTER_N + " meet all conditions");
 
   // Restore it.
   click(window, doc.querySelector('[data-reqshow="part"]'));

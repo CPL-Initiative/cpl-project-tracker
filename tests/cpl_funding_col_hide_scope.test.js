@@ -56,20 +56,22 @@ function matchCount(els, selectors) {
   T.render();
 
   // ⚠️ NOBODY HAS TO TOUCH THE COLUMNS MENU FOR THIS TO BITE. COL_PREFS ships
-  // `{ district: true, working_adults: true }` as its DEFAULT, so a fresh
-  // browser hides main column 3 before anyone clicks anything — which is why
-  // this was never "a setting Sam chose" but the state every reader gets, on
-  // the COBI tab and on the public explainer that embeds the same table. The
-  // fixture therefore asserts the DEFAULT rather than arranging one.
+  // a DEFAULT that hides District (with #, the FTES pair and Working adults
+  // since the College Dashboard, 2026-09-28), so a fresh browser hides main
+  // column 3 before anyone clicks anything — which is why this was never "a
+  // setting Sam chose" but the state every reader gets, on the COBI tab and on
+  // the public explainer that embeds the same table. The fixture therefore
+  // asserts the DEFAULT rather than arranging one.
+  const DEFAULT_HIDDEN = ["cr_ftes", "district", "nc_ftes", "order", "working_adults"];
   const bootSels = hideSelectors(doc);
-  check("0a: the shipped default already hides two columns, with no user action",
-    bootSels.length === 2);
+  check("0a: the shipped default already hides five columns, with no user action",
+    bootSels.length === DEFAULT_HIDDEN.length);
   check("0b: and District is one of them — main column 3, the position that collides",
     bootSels.join(",").indexOf("nth-child(3)") !== -1);
-  check("0c: the Columns menu shows both as unchecked, so the default is visible to a curator",
+  check("0c: the Columns menu shows each as unchecked, so the default is visible to a curator",
     Array.from(doc.querySelectorAll(".cplfund-colmenu input[data-colkey]"))
       .filter((c) => !c.checked).map((c) => c.getAttribute("data-colkey")).sort().join(",")
-      === "district,working_adults");
+      === DEFAULT_HIDDEN.join(","));
 
   const sels = bootSels;
   check("1a: hiding a column emits a hide rule", sels.length >= 1);
@@ -89,16 +91,17 @@ function matchCount(els, selectors) {
   // The hide must KEEP WORKING on the table it is for — a fix that scopes the
   // selector into uselessness would pass §3 and break the feature.
   const mainCells = Array.from(row.querySelectorAll(":scope > td"));
-  check("2a: the rules still hide exactly TWO cells on the institution row",
-    matchCount(mainCells, sels) === 2);
+  check("2a: the rules still hide exactly the default's cells on the institution row",
+    matchCount(mainCells, sels) === DEFAULT_HIDDEN.length);
   // The positions come from the header, not from a typed number: the Max award
   // column (2026-09-23) moved the county context one place right, and a typed
   // "2,8" would have failed for a reason unrelated to the scope it guards.
   const headKeys = Array.from(doc.querySelectorAll("#cplFundTable thead th"))
     .map((th) => th.getAttribute("data-sort") || "");
-  const want = [headKeys.indexOf("district"), headKeys.indexOf("working_adults")].join(",");
-  check("2b: and they are the District and county-context columns (" + want + ")",
+  const want = DEFAULT_HIDDEN.map((k) => headKeys.indexOf(k)).sort(function (a, b) { return a - b; }).join(",");
+  check("2b: and they are #, District, the FTES pair and the county context (" + want + ")",
     headKeys.indexOf("district") === 2 && headKeys.indexOf("working_adults") > 2 &&
+    DEFAULT_HIDDEN.every((k) => headKeys.indexOf(k) !== -1) &&
     mainCells.filter((td) => sels.some((sl) => td.matches(sl)))
       .map((td) => td.cellIndex).sort(function (a, b) { return a - b; }).join(",") === want);
 

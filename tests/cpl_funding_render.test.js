@@ -188,8 +188,12 @@ const money = function (n) { return "$" + Math.round(n).toLocaleString("en-US");
           "statutory title appears exactly once (Sam's band consolidation, 2026-09-01)",
       !/Three Priority Outcome-Based Allocations/.test(mountText) &&
       (mountText.match(/Funding Outcomes Required by/g) || []).length === 1);
-    check("chips are ghosted WORDS — at base / at cap / NC only, no ⬆/⬇ glyphs in the table",
-      /at base/.test(mountText) && /at cap/.test(mountText) && /NC only/.test(mountText) &&
+    // "Base" / "Cap" chips beside Total Funds since 2026-09-28 (Sam's mockup).
+    check("chips are ghosted WORDS — Base / Cap / NC only, no ⬆/⬇ glyphs in the table",
+      (function () {
+        const chips = Array.from(doc.querySelectorAll("#cplFundTable .cf-boundchip")).map(function (c) { return c.textContent; });
+        return chips.indexOf("Base") !== -1 && chips.indexOf("Cap") !== -1;
+      })() && /NC only/.test(mountText) &&
       !/[⬆⬇]/.test(doc.getElementById("cplFundTable").textContent));
   }
   // Sam, 2026-08-04: the noncredit FTES rides the surface, LABELLED. The old
@@ -211,10 +215,11 @@ const money = function (n) { return "$" + Math.round(n).toLocaleString("en-US");
   }
   // SYSTEM total moved from <tfoot> to the FIRST body row (Sam, 2026-07-23);
   // ONE SYSTEM row under one pool (R6) — the CR/NC pair is two CELLS on it.
-  check("SYSTEM pinned as the FIRST body row (one row, moved from tfoot)",
+  // Labelled "Statewide" since 2026-09-28 (Sam's mockup).
+  check("the statewide row pinned as the FIRST body row (one row, moved from tfoot)",
     !tables[0].querySelector("tfoot") &&
     tables[0].querySelector("tbody tr").classList.contains("cplfund-systemrow") &&
-    tables[0].querySelector("tbody tr.cplfund-systemrow").textContent.indexOf("SYSTEM") !== -1 &&
+    tables[0].querySelector("tbody tr.cplfund-systemrow .cplfund-caret").textContent === "Statewide" &&
     doc.querySelectorAll(".cplfund-systemrow").length === 1);
   // PR-1 (Sam, 2026-07-23): Total Available Funds; the Award range section is
   // retired (R7) — its successor is the window card's bounds fold.
@@ -286,10 +291,12 @@ const money = function (n) { return "$" + Math.round(n).toLocaleString("en-US");
   // One combined column came back on 2026-09-23 as MAX AWARD: the base and the
   // cap bind the combined award, and Clovis read $149,321 "(at base)" off the
   // credit share (item 4 on Sam's Scenario 3 sheet; it reverses part of R6/R7).
-  check("no Yr 1 / Yr 2 / Combined columns any more; the one combined column is Max award",
+  // Headed Total Funds since the College Dashboard (Sam, 2026-09-28).
+  check("no Yr 1 / Yr 2 / Combined columns any more; the one combined column is the max award, Total Funds",
     !doc.querySelector('th[data-sort="y1"]') && !doc.querySelector('th[data-sort="y2"]') &&
     !doc.querySelector('th[data-sort="combined"]') &&
-    /^Max award/.test(((doc.querySelector('th[data-sort="total"]') || {}).textContent || "").trim()));
+    /^Total Funds/.test(((doc.querySelector('th[data-sort="total"]') || {}).textContent || "").trim()) &&
+    /max award/.test((doc.querySelector('th[data-sort="total"]') || { getAttribute: () => "" }).getAttribute("title") || ""));
   check("no per-priority P1/P2/P3 columns in the table", !doc.querySelector('th[data-sort="p1"]'));
   check("no period toggle (funding timing is a model dial, not a view toggle)",
     !doc.getElementById("cplFundPeriod"));
