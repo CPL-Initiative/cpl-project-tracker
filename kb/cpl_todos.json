@@ -1,8 +1,8 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-09-28",
+  "_as_of": "2026-09-29",
   "_session": "298",
-  "_status": "Sam locked a redesign of the funding tab's College Dashboard on 28 September after seven rounds on a live mockup: clearer funding columns (maximum and current for credit, noncredit and the total), a three-box Minimum Conditions line in each institution's detail, TBA where a measure has yet to arrive, and a Confirm by date chip. The same day he ruled that funding waits on all three minimum conditions, including the Veteran Star's veteran JST uploads; that change is PR #1726, and the redesign follows it. The Sierra Training tab is now in the same mockup process.",
+  "_status": "Sam locked a redesign of the funding tab's College Dashboard on 28 September after seven rounds on a live mockup: clearer funding columns (maximum and current for credit, noncredit and the total), a three-box Minimum Conditions line in each institution's detail, TBA where a measure has yet to arrive, and a Confirm by date chip. The same day he ruled that funding waits on all three minimum conditions, including the Veteran Star's veteran JST uploads. Both are live: the gate as PR #1726 on 28 September, the redesign as PR #1729 on 29 September. Sam approved the Sierra Training mockup, and its port is next.",
   "items": [
     {
       "id": "s298-sam-sql-test-answer",
@@ -29,10 +29,10 @@
       "text": "Rule GR register rows #2, #10 and #16 on the GR Priorities tab, your call of 27 September. Row #2 still asks for enacted law, and the tab also holds the 2026-27 timeline's five dates."
     },
     {
-      "id": "s298-fable-port-dashboard",
+      "id": "s298-fable-dashboard-followups",
       "for": "Fable",
       "tab": "implementation-funding",
-      "text": "Land the College Dashboard redesign Sam locked on 28 September (branch claude/funding-dashboard-ui-s298; mockup https://claude.ai/artifact/2V1aWwtjwob5gSM6TEkfyQ). Merge main in after #1726, regenerate the dependency map, pass the test check, merge."
+      "text": "Finish the College Dashboard with one small PR covering five items the port left. Move the code's default Confirm deadline from 1 September to 1 November, so a failed settings load cannot make every chip read Confirm now. Bring the explainer's Step two note and its \"Max award by institution\" heading in line with the new columns and Sam's ruling that no reserve figure appears, and show him the wording first. Update the reading note that says each funding cell stacks the max award over its Current Total. Rename the CSV's \"Current total\" and \"Withheld (baseline not met)\" columns. Remove two dead style rules."
     },
     {
       "id": "s298-fable-port-sierra",
