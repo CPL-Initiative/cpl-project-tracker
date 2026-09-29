@@ -92,7 +92,7 @@
     if (when) metaBits.push("Since " + when);
     if (by) metaBits.push(escapeHtml(by));
     var reasonHtml = reason
-      ? '<div class="tabled-reason" style="font-size:0.78rem;color:#444;margin:0.3rem 0;line-height:1.4;">' + escapeHtml(reason) + '</div>'
+      ? '<div class="tabled-reason" style="font-size:0.78rem;color:var(--text-body);margin:0.3rem 0;line-height:1.4;">' + escapeHtml(reason) + '</div>'
       : "";
     return (
       '<div class="tabled-card-head" style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;">' +
@@ -130,6 +130,11 @@
     }).then(function (r) { return r.ok ? r.json() : Promise.reject(new Error("refresh " + r.status)); });
   }
   function ensureFresh(s) {
+    // Prefer the STORED session over the one handed in: refresh tokens rotate,
+    // and a caller's copy can hold a CONSUMED one after a sibling module (or
+    // the cpl_session.js keeper) renewed. Re-spending it reads to Supabase as
+    // token reuse. See credential_reference.js — same line, same reason.
+    s = getSession() || s;
     if (!s) return Promise.resolve(null);
     if (s.access_token && s.exp && s.exp <= Date.now() + 60000 && s.refresh_token) {
       return refreshToken(s.refresh_token).then(function (tok) {
@@ -199,11 +204,18 @@
   }
   function gridEl() { return document.getElementById("projectsGrid"); }
   function cardFor(pid) {
-    var g = gridEl();
-    return g ? g.querySelector('.project-card[data-pid="' + (window.CSS && CSS.escape ? CSS.escape(pid) : pid) + '"]') : null;
+    var q = (window.CSS && CSS.escape ? CSS.escape(pid) : pid);
+    // Post-reorg every project renders as a nested .activity-kpi-card[data-pid]
+    // under its Activity (CPL_DATA.activity_kpis); the old separate #projectsGrid
+    // .project-card is dissolved. Resolve the nested card first, then fall back to
+    // the legacy grid card so pre-regen HTML still resolves during the transition.
+    return document.querySelector('.activity-kpi-card[data-pid="' + q + '"]') ||
+      (gridEl() ? gridEl().querySelector('.project-card[data-pid="' + q + '"]') : null);
   }
   function cardName(card) {
-    var n = card && card.querySelector(".project-name");
+    // The nested card names its project in .akpi-name; the legacy grid card used
+    // .project-name. Read the new shape first, fall back to the old.
+    var n = card && (card.querySelector(".akpi-name") || card.querySelector(".project-name"));
     return n ? (n.textContent || "").trim() : "";
   }
 
@@ -215,11 +227,11 @@
     var grid = gridEl();
     if (!grid) return null;
     var wrap = el("details", { "class": "tabled-archived-wrap",
-      "style": "margin-top:1.5rem;border:1px solid #e3e3e3;border-radius:10px;padding:0.5rem 1rem;background:#fff;" });
+      "style": "margin-top:1.5rem;border:1px solid #e3e3e3;border-radius:10px;padding:0.5rem 1rem;background:var(--surface-opaque);" });
     wrap.innerHTML =
       '<summary class="tabled-archived-summary" style="cursor:pointer;font-weight:700;color:var(--navy-primary,#16324f);font-size:0.95rem;list-style:none;">' +
         '🗄 Tabled &amp; Archived <span class="tabled-archived-count" style="color:#888;font-weight:400;font-size:0.85rem;">(0)</span></summary>' +
-      '<div class="tabled-archived-note" style="font-size:0.76rem;color:#666;margin:0.5rem 0 0.8rem 0;line-height:1.4;">' +
+      '<div class="tabled-archived-note" style="font-size:0.76rem;color:var(--text-muted);margin:0.5rem 0 0.8rem 0;line-height:1.4;">' +
         'Paused or closed projects — kept for the record but excluded from active priorities, reports, and the RACI matrix. ' +
         'Sign in (or unlock with the team phrase) to Restore one.</div>' +
       '<div class="tabled-archived-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:0.7rem;"></div>';
@@ -283,17 +295,23 @@
     });
   }
 
-  // The OFFICIAL WORKPLAN layer — the 1.x–4.x sub-activity ids that render
-  // Activity-metrics KPI cards (read from CPL_DATA.activity_kpis). These are
-  // IMMUNE to table/archive (Session 95): the generator ignores overlay rows
-  // on them, and this mirrors that rule client-side so a stale row can never
-  // hide an Activity card or its goals-ladder rows. (Pre-Session-95 the
-  // overlay deliberately hid the Activity card too — the 2026-07-02 mixup
-  // where tabling "redundant" project cards erased 22 Activity cards.) The
-  // legacy `5.x` "Strategic Initiatives" ids are REAL projects even when a
-  // KPI ladder puts them in activity_kpis (e.g. 5.1) — never immune. Keep in
-  // sync with the generator's activity_layer_ids. Empty map when CPL_DATA is
-  // absent (e.g. tests) → nothing is immune.
+  // The OFFICIAL WORKPLAN layer — the sub-activity ids that render
+  // Activity-metrics KPI cards (read from CPL_DATA.activity_kpis); mirrors the
+  // generator's activity_layer_ids.
+  //
+  // RETAINED FOR REFERENCE ONLY — it NO LONGER GATES TABLING. Pre-Session-95
+  // this marked Activity-layer ids IMMUNE so a stale overlay row couldn't hide
+  // an Activity card (the 2026-07-02 mixup where tabling "redundant" duplicate
+  // project cards erased 22 Activity cards). The Activities-tab reorg folded
+  // EVERY project into activity_kpis — each now renders as a nested
+  // .activity-kpi-card[data-pid] and is itself tableable — so using this as a
+  // gate would mark *everything* immune and nothing would be tableable. Tabling
+  // a sub-activity card hides only that one card, never an Activity group header
+  // (.activity-group-header is not .activity-kpi-card). mountControls() and
+  // reconcile() therefore no longer consult it. Kept because it documents the
+  // generator mirror and its shape is asserted by tests. The `indexOf("5.")`
+  // guard is left intact (the single held-out `5.1` stays out of the map).
+  // Empty map when CPL_DATA is absent (e.g. tests).
   function activityLayerIds() {
     var out = {};
     try {
@@ -310,11 +328,12 @@
   // ── Reconcile drift between the baked HTML and the live overlay ───────────────
   var _overlay = {};
   function reconcile() {
-    var immune = activityLayerIds();
-    // 1. Anything in the overlay but visible in the grid → hide + add an entry.
-    //    Activity-layer ids are skipped entirely (immune — Session 95).
+    // The `immune` gate (activityLayerIds()) is intentionally GONE here: the
+    // Activities-tab reorg folded every project into activity_kpis, so it would
+    // now mark *everything* immune and no overlay-tabled project would ever hide.
+    // All sub-activity cards are tableable (see activityLayerIds()'s doc comment).
+    // 1. Anything in the overlay but visible → hide + add an entry.
     Object.keys(_overlay).forEach(function (pid) {
-      if (immune[pid]) return;
       var meta = _overlay[pid];
       var card = cardFor(pid);
       var name = (card && cardName(card)) || (entryFor(pid) && entryNameOf(entryFor(pid))) || pid;
@@ -325,14 +344,17 @@
       setGoalsRowsHidden(pid, true);                  // also drop it from the Annual Goals table
     });
     // 2. Anything baked as tabled but NO LONGER in the overlay → restore it.
+    //    gridEl() may be null post-reorg → [] (already handled); harmless because
+    //    the generator excludes tabled projects from activity_kpis, so none
+    //    render as baked-tabled cards.
     var baked = gridEl() ? gridEl().querySelectorAll(".project-card[data-lifecycle]") : [];
     Array.prototype.forEach.call(baked, function (card) {
       var pid = card.getAttribute("data-pid");
-      if (pid && (!_overlay[pid] || immune[pid])) { showCard(pid); setGoalsRowsHidden(pid, false); }
+      if (pid && !_overlay[pid]) { showCard(pid); setGoalsRowsHidden(pid, false); }
     });
     Array.prototype.forEach.call(document.querySelectorAll(".tabled-card[data-pid]"), function (e) {
       var pid = e.getAttribute("data-pid");
-      if (pid && (!_overlay[pid] || immune[pid])) e.remove();
+      if (pid && !_overlay[pid]) e.remove();
     });
     refreshCount();
     mountControls();
@@ -351,29 +373,36 @@
     Array.prototype.forEach.call(document.querySelectorAll(".tabled-restore"), function (b) {
       b.style.display = authed ? "" : "none";
     });
-    // A 🗄 control on each ACTIVE (visible) card. Activity-layer ids never get
-    // one (immune — Session 95; also covers pre-regen HTML that still carries
-    // duplicate sub-activity grid cards).
-    var grid = gridEl();
-    if (!grid) return;
-    var immune = activityLayerIds();
-    Array.prototype.forEach.call(grid.querySelectorAll(".project-card"), function (card) {
-      var has = card.querySelector(".plc-ctl-row");
-      if (immune[card.getAttribute("data-pid")]) { if (has) has.remove(); return; }
-      if (card.getAttribute("data-lifecycle")) { if (has) has.remove(); return; }
-      // The 🗄 control shows for EVERYONE (affordance-visibility vs action-
-      // eligibility) so the team-phrase / reviewer unlock is reachable from the
-      // card — a not-signed-in click opens the unlock in the popup. (Fixes the
-      // chicken-and-egg where the unlock was buried behind an authed-only button.)
-      if (has) return;
-      var row = el("div", { "class": "plc-ctl-row" });
-      var btn = el("button", { "class": "plc-table-btn", "type": "button",
-        "data-pid": card.getAttribute("data-pid"),
-        "title": "Table or archive this project — moves it out of active priorities (reversible)" },
-        ["🗄 Table / Archive"]);
-      row.appendChild(btn);
-      card.appendChild(row);
-    });
+    // A 🗄 control on each ACTIVE (visible) sub-activity card. Post-reorg every
+    // project renders as a nested .activity-kpi-card[data-pid] under its Activity
+    // (the old separate #projectsGrid .project-card is dissolved), and EACH one
+    // is tableable. The Session-95 `immune` gate is intentionally DROPPED: it
+    // existed to stop duplicate grid cards from hiding an Activity card, but the
+    // reorg folded every project into activity_kpis, so activityLayerIds() would
+    // now mark *everything* immune — keeping the gate would make nothing
+    // tableable. Tabling a sub-activity card only hides that one card, never an
+    // Activity group header (.activity-group-header is not .activity-kpi-card, so
+    // the selector below never matches a header). The legacy `#projectsGrid
+    // .project-card` selector is retained for pre-regen HTML during the
+    // transition; there is no gridEl()-null early-out (there may be no grid now).
+    Array.prototype.forEach.call(
+      document.querySelectorAll('.activity-kpi-card[data-pid], #projectsGrid .project-card[data-pid]'),
+      function (card) {
+        var has = card.querySelector(".plc-ctl-row");
+        if (card.getAttribute("data-lifecycle")) { if (has) has.remove(); return; }
+        // The 🗄 control shows for EVERYONE (affordance-visibility vs action-
+        // eligibility) so the team-phrase / reviewer unlock is reachable from the
+        // card — a not-signed-in click opens the unlock in the popup. (Fixes the
+        // chicken-and-egg where the unlock was buried behind an authed-only button.)
+        if (has) return;
+        var row = el("div", { "class": "plc-ctl-row" });
+        var btn = el("button", { "class": "plc-table-btn", "type": "button",
+          "data-pid": card.getAttribute("data-pid"),
+          "title": "Table or archive this project — moves it out of active priorities (reversible)" },
+          ["🗄 Table / Archive"]);
+        row.appendChild(btn);
+        card.appendChild(row);
+      });
   }
 
   // ── Modal: Table / Archive ───────────────────────────────────────────────────
@@ -541,22 +570,26 @@
     if (document.getElementById("plc-css")) return;
     var css =
       ".plc-ctl-row{margin-top:0.5rem;text-align:right;}" +
-      ".plc-table-btn{font-size:0.7rem;background:transparent;border:1px solid #ddd;border-radius:4px;padding:0.2rem 0.55rem;" +
-        "cursor:pointer;color:#777;transition:background .15s,color .15s;}" +
-      ".plc-table-btn:hover{background:#faf3e0;border-color:var(--gold-accent,#E3B341);color:var(--text-strong,#1a1a1a);}" +
+      // ⚠️ Three frozen values on a ground that flips: #ddd border, #777 ink and a
+      // #faf3e0 hover fill all assumed a white card. Measured dark 2026-09-10:
+      // the ink read 3.73:1 and the hover painted near-white behind
+      // --text-strong, which is #ECE9E2 there.
+      ".plc-table-btn{font-size:0.7rem;background:transparent;border:1px solid var(--border-strong);border-radius:4px;padding:0.2rem 0.55rem;" +
+        "cursor:pointer;color:var(--text-muted);transition:background .15s,color .15s;}" +
+      ".plc-table-btn:hover{background:var(--surface-muted);border-color:var(--gold-accent,#E3B341);color:var(--text-strong);}" +
       ".plc-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:9000;display:flex;align-items:center;justify-content:center;padding:1rem;}" +
-      ".plc-modal{background:#fff;border-radius:12px;padding:1.2rem 1.4rem;max-width:460px;width:100%;box-shadow:0 12px 40px rgba(0,0,0,0.3);}" +
+      ".plc-modal{background:var(--surface-opaque);border-radius:12px;padding:1.2rem 1.4rem;max-width:460px;width:100%;box-shadow:0 12px 40px rgba(0,0,0,0.3);}" +
       ".plc-modal h3{margin:0 0 0.4rem 0;font-size:1.05rem;color:var(--navy-primary,#16324f);}" +
-      ".plc-modal-sub{font-size:0.8rem;color:#666;margin-bottom:0.7rem;line-height:1.4;}" +
-      ".plc-choice{display:flex;flex-direction:column;gap:0.4rem;margin:0.4rem 0 0.7rem 0;font-size:0.85rem;color:#333;}" +
+      ".plc-modal-sub{font-size:0.8rem;color:var(--text-muted);margin-bottom:0.7rem;line-height:1.4;}" +
+      ".plc-choice{display:flex;flex-direction:column;gap:0.4rem;margin:0.4rem 0 0.7rem 0;font-size:0.85rem;color:var(--text-strong);}" +
       ".plc-reason{width:100%;min-height:70px;font-family:inherit;font-size:0.85rem;padding:0.5rem;border:1px solid #ccc;border-radius:6px;box-sizing:border-box;}" +
       ".plc-in{font-family:inherit;font-size:0.85rem;padding:0.4rem 0.5rem;border:1px solid #ccc;border-radius:6px;margin:0.3rem 0.4rem 0.3rem 0;}" +
       ".plc-unlock{margin:0.4rem 0;}" +
-      ".plc-modal-status{font-size:0.78rem;color:#666;min-height:1.1em;margin-top:0.4rem;}" +
+      ".plc-modal-status{font-size:0.78rem;color:var(--text-muted);min-height:1.1em;margin-top:0.4rem;}" +
       ".plc-modal-status.err{color:var(--crimson,#a33);}" +
       ".plc-modal-actions{display:flex;justify-content:flex-end;gap:0.5rem;margin-top:0.8rem;}" +
       ".plc-btn,.plc-btn-go,.plc-btn-cancel,.plc-btn-submit{font-size:0.85rem;padding:0.4rem 0.9rem;border-radius:6px;cursor:pointer;border:1px solid #ccc;background:#f3f3f3;}" +
-      ".plc-btn-submit,.plc-btn-go{background:var(--navy-primary,#16324f);color:#fff;border-color:var(--navy-primary,#16324f);}" +
+      ".plc-btn-submit,.plc-btn-go{background:var(--navy-primary,#16324f);color:var(--on-accent);border-color:var(--navy-primary,#16324f);}" +
       ".tabled-archived-summary::-webkit-details-marker{display:none;}";
     var st = el("style", { "id": "plc-css" });
     st.textContent = css;
@@ -564,9 +597,23 @@
   }
 
   // ── Load + boot ──────────────────────────────────────────────────────────────
+  // Is the Activities surface present in the DOM? Pre-reorg the marker was
+  // #projectsGrid; the Activities-tab reorg dissolved that grid (the generator
+  // now emits ONLY the "Tabled & Archived" ledger between the Projects-Grid
+  // markers), so gridEl() is null on the live dashboard. Treat a nested
+  // .activity-kpi-card[data-pid] or the baked ledger as "on the Activities view"
+  // too — without this, run() would early-out on the real page and the overlay
+  // would never load, so a card tabled since the last daily regen would never
+  // reconcile (hide) on load. Still early-outs on other pages/tabs that render
+  // none of these.
+  function activitiesSurfacePresent() {
+    return !!(gridEl() ||
+      document.querySelector('.activity-kpi-card[data-pid]') ||
+      document.querySelector('.tabled-archived-wrap'));
+  }
   var _loading = false, _again = false;
   function run() {
-    if (!gridEl()) { mountControls(); return; }  // not on the Activities & Projects view yet
+    if (!activitiesSurfacePresent()) { mountControls(); return; }  // not on the Activities view yet
     if (_loading) { _again = true; return; }
     _loading = true; _again = false;
     sbGet("project_lifecycle?select=project_id,state,reason,updated_by,updated_at").then(function (rows) {

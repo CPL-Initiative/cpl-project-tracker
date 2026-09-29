@@ -233,7 +233,7 @@ function statusRunsSized(status, sz) {
 }
 
 // Activity descriptions from CPL Workplan
-const ACTIVITY_DESC = {
+const ACTIVITY_DESC_STATIC = {
   "Activity 1": {
     title: "Activity 1: Build AI-Enhanced CPL Infrastructure",
     shortTitle: "Technology & MAP Platform",
@@ -245,16 +245,35 @@ const ACTIVITY_DESC = {
     desc: "Faculty-led discipline workgroups develop and adopt statewide credit recommendations that translate industry certifications, military training, and professional experience into validated college credit, ensuring academic integrity and workforce alignment.",
   },
   "Activity 3": {
-    title: "Activity 3: CPL Students & College Success",
-    shortTitle: "CPL Students & College Success",
+    title: "Activity 3: Scale CPL Access, Awards, and Procedures",
+    shortTitle: "CPL Access, Awards & Procedures",
     desc: "Build the data infrastructure and student engagement pathways that track CPL offers, awards, transcription, and student outcomes, ensuring equitable access and measurable impact for all learners across the system.",
   },
   "Activity 4": {
-    title: "Activity 4: Partnerships, Policy & Scale",
-    shortTitle: "Partnerships, Policy & Scale",
+    title: "Activity 4: Sprints, Projects & Partnerships",
+    shortTitle: "Sprints, Projects & Partnerships",
     desc: "Launch targeted CPL sprints, demonstration projects, and cross-sector partnerships to accelerate adoption, advance sustainable policy and funding, and build professional capacity across all 116 colleges.",
   },
 };
+
+// Live Activity TITLE from the CPL_DATA snapshot (activity_kpis[].activity_name)
+// so an Activity rename on the Annual Workplan Goals tab flows into the generated
+// .docx reports. The formal per-Activity paragraph (desc) + shortTitle stay
+// authored here (richer than the brief workplan_goals.description one-liner).
+function buildActivityDesc() {
+  const out = {};
+  Object.keys(ACTIVITY_DESC_STATIC).forEach((k) => {
+    out[k] = Object.assign({}, ACTIVITY_DESC_STATIC[k]);
+  });
+  (DATA.activity_kpis || []).forEach((g) => {
+    const key = g.activity_id;  // "Activity N"
+    if (!key) return;
+    if (!out[key]) out[key] = {};
+    if (g.activity_name) out[key].title = g.activity_name;
+  });
+  return out;
+}
+const ACTIVITY_DESC = buildActivityDesc();
 
 // ══════════════════════════════════════════════
 //  MASTER REPORT
@@ -384,7 +403,8 @@ async function generateMasterReport() {
   }
 
   for (const [actName, actProjects] of Object.entries(activityGroups).sort()) {
-    const actInfo = ACTIVITY_DESC[actName] || {};
+    const actNum = (String(actName).match(/Activity\s+(\d+)/) || [])[1];
+    const actInfo = ACTIVITY_DESC['Activity ' + actNum] || {};
     children.push(new Paragraph({ children: [new PageBreak()] }));
 
     // Activity heading (big, colored, like the reference doc)
@@ -405,7 +425,6 @@ async function generateMasterReport() {
     }
 
     // Latest ACTIVITY-level update (RACI 📝 composer, key `activity:N`)
-    const actNum = (actName.match(/Activity\s+(\d+)/) || [])[1];
     const actUpd = actNum ? liveUpdates["activity:" + actNum] : null;
     if (actUpd && actUpd.body) {
       children.push(new Paragraph({
@@ -659,7 +678,8 @@ async function generateMasterReport() {
   let rowIdx = 0;
   for (const [actName, actProjects] of Object.entries(activityGroups).sort()) {
     // Activity group header row
-    const actInfo = ACTIVITY_DESC[actName] || {};
+    const actNum = (String(actName).match(/Activity\s+(\d+)/) || [])[1];
+    const actInfo = ACTIVITY_DESC['Activity ' + actNum] || {};
     summaryDataRows.push(new TableRow({
       children: [
         makeCell(actInfo.shortTitle || actName, { bold: true, color: NAVY, fill: "E8EDF2", colspan: 5, size: 18 }),

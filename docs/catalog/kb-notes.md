@@ -1,0 +1,519 @@
+---
+title: KB notes — catalog
+created: 2026-08-28
+updated: 2026-08-28
+tags: [meta, index, obsidian-target, generated]
+kb-status: internal
+obsidian-folder: cpl-project-tracker/catalog
+related:
+  - "[[docs/INDEX]]"
+---
+
+# KB notes — catalog
+
+**Generated** by `kb/_build_docs_index.py` from each doc's own frontmatter. Do not hand-edit — rebuild instead. Source: `docs/kb-notes/`.
+
+Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
+
+498 document(s).
+
+| Title | Type | Status | Created | Updated |
+|---|---|---|---|---|
+| [ADR — Judgment goes in curatable tables; mechanism stays in code](../kb-notes/adr-judgment-in-tables-mechanism-in-code.md) | adr | published | 2026-08-14 |  |
+| [ADR — live notes sit alongside the curated register, with a promotion path](../kb-notes/adr-notes-alongside-the-curated-register.md) | adr | published | 2026-08-05 | 2026-08-05 |
+| [ADR — Obsidian sync via vault-side clone (not edge function)](../kb-notes/adr-obsidian-vault-via-clone.md) | adr | published | 2026-05-27 | 2026-05-27 |
+| [ADR — Official C-ID/CCN ids are the common course reference; M-IDs only where none exists](../kb-notes/adr-official-ids-as-common-course-reference.md) | adr | published | 2026-06-10 | 2026-06-10 |
+| [ADR — Per-college funding-priority metric counts in the public dashboard (aggregate + suppression)](../kb-notes/adr-funding-priority-metrics-privacy.md) | adr | published | 2026-06-11 | 2026-06-11 |
+| [ADR — Public funding figures mask student counts under 10; units carry the money; dollars coarsen on the public page](../kb-notes/adr-funding-counts-mask-under-10-units-carry-the-money.md) | adr | published | 2026-09-03 | 2026-09-03 |
+| [ADR — Student-detail aggregates: k=10, published grain, and the reviewer/published split](../kb-notes/adr-student-detail-aggregate-disclosure-control.md) | adr | published | 2026-08-08 | 2026-08-11 |
+| [ADR — Student-impact counts in the public CER (aggregate + small-cell suppression)](../kb-notes/adr-cer-student-impact-counts-privacy.md) | adr | published | 2026-06-04 | 2026-06-04 |
+| [ADR — The re-mint approval queue: a queue, never a fire button, and where its decision right sits](../kb-notes/adr-remint-approval-queue-decision-rights.md) | adr | published | 2026-09-05 | 2026-09-05 |
+| [COBI org layer — one platform, "site" as a view dimension (not a repo/site per org)](../kb-notes/adr-cobi-org-layer.md) | adr | published | 2026-07-14 | 2026-07-14 |
+| [Level-collapsing consolidation — over-merge beats under-merge for CPL](../kb-notes/adr-level-collapsing-consolidation.md) | adr | published | 2026-06-16 | 2026-06-16 |
+| [Pull from the source rather than accept a push](../kb-notes/adr-pull-from-the-source-rather-than-accept-a-push.md) | adr | published | 2026-08-19 | 2026-08-19 |
+| [Reference-data home — committed JSON by default, Supabase only for live curation](../kb-notes/adr-reference-data-committed-json-vs-supabase.md) | adr | published | 2026-06-18 | 2026-06-18 |
+| [Supersede, don't mutate, at the synthetic identity layer](../kb-notes/adr-supersede-dont-mutate-synthetic-layer.md) | adr | published | 2026-05-27 | 2026-05-27 |
+| [Surface, don't edit, a read-only system of record](../kb-notes/adr-surface-dont-edit-readonly-system-of-record.md) | adr | published | 2026-06-30 | 2026-06-30 |
+| [The side menu as a curator overlay over code defaults](../kb-notes/adr-the-side-menu-as-an-overlay-over-code-defaults.md) | adr | published | 2026-08-14 | 2026-08-14 |
+| [Unified memory table — one cross-repo store for facts, pitfalls, opportunities, wishlist, and timeline events](../kb-notes/adr-unified-memory-table.md) | adr | published | 2026-07-24 | 2026-07-24 |
+| [The CPL merge lens — the student-repeat test (anchored to Title 5 §55050's "similar" standard)](../kb-notes/glossary-cpl-merge-lens-student-repeat-test.md) | glossary | published | 2026-07-13 | 2026-07-13 |
+| [\"Not signed in\" and \"only these people\" cannot both hold](../kb-notes/methodology-not-signed-in-and-only-these-people-cannot-both-hold.md) | methodology | published | 2026-09-08 | 2026-09-08 |
+| [A ban is only as wide as the files it opens](../kb-notes/methodology-a-ban-is-only-as-wide-as-the-files-it-opens.md) | methodology | published | 2026-09-15 | 2026-09-24 |
+| [A blocked path hides every defect behind it — budget for a chain, not a fix](../kb-notes/methodology-a-blocked-path-hides-the-defects-behind-it.md) | methodology | published | 2026-08-24 | 2026-08-24 |
+| [A bound is tested by value, not by the model's clamp count](../kb-notes/methodology-a-bound-is-tested-by-value-not-by-the-clamp-count.md) | methodology | published | 2026-08-28 | 2026-08-28 |
+| [A bug report is evidence, not diagnosis — and the control that kills your favorite hypothesis](../kb-notes/methodology-a-bug-report-is-evidence-not-diagnosis.md) | methodology | published | 2026-09-07 | 2026-09-08 |
+| [A bulk POST is one statement over the union of its keys](../kb-notes/methodology-a-bulk-post-is-one-statement-over-the-union-of-its-keys.md) | methodology | published | 2026-08-15 | 2026-08-15 |
+| [A cache breakpoint must LEAD the prompt, and what sits behind it must not move](../kb-notes/methodology-a-cache-breakpoint-must-lead-and-must-not-move.md) | methodology | published | 2026-08-23 | 2026-08-23 |
+| [A capped instruction list is a zero-sum budget, and the cap that binds is rarely the one on display](../kb-notes/methodology-a-capped-instruction-list-is-a-zero-sum-budget.md) | methodology | published | 2026-08-21 | 2026-08-21 |
+| [A capped list must never read as a census](../kb-notes/methodology-a-capped-list-must-never-read-as-a-census.md) | methodology | published | 2026-08-21 | 2026-08-21 |
+| [A capped retrieval must rank by relevance — popularity is only a tiebreaker](../kb-notes/methodology-capped-retrieval-ranks-by-relevance.md) | methodology | published | 2026-07-02 | 2026-07-02 |
+| [A change inherits every reference into it, and the same-cycle reference is the one you miss](../kb-notes/methodology-a-change-inherits-every-reference-into-it.md) | methodology | published | 2026-08-26 | 2026-08-26 |
+| [A check on the message says nothing about where it lands](../kb-notes/methodology-a-check-on-the-message-says-nothing-about-where-it-lands.md) | methodology | published | 2026-09-09 | 2026-09-09 |
+| [A check that cannot fail reads exactly like a clean result](../kb-notes/methodology-a-check-that-cannot-fail-reads-as-a-clean-result.md) | methodology | published | 2026-09-09 | 2026-09-10 |
+| [A check that cannot fire on what it names — disabled controls, and the falsification pass](../kb-notes/methodology-a-check-that-cannot-fire-on-what-it-names.md) | methodology | published | 2026-09-09 | 2026-09-09 |
+| [A check that never registers can never fail](../kb-notes/methodology-a-check-that-never-registers-can-never-fail.md) | methodology | published | 2026-08-15 | 2026-08-21 |
+| [A classification code cannot say who a program is for](../kb-notes/methodology-a-code-cannot-say-who-a-program-is-for.md) | methodology | published | 2026-09-17 | 2026-09-17 |
+| [A click-outside-closes overlay must test the click TARGET, never walk ancestors](../kb-notes/methodology-overlay-close-on-backdrop-target-only.md) | methodology | published | 2026-07-02 | 2026-07-02 |
+| [A client cannot see the cap the server enforces, so a two-half feature fails in the half that deployed](../kb-notes/methodology-a-client-cannot-see-the-cap-the-server-enforces.md) | methodology | published | 2026-08-25 | 2026-08-25 |
+| [A client gate stricter than its RLS policy fails silently, toward lost work](../kb-notes/methodology-a-client-gate-must-mirror-its-own-rls-policy.md) | methodology | published | 2026-08-28 | 2026-08-28 |
+| [A code change is a prefix re-key that keeps the number, not a re-sequence](../kb-notes/methodology-a-code-change-is-a-prefix-rekey-not-a-resequence.md) | methodology | published | 2026-09-03 | 2026-09-03 |
+| [A collapsed section must still inform, or it is hidden rather than minimal](../kb-notes/methodology-a-collapsed-section-must-still-inform.md) | methodology | published | 2026-08-12 | 2026-08-12 |
+| [A compact formatter is calibrated to a magnitude, and a second lane rarely shares it](../kb-notes/methodology-a-compact-formatter-is-calibrated-to-a-magnitude.md) | methodology | published | 2026-08-27 | 2026-08-27 |
+| [A concatenated haystack penalises your best-curated record](../kb-notes/methodology-a-concatenated-haystack-penalises-your-best-record.md) | methodology | published | 2026-08-10 | 2026-08-10 |
+| [A conditional key breaks a bulk upsert, and it fails positionally](../kb-notes/methodology-a-conditional-key-breaks-a-bulk-upsert.md) | methodology | published | 2026-08-13 | 2026-08-13 |
+| [A conflicted pull request cannot produce a CI run, so read mergeable_state before blaming CI](../kb-notes/methodology-a-conflicted-pr-cannot-produce-a-ci-run.md) | methodology | published | 2026-08-28 | 2026-08-28 |
+| [A control reported as broken may be live on a surface that draws nothing](../kb-notes/methodology-a-control-can-be-live-on-a-surface-that-draws-nothing.md) | methodology | published | 2026-09-05 | 2026-09-05 |
+| [A control that does nothing — read the request log first](../kb-notes/methodology-a-control-that-does-nothing-read-the-request-log-first.md) | methodology | published | 2026-09-23 | 2026-09-23 |
+| [A conversation is scoped state — what you send must never exceed what you show](../kb-notes/methodology-a-conversation-is-scoped-state.md) | methodology | published | 2026-08-22 | 2026-08-22 |
+| [A copy detector must read the rendered string, not the lines the author typed](../kb-notes/methodology-a-copy-detector-must-read-the-rendered-string.md) | methodology | published | 2026-08-14 | 2026-08-14 |
+| [A copy with no refresh path is a fossil](../kb-notes/methodology-a-copy-with-no-refresh-path-is-a-fossil.md) | methodology | published | 2026-08-13 | 2026-08-13 |
+| [A correct measurement can name the wrong place — re-check the attribution, not just the number](../kb-notes/methodology-a-correct-measurement-can-name-the-wrong-place.md) | methodology | published | 2026-09-06 | 2026-09-06 |
+| [A count gate cannot see a reorder](../kb-notes/methodology-a-count-gate-cannot-see-a-reorder.md) | methodology | published | 2026-08-20 | 2026-08-20 |
+| [A count-based guard passes when its subject disappears](../kb-notes/methodology-a-count-based-guard-passes-when-its-subject-disappears.md) | methodology | published | 2026-09-09 | 2026-09-09 |
+| [A coverage line takes both numbers from one universe](../kb-notes/methodology-a-coverage-line-takes-both-numbers-from-one-universe.md) | methodology | published | 2026-09-07 | 2026-09-07 |
+| [A crosswalk's value is the lint, not the mapping](../kb-notes/methodology-a-crosswalks-value-is-the-lint-not-the-mapping.md) | methodology | published | 2026-08-21 | 2026-08-21 |
+| [A curation table that cannot store a reason will never build a reason KB](../kb-notes/methodology-a-curation-table-that-cannot-store-a-reason.md) | methodology | published | 2026-09-20 | 2026-09-20 |
+| [A curator ruling must be attributed data, not a code branch](../kb-notes/methodology-a-curator-ruling-must-be-attributed-data.md) | methodology | published | 2026-08-21 | 2026-08-21 |
+| [A deduplication has a scope, and the scope is one measure — not the record](../kb-notes/methodology-a-deduplication-has-a-scope.md) | methodology | published | 2026-08-23 | 2026-08-23 |
+| [A default payout masks the data gap beneath it](../kb-notes/methodology-a-default-payout-masks-the-gap-beneath-it.md) | methodology | published | 2026-07-31 | 2026-07-31 |
+| [A defect that produces the value you expected is invisible](../kb-notes/methodology-a-defect-that-produces-the-expected-value-is-invisible.md) | methodology | published | 2026-08-27 | 2026-08-27 |
+| [A deploy that deploys nothing leaves the old environment running](../kb-notes/methodology-a-deploy-that-deploys-nothing-leaves-the-old-environment-running.md) | methodology | published | 2026-09-11 | 2026-09-11 |
+| [A derived summary field used as a filter is a membership test in disguise](../kb-notes/methodology-a-summary-field-can-be-a-retrieval-gate.md) | methodology | published | 2026-08-13 | 2026-08-13 |
+| [A diagnosis that does not stop the run is a log line: the 2026-09-08 cron outage](../kb-notes/methodology-a-diagnosis-that-does-not-stop-the-run-is-a-log-line.md) | methodology | published | 2026-09-10 | 2026-09-10 |
+| [A display name is not a key — and the entry that still matches is the one that lies](../kb-notes/methodology-a-display-name-is-not-a-key.md) | methodology | published | 2026-09-15 | 2026-09-15 |
+| [A double-decoded string needs the codec that decoded it — cp1252, a C1 passthrough, and repair before you collapse whitespace](../kb-notes/methodology-a-double-decoded-string-needs-the-codec-that-decoded-it.md) | methodology | published | 2026-09-18 | 2026-09-18 |
+| [A dropped row still needs its own name](../kb-notes/methodology-a-dropped-row-still-needs-its-own-name.md) | methodology | published | 2026-09-17 | 2026-09-17 |
+| [A failed read is not an empty result — and an optimistic write must precede its repaint](../kb-notes/methodology-a-failed-read-is-not-an-empty-result.md) | methodology | published | 2026-08-07 | 2026-08-07 |
+| [A feature-test on a method that does not exist is indistinguishable from the feature being absent](../kb-notes/methodology-a-feature-test-on-a-missing-method-fails-silent.md) | methodology | published | 2026-09-11 | 2026-09-11 |
+| [A field defaulted in the consumer looks computed and never moves](../kb-notes/methodology-a-defaulted-field-looks-computed-and-never-moves.md) | methodology | published | 2026-09-02 | 2026-09-02 |
+| [A field the resolver never reaches can disagree with the record forever](../kb-notes/methodology-a-field-the-resolver-never-reaches-can-disagree-forever.md) | methodology | published | 2026-08-28 | 2026-08-28 |
+| [A figure is only wrong relative to the payload it names](../kb-notes/methodology-a-figure-is-only-wrong-relative-to-the-payload-it-names.md) | methodology | published | 2026-09-06 | 2026-09-06 |
+| [A figure tagged to two owners is claimed twice](../kb-notes/methodology-a-figure-tagged-to-two-owners-is-claimed-twice.md) | methodology | published | 2026-09-14 | 2026-09-14 |
+| [A fill that does not flip needs ink that does not flip either](../kb-notes/methodology-a-fill-that-does-not-flip-needs-ink-that-does-not-either.md) | methodology | published | 2026-09-09 | 2026-09-09 |
+| [A filter must be able to see what you are about to declare missing](../kb-notes/methodology-a-filter-must-be-able-to-see-what-you-declare-missing.md) | methodology | published | 2026-09-11 | 2026-09-11 |
+| [A filter needs a field — prose is not a facet](../kb-notes/methodology-a-filter-needs-a-field.md) | methodology | published | 2026-08-18 |  |
+| [A filter, the column that justifies it, and the export must share one source](../kb-notes/methodology-a-filter-and-what-justifies-it-must-share-one-source.md) | methodology | published | 2026-08-16 | 2026-08-16 |
+| [A fix can be right about the complaint and wrong about the axis](../kb-notes/methodology-a-fix-can-be-right-about-the-complaint-and-wrong-about-the-axis.md) | methodology | published | 2026-09-06 | 2026-09-06 |
+| [A fixture too small to reproduce the defect makes the guard a decoration](../kb-notes/methodology-a-fixture-too-small-to-fail-makes-a-guard-a-decoration.md) | methodology | published | 2026-09-06 | 2026-09-06 |
+| [A floor lives in test fixtures as well as in code](../kb-notes/methodology-a-floor-lives-in-fixtures-as-well-as-code.md) | methodology | published | 2026-09-03 | 2026-09-03 |
+| [A floor the layout cannot go under — why a page scrolls sideways on a phone, in four spellings](../kb-notes/methodology-a-floor-the-layout-cannot-go-under.md) | methodology | published | 2026-09-09 | 2026-09-09 |
+| [A fold at the label layer is not a fold — it hides the duplicate instead of resolving it](../kb-notes/methodology-a-fold-at-the-label-layer-is-not-a-fold.md) | methodology | published | 2026-08-17 | 2026-08-17 |
+| [A freehand catalog needs an authority file, not a vote](../kb-notes/methodology-a-freehand-catalog-needs-an-authority-file-not-a-vote.md) | methodology | published | 2026-09-16 | 2026-09-16 |
+| [A gate cannot protect the step that fills it](../kb-notes/methodology-a-gate-cannot-protect-the-step-that-fills-it.md) | methodology | published | 2026-08-19 | 2026-08-19 |
+| [A generated file accepts your edit, and that is what makes it dangerous](../kb-notes/methodology-a-generated-file-accepts-your-edit.md) | methodology | published | 2026-09-18 | 2026-09-18 |
+| [A generator committed behind its output is a trap, not a convenience](../kb-notes/methodology-a-generator-that-lags-its-output-is-a-trap.md) | methodology | published | 2026-09-05 | 2026-09-05 |
+| [A generator does not know what a comment is](../kb-notes/methodology-a-generator-does-not-know-what-a-comment-is.md) | methodology | published | 2026-09-18 | 2026-09-18 |
+| [A globe shows a hemisphere: real estate on a screen is the zoom range, not the surface](../kb-notes/methodology-a-globe-shows-a-hemisphere-real-estate-is-the-zoom-range.md) | methodology | published | 2026-09-07 | 2026-09-07 |
+| [A grain-invariant measure can still be the wrong one](../kb-notes/methodology-a-grain-invariant-measure-can-still-be-the-wrong-one.md) | methodology | published | 2026-08-10 | 2026-08-10 |
+| [A green check you did not scope is not evidence](../kb-notes/methodology-a-green-check-you-did-not-scope-is-not-evidence.md) | methodology | published | 2026-08-23 | 2026-08-23 |
+| [A grid past a few hundred thousand cells needs a window, not chunks](../kb-notes/methodology-a-grid-past-a-few-hundred-thousand-cells-needs-a-window-not-chunks.md) | methodology | internal | 2026-09-24 | 2026-09-24 |
+| [A grouping key must come from the authoritative set, not from the rows being grouped](../kb-notes/methodology-a-grouping-key-must-come-from-the-authoritative-set.md) | methodology | published | 2026-08-13 | 2026-08-13 |
+| [A guard on generated output cannot see a regression staged in its source](../kb-notes/methodology-a-guard-on-generated-output-cannot-see-its-source.md) | methodology | published | 2026-09-10 | 2026-09-10 |
+| [A guard on the wrong generation of descendant is not a guard](../kb-notes/methodology-a-guard-on-the-wrong-generation-of-descendant-is-not-a-guard.md) | methodology | published | 2026-09-15 | 2026-09-15 |
+| [A guard test must not be able to fire the action it guards](../kb-notes/methodology-a-guard-test-must-not-be-able-to-fire-the-guarded-action.md) | methodology | published | 2026-08-19 | 2026-08-19 |
+| [A guard that fails on truth gets muted](../kb-notes/methodology-a-guard-that-fails-on-truth-gets-muted.md) | methodology | published | 2026-08-09 | 2026-08-09 |
+| [A guard that supplies its own input tests only the half after the input](../kb-notes/methodology-a-guard-that-supplies-its-own-input-tests-only-half.md) | methodology | published | 2026-09-12 | 2026-09-12 |
+| [A guard whose protection depends on the order you work in is worse than no guard](../kb-notes/methodology-a-guard-that-depends-on-order-is-worse-than-none.md) | methodology | published | 2026-09-09 | 2026-09-09 |
+| [A guardrail that only forbids disables the feature — restrain salesmanship, not facts](../kb-notes/methodology-a-guardrail-that-only-forbids-disables-the-feature.md) | methodology | published | 2026-08-07 | 2026-08-07 |
+| [A guidance rule that references a fact the request does not carry is an instruction to guess](../kb-notes/methodology-a-guidance-rule-must-name-the-fact-it-depends-on.md) | methodology | published | 2026-08-22 | 2026-08-22 |
+| [A harness must verify its own healthy fixture, or growth repaints the scoreboard](../kb-notes/methodology-a-harness-must-verify-its-own-fixture.md) | methodology | published | 2026-08-30 |  |
+| [A hide affordance must suppress the item in the report too — reuse the class the export already strips](../kb-notes/methodology-hide-must-suppress-the-export.md) | methodology | published | 2026-07-23 | 2026-07-23 |
+| [A human-gated practice becomes a machine-checked one](../kb-notes/methodology-a-human-gated-practice-becomes-a-machine-checked-one.md) | methodology | published | 2026-08-30 |  |
+| [A knowledge base needs a lint pass, not just an ingest and a query](../kb-notes/methodology-a-knowledge-base-needs-a-lint-pass.md) | methodology | published | 2026-08-09 | 2026-08-09 |
+| [A label that decides behavior is a policy switch, not a label](../kb-notes/methodology-a-label-that-decides-behaviour-is-a-policy-switch.md) | methodology | published | 2026-08-06 | 2026-08-06 |
+| [A lane file is a summary of a measurement, not the measurement](../kb-notes/methodology-a-lane-file-is-a-summary-of-a-measurement.md) | methodology | published | 2026-09-13 | 2026-09-13 |
+| [A layout that cannot shrink does not wrap — it overflows and paints over its neighbour](../kb-notes/methodology-a-grid-item-sized-to-its-content-overflows-its-track.md) | methodology | published | 2026-09-04 | 2026-09-04 |
+| [A limit nobody can see eats work, and a limit enforced twice drifts](../kb-notes/methodology-a-silent-cap-eats-work-and-a-paired-cap-drifts.md) | methodology | published | 2026-08-12 | 2026-08-12 |
+| [A limit that bounds one side of a union lets the other side drown it](../kb-notes/methodology-bound-both-sides-of-a-union.md) | methodology | published | 2026-08-13 | 2026-08-13 |
+| [A live rename must be order-proof, because the database and the deploy cannot be simultaneous](../kb-notes/methodology-a-live-rename-must-be-order-proof.md) | methodology | published | 2026-08-15 | 2026-08-15 |
+| [A live-painted page still goes stale in its prose](../kb-notes/methodology-a-live-painted-page-still-goes-stale-in-its-prose.md) | methodology | published | 2026-09-01 | 2026-09-02 |
+| [A liveness set must be able to contain what it judges — or it condemns by construction](../kb-notes/methodology-a-liveness-set-must-be-able-to-contain-what-it-judges.md) | methodology | published | 2026-09-05 | 2026-09-05 |
+| [A locked mock's figures of record are the port's anchor test](../kb-notes/methodology-a-locked-mock-s-figures-of-record-are-the-port-s-anchor-test.md) | methodology | published | 2026-08-31 | 2026-08-31 |
+| [A manager must show everything it manages, or say what it cannot see](../kb-notes/methodology-a-manager-must-show-everything-it-manages.md) | methodology | published | 2026-08-15 | 2026-08-15 |
+| [A materialized view cannot carry RLS — its suppression has no backstop](../kb-notes/methodology-a-materialized-view-cannot-carry-rls.md) | methodology | published | 2026-08-11 | 2026-08-11 |
+| [A measure everyone already clears incentivizes nothing — the same failure as one nobody can measure](../kb-notes/methodology-a-measure-everyone-clears-incentivizes-nothing.md) | methodology | published | 2026-09-01 | 2026-09-01 |
+| [A mechanism that looks redundant may be carrying a second job the table cannot show](../kb-notes/methodology-a-mechanism-that-looks-redundant-may-be-carrying-a-second-job.md) | methodology | published | 2026-08-22 | 2026-08-22 |
+| [A memory table goes stale in its claims, not its links — lint the structure, read the claims](../kb-notes/methodology-a-memory-table-goes-stale-in-its-claims-not-its-links.md) | methodology | published | 2026-09-05 | 2026-09-05 |
+| [A memory-bound suite scales across machines, and the check keeps its name](../kb-notes/methodology-a-memory-bound-suite-scales-across-machines-not-workers.md) | methodology | published | 2026-09-24 | 2026-09-24 |
+| [A message must ride every exit — a note computed and then dropped is the same as no note](../kb-notes/methodology-a-message-must-ride-every-exit.md) | methodology | published | 2026-09-08 | 2026-09-08 |
+| [A metric matched by its prose mis-measures the moment a second lane exists](../kb-notes/methodology-a-metric-matched-by-its-prose-mis-measures-once-a-second-lane-exists.md) | methodology | published | 2026-08-26 | 2026-08-26 |
+| [A mirror is the non-destructive form of a copy](../kb-notes/methodology-a-mirror-is-the-non-destructive-form-of-a-copy.md) | methodology | published | 2026-08-20 | 2026-08-20 |
+| [A model switch carries its defaults with it, not just its price](../kb-notes/methodology-a-model-switch-carries-its-defaults-not-just-its-price.md) | methodology | published | 2026-09-11 | 2026-09-11 |
+| [A monitor that is not a browser cannot see a browser's failure](../kb-notes/methodology-a-monitor-that-is-not-a-browser-cannot-see-a-browser-failure.md) | methodology | published | 2026-09-17 | 2026-09-17 |
+| [A negative result needs a positive control in the same run](../kb-notes/methodology-a-negative-result-needs-a-positive-control.md) | methodology | published | 2026-08-19 | 2026-08-19 |
+| [A new assertion must fail in the shape the grid counts — or the grid reads "0 failing" over a failed run](../kb-notes/methodology-a-new-assertion-must-fail-in-the-shape-the-grid-counts.md) | methodology | published | 2026-09-18 | 2026-09-18 |
+| [A normalization and the screens that judge it must see the same text](../kb-notes/methodology-a-normalisation-and-its-screens-must-see-the-same-text.md) | methodology | published | 2026-08-13 |  |
+| [A one-rule class must be checked against its own text](../kb-notes/methodology-a-one-rule-class-must-be-checked-against-its-own-text.md) | methodology | published | 2026-08-19 | 2026-08-19 |
+| [A one-shot hand-off must not consume what it cannot deliver](../kb-notes/methodology-a-one-shot-handoff-must-not-consume-what-it-cannot-deliver.md) | methodology | published | 2026-08-13 | 2026-08-13 |
+| [A pane painted only by its event is blank after every re-render](../kb-notes/methodology-a-pane-painted-only-by-its-event-is-blank-after-a-re-render.md) | methodology | published | 2026-09-10 | 2026-09-10 |
+| [A partial ARIA pattern is worse than none — take the native control instead](../kb-notes/methodology-a-partial-aria-pattern-is-worse-than-none.md) | methodology | published | 2026-08-16 | 2026-08-16 |
+| [A percentage must never round up into a claim it cannot support](../kb-notes/methodology-a-percentage-must-not-round-up-into-a-claim.md) | methodology | published | 2026-08-11 | 2026-08-11 |
+| [A phrase sweep misses what a line break splits](../kb-notes/methodology-a-phrase-sweep-misses-what-a-line-break-splits.md) | methodology | published | 2026-08-31 | 2026-08-31 |
+| [A pipe discards a command's verdict](../kb-notes/methodology-a-pipe-discards-a-commands-verdict.md) | methodology | published | 2026-09-15 | 2026-09-15 |
+| [A piped test run reports the pipe's exit, not the suite's](../kb-notes/methodology-a-piped-test-run-reports-the-pipes-exit.md) | methodology | published | 2026-08-30 |  |
+| [A pipeline's exit status is its last command's, so `\| tail` reports success for a failing suite](../kb-notes/methodology-a-pipelines-exit-status-is-its-last-commands.md) | methodology | published | 2026-09-09 | 2026-09-09 |
+| [A place is an anchor, not a college — and the words that describe the ask are not the topic](../kb-notes/methodology-a-place-is-an-anchor-not-a-college.md) | methodology | published | 2026-09-18 | 2026-09-18 |
+| [A prefix match on a stem is not a match on the word](../kb-notes/methodology-a-prefix-match-on-a-stem-is-not-a-match-on-the-word.md) | methodology | published | 2026-09-17 | 2026-09-17 |
+| [A presentation rule is the purest push case there is](../kb-notes/methodology-a-presentation-rule-is-the-purest-push-case.md) | methodology | published | 2026-08-29 | 2026-08-29 |
+| [A program's CIP labels the program, not the courses it lists](../kb-notes/methodology-a-program-cip-labels-the-program-not-its-courses.md) | methodology | published | 2026-09-25 | 2026-09-25 |
+| [A proposal standing in for expert judgment needs two signals of different kinds](../kb-notes/methodology-two-signals-for-a-judgment-proposal.md) | methodology | published | 2026-08-13 | 2026-08-13 |
+| [A provenance label must say why, not what](../kb-notes/methodology-a-provenance-label-must-say-why-not-what.md) | methodology | published | 2026-08-13 | 2026-08-13 |
+| [A provenance tier must encode what you could NOT check](../kb-notes/methodology-a-tier-must-encode-what-you-could-not-check.md) | methodology | published | 2026-08-09 | 2026-08-09 |
+| [A published asset with zero uptake is an outreach worklist, not a build backlog](../kb-notes/methodology-dormant-asset-worklist.md) | methodology | published | 2026-08-05 | 2026-08-05 |
+| [A ranking rule is a claim about where variance lives — re-derive it per corpus](../kb-notes/methodology-a-ranking-rule-is-a-claim-about-where-variance-lives.md) | methodology | internal | 2026-09-21 |  |
+| [A receipt measures a worklist once; a lane recomputes it every build](../kb-notes/methodology-a-receipt-measures-a-worklist-once-a-lane-recomputes-it-live.md) | methodology | published | 2026-09-04 | 2026-09-04 |
+| [A remembered toggle hides the default from its author](../kb-notes/methodology-a-remembered-toggle-hides-the-default-from-its-author.md) | methodology | published | 2026-09-02 | 2026-09-02 |
+| [A report must read the screen, not recompute it](../kb-notes/methodology-a-report-must-read-the-screen-not-recompute-it.md) | methodology | published | 2026-08-17 | 2026-08-17 |
+| [A retrieval miss and a data gap look identical from the answer](../kb-notes/methodology-a-retrieval-miss-and-a-data-gap-look-identical.md) | methodology | published | 2026-08-11 | 2026-08-11 |
+| [A retrieval route costs what the synonym table decides, and the batch waits for the slowest route](../kb-notes/methodology-a-retrieval-route-costs-what-the-synonym-table-decides.md) | methodology | published | 2026-09-17 | 2026-09-17 |
+| [A rotating credential cannot be cached](../kb-notes/methodology-a-rotating-credential-cannot-be-cached.md) | methodology | published | 2026-08-15 | 2026-08-15 |
+| [A rule that is right for reading can be wrong for writing](../kb-notes/methodology-a-rule-that-is-right-for-reading-can-be-wrong-for-writing.md) | methodology | published | 2026-09-07 | 2026-09-07 |
+| [A rule you wrote down is not a rule you applied](../kb-notes/methodology-a-rule-you-wrote-is-not-a-rule-you-applied.md) | methodology | published | 2026-08-21 | 2026-09-04 |
+| [A safe fallback is safe only for the caller it was written for](../kb-notes/methodology-a-safe-fallback-is-caller-specific.md) | methodology | published | 2026-08-11 | 2026-08-11 |
+| [A saved setting is not the effective value — ask the model, not the config](../kb-notes/methodology-a-saved-setting-is-not-the-effective-value.md) | methodology | published | 2026-08-26 | 2026-08-26 |
+| [A scoped question may need a different instrument, not a filter](../kb-notes/methodology-a-scoped-question-may-need-a-different-instrument.md) | methodology | published | 2026-08-19 | 2026-08-19 |
+| [A score measured in one population is not a score in another](../kb-notes/methodology-a-score-measured-in-one-population-is-not-a-score-in-another.md) | methodology | published | 2026-09-17 | 2026-09-17 |
+| [A screen and its export must share a scope, not a shape](../kb-notes/methodology-screen-and-export-share-a-scope-not-a-shape.md) | methodology | published | 2026-08-28 | 2026-08-28 |
+| [A second bound breaks a pin-as-you-go solver — one-sided is monotone, two-sided is not](../kb-notes/methodology-a-second-bound-breaks-a-pin-as-you-go-solver.md) | methodology | published | 2026-08-22 | 2026-08-22 |
+| [A second copy of a fact is a stale copy waiting](../kb-notes/methodology-a-second-copy-of-a-fact-is-a-stale-copy-waiting.md) | methodology | published | 2026-08-25 | 2026-08-25 |
+| [A second look shown the verdict rubber-stamps it — ask the negative instead](../kb-notes/methodology-a-second-look-shown-the-verdict-rubber-stamps-it.md) | methodology | published | 2026-09-21 | 2026-09-21 |
+| [A second PR stacked on a just-merged branch can squash to an empty commit — verify main](../kb-notes/methodology-stacked-pr-empty-squash.md) | methodology | published | 2026-06-23 | 2026-06-23 |
+| [A self-contained injected component must paint its own canvas, not just its text](../kb-notes/methodology-self-contained-injected-component-styling.md) | methodology | published | 2026-06-02 | 2026-06-02 |
+| [A settled ruling does not enforce itself — the consumer has to change](../kb-notes/methodology-a-settled-ruling-does-not-enforce-itself.md) | methodology | published | 2026-08-13 | 2026-09-27 |
+| [A share is not a fact until you have measured the whole](../kb-notes/methodology-a-share-is-not-a-fact-until-you-have-measured-the-whole.md) | methodology | published | 2026-09-11 | 2026-09-11 |
+| [A shared credential can only scope to a surface that is exclusive to its group](../kb-notes/methodology-a-shared-credential-can-only-scope-to-an-exclusive-surface.md) | methodology | published | 2026-08-12 | 2026-08-12 |
+| [A silent input cap is a content swap, and the model fills the vacuum with its own instructions](../kb-notes/methodology-a-silent-input-cap-is-a-content-swap.md) | methodology | published | 2026-08-24 | 2026-08-24 |
+| [A similarity threshold can't bridge a zero-overlap synonym — use a curated synonym map](../kb-notes/methodology-synonym-map-vs-similarity-threshold.md) | methodology | published | 2026-06-16 | 2026-06-18 |
+| [A single-decider guard is only as wide as the files it reads](../kb-notes/methodology-a-single-decider-guard-is-only-as-wide-as-the-files-it-reads.md) | methodology | published | 2026-09-19 | 2026-09-19 |
+| [A slow build fingerprints its inputs so the check stays cheap](../kb-notes/methodology-a-slow-build-fingerprints-its-inputs-so-the-check-stays-cheap.md) | methodology | published | 2026-09-07 | 2026-09-07 |
+| [A snapshot cannot be the authority on intent](../kb-notes/methodology-a-snapshot-cannot-be-the-authority-on-intent.md) | methodology | published | 2026-09-07 | 2026-09-07 |
+| [A snapshot of a live model is a claim that decays](../kb-notes/methodology-a-snapshot-of-a-live-model-is-a-claim-that-decays.md) | methodology | published | 2026-08-23 | 2026-08-23 |
+| [A soft-delete overlay on dual-rendered rows must be scoped to ONE render layer](../kb-notes/methodology-layer-scoped-soft-delete-dual-rendered-rows.md) | methodology | published | 2026-07-02 | 2026-07-02 |
+| [A solved prerequisite does not notify its consumers](../kb-notes/methodology-a-solved-prerequisite-does-not-notify-its-consumers.md) | methodology | published | 2026-09-17 | 2026-09-17 |
+| [A source file that abbreviates titles fakes an absence](../kb-notes/methodology-a-source-file-that-abbreviates-titles-fakes-an-absence.md) | methodology | published | 2026-08-12 | 2026-08-12 |
+| [A staged state lives on the model, and every view asks it](../kb-notes/methodology-a-staged-state-lives-on-the-model-and-every-view-asks-it.md) | methodology | published | 2026-09-07 | 2026-09-07 |
+| [A static guard should assert the contract, not the argument order](../kb-notes/methodology-assert-the-contract-not-the-argument-order.md) | methodology | published | 2026-08-11 | 2026-08-11 |
+| [A status lane must link to the remedy lane, or "done" measures attention](../kb-notes/methodology-a-status-lane-must-link-to-the-remedy-lane.md) | methodology | published | 2026-08-12 | 2026-08-12 |
+| [A store's echo is not your state — clone what a snapshot delivers](../kb-notes/methodology-a-stores-echo-is-not-your-state.md) | methodology | published | 2026-09-05 | 2026-09-05 |
+| [A store's freshness tracks whether its update is unconditional](../kb-notes/methodology-freshness-tracks-conditionality-not-intent.md) | methodology | published | 2026-08-29 | 2026-08-29 |
+| [A style rule must reach only the markup that supplies its inputs](../kb-notes/methodology-a-style-rule-must-reach-only-the-markup-that-supplies-its-inputs.md) | methodology | published | 2026-09-29 | 2026-09-29 |
+| [A styling class is an API, so borrowing one joins every selector that reads it](../kb-notes/methodology-a-styling-class-is-an-api.md) | methodology | published | 2026-09-12 | 2026-09-12 |
+| [A successful import is not a correct one](../kb-notes/methodology-a-successful-import-is-not-a-correct-one.md) | methodology | published | 2026-08-08 | 2026-08-08 |
+| [A summary field will be read as the whole record](../kb-notes/methodology-a-summary-field-is-not-the-record.md) | methodology | published | 2026-08-13 | 2026-08-13 |
+| [A summary surface must share the unit of the detail it summarizes](../kb-notes/methodology-a-summary-must-share-the-unit-of-its-detail.md) | methodology | published | 2026-08-01 | 2026-08-01 |
+| [A sweep scoped by a proxy leaves a shadow](../kb-notes/methodology-a-sweep-scoped-by-a-proxy-leaves-a-shadow.md) | methodology | published | 2026-08-09 | 2026-08-09 |
+| [A tag scan cannot see a fetch](../kb-notes/methodology-a-tag-scan-cannot-see-a-fetch.md) | methodology | published | 2026-08-19 | 2026-08-19 |
+| [A team-curated Supabase table needs team_pass_ok() on UPDATE too, not just SELECT + INSERT](../kb-notes/methodology-team-curated-table-needs-update-rls.md) | methodology | published | 2026-07-26 | 2026-07-26 |
+| [A test file is a memory budget, and the process boundary is the only allocator](../kb-notes/methodology-a-test-file-is-a-memory-budget.md) | methodology | published | 2026-08-20 | 2026-08-20 |
+| [A test must report a missing thing, not dereference it](../kb-notes/methodology-a-test-must-report-a-missing-thing-not-dereference-it.md) | methodology | published | 2026-08-25 | 2026-08-25 |
+| [A test that only fails under load is racing a timer the product owns](../kb-notes/methodology-a-test-that-only-fails-under-load-is-racing-a-timer.md) | methodology | published | 2026-09-06 | 2026-09-06 |
+| [A test that pins a figure from a regenerated artifact fails on a data refresh, not on a defect](../kb-notes/methodology-a-test-that-pins-a-generated-figure-fails-on-a-data-refresh.md) | methodology | published | 2026-09-17 | 2026-09-27 |
+| [A test that writes to the queue it monitors — CI noise is indistinguishable from user signal](../kb-notes/methodology-a-test-that-writes-to-the-queue-it-monitors.md) | methodology | published | 2026-08-07 | 2026-08-07 |
+| [A text measure must agree with what sits beside it](../kb-notes/methodology-a-text-measure-must-agree-with-what-sits-beside-it.md) | methodology | published | 2026-08-22 | 2026-08-22 |
+| [A threshold belongs to the question that measured it](../kb-notes/methodology-a-threshold-belongs-to-the-question-that-measured-it.md) | methodology | published | 2026-09-21 |  |
+| [A title match must cover the title, not merely touch it](../kb-notes/methodology-a-title-match-must-cover-the-title-not-touch-it.md) | methodology | published | 2026-09-16 | 2026-09-16 |
+| [A token that cannot flip is a surface that cannot theme — the four shapes, and why every one of them reads as correct code](../kb-notes/methodology-a-token-that-cannot-flip-is-a-surface-that-cannot-theme.md) | methodology | published | 2026-09-09 | 2026-09-10 |
+| [A token with two jobs cannot be themed — count a token's uses by ROLE before you give it a dark value](../kb-notes/methodology-a-token-with-two-jobs-cannot-be-themed.md) | methodology | published | 2026-09-08 | 2026-09-08 |
+| [A tool the sandbox lacks is usually one install away, and a boot test is cheaper than a preview deploy](../kb-notes/methodology-a-missing-tool-is-usually-a-missing-install.md) | methodology | published | 2026-09-17 | 2026-09-17 |
+| [A total that balances is not a total that is right](../kb-notes/methodology-a-total-that-balances-is-not-a-total-that-is-right.md) | methodology | published | 2026-08-23 | 2026-08-23 |
+| [A typed answer is not a boolean, and reading it as one fails silently](../kb-notes/methodology-a-typed-answer-is-not-a-boolean.md) | methodology | published | 2026-09-20 | 2026-09-20 |
+| [A value can exist in the repo and never reach the payload — two minting paths, one inference pipeline](../kb-notes/methodology-a-discipline-can-exist-in-the-repo-and-never-reach-the-payload.md) | methodology | published | 2026-09-08 | 2026-09-08 |
+| [A view must not fly where it cannot draw](../kb-notes/methodology-a-view-must-not-fly-where-it-cannot-draw.md) | methodology | published | 2026-08-25 | 2026-08-25 |
+| [A view swap that does not move the hash strands the user](../kb-notes/methodology-a-view-swap-that-does-not-move-the-hash-strands-the-user.md) | methodology | published | 2026-09-06 | 2026-09-06 |
+| [A window saves only over the version it read](../kb-notes/methodology-a-window-saves-only-over-the-version-it-read.md) | methodology | published | 2026-09-23 | 2026-09-23 |
+| [A word in a request may have no referent yet](../kb-notes/methodology-a-word-in-a-request-may-have-no-referent-yet.md) | methodology | published | 2026-08-25 | 2026-08-25 |
+| [A write key must name exactly one thing, and you have to check](../kb-notes/methodology-a-write-key-must-name-exactly-one-thing.md) | methodology | published | 2026-08-25 | 2026-08-25 |
+| [A written backlog decays silently — measure it instead](../kb-notes/methodology-a-written-backlog-decays-silently.md) | methodology | published | 2026-08-09 | 2026-08-09 |
+| [A wrong column is worse than a missing one](../kb-notes/methodology-a-wrong-column-is-worse-than-a-missing-one.md) | methodology | published | 2026-08-07 | 2026-08-07 |
+| [Achievement-based funding — the cap-and-earn model](../kb-notes/methodology-achievement-based-funding-cap-and-earn.md) | methodology | published | 2026-07-24 |  |
+| [Adding a curation surface with a synthesized kb_curation namespace (zero schema migration)](../kb-notes/methodology-kb-curation-synthesized-namespace.md) | methodology | published | 2026-06-02 | 2026-06-02 |
+| [Adversarially verify an id crosswalk before a live PK renumber](../kb-notes/methodology-adversarial-verify-crosswalk-before-live-rekey.md) | methodology | published | 2026-07-21 | 2026-07-21 |
+| [Agreement is not corroboration when the behavior is systematic](../kb-notes/methodology-agreement-is-not-corroboration-when-the-behaviour-is-systematic.md) | methodology | published | 2026-08-20 | 2026-08-20 |
+| [Alias maps are permutations, not graphs: resolution semantics for stacked re-keys](../kb-notes/methodology-alias-map-resolution-semantics.md) | methodology | published | 2026-06-11 |  |
+| [An absence in the data is a statement about the data — say what the catalog shows, never that the county has none](../kb-notes/methodology-an-absence-in-the-data-is-a-statement-about-the-data.md) | methodology | published | 2026-09-18 | 2026-09-18 |
+| [An affordance gated on a problem is invisible when there isn't one](../kb-notes/methodology-an-affordance-gated-on-a-problem-is-invisible-when-there-isnt-one.md) | methodology | published | 2026-08-11 | 2026-08-11 |
+| [An articulation's college list belongs to the group, not to each course in it](../kb-notes/methodology-an-articulation-college-list-belongs-to-the-group-not-the-course.md) | methodology | published | 2026-09-14 | 2026-09-14 |
+| [An assertion pinned to a mutable value stops being a guard](../kb-notes/methodology-an-assertion-pinned-to-a-mutable-value-stops-being-a-guard.md) | methodology | published | 2026-08-15 | 2026-08-15 |
+| [An auto-triggered smoke test validates the version it is replacing](../kb-notes/methodology-order-the-post-deploy-check-after-the-deploy.md) | methodology | published | 2026-08-11 | 2026-08-11 |
+| [An empty read is only evidence if the set cannot legitimately be empty](../kb-notes/methodology-an-empty-read-is-only-evidence-if-the-set-cannot-be-empty.md) | methodology | published | 2026-08-14 | 2026-08-14 |
+| [An error that arrives inside a successful response is invisible to every status check](../kb-notes/methodology-an-error-inside-a-success-is-invisible-to-every-status-check.md) | methodology | published | 2026-09-11 | 2026-09-11 |
+| [An incentive teaches where the finish line is](../kb-notes/methodology-an-incentive-teaches-where-the-finish-line-is.md) | methodology | published | 2026-08-06 | 2026-08-06 |
+| [An index is a write-path cost until a measurement says otherwise](../kb-notes/methodology-an-index-is-a-write-path-cost-until-measured.md) | methodology | published | 2026-09-17 | 2026-09-17 |
+| [An inline placeholder style outranks the CSS your module injects](../kb-notes/methodology-an-inline-placeholder-style-outranks-the-css-you-inject.md) | methodology | published | 2026-08-21 | 2026-08-21 |
+| [An inside term leaks through the context, never through the prose rules](../kb-notes/methodology-an-inside-term-leaks-through-the-context-not-the-prose.md) | methodology | published | 2026-09-18 | 2026-09-18 |
+| [An instruction that names another surface is a dependency nothing enforces](../kb-notes/methodology-an-instruction-naming-another-surface-is-an-unenforced-dependency.md) | methodology | published | 2026-08-14 | 2026-08-14 |
+| [An opportunity figure must be what peers ACHIEVED, not what the record allows](../kb-notes/methodology-an-opportunity-figure-must-be-what-peers-achieved.md) | methodology | published | 2026-08-17 | 2026-08-17 |
+| [An RLS-filtered read is not an error — it is an empty answer](../kb-notes/methodology-an-rls-filtered-read-is-not-an-error.md) | methodology | published | 2026-08-17 | 2026-08-17 |
+| [An unadopted item is a shelf, not an absence — and it needs its own band](../kb-notes/methodology-an-unadopted-item-is-a-shelf-not-an-absence.md) | methodology | published | 2026-08-13 | 2026-08-13 |
+| [An undefined CSS custom property fails to an invisible state, and no jsdom test can see it](../kb-notes/methodology-an-undefined-css-token-fails-to-an-invisible-state.md) | methodology | published | 2026-09-06 | 2026-09-06 |
+| [An unordered LIMIT is a correctness bug, not a style nit — and it reads as model flake](../kb-notes/methodology-an-unordered-limit-is-a-correctness-bug.md) | methodology | published | 2026-08-07 | 2026-08-07 |
+| [Answer "eligible students & credits by program area × statewide/local" from the Credential Reference data](../kb-notes/methodology-area-eligibility-rollup-from-cer.md) | methodology | published | 2026-07-20 | 2026-07-20 |
+| [Answer a reviewer's \"make a version that…\" with a switch on the same page, not a second page](../kb-notes/methodology-answer-a-reaction-with-a-switch-not-a-version.md) | methodology | published | 2026-09-07 | 2026-09-07 |
+| [Answering "which programs at <college> have CPL for apprentices?" — the three-artifact join](../kb-notes/methodology-college-apprenticeship-cpl-roster.md) | methodology | published | 2026-08-03 | 2026-08-03 |
+| [Ask a model to translate, not to answer, when the answer is not in its corpus](../kb-notes/methodology-ask-a-model-to-translate-not-to-answer.md) | methodology | published | 2026-09-09 | 2026-09-09 |
+| [Ask whether the list can contain what you are counting](../kb-notes/methodology-ask-whether-the-list-can-contain-what-you-are-counting.md) | methodology | published | 2026-08-24 | 2026-08-24 |
+| [Ask which container the control is in before you debug the control](../kb-notes/methodology-ask-which-container-before-you-debug-the-control.md) | methodology | published | 2026-09-05 | 2026-09-05 |
+| [Assert that an argument arrives, not that it is last](../kb-notes/methodology-assert-that-an-argument-arrives-not-that-it-is-last.md) | methodology | published | 2026-08-22 | 2026-08-22 |
+| [Assert what retrieval RETURNS, not that the answer reads better](../kb-notes/methodology-assert-what-retrieval-returns.md) | methodology | published | 2026-08-06 | 2026-08-06 |
+| [Assert what the reader sees, not what the source says](../kb-notes/methodology-assert-what-the-reader-sees.md) | methodology | published | 2026-08-11 | 2026-08-12 |
+| [Audit by rendered value, not by file — thousands of failures collapse to a few source lines](../kb-notes/methodology-audit-by-rendered-value-not-by-file.md) | methodology | published | 2026-09-04 | 2026-09-04 |
+| [Auto-layout tables silently park columns off-pane: diagnose with the inspector, defend with fixed layout](../kb-notes/methodology-fixed-table-layout-off-pane-columns.md) | methodology | published | 2026-06-11 |  |
+| [Before building a whole, check whether the halves are already assigned](../kb-notes/methodology-before-building-a-whole-check-whether-the-halves-are-already-assigned.md) | methodology | published | 2026-09-15 | 2026-09-15 |
+| [Before repairing a field, check whether the record already holds a better signal](../kb-notes/methodology-the-record-may-already-hold-a-better-signal-than-the-field-you-are-repairing.md) | methodology | published | 2026-08-14 | 2026-08-14 |
+| [Bucket military and non-military credit recommendations before you total them](../kb-notes/methodology-bucket-military-and-non-military-credit-recommendations.md) | methodology | published | 2026-08-13 | 2026-08-13 |
+| [Build a hierarchy from dotted ids without migrating stored keys](../kb-notes/methodology-tree-from-dotted-ids-stable-keys.md) | methodology | published | 2026-06-26 | 2026-06-26 |
+| [Calibrate a signal against an independent source before you rank the queue](../kb-notes/methodology-calibrate-a-signal-before-you-rank-the-queue.md) | methodology | published | 2026-08-24 | 2026-08-24 |
+| [CER ⇄ CCR crossover — course-identity integrations for exhibit-title curation](../kb-notes/cer-ccr-crossover-integrations.md) | methodology | published | 2026-07-07 |  |
+| [Change the input, not the consumers — derive the old field at the single seam](../kb-notes/methodology-invert-an-input-derive-at-the-single-seam.md) | methodology | published | 2026-07-27 |  |
+| [Coarse TOP-division discipline fallback — make the orphan tail visible without faking precision](../kb-notes/methodology-coarse-top-division-discipline-fallback.md) | methodology | published | 2026-06-09 | 2026-06-09 |
+| [College-homonym subject codes — detect, scope, retract](../kb-notes/methodology-college-homonym-subject-codes.md) | methodology | published | 2026-06-11 |  |
+| [Confirmed merges via a decision row — never infer, never block the clean set](../kb-notes/methodology-confirmed-merge-via-decision-row.md) | methodology | published | 2026-07-08 |  |
+| [Consolidate sentences, not documents: what a course description is when fourteen colleges wrote it](../kb-notes/methodology-consolidate-sentences-not-documents.md) | methodology | published | 2026-09-10 | 2026-09-10 |
+| [Consolidating near-duplicate course identities within one credential (the ordinal rule)](../kb-notes/methodology-within-credential-identity-consolidation.md) | methodology | published | 2026-06-04 | 2026-06-04 |
+| [Context pressure is measurable — the counter was on disk the whole time](../kb-notes/methodology-context-pressure-is-measurable.md) | methodology | published | 2026-08-29 | 2026-08-29 |
+| [Cron-as-window — reach egress-blocked data via a workflow + run logs](../kb-notes/methodology-cron-as-discovery-window.md) | methodology | published | 2026-06-09 | 2026-06-09 |
+| [Crosswalking a partner's occupation list to CPL — curate the judgment, not the run](../kb-notes/methodology-partner-occupation-crosswalk.md) | methodology | published | 2026-08-05 | 2026-08-06 |
+| [Crowd consensus beats a single-item signal (the two-signals-agree gate, via the crowd)](../kb-notes/methodology-crowd-consensus-beats-single-item-signal.md) | methodology | published | 2026-07-17 |  |
+| [Derive a listing from the things it lists](../kb-notes/methodology-derive-a-listing-from-the-things-it-lists.md) | methodology | published | 2026-08-28 | 2026-08-28 |
+| [Derive theme tokens from brand seeds with a contrast script — the mock is the spec](../kb-notes/methodology-derived-aa-token-palette.md) | methodology | published | 2026-06-12 | 2026-06-12 |
+| [Detecting mis-disciplined minted identities via subject-code cohort outliers + a two-signals-agree gate](../kb-notes/methodology-subject-cohort-discipline-outlier.md) | methodology | published | 2026-07-13 |  |
+| [Emit the threshold with the label it prints](../kb-notes/methodology-emit-the-threshold-with-the-label-it-prints.md) | methodology | published | 2026-08-10 | 2026-08-10 |
+| [Every id-keyed artifact class belongs in the post-apply chain](../kb-notes/methodology-every-id-keyed-artifact-class-belongs-in-the-post-apply-chain.md) | methodology | published | 2026-09-04 | 2026-09-27 |
+| [Every live database function needs a committed schema-of-record file](../kb-notes/methodology-live-db-functions-need-committed-schema.md) | methodology | published | 2026-07-02 | 2026-07-02 |
+| [EXPLAIN ANALYZE's own clock is a cost, and on a wide scan it dominates](../kb-notes/methodology-explain-analyze-timing-is-not-free.md) | methodology | published | 2026-09-19 | 2026-09-19 |
+| [Falsify a claim when falsification is cheap](../kb-notes/methodology-falsify-a-claim-when-falsification-is-cheap.md) | methodology | published | 2026-08-19 | 2026-08-19 |
+| [Fan-in discipline convergence — fold alternate names to a canonical, the mirror of the umbrella split](../kb-notes/methodology-fan-in-discipline-convergence.md) | methodology | published | 2026-06-10 | 2026-06-11 |
+| [Fan-in discipline folds must re-point every inference lexicon (or re-derivation resurrects the alias)](../kb-notes/methodology-fanin-alias-lexicon-contamination.md) | methodology | published | 2026-06-12 |  |
+| [Filter live-derived counts against a current-catalog snapshot to drop retired identifiers](../kb-notes/methodology-filter-live-counts-against-current-catalog.md) | methodology | published | 2026-07-14 | 2026-07-14 |
+| [Fix the root, not a counter-rule: decision-tracing a stack of interacting rules](../kb-notes/methodology-fix-the-root-not-a-counter-rule.md) | methodology | published | 2026-07-21 |  |
+| [Fixing a cost can move it rather than remove it — and only a second profile says which](../kb-notes/methodology-fixing-a-cost-can-move-it-rather-than-remove-it.md) | methodology | published | 2026-09-08 | 2026-09-08 |
+| [Fixing who may write does not rescue what was already written](../kb-notes/methodology-fixing-who-may-write-does-not-rescue-what-was-already-written.md) | methodology | published | 2026-08-28 | 2026-08-28 |
+| [Follow a credit recommendation to the course that receives it](../kb-notes/methodology-follow-the-recommendation-to-the-course-that-receives-it.md) | methodology | published | 2026-09-09 | 2026-09-09 |
+| [Forward-looking display for a curate-now / re-key-later split](../kb-notes/methodology-forward-looking-display-curate-now-rekey-later.md) | methodology | published | 2026-06-24 | 2026-06-24 |
+| [Funding is restricted by its earning rule, not by a label](../kb-notes/methodology-funding-is-restricted-by-its-earning-rule-not-by-a-label.md) | methodology | published | 2026-08-31 | 2026-08-31 |
+| [Grounded lexical confidence: ranking a text against a taxonomy (finder-not-decider)](../kb-notes/methodology-grounded-lexical-cip-confidence.md) | methodology | published | 2026-07-17 |  |
+| [Group an audit by the decision, not by the symptom](../kb-notes/methodology-group-an-audit-by-the-decision-not-the-symptom.md) | methodology | published | 2026-09-09 | 2026-09-09 |
+| [Grouping a flat list into containers silently breaks every querySelector that assumed one](../kb-notes/methodology-grouping-a-flat-list-breaks-single-container-wiring.md) | methodology | published | 2026-09-01 | 2026-09-01 |
+| [Hear a synthetic voice through a recognizer before a person listens](../kb-notes/methodology-hear-a-synthetic-voice-through-a-recognizer.md) | methodology | published | 2026-09-26 | 2026-09-26 |
+| [Hiding a control also hides the way to get access](../kb-notes/methodology-hiding-a-control-also-hides-the-way-in.md) | methodology | published | 2026-08-20 | 2026-08-20 |
+| [In a parent/child ledger, totals sum PARENT rows only](../kb-notes/methodology-parent-child-ledger-totals.md) | methodology | published | 2026-07-30 |  |
+| [In-browser doc capture → Claude → tokenless GitHub write](../kb-notes/methodology-browser-doc-capture-to-claude-and-github.md) | methodology | published | 2026-06-19 | 2026-06-19 |
+| [Index the doctrine to the file, because recall does not scale](../kb-notes/methodology-index-the-doctrine-to-the-file.md) | methodology | published | 2026-08-21 | 2026-08-21 |
+| [Infer required-core coursework from embedded-certificate structure when the catalog flag is missing](../kb-notes/methodology-embedded-cert-required-core-inference.md) | methodology | published | 2026-07-16 | 2026-07-16 |
+| [Join loose institutional datasets on the coded key, not freehand text](../kb-notes/methodology-coded-key-over-freehand-text-join.md) | methodology | published | 2026-06-18 | 2026-06-18 |
+| [Judge a detector by what it prints — filters are only observable in their output](../kb-notes/methodology-judge-a-detector-by-what-it-prints.md) | methodology | published | 2026-08-07 | 2026-08-07 |
+| [Key a side table by the write key, never by list position](../kb-notes/methodology-key-a-side-table-by-the-write-key-not-by-position.md) | methodology | published | 2026-09-03 | 2026-09-22 |
+| [Label a bound where it binds](../kb-notes/methodology-label-a-bound-where-it-binds.md) | methodology | published | 2026-09-23 | 2026-09-23 |
+| [Land a re-mint by rehearsal and a fresh read, then read the numbers it moves](../kb-notes/methodology-land-a-re-mint-by-rehearsal-and-a-fresh-read.md) | methodology | published | 2026-09-03 | 2026-09-04 |
+| [Lazy-load heavy per-tab data behind tab activation](../kb-notes/methodology-lazy-load-heavy-tab-data.md) | methodology | published | 2026-06-09 | 2026-06-09 |
+| [Lead with the steps, not the rationale](../kb-notes/methodology-lead-with-the-steps-not-the-rationale.md) | methodology | published | 2026-08-10 | 2026-08-10 |
+| [Measure a permission guard by the wait it removes, never by the decision it prints](../kb-notes/methodology-measure-a-guard-by-the-wait-it-removes.md) | methodology | published | 2026-09-20 | 2026-09-20 |
+| [Measure the distribution before you pick a parallel strategy](../kb-notes/methodology-measure-the-distribution-before-you-pick-a-parallel-strategy.md) | methodology | published | 2026-08-28 | 2026-08-28 |
+| [Measure your mechanism's ceiling before working the queue](../kb-notes/methodology-measure-your-mechanism-ceiling-before-working-the-queue.md) | methodology | published | 2026-08-24 | 2026-08-24 |
+| [Methodology — A consumer must guard fields the baked payload omits but the fallback fills](../kb-notes/methodology-consumer-tolerate-omitted-baked-fields.md) | methodology | published | 2026-06-04 | 2026-06-04 |
+| [Methodology — a frequency is not a rule](../kb-notes/methodology-a-frequency-is-not-a-rule.md) | methodology | published | 2026-08-27 | 2026-08-27 |
+| [Methodology — a governance artifact must measure itself, and render what it lacks](../kb-notes/methodology-a-governance-artifact-must-measure-itself.md) | methodology | published | 2026-08-05 | 2026-08-05 |
+| [Methodology — a hybrid live-vs-manual value column (single source by construction)](../kb-notes/methodology-live-vs-manual-hybrid-column.md) | methodology | published | 2026-06-30 |  |
+| [Methodology — build a packaging dry-run: title-primary carve-outs, safe-default under-claim, review-bucket when no authoritative flag](../kb-notes/methodology-packaging-dryrun-classification.md) | methodology | published | 2026-07-15 | 2026-07-15 |
+| [Methodology — Commit the test harness; don't let verification evaporate](../kb-notes/methodology-commit-the-test-harness.md) | methodology | published | 2026-06-04 | 2026-06-04 |
+| [Methodology — Cosmetic relabel via a display-label map, not a stored-value rename](../kb-notes/methodology-display-label-map-vs-data-rename.md) | methodology | published | 2026-05-31 | 2026-05-31 |
+| [Methodology — derive pathway check-offs from live articulation data, never bake them](../kb-notes/methodology-live-derived-pathway-checkoffs.md) | methodology | published | 2026-07-10 | 2026-07-10 |
+| [Methodology — Derive whitelists from rendered DOM, not hardcoded lists](../kb-notes/methodology-derive-from-dom.md) | methodology | published | 2026-05-27 | 2026-05-27 |
+| [Methodology — elicit curation doctrine with small, grounded, curated scenario batches (not the firehose)](../kb-notes/methodology-curated-scenario-batches-doctrine-elicitation.md) | methodology | published | 2026-07-14 | 2026-07-14 |
+| [Methodology — Generalize a hardcoded calc by reducing it to the old form, then assert conservation](../kb-notes/methodology-generalize-a-calc-conserve-the-baseline.md) | methodology | published | 2026-07-23 | 2026-07-23 |
+| [Methodology — Maintaining a committed-workbook model (one-shot revisions, input-driven builder)](../kb-notes/methodology-committed-workbook-models.md) | methodology | published | 2026-06-11 | 2026-06-11 |
+| [Methodology — Model-driven house-format document generator (memo/letter/report/brief) with inline edit + Word/PDF export](../kb-notes/methodology-model-driven-document-generator.md) | methodology | published | 2026-07-23 | 2026-07-23 |
+| [Methodology — one ranked list cannot answer two questions](../kb-notes/methodology-one-ranked-list-cannot-answer-two-questions.md) | methodology | published | 2026-08-27 | 2026-08-27 |
+| [Methodology — Parity test as the proof for a data-source cutover](../kb-notes/methodology-parity-test-cutover-proof.md) | methodology | published | 2026-05-29 | 2026-05-31 |
+| [Methodology — provenance is a field, not a footnote (and a two-state detector is wrong about the middle)](../kb-notes/methodology-provenance-is-a-field.md) | methodology | published | 2026-08-05 | 2026-08-05 |
+| [Methodology — Rank a cleanup queue by downstream impact, not structural leverage](../kb-notes/methodology-rank-cleanup-by-downstream-impact.md) | methodology | published | 2026-06-09 | 2026-06-09 |
+| [Methodology — rebuild a flattened diagram as a built slide (and reconcile it against its own arithmetic)](../kb-notes/methodology-rebuild-a-flattened-diagram-as-a-built-slide.md) | methodology | published | 2026-08-10 | 2026-08-10 |
+| [Methodology — recompute a document's figures from the live engine, don't copy them](../kb-notes/methodology-recompute-a-documents-figures-from-the-live-engine.md) | methodology | published | 2026-08-05 | 2026-08-05 |
+| [Methodology — retheming a generator-owned HTML monolith via token value-swap](../kb-notes/methodology-token-retheme-on-generated-html.md) | methodology | published | 2026-06-12 | 2026-06-12 |
+| [Methodology — Reworking a generator-managed dashboard section without touching the generator](../kb-notes/methodology-regen-safe-section-rework.md) | methodology | published | 2026-06-22 | 2026-06-22 |
+| [Methodology — Server-enforced shared-password edit gate (no per-user accounts)](../kb-notes/methodology-server-enforced-shared-password-gate.md) | methodology | published | 2026-06-29 | 2026-06-29 |
+| [Methodology — Three-layer scenario config (SCENARIO ?? SHARED ?? BASE) for audience-facing model tools](../kb-notes/methodology-three-layer-scenario-config.md) | methodology | published | 2026-07-03 | 2026-07-03 |
+| [Methodology — Triaging credential-dedup candidates (merge vs leave-split)](../kb-notes/methodology-credential-dedup-triage.md) | methodology | published | 2026-06-09 | 2026-06-09 |
+| [Methodology — Turn a one-time PII audit into a standing guard (committed test over the public artifacts)](../kb-notes/methodology-standing-pii-guard.md) | methodology | published | 2026-06-04 | 2026-06-04 |
+| [Methodology — Two-mode sync (safe Mode A vs identity-touching Mode B)](../kb-notes/methodology-two-mode-sync.md) | methodology | published | 2026-05-27 | 2026-05-27 |
+| [Methodology — Umbrella-discipline SUBJ4 split (when one MQ discipline holds many subjects)](../kb-notes/methodology-umbrella-discipline-subj4-split.md) | methodology | published | 2026-06-09 | 2026-06-09 |
+| [Methodology — Versioned prototype gallery (preserve v1, stack v2 below, graduate the winner)](../kb-notes/methodology-versioned-prototype-gallery.md) | methodology | published | 2026-06-01 | 2026-06-01 |
+| [Methodology — visual PDF read (not text parse) for layout-encoded facts](../kb-notes/methodology-visual-pdf-read-for-layout-encoded-facts.md) | methodology | published | 2026-07-01 |  |
+| [Methodology — when you can't decide for someone, route to a determination they already made](../kb-notes/methodology-route-to-a-determination-they-already-made.md) | methodology | published | 2026-08-05 | 2026-08-05 |
+| [Methodology — XSS audit when a previously-trusted field becomes curator-editable](../kb-notes/methodology-xss-audit-on-curator-editable-fields.md) | methodology | published | 2026-05-28 | 2026-05-29 |
+| [Methodology: bulk-writing beside a live curator — snapshot decay + conflict-yielding writes](../kb-notes/methodology-live-curation-concurrency.md) | methodology | published | 2026-07-09 |  |
+| [Methodology: dark→light recolor mapping (COBI tokens)](../kb-notes/methodology-dark-to-light-recolor-mapping.md) | methodology | published | 2026-06-30 | 2026-06-30 |
+| [Migrate the display, not just the data — a faithful migration can still lose everything that mattered](../kb-notes/methodology-migrate-the-display-not-just-the-data.md) | methodology | published | 2026-08-19 |  |
+| [Minimization happens twice — what you request, and what you keep](../kb-notes/methodology-minimisation-happens-twice.md) | methodology | published | 2026-08-19 | 2026-08-19 |
+| [Mock up a UI change with the running code, then port it](../kb-notes/methodology-mock-up-from-the-running-code.md) | methodology | published | 2026-09-28 | 2026-09-28 |
+| [Move one rung down the funnel to route around an upstream defect you can't fix](../kb-notes/methodology-move-down-the-funnel-to-route-around-an-upstream-defect.md) | methodology | published | 2026-08-01 | 2026-08-03 |
+| [Name the credential that actually failed](../kb-notes/methodology-name-the-credential-that-actually-failed.md) | methodology | published | 2026-08-25 | 2026-08-25 |
+| [Normalize both sides of a join, or the resolver is decoration](../kb-notes/methodology-normalise-both-sides-of-a-join.md) | methodology | published | 2026-08-12 | 2026-08-12 |
+| [Omit, don't zero, a measure your source didn't supply](../kb-notes/methodology-omit-dont-zero-an-absent-measure.md) | methodology | published | 2026-08-01 | 2026-08-12 |
+| [On a trust-building surface, a plausible false positive costs more than a miss](../kb-notes/methodology-a-false-positive-costs-more-than-a-miss.md) | methodology | published | 2026-08-13 | 2026-08-13 |
+| [One assistant, three files — compare them in a test or they drift](../kb-notes/methodology-one-assistant-three-files-is-a-drift-machine.md) | methodology | published | 2026-08-17 | 2026-08-17 |
+| [One college, many course numbers is an over-merge signal](../kb-notes/methodology-one-college-many-course-numbers-is-an-over-merge-signal.md) | methodology | published | 2026-08-24 | 2026-08-24 |
+| [One dependency derivation, many projections](../kb-notes/methodology-one-dependency-derivation-many-projections.md) | methodology | published | 2026-08-30 | 2026-08-30 |
+| [One symptom, two causes — and fixing the obvious one changes nothing](../kb-notes/methodology-one-symptom-two-causes-and-the-obvious-fix-changes-nothing.md) | methodology | published | 2026-09-09 | 2026-09-09 |
+| [Overlay live data onto generated cards via a stamped data-key hook](../kb-notes/methodology-live-overlay-onto-generated-cards.md) | methodology | published | 2026-06-26 | 2026-06-26 |
+| [Paginate every PostgREST read that can outgrow 1,000 rows](../kb-notes/methodology-paginate-postgrest-reads.md) | methodology | published | 2026-07-08 |  |
+| [Parse PDF column grids positionally (x/y anchors), never from linearized text — the MQ Index mis-bins](../kb-notes/methodology-positional-pdf-column-grids.md) | methodology | published | 2026-07-11 |  |
+| [Populate-on-file-drop seam for grounded reference data](../kb-notes/methodology-populate-on-file-drop-seam-for-grounded-reference-data.md) | methodology | published | 2026-07-29 | 2026-07-29 |
+| [Probing the MAP Custom Report API for a view's real columns (value-signature method)](../kb-notes/methodology-map-api-value-signature-probe.md) | methodology | published | 2026-06-30 |  |
+| [Promoted-record ghosts in candidate worklists](../kb-notes/methodology-promoted-record-ghosts-in-worklists.md) | methodology | published | 2026-06-15 | 2026-06-15 |
+| [Propose the decision and let people pull it back — it is easier to respond to a decision than to make one](../kb-notes/methodology-propose-the-decision-and-let-people-pull-it-back.md) | methodology | published | 2026-09-20 | 2026-09-20 |
+| [Provenance is the spine of a generated document, not a footnote on it](../kb-notes/methodology-provenance-is-the-spine-of-a-generated-document.md) | methodology | published | 2026-09-05 | 2026-09-05 |
+| [Publish the denominator with the number, as a column](../kb-notes/methodology-publish-the-denominator-with-the-number.md) | methodology | published | 2026-08-11 | 2026-08-11 |
+| [Push what a session cannot know to ask for; pull everything else](../kb-notes/methodology-push-what-cannot-be-asked-for-pull-everything-else.md) | methodology | published | 2026-08-28 | 2026-08-28 |
+| [Re-arm a success-disabled Save button the moment its inputs change](../kb-notes/methodology-rearm-disabled-save-on-edit.md) | methodology | published | 2026-07-08 | 2026-07-08 |
+| [Re-key every DERIVED identity map when a re-mint permutes slots — or make consumers prefer the canonical store](../kb-notes/methodology-rekey-derived-identity-maps.md) | methodology | published | 2026-07-09 |  |
+| [Re-key every id-keyed artifact — a re-mint isn't done until the side manifests move](../kb-notes/methodology-rekey-every-id-keyed-artifact.md) | methodology | published | 2026-06-11 | 2026-07-27 |
+| [Re-mint applies — recompute through the dry-run's own allocator, gate on byte-fidelity to the reviewed plan](../kb-notes/methodology-apply-equals-spec-via-shared-allocator.md) | methodology | published | 2026-06-12 |  |
+| [Re-mint split invariants — id↔SUBJ4, control-number atomicity, dry-run↔apply cross-check](../kb-notes/methodology-remint-split-invariants.md) | methodology | published | 2026-05-29 | 2026-05-29 |
+| [Recompute a source's own summary statistics from its line items](../kb-notes/methodology-recompute-a-sources-own-summary-statistics.md) | methodology | published | 2026-07-30 |  |
+| [Recover a music bed from a mixed video by subtracting the clean voice stem](../kb-notes/methodology-recover-music-bed-by-voice-stem-subtraction.md) | methodology | published | 2026-07-23 | 2026-07-23 |
+| [Refresh the access token before every write (don't trust a format-valid JWT)](../kb-notes/methodology-refresh-token-before-write.md) | methodology | published | 2026-06-26 | 2026-06-26 |
+| [Render an HTML animation to MP4 from a headless browser](../kb-notes/methodology-render-an-html-animation-to-mp4.md) | methodology | published | 2026-09-25 | 2026-09-25 |
+| [Reorder by permutation, not by rewriting the config](../kb-notes/methodology-reorder-by-permutation-not-by-rewriting-the-config.md) | methodology | published | 2026-08-20 | 2026-08-20 |
+| [Reserved-key namespaces extend a key→override table with new block types (no schema migration)](../kb-notes/methodology-reserved-key-namespaces-on-overrides-table.md) | methodology | published | 2026-06-28 | 2026-06-28 |
+| [Resolve a redline as an edit list, not as retyped prose](../kb-notes/methodology-resolve-a-redline-as-an-edit-list.md) | methodology | published | 2026-08-26 | 2026-08-26 |
+| [Resolving the V4 articulation-ripple gate when folding a CER unclassified title](../kb-notes/methodology-cer-fold-articulation-ripple-sync.md) | methodology | published | 2026-06-03 | 2026-06-03 |
+| [Retire a global dial into per-item dials without moving any numbers](../kb-notes/methodology-retire-a-global-dial-into-per-item-dials.md) | methodology | published | 2026-08-04 | 2026-08-04 |
+| [Retire a mode toggle by making both modes coexist](../kb-notes/methodology-retire-a-mode-toggle-by-coexistence.md) | methodology | published | 2026-07-30 | 2026-07-30 |
+| [Retiring a behavior means inverting its tests, not deleting them](../kb-notes/methodology-retiring-a-behavior-means-inverting-its-tests.md) | methodology | published | 2026-09-15 | 2026-09-15 |
+| [Retiring a structure means rewriting its guard, not deleting it](../kb-notes/methodology-retiring-a-structure-means-rewriting-its-guard.md) | methodology | published | 2026-09-14 | 2026-09-14 |
+| [Retiring an auto-seeded data layer — check for curator decisions riding on it](../kb-notes/methodology-retiring-an-auto-seeded-layer.md) | methodology | published | 2026-05-30 | 2026-05-30 |
+| [Reuse the model, not its formula — a derivation can be wrong for cases its special case never touches](../kb-notes/methodology-reuse-the-model-not-its-formula.md) | methodology | published | 2026-08-11 | 2026-08-22 |
+| [Revoking from anon does not remove the PUBLIC grant](../kb-notes/methodology-revoking-from-anon-does-not-remove-the-public-grant.md) | methodology | published | 2026-08-19 | 2026-08-19 |
+| [RLS is not a gate in front of a service-role edge function](../kb-notes/methodology-rls-is-not-a-gate-in-front-of-a-service-role-function.md) | methodology | published | 2026-08-09 | 2026-08-09 |
+| [Search the awarding body, not just the credential's name](../kb-notes/methodology-search-the-awarding-body-not-just-the-name.md) | methodology | published | 2026-08-13 | 2026-08-13 |
+| [Separate affordance visibility from action eligibility](../kb-notes/methodology-affordance-visibility-vs-action-eligibility.md) | methodology | published | 2026-06-28 | 2026-06-28 |
+| [Shared grid columns must share one unit](../kb-notes/methodology-shared-grid-columns-must-share-one-unit.md) | methodology | published | 2026-09-01 | 2026-09-01 |
+| [Shared prose over-claims on the rows it was not written for](../kb-notes/methodology-shared-prose-over-claims-on-rows-it-was-not-written-for.md) | methodology | published | 2026-08-19 | 2026-08-19 |
+| [Ship generator changes live-on-merge when the artifact regenerates from committed inputs](../kb-notes/methodology-ship-generator-changes-live-on-merge.md) | methodology | published | 2026-06-02 | 2026-06-02 |
+| [Single source of truth flows via the regenerated snapshot — de-hardcode consumers, and verify the join key](../kb-notes/methodology-single-source-of-truth-flows-via-snapshot.md) | methodology | published | 2026-07-27 | 2026-07-27 |
+| [Small-cell suppression must survive subtraction](../kb-notes/methodology-small-cell-suppression-must-survive-subtraction.md) | methodology | published | 2026-08-06 | 2026-08-06 |
+| [Snapshot-with-stamp fallback for live-data dependencies](../kb-notes/methodology-snapshot-with-stamp-fallback.md) | methodology | published | 2026-05-28 | 2026-05-28 |
+| [Split prose from state — the register is the spine, the narrative cites it](../kb-notes/methodology-register-is-the-spine-narrative-cites-it.md) | methodology | published | 2026-08-05 | 2026-08-05 |
+| [Stable DOM keys must exclude live (data-bound) text](../kb-notes/methodology-stable-dom-keys-exclude-live-text.md) | methodology | published | 2026-06-28 | 2026-06-28 |
+| [Styling a native <details> — keep a visible affordance, drive the toggle in JS](../kb-notes/methodology-styling-native-details-toggle.md) | methodology | published | 2026-06-01 | 2026-06-01 |
+| [SUBJ4-consumer semantics — umbrella allowances and alias families must be mirrored everywhere](../kb-notes/methodology-subj4-consumer-semantics.md) | methodology | published | 2026-06-12 |  |
+| [Surface a finer derived layer on a single-grain reference tab (without breaking the grain)](../kb-notes/methodology-surface-derived-layer-on-single-grain-tab.md) | methodology | published | 2026-06-09 | 2026-06-09 |
+| [Tell a parser defect from a people defect before you build a curation queue](../kb-notes/methodology-tell-a-parser-defect-from-a-people-defect.md) | methodology | published | 2026-08-14 | 2026-08-14 |
+| [Testing a rule without cueing the answer](../kb-notes/methodology-testing-a-rule-without-cueing-the-answer.md) | methodology | published | 2026-08-29 | 2026-08-29 |
+| [The feedback queue already knew — collection is not the bottleneck, triage is](../kb-notes/methodology-the-feedback-queue-already-knew.md) | methodology | published | 2026-08-07 | 2026-08-07 |
+| [The first run of a new instrument measures the instrument](../kb-notes/methodology-the-first-run-of-a-new-instrument-measures-the-instrument.md) | methodology | published | 2026-09-04 | 2026-09-04 |
+| [The instrument may not live inside the system under test](../kb-notes/methodology-the-instrument-may-not-live-inside-the-system-under-test.md) | methodology | published | 2026-08-29 | 2026-08-30 |
+| [The mark is not the footprint — draw inside what you packed, and spread at load](../kb-notes/methodology-the-mark-is-not-the-footprint.md) | methodology | published | 2026-09-05 | 2026-09-05 |
+| [The measuring browser can hide the defect](../kb-notes/methodology-the-measuring-browser-can-hide-the-defect.md) | methodology | published | 2026-08-20 | 2026-08-20 |
+| [The number of findings is not the number of problems — rank an audit by blast radius before you read it](../kb-notes/methodology-the-number-of-findings-is-not-the-number-of-problems.md) | methodology | published | 2026-09-09 | 2026-09-09 |
+| [The obvious detector measures the wrong thing: boilerplate is not repetition](../kb-notes/methodology-the-obvious-detector-measures-the-wrong-thing.md) | methodology | published | 2026-09-10 | 2026-09-10 |
+| [The plausible cause is not the measured one, and the check is usually cheaper than the guess](../kb-notes/methodology-the-plausible-cause-is-not-the-measured-one.md) | methodology | published | 2026-08-09 | 2026-08-09 |
+| [The record cannot say which credential is held — only the visitor's words can](../kb-notes/methodology-the-record-cannot-say-which-credential-is-held.md) | methodology | published | 2026-09-18 | 2026-09-18 |
+| [The record is the mechanism; the notification is a bonus](../kb-notes/methodology-the-record-is-the-mechanism-the-notification-is-a-bonus.md) | methodology | published | 2026-09-21 | 2026-09-21 |
+| [The same arithmetic can read as withholding or as investment](../kb-notes/methodology-the-same-arithmetic-can-read-as-withholding-or-as-investment.md) | methodology | published | 2026-08-22 | 2026-08-22 |
+| [The sphere is the map through a projection, not a second renderer](../kb-notes/methodology-the-sphere-is-the-map-through-a-projection.md) | methodology | published | 2026-09-07 | 2026-09-07 |
+| [The text a reader sees is not the text a test reads](../kb-notes/methodology-the-text-a-reader-sees-is-not-the-text-a-test-reads.md) | methodology | published | 2026-09-02 | 2026-09-02 |
+| [The unit of curation work is the component, not the suggestion](../kb-notes/methodology-the-unit-of-curation-work-is-the-component-not-the-suggestion.md) | methodology | published | 2026-08-24 | 2026-08-24 |
+| [Title-similarity merge candidates — the guard suite and the licensure-spec lesson](../kb-notes/methodology-title-similarity-merge-guards.md) | methodology | published | 2026-06-12 | 2026-06-12 |
+| [TOP is a last-in-line signal, never a gatekeeper](../kb-notes/methodology-top-is-a-last-in-line-signal.md) | methodology | published | 2026-07-16 | 2026-09-25 |
+| [Transitive closure is right for decisions and wrong for similarity](../kb-notes/methodology-transitive-closure-is-right-for-decisions-and-wrong-for-similarity.md) | methodology | published | 2026-08-24 | 2026-08-24 |
+| [Two expressions of one predicate will drift apart, and the drift is silent](../kb-notes/methodology-two-expressions-of-one-predicate-will-drift-apart.md) | methodology | published | 2026-09-09 | 2026-09-09 |
+| [Two sessions fixing one guard may both be right — measure before you pick](../kb-notes/methodology-two-fixes-to-one-guard-may-both-be-right.md) | methodology | published | 2026-09-10 | 2026-09-10 |
+| [Typical" is a count of colleges across the whole catalog — generalize when the visitor's college is unnamed](../kb-notes/methodology-typical-is-a-count-of-colleges-across-the-whole-catalog.md) | methodology | published | 2026-09-18 | 2026-09-18 |
+| [User-vocabulary category maps — curated JSON + anchored-pattern fallback](../kb-notes/methodology-user-vocabulary-category-maps.md) | methodology | published | 2026-06-11 | 2026-06-11 |
+| [Validate a derived metric against the expert's ranking before publishing it](../kb-notes/methodology-validate-a-derived-metric-against-expert-ranking.md) | methodology | published | 2026-08-06 | 2026-08-06 |
+| [Validate a supplied code column by its structural invariant, not by spot-checking values](../kb-notes/methodology-validate-a-code-column-by-its-structural-invariant.md) | methodology | published | 2026-08-12 | 2026-08-14 |
+| [Verify a queue item against the code before it reaches the decider](../kb-notes/methodology-verify-a-queue-item-against-the-code-before-it-reaches-the-decider.md) | methodology | published | 2026-09-12 | 2026-09-12 |
+| [Verify an ask against what the reader sees, not what the code does](../kb-notes/methodology-verify-an-ask-against-what-the-reader-sees.md) | methodology | published | 2026-09-05 | 2026-09-05 |
+| [Verify the consumer graph before migrating a data class — a dead reader means delete, not migrate](../kb-notes/methodology-verify-consumer-before-migrating.md) | methodology | published | 2026-05-31 | 2026-06-01 |
+| [Verify the last hop of a resolution chain](../kb-notes/methodology-verify-the-last-hop-of-a-resolution-chain.md) | methodology | published | 2026-08-09 | 2026-08-09 |
+| [Verify the premise before you build on it](../kb-notes/methodology-verify-the-premise-before-you-build-on-it.md) | methodology | published | 2026-09-19 | 2026-09-28 |
+| [Verify with the instrument that can see the defect](../kb-notes/methodology-verify-with-the-instrument-that-can-see-the-defect.md) | methodology | published | 2026-08-20 | 2026-08-24 |
+| [Warm a tinny voiceover with measured EQ — diagnose before you boost](../kb-notes/methodology-warm-a-tinny-voiceover-measured-eq.md) | methodology | published | 2026-07-23 | 2026-07-23 |
+| [What might qualify is a different question from who already grants it — answer it from the target program's course list](../kb-notes/methodology-what-might-qualify-is-a-different-question-from-who-already-grants-it.md) | methodology | published | 2026-09-18 | 2026-09-18 |
+| [When a corpus does not fit, its order is the selection](../kb-notes/methodology-when-a-corpus-does-not-fit-the-order-is-the-selection.md) | methodology | published | 2026-08-26 | 2026-08-26 |
+| [When an authoritative identity key exists, use it before you score strings](../kb-notes/methodology-use-the-identity-key-before-you-score-strings.md) | methodology | published | 2026-08-13 | 2026-08-13 |
+| [When the workaround is the keyboard, suspect the event model](../kb-notes/methodology-when-the-workaround-is-the-keyboard-suspect-the-event-model.md) | methodology | published | 2026-08-28 | 2026-08-28 |
+| [When two implementations agree on your live data, your test is not distinguishing them](../kb-notes/methodology-when-two-implementations-agree-on-live-data-your-test-proves-nothing.md) | methodology | published | 2026-08-28 | 2026-08-28 |
+| [When two source tabs disagree, neither is authoritative — get the certified value](../kb-notes/methodology-conflicting-source-tabs-use-certified-value.md) | methodology | published | 2026-07-15 |  |
+| [When you can't verify an assumption, ship the oracle beside it](../kb-notes/methodology-ship-the-oracle-with-the-assumption.md) | methodology | published | 2026-07-31 | 2026-07-31 |
+| [Witness-kinship gate: historical receipts need a present-tense validity check](../kb-notes/methodology-witness-kinship-gate.md) | methodology | published | 2026-06-11 |  |
+| [Write the dependency-free output first](../kb-notes/methodology-write-the-dependency-free-output-first.md) | methodology | published | 2026-09-17 | 2026-09-17 |
+| [A decision sheet takes its replies on the page, and the session reads them from the store](../kb-notes/playbook-decision-sheet-replies.md) | playbook | published | 2026-09-05 | 2026-09-05 |
+| [Answering a vulnerability notice about a host we link to](../kb-notes/playbook-answering-a-vulnerability-notice-about-a-host-we-link-to.md) | playbook | published | 2026-09-11 | 2026-09-11 |
+| [Curate-editable overlay for a standalone static page](../kb-notes/playbook-curate-editable-standalone-page.md) | playbook | published | 2026-06-28 | 2026-06-28 |
+| [Deploy a Supabase Edge Function from the runner, not by hand](../kb-notes/playbook-deploy-an-edge-function-from-the-runner.md) | playbook | published | 2026-08-07 | 2026-08-07 |
+| [Diagnose a stalled GitHub Actions repo — check runner_id before anything else](../kb-notes/playbook-diagnose-a-starved-actions-runner.md) | playbook | published | 2026-08-06 | 2026-08-06 |
+| [Digest an anonymous write-only table into a private vault (service-role read in CI, output never touches the public repo)](../kb-notes/playbook-write-only-table-private-vault-digest.md) | playbook | published | 2026-06-18 | 2026-06-18 |
+| [Embed a self-contained auth-gated bundle as a dashboard tab (iframe)](../kb-notes/playbook-embed-auth-gated-bundle-as-dashboard-tab.md) | playbook | published | 2026-06-19 | 2026-06-19 |
+| [Export a standalone page to Word (.doc) from the live DOM, no library](../kb-notes/playbook-standalone-dom-to-word-export.md) | playbook | published | 2026-06-28 | 2026-06-28 |
+| [GitHub scheduled-workflow reliability — diagnosing a missed cron + the backstop-cron fix](../kb-notes/playbook-github-scheduled-workflow-reliability.md) | playbook | published | 2026-06-01 | 2026-06-22 |
+| [Keep build artifacts out of the Obsidian vault (sparse-checkout the vault clone)](../kb-notes/playbook-keep-build-artifacts-out-of-the-vault.md) | playbook | published | 2026-08-09 | 2026-08-09 |
+| [Lean custom GitHub Pages deploy for a large static repo (with a cron-safe trigger)](../kb-notes/playbook-lean-custom-github-pages-deploy.md) | playbook | published | 2026-06-29 | 2026-06-29 |
+| [Manually re-deploy GitHub Pages — dispatch a fresh run, never rerun_failed_jobs](../kb-notes/playbook-github-pages-manual-redeploy.md) | playbook | published | 2026-07-20 | 2026-07-20 |
+| [Measure-first Supabase migration playbook](../kb-notes/playbook-measure-first-supabase-migration.md) | playbook | published | 2026-05-28 | 2026-05-28 |
+| [Moving a generator-managed dashboard section to its own tab](../kb-notes/playbook-move-generated-section-to-tab.md) | playbook | published | 2026-05-30 | 2026-05-30 |
+| [Playbook — a live Edge Function 502 is often a RETIRED model id (diagnose via logs, fix via model swap)](../kb-notes/playbook-edge-function-502-retired-model.md) | playbook | published | 2026-06-19 | 2026-06-19 |
+| [Playbook — a standalone public page on the COBI Pages site (sits alone, live data, prints to PDF)](../kb-notes/playbook-standalone-public-page.md) | playbook | published | 2026-06-25 | 2026-06-25 |
+| [Playbook — Auto-sync vault-side repo clones via Windows Task Scheduler](../kb-notes/playbook-vault-sync-setup.md) | playbook | published | 2026-05-27 | 2026-05-29 |
+| [Playbook — auto-write cpl_memory at every checkpoint (Phase 3 of the memory loop)](../kb-notes/playbook-cpl-memory-auto-write-at-checkpoint.md) | playbook | published | 2026-07-24 | 2026-09-24 |
+| [Playbook — build a CPL executive/board deck, and fill an existing brand PPTX template](../kb-notes/playbook-building-cpl-executive-presentations.md) | playbook | published | 2026-07-20 | 2026-08-10 |
+| [Playbook — loading a Microsoft Access export into Supabase](../kb-notes/playbook-access-export-to-supabase.md) | playbook | published | 2026-08-08 | 2026-08-08 |
+| [Playbook — Merging two existing CER credentials (existing→existing fold)](../kb-notes/playbook-cer-credential-merge.md) | playbook | published | 2026-06-04 | 2026-06-04 |
+| [Playbook — Pre-stage optional auth before an external API enforces it](../kb-notes/playbook-prestage-optional-external-auth.md) | playbook | published | 2026-06-01 | 2026-06-01 |
+| [Playbook — purge committed PII from git history (CustomReport_latest.json)](../kb-notes/playbook-pii-history-purge.md) | playbook | published | 2026-06-01 | 2026-06-01 |
+| [Playbook — redeploying a shared, live Supabase Edge Function safely](../kb-notes/playbook-deploy-shared-supabase-edge-function.md) | playbook | published | 2026-06-01 | 2026-08-22 |
+| [Playbook — running an NC integration (notes and artifacts → the curated register)](../kb-notes/playbook-nc-integration-run.md) | playbook | published | 2026-08-06 | 2026-08-06 |
+| [Playbook — Trail Crew 🥾: the method + magic audit (deterministic scanner → AI adjudication → adversarial verify → fire-able staged plan)](../kb-notes/playbook-trail-crew-method-magic-audit.md) | playbook | published | 2026-07-10 |  |
+| [Playbook: gated bulk auto-curation (dry-run → md5-pinned server-side apply)](../kb-notes/playbook-gated-bulk-autocuration.md) | playbook | published | 2026-06-12 |  |
+| [Playbook: unattended news aggregation into a live dashboard tab](../kb-notes/playbook-cpl-news-aggregation.md) | playbook | published | 2026-06-21 |  |
+| [Re-keying a shared DB from a committed re-mint alias map](../kb-notes/playbook-rekey-shared-db-from-alias-map.md) | playbook | published | 2026-06-15 | 2026-06-15 |
+| [Resume a long multi-agent workflow across task death, model swaps, and spend caps](../kb-notes/playbook-resume-long-workflow-across-failures.md) | playbook | published | 2026-07-12 |  |
+| [Resuming a frozen session — check main before rebuilding its in-flight work](../kb-notes/playbook-resume-frozen-session-check-main-first.md) | playbook | published | 2026-06-02 | 2026-06-02 |
+| [Runner-as-proxy for an external API the agent sandbox can't reach](../kb-notes/playbook-runner-as-external-api-proxy.md) | playbook | published | 2026-06-19 | 2026-06-28 |
+| [Soft-delete a daily-generated entity via an overlay table + collapsed section](../kb-notes/playbook-soft-delete-generated-entity-via-overlay.md) | playbook | published | 2026-06-29 | 2026-06-29 |
+| [A System One model earns its place where a hit is cheap to verify — Jev, use case by use case, against this repo's lanes](../kb-notes/reference-system-one-model-fit-by-lane.md) | reference | internal | 2026-09-20 | 2026-09-20 |
+| [ADT acceptance & course-substitution rules (ASCCC C-ID guidance + STAR Act)](../kb-notes/reference-adt-acceptance-rules.md) | reference | published | 2026-06-20 |  |
+| [Authority-anchored credential naming — CareerOneStop / O*NET / COOL / Credential Engine for the CER](../kb-notes/reference-authority-anchored-credential-naming.md) | reference | published | 2026-07-07 | 2026-07-07 |
+| [Batch-uploaded transcribed credit — why transcribed counts are not comparable across colleges](../kb-notes/reference-batch-uploaded-transcribed-credit.md) | reference | published | 2026-08-10 | 2026-08-10 |
+| [Career-attainment import — the Chancellor's Office's EDD measure for goal (C)](../kb-notes/reference-career-attainment-import.md) | reference | published | 2026-09-23 | 2026-09-23 |
+| [CCR curation sync & live-merge durability (what's instant vs what waits for cron)](../kb-notes/reference-ccr-curation-sync-and-live-merge.md) | reference | published | 2026-06-23 | 2026-06-23 |
+| [CDCP, course-level, and the CIP-count rule](../kb-notes/reference-cdcp-and-the-cip-count-rule.md) | reference | published | 2026-07-28 |  |
+| [Common SUBJ vs Local SUBJ, and the real discipline↔subject invariant](../kb-notes/reference-common-vs-local-subj-and-discipline-cardinality.md) | reference | published | 2026-06-23 | 2026-06-23 |
+| [Common-Course level convention (Beg/Int/Adv)](../kb-notes/reference-course-level-convention.md) | reference | published | 2026-06-25 |  |
+| [CPL eligibility — military vs non-military + the Exhibit CRs Catalog rollup](../kb-notes/reference-cpl-eligibility-and-exhibit-cr-catalog.md) | reference | published | 2026-06-09 | 2026-06-09 |
+| [Daily dashboard data pipeline — accounting for the whole daily dataset](../kb-notes/reference-daily-dashboard-data-pipeline.md) | reference | published | 2026-06-01 | 2026-06-01 |
+| [Excel dependency audit — what still touches CPL_Initiative_Project_List_v3.xlsx, and the fix queue](../kb-notes/excel-dependency-audit.md) | reference | published | 2026-06-01 | 2026-06-01 |
+| [Exhibit CRs Catalog — all 27 fields, measured](../kb-notes/reference-exhibit-crs-catalog-field-census.md) | reference | published | 2026-08-14 | 2026-08-14 |
+| [For "which colleges offer X", start at the course file, not the program file](../kb-notes/reference-course-level-mis-beats-program-level-coci.md) | reference | published | 2026-08-12 | 2026-08-12 |
+| [Issuing-agency authority sources for CER exhibit canonicalization](../kb-notes/reference-issuing-agency-authority-sources.md) | reference | published | 2026-07-07 |  |
+| [Postgres full-text search pitfalls on freehand credential titles](../kb-notes/reference-postgres-fts-pitfalls-for-credential-titles.md) | reference | published | 2026-08-06 | 2026-08-06 |
+| [Public-domain art sourcing for the dashboard (Adams, plein air, and the traps)](../kb-notes/reference-public-domain-art-sourcing.md) | reference | published | 2026-06-12 | 2026-06-12 |
+| [Recovering screen/computer-use reach on Claude Code (web) — what this environment can and can't do](../kb-notes/reference-claude-code-web-environment-reach.md) | reference | published | 2026-06-04 | 2026-06-04 |
+| [Reference — AP credit is a GE-Area mapping (the canonical anchor for AP/standardized-exam credentials)](../kb-notes/reference-ap-credit-ge-area-canonicalization.md) | reference | published | 2026-06-04 | 2026-06-04 |
+| [Reference — CCCCO HUMANS principles for responsible AI](../kb-notes/reference-humans-principles.md) | reference | published | 2026-06-25 | 2026-06-25 |
+| [Reference — College short-name dataset + resolver](../kb-notes/reference-college-short-names.md) | reference | published | 2026-06-02 | 2026-06-02 |
+| [Reference — CPL at the pre-apprenticeship stage (three mechanisms, and the CSU catch)](../kb-notes/reference-cpl-at-the-pre-apprenticeship-stage.md) | reference | published | 2026-08-10 | 2026-08-10 |
+| [Reference — Dashboard UI design system (tokens + canonical components)](../kb-notes/reference-ui-design-system.md) | reference | published | 2026-06-04 | 2026-06-12 |
+| [Reference — Funding priority metrics, measurability map (2026-07-03 metric set)](../kb-notes/reference-funding-metrics-measurability.md) | reference | published | 2026-07-03 | 2026-07-03 |
+| [Reference — The P1 completion-data gap (why completions aren't in MAP, and the strategy to close it)](../kb-notes/reference-p1-completion-data-gap.md) | reference | published | 2026-06-11 | 2026-06-11 |
+| [Reference — TMC / ADT data model & the C-ID auto-match](../kb-notes/reference-tmc-adt-data-model.md) | reference | published | 2026-06-16 |  |
+| [Reference — Windows PowerShell scripting gotchas (PS 5.1 + Task Scheduler)](../kb-notes/reference-windows-powershell-gotchas.md) | reference | published | 2026-05-27 | 2026-05-27 |
+| [Session 26 codebase audit — findings catalog](../kb-notes/reference-codebase-audit-2026-06-01.md) | reference | published | 2026-06-01 | 2026-06-01 |
+| [Statewide Collaborative (CCC) credit recommendations are not housed at one college](../kb-notes/reference-statewide-credit-recommendations.md) | reference | published | 2026-06-25 | 2026-06-25 |
+| [The articulated-and-waiting backlog is almost entirely basic military service credit](../kb-notes/reference-the-waiting-credit-backlog-is-basic-military-service.md) | reference | published | 2026-08-11 | 2026-08-11 |
+| [The authoritative statewide MAP exhibit is the raw row with Collaborative Type == "CCC](../kb-notes/reference-authoritative-statewide-exhibit-signal.md) | reference | published | 2026-06-28 | 2026-06-28 |
+| [The CCCCO house voice — how our outward writing should read](../kb-notes/reference-cccco-house-voice.md) | reference | internal | 2026-09-01 | 2026-09-01 |
+| [The CPL guiding question, and why sufficiency is not equivalence](../kb-notes/reference-the-cpl-guiding-question.md) | reference | published | 2026-09-05 | 2026-09-05 |
+| [The workplan Activity↔Project linking model — home field vs the N-to-N association table](../kb-notes/reference-workplan-activity-project-linking-model.md) | reference | published | 2026-07-27 | 2026-07-27 |
+| [TMC confidence score & near-auto-approval — what data we hold vs still need](../kb-notes/reference-tmc-confidence-data-requirements.md) | reference | published | 2026-07-01 |  |
+| [Untangling KIN, PE and Athletics costs two identifiers](../kb-notes/reference-kin-pe-athl-identifier-fallout.md) | reference | internal | 2026-09-22 | 2026-09-22 |
+| [CPL Assistant — CCR/CER-grounded recommendations, real-time benchmark & landing-site demand signal](../kb-notes/cpl-assistant-ccr-cer-recommendation-scope.md) | scope | published | 2026-06-19 |  |
+| [CPL Chatbox → Dashboard integration + cpl-knowledge-base re-point (Scope)](../kb-notes/cpl-chatbox-integration-scope.md) | scope | published | 2026-06-01 |  |
+| [Cross-discipline over-merge re-mint (Scope)](../kb-notes/over-merge-remint-scope.md) | scope | published | 2026-05-29 |  |
+| [EACR card + credit-rec consolidation (Scope)](../kb-notes/eacr-consolidation-scope.md) | scope | published | 2026-06-01 | 2026-06-01 |
+| [Full Excel Retirement — Final Scope (KPI ladder + D.* helpers + read_projects sunset)](../kb-notes/excel-retirement-final-scope.md) | scope | published | 2026-05-31 |  |
+| [Phase 2 — Projects Table Migration (Scope)](../kb-notes/phase-2-projects-migration-scope.md) | scope | published | 2026-05-28 |  |
+| [TMC ADT submission — supporting-document upload (CORs → the contact-hours gap)](../kb-notes/tmc-adt-document-upload-scope.md) | scope | published | 2026-06-22 |  |
+| [TMC tab → CO-staff ADT review/processing tool (PCF-bootstrapped)](../kb-notes/tmc-co-review-scope.md) | scope | published | 2026-06-20 |  |

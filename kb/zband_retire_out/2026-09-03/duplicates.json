@@ -1,0 +1,1176 @@
+{
+  "_about": "legacy anchors whose title and discipline already name a catalog identity — a curator's merge worklist after the fold, not folded by it",
+  "count": 130,
+  "rows": [
+    {
+      "old_id": "M-ID ACCT 100",
+      "new_id": "BUSI M11TR",
+      "title": "Computerized Accounting",
+      "discipline": "Business",
+      "catalog_twins": [
+        "BUSI M1027"
+      ]
+    },
+    {
+      "old_id": "M-ID ACCT 102",
+      "new_id": "BUSI M11TS",
+      "title": "General Accounting",
+      "discipline": "Business",
+      "catalog_twins": [
+        "BUSI M1054"
+      ]
+    },
+    {
+      "old_id": "M-ID AJ 100",
+      "new_id": "CRIM M11UF",
+      "title": "Criminal Justice Report Writing and Courtroom Procedures",
+      "discipline": "Administration of Justice",
+      "catalog_twins": [
+        "CRIM M11BL"
+      ]
+    },
+    {
+      "old_id": "M-ID AJ 104",
+      "new_id": "CRIM M11UH",
+      "title": "Patrol Procedures",
+      "discipline": "Administration of Justice",
+      "catalog_twins": [
+        "CRIM M1298"
+      ]
+    },
+    {
+      "old_id": "M-ID ANTH 100",
+      "new_id": "ANTH M10KN",
+      "title": "Cultural Anthropology",
+      "discipline": "Anthropology",
+      "catalog_twins": [
+        "ANTH M1033"
+      ]
+    },
+    {
+      "old_id": "M-ID ANTH 102",
+      "new_id": "ANTH M10KO",
+      "title": "World Prehistory",
+      "discipline": "Anthropology",
+      "catalog_twins": [
+        "ANTH M1102"
+      ]
+    },
+    {
+      "old_id": "M-ID ARAB 100",
+      "new_id": "ARAB M10BR",
+      "title": "Elementary Arabic",
+      "discipline": "Foreign Languages",
+      "catalog_twins": [
+        "ARAB M1005"
+      ]
+    },
+    {
+      "old_id": "M-ID ARAB 102",
+      "new_id": "ARAB M10BS",
+      "title": "Intermediate Arabic",
+      "discipline": "Foreign Languages",
+      "catalog_twins": [
+        "ARAB M1010"
+      ]
+    },
+    {
+      "old_id": "M-ID ARCH 102",
+      "new_id": "ARCH M10QY",
+      "title": "Introduction to Architecture",
+      "discipline": "Architecture",
+      "catalog_twins": [
+        "ARCH M1066"
+      ]
+    },
+    {
+      "old_id": "M-ID ARCH 106",
+      "new_id": "ARCH M10RA",
+      "title": "Revit",
+      "discipline": "Architecture",
+      "catalog_twins": [
+        "ARCH M1139"
+      ]
+    },
+    {
+      "old_id": "M-ID ARCH 108",
+      "new_id": "ARCH M10RB",
+      "title": "Revit and Building Information Management(bim)",
+      "discipline": "Architecture",
+      "catalog_twins": [
+        "ARCH M10LH"
+      ]
+    },
+    {
+      "old_id": "M-ID ART 100",
+      "new_id": "ARTS M12GS",
+      "title": "Art Appreciation",
+      "discipline": "Art",
+      "catalog_twins": [
+        "ARTS M1093"
+      ]
+    },
+    {
+      "old_id": "M-ID ASL 100",
+      "new_id": "SLNA M10KD",
+      "title": "Classifiers/Depicting Verbs",
+      "discipline": "Sign Language, American",
+      "catalog_twins": [
+        "SLNA M10GT"
+      ]
+    },
+    {
+      "old_id": "M-ID ASL 106",
+      "new_id": "SLNA M10KG",
+      "title": "Fingerspelling/Numbers",
+      "discipline": "Sign Language, American",
+      "catalog_twins": [
+        "SLNA M10IR"
+      ]
+    },
+    {
+      "old_id": "M-ID ASTR 100",
+      "new_id": "ASTR M10CZ",
+      "title": "Life in the Universe",
+      "discipline": "Astronomy",
+      "catalog_twins": [
+        "ASTR M1041"
+      ]
+    },
+    {
+      "old_id": "M-ID ASTR 102",
+      "new_id": "ASTR M10DA",
+      "title": "Life in the Universe Laboratory",
+      "discipline": "Astronomy",
+      "catalog_twins": [
+        "ASTR M10CR"
+      ]
+    },
+    {
+      "old_id": "M-ID ASTR 104",
+      "new_id": "ASTR M10DB",
+      "title": "Planets and the Solar System With Lab",
+      "discipline": "Astronomy",
+      "catalog_twins": [
+        "ASTR M10CQ"
+      ]
+    },
+    {
+      "old_id": "M-ID ASTR 106",
+      "new_id": "ASTR M10DC",
+      "title": "Stars and Galaxies",
+      "discipline": "Astronomy",
+      "catalog_twins": [
+        "ASTR M1038"
+      ]
+    },
+    {
+      "old_id": "M-ID AUTO 100",
+      "new_id": "AUTO M11PC",
+      "title": "Advanced Engine Performance",
+      "discipline": "Automotive Technology",
+      "catalog_twins": [
+        "AUTO M1025"
+      ]
+    },
+    {
+      "old_id": "M-ID AUTO 102",
+      "new_id": "AUTO M11PD",
+      "title": "Automatic Transmission Transaxle",
+      "discipline": "Automotive Technology",
+      "catalog_twins": [
+        "AUTO M1063"
+      ]
+    },
+    {
+      "old_id": "M-ID AUTO 104",
+      "new_id": "AUTO M11PE",
+      "title": "Automotive Fundamentals",
+      "discipline": "Automotive Technology",
+      "catalog_twins": [
+        "AUTO M1112"
+      ]
+    },
+    {
+      "old_id": "M-ID AUTO 106",
+      "new_id": "AUTO M11PF",
+      "title": "Automotive Heating and Air Conditioning",
+      "discipline": "Automotive Technology",
+      "catalog_twins": [
+        "AUTO M1029"
+      ]
+    },
+    {
+      "old_id": "M-ID AUTO 108",
+      "new_id": "AUTO M11PG",
+      "title": "Automotive Service and Introduction",
+      "discipline": "Automotive Technology",
+      "catalog_twins": [
+        "AUTO M1117"
+      ]
+    },
+    {
+      "old_id": "M-ID AUTO 110",
+      "new_id": "AUTO M11PH",
+      "title": "Automotive Service Consultant",
+      "discipline": "Automotive Technology",
+      "catalog_twins": [
+        "AUTO M1085"
+      ]
+    },
+    {
+      "old_id": "M-ID AUTO 112",
+      "new_id": "AUTO M11PI",
+      "title": "Automotive Service Management",
+      "discipline": "Automotive Technology",
+      "catalog_twins": [
+        "AUTO M1122"
+      ]
+    },
+    {
+      "old_id": "M-ID AUTO 114",
+      "new_id": "AUTO M11PJ",
+      "title": "Automotive Systems",
+      "discipline": "Automotive Technology",
+      "catalog_twins": [
+        "AUTO M10YU"
+      ]
+    },
+    {
+      "old_id": "M-ID AUTO 116",
+      "new_id": "AUTO M11PK",
+      "title": "Brakes",
+      "discipline": "Automotive Technology",
+      "catalog_twins": [
+        "AUTO M1146"
+      ]
+    },
+    {
+      "old_id": "M-ID AUTO 118",
+      "new_id": "AUTO M11PL",
+      "title": "Electrical Electronic Systems",
+      "discipline": "Automotive Technology",
+      "catalog_twins": [
+        "AUTO M1184"
+      ]
+    },
+    {
+      "old_id": "M-ID AUTO 120",
+      "new_id": "AUTO M11PM",
+      "title": "Engine Performance",
+      "discipline": "Automotive Technology",
+      "catalog_twins": [
+        "AUTO M1198"
+      ]
+    },
+    {
+      "old_id": "M-ID AUTO 122",
+      "new_id": "AUTO M1321",
+      "title": "Engine Repair",
+      "discipline": "Automotive Technology",
+      "catalog_twins": [
+        "AUTO M1201"
+      ]
+    },
+    {
+      "old_id": "M-ID AUTO 124",
+      "new_id": "AUTO M11PN",
+      "title": "Light Duty Hybrid Electrical Vehicles",
+      "discipline": "Automotive Technology",
+      "catalog_twins": [
+        "AUTO M11IA"
+      ]
+    },
+    {
+      "old_id": "M-ID AUTO 126",
+      "new_id": "AUTO M11PO",
+      "title": "Light Vehicle Diesel Engines",
+      "discipline": "Automotive Technology",
+      "catalog_twins": [
+        "AUTO M1172"
+      ]
+    },
+    {
+      "old_id": "M-ID AUTO 128",
+      "new_id": "AUTO M11PP",
+      "title": "Manual Drive Train and Axles",
+      "discipline": "Automotive Technology",
+      "catalog_twins": [
+        "AUTO M1137"
+      ]
+    },
+    {
+      "old_id": "M-ID AUTO 130",
+      "new_id": "AUTO M11PQ",
+      "title": "Service and Repair",
+      "discipline": "Automotive Technology",
+      "catalog_twins": [
+        "AUTO M1215"
+      ]
+    },
+    {
+      "old_id": "M-ID AUTO 132",
+      "new_id": "AUTO M11PR",
+      "title": "Specified Diagnostic and Repair",
+      "discipline": "Automotive Technology",
+      "catalog_twins": [
+        "AUTO M1166"
+      ]
+    },
+    {
+      "old_id": "M-ID AUTO 134",
+      "new_id": "AUTO M11PS",
+      "title": "Suspension and Steering",
+      "discipline": "Automotive Technology",
+      "catalog_twins": [
+        "AUTO M1217"
+      ]
+    },
+    {
+      "old_id": "M-ID CAOT 100",
+      "new_id": "BSOT M10QK",
+      "title": "Basic Computer Keyboarding",
+      "discipline": "Office Technologies",
+      "catalog_twins": [
+        "BSOT M1068"
+      ]
+    },
+    {
+      "old_id": "M-ID CAOT 102",
+      "new_id": "BSOT M1259",
+      "title": "Beginning Microsoft Excel",
+      "discipline": "Office Technologies",
+      "catalog_twins": [
+        "BSOT M1077"
+      ]
+    },
+    {
+      "old_id": "M-ID CAOT 104",
+      "new_id": "BSOT M10QL",
+      "title": "Computer Basics",
+      "discipline": "Office Technologies",
+      "catalog_twins": [
+        "BSOT M1070"
+      ]
+    },
+    {
+      "old_id": "M-ID CAOT 106",
+      "new_id": "BSOT M10QM",
+      "title": "Keyboarding for Computers - Beginning",
+      "discipline": "Office Technologies",
+      "catalog_twins": [
+        "BSOT M1075"
+      ]
+    },
+    {
+      "old_id": "M-ID CAOT 108",
+      "new_id": "BSOT M10QN",
+      "title": "Spreadsheet Fundamentals",
+      "discipline": "Office Technologies",
+      "catalog_twins": [
+        "BSOT M1175"
+      ]
+    },
+    {
+      "old_id": "M-ID CHIN 102",
+      "new_id": "CHIN M10ES",
+      "title": "Intermediate Chinese",
+      "discipline": "Foreign Languages",
+      "catalog_twins": [
+        "CHIN M1025"
+      ]
+    },
+    {
+      "old_id": "M-ID CIS 100",
+      "new_id": "ITIS M12NA",
+      "title": "Computing Fundamentals (A+)",
+      "discipline": "Computer Information Systems",
+      "catalog_twins": [
+        "ITIS M11MF"
+      ]
+    },
+    {
+      "old_id": "M-ID CIS 102",
+      "new_id": "ITIS M12NB",
+      "title": "Introduction to Computer and Information Sciences",
+      "discipline": "Computer Information Systems",
+      "catalog_twins": [
+        "ITIS M1244"
+      ]
+    },
+    {
+      "old_id": "M-ID CIS 106",
+      "new_id": "ITIS M12ND",
+      "title": "Network Fundamentals (Network+)",
+      "discipline": "Computer Information Systems",
+      "catalog_twins": [
+        "ITIS M12BX"
+      ]
+    },
+    {
+      "old_id": "M-ID CIS 108",
+      "new_id": "ITIS M12NE",
+      "title": "Python Programming",
+      "discipline": "Computer Information Systems",
+      "catalog_twins": [
+        "ITIS M1477"
+      ]
+    },
+    {
+      "old_id": "M-ID CIS 112",
+      "new_id": "ITIS M12NG",
+      "title": "Security Fundamentals (Security+)",
+      "discipline": "Computer Information Systems",
+      "catalog_twins": [
+        "ITIS M12CC"
+      ]
+    },
+    {
+      "old_id": "M-ID COUN 100",
+      "new_id": "COUN M10WU",
+      "title": "Career Exploration",
+      "discipline": "Counseling",
+      "catalog_twins": [
+        "COUN M1042"
+      ]
+    },
+    {
+      "old_id": "M-ID COUN 102",
+      "new_id": "COUN M10WV",
+      "title": "College and Career Success",
+      "discipline": "Counseling",
+      "catalog_twins": [
+        "COUN M1038"
+      ]
+    },
+    {
+      "old_id": "M-ID COUN 104",
+      "new_id": "COUN M10WW",
+      "title": "Helping Skills for Interpersonal Relationships",
+      "discipline": "Counseling",
+      "catalog_twins": [
+        "COUN M10TV"
+      ]
+    },
+    {
+      "old_id": "M-ID COUN 106",
+      "new_id": "COUN M10WX",
+      "title": "Human Relationships",
+      "discipline": "Counseling",
+      "catalog_twins": [
+        "COUN M10UP"
+      ]
+    },
+    {
+      "old_id": "M-ID CULN 100",
+      "new_id": "CULN M10ZI",
+      "title": "Baking and Pastry",
+      "discipline": "Culinary Arts/Food Technology",
+      "catalog_twins": [
+        "CULN M1045"
+      ]
+    },
+    {
+      "old_id": "M-ID CULN 106",
+      "new_id": "CULN M10ZL",
+      "title": "Fundamental of Baking Theory",
+      "discipline": "Culinary Arts/Food Technology",
+      "catalog_twins": [
+        "CULN M10GH"
+      ]
+    },
+    {
+      "old_id": "M-ID CULN 112",
+      "new_id": "CULN M10ZO",
+      "title": "Introduction to Culinary Arts",
+      "discipline": "Culinary Arts/Food Technology",
+      "catalog_twins": [
+        "CULN M1027"
+      ]
+    },
+    {
+      "old_id": "M-ID CULN 114",
+      "new_id": "CULN M10ZP",
+      "title": "Organization of Food",
+      "discipline": "Culinary Arts/Food Technology",
+      "catalog_twins": [
+        "CULN M10VK"
+      ]
+    },
+    {
+      "old_id": "M-ID CULN 116",
+      "new_id": "CULN M10ZQ",
+      "title": "Sanitation",
+      "discipline": "Culinary Arts/Food Technology",
+      "catalog_twins": [
+        "CULN M10ZD"
+      ]
+    },
+    {
+      "old_id": "M-ID CULN 120",
+      "new_id": "CULN M10ZS",
+      "title": "Theory of Food Principles",
+      "discipline": "Culinary Arts/Food Technology",
+      "catalog_twins": [
+        "CULN M10VO"
+      ]
+    },
+    {
+      "old_id": "M-ID DRFT 102",
+      "new_id": "DRAF M10LS",
+      "title": "Engineering Technology",
+      "discipline": "Drafting/CADD",
+      "catalog_twins": [
+        "DRAF M10KT"
+      ]
+    },
+    {
+      "old_id": "M-ID DRFT 104",
+      "new_id": "DRAF M10LT",
+      "title": "Green & Sustainable Manufacturing Design",
+      "discipline": "Drafting/CADD",
+      "catalog_twins": [
+        "DRAF M10IQ"
+      ]
+    },
+    {
+      "old_id": "M-ID DRFT 106",
+      "new_id": "DRAF M10LU",
+      "title": "Mech Design and Marketing Portfolio",
+      "discipline": "Drafting/CADD",
+      "catalog_twins": [
+        "DRAF M10IY"
+      ]
+    },
+    {
+      "old_id": "M-ID DRFT 108",
+      "new_id": "DRAF M10LV",
+      "title": "Introduction to Computer-aided Drafting",
+      "discipline": "Drafting/CADD",
+      "catalog_twins": [
+        "DRAF M1023"
+      ]
+    },
+    {
+      "old_id": "M-ID DSL 100",
+      "new_id": "AUTD M10FX",
+      "title": "Diesel Engines",
+      "discipline": "Diesel Mechanics",
+      "catalog_twins": [
+        "AUTD M1014"
+      ]
+    },
+    {
+      "old_id": "M-ID ECE 102",
+      "new_id": "CDEV M1291",
+      "title": "Observation and Assessment of Children",
+      "discipline": "Child Development/Early Childhood Education",
+      "catalog_twins": [
+        "CDEV M1061"
+      ]
+    },
+    {
+      "old_id": "M-ID ECE 104",
+      "new_id": "CDEV M1292",
+      "title": "Observations and Issues in Child Development",
+      "discipline": "Child Development/Early Childhood Education",
+      "catalog_twins": [
+        "CDEV M1105"
+      ]
+    },
+    {
+      "old_id": "M-ID ECE 106",
+      "new_id": "CDEV M1293",
+      "title": "Principles of Infant-Toddler Caregiving",
+      "discipline": "Child Development/Early Childhood Education",
+      "catalog_twins": [
+        "CDEV M1092"
+      ]
+    },
+    {
+      "old_id": "M-ID EDUC 100",
+      "new_id": "EDUC M1068",
+      "title": "Teaching as a Profession",
+      "discipline": "Education",
+      "catalog_twins": [
+        "EDUC M1049"
+      ]
+    },
+    {
+      "old_id": "M-ID ESL 100",
+      "new_id": "ESOL M10XV",
+      "title": "Beginning Grammar for Reading and Writing",
+      "discipline": "English as a Second Language",
+      "catalog_twins": [
+        "ESOL M1180"
+      ]
+    },
+    {
+      "old_id": "M-ID ESL 102",
+      "new_id": "ESOL M10XW",
+      "title": "Beginning Reading and Writing",
+      "discipline": "English as a Second Language",
+      "catalog_twins": [
+        "ESOL M9168"
+      ]
+    },
+    {
+      "old_id": "M-ID ESL 106",
+      "new_id": "ESOL M10XY",
+      "title": "High-Beginning Grammar for Reading and Writing",
+      "discipline": "English as a Second Language",
+      "catalog_twins": [
+        "ESOL M1177"
+      ]
+    },
+    {
+      "old_id": "M-ID ESL 108",
+      "new_id": "ESOL M10XZ",
+      "title": "High-Beginning Reading and Writing",
+      "discipline": "English as a Second Language",
+      "catalog_twins": [
+        "ESOL M1183"
+      ]
+    },
+    {
+      "old_id": "M-ID ESL 110",
+      "new_id": "ESOL M10YA",
+      "title": "High-Intermediate Grammar for Reading and Writing",
+      "discipline": "English as a Second Language",
+      "catalog_twins": [
+        "ESOL M1298"
+      ]
+    },
+    {
+      "old_id": "M-ID ESL 112",
+      "new_id": "ESOL M10YB",
+      "title": "High-Intermediate Reading and Writing",
+      "discipline": "English as a Second Language",
+      "catalog_twins": [
+        "ESOL M1320"
+      ]
+    },
+    {
+      "old_id": "M-ID ESL 114",
+      "new_id": "ESOL M10YC",
+      "title": "Intermediate Grammar for Reading and Writing",
+      "discipline": "English as a Second Language",
+      "catalog_twins": [
+        "ESOL M1306"
+      ]
+    },
+    {
+      "old_id": "M-ID ESL 116",
+      "new_id": "ESOL M10YD",
+      "title": "Intermediate Reading and Writing",
+      "discipline": "English as a Second Language",
+      "catalog_twins": [
+        "ESOL M1350"
+      ]
+    },
+    {
+      "old_id": "M-ID FASH 102",
+      "new_id": "FASH M10TB",
+      "title": "Apparel Construction I Laboratory",
+      "discipline": "Fashion and Related Technologies",
+      "catalog_twins": [
+        "FASH M10EF"
+      ]
+    },
+    {
+      "old_id": "M-ID FREN 102",
+      "new_id": "FREN M10EA",
+      "title": "Intermediate French",
+      "discipline": "Foreign Languages",
+      "catalog_twins": [
+        "FREN M1045"
+      ]
+    },
+    {
+      "old_id": "M-ID GERM 102",
+      "new_id": "GERM M10CK",
+      "title": "Intermediate German",
+      "discipline": "Foreign Languages",
+      "catalog_twins": [
+        "GERM M1022"
+      ]
+    },
+    {
+      "old_id": "M-ID GRA 100",
+      "new_id": "GRAF M1066",
+      "title": "Digital Media",
+      "discipline": "Graphic Arts",
+      "catalog_twins": [
+        "GRAF M1044"
+      ]
+    },
+    {
+      "old_id": "M-ID GRA 106",
+      "new_id": "GRAF M10IB",
+      "title": "Photoshop Skills for Graphic Designers",
+      "discipline": "Graphic Arts",
+      "catalog_twins": [
+        "GRAF M10FY"
+      ]
+    },
+    {
+      "old_id": "M-ID GRA 108",
+      "new_id": "GRAF M10IC",
+      "title": "Typography",
+      "discipline": "Graphic Arts",
+      "catalog_twins": [
+        "GRAF M10AJ"
+      ]
+    },
+    {
+      "old_id": "M-ID HEBR 100",
+      "new_id": "FLNG M10AC",
+      "title": "Elementary Hebrew",
+      "discipline": "Foreign Languages",
+      "catalog_twins": [
+        "FLHE M1001"
+      ]
+    },
+    {
+      "old_id": "M-ID HORT 100",
+      "new_id": "HORT M10PX",
+      "title": "Integrated Pest Management",
+      "discipline": "Ornamental Horticulture",
+      "catalog_twins": [
+        "HORT M1060"
+      ]
+    },
+    {
+      "old_id": "M-ID HORT 102",
+      "new_id": "HORT M10PY",
+      "title": "Irrigation Design Fundamentals",
+      "discipline": "Ornamental Horticulture",
+      "catalog_twins": [
+        "HORT M10HO"
+      ]
+    },
+    {
+      "old_id": "M-ID HORT 104",
+      "new_id": "HORT M10PZ",
+      "title": "Landscape Cad-fundamentals",
+      "discipline": "Ornamental Horticulture",
+      "catalog_twins": [
+        "HORT M10DL"
+      ]
+    },
+    {
+      "old_id": "M-ID HORT 106",
+      "new_id": "HORT M10QA",
+      "title": "Plant Materials-edibles",
+      "discipline": "Ornamental Horticulture",
+      "catalog_twins": [
+        "HORT M10JQ"
+      ]
+    },
+    {
+      "old_id": "M-ID HORT 108",
+      "new_id": "HORT M10QB",
+      "title": "Plant Materials-ornamental",
+      "discipline": "Ornamental Horticulture",
+      "catalog_twins": [
+        "HORT M10PI"
+      ]
+    },
+    {
+      "old_id": "M-ID HORT 110",
+      "new_id": "HORT M10QC",
+      "title": "Plant Propagation",
+      "discipline": "Ornamental Horticulture",
+      "catalog_twins": [
+        "HORT M1079"
+      ]
+    },
+    {
+      "old_id": "M-ID HSER 100",
+      "new_id": "COUN M10WY",
+      "title": "Addiction Studies Counseling Skills",
+      "discipline": "Counseling",
+      "catalog_twins": [
+        "COUN M10CU"
+      ]
+    },
+    {
+      "old_id": "M-ID HSER 102",
+      "new_id": "COUN M10WZ",
+      "title": "Case Administration, Crisis Intervention and Referral",
+      "discipline": "Counseling",
+      "catalog_twins": [
+        "COUN M10EH"
+      ]
+    },
+    {
+      "old_id": "M-ID HVAC 100",
+      "new_id": "HVAC M10VK",
+      "title": "Basic Refrigeration & AC Lab",
+      "discipline": "Air Conditioning, Refrigeration, Heating",
+      "catalog_twins": [
+        "HVAC M10DM"
+      ]
+    },
+    {
+      "old_id": "M-ID HVAC 102",
+      "new_id": "HVAC M10VL",
+      "title": "Basic Refrigeration & AC Theory",
+      "discipline": "Air Conditioning, Refrigeration, Heating",
+      "catalog_twins": [
+        "HVAC M10DN"
+      ]
+    },
+    {
+      "old_id": "M-ID INTD 100",
+      "new_id": "INTD M10HM",
+      "title": "Advanced Cad for Interior Design",
+      "discipline": "Interior Design",
+      "catalog_twins": [
+        "INTD M10BE"
+      ]
+    },
+    {
+      "old_id": "M-ID INTD 104",
+      "new_id": "INTD M10HO",
+      "title": "Business and Professional Practice for Interior Design",
+      "discipline": "Interior Design",
+      "catalog_twins": [
+        "INTD M10CO"
+      ]
+    },
+    {
+      "old_id": "M-ID INTD 106",
+      "new_id": "INTD M10HP",
+      "title": "Cad for Interior Design",
+      "discipline": "Interior Design",
+      "catalog_twins": [
+        "INTD M1013"
+      ]
+    },
+    {
+      "old_id": "M-ID INTD 110",
+      "new_id": "INTD M10HR",
+      "title": "Digital Visualization for Interior Design",
+      "discipline": "Interior Design",
+      "catalog_twins": [
+        "INTD M10EB"
+      ]
+    },
+    {
+      "old_id": "M-ID INTD 112",
+      "new_id": "INTD M10HS",
+      "title": "Fundamentals of Interior Design",
+      "discipline": "Interior Design",
+      "catalog_twins": [
+        "INTD M1018"
+      ]
+    },
+    {
+      "old_id": "M-ID INTD 114",
+      "new_id": "INTD M10HT",
+      "title": "Fundamentals of Lighting",
+      "discipline": "Interior Design",
+      "catalog_twins": [
+        "INTD M1032"
+      ]
+    },
+    {
+      "old_id": "M-ID INTD 120",
+      "new_id": "INTD M10HW",
+      "title": "Interior Design Illustration",
+      "discipline": "Interior Design",
+      "catalog_twins": [
+        "INTD M10EX"
+      ]
+    },
+    {
+      "old_id": "M-ID ITAL 100",
+      "new_id": "ITAL M10CN",
+      "title": "Elementary Italian",
+      "discipline": "Foreign Languages",
+      "catalog_twins": [
+        "ITAL M1024"
+      ]
+    },
+    {
+      "old_id": "M-ID ITAL 102",
+      "new_id": "ITAL M10CO",
+      "title": "Introduction to Italian Culture",
+      "discipline": "Foreign Languages",
+      "catalog_twins": [
+        "ITAL M1019"
+      ]
+    },
+    {
+      "old_id": "M-ID JPN 102",
+      "new_id": "FLNG M10AE",
+      "title": "Intermediate Japanese",
+      "discipline": "Foreign Languages",
+      "catalog_twins": [
+        "JAPN M1028"
+      ]
+    },
+    {
+      "old_id": "M-ID KOR 100",
+      "new_id": "FLNG M10AF",
+      "title": "Elementary Korean",
+      "discipline": "Foreign Languages",
+      "catalog_twins": [
+        "FLKO M1008"
+      ]
+    },
+    {
+      "old_id": "M-ID KOR 102",
+      "new_id": "FLNG M10AG",
+      "title": "Intermediate Korean",
+      "discipline": "Foreign Languages",
+      "catalog_twins": [
+        "FLKO M1010"
+      ]
+    },
+    {
+      "old_id": "M-ID MACH 100",
+      "new_id": "MACH M10LR",
+      "title": "Machine Technology",
+      "discipline": "Machine Tool Technology",
+      "catalog_twins": [
+        "MACH M10LA"
+      ]
+    },
+    {
+      "old_id": "M-ID MATH 104",
+      "new_id": "MATH M1361",
+      "title": "College and Matrix Algebra",
+      "discipline": "Mathematics",
+      "catalog_twins": [
+        "MATH M1044"
+      ]
+    },
+    {
+      "old_id": "M-ID MFG 102",
+      "new_id": "MANU M10KL",
+      "title": "Introduction to Manufacturing Engineering Technology",
+      "discipline": "Manufacturing Technology",
+      "catalog_twins": [
+        "MANU M10HK"
+      ]
+    },
+    {
+      "old_id": "M-ID MFG 104",
+      "new_id": "MANU M10KM",
+      "title": "Introduction to Rapid Prototyping Technology",
+      "discipline": "Manufacturing Technology",
+      "catalog_twins": [
+        "MANU M10JF"
+      ]
+    },
+    {
+      "old_id": "M-ID MUS 100",
+      "new_id": "MUSI M12SL",
+      "title": "Basic Musicianship",
+      "discipline": "Music",
+      "catalog_twins": [
+        "MUSI M1114"
+      ]
+    },
+    {
+      "old_id": "M-ID MUS 102",
+      "new_id": "MUSI M12SM",
+      "title": "Beginning Piano",
+      "discipline": "Music",
+      "catalog_twins": [
+        "MUSI M1143"
+      ]
+    },
+    {
+      "old_id": "M-ID MUS 114",
+      "new_id": "MUSI M12SS",
+      "title": "Intermediate Piano",
+      "discipline": "Music",
+      "catalog_twins": [
+        "MUSI M1476"
+      ]
+    },
+    {
+      "old_id": "M-ID MUS 124",
+      "new_id": "MUSI M12SX",
+      "title": "Music Theory and Musicianship 3",
+      "discipline": "Music",
+      "catalog_twins": [
+        "MUSI M1448"
+      ]
+    },
+    {
+      "old_id": "M-ID MUS 128",
+      "new_id": "MUSI M12SZ",
+      "title": "Studies in Music Composition",
+      "discipline": "Music",
+      "catalog_twins": [
+        "MUSI M1240"
+      ]
+    },
+    {
+      "old_id": "M-ID MUS 130",
+      "new_id": "MUSI M12TA",
+      "title": "Teaching Beginning Piano",
+      "discipline": "Music",
+      "catalog_twins": [
+        "MUSI M1144"
+      ]
+    },
+    {
+      "old_id": "M-ID MUS 132",
+      "new_id": "MUSI M12TB",
+      "title": "Teaching Intermediate Piano",
+      "discipline": "Music",
+      "catalog_twins": [
+        "MUSI M12KL"
+      ]
+    },
+    {
+      "old_id": "M-ID NURS 100",
+      "new_id": "NRSR M11SM",
+      "title": "Foundations of Nursing Practice",
+      "discipline": "Nursing",
+      "catalog_twins": [
+        "NRSR M1100"
+      ]
+    },
+    {
+      "old_id": "M-ID NURS 102",
+      "new_id": "NRSR M11SN",
+      "title": "Nursing Process Lab",
+      "discipline": "Nursing",
+      "catalog_twins": [
+        "NRSR M11ND"
+      ]
+    },
+    {
+      "old_id": "M-ID NURS 104",
+      "new_id": "NRSR M11SO",
+      "title": "Patient-Centered Care I and Family-Centered Care of Children",
+      "discipline": "Nursing",
+      "catalog_twins": [
+        "NRSR M10QS"
+      ]
+    },
+    {
+      "old_id": "M-ID PARA 100",
+      "new_id": "PLGL M10IA",
+      "title": "Introduction to Legal Research and Terminology",
+      "discipline": "Legal Assisting",
+      "catalog_twins": [
+        "PLGL M10GU"
+      ]
+    },
+    {
+      "old_id": "M-ID PARA 102",
+      "new_id": "PLGL M10IB",
+      "title": "Introduction to Paralegal Studies",
+      "discipline": "Legal Assisting",
+      "catalog_twins": [
+        "PLGL M1045"
+      ]
+    },
+    {
+      "old_id": "M-ID PERS 100",
+      "new_id": "FLNG M10AH",
+      "title": "Elementary Persian",
+      "discipline": "Foreign Languages",
+      "catalog_twins": [
+        "ARAB M1012"
+      ]
+    },
+    {
+      "old_id": "M-ID PERS 102",
+      "new_id": "FLNG M10AI",
+      "title": "Intermediate Persian",
+      "discipline": "Foreign Languages",
+      "catalog_twins": [
+        "FLPE M1001"
+      ]
+    },
+    {
+      "old_id": "M-ID PHOT 104",
+      "new_id": "PHOT M10RI",
+      "title": "Photo Editing: Lightroom",
+      "discipline": "Photography",
+      "catalog_twins": [
+        "PHOT M10LH"
+      ]
+    },
+    {
+      "old_id": "M-ID PORT 100",
+      "new_id": "PORT M10AJ",
+      "title": "Elementary Portuguese",
+      "discipline": "Foreign Languages",
+      "catalog_twins": [
+        "PORT M1003"
+      ]
+    },
+    {
+      "old_id": "M-ID SPAN 100",
+      "new_id": "SPAN M10NQ",
+      "title": "Civilization of Spain 1898 to Present",
+      "discipline": "Foreign Languages",
+      "catalog_twins": [
+        "SPAN M10AJ"
+      ]
+    },
+    {
+      "old_id": "M-ID SPAN 102",
+      "new_id": "SPAN M10NR",
+      "title": "Civilization of Spain Through 1898",
+      "discipline": "Foreign Languages",
+      "catalog_twins": [
+        "SPAN M10AK"
+      ]
+    },
+    {
+      "old_id": "M-ID THEA 100",
+      "new_id": "THTR M1377",
+      "title": "Beginning Stagecraft",
+      "discipline": "Drama/Theater Arts",
+      "catalog_twins": [
+        "THEA M1087"
+      ]
+    },
+    {
+      "old_id": "M-ID WEB 100",
+      "new_id": "ITIS M12NH",
+      "title": "Beginning Web Development: HyperText Markup Language (HTML) and Cascading Style Sheets (CSS)",
+      "discipline": "Computer Information Systems",
+      "catalog_twins": [
+        "ITIS M10YW"
+      ]
+    },
+    {
+      "old_id": "M-ID WEB 102",
+      "new_id": "ITIS M12NI",
+      "title": "Creating User-Centered Content",
+      "discipline": "Computer Information Systems",
+      "catalog_twins": [
+        "ITIS M1179"
+      ]
+    },
+    {
+      "old_id": "M-ID WEB 104",
+      "new_id": "ITIS M12NJ",
+      "title": "Javascript Fundamentals for Web Development",
+      "discipline": "Computer Information Systems",
+      "catalog_twins": [
+        "ITIS M11WN"
+      ]
+    },
+    {
+      "old_id": "M-ID WEB 106",
+      "new_id": "ITIS M12NK",
+      "title": "Website Development Using Open Source Content Management Systems",
+      "discipline": "Computer Information Systems",
+      "catalog_twins": [
+        "ITIS M11NV"
+      ]
+    }
+  ]
+}

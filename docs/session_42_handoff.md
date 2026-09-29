@@ -10,6 +10,8 @@ related:
   - docs/official_id_fold_scope.md (R1–R4 now ALL built)
   - CLAUDE.md §11 "Session 41" subsection
 moniker_suggestion: Session 41 ran as "Intelligent Ride" (branch name); claim your own
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 <!-- Lineage: … live-curation loop (39) → severed evidence index repaired (40)

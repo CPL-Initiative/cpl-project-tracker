@@ -97,7 +97,7 @@ function panelBox(doc) {
 
   // The sync badge now offers the review link.
   const rl = reviewLink(doc);
-  check("a '📋 Review merges (1)' link appears after a merge", rl && /\(1\)/.test(txt(rl)));
+  check("a 'Review merges (1)' link appears after a merge", rl && /\(1\)/.test(txt(rl)));
 
   // Open the panel — it lists target ← member.
   rl.dispatchEvent(new window.Event("click"));

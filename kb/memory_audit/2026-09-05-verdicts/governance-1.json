@@ -1,0 +1,1034 @@
+{
+  "part": "governance-1",
+  "expected_rows": 32,
+  "coverage": {
+    "rows_read": 32,
+    "rows_judged": 32,
+    "note": "All 32 rows judged. Could not re-run tests/team_phrase_affordance.test.js (jsdom not installed in this sandbox), so row phrase-affordance-coverage-2026-08-14's 12/4 split is as-of-date; everything else was re-measured against disk or the live DB."
+  },
+  "counts": {
+    "confirmed": 28,
+    "stale": 1,
+    "superseded_by_row": 3,
+    "snapshot": 0,
+    "unverifiable": 0
+  },
+  "verdicts": [
+    {
+      "id": "0fdcf32f-ca42-47f4-87b7-d7ab8004c28f",
+      "slug": "q1",
+      "kind": "question",
+      "title": "Gating the curation tabs",
+      "verdict": "superseded_by_row",
+      "confidence": "medium",
+      "reason": "The per-tab mix the question anticipated is settled practice (Admin reviewer-only, worklist team-gated, 132 reviewer vs 83 phrase policies), and Sam's 2026-08-14 ruling keeps the phrase as the team front door with roles where attribution is needed; only the role column remains open.",
+      "evidence": [
+        {
+          "source": "docs/reference/lanes/org-phrase-scope-auth.md (Status)",
+          "quote": "132 policies call is_allowed_reviewer() vs 83 calling team_pass_ok() ... So the question is only whether the phrase half survives ... NEXT: Sam's go on the role column."
+        },
+        {
+          "source": "admin.js:34",
+          "quote": "GATING: reviewer magic-link only. A phrase holder able to re-scope what other"
+        },
+        {
+          "source": "slug:sam-roles-not-groups-keep-the-phrase",
+          "quote": "keep the team phrase as the team front door ... add ROLES only where attribution is needed"
+        },
+        {
+          "source": "slug:allow-either-on-shared-tabs (verified, Sam Lee 2026-08-12)",
+          "quote": "shared tabs allow either phrase; only exclusive tabs scope"
+        }
+      ],
+      "superseded_by": "sam-roles-not-groups-keep-the-phrase",
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "9fd23f78-a69a-4c26-a336-6e8905d962a8",
+      "slug": null,
+      "kind": "decision",
+      "title": "Terminology: \"Learning Partners\", and answering never closes",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "ADR note carries the vocabulary and the never-closes rule; the tab uses 'Needs Input' and 'Noncredit & Learning Partners'; nc_partner_notes has INSERT/SELECT/UPDATE policies only (no DELETE) and nc_partner_note_revise inserts a revision and stamps the predecessor superseded_by.",
+      "evidence": [
+        {
+          "source": "docs/kb-notes/adr-notes-alongside-the-curated-register.md:37",
+          "quote": "1. **\"Answering never closes, just revises.\"**"
+        },
+        {
+          "source": "docs/kb-notes/adr-notes-alongside-the-curated-register.md:80-82",
+          "quote": "`supersedes` / `superseded_by` **in one round trip** ... The predecessor is **retained**; only rows with `superseded_by is null` render."
+        },
+        {
+          "source": "nc_learning_partners.js:996",
+          "quote": "{ key: \"open\", label: \"Needs Input\" }"
+        },
+        {
+          "source": "sql: pg_get_functiondef(nc_partner_note_revise)",
+          "quote": "insert into public.nc_partner_notes (item_id, body, author, supersedes) ... update public.nc_partner_notes set superseded_by = new_id where id = p_supersedes and superseded_by is null"
+        },
+        {
+          "source": "sql: pg_policies where tablename='nc_partner_notes'",
+          "quote": "nc_partner_notes_insert · INSERT, nc_partner_notes_read · SELECT, nc_partner_notes_update · UPDATE — no DELETE policy"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Sam",
+      "kind_check": null,
+      "link_fixes": [
+        {
+          "from": "CLAUDE.md naming",
+          "to": "CLAUDE.md § Naming & terminology (not a memory slug; related[] expects slugs)"
+        }
+      ]
+    },
+    {
+      "id": "2e5b754d-ce15-4fc0-b540-194506943279",
+      "slug": "route-to-their-own-determination",
+      "kind": "decision",
+      "title": "For autonomous institutions, propose only people they already designated",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The rule is the governance register's stated principle, the KB note exists (published), and the MAP Users lane still resolves blanks from the college's own MAP designations with leadership-only colleges asked rather than defaulted.",
+      "evidence": [
+        {
+          "source": "kb/governance_register.json _principle",
+          "quote": "Colleges are locally governed. We route to determinations they already made; we do not make determinations for them."
+        },
+        {
+          "source": "docs/map_users_lessons.md:56",
+          "quote": "**Every proposal must be a person the COLLEGE already designated in MAP.**"
+        },
+        {
+          "source": "docs/reference/lanes/map-users-student-contact.md (Status)",
+          "quote": "17 resolve from the college's own MAP designations (coordinator→assistant→counselor→AO→initiator→faculty), 5 leadership-only, 3 no-MAP-presence"
+        },
+        {
+          "source": "docs/kb-notes/methodology-route-to-a-determination-they-already-made.md",
+          "quote": "kb-status: published"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Sam",
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "aee8e4a7-17e4-44fb-8aa9-26d95db04949",
+      "slug": "governance-artifact-measures-itself",
+      "kind": "procedure",
+      "title": "A governance artifact must measure itself, and render what it lacks",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "governance.js reads map_college_nudges live and prints 'never run'; the register ships every owner null and says filling them is the review; the KB note is published.",
+      "evidence": [
+        {
+          "source": "governance.js:346",
+          "quote": ": '<span class=\"gov-bad\">never run</span>';"
+        },
+        {
+          "source": "governance.js:177",
+          "quote": "var nudges = fetch(REST + \"/map_college_nudges?select=college,last_nudged_at\""
+        },
+        {
+          "source": "kb/governance_register.json _status",
+          "quote": "Every `owner` field is deliberately null: who is accountable on OUR side is the one thing a session cannot infer from data. Filling those in is the review."
+        },
+        {
+          "source": "docs/kb-notes/methodology-a-governance-artifact-must-measure-itself.md",
+          "quote": "kb-status: published"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "9f0f1c16-e790-41ec-83b1-a8b87703f293",
+      "slug": "contact-refresh-cadence-never-run",
+      "kind": "pitfall",
+      "title": "The college contact-refresh cadence was decided in June and has never run",
+      "verdict": "stale",
+      "confidence": "medium",
+      "reason": "Re-measured: map_college_nudges holds 2 rows (Crafton Hills, Copper Mountain, nudged 2026-08-14 by '(team)') and CA-03 has an owner (Natalie, 2026-08-07), so 'never fired once' no longer holds. The lesson lives in the KB note; the lane file and CA-03 note still say 0 rows and are stale too.",
+      "evidence": [
+        {
+          "source": "sql: select college,last_nudged_at from map_college_nudges",
+          "quote": "Crafton Hills College 2026-08-14 23:25:02+00 (team); Copper Mountain College 2026-08-14 23:30:34+00 (team) — count 2"
+        },
+        {
+          "source": "sql: governance_owners where register_id='CA-03'",
+          "quote": "owner: Natalie, set_at 2026-08-07T18:56:57, set_by (team)"
+        },
+        {
+          "source": "docs/reference/lanes/governance-team-enablement.md (Status)",
+          "quote": "the contact-refresh cadence was decided in June and has never run (0 rows in `map_college_nudges`) — contradicted by the live table"
+        },
+        {
+          "source": "kb/governance_register.json CA-03 note",
+          "quote": "The instrument was built in June and has never been fired. — same stale claim"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "9ab56b9d-dc35-4926-b093-1250edb8f861",
+      "slug": "counseling-contact-sourcing-rules",
+      "kind": "decision",
+      "title": "Counseling-contact sourcing rules (Jessica, MAP team)",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The rules are recorded verbatim in the MAP Users lessons doc, PR #1003 applied them, and the lane still honors them (mental-health-only inboxes declined; search-tier candidates refused in code because her rules could not be applied).",
+      "evidence": [
+        {
+          "source": "docs/map_users_lessons.md:194-196",
+          "quote": "a general counseling inbox → use it · one named person who IS the designated contact → use them · just a list of counselors → leave blank · ... never mental-health."
+        },
+        {
+          "source": "git log origin/main (#1003)",
+          "quote": "b06b2d51 Counseling contacts: 28 more colleges, under Jessica's sourcing rules (#1003)"
+        },
+        {
+          "source": "docs/reference/lanes/map-users-student-contact.md (Status)",
+          "quote": "2 colleges publish only a mental-health inbox — DELIBERATELY DECLINED for CPL routing ... Jessica's sourcing rules could not be applied; they render \"Candidate — confirm\""
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Jessica",
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "e53187b5-790d-4dea-93fa-9003c9a4bf17",
+      "slug": "naming-a-gap-without-a-handle",
+      "kind": "pitfall",
+      "title": "Naming a gap without giving the reader a handle to close it",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "PR #1000 landed; owners live in the separate gated governance_owners table (27 rows, its own insert/update policies) exactly as the row's reusable split describes; the lane states the same.",
+      "evidence": [
+        {
+          "source": "git log origin/main (#1000)",
+          "quote": "59f45c26 Governance tab: make the owner column actually editable (#1000)"
+        },
+        {
+          "source": "sql: pg_policies where tablename='governance_owners'",
+          "quote": "go_insert INSERT with_check (is_allowed_reviewer() OR team_pass_ok()); go_update UPDATE; go_select SELECT — 27 rows"
+        },
+        {
+          "source": "docs/reference/lanes/governance-team-enablement.md (Status)",
+          "quote": "Owners live in a separate gated `governance_owners` table overlaying by row id, so regenerating the JSON can never wipe an assignment"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "260ead43-b571-40f2-b7d8-2201c0a1031c",
+      "slug": "a-failed-read-is-not-an-empty-result",
+      "kind": "pitfall",
+      "title": "A failed read is not an empty result — the UI lies while the data is fine",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "PRs #1032/#1033 landed, the KB note is published, and governance.js keeps the last known-good owners map on a failed read with the rationale in a comment (note: the nudge/gap reads at :166/:178/:199 still use the r.ok ? r.json() : [] shape).",
+      "evidence": [
+        {
+          "source": "governance.js:268-273",
+          "quote": "`r.ok ? r.json() : []`, which turned a 401, a 500 or an RLS change into an ... Keep the last known-good map and flag it."
+        },
+        {
+          "source": "governance.js:43-44",
+          "quote": "true when the owners READ failed — the map below is then the last known-good, not the truth. Never silently render a failed"
+        },
+        {
+          "source": "git log origin/main (#1032, #1033)",
+          "quote": "9b3dc0cb Governance: fix the owner Save needing two clicks (#1032); 07bc9194 Governance: a failed owners read is not \"nobody has an owner\" (#1033)"
+        },
+        {
+          "source": "docs/kb-notes/methodology-a-failed-read-is-not-an-empty-result.md",
+          "quote": "kb-status: published"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "1f2caedd-7ed9-4dd5-a8c2-d59bb5de1072",
+      "slug": "judge-a-detector-by-what-it-prints",
+      "kind": "procedure",
+      "title": "Judge a detector by what it prints — filters are only observable in their output",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The numeric noise guard exists in tests/governance.test.js (now < 25) with the '39 was the unfiltered first draft' rationale; the committed surface map holds mapped/dismissed-with-reason memory; PR #1036 landed; KB note published.",
+      "evidence": [
+        {
+          "source": "tests/governance.test.js:499",
+          "quote": "// The noise guard, as a number. 39 was the unfiltered first draft; if the list"
+        },
+        {
+          "source": "tests/governance.test.js:511",
+          "quote": "check(\"⚠ the candidate list stays readable (< 25)\", (d.candidates || []).length < 25);"
+        },
+        {
+          "source": "kb/governance_surface_map.json _about",
+          "quote": "'dismissed' = it needs no row, and why ... Dismissal lives here, not in a database, so the REASON is reviewable in a diff"
+        },
+        {
+          "source": "git log origin/main (#1036)",
+          "quote": "4a9e3030 Governance: build the drift detector — what's missing from the register (OQ-08) (#1036)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "665fe212-1921-47c4-8b8e-da21c5b214e5",
+      "slug": "written-backlog-decays-silently",
+      "kind": "pitfall",
+      "title": "A written backlog decays silently — measure it instead",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "map_team_queue.js exists (PR #1073), the KB note is published, and governance_owners shows the Aug 5/7 team assignments the row cites; the governance lane's own 'every owner is deliberately unset' line is now an instance of this pitfall (27 of 38 rows carry an owner).",
+      "evidence": [
+        {
+          "source": "git log origin/main (#1073)",
+          "quote": "10fc31cd MAP Team Queue: an inbox that measures itself instead of carrying a list (#1073)"
+        },
+        {
+          "source": "sql: governance_owners (27 rows)",
+          "quote": "DR-01/02/04/05/06 set 2026-08-05 by (team); DR-03/07/08/09/10/11, CA-03/05/06 set 2026-08-07 by (team); DR-12..18 2026-08-14; DR-19..23, CA-07 2026-08-31 by slee@cccco.edu"
+        },
+        {
+          "source": "docs/kb-notes/methodology-a-written-backlog-decays-silently.md",
+          "quote": "kb-status: published"
+        },
+        {
+          "source": "ls map_team_queue.js",
+          "quote": "map_team_queue.js"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "d4a16b1e-06c4-4092-b42a-4974f2c99b79",
+      "slug": "k10-suppression-floor-public-surfaces",
+      "kind": "decision",
+      "title": "Small-cell suppression floor is k=10 on every public surface",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "SUPPRESS_BELOW = 10 with Sam's date is the constant in funding/_build_cr_backlog.py (complementary suppression at :180), cpl_funding.js cites the same raise, PR #1091 landed; the later funding ADR (2026-09-03) also masks under 10.",
+      "evidence": [
+        {
+          "source": "funding/_build_cr_backlog.py:67",
+          "quote": "SUPPRESS_BELOW = 10  # raised 5 → 10 (Sam, 2026-08-10) — one floor for every"
+        },
+        {
+          "source": "funding/_build_cr_backlog.py:180",
+          "quote": "hidden = {d for d in DISPOSITIONS if 0 < c.get(d, 0) < SUPPRESS_BELOW}"
+        },
+        {
+          "source": "cpl_funding.js:3409",
+          "quote": "(funding/_build_cr_backlog.py: SUPPRESS_BELOW). Raised 5 → 10 on 2026-08-10;"
+        },
+        {
+          "source": "git log origin/main (#1091)",
+          "quote": "15bc91a6 Raise the small-cell suppression floor to k=10, and stop hard-coding the mask (#1091)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Sam",
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "6c4b25a3-0303-4f03-be6e-1a9d10cc826e",
+      "slug": "dropped-vs-never-present-same-symptom",
+      "kind": "pitfall",
+      "title": "\"Dropped at load\" and \"never present\" look identical — do not guess which",
+      "verdict": "confirmed",
+      "confidence": "medium",
+      "reason": "The lessons doc records the event and the lesson verbatim; the re-load the row anticipated has happened (map_student_credit now has 18 columns, 537,908 rows per the lane). The lesson stands; nothing mechanical enforces it, so the confirmation rests on the lessons doc plus the DB state.",
+      "evidence": [
+        {
+          "source": "docs/sierra_credential_naming_lessons.md:133",
+          "quote": "**\"dropped at load.\"** That was an *inference* from two true facts — the table has"
+        },
+        {
+          "source": "docs/sierra_credential_naming_lessons.md:151",
+          "quote": "The lesson is not \"check your facts\" — it is that **\"dropped\" and \"never present\""
+        },
+        {
+          "source": "sql: information_schema.columns where table_name='map_student_credit'",
+          "quote": "18 columns (the row's event had five)"
+        },
+        {
+          "source": "docs/reference/lanes/disposition-grain-student-detail.md (Status)",
+          "quote": "`map_student_credit` **537,908 rows** (student grain, reviewer-only RLS, **no write policies**)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "17d89003-12d2-4a10-aab0-35f1bb2a47bd",
+      "slug": "course-share-100pct-reads-as-done",
+      "kind": "decision",
+      "title": "The 100% course-share figure reads as a finished checkbox — Sam rejected it",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The decision governs and was built: PR #1115 retired the Course Credit tab's 100% and college_briefing.js carries the measure DEMOTED with the dormant-units context, exactly the proposal. The 'not yet built' clause and the college_goal2.js source are overtaken (file deleted in #1115).",
+      "evidence": [
+        {
+          "source": "git log origin/main (#1115)",
+          "quote": "beb537e0 My College — rework the briefing, absorb Course Credit, retire the misleading 100% (#1115)"
+        },
+        {
+          "source": "college_briefing.js:1331-1335",
+          "quote": "It is DEMOTED here on purpose: it divides by credit a college has ALREADY AWARDED, so a small amount awarded perfectly reads 100% and looks finished. ... It is never shown without that context."
+        },
+        {
+          "source": "docs/sierra_credential_naming_lessons.md:259-260",
+          "quote": "The 100% on the Course Credit tab is unhelpful — \"makes me think I can check the box and be done.\" Confirmed: the 14 colleges at 100% carry"
+        },
+        {
+          "source": "git log --diff-filter=D -- college_goal2.js",
+          "quote": "beb537e0 ... (#1115) — college_goal2.js no longer exists"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Sam Lee",
+      "kind_check": null,
+      "link_fixes": [
+        {
+          "from": "college_goal2.js",
+          "to": "college_briefing.js (courseShare(), absorbed in #1115)"
+        }
+      ]
+    },
+    {
+      "id": "de2d61dc-fb2a-4595-bc7f-123bdea3ae06",
+      "slug": "post-exhibit-pdf-needs-10-governance-fields",
+      "kind": "fact",
+      "title": "Reproducing a statewide exhibit PDF needs 10 fields that exist in NO view we fetch",
+      "verdict": "confirmed",
+      "confidence": "medium",
+      "reason": "No fetched view carries exhibit-level review metadata: grep of kb/, funding/, scripts/, chatbox/ *.py for facilitator/FacultyReviewer/ReviewDate/DateFinalized finds nothing and the fetched-view list is unchanged in kind; the only columns added since are six lifecycle booleans on the student view.",
+      "evidence": [
+        {
+          "source": "grep -rn -i 'facilitator|FacultyReviewer|ReviewDate|DateFinalized' --include=*.py kb funding scripts chatbox",
+          "quote": "(no matches)"
+        },
+        {
+          "source": "grep -ho 'View_[A-Za-z_]*' kb/_sync_map_custom_reports.py scrape*.py excel_to_dashboard.py",
+          "quote": "View_ArticulatedMAPExhibits, View_ExhibitCRsCatalog_Dataset, View_CollegeExhibitCR_APIDataset, View_StudentAggregatedValues_APIDataset ... none an exhibit-review view"
+        },
+        {
+          "source": "docs/reference/lanes/map-custom-reports.md (Status)",
+          "quote": "View_StudentAggregatedValues_APIDataset gained six lifecycle booleans (CPL_Docs_Verified … Transcribed) ... The CR-row view is unchanged at 30 columns"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "8b6b3b08-8b65-45fa-b54d-a688b34ab490",
+      "slug": "cobi-nav-manager-wishlist",
+      "kind": "wishlist",
+      "title": "COBI wants a single drag-and-drop manager for side-menu items (Sam)",
+      "verdict": "superseded_by_row",
+      "confidence": "high",
+      "reason": "Built: PR #1195 made the side menu data (public.cobi_nav, drag-and-drop on the Admin tab); Sam has dragged and saved (47 rows live); the 'access' dimension became the audience ladder with the real RLS gate shown beside it, as the row's own trap warned.",
+      "evidence": [
+        {
+          "source": "git log origin/main (#1195)",
+          "quote": "9fdba2c8 Admin: drag and drop the side menu — the nav becomes data (#1195)"
+        },
+        {
+          "source": "sql: select count(*) from cobi_nav",
+          "quote": "47"
+        },
+        {
+          "source": "docs/reference/lanes/admin-tab-side-menu.md (Status)",
+          "quote": "SAM HAS DRAGGED AND SAVED — `cobi_nav` holds 43 rows stamped `slee@cccco.edu`, 2026-08-15 13:59 UTC (his renames ... a `settings` category, CPL Assistant hidden, audience rungs set)"
+        },
+        {
+          "source": "slug:the-cobi-side-menu-is-data-now-cobi-nav",
+          "quote": "Order, grouping, labels and site visibility move from three code files into public.cobi_nav, edited by drag and drop on the Admin tab."
+        }
+      ],
+      "superseded_by": "the-cobi-side-menu-is-data-now-cobi-nav",
+      "human_sourced": true,
+      "human_name": "Sam",
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "5e01e196-9697-40f5-b219-55cef7dc1971",
+      "slug": "cobi-nav-manager-lives-in-an-admin-tab",
+      "kind": "wishlist",
+      "title": "The COBI nav manager should live in an Admin tab, alongside the other curator-config surfaces (Sam)",
+      "verdict": "superseded_by_row",
+      "confidence": "high",
+      "reason": "Built as the Admin tab (PR #1193): reviewer-magic-link-only gating settles open question 1 as recommended; Team Phrases stays its own tab (surface map: tab:team-phrases → DR-14; Admin's only write is cobi_nav), settling question 2 as kept apart deliberately.",
+      "evidence": [
+        {
+          "source": "git log origin/main (#1193)",
+          "quote": "279fc019 Admin tab: the side menu, beside what actually protects each tab (#1193)"
+        },
+        {
+          "source": "admin.js:34",
+          "quote": "GATING: reviewer magic-link only. A phrase holder able to re-scope what other"
+        },
+        {
+          "source": "kb/governance_surface_map.json",
+          "quote": "\"tab:team-phrases\": \"DR-14\" ... \"tab:admin\": \"The Admin tab IS the surface DR-12 governs. Its only write is cobi_nav\""
+        },
+        {
+          "source": "slug:nav-visibility-is-a-display-control-not-a-security-control",
+          "quote": "the Admin tab puts what people SEE and what actually STOPS them in the same row, with the gates read live from the database"
+        }
+      ],
+      "superseded_by": "nav-visibility-is-a-display-control-not-a-security-control",
+      "human_sourced": true,
+      "human_name": "Sam",
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "e5857353-9e06-44bc-a2ce-2a12963efcbb",
+      "slug": "five-blind-spots-that-make-a-static-scan-report-nothing-to-protect",
+      "kind": "pitfall",
+      "title": "Mapping tabs to their data surface had five distinct ways to emit a false clean bill of health",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "PR #1193 landed and the lesson stands. The scanner half changed 2026-08-30 (#1398): kb/_build_cobi_admin_surface.py now projects tab→tables from kb/dependency_map.json instead of its own regex (boot-dispatch parsing kept); five tabs still render NOT MEASURED, never clean.",
+      "evidence": [
+        {
+          "source": "kb/_build_cobi_admin_surface.py:173,185,194",
+          "quote": "(kb/_build_dependency_map.py) instead of a local per-module scan, because ... dep_path = ROOT / \"kb\" / \"dependency_map.json\" ... fail(\"kb/dependency_map.json missing or empty"
+        },
+        {
+          "source": "docs/reference/lanes/admin-tab-side-menu.md (Status)",
+          "quote": "THE SURFACE MAP NOW TELLS THE TRUTH (#1398, 2026-08-30, Sam's go) ... the five NOT MEASURED tabs byte-identical; `admin_tab.test.js` 177/177"
+        },
+        {
+          "source": "git log origin/main (#1193)",
+          "quote": "279fc019 Admin tab: the side menu, beside what actually protects each tab (#1193)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "bde4bee7-9705-4565-9f37-e9f08886aba0",
+      "slug": "nav-visibility-is-a-display-control-not-a-security-control",
+      "kind": "decision",
+      "title": "The Admin tab shows what is hidden and what is actually protected in ONE table, on purpose",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "admin.js still renders the live gate beside the menu columns, cobi_rls_gates() is a reviewer-gated SECURITY DEFINER read of pg_policies, and the lane repeats the figures. One clause is overtaken: 'rearranging the menu is deliberately NOT built' was superseded the same day by #1195.",
+      "evidence": [
+        {
+          "source": "sql: pg_get_functiondef(cobi_rls_gates)",
+          "quote": "SECURITY DEFINER ... from pg_policies p ... where n.nspname = 'public' and c.relkind in ('r','p','v','m') and public.is_allowed_reviewer()"
+        },
+        {
+          "source": "admin.js:107,119",
+          "quote": "{ id: \"public\", rank: 1, label: \"Anyone\" ... { id: \"unknown\", rank: -1, label: \"Not checked\" ... which is not the same as nobody. Treat it as unchecked rather than safe."
+        },
+        {
+          "source": "docs/reference/lanes/admin-tab-side-menu.md (Status)",
+          "quote": "DISPLAY IS NOT SECURITY — menu columns and the live RLS gate (`cobi_rls_gates()`) share ONE table. 73 tables + 6 views: 29 public-read · 24 team-phrase · 10 server-only"
+        },
+        {
+          "source": "git log origin/main (#1195)",
+          "quote": "9fdba2c8 Admin: drag and drop the side menu — the nav becomes data (#1195) — overtakes the 'NOT built' clause"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "47de4452-37ab-41cc-9684-09e5c9aceba0",
+      "slug": "the-cobi-side-menu-is-data-now-cobi-nav",
+      "kind": "decision",
+      "title": "The side menu is now editable data, with the built-in menu as the fail-safe",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "public.cobi_nav exists with public SELECT, reviewer-only INSERT/UPDATE and a DELETE policy (as claimed, unlike sierra_rules); nav_overlay.js is on disk; the lane restates the overlay-never-gates design; 47 rows today (seeded empty, Sam's drags since 2026-08-15).",
+      "evidence": [
+        {
+          "source": "sql: pg_policies where tablename='cobi_nav'",
+          "quote": "cobi_nav_public_select SELECT qual true; cobi_nav_reviewer_insert/update/delete is_allowed_reviewer()"
+        },
+        {
+          "source": "sql: select count(*) from cobi_nav",
+          "quote": "47"
+        },
+        {
+          "source": "docs/reference/lanes/admin-tab-side-menu.md (Status)",
+          "quote": "THE OVERLAY NEVER GATES THE MENU: the page builds from code and paints, then applies the overlay if it arrives."
+        },
+        {
+          "source": "ls nav_overlay.js chatbox/supabase_cobi_nav.sql",
+          "quote": "both present"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "b570dcf7-047e-4338-9b06-9ac4dbe785cb",
+      "slug": "a-word-boundary-cannot-match-before-a-dot",
+      "kind": "pitfall",
+      "title": "A file-path check misread folders beginning with a dot and raised a false alarm",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The fixed regex with the negative lookbehind and optional leading dot is in kb/_build_governance_candidates.py with the rationale comment; PR #1197 landed.",
+      "evidence": [
+        {
+          "source": "kb/_build_governance_candidates.py:241-247",
+          "quote": "# A leading `\\b` CANNOT match before a dot, so a dot-directory path like ... r\"(?<![\\w.\\-/])(\\.?(?:[\\w.\\-]+/)+[\\w.\\-]+\\.(?:py|js|json|yml|yaml|sql|md|html))\\b\""
+        },
+        {
+          "source": "git log origin/main (#1197)",
+          "quote": "f0794bb4 Resolve the governance red, and checkpoint (Session 156, SkyGate) (#1197)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "e1bc6c90-9b08-48bf-ba33-e55712516027",
+      "slug": "read-a-red-guards-rationale-before-fixing-or-defending-it",
+      "kind": "procedure",
+      "title": "When a check has been red long enough to become furniture, read WHY it was written before fixing or defending it",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The guard and its rationale comment are still in tests/governance.test.js (bound now < 25), DR-13..DR-18 are in the register (23 decision rights today), the lane reports governance.test.js 91/91, and PR #1197 landed.",
+      "evidence": [
+        {
+          "source": "tests/governance.test.js:499,511",
+          "quote": "39 was the unfiltered first draft; if the list ... check(\"⚠ the candidate list stays readable (< 25)\""
+        },
+        {
+          "source": "kb/governance_register.json",
+          "quote": "decision_rights: 23 entries DR-01..DR-23 (DR-13 'The workplan itself', DR-14..DR-18 present)"
+        },
+        {
+          "source": "docs/reference/lanes/governance-team-enablement.md (Status)",
+          "quote": "Readability guard tightened back to <25 in `tests/governance.test.js` ... `governance.test.js` **91/91**"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "34ee6d4b-5b00-42b8-8f3e-13333a56a790",
+      "slug": "the-workplan-had-no-named-owner-until-dr-13",
+      "kind": "decision",
+      "title": "The most public artifact the project has — the workplan — had no governance row until 2026-08-14",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "DR-13 is in the register with this scope and when_empty text (liftoff_state folded 2026-08-30). 'Owner deliberately unset' is overtaken: governance_owners holds DR-13 = Sam since 2026-08-14 21:41 (JSON owner null by design; the lane's 'fill DR-13 first' is stale).",
+      "evidence": [
+        {
+          "source": "kb/governance_register.json DR-13",
+          "quote": "element: The workplan itself — activities, projects, goals and lifecycle · decides: Not otherwise recorded — the workplan predates this register and nobody has been named for it"
+        },
+        {
+          "source": "kb/governance_register.json DR-13 when_empty",
+          "quote": "A wrong figure typed into a goal cell reaches the published dashboard on the next cron with nothing in between, and there is no convention for who may restate a target once it is set."
+        },
+        {
+          "source": "sql: governance_owners where register_id='DR-13'",
+          "quote": "owner: Sam, set_at 2026-08-14T21:41:12, set_by (team)"
+        },
+        {
+          "source": "git log origin/main (#1197)",
+          "quote": "f0794bb4 Resolve the governance red, and checkpoint (Session 156, SkyGate) (#1197)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "eb5a8ff3-720d-447f-809d-d61bf61f4016",
+      "slug": "phrase-affordance-coverage-2026-08-14",
+      "kind": "fact",
+      "title": "Eight of the eighteen password-protected tabs offered no way to enter the password",
+      "verdict": "confirmed",
+      "confidence": "medium",
+      "reason": "Mechanism all on disk: lockedBanner + reviewerOnly variant, the guard test, ALLOW_LIST of exactly 3 exemptions (cpl-pathways, unified-courses, annual-report), phrase_gated_tables.json tripwire; five tabs still NOT MEASURED. The 12/4 split is as of 2026-08-14 (jsdom missing here; test not re-run).",
+      "evidence": [
+        {
+          "source": "team_phrase.js:263,279-284",
+          "quote": "function lockedBanner(opts) { ... (opts.reviewerOnly ... if (opts.reviewerOnly) {"
+        },
+        {
+          "source": "tests/team_phrase_affordance.test.js:120,186-188",
+          "quote": "check(\"every phrase-gated tab offers an input or names the header\" ... \" point at the header, \" + Object.keys(ALLOW_LIST).length + \" exempt with a reason.\""
+        },
+        {
+          "source": "tests/team_phrase_affordance.test.js ALLOW_LIST",
+          "quote": "3 entries: cpl-pathways, unified-courses, annual-report"
+        },
+        {
+          "source": "kb/phrase_gated_tables.json _about",
+          "quote": "Consumed ONLY by tests/team_phrase_affordance.test.js, which runs in CI where there is no database ... a carried list goes stale silently."
+        },
+        {
+          "source": "docs/reference/lanes/admin-tab-side-menu.md (Status)",
+          "quote": "the five NOT MEASURED tabs byte-identical"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "d4963f65-3a70-4a3d-91b5-0d27fe8bf35f",
+      "slug": "sam-roles-not-groups-keep-the-phrase",
+      "kind": "decision",
+      "title": "Sam on user-level auth: keep it stupid simple, roles not groups, phrase stays the front door",
+      "verdict": "confirmed",
+      "confidence": "medium",
+      "reason": "Still governs and 'not yet acted on' still holds: allowed_reviewers has only email/added_at (no role column), team_pass_check matches any non-GR secret, Admin stays reviewer-only. The lane says Sam RE-OPENED the ruling; next step is his go on the role column — nothing overturned.",
+      "evidence": [
+        {
+          "source": "docs/reference/lanes/org-phrase-scope-auth.md (Status)",
+          "quote": "RECOMMENDATION: magic link + ONE `role` column on `allowed_reviewers` — explicitly NOT groups. Sam re-opened his own 2026-08-14 ruling ... NEXT: Sam's go on the role column."
+        },
+        {
+          "source": "sql: information_schema.columns where table_name='allowed_reviewers'",
+          "quote": "email, added_at"
+        },
+        {
+          "source": "sql: pg_get_functiondef(team_pass_check)",
+          "quote": "select 1 from public.team_access where id <> 'gr' -- GR is a site phrase, not a shared-team phrase and secret = p"
+        },
+        {
+          "source": "docs/auth_and_repo_posture_lessons.md:117",
+          "quote": "Sam's go on the role column — and separately, confirm a second **owner** on the"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Sam Lee",
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "ebd85724-3745-44c0-8313-41571fffbac7",
+      "slug": "hide-and-audience-are-one-ladder",
+      "kind": "decision",
+      "title": "Sam: the hide affordance should ASK who — hide and audience are one ladder",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "admin.js carries the single audience ladder (Everyone → signed-in → magic-link only → nobody) with Sam's 2026-08-14 reaction in the comment; PR #1209 landed. The source's 'CLAUDE.md section 11 Admin row' moved to the admin lane file on 2026-08-28.",
+      "evidence": [
+        {
+          "source": "admin.js:141-142",
+          "quote": "question: who sees this in the menu? Everyone → signed-in → magic-link only → nobody. Sam, 2026-08-14, having pressed 👁: he expected it to ASK which,"
+        },
+        {
+          "source": "admin.js:153-156",
+          "quote": "{ id: \"everyone\", short: \"Everyone\" ... { id: \"signed_in\", short: \"Signed in\", label: \"Anyone signed in — team phrase or magic link\""
+        },
+        {
+          "source": "git log origin/main (#1209)",
+          "quote": "2c26b84c Admin: one visibility ladder, and the protection chip on every item (#1209)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Sam",
+      "kind_check": null,
+      "link_fixes": [
+        {
+          "from": "CLAUDE.md section 11 Admin row",
+          "to": "docs/reference/lanes/admin-tab-side-menu.md"
+        }
+      ]
+    },
+    {
+      "id": "21c62ee4-6075-4e15-aa49-cb93df3d3006",
+      "slug": "per-org-admin-is-a-filter-not-an-authority",
+      "kind": "decision",
+      "title": "Sam asked for an Admin view per org: a site FILTER yes, per-org AUTHORITY no",
+      "verdict": "confirmed",
+      "confidence": "medium",
+      "reason": "Admin is still reviewer-only with a site filter (sitesFor) over one shared menu; CIP is a site with tabs and no phrase in cobi_orgs.js; the lane's NEXT still treats the org roster as one list feeding a per-site filter and delegation as a roles question in the auth lane.",
+      "evidence": [
+        {
+          "source": "admin.js:34",
+          "quote": "GATING: reviewer magic-link only. A phrase holder able to re-scope what other"
+        },
+        {
+          "source": "admin.js:269",
+          "quote": "function sitesFor(tab, link) {"
+        },
+        {
+          "source": "cobi_orgs.js:58-59",
+          "quote": "{ id: \"cip\", label: \"CIP\", tag: \"CIP\", full: \"TOP-to-CIP Transition\", tabs: [\"cip-crosswalk\", \"coci-lookup\"], home: \"cip-crosswalk\" },"
+        },
+        {
+          "source": "docs/reference/lanes/admin-tab-side-menu.md (Status)",
+          "quote": "③ org roster as data — `cobi_orgs.js` ORGS becomes a table, which is what makes \"what is in Finance\" ONE list and what a per-site Admin filter would read"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Sam",
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "cb35f001-109f-455a-be5d-7e8ee8b62f33",
+      "slug": "a-recorded-rule-is-not-an-applied-rule",
+      "kind": "pitfall",
+      "title": "The no-icons rule was recorded on 14 August and a tab shipped covered in emoji the same week",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The lane restates the event verbatim, PR #1212 landed, and the row's ask has been met: the glyph rule is now CLAUDE.md presentation doctrine with the presentation_doctrine lint in kb/_docs_audit.py guarding it. Related slug cobi-no-cheesy-glyphs-design-rule exists (proposed).",
+      "evidence": [
+        {
+          "source": "docs/reference/lanes/admin-tab-side-menu.md (Status)",
+          "quote": "The no-cheesy-glyphs rule was recorded in `cpl_memory` 2026-08-14 and the tab shipped covered in emoji that same week — recording a rule and applying it are two events."
+        },
+        {
+          "source": "CLAUDE.md:526-528",
+          "quote": "Recording a rule and having it fire are two events — these kept scattering ... `presentation_doctrine` in `kb/_docs_audit.py` fails if any of them leaves."
+        },
+        {
+          "source": "kb/_docs_audit.py:858-859",
+          "quote": "\"plain words / no decorative glyphs\": (r\"plain words\", r\"n[o|ot] glyphs\", r\"cheesy glyph\", r\"decorative\\W{0,3}emoji\")"
+        },
+        {
+          "source": "git log origin/main (#1212)",
+          "quote": "bda2f0f8 Admin: plain words instead of glyphs, and Admin may live in a category (#item 2, 4) (#1212)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "251456f5-c84d-47bf-808f-41fa8c7ff5dd",
+      "slug": "finance-phrase-opens-far-more-than-finance",
+      "kind": "question",
+      "title": "Finance should not open the whole workplan — but naive scoping locks it out of Budget",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Still an open question, still parked on Sam: team_pass_check() matches any non-GR secret (only GR was scoped, #1239), both lanes list the Finance scope as open work, and the verified shared-tabs ruling the row leans on stands.",
+      "evidence": [
+        {
+          "source": "sql: pg_get_functiondef(team_pass_check)",
+          "quote": "select exists (select 1 from public.team_access where id <> 'gr' -- GR is a site phrase, not a shared-team phrase and secret = p);"
+        },
+        {
+          "source": "docs/reference/lanes/org-phrase-scope-auth.md (Status)",
+          "quote": "GR phrase scoped (`team_pass_check()` excludes `gr`, #1239) ... **Finance stays parked** (genuinely shares 6 of 42 tables). **NEXT: Sam's go on the role column.**"
+        },
+        {
+          "source": "docs/reference/lanes/admin-tab-side-menu.md (Status)",
+          "quote": "NEXT: ① ... ② **the Finance phrase scope** (below)"
+        },
+        {
+          "source": "slug:allow-either-on-shared-tabs (verified, Sam Lee 2026-08-12)",
+          "quote": "Shared tabs keep team_pass_ok() (matches any secret); only a tab exclusive to one site requires that site's phrase."
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Sam",
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "86e19d70-3f89-428f-bf02-d7e57775d892",
+      "slug": "repos-already-in-the-org-not-personal",
+      "kind": "fact",
+      "title": "Two of the three repositories already belong to the CPL organization; only one is personal",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Ownership re-measured from the remotes: CPL-Initiative owns the tracker and the KB, samueltlee owns CPLBrain; the org still has zero teams. One detail drifted: MAPInitiativeTech is now repo admin (the row said read); a second org owner is still listed as next in the lessons doc.",
+      "evidence": [
+        {
+          "source": "git remote -v (three repos)",
+          "quote": "https://github.com/CPL-Initiative/cpl-project-tracker; https://github.com/CPL-Initiative/cpl-knowledge-base; https://github.com/samueltlee/CPLBrain"
+        },
+        {
+          "source": "mcp__github__list_repository_collaborators CPL-Initiative/cpl-project-tracker",
+          "quote": "samueltlee role_name admin; MAPInitiativeTech role_name admin"
+        },
+        {
+          "source": "mcp__github__get_teams",
+          "quote": "[{\"org\":\"CPL-Initiative\",\"teams\":[]}]"
+        },
+        {
+          "source": "docs/auth_and_repo_posture_lessons.md:117-118",
+          "quote": "and separately, confirm a second **owner** on the GitHub organization, which the Supabase change does not cover."
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "801583cb-a613-4bbc-b69e-150e35461221",
+      "slug": "worklist-is-team-gated-not-reviewer-gated",
+      "kind": "decision",
+      "title": "The clean-up list reached the team by being rebuilt as its own table, not by weakening a protection",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "map_cleanup_worklist is a table (relkind r) whose only policy is SELECT for reviewer OR team phrase; G9 in the promotion function refuses to publish if a rebuilt team table loses that gate; the lane restates materialize-not-weaken and no k-anonymity.",
+      "evidence": [
+        {
+          "source": "sql: pg_class relkind for public.map_cleanup_worklist",
+          "quote": "r"
+        },
+        {
+          "source": "sql: pg_policies where tablename='map_cleanup_worklist'",
+          "quote": "map_cleanup_worklist_select SELECT roles {anon,authenticated} qual (is_allowed_reviewer() OR team_pass_ok())"
+        },
+        {
+          "source": "kb/supabase_map_promote_custom_reports.sql:296,308",
+          "quote": "-- G9 · every team-facing table rebuilt above is DROP/CREATEd, so its policy is ... raise exception 'G9 % rebuilt table(s) lost the team-phrase gate - REFUSING to publish', ungated;"
+        },
+        {
+          "source": "docs/reference/lanes/cpl-cleanup-worklist.md (Status)",
+          "quote": "The gate dropped by MATERIALISING, not by weakening; **`G9` refuses to finish the promotion if the rebuilt table loses it.** ⚠️ **No k-anonymity — internal tool, NEVER public.**"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "8abfdf0e-ae9e-495d-8e98-26275a6c838a",
+      "slug": "a-rule-you-wrote-is-not-a-rule-you-applied",
+      "kind": "pitfall",
+      "title": "Every defect of Session 178 was covered by a rule already committed — the two that were TESTS got caught, the two that were prose shipped",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "KB note published, PRs #1276-#1278 landed, tests/lib/lift_ts.js exists, and the lesson is standing doctrine now (CLAUDE.md 'recording a rule and having it fire are two events' + presentation_doctrine lint; #1280 'Cure the need to internalize'). Related slug sam-american-spelling-always exists.",
+      "evidence": [
+        {
+          "source": "docs/kb-notes/methodology-a-rule-you-wrote-is-not-a-rule-you-applied.md",
+          "quote": "kb-status: published"
+        },
+        {
+          "source": "git log origin/main (#1276-#1278, #1280)",
+          "quote": "#1276 41941707 · #1277 070fb5a2 · #1278 86e433f3 · #1280 0109877d 'Cure the need to internalize: a check floor, a doctrine lookup, and Sierra's district roster'"
+        },
+        {
+          "source": "CLAUDE.md:526-528",
+          "quote": "Recording a rule and having it fire are two events ... `presentation_doctrine` in `kb/_docs_audit.py` fails if any of them leaves."
+        },
+        {
+          "source": "ls tests/lib/lift_ts.js",
+          "quote": "tests/lib/lift_ts.js"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "a3cca10d-8b6c-43e0-a01e-8e9ee34f8c35",
+      "slug": "a-spelling-stem-flagged-430-correct-words",
+      "kind": "pitfall",
+      "title": "A British-spelling check flagged 430 correct words out of 433 matches",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The narrowed lookahead regex and its rationale are in kb/_docs_audit.py; PR #1280 landed; the related KB note exists, though no cpl_memory row carries the slug a-guard-that-fails-on-truth-gets-muted.",
+      "evidence": [
+        {
+          "source": "kb/_docs_audit.py:1235-1238",
+          "quote": "# Only the VERB inflects British: analyse / analysed / analysing. The ... (r\"analys(?=e\\b|ed\\b|ing\\b)\", \"analyz\"),"
+        },
+        {
+          "source": "git log origin/main (#1280)",
+          "quote": "0109877d Cure the need to internalize: a check floor, a doctrine lookup, and Sierra's district roster (#1280)"
+        },
+        {
+          "source": "sql: cpl_memory slugs",
+          "quote": "no row with slug a-guard-that-fails-on-truth-gets-muted (the KB note of that name is published); sam-american-spelling-always is verified (Sam Lee)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": [
+        {
+          "from": "a-guard-that-fails-on-truth-gets-muted",
+          "to": "docs/kb-notes/methodology-a-guard-that-fails-on-truth-gets-muted.md (no cpl_memory row carries this slug)"
+        }
+      ]
+    }
+  ]
+}

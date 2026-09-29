@@ -1,0 +1,1335 @@
+{
+  "generated": "2026-08-10",
+  "thresholds": {
+    "always_loaded": 60000,
+    "kb_note": 40000,
+    "index": 40000,
+    "lessons": 120000,
+    "handoff": 60000,
+    "other": 150000
+  },
+  "summary": {
+    "files": 454,
+    "bytes": 5325154,
+    "over_budget": 6,
+    "handoff_max": 138,
+    "always_loaded_files": 1,
+    "always_loaded_bytes": 85284,
+    "superseded_files": 0,
+    "superseded_bytes": 0,
+    "lanes": {
+      "always_loaded": {
+        "files": 1,
+        "bytes": 85284,
+        "over": 1
+      },
+      "other": {
+        "files": 61,
+        "bytes": 1372719,
+        "over": 1
+      },
+      "index": {
+        "files": 1,
+        "bytes": 180002,
+        "over": 1
+      },
+      "lessons": {
+        "files": 50,
+        "bytes": 1491873,
+        "over": 3
+      },
+      "kb_note": {
+        "files": 218,
+        "bytes": 1223304,
+        "over": 0
+      },
+      "handoff": {
+        "files": 123,
+        "bytes": 971972,
+        "over": 0
+      }
+    },
+    "by_rule": {
+      "oversized_doc": 6,
+      "unindexed_kb_note": 11,
+      "kb_note_dialect": 54,
+      "vault_heavy_path": 43
+    },
+    "vault": {
+      "files": 1810,
+      "bytes": 1079873192,
+      "heavy_bytes": 581258916,
+      "heavy_share": 0.538,
+      "ignore_filters": [
+        "cpl-project-tracker/kb/reference",
+        "cpl-project-tracker/cip_fitcheck",
+        "cpl-project-tracker/tmc",
+        "cpl-project-tracker/kb/unclassified_fold",
+        "cpl-project-tracker/unified_courses_member_desc.js",
+        "cpl-project-tracker/kb/coci_minted_singletons.json",
+        "cpl-project-tracker/kb/coci_minted_courses.json",
+        "cpl-project-tracker/unified_courses_details.js",
+        "cpl-project-tracker/kb/subj4_fold_out/2026-06-12/alias_map.json",
+        "cpl-project-tracker/kb/subj4_dryrun/alias_map.json",
+        "cpl-project-tracker/kb/subj4_apply/alias_map.json",
+        "cpl-project-tracker/kb/coci_minted_memberships.json",
+        "cpl-project-tracker/coci_lookup_data.js",
+        "cpl-project-tracker/unified_courses_standalone.js",
+        "cpl-project-tracker/kb/subj4_dryrun/collisions.json",
+        "cpl-project-tracker/unified_courses_members.js",
+        "cpl-project-tracker/unified_courses_data.js",
+        "cpl-project-tracker/kb/row_audit/latest.json",
+        "cpl-project-tracker/kb/remint_dryrun/alias_map.json",
+        "cpl-project-tracker/kb/cid_articulation_joins.json",
+        "cpl-project-tracker/coci_lookup_desc_A.js",
+        "cpl-project-tracker/tmc_college_courses.js",
+        "cpl-project-tracker/kb/coci_articulations.json",
+        "cpl-project-tracker/statewide_data.js",
+        "cpl-project-tracker/coci_lookup_desc_C.js",
+        "cpl-project-tracker/coci_lookup_desc_E.js",
+        "cpl-project-tracker/kb/automerge_out/2026-06-13-titlelane/plan.json",
+        "cpl-project-tracker/exports/unified_courses.xlsx",
+        "cpl-project-tracker/kb/coci_curation.json",
+        "cpl-project-tracker/coci_lookup_desc_M.js",
+        "cpl-project-tracker/coci_lookup_desc_P.js",
+        "cpl-project-tracker/kb/automerge_out/2026-06-13-titlelane/supabase_ops.sql",
+        "cpl-project-tracker/tools/first_light_candidates.json",
+        "cpl-project-tracker/unified_courses_index.js",
+        "cpl-project-tracker/unified_courses_suggestions.js",
+        "cpl-project-tracker/credential_reference_data.js",
+        "cpl-project-tracker/coci_lookup_desc_B.js",
+        "cpl-project-tracker/coci_lookup_desc_H.js",
+        "cpl-project-tracker/coci_lookup_desc_D.js",
+        "cpl-project-tracker/kb/remint_out/alias_map.json",
+        "cpl-project-tracker/coci_programs_data.js",
+        "cpl-project-tracker/coci_lookup_desc_F.js",
+        "cpl-project-tracker/coci_lookup_desc_K.js"
+      ]
+    }
+  },
+  "findings": [
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 85284,
+        "limit": 60000,
+        "lane": "always_loaded",
+        "over_by": 25284,
+        "ratio": 1.42
+      },
+      "message": "85,284 B is 1.4× the always_loaded budget (60,000 B) — candidate for compaction",
+      "path": "CLAUDE.md"
+    },
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 180002,
+        "limit": 40000,
+        "lane": "index",
+        "over_by": 140002,
+        "ratio": 4.5
+      },
+      "message": "180,002 B is 4.5× the index budget (40,000 B) — candidate for compaction",
+      "path": "docs/INDEX.md"
+    },
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 148319,
+        "limit": 120000,
+        "lane": "lessons",
+        "over_by": 28319,
+        "ratio": 1.24
+      },
+      "message": "148,319 B is 1.2× the lessons budget (120,000 B) — candidate for compaction",
+      "path": "docs/cip_crosswalk_lessons.md"
+    },
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 174371,
+        "limit": 120000,
+        "lane": "lessons",
+        "over_by": 54371,
+        "ratio": 1.45
+      },
+      "message": "174,371 B is 1.5× the lessons budget (120,000 B) — candidate for compaction",
+      "path": "docs/cpl_funding_lessons.md"
+    },
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 150825,
+        "limit": 120000,
+        "lane": "lessons",
+        "over_by": 30825,
+        "ratio": 1.26
+      },
+      "message": "150,825 B is 1.3× the lessons budget (120,000 B) — candidate for compaction",
+      "path": "docs/exhibit_canonicalization_lessons.md"
+    },
+    {
+      "rule": "unindexed_kb_note",
+      "fixable": false,
+      "detail": {
+        "stem": "adr-unified-memory-table"
+      },
+      "message": "not referenced anywhere in docs/INDEX.md — unreachable by browsing",
+      "path": "docs/kb-notes/adr-unified-memory-table.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "type via `type:` (canonical: a type tag in `tags:`)",
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/cer-ccr-crossover-integrations.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "type via `type:` (canonical: a type tag in `tags:`)",
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/cpl-assistant-ccr-cer-recommendation-scope.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "`date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/cpl-chatbox-integration-scope.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "`date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/eacr-consolidation-scope.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "`date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/excel-retirement-final-scope.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "type via `type:` (canonical: a type tag in `tags:`)"
+        ]
+      },
+      "message": "type via `type:` (canonical: a type tag in `tags:`)",
+      "path": "docs/kb-notes/methodology-a-governance-artifact-must-measure-itself.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "`date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/methodology-achievement-based-funding-cap-and-earn.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "`date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/methodology-alias-map-resolution-semantics.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "`date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/methodology-apply-equals-spec-via-shared-allocator.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "type via `type:` (canonical: a type tag in `tags:`)",
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/methodology-college-homonym-subject-codes.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "`date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/methodology-confirmed-merge-via-decision-row.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "`date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/methodology-conflicting-source-tabs-use-certified-value.md"
+    },
+    {
+      "rule": "unindexed_kb_note",
+      "fixable": false,
+      "detail": {
+        "stem": "methodology-conflicting-source-tabs-use-certified-value"
+      },
+      "message": "not referenced anywhere in docs/INDEX.md — unreachable by browsing",
+      "path": "docs/kb-notes/methodology-conflicting-source-tabs-use-certified-value.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "`date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/methodology-crowd-consensus-beats-single-item-signal.md"
+    },
+    {
+      "rule": "unindexed_kb_note",
+      "fixable": false,
+      "detail": {
+        "stem": "methodology-crowd-consensus-beats-single-item-signal"
+      },
+      "message": "not referenced anywhere in docs/INDEX.md — unreachable by browsing",
+      "path": "docs/kb-notes/methodology-crowd-consensus-beats-single-item-signal.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "type via `type:` (canonical: a type tag in `tags:`)"
+        ]
+      },
+      "message": "type via `type:` (canonical: a type tag in `tags:`)",
+      "path": "docs/kb-notes/methodology-curated-scenario-batches-doctrine-elicitation.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "`date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/methodology-dark-to-light-recolor-mapping.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "`date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/methodology-fanin-alias-lexicon-contamination.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "`date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/methodology-fix-the-root-not-a-counter-rule.md"
+    },
+    {
+      "rule": "unindexed_kb_note",
+      "fixable": false,
+      "detail": {
+        "stem": "methodology-fix-the-root-not-a-counter-rule"
+      },
+      "message": "not referenced anywhere in docs/INDEX.md — unreachable by browsing",
+      "path": "docs/kb-notes/methodology-fix-the-root-not-a-counter-rule.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "`date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/methodology-fixed-table-layout-off-pane-columns.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "`date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/methodology-grounded-lexical-cip-confidence.md"
+    },
+    {
+      "rule": "unindexed_kb_note",
+      "fixable": false,
+      "detail": {
+        "stem": "methodology-grounded-lexical-cip-confidence"
+      },
+      "message": "not referenced anywhere in docs/INDEX.md — unreachable by browsing",
+      "path": "docs/kb-notes/methodology-grounded-lexical-cip-confidence.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "`date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/methodology-invert-an-input-derive-at-the-single-seam.md"
+    },
+    {
+      "rule": "unindexed_kb_note",
+      "fixable": false,
+      "detail": {
+        "stem": "methodology-lead-with-the-steps-not-the-rationale"
+      },
+      "message": "not referenced anywhere in docs/INDEX.md — unreachable by browsing",
+      "path": "docs/kb-notes/methodology-lead-with-the-steps-not-the-rationale.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "type via `type:` (canonical: a type tag in `tags:`)",
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/methodology-live-curation-concurrency.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "`date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/methodology-live-vs-manual-hybrid-column.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "type via `type:` (canonical: a type tag in `tags:`)",
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/methodology-map-api-value-signature-probe.md"
+    },
+    {
+      "rule": "unindexed_kb_note",
+      "fixable": false,
+      "detail": {
+        "stem": "methodology-map-api-value-signature-probe"
+      },
+      "message": "not referenced anywhere in docs/INDEX.md — unreachable by browsing",
+      "path": "docs/kb-notes/methodology-map-api-value-signature-probe.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "type via `type:` (canonical: a type tag in `tags:`)"
+        ]
+      },
+      "message": "type via `type:` (canonical: a type tag in `tags:`)",
+      "path": "docs/kb-notes/methodology-packaging-dryrun-classification.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "type via `type:` (canonical: a type tag in `tags:`)",
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/methodology-paginate-postgrest-reads.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "`date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/methodology-parent-child-ledger-totals.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "type via `type:` (canonical: a type tag in `tags:`)",
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/methodology-positional-pdf-column-grids.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "type via `type:` (canonical: a type tag in `tags:`)"
+        ]
+      },
+      "message": "type via `type:` (canonical: a type tag in `tags:`)",
+      "path": "docs/kb-notes/methodology-provenance-is-a-field.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "`date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/methodology-recompute-a-sources-own-summary-statistics.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "type via `type:` (canonical: a type tag in `tags:`)",
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/methodology-rekey-derived-identity-maps.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "type via `type:` (canonical: a type tag in `tags:`)"
+        ]
+      },
+      "message": "type via `type:` (canonical: a type tag in `tags:`)",
+      "path": "docs/kb-notes/methodology-route-to-a-determination-they-already-made.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "`date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/methodology-server-enforced-shared-password-gate.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "type via `type:` (canonical: a type tag in `tags:`)",
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/methodology-subj4-consumer-semantics.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "`date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/methodology-subject-cohort-discipline-outlier.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "type via `type:` (canonical: a type tag in `tags:`)",
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/methodology-synonym-map-vs-similarity-threshold.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "type via `type:` (canonical: a type tag in `tags:`)",
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/methodology-title-similarity-merge-guards.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "`date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/methodology-visual-pdf-read-for-layout-encoded-facts.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "`date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/methodology-witness-kinship-gate.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "`date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/over-merge-remint-scope.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "`date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/phase-2-projects-migration-scope.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "`date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/playbook-edge-function-502-retired-model.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "type via `type:` (canonical: a type tag in `tags:`)",
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/playbook-gated-bulk-autocuration.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "type via `type:` (canonical: a type tag in `tags:`)"
+        ]
+      },
+      "message": "type via `type:` (canonical: a type tag in `tags:`)",
+      "path": "docs/kb-notes/playbook-nc-integration-run.md"
+    },
+    {
+      "rule": "unindexed_kb_note",
+      "fixable": false,
+      "detail": {
+        "stem": "playbook-nc-integration-run"
+      },
+      "message": "not referenced anywhere in docs/INDEX.md — unreachable by browsing",
+      "path": "docs/kb-notes/playbook-nc-integration-run.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "type via `type:` (canonical: a type tag in `tags:`)",
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/playbook-resume-long-workflow-across-failures.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "type via `type:` (canonical: a type tag in `tags:`)",
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/playbook-trail-crew-method-magic-audit.md"
+    },
+    {
+      "rule": "unindexed_kb_note",
+      "fixable": false,
+      "detail": {
+        "stem": "playbook-trail-crew-method-magic-audit"
+      },
+      "message": "not referenced anywhere in docs/INDEX.md — unreachable by browsing",
+      "path": "docs/kb-notes/playbook-trail-crew-method-magic-audit.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "type via `type:` (canonical: a type tag in `tags:`)",
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/reference-adt-acceptance-rules.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "type via `type:` (canonical: a type tag in `tags:`)",
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/reference-ccr-curation-sync-and-live-merge.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "type via `type:` (canonical: a type tag in `tags:`)",
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/reference-cdcp-and-the-cip-count-rule.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "type via `kb-type:` (canonical: a type tag in `tags:`)",
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "type via `kb-type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/reference-course-level-convention.md"
+    },
+    {
+      "rule": "unindexed_kb_note",
+      "fixable": false,
+      "detail": {
+        "stem": "reference-funding-metrics-measurability"
+      },
+      "message": "not referenced anywhere in docs/INDEX.md — unreachable by browsing",
+      "path": "docs/kb-notes/reference-funding-metrics-measurability.md"
+    },
+    {
+      "rule": "unindexed_kb_note",
+      "fixable": false,
+      "detail": {
+        "stem": "reference-humans-principles"
+      },
+      "message": "not referenced anywhere in docs/INDEX.md — unreachable by browsing",
+      "path": "docs/kb-notes/reference-humans-principles.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "type via `type:` (canonical: a type tag in `tags:`)",
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/reference-issuing-agency-authority-sources.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "`date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/reference-tmc-adt-data-model.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "type via `type:` (canonical: a type tag in `tags:`)",
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/reference-tmc-confidence-data-requirements.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "type via `type:` (canonical: a type tag in `tags:`)",
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/tmc-adt-document-upload-scope.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "type via `type:` (canonical: a type tag in `tags:`)",
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/tmc-co-review-scope.md"
+    },
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 357596,
+        "limit": 150000,
+        "lane": "other",
+        "over_by": 207596,
+        "ratio": 2.38
+      },
+      "message": "357,596 B is 2.4× the other budget (150,000 B) — candidate for compaction",
+      "path": "docs/roadmap_archive.md"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/reference",
+      "detail": {
+        "bytes": 79607986,
+        "kind": "dir"
+      },
+      "message": "directory totals 79,607,986 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "cip_fitcheck",
+      "detail": {
+        "bytes": 51991148,
+        "kind": "dir"
+      },
+      "message": "directory totals 51,991,148 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "tmc",
+      "detail": {
+        "bytes": 14867812,
+        "kind": "dir"
+      },
+      "message": "directory totals 14,867,812 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/unclassified_fold",
+      "detail": {
+        "bytes": 10005293,
+        "kind": "dir"
+      },
+      "message": "directory totals 10,005,293 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "unified_courses_member_desc.js",
+      "detail": {
+        "bytes": 48285325,
+        "kind": "file"
+      },
+      "message": "48,285,325 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/coci_minted_singletons.json",
+      "detail": {
+        "bytes": 36697728,
+        "kind": "file"
+      },
+      "message": "36,697,728 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/coci_minted_courses.json",
+      "detail": {
+        "bytes": 27602843,
+        "kind": "file"
+      },
+      "message": "27,602,843 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "unified_courses_details.js",
+      "detail": {
+        "bytes": 22822289,
+        "kind": "file"
+      },
+      "message": "22,822,289 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/subj4_fold_out/2026-06-12/alias_map.json",
+      "detail": {
+        "bytes": 21616218,
+        "kind": "file"
+      },
+      "message": "21,616,218 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/subj4_dryrun/alias_map.json",
+      "detail": {
+        "bytes": 21616130,
+        "kind": "file"
+      },
+      "message": "21,616,130 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/subj4_apply/alias_map.json",
+      "detail": {
+        "bytes": 19689335,
+        "kind": "file"
+      },
+      "message": "19,689,335 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/coci_minted_memberships.json",
+      "detail": {
+        "bytes": 17743455,
+        "kind": "file"
+      },
+      "message": "17,743,455 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "coci_lookup_data.js",
+      "detail": {
+        "bytes": 17358026,
+        "kind": "file"
+      },
+      "message": "17,358,026 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "unified_courses_standalone.js",
+      "detail": {
+        "bytes": 15471319,
+        "kind": "file"
+      },
+      "message": "15,471,319 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/subj4_dryrun/collisions.json",
+      "detail": {
+        "bytes": 14572839,
+        "kind": "file"
+      },
+      "message": "14,572,839 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "unified_courses_members.js",
+      "detail": {
+        "bytes": 14478892,
+        "kind": "file"
+      },
+      "message": "14,478,892 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "unified_courses_data.js",
+      "detail": {
+        "bytes": 10224813,
+        "kind": "file"
+      },
+      "message": "10,224,813 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/row_audit/latest.json",
+      "detail": {
+        "bytes": 9799311,
+        "kind": "file"
+      },
+      "message": "9,799,311 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/remint_dryrun/alias_map.json",
+      "detail": {
+        "bytes": 9371742,
+        "kind": "file"
+      },
+      "message": "9,371,742 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/cid_articulation_joins.json",
+      "detail": {
+        "bytes": 8593677,
+        "kind": "file"
+      },
+      "message": "8,593,677 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "coci_lookup_desc_A.js",
+      "detail": {
+        "bytes": 8209035,
+        "kind": "file"
+      },
+      "message": "8,209,035 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "tmc_college_courses.js",
+      "detail": {
+        "bytes": 8035276,
+        "kind": "file"
+      },
+      "message": "8,035,276 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/coci_articulations.json",
+      "detail": {
+        "bytes": 7495463,
+        "kind": "file"
+      },
+      "message": "7,495,463 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "statewide_data.js",
+      "detail": {
+        "bytes": 7146805,
+        "kind": "file"
+      },
+      "message": "7,146,805 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "coci_lookup_desc_C.js",
+      "detail": {
+        "bytes": 7019178,
+        "kind": "file"
+      },
+      "message": "7,019,178 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "coci_lookup_desc_E.js",
+      "detail": {
+        "bytes": 6738457,
+        "kind": "file"
+      },
+      "message": "6,738,457 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/automerge_out/2026-06-13-titlelane/plan.json",
+      "detail": {
+        "bytes": 6713055,
+        "kind": "file"
+      },
+      "message": "6,713,055 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "exports/unified_courses.xlsx",
+      "detail": {
+        "bytes": 6258818,
+        "kind": "file"
+      },
+      "message": "6,258,818 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/coci_curation.json",
+      "detail": {
+        "bytes": 5018439,
+        "kind": "file"
+      },
+      "message": "5,018,439 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "coci_lookup_desc_M.js",
+      "detail": {
+        "bytes": 4951655,
+        "kind": "file"
+      },
+      "message": "4,951,655 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "coci_lookup_desc_P.js",
+      "detail": {
+        "bytes": 4616887,
+        "kind": "file"
+      },
+      "message": "4,616,887 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/automerge_out/2026-06-13-titlelane/supabase_ops.sql",
+      "detail": {
+        "bytes": 4454134,
+        "kind": "file"
+      },
+      "message": "4,454,134 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "tools/first_light_candidates.json",
+      "detail": {
+        "bytes": 3955520,
+        "kind": "file"
+      },
+      "message": "3,955,520 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "unified_courses_index.js",
+      "detail": {
+        "bytes": 3910759,
+        "kind": "file"
+      },
+      "message": "3,910,759 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "unified_courses_suggestions.js",
+      "detail": {
+        "bytes": 3666729,
+        "kind": "file"
+      },
+      "message": "3,666,729 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "credential_reference_data.js",
+      "detail": {
+        "bytes": 3007118,
+        "kind": "file"
+      },
+      "message": "3,007,118 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "coci_lookup_desc_B.js",
+      "detail": {
+        "bytes": 2915411,
+        "kind": "file"
+      },
+      "message": "2,915,411 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "coci_lookup_desc_H.js",
+      "detail": {
+        "bytes": 2799319,
+        "kind": "file"
+      },
+      "message": "2,799,319 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "coci_lookup_desc_D.js",
+      "detail": {
+        "bytes": 2626394,
+        "kind": "file"
+      },
+      "message": "2,626,394 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/remint_out/alias_map.json",
+      "detail": {
+        "bytes": 2501051,
+        "kind": "file"
+      },
+      "message": "2,501,051 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "coci_programs_data.js",
+      "detail": {
+        "bytes": 2442036,
+        "kind": "file"
+      },
+      "message": "2,442,036 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "coci_lookup_desc_F.js",
+      "detail": {
+        "bytes": 2322891,
+        "kind": "file"
+      },
+      "message": "2,322,891 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "coci_lookup_desc_K.js",
+      "detail": {
+        "bytes": 2038305,
+        "kind": "file"
+      },
+      "message": "2,038,305 B single file inside the vault"
+    }
+  ]
+}

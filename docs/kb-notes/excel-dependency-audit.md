@@ -4,7 +4,6 @@ created: 2026-06-01
 updated: 2026-06-01 (P1 + P4 + P2 done, Session 25)
 tags: [reference, excel-to-supabase, retirement, audit, fix-queue, phase-final]
 kb-status: published
-kb-type: reference
 obsidian-folder: cpl-project-tracker/kb-notes
 related:
   - "[[CLAUDE]]"

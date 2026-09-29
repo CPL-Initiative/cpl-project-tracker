@@ -11,6 +11,8 @@ related:
   - docs/kb-notes/eacr-consolidation-scope.md (the 3 audience views + gallery)
   - CLAUDE.md §11 "Session 34" subsection (end of §11)
 moniker_suggestion: "Lucid Wozniak" was Session 34 (branch claude/lucid-wozniak-DHj8y) — claim your own
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 <!-- Lineage: Busy Feynman (32) → Sleepy Goodall (33) → Lucid Wozniak (34, 5 PRs:

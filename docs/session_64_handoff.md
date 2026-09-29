@@ -1,3 +1,8 @@
+---
+superseded: true
+superseded_by: session_132_handoff.md
+---
+
 # Session 64 handoff
 
 You are **Session 64** of the CPL Project Tracker. Session 63 was **SkyGate** —

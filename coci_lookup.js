@@ -54,7 +54,7 @@
     ".cplcoci-table tr.cplcoci-row:hover td { background: var(--surface-subtle); }",
     ".cplcoci-caret { cursor:pointer; color: var(--text-muted); width:18px; }",
     ".cplcoci-chip { display:inline-block; padding:1px 7px; margin:1px 3px 1px 0; border-radius:8px; font-size:.7rem; font-weight:600; border:1px solid var(--border-strong); background: rgba(255,255,255,.5); white-space:nowrap; }",
-    ".cplcoci-chip.mid { color: var(--seal-blue, #0b3d61); }",
+    ".cplcoci-chip.mid { color:var(--seal-blue-text,#002F6D); }",
     ".cplcoci-chip.cid { color: var(--hunter, #1d4d33); border-color: var(--hunter, #1d4d33); }",
     ".cplcoci-chip.ccn { color: var(--violet, #5b3d8f); border-color: var(--violet, #5b3d8f); }",
     ".cplcoci-desc td { background: var(--surface-subtle); font-size:.8rem; color: var(--text-body); padding:9px 12px 11px; }",

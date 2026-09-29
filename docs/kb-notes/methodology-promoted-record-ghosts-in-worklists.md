@@ -27,7 +27,7 @@ identities (`rows` — M-IDs / Unified / official anchors) and a singleton pool
 **promote** a singleton: when a course is folded *into* a singleton's id, that id
 becomes a multi-member identity row in the payload. The singleton's old record,
 however, still sat in `sg`. Sam spotted the symptom: a Suggested-merge whose two
-candidates were the *same id* (`BIOL M90BE` + `BIOL M90BE`), one labelled the
+candidates were the *same id* (`BIOL M90BE` + `BIOL M90BE`), one labeled the
 identity and one "Stand-Alone" — an effective duplicate, and a no-op "self-merge."
 
 ## The claim

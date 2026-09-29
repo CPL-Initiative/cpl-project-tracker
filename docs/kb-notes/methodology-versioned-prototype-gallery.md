@@ -1,6 +1,5 @@
 ---
 title: Methodology — Versioned prototype gallery (preserve v1, stack v2 below, graduate the winner)
-type: methodology
 kb-status: published
 created: 2026-06-01
 updated: 2026-06-01

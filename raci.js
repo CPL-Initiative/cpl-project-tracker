@@ -26,12 +26,30 @@
     { k: "C", label: "Consulted",   desc: "Two-way input" },
     { k: "I", label: "Informed",    desc: "Kept in the loop" }
   ];
-  var ACTIVITIES = [
+  // Top-level Activities — derived from the live CPL_DATA snapshot
+  // (activity_kpis[].activity_id / activity_name), which regenerates from the
+  // Supabase workplan_goals Activity rows. So a rename on the Annual Workplan
+  // Goals tab flows here on the next regen. Falls back to a static list only if
+  // the snapshot is missing (keeps RACI usable on a stale/offline bundle).
+  var ACTIVITIES_FALLBACK = [
     { id: "1", name: "Build AI-Enhanced CPL Infrastructure" },
-    { id: "2", name: "Convene Faculty-Industry Workgroups" },
-    { id: "3", name: "Build Robust CPL Data Infrastructure" },
-    { id: "4", name: "Coordinate Sprints, Projects & Partnerships" }
+    { id: "2", name: "Faculty Workgroups & Credit Recommendations" },
+    { id: "3", name: "Scale CPL Access, Awards, and Procedures" },
+    { id: "4", name: "Sprints, Projects & Partnerships" }
   ];
+  function deriveActivities() {
+    var groups = (window.CPL_DATA && window.CPL_DATA.activity_kpis) || [];
+    var out = [];
+    groups.forEach(function (g) {
+      var id = String(g.activity_id || "").replace(/^Activity\s*/i, "").trim();
+      if (!id) return;
+      var name = String(g.activity_name || "")
+        .replace(/^Activity\s*\d+\s*:\s*/i, "").trim();
+      out.push({ id: id, name: name || ("Activity " + id) });
+    });
+    return out.length ? out : ACTIVITIES_FALLBACK;
+  }
+  var ACTIVITIES = deriveActivities();
 
   var state = { members: [], raci: {}, items: [], sess: null, view: "matrix", loaded: false,
     mfilter: { scope: "all", q: "" }, _subByAct: {},
@@ -118,8 +136,16 @@
   // failed refresh, drops the dead session so the UI flips back to "Sign in"
   // rather than pretending to be authed.
   function ensureFresh() {
-    var s = state.sess;
+    // RE-READ before refreshing. A cached session holds whatever refresh token
+    // it saw last, and refresh tokens ROTATE — so a sibling module (or the
+    // cpl_session.js keeper) that renewed since leaves this copy holding a
+    // CONSUMED token. Re-spending one is not a no-op: Supabase treats reuse as
+    // a stolen-token signal, and the catch below then drops the session, so the
+    // curator is silently signed out mid-edit. credential_reference.js already
+    // carries this exact line for this exact reason.
+    var s = getSession() || state.sess;
     if (!s) return Promise.resolve(null);
+    state.sess = s;
     if (s.exp && s.exp <= Date.now() + 60000 && s.refresh_token) {
       return refreshToken(s.refresh_token).then(function (tok) {
         if (!isValidJwt(tok.access_token)) throw new Error("bad refresh");
@@ -135,14 +161,15 @@
     }
     return Promise.resolve(s);
   }
-  function signIn(email) {
-    try { sessionStorage.setItem("cpl_sb_return_tab", "raci"); } catch (e) {}
-    var redirect = encodeURIComponent(location.origin + location.pathname);
-    return fetch(SUPABASE_URL + "/auth/v1/otp?redirect_to=" + redirect, {
-      method: "POST", headers: { "apikey": SUPABASE_ANON, "Content-Type": "application/json" },
-      body: JSON.stringify({ email: email, create_user: true })
-    });
-  }
+  // NOTE — there is deliberately no signIn() here any more. This tab carried a
+  // full magic-link implementation whose BUTTON had been removed, so the
+  // function sat with no caller while admin.js told people to "sign in with a
+  // magic link on the Team & RACI tab" (Sam, 2026-08-14: "it only has the team
+  // phrase input now, so I can't edit the new Admin tab"). Dead code that an
+  // instruction elsewhere still points at is worse than no code: it reads like
+  // a working path. The reviewer sign-in now lives in ONE place — the ℹ About
+  // menu (reviewer_signin.js), reachable from every tab — and Admin mounts that
+  // same control inline. Sam, same day: "Since Admin supersedes RACI."
   function signOut() { try { sessionStorage.removeItem("cpl_sb"); localStorage.removeItem(TEAM_PASS_KEY); } catch (e) {} }
 
   // Shared "team phrase" edit gate — a lower-stakes alternative to per-person
@@ -237,8 +264,8 @@
   // The workplan is a 3-tier tree: Activity → sub-activity → project/work item.
   // `activity_kpis` gives the official sub-activity ids (drive the filter +
   // styling); `projects` is the full 34-item set whose DOTTED ids encode the
-  // nesting (4.1 → 4.1.1; 3.1 → 3.1.2a). A project with no numbered sub-activity
-  // parent (the 5.x items) nests directly under its Activity. Every node is its
+  // nesting (4.1 → 4.1.1; 3.1 → 3.1.3). A project with no numbered sub-activity
+  // parent (e.g. 3.7, or the held-out 5.1) nests directly under its Activity. Every node is its
   // own RACI row; non-Activity rows keep item_type "project" so existing
   // assignments survive (the sub-activity vs project distinction is visual).
   function buildItems() {
@@ -270,7 +297,7 @@
     var projIds = projs.map(function (p) { return p.id; });
 
     // Parent = the longest OTHER project id that is a non-digit-boundary prefix
-    // (so "4.1" parents "4.1.1" but not "4.10"; "3.1.2" parents "3.1.2a").
+    // (so "4.1" parents "4.1.1" but not "4.10"; "3.1" parents "3.1.3").
     function idParent(pid) {
       var best = "";
       projIds.forEach(function (cand) {
@@ -657,7 +684,7 @@
         if (!raw) { msg.textContent = "Type a few details first."; return; }
         msg.textContent = "CC is writing it up…"; polish.disabled = true;
         callClaudeUpdate(raw, c.name).then(function (txt) {
-          ta.value = txt; msg.textContent = "✓ Polished — edit if needed, then Save.";
+          ta.value = txt; msg.textContent = "Polished — edit if needed, then Save.";
         }).catch(function (e) { msg.textContent = e.message; })
           .then(function () { polish.disabled = !window.CPL_REPORT_PROXY_URL ? true : false; });
       });
@@ -669,7 +696,7 @@
           var rec = (rows && rows[0]) || { body: text, author: (state.sess && state.sess.email) || null, created_at: new Date().toISOString() };
           var k = item.type + ":" + item.id;
           (state.updates[k] = state.updates[k] || []).unshift(rec);
-          ta.value = ""; msg.textContent = "✓ Saved."; save.disabled = false; paintHist(); render();
+          ta.value = ""; msg.textContent = "Saved."; save.disabled = false; paintHist(); render();
           // If the POST representation didn't carry the row id (rare), re-fetch
           // this item's updates so the entry has its ✏️/🗑 controls (they require
           // u.id) the next time the composer opens — no reload needed.
@@ -839,7 +866,7 @@
       var nUp = updatesFor(item).length;
       var upBtn = el("button", { "class": "raci-upd-btn" + (nUp ? " has" : ""),
         title: canEdit ? "Add / view status updates for this item" : "View status updates" },
-        ["📝" + (nUp ? " " + nUp : "")]);
+        ["Update" + (nUp ? " " + nUp : "")]);
       (function (it) { upBtn.addEventListener("click", function (e) { e.stopPropagation(); openUpdate(it); }); })(item);
       itemCell.appendChild(upBtn);
       // 📣 per-item nudge — on EVERY row when signed in, so a reviewer can nudge
@@ -889,7 +916,13 @@
 
   function renderMatrix() {
     var wrap = el("div", { "class": "raci-matrix-wrap" }, []);
-    var holder = el("div", { "class": "raci-table-holder" }, []);
+    // ⚠️ The holder existed but had NO overflow rule, so the 721px matrix pushed
+    // the page sideways at 390px instead of scrolling inside itself. A scrolling
+    // region also needs to be keyboard-reachable and announced (WCAG): Chromium
+    // 127+ focuses an overflowing div implicitly, which HIDES this defect in the
+    // measuring browser, so the explicit tabindex is still the correct fix.
+    var holder = el("div", { "class": "raci-table-holder", tabindex: "0",
+      role: "region", "aria-label": "Responsibility matrix, scrolls horizontally" }, []);
 
     // Filter bar: a hierarchical scope dropdown (Activity → its sub-activities)
     // + search box (matrix view only). optgroups group each Activity's
@@ -1335,10 +1368,15 @@
     if (state.sess) {
       var who = state.sess.teamPass ? "team phrase" : (state.sess.email || "(no email)");
       w.appendChild(el("span", {}, ["✓ Editing unlocked (", who, ")"]));
-      // A magic-link reviewer (not a team-phrase user) can see + rotate the phrase.
-      if (!state.sess.teamPass) {
-        w.appendChild(el("button", { "class": "raci-btn", title: "View or change the shared team phrase", onclick: openPhraseAdmin }, ["⚙ Manage team phrase"]));
-      }
+      // Shown to phrase users too, now that it just opens the Team Phrases TAB.
+      // Hiding it was half of why Sam lost track of it: a phrase holder had no
+      // way to learn the surface existed. The tab states plainly that viewing
+      // needs a reviewer sign-in, which is a better answer than an absent button.
+      w.appendChild(el("button", {
+        "class": "raci-btn",
+        title: "Open the Team Phrases tab — viewing or changing a phrase needs a reviewer sign-in",
+        onclick: openPhraseAdmin
+      }, ["⚙ Manage team phrases"]));
       w.appendChild(el("button", { "class": "raci-btn", onclick: function () { signOut(); load(render); } }, ["Lock"]));
     } else {
       var inp = el("input", { type: "password", placeholder: "team phrase", "class": "raci-in" });
@@ -1358,43 +1396,27 @@
       inp.addEventListener("keydown", function (e) { if (e.key === "Enter") tryUnlock(); });
       w.appendChild(el("span", { "class": "raci-auth-lbl" }, ["Team phrase to edit: "]));
       w.appendChild(inp); w.appendChild(btn); w.appendChild(st);
+      // The phrase is the right credential for THIS tab, but it does not open
+      // the reviewer-only ones (Admin, Team Phrases). Say where that sign-in is
+      // instead of leaving someone to conclude it no longer exists — which is
+      // exactly what happened when the magic-link box was removed from here.
+      w.appendChild(el("span", { "class": "raci-auth-hint" }, [
+        "Editing Admin or Team Phrases needs a personal sign-in instead — ℹ About, top right."]));
     }
     return w;
   }
-  // Reviewer-only admin: view + change the shared team phrase. Reads/writes
-  // team_access (gated by is_allowed_reviewer() RLS, so the public can't see it).
+  // The phrase admin is its own TAB now (team_phrases.js, #team-phrases) —
+  // Sam, 2026-08-12: "I lost track of where Manage team phrases is. It should
+  // be a tab that requires a magic link to view." It was a modal only a
+  // signed-in reviewer ever saw, buried in this auth bar, so a phrase holder
+  // never knew it existed. This keeps the familiar button and sends it there
+  // rather than carrying a second implementation of the same editor.
   function openPhraseAdmin() {
-    if (!state.sess || state.sess.teamPass) { alert("Sign in as a reviewer to manage the team phrase."); return; }
-    var inp = el("input", { type: "text", "class": "raci-in", placeholder: "loading…" });
-    inp.disabled = true;
-    var msg = el("div", { "class": "raci-modal-msg" }, ["Loading the current phrase…"]);
-    var save = el("button", { "class": "raci-btn raci-btn-go" }, ["Save phrase"]);
-    // Fetch the current phrase (reviewer-gated read — refresh the token first).
-    ensureFresh().then(function (s) {
-      return fetch(SUPABASE_URL + "/rest/v1/team_access?id=eq.raci&select=secret", { headers: headersFor(s) });
-    }).then(function (r) { return r.ok ? r.json() : Promise.reject(new Error("read " + r.status)); })
-      .then(function (rows) {
-        var cur = (rows && rows[0] && rows[0].secret) || "";
-        inp.value = cur; inp.disabled = false; inp.placeholder = "team phrase";
-        msg.textContent = "Anyone you share this with can edit. Changing it means the team re-enters the new phrase.";
-      })
-      .catch(function () { msg.textContent = "Couldn't load the phrase — are you a signed-in reviewer?"; });
-    save.addEventListener("click", function () {
-      var v = (inp.value || "").trim();
-      if (!v) { msg.textContent = "The phrase can't be empty."; return; }
-      msg.textContent = "Saving…"; save.disabled = true;
-      sbWrite("PATCH", "team_access?id=eq.raci", { secret: v, updated_at: new Date().toISOString() }, "return=minimal")
-        .then(function (r) {
-          if (!r.ok) throw new Error("save failed (" + r.status + ")");
-          // Keep the editor's own stored phrase (if any) in sync so they aren't locked out.
-          try { if (localStorage.getItem(TEAM_PASS_KEY)) localStorage.setItem(TEAM_PASS_KEY, v); } catch (e) {}
-          msg.textContent = "✓ Saved. Share the new phrase with the team."; save.disabled = false;
-        })
-        .catch(function (e) { msg.textContent = e.message; save.disabled = false; });
-    });
-    showModal("Manage team phrase", [
-      el("div", { "class": "raci-modal-sub" }, ["The shared phrase that unlocks editing of the RACI matrix, members, updates, nudges, and Mission Control. Reviewers only."]),
-      inp, msg], [save]);
+    if (window.CPL_TABS && typeof window.CPL_TABS.navigate === "function") {
+      window.CPL_TABS.navigate("team-phrases");
+      return;
+    }
+    location.hash = "#team-phrases";
   }
 
   // ─── CSS (var(--token), injected once) ─────────────────────────────────────
@@ -1403,18 +1425,20 @@
     var css = "" +
       "#raci-root{padding:0 0 2rem;max-width:1100px;margin:0 auto;font-family:'Source Sans 3',Arial,sans-serif;}" +
       ".raci-intro h2{color:var(--navy-primary,#0A2240);margin:0 0 .25rem;}" +
-      ".raci-intro p{color:var(--text-faint,#555);font-size:.9rem;margin:0 0 1rem;max-width:760px;}" +
+      ".raci-intro p{color:var(--text-faint,#555);font-size:.9rem;margin:0 0 1rem;max-width:var(--cpl-measure,none);}" +
       ".raci-bar{display:flex;flex-wrap:wrap;gap:.75rem 1rem;align-items:center;justify-content:space-between;margin-bottom:.9rem;}" +
       ".raci-toggle{display:inline-flex;border:1px solid var(--border,#ddd);border-radius:7px;overflow:hidden;}" +
-      ".raci-tg{background:#fff;border:0;padding:.4rem .9rem;font-size:.85rem;font-weight:600;color:var(--navy-secondary,#1c3d5a);cursor:pointer;}" +
-      ".raci-tg.on{background:var(--navy-primary,#0A2240);color:#fff;}" +
-      ".raci-auth{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;font-size:.85rem;color:#555;}" +
-      ".raci-in{padding:.35rem .5rem;border:1px solid var(--border,#ccc);border-radius:5px;font-size:.85rem;font-family:inherit;}" +
+      ".raci-tg{background:var(--surface-opaque);border:0;padding:.4rem .9rem;font-size:.85rem;font-weight:600;color:var(--navy-secondary,#1c3d5a);cursor:pointer;}" +
+      ".raci-tg.on{background:var(--navy-primary,#0A2240);color:var(--on-accent);}" +
+      ".raci-auth{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;font-size:.85rem;color:var(--text-muted);}" +
+      ".raci-in{padding:.35rem .5rem;border:1px solid var(--border,#ccc);border-radius:5px;font-size:.85rem;font-family:inherit;min-width:0;max-width:100%;}"  /* a <select> has an intrinsic width flex will not shrink past without min-width:0 */ +
       ".raci-auth-msg{font-size:.8rem;color:#2A7D4F;flex-basis:100%;}" +
-      ".raci-btn{background:#fff;border:1px solid var(--border,#ccc);border-radius:5px;padding:.35rem .7rem;font-size:.82rem;font-weight:600;cursor:pointer;color:var(--navy-secondary,#1c3d5a);}" +
-      ".raci-btn-go{background:var(--navy-primary,#0A2240);color:#fff;border-color:var(--navy-primary,#0A2240);}" +
-      ".raci-table{width:100%;border-collapse:collapse;font-size:.84rem;background:#fff;border:1px solid var(--border,#e6e6e6);border-radius:8px;overflow:hidden;}" +
-      ".raci-table th{background:var(--navy-primary,#0A2240);color:#fff;font-weight:600;text-align:left;padding:.5rem .6rem;font-size:.78rem;}" +
+      ".raci-auth-hint{font-size:.75rem;color:var(--text-muted,#777);flex-basis:100%;}" +
+      ".raci-btn{background:var(--surface-opaque);border:1px solid var(--border,#ccc);border-radius:5px;padding:.35rem .7rem;font-size:.82rem;font-weight:600;cursor:pointer;color:var(--navy-secondary,#1c3d5a);}" +
+      ".raci-btn-go{background:var(--navy-primary,#0A2240);color:var(--on-accent);border-color:var(--navy-primary,#0A2240);}" +
+      ".raci-table{width:100%;border-collapse:collapse;font-size:.84rem;background:var(--surface-opaque);border:1px solid var(--border,#e6e6e6);border-radius:8px;overflow:hidden;}" +
+      ".raci-table-holder{overflow-x:auto;max-width:100%;}" +
+      ".raci-table th{background:var(--navy-primary,#0A2240);color:var(--on-accent);font-weight:600;text-align:left;padding:.5rem .6rem;font-size:.78rem;}" +
       ".raci-th-sort{cursor:pointer;user-select:none;}.raci-th-sort:hover{background:var(--navy-secondary,#1b3a5c);}" +
       ".raci-th-active{background:var(--navy-secondary,#1b3a5c);}" +
       ".raci-tree-reset{background:none;border:1px solid var(--border,#ccc);border-radius:4px;color:var(--accent-link,#1b6ec2);" +
@@ -1423,7 +1447,7 @@
       ".raci-th-item{min-width:240px;}" +
       ".raci-table td{padding:.45rem .6rem;border-top:1px solid var(--border,#eee);vertical-align:top;}" +
       ".raci-row-act{background:var(--surface-2,#f4f7fb);}" +
-      ".raci-row-act .raci-item-id{background:var(--gold-accent,#B8860B);color:var(--navy-primary,#0A2240);}" +
+      ".raci-row-act .raci-item-id{background:var(--gold-accent,#B8860B);color:var(--on-mustard);}" +
       ".raci-row-act .raci-item-name{font-weight:700;}" +
       ".raci-row-sub{background:var(--surface-1,#fafcff);}" +
       ".raci-row-sub .raci-item-id{background:var(--navy-secondary,#1c3d5a);}" +
@@ -1432,26 +1456,26 @@
       ".raci-row-proj .raci-item-name{color:var(--text-faint,#555);}" +
       ".raci-tier-tag{display:inline-block;margin-left:.45rem;font-size:.62rem;font-weight:700;letter-spacing:.02em;text-transform:uppercase;color:var(--navy-secondary,#1c3d5a);background:var(--surface-2,#eef3f9);border-radius:3px;padding:.02rem .3rem;vertical-align:middle;}" +
       ".raci-item-cell{line-height:1.25;}" +
-      ".raci-item-id{display:inline-block;font-weight:700;font-size:.72rem;background:var(--navy-secondary,#1c3d5a);color:#fff;border-radius:4px;padding:.05rem .35rem;margin-right:.4rem;}" +
+      ".raci-item-id{display:inline-block;font-weight:700;font-size:.72rem;background:var(--navy-secondary,#1c3d5a);color:var(--on-accent);border-radius:4px;padding:.05rem .35rem;margin-right:.4rem;}" +
       ".raci-item-name{color:var(--text-strong,#222);}" +
       ".raci-cell{min-width:120px;}" +
       ".raci-cell-edit{cursor:pointer;}.raci-cell-edit:hover{background:var(--surface-2,#eef3f9);}" +
       ".raci-chip{display:inline-block;background:var(--surface-2,#eef3f9);border:1px solid var(--border,#d4dde7);color:var(--navy-secondary,#1c3d5a);border-radius:11px;padding:.05rem .5rem;margin:.1rem .2rem .1rem 0;font-size:.75rem;font-weight:600;}" +
-      ".raci-empty{color:var(--text-faint,#aaa);font-size:.78rem;}" +
+      ".raci-empty{color:var(--text-muted,#aaa);font-size:.78rem;}" +
       ".raci-filter-bar{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.7rem;}" +
       ".raci-filter-sel{max-width:340px;}" +
       ".raci-filter-q{flex:1 1 200px;min-width:160px;}" +
       ".raci-filter-clear{padding:.35rem .6rem;}" +
-      ".raci-count{margin-top:.45rem;color:var(--text-faint,#777);font-size:.78rem;}" +
+      ".raci-count{margin-top:.45rem;color:var(--text-muted,#777);font-size:.78rem;}" +
       ".raci-row-focus td{background:var(--gold-soft,#fbf3d9)!important;box-shadow:inset 3px 0 0 var(--gold-accent,#B8860B);animation:raciFocusFade 2.6s ease-out;}" +
       "@keyframes raciFocusFade{0%{background:var(--gold-accent,#B8860B);}30%{background:var(--gold-soft,#fbf3d9);}100%{background:transparent;}}" +
-      ".raci-legend{margin-top:.5rem;color:var(--text-faint,#777);font-size:.78rem;}" +
-      ".raci-dir-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem;color:#555;font-size:.85rem;}" +
-      ".raci-dir-n{font-weight:600;color:var(--text-strong,#222);}.raci-dir-r{color:#555;}.raci-dir-e a{color:var(--accent-link,#1c5d99);}" +
+      ".raci-legend{margin-top:.5rem;color:var(--text-muted,#777);font-size:.78rem;}" +
+      ".raci-dir-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem;color:var(--text-muted);font-size:.85rem;}" +
+      ".raci-dir-n{font-weight:600;color:var(--text-strong,#222);}.raci-dir-r{color:var(--text-muted);}.raci-dir-e a{color:var(--accent-link,#1c5d99);}" +
       ".raci-th-nudge{text-align:center;white-space:nowrap;}.raci-nudge-cell{text-align:center;}" +
       ".raci-th-nudge-wrap{display:flex;flex-direction:column;align-items:center;gap:.15rem;}" +
       ".raci-nudge-all-lbl{display:inline-flex;align-items:center;gap:.25rem;font-size:.62rem;font-weight:600;text-transform:uppercase;letter-spacing:.03em;color:var(--text-faint,#888);cursor:pointer;}" +
-      ".raci-filter-nudge{margin-left:auto;background:var(--navy-primary,#0A2240);color:#fff;border-color:var(--navy-primary,#0A2240);}" +
+      ".raci-filter-nudge{margin-left:auto;background:var(--navy-primary,#0A2240);color:var(--on-accent);border-color:var(--navy-primary,#0A2240);}" +
       ".raci-filter-nudge:hover{background:var(--navy-secondary,#1c3d5a);}" +
       ".raci-nudged-cell{text-align:center;font-size:.78rem;color:var(--text-faint,#777);white-space:nowrap;}" +
       ".raci-status-cell{text-align:center;font-size:.78rem;white-space:nowrap;}" +
@@ -1459,7 +1483,7 @@
       ".raci-st-wait{color:var(--text-faint,#777);}" +
       ".raci-st-overdue{color:#b3261e;font-weight:600;}" +
       ".raci-st-none{color:var(--text-faint,#aaa);}" +
-      ".raci-upd-btn{margin-left:.4rem;font-size:.66rem;font-weight:600;color:var(--text-faint,#777);background:none;border:1px solid transparent;border-radius:4px;padding:.04rem .3rem;cursor:pointer;vertical-align:middle;}" +
+      ".raci-upd-btn{margin-left:.4rem;font-size:.66rem;font-weight:600;color:var(--text-muted,#777);background:none;border:1px solid transparent;border-radius:4px;padding:.04rem .3rem;cursor:pointer;vertical-align:middle;}" +
       ".raci-upd-btn:hover{background:var(--surface-2,#eef3f9);border-color:var(--border,#d4dde7);}" +
       ".raci-upd-btn.has{color:var(--navy-secondary,#1c3d5a);}" +
       ".raci-upd-summary{background:var(--surface-2,#f4f7fb);border-radius:6px;padding:.5rem .6rem;margin:.2rem 0 .6rem;font-size:.82rem;line-height:1.4;}" +
@@ -1482,10 +1506,10 @@
       ".raci-edit-cell{cursor:text;border-radius:4px;}.raci-edit-cell:hover{background:var(--surface-2,#eef3f9);outline:1px dashed var(--border,#cdd7e1);}" +
       ".raci-cell-in{width:100%;box-sizing:border-box;}" +
       ".raci-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:10000;display:flex;align-items:flex-start;justify-content:center;padding:4vh 1rem;overflow:auto;}" +
-      ".raci-modal{background:#fff;border-radius:10px;max-width:480px;width:100%;box-shadow:0 8px 32px rgba(0,0,0,.25);}" +
-      ".raci-modal-h{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.8rem 1rem;background:var(--navy-primary,#0A2240);color:#fff;border-radius:10px 10px 0 0;font-size:.92rem;}" +
+      ".raci-modal{background:var(--surface-opaque);border-radius:10px;max-width:480px;width:100%;box-shadow:0 8px 32px rgba(0,0,0,.25);}" +
+      ".raci-modal-h{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.8rem 1rem;background:var(--navy-primary,#0A2240);color:var(--on-accent);border-radius:10px 10px 0 0;font-size:.92rem;}" +
       ".raci-x{background:none;border:0;color:#fff;font-size:1.3rem;cursor:pointer;line-height:1;}" +
-      ".raci-modal-b{padding:1rem;max-height:60vh;overflow:auto;}.raci-modal-sub{color:#666;font-size:.82rem;margin-bottom:.6rem;}" +
+      ".raci-modal-b{padding:1rem;max-height:60vh;overflow:auto;}.raci-modal-sub{color:var(--text-muted);font-size:.82rem;margin-bottom:.6rem;}" +
       ".raci-modal-f{display:flex;gap:.5rem;justify-content:flex-end;padding:.7rem 1rem;border-top:1px solid var(--border,#eee);}" +
       ".raci-modal-msg{font-size:.82rem;color:#A33;margin-top:.5rem;min-height:1em;}" +
       ".raci-unlock{margin-top:.4rem;padding-top:.6rem;border-top:1px solid var(--border,#eee);}" +
@@ -1503,7 +1527,7 @@
       ".raci-copy-rk{font-weight:700;color:var(--navy-secondary,#1c3d5a);min-width:1.1rem;}" +
       ".raci-copy-tools{display:flex;align-items:center;gap:.7rem;margin-bottom:.4rem;}" +
       ".raci-copy-tools .raci-in{flex:1 1 auto;margin-bottom:0;}" +
-      ".raci-copy-all{display:flex;align-items:center;gap:.35rem;white-space:nowrap;font-size:.78rem;color:#555;cursor:pointer;}" +
+      ".raci-copy-all{display:flex;align-items:center;gap:.35rem;white-space:nowrap;font-size:.78rem;color:var(--text-muted);cursor:pointer;}" +
       ".raci-copy-list{max-height:38vh;overflow:auto;border:1px solid var(--border,#e3e9f0);border-radius:6px;padding:.2rem;}" +
       ".raci-copy-warn{margin-top:.5rem;font-size:.76rem;color:#A33;}";
     document.head.appendChild(el("style", { id: "raci-css", html: css }));

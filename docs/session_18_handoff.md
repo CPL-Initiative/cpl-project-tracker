@@ -12,6 +12,8 @@ related:
   - docs/kb-notes/methodology-parity-test-cutover-proof.md (the cutover proof)
   - CLAUDE.md §11 (Excel→Supabase roadmap; Phase 2 DONE, Phase 3 Budget read-path DONE)
 moniker_suggestion: Bruh R (18th letter) / Octodec — open door to claim your own
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # Session 18 Hand-off Prompt

@@ -29,7 +29,7 @@ check("raci.js: per-item nudge joins recipients with ';'",
 check("raci.js: no comma-joined mailto recipient list remains",
   !/return m\.email; \}\)\.join\(","\)/.test(raciSrc));
 check("raci.js: update composer Save acknowledges then closes the popup",
-  /✓ Saved\.[\s\S]{0,900}?setTimeout\(closeModal, 900\)/.test(raciSrc));
+  /Saved\.[\s\S]{0,900}?setTimeout\(closeModal, 900\)/.test(raciSrc));
 
 // ── Part B — map_users.js nudge mailto (functional) ──
 const muSrc = fs.readFileSync("map_users.js", "utf8");

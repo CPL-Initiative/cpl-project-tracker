@@ -80,7 +80,22 @@ check("boot() is idempotent (single .opv after a re-boot)",
 // injected CSS is scoped (no bare, un-prefixed global selectors that could leak)
 const styleEl = document.getElementById("op-css");
 check("scoped CSS is injected once", styleEl && document.querySelectorAll("#op-css").length === 1);
-check("CSS scopes tokens under .opv (not :root)", styleEl && txt(styleEl).indexOf(".opv {") !== -1 && txt(styleEl).indexOf(":root") === -1);
+// ⚠️ NOT `indexOf(":root") === -1` any more, and the reason matters. The theme
+// contract (cpl_theme.js) requires `:root[data-theme="dark"] .opv{…}` to key
+// this tab off an explicit choice — the tab used to follow the OS alone, which
+// is the bug that shipped. That selector contains ":root" and leaks nothing.
+// The intent was always "no rule escapes .opv", so test THAT: every :root here
+// must be qualified by .opv.
+check("CSS scopes tokens under .opv (no rule escapes it)", (function () {
+  const css = txt(styleEl);
+  if (css.indexOf(".opv {") === -1) return false;
+  // every :root occurrence must be followed, before the next {, by .opv
+  const parts = css.split(":root").slice(1);
+  return parts.every((seg) => {
+    const sel = seg.slice(0, seg.indexOf("{"));
+    return sel.indexOf(".opv") !== -1;
+  });
+})());
 
 let pass = 0;
 for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }

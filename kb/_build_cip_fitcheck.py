@@ -7,9 +7,20 @@ against that CIP's official definition. To keep the browser light, the course
 data is split PER COLLEGE and lazy-fetched only for the selected college.
 
 Outputs (served by GitHub Pages, fetched on demand by cip_crosswalk.js):
-  cip_fitcheck/<slug>.json     — one per college: [[label, desc, top6], ...]
+  cip_fitcheck/<slug>.json     — one per college: [[label, desc, top6, credit], ...]
                                  (courses WITH a catalog description, deduped by
                                   label keeping the longest description, label-sorted)
+                                 credit = a compact credit/CDCP flag from COCI's
+                                 CreditType, gating the CIP-count rule (COCI: a
+                                 credit course takes 1 CIP; noncredit takes 1 unless
+                                 it is CDCP — Career Development & College Preparation,
+                                 the enhanced-funding "Special Populations" categories —
+                                 which may take up to 2):
+                                   "C" credit · "D" noncredit CDCP (enhanced funding)
+                                   · "N" noncredit non-CDCP · "" unknown/blank
+                                 CDCP is a COURSE-level property (independent of any
+                                 program's CDCP tag): a course inside a CDCP program can
+                                 itself be non-enhanced-funding.
   cip_fitcheck_colleges.json   — [{name, slug, n}]  (committed, tiny; fetched on tab open)
 
 Source: kb/reference/coci_course_list.xlsx (the COCI course inventory).
@@ -53,6 +64,28 @@ def clean(v):
     return _demojibake("" if v is None else str(v).strip())
 
 
+def credit_flag(ct):
+    """COCI CreditType -> a compact credit/CDCP flag (see module docstring).
+
+    CDCP (Career Development & College Preparation) noncredit courses receive
+    *enhanced funding* (the "Special Populations" apportionment rate) and are the
+    only courses permitted up to 2 CIP codes; every other course takes 1. The
+    enhanced-funding designation IS the course-level CDCP marker — check
+    "Non-Enhanced" BEFORE "Enhanced Funding" (the former contains the latter as a
+    substring).
+    """
+    ct = clean(ct)
+    if not ct:
+        return ""
+    if ct == "Credit Course":
+        return "C"
+    if "Non-Enhanced" in ct:
+        return "N"          # noncredit, NOT CDCP
+    if "Enhanced Funding" in ct:
+        return "D"          # noncredit CDCP (Other Noncredit / Workforce Prep Enhanced Funding)
+    return ""
+
+
 def slugify(name):
     s = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode("ascii")
     s = re.sub(r"[^A-Za-z0-9]+", "_", s).strip("_").lower()
@@ -66,8 +99,9 @@ def main():
     ci_col, ci_title = hdr.get("College"), hdr.get("CourseTitle")
     ci_desc, ci_top = hdr.get("CatalogDescription"), hdr.get("TopCode")
     ci_subj, ci_num = hdr.get("Subject"), hdr.get("Course_Number")
+    ci_credit = hdr.get("CreditType")
 
-    # college -> { norm_title -> [title, desc, top] }  (dedupe by title, keep longest desc)
+    # college -> { norm_title -> [title, desc, top, credit] }  (dedupe by title, keep longest desc)
     colleges = {}
     for r in it:
         col = clean(r[ci_col])
@@ -76,6 +110,7 @@ def main():
         if not col or not desc or not title:
             continue
         top = clean(r[ci_top]).split(":", 1)[0].strip() if ci_top is not None else ""
+        cflag = credit_flag(r[ci_credit]) if ci_credit is not None else ""
         # prefix the subject+number so faculty recognise the course in the picker
         subj = clean(r[ci_subj]) if ci_subj is not None else ""
         num = clean(r[ci_num]) if ci_num is not None else ""
@@ -85,8 +120,12 @@ def main():
         key = re.sub(r"\s+", " ", label).lower()
         bucket = colleges.setdefault(col, {})
         prev = bucket.get(key)
-        if prev is None or len(desc) > len(prev[1]):
-            bucket[key] = [label, desc, top]
+        if prev is None:
+            bucket[key] = [label, desc, top, cflag]
+        elif len(desc) > len(prev[1]):
+            bucket[key] = [label, desc, top, cflag or prev[3]]   # keep a known flag when the new row's is blank
+        elif not prev[3] and cflag:
+            prev[3] = cflag   # shorter desc but fills in a missing credit flag
 
     if os.path.isdir(OUT_DIR):
         for f in os.listdir(OUT_DIR):
@@ -95,8 +134,14 @@ def main():
     os.makedirs(OUT_DIR, exist_ok=True)
 
     manifest, total_bytes, slugs = [], 0, {}
+    from collections import Counter as _Counter
+    flag_dist = _Counter()
     for name in sorted(colleges):
         courses = sorted(colleges[name].values(), key=lambda c: c[0].lower())
+        for c in courses:
+            flag_dist[c[3] or "(blank)"] += 1
+        # drop a trailing blank credit flag so unknown-credit courses stay lean 3-tuples
+        courses = [c[:3] if not c[3] else c for c in courses]
         slug = slugify(name)
         while slug in slugs and slugs[slug] != name:   # guard against slug collision
             slug += "_x"
@@ -113,6 +158,8 @@ def main():
 
     print(f"colleges:        {len(manifest)}")
     print(f"total courses:   {sum(m['n'] for m in manifest)}")
+    print(f"credit flags:    C(credit)={flag_dist['C']}  D(CDCP)={flag_dist['D']}  "
+          f"N(noncredit)={flag_dist['N']}  blank={flag_dist['(blank)']}")
     print(f"per-college json total: {total_bytes/1024/1024:.1f} MB  ({len(manifest)} files)")
     print(f"largest file:    {max(os.path.getsize(os.path.join(OUT_DIR, m['slug']+'.json')) for m in manifest)/1024:.0f} KB")
     print(f"Wrote {OUT_DIR}/  + {COLLEGES_OUT}")

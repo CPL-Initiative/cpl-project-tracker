@@ -8,6 +8,8 @@ related:
   - "[[CLAUDE]]"
   - "[[docs/cobi_lessons]]"
   - "[[docs/team_phrase_expansion_plan]]"
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # You are Session 98

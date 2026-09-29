@@ -1,0 +1,462 @@
+{
+ "_doc": "The CCR title-rung calibration sitting. Jev's `p_different` is the probability the title belongs to a DIFFERENT discipline than the one recorded, so LOW means it fits. NOTHING here is a suggestion: the CCR has no measured gate, every row came back `uncalibrated`, and this file exists to put Jev's number beside Sam's verdict so the title rung can earn one.",
+ "_run": "https://github.com/CPL-Initiative/cpl-project-tracker/actions/runs/35738145263",
+ "_dispatched": "2026-09-22T14:07:43Z",
+ "_rung": "title",
+ "_limit": 50,
+ "_head": "7049602387972b1440fbbda8ce1ff666c81aa777",
+ "_gate": null,
+ "_note": "Recorded here because an Actions log and artifact both age out. Sam ruled the size: \"40 to 60 is good\".",
+ "items": [
+  {
+   "id": "ARTS M1288||discipline_title_mismatch",
+   "rule": "discipline_title_mismatch",
+   "title": "Three-Dimensional Design",
+   "discipline": "Art",
+   "members": 26,
+   "p_different": 0.19,
+   "care": 1.38
+  },
+  {
+   "id": "ARTS M1289||discipline_title_mismatch",
+   "rule": "discipline_title_mismatch",
+   "title": "Two-Dimensional Design",
+   "discipline": "Art",
+   "members": 24,
+   "p_different": 0.16,
+   "care": 1.29
+  },
+  {
+   "id": "PHIL M1060||description_discipline_disagreement",
+   "rule": "description_discipline_disagreement",
+   "title": "Ethics",
+   "discipline": "Philosophy",
+   "members": 22,
+   "p_different": 0.26,
+   "care": 1.12
+  },
+  {
+   "id": "ECON M1007||discipline_title_mismatch",
+   "rule": "discipline_title_mismatch",
+   "title": "Economic History of the United States",
+   "discipline": "Economics",
+   "members": 17,
+   "p_different": 0.17,
+   "care": 1.05
+  },
+  {
+   "id": "AUTO M1029||description_discipline_disagreement",
+   "rule": "description_discipline_disagreement",
+   "title": "Automotive Heating and Air Conditioning",
+   "discipline": "Automotive Technology",
+   "members": 16,
+   "p_different": 0.16,
+   "care": 1.33
+  },
+  {
+   "id": "PHIL M1058||discipline_title_mismatch",
+   "rule": "discipline_title_mismatch",
+   "title": "Environmental Ethics",
+   "discipline": "Philosophy",
+   "members": 16,
+   "p_different": 0.19,
+   "care": 1.35
+  },
+  {
+   "id": "SOCI M1042||discipline_title_mismatch",
+   "rule": "discipline_title_mismatch",
+   "title": "Introduction to Race and Ethnicity",
+   "discipline": "Sociology",
+   "members": 16,
+   "p_different": 0.17,
+   "care": 0.98
+  },
+  {
+   "id": "PHOT M1142||discipline_title_mismatch",
+   "rule": "discipline_title_mismatch",
+   "title": "Advanced Digital Photography",
+   "discipline": "Art",
+   "members": 15,
+   "p_different": 0.42,
+   "care": 1.46
+  },
+  {
+   "id": "AUTO M1065||discipline_title_mismatch",
+   "rule": "discipline_title_mismatch",
+   "title": "Automatic Transmissions and Transaxles",
+   "discipline": "Automotive Technology",
+   "members": 15,
+   "p_different": 0.15,
+   "care": 1.36
+  },
+  {
+   "id": "CRIM M1120||discipline_title_mismatch",
+   "rule": "discipline_title_mismatch",
+   "title": "Community Relations",
+   "discipline": "Administration of Justice",
+   "members": 14,
+   "p_different": 0.51,
+   "care": 1.92
+  },
+  {
+   "id": "ETHS M1225||generic_title_concrete_discipline",
+   "rule": "generic_title_concrete_discipline",
+   "title": "Field Studies",
+   "discipline": "Ethnic Studies",
+   "members": 14,
+   "p_different": 0.74,
+   "care": 1.66
+  },
+  {
+   "id": "BUSI M1282||discipline_title_mismatch",
+   "rule": "discipline_title_mismatch",
+   "title": "Entrepreneurial Mindset",
+   "discipline": "Business",
+   "members": 13,
+   "p_different": 0.2,
+   "care": 1.4
+  },
+  {
+   "id": "ATHL M1121||discipline_title_mismatch",
+   "rule": "discipline_title_mismatch",
+   "title": "Intercollegiate Track and Field - Women",
+   "discipline": "Kinesiology",
+   "members": 12,
+   "p_different": 0.63,
+   "care": 2.0
+  },
+  {
+   "id": "AUTO M1066||discipline_title_mismatch",
+   "rule": "discipline_title_mismatch",
+   "title": "Automatic Transmissions",
+   "discipline": "Automotive Technology",
+   "members": 11,
+   "p_different": 0.16,
+   "care": 1.46
+  },
+  {
+   "id": "MANU M1057||description_discipline_disagreement",
+   "rule": "description_discipline_disagreement",
+   "title": "SolidWorks (Introduction)",
+   "discipline": "Manufacturing Technology",
+   "members": 11,
+   "p_different": 0.19,
+   "care": 1.36
+  },
+  {
+   "id": "PSYC M1010||discipline_title_mismatch",
+   "rule": "discipline_title_mismatch",
+   "title": "Personal and Social Adjustment",
+   "discipline": "Psychology",
+   "members": 11,
+   "p_different": 0.16,
+   "care": 1.36
+  },
+  {
+   "id": "ANTH M1092||discipline_title_mismatch",
+   "rule": "discipline_title_mismatch",
+   "title": "Language and Culture",
+   "discipline": "Anthropology",
+   "members": 10,
+   "p_different": 0.21,
+   "care": 1.29
+  },
+  {
+   "id": "ANTH M1102||discipline_title_mismatch",
+   "rule": "discipline_title_mismatch",
+   "title": "World Prehistory",
+   "discipline": "Anthropology",
+   "members": 10,
+   "p_different": 0.24,
+   "care": 1.08
+  },
+  {
+   "id": "BUSI M1228||discipline_title_mismatch",
+   "rule": "discipline_title_mismatch",
+   "title": "Supply Chain Management",
+   "discipline": "Business",
+   "members": 10,
+   "p_different": 0.24,
+   "care": 1.26
+  },
+  {
+   "id": "ITIS M1475||discipline_title_mismatch",
+   "rule": "discipline_title_mismatch",
+   "title": "Word Processing",
+   "discipline": "Computer Information Systems (inferred from TOP, uncorroborated)",
+   "members": 10,
+   "p_different": 0.45,
+   "care": 2.08
+  },
+  {
+   "id": "MUSI M1525||discipline_title_mismatch",
+   "rule": "discipline_title_mismatch",
+   "title": "Musical Theatre Performance",
+   "discipline": "Music",
+   "members": 10,
+   "p_different": 0.41,
+   "care": 1.64
+  },
+  {
+   "id": "MUSI M1531||discipline_title_mismatch",
+   "rule": "discipline_title_mismatch",
+   "title": "Musical Theatre Workshop",
+   "discipline": "Music",
+   "members": 10,
+   "p_different": 0.46,
+   "care": 1.46
+  },
+  {
+   "id": "SOCI M1038||discipline_title_mismatch",
+   "rule": "discipline_title_mismatch",
+   "title": "Race and Ethnic Relations",
+   "discipline": "Sociology",
+   "members": 10,
+   "p_different": 0.16,
+   "care": 1.11
+  },
+  {
+   "id": "ARTS M1597||discipline_title_mismatch",
+   "rule": "discipline_title_mismatch",
+   "title": "Ceramics: Hand Building - Design and Decoration",
+   "discipline": "Art",
+   "members": 10,
+   "p_different": 0.21,
+   "care": 1.07
+  },
+  {
+   "id": "AUTO M1230||discipline_title_mismatch",
+   "rule": "discipline_title_mismatch",
+   "title": "Honda/Acura Electrical Tools and Diagnostic Procedures",
+   "discipline": "Automotive Technology",
+   "members": 10,
+   "p_different": 0.14,
+   "care": 1.31
+  },
+  {
+   "id": "AUTO M1251||discipline_title_mismatch",
+   "rule": "discipline_title_mismatch",
+   "title": "Heavy-Duty Diesel Tune-Up and Engine Analysis",
+   "discipline": "Automotive Technology",
+   "members": 10,
+   "p_different": 0.14,
+   "care": 1.15
+  },
+  {
+   "id": "AUTO M1256||discipline_title_mismatch",
+   "rule": "discipline_title_mismatch",
+   "title": "Steering and Suspension Diagnosis and Repair Assessment Test Out",
+   "discipline": "Automotive Technology",
+   "members": 10,
+   "p_different": 0.15,
+   "care": 1.22
+  },
+  {
+   "id": "AUTO M1318||discipline_title_mismatch",
+   "rule": "discipline_title_mismatch",
+   "title": "General Motors Suspension and Steering Systems",
+   "discipline": "Automotive Technology",
+   "members": 10,
+   "p_different": 0.16,
+   "care": 1.38
+  },
+  {
+   "id": "AVIA M1085||discipline_title_mismatch",
+   "rule": "discipline_title_mismatch",
+   "title": "Ford ASSET Automotive Electrical/Electronic Systems",
+   "discipline": "Aviation",
+   "members": 10,
+   "p_different": 0.83,
+   "care": 1.95
+  },
+  {
+   "id": "BUSI M1137||discipline_title_mismatch",
+   "rule": "discipline_title_mismatch",
+   "title": "Beginning Microsoft Word",
+   "discipline": "Business",
+   "members": 9,
+   "p_different": 0.58,
+   "care": 1.28
+  },
+  {
+   "id": "FTVE M1337||discipline_title_mismatch",
+   "rule": "discipline_title_mismatch",
+   "title": "Digital Video Production",
+   "discipline": "Computer Information Systems",
+   "members": 9,
+   "p_different": 0.75,
+   "care": 2.03
+  },
+  {
+   "id": "BUSI M9118||discipline_title_mismatch",
+   "rule": "discipline_title_mismatch",
+   "title": "Customer Service Skills",
+   "discipline": "Business",
+   "members": 9,
+   "p_different": 0.22,
+   "care": 1.31
+  },
+  {
+   "id": "DENT M1042||generic_title_concrete_discipline",
+   "rule": "generic_title_concrete_discipline",
+   "title": "Clinical Experience 1",
+   "discipline": "Dental Technology",
+   "members": 9,
+   "p_different": 0.73,
+   "care": 1.62
+  },
+  {
+   "id": "DENT M1043||generic_title_concrete_discipline",
+   "rule": "generic_title_concrete_discipline",
+   "title": "Clinical Experience 2",
+   "discipline": "Dental Technology",
+   "members": 9,
+   "p_different": 0.74,
+   "care": 1.7
+  },
+  {
+   "id": "AUTD M1040||discipline_title_mismatch",
+   "rule": "discipline_title_mismatch",
+   "title": "Medium and Heavy Truck Drivetrain Service, Diagnosis, and Repair",
+   "discipline": "Diesel Mechanics",
+   "members": 9,
+   "p_different": 0.24,
+   "care": 1.43
+  },
+  {
+   "id": "BIOL M1303||discipline_title_mismatch",
+   "rule": "discipline_title_mismatch",
+   "title": "Natural History Field Studies: Coastal Ecosystems",
+   "discipline": "Biological Sciences",
+   "members": 9,
+   "p_different": 0.15,
+   "care": 1.2
+  },
+  {
+   "id": "NRSR M1289||discipline_title_mismatch",
+   "rule": "discipline_title_mismatch",
+   "title": "Psychiatric Technician Training Program Orientation",
+   "discipline": "Nursing",
+   "members": 9,
+   "p_different": 0.31,
+   "care": 1.54
+  },
+  {
+   "id": "ANTH M1075||discipline_title_mismatch",
+   "rule": "discipline_title_mismatch",
+   "title": "Human Biological Evolution",
+   "discipline": "Anthropology",
+   "members": 8,
+   "p_different": 0.24,
+   "care": 1.21
+  },
+  {
+   "id": "ARTH M1065||discipline_title_mismatch",
+   "rule": "discipline_title_mismatch",
+   "title": "Arts of Africa, Oceania, and Indigenous North America",
+   "discipline": "Art",
+   "members": 8,
+   "p_different": 0.13,
+   "care": 1.38
+  },
+  {
+   "id": "ARTS M1303||discipline_title_mismatch",
+   "rule": "discipline_title_mismatch",
+   "title": "Graphic Design 3",
+   "discipline": "Art",
+   "members": 8,
+   "p_different": 0.21,
+   "care": 1.23
+  },
+  {
+   "id": "ARTS M1274||discipline_title_mismatch",
+   "rule": "discipline_title_mismatch",
+   "title": "Introduction to Computer Graphics",
+   "discipline": "Art",
+   "members": 8,
+   "p_different": 0.74,
+   "care": 2.0
+  },
+  {
+   "id": "ARTS M9004||discipline_title_mismatch",
+   "rule": "discipline_title_mismatch",
+   "title": "Ceramics for Older Adults",
+   "discipline": "Art",
+   "members": 8,
+   "p_different": 0.19,
+   "care": 1.24
+  },
+  {
+   "id": "AUTO M1185||discipline_title_mismatch",
+   "rule": "discipline_title_mismatch",
+   "title": "Electrical Systems",
+   "discipline": "Automotive Technology",
+   "members": 8,
+   "p_different": 0.23,
+   "care": 1.43
+  },
+  {
+   "id": "BUSI M1303||discipline_title_mismatch",
+   "rule": "discipline_title_mismatch",
+   "title": "Filing and Records Management",
+   "discipline": "Business",
+   "members": 8,
+   "p_different": 0.27,
+   "care": 1.31
+  },
+  {
+   "id": "MULT M1174||discipline_title_mismatch",
+   "rule": "discipline_title_mismatch",
+   "title": "Introduction to Digital Media Arts",
+   "discipline": "Art",
+   "members": 8,
+   "p_different": 0.18,
+   "care": 1.56
+  },
+  {
+   "id": "FTVE M1167||discipline_title_mismatch",
+   "rule": "discipline_title_mismatch",
+   "title": "Audio Production",
+   "discipline": "Film and Media Studies",
+   "members": 8,
+   "p_different": 0.55,
+   "care": 1.85
+  },
+  {
+   "id": "ARTS M1305||discipline_title_mismatch",
+   "rule": "discipline_title_mismatch",
+   "title": "Intermediate Graphic Design",
+   "discipline": "Art",
+   "members": 8,
+   "p_different": 0.19,
+   "care": 1.34
+  },
+  {
+   "id": "MUSI M1538||discipline_title_mismatch",
+   "rule": "discipline_title_mismatch",
+   "title": "Rehearsal and Performance",
+   "discipline": "Music",
+   "members": 8,
+   "p_different": 0.21,
+   "care": 1.48
+  },
+  {
+   "id": "PHIL M1049||discipline_title_mismatch",
+   "rule": "discipline_title_mismatch",
+   "title": "Critical Thinking and Writing",
+   "discipline": "Philosophy",
+   "members": 8,
+   "p_different": 0.22,
+   "care": 1.26
+  },
+  {
+   "id": "SPAN M1026||discipline_title_mismatch",
+   "rule": "discipline_title_mismatch",
+   "title": "Latin American Literature",
+   "discipline": "Foreign Languages",
+   "members": 8,
+   "p_different": 0.65,
+   "care": 1.85
+  }
+ ]
+}

@@ -4,7 +4,6 @@ created: 2026-06-01
 updated: 2026-06-22
 tags: [playbook, github-actions, cron, scheduling, daily-dashboard, ops, resilience]
 kb-status: published
-kb-type: playbook
 obsidian-folder: cpl-project-tracker/kb-notes
 related:
   - "[[CLAUDE]]"

@@ -138,7 +138,7 @@ That's it. Defaults to a 15-minute cadence. To use a different cadence
 (e.g. every 5 min during active-session days):
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File "...\scripts\setup-task-scheduler.ps1" -CadenceMinutes 5
+powershell -ExecutionPolicy Bypass -File "...\scripts\setup-task-scheduler.ps1" -CadenceMinutes 30
 ```
 
 The script is idempotent — re-running with a new cadence updates the
@@ -158,10 +158,10 @@ Scheduler** (`Win+R` → `taskschd.msc`):
 1. **Action → Create Task** (NOT "Create Basic Task" — we want the full editor).
 2. **General tab**:
    - **Name**: `CPL Vault Sync`
-   - **Description**: Pulls cpl-project-tracker + cpl-knowledge-base from origin every 15 minutes so Obsidian picks up checkpoint commits automatically.
+   - **Description**: Pulls cpl-project-tracker + cpl-knowledge-base from origin every 60 minutes so Obsidian picks up checkpoint commits automatically.
    - **Security options**: "Run only when user is logged on" (simplest; no password prompt). If you want it to run when locked, switch to "Run whether user is logged on or not" — you'll be asked for your password.
 3. **Triggers tab → New**:
-   - **Begin the task**: "At log on" (so it starts when you sign in) AND/OR "On a schedule" with "Daily / Repeat task every: 15 minutes / for a duration of: 1 day"
+   - **Begin the task**: "At log on" (so it starts when you sign in) AND/OR "On a schedule" with "Daily / Repeat task every: 1 hour / for a duration of: 1 day"
    - **Enabled**: ✓
 4. **Actions tab → New**:
    - **Action**: Start a program

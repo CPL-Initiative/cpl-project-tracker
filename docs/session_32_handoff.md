@@ -9,6 +9,8 @@ related:
   - docs/kb-notes/methodology-cer-fold-articulation-ripple-sync.md (NEW this session)
   - CLAUDE.md §11 "Session 31" subsection
 moniker_suggestion: Bruh 32 / "Thirty-Two" / "Treinta-y-Dos" — or claim your own
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # Session 32 Hand-off Prompt

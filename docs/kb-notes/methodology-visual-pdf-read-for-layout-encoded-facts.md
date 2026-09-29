@@ -1,8 +1,7 @@
 ---
 title: "Methodology — visual PDF read (not text parse) for layout-encoded facts"
 kb-status: published
-kb-type: methodology
-date: 2026-07-01
+created: 2026-07-01
 tags: [methodology, pdf, extraction, workflow, adversarial-verification, tmc]
 related:
   - docs/tmc_builder_lessons.md

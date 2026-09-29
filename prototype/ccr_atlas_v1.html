@@ -1,0 +1,2099 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SkyView</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ══ First Light tokens (docs/kb-notes/reference-ui-design-system.md) ══ */
+:root{
+  --paper:#F4F2ED; --text-strong:#1C1C1A; --text-body:#3A3A36; --text-muted:#5C5C55;
+  --text-faint:#87877F; --surface:rgba(255,255,255,.78); --surface-opaque:#FFFFFF;
+  --surface-subtle:#F7F5F1; --surface-muted:#ECE9E2;
+  --border:rgba(28,28,26,.14); --border-strong:rgba(28,28,26,.30);
+  /* The dim behind a sheet over the map (the course outline). Dark on the
+     light canvas, darker still on the night sky, so the map reads as set back
+     rather than switched off. */
+  --scrim:rgba(28,28,26,.38);
+  --cobalt:#0047AB; --crimson:#920000; --hunter:#2C601A; --violet:#6D28D9;
+  --mustard-fill:#E3B341; --mustard-text:#8B6800;
+  --seal-blue:#002F6D;
+  --focus-ring:#0047AB;
+  --cpl-measure:none;
+  --serif:"Playfair Display",Georgia,"Times New Roman",serif;
+  --sans:"Source Sans 3",system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--text-body);
+     font-family:var(--sans);font-size:clamp(15px,.95rem + .1vw,16.5px);line-height:1.55;}
+h1,h2,h3{font-family:var(--serif);color:var(--text-strong);line-height:1.2;margin:0 0 .35em}
+h1{font-size:clamp(1.6rem,1.3rem + 1.4vw,2.3rem)}
+h2{font-size:clamp(1.2rem,1.05rem + .7vw,1.6rem)}
+h3{font-size:clamp(1rem,.95rem + .3vw,1.15rem)}
+p{margin:0 0 .8em;max-width:var(--cpl-measure,none)}
+a{color:var(--cobalt)}
+:focus-visible{outline:3px solid var(--focus-ring);outline-offset:2px;border-radius:3px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--surface-opaque);
+      color:var(--cobalt);padding:10px 16px;z-index:100;border:2px solid var(--cobalt);border-radius:0 0 6px 0}
+.skip:focus{left:0}
+.wrap{max-width:1180px;margin:0 auto;padding:clamp(16px,3vw,32px)}
+
+/* ── masthead ── */
+.mast{background:var(--surface);border-bottom:1px solid var(--border);
+      backdrop-filter:blur(6px);position:sticky;top:0;z-index:20}
+.mast .wrap{padding-top:14px;padding-bottom:14px;display:flex;flex-wrap:wrap;
+            gap:12px;align-items:baseline;justify-content:space-between}
+.mast .brand{font-family:var(--serif);font-weight:700;font-size:1.15rem;color:var(--text-strong)}
+.mast .tag{color:var(--text-muted);font-size:.82rem}
+.msearch{display:flex;gap:7px;align-items:center;flex:1 1 260px;max-width:560px;min-width:0}
+/* Suggestions. The wrapper is the positioning context so the list hangs under
+   the input rather than under the whole form (which includes the button). */
+.sugwrap{position:relative;flex:1 1 auto;min-width:0;display:flex}
+.sug{position:absolute;left:0;right:0;top:calc(100% + 4px);z-index:60;margin:0;padding:0 0 4px;
+  list-style:none;background:var(--surface-opaque,#fff);border-radius:9px;
+  border:1px solid var(--border-strong,rgba(28,28,26,.30));box-shadow:0 12px 30px rgba(20,20,30,.17);
+  max-height:min(70vh,620px);overflow-y:auto;overscroll-behavior:contain}
+/* The ask's own answer, under the box. Same shell as .sug so the two read as
+   one surface; never both open at once (setAsk closes the list, and typing
+   closes this). Tokens only — no raw hex beyond .sug's own fallbacks. */
+.askbox{position:absolute;left:0;right:0;top:calc(100% + 4px);z-index:61;
+  padding:.6em .8em;font-size:.82rem;line-height:1.45;color:var(--text-body,#1C1C1A);
+  background:var(--surface-opaque,#fff);border-radius:9px;
+  border:1px solid var(--border-strong,rgba(28,28,26,.30));box-shadow:0 12px 30px rgba(20,20,30,.17);
+  max-height:min(50vh,420px);overflow-y:auto;overscroll-behavior:contain}
+.askbox .askhd{font-weight:600;color:var(--cobalt,#0047AB)}
+/* ⚠️ --crimson, NOT --red-alert. --red-alert is a COBI token this stylesheet
+   never redefines for the night palette, so it stays #B3261E on every ground:
+   measured 2.55:1 on --surface-opaque in dark, against 4.5 for the heading and
+   3 for the rule. --crimson is themed in BOTH :root blocks here (#920000 /
+   #CF8F8F) and measures 9.45:1 light, 6.34:1 dark. Dark is a token swap, never
+   a component rule — so the fix is picking the role that already swaps. */
+.askbox.err .askhd{color:var(--crimson,#920000)}
+/* Color is never the only signal: a refusal keeps a left rule as well as the
+   heading color, and says "could not" in its own words above. */
+.askbox.err{border-left:3px solid var(--crimson,#920000)}
+.askbox .askdismiss{margin-top:.5em;font:inherit;font-size:.78rem;font-weight:600;cursor:pointer;
+  color:var(--cobalt,#0047AB);background:var(--surface-opaque,#fff);
+  border:1px solid var(--border-strong,rgba(28,28,26,.30));border-radius:5px;
+  padding:.28em .7em;min-height:24px}
+.askbox .askdismiss:hover{background:var(--surface-muted,#ECE9E2)}
+.askbox .askdismiss:focus-visible{outline:2px solid var(--focus-ring,#0047AB);outline-offset:2px}
+.sug li{display:flex;gap:.55em;align-items:baseline;padding:.42em .7em;cursor:pointer}
+.sug li.on{background:var(--surface-subtle,#F7F5F1)}
+/* ⭐ THE SORT CONTROL MOVED TO THE LIST'S TOP RIGHT and an Enter button took its
+   place at the bottom (Sam's ruling 1, 2026-09-06). Both rows are notes rather
+   than destinations: no pointer, no hover, and each sticks to its own edge so
+   the count and the controls stay readable while the list scrolls. */
+.sug li.sug-head{position:sticky;top:0;z-index:1;cursor:default;display:flex;
+  border-radius:9px 9px 0 0;
+  gap:.8em;align-items:center;justify-content:space-between;
+  padding:.42em .8em;font-size:.78rem;color:var(--text-muted,#5C5C55);
+  background:var(--surface-subtle,#F7F5F1);border-bottom:1px solid var(--border,rgba(28,28,26,.16))}
+.sug li.sug-head:hover{background:var(--surface-subtle,#F7F5F1)}
+.sug li.sug-more{position:sticky;bottom:0;cursor:default;display:flex;
+  gap:.8em;align-items:center;justify-content:space-between;
+  padding:.42em .8em;font-size:.78rem;color:var(--text-muted,#5C5C55);
+  background:var(--surface-subtle,#F7F5F1);border-top:1px solid var(--border,rgba(28,28,26,.16))}
+.sug .sug-sort,.sug .sug-go{flex:none;font:inherit;font-size:.78rem;font-weight:600;cursor:pointer;
+  color:var(--cobalt,#0047AB);background:var(--surface-opaque,#fff);
+  border:1px solid var(--border-strong,rgba(28,28,26,.30));border-radius:5px;
+  padding:.28em .7em;min-height:24px}
+.sug .sug-sort:hover,.sug .sug-go:hover{background:var(--surface-muted,#ECE9E2)}
+.sug .sug-go{color:var(--on-accent,#fff);background:var(--cobalt,#0047AB);border-color:var(--cobalt,#0047AB)}
+.sug .sug-go:hover{background:var(--seal-blue,#002F6D);border-color:var(--seal-blue,#002F6D);color:var(--on-accent,#fff)}
+.sug .sug-sort:focus-visible,.sug .sug-go:focus-visible{outline:2px solid var(--focus-ring,#0047AB);outline-offset:2px}
+.sug li.sug-more:hover{background:var(--surface-subtle,#F7F5F1)}
+/* ⭐ THE ORDER CONTROL SITS AT THE TOP RIGHT (Sam, 2026-09-06: "I did ask for
+   this sort by name to be moved in the upper right corner … so it's more
+   intuitively placed"). It rode in the footer beside the count, which is where
+   a reader looks to learn how many matched — not where they look to change the
+   order. The count travels with it: both are ABOUT the list, and the footer is
+   now the place you LEAVE from, which wants to hold one thing only. */
+.sug li.sug-head{position:sticky;top:0;z-index:1;cursor:default;display:flex;
+  gap:.8em;align-items:center;justify-content:space-between;
+  padding:.42em .8em;font-size:.78rem;color:var(--text-muted,#5C5C55);
+  background:var(--surface-subtle,#F7F5F1);border-bottom:1px solid var(--border,rgba(28,28,26,.16))}
+.sug li.sug-head:hover{background:var(--surface-subtle,#F7F5F1)}
+/* The way out. A deferred selection needs a VISIBLE commit, or a mouse-only
+   reader has ticked their rows and no way to say "done"; Enter is the keyboard
+   half of the same control and the button is what makes it discoverable. */
+.sug .sug-go{flex:none;font:inherit;font-size:.78rem;font-weight:600;cursor:pointer;
+  color:var(--on-accent,#fff);background:var(--seal-blue,#002F6D);
+  border:1px solid var(--seal-blue,#002F6D);border-radius:5px;
+  padding:.28em .9em;min-height:24px;display:inline-flex;align-items:center;gap:.45em}
+.sug .sug-go:hover{background:var(--cobalt,#0047AB);border-color:var(--cobalt,#0047AB)}
+.sug .sug-go kbd{font:inherit;font-size:.9em;opacity:.85}
+.sug .sug-pend{flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+/* The kind is a WORD. Two different destinations must not be told apart by a
+   color or an icon alone. */
+.sg-k{flex:none;font-size:.66rem;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--text-muted,#5C5C55);min-width:4.4em}
+.sg-l{flex:1 1 auto;min-width:0;font-size:.88rem;font-weight:600;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sg-r{flex:none;font-size:.76rem;color:var(--text-muted,#5C5C55);white-space:nowrap}
+@media (max-width:560px){.sg-r{display:none}}
+.msearch input{flex:1 1 auto;min-width:0;font:inherit;font-size:.88rem;padding:8px 11px;
+  border:1px solid var(--border-strong);border-radius:7px;background:var(--surface-opaque);color:var(--text-body)}
+.hits{list-style:none;margin:0 0 22px;padding:0;display:flex;flex-direction:column;gap:8px}
+.hits li{background:var(--surface-opaque);border:1px solid var(--border);border-radius:9px}
+.hits button{width:100%;text-align:left;background:none;border:0;font:inherit;color:inherit;
+  cursor:pointer;padding:11px 13px;display:flex;flex-direction:column;gap:4px;border-radius:9px}
+.hits button:hover{background:var(--surface-muted)}
+.hits .why{font-size:.79rem;color:var(--text-muted)}
+.hits mark{background:var(--mark-hit);color:var(--mark-hit-ink);padding:0 2px;border-radius:2px;font-weight:600}
+.hits .path{font-size:.76rem;color:var(--text-muted)}
+.crumbs{display:flex;gap:6px;flex-wrap:wrap;align-items:center;font-size:.85rem;
+        color:var(--text-muted);margin:0 0 14px;padding:0;list-style:none}
+.crumbs li::after{content:"›";margin-left:6px;color:var(--text-faint)}
+.crumbs li:last-child::after{content:""}
+/* Back is a CONTROL, not a step in the path: with the crumb chevron it would
+   read as "Back › Disciplines and subjects", a place you had been. A rule
+   divides it from the trail instead. */
+.crumbs li.crumb-back::after{content:"";margin-left:0}
+.crumbs li.crumb-back{margin-right:4px;padding-right:10px;border-right:1px solid var(--border)}
+.crumbs li.crumb-back button{font-weight:600}
+.crumbs button{background:none;border:0;color:var(--cobalt);cursor:pointer;
+               font:inherit;padding:2px 3px;text-decoration:underline}
+
+/* ── stat strip ── */
+.stats{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin:0 0 22px}
+.stat{background:var(--surface-opaque);border:1px solid var(--border);border-radius:10px;padding:12px 14px}
+.stat .n{font-family:var(--serif);font-size:clamp(1.35rem,1.1rem + .8vw,1.85rem);
+         font-weight:700;color:var(--text-strong);display:block;line-height:1.1}
+.stat .l{font-size:.76rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.04em}
+.stat .s{font-size:.8rem;color:var(--text-body);margin-top:4px}
+
+.hero{background:var(--surface-opaque);border:1px solid var(--border);border-radius:12px;
+      padding:14px;margin:0 0 22px;display:grid;gap:14px;
+      grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);align-items:center}
+.hero>*{min-width:0}
+@media (max-width:820px){.hero{grid-template-columns:1fr}}
+.hero .frame{background:var(--surface-subtle);border:1px solid var(--border);
+             border-radius:9px;overflow:hidden}
+.hero .frame svg{display:block;width:100%;height:auto}
+.hero h2{margin:0 0 6px}
+.hero p{margin:0 0 10px;font-size:.92rem}
+.hero .row{display:flex;gap:8px;flex-wrap:wrap}
+.hero .cap{font-size:.78rem;color:var(--text-muted);margin:8px 0 0}
+.lede{background:var(--surface-opaque);border:1px solid var(--border);
+      border-left:4px solid var(--cobalt);border-radius:8px;padding:14px 18px;margin:0 0 22px}
+.lede p:last-child{margin-bottom:0}
+.note{background:var(--surface-subtle);border:1px solid var(--border);
+      border-left:4px solid var(--mustard-text);border-radius:8px;padding:12px 16px;margin:0 0 20px;font-size:.9rem}
+.note p:last-child{margin-bottom:0}
+
+/* ── toolbar ── */
+.tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:0 0 16px}
+.tools input[type=search],.tools select{font:inherit;font-size:.88rem;padding:7px 10px;
+  border:1px solid var(--border-strong);border-radius:7px;background:var(--surface-opaque);
+  color:var(--text-body);min-width:0}
+.tools label{font-size:.85rem;color:var(--text-muted);display:flex;gap:6px;align-items:center}
+.btn{font:inherit;font-size:.85rem;font-weight:600;padding:7px 13px;border-radius:7px;
+     border:1px solid var(--border-strong);background:var(--surface-opaque);
+     color:var(--text-strong);cursor:pointer}
+.btn:hover{background:var(--surface-muted)}
+.btn.primary{background:var(--cobalt);border-color:var(--cobalt);color:var(--on-accent,#fff)}
+.btn.primary:hover{background:var(--btn-primary-hover)}
+.btn[aria-pressed=true]{background:var(--cobalt);border-color:var(--cobalt);color:var(--on-accent,#fff)}
+
+/* ── forest grid ── */
+.grid{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(215px,1fr))}
+.cell{background:var(--surface-opaque);border:1px solid var(--border);border-radius:10px;
+      padding:12px 13px;text-align:left;cursor:pointer;font:inherit;color:inherit;
+      display:flex;flex-direction:column;gap:7px;min-height:104px}
+.cell:hover{border-color:var(--cobalt);box-shadow:0 2px 10px rgba(28,28,26,.09)}
+.cell .nm{font-weight:600;color:var(--text-strong);font-size:.92rem;line-height:1.25}
+.cell .meta{font-size:.76rem;color:var(--text-muted)}
+.cell .dec{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--text-strong)}
+.cell.triage{border-left:4px solid var(--mustard-text);background:var(--surface-subtle)}
+.cell.demo{border-left:4px solid var(--cobalt)}
+.bar{height:7px;border-radius:4px;background:var(--surface-muted);overflow:hidden;display:flex}
+.bar i{display:block;height:100%}
+.bar i.f{background:var(--crimson)}
+.bar i.o{background:var(--violet)}
+.bar i.r{background:var(--hunter)}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:.78rem;color:var(--text-muted);margin:10px 0 18px}
+.legend span{display:flex;gap:5px;align-items:center}
+.sw{width:11px;height:11px;border-radius:3px;display:inline-block}
+
+/* ── decision cards ── */
+.decks{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(255px,1fr))}
+.deck{background:var(--surface-opaque);border:1px solid var(--border);border-radius:10px;
+      padding:12px 13px;cursor:pointer;font:inherit;color:inherit;text-align:left;
+      display:flex;flex-direction:column;gap:8px}
+.deck:hover{border-color:var(--cobalt);box-shadow:0 2px 10px rgba(28,28,26,.09)}
+.deck .hd{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.deck .sz{font-family:var(--serif);font-weight:700;color:var(--text-strong)}
+.deck ul{margin:0;padding-left:1.05em;font-size:.82rem;color:var(--text-body)}
+.deck li{margin:1px 0}
+.deck .more{font-size:.78rem;color:var(--text-muted)}
+
+/* ── chips ── */
+.chip{border-radius:10px;font-size:.7rem;font-weight:600;padding:2px 8px;
+      display:inline-flex;gap:4px;align-items:center;white-space:nowrap;border:1px solid transparent}
+.chip.flag{background:#FCEDED;color:var(--crimson);border-color:#E7BDBD}
+.chip.gen{background:#F1EAFC;color:var(--violet);border-color:#D5C4F2}
+.chip.ok{background:#EAF1E6;color:var(--hunter);border-color:#C2D6B9}
+.chip.mut{background:var(--surface-muted);color:var(--text-muted);border-color:var(--border)}
+.chip.cid{background:#E7EEF9;color:var(--cobalt);border-color:#BBD0EC}
+
+/* ── graph ── */
+.stage{display:grid;gap:14px;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);align-items:start}
+.stage>*{min-width:0}
+.side,.panel,.idlist>li{min-width:0}
+@media (max-width:900px){.stage{grid-template-columns:1fr}}
+.canvas{background:var(--surface-opaque);border:1px solid var(--border);border-radius:10px;
+        position:relative;overflow:hidden}
+.canvas svg{display:block;width:100%;height:auto;touch-action:none;cursor:grab}
+.canvas svg:active{cursor:grabbing}
+.gbar{display:flex;gap:6px;align-items:center;padding:0 0 8px}
+.gbar .sub{margin-left:auto;color:var(--text-muted);font-size:.82rem}
+.hint{font-size:.8rem;color:var(--text-muted);padding:9px 13px;border-top:1px solid var(--border);
+      background:var(--surface-subtle)}
+
+.glegend{display:flex;flex-wrap:wrap;gap:12px;margin-top:7px;
+         padding-top:7px;border-top:1px dashed var(--border);font-size:.76rem}
+.glegend span{display:flex;gap:4px;align-items:center;white-space:nowrap}
+.glegend b{font-size:.95rem;line-height:1}
+.sdot{width:9px;height:9px;border-radius:50%;display:inline-block}
+.side{display:flex;flex-direction:column;gap:12px}
+.panel{background:var(--surface-opaque);border:1px solid var(--border);border-radius:10px;padding:13px 14px}
+/* The two panels below the map are h3 under the panes' h2, which sits under
+   the row's h1 — `npm run a11y` reported the skip when they were h3 under an
+   h1, and then a solo view with no heading at all. Their SIZE stays what the
+   first h3 measured (18.4px/700): the fix is to the outline a screen reader
+   walks, not to the page. */
+.panel h3{font-size:18.4px;font-weight:700;margin:0 0 8px}
+.panel h2{font-size:18.4px;font-weight:700;margin:0 0 8px}
+.idlist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+.idlist>li{border:1px solid var(--border);border-radius:8px;padding:9px 10px;background:var(--surface-subtle)}
+/* The whole row opens the course (item 3, 2026-09-06), so the whole row has to
+   look like it does. The heading rows of the level ladder are not targets. */
+.idlist>li:not(.sim-h){cursor:pointer}
+.idlist>li:not(.sim-h):hover{background:var(--surface-muted);border-color:var(--border-strong)}
+.idlist>li .chip{cursor:default}
+.idlist .ttl{font-weight:600;color:var(--text-strong);font-size:.9rem}
+.idlist .sub{font-size:.76rem;color:var(--text-muted);font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+/* The level ladder's headings are headings, not cards: the list's card chrome
+   would make "Beginning" read as another course. */
+.idlist .sim-h{border:0;background:none;padding:6px 0 0;margin:0}
+.idlist .sim-h .sub{font-family:inherit;font-size:.78rem;font-weight:600;color:var(--text-strong)}
+.mlist{list-style:none;margin:7px 0 0;padding:0;display:flex;flex-direction:column;gap:4px}
+.mlist li{display:flex;gap:7px;align-items:baseline;font-size:.8rem;flex-wrap:wrap;
+          background:var(--surface-opaque);border:1px solid var(--border);
+          border-radius:6px;padding:4px 7px;min-width:0}
+.mlist .cd{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-weight:600;
+           color:var(--text-strong);white-space:nowrap;min-width:0}
+/* the college name is the one part that may be truncated — full value in title="" */
+.mlist .co{color:var(--text-muted);font-size:.75rem;min-width:0;flex:1 1 auto;
+           overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mlist .mv{margin-left:auto;font:inherit;font-size:.72rem;font-weight:600;
+           background:none;border:1px solid var(--border-strong);border-radius:5px;
+           padding:1px 6px;cursor:pointer;color:var(--cobalt);white-space:nowrap}
+.mlist .mv:hover{background:var(--cobalt);color:#fff;border-color:var(--cobalt)}
+.mlist li.moved{border-color:var(--hunter);background:var(--row-moved)}
+/* A course STAGED TO MOVE AWAY from this identity (v4 item 7, Sam: "change this
+   outline to show it was staged to move"). Listed at its origin until the move
+   is written, dashed so the state survives grayscale; the chip carries the
+   words and Put back drops the staged move. No fill, so no dark counterpart
+   is needed: the tokens it uses already have one. */
+.mlist li.away{border:1px dashed var(--sky-gone);opacity:.92}
+.mlist li.away .cd{color:var(--sky-gone);font-weight:600;background:none;border:0;padding:0;font:inherit;font-size:.82rem}
+.chip.staged{background:none;color:var(--text-muted);border:1px dashed var(--sky-gone)}
+.mlist .putback{margin-left:auto;font:inherit;font-size:.72rem;font-weight:600;background:none;
+           border:1px solid var(--border-strong);border-radius:5px;padding:1px 6px;cursor:pointer;color:var(--cobalt);white-space:nowrap}
+.mlist .putback:hover{background:var(--cobalt);color:#fff;border-color:var(--cobalt)}
+/* A card being dragged onto. Outline + tint, never tint alone: the cards
+   already carry state colors and one more wash of color reads as noise. */
+#ids > li.drop-to{outline:2px solid var(--brand,#6D28D9);outline-offset:2px;
+  background:var(--row-drop)}
+/* A course whose control number names several courses cannot be re-homed —
+   the CN: write key cannot say which. Dotted underline so the state survives
+   greyscale; the chip beside it carries the words. */
+.mlist li.shared .cd{text-decoration:underline dotted}
+.mlist .chip.warn{background:var(--chip-warn);color:var(--chip-warn-ink);border:1px solid var(--chip-warn-edge)}
+.writes{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.75rem;
+        background:var(--surface-subtle);border:1px solid var(--border);border-radius:7px;
+        padding:9px 11px;overflow-x:auto;color:var(--text-body)}
+.writes div{white-space:pre;padding:1px 0}
+.empty{color:var(--text-muted);font-size:.85rem;font-style:italic}
+.node-l{font-size:11px;font-family:var(--sans);pointer-events:none;
+        paint-order:stroke fill;stroke:var(--surface-opaque);stroke-width:3.5px;
+        stroke-linejoin:round}
+.node-g{font-size:13px;font-family:var(--sans);pointer-events:none}
+/* ── SkyView, full bleed (Sam, 2026-09-03: "open full screen so users have
+   more work space and allow scroll down to see the other info") ── */
+main.u-fullbleed{max-width:none;padding:0}
+/* On the map the top row carries the Views menu, so the crumbs row would say
+   the same thing twice and cost the map a line (Sam, 2026-09-03: "I want to
+   maximize the SkyView window"). */
+main.u-fullbleed .crumbrow{display:none}
+/* ── the crumbs row carries the Views menu on every view that is NOT the map
+   (Sam, item 9, 2026-09-04: every view reachable from every other). One
+   builder (ccr_universe.js viewsMenuInto) renders it here and in the map's
+   own top row, so a view added there is reachable everywhere at once. ── */
+.crumbrow{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;justify-content:space-between;margin:0 0 14px}
+.crumbrow .crumbs{margin:0}
+.u-views-menu .u-views-here{display:flex;align-items:center;min-height:28px;padding:2px 8px;
+                            font-size:.86rem;color:var(--text-muted)}
+/* ── SkyView ALONE (Sam, 2026-09-05: "The full screen SkyView … I would like to
+   henceforth refer to as SkyView"): the map section is the whole window. The
+   masthead, the crumbs, the panes below and the footer are not painted — the
+   same set browser full screen leaves out, which is what it looked like to him.
+   The comprehensive view is the SAME render with this class off, so switching
+   keeps the zoom, the selection and the moves. Narrow screens still scroll:
+   the details panel docks under the canvas there and needs the room. ── */
+body.u-solo .mast,body.u-solo .crumbrow,body.u-solo #u-below,body.u-solo main>footer{display:none}
+body.u-solo .u-full{border-top:0;border-bottom:0}
+@media (min-width:700px){body.u-solo{overflow:hidden}}
+/* ── the workspace: disciplines, subjects and ESL packaging on ONE tab (Sam,
+   items 6-9, 2026-09-04, restated 2026-09-05) ── */
+.ws-head{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;justify-content:space-between;margin:0 0 6px}
+.ws-head h1{margin:0}
+.ws-lede{max-width:var(--cpl-measure,none);margin:0 0 12px;font-size:.95rem}
+.ws-bar{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin:0 0 4px}
+.ws-seg .btn.mode{font-size:.85rem;padding:7px 14px;min-height:28px}
+.ws-tools{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin:14px 0 8px}
+.ws-tools label{font-size:.85rem;color:var(--text-muted)}
+.ws-tools input[type=search]{flex:1 1 260px;min-width:0;max-width:520px;font:inherit;font-size:.88rem;
+  padding:7px 10px;border:1px solid var(--border-strong);border-radius:7px;background:var(--surface-opaque);color:var(--text-body)}
+table.ws-table{table-layout:fixed}
+table.ws-table th.n,table.ws-table td.n{text-align:right;font-variant-numeric:tabular-nums}
+table.ws-table td{overflow-wrap:anywhere}
+table.ws-table .btn.small{white-space:nowrap;min-height:24px}
+table.ws-table td .btn.small+.btn.small{margin-left:4px}
+.ws-note{font-size:.8rem;color:var(--text-muted)}
+p.ws-note{margin:.8em 0 0;max-width:var(--cpl-measure,none)}
+.u-full{position:relative;width:100%;background:var(--surface-opaque);
+        border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.u-top{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;justify-content:space-between;
+       padding:6px clamp(12px,2vw,24px);border-bottom:1px solid var(--border);background:var(--surface-subtle)}
+.u-nav{display:flex;flex-wrap:wrap;gap:4px 16px;align-items:center;font-size:.86rem}
+/* ⚠️ min-height is WCAG 2.2 SC 2.5.8, not styling. `npm run a11y` measured
+   these four at 21.3px — including the CCR link added the same session.
+   The inline-target exception covers a link inside a SENTENCE; a nav row
+   of view switchers is not one. display:inline-flex is what lets a
+   min-height apply to an inline-level control at all. */
+.u-nav .linkish{font-size:.86rem;display:inline-flex;align-items:center;min-height:24px}
+/* .u-modes is specifically "what a drag does" (Pan / Move) and a harness check
+   depends on that meaning, so the CR/NC filter takes .u-seg and they share only
+   the segmented LOOK. */
+.u-modes,.u-seg{display:inline-flex;border:1px solid var(--border-strong);border-radius:999px;overflow:hidden;margin-right:4px}
+.u-modes .btn.mode,.u-seg .btn.mode{border:0;border-radius:0;background:var(--surface-opaque);color:var(--text-body);backdrop-filter:none}
+.u-modes .btn.mode[aria-pressed=true],.u-seg .btn.mode[aria-pressed=true]{background:var(--seal-blue,#002F6D);color:var(--on-accent,#fff)}
+.u-stage{display:flex;align-items:stretch;min-width:0}
+.u-foot{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:flex-start;
+        padding:6px clamp(12px,2vw,24px);border-top:1px solid var(--border);background:var(--surface-subtle)}
+.u-foot .u-legend,.u-foot .u-hint{background:none;border:0;backdrop-filter:none;padding:0;max-width:none;border-radius:0}
+.u-foot .u-hint{flex:1 1 320px}
+.u-foot .u-legend{flex:0 1 auto}
+.u-sw.member{border:0;background:var(--cobalt);
+  /* the same five-pointed mark the canvas draws, so the legend matches the map */
+  clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+/* Noncredit reads as a BROKEN ring on the map, so the legend swatch shows the
+   same break rather than describing it. Stroke, not colour: colour is already
+   spent on the identity system. */
+.u-sw.nc{width:13px;height:13px;border:1.5px dashed var(--text-muted);
+  background:radial-gradient(circle,var(--text-muted) 0 2.6px,transparent 3.2px)}
+.u-crnc{margin-left:2px}
+.u-wrap{position:relative;flex:1 1 auto;min-width:0;width:auto;height:78vh;overflow:hidden;background:var(--surface-opaque)}
+.u-wrap canvas{display:block;width:100%;height:100%;touch-action:none;cursor:default}
+.u-wrap canvas:focus-visible{outline:3px solid var(--focus-ring);outline-offset:-3px}
+.u-ov{position:absolute;z-index:3;margin:0}
+.u-ov-tl{top:10px;left:12px;max-width:calc(100% - 24px)}
+.u-ov-bl{left:12px;bottom:58px}
+.u-ov-b{left:12px;bottom:10px;max-width:min(640px,calc(100% - 24px))}
+.u-bar{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:0}
+/* ── item 8 (Sam, 2026-09-04): the controls ride the masthead's title row ──
+   The bar is MOVED there by ccr_universe.js, not copied, and moved back
+   inside #u-full for full screen (the browser paints only that element).
+   min-width:0 so it can shrink beside the search rather than push it. */
+
+/* ⚠️ THE MASTHEAD IS STICKY (z-index 20), so anything scrolled to the top of the
+   viewport lands UNDERNEATH it. That was survivable while the controls sat on a
+   second row well down the page; consolidating to one row and giving the map
+   more height put them right at the boundary, and Chromium reported every link
+   in this row unclickable — the masthead was intercepting the pointer. Reserve
+   the header's height when scrolling anything in this row into view. */
+.u-top,.u-top .linkish,.u-top .btn{scroll-margin-top:96px}
+/* One row: title | links | controls, with the controls pushed right. The row
+   only wraps when it genuinely cannot fit, and min-width:0 lets it try. */
+.u-top{flex-wrap:nowrap;gap:6px 14px}
+.u-top .u-nav{min-width:0;flex:0 1 auto}
+.u-top .u-bar{margin-left:auto;min-width:0;flex:0 1 auto}
+/* One chip size at every width since 2026-09-05 (item 7) — see the block
+   further down; the row wraps below 1100px instead of shrinking. */
+/* ── the 2026-09-04 top row: title · views · search · controls · close ──────
+   Sam's items 1-5. The order IS the ask: "SkyView label top left most",
+   the view links folded into "a single drop down", the search "to the left of
+   the chips … wider", the controls, and "a X to close in top right". */
+/* The title is the page's h1 (the solo view has no other heading), sized to
+   the row rather than to a page heading. */
+.u-title{font-family:var(--serif);font-weight:700;font-size:.95rem;line-height:1.2;margin:0;
+         color:var(--text-strong);white-space:nowrap;flex:0 0 auto}
+/* Views menu. <details> carries open/close, Enter and Escape with no script;
+   the summary is styled as the same link the four buttons used to be, so the
+   row reads as one vocabulary. list-style:none + ::-webkit-details-marker kills
+   the disclosure triangle in every engine — the word carries it. */
+.u-views{position:relative;flex:0 0 auto}
+.u-views>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;
+                 gap:4px;min-height:24px;font-size:.86rem}
+.u-views>summary::-webkit-details-marker{display:none}
+.u-views>summary::after{content:"\25BE";font-size:.7em;color:var(--text-muted)}
+/* ⚠️ A closed <details> still LAYS OUT its contents in Chromium — it skips
+   painting them, not sizing them. `npm run a11y` measured all four menu items
+   escaping the viewport at 390px and reported them as focusables with no ring,
+   because forcing focus on a node the engine merely declines to paint still
+   works. display:none is what actually takes them out of the layout and the
+   tab order, and it is the difference between a hidden menu and a hidden
+   keyboard trap. */
+details.u-views:not([open]) .u-views-menu{display:none}   /* the flat list in the More panel has no [open] and must show */
+.u-views-menu{position:absolute;z-index:70;top:calc(100% + 6px);left:0;min-width:210px;
+              display:flex;flex-direction:column;align-items:stretch;gap:2px;padding:6px;
+              background:var(--surface-opaque,#fff);border:1px solid var(--border-strong,rgba(28,28,26,.30));
+              border-radius:9px;box-shadow:0 12px 30px rgba(20,20,30,.17)}
+.u-views-menu .linkish{display:flex;align-items:center;min-height:28px;padding:2px 8px;
+                       border-radius:6px;text-align:left;font-size:.86rem}
+.u-views-menu .linkish:hover{background:var(--surface-subtle,#F7F5F1)}
+/* The search is BORROWED from the masthead (ccr_universe.js moves the form
+   here), so it needs no markup of its own — only room. It takes the row's slack
+   so it is the thing that grows, which is item 3's "make it wider". */
+.u-search-slot{flex:1 1 240px;min-width:0;display:flex}
+.u-search-slot .msearch{flex:1 1 auto;max-width:none;gap:6px}
+.u-search-slot .msearch input{padding:5px 9px;font-size:.82rem}
+.u-search-slot .msearch label{font-size:.82rem;color:var(--text-muted);white-space:nowrap}
+/* ⚠️ The submit button STAYS VISIBLE. Hiding it as "redundant beside a live
+   suggestion list" was tried and reverted the same hour: the row has slack at
+   every width that fits one row, Sam never asked for it gone, and a control
+   present in the DOM but invisible at desktop widths is the kind of thing a
+   harness clicks and a person cannot. It only shrinks. */
+.u-search-slot .msearch .u-search-go{padding:5px 10px;font-size:.8rem}
+.u-close{flex:0 0 auto;margin-left:2px;background:none;border:1px solid var(--border-strong,rgba(28,28,26,.30));
+         border-radius:8px;min-width:28px;min-height:28px;line-height:1;cursor:pointer;
+         color:var(--text-muted);font-size:.9rem}
+.u-close:hover{color:var(--text-strong);background:var(--surface-subtle,#F7F5F1)}
+/* Item 4: "keep it all on one row for a typical PC view — it's fine if it wraps
+   for narrower views." Nine controls plus a title plus a menu plus a search is
+   only one row if the controls are compact, so they tighten between 1100 and
+   1500 rather than wrapping. */
+@media (max-width:1500px){
+  .u-top .u-bar{gap:4px}
+  .u-search-slot{flex-basis:180px}
+}
+@media (max-width:1100px){
+  .u-top{flex-wrap:wrap}
+  .u-top .u-bar{margin-left:0}
+  .u-search-slot{flex:1 1 100%;order:5}
+}
+/* ── item 6: the legend folds away and the canvas takes the space ── */
+.u-foot.u-foot-hidden{display:none}
+/* The word that opens the row on a narrow screen. At desktop widths the row IS
+   the control, so the word does not exist there.
+   ⚠️ SCOPED TO #u-top, NOT .u-top. Measured at 1440px: `.u-top .u-ctl` is TWO
+   classes and so is the `.u-top .btn{display:inline-flex}` block further down —
+   a tie, decided by source order, which that block wins because it is later.
+   The desktop row grew a word that opens something already open. The id is what
+   settles it, and the media rule below must carry the id for the same reason. */
+#u-top .u-ctl{display:none}
+@media (max-width:900px){
+  /* Below the masthead's own stacking breakpoint the lift would make a
+     third cramped row, so let it wrap normally instead. */
+  .u-bar.u-bar-mast{margin-left:0;flex-basis:100%}
+}
+/* ── SkyView on a phone (Sam, 2026-09-09: "It now takes up half the screen") ──
+   MEASURED BEFORE BUILDING, at 390x844: #u-top was 254px over four wrapped rows
+   (30% of the viewport) and .u-foot another 430px — MORE than the header — so
+   81% of a screenful was not the map. That is the opposite of what the name
+   means (the map ALONE, filling the window — Sam, 2026-09-05).
+
+   ⚠️ THE FOLD IS CSS ONLY — #u-bar KEEPS ITS PLACE IN THE DOM. Lifting the bar
+   elsewhere was tried and is wrong (see ccr_universe.js, the ITEM 8 note: two
+   #u-bar under one id, and it vanishes in full screen). Every id, every handler
+   and every paint* function is untouched here; only the box moves.
+
+   1100px is chosen, not invented: it is the width at which this sheet already
+   gives up `flex-wrap:nowrap` on the row. Above it the row fits on one line and
+   is left exactly as it is; below it the row was WRAPPING, which is the state
+   Sam is describing. Measured at 1024x900 mid-build: a three-line 186px header
+   (21% of the window) — an iPad landscape was in the wrapped zone, not the
+   comfortable one, so the earlier plan to hold the full row down to 900px was
+   keeping a tablet in the worse of the two states. ── */
+@media (max-width:1100px){
+  #u-top .u-ctl{display:inline-flex;align-items:center;flex:0 0 auto;white-space:nowrap}
+  /* The sheet is ABSOLUTE inside #u-full, never fixed: #u-full is the only
+     element the browser paints in full screen, so a fixed sheet would measure
+     itself against a viewport the map no longer owns. */
+  .u-top .u-bar{
+    position:absolute;left:0;right:0;bottom:0;z-index:6;display:none;
+    margin:0;padding:10px clamp(8px,3vw,16px);gap:8px;
+    justify-content:flex-start;align-content:flex-start;
+    background:var(--surface-opaque);border-top:1px solid var(--border-strong);
+    box-shadow:0 -6px 18px rgba(20,20,30,.22);
+    max-height:60vh;max-height:60dvh;overflow-y:auto}
+  .u-full.u-ctls-on .u-top .u-bar{display:flex}
+  /* Thumbs, not cursors: WCAG 2.2 SC 2.5.8 asks 24px and a sheet can afford
+     more, so the chips grow rather than shrink once they are off the row. */
+  .u-full.u-ctls-on .u-top .u-bar .btn{min-height:36px;padding:8px 12px}
+  .u-full.u-ctls-on .u-top .u-modes{height:auto}
+  .u-full.u-ctls-on .u-top .u-modes .btn.mode{height:auto;min-height:36px}
+  /* ⚠️ THE CANVAS HEIGHT IS NOT SET HERE, ON PURPOSE. fitCanvas() owns it and
+     writes it inline, so any rule here is overridden and only looks as though
+     it works. The narrow-screen fill is a two-line change in that function, not
+     a stylesheet rule — see the branch order note in ccr_universe.js. Setting
+     `height:auto` here was tried first and was silently beaten by the inline
+     style at every width where .u-stage lays out as a row.
+     Opened on a phone the legend is 430px and would eat the map, so it takes at
+     most a third and scrolls inside itself — the same treatment wide tables get. */
+  body.u-solo .u-foot{max-height:33vh;max-height:33dvh;overflow-y:auto}
+}
+.u-bar .btn{font-size:.8rem;padding:6px 10px;background:var(--surface);backdrop-filter:blur(4px)}
+.u-bar input[type=search]{flex:1 1 260px;min-width:0;font:inherit;font-size:.88rem;
+  padding:8px 11px;border:1px solid var(--border-strong);border-radius:7px;
+  background:var(--surface-opaque);color:var(--text-body)}
+/* The zoom group's own label carries what Out/In/Reset act on, so the
+   buttons could shorten to one word each without becoming glyphs. */
+.u-zgroup{display:inline-flex;align-items:center;gap:4px}
+.u-zlbl{font-size:.74rem;color:var(--text-muted);letter-spacing:.04em;text-transform:uppercase}
+.u-hint{font-size:.8rem;color:var(--text-muted);padding:8px 12px;line-height:1.4;
+        border:1px solid var(--border);border-radius:8px;background:var(--surface);backdrop-filter:blur(4px)}
+.u-legend{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:.74rem;color:var(--text-muted);
+          background:var(--surface);backdrop-filter:blur(4px);padding:6px 9px;border:1px solid var(--border);
+          border-radius:8px;max-width:min(640px,calc(100% - 24px))}
+.u-legend span{display:flex;gap:5px;align-items:center}
+.u-sw{width:10px;height:10px;border-radius:50%;border:2px solid var(--text-muted);display:inline-block;flex:none}
+/* the marks are dots now (2026-09-05): a solid dot per system, a smaller lighter dot for a stand-alone */
+.u-sw.s0{background:var(--sky-sys0-stroke);border-color:var(--sky-sys0-stroke)}
+.u-sw.s1{background:var(--sky-sys1-stroke);border-color:var(--sky-sys1-stroke)}
+.u-sw.s2{background:var(--sky-sys2-stroke);border-color:var(--sky-sys2-stroke)}
+.u-sw.s3{background:var(--sky-sys3-stroke);border-color:var(--sky-sys3-stroke)}
+.u-sw.orphan{width:7px;height:7px;border:0;background:var(--sky-sys0-stroke);opacity:.6;margin:0 1.5px}
+/* the articulations light (2026-09-07): the swatch glows the way the point does */
+.u-sw.lit{background:var(--sky-lit-fill);border-color:var(--sky-lit);box-shadow:0 0 0 3px var(--sky-lit-glow)}
+.u-sw.sw{background:var(--sky-sys0-stroke);border-color:var(--sky-sys0-stroke);box-shadow:0 0 0 1.5px var(--surface),0 0 0 3px var(--sky-sys0-stroke)}
+/* the CPL face's coverage line: one sentence under the top row, computed, never quoted */
+.u-face-line{margin:0;padding:5px clamp(12px,2vw,24px);font-size:.8rem;line-height:1.4;color:var(--text-muted);
+  background:var(--surface-subtle);border-bottom:1px solid var(--border)}
+.u-face-line[hidden]{display:none}
+/* ⭐ THE READ-ONLY STATEMENT, ALWAYS PAINTED (Sam, 2026-09-18: "I want to share
+   COBI SkyView with some folks but I want to make sure it is read only view. I
+   don't see anywhere on the surface how to log in to curate").
+   ⚠️ THE PAGE SAID THIS THREE TIMES AND A READER COULD SEE NONE OF THEM. The
+   footer carrying "Nothing here writes to Supabase" is `main>footer`, which
+   `body.u-solo` hides; #prov carries the same sentence in a title attribute on
+   a masthead solo hides too; the third copy is a code comment. So the default
+   view — the one he would share — offered drag handles, a Move chip and a
+   "What this would write" panel with no account of what a drop does.
+   It lives INSIDE #u-full so it survives browser full screen, and OUTSIDE the
+   legend so folding the legend cannot take it away. Same band as the face line:
+   that token pair is already measured for contrast. */
+.u-ro-line{margin:0;padding:5px clamp(12px,2vw,24px);font-size:.8rem;line-height:1.4;
+  color:var(--text-muted);background:var(--surface-subtle);border-bottom:1px solid var(--border)}
+.u-ro-line strong{color:var(--text-strong)}
+/* The controls inside the curation line. `.linkish` is the page's existing
+   button-that-reads-as-a-link; these only give it a hit target that clears
+   WCAG 2.2 SC 2.5.8 (24px) without growing the band's height — the canvas is
+   sized off that height, so padding here would push the legend off a phone.
+   Inline-flex + min-height rather than vertical padding does it. */
+.u-ro-line .linkish{min-height:24px;display:inline-flex;align-items:center}
+.u-ro-line button[disabled]{opacity:.6;cursor:default}
+/* The sign-in host sits INSIDE #u-full so browser full screen still paints it.
+   Absolute so it cannot change the band's height and re-size the canvas under
+   the reader mid-task; scrollable so a phone keyboard cannot bury the button. */
+.u-signin{position:absolute;z-index:6;right:clamp(12px,2vw,24px);
+  max-width:min(26rem,calc(100vw - 24px));max-height:60vh;overflow-y:auto;
+  background:var(--surface);border:1px solid var(--border);border-radius:10px;
+  box-shadow:0 8px 28px rgba(0,0,0,.18);padding:.75rem .85rem}
+.u-signin[hidden]{display:none}
+.u-signin-tp{margin:0 0 .6rem;padding:0 0 .6rem;border-bottom:1px solid var(--border)}
+.u-signin-tp p{margin:0 0 .45rem;font-size:.8rem;line-height:1.45;color:var(--text-body)}
+.u-signin-tp input{min-height:32px;padding:.25rem .4rem;font:inherit;
+  border:1px solid var(--border);border-radius:6px;background:var(--surface)}
+#u-tp-msg{font-size:.8rem;color:var(--text-muted)}
+/* The one-line note that stands where the COBI links do for a signed-in
+   curator — a menu that quietly lacks two items reads as a bug. */
+.u-views-note{display:block;padding:.3rem .1rem;font-size:.8rem;color:var(--text-muted)}
+/* the credentials reaching a course, in the panel and on the outline */
+.cpl-list{list-style:none;margin:.3em 0 0;padding:0}
+.cpl-list li{padding:.5em 0;border-top:1px solid var(--border)}
+.cpl-list .cpl-name{font-weight:600;color:var(--text-strong)}
+.cpl-list .cpl-ex{margin:.3em 0 0 .2em;line-height:1.45}
+.cpl-list .cpl-earn{color:var(--text-body)}
+.cpl-list .chip.warn{background:var(--chip-warn);color:var(--chip-warn-ink);border:1px solid var(--chip-warn-edge)}
+.ol .cpl-list li{padding:.65em 0}
+/* The consolidated description (Sam, 2026-09-10). The sentences run together as
+   prose because that is what a description is; the per-sentence vote rides in a
+   title and the counts that matter are in text below it. Tokens only — the
+   blockquote's own rule already carries the ground and ink. */
+.ol-note{margin:0 0 10px;padding:8px 12px;border-left:3px solid var(--cobalt);
+  background:var(--surface-subtle);color:var(--text-body);font-size:.88rem;line-height:1.5}
+.ol-also{margin:14px 0 4px;color:var(--text-body);font-size:.9rem}
+.ol-also-l{margin:0;padding:0 0 0 1.1em;color:var(--text-body);font-size:.9rem;line-height:1.55}
+.ol-also-l li{margin:0 0 .35em}
+.ol-also-l .sub{color:var(--text-muted);white-space:nowrap}
+/* The exhibit names above the fold, when the Articulations chip is on (Sam,
+   2026-09-10). Gold rail because the chip that turns it on paints the map gold
+   — the same signal in two places, and --mustard-text is the pair that carries
+   on BOTH grounds (#8B6800 light, #E3B341 dark), which --mustard-fill does not.
+   Measured on --surface-subtle (light/dark): body 10.49/10.39, strong
+   15.67/12.50, muted 6.19/6.56, the rail itself 4.73/7.79 — every pair clears
+   AA text, the rail included, though it carries nothing the words do not. The
+   block wraps: the longest exhibit title in the feed is 164 characters. */
+.u-exl{margin:.55em 0 0;padding:.45em .7em;border-left:3px solid var(--mustard-text);
+  background:var(--surface-subtle);color:var(--text-body);font-size:.86rem;line-height:1.5}
+.u-exl b{color:var(--text-strong)}
+.u-exl .sub{color:var(--text-muted)}
+.ol-exl{margin:.7em 0 14px;font-size:.9rem}
+.idlist.cpl-isl li{padding:.35em 0}
+.u-tip{position:absolute;z-index:6;pointer-events:none;background:var(--text-strong);color:var(--surface-opaque,#fff);
+       font-size:.78rem;line-height:1.35;padding:7px 9px;border-radius:7px;max-width:300px;
+       box-shadow:0 6px 18px rgba(20,20,30,.22)}
+.u-tip .tip-desc{display:block;margin-top:5px;line-height:1.42;max-width:34em}
+.u-tip .sub{color:var(--tip-sub,#D6D6D0)}
+/* ══ 2026-09-05 — Sam's second SkyView list: one chip vocabulary (item 7),
+   the zoom stack (8), the Show menu (3), the window controls and menu (1),
+   the token search (2.1), the legend's own corner (5), the explainer (6) and
+   the dark canvas (2). ══ */
+:root{
+  --u-chip-h:30px; --u-chip-fs:.8rem; --u-chip-r:6px;
+  --on-accent:#fff; --tip-sub:#D6D6D0;
+  /* A row whose course has been re-homed. It was a raw #EAF1E6 and therefore
+     LIGHT on the dark canvas (Sam, 2026-09-07: "Merged courses on side view
+     have white background and shouldn't") — a near-white card with near-white
+     text, in the one place a curator reads their own work back. A role token,
+     so the two surfaces that carry it cannot drift apart again. */
+  --row-moved:#EAF1E6;
+  --row-drop:#F4F0FC; --mark-hit:#FBEFC9; --mark-hit-ink:#1C1C1A;
+  --chip-warn:#FBF1D8; --chip-warn-ink:#6B4E00; --chip-warn-edge:#8B6800;
+  --btn-primary-hover:#003a8c;
+  /* the map's palette — the canvas reads these at draw time (ccr_universe.js readPal) */
+  --sky-ground:#FFFFFF; --sky-island:#F7F5F1; --sky-island-hover:#F3F1EC; --sky-island-sel:#EDE7F8;
+  --sky-island-stroke:rgba(28,28,26,.18); --sky-tether:rgba(109,40,217,.28); --sky-hollow:#FFFFFF;
+  --sky-halo:rgba(255,255,255,.94); --sky-halo-fill:rgba(255,255,255,.8);
+  --sky-ink:#1C1C1A; --sky-ink-body:#3A3A36; --sky-ink-muted:#5C5C55; --sky-ink-force:#0047AB; --sky-ink-alert:#920000;
+  --sky-ring-search:#920000; --sky-ring-sel:#0047AB; --sky-ring-token:#0047AB;
+  --sky-leader:rgba(28,28,26,.55); --sky-leader-dot:rgba(28,28,26,.62);
+  --sky-leader-force:rgba(146,0,0,.75); --sky-leader-dot-force:rgba(146,0,0,.85);
+  --sky-ring-faint:rgba(28,28,26,.22); --sky-gone:#87877F; --sky-sq-moved:#EAF1E6; --sky-sq-carried:#E7EEF9;
+  --sky-sq-moved-stroke:#2C601A; --sky-drag:#0047AB;
+  --sky-sys0-fill:#F1EAFC; --sky-sys0-stroke:#6D28D9; --sky-sys1-fill:#E7EEF9; --sky-sys1-stroke:#0047AB;
+  --sky-sys2-fill:#FBF1D8; --sky-sys2-stroke:#8B6800; --sky-sys3-fill:#EFEFEC; --sky-sys3-stroke:#5C5C55;
+  /* the articulations light (2026-09-07): the palette's mustard — the ring is the
+     mustard text tone (5.6:1 on white), the glow its fill at low alpha, and the
+     fill is for the receiving college's star. Read by ccr_universe.js readPal. */
+  --sky-lit:#8B6800; --sky-lit-glow:rgba(227,179,65,.32); --sky-lit-fill:#FBF1D8;
+  --sky-dot-rim:#002F6D;
+}
+/* The dark canvas (Sam, 2026-09-05: "Dark mode selector"). Opt-in and remembered
+   per browser; First Light stays a light identity, and this is the one
+   workspace that earns a dark ground — a map you stare at for an hour. Every
+   text pair on #1E1E1C is measured: ink 13.9:1, body 11.0, muted 6.9, the
+   on-dark cobalt 6.5, the on-dark mustard 7.7 (prototype/check_contrast.py). */
+body.u-dark{
+  --paper:#151514; --surface-opaque:#1E1E1C; --surface-subtle:#262624; --surface-muted:#30302E;
+  --surface:rgba(30,30,28,.86); --text-strong:#ECE9E2; --text-body:#D6D6D0; --text-muted:#ABABA3; --text-faint:#7A7A74;
+  --border:rgba(255,255,255,.14); --border-strong:rgba(255,255,255,.32);
+  --scrim:rgba(0,0,0,.58);
+  --cobalt:#7DA1D4; --seal-blue:#7DA1D4; --focus-ring:#7DA1D4; --violet:#B28DEB; --hunter:#89A67F;
+  --crimson:#CF8F8F; --mustard-text:#E3B341; --on-accent:#141413; --tip-sub:#5C5C55;
+  /* Sam, 2026-09-05: "make the background darker and a bit grayer--a bit calmer
+     on the eyes". Down from #1E1E1C and off the warm axis: a neutral slate the
+     lit points read against without the ground itself glowing back. */
+  --sky-ground:#15171A; --sky-island:#21242A; --sky-island-hover:#282C33; --sky-island-sel:#2E2A44;
+  --sky-island-stroke:rgba(255,255,255,.14); --sky-tether:rgba(178,141,235,.42); --sky-hollow:#15171A;
+  --sky-halo:rgba(21,23,26,.94); --sky-halo-fill:rgba(21,23,26,.8);
+  --sky-ink:#ECE9E2; --sky-ink-body:#D6D6D0; --sky-ink-muted:#ABABA3; --sky-ink-force:#7DA1D4; --sky-ink-alert:#CF8F8F;
+  --sky-ring-search:#CF8F8F; --sky-ring-sel:#7DA1D4; --sky-ring-token:#7DA1D4;
+  --sky-leader:rgba(236,233,226,.55); --sky-leader-dot:rgba(236,233,226,.62);
+  --sky-leader-force:rgba(207,143,143,.8); --sky-leader-dot-force:rgba(207,143,143,.9);
+  --sky-ring-faint:rgba(255,255,255,.22); --sky-gone:#6B6B66; --sky-sq-moved:#1F3320; --sky-sq-carried:#1C2A44;
+  --sky-sq-moved-stroke:#89A67F; --sky-drag:#7DA1D4;
+  /* Ruling 8 (2026-09-07): silver is the M-ID color on EVERY dark canvas — the
+     Sky, the Globe and the Map at night — so one legend serves all three (Sam:
+     "Silver MIDs looks the most natural to me"; 49,355 of 49,896 points wear
+     it). 12.3:1 on the night ground. Violet stays the light canvas's, where
+     silver would be 1.46:1. */
+  --sky-sys0-fill:#2A2A28; --sky-sys0-stroke:#D6D6D0; --sky-sys1-fill:#1C2A44; --sky-sys1-stroke:#7DA1D4;
+  --sky-sys2-fill:#3A2E10; --sky-sys2-stroke:#E3B341; --sky-sys3-fill:#2A2A28; --sky-sys3-stroke:#ABABA3;
+  --sky-lit:#E3B341; --sky-lit-glow:rgba(227,179,65,.28); --sky-lit-fill:#3A2E10;
+  --sky-dot-rim:#002F6D;
+  /* ⚠️ A ROW TINT MUST SIT UNDER THE CHIP IT CARRIES, NOT ON TOP OF IT. The
+     "moved here" chip is #1F3320 here, so the row goes a step darker — the
+     hunter border and the chip stay the signals, and the tint only says which
+     rows they belong to. */
+  --row-moved:#1F2B1D;
+  --row-drop:#2A2340; --mark-hit:#4A3A10; --mark-hit-ink:#ECE9E2;
+  --chip-warn:#3A2E10; --chip-warn-ink:#E3B341; --chip-warn-edge:#6A5410;
+  --btn-primary-hover:#A8C2E4;
+  color-scheme:dark;
+}
+body.u-dark .chip.cid{background:#1C2A44;border-color:#3A527A}
+body.u-dark .chip.gen{background:#2B2140;border-color:#4C3A72}
+body.u-dark .chip.ok{background:#1F3320;border-color:#3A5A38}
+/* ── THE DAY SKY (Sam's ruling 3, 2026-09-07) ─────────────────────────────
+   The light state of the Sky and the Globe: a tint of the CO blue with faint
+   clouds, as the prototype drew it. Measured against this ground the silver
+   star is 1.24:1 and the light 1.08:1, so by day every dot carries the
+   seal-blue rim (7.2:1) — drawn on the canvas, and on the legend's swatches
+   here, so the legend never promises a color the ground cannot show. The page
+   chrome stays light either way; body.u-day is set only while the reader stands
+   on the sphere and has not chosen the night. */
+body.u-day{
+  --sky-ground:#A8C3E8; --sky-island:#B9D0EC; --sky-island-hover:#C6D9F0; --sky-island-sel:#D3E1F4;
+  --sky-island-stroke:rgba(0,47,109,.28); --sky-hollow:#DCE7F5;
+  --sky-halo:rgba(168,195,232,.92); --sky-halo-fill:rgba(168,195,232,.8);
+  --sky-sys0-fill:#DCE7F5; --sky-sys0-stroke:#D6D6D0;
+  --sky-ring-faint:rgba(0,47,109,.25);
+}
+body.u-day .u-sw{box-shadow:inset 0 0 0 1.5px var(--sky-dot-rim)}
+body.u-day .u-sw.lone{box-shadow:inset 0 0 0 1px var(--sky-dot-rim)}
+/* Night | Day: two words side by side in the More panel, one control with the
+   Map's Dark canvas row (ruling 3). */
+.u-nd{display:flex;gap:0}
+.u-nd .u-more-t{flex:1 1 50%;justify-content:center}
+.u-nd .u-more-t[aria-pressed="true"]{background:var(--seal-blue,#002F6D);color:#fff}
+body.u-dark .chip.flag{background:#3A1A1A;border-color:#6A3030}
+body.u-dark table.uc-like th{background:#30302E;color:var(--mustard-text)}
+body.u-dark .u-views-menu,body.u-dark .u-show-menu,body.u-dark .sug{box-shadow:0 12px 30px rgba(0,0,0,.5)}
+/* one chip vocabulary: the same height, size and corner on every control in the row */
+.u-top .btn,.u-top .u-bar .btn,.u-top .u-views>summary,.u-top .u-show>summary,.u-top .u-win,
+.u-search-slot .msearch input,.u-search-slot .msearch .u-search-go{
+  box-sizing:border-box;height:var(--u-chip-h);min-height:var(--u-chip-h);padding:0 10px;margin:0;
+  font-size:var(--u-chip-fs);font-weight:600;line-height:1;border-radius:var(--u-chip-r);
+  display:inline-flex;align-items:center;gap:4px;backdrop-filter:none}
+.u-top .btn,.u-top .u-bar .btn,.u-top .u-views>summary,.u-top .u-show>summary{
+  background:var(--surface-opaque);border:1px solid var(--border-strong);color:var(--text-body);
+  text-decoration:none;cursor:pointer}
+.u-top .btn:hover,.u-top .u-views>summary:hover,.u-top .u-show>summary:hover{background:var(--surface-subtle)}
+.u-top .btn[aria-pressed=true]{background:var(--seal-blue);border-color:var(--seal-blue);color:var(--on-accent)}
+.u-top .u-modes,.u-top .u-seg{border-radius:var(--u-chip-r);height:var(--u-chip-h);align-items:stretch;margin:0}
+.u-top .u-modes .btn.mode{height:calc(var(--u-chip-h) - 2px);min-height:0;border-radius:0;border:0}
+.u-top .u-bar{gap:6px}
+.u-top .u-win{width:var(--u-chip-h);padding:0;justify-content:center;background:var(--surface-opaque);
+  border:1px solid var(--border-strong);color:var(--text-muted);font-size:.9rem;font-weight:400;cursor:pointer}
+.u-top .u-win:hover{color:var(--text-strong);background:var(--surface-subtle)}
+.u-top .u-win[hidden]{display:none}
+.u-wins{display:inline-flex;gap:4px;flex:0 0 auto;margin-left:2px}
+.u-top .u-menu{font-size:1rem;margin-right:2px}
+/* the zoom label and its figure stack inside one chip height (item 8) */
+.u-zgroup{gap:4px}
+.u-zstack{display:inline-flex;flex-direction:column;justify-content:center;align-items:center;
+  height:var(--u-chip-h);line-height:1;padding:0 4px 0 2px;gap:2px}
+.u-zstack .u-zlbl{font-size:.58rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted)}
+.u-zstack b{font-size:.7rem;color:var(--text-strong);font-variant-numeric:tabular-nums}
+/* the Show menu (item 3) */
+.u-show{position:relative;flex:0 0 auto}
+.u-show>summary{list-style:none}
+.u-show>summary::-webkit-details-marker{display:none}
+.u-show>summary::after{content:"\25BE";font-size:.7em;color:var(--text-muted)}
+.u-show>summary b{font-weight:700;color:var(--text-strong)}
+.u-show:not([open]) .u-show-menu{display:none}
+.u-show-menu{position:absolute;z-index:70;top:calc(100% + 6px);right:0;min-width:260px;
+  display:flex;flex-direction:column;gap:8px;padding:10px 12px;background:var(--surface-opaque);
+  border:1px solid var(--border-strong);border-radius:9px;box-shadow:0 12px 30px rgba(20,20,30,.17)}
+.u-show-menu fieldset{border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:0;min-width:0}
+.u-show-menu legend{font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);
+  padding:0;margin:0 0 2px;font-weight:700}
+.u-show-menu label{display:flex;align-items:center;gap:7px;font-size:.84rem;min-height:26px;cursor:pointer;color:var(--text-body)}
+.u-show-menu input{width:16px;height:16px;margin:0;accent-color:var(--cobalt);flex:none}
+.u-show-all{display:flex;flex-wrap:wrap;gap:4px 14px}
+.u-show-all .linkish{font-size:.84rem;min-height:24px;display:inline-flex;align-items:center}
+/* the token search (2.1): chips before the box, a wider dropdown whose rows wrap (2.2, 2.4) */
+/* ⭐ THE CHIP ROW RESERVES ITS SPACE (Sam's ruling 3, 2026-09-06: "stability
+   wins"). `.u-tokens{display:contents}` makes every chip a flex child of THIS
+   wrapper, so the Nth chip wraps the row, the wrapper grows, and the suggestion
+   list below it moves down by a whole row height while the reader is picking
+   from it — "you see how it jumped and I lost my place… jumping again, driving
+   me nuts."
+
+   ⚠️ MEASURED IN CHROMIUM AT 1440px, AND IT IS THIS ELEMENT, NOT `#u-bar`. The
+   triage named `#u-bar` 30 → 76; walking the real ancestor chain on the fourth
+   pick shows `#u-bar` unchanged and `.sugwrap` going 30 → 66, which pushes
+   `#sug` 40 → 76. A min-height on `#u-bar` would have measured as "fixed" while
+   changing nothing.
+
+   Two rows is 30 + 6 + 30 = 66px, exactly the height the wrap produces, so the
+   reserve costs the map 36px of its top row once and the list never moves
+   again. Reserving only after the first pick would merely move the jump to
+   pick 1, which is the same complaint one pick earlier. */
+.u-search-slot .sugwrap{flex-wrap:wrap;gap:5px;align-items:center;
+  min-height:calc(var(--u-chip-h) * 2 + 5px)}
+.u-tokens{display:contents}
+/* ⚠️ ONLY THE HORIZONTAL PADDING, THE GAP AND THE MAX-WIDTH ARE FREE. Sam asked
+   whether the chips could be tighter, and the constraint is NOT contrast — it is
+   target size: `.u-tok-x` is 24×24 and `.u-tok-go` carries min-height:24px, both
+   exactly on the WCAG 2.2 SC 2.5.8 AA floor, so neither may shrink. Tightening
+   fits more chips per row and postpones the wrap; only the reserved row above
+   removes it. */
+.u-tok{display:inline-flex;align-items:center;gap:4px;height:var(--u-chip-h);padding:0 2px 0 6px;
+  border:1px solid var(--border-strong);border-radius:var(--u-chip-r);background:var(--surface-subtle);
+  font-size:.78rem;max-width:132px;color:var(--text-body)}
+/* The label is a control now (item 2, 2026-09-06): it carries the chip's own
+   type and spacing so the chip looks exactly as it did, and only the pointer
+   and the focus ring say it can be clicked. min-height keeps the target
+   reachable without changing the chip's height. */
+/* Off-screen until focused — the standard skip-link shape (item 7). */
+.u-skip{position:absolute;left:-9999px;top:0;z-index:20;background:var(--surface-opaque);
+  color:var(--cobalt);padding:8px 14px;border:1px solid var(--border-strong);border-radius:6px}
+.u-skip:focus{left:8px;top:8px}
+.u-tok-go{font:inherit;color:inherit;background:none;border:0;padding:0;margin:0;cursor:pointer;
+  display:inline-flex;align-items:center;gap:5px;min-width:0;overflow:hidden;min-height:24px}
+.u-tok-go:hover .u-tok-l{color:var(--text-strong);text-decoration:underline}
+.u-tok-go:focus-visible{outline:2px solid var(--cobalt);outline-offset:1px;border-radius:4px}
+.u-tok-k{font-size:.6rem;letter-spacing:.05em;text-transform:uppercase;color:var(--text-muted);white-space:nowrap}
+.u-tok-l{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:600}
+.u-tok-x{border:0;background:none;color:var(--text-muted);cursor:pointer;font-size:1rem;line-height:1;
+  width:24px;height:24px;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;padding:0}
+.u-tok-x:hover{background:var(--surface-muted);color:var(--text-strong)}
+.u-tokens .u-tok-act{font:inherit;font-size:.78rem;font-weight:600;height:var(--u-chip-h);display:inline-flex;align-items:center;
+  padding:0 7px;margin-right:2px;text-decoration:none;color:var(--text-body);border:1px solid var(--border-strong);
+  border-radius:var(--u-chip-r);background:var(--surface-opaque);cursor:pointer;line-height:1}
+.u-tokens .u-tok-act:hover{color:var(--text-strong);background:var(--surface-subtle)}
+.u-search-slot .msearch input{flex:1 1 100px;min-width:72px;font-weight:400;background:var(--surface-opaque);
+  color:var(--text-body);border:1px solid var(--border-strong)}
+.sug{right:auto;min-width:100%;width:min(760px,calc(100vw - 24px))}
+.sug li{align-items:flex-start;white-space:normal}
+.sg-k,.sg-l,.sg-r{font-size:.84rem}
+.sg-k{min-width:7.4em;padding-top:.05em;letter-spacing:.04em}
+.sg-l{white-space:normal;overflow:visible;text-overflow:clip;overflow-wrap:anywhere}
+/* every row carries a checkbox, so the list reads as the multi-select it is (item 3, 2026-09-05) */
+.sg-cb{flex:none;width:15px;height:15px;margin-top:.12em;border:1.5px solid var(--border-strong);border-radius:3px;
+  background:var(--surface-opaque);position:relative;box-sizing:border-box}
+.sug li.picked .sg-cb{background:var(--cobalt);border-color:var(--cobalt)}
+.sug li.picked .sg-cb::after{content:"";position:absolute;left:4px;top:0px;width:4px;height:8px;
+  border:solid var(--on-accent,#fff);border-width:0 2px 2px 0;transform:rotate(45deg)}
+.sug li.picked .sg-l{color:var(--text-strong)}
+.sg-r{white-space:normal;flex:0 1 auto;text-align:right;max-width:44%;overflow-wrap:anywhere}
+/* the legend folds from the map's own corner (item 5) */
+.u-legend-toggle{position:absolute;z-index:4;right:10px;bottom:8px;display:inline-flex;align-items:center;gap:6px;
+  min-height:26px;padding:2px 9px;font:inherit;font-size:.76rem;font-weight:400;color:var(--text-muted);
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--u-chip-r);cursor:pointer;backdrop-filter:blur(4px)}
+.u-legend-toggle:hover{color:var(--text-strong);background:var(--surface-opaque)}
+.u-legend-toggle .u-fold{font-size:.7em;color:var(--text-muted)}
+/* The course outline of record (Sam's ruling, 2026-09-06). Every color is a
+   First Light token — no raw hex — so the dark canvas and the light page both
+   follow the palette without a second definition here. */
+.ol{max-width:var(--cpl-measure,none)}
+.ol-head{display:flex;flex-wrap:wrap;gap:10px 20px;align-items:flex-start;justify-content:space-between;margin:0 0 6px}
+.ol-head h1{margin:0 0 4px}
+.ol-meta{margin:0;font-size:.88rem;color:var(--text-muted)}
+.ol-meta .sub{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.82rem}
+.ol-lvl{display:flex;flex-direction:column;gap:3px;align-items:flex-start}
+.ol-lvl-k{font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);font-weight:700}
+/* Sam's sentence, verbatim and above everything it governs. */
+.ol-gen{margin:0 0 18px;padding:9px 13px;border:1px solid var(--border-strong);border-radius:8px;
+  background:var(--surface-subtle);font-size:.9rem;color:var(--text-body)}
+.ol-layer{margin:0 0 22px;padding:0 0 18px;border-bottom:1px solid var(--border)}
+.ol-layer:last-child{border-bottom:0}
+.ol-lh{display:flex;flex-wrap:wrap;gap:8px 10px;align-items:baseline;margin:0 0 4px}
+.ol-lh h2{margin:0;font-size:1.12rem}
+.ol-src{margin:0 0 10px;font-size:.84rem;color:var(--text-muted)}
+.ol-desc{margin:0 0 6px;padding:10px 14px;border-left:3px solid var(--border-strong);
+  background:var(--surface-subtle);border-radius:0 6px 6px 0;font-size:.95rem;color:var(--text-body)}
+.ol-attr{margin:0 0 4px;font-size:.84rem;color:var(--text-muted)}
+.ol-skills{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:5px}
+.ol-skills li{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;padding:6px 10px;
+  border:1px solid var(--border);border-radius:7px;background:var(--surface-opaque)}
+.ol-sk{flex:1 1 220px;min-width:0;font-weight:600;font-size:.9rem;color:var(--text-strong)}
+/* The reviewer's own controls on a skill row. A WORD, never a glyph (Sam,
+   2026-08-29) — and pushed to the end of the row so the skill and its chips
+   read first and the verb sits where the eye lands last. min-height is WCAG
+   2.2 SC 2.5.8, not styling. */
+.ol-sk-act{margin-left:auto;font-size:.75rem;padding:2px 9px;min-height:24px}
+.ol-thin{margin:12px 0 0}
+.ol-thin summary{cursor:pointer;font-size:.86rem;color:var(--text-body);min-height:24px;
+  display:inline-flex;align-items:center}
+.ol-thin summary:focus-visible{outline:2px solid var(--focus-ring);outline-offset:2px;border-radius:4px}
+.ol-todo,.ol-mc,.ol-mem{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:5px}
+.ol-todo li{font-size:.9rem;color:var(--text-body)}
+.ol-mc li{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;justify-content:space-between;
+  padding:5px 10px;border:1px solid var(--border);border-radius:7px;background:var(--surface-opaque)}
+.ol-mc-k{font-size:.88rem;color:var(--text-body)}
+.ol-mem li{display:flex;flex-wrap:wrap;gap:5px 10px;align-items:baseline;padding:4px 0;
+  border-bottom:1px solid var(--border);font-size:.86rem}
+.ol-mem-c{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.8rem;
+  color:var(--text-muted);flex:0 0 6.5em}
+.ol-mem-t{flex:1 1 220px;min-width:0;color:var(--text-body)}
+.ol-mem-g{color:var(--text-muted);flex:0 0 auto}
+/* Single column below the narrow breakpoint; nothing here is fixed-width. */
+@media (max-width:560px){
+  .ol-head{flex-direction:column;gap:8px}
+  .ol-mem-c{flex-basis:auto}
+}
+/* How SkyView works (item 6) */
+.how{max-width:var(--cpl-measure,none)}
+.how-head{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;justify-content:space-between;margin:0 0 8px}
+.how-head h1{margin:0}
+.how-lede{font-size:1.05rem}
+.how h2{margin:22px 0 8px}
+.how-fig{margin:10px 0 14px;max-width:560px;background:var(--surface-opaque);border:1px solid var(--border);border-radius:9px;padding:10px 12px}
+.how-fig svg{width:100%;height:auto;display:block}
+.how-list{margin:0 0 .8em;padding-left:20px}
+.how-list li{margin:0 0 6px}
+.how-steps{margin:0;padding-left:22px}
+.how-steps li{margin:0 0 6px}
+.how kbd{font-family:inherit;font-size:.9em;border:1px solid var(--border-strong);border-radius:4px;padding:0 5px;background:var(--surface-subtle)}
+@media (max-width:1100px){ .u-wins{margin-left:auto} }
+/* ── the header's own vocabulary (Sam, 2026-09-05, from a screenshot of Claude's
+   header): ghosted icon actions, a title field, one More menu, expand + close ── */
+.u-top .u-ico{box-sizing:border-box;width:var(--u-chip-h);height:var(--u-chip-h);min-height:var(--u-chip-h);padding:0;margin:0;
+  display:inline-flex;align-items:center;justify-content:center;border:1px solid transparent;border-radius:var(--u-chip-r);
+  background:transparent;color:var(--text-muted);font:inherit;font-size:1rem;line-height:1;cursor:pointer;list-style:none}
+.u-top .u-ico:hover{background:var(--surface-subtle);color:var(--text-strong);border-color:var(--border)}
+.u-top .u-ico[hidden]{display:none}
+.u-top .u-ico::-webkit-details-marker{display:none}
+.u-top .u-title{border:0;background:transparent;height:var(--u-chip-h);padding:0 6px;
+  display:inline-flex;align-items:center;font-size:.92rem;color:var(--text-strong)}
+.u-top .u-zgroup{gap:0;border:1px solid var(--border-strong);border-radius:var(--u-chip-r);background:var(--surface-opaque);height:var(--u-chip-h);align-items:center;padding:0 2px}
+.u-top .u-zgroup .u-ico{border-color:transparent;height:calc(var(--u-chip-h) - 4px);width:26px}
+.u-zread{font-size:.74rem;color:var(--text-strong);font-variant-numeric:tabular-nums;min-width:3.2em;text-align:center;padding:0 2px}
+.u-more{position:relative;flex:0 0 auto}
+.u-more>summary{list-style:none;cursor:pointer}
+.u-more:not([open]) .u-more-panel{display:none}
+.u-more-panel{position:absolute;z-index:70;top:calc(100% + 6px);left:0;min-width:240px;display:flex;flex-direction:column;
+  gap:2px;padding:8px;background:var(--surface-opaque);border:1px solid var(--border-strong);border-radius:9px;
+  box-shadow:0 12px 30px rgba(20,20,30,.17)}
+.u-more-h{font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);font-weight:700;padding:6px 8px 2px}
+.u-more-h+.u-more-h{margin-top:6px}
+.u-views-flat .u-views-menu{position:static;min-width:0;padding:0;border:0;box-shadow:none;background:none}
+.u-more-t{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:28px;padding:2px 8px;border:0;
+  border-radius:6px;background:none;font:inherit;font-size:.86rem;color:var(--text-body);cursor:pointer;text-align:left;width:100%}
+.u-more-t:hover{background:var(--surface-subtle)}
+.u-more-t .u-state{font-size:.7rem;letter-spacing:.05em;text-transform:uppercase;color:var(--text-muted)}
+.u-more-t[aria-pressed=true] .u-state{color:var(--cobalt);font-weight:700}
+/* one field, no button: Enter searches (item 7, 2026-09-05) */
+.u-search-slot .msearch{gap:0}
+.u-search-slot .msearch input{border-radius:var(--u-chip-r)}
+.msearch .u-search-go,.msearch button[type=submit]{display:none}
+.u-top .u-bar{gap:4px}
+/* The details panel is DOCKED beside the map, never over it (Sam, 2026-09-03:
+   "move the zoom and other buttons and popups outside the SkyView window so
+   users can work more freely"); a course still drags from it onto a circle. On
+   a narrow screen it docks underneath instead. */
+.u-inspector{position:relative;flex:0 0 var(--u-insp-w,min(400px,36%));display:flex;flex-direction:column;min-width:0;height:100%;
+             background:var(--surface-opaque);border-left:1px solid var(--border-strong);overflow:visible}
+.u-insp-grip{position:absolute;left:-5px;top:0;bottom:0;width:10px;cursor:col-resize;z-index:3;background:transparent;touch-action:none}
+.u-insp-grip::after{content:"";position:absolute;left:4px;top:0;bottom:0;width:2px;background:transparent}
+.u-insp-grip:hover::after,.u-insp-grip:focus-visible::after,.u-insp-grip.dragging::after{background:var(--cobalt)}
+.u-insp-grip:focus-visible{outline:2px solid var(--cobalt);outline-offset:-2px}
+.u-insp-bar .u-insp-hide{font-size:.8rem;text-decoration:none;color:var(--text-muted);padding:2px 7px;border-radius:4px;min-height:24px}
+.u-insp-bar .u-insp-hide:hover{background:var(--surface-muted);color:var(--text-strong)}
+.u-insp-bar{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:7px 12px;
+            border-bottom:1px solid var(--border);background:var(--surface-subtle);flex:none}
+.u-insp-t{font-weight:600;font-size:.85rem;color:var(--text-strong)}
+.u-insp-body{overflow:auto;padding:12px 14px;min-height:0;flex:1 1 auto}
+/* ⚠️ CLOSED IS ZERO-WIDTH, NOT `display:none` — THE GRIP HAS TO SURVIVE IT.
+   Dragging the border shut is only half an affordance if there is nothing left
+   to drag back out; the panel collapses to nothing and leaves its handle on the
+   stage's edge, so the same gesture reopens it. The handle shows its line at
+   rest when closed (it is the only thing marking the edge), and stays invisible
+   until hover when the panel is open, as before. */
+.u-inspector.closed{flex-basis:0;min-width:0;width:0;border-left:0;background:none;overflow:visible}
+.u-inspector.closed > *:not(.u-insp-grip){display:none}
+/* ⚠️ FLUSH WITH THE EDGE, NOT STRADDLING IT. The open grip straddles the panel's
+   border (left:-5px, width:10px) and that is fine — the border is 400px inside
+   the stage. Closed, the panel is zero-wide AT the stage's right edge, so the
+   same straddle hangs 5px past it and the whole page scrolls sideways: `npm run
+   a11y skyview` failed all 11 routes on exactly that, at every width, because
+   the panel starts closed. The closed grip sits entirely inside instead. */
+.u-inspector.closed .u-insp-grip{left:-14px;width:14px}
+.u-inspector.closed .u-insp-grip::after{left:5px;background:var(--border-strong)}
+.u-inspector.closed .u-insp-grip:hover::after,
+.u-inspector.closed .u-insp-grip:focus-visible::after{background:var(--cobalt);width:3px}
+/* ── the course outline OVER the map, never instead of it ───────────────────
+   Sam, 2026-09-07: "Maybe best way to avoid this is to make the course outline
+   a popup that can be closed and we never have to exit skyview." Opening the
+   outline used to replace #view, so coming back rebuilt SkyView from scratch
+   and the reader lost their camera — the zoom, the place they had panned to,
+   the identity they had open. A sheet over the canvas has no state to restore:
+   the map is still underneath, exactly as they left it.
+   ⚠️ It mounts inside #u-full because BROWSER FULL SCREEN PAINTS ONLY THAT
+   ELEMENT — a sheet anywhere else is invisible precisely where SkyView spends
+   most of its life. */
+.u-sheet{position:absolute;inset:0;z-index:40;display:flex;align-items:stretch;justify-content:flex-end}
+/* The comprehensive view scrolls the page under the stage; a sheet over the map
+   should not let it drift away behind the reader. */
+body.u-sheet-open{overflow:hidden}
+.u-sheet[hidden]{display:none}
+.u-sheet-back{position:absolute;inset:0;background:var(--scrim);border:0;padding:0;margin:0;cursor:pointer}
+.u-sheet-card{position:relative;display:flex;flex-direction:column;min-width:0;
+  width:min(760px,100%);max-width:100%;background:var(--surface-opaque);
+  border-left:1px solid var(--border-strong);box-shadow:-8px 0 24px rgba(0,0,0,.18)}
+.u-sheet-bar{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:7px 12px;
+  border-bottom:1px solid var(--border);background:var(--surface-subtle);flex:none}
+.u-sheet-t{font-weight:600;font-size:.85rem;color:var(--text-strong);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.u-sheet-body{overflow:auto;overscroll-behavior:contain;padding:14px 18px;min-height:0;flex:1 1 auto}
+/* The outline caps its prose for reading; inside the sheet the sheet is the
+   measure, so the cap would only strand the right half of the card. */
+.u-sheet-body .ol{max-width:none}
+@media (max-width:560px){ .u-sheet-card{width:100%;border-left:0} }
+@media (prefers-reduced-motion:no-preference){
+  .u-sheet-card{animation:u-sheet-in .16s ease-out}
+  @keyframes u-sheet-in{from{transform:translateX(12px);opacity:.6}to{transform:none;opacity:1}}
+}
+.u-inspector.closed .u-insp-body{display:none}
+.u-inspector.closed .u-insp-bar{border-bottom:0}
+.btn.small{font-size:.76rem;padding:4px 9px}
+.linkish{background:none;border:0;padding:0;font:inherit;color:var(--cobalt);cursor:pointer;text-align:left;text-decoration:underline}
+.idlist .ttl.linkish{font-weight:600;color:var(--cobalt);font-size:.9rem}
+.u-below{padding-top:22px}
+.orbit{background:var(--surface-subtle);border:1px solid var(--border);border-left:4px solid var(--violet);
+       border-radius:8px;padding:9px 11px;margin:.5em 0;font-size:.86rem}
+.orbit.rim{border-left-color:var(--text-faint)}
+.orbit p{margin:0 0 .5em} .orbit p:last-child{margin:0}
+.orbit .row{display:flex;flex-wrap:wrap;gap:6px}
+.orbits{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column;gap:4px}
+.orbits li{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:baseline;font-size:.8rem;
+           border:1px solid var(--border);border-radius:6px;padding:5px 8px;background:var(--surface-opaque)}
+.orbits li.moved{border-color:var(--hunter);background:var(--row-moved)}
+.orbits .why{flex:1 1 100%;font-size:.74rem;color:var(--text-muted)}
+.orbits .accept{margin-left:auto}
+.mlist .cd,.orbits .cd{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-weight:600;
+  color:var(--cobalt);background:none;border:0;padding:0;cursor:pointer;text-decoration:underline dotted;
+  white-space:nowrap;font-size:.8rem}
+.mlist .cd:hover,.orbits .cd:hover{text-decoration-style:solid}
+.mlist .mt,.orbits .mt{color:var(--text-strong);font-size:.8rem;min-width:0;flex:1 1 40%}
+.mlist .un,.orbits .un{font-size:.74rem;color:var(--text-muted);white-space:nowrap}
+.mlist .mdesc{flex:1 1 100%;display:block;margin:.3em 0 .1em;font-size:.82rem;line-height:1.45;
+  color:var(--text-body);max-width:var(--cpl-measure,none)}
+.mlist .mdesc.none{color:var(--text-muted);font-style:italic}
+@media (max-width:700px){
+  .u-full{height:auto}
+  .u-stage{flex-direction:column}
+  /* ⚠️ A CLOSED PANEL IS A ZERO-*WIDTH* RULE, and here .u-stage lays out as a
+     COLUMN — so the closed panel's grip still measured 1px TALL, the map section
+     came to 845px against an 844px window, and a phone could rubber-band a view
+     that is supposed to hold still under a finger. It belongs at THIS
+     breakpoint, not at the row's: between 700 and 1100 the stage is still a row,
+     the panel is a zero-width column that costs no height, and .u-insp-grip is
+     still the handle that resizes it — hiding the panel there would take the
+     grip with it. (Below 700 the grip is already display:none, just under.) */
+  body.u-solo .u-inspector.closed{display:none}
+  .u-inspector{flex-basis:auto;width:auto;height:auto;max-height:50vh;border-left:0;border-top:1px solid var(--border-strong)}
+  .u-insp-grip{display:none}
+  .u-bar .btn{padding:5px 8px}
+}
+.tblwrap{overflow-x:auto;border:1px solid var(--border);border-radius:9px;background:var(--surface-opaque)}
+table.uc-like{border-collapse:collapse;width:100%;font-size:.82rem;background:var(--surface-opaque)}
+table.uc-like th{position:sticky;top:0;background:var(--text-strong);color:var(--mustard-fill);
+  text-align:left;padding:7px 9px;font-weight:600;white-space:nowrap}
+table.uc-like td{padding:6px 9px;border-top:1px solid var(--border);vertical-align:top}
+table.uc-like tbody tr:nth-child(even){background:var(--surface-subtle)}
+table.uc-like .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:nowrap}
+.banner{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;
+  background:var(--surface-opaque);border:1px solid var(--border);border-left:4px solid var(--violet);
+  border-radius:9px;padding:12px 14px;margin:0 0 18px}
+.banner p{margin:0;font-size:.9rem}
+.hidden{display:none !important}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+footer{border-top:1px solid var(--border);margin-top:32px;padding-top:16px;
+       font-size:.82rem;color:var(--text-muted)}
+@media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}}
+@media (max-width:560px){
+  .grid,.decks{grid-template-columns:1fr}
+  .mast .wrap{flex-direction:column;gap:8px;align-items:stretch}
+  .msearch{flex:1 1 100%;max-width:none}
+  .tools{gap:8px}
+  .tools input[type=search]{flex:1 1 100%}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="mast"><div class="wrap">
+  <span class="brand">SkyView <span class="tag" id="prov" tabindex="0"></span></span>
+  <form class="msearch" id="msearch" role="search">
+    <label for="gq" class="sr">Search courses, colleges and disciplines</label>
+    <div class="sugwrap">
+      <input type="search" id="gq" autocomplete="off" role="combobox" aria-expanded="false"
+             aria-autocomplete="list" aria-controls="sug" aria-haspopup="listbox"
+             placeholder="Search a course, code or discipline">
+      <ul class="sug" id="sug" role="listbox" aria-multiselectable="true" aria-label="Search suggestions" hidden></ul>
+      <!-- ⭐ WHERE THE ASK ANSWERS. #u-hint carries the long version at the FOOT
+           of the window, and measured at 1440x900 that is a 36px strip of muted
+           text 850px below the box, under three lines of legend: Sam asked a
+           question on 2026-09-09, got the whole "not deployed yet" explanation
+           there, and reported "the only response was to stop the rotation — no
+           other view change." A refusal that prints out of sight is a dead
+           control, so the ask says it HERE, beside the hand that typed it.
+           Absolutely positioned inside .sugwrap like #sug, so the controls row
+           never changes height and fitCanvas() is untouched. -->
+      <div class="askbox" id="askbox" role="status" aria-live="polite" hidden></div>
+    </div>
+  </form>
+</div>
+</header>
+
+<main class="wrap" id="main">
+  <div class="crumbrow" id="crumbrow"><ol class="crumbs" id="crumbs"></ol><div class="crumbs-views" id="crumbs-views"></div></div>
+  <div id="view"></div>
+  <footer>
+    <p><strong>Prototype.</strong> Nothing here writes to Supabase. A move records the exact
+    <code>kb_curation</code> row the live tab would write, so the write path can be reviewed before
+    it is wired. Built from the published CCR artifacts — no live reads.</p>
+  </footer>
+</main>
+
+<script id="atlas-data" type="application/json">__DATA__</script>
+<script>
+(function(){
+"use strict";
+var DATA = JSON.parse(document.getElementById("atlas-data").textContent);
+var view = document.getElementById("view");
+var crumbs = document.getElementById("crumbs");
+var BLANK = "(no discipline yet)";
+var state = {v:"forest", disc:null, dec:null, q:""};
+
+// The provenance line is a hover on the title, not a line of its own (Sam,
+// 2026-09-03: "remove prototype intro text and add it as a hover over on the
+// Prototype V1 title. I want to maximize the SkyView window").
+/* ⭐ THE TAG NAMES THE DATA, NOT A VERSION (2026-09-06). It read
+ * "— prototype v1", and that label is what made a view swap read to Sam as
+ * landing somewhere old: "It opens this prototype V1. And there's no way for me
+ * to get back now to sky view." Nothing had navigated — discipline() had merely
+ * painted over the map under a masthead that announced a different product. The
+ * provenance it carried is worth keeping, so the tag now says WHEN the artifacts
+ * under the page were generated, which is the one thing about them that goes
+ * stale. SkyView is the name (Sam, 2026-08-24). */
+var provWhen = String(DATA._generated_from || "").split(" ")[0];
+var provText = "No writes — nothing on this page is saved. CCR artifacts generated " +
+  (DATA._generated_from || "—") +
+  " · " + DATA.totals.decision_components.toLocaleString("en-US") + " decisions over " +
+  DATA.totals.identities_inbrowser.toLocaleString("en-US") + " identities.";
+var provEl = document.getElementById("prov");
+if (provEl){
+  provEl.textContent = provWhen ? "\u2014 data " + provWhen : "";
+  provEl.title = provText;
+  provEl.setAttribute("aria-label", (provWhen ? "Data " + provWhen + " \u2014 " : "") + provText);
+}
+/* ⭐ ENTER RUNS THE SEARCH AND CLOSES THE LIST (Sam's ruling 1, 2026-09-06).
+ *
+ * ⚠️ THIS REVERSES ITEM 6 OF THE SAME MORNING, and he flagged the reversal
+ * himself: "after I click enter, I really think it should close this, even
+ * though we made a prior decision on that." Item 6 had made Enter leave the
+ * list up with its first row highlighted, because an earlier Enter-closes
+ * behavior was what made an intro course look absent. That reading was right
+ * about the symptom and wrong about the cause — the course was missing from the
+ * RANKING ("weldi" lost it), which was fixed separately, so keeping the list up
+ * was solving a bug that no longer exists at the cost of a panel that would not
+ * go away.
+ *
+ * ⚠️ THE REVERSAL IS SAFE ONLY BECAUSE TICKING NO LONGER COMMITS (Sam, the same
+ * day, watching the list jump: "why not wait on that step until the user hits
+ * enter. That would be my normal expectation when choosing from multiple
+ * options."). Item 6's real objection was to Enter GUESSING — closing the list
+ * and flying the map on a ranking, dismissing the very row he was hunting for.
+ * Enter now closes on rows the reader ticked by hand, so there is nothing left
+ * to guess. If ticking is ever made to commit on the spot again, item 6's
+ * protection has to come back with it or the original bug returns.
+ *
+ * The button in the list's bottom row and the Enter key are the same call, so
+ * neither can drift from the other. */
+function runSearch(){
+  var box = document.getElementById("gq");
+  var term = box ? box.value : "";
+  // One search box, two behaviors, chosen by what is on screen: with the map
+  // open it flies and rings; anywhere else it lists results. The canvas being
+  // in the DOM is the test rather than a flag we keep in step by hand — every
+  // other view replaces #view wholesale, so it cannot go stale.
+  /* ⭐ A QUESTION IS NOT A KEYWORD (Sam, 2026-09-09: "it would be good to be
+   * able to use the search box for questions, like Sierra handles, to query
+   * SkyView"). ONE box, and the INPUT decides which it is: everything above
+   * this line is untouched and still instant, and only text that a keyword
+   * search would serve badly anyway — a sentence, or something ending in a
+   * question mark — is sent anywhere. The map is the answer; __ccrAsk turns the
+   * question into a selection and this row never learns what the model said.
+   * ⚠️ The predicate lives in ccr_universe.js and BOTH callers use it, so the
+   * footer cannot promise "Enter asks" while this line runs a term search. */
+  if (document.getElementById("u-cvs") && typeof window.__ccrAsk === "function"
+      && typeof window.__ccrIsQuestion === "function" && window.__ccrIsQuestion(term)) {
+    window.__ccrAsk(term);
+    closeSug();
+    return;
+  }
+  if (document.getElementById("u-cvs") && typeof window.__ccrUniverseSearch === "function")
+    window.__ccrUniverseSearch(term);
+  else
+    search(term);
+  closeSug();
+}
+document.getElementById("msearch").addEventListener("submit", function(ev){
+  ev.preventDefault();
+  /* The TICKED rows are the answer: Enter applies exactly what the reader chose
+   * and never re-runs a ranking rule that may pick differently. takeHighlighted()
+   * commits the pending set and closes; it returns false when nothing was ticked,
+   * and Enter then falls through to a plain term search — which also closes. One
+   * key, one outcome: the box dismisses whether you chose rows or typed a term. */
+  if (takeHighlighted()) return;
+  runSearch();
+});
+
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){
+  return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+
+/* ══ search suggestions ══════════════════════════════════════════════════
+ * Sam, 2026-08-25: "The keyword search should start to show likely matches
+ * based on key entries — like a Google search does."
+ *
+ * The corpus lives in ccr_universe.js, which owns __ccrSuggest and knows how to
+ * fly; this owns the dropdown, because the box is in the MASTHEAD and every
+ * view below replaces #view wholesale. Splitting it the other way would put a
+ * DOM the views can destroy inside the module that must keep it.
+ *
+ * WHY THIS MATTERS BEYOND CONVENIENCE: a term can name several subjects
+ * ("art" → Art, Culinary Arts, Theater Arts), and on Enter something has to
+ * choose. Choosing for the curator is a guess however it is ranked. Here they
+ * choose first, and the guess never happens.
+ */
+var sugEl = document.getElementById("sug");
+var gqEl = document.getElementById("gq");
+var sugItems = [], sugAt = -1;
+/* One listener, attached once: reaching the bottom reveals the next page. Bound
+ * here rather than in renderSug() because renderSug runs on every keystroke and
+ * every reveal, and re-binding there would stack a listener per render. */
+if (sugEl) sugEl.addEventListener("scroll", function(){
+  if (sugEl.hidden || !sugAll || sugShown >= sugAll.length) return;
+  if (sugEl.scrollTop + sugEl.clientHeight >= sugEl.scrollHeight - 24){
+    sugShown = Math.min(sugShown + SUG_LIMIT, sugAll.length);
+    renderSug(false);
+  }
+});
+
+/* Closing ENDS the choosing session: Escape, a click outside, and the commit
+ * itself all land here, and all three mean the reader is done with this set of
+ * ticks. Refining the term does NOT come through here — see endPending(). */
+function closeSug(){
+  sugItems = []; sugAt = -1; sugAll = []; sugShown = 0;
+  endPending();
+  if (!sugEl) return;
+  sugEl.hidden = true; sugEl.innerHTML = "";
+  if (gqEl){ gqEl.setAttribute("aria-expanded","false"); gqEl.removeAttribute("aria-activedescendant"); }
+}
+/* ⚠️ CLOSE ON A CLICK OUTSIDE THE SEARCH. Nothing did this before: the
+ * suggestion list stayed open until you picked an item or submitted, and it is
+ * absolutely positioned over whatever the page put beneath the masthead. That
+ * was survivable while SkyView's controls sat on a SECOND row, far enough down
+ * to clear it. Consolidating the top to one row (Sam, 2026-09-04: "I want all
+ * the real estate for the universe view") moved the view links up under the open
+ * list, and Chromium reported them unclickable — the dropdown was intercepting
+ * every pointer event aimed at them.
+ *
+ * Containment at the boundary, not a handler per control: the pane grows new
+ * controls and every one of them would otherwise have to remember. pointerdown
+ * rather than click, for the reason the item handler below already documents. */
+document.addEventListener("pointerdown", function(e){
+  if (!sugEl || sugEl.hidden) return;
+  var t = e.target;
+  if (t && typeof t.closest === "function" && t.closest(".msearch")) return;
+  closeSug();
+}, true);
+
+/* A row by its INDEX, not by its position among the children. The list carries
+ * a sticky header and a sticky footer that are not rows, so `children[i]` and
+ * "the i-th suggestion" are two different things — and the header made them
+ * differ by one, silently, for every arrow key. data-i is the row's own claim
+ * about which suggestion it is; ask it rather than counting. */
+function sugRow(i){
+  return sugEl ? sugEl.querySelector('li[data-i="' + i + '"]') : null;
+}
+function markSug(){
+  if (!sugEl) return;
+  // The cursor is a class and aria-activedescendant; aria-selected is the PICK
+  // (the listbox is multi-select, and the checkbox on each row shows it).
+  /* ⚠️ ADDRESS ROWS BY THEIR OWN id, NOT BY CHILD POSITION. The list now carries
+   * a sticky HEADER as its first child (Sam's ruling 1, 2026-09-06), so
+   * sugEl.children[n] is no longer row n — indexing positionally would put the
+   * cursor one row above where the reader is looking and desync every arrow key
+   * after it. Each row already prints id="sug-<i>". */
+  Array.prototype.forEach.call(sugEl.querySelectorAll("li[data-i]"), function(li){
+    li.classList.toggle("on", +li.dataset.i === sugAt);
+  });
+  /* A list of sixty is a list you scroll, so the arrow keys have to CARRY the
+   * viewport with them. Without this the cursor walked off the bottom edge and
+   * the reader watched a still list, which reads exactly like a list that has
+   * stopped responding — the same complaint, one layer down. */
+  var cur = sugAt >= 0 ? sugRow(sugAt) : null;
+  if (cur && cur.scrollIntoView) cur.scrollIntoView({ block: "nearest" });
+  if (gqEl){
+    if (sugAt >= 0) gqEl.setAttribute("aria-activedescendant","sug-"+sugAt);
+    else gqEl.removeAttribute("aria-activedescendant");
+  }
+}
+/* ══ ticking is not committing ═════════════════════════════════════════════
+ * Sam, 2026-09-06: "Seems the problem is firing the routine to add the filter
+ * is the problem. Why not wait on that step until the user hits enter. That
+ * would be my normal expectation when choosing from multiple options."
+ *
+ * ⭐ THIS IS THE FIX FOR THE JUMPING LIST, AND IT IS A DIFFERENT FIX FROM THE
+ * ONE THAT DID NOT WORK. S233 tried to hold the list still while still
+ * committing on every tick: save scrollTop, let openSug() rebuild, put scrollTop
+ * back. That could never hold, because openSug() also resets `sugShown` to one
+ * page — a reader who had scrolled to 120 revealed rows had the list collapse
+ * to 60 underneath them, and the restored offset then pointed at a row that was
+ * no longer there. Preserving the offset across a list that changed LENGTH is
+ * preserving the wrong thing.
+ *
+ * A tick now writes to `pendKeys` and repaints ONE ROW. Nothing is ranked,
+ * nothing is rebuilt, nothing is revealed or hidden, the map does not move —
+ * so there is no scroll to restore and no page count to keep in step. The list
+ * cannot jump because nothing about it changed.
+ *
+ * The selection commits on Enter (Sam, same session: "Enter should dismiss the
+ * box"), which also settles a contradiction this file was carrying: item 6 of
+ * the same day says Enter must NOT hide the list, because Enter used to close
+ * it and fly the map on a RANKING — dismissing the very row the reader was
+ * hunting. That objection was to Enter GUESSING, not to Enter closing. Once the
+ * reader has ticked their own rows there is nothing left to guess, and closing
+ * on Enter is just honouring what they picked. */
+/* ⚠️ WHAT THE READER DID IS RECORDED, NEVER DERIVED BY SUBTRACTION.
+ * `pendKeys` is what shows ticked; `pendItem` holds the suggestion for each row
+ * the reader ticked THIS session; `pendOff` holds the keys they explicitly
+ * UNticked. Enter commits exactly those two lists and nothing else.
+ *
+ * ⭐ THE FIRST CUT DERIVED THE REMOVALS — `have.filter(k => pendKeys.indexOf(k) < 0)`
+ * — and that is a silent destroyer. `pendKeys` is seeded ONCE per session, so any
+ * token committed after the seed (or before a seed that never ran, because
+ * `pendLive` was already true) is absent from it, and absence read as intent
+ * means Enter REMOVES a chip the reader never touched. Measured on the welding
+ * fixture: `disc:Welding` was committed, the session seeded without it, and
+ * ticking two courses and pressing Enter dropped it — two picks added, one
+ * unrelated pick destroyed, no message anywhere. A snapshot cannot be the
+ * authority on intent, because everything that happens outside it looks like
+ * a decision the reader made. */
+var pendKeys = [], pendItem = {}, pendOff = [], pendLive = false;
+function keyOf(it){
+  return (typeof window.__ccrTokenKey === "function") ? window.__ccrTokenKey(it) : "";
+}
+/* Seeded from what is already committed, so rows the reader picked earlier show
+ * ticked and UNticking one is a real removal rather than a no-op. */
+function seedPending(){
+  pendKeys = (typeof window.__ccrTokenKeys === "function") ? window.__ccrTokenKeys().slice() : [];
+  pendItem = {};
+  pendOff = [];
+  pendLive = true;
+}
+/* ⚠️ A TICK SURVIVES A CHANGE OF TERM (Sam, 2026-09-06, watching it fail: he
+ * ticked "Introduction to Welding" on `weldi`, typed one more letter, and the
+ * tick vanished — the row was still listed, still matching, and no longer
+ * ticked). The first cut of this re-seeded on every openSug(), on the theory
+ * that a new term is a new choosing session. It isn't: REFINING A SEARCH IS HOW
+ * YOU HUNT FOR THE NEXT THING TO ADD, so throwing the picks away mid-hunt is
+ * the same bug as the jumping list one layer up — the interface discarding the
+ * reader's work while they are still working.
+ *
+ * A session therefore spans every term the reader types, and ONLY Enter
+ * (commit) or Escape / a click outside (abandon) ends it. `pendLive` is that
+ * session, held here rather than read off `sugEl.hidden` so it cannot drift
+ * with render timing.
+ *
+ * A tick held for a row that the CURRENT term no longer lists stays pending and
+ * still commits on Enter (Sam's ruling, same session): `pendItem` keeps the
+ * suggestion object, so the commit does not need the row to be on screen. */
+function endPending(){ pendKeys = []; pendItem = {}; pendOff = []; pendLive = false; }
+/* The pending set, for tests. `__ccrTokenKeys()` reports what is COMMITTED;
+ * this reports what is merely ticked, and the gap between them is the whole
+ * point of deferring the commit — a test that can only see the committed side
+ * cannot tell "the tick did nothing" from "the tick is waiting for Enter". */
+window.__ccrPendKeys = function(){ return pendKeys.slice(); };
+function toggleRowAt(i){
+  var it = sugItems[i];
+  if (!it) return false;
+  var key = keyOf(it);
+  if (!key) return false;
+  var at = pendKeys.indexOf(key), off = pendOff.indexOf(key);
+  if (at >= 0){
+    pendKeys.splice(at, 1);
+    if (off < 0) pendOff.push(key);        // an untick is a decision; record it
+  } else {
+    pendKeys.push(key); pendItem[key] = it;
+    if (off >= 0) pendOff.splice(off, 1);  // re-ticked, so no longer a removal
+  }
+  // Repaint the ONE row. No render, no re-rank, no reveal — see above.
+  var li = sugRow(i);
+  if (li){
+    var on = pendKeys.indexOf(key) >= 0;
+    li.classList.toggle("picked", on);
+    li.setAttribute("aria-selected", on ? "true" : "false");
+  }
+  sugAt = i; markSug(); paintPending();
+  return true;
+}
+/* What Enter is about to do, in the footer beside the button. Deferring the
+ * commit buys a still list and costs the running feedback the old design gave
+ * for free — the map moved on every tick, so you could see your selection being
+ * built. This is that feedback, in words: without it a reader ticks four rows,
+ * sees nothing happen anywhere, and reasonably concludes the ticks did nothing. */
+function paintPending(){
+  var el = sugEl && sugEl.querySelector("#sug-pend");
+  if (!el) return;
+  var edit = pendingEdit();
+  var add = edit.add.length, drop = edit.drop.length;
+  var bits = [];
+  if (add)  bits.push(add + " to add");
+  if (drop) bits.push(drop + " to remove");
+  /* With nothing ticked the footer says what Enter WILL do, and on a question
+   * that is not a term search — so it says so. This is the only affordance the
+   * ask needs: the row that already exists to answer "what does Enter do here"
+   * answers it correctly, rather than a new control in a list whose whole
+   * interaction is ticking. */
+  /* ⚠️ THE CONDITION IS `!bits.length`, AND ONLY THAT — it is the SAME test
+   * commitPending() makes. pendKeys being non-empty does NOT stop Enter falling
+   * through to the search: a seeded key the reader never touched is inert in
+   * both directions, so a reader with a selection already on the map still gets
+   * an ask. An earlier draft also required !pendKeys.length and the footer then
+   * said "1 selected" while Enter asked — the exact disagreement between the
+   * label and the key that check (14) of tests/ccr_skyview_ask.test.js exists
+   * to catch, and it caught it. */
+  var asks = !bits.length
+    && typeof window.__ccrIsQuestion === "function"
+    && window.__ccrIsQuestion(gqEl ? gqEl.value : "")
+    && typeof window.__ccrAsk === "function"
+    && !!document.getElementById("u-cvs");
+  el.textContent = bits.length
+    ? bits.join(", ") + " — Enter applies"
+    : asks ? "Ask SkyView — Enter asks"
+    : (pendKeys.length ? pendKeys.length + " selected" : "Tick the ones you want");
+}
+/* Commit, then leave. The removals go first so a reader who unticks A and ticks
+ * B does not momentarily hold both — applyTokens() fits the view to whatever is
+ * in `tokens` when it runs, and fitting an intermediate set is a visible lurch
+ * on the way to the right one. */
+/* The one definition of "what Enter is about to do", read by both the footer and
+ * the commit — so the counter can never promise something the commit does not do.
+ * An ADD is a row ticked this session (it has a `pendItem`) that is not already
+ * committed; a DROP is a key explicitly unticked that IS. A seeded key the reader
+ * never touched is inert in both directions, which is the whole point. */
+function pendingEdit(){
+  var have = (typeof window.__ccrTokenKeys === "function") ? window.__ccrTokenKeys() : [];
+  return {
+    have: have,
+    add:  pendKeys.filter(function(k){ return have.indexOf(k) < 0 && pendItem[k]; })
+                  .map(function(k){ return pendItem[k]; }),
+    drop: have.filter(function(k){ return pendOff.indexOf(k) >= 0; })
+  };
+}
+function commitPending(){
+  var edit = pendingEdit(), add = edit.add, drop = edit.drop;
+  if (!drop.length && !add.length) return false;
+  if (typeof window.__ccrCommitSelection === "function")
+    return !!window.__ccrCommitSelection(add, drop);
+  return false;
+}
+/* Enter, and the button that says so. Commits whatever is ticked and closes;
+ * with nothing ticked it falls through to the caller's term search, so Enter
+ * on a bare term still means "search for this" and still dismisses. */
+function takeHighlighted(){
+  var did = commitPending();
+  if (did) closeSug();
+  return did;
+}
+/* How many matches the list is built from. It was EIGHT, and eight is what Sam
+ * saw: "Search box only delivers a short set of options and should show all or
+ * at least allow scroll to show others" (2026-09-05). The list was already
+ * scrollable — `.sug` has carried `overflow-y:auto` since it was written — so
+ * nothing was wrong with the box; there was simply never anything below the
+ * fold to scroll to. The corpus routinely holds hundreds of matches for a term
+ * like "art", and __ccrSuggest was being asked for eight of them.
+ *
+ * ⚠️ NOT "all". A common term matches thousands, and a dropdown of thousands is
+ * a worse answer than a dropdown of eight — it just fails more slowly. Sixty is
+ * the closest sixty by the module's own ranking, deep enough that the thing you
+ * meant is in the list, shallow enough to scroll through; the footer says
+ * plainly when there are more, so the reader knows to keep typing rather than
+ * assuming the corpus is empty past the edge. */
+var SUG_LIMIT = 60;
+/* Sam, 2026-09-06: "Can we make the list longer than 60? Maybe with lazy load
+ * if needed?" — so 60 is now the PAGE, not the list. The ranking is computed
+ * once to SUG_MAX and the rows are revealed a page at a time as the reader
+ * scrolls to the bottom.
+ *
+ * ⚠️ IT HAS TO BE RANKED ONCE, NOT RE-RANKED PER PAGE. The budget in suggest()
+ * gives each kind a SHARE OF THE LIMIT (30/45/25), so asking for 120 instead of
+ * 60 does not append — it re-cuts, and row 19 changes from a course to a
+ * discipline under the reader's eyes. Ranking to the ceiling once and slicing
+ * more of the same array is what makes "load more" mean load more. */
+var SUG_MAX = 300;
+var sugAll = [], sugShown = 0;
+
+function openSug(term){
+  if (!sugEl || typeof window.__ccrSuggest !== "function") return;
+  sugAll = window.__ccrSuggest(term, SUG_MAX) || [];
+  sugShown = Math.min(SUG_LIMIT, sugAll.length);
+  /* ⚠️ A TERM THAT MATCHES NOTHING MUST NOT END THE SESSION. closeSug() clears
+   * the pending ticks, and typing one letter too many is exactly how a reader
+   * arrives at an empty list — so routing that through closeSug() would delete
+   * their picks for a keystroke they are about to correct. Hide the list and
+   * keep the session; the ticks are still there when the term matches again. */
+  if (!sugAll.length){
+    /* ⭐ EXCEPT ON A QUESTION, WHERE ZERO MATCHES IS THE NORMAL CASE AND THE
+     * WHOLE POINT. "which welding courses carry an articulation?" matches no
+     * course title, so the list hid itself — and the footer that says "Enter
+     * asks" hid with it, leaving the ask invisible at exactly the moment it
+     * became available. Found by tests/ccr_skyview_ask.test.js (14), which
+     * looked for the label and found no list at all.
+     * Rendering with no options is the honest picture: no keyword matched, and
+     * Enter will ask instead. */
+    if (typeof window.__ccrIsQuestion === "function" && window.__ccrIsQuestion(term)
+        && typeof window.__ccrAsk === "function" && document.getElementById("u-cvs")) {
+      if (!pendLive) seedPending();
+      sugShown = 0;
+      renderSug(true);
+      return;
+    }
+    sugItems = []; sugAt = -1;
+    if (sugEl){ sugEl.hidden = true; sugEl.innerHTML = ""; }
+    if (gqEl){ gqEl.setAttribute("aria-expanded","false"); gqEl.removeAttribute("aria-activedescendant"); }
+    return;
+  }
+  // Seed ONCE per session, not per term — see endPending() above. Here and not
+  // in renderSug(), which also runs on every page reveal; seeding there would
+  // throw away the ticks the reader made before they scrolled.
+  if (!pendLive) seedPending();
+  renderSug(true);
+}
+/* `reset` distinguishes a new term (go to the top, drop the highlight) from a
+ * page reveal, which must keep both — the reader is mid-list and scrolling. */
+function renderSug(reset){
+  var keepTop = reset ? 0 : sugEl.scrollTop;
+  var keepAt  = reset ? -1 : sugAt;
+  sugItems = sugAll.slice(0, sugShown);
+  sugItems.more = (sugAll.more || 0) + (sugAll.length - sugShown);
+  sugAt = keepAt;
+  var more = sugItems.more || 0;
+  var byName = (typeof window.__ccrSuggestOrder === "function") && window.__ccrSuggestOrder() === "name";
+  // The tick state is the PENDING set, not the committed one: a row is ticked
+  // because the reader ticked it, whether or not it has been applied yet.
+  var picked = pendKeys;
+  sugEl.innerHTML = sugItems.map(function(it,i){
+    // The KIND is a word, not a color or an icon: "subject" and "course" are
+    // different destinations and the reader has to be able to tell which one
+    // they are about to be sent to.
+    var right = it.kind === "subject"
+      ? num(it.n) + " identit" + (it.n === 1 ? "y" : "ies")
+      : esc(it.sub || "");
+    var key = (typeof window.__ccrTokenKey === "function") ? window.__ccrTokenKey(it) : "";
+    var on = !!key && picked.indexOf(key) >= 0;
+    return '<li id="sug-'+i+'" role="option" aria-selected="'+(on ? "true" : "false")+'" data-i="'+i+'"'+(on ? ' class="picked"' : '')+'>'+
+      '<span class="sg-cb" aria-hidden="true"></span>'+
+      '<span class="sg-k">'+esc(it.kindShort || it.kindWord || (it.kind === "subject" ? "DISC" : "CRSE"))+'</span>'+
+      '<span class="sg-l">'+esc(it.label)+'</span>'+
+      '<span class="sg-r">'+right+'</span></li>';
+  }).join("");
+  /* The count and the order control ride in a sticky HEADER; the footer holds
+   * the way out and nothing else. Neither carries a data-i, and neither is a
+   * destination \u2014 role=presentation keeps them out of the listbox's options,
+   * and every lookup by index goes through sugRow(), which asks the row which
+   * suggestion it is rather than counting children past a non-row.
+   *
+   * The count sits with the order control because they are one thought: a
+   * reader who has just read "showing the closest 60" and wonders what the
+   * other matches were is being answered by "sort by name" (Sam, 2026-09-05:
+   * "would have seen 2 named similarly or the same"). */
+  var label = "Search suggestions";
+  var restHere = sugAll.length - sugShown;   // ranked, not yet revealed
+  var count = byName
+    ? "Sorted by name \u2014 " + sugItems.length + (more > 0 ? " of many" : "")
+    : (restHere > 0
+        ? "Showing " + sugItems.length + " of " + sugAll.length +
+          (sugAll.more ? "+" : "") + " \u2014 scroll for more"
+        : more > 0 ? "Showing the closest " + sugItems.length
+        : sugItems.length + (sugItems.length === 1 ? " match" : " matches"));
+  /* ⭐ THE SORT CONTROL SITS AT THE LIST'S TOP RIGHT and the bottom row carries an
+   * ENTER button (Sam's ruling 1, 2026-09-06: "move the sort chip to the top
+   * right of the list and put an enter button where the sort button is now").
+   * Both rows are role="presentation" so neither joins the listbox's options —
+   * the count is repeated on the listbox's own label, which is what a screen
+   * reader hears on entry. */
+  sugEl.insertAdjacentHTML("afterbegin",
+    '<li class="sug-head" role="presentation"><span>'+count+'</span>'+
+    '<button type="button" class="sug-sort" data-order="'+(byName ? "relevance" : "name")+'">'+
+    (byName ? "Sort by best match" : "Sort by name")+'</button></li>');
+  sugEl.insertAdjacentHTML("beforeend",
+    '<li class="sug-more" role="presentation">'+
+    '<span class="sug-pend" id="sug-pend"></span>'+
+    '<button type="button" class="sug-go" id="sug-go">Enter <kbd>\u21b5</kbd></button></li>');
+  label += " \u2014 " + count + (byName ? "" : ", sorted by best match");
+  sugEl.setAttribute("aria-label", label);
+  sugEl.hidden = false;
+  sugEl.scrollTop = keepTop;
+  if (keepAt >= 0) markSug();
+  if (gqEl) gqEl.setAttribute("aria-expanded","true");
+  paintPending();
+  Array.prototype.forEach.call(sugEl.children, function(li){
+    // The header and footer carry no data-i and are not destinations — skip
+    // them, or a mousedown would set sugAt to NaN and swallow the press. Their
+    // controls are wired below, on mousedown for the same blur reason.
+    if (li.dataset.i == null) return;
+    // mousedown, not click: the input's blur fires first on a click and would
+    // close the list out from under the pointer.
+    li.addEventListener("mousedown", function(ev){
+      // ⚠️ TICK ONLY. This used to commit the pick, which rebuilt the list and
+      // moved the map under a reader who was still choosing. It now writes to
+      // the pending set and repaints this one row; Enter is what applies it.
+      ev.preventDefault(); toggleRowAt(+li.dataset.i);
+    });
+    li.addEventListener("mouseenter", function(){ sugAt = +li.dataset.i; markSug(); });
+  });
+  var goBtn = sugEl.querySelector("#sug-go");
+  /* mousedown for the same blur reason the rows use: a click would let the
+   * input's blur close the list out from under the pointer first. The button
+   * runs the same two calls as the Enter key, so neither can drift. */
+  if (goBtn) goBtn.addEventListener("mousedown", function(ev){
+    ev.preventDefault();
+    if (!takeHighlighted()) runSearch();
+  });
+  var sortBtn = sugEl.querySelector(".sug-sort");
+  if (sortBtn) sortBtn.addEventListener("mousedown", function(ev){
+    ev.preventDefault();
+    if (typeof window.__ccrSuggestOrder === "function")
+      window.__ccrSuggestOrder(sortBtn.dataset.order);
+    openSug(gqEl ? gqEl.value : term);   // same session, so the ticks survive
+    if (gqEl) gqEl.focus();
+  });
+}
+if (gqEl){
+  /* ⚠️ THE ASK PANEL AND THE SUGGESTION LIST OCCUPY THE SAME SPACE, and the
+   * panel sits above it — so editing the term must take the panel down or the
+   * next keystroke's suggestions render underneath it, invisible. Typing is
+   * also the honest signal that the previous answer is spent. */
+  gqEl.addEventListener("input", function(){
+    if (typeof window.__ccrClearAsk === "function") window.__ccrClearAsk();
+    openSug(gqEl.value);
+  });
+  gqEl.addEventListener("keydown", function(ev){
+    if (ev.key === "Escape"){
+      if (typeof window.__ccrClearAsk === "function") window.__ccrClearAsk();
+      closeSug(); return;
+    }
+    // An empty box and Backspace drops the last chip of the selection (2026-09-05).
+    if (ev.key === "Backspace" && !gqEl.value && typeof window.__ccrTokenBack === "function"){
+      if (window.__ccrTokenBack()) ev.preventDefault();
+      return;
+    }
+    if (!sugItems.length) return;
+    if (ev.key === "ArrowDown"){ ev.preventDefault(); sugAt = (sugAt+1) % sugItems.length; markSug(); }
+    else if (ev.key === "ArrowUp"){ ev.preventDefault(); sugAt = (sugAt<=0?sugItems.length:sugAt)-1; markSug(); }
+  });
+  gqEl.addEventListener("blur", function(){ setTimeout(closeSug, 120); });
+}
+function num(n){return (n==null?0:n).toLocaleString("en-US");}
+
+/* ══ breadcrumbs ══ */
+window.__crumbs = setCrumbs;
+function setCrumbs(items, opts){
+  // Every view passes through here, so this is where the map's full-bleed
+  // frame is taken down: the universe view puts it back after calling us.
+  // Same for SkyView-alone (body.u-solo), which hides the masthead — every
+  // other view needs the masthead back, and the map re-applies the class.
+  //
+  // ⚠️ And it is where the borrowed search box goes HOME. The map moves the
+  // page's one search form into its own top row; every other view replaces
+  // #view wholesale, which would take the form down with it. The wrapper in
+  // ccr_universe.js covered the window.__ccr* entry points, but this file's
+  // own forest cells call discipline() directly — and under the comprehensive
+  // map one click on a cell destroyed the search box (found by the harness on
+  // 2026-09-05, latent since the box moved on 2026-09-04). Every view calls
+  // this before it renders, so this is the one place that cannot be missed.
+  // opts.view names the view being entered, for the Views menu's "you are
+  // here"; a view that names none gets every item offered.
+  if (typeof window.__ccrLeaveView === "function") window.__ccrLeaveView(opts && opts.view);
+  var main = document.getElementById("main");
+  if (main) main.classList.remove("u-fullbleed");
+  document.body.classList.remove("u-solo");
+  // ⭐ BACK, ahead of the crumbs (Sam, 2026-09-07: "Would be good to have a back
+  // button on any skyview screen user switches to"). The crumbs say where this
+  // view sits; they do not say how the reader got here, and the workspace's row
+  // is a single dead label — from there the only way back was the Views menu,
+  // which rebuilds the map and loses the camera. The entry comes from
+  // ccr_universe.js, which also parks and restores that camera; it is null on a
+  // first view, so nothing is drawn until there is somewhere to go back to.
+  // ⚠️ It is read AFTER __ccrLeaveView above, not before: that call is what
+  // records the view being left, so the entry is only correct once it has run.
+  var back = (typeof window.__ccrBackEntry === "function") ? window.__ccrBackEntry() : null;
+  crumbs.innerHTML = (back ? '<li class="crumb-back"><button type="button" data-back="1" '+
+      'title="Back to '+esc(back.label)+', where you left it">Back</button></li>' : "") +
+    items.map(function(it,i){
+      return "<li>" + (it.go
+        ? '<button type="button" data-c="'+i+'">'+esc(it.label)+"</button>"
+        : "<span aria-current=\"page\">"+esc(it.label)+"</span>") + "</li>";
+    }).join("");
+  Array.prototype.forEach.call(crumbs.querySelectorAll("button"), function(b){
+    if (b.dataset.back) b.addEventListener("click", function(){ back.go(); });
+    else b.addEventListener("click", function(){ items[+b.dataset.c].go(); });
+  });
+  // The Views menu rides the crumbs row on every view but the map, whose own
+  // top row carries it (Sam, item 9, 2026-09-04). The map passes {menu:false}
+  // so the page never holds two menus with one set of ids.
+  var mh = document.getElementById("crumbs-views");
+  if (mh){
+    mh.innerHTML = "";
+    if (!(opts && opts.menu === false) && typeof window.__ccrViewsMenu === "function")
+      window.__ccrViewsMenu(mh);
+  }
+}
+
+/* ══ VIEW 1 — the forest ══════════════════════════════════════════════ */
+/* Renders into `host`. Stand-alone (the "All disciplines" view) it owns #view;
+ * EMBEDDED it paints below the SkyView map, so the "other info" Sam scrolls down
+ * for is the same forest, not a copy — and the crumbs and state stay the map's. */
+function forest(host, opts){
+  opts = opts || {};
+  var embedded = !!opts.embedded;
+  /* Stand-alone, "All disciplines" is the workspace's By discipline view since
+   * 2026-09-05 (Sam's items 6-9: disciplines, subjects and ESL packaging on ONE
+   * tab, with toggles and a link back to SkyView). This grid still renders
+   * EMBEDDED under the comprehensive map, and stands in as a landing view only
+   * when the universe payload is missing — a blank page is worse. */
+  if (!embedded && window.CPL_CCR_UNIVERSE && typeof window.__ccrWorkspace === "function")
+    return window.__ccrWorkspace("discipline", opts);
+  host = host || view;
+  if (!embedded) {
+    state.v="forest"; state.disc=null; state.dec=null;
+    setCrumbs([{label:"All disciplines"}]);
+  }
+  var t = DATA.totals, ds = DATA.disciplines;
+  var named = ds.filter(function(d){return d.name!==BLANK;});
+  var withWork = named.filter(function(d){return d.decisions>0;});
+  var small = withWork.filter(function(d){return d.decisions<=40;});
+  var triage = ds.filter(function(d){return d.name===BLANK;})[0];
+
+  var h = [];
+  h.push(embedded
+    ? '<h2 style="margin-top:.4em">The work, by discipline</h2>'
+    : '<h1>The Common Course Reference, by the job in front of you</h1>');
+  h.push('<div class="lede"><p>The CCR presents as <strong>'+num(t.identities_inbrowser)+
+    ' course identities</strong> and <strong>'+num(t.suggestion_groups)+' pending suggestions</strong> — a number nobody can '+
+    'hold, let alone finish. Grouped the way the work actually decomposes, it is <strong>'+
+    num(t.decision_components)+' decisions</strong>, and <strong>97% of them involve 12 identities or fewer</strong>. '+
+    'The most common decision in the whole corpus is a <strong>pair</strong>: same course, or not?</p>'+
+    '<p>Sorted by discipline, <strong>'+small.length+' of '+withWork.length+
+    ' disciplines carry 40 decisions or fewer</strong> — a sitting each, with a finish line you can see.</p></div>');
+
+  h.push('<div class="banner"><p><strong>ESL packaging proposal</strong> \u2014 '+
+    '1,846 identities folding into three courses, drawn against today\u2019s data. Nothing written.</p>'+
+    '<button class="btn primary" type="button" id="go-esl">See the proposal</button></div>');
+  if (!embedded)   // under the map itself this door would open onto where you already are
+    h.push('<div class="banner" style="border-left-color:var(--cobalt)"><p><strong>Back to the map</strong> \u2014 '+
+      'every course identity on one canvas, with keyword zoom. Drag a subject next to another to move a '+
+      'course that was filed under the wrong one.</p>'+
+      '<button class="btn primary" type="button" id="go-universe">Open the map</button></div>');
+  h.push('<div class="hero">'+
+    '<div class="frame" id="hero-gfx"></div>'+
+    '<div>'+
+      '<'+(embedded?"h3":"h2")+' id="hero-h">One decision, drawn</'+(embedded?"h3":"h2")+'>'+
+      '<p id="hero-p"></p>'+
+      '<div class="row">'+
+        '<button class="btn primary" type="button" id="hero-open">Open this one</button>'+
+        '<button class="btn" type="button" id="hero-next">Show me another</button>'+
+      '</div>'+
+      '<p class="cap">Every circle is one course identity; its size is how many colleges teach it. '+
+      'Lines mean an evidence lane thinks they are the same course. This is what you work in — '+
+      'the grid below is just how you get here.</p>'+
+    '</div></div>');
+  h.push('<div class="stats">');
+  h.push(stat(num(t.decision_components),"decisions","not "+num(t.identities_inbrowser)+" rows"));
+  h.push(stat("97%","are ≤12 identities","modal size is 2"));
+  h.push(stat(String(withWork.length),"disciplines with work","median 12 decisions"));
+  h.push(stat(num(triage?triage.decisions:0),"in the triage pile","no discipline yet — a different job"));
+  h.push("</div>");
+
+  // Under the map the header's search box is the one keyword field on screen
+  // (Sam, 2026-08-25: two search fields that behave differently is a question
+  // about which to use), so the embedded grid carries only its toggle.
+  h.push('<div class="tools">'+
+    (embedded ? '' :
+    '<label for="q">Find a discipline</label>'+
+    '<input type="search" id="q" placeholder="e.g. welding, fire, nursing" value="'+esc(state.q)+'">')+
+    '<button class="btn" type="button" id="only-demo" aria-pressed="false">Only disciplines with sample data</button>'+
+    '</div>');
+  h.push('<div class="legend">'+
+    '<span><i class="sw" style="background:var(--violet)"></i> ✨ open decisions</span>'+
+    '<span><i class="sw" style="background:var(--crimson)"></i> ⚠ flagged identities</span>'+
+    '<span><i class="sw" style="background:var(--hunter)"></i> ✓ curator-reviewed</span>'+
+    '<span><i class="sw" style="background:var(--cobalt)"></i> sample data loaded in this prototype</span>'+
+    '</div>');
+  h.push('<div class="grid" id="grid"></div>');
+  host.innerHTML = h.join("");
+
+  var q = document.getElementById("q"), only=document.getElementById("only-demo");
+  var onlyDemo = false;
+  function paint(){
+    var term = state.q.trim().toLowerCase();
+    var list = ds.filter(function(d){
+      if(onlyDemo && !DATA.detail[d.name]) return false;
+      return !term || d.name.toLowerCase().indexOf(term)>=0;
+    });
+    // Disciplines this prototype can actually OPEN come first. Sorted purely by
+    // decision count, the top three cells are dead ends — the first thing a
+    // reader clicks tells them nothing works.
+    list = list.slice().sort(function(a,b){
+      var da = DATA.detail[a.name] ? 0 : 1, db = DATA.detail[b.name] ? 0 : 1;
+      return (da-db) || (b.decisions-a.decisions) || (b.ids-a.ids);
+    });
+    document.getElementById("grid").innerHTML = list.length
+      ? list.map(cell).join("")
+      : '<p class="empty">No discipline matches that.</p>';
+    Array.prototype.forEach.call(host.querySelectorAll(".cell"), function(b){
+      b.addEventListener("click", function(){ discipline(b.dataset.d); });
+    });
+  }
+  // Featured decisions: big enough to show structure, small enough to read.
+  var featured=[];
+  Object.keys(DATA.detail).forEach(function(dn){
+    DATA.detail[dn].forEach(function(p,pi){
+      if(p.nodes.length>=6 && p.nodes.length<=13) featured.push({d:dn,i:pi,p:p});
+    });
+  });
+  featured.sort(function(a,b){ return b.p.members-a.p.members; });
+  featured = featured.slice(0,12);
+  var fi = 0;
+  function paintHero(){
+    if(!featured.length || typeof window.__ccrPreview !== "function"){
+      var hero = host.querySelector(".hero"); if(hero) hero.remove();
+      return;
+    }
+    var f = featured[fi % featured.length];
+    window.__ccrPreview(document.getElementById("hero-gfx"), f.p);
+    document.getElementById("hero-h").textContent =
+      f.p.nodes.length + " identities that may be the same course";
+    document.getElementById("hero-p").innerHTML =
+      "<strong>"+esc(f.d)+"</strong> \u00b7 "+num(f.p.members)+
+      " local courses sit underneath these. Open it and you can move any one of them "+
+      "onto the identity it belongs to.";
+    document.getElementById("hero-open").onclick = function(){ window.__ccrDecision(f.d, f.i); };
+  }
+  var goU=document.getElementById("go-universe");
+  if(goU){
+    if(window.CPL_CCR_UNIVERSE && typeof window.__ccrUniverse==="function")
+      goU.addEventListener("click", function(){ window.__ccrUniverse(); });
+    else goU.closest(".banner").remove();
+  }
+  var goEsl=document.getElementById("go-esl");
+  if(goEsl){
+    if(window.CPL_ATLAS_ESL && typeof window.__ccrEsl==="function")
+      goEsl.addEventListener("click", function(){ window.__ccrEsl(); });
+    else goEsl.closest(".banner").remove();   // never offer a door that opens on nothing
+  }
+  document.getElementById("hero-next").addEventListener("click", function(){
+    fi++; paintHero();
+  });
+  paintHero();
+
+  if (q) q.addEventListener("input", function(){ state.q=q.value; paint(); });
+  only.addEventListener("click", function(){
+    onlyDemo=!onlyDemo; only.setAttribute("aria-pressed",String(onlyDemo)); paint();
+  });
+  paint();
+}
+function stat(n,l,s){
+  return '<div class="stat"><span class="n">'+esc(n)+'</span>'+
+         '<span class="l">'+esc(l)+'</span><div class="s">'+esc(s)+"</div></div>";
+}
+function cell(d){
+  var has = !!DATA.detail[d.name], tri = d.name===BLANK;
+  var tot = Math.max(d.ids,1);
+  var fw = Math.round(100*d.flagged/tot), rw = Math.round(100*d.reviewed/tot);
+  var ow = Math.max(0, Math.min(100-fw-rw, Math.round(100*d.decisions/tot)));
+  return '<button class="cell'+(tri?" triage":"")+(has?" demo":"")+'" type="button" data-d="'+esc(d.name)+'">'+
+    '<span class="nm">'+esc(d.name)+(has?' <span class="chip cid">sample</span>':"")+"</span>"+
+    '<span class="dec">'+num(d.decisions)+' <span class="meta">'+(d.decisions===1?"decision":"decisions")+"</span></span>"+
+    '<span class="meta">'+num(d.ids)+" identities · "+num(d.members)+" local courses</span>"+
+    '<span class="bar" role="img" aria-label="'+d.flagged+' flagged, '+d.reviewed+' reviewed of '+d.ids+' identities">'+
+      '<i class="o" style="width:'+ow+'%"></i><i class="f" style="width:'+fw+'%"></i><i class="r" style="width:'+rw+'%"></i>'+
+    "</span>"+
+    (tri?'<span class="meta">⚠ needs a discipline before it can be merged</span>':"")+
+    "</button>";
+}
+
+/* ══ SEARCH — jump straight to a course, a code or a discipline ══════ */
+function hl(text, term){
+  var t=String(text||""), i=t.toLowerCase().indexOf(term);
+  if(i<0) return esc(t);
+  return esc(t.slice(0,i))+"<mark>"+esc(t.slice(i,i+term.length))+"</mark>"+esc(t.slice(i+term.length));
+}
+function search(term){
+  term=String(term||"").trim().toLowerCase();
+  state.v="search"; state.q=term;
+  setCrumbs([{label:"Disciplines and subjects",go:forest},{label:'Search: "'+term+'"'}]);
+  if(term.length<2){
+    view.innerHTML='<h1>Search</h1><p class="empty">Type at least two characters.</p>';
+    return;
+  }
+  var hits=[], CAP=60;
+  // disciplines (all 158)
+  DATA.disciplines.forEach(function(d){
+    if(d.name.toLowerCase().indexOf(term)>=0)
+      hits.push({kind:"discipline", label:d.name, why:num(d.decisions)+" decisions · "+num(d.ids)+" identities",
+                 path:"Discipline", go:function(){ discipline(d.name); }});
+  });
+  // identities + local courses, inside the disciplines this prototype embeds
+  Object.keys(DATA.detail).forEach(function(dn){
+    DATA.detail[dn].forEach(function(p,pi){
+      p.nodes.forEach(function(nd){
+        if((nd.t||"").toLowerCase().indexOf(term)>=0 || nd.id.toLowerCase().indexOf(term)>=0){
+          hits.push({kind:"identity", label:nd.t||nd.id,
+                     why:nd.id+" · "+nd.n+" college"+(nd.n===1?"":"s")+
+                         (nd.flags.length?" · ⚠ flagged":""),
+                     path:dn+" › decision with "+p.nodes.length+" identit"+(p.nodes.length===1?"y":"ies"),
+                     go:function(){ window.__ccrDecision(dn,pi); }});
+        }
+        nd.m.forEach(function(m){
+          var inCode=(m.n||"").toLowerCase().indexOf(term)>=0;
+          var inTtl=(m.t||"").toLowerCase().indexOf(term)>=0;
+          var inCol=(m.c||"").toLowerCase().indexOf(term)>=0;
+          if(inCode||inTtl||inCol)
+            hits.push({kind:"course", label:(m.n||"")+" — "+(m.t||""),
+                       why:m.c+" · sits under "+(nd.t||nd.id),
+                       path:dn+" › decision with "+p.nodes.length+" identit"+(p.nodes.length===1?"y":"ies"),
+                       go:function(){ window.__ccrDecision(dn,pi); }});
+        });
+      });
+    });
+  });
+  var order={discipline:0, identity:1, course:2};
+  hits.sort(function(a,b){ return (order[a.kind]-order[b.kind]) || a.label.localeCompare(b.label); });
+  var shown=hits.slice(0,CAP);
+  var h=["<h1>"+esc(term)+"</h1>"];
+  h.push("<p>"+(hits.length?num(hits.length)+" match"+(hits.length===1?"":"es"):"No match")+
+         (hits.length>CAP?" — showing the first "+CAP:"")+
+         ". Disciplines first, then course identities, then the colleges' own courses.</p>");
+  h.push('<div class="note"><p><strong>Prototype scope.</strong> All '+
+         num(DATA.disciplines.length)+' disciplines are searchable. Individual courses are searchable inside the '+
+         Object.keys(DATA.detail).length+' disciplines this file embeds — the real tab would index all '+
+         num(DATA.totals.member_rows)+'.</p></div>');
+  if(shown.length){
+    h.push('<ul class="hits">'+shown.map(function(x,i){
+      return '<li><button type="button" data-h="'+i+'">'+
+        '<span class="path">'+esc(x.path)+"</span>"+
+        "<span><strong>"+hl(x.label,term)+"</strong></span>"+
+        '<span class="why">'+esc(x.why)+"</span></button></li>";
+    }).join("")+"</ul>");
+  }
+  view.innerHTML=h.join("");
+  Array.prototype.forEach.call(view.querySelectorAll(".hits button"), function(b){
+    b.addEventListener("click", function(){ shown[+b.dataset.h].go(); });
+  });
+}
+
+/* ══ VIEW 2 — one discipline ══════════════════════════════════════════ */
+/* ⭐ THE WAY BACK IS A CRUMB, AND THE TRIP MOVES THE HASH (2026-09-06). This
+ * view paints over SkyView, and it used to do so without touching the route or
+ * offering a step back to the map: the first crumb went to the forest grid, not
+ * to SkyView, so from here Sam had no control that returned him to what he had
+ * been working on — "I have lost sky view. I am stuck." Two things fix it, and
+ * both are needed: a NAMED crumb (visible, unlike Back) and a route
+ * (#work/<discipline>) so Back, a refresh, the Views menu and a shared link all
+ * agree with the screen. __ccrSyncHash lives in ccr_universe.js with the rest of
+ * the router; guarded because this template also boots without it. */
+function disciplineCrumbs(name){
+  var c=[];
+  if(typeof window.__ccrUniverse==="function")
+    c.push({label:"SkyView", go:function(){ window.__ccrUniverse({solo:true}); }});
+  c.push({label:"Disciplines and subjects", go:forest});
+  c.push({label:name});
+  return c;
+}
+function discipline(name){
+  state.v="disc"; state.disc=name; state.dec=null;
+  setCrumbs(disciplineCrumbs(name), {view:"work"});
+  if(typeof window.__ccrSyncHash==="function") window.__ccrSyncHash("work", name);
+  var meta = DATA.disciplines.filter(function(d){return d.name===name;})[0]||{};
+  var packs = DATA.detail[name];
+  var h=[];
+  h.push("<h1>"+esc(name)+"</h1>");
+  h.push('<div class="stats">');
+  h.push(stat(num(meta.decisions||0),"decisions here","the unit of work"));
+  h.push(stat(num(meta.ids||0),"course identities",num(meta.members||0)+" local courses under them"));
+  h.push(stat(num(meta.flagged||0),"⚠ carry a data flag","mixed TOP, mixed credit type…"));
+  h.push(stat(num(meta.reviewed||0),"✓ curator-reviewed","of "+num(meta.ids||0)));
+  h.push("</div>");
+  if(!packs){
+    h.push('<div class="note"><p><strong>No sample data for this discipline in the prototype.</strong> '+
+      'The extract embeds five disciplines so the file stays small enough to open instantly. '+
+      'The real tab would load this on demand. Try <strong>Welding</strong>, <strong>Automotive Technology</strong>, '+
+      '<strong>Fire Technology</strong>, <strong>Administration of Justice</strong> or '+
+      '<strong>Child Development/Early Childhood Education</strong>.</p></div>');
+    view.innerHTML=h.join("");
+    return;
+  }
+  h.push('<p>Each card is one decision — a small group of identities that some evidence lane thinks '+
+    'may be the same course. Open one to see the courses underneath and move any of them.</p>');
+  h.push('<div class="decks" id="decks"></div>');
+  view.innerHTML=h.join("");
+  document.getElementById("decks").innerHTML = packs.map(function(p,i){
+    var names = p.nodes.slice(0,4).map(function(n){
+      return "<li>"+esc(n.t||n.id)+' <span class="sub">'+esc(n.id)+"</span></li>";}).join("");
+    return '<button class="deck" type="button" data-i="'+i+'">'+
+      '<span class="hd"><span class="sz">'+p.nodes.length+' identit'+(p.nodes.length===1?"y":"ies")+"</span>"+
+      (p.flagged?'<span class="chip flag">⚠ '+p.flagged+"</span>":'<span class="chip mut">no flags</span>')+"</span>"+
+      "<ul>"+names+"</ul>"+
+      (p.nodes.length>4?'<span class="more">+'+(p.nodes.length-4)+" more</span>":"")+
+      '<span class="more">'+num(p.members)+" local courses</span>"+
+      "</button>";
+  }).join("");
+  Array.prototype.forEach.call(view.querySelectorAll(".deck"), function(b){
+    b.addEventListener("click", function(){ window.__ccrDecision(name, +b.dataset.i); });
+  });
+}
+window.__ccrForest = function(){ forest(view); };
+window.__ccrForestInto = function(el){ if (el) forest(el, {embedded:true}); };
+window.__ccrDiscipline = discipline;
+window.__ccrSearch = search;
+// Boot after EVERY script in the document has run — the graph module defines
+// __ccrPreview/__ccrDecision below this one, and forest() uses both.
+//
+// SkyView leads (Sam, 2026-08-25: "SkyView should be the initial CCR tab … I
+// think SkyView is more manageable and less intimidating"), and since
+// 2026-09-05 it leads ALONE — the map filling the window, the comprehensive
+// view and the workspace one menu click away. __ccrRoute reads the hash
+// (#skyview · #comprehensive · #disciplines · #subjects · #esl) so a view can be
+// linked to. It falls back to the forest when the universe payload is missing,
+// because a blank landing view is worse than a less friendly one.
+function boot(){
+  // The served page fetches its payloads first and routes when they arrive
+  // (build_ccr_atlas.py's loader sets this flag); painting the forest under a
+  // "Loading" message it is about to replace helps nobody.
+  if (window.CPL_SKYVIEW_LOADING) return;
+  if (typeof window.__ccrRoute === "function") window.__ccrRoute();
+  else if (window.CPL_CCR_UNIVERSE && typeof window.__ccrUniverse === "function") window.__ccrUniverse();
+  else forest();
+}
+if (document.readyState === "loading")
+  document.addEventListener("DOMContentLoaded", boot);
+else boot();
+})();
+</script>
+<script id="atlas-esl" type="application/json">__ESLDATA__</script>
+<script>try{window.CPL_ATLAS_ESL=JSON.parse(document.getElementById("atlas-esl").textContent);}catch(e){}</script>
+<script>__GRAPHJS__</script>
+<script>__ESLJS__</script>
+<script id="atlas-universe" type="application/json">__UNIVDATA__</script>
+<script id="atlas-univmem" type="application/json">__UNIVMEM__</script>
+<script>try{window.CPL_CCR_UNIVERSE=JSON.parse(document.getElementById("atlas-universe").textContent);window.CPL_ATLAS_DATA=JSON.parse(document.getElementById("atlas-data").textContent);}catch(e){}
+try{window.CPL_CCR_UNIVERSE_MEMBERS=JSON.parse(document.getElementById("atlas-univmem").textContent);}catch(e){window.CPL_CCR_UNIVERSE_MEMBERS=null;}</script>
+<!-- The reviewer session and the one sign-in door, shared with COBI rather than
+     reimplemented here (Sam, 2026-09-18: "I don't see anywhere on the surface
+     how to log in to curate"). These are the FIRST external scripts on this
+     page — everything else is inlined by build_ccr_atlas.py — and they resolve
+     to the repo root for both outputs: the committed served page at
+     prototype/skyview.html and the gitignored full build beside it.
+
+     ⚠️ NEVER WRITE A BUILD PLACEHOLDER IN THIS COMMENT. build_ccr_atlas.py
+     substitutes with str.replace, which does not care that it is inside a
+     comment: naming the universe placeholder here inlined the whole 485 KB of
+     ccr_universe.js a second time and nearly doubled the served page. Say
+     "the universe script" in prose and let the tag below be the only one.
+
+     cpl_session.js FIRST and before the universe script: it renews `cpl_sb` underneath
+     every reader and start()s while its own script evaluates, so the universe
+     JS reads a hydrated session rather than "signed out" for the whole parse.
+     A missing file fails soft — ccr_universe.js checks for window.CPL_SESSION
+     before offering anything, and the map stays read-only without it. -->
+<script src="../team_phrase.js"></script>
+<script src="../cpl_session.js"></script>
+<script src="../reviewer_signin.js"></script>
+<script>__UNIVJS__</script>
+</body>
+</html>

@@ -6,6 +6,8 @@ related:
   - "[[CLAUDE]]"
   - "[[docs/exhibit_canonicalization_lessons]]"
   - "[[docs/kb-notes/reference-authority-anchored-credential-naming]]"
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # You are Session 102

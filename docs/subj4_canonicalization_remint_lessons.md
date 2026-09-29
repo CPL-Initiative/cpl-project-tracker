@@ -362,7 +362,7 @@ pattern as the 2026-05-22 re-mint's playbook).
 | `kb/coci_articulations.json` | 3,750 records re-keyed |
 | `kb/coci_unified_courses.json` | 2,868 member refs across 1,366 clusters |
 | `kb/coci_curation.json` | 5 keys re-keyed, 1 no-change (BSIC), 1 cluster untouched |
-| Supabase `kb_curation` | 5 rows renamed (3 from a cancelled-run partial + 2 from the successful run; idempotent — same end state) |
+| Supabase `kb_curation` | 5 rows renamed (3 from a canceled-run partial + 2 from the successful run; idempotent — same end state) |
 | **`subject_collision_signal`** auditor tag | **7,203 → 0** ✓ (cleanup receipt) |
 | `mid_id_off_scheme` auditor tag | 27 → 2 (residue: `F M1002` + `N M9001`; both blank-discipline, unfixable) |
 
@@ -425,7 +425,7 @@ match. Even a tiny SELECT beats N × no-op PATCH.
 
 ### Happy-idempotency wrinkle
 
-Run #3 of the apply workflow was cancelled mid-Supabase-step. It had partially
+Run #3 of the apply workflow was canceled mid-Supabase-step. It had partially
 PATCHed the AUTB triple (`AB M1001`, `ABDY M1001`, `ABDY M10AA`) before the
 cancel. When run #4 started after the perf fix landed:
 

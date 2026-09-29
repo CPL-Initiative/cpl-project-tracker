@@ -10,6 +10,8 @@ related:
   - docs/session_21_handoff.md (Twenty → Sess 22)
   - CLAUDE.md §6b (sentinel anchors), §7b (tab layout), §11 roadmap
 moniker_suggestion: Bruh XXIII / "Twenty-Three" — or claim your own
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # Session 23 Hand-off Prompt

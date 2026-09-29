@@ -269,7 +269,10 @@ regression. Lead with the C-ID rows that now correctly anchor the table.
 |---|---|
 | Authoritative old → new alias | `kb/remint_out/alias_map.json` |
 | Split manifest (Phase A/B input) | `kb/promotions.json` (and copy at `kb/remint_out/promotions.json`) |
-| Split-manifest re-key (run after EVERY later re-mint) | `kb/_rekey_promotions.py` — `kb/promotions.json` is id-keyed and Phase A/B looks ids up exactly, so any re-key that skips it silently severs the official-ID fold evidence (Session-40 root cause, `docs/official_id_fold_scope.md`; receipts under `kb/promotions_rekey_out/`). The id-keyed artifact classes that must move together at every re-key: memberships · articulations · curation + its Supabase mirror · **promotions** |
+| Split-manifest re-key (run after EVERY later re-mint) | `kb/_rekey_promotions.py` — `kb/promotions.json` is id-keyed and Phase A/B looks ids up exactly, so any re-key that skips it silently severs the official-ID fold evidence (Session-40 root cause, `docs/official_id_fold_scope.md`; receipts under `kb/promotions_rekey_out/`). The id-keyed artifact classes that must move together at every re-key: memberships · articulations · curation + its Supabase mirror · **promotions** · **CR/NC mirrors** (`kb/_rekey_crnc_mirrors.py`, step `crnc-mirrors` of `kb/_post_apply_chain.py` since 2026-09-04 — the class the chain was missing when the 2026-09-03 recode left 398 of its keys on retired ids) |
+| UC-CUR placeholder promotion (run when a client or auto-merge mint leaves a `UC-CUR-*` target; 0 on 2026-09-04) | `kb/_uc_cur_promote.py` — dry run by default (receipt `kb/uc_cur_promote_out/<date>/`), `--apply --receipt … --fresh-read …` under P0 · P1 · P3 · G1-G8. Promotes each placeholder to a REAL M-ID record the way the Z-band retirement materialized a machine cluster (Sam, 2026-09-03, card 12): the discipline's canonical SUBJ4 (an umbrella keeps the members' split code), band 9 noncredit / 1 credit, the lowest free number with every id ever minted reserved, continuation band when full (card 11); origin `curator mint` / `machine cluster`, `_promoted_from`, no membership entry of its own. HELD, never guessed: one pointer, no discipline, no code, no band. Then register in ALIAS_MAPS, `supabase-rekey.yml`, the chain. Guard `tests/uc_cur_promote_test.py`. |
+| Identities map re-key (the S110 side-table class; 1,597 ghost keys measured 2026-09-04) | `kb/_identities_rekey_dryrun.py` — dry run + receipt `kb/identities_rekey_out/<date>/`; `--apply --receipt … --ruling "…"` under P0 · P1 · G1-G5 after Sam replies to the five-item sheet in its report. Resolves each ghost through the full ALIAS_MAPS chain; the live entry wins a collision; the title-agreeing ghost wins a convergence; dead keys drop. NOT registered in ALIAS_MAPS (it re-keys a side table, it mints nothing). Guard `tests/identities_rekey_test.py`. |
+| ETHS re-mint (2026-09-28; the 31 physical-activity ids, Sam's 2026-09-22 ruling) | `kb/_eths_remint.py` — dry run by default, `--scope` per class, `--apply --receipt … --fresh-read … --ruling …` under V0–V5 · P0 · P1 · P3, then `--rekey-skyview`; receipt `kb/eths_remint_out/2026-09-28/ruled/`; guard `tests/eths_remint_test.py` |
 | Validation diff report | `kb/remint_out/VALIDATION_1c.md` |
 | Patch artifact (1c-ii export change) | `kb/remint_out/export_1cii.patch` |
 | Re-mint generator (minted + memberships + singletons + alias + promotions) | `kb/_remint_apply.py` |
@@ -313,6 +316,44 @@ PRs:
 
 ## Lessons / patterns to reuse
 
+- **A re-mint's second half is every surface that copies ids, and the land
+  names them** (2026-09-28, the ETHS re-mint). Beyond the chain's classes,
+  SkyView's hand-built layout (`prototype/ccr_universe*.json`, never rebuilt
+  nightly by Sam's 2026-09-06 ruling) keeps its ids until `--rekey-skyview`
+  rewrites them token for token; the CER-derived payloads follow their own
+  builders and the nightly CER. A fresh read (P3) compares only what the write
+  touches: every field of a moved id, and a pointer's `merge_into` alone (it
+  first blocked on a pointer child's own title the read rightly skipped). And a
+  test that checks an older receipt's ids must resolve them through the maps
+  dated after it, never the whole chain. The first continuation-band ids
+  (`KINE M2001`–`M2022`) landed here; every parser takes any band digit.
+
+- **The verdicts are the dry run's flags; a fold's proof is its held count; a
+  leftover sweep must know a chained key** (2026-09-04). A decision sheet's
+  per-item verdicts map onto the planner's own flags (`--scope` for "hold this
+  cohort", `--ruled-held` for "fold them anyway, on my ruling"), so a per-verdict
+  receipt is one re-run and the apply refuses a receipt cut under other flags
+  (`kb/_prefix_fold_apply.py`, P1). After a fold lands, fold-verify reads the
+  rows the receipt HELD, not 0 — a row held on TOP alone stays counted until a
+  second signal or a ruling arrives — so the apply prints the number the chain
+  must match. A key vacated and refilled in one plan is live afterward by
+  design, so the "no old id left" sweep excludes chained keys and leaves them
+  to the permutation gates. And every id-keyed artifact class belongs in the
+  post-apply chain: `kb/crnc_mirrors.json` was not, and the recode left 398 of
+  its 2,836 keys on retired ids until the next session measured it.
+- **A code change is a prefix re-key that keeps the number** (2026-09-03). The
+  June fold allocator (`kb/_subj4_dryrun.py`) numbers every bucket by title and
+  would renumber the whole catalog for a rename; a canonical-code change uses
+  the keep-number pattern (`kb/_pols_remint.py`, `kb/_authority_recode_dryrun.py`),
+  in two passes so one taken key cannot cascade. See
+  `docs/kb-notes/methodology-a-code-change-is-a-prefix-rekey-not-a-resequence.md`.
+- **Rehearse the apply on a scratch copy of `kb/`, and count freshness on the
+  sync's own fields** (2026-09-03). The 2026-09-03 land ran end to end on a copy
+  first (it showed the retirement only verifies after the recode is applied) and
+  its P3 fresh read uses the seven fields of `kb/_apply_curation.py` — a
+  five-field count reads `merge_dismissed`-only entries as drift. Read the
+  post-land fold-verify and audit deltas as worklists:
+  `docs/kb-notes/methodology-land-a-re-mint-by-rehearsal-and-a-fresh-read.md`.
 - **Measure first, change second.** A dry-run that maps the *distribution* of
   outcomes before you build the apply step is cheap, reviewable, and
   decouples the data question ("what changes?") from the implementation

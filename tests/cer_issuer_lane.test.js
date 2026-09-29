@@ -247,7 +247,7 @@ const rowFor = (doc, name) => Array.from(doc.querySelectorAll(".cr-ni-row"))
       && x.body.value === "Federal Aviation Administration (FAA) | CalCERTS, Inc."));
 
   // ── save → re-edit → re-save (the unresponsive-firearms trap, 2026-07-08):
-  // applySavedLane disables the button "✓ Saved" while the inputs stay live;
+  // applySavedLane disables the button "Saved" while the inputs stay live;
   // a keystroke used to relabel the still-DISABLED button "Save" — dead. ──
   const tkBtn = tenKey.querySelector(".cr-ni-save");
   check("re-edit trap: saved row's button starts disabled ✓",
@@ -264,7 +264,7 @@ const rowFor = (doc, name) => Array.from(doc.querySelectorAll(".cr-ni-row"))
   check("re-edit trap: the re-save writes the corrected issuer",
     log.writes.some((x) => x.body.field === "issuing_agency_override"
       && x.body.value === "American Welding Society (AWS)"));
-  check("re-edit trap: row flips back to ✓ Saved",
+  check("re-edit trap: row flips back to Saved",
     tkBtn.disabled && /Saved/.test(txt(tkBtn)));
 
   // ── bulk save: the remaining ⚡ cx row saves its issuer ──

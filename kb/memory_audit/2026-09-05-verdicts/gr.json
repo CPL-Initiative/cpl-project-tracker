@@ -1,0 +1,302 @@
+{
+  "part": "gr",
+  "expected_rows": 9,
+  "coverage": {
+    "rows_read": 9,
+    "rows_judged": 9,
+    "note": "complete; every row judged against lane files, code on disk, read-only Supabase SELECTs and git log on 2026-09-05"
+  },
+  "counts": {
+    "confirmed": 9,
+    "stale": 0,
+    "superseded_by_row": 0,
+    "snapshot": 0,
+    "unverifiable": 0
+  },
+  "verdicts": [
+    {
+      "id": "6a5d7d56-fbe2-4143-a667-61c67e7f4363",
+      "slug": "gr-sensitivity-open-rows-already-exist",
+      "kind": "fact",
+      "title": "Some regulation rows are already marked shareable - our own notes said none were",
+      "verdict": "confirmed",
+      "confidence": "medium",
+      "reason": "Core claim re-measured true: cpl rows are 12 open / 8 restricted (dual-enrollment 4 restricted); the \"(nothing open)\" wording is gone from CLAUDE.md and the lane. The detail's \"0 of 20 verified\" no longer holds: verified_at is set on 9 of 24 rows (2026-08-25/30) — treat that clause as dated.",
+      "evidence": [
+        {
+          "source": "sql",
+          "quote": "gr_revisions grouped by area_id, sensitivity, status: cpl/open = in_procedure 3 + proposed 8 + retired 1; cpl/restricted = proposed 8; dual-enrollment/restricted = 4; count(verified_at) = 9 of 24"
+        },
+        {
+          "source": "grep",
+          "quote": "grep -n \"nothing open\" CLAUDE.md docs/reference/lanes/gr-register.md → no matches"
+        },
+        {
+          "source": "docs/reference/lanes/gr-register.md:24",
+          "quote": "⚠️ 0 of 20 verified — Sam's authenticated PDFs are the first material that can move it. (lane text lags the DB, which now carries verified_at on 9 rows)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "f84b1ace-0a14-4c63-bb96-065d1d5458a0",
+      "slug": "blast-rank-is-computed-by-nothing",
+      "kind": "fact",
+      "title": "The impact ranking on the regulation rows was typed in by hand - nothing calculates it",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Observable: blast_rank is in no .py/.sql/.yml (only gr_priorities.js + 3 tests); the tab's comment says nothing computes it; live: 16 of 20 cpl rows ranked, 0 of 4 dual-enrollment. Aged sub-claim: #1333 (same day) shipped Lane B, which PROPOSES blast_rank_suggested for a human to accept.",
+      "evidence": [
+        {
+          "source": "grep",
+          "quote": "grep -rn blast_rank --include=*.py --include=*.sql --include=*.yml . → no matches; JS only: gr_priorities.js, tests/gr_priorities|gr_revision_edit|gr_deep_analysis.test.js"
+        },
+        {
+          "source": "gr_priorities.js:798-800",
+          "quote": "THE RE-ANALYSIS IS DETERMINISTIC, NOT A MODEL. Nothing in this repo has ever computed anything on these rows — `blast_rank` was authored during the Sky168 rebuild"
+        },
+        {
+          "source": "gr_priorities.js:1539-1543",
+          "quote": "if (res.blast_rank_suggested != null && res.blast_rank_suggested !== r.blast_rank) { row(\"RANK\", \"Proposed rank \" … onAccept({ blast_rank: res.blast_rank_suggested })"
+        },
+        {
+          "source": "sql",
+          "quote": "gr_revisions count(blast_rank): cpl = 16 of 20 (rows 17-19, 21 added 2026-08-30 are unranked); dual-enrollment = 0 of 4"
+        },
+        {
+          "source": "docs/reference/lanes/gr-register.md:24",
+          "quote": "Lane A is DETERMINISTIC and that is the design — `blast_rank` is computed by nothing, so \"reanalysis\" had no referent"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "f200bdb8-5c87-4383-bb64-39903f2f248b",
+      "slug": "sb135-created-ed-code-article-9-for-cpl",
+      "kind": "fact",
+      "title": "A new state law put credit for prior learning into the Education Code, and one register row now asks for something already enacted",
+      "verdict": "confirmed",
+      "confidence": "medium",
+      "reason": "Statutory content confirmed by both lanes (Article 9 eff. 2026-07-13; §78093.2(b)(2) binds every campus; one finding against #12; four uncovered duties). Register clause is historical: row #2 was rewritten 2026-08-30 (receipted), now reads \"now enacted law\"; the cpl register has 20 rows, not 16.",
+      "evidence": [
+        {
+          "source": "docs/reference/lanes/gr-register.md:24",
+          "quote": "SB 135 CHANGED THE GROUND — Ed. Code Article 9 (§78093–78093.2, eff. 2026-07-13): row #2 asks for enacted law; one finding cuts AGAINST #12; four duties no row covers."
+        },
+        {
+          "source": "sql",
+          "quote": "gr_revisions cpl n=2 (updated 2026-08-30, blast_rank 2): \"CCC-to-CCC acceptance of transcribed CPL is now enacted law — EC §78093.2(b)(2). What remains: a memo confirming it binds ever…\""
+        },
+        {
+          "source": "docs/receipts/2026-08-30-register-reanalysis-receipts.md:32",
+          "quote": "- **Row 2** `1a09b102` — summary before: \"<p><b>Approach.</b> Require colleges"
+        },
+        {
+          "source": "docs/reference/lanes/t5-55050-article-9.md:24",
+          "quote": "THE ARGUMENT IS ABOUT DISTRICTS — §78093.2(b)(1)/(b)(2) bind every campus TODAY."
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "fc3cb20e-846a-48f8-bead-69d62adca20c",
+      "slug": "resolve-a-redline-as-an-edit-list-not-retyped-prose",
+      "kind": "procedure",
+      "title": "Write down each edit and why, instead of retyping the finished text",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The script on disk holds exactly 21 INLINE resolutions and 7 DELETE_PARAS (counted), each with a reason, and sys.exit()s if an edit or struck paragraph is not found or a run-together marker survives; the KB note exists and the lane restates the contiguous-lettering assertion.",
+      "evidence": [
+        {
+          "source": "kb/_derive_55050_clean.py:33,90",
+          "quote": "INLINE = [ … 21 tuples … ]; DELETE_PARAS = [ … 7 tuples … ] (counted 2026-09-05)"
+        },
+        {
+          "source": "kb/_derive_55050_clean.py:149-150",
+          "quote": "if raw_s not in body: sys.exit(f\"FAIL: inline edit did not match the source -> {why}\""
+        },
+        {
+          "source": "kb/_derive_55050_clean.py:156",
+          "quote": "sys.exit(f\"FAIL: unresolved run-together subdivision markers: {leftovers}\")"
+        },
+        {
+          "source": "docs/reference/lanes/t5-55050-article-9.md:24",
+          "quote": "Final lettering (a)–(n), contiguous, asserted by the verifier."
+        },
+        {
+          "source": "docs/kb-notes/methodology-resolve-a-redline-as-an-edit-list.md",
+          "quote": "file exists on disk (durable note the lane points at)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "996894b7-f514-46da-8b77-7b01ea22b675",
+      "slug": "a-redline-pdf-extracts-as-run-together-text",
+      "kind": "pitfall",
+      "title": "A marked-up legal document turns to nonsense when you extract the text",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The lane's doctrine says exactly this (draft against the generated clean text, never the extraction); the raw extraction on disk still shows \"5575355050(i)\", and the derive script resolves \"at leastminimum\", \"examsexaminations\" and the (f)-only \"contentoutcomes\" case.",
+      "evidence": [
+        {
+          "source": "docs/reference/lanes/t5-55050-article-9.md:24",
+          "quote": "THE ADOPTED PDF IS A REDLINE AND `pdftotext` DROPS THE FORMATTING — draft against the generated `t5_55050_clean_after_2026-08-12.txt`"
+        },
+        {
+          "source": "docs/reference/statute/t5_55050_55051_final_reg_text_2026-08-12.txt:137",
+          "quote": "(d) Except through credit by examination, as defined in section 5575355050(i), high school"
+        },
+        {
+          "source": "kb/_derive_55050_clean.py:37",
+          "quote": "(\"published at leastminimum in college catalogs\", \"published at minimum in college catalogs\","
+        },
+        {
+          "source": "kb/_derive_55050_clean.py:46",
+          "quote": "'content' struck, 'outcomes' inserted -- in (f) ONLY; (h) keeps 'course content' "
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "640a5438-d3a5-41d4-83ed-d3200375c338",
+      "slug": "an-amendment-inherits-every-cross-reference-into-it",
+      "kind": "fact",
+      "title": "Another section now points into this one, so its lettering cannot move",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The clean adopted text shows §55051(d) → §55050(i); the amendment package's constraint #1 appends reciprocity as (n) and says nothing re-letters (a)–(m); the lane: nothing re-letters below (l), lettering (a)–(n) contiguous; the derive script records the 55753→55050(i) insertion.",
+      "evidence": [
+        {
+          "source": "docs/reference/statute/t5_55050_clean_after_2026-08-12.txt:62",
+          "quote": "(d) Except through credit by examination, as defined in section 55050(i), high school courses may not be used to satisfy:"
+        },
+        {
+          "source": "docs/t5_55050_amendment_package_draft.md:31-34",
+          "quote": "1. Do not re-letter. §55051(d), amended in the same 2026-08-12 package, now reads … So the new reciprocity clause is appended as (n)"
+        },
+        {
+          "source": "docs/t5_55050_amendment_package_draft.md:23",
+          "quote": "Nothing here re-letters (a)–(m) — see §0."
+        },
+        {
+          "source": "kb/_derive_55050_clean.py:83",
+          "quote": "'55753' struck, '55050(i)' inserted -- this is why 55050 must not be re-lettered"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "ee21ebdb-80f3-4521-b71e-99f3be3159de",
+      "slug": "a-deleted-conjunction-orphans-its-punctuation",
+      "kind": "pitfall",
+      "title": "Crossing out a word can leave the sentence missing a comma",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The verifier asserts both NOTE lines read as sentences in the accept-all view; the derive script records the struck \" and\" / inserted \", and 88782\" edit; ran the verifier read-only 2026-09-05: 95 checks, 0 failed.",
+      "evidence": [
+        {
+          "source": "kb/_verify_55050_redline.py:186-191",
+          "quote": "# the NOTE must still read as a sentence once accepted … \"NOTE Authority reads correctly when accepted\" … \"NOTE Reference reads correctly when accepted\""
+        },
+        {
+          "source": "kb/_derive_55050_clean.py:62",
+          "quote": "'and' before 70902 struck; ', and 88782' inserted -- 88782 IS the adopted citation"
+        },
+        {
+          "source": "run: python3 kb/_verify_55050_redline.py",
+          "quote": "55050 redline verification — 95 checks, 0 failed"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "e8d68c53-87b8-4eee-a8d2-64e24439868f",
+      "slug": "reject-all-must-reproduce-the-source-document",
+      "kind": "procedure",
+      "title": "Undoing every tracked change has to give back the original, word for word",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Ran the verifier read-only 2026-09-05 against the committed v5 docx: reject-all reproduces the adopted text, 95 checks, 0 failed (the row's 71 is an older count; the lane says 95). The invariant and the perturbation design are unchanged.",
+      "evidence": [
+        {
+          "source": "kb/_verify_55050_redline.py:4-7",
+          "quote": "REJECT ALL CHANGES must reproduce the regulation exactly as adopted. If the baseline is off by a word, every tracked change in the document is drawn against a section that does not exist."
+        },
+        {
+          "source": "run: python3 kb/_verify_55050_redline.py",
+          "quote": "95 checks, 0 failed; tracked changes: 32 insertions, 16 deletions; OK — rejecting every change reproduces the regulation as adopted 2026-08-12"
+        },
+        {
+          "source": "docs/reference/lanes/t5-55050-article-9.md:24",
+          "quote": "reject-all must reproduce the adopted text (`kb/_verify_55050_redline.py`, 95 checks, perturbations one per ruling)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "d04ffc5a-6bba-4243-8ef1-6f719e255f47",
+      "slug": "a-section-number-range-is-not-a-scope",
+      "kind": "pitfall",
+      "title": "We scoped the law by section numbers and missed part of it",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The t5 lane states the lesson and the §75013 finding as current truth; PR #1352 is on main; the cited comparison doc exists; the related row sb135-is-wider-than-article-9 exists (proposed).",
+      "evidence": [
+        {
+          "source": "docs/reference/lanes/t5-55050-article-9.md:24",
+          "quote": "SB 135 IS WIDER THAN ARTICLE 9: §75013 is Sec. 14 of the SAME chapter, its (b) opens \"As part of the Credit for Prior Learning Initiative\" … A section-number range is not a scope."
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "c1ff16ce §55050 v3: merge Sam's cleaned-up line with the v2 changes he had not seen (#1352)"
+        },
+        {
+          "source": "docs/t5_55050_vs_gr_register.md",
+          "quote": "file exists on disk (the row's cited source)"
+        },
+        {
+          "source": "slug:sb135-is-wider-than-article-9",
+          "quote": "proposed fact, 2026-08-26 — the related row exists"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    }
+  ]
+}

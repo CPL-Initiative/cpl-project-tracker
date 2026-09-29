@@ -10,6 +10,8 @@ related:
   - docs/excel_to_supabase_lessons.md (read the Session 25 section)
   - CLAUDE.md §11 roadmap (Excel→Supabase row — Session 25 status)
 moniker_suggestion: Bruh 26 / "Two-Six" / "Deuce-Six" — or claim your own
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # Session 26 Hand-off Prompt

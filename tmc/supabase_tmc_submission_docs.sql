@@ -66,6 +66,13 @@ create policy tmc_submission_docs_insert on public.tmc_submission_docs
   for insert to anon, authenticated with check (true);
 create policy tmc_submission_docs_delete on public.tmc_submission_docs
   for delete to authenticated using (public.is_allowed_reviewer());
+-- EXPLICIT GRANTS (2026-09-23). From 2026-10-30 Supabase stops granting the
+-- API roles on a NEW table in public, and this table is not live yet, so its
+-- grants ride with it: each role gets the commands its policies allow.
+-- Guarded by tests/supabase_table_grants_test.py.
+grant select, insert on public.tmc_submission_docs to anon;
+grant select, insert, delete on public.tmc_submission_docs to authenticated;
+grant select, insert, update, delete on public.tmc_submission_docs to service_role;
 
 -- 2) The Storage bucket (illustrative DDL — buckets/policies are created via the
 --    Supabase Storage API/MCP at apply-time; shown here as the schema of record).

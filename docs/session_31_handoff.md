@@ -10,6 +10,8 @@ related:
   - docs/kb-notes/reference-college-short-names.md (the #264 dataset)
   - CLAUDE.md §11 "Session 30" subsection
 moniker_suggestion: Bruh 31 / "Thirty-One" / "Treinta-y-Uno" — or claim your own
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # Session 31 Hand-off Prompt

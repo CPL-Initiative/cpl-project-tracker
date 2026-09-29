@@ -12,6 +12,8 @@ related:
   - "[[docs/kb-notes/playbook-trail-crew-method-magic-audit]]"
   - "[[kb/merge_doctrine]]"
   - "[[docs/ccr_convergence_handoff]]"
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 You are **Session 112**. Session 111 (Bruh SkyMighty) was an Everest: read

@@ -1,9 +1,9 @@
 {
  "_about": "CareerOneStop authority matches for CER unified titles (kb/_match_cos_authority.py). DERIVED overlay — the CER renders these as ✓ COS badges; display requires the attribution below.",
  "_attribution": "Source: CareerOneStop (www.careeronestop.org), sponsored by the U.S. Department of Labor, Employment and Training Administration; data maintained by the Minnesota Department of Employment and Economic Development (DEED).",
- "_authority_synced_at": "2026-07-07T17:04:23Z",
- "_generated_at": "2026-07-07T17:04:27Z",
- "count": 83,
+ "_authority_synced_at": "2026-08-03T11:48:08Z",
+ "_generated_at": "2026-08-03T11:48:18Z",
+ "count": 91,
  "matches": {
   "ACE Health Coach Certification": {
    "name": "ACE Health Coach Certification",
@@ -78,22 +78,6 @@
    "acronym": "CAP",
    "type": "Core"
   },
-  "Advanced Medical Surgical Nursing": {
-   "name": "Medical-Surgical Nursing",
-   "org": "ANA Enterprise",
-   "tier": "contains",
-   "id": "6128-C",
-   "acronym": "MEDSURG-BC",
-   "type": "Specialty"
-  },
-  "Advanced Medical Surgical Nursing Lab": {
-   "name": "Medical-Surgical Nursing",
-   "org": "ANA Enterprise",
-   "tier": "contains",
-   "id": "6128-C",
-   "acronym": "MEDSURG-BC",
-   "type": "Specialty"
-  },
   "Autodesk Certified User/Professional — AutoCAD": {
    "name": "AutoCAD Certified Professional",
    "org": "Autodesk, Inc.",
@@ -108,13 +92,13 @@
    "id": "11715-E",
    "type": "Skill"
   },
-  "Beginning Medical Surgical Nursing": {
-   "name": "Medical-Surgical Nursing",
-   "org": "ANA Enterprise",
-   "tier": "contains",
-   "id": "6128-C",
-   "acronym": "MEDSURG-BC",
-   "type": "Specialty"
+  "Building Plans Examiner": {
+   "name": "Building Plans Examiner",
+   "org": "International Code Council",
+   "tier": "exact",
+   "id": "3403-A",
+   "acronym": "BPE",
+   "type": "Core"
   },
   "Business Communication": {
    "name": "Communication Skills for Business",
@@ -192,6 +176,14 @@
    "acronym": "CSCS",
    "type": "Specialty"
   },
+  "Child Development": {
+   "name": "Child Development Associate",
+   "org": "Council for Professional Recognition",
+   "tier": "contains",
+   "id": "0865-A",
+   "acronym": "CDA",
+   "type": "Core"
+  },
   "Child Development Associate (CDA) Credential": {
    "name": "Child Development Associate",
    "org": "Council for Professional Recognition",
@@ -206,6 +198,14 @@
    "tier": "exact",
    "id": "10827-D",
    "type": "Product/Equipment"
+  },
+  "Commercial Building Inspector": {
+   "name": "Commercial Building Inspector",
+   "org": "International Code Council",
+   "tier": "exact",
+   "id": "3392-A",
+   "acronym": "CBI",
+   "type": "Core"
   },
   "Commercial Driver's License (CDL) Permit": {
    "name": "Commercial Driver License (CDL)",
@@ -286,11 +286,26 @@
    "acronym": "C/HFI",
    "type": "Product/Equipment"
   },
+  "Construction Craft Laborer Apprenticeship": {
+   "name": "Construction Craft Laborer",
+   "org": "National Center for Construction Education and Research",
+   "tier": "contains",
+   "id": "13328-A",
+   "type": "Core"
+  },
   "Construction Inspection": {
    "name": "Highway Construction Inspection",
    "org": "National Institute for Certification in Engineering Technologies",
    "tier": "contains",
    "id": "5371-A",
+   "type": "Core"
+  },
+  "Emergency Medical Responder": {
+   "name": "Emergency Medical Responder",
+   "org": "National Registry of Emergency Medical Technicians",
+   "tier": "exact",
+   "id": "0290-A",
+   "acronym": "EMR",
    "type": "Core"
   },
   "Emergency Medical Responder (EMR)": {
@@ -309,28 +324,12 @@
    "acronym": "EMR",
    "type": "Core"
   },
-  "Emergency Medical Responder (High School Articulation)": {
-   "name": "Emergency Medical Responder",
+  "Emergency Medical Technician": {
+   "name": "Emergency Medical Technician",
    "org": "National Registry of Emergency Medical Technicians",
    "tier": "exact",
-   "id": "0290-A",
-   "acronym": "EMR",
-   "type": "Core"
-  },
-  "Emergency Medical Responder — Baldy View ROP": {
-   "name": "Emergency Medical Responder",
-   "org": "National Registry of Emergency Medical Technicians",
-   "tier": "contains",
-   "id": "0290-A",
-   "acronym": "EMR",
-   "type": "Core"
-  },
-  "Engineering Graphics": {
-   "name": "Certified in Engineering Graphics",
-   "org": "Association of Technology, Management, and Applied Engineering",
-   "tier": "contains",
-   "id": "8183-A",
-   "acronym": "CEG",
+   "id": "0291-A",
+   "acronym": "EMT",
    "type": "Core"
   },
   "Entrepreneurship and Small Business (ESB) Certification": {
@@ -354,13 +353,6 @@
    "tier": "contains",
    "id": "12986-C",
    "type": "Specialty"
-  },
-  "Fire Inspector I": {
-   "name": "Fire Inspector I",
-   "org": "International Code Council",
-   "tier": "exact",
-   "id": "5176-A",
-   "type": "Core"
   },
   "Firefighter 2": {
    "name": "Firefighter Type 2",
@@ -393,20 +385,27 @@
    "acronym": "AC/DC",
    "type": "Core"
   },
-  "Intermediate Medical-Surgical Nursing": {
-   "name": "Medical-Surgical Nursing",
-   "org": "ANA Enterprise",
-   "tier": "contains",
-   "id": "6128-C",
-   "acronym": "MEDSURG-BC",
-   "type": "Specialty"
-  },
   "Introduction to Electricity": {
    "name": "Introduction to Exploring Electricity",
    "org": "Festo",
    "tier": "contains",
    "id": "14507-A",
    "type": "Core"
+  },
+  "Introduction to Mechatronics": {
+   "name": "Introduction to Mechatronics",
+   "org": "Festo",
+   "tier": "exact",
+   "id": "14506-A",
+   "type": "Core"
+  },
+  "Introduction to Medical Surgical Nursing": {
+   "name": "Medical-Surgical Nursing",
+   "org": "ANA Enterprise",
+   "tier": "contains",
+   "id": "6128-C",
+   "acronym": "MEDSURG-BC",
+   "type": "Specialty"
   },
   "Intuit Certified Bookkeeping Professional": {
    "name": "Intuit Certified Bookkeeping Professional",
@@ -447,7 +446,7 @@
    "acronym": "LEED",
    "type": "Core"
   },
-  "Law Enforcement (High School Articulation)": {
+  "Law Enforcement": {
    "name": "National Law Enforcement",
    "org": "Law and Public Safety Education Network",
    "tier": "contains",
@@ -476,6 +475,38 @@
    "tier": "contains",
    "id": "0076-C",
    "acronym": "RNC-MNN",
+   "type": "Specialty"
+  },
+  "Medical Surgical Nursing Advanced": {
+   "name": "Medical-Surgical Nursing",
+   "org": "ANA Enterprise",
+   "tier": "contains",
+   "id": "6128-C",
+   "acronym": "MEDSURG-BC",
+   "type": "Specialty"
+  },
+  "Medical Surgical Nursing Beginning": {
+   "name": "Medical-Surgical Nursing",
+   "org": "ANA Enterprise",
+   "tier": "contains",
+   "id": "6128-C",
+   "acronym": "MEDSURG-BC",
+   "type": "Specialty"
+  },
+  "Medical Surgical Nursing Lab Advanced": {
+   "name": "Medical-Surgical Nursing",
+   "org": "ANA Enterprise",
+   "tier": "contains",
+   "id": "6128-C",
+   "acronym": "MEDSURG-BC",
+   "type": "Specialty"
+  },
+  "Medical-Surgical Nursing Intermediate": {
+   "name": "Medical-Surgical Nursing",
+   "org": "ANA Enterprise",
+   "tier": "contains",
+   "id": "6128-C",
+   "acronym": "MEDSURG-BC",
    "type": "Specialty"
   },
   "Mental Health Nursing": {
@@ -551,13 +582,6 @@
    "acronym": "PMI-RMP",
    "type": "Advanced"
   },
-  "Personal Fitness Trainer Certification": {
-   "name": "Personal Fitness Trainer Certification",
-   "org": "AAAI/ISMA Fitness",
-   "tier": "exact",
-   "id": "14206-A",
-   "type": "Core"
-  },
   "Portfolio Management Professional (PfMP)": {
    "name": "Portfolio Management Professional",
    "org": "Project Management Institute",
@@ -582,6 +606,14 @@
    "acronym": "PMP",
    "type": "Advanced"
   },
+  "Quality Improvement Associate Certification (CQIA)": {
+   "name": "Certified Quality Improvement Associate",
+   "org": "American Society for Quality",
+   "tier": "acronym",
+   "id": "1978-A",
+   "acronym": "CQIA",
+   "type": "Core"
+  },
   "Red Hat Certified System Administrator (RHCSA)": {
    "name": "Red Hat Certified System Administrator",
    "org": "Red Hat, Inc.",
@@ -596,6 +628,22 @@
    "tier": "acronym",
    "id": "0460-A",
    "acronym": "RDA",
+   "type": "Core"
+  },
+  "Residential Building Inspector": {
+   "name": "Residential Building Inspector",
+   "org": "International Code Council",
+   "tier": "exact",
+   "id": "3388-A",
+   "acronym": "RBI",
+   "type": "Core"
+  },
+  "Residential Plans Examiner": {
+   "name": "Residential Plans Examiner",
+   "org": "International Code Council",
+   "tier": "exact",
+   "id": "6914-A",
+   "acronym": "R3",
    "type": "Core"
   },
   "ServSafe Food Protection Manager": {
@@ -618,6 +666,21 @@
    "tier": "exact",
    "id": "7349-A",
    "acronym": "TCT",
+   "type": "Core"
+  },
+  "Transportation, Distribution and Logistics": {
+   "name": "Certified in Logistics,Transportation and Distribution",
+   "org": "Association for Supply Chain Management",
+   "tier": "contains",
+   "id": "1443-B",
+   "acronym": "CLTD",
+   "type": "Advanced"
+  },
+  "Welding 1": {
+   "name": "Level 1 - Welding",
+   "org": "National Center for Construction Education and Research",
+   "tier": "contains",
+   "id": "13323-A",
    "type": "Core"
   },
   "Wildland Fire Chainsaws (S-212)": {

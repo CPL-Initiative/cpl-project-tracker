@@ -16,7 +16,7 @@ Pathway degrees) ARE the transfer programs.
   {
     _built_at, _built_by, _source, _note,
     colleges: [...], awards: [...], statuses: [...],
-    # ROW: [collegeIdx, ctrl, title, topCode, cipCode, awardIdx, statusIdx, units, xfer(0|1)]
+    # ROW: [collegeIdx, ctrl, title, topCode, cipCode, awardIdx, statusIdx, units, xfer(0|1), cte(0|1)]
     rows: [...]
   }
 
@@ -103,13 +103,17 @@ def main():
             status = g("STATUS")
             units = units_of(g("MAJOR UNITS"), g("CERT UNITS"))
             xf = 1 if is_transfer(award, sub) else 0
+            # GOAL encodes CTE: "C - CTE" and "CT - Career Technical Education (CTE) and Transfer"
+            # both start with "C" (the only GOAL values that do). CTE is a big factor for CIP coding,
+            # so surface it as a per-program flag for the CIP tab's Programs-review CTE chip.
+            cte = 1 if g("GOAL").strip().startswith("C") else 0
             if xf:
                 xfer_n += 1
             if cip:
                 cip_n += 1
             rows.append([
                 idx(college, colleges, ci), ctrl, title, top, cip,
-                idx(award, awards, ai), idx(status, statuses, si), units, xf,
+                idx(award, awards, ai), idx(status, statuses, si), units, xf, cte,
             ])
 
     payload = {
@@ -119,7 +123,8 @@ def main():
         "_note": "COCI program inventory for the COCI Lookup > Programs view. "
                  "xfer=1 marks Associate Degrees for Transfer (ADT: A.A.-T / A.S.-T / "
                  "UC Transfer Pathway) — the explicit transfer programs. Rows carry the "
-                 "college-entered TOP code and (where present) the CIP code.",
+                 "college-entered TOP code and (where present) the CIP code. cte=1 marks a "
+                 "CTE program (GOAL 'C - CTE' or 'CT - CTE and Transfer').",
         "colleges": colleges,
         "awards": awards,
         "statuses": statuses,

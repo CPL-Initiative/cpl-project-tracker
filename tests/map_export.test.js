@@ -30,7 +30,7 @@ const cpl = fs.readFileSync("CPL_Dashboard.html", "utf8");
 const idx = fs.readFileSync("index.html", "utf8");
 check("Rule 4: CPL_Dashboard.html === index.html", cpl === idx);
 [["CPL_Dashboard.html", cpl], ["index.html", idx]].forEach(function (p) {
-  check("nav button in " + p[0], /data-tab="map-export"[^>]*>🗺 MAP Export</.test(p[1]));
+  check("nav button in " + p[0], /data-tab="map-export"[^>]*>MAP Export</.test(p[1]));
   check("pane #map-export-root in " + p[0], /id="map-export-root"/.test(p[1]));
   check("lazy boot loadScript in " + p[0], /loadScript\('map_export\.js', 'CPL_MAP_EXPORT_TAB'/.test(p[1]));
 });

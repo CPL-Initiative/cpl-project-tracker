@@ -1,0 +1,525 @@
+[
+ {
+  "id": "pr1",
+  "kind": "procedure",
+  "summary": "Edit a regenerated dashboard section → change the generator, keep the twin HTMLs identical",
+  "detail": "Change excel_to_dashboard.py, never the HTML (overwritten next cron); keep CPL_Dashboard.html ≡ index.html.",
+  "tags": [
+   "dashboard"
+  ],
+  "status": "verified",
+  "source": "CLAUDE.md Rules 1 & 4",
+  "affects": [
+   "excel_to_dashboard.py",
+   "CPL_Dashboard.html",
+   "index.html"
+  ]
+ },
+ {
+  "id": "pr2",
+  "kind": "procedure",
+  "summary": "Add a global CSS token or hand-maintained tab → mirror in both HTMLs",
+  "detail": "Prefer injecting tab CSS from the tab's JS (one file, no Rule-4 mirror).",
+  "tags": [
+   "ui"
+  ],
+  "status": "verified",
+  "source": "Engineering practices",
+  "affects": [
+   "CPL_Dashboard.html",
+   "index.html"
+  ]
+ },
+ {
+  "id": "pr3",
+  "kind": "procedure",
+  "summary": "Rename a report-facing field/term → update the 6 enforcement points",
+  "detail": "report_generator.js NAMING_RULE, college_report_generator.js, annual_report.js, docx footers, the sierra_guidance row, public KB claude/CLAUDE.md.",
+  "tags": [
+   "naming"
+  ],
+  "status": "verified",
+  "source": "CLAUDE.md Naming",
+  "affects": [
+   "report_generator.js",
+   "college_report_generator.js",
+   "annual_report.js",
+   "sierra_guidance",
+   "public-KB"
+  ],
+  "related": [
+   "d1"
+  ]
+ },
+ {
+  "id": "pr4",
+  "kind": "procedure",
+  "summary": "Re-mint / permute ids → re-key EVERY id-keyed map",
+  "detail": "promotions.json, coci_articulations identities, kb_curation (supabase-rekey.yml), FL/SUBJ4 maps. Dry-run + committed alias map, atomic in one cron window.",
+  "tags": [
+   "re-mint"
+  ],
+  "status": "verified",
+  "source": "Rule 7 · methodology-rekey-every-id-keyed-artifact",
+  "affects": [
+   "promotions.json",
+   "coci_articulations",
+   "kb_curation"
+  ]
+ },
+ {
+  "id": "pr5",
+  "kind": "procedure",
+  "summary": "Rename/renumber a workplan Activity or Project → update these 4",
+  "detail": "generator render, workplan_activity_associations (missed in #872 → stale 'Activity 5'), ◆ sprint tabling, report ACTIVITY_DESC titles.",
+  "tags": [
+   "activities"
+  ],
+  "status": "verified",
+  "source": "activity_reorg_handoff",
+  "affects": [
+   "workplan_activity_associations",
+   "activity generator",
+   "report ACTIVITY_DESC"
+  ]
+ },
+ {
+  "id": "pr6",
+  "kind": "procedure",
+  "summary": "Run a checkpoint (Rule 8) → refresh all artifacts",
+  "detail": "CLAUDE.md §11, docs/reference/*, kb/README.md, README.md, lessons doc, a kb-note, docs/INDEX.md, Pipeline tab, session_N+1_handoff.md, cpl_todos.json, cpl_memory.",
+  "tags": [
+   "governance"
+  ],
+  "status": "verified",
+  "source": "CLAUDE.md Rule 8",
+  "affects": [
+   "CLAUDE.md",
+   "docs/INDEX.md",
+   "cpl_todos.json",
+   "session handoff",
+   "cpl_memory"
+  ]
+ },
+ {
+  "id": "f1",
+  "kind": "fact",
+  "summary": "Authoritative statewide MAP exhibit = raw row with Collaborative Type == 'CCC'",
+  "detail": "Adopt/adapt copies also tag CCC → unified grouping over-counts; filter the raw column, don't dedup.",
+  "tags": [
+   "ccr",
+   "cer"
+  ],
+  "status": "verified",
+  "source": "reference-authoritative-statewide-exhibit-signal"
+ },
+ {
+  "id": "f2",
+  "kind": "fact",
+  "summary": "Official C-ID/CCN ids are the common course reference; mint an M-ID only where none exists",
+  "detail": "C-IDs/CCN-IDs keep their official format — never re-key.",
+  "tags": [
+   "ccr",
+   "m-id"
+  ],
+  "status": "verified",
+  "source": "adr-official-ids-as-common-course-reference"
+ },
+ {
+  "id": "f3",
+  "kind": "fact",
+  "summary": "The CPL merge test = 'would you make the student repeat it?'",
+  "detail": "Anchored to Title 5 §55050's 'similar' standard — learning-equivalence over subject codes.",
+  "tags": [
+   "ccr",
+   "doctrine"
+  ],
+  "status": "verified",
+  "source": "glossary-cpl-merge-lens-student-repeat-test"
+ },
+ {
+  "id": "f4",
+  "kind": "fact",
+  "summary": "The statewide 'eligible' flag = has_ccc, which is NOT 'on the statewide CPL page'",
+  "detail": "has_ccc = has a CCC-Collaborative articulation; e.g. Paramedic License reads local.",
+  "tags": [
+   "cer",
+   "metrics"
+  ],
+  "status": "verified",
+  "source": "methodology-area-eligibility-rollup-from-cer"
+ },
+ {
+  "id": "f5",
+  "kind": "fact",
+  "summary": "Small curated scenario batches beat the thousands-strong panel for doctrine elicitation",
+  "detail": "≤3 forks/batch, profile-before-edges; Sam bounced off the firehose.",
+  "tags": [
+   "ccr",
+   "method"
+  ],
+  "status": "verified",
+  "source": "methodology-curated-scenario-batches-doctrine-elicitation"
+ },
+ {
+  "id": "f6",
+  "kind": "fact",
+  "summary": "CPL units double-count competencies (4 courses → 1 ASE area); course counts read as coverage",
+  "detail": "Sam flagged units as 'sus'; the Pathways metric is course counts.",
+  "tags": [
+   "pathways"
+  ],
+  "status": "verified",
+  "source": "cpl_pathways_lessons"
+ },
+ {
+  "id": "f7",
+  "kind": "fact",
+  "summary": "All Supabase access goes through the MCP tools — the sandbox can't reach *.supabase.co",
+  "detail": "A direct curl/psql from a session fails; MCP is the only path.",
+  "tags": [
+   "integration",
+   "supabase",
+   "security"
+  ],
+  "status": "verified",
+  "source": "CLAUDE.md Rule 9c"
+ },
+ {
+  "id": "p1",
+  "kind": "pitfall",
+  "summary": "kpi_history.json must have no date gaps",
+  "detail": "The 1d delta silently falls back to an earlier date; backfill a missed day _interpolated:true.",
+  "tags": [
+   "dashboard"
+  ],
+  "status": "verified",
+  "source": "CLAUDE.md Rule 3"
+ },
+ {
+  "id": "p2",
+  "kind": "pitfall",
+  "summary": "Never force-push main",
+  "detail": "Pages serves from it; cron + sessions race. Feature branches may --force-with-lease.",
+  "tags": [
+   "git",
+   "ops"
+  ],
+  "status": "verified",
+  "source": "CLAUDE.md Rule 5"
+ },
+ {
+  "id": "p3",
+  "kind": "pitfall",
+  "summary": "Never gatekeep identity/discipline on TOP",
+  "detail": "Faculty-entered, no data-entry gatekeeper (~52% of M-IDs TOP-mixed); require a 2nd agreeing signal.",
+  "tags": [
+   "ccr",
+   "discipline"
+  ],
+  "status": "verified",
+  "source": "methodology-top-is-a-last-in-line-signal"
+ },
+ {
+  "id": "p4",
+  "kind": "pitfall",
+  "summary": "Paginate every PostgREST read that can outgrow 1,000 rows",
+  "detail": "The arbitrary-order 1,000-row cap made saved work render as unsaved.",
+  "tags": [
+   "supabase"
+  ],
+  "status": "verified",
+  "source": "methodology-paginate-postgrest-reads"
+ },
+ {
+  "id": "p5",
+  "kind": "pitfall",
+  "summary": "A DOM-cloning Word export un-hides [hidden] → a hidden section reappears",
+  "detail": "Mark hidden things with a stripped class (.fs-ov-hidden), never the hidden attribute.",
+  "tags": [
+   "reports",
+   "ui"
+  ],
+  "status": "verified",
+  "source": "methodology-hide-must-suppress-the-export"
+ },
+ {
+  "id": "p6",
+  "kind": "pitfall",
+  "summary": "A format-valid JWT can be silently expired → phantom 401 'saved'",
+  "detail": "Refresh the access token before every write.",
+  "tags": [
+   "security",
+   "supabase"
+  ],
+  "status": "verified",
+  "source": "methodology-refresh-token-before-write"
+ },
+ {
+  "id": "p7",
+  "kind": "pitfall",
+  "summary": "A re-mint that skips a derived id-map severs evidence silently",
+  "detail": "4 re-mints skipped promotions.json → 53% of fold evidence cut. See pr4.",
+  "tags": [
+   "re-mint"
+  ],
+  "status": "verified",
+  "source": "methodology-rekey-every-id-keyed-artifact"
+ },
+ {
+  "id": "o1",
+  "kind": "opportunity",
+  "summary": "Systemwide stale-articulation signal in the CER/CCR generator",
+  "detail": "Flag any articulation whose (college, subj, num) is absent from the current MAP catalog — tightens every count.",
+  "tags": [
+   "ccr",
+   "cer"
+  ],
+  "status": "proposed",
+  "source": "methodology-filter-live-counts-against-current-catalog"
+ },
+ {
+  "id": "o2",
+  "kind": "opportunity",
+  "summary": "CIP is the systemic exit from TOP (CO's TOP→CIP cutover, fall 2026)",
+  "detail": "Apply 'corroborate, don't gate' to CIP until it earns trust.",
+  "tags": [
+   "ccr",
+   "cip"
+  ],
+  "status": "proposed",
+  "source": "methodology-top-is-a-last-in-line-signal"
+ },
+ {
+  "id": "r1",
+  "kind": "risk",
+  "summary": "Memory + checkpoint docs sync to the vault with no review gate; must never reach the public KB except via the human-gated pipeline",
+  "detail": "Keep secrets/PII out of cpl_memory; promotion is a deliberate curation step only.",
+  "tags": [
+   "privacy",
+   "governance",
+   "security"
+  ],
+  "status": "verified",
+  "source": "CLAUDE.md checkpoint scope"
+ },
+ {
+  "id": "r2",
+  "kind": "risk",
+  "summary": "COBI org layer has no per-area data isolation yet — CPL and C&I phrases unlock the same tables",
+  "detail": "Revisit gating before true multi-org; today 'site' is a cosmetic view dimension.",
+  "tags": [
+   "org-access",
+   "integration"
+  ],
+  "status": "verified",
+  "source": "adr-cobi-org-layer"
+ },
+ {
+  "id": "r3",
+  "kind": "risk",
+  "summary": "Public CER student-impact counts need aggregate + <2 small-cell suppression + the standing PII guard",
+  "detail": "Don't regress the guard when the export changes.",
+  "tags": [
+   "privacy"
+  ],
+  "status": "verified",
+  "source": "adr-cer-student-impact-counts-privacy"
+ },
+ {
+  "id": "w1",
+  "kind": "wishlist",
+  "summary": "Run the ESL packaging apply from the committed dry-run on Sam's green-light",
+  "detail": "2,364 ESL → Beginning/Intermediate/Advanced + Citizenship/VESL/Transfer carve-outs; Rule 9 apply.",
+  "tags": [
+   "ccr"
+  ],
+  "status": "proposed",
+  "source": "kb/esl_package_out/2026-07-15/"
+ },
+ {
+  "id": "w2",
+  "kind": "wishlist",
+  "summary": "Run the wave-4 adjudication fan-out",
+  "detail": "2,000 multi-college IDs staged (ranks 2,001–4,000, 50 batches).",
+  "tags": [
+   "ccr"
+  ],
+  "status": "proposed",
+  "source": "kb/ccr_out/2026-07-14/wave4_manifest.json"
+ },
+ {
+  "id": "d1",
+  "kind": "decision",
+  "summary": "Naming phase: 'CPL Initiative' (never 'MAP Initiative' in new writing); 'Military Articulation Platform' is history-only",
+  "detail": "Enforced across 4 report engines + docx + a sierra_guidance row + the public KB. See pr3.",
+  "tags": [
+   "naming",
+   "governance"
+  ],
+  "status": "verified",
+  "source": "CLAUDE.md Naming",
+  "when": "2026-07-03"
+ },
+ {
+  "id": "d2",
+  "kind": "decision",
+  "summary": "TOP dethroned from gatekeeper → last-in-line signal (#799/#800)",
+  "detail": "24% blast radius (17,059 rows); the identity gate changed 0 of 146 canonical values.",
+  "tags": [
+   "ccr",
+   "discipline"
+  ],
+  "status": "verified",
+  "source": "top_dethroning_lessons",
+  "when": "2026-07-16"
+ },
+ {
+  "id": "d3",
+  "kind": "decision",
+  "summary": "Activities tab realigned to 4 Activities (#872); phantom 'Activity 5' dissolved",
+  "detail": "Live Supabase re-key; one follow-up: workplan_activity_associations (see pr5).",
+  "tags": [
+   "activities"
+  ],
+  "status": "verified",
+  "source": "activity_reorg_handoff",
+  "when": "2026-07-22"
+ },
+ {
+  "id": "d4",
+  "kind": "decision",
+  "summary": "Repo toggles set: auto-merge, auto-delete branches, Claude App Actions R/W",
+  "detail": "Sessions self-dispatch workflows + merge-on-green.",
+  "tags": [
+   "ops",
+   "integration",
+   "governance"
+  ],
+  "status": "verified",
+  "source": "CLAUDE.md Branch policy",
+  "when": "2026-06-11"
+ },
+ {
+  "id": "m1",
+  "kind": "milestone",
+  "summary": "Merge/mint doctrine GRADUATED at the v0.6 calibration gate",
+  "detail": "92% fundamental / 94.7% fine after Sam's rulings, Session 115.",
+  "tags": [
+   "ccr",
+   "doctrine"
+  ],
+  "status": "verified",
+  "source": "ccr_convergence_lessons",
+  "when": "2026-07-14"
+ },
+ {
+  "id": "m2",
+  "kind": "milestone",
+  "summary": "Master .xlsx no longer written on any daily run (Excel writer retired, #221)",
+  "detail": "The Excel→Supabase migration's keystone.",
+  "tags": [
+   "excel",
+   "supabase"
+  ],
+  "status": "verified",
+  "source": "excel-retirement-final-scope",
+  "when": "2026-06-01"
+ },
+ {
+  "id": "m3",
+  "kind": "milestone",
+  "summary": "2026–27 CPL funding secured: $7M ongoing + $35M one-time",
+  "detail": "Supports Vision 2030; BOG deck headline.",
+  "tags": [
+   "funding"
+  ],
+  "status": "verified",
+  "source": "cpl_presentations_lessons",
+  "when": "2026-07-20"
+ },
+ {
+  "id": "oh1",
+  "kind": "fact",
+  "summary": "MAP launched in 2017 as the 'Military Articulation Platform' — its original name; today it is the 'Mapping Articulated Pathways (MAP) platform'",
+  "detail": "History-only for the old name; never present it as the current expansion. Pairs with the naming decision d1.",
+  "tags": [
+   "history",
+   "map-platform",
+   "naming"
+  ],
+  "status": "verified",
+  "source": "public KB · research/map-platform-evolution",
+  "related": [
+   "d1"
+  ]
+ },
+ {
+  "id": "oh2",
+  "kind": "fact",
+  "summary": "AB 123 was chaptered July 2025 — statutory backing for CPL",
+  "detail": "Key legislative anchor for the CPL Initiative.",
+  "tags": [
+   "legislation",
+   "cpl-background"
+  ],
+  "status": "verified",
+  "source": "public KB glossary"
+ },
+ {
+  "id": "oh3",
+  "kind": "fact",
+  "summary": "CPL = Credit for Prior Learning; the CPL Initiative belongs to the CCC Chancellor's Office (CCCCO)",
+  "detail": "Program identity; the platform is the MAP platform.",
+  "tags": [
+   "cpl-background",
+   "glossary"
+  ],
+  "status": "verified",
+  "source": "public KB glossary"
+ },
+ {
+  "id": "oh4",
+  "kind": "fact",
+  "summary": "Vision 2030 is the CCC master plan the CPL Initiative supports",
+  "detail": "The strategic frame CPL work ladders up to.",
+  "tags": [
+   "vision-2030",
+   "cpl-background"
+  ],
+  "status": "verified",
+  "source": "CPL Fact Sheet"
+ },
+ {
+  "id": "oh5",
+  "kind": "fact",
+  "summary": "Live statewide metrics come from the MAP CPL Insights Dashboard (CCCCO); live_metrics.json is the daily scrape feeding the Fact Sheet + dashboard",
+  "detail": "The durable lineage fact behind the headline counts (which are live, not stored here).",
+  "tags": [
+   "metrics",
+   "map-platform",
+   "fact-sheet"
+  ],
+  "status": "verified",
+  "source": "reference-daily-dashboard-data-pipeline"
+ },
+ {
+  "id": "q1",
+  "kind": "question",
+  "org": "cpl",
+  "summary": "Gate ALL curation tabs behind the team phrase, or keep some behind the reviewer secret-link?",
+  "detail": "Trade-off: team-phrase = lower friction + broader curator access; reviewer magic-link = tighter control for sensitive tabs. Likely a per-tab call. Resolves into a decision + updates the RLS gates.",
+  "tags": [
+   "security",
+   "org-access",
+   "governance"
+  ],
+  "status": "proposed",
+  "source": "live decision-point (SkyKnow session)",
+  "affects": [
+   "team_pass_ok",
+   "is_allowed_reviewer",
+   "curation tabs"
+  ]
+ }
+]

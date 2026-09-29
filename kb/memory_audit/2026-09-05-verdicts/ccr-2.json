@@ -1,0 +1,1253 @@
+{
+ "part": "ccr-2",
+ "expected_rows": 43,
+ "coverage": {
+  "rows_read": 43,
+  "rows_judged": 43,
+  "note": "All 43 rows of the partition read (6 pages, offsets 0-40) and judged. Three rows are human-sourced (Sam Lee) and therefore advisory: sam-email-in-the-signin-chip-is-enough (an auth row routed here by its 'identity' tag), skyview-fullscreen-container-defines-existence, and common-subj-to-discipline-is-many-to-one-not-the-reverse (Sam asked the question; the answer is the session's). No snapshot or unverifiable verdicts: every count-shaped claim was cheaply re-measured (seed JSON, payload JSON, export file, or a read-only SELECT)."
+ },
+ "counts": {
+  "confirmed": 35,
+  "stale": 3,
+  "superseded_by_row": 5,
+  "snapshot": 0,
+  "unverifiable": 0
+ },
+ "verdicts": [
+  {
+   "id": "a6eb3601-dd5a-4df0-8f7d-7ad4984d68da",
+   "slug": "widening-a-number-reader-needs-guards",
+   "kind": "pitfall",
+   "title": "Widening a number reader needs guards — a grade range, a section marker and a level word all look like rungs",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The three guards and the course-code cases are still pinned in tests/esl_relevel_bands_test.py and the lane states the same three guards. Lesson intact; the test targets the superseded dry-run script (see esl-band-guards-test-the-superseded-dryrun), which does not change this pitfall.",
+   "evidence": [
+    {
+     "source": "tests/esl_relevel_bands_test.py:59",
+     "quote": "check(\"'K-12' yields no rung\", R.read_level(\"ESL Parent Involvement in K-12\")[0], None)"
+    },
+    {
+     "source": "tests/esl_relevel_bands_test.py:67",
+     "quote": "check(\"'2 X' does not read as roman 10\", R.read_level(\"Beginning Skills 2 X\")[0], None)"
+    },
+    {
+     "source": "tests/esl_relevel_bands_test.py:79-81",
+     "quote": "check(\"'ECE-124' yields no rung\" ... check(\"'ESL 836' yields no rung\""
+    },
+    {
+     "source": "docs/reference/lanes/esl-packaging.md",
+     "quote": "Extending the reader to 0-10 needs THREE guards, each from live data: a level WORD beats a number (Beginning Skills 9), a grade range is not a level (K-12), roman numerals stop at VII"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "e60cd742-7bdb-4dd9-bf40-c17370f5aeb5",
+   "slug": "a-canonical-standard-scored-against-local-records-looks-wrong",
+   "kind": "pitfall",
+   "title": "A canonical standard scored against local records will look WRONG — that is blast radius, not a verdict",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "Lane file states the same finding and numbers (49.2% -> 54.5%, blast radius not a verdict); Sam's verified ruling that the statewide standard wins over local catalog wording corroborates; the calibration KB note is published.",
+   "evidence": [
+    {
+     "source": "docs/reference/lanes/esl-packaging.md",
+     "quote": "A canonical standard scored against local records looks WORSE (49.2% → 54.5%) and that is blast radius, not a verdict."
+    },
+    {
+     "source": "slug:sam-esl-over-claims-standard-wins",
+     "quote": "verified, Sam Lee 2026-08-24: LEAVE THEM. A canonical statewide mapping exists precisely to override local variance"
+    },
+    {
+     "source": "docs/kb-notes/methodology-calibrate-a-signal-before-you-rank-the-queue.md:frontmatter",
+     "quote": "kb-status: published"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "3ded5d7d-083d-49c1-a004-2b37206d7d30",
+   "slug": "skyview-drag-could-not-be-completed-with-a-mouse",
+   "kind": "pitfall",
+   "title": "The SkyView drag was broken as well as hidden - the click that chose the destination wiped out what you were carrying",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The fix named in the row is on disk: pointerdown returns early while a course is carried. PR #1317 is on main.",
+   "evidence": [
+    {
+     "source": "prototype/ccr_universe.js:1447",
+     "quote": "if(drag && drag.kind===\"course\"){ drag.px=px; drag.py=py; return; }"
+    },
+    {
+     "source": "git log origin/main",
+     "quote": "eff2521a SkyView step 1 + Rule 8 checkpoint: the members reach the graph, and the drag never worked (#1317)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "a5aec4b5-e721-43ee-833a-3b63ef3d168b",
+   "slug": "a-row-member-count-is-not-a-college-count",
+   "kind": "fact",
+   "title": "The member count on a course group is not a count of colleges",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The inspector still shows both figures: the carried (forward-joined) list leading and the seed count named as coming from the field that minted the row.",
+   "evidence": [
+    {
+     "source": "prototype/ccr_universe.js:1836",
+     "quote": "esc(unitsWord(nd.u))+\" · \"+num(total)+\" college course\"+(total===1?\"\":\"s\")+\" carried\""
+    },
+    {
+     "source": "prototype/ccr_universe.js:1841",
+     "quote": "'elsewhere in COBI, from the field that minted it. The carried list is the forward '"
+    },
+    {
+     "source": "prototype/ccr_universe.js:1217-1220",
+     "quote": "var carried=(roster&&roster[nd.i]||[]).length; ... num(carried)+' college course'+(carried===1?'':'s')"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "6b18cfe7-456c-4b6e-bac7-820df575bf41",
+   "slug": "a-blocked-path-hides-the-defects-behind-it",
+   "kind": "procedure",
+   "title": "A blocked path hides every defect behind it — budget for a chain, not a fix",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The KB note it cites exists with kb-status published; the PR it describes (#1317) is on main; the browser harness prototype/check_ccr_atlas.js is still in use (rewritten S228).",
+   "evidence": [
+    {
+     "source": "docs/kb-notes/methodology-a-blocked-path-hides-the-defects-behind-it.md:frontmatter",
+     "quote": "kb-status: published"
+    },
+    {
+     "source": "git log origin/main",
+     "quote": "eff2521a ... the members reach the graph, and the drag never worked (#1317)"
+    },
+    {
+     "source": "docs/session_229_handoff.md",
+     "quote": "prototype/check_ccr_atlas.js rewritten for the workspace, the comprehensive view and solo geometry, every check green in Chromium"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "7fe1d814-9f7e-43c3-94d2-57825772b2b2",
+   "slug": "skyview-member-payload-is-live",
+   "kind": "milestone",
+   "title": "SkyView now carries its member courses - 101,063 of them, in a separate file",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The separate members file, its record shape and the --members-out flag exist; the count has since grown to 134,483 (Z-band materialization) and build_ccr_atlas.py now also emits a SERVED skyview.html that fetches the payload (inlining kept for the file:// build). Event happened (#1317).",
+   "evidence": [
+    {
+     "source": "prototype/ccr_universe_members.json:counts",
+     "quote": "{\"identities\": 49650, \"members\": 134483, \"dropped_no_key\": 2, \"cn_on_multiple_identities\": 1165}"
+    },
+    {
+     "source": "kb/_build_ccr_universe.py:690",
+     "quote": "ap.add_argument(\"--members-out\", default=\"prototype/ccr_universe_members.json\""
+    },
+    {
+     "source": "prototype/build_ccr_atlas.py:52",
+     "quote": "Same template, same CSS, same JS — payloads FETCHED instead of inlined, so the result is committable"
+    },
+    {
+     "source": "git log origin/main",
+     "quote": "eff2521a SkyView step 1 + Rule 8 checkpoint: the members reach the graph ... (#1317)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "ea570464-9876-4370-ae84-bfb509d65e58",
+   "slug": "esl-ladder-table-has-no-l2-row",
+   "kind": "question",
+   "title": "Sam's ESL level table has no rule for two-step ladders, and 21 colleges run one",
+   "verdict": "stale",
+   "confidence": "high",
+   "reason": "Resolved the same day: esl_level_sets.json now carries a ruled L=2 row (L1=Intermediate, L2=Advanced, no Beginning band) with Sam's reasoning, and the lane lists it among 'ALL SEVEN OF SAM'S CALLS ARE IN'. No cpl_memory decision row records the L=2 ruling (the lane's NEEDS SAM ④ is also stale).",
+   "evidence": [
+    {
+     "source": "kb/reference/esl_level_sets.json:_note_L2",
+     "quote": "L=2 is Sam's ruling of 2026-08-24 ... He ruled L1=Intermediate, L2=Advanced: there is NO Beginning band at L=2"
+    },
+    {
+     "source": "kb/reference/esl_level_sets.json:by_ladder_length",
+     "quote": "\"2\": {\"Beginning\": [], \"Intermediate\": [1], \"Advanced\": [2], \"colleges\": 21}"
+    },
+    {
+     "source": "docs/reference/lanes/esl-packaging.md",
+     "quote": "ALL SEVEN OF SAM'S CALLS ARE IN ... L=2 = `L1 Intermediate, L2 Advanced` (NOT an extension of the pattern above it — never regularise to `1=Beginning`)"
+    },
+    {
+     "source": "sql",
+     "quote": "cpl_memory search for '%L=2%' / '%L1 Intermediate%' / '%Chabot%' returns no decision row — the ruling lives only in the JSON file and the lane"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "a2b073b9-f7e9-4ebd-8e6b-8033494e1f14",
+   "slug": "derive-a-scale-from-the-corpus-not-the-worked-subset",
+   "kind": "procedure",
+   "title": "Derive a scale from the whole corpus, never from the subset you are working — the error has a direction",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The live ladder script reads the whole ESL corpus and prints both distributions with an agreement verdict; the lane states the same rule and the 6-of-7 vs 0-of-7 result.",
+   "evidence": [
+    {
+     "source": "kb/_esl_ladder_relevel_dryrun.py:45",
+     "quote": "titles — read from THE WHOLE PUBLISHED ESL CORPUS, never from the folded subset."
+    },
+    {
+     "source": "kb/_esl_ladder_relevel_dryrun.py:52-53",
+     "quote": "full-corpus derivation produces {3:21, 4:22, 5:7, 6:16, 7:3, 8:1, 9:1}, matching it in six of seven. Read the corpus, not the worklist."
+    },
+    {
+     "source": "docs/reference/lanes/esl-packaging.md",
+     "quote": "Derive ladders from the WHOLE ESL corpus, never the folded worklist — the subset undercounts length and a short ladder pushes rungs HIGHER; corpus reproduces S188 in 6 of 7 buckets, folded in none."
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "f2598cc0-dbd2-429b-8ea3-a42a5467da34",
+   "slug": "esl-rollback-not-recommended-catalogs-disagree",
+   "kind": "fact",
+   "title": "Do NOT roll back the applied 32 ESL re-levels — all 22 reverts whose catalog speaks disagree with the revert",
+   "verdict": "superseded_by_row",
+   "confidence": "high",
+   "reason": "The measurement is still what the lane says, but Sam's verified decision of the same day closed the rollback offer; that decision row is the row to keep. This one is its decision-input.",
+   "evidence": [
+    {
+     "source": "slug:sam-do-not-roll-back-the-32-esl-relevels",
+     "quote": "verified, Sam Lee: the 30 proposed reverts are not to be applied ... The applied 32 (cohort relevel-esl-s188@bot) stand. This closes the rollback offer"
+    },
+    {
+     "source": "docs/reference/lanes/esl-packaging.md",
+     "quote": "RECOMMEND NOT ROLLING BACK: all 22 reverts whose catalog speaks DISAGREE with the revert — the catalogs say the band those rows sit at today, unanimously."
+    }
+   ],
+   "superseded_by": "sam-do-not-roll-back-the-32-esl-relevels",
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "9ccad675-9277-4ecf-8c1f-37d1cdd01c1a",
+   "slug": "a-control-number-is-not-a-unique-course-key",
+   "kind": "fact",
+   "title": "A course control number does not always name exactly one course",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "Mechanism unchanged: byCn keeps the first match and a shared-key move is refused with the reason. The key count drifted (1,814 keys on 2026-08-25; the lane now reads 1,761 on the current payload) — a snapshot number inside a true standing fact. Widening the key is still unmade.",
+   "evidence": [
+    {
+     "source": "prototype/ccr_universe.js:289",
+     "quote": "if(!(cn in byCn)){ byCn[cn]=rec; cnHome[cn]=id; }"
+    },
+    {
+     "source": "prototype/ccr_universe.js:326-330",
+     "quote": "return \"Cannot re-home <strong>\"+esc(code)+\"</strong>: control number \"+esc(cn)+\" names \"+...+\" courses ... Fix the duplicate control number upstream in COCI, or widen the write key.\""
+    },
+    {
+     "source": "docs/reference/lanes/skyview-ccr-interface.md",
+     "quote": "`CN:` names more than one course on 1,761 keys and those moves are refused with the reason"
+    },
+    {
+     "source": "kb/control_number_audit/2026-08-25.md:8-9",
+     "quote": "control numbers resolving to more than one row as the artifact builds them: 1,814 (1.30%) ... in the source, once the declared institution fold is applied: 462"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "8d324728-1db1-494a-9963-8e3ccd926758",
+   "slug": "a-declared-fold-reaches-only-the-roster-that-consults-it",
+   "kind": "pitfall",
+   "title": "We wrote down which college names are duplicates, but only one part of the site reads that list",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "Still true: _mc() appends names as typed with no roster-rule lookup, the rules load elsewhere for the EACR payload, and the lane's NEXT ④ still carries the member-roster fold at source (CaÃ±ada ×678). The rules file lives at kb/reference/.",
+   "evidence": [
+    {
+     "source": "excel_to_dashboard.py:8034-8036",
+     "quote": "def _mc(name): if name not in mcol_idx: mcol_idx[name] = len(mcolleges); mcolleges.append(name)"
+    },
+    {
+     "source": "excel_to_dashboard.py:5244",
+     "quote": "path = os.path.join(SCRIPT_DIR, \"kb\", \"reference\", \"map_college_roster_rules.json\")"
+    },
+    {
+     "source": "docs/reference/lanes/skyview-ccr-interface.md",
+     "quote": "NEXT ... ④ The member-roster fold at source (`CaÃ±ada College` ×678)."
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": [
+    {
+     "from": "map_college_roster_rules.json",
+     "to": "kb/reference/map_college_roster_rules.json"
+    }
+   ]
+  },
+  {
+   "id": "a0c64327-6d09-4e45-a196-f7939ed488da",
+   "slug": "a-view-must-not-fly-where-it-cannot-draw",
+   "kind": "pitfall",
+   "title": "The map search zoomed out past the point where anything is drawn, then reported results",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "One constant (NODE_ZOOM=0.20) is read by both draw() and the search fly-to, and the fallback to the densest discipline with a message is in place. PR #1329 on main.",
+   "evidence": [
+    {
+     "source": "prototype/ccr_universe.js:110",
+     "quote": "var NODE_ZOOM=0.20;"
+    },
+    {
+     "source": "prototype/ccr_universe.js:431",
+     "quote": "var showNodes = k>NODE_ZOOM, showLabels = k>0.55, showTethers = k>ID_ZOOM;"
+    },
+    {
+     "source": "prototype/ccr_universe.js:1702-1707",
+     "quote": "if(fit>NODE_ZOOM){ flyTo(cx,cy,fit); setHint(head+\" Ringed in red.\"); } else { /* ... Go to the densest subject rather than framing them all invisibly, and say which. */"
+    },
+    {
+     "source": "git log origin/main",
+     "quote": "eed48127 SkyView leads, the re-home key is guarded, and a search lands where its hits can be seen (#1329)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "6384ec2f-3953-4e4a-912a-289aa51fca9a",
+   "slug": "sam-email-in-the-signin-chip-is-enough",
+   "kind": "decision",
+   "title": "Sam: showing the email address in the signed-in menu is good enough for now",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "Human-sourced (Sam Lee), advisory. Live schema still has no name column and the chip greets by name only when the credential carries one, else 'Signed in as <address>'. Note the partition put this auth row in the ccr bucket via the 'identity' tag.",
+   "evidence": [
+    {
+     "source": "sql",
+     "quote": "information_schema.columns for allowed_reviewers -> email (text), added_at (timestamptz) only; no name column"
+    },
+    {
+     "source": "cobi_identity.js:181",
+     "quote": "text: named ? \"Hi \" + named + \" — signed in as yourself.\" : \"Signed in as \" + addr + \".\""
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": true,
+   "human_name": "Sam Lee",
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "786bdb89-9b27-4426-8861-37583318f6b8",
+   "slug": "peer-corpus-is-thin-where-trade-colleges-teach",
+   "kind": "fact",
+   "title": "Only 2.7% of ACE credit rows name a local course, and the trade subjects are the emptiest",
+   "verdict": "confirmed",
+   "confidence": "medium",
+   "reason": "Re-measured live: 201,909 ACE rows, 5,497 with a college_course (2.72%) — the headline holds after the daily refresh. The per-trade zero counts are explicitly 'before the LATTC run' and remain a dated measurement; the lessons doc records the original figures.",
+   "evidence": [
+    {
+     "source": "sql",
+     "quote": "select source_code, count(*), count(*) filter (where nullif(trim(college_course),'') is not null) from map_college_cr_unit group by 1 -> ACE 201909 rows, 5497 named (2.72%)"
+    },
+    {
+     "source": "docs/college_cr_evidence_lessons.md:29-30",
+     "quote": "200,364 ACE rows / 7,156 distinct recommendations / 5,318 exhibits, but only 5,442 rows (2.7%) name a local college course"
+    },
+    {
+     "source": "git log origin/main",
+     "quote": "57b8aa30 Find a credit recommendation for a course a college already approved (LATTC military CPL) (#1365)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "6051d275-5b91-4eec-816e-c73d9cbdb187",
+   "slug": "a-units-join-is-also-a-course-identity-check",
+   "kind": "procedure",
+   "title": "Joining a college list to COCI for units also tells you when the course number names something else",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "units_flag() with the 0.75 difflib threshold and the leading-zero normalization are both in the script on disk; PR #1365 on main.",
+   "evidence": [
+    {
+     "source": "kb/_match_courses_to_ace_recs.py:170-174",
+     "quote": "def units_flag(r): ... return 'divergent' if d < 0.75 else 'spelling'   # 0.75 separates a renamed course from a typo"
+    },
+    {
+     "source": "kb/_match_courses_to_ace_recs.py:315",
+     "quote": "COCI, joined on (subject, course number) with leading zeros"
+    },
+    {
+     "source": "git log origin/main",
+     "quote": "57b8aa30 ... (LATTC military CPL) (#1365)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "23a56c86-22fa-41fb-b24f-b76e4c8c23e7",
+   "slug": "esl-band-guards-test-the-superseded-dryrun",
+   "kind": "pitfall",
+   "title": "The ESL band guards test the superseded script; the live one has no test at all",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "Re-verified today: no file under tests/ references _esl_ladder_relevel_dryrun, and the bands test still imports _esl_relevel_dryrun. The lane carries it as an open item.",
+   "evidence": [
+    {
+     "source": "shell",
+     "quote": "grep -rln _esl_ladder_relevel_dryrun tests/ -> no output (exit 1), 2026-09-05"
+    },
+    {
+     "source": "tests/esl_relevel_bands_test.py:24",
+     "quote": "R = importlib.import_module(\"_esl_relevel_dryrun\")"
+    },
+    {
+     "source": "docs/reference/lanes/esl-packaging.md",
+     "quote": "## ⚠️ Open — the band guards test the SUPERSEDED path (found 2026-08-29, Session 208)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "217d7b3c-a43a-4a29-88ad-266e795a5b94",
+   "slug": "should-the-daily-run-rebuild-the-skyview-layout",
+   "kind": "question",
+   "title": "Should the daily dashboard run rebuild SkyView's map layout, or does it stay hand-rebuilt?",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "Still open and its premise still holds: the daily workflow runs only --shards-only; the layout payloads are hand-rebuilt and committed (now 7.2 MB / 3.85 MB). Lane NEEDS SAM ② and To-Do s223-sam-daily-rebuild both still carry it.",
+   "evidence": [
+    {
+     "source": ".github/workflows/daily-dashboard.yml:299",
+     "quote": "( python3 kb/_build_ccr_universe.py --shards-only && bash scripts/publish_skyview_desc_shards.sh )"
+    },
+    {
+     "source": "docs/reference/lanes/skyview-ccr-interface.md",
+     "quote": "NEEDS SAM: ... ② Should the daily run rebuild the universe layout too?"
+    },
+    {
+     "source": "kb/cpl_todos.json:74",
+     "quote": "\"id\": \"s223-sam-daily-rebuild\""
+    },
+    {
+     "source": "shell",
+     "quote": "ls -la prototype/ccr_universe.json (7,222,125 B) prototype/ccr_universe_members.json (3,851,153 B)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "634ed64b-442c-48f2-898c-7fe42f2ef4f9",
+   "slug": "unified-courses-data-carries-two-identity-ids-twice",
+   "kind": "fact",
+   "title": "unified_courses_data.js carries two identity ids twice (ENGL 100, ITIS 160)",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "Re-measured on the current export (generated 2026-09-04 16:30): both ids still appear twice; the builder still keeps the first and logs the duplicates. The upstream defect is unfixed.",
+   "evidence": [
+    {
+     "source": "shell",
+     "quote": "grep -o -E '\"id\": ?\"(ENGL 100|ITIS 160)\"' unified_courses_data.js | sort | uniq -c -> 2 \"id\": \"ENGL 100\" / 2 \"id\": \"ITIS 160\" (file generated_at 2026-09-04 16:30)"
+    },
+    {
+     "source": "kb/_build_ccr_universe.py:713-715",
+     "quote": "if dup: print(f\"  note: {len(dup)} duplicate identity id(s) in unified_courses_data.js \" f\"kept once: {', '.join(sorted(set(dup)))}\")"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "704a305a-9b84-4521-8b28-b07d733c0389",
+   "slug": "a-side-table-keyed-by-position-breaks-when-the-list-drops-one",
+   "kind": "pitfall",
+   "title": "A side table aligned to a list by position is wrong the moment a consumer drops one element — key it by the write key",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "Shards are keyed by control-number digits in the builder, the orbits test pins the keyless-member case, and the KB note is published.",
+   "evidence": [
+    {
+     "source": "kb/_build_ccr_universe.py:write_desc_shards docstring",
+     "quote": "an identity: { \"<control number digits>\": [description|null, title, units] } ... Keying the shard by control number is what makes the two agree even when a member has no key"
+    },
+    {
+     "source": "tests/ccr_universe_orbits_test.py:240-241",
+     "quote": "check(\"the shard is keyed by control-number digits\", set(shard) == {\"101\", \"103\", \"301\"} ... check(\"⭐ a keyless member does not shift the descriptions that follow it\""
+    },
+    {
+     "source": "docs/kb-notes/methodology-key-a-side-table-by-the-write-key-not-by-position.md:frontmatter",
+     "quote": "kb-status: published"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "835d99cc-d2e8-4e59-9764-68ed330c1132",
+   "slug": "corroborators-must-not-outvote-the-primary-signal",
+   "kind": "pitfall",
+   "title": "Corroborators must not outvote the primary signal — the first orbit weights let TOP + units + credit beat a clear title",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The rebalanced weights (title 8×Dice, subject 1.5, SUBJ4 0.3, TOP 0.5, units 0.15, credit 0.05 behind a subject-or-title gate) are the code on disk and the lane's stated design; the TOP KB note carries the worked instance.",
+   "evidence": [
+    {
+     "source": "kb/_build_ccr_universe.py:195-207",
+     "quote": "score += 1.5; why |= W_SUBJ ... score += 8.0 * d; why |= W_TITLE ... if why & (W_SUBJ | W_TITLE): ... += 0.5 (TOP) ... 0.15 (units) ... 0.05 (credit)"
+    },
+    {
+     "source": "docs/reference/lanes/skyview-ccr-interface.md",
+     "quote": "THE TITLE CARRIES THE WEIGHT: title 8 × Dice over lightly stemmed tokens; a shared local subject code 1.5; TOP 0.5, units 0.15, credit type 0.05 count only after a subject or title signal fired"
+    },
+    {
+     "source": "docs/kb-notes/methodology-top-is-a-last-in-line-signal.md:156",
+     "quote": "## Worked instance — SkyView orbit placement (2026-09-03, SkyOrbit S223)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "97c75d1d-8bc6-4d05-bcb9-653abaa75d6f",
+   "slug": "an-orbit-is-a-placement-suggestion-not-a-curation-decision",
+   "kind": "decision",
+   "title": "An orbit on SkyView is a placement suggestion, never a curation decision",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The lane states it verbatim as standing design, the Move-here affordance accepts one course at a time, and Sam's verified 2026-08-24 ruling (drag re-homes membership only, proposes never auto-adds) is the posture it extends. Session-authored decision, not Sam's words.",
+   "evidence": [
+    {
+     "source": "docs/reference/lanes/skyview-ccr-interface.md",
+     "quote": "AN ORBIT IS A PLACEMENT SUGGESTION, NEVER A CURATION DECISION. Hollow, tethered, and the inspector names the shared signals ... Nothing is written from the page."
+    },
+    {
+     "source": "prototype/ccr_universe.js:1904",
+     "quote": "'<strong>Move here</strong> accepts the suggestion for that one course.</p>'"
+    },
+    {
+     "source": "slug:sam-drag-rehomes-membership-remints-stay-batched",
+     "quote": "verified, Sam Lee 2026-08-24: drag moves a LOCAL COURSE between M-IDs via CN: — membership, never a re-mint ... QUEUES a re-mint candidate rather than firing"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "3c4938f5-3723-47b7-8f00-3a04e4b613c8",
+   "slug": "a-filter-that-outlives-its-selection-reads-a-full-card-as-empty",
+   "kind": "pitfall",
+   "title": "A list filter that outlives the selection that set it makes the next card read as empty",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "showNode() resets the member filter unless the caller passes keepFilter, exactly as the row says.",
+   "evidence": [
+    {
+     "source": "prototype/ccr_universe.js:1780-1786",
+     "quote": "/* `keepFilter`: only a jump that SET the filter (a college-course search) keeps ... function showNode(nd, isl, keepFilter){ ... if(!keepFilter) memFilter=\"\";"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "7736ba22-bd6c-4744-be48-c22d0b187232",
+   "slug": "common-subj-to-discipline-is-many-to-one-not-the-reverse",
+   "kind": "fact",
+   "title": "Each Common SUBJ belongs to exactly one discipline; one discipline may carry several subjects (umbrellas)",
+   "verdict": "stale",
+   "confidence": "medium",
+   "reason": "The 'exactly one discipline' rule and its 'zero codes on two disciplines' measurement were overtaken: Sam ruled FTVE a fan-in pair (Film and Media Studies + Media Production) and the seed (147 disciplines) also puts AUTB on two. SkyView's 'subject' wording was fixed S227. Rewrite, don't delete.",
+   "evidence": [
+    {
+     "source": "kb/discipline_canonical_subj4.json (measured 2026-09-05)",
+     "quote": "147 disciplines, 145 distinct codes; owned by >1: FTVE [Film and Media Studies, Media Production] (fan_in_with set), AUTB [Agricultural Business and Related Services, Auto Body Technology]"
+    },
+    {
+     "source": "docs/reference/mid_lifecycle.md:566-569",
+     "quote": "a discipline may be an umbrella declared on the seed (is_umbrella + umbrella_codes) or a fan-in pair (fan_in_with: Film and Media Studies with Media Production on FTVE, the Theater precedent)"
+    },
+    {
+     "source": "slug:remint-series-fourteen-readings-ruled-yes-to-all-2026-09-03",
+     "quote": "verified, Sam Lee: Cards 1-3 confirm items 8, 13, 14 (CRIM with the AJ chip; FTVE shared; the agriculture family codes)"
+    },
+    {
+     "source": "docs/reference/lanes/skyview-ccr-interface.md",
+     "quote": "Every rendered \"subject\" that meant an island now reads \"discipline\" (`kind` stays the internal key)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": true,
+   "human_name": "Sam Lee (asked the question; the claim is the session's answer)",
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "8ccd1c51-a21a-4e94-b418-004e69137b7f",
+   "slug": "the-remint-series-order-recode-then-z-band-one-cron-window",
+   "kind": "procedure",
+   "title": "The re-mint series lands recode first, then the Z-band retirement, in one cron window, each apply built on its dry run's compute_plan and asserted against the committed receipt",
+   "verdict": "superseded_by_row",
+   "confidence": "medium",
+   "reason": "Written as the plan for one land ('after Sam's replies ... land both before the 06:17 UTC cron'); that land happened 2026-09-03 (#1453/#1454) and the milestone row records it with receipts. The durable method now lives in mid_lifecycle.md and the rehearsal KB note.",
+   "evidence": [
+    {
+     "source": "slug:the-re-mint-series-applied-recode-and-z-band-retirement-2026-09-03",
+     "quote": "milestone (proposed): Landed on main the day Sam ruled the fourteen readings (#1452 rulings, #1453 applies, #1454 land)"
+    },
+    {
+     "source": "docs/reference/mid_lifecycle.md:549-552",
+     "quote": "the authority-codes re-mint series, APPLIED ... landed in one cron window as two receipted applies (#1454)"
+    },
+    {
+     "source": "docs/kb-notes/methodology-land-a-re-mint-by-rehearsal-and-a-fresh-read.md:frontmatter",
+     "quote": "kb-status: published"
+    }
+   ],
+   "superseded_by": "the-re-mint-series-applied-recode-and-z-band-retirement-2026-09-03",
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "d50116c3-5650-43ed-b3b3-eb23d01cf2c3",
+   "slug": "kinesiology-credit-lands-at-996-of-999-after-the-z-band-retirement",
+   "kind": "risk",
+   "title": "Retiring the Z band by gap-filling leaves Kinesiology credit at 996 of 999 M numbers; the corroborated shape has no room for the next Kinesiology mint",
+   "verdict": "superseded_by_row",
+   "confidence": "high",
+   "reason": "The measurement stands (mid_lifecycle: Kinesiology credit at 996 of 999) but the risk's proposal was ruled: Sam accepted the continuation band (card 11) and materialization (card 12), so the open design question is closed by verified decision rows.",
+   "evidence": [
+    {
+     "source": "slug:m-numbers-continue-into-the-next-band-digit-when-a-bucket-fills",
+     "quote": "verified, Sam Lee 2026-09-03 (card 11, yes): When a credit bucket fills, minting continues into the next band digit: KINE M2001 follows KINE M1999"
+    },
+    {
+     "source": "docs/reference/mid_lifecycle.md:564-566",
+     "quote": "a full corroborated CREDIT bucket continues into the next band digit (KINE M2001 follows KINE M1999; noncredit stays a single band; Kinesiology credit stands at 996 of 999)"
+    },
+    {
+     "source": "slug:the-retired-z-identities-are-materialized-into-the-minted-catalog",
+     "quote": "verified, Sam Lee 2026-09-03 (card 12, yes)"
+    }
+   ],
+   "superseded_by": "m-numbers-continue-into-the-next-band-digit-when-a-bucket-fills",
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "3a8283e0-e173-4d94-9238-586941b4ccc0",
+   "slug": "a-keep-number-allocation-runs-in-two-passes-or-it-cascades",
+   "kind": "pitfall",
+   "title": "A keep-number re-key must let every row keep its number first, then gap-fill; one pass lets a taken key cascade down the bucket",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The no-cascade behavior is pinned in the dry-run test with the exact CISC/COMP M1001 case the row describes.",
+   "evidence": [
+    {
+     "source": "tests/authority_recode_dryrun_test.py:7",
+     "quote": "2. no cascade — one taken key gap-fills ONE row, not every row after it"
+    },
+    {
+     "source": "tests/authority_recode_dryrun_test.py:158-161",
+     "quote": "check(\"2. no cascade: the one taken key (COMP M1001) gap-fills one row; the rest keep their numbers\", A.get(\"CISC M1002\") == \"COMP M1002\" and A.get(\"CISC M1003\") == \"COMP M1003\""
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "b5a5922e-e5b8-4c27-ab28-89b04755bf15",
+   "slug": "the-june-fold-allocator-is-a-resequencer-not-a-rename-tool",
+   "kind": "pitfall",
+   "title": "A code change is a prefix re-key that keeps the number; kb/_subj4_dryrun.py re-sequences every bucket and would move 62,638 ids to change nothing",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "Standing doctrine in mid_lifecycle.md with the same 62,638 figure, the KB note is published, and the lane restates it. (Row quotes the dry run's 10,292/10,039; the applied land was 10,296/10,041.)",
+   "evidence": [
+    {
+     "source": "docs/reference/mid_lifecycle.md:556-558",
+     "quote": "⚠️ `kb/_subj4_dryrun.py` is a re-sequencer and would move 62,638 ids for a rename; use it only when a bucket is genuinely renumbered"
+    },
+    {
+     "source": "docs/kb-notes/methodology-a-code-change-is-a-prefix-rekey-not-a-resequence.md:frontmatter",
+     "quote": "kb-status: published"
+    },
+    {
+     "source": "docs/reference/lanes/skyview-ccr-interface.md",
+     "quote": "A code change is a prefix re-key that keeps the number ([KB note](../../kb-notes/methodology-a-code-change-is-a-prefix-rekey-not-a-resequence.md))"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "4023db6e-ec9b-408f-9034-3ae2164ea4c5",
+   "slug": "authority-codes-attributed-12-ccn-14-c-id-120-csr-29-chips",
+   "kind": "fact",
+   "title": "Item 19 measured: 12 disciplines sit on a CCN code, 14 on a C-ID code, 120 are CSR proposals, 29 show a chip; PH under Health carries 30 rows against item 17's dismissal",
+   "verdict": "stale",
+   "confidence": "high",
+   "reason": "Precedence mechanism unchanged, but the numbers were re-cut after the recode: the seed built 2026-09-04 reads 13 CCN / 20 C-ID / 114 CSR / 23 chips, and PH is no longer unhomed because Sam reversed item 17 for (PH, Health). The lane's 12/14/120/29 line is stale too.",
+   "evidence": [
+    {
+     "source": "kb/discipline_canonical_subj4.json:_authority_codes",
+     "quote": "\"_built_at\": \"2026-09-04\", \"counts\": {\"ccn\": 13, \"c-id\": 20, \"csr\": 114, \"no_canonical\": 0, \"with_chips\": 23}"
+    },
+    {
+     "source": "kb/reference/authority_subject_codes.json",
+     "quote": "counts = {\"codes\": 79, \"attributed\": 73, \"unhomed\": 6}; unhomed = [c-id ADS, ENVS, GLST, MIS, SJS, SWHS] (PH homed)"
+    },
+    {
+     "source": "slug:health-shows-c-id-ph-the-item-17-dismissal-is-reversed-for-one-pair",
+     "quote": "verified, Sam Lee 2026-09-03 (card 10, yes): item 17's dismissal ... is REVERSED for the pair (PH, Health) only"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "cb5e6768-0e58-41c1-990a-324bc974a0e1",
+   "slug": "rehearse-a-re-mint-apply-on-a-scratch-copy-of-kb-before-the-window",
+   "kind": "procedure",
+   "title": "Rehearse a re-mint apply end to end on a scratch copy of kb/ before the cron window",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The procedure is a published KB note and was reused the next day for the prefix fold (#1462). The post-apply numbers it lists are the 2026-09-03 rehearsal's and have since moved on (the fold took subject_collision_signal 153 -> 113).",
+   "evidence": [
+    {
+     "source": "docs/kb-notes/methodology-land-a-re-mint-by-rehearsal-and-a-fresh-read.md:frontmatter",
+     "quote": "kb-status: published"
+    },
+    {
+     "source": "git log origin/main",
+     "quote": "a56c51ae The prefix fold apply, rehearsed on a scratch copy; the post-apply chain gains the crnc mirrors re-key it was missing (#1462)"
+    },
+    {
+     "source": "docs/reference/lanes/skyview-ccr-interface.md",
+     "quote": "a land's post-state counts are worklists, not defects ([KB note](../../kb-notes/methodology-land-a-re-mint-by-rehearsal-and-a-fresh-read.md))"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "6247672e-11bc-424a-8a51-1fbae288a660",
+   "slug": "a-freshness-count-must-use-the-syncs-own-field-whitelist",
+   "kind": "pitfall",
+   "title": "A freshness count must use the sync's own field whitelist, or it reads fresh entries as drift",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The recode apply imports FIELDS from kb/_apply_curation.py (seven fields, including merge_dismissed and merge_note), as the row says was done.",
+   "evidence": [
+    {
+     "source": "kb/_authority_recode_apply.py:83-88",
+     "quote": "# The overlay's field whitelist is kb/_apply_curation.py's FIELDS — imported so ... from _apply_curation import FIELDS as OVERLAY_FIELDS"
+    },
+    {
+     "source": "kb/_apply_curation.py:48-49",
+     "quote": "FIELDS = {\"discipline\", \"merge_into\", \"unified_title\", \"description\", \"cross_listed_disciplines\", \"merge_dismissed\", \"merge_note\"}"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "4ee62309-9f00-4e61-8e4a-ba28a2aa5b87",
+   "slug": "the-re-mint-series-applied-recode-and-z-band-retirement-2026-09-03",
+   "kind": "milestone",
+   "title": "The re-mint series applied: the authority recode and the Z-band retirement landed 2026-09-03",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "All three PRs are on main, both receipts exist on disk, and mid_lifecycle.md and the lane record the land with the same figures (10,296 re-keyed, 10,041 keeping their number, 4,053 materialized). Related slugs resolve to verified rows.",
+   "evidence": [
+    {
+     "source": "git log origin/main",
+     "quote": "19ba2963 (#1452) Sam's yes to all fourteen re-mint readings ... a2f996b3 (#1453) The two re-mint applies ... afd14263 (#1454) Authority recode and Z-band retirement APPLIED"
+    },
+    {
+     "source": "docs/reference/mid_lifecycle.md:549-556",
+     "quote": "the authority-codes re-mint series, APPLIED ... a keep-number prefix re-key — 10,296 ids, 10,041 keeping their number"
+    },
+    {
+     "source": "shell",
+     "quote": "kb/authority_recode_out/2026-09-03/alias_map.json and kb/zband_retire_out/2026-09-03/alias_map.json exist"
+    },
+    {
+     "source": "docs/reference/lanes/skyview-ccr-interface.md",
+     "quote": "THE RE-MINT SERIES IS APPLIED (SkyTune S224, 2026-09-03; Sam ruled the fourteen readings yes to all). The recode (#1454): 10,296 ids re-keyed, 10,041 keeping their number"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "19cc7fd0-396e-480a-b8f7-82a450592fac",
+   "slug": "137-materialized-records-sit-on-a-prefix-their-discipline-no-longer-owns",
+   "kind": "fact",
+   "title": "137 materialized machine-cluster records sit on a prefix their discipline no longer owns",
+   "verdict": "superseded_by_row",
+   "confidence": "high",
+   "reason": "The fix the row names has landed: the prefix fold of 2026-09-04 (#1463) moved 278 rows (132 materialized + 146 legacy strays) onto their discipline's code; fold-verify now reads 7 held, audit 153 -> 113. The To-Do id it cites (s224-fable-fold-worklist) no longer exists in kb/cpl_todos.json.",
+   "evidence": [
+    {
+     "source": "slug:the-prefix-fold-applied-2026-09-04",
+     "quote": "278 ids re-keyed onto their discipline's code (132 materialized machine clusters, 146 legacy strays), 13/13 gates ... audit 153 -> 113, fold-verify 7"
+    },
+    {
+     "source": "docs/reference/lanes/skyview-ccr-interface.md",
+     "quote": "THE PREFIX FOLD IS APPLIED (SkyFold S225, 2026-09-04) ... 278 rows moved onto their discipline's code ... subject_collision_signal 153 → 113 ... the seven rows held on TOP alone are the fold-verify…"
+    },
+    {
+     "source": "git log origin/main",
+     "quote": "0ceed787 Prefix fold APPLIED: 278 ids re-keyed onto their discipline's code (Sam's yes to all, 2026-09-04) (#1463)"
+    }
+   ],
+   "superseded_by": "the-prefix-fold-applied-2026-09-04",
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": [
+    {
+     "from": "kb/cpl_todos.json s224-fable-fold-worklist",
+     "to": "slug:the-prefix-fold-applied-2026-09-04"
+    }
+   ]
+  },
+  {
+   "id": "3438369d-99ab-4cab-9ce8-c2672fa9d65a",
+   "slug": "an-alias-map-can-chain-and-a-naive-rekey-verify-counts-the-chain-as-a-leftover",
+   "kind": "pitfall",
+   "title": "An alias map can chain (one pair's old key is another pair's new key); the Supabase re-key must vacate first and keep chained keys off its verify",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "order_pairs()/verify_surface() and the swap abort are in the re-key script, the chain test exists, mid_lifecycle.md carries the rule, and the verified fold-side row states the same lesson for the leftover sweep.",
+   "evidence": [
+    {
+     "source": "kb/_rekey_kb_curation_supabase.py:63-69",
+     "quote": "def order_pairs(pairs): ... the pair that vacates the shared key must run ... A cycle (a swap) has no safe order without a temporary key: abort."
+    },
+    {
+     "source": "kb/_rekey_kb_curation_supabase.py:86",
+     "quote": "def verify_surface(pairs):"
+    },
+    {
+     "source": "docs/reference/mid_lifecycle.md:574-577",
+     "quote": "An alias map can CHAIN — one pair's old key is another pair's new key: the re-key vacates the shared key before filling it and keeps it off the verify surface (#1455)"
+    },
+    {
+     "source": "slug:a-leftover-sweep-must-exclude-chained-keys",
+     "quote": "verified 2026-09-04: Sweep old ids that are not also new ids"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "c076a8d0-eb7f-431d-a5cf-6fa27aeb00ab",
+   "slug": "the-prefix-fold-worklist-measured-278-moves-7-held-17-without-a-discipline",
+   "kind": "fact",
+   "title": "The fold worklist the land surfaced, measured against fold-verify: 285 rows (139 materialized, 146 legacy strays); 278 planned, 7 held on TOP alone, 17 records without a discipline",
+   "verdict": "superseded_by_row",
+   "confidence": "high",
+   "reason": "The sheet it describes was ruled (Sam: yes to all, 2026-09-04) and the fold applied the same day; the applied receipt is the record now (132 materialized, 153 keep / 125 gap-fill, 7 held, 17 left as minted). The dry-run's 139 is superseded by the land's 132.",
+   "evidence": [
+    {
+     "source": "slug:sam-yes-to-all-the-prefix-fold-sheet-2026-09-04",
+     "quote": "verified, Sam Lee: Items 1, 2, 5 and 7 fold (278 ids, keep-number, one window); item 3 holds the seven TOP-only records; item 4 leaves the seventeen without a discipline as minted"
+    },
+    {
+     "source": "docs/reference/mid_lifecycle.md:539-547",
+     "quote": "278 ids re-keyed onto their discipline's code (132 materialized machine clusters, 146 legacy strays; 153 keeping their number, 125 gap-filling), the seven rows held on TOP alone left in place"
+    },
+    {
+     "source": "slug:the-prefix-fold-applied-2026-09-04",
+     "quote": "verified milestone, PR #1463 merged (0ceed78)"
+    }
+   ],
+   "superseded_by": "the-prefix-fold-applied-2026-09-04",
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "f0aee907-2af7-4e41-9583-50f491e0ff07",
+   "slug": "a-bot-cohort-wrote-a-non-mq-discipline-stagecraft-on-thes-m1087",
+   "kind": "question",
+   "title": "Stagecraft: a non-MQ discipline",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "Still open and true: kb_curation carries 'Stagecraft' on THES M1087 by trailcrew-ccr1-s111@bot (2026-07-10); the outside-MQ count is lane NEXT ⑨. The To-Do id the row cites (s226-fable-disciplines-outside-mq) does not exist; the item sits in s226-fable-curation-followups.",
+   "evidence": [
+    {
+     "source": "sql",
+     "quote": "kb_curation where course_id in ('THES M1087','THTR M1377') -> THES M1087 | discipline | Stagecraft | trailcrew-ccr1-s111@bot | 2026-07-10 (one row; nothing on THTR M1377)"
+    },
+    {
+     "source": "docs/reference/lanes/skyview-ccr-interface.md",
+     "quote": "NEXT ⑨ ... and measure how many curated `discipline` values sit outside the MQ list."
+    },
+    {
+     "source": "kb/cpl_todos.json:62-66",
+     "quote": "\"id\": \"s226-fable-curation-followups\" ... measure how many curated discipline values sit outside the official list — a bot cohort wrote a made-up one on a live row in July"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": [
+    {
+     "from": "To-Do s226-fable-disciplines-outside-mq",
+     "to": "kb/cpl_todos.json id s226-fable-curation-followups"
+    }
+   ]
+  },
+  {
+   "id": "f6233c2c-e362-45ab-bcac-332ef7a6a782",
+   "slug": "folded-identities-without-a-member-table-are-phase-b-folds-not-an-export-gap",
+   "kind": "fact",
+   "title": "No member table means a fold",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The lane states the same resolution (31 undrawn ids = 20 Phase B folds via consolidated_from + 11 curated merge sources) as current truth; PR #1465 on main.",
+   "evidence": [
+    {
+     "source": "docs/reference/lanes/skyview-ccr-interface.md",
+     "quote": "The 31 folded ids SkyView does not draw were never missing: 20 Phase B folds into C-ID descriptor rows (`consolidated_from`), 11 curated merge sources."
+    },
+    {
+     "source": "git log origin/main",
+     "quote": "694c6bda CCR worklist: the curated-anchor duplicates lane ... (#1465)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "82b2113b-07f7-48f5-a994-f10dbe3c8cd4",
+   "slug": "curated-anchor-duplicates-are-a-live-worklist-lane-2026-09-04",
+   "kind": "milestone",
+   "title": "Anchor duplicates: a worklist lane",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "PR #1465 is on main, both test suites exist, and the lane records the lane's design (catalog twin first, anchor last, 129 of 130 surface, THTR M1377 hidden by the Stagecraft re-discipline).",
+   "evidence": [
+    {
+     "source": "git log origin/main",
+     "quote": "694c6bda CCR worklist: the curated-anchor duplicates lane — the 130 May anchors that duplicate a catalog course, offered to the curator, never merged by a script (#1465)"
+    },
+    {
+     "source": "docs/reference/lanes/skyview-ccr-interface.md",
+     "quote": "THE CURATED-ANCHOR DUPLICATES ARE A WORKLIST LANE (S226, #1465) ... recomputed live (legacy_anchor_duplicate_groups) ... 129 of 130 receipt pairs surface; THTR M1377 hides behind a bot's Stagecraft"
+    },
+    {
+     "source": "shell",
+     "quote": "tests/legacy_anchor_duplicates_test.py and tests/uc_worklist_legacy_anchor_lane.test.js exist"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "2514d02d-b225-4155-b082-a1b8404f243b",
+   "slug": "a-receipt-measures-a-worklist-once-a-lane-recomputes-it-live",
+   "kind": "procedure",
+   "title": "Receipts measure; lanes recompute",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The KB note it cites is published, the worked instance (frozen duplicates.json vs the live lane) is on disk, and the lane describes the recompute-every-build design.",
+   "evidence": [
+    {
+     "source": "docs/kb-notes/methodology-a-receipt-measures-a-worklist-once-a-lane-recomputes-it-live.md:frontmatter",
+     "quote": "kb-status: published"
+    },
+    {
+     "source": "shell",
+     "quote": "kb/zband_retire_out/2026-09-03/duplicates.json exists"
+    },
+    {
+     "source": "docs/reference/lanes/skyview-ccr-interface.md",
+     "quote": "The 130 May anchors that duplicate a catalog identity lead the Suggested-merges queue, recomputed live (`legacy_anchor_duplicate_groups`)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "a5e5e353-53b2-40c8-953a-82712596aef4",
+   "slug": "identities-map-rekey-dry-run-cut-1369-rekey-228-drop-2026-09-04",
+   "kind": "fact",
+   "title": "Identities map re-key planned",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The receipt on disk carries exactly these dispositions (1,369 / 44 / 9 / 175; 1,217 titles agree), the apply flags exist, nothing is applied, and the lane still lists it as awaiting Sam's sheet.",
+   "evidence": [
+    {
+     "source": "kb/identities_rekey_out/2026-09-04/report.md",
+     "quote": "status: DRY-RUN 2026-09-04 — nothing applied ... ghosts: 1,597 ... re-key: 1,369 (titles agree on 1,217) · drop, collision: 44 · drop, converged: 9 · drop, dead: 175"
+    },
+    {
+     "source": "kb/_identities_rekey_dryrun.py:219-221",
+     "quote": "ap.add_argument(\"--apply\") ... (\"--receipt\") ... (\"--ruling\", help=\"Sam's reply, verbatim with who and when (required with --apply)\")"
+    },
+    {
+     "source": "docs/reference/lanes/skyview-ccr-interface.md",
+     "quote": "the identities map's 1,597 ghost keys have a dry run and a cut receipt (`kb/identities_rekey_out/2026-09-04/`: re-key 1,369, drop 228) awaiting Sam's sheet, then `--apply --ruling`"
+    },
+    {
+     "source": "git log origin/main",
+     "quote": "f85411df Two receipted tools built before they are needed: the UC-CUR placeholder promotion, and the identities map re-key dry run with its first receipt (#1466)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "8aabe24f-1088-4eb8-88a3-86b3f5c6fc3a",
+   "slug": "uc-cur-placeholder-promotion-is-built-before-the-first-placeholder-2026-09-04",
+   "kind": "milestone",
+   "title": "Promote step built: UC-CUR to M-ID",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "Script, test and PR #1466 are on disk/main; the docstring matches the row's rules (lowest free number, every id ever minted reserved, continuation band, held never guessed). Re-measured: 0 UC-CUR-* merge_into targets and 0 self-keyed UC-CUR rows in kb_curation today.",
+   "evidence": [
+    {
+     "source": "kb/_uc_cur_promote.py:2-18",
+     "quote": "UC-CUR placeholder promotion — DRY RUN by default, --apply mutates (Rule 7) ... seq the lowest free corroborated number in that bucket, continuing into the next band digit when the bucket is full"
+    },
+    {
+     "source": "sql",
+     "quote": "kb_curation: count where field='merge_into' and value like 'UC-CUR-%' -> 0; count where course_id like 'UC-CUR-%' -> 0"
+    },
+    {
+     "source": "git log origin/main",
+     "quote": "f85411df Two receipted tools built before they are needed: the UC-CUR placeholder promotion ... (#1466)"
+    },
+    {
+     "source": "docs/reference/lanes/skyview-ccr-interface.md",
+     "quote": "the promote step is BUILT (`kb/_uc_cur_promote.py`, S226 — run it the day a `UC-CUR-*` target appears"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "dd0fb909-c30a-408d-949d-52da865f9bef",
+   "slug": "skyview-fullscreen-container-defines-existence",
+   "kind": "pitfall",
+   "title": "A control unreachable in full screen is usually outside the fullscreen element",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "Human-sourced (Sam's report, verified_by Sam Lee), advisory. The borrowed-form fix is on disk and the lane records item 11 as structural; PR #1476 on main. Since S228 the default 'SkyView' is body.u-solo rather than requestFullscreen, but the lesson and the fix stand (setCrumbs sends the box home).",
+   "evidence": [
+    {
+     "source": "prototype/ccr_universe.js:1286-1288",
+     "quote": "var slot=document.getElementById(\"u-search-slot\"), ms=document.getElementById(\"msearch\"); if(slot && ms){ slot.appendChild(ms);"
+    },
+    {
+     "source": "docs/reference/lanes/skyview-ccr-interface.md",
+     "quote": "Item 11 was structural: the page's ONE search lived in the masthead, which browser full screen does not paint, so the form is BORROWED into `#u-top` and sent home before another view renders"
+    },
+    {
+     "source": "git log origin/main",
+     "quote": "3b5f6844 SkyView top row: title, one Views menu, the search moved in, and a close — plus the Rule 9 checkpoint (#1476)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": true,
+   "human_name": "Sam Lee",
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "d88a6dba-70a0-4410-a4c2-fa295da4dc12",
+   "slug": "skyview-by-subject-is-the-subj4-grain-read-off-the-map",
+   "kind": "fact",
+   "title": "SkyView's By subject view is the SUBJ4 grain read off the identity ids (344 codes), joined to the seed for each code's standing",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "All four functions named exist in ccr_universe.js with the three standing phrasings; the lane and Sam's verified items-6-9 decision describe the same view (344 codes, TOP plays no part, rings ≤150 at 150%). PR #1479 on main.",
+   "evidence": [
+    {
+     "source": "prototype/ccr_universe.js:2282,2304,2335",
+     "quote": "function subjectIndex(){ ... function subjectRows(){ ... window.__ccrShowSubject=function(code){"
+    },
+    {
+     "source": "prototype/ccr_universe.js:2311-2319",
+     "quote": "function standingHtml(r){ ... 'an umbrella code under '+esc(r.home) ... return 'not '+esc(r.home)+'’s code ... (its Common SUBJ is '+esc(a.cs)+')"
+    },
+    {
+     "source": "docs/reference/lanes/skyview-ccr-interface.md",
+     "quote": "By subject, the SUBJ4 grain (344 codes read off the identity ids; standing from the seed: the Common SUBJ, an umbrella code, or \"not X's code\"; TOP plays no part)"
+    },
+    {
+     "source": "slug:skyview-items-6-9-subject-is-subj4",
+     "quote": "verified, Sam Lee (chat, 2026-09-05 — restated; shipped in PR #1479)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "aadb4605-d787-4cd2-9239-acdbbde6d2da",
+   "slug": "every-view-must-pass-through-one-choke-point-before-it-renders",
+   "kind": "pitfall",
+   "title": "A borrowed DOM node dies at the first entry point you forgot to wrap: route every view through one call (setCrumbs) instead",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The choke point (__ccrLeaveView called from setCrumbs) and the belt of wrapped entry points are both on disk; the handoff and lane record the harness finding. PR #1479 on main.",
+   "evidence": [
+    {
+     "source": "prototype/ccr_universe.js:2388-2391",
+     "quote": "Called by the template's setCrumbs() — the one place every view passes through before it renders ... window.__ccrLeaveView = function(view){ homeSearch(); curView = view || null; };"
+    },
+    {
+     "source": "prototype/ccr_universe.js:2392-2396",
+     "quote": "Belt to setCrumbs()'s braces: an entry point that renders before it calls __crumbs — or never calls it — still sends the box home here. [\"__ccrForest\",\"__ccrDiscipline\",...].forEach"
+    },
+    {
+     "source": "docs/session_229_handoff.md",
+     "quote": "A latent bug the harness found one click in ... `setCrumbs()` is now the one choke point every view passes through."
+    },
+    {
+     "source": "git log origin/main",
+     "quote": "0d95962b SkyView opens alone and the CCR menu opens it that way; one workspace tab ... (#1479)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  }
+ ]
+}

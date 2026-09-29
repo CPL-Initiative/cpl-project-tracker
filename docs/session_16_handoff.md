@@ -11,6 +11,8 @@ related:
   - docs/kb-notes/phase-2-projects-migration-scope.md (the Phase 2 contract — PR-4/5/6 still ahead)
   - CLAUDE.md §11 (Excel→Supabase roadmap; Session 15 rows are current)
 moniker_suggestion: Bruh Hexadec / Bruh Sedec (with an open door to claim your own)
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # Session 16 Hand-off Prompt

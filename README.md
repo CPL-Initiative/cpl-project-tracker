@@ -1,7 +1,12 @@
 # COBI — Chancellor's Office Business Intelligence
 
-> The CPL Project Tracker, renamed. The masthead carries a light Kobe homage —
-> a rotating *Mamba Mentality* subtitle and an 8→24 wink (`cobi_brand.js`).
+> The CPL Project Tracker, renamed. The masthead (`cobi_brand.js`) is a single
+> row: the seal and the COBI wordmark with its Alpha chip, the site switcher,
+> the "Where To?" search, and a utility cluster carrying your access and the
+> ℹ About menu — with a quiet line beneath saying COBI is in alpha and what it
+> answers from. (The Kobe homage — a rotating *Mamba Mentality* subtitle and an
+> 8→24 wink — was retired 2026-06-22; the gold CPL superscript and the per-site
+> org tag followed on 2026-09-04.)
 
 A live dashboard, data pipeline, and curation workbench for the
 **California Community Colleges Credit for Prior Learning Initiative** —
@@ -78,9 +83,27 @@ The whole ecosystem, end-to-end:
    metrics, and 2,300+ statewide exhibits; it talks to the shared `cpl-chat`
    Supabase Edge Function that also powers the live map.rccd.edu widget),
    a **Sierra Training** tab (team-only: the assistant's improvement loop —
-   the 👍/👎 feedback queue from both chat surfaces with a triage status, and
-   a gap miner over the chat logs surfacing the questions the knowledge base
-   had no good source for), a **🎓 CPL Pathways** tab (audience-facing
+   the thumbs-up / thumbs-down feedback queue from both chat surfaces with a
+   review status, a gap miner over the chat logs surfacing the questions the
+   knowledge base had no good source for, and the plain-English **instructions**
+   Sierra follows on every question — five numbers at the top that filter the
+   lists they count, editable instructions, and a test question you can put
+   to her in the Sierra tab or in My College; round 1 of Sam's redesign,
+   2026-09-29), a **⚖️ Governance** tab (team-only: the decision-rights
+   register — who decides what, how far each input is trusted, and which cadences
+   actually run; it measures itself rather than asserting compliance, so a loop
+   that was decided but never run says so), a **MAP Users** tab (per-college MAP platform user
+   counts + role mix publicly; for a signed-in reviewer, the staff roster and a
+   **⚠ No student contact** worklist — the colleges whose landing page has no
+   Primary Contact, which is the address MAP routes a student's CPL request to,
+   each with a proposed contact drawn from designations that college already
+   made in MAP, and a **Proposed because** chip saying which designation it came
+   from and why the cascade fell to it; a reviewer can override any row with a
+   curator-set proposal, labeled with who set it and when, and the CSV export
+   carries both layers separately so it doubles as the correction list to work
+   through in MAP — nothing here writes to MAP, which has no write API, and
+   these proposals are deliberately invisible to Sierra, who answers only from
+   what MAP holds), a **🤝 Noncredit & Learning Partners** tab (the noncredit / not-for-credit / adult-school / ROP / high-school-Cx / apprenticeship register — the six modes of Learning Partner CPL, a self-refreshing dormant-statewide-exhibit worklist, and an in-place ✎ Add insight affordance), a **🎓 CPL Pathways** tab (audience-facing
    apprenticeship-to-baccalaureate course maps with CPL check-offs derived
    live from the MAP articulation data — Cerritos's Field Ironworker
    Supervisor BS (31.5 units of journeyworker CPL) plus Foothill's Dental
@@ -89,15 +112,38 @@ The whole ecosystem, end-to-end:
    Quick Adopt request form; status stages (Discussion Draft / Active /
    Tabled) + a print-ready ⬇ PDF extract), an **Implementation Funding** tab (the DRAFT
    CPL funding model as a scenario tool: a selectable 2-year window,
-   **year-specific funding priorities** (Year 1 / Year 2 filter; every metric
-   and description editable), a **noncredit-feeder carve-out** (NOCE / SD
-   Continuing Ed / Mt. SAC Noncredit / Calbright, split by headcount),
-   per-college potential allocations with district rollups and drill-ins,
-   and **layered editing** — anonymous edits are a private per-browser
-   sandbox, while the shared team phrase saves the base model everyone
-   opens to (Supabase-backed) — plus live P2/P3 priority-metric actuals
-   from MAP; Priority 1 completions are a deliberate, labeled data gap
-   kept as an incentive), a **TMC Builder** tab (align a college's local
+   **year-specific funding priorities, each card carrying its own Ed. Code
+   §78093.2(d)(1) outcome** — its letter, name, citation and the statute's own
+   sentence — which is DERIVED from what the priority's metric measures rather
+   than from its name, and which a curator can override on the card (Year 1 /
+   Year 2 filter; every metric and description editable, **draggable into a
+   different order**, with every section below the metric collapsing behind a
+   summary that still carries its own figure; outcomes with no campus measure
+   get their own reported cards, which carry designated activities and a share
+   of the statewide project allocation — the order is stored as a permutation
+   beside the config, so a
+   priority's wording, share, funding factor and strategies all travel with it
+   and no stored figure moves — and an optional **Year 2 mirrors Year 1**
+   switch), **one funding total over
+   all 118 institutions** (the one-pool model, adopted 2026-08-31: $150K base
+   to $400K cap on the combined credit + noncredit award; the three
+   noncredit-only campuses — NOCE / SD Continuing Ed / Calbright — are ordinary
+   rows qualifying by origination), one row per institution led by its
+   **minimum-conditions pie and Veteran Star** and reading **Max and Curr
+   funding by lane and in total** (the College Dashboard Sam locked on
+   2026-09-28: Curr is the funding qualifying so far, and no reserve figure
+   shows), its max award decomposing into credit and noncredit shares,
+   per-priority drill-ins opening on the Minimum Conditions line, district
+   rollups, and one statewide row under a **frozen header** (measured pins, no lazy loading) —
+   the table is the first section after the introduction, and every other
+   section is folded on open (per visit, since 2026-09-02) —
+   with the project card's named projects folded in **live from the Budget
+   table** — and **layered editing** — anonymous edits are a private
+   per-browser sandbox, while a signed-in reviewer saves the base model
+   everyone opens to (Supabase-backed) — plus live per-priority actuals from
+   the daily MAP pull (a measure that has yet to arrive reads TBA and counts
+   $0, and the noncredit shares count $0 until their feeds report)), a
+   **TMC Builder** tab (align a college's local
    courses to an ASCCC Transfer Model Curriculum / ADT — pick a college + a TMC
    and the right column auto-fills the local course already carrying each
    slot's C-ID; all 45 official TMCs, a GE Breadth companion for the full ADT,
@@ -113,8 +159,17 @@ The whole ecosystem, end-to-end:
    news feed — California-first, then national, plus adjacent systems
    (Career Passport, CA Master Plan, workforce/upskilling) and CA budget
    items; harvested daily from free sources + a suggest-a-story queue and
-   Claude-triaged, read live so it never goes stale), and a **Pipeline**
-   progress board.
+   Claude-triaged, read live so it never goes stale), a **My College** tab
+   (open to colleges and the public since 2026-09-17, reading published
+   copies with small student counts removed before publication, while the
+   protected tables behind it keep their protection: one page, not 123 — pick a college and get where it stands
+   against the goals, what its already-articulated-and-waiting credit actually
+   consists of, its share of both funding pools with each priority's target,
+   its tier with the missing criteria named, who MAP has on file for it, what
+   occupations in its region it could already give credit for — matched against
+   its own catalog, with the accuracy disclosed — and a
+   Sierra AI box with questions computed from that college's own figures), and
+   a **Pipeline** progress board.
 2. **The data pipeline** — daily GitHub Actions cron pulls fresh statewide
    metrics from the CCCCO MAP CPL Dashboard via a Cloudflare Worker proxy,
    then `excel_to_dashboard.py` regenerates the dashboard HTML, exports the
@@ -142,11 +197,40 @@ The whole ecosystem, end-to-end:
    grouping is **level-collapsing** (Session 57) — "Beginning / Intermediate /
    Advanced X" surface as one family — so curators consolidate aggressively
    (Title 5 §55050 grants credit for *similar* learning), always one
-   confirm at a time. The rules in plain language:
+   confirm at a time. A **curated-anchor duplicates lane** (2026-09-04)
+   leads the queue: the May 2026 curated common courses that carry the same
+   title and discipline as a catalog course, the catalog course proposed as
+   the survivor, recomputed every build — never merged by a script. The rules in plain language:
    [`docs/ccr_rules_brief.md`](docs/ccr_rules_brief.md).
 4. **The Common Course Reference curation tab** (formerly "Unified Courses" —
    renamed to avoid UC/University-of-California confusion and to signal that
-   the tab is a *reference faculty consult*, not an authority replacing them) —
+   the tab is a *reference faculty consult*, not an authority replacing them).
+   **It opens on SkyView** — the whole reference as one map, filling the
+   window on its own (2026-09-05) — and since 2026-09-07 **as the Sky**: the
+   reference as the night sky seen through a window, with the **Globe** one
+   click away on the same canvas (the flat **Map** is still routable at
+   `#map`, but its button left the row on 2026-09-08), Night by default and
+   Day one control away, a slow turn that stops at the first touch, and drag
+   and drop on the curve. **On a phone** (2026-09-09) the control row folds
+   behind the word *Controls* and opens as a sheet at the bottom, the legend
+   starts closed and the map takes 86% of the window; **pinch zooms**. COBI's header and side menu fold away and
+   the ☰ at the map's top left brings the menu back, while the window controls
+   at the row's right step between the map inside COBI, the map alone and the
+   browser's full screen; the map's More menu reaches the comprehensive view,
+   the *Disciplines and subjects* workspace, *How SkyView works* and the table,
+   and `#unified-courses/list` opens the table directly. Two words next to
+   *Show*: **Courses | CPL** (2026-09-10) swaps the map's universe — the
+   courses, or the 1,987 curated credentials with the local MAP exhibits
+   folded into each, the courses articulated to them (each a door back onto
+   the Courses map) and a second ring on the 84 statewide ones; nothing moves
+   on the CPL map — and **Articulations** lights what carries one; the
+   coverage line says the universe's own counts and `#skyview/cpl` links to
+   it. **The search box also takes questions**
+   (2026-09-09): type a sentence rather than a keyword and Enter asks
+   SkyView, which turns it into a selection on the map — the map answers by
+   moving, and anything it cannot find on the map it says so rather than
+   quietly leaving out. Its answer prints **beside the search box**, where you
+   typed. **Isolate** draws only what you selected, a discipline included —
    authenticated reviewers (Supabase
    magic-link auth) curate disciplines, merge variants, and verify
    inferred values. Edits write to a live Supabase table and overlay the
@@ -191,9 +275,40 @@ The whole ecosystem, end-to-end:
    dashboard nav) so it can be shared publicly without exposing the internal
    tabs; a "📄 CPL Fact Sheet" link in the left nav rail opens it. It carries a
    rotating "My CPL Stories" section and is **reviewer-Curate-editable** in place
-   (sign in to edit/add/reorder boxes + manage images; edits show for every
-   visitor, the baked page is the fallback). Built Session 74 — see
+   (edit/add/reorder boxes + manage images; edits show for every visitor, the
+   baked page is the fallback). The ✎ Curate button is **hidden from the public**
+   — it appears for a signed-in reviewer (the COBI session is shared across
+   browser tabs), or via the bookmarkable `?curate=1`. That is presentation, not
+   security: writes were always gated by row-level security, never by the button.
+   The page is verified for WCAG AA contrast, keyboard access and phone widths —
+   `tests/factsheet_a11y.test.js` in CI, plus
+   [`fact-sheet/check_mobile_layout.js`](fact-sheet/check_mobile_layout.js)
+   (headless Chromium, run on demand). Built Session 74 — see
    [`docs/fact_sheet_lessons.md`](docs/fact_sheet_lessons.md).
+8. **A public funding-model explainer — the public view** — a plain-language
+   walk-through of the $35M Implementation Funding model at
+   [`/funding-model/`](https://cpl-initiative.github.io/cpl-project-tracker/funding-model/),
+   written for a Chancellor's Office / Finance reader. It is **live, not a
+   snapshot**: it loads `cpl_funding.js` and paints every figure from the same
+   engine and the same Supabase config the Implementation Funding tab uses, so a
+   dial change appears on the next reload with nothing to rebuild or republish.
+   Its **Max award by institution** section, directly after the introduction, is
+   the tab's own institution table rendered in embed mode
+   (`window.CPL_FUNDING_EMBED = "college"`) — the same rows, drill-in, search
+   and Excel export, not a copy — given the window's width rather than the prose
+   column, because the prose cap is what pushed its last column off the edge.
+   **Funding outcomes and milestones** follows: the four priorities and the
+   milestone list together, open, with each priority's recommended strategies
+   folded closed. The sections that explain the mechanics fold closed on open,
+   each headed by its text title alone, and the titles are the model's own words
+   (*How an allocation is computed*, *Eligibility requirements*). Every checkable claim — the priority
+   descriptions, the baseline requirements, the participation deadline — is read
+   from the model rather than typed beside it. **Download PDF** prints the page
+   itself, so the file carries the model as it currently stands; there is no
+   built artifact to go stale.
+   It replaced a published artifact that had to be regenerated by hand and had
+   silently drifted from the model it explains — see
+   [`docs/kb-notes/methodology-a-snapshot-of-a-live-model-is-a-claim-that-decays.md`](docs/kb-notes/methodology-a-snapshot-of-a-live-model-is-a-claim-that-decays.md).
 
 ---
 
@@ -222,13 +337,24 @@ The whole ecosystem, end-to-end:
 
 
 Supabase (hvuwhnbuahrtptokpqfh.supabase.co)
-    ├── workplan_goals, projects   ← READ BY the pipeline (source of truth as of the
-    │      Excel→Supabase migration; daily snapshot + Excel fallback);
-    │      inline-editable on their tabs by allowed reviewers
+    ├── projects, workplan_goals   ← READ BY the pipeline (source of truth as of the
+    │      Excel→Supabase migration; daily snapshot + Excel fallback). `projects` is
+    │      the authoritative sub-activity TREE; `workplan_goals` is a by-id year-ladder
+    │      OVERLAY (Path A, #909) — so the Annual Workplan Goals tab reflects EVERY
+    │      Activities-tab project, X.Y.Z ids nesting under their X.Y parent. Inline-
+    │      editable by allowed reviewers — Activity + sub-activity TITLES + brief
+    │      DESCRIPTIONS on the Annual Workplan Goals tab (single-source editor, #902;
+    │      `workplan_goals.description` col); blank-ladder rows are read-only on the
+    │      year cells (title/description still edit `projects`)
     ├── budget_funding, budget_expenditures, personnel  ← also Supabase-read (Budget
     │      cutover, PR #189); inline-editable. Dashboard config (title/desc/KPI
     │      params) moved to committed kb/dashboard_config.json (Excel-retirement P2).
     │      The master .xlsx is no longer WRITTEN on any run; a few readers remain.
+    │      2026-07-30: budget_funding is now the whole CPL LEDGER (45 rows) —
+    │      section/parent_id/archived/description/window_label give it Sources,
+    │      Uses, the combined $18M project pool and the 2017-forward history,
+    │      rendered by budget_ledger.js with collapsible detail and inline
+    │      editing on every non-total field. TOTALS SUM PARENT ROWS ONLY.
     └── kb_curation, allowed_reviewers   (UCL curation overlay)
 
 Cloudflare Worker (cpl-proxy.slee-548.workers.dev)
@@ -274,6 +400,7 @@ data refresh are captured atomically.
 ├── CPL_Dashboard.html                 ← generated dashboard (mirror of index.html)
 ├── index.html                         ← served by GitHub Pages
 ├── fact-sheet/                        ← public standalone CPL Fact Sheet (live KPIs + print-to-PDF; sits alone)
+├── funding-model/                     ← public "How this funding model works" — LIVE off cpl_funding.js + the Supabase config (no snapshot to rebuild)
 ├── CPL_Data.js / statewide_data.js    ← client-side data for filters/search
 ├── statewide_prescriptive.js          ← EACR prescriptive layer (who could adopt → likely local course)
 ├── unified_courses*.js                ← Unified Courses tab data + lazy files
@@ -302,6 +429,8 @@ data refresh are captured atomically.
 │   ├── remint_out/                    ← re-mint dry-run artifacts + alias_map.json
 │   └── row_audit/                     ← per-day Trust Card artifacts (latest.json + <date>.md)
 ├── docs/                              ← decision docs + lessons-learned (synced to Obsidian)
+│   ├── INDEX.md                       ← landing page (generated block; kb/_build_docs_index.py)
+│   ├── catalog/                       ← GENERATED per-lane doc catalogs — do not hand-edit
 │   ├── coursecontrolnumber_remint.md  ← the 2026-05-22 M-ID re-mint playbook
 │   ├── exhibit_unification_vision.md  ← credential-layer canonicalization design
 │   └── reference/                     ← C-ID / CCN / TMC reference PDFs from ASCCC
@@ -378,6 +507,10 @@ with openpyxl read-only — never `cat` it.
 
 ## License
 
-This project tracks public statewide CPL data and is maintained by the CPL
-Initiative team at RCCD on behalf of the California Community Colleges
-system. See repository settings for license / use terms.
+© 2026 California Community Colleges Chancellor's Office (CCCCO). **All rights
+reserved** — no copying, redistribution, or derivative use without prior written
+permission (see [`LICENSE`](LICENSE)). This project tracks public statewide CPL
+data and is maintained by the CPL Initiative team at RCCD on behalf of the
+California Community Colleges system. The underlying public data and any
+separately-licensed component (e.g. the CPL Knowledge Base, CC BY 4.0) keep their
+own terms. Permission requests: MAP@rccd.edu.

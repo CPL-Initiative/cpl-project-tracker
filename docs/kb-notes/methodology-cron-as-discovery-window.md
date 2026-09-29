@@ -4,7 +4,6 @@ created: 2026-06-09
 updated: 2026-06-09
 tags: [methodology, ci, github-actions, egress, map, discovery, data-pipeline]
 kb-status: published
-kb-type: methodology
 obsidian-folder: cpl-project-tracker/kb-notes
 related:
   - "[[CLAUDE]]"

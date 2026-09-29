@@ -22,6 +22,14 @@
    • data tables (#funding's budget table) — HIDE-ONLY (a single ✕ to hide it),
        since it mirrors the Budget tab and isn't hand-edited here.
 
+   Whole-section hide
+   ------------------
+   Each reorderable section gets a "🙈 Hide section" toggle in curate mode
+   (top-right, beside the ⠿ move handle). Hiding writes a reserved
+   "<sectionId>|__hidden" override and marks the section + its Contents link
+   .fs-ov-hidden, so it's display:none for visitors, ghosted+un-hideable in
+   curate mode, and suppressed in BOTH reports (Print + the ⬇ Word export).
+
    Stable keys
    -----------
    Every box gets a STABLE key at load by walking the DOM (`data-fsk`), derived
@@ -34,6 +42,13 @@
    ONLY allowed reviewers can write it (RLS via is_allowed_reviewer()) — the same
    reviewer-trust boundary as item_updates / curator notes. The anon key can read,
    never write. All reviewer HTML is allowlist-sanitized before display.
+
+   Button visibility
+   -----------------
+   The ✎ Curate button is shipped HIDDEN and revealed only for a signed-in
+   reviewer (or via ?curate=1). That is a PRESENTATION choice, not a security
+   one — the RLS above is the gate, and always was. See the "Who sees the Curate
+   button" block below for the two entry paths and why both are needed.
    =========================================================================== */
 (function () {
   'use strict';
@@ -105,6 +120,17 @@
   // Only applySectionOrder / persistSectionOrder touch it (see the section-reorder
   // block). It's re-applied for EVERY visitor on load; dragging is reviewer-only.
   var SECTION_ORDER_KEY = '__section_order__';
+  // Whole-section HIDE — a reserved per-section key "<sectionId>|__hidden"
+  // (hidden=true|false; html unused), parallel to "<sectionId>|__order". Inert to
+  // the box/order/img machinery (isAddedKey / isOrderKey / isImgKey / materializeAdded
+  // all ignore it). A hidden section is marked with .fs-ov-hidden — the same class a
+  // hidden box uses — so it is display:none for every visitor (ghosted + un-hideable
+  // in curate mode), AND it is stripped from the Word export + hidden in Print. So a
+  // section hidden here is suppressed in EVERY reporting path with no extra plumbing.
+  // Applied for every visitor on load (applySectionHidden); the button is reviewer-only.
+  var SECTION_HIDDEN_SUFFIX = '|__hidden';
+  function sectionHiddenKey(sid) { return sid + SECTION_HIDDEN_SUFFIX; }
+  function isSectionHiddenKey(k) { return /\|__hidden$/.test(k || ''); }
   function genToken() { return 'b' + Date.now().toString(36) + (_addCounter++).toString(36); }
   function primaryKind(el) {
     for (var i = 0; i < GRID_KINDS.length; i++)
@@ -172,6 +198,76 @@
     return null;
   }
   function isReviewer() { return !!getSession(); }
+
+  /* ─── Who sees the Curate button ────────────────────────────────────────────
+   *
+   * Sam, 2026-08-20: "hide the Curate button so the public doesn't see it… but
+   * I would like it to be available somehow for the MAP team to curate."
+   *
+   * THIS IS PRESENTATION, NOT SECURITY, and the distinction is worth writing
+   * down where the next person will read it. The button was never the gate:
+   * every write to factsheet_overrides is RLS'd to is_allowed_reviewer(), the
+   * anon key can read and never write, and THIS FILE IS SERVED PUBLICLY — so
+   * anyone who opens it learns the reveal switch below. What hiding buys is that
+   * a visitor stops being offered a control they cannot use, and stops being
+   * asked for a "reviewer email" they do not have. Nothing here should ever be
+   * mistaken for a second line of defence, and no future change should start
+   * relying on it as one.
+   *
+   * Two ways in, checked in this order:
+   *
+   *   1. A LIVE REVIEWER SESSION — the normal path, and the one to prefer.
+   *      cpl_session.js (loaded ahead of this file) shares the COBI session
+   *      across every browser tab of this origin — localStorage canonical,
+   *      mirrored into each tab's sessionStorage, which is where getSession()
+   *      already looks. So a curator who signed in on COBI (About → reviewer
+   *      sign-in) and opened the Fact Sheet from the Share menu simply finds the
+   *      button here, with nothing new to learn.
+   *
+   *   2. ?curate=1 — the escape hatch, and the reason the session path alone is
+   *      not enough. Hiding the button ALSO hides the only way to START signing
+   *      in, which strands a curator on a new laptop or one past the keeper's
+   *      12h cap. The param is stripped from the address bar the moment it is
+   *      read (the same treatment captureHash() gives an access token, for the
+   *      same reason: the URL a curator copies out of their own bar should be
+   *      the public one) and remembered per browser. ?curate=0 forgets it.
+   *
+   * The in-memory flag is deliberate: a browser with localStorage unavailable
+   * (private mode) still honours ?curate=1 for that pageview.
+   */
+  var REVEAL_KEY = 'cpl_fs_curate';
+  var _revealed = false;
+
+  function stripCurate(search) {
+    try {
+      var qs = new URLSearchParams(search || '');
+      qs.delete('curate');
+      var out = qs.toString();
+      return out ? '?' + out : '';
+    } catch (e) { return search || ''; }
+  }
+
+  function captureReveal() {
+    var v = null;
+    try { v = new URLSearchParams(location.search || '').get('curate'); } catch (e) {}
+    if (v === null) {                       // no switch in the URL — use what this browser remembers
+      try { _revealed = localStorage.getItem(REVEAL_KEY) === '1'; } catch (e) {}
+      return;
+    }
+    _revealed = (v === '1');
+    try {
+      if (_revealed) localStorage.setItem(REVEAL_KEY, '1');
+      else localStorage.removeItem(REVEAL_KEY);
+    } catch (e) {}
+    try {
+      if (history.replaceState) {
+        history.replaceState(null, '', location.pathname + stripCurate(location.search) + (location.hash || ''));
+      }
+    } catch (e) {}
+  }
+
+  // A signed-in reviewer always sees it; everyone else needs the switch.
+  function isRevealed() { return _revealed || isReviewer(); }
 
   // Mint the session if we landed from a magic link (standalone — no COBI app to
   // process the callback for us). Idempotent with the other curator tabs.
@@ -694,7 +790,7 @@
       });
       if (!sec.querySelector('.fs-add-img')) {
         var ib = document.createElement('button');
-        ib.type = 'button'; ib.className = 'fs-add-img no-print'; ib.textContent = '🖼 Add image';
+        ib.type = 'button'; ib.className = 'fs-add-img no-print'; ib.textContent = 'Add image';
         (function (id) { ib.addEventListener('click', function (e) { e.preventDefault(); addImage(id); }); })(sid);
         sec.appendChild(ib);
       }
@@ -853,23 +949,37 @@
   // Inject the per-section drag handle (curate mode only).
   function renderSectionHandles() {
     eachSection(function (sec) {
-      if (!isReorderableSection(sec) || sec.querySelector('.fs-sec-handle')) return;
+      if (!isReorderableSection(sec)) return;
       sec.classList.add('fs-sec-reorder');
       var h2 = sec.querySelector('h2');
       var label = norm(h2 ? h2.textContent : sec.id).slice(0, 60) || sec.id;
-      var h = document.createElement('div');
-      h.className = 'fs-sec-handle no-print';
-      h.setAttribute('draggable', 'true');
-      h.setAttribute('role', 'button');
-      h.setAttribute('tabindex', '0');
-      h.setAttribute('title', 'Drag to reorder this section');
-      h.setAttribute('aria-label', 'Drag to reorder the “' + label + '” section');
-      h.innerHTML = '⠿ <span>Move section</span>';
-      sec.insertBefore(h, sec.firstChild);
+      if (!sec.querySelector('.fs-sec-handle')) {
+        var h = document.createElement('div');
+        h.className = 'fs-sec-handle no-print';
+        h.setAttribute('draggable', 'true');
+        h.setAttribute('role', 'button');
+        h.setAttribute('tabindex', '0');
+        h.setAttribute('title', 'Drag to reorder this section');
+        h.setAttribute('aria-label', 'Drag to reorder the “' + label + '” section');
+        h.innerHTML = '⠿ <span>Move section</span>';
+        sec.insertBefore(h, sec.firstChild);
+      }
+      // Per-section Hide/Show toggle (top-right). Reuses the box-hide override
+      // lane, so a hidden section is suppressed on the page + in every report.
+      if (!sec.querySelector('.fs-sec-hide')) {
+        var hb = document.createElement('button');
+        hb.type = 'button';
+        hb.className = 'fs-sec-hide no-print';
+        (function (id) {
+          hb.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); toggleSectionHidden(id); });
+        })(sec.id);
+        updateSecHideBtn(hb, isSectionHidden(sec.id));
+        sec.insertBefore(hb, sec.firstChild);
+      }
     });
   }
   function clearSectionHandles() {
-    var hs = document.querySelectorAll('.fs-sec-handle');
+    var hs = document.querySelectorAll('.fs-sec-handle, .fs-sec-hide');
     for (var i = 0; i < hs.length; i++) if (hs[i].parentNode) hs[i].parentNode.removeChild(hs[i]);
     var rs = document.querySelectorAll('.fs-sec-reorder');
     for (var j = 0; j < rs.length; j++) rs[j].classList.remove('fs-sec-reorder');
@@ -893,6 +1003,59 @@
     var payload = JSON.stringify(reorderableSectionIds());
     API._overrides[SECTION_ORDER_KEY] = { html: payload, hidden: false };
     return saveOverride(SECTION_ORDER_KEY, { html: payload }).catch(function () {});
+  }
+
+  // ─── Whole-section hide (curate button) ────────────────────────────────────
+  // Contents links that jump to this section — hidden alongside it so the TOC
+  // never points at a section that isn't shown.
+  function tocLinksFor(sid) {
+    return document.querySelectorAll('#contents a[href="#' + sid + '"]');
+  }
+  function isSectionHidden(sid) {
+    var ov = API._overrides[sectionHiddenKey(sid)];
+    return !!(ov && ov.hidden);
+  }
+  // Sync the curate button's label/state to the section's current hidden state.
+  function updateSecHideBtn(btn, hidden) {
+    if (!btn) return;
+    var sec = btn.closest && btn.closest('section');
+    var h2 = sec && sec.querySelector('h2');
+    var label = norm(h2 ? h2.textContent : (sec ? sec.id : 'section')).slice(0, 60) || 'section';
+    btn.textContent = hidden ? 'Show section' : 'Hide section';
+    btn.title = hidden
+      ? 'This section is hidden from the public page, Print, and the Word export — click to show it'
+      : 'Hide this whole section from the public page, Print, and the Word export';
+    btn.setAttribute('aria-pressed', hidden ? 'true' : 'false');
+    btn.setAttribute('aria-label', (hidden ? 'Show the “' : 'Hide the “') + label + '” section');
+    btn.classList.toggle('is-hidden', hidden);
+  }
+  // Toggle the .fs-ov-hidden class on the <section> + its Contents link(s) and
+  // refresh the button. Pure DOM — no network (applySectionHidden / toggle call it).
+  function setSectionHiddenDom(sid, hidden) {
+    var sec = document.getElementById(sid);
+    if (sec) {
+      sec.classList.toggle('fs-ov-hidden', hidden);
+      updateSecHideBtn(sec.querySelector('.fs-sec-hide'), hidden);
+    }
+    var links = tocLinksFor(sid);
+    for (var i = 0; i < links.length; i++) links[i].classList.toggle('fs-ov-hidden', hidden);
+  }
+  // Apply every saved section-hidden override on load (all visitors, no sign-in).
+  function applySectionHidden(map) {
+    Object.keys(map || {}).forEach(function (key) {
+      if (!isSectionHiddenKey(key)) return;
+      var sid = key.slice(0, key.length - SECTION_HIDDEN_SUFFIX.length);
+      setSectionHiddenDom(sid, !!(map[key] && map[key].hidden));
+    });
+  }
+  // Reviewer toggle from the per-section curate button.
+  function toggleSectionHidden(sid, force) {
+    var key = sectionHiddenKey(sid);
+    var next = (typeof force === 'boolean') ? force : !isSectionHidden(sid);
+    return saveOverride(key, { hidden: next }).then(function () {
+      API._overrides[key] = { html: null, hidden: next };
+      setSectionHiddenDom(sid, next);
+    }).catch(function () { window.alert('Update failed — are you a signed-in reviewer?'); });
   }
 
   var _dragSec = null;
@@ -1050,6 +1213,7 @@
     // live inside .fs-imgbar, already excluded below — this covers the rest.
     if (t.closest && t.closest('.fs-del')) return;
     if (t.closest && t.closest('.fs-sec-handle')) return; // section drag handle — not a box click
+    if (t.closest && t.closest('.fs-sec-hide')) return;   // section hide/show toggle — handles itself
     if (t.closest && t.closest('.fs-imgbar')) return;     // image bar buttons handle themselves
     if (t.closest && t.closest('.fs-add, .fs-add-img')) return; // add buttons handle themselves
     var el = t.closest && t.closest('[data-fsk]');
@@ -1071,8 +1235,12 @@
   function updateButton() {
     var btn = document.getElementById('btn-curate');
     if (!btn) return;
-    if (API._curating) { btn.textContent = '✓ Done'; btn.title = 'Finish editing'; btn.classList.add('on'); btn.setAttribute('aria-pressed', 'true'); }
-    else { btn.textContent = '✎ Curate'; btn.classList.remove('on'); btn.setAttribute('aria-pressed', 'false');
+    // The public sees no button at all. Re-evaluated on every call, so the
+    // keeper picking up a sign-in in another tab reveals it without a reload —
+    // and a sign-out hides it again.
+    btn.hidden = !isRevealed();
+    if (API._curating) { btn.textContent = 'Done'; btn.title = 'Finish editing'; btn.classList.add('on'); btn.setAttribute('aria-pressed', 'true'); }
+    else { btn.textContent = 'Curate'; btn.classList.remove('on'); btn.setAttribute('aria-pressed', 'false');
            btn.title = isReviewer() ? 'Edit boxes on this page' : 'Sign in to edit this fact sheet'; }
   }
   function wireButton() {
@@ -1098,7 +1266,7 @@
       'body.fs-curating [data-fsk].fs-editable{cursor:pointer;}' +
       'body.fs-curating [data-fsk].fs-editable:hover{outline:2px solid var(--cobalt);background:rgba(0,71,171,.05);}' +
       'body.fs-curating [data-fsk].fs-editable::after{content:"\\270E edit";position:absolute;top:-9px;right:6px;' +
-        'font:600 11px var(--font-data);background:var(--cobalt);color:#fff;padding:1px 6px;border-radius:6px;' +
+        'font:600 11px var(--font-data);background:var(--cobalt);color:var(--on-accent);padding:1px 6px;border-radius:6px;' +
         'opacity:0;transition:opacity .12s;pointer-events:none;z-index:2;}' +
       'body.fs-curating [data-fsk].fs-editable:hover::after{opacity:1;}' +
       // Move-only (KPI) boxes: a move/remove hint instead of "edit".
@@ -1111,7 +1279,7 @@
       'body.fs-curating [data-fsk].fs-tableblock{overflow:visible;}' +
       'body.fs-curating [data-fsk].fs-tableblock:hover{outline:2px solid var(--crimson);}' +
       'body.fs-curating [data-fsk].fs-tableblock::after{content:"\\2715 hide table";position:absolute;top:-9px;left:6px;' +
-        'font:600 11px var(--font-data);background:var(--crimson);color:#fff;padding:1px 6px;border-radius:6px;' +
+        'font:600 11px var(--font-data);background:var(--crimson);color:var(--on-accent);padding:1px 6px;border-radius:6px;' +
         'opacity:0;transition:opacity .12s;pointer-events:none;z-index:2;}' +
       'body.fs-curating [data-fsk].fs-tableblock:hover::after{opacity:1;}' +
       'body.fs-curating [data-fsk].fs-target{outline:2px solid var(--mustard-fill) !important;}' +
@@ -1143,11 +1311,11 @@
         'background:var(--surface,#fff);color:var(--crimson);font:700 12px var(--font-data);' +
         'cursor:pointer;z-index:3;display:none;}' +
       'body.fs-curating [data-fsk].fs-curatable:hover>.fs-del,body.fs-curating .fs-del:hover{display:block;}' +
-      '.fs-del:hover{background:var(--crimson);color:#fff;}' +
+      '.fs-del:hover{background:var(--crimson);color:var(--on-accent);}' +
       '.fs-add{grid-column:1 / -1;justify-self:start;display:inline-flex;align-items:center;gap:6px;' +
         'margin:10px 0 0;padding:7px 14px;border:1px dashed var(--cobalt);border-radius:var(--radius-sm);' +
         'background:rgba(0,71,171,.06);color:var(--cobalt);font:600 13px var(--font-data);cursor:pointer;}' +
-      '.fs-add:hover{background:var(--cobalt);color:#fff;}' +
+      '.fs-add:hover{background:var(--cobalt);color:var(--on-accent);}' +
       '.fs-add-img{display:inline-flex;align-items:center;gap:6px;margin:10px 8px 0 0;padding:7px 14px;' +
         'border:1px dashed var(--seal-blue,#0a2240);border-radius:var(--radius-sm);background:rgba(10,34,64,.05);' +
         'color:var(--seal-blue,#0a2240);font:600 13px var(--font-data);cursor:pointer;}' +
@@ -1170,13 +1338,23 @@
         'padding:2px 10px;border-radius:8px;cursor:grab;border:1px solid var(--cobalt);background:var(--surface);' +
         'color:var(--cobalt);font:700 11px var(--font-data);box-shadow:0 1px 5px rgba(28,28,26,.14);' +
         '-webkit-user-select:none;user-select:none;}' +
-      '.fs-sec-handle:hover{background:var(--cobalt);color:#fff;}' +
+      '.fs-sec-handle:hover{background:var(--cobalt);color:var(--on-accent);}' +
       '.fs-sec-handle:active{cursor:grabbing;}' +
-      // Keep the handle visible even when its section is collapsed (the collapse
-      // rule hides every non-h2 child) so a collapsed page is the easiest to reorder.
-      'body.fs-curating main>section.collapsed>.fs-sec-handle{display:inline-flex !important;}' +
+      // Per-section Hide/Show toggle — top-right, crimson when it will hide, blue
+      // when the section is already hidden (label reads "Show section").
+      '.fs-sec-hide{position:absolute;top:-13px;right:10px;z-index:6;display:inline-flex;align-items:center;gap:5px;' +
+        'padding:2px 10px;border-radius:8px;cursor:pointer;border:1px solid var(--crimson);background:var(--surface);' +
+        'color:var(--crimson);font:700 11px var(--font-data);box-shadow:0 1px 5px rgba(28,28,26,.14);' +
+        '-webkit-user-select:none;user-select:none;}' +
+      '.fs-sec-hide:hover{background:var(--crimson);color:var(--on-accent);}' +
+      '.fs-sec-hide.is-hidden{border-color:var(--seal-blue);color:var(--seal-blue);}' +
+      '.fs-sec-hide.is-hidden:hover{background:var(--seal-blue);color:#fff;}' +
+      // Keep the handle + hide toggle visible even when its section is collapsed (the
+      // collapse rule hides every non-h2 child) so a collapsed page is easiest to curate.
+      'body.fs-curating main>section.collapsed>.fs-sec-handle,' +
+      'body.fs-curating main>section.collapsed>.fs-sec-hide{display:inline-flex !important;}' +
       'body.fs-curating main>section.fs-sec-dragging{opacity:.5;outline:2px dashed var(--cobalt) !important;outline-offset:6px;}' +
-      '@media print{#btn-curate,.fs-dock,.fs-del,.fs-add,.fs-add-img,.fs-imgbar,.fs-sec-handle{display:none !important;}' +
+      '@media print{#btn-curate,.fs-dock,.fs-del,.fs-add,.fs-add-img,.fs-imgbar,.fs-sec-handle,.fs-sec-hide{display:none !important;}' +
         'body.fs-curating [data-fsk]::after{display:none !important;}' +
         'body.fs-curating .fs-ov-hidden{display:none !important;}' +
         'body.fs-curating [data-fsk].fs-curatable{outline:none !important;}}';
@@ -1190,6 +1368,10 @@
   function boot() {
     injectCss();
     captureHash();
+    captureReveal();
+    // The keeper announces a session arriving (another tab signed in) or ending.
+    // Cheap, and it means the button appears where the curator is already looking.
+    try { window.addEventListener('cpl-session-changed', updateButton); } catch (e) {}
     API._blocks = collectBlocks();      // sync: baked boxes (callers may read blocks() now)
     indexBlocks();
     document.addEventListener('click', onDocClick, true);
@@ -1211,6 +1393,7 @@
       indexBlocks();
       applyOrder(map);                  // honor the saved box drag order (within grids)
       applySectionOrder(map);           // honor the saved SECTION drag order (within main)
+      applySectionHidden(map);          // honor saved whole-section hides (section + TOC link)
       applyOverrides();                 // overlay html/hidden onto every block
       if (API._justAuthed) setCurating(true);
     });
@@ -1243,10 +1426,24 @@
     applySectionOrder: applySectionOrder,
     persistSectionOrder: persistSectionOrder,
     SECTION_ORDER_KEY: SECTION_ORDER_KEY,
+    // section hide:
+    sectionHiddenKey: sectionHiddenKey,
+    isSectionHiddenKey: isSectionHiddenKey,
+    isSectionHidden: isSectionHidden,
+    applySectionHidden: applySectionHidden,
+    setSectionHiddenDom: setSectionHiddenDom,
+    toggleSectionHidden: toggleSectionHidden,
     addBox: addBox,
     deleteBox: deleteBox,
     toggleHidden: toggleHidden,
     setCurating: setCurating,
+    // curate-button visibility:
+    isRevealed: isRevealed,
+    isReviewer: isReviewer,
+    captureReveal: captureReveal,
+    stripCurate: stripCurate,
+    updateButton: updateButton,
+    REVEAL_KEY: REVEAL_KEY,
     blockByEl: blockByEl,
     sampleInner: sampleInner,
     isAddedKey: isAddedKey,

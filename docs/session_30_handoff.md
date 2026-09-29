@@ -11,6 +11,8 @@ related:
   - docs/kb-notes/methodology-versioned-prototype-gallery.md
   - CLAUDE.md §6a (CPL Analytics) + §9 (EACR identity) + §11 "Session 29" subsection
 moniker_suggestion: Bruh 30 / "Thirty" / "Tres-Cero" — or claim your own
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # Session 30 Hand-off Prompt

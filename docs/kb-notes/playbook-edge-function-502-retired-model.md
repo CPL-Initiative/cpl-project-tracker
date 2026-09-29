@@ -1,9 +1,8 @@
 ---
 title: Playbook — a live Edge Function 502 is often a RETIRED model id (diagnose via logs, fix via model swap)
-date: 2026-06-19
+created: 2026-06-19
 updated: 2026-06-19
 kb-status: published
-type: playbook
 tags: [cpl-assistant, cpl-chat, supabase-edge-function, anthropic-api, model-retirement, incident, playbook]
 artifacts:
   - chatbox/supabase/functions/cpl-chat/index.ts   # the shared Edge Function

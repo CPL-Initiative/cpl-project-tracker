@@ -11,6 +11,8 @@ related:
   - docs/kb-notes/methodology-styling-native-details-toggle.md (the v2-toggle fix pattern)
   - CLAUDE.md §6a (EACR) + §9 (EACR identity) + §11 "Session 28" subsection
 moniker_suggestion: Bruh 29 / "Two-Niner" / "Nina" — or claim your own
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # Session 29 Hand-off Prompt

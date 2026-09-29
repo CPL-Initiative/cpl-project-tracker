@@ -2,7 +2,10 @@
 // path 1). Rolls up MAP View_ArticulatedCollegeCourses.Students per credential
 // so curators can prioritize by impact. Guards:
 //   - an exact count (>=5) renders with thousands separators
-//   - a suppressed count (1-4) renders masked as "<5" (small-cell privacy)
+//   - a suppressed count renders masked as "<N", where N is the floor the
+//     generator BAKED into the payload — not a literal. The floor rose 5 -> 10
+//     on 2026-08-10 and this assertion was the only thing in 195 test files
+//     that noticed, because it encoded the value rather than the behaviour.
 //   - no data renders "—"
 //   - clicking the "Students" header sorts by impact (desc → highest first,
 //     suppressed above no-data)
@@ -73,8 +76,16 @@ function runAssertions() {
   const hi = rowByTitle(wrap, "ZZZ High Impact");
   check("exact count renders with thousands separator", !!hi && /5,000/.test(txt(hi.querySelector(".cr-served-n"))));
   const sup = rowByTitle(wrap, "ZZZ Suppressed");
-  check("suppressed (1-4) renders masked '<5'", !!sup && txt(sup.querySelector(".cr-served-sup")) === "<5");
-  check("suppressed exact number not present anywhere", !/(^|[^0-9])[1-4]([^0-9]|$)/.test(txt(sup.querySelector(".cr-served-cell"))));
+  // Assert the mask TRACKS the payload floor. Reading it from the same place
+  // the consumer does means a future floor change needs no test edit — and a
+  // regression to a hard-coded literal still fails here.
+  var floor = ((window.CPL_CREDENTIAL_REFERENCE || {})._stats || {}).served_suppress_below || 10;
+  check("suppressed renders the masked floor, not a literal",
+        !!sup && txt(sup.querySelector(".cr-served-sup")) === "<" + floor);
+  // The real privacy assertion: no sub-floor integer may appear in the cell.
+  var supText = txt(sup.querySelector(".cr-served-cell"));
+  check("no sub-floor exact count appears in the suppressed cell",
+        supText === "<" + floor);
   const none = rowByTitle(wrap, "ZZZ No Data");
   check("no-data renders '—'", !!none && txt(none.querySelector(".cr-served-cell")) === "—");
 
@@ -87,7 +98,7 @@ function runAssertions() {
     var rowsOrder = Array.from(wrap.querySelectorAll("tr.cr-row")).map((tr) => txt(tr));
     var iSup = rowsOrder.findIndex((t) => /ZZZ Suppressed/.test(t));
     var iNone = rowsOrder.findIndex((t) => /ZZZ No Data/.test(t));
-    check("suppressed (<5) sorts above no-data", iSup >= 0 && iNone >= 0 && iSup < iNone);
+    check("suppressed sorts above no-data", iSup >= 0 && iNone >= 0 && iSup < iNone);
   }
 
   let pass = 0;

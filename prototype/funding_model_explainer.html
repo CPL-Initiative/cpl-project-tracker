@@ -1,0 +1,639 @@
+<title>How This Funding Model Works</title>
+<!-- ⚠ THE BAKED PAYLOAD BELOW PREDATES THE 2026-09-02 CARD FIX.
+     The prose on this page was revised with the live page's on 2026-09-02, but
+     the #DATA block still carries `cards` computed on the retired two-lane
+     basis — credit_ftes over the 115 colleges — so the two illustration cards
+     read 26,804 FTES / 2.5% for Mt San Antonio while the table below them reads
+     37,634 for the same college. funding_model_payload.js builds them from
+     `rows` now, so ONE regeneration fixes it:
+
+       select config::text from public.cpl_funding_config where id='default';
+       (save it, verify md5 — never hand-transcribe a config)
+       node prototype/build_funding_model_explainer.js <config.json>
+
+     Not run here: the sandbox reaches Supabase only through the MCP tools, and
+     the repo's own rule is to verify a config's md5 rather than paste one
+     through a conversation. The LIVE page (funding-model/index.html) is already
+     correct and is what the SANITY_URL points at. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<style>
+/* ─────────────────────────────────────────────────────────────────────────
+   FIRST LIGHT — the house palette (docs/kb-notes/reference-ui-design-system.md
+   + prototype/first_light_theme_v1.html v1.6). Warm monochrome base, five
+   accents with one job each, every accent paired with a word or a mark.
+   First Light is a LIGHT identity with no dark page palette, so this page
+   commits to one theme and paints every color explicitly — including the
+   body background, because the viewer paints its own ground behind us.
+   ───────────────────────────────────────────────────────────────────────── */
+:root{
+  --paper:#F4F2ED; --text-strong:#1C1C1A; --text-body:#3A3A36; --text-muted:#5C5C55;
+  --surface-opaque:#FFFFFF; --surface-subtle:#F7F5F1; --surface-muted:#ECE9E2;
+  --border:rgba(28,28,26,.14); --border-strong:rgba(28,28,26,.30);
+  --cobalt:#0047AB; --crimson:#920000; --hunter:#2C601A; --mustard-text:#8B6800;
+  --mustard-fill:#E3B341;
+  --focus-ring:var(--cobalt);
+  /* Derived tints get their own tokens rather than inline rgba (house rule). */
+  --tint-cobalt:#E8EEF8; --tint-hunter:#EAF0E6; --tint-crimson:#F6EAEA; --tint-mustard:#F7F0DE;
+  /* Prose runs the full column width so its right edge lines up with the
+     boxes and tables rather than stopping ragged short of them. */
+  --measure:none;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--paper); color:var(--text-body);
+  font-family:"Source Sans 3",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size:clamp(16px,.95rem + .25vw,17.5px); line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+.num{font-variant-numeric:tabular-nums}
+.wrap{width:100%; max-width:1000px; margin:0 auto; padding:0 clamp(16px,4vw,28px)}
+h1,h2,h3{font-family:"Playfair Display",Georgia,"Times New Roman",serif; color:var(--text-strong);
+  text-wrap:balance; margin:0; font-weight:600; line-height:1.16; letter-spacing:-.005em}
+h1{font-size:clamp(1.9rem,1.4rem + 2.2vw,3rem)}
+h2{font-size:clamp(1.35rem,1.15rem + 1vw,1.9rem)}
+h3{font-size:clamp(1.05rem,1rem + .3vw,1.2rem)}
+p{margin:0 0 1em}
+p,li{max-width:var(--measure)}
+a{color:var(--cobalt); text-decoration-thickness:1px; text-underline-offset:2px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:2px solid var(--focus-ring); outline-offset:3px; border-radius:3px}
+.skip{position:absolute; left:-9999px; top:0; background:var(--surface-opaque); color:var(--cobalt);
+  padding:10px 16px; border:1px solid var(--border-strong); border-radius:0 0 6px 0; z-index:20; font-weight:600}
+.skip:focus{left:0}
+.eyebrow{font-size:.74rem; letter-spacing:.14em; text-transform:uppercase; font-weight:700;
+  color:var(--text-muted); margin:0 0 .55em}
+
+/* ── masthead ─────────────────────────────────────────────────────────── */
+header{border-bottom:1px solid var(--border); background:var(--surface-opaque)}
+.head{padding:clamp(30px,6vw,56px) 0 clamp(24px,4vw,36px)}
+.head-top{display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between;
+  gap:10px 20px; margin-bottom:.55em}
+.head-top .eyebrow{margin:0}
+.head-top .meta{margin-top:0; justify-content:flex-end}
+@media (max-width:560px){.head-top{justify-content:flex-start} .head-top .meta{justify-content:flex-start}}
+.meta{display:flex; flex-wrap:wrap; gap:8px; margin-top:22px; max-width:none}
+.tag{display:inline-flex; align-items:center; gap:7px; border:1px solid var(--border-strong);
+  border-radius:999px; padding:4px 13px; font-size:.8rem; color:var(--text-muted); background:var(--surface-subtle)}
+.tag b{color:var(--text-strong); font-weight:600}
+.tag.draft{background:var(--tint-mustard); border-color:var(--mustard-text); color:var(--mustard-text); font-weight:600}
+
+/* ── sections ─────────────────────────────────────────────────────────── */
+section{padding:clamp(34px,6vw,60px) 0; border-bottom:1px solid var(--border)}
+section:last-of-type{border-bottom:0}
+.sec-head{margin-bottom:1.4em}
+.step-no{display:inline-block; font-family:"Source Sans 3",sans-serif; font-size:.74rem; font-weight:700;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--cobalt); margin-bottom:.5em}
+
+/* ── key figures ──────────────────────────────────────────────────────── */
+.figs{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:0 0 6px; max-width:none}
+.fig{background:var(--surface-opaque); border:1px solid var(--border); border-radius:4px; padding:16px 18px}
+.fig .v{font-family:"Playfair Display",Georgia,serif; font-size:clamp(1.5rem,1.2rem + 1.2vw,2.1rem);
+  color:var(--text-strong); font-variant-numeric:tabular-nums; line-height:1.1}
+.fig .k{font-size:.82rem; color:var(--text-muted); margin-top:.4em; max-width:none}
+/* The appropriation itself — the one figure a CO or Finance reader looks for
+   first, so it leads full width and the three destinations sit under it. */
+.topline{background:var(--tint-cobalt); border:1px solid var(--cobalt); border-radius:4px;
+  padding:18px 22px; margin:0 0 14px; max-width:none}
+.topline .v{font-family:"Playfair Display",Georgia,serif; color:var(--text-strong);
+  font-size:clamp(1.9rem,1.4rem + 1.6vw,2.6rem); font-variant-numeric:tabular-nums; line-height:1.1}
+.topline .k{font-size:.9rem; color:var(--text-muted); margin:.35em 0 0; max-width:none}
+.figs.two{grid-template-columns:repeat(2,1fr); margin-top:14px}
+.figs-note{margin:1em 0 0; font-size:.92rem; color:var(--text-muted)}
+.figs-note b{color:var(--text-strong); font-variant-numeric:tabular-nums; font-weight:600}
+
+.range{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:14px; max-width:none}
+.rng{background:var(--surface-subtle); border:1px solid var(--border); border-radius:4px; padding:13px 16px}
+.rk{font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; font-weight:700;
+  color:var(--text-muted); margin:0 0 .3em; max-width:none}
+.rv{font-size:1.25rem; font-weight:700; color:var(--text-strong); font-variant-numeric:tabular-nums;
+  margin:0; max-width:none}
+.rs{font-size:.82rem; color:var(--text-muted); margin:.25em 0 0; max-width:none}
+.rng-note{margin-top:1em; font-size:.92rem; color:var(--text-muted)}
+
+/* ── callouts ─────────────────────────────────────────────────────────── */
+.note{border-left:3px solid var(--mustard-text); background:var(--tint-mustard);
+  padding:14px 18px; border-radius:0 4px 4px 0; margin:1.4em 0}
+.note.plain{border-left-color:var(--cobalt); background:var(--tint-cobalt)}
+.note p:last-child{margin-bottom:0}
+.note strong{color:var(--text-strong)}
+
+/* ── two-up cards ─────────────────────────────────────────────────────── */
+.duo{display:grid; grid-template-columns:1fr 1fr; gap:16px; max-width:none; margin-top:1.3em}
+.card{background:var(--surface-opaque); border:1px solid var(--border); border-radius:4px; padding:18px 20px}
+.card h3{margin-bottom:.15em}
+.card .who{font-size:.82rem; color:var(--text-muted); margin-bottom:.9em; max-width:none}
+.kv{display:flex; justify-content:space-between; gap:14px; padding:7px 0; border-bottom:1px solid var(--border); font-size:.92rem}
+.kv:last-child{border-bottom:0}
+.kv .k{color:var(--text-muted); max-width:none}
+.kv .v{font-variant-numeric:tabular-nums; font-weight:600; color:var(--text-strong); text-align:right; white-space:nowrap}
+.kv.hi .v{color:var(--hunter)}
+
+/* ── priorities ───────────────────────────────────────────────────────── */
+.prio{background:var(--surface-opaque); border:1px solid var(--border); border-left:4px solid var(--cobalt);
+  border-radius:0 4px 4px 0; padding:16px 20px; margin-bottom:12px; max-width:none}
+.prio .top{display:flex; flex-wrap:wrap; gap:10px; align-items:baseline; justify-content:space-between}
+.prio .name{font-family:"Playfair Display",Georgia,serif; font-size:1.15rem; color:var(--text-strong)}
+.prio .pct{font-variant-numeric:tabular-nums; font-weight:700; color:var(--cobalt); white-space:nowrap}
+.prio .metric{margin:.5em 0 0; font-size:.94rem}
+.prio .aim{margin:.35em 0 0; font-size:.88rem; color:var(--text-muted)}
+
+/* ── plain tables ─────────────────────────────────────────────────────── */
+.tablebox{border:1px solid var(--border); border-radius:4px; background:var(--surface-opaque);
+  overflow-x:auto; max-width:none; margin-top:1.2em}
+table{width:100%; border-collapse:collapse; background:var(--surface-opaque); font-size:.92rem}
+caption{text-align:left; padding:14px 18px 0; color:var(--text-muted); font-size:.86rem}
+th,td{padding:9px 14px; text-align:left; border-bottom:1px solid var(--border)}
+thead th{background:var(--surface-subtle); color:var(--text-strong); font-weight:700; font-size:.8rem;
+  letter-spacing:.03em; text-transform:uppercase; white-space:nowrap; position:sticky; top:0}
+td.n,th.n{text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap}
+tbody tr:nth-child(even) td{background:var(--surface-subtle)}
+tbody tr:last-child td{border-bottom:0}
+.mark{font-size:.74rem; font-weight:700; padding:1px 7px; border-radius:10px; margin-left:6px; white-space:nowrap}
+.mark.floor{color:var(--mustard-text); background:var(--tint-mustard)}
+.mark.cap{color:var(--cobalt); background:var(--tint-cobalt)}
+.scroller{max-height:520px; overflow:auto}
+.searchrow{display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin:1.2em 0 0; max-width:none}
+label.srch{font-weight:600; color:var(--text-strong)}
+input[type=search]{font:inherit; padding:9px 13px; border:1px solid var(--border-strong); border-radius:4px;
+  background:var(--surface-opaque); color:var(--text-body); min-width:0; flex:1 1 220px}
+.count{font-size:.88rem; color:var(--text-muted)}
+
+/* ── dials vs facts ───────────────────────────────────────────────────── */
+.legend{display:flex; flex-wrap:wrap; gap:16px; margin-top:1em; font-size:.88rem; color:var(--text-muted); max-width:none}
+.legend span{display:inline-flex; align-items:center; gap:6px}
+
+footer{padding:34px 0 56px; color:var(--text-muted); font-size:.88rem}
+footer p{max-width:none}
+hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0 0 1.6em}
+
+@media (max-width:820px){
+  .figs{grid-template-columns:1fr 1fr}
+  .range{grid-template-columns:1fr}
+  .duo{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .figs, .figs.two{grid-template-columns:1fr}
+  .range{grid-template-columns:1fr}
+  body{line-height:1.62}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none !important; transition:none !important; scroll-behavior:auto !important}
+}
+@media print{
+  .searchrow,.skip{display:none}
+  .scroller{max-height:none; overflow:visible}
+  body{background:#FFFFFF}
+}
+</style>
+
+<a class="skip" href="#start">Skip to the explanation</a>
+
+<header>
+  <div class="wrap head">
+    <div class="head-top">
+      <p class="eyebrow">CPL Implementation Funding · Chancellor&rsquo;s Office</p>
+      <div class="meta">
+        <span class="tag draft">Draft model &mdash; not adopted policy</span>
+        <span class="tag">Scenario <b>1</b></span>
+        <span class="tag">Window <b>2026-27 &amp; 2027-28</b></span>
+        <span class="tag">Figures as of <b>31 Aug 2026</b></span>
+      </div>
+    </div>
+    <h1>How this funding model works</h1>
+  </div>
+</header>
+
+<main id="start">
+
+<section>
+  <div class="wrap">
+    <p>Most of the one-time appropriation is allocated <strong>directly to institutions</strong> &mdash;
+      to all 118&nbsp;institutions &mdash; the 115 colleges plus the three noncredit-only campuses &mdash;
+      in proportion to how much teaching each one does, credit and noncredit together. The rest funds
+      the statewide CPL projects and technology every college draws on, and two Chancellor&rsquo;s Office
+      posts supporting that work. No institution is offered less than <b id="f-floorv">$150,000</b> over the two
+      years, and none more than <b id="f-capv">$400,000</b>.</p>
+    <p><strong>What an institution receives is driven by its own CPL results, as they happen.</strong> The
+      figure allocated to a college is what is available to it across the two years; what it draws down
+      tracks the prior-learning credit it actually puts on students&rsquo; records, measured from that
+      college&rsquo;s own MAP data against three priorities. A college qualifies by doing three
+      straightforward things, and from there the funding follows the outcomes.</p>
+    <div class="topline">
+      <div class="v num" id="f-total">$35,000,000</div>
+      <p class="k">one-time 2026-27 appropriation for CPL implementation</p>
+    </div>
+    <div class="figs">
+      <div class="fig"><div class="v num" id="f-inst">$25,240,308</div><p class="k">allocated to the 118 institutions &mdash; the 115 colleges and the noncredit-only campuses &mdash; to earn against CPL outcomes</p></div>
+      <div class="fig"><div class="v num" id="f-proj">$8,959,692</div><p class="k">statewide CPL projects and technology &mdash; work that serves every college rather than one</p></div>
+      <div class="fig"><div class="v num" id="f-staff">$800,000</div><p class="k">two Chancellor&rsquo;s Office posts supporting colleges across the two years</p></div>
+    </div>
+    <p class="figs-note">Those three are the whole appropriation. The
+      <b id="f-main">$25,240,308</b> to institutions is <b>one funding total</b>, shared among all 118 in proportion
+      to combined credit + noncredit size within a base award and a cap &mdash; and every award splits
+      into a credit share and a <b>noncredit</b> share by the institution&rsquo;s own teaching mix.
+      Statewide, <b id="f-nc">$1,783,399</b> of the funding is noncredit, carried within
+      <b id="l-nc-count">108</b> college awards and restricted to noncredit outcomes, plus the three
+      noncredit-only institutions&rsquo; awards, drawn only as CPL originating from them posts at a credit
+      college. The $9.04&nbsp;million remaining from 2025-26 is a separate distribution and is deliberately
+      not part of this appropriation.</p>
+    <div class="figs">
+      <div class="fig"><div class="v num" id="f-avg">$213,901</div><p class="k">average max award for the two years</p></div>
+      <div class="fig"><div class="v num" id="f-floor">51</div><p class="k" id="f-floor-k">institutions are brought up to the $150,000 base award</p></div>
+      <div class="fig"><div class="v num" id="f-cap">7</div><p class="k" id="f-cap-k">are held at the $400,000 cap</p></div>
+    </div>
+    <div class="range">
+      <div class="rng">
+        <p class="rk">Lowest</p>
+        <p class="rv num" id="r-min">$150,000</p>
+        <p class="rs" id="r-min-s">the base award, and where 51 of the 118 institutions land</p>
+      </div>
+      <div class="rng">
+        <p class="rk">Typical</p>
+        <p class="rv num" id="r-med">$167,171</p>
+        <p class="rs">the middle institution &mdash; half are offered less than this, half more</p>
+      </div>
+      <div class="rng">
+        <p class="rk">Highest</p>
+        <p class="rv num" id="r-max">$400,000</p>
+        <p class="rs" id="r-max-s">the cap &mdash; where the largest institutions are held</p>
+      </div>
+    </div>
+    <p class="rng-note">The average sits well above the typical college because a handful of very large
+      institutions raise it. Most institutions are allocated less than the average, so the median is the
+      better guide to what an institution can expect.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="step-no">Step one</p>
+      <h2>How much each college is offered</h2>
+    </div>
+    <p>An institution&rsquo;s size is measured in <strong>full-time equivalent students</strong>, the
+      Chancellor&rsquo;s Office&rsquo;s standard measure of instructional volume, counting credit and
+      noncredit instruction together. An institution accounting for two percent of the statewide total
+      begins with two percent of the amount allocated to institutions.</p>
+    <p>Two adjustments are then applied to that proportional figure:</p>
+    <ul>
+      <li><strong>A minimum of <span id="l-floor">$150,000</span></strong> over the two years.
+        <span id="l-floorn">Forty-five</span> institutions&rsquo; proportional share fell below that
+        amount and is brought up to it, funded from within the same total.</li>
+      <li><strong>A maximum of <span id="l-cap">$400,000</span></strong> over the two years.
+        <span id="l-capn">Six</span> institutions&rsquo; proportional share exceeded that amount and is
+        held there. The difference, <span id="l-capr">$262,241</span>, is redistributed across the
+        institutions below the maximum. An institution held at the maximum is assessed against a
+        correspondingly smaller target, so it earns at the same rate as every other institution above the
+        minimum.</li>
+    </ul>
+    <!-- Built from the payload (D.cards) — see build_funding_model_explainer.js.
+         Hand-typing these is how two of the four figures went stale. -->
+    <div class="duo" id="cards"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="step-no">Step two</p>
+      <h2>What a college has to do to qualify</h2>
+    </div>
+    <p>Three requirements, each verifiable from MAP:</p>
+    <ol>
+      <li>A <strong>CPL Coordinator or Counselor listed in MAP</strong>, so a student&rsquo;s request reaches
+        a real person.</li>
+      <li>A <strong>participation request by 1 November 2026</strong>. A college&rsquo;s vice president or
+        chief executive can submit it from the college&rsquo;s own row on the funding page.</li>
+      <li>At least <strong>75% of enrolled veterans&rsquo; Joint Services Transcripts uploaded to MAP</strong>.</li>
+    </ol>
+    <div class="note">
+      <p><strong>Qualifying does not change the size of the offer.</strong> A college that has not yet met the
+        baseline has the same amount allocated to it, and <strong>that allocation is not redistributed
+        while it gets there</strong> &mdash; what a college has not yet earned stays in reserve for it
+        rather than being shared out to the colleges that moved first.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="step-no">Step three</p>
+      <h2>How the funding is earned</h2>
+    </div>
+    <p>The offer is split across three priorities. Each one has a share of the funding and a single thing it
+      measures. The order and the shares below are the ones currently set in the model.</p>
+    <div id="prios"></div>
+    <p>Every priority is measured in the same currency: <strong>units of prior learning, converted to
+      FTES</strong> at the college&rsquo;s own calendar &mdash; 30 semester units make one FTES, or 45 on a
+      quarter calendar.</p>
+
+    <h3 style="margin-top:1.6em">How a share becomes a target</h3>
+    <p>Each priority&rsquo;s share is divided by a price to produce its target. The price is the 2026-27 state rate of
+      <strong>$5,649.63 per FTES</strong>, multiplied by that priority&rsquo;s <strong>funding
+      factor</strong>. All three factors are currently set to <strong>1.0</strong>, so every priority is
+      paid at the plain state rate and the three targets differ only because the shares do.</p>
+    <div class="note plain">
+      <p><strong>What the funding factor is for.</strong> Raising it above 1.0 pays more per FTES, so that
+        priority&rsquo;s share is earned with <em>fewer</em> units &mdash; a premium on outcomes the
+        Chancellor&rsquo;s Office intends to encourage. A factor below 1.0 has the opposite effect. It is a separate dial from the share: the share decides how many dollars sit
+        behind a priority, the factor decides how hard they are to earn.</p>
+    </div>
+    <div class="tablebox">
+      <table>
+        <caption>What Mt San Antonio would have to show, across the two-year window</caption>
+        <thead>
+          <tr>
+            <th scope="col">Priority</th>
+            <th scope="col" class="n">Funding</th>
+            <th scope="col" class="n">Target (FTES)</th>
+            <th scope="col" class="n">Roughly, in units</th>
+          </tr>
+        </thead>
+        <tbody id="workedbody"></tbody>
+      </table>
+    </div>
+    <p style="margin-top:1.1em">An institution that reaches half of a priority&rsquo;s target earns half
+      of that priority&rsquo;s share. Exceeding the target does not increase the amount earned: the share
+      is the ceiling.</p>
+    <div class="note">
+      <p><strong>One consequence worth knowing.</strong> Because the minimum is paid for from
+        inside the same total, an institution above the minimum earns approximately <strong id="f-eff">$5,158 for each
+        FTES of prior learning it shows</strong> rather than the full <span id="f-rate">$5,650</span>,
+        while a small college lifted to the minimum reaches its target on far less. That is the floor
+        doing exactly what it was put there to do, but it does mean the rate a college earns at is not
+        identical everywhere. The maximum does <em>not</em> add a second discount: a college held to it
+        is asked for proportionally less prior learning, so it earns at the same rate as every other
+        college above the minimum.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="step-no">Step four</p>
+      <h2>When the funding is disbursed</h2>
+    </div>
+    <p>Two timing choices are switched on in the current model, and neither changes how much a college
+      can earn.</p>
+    <ul>
+      <li><strong>The whole two-year amount is offered in year one.</strong> Colleges need to build capacity
+        at the start &mdash; staff time, faculty review of credit recommendations, local process work &mdash;
+        so waiting until year two for half of it would work against the point. Anything unspent rolls
+        forward. Because all the funding is on the table in year one, the targets shown are the full
+        two-year figures.</li>
+      <li><strong>Year two mirrors year one.</strong> The two years are deliberately identical, so editing
+        one keeps the other in step rather than letting them quietly drift apart. Nothing is overwritten:
+        switching the mirror off leaves both years exactly as they were.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <hr class="rule">
+      <h2>What is a choice, and what is a given</h2>
+    </div>
+    <p>Useful to have straight before a conversation about the model: some of these numbers are policy
+      decisions this office can change, and some are facts we are handed.</p>
+    <div class="tablebox">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Number</th>
+            <th scope="col">Currently</th>
+            <th scope="col">Who decides it</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Priority order, names and shares</th><td class="num">34% / 33% / 33%</td><td>A choice &mdash; ours</td></tr>
+          <tr><th scope="row">Funding factor per priority</th><td class="num">1.0 / 1.0 / 1.0</td><td>A choice &mdash; ours</td></tr>
+          <tr><th scope="row">Minimum per college</th><td class="num" id="t-floor">$150,000</td><td>A choice &mdash; ours</td></tr>
+          <tr><th scope="row">Maximum per college</th><td class="num" id="t-cap">$400,000</td><td>A choice &mdash; ours</td></tr>
+          <tr><th scope="row">Noncredit shares of the awards</th><td class="num" id="t-nc">$1,783,399</td><td>Each institution&rsquo;s own teaching mix</td></tr>
+          <tr><th scope="row">Qualifying requirements and deadline</th><td>1 Nov 2026</td><td>A choice &mdash; ours</td></tr>
+          <tr><th scope="row">The appropriation</th><td class="num">$35,000,000</td><td>A given &mdash; the budget</td></tr>
+          <tr><th scope="row">State rate per FTES</th><td class="num">$5,649.63</td><td>A given &mdash; 2026-27 SCFF</td></tr>
+          <tr><th scope="row">Each college&rsquo;s credit FTES</th><td>2025-26 actuals</td><td>A given &mdash; the colleges&rsquo; own reporting</td></tr>
+          <tr><th scope="row">Units posted in MAP</th><td>Whatever colleges show</td><td>A given &mdash; the colleges</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <hr class="rule">
+      <h2>Every college</h2>
+    </div>
+    <p>What each college would be offered across the two years under the current settings. Sorted largest
+      first. Each figure is the institution&rsquo;s ONE combined max award &mdash; the three noncredit-only
+      institutions are rows like everyone else, and statewide <b class="num" id="f-nc2">$1,783,399</b> of
+      these awards is the noncredit share, restricted to noncredit outcomes rather than listed in a
+      separate table.</p>
+    <div class="searchrow">
+      <label class="srch" for="q">Find a college</label>
+      <input type="search" id="q" placeholder="Type a college or district name" autocomplete="off">
+      <span class="count" id="count" role="status" aria-live="polite">118 institutions</span>
+    </div>
+    <div class="tablebox scroller" tabindex="0" role="region" aria-label="Two-year offer for every college, scrollable">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">College</th>
+            <th scope="col">District</th>
+            <th scope="col" class="n">Credit FTES</th>
+            <th scope="col" class="n">Offered</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+    <div class="legend">
+      <span><span class="mark floor">at the minimum</span> lifted to <span id="g-floor">$150,000</span></span>
+      <span><span class="mark cap">at the maximum</span> held to <span id="g-cap">$400,000</span></span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Where these numbers come from.</strong> Every figure on this page is produced by the same
+      code that runs the Implementation Funding tab, over the committed 2025-26 credit-FTES roster for
+      118 institutions and the policy settings saved in the model on 31 August 2026. Change a setting on the
+      tab and these figures move with it.</p>
+    <p>This is a working model for discussion, not adopted policy.
+      Dollar figures are what an institution is <em>offered</em>; what it is paid depends on what it
+      qualifies for and shows.</p>
+  </div>
+</footer>
+
+<script id="DATA" type="application/json">{"pool":{"one_time":35000000,"admin":800000,"scaling":8959692,"floor":150000,"cap":400000,"rate":5649.63},"net_main":25240308,"nc":{"collegeShares":1300730,"trioHeld":482669,"face":1783399,"trio":[{"name":"NOCE","total":150000},{"name":"SD Cont. Ed","total":182669},{"name":"Calbright","total":150000}],"ncColleges":108,"institutions":118},"model":{"floor":150000,"floorCount":51,"floorCost":2879941,"cap":400000,"cappedCount":7,"capReleased":497839},"median":174532,"avg":213901,"min":150000,"max":400000,"maxName":"Mt San Antonio","atMin":51,"atMax":7,"exampleName":"Santa Monica","cards":[{"name":"Mt San Antonio","role":"The largest college","ftes":26804,"pct":2.5,"share":632775,"offered":400000,"floored":false,"capped":true},{"name":"Feather River","role":"The smallest college","ftes":1098,"pct":0.1,"share":25926,"offered":150000,"floored":true,"capped":false}],"effRate":62,"prios":[{"label":"Priority 1","title":"Access","metric":"Headcount of students eligible for at least one course offered through CPL","share":0.3,"factor":1,"cap":57083,"target":972.7},{"label":"Priority 2","title":"Success","metric":"Headcount of students with transcribed CPL credit for at least one course.","share":0.42,"factor":1,"cap":79917,"target":1167.2},{"label":"Priority 3","title":"Capacity","metric":"Headcount of students with transcribed Credit from either CPL Student Portal or CPL Landing Page","share":0.28,"factor":1,"cap":53278,"target":907.8}],"rows":[["Mt San Antonio","Mt. San Antonio Community College District",37634,400000,0,0,1],["Pasadena","Pasadena Area Community College District",24818,400000,0,0,1],["Santa Ana","Rancho Santiago Community College District",23861,400000,0,0,1],["Long Beach","Long Beach Community College District",23054,400000,0,0,1],["Fresno City","State Center Community College District",22287,400000,0,0,1],["Bakersfield","Kern Community College District",21608,400000,0,0,1],["American River","Los Rios Community College District",20745,400000,0,0,1],["Santa Monica","Santa Monica Community College District",20331,397726,0,0,0],["East LA","Los Angeles Community College District",20204,395234,0,0,0],["Riverside City","Riverside Community College District",18860,368939,0,0,0],["Cerritos","Cerritos Community College District",18395,359839,0,0,0],["Chaffey","Chaffey Community College District",18181,355653,0,0,0],["San Joaquin Delta","San Joaquin Delta Community College District",17217,336813,0,0,0],["DeAnza","Foothill-De Anza Community College District",16993,332417,0,0,0],["San Francisco","San Francisco Community College District",16848,329593,0,0,0],["San Diego Mesa","San Diego Community College District",16732,327320,0,0,0],["Santa Rosa","Sonoma County Junior College District",16650,325709,0,0,0],["Southwestern","Southwestern Community College District",16577,324289,0,0,0],["Modesto","Yosemite Community College District",16475,322282,0,0,0],["Palomar","Palomar Community College District",15966,312324,0,0,0],["Fullerton","North Orange County Community College District",15875,310552,0,0,0],["Canyons","Santa Clarita Community College District",15551,304215,0,0,0],["Sierra","Sierra Joint Community College District",14839,290286,0,0,0],["Diablo Valley","Contra Costa Community College District",14785,289232,0,0,0],["Victor Valley","Victor Valley Community College District",14568,284988,0,0,0],["Sacramento City","Los Rios Community College District",14388,281467,0,0,0],["Mt. San Jacinto","Mt. San Jacinto Community College District",14298,279694,0,0,0],["Orange Coast","Coast Community College District",14253,278824,0,0,0],["Glendale","Glendale Community College District",13575,265549,0,0,0],["Rio Hondo","Rio Hondo Community College District",13262,259432,0,0,0],["Cypress","North Orange County Community College District",12892,252204,0,0,0],["LA Pierce","Los Angeles Community College District",12825,250879,0,0,0],["Moorpark","Ventura County Community College District",12743,249279,0,0,0],["El Camino","El Camino Community College District",12615,246773,0,0,0],["San Bernardino","San Bernardino Community College District",12267,239971,0,0,0],["Santa Barbara","Santa Barbara Community College District",12206,238782,0,0,0],["LA Valley","Los Angeles Community College District",11912,233027,0,0,0],["Merced","Merced Community College District",11820,231228,0,0,0],["Antelope Valley","Antelope Valley Community College District",11814,231115,0,0,0],["Sequoias","Sequoias Community College District",11699,228857,0,0,0],["Saddleback","South Orange County Community College District",11471,224394,0,0,0],["Cosumnes River","Los Rios Community College District",11359,222209,0,0,0],["San Diego Miramar","San Diego Community College District",11277,220595,0,0,0],["Butte","Butte-Glenn Community College District",11273,220532,0,0,0],["Foothill","Foothill-De Anza Community College District",11261,220297,0,0,0],["LA Trade","Los Angeles Community College District",10804,211354,0,0,0],["MiraCosta","MiraCosta Community College District",10627,207898,0,0,0],["Santiago Canyon","Rancho Santiago Community College District",10624,207837,0,0,0],["LA City","Los Angeles Community College District",10401,203465,0,0,0],["Ventura","Ventura County Community College District",10147,198499,0,0,0],["Moreno Valley","Riverside Community College District",9806,191825,0,0,0],["Allan Hancock","Allan Hancock Joint Community College District",9761,190938,0,0,0],["Citrus","Citrus Community College District",9758,190896,0,0,0],["Desert","Desert Community College District",9566,187128,0,0,0],["SD Cont. Ed","",9338,182669,0,0,0],["Grossmont","Grossmont-Cuyamaca Community College District",9195,179877,0,0,0],["Golden West","Coast Community College District",9075,177522,0,0,0],["Skyline","San Mateo County Community College District",9030,176653,0,0,0],["San Diego City","San Diego Community College District",8922,174532,0,0,0],["Hartnell","Hartnell Community College District",8411,164532,0,0,0],["Cabrillo","Cabrillo Community College District",8399,164304,0,0,0],["Cuesta","San Luis Obispo County Community College District",8127,158990,0,0,0],["San Mateo","San Mateo County Community College District",8118,158805,0,0,0],["Norco College","Riverside Community College District",8109,158637,0,0,0],["Los Medanos","Contra Costa Community College District",7978,156065,0,0,0],["Folsom Lake","Los Rios Community College District",7839,153347,0,0,0],["Ohlone","Ohlone Community College District",7771,152011,0,0,0],["Reedley College","State Center Community College District",7641,150000,1,0,0],["Clovis","State Center Community College District",7625,150000,1,0,0],["LA Mission","Los Angeles Community College District",7471,150000,1,0,0],["Shasta","Shasta-Tehama-Trinity Joint Community College District",7375,150000,1,0,0],["Solano","Solano County Community College District",7337,150000,1,0,0],["West Valley","West Valley-Mission Community College District",7147,150000,1,0,0],["Irvine","South Orange County Community College District",6656,150000,1,0,0],["Gavilan","Gavilan Joint Community College District",6617,150000,1,0,0],["LA Harbor","Los Angeles Community College District",6502,150000,1,0,0],["West LA","Los Angeles Community College District",6251,150000,1,0,0],["Chabot","Chabot-Las Positas Community College District",6015,150000,1,0,0],["Monterey","Monterey Peninsula Community College District",5860,150000,1,0,0],["Laney","Peralta Community College District",5715,150000,1,0,0],["Oxnard","Ventura County Community College District",5703,150000,1,0,0],["Coastline","Coast Community College District",5668,150000,1,0,0],["Contra Costa","Contra Costa Community College District",5544,150000,1,0,0],["Mission","West Valley-Mission Community College District",5383,150000,1,0,0],["Crafton Hills","San Bernardino Community College District",5096,150000,1,0,0],["Cuyamaca","Grossmont-Cuyamaca Community College District",4904,150000,1,0,0],["Canada","San Mateo County Community College District",4633,150000,1,0,0],["Yuba","Yuba Community College District",4500,150000,1,0,0],["Redwoods","Redwoods Community College District",4445,150000,1,0,0],["Madera","State Center Community College District",4281,150000,1,0,0],["Las Positas","Chabot-Las Positas Community College District",4143,150000,1,0,0],["Imperial Valley College","Imperial Community College District",3994,150000,1,0,0],["Lake Tahoe","Lake Tahoe Community College District",3925,150000,1,0,0],["Merritt","Peralta Community College District",3904,150000,1,0,0],["Berkeley City","Peralta Community College District",3895,150000,1,0,0],["Mendocino","Mendocino-Lake Community College District",3875,150000,1,0,0],["NOCE","",3828,150000,1,0,0],["Napa","Napa Valley Community College District",3752,150000,1,0,0],["Marin","Marin Community College District",3741,150000,1,0,0],["Cerro Coso","Kern Community College District",3716,150000,1,0,0],["West Hills Lemoore","West Hills Community College District",3605,150000,1,0,0],["Porterville","Kern Community College District",3604,150000,1,0,0],["LA Southwest","Los Angeles Community College District",3258,150000,1,0,0],["Evergreen Valley","San Jose-Evergreen Community College District",3251,150000,1,0,0],["Alameda","Peralta Community College District",3155,150000,1,0,0],["Barstow","Barstow Community College District",3062,150000,1,0,0],["San Jose City","San Jose-Evergreen Community College District",2833,150000,1,0,0],["Woodland","Yuba Community College District",2642,150000,1,0,0],["Compton","Compton Community College District",2623,150000,1,0,0],["Taft","West Kern Community College District",2435,150000,1,0,0],["Coalinga College","West Hills Community College District",2328,150000,1,0,0],["Columbia","Yosemite Community College District",2115,150000,1,0,0],["Siskiyous","Siskiyou Joint Community College District",2054,150000,1,0,0],["Copper Mountain","Copper Mountain Community College District",1755,150000,1,0,0],["Lassen","Lassen Community College District",1694,150000,1,0,0],["Palo Verde","Palo Verde Community College District",1425,150000,1,0,0],["Feather River","Feather River Community College District",1124,150000,1,0,0],["Calbright","",1000,150000,1,0,0]]}</script>
+<script>
+(function(){
+  "use strict";
+  var D = JSON.parse(document.getElementById("DATA").textContent);
+  var money = function(n){ return "$" + Math.round(n).toLocaleString("en-US"); };
+  var num = function(n){ return Math.round(n).toLocaleString("en-US"); };
+
+  // ── the appropriation and where it goes ───────────────────────────────
+  // hero is the appropriation minus every other destination, so the four boxes
+  // sum to the top line by construction and cannot drift apart on a rebuild.
+  var P = D.pool, hero = P.one_time - P.admin - P.scaling - P.feeder;
+  var inst = hero + P.feeder;   // everything that reaches an institution
+
+  // ── priorities ────────────────────────────────────────────────────────
+  var plain = {
+    "Access": "Prior learning that students actually had applied to their record, where the student came in through the CPL portal or the college's own CPL page.",
+    "Outreach": "Prior learning a student is eligible for — credit the college has agreed it would grant, whether or not anyone has claimed it yet.",
+    "Success": "Prior learning written onto the transcript, which is the point at which it counts toward a credential."
+  };
+  var box = document.getElementById("prios");
+  D.prios.forEach(function(p){
+    var el = document.createElement("div");
+    el.className = "prio";
+    var top = document.createElement("div"); top.className = "top";
+    var name = document.createElement("div"); name.className = "name";
+    name.textContent = p.label + (p.title ? " · " + p.title : "");
+    var pct = document.createElement("div"); pct.className = "pct num";
+    pct.textContent = Math.round(p.share * 100) + "% of the money";
+    top.appendChild(name); top.appendChild(pct);
+    var m = document.createElement("p"); m.className = "metric";
+    m.textContent = plain[p.title] || p.metric;
+    var a = document.createElement("p"); a.className = "aim";
+    a.textContent = "Measured as: " + p.metric;
+    el.appendChild(top); el.appendChild(m); el.appendChild(a);
+    box.appendChild(el);
+  });
+
+  // ── worked example ────────────────────────────────────────────────────
+  var wb = document.getElementById("workedbody");
+  D.prios.forEach(function(p){
+    var tr = document.createElement("tr");
+    var th = document.createElement("th"); th.scope = "row";
+    th.textContent = p.label + (p.title ? " · " + p.title : "");
+    var c1 = document.createElement("td"); c1.className = "n"; c1.textContent = money(p.cap);
+    var c2 = document.createElement("td"); c2.className = "n"; c2.textContent = p.target.toFixed(1);
+    var c3 = document.createElement("td"); c3.className = "n"; c3.textContent = num(p.target * 30) + " units";
+    tr.appendChild(th); tr.appendChild(c1); tr.appendChild(c2); tr.appendChild(c3);
+    wb.appendChild(tr);
+  });
+
+  // ── every college ─────────────────────────────────────────────────────
+  var tbody = document.getElementById("tbody"), count = document.getElementById("count");
+  function draw(filter){
+    tbody.textContent = "";
+    var f = (filter || "").trim().toLowerCase(), shown = 0;
+    D.rows.forEach(function(r){
+      if (f && (r[0] + " " + r[1]).toLowerCase().indexOf(f) === -1) return;
+      shown++;
+      var tr = document.createElement("tr");
+      var th = document.createElement("th"); th.scope = "row";
+      th.appendChild(document.createTextNode(r[0]));
+      if (r[4]) { var m1 = document.createElement("span"); m1.className = "mark floor"; m1.textContent = "at the minimum"; th.appendChild(m1); }
+      if (r[6]) { var m3 = document.createElement("span"); m3.className = "mark cap"; m3.textContent = "at the maximum"; th.appendChild(m3); }
+      var d = document.createElement("td"); d.textContent = r[1].replace(/ Community College District$/, " CCD").replace(/ Joint Community College District$/, " CCD");
+      var f1 = document.createElement("td"); f1.className = "n"; f1.textContent = num(r[2]);
+      var f2 = document.createElement("td"); f2.className = "n"; f2.textContent = money(r[3]);
+      tr.appendChild(th); tr.appendChild(d); tr.appendChild(f1); tr.appendChild(f2);
+      tbody.appendChild(tr);
+    });
+    count.textContent = shown === D.rows.length
+      ? D.rows.length + " institutions"
+      : shown + " of " + D.rows.length + " institutions";
+  }
+  draw("");
+  document.getElementById("q").addEventListener("input", function(e){ draw(e.target.value); });
+
+  // Headline figures, so the prose can never drift from the model.
+  document.getElementById("f-total").textContent = money(P.one_time);
+  document.getElementById("f-inst").textContent = money(inst);
+  document.getElementById("f-nc").textContent = money(P.feeder);
+  document.getElementById("f-proj").textContent = money(P.scaling);
+  document.getElementById("f-staff").textContent = money(P.admin);
+  document.getElementById("f-main").textContent = money(D.net_main);
+  document.getElementById("f-avg").textContent = money(D.avg);
+  document.getElementById("f-floor").textContent = D.model.floorCount;
+  document.getElementById("r-min").textContent = money(D.min);
+  document.getElementById("r-med").textContent = money(D.median);
+  document.getElementById("r-max").textContent = money(D.max);
+  document.getElementById("r-min-s").textContent =
+    "the guaranteed minimum, and where " + D.atMin + " of the " + D.rows.length + " colleges land";
+  // Every ceiling figure below is COMPUTED from the payload for the same reason
+  // the rest of the page is: a hand-typed number here is one Sam moves the dial
+  // on and forgets. Written defensively so an older payload (no cap) still
+  // renders — the page then simply describes a model with no ceiling.
+  var hasCap = !!(D.pool.cap > 0 && D.atMax > 0);
+  var setText = function (id, v) { var el = document.getElementById(id); if (el) el.textContent = v; };
+  var WORDS = ["No", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten"];
+  var word = function (k) { return WORDS[k] || num(k); };
+  // The noncredit lane, stated from the payload rather than typed: the count
+  // was "four" in five places until 2026-08-23 and nothing would have caught it.
+  if (D.nc) {
+    setText("l-nc-count", String(D.nc.ncColleges));
+    setText("t-nc", money(D.nc.face));
+    setText("f-nc", money(D.nc.face));
+    // The every-college lead-in names the carve-out too. It had no id, so
+    // nothing painted it and the builder's default-lint could not see it —
+    // it alone kept saying $1,000,000 after the figure moved.
+    setText("f-nc2", money(D.nc.face));
+  }
+  setText("f-floorv", money(D.pool.floor));
+  setText("f-capv", money(D.pool.cap));
+  setText("f-floor-k", "institutions are brought up to the " + money(D.pool.floor) + " base award");
+  setText("f-cap", D.atMax);
+  setText("f-cap-k", "are held at the " + money(D.pool.cap) + " cap");
+  setText("l-floor", money(D.pool.floor));
+  setText("l-floorn", word(D.model.floorCount));
+  setText("l-cap", money(D.pool.cap));
+  setText("l-capn", word(D.atMax));
+  setText("l-capr", money(D.model.capReleased));
+  setText("t-floor", money(D.pool.floor));
+  setText("t-cap", hasCap ? money(D.pool.cap) : "none set");
+  setText("g-floor", money(D.pool.floor));
+  setText("g-cap", money(D.pool.cap));
+  setText("f-rate", money(D.pool.rate));
+
+  // The two illustration cards, built from the payload so they cannot drift.
+  (function () {
+    var host = document.getElementById("cards");
+    if (!host || !D.cards) return;
+    D.cards.forEach(function (c) {
+      var el = document.createElement("div");
+      el.className = "card";
+      var h = document.createElement("h3");
+      h.textContent = c.name;
+      var who = document.createElement("p");
+      who.className = "who";
+      who.textContent = c.role + " — " + num(c.ftes) + " credit FTES, about " + c.pct + "% of the state";
+      el.appendChild(h); el.appendChild(who);
+      [["Proportional share by size", money(c.share), false],
+       ["Lifted to the minimum?", c.floored ? "Yes" : "No", false],
+       ["Held to the maximum?", c.capped ? "Yes" : "No", false],
+       ["Offered over two years", money(c.offered), true]
+      ].forEach(function (kv) {
+        var row = document.createElement("div");
+        row.className = "kv" + (kv[2] ? " hi" : "");
+        var k = document.createElement("span"); k.className = "k"; k.textContent = kv[0];
+        var v = document.createElement("span");
+        v.className = "v" + (/^\$/.test(kv[1]) ? " num" : ""); v.textContent = kv[1];
+        row.appendChild(k); row.appendChild(v); el.appendChild(row);
+      });
+      host.appendChild(el);
+    });
+  })();
+  if (D.effRate) setText("f-eff", money(D.effRate) + " for each FTES of prior learning it shows");
+  document.getElementById("r-max-s").textContent = hasCap
+    ? "the maximum, and where " + D.atMax + " of the " + D.rows.length + " colleges land"
+    : D.maxName + ", the largest college in the system";
+})();
+</script>

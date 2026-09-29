@@ -3,6 +3,8 @@ title: Session 118 handoff — from a fully-settled doctrine into execution (ESL
 date: 2026-07-15
 tags: [handoff, ccr, doctrine, esl, packaging, batch-apply, wave-4]
 related: [kb/merge_doctrine.md, docs/ccr_convergence_lessons.md, kb/esl_package_out/2026-07-15/, docs/kb-notes/methodology-packaging-dryrun-classification.md]
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # You are Session 118.

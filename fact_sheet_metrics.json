@@ -1,43 +1,43 @@
 {
  "_about": "Snapshot-tier metrics for the public CPL Fact Sheet (fact-sheet/). Sourced from the same MAP Custom Reporting Module exhibit data as COBI's headline KPI cards, so the two never diverge. Refreshed by the daily dashboard cron.",
- "_as_of": "2026-07-19T13:58:00.828Z",
+ "_as_of": "2026-09-29T14:11:56.551Z",
  "credit_recommendations": {
-  "total": "12,773",
-  "ccc": "1,297",
-  "local": "11,476",
+  "total": "13,897",
+  "ccc": "1,352",
+  "local": "12,545",
   "by_type": [
-   "Standardized Assessment: 6,833",
-   "Industry Certification: 3,485",
-   "Credit By Exam: 1,845",
-   "Portfolio Review: 404",
-   "Military: 117"
+   "Standardized Assessment: 7,358",
+   "Industry Certification: 3,729",
+   "Credit By Exam: 2,159",
+   "Portfolio Review: 403",
+   "Military: 148"
   ]
  },
  "map_exhibits": {
-  "total": "2,102",
-  "ccc": "133",
-  "local": "1,969",
-  "originating_colleges": "88"
+  "total": "2,869",
+  "ccc": "137",
+  "local": "2,732",
+  "originating_colleges": "87"
  },
  "statewide_exhibits": {
-  "total": "133",
+  "total": "137",
   "program_areas": "12",
-  "distinct_credit_recs": "1,130",
-  "adoptions": "1,291",
-  "adopting_colleges": "60",
+  "distinct_credit_recs": "1,173",
+  "adoptions": "1,346",
+  "adopting_colleges": "63",
   "by_sector": [
    {
     "sector": "Construction Technology",
     "exhibits": 46,
-    "credit_recs": 122,
-    "adoptions": 122,
+    "credit_recs": 124,
+    "adoptions": 124,
     "could_adopt": 0
    },
    {
     "sector": "Welding",
     "exhibits": 23,
-    "credit_recs": 183,
-    "adoptions": 228,
+    "credit_recs": 191,
+    "adoptions": 238,
     "could_adopt": 27
    },
    {
@@ -49,16 +49,16 @@
    },
    {
     "sector": "Computer Information Systems",
-    "exhibits": 15,
-    "credit_recs": 102,
-    "adoptions": 106,
+    "exhibits": 14,
+    "credit_recs": 116,
+    "adoptions": 120,
     "could_adopt": 74
    },
    {
     "sector": "Automotive Technology",
     "exhibits": 11,
-    "credit_recs": 149,
-    "adoptions": 149,
+    "credit_recs": 144,
+    "adoptions": 144,
     "could_adopt": 65
    },
    {
@@ -71,65 +71,65 @@
    {
     "sector": "Emergency Medical Services",
     "exhibits": 5,
-    "credit_recs": 61,
-    "adoptions": 62,
+    "credit_recs": 62,
+    "adoptions": 63,
     "could_adopt": 59
    },
    {
     "sector": "Corrections",
     "exhibits": 2,
-    "credit_recs": 30,
-    "adoptions": 46,
+    "credit_recs": 28,
+    "adoptions": 44,
     "could_adopt": 2
    },
    {
     "sector": "Real Estate",
     "exhibits": 2,
-    "credit_recs": 24,
-    "adoptions": 38,
-    "could_adopt": 27
+    "credit_recs": 27,
+    "adoptions": 41,
+    "could_adopt": 12
    },
    {
     "sector": "World Languages",
     "exhibits": 2,
-    "credit_recs": 12,
-    "adoptions": 33,
+    "credit_recs": 19,
+    "adoptions": 50,
     "could_adopt": 34
    },
    {
     "sector": "Administration of Justice",
     "exhibits": 1,
-    "credit_recs": 113,
-    "adoptions": 116,
+    "credit_recs": 105,
+    "adoptions": 108,
     "could_adopt": 55
    },
    {
     "sector": "Kinesiology/Health",
     "exhibits": 1,
-    "credit_recs": 23,
-    "adoptions": 31,
-    "could_adopt": 56
+    "credit_recs": 27,
+    "adoptions": 35,
+    "could_adopt": 40
    },
    {
     "sector": "Other Statewide",
-    "exhibits": 2,
-    "credit_recs": 8,
-    "adoptions": 8,
-    "could_adopt": 12
+    "exhibits": 7,
+    "credit_recs": 27,
+    "adoptions": 27,
+    "could_adopt": 0
    }
   ],
-  "could_adopt_total": 116,
+  "could_adopt_total": 114,
   "in_progress": [
    "HVAC — faculty currently meeting"
   ]
  },
  "articulating_colleges": {
-  "total": "102",
-  "originating": "88",
-  "adopting_ccc": "60"
+  "total": "100",
+  "originating": "87",
+  "adopting_ccc": "63"
  },
  "veteran_sprint": {
-  "star_colleges": "55",
-  "basic_training_colleges": "89 Colleges"
+  "star_colleges": "59",
+  "basic_training_colleges": "91 Colleges"
  }
 }

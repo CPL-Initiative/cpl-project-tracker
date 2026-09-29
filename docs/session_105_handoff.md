@@ -7,6 +7,8 @@ related:
   - "[[docs/exhibit_canonicalization_lessons]]"
   - "[[docs/session_104_handoff]]"
   - "[[docs/kb-notes/cer-ccr-crossover-integrations]]"
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # You are Session 105

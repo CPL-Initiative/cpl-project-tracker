@@ -12,6 +12,8 @@ related:
   - "[[docs/kb-notes/playbook-resume-long-workflow-across-failures]]"
   - "[[docs/ccr_convergence_lessons]]"
   - "[[kb/merge_doctrine]]"
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 You are **Session 113**. Session 112 (SkyEmpyrean) fired CCR wave 3, reverted the

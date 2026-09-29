@@ -1,0 +1,80 @@
+# CPL Funding in Motion — narration script (DRAFT, not yet approved)
+
+Drafted 2026-09-26 (S293) at Sam's request: *"make a draft version with a natural
+feminine voice-over that follows a script your write... tone down the music to just
+background level... slow down and lengthen the timing a bit to accommodate
+readability and narration."* The 90-second introductions stay as they are; the
+narrated cut is a separate draft beside them.
+
+**Status:** the voice is chosen: Heart (`af_heart`, Kokoro-82M, Apache-2.0, run locally
+in the container; the environment now allows `huggingface.co`, `*.huggingface.co` and
+`*.hf.co`). The v3 read (sent 2026-09-26, S294) awaits Sam's OK, and the narrated draft
+is built to it: `funding_in_motion_n1.html` and
+`20260926_CPL_Funding_in_Motion_Narrated_Draft_4.mp4`, 3:07 (see the README). Draft 2
+(2026-09-29) cues each reveal to the word that names it, draft 3, the same day, says minimum
+conditions (Sam's term, 2026-09-28), and draft 4 makes his two sheet 3 changes (cards 16 and 17,
+2026-09-29): the Timing scene names the release dates before the two-year amount, and the Targets
+scene says Sample College's Access target. It goes back to Sam, and the explainer
+does not link it until he approves it. A new read re-renders with `narrate.py` (which ends by
+running `cues.py --listen`), `build.py n1` and `render.sh n1`. A human recording can still
+replace it scene by scene.
+
+**Length:** draft 4's read holds 165.8 s of speech at speed 1.0 (v3's first read held 158.8 s;
+v2 ran 2:55), and each scene's lead-in and air bring the narrated cut to 3:07. The voice
+carries the ideas and the screen carries the exact figures. The spoken
+form the voice reads is `narration_s1.json`, and `narrate.py` reads it (see the README).
+
+**Sam, 2026-09-26:** *"Voice Heart is a good sample to use. MAP should be read as the word
+'map', not sounded out letters. Make the script more natural, less stilted."*
+
+**Sam on v2 (2026-09-26):** *"Narration still a bit stilted, especially when sounding out
+C-P-L rather than just saying it quickly--same with sounding out the year numbers--too
+stilted."* Fix for v3, measured in the tokenizer: write `CPL`, `EDD`, `FTES` unspaced (one
+quick word each; the spaced form gives every letter a full stress), keep `map` lowercase,
+and soften the years (phoneme input with a lighter first stress, or "twenty-six to
+twenty-eight"). Details in `docs/session_293_handoff.md`.
+
+**v3 (S294, 2026-09-26):** the acronyms are unspaced, and `FTES` also takes the letters'
+phonemes, because unspaced it reads as the word "eftess". The title says "twenty twenty-six
+through twenty-eight", the funding scene "the twenty-six, twenty-seven year", both with a
+lighter stress on the twenties, and the Minimum conditions scene "by November first", as its
+headline does, leaving the year to the screen. A local transcription hears every one of them
+as written.
+
+**The build (done 2026-09-26, S294; cued 2026-09-29):** the narration drives the clock (each
+scene lasts a lead-in, its clip and air); each reveal a word names lands on that word (Sam,
+2026-09-27: "cue each reveal to the word that names it"; `cues` in `narration_s1.json`, pinned
+by `cues.py`) unless the picture needs another order or more room (four, each with its
+reason), and the reveals between two cues keep their order and spacing; the score plays as a bed
+14 dB under the introductions' mix and dips 6 dB more under the voice; captions ship on the
+page and as a subtitle track in the MP4; the closing scene says the voice is synthetic.
+
+## Scenario 1 (v3, as draft 4 reads it)
+
+**Title.** Let's walk through how CPL Initiative funding works for twenty twenty-six through twenty-eight, and what it means for your college.
+
+**The funding.** The state set aside thirty-five million dollars in one-time funding for the twenty-six, twenty-seven year. Just over twenty-five million of it goes straight to a hundred and eighteen institutions. The rest funds statewide CPL projects and technology, plus two Chancellor's Office positions that support colleges.
+
+**Maximum allocation.** Every institution has a maximum allocation for the two years. It's based on the institution's share of instruction, credit and noncredit together, and it falls between a hundred and fifty thousand dollars and four hundred thousand. Sample College's maximum, for example, is about three hundred forty-five thousand.
+
+**Credit and noncredit.** That maximum splits into a credit share and a noncredit share, following each institution's own mix of instruction. And only noncredit outcomes count toward the noncredit share.
+
+**Three priorities.** Three priorities carry the funding. Access counts applied CPL units from students who start at the CPL Portal, at your college's landing page, or through a batch upload. Completion counts transcribed CPL units, with the MAP counselor step checked. And career attainment counts CPL units for students who go on to a career outcome, which the Chancellor's Office measures through EDD wage records.
+
+**Targets.** Each priority has a target, measured in FTES. Thirty semester units of CPL make one FTES, or forty-five if you're on the quarter system. Sample College's Access target, for example, is about forty-four FTES, behind about a hundred twelve thousand dollars. Here's the part to remember: reach half of a target, and your college qualifies for half that share. Go past the target, and the share stays where it is. It's the ceiling.
+
+**Minimum conditions.** Before any funding is released, your college meets three minimum conditions by November first. Name a CPL coordinator, then list that person in MAP and on your college's CPL landing page. Put your local confirmation of participation on file. And make sure at least seventy-five percent of your enrolled veterans have their Joint Services Transcripts uploaded in MAP. Until all three are met, the funding your college demonstrates is held in reserve for it.
+
+**Timing.** The Chancellor's Office releases funding twice a year, based on your college's CPL to date. The full two-year amount is available from year one, and whatever remains after year one carries forward to year two for your college.
+
+**Support.** And you won't be doing this alone. Every priority comes with recommended strategies, a CPL Initiative help team supports every college, and more detailed guidance is on the way.
+
+**Find your college.** To see your college's maximum allocation, targets, and progress, visit the CPL funding model page.
+
+## Scenario 2 (only the priorities scene changes)
+
+**Two priorities.** Two priorities carry the funding, at fifty percent each. Access
+counts applied CPL units from students who start at the CPL Portal, a college
+landing page, or a batch upload. Completion counts transcribed CPL units with the
+MAP counselor step checked. The project allocation funds career attainment and
+innovation projects statewide; they add nothing to an institution's allocation.

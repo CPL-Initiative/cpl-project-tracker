@@ -1,0 +1,344 @@
+// College & District Identity tab — the lint surface.
+//
+// Sam, 2026-08-21: "Maybe it's time to add a new COBI tab to visually show the
+// key source lookup tables we rely upon, particularly the college/district
+// table that should list loc IDs and all variations of the names found in the
+// DB."
+//
+// ⭐ The tab's value is showing what is EMPTY OR DISAGREEING, so these checks are
+// mostly about absence: that a failed read renders "unknown" and never 0, that a
+// stale snapshot announces itself, and that a gated read it could not make is
+// named rather than silently dropped. A viewer that mirrors SQL would need none
+// of this — which is the point.
+//
+// Run from repo root: `npm test` (or `node tests/college_identity_tab.test.js`).
+const fs = require("fs");
+const { JSDOM } = require("jsdom");
+
+const results = [];
+function check(name, cond, why) { results.push([name, !!cond, why]); }
+function block(label, fn) {
+  try { fn(); } catch (e) { check(label + " — driver threw: " + (e && e.message), false); }
+}
+
+const SRC = fs.readFileSync("college_identity.js", "utf8");
+const DASH = fs.readFileSync("CPL_Dashboard.html", "utf8");
+const INDEX = fs.readFileSync("index.html", "utf8");
+
+// ── (1) Rule 4 + the wiring contract ───────────────────────────────────────
+block("(1)", function () {
+  check("(1) ⚠ both HTMLs are byte-identical", DASH === INDEX,
+    "Rule 4 — the workflow copies one to the other");
+  ["data-tab=\"college-identity\"", "id=\"college-identity-root\"",
+   "onActivate('college-identity'", "loadScript('college_identity.js'"].forEach(function (frag) {
+    check("(1) the shell carries " + frag, DASH.indexOf(frag) >= 0);
+  });
+  // ⚠ The data file must load BEFORE the module, or the first paint drops the
+  // snapshot findings. Nested, not two sibling calls.
+  check("(1) ⚠ the DATA file loads before the module, nested not parallel",
+    /loadScript\('college_identity_data\.js'[\s\S]{0,200}loadScript\('college_identity\.js'/.test(DASH),
+    "loading the module first paints one frame with the findings missing");
+  check("(1) ⚠ the module listens on WINDOW, not document",
+    /window\.addEventListener\("cpl-tab-activated"/.test(SRC) &&
+    !/document\.addEventListener\("cpl-tab-activated"/.test(SRC),
+    "the event is dispatched on window — a document listener never fires");
+});
+
+// ── (2) The pure lint ──────────────────────────────────────────────────────
+function loadModule() {
+  const dom = new JSDOM('<!doctype html><html><head></head><body>'
+    + '<div id="college-identity-root" style="text-align:center;padding:28px;">Loading&hellip;</div>'
+    + "</body></html>", { url: "https://example.org/", runScripts: "dangerously" });
+  const w = dom.window;
+  w.fetch = function () { return new Promise(function () {}); };
+  const s = w.document.createElement("script");
+  s.textContent = SRC;
+  w.document.body.appendChild(s);
+  return { w, M: w.CPL_COLLEGE_IDENTITY_TAB, root: w.document.getElementById("college-identity-root") };
+}
+
+const COLLEGES = [
+  { college_id: 46, college_name: "Cypress College", entity_kind: "college",
+    variants: ["Cypress College "], district: "North Orange County Community College District",
+    mis_district_code: "860", mis_college_code: "861" },
+  { college_id: 82, college_name: "Mission College", entity_kind: "college", variants: [],
+    district: "West Valley-Mission Community College District", mis_district_code: "490", mis_college_code: "492" },
+  { college_id: 71, college_name: "Los Angeles Mission College", entity_kind: "college",
+    variants: ["Mission College"],   // ⚠ collides with a real college's own name
+    district: "Los Angeles Community College District", mis_district_code: "740", mis_college_code: "743" },
+  { college_id: 133, college_name: "Futuro Health", entity_kind: "partner", variants: [],
+    district: null, mis_district_code: null, mis_college_code: null,
+    mis_absent_why: "A partner organisation, not a California Community College." },
+];
+
+block("(2)", function () {
+  const { M } = loadModule();
+  const f = M._liveFindings(COLLEGES, [
+    "Cypress College ", "Mission College", "Pima Medical Institute", "Futuro Health",
+  ]);
+  const by = {};
+  (f || []).forEach(function (x) { by[x.name] = x; });
+
+  check("(2) ⭐ a trailing-space name is classed as WHITESPACE, not a spelling",
+    by["Cypress College "] && by["Cypress College "].cls === "whitespace", JSON.stringify(f));
+  check("(2) …and it resolves, because variants carries that exact string",
+    by["Cypress College "] && by["Cypress College "].resolves_to === "Cypress College");
+  check("(2) …and the why says an exact-match join still misses it",
+    by["Cypress College "] && /exact-match/.test(by["Cypress College "].why));
+  check("(2) ⚠ a name a college OWNS is not a finding at all",
+    !by["Mission College"],
+    "Mission College is a real college; it must not be reported because ANOTHER college lists it as a variant");
+  check("(2) an unclaimed name is reported as unknown",
+    by["Pima Medical Institute"] && by["Pima Medical Institute"].cls === "unknown");
+  check("(2) a clean canonical name produces nothing", !by["Futuro Health"]);
+  check("(2) positive control: the lint is not simply empty", (f || []).length === 2);
+
+  // ⚠ A missing input must yield null (unknown), never [] (nothing wrong).
+  check("(2) ⚠ a missing contacts read returns null, NOT an empty finding list",
+    M._liveFindings(COLLEGES, null) === null,
+    "[] would render as 'nothing outstanding' for a read that never happened");
+});
+
+// ── (3) Render: absence is visible, and a failed read is not a zero ────────
+block("(3)", function () {
+  const { M, root, w } = loadModule();
+  check("(3) precondition: the shipped pane really does centre its contents",
+    root.style.textAlign === "center");
+  M._state.live = null; M._state.contacts = null; M._state.error = "401"; M._state.loading = false;
+  M._render(root);
+  check("(3) ⭐ the inline centring is shed before anything renders", !root.style.textAlign);
+  const txt = root.textContent;
+  check("(3) ⭐ a failed read says UNKNOWN and never renders a zero table",
+    /unknown, not zero/.test(txt) && /Could not read map_colleges/.test(txt), JSON.stringify(txt.slice(0, 300)));
+  check("(3) ⚠ …and it does not print an entity count it never read",
+    !/0 entities in map_colleges/.test(txt));
+  check("(3) the gated contacts read is NAMED when it did not happen",
+    /Contact names not read/.test(txt),
+    "a lint that quietly skips half its input is worse than one that refuses to run");
+  /* ⭐ AND THE WAY IN IS OFFERED, not just the obstacle named.
+   * tests/team_phrase_affordance.test.js failed this tab on exactly this, and
+   * the READ-gated case is the severe one: without the phrase that half is not
+   * read-only, it is EMPTY. With team_phrase.js absent (as here) the module
+   * must still POINT at the header control rather than render nothing. */
+  const slot = root.querySelector("#cid-unlock");
+  check("(3) ⭐ a missing gated read offers an unlock slot", !!slot);
+  check("(3) …and with no team_phrase.js present it still points at the header",
+    slot && /lock button in the header/i.test(slot.textContent),
+    "losing the shared helper must not lose the route");
+
+  // Now a successful read.
+  M._state.live = COLLEGES; M._state.contacts = ["Cypress College "]; M._state.error = null;
+  w.CPL_COLLEGE_IDENTITY = { generated: "2026-08-21",
+    counts: { entities: 4, with_variants: 2, with_district: 3 }, findings: [] };
+  M._render(root);
+  const t2 = root.textContent;
+  check("(3) counts render as N of M, never a bare N",
+    /2 of 4/.test(t2) && /3 of 4/.test(t2), JSON.stringify(t2.slice(0, 400)));
+  check("(3) contact names read live are labelled live", /checked live/i.test(t2));
+  check("(3) a partner's missing MIS code shows its REASON, not a blank",
+    /not a California Community College/.test(t2));
+  check("(3) ⚠ …and the unlock slot is gone once the read succeeded",
+    !root.querySelector("#cid-unlock"),
+    "an affordance for a problem you no longer have is noise");
+});
+
+// ── (4) ⭐ The tab checks its own snapshot ──────────────────────────────────
+block("(4)", function () {
+  const { M, root, w } = loadModule();
+  M._state.live = COLLEGES; M._state.contacts = []; M._state.error = null; M._state.loading = false;
+  // A snapshot that disagrees with the live table.
+  w.CPL_COLLEGE_IDENTITY = { generated: "2026-01-01",
+    counts: { entities: 4, with_variants: 0, with_district: 0 }, findings: [] };
+  M._render(root);
+  const txt = root.textContent;
+  check("(4) ⭐ a stale snapshot announces itself", /snapshot below is out of date/i.test(txt));
+  check("(4) …naming the date and the disagreement", /2026-01-01/.test(txt) && /variants 0 vs 2/.test(txt));
+  check("(4) …and says which figures to trust", /live figures above are the ones to trust/i.test(txt));
+
+  // An AGREEING snapshot must be silent — a warning that always shows is noise.
+  w.CPL_COLLEGE_IDENTITY = { generated: "2026-08-21",
+    counts: { entities: 4, with_variants: 2, with_district: 3 }, findings: [] };
+  M._render(root);
+  check("(4) ⚠ an up-to-date snapshot raises NO warning",
+    !/out of date/i.test(root.textContent),
+    "a flag that never goes away stops being read");
+});
+
+// ── (5) Accessibility + design-system basics ──────────────────────────────
+block("(5)", function () {
+  const { M, root } = loadModule();
+  M._state.live = COLLEGES; M._state.contacts = []; M._state.error = null; M._state.loading = false;
+  M._render(root);
+  const ths = root.querySelectorAll(".cid-t thead th");
+  check("(5) every header cell carries scope", ths.length === 6 &&
+    Array.prototype.every.call(ths, function (th) { return th.getAttribute("scope") === "col"; }));
+  const wrap = root.querySelector(".cid-wrap");
+  check("(5) the scrolling table sits in a focusable, named region",
+    wrap && wrap.getAttribute("role") === "region" && !!wrap.getAttribute("aria-label")
+      && wrap.getAttribute("tabindex") === "0");
+  check("(5) the filter input has a real label",
+    !!root.querySelector('label[for="cid-q"]') && !!root.querySelector("#cid-q"));
+  check("(5) ⚠ the table is fixed-layout with an explicit colgroup",
+    /table-layout:fixed/.test(SRC) && !!root.querySelector(".cid-t colgroup"),
+    "auto layout silently parks columns past the wrap's right edge");
+  // Design system: tokens, not raw hex, for anything brand-coloured.
+  const css = (SRC.match(/function ensureCss\(\)[\s\S]*?document\.head\.appendChild/) || [""])[0];
+  const bareHex = (css.match(/:\s*#[0-9a-fA-F]{3,6}\s*[;"]/g) || []);
+  check("(5) new CSS uses var(--token), with hex only as a fallback",
+    bareHex.length === 0, JSON.stringify(bareHex.slice(0, 5)));
+  check("(5) ⚠ no decorative glyphs in rendered text",
+    !/[\u{1F000}-\u{1FAFF}\u{2700}-\u{27BF}]/u.test(root.textContent),
+    "Sam, 2026-08-14 and again 08-17: plain words, no emoji");
+});
+
+// ── (6) Suppressed rows are chipped ───────────────────────────────────────
+// Sam, 2026-08-21: "The college/district tab should probably have a chip on rows
+// that are suppressed (e.g., CA MAP Initiative) — which is our sandbox and had
+// slipped into the daily report from MAP."
+//
+// ⚠ THE NAME IS NOT THE TELL, which is the whole reason a chip is needed. Four
+// of MAP's eight sandbox rows announce themselves ("Testing College"), but
+// "NORCO College - Syllabus Manager" and "CA MAP INITIATIVE COLLEGE" read as
+// real entities. The fixture uses the two that DON'T look like tests — a
+// fixture of obvious names would pass while proving nothing.
+block("(6)", function () {
+  const { M, root } = loadModule();
+  const withTest = COLLEGES.concat([
+    { college_id: 900, college_name: "CA MAP INITIATIVE COLLEGE", entity_kind: "test",
+      is_test: true, variants: [], district: null, mis_district_code: null, mis_college_code: null },
+    { college_id: 901, college_name: "NORCO College - Syllabus Manager", entity_kind: "test",
+      is_test: true, variants: [], district: null, mis_district_code: null, mis_college_code: null },
+  ]);
+  M._state.live = withTest; M._state.contacts = []; M._state.error = null; M._state.loading = false;
+  M._render(root);
+  const html = root.innerHTML;
+  const txt = root.textContent;
+
+  const chips = root.querySelectorAll(".cid-tag.suppressed");
+  check("(6) ⭐ every suppressed row carries a chip", chips.length === 2, String(chips.length));
+  check("(6) …and the chip is a WORD, not a colour alone",
+    chips.length > 0 && /suppressed/i.test(chips[0].textContent),
+    "color is never the only signal — reference-ui-design-system");
+  check("(6) ⚠ …and it says WHY, not just what the column holds",
+    /not a real institution/.test(txt) && /excluded from Custom Reports/.test(txt),
+    "methodology-a-provenance-label-must-say-why-not-what: 'test' is the value, " +
+    "'no figure anywhere counts it' is the meaning");
+  check("(6) real colleges are NOT chipped",
+    root.querySelectorAll("tr.cid-supp").length === 2,
+    "a chip on a real college would be worse than no chip at all");
+  check("(6) the suppressed count reaches the heading",
+    /2 suppressed/.test(txt), "the tab exists to make absence a figure");
+  check("(6) ⚠ the chip uses a REAL palette token, not an invented one",
+    /--mustard-text/.test(M._css ? M._css() : html) ||
+      /--mustard-text/.test(String(document_style())),
+    "the first draft used --amber, which does not exist in :root");
+
+  function document_style() {
+    const el = root.ownerDocument.getElementById("cid-css");
+    return el ? el.textContent : "";
+  }
+
+  // A disagreement between the two suppression fields is itself a finding.
+  M._state.live = COLLEGES.concat([
+    { college_id: 902, college_name: "Half Suppressed College", entity_kind: "college",
+      is_test: true, variants: [], district: null, mis_district_code: null, mis_college_code: null },
+  ]);
+  M._render(root);
+  check("(6) ⚠ a row where entity_kind and is_test DISAGREE is flagged",
+    /DISAGREE on this row/.test(root.textContent),
+    "consumers filter on entity_kind; a row flagged only by is_test would slip through");
+});
+
+// ── (5) ⭐ THE ROSTER LEADS; THE FINDINGS SIT BELOW IT BEHIND A LINK ────────
+// Sam, 2026-09-11, after reading the tab: "Yes, above the findings. Better yet,
+// show the full table and just give a link to the discrepancies."
+//
+// He had asked for this page on 2026-08-21 as a LOOKUP — "the college/district
+// table that should list loc IDs and all variations of the names found in the
+// DB" — and the roster answering that has always been built. It never rendered:
+// authHeaders() sent no apikey, map_colleges answered 401, and the roster draws
+// under `if (live)`. So the findings were the whole visible page, and the file's
+// own header had drifted to match ("a LINT SURFACE, not a lookup").
+//
+// ⚠ ORDER IS THE ASSERTION, not presence — both sections rendered before and
+// both render now. A future edit that moves the lint back on top passes every
+// other check in this file.
+block("(5)", function () {
+  const { w, M, root } = loadModule();
+  w.CPL_COLLEGE_IDENTITY = {
+    generated: "2026-08-23", linted: true, observed_names: 130,
+    counts: { entities: 4, with_variants: 2, with_district: 3, districts: 3, with_mis_code: 3 },
+    findings: [{ name: "Pima Medical Institute", "class": "unknown", resolves_to: null,
+                 why: "In a live table and claimed by no identity." }],
+  };
+  M._state.live = COLLEGES;
+  M._state.contacts = null;
+  M._state.error = null;
+  M._render(root);
+  const html = root.innerHTML;
+
+  /* ⚠ MATCH THE HEADING, NOT THE PHRASE. The intro paragraph now opens "Every
+   * entity MAP knows — colleges, continuing-education arms and partner agencies
+   * alike", so indexOf("Every entity") finds the INTRO at index 73 and this
+   * whole block asserts nothing. The heading is the only place the phrase is
+   * followed by its count. */
+  const iRoster = html.indexOf(">Every entity (");
+  const iFind = html.indexOf('id="cid-findings"');
+  check("(5) precondition: both sections rendered",
+    iRoster >= 0 && iFind >= 0,
+    "roster at " + iRoster + ", findings at " + iFind);
+  check("(5) ⭐ the roster table comes BEFORE the findings",
+    iRoster >= 0 && iFind >= 0 && iRoster < iFind,
+    "Sam ruled the full table leads and the discrepancies are a link under it");
+
+  const a = root.querySelector('a[href="#cid-findings"]');
+  check("(5) ⭐ a jump link points at the findings", !!a,
+    "'just give a link to the discrepancies' — without it the lint is only "
+    + "reachable by scrolling past the whole roster");
+  check("(5) …and it names the count rather than a bare 'see below'",
+    !!a && /\b1 name resolves\b/.test(a.textContent),
+    a ? JSON.stringify(a.textContent) : "(no link)");
+  check("(5) …and the link sits ABOVE the table it precedes",
+    !!a && html.indexOf('href="#cid-findings"') < iRoster);
+
+  /* ⚠ HEADING LEVELS, because `npm run a11y` is the only thing that measures
+   * them and it is not in `npm test`. This view's sole a11y failure on
+   * 2026-09-11 was "headings skips: h1 -> h3": the COBI shell owns the h1 and
+   * every sibling tab opens at h2 (cr_reference, governance, map_users), but
+   * this file opened at h3 and its sections sat at h4 — the whole outline one
+   * level adrift. jsdom cannot see contrast or target size, but it can see
+   * this, so the cheap half of the sweep runs on every `npm test`. */
+  const firstHeading = root.querySelector("h1,h2,h3,h4,h5,h6");
+  check("(5) ⚠ the tab's FIRST heading is h2 — the shell owns the h1",
+    !!firstHeading && firstHeading.tagName === "H2" && !root.querySelector("h1"),
+    "first heading is " + (firstHeading ? firstHeading.tagName : "(none)")
+      + "; a11y reported 'headings skips: h1 -> h3' when this was an h3");
+  check("(5) …and the section headings are h3, not h4",
+    root.querySelectorAll("h3.cid-h").length >= 2
+      && root.querySelectorAll("h4").length === 0,
+    "found " + root.querySelectorAll("h3.cid-h").length + " h3 and "
+      + root.querySelectorAll("h4").length + " h4");
+
+  check("(5) ⚠ the findings stay in the DOM, not behind a disclosure",
+    /Pima Medical Institute/.test(html) && !/<details/i.test(html),
+    "Ctrl-F, the heading list and a deep link must all still reach them");
+
+  // Nothing outstanding: the line stays, the link goes — there is nothing to link to.
+  const two = loadModule();
+  two.w.CPL_COLLEGE_IDENTITY = { generated: "2026-08-23", linted: true, observed_names: 130, findings: [] };
+  two.M._state.live = COLLEGES; two.M._state.contacts = null; two.M._state.error = null;
+  two.M._render(two.root);
+  check("(5) with no findings there is no link to a section with nothing in it",
+    !two.root.querySelector('a[href="#cid-findings"]'),
+    "a link that lands on 'Nothing outstanding' teaches the reader to ignore it");
+  check("(5) …and the roster still renders",
+    two.root.innerHTML.indexOf(">Every entity (") >= 0);
+});
+
+let pass = 0;
+for (const [name, ok, why] of results) {
+  console.log((ok ? "  ok  " : "FAIL  ") + name + (!ok && why ? "\n        > " + why : ""));
+  if (ok) pass++;
+}
+console.log("\ncollege_identity_tab.test.js: " + pass + "/" + results.length + " checks passed");
+if (pass !== results.length) process.exit(1);

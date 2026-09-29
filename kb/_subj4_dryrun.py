@@ -34,7 +34,12 @@ from datetime import date
 HERE = os.path.dirname(os.path.abspath(__file__))
 COURSES = os.path.join(HERE, "coci_minted_courses.json")
 SINGLETONS = os.path.join(HERE, "coci_minted_singletons.json")
-CANONICAL = os.path.join(HERE, "discipline_canonical_subj4.json")
+# SUBJ4_CANONICAL_PATH points the allocator at a SCRATCH copy of the seed —
+# the 2026-09-03 rulings are dry-run against a copy carrying the ruled codes
+# (THTR, CDEV, ITIS, BSOT, FTVE, COMP) while the committed seed keeps the codes
+# the catalog is actually keyed under until the apply lands. Same seam pattern
+# as SUBJ4_DRYRUN_OUT.
+CANONICAL = os.environ.get("SUBJ4_CANONICAL_PATH") or os.path.join(HERE, "discipline_canonical_subj4.json")
 CURATION = os.path.join(HERE, "coci_curation.json")
 MEMBERSHIPS = os.path.join(HERE, "coci_minted_memberships.json")
 ARTICULATIONS = os.path.join(HERE, "coci_articulations.json")
@@ -66,6 +71,17 @@ def load_umbrella_allowances():
         codes = {v.get("subj4") for v in (fl.get("languages") or {}).values() if v.get("subj4")}
         codes.add("FLNG")  # the umbrella's own nominal canonical
         allow[fl.get("discipline") or "Foreign Languages"] = codes
+    # Seed-declared umbrellas (is_umbrella + umbrella_codes): Agriculture and
+    # Agricultural Production since the 2026-09-03 authority recode (item 14 —
+    # the C-ID family codes AGAB/AGAS/AGPS/AGEH/AGMA beside each residual).
+    if os.path.exists(CANONICAL):
+        with open(CANONICAL, encoding="utf-8") as f:
+            seed = json.load(f)
+        for d, e in (seed.get("disciplines") or {}).items():
+            if (e or {}).get("is_umbrella") and e.get("umbrella_codes"):
+                allow.setdefault(d, set()).update(e["umbrella_codes"])
+                if e.get("canonical_subj4"):
+                    allow[d].add(e["canonical_subj4"])
     return allow
 
 SUBJ4_RE = re.compile(r"^[A-Z]{4}$")

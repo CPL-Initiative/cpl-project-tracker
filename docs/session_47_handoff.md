@@ -9,6 +9,8 @@ related:
   - docs/kb-notes/methodology-title-similarity-merge-guards.md (the durable lesson)
   - docs/ccr_rules_brief.md (the amended plain-language contract)
 moniker_suggestion: Session 46 ran overnight on Sam's "trust you to autopilot" brief and got his live CCR feedback mid-session; claim your own moniker
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # Session 47 Hand-off Prompt

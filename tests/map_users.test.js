@@ -97,7 +97,8 @@ function makeWin(opts) {
   const w = makeWin();
   const api = w.CPL_MAP_USERS_TAB;
   const empty = api._rosterHtml([]);
-  check("rosterHtml empty: shows a gate message, no table", /Team &amp; RACI|no users/i.test(empty) && empty.indexOf("<table") < 0);
+  check("rosterHtml empty: shows a gate message, no table",
+  /in the header|no users/i.test(empty) && empty.indexOf("<table") < 0);
   const filled = api._rosterHtml([{ first_name: "Ada", last_name: "<x>", email: "a@b.edu", role_name: "Faculty", username: "ada" }]);
   check("rosterHtml rows: renders a table with the email", filled.indexOf("a@b.edu") >= 0 && filled.indexOf("<table") >= 0);
   check("rosterHtml rows: escapes the name", filled.indexOf("&lt;x&gt;") >= 0 && filled.indexOf("Ada <x>") < 0);
@@ -212,8 +213,11 @@ function makeWin(opts) {
   // the MAP dashboard deep-link (3rd arg) lands in the email body when present
   const mailtoUrl = decodeURIComponent(api._buildNudgeMailto("X", roster, "https://map.example/college/abc"));
   check("nudge mailto: includes the MAP dashboard URL when supplied", mailtoUrl.indexOf("https://map.example/college/abc") >= 0);
-  check("nudge mailto: omits the URL line when not supplied",
-    decodeURIComponent(api._buildNudgeMailto("X", roster)).indexOf("http") < 0);
+  // "No URL at all" was the original assertion, but the body now always carries
+  // the CPL Initiative help link (Session 120 boilerplate). What must still be
+  // absent is the per-college DEEP LINK when we don't have one.
+  check("nudge mailto: omits the college deep-link line when not supplied",
+    !/Open your MAP CPL Dashboard/.test(decodeURIComponent(api._buildNudgeMailto("X", roster))));
   // the college's user roster (4th arg) lands in the body, sorted by role then last name
   const userRoster = [
     { first_name: "Zoe", last_name: "Young", role_name: "Faculty Reviewer", email: "zoe@x.edu" },
@@ -306,8 +310,374 @@ function makeWin(opts) {
   check("render: no nudge button when logged out", !/data-nudge=/.test(r2.innerHTML));
 })();
 
+// ── Session 120: the student-contact worklist ──
+// The failure this guards: proposing a contact the college did NOT designate.
+// Local governance means the cascade may only ever surface the college's own
+// people; anything else has to be an ASK. A regression here is not cosmetic —
+// it would put words in a college's mouth in an email we send on their behalf.
+(function () {
+  const GAPS = [
+    // proposable, from the college's own CPL Coordinator designation
+    { college: "Alpha College", college_kind: "college", has_student_contact: false,
+      proposed_source: "CPL Coordinator", proposed_name: "Pat Vega",
+      proposed_email: "pat@alpha.edu", needs_ask: false, ask_reason: null,
+      landing_page_url: "https://map.example/alpha", active_users: 4 },
+    // CPL Assistant rung — MAP has no name column for it, so name is null
+    { college: "Beta College", college_kind: "college", has_student_contact: false,
+      proposed_source: "CPL Assistant", proposed_name: null,
+      proposed_email: "asst@beta.edu", needs_ask: false, ask_reason: null,
+      landing_page_url: null, active_users: 2 },
+    // leadership-only → must be ASKED, never defaulted to the VP
+    { college: "Gamma College", college_kind: "college", has_student_contact: false,
+      proposed_source: null, proposed_name: null, proposed_email: null,
+      needs_ask: true, ask_reason: "leadership only",
+      landing_page_url: "https://map.example/gamma", active_users: 3 },
+    // already fine — must NOT appear on the worklist
+    { college: "Delta College", college_kind: "college", has_student_contact: true,
+      proposed_source: null, proposed_email: null, needs_ask: false },
+    // sandbox entry — must NOT appear on a list a human is going to work
+    { college: "Testing College", college_kind: "test", has_student_contact: false,
+      proposed_source: "CPL Coordinator", proposed_name: "Nobody",
+      proposed_email: "x@test.edu", needs_ask: false },
+  ];
+  const w = makeWin({ teamPass: "p" });
+  const T = w.CPL_MAP_USERS_TAB;
+  T._state.gaps = GAPS;
+
+  const rows = T._gapRows();
+  check("gaps: only colleges MISSING a contact are listed",
+    rows.every((g) => g.has_student_contact === false));
+  check("gaps: colleges that already have a contact are excluded",
+    !rows.some((g) => g.college === "Delta College"));
+  check("gaps: sandbox/test entries excluded from the worklist",
+    !rows.some((g) => g.college_kind === "test"));
+  check("gaps: the three real gap colleges are listed", rows.length === 3);
+
+  const html = T._gapsHtml();
+  check("gaps html: proposal shows the person AND why they were picked",
+    /Pat Vega/.test(html) && /CPL Coordinator/.test(html));
+  check("gaps html: CPL Assistant rung renders without a name",
+    /asst@beta\.edu/.test(html));
+  check("gaps html: leadership-only college is in the ASK section, not proposed",
+    /Must be asked/.test(html) && /leadership only/.test(html));
+  // The leadership-only college must carry NO proposed address anywhere — the
+  // prose does mention vice presidents (explaining why we won't default to one),
+  // so assert on the absence of a routable proposal, not on the word.
+  check("gaps html: the leadership-only college gets no proposed address",
+    /Gamma College/.test(html) && !/@gamma\.edu/.test(html));
+  check("gaps html: says the proposal comes from the college's own designation",
+    /already designated in MAP/.test(html));
+  check("gaps html: states MAP has no write API (nothing here edits MAP)",
+    /no write API/i.test(html));
+
+  // The email is the artifact that actually reaches a college — check its claims.
+  const gap = GAPS[0];
+  const mail = decodeURIComponent(
+    T._buildContactMailto(gap, [{ label: "VPAA", name: "Dana Kim", email: "vpaa@alpha.edu" }],
+      "https://map.example/alpha"));
+  check("contact email: names the proposed person + their MAP role",
+    /Pat Vega/.test(mail) && /CPL Coordinator/.test(mail));
+  check("contact email: says we are NOT choosing someone new",
+    /not choosing someone new/i.test(mail));
+  check("contact email: says the choice is the college's",
+    /your call|entirely your/i.test(mail));
+  check("contact email: explains the student-facing consequence",
+    /does not reach anyone/i.test(mail));
+  check("contact email: carries the MAP team help contact",
+    /MAP@rccd\.edu/.test(mail));
+  check("contact email: semicolon-delimited recipients (Outlook rejects commas)",
+    !/^mailto:[^?]*,/.test(T._buildContactMailto(gap,
+      [{ label: "A", name: "", email: "a@x.edu" }, { label: "B", name: "", email: "b@x.edu" }], "")));
+
+  // The ask variant must not invent a person.
+  const askMail = decodeURIComponent(T._buildContactMailto(GAPS[2], [], "https://map.example/gamma"));
+  check("ask email: asks for a name instead of proposing one",
+    /Please reply with the name/.test(askMail) && !/WHAT WE PROPOSE/.test(askMail));
+
+  // Fallbacks must never masquerade as a MAP designation, and must always show
+  // WHERE they came from — a curator's name, or the page. Displaying the address
+  // without its provenance is the failure mode worth a test.
+  const FB = T._FALLBACK_CONTACTS;
+  const keys = Object.keys(FB);
+  check("fallbacks: every entry declares a provenance",
+    keys.every((k) => FB[k].via === "curator" || FB[k].via === "web" || FB[k].via === "search"));
+  check("fallbacks: every web-sourced entry carries a source URL",
+    keys.filter((k) => FB[k].via === "web").every((k) => /^https:\/\//.test(FB[k].source)));
+  // A "search" row's ONLY value is the page a human still has to open, so the
+  // source URL is not optional decoration here — it is the entire deliverable.
+  check("fallbacks: every search-sourced entry carries the page to confirm",
+    keys.filter((k) => FB[k].via === "search").every((k) => /^https:\/\//.test(FB[k].source)));
+  check("fallbacks: every search-sourced entry says why it is unconfirmed",
+    keys.filter((k) => FB[k].via === "search").every((k) => !!FB[k].note));
+  check("fallbacks: every curator entry records who supplied it",
+    keys.filter((k) => FB[k].via === "curator").every((k) => !!FB[k].by));
+  check("fallbacks: every listed contact has a real address",
+    keys.every((k) => (FB[k].contacts || []).every((c) => /.+@.+\..+/.test(c.email))));
+  check("fallbacks: no mental-health/wellness inbox used as a CPL contact",
+    keys.every((k) => (FB[k].contacts || []).every(
+      (c) => !/bewell|be-well|wellness|mentalhealth/i.test(c.email))));
+  // SOURCING RULE — Jessica (MAP team), 2026-08-05. This supersedes the stricter
+  // "department inboxes only" rule I set for myself: she is the domain expert and
+  // the distinction she drew is sharper. A named INDIVIDUAL is fine when they are
+  // *the* designated contact on the counseling page; what's forbidden is picking
+  // one name off a list of all counselors (those stay blank), and an inbox for a
+  // different department is fine when the counseling page directs you there.
+  //
+  // The enforceable proxy: anything that isn't an obvious department inbox must
+  // carry a `note` saying why it's there. That's what stops a future contributor
+  // quietly pasting in a counselor's address.
+  check("fallbacks: a non-department address is justified in a note",
+    keys.filter((k) => FB[k].via === "web").every((k) =>
+      (FB[k].contacts || []).every((c) => {
+        const local = c.email.split("@")[0].toLowerCase();
+        // "couns" not "counsel" — real inboxes abbreviate (SWCCounsCenter@swccd.edu)
+        const isDeptInbox = /couns|advis|success|student|welcome|preguntas|admissions|records/.test(local);
+        return isDeptInbox || !!FB[k].note;
+      })));
+  check("fallbacks: colleges that publish only a counselor LIST are left blank",
+    (FB["Coalinga College"].contacts || []).length === 0
+      && (FB["Laney College"].contacts || []).length === 0);
+  check("fallbacks: a college may carry more than one contact",
+    (FB["Gavilan College"].contacts || []).length === 2);
+
+  const curCell = T._fallbackCell("Gavilan College");
+  check("fallback cell: curator-supplied shows who gave it", /from Jessica/.test(curCell));
+  check("fallback cell: a curator who cited a source shows BOTH",
+    /from Jessica/.test(curCell) && /their source/.test(curCell)
+      && /counseling_team\.php/.test(curCell));
+  check("fallback cell: curator-supplied says it is NOT a MAP designation",
+    /not a MAP designation/.test(curCell));
+  check("fallback cell: renders both Gavilan contacts",
+    /jterry@gavilan\.edu/.test(curCell) && /dstuckey@gavilan\.edu/.test(curCell));
+  const webCell = T._fallbackCell("Hartnell College");
+  check("fallback cell: web-sourced links its source and says to verify",
+    /from their website/.test(webCell) && /verify before use/.test(webCell));
+  check("fallback cell: unknown college is honest about not being looked up",
+    /not looked up/.test(T._fallbackCell("Nowhere College")));
+
+  const csv = T._gapsCsv();
+  check("gaps csv: header + one line per real gap college", csv.split("\n").length === 4);
+  check("gaps csv: quotes are escaped", /^"College"/.test(csv));
+})();
+
+// The contact DIRECTORY lens (Jessica's ask). Built as a live lens rather than a
+// handed-over spreadsheet, because an export is a photograph that starts aging
+// the moment it's sent. Guards the properties a person working from it depends on:
+// a blank must mean "MAP holds nothing", never "we silently dropped it", and the
+// export must carry the provenance of the web-sourced column.
+(function () {
+  const w = makeWin({ teamPass: "p" });
+  const T = w.CPL_MAP_USERS_TAB;
+  T._state.gaps = [
+    { college: "Zeta College", college_kind: "college", has_student_contact: true,
+      primary_contact: "Ada Reyes", primary_contact_email: "ada@zeta.edu",
+      cpl_assistant_email: "cplasst@zeta.edu" },
+    { college: "Alpha College", college_kind: "college", has_student_contact: false,
+      primary_contact: null, primary_contact_email: null, cpl_assistant_email: null },
+    { college: "Hartnell College", college_kind: "college", has_student_contact: false,
+      primary_contact: null, primary_contact_email: null, cpl_assistant_email: null },
+    { college: "Testing College", college_kind: "test", has_student_contact: false,
+      primary_contact: "X", primary_contact_email: "x@t.edu", cpl_assistant_email: null },
+  ];
+
+  const rows = T._contactRows();
+  check("directory: sandbox entries excluded", !rows.some((r) => r.college_kind === "test"));
+  check("directory: sorted A–Z so a human can find a college",
+    rows[0].college === "Alpha College" && rows[rows.length - 1].college === "Zeta College");
+  check("directory: includes colleges that already HAVE contacts (it's a directory, not a gap list)",
+    rows.some((r) => r.college === "Zeta College"));
+
+  const html = T._contactsHtml();
+  check("directory: renders all five columns", /Primary contact<\/th>/.test(html)
+    && /Primary contact email<\/th>/.test(html) && /CPL Assistant email<\/th>/.test(html)
+    && /Counseling email/.test(html));
+  check("directory: a populated college shows its values",
+    /Ada Reyes/.test(html) && /cplasst@zeta\.edu/.test(html));
+  check("directory: says plainly that blank means MAP has nothing on file",
+    /Blank means MAP has nothing on file/.test(html));
+  check("directory: web-sourced counseling email carries its source link",
+    /Counseling@Hartnell\.edu/.test(html) && /hartnell\.edu/.test(html));
+  check("directory: offers the export", /data-dir-csv/.test(html));
+
+  const csv = T._contactsCsv();
+  const lines = csv.split("\r\n");
+  check("csv: one header + one row per real college", lines.length === 4);
+  check("csv: starts with a BOM so Excel reads accented college names correctly",
+    csv.charCodeAt(0) === 0xfeff);
+  check("csv: header names Jessica's columns in order",
+    /"College","Primary contact name","Primary contact email","CPL Assistant email","CPL contact title","CPL contact name","CPL contact email","CPL webpage URL"/.test(csv)
+      && /"Counseling email"/.test(csv));
+  check("csv: carries the counseling source URL, so a reader can verify it",
+    /hartnell\.edu\/support\/counseling/.test(csv));
+  check("csv: labels whether a counseling email came from the team or a website",
+    /college website/.test(csv));
+  check("csv: an empty MAP field exports as empty, never as a placeholder",
+    /"Alpha College","","",""/.test(csv));
+})();
+
+// Disciplines are PIPE-delimited in MAP, not comma-delimited (Session 120). The
+// old comma-only split turned a 150-code value into one enormous table cell.
+(function () {
+  const w = makeWin({ teamPass: "p" });
+  const d = w.CPL_MAP_USERS_TAB._discCell("MATH | ENGL | BIOL | CHEM");
+  check("discCell: splits MAP's pipe-delimited disciplines", /4 disciplines/.test(d));
+  check("discCell: full list kept in the title attribute", /MATH, ENGL, BIOL, CHEM/.test(d));
+  check("discCell: still handles comma-delimited values",
+    /3 disciplines/.test(w.CPL_MAP_USERS_TAB._discCell("A,B,C")));
+  check("discCell: empty → em dash", w.CPL_MAP_USERS_TAB._discCell("") === "—");
+})();
+
+// The lens is reviewer-only — its data source is gated, so a logged-out visitor
+// must not even be offered it.
+(function () {
+  const out = makeWin();
+  out.CPL_MAP_USERS_TAB._state.summary = [{ college: "A", user_count: 1, role_mix: { Faculty: 1 } }];
+  const r = out.document.getElementById("map-users-root");
+  out.CPL_MAP_USERS_TAB.render(r);
+  check("lens: hidden when logged out", !/data-lens=/.test(r.innerHTML));
+
+  const inn = makeWin({ teamPass: "p" });
+  inn.CPL_MAP_USERS_TAB._state.summary = [{ college: "A", user_count: 1, role_mix: { Faculty: 1 } }];
+  const r2 = inn.document.getElementById("map-users-root");
+  inn.CPL_MAP_USERS_TAB.render(r2);
+  check("lens: offered when signed in", /data-lens="gaps"/.test(r2.innerHTML));
+})();
+
+// The CPL-page column must never cite one of OUR OWN MAP landing pages as the
+// college's published CPL page. A web search for "<college> credit for prior
+// learning" surfaces them near the top, so this is a live hazard, not theory.
+(function () {
+  const w = makeWin({ teamPass: "p" });
+  const P = w.CPL_MAP_USERS_TAB._CPL_PAGES;
+  const urls = Object.keys(P).map((k) => P[k].url).filter(Boolean);
+  check("cpl page: never cites our own MAP landing pages as a college's CPL page",
+    urls.every((u) => !/cpldashboardcccco\.azurewebsites\.net|cpl-landing-pages/.test(u)));
+  check("cpl page: every entry records what kind of page was found",
+    Object.keys(P).every((k) => P[k].kind === null || ["site", "catalog", "military"].indexOf(P[k].kind) >= 0));
+  check("cpl page: an entry with no page found says so, rather than rendering blank",
+    /no CPL page found/.test(w.CPL_MAP_USERS_TAB._cplPageCell("Allan Hancock College")));
+  check("cpl page: a page whose contact could not be read says 'page, no contact'",
+    /page, no contact/.test(w.CPL_MAP_USERS_TAB._cplPageCell("Chaffey College")));
+  check("cpl page: an unchecked college is honest about being unchecked",
+    /not looked up/.test(w.CPL_MAP_USERS_TAB._cplPageCell("Nowhere College")));
+})();
+
+// The ASCCC CPL Liaison column. Distinct from the CPL-page contact: the Senate
+// asks each college to name a liaison, so where one exists it is a statewide
+// designation rather than whatever is printed on a college webpage.
+(function () {
+  const w = makeWin({ teamPass: "p" });
+  const T = w.CPL_MAP_USERS_TAB;
+  const L = T._CPL_LIAISONS;
+  check("liaison: every entry cites its ASCCC source",
+    Object.keys(L).every((k) => /^https:\/\/(www\.)?asccc\.org/.test(L[k].source)));
+  check("liaison: every person has a name", 
+    Object.keys(L).every((k) => (L[k].people || []).every((p) => !!p.name)));
+  check("liaison: a college can carry more than one",
+    (L["Chaffey College"].people || []).length === 2);
+  const cell = T._cplLiaisonCell("Chaffey College");
+  check("liaison cell: shows both people and the ASCCC link",
+    /Stephen Lux/.test(cell) && /Jin Liu/.test(cell) && /ASCCC/.test(cell));
+  // asccc.org 403s automated fetches, so an empty cell means "not surfaced by a
+  // search", NOT "this college has no liaison". Saying "none" would misrepresent
+  // the Academic Senate.
+  check("liaison cell: an unknown college says 'none surfaced', not 'none'",
+    /none surfaced/.test(T._cplLiaisonCell("Nowhere College")));
+})();
+
+// ── Proposed fills for MAP (SkyWire, 2026-08-09) ────────────────────────────
+// Sam: "the counseling contact is our best guess as to whom would serve as the
+// best primary contact when the contact is blank" — offered as a TEMPORARY FILL
+// the MAP team can adopt. Two properties carry the whole risk of the feature:
+// a proposal must never appear where MAP already holds a designation, and it
+// must never be renderable as though MAP made it.
+(function () {
+  const w = makeWin({ teamPass: "p" });
+  const T = w.CPL_MAP_USERS_TAB;
+
+  // 1. Never propose over a value MAP already holds.
+  check("proposal: none when MAP already has a primary contact email",
+    T._proposedFillFor({ college: "Gavilan College", primary_contact_email: "someone@map.edu" }) === null);
+
+  // 2. Proposes where MAP is blank AND we settled on a contact.
+  const g = T._proposedFillFor({ college: "Gavilan College", primary_contact_email: "" });
+  check("proposal: offered where MAP is blank and we have a contact", !!g);
+  check("proposal: carries the curator provenance, not just an address",
+    !!g && g.meta.via === "curator" && g.meta.by === "Jessica");
+  check("proposal: every proposed contact actually has an email",
+    !!g && g.contacts.length > 0 && g.contacts.every((c) => !!c.email));
+
+  // 3. The 15 blank-with-a-finding colleges yield NO proposal. Contra Costa is
+  //    the sharp case: the only address its site publishes is a mental-health
+  //    inbox, which was DELIBERATELY DECLINED for CPL routing. Declining it is
+  //    precisely why the college is blank — a proposal here would undo that
+  //    judgment silently.
+  check("proposal: none for a blank-with-a-finding college",
+    T._proposedFillFor({ college: "Contra Costa College", primary_contact_email: "" }) === null);
+  check("proposal: none for LA Harbor either (personal-counseling inbox only)",
+    T._proposedFillFor({ college: "Los Angeles Harbor College", primary_contact_email: "" }) === null);
+  const cc = T._FALLBACK_CONTACTS["Contra Costa College"];
+  check("the declined mental-health inbox is recorded as a finding, not an address",
+    (cc.contacts || []).length === 0 && /deliberately not used/i.test(cc.note || ""));
+
+  // 3b. A "search" row is a LEAD, not a proposal (Session 132). Its page was
+  //     never opened — sessions are egress-blocked from college domains — so
+  //     nobody has checked it against Jessica's rules, and the specific thing
+  //     those rules catch (a wellness inbox published as the counselling
+  //     contact) is exactly what a search snippet hides. Proposing one would
+  //     launder "we could not check this" into "we suggest you adopt it".
+  check("proposal: none for a search-sourced candidate, however good it looks",
+    T._proposedFillFor({ college: "Citrus College", primary_contact_email: "" }) === null);
+  // POSITIVE CONTROL for the line above: prove the null is the TIER refusing,
+  // not an empty contact list. Without this, deleting the Citrus entry entirely
+  // would still pass the assertion.
+  const citrus = T._FALLBACK_CONTACTS["Citrus College"];
+  check("…and that refusal is about provenance: the candidate DOES carry an address",
+    !!citrus && citrus.via === "search"
+    && (citrus.contacts || []).some((c) => /.+@.+\..+/.test(c.email)));
+  // POSITIVE CONTROL for the branch itself: a web-sourced row must still
+  // propose, so the new `via === "search"` guard cannot have swallowed everything.
+  const webKey = Object.keys(T._FALLBACK_CONTACTS).find((k) =>
+    T._FALLBACK_CONTACTS[k].via === "web"
+    && (T._FALLBACK_CONTACTS[k].contacts || []).some((c) => c.email));
+  check("…while a web-sourced row still proposes (the guard is not a blanket off-switch)",
+    !!webKey && !!T._proposedFillFor({ college: webKey, primary_contact_email: "" }));
+
+  // 4. Unknown college → no proposal, no throw.
+  check("proposal: unknown college yields null rather than throwing",
+    T._proposedFillFor({ college: "Nowhere College", primary_contact_email: "" }) === null);
+
+  // 5. The handover export carries the evidence, not just addresses. A list of
+  //    emails with no provenance is not something the MAP team should act on.
+  //    Seed real state first — an unloaded tab emits a header-only CSV, and the
+  //    row assertions below would then pass without ever being exercised.
+  T._state.gaps = [
+    { college: "Gavilan College", college_kind: "college", primary_contact_email: "" },
+    { college: "Contra Costa College", college_kind: "college", primary_contact_email: "" },
+    { college: "Butte College", college_kind: "college", primary_contact_email: "already@set.edu" },
+  ];
+  const csv = T._proposalsCsv();
+  check("handover CSV is exercised (has at least one data row)",
+    csv.split("\n").length > 1);
+  check("handover CSV includes the college whose MAP field is blank",
+    csv.indexOf("Gavilan College") >= 0);
+  check("handover CSV excludes a college MAP already has a contact for",
+    csv.indexOf("Butte College") < 0);
+  const head = csv.split("\n")[0];
+  ["College", "Proposed primary contact email", "Where it came from", "Source URL", "Decision (MAP team)"]
+    .forEach((col) => check("handover CSV has a '" + col + "' column", head.indexOf(col) >= 0));
+  check("handover CSV states MAP currently holds nothing",
+    /\(nothing — this field is blank in MAP\)/.test(csv));
+  check("handover CSV never claims a proposal is a MAP designation",
+    !/MAP designation/i.test(csv));
+  // Declined colleges must not appear in the handover list at all.
+  check("handover CSV excludes the declined mental-health-inbox colleges",
+    csv.indexOf("Contra Costa College") < 0 && csv.indexOf("Los Angeles Harbor College") < 0);
+})();
+
 // ── report ──
 let failed = 0;
 for (const [name, ok] of results) { console.log((ok ? "PASS " : "FAIL ") + name); if (!ok) failed++; }
 console.log("\n" + (results.length - failed) + "/" + results.length + " passed");
 process.exit(failed ? 1 : 0);
+

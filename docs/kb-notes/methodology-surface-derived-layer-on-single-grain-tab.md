@@ -4,7 +4,6 @@ created: 2026-06-09
 updated: 2026-06-09
 tags: [methodology, ui, reference-tabs, csr, search, foreign-languages, subj4]
 kb-status: published
-kb-type: methodology
 obsidian-folder: cpl-project-tracker/kb-notes
 related:
   - "[[CLAUDE]]"

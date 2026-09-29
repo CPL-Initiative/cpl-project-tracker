@@ -6,6 +6,8 @@ related:
   - "[[CLAUDE]]"
   - "[[docs/exhibit_canonicalization_lessons]]"
   - "[[docs/session_107_handoff]]"
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # You are Session 108

@@ -180,6 +180,36 @@
     });
   }
 
+  /**
+   * Sub-activity brief-description editor. Writes projects.description (the one
+   * store; the Annual Workplan tab renders it, so the edit flows to every
+   * surface — Activities cards, RACI, reports — on the next regen).
+   */
+  function saveDesc(pid, description, sess) {
+    return fetch(SUPABASE_URL + "/rest/v1/projects?id=eq."
+        + encodeURIComponent(pid), {
+      method: "PATCH",
+      headers: authHeaders(sess, "return=representation"),
+      body: JSON.stringify({ description: description })
+    });
+  }
+
+  /**
+   * Top-level Activity field editor. The 4 Activities are kind='activity' rows
+   * in workplan_goals with TWO row_types (GOAL+STRETCH) that share the same
+   * name + description, so we PATCH by (activity_id, kind='activity') to keep
+   * both rows in sync. `patch` is { name } or { description }.
+   */
+  function saveActivityField(activity_id, patch, sess) {
+    var qs = "activity_id=eq." + encodeURIComponent(activity_id)
+           + "&kind=eq.activity";
+    return fetch(SUPABASE_URL + "/rest/v1/workplan_goals?" + qs, {
+      method: "PATCH",
+      headers: authHeaders(sess, "return=representation"),
+      body: JSON.stringify(patch)
+    });
+  }
+
   // ═══ Activity↔Project association editor ════════════════════════════════
   // The popover (open / render / save / optimistic-paint / rollback) lives in
   // the SHARED module assoc_editor.js (window.CPL_ASSOC_EDITOR), so the Workplan
@@ -202,17 +232,17 @@
         state.sess.teamPass
           ? ["✓ Editing unlocked (team phrase)"]
           : ["Signed in as ", state.sess.email || "(no email)"]));
-      var sub = el("span", { "style": "color:#666;" }, ["Click any goal/stretch/current cell or a sub-activity title to edit • Enter saves • Esc cancels"]);
+      var sub = el("span", { "style": "color:var(--text-muted);" }, ["Click any goal/stretch/current cell or a sub-activity title to edit • Enter saves • Esc cancels"]);
       widget.appendChild(sub);
       var btnAdd = el("button", {
         "class": "wpg-btn wpg-btn-add",
-        "style": "margin-left:auto;padding:0.35rem 0.75rem;border:1px solid var(--cobalt);background:var(--cobalt);color:#fff;border-radius:5px;font-size:0.8rem;cursor:pointer;font-weight:600;"
+        "style": "margin-left:auto;padding:0.35rem 0.75rem;border:1px solid var(--cobalt);background:var(--cobalt);color:var(--on-accent);border-radius:5px;font-size:0.8rem;cursor:pointer;font-weight:600;"
       }, ["+ Add new row"]);
       btnAdd.addEventListener("click", function () { openAddModal(state); });
       widget.appendChild(btnAdd);
       var btnOut = el("button", {
         "class": "wpg-btn",
-        "style": "padding:0.35rem 0.75rem;border:1px solid #ccc;background:#fff;color:#333;border-radius:5px;font-size:0.8rem;cursor:pointer;"
+        "style": "padding:0.35rem 0.75rem;border:1px solid #ccc;background:var(--surface-opaque);color:var(--text-strong);border-radius:5px;font-size:0.8rem;cursor:pointer;"
       }, [state.sess.teamPass ? "🔒 Lock" : "Sign out"]);
       btnOut.addEventListener("click", function () {
         signOut();
@@ -220,7 +250,7 @@
       });
       widget.appendChild(btnOut);
     } else {
-      widget.appendChild(el("span", { "style": "color:#666;" },
+      widget.appendChild(el("span", { "style": "color:var(--text-muted);" },
         ["Sign in (CCCCO MAP only) to edit goal + stretch values."]));
       var emailInput = el("input", {
         "type": "email",
@@ -229,9 +259,9 @@
       }, []);
       var btnIn = el("button", {
         "class": "wpg-btn",
-        "style": "padding:0.35rem 0.75rem;border:0;background:var(--cobalt);color:#fff;border-radius:5px;font-size:0.8rem;cursor:pointer;"
+        "style": "padding:0.35rem 0.75rem;border:0;background:var(--cobalt);color:var(--on-accent);border-radius:5px;font-size:0.8rem;cursor:pointer;"
       }, ["Sign in"]);
-      var status = el("span", { "style": "color:#666;flex-basis:100%;font-size:0.8rem;" }, []);
+      var status = el("span", { "style": "color:var(--text-muted);flex-basis:100%;font-size:0.8rem;" }, []);
 
       btnIn.addEventListener("click", function () {
         var email = (emailInput.value || "").trim();
@@ -304,7 +334,8 @@
     // cells + editable titles. Live-synced Current cells carry no edit attr, so
     // they're never selected here (read-only by construction).
     var cells = document.querySelectorAll(
-      '[data-editable="1"], [data-current-edit="1"], [data-title-edit="1"]');
+      '[data-editable="1"], [data-current-edit="1"], [data-title-edit="1"], '
+      + '[data-desc-edit="1"], [data-activity-title-edit="1"], [data-activity-desc-edit="1"]');
     cells.forEach(function (c) {
       if (state.sess) c.classList.add("wpg-editable");
       else c.classList.remove("wpg-editable");
@@ -341,7 +372,7 @@
     var isPct = cell.getAttribute("data-pct") === "1";
     // PR-B: optional kind discriminator. When absent (pre-PR-B cells), the
     // save path falls through to the unscoped PATCH, which is still safe
-    // because Activity ids ("1"-"5") and project ids ("1.1", "1.2", …) are
+    // because Activity ids ("1"-"4") and project ids ("1.1", "1.2", …) are
     // disjoint.
     var kind = cell.getAttribute("data-kind") || "";
     if (!activity_id || !row_type || !year_key) return;
@@ -353,7 +384,7 @@
       "type": "text",
       "value": isPct && oldNum ? (Math.round(oldNum * 100) + "%") : (oldNum || ""),
       "class": "wpg-cell-input",
-      "style": "width:100%;box-sizing:border-box;padding:2px 4px;font:inherit;border:1px solid #4D7EA8;border-radius:3px;text-align:right;background:#fff;"
+      "style": "width:100%;box-sizing:border-box;padding:2px 4px;font:inherit;border:1px solid #4D7EA8;border-radius:3px;text-align:right;background:var(--surface-opaque);"
     }, []);
 
     cell.classList.add("wpg-editing");
@@ -475,7 +506,7 @@
       "type": "text",
       "value": isPct && oldNum ? (Math.round(oldNum * 100) + "%") : (oldNum || ""),
       "class": "wpg-cell-input",
-      "style": "width:100%;box-sizing:border-box;padding:2px 4px;font:inherit;border:1px solid #4D7EA8;border-radius:3px;text-align:right;background:#fff;"
+      "style": "width:100%;box-sizing:border-box;padding:2px 4px;font:inherit;border:1px solid #4D7EA8;border-radius:3px;text-align:right;background:var(--surface-opaque);"
     }, []);
     cell.classList.add("wpg-editing");
     var prevHtml = cell.innerHTML;
@@ -549,7 +580,7 @@
       "type": "text",
       "value": oldName,
       "class": "wpg-title-input",
-      "style": "width:100%;box-sizing:border-box;padding:2px 4px;font:inherit;border:1px solid #4D7EA8;border-radius:3px;background:#fff;"
+      "style": "width:100%;box-sizing:border-box;padding:2px 4px;font:inherit;border:1px solid #4D7EA8;border-radius:3px;background:var(--surface-opaque);"
     }, []);
     cell.classList.add("wpg-editing");
     var prevHtml = cell.innerHTML;
@@ -594,6 +625,112 @@
     input.addEventListener("blur", commit);
   }
 
+  // ─── Shared inline text editor (description + Activity title/description) ───
+  // Single-line input or multi-line textarea that PATCHes via opts.save(value,
+  // sess). Mirrors startTitleEdit's optimistic-paint + rollback. In multiline
+  // mode Enter inserts a newline; Cmd/Ctrl+Enter (or blur) saves. Empty renders
+  // the "—" placeholder (the same neutral empty-state the generator emits).
+  function inlineTextEditor(cell, state, opts) {
+    if (!state.sess) return;
+    if (cell.classList.contains("wpg-editing")) return;
+    var oldVal = cell.getAttribute("data-val");
+    if (oldVal === null) oldVal = cell.textContent;
+    if (oldVal === "—") oldVal = "";  // the "—" placeholder means empty
+    var field = opts.multiline
+      ? el("textarea", { "class": "wpg-title-input",
+          "style": "width:100%;box-sizing:border-box;min-height:3.4em;padding:3px 5px;font:inherit;border:1px solid #4D7EA8;border-radius:3px;background:var(--surface-opaque);color:var(--text-strong);resize:vertical;" }, [])
+      : el("input", { "type": "text", "class": "wpg-title-input",
+          "style": "width:100%;box-sizing:border-box;padding:2px 4px;font:inherit;border:1px solid #4D7EA8;border-radius:3px;background:var(--surface-opaque);color:var(--text-strong);" }, []);
+    field.value = oldVal;
+    cell.classList.add("wpg-editing");
+    var prevHtml = cell.innerHTML;
+    cell.innerHTML = "";
+    cell.appendChild(field);
+    field.focus();
+    if (field.select) field.select();
+
+    var done = false;
+    function cancel() {
+      if (done) return;
+      done = true;
+      cell.innerHTML = prevHtml;
+      cell.classList.remove("wpg-editing");
+    }
+    function commit() {
+      if (done) return;
+      var val = (field.value || "").trim();
+      if (val === (oldVal || "").trim()) { cancel(); return; }
+      if (opts.required && !val) { field.style.borderColor = "#A33"; return; }
+      done = true;
+      cell.classList.remove("wpg-editing");
+      cell.classList.add("wpg-saving");
+      cell.textContent = val || "—";
+      cell.setAttribute("data-val", val);
+      opts.save(val, state.sess).then(writeResult).then(function (r) {
+        cell.classList.remove("wpg-saving");
+        var paint = r.ok ? "wpg-saved" : "wpg-error";
+        cell.classList.add(paint);
+        setTimeout(function () { cell.classList.remove(paint); }, 1500);
+        if (!r.ok) {
+          cell.innerHTML = prevHtml;
+          cell.setAttribute("data-val", oldVal);
+          console.error("[workplan_goals] save failed:", r.status);
+          maybeDropStalePhrase(state.sess, r.status);
+        }
+      }).catch(function (e) {
+        cell.classList.remove("wpg-saving");
+        cell.classList.add("wpg-error");
+        cell.innerHTML = prevHtml;
+        cell.setAttribute("data-val", oldVal);
+        setTimeout(function () { cell.classList.remove("wpg-error"); }, 2000);
+        console.error("[workplan_goals] save error:", e);
+      });
+    }
+    field.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" && (!opts.multiline || e.metaKey || e.ctrlKey)) {
+        e.preventDefault(); commit();
+      } else if (e.key === "Escape") {
+        e.preventDefault(); cancel();
+      }
+    });
+    field.addEventListener("blur", commit);
+  }
+
+  // Sub-activity brief description → projects.description.
+  function startDescEdit(cell, state) {
+    var pid = cell.getAttribute("data-pid");
+    if (!pid) return;
+    inlineTextEditor(cell, state, {
+      multiline: true,
+      save: function (v, sess) { return saveDesc(pid, v || null, sess); }
+    });
+  }
+
+  // Top-level Activity title → workplan_goals.name (rebuilt with the "Activity
+  // N: " prefix so the number can't be edited away).
+  function startActivityTitleEdit(cell, state) {
+    var aid = cell.getAttribute("data-aid");
+    if (!aid) return;
+    inlineTextEditor(cell, state, {
+      required: true,
+      save: function (v, sess) {
+        return saveActivityField(aid, { name: "Activity " + aid + ": " + v }, sess);
+      }
+    });
+  }
+
+  // Top-level Activity brief description → workplan_goals.description.
+  function startActivityDescEdit(cell, state) {
+    var aid = cell.getAttribute("data-aid");
+    if (!aid) return;
+    inlineTextEditor(cell, state, {
+      multiline: true,
+      save: function (v, sess) {
+        return saveActivityField(aid, { description: v || null }, sess);
+      }
+    });
+  }
+
   function attachClickHandler(state) {
     // Use event delegation on the body — works for both tab tables.
     document.body.addEventListener("click", function (e) {
@@ -609,6 +746,15 @@
           if (target.getAttribute("data-title-edit") === "1") {
             startTitleEdit(target, state); return;
           }
+          if (target.getAttribute("data-desc-edit") === "1") {
+            startDescEdit(target, state); return;
+          }
+          if (target.getAttribute("data-activity-title-edit") === "1") {
+            startActivityTitleEdit(target, state); return;
+          }
+          if (target.getAttribute("data-activity-desc-edit") === "1") {
+            startActivityDescEdit(target, state); return;
+          }
         }
         target = target.parentNode;
       }
@@ -621,16 +767,16 @@
     var css = ''
       + '.wpg-editable { cursor: pointer; transition: background 0.15s; }'
       + '.wpg-editable:hover { background: #F0F4F8 !important; outline: 1px dashed #4D7EA8; }'
-      + '.wpg-editing { background: #fff !important; padding: 0 !important; }'
+      + '.wpg-editing { background: var(--surface-opaque) !important; padding: 0 !important; }'
       + '.wpg-saving { background: #FFF8E1 !important; }'
       + '.wpg-saved { background: #E8F5E9 !important; transition: background 0.4s; }'
       + '.wpg-error { background: #FFEBEE !important; transition: background 0.4s; }'
       // PR-C add-flow modal
       + '.wpg-modal-overlay { position:fixed;inset:0;background:rgba(10,34,64,0.55);z-index:9999;display:flex;align-items:flex-start;justify-content:center;overflow-y:auto;padding:3rem 1rem; }'
-      + '.wpg-modal-card { background:#fff;border-radius:10px;box-shadow:0 8px 32px rgba(0,0,0,0.25);max-width:640px;width:100%;padding:1.5rem;font-family:inherit;color:var(--text-strong); }'
+      + '.wpg-modal-card { background:var(--surface-opaque);border-radius:10px;box-shadow:0 8px 32px rgba(0,0,0,0.25);max-width:640px;width:100%;padding:1.5rem;font-family:inherit;color:var(--text-strong); }'
       + '.wpg-modal-card h3 { margin:0 0 0.25rem 0;color:var(--text-strong);font-size:1.1rem; }'
-      + '.wpg-modal-card .wpg-sub { color:#666;font-size:0.8rem;margin-bottom:1rem; }'
-      + '.wpg-modal-card label { display:block;font-size:0.78rem;color:#666;margin:0.6rem 0 0.2rem 0;font-weight:600; }'
+      + '.wpg-modal-card .wpg-sub { color:var(--text-muted);font-size:0.8rem;margin-bottom:1rem; }'
+      + '.wpg-modal-card label { display:block;font-size:0.78rem;color:var(--text-muted);margin:0.6rem 0 0.2rem 0;font-weight:600; }'
       + '.wpg-modal-card input[type="text"], .wpg-modal-card input[type="number"] { width:100%;padding:0.4rem 0.55rem;border:1px solid #ccc;border-radius:5px;font-size:0.85rem;box-sizing:border-box; }'
       + '.wpg-modal-card .wpg-radio-row { display:flex;gap:1.5rem;margin:0.3rem 0 0.5rem 0; }'
       + '.wpg-modal-card .wpg-radio-row label { display:flex;align-items:center;gap:0.4rem;font-weight:500;color:var(--text-strong);margin:0;font-size:0.9rem;cursor:pointer; }'
@@ -642,12 +788,12 @@
       + '.wpg-modal-card .wpg-status.err { color:#A33; }'
       + '.wpg-modal-card .wpg-modal-actions { display:flex;justify-content:flex-end;gap:0.5rem;margin-top:1rem; }'
       + '.wpg-modal-card .wpg-modal-actions button { padding:0.4rem 0.9rem;border-radius:5px;font-size:0.85rem;cursor:pointer;border:0; }'
-      + '.wpg-modal-card .wpg-btn-cancel { background:#fff;border:1px solid #ccc !important;color:#333; }'
-      + '.wpg-modal-card .wpg-btn-submit { background:var(--cobalt);color:#fff;font-weight:600; }'
+      + '.wpg-modal-card .wpg-btn-cancel { background:var(--surface-opaque);border:1px solid #ccc !important;color:var(--text-strong); }'
+      + '.wpg-modal-card .wpg-btn-submit { background:var(--cobalt);color:var(--on-accent);font-weight:600; }'
       + '.wpg-modal-card .wpg-btn-submit:disabled { opacity:0.6;cursor:not-allowed; }'
       + '.wpg-act-chip { display:inline-block;padding:0.05rem 0.4rem;background:var(--surface-muted);color:var(--navy-secondary);border-radius:10px;font-size:0.7rem;font-weight:600; }'
       // Session 85 — Current hybrid + title editor affordances
-      + '.wpg-live-badge { display:inline-block;margin-left:0.35rem;padding:0.02rem 0.34rem;background:var(--cobalt,#2A6FB0);color:#fff;border-radius:8px;font-size:0.6rem;font-weight:700;letter-spacing:0.02em;vertical-align:middle;white-space:nowrap; }'
+      + '.wpg-live-badge { display:inline-block;margin-left:0.35rem;padding:0.02rem 0.34rem;background:var(--cobalt,#2A6FB0);color:var(--on-accent);border-radius:8px;font-size:0.6rem;font-weight:700;letter-spacing:0.02em;vertical-align:middle;white-space:nowrap; }'
       + '.wpg-manual-hint { color:#bbb;font-size:0.72rem; }'
       + '.wpg-editable.wpg-manual-hint, .wpg-editable .wpg-manual-hint { color:#4D7EA8; }'
       + '.wpg-title-cell { border-radius:3px; }';
@@ -967,7 +1113,7 @@
       }
     }).then(function () {
       ctx.status.className = "wpg-status ok";
-      ctx.status.textContent = "✓ Inserted. Reloading the page…";
+      ctx.status.textContent = "Inserted. Reloading the page…";
       setTimeout(function () { window.location.reload(); }, 800);
     }).catch(function (e) {
       ctx.btnSubmit.disabled = false;

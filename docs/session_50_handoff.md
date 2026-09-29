@@ -9,6 +9,8 @@ related:
   - docs/kb-notes/methodology-subj4-consumer-semantics.md (the durable lesson)
   - kb/subj4_dryrun/report.md (the apply's review material)
 moniker_suggestion: Session 47 was "Bruh Supernova" (Sam's coinage); claim your own
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # Session 50 Hand-off Prompt — the data lane

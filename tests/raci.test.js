@@ -40,6 +40,14 @@ function makeDom(members, raciRows, opts) {
     activity_kpis: [
       { activity_id: "Activity 1", activity_name: "Build AI-Enhanced CPL Infrastructure",
         kpis: [{ id: "1.1", name: "MAP Platform Development" }] },
+      // Activities 2 + 3 supplied so the RACI matrix derives all 4 top-level
+      // Activities from CPL_DATA (raci.js no longer hardcodes them). Activity 3's
+      // name here intentionally differs from the old hardcoded label, so the
+      // "de-hardcoded" assertion below proves the label comes from the snapshot.
+      { activity_id: "Activity 2", activity_name: "Faculty Workgroups & Credit Recommendations",
+        kpis: [] },
+      { activity_id: "Activity 3", activity_name: "Build Robust CPL Data Infrastructure",
+        kpis: [] },
       { activity_id: "Activity 4", activity_name: "Sprints, Projects & Partnerships",
         kpis: [{ id: "4.1", name: "Sprints" }] },
     ],
@@ -103,6 +111,12 @@ const RACI_ROWS = [
   const rows = doc.querySelectorAll(".raci-table tr");
   // header + 4 activities + 3 placed projects (orphan 9.9 falls under Activity 9 group? no — only ACTIVITIES 1-4 emit groups)
   check("matrix renders activity rows", doc.querySelectorAll(".raci-row-act").length === 4);
+  // De-hardcode guard: the Activity labels now derive from CPL_DATA.activity_kpis
+  // (a rename on the Annual Workplan Goals tab flows here). The mock's Activity 3
+  // label differs from raci.js's old hardcoded "Scale CPL Access…" string.
+  check("activity labels derive from CPL_DATA (de-hardcoded)",
+    /Build Robust CPL Data Infrastructure/.test(doc.body.innerHTML)
+    && !/Scale CPL Access, Awards, and Procedures/.test(doc.body.innerHTML));
   check("5.1 placed under an Activity (grouped by workplan_activity)",
     /AI-Ready California/.test(doc.body.innerHTML));
   check("orphan project with blank activity did not crash render", rows.length > 4);

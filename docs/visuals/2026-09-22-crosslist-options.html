@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cross-list or nest: the options</title>
+<style>
+  /* First Light v1.6 tokens — values from prototype/first_light_theme_v1.html.
+     A light identity, painted explicitly; every surface and color is a token. */
+  :root {
+    --paper: #F4F2ED; --text-strong: #1C1C1A; --text-body: #3A3A36; --text-muted: #5C5C55;
+    --surface-opaque: #FFFFFF; --surface-subtle: #F7F5F1;
+    --border: rgba(28,28,26,.14); --border-strong: rgba(28,28,26,.30);
+    --cobalt: #0047AB; --seal-blue: #002F6D; --mustard-text: #8B6800;
+    --rec-tint: #E8EFF8; --rest-tint: #FDF6E3;
+    --focus-ring: var(--cobalt); --radius: 14px;
+  }
+  html { color-scheme: light; }
+  body { background: var(--paper); color: var(--text-body);
+    font-family: 'Source Sans 3', Arial, sans-serif; font-size: 16px; line-height: 1.55;
+    margin: 0; padding: 0 16px 64px; }
+  .wrap { max-width: var(--cpl-measure, 780px); margin: 0 auto; }
+  a { color: var(--cobalt); }
+  :focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 2px; border-radius: 4px; }
+  .skip { position: absolute; left: -9999px; top: 0; background: var(--surface-opaque);
+    color: var(--cobalt); padding: 8px 14px; z-index: 10; }
+  .skip:focus { left: 8px; }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+  h1 { font-family: 'Playfair Display', Georgia, serif; color: var(--text-strong); text-wrap: balance;
+    font-size: clamp(1.7rem, 5vw, 2.4rem); line-height: 1.15; margin: 34px 0 8px; }
+  h2 { font-family: 'Playfair Display', Georgia, serif; color: var(--text-strong);
+    font-size: 1.25rem; margin: 36px 0 4px; }
+  h3 { font-size: 1.05rem; font-weight: 700; color: var(--text-strong); margin: 0; }
+  .card { background: var(--surface-opaque); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 16px 20px; margin: 16px 0; }
+  .card .ref { color: var(--text-muted); font-size: .84rem; margin: 2px 0 10px; }
+  .card dl { margin: 0; }
+  .card dt { font-size: .72rem; text-transform: uppercase; letter-spacing: .08em;
+    font-weight: 700; color: var(--text-muted); margin-top: 10px; }
+  .card dd { margin: 2px 0 0; }
+  .howto { background: var(--surface-opaque); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 16px 20px; margin: 22px 0 8px; }
+  .howto p { margin: 6px 0; }
+  @media (max-width: 560px) { .card { padding: 14px; } }
+/* replies:css:start */
+  .submit { background: var(--surface-opaque, #FFFFFF); border: 1px solid var(--border-strong, rgba(28,28,26,.30));
+    border-radius: 14px; padding: 18px 20px; margin: 28px 0 8px; }
+  .submit h2 { margin: 0 0 4px; font-size: 1.15rem; }
+  .submit-note { margin: 0 0 12px; color: var(--text-body, #3A3A36); font-size: .95rem; }
+  /* #FFFFFF on #002F6D is 12.90:1. The fallback is load-bearing: without it an
+     undefined token leaves the background transparent and paints white on the
+     card's white, the 2026-09-06 failure. */
+  .submit-btn { font: inherit; font-size: 1rem; font-weight: 700; min-height: 44px; padding: 10px 22px;
+    border: 1px solid var(--seal-blue, #002F6D); border-radius: 8px;
+    background: var(--seal-blue, #002F6D); color: #FFFFFF; cursor: pointer; }
+  .submit-btn:hover { background: var(--cobalt, #0047AB); border-color: var(--cobalt, #0047AB); }
+  .submit-btn[disabled] { opacity: .6; cursor: default; }
+  .submit-state { margin: 10px 0 0; font-size: .9rem; color: var(--text-body, #3A3A36); min-height: 1em; }
+  /* A send that did not land gets its own rule and weight — the reader has to
+     be able to tell "it reached Claude" from "it did not" without reading
+     carefully. #1C1C1A on #FDF6E3 is 15.82:1. Color is never the only signal:
+     the words say it too, and the button relabels itself. */
+  .submit-state.missed { background: var(--rest-tint, #FDF6E3); color: var(--text-strong, #1C1C1A);
+    border-left: 4px solid var(--mustard-text, #8B6800); border-radius: 6px;
+    padding: 8px 12px; font-weight: 600; }
+
+  /* ── replies: chips, a note, a follow-up flag (Sam, 2026-09-05) ── */
+  .reply { margin: 12px 0 0; padding-top: 10px; border-top: 1px dashed var(--border); }
+  .reply-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .reply-picks { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+  .reply-pick { display: flex; flex-direction: column; gap: 3px; flex: 1 1 220px; min-width: 0; }
+  .reply-pick-lbl { font-size: .72rem; text-transform: uppercase; letter-spacing: .07em;
+    font-weight: 700; color: var(--text-muted, #5C5C55); }
+  .reply-pick-in { font: inherit; font-size: .92rem; padding: 6px 9px; width: 100%;
+    color: var(--text-strong, #1C1C1A); background: var(--surface-opaque, #fff);
+    border: 1px solid var(--border-strong, rgba(28,28,26,.30)); border-radius: 8px; }
+  .reply-pick-in::placeholder { color: var(--text-muted, #5C5C55); opacity: 1; }
+  .reply-pick-in[data-off="1"] { border-color: var(--mustard-text, #8B6800); }
+  .reply-lbl { font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; font-weight: 700;
+    color: var(--text-muted); margin-right: 4px; }
+  .reply-chip { font: inherit; font-size: .86rem; font-weight: 600; min-height: 30px; padding: 3px 12px;
+    border: 1px solid var(--border-strong); border-radius: 6px; background: var(--surface-opaque);
+    color: var(--text-body); cursor: pointer; }
+  .reply-chip:hover { background: var(--surface-subtle); }
+  /* ⚠️ --seal-blue is a First Light token the HOST SHEET may not define — this
+     block has to stand on its own. Without the fallback the declaration is
+     invalid at computed-value time, background falls back to transparent, and
+     `color:#fff` paints white on the card's white: 1.00:1, so the SELECTED
+     chip is invisible and the reader cannot see which verdict they picked.
+     Measured 2026-09-06 on the seven-open-calls sheet. #002F6D on white is
+     12.90:1. */
+  .reply-chip[aria-pressed="true"] { background: var(--seal-blue, #002F6D); border-color: var(--seal-blue, #002F6D); color: #fff; }
+  .reply-chip.reply-fu { margin-left: auto; }
+
+  /* ── the proposal, above the chips ───────────────────────────────────────
+     Sam, 2026-09-20: "make your recommendation line more visually a focal
+     point. I found myself saying yes to things that I later had to flip keep
+     because I didn't pay attention to your rec." On the 51-item sheet the
+     proposal was a <dd> in the same gray as the facts, and he read past it
+     sixteen times. Here it is a tinted panel with its own rule and its own
+     label word, so the eye lands on it before it reaches the chips.
+     ⚠️ Every token carries a LITERAL FALLBACK: this block travels with the
+     module into sheets that may define none of them, and a declaration that
+     is invalid at computed-value time falls back to transparent — the same
+     failure that painted a selected chip white on white in 2026-09-06.
+     Measured on the fallbacks: #1C1C1A on #E8EFF8 is 14.74:1, the label
+     #002F6D on #E8EFF8 is 11.14:1. The rule and the label word are both
+     non-color signals, so the callout never depends on the tint alone. */
+  .reply-rec { margin: 0 0 10px; padding: 9px 13px; border-radius: 8px;
+    background: var(--rec-tint, #E8EFF8); border-left: 4px solid var(--seal-blue, #002F6D);
+    color: var(--text-strong, #1C1C1A); font-size: 1rem; line-height: 1.5; }
+  .reply-rec-lbl { display: block; font-size: .72rem; text-transform: uppercase;
+    letter-spacing: .08em; font-weight: 700; color: var(--seal-blue, #002F6D); margin-bottom: 2px; }
+  .reply-rec-text { font-weight: 600; }
+  .reply-rec strong { font-weight: 700; }
+  /* The promoted pair inside a <dl>: an HTML5 dl may group dt/dd in a div, so
+     the panel is the group itself and the two rows lose their own margins. */
+  .reply-rec-dl { margin: 14px 0 0; }
+  .reply-rec-dl dt.reply-rec-lbl, .reply-rec-dl dd.reply-rec-text { margin: 0; padding: 0; }
+  .reply-rec-dl dd.reply-rec-text { font-weight: 600; margin-left: 0; }
+
+  /* Other: the rarer verdicts, out of the way until they are wanted. */
+  .reply-more-row { flex: 1 1 100%; display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+  .reply-more-row[hidden] { display: none; }
+
+  /* A stopping point every twenty items (Sam, 2026-09-20: "Making decisions
+     is taxing and only so many can be made before people bail out"). It says
+     the replies are saved, so leaving reads as a sitting that ended. */
+  .reply-rest { margin: 26px 0; padding: 11px 15px; border-radius: 8px;
+    background: var(--rest-tint, #FDF6E3); border: 1px solid var(--border-strong, rgba(28,28,26,.30));
+    color: var(--text-strong, #1C1C1A); font-size: .95rem; }
+  .sheet-framing { font-size: 1.05rem; color: var(--text-strong, #1C1C1A); margin: 0 0 6px; }
+  .sheet-framing-worth { font-size: .9rem; color: var(--text-muted, #5C5C55); margin: 0 0 18px; }
+  .reply-rest-lbl { display: block; font-size: .72rem; text-transform: uppercase;
+    letter-spacing: .08em; font-weight: 700; color: var(--mustard-text, #8B6800); margin-bottom: 2px; }
+  .reply-notelbl { display: block; font-size: .78rem; color: var(--text-muted); margin: 8px 0 3px; }
+  .reply-note { width: 100%; box-sizing: border-box; font: inherit; font-size: .92rem; padding: 7px 9px;
+    border: 1px solid var(--border-strong); border-radius: 6px; background: var(--surface-opaque);
+    color: var(--text-body); resize: vertical; min-height: 34px; }
+  .reply-state { margin: 4px 0 0; font-size: .76rem; color: var(--text-muted); min-height: 1em; }
+  .reply-compact { margin-top: 8px; padding-top: 8px; }
+  .glist li .reply { margin: 6px 0 4px; padding-top: 6px; border-top: 1px dotted var(--border); }
+  .glist li .reply-chip { font-size: .8rem; min-height: 26px; padding: 2px 9px; }
+  .glist li .reply-note { font-size: .86rem; min-height: 30px; }
+  .glist li .reply-lbl { font-size: .66rem; }
+  .reply-compact .reply-notelbl { position: absolute; left: -9999px; }
+  .reply-compact .reply-note { margin-top: 6px; }
+  .reply-compact .reply-rec { font-size: .92rem; padding: 7px 10px; margin-bottom: 7px; }
+  ol.done li { position: relative; }
+  .reply-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 5; background: var(--surface-opaque);
+    border-top: 1px solid var(--border-strong); padding: 8px 16px; display: flex; flex-wrap: wrap;
+    gap: 6px 14px; align-items: center; font-size: .9rem; box-shadow: 0 -6px 18px rgba(28,28,26,.08); }
+  .reply-count { font-weight: 700; color: var(--text-strong); font-variant-numeric: tabular-nums; }
+  .reply-outcome { font-weight: 600; color: var(--seal-blue, #002F6D); font-variant-numeric: tabular-nums;
+    font-size: .88rem; }
+  .reply-where { color: var(--text-muted); font-size: .82rem; flex: 1 1 240px; }
+  .reply-show { margin: 0; flex: 1 1 100%; }
+  .reply-show summary { font-size: .82rem; padding: 2px 0; }
+  .reply-line { width: 100%; box-sizing: border-box; font: inherit; font-size: .86rem; padding: 6px 8px;
+    border: 1px solid var(--border-strong); border-radius: 6px; background: var(--surface-subtle); color: var(--text-body); }
+  body { padding-bottom: 120px; }
+  @media (max-width: 560px) { .reply-chip { padding: 3px 9px; } .reply-chip.reply-fu { margin-left: 0; } }
+/* replies:css:end */</style>
+</head>
+<body>
+<a class="skip" href="#items">Skip to the decisions</a>
+<main class="wrap">
+<h1>Cross-list or nest: the options</h1>
+<p class="sheet-framing">You asked whether to get everything properly nested or cross-list the misfits. Measuring the misfits first changes the answer: the 1,210 rows are at least four different problems, and each exit you named is right for one of them. Items 1 through 3 settle what is an error rather than a taxonomy call; 4 through 6 settle the treatment per kind; 7 through 10 settle what it costs; 11 and 12 say what runs first.</p><p class="sheet-framing-worth">1,210 rows in scope of 16,480 · 8 locked, 17 with a human reviewer · Curator of record: Sam Lee</p>
+<div class="howto"><p>Each item says what I propose, in the panel above the chips. Click a reply under each one.</p><!-- replies:start --><p><strong>Each item arrives set to what I propose — change only the ones you disagree with.</strong> The proposal is in the panel above the chips and the chip naming it is already chosen: <em>Keep the fold</em> takes the merge, <em>Pull out</em> holds the wording separate. Anything you press is recorded as your own call; anything you leave stands as proposed, and I am told which is which. Under a single memory the first chip names what the batch would do to it — <em>Verify</em> or <em>Retire</em>; Hold out and Rewrite keep one back from a verify batch, Keep holds one back from a retire batch. <em>Other</em> opens the rarer replies. Press a chip again to undo it. Follow up marks an item the session should come back to whatever the verdict; the note is for anything a word cannot carry. The line under each reply says what was saved. On the artifact your replies save to the sheet itself and the session reads them from there. Opened anywhere else they stay in this browser, and <em>Copy replies</em> at the foot of the page builds the numbered line for you to paste. Stop wherever you like — the sheet marks a resting point every twenty items and everything above it is already saved.</p><!-- replies:end --></div>
+
+<section class="group" id="items">
+<article class="card" id="i1" data-rows="1210" data-chips="Adopt the sort|adopt;One ruling for all|blanket;Later|later">
+<h3>1 &middot; The frame: four kinds, not one population</h3>
+<p class="ref">reference: crosslist-frame</p>
+<dl>
+<dt>What this is</dt><dd>Of 16,480 unified course rows, <strong>1,210</strong> have member colleges whose subject codes resolve to more than one MQ discipline. Sorting them by why they disagree: <strong>400</strong> rest partly on a subject code of one or two letters, <strong>107</strong> name one discipline twice, <strong>168</strong> pair a specialization with its parent, and <strong>535</strong> remain as candidate dual homes. The largest single pair in the data is Kinesiology with Physical Education, at 213 rows.</dd>
+<dt>Why</dt><dd>Cross-listing and nesting each answer part of this. Ruling once over all 1,210 would record <em>Advanced Golf</em> as an Ethnic Studies course with a second home, rather than as the mapping error it is.</dd>
+<div class="reply-rec reply-rec-dl"><dt class="reply-rec-lbl">What I propose</dt><dd class="reply-rec-text"><strong>Adopt the four-kind sort as the frame</strong>, and rule each kind separately below. <em>It might be wrong if</em> you would rather take one blanket decision now and clean up afterward, which is faster and costs a re-mint later.</dd></div></dl>
+<!-- replies:start --><div class="reply" data-item="1" data-ref="crosslist-frame" data-title="1 &amp;middot; The frame: four kinds, not one population" data-kind="item" data-parent="" data-default="adopt" data-rows="1210"><div class="reply-row" role="group" aria-label="Your reply to item 1"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="adopt" aria-pressed="true">Adopt the sort</button><button type="button" class="reply-chip" data-v="blanket" aria-pressed="false">One ruling for all</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-more" aria-expanded="false" aria-controls="more-1">Other</button><div class="reply-more-row" id="more-1" role="group" aria-label="Other replies to item 1" hidden><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button></div><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-1">Notes for the session</label><textarea id="note-1" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+<article class="card" id="i2" data-rows="400" data-chips="Hold them out|hold;Keep gating on them|keep;Later|later">
+<h3>2 &middot; A one or two letter subject code never decides a discipline</h3>
+<p class="ref">reference: crosslist-short-codes</p>
+<dl>
+<dt>What this is</dt><dd>25 mapped subject codes are one or two characters, and they are a signal on <strong>400</strong> of the 1,210. <code>ES</code> alone appears on 82 rows and maps to Ethnic Studies — but at many colleges <code>ES</code> means Exercise Science. Of 226 M-IDs minted with an ETHS prefix, <strong>31</strong> are physical activity courses: Adapted Physical Exercise, Advanced Fencing, Care and Prevention of Athletic and Recreational Injuries, Intercollegiate Track. Both meanings are genuinely present — <em>Introduction to Racial and Ethnic Groups</em> carries <code>ES</code> too.</dd>
+<dt>Why</dt><dd>The map's own policy says short ambiguous codes stay unmapped. These slipped through, and a two-letter code cannot be resolved without reading the title. This is the same shape as the TOP ruling in Rule 7: a signal worth displaying, and not worth gating on.</dd>
+<div class="reply-rec reply-rec-dl"><dt class="reply-rec-lbl">What I propose</dt><dd class="reply-rec-text"><strong>Hold a short-code discipline out of the canonical fold until a second signal agrees.</strong> It still displays. <em>It might be wrong if</em> you read the 25 codes as reliable enough to keep counting, in which case the ETHS identities below are the price.</dd></div></dl>
+<!-- replies:start --><div class="reply" data-item="2" data-ref="crosslist-short-codes" data-title="2 &amp;middot; A one or two letter subject code never decides a discipline" data-kind="item" data-parent="" data-default="hold" data-rows="400"><div class="reply-row" role="group" aria-label="Your reply to item 2"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="hold" aria-pressed="true">Hold them out</button><button type="button" class="reply-chip" data-v="keep" aria-pressed="false">Keep gating on them</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-more" aria-expanded="false" aria-controls="more-2">Other</button><div class="reply-more-row" id="more-2" role="group" aria-label="Other replies to item 2" hidden><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button></div><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-2">Notes for the session</label><textarea id="note-2" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+<article class="card" id="i3" data-rows="31" data-chips="Re-mint them|remint;Wait for the map fix|wait;Later|later">
+<h3>3 &middot; The Ethnic Studies M-IDs that are swimming and track courses</h3>
+<p class="ref">reference: crosslist-eths-remint</p>
+<dl>
+<dt>What this is</dt><dd><strong>31</strong> courses carry an Ethnic Studies M-ID prefix while describing physical activity. Two of them read <code>subj=['PE']</code>, so the prefix disagrees with the row's own mapping. Across the 1,210, 8 rows are locked and 17 carry a human reviewer, so this layer is unreviewed staging.</dd>
+<dt>Why</dt><dd>Rule 7 permits principled re-mints while the M-ID layer is staging, under the playbook. These identities would be wrong to publish to faculty.</dd>
+<div class="reply-rec reply-rec-dl"><dt class="reply-rec-lbl">What I propose</dt><dd class="reply-rec-text"><strong>Re-mint the affected rows under the playbook</strong>, in one cron window, with an alias map and a <code>kb/promotions.json</code> re-key. <em>It might be wrong if</em> you would rather leave every identity untouched until the subject map is repaired, and re-mint once.</dd></div></dl>
+<!-- replies:start --><div class="reply" data-item="3" data-ref="crosslist-eths-remint" data-title="3 &amp;middot; The Ethnic Studies M-IDs that are swimming and track courses" data-kind="item" data-parent="" data-default="remint" data-rows="31"><div class="reply-row" role="group" aria-label="Your reply to item 3"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="remint" aria-pressed="true">Re-mint them</button><button type="button" class="reply-chip" data-v="wait" aria-pressed="false">Wait for the map fix</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-more" aria-expanded="false" aria-controls="more-3">Other</button><div class="reply-more-row" id="more-3" role="group" aria-label="Other replies to item 3" hidden><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button></div><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-3">Notes for the session</label><textarea id="note-3" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+<article class="card" id="i4" data-rows="107" data-chips="Alias to one form|alias;Treat as dual homes|dual;Later|later" data-pickers="preferred|Preferred form for counting|dl-disciplines|Kinesiology|one of the CO&#x27;s disciplines">
+<h3>4 &middot; One discipline carrying two official names</h3>
+<p class="ref">reference: crosslist-same-name</p>
+<dl>
+<dt>What this is</dt><dd><strong>107</strong> rows pair two names the CO's own MQ list carries separately: Kinesiology with Physical Education (213 rows); Drama/Theater Arts with Theater Arts (40 rows). Kinesiology and Physical Education is the largest pair in the whole dataset. Intercollegiate Baseball resolves to both.</dd>
+<dt>Why</dt><dd>Neither cross-listing nor nesting fits, because there is one discipline here and two words for it. The CO's vocabulary carries the duplication, so we resolve it on our side rather than asserting the list is wrong.</dd>
+<div class="reply-rec reply-rec-dl"><dt class="reply-rec-lbl">What I propose</dt><dd class="reply-rec-text"><strong>Name one preferred form per pair and treat the other as an accepted alias</strong> for counting, keeping both for display and search. Use the picker to say which form wins. <em>It might be wrong if</em> the colleges mean something different by each, in which case these are dual homes and belong in the cross-list.</dd></div></dl>
+<!-- replies:start --><div class="reply" data-item="4" data-ref="crosslist-same-name" data-title="4 &amp;middot; One discipline carrying two official names" data-kind="item" data-parent="" data-default="alias" data-rows="107"><div class="reply-row" role="group" aria-label="Your reply to item 4"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="alias" aria-pressed="true">Alias to one form</button><button type="button" class="reply-chip" data-v="dual" aria-pressed="false">Treat as dual homes</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-more" aria-expanded="false" aria-controls="more-4">Other</button><div class="reply-more-row" id="more-4" role="group" aria-label="Other replies to item 4" hidden><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button></div><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><div class="reply-picks"><label class="reply-pick"><span class="reply-pick-lbl">Preferred form for counting</span><input type="text" id="pick-4-preferred" class="reply-pick-in" data-pick="preferred" list="dl-disciplines" value="Kinesiology" placeholder="one of the CO&#x27;s disciplines" autocomplete="off" spellcheck="false"></label></div><label class="reply-notelbl" for="note-4">Notes for the session</label><textarea id="note-4" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+<article class="card" id="i5" data-rows="168" data-chips="Nest the vocabulary|nest;Cross-list each course|xlist;Later|later">
+<h3>5 &middot; A specialization and the discipline it sits inside</h3>
+<p class="ref">reference: crosslist-specialization</p>
+<dl>
+<dt>What this is</dt><dd><strong>168</strong> rows pair a narrower discipline with its parent: Art History and Commercial Art inside Art, Chicano Studies inside Ethnic Studies, Licensed Vocational Nursing inside Nursing, Commercial Music inside Music, Legal Assisting inside Law. Worked rows: <em>The Music of Multicultural America</em> (Commercial Music and Music); <em>Arts of Africa, Oceania, and Indigenous North America</em> (Art and Art History).</dd>
+<dt>Why</dt><dd>This is the part of the question where nesting is the right answer. The relationship holds for every course in the discipline, so recording it once on the vocabulary beats recording it on each of the rows.</dd>
+<div class="reply-rec reply-rec-dl"><dt class="reply-rec-lbl">What I propose</dt><dd class="reply-rec-text"><strong>Nest the vocabulary, not the courses.</strong> Give the discipline list a parent field; a course keeps its specialization and the counts roll up. <em>It might be wrong if</em> you want a course to appear under the parent by name, which a roll-up does not do on its own.</dd></div></dl>
+<!-- replies:start --><div class="reply" data-item="5" data-ref="crosslist-specialization" data-title="5 &amp;middot; A specialization and the discipline it sits inside" data-kind="item" data-parent="" data-default="nest" data-rows="168"><div class="reply-row" role="group" aria-label="Your reply to item 5"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="nest" aria-pressed="true">Nest the vocabulary</button><button type="button" class="reply-chip" data-v="xlist" aria-pressed="false">Cross-list each course</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-more" aria-expanded="false" aria-controls="more-5">Other</button><div class="reply-more-row" id="more-5" role="group" aria-label="Other replies to item 5" hidden><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button></div><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-5">Notes for the session</label><textarea id="note-5" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+<article class="card" id="i6" data-rows="535" data-chips="Cross-list them|xlist;Force one home|one;Later|later">
+<h3>6 &middot; Cross-list the courses that genuinely have two homes</h3>
+<p class="ref">reference: crosslist-dual-homes</p>
+<dl>
+<dt>What this is</dt><dd><strong>535</strong> rows remain once the other three kinds are set aside: <em>Creative Darkroom: Alternative Processes</em> (Art and Photography); <em>Computer Network Fundamentals</em> (Computer Information Systems and Computer Science); <em>Beginning Advanced Ballet.</em> (Dance and Theater Arts). The field already exists and already works — 9 rows carry <code>xdisc</code> today, and <em>Work Experience Education</em> carries 105 disciplines because it genuinely is taught in all of them.</dd>
+<dt>Why</dt><dd>The MQ discipline list decides who may teach a course rather than what the course is. A course taught by an Art-qualified instructor at one college and a Digital Media one at another is already cross-listed in the field; a single parent is the part that disagrees with practice.</dd>
+<div class="reply-rec reply-rec-dl"><dt class="reply-rec-lbl">What I propose</dt><dd class="reply-rec-text"><strong>Cross-list them through <code>xdisc</code>.</strong> <em>It might be wrong if</em> you would rather force one home per course and accept that some colleges will not find their own course where they look for it.</dd></div></dl>
+<!-- replies:start --><div class="reply" data-item="6" data-ref="crosslist-dual-homes" data-title="6 &amp;middot; Cross-list the courses that genuinely have two homes" data-kind="item" data-parent="" data-default="xlist" data-rows="535"><div class="reply-row" role="group" aria-label="Your reply to item 6"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="xlist" aria-pressed="true">Cross-list them</button><button type="button" class="reply-chip" data-v="one" aria-pressed="false">Force one home</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-more" aria-expanded="false" aria-controls="more-6">Other</button><div class="reply-more-row" id="more-6" role="group" aria-label="Other replies to item 6" hidden><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button></div><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-6">Notes for the session</label><textarea id="note-6" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+<article class="card" id="i7" data-chips="Keep a primary|primary;Count both equally|coequal;Later|later">
+<h3>7 &middot; One discipline stays primary, for counting</h3>
+<p class="ref">reference: crosslist-primary</p>
+<dl>
+<dt>What this is</dt><dd>The <code>disc</code> field is read by the Unified Courses tab and ten scripts, among them the SkyView builders, the discipline blanks worklist, the ESL relevel dry-run and the merge candidate queue. A course carrying two disciplines with no primary makes every discipline count ambiguous at once.</dd>
+<dt>Why</dt><dd>This is the shape Rule 7 already uses for TOP: gate identity on one signal, keep the second for display. It lets a cross-list ship without touching a single counting surface.</dd>
+<div class="reply-rec reply-rec-dl"><dt class="reply-rec-lbl">What I propose</dt><dd class="reply-rec-text"><strong>Keep <code>disc</code> as the one primary; <code>xdisc</code> serves display and search.</strong> <em>It might be wrong if</em> you want a college to see its own discipline's number include a course whose primary sits elsewhere.</dd></div></dl>
+<!-- replies:start --><div class="reply" data-item="7" data-ref="crosslist-primary" data-title="7 &amp;middot; One discipline stays primary, for counting" data-kind="item" data-parent="" data-default="primary"><div class="reply-row" role="group" aria-label="Your reply to item 7"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="primary" aria-pressed="true">Keep a primary</button><button type="button" class="reply-chip" data-v="coequal" aria-pressed="false">Count both equally</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-more" aria-expanded="false" aria-controls="more-7">Other</button><div class="reply-more-row" id="more-7" role="group" aria-label="Other replies to item 7" hidden><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button></div><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-7">Notes for the session</label><textarea id="note-7" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+<article class="card" id="i8" data-chips="Never re-mint on a cross-list|never;Re-mint on any change|remint;Later|later">
+<h3>8 &middot; A cross-list never triggers a re-mint</h3>
+<p class="ref">reference: crosslist-remint-boundary</p>
+<dl>
+<dt>What this is</dt><dd>An M-ID's prefix follows its primary discipline's canonical SUBJ4. Of the 1,210, <strong>59</strong> already carry a C-ID rather than an M-ID, so an approved identifier is attached and a renumbering would reach outside our own staging layer.</dd>
+<dt>Why</dt><dd>Cross-listing is reversible and a re-nest is a re-mint. Keeping the two apart is what makes the cross-list pass cheap enough to run across hundreds of rows.</dd>
+<div class="reply-rec reply-rec-dl"><dt class="reply-rec-lbl">What I propose</dt><dd class="reply-rec-text"><strong>Adding <code>xdisc</code> leaves the identifier alone.</strong> Only a change of primary enters the re-mint playbook. <em>It might be wrong if</em> you want the prefix to reflect every home a course has, which no four-letter prefix can do.</dd></div></dl>
+<!-- replies:start --><div class="reply" data-item="8" data-ref="crosslist-remint-boundary" data-title="8 &amp;middot; A cross-list never triggers a re-mint" data-kind="item" data-parent="" data-default="never"><div class="reply-row" role="group" aria-label="Your reply to item 8"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="never" aria-pressed="true">Never re-mint on a cross-list</button><button type="button" class="reply-chip" data-v="remint" aria-pressed="false">Re-mint on any change</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-more" aria-expanded="false" aria-controls="more-8">Other</button><div class="reply-more-row" id="more-8" role="group" aria-label="Other replies to item 8" hidden><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button></div><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-8">Notes for the session</label><textarea id="note-8" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+<article class="card" id="i9" data-rows="113" data-chips="Own worklist|worklist;Fold into the pass|fold;Later|later">
+<h3>9 &middot; The rows whose recorded discipline matches no member at all</h3>
+<p class="ref">reference: crosslist-orphan-parents</p>
+<dl>
+<dt>What this is</dt><dd><strong>113</strong> of the 1,210 carry a discipline that appears nowhere among their members' mapped disciplines. The parent and every college under it disagree. <em>Hydraulics (Fluid Power)</em> sits under Agriculture while its members read Automotive Technology and Fire Technology.</dd>
+<dt>Why</dt><dd>These are neither dual homes nor specializations. Sending them through a cross-list pass would record the disagreement as a second home and settle nothing.</dd>
+<div class="reply-rec reply-rec-dl"><dt class="reply-rec-lbl">What I propose</dt><dd class="reply-rec-text"><strong>Give them their own worklist, ahead of the cross-list pass.</strong> <em>It might be wrong if</em> the recorded discipline is right and the members are the error, which the worklist would establish either way.</dd></div></dl>
+<!-- replies:start --><div class="reply" data-item="9" data-ref="crosslist-orphan-parents" data-title="9 &amp;middot; The rows whose recorded discipline matches no member at all" data-kind="item" data-parent="" data-default="worklist" data-rows="113"><div class="reply-row" role="group" aria-label="Your reply to item 9"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="worklist" aria-pressed="true">Own worklist</button><button type="button" class="reply-chip" data-v="fold" aria-pressed="false">Fold into the pass</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-more" aria-expanded="false" aria-controls="more-9">Other</button><div class="reply-more-row" id="more-9" role="group" aria-label="Other replies to item 9" hidden><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button></div><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-9">Notes for the session</label><textarea id="note-9" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+<article class="card" id="i10" data-chips="Proposed, curator-confirmed|confirm;Curator only|curator;Later|later">
+<h3>10 &middot; Who may add a cross-list</h3>
+<p class="ref">reference: crosslist-decision-rights</p>
+<dl>
+<dt>What this is</dt><dd>Today <code>xdisc</code> is written by the generator and carries 9 rows. Opening it to curators and faculty makes it a new write surface, which Rule 10(a3) routes through Governance and the privacy ADRs before it ships.</dd>
+<dt>Why</dt><dd>A curator's knowledge is a first-class input and belongs recorded with a name against it, the way the provenance tiers work in <code>map_users.js</code>.</dd>
+<div class="reply-rec reply-rec-dl"><dt class="reply-rec-lbl">What I propose</dt><dd class="reply-rec-text"><strong>Jev proposes, a curator confirms, faculty may add — and every entry records who and when.</strong> <em>It might be wrong if</em> you want the first pass curator-only, which is slower and keeps the vocabulary tighter.</dd></div></dl>
+<!-- replies:start --><div class="reply" data-item="10" data-ref="crosslist-decision-rights" data-title="10 &amp;middot; Who may add a cross-list" data-kind="item" data-parent="" data-default="confirm"><div class="reply-row" role="group" aria-label="Your reply to item 10"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="confirm" aria-pressed="true">Proposed, curator-confirmed</button><button type="button" class="reply-chip" data-v="curator" aria-pressed="false">Curator only</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-more" aria-expanded="false" aria-controls="more-10">Other</button><div class="reply-more-row" id="more-10" role="group" aria-label="Other replies to item 10" hidden><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button></div><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-10">Notes for the session</label><textarea id="note-10" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+<article class="card" id="i11" data-chips="Analysis first|analysis;Alias now|now;Later|later">
+<h3>11 &middot; KIN, PE and ATHL, and the C-ID and CCN fallout you asked for</h3>
+<p class="ref">reference: crosslist-kin-pe-athl</p>
+<dl>
+<dt>What this is</dt><dd>Your note on item 13 of the title-rung sheet: <em>"we should cross list all KIN, PE, ATHL courses… Let's do a follow up analysis of CID and CCN to see the fallout of cross listing or untangling KIN, PE, Athletic from Non-Athletic courses."</em> ATHL is a canonical Subject code and its MQ discipline is Kinesiology. Kinesiology with Physical Education is the largest pair in the data at 213 rows.</dd>
+<dt>Why</dt><dd>This is the largest single population on the sheet, and it sits on top of item 4's alias question. Running the identifier analysis first means the alias lands once.</dd>
+<div class="reply-rec reply-rec-dl"><dt class="reply-rec-lbl">What I propose</dt><dd class="reply-rec-text"><strong>Run the C-ID and CCN fallout analysis before the alias lands.</strong> <em>It might be wrong if</em> you want the alias now and the analysis to follow, which reaches the counts sooner and may need a second pass.</dd></div></dl>
+<!-- replies:start --><div class="reply" data-item="11" data-ref="crosslist-kin-pe-athl" data-title="11 &amp;middot; KIN, PE and ATHL, and the C-ID and CCN fallout you asked for" data-kind="item" data-parent="" data-default="analysis"><div class="reply-row" role="group" aria-label="Your reply to item 11"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="analysis" aria-pressed="true">Analysis first</button><button type="button" class="reply-chip" data-v="now" aria-pressed="false">Alias now</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-more" aria-expanded="false" aria-controls="more-11">Other</button><div class="reply-more-row" id="more-11" role="group" aria-label="Other replies to item 11" hidden><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button></div><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-11">Notes for the session</label><textarea id="note-11" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+<article class="card" id="i12" data-rows="50" data-chips="Fifty from kind C|c50;Start with kind D|d50;Later|later">
+<h3>12 &middot; What the first sitting looks at</h3>
+<p class="ref">reference: crosslist-first-sitting</p>
+<dl>
+<dt>What this is</dt><dd>You ruled 40 to 60 as a sitting size. Kind C holds 535 rows and kind D holds 400. The title rung ranks well and gates badly, so a sitting here asks the question the reviewer is actually answering: is this course at home in both places, or in the wrong one?</dd>
+<dt>Why</dt><dd>Sorting a dual home from a mis-nest is a question a faculty member answers in a glance, which makes it cheap to verify and worth a sitting.</dd>
+<div class="reply-rec reply-rec-dl"><dt class="reply-rec-lbl">What I propose</dt><dd class="reply-rec-text"><strong>Fifty rows from kind C, ranked, once items 1 through 7 are ruled.</strong> <em>It might be wrong if</em> you would rather start with kind D, where a fix removes rows from the problem rather than adding a field to them.</dd></div></dl>
+<!-- replies:start --><div class="reply" data-item="12" data-ref="crosslist-first-sitting" data-title="12 &amp;middot; What the first sitting looks at" data-kind="item" data-parent="" data-default="c50" data-rows="50"><div class="reply-row" role="group" aria-label="Your reply to item 12"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="c50" aria-pressed="true">Fifty from kind C</button><button type="button" class="reply-chip" data-v="d50" aria-pressed="false">Start with kind D</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-more" aria-expanded="false" aria-controls="more-12">Other</button><div class="reply-more-row" id="more-12" role="group" aria-label="Other replies to item 12" hidden><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button></div><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-12">Notes for the session</label><textarea id="note-12" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article><!-- replies:start --><section class="submit" aria-labelledby="submit-h"><h2 id="submit-h">Done?</h2><p class="submit-note" id="submit-note">Every reply is saved as you make it. Press Complete when you have finished, and the session is told the sheet is done.</p><button type="button" class="submit-btn" id="submit-btn">Complete</button><p class="submit-state" id="submit-state" aria-live="polite"></p></section><!-- replies:end -->
+</section>
+</main>
+<datalist id="dl-disciplines"><option value="Accounting"><option value="Adapted Computer Technology: Disabled Students Programs and Services"><option value="Addiction Paraprofessional Training"><option value="Administration of Justice"><option value="Aeronautics"><option value="African American Studies"><option value="Agricultural Business and Related Services"><option value="Agricultural Engineering"><option value="Agricultural Production"><option value="Agriculture"><option value="Air Conditioning, Refrigeration, Heating"><option value="Animal Training and Management"><option value="Anthropology"><option value="Appliance Repair"><option value="Archaeological Technology"><option value="Architecture"><option value="Art"><option value="Art History"><option value="Artificial Intelligence"><option value="Asian American Studies"><option value="Astronomy"><option value="Athletic Training"><option value="Auto Body Technology"><option value="Automotive Technology"><option value="Aviation"><option value="Banking and Finance"><option value="Barbering"><option value="Bicycle Repair"><option value="Biological Sciences"><option value="Biotechnology"><option value="Bookbinding"><option value="Broadcasting Technology"><option value="Building Codes and Regulations"><option value="Building Maintenance"><option value="Business"><option value="Business Education"><option value="Business Machine Technology"><option value="Cabinet Making"><option value="Cardiovascular Technology"><option value="Carpentry"><option value="Ceramic Technology"><option value="Chemistry"><option value="Chicano Studies"><option value="Child Development/Early Childhood Education"><option value="Citizenship: Noncredit"><option value="Classics"><option value="Coaching"><option value="Commercial Art"><option value="Commercial Music"><option value="Communication Studies"><option value="Community College Counselor of Students with Disabilities 53414"><option value="Computer Information Systems"><option value="Computer Science"><option value="Computer Service Technology"><option value="Construction Management"><option value="Construction Technology"><option value="Cosmetology"><option value="Counseling"><option value="Counseling: Extended Opportunity"><option value="Court Interpreting"><option value="Court Reporting"><option value="Culinary Arts/Food Technology"><option value="Dance"><option value="Deaf and Hearing Impaired: Disabled Students Programs 53414"><option value="Dental Technology"><option value="Developmental Disabilities: Disabled Students Programs and Services 53414"><option value="Diagnostic Medical Technology"><option value="Diesel Mechanics"><option value="Dietetic Technician"><option value="Dietetics/Nutritional Science"><option value="Digital Fabrication Technician"><option value="Disabled Student Programs and"><option value="Drafting/CADD"><option value="Drama/Theater Arts"><option value="Earth Science"><option value="Ecology"><option value="Economics"><option value="Education"><option value="Electricity"><option value="Electromechanical Technology"><option value="Electromicroscopy"><option value="Electronic Technology"><option value="Electronics"><option value="Electroplating"><option value="Emergency Medical Technologies"><option value="Engineering"><option value="Engineering Support"><option value="Engineering Technology"><option value="English"><option value="English as a Second Language"><option value="English as a Second Language Noncredit 53412"><option value="Environmental Technologies"><option value="Equine Science"><option value="Estimating"><option value="Ethnic Studies"><option value="Fabric Care"><option value="Family and Consumer Studies/ Home Economics"><option value="Fashion and Related Technologies"><option value="Film and Media Studies"><option value="Fire Technology"><option value="Flight Attendant Training"><option value="Fluid Mechanics Technology"><option value="Folk Dance"><option value="Foreign Languages"><option value="Forestry/Natural Resources"><option value="Furniture Making"><option value="Geography"><option value="Gerontology"><option value="Graphic Arts"><option value="Gunsmithing"><option value="Health"><option value="Health Care Ancillaries"><option value="Health Information Technology"><option value="Health Services Director/Health"><option value="Health and Safety: Noncredit"><option value="Heavy Duty Equipment Mechanics"><option value="History"><option value="Home Economics: Noncredit"><option value="Homeland Security"><option value="Hotel and Motel Services"><option value="Humanities"><option value="Industrial Design"><option value="Industrial Maintenance"><option value="Industrial Relations"><option value="Industrial Safety"><option value="Industrial Technology"><option value="Instructional Design/Technology"><option value="Insurance"><option value="Interdisciplinary Studies"><option value="Interdisciplinary-Basic Skills: Noncredit 53412"><option value="Interior Design"><option value="Janitorial Services"><option value="Jewelry"><option value="Journalism"><option value="Kinesiology"><option value="Labor Relations"><option value="Law"><option value="Learning Assistance or Learning Skills"><option value="Learning Disabilities: Disabled Student Programs and Services 53414"><option value="Learning Disabilities: Specialist"><option value="Legal Assisting"><option value="Library Science"><option value="Library Technology"><option value="Licensed Vocational Nursing"><option value="Linguistics"><option value="Locksmithing"><option value="Machine Tool Technology"><option value="Management"><option value="Manufacturing Technology"><option value="Marine Diving Technology"><option value="Marine Engine Technology"><option value="Marketing"><option value="Martial Arts/Self-Defense"><option value="Masonry"><option value="Mass Communication"><option value="Materials Testing Technology"><option value="Mathematics"><option value="Mathematics-Basic Skills: Noncredit"><option value="Media Production"><option value="Medical Instrument Repair"><option value="Military Studies"><option value="Mining and Metallurgy"><option value="Mortuary Science"><option value="Motorcycle Repair"><option value="Multimedia"><option value="Music"><option value="Music Management"><option value="Music Merchandising"><option value="Musical Instrument Repair"><option value="Nanotechnology"><option value="Native American/American Indian Studies"><option value="Nursing"><option value="Nursing Science/Clinical Practice"><option value="Nutritional Science/Dietetics"><option value="Occupational Therapy Assisting"><option value="Office Technologies"><option value="Older Adults: Noncredit"><option value="Ornamental Horticulture"><option value="Parent Education: Noncredit"><option value="Peace Studies"><option value="Pharmacy Technology"><option value="Philosophy"><option value="Photographic Technology/ Commercial Photography"><option value="Photography"><option value="Physical Disabilities: Disabled Student Programs and Services 53414"><option value="Physical Education"><option value="Physical Education Disabled Students"><option value="Physical Sciences"><option value="Physical Therapy Assisting"><option value="Physics/Astronomy"><option value="Piano Tuning and Repair"><option value="Plastics"><option value="Plumbing"><option value="Political Science"><option value="Printing Technology"><option value="Private Security"><option value="Prosthetics and Orthotics"><option value="Psychiatric Technician"><option value="Psychology"><option value="Public Relations"><option value="Public Safety"><option value="Radiation Therapy"><option value="Radiological Technology"><option value="Reading"><option value="Reading-Basic Skills: Noncredit"><option value="Real Estate"><option value="Recreation Administration"><option value="Registered Behavior Technician"><option value="Registered Veterinary Technician"><option value="Rehabilitation Technician"><option value="Religious Studies"><option value="Respiratory Technician"><option value="Respiratory Technologies"><option value="Restaurant Management"><option value="Retailing"><option value="Robotics"><option value="Sanitation and Public Health Technology"><option value="Search and Rescue"><option value="Sheet Metal"><option value="Ship and Boat Building and Repair"><option value="Shoe Rebuilding"><option value="Sign Language, American"><option value="Sign Language/ English Interpreting"><option value="Small Business Development"><option value="Small Engine Mechanics"><option value="Social Science"><option value="Sociology"><option value="Specialized Instruction"><option value="Specialized Instruction: Vocational Noncredit"><option value="Speech Communication"><option value="Speech Language Pathology"><option value="Speech Language Pathology: Disabled Student Programs and 53414 Services"><option value="Stagecraft"><option value="Steamfitting"><option value="Supply Chain Technology"><option value="Surgical Technology"><option value="Telecommunication Technology"><option value="Theater Arts"><option value="Transportation"><option value="Travel Services"><option value="Upholstering"><option value="Vision Care Technology"><option value="Vocational"><option value="Watch and Clock Repair"><option value="Welding"><option value="Women’s Studies"><option value="Work Experience Instructors"><option value="Writing-Basic Skills: Noncredit"></datalist>
+<!-- replies:start --><div class="reply-bar" id="reply-bar" role="region" aria-label="Your replies so far"><span class="reply-count" id="reply-count">0 replied</span><span class="reply-outcome" id="reply-outcome"></span><span class="reply-where" id="reply-where"></span><button type="button" class="reply-chip reply-copy" id="reply-copy">Copy replies</button><details class="reply-show"><summary>Show the reply line</summary><textarea id="reply-line" class="reply-line" rows="4" readonly aria-label="The reply line, ready to paste"></textarea></details></div>
+<script>
+(function(){
+  "use strict";
+  var SHEET = "2026-09-22-crosslist-options";
+  var LS = "sheet-replies:" + SHEET;
+  var els = Array.prototype.slice.call(document.querySelectorAll(".reply[data-item]"));
+  if (!els.length) return;
+  var state = {};        // item -> {item, ref, title, v, note, fu, t}; always this page's own objects
+  var col = null;        // the artifact's shared store, once this view can reach it
+  var where = "local";   // "db" once the store answers
+  var pending = {};      // item -> "saving" | "failed" | ""
+  var saved = {};        // item -> the `t` the store is known to hold
+
+  // What a snapshot delivers is FROZEN (the store's contract: "clone a body
+  // before editing it for a write"). The first version adopted the echoed body
+  // as state and assigned into it; outside strict mode the assignment is
+  // silently ignored, so from an item's first save on, every click painted
+  // nothing and wrote the unchanged document back (Sam, 2026-09-05: "I click
+  // Follow Up and it doesn't turn blue but does say response was saved").
+  // copy() means state is never the store's object; strict mode makes any
+  // such write throw instead of pass.
+  function copy(r){ var o = {}; if (r) for (var k in r) if (Object.prototype.hasOwnProperty.call(r, k)) o[k] = r[k]; return o; }
+
+  function read(){ try { var s = JSON.parse(localStorage.getItem(LS) || "{}"); if (s && typeof s === "object") state = s; } catch (e) {} }
+  function keep(){ try { localStorage.setItem(LS, JSON.stringify(state)); } catch (e) {} }
+  function byItem(item){ for (var i = 0; i < els.length; i++) if (els[i].getAttribute("data-item") === item) return els[i]; return null; }
+  function rec(item){
+    if (state[item]) return copy(state[item]);
+    var el = byItem(item);
+    return { item: item, ref: el ? el.getAttribute("data-ref") : "", title: el ? el.getAttribute("data-title") : "", v: "", note: "", fu: false };
+  }
+  function onList(inp, v){
+    var id = inp.getAttribute("list"), dl = id ? document.getElementById(id) : null;
+    if (!dl) return true;
+    var os = dl.getElementsByTagName("option");
+    for (var i = 0; i < os.length; i++) if ((os[i].value || "") === v) return true;
+    return false;
+  }
+  // ⚠️ A PICKER VALUE COUNTS. Without this, choosing a discipline and nothing
+  // else would read as an untouched item and be handed over as the proposal.
+  function empty(r){
+    if (!r) return true;
+    if (r.v || r.fu || r.note) return false;
+    for (var k in r) if (k.indexOf("pick_") === 0 && r[k]) return false;
+    return !(r.subject || r.discipline);
+  }
+  // ⚠️ TWO STATES PER ITEM, AND THEY MUST NEVER COLLAPSE (Sam's opt-out, 2026-09-21).
+  // An item CARRYING THE PROPOSAL has no stored reply; an item a person RULED ON
+  // has one. They look the same on screen — that is the point of opt-out — so
+  // everything that counts, reports or hands over reads `state`, never the
+  // painted chip. Collapsing them is how a sheet stopped at item 30 would hand
+  // over 21 verdicts nobody read.
+  function dflt(item){ var el = byItem(item); return el ? (el.getAttribute("data-default") || "") : ""; }
+  function verdict(item){ var r = state[item]; return r && r.v ? r.v : dflt(item); }
+  function ruled(item){ var r = state[item]; return !!(r && !empty(r)); }
+  function chipWord(el, v){
+    var bs = el ? el.querySelectorAll(".reply-chip[data-v]") : [];
+    for (var i = 0; i < bs.length; i++) if (bs[i].getAttribute("data-v") === v) return bs[i].textContent;
+    return v;
+  }
+  function words(el, r){
+    var w = [];
+    if (r.v) w.push(chipWord(el, r.v));
+    if (r.fu) w.push("follow up");
+    if (r.note) w.push("a note");
+    return w.join(", ");
+  }
+  function stateWords(el, item, r){
+    if (empty(r)) {
+      var d = dflt(item);
+      // Say it is the proposal and not an answer, or the reader cannot tell
+      // a chip they set from one that was set for them.
+      return d ? "Proposed: " + chipWord(el, d) + ". Change it if needed — it stands as it is." : "";
+    }
+    if (pending[item] === "saving") return "Saving…";
+    if (pending[item] === "failed") return "Could not save to the sheet; kept in this browser. Use Copy replies.";
+    var w = words(el, r);
+    // Undo is the same chip pressed again -- say so, or it is not discoverable.
+    var undo = r.v ? " Press it again to undo." : "";
+    return where === "db" ? "Your call: " + w + "." + undo
+                          : "Your call, in this browser only: " + w + ". Use Copy replies to send it." + undo;
+  }
+  function paint(el){
+    if (!el) return;
+    var item = el.getAttribute("data-item"), r = state[item] || {};
+    var shown = r.v || (empty(r) ? dflt(item) : "");
+    Array.prototype.forEach.call(el.querySelectorAll(".reply-chip[data-v]"), function(b){
+      b.setAttribute("aria-pressed", shown && shown === b.getAttribute("data-v") ? "true" : "false");
+    });
+    var fu = el.querySelector(".reply-fu"); if (fu) fu.setAttribute("aria-pressed", r.fu ? "true" : "false");
+    // A verdict that lives behind Other has to be VISIBLE once it is chosen --
+    // a selected chip inside a hidden row is a reply the reader cannot see, the
+    // same failure as the chip that painted white on white.
+    var moreRow = el.querySelector(".reply-more-row"), moreBtn = el.querySelector(".reply-more");
+    if (moreRow && moreBtn && r.v && moreRow.querySelector('.reply-chip[data-v="' + r.v + '"]')) {
+      moreRow.hidden = false; moreBtn.setAttribute("aria-expanded", "true");
+    }
+    var note = el.querySelector(".reply-note");
+    if (note && document.activeElement !== note && (r.note || "") !== note.value) note.value = r.note || "";
+    var st = el.querySelector(".reply-state"); if (st) st.textContent = stateWords(el, item, r);
+  }
+  function paintAll(){ els.forEach(paint); bar(); }
+  // ⚠️ QUALITY GOES IN THE SCORE, NEVER CLICKS (Sam, 2026-09-20, agreeing with
+  // the pushback: "Good pushback--agree!"). A reversal is a verdict REPLACED by
+  // a different verdict -- the sixteen flips on the Jev sheet were the signal
+  // that the proposal was not being read. Clearing a chip is an undo and is not
+  // a reversal; neither is a first answer. The count rides with the reply, so
+  // the session reads which items the reader changed their mind on.
+  function set(item, patch){
+    var r = rec(item), was = r.v || "";
+    for (var k in patch) if (Object.prototype.hasOwnProperty.call(patch, k)) r[k] = patch[k];
+    if (Object.prototype.hasOwnProperty.call(patch, "v") && was && patch.v && patch.v !== was) {
+      r.flips = (r.flips || 0) + 1;
+      r.was = was;
+    }
+    r.t = new Date().toISOString();
+    r.by = "sam";                       // a stored reply is always a person's
+    // Undoing the last thing on an item returns it to CARRYING THE PROPOSAL,
+    // rather than leaving a stored reply with an empty verdict — which would
+    // read as a deliberate blank and is a different claim.
+    if (empty(r) && dflt(item)) { del(item); return; }
+    state[item] = r; keep();
+    paint(byItem(item)); bar(); push(item);
+  }
+  function del(item){
+    delete state[item]; keep();
+    if (col) { try { col.doc(item).delete(); } catch (e) {} }
+    paint(byItem(item)); bar();
+  }
+  function push(item){
+    if (!col) return;
+    var r = state[item]; if (!r) return;
+    var t = r.t;
+    pending[item] = "saving"; paint(byItem(item));
+    col.doc(item).set(copy(r)).then(function(){
+      // A newer change may have gone up meanwhile; its own callbacks settle it.
+      if (state[item] && state[item].t === t) { pending[item] = ""; saved[item] = t; }
+      paint(byItem(item)); bar();
+    }, function(){ pending[item] = "failed"; paint(byItem(item)); bar(); });
+  }
+
+  /* ── the bar: how many, where they are, the line to paste ── */
+  // ⚠️ SAM'S HIGH-WATER MARK (2026-09-22): "the last item showing some sort of
+  // input is an indicator that everything prior to it is good to go as is."
+  // It NARROWS "an item with no reply has no verdict" rather than replacing it:
+  // an untouched item BELOW the mark was read and agreed with, one ABOVE it was
+  // never reached, and both look identical in the store. The mark is the only
+  // thing that tells them apart, so it rides the paste line and the `done`
+  // record. Computed over every card in sheet order — a picker value, a note or
+  // a follow-up flag is "some sort of input" as much as a chip is.
+  function highWater(){
+    var mark = null, last = null;
+    els.forEach(function(el){
+      var item = el.getAttribute("data-item");
+      last = item;
+      if (!empty(state[item])) mark = item;
+    });
+    return { mark: mark, whole: mark !== null && mark === last };
+  }
+  // ⚠️ `hw` IS PASSED IN WHERE THE MARK MUST PREDATE THE CALLER'S OWN WRITES.
+  // Complete stores a reply for every as-proposed item, so a line built after
+  // that loop reports the whole sheet as reviewed no matter where the reader
+  // stopped. Measured live on 2026-09-22: a sheet completed with nothing ruled
+  // said "0 of 12 items your own call" and "reviewed through 12 (the whole
+  // sheet)" in the same sentence.
+  function line(hw){
+    var parts = [];
+    els.forEach(function(el){
+      var item = el.getAttribute("data-item"), r = state[item];
+      if (empty(r)) {
+        // An item carrying the proposal is reported AS the proposal, marked so
+        // — never as a verdict the reader gave.
+        var d = el.getAttribute("data-default");
+        if (d) parts.push(item + " " + d + " (as proposed)");
+        return;
+      }
+      // ⚠️ The provenance rides the PASTE LINE too. This line is the fallback
+      // when the send is refused, which is precisely the path where "he ruled
+      // on it" and "it rode the proposal" would otherwise become the same.
+      var s = item + " " + (r.v ? r.v : "(no verdict)") + (r.by === "default" ? " (as proposed)" : "");
+      if (r.fu) s += ", follow up";
+      if (r.note) s += " — “" + String(r.note).replace(/\s+/g, " ").trim() + "”";
+      parts.push(s);
+    });
+    var text = parts.length ? parts.join(" · ") : "No replies yet.";
+    var h = hw || highWater();
+    if (h.mark) text += " — reviewed through " + h.mark
+      + (h.whole ? " (the whole sheet)." : "; the items after it were not reached.");
+    return text;
+  }
+  // ⚠️ THE RUNNING TOTAL IS IN OUTCOME TERMS (Sam, 2026-09-20). What a sitting
+  // is worth is articulation rows collapsed and colleges reached, never clicks
+  // logged. Rows are this item's own and add up; COLLEGES REPEAT across items,
+  // so the ids are unioned -- a sum of per-item college counts would report a
+  // reach the sitting did not have, which is the one number a reader takes at
+  // face value. An item that carries neither stays out of the outcome clause
+  // rather than contributing a zero.
+  function outcome(){
+    var rows = 0, colleges = {}, any = false;
+    els.forEach(function(el){
+      if (empty(state[el.getAttribute("data-item")])) return;
+      var rv = parseInt(el.getAttribute("data-rows") || "0", 10);
+      if (rv > 0) { rows += rv; any = true; }
+      var ids = (el.getAttribute("data-reach") || "").split(/\s+/);
+      ids.forEach(function(id){ if (id) { colleges[id] = 1; any = true; } });
+    });
+    if (!any) return "";
+    var out = [], nc = Object.keys(colleges).length;
+    if (rows) out.push(rows + (rows === 1 ? " articulation row" : " articulation rows") + " settled");
+    if (nc) out.push(nc + (nc === 1 ? " college" : " colleges") + " reached");
+    return out.join(" · ");
+  }
+  function bar(){
+    var n = { item: [0, 0], entry: [0, 0], done: [0, 0] }, fu = 0, flips = 0;
+    els.forEach(function(el){
+      var k = el.getAttribute("data-kind") || "item"; if (!n[k]) n[k] = [0, 0];
+      var r = state[el.getAttribute("data-item")];
+      n[k][1]++; if (!empty(r)) n[k][0]++; if (r && r.fu) fu++;
+      if (r && r.flips) flips += r.flips;
+    });
+    var parts = [], proposed = 0;
+    els.forEach(function(el){
+      if ((el.getAttribute("data-kind") || "item") !== "item") return;
+      if (el.getAttribute("data-default") && !ruled(el.getAttribute("data-item"))) proposed++;
+    });
+    if (n.item[1]) parts.push(n.item[0] + " of " + n.item[1] + " items");
+    if (n.entry[1]) parts.push(n.entry[0] + " of " + n.entry[1] + " memories");
+    if (n.done[1]) parts.push(n.done[0] + " of " + n.done[1] + " retired rows");
+    var c = document.getElementById("reply-count");
+    if (c) c.textContent = parts.join(" · ") + " your call"
+      + (proposed ? " · " + proposed + " as proposed" : "")
+      + (fu ? " · " + fu + " to follow up" : "");
+    var o = document.getElementById("reply-outcome");
+    if (o) {
+      var text = outcome();
+      if (flips) text += (text ? " · " : "") + flips + (flips === 1 ? " changed" : " changed");
+      o.textContent = text;
+    }
+    var w = document.getElementById("reply-where");
+    if (w) w.textContent = where === "db"
+      ? "Replies save to this sheet; the session reads them from here."
+      : "Replies stay in this browser until you copy them into the session.";
+    var t = document.getElementById("reply-line"); if (t) t.value = line();
+  }
+  var copyBtn = document.getElementById("reply-copy");
+  if (copyBtn) copyBtn.addEventListener("click", function(){
+    var text = line(), done = function(ok){
+      copyBtn.textContent = ok ? "Copied" : "Select the line below and copy it";
+      setTimeout(function(){ copyBtn.textContent = "Copy replies"; }, 2200);
+      if (!ok) { var d = document.querySelector(".reply-show"); if (d) d.open = true; }
+    };
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(function(){ done(true); }, function(){ done(false); });
+      else done(false);
+    } catch (e) { done(false); }
+  });
+
+  /* ── wire each item ── */
+  els.forEach(function(el){
+    var item = el.getAttribute("data-item");
+    Array.prototype.forEach.call(el.querySelectorAll(".reply-chip[data-v]"), function(b){
+      b.addEventListener("click", function(){
+        var v = b.getAttribute("data-v"), cur = state[item] && state[item].v;
+        set(item, { v: cur === v ? "" : v });          // the pressed chip clears on a second click
+      });
+    });
+    var fu = el.querySelector(".reply-fu");
+    if (fu) fu.addEventListener("click", function(){ set(item, { fu: !(state[item] && state[item].fu) }); });
+    var more = el.querySelector(".reply-more"), moreRow = el.querySelector(".reply-more-row");
+    if (more && moreRow) more.addEventListener("click", function(){
+      var open = more.getAttribute("aria-expanded") === "true";
+      more.setAttribute("aria-expanded", open ? "false" : "true");
+      moreRow.hidden = open;
+    });
+    var note = el.querySelector(".reply-note"), tm = null;
+    if (note) {
+      note.addEventListener("input", function(){ clearTimeout(tm); tm = setTimeout(function(){ set(item, { note: note.value }); }, 500); });
+      note.addEventListener("blur", function(){ clearTimeout(tm); if ((state[item] ? state[item].note : "") !== note.value) set(item, { note: note.value }); });
+    }
+    // ⚠️ A PICKER SAVES INTO THE SAME RECORD AS THE CHIP. `set()` merges any
+    // key, so the chosen subject and discipline ride the reply rather than
+    // living in a second store the session would have to know to read.
+    var picks = el.querySelectorAll(".reply-pick-in[data-pick]");
+    for (var pi = 0; pi < picks.length; pi++) {
+      (function(inp){
+        var key = inp.getAttribute("data-pick"), pt = null;
+        function commit(){
+          var v = inp.value.trim(), cur = state[item] ? (state[item][key] || "") : "";
+          // ⚠️ A TYPED VALUE THAT IS NOT ON THE OFFICIAL LIST IS STILL SAVED,
+          // and marked rather than rejected. Sam asked to SEE the official
+          // choices, not to be confined to them — and a name he reaches for
+          // that the list lacks is itself a finding about the list.
+          inp.setAttribute("data-off", (v && !onList(inp, v)) ? "1" : "0");
+          if (v !== cur) { var patch = {}; patch[key] = v; set(item, patch); }
+        }
+        inp.addEventListener("input", function(){ clearTimeout(pt); pt = setTimeout(commit, 400); });
+        inp.addEventListener("change", function(){ clearTimeout(pt); commit(); });
+        inp.addEventListener("blur", function(){ clearTimeout(pt); commit(); });
+      })(picks[pi]);
+    }
+  });
+
+  /* ── the artifact's store, when this view has one ── */
+  function light(){
+    var C = window.claude;
+    if (!C || typeof C.use !== "function") return;
+    var p; try { p = C.use("db"); } catch (e) { return; }
+    if (!p || typeof p.then !== "function") return;
+    p.then(function(db){
+      if (!db) return;
+      col = db.collection("replies"); where = "db";
+      col.onSnapshot(function(snap){
+        var seen = {};
+        snap.docs.forEach(function(d){
+          var r = d.data(); if (!r || !r.item) return;
+          seen[r.item] = 1;
+          var cur = state[r.item];
+          // The store's copy wins when it is at least as new as this page's;
+          // COPIED, because the delivered body is frozen and stays the store's.
+          if (!cur || String(r.t || "") >= String(cur.t || "")) {
+            state[r.item] = copy(r); saved[r.item] = r.t || "";
+            if (pending[r.item] !== "saving") pending[r.item] = "";
+          }
+        });
+        // Anything this browser holds that the store does not: send it up once.
+        Object.keys(state).forEach(function(item){
+          if (!seen[item] && !pending[item] && !empty(state[item]) && saved[item] !== state[item].t) push(item);
+        });
+        keep(); paintAll();
+      }, function(){ where = "local"; col = null; paintAll(); });
+      paintAll();
+    }, function(){});
+  }
+
+  /* ── Complete: write the record, then ring the doorbell ── */
+  var sbtn = document.getElementById("submit-btn"), sstate = document.getElementById("submit-state");
+  var snote = document.getElementById("submit-note");
+
+  // ⚠️ SAY IT BEFORE THE PRESS, NOT AFTER (Sam, 2026-09-21). He pressed
+  // Complete, the send found no session listening, and he had to come and ask
+  // whether it had worked. canSendToClaude() posts nothing and never prompts —
+  // the capability notes call it cheap on each render of the control — so the
+  // button can know its own reach at load and say so in the note above it.
+  // A reachable session is the common case, so the note only changes when the
+  // answer is that nothing is listening.
+  function reach(){
+    if (!snote || !sbtn) return;
+    var C = window.claude, p;
+    try { p = C && typeof C.use === "function" ? C.use("comments") : null; } catch (e) { return; }
+    if (!p || typeof p.then !== "function") return;
+    p.then(function(cm){
+      if (!cm || typeof cm.canSendToClaude !== "function") return;
+      cm.canSendToClaude().then(function(can){
+        if (can === "available") return;               // the button can ring; say nothing
+        snote.textContent = "Every reply is saved as you make it. Press Complete when you have "
+          + "finished — it records that this sheet is done, and a session reads the record "
+          + "straight off the sheet. To have it picked up right away, say \u201cdecisions "
+          + "done\u201d in the chat.";
+        sbtn.textContent = "Complete";
+      }, function(){});
+    }, function(){});
+  }
+  reach();
+  function tally(){
+    var done = 0, total = 0, asProposed = [], blank = 0;
+    els.forEach(function(el){
+      if ((el.getAttribute("data-kind") || "item") !== "item") return;
+      total++;
+      var item = el.getAttribute("data-item");
+      if (ruled(item)) { done++; return; }
+      if (el.getAttribute("data-default")) asProposed.push(item); else blank++;
+    });
+    return { done: done, total: total, asProposed: asProposed, blank: blank };
+  }
+  function say(t, missed){
+    if (!sstate) return;
+    sstate.textContent = t;
+    sstate.className = "submit-state" + (missed ? " missed" : "");
+  }
+  if (sbtn) sbtn.addEventListener("click", function(){
+    var n = tally();
+    sbtn.disabled = true;
+    // ⚠️ THE MARK IS READ BEFORE THE COMMIT, OR IT IS GONE. The loop below
+    // stores a reply for every as-proposed item, so after it runs EVERY card
+    // carries input and the high-water mark reads as the last card on the
+    // sheet. Capture it first: it is the only record of how far the reader
+    // actually got before pressing Complete.
+    var hw0 = highWater(), through = hw0.mark;
+    // ⚠️ COMMIT THE PROPOSALS, AND SAY THEY ARE PROPOSALS. Under opt-out the
+    // reader only touches what they disagree with, so the untouched items DO
+    // carry a verdict — but `by: "default"` records that nobody ruled on them
+    // individually, and the message says how many. An item with neither a
+    // reply nor a proposal is still a blank, and is still named as one.
+    var now = new Date().toISOString();
+    n.asProposed.forEach(function(item){
+      var r = { item: item, ref: (byItem(item) || {getAttribute:function(){return "";}}).getAttribute("data-ref"),
+                title: byItem(item) ? byItem(item).getAttribute("data-title") : "",
+                v: dflt(item), note: "", fu: false, by: "default", t: now };
+      state[item] = r;
+      if (col) { try { col.doc(item).set(copy(r)); } catch (e) {} }
+    });
+    keep(); paintAll();
+    var text = "Decisions done on " + SHEET + " — " + n.done + " of " + n.total + " items your own call"
+      + (n.asProposed.length ? ", " + n.asProposed.length + " taken as proposed (not individually reviewed)" : "")
+      + (n.blank ? ", " + n.blank + " left blank (no verdict on those)" : "") + ". " + line(hw0);
+    var rec = { sheet: SHEET, ruled: n.done, as_proposed: n.asProposed.length, blank: n.blank,
+                items: n.total, through: through, at: now, sent: false };
+    function finish(sent, why){
+      rec.sent = sent;
+      if (col) { try { col.doc("done").set(copy(rec)); } catch (e) {} }
+      // ⚠️ A FAILED DOORBELL MUST NOT READ LIKE A DELIVERED ONE (Sam,
+      // 2026-09-21: "I hit complete on the new decision sheet but I don't know
+      // if it alerted you in context"). The send failed silently enough that he
+      // had to come and ask. It says so plainly now, and it says the thing that
+      // is actually true: the replies are ON the sheet and the session reads
+      // them from here, so a refused send costs a sentence in chat, never the
+      // work.
+      say(sent ? "Sent. The session has it — " + n.done + " of " + n.total + " your own call"
+                 + (n.asProposed.length ? ", " + n.asProposed.length + " as proposed." : ".")
+               : "Recorded on the sheet — " + n.done + " of " + n.total + " your own call"
+                 + (n.asProposed.length ? ", " + n.asProposed.length + " as proposed" : "")
+                 + ". No session was listening just now"
+                 + (why && why !== "no session is listening" ? " (" + why + ")" : "")
+                 + ", so say \u201cdecisions done\u201d in the chat and Claude reads them "
+                 + "straight off this sheet.", !sent);
+      sbtn.textContent = sent ? "Completed — sent" : "Completed — tell Claude";
+      // ⚠️ MEASURED 2026-09-21: sendToClaude() reports "no session is listening"
+      // for a Claude Code session in a remote container even with a live,
+      // confirmed artifact watch. Sam pressed Complete a minute after the watch
+      // was re-registered and got the same answer. The button therefore records
+      // and offers the send; the RELIABLE path is the session reading
+      // `replies/done` off this sheet, which needs nothing from this page.
+    }
+    // The store is the record and is written whether or not the send lands.
+    var C = window.claude, p;
+    try { p = C && typeof C.use === "function" ? C.use("comments") : null; } catch (e) { p = null; }
+    if (!p || typeof p.then !== "function") { finish(false, "commenting is off here"); return; }
+    say("Sending…");
+    p.then(function(cm){
+      if (!cm || typeof cm.sendToClaude !== "function") { finish(false, "commenting is off here"); return; }
+      cm.canSendToClaude().then(function(can){
+        if (can !== "available") { finish(false, can === "writers_only" ? "you are not an editor of this sheet" : "no session is listening"); return; }
+        cm.anchorFor(sbtn).then(function(anchor){
+          // One deliberate send, from the viewer's own click. Never retried:
+          // a rejected write is not proof nothing was written.
+          cm.sendToClaude({ anchor: anchor, text: text.slice(0, 3800) })
+            .then(function(){ finish(true); }, function(err){ finish(false, (err && err.code) || "it could not be sent"); });
+        }, function(){ finish(false, "the button could not be anchored"); });
+      }, function(){ finish(false, "commenting is off here"); });
+    }, function(){ finish(false, "commenting is off here"); });
+  });
+
+  read(); paintAll(); light();
+})();
+</script>
+<!-- replies:end --></body>
+</html>

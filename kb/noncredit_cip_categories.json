@@ -1,0 +1,657 @@
+{
+  "_built_by": "kb/_build_noncredit_cip_categories.py",
+  "_source": "CCCCO 'TOP to CIP Noncredit Mapping', updated 2026-05-26; Basic Skills pairing confirmed by Jenni Abbott (CO consultant), 2026-08-14",
+  "_crosswalk_source": "kb/reference/cip_searchable_260715.xlsx (CCCCO CIP Searchable Workbook, 2026-07-15 cut) + kb/reference/cip_cte_certified_260715.json",
+  "_note": "The CO page calls these codes EXAMPLES: 'can be used by colleges to identify the most appropriate CIP code that aligns with an existing TOP code.' The college is the decider; this file is what the picker offers, never what it concludes.",
+  "_invariants": [
+    "cdcp is PER-CODE — a category flag can be overridden by a code (32.0201).",
+    "34.010x belongs to Health and Safety AND Parenting; never auto-pick between them.",
+    "population_not_content categories are never inferable from a code.",
+    "top_determinative is false everywhere: the page's TOP ranges claim exactly one category for only 28.8% of noncredit programs."
+  ],
+  "categories": [
+    {
+      "id": "esl",
+      "label": "English as a Second Language",
+      "sublabel": null,
+      "cdcp": true,
+      "population_not_content": false,
+      "any_noncredit_cip": false,
+      "shares_codes_with": null,
+      "secondary_credit_cip": false,
+      "unpublished_guidance": null,
+      "note": null,
+      "top_ranges": [
+        [
+          "4930.84",
+          "4931.00"
+        ]
+      ],
+      "top_determinative": false,
+      "cips": [
+        {
+          "label": "Second Language Learning",
+          "codes": [
+            "32.0109"
+          ],
+          "cdcp": true,
+          "note": null,
+          "credit_expected": false,
+          "titles": {
+            "32.0109": "Second Language Learning"
+          }
+        },
+        {
+          "label": "Accent Reduction/Modification",
+          "codes": [
+            "32.0112"
+          ],
+          "cdcp": true,
+          "note": "Rarely used (Jenni, 2026-08-14).",
+          "credit_expected": false,
+          "titles": {
+            "32.0112": "Accent Reduction/Modification"
+          }
+        }
+      ]
+    },
+    {
+      "id": "short_term_vocational",
+      "label": "Short-Term Vocational",
+      "sublabel": null,
+      "cdcp": true,
+      "population_not_content": false,
+      "any_noncredit_cip": false,
+      "shares_codes_with": null,
+      "secondary_credit_cip": true,
+      "unpublished_guidance": "Takes 32.0111 plus a secondary CREDIT CIP aligning with the program subject matter. Where that secondary CIP is a CTE course, the noncredit program is CTE. CO guidance ahead of publication (Jenni, 2026-08-14) — not yet on the page.",
+      "note": null,
+      "top_ranges": [
+        [
+          "*",
+          "any vocational code"
+        ]
+      ],
+      "top_determinative": false,
+      "cips": [
+        {
+          "label": "Workforce Development and Training",
+          "codes": [
+            "32.0111"
+          ],
+          "cdcp": true,
+          "note": "These will include specific training & skills that prepare students for a job.",
+          "credit_expected": false,
+          "titles": {
+            "32.0111": "Workforce Development and Training"
+          }
+        }
+      ]
+    },
+    {
+      "id": "workforce_preparation",
+      "label": "Workforce Preparation",
+      "sublabel": null,
+      "cdcp": true,
+      "population_not_content": false,
+      "any_noncredit_cip": false,
+      "shares_codes_with": null,
+      "secondary_credit_cip": false,
+      "unpublished_guidance": null,
+      "note": null,
+      "top_ranges": [
+        [
+          "*",
+          "any vocational code"
+        ],
+        [
+          "4930.10",
+          "4930.72"
+        ]
+      ],
+      "top_determinative": false,
+      "cips": [
+        {
+          "label": "Career Exploration/Awareness",
+          "codes": [
+            "32.0107"
+          ],
+          "cdcp": true,
+          "note": "These will be preparatory or exploratory courses — not primary job skills.",
+          "credit_expected": false,
+          "titles": {
+            "32.0107": "Career Exploration/Awareness Skills"
+          }
+        }
+      ]
+    },
+    {
+      "id": "basic_skills",
+      "label": "Elementary & Secondary Basic Skills",
+      "sublabel": "supplemental instruction, supervised tutoring",
+      "cdcp": true,
+      "population_not_content": false,
+      "any_noncredit_cip": false,
+      "shares_codes_with": null,
+      "secondary_credit_cip": false,
+      "unpublished_guidance": null,
+      "note": null,
+      "top_ranges": [
+        [
+          "1501.00",
+          "1702.00"
+        ],
+        [
+          "4930.09",
+          "4930.60"
+        ]
+      ],
+      "top_determinative": false,
+      "cips": [
+        {
+          "label": "High School Diploma/Equivalency",
+          "codes": [
+            "53.0101",
+            "53.0102",
+            "53.0103",
+            "53.0104",
+            "53.0105",
+            "53.0199",
+            "53.0201",
+            "53.0202",
+            "53.0203",
+            "53.0299"
+          ],
+          "cdcp": true,
+          "note": null,
+          "credit_expected": false,
+          "titles": {
+            "53.0101": "Regular/General High School/Secondary Diploma Program",
+            "53.0102": "College/University Preparatory and Advanced High School/Secondary Diploma Program",
+            "53.0103": "Vocational High School and Secondary Business/Vocational-Industrial/Occupational Diploma Program",
+            "53.0104": "Honors/Regents High School/Secondary Diploma Program",
+            "53.0105": "Adult High School/Secondary Diploma Program",
+            "53.0199": "High School/Secondary Diploma Programs, Other",
+            "53.0201": "High School Equivalence Certificate Program",
+            "53.0202": "High School Certificate of Competence Program",
+            "53.0203": "Certificate of IEP Completion Program",
+            "53.0299": "High School/Secondary Certificates, Other"
+          }
+        },
+        {
+          "label": "Basic Skills & Developmental/Remed Ed./Study Skills",
+          "codes": [
+            "32.0101"
+          ],
+          "cdcp": true,
+          "note": null,
+          "credit_expected": false,
+          "titles": {
+            "32.0101": "Basic Skills and Developmental/Remedial Education, General"
+          }
+        },
+        {
+          "label": "Developmental/Remedial Math",
+          "codes": [
+            "32.0104"
+          ],
+          "cdcp": true,
+          "note": null,
+          "credit_expected": false,
+          "titles": {
+            "32.0104": "Developmental/Remedial Mathematics"
+          }
+        },
+        {
+          "label": "Job-Seeking/Changing Skills",
+          "codes": [
+            "32.0105"
+          ],
+          "cdcp": true,
+          "note": null,
+          "credit_expected": false,
+          "titles": {
+            "32.0105": "Job-Seeking/Changing Skills"
+          }
+        },
+        {
+          "label": "Developmental/Remedial English",
+          "codes": [
+            "32.0108"
+          ],
+          "cdcp": true,
+          "note": null,
+          "credit_expected": false,
+          "titles": {
+            "32.0108": "Developmental/Remedial English"
+          }
+        },
+        {
+          "label": "Basic Computer Skills",
+          "codes": [
+            "32.0110"
+          ],
+          "cdcp": true,
+          "note": null,
+          "credit_expected": false,
+          "titles": {
+            "32.0110": "Basic Computer Skills"
+          }
+        },
+        {
+          "label": "Exam Prep & Test-Taking Skills",
+          "codes": [
+            "32.0201"
+          ],
+          "cdcp": false,
+          "note": "SUPERVISED TUTORING may use this CIP; however, it is not CDCP eligible.",
+          "credit_expected": false,
+          "titles": {
+            "32.0201": "Exam Preparation and Test-Taking Skills, General"
+          }
+        }
+      ]
+    },
+    {
+      "id": "immigrant_education",
+      "label": "Immigrant Education",
+      "sublabel": null,
+      "cdcp": false,
+      "population_not_content": false,
+      "any_noncredit_cip": false,
+      "shares_codes_with": null,
+      "secondary_credit_cip": false,
+      "unpublished_guidance": null,
+      "note": null,
+      "top_ranges": [
+        [
+          "2201.20",
+          "2207.00"
+        ],
+        [
+          "4930.90",
+          "4930.90"
+        ]
+      ],
+      "top_determinative": false,
+      "cips": [
+        {
+          "label": "Citizenship Activities",
+          "codes": [
+            "33.0101",
+            "33.0102",
+            "33.0103",
+            "33.0104",
+            "33.0105",
+            "33.0106",
+            "33.0199"
+          ],
+          "cdcp": false,
+          "note": "Citizenship education, community awareness, community involvement, personal emergency preparedness.",
+          "credit_expected": false,
+          "titles": {
+            "33.0101": "Citizenship Activities, General",
+            "33.0102": "American Citizenship Education",
+            "33.0103": "Community Awareness",
+            "33.0104": "Community Involvement",
+            "33.0105": "Canadian Citizenship Education",
+            "33.0106": "Personal Emergency Preparedness",
+            "33.0199": "Citizenship Activities, Other"
+          }
+        }
+      ]
+    },
+    {
+      "id": "health_and_safety",
+      "label": "Health and Safety",
+      "sublabel": null,
+      "cdcp": false,
+      "population_not_content": false,
+      "any_noncredit_cip": false,
+      "shares_codes_with": "parenting",
+      "secondary_credit_cip": false,
+      "unpublished_guidance": null,
+      "note": null,
+      "top_ranges": [
+        [
+          "0835.10",
+          "0899.00"
+        ],
+        [
+          "1299.00",
+          "1299.00"
+        ]
+      ],
+      "top_determinative": false,
+      "cips": [
+        {
+          "label": "Birthing & Parenting",
+          "codes": [
+            "34.0102"
+          ],
+          "cdcp": false,
+          "note": null,
+          "credit_expected": false,
+          "titles": {
+            "34.0102": "Birthing and Parenting Knowledge and Skills"
+          }
+        },
+        {
+          "label": "Personal Health Improvement",
+          "codes": [
+            "34.0103"
+          ],
+          "cdcp": false,
+          "note": null,
+          "credit_expected": false,
+          "titles": {
+            "34.0103": "Personal Health Improvement and Maintenance"
+          }
+        },
+        {
+          "label": "Addiction Prevention",
+          "codes": [
+            "34.0104"
+          ],
+          "cdcp": false,
+          "note": null,
+          "credit_expected": false,
+          "titles": {
+            "34.0104": "Addiction Prevention and Treatment"
+          }
+        },
+        {
+          "label": "Meditation",
+          "codes": [
+            "34.0105"
+          ],
+          "cdcp": false,
+          "note": null,
+          "credit_expected": false,
+          "titles": {
+            "34.0105": "Meditation/Mind-Body Wellness"
+          }
+        }
+      ]
+    },
+    {
+      "id": "substantial_disabilities",
+      "label": "Substantial Disabilities",
+      "sublabel": null,
+      "cdcp": false,
+      "population_not_content": true,
+      "any_noncredit_cip": true,
+      "shares_codes_with": null,
+      "secondary_credit_cip": false,
+      "unpublished_guidance": null,
+      "note": "CIP codes focus primarily on content, not populations.",
+      "top_ranges": [
+        [
+          "*",
+          "any TOP code"
+        ]
+      ],
+      "top_determinative": false,
+      "cips": [
+        {
+          "label": "Special Education (credit CIP codes may be applicable)",
+          "codes": [
+            "13.1001",
+            "13.1003",
+            "13.1004",
+            "13.1005",
+            "13.1006",
+            "13.1007",
+            "13.1008",
+            "13.1009",
+            "13.1011",
+            "13.1012",
+            "13.1013",
+            "13.1014",
+            "13.1015",
+            "13.1016",
+            "13.1017",
+            "13.1018",
+            "13.1019",
+            "13.1099"
+          ],
+          "cdcp": false,
+          "note": null,
+          "credit_expected": true,
+          "titles": {
+            "13.1001": "Special Education and Teaching, General",
+            "13.1003": "Education/Teaching of Individuals with Hearing Impairments Including Deafness",
+            "13.1004": "Education/Teaching of the Gifted and Talented",
+            "13.1005": "Education/Teaching of Individuals with Emotional Disturbances",
+            "13.1006": "Education/Teaching of Individuals with Intellectual Disabilities",
+            "13.1007": "Education/Teaching of Individuals with Multiple Disabilities",
+            "13.1008": "Education/Teaching of Individuals with Orthopedic and Other Physical Health Impairments",
+            "13.1009": "Education/Teaching of Individuals with Vision Impairments Including Blindness",
+            "13.1011": "Education/Teaching of Individuals with Specific Learning Disabilities",
+            "13.1012": "Education/Teaching of Individuals with Speech or Language Impairments",
+            "13.1013": "Education/Teaching of Individuals with Autism",
+            "13.1014": "Education/Teaching of Individuals Who are Developmentally Delayed",
+            "13.1015": "Education/Teaching of Individuals in Early Childhood Special Education Programs",
+            "13.1016": "Education/Teaching of Individuals with Traumatic Brain Injuries",
+            "13.1017": "Education/Teaching of Individuals in Elementary Special Education Programs",
+            "13.1018": "Education/Teaching of Individuals in Junior High/Middle School Special Education Programs",
+            "13.1019": "Education/Teaching of Individuals in Secondary Special Education Programs",
+            "13.1099": "Special Education and Teaching, Other"
+          }
+        }
+      ]
+    },
+    {
+      "id": "parenting",
+      "label": "Parenting",
+      "sublabel": null,
+      "cdcp": false,
+      "population_not_content": false,
+      "any_noncredit_cip": false,
+      "shares_codes_with": "health_and_safety",
+      "secondary_credit_cip": false,
+      "unpublished_guidance": null,
+      "note": null,
+      "top_ranges": [
+        [
+          "1305.00",
+          "1399.00"
+        ]
+      ],
+      "top_determinative": false,
+      "cips": [
+        {
+          "label": "Birthing & Parenting Knowledge & Skills",
+          "codes": [
+            "34.0102"
+          ],
+          "cdcp": false,
+          "note": null,
+          "credit_expected": false,
+          "titles": {
+            "34.0102": "Birthing and Parenting Knowledge and Skills"
+          }
+        },
+        {
+          "label": "Personal Health Improve & Maintenance",
+          "codes": [
+            "34.0103"
+          ],
+          "cdcp": false,
+          "note": null,
+          "credit_expected": false,
+          "titles": {
+            "34.0103": "Personal Health Improvement and Maintenance"
+          }
+        },
+        {
+          "label": "Addiction Prevention & Treatment",
+          "codes": [
+            "34.0104"
+          ],
+          "cdcp": false,
+          "note": null,
+          "credit_expected": false,
+          "titles": {
+            "34.0104": "Addiction Prevention and Treatment"
+          }
+        },
+        {
+          "label": "Meditation/Mind-Body Wellness",
+          "codes": [
+            "34.0105"
+          ],
+          "cdcp": false,
+          "note": null,
+          "credit_expected": false,
+          "titles": {
+            "34.0105": "Meditation/Mind-Body Wellness"
+          }
+        }
+      ]
+    },
+    {
+      "id": "home_economics",
+      "label": "Home Economics",
+      "sublabel": null,
+      "cdcp": false,
+      "population_not_content": false,
+      "any_noncredit_cip": false,
+      "shares_codes_with": null,
+      "secondary_credit_cip": false,
+      "unpublished_guidance": null,
+      "note": null,
+      "top_ranges": [
+        [
+          "1301.00",
+          "1399.00"
+        ]
+      ],
+      "top_determinative": false,
+      "cips": [
+        {
+          "label": "Leisure & Recreational Activities",
+          "codes": [
+            "36.0101",
+            "36.0102",
+            "36.0103",
+            "36.0105",
+            "36.0106",
+            "36.0107",
+            "36.0108",
+            "36.0109",
+            "36.0110",
+            "36.0111",
+            "36.0112",
+            "36.0113",
+            "36.0114",
+            "36.0115",
+            "36.0116",
+            "36.0117",
+            "36.0118",
+            "36.0120",
+            "36.0121",
+            "36.0122",
+            "36.0123",
+            "36.0199"
+          ],
+          "cdcp": false,
+          "note": "36.0119 Aircraft Pilot (Private) is excluded — it is a CTE code inside an otherwise-noncredit family.",
+          "credit_expected": false,
+          "titles": {
+            "36.0101": "Leisure and Recreational Activities, General",
+            "36.0102": "Handicrafts and Model-Making",
+            "36.0103": "Board, Card and Role-Playing Games",
+            "36.0105": "Home Maintenance and Improvement",
+            "36.0106": "Nature Appreciation",
+            "36.0107": "Pet Ownership and Care",
+            "36.0108": "Sports and Exercise",
+            "36.0109": "Travel and Exploration",
+            "36.0110": "Art",
+            "36.0111": "Collecting",
+            "36.0112": "Cooking and Other Domestic Skills",
+            "36.0113": "Computer Games and Programming Skills",
+            "36.0114": "Dancing",
+            "36.0115": "Music",
+            "36.0116": "Reading",
+            "36.0117": "Theatre/Theater",
+            "36.0118": "Writing",
+            "36.0120": "Beekeeping",
+            "36.0121": "Firearms Training/Safety",
+            "36.0122": "Floral Design/Arrangement",
+            "36.0123": "Master Gardener/Gardening",
+            "36.0199": "Leisure and Recreational Activities, Other"
+          }
+        },
+        {
+          "label": "Home Maintenance & Improvement",
+          "codes": [
+            "36.0105"
+          ],
+          "cdcp": false,
+          "note": null,
+          "credit_expected": false,
+          "titles": {
+            "36.0105": "Home Maintenance and Improvement"
+          }
+        },
+        {
+          "label": "Cooking & Other Domestic Skills",
+          "codes": [
+            "36.0112"
+          ],
+          "cdcp": false,
+          "note": null,
+          "credit_expected": false,
+          "titles": {
+            "36.0112": "Cooking and Other Domestic Skills"
+          }
+        },
+        {
+          "label": "Master Gardener/Gardening",
+          "codes": [
+            "36.0123"
+          ],
+          "cdcp": false,
+          "note": null,
+          "credit_expected": false,
+          "titles": {
+            "36.0123": "Master Gardener/Gardening"
+          }
+        }
+      ]
+    },
+    {
+      "id": "older_adults",
+      "label": "Courses for Older Adults",
+      "sublabel": null,
+      "cdcp": false,
+      "population_not_content": true,
+      "any_noncredit_cip": true,
+      "shares_codes_with": null,
+      "secondary_credit_cip": false,
+      "unpublished_guidance": null,
+      "note": "CIP codes focus primarily on content, not populations.",
+      "top_ranges": [
+        [
+          "*",
+          "any TOP code"
+        ]
+      ],
+      "top_determinative": false,
+      "cips": []
+    }
+  ],
+  "off_list_codes_in_use": [
+    {
+      "code": "32.0199",
+      "programs": 60,
+      "question": "Basic Skills and Developmental/Remedial Education, Other — fold into Basic Skills, or must these move?"
+    },
+    {
+      "code": "35.0101",
+      "programs": 16,
+      "question": "Interpersonal and Social Skills, General — which category, if any?"
+    }
+  ]
+}

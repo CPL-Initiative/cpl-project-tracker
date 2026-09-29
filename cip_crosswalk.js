@@ -66,10 +66,13 @@
   }
 
   // ── state ──────────────────────────────────────────────────────────────────
-  var D = null, ROWS = [], BYCODE = {}, FAMS = {}, IDF = {}, IDF_N = 1, POSTINGS = {};
-  var TOPCIP = {}, BOILER = {}, CIP_TOPS = {};
+  var D = null, ROWS = [], BYCODE = {}, FAMS = {}, SUB4 = {}, IDF = {}, IDF_N = 1, POSTINGS = {};
+  var TOPCIP = {}, BOILER = {}, CIP_TOPS = {}, OLDTOPCIP = {};
   var GOFORWARD = { "CTE": 1, "Both": 1, "Non-CTE": 1, "Noncredit": 1 };
-  var st = { q: "", cat: "all", fam: "", xfer: false, showRetired: false, limit: PAGE, open: {}, college: null, mode: "review" };
+  var st = { q: "", cat: "all", fam: "", fam4: "", fam6: "", xfer: false, showRetired: false, limit: PAGE, open: {}, college: null, mode: "review", scope: "courses", progCollege: null, progQ: "", progFlagOnly: false, progOpen: {},
+             progTitles: [], progAwards: [], progSectors: [] };
+  var SCOPE_KEY = "cipx_scope";
+  var PROGRAMS = null, PROGRAMS_LOADING = false;   // window.CPL_COCI_PROGRAMS (lazy — Programs scope only)
   var FIT_COLLEGES = null, FIT_CACHE = {}, FIT_LOADING = {};
   // Precomputed engine-baseline status counts (per college + per subject + system-wide) — how the tool
   // classifies each course (Ready/Review/Suggested/Manual), NOT human progress. Built by
@@ -78,11 +81,12 @@
   var CONSENSUS = null, CONSENSUS_COLLEGES = null, CONSENSUS_SUBJECTS = null, CONSENSUS_LOADING = null;
   // confident-consensus thresholds (see consensusPick): >= MIN_N colleges AND >= MAJORITY of them.
   var CONSENSUS_MIN_N = 3, CONSENSUS_MAJORITY = 0.5;
-  var wrapEl, inputRef, pillsRef, famRef, cbRef, xferRef, listHost, countHost, suggestHost, collegeSelEl, collegeBarEl, _cipxStickyBound;
+  var wrapEl, inputRef, pillsRef, famRef, fam4Ref, fam6Ref, cbRef, xferRef, listHost, countHost, suggestHost, collegeSelEl, collegeBarEl, _cipxStickyBound;
 
   function ingest(data) {
     D = data;
     FAMS = (D && D.fams) || {};
+    SUB4 = (D && D.sub4) || {};   // authoritative NCES 4-digit series titles (keyed "51.38"), when the builder can source them (Sam, 2026-07-28)
     ROWS = ((D && D.rows) || []).slice();
     ROWS.sort(function (a, b) {
       var x = (a.t || "").toLowerCase(), y = (b.t || "").toLowerCase();
@@ -91,6 +95,7 @@
     BYCODE = {};
     ROWS.forEach(function (r) { BYCODE[r.code] = r; });
     TOPCIP = (D && D.topcip) || {};
+    OLDTOPCIP = (D && D.oldtopcip) || {};   // 2021 first-gen TOP→CIP crosswalk (what colleges used to set Program CIPs)
     BOILER = {}; ((D && D.boiler) || []).forEach(function (c) { BOILER[c] = 1; });
     // inverse crosswalk: CIP code -> {TOP: 1} — which TOPs map to each CIP. Lets the
     // inline "best matches" anchor on the crosswalk (a course belongs to a CIP's
@@ -105,14 +110,39 @@
     // hard refresh starts with no college picked. (Per-college review decisions still persist
     // under cipx_rev_<college> — that's the user's work product, not the selection.)
     st.college = null;
+    st.progCollege = null;
     // Default mode = Review (Sam, 2026-07-18: the primary workflow). A returning user's explicit
     // choice (they clicked a tab, which writes MODE_KEY) is honored; anything else lands on Review.
     try { var _m = localStorage.getItem(MODE_KEY); st.mode = (_m === "browse" || _m === "recommend") ? _m : "review"; } catch (e) { st.mode = "review"; }
+    try { var _s = localStorage.getItem(SCOPE_KEY); st.scope = (_s === "programs") ? "programs" : "courses"; } catch (e) { st.scope = "courses"; }
+    if (st.scope === "programs" && st.mode === "recommend") st.mode = "review";   // no course-first easy button for programs
+    navNormalise();   // a stored mode whose nav entry is hidden would restore into an unreachable view
   }
 
   // ── theme ────────────────────────────────────────────────────────────────────
-  function savedTheme() { try { return localStorage.getItem(THEME_KEY); } catch (e) { return null; } }
-  function storeTheme(t) { try { localStorage.setItem(THEME_KEY, t); } catch (e) {} }
+  // ⚠️ THIS TAB WAS A FIFTH INDEPENDENT ANSWER TO "IS IT DARK" (found S248).
+  // Sam's ask was "one control ... sets all tabs and windows"; S244/S245 found
+  // and folded in four answers. This one survived because it uses NEITHER
+  // data-theme NOR prefers-color-scheme — it gates a 108-ground palette on its
+  // OWN class, from its OWN button, under its OWN localStorage key — so every
+  // scan that grepped for those two spellings walked straight past it, and the
+  // header Theme control moved every other tab while this one did not budge.
+  // The class stays (it is the mechanism, and it scopes cleanly); what changes
+  // is who decides. cpl_theme.js decides, exactly as for cpl_memory.js.
+  function savedTheme() {
+    try {
+      if (window.CPL_THEME && typeof window.CPL_THEME.effective === "function") {
+        return window.CPL_THEME.effective();
+      }
+    } catch (e) { /* fall through to the legacy key */ }
+    // cpl_theme.js is render-blocking in <head>, so this only runs if it failed
+    // to load at all. Honor whatever this tab remembered before S248.
+    try { return localStorage.getItem(THEME_KEY); } catch (e) { return null; }
+  }
+  function storeTheme(t) {
+    try { if (window.CPL_THEME && typeof window.CPL_THEME.set === "function") { window.CPL_THEME.set(t); return; } } catch (e) {}
+    try { localStorage.setItem(THEME_KEY, t); } catch (e) {}
+  }
   function isDark() { return !!(wrapEl && wrapEl.classList.contains("cipx-theme-dark")); }
   function applyTheme(t) { if (wrapEl) { if (t === "dark") wrapEl.classList.add("cipx-theme-dark"); else wrapEl.classList.remove("cipx-theme-dark"); } }
 
@@ -121,6 +151,8 @@
     if (!st.showRetired && !GOFORWARD[r.cat]) return false;
     if (st.cat !== "all" && r.cat !== st.cat) return false;
     if (st.fam && r.fam !== st.fam) return false;
+    if (st.fam4 && r.code.slice(0, 5) !== st.fam4) return false;
+    if (st.fam6 && r.code !== st.fam6) return false;
     if (st.xfer && !r.x) return false;
     if (st.q) {
       var toks = st.q.split(/\s+/);
@@ -131,23 +163,77 @@
   }
   function filtered() { return ROWS.filter(passes); }
 
+  // ── CIP-code hierarchy filters (2 / 4 / 6-digit) ──────────────────────────────
+  // Structural navigation over the CIP tree, independent of category/xfer/search.
+  // Each list carries a "Select All" (empty-value) option at the top. The lists
+  // cascade: picking a sector narrows the sub-series; a sub-series narrows the code.
+  function cipOpt(v, label) { return el("option", { value: v }, [label]); }
+  function cipVisibleRow(r) { return st.showRetired || GOFORWARD[r.cat]; }   // match the browse universe
+  function fillCip2() {
+    if (!famRef) return;
+    clear(famRef);
+    famRef.appendChild(cipOpt("", "All sectors (2-digit)"));
+    Object.keys(FAMS).sort().forEach(function (f) { famRef.appendChild(cipOpt(f, f + " · " + FAMS[f])); });
+    famRef.value = st.fam;
+  }
+  function fillCip4() {
+    if (!fam4Ref) return;
+    clear(fam4Ref);
+    fam4Ref.appendChild(cipOpt("", "All sub-series (4-digit)"));
+    var seen = {};
+    ROWS.forEach(function (r) {
+      if (!cipVisibleRow(r)) return;
+      if (st.fam && r.fam !== st.fam) return;
+      var k = r.code.slice(0, 5);
+      seen[k] = (seen[k] || 0) + 1;
+    });
+    Object.keys(seen).sort().forEach(function (k) {
+      var t4 = SUB4[k];   // show the NCES 4-digit series title when we have it; else code + count (grounded, never invented)
+      fam4Ref.appendChild(cipOpt(k, k + (t4 ? " · " + t4 : "") + " · " + seen[k] + (seen[k] === 1 ? " code" : " codes")));
+    });
+    fam4Ref.value = st.fam4;
+  }
+  function fillCip6() {
+    if (!fam6Ref) return;
+    clear(fam6Ref);
+    fam6Ref.appendChild(cipOpt("", "All codes (6-digit)"));
+    ROWS.filter(function (r) {
+      if (!cipVisibleRow(r)) return false;
+      if (st.fam && r.fam !== st.fam) return false;
+      if (st.fam4 && r.code.slice(0, 5) !== st.fam4) return false;
+      return true;
+    }).slice().sort(function (a, b) { return a.code < b.code ? -1 : (a.code > b.code ? 1 : 0); })
+      .forEach(function (r) { fam6Ref.appendChild(cipOpt(r.code, r.code + " · " + (r.t || ""))); });
+    fam6Ref.value = st.fam6;
+  }
+  function fillCipSelects() { fillCip2(); fillCip4(); fillCip6(); }
+
   function catTip(c) {
-    return ({ "CTE": "Career Technical Education", "Both": "Both CTE and non-CTE", "Non-CTE": "Not Career Technical Education",
+    return ({ "CTE": "Career Technical Education", "Both": "Either CTE or Non-CTE — your college selects which designation applies",
+      "Non-CTE": "Not Career Technical Education",
       "Noncredit": "Noncredit CIP", "Retired": "Moved or deleted in the 2020 CIP edition", "Reserved": "Reserved placeholder code" })[c] || c;
   }
+  // The BADGE text is not the raw category (Jenni + Sam, 2026-08-14). "Both" read as a property of
+  // the code — a fact about the CIP — when it is really a CHOICE the college still has to make. The
+  // full phrase "Either CTE or Non-CTE" is ~4x the width of "BOTH" and would push the row past the
+  // viewport (the no-horizontal-scroll rule), so the badge says EITHER and catTip() carries the
+  // sentence. The prompts, which have room, spell it out in full.
+  function catLabel(c) { return c === "Both" ? "Either" : c; }
   function catClass(c) { return "cipx-cat cipx-cat-" + String(c || "").replace(/[^A-Za-z]/g, ""); }
   function activeFilterLabels() {
     var out = [];
     if (st.cat !== "all") out.push(st.cat);
     if (st.xfer) out.push("C-ID/CCN");
     if (st.fam) out.push((FAMS[st.fam] || st.fam) + " family");
+    if (st.fam4) out.push("CIP " + st.fam4 + "×");
+    if (st.fam6) out.push("CIP " + st.fam6);
     if (st.showRetired) out.push("incl. retired/reserved");
     return out;
   }
   function resetAll() {
-    st.q = ""; st.cat = "all"; st.fam = ""; st.xfer = false; st.showRetired = false; st.limit = PAGE; st.open = {};
+    st.q = ""; st.cat = "all"; st.fam = ""; st.fam4 = ""; st.fam6 = ""; st.xfer = false; st.showRetired = false; st.limit = PAGE; st.open = {};
     if (inputRef) inputRef.value = "";
-    if (famRef) famRef.value = "";
+    fillCipSelects();
     if (cbRef) cbRef.checked = false;
     if (xferRef) xferRef.setAttribute("aria-pressed", "false");
     if (pillsRef) Array.prototype.forEach.call(pillsRef.querySelectorAll(".cipx-pill"), function (x, i) { x.setAttribute("aria-pressed", i === 0 ? "true" : "false"); });
@@ -216,6 +302,23 @@
   // ANY ranked display (they live behind the boiler expander). Filter every fallback
   // "closest by description" list through this.
   function nonBoiler(list) { return list.filter(function (o) { return !BOILER[o.r.code]; }); }
+  // The "crosswalk universe" = every CIP that appears in SOME TOP's official crosswalk (CIP_TOPS is the
+  // inverse of topcip). We never present a CIP outside it — no free-ranging the full 2,325-code taxonomy
+  // (Sam, 2026-07-28: "limit the choices to the TOP↔CIP crosswalk … we don't want colleges going free
+  // range"). But TOP codes are unreliable (§7), so a description-fit code that isn't in THIS course's TOP
+  // set yet IS in the crosswalk under ANOTHER TOP is a legitimate "more-appropriate TOP" alternative —
+  // offered, labeled with the TOP it belongs to, and framed as "your course's TOP may need updating."
+  function inXwalk(code) { return !!CIP_TOPS[code]; }
+  function altTopsFor(code) {
+    var tops = CIP_TOPS[code]; if (!tops) return [];
+    return Object.keys(tops).sort().map(function (t) { return { top: t, title: (TOPCIP[t] || {}).t || "" }; });
+  }
+  // description-ranked codes that live in the crosswalk under some TOP (never free-range), tagged with
+  // their source TOP(s) — the fallback when a course's own TOP has no / only-generic crosswalk CIPs.
+  function xwalkAlts(ranked, cap) {
+    return nonBoiler(ranked || []).filter(function (o) { return inXwalk(o.r.code); })
+      .map(function (o) { o.altTops = altTopsFor(o.r.code); return o; }).slice(0, cap || 6);
+  }
 
   // weight of one query token against one CIP row (title > examples > definition)
   function tokWeight(s, r) { return r._tt && r._tt[s] ? 3.0 : (r._te && r._te[s] ? 1.5 : (r._td && r._td[s] ? 1.0 : 0)); }
@@ -241,6 +344,17 @@
   var BEYOND_CONF_MIN = 45;         // an outside-crosswalk code is "worth a look" only at this absolute confidence
   var _titleStop = null;            // generic academic-qualifier title tokens, stripped from the course-title match
   var SUG_STRONG = 70;              // a suggestion at/above this confidence is a strong pick — not overridden by the dept-default
+  var OWN_FIT_MIN = 40;            // a course's own description/title fit must be at least this plausible to veto (Sam, 2026-07-20)…
+  var OWN_VETO_MARGIN = 30;        // …and beat the peer-consensus pick's own fit by this much → it VETOES the peer override (the peer pick is a near-zero fit)
+  // Discipline-fit lift (Sam, 2026-07-20). The DISPLAYED confidence of a crosswalk candidate also reflects
+  // how cleanly the course's discipline maps to that CIP — measured as the TOP-title ↔ CIP-title overlap.
+  // A specialized course in a discipline that maps 1:1 to its CIP (Carpentry TOP 0952.10 → 46.0201
+  // Carpentry/Carpenter) is confidently in-field even when its own wording (Rigging, Welding II, CNC)
+  // barely overlaps the generic CIP definition — so it should not read a misleading 8%. §7-clean: the
+  // TOP↔CIP crosswalk is the ONE place TOP is authoritative (repo doctrine), and this reads that
+  // pairing's OWN quality; it lifts only the DISPLAY (`dconf`), never a gate (Ready/Review, the veto,
+  // the outside-crosswalk mis-code flag, the baseline counts all keep the raw description-fit `conf`).
+  var DISC_W = 0.60;               // weight of the discipline-fit lift on the displayed confidence
   function scoreAgainst(query) {
     var qt = fitTokens(query);
     if (!qt.length) return { ranked: [], max: 0, margin: 0, toks: 0 };
@@ -278,7 +392,9 @@
   // catalog description. (The full label is still shown in the UI.)
   function courseTitle(label) { var l = label || "", i = l.indexOf(" — "); return i >= 0 ? l.slice(i + 3) : l; }
   function courseText(c) { return courseTitle(c[0]) + " " + (c[1] || ""); }
-  function courseToks(c) { if (!c[3]) c[3] = fitTokens(courseText(c)); return c[3]; }
+  // Memoize the tokenized course text in slot [4] — slot [3] now carries the credit/CDCP flag from the
+  // fitcheck data (see courseCreditFlag), so the token cache must NOT collide with it.
+  function courseToks(c) { if (!c[4]) c[4] = fitTokens(courseText(c)); return c[4]; }
 
   // ═══════════════════════════════════════════════════════════════════════════
   // Browse: reference list + finder
@@ -287,6 +403,10 @@
     if (!suggestHost) return;
     clear(suggestHost);
     if (!/[a-z]/i.test(q || "")) return;
+    // Only the plain-English DESCRIBE case (a multi-word phrase) gets the "Closest matches" helper — a
+    // single keyword is a browse/filter the code list below already handles, so surfacing the top-6 here
+    // too duplicated those rows and broke the "N CIP codes" count (CfC F6: "13 codes" rendered 19 rows).
+    if ((q || "").trim().split(/\s+/).length < 2) return;
     var hits = nonBoiler(scoreAgainst(q).ranked).slice(0, 6);
     if (!hits.length) return;
     suggestHost.appendChild(el("div", { class: "cipx-sug-lead" }, ["Closest matches for “" + q.trim() + "” — open each to confirm against its definition:"]));
@@ -295,7 +415,7 @@
       var crow = el("div", { class: "cipx-sug-crow", role: "button", tabindex: "0" }, [
         caret, el("span", { class: "cipx-code" }, [r.code]),
         el("span", { class: "cipx-sug-ct" }, [r.t]),
-        r.cat ? el("span", { class: catClass(r.cat), title: catTip(r.cat) }, [r.cat]) : null,
+        r.cat ? el("span", { class: catClass(r.cat), title: catTip(r.cat) }, [catLabel(r.cat)]) : null,
       ]);
       var card = el("div", { class: "cipx-sug-card" }, [crow]);
       if (h.matched.length) card.appendChild(el("div", { class: "cipx-sug-why" }, ["matched: " + h.matched.slice(0, 6).join(", ")]));
@@ -332,7 +452,7 @@
       var isOpen = !!st.open[r.code];
       var badges = el("div", { class: "cipx-tags" }, []);
       if (r.act === "New") badges.appendChild(el("span", { class: "cipx-new", title: "New in the 2020 CIP edition" }, ["NEW"]));
-      if (r.cat) badges.appendChild(el("span", { class: catClass(r.cat), title: catTip(r.cat) }, [r.cat]));
+      if (r.cat) badges.appendChild(el("span", { class: catClass(r.cat), title: catTip(r.cat) }, [catLabel(r.cat)]));
       var row = el("div", { class: "cipx-row", role: "button", tabindex: "0", "aria-expanded": isOpen ? "true" : "false" }, [
         el("span", { class: "cipx-caret" }, [isOpen ? "▾" : "▸"]),
         el("span", { class: "cipx-code" }, [r.code]),
@@ -756,7 +876,7 @@
       var caret = el("span", { class: "cipx-caret" }, ["▸"]);
       var crow = el("div", { class: "cipx-cand-row", role: "button", tabindex: "0" }, [
         caret, el("span", { class: "cipx-code" }, [cr.code]),
-        el("span", { class: "cipx-cand-ct" }, [cr.t, cr.cat ? el("span", { class: catClass(cr.cat), title: catTip(cr.cat) }, [cr.cat]) : null, isFocus ? el("span", { class: "cipx-yourpick" }, ["this code"]) : null]),
+        el("span", { class: "cipx-cand-ct" }, [cr.t, cr.cat ? el("span", { class: catClass(cr.cat), title: catTip(cr.cat) }, [catLabel(cr.cat)]) : null, isFocus ? el("span", { class: "cipx-yourpick" }, ["this code"]) : null]),
         el("span", { class: "cipx-cand-rel" }, [meter(h.rel, isFocus ? tier.key : "accent")]),
       ]);
       var card = el("div", { class: "cipx-cand-card" + (isFocus ? " cipx-cand-mine" : "") }, [crow]);
@@ -821,6 +941,28 @@
     // capped below 100 (Sam: nothing should read a false-certain 100%); a full title match alone = 80%.
     function confOf(o) { return Math.round(100 * Math.min(0.95, CONF_TITLE_W * (titleHit(o.r) / ctTotal) + CONF_COV_W * (o.coverage || 0))); }
     var tc = TOPCIP[top] || null, inSet = {};
+    // Discipline-fit: how cleanly this course's TOP (its discipline) maps to a candidate CIP's field,
+    // as the IDF-weighted overlap of the TOP's title with the CIP's TITLE. Constant across the TOP, so
+    // it lifts EVERY course in a clean-mapping discipline uniformly (the Carpentry case). Display-only.
+    var topTtToks = tc ? fitTokens(tc.t || "").filter(function (t) { return !_titleStop[t]; }) : [];
+    if (tc && !topTtToks.length) topTtToks = fitTokens(tc.t || "");   // fall back if the strip left nothing
+    var topTtTotal = 0; for (var tt = 0; tt < topTtToks.length; tt++) topTtTotal += idf(topTtToks[tt]);
+    if (topTtTotal <= 0) topTtTotal = 1;
+    // A TOP that maps to a SINGLE credit CIP is the crosswalk's own unambiguous "this IS the field's code"
+    // (Sam, 2026-07-20: BUSL 10 → the sole 22.0000 Legal Studies for TOP 1401.00 "Law"). Credit it as a
+    // full discipline-fit even when the titles don't lexically overlap ("Law" vs "Legal") — the approved
+    // TOP→CIP crosswalk is the one place TOP is authoritative (§7), so a 1:1 mapping is the strongest
+    // possible field signal. Display-only (dconf); the ⚑ outside-crosswalk flag still surfaces alternates.
+    var creditCrossCodes = tc ? tc.c.filter(function (ct) { var rr = BYCODE[ct[0]]; return rr && !BOILER[ct[0]] && rr.cat !== "Noncredit"; }).map(function (ct) { return ct[0]; }) : [];
+    var soleCreditCode = creditCrossCodes.length === 1 ? creditCrossCodes[0] : null;
+    function fieldSim(r) {
+      if (soleCreditCode && r.code === soleCreditCode) return 1;   // the sole credit crosswalk CIP = the direct field code
+      var h = 0; for (var i = 0; i < topTtToks.length; i++) if (r._tt && r._tt[topTtToks[i]]) h += idf(topTtToks[i]); return h / topTtTotal;
+    }
+    // The DISPLAYED confidence: the raw description/title fit lifted toward certainty by the discipline
+    // fit. raw + DISC_W·fieldSim·(1−raw) — a big lift when the course's own wording is thin but its
+    // discipline maps cleanly, a small lift when raw is already high. Gates keep raw `conf`.
+    function dconfOf(o) { var raw = (o.conf || 0) / 100; return Math.round(100 * Math.min(0.95, raw + DISC_W * fieldSim(o.r) * (1 - raw))); }
     var cands = [], boiler = [];
     if (tc) {
       tc.c.forEach(function (ct) {
@@ -828,7 +970,7 @@
         inSet[ct[0]] = 1;
         var e = byCode[ct[0]];
         var rec = { r: r, prov: ct[1], rel: e ? e.rel : 0, score: e ? e.score : 0, coverage: e ? e.coverage : 0, matched: e ? e.matched : [] };
-        rec.boosted = boosted(rec); rec.conf = confOf(rec);
+        rec.boosted = boosted(rec); rec.conf = confOf(rec); rec.dconf = dconfOf(rec);
         (BOILER[ct[0]] ? boiler : cands).push(rec);
       });
       // Credit-first (a Noncredit CIP must not out-rank a credit one), then TITLE-BOOSTED description-fit,
@@ -857,8 +999,11 @@
     // kills the generic-title flood: for "Independent Study: Biology" every "X Biology" code ties 26.0101,
     // so none surfaces). Boiler codes never surface (boiler expander).
     var bestCandConf = 0; cands.forEach(function (x) { if (x.conf > bestCandConf) bestCandConf = x.conf; });
-    var beyond = res.ranked.filter(function (o) { return !inSet[o.r.code] && !BOILER[o.r.code]; })
-      .map(function (o) { o.boosted = boosted(o); o.conf = confOf(o); return o; })
+    // Only codes that ARE in the crosswalk under some OTHER TOP (inXwalk) — a truly free-range code
+    // (in no TOP's crosswalk) is never surfaced. Each carries its source TOP(s) for the "more-appropriate
+    // TOP" label. This makes "outside THIS course's TOP crosswalk" a crosswalk-constrained alternative.
+    var beyond = res.ranked.filter(function (o) { return !inSet[o.r.code] && !BOILER[o.r.code] && inXwalk(o.r.code); })
+      .map(function (o) { o.boosted = boosted(o); o.conf = confOf(o); o.altTops = altTopsFor(o.r.code); return o; })
       .filter(function (o) { return o.conf >= BEYOND_CONF_MIN && o.conf > bestCandConf; })
       .sort(function (a, b) { return b.boosted - a.boosted; }).slice(0, 3);
     // Work-experience courses stay in their discipline — don't nudge them elsewhere.
@@ -870,15 +1015,17 @@
   // One candidate card: code, title, category, an honest tier + vocab-match meter,
   // the matched terms (the trust lever), provenance, and an expand to its definition.
   function recCandCard(rec, isRec, flat) {
-    // crosswalk candidates carry `conf` (crosswalk-relative); beyond/other entries only rel
-    var pct = rec.conf != null ? rec.conf : rec.rel;
+    // crosswalk candidates carry `dconf` (description-fit lifted by discipline-fit) then `conf`;
+    // beyond/other entries only rel
+    var pct = rec.dconf != null ? rec.dconf : (rec.conf != null ? rec.conf : rec.rel);
     var tier = tierOf(pct), r = rec.r, prov = provLabel(rec.prov);
     var caret = el("span", { class: "cipx-caret" }, ["▸"]);
     var main = el("span", { class: "cipx-rec-main" }, [
       el("span", { class: "cipx-rec-ttl" }, [r.t]),
-      r.cat ? el("span", { class: catClass(r.cat), title: catTip(r.cat) }, [r.cat]) : null,
+      r.cat ? el("span", { class: catClass(r.cat), title: catTip(r.cat) }, [catLabel(r.cat)]) : null,
       isRec ? el("span", { class: "cipx-recbadge" }, ["✓ Recommended"]) : null,
       prov ? el("span", { class: "cipx-provlbl", title: provTip(rec.prov) }, [prov]) : null,
+      (rec.altTops && rec.altTops.length) ? el("span", { class: "cipx-alttop", title: "In the official crosswalk under TOP " + rec.altTops[0].top + (rec.altTops[0].title ? " · " + rec.altTops[0].title : "") + (rec.altTops.length > 1 ? " (+" + (rec.altTops.length - 1) + " more)" : "") + " — your course's TOP may need updating." }, ["↔ TOP " + rec.altTops[0].top]) : null,
     ]);
     var meta = flat ? null : el("span", { class: "cipx-rec-meta" }, [
       el("span", { class: "cipx-tierlbl cipx-tier-" + tier.key }, [tier.label]),
@@ -899,7 +1046,7 @@
     var wrap = el("div", { class: "cipx-rec-list" }, []);
     items.forEach(function (rec) {
       // accept either a candidate rec {r,prov,rel,…} or a ranked entry {r,rel,matched}
-      var norm = rec.prov !== undefined ? rec : { r: rec.r, prov: "", rel: rec.rel, score: rec.score, matched: rec.matched };
+      var norm = rec.prov !== undefined ? rec : { r: rec.r, prov: "", rel: rec.rel, score: rec.score, matched: rec.matched, conf: rec.conf, dconf: rec.dconf, altTops: rec.altTops };
       wrap.appendChild(recCandCard(norm, norm.r.code === recommendedCode, flat));
     });
     return wrap;
@@ -928,10 +1075,10 @@
     var auto = !m.recommended;   // no clear crosswalk winner → open the drawer
     var caret = el("span", { class: "cipx-caret" }, [auto ? "▾" : "▸"]);
     var btn = el("button", { class: "cipx-beyond-btn", type: "button", "aria-expanded": auto ? "true" : "false" }, [
-      caret, el("span", {}, ["⚠ " + m.beyond.length + " strong match" + (m.beyond.length === 1 ? "" : "es") + " outside the crosswalk"]),
+      caret, el("span", {}, ["↔ " + m.beyond.length + " crosswalk code" + (m.beyond.length === 1 ? "" : "s") + " under a more-appropriate TOP"]),
     ]);
     var body = el("div", { class: "cipx-beyond-body" }, []);
-    var note = el("div", { class: "cipx-beyond-note" }, ["These CIP codes fit this course's wording well but aren't in the official crosswalk for TOP " + (m.top || "—") + (m.topTitle ? " · " + m.topTitle : "") + ". The course's TOP code may be out of date, or the crosswalk may not cover it yet — worth checking against their definitions."]);
+    var note = el("div", { class: "cipx-beyond-note" }, ["These CIP codes fit this course's wording better than the options above — and they ARE in the official crosswalk, just under a different TOP than the one on this course (TOP " + (m.top || "—") + (m.topTitle ? " · " + m.topTitle : "") + "). TOP codes are often out of date, so this course's TOP may need updating. Each is labeled with the TOP it belongs to; confirm against its definition before entering it in COCI."]);
     var built = false;
     function build() { if (built) return; built = true; body.appendChild(note); body.appendChild(recCardStack(m.beyond, null, false)); }
     body.style.display = auto ? "block" : "none";
@@ -974,17 +1121,21 @@
     }
 
     if (!m.hasCross) {
-      host.appendChild(el("div", { class: "cipx-rec-note" }, ["The official crosswalk has no CIP mapping for TOP ", el("span", { class: "cipx-code" }, [m.top || "—"]), " yet. Here are the CIP codes whose definitions best match this course — check each against its definition:"]));
-      host.appendChild(recCardStack(nonBoiler(m.res.ranked).slice(0, 6), null, false));
+      var altsNo = xwalkAlts(m.res.ranked, 6);
+      host.appendChild(el("div", { class: "cipx-rec-note" }, ["The official crosswalk has no CIP mapping for TOP ", el("span", { class: "cipx-code" }, [m.top || "—"]), " — the course's TOP may be out of date. Here are crosswalk CIP codes (from other TOPs) whose definitions best match this course, each labeled with the TOP it belongs to. Verify the course's TOP, then confirm against the definition:"]));
+      if (altsNo.length) host.appendChild(recCardStack(altsNo, null, false));
+      else host.appendChild(el("div", { class: "cipx-fitmsg" }, ["No crosswalk CIP matches this course's description closely enough to suggest — check the course's TOP with your curriculum team."]));
       host.appendChild(recFoot());
       return;
     }
 
     if (!m.cands.length) {
-      // the crosswalk lists only generic noncredit codes for this TOP — fall back
-      // to the best description matches (like the no-crosswalk case).
-      host.appendChild(el("div", { class: "cipx-rec-note" }, ["The official crosswalk lists only generic noncredit codes for TOP ", el("span", { class: "cipx-code" }, [m.top]), " — nothing course-specific. The CIP codes whose definitions best match this course are below; check each against its definition:"]));
-      host.appendChild(recCardStack(nonBoiler(m.res.ranked).slice(0, 6), null, false));
+      // the crosswalk lists only generic noncredit codes for this TOP — offer crosswalk CIPs from
+      // OTHER (more-appropriate) TOPs, never free-range codes.
+      var altsGen = xwalkAlts(m.res.ranked, 6);
+      host.appendChild(el("div", { class: "cipx-rec-note" }, ["The official crosswalk lists only generic noncredit codes for TOP ", el("span", { class: "cipx-code" }, [m.top]), " — nothing course-specific. Here are crosswalk CIP codes from other TOPs whose definitions best match this course (each labeled with its TOP); the course's TOP may need updating:"]));
+      if (altsGen.length) host.appendChild(recCardStack(altsGen, null, false));
+      else host.appendChild(el("div", { class: "cipx-fitmsg" }, ["No course-specific crosswalk CIP matches closely — verify the course's TOP, or use a generic code below."]));
       if (m.boiler.length) host.appendChild(boilerExpander(m.boiler));
       host.appendChild(recFoot());
       return;
@@ -994,6 +1145,13 @@
       var topC = m.cands[0];
       host.appendChild(el("div", { class: "cipx-rec-lead cipx-rec-lead-ok" }, [
         el("b", {}, [topC.r.code + " " + topC.r.t]), " looks like the strongest fit — the official crosswalk lists it for TOP " + m.top + ", and the course description points to it too. Confirm it against the definition, then enter it in COCI.",
+      ]));
+    } else if (m.cands[0] && (m.cands[0].conf || 0) >= 75) {
+      // A strong top candidate that just isn't a runaway winner (close margin / relative gate) — don't
+      // call it "no front-runner" while its card reads STRONG FIT (CfC F7). Name it, note it's close.
+      var topS = m.cands[0];
+      host.appendChild(el("div", { class: "cipx-rec-lead" }, [
+        el("b", {}, [topS.r.code + " " + topS.r.t]), " fits this course's description best of the codes the crosswalk maps from TOP " + m.top + " — though it's a close call with the next few. Confirm it against the definition, or compare the options below.",
       ]));
     } else {
       host.appendChild(el("div", { class: "cipx-rec-lead" }, ["Here are the CIP codes the official crosswalk maps from TOP ", el("span", { class: "cipx-code" }, [m.top]), ", ranked by how well each fits this course. No single clear front-runner — compare the top few against their definitions."]));
@@ -1041,7 +1199,7 @@
   }
 
   // ═══════════════════════════════════════════════════════════════════════════
-  // "Review my catalog" — the whole-catalog triage sheet (Phase 2)
+  // "Review my courses" — the whole-catalog triage sheet (Phase 2)
   //
   // A faculty member has 800–1,500 courses. Doing them one at a time is a slog, so
   // this shows a whole DEPARTMENT at once: each course → its suggested CIP (the
@@ -1086,6 +1244,39 @@
     if (i >= 0) arr.splice(i, 1); else arr.push(cip);
     revSetCips(label, arr);
   }
+  // ── CIP-count rule by course credit type (COCI, Raul, 2026-07-28) ──────────────
+  // A CREDIT course takes exactly 1 CIP; a NONCREDIT course takes 1 UNLESS it is CDCP
+  // (Career Development & College Preparation — the enhanced-funding "Special Populations"
+  // categories), which may take up to 2. CDCP is a COURSE-level property (from the course's
+  // own CreditType, NOT its program's CDCP tag): the fitcheck tuple's 4th element carries it —
+  // "C" credit · "D" noncredit-CDCP · "N" noncredit-non-CDCP · absent = unknown (cap 1, safe).
+  function courseCreditFlag(r) { return (r && r.c && r.c[3]) || ""; }
+  function courseIsCdcp(r) { return courseCreditFlag(r) === "D"; }
+  function courseCipCap(r) { return courseIsCdcp(r) ? 2 : 1; }
+  function creditLabel(f) { return f === "D" ? "Noncredit · CDCP" : f === "N" ? "Noncredit" : f === "C" ? "Credit course" : ""; }
+  function capReason(r) {
+    var f = courseCreditFlag(r);
+    if (f === "D") return "Noncredit CDCP course — up to 2 CIP codes.";
+    if (f === "N") return "Noncredit course (not CDCP) — one CIP code.";
+    if (f === "C") return "Credit course — one CIP code.";
+    return "One CIP code (credit type not on file).";
+  }
+  function canAddCip(r, dec) { return revCips(dec || revDecisions(), r.label).length < courseCipCap(r); }
+  // ── CTE / Non-CTE use choice for a "Both"-category CIP (Jenni, 2026-07-28) ──────
+  // When an assigned CIP is certified BOTH CTE and non-CTE, the college must record which use
+  // applies for this course. Stored parallel to the assignment, keyed "<label>|<code>".
+  function needsCteChoice(code) { var rr = BYCODE[code]; return !!(rr && rr.cat === "Both"); }
+  function revCteStore() {
+    if (!st.college) return {};
+    try { return JSON.parse(localStorage.getItem("cipx_revcte_" + st.college) || "{}") || {}; } catch (e) { return {}; }
+  }
+  function revCteChoice(label, code) { return revCteStore()[label + "|" + code] || ""; }   // "cte" | "noncte" | ""
+  function revSetCteChoice(label, code, choice) {
+    if (!st.college) return;
+    var s = revCteStore(), k = label + "|" + code;
+    if (choice) s[k] = choice; else delete s[k];
+    try { localStorage.setItem("cipx_revcte_" + st.college, JSON.stringify(s)); } catch (e) {}
+  }
   // VALIDATED is separate from having a code ASSIGNED (Sam, 2026-07-18): a course validated (✓) is one the
   // faculty individually OK'd (accept a box, OK the anchor in the + flow, or Validate-all). A course that
   // only received a bulk-APPLIED code from a sibling has the code but stays in Review (?) so it can still
@@ -1127,12 +1318,35 @@
     // Sam's CARPT 224 "Materials of Construction": 8/15 colleges file it under Architecture, but
     // this is a Carpentry course (subject CARPT + TOP 0952.10 both agree) — the generic title
     // pooled across construction disciplines must not push it out of Carpentry (→ keep 46.0201).
+    // Strongest own description/title fit the engine surfaced (crosswalk candidates + outside "worth a
+    // look" matches), by absolute confidence — the lever for the strong-own-fit veto below.
+    var confBy = {};
+    (m.cands || []).forEach(function (o) { confBy[o.r.code] = o.conf || 0; });
+    (m.beyond || []).forEach(function (o) { if ((o.conf || 0) > (confBy[o.r.code] || 0)) confBy[o.r.code] = o.conf || 0; });
+    var ownBest = null;
+    (m.cands || []).concat(m.beyond || []).forEach(function (o) { if (!ownBest || (o.conf || 0) > (ownBest.conf || 0)) ownBest = o; });
+    var ownFitVeto = false, peerAlt = null;
     if (cp) {
       var consAgrees = crosswalk && cp.code === crosswalk.code;
       if (cp.cons.scoped || consAgrees) {
-        sug = cp.best.r; sugKind = "consensus";
-        suggestChange = !!(crosswalk && sug && crosswalk.code !== sug.code);
-        status = suggestChange ? "suggest" : "clear";
+        // This consensus WOULD override the course's own discipline. Strong-own-fit veto (Sam, 2026-07-20,
+        // from the CfC live-test F1–F5): don't let it steamroll a plausible own description/title fit
+        // (≥ OWN_FIT_MIN) that points to a DIFFERENT code and clearly beats the peer pick's own fit
+        // (by ≥ OWN_VETO_MARGIN — the peer pick is a near-zero fit). CCSF "Intermediate Voice" → own-fit
+        // Voice & Opera must not be overridden to peers' Musical Theatre; ART "Drawing" not to Fine/Studio
+        // Arts. Margin-gated, so solid peer corrections (NURS→51.3801, ESL→16.1701 — where peers AND
+        // description agree) are untouched. Keep Review + keep cp so the expand still notes how peers code
+        // it — the peer consensus is demoted to a note, not deciding.
+        var peerConf = confBy[cp.best.r.code] || 0;
+        if (!consAgrees && ownBest && (ownBest.conf || 0) >= OWN_FIT_MIN && ownBest.r.code !== cp.best.r.code
+            && ((ownBest.conf || 0) - peerConf) >= OWN_VETO_MARGIN) {
+          sug = ownBest.r; sugKind = "description"; status = "review"; suggestChange = false;
+          ownFitVeto = true; peerAlt = cp.best.r;
+        } else {
+          sug = cp.best.r; sugKind = "consensus";
+          suggestChange = !!(crosswalk && sug && crosswalk.code !== sug.code);
+          status = suggestChange ? "suggest" : "clear";
+        }
       } else {
         cp = null;   // cross-discipline pool that disagrees → discard, keep the course's discipline
       }
@@ -1154,9 +1368,11 @@
     // "worth a look" hint shown below (beyondOk), NEVER auto-promoted to the headline box — even when it
     // out-scores the crosswalk pick lexically (BIOL 10's Ecology must not displace 26.0101 Biology). The
     // headline is always the crosswalk/consensus suggestion; the faculty pick the outside code if it fits.
-    var sugCand = sug ? m.cands.filter(function (x) { return x.r.code === sug.code; })[0] : null;
+    // sugConf spans crosswalk candidates AND outside "worth a look" matches, so a description-headline
+    // (the veto case) keeps its real confidence and effectiveSug won't dept-default-swap it away.
     return { c: c, label: label, subj: subj, top: ownTop, topTitle: m.topTitle,
-      sug: sug, sugKind: sugKind, sugConf: sugCand ? sugCand.conf : 0, status: status, suggestChange: suggestChange, crosswalk: crosswalk,
+      sug: sug, sugKind: sugKind, sugConf: (sug ? confBy[sug.code] : 0) || 0, status: status, suggestChange: suggestChange, crosswalk: crosswalk,
+      ownFitVeto: ownFitVeto, peerAlt: peerAlt,
       nCand: m.cands.length, disagree: beyondOk.length > 0, beyondOk: beyondOk, cons: cp, m: m };
   }
 
@@ -1247,6 +1463,427 @@
     tiles.appendChild(cociSyncTile());   // the destination tile (In Development)
     revOverviewHost.appendChild(tiles);
     revOverviewHost.appendChild(el("div", { class: "cipx-rev-ovnote" }, ["Pick a subject above to start reviewing. These are the tool's classifications — your validated progress fills in as you confirm."]));
+  }
+
+  // ── Programs review (Sam, 2026-07-28) ─────────────────────────────────────────
+  // Colleges have already assigned a CIP to each program in COCI (coci_programs_data.js row[4]), coded
+  // under the FIRST-GEN crosswalk. The current TOP→CIP crosswalk is authoritative, so a program whose
+  // assigned CIP isn't in it (for the program's TOP) is flagged "needs revision" — the interim signal
+  // until Sam supplies the old crosswalk, when we can flag the exact old→new differences.
+  function loadPrograms() {
+    if (PROGRAMS || PROGRAMS_LOADING) return;
+    if (typeof window !== "undefined" && window.CPL_COCI_PROGRAMS) { PROGRAMS = window.CPL_COCI_PROGRAMS; return; }
+    PROGRAMS_LOADING = true;
+    var done = function () { PROGRAMS = (typeof window !== "undefined" && window.CPL_COCI_PROGRAMS) || null; PROGRAMS_LOADING = false; if (st.scope === "programs" && st.mode === "review") rebuildShell(); };
+    if (typeof window !== "undefined" && window.CPL_TABS && window.CPL_TABS.loadScript) window.CPL_TABS.loadScript("coci_programs_data.js", "CPL_COCI_PROGRAMS", done);
+    else PROGRAMS_LOADING = false;
+  }
+  function prettyCollege(name) { return String(name || "").toLowerCase().replace(/\b([a-z])/g, function (m) { return m.toUpperCase(); }); }
+  function progNeedsRevision(top, cip) {
+    var tc = TOPCIP[top];
+    if (!tc || !tc.c || !tc.c.length || !cip) return false;   // no crosswalk for this TOP → can't judge
+    for (var i = 0; i < tc.c.length; i++) if (tc.c[i][0] === cip) return false;
+    return true;
+  }
+  function progKey() { return st.progCollege != null ? ("cipx_prog_" + st.progCollege) : null; }
+  function progStore() { var k = progKey(); if (!k) return {}; try { return JSON.parse(localStorage.getItem(k) || "{}") || {}; } catch (e) { return {}; } }
+  function progEntry(ctrl) { return progStore()[ctrl] || {}; }
+  function progSetField(ctrl, field, val) { var d = progStore(), e = d[ctrl] || {}; if (val) e[field] = val; else delete e[field]; if (Object.keys(e).length) d[ctrl] = e; else delete d[ctrl]; var k = progKey(); if (k) try { localStorage.setItem(k, JSON.stringify(d)); } catch (ex) {} }
+  function progCip(ctrl, assigned) { return progEntry(ctrl).cip || assigned || ""; }   // a curator revision overrides the COCI-assigned CIP
+  function progCollegeRows() { return (PROGRAMS && st.progCollege != null) ? PROGRAMS.rows.filter(function (r) { return r[0] === st.progCollege; }) : []; }
+
+  // ── Every approved CIP for a TOP, on every program row (Jenni + Raul, 2026-08-11) ───────────────
+  // 381 of 419 TOPs (91%) map to MORE THAN ONE CIP — median 5 — yet the revise picker only existed
+  // inside the `needsRev` branch, so a program whose assigned CIP was merely *valid* had no way to
+  // see the alternatives at all. Child Development is the case Jenni caught: TOP 1305.00 approves 17
+  // CIPs, 600 statewide programs sit on it, and the 205 assigned 19.0709 (CTE) saw exactly one code —
+  // with no route to 19.0706 (Non-CTE), which is where many colleges must land as the program's
+  // designation changes. The option list is now unconditional; the flag only decides whether it
+  // opens by default.
+  //
+  // Peer usage is counted from the committed COCI program export, NOT from the Chancellor's Office's
+  // own "Count of Colleges" column — the two are close but not identical (68 vs 67 for 1305.00 →
+  // 19.0709), so the label names the source and its date rather than implying it reproduces the CO's
+  // table. Distinct COLLEGES, not programs: a college with three Child Development certificates on
+  // one CIP counts once, which is what "how many colleges use this code" means.
+  function progUsage(top) {
+    if (!PROGRAMS || !top) return {};
+    if (!PROGRAMS._usage) PROGRAMS._usage = {};
+    if (PROGRAMS._usage[top]) return PROGRAMS._usage[top];
+    var seen = {}, out = {};
+    PROGRAMS.rows.forEach(function (r) {
+      if (r[3] !== top || !r[4]) return;
+      var k = r[4] + "|" + r[0];
+      if (seen[k]) return;
+      seen[k] = 1;
+      out[r[4]] = (out[r[4]] || 0) + 1;
+    });
+    PROGRAMS._usage[top] = out;
+    return out;
+  }
+  // Name the extract the counts come from. Raul and Jenni read this beside the Chancellor's Office's
+  // own TOP↔CIP table, whose "Count of Colleges" column runs a little lower (67 vs our 68 for
+  // 1305.00 → 19.0709) — a different vintage, not a different question. Dating our column is what
+  // lets someone reconcile the two instead of doubting both.
+  function progExtractDate() {
+    var src = (PROGRAMS && PROGRAMS._source) || "";
+    var m = src.match(/(\d{4})-(\d{2})-(\d{2})/);
+    if (!m) return "";
+    var MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    return " of " + parseInt(m[3], 10) + " " + MON[parseInt(m[2], 10) - 1] + " " + m[1];
+  }
+  // The crosswalk's candidate list for a TOP, ascending by code — the same order the Chancellor's
+  // Office's TOP↔CIP table uses, so a curator can read the two side by side.
+  function progOptions(top) {
+    var tc = TOPCIP[top];
+    return ((tc && tc.c) || []).slice().sort(function (a, b) { return a[0] < b[0] ? -1 : (a[0] > b[0] ? 1 : 0); });
+  }
+  function progOptionList(ctrl, top, assigned, chosen, repaint) {
+    var opts = progOptions(top), use = progUsage(top), tc = TOPCIP[top];
+    var box = el("div", { class: "cipx-prog-opts" }, []);
+    box.appendChild(el("div", { class: "cipx-prog-optshdr" }, [
+      "Every CIP code the current crosswalk approves for ", el("b", {}, ["TOP " + top]), tc && tc.t ? " · " + tc.t : "",
+      ". Pick the one your college will use — you can change it as often as you like. ",
+      el("span", { class: "cipx-prog-optsrc-note" }, ["College counts are colleges with a program on that pairing in the COCI program export" + progExtractDate() + "."]),
+    ]));
+    opts.forEach(function (ct) {
+      var code = ct[0], rr = BYCODE[code], on = code === chosen, n = use[code] || 0;
+      var b = el("button", {
+        class: "cipx-prog-opt" + (on ? " cipx-prog-opt-on" : ""), type: "button", "aria-pressed": on ? "true" : "false",
+        title: on ? "This is the code this program is set to" : "Use " + code + " for this program",
+      }, [
+        el("span", { class: "cipx-prog-optmark", "aria-hidden": "true" }, [on ? "●" : "○"]),
+        el("span", { class: "cipx-code" }, [code]),
+        el("span", { class: "cipx-prog-optt" }, [rr ? rr.t : "(not in the CIP catalog)"]),
+      ]);
+      if (rr && rr.cat) b.appendChild(el("span", { class: catClass(rr.cat), title: catTip(rr.cat) }, [catLabel(rr.cat)]));
+      if (ct[1] === "f") b.appendChild(el("span", { class: "cipx-prog-optsrc", title: "This pairing was submitted by the field rather than published in the Chancellor's Office crosswalk" }, ["field-submitted"]));
+      b.appendChild(el("span", { class: "cipx-prog-optuse" + (n ? "" : " cipx-prog-optuse-none") }, [n ? (n + (n === 1 ? " college" : " colleges")) : "no colleges yet"]));
+      if (code === assigned) b.appendChild(el("span", { class: "cipx-prog-optasg", title: "The code your college has in COCI today" }, ["in COCI"]));
+      b.onclick = function () {
+        // Storing the COCI-assigned code as a "revision" would be a lie in the export, so selecting it
+        // clears the override instead of recording a no-op change.
+        progSetField(ctrl, "cip", code === assigned ? "" : code);
+        if (repaint) repaint();
+      };
+      box.appendChild(b);
+    });
+    return box;
+  }
+
+  // ── Multi-select pickers for the Programs toolbar (Sam, 2026-08-14) ──────────────────────────
+  // A tiny self-contained control: a button showing the current selection, and a panel of checkable
+  // options with a find-box. No dependency on the browse-side filter machinery — that one is keyed to
+  // st.fam/st.cat and drives a different list.
+  //
+  // `selected` is mutated IN PLACE so the caller's st.progX array stays the single source of truth;
+  // rebuilding the toolbar (a college switch) therefore cannot resurrect a stale copy.
+  function uniqSorted(vals) {
+    var seen = {}, out = [];
+    (vals || []).forEach(function (v) { var k = String(v); if (!seen[k]) { seen[k] = 1; out.push(v); } });
+    // Blank sorts last — "(no award on file)" / "No CIP assigned yet" is a residual bucket, not a heading.
+    return out.sort(function (a, b) {
+      if (!a !== !b) return a ? -1 : 1;
+      return String(a).toLowerCase() < String(b).toLowerCase() ? -1 : 1;
+    });
+  }
+  function multiPicker(o) {
+    var wrap = el("div", { class: "cipx-mpick" }, []);
+    var btn = el("button", { class: "cipx-mpick-btn", type: "button", "aria-haspopup": "true", "aria-expanded": "false", title: o.title || "" }, []);
+    var panel = el("div", { class: "cipx-mpick-panel", hidden: "hidden" }, []);
+    var open = false;
+
+    function summaryText() {
+      var n = o.selected.length;
+      if (!n) return o.allLabel;
+      if (n === 1) {
+        var hit = o.options.filter(function (p) { return String(p[0]) === String(o.selected[0]); })[0];
+        var lbl = hit ? String(hit[1]) : String(o.selected[0]);
+        return lbl.length > 34 ? lbl.slice(0, 32).trim() + "…" : lbl;
+      }
+      return n + " selected";
+    }
+    function paintBtn() {
+      clear(btn);
+      btn.appendChild(el("span", { class: "cipx-mpick-lbl" }, [o.label]));
+      btn.appendChild(el("span", { class: "cipx-mpick-val" }, [summaryText()]));
+      btn.appendChild(el("span", { class: "cipx-mpick-caret", "aria-hidden": "true" }, [open ? "▾" : "▸"]));
+      wrap.classList.toggle("cipx-mpick-active", o.selected.length > 0);
+    }
+    function paintPanel(filterText) {
+      clear(panel);
+      var head = el("div", { class: "cipx-mpick-head" }, []);
+      var find = el("input", { class: "cipx-mpick-find", type: "search", "aria-label": "Find in " + o.label, placeholder: "Find…" });
+      find.value = filterText || "";
+      find.oninput = function () { paintPanel(find.value); var f = panel.querySelector(".cipx-mpick-find"); if (f) { f.focus(); f.setSelectionRange(f.value.length, f.value.length); } };
+      head.appendChild(find);
+      var clr = el("button", { class: "cipx-mpick-clear", type: "button" }, ["Clear"]);
+      clr.onclick = function () { o.selected.length = 0; paintBtn(); paintPanel(find.value); o.onChange(); };
+      head.appendChild(clr);
+      panel.appendChild(head);
+
+      var needle = String(filterText || "").toLowerCase().trim();
+      var list = el("div", { class: "cipx-mpick-list" }, []);
+      var shown = 0;
+      o.options.forEach(function (p) {
+        var val = String(p[0]), lbl = String(p[1]);
+        if (needle && lbl.toLowerCase().indexOf(needle) < 0) return;
+        shown++;
+        var on = o.selected.indexOf(val) >= 0;
+        var row = el("label", { class: "cipx-mpick-opt" + (on ? " cipx-mpick-opt-on" : "") }, []);
+        var cb = el("input", { type: "checkbox" }); cb.checked = on;
+        cb.onchange = function () {
+          var i = o.selected.indexOf(val);
+          if (cb.checked) { if (i < 0) o.selected.push(val); } else if (i >= 0) o.selected.splice(i, 1);
+          row.classList.toggle("cipx-mpick-opt-on", cb.checked);
+          paintBtn(); o.onChange();
+        };
+        row.appendChild(cb);
+        row.appendChild(el("span", { class: "cipx-mpick-optt", title: lbl }, [lbl]));
+        list.appendChild(row);
+      });
+      if (!shown) list.appendChild(el("div", { class: "cipx-mpick-none" }, ["Nothing matches “" + filterText + "”."]));
+      panel.appendChild(list);
+    }
+    // Click-away closes. The document listener is bound only WHILE a panel is open and removed on
+    // close, so it never outlives the picker: rebuildShell() re-renders this toolbar on every college
+    // switch, and a listener left bound for the lifetime of the page would accumulate one dead
+    // closure per picker per rebuild. Harmless to behaviour (a detached wrap stops matching), but it
+    // is still a leak, and "harmless today" is how leaks get to stay.
+    function onDocClick(e) { if (wrap.contains(e.target)) return; setOpen(false); }
+    function setOpen(v) {
+      if (v === open) return;
+      open = v;
+      panel.hidden = !v;
+      btn.setAttribute("aria-expanded", v ? "true" : "false");
+      paintBtn();
+      if (v) {
+        paintPanel("");
+        var f = panel.querySelector(".cipx-mpick-find"); if (f) f.focus();
+        document.addEventListener("click", onDocClick);
+      } else {
+        document.removeEventListener("click", onDocClick);
+      }
+    }
+    btn.onclick = function (e) { e.stopPropagation(); setOpen(!open); };
+    wrap.addEventListener("keydown", function (e) { if (e.key === "Escape" && open) { setOpen(false); btn.focus(); } });
+    paintBtn();
+    wrap.appendChild(btn); wrap.appendChild(panel);
+    return wrap;
+  }
+
+  function programsView() {
+    var host = el("div", { class: "cipx-prog" }, []);
+    host.appendChild(el("div", { class: "cipx-prog-intro" }, [
+      "Review the CIP code your college assigned each ", el("b", {}, ["program"]), " in COCI. These were coded under the first-generation crosswalk; the current ",
+      el("b", {}, ["TOP → CIP"]), " crosswalk is authoritative, so a program whose CIP isn't in it is flagged ",
+      el("span", { class: "cipx-prog-flagword" }, ["needs revision"]), ". Choices stay in your browser — nothing reaches COCI until your college enters it there.",
+    ]));
+    if (!PROGRAMS) { loadPrograms(); host.appendChild(el("div", { class: "cipx-fitmsg" }, ["Loading your programs…"])); return host; }
+    if (!PROGRAMS._counts) { var cc = {}; PROGRAMS.rows.forEach(function (r) { cc[r[0]] = (cc[r[0]] || 0) + 1; }); PROGRAMS._counts = cc; }
+    var bar = el("div", { class: "cipx-collegebar" }, [el("span", { class: "cipx-college-l" }, [el("span", {}, ["Your college"])])]);
+    var sel = el("select", { class: "cipx-college-sel", "aria-label": "Your college" }, [el("option", { value: "" }, ["Choose your college…"])]);
+    PROGRAMS.colleges.forEach(function (name, i) { sel.appendChild(el("option", { value: String(i) }, [prettyCollege(name) + "  ·  " + (PROGRAMS._counts[i] || 0) + " programs"])); });
+    if (st.progCollege != null) sel.value = String(st.progCollege);
+    // Every picker's options are drawn from THIS college's rows, so a selection cannot survive a
+    // college switch — a title from the old college would filter the new one down to nothing and
+    // look like an empty catalog. Clear all three (in place — same arrays the pickers hold).
+    sel.onchange = function () {
+      st.progCollege = sel.value === "" ? null : parseInt(sel.value, 10);
+      st.progTitles.length = 0; st.progAwards.length = 0; st.progSectors.length = 0;
+      rebuildShell();
+    };
+    bar.appendChild(sel);
+    host.appendChild(bar);
+    if (st.progCollege == null) { host.appendChild(el("div", { class: "cipx-prog-nudge" }, ["Pick your college to review its programs' CIP codes."])); return host; }
+
+    var rows = progCollegeRows();
+    var summary = el("div", { class: "cipx-prog-summary" }, []);
+    var tools = el("div", { class: "cipx-prog-tools" }, []);
+
+    // ── The three pickers come FIRST, keyword search last (Sam, 2026-08-14) ──────────────────────
+    // "We want users to use this first for simplicity." A college arrives not knowing what to type;
+    // the title list is the affordance that needs no vocabulary, and Sam's point is that 284 entries
+    // is a FEATURE — reading your own program titles refreshes your memory of what you own. So the
+    // title picker is deliberately unabridged (it has its own find-box for long lists) and sits
+    // left of the keyword box rather than replacing it.
+    tools.appendChild(multiPicker({
+      label: "Program", allLabel: "All programs",
+      title: "Pick one or more of your own program titles",
+      options: uniqSorted(rows.map(function (r) { return r[2]; })).map(function (t) { return [t, t]; }),
+      selected: st.progTitles, onChange: repaintProgList,
+    }));
+    tools.appendChild(multiPicker({
+      label: "Award type", allLabel: "All award types",
+      title: "Filter by the award COCI records for each program",
+      options: uniqSorted(rows.map(function (r) { return PROGRAMS.awards[r[5]] || ""; }))
+        .map(function (a) { return [a, a || "(no award on file)"]; }),
+      selected: st.progAwards, onChange: repaintProgList,
+    }));
+    tools.appendChild(multiPicker({
+      label: "CIP Sector", allLabel: "All CIP sectors",
+      title: "Filter by the two-digit CIP sector of each program's assigned code",
+      options: uniqSorted(rows.map(function (r) { return (progCip(r[1], r[4]) || "").slice(0, 2); }))
+        .map(function (s) { return [s, s ? (s + " · " + (FAMS[s] || ("CIP sector " + s))) : "No CIP assigned yet"]; }),
+      selected: st.progSectors, onChange: repaintProgList,
+    }));
+
+    var q = el("input", { class: "cipx-search cipx-prog-search", type: "search", "aria-label": "Search programs", placeholder: "…or search by title, CIP, or TOP" });
+    q.value = st.progQ || "";
+    var _t; q.oninput = function () { var v = q.value; clearTimeout(_t); _t = setTimeout(function () { st.progQ = v.toLowerCase().trim(); repaintProgList(); }, 130); };
+    tools.appendChild(q);
+    var flagTog = el("label", { class: "cipx-prog-flagtog", title: "Show only programs whose assigned CIP isn't in the current crosswalk" }, []);
+    var fcb = el("input", { type: "checkbox" }); fcb.checked = !!st.progFlagOnly;
+    fcb.onchange = function () { st.progFlagOnly = fcb.checked; repaintProgList(); };
+    var flagTogTxt = document.createTextNode(" Needs revision only");
+    flagTog.appendChild(fcb); flagTog.appendChild(flagTogTxt);
+    tools.appendChild(flagTog);
+    host.appendChild(tools);
+    host.appendChild(summary);
+    var listHostP = el("div", { class: "cipx-prog-list" }, []);
+    host.appendChild(listHostP);
+    function repaintProgList() {
+      var flagged = rows.filter(function (r) { return progNeedsRevision(r[3], progCip(r[1], r[4])); });
+      var noCip = rows.filter(function (r) { return !progCip(r[1], r[4]); });
+      clear(summary);
+      summary.appendChild(document.createTextNode(rows.length.toLocaleString() + " programs · "));
+      summary.appendChild(el("b", { class: flagged.length ? "cipx-prog-flagword" : "" }, [flagged.length.toLocaleString() + " need revision"]));
+      summary.appendChild(document.createTextNode(" · " + noCip.length.toLocaleString() + " with no CIP yet."));
+      flagTogTxt.textContent = " Needs revision only (" + flagged.length + ")";
+      clear(listHostP);
+      var shown = rows.filter(function (r) {
+        if (st.progFlagOnly && !progNeedsRevision(r[3], progCip(r[1], r[4]))) return false;
+        // Each picker is AND-ed with the others and OR-ed within itself — an empty picker is "no
+        // opinion", never "match nothing", so opening one and closing it again cannot blank the list.
+        if (st.progTitles.length && st.progTitles.indexOf(r[2]) < 0) return false;
+        if (st.progAwards.length && st.progAwards.indexOf(PROGRAMS.awards[r[5]] || "") < 0) return false;
+        // Sector keys off the CHOSEN cip (a curator revision moves the row between sectors, and the
+        // headers it is filtering against are built from the same value).
+        if (st.progSectors.length && st.progSectors.indexOf((progCip(r[1], r[4]) || "").slice(0, 2)) < 0) return false;
+        if (st.progQ) { var hay = (r[2] + " " + (progCip(r[1], r[4]) || "") + " " + r[3] + " " + (PROGRAMS.awards[r[5]] || "")).toLowerCase(); if (hay.indexOf(st.progQ) < 0) return false; }
+        return true;
+      });
+      listHostP.appendChild(el("div", { class: "cipx-prog-showing" }, ["Showing " + shown.length.toLocaleString() + (shown.length === 1 ? " program" : " programs") + (st.progFlagOnly ? " needing revision" : "") + " — grouped by CIP sector, ascending by code."]));
+      // Group by 2-digit CIP sector, ascending; sort within each sector ascending by the full CIP code;
+      // programs with no CIP assigned fall in a final "No CIP assigned" group (Sam, 2026-07-28).
+      var groups = {};
+      shown.forEach(function (r) { var c = progCip(r[1], r[4]) || ""; var sec = c ? c.slice(0, 2) : ""; (groups[sec] = groups[sec] || []).push(r); });
+      var secs = Object.keys(groups).filter(function (s) { return s !== ""; }).sort();
+      if (groups[""]) secs.push("");   // no-CIP group last
+      var shownCount = 0;
+      secs.forEach(function (sec) {
+        if (shownCount >= 400) return;   // budget spent — emit NO header for a section that would render 0 rows under it
+        var g = groups[sec].slice().sort(function (a, b) {
+          var ca = progCip(a[1], a[4]) || "", cb = progCip(b[1], b[4]) || "";
+          if (ca !== cb) return ca < cb ? -1 : 1;
+          return (a[2] || "").toLowerCase() < (b[2] || "").toLowerCase() ? -1 : 1;
+        });
+        // Name the grouping (Sam + Jenni, 2026-08-14). A bare "01" beside a long title read as part of
+        // the title; the header never said what the two-digit number WAS. "CIP Sector" is Sam's word
+        // (the 2-digit level) — keep it in step with anything that renames the grouping.
+        listHostP.appendChild(el("div", { class: "cipx-prog-sector" + (sec ? "" : " cipx-prog-sector-nocip"), role: "heading", "aria-level": "3" }, [
+          sec ? el("span", { class: "cipx-prog-sector-lbl" }, ["CIP Sector"]) : null,
+          el("span", { class: "cipx-prog-sector-code" }, [sec || "—"]),
+          el("span", { class: "cipx-prog-sector-t" }, [sec ? (FAMS[sec] || ("CIP sector " + sec)) : "No CIP assigned yet"]),
+          el("span", { class: "cipx-prog-sector-n" }, [g.length.toLocaleString() + (g.length === 1 ? " program" : " programs")]),
+        ]));
+        for (var i = 0; i < g.length && shownCount < 400; i++) {
+          listHostP.appendChild(programRow(g[i], repaintProgList)); shownCount++;
+        }
+      });
+      if (shownCount < shown.length) listHostP.appendChild(el("div", { class: "cipx-fitmsg" }, ["Showing the first 400 — refine your search to see the rest."]));
+    }
+    repaintProgList();
+    return host;
+  }
+
+  function programRow(r, repaint) {
+    var ctrl = r[1], title = r[2], top = r[3], assigned = r[4], award = PROGRAMS.awards[r[5]] || "", cte = r[9] === 1;
+    var chosen = progCip(ctrl, assigned);
+    var needsRev = progNeedsRevision(top, chosen);
+    var cipRow = BYCODE[chosen];
+    var row = el("div", { class: "cipx-prog-item" + (needsRev ? " cipx-prog-item-flag" : "") }, []);
+    var l1 = el("div", { class: "cipx-prog-l1" }, [el("span", { class: "cipx-prog-title" }, [title])]);
+    if (award) l1.appendChild(el("span", { class: "cipx-prog-award", title: award }, [award.length > 40 ? award.slice(0, 38).trim() + "…" : award]));
+    if (cte) l1.appendChild(el("span", { class: catClass("CTE"), title: "CTE program (GOAL: Career Technical Education)" }, ["CTE"]));
+    row.appendChild(l1);
+    // TOP unbolded, CIP labelled (Sam, 2026-08-14). The row reads left-to-right as the transition
+    // itself — the TOP is what you HAD, the CIP is what you are moving to — so the emphasis belongs
+    // on the right-hand side. Bolding both made them look like peers; bolding the TOP made the
+    // outgoing code the loudest thing on the row.
+    var l2 = el("div", { class: "cipx-prog-l2" }, [
+      el("span", { class: "cipx-prog-top" }, ["TOP ", top || "—"]),
+      el("span", { class: "cipx-prog-arrow", "aria-hidden": "true" }, ["→"]),
+    ]);
+    l2.appendChild(el("span", { class: "cipx-prog-cip" + (needsRev ? " cipx-prog-cip-flag" : "") }, [
+      chosen ? el("span", { class: "cipx-prog-ciplbl" }, ["CIP"]) : null,
+      chosen ? el("span", { class: "cipx-code" }, [chosen]) : el("span", { class: "cipx-prog-nocip" }, ["— no CIP —"]),
+      cipRow ? el("span", { class: "cipx-prog-cipt" }, [cipRow.t]) : null,
+      (cipRow && cipRow.cat) ? el("span", { class: catClass(cipRow.cat), title: catTip(cipRow.cat) }, [catLabel(cipRow.cat)]) : null,
+    ]));
+    row.appendChild(l2);
+    // A curator revision shows what changed — the COCI code is still the fact of record until the
+    // college enters the new one, so never let the row read as though COCI already holds the change.
+    if (assigned && chosen !== assigned) {
+      l2.appendChild(el("span", { class: "cipx-prog-changed", title: "Your choice here. COCI still has " + assigned + " until your college enters the change." }, [
+        "changed from ", el("span", { class: "cipx-code" }, [assigned]),
+      ]));
+    }
+    if (needsRev) {
+      var tc = TOPCIP[top];
+      var topLbl = "TOP " + top + (tc && tc.t ? " · " + tc.t : "");
+      // The 2021 first-gen crosswalk (what colleges used to set the CIP) makes the flag precise:
+      // was the assigned CIP a valid 2021 value the crosswalk has since changed, or off both maps?
+      var oldList = OLDTOPCIP[top];   // undefined if we have no 2021 data for this TOP → fall back to the generic message
+      var revMsg;
+      if (oldList && oldList.length) {
+        revMsg = (oldList.indexOf(chosen) >= 0)
+          ? " — the 2021 crosswalk mapped " + topLbl + " to " + chosen + ", but the current crosswalk no longer lists it. Choose the current-crosswalk CIP:"
+          : " — " + chosen + " isn't in the 2021 or the current crosswalk for " + topLbl + ". Choose the current-crosswalk CIP:";
+      } else {
+        revMsg = " — the assigned CIP isn't in the current crosswalk for " + topLbl + ". Choose the current-crosswalk CIP:";
+      }
+      row.appendChild(el("div", { class: "cipx-prog-rev" }, [
+        el("span", { class: "cipx-prog-revflag" }, ["⚑ needs revision"]),
+        el("span", {}, [revMsg]),
+      ]));
+    }
+    // The option list is available on EVERY row — a valid CIP is not necessarily the RIGHT one, and
+    // before this it was reachable only from a flagged row. A flagged row opens it by default.
+    var nOpts = progOptions(top).length;
+    if (nOpts) {
+      var openKey = String(st.progCollege) + "|" + ctrl;   // control numbers are unique per college, not globally
+      if (st.progOpen[openKey] === undefined && needsRev) st.progOpen[openKey] = true;
+      var isOpen = !!st.progOpen[openKey];
+      var optHost = el("div", { class: "cipx-prog-optwrap" }, []);
+      var tog = el("button", {
+        class: "cipx-prog-optbtn" + (isOpen ? " cipx-prog-optbtn-on" : ""), type: "button",
+        "aria-expanded": isOpen ? "true" : "false",
+        title: "The crosswalk approves " + nOpts + " CIP code" + (nOpts === 1 ? "" : "s") + " for TOP " + top,
+      }, [
+        el("span", { class: "cipx-prog-optcaret", "aria-hidden": "true" }, [isOpen ? "▾" : "▸"]),
+        nOpts === 1
+          ? "The 1 approved CIP code for TOP " + top
+          : "All " + nOpts + " approved CIP codes for TOP " + top,
+      ]);
+      tog.onclick = function () { st.progOpen[openKey] = !isOpen; if (repaint) repaint(); };
+      optHost.appendChild(tog);
+      if (isOpen) optHost.appendChild(progOptionList(ctrl, top, assigned, chosen, repaint));
+      row.appendChild(optHost);
+    }
+    if (cipRow && cipRow.cat === "Both") {
+      var cur = progEntry(ctrl).cte || "";
+      // Jenni's wording (2026-08-11): the old "This CIP is Both — use as:" read as a property of the code
+      // rather than a choice the college makes. She wrote it for "this program/course"; specialise per surface.
+      var cteWrap = el("div", { class: "cipx-prog-cte" + (cur ? "" : " cipx-rev-cte-unset") }, [el("span", { class: "cipx-rev-ctelbl" }, ["This CIP can be either CTE or Non-CTE. Select the designation your college will use for this program:"])]);
+      [["cte", "CTE"], ["noncte", "Non-CTE"]].forEach(function (o) {
+        var b = el("button", { class: "cipx-rev-ctebtn" + (cur === o[0] ? " cipx-rev-ctebtn-on" : ""), type: "button", "aria-pressed": cur === o[0] ? "true" : "false" }, [o[1]]);
+        b.onclick = function () { progSetField(ctrl, "cte", cur === o[0] ? "" : o[0]); if (repaint) repaint(); };
+        cteWrap.appendChild(b);
+      });
+      row.appendChild(cteWrap);
+    }
+    return row;
   }
 
   function reviewView() {
@@ -1366,11 +2003,18 @@
     });
     tiles.appendChild(cociSyncTile());   // the destination tile (In Development)
     tilesRow.appendChild(tiles);
+    var shown = rows.filter(function (r) { return rev.filter === "all" || r.status === rev.filter; });
     var actions = el("div", { class: "cipx-rev-actions" }, []);
+    // Expand/Collapse-all rides in the STICKY tiles row (Sam, 2026-07-20 — mobile) so it's reachable
+    // while scrolling; only CSV stays in the top-right rail (which scrolls away on phones).
+    var anyClosed = shown.some(function (r) { return !revOpen[r.label]; });
+    var xall = el("button", { class: "cipx-rev-expand", type: "button" }, [anyClosed ? "⤢ Expand all" : "⤡ Collapse all"]);
+    xall.onclick = function () { shown.forEach(function (r) { revOpen[r.label] = anyClosed; }); renderReview(rows); };
+    actions.appendChild(xall);
     var deptTail = rev.dept !== "__all__" ? " in " + rev.dept : "";
     var unconfirmedClear = rows.filter(function (r) { return r.status === "clear" && r.sug && !revIsValidated(r.label); });
     if (unconfirmedClear.length) {
-      var bulk = el("button", { class: "cipx-rev-bulk", type: "button", title: "Confirms " + unconfirmedClear.length + " ready course" + (unconfirmedClear.length === 1 ? "" : "s") + " here in your browser. It's never final — every code stays editable or clearable, and nothing reaches COCI until your college enters it there." }, ["✓ Confirm all " + unconfirmedClear.length + " ready match" + (unconfirmedClear.length === 1 ? "" : "es") + deptTail]);
+      var bulk = el("button", { class: "cipx-rev-bulk", type: "button", title: "Confirms " + unconfirmedClear.length + " ready course" + (unconfirmedClear.length === 1 ? "" : "s") + " here in your browser. It's never final — every code stays editable or clearable, and nothing reaches COCI until your college enters it there." }, ["✓ Confirm all " + unconfirmedClear.length + (rev.dept !== "__all__" ? " " + rev.dept : "") + " match" + (unconfirmedClear.length === 1 ? "" : "es")]);
       bulk.onclick = function () { unconfirmedClear.forEach(function (r) { if (!revCips(revDecisions(), r.label).length) revSetCips(r.label, [r.sug.code]); revSetValidated(r.label, true); }); renderReview(rows); };
       actions.appendChild(bulk);
     }
@@ -1380,7 +2024,7 @@
       bulkS.onclick = function () { unconfirmedSuggest.forEach(function (r) { revSetCips(r.label, [r.sug.code]); revSetValidated(r.label, true); }); renderReview(rows); };
       actions.appendChild(bulkS);
     }
-    if (actions.firstChild) tilesRow.appendChild(actions);
+    tilesRow.appendChild(actions);   // always (Expand is always present)
     revTilesHost.appendChild(tilesRow);   // sticky bar (college + subject pin above it); progress copy scrolls away below
     var progline = el("div", { class: "cipx-rev-progline" }, [counts.confirmed.toLocaleString() + " of " + rows.length.toLocaleString() + " confirmed",
       counts.peer ? el("span", { class: "cipx-rev-peercount", title: "Suggestions corroborated by a clear majority of peer colleges teaching the same course in the same discipline — the strongest signal." }, ["  ·  " + counts.peer.toLocaleString() + " peer-corroborated"]) : null]);
@@ -1392,14 +2036,9 @@
         "Confirming just fills in your starting point here in the browser — it's never final, every code stays editable, and nothing reaches COCI until your college enters it there.",
       ]));
     }
-    var shown = rows.filter(function (r) { return rev.filter === "all" || r.status === rev.filter; });
-    // Expand-all + CSV live in the top-right rail (under Theme), not a full-width row of their own.
+    // CSV lives in the top-right rail (Expand moved into the sticky tiles row above).
     if (revRailEl) {
       clear(revRailEl);
-      var anyClosed = shown.some(function (r) { return !revOpen[r.label]; });
-      var xall = el("button", { class: "cipx-rev-expand", type: "button" }, [anyClosed ? "⤢ Expand all" : "⤡ Collapse all"]);
-      xall.onclick = function () { shown.forEach(function (r) { revOpen[r.label] = anyClosed; }); renderReview(rows); };
-      revRailEl.appendChild(xall);
       var csv = el("button", { class: "cipx-rev-csv", type: "button", title: "Download this list as CSV" }, ["⬇ CSV"]);
       csv.onclick = function () { exportReviewCsv(rows, dec, ctx); };
       revRailEl.appendChild(csv);
@@ -1452,14 +2091,35 @@
       title: opts.title || (opts.on ? "Confirmed — click ▾ to change" : (opts.onAccept ? "Click to use this code · ▾ to change to any code" : "Click ▾ to choose a code")),
     }, []);
     if (row) {
+      // Same "CIP <code>" treatment as the Programs row (Sam, 2026-08-14) — one vocabulary across both
+      // review lanes, so a curator moving between them reads the same shape. Inside the box rather than
+      // outside it: the box is the click target, and a label parked next to it would be the one part of
+      // the pairing that isn't clickable.
+      chip.appendChild(el("span", { class: "cipx-rev-ciplbl" }, ["CIP"]));
       chip.appendChild(el("span", { class: "cipx-code" }, [row.code]));
       chip.appendChild(el("span", { class: "cipx-rev-chipt" }, [row.t]));
       if (opts.more) chip.appendChild(el("span", { class: "cipx-rev-chipmore", title: opts.moreTip }, ["+" + opts.more]));
+      // CTE / Non-CTE use choice for a "Both"-category CIP (Jenni, 2026-07-28): a certified-Both CIP must
+      // record which use applies for this course. Only shown on an assigned box (opts.cteLabel set).
+      if (opts.cteLabel && row.cat === "Both") {
+        var cur = revCteChoice(opts.cteLabel, row.code);
+        var cteWrap = el("span", { class: "cipx-rev-cte" + (cur ? "" : " cipx-rev-cte-unset"), title: "This CIP can be either CTE or Non-CTE. Select the designation your college will use for this course." }, []);
+        if (!cur) cteWrap.appendChild(el("span", { class: "cipx-rev-ctelbl" }, ["CTE?"]));
+        [["cte", "CTE"], ["noncte", "Non-CTE"]].forEach(function (o) {
+          var b = el("button", { class: "cipx-rev-ctebtn" + (cur === o[0] ? " cipx-rev-ctebtn-on" : ""), type: "button", "aria-pressed": cur === o[0] ? "true" : "false", title: "Use this CIP as " + o[1] + " for this course" }, [o[1]]);
+          b.onclick = function (e) { e.stopPropagation(); revSetCteChoice(opts.cteLabel, row.code, cur === o[0] ? "" : o[0]); if (opts.onCteChange) opts.onCteChange(); };
+          cteWrap.appendChild(b);
+        });
+        chip.appendChild(cteWrap);
+      }
     } else {
       chip.appendChild(el("span", { class: "cipx-rev-none" }, ["— pick a code —"]));
     }
     var panel = null;
-    function closeP() { if (panel && panel.parentNode) panel.parentNode.removeChild(panel); panel = null; chip.classList.remove("cipx-rev-chip-open"); }
+    function closeP() {
+      if (panel && panel._away) { document.removeEventListener("mousedown", panel._away, true); document.removeEventListener("focusin", panel._away, true); }
+      if (panel && panel.parentNode) panel.parentNode.removeChild(panel); panel = null; chip.classList.remove("cipx-rev-chip-open");
+    }
     function openP() {
       if (panel) { closeP(); return; }
       chip.classList.add("cipx-rev-chip-open");
@@ -1470,6 +2130,14 @@
           onPick: function (picked) { closeP(); if (opts.onChange) opts.onChange(picked[2]); } }),
       ]);
       chip.appendChild(panel);
+      // Close on click-away / focus leaving the chip so the open search box doesn't hog the screen
+      // when it's not being used (Sam, 2026-07-20). A pointer-down or a focus landing OUTSIDE the chip
+      // dismisses it; interactions INSIDE (typing, picking) keep it open.
+      var away = function (e) { if (panel && !chip.contains(e.target)) closeP(); };
+      panel._away = away;
+      document.addEventListener("mousedown", away, true);
+      document.addEventListener("focusin", away, true);
+      var inp = panel.querySelector("input"); if (inp && inp.focus) { try { inp.focus(); } catch (e) {} }
     }
     if (opts.onChange) {
       var chg = el("span", { class: "cipx-rev-chipchg", role: "button", tabindex: "0", "aria-label": "Change CIP code", title: "Change to any CIP code" }, ["▾"]);
@@ -1483,7 +2151,16 @@
       rm.onkeydown = function (e) { if (e.key === "Enter" || e.key === " ") { e.stopPropagation(); e.preventDefault(); opts.onRemove(); } };
       chip.appendChild(rm);
     }
-    chip.onclick = function (e) { e.stopPropagation(); if (opts.onAccept) opts.onAccept(); };
+    chip.onclick = function (e) {
+      e.stopPropagation();   // a click on the chip never toggles the row's expand
+      // …but a click that landed on the ▾ change, the × remove, or the OPEN change-panel (all children
+      // of the chip) must NOT count as "use this code" — they have their own actions. This is the fix
+      // for Sam's recurring "clicking the dropdown OKs the CIP": the panel is a child of the chip, so a
+      // click in its search field bubbled here and fired onAccept. (Belt + suspenders with their own
+      // stopPropagation, in case a target resolves to the chip.)
+      if (e.target && e.target.closest && e.target.closest(".cipx-rev-chipchg, .cipx-rev-chiprm, .cipx-rev-chgpanel")) return;
+      if (opts.onAccept) opts.onAccept();
+    };
     chip.onkeydown = function (e) {
       if (e.key === "Escape") { closeP(); return; }
       if ((e.key === "Enter" || e.key === " ") && opts.onAccept) { e.stopPropagation(); e.preventDefault(); opts.onAccept(); }
@@ -1512,8 +2189,15 @@
     var code = r.sug ? r.sug.code : null, defaulted = null;
     // A weak, uncorroborated pick defaults to the department's dominant code (#843) — but NOT a confident
     // title-match pick (Sam, 2026-07-19): "Environmental Science" → 03.0104 must not be swapped to the BIOL
-    // dept-dominant 26.0101 just because few BIOL courses use 03.0104.
-    if (code && r.status === "review" && (r.sugConf || 0) < SUG_STRONG && ctx && ctx.deptTop) {
+    // dept-dominant 26.0101 just because few BIOL courses use 03.0104. Nor a DELIBERATE, direct pick (Sam,
+    // 2026-07-20): (a) the SOLE credit crosswalk CIP for the TOP — the approved crosswalk's unambiguous
+    // field code (BUSL 10 → 22.0000 Legal Studies must not become the dept's 22.0302, which isn't even in
+    // its crosswalk); (b) a strong-own-fit DESCRIPTION headline (the veto / F5 case) whose code IS the point
+    // of the row. Only weak grab-bag guesses (Ironworker "Rigging" → Robotics) fall through to the default.
+    var creditCands = (r.m && r.m.cands || []).filter(function (o) { return o.r.cat !== "Noncredit"; });
+    var soleCross = creditCands.length === 1 && r.sugKind === "crosswalk" && code === creditCands[0].r.code;
+    var directPick = soleCross || r.sugKind === "description";
+    if (!directPick && code && r.status === "review" && (r.sugConf || 0) < SUG_STRONG && ctx && ctx.deptTop) {
       var own = ctx.codeCount[r.subj + "|" + code] || 0, dt = ctx.deptTop[r.subj];
       if (dt && own < REV_DOMINANT_MIN && dt.code !== code) { defaulted = dt; code = dt.code; }
     }
@@ -1525,6 +2209,15 @@
   // one-liners; only the attention rows earn a reason line. `eff` = effectiveSug(r, ctx) (already computed).
   function reviewWhy(r, ctx, eff) {
     if (r.status === "review") {
+      // Strong-own-fit veto (CfC F1–F5): the course's own description strongly matches one code while
+      // most peers file it under a weaker-fitting one — say BOTH honestly; the peer code is a note, not the pick.
+      if (r.ownFitVeto && r.sug) {
+        var pa = r.peerAlt;
+        return ["Your description best matches ", el("b", {}, [r.sug.code]), (r.sug.t ? " · " + r.sug.t : ""),
+          " (" + (r.sugConf || 0) + "%). Most " + r.subj + " peers file this course under ",
+          el("b", {}, [pa ? pa.code : "another code"]), (pa && pa.t ? " · " + pa.t : ""),
+          " — a weaker fit here. Confirm the description match, or switch to the peer code."];
+      }
       // A credible strong description match outside the course's TOP crosswalk was surfaced as the headline
       // (F5) — say so honestly: the TOP may be mis-coded; confirm only if it fits.
       if (r.sugKind === "description" && r.sug) {
@@ -1546,6 +2239,11 @@
       return ["No single clear winner from this course's description — open to pick from the crosswalk options or search."];
     }
     if (r.status === "manual") {
+      // Don't claim "no code" while the box shows one (CfC F10): a thin description can still ride its
+      // TOP's crosswalk code as a starting point — say so — but with no crosswalk there's nothing to show.
+      if (r.sug) {
+        return ["Too little description to score a match — but this course's TOP crosswalk points to ", el("b", {}, [r.sug.code]), (r.sug.t ? " · " + r.sug.t : ""), ". Confirm if it fits, or open to search all codes."];
+      }
       return ["Too little catalog description to suggest a code — open to search all codes."];
     }
     return null;
@@ -1576,9 +2274,13 @@
   function revAddCip(r, dec, ctx, code) {
     var cips = revCips(dec, r.label);
     if (!cips.length) { var anchor = effectiveSug(r, ctx).code; cips = anchor ? [anchor] : []; }   // keep primary as the anchor
-    if (code && cips.indexOf(code) < 0) cips.push(code);
+    if (code && cips.indexOf(code) < 0) {
+      if (cips.length >= courseCipCap(r)) return false;   // enforce the credit=1 / noncredit-CDCP=2 cap
+      cips.push(code);
+    }
     revSetCips(r.label, cips);
     revSetValidated(r.label, true);   // adding a code yourself is an individual confirmation
+    return true;
   }
   function renderAddPicker(r, dec, ctx, host, allRows) {
     var cips = revCips(dec, r.label), anchor = effectiveSug(r, ctx).code;
@@ -1609,17 +2311,21 @@
     host.appendChild(w);
   }
   function renderAddPrompt(r, dec, ctx, host, allRows) {
+    var atCap = !canAddCip(r, dec);
     var pr = el("div", { class: "cipx-rev-addprompt" }, [
       el("span", { class: "cipx-rev-addpaw", "aria-hidden": "true" }, ["🐾"]),
-      el("span", {}, ["Added. Add more if you need them — when you're ready, I can apply these to your other courses."]),
+      el("span", {}, [atCap ? "Added. This course is now at its CIP limit (" + capReason(r).toLowerCase().replace(/\.$/, "") + ") — apply it to your other courses when you're ready." : "Added. Add more if you need them — when you're ready, I can apply these to your other courses."]),
     ]);
-    var more = el("button", { class: "cipx-rev-morebtn", type: "button" }, ["+ Add another"]);
-    more.onclick = function (e) { e.stopPropagation(); revInline[r.label] = "picker"; renderReview(allRows); };
+    if (!atCap) {   // only offer another when the credit-type rule allows it
+      var more = el("button", { class: "cipx-rev-morebtn", type: "button" }, ["+ Add another"]);
+      more.onclick = function (e) { e.stopPropagation(); revInline[r.label] = "picker"; renderReview(allRows); };
+      pr.appendChild(more);
+    }
     var apply = el("button", { class: "cipx-rev-applybtn", type: "button" }, ["Apply to other courses"]);
     apply.onclick = function (e) { e.stopPropagation(); revInline[r.label] = "apply"; renderReview(allRows); };
     var done = el("button", { class: "cipx-rev-donebtn", type: "button" }, ["Done"]);
     done.onclick = function (e) { e.stopPropagation(); revInline[r.label] = null; renderReview(allRows); };
-    pr.appendChild(more); pr.appendChild(apply); pr.appendChild(done);
+    pr.appendChild(apply); pr.appendChild(done);
     host.appendChild(pr);
   }
   function renderApplyPanel(r, dec, ctx, host, allRows) {
@@ -1660,7 +2366,8 @@
         if (!p[0].checked) return;
         var oc = revCips(dec, p[1].label);
         if (!oc.length) oc = [anchor];   // confirm the target's shared primary so it isn't dropped
-        extras.forEach(function (c) { if (oc.indexOf(c) < 0) oc.push(c); });
+        var cap = courseCipCap(p[1]);    // respect each sibling's own credit-type cap (a credit sibling stays at 1)
+        extras.forEach(function (c) { if (oc.indexOf(c) < 0 && oc.length < cap) oc.push(c); });
         revSetCips(p[1].label, oc);
       });
       revInline[r.label] = null; renderReview(allRows);
@@ -1716,19 +2423,30 @@
       var readyConfirm = r.status === "clear";
       var primline = el("div", { class: "cipx-rev-primline" }, [
         cipBox(showCode, { on: confirmed, id: chgId,
+          cteLabel: (cips.length ? r.label : null), onCteChange: function () { renderReview(allRows); },
           onAccept: confirmed ? null : (applied ? validateRow : (showCode ? (readyConfirm ? accept(showCode) : openRow) : null)),
           title: applied ? "Codes applied from a sibling — click to confirm this course · ▾ to change"
             : (confirmed ? null : (readyConfirm ? "Click to confirm this ready match · ▾ to change to any code"
             : "Open to review the options before confirming · ▾ to change to any code")),
           onChange: onChange }),
       ]);
-      var addBtn = el("button", { class: "cipx-rev-addcip", type: "button", title: "Add another CIP code — a course can carry more than one", "aria-label": "Add another CIP to " + r.label }, ["+"]);
-      addBtn.onclick = function (e) { e.stopPropagation(); revInline[r.label] = (revInline[r.label] === "picker") ? null : "picker"; renderReview(allRows); };
-      primline.appendChild(addBtn);
+      // Credit-type CIP-count rule (Raul, 2026-07-28): a credit course takes 1 CIP; noncredit takes 1
+      // unless it's CDCP (up to 2). Show the course's credit-type label, and an ACTIVE "+" only when a
+      // 2nd CIP is allowed (CDCP, under cap); otherwise a muted, non-interactive "+" carrying the reason.
+      var cflag = courseCreditFlag(r);
+      if (cflag) primline.appendChild(el("span", { class: "cipx-rev-credit" + (cflag === "D" ? " cipx-rev-credit-cdcp" : ""), title: capReason(r) }, [creditLabel(cflag)]));
+      if (courseIsCdcp(r) && canAddCip(r, dec)) {
+        var addBtn = el("button", { class: "cipx-rev-addcip", type: "button", title: "Add a 2nd CIP — CDCP noncredit courses may carry up to 2", "aria-label": "Add another CIP to " + r.label }, ["+"]);
+        addBtn.onclick = function (e) { e.stopPropagation(); revInline[r.label] = (revInline[r.label] === "picker") ? null : "picker"; renderReview(allRows); };
+        primline.appendChild(addBtn);
+      } else {
+        primline.appendChild(el("span", { class: "cipx-rev-addcip cipx-rev-addcip-off", title: capReason(r), "aria-label": capReason(r) }, ["+"]));
+      }
       stack.appendChild(primline);
       cips.slice(1).forEach(function (code) {
         stack.appendChild(el("div", { class: "cipx-rev-extraline" }, [
           cipBox(code, { cls: "cipx-rev-chip-extra", id: chgId + "x" + code.replace(/\W/g, ""), onChange: onChange,
+            cteLabel: r.label, onCteChange: function () { renderReview(allRows); },
             onRemove: function () { revToggleCip(r.label, code); renderReview(allRows); } }),
         ]));
       });
@@ -1769,7 +2487,7 @@
       caret,
       el("span", { class: "cipx-rev-course" }, [el("span", { class: "cipx-rev-cname", title: r.label }, cnameKids)]),
       tocip,
-      el("span", { class: "cipx-rev-stat cipx-rev-stat-" + stat.cls + (peerCorr ? " cipx-rev-stat-peer" : ""), title: statusTip(), "aria-label": (confirmed ? "Confirmed" : stat.label) + " status" },
+      el("span", { class: "cipx-rev-stat cipx-rev-stat-" + stat.cls + (peerCorr ? " cipx-rev-stat-peer" : ""), title: statusTip(), "aria-label": (confirmed ? "Confirmed" : stat.label) + " status" + (peerCorr ? ", peer-corroborated" : "") },
         [confirmed ? "✓" : stat.g, peerCorr ? el("span", { class: "cipx-rev-statdot", "aria-hidden": "true" }, ["·"]) : null]),
     ]);
     var card = el("div", { class: "cipx-rev-item" + (confirmed ? " cipx-rev-conf" : "") + (applied ? " cipx-rev-item-applied" : "") + (twoBox ? " cipx-rev-item-suggest" : "") }, [head]);
@@ -1784,7 +2502,7 @@
       var open = !!revOpen[r.label];
       caret.textContent = open ? "▾" : "▸"; head.setAttribute("aria-expanded", open ? "true" : "false");
       card.classList.toggle("cipx-rev-item-open", open);   // package treatment: spine + framed top + tint bind row to detail (Sam)
-      if (open && !body) { body = reviewExpand(r, dec, allRows); card.appendChild(body); }
+      if (open && !body) { body = reviewExpand(r, dec, allRows, ctx); card.appendChild(body); }
       else if (!open && body) { card.removeChild(body); body = null; }
     }
     function tog() { revOpen[r.label] = !revOpen[r.label]; paint(); }
@@ -1859,7 +2577,7 @@
   }
   // Recommend-view consensus block: the shared summary + (when the consensus is CONFIDENT)
   // the peer field's CIP as a flat, expandable card. Advisory — recommend mode doesn't
-  // persist a choice, so no selectable affordance (that lives in Review my catalog).
+  // persist a choice, so no selectable affordance (that lives in Review my courses).
   function recommendConsensusBlock(m, label, ownTop, topTitle) {
     var subj = parseSubject(label);
     var sum = consensusSummaryEls(m, label, ownTop, topTitle, subj); if (!sum) return null;
@@ -1868,11 +2586,24 @@
     return wrap;
   }
 
-  function reviewExpand(r, dec, allRows) {
+  function reviewExpand(r, dec, allRows, ctx) {
     var box = el("div", { class: "cipx-rev-detail" }, []);
     var cips = revCips(dec, r.label);
-    // selecting/deselecting a code in the expand is individual work → validate (or unvalidate when cleared)
-    function toggle(code) { revToggleCip(r.label, code); revSetValidated(r.label, revCips(revDecisions(), r.label).length > 0); renderReview(allRows); }   // revOpen keeps this row expanded
+    // The code the BOX shows (may be a dept-default) — the Confirm button must commit THIS, not the raw
+    // crosswalk sug, so the box and the button never disagree (Sam, 2026-07-20: BUSL 10 showed 22.0302 but
+    // "Confirm 22.0000"). effectiveSug is display-only and idempotent, so recomputing it here is safe.
+    var effCode = (effectiveSug(r, ctx || {}).code) || (r.sug && r.sug.code) || null;
+    // selecting/deselecting a code in the expand is individual work → validate (or unvalidate when cleared).
+    // Credit-type cap: a 1-CIP course (credit / noncredit non-CDCP / unknown) REPLACES its single code when
+    // a new one is selected; a CDCP course (cap 2) accumulates until full, then a further add is blocked.
+    function toggle(code) {
+      var cur = revCips(revDecisions(), r.label);
+      if (cur.indexOf(code) < 0 && cur.length >= courseCipCap(r)) {
+        if (courseCipCap(r) === 1) { revSetCips(r.label, [code]); revSetValidated(r.label, true); renderReview(allRows); }
+        return;   // CDCP already at 2 → block the extra
+      }
+      revToggleCip(r.label, code); revSetValidated(r.label, revCips(revDecisions(), r.label).length > 0); renderReview(allRows);
+    }
     // one multi-select candidate row — an explicit Select button (Sam: clearer than a checkbox);
     // the whole row is still clickable. "✓ Selected" toggles back off. A course may carry >1 CIP.
     function candRow(cr, rel, extraTag, cls, matched) {
@@ -1880,7 +2611,7 @@
       var btn = el("span", { class: "cipx-rev-selbtn" + (picked ? " on" : ""), role: "button", tabindex: "-1", "aria-hidden": "true" }, [picked ? "✓ Selected" : "Select"]);
       var row = el("div", { class: "cipx-rev-cand" + (cls ? " " + cls : "") + (picked ? " on" : ""), role: "button", tabindex: "0", "aria-pressed": picked ? "true" : "false" }, [
         el("span", { class: "cipx-code" }, [cr.code]),
-        el("span", { class: "cipx-rev-candt" }, [cr.t, cr.cat ? el("span", { class: catClass(cr.cat), title: catTip(cr.cat) }, [cr.cat]) : null, extraTag || null]),
+        el("span", { class: "cipx-rev-candt" }, [cr.t, cr.cat ? el("span", { class: catClass(cr.cat), title: catTip(cr.cat) }, [catLabel(cr.cat)]) : null, extraTag || null]),
         el("span", { class: "cipx-rev-candrel" }, [meter(rel || 0, tierOf(rel || 0).key)]),
         btn,
       ]);
@@ -1898,36 +2629,42 @@
     // 1) FIELD CONSENSUS FIRST — the strongest, most-corroborated signal (Sam's ordering)
     var peer = peerConsensusBlock(r, candRow); if (peer) box.appendChild(peer);
 
-    // 2) the course's own TOP crosswalk candidates (or closest-by-description fallback)
-    var opts = r.m.cands.length ? r.m.cands : nonBoiler(r.m.res.ranked).slice(0, 6);
+    // 2) the course's own TOP crosswalk candidates (or, when that TOP has no course-specific CIP,
+    //    crosswalk CIPs from other TOPs — never free-range codes).
+    var opts = r.m.cands.length ? r.m.cands : xwalkAlts(r.m.res.ranked, 6);
     var fromCrosswalk = r.m.cands.length > 0;
-    box.appendChild(el("div", { class: "cipx-rev-siglabel" }, [fromCrosswalk ? "From this course’s TOP crosswalk" + (r.top ? " (" + r.top + ")" : "") : "Closest CIP codes by description"]));
-    if (!opts.length) box.appendChild(el("div", { class: "cipx-fitmsg" }, [r.m.thin ? "Too little catalog description to suggest a code — search all codes below." : "No crosswalk match — search all codes below."]));
+    box.appendChild(el("div", { class: "cipx-rev-siglabel" }, [fromCrosswalk ? "From this course’s TOP crosswalk" + (r.top ? " (" + r.top + ")" : "") : "Crosswalk CIP codes under other TOPs (this TOP has none)"]));
+    if (!opts.length) box.appendChild(el("div", { class: "cipx-fitmsg" }, [r.m.thin ? "Too little catalog description to suggest a crosswalk code — verify the course's TOP." : "No crosswalk CIP matches — verify the course's TOP with your curriculum team."]));
     opts.slice(0, 6).forEach(function (o) {
-      var extraTag = (fromCrosswalk && r.top) ? el("span", { class: "cipx-rev-candtop", title: "The official crosswalk maps this CIP from the course's TOP " + r.top }, ["← TOP ", r.top]) : null;
-      box.appendChild(candRow(o.r, (o.conf != null ? o.conf : (o.rel || 0)), extraTag, null, o.matched));
+      var altT = o.altTops && o.altTops[0];
+      var extraTag = (fromCrosswalk && r.top)
+        ? el("span", { class: "cipx-rev-candtop", title: "The official crosswalk maps this CIP from the course's TOP " + r.top }, ["← TOP ", r.top])
+        : (altT ? el("span", { class: "cipx-rev-candtop", title: "In the crosswalk under TOP " + altT.top + (altT.title ? " · " + altT.title : "") + " — the course's TOP may need updating." }, ["↔ TOP ", altT.top]) : null);
+      box.appendChild(candRow(o.r, (o.dconf != null ? o.dconf : (o.conf != null ? o.conf : (o.rel || 0))), extraTag, null, o.matched));
     });
 
-    // 3) stronger description matches OUTSIDE the crosswalk (the lexical signal, weakest) — filtered to
-    // field-credible candidates (F3/F5): only those sharing the course field's or peer consensus's CIP family.
+    // 3) stronger matches in the crosswalk under a MORE-APPROPRIATE TOP (the mis-code nudge) — every one
+    // is a real crosswalk code (inXwalk), filtered to field-credible candidates (F3/F5: sharing the course
+    // field's or peer consensus's CIP family). No free-range codes are ever surfaced here.
     var bo = r.beyondOk || r.m.beyond;
     if (bo.length) {
-      box.appendChild(el("div", { class: "cipx-rev-flag" }, ["⚑ Stronger description match" + (bo.length > 1 ? "es" : "") + " outside the crosswalk. This course is coded ", el("b", {}, ["TOP " + r.top + (r.topTitle ? " · " + r.topTitle : "")]), " — its TOP may be mis-coded, which would make the crosswalk recommendation misleading. Assign one only if it truly fits the course:"]));
+      box.appendChild(el("div", { class: "cipx-rev-flag" }, ["⚑ Stronger match" + (bo.length > 1 ? "es" : "") + " in the crosswalk under a more-appropriate TOP. This course is coded ", el("b", {}, ["TOP " + r.top + (r.topTitle ? " · " + r.topTitle : "")]), " — its TOP may be mis-coded. These ARE official crosswalk codes, just under a different TOP; verify the course's TOP, then pick one only if it truly fits:"]));
       bo.slice(0, 3).forEach(function (o) {
-        box.appendChild(candRow(o.r, (o.conf != null ? o.conf : (o.rel || 0)), el("span", { class: "cipx-rev-outtag" }, ["outside crosswalk"]), "cipx-rev-cand-out", o.matched));
+        var altT = o.altTops && o.altTops[0];
+        box.appendChild(candRow(o.r, (o.conf != null ? o.conf : (o.rel || 0)), el("span", { class: "cipx-rev-outtag", title: altT ? "In the crosswalk under TOP " + altT.top + (altT.title ? " · " + altT.title : "") : "" }, [altT ? "↔ TOP " + altT.top : "other TOP"]), "cipx-rev-cand-out", o.matched));
       });
     }
 
-    // actions: confirm (the suggestion, or an applied-but-unvalidated course as-is) + search-all + clear-all
+    // actions: utility links (add / clear) on the LEFT; the decision buttons (Keep + Confirm) on the RIGHT
+    // — aligned with the per-candidate "Select" column so the primary action sits where the eye already is
+    // (Sam, 2026-07-20: "it should be on the right side with all the other confirms"). Confirm is rightmost.
     var acts = el("div", { class: "cipx-rev-detactions" }, []);
+    var utils = el("div", { class: "cipx-rev-actutils" }, []);
+    var decide = el("div", { class: "cipx-rev-actdecide" }, []);
     var validated = revIsValidated(r.label);
-    if ((!cips.length && r.sug) || (cips.length && !validated)) {
-      var conf = el("button", { class: "cipx-rev-confirm", type: "button" }, [cips.length ? "✓ Confirm this course" : "✓ Confirm " + r.sug.code]);
-      conf.onclick = function () { if (!cips.length) { toggle(r.sug.code); } else { revSetValidated(r.label, true); renderReview(allRows); } };
-      acts.appendChild(conf);
-    }
+    // "+ Add another code…" opens a full-width search combo BELOW the action row (not inline in the flex row)
     var srch = el("button", { class: "cipx-rev-searchall", type: "button" }, ["+ Add another code…"]);
-    var searchWrap = el("div", {}, []);
+    var searchWrap = el("div", { class: "cipx-rev-searchwrap" }, []);
     srch.onclick = function () {
       if (searchWrap.firstChild) { clear(searchWrap); return; }
       searchWrap.appendChild(comboCore({
@@ -1937,10 +2674,29 @@
         onPick: function (picked) { toggle(picked[2]); clear(searchWrap); },
       }));
     };
-    acts.appendChild(srch);
-    acts.appendChild(searchWrap);
-    if (cips.length) { var clr = el("button", { class: "cipx-rev-clear", type: "button" }, [cips.length > 1 ? "Clear all" : "Clear"]); clr.onclick = function () { revSetCips(r.label, []); revSetValidated(r.label, false); renderReview(allRows); }; acts.appendChild(clr); }
+    if (canAddCip(r, dec)) utils.appendChild(srch);   // "+ Add another" only when the credit-type rule allows another CIP
+    if (cips.length) { var clr = el("button", { class: "cipx-rev-clear", type: "button" }, [cips.length > 1 ? "Clear all" : "Clear"]); clr.onclick = function () { revSetCips(r.label, []); revSetValidated(r.label, false); renderReview(allRows); }; utils.appendChild(clr); }
+    if ((!cips.length && r.sug) || (cips.length && !validated)) {
+      // A Suggested (⇄) row nudges OFF the course's own TOP crosswalk toward the peer pick, so the lone
+      // "Confirm <peer>" left no obvious way to keep the crosswalk code if the curator decides it's right
+      // (Sam, 2026-07-20 — "I'm not sure how to keep 13.1210"). Offer a matched "Keep <crosswalk>" beside
+      // it: peer pick stays the filled primary (the tool's suggestion), Keep is the secondary outline.
+      // Any OTHER code is still Select-able in the list above. Keep sits LEFT of Confirm (Confirm rightmost).
+      if (!cips.length && r.suggestChange && r.crosswalk && r.sug && r.crosswalk.code !== r.sug.code) {
+        var keep = el("button", { class: "cipx-rev-keep", type: "button", title: "Keep your TOP’s crosswalk code (" + r.crosswalk.code + " · " + r.crosswalk.t + ") instead of the peers’ suggestion" }, ["Keep " + r.crosswalk.code]);
+        keep.onclick = function () { revSetCips(r.label, [r.crosswalk.code]); revSetValidated(r.label, true); renderReview(allRows); };
+        decide.appendChild(keep);
+      }
+      // Confirm commits what the BOX shows (effCode), never a different code (Fix C).
+      var confCode = cips.length ? null : effCode;
+      var conf = el("button", { class: "cipx-rev-confirm", type: "button" }, [cips.length ? "✓ Confirm this course" : "✓ Confirm " + confCode]);
+      conf.onclick = function () { if (!cips.length) { toggle(confCode); } else { revSetValidated(r.label, true); renderReview(allRows); } };
+      decide.appendChild(conf);
+    }
+    acts.appendChild(utils);
+    acts.appendChild(decide);
     box.appendChild(acts);
+    box.appendChild(searchWrap);
     return box;
   }
 
@@ -1971,16 +2727,59 @@
   // ═══════════════════════════════════════════════════════════════════════════
   // Hairline tab glyphs (24-viewBox paths): an open book (browse the list), a
   // magnifier (find one course), a clipboard-with-check (review + confirm a catalog).
-  function modeBar() {
-    var bar = el("div", { class: "cipx-modebar", role: "tablist", "aria-label": "What do you want to do" }, []);
-    // Review leads — it's the primary workflow now (Sam, 2026-07-18: "make Review the first tab + default").
-    [["review", "Review my catalog"], ["browse", "Browse codes"], ["recommend", "Find my course’s code"]].forEach(function (m) {
-      var on = st.mode === m[0];
-      var b = el("button", { class: "cipx-modetab" + (on ? " on" : ""), type: "button", role: "tab", "aria-selected": on ? "true" : "false" }, [el("span", {}, [m[1]])]);   // tab glyphs dropped (Sam, 2026-07-20) — labels only
+  // Top-level scope toggle (Sam, 2026-07-28): Courses vs Programs is the FIRST decision — a curator is
+  // coding one or the other. It sits ABOVE the mode tabs; everything below adapts to the pick.
+  // ── One flat nav of four destinations (Sam, 2026-08-11) ────────────────────────────────────────
+  // This replaced a two-level `Code my: [Programs][Courses]` scope bar sitting above a mode bar.
+  // Sam's read: the labels were confusing — "Courses" sat directly above "Review my catalog", and in
+  // Programs scope the word "Programs" appeared twice in a row.
+  //
+  // The structural reason the nesting never earned its keep: THE SCOPE ONLY EVER SPLIT *REVIEW*.
+  // Browse is scope-free (the whole 2,325-code CIP taxonomy — nothing to do with programs vs courses)
+  // and the course-first easy button is courses-only by definition, so the nav made every visitor
+  // pick a scope that two of its three destinations ignored. Worse, the scope tab went on asserting
+  // "Courses" while you were browsing — a label claiming an action you are not taking. Flattening
+  // removes the redundancy AND the false assertion, and puts every destination one click away.
+  //
+  // st.scope / st.mode are UNCHANGED internally — every downstream reader (programsView, the
+  // consensus/college loaders, the seams) keeps working. Only this bar collapses them into a single
+  // choice, so `scope` is now set as a CONSEQUENCE of the destination rather than picked separately.
+  // "Browse CIP codes" and "Find a course's code" HIDDEN 2026-08-14 (Sam, after Jenni) — they muddy
+  // the waters while the field is being walked through the two review lanes. The modes themselves are
+  // untouched and fully working; only their nav entries are withheld, so restoring them is putting the
+  // two objects back in this array. Anything already reachable from inside a review row (the browse
+  // detail a code links to) still works — nothing downstream reads NAV.
+  var NAV = [
+    { scope: "programs", mode: "review", label: "Review my programs" },
+    { scope: "courses", mode: "review", label: "Review my courses" },
+  ];
+  // A browser that last sat on a now-hidden tab would restore into a mode with no lit nav entry —
+  // the page looks broken and there is no way back. Normalise stored state to the nearest visible
+  // destination at ingest instead. (Keep in sync with NAV if an entry is restored.)
+  function navNormalise() {
+    var ok = NAV.some(function (n) { return n.mode === st.mode && (n.scope === null || n.scope === st.scope); });
+    if (ok) return;
+    st.mode = "review";
+    if (st.scope !== "programs" && st.scope !== "courses") st.scope = "courses";
+    try { localStorage.setItem(MODE_KEY, st.mode); localStorage.setItem(SCOPE_KEY, st.scope); } catch (e) {}
+  }
+  function navSelected(n) {
+    if (n.mode !== st.mode) return false;
+    return n.scope === null || n.scope === st.scope;   // Browse matches on mode alone
+  }
+  function navBar() {
+    var bar = el("div", { class: "cipx-modebar cipx-navbar", role: "tablist", "aria-label": "What do you want to do" }, []);
+    NAV.forEach(function (n) {
+      var on = navSelected(n);
+      var b = el("button", { class: "cipx-modetab" + (on ? " on" : ""), type: "button", role: "tab", "aria-selected": on ? "true" : "false" }, [el("span", {}, [n.label])]);   // tab glyphs dropped (Sam, 2026-07-20) — labels only
       b.onclick = function () {
-        if (st.mode === m[0]) return;
-        st.mode = m[0];
-        try { localStorage.setItem(MODE_KEY, m[0]); } catch (e) {}
+        if (on) return;
+        st.mode = n.mode;
+        if (n.scope) st.scope = n.scope;
+        // A stale stored pair can still read programs+recommend; there is no course-first easy button
+        // for programs, so normalise here as well as at ingest.
+        if (st.scope === "programs" && st.mode === "recommend") st.mode = "review";
+        try { localStorage.setItem(MODE_KEY, st.mode); localStorage.setItem(SCOPE_KEY, st.scope); } catch (e) {}
         rebuildShell();
       };
       bar.appendChild(b);
@@ -1991,18 +2790,29 @@
   function header() {
     var head = el("div", { class: "cipx-head" }, [
       el("div", { class: "cipx-eyebrow" }, ["California Community Colleges · Chancellor's Office · Academic Affairs"]),
-      el("h2", { class: "cipx-h2" }, ["CIP Coder", el("span", { class: "cipx-beta" }, ["Beta"])]),
-      el("p", { class: "cipx-sub" }, ["A simplified process supporting the Fall 2026 ", el("b", {}, ["TOP → CIP"]), " transition. Start from one of your courses, get a CIP code suggested from its current TOP and description, and confirm the fit — soon, sync your settled codes straight to COCI."]),
+      el("h2", { class: "cipx-h2" }, ["California Community College Searchable CIP Code Taxonomy", el("span", { class: "cipx-beta" }, ["Beta"])]),
+      // Intro copy (Jenni, 2026-08-11). Her wording for the first half; the second half rewritten because
+      // "sync your settled codes straight to COCI" read as a feature that exists — it does not. There is no
+      // upload from this page today (the Tech Center batch/API push is Phase B, `cip_submission_access_plan.md`
+      // §3c). Say what is true now, and mark the future as future.
+      el("p", { class: "cipx-sub" }, ["A simplified process supporting the Fall 2026 ", el("b", {}, ["TOP → CIP"]), " transition. Start from one of your current TOP codes, get a list of approved CIP codes that map to the TOP code, and confirm the fit. Your work stays in this browser — ", el("b", {}, ["your college enters the codes it settles on in COCI"]), "; there is no upload from this page. A direct hand-off to COCI is planned for a later release."]),
       el("div", { class: "cipx-hlinks" }, [
         el("a", { href: COE_CROSSWALK, target: "_blank", rel: "noopener" }, ["TOP ↔ CIP crosswalk (COE) ↗"]),
         el("a", { href: NCES, target: "_blank", rel: "noopener" }, ["NCES CIP-2020 taxonomy ↗"]),
         el("a", { href: ESS_MEMO, target: "_blank", rel: "noopener" }, ["ESS 26-06 transition guidance ↗"]),
       ]),
     ]);
-    var themeBtn = el("button", { class: "cipx-themetog", type: "button", "aria-label": "Toggle light or dark theme for this tab" }, []);
-    function paint() { themeBtn.textContent = isDark() ? "☀ Light" : "🌙 Dark"; }
+    // The label no longer says "for this tab" — it sets the theme everywhere,
+    // because storeTheme() now writes through to the one control.
+    var themeBtn = el("button", { class: "cipx-themetog", type: "button", "aria-label": "Switch COBI between light and dark" }, []);
+    function paint() { themeBtn.textContent = isDark() ? "Light" : "Dark"; }
     themeBtn.onclick = function () { var next = isDark() ? "light" : "dark"; applyTheme(next); storeTheme(next); paint(); };
     paint();
+    // …and follows the header control (or another window) without a reload.
+    // Without this the tab would still only change when YOU pressed ITS button.
+    window.addEventListener("cpl:themechange", function () {
+      applyTheme(savedTheme() === "dark" ? "dark" : "light"); paint();
+    });
     // Top-right utility rail: Coco (the emotional-support pup) watches over the tab, then the Theme
     // toggle, then the review-only chips (Expand / CSV) that renderReview drops in below — all one
     // width for harmony (Sam, 2026-07-18). Reclaims the old full-width utils row.
@@ -2037,9 +2847,26 @@
     input.oninput = function () { var v = input.value; clearTimeout(_t); _t = setTimeout(function () { st.q = v.toLowerCase().trim(); st.limit = PAGE; render(); renderFinder(v); }, 140); };
     panel.appendChild(input);
     var controls = el("div", { class: "cipx-controls" }, []);
+
+    // CIP-code filters (2 / 4 / 6-digit) — leftmost + most prominent of all the filters.
+    // Each list has a "Select All" (all-codes) option at the top; they cascade.
+    var cipGroup = el("div", { class: "cipx-cipfilters", role: "group", "aria-label": "Filter by CIP code" }, []);
+    cipGroup.appendChild(el("span", { class: "cipx-cipfilters-lbl", "aria-hidden": "true" }, ["CIP code"]));
+    var sel2 = el("select", { class: "cipx-fsel cipx-fsel-cip", "aria-label": "Filter by CIP sector (2-digit)" }, []);
+    var sel4 = el("select", { class: "cipx-fsel cipx-fsel-cip", "aria-label": "Filter by CIP sub-series (4-digit)" }, []);
+    var sel6 = el("select", { class: "cipx-fsel cipx-fsel-cip cipx-fsel-cip6", "aria-label": "Filter by CIP code (6-digit)" }, []);
+    famRef = sel2; fam4Ref = sel4; fam6Ref = sel6;
+    fillCipSelects();
+    sel2.onchange = function () { st.fam = sel2.value; st.fam4 = ""; st.fam6 = ""; fillCip4(); fillCip6(); st.limit = PAGE; render(); };
+    sel4.onchange = function () { st.fam4 = sel4.value; st.fam6 = ""; fillCip6(); st.limit = PAGE; render(); };
+    sel6.onchange = function () { st.fam6 = sel6.value; st.limit = PAGE; render(); };
+    cipGroup.appendChild(sel2); cipGroup.appendChild(sel4); cipGroup.appendChild(sel6);
+    controls.appendChild(cipGroup);
+    controls.appendChild(el("span", { class: "cipx-chipsep" }, []));
+
     var pills = el("div", { class: "cipx-pills" }, []); pillsRef = pills;
-    [["all", "All"], ["CTE", "CTE"], ["Non-CTE", "Non-CTE"], ["Both", "Both"], ["Noncredit", "Noncredit"]].forEach(function (p) {
-      var b = el("button", { class: "cipx-pill", type: "button", "aria-pressed": st.cat === p[0] ? "true" : "false" }, [p[1]]);
+    [["all", "All"], ["CTE", "CTE"], ["Non-CTE", "Non-CTE"], ["Both", "Either"], ["Noncredit", "Noncredit"]].forEach(function (p) {
+      var b = el("button", { class: "cipx-pill", type: "button", title: catTip(p[0]) === p[0] ? null : catTip(p[0]), "aria-pressed": st.cat === p[0] ? "true" : "false" }, [p[1]]);
       b.onclick = function () { st.cat = p[0]; st.limit = PAGE; Array.prototype.forEach.call(pills.querySelectorAll(".cipx-pill"), function (x) { x.setAttribute("aria-pressed", "false"); }); b.setAttribute("aria-pressed", "true"); render(); };
       pills.appendChild(b);
     });
@@ -2049,14 +2876,9 @@
     xferRef = xferChip;
     xferChip.onclick = function () { st.xfer = !st.xfer; xferChip.setAttribute("aria-pressed", st.xfer ? "true" : "false"); st.limit = PAGE; render(); };
     controls.appendChild(xferChip);
-    var fam = el("select", { class: "cipx-fsel", "aria-label": "CIP family" }, [el("option", { value: "" }, ["All CIP families"])]);
-    famRef = fam;
-    Object.keys(FAMS).sort().forEach(function (f) { fam.appendChild(el("option", { value: f }, [f + " · " + FAMS[f]])); });
-    fam.onchange = function () { st.fam = fam.value; st.limit = PAGE; render(); };
-    controls.appendChild(fam);
     var tog = el("label", { class: "cipx-retiredtog", title: "Retired = moved/deleted in 2020. Reserved = placeholder codes." }, []);
     var cb = el("input", { type: "checkbox" }); cbRef = cb;
-    cb.onchange = function () { st.showRetired = cb.checked; st.limit = PAGE; render(); };
+    cb.onchange = function () { st.showRetired = cb.checked; fillCip4(); fillCip6(); st.limit = PAGE; render(); };
     tog.appendChild(cb); tog.appendChild(document.createTextNode("Include retired / reserved"));
     controls.appendChild(tog);
     panel.appendChild(controls);
@@ -2078,9 +2900,14 @@
     wrapEl = el("div", { class: "cipx" }, []);
     applyTheme(savedTheme() === "dark" ? "dark" : "light");
     wrapEl.appendChild(header());
-    wrapEl.appendChild(modeBar());
-    wrapEl.appendChild(collegeBar());
-    if (st.mode === "recommend") {
+    wrapEl.appendChild(navBar());
+    var programsReview = (st.scope === "programs" && st.mode === "review");
+    // Programs review has its OWN college selector (program-export names differ); don't render the course
+    // college bar there too — it was showing twice (Sam, 2026-07-28).
+    if (!programsReview) wrapEl.appendChild(collegeBar());
+    if (programsReview) {
+      wrapEl.appendChild(programsView());
+    } else if (st.mode === "recommend") {
       wrapEl.appendChild(recommendView());
     } else if (st.mode === "review") {
       wrapEl.appendChild(reviewView());
@@ -2095,8 +2922,9 @@
     wrapEl.appendChild(footer());
     root.appendChild(wrapEl);
     fetchColleges();
-    if (st.mode === "review" || st.mode === "recommend") loadConsensus();
-    if (st.college) loadCollege(st.college);
+    if (programsReview) loadPrograms();
+    if (st.mode === "review" && st.scope === "courses" || st.mode === "recommend") loadConsensus();
+    if (st.college && st.scope === "courses") loadCollege(st.college);
     bindStickyResize();
     (window.requestAnimationFrame || setTimeout)(syncStickyOffsets, 0);   // publish the college-bar height for the sticky tiles offset
   }
@@ -2109,7 +2937,7 @@
         "--cipx-page:transparent;--cipx-surface:#ffffff;--cipx-surface-2:#eef3f9;--cipx-surface-sub:#f2f6fb;" +
         "--cipx-text:#16283d;--cipx-text-soft:#3c526b;--cipx-muted:#566a80;--cipx-border:#dbe4ee;--cipx-border-strong:#c3d1e0;--cipx-recbadge-bg:#3f6b4e;--cipx-row-sep:#ffffff;--cipx-rev-field:#e7edf4;" +
         "--cipx-accent:#00356b;--cipx-accent-soft:#e7eef6;--cipx-link:#0b5fa8;--cipx-focus:#1f7ae0;--cipx-mark:#ffe89c;--cipx-mark-fg:inherit;" +
-        "--cipx-cte-bg:#e7ede7;--cipx-cte-fg:#4c6350;--cipx-both-bg:#e9eaf1;--cipx-both-fg:#565d78;" +
+        "--cipx-cte-bg:#d7ead9;--cipx-cte-fg:#1e5533;--cipx-cte-stripe:#5c9a72;--cipx-both-bg:#e9eaf1;--cipx-both-fg:#565d78;" +
         "--cipx-non-bg:#eceef1;--cipx-non-fg:#59636f;--cipx-nc-bg:#e6edee;--cipx-nc-fg:#4f6a71;" +
         "--cipx-ret-bg:#ececec;--cipx-ret-fg:#5f646b;--cipx-new-bg:#efe9dd;--cipx-new-fg:#6b5c3d;" +
         "--cipx-ok-bg:#e7ede7;--cipx-ok-fg:#3f5a45;--cipx-ok-stripe:#6f9079;--cipx-warn-bg:#f4ecd8;--cipx-warn-fg:#6f5d33;--cipx-warn-stripe:#c6a24a;--cipx-bad-bg:#efe1dd;--cipx-bad-fg:#7c5147;--cipx-bad-stripe:#b7796b;" +
@@ -2118,7 +2946,7 @@
         "--cipx-page:#0e1a2b;--cipx-surface:#16263b;--cipx-surface-2:#1b3150;--cipx-surface-sub:#132338;" +
         "--cipx-text:#e7eef6;--cipx-text-soft:#b8c7d8;--cipx-muted:#8397ab;--cipx-border:#274058;--cipx-border-strong:#33506e;--cipx-row-sep:#33506e;--cipx-rev-field:#101f33;" +
         "--cipx-accent:#7db3ec;--cipx-accent-soft:#1b3652;--cipx-link:#8fc0f2;--cipx-focus:#7db3ec;--cipx-mark:#5a4a1a;--cipx-mark-fg:#ffe89c;" +
-        "--cipx-cte-bg:#233a2c;--cipx-cte-fg:#a4bda9;--cipx-both-bg:#272c45;--cipx-both-fg:#aeb4d2;--cipx-non-bg:#28323f;--cipx-non-fg:#9aa7b6;--cipx-nc-bg:#1f3841;--cipx-nc-fg:#93b6bf;--cipx-ret-bg:#2a2f36;--cipx-ret-fg:#929aa3;--cipx-new-bg:#34301f;--cipx-new-fg:#c6b78e;" +
+        "--cipx-cte-bg:#294c35;--cipx-cte-fg:#c6e3ce;--cipx-cte-stripe:#4f9269;--cipx-both-bg:#272c45;--cipx-both-fg:#aeb4d2;--cipx-non-bg:#28323f;--cipx-non-fg:#9aa7b6;--cipx-nc-bg:#1f3841;--cipx-nc-fg:#93b6bf;--cipx-ret-bg:#2a2f36;--cipx-ret-fg:#929aa3;--cipx-new-bg:#34301f;--cipx-new-fg:#c6b78e;" +
         "--cipx-ok-bg:#233a2c;--cipx-ok-fg:#a4bda9;--cipx-ok-stripe:#5f8f74;--cipx-warn-bg:#38321f;--cipx-warn-fg:#d8c48c;--cipx-warn-stripe:#b0913f;--cipx-bad-bg:#3a2723;--cipx-bad-fg:#d9a89c;--cipx-bad-stripe:#a86a5c;--cipx-recbadge-bg:#7cc79b;}",
       ".cipx-head{position:relative;padding:2px 7.6rem 6px 0;}",
       ".cipx-eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--cipx-accent);}",
@@ -2147,6 +2975,10 @@
       ".cipx.cipx-theme-dark .cipx-pill[aria-pressed=\"true\"]{color:#0e1a2b;}.cipx-pill-xfer[aria-pressed=\"true\"]{background:var(--cipx-both-fg);border-color:var(--cipx-both-fg);color:#fff;}",
       ".cipx-chipsep{width:1px;align-self:stretch;min-height:22px;background:var(--cipx-border-strong);margin:0 2px;}",
       ".cipx-fsel{font-family:inherit;font-size:.84rem;padding:6px 10px;border-radius:7px;border:1px solid var(--cipx-border-strong);background:var(--cipx-surface);color:var(--cipx-text);cursor:pointer;max-width:230px;}",
+      ".cipx-cipfilters{display:flex;gap:6px;align-items:center;flex-wrap:wrap;padding:5px 10px;border:1.5px solid var(--cipx-accent);border-radius:9px;background:var(--cipx-accent-soft);}",
+      ".cipx-cipfilters-lbl{font-size:.7rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--cipx-accent);}",
+      ".cipx-fsel-cip{max-width:210px;}.cipx-fsel-cip6{max-width:260px;}",
+      ".cipx-fsel:focus-visible,.cipx-pill:focus-visible{outline:2px solid var(--cipx-focus);outline-offset:2px;}",
       ".cipx-retiredtog{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;color:var(--cipx-muted);cursor:pointer;margin-left:auto;}",
       ".cipx-count{font-size:.82rem;color:var(--cipx-muted);font-weight:600;margin:13px 0 0;display:flex;align-items:baseline;flex-wrap:wrap;gap:2px;}",
       ".cipx-cfilters{color:var(--cipx-accent);font-weight:650;}.cipx-clearbtn{margin-left:10px;font-size:.78rem;font-weight:600;color:var(--cipx-link);background:none;border:0;cursor:pointer;padding:0;font-family:inherit;}.cipx-clearbtn:hover{text-decoration:underline;}",
@@ -2168,17 +3000,17 @@
       // list
       ".cipx-list{display:flex;flex-direction:column;}",
       ".cipx-item{border-bottom:1px solid var(--cipx-border);}",
-      ".cipx-row{display:grid;grid-template-columns:16px 92px 1fr auto;gap:14px;align-items:center;padding:12px 10px;cursor:pointer;}",
+      ".cipx-row{display:grid;grid-template-columns:16px 92px minmax(0,1fr) auto;gap:14px;align-items:center;padding:12px 10px;cursor:pointer;}",
       ".cipx-row:hover{background:var(--cipx-surface-sub);}.cipx-item.cipx-open .cipx-row{background:var(--cipx-surface-sub);}",
       ".cipx-caret{color:var(--cipx-muted);font-size:.8rem;width:14px;text-align:center;}",
       ".cipx-code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-weight:600;font-size:.9rem;color:var(--cipx-accent);}",
-      ".cipx-ttl{font-weight:550;color:var(--cipx-text);min-width:0;}",
+      ".cipx-ttl{font-weight:550;color:var(--cipx-text);min-width:0;overflow-wrap:anywhere;}",
       ".cipx-tags{display:flex;gap:6px;align-items:center;flex-wrap:wrap;justify-content:flex-end;}",
       ".cipx-cat{font-size:.66rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;padding:3px 9px;border-radius:7px;white-space:nowrap;}",
-      ".cipx-cat-CTE{background:var(--cipx-cte-bg);color:var(--cipx-cte-fg);}.cipx-cat-Both{background:var(--cipx-both-bg);color:var(--cipx-both-fg);}.cipx-cat-NonCTE{background:var(--cipx-non-bg);color:var(--cipx-non-fg);}.cipx-cat-Noncredit{background:var(--cipx-nc-bg);color:var(--cipx-nc-fg);}.cipx-cat-Retired,.cipx-cat-Reserved{background:var(--cipx-ret-bg);color:var(--cipx-ret-fg);}",
+      ".cipx-cat-CTE{background:var(--cipx-cte-bg);color:var(--cipx-cte-fg);font-weight:800;border:1px solid var(--cipx-cte-stripe);}.cipx-cat-Both{background:var(--cipx-both-bg);color:var(--cipx-both-fg);}.cipx-cat-NonCTE{background:var(--cipx-non-bg);color:var(--cipx-non-fg);}.cipx-cat-Noncredit{background:var(--cipx-nc-bg);color:var(--cipx-nc-fg);}.cipx-cat-Retired,.cipx-cat-Reserved{background:var(--cipx-ret-bg);color:var(--cipx-ret-fg);}",
       ".cipx-new{background:var(--cipx-new-bg);color:var(--cipx-new-fg);font-size:.6rem;font-weight:800;padding:3px 7px;border-radius:7px;letter-spacing:.04em;}",
       ".cipx-detail{padding:4px 10px 20px 122px;}",
-      ".cipx-def{margin:2px 0 0;color:var(--cipx-text-soft);line-height:1.6;max-width:80ch;}",
+      ".cipx-def{margin:2px 0 0;color:var(--cipx-text-soft);line-height:1.6;max-width:var(--cpl-measure,none);}",
       ".cipx-ex{margin-top:8px;font-size:.85rem;color:var(--cipx-muted);}.cipx-ex b{color:var(--cipx-text-soft);}",
       ".cipx-dmeta{display:flex;gap:16px;flex-wrap:wrap;margin-top:12px;font-size:.82rem;color:var(--cipx-muted);align-items:baseline;}.cipx-dmeta b{color:var(--cipx-text-soft);font-weight:650;}",
       ".cipx-xnote{cursor:help;color:var(--cipx-both-fg);font-weight:600;}",
@@ -2220,7 +3052,7 @@
       ".cipx-vpill{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;padding:4px 10px;border-radius:7px;white-space:nowrap;}",
       ".cipx-vpill-ok{background:var(--cipx-ok-bg);color:var(--cipx-ok-fg);}.cipx-vpill-warn{background:var(--cipx-warn-bg);color:var(--cipx-warn-fg);}.cipx-vpill-bad{background:var(--cipx-bad-bg);color:var(--cipx-bad-fg);}",
       ".cipx-vfor{font-size:.86rem;color:var(--cipx-text-soft);}",
-      ".cipx-vtext{margin:8px 0 0;color:var(--cipx-text);line-height:1.55;max-width:74ch;}",
+      ".cipx-vtext{margin:8px 0 0;color:var(--cipx-text);line-height:1.55;max-width:var(--cpl-measure,none);}",
       ".cipx-vmeterrow{display:flex;align-items:center;gap:10px;margin-top:10px;}",
       ".cipx-vmeterlbl{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--cipx-muted);cursor:help;white-space:nowrap;}",
       ".cipx-meterwrap{display:flex;align-items:center;gap:8px;min-width:150px;flex:1;max-width:300px;}",
@@ -2239,8 +3071,96 @@
       ".cipx-cand-ct{font-weight:600;color:var(--cipx-text);min-width:0;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;}",
       ".cipx-yourpick{font-size:.62rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;background:var(--cipx-accent-soft);color:var(--cipx-accent);padding:2px 7px;border-radius:6px;}",
       ".cipx-cand-card .cipx-detail{padding:0 14px 16px 122px;}",
-      ".cipx-fitfoot{font-size:.76rem;color:var(--cipx-muted);margin:12px 2px 2px;font-style:italic;line-height:1.55;max-width:80ch;}",
+      ".cipx-fitfoot{font-size:.76rem;color:var(--cipx-muted);margin:12px 2px 2px;font-style:italic;line-height:1.55;max-width:var(--cpl-measure,none);}",
       // recommend mode — mode toggle + course-first result
+      // .cipx-scopebar / .cipx-scopetab retired 2026-08-11 with the two-level nav — the four
+      // destinations now ride the single .cipx-modebar (see NAV / navBar).
+      // Programs review
+      ".cipx-prog{margin-top:6px;}",
+      ".cipx-prog-intro{color:var(--cipx-text-soft);font-size:.95rem;line-height:1.5;background:var(--cipx-surface);border:1px solid var(--cipx-border);border-radius:12px;padding:13px 16px;margin:4px 0 12px;}",
+      ".cipx-prog-flagword{color:var(--cipx-bad-fg);font-weight:700;}",
+      ".cipx-prog-nudge{color:var(--cipx-muted);font-size:.95rem;padding:16px 4px;}",
+      ".cipx-prog-tools{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:10px 0 6px;}",
+      ".cipx-prog-search{max-width:340px;flex:1 1 220px;}",
+      // ── multi-select picker ──
+      // The panel is absolutely positioned inside a relative wrap. The wrap must NOT inherit an
+      // overflow:hidden ancestor or the panel opens into a clipped sliver — the exact defect that
+      // made the EACR filter bar look like it had no dropdowns at all (#1174). .cipx-prog-tools is
+      // a plain flex row with no overflow set, so the panel is free; keep it that way.
+      ".cipx-mpick{position:relative;display:inline-flex;flex:0 1 auto;min-width:0;}",
+      ".cipx-mpick-btn{display:inline-flex;gap:7px;align-items:center;max-width:280px;padding:7px 11px;border:1px solid var(--cipx-border);border-radius:9px;background:var(--cipx-surface);color:var(--cipx-text);font:inherit;font-size:.86rem;cursor:pointer;white-space:nowrap;}",
+      ".cipx-mpick-btn:hover{border-color:var(--cipx-border-strong);}",
+      ".cipx-mpick-active .cipx-mpick-btn{border-color:var(--cipx-accent);box-shadow:inset 0 0 0 1px var(--cipx-accent-soft);}",
+      ".cipx-mpick-lbl{font-weight:700;color:var(--cipx-muted);}",
+      ".cipx-mpick-val{color:var(--cipx-text);min-width:0;overflow:hidden;text-overflow:ellipsis;}",
+      ".cipx-mpick-active .cipx-mpick-val{font-weight:650;color:var(--cipx-accent);}",
+      ".cipx-mpick-caret{color:var(--cipx-muted);font-size:.7rem;}",
+      ".cipx-mpick-panel{position:absolute;top:calc(100% + 5px);left:0;z-index:40;width:330px;max-width:80vw;background:var(--cipx-surface);border:1px solid var(--cipx-border-strong);border-radius:11px;box-shadow:0 10px 26px rgba(0,0,0,.17);padding:9px;}",
+      ".cipx-mpick-head{display:flex;gap:7px;align-items:center;margin-bottom:7px;}",
+      ".cipx-mpick-find{flex:1 1 auto;min-width:0;padding:6px 9px;border:1px solid var(--cipx-border);border-radius:7px;background:var(--cipx-surface-sub);color:var(--cipx-text);font:inherit;font-size:.84rem;}",
+      ".cipx-mpick-clear{padding:6px 10px;border:1px solid var(--cipx-border);border-radius:7px;background:var(--cipx-surface-sub);color:var(--cipx-text-soft);font:inherit;font-size:.78rem;font-weight:600;cursor:pointer;white-space:nowrap;}",
+      ".cipx-mpick-clear:hover{color:var(--cipx-text);border-color:var(--cipx-border-strong);}",
+      ".cipx-mpick-list{max-height:330px;overflow-y:auto;display:flex;flex-direction:column;gap:1px;}",
+      ".cipx-mpick-opt{display:flex;gap:8px;align-items:flex-start;padding:5px 7px;border-radius:6px;font-size:.84rem;color:var(--cipx-text);cursor:pointer;}",
+      ".cipx-mpick-opt:hover{background:var(--cipx-surface-sub);}",
+      ".cipx-mpick-opt-on{background:var(--cipx-ok-bg);font-weight:600;}",
+      ".cipx-mpick-opt input{margin-top:2px;flex:0 0 auto;}",
+      ".cipx-mpick-optt{min-width:0;overflow-wrap:anywhere;}",
+      ".cipx-mpick-none{padding:9px 7px;font-size:.82rem;color:var(--cipx-muted);}",
+      ".cipx-prog-flagtog{display:inline-flex;gap:7px;align-items:center;font-size:.86rem;color:var(--cipx-text-soft);cursor:pointer;white-space:nowrap;}",
+      ".cipx-prog-summary{font-size:.9rem;color:var(--cipx-text-soft);margin:2px 0 8px;}",
+      ".cipx-prog-showing{font-size:.82rem;color:var(--cipx-muted);margin:4px 2px 8px;}",
+      ".cipx-prog-list{display:flex;flex-direction:column;}",
+      ".cipx-prog-sector{display:flex;gap:9px;align-items:baseline;margin:14px 0 7px;padding:5px 4px 6px;border-bottom:2px solid var(--cipx-accent-soft);}",
+      ".cipx-prog-sector:first-child{margin-top:2px;}",
+      ".cipx-prog-sector-lbl{font-size:.66rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--cipx-muted);}",
+      ".cipx-prog-sector-code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-weight:800;font-size:.9rem;color:var(--cipx-accent);}",
+      ".cipx-prog-sector-t{font-weight:700;font-size:.92rem;color:var(--cipx-text);min-width:0;overflow-wrap:anywhere;flex:1 1 auto;}",
+      ".cipx-prog-sector-n{font-size:.76rem;font-weight:600;color:var(--cipx-muted);white-space:nowrap;}",
+      ".cipx-prog-sector-nocip .cipx-prog-sector-code,.cipx-prog-sector-nocip .cipx-prog-sector-t{color:var(--cipx-muted);}",
+      ".cipx-prog-item{border:1px solid var(--cipx-border);border-radius:11px;padding:11px 14px;margin-bottom:8px;background:var(--cipx-surface);}",
+      ".cipx-prog-item-flag{border-color:var(--cipx-bad-stripe);border-left:4px solid var(--cipx-bad-stripe);background:var(--cipx-bad-bg);}",
+      ".cipx-prog-l1{display:flex;gap:9px;align-items:baseline;flex-wrap:wrap;min-width:0;}",
+      ".cipx-prog-title{font-weight:650;color:var(--cipx-text);min-width:0;overflow-wrap:anywhere;flex:1 1 60%;}",
+      ".cipx-prog-award{font-size:.72rem;font-weight:700;color:var(--cipx-muted);background:var(--cipx-surface-sub);border:1px solid var(--cipx-border);border-radius:6px;padding:2px 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:230px;flex:0 1 auto;min-width:0;}",
+      ".cipx-prog-l2{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:6px;font-size:.9rem;}",
+      // TOP reads as plain running text (it is the code you are LEAVING); "CIP" is the bold label on
+      // the code you are moving TO, matching the course lane's .cipx-rev-ciplbl.
+      ".cipx-prog-top{color:var(--cipx-text-soft);font-weight:400;}.cipx-prog-arrow{color:var(--cipx-muted);}",
+      ".cipx-prog-ciplbl{font-size:.72rem;font-weight:800;letter-spacing:.04em;color:var(--cipx-muted);}",
+      ".cipx-prog-cip{display:inline-flex;gap:8px;align-items:center;flex-wrap:wrap;min-width:0;}",
+      ".cipx-prog-cipt{color:var(--cipx-text-soft);min-width:0;overflow-wrap:anywhere;}",
+      ".cipx-prog-nocip{color:var(--cipx-bad-fg);font-weight:600;font-style:italic;}",
+      ".cipx-prog-rev{margin-top:8px;font-size:.86rem;color:var(--cipx-text-soft);line-height:1.5;display:flex;gap:7px;align-items:center;flex-wrap:wrap;}",
+      ".cipx-prog-revflag{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;color:var(--cipx-bad-fg);background:var(--cipx-bad-bg);border:1px solid var(--cipx-bad-stripe);border-radius:6px;padding:2px 8px;white-space:nowrap;}",
+      ".cipx-prog-revsel{max-width:100%;}",
+      ".cipx-prog-changed{font-size:.72rem;font-weight:700;color:var(--cipx-warn-fg);background:var(--cipx-warn-bg);border:1px solid var(--cipx-warn-stripe);border-radius:6px;padding:2px 8px;white-space:nowrap;display:inline-flex;gap:5px;align-items:center;}",
+      // The "Both" prompt carries a full sentence (Jenni's wording), so it cannot ride the .6rem
+      // uppercase chip label the course chip uses — it wraps as normal sentence text on its own line.
+      ".cipx-prog-cte{margin-top:8px;display:flex;gap:7px;align-items:center;flex-wrap:wrap;}",
+      ".cipx-prog-cte .cipx-rev-ctelbl{font-size:.84rem;font-weight:600;text-transform:none;letter-spacing:0;color:var(--cipx-warn-fg);line-height:1.45;flex:1 1 240px;min-width:0;}",
+      ".cipx-prog-cte .cipx-rev-ctebtn{font-size:.72rem;padding:3px 11px;}",
+      // ── All approved CIP codes for the TOP, on every row ──
+      ".cipx-prog-optwrap{margin-top:9px;}",
+      ".cipx-prog-optbtn{font-family:inherit;font-size:.82rem;font-weight:650;color:var(--cipx-accent);background:none;border:1px solid var(--cipx-border);border-radius:8px;padding:5px 11px;cursor:pointer;display:inline-flex;gap:7px;align-items:center;text-align:left;}",
+      ".cipx-prog-optbtn:hover{background:var(--cipx-surface-sub);border-color:var(--cipx-border-strong);}",
+      ".cipx-prog-optbtn-on{background:var(--cipx-surface-sub);border-color:var(--cipx-border-strong);}",
+      ".cipx-prog-optbtn:focus-visible{outline:2px solid var(--cipx-focus);outline-offset:2px;}",
+      ".cipx-prog-optcaret{font-size:.7rem;color:var(--cipx-muted);}",
+      ".cipx-prog-opts{margin-top:8px;border:1px solid var(--cipx-border);border-radius:10px;padding:9px;background:var(--cipx-surface-sub);}",
+      ".cipx-prog-optshdr{font-size:.8rem;color:var(--cipx-text-soft);line-height:1.5;margin:1px 3px 8px;}",
+      ".cipx-prog-optsrc-note{color:var(--cipx-muted);}",
+      ".cipx-prog-opt{width:100%;font-family:inherit;font-size:.86rem;color:var(--cipx-text);background:var(--cipx-surface);border:1px solid var(--cipx-border);border-radius:8px;padding:6px 10px;margin-bottom:5px;cursor:pointer;display:flex;gap:9px;align-items:center;flex-wrap:wrap;text-align:left;}",
+      ".cipx-prog-opt:last-child{margin-bottom:0;}",
+      ".cipx-prog-opt:hover{border-color:var(--cipx-accent);background:var(--cipx-accent-soft);}",
+      ".cipx-prog-opt:focus-visible{outline:2px solid var(--cipx-focus);outline-offset:1px;}",
+      ".cipx-prog-opt-on{border-color:var(--cipx-accent);border-left:4px solid var(--cipx-accent);background:var(--cipx-accent-soft);font-weight:600;}",
+      ".cipx-prog-optmark{color:var(--cipx-accent);font-size:.7rem;flex:0 0 auto;}",
+      ".cipx-prog-optt{color:var(--cipx-text-soft);min-width:0;overflow-wrap:anywhere;flex:1 1 40%;}",
+      ".cipx-prog-optuse{font-size:.72rem;font-weight:600;color:var(--cipx-muted);white-space:nowrap;flex:0 0 auto;}",
+      ".cipx-prog-optuse-none{font-style:italic;opacity:.75;}",
+      ".cipx-prog-optsrc{font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.02em;color:var(--cipx-muted);border:1px dashed var(--cipx-border-strong);border-radius:5px;padding:1px 6px;white-space:nowrap;}",
+      ".cipx-prog-optasg{font-size:.66rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;color:var(--cipx-ok-fg);background:var(--cipx-ok-bg);border:1px solid var(--cipx-ok-stripe);border-radius:5px;padding:1px 6px;white-space:nowrap;}",
       ".cipx-modebar{display:inline-flex;gap:4px;background:var(--cipx-surface-2);border:1px solid var(--cipx-border);border-radius:10px;padding:4px;margin:14px 0 12px;}",
       ".cipx-modetab{font-family:inherit;font-size:.86rem;font-weight:650;color:var(--cipx-text-soft);background:transparent;border:0;border-radius:7px;padding:8px 15px;cursor:pointer;display:inline-flex;align-items:center;gap:7px;}",
       ".cipx-tabico{flex:none;opacity:.9;}",
@@ -2250,9 +3170,9 @@
       ".cipx-rec-course{background:var(--cipx-accent-soft);border:1px solid var(--cipx-border);border-radius:12px;padding:13px 16px;margin:2px 0 14px;}",
       ".cipx-rec-clabel{font-weight:700;font-size:1.02rem;color:var(--cipx-text);}",
       ".cipx-rec-ctop{font-size:.84rem;color:var(--cipx-text-soft);margin-top:3px;}",
-      ".cipx-rec-lead{font-size:.9rem;color:var(--cipx-text-soft);line-height:1.55;margin:4px 2px 12px;max-width:82ch;}",
+      ".cipx-rec-lead{font-size:.9rem;color:var(--cipx-text-soft);line-height:1.55;margin:4px 2px 12px;max-width:var(--cpl-measure,none);}",
       ".cipx-rec-lead-ok{color:var(--cipx-text);}.cipx-rec-lead-ok b{color:var(--cipx-accent);}",
-      ".cipx-rec-note{font-size:.88rem;color:var(--cipx-text-soft);line-height:1.55;margin:4px 2px 12px;max-width:82ch;}",
+      ".cipx-rec-note{font-size:.88rem;color:var(--cipx-text-soft);line-height:1.55;margin:4px 2px 12px;max-width:var(--cpl-measure,none);}",
       ".cipx-rec-list{display:flex;flex-direction:column;gap:8px;}",
       ".cipx-rec-card{background:var(--cipx-surface);border:1px solid var(--cipx-border);border-radius:11px;}",
       ".cipx-rec-card-rec{border-color:var(--cipx-ok-stripe);box-shadow:0 0 0 1px var(--cipx-ok-stripe);background:var(--cipx-ok-bg);}",
@@ -2264,6 +3184,7 @@
       ".cipx-recbadge{font-size:.66rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;background:var(--cipx-recbadge-bg);color:#fff;padding:3px 8px;border-radius:6px;white-space:nowrap;}",
       ".cipx.cipx-theme-dark .cipx-recbadge{color:#0e1a2b;}",
       ".cipx-provlbl{font-size:.72rem;color:var(--cipx-muted);cursor:help;white-space:nowrap;}",
+      ".cipx-alttop{font-size:.66rem;font-weight:700;color:var(--cipx-warn-fg);background:var(--cipx-warn-bg);border:1px solid var(--cipx-warn-stripe);padding:2px 7px;border-radius:6px;white-space:nowrap;cursor:help;}",
       ".cipx-rec-meta{display:flex;flex-direction:column;align-items:flex-end;gap:5px;min-width:158px;}",
       ".cipx-tierlbl{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;}",
       ".cipx-tier-ok{color:var(--cipx-ok-fg);}.cipx-tier-warn{color:var(--cipx-warn-fg);}.cipx-tier-bad{color:var(--cipx-bad-fg);}",
@@ -2273,7 +3194,7 @@
       ".cipx-boiler-btn,.cipx-beyond-btn{font-family:inherit;font-size:.82rem;font-weight:650;color:var(--cipx-link);background:var(--cipx-surface);border:1px solid var(--cipx-border);border-radius:9px;padding:9px 14px;cursor:pointer;display:flex;gap:8px;align-items:center;width:100%;text-align:left;box-sizing:border-box;}",
       ".cipx-boiler-btn:hover,.cipx-beyond-btn:hover{border-color:var(--cipx-accent);}",
       ".cipx-beyond-btn{color:var(--cipx-warn-fg);border-color:var(--cipx-warn-stripe);}",
-      ".cipx-boiler-note,.cipx-beyond-note{font-size:.76rem;color:var(--cipx-muted);line-height:1.5;margin:8px 2px;max-width:82ch;}",
+      ".cipx-boiler-note,.cipx-beyond-note{font-size:.76rem;color:var(--cipx-muted);line-height:1.5;margin:8px 2px;max-width:var(--cpl-measure,none);}",
       ".cipx-boiler-body,.cipx-beyond-body{margin-top:8px;display:flex;flex-direction:column;gap:8px;}",
       // review-my-catalog mode
       ".cipx-rev-banner{background:var(--cipx-surface-2);border:1px solid var(--cipx-border);border-radius:10px;padding:10px 14px;font-size:.84rem;color:var(--cipx-text-soft);line-height:1.5;margin:2px 0 14px;}.cipx-rev-banner b{color:var(--cipx-text);}",
@@ -2357,7 +3278,7 @@
       ".cipx-rev-recmark{font-weight:800;}",
       ".cipx-rev-rectag{font-weight:800;color:inherit;font-variant-numeric:tabular-nums;}",
       ".cipx-rev-fromtop{font-size:.72rem;color:var(--cipx-muted);white-space:nowrap;max-width:100%;font-variant-numeric:tabular-nums;display:inline-block;min-width:5.4rem;}",
-      ".cipx-rev-fromtop .cipx-code{color:var(--cipx-text-soft);}",
+      ".cipx-rev-fromtop .cipx-code{color:var(--cipx-text-soft);font-weight:400;}",   // TOP unbolded (Sam, 2026-08-14) — same call as the Programs row
       ".cipx-rev-fromtt{display:inline-block;max-width:13ch;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:bottom;color:var(--cipx-muted);}",
       ".cipx-rev-fromtop-none{font-style:italic;}",
       ".cipx-rev-arrow{color:var(--cipx-muted);}",
@@ -2371,6 +3292,8 @@
       ".cipx-rev-gbox .cipx-rev-chipt{flex:1 1 auto;min-width:0;}",
       ".cipx-rev-chip:hover{border-color:var(--cipx-accent);}",
       ".cipx-rev-chip .cipx-code{font-size:1.05rem;font-weight:700;color:var(--cipx-text);}",
+      ".cipx-rev-ciplbl{font-size:.68rem;font-weight:800;letter-spacing:.04em;color:var(--cipx-muted);align-self:center;}",
+      ".cipx-rev-chip-was .cipx-rev-ciplbl{color:var(--cipx-muted);opacity:.75;}",
       ".cipx-rev-chip-on{border-style:solid;border-color:var(--cipx-ok-stripe);background:var(--cipx-ok-bg);}",
       ".cipx-rev-chip-sug{border-color:var(--cipx-accent);}",
       // "was" = what the current TOP maps to (muted, secondary); "rec" = the peer-suggested code (emphasized)
@@ -2380,7 +3303,10 @@
       ".cipx-rev-chip-open{box-shadow:0 0 0 2px var(--cipx-accent);}",
       ".cipx-rev-chipt{font-size:.8rem;color:var(--cipx-text-soft);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}",
       ".cipx-rev-none{font-size:.8rem;color:var(--cipx-muted);font-style:italic;}",
-      ".cipx-rev-chipchg{align-self:center;font-size:.66rem;color:var(--cipx-muted);cursor:pointer;padding:1px 3px;border-radius:5px;line-height:1;}",
+      // bigger hit-target so aiming for ▾ (change) doesn't land on the box body (= confirm) — CfC F8.
+      // Full chip height (align-self:stretch) + roomy padding, NO negative margins (those let the ▾
+      // overflow the chip and a click could resolve to the body → accept — Sam's ▾-OKs-the-CIP bug).
+      ".cipx-rev-chipchg{align-self:stretch;display:inline-flex;align-items:center;font-size:.72rem;color:var(--cipx-muted);cursor:pointer;padding:0 8px;border-radius:5px;line-height:1;}",
       ".cipx-rev-chipchg:hover{color:var(--cipx-accent);background:var(--cipx-accent-soft);}",
       ".cipx-rev-chiprm{align-self:center;font-size:.95rem;color:var(--cipx-muted);cursor:pointer;padding:0 4px;border-radius:5px;line-height:1;}",
       ".cipx-rev-chiprm:hover{color:var(--cipx-bad-stripe);background:var(--cipx-bad-bg);}",
@@ -2395,6 +3321,15 @@
       ".cipx-rev-extraline .cipx-rev-chip .cipx-code{color:var(--cipx-accent);}",
       ".cipx-rev-addcip{flex:none;width:28px;height:28px;border-radius:8px;border:1px dashed var(--cipx-border-strong);background:var(--cipx-surface);color:var(--cipx-accent);font-size:1.15rem;line-height:1;cursor:pointer;display:grid;place-items:center;font-family:inherit;}",
       ".cipx-rev-addcip:hover{border-style:solid;border-color:var(--cipx-accent);background:var(--cipx-accent-soft);}",
+      ".cipx-rev-addcip-off{opacity:.35;border-style:dotted;color:var(--cipx-muted);cursor:default;pointer-events:none;}",
+      ".cipx-rev-credit{align-self:center;font-size:.64rem;font-weight:700;color:var(--cipx-muted);background:var(--cipx-surface-sub);border:1px solid var(--cipx-border);border-radius:6px;padding:2px 7px;white-space:nowrap;cursor:help;}",
+      ".cipx-rev-credit-cdcp{color:var(--cipx-cte-fg);background:var(--cipx-cte-bg);border-color:var(--cipx-cte-stripe);}",
+      ".cipx-rev-cte{display:inline-flex;gap:3px;align-items:center;margin-left:5px;}",
+      ".cipx-rev-cte-unset{background:var(--cipx-warn-bg);border:1px solid var(--cipx-warn-stripe);border-radius:8px;padding:1px 4px;}",
+      ".cipx-rev-ctelbl{font-size:.6rem;font-weight:800;color:var(--cipx-warn-fg);text-transform:uppercase;letter-spacing:.03em;}",
+      ".cipx-rev-ctebtn{font-family:inherit;font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.02em;color:var(--cipx-text-soft);background:var(--cipx-surface);border:1px solid var(--cipx-border-strong);border-radius:6px;padding:2px 7px;cursor:pointer;}",
+      ".cipx-rev-ctebtn-on{color:#fff;background:var(--cipx-accent);border-color:var(--cipx-accent);}",
+      ".cipx-rev-ctebtn:focus-visible{outline:2px solid var(--cipx-focus);outline-offset:1px;}",
       // inline flow host (picker / prompt / apply panel) under the box stack
       ".cipx-rev-inline{margin-top:7px;}",
       ".cipx-rev-addpick{background:var(--cipx-surface);border:1px solid var(--cipx-border-strong);border-radius:10px;padding:9px 10px;box-shadow:0 8px 22px rgba(0,0,0,.14);}",
@@ -2461,8 +3396,13 @@
       ".cipx-rev-wenote svg{flex:none;margin-top:2px;color:var(--cipx-muted);}",
       ".cipx-rev-cand-peer{border-color:var(--cipx-accent);margin-top:8px;background:var(--cipx-surface);}",
       ".cipx-rev-peertag{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:var(--cipx-accent);background:var(--cipx-accent-soft);padding:2px 6px;border-radius:6px;white-space:nowrap;}",
-      ".cipx-rev-detactions{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:10px;}",
+      ".cipx-rev-detactions{display:flex;gap:12px 16px;flex-wrap:wrap;align-items:center;margin-top:12px;}",
+      ".cipx-rev-actutils{display:flex;gap:16px;align-items:center;flex-wrap:wrap;}",
+      ".cipx-rev-actdecide{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-left:auto;}",
+      ".cipx-rev-searchwrap:not(:empty){margin-top:10px;}",
       ".cipx-rev-confirm{font-family:inherit;font-size:.82rem;font-weight:700;color:#fff;background:var(--cipx-accent);border:0;border-radius:8px;padding:8px 15px;cursor:pointer;}.cipx.cipx-theme-dark .cipx-rev-confirm{color:#0e1a2b;}",
+      ".cipx-rev-keep{font-family:inherit;font-size:.82rem;font-weight:600;color:var(--cipx-text);background:var(--cipx-surface);border:1.5px solid var(--cipx-border-strong);border-radius:8px;padding:6.5px 14px;cursor:pointer;}",
+      ".cipx-rev-keep:hover{border-color:var(--cipx-accent);color:var(--cipx-accent);}",
       ".cipx-rev-searchall,.cipx-rev-clear{font-family:inherit;font-size:.8rem;font-weight:600;color:var(--cipx-link);background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;}",
       ".cipx-rev-more{text-align:center;padding:14px;font-size:.82rem;color:var(--cipx-muted);}",
       ".cipx-foot{margin-top:26px;font-size:.76rem;color:var(--cipx-muted);border-top:1px solid var(--cipx-border);padding-top:14px;line-height:1.6;}",
@@ -2477,17 +3417,30 @@
         ".cipx-search,.cipx-fitta,.cipx-fit-cb,.cipx-college-sel{font-size:16px;}" +
         ".cipx-controls{gap:7px;}.cipx-pills{gap:5px;}.cipx-pill{padding:5px 10px;font-size:.78rem;}.cipx-chipsep{display:none;}" +
         ".cipx-cat{padding:2px 7px;font-size:.62rem;}.cipx-fsel{max-width:100%;flex:1 1 100%;}.cipx-retiredtog{margin-left:0;flex:1 1 100%;}" +
+        ".cipx-cipfilters{flex:1 1 100%;gap:5px;min-width:0;}.cipx-fsel-cip,.cipx-fsel-cip6{max-width:100%;flex:1 1 100%;min-width:0;width:100%;}.cipx-cipfilters-lbl{flex:1 1 100%;}" +
         ".cipx-count{margin-top:11px;}.cipx-csv{margin-left:0;}" +
         ".cipx-collegebar{padding:10px 12px;}.cipx-college-sel{max-width:100%;flex:1 1 100%;}.cipx-college-hint{flex:1 1 100%;}" +
-        ".cipx-row,.cipx-sug-crow{grid-template-columns:13px 56px 1fr auto;gap:9px;}" +
+        ".cipx-sug-crow{grid-template-columns:13px 56px 1fr auto;gap:9px;}" +
+        // browse row on phone: title gets the full remaining width (wraps), badges drop to their own line
+        ".cipx-row{grid-template-columns:13px 56px minmax(0,1fr);gap:6px 9px;}.cipx-row .cipx-tags{grid-column:2/-1;justify-content:flex-start;}" +
         ".cipx-detail,.cipx-sug-why,.cipx-cand-card .cipx-detail{padding-left:14px;}" +
         ".cipx-cbwrap,.cipx-fitta{max-width:100%;}" +
         ".cipx-cand-row{grid-template-columns:13px 56px 1fr;gap:9px;}.cipx-cand-rel{grid-column:2/-1;margin-top:2px;}.cipx-meterwrap{max-width:none;min-width:0;}" +
         ".cipx-vbody{padding:12px 13px;}.cipx-vpill{font-size:.68rem;padding:3px 8px;}.cipx-vtext{font-size:.92rem;}.cipx-vmeterrow{flex-wrap:wrap;gap:6px;}.cipx-vmeterlbl{white-space:normal;}" +
-        ".cipx-modebar{width:100%;}.cipx-modetab{flex:1;padding:8px 6px;font-size:.8rem;text-align:center;}" +
+        // Four destinations in one bar: at phone width `flex:1` would squeeze them to ~85px each and
+        // wrap the labels mid-word, so they lay out two-per-row instead (2026-08-11).
+        ".cipx-modebar{width:100%;flex-wrap:wrap;}.cipx-modetab{flex:1 1 44%;padding:8px 6px;font-size:.8rem;text-align:center;justify-content:center;}" +
+        ".cipx-prog-search{flex:1 1 100%;max-width:100%;}.cipx-prog-revsel{flex:1 1 100%;max-width:100%;width:100%;min-width:0;}.cipx-prog-cip{min-width:0;}.cipx-prog-cipt{overflow:hidden;text-overflow:ellipsis;}" +
         ".cipx-rec-row{grid-template-columns:13px 58px 1fr;gap:8px;}.cipx-rec-meta{grid-column:2/-1;flex-direction:row;align-items:center;min-width:0;margin-top:4px;}.cipx-rec-row-flat{grid-template-columns:13px 58px 1fr;}" +
         ".cipx-rec-card .cipx-detail{padding-left:14px;}" +
-        ".cipx-rev-deptinline{flex:1 1 100%;}.cipx-rev-deptsel{max-width:100%;flex:1 1 auto;}.cipx-rev-tiles{gap:6px;}.cipx-rev-tile{padding:6px 10px;min-width:60px;}" +
+        ".cipx-rev-deptinline{flex:1 1 100%;}.cipx-rev-deptsel{max-width:100%;flex:1 1 auto;}" +
+        // phone: all count tiles share ONE row (equal widths, no wrap) + drop the COCI "In Development"
+        // badge so it's the same 2-line height as the others (Sam, 2026-07-20 — save real estate).
+        ".cipx-rev-tiles{gap:5px;flex:1 1 100%;flex-wrap:nowrap;}.cipx-rev-tile{flex:1 1 0;min-width:0;padding:6px 4px;}" +
+        ".cipx-rev-tilen{font-size:1rem;}.cipx-rev-tilel{font-size:.6rem;letter-spacing:0;}.cipx-rev-tilesoon{display:none;}" +
+        // Expand + Confirm share ONE row (Sam, 2026-07-20): a nowrap flex — Expand keeps its natural
+        // width, the bulk button(s) flex to fill (shortened label helps it fit).
+        ".cipx-rev-actions{flex:1 1 100%;flex-wrap:nowrap;gap:6px;margin:4px 0 0;}.cipx-rev-actions .cipx-rev-expand{flex:0 0 auto;}.cipx-rev-bulk{flex:1 1 auto;min-width:0;font-size:.74rem;padding:8px 8px;}" +
         ".cipx-rev-row{grid-template-columns:14px 1fr auto;gap:6px 8px;}.cipx-rev-stat{grid-column:3;grid-row:1;}.cipx-rev-tocipwrap{grid-column:1/-1;grid-row:2;margin-top:4px;}.cipx-rev-tocip{grid-template-columns:auto auto minmax(0,1fr);}" +
         ".cipx-rev-cand{grid-template-columns:64px 1fr auto;}.cipx-rev-candrel{grid-column:1/-1;margin-top:3px;}.cipx-rev-csv{margin-left:0;}.cipx-rev-detail{padding-left:12px;}.cipx-rev-chgpanel{min-width:220px;max-width:80vw;}" +
         ".cipx-rev-whyline{padding-left:22px;}" +
@@ -2523,6 +3476,16 @@
     _setColleges: function (m) { FIT_COLLEGES = m; },
     _setCourses: function (slug, arr) { FIT_CACHE[slug] = arr; },
     _setMode: function (mode) { st.mode = (mode === "browse" || mode === "recommend") ? mode : "review"; },
+    _setScope: function (s) { st.scope = (s === "programs") ? "programs" : "courses"; },
+    _setPrograms: function (p) { PROGRAMS = p; },
+    _setProgCollege: function (i) { st.progCollege = i; },
+    // Render a mode that has no nav button. `browse` and `recommend` still WORK — only their nav
+    // entries are withheld (2026-08-14) — and navNormalise() deliberately coerces a *stored* browse
+    // mode away, so a returning user can never land somewhere with no lit tab and no way out. That
+    // coercion is the user-facing behaviour; this seam is how the still-supported modes stay
+    // exercisable without faking the storage state the app now corrects on purpose.
+    _setMode: function (m) { st.mode = m; rebuildShell(); },
+    _progNeedsRevision: progNeedsRevision,
     _passes: passes, _filtered: filtered, _score: scoreAgainst, _courseScore: scoreTokensVs, _courseToks: courseToks,
     _recommend: computeRecommend, _bestMatches: bestMatchCourses,
     _parseSubject: parseSubject, _reviewRows: function (courses) { return (courses || []).map(reviewRowOf); },
@@ -2531,5 +3494,6 @@
     _setStatusCounts: function (d) { STATUS_COUNTS = d; },
     _consensus: consensusFor, _consensusPick: consensusPick, _consensusKey: consensusKey, _subjMatch: subjMatch,
     _bestCipForTop: bestCipForTop, _college: function () { return st.college; },
+    _effectiveSug: effectiveSug,
   };
 })();

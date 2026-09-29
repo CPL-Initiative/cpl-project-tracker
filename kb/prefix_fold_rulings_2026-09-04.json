@@ -1,0 +1,49 @@
+{
+  "_about": "Sam's rulings on the prefix fold worklist sheet (docs/visuals/2026-09-03-prefix-fold-worklist.html): the seven items the 2026-09-03 land surfaced, planned by kb/_prefix_fold_dryrun.py (#1458). kb/_prefix_fold_apply.py consumes the frozen receipt kb/prefix_fold_out/2026-09-03 under these verdicts (scope all, no ruled-held). Nothing here is applied by itself.",
+  "_ruled_by": "Sam Lee, chat, 2026-09-04: \"Yes to all recommendations\"",
+  "_recorded_by": "session-225-skyfold",
+  "_status": "RULED - the apply lands under docs/coursecontrolnumber_remint.md in one cron window (before 06:17 UTC 2026-09-04).",
+  "_sheet": "https://claude.ai/code/artifact/dba12303-8b14-44e2-a21b-bba933a1803b",
+  "items": [
+    {
+      "item": 1,
+      "verdict": "yes",
+      "disposition": "Fold the 132 materialized records off their discipline's code: a keep-number prefix re-key under the recode's allocator, each row stamped _prefix_fold_from."
+    },
+    {
+      "item": 2,
+      "verdict": "yes",
+      "disposition": "Fold the 146 legacy strays in the same receipt: a reviewed cohort's discipline is the identity the CCR tab shows, and the prefix follows it."
+    },
+    {
+      "item": 3,
+      "verdict": "yes",
+      "disposition": "Hold the seven records whose discipline rests on TOP alone; a curator's discipline row or a later ruling is the second signal and the next fold takes them. fold-verify reads 7 after the land, by design."
+    },
+    {
+      "item": 4,
+      "verdict": "yes",
+      "disposition": "No fold for the seventeen materialized records without a discipline; they stay as minted and show on the CCR tab as records with no discipline."
+    },
+    {
+      "item": 5,
+      "verdict": "yes",
+      "disposition": "Gap-fill the 125 rows that cannot keep their number, as the recode did; the 30 chained keys are applied vacate-first by the Supabase re-key."
+    },
+    {
+      "item": 6,
+      "verdict": "yes",
+      "disposition": "Kinesiology's ATHL span stays a span; nothing moves."
+    },
+    {
+      "item": 7,
+      "verdict": "yes",
+      "disposition": "The apply from this receipt, one window: the plan recomputed and checked against the frozen receipt, a fresh read of kb_curation at write-time, the conservation gates, the receipt in ALIAS_MAPS, the post-apply chain, supabase-rekey.yml, daily-dashboard.yml, SkyView rebuilt."
+    }
+  ],
+  "flags": {
+    "scope": "all",
+    "ruled_held": null,
+    "receipt": "kb/prefix_fold_out/2026-09-03"
+  }
+}
