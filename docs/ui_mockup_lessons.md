@@ -79,3 +79,41 @@ same outcome by another route; ask instead.
 **Next.** Land the funding port (branch `claude/funding-dashboard-ui-s298`) and
 #1726 on green `test`; take the Sierra Training mockup through Sam's rounds,
 then port it the same way.
+
+## 2026-09-29 — S299 SkyTrellis: the port
+
+The S298 port agent's worktree branch never reached GitHub, so the container
+took it; S299 redid the port from the published mockup alone (PR #1731). The
+mockup held enough: its markup, class names, titles and change list were the
+spec, and the "Today" copy beside it showed what each round had changed.
+
+**What worked.**
+- **The consumer map before the port, again.** A background Explore agent read
+  every suite and surface against the planned changes while the port was
+  written. Its report caught two real defects before CI could: the new
+  fixed-layout rule also reached the grants table (it shares `.cplfund-table`),
+  and the public explainer defines only its own tokens, so the credit header's
+  `var(--seal-blue)` painted white text on no fill there, and met pie slices
+  painted black (pre-existing). Scope the rule; give every new token a fallback.
+- **Read cells by column key.** Thirty suites read money cells by class
+  position (`td.cf-award:not(.cf-max)[1]`); adding the Curr columns moved every
+  index. Re-aimed through the header's `data-sort` key, they now survive the
+  next column.
+- **Mutation-test the new guard.** Three planted regressions (a reserve word in
+  a hover, statewide Actual Funds back to the demonstrated figure, the chip
+  without its date) each turned the new suite red.
+
+**What bit.**
+- **A figure outside the mockup still moved.** Sam's "no reserve figure
+  anywhere on screen" made statewide Actual Funds the sum of what institutions
+  qualify for. The Priority Outcomes cards, outside the mockup, still print a
+  "Current Total" of what they have demonstrated: the same words now name two
+  figures. Put to Sam, not decided.
+- **A check floor counts assertions.** Merging two checks dropped
+  `gate_ledger_public` below its floor of 58; the fix was a meaningful check,
+  never a lowered floor.
+- **A mutation run beside the background suite** can poison whichever file runs
+  in that window; re-run what failed.
+
+**Next.** Merge #1731 on green `test`; Sam's two calls; then port Sierra
+Training round 1 the same way.

@@ -1,9 +1,21 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-09-28",
-  "_session": "298",
-  "_status": "Sam locked a redesign of the funding tab's College Dashboard on 28 September after seven rounds on a live mockup: clearer funding columns (maximum and current for credit, noncredit and the total), a three-box Minimum Conditions line in each institution's detail, TBA where a measure has yet to arrive, and a Confirm by date chip. The same day he ruled that funding waits on all three minimum conditions, including the Veteran Star's veteran JST uploads; that change is PR #1726, and the redesign follows it. The Sierra Training tab is now in the same mockup process.",
+  "_as_of": "2026-09-29",
+  "_session": "S299 SkyTrellis",
+  "_status": "The College Dashboard redesign Sam locked on 28 September is ported (PR 1731). Each row now leads with the minimum-conditions pie and the Veteran Star, reads maximum and current funding by lane and in total, shows no reserve figure, and gives a Confirm-by date. The drill-in opens on the Minimum Conditions line. 'TBA' replaces 'awaiting measurement' on every funding screen. Two calls wait on Sam. Sierra Training is the next port.",
   "items": [
+    {
+      "id": "s299-sam-current-total-two-figures",
+      "for": "Sam",
+      "tab": "implementation-funding",
+      "text": "The funding tab now uses 'Current Total' for two different figures. The Priority Outcomes cards report the funding institutions have demonstrated ($758,725 in the mockup data); the College Dashboard's Curr Total reports what they qualify for ($338). Choose one: the cards read the qualifying figure too, the cards say 'Demonstrated', or both stand."
+    },
+    {
+      "id": "s299-sam-review-lane-confirm",
+      "for": "Sam",
+      "tab": "implementation-funding",
+      "text": "You removed the Chancellor's Office Confirm from the College Dashboard drill-in. The opt-in review lane under Minimum Conditions still offers Confirm, and the college's thank-you note says the office 'will acknowledge it'. Remove it there too, or keep it as the office's record check?"
+    },
     {
       "id": "s298-sam-sql-test-answer",
       "for": "Sam",
@@ -29,10 +41,10 @@
       "text": "Rule GR register rows #2, #10 and #16 on the GR Priorities tab, your call of 27 September. Row #2 still asks for enacted law, and the tab also holds the 2026-27 timeline's five dates."
     },
     {
-      "id": "s298-fable-port-dashboard",
+      "id": "s299-fable-land-1731",
       "for": "Fable",
       "tab": "implementation-funding",
-      "text": "Land the College Dashboard redesign Sam locked on 28 September (branch claude/funding-dashboard-ui-s298; mockup https://claude.ai/artifact/2V1aWwtjwob5gSM6TEkfyQ). Merge main in after #1726, regenerate the dependency map, pass the test check, merge."
+      "text": "Merge PR 1731, the College Dashboard port, once its test check is green. Then put Sam's two new calls on the open-asks sheet under a fresh sheet id and compact the funding lane file, which is 1.23 times its budget."
     },
     {
       "id": "s298-fable-port-sierra",
