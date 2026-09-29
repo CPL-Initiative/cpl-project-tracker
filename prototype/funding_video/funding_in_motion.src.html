@@ -269,7 +269,7 @@ ENC.forEach(function(e,n){var d=E('div','inv',null,fx,'left:'+(e.x-5.5*PX)+'cqw;
     e.px.push({el:p,a:a,b:b,dx:(x-5)+(rnd(n*97+q)-.5)*4,dy:(y-4)+(rnd(n*53+q+7)-.5)*4-3,rot:(rnd(n*31+q)-.5)*540});}
   e.cap=E('div','cap',null,d);e.capT=E('span',null,e.label,e.cap,'position:relative');e.strike=E('span','strike',null,e.capT);
   e.bolt=E('div','bolt',null,fx);});
-function drawInvaders(T){ENC.forEach(function(e){var a=T-e.t;if(reduced||a<-0.95||a>0.8){e.el.style.visibility='hidden';e.bolt.style.visibility='hidden';return;}
+function drawInvaders(t){ENC.forEach(function(e){var a=(t-e.h)/BAR;if(reduced||a<-0.95||a>0.8){e.el.style.visibility='hidden';e.bolt.style.visibility='hidden';return;}
   e.el.style.visibility='visible';var drop=eo(k(a,-0.95,-0.6)),step=a<0?Math.floor((a+0.95)/0.22):0,march=(step%2?0.9:0);
   e.el.style.transform='translate('+march+'cqw,'+((1-drop)*-6)+'cqw)';e.el.style.opacity=drop;
   var frame=step%2;e.px.forEach(function(p){if(a<0){p.el.style.display=(frame?p.b:p.a)?'block':'none';p.el.style.transform='';p.el.style.opacity=1;p.el.style.background='';}
@@ -298,7 +298,8 @@ function buildK(){var st=stage.getBoundingClientRect();if(!st.width)return;
   var m=S0.lock.map,W=rel(m);AW=W.w*141/1206;AH=AW*121/141;arrow.style.width=AW+'cqw';GH.forEach(function(g){g.style.width=AW+'cqw';});
   HOME={x:W.l+W.w*(584+70.5)/1206,y:W.t+W.h*129/466};
   var K=[P(0,HOME.x,HOME.y,0,1),P(4.3,HOME.x,HOME.y,0,1),P(4.6,HOME.x,HOME.y,-16,1),P(4.85,HOME.x,HOME.y,16,1),P(5.1,HOME.x,HOME.y,0,1),P(5.4,HOME.x,HOME.y-3,0,1.2),P(6.0,112,4,90)];
-  function enc(e){var ty=e.y+8*PX+GAP;K.push(P(e.t-0.5,e.x,ty,0),P(e.t-0.27,e.x,ty,0),P(e.t-0.2,e.x,ty+0.7,0),P(e.t-0.05,e.x,ty,0),P(e.t+0.25,e.x,ty,0));}
+  /* under the invader, and the recoil as it fires; under narration the recoil rides the barrier's clock (drawArrow) */
+  function enc(e){var ty=e.y+8*PX+GAP;K.push(P(e.t-0.5,e.x,ty,0),P(e.t+0.25,e.x,ty,0));if(!NARR)K.push(P(e.t-0.27,e.x,ty,0),P(e.t-0.2,e.x,ty+0.7,0),P(e.t-0.05,e.x,ty,0));}
   K.push(P(6.2,-10,40,90));var a=at(S1,3,function(o){return o.n;},'right');K.push(Q(7.2,a),Q(11.4,a));
   a=at(S1,6,function(o){return o.bar;},'above',0.36);K.push(Q(12.4,a),Q(14.3,a));enc(ENC[0]);
   a=at(S2,3,function(o){return o.ticks[0].firstChild;},'above');K.push(Q(16.4,a),Q(19.0,a));
@@ -327,8 +328,9 @@ var trailBox=$('trail'),GH=[];for(var gi=0;gi<7;gi++){var g=E('img','ghost',null
    above the transform origin, rotated with the heading and scaled */
 function placeArrow(el,a,bob,alpha,shrink){var s=a.s*shrink,d=0.58*AH*s,rr=a.r*Math.PI/180,ox=a.x-d*Math.sin(rr),oy=a.y+d*Math.cos(rr)+bob;
   el.style.display='block';el.style.left=(ox-AW/2)+'cqw';el.style.top=(oy-0.58*AH)+'cqw';el.style.transform='rotate('+a.r+'deg) scale('+s+')';el.style.opacity=alpha;}
-function drawArrow(T){if(!K.length)return;if(reduced){var home=T<6||T>=87.7;arrow.style.display=home?'block':'none';placeArrow(arrow,P(0,HOME.x,HOME.y,0,1),0,1,1);GH.forEach(function(g){g.style.display='none';});return;}
-  var fly=T>5.4&&T<87.6,a=arrowAt(T),bob=(T>6&&T<87)?0.35*Math.sin(T*6.3):0;ENC.forEach(function(e){if(Math.abs(T-e.t)<0.55)bob=0;});placeArrow(arrow,a,bob,1,1);
+function recoil(b){return b<-0.27||b>-0.05?0:0.7*(b<-0.2?eio(k(b,-0.27,-0.2)):1-eio(k(b,-0.2,-0.05)));}
+function drawArrow(T,t){if(!K.length)return;if(reduced){var home=T<6||T>=87.7;arrow.style.display=home?'block':'none';placeArrow(arrow,P(0,HOME.x,HOME.y,0,1),0,1,1);GH.forEach(function(g){g.style.display='none';});return;}
+  var fly=T>5.4&&T<87.6,a=arrowAt(T),bob=(T>6&&T<87)?0.35*Math.sin(T*6.3):0;ENC.forEach(function(e){var b=(t-e.h)/BAR;if(Math.abs(b)<0.55)bob=0;if(NARR)bob+=recoil(b);});placeArrow(arrow,a,bob,1,1);
   // The trail: the arrow's own recent positions, 40 ms apart. Sampling the
   // path rather than a fixed offset keeps the trail behind the ship through a
   // turn, and it only appears while the ship is under way.
@@ -337,17 +339,27 @@ function drawArrow(T){if(!K.length)return;if(reduced){var home=T<6||T>=87.7;arro
 /* ---- render ---- */
 var T=0,playing=false,soundOn=true,t0=0,base=0,raf=0,scrubbing=false,lastSaid=-1;
 /* ---- the narrated cut's clock: the player runs on the narration's timeline
-   and each scene's picture stretches across its narrated span, so every
-   reveal, barrier and arrow keyframe keeps its place in its scene ---- */
-var NS=NARR?NARR.scenes:null;
-function ft(t){if(!NS)return t;for(var i=0;i<S.length;i++){var o=S[i],n=NS[i];if(t<n.end||i===S.length-1)return o.t0+cl((t-n.start)/(n.end-n.start))*(o.t1-o.t0);}return FILM;}
-function nt(t){if(!NS)return t;for(var i=0;i<S.length;i++){var o=S[i],n=NS[i];if(t<o.t1||i===S.length-1)return n.start+cl((t-o.t0)/(o.t1-o.t0))*(n.end-n.start);}return DUR;}
+   and the picture follows it through knots, [narration time, film time]: each
+   scene's start and each of its anchors, a reveal pinned to the word that
+   names it (Sam, 2026-09-27; the layout's anchors, written by cues.py).
+   Between two knots the picture stretches evenly, so a scene without anchors
+   stretches as one piece. The introductions have no layout: film time is
+   player time ---- */
+var NS=NARR?NARR.scenes:null,KN=null;
+if(NS){KN=[];NS.forEach(function(n,i){KN.push([n.start,S[i].t0]);(n.anchors||[]).forEach(function(a){KN.push([a.t,S[i].t0+a.at]);});});KN.push([DUR,FILM]);}
+function pw(t,a,b){if(!KN)return t;var i=1;while(i<KN.length-1&&t>=KN[i][a])i++;var p=KN[i-1],q=KN[i];return p[b]+cl((t-p[a])/(q[a]-p[a]))*(q[b]-p[b]);}
+function ft(t){return pw(t,0,1);}
+function nt(t){return pw(t,1,0);}
+/* each barrier keeps its own pace, BAR times the introduction's, around the
+   moment the clock lands its hit (h): where the clock slows for a heading that
+   types in with the voice, the barrier beside it still plays as a wink */
+var BAR=NARR?1.8:1;ENC.forEach(function(e){e.h=nt(e.t);});
 function playerT(){return T;}
 var CUES=NARR?NARR.cues:[],ccOn=true,cc=null,ccSpan=null;
 if(CUES.length){cc=E('p','cc',null,stage);cc.setAttribute('aria-hidden','true');ccSpan=E('span',null,null,cc);cc.hidden=true;}
 function cue(t){if(!cc)return;var c=null;for(var i=0;i<CUES.length;i++)if(t>=CUES[i].start&&t<CUES[i].end+0.2){c=CUES[i];break;}
   var txt=ccOn&&c?c.text:'';if(ccSpan.textContent!==txt)ccSpan.textContent=txt;cc.hidden=!txt;}
-function render(){var T=ft(playerT());cue(playerT());S.forEach(function(o,i){var on=T>=o.t0-0.001&&(T<o.t1||(i===S.length-1&&T<=DUR));var fo=i<S.length-1?cl((o.t1-T)/0.45):1;o.root.style.visibility=on?'visible':'hidden';if(on){o.root.style.opacity=fo;o.u(o,T-o.t0);if(i!==lastSaid){lastSaid=i;said.textContent=o.text;}}});drawInvaders(T);drawArrow(T);}
+function render(){var t=playerT(),T=ft(t);cue(t);S.forEach(function(o,i){var on=T>=o.t0-0.001&&(T<o.t1||(i===S.length-1&&T<=DUR));var fo=i<S.length-1?cl((o.t1-T)/0.45):1;o.root.style.visibility=on?'visible':'hidden';if(on){o.root.style.opacity=fo;o.u(o,T-o.t0);if(i!==lastSaid){lastSaid=i;said.textContent=o.text;}}});drawInvaders(t);drawArrow(T,t);}
 function measure(){var k2=buildK();if(k2)K=k2;}
 /* ---- music: orchestral, and it BUILDS (Sam, 2026-09-26: "should build
    rather than just repeat--don't be afraid to be more creative"). Seven
@@ -433,7 +445,7 @@ var Music=(function(){
     /* scene seams: a soft swell, never a crash, so the sections carry the shape */
     [6,15,25,32,46,56,65,75].forEach(function(s){e.push({t:nt(s)-1.0,k:'swell',g:0.06});});
     /* the barriers: a small shot and a pop, pitched in the key of the moment */
-    ENC.forEach(function(x){var hi=x.t>72?2:0,tx=nt(x.t);e.push({t:tx-0.27,k:'zap',m:84+hi,g:0.05});e.push({t:tx,k:'pop',m:48+hi,g:0.16});});
+    ENC.forEach(function(x){var hi=x.t>72?2:0;e.push({t:x.h-0.27*BAR,k:'zap',m:84+hi,g:0.05});e.push({t:x.h,k:'pop',m:48+hi,g:0.16});});
     /* under narration the score is a bed, 14 dB down, and dips 6 dB more under the voice */
     if(NARR)e.forEach(function(x){x.g*=0.2*duck(x.t);});
     e.sort(function(a,b){return a.t-b.t;});return e;
@@ -529,6 +541,6 @@ var m=/^#t(\d+)$/.exec(location.hash||'');if(m)T=parseFloat(m[1]);
 measure();render();ui();
 window.addEventListener('resize',function(){measure();render();});
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){measure();render();});
-window.__film={dur:DUR,narrated:!!NARR,seek:function(t){measure();T=t;render();},audio:function(){return Music.offline();}};
+window.__film={dur:DUR,narrated:!!NARR,seek:function(t){measure();T=t;render();},audio:function(){return Music.offline();},ft:ft,nt:nt};
 })();
 </script>

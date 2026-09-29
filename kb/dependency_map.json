@@ -6,7 +6,7 @@
   "edge_functions": 5,
   "file_datasets": 542,
   "external_services": 147,
-  "consumers": 380,
+  "consumers": 381,
   "workflows": 37,
   "data_js_files": 61,
   "tabs": 37
@@ -1178,11 +1178,18 @@
   "external:huggingface.co": {
    "consumers": [
     {
+     "id": "script:prototype/funding_video/cues.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 101
+    },
+    {
      "id": "script:prototype/funding_video/narrate.py",
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 28
+     "line": 32
     }
    ],
    "main_committers": []
@@ -14316,6 +14323,13 @@
      "direction": "read",
      "how": "literal",
      "line": 92
+    },
+    {
+     "id": "script:prototype/funding_video/cues.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 70
     }
    ],
    "served": true,

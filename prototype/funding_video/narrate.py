@@ -2,7 +2,8 @@
 """Read the funding video's narration aloud and lay it on the narrated cut's timeline.
 
   python3 prototype/funding_video/narrate.py          -> narration_s1.mp3 + narration_s1_layout.json (committed; build.py n1 reads them)
-                                                        and .narration/s1/: 01.wav ... 10.wav, timing.json, YYYYMMDD_CPL_Funding_Narration_s1.mp3
+                                                        and .narration/s1/: 01.wav ... 10.wav, timing.json, YYYYMMDD_CPL_Funding_Narration_s1.mp3;
+                                                        then cues.py --listen hears the new read and pins the cues (narration_s1_words.json)
   python3 prototype/funding_video/narrate.py --check  -> phonemes only: applies the fixes and checks the bans, no audio
 
 The voice is Kokoro-82M (af_heart, Apache-2.0), run locally with kokoro-onnx.
@@ -16,11 +17,14 @@ The narration drives the narrated cut's clock: each scene lasts its lead-in, its
 clip and its air (`layout` in the JSON), and the captions are the scene's text
 cut at sentences and long clauses, timed by phoneme count and snapped to the
 pauses the voice leaves. The track and the layout are committed because the
-built page and the MP4 are made from them.
+built page and the MP4 are made from them. A new read moves every word, so the
+run ends with cues.py --listen, which finds each word in the new track and pins
+each reveal to the word that names it (the layout's anchors).
 
-Needs: pip install kokoro-onnx soundfile imageio-ffmpeg. The model files come
-from huggingface.co/fastrtc/kokoro-onnx into $KOKORO_DIR (default
-~/.cache/kokoro), so the environment must allow huggingface.co.
+Needs: pip install kokoro-onnx soundfile imageio-ffmpeg faster-whisper. The
+model files come from huggingface.co/fastrtc/kokoro-onnx into $KOKORO_DIR
+(default ~/.cache/kokoro), and cues.py's from huggingface.co too, so the
+environment must allow huggingface.co.
 """
 import json, os, pathlib, re, subprocess, sys, time, urllib.request
 HERE = pathlib.Path(__file__).resolve().parent
@@ -159,9 +163,11 @@ sf.write(wav, track, rate)
                                              'clips': [round(len(c) / rate, 2) for c in clips]}, indent=1) + '\n', encoding='utf8')
 (HERE / ('narration_%s_layout.json' % variant)).write_text(json.dumps({
     '_about': ('The narrated cut\'s timeline, written by narrate.py from narration_%s.json: each scene '
-               'lasts its lead-in, its clip and its air; captions are the scene text cut at sentences '
-               'and long clauses, timed by phoneme count and snapped to the voice\'s pauses. '
-               'build.py n1 reads it; do not edit by hand.' % variant),
+               'lasts its lead-in, its clip and its air; captions (`cues`) are the scene text cut at sentences '
+               'and long clauses, timed by phoneme count and snapped to the voice\'s pauses. Each scene\'s '
+               '`anchors`, added by cues.py, pin a reveal (`at`, film seconds into the scene) to the narration '
+               'time `t` of the word that names it (`said` is that word\'s onset; `t` differs only where the '
+               'picture needs the room). build.py n1 reads it; do not edit by hand.' % variant),
     'voice': spec['voice'], 'speed': spec['speed'], 'layout': L, 'total': total,
     'scenes': layout, 'cues': cues}, ensure_ascii=False, indent=1) + '\n', encoding='utf8')
 try:
@@ -175,3 +181,5 @@ preview = out / ('%s_CPL_Funding_Narration_%s.mp3' % (time.strftime('%Y%m%d'), v
 subprocess.run([ffmpeg, '-y', '-hide_banner', '-loglevel', 'error', '-i', str(mp3), '-c', 'copy', str(preview)], check=True)
 print('read %d scenes, %d cues, %d:%02d on the narrated timeline, into %s' % (
     len(scenes), len(cues), total // 60, total % 60, mp3.relative_to(HERE.parent.parent)))
+# a new read moves every word: hear it, and pin each reveal to the word that names it again
+subprocess.run([sys.executable, str(HERE / 'cues.py'), '--listen', variant], check=True)

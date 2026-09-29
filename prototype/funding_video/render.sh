@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Renders the MP4: bash prototype/funding_video/render.sh [s2]  (about 5 minutes each)
+# Renders the MP4: bash prototype/funding_video/render.sh [s2|n1]  (about 5 minutes each; the narrated n1 took 23 on 2026-09-29, 14 of them its score)
+# It writes the file the page's Download link names (`mp4` in build.py's CONFIG), so a re-version is named there once.
 # Needs node 22+, headless Chromium (CHROME=...), npm, and an ffmpeg with libx264 + aac (FFMPEG=...).
 # Playwright's bundled ffmpeg has neither; the imageio-ffmpeg wheel's binary has both:
 #   FFMPEG=$(python3 -c "import imageio_ffmpeg as f; print(f.get_ffmpeg_exe())")
@@ -7,13 +8,11 @@ set -euo pipefail
 cd "$(dirname "$0")"
 FFMPEG=${FFMPEG:-ffmpeg}
 VARIANT=${1:-s1}
-SUFFIX=""; NAME="CPL_Funding_in_Motion"
-if [ "$VARIANT" != "s1" ]; then SUFFIX="_$VARIANT"; NAME="CPL_Funding_in_Motion_Scenario_${VARIANT#s}"; fi
-if [ "$VARIANT" = "n1" ]; then NAME="CPL_Funding_in_Motion_Narrated_Draft"; fi
+SUFFIX=""; if [ "$VARIANT" != "s1" ]; then SUFFIX="_$VARIANT"; fi
 mkdir -p .fonts && ( cd .fonts && for p in playfair-display source-sans-3; do [ -d $p ] || { npm pack -q @fontsource/$p@5.3.0 >/dev/null && mkdir $p && tar xzf fontsource-$p-5.3.0.tgz -C $p --strip-components 1; }; done )
 python3 build.py "$VARIANT" --render
 rm -rf .frames && PAGE="render$SUFFIX.html" node render.mjs
-OUT=$(date +%Y%m%d)_$NAME.mp4
+OUT=$(python3 -c "import json,re,sys; print(json.loads(re.search(r'CFG=(\{[\s\S]*?\}),EXPLAINER=', open(sys.argv[1], encoding='utf8').read()).group(1))['mp4'])" "funding_in_motion$SUFFIX.html")
 DUR=$(cat .dur); END=$(python3 -c "print(round($DUR+1,2))"); FADE=$(python3 -c "print(round($DUR-1,2))")
 if [ "$VARIANT" = "n1" ]; then
   # the narrated cut: the voice over the score's bed, and the captions as a subtitle track a viewer can switch off;

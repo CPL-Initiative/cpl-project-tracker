@@ -659,7 +659,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `prototype/check_contrast.py` | workflows: `js-tests.yml` | — |
 | `prototype/funding_video/.dur` | none found | scripts: `prototype/funding_video/render.mjs` |
 | `prototype/funding_video/.music.wav` | none found | scripts: `prototype/funding_video/render.mjs` |
-| `prototype/funding_video/funding_in_motion.src.html` | scripts: `prototype/funding_video/build.py` | — |
+| `prototype/funding_video/funding_in_motion.src.html` | scripts: `prototype/funding_video/build.py`, `prototype/funding_video/cues.py` | — |
 | `prototype/funding_video/narration_s1_layout.json` | scripts: `prototype/funding_video/build.py` | — |
 | `prototype/skyview.html` | scripts: `prototype/build_ccr_atlas.py` | scripts: `prototype/build_ccr_atlas.py` · committed by: `daily-dashboard.yml` |
 | `quickstart.js` | pages: `CPL_Dashboard.html` | — |
@@ -821,7 +821,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `github.com/CPL-Initiative/cpl-project-tracker` | tabs: `governance`, `unified-courses` |
 | `github.com/CPL-Initiative/cpl-project-tracker;` | scripts: `tools/source_first_light_art.mjs` |
 | `github.com/cpl-initiative/cpl-project-tracker` | tabs: `unified-courses` |
-| `huggingface.co` | scripts: `prototype/funding_video/narrate.py` |
+| `huggingface.co` | scripts: `prototype/funding_video/cues.py`, `prototype/funding_video/narrate.py` |
 | `icangotocollege.com` | tabs: `cpl-pathways` |
 | `laney.edu` | tabs: `map-queue`, `map-users` |
 | `launchapprenticeship.org` | tabs: `map-queue`, `map-users` |
@@ -946,4 +946,4 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 
 Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 542 file
-datasets · 147 external services · 380 consumers · 37 workflows · 37 tabs.
+datasets · 147 external services · 381 consumers · 37 workflows · 37 tabs.

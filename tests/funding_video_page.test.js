@@ -22,7 +22,14 @@
 //      clock: each scene stretches across its lead-in, clip and air, captions
 //      follow the voice, and the closing scene says the voice is synthetic.
 //
+//   7. Each reveal is cued to the word that names it (Sam, 2026-09-27): the
+//      clock passes through every anchor within 0.05 s, never runs backward and
+//      never plays the picture faster than the introduction, and each anchor
+//      is its word's onset in the words file heard from the committed track.
+//      The 90-second introductions keep the film's own clock.
+//
 // Run from repo root: `npm test` (or `node tests/funding_video_page.test.js`).
+const crypto = require("crypto");
 const fs = require("fs");
 const path = require("path");
 const { JSDOM } = require("jsdom");
@@ -122,7 +129,7 @@ function boot(file, reduced) {
   check(tag + "g6 the captions control turns them off", !!btn && btn.textContent === "Show captions" && cc.hidden);
   if (btn) btn.click();
   const S2 = L.scenes[2], inv = Array.from(d.querySelectorAll("#fx .inv")), shown = () => inv.some((e) => e.style.visibility === "visible");
-  w.__film.seek(S2.start + 0.8);
+  w.__film.seek(w.__film.nt(15.35));  // the first barrier's hit, 0.35 s into the film's third scene
   const atSeam = shown();
   w.__film.seek((S2.speech_start + S2.speech_end) / 2);
   check(tag + "g7 a barrier plays at the seam, and none mid-scene", atSeam && !shown());
@@ -132,10 +139,66 @@ function boot(file, reduced) {
   check(tag + "g9 the page plays the committed voice track", /"audio": ?"narration_s1\.mp3"/.test(raw) && fs.existsSync(path.join(DIR, "narration_s1.mp3")));
   const dl = d.getElementById("dl");
   check(tag + "g10 Download MP4 points at the narrated draft, which exists",
-    !!dl && dl.getAttribute("href") === "20260926_CPL_Funding_in_Motion_Narrated_Draft.mp4" && fs.existsSync(path.join(DIR, dl.getAttribute("href"))));
+    !!dl && dl.getAttribute("href") === "20260926_CPL_Funding_in_Motion_Narrated_Draft_2.mp4" && fs.existsSync(path.join(DIR, dl.getAttribute("href"))));
   check(tag + "b1 " + file + " has no unfilled placeholder", !/__[A-Z0-9]+__/.test(raw));
   w.close();
 }
+
+{
+  // 7. The cues: each reveal pinned to the word that names it.
+  const tag = "n1 ", file = "funding_in_motion_n1.html";
+  const L = JSON.parse(fs.readFileSync(path.join(DIR, "narration_s1_layout.json"), "utf8"));
+  const H = JSON.parse(fs.readFileSync(path.join(DIR, "narration_s1_words.json"), "utf8"));
+  const w = boot(file, false), { ft, nt } = w.__film;
+  // each scene's film span, from the source's scene() calls, as cues.py reads them
+  const spans = Array.from(src.matchAll(/=scene\((\d+(?:\.\d+)?),(\d+(?:\.\d+)?),/g)).map((m) => [Number(m[1]), Number(m[2])]);
+  const anchors = L.scenes.flatMap((s, i) => (s.anchors || []).map((a) => Object.assign({ scene: i, film: spans[i][0] + a.at }, a)));
+  const cues = narration.scenes.flatMap((s) => s.cues || []);
+  check(tag + "h1 every cue is pinned, or says why it is skipped",
+    anchors.length > 0 && anchors.length === cues.filter((c) => !c.skip).length && cues.every((c) => typeof c.why === "string"));
+  const off = anchors.map((a) => Math.max(Math.abs(nt(a.film) - a.t), Math.abs(ft(a.t) - a.film)));
+  check(tag + "h2 the clock passes through each anchor within 0.05 s (worst " + Math.max(...off).toExponential(1) + " s)",
+    spans.length === 10 && off.every((x) => x < 0.05));
+  const norm = (t) => t.replace(/\u2019/g, "'").replace(/^[^\w']+|[^\w']+$/g, "").toLowerCase();
+  const onset = anchors.map((a) => {
+    const ws = H.scenes[a.scene].words, ph = a.word.split(/\s+/).map(norm);
+    const i = ws.findIndex((_, j) => ph.every((p, k) => ws[j + k] && norm(ws[j + k][0]) === p));
+    return i < 0 ? NaN : ws[i][1];
+  });
+  check(tag + "h3 each anchor is its word's onset in the words file", anchors.every((a, i) => Math.abs(a.said - onset[i]) < 1e-9));
+  check(tag + "h4 a reveal may lead its word, by 1.5 s at most, and never trails it",
+    anchors.every((a) => a.t <= a.said + 1e-9 && a.said - a.t <= 1.5));
+  let back = false, fastest = 0;
+  for (let t = -0.5; t < L.total + 0.5; t += 0.01) {
+    const step = ft(t + 0.01) - ft(t);
+    if (step < 0) back = true;
+    fastest = Math.max(fastest, step / 0.01);
+  }
+  check(tag + "h5 the clock never runs backward, nor faster than the introduction (fastest " + fastest.toFixed(3) + "x)",
+    !back && fastest <= 1 + 1e-6);
+  check(tag + "h6 each scene still begins at its layout start",
+    L.scenes.every((s, i) => Math.abs(ft(s.start) - spans[i][0]) < 1e-9 && Math.abs(nt(spans[i][0]) - s.start) < 1e-9));
+  const mp3 = crypto.createHash("sha256").update(fs.readFileSync(path.join(DIR, "narration_s1.mp3"))).digest("hex");
+  check(tag + "h7 the words were heard from the committed voice track, with the model and the date",
+    H.sha256 === mp3 && H.hearing.model === "small" && /^\d{4}-\d{2}-\d{2}$/.test(H.heard_on));
+  // A barrier keeps its own pace (BAR) around its hit, while the arrow flies on
+  // the picture's clock: the arrow must already sit under the invader when its
+  // recoil begins, 0.27 barrier-seconds before the hit.
+  const BAR = Number((/var BAR=NARR\?([\d.]+):1/.exec(src) || [])[1]);
+  const hits = Array.from(src.matchAll(/\{t:([\d.]+),x:/g)).map((m) => Number(m[1]));
+  check(tag + "h8 the arrow is under each barrier before it fires",
+    BAR > 0 && hits.length === 5 && hits.every((e) => ft(nt(e) - 0.27 * BAR) >= e - 0.5 - 1e-9));
+  w.close();
+}
+
+[["funding_in_motion.html", ""], ["funding_in_motion_s2.html", "s2 "]].forEach(([file, tag]) => {
+  const w = boot(file, false), d = w.document, ts = [];
+  for (let t = -1; t <= 91; t += 0.25) ts.push(t);
+  check(tag + "i1 " + file + " keeps the film's own clock", ts.every((t) => w.__film.ft(t) === t && w.__film.nt(t) === t));
+  check(tag + "i2 its chapters keep the 90-second times",
+    Array.from(d.querySelectorAll(".chap .tc")).map((e) => e.textContent).join(" ") === "0:00 0:06 0:15 0:25 0:32 0:46 0:56 1:05 1:15 1:24");
+  w.close();
+});
 
 let fail = 0;
 for (const [n, ok] of results) { console.log((ok ? "PASS " : "FAIL ") + n); if (!ok) fail++; }
