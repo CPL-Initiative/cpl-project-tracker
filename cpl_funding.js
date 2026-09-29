@@ -37,7 +37,8 @@
 //     colleges to the LARGEST non-rural ones, so it was retired TOGETHER with
 //     the floor raise to $175K — under which the 13 receive $236,406 MORE than
 //     the carve-out delivered. Nothing in the college pool is unconditional now.
-//   • BASELINE ELIGIBILITY badges (informational — dollars unchanged):
+//   • MINIMUM CONDITIONS (Sam's term for the old baseline, 2026-09-28; all
+//     three gate funding since #1726 — the badges began as informational):
 //     ① a CPL Coordinator listed in MAP (live, PII-free boolean via the anon
 //     map_coordinator_summary() RPC) + ② a participation request by the
 //     deadline (default 2026-11-01; editable) — a college's VPAA/VPSS/CEO
@@ -3181,8 +3182,10 @@
   var TIMING_NOTE_DEFAULT_HTML =
     "<p>Note: CPL data is housed in the MAP platform, which serves as the CPL solution supporting our " +
     "communities, colleges, and system.</p>";
-  var DEFAULT_ELIG_INTRO = "Proposed baseline requirements to qualify for implementation funding " +
-    "(badges are informational in this draft — no dollar figure changes yet):";
+  // Sam replaced "baseline" with Minimum Conditions on 2026-09-28, and since
+  // #1726 the conditions gate funding, so the old "no dollar figure changes
+  // yet" was false. A saved override still wins; this is what Restore returns.
+  var DEFAULT_ELIG_INTRO = "Minimum conditions to qualify for implementation funding:";
   // WHAT THIS IS, before any figure about it (Sam asked for it, 2026-09-01).
   // These are HIS words, approved 2026-09-09 and baked here so that Restore the
   // default text returns them rather than the pre-2026-09-09 house draft — which
@@ -3911,7 +3914,7 @@
       }).catch(saveRefused);
   }
 
-  // ── baseline eligibility (badges only — dollars unchanged) ────────────
+  // ── minimum conditions (the old baseline; they gate funding since #1726) ──
   // ① CPL Coordinator listed in MAP — live, PII-free boolean per college via
   //    the anon map_coordinator_summary() RPC (the coordinator's name/email
   //    stay reviewer-gated in map_college_contacts; the MAP Users tab is
@@ -4561,9 +4564,25 @@
     // its figure, since Demonstrated follows it.
     var curHead = ["Current credit " + windowLabel(), "Current noncredit " + windowLabel(), "Current total " + windowLabel(),
       "Current total as % of max award"];
+    // THE PERCENTAGE READS THE FIGURE BESIDE IT (2026-09-29, funding NEXT ⓪f).
+    // The max award is exact and public, so a percentage of the EXACT current
+    // total hands back what the $1,000 rule withholds: 98.1% of $150,000 sat
+    // beside a coarse $147,000 and recovered $147,097 to within $75. On the
+    // public page the share comes from the coarse figure, and under the floor
+    // it reads the floor's own share as an upper bound.
+    function curPct(row) {
+      if (!(row.total > 0)) return "";
+      var v = row.earned_total || 0;
+      if (publicMode()) {
+        var a = Math.abs(v);
+        if (a < 0.5) return "0%";
+        if (a < PUBLIC_MONEY_FLOOR) return "<" + Math.ceil(PUBLIC_MONEY_FLOOR / row.total * 1000) / 10 + "%";
+        v = coarseDollars(v);
+      }
+      return Math.round(v / row.total * 1000) / 10 + "%";
+    }
     function curCells(row) {
-      var pct = row.total > 0 ? Math.round((row.earned_total || 0) / row.total * 1000) / 10 + "%" : "";
-      return [earnedCsv(row.earned_cr || 0), earnedCsv(row.earned_nc || 0), earnedCsv(row.earned_total || 0), pct];
+      return [earnedCsv(row.earned_cr || 0), earnedCsv(row.earned_nc || 0), earnedCsv(row.earned_total || 0), curPct(row)];
     }
     var lines = [];
     lines.push(["#", "Institution", "District", "County", "Credit FTES", "Noncredit FTES", "Headcount (context)"]
@@ -10075,7 +10094,7 @@
         }
       }
       return '<div class="cplfund-reqitem">' + bullet(
-        edArea("extra-req", txt, { idx: i, rows: 1, label: "Baseline requirement",
+        edArea("extra-req", txt, { idx: i, rows: 1, label: "Minimum condition",
           placeholder: "Describe the requirement…" }),
         '<button type="button" class="cplfund-reqdel" data-reqdel="' + i +
         '" title="Remove this requirement" aria-label="Remove requirement ' + (i + 1) + '">Remove</button>'
@@ -10110,11 +10129,11 @@
       '<div class="cplfund-elig-intro">' + proseBlockHtml("elig_intro") + "</div>" +
       coReviewLaneHtml() +
       coordItem + partItem + extraHtml +
-      '<div class="dk" style="margin:4px 0 6px;">Funding an institution demonstrates before it meets baseline ' +
-      "participation stays reserved for that institution.</div>" +
+      '<div class="dk" style="margin:4px 0 6px;">Funding an institution demonstrates before it meets its minimum ' +
+      "conditions stays reserved for that institution.</div>" +
       '<div class="cplfund-reqadd">' +
       '<button type="button" class="cplfund-optbtn" id="cplFundReqAdd" ' +
-      'title="Add another proposed baseline requirement">Add requirement</button>' +
+      'title="Add another minimum condition">Add requirement</button>' +
       '<span class="dk">' + (unlocked()
         ? "saved for the whole team"
         : "explored on this browser &mdash; sign in to save for everyone") + "</span>" +
@@ -10143,7 +10162,7 @@
     return list;
   }
   function buildRequirementsText() {
-    var lines = ["Proposed baseline requirements to qualify for CPL implementation funding",
+    var lines = ["Proposed minimum conditions to qualify for CPL implementation funding",
       "(Draft — informational; figures are potential allocations, not awards)", ""];
     var reqs = requirementsList();
     if (!reqs.length) lines.push("  (no requirements defined)");
@@ -10185,23 +10204,23 @@
       ".draft{background:#fbf6e6;border-left:4px solid #C9A227;padding:8px 12px;font-size:12.5px;color:#5b5223;margin:18px 0 0;}" +
       ".foot{margin-top:22px;border-top:1px solid #ccc;padding-top:10px;font-size:11.5px;color:var(--text-muted);}" +
       "@media print{.bar{display:none;}.wrap{max-width:none;padding:0;}body{background:#fff;}}";
-    return "<!doctype html><html><head><meta charset='utf-8'><title>CPL Implementation Funding — Baseline Eligibility Brief</title>" +
+    return "<!doctype html><html><head><meta charset='utf-8'><title>CPL Implementation Funding — Minimum Conditions Brief</title>" +
       "<style>" + css + "</style></head><body>" +
       "<div class='bar'><button onclick='cpCopy(this)'>Copy text</button>" +
       "<button onclick='window.print()'>Print / Save as PDF</button></div>" +
       "<div class='wrap' id='brief'>" +
       "<div class='eyebrow'>CPL Initiative &middot; Academic Affairs</div>" +
       "<h1>Credit for Prior Learning &mdash; Implementation Funding</h1>" +
-      "<div class='sub'>Proposed baseline eligibility &middot; DRAFT for field review</div>" +
+      "<div class='sub'>Proposed minimum conditions &middot; DRAFT for field review</div>" +
       "<p>The <strong>CPL Initiative</strong> of the California Community Colleges Chancellor&#39;s Office is proposing to " +
       "distribute up to <strong>" + esc(fmtMoney(netCollege())) + "</strong> in one-time implementation funding to colleges " +
       "across the <strong>" + esc(windowLabel()) + "</strong> window (" + nYears() + " year" + (nYears() > 1 ? "s" : "") +
       ") to scale Credit for Prior Learning through the Mapping Articulated Pathways (MAP) platform. To qualify, colleges " +
-      "would meet a short set of baseline requirements.</p>" +
-      "<h2>Proposed baseline requirements</h2><ol>" + reqLis + "</ol>" +
+      "would meet a short set of minimum conditions.</p>" +
+      "<h2>Proposed minimum conditions</h2><ol>" + reqLis + "</ol>" +
       "<h2>What your college should do</h2><ol>" + stepLis + "</ol>" +
-      "<div class='draft'>This is a working draft shared for field input. Badges and figures are <strong>informational</strong> " +
-      "&mdash; potential allocations, not awards &mdash; and no funding changes based on these requirements yet.</div>" +
+      "<div class='draft'>This is a working draft shared for field input. Its figures are potential allocations, " +
+      "not awards.</div>" +
       "<div class='foot'>CPL Initiative &middot; Mapping Articulated Pathways (MAP) platform &middot; " +
       "Live model &amp; dashboard: https://cpl-initiative.github.io/cpl-project-tracker/</div>" +
       "</div>" +
