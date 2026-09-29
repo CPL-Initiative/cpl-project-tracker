@@ -10,8 +10,9 @@ narrated cut is a separate draft beside them.
 in the container; the environment now allows `huggingface.co`, `*.huggingface.co` and
 `*.hf.co`). The v3 read (sent 2026-09-26, S294) awaits Sam's OK, and the narrated draft
 is built to it: `funding_in_motion_n1.html` and
-`20260926_CPL_Funding_in_Motion_Narrated_Draft_2.mp4`, three minutes (see the README). Draft 2
-(2026-09-29) cues each reveal to the word that names it; it goes back to Sam, and the explainer
+`20260926_CPL_Funding_in_Motion_Narrated_Draft_3.mp4`, three minutes (see the README). Draft 2
+(2026-09-29) cues each reveal to the word that names it, and draft 3, the same day, says minimum
+conditions (Sam's term, 2026-09-28); it goes back to Sam, and the explainer
 does not link it until he approves it. A new read re-renders with `narrate.py` (which ends by
 running `cues.py --listen`), `build.py n1` and `render.sh n1`. A human recording can still
 replace it scene by scene.
@@ -33,8 +34,9 @@ twenty-eight"). Details in `docs/session_293_handoff.md`.
 **v3 (S294, 2026-09-26):** the acronyms are unspaced, and `FTES` also takes the letters'
 phonemes, because unspaced it reads as the word "eftess". The title says "twenty twenty-six
 through twenty-eight", the funding scene "the twenty-six, twenty-seven year", both with a
-lighter stress on the twenties, and the baseline "by November first", as its headline does,
-leaving the year to the screen. A local transcription hears every one of them as written.
+lighter stress on the twenties, and the Minimum conditions scene "by November first", as its
+headline does, leaving the year to the screen. A local transcription hears every one of them
+as written.
 
 **The build (done 2026-09-26, S294; cued 2026-09-29):** the narration drives the clock (each
 scene lasts a lead-in, its clip and air); each reveal a word names lands on that word (Sam,
@@ -58,7 +60,7 @@ page and as a subtitle track in the MP4; the closing scene says the voice is syn
 
 **Targets.** Each priority has a target, measured in FTES. Thirty semester units of CPL make one FTES, or forty-five if you're on the quarter system. Here's the part to remember: reach half of a target, and your college qualifies for half that share. Go past the target, and the share stays where it is. It's the ceiling.
 
-**The baseline.** Before any funding is released, your college meets a baseline by November first. Name a CPL coordinator, then list that person in MAP and on your college's CPL landing page. Put your local confirmation of participation on file. And make sure at least seventy-five percent of your enrolled veterans have their Joint Services Transcripts uploaded in MAP. Until the baseline is met, the funding your college demonstrates is held in reserve for it.
+**Minimum conditions.** Before any funding is released, your college meets three minimum conditions by November first. Name a CPL coordinator, then list that person in MAP and on your college's CPL landing page. Put your local confirmation of participation on file. And make sure at least seventy-five percent of your enrolled veterans have their Joint Services Transcripts uploaded in MAP. Until all three are met, the funding your college demonstrates is held in reserve for it.
 
 **Timing.** The full two-year amount is available from year one. The Chancellor's Office releases funding twice a year, based on your college's CPL to date, and whatever remains after year one carries forward to year two for your college.
 

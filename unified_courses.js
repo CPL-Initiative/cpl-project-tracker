@@ -4518,16 +4518,13 @@
         tr.appendChild(disciplineCell(r));
         tr.appendChild(el("td", {}, [r.credit || "—"]));
         // Units: show a RANGE (lo–hi) when member colleges disagree (umin/umax baked by
-        // the generator); a spread > 2.0 is surfaced as an over-merge ⚠ alarm (not a
-        // silent tolerance band — a wide spread likely conflates different unit-load
-        // variants, which is exactly what the auditor's unit_anomaly flag catches).
-        // Falls back to the scalar typical (r.units) when the range isn't baked yet.
+        // the generator from the members the row displays). Units never split an
+        // identity (Sam, 2026-09-27), so a wide range is the identity's own range and
+        // carries no alarm; the ⚠ that called a spread over 2 an over-merge to split
+        // left on 2026-09-29. Falls back to the scalar typical (r.units).
         var uTd = el("td", {});
         if (r.umin != null && r.umax != null && r.umin !== r.umax) {
           uTd.appendChild(document.createTextNode(r.umin + "–" + r.umax));
-          if (r.umax - r.umin > 2.0) uTd.appendChild(el("span",
-            { title: "Unit spread > 2.0 across member colleges — likely an over-merge of different unit-load variants; review/split.",
-              style: "margin-left:4px;color:var(--mustard-text);cursor:help;" }, ["⚠"]));
         } else {
           uTd.appendChild(document.createTextNode(r.units == null ? "—" : String(r.units)));
         }
