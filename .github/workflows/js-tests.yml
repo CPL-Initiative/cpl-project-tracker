@@ -487,6 +487,15 @@ jobs:
         run: |
           pip install --quiet openpyxl
           python3 tests/merge_chain_flatten_test.py
+      # Units never split an identity (Sam, 2026-09-27). The M-ID Units bake
+      # read the minted memberships alone, so 2,358 merged rows printed "—" or
+      # one figure over members that differ; it now reads the members the row
+      # displays. Imports the generator, so it installs openpyxl too. Same
+      # non-required check.
+      - name: Unified Courses unit range (the displayed members, no over-merge alarm)
+        run: |
+          pip install --quiet openpyxl
+          python3 tests/unified_units_range_test.py
       # Curated-anchor duplicates lane (Session 226) — the May 2026 curated
       # common-course anchors whose title and discipline exactly match a
       # catalog identity, offered to the curator as a worklist lane (never
