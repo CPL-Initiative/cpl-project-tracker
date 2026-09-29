@@ -92,8 +92,11 @@ def parse_line(l):
     t = l.get("t") or ""
     u = str(l.get("u", "")).strip()
     m = re.match(r"^\s*(\d+(?:\.\d+)?)\s*$", u)
+    r = re.match(r"^\s*(\d*\.?\d+)\s*(?:-|\u2013|to)\s*(\d*\.?\d+)\s*$", u)
     if m:
         lo = hi = float(m.group(1)); src = "u"
+    elif r:  # the Fact Sheet's span, "2–3", since 2026-09-29
+        lo, hi = float(r.group(1)), float(r.group(2)); src = "u-range"
     else:
         m = RANGE.search(t)
         if m:
