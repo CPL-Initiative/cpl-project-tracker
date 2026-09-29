@@ -17,11 +17,11 @@ window.CPL_FUNDING_PERF = {
   "ppe": 115,
   "pac": 2929,
   "ptc": 2527,
-  "pe_u": 1431941.2,
-  "pa_u": 223574.4,
+  "pe_u": 1432053.2,
+  "pa_u": 224168.4,
   "ppa_u": 654.5,
   "ppe_u": 6667.5,
-  "pac_u": 25544.7,
+  "pac_u": 25597.7,
   "ptc_u": 21791.0,
   "p3_u": 73948.7,
   "pp_u": 63.5
@@ -1722,9 +1722,9 @@ window.CPL_FUNDING_PERF = {
   },
   "San Francisco": {
    "pe": 1759,
-   "pe_u": 79735.5,
+   "pe_u": 79847.5,
    "pa": 1758,
-   "pa_u": 12594.0,
+   "pa_u": 13188.0,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": null,
@@ -1736,7 +1736,7 @@ window.CPL_FUNDING_PERF = {
    "ppe": 0,
    "ppe_u": 0.0,
    "pac": 49,
-   "pac_u": 394.5,
+   "pac_u": 447.5,
    "ptc": 12,
    "ptc_u": 75.5
   },
@@ -3984,13 +3984,13 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1431941.2,
-   "pa_u": 223574.4,
+   "pe_u": 1432053.2,
+   "pa_u": 224168.4,
    "p3_u": 73948.7
   },
   "map": {
-   "pe_u": 1438608.7,
-   "pa_u": 224228.9,
+   "pe_u": 1438720.7,
+   "pa_u": 224822.9,
    "p3_u": 74012.2
   },
   "ratio": {
@@ -4003,8 +4003,8 @@ window.CPL_FUNDING_PERF = {
   "Santiago Canyon": false,
   "Chaffey": true,
   "San Diego Mesa": true,
-  "San Diego City": true,
   "San Francisco": true,
+  "San Diego City": true,
   "San Diego Miramar": true,
   "Moreno Valley": true,
   "Bakersfield": true,
@@ -4135,15 +4135,15 @@ window.CPL_FUNDING_PERF = {
    "jst": 1623,
    "pct": 1.5168
   },
-  "San Diego City": {
-   "vets": 776,
-   "jst": 1518,
-   "pct": 1.9562
-  },
   "San Francisco": {
    "vets": 1197,
    "jst": 1745,
    "pct": 1.4578
+  },
+  "San Diego City": {
+   "vets": 776,
+   "jst": 1518,
+   "pct": 1.9562
   },
   "San Diego Miramar": {
    "vets": 1181,

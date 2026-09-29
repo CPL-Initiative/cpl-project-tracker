@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-09-29T20:47:17.773Z",
+  "scraped_at": "2026-09-29T21:18:57.292Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -279,16 +279,16 @@
         {
           "college": "City College of San Francisco",
           "students": 2790,
-          "units": 12594,
-          "avgUnits": 4.513978494623656,
+          "units": 13188,
+          "avgUnits": 4.726881720430107,
           "transcriptionRate": 0.6,
           "avgTranscribed": 0.027060931899641576,
           "criteriaMetCount": 2,
           "militaryStudents": 1745,
           "nonMilitaryStudents": 1048,
           "apprenticeStudents": 7,
-          "savings": 21812850,
-          "yearImpact": 76579966,
+          "savings": 22961570,
+          "yearImpact": 80608454,
           "transcribedUnits": 75.5
         },
         {
@@ -1775,12 +1775,12 @@
     },
     {
       "title": "ELIGIBLE UNITS",
-      "value": "224k",
+      "value": "225k",
       "avg": "4.3 avg",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "132k"
+          "value": "133k"
         },
         {
           "label": "Workforce/Other",
@@ -1813,11 +1813,11 @@
     },
     {
       "title": "SAVINGS",
-      "value": "$336M",
+      "value": "$338M",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "$198M"
+          "value": "$199M"
         },
         {
           "label": "Workforce/Other",
@@ -1835,11 +1835,11 @@
       "breakdowns": [
         {
           "label": "Military",
-          "value": "$784M"
+          "value": "$788M"
         },
         {
           "label": "Workforce/Other",
-          "value": "$602M"
+          "value": "$603M"
         },
         {
           "label": "Apprentice",
@@ -1878,14 +1878,14 @@
   ],
   "raw": {
     "Students": 52178,
-    "Units": 224228.90000000002,
+    "Units": 224822.90000000002,
     "TranscribedUnits": 74012.2,
-    "Savings": 336387661.5,
-    "YearImpact": 1330616173.4,
+    "Savings": 337536381.5,
+    "YearImpact": 1334644661.4,
     "MilitaryStudents": 28546,
     "NonMilitaryStudents": 23720,
     "AprenticeStudents": 853,
-    "AverageUnits": 4.297383954923531,
+    "AverageUnits": 4.308768063168386,
     "TranscribedAverage": 1.4184560542757483
   }
 }

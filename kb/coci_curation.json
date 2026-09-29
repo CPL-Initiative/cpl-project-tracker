@@ -1,7 +1,7 @@
 {
   "_about": "Human curation overlay for the COCI staging KB. Git-canonical and reviewable. Synced from the Supabase kb_curation table by kb/_apply_curation.py, then applied on top of the AI-drafted coci_* files by excel_to_dashboard.py (export_unified_courses) so curation is regen-safe. Keyed by course_id (M-ID / UC cluster / C-ID). Does NOT touch curated common_courses.json / course_crosswalk.json.",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-09-29T20:47:28Z",
+  "_synced_at": "2026-09-29T21:19:08Z",
   "count": 30709,
   "curations": {
     "AERO M1001": {
@@ -76235,26 +76235,10 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "KINE M2023": {
-      "discipline": "Kinesiology",
-      "reviewed_by": "trailcrew-ccr3-s112@bot",
-      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
-      "unified_title": "Self Defense for Women"
-    },
     "ETHS M1193": {
       "merge_into": "SOCS M1059",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "KINE M2024": {
-      "unified_title": "Intermediate Springboard Diving",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "KINE M2025": {
-      "unified_title": "Physical Education in the Elementary School",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "ETHS M1198": {
       "unified_title": "Ethnic Studies for Educators Capstone",
@@ -116953,6 +116937,22 @@
     },
     "KINE M2022": {
       "unified_title": "Flexibility Fitness",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "KINE M2023": {
+      "discipline": "Kinesiology",
+      "reviewed_by": "trailcrew-ccr3-s112@bot",
+      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+      "unified_title": "Self Defense for Women"
+    },
+    "KINE M2024": {
+      "unified_title": "Intermediate Springboard Diving",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "KINE M2025": {
+      "unified_title": "Physical Education in the Elementary School",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
