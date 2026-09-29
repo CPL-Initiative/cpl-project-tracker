@@ -11,8 +11,8 @@
   },
   "summary": {
     "files": 1002,
-    "bytes": 10639723,
-    "over_budget": 7,
+    "bytes": 10640597,
+    "over_budget": 6,
     "handoff_max": 304,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59771,
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 76,
-        "bytes": 2167167,
+        "bytes": 2169890,
         "over": 2
       },
       "kb_note": {
@@ -46,8 +46,8 @@
       },
       "roadmap_lane": {
         "files": 33,
-        "bytes": 261556,
-        "over": 2
+        "bytes": 259707,
+        "over": 1
       },
       "handoff": {
         "files": 275,
@@ -57,12 +57,12 @@
     },
     "by_rule": {
       "house_voice": 24,
-      "oversized_doc": 7,
+      "oversized_doc": 6,
       "vault_heavy_path": 54
     },
     "vault": {
-      "files": 3263,
-      "bytes": 1607083197,
+      "files": 3264,
+      "bytes": 1607091764,
       "heavy_bytes": 713163496,
       "heavy_share": 0.444,
       "ignore_filters": [
@@ -392,19 +392,6 @@
       },
       "message": "20,113 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/common-cr-reference.md"
-    },
-    {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
-        "bytes": 21006,
-        "limit": 20000,
-        "lane": "roadmap_lane",
-        "over_by": 1006,
-        "ratio": 1.05
-      },
-      "message": "21,006 B is 1.1× the roadmap_lane budget (20,000 B) — candidate for compaction",
-      "path": "docs/reference/lanes/implementation-funding.md"
     },
     {
       "rule": "house_voice",
