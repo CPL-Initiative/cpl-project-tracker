@@ -62,6 +62,15 @@ const explainerMp4 = Array.from(explainer.matchAll(/\.\.\/prototype\/funding_vid
 check("a5 the explainer's MP4 links (Scenario 1 and 2) point at files that exist",
   explainerMp4.length === 2 && explainerMp4.every((f) => fs.existsSync(path.join(DIR, f))));
 
+// Sheet 4 card 4 (Sam, 2026-09-29): draft 4 approved, so the explainer links the
+// narrated cut beside the introduction. It is Scenario 1's, so the Scenario 2
+// branch hides it rather than pointing a Scenario 2 reader at Scenario 1's figures.
+check("a6 the explainer links the narrated cut, which exists",
+  /id="video-narrated" href="\.\.\/prototype\/funding_video\/funding_in_motion_n1\.html">or watch the narrated version \(3 minutes\)</.test(explainer)
+    && fs.existsSync(path.join(DIR, "funding_in_motion_n1.html")));
+check("a7 the Scenario 2 view hides the narrated link",
+  /getElementById\("video-narrated"\);\s*if \(narrated\) narrated\.hidden = true;/.test(explainer));
+
 const narration = JSON.parse(fs.readFileSync(path.join(DIR, "narration_s1.json"), "utf8"));
 const spoken = narration.scenes.map((s) => s.text).join(" ");
 check("n1 acronyms are written unspaced, so each reads as one quick word", !/\b[A-Z] [A-Z]\b/.test(spoken) && /\bCPL\b/.test(spoken));

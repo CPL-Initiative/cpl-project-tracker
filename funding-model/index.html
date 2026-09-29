@@ -354,6 +354,9 @@ section[hidden]{display:none}
     <p class="head-actions">
       <a class="pdfbtn" id="video-link" href="../prototype/funding_video/funding_in_motion.html">Watch the 90-second introduction</a>
       <a class="pdf-note" id="video-mp4" href="../prototype/funding_video/20260926_CPL_Funding_in_Motion_v2.mp4" download>or download the video (MP4)</a>
+      <!-- The narrated cut (Sam approved draft 4, sheet 4 card 4, 2026-09-29). It is Scenario 1
+           only, so the Scenario 2 view hides it until that scenario's narrated cut exists. -->
+      <a class="pdf-note" id="video-narrated" href="../prototype/funding_video/funding_in_motion_n1.html">or watch the narrated version (3 minutes)</a>
       <button type="button" class="pdfbtn" id="pdf-btn">Download PDF</button>
       <span class="pdf-note">Opens your browser&rsquo;s print dialog &mdash; choose
         &ldquo;Save as PDF&rdquo;. The file carries the model as it currently stands.</span>
@@ -747,6 +750,8 @@ window.CPL_PAINT_EXPLAINER = function (D) {
     if (!v || !link) return;
     link.href = v.page; link.textContent = v.label;
     if (mp4) mp4.href = v.mp4;
+    var narrated = document.getElementById("video-narrated");
+    if (narrated) narrated.hidden = true;   // no narrated cut of this scenario yet
   })();
   // A draft scenario opened by ?scenario= (Sam, 2026-09-25) says so in words
   // at the top, so a preview link passed along is never mistaken for the
