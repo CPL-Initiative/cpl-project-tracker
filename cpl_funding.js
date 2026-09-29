@@ -4791,7 +4791,7 @@
         "border:solid #FFFFFF;border-width:0 1.5px 1.5px 0;transform:rotate(45deg);}" +
       // Round 8 (2026-09-29): the drill-in's priority rows, their FTES lines,
       // the gray Curr figures, and the people under the first condition.
-      ".cplfund-table td .cf-ftes{display:block;font-size:8.5px;color:#3A3A36;}" +
+      ".cplfund-table td .cf-ftes{display:block;font-size:8.5px;color:var(--text-body,#3A3A36);}" +
       "td.cf-gated,td.cf-gated .cf-ftes{color:#5C5C55;}" +
       "tr.cplfund-subrow td.cf-subname{padding-left:12px;white-space:normal;text-align:left;}" +
       ".cf-cond-txt{display:inline-flex;flex-direction:column;line-height:1.25;}" +
