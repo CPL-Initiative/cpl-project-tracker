@@ -28,6 +28,11 @@
 //      is its word's onset in the words file heard from the committed track.
 //      The 90-second introductions keep the film's own clock.
 //
+//   8. The conditions a college meets before any funding is released are its
+//      minimum conditions (Sam's term, 2026-09-28): the retired word "baseline"
+//      never returns to what the video shows or says. A re-versioned MP4 keeps
+//      the explainer's download links pointing at files that exist.
+//
 // Run from repo root: `npm test` (or `node tests/funding_video_page.test.js`).
 const crypto = require("crypto");
 const fs = require("fs");
@@ -47,6 +52,11 @@ check("a2 the Scenario 2 label says introduction",
   explainer.includes('label: "Watch the 90-second introduction (Scenario 2)"'));
 check("a3 the explainer's MP4 link downloads", /id="video-mp4"[^>]*\sdownload[\s>]/.test(explainer));
 check("a4 the source never calls itself a guide for colleges", !/guide for colleges|Play the guide/i.test(src));
+// A re-version renames the MP4s (the original date code and a version suffix),
+// so the explainer's two download links must follow or they break.
+const explainerMp4 = Array.from(explainer.matchAll(/\.\.\/prototype\/funding_video\/([^"]+\.mp4)"/g)).map((m) => m[1]);
+check("a5 the explainer's MP4 links (Scenario 1 and 2) point at files that exist",
+  explainerMp4.length === 2 && explainerMp4.every((f) => fs.existsSync(path.join(DIR, f))));
 
 const narration = JSON.parse(fs.readFileSync(path.join(DIR, "narration_s1.json"), "utf8"));
 const spoken = narration.scenes.map((s) => s.text).join(" ");
@@ -70,8 +80,8 @@ function boot(file, reduced) {
   return dom.window;
 }
 
-[["funding_in_motion.html", "20260926_CPL_Funding_in_Motion.mp4", ""],
- ["funding_in_motion_s2.html", "20260926_CPL_Funding_in_Motion_Scenario_2.mp4", "s2 "]].forEach(([file, mp4, tag]) => {
+[["funding_in_motion.html", "20260926_CPL_Funding_in_Motion_v2.mp4", ""],
+ ["funding_in_motion_s2.html", "20260926_CPL_Funding_in_Motion_Scenario_2_v2.mp4", "s2 "]].forEach(([file, mp4, tag]) => {
   const raw = fs.readFileSync(path.join(DIR, file), "utf8");
   check(tag + "b1 " + file + " has no unfilled placeholder", !/__[A-Z0-9]+__/.test(raw));
   check(tag + "b2 " + file + " carries the current source (the barrier layer)", raw.includes("var ENC=") && raw.includes("Play the introduction"));
@@ -139,7 +149,7 @@ function boot(file, reduced) {
   check(tag + "g9 the page plays the committed voice track", /"audio": ?"narration_s1\.mp3"/.test(raw) && fs.existsSync(path.join(DIR, "narration_s1.mp3")));
   const dl = d.getElementById("dl");
   check(tag + "g10 Download MP4 points at the narrated draft, which exists",
-    !!dl && dl.getAttribute("href") === "20260926_CPL_Funding_in_Motion_Narrated_Draft_2.mp4" && fs.existsSync(path.join(DIR, dl.getAttribute("href"))));
+    !!dl && dl.getAttribute("href") === "20260926_CPL_Funding_in_Motion_Narrated_Draft_3.mp4" && fs.existsSync(path.join(DIR, dl.getAttribute("href"))));
   check(tag + "b1 " + file + " has no unfilled placeholder", !/__[A-Z0-9]+__/.test(raw));
   w.close();
 }
@@ -199,6 +209,27 @@ function boot(file, reduced) {
     Array.from(d.querySelectorAll(".chap .tc")).map((e) => e.textContent).join(" ") === "0:00 0:06 0:15 0:25 0:32 0:46 0:56 1:05 1:15 1:24");
   w.close();
 });
+
+{
+  // 8. The retired word. Only text is read: CSS such as align-items:baseline
+  // lives in style attributes and never reaches textContent.
+  const RETIRED = /\bbaseline\b/i;
+  const L = JSON.parse(fs.readFileSync(path.join(DIR, "narration_s1_layout.json"), "utf8"));
+  const spoken8 = narration.scenes.map((s) => [s.scene, s.text].concat((s.cues || []).map((c) => c.word + " " + c.why)).join(" ")).join(" ");
+  check("t1 the narration says minimum conditions, never baseline",
+    !RETIRED.test(spoken8) && /meets three minimum conditions/.test(spoken8));
+  check("t2 the captions and the narrated timeline's scene names never say baseline",
+    !RETIRED.test(L.cues.map((c) => c.text).concat(L.scenes.map((s) => s.scene)).join(" ")));
+  [["funding_in_motion.html", ""], ["funding_in_motion_s2.html", "s2 "], ["funding_in_motion_n1.html", "n1 "]].forEach(([file, tag]) => {
+    const w = boot(file, false), d = w.document;
+    // every scene's text, its chapter and what the page announces, second by second of the film
+    let shown = d.title + " " + d.getElementById("chapters").textContent;
+    for (let t = 0; t <= 90; t += 1) { w.__film.seek(w.__film.nt(t)); shown += " " + d.getElementById("stage").textContent; }
+    check(tag + "t3 " + file + " shows minimum conditions, never baseline",
+      !RETIRED.test(shown) && shown.includes("Meet the minimum conditions by November 1, 2026"));
+    w.close();
+  });
+}
 
 let fail = 0;
 for (const [n, ok] of results) { console.log((ok ? "PASS " : "FAIL ") + n); if (!ok) fail++; }
