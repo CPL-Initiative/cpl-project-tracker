@@ -81,6 +81,7 @@ ALIAS_MAPS = [
     "kb/zband_retire_out/2026-09-03/alias_map.json",      # 2026-09-03 (the Z-band retirement, items 20-21, Session 224 — stamps: _zband_retired_from; materialized records carry no earlier id)
     "kb/prefix_fold_out/2026-09-03/alias_map.json",       # 2026-09-04 (the prefix fold, Session 225 — stamps: _prefix_fold_from; scope all, nothing ruled held; Sam's yes to all 2026-09-04)
     "kb/eths_remint_out/2026-09-28/ruled/alias_map.json", # 2026-09-28 (the ETHS re-mint, Session 296 — stamps: _eths_remint_from; the 31 Sam ruled 2026-09-22, open-asks card 1)
+    "kb/eths_remint_out/2026-09-29/standalone+missed/alias_map.json",  # 2026-09-29 (the ETHS re-mint's 43, Session 302 — stamps: _eths_remint_from; Sam's "remint", open-asks sheet 3 card 3; 40 moved, 3 held, the 42 merged stay)
 ]
 
 

@@ -1,6 +1,6 @@
 {
   "_about": "Every C-ID / CCN subject code in kb/reference, the disciplines its rows sit under in kb/promotions.json (evidence), and where it is attributed (basis: ruled | canonical | majority | name); dismissed pairs are item 17 of the 2026-09-03 rulings. Built by kb/_seed_authority_codes.py.",
-  "_built_at": "2026-09-28",
+  "_built_at": "2026-09-29",
   "_rules": {
     "majority_floor": 4,
     "dismissed_pairs": [

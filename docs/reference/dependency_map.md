@@ -495,6 +495,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/esl_package_out/<date>/esl_apply_plan.json` | scripts: `kb/_build_esl_fold_spotcheck.py`, `kb/_esl_new_identities_dryrun.py`, `kb/_esl_relevel_dryrun.py`, `kb/_esl_sheet_apply_build.py` | — |
 | `kb/esl_package_out/<date>/esl_package_plan.json` | scripts: `kb/_build_esl_fold_preview.py`, `kb/_build_esl_fold_spotcheck.py`, `kb/_esl_new_identities_dryrun.py`, `kb/_esl_package_actionable.py`, `kb/_esl_package_apply.py`, `kb/_esl_sheet_apply_build.py` | — |
 | `kb/esl_relevel_out/<date>/plan.json` | scripts: `kb/_esl_ladder_relevel_dryrun.py` | — |
+| `kb/eths_remint_out/<date>/<scope>/alias_map.json` | scripts: `kb/_eths_remint.py` | — |
 | `kb/eths_remint_out/<date>/ruled/alias_map.json` | scripts: `kb/alias_chain.py` | — |
 | `kb/exhibit_audit/*.md` | none found | committed by: `daily-dashboard.yml` |
 | `kb/exhibit_audit/latest.json` | tabs: `credential-reference` | committed by: `daily-dashboard.yml` |
@@ -948,5 +949,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 545 file
+Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 546 file
 datasets · 147 external services · 384 consumers · 38 workflows · 37 tabs.
