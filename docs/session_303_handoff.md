@@ -21,14 +21,17 @@ they finished, so **check every PR below on its current head before you trust it
    `alias_map_path=kb/eths_remint_out/2026-09-29/standalone+missed/alias_map.json`, read back
    (`self_on_old, ptr_on_old, self_on_new, ptr_on_new` expected 0, 0, 4, 3), then dispatch
    `daily-dashboard.yml`. Main has moved since its checks: update the branch and re-check `test`.
-2. **#854, setup-python 6 → 7** (29 workflows), only after step 1 (`supabase-rekey.yml` and
-   `daily-dashboard.yml` use it). Its red `sync` check was a Dependabot run with no secrets
-   (`SUPABASE_SERVICE_KEY unset`); v7 installed and ran. Its red `smoke` check (`cpl-chat-smoke`)
-   was being diagnosed by S302's dependabot agent. Merging runs `coci-offerings-sync.yml` on main
-   (a Supabase write from committed data) and four read-only checks; watch them.
-3. **Check S302's dependabot agent's work:** #853 (setup-node), #855 (upload-artifact), #1090
-   (supabase/setup-cli; its only users deploy the chat function, so never dispatch them to test).
-   It was told to merge those three on a green `test` and leave #854.
+2. **#854, setup-python 6 → 7**, only after step 1 (`supabase-rekey.yml` and `daily-dashboard.yml`
+   use it). Head `c883ef30`: main merged in, all 30 uses on v7, `test` green. Before merging, grep
+   main for `actions/setup-python@v6` again (one new site appeared within an hour on 09-29). The
+   push to main runs `coci-offerings-sync.yml` with `--apply`, which truncates and replaces
+   `coci_college_offerings`, `coci_college_programs` and `college_geo` from committed data, plus
+   four read-only checks. v7 drops only `pip-install`, which no workflow uses.
+3. **`cpl-chat-smoke` has failed every run since 2026-09-18, and the bump is not the cause.**
+   `search_college_programs` hits the anon role's 3 s statement timeout (`57014`) and
+   `program_typical_courses` returns 0 rows (need 30); the same errors hit a setup-python v6 run
+   in the same minute. A live RPC performance problem: root-cause it. (#853, #855 and #1090
+   merged on 09-29 after S302's agent tested each: `0944...`, `3c83...`, `0b21...`.)
 4. **Build sheet 4** (`SHEET_ID` `2026-09-29-open-asks-4`, each card carrying its own `evidence`),
    marking each ask in its lane in the same PR:
    - Round 8 is approved (*"mockup looks good!"*); three questions stay open: gray Curr cells keep
@@ -90,7 +93,10 @@ reads `after`). Do not commit that plan.
 - ⚠️ **Sam curates live**: re-read before any write; his saves win.
 - ⚠️ **`first-light-art.yml` can commit its report onto a `claude/*` PR branch with `[skip ci]`**
   (it did on #1758 after a base merge), which leaves the head with no `test` run. Push the next
-  real commit on top; never an empty one.
+  real commit on top; never an empty one. And never write that token in a commit message:
+  quoting it in the body skipped CI on S302's fix commit too.
+- Docs still naming the old versions: `pipeline_reference.md` line 188 and `reflections/README.md`
+  line 68 (setup-python@v6), and the edge-function playbook §3 (setup-cli v1's rate limit).
 - ⚠️ **Background agents are this container's**: a new session cannot see their worktrees. Push WIP
   before a session ends.
 

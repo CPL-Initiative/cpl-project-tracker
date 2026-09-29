@@ -20,13 +20,19 @@
       "id": "s302-fable-agent-prs",
       "for": "Fable",
       "tab": "cr-reference",
-      "text": "First, in one cron window: merge #1755 (the ETHS re-mint of the 43), dispatch supabase-rekey.yml with its alias map, read back 0, 0, 4, 3, then dispatch daily-dashboard.yml. Then merge #854 (setup-python 7), finish the round 8 port from its WIP commit on claude/college-dashboard-round8, and check that #853, #855 and #1090 landed. Then card 11 (AUTB and AGAB) and the Jev cards 8, 9 and 10."
+      "text": "First, in one cron window: merge #1755 (the ETHS re-mint of the 43), dispatch supabase-rekey.yml with its alias map, read back 0, 0, 4, 3, then dispatch daily-dashboard.yml. Then merge #854 (setup-python 7), finish the round 8 port from its WIP commit on claude/college-dashboard-round8,. Then card 11 (AUTB and AGAB) and the Jev cards 8, 9 and 10."
     },
     {
       "id": "s302-fable-round9-vet-jst",
       "for": "Fable",
       "tab": "implementation-funding",
       "text": "Round 9 of the College Dashboard, Sam's ask of 29 September: next to Vet JST not yet at 75%, show the college's veteran count against its JST count and the percent. Check it against the rule that masks counts under 10."
+    },
+    {
+      "id": "s302-fable-chat-smoke-timeout",
+      "for": "Fable",
+      "tab": "chatbot",
+      "text": "Sierra's daily smoke check has failed every run since 18 September. The program search hits the public role's 3-second statement timeout, and the typical-courses lookup returns no rows. Find why those two lookups slowed and fix them."
     },
     {
       "id": "s301-fable-unit-range-rest",
