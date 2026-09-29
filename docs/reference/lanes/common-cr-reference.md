@@ -17,7 +17,7 @@ related:
 
 ## Status
 
-✅ **WORKLIST LIVE.** ⭐ **SAM'S DESIGN RULING:** *"CID is only one factor… similar to the CCR, we take into account matching factors like title, course name and number, course description, subject, etc."* — illustrative, not exhaustive. C-ID-as-key fails BOTH ways: it over-merges (`AJ 110` on two genuinely different POST lines) and under-merges badly (only ~17% of the 2,344 strings carry a C-ID at all). ⭐ **AUTOMATION REACHES ~10%, SO THIS IS A CURATION WORKBENCH, NOT A MERGE ENGINE** — rung 1 published statewide 351 lines/134 credentials · rung 2 C-ID 36 of those · rung 3 CCR course identity 40 strings · rung 4 mechanical twin ~160 · rung 5 similarity **suggests, never merges**. **~90% is curator judgment no matcher reaches** (*Racial Issues and the Police* ≡ *Community Relations* — one POST topic, unrelated words), which is what the **+ Add a wording** picker is for. ⭐ **SCOPE IS GLOBAL + a split affordance (Sam, 2026-08-13):** 407 strings (17%) span >1 credential but carry **45% of all articulation rows**, and `Introduction to FCAW` is one recommendation under all ten AWS/ASME credentials carrying it. ⚠️ **RANK BY COLLAPSE VALUE (wordings × colleges), NEVER BY CREDENTIALS SPANNED** — the widest-spreading string is `3 hours in Elective Course Credits`: 61 credentials, **1 college**, a placeholder. Credentials-spanned would have ranked the corpus's least useful string #1; collapse value sinks it to #174 with no special case. Real head: `Intro to Administration of Justice` (5 wordings/26 colleges), then Principles & Procedures, then Criminal Investigation. **30 groups carry a curator decision as of 2026-09-20 (the older "156" counted the mechanical rung ladder); top 50 strings = 49.4% of all articulations — an afternoon, not an ocean.** ⚠️ **Units are NOT identity** (`SPAN 100` at 4/4.5/5) — a screen on rung 4 ONLY; rung 1/2/3 override it, so `Engine Performance` correctly merges 2/3-4/4/5 units and the spread is **always displayed**. ⚠️ **Grouping is by KEY, NEVER transitive** — 164 strings bridge ≥2 course identities, so components would chain `AJ 110`↔*Community Relations*↔`AJ 160`. ⚠️ **Two gates DON'T work: `attribution='per_course'`** (every poisoned `AJ 110` row carries it) **and a line-fraction/cartesian test** (`AJ 110` hits 8 of POST's 43 → reads non-cartesian → sails through). The gate that works is the credential's **COURSE count**. Decisions live in gated Supabase `cr_reference_decisions` keyed on `group_key`, so a rebuild can never overwrite a judgment. **NEXT: Sam works the head — the top ~50 groups — and we watch which rungs he overrides.** Story + the fixed-bug postmortems: [`common_cr_reference_lessons`](docs/common_cr_reference_lessons.md) · scope [`common_cr_reference_scope`](docs/common_cr_reference_scope.md).
+✅ **WORKLIST LIVE.** ⭐ **SAM'S DESIGN RULING:** *"CID is only one factor… similar to the CCR, we take into account matching factors like title, course name and number, course description, subject, etc."* — illustrative, not exhaustive. C-ID-as-key fails BOTH ways: it over-merges (`AJ 110` on two genuinely different POST lines) and under-merges badly (only ~17% of the 2,344 strings carry a C-ID at all). ⭐ **AUTOMATION REACHES ~10%, SO THIS IS A CURATION WORKBENCH, NOT A MERGE ENGINE** — rung 1 published statewide 351 lines/134 credentials · rung 2 C-ID 36 of those · rung 3 CCR course identity 40 strings · rung 4 mechanical twin ~160 · rung 5 similarity **suggests, never merges**. **~90% is curator judgment no matcher reaches** (*Racial Issues and the Police* ≡ *Community Relations* — one POST topic, unrelated words), which is what the **+ Add a wording** picker is for. ⭐ **SCOPE IS GLOBAL + a split affordance (Sam, 2026-08-13):** 407 strings (17%) span >1 credential but carry **45% of all articulation rows**, and `Introduction to FCAW` is one recommendation under all ten AWS/ASME credentials carrying it. ⚠️ **RANK BY COLLAPSE VALUE (wordings × colleges), NEVER BY CREDENTIALS SPANNED** — the widest-spreading string is `3 hours in Elective Course Credits`: 61 credentials, **1 college**, a placeholder. Credentials-spanned would have ranked the corpus's least useful string #1; collapse value sinks it to #174 with no special case. Real head: `Intro to Administration of Justice` (5 wordings/26 colleges), then Principles & Procedures, then Criminal Investigation. **30 groups carry a curator decision as of 2026-09-20 (the older "156" counted the mechanical rung ladder); top 50 strings = 49.4% of all articulations — an afternoon, not an ocean.** ⚠️ **Units never split an identity** (`SPAN 100` at 4/4.5/5): no rung holds a merge for them, and a group named by a wording states its range (cards 13–14, below). ⚠️ **Grouping is by KEY, NEVER transitive** — 164 strings bridge ≥2 course identities, so components would chain `AJ 110`↔*Community Relations*↔`AJ 160`. ⚠️ **Two gates DON'T work: `attribution='per_course'`** (every poisoned `AJ 110` row carries it) **and a line-fraction/cartesian test** (`AJ 110` hits 8 of POST's 43 → reads non-cartesian → sails through). The gate that works is the credential's **COURSE count**. Decisions live in gated Supabase `cr_reference_decisions` keyed on `group_key`, so a rebuild can never overwrite a judgment. **NEXT: Sam works the head — the top ~50 groups — and we watch which rungs he overrides.** Story + the fixed-bug postmortems: [`common_cr_reference_lessons`](docs/common_cr_reference_lessons.md) · scope [`common_cr_reference_scope`](docs/common_cr_reference_scope.md).
 
 ## Jev on this lane — the blocking, the gate, the verdicts (S279/S280, 2026-09-20)
 
@@ -29,12 +29,8 @@ force there is **1,873,080 pairs**, which is why similarity never got traction.
 **The way in was blocking, not a better matcher.** Grouping by SHARED CANONICAL
 cuts 1.87M pairs to **51 anchored pairs carrying 1,459 rows**, and every cluster
 already contains a rung-1/2/3 anchor — a published statewide line, a C-ID or a CCR
-identity — so each question is a closed yes/no against an authority. Jev answered
-all 51 in 10 seconds (`kb/_typesafe_cr_trial.py`, run 35516193054) and it
-discriminates: *Introduction to Criminal Justice* 0.89 against *Introduction to
-Criminology* 0.48 on the same `AJ 110` anchor with near-identical row counts —
-the designated discriminator, and it passed. Spanish 1/2 at 0.84/0.86, Spanish 3
-at **0.32**.
+identity — so each question is a closed yes/no against an authority. The first
+run's scores are in [`common_cr_reference_lessons`](../../common_cr_reference_lessons.md), moved S302.
 
 ⚠️ **NOTHING FELL BELOW 0.32 — JEV EXPRESSES NO CONFIDENT NEGATIVES HERE.** The
 `keep` bucket came back empty. The usable gate is **p ≥ 0.85 = suggest**,
@@ -48,9 +44,7 @@ then, shown the eight anchors carrying both a fold and a keep, flipped 26, 27, 2
 groups confirmed), INSERT-only under `updated_by = cr-reference-s280@bot`,
 verified member-by-member against
 `kb/receipts/cr_reference_decisions_2026-09-20_s280.json`; rollback is one delete
-on that `updated_by`. **These are the lane's first curator decisions** — before
-them the table had never held data, and the lane's old "156 groups carry a
-decision" counted the MECHANICAL rung ladder (108/28/46/41), not judgments.
+on that `updated_by`. The table still holds exactly these 30 (read 2026-09-29).
 
 ## The magic half is one module now (2026-09-21, S281 SkyAnvil)
 
@@ -98,11 +92,8 @@ items are easy". The band is the only honest place to measure.
 **The battery** (`kb/_jev_battery.py`, six variables, selection rule fixed in
 source before any answer existed, primary gating six Holm-corrected
 secondaries) **ran and nothing passed** — receipt
-`kb/receipts/jev_battery_2026-09-21_s281.json`.
-
-⚠️ **THE PRIMARY CAME BACK BELOW CHANCE — `any_reason` AUC 0.378.** Backwards,
-not weakly right: where Jev found a reason to hold two apart, Sam was MORE
-likely to fold them.
+`kb/receipts/jev_battery_2026-09-21_s281.json`; the primary came back below
+chance ([lessons](../../common_cr_reference_lessons.md), moved S302).
 
 ⚠️ **`units` AT 0.281 IS THE DURABLE LESSON.** Jev applies the general prior
 that an hours difference means a content difference — the prior this domain has
@@ -156,7 +147,7 @@ Governance under Rule 10(a3).
 
 ## RULED — a Jev next step per reference, and the unit range (Sam, 2026-09-29)
 
-Sheet 3's cards 8–11 and 13–14, each his own call; the work waits on sessions.
+Sheet 3's cards 8–11 and 13–14, each his own call; 8–11 wait on sessions.
 **8 placement (CCR):** Jev chooses among the disciplines a course's member
 colleges name (title and description as evidence), scored against his 26 answers
 before any card reaches him; if it agrees, the next sitting takes 50 of cross-list
@@ -164,17 +155,23 @@ kind C, most member rows first, Keep · Move · Cross-list with Jev's choice
 selected. **9 course (CCRR):** pair by shared course identity behind the
 course-count guard (POST's every line to AJ 110 fails it); Jev runs the new pairs,
 the unanchored clusters and the newer anchored pairs under the 0.85 gate, then a
-sheet of 40–60. Measure after card 13's renames land. **10 store (CER):** a
-decisions store with a reason column, through Governance first (DR-07's
+sheet of 40–60. Re-measured after card 13 (#1754), unchanged: 55 anchored pairs
+(1,459 rows), 33 unanchored clusters (105 groups), course pairing 600 pairs over 465
+groups, 338 at rung 5 (2,738 rows): every shared name is a C-ID title.
+**10 store (CER):** a decisions store with a reason column, through Governance first (DR-07's
 `maintained_in` gains the table; Rule 10(a3)); then the 38 as a Jev calibration
 sitting, each issuer checked against the credential registry; mechanical fixes by
 July's clean-rename path under a receipt. **11 as proposed (CSR):** *Import Body
 Customizing* to Auto Body Technology, AGAB for Agricultural Business, and AUTB
 M1006 re-minted under it by the playbook; then the 15 to Jev and a short ranked
-sheet. **13 as proposed:** name the varying groups by topic and range (*Engine
-Performance (2–5 units)*); an official title keeps its name. **14 as proposed:**
-retire the rung-4 units screen, so its groups (*Calculus I* at 4 and 5) merge and
-show the range; the level, Honors, lab, sport and gender screens stay.
+sheet. **13 LANDED (#1754):** 88 groups named by topic and range, *Engine
+Performance (2–5 units)*: 71 from the most colleges' wording, 16 from a published
+line, 1 whose ENGL 100 title is only proposed. The 25 named by a C-ID keep their
+names, his ten confirmed among them. **14 LANDED (#1754):** the rung-4 units screen
+is gone; its 30 groups (182 rows; *Calculus I (4–5 units)*) merge, and no screen
+holds a group today; the other five stay. All 30 decisions keep their groups.
+*Pre-Calculus Mathematics* now takes MATH 155's title every build, not under 5 of
+20 hash seeds ([lessons](../../common_cr_reference_lessons.md)).
 
 ## The CCR rung, and Sam's ladder design (2026-09-21, S282 SkyLedger)
 
