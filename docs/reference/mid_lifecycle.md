@@ -535,8 +535,14 @@ become audit findings):
   are one recommendation) and his note of 2026-09-22, *"I think this should be a
   rule for all merges and mints. Advise"*; it holds for M-IDs and credit
   recommendations alike. The keys already comply (an M-ID is SUBJ4 plus number, and
-  `kb/_build_cr_reference.py`'s `topic_key` discards units). Whether every surface
-  shows the range is To-Do `s296-fable-unit-range-display`.
+  `kb/_build_cr_reference.py`'s `topic_key` discards units). **The display, measured
+  S301 (2026-09-29):** the public Fact Sheet and Sierra's statewide lines (#1742), the
+  Unified Courses table, detail and export (#1743, which also retired the ⚠ that called a
+  spread over 2 an over-merge) and the CR Reference's stats line (#1744) show the range.
+  Still short: SkyView's single `u`, the EACR and Common Exhibit Reference (one line per
+  unit value, or the modal wording), the dashboard card and Sierra's `local_set`; the
+  audit table is in the latest handoff. Two calls are Sam's (open-asks cards 13-14): name
+  a varying CR group by topic and range, and retire the rung-4 units screen.
 
 Authoritative old→new aliases for every re-mint live at
 `kb/remint_out/<date>/alias_map.json`. Rollback notes per the playbook.

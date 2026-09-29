@@ -4874,3 +4874,196 @@ reads the LANE table, `.cplfund-dtl-cr`).
 ⭐ **THE EXPLAINER READS THE MODEL, NOT COPIES OF IT (S265).** Priority card sentence = the config's `description`; baseline requirements and the participation deadline = `_requirements()`. ⚠️ **THE TWO VOCABULARY GUARDS CANNOT SEE THIS PAGE** — `cpl_funding_calm` reads the TAB's mount and `cpl_funding_earn_retired` reads `cpl_funding.js`; the explainer is a THIRD file, and `funding_model_page.test.js` scans its prose. ⚠️ **THE PRINT STYLESHEET IS THE PDF'S DESIGN** (the page prints itself — no built file) and **must never hide `.cplfund-caret`, which IS the institution's name**. ⚠️ The explainer defines its own `--focus-ring` (COBI's `--gold-accent` / `--navy-secondary` were undefined there, so 138 focus rings drew nothing). `npm run a11y funding-model` passes clean.
 
 ⚠️ **THE ORIGINATION CUTOVER IS ASYMMETRIC — half of it lands on its own and half waits on a person.** The **NC side** (`LocID2`) is wired downstream: the builder emits `nc_pe`/`nc_pa`/`nc_pt` and the origination block the day the column reaches it, consumers already wired. It reaches the builder only when a session adds it to the daily fetch, which asks MAP for a fixed column list (`fetch_custom_report.py`), and asking for a column a view lacks fails the whole view (measured 2026-09-27). The **credit side is NOT**: `funding/_build_funding_performance.py` prints *"the ppa cutover from 'Potential Student' to named origins stays PENDING"* and emits an `origin_values` histogram so the change is made on CONFIRMED spellings, never guessed. Only that cutover makes `ppa_u` cover batch upload — and its only signal is one line in a daily run log. ⚠️ **A LANE FILE IS A SUMMARY OF A MEASUREMENT, NOT THE MEASUREMENT** (`scripts/funding_effective.js` refuses baked defaults; [note](../../kb-notes/methodology-a-lane-file-is-a-summary-of-a-measurement.md)). `prioTarget()` makes factor the price premium; no per-year ramp in this window (`mirrorYears`).
+
+## 2026-09-01 — Session 218 (SkyMeld): four outcomes fold into three bands, and the model's own earn figures make the case
+
+**PR [#1429](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1429), squash-merged `724feac`.** Sam opened with a
+structural ask — *"note how we have the 4 outcomes of 78093.2 and the 3
+priorities of the model. I would like to meld these somehow together so we can
+still adjust the factors and metrics needed while accounting for the 4
+outcomes"* — and refined it across five rounds. What shipped is his structure,
+not the one this session first proposed, and that is the story worth keeping.
+
+### What the tab actually had wrong
+
+Two sections described ONE allocation in two vocabularies: "Three Priority
+Outcome-Based Allocations" and "Funding Outcomes Required by Ed. Code
+§78093.2(d)(1)", stitched by a superscript letter on each priority card. The
+collision was visible in the priority NAMES — *Access: Statewide* and *Access:
+Outreach* are compounds that exist only because "Access" is the outcome and the
+second word is the real distinction.
+
+**And the code already knew.** `prioGoals()` never read a title; it derived the
+goal from the metric's MILESTONE (`transcribed` → B, `eligible`/`applied` → A)
+because, in its own comment, that distinction *"is the access-vs-completion line
+the statute itself draws."* The grouping was already computed. Only the layout
+had not caught up — so the consolidation was a presentation change over an
+existing derivation, not a new mechanism.
+
+### Sam's two refinements, both better than the proposal
+
+1. **Success = (B) + (C).** *"Combine into Success both completion and career
+   attainment the same way we combine two aspects of Access."* This gives goal
+   (C) a home inside the campus-facing frame instead of exiling it to the
+   project channel, and it is where a reader looks for it.
+2. **(D) becomes "Opportunities", not "Pilot projects".** More faithful to the
+   statute, not less: (D)'s object is *"credit for prior learning
+   opportunities"*; pilot projects are the means it names. It also makes the
+   three bands parallel — each is a thing that happens to students.
+
+Then, on the measures: **put the counselor gate ON Applied rather than beside
+it.** This session had proposed a fourth measure; Sam's version repairs the
+applied rung itself instead of standing a new one next to a still-inflatable
+one. Three measures, not four.
+
+### The finding that justified the whole thing
+
+Booting the live model against the live feed (`_prios()` per college × the perf
+artifact) measured what the current three priorities actually earn:
+
+| Measure | Cap | Earned | Colleges at full earn |
+|---|---:|---:|---|
+| Access: Outreach (eligible) | $7,740,780 | **$6,660,016 — 86.0%** | **97 of 115** |
+| Completion (transcribed) | $7,740,780 | $1,245,625 — 16.1% | 13 full · 9 partial · 93 zero |
+| Access: Statewide (`ppa_u`) | $7,975,349 | $63,773 — 0.8% | 0 |
+| **credit slice** | **$23,456,909** | **$7,969,414 — 34.0%** | |
+
+**84% of everything earned comes from the measure 97 of 115 colleges already max
+out.** A third of the allocation pays for eligibility that already exists — the
+rung the builder itself flags as carrying "the ACE/JST skill-level duplication"
+and as "not an action the college took". `earnFraction()` caps at
+`min(1, actual/target)`, so an over-target measure is an automatic payment, which
+is the same "earns nothing and incentivises nothing" the metric diagnostic warns
+about for an UNMEASURABLE metric — reached from the opposite direction.
+
+**Read as an incentive, the model mostly was not one.** That is the argument for
+the restructure, and it is stronger than the tidiness argument this session
+opened with.
+
+### Three measures proposed and measured before any was adopted
+
+Each candidate looked good until it was measured. That pattern repeated three
+times in one session and is the transferable lesson.
+
+- **Completed My CPL Stories as the career-attainment metric.** Measured the
+  live corpus: 36 stories, **14 of 118 institutions**, 9 of those with exactly
+  one, two colleges holding 44%, and **3 of 36** naming a career destination.
+  Rejected for funding (it measures COLLECTION, not attainment; it puts funding
+  pressure on a student consent artifact carrying a selfie and a release), kept
+  for (d)(2) demonstration. Also found a live defect: the goal-(C) card counts
+  `Airman → Cerritos College → UC Riverside` as a career destination because the
+  classifier's education regex has `university` but not `UC` — 4 reported, 3 real.
+- **Origination-filtering the Access measure.** Sam ruled "filter now". Measured:
+  portal-origin is **104 students statewide against 39,007** (0.27%), and
+  `ppa_u` is 649.5 units against `pa_u`'s 216,035. Scaling by the statewide
+  eligible:applied ratio (6.42×), a filtered Eligible lands near 0.3% of today's
+  1,386,862. Shipped anyway on his ruling — correctly, because `srcDelivered()`
+  reads an undelivered key as $0 rather than a full cap, and the measure becomes
+  right the moment `Origin` carries batch upload.
+- **The counselor step.** Adopted. The dial-setting question it raised is below.
+
+### Setting a measure that starts near zero
+
+`prioTarget()` for an FTES priority is `(entitlement / rate) × (nYears / factor)`
+— so **factor is the price premium**: a higher factor pays more per CPL FTES and
+the share is earned with fewer of them ("a premium on the harder / more-valued
+priority", per the code). That is exactly the dial for a new behavior. Measured
+from the model: the effective price at factor 0.5 is **$2,520.32 per CPL FTES**
+for a college at neither bound, and the statewide window targets are 2,757.1 /
+2,676.0 / 2,676.0 CPL FTES.
+
+Against today's 216,035 applied units, the adoption an Accepted measure needs to
+earn in full:
+
+| share | factor | target | applied CPL needing the attestation |
+|---:|---:|---:|---:|
+| 33% | 0.5 | 80,280 u | 37.2% |
+| 33% | 1.0 | 40,140 u | 18.6% |
+| **25%** | **1.0** | **30,409 u** | **14.1%** ← recommended, Sam ruled yes |
+| 20% | 2.0 | 12,164 u | 5.6% |
+
+⚠️ **A per-year ramp is not available in this window:** `mirrorYears` makes year
+2 read year 1, and `frontload` gives later years no separate pot. Set the factor
+once for the window, revisit at the next appropriation.
+
+### The claim this session got wrong, and Sam corrected
+
+Said repeatedly, and written into a source comment and a commit message, that
+the counselor step **"cannot be batch-loaded."** False. Sam: *"there are
+allowable uses for batch uploading the counselor step checked true — we ask
+colleges to batch upload previously transcribed CPL from their SIS, with the
+assumption that they went through the counseling steps with each student before
+transcribing."*
+
+The honest version: it is a **policy attestation, not a technical guarantee**.
+Its integrity rests on the CO instruction (stop auto-awarding — which *"can
+impact students negatively"* — confirm acceptance, then check the step) plus the
+audit trail recording who attested and when. The live risk is a college that
+auto-awards, military basic-training credit especially, and batch-sets the flag
+anyway. It still does real work: an undifferentiated applied count asks the
+college to assert NOTHING, while this one requires an assertion they are
+accountable for. **The gap narrows; it does not close.** Corrected in `8720687`.
+
+Sam also ruled the step may be checked by **either the student or the
+counselor/coordinator/initiator**, and agreed to record the attester in the audit
+trail — which is what makes the measure reviewable, and which matters more given
+the batch case.
+
+### A bug the consolidation introduced, and how it was caught
+
+Banding puts each band's cards in their own `.cplfund-prio`. The drag/reorder
+handlers bound `document.querySelector("#cplFundingMount .cplfund-prio")` —
+**singular**, correct while there was one grid. Only the Access band got
+listeners: the position picker on every card below it looked live, accepted the
+change, and reordered nothing.
+
+**No assertion about markup would have caught it.** It was found by a test that
+EXERCISED the last card, and pinned by one that still does — mutation-verified
+by reintroducing `querySelector`, which turns exactly that one assertion red.
+The general shape: **when you group a flat list into containers, every
+`querySelector` that assumed one container becomes a silent partial.**
+
+### Four suites re-aimed, and why counts went UP
+
+`reorder`, `rollup`, `metric_pin` and `render`/`one_pool` located priority cards
+by **DOM ordinal**. Bands render in statute order, so the card at display
+position N is Nth WITHIN ITS BAND — the ordinal assumption broke. Re-aimed to
+`data-priocard`, the display index the renderer already stamps, which is what
+every one of those assertions was always reaching for. None was ever about
+document order. `render` and `one_pool` also gained absence guards in the
+R1–R11 shape (the retired section title must stay gone; the statutory title must
+appear exactly once). Counts: reorder 69/69 (was crashing), rollup 43/43 (38/43),
+metric_pin 44/44 (43/44), render 137/137 (135/136), one_pool 51/51 (48/49).
+
+### Three CI failures, three different causes
+
+Worth recording because the temptation each time was to assume the previous fix
+covered it, and twice that would have been wrong.
+
+1. `b3a8ad1` — the five suites above. Fixed in `d214d71`.
+2. `d214d71` — **`dependency map is STALE`**. The map is derived from source and
+   the refactor moved code, so recorded line references drifted. 15 lines
+   changed, every one a `"line":` number; the markdown was byte-identical.
+3. `8720687` — the same staleness (that commit predated the regeneration).
+
+Also surfaced by CI, and easy to miss because it is explicitly "not a failure":
+`cpl_funding_statutory_bands.test.js` **had no recorded check floor**, so its 26
+assertions were unprotected against silently disappearing. Re-baselined with
+`npm run test:floor` and the ledger diff REVIEWED before committing — the tool
+rewrites every file's floor and will happily lower one. Nothing dropped: one_pool
+49→51, render 136→137, bands new at 26.
+
+### What shipped
+
+Three bands with **derived** membership (a card lands by the goal `prioGoals()`
+resolves from its milestone — the same resolver the earning math uses, so the
+band a college reads and the dollars it earns can never disagree), an **orphan
+band** so an unresolvable priority surfaces loudly instead of vanishing, the goal
+spine preserved as a fold (it is the §78093.2(d)(2) reporting artifact and the
+only place (C) reads honestly funded-and-unmeasured), a new `accepted` milestone
+mapping to (B)+(C), and two measure sources — `ppe`/`ppe_u` emitting today,
+`pac`/`pac_u` declared-not-delivered on the noncredit lane's proven pattern.
+
+**Not shipped, deliberately:** shares and factors. Sam's standing rule — *"I
+don't want you to fix it; I want the tab to save it"* — makes those curator edits
+through the tab, not session SQL.
