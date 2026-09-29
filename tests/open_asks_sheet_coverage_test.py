@@ -217,6 +217,13 @@ FIXTURES = {
                                   "      + '<button>My College</button>';\n  }",
                                   "function tryGroup(src, labelId) {\n    if (sierraHost() !== 'chatbot') return '';\n"
                                   "    return '<button>Sierra</button>';\n  }"),
+    # S301: the unit-range pass's two CR Reference calls.
+    "p_crr_canonical_units": ('{"groups": [{"units_differ": true, "canonical_source": "most_colleges", '
+                              '"canonical": "3 or 4 hours in Engine Performance"}]}',
+                              '{"groups": [{"units_differ": true, "canonical_source": "most_colleges", '
+                              '"canonical": "Engine Performance (2\u20135 units)"}]}'),
+    "p_crr_rung4_units_screen": ("        if rung == 4 and units_differ:\n            acts = False",
+                                 "        if not screen_ok:\n            acts = False"),
 }
 _broken = []
 for _name, (_open_src, _closed_src) in FIXTURES.items():

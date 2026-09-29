@@ -64,8 +64,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-09-29-open-asks-2.html')
-SHEET_ID = '2026-09-29-open-asks-2'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-09-29-open-asks-3.html')
+SHEET_ID = '2026-09-29-open-asks-3'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -299,6 +299,37 @@ def p_sierra_try_both_buttons():
                    else "tryGroup already reads the side menu")
 
 
+# The unit range (Sam, 2026-09-27: units never split an identity), read from the
+# CR Reference worklist. Not memoized: the coverage fixtures swap _read per call.
+_UNIT_LEAD = re.compile(r"^\s*[\d.]+(?:\s*(?:or|-|\u2013|to)\s*[\d.]+)?\s*(?:hours?|units?)\s+in\s+", re.I)
+
+
+def _crr_units():
+    try:
+        groups = json.loads(_read("kb/cr_reference_worklist.json") or "{}").get("groups", [])
+    except ValueError:
+        groups = []
+    vary = [g for g in groups if g.get("units_differ")]
+    worded = [g for g in vary if g.get("canonical_source") in ("most_colleges", "published_statewide")
+              and _UNIT_LEAD.match(g.get("canonical") or "")]
+    held = [g for g in vary if g.get("rung") == 4 and "units" in (g.get("screens_objecting") or [])]
+    return {"vary": len(vary), "worded": len(worded), "held": len(held),
+            "published": sum(1 for g in worded if g.get("canonical_source") == "published_statewide")}
+
+
+def p_crr_canonical_units():
+    """A wording canonical still states one unit figure over wordings that differ."""
+    n = _crr_units()["worded"]
+    return n > 0, "%d wording canonicals state one figure over wordings that differ" % n
+
+
+def p_crr_rung4_units_screen():
+    """Units still hold a rung-4 twin merge for a curator."""
+    open_ = "if rung == 4 and units_differ:" in _read("kb/_build_cr_reference.py")
+    return open_, ("the rung-4 units screen is in the builder" if open_
+                   else "the rung-4 units screen is gone")
+
+
 # Keyed by the item's POSITION on the sheet — the number Sam replies with, and
 # the only unique handle (two ESL cards share a `ref`).
 EVIDENCE = {
@@ -335,6 +366,9 @@ EVIDENCE = {
     11: [measured(p_csr_autb_collision)],
     # The Sierra Training round-1 port (#1733) left two calls for Sam.
     12: [measured(p_sierra_try_both_buttons)],
+    # 2026-09-29 (S301): the unit-range pass, the CR Reference's two calls.
+    13: [measured(p_crr_canonical_units)],
+    14: [measured(p_crr_rung4_units_screen)],
 }
 
 PROVENANCE = {
@@ -708,6 +742,48 @@ def items():
             "assistant is Sierra in both tabs. <em>It might be wrong if</em> you want each button to name the tab "
             "it opens; then the first reads CPL Assistant."),
         'chips': chips(('As proposed', 'proposed'), ('Name it CPL Assistant', 'rename'), CH_LATER),
+    })
+
+    # 2026-09-29 (S301): the unit-range pass (Sam, 2026-09-27: units never split
+    # an identity) left two naming and merging calls in the CR Reference.
+    U = _crr_units()
+    I.append({
+        'lane': 'common-cr-reference',
+        'title': 'The name of a recommendation whose wordings award different units',
+        'ref': 'common-cr-reference · kb/_build_cr_reference.py, the naming cascade · #1744',
+        'facts': (
+            "The CR Reference names each group by the cascade you ruled on 13 August. %d groups join wordings "
+            "that award different units, and %d of them take their name from a wording, which states its own "
+            "figure: the group named <em>3 or 4 hours in Engine Performance</em> joins wordings at 2, 3 or 4, 4 "
+            "and 5 units. Since 29 September the line beside each name states the range, <em>2–5 units</em>."
+            % (U["vary"], U["worded"])),
+        'why': (
+            "Your rule of 27 September gives the form, <em>Orienteering (1–3 units)</em>, and a name that states "
+            "one figure contradicts the range beside it."),
+        'rec': (
+            "<strong>Name these groups by topic and range: Engine Performance (2–5 units).</strong> A group named "
+            "by an official title keeps it, and the ten you confirmed are all of that kind. <em>It might be wrong "
+            "if</em> you want a published statewide wording kept as written (%d of the groups); then only the "
+            "names taken from the most colleges' wording change." % U["published"]),
+        'chips': chips(('As proposed', 'proposed'), ('Keep the statewide wording', 'keep_published'), CH_LATER),
+    })
+    I.append({
+        'lane': 'common-cr-reference',
+        'title': 'Units as a reason to hold a merge',
+        'ref': 'common-cr-reference · kb/_build_cr_reference.py, the rung-4 units screen',
+        'facts': (
+            "A rung-4 group joins wordings whose topics match exactly. When their units differ, the builder holds "
+            "the group for a curator instead of merging it, and %d groups wait for that reason alone: "
+            "<em>Calculus I</em>, written at 4 and 5 units by 16 colleges, is one. The stronger rungs already "
+            "merge across units." % U["held"]),
+        'why': (
+            "The screen predates your rule of 27 September. While it holds, a recommendation your rule makes one "
+            "stays split until a curator confirms it."),
+        'rec': (
+            "<strong>Retire the units screen, so these groups merge and show their range.</strong> The level, "
+            "Honors, lab, sport and gender screens stay. <em>It might be wrong if</em> you want a person to see "
+            "every unit spread before a merge; then the screen stays and the held card shows the range."),
+        'chips': chips(('As proposed', 'proposed'), ('Keep the screen', 'keep'), CH_LATER),
     })
     return I
 
