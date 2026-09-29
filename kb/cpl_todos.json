@@ -5,12 +5,6 @@
   "_status": "Sam locked a redesign of the funding tab's College Dashboard on 28 September after seven rounds on a live mockup: clearer funding columns (maximum and current for credit, noncredit and the total), a three-box Minimum Conditions line in each institution's detail, TBA where a measure has yet to arrive, and a Confirm by date chip. The same day he ruled that funding waits on all three minimum conditions, including the Veteran Star's veteran JST uploads; that change is PR #1726, and the redesign follows it. The Sierra Training tab is now in the same mockup process.",
   "items": [
     {
-      "id": "s298-sam-sierra-mockup",
-      "for": "Sam",
-      "tab": "sierra-training",
-      "text": "Review the Sierra Training mockup, round 1 (https://claude.ai/artifact/Agmbu7UNGRcdEf48Sx5PTi): the cards filter the list, answers left-justified, Try it in Sierra or My College, the First Light pass. Name the next changes."
-    },
-    {
       "id": "s298-sam-sql-test-answer",
       "for": "Sam",
       "tab": "admin",
@@ -35,12 +29,6 @@
       "text": "Rule GR register rows #2, #10 and #16 on the GR Priorities tab, your call of 27 September. Row #2 still asks for enacted law, and the tab also holds the 2026-27 timeline's five dates."
     },
     {
-      "id": "s298-fable-gate-pr",
-      "for": "Fable",
-      "tab": "implementation-funding",
-      "text": "Merge PR #1726 once its test check passes: funding now waits on all three minimum conditions, the coordinator, the confirmation and veteran JSTs at 75% (Sam, 28 September). Fix whatever the test check names first."
-    },
-    {
       "id": "s298-fable-port-dashboard",
       "for": "Fable",
       "tab": "implementation-funding",
@@ -50,7 +38,7 @@
       "id": "s298-fable-port-sierra",
       "for": "Fable",
       "tab": "sierra-training",
-      "text": "When Sam locks the Sierra Training mockup, port it to sierra_training.js the same way as the funding tab: map what reuses it, update the tests, run npm run a11y, then a draft PR."
+      "text": "Port the Sierra Training redesign Sam approved on 28 September (round 1 of https://claude.ai/artifact/Agmbu7UNGRcdEf48Sx5PTi): the cards filter the list, answers left-justified, Try it in Sierra or My College, no emoji, AA at phone width. Map what reuses the tab, update the tests, run npm run a11y, then a draft PR."
     },
     {
       "id": "s297-fable-jev-next-step",
