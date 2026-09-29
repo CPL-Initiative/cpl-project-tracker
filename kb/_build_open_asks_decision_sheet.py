@@ -31,7 +31,7 @@ also been answered on 2026-08-14 (military scope §10), and two of the 09-22
 proposals contradicted those August answers. When a verdict lands, change the
 lane's marker in the same pull request, or the sheet asks again.
 
-Published: see SHEET_ID below for the live sheet (2026-09-29, S300, SHEET_ID 2026-09-29-open-asks,
+Published: https://claude.ai/artifact/QiaDezD2AN6XDzctUCSCfw (2026-09-29, S300, SHEET_ID 2026-09-29-open-asks,
 seven cards: the three below carried over unanswered, and four from the College Dashboard
 port). Before it: https://claude.ai/artifact/C1uyRhneegqQ4XSPRKiC3B (2026-09-28, S297, SHEET_ID
 2026-09-28-open-asks, capabilities db + comments, three cards; its store held no replies when

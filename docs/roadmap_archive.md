@@ -10,6 +10,10 @@ status: archive
 
 # Roadmap Archive — Completed Work & Session Narratives
 
+## INDEX update-history entries rotated out (2026-09-29)
+
+- **2026-09-24 — S287 (SkyLane, beside SkyMatrix):** the jsdom suite runs as four shards on four runners fanned into the one `test` check, 20 min to 7 ([#1682](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1682)); the funding drill-in's credit and noncredit lane tables and the one-line card head ([#1679](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1679)); the four rows S286 staged written; the review sheet's edit layer documented in the decision-sheets reference; KB note `methodology-a-memory-bound-suite-scales-across-machines-not-workers`. Handoff 289.
+
 ## INDEX update-history entries rotated out (2026-09-28)
 
 - **2026-09-24 — S285 (SkyGrant):** the fifteen memory rows S281 and S283 staged are written and logged, each re-read against the day ([#1674](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1674)); the college briefing's funding box swept to the funding vocabulary with a source-reading guard ([#1675](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1675)); Sam's ruling to stop working the SQL prompt swarm and budget calls; funding lessons S215–S217 archived; KB note updated: `methodology-a-ban-is-only-as-wide-as-the-files-it-opens`. Handoff 286.

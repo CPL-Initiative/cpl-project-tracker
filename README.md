@@ -83,11 +83,13 @@ The whole ecosystem, end-to-end:
    metrics, and 2,300+ statewide exhibits; it talks to the shared `cpl-chat`
    Supabase Edge Function that also powers the live map.rccd.edu widget),
    a **Sierra Training** tab (team-only: the assistant's improvement loop —
-   the 👍/👎 feedback queue from both chat surfaces with a triage status, a
-   gap miner over the chat logs surfacing the questions the knowledge base
-   had no good source for, and the plain-English **instructions** Sierra
-   follows on every question — editable in place after saving, with a test
-   question you can put straight to her and come back to), a **⚖️ Governance** tab (team-only: the decision-rights
+   the thumbs-up / thumbs-down feedback queue from both chat surfaces with a
+   review status, a gap miner over the chat logs surfacing the questions the
+   knowledge base had no good source for, and the plain-English **instructions**
+   Sierra follows on every question — five numbers at the top that filter the
+   lists they count, editable instructions, and a test question you can put
+   to her in the Sierra tab or in My College; round 1 of Sam's redesign,
+   2026-09-29), a **⚖️ Governance** tab (team-only: the decision-rights
    register — who decides what, how far each input is trusted, and which cadences
    actually run; it measures itself rather than asserting compliance, so a loop
    that was decided but never run says so), a **MAP Users** tab (per-college MAP platform user
@@ -126,18 +128,21 @@ The whole ecosystem, end-to-end:
    all 118 institutions** (the one-pool model, adopted 2026-08-31: $150K base
    to $400K cap on the combined credit + noncredit award; the three
    noncredit-only campuses — NOCE / SD Continuing Ed / Calbright — are ordinary
-   rows earning by origination, no advances), one row per institution with
-   **CR/NC FTES and award columns**, its max award decomposing into credit and
-   noncredit shares, per-priority drill-ins, district rollups, and one
-   statewide row under a **frozen header** (measured pins, no lazy loading) —
+   rows qualifying by origination), one row per institution led by its
+   **minimum-conditions pie and Veteran Star** and reading **Max and Curr
+   funding by lane and in total** (the College Dashboard Sam locked on
+   2026-09-28: Curr is the funding qualifying so far, and no reserve figure
+   shows), its max award decomposing into credit and noncredit shares,
+   per-priority drill-ins opening on the Minimum Conditions line, district
+   rollups, and one statewide row under a **frozen header** (measured pins, no lazy loading) —
    the table is the first section after the introduction, and every other
    section is folded on open (per visit, since 2026-09-02) —
    with the project card's named projects folded in **live from the Budget
    table** — and **layered editing** — anonymous edits are a private
    per-browser sandbox, while a signed-in reviewer saves the base model
    everyone opens to (Supabase-backed) — plus live per-priority actuals from
-   the daily MAP pull (a metric MAP cannot measure yet is a labeled advance,
-   and the noncredit shares read $0 earned until their feeds report)), a
+   the daily MAP pull (a measure that has yet to arrive reads TBA and counts
+   $0, and the noncredit shares count $0 until their feeds report)), a
    **TMC Builder** tab (align a college's local
    courses to an ASCCC Transfer Model Curriculum / ADT — pick a college + a TMC
    and the right column auto-fills the local course already carrying each

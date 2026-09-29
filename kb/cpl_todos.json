@@ -1,8 +1,8 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-29",
-  "_session": "298",
-  "_status": "Sam locked a redesign of the funding tab's College Dashboard on 28 September after seven rounds on a live mockup: clearer funding columns (maximum and current for credit, noncredit and the total), a three-box Minimum Conditions line in each institution's detail, TBA where a measure has yet to arrive, and a Confirm by date chip. The same day he ruled that funding waits on all three minimum conditions, including the Veteran Star's veteran JST uploads. Both are live: the gate as PR #1726 on 28 September, the redesign as PR #1729 on 29 September. Sam approved the Sierra Training mockup, and its port is next.",
+  "_session": "300",
+  "_status": "The College Dashboard Sam locked on 28 September is finished: the follow-ups landed on 29 September (#1732), and the tab now says TBA wherever a measure has yet to arrive. Sierra Training's redesign is ported (#1733): the five numbers filter the list, the answers read left-aligned, and \"Try it in\" offers Sierra or My College. Seven decisions wait on one sheet. Next for the engineering side: Sam's answers as they come, then Jev.",
   "items": [
     {
       "id": "s298-sam-sql-test-answer",
@@ -11,16 +11,10 @@
       "text": "Tell the next session two things: did the three test database queries of 28 September ask you to click Allow, and did you change the Supabase tool setting for the whole organization or only your own account? The cleanup of the old notes waits on both."
     },
     {
-      "id": "s297-sam-open-asks-sheet",
+      "id": "s300-sam-open-asks-sheet",
       "for": "Sam",
       "tab": "implementation-funding",
-      "text": "Three decisions wait on the new sheet: https://claude.ai/artifact/C1uyRhneegqQ4XSPRKiC3B. The last three sections of your funding tab review, the explainer's footer, and how far the Exercise Science re-mint reaches. The first two are the same questions as cards 3 and 4 of the 27 September sheet; answer them on either one."
-    },
-    {
-      "id": "s296-sam-timeline-label",
-      "for": "Sam",
-      "tab": "implementation-funding",
-      "text": "On the funding tab's Timing list, the August 2027 line in Scenarios 1 and 2 still reads \"Undispersed Funds Rolled to Year 2 and Releveled\", your saved wording from 25 September. Your ruling that day was no releveling, and the default now reads \"Undispersed Funds Rolled to Year 2\". Edit that line on the tab. If you would rather a session change it, say so, and it will propose a reviewed write."
+      "text": "Seven decisions on the new sheet: https://claude.ai/artifact/QiaDezD2AN6XDzctUCSCfw. You pressed Complete without touching a card, which under your 22 September rule counts as not yet reviewed, so nothing has moved. Click the chip on the last card you read, or reply \"all seven as proposed\" on the sheet's comment. Three carry over (the last three sections of your funding tab review, the explainer's footer, how far the Exercise Science re-mint reaches); four come from the College Dashboard (which figure \"Current Total\" names, the thank-you a college sees, the public page's Step two note and heading, and two of your saved texts in retired words)."
     },
     {
       "id": "s296-sam-gr-rows-on-tab",
@@ -29,16 +23,16 @@
       "text": "Rule GR register rows #2, #10 and #16 on the GR Priorities tab, your call of 27 September. Row #2 still asks for enacted law, and the tab also holds the 2026-27 timeline's five dates."
     },
     {
-      "id": "s298-fable-dashboard-followups",
+      "id": "s300-fable-sheet-verdicts",
       "for": "Fable",
       "tab": "implementation-funding",
-      "text": "Finish the College Dashboard with one small PR covering five items the port left. Move the code's default Confirm deadline from 1 September to 1 November, so a failed settings load cannot make every chip read Confirm now. Bring the explainer's Step two note and its \"Max award by institution\" heading in line with the new columns and Sam's ruling that no reserve figure appears, and show him the wording first. Update the reading note that says each funding cell stacks the max award over its Current Total. Rename the CSV's \"Current total\" and \"Withheld (baseline not met)\" columns. Remove two dead style rules."
+      "text": "Carry out Sam's answers on the 2026-09-29 sheet as they arrive, each with its lane marker in the same change. Also coarsen the download's \"Current total as % of max award\" on the public page, which is finer than the $1,000 rule for public dollars."
     },
     {
-      "id": "s298-fable-port-sierra",
+      "id": "s300-fable-sierra-followups",
       "for": "Fable",
       "tab": "sierra-training",
-      "text": "Port the Sierra Training redesign Sam approved on 28 September (round 1 of https://claude.ai/artifact/Agmbu7UNGRcdEf48Sx5PTi): the cards filter the list, answers left-justified, Try it in Sierra or My College, no emoji, AA at phone width. Map what reuses the tab, update the tests, run npm run a11y, then a draft PR."
+      "text": "Sierra Training's redesign is ported (#1733). Two small calls remain for Sam when he next opens the tab: whether the \"Try it in\" button should read \"CPL Assistant\" rather than \"Sierra\", and what both buttons should do when the CPL Assistant tab is hidden."
     },
     {
       "id": "s297-fable-jev-next-step",
