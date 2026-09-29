@@ -11,29 +11,33 @@ status: current
 Your moniker is **SkyWeft**. SkyShuttle (S301) took the queue from
 [`session_301_handoff.md`](session_301_handoff.md).
 
-## First thing: Sam's answers on the eighteen-card sheet
+## First thing: carry out Sam's eighteen verdicts
 
-The standing sheet is [XzQMks96QszUDAyXADP3Ag](https://claude.ai/artifact/XzQMks96QszUDAyXADP3Ag)
-(`SHEET_ID` `2026-09-29-open-asks-3`). Read its `replies` and `replies/done` and its comment threads
-before anything else, and apply the high-water rule (`decision_sheets`).
-- **Cards 1–7** are S300's seven, still unreviewed: Sam pressed Complete on
-  [QiaDezD2AN6XDzctUCSCfw](https://claude.ai/artifact/QiaDezD2AN6XDzctUCSCfw) with no card touched, and
-  **a reply on that sheet's thread still counts** for them. Card 7 is a guarded UPDATE with a receipt of
-  the before-values (Rule 10 a2).
-- **Cards 8–11:** a Jev next step per reference (the [`common-cr-reference`](reference/lanes/common-cr-reference.md)
-  lane's NEEDS SAM section; counts from `python3 kb/_jev_next_steps.py`). **Card 12:** Sierra Training's
-  Try it in buttons.
-- **Cards 13–14:** name a CR group whose wordings award different units by topic and range
-  (*Engine Performance (2–5 units)*; renaming moves the typesafe trial's grouping by `canonical`, so
-  re-measure card 9 after), and retire the rung-4 units screen that holds 30 groups.
-- **Cards 15–18:** draft 3 of the narrated video (sent to Sam in chat), the Timing line that trails
-  its words by 7.6 s (re-read the scene with its first two sentences swapped), Sample College's target
-  shown and never spoken (a drafted sentence is on the card), and the pacing choices.
+Sam answered the whole sheet at 12:39Z on 2026-09-29
+([XzQMks96QszUDAyXADP3Ag](https://claude.ai/artifact/XzQMks96QszUDAyXADP3Ag), `replies/done`
+`through: "18"`, all eighteen his own call; 14 and 15 hold no stored reply and stand as proposed under
+the high-water rule). **Re-read the store at execution:** it is live.
+- **1 leave** (the funding tab review's last three sections) · **2 keep** (the explainer's footer
+  whole) · **3 remint** (ETHS beyond the 31, under the playbook) · **4 demonstrated** (Current Total's
+  label) · **5 use** (the thank-you wording) · **7 write** (the two saved texts: a guarded UPDATE with a
+  receipt of the before-values, Rule 10 a2; he flipped it from "self").
+- ⚠️ **6: no chip, a note that changes the premise.** Sam, verbatim: *"The explainer is wrong. Colleges
+  will be funded for FTES that meet the priority outcomes. The full outcomes-based funding is available
+  within the two-year window once minimum conditions are met."* Rewrite the explainer's Step two note and
+  table heading to say that, check the tab's reserve wording against it, and show him the public text
+  before it ships.
+- **8 placement** (ask Jev where a CCR course belongs) · **9 course** (pair CCRR wordings by shared
+  course identity, behind the course-count guard) · **10 store** (a CER decisions store; Governance
+  first, DR-07) · **11** fix AUTB, then the 15 · **12** keep Sierra, show only My College where CPL
+  Assistant is hidden.
+- **13** name the 87 groups by topic and range (re-measure card 9 after) · **14** retire the rung-4
+  units screen.
+- **15** make 16 and 17, then bring draft 4 back · **16** re-read Timing with its first two sentences
+  swapped · **17** add the Sample College sentence (on the card) · **18** keep the pacing choices.
 
-Sheet 2 ([9Wikhf54XyJgWXDEw5AK7G](https://claude.ai/artifact/9Wikhf54XyJgWXDEw5AK7G)) held no replies
-when sheet 3 replaced it; read its store too, in case. Carry out each verdict with its lane marker in
-the same PR. Cards 4–6, 8–11 and 13–17 rest on measured premises: the builder refuses to build once
-their work lands, so remove each card then, under a fresh `SHEET_ID`.
+Each verdict lands with its lane marker in the same PR. Cards 4-6, 8-11 and 13-17 rest on measured
+premises: the builder refuses to build as their work lands, so drop each card then, under a fresh
+`SHEET_ID`, and publish the next sheet only if anything is left waiting on him.
 
 ## What shipped (S301)
 
