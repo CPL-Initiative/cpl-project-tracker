@@ -569,6 +569,30 @@ function D_names(T) { return H.D.colleges.map((c) => c.college); }
   check("9n: a held institution qualifies for $0 and still demonstrates what its measures show",
     Number(hl[iTot]) === 0 && Number(hl[iDem]) === Math.round(h.earned_withheld) && Number(hl[iDem]) > 0 &&
     Number(hl[iHeld]) === Number(hl[iDem]));
+  // The curator's export keeps the exact share.
+  check("9o: signed in, the percentage is the exact current total over the max award",
+    ql[iPct] === Math.round(q.earned_total / q.total * 1000) / 10 + "%");
+}
+{
+  // THE PUBLIC PERCENTAGE READS THE COARSE FIGURE (2026-09-29, funding NEXT
+  // ⓪f). The max award is exact and public, so a share of the EXACT current
+  // total recovers what the $1,000 rule withholds. In this fixture the exact
+  // share reads 98.1% beside a coarse $147,000, which is 98.0%.
+  const { T } = setup({ public: true });
+  const csv = T._csv().split("\r\n");
+  const head = csv[1].split(",");
+  const iTot = head.findIndex((x) => /^Current total /.test(x));
+  const iPct = head.indexOf("Current total as % of max award");
+  const q = T._alloc(QUAL);
+  const ql = csv.find((l) => l.split(",")[1] === QUAL).split(",");
+  const exactPct = Math.round(q.earned_total / q.total * 1000) / 10 + "%";
+  const coarsePct = Math.round(Number(ql[iTot]) / q.total * 1000) / 10 + "%";
+  check("9p: the fixture separates the two readings (a mutation that changes nothing proves nothing)",
+    Number(ql[iTot]) >= 1000 && Number(ql[iTot]) !== Math.round(q.earned_total) && exactPct !== coarsePct);
+  check("9q: on the public page the percentage is the coarse current total over the max award",
+    ql[iPct] === coarsePct);
+  const hl = csv.find((l) => l.split(",")[1] === HELD).split(",");
+  check("9r: an institution qualifying for $0 reads 0% on the public page", hl[iPct] === "0%");
 }
 
 finish();

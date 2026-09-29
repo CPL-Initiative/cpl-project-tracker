@@ -452,7 +452,7 @@ const money = function (n) { return "$" + Math.round(n).toLocaleString("en-US");
   // the override stored under text.elig_intro in the layer the edit lands in.
   check("eligibility intro renders as prose with the default sentence, not as a bare textarea",
     !doc.querySelector('.cplfund-elig-intro [data-edit="elig-intro"]') &&
-    doc.querySelector(".cplfund-elig-intro").textContent.indexOf("Proposed baseline requirements to qualify") !== -1);
+    doc.querySelector(".cplfund-elig-intro").textContent.indexOf("Minimum conditions to qualify") !== -1);
   check("signed out, the intro carries no Edit control (prose is not a dial to explore)",
     !doc.querySelector('.cplfund-elig-intro [data-textedit]'));
   window.CPL_SESSION = {
@@ -464,7 +464,7 @@ const money = function (n) { return "$" + Math.round(n).toLocaleString("en-US");
   click(window, doc.querySelector('.cplfund-elig-intro [data-textedit="elig_intro"]'));
   const introTa = doc.querySelector('.cplfund-elig-intro [data-textarea="elig_intro"]');
   check("signed in, Edit opens a textarea pre-filled with the default sentence",
-    !!introTa && introTa.value.indexOf("Proposed baseline requirements to qualify") !== -1);
+    !!introTa && introTa.value.indexOf("Minimum conditions to qualify") !== -1);
   introTa.value = "Colleges must meet these to receive funding:";
   click(window, doc.querySelector('.cplfund-elig-intro [data-textsave="elig_intro"]'));
   check("editing the eligibility intro persists to the shared layer under text.elig_intro",

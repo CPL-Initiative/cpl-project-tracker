@@ -457,10 +457,15 @@ check("data: participation deadline default Nov 1, 2026 (the live model's date)"
     brief.indexOf("Mapping Articulated Pathways (MAP) platform") !== -1 &&
     brief.indexOf("MAP Initiative") === -1);
   check("brief lists the current requirements + a what-to-do section",
-    brief.indexOf("Proposed baseline requirements") !== -1 &&
+    brief.indexOf("Proposed minimum conditions") !== -1 &&
     brief.indexOf("CPL Coordinator listed in MAP") !== -1 &&
     brief.indexOf("What your college should do") !== -1 &&
     brief.indexOf("participation request by 2026-11-01") !== -1);
+  // Sam retired "baseline" for Minimum Conditions (2026-09-28), and since #1726
+  // the conditions gate funding, so "no funding changes ... yet" became false.
+  check("the brief and its text say minimum conditions, never baseline, and claim no unchanged funding",
+    !/baseline/i.test(brief) && !/baseline/i.test(T._requirementsText()) &&
+    !/no funding changes/i.test(brief));
   check("brief reflects an edited requirement (regenerable after revisions)", (function () {
     T._setScenario({ extraReqs: ["75% of veteran JSTs uploaded in MAP"] });
     T.render();
