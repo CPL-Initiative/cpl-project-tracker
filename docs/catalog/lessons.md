@@ -47,10 +47,10 @@ Workstream scratchpads. A dated section is appended at every checkpoint.
 | [CPL executive presentations — lessons (BOG update + CBO budget workshop)](../cpl_presentations_lessons.md) | `cpl_presentations_lessons.md` | 2026-07-20 |  |
 | [CPL Fact Sheet — lessons](../fact_sheet_lessons.md) | `fact_sheet_lessons.md` | 2026-06-25 | 2026-08-21 |
 | [CPL Implementation Funding tab — archived lessons (2026-06-11 → 2026-09-01)](../cpl_funding_lessons_archive.md) | `cpl_funding_lessons_archive.md` | 2026-06-11 | 2026-09-24 |
-| [CPL Implementation Funding tab — workstream lessons](../cpl_funding_lessons.md) | `cpl_funding_lessons.md` | 2026-06-11 | 2026-09-24 |
 | [CPL News lane — lessons](../cpl_news_lessons.md) | `cpl_news_lessons.md` | 2026-06-21 |  |
 | [CPL Pathways tab — apprenticeship-to-baccalaureate course maps (lessons)](../cpl_pathways_lessons.md) | `cpl_pathways_lessons.md` | 2026-07-10 |  |
 | [CPL Student Portal "Credit for Being You" video — audio restoration & accessibility lessons](../cpl_portal_video_lessons.md) | `cpl_portal_video_lessons.md` | 2026-07-23 |  |
+| [cpl_funding_lessons](../cpl_funding_lessons.md) | `cpl_funding_lessons.md` |  |  |
 | [Cross-discipline Over-merge Re-mint — Lessons & State](../overmerge_remint_lessons.md) | `overmerge_remint_lessons.md` | 2026-05-29 |  |
 | [Dashboard Cleanup & Cross-Disciplinary Accounting — Lessons](../dashboard_cleanup_lessons.md) | `dashboard_cleanup_lessons.md` | 2026-05-30 |  |
 | [Dethroning TOP — from gatekeeper to last-in-line signal (lessons)](../top_dethroning_lessons.md) | `top_dethroning_lessons.md` | 2026-07-16 |  |

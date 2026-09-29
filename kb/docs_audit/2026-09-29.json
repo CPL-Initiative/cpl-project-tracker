@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1000,
-    "bytes": 10604241,
+    "files": 1001,
+    "bytes": 10504649,
     "over_budget": 5,
-    "handoff_max": 302,
+    "handoff_max": 303,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59735,
     "superseded_files": 0,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 116,
-        "bytes": 3244681,
+        "bytes": 3245140,
         "over": 3
       },
       "index": {
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 76,
-        "bytes": 2157963,
+        "bytes": 2051788,
         "over": 2
       },
       "kb_note": {
@@ -46,28 +46,27 @@
       },
       "roadmap_lane": {
         "files": 33,
-        "bytes": 257975,
+        "bytes": 258292,
         "over": 0
       },
       "handoff": {
-        "files": 273,
-        "bytes": 2341917,
+        "files": 274,
+        "bytes": 2347724,
         "over": 0
       }
     },
     "by_rule": {
       "house_voice": 24,
       "oversized_doc": 5,
-      "vault_heavy_path": 55
+      "vault_heavy_path": 53
     },
     "vault": {
-      "files": 3401,
-      "bytes": 1645148242,
-      "heavy_bytes": 751519052,
-      "heavy_share": 0.457,
+      "files": 3244,
+      "bytes": 1579957870,
+      "heavy_bytes": 686434425,
+      "heavy_share": 0.434,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
-        "cpl-project-tracker/prototype/ccr_desc",
         "cpl-project-tracker/cip_fitcheck",
         "cpl-project-tracker/kb/unclassified_fold",
         "cpl-project-tracker/kb/regional_cpl_out",
@@ -85,7 +84,6 @@
         "cpl-project-tracker/unified_courses_standalone.js",
         "cpl-project-tracker/kb/subj4_dryrun/collisions.json",
         "cpl-project-tracker/unified_courses_members.js",
-        "cpl-project-tracker/prototype/ccr_atlas_v1.built.html",
         "cpl-project-tracker/statewide_data.js",
         "cpl-project-tracker/kb/row_audit/latest.json",
         "cpl-project-tracker/unified_courses_data.js",
@@ -491,16 +489,6 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": "prototype/ccr_desc",
-      "detail": {
-        "bytes": 52516753,
-        "kind": "dir"
-      },
-      "message": "directory totals 52,516,753 B inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
       "path": "cip_fitcheck",
       "detail": {
         "bytes": 51991148,
@@ -671,16 +659,6 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": "prototype/ccr_atlas_v1.built.html",
-      "detail": {
-        "bytes": 12568065,
-        "kind": "file"
-      },
-      "message": "12,568,065 B single file inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
       "path": "statewide_data.js",
       "detail": {
         "bytes": 12218883,
@@ -813,10 +791,10 @@
       "fixable": false,
       "path": "exports/unified_courses.xlsx",
       "detail": {
-        "bytes": 6715640,
+        "bytes": 6715638,
         "kind": "file"
       },
-      "message": "6,715,640 B single file inside the vault"
+      "message": "6,715,638 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -923,10 +901,10 @@
       "fixable": false,
       "path": "credential_reference_data.js",
       "detail": {
-        "bytes": 3007316,
+        "bytes": 3007519,
         "kind": "file"
       },
-      "message": "3,007,316 B single file inside the vault"
+      "message": "3,007,519 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -983,10 +961,10 @@
       "fixable": false,
       "path": "kb/cr_reference_worklist.json",
       "detail": {
-        "bytes": 2354202,
+        "bytes": 2354192,
         "kind": "file"
       },
-      "message": "2,354,202 B single file inside the vault"
+      "message": "2,354,192 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

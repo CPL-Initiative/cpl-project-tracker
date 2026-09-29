@@ -1,20 +1,32 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-29",
-  "_session": "301",
-  "_status": "On 29 September three surfaces began showing the unit range Sam ruled for on the 27th: the public Fact Sheet with Sierra's statewide lines, the Unified Courses table and its export, and the CR Reference. The narrated funding video's draft 3 lands each reveal on its word and says minimum conditions, and it waits on Sam with seventeen other decisions on one sheet. The funding tab's last four small targets now meet the 24-pixel floor.",
+  "_session": 302,
+  "_status": "Sam's eighteen answers on the 29 September sheet are carried into their lanes. Landed the same day: Sierra Training shows one Try it in button where a site hides CPL Assistant, and the CR Reference names recommendations whose wordings award different units by topic and range (Engine Performance (2-5 units)). Waiting on Sam: round 8 of the College Dashboard mockup (gray Curr figures, the drill-in in the row's own columns, the people behind the first condition), the explainer's rewritten funding note (#1753), and how card 7's two saved texts get written.",
   "items": [
     {
-      "id": "s301-sam-open-asks-sheet",
+      "id": "s302-sam-round8-mockup",
       "for": "Sam",
-      "tab": "cr-reference",
-      "text": "Eighteen decisions on one sheet: https://claude.ai/artifact/XzQMks96QszUDAyXADP3Ag. Cards 1 to 7 are the seven from 29 September, not yet reviewed; 8 to 11 are a next step for Jev on each reference; 12 is Sierra Training's Try it in buttons; 13 and 14 ask how the CR Reference names and merges recommendations whose units differ; 15 to 18 are the narrated video's draft 3, which was sent to you."
+      "tab": "implementation-funding",
+      "text": "React to round 8 of the College Dashboard mockup: https://claude.ai/artifact/2V1aWwtjwob5gSM6TEkfyQ. Three questions sit on the page: gray cells at $0 or the demonstrated figure; whether the first condition needs all three parts (43 institutions meet all three, 49 the coordinator alone); what a college reports in the Reporting box."
     },
     {
-      "id": "s301-fable-sheet-verdicts",
+      "id": "s302-sam-explainer-wording",
+      "for": "Sam",
+      "tab": "implementation-funding",
+      "text": "Approve the explainer's rewritten Minimum conditions note and the Funding by institution heading (PR #1753, held for you). It says what you wrote on card 6: funding follows the FTES that meet the priority outcomes and arrives within the two-year window once the minimum conditions are met."
+    },
+    {
+      "id": "s302-sam-card7-how",
+      "for": "Sam",
+      "tab": "implementation-funding",
+      "text": "Card 7's two saved texts are not written yet: allow the apply workflow, or type them on the tab in both scenarios (Remaining Funds Carried Forward to Year 2; Minimum conditions to qualify for implementation funding:)."
+    },
+    {
+      "id": "s302-fable-agent-prs",
       "for": "Fable",
       "tab": "cr-reference",
-      "text": "Carry out Sam's answers on the eighteen-card sheet as they arrive, each with its lane marker in the same change. Cards 15 to 18 re-read or re-render the narrated video; the explainer links it only on his approval."
+      "text": "Land the open verdict PRs on green test: #1755 (ETHS re-mint of the 43; re-key kb_curation with supabase-rekey.yml and read back before the next cron), the funding card 4-5 wording PR, and draft 4 of the narrated video (it goes back to Sam). Then card 11 (AUTB and AGAB), and the Jev cards 8, 9 and 10."
     },
     {
       "id": "s301-fable-unit-range-rest",
