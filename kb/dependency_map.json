@@ -4,9 +4,9 @@
   "supabase_tables": 85,
   "rpcs": 31,
   "edge_functions": 5,
-  "file_datasets": 539,
+  "file_datasets": 542,
   "external_services": 147,
-  "consumers": 379,
+  "consumers": 380,
   "workflows": 37,
   "data_js_files": 61,
   "tabs": 37
@@ -3110,7 +3110,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 155
+     "line": 158
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -4221,7 +4221,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 144
+     "line": 147
     },
     {
      "id": "script:scripts/stamp_asset_versions.py",
@@ -4575,7 +4575,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 144
+     "line": 147
     }
    ],
    "served": true,
@@ -5649,21 +5649,21 @@
    "served": false,
    "main_committers": []
   },
-  "file:docs/visuals/<date>-open-asks.html": {
+  "file:docs/visuals/<date>-open-asks-2.html": {
    "consumers": [
     {
      "id": "script:kb/_build_open_asks_decision_sheet.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 64
+     "line": 67
     },
     {
      "id": "script:kb/_build_open_asks_decision_sheet.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 64
+     "line": 67
     }
    ],
    "served": false,
@@ -6092,7 +6092,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 221
+     "line": 224
     }
    ],
    "served": true,
@@ -6171,7 +6171,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 144
+     "line": 147
     }
    ],
    "served": true,
@@ -6238,6 +6238,19 @@
    "main_committers": [
     "workflow:daily-dashboard.yml"
    ]
+  },
+  "file:jev_ccr_title_rung_calibration_<date>_s282.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_jev_next_steps.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 130
+    }
+   ],
+   "served": false,
+   "main_committers": []
   },
   "file:kb-portal/app.js": {
    "consumers": [
@@ -8763,7 +8776,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 197
+     "line": 200
     },
     {
      "id": "script:kb/_ccr_trail.py",
@@ -10052,11 +10065,25 @@
      "line": 85
     },
     {
+     "id": "script:kb/_build_open_asks_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 281
+    },
+    {
      "id": "script:kb/_csr_trail.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
      "line": 188
+    },
+    {
+     "id": "script:kb/_jev_next_steps.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 65
     },
     {
      "id": "script:kb/_kin_pe_pass2.py",
@@ -10519,7 +10546,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 243
+     "line": 318
     }
    ],
    "served": false,
@@ -11463,6 +11490,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/receipts/jev_ccr_title_rung_calibration_<date>_s282.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_open_asks_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 330
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/reference/CIPCode2020.csv": {
    "consumers": [
     {
@@ -12388,6 +12428,13 @@
      "line": 111
     },
     {
+     "id": "script:kb/_jev_next_steps.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 132
+    },
+    {
      "id": "script:kb/_preseed_null_issuers.py",
      "kind": "script",
      "direction": "read",
@@ -12938,6 +12985,19 @@
     }
    ],
    "served": true,
+   "main_committers": []
+  },
+  "file:kb/trail_crew_out/*/findings.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_open_asks_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 270
+    }
+   ],
+   "served": false,
    "main_committers": []
   },
   "file:kb/trail_crew_out/2026-07-10/staged_fixes.json": {
@@ -13697,7 +13757,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 144
+     "line": 147
     }
    ],
    "served": true,
@@ -14107,7 +14167,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 164
+     "line": 167
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -14640,6 +14700,13 @@
      "direction": "read",
      "how": "inline",
      "line": 0
+    },
+    {
+     "id": "script:kb/_build_open_asks_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 294
     }
    ],
    "served": true,
@@ -16252,7 +16319,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 178
+     "line": 181
     },
     {
      "id": "script:kb/_build_orphan_parent_worklist.py",

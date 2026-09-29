@@ -354,7 +354,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `docs/visuals/<date>-grants-and-max-award.html` | scripts: `kb/_build_grants_decision_sheet.py` | scripts: `kb/_build_grants_decision_sheet.py` |
 | `docs/visuals/<date>-jev-ladder.html` | scripts: `kb/_build_jev_ladder_sheet.py` | scripts: `kb/_build_jev_ladder_sheet.py` |
 | `docs/visuals/<date>-memory-audit-verdicts.html` | scripts: `kb/memory_audit/2026-09-05-sheet_builder.py` | scripts: `kb/memory_audit/2026-09-05-sheet_builder.py` |
-| `docs/visuals/<date>-open-asks.html` | scripts: `kb/_build_open_asks_decision_sheet.py` | scripts: `kb/_build_open_asks_decision_sheet.py` |
+| `docs/visuals/<date>-open-asks-2.html` | scripts: `kb/_build_open_asks_decision_sheet.py` | scripts: `kb/_build_open_asks_decision_sheet.py` |
 | `docx.min.js` | tabs: `annual-report`, `college-briefing`, `implementation-funding` · modules: `master_report.js` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py` | — |
 | `excel_to_dashboard.py` | workflows: `daily-dashboard.yml` | — |
 | `exports/20260826_T5_55050_Article9_Conformity_TrackedChanges_v5.docx` | none found | scripts: `kb/_build_55050_redline_docx.py`, `kb/_verify_55050_redline.py` |
@@ -378,6 +378,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `governance.js` | pages: `CPL_Dashboard.html` · scripts: `kb/_build_open_asks_decision_sheet.py` | — |
 | `gr_priorities.js` | pages: `CPL_Dashboard.html` | — |
 | `index.html` | scripts: `excel_to_dashboard.py`, `kb/_glyph_sweep.py`, `nudges/build_nudges.py`, `prototype/check_contrast.py`, `raci/_seed_team_members.py` | committed by: `daily-dashboard.yml` |
+| `jev_ccr_title_rung_calibration_<date>_s282.json` | scripts: `kb/_jev_next_steps.py` | — |
 | `kb-portal/app.js` | pages: `kb-portal/index.html` | — |
 | `kb-portal/composer_util.js` | pages: `kb-portal/index.html` | — |
 | `kb/README.md` | scripts: `kb/_build_docs_index.py` | — |
@@ -477,7 +478,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/dependency_map.json` | tabs: `admin` | — |
 | `kb/discipline_aliases.json` | tabs: `canonical-subj4` · scripts: `excel_to_dashboard.py`, `kb/_alias_canon.py`, `kb/_apply_drama_theater_convergence.py`, `kb/_apply_kin_pe_convergence.py`, `kb/_uc_cur_promote.py`, `kb/_zband_retire_apply.py`, `kb/_zband_retire_dryrun.py` | — |
 | `kb/discipline_blanks_worklist.json` | scripts: `kb/_build_discipline_blanks_worklist.py` | scripts: `kb/_build_discipline_blanks_worklist.py` · committed by: `daily-dashboard.yml` |
-| `kb/discipline_canonical_subj4.json` | tabs: `canonical-subj4`, `unified-courses` · scripts: `excel_to_dashboard.py`, `kb/_apply_canonical_subj4.py`, `kb/_apply_fl_subj4_remint.py`, `kb/_authority_recode_dryrun.py`, `kb/_csr_trail.py`, `kb/_kin_pe_pass2.py`, `kb/_overmerge_dryrun.py`, `kb/_pols_remint.py`, `kb/_seed_authority_codes.py`, `kb/_seed_canonical_subj4.py`, `kb/_seed_coci_minted_mids.py`, `kb/_subj4_apply.py`, `kb/_subj4_dryrun.py`, `kb/_uc_cur_zscheme_dryrun.py`, `kb/_zband_retire_dryrun.py` | scripts: `kb/_apply_canonical_subj4.py`, `kb/_apply_fl_subj4_remint.py`, `kb/_pols_remint.py`, `kb/_seed_authority_codes.py`, `kb/_seed_canonical_subj4.py` · committed by: `daily-dashboard.yml`, `phase-1e-apply.yml`, `phase-1e-sync.yml` |
+| `kb/discipline_canonical_subj4.json` | tabs: `canonical-subj4`, `unified-courses` · scripts: `excel_to_dashboard.py`, `kb/_apply_canonical_subj4.py`, `kb/_apply_fl_subj4_remint.py`, `kb/_authority_recode_dryrun.py`, `kb/_build_open_asks_decision_sheet.py`, `kb/_csr_trail.py`, `kb/_jev_next_steps.py`, `kb/_kin_pe_pass2.py`, `kb/_overmerge_dryrun.py`, `kb/_pols_remint.py`, `kb/_seed_authority_codes.py`, `kb/_seed_canonical_subj4.py`, `kb/_seed_coci_minted_mids.py`, `kb/_subj4_apply.py`, `kb/_subj4_dryrun.py`, `kb/_uc_cur_zscheme_dryrun.py`, `kb/_zband_retire_dryrun.py` | scripts: `kb/_apply_canonical_subj4.py`, `kb/_apply_fl_subj4_remint.py`, `kb/_pols_remint.py`, `kb/_seed_authority_codes.py`, `kb/_seed_canonical_subj4.py` · committed by: `daily-dashboard.yml`, `phase-1e-apply.yml`, `phase-1e-sync.yml` |
 | `kb/discipline_cpl_rollup.json` | tabs: `canonical-subj4` · scripts: `excel_to_dashboard.py`, `kb/_build_cpl_by_discipline.py` | committed by: `daily-dashboard.yml` |
 | `kb/discipline_inference.json` | scripts: `kb/_audit_subject_map.py`, `kb/_infer_disciplines.py`, `kb/_overmerge_dryrun.py`, `kb/_row_audit.py` | — |
 | `kb/doctrine_questions.json` | tabs: `unified-courses` | — |
@@ -544,6 +545,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/promotions.json` | scripts: `excel_to_dashboard.py`, `kb/_analyze_official_fold_evidence.py`, `kb/_analyze_witness_kinship.py`, `kb/_build_remint_blast_radius.py`, `kb/_desc_consolidation_dryrun.py`, `kb/_esl_package_dryrun.py`, `kb/_rekey_promotions.py`, `kb/_remint_apply.py`, `kb/_seed_authority_codes.py`, `kb/_title_consolidation_dryrun.py`, `kb/_uc_cur_zscheme_dryrun.py` | scripts: `kb/_rekey_promotions.py` |
 | `kb/receipts/cr_reference_decisions_<date>_s280.json` | scripts: `kb/_build_decision_sheet_demo.py` | — |
 | `kb/receipts/jev_ccr_title_rung_<date>_s282.json` | scripts: `kb/_build_ccr_title_rung_sheet.py` | — |
+| `kb/receipts/jev_ccr_title_rung_calibration_<date>_s282.json` | scripts: `kb/_build_open_asks_decision_sheet.py` | — |
 | `kb/reference/CIPCode2020.csv` | scripts: `excel_to_dashboard.py`, `kb/_build_cip_crosswalk.py` | — |
 | `kb/reference/asccc_area_map.json` | scripts: `kb/_apply_asccc_areas.py` | — |
 | `kb/reference/authority_subject_codes.json` | scripts: `kb/_seed_authority_codes.py` | scripts: `kb/_seed_authority_codes.py` |
@@ -571,7 +573,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/reference/moc_crosswalk.json` | scripts: `kb/_sync_moc_crosswalk.py` | scripts: `kb/_sync_moc_crosswalk.py` · committed by: `moc-crosswalk-sync.yml` |
 | `kb/reference/mq_disciplines.json` | scripts: `excel_to_dashboard.py`, `kb/_apply_kin_pe_convergence.py`, `kb/_build_ccr_title_rung_sheet.py`, `kb/_build_crosslist_decision_sheet.py`, `kb/_infer_disciplines.py`, `kb/_infer_disciplines_from_desc.py`, `kb/_infer_disciplines_from_top.py`, `kb/_infer_disciplines_from_top_division.py`, `kb/_preseed_null_issuers.py`, `kb/_seed_coci_courses.py`, `kb/_seed_coci_minted_mids.py`, `kb/_seed_subject_discipline_map.py`, `kb/_verify_top_division_inference.py` | — |
 | `kb/reference/mq_sections.json` | tabs: `canonical-subj4` · scripts: `kb/_ccr_trail.py` | — |
-| `kb/reference/subject_discipline_map.json` | scripts: `excel_to_dashboard.py`, `kb/_apply_crossdisc_remint.py`, `kb/_build_ccr_title_rung_sheet.py`, `kb/_build_crosslist_decision_sheet.py`, `kb/_build_orphan_parent_worklist.py`, `kb/_esl_new_identities_dryrun.py`, `kb/_preseed_null_issuers.py`, `kb/_seed_coci_minted_mids.py`, `kb/_seed_subject_discipline_map.py` | scripts: `kb/_seed_subject_discipline_map.py` |
+| `kb/reference/subject_discipline_map.json` | scripts: `excel_to_dashboard.py`, `kb/_apply_crossdisc_remint.py`, `kb/_build_ccr_title_rung_sheet.py`, `kb/_build_crosslist_decision_sheet.py`, `kb/_build_orphan_parent_worklist.py`, `kb/_esl_new_identities_dryrun.py`, `kb/_jev_next_steps.py`, `kb/_preseed_null_issuers.py`, `kb/_seed_coci_minted_mids.py`, `kb/_seed_subject_discipline_map.py` | scripts: `kb/_seed_subject_discipline_map.py` |
 | `kb/reference/swp_region_roster.json` | scripts: `kb/_build_regional_cpl_opportunity.py`, `kb/_emit_swp_region_data.py` | — |
 | `kb/reference/top_categories.json` | scripts: `kb/_authority_recode_dryrun.py`, `kb/_build_ccr_sky.py`, `kb/_build_ccr_universe.py`, `kb/_correct_top_lookup_code4.py`, `kb/_join_cte_from_top.py`, `kb/_seed_canonical_subj4.py` | — |
 | `kb/reference/topcip_2021_crosswalk.xlsx` | scripts: `excel_to_dashboard.py`, `kb/_build_cip_crosswalk.py`, `kb/_correct_top_lookup_code4.py` | — |
@@ -594,6 +596,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/top_discipline_map.json` | scripts: `kb/_apply_crossdisc_remint.py`, `kb/_infer_disciplines_from_top.py`, `kb/_overmerge_dryrun.py`, `kb/_row_audit.py` | — |
 | `kb/top_division_discipline_map.json` | scripts: `kb/_audit_subject_map.py`, `kb/_infer_disciplines_from_top_division.py`, `kb/_verify_top_division_inference.py` | — |
 | `kb/top_gate_out/2026-07-16/impact.json` | scripts: `kb/_top_fold_gate_dryrun.py` | scripts: `kb/_top_fold_gate_dryrun.py` |
+| `kb/trail_crew_out/*/findings.json` | scripts: `kb/_build_open_asks_decision_sheet.py` | — |
 | `kb/trail_crew_out/2026-07-10/staged_fixes.json` | none found | scripts: `kb/_trail_crew_assemble.py` |
 | `kb/trail_crew_out/2026-07-10/trail_report.md` | none found | scripts: `kb/_trail_crew_assemble.py` |
 | `kb/twin_merge_out/<date>-postfold/alias_map.json` | scripts: `kb/alias_chain.py` | — |
@@ -674,7 +677,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `scripts/tab_review_sheet/fs/capture.json` | none found | modules: `scripts/tab_review_sheet/capture.js` |
 | `scripts/tab_review_sheet/fs/snapshot.json` | modules: `scripts/tab_review_sheet/capture.js`, `scripts/tab_review_sheet/tab.js` | — |
 | `sierra/sierra.js` | pages: `sierra/index.html` | — |
-| `sierra_training.js` | pages: `CPL_Dashboard.html` | — |
+| `sierra_training.js` | pages: `CPL_Dashboard.html` · scripts: `kb/_build_open_asks_decision_sheet.py` | — |
 | `statewide/_probe_exhibit_authority.py` | workflows: `statewide-probe-authority.yml` | — |
 | `statewide_interactive.js` | pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py` | — |
 | `tabs.js` | pages: `CPL_Dashboard.html` | — |
@@ -942,5 +945,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 539 file
-datasets · 147 external services · 379 consumers · 37 workflows · 37 tabs.
+Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 542 file
+datasets · 147 external services · 380 consumers · 37 workflows · 37 tabs.

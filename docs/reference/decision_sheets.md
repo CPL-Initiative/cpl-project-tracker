@@ -296,10 +296,14 @@ anything waiting on him belongs on it, and it is rebuilt and handed over rather
 than held back for a quorum.
 
 **Builder:** `kb/_build_open_asks_decision_sheet.py` →
-`docs/visuals/2026-09-29-open-asks.html` (seven cards: the three below, carried over unanswered,
-and four from the College Dashboard port), published S300 at
-https://claude.ai/artifact/QiaDezD2AN6XDzctUCSCfw (`SHEET_ID` `2026-09-29-open-asks`, a fresh
-store, `capabilities: {db: {}, comments: {}}`). Before it:
+`docs/visuals/2026-09-29-open-asks-2.html` (twelve cards: S300's seven, unchanged and still
+unreviewed, then four Jev next steps and one Sierra Training call), published S301 at
+https://claude.ai/artifact/9Wikhf54XyJgWXDEw5AK7G (`SHEET_ID` `2026-09-29-open-asks-2`, a fresh
+store, `capabilities: {db: {}, comments: {}}`). The Jev cards' counts are measured at build time
+by `kb/_jev_next_steps.py`. Before it: `docs/visuals/2026-09-29-open-asks.html` (seven cards),
+published S300 at https://claude.ai/artifact/QiaDezD2AN6XDzctUCSCfw (`SHEET_ID`
+`2026-09-29-open-asks`), where Sam pressed Complete with no card touched; its thread points to
+the new sheet, and a reply there still counts for its seven. Before that:
 `docs/visuals/2026-09-28-open-asks.html` (three cards: the two funding questions still open,
 and the ETHS re-mint's extension), published S297 at
 https://claude.ai/artifact/C1uyRhneegqQ4XSPRKiC3B (`SHEET_ID` `2026-09-28-open-asks`; its store

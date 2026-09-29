@@ -1,7 +1,7 @@
 ---
 title: "Common CR Reference — lane state"
 created: 2026-08-28
-updated: 2026-09-21
+updated: 2026-09-29
 tags: [reference, roadmap-lane]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -71,10 +71,11 @@ a 0.5 hedge is not a refutation. Run it from
 `.github/workflows/typesafe-smoke.yml` (typesafe.ai is egress-blocked from the
 sandbox); it SUGGESTS and writes nothing.
 
-**Triage, measured 2026-09-21:** CER 239 findings → 59 worth a call · CSR 185 →
-143 · CCRR 55 anchored pairs. **The receipt's 51 pairs are all still present**
-(reconciled, none lost); the 4 new ones sit under the `community relations`
-anchor, this lane's named hard case.
+**Triage, measured 2026-09-29 on fresh scans (#1735):** CER 116 findings → 38
+worth a call · CSR 63 → 15 · CCRR 55 anchored pairs. **The receipt's 51 pairs are
+all still present** (reconciled, none lost); the 4 new ones sit under the
+`community relations` anchor, this lane's named hard case.
+`python3 kb/_jev_next_steps.py` reproduces every count on the four next-step cards.
 
 ⚠️ **SCORE AGAINST `by: "sam"` ROWS ONLY.** The decision sheet went opt-out on
 2026-09-21, so an untouched item carries the recommendation marked
@@ -141,29 +142,54 @@ the test to run before carrying one anywhere:
 |---|---|---|---|
 | **CCR** | 16,478 identities · 33,418 stand-alone | **134,485 member rows** | not yet askable |
 | **CCRR** | 2,159 groups (1,936 at rung 5) | 9,413 rows · 82 colleges | **~29 rows** (51 verdicts → 1,459 rows) |
-| **CSR** | 143 findings (123 are one rule) | identity layer, not rows | Rule 7 re-mint |
-| **CER** | 59 findings · 38 keys | **71 rows · 20 colleges** | **~1.2 rows** |
+| **CSR** | 15 findings for Jev · 1 collision (AUTB) | identity layer, not rows | Rule 7 re-mint |
+| **CER** | 38 findings for Jev | **71 rows · 20 colleges** | **~1.2 rows** |
 
 ⚠️ **THE CER's MEASURED REACH IS 71 ROWS** — only **21 of its 38** credential
 titles reach the articulated corpus at all. Caveat on the sheet: the CER governs
 3,813 unified titles across MAP, so its value may sit in **exhibit adoption**
 rather than rows, which nobody has measured.
 
-⚠️ **123 OF THE CSR's 143 ARE RULE 7 QUESTIONS.** `cs9_anchor_subj_diverge` asks
-whether a discipline's canonical SUBJ4 should follow its anchor course — a
-**re-mint**, under the mandatory playbook, and Rule 7 holds that an unreliable
-signal never gates identity. Jev may RANK them for a curator; it must never
-carry the verdict.
+⚠️ **THE CSR's BACKLOG WAS A MISREAD (2026-09-29, #1735).** `cs9_anchor_subj_diverge`
+compared each curated anchor's `subject` field, the modal LOCAL code, because the
+anchor was re-keyed to `SUBJ4 M####` and the rule's regex stopped matching: 108
+anchors whose ids already carry the canonical read as re-mint questions, and 13
+umbrella languages read as divergent. `cs2_dup` read Sam's FTVE fan-in (2026-09-03,
+item 13) as a collision. Both rules are fixed and guarded
+(`tests/csr_trail_rules_test.py`). What remains: 13 weak mnemonics, 2 unused
+official prefixes (CMUS, HIT), and **AUTB**, which names Auto Body Technology and
+Agricultural Business and Related Services: the `AB` short-code defect minted an
+agriculture course under Auto Body's code. A SUBJ4 change is still a re-mint, so
+Jev may RANK the 15 for a curator and never carry the verdict.
 
-⚠️ **THE CER AND CSR FINDINGS ARE FROM 2026-07-10 — 73 days stale.** Every
-triage count in the S281 handoff (CER 239→59, CSR 185→143) comes off those two
-files, and the M-ID layer has been through a re-mint since. **Re-run both
-scanners before a call is spent on either.**
+⚠️ **THE CER's 38 JUDGMENT FINDINGS ARE JULY'S 38.** The 2026-09-29 re-run fell
+from 239 findings to 116 because the S111 clean renames cleared the roman numerals
+and duplicate titles; the 15 issuer clusters, 12 level twins, 7 mixed families and
+4 bare titles never moved, because the CER has no decisions store to hold a ruling.
 
 **Only the CCRR has a decisions store.** `cr_reference_decisions` (with its
 `note` reason column) and `kb_curation` are the only decision/curation tables in
 the database. Each other center needs one before its first sheet, routed through
 Governance under Rule 10(a3).
+
+## NEEDS SAM — a Jev next step per reference (2026-09-29, S301)
+
+Sam's ask of 2026-09-28 is answered as four cards on the standing open-asks sheet
+(cards 8–11 of `2026-09-29-open-asks-2`); the proposals, measured at build time by
+`kb/_jev_next_steps.py`:
+
+- **CCR:** ask where a course belongs, a Jev choice among the disciplines its
+  member colleges name, scored against his 26 title-rung answers first (members
+  name 4 of his 5 destinations); then a sitting of 50 from the cross-list lane's
+  kind C. Alternative: rung 2 of the ladder as designed.
+- **CCRR:** pair groups that articulate to one course identity (600 pairs, 337
+  stand-alone groups, 2,737 rows) behind the credential course-count guard, plus
+  the 33 unanchored clusters and the 4 newer anchored pairs, under the 0.85 gate.
+- **CER:** a decisions store through Governance first, then the 38 as a
+  calibration sitting checked against the credential registry.
+- **CSR:** file *Import Body Customizing* under Auto Body, give Agricultural
+  Business its own code (AGAB, in the agriculture umbrella's codes) and re-mint
+  its course under the playbook; then the 15 ranked.
 
 ## The CCR rung, and Sam's ladder design (2026-09-21, S282 SkyLedger)
 
