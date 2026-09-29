@@ -115,7 +115,7 @@ function storageKeys(window) {
   check("L4: under front-load no Year-1 card carries the restating 'Combined funding' line",
     cards.length === NPRIO && !doc.querySelector(".cplfund-prio .cplfund-fl-line") &&
     cards.every((c) => !/Combined funding/.test(c.textContent)));
-  check("L4: ...while every figure it restated is still on the card — the window figure on the Current Total line, the target",
+  check("L4: ...while every figure it restated is still on the card — the window figure on the Demonstrated line, the target",
     cards.every((c) => /of \$[\d,]+ full-window Total Possible/.test(c.textContent) &&
       (/Target [\d,.]+ CPL FTES/.test(c.textContent) || /so [\d,]+ students/.test(c.textContent))));
   // The band head retired with the bands (Sam, 2026-09-14). Its per-outcome

@@ -905,7 +905,6 @@
     // ── self-service opt-in (public + private) + the CO confirm lane ──────────
     ".cplfund-optin { grid-column: 1 / -1; margin-top: 8px; }",
     ".cplfund-optin-done { color: var(--text-body); font-weight: 600; }",
-    ".cplfund-optin-done .dk { font-weight: 400; }",
         ".cplfund-optin-form { background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 8px; padding: 10px 12px; max-width: 640px; }",
     ".cplfund-optin-head { font-weight: 600; color: var(--navy-secondary); margin-bottom: 8px; }",
     ".cplfund-optin-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 12px; }",
@@ -4360,10 +4359,13 @@
     var row = ELIG.optinRow[college];
     var ui = OPTIN_UI[college] || {};
     if (row && row.status !== "revoked") return "";
+    // THE THANK-YOU AND THE NOTE PROMISE NO ACKNOWLEDGMENT (Sam, 2026-09-29,
+    // open-asks sheet 3 card 5, his words verbatim). The CO step they promised
+    // left on 2026-09-28 with Mark confirmed and the CO Confirm: a
+    // self-attestation stands on submit, and the CO acts only to reject one.
     if (ui.done) {
       return '<div class="cplfund-optin cplfund-optin-done">' +
-        "<strong>Thank you — your participation is confirmed.</strong> " +
-        '<span class="dk">The Chancellor&#39;s Office will acknowledge it; your college is counted as participating in the meantime.</span></div>';
+        "Thank you. Your participation is confirmed, and your college counts as participating from today.</div>";
     }
     var withdrawn = row && row.status === "revoked"
       ? '<div class="cplfund-optin-note cplfund-warn-text">A previous participation confirmation for this college was withdrawn by the Chancellor&#39;s Office. Contact the CO to re-open it.</div>'
@@ -4388,7 +4390,7 @@
       "</div>" +
       '<div class="cplfund-optin-note">By submitting, you attest that you are an administrator of ' + esc(dispName(college)) +
       " requesting that it participate in CPL Implementation Funding. Your name and email are recorded for the Chancellor&#39;s " +
-      "Office to acknowledge and are <strong>not shown publicly</strong>. Opting in makes the college eligible for funding — it moves no funding by itself and is reversible.</div>" +
+      "Office and are <strong>not shown publicly</strong>. Opting in makes the college eligible for funding — it moves no funding by itself and is reversible.</div>" +
       "</div>";
   }
 
@@ -5094,9 +5096,14 @@
       proseBlockHtml("reading", "dk cplfund-basis-note") + "</div>";
   }
 
-  // Statewide Current Total / Total Possible line under a priority card
-  // (Sam's labels, ruled 2026-08-31 — Total Possible is the CEILING: the
-  // priority's credit and noncredit shares together).
+  // Statewide Demonstrated / Total Possible line under a priority card. Total
+  // Possible is Sam's label (ruled 2026-08-31), the CEILING: the priority's
+  // credit and noncredit shares together. DEMONSTRATED is his too (2026-09-29,
+  // open-asks sheet 3 card 4), the statute's verb, §78093.2(d)(2): the figure
+  // is what the measures show, the minimum conditions aside (earnAgg()'s
+  // gate-agnostic `earned`). The Curr columns keep the word Current for what
+  // an institution qualifies for, $0 until it meets its minimum conditions,
+  // so the two figures carry two names.
   function earnedLineHtml(i) {
     var pp = earnAgg().perPrio[i];
     if (!pp) return "";
@@ -5105,10 +5112,11 @@
     if (pp.cap <= 0 && slotIsCarryover(state.viewSlot)) return "";
     var pct = pp.cap > 0 ? pp.earned / pp.cap : 0;
     return '<p class="nums cplfund-earned-line" title="' +
-      esc("Current Total: what institutions have demonstrated statewide on this priority to date. Total Possible: the " +
-        "ceiling — the priority's credit and noncredit shares together" +
+      esc("Demonstrated: what institutions have demonstrated statewide on this priority to date, whether or not " +
+        "each has met its minimum conditions. The Curr columns show what each qualifies for: $0 until it meets them. " +
+        "Total Possible: the ceiling — the priority's credit and noncredit shares together" +
         (pp.ncCap > 0 ? " (" + fmtMoney(pp.ncCap) + " of it is the noncredit share)" : "") + ".") +
-      '">Current Total: <strong>' + fmtMoney(pp.earned) + "</strong> of " +
+      '">Demonstrated: <strong>' + fmtMoney(pp.earned) + "</strong> of " +
       fmtMoney(pp.cap) + (frontloaded() ? " full-window" : "") + " Total Possible <strong>(" + fmtPctTrim(pct) + ")</strong></p>";
   }
 
@@ -6876,7 +6884,7 @@
     // ONE card set (R2, 2026-08-31). Every statewide figure on these cards is
     // the FULL pool share — the priority's credit and noncredit shares
     // together, the ceiling Sam's labels call Total Possible — while the
-    // Current Total line adds each lane on its own measures (earnedLineHtml).
+    // Demonstrated line adds each lane on its own measures (earnedLineHtml).
     var ps = priorities(slot);
     var per = perYear();
     var heads = totalHeads();
@@ -6907,7 +6915,7 @@
       // The "Combined funding" line is RETIRED (Sam, 2026-09-02, with a
       // screenshot drawing the line from it up to the band head). It restated
       // three figures the card and its band already carry: the window figure
-      // (the band head's Total Possible and the Current Total line's "of $W"),
+      // (the band head's Total Possible and the Demonstrated line's "of $W"),
       // the target (the Target line), and the effective rate — which under
       // front-load IS the price line, since the target is the window figure
       // divided by that price. Only the carryover year keeps a line, because
