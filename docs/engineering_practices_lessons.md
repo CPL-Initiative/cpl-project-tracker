@@ -129,3 +129,9 @@ saying not to read it. Replaced with a runtime assertion that records what the
 build actually opens. **Assert the behavior, not a proxy for it.**
 
 Full note: [`methodology-a-guard-on-generated-output-cannot-see-its-source`](kb-notes/methodology-a-guard-on-generated-output-cannot-see-its-source.md).
+
+## 2026-09-29 — S303 (SkyWarp): a PR that conflicts runs no `pull_request` CI
+
+- **A PR whose head conflicts with its base gets no `pull_request` workflow run at all**, so `test` never appears and a `check_suite.completed` wake arrives with nothing in it. On #1755 the daily dashboard committed to main (`ba91608`, a row-audit regeneration) seventy seconds before the session pushed its merge of main, so the pushed head already conflicted. When a head shows no check runs, fetch main and try the merge (`git merge-tree`) before waiting on CI.
+- **Hold a merge that a cron run could overwrite until that run finishes.** The ETHS re-key had to follow the merge before any dashboard run synced curation; the session waited for the in-flight dispatch to finish, merged, re-keyed, read back (0/0/4/3), then dispatched the dashboard.
+- **A bot commit on a feature branch is routine**: the First Light art job pushes `[skip ci]` after each push to a branch. A rejected push means fetch and look before blaming a person.

@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-274 document(s).
+275 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 304 | [sheet 4 is answered; the three-part check, 0 hours and Grossmont's four come first](../session_304_handoff.md) | 2026-09-29 |
 | 303 | [sheet 3 carried out; the ETHS re-key, one setup-python bump and sheet 4 come first](../session_303_handoff.md) | 2026-09-29 |
 | 302 | [eighteen asks on one sheet, the unit range on three surfaces, draft 3 of the video](../session_302_handoff.md) | 2026-09-29 |
 | 301 | [two ports reconciled, Sierra Training redesigned, seven asks on one sheet](../session_301_handoff.md) | 2026-09-29 |
