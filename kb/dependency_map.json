@@ -4,7 +4,7 @@
   "supabase_tables": 85,
   "rpcs": 31,
   "edge_functions": 5,
-  "file_datasets": 544,
+  "file_datasets": 545,
   "external_services": 147,
   "consumers": 381,
   "workflows": 37,
@@ -3117,7 +3117,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 158
+     "line": 160
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -4228,7 +4228,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 147
+     "line": 149
     },
     {
      "id": "script:scripts/stamp_asset_versions.py",
@@ -4582,7 +4582,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 147
+     "line": 149
     }
    ],
    "served": true,
@@ -5656,21 +5656,21 @@
    "served": false,
    "main_committers": []
   },
-  "file:docs/visuals/<date>-open-asks-2.html": {
+  "file:docs/visuals/<date>-open-asks-3.html": {
    "consumers": [
     {
      "id": "script:kb/_build_open_asks_decision_sheet.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 67
+     "line": 69
     },
     {
      "id": "script:kb/_build_open_asks_decision_sheet.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 67
+     "line": 69
     }
    ],
    "served": false,
@@ -6099,7 +6099,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 224
+     "line": 226
     }
    ],
    "served": true,
@@ -6178,7 +6178,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 147
+     "line": 149
     }
    ],
    "served": true,
@@ -8783,7 +8783,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 200
+     "line": 202
     },
     {
      "id": "script:kb/_ccr_trail.py",
@@ -9498,6 +9498,13 @@
      "line": 84
     },
     {
+     "id": "script:kb/_build_open_asks_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 311
+    },
+    {
      "id": "script:kb/_jev_adjudicate.py",
      "kind": "script",
      "direction": "read",
@@ -10076,7 +10083,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 281
+     "line": 283
     },
     {
      "id": "script:kb/_csr_trail.py",
@@ -10553,7 +10560,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 318
+     "line": 385
     }
    ],
    "served": false,
@@ -11504,7 +11511,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 330
+     "line": 397
     }
    ],
    "served": false,
@@ -13001,7 +13008,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 270
+     "line": 272
     }
    ],
    "served": false,
@@ -13764,7 +13771,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 147
+     "line": 149
     }
    ],
    "served": true,
@@ -14174,7 +14181,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 167
+     "line": 169
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -14330,6 +14337,19 @@
      "direction": "read",
      "how": "literal",
      "line": 70
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:prototype/funding_video/narration_s1.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_open_asks_decision_sheet.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 347
     }
    ],
    "served": true,
@@ -14720,7 +14740,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 294
+     "line": 296
     }
    ],
    "served": true,
@@ -16359,7 +16379,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 181
+     "line": 183
     },
     {
      "id": "script:kb/_build_orphan_parent_worklist.py",

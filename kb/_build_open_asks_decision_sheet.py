@@ -31,9 +31,11 @@ also been answered on 2026-08-14 (military scope §10), and two of the 09-22
 proposals contradicted those August answers. When a verdict lands, change the
 lane's marker in the same pull request, or the sheet asks again.
 
-Published: https://claude.ai/artifact/9Wikhf54XyJgWXDEw5AK7G (2026-09-29, S301, SHEET_ID
-2026-09-29-open-asks-2, capabilities db + comments, twelve cards: the seven below carried over,
-four Jev next steps, one Sierra Training call). Its cards 1-7 are the seven of
+Published: https://claude.ai/artifact/XzQMks96QszUDAyXADP3Ag (2026-09-29, S301, SHEET_ID
+2026-09-29-open-asks-3, capabilities db + comments, eighteen cards: sheet 2's twelve at the same
+positions, two unit-range calls and the narrated draft's four). Sheet 2,
+https://claude.ai/artifact/9Wikhf54XyJgWXDEw5AK7G (SHEET_ID 2026-09-29-open-asks-2, twelve
+cards), held no replies when sheet 3 replaced it. Its cards 1-7 are the seven of
 https://claude.ai/artifact/QiaDezD2AN6XDzctUCSCfw (2026-09-29, S300, SHEET_ID 2026-09-29-open-asks),
 where Sam pressed Complete at 03:34Z with no card touched (`through: null`, nothing reviewed); that
 sheet's thread points here, and a reply there still counts for its seven. Before it: https://claude.ai/artifact/C1uyRhneegqQ4XSPRKiC3B (2026-09-28, S297, SHEET_ID
