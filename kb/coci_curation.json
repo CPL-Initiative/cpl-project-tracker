@@ -76235,7 +76235,7 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "ETHS M1191": {
+    "KINE M2023": {
       "discipline": "Kinesiology",
       "reviewed_by": "trailcrew-ccr3-s112@bot",
       "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
@@ -76246,12 +76246,12 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "ETHS M1196": {
+    "KINE M2024": {
       "unified_title": "Intermediate Springboard Diving",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "ETHS M1197": {
+    "KINE M2025": {
       "unified_title": "Physical Education in the Elementary School",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
@@ -112931,7 +112931,7 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "KINE M12UH": {
-      "merge_into": "ETHS M1191",
+      "merge_into": "KINE M2023",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
@@ -113041,7 +113041,7 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "KINE M12WT": {
-      "merge_into": "ETHS M1196",
+      "merge_into": "KINE M2024",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -113061,7 +113061,7 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "KINE M12XO": {
-      "merge_into": "ETHS M1197",
+      "merge_into": "KINE M2025",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },

@@ -31033,7 +31033,7 @@
    }
   }
  },
- "_rekeyed_at": "2026-09-28",
+ "_rekeyed_at": "2026-09-29",
  "_rekeyed_through": [
   "kb/subj4_apply/alias_map.json",
   "kb/crossdisc_out/alias_map.json",
@@ -31050,7 +31050,8 @@
   "kb/authority_recode_out/2026-09-03/alias_map.json",
   "kb/zband_retire_out/2026-09-03/alias_map.json",
   "kb/prefix_fold_out/2026-09-03/alias_map.json",
-  "kb/eths_remint_out/2026-09-28/ruled/alias_map.json"
+  "kb/eths_remint_out/2026-09-28/ruled/alias_map.json",
+  "kb/eths_remint_out/2026-09-29/standalone+missed/alias_map.json"
  ],
  "_rekey_note": "keys re-keyed to current ids through the applied alias chain (chronological single-step per map — an alias map is a simultaneous permutation, never iterated; see the module docstring of kb/_rekey_promotions.py); folded keys sum witnesses; _unresolved entries kept for investigation; receipt: kb/promotions_rekey_out/"
 }

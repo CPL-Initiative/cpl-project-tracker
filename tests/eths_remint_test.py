@@ -5,7 +5,9 @@ adapted or intercollegiate course left on KINE, a row with one signal moved, a
 drifted ruled set applied, a moved row left without its discipline or stamp, a
 merge_into pointer or curation key left on an old id, a stale identities entry
 kept on a landing key, a receipt or a fresh read that disagree slipping through,
-and an unruled class applied.
+a class no ruling moves applied (the 42 merged ones stay, Sam 2026-09-29), a
+pinned set that no longer measures whole once part of it moved (V0 counts the
+stamps), and a scope applied twice (P0 reads the stamps of the pinned ids).
 
 Run from repo root: python3 tests/eths_remint_test.py
 """
@@ -47,9 +49,11 @@ def fixture():
         "ETHS M1004": course("ETHS M1004", "Beginning Indoor Cycling Fitness"),   # curated title says adapted
         "ETHS M1005": course("ETHS M1005", "Fitness Walking", top="2201.00"),     # one signal only
         "ETHS M1006": course("ETHS M1006", "Chicano History", top="2203.00"),     # a real Ethnic Studies course
+        "ETHS M1007": course("ETHS M1007", "Self Defense for Women"),            # missed: no PHYSICAL word
         "KINE M1001": course("KINE M1001", "Beginning Yoga", disc="Kinesiology"),  # the kept number is taken
     }
-    singletons = {"ETHS M10AA": course("ETHS M10AA", "Advanced Fencing")}
+    singletons = {"ETHS M10AA": course("ETHS M10AA", "Advanced Fencing"),
+                  "ETHS M10CC": course("ETHS M10CC", "Fitness for the Newcomer", top="2203.00")}  # one signal
     memberships = {
         "ETHS M1001": [member("Grossmont College", "ES"), member("El Camino College", "PE")],
         "ETHS M1002": [member("Cuyamaca College", "ES", "0835.50: Intercollegiate Athletics")],
@@ -57,6 +61,7 @@ def fixture():
         "ETHS M1004": [member("Grossmont College", "ES")],
         "ETHS M1005": [member("Grossmont College", "ES", "2201.00: Social Science")],
         "ETHS M1006": [member("Grossmont College", "ES", "2203.00: Ethnic Studies")],
+        "ETHS M1007": [member("Grossmont College", "ES"), member("Cypress College", "KIN")],
     }
     curations = {
         "ETHS M1004": {"unified_title": "Adapted Indoor Cycling for Fitness"},
@@ -71,17 +76,20 @@ def fixture():
     return courses, singletons, memberships, curations, identities, articulations
 
 
-def plan_for(fx, ruled, scopes=("ruled",)):
+def plan_for(fx, ruled, scopes=("ruled",), ruled_43=None):
     courses, singletons, memberships, curations, identities, _ = fx
-    saved = er.RULED
+    saved = er.RULED, er.RULED_43
     er.RULED = tuple(ruled)
+    er.RULED_43 = tuple(RULED_43_FX if ruled_43 is None else ruled_43)
     try:
         return er.compute_plan(courses, singletons, memberships, curations, identities, {}, WORDS, scopes)
     finally:
-        er.RULED = saved
+        er.RULED, er.RULED_43 = saved
 
 
 RULED_FX = ("ETHS M1001", "ETHS M1002", "ETHS M1003", "ETHS M1004", "ETHS M1005")
+# The fixture's 43: a stand-alone, a missed row, and a stand-alone with one signal.
+RULED_43_FX = ("ETHS M10AA", "ETHS M1007", "ETHS M10CC")
 fx = fixture()
 plan = plan_for(fx, RULED_FX)
 mv = plan["moves"]
@@ -105,7 +113,7 @@ check("ES never counts as the second signal; PE does",
       not any(" ES" in e or e.endswith("ES") for e in mv["ETHS M1001"]["evidence"]))
 
 # ── scope ────────────────────────────────────────────────────────────────────
-check("the ruled class moves; a stand-alone waits for its own ruling",
+check("the ruled scope moves the 31's class only; a stand-alone moves under its own receipt",
       "ETHS M10AA" not in mv and plan["not_in_scope"].get("ETHS M10AA", {}).get("scope") == "standalone")
 check("an ETHS id merged into a ruled parent is its child, not a move",
       plan["not_in_scope"].get("ETHS M10BB", {}).get("scope") == "children")
@@ -177,13 +185,82 @@ check("P3 refuses a moved id carrying a live field the overlay lacks",
 check("P3 refuses a live value that differs from the overlay",
       not er.fresh_read_check(edited, curations, plan)["pass"])
 
+# ── the 43: Sam, 2026-09-29 (open-asks sheet 3, card 3, "remint") ───────────
+check("RULED_43 pins 43 distinct ETHS ids, none of them among the 31",
+      len(er.RULED_43) == len(set(er.RULED_43)) == 43 and all(k.startswith("ETHS ") for k in er.RULED_43)
+      and not set(er.RULED_43) & set(er.RULED))
+check("the admitted scope sets are the two Sam ruled, and one order names each",
+      set(er.RULED_SCOPES) == {("ruled",), ("standalone", "missed")}
+      and er.canonical_scopes(["missed", "standalone"]) == ("standalone", "missed"))
+check("each admitted scope pins its own ruling's ids; a set no ruling moves pins none",
+      er.pinned_ids(("standalone", "missed")) == er.RULED_43 and er.pinned_ids(("ruled",)) == er.RULED
+      and er.pinned_ids(("children",)) == () and er.pinned_ids(("ruled", "standalone", "missed")) == ())
+
+
+def plan_on(d, scopes, ruled_43=None):
+    return plan_for((d["courses"]["courses"], d["singletons"]["courses"], d["memberships"]["memberships"],
+                     d["curation"]["curations"], d["articulations"]["identities"], None),
+                    RULED_FX, scopes, ruled_43)
+
+
+plan43 = plan_for(fx, RULED_FX, ("standalone", "missed"))
+mv43 = plan43["moves"]
+check("the 43's scope moves the stand-alone and the missed row, never a ruled or merged id",
+      set(mv43) == {"ETHS M10AA", "ETHS M1007"})
+check("a row of the 43 with no second signal beside the title holds (Rule 7)",
+      "ETHS M10CC" in plan43["held"] and "ETHS M10CC" not in mv43)
+check("a missed row moves on its members' kinesiology code, and ES is not that code",
+      mv43["ETHS M1007"]["route"] == "KINE" and "member codes KIN" in mv43["ETHS M1007"]["evidence"])
+check("a stand-alone keeps its number when the target key is free",
+      mv43["ETHS M10AA"]["new_id"] == "KINE M10AA" and mv43["ETHS M10AA"]["how"] == "kept number")
+check("a child merged under a ruled parent stays on its id under the 43's scope",
+      plan43["not_in_scope"].get("ETHS M10BB", {}).get("scope") == "children")
+check("V0 re-measures the 43's classes to the pinned ids", plan43["validation"]["V0_ruled_43_set"]["pass"])
+check("V0 refuses a 43 class that measures an id the ruling does not pin",
+      not plan_for(fx, RULED_FX, ("standalone", "missed"), RULED_43_FX[:-1])["validation"]["V0_ruled_43_set"]["pass"])
+check("V0 refuses a pinned id the catalog no longer measures",
+      not plan_for(fx, RULED_FX, ("standalone", "missed"),
+                   RULED_43_FX + ("ETHS M10ZZ",))["validation"]["V0_ruled_43_set"]["pass"])
+check("P0 passes before the 43 are applied", plan43["validation"]["P0_not_applied"]["pass"])
+
+after43, _ = er.apply_plan(copy.deepcopy(docs), plan43)
+moved43 = after43["singletons"]["courses"].get("KINE M10AA") or {}
+check("a stand-alone moves in the singletons file, with its discipline and the stamp",
+      moved43.get(er.STAMP) == "ETHS M10AA" and moved43.get("discipline") == "Kinesiology"
+      and "ETHS M10AA" not in after43["singletons"]["courses"])
+re43 = plan_on(after43, ("standalone", "missed"))
+check("after the 43 apply, V0 still measures them whole, the moved ones by stamp",
+      re43["validation"]["V0_ruled_43_set"]["pass"] and re43["validation"]["V0_ruled_43_set"]["applied"] == 2)
+check("after the 43 apply, P0 reports the scope applied",
+      not re43["validation"]["P0_not_applied"]["pass"] and re43["validation"]["P0_not_applied"]["applied"] == 2)
+check("after the 43 apply, the held row is still measured and nothing is left to move",
+      not re43["moves"] and "ETHS M10CC" in re43["held"])
+re31 = plan_on(after, ("ruled",))
+check("after the 31 moved, V0 still measures the ruled set whole, by stamp",
+      re31["validation"]["V0_ruled_set"]["pass"] and re31["validation"]["V0_ruled_set"]["applied"] == 4)
+check("after the 31 moved, P0 reports the ruled scope applied", not re31["validation"]["P0_not_applied"]["pass"])
+check("the 31's stamps never block the 43's P0",
+      plan_on(after, ("standalone", "missed"))["validation"]["P0_not_applied"]["pass"])
+
 # ── main(): the apply's own refusals ─────────────────────────────────────────
-try:
-    er.main(["--scope", "ruled,standalone", "--apply", "--ruling", "x", "--receipt", "x", "--fresh-read", "x"])
-    refused = False
-except SystemExit as e:
-    refused = "ruled class only" in str(e)
-check("--apply moves the ruled class only until Sam rules on the rest", refused)
+def apply_refusal(argv):
+    """-> the SystemExit text main() stops with, or None when it went on to run."""
+    try:
+        er.main(argv)
+    except SystemExit as e:
+        return str(e)
+    except Exception as e:          # it passed every refusal and tried to run
+        return f"ran: {e!r}"
+    return None
+
+
+ARGS = ["--apply", "--ruling", "x", "--receipt", "x", "--fresh-read", "x"]
+for scope in ("ruled,standalone", "standalone", "children", "merged_elsewhere", "standalone,missed,children"):
+    check(f"--apply refuses --scope {scope}: no ruling moves that set",
+          "admits only the scopes Sam ruled" in (apply_refusal(["--scope", scope] + ARGS) or ""))
+for scope in ("standalone,missed", "missed,standalone"):
+    check(f"--apply admits --scope {scope} (Sam, 2026-09-29) and asks for its ruling, receipt and fresh read",
+          "--ruling" in (apply_refusal(["--scope", scope, "--apply"]) or ""))
 try:
     er.main(["--apply"])
     refused = False
