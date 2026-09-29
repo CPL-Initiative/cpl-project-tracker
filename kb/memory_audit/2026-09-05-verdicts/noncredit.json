@@ -1,0 +1,288 @@
+{
+  "part": "noncredit",
+  "expected_rows": 8,
+  "coverage": {
+    "rows_read": 8,
+    "rows_judged": 8,
+    "note": "complete; every row judged against lane files, code on disk, read-only Supabase SELECTs and git log on 2026-09-05"
+  },
+  "counts": {
+    "confirmed": 8,
+    "stale": 0,
+    "superseded_by_row": 0,
+    "snapshot": 0,
+    "unverifiable": 0
+  },
+  "verdicts": [
+    {
+      "id": "6684bd65-7d69-43f5-8e15-a02cfb068a08",
+      "slug": "coci-program-course-file-partial-lower-bound",
+      "kind": "pitfall",
+      "title": "The state's program-to-course file is incomplete, so any count built from it is a floor",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The KB note states the floor rule with the ARC Scaffold/Hardwood example; the roster script joins the file at kb/reference/ (401,163 data rows, unchanged since #809 on 2026-07-16, so nothing has refreshed it since the finding); PR #970 is on main. Lesson intact.",
+      "evidence": [
+        {
+          "source": "docs/kb-notes/methodology-college-apprenticeship-cpl-roster.md:24-25",
+          "quote": "program layer is a *lower bound* because the COCI program-course file is only partially populated."
+        },
+        {
+          "source": "docs/kb-notes/methodology-college-apprenticeship-cpl-roster.md:68",
+          "quote": "be absent from the file.** ARC proved it: **Scaffold Erector** and **Hardwood"
+        },
+        {
+          "source": "kb/_college_apprenticeship_cpl_roster.js:98",
+          "quote": "zlib.gunzipSync(fs.readFileSync(path.join(ROOT, \"kb/reference/coci_program_course_file.csv.gz\")))"
+        },
+        {
+          "source": "git log -- kb/reference/coci_program_course_file.csv.gz",
+          "quote": "93251c11 2026-07-16 Program-course pipeline: land the FULL program→course join (retires the TOP proxy) (#809); zcat | wc -l → 401,164 lines"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "e4b4198e SkyCobi: reusable college apprenticeship-CPL roster + methodology (ARC slides seed) (#970)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": [
+        {
+          "from": "affects: coci_program_course_file.csv.gz",
+          "to": "kb/reference/coci_program_course_file.csv.gz"
+        },
+        {
+          "from": "related: methodology-college-apprenticeship-cpl-roster",
+          "to": "docs/kb-notes/methodology-college-apprenticeship-cpl-roster.md (a KB note, not a memory slug)"
+        }
+      ]
+    },
+    {
+      "id": "e52b467d-a3f3-4c60-937e-4ceaa81869be",
+      "slug": null,
+      "kind": "opportunity",
+      "title": "The four standalone noncredit institutions are at zero in MAP",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Re-measured live 2026-09-05: chatbox_credentials has 1,987 titles and 0 rows name North Orange / Continuing Education / Calbright / Noncredit in adopter_colleges (text[]); the NC lane (2026-08-28) says the four are still at ZERO; verified non-college-entities-are-at-zero-awarded agrees. No slug.",
+      "evidence": [
+        {
+          "source": "sql",
+          "quote": "select count(*) from chatbox_credentials → 1987; count(*) where adopter_colleges::text ilike any of '%north orange%', '%continuing education%', '%calbright%', '%noncredit%' → 0"
+        },
+        {
+          "source": "docs/reference/lanes/nc-learning-partners.md:24",
+          "quote": "Next by value÷effort: ① populate the 4 standalone NC institutions in MAP (at ZERO)"
+        },
+        {
+          "source": "docs/reference/lanes/nc-learning-partners.md:24",
+          "quote": "noncredit coursework is a *named source* of pre-apprenticeship CPL and the four standalone NC institutions are still at ZERO."
+        },
+        {
+          "source": "slug:non-college-entities-are-at-zero-awarded",
+          "quote": "verified fact 2026-08-08 — \"Every partner and continuing-ed entity in MAP is at zero awarded credit\""
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": [
+        {
+          "from": "related: training_agency field",
+          "to": "not a memory slug — drop it or point at a real row"
+        }
+      ]
+    },
+    {
+      "id": "0769271f-1e7e-4efa-9d28-195d899dfdcf",
+      "slug": "map-has-no-apprenticeship-cpl-type",
+      "kind": "fact",
+      "title": "MAP has no \"Apprenticeship\" CPL type — six values only",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Re-measured live 2026-09-05 with unnest(cpl_types) over the 1,987 chatbox_credentials rows: six values only, counts identical to the row (798/671/238/125/43/22); no Apprenticeship value exists.",
+      "evidence": [
+        {
+          "source": "sql",
+          "quote": "select t, count(*) from chatbox_credentials, unnest(cpl_types) t group by t → Credit By Exam 798, Industry Certification 671, Portfolio Review 238, Standardized Assessment 125, Military 43, Other 22"
+        },
+        {
+          "source": "sql",
+          "quote": "select count(*) from chatbox_credentials → 1987"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "463bf645-c7da-42b4-a74e-1a4a69ac6aaf",
+      "slug": "apprentice-withdrawal-44pct-unverified",
+      "kind": "risk",
+      "title": "The 44% withdrawal figure is not ours",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The thinking doc still carries the figure second-hand (⟨sourced: CTE policy perspectives⟩, credited to DAS); no memory row records a DAS confirmation; the live dashboard's apprentice count is now 574 (row says 589 — drift the row itself flags). Risk stands. event_date null (created 2026-08-10).",
+      "evidence": [
+        {
+          "source": "docs/noncredit_cpl_thinking.md:350-351",
+          "quote": "**The retention argument ⟨sourced: CTE policy perspectives⟩:** 44% of California apprentices withdraw before completion (DAS, 2000–2026)."
+        },
+        {
+          "source": "live_metrics.json:89",
+          "quote": "\"apprenticeStudents\": 574,  (scraped_at 2026-09-04T16:29:49.982Z)"
+        },
+        {
+          "source": "sql",
+          "quote": "cpl_memory keyword search (title/summary ilike '%44%withdraw%') → only this row; no DAS-confirmation row exists"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "525b2a1f-f7a8-410b-8c5e-4abed234f0f4",
+      "slug": "unadopted-shelf-collapses-to-32-courses",
+      "kind": "opportunity",
+      "title": "The never-adopted statewide shelf collapses to 32 courses; one unlocks 12 credentials",
+      "verdict": "confirmed",
+      "confidence": "medium",
+      "reason": "Re-measured at credential grain: 36 statewide zero-adopter credentials carry 75 published rec lines (38 statewide at zero adopters). The 32-course / Construction-Safety-in-12 figures need rec-text parsing; not re-derived. ready_to_adopt ships in cpl-chat (#1150). Sam's deferral: advisory.",
+      "evidence": [
+        {
+          "source": "sql",
+          "quote": "chatbox_credentials c join chatbox_credential_recs r using (unified_title) where c.statewide and cardinality(c.adopter_colleges)=0 and r.n_recs>0 → 36 titles, 75 rec lines (2026-09-05)"
+        },
+        {
+          "source": "docs/sierra_credit_recs_lessons.md:236-239",
+          "quote": "36 credentials · 75 rec lines · but only 32 distinct courses; 31 of the 36 are reachable through a course shared with another. Introduction to Construction Safety alone appears in 12."
+        },
+        {
+          "source": "kb/supabase_credential_recs_routes.sql:177-178",
+          "quote": "ready_to_adopt — a statewide standard NO college has adopted yet. Not targeted at this college and not evidence of anything: it is a shelf item"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "30ea14f8 Sierra: read the full credit-recommendation set, and un-hide the ready-to-adopt shelf (#1150)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Sam",
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "f23c65b1-6c89-4ccc-a155-101a36b1048c",
+      "slug": "the-existing-cip-outranks-the-top-for-noncredit-category",
+      "kind": "fact",
+      "title": "For the noncredit category the college's own code outranks the TOP - and 1,796 \"wrong\" codes were never wrong",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The noncredit-CIP lane (2026-08-28) restates every figure identically (1,796; 1,789/1,796 = 99.6%; 28.8%; 1,928; 17 programs / 13 colleges; 38 of 3,187; ladder 997/76/1,796/247/71) and remains BLOCKED ON JENNI, so no later ruling overturned it; the cited KB note exists.",
+      "evidence": [
+        {
+          "source": "docs/reference/lanes/noncredit-cip-categories.md:24",
+          "quote": "Short-Term Vocational is `32.0111` plus a secondary credit CIP … the 1,796 programs on a \"wrong\" credit CIP are not errors — that code IS the secondary — and 1,789 of 1,796 (99.6%)"
+        },
+        {
+          "source": "docs/reference/lanes/noncredit-cip-categories.md:24",
+          "quote": "only 28.8% of programs are claimed by one category … → 1,928 undecidable); it blocks compliance for 17 programs / 13 colleges; peer consensus repairs 38 of 3,187. Ladder: 997 … 76 · 1,796 · 247 · 71"
+        },
+        {
+          "source": "docs/kb-notes/methodology-the-record-may-already-hold-a-better-signal-than-the-field-you-are-repairing.md",
+          "quote": "file exists on disk (the row's cited source)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "d776d80e-ce4c-498c-a7bf-16190f0b6c10",
+      "slug": "noncredit-32-0111-is-short-term-vocational-only",
+      "kind": "decision",
+      "title": "The 32.0111 code covers Short-Term Vocational only, not all noncredit (Jenni)",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The lane restates Jenni's ruling and the three surviving guards verbatim; git shows #1192 shipped and #1194 reverted it; in cip_crosswalk.js \"changed from\" renders only on a curator's own revision, and the test pins \"CTE is never stored\". Human-sourced (Jenni): advisory.",
+      "evidence": [
+        {
+          "source": "docs/reference/lanes/noncredit-cip-categories.md:24",
+          "quote": "#1192 shipped \"all noncredit programs → `32.0111`\" and was live ~20 minutes. Jenni clarified: Short-Term Vocational ONLY — ESL, Job Prep and some Basic Skills are CDCP-eligible on other codes"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "893fc802 CIP tab: every noncredit program proposes 32.0111 (#1192) · 97c9a1b7 Revert \"CIP tab: every noncredit program proposes 32.0111 (#1192)\" (#1194)"
+        },
+        {
+          "source": "docs/reference/lanes/noncredit-cip-categories.md:24",
+          "quote": "Guards that survived the revert: computed never stored; a proposal says `proposed · COCI has X`, never \"changed from\"; a proposed code must appear in the row's own option list."
+        },
+        {
+          "source": "cip_crosswalk.js:1804-1807",
+          "quote": "// A curator revision shows what changed — the COCI code is still the fact of record … if (assigned && chosen !== assigned) { … \"changed from \""
+        },
+        {
+          "source": "tests/noncredit_cip_categories.test.js:176",
+          "quote": "// quietly drop them: CTE is never stored, and there is no delete path."
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Jenni",
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "dd8c21cf-daa0-47a6-92b3-fd8479f2dc08",
+      "slug": "noce-and-sdcce-have-real-mis-identities",
+      "kind": "fact",
+      "title": "The two standalone continuing-education institutions do have official state codes - they were being filtered out, not missing",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Live map_colleges: 121 North Orange Continuing Education = 860/863, 119 San Diego College of Continuing Education = 070/076; partners carry a stated mis_absent_why; lane restates it. Caveat: the \"CREDIT arms\" clause — Sam ruled SD and NOCE one entity each; awaiting ids: Calbright Credit + Launch NC.",
+      "evidence": [
+        {
+          "source": "sql",
+          "quote": "map_colleges: 121 \"North Orange Continuing Education\" continuing_education, mis_district_code 860, mis_college_code 863; 119 \"San Diego College of Continuing Education\" 070 / 076"
+        },
+        {
+          "source": "sql",
+          "quote": "map_colleges 132 \"Launch Apprenticeship\" partner, mis_absent_why: \"A partner organisation we host a CPL landing page for, not a California Community College. No MIS code exists…\""
+        },
+        {
+          "source": "docs/reference/lanes/college-district-identity.md:24",
+          "quote": "NOCE is `NORTH ORANGE ADULT` 863/860 and SDCCE is `SAN DIEGO ADULT` 076/070 — both pass the district-prefix invariant."
+        },
+        {
+          "source": "docs/reference/lanes/college-district-identity.md:24",
+          "quote": "NEEDS MAP: `college_id` for `Calbright College Credit` + `Launch Apprenticeship Non-Credit` … reported `awaiting_map_id`."
+        },
+        {
+          "source": "slug:sam-credit-noncredit-entity-ruling",
+          "quote": "verified, Sam 2026-08-21: \"Calbright and LAUNCH get 2 entities--one credit, one noncredit. San Diego and North Orange are one entity.\""
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "86e433f3 College identity: land the crosswalk, include noncredit + partners, lint it, and surface it as a tab (#1278)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    }
+  ]
+}

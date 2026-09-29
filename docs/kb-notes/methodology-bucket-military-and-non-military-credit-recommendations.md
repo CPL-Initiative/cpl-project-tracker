@@ -60,7 +60,7 @@ the targeted, few-CRs-per-student kind, the sort a coordinator could clear —
 is **10,698 units across 868 students at 28 colleges**, and it is completely
 invisible inside the million.
 
-**The generalisable form:** when a population contains two sub-populations whose
+**The generalizable form:** when a population contains two sub-populations whose
 per-entity cardinality differs by an order of magnitude (here 17.4 vs 3.8, a
 4.6× gap), an aggregate over both is *governed* by the high-cardinality one. The
 total stops describing "how much work" and starts describing "how many veterans",

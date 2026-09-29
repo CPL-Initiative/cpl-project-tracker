@@ -1,0 +1,37 @@
+{
+ "_about": "ESL identities no fold has reached, placed by the rules in force; a dry run.",
+ "_generated_at": "2026-09-27T12:56:51+00:00",
+ "placements": [],
+ "held": [
+  {
+   "id": "ESOL M1205",
+   "title": "ESL College Composition and Reading",
+   "credit": "Credit",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "why": "transfer composition in the first plan: held apart (unruled)"
+  },
+  {
+   "id": "ESOL M1239",
+   "title": "Composition, Reading, and Freshman English",
+   "credit": "Credit",
+   "members": 3,
+   "discipline": "English as a Second Language",
+   "why": "transfer composition in the first plan: held apart (unruled)"
+  },
+  {
+   "id": "ESOL M9309",
+   "title": "ESL Supplemental Freshman Composition: Paragraphs",
+   "credit": "Noncredit Enhanced",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "why": "transfer composition: held apart (unruled)"
+  }
+ ],
+ "counts": {
+  "placed": 0,
+  "held": 3,
+  "by_bucket": {},
+  "by_how": {}
+ }
+}

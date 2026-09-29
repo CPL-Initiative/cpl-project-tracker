@@ -24,7 +24,7 @@ const cpl = fs.readFileSync("CPL_Dashboard.html", "utf8");
 const idx = fs.readFileSync("index.html", "utf8");
 check("Rule 4: CPL_Dashboard.html === index.html", cpl === idx);
 [["CPL_Dashboard.html", cpl], ["index.html", idx]].forEach(function (p) {
-  check("nav button in " + p[0], /data-tab="governance"[^>]*>⚖️ Governance</.test(p[1]));
+  check("nav button in " + p[0], /data-tab="governance"[^>]*>Governance</.test(p[1]));
   check("pane #governance-root in " + p[0], /id="governance-root"/.test(p[1]));
   check("lazy boot in " + p[0], /loadScript\('governance\.js', 'CPL_GOVERNANCE'/.test(p[1]));
 });
@@ -68,6 +68,10 @@ function makeWin(opts) {
   const w = dom.window;
   if (opts.teamPass) w.localStorage.setItem("cpl_team_pass", opts.teamPass);
   w.fetch = function () { return new Promise(function () {}); };
+  // Load the shared phrase helper too — production ships both, and the locked
+  // state renders its banner. Without it the tab falls back to a plain notice,
+  // which is a real path but not the one a browser takes.
+  w.eval(fs.readFileSync("team_phrase.js", "utf8"));
   w.eval(SRC);
   return w;
 }
@@ -78,8 +82,13 @@ function makeWin(opts) {
   const r = out.document.getElementById("governance-root");
   out.CPL_GOVERNANCE._state.reg = REG;
   out.CPL_GOVERNANCE.render(r);
-  check("gate: logged out sees a sign-in prompt, not the register",
-    /Team &amp; RACI|Team & RACI/.test(r.innerHTML) && !/Who decides what/.test(r.innerHTML));
+  // Was: asserts the copy names "Team & RACI". That tab no longer offers a
+  // magic link and never needed to be visited for the phrase, so the guard now
+  // asserts the thing that actually matters — a locked tab hands you a way IN.
+  check("gate: logged out gets an unlock box, not the register",
+    /data-tp-locked/.test(r.innerHTML) && !/Who decides what/.test(r.innerHTML));
+  check("gate: …and the box is a real input, not a pointer elsewhere",
+    !!r.querySelector('[data-tp-locked] input[type="password"]'));
   check("gate: logged out leaks no decision-right content",
     !/Primary Contact email/.test(r.innerHTML));
 })();
@@ -490,6 +499,15 @@ function signInRefreshTest() {
   // The noise guard, as a number. 39 was the unfiltered first draft; if the list
   // ever climbs back there the filters have stopped doing their job and the strip
   // is on its way to being ignored.
+  //
+  // Raised 25 -> 30 on 2026-08-30 for the dependency-map burst (15 human-write
+  // tables surfaced at once — the detector improving, not the filters
+  // decaying), and TIGHTENED BACK to 25 the same day after Sam ruled all 15
+  // (the Fifteen Tables judgment: DR-19..DR-23 + CA-07, four folds, one
+  // reasoned dismissal — kb/governance_surface_map.json carries the reasons).
+  // Measured count after the rulings: 11. If the list climbs back toward this
+  // ceiling without a detector improvement to explain it, that is real noise —
+  // tighten the filters, not this number.
   check("⚠ the candidate list stays readable (< 25)", (d.candidates || []).length < 25);
 })();
 

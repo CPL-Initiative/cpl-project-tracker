@@ -34,7 +34,7 @@ const navg = fs.readFileSync("nav_groups.js", "utf8");
 
 check("Rule 4: CPL_Dashboard.html === index.html", cpl === idx);
 [["CPL_Dashboard.html", cpl], ["index.html", idx]].forEach(function (p) {
-  check("nav button in " + p[0], /data-tab="contracts"[^>]*>📋 Contracts</.test(p[1]));
+  check("nav button in " + p[0], /data-tab="contracts"[^>]*>Contracts</.test(p[1]));
   check("pane #contracts-root in " + p[0], /id="contracts-root"/.test(p[1]));
   check("lazy boot in " + p[0], /loadScript\('contracts\.js', 'CPL_CONTRACTS'/.test(p[1]));
 });

@@ -35,7 +35,7 @@ checkpoint.
 rows can be given a credential name** (13,488 of 220,588): the student grain is
 keyed by **ACE military codes** (`AR-`/`MC-`/`NV-`/`NER-`/`MOS-`, `source_code =
 'ACE'`) plus 32,360 rows carrying a `Default Area`/`Default Credit` sentinel,
-while Sierra's catalogue is locally-created `MAPICI-*` exhibits. Overlap: **624 of
+while Sierra's catalog is locally-created `MAPICI-*` exhibits. Overlap: **624 of
 6,280 ids**.
 
 The control that proved it: CPR/AED, measured at **17,904 students** in the local
@@ -79,7 +79,7 @@ dependency, and it is the only hard blocker on route CRED·VOLUME.
 ### Route CRED·STD took three passes, each failure informative
 
 1. **Trigram over the whole haystack** → `peace officer` returned *Correctional
-   Officer*, not POST. Cause: length normalisation means **the best-curated
+   Officer*, not POST. Cause: length normalization means **the best-curated
    records rank worst**. Distilled to
    `methodology-a-concatenated-haystack-penalises-your-best-record`.
 2. **Best single variant** → fixed `emt`; `peace officer` still wrong, because
@@ -99,7 +99,7 @@ incidental hit is visible rather than silent.
 
 **Zero rows is a result, not a failure.** `search_credentials_any()` is the honest
 second half: *"No statewide recommendation for CPR; 'First Aid, CPR & AED' is in
-the catalogue with local articulations only."*
+the catalog with local articulations only."*
 
 ### A near-miss worth keeping
 
@@ -193,7 +193,7 @@ Distilled: `methodology-a-retrieval-miss-and-a-data-gap-look-identical`.
 ### The invented list was correct, which is worse
 
 "A+, Network+, Security+, Cloud+, CySA+" is right. A reviewer sees a plausible,
-accurate answer and files no bug — so the behaviour survives to a question where
+accurate answer and files no bug — so the behavior survives to a question where
 the guess is wrong. **Accidental correctness is not evidence of grounding.** The
 prohibition is now explicit in `VOLUME_RULE`, because a fluent invented list is
 indistinguishable from a retrieved one at read time.
@@ -285,3 +285,142 @@ both assertions now live in the committed SQL.
 2. **Build the College tab** once he has reacted to the mock-up.
 3. **COLLEGE·CRED**, carrying his Mt. SAC Request-Review language.
 4. Re-point the Course Credit tab's headline off the saturating course share.
+
+---
+
+## 2026-08-21 — SkyVouch: a candidate list read as a census
+
+**PR #1277, cpl-chat v52.** Sam asked what LACCD should do for its colleges.
+Sierra opened with **"Three LACCD colleges appear in the MAP platform data"**,
+tabulated three, and closed the *same answer* with "across all nine LACCD
+colleges" — a number the retrieval never gave her.
+
+### Nothing was missing
+
+| Check | Result |
+|---|---|
+| LACCD colleges in `map_colleges` | 9 of 9 (ids 49, 69–75, 115) |
+| In `chatbox_college_profiles` | 9 of 9 |
+| In `map_college_credit_summary` | 8 of 9 (LA Southwest, k=10) |
+
+The three were `.slice(0, 3)` on the tie list in `detectAndFetchCollegeProfile`.
+The query reduces to `["angeles", "district"]` — `"los"` is under four characters
+and `community`/`college` are stopwords — so all nine score 1, all nine tie, and
+three survived the slice.
+
+### ⚠️ The lesson was already learned 34 lines above
+
+The per-word query in the same function carries this comment:
+
+```js
+.limit(12);   // "angeles" alone matches 9; a limit of 3 truncated the answer
+```
+
+The identical bug, on these identical nine colleges, fixed *there* and left
+standing *here*. That is why LA Harbor came back and the other six did not.
+Fixing one instance did not prompt anyone to ask where its twin was.
+
+### ⭐ Raising the cap would have been worse
+
+3 → 12 returns all nine and yields *"Nine colleges appear in the MAP platform
+data"* — still a name match presented as MAP's contents, still false, and
+**harder to spot**, because nine is right for LACCD and wrong for every district
+whose colleges are not all named after it. A plausible wrong answer survives
+review that an implausible one fails.
+
+So the cap became one shared `CANDIDATE_MAX` (the two bounds can no longer
+drift), and the load-bearing change is the **disclosure**: rows are stamped
+`_match`, and `buildCollegeContext` declares the set a candidate list, ships
+shown-of-total, forbids the exact sentence with the count interpolated, states
+that a district cannot be enumerated, and forbids filling the gap from general
+knowledge.
+
+**⚠️ Stamp the ROW, not the array** — `withLiveContacts` does `profile.map(attach)`
+and `buildCollegeContext` does `profiles.map(...)`, so a property on the array is
+dropped by the first of those.
+
+### Verification worth copying
+
+`tests/sierra_candidate_census.test.js` lifts the **real** functions via
+`tests/lib/lift_ts.js` rather than re-implementing them, and runs Sam's actual
+sentence through the actual matcher: pre-fix it returns exactly the three
+colleges from his screenshot. 30 checks, 23 red pre-fix.
+
+Three of my own checks were wrong before the code was — a regex that could not
+span `(s) => s.college`, a lift naming a constant that did not exist pre-fix (so
+the demonstration was skipped rather than failing), and a null guard whose `|| []`
+precedence let the throw run anyway.
+
+### Open
+
+Smoke **mode 7** still greps model prose for a nearby college name, so it reds
+intermittently on correct answers — `methodology-assert-what-retrieval-returns`
+already calls it "the last place still grepping an answer".
+
+---
+
+## 2026-08-21 — SkyApply: the district dimension landed and nobody wired it
+
+Sam re-asked the LACCD question after #1277 and reported three things. All three
+were code, none needed a `sierra_guidance` slot.
+
+### 1. The caveat was obsolete the day it was written
+
+`index.ts` carried, in a comment: *"Sierra has no district dimension at ALL
+(verified 2026-08-21: zero columns named district in the whole public schema)."*
+True when written. **PR #1278 landed `district`, `mis_district_code`,
+`district_type` on `map_colleges` a few hours later** — 118 of 128 rows, 73
+districts. The capability arrived; the consumer never changed.
+
+⭐ **The caveat was the small half.** LACCD is the easy case — all nine colleges
+are named "Los Angeles", so name-matching finds them. Measured across the
+roster, **four multi-college districts have ZERO colleges named after them**:
+
+| District | Name-matched | Actual members |
+|---|---:|---|
+| Los Rios | 0 | American River · Cosumnes River · Folsom Lake · Sacramento City |
+| Peralta | 0 | Berkeley City · College of Alameda · Laney · Merritt |
+| State Center | 0 | Clovis · Fresno City · Madera · Reedley |
+| Kern | 0 | Bakersfield · Cerro Coso · Porterville |
+
+For those, the honest caveat was the only answer available. `resolveDistrict()`
+makes them answerable.
+
+⚠️ **A roster may only call itself complete because the join was measured** — all
+116 district colleges have an exact-name row in `chatbox_college_profiles`, 0
+missing. A partial roster presented as complete is the census defect with better
+provenance, so `missing` is carried and stated.
+
+⚠️ **Intent is required or the route eats ordinary questions.** The stem of "Los
+Angeles Community College District" is inside a question about Los Angeles City
+College. An acronym resolves alone; a stem needs "district" or a plural cue.
+
+### 2. "Students Awarded" was WRONG, not just badly labeled
+
+Sam asked for the column to read "Students in MAP". It is a correctness fix:
+**Los Angeles City College reads 0 applied units, 0 transcribed units, and 147
+"students awarded"**. You cannot award credit to 147 students while applying zero
+units — the figure counts students with a CPL record. MAP's own source column is
+titled "Students Awarded" and `excel_to_dashboard.py` carries the name through.
+
+Sierra had stated it to a district as a finding: *"LA City has 5,623 eligible
+units and 147 students already awarded."*
+
+⚠️ **Transcribed units were already in the context** and the model simply did not
+tabulate them. Shipping a figure is not the same as asking for it.
+
+### 3. Alpha sort, for a reason worth recording
+
+Sam: ranking a district's own colleges by units invites inter-college rivalry.
+Sorted before the rows reach the model, with the order stated in the header so
+it is not re-sorted.
+
+### The guidance budget, measured while there
+
+`fetchTeamGuidance()` applies `.eq("active", true)` **before** `.limit(10)`, so
+deactivating a row does free its slot (9 active / 4 inactive / 4,720 of 9,000
+chars). ⚠️ **The row cap is a fossil**: on 2026-08-12 per-rule went 500 → 1,500
+and the total 2,500 → 9,000, and `GUIDANCE_MAX_RULES` stayed at 10 — so the
+char budget would carry ~17 at today's average length. ⚠️ **And eviction is
+oldest-first and silent**, so the rule most at risk is the standing **naming
+rule** (2026-07-03), not the reactive one written this afternoon.

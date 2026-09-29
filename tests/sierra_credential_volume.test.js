@@ -49,7 +49,9 @@ check("calls college_adoption_opportunities",
 
 /* ── 3. The handler's client is `sb`, not `supabase` ───────────────────────── */
 check("volume lookups receive the handler's client (`sb`)",
-      /fetchCredentialVolume\(searchText,\s*sb\)/.test(src) &&
+      // routeText since v68: the retrieval text with a named PLACE stripped out
+      // (tests/sierra_place_anchor.test.js). The pin here is the CLIENT.
+      /fetchCredentialVolume\((?:searchText|routeText),\s*sb\)/.test(src) &&
       /fetchAdoptionOpportunities\([^)]*,\s*sb\)/.test(src),
       "the handler's client is `sb`; `supabase` is a ReferenceError on every request");
 
@@ -62,7 +64,7 @@ check("buildSystemPrompt accepts volumeContext",
 check("volumeContext is emitted into the prompt body",
       /\$\{volumeContext\}/.test(src));
 check("VOLUME_RULE is attached when the section is present",
-      /\$\{volumeContext\s*\?\s*VOLUME_RULE\s*:\s*""\}/.test(src));
+      /body: VOLUME_RULE, appliesWhen: "volume"/.test(src));
 // Assert that volumeContext REACHES buildSystemPrompt, not that it is the last
 // argument. Pinning the position made this fail the moment alignmentContext was
 // appended (Session 148) — a passing test that breaks on an unrelated addition

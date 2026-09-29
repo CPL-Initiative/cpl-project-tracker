@@ -223,7 +223,8 @@
         headers: { 'Content-Type': 'application/json', 'apikey': SUPABASE_ANON, 'Authorization': 'Bearer ' + SUPABASE_ANON },
         // Send the PRIOR turns; the function appends this query. The [] on turn 1
         // still opts us into the function's multi-turn mode (focusing follow-ups).
-        body: JSON.stringify({ query: query, session_id: sessionId(), history: API._convo.slice() }),
+        body: JSON.stringify({ query: query, session_id: sessionId(),
+                               history: API._convo.slice(), surface: 'fact-sheet' }),
       });
     } catch (e) {
       bubble.innerHTML = renderMarkdown('Sorry — I couldn’t reach the assistant. Please check your connection and try again.');
@@ -310,7 +311,7 @@
       markEl('fs-sra-avatar'),
       el('div', { className: 'fs-sra-bubble' }, [
         el('p', null, 'Hi, I’m ' + NAME + ' — the California CPL assistant. Ask me about Credit for Prior Learning: what a college offers, where to find credit for a license or certification, or statewide CPL numbers.'),
-        el('p', { className: 'fs-sra-beta' }, '🧪 Beta. Please don’t enter personal information — questions are logged anonymously to improve answers.'),
+        el('p', { className: 'fs-sra-beta' }, 'Beta. Please don’t enter personal information — questions are logged anonymously to improve answers.'),
       ]),
     ]));
     var chips = el('div', { className: 'fs-sra-suggest', id: 'fs-sra-suggest' });
@@ -364,7 +365,7 @@
     if (!bar) return;
     launcher = el('button', { type: 'button', id: 'btn-sierra', className: 'btn fs-sierra-launch no-print',
       title: 'Ask ' + NAME + ', the CPL assistant', 'aria-haspopup': 'dialog', 'aria-expanded': 'false',
-      onclick: toggle }, '💬 Ask ' + NAME);
+      onclick: toggle }, 'Ask ' + NAME);
     var before = document.getElementById('btn-print');     // sit just left of the primary CTA
     if (before && before.parentNode === bar) bar.insertBefore(launcher, before);
     else bar.appendChild(launcher);
@@ -377,7 +378,7 @@
       // Let the action bar wrap so the added button never forces horizontal scroll.
       '.actionbar .wrap{flex-wrap:wrap;}' +
       '.fs-sierra-launch{border-color:var(--cobalt);color:var(--cobalt);background:rgba(0,71,171,.06);}' +
-      '.fs-sierra-launch:hover{background:var(--cobalt);color:#fff;border-color:var(--cobalt);}' +
+      '.fs-sierra-launch:hover{background:var(--cobalt);color:var(--on-accent);border-color:var(--cobalt);}' +
       '.fs-sra-backdrop{position:fixed;inset:0;z-index:80;background:rgba(28,28,26,.42);opacity:0;visibility:hidden;' +
         'transition:opacity .18s,visibility .18s;}' +
       '.fs-sra-backdrop.on{opacity:1;visibility:visible;}' +
@@ -424,7 +425,7 @@
       '.fs-sra-input{flex:1;font:.92rem var(--font-data);padding:9px 12px;border:1px solid var(--border-strong);' +
         'border-radius:var(--radius-sm);background:var(--surface);color:var(--ink);}' +
       '.fs-sra-input:focus-visible{outline:2px solid var(--cobalt);outline-offset:1px;}' +
-      '.fs-sra-send{border:1px solid var(--cobalt);background:var(--cobalt);color:#fff;cursor:pointer;' +
+      '.fs-sra-send{border:1px solid var(--cobalt);background:var(--cobalt);color:var(--on-accent);cursor:pointer;' +
         'border-radius:var(--radius-sm);padding:9px 16px;font:600 .9rem var(--font-data);}' +
       '.fs-sra-send:hover{background:var(--seal-blue);border-color:var(--seal-blue);}' +
       '.fs-sra-send[disabled]{opacity:.5;cursor:default;}' +

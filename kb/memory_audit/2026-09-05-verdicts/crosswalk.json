@@ -1,0 +1,403 @@
+{
+  "part": "crosswalk",
+  "expected_rows": 12,
+  "coverage": {
+    "rows_read": 12,
+    "rows_judged": 12,
+    "note": "complete; every row judged against lane files, code on disk, read-only Supabase SELECTs and git log on 2026-09-05"
+  },
+  "counts": {
+    "confirmed": 12,
+    "stale": 0,
+    "superseded_by_row": 0,
+    "snapshot": 0,
+    "unverifiable": 0
+  },
+  "verdicts": [
+    {
+      "id": "6dae1b0f-db73-49dd-907e-fb5bce4d7d8c",
+      "slug": "mis-abbreviates-titles-and-fakes-absences",
+      "kind": "pitfall",
+      "title": "The MIS course file abbreviates its own titles, manufacturing false absences",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The stem rule ('comm' not 'communicat') is in the HTH builder beside the MIS examples; the KB note names Lassen and Santa Monica as the two genuine absences; PR #1134 is on main. Lesson intact.",
+      "evidence": [
+        {
+          "source": "kb/_build_futuro_hth_crosswalk.py:131",
+          "quote": "# 'comm' not 'communicat' -- MIS writes \"Interpersonal Commun\" and \"Intercultural Comm\"."
+        },
+        {
+          "source": "kb/_build_futuro_hth_crosswalk.py:60",
+          "quote": "\"Nrs Caring Concepts\", \"BIO-ETHICS\"). Matching the full word \"communication\" silently"
+        },
+        {
+          "source": "docs/kb-notes/methodology-a-source-file-that-abbreviates-titles-fakes-an-absence.md:66",
+          "quote": "colleges here survived that check (Lassen and Santa Monica genuinely have no"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "085abbed Futuro Health HTH → CCC CNA statewide crosswalk (Ashley) (#1134)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "53e7c70a-752e-49af-a761-3ebc0b6a2993",
+      "slug": "eacr-college-filter-was-93pct-leads",
+      "kind": "pitfall",
+      "title": "Filtering by college returned what it MIGHT adopt as well as what it had - 94% were not adoptions",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Three explicit scopes with adopted as the default are in statewide_interactive.js and restated by the EACR lane; PR #1221 landed 2026-08-15 (title: 93.6% of hits were not real). Minor: verified row statewide-is-138-not-84 counts 138 statewide titles vs the row's 137 cards.",
+      "evidence": [
+        {
+          "source": "statewide_interactive.js:1290",
+          "quote": "var opts = [\"adopted\", \"likely\", \"any\"].map(function (k) {"
+        },
+        {
+          "source": "statewide_interactive.js:303",
+          "quote": "collegeScope: \"adopted\","
+        },
+        {
+          "source": "docs/reference/lanes/eacr-exhibit-cr-adoption.md:24",
+          "quote": "Three college scopes — `adopted` (default) · `likely` (the prescriptive M-ID layer, which names the local course) · `any` (a lead, not a match — TOP-derived; Rule 7 forbids it as primary)"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "9341dc11 EACR: the College filter matched leads, not adoptions — 93.6% of hits were not real (#1221)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "6615dbd0-db89-486a-ae02-f7edc1a69cdd",
+      "slug": "sandbox-college-inflates-a-public-statewide-card",
+      "kind": "pitfall",
+      "title": "The MAP sandbox college is counted as a real adopter on a public statewide EACR card",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The leak is fixed where the row prescribed: #1226 (2026-08-16) drops sandbox names in excel_to_dashboard.py and the card now lists 6 adopters. The lesson stands. Residue: the sandbox still appears once in statewide_data.js analysis.by_college (not in any adopter_names).",
+      "evidence": [
+        {
+          "source": "excel_to_dashboard.py:5264-5265",
+          "quote": "\"\" means DROP — the caller must test for it, because a sandbox org counted as an adopter inflates a public statewide card (CA MAP INITIATIVE COLLEGE was"
+        },
+        {
+          "source": "statewide_data.js (parsed 2026-09-05)",
+          "quote": "card \"California Real Estate Broker License\": adopter_names n=6 (Chabot, Citrus, CCSF, Fullerton, Lake Tahoe, West Los Angeles); only sandbox occurrence left: analysis/by_college/98/college"
+        },
+        {
+          "source": "sql",
+          "quote": "select college_id, college_name, entity_kind, is_test from map_colleges where college_id=120 → CA MAP INITIATIVE COLLEGE, entity_kind='test', is_test=true"
+        },
+        {
+          "source": "slug:sam-eacr-college-axis-fold-and-sandbox",
+          "quote": "verified decision, Sam 2026-08-17: \"CAMAP can be left out altogether—it's our sandbox.\""
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "816f0ac7-e28f-409b-9fc3-00fed211e5bb",
+      "slug": "peer-articulations-is-a-lossy-reconstruction",
+      "kind": "pitfall",
+      "title": "Our table of who adopted what covers only a third of the real adoptions - a reconstruction, not a source",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "adopter_units is emitted by excel_to_dashboard.py (#1226) and the EACR lane states the same finding: chatbox_peer_articulations is the wrong units source at 32.5% coverage (= 2,653 of 8,155), the raw View_ArticulatedMAPExhibits row reads at 100%, map_college_cr_unit rejected.",
+      "evidence": [
+        {
+          "source": "docs/reference/lanes/eacr-exhibit-cr-adoption.md:24",
+          "quote": "`chatbox_peer_articulations` IS THE WRONG UNITS SOURCE (32.5% coverage); the raw `View_ArticulatedMAPExhibits` row carries college+course+rec together, so `adopter_units` reads at 100%."
+        },
+        {
+          "source": "excel_to_dashboard.py:5919",
+          "quote": "# adopter_units: what each college ACTUALLY articulated (the green"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "92e09d8c EACR: drop the MAP sandbox, fold duplicate college spellings, emit per-college CR units (#1226)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "077857b0-c096-4a5d-bbab-ed18c6d58fea",
+      "slug": "delta-teaches-the-hydro-gap-but-not-line-work",
+      "kind": "fact",
+      "title": "San Joaquin Delta teaches the hydro/utility cluster that has no CPL statewide - but NOT line work",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The partner-crosswalks lane restates the finding as current truth (A IND 77A–77N / A ELE 75A–75F, 6 occupations, no CPL statewide, lineworker NOT among them); PR #1243 is on main; the related verified row utility-line-work-has-no-cpl exists.",
+      "evidence": [
+        {
+          "source": "docs/reference/lanes/partner-crosswalks.md:24",
+          "quote": "Delta holds curriculum for the statewide gap run 1 found — a utility/hydroelectric apprenticeship (`A IND 77A–77N`, `A ELE 75A–75F`) covering 6 occupations with no CPL anywhere in California."
+        },
+        {
+          "source": "kb/delta_offering_map.json:1151",
+          "quote": "plus the A IND 77-series are journeyman-level industrial maintenance content"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "0d08cc48 Add a college-scoped occupation → CPL crosswalk (SJCOE ↔ San Joaquin Delta) (#1243)"
+        },
+        {
+          "source": "slug:utility-line-work-has-no-cpl",
+          "quote": "verified opportunity — \"Utility line work: zero CPL statewide\""
+        },
+        {
+          "source": "docs/reference/lanes/partner-crosswalks.md:24",
+          "quote": "⚠️ Lineworker is NOT among them (substation/plant electrical ≠ line work)."
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "fff536c1-663f-4ec0-84aa-f21818c0ba8a",
+      "slug": "delta-has-zero-cpl-on-the-sjcoe-list",
+      "kind": "opportunity",
+      "title": "Delta has articulated ZERO of the 139 SJCOE occupations, while already teaching 52 of them",
+      "verdict": "confirmed",
+      "confidence": "medium",
+      "reason": "The lane file (2026-08-28) states the same counts as current truth: 42 adopt-now, 6 build-first, 0 of 139 articulated, lone career CPL = POST Basic Academy, other 68 AP/CLEP. Drift-prone: the lane's NEXT is Ashley's Delta meeting; not re-measurable from Supabase here (MAP-side data).",
+      "evidence": [
+        {
+          "source": "docs/reference/lanes/partner-crosswalks.md:24",
+          "quote": "Delta 42 adopt-now (teaches it, exhibit exists, MAP flags it potential) · 6 build-first-in-state · 0 of 139 articulated today (its lone career CPL is POST Basic Academy; the other 68 are AP/CLEP)"
+        },
+        {
+          "source": "docs/reference/lanes/partner-crosswalks.md:24",
+          "quote": "Next: ① Ashley meets Delta — record which of the 42 they accept/reject/correct (corrections are the highest-value input to the offering map)"
+        },
+        {
+          "source": "slug:split-college-cpl-academic-vs-career",
+          "quote": "verified pitfall — \"A raw credential count hides who it serves\" (the related row exists)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "d703e4aa-0bb7-4aaa-81d0-6e1ae977e671",
+      "slug": "state-the-best-outcome-before-reusing-a-tool",
+      "kind": "procedure",
+      "title": "Before reusing a tool on a \"narrower\" request, state the best outcome for each question",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The lane carries the same test (engine answer = a fact, college tool = a task; a filter would have pointed at MJC); the cited KB note exists; the verified decision partner-engagement-is-not-an-engine-run names PR #1243 as its 2nd instance. Complementary to that row, not a duplicate.",
+      "evidence": [
+        {
+          "source": "docs/reference/lanes/partner-crosswalks.md:24",
+          "quote": "the two disagree about what a good answer IS (engine: \"some college offers this\", a fact; college tool: \"this college teaches it AND the exhibit exists AND nobody joined them up\", a task)"
+        },
+        {
+          "source": "docs/kb-notes/methodology-a-scoped-question-may-need-a-different-instrument.md",
+          "quote": "file exists on disk (the row's cited source, PR #1243)"
+        },
+        {
+          "source": "slug:partner-engagement-is-not-an-engine-run",
+          "quote": "verified 2026-08-12; verified_by: \"session169-skydelta@bot (2nd independent instance, PR #1243)\""
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "f242e948-ab09-4f6d-b7d9-b59586681900",
+      "slug": "agreement-is-not-corroboration-when-behaviour-is-systematic",
+      "kind": "pitfall",
+      "title": "Agreeing colleges may just share a policy",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The shipped SQL encodes exactly the rule: tier 1 = colleges >= 2 AND spans_exhibits < 4, blanket = spans >= 4, MAG-51 spans 33, blanket courses labeled not removed; PR #1264 is on main; the cited KB note exists.",
+      "evidence": [
+        {
+          "source": "kb/supabase_map_cx_exhibit_guidance.sql:110-111",
+          "quote": "(p.colleges >= 2 and s.spans_exhibits < 4) as specific_and_corroborated, (s.spans_exhibits >= 4) as blanket"
+        },
+        {
+          "source": "kb/supabase_map_cx_exhibit_guidance.sql:96",
+          "quote": "Measured: `MAG-51 Elements of Supervision` spans 33"
+        },
+        {
+          "source": "kb/supabase_map_cx_exhibit_guidance.sql:119",
+          "quote": "Every entry carries BOTH numbers. A blanket course is never removed"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "a00791b0 Sam's Cx ruling, scoped to the 1,310 that name a course — plus the exhibit titles and a guidance list (#1264)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "74a9962e-d8c1-4d84-a28a-cb8d69c26510",
+      "slug": "the-tables-we-build-drop-maps-college-id",
+      "kind": "fact",
+      "title": "MAP gives every college an official identifier, and most of our own tables match on the name instead",
+      "verdict": "confirmed",
+      "confidence": "medium",
+      "reason": "Re-measured 2026-09-05 via information_schema: 12 base tables carry college_id (row said 13), 18 are text-keyed only (exact match, same families). The posture (id where it exists, name+variants fallback, fix the JOIN not the table) is the identity lane's standing invariant. Sam-sourced: advisory.",
+      "evidence": [
+        {
+          "source": "sql",
+          "quote": "college_id (12): map_cleanup_worklist, map_college_cr_unit, map_college_credit_summary, map_college_goal2, map_college_users, map_colleges, map_student_credit(+_prev), map_transcribed_gap, 3 stg_*"
+        },
+        {
+          "source": "sql",
+          "quote": "text_keyed_only = 18: 4 chatbox_*, 2 coci_college_*, college_geo, 2 cpl_funding_*, map_college_contacts, map_contact_proposals, 2 tmc_*, cip_crosswalk_suggestion, cpl_adoption_interest, +3"
+        },
+        {
+          "source": "docs/reference/lanes/college-district-identity.md:24",
+          "quote": "fix the JOIN, never the table (`map_college_contacts` rebuilds from MAP nightly, so trimming its two trailing-space names puts them back tomorrow)"
+        },
+        {
+          "source": "docs/reference/lanes/college-district-identity.md:24",
+          "quote": "NEEDS MAP: `college_id` for `Calbright College Credit` + `Launch Apprenticeship Non-Credit` — minting one would fabricate an identity the whole system trusts; reported `awaiting_map_id`"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Sam",
+      "kind_check": null,
+      "link_fixes": [
+        {
+          "from": "related: a-crosswalks-value-is-the-lint-not-the-mapping",
+          "to": "no such row exists; nearest is the verified row regenerating-an-artifact-without-its-input-empties-the-finding (or drop)"
+        }
+      ]
+    },
+    {
+      "id": "164e0b24-fbe2-406d-a09b-9948b0a5c850",
+      "slug": "a-shadow-guard-cannot-see-a-two-claimant-collision",
+      "kind": "pitfall",
+      "title": "The alternative-college-names list was protected against one kind of clash and not the other",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Both guards are live in college_identity.js (claims counted in a pass of their own; a contested variant attaches to neither) and pinned by test block (3b); college_briefing.js carries the same guard comment; PR #1283 is on main.",
+      "evidence": [
+        {
+          "source": "college_identity.js:80-81",
+          "quote": "A variant must never claim a name some college already owns — AND a variant two colleges both claim must resolve to neither."
+        },
+        {
+          "source": "college_identity.js:96",
+          "quote": "if (v && !canon[v] && claims[v] === 1 && !(v in byVariant)) byVariant[v] = c.college_name;"
+        },
+        {
+          "source": "tests/college_identity_variants.test.js:149",
+          "quote": "// ── (3b) ⚠ A variant TWO colleges claim must resolve to NEITHER"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "3bdb20b2 Guidance: a kind column and an honest row cap; identity: the college's own short name (#1283)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "6c598fe5-dec6-48bc-84f5-52d98ad0fd8e",
+      "slug": "a-college-own-short-name-comes-from-its-district",
+      "kind": "procedure",
+      "title": "Get a campus's short name by removing its own district name, never by guessing a city prefix",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "campus_short_variants() implements exactly this: strip the authoritative district stem (landed #1278), DEGENERATE and AMBIGUOUS screens, the shadow check kept preventively, refusals returned for the receipt; the 2026-08-23 crosswalk carries the Trade Technical / Miramar / Pierce variants.",
+      "evidence": [
+        {
+          "source": "kb/_build_college_identity_crosswalk.py:407",
+          "quote": "def campus_short_variants(pairs):"
+        },
+        {
+          "source": "kb/_build_college_identity_crosswalk.py:415-417",
+          "quote": "THE RULE: when a college's name begins with its own DISTRICT's name, the remainder is the campus. That uses the authoritative `district` field landed in #1278 rather than a guessed prefix list"
+        },
+        {
+          "source": "kb/_build_college_identity_crosswalk.py:426-431",
+          "quote": "1. DEGENERATE — the tail is just \"College\"/\"Community College\" … 2. AMBIGUOUS — the tail's leading word names more than one college."
+        },
+        {
+          "source": "kb/college_identity/2026-08-23/crosswalk.json:50-52",
+          "quote": "\"Los Angeles Trade Technical College\": [\"Trade Technical College\", \"Trade Technical\""
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "a140330d-be99-498a-9a1c-9c9bd2e91828",
+      "slug": "verify-a-live-dataset-by-checksum-not-by-sampling",
+      "kind": "procedure",
+      "title": "Check a saved copy against live data with one fingerprint, not by pulling every row across",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Documented (lessons doc, input provenance, lane: inputs md5-verified before each rebuild) and reproducible: the map_colleges fingerprint re-run live = 02770277…/120, identical; the observed-name union now hashes 7d8fd551…/128 (was 471161be…/130) — drifted, which is what the check detects.",
+      "evidence": [
+        {
+          "source": "sql",
+          "quote": "md5(string_agg(college_id|college_name|entity_kind, E'\\n' order by k collate \"C\")) over map_colleges where entity_kind<>'test' → 02770277f936122c8eaf1e4d936ee3ac, 120 rows (2026-09-05)"
+        },
+        {
+          "source": "sql",
+          "quote": "same md5 over chatbox_college_profiles.college UNION map_college_contacts.college → 7d8fd5517edbfe53065b51dc9248800b, 128 names (2026-09-05; was 471161be…/130 on 2026-08-23)"
+        },
+        {
+          "source": "docs/college_identity_lessons.md:392",
+          "quote": "`md5(string_agg(name, E'\\n' ORDER BY name COLLATE \"C\"))` over the live union of"
+        },
+        {
+          "source": "kb/college_identity/_inputs/observed_names_2026-08-23.json:5",
+          "quote": "\"_name_set_md5\": \"471161be5c875a6d55da685280cb686e\","
+        },
+        {
+          "source": "docs/reference/lanes/college-district-identity.md:24",
+          "quote": "Inputs md5-verified against live before each rebuild."
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    }
+  ]
+}

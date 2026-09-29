@@ -103,7 +103,7 @@ check("every closed section still states something in its header",
 Plus: all closed on arrival, and an opened section survives a re-render while its
 neighbours stay shut.
 
-## Where this generalises
+## Where this generalizes
 
 Any COBI tab dense enough to invite a "can we collapse this" request — the CCR
 worklists, the Governance register, the Credential Reference tab. The summary

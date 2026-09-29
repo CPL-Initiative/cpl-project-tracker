@@ -1,0 +1,42 @@
+{
+ "cpl-apportionment-value-2026-07-31": {
+  "verdict": "stale",
+  "note": "Re-measured on cpl_funding_performance.js (as_of 2026-09-04): statewide transcribed units 72,745.95 \u2248 2,425 FTES \u2248 $13.7M, not the row's 103,139 units / $19.4M; a dated snapshot whose numbers no longer hold."
+ },
+ "funding-ceiling-400k-is-near-a-no-op-for-equity": {
+  "verdict": "stale",
+  "note": "Measured on a model that no longer exists (115 colleges, $175,000 floor, separate noncredit lane); the one-pool model of 2026-08-31 sizes a combined award over 118 institutions at $150k/$400k, so the cap binds differently."
+ },
+ "fifteen-colleges-no-counseling-route": {
+  "verdict": "stale",
+  "note": "The 71/56/15 census was superseded by the lane's 78 FALLBACK_CONTACTS (61 with an address, 17 blank-with-a-finding) in map_users.js; the population itself moved to 67."
+ },
+ "two-average-applied-figures-differ": {
+  "verdict": "stale",
+  "note": "Re-measured on the cron-loaded map_student_credit (replaced nightly since #1246): the Bakersfield figures the row rests on no longer reproduce."
+ },
+ "contact-refresh-cadence-never-run": {
+  "verdict": "stale",
+  "note": "map_college_nudges holds 2 rows (Crafton Hills, Copper Mountain, nudged 2026-08-14) and CA-03 has an owner, so 'never fired' is no longer true; the lesson survives in the KB note it cites."
+ },
+ "the-remint-series-order-recode-then-z-band-one-cron-window": {
+  "verdict": "superseded_by_row",
+  "superseded_by": "the-re-mint-series-applied-recode-and-z-band-retirement-2026-09-03",
+  "note": "Written as the plan for one land; the land happened 2026-09-03 exactly that way (#1453/#1454) and the milestone row plus mid_lifecycle.md carry the method now."
+ },
+ "ace-individualized-assessment-never-granted": {
+  "verdict": "superseded_by_row",
+  "superseded_by": "ace-deferrals-are-credit-by-exam-opportunities",
+  "note": "Sam's verified 2026-08-20 ruling states the disposition for this class (credit-by-exam options, never bulk-closed), which resolves the opportunity this row proposed."
+ },
+ "explainer-static-prose-stale-after-live-painting": {
+  "verdict": "superseded_by_row",
+  "superseded_by": "a-defaulted-field-looks-computed-and-never-moves",
+  "note": "Fixed in #1434: both explainer passages now paint from the payload and the factor sentence follows the live factors; the later row records the corrected lesson."
+ },
+ "a-test-coupled-to-position-or-wording-breaks-on-correct-work": {
+  "verdict": "superseded_by_row",
+  "superseded_by": "read-a-tables-cells-by-header-not-by-position",
+  "note": "The contract it names is gone (.cf-prio/.cf-t/.cf-a survive only as dead CSS; cards are addressed by data-priocard) and the later row states the durable lesson."
+ }
+}

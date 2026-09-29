@@ -1,8 +1,7 @@
 ---
 title: "Change the input, not the consumers — derive the old field at the single seam"
-date: 2026-07-27
+created: 2026-07-27
 kb-status: published
-kb-type: methodology
 tags: [methodology, refactoring, funding, implementation-funding, data-model, migration, cpl]
 artifacts:
   - cpl_funding.js (priorities · prioPerStudent · prioTargetRate · applyEdit "perstudent")

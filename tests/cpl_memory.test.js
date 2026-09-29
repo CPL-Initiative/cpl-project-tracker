@@ -64,12 +64,23 @@ const FIXTURE = [
     summary: "Old superseded decision", detail: "Replaced.", tags: [], source: "x", affects: [], related: [], superseded_by: "d1" },
 ];
 
-function boot(dom, { withPhrase, fetchRows } = {}) {
+// A JWT only has to satisfy the shape check: three parts, over 40 chars.
+const FAKE_JWT = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYW0iLCJyb2xlIjoiYXV0aGVudGljYXRlZCJ9.sig";
+
+function boot(dom, { withPhrase, withMagicLink, fetchRows } = {}) {
   const { window } = dom;
   if (withPhrase) { try { window.localStorage.setItem("cpl_team_pass", "team-secret"); } catch (e) {} }
   else { try { window.localStorage.removeItem("cpl_team_pass"); } catch (e) {} }
+  if (withMagicLink) {
+    try {
+      window.sessionStorage.setItem("cpl_sb",
+        JSON.stringify({ access_token: FAKE_JWT, email: "sam@rccd.edu" }));
+    } catch (e) {}
+  } else { try { window.sessionStorage.removeItem("cpl_sb"); } catch (e) {} }
   // stub fetch: cpl_memory → rows; cpl_memory_log & everything else → []
-  window.fetch = function (url) {
+  window.__calls = [];
+  window.fetch = function (url, init) {
+    window.__calls.push({ url: String(url), init: init || {} });
     const rows = /cpl_memory_log/.test(url) ? [] : (fetchRows !== undefined ? fetchRows : FIXTURE);
     return Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve(JSON.parse(JSON.stringify(rows))) });
   };
@@ -171,6 +182,46 @@ function boot(dom, { withPhrase, fetchRows } = {}) {
   // ── slug auto-generation (Add/Revise) is kind-prefixed + counter-based ──
   check("genSlug is kind-initial + next counter (f1 present → f2)", idxApi._genSlug("fact") === "f2");
   check("genSlug distinguishes pitfall (p) from procedure (pr)", idxApi._genSlug("procedure") === "pr2" && idxApi._genSlug("pitfall") === "p1");
+
+  // ── A magic-link reviewer can read this table (Sky158) ────────────────────
+  //
+  // `cpl_memory`'s RLS is `is_allowed_reviewer() OR team_pass_ok()`, but the tab
+  // took its whole notion of "signed in" from team_phrase.js — whose session()
+  // is a PHRASE pseudo-session that knows nothing about the magic link. So a
+  // signed-in reviewer was bearing the ANON key, matched neither arm of the OR,
+  // and was shown "No entries visible — unlock with the team phrase" over 330
+  // intact rows (Sam, 2026-08-14). The permission existed in the database and
+  // could not be reached from the page.
+  {
+    const domM = makeDom();
+    const apiM = boot(domM, { withMagicLink: true, withPhrase: false });
+    apiM.activate();
+    await tick(); await tick();
+    const rootM = domM.window.document.getElementById("memory-root");
+
+    const read = domM.window.__calls.filter((c) => /cpl_memory\?/.test(c.url))[0];
+    check("a magic-link session bears the JWT, not the anon key",
+      read && read.init.headers && read.init.headers.Authorization === "Bearer " + FAKE_JWT);
+    check("a magic-link reviewer is NOT shown the phrase unlock box",
+      !rootM.querySelector(".cpl-tp-unlock"));
+    check("a magic-link reviewer gets curate mode", !!rootM.querySelector(".mem-authok"));
+    check("the bar names the credential AND the person, so two sessions never look alike",
+      /signed in by magic link/.test(rootM.textContent) && /sam@rccd\.edu/.test(rootM.textContent));
+
+    // The phrase must keep working exactly as before — it is the credential
+    // most of the team holds, and it is the only one a non-reviewer has.
+    const domP = makeDom();
+    const apiP = boot(domP, { withPhrase: true, withMagicLink: false });
+    apiP.activate();
+    await tick(); await tick();
+    const rootP = domP.window.document.getElementById("memory-root");
+    const readP = domP.window.__calls.filter((c) => /cpl_memory\?/.test(c.url))[0];
+    check("a phrase-only session still bears anon + rides x-team-pass",
+      readP && /Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9/.test(readP.init.headers.Authorization)
+        && readP.init.headers["x-team-pass"] === "team-secret");
+    check("a phrase-only session is named as the team phrase, not the magic link",
+      /signed in by team phrase/.test(rootP.textContent));
+  }
 
   let pass = 0;
   for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }

@@ -1,7 +1,7 @@
 {
  "_about": "Identity-anchored title suggestions for the CER unclassified-triage worklist (kb/_suggest_unclassified.py). Precedence per skill Rule 5c: CCN > C-ID > (M-ID once stable) > modal local course title; plus CareerOneStop authority matches when the registry is synced. One-click FILL chips — the curator always confirms; never auto-applied.",
- "_generated_at": "2026-08-13T07:58:41Z",
- "count": 132,
+ "_generated_at": "2026-09-29T07:35:30Z",
+ "count": 212,
  "suggestions": {
   "ACTG-51 APPLIED ACCOUNTING": [
    {
@@ -11,6 +11,38 @@
     "share": 1.0,
     "colleges": 1,
     "scoped": true
+   }
+  ],
+  "AGBUS 010: Introduction to Agriculture Business": [
+   {
+    "kind": "cid",
+    "id": "AG-AB 104",
+    "title": "Introduction to Agriculture Business",
+    "code": "AGBUS 10"
+   }
+  ],
+  "AGBUS 015: Computer Application to Agriculture": [
+   {
+    "kind": "cid",
+    "id": "AG-AB 108 108",
+    "title": "Agricultural Computer Applications",
+    "code": "AGBUS 15"
+   }
+  ],
+  "AGBUS 024: Agricultural Accounting": [
+   {
+    "kind": "cid",
+    "id": "AG-AB 128",
+    "title": "Agricultural Accounting",
+    "code": "AGBUS 24"
+   }
+  ],
+  "AGBUS 040: Introductory Agricultural Economics": [
+   {
+    "kind": "cid",
+    "id": "AG-AB 124",
+    "title": "Agriculture Economics",
+    "code": "AGBUS 40"
    }
   ],
   "AGEH-01 Elements of Landscape Horticulture": [
@@ -53,6 +85,46 @@
     "scoped": true
    }
   ],
+  "AJ 101 Criminal Law": [
+   {
+    "kind": "cid",
+    "id": "AJ 120",
+    "title": "Concepts of Criminal Law",
+    "code": "AJ 101"
+   }
+  ],
+  "AJ 102 Introduction to Criminal Justice": [
+   {
+    "kind": "cid",
+    "id": "AJ 110",
+    "title": "Introduction to Criminal Justice",
+    "code": "AJ 102"
+   }
+  ],
+  "AJ 108 Criminal Investigation": [
+   {
+    "kind": "cid",
+    "id": "AJ 140",
+    "title": "Criminal Investigation",
+    "code": "AJ 108"
+   }
+  ],
+  "AJ 111 Criminal Procedures": [
+   {
+    "kind": "cid",
+    "id": "AJ 122",
+    "title": "Criminal Court Process",
+    "code": "AJ 111"
+   }
+  ],
+  "AJ 118 Community and the Justice System": [
+   {
+    "kind": "cid",
+    "id": "AJ 160",
+    "title": "Community and the Justice System",
+    "code": "AJ 118"
+   }
+  ],
   "ALLH-67 MEDICAL TERMINOLOGY": [
    {
     "kind": "course",
@@ -61,6 +133,42 @@
     "share": 1.0,
     "colleges": 1,
     "scoped": true
+   }
+  ],
+  "AOJ 006: Correctional Interviewing & Counseling": [
+   {
+    "kind": "course",
+    "title": "Correctional Interviewing and Counseling",
+    "code": "AOJ 6",
+    "share": 1.0,
+    "colleges": 2,
+    "scoped": true
+   }
+  ],
+  "AOJ 012: Written Criminal Justice Communications": [
+   {
+    "kind": "course",
+    "title": "Written Criminal Justice Communications",
+    "code": "AOJ 12",
+    "share": 1.0,
+    "colleges": 2,
+    "scoped": true
+   }
+  ],
+  "AOJ 016: Human and Community Relations in Criminal Justice": [
+   {
+    "kind": "cid",
+    "id": "AJ 160",
+    "title": "Community and the Justice System",
+    "code": "AOJ 16"
+   }
+  ],
+  "AOJ 029: Criminology": [
+   {
+    "kind": "cid",
+    "id": "SOCI 160",
+    "title": "Introduction to Crime",
+    "code": "AOJ 29"
    }
   ],
   "ARMEN 1: Beginning Armenian": [
@@ -80,6 +188,100 @@
     "code": "ARMEN 2",
     "share": 1.0,
     "colleges": 2,
+    "scoped": true
+   }
+  ],
+  "ART 002: Two-Dimensional Design": [
+   {
+    "kind": "cid",
+    "id": "ARTS 100",
+    "title": "2-D Foundations",
+    "code": "ART 2"
+   }
+  ],
+  "ART 009: Beginning Printmaking": [
+   {
+    "kind": "course",
+    "title": "Beginning Printmaking",
+    "code": "ART 9",
+    "share": 1.0,
+    "colleges": 16,
+    "scoped": true
+   }
+  ],
+  "ART 140 Beginning Design: Two-Dimensional Media - Portfolio Review": [
+   {
+    "kind": "cid",
+    "id": "ARTS 100",
+    "title": "2-D Foundations",
+    "code": "ART 140"
+   }
+  ],
+  "ASCI 012: Animal Science": [
+   {
+    "kind": "cid",
+    "id": "AG-AS 104",
+    "title": "Introduction to Animal Science",
+    "code": "ASCI 12"
+   }
+  ],
+  "ASF 001: Agriculture Technical Literacy": [
+   {
+    "kind": "course",
+    "title": "Agriculture Technical Literacy",
+    "code": "ASF 1",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "ASF 002: Agricultural Systems": [
+   {
+    "kind": "course",
+    "title": "Agricultural Systems",
+    "code": "ASF 2",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "ASF 003: Agriculture Safety": [
+   {
+    "kind": "course",
+    "title": "Agriculture Safety",
+    "code": "ASF 3",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "ASF 004: Equipment Operation, Configuration and Troubleshooting": [
+   {
+    "kind": "course",
+    "title": "Equipment Operation, Configuration and Troubleshooting",
+    "code": "ASF 4",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "ASF 005: Workplace Effectiveness": [
+   {
+    "kind": "course",
+    "title": "Workplace Effectiveness",
+    "code": "ASF 5",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "ASL 002: Intermediate American Sign Language: Level 2": [
+   {
+    "kind": "course",
+    "title": "Intermediate American Sign Language: Level 2",
+    "code": "ASL 2",
+    "share": 1.0,
+    "colleges": 24,
     "scoped": true
    }
   ],
@@ -209,7 +411,7 @@
     "scoped": true
    }
   ],
-  "BIOTECH 470": [
+  "BIOTECH 470 - Capstone Seminar in Biomanufacturing Quality": [
    {
     "kind": "course",
     "title": "Capstone Seminar in Biomanufacturing Quality",
@@ -286,6 +488,70 @@
     "code": "BT 29",
     "share": 1.0,
     "colleges": 2,
+    "scoped": true
+   }
+  ],
+  "BUS 001A: Beginning Principles of Accounting": [
+   {
+    "kind": "cid",
+    "id": "ACCT 110",
+    "title": "Financial Accounting",
+    "code": "BUS 1A"
+   }
+  ],
+  "BUS 001B: Elementary Principles of Accounting": [
+   {
+    "kind": "cid",
+    "id": "ACCT 120",
+    "title": "Managerial Accounting",
+    "code": "BUS 1B"
+   }
+  ],
+  "BUS 002: Introductory Keyboarding": [
+   {
+    "kind": "course",
+    "title": "Introductory Keyboarding",
+    "code": "BUS 2",
+    "share": 1.0,
+    "colleges": 9,
+    "scoped": true
+   }
+  ],
+  "BUS 003: Intermediate Keyboarding": [
+   {
+    "kind": "course",
+    "title": "Intermediate Keyboarding",
+    "code": "BUS 3",
+    "share": 1.0,
+    "colleges": 4,
+    "scoped": true
+   }
+  ],
+  "BUS 018: Business Law": [
+   {
+    "kind": "cid",
+    "id": "BUS 125",
+    "title": "Business Law",
+    "code": "BUS 18"
+   }
+  ],
+  "BUS 035: Human Resources Management": [
+   {
+    "kind": "course",
+    "title": "Human Resources Management",
+    "code": "BUS 35",
+    "share": 1.0,
+    "colleges": 8,
+    "scoped": true
+   }
+  ],
+  "BUS 074": [
+   {
+    "kind": "course",
+    "title": "Computerized Accounting",
+    "code": "BUS 74",
+    "share": 1.0,
+    "colleges": 7,
     "scoped": true
    }
   ],
@@ -386,6 +652,90 @@
     "code": "CHIN 2",
     "share": 1.0,
     "colleges": 11,
+    "scoped": true
+   }
+  ],
+  "CIS 005A: Information & Communication Technology Essentials": [
+   {
+    "kind": "cid",
+    "id": "ITIS 110",
+    "title": "Information & Communication Technology Essentials",
+    "code": "CIS 5A"
+   }
+  ],
+  "CIS 005B: Systems and Network Administration": [
+   {
+    "kind": "course",
+    "title": "Systems and Network Administration",
+    "code": "CIS 5B",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "CIS 005C: Computer Network Fundamentals": [
+   {
+    "kind": "cid",
+    "id": "ITIS 150",
+    "title": "Computer Network Fundamentals",
+    "code": "CIS 5C"
+   }
+  ],
+  "CIS 005D: Routing and Switching Essentials": [
+   {
+    "kind": "course",
+    "title": "Routing and Switching Essentials",
+    "code": "CIS 5D",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "CIS 005E: Introduction to Information Systems Security": [
+   {
+    "kind": "cid",
+    "id": "ITIS 160",
+    "title": "Introduction to Information Systems Security",
+    "code": "CIS 5E"
+   }
+  ],
+  "CIS 005F: Introduction to Information Assurance": [
+   {
+    "kind": "course",
+    "title": "Introduction to Information Assurance",
+    "code": "CIS 5F",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "CIS 005G: Computer Forensics Fundamentals": [
+   {
+    "kind": "course",
+    "title": "Computer Forensics Fundamentals",
+    "code": "CIS 5G",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "CIS 005H: Operating Systems - Linux": [
+   {
+    "kind": "course",
+    "title": "Operating Systems - Linux",
+    "code": "CIS 5H",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "CISCYBR 1 Introduction to Systems & Network Cybersecurity (HSA)": [
+   {
+    "kind": "course",
+    "title": "Introduction to Systems & Network Cybersecurity",
+    "code": "CISCYBR 1",
+    "share": 1.0,
+    "colleges": 1,
     "scoped": true
    }
   ],
@@ -505,12 +855,100 @@
     "scoped": true
    }
   ],
+  "CRPSCI 001: Introduction to Plant Science": [
+   {
+    "kind": "cid",
+    "id": "AG-PS 106 106 L",
+    "title": "Introduction to Plant Science (with Laboratory)",
+    "code": "CRPSCI 1"
+   }
+  ],
+  "CRPSCI 019: California Water": [
+   {
+    "kind": "course",
+    "title": "California Water",
+    "code": "CRPSCI 19",
+    "share": 1.0,
+    "colleges": 2,
+    "scoped": true
+   }
+  ],
+  "CTE Film/TV Production IIA at William S. Hart District High School (MEA 111)": [
+   {
+    "kind": "course",
+    "title": "Exploring Video Field Production",
+    "code": "MEA 111",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "CTE Film/TV Production IIB at William S. Hart District High School (MEA 112)": [
+   {
+    "kind": "course",
+    "title": "Exploring Video Studio Production",
+    "code": "MEA 112",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
   "CTIS-20 INTRODUCTION TO INFORMATION SYSTEMS SECURITY": [
    {
     "kind": "cid",
     "id": "ITIS 160",
     "title": "Introduction to Information Systems Security",
     "code": "CTIS 20"
+   }
+  ],
+  "CUL 052: Introduction to Commercial Baking": [
+   {
+    "kind": "course",
+    "title": "Introduction to Commercial Baking",
+    "code": "CUL 52",
+    "share": 1.0,
+    "colleges": 2,
+    "scoped": true
+   }
+  ],
+  "CUL 053: Advanced Commercial Baking": [
+   {
+    "kind": "course",
+    "title": "Advanced Commercial Baking",
+    "code": "CUL 53",
+    "share": 1.0,
+    "colleges": 2,
+    "scoped": true
+   }
+  ],
+  "CUL 056: Garde Manger": [
+   {
+    "kind": "course",
+    "title": "Garde Manger",
+    "code": "CUL 56",
+    "share": 1.0,
+    "colleges": 2,
+    "scoped": true
+   }
+  ],
+  "CUL 057: Beverage Management": [
+   {
+    "kind": "course",
+    "title": "Beverage Management",
+    "code": "CUL 57",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "CUL 058: Dining Room Service and Management": [
+   {
+    "kind": "course",
+    "title": "Dining Room Service and Management",
+    "code": "CUL 58",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
    }
   ],
   "Cisco Certified Network Professional (CCNP) Security Certification": [
@@ -521,6 +959,25 @@
     "org": "Cisco Systems, Inc."
    }
   ],
+  "Credit by Exam - ESL 083 F (High Intermediate Reading and Writing)": [
+   {
+    "kind": "course",
+    "title": "Adv ESL:  Writing/Grammar",
+    "code": "ESL 83",
+    "share": 0.5,
+    "colleges": 2
+   }
+  ],
+  "DIME 002: User Experience Design Tools and Applications": [
+   {
+    "kind": "course",
+    "title": "User Experience Design Tools and Applications",
+    "code": "DIME 2",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
   "ECON 25: Introduction to Economics": [
    {
     "kind": "course",
@@ -528,6 +985,66 @@
     "code": "ECON 25",
     "share": 1.0,
     "colleges": 5,
+    "scoped": true
+   }
+  ],
+  "ELET 002: Electronic Circuits": [
+   {
+    "kind": "course",
+    "title": "Electronic Circuits",
+    "code": "ELET 2",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "ELET 003: Programmable Logic Controllers": [
+   {
+    "kind": "course",
+    "title": "Programmable Logic Controllers",
+    "code": "ELET 3",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "ELET 004: Computer Integrated Manufacturing": [
+   {
+    "kind": "course",
+    "title": "Computer Integrated Manufacturing",
+    "code": "ELET 4",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "ELET 005: Instrumentation and Process Control": [
+   {
+    "kind": "course",
+    "title": "Instrumentation and Process Control",
+    "code": "ELET 5",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "ELET 006: Electric Motors and Controls": [
+   {
+    "kind": "course",
+    "title": "Electric Motors and Controls",
+    "code": "ELET 6",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "ELET 007: Advanced Programmable Logic Controllers": [
+   {
+    "kind": "course",
+    "title": "Advanced Programmable Logic Controllers",
+    "code": "ELET 7",
+    "share": 1.0,
+    "colleges": 1,
     "scoped": true
    }
   ],
@@ -781,6 +1298,32 @@
     "scoped": true
    }
   ],
+  "HE 035: Personal Health and Hygiene": [
+   {
+    "kind": "cid",
+    "id": "PH 100",
+    "title": "Personal Health and Wellness",
+    "code": "HE 35"
+   }
+  ],
+  "HIST 032: Cultural History of the Chicano": [
+   {
+    "kind": "course",
+    "title": "Cultural History of the Chicano",
+    "code": "HIST 32",
+    "share": 1.0,
+    "colleges": 11,
+    "scoped": true
+   }
+  ],
+  "HIST 035: History of African Americans in the United States": [
+   {
+    "kind": "cid",
+    "id": "HIST 180",
+    "title": "Western Civilization II",
+    "code": "HIST 35"
+   }
+  ],
   "HIT 10: Medical Terminology": [
    {
     "kind": "cid",
@@ -816,6 +1359,16 @@
     "code": "HMONG 2",
     "share": 1.0,
     "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "HRCM 001: Introduction to Hospitality Management": [
+   {
+    "kind": "course",
+    "title": "Introduction to Hospitality Management",
+    "code": "HRCM 1",
+    "share": 1.0,
+    "colleges": 2,
     "scoped": true
    }
   ],
@@ -934,6 +1487,16 @@
     "kind": "course",
     "title": "Refrigerant Usage Certification and R-410A Safety",
     "code": "INDT 52",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "ITEC 002: Introduction to Drafting and CAD": [
+   {
+    "kind": "course",
+    "title": "Introduction to Drafting and CAD",
+    "code": "ITEC 2",
     "share": 1.0,
     "colleges": 1,
     "scoped": true
@@ -1061,6 +1624,126 @@
     "org": "Microsoft Corporation"
    }
   ],
+  "NC 190: Maker Innovation": [
+   {
+    "kind": "course",
+    "title": "Maker Innovation",
+    "code": "NC 190",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "NC 193: Agricultural Safety": [
+   {
+    "kind": "course",
+    "title": "Agricultural Safety",
+    "code": "NC 193",
+    "share": 1.0,
+    "colleges": 2,
+    "scoped": true
+   }
+  ],
+  "NC 194: Equipment Operation, Configuration and Troubleshooting": [
+   {
+    "kind": "course",
+    "title": "Equipment Operation, Configuration and Troubleshooting",
+    "code": "NC 194",
+    "share": 1.0,
+    "colleges": 2,
+    "scoped": true
+   }
+  ],
+  "NC 195: Workplace Effectiveness": [
+   {
+    "kind": "course",
+    "title": "Workplace Effectiveness",
+    "code": "NC 195",
+    "share": 1.0,
+    "colleges": 3,
+    "scoped": true
+   }
+  ],
+  "NESL 220A": [
+   {
+    "kind": "course",
+    "title": "Intermediate Grammar for Reading and Writing",
+    "code": "NESL 220A",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "NESL 220B": [
+   {
+    "kind": "course",
+    "title": "High-Intermediate Grammar for Reading and Writing",
+    "code": "NESL 220B",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "NESL 221A": [
+   {
+    "kind": "course",
+    "title": "Intermediate Reading and Writing",
+    "code": "NESL 221A",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "NESL 221B": [
+   {
+    "kind": "course",
+    "title": "High-Intermediate Reading and Writing",
+    "code": "NESL 221B",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "NESL 230A": [
+   {
+    "kind": "course",
+    "title": "Beginning Grammar for Reading and Writing",
+    "code": "NESL 230A",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "NESL 230B": [
+   {
+    "kind": "course",
+    "title": "High-Beginning Grammar for Reading and Writing",
+    "code": "NESL 230B",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "NESL 231A": [
+   {
+    "kind": "course",
+    "title": "Beginning Reading and Writing",
+    "code": "NESL 231A",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "NESL 231B": [
+   {
+    "kind": "course",
+    "title": "High-Beginning Reading and Writing",
+    "code": "NESL 231B",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
   "PHIL 1A: Theories of Knowledge and Reality": [
    {
     "kind": "cid",
@@ -1127,6 +1810,14 @@
     "share": 1.0,
     "colleges": 1,
     "scoped": true
+   }
+  ],
+  "POLSCI 005: Introduction to Political Theory": [
+   {
+    "kind": "cid",
+    "id": "POLS 120",
+    "title": "Introduction to Political Theory and Thought",
+    "code": "POLSCI 5"
    }
   ],
   "PORT 1: Beginning Portuguese": [
@@ -1217,6 +1908,54 @@
     "scoped": true
    }
   ],
+  "RUSS 1-Elementary Russian- Credit by Exam": [
+   {
+    "kind": "course",
+    "title": "Elementary Russian (First Quarter)",
+    "code": "RUSS 1",
+    "share": 1.0,
+    "colleges": 4,
+    "scoped": true
+   }
+  ],
+  "SLSCI 021: Introduction to Soil Science": [
+   {
+    "kind": "cid",
+    "id": "AG-PS 128 128 L",
+    "title": "Introduction to Soil Science",
+    "code": "SLSCI 21"
+   }
+  ],
+  "SPAN 001: Elementary Spanish I": [
+   {
+    "kind": "course",
+    "title": "Elementary Spanish I",
+    "code": "SPAN 1",
+    "share": 1.0,
+    "colleges": 33,
+    "scoped": true
+   }
+  ],
+  "SPAN 002: Elementary Spanish II": [
+   {
+    "kind": "course",
+    "title": "Elementary Spanish II",
+    "code": "SPAN 2",
+    "share": 1.0,
+    "colleges": 33,
+    "scoped": true
+   }
+  ],
+  "SPAN 003: Intermediate Spanish I": [
+   {
+    "kind": "course",
+    "title": "Intermediate Spanish I",
+    "code": "SPAN 3",
+    "share": 1.0,
+    "colleges": 29,
+    "scoped": true
+   }
+  ],
   "SPAN 1: Beginning Spanish": [
    {
     "kind": "cid",
@@ -1231,6 +1970,16 @@
     "id": "SPAN 110",
     "title": "Elementary Spanish II",
     "code": "SPAN 2"
+   }
+  ],
+  "SW 020: Introduction to Social Work and Human Services": [
+   {
+    "kind": "course",
+    "title": "Introduction to Social Work and Human Services",
+    "code": "SW 20",
+    "share": 1.0,
+    "colleges": 2,
+    "scoped": true
    }
   ],
   "VOCN-46A Applied Mathematics for Pharmacology": [

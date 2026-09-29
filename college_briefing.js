@@ -44,29 +44,103 @@
    * so a program the team adds later still appears with no code change. */
   var IMPL_PROJECT = "cpl-implementation";
 
-  var ROLES = [
-    { id: "any", label: "Anyone at the college" },
-    { id: "coordinator", label: "CPL Coordinator" },
-    { id: "counselor", label: "Counselor" },
-    { id: "admissions", label: "Admissions & Records" },
-    { id: "veterans", label: "Veterans Services" },
-    { id: "admin", label: "Dean / Administrator" }
+  // ⚠ THERE WAS A "Your role" PICKER HERE AND IT DID NOTHING (removed
+  // 2026-08-17). Six options — Anyone at the college / CPL Coordinator /
+  // Counselor / Admissions & Records / Veterans Services / Dean-Administrator —
+  // wired to `state.role`, which was assigned on change and READ NOWHERE. Every
+  // pick re-rendered the tab and changed not one word of it.
+  //
+  // That made it worse than clutter: it is a control that PROMISES the page
+  // will speak to your job and then silently doesn't, sitting inches above the
+  // "I'm a…" chips, which ask the same question and genuinely change Sierra's
+  // answer. Two role pickers, one of them a decoy. The chips are the role
+  // picker now (cpl_chat.js AUDIENCES).
+  //
+  // If per-role briefing content is ever wanted, build it against the chips'
+  // audience value — do not restore a second, parallel notion of "role".
+
+  /* ── The scope a visitor is here for (Sam, 2026-08-17) ─────────────────────
+   * The tab used to open on a title and two dropdowns. It now opens on ONE
+   * question — who are you here as — and curates the second list from the
+   * answer.
+   *
+   * ⚠ STRONG WORKFORCE IS LIVE SINCE 2026-09-17; ACADEMIC SENATE IS NOT.
+   * The consortium roster is `swp_region_data.js` (117 colleges, 9 regions,
+   * resolved from `map_colleges.swp_region`). ASCCC areas A–D exist since
+   * 2026-09-24 as college_lookup.js `ascccArea` (provisional, accepted by Sam as
+   * the working map; MAP's own export replaces it later) — this scope is not
+   * wired to that field yet, so it stays off with its reason.
+   *
+   * ⚠ THE REGION DATA WE HOLD ELSEWHERE IS A THIRD SCHEME — do not be tempted.
+   * `college_geo.region` (Supabase, 120 colleges) is a hand-authored ~10-way
+   * macro-region built for Sierra's "which colleges NEAR me" ranking
+   * (chatbox/_seed_college_geo.py says so in its docstring). It DISAGREES with
+   * the consortia: measured 2026-09-17, its "Bay Area" holds 23 colleges where
+   * the consortium has 28, because Strong Workforce puts Monterey, Santa Cruz
+   * and San Benito counties in the Bay and the proximity scheme puts them in
+   * Central Coast. Behind this label it would mis-group a college's peers in a
+   * view people act on — silently, since 23 names look like a complete list.
+   *
+   * ⚠ THIS BUTTON STAYED OFF FOR A DAY AFTER ITS DATA ARRIVED, still reading
+   * "not yet in an export we hold" while the roster sat committed beside it and
+   * the crosswalk generator already read it. A disabled control does not notice
+   * that its prerequisite landed. When `senate` gets its roster, flip it here in
+   * the same change that commits the data. */
+  var SCOPES = [
+    { k: "college",   label: "My college",                    ready: true },
+    { k: "district",  label: "My district",                   ready: true },
+    { k: "swp",       label: "My Strong Workforce region",    ready: true },
+    { k: "senate",    label: "My Academic Senate region",     ready: false,
+      why: "The area list exists (provisional, in college_lookup.js); this scope is not wired to it yet." },
+    { k: "statewide", label: "Statewide",                     ready: true }
   ];
+  // Scopes that need a second pick. Statewide is the whole set, so it does not.
+  function scopeNeedsEntity(k) {
+    return k === "college" || k === "district" || k === "swp";
+  }
+  var SCOPE_KEY = "cplMyCollegeScope.v1";
+
+  // Every collapsible section on the tab, so Expand all / Collapse all can act
+  // on the set rather than on whatever happens to be in the DOM. `sierra` is
+  // deliberately IN this list — Sam chose the literal reading: Collapse all
+  // closes everything, Sierra included. A control that silently exempts one
+  // section teaches people it is broken.
+  var SECTION_IDS = ["sierra", "start", "opps", "stand", "waiting", "types", "courseshare",
+                     "tier", "funding", "advice", "contacts", "resources"];
 
   var state = {
-    college: null, role: "any", data: null, loading: false, error: null, loadedSignedIn: null,
+    college: null, data: null, loading: false, error: null, loadedSignedIn: null,
+    // Which of SCOPES the visitor picked, and — for the scopes that need one —
+    // the entity within it. `college` above stays the college-scope selection
+    // because everything downstream of it keys on the college NAME.
+    scope: null,
+    // The PREVIOUS visit's choice, offered as a shortcut on the scope question
+    // and read by nothing else. Never seeds `scope`/`college` — the tab always
+    // asks first (Sam, 2026-08-21). See restoreScope().
+    remembered: null,
     // Per-college detail, fetched on selection rather than up front — 123
     // colleges' worth of credential rows is not worth loading to show one.
     detail: null, detailFor: null, detailLoading: false, detailError: null,
     // District filter for the college picker (from the funding roster, which
     // carries a district per college). "" = every college.
     district: "",
+    /* The Strong Workforce consortium, by CODE (`Bay`, `IE/D`). Serves two
+     * jobs deliberately: it IS the entity when the scope is `swp`, and it is an
+     * optional narrowing on the college picker — which is what a facilitator
+     * running a consortium meeting actually needs, so she can flip between the
+     * region's colleges rather than hunting all 120 by name. */
+    swpRegion: "",
+    swp: "idle",      // idle | loading | ready | error
+    swpData: null,
     // Which collapsible sections the reader has opened, by section id. Sam,
     // 2026-08-12: Sierra AI is the tab; everything under it opens on demand.
     // Held in state rather than read off the DOM because render() rewrites
     // innerHTML — a <details open> that lived only in the markup would snap
-    // shut every time the role picker changed.
-    open: {},
+    // shut every time the district or college picker changed.
+    // Sierra starts OPEN (Sam, 2026-08-17: collapsible but expanded by default);
+    // everything else opens on demand. Seeded here rather than in the markup so
+    // "expanded by default" survives the first render() rewrite.
+    open: { sierra: true },
     // The funding model. Two stages on purpose: the ROSTER (cpl_funding_data.js,
     // ~49KB) powers the district picker as soon as the tab opens; the MODEL
     // (cpl_funding.js, ~370KB) is pulled only when a college is chosen and
@@ -78,7 +152,25 @@
     // value, and a loader keyed on nullness would either never run or run
     // forever depending on how the field was initialised.
     liveState: "idle", // idle | loading | ready | error
-    live: null
+    live: null,
+    /* The occupation opportunity register (regional_cpl_opportunity_data.js,
+     * ~2MB for the Bay's 28 colleges). Precomputed rather than matched live:
+     * kb/_build_regional_cpl_opportunity.py runs ~35 seconds PER COLLEGE, and
+     * the whole point of this section is that someone can flip between colleges
+     * in front of a room. Pulled on first open of the section, not on tab open —
+     * most visits never scroll to it.
+     * ⚠ Its own status field, not a bare `opps == null` check: null is also the
+     * failed-read value (see liveState above for the same reasoning). */
+    oppsState: "idle", // idle | loading | ready | error
+    opps: null,
+    // Priority buckets the reader has filtered to. Empty = show everything.
+    // Held in state so a render() rewrite does not drop the filter, but the
+    // filter itself acts on the DOM — see wireOpps().
+    oppsFilter: [],
+    // The 2-digit CIP sector the reader has narrowed to; "" is every sector and
+    // "none" is the rows whose matched programs carry no CIP. Sam's word for
+    // this level is "CIP Sector" — cip_crosswalk.js uses it for the same thing.
+    oppsCip: ""
   };
 
   // MAP's six CPL types, in the order a coordinator thinks about them, with the
@@ -99,17 +191,133 @@
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
     });
   }
-  function getSession() {
-    try {
-      var raw = localStorage.getItem("cpl_team_session");
-      return raw ? JSON.parse(raw) : null;
-    } catch (e) { return null; }
+  /* ── Auth ──────────────────────────────────────────────────────────────────
+   * ⚠ THIS TAB SPENT ITS WHOLE LIFE READING A STORAGE KEY NOTHING WRITES.
+   * `getSession()` read `localStorage.cpl_team_session` — a string that appeared
+   * EXACTLY ONCE in the repo, here, as this read. No module, no sign-in flow and
+   * no test ever set it, so it returned null for every visitor, always.
+   *
+   * That alone is inert. What made it a defect is the pair of consequences:
+   *
+   *   1. The reviewer session was never seen. The canonical key is `cpl_sb`,
+   *      which cpl_session.js (the keeper, #1205) holds continuously fresh for
+   *      the other 25 modules. This tab did not read it, so the keeper could not
+   *      help it — a magic-link reviewer was, to this file, a logged-out guest.
+   *   2. The team phrase never reached the server. `signedIn()` checked
+   *      `cpl_team_pass` SEPARATELY, so a phrase holder rendered the tab, but
+   *      authHeaders() built its headers from the (always null) session and
+   *      attached no `x-team-pass`.
+   *
+   * Every gated read therefore went out bearing the bare anon key. The gates are
+   * `is_allowed_reviewer() OR team_pass_ok()` and BOTH were false, and an
+   * RLS-filtered SELECT is not an error — PostgREST answers 200 with `[]`. So
+   * map_college_credit_summary, map_college_cr_unit, map_college_goal2 and
+   * map_college_contacts all came back as empty arrays that are indistinguishable
+   * from "this college has nothing", on every college, for everyone. The public
+   * reads beside them (map_colleges, chatbox_credentials, cpl_funding_config)
+   * kept working, which is why the tab looked healthy while every MAP figure on
+   * it was blank. Sam: "I think all the colleges are coming up blank on this."
+   *
+   * Fixed by DELEGATING to the two shared modules rather than writing a
+   * fourteenth copy of the auth dance — same reasoning as the keeper itself.
+   * The inline fallbacks cover a standalone mount (tests, or a load order where
+   * this file evaluates first); they read the same canonical keys. */
+  var TEAM_PASS_KEY = "cpl_team_pass";
+  function isValidJwt(t) {
+    return typeof t === "string" && t.split(".").length === 3 && t.length > 40;
   }
-  function signedIn() { return !!(getSession() || localStorage.getItem("cpl_team_pass")); }
+  function getSession() {
+    // 1. Reviewer magic-link session, via the keeper — it owns `cpl_sb` and
+    //    renews it, so asking it is what makes this tab benefit from #1205/#1207.
+    try {
+      var k = window.CPL_SESSION && window.CPL_SESSION.get();
+      if (k && isValidJwt(k.access_token)) {
+        return { access_token: k.access_token, email: k.email || "(reviewer)" };
+      }
+    } catch (e) { /* keeper absent — fall through */ }
+    try {
+      var raw = localStorage.getItem("cpl_sb") || sessionStorage.getItem("cpl_sb");
+      var s = raw ? JSON.parse(raw) : null;
+      if (s && isValidJwt(s.access_token)) {
+        return { access_token: s.access_token, email: s.email || "(reviewer)" };
+      }
+    } catch (e) { /* ignore */ }
+    // 2. Shared team phrase. A pseudo-session: the bearer stays the anon key and
+    //    the phrase rides in the header (a "Bearer <phrase>" is the classic bug).
+    try {
+      var p = localStorage.getItem(TEAM_PASS_KEY);
+      if (p) return { teamPass: p, email: "(team)" };
+    } catch (e) { /* ignore */ }
+    return null;
+  }
+  function signedIn() { return !!getSession(); }
+
+  /* ── Which copy of this tab's data a reader may see (2026-09-17) ──────────
+   * Sam opened My College to colleges and the public. Four of the tables
+   * behind it stay gated on `is_allowed_reviewer() OR team_pass_ok()`, because
+   * three of them cannot be un-gated at all: map_college_cr_unit holds 145,554
+   * rows describing exactly ONE student at a named college, course and credit
+   * recommendation; map_college_credit_summary publishes exact sub-threshold
+   * headcounts; map_college_contacts is a statewide CCC executive directory
+   * with emails.
+   *
+   * So the page reads the `_pub` mirrors when it holds no credential and the
+   * bases when it does — the ADR's two objects, not one
+   * (adr-student-detail-aggregate-disclosure-control). The mirrors are built by
+   * kb/_publish_college_briefing.py with suppression applied BEFORE publishing;
+   * nothing on this page re-derives it.
+   *
+   * ⚠ A SIGNED-IN READER STILL SEES MORE, and that is the point of the split.
+   * The public contact row carries the CPL coordinator, the CPL counselor and
+   * the landing page — what routes a student to a person. The VPAA, VPSS,
+   * articulation officer, faculty lead and certifying official stay behind the
+   * gate, and the page SAYS SO rather than rendering a row of blanks: an
+   * unexplained gap reads as a college with no staff. */
+  var PUBLIC_CONTACT_ROLES = ["cpl_coordinator", "cpl_counselor"];
+
+  function sources() {
+    var pub = !signedIn();
+    return {
+      pub: pub,
+      summary: pub ? "map_college_credit_summary_pub" : "map_college_credit_summary",
+      goal2: pub ? "map_college_goal2_pub" : "map_college_goal2",
+      contacts: pub ? "map_college_contacts_pub" : "map_college_contacts",
+      contactSelect: pub
+        ? "college,cpl_coordinator,cpl_coordinator_email,cpl_counselor,cpl_counselor_email,landing_page_url"
+        : "college,primary_contact,primary_contact_email,cpl_coordinator,cpl_coordinator_email,"
+          + "cpl_counselor,cpl_counselor_email,articulation_officer,articulation_officer_email,"
+          + "faculty_lead,faculty_lead_email,certifying_official,certifying_official_email,"
+          + "vpaa,vpaa_email,vpss,vpss_email,landing_page_url,last_updated_on",
+      /* The published waiting table IS the Needs-Action / articulated>0 slice,
+       * already suppressed, so the filters that carve it out of the base must
+       * NOT be re-applied here — they would silently drop every remainder row,
+       * which carries no cpl_status_plan at all. */
+      waiting: pub ? "map_college_cr_waiting_pub" : "map_college_cr_unit",
+      waitingQuery: pub
+        ? "&select=credit_rec,college_course,course_type,sum_articulated_credits,"
+          + "distinct_students,withheld_recommendations"
+        : "&cpl_status_plan=eq." + encodeURIComponent("Needs Action")
+          + "&sum_articulated_credits=gt.0"
+          + "&select=credit_rec,college_course,course_type,sum_articulated_credits,distinct_students"
+    };
+  }
   function authHeaders() {
     var s = getSession();
+    // PostgREST 401s on an empty/garbled Bearer, so a phrase session keeps the
+    // anon key as its bearer and unlocks via the header instead.
     var token = (s && s.access_token) || SUPABASE_ANON;
-    return { apikey: SUPABASE_ANON, Authorization: "Bearer " + token };
+    var h = { apikey: SUPABASE_ANON, Authorization: "Bearer " + token };
+    // team_pass_ok() reads the x-team-pass REQUEST HEADER server-side. The stored
+    // phrase rides along even for a JWT session: the gates are OR-predicates, so
+    // it is harmless for a reviewer and it un-shadows the phrase for a signed-in
+    // NON-reviewer, whose JWT alone fails is_allowed_reviewer().
+    try {
+      if (window.CPL_TEAM_PHRASE) return window.CPL_TEAM_PHRASE.decorateHeaders(h, s);
+    } catch (e) { /* helper absent — fall through */ }
+    var p2 = (s && s.teamPass) || null;
+    if (!p2) { try { p2 = localStorage.getItem(TEAM_PASS_KEY); } catch (e) {} }
+    if (p2) h["x-team-pass"] = p2;
+    return h;
   }
   function num(v) { var n = Number(v); return isFinite(n) ? n : null; }
   function fmt(n) { return n == null ? "—" : Number(n).toLocaleString("en-US"); }
@@ -117,6 +325,16 @@
   function money(n) {
     if (n == null || !isFinite(n)) return "—";
     return "$" + Math.round(Number(n)).toLocaleString("en-US");
+  }
+
+  /* The noncredit carve-out, as a label, read from the funding module rather
+   * than typed. Falls back to the generic phrase if the module has not loaded —
+   * a failed read must never render as a confident wrong figure, which is the
+   * standing rule on this tab (an absent measurement is not an achievement). */
+  function fundCarveLabel() {
+    var M = fundingModule();
+    var v = (M && typeof M._pool === "function") ? Number(M._pool("feeder_carveout")) : NaN;
+    return isFinite(v) && v > 0 ? money(v) : "separate";
   }
 
   /* PURE. district -> [MAP college names]. Both sides resolve through
@@ -134,6 +352,42 @@
       (idx[d] = idx[d] || []).push(n);
     });
     return idx;
+  }
+
+  /* PURE. Re-sequence one program's priorities into the curator's display
+   * order. `order[i]` is the SOURCE index shown at display position i. Anything
+   * malformed — wrong length, out of range, a repeat — returns the natural
+   * order rather than dropping or duplicating a priority. */
+  function applyPriorityOrder(list, order, removedKeys) {
+    // THE SAME RULE AS cpl_funding.js priorityOrder()/orderIsUsable(), keyed by
+    // the SOURCE index each entry carries (`key`), never by its place in the
+    // list: a scenario can delete a priority and add one since 2026-09-23, so
+    // the list's positions stop being source indices. Three refusals return the
+    // natural order: a repeat, a value that names no priority this scenario
+    // ever held, and a shorter order that is not a prefix of the set. A value
+    // naming a DELETED priority is skipped, and a priority the order predates
+    // joins at the end ([0, 2, 1] kept its order when P4 arrived, 2026-09-22).
+    if (!Array.isArray(order) || !order.length) return list;
+    var byKey = {}, removed = {}, seen = {}, maxKept = -1, i, v;
+    list.forEach(function (pr) { byKey[Number(pr.key)] = pr; });
+    (removedKeys || []).forEach(function (k) { removed[Number(k)] = 1; });
+    for (i = 0; i < order.length; i++) {
+      v = Number(order[i]);
+      if (!(v >= 0) || v !== Math.floor(v) || seen[v]) return list;
+      seen[v] = 1;
+      if (byKey[v]) { if (v > maxKept) maxKept = v; }
+      else if (!removed[v]) return list;
+    }
+    var out = [];
+    for (i = 0; i < order.length; i++) { v = Number(order[i]); if (byKey[v]) out.push(byKey[v]); }
+    var rest = list.filter(function (pr) { return !seen[Number(pr.key)]; });
+    if (rest.some(function (pr) { return Number(pr.key) < maxKept; })) return list;
+    out = out.concat(rest);
+    return out.map(function (pr, j) {
+      var copy = {}; for (var k in pr) if (Object.prototype.hasOwnProperty.call(pr, k)) copy[k] = pr[k];
+      copy.index = j;
+      return copy;
+    });
   }
 
   /* ── The strategy library ────────────────────────────────────────────────
@@ -162,7 +416,12 @@
         unread.push({ id: pid, label: label, why: "No Year " + year + " priorities in “" + scenario + "”." });
         return;
       }
-      var priorities = Object.keys(yp).sort(function (a, b) { return Number(a) - Number(b); }).map(function (k, i) {
+      // A priority the scenario DELETED (2026-09-23) keeps its stored row, so
+      // the funding tab can restore it; it is not part of the set.
+      var removedKeys = Array.isArray(scen.prioRemoved) ? scen.prioRemoved.map(Number) : [];
+      var priorities = Object.keys(yp).filter(function (k) {
+        return removedKeys.indexOf(Number(k)) < 0;
+      }).sort(function (a, b) { return Number(a) - Number(b); }).map(function (k, i) {
         var pr = yp[k] || {};
         // An empty-string strategy is a curator typo, not a strategy. Drop it
         // from the list but COUNT it, so the page never silently shrinks.
@@ -179,6 +438,13 @@
           blankCount: raw.length - kept.length
         };
       });
+      // DISPLAY ORDER (Sam, 2026-08-20). The curator can drag the priority
+      // cards on the Implementation Funding tab into a new order, stored beside
+      // the config as a permutation of the source indices. `key` stays the
+      // SOURCE index — that is what joins a priority back to the funding module
+      // — while `index` becomes the position the curator actually sees, so
+      // "priority 2" names the same priority on both tabs.
+      priorities = applyPriorityOrder(priorities, scen.priorityOrder, removedKeys);
       var total = priorities.reduce(function (n, pr) { return n + pr.strategies.length; }, 0);
       if (!total) {
         unread.push({ id: pid, label: label, why: "Year " + year + " of “" + scenario + "” has no strategies written yet." });
@@ -290,6 +556,11 @@
           };
         });
         return {
+          // `key` is the priority's index in the stored config — its IDENTITY.
+          // It has to survive this remap: the funding box joins each priority's
+          // money to these strategies by identity, so that the join still holds
+          // when the cards are shown in a curator's own order (Sam, 2026-08-20).
+          key: pr.key,
           index: pr.index, share: pr.share, title: pr.title, description: pr.description,
           metric: pr.metric, blankCount: pr.blankCount, items: items,
           measuredCount: items.filter(function (i) { return i.measure; }).length
@@ -321,13 +592,13 @@
     var s = document.createElement("style");
     s.id = "cpl-briefing-css";
     s.textContent = [
-      "#college-briefing-root{text-align:left;color:var(--text);}",
+      "#college-briefing-root{text-align:left;color:var(--text,var(--text-strong));}",
       ".cb-bar{display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end;margin-bottom:18px;}",
       ".cb-bar label{display:block;font-size:.75rem;color:var(--text-muted);margin-bottom:4px;}",
-      ".cb-bar select{padding:7px 10px;border:1px solid var(--border-strong);border-radius:6px;background:var(--surface);color:var(--text);min-width:220px;}",
-      ".cb-lead{border:1px solid var(--border-strong);border-left:4px solid var(--brand);border-radius:8px;padding:14px 16px;margin-bottom:12px;background:var(--surface-subtle);}",
+      ".cb-bar select{padding:7px 10px;border:1px solid var(--border-strong);border-radius:6px;background:var(--surface);color:var(--text,var(--text-strong));min-width:220px;}",
+      ".cb-lead{border:1px solid var(--border-strong);border-left:4px solid var(--brand,var(--cobalt));border-radius:8px;padding:14px 16px;margin-bottom:12px;background:var(--surface-subtle);}",
       ".cb-lead h4{margin:0 0 4px;font-size:.95rem;}",
-      ".cb-lead .cb-num{font-size:1.35rem;font-weight:700;color:var(--brand);}",
+      ".cb-lead .cb-num{font-size:1.35rem;font-weight:700;color:var(--brand,var(--cobalt));}",
       ".cb-prog{margin-top:26px;}",
       ".cb-prog>h3{margin:0 0 4px;font-size:1.05rem;}",
       ".cb-pri{border:1px solid var(--border);border-radius:8px;padding:14px 16px;margin:12px 0;background:var(--surface);}",
@@ -336,12 +607,12 @@
       ".cb-item{padding:9px 0;border-top:1px solid var(--border);}",
       ".cb-item:first-of-type{border-top:0;}",
       ".cb-item .cb-t{font-size:.87rem;}",
-      ".cb-item .cb-m{font-size:.82rem;margin-top:3px;color:var(--text);}",
-      ".cb-item .cb-m b{color:var(--brand);}",
+      ".cb-item .cb-m{font-size:.82rem;margin-top:3px;color:var(--text,var(--text-strong));}",
+      ".cb-item .cb-m b{color:var(--brand,var(--cobalt));}",
       ".cb-item .cb-d{font-size:.78rem;color:var(--text-muted);margin-top:2px;}",
       ".cb-flag{display:inline-block;font-size:.68rem;padding:1px 7px;border-radius:10px;border:1px solid var(--border-strong);color:var(--text-muted);margin-left:6px;vertical-align:middle;}",
       ".cb-bfrac{height:5px;border-radius:3px;background:var(--border);margin-top:6px;overflow:hidden;max-width:320px;}",
-      ".cb-bfrac>i{display:block;height:100%;background:var(--brand);}",
+      ".cb-bfrac>i{display:block;height:100%;background:var(--brand,var(--cobalt));}",
       ".cb-warn{border:1px solid var(--warn,#b45309);border-radius:8px;padding:12px 14px;margin:14px 0;font-size:.83rem;}",
       ".cb-note{font-size:.78rem;color:var(--text-muted);margin-top:18px;line-height:1.5;}",
       // ── Rework 2026-08-11: steps first, then data, advice last ──
@@ -393,7 +664,7 @@
       ".cb-prow .cb-whead{font-size:.85rem;}",
       ".cb-prow .cb-whead .v{font-weight:700;color:var(--text-strong);font-size:.85rem;}",
       ".cb-ptarget{font-size:.76rem;color:var(--text-muted);margin-top:3px;line-height:1.45;}",
-      ".cb-next{border:1px solid var(--border-strong);border-left:4px solid var(--brand);border-radius:8px;padding:13px 15px;margin-top:14px;background:var(--surface-subtle);}",
+      ".cb-next{border:1px solid var(--border-strong);border-left:4px solid var(--brand,var(--cobalt));border-radius:8px;padding:13px 15px;margin-top:14px;background:var(--surface-subtle);}",
       ".cb-next ul{margin:0;padding-left:18px;font-size:.84rem;line-height:1.55;}",
       ".cb-next li{margin-bottom:5px;}",
       ".cb-next li:last-child{margin-bottom:0;}",
@@ -414,13 +685,15 @@
       ".cb-ess-list{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:9px;}",
       ".cb-ess-list li{display:flex;gap:9px;align-items:flex-start;border-top:1px solid var(--border);padding-top:9px;font-size:.83rem;}",
       ".cb-ess-list li:first-child{border-top:0;padding-top:0;}",
-      ".cb-ess-list .cb-num{font-size:.83rem;font-weight:600;color:var(--brand);margin-top:2px;}",
+      ".cb-ess-list .cb-num{font-size:.83rem;font-weight:600;color:var(--brand,var(--cobalt));margin-top:2px;}",
       ".cb-ess-list .cb-d{font-size:.77rem;color:var(--text-muted);margin-top:2px;line-height:1.45;}",
-      ".cb-ess{flex:0 0 auto;width:1.5em;text-align:center;font-weight:700;font-size:.9rem;}",
+      // Words, not glyphs (see essMark). Wider than the old 1.5em glyph slot and
+      // left-aligned so "Not yet" and "Partial" sit on one line at every size.
+      ".cb-ess{flex:0 0 auto;min-width:4.6em;text-align:left;font-weight:700;font-size:.74rem;text-transform:uppercase;letter-spacing:.03em;margin-top:2px;}",
       ".cb-ess.met{color:var(--ok,#2f7a3d);}",
       ".cb-ess.partial{color:var(--mustard-text,#8B6800);}",
       ".cb-ess.not{color:var(--text-muted);}",
-      ".cb-ess.pending,.cb-ess.na{color:var(--text-muted);font-size:.7rem;font-weight:600;}",
+      ".cb-ess.pending,.cb-ess.na{color:var(--text-muted);font-weight:600;}",
       // Fixed layout + an explicit colgroup: auto layout parks columns past the
       // wrapper's right edge on some filtered row sets (Session 43 finding).
       ".cb-dist{width:100%;table-layout:fixed;border-collapse:collapse;font-size:.85rem;}",
@@ -432,23 +705,123 @@
       ".cb-roster tr.lead td{font-weight:600;color:var(--text-strong);}",
       // Sierra AI box — first on the tab, holds the pickers and the embedded chat.
       ".cb-assist{border:1px solid var(--border-strong);border-radius:11px;background:var(--surface);padding:16px 18px;margin-bottom:20px;}",
-      ".cb-assist>header{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:4px;}",
-      ".cb-assist h3{margin:0;font-size:1.05rem;color:var(--text-strong);}",
+      // (The .cb-assist>header / h3 rules went with the duplicate heading they
+      //  styled — the box's title is now the widget's own, hoisted into
+      //  .cb-assist-head. See hoistAssistantIntro().)
       ".cb-assist .cb-bar{margin-bottom:0;padding-bottom:12px;border-bottom:1px solid var(--border);}",
       ".cb-assist .cb-asks{margin-top:12px;}",
       ".cb-assist-mount{margin-top:12px;}",
       ".cb-asks{display:flex;flex-wrap:wrap;gap:8px;}",
-      ".cb-ask{font:inherit;font-size:.82rem;text-align:left;padding:9px 12px;border:1px solid var(--border-strong);border-radius:999px;background:var(--surface);color:var(--text);cursor:pointer;}",
-      ".cb-ask:hover{border-color:var(--brand);color:var(--brand);}",
+      ".cb-ask{font:inherit;font-size:.82rem;text-align:left;padding:9px 12px;border:1px solid var(--border-strong);border-radius:999px;background:var(--surface);color:var(--text,var(--text-strong));cursor:pointer;}",
+      ".cb-ask:hover{border-color:var(--brand,var(--cobalt));color:var(--brand,var(--cobalt));}",
       // ── Sierra AI leads the tab (Sam, 2026-08-12) ──────────────────────
       // The team's read was that she is the useful part, so she gets the
       // weight: a heavier frame, real breathing room, and a stated purpose.
       // Everything below is deliberately quieter so the contrast does the
       // work — no section under here competes with this box.
       ".cb-assist{border-width:2px;border-color:var(--border-strong);padding:20px 22px 18px;margin-bottom:26px;box-shadow:0 1px 3px rgba(28,28,26,.06);}",
-      ".cb-assist h3{font-size:1.3rem;letter-spacing:-.01em;}",
-      ".cb-assist .cb-purpose{font-size:.86rem;color:var(--text-body);line-height:1.55;margin:2px 0 12px;max-width:62ch;}",
       ".cb-asks-lab{font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;color:var(--text-muted);margin:14px 0 7px;}",
+      // ── The hoisted heading slot (2026-08-17) ─────────────────────────────
+      // finish() moves cpl_chat.js's OWN .cplchat-intro in here, so the box
+      // reads title → what she is → pickers → suggestions → chat. The widget's
+      // intro carries its own margins; this only has to stop the first heading
+      // pushing an extra 16px down from the top of the box.
+      ".cb-assist-head .cplchat-intro h2{margin-top:0;}",
+      ".cb-assist-head .cplchat-intro p:last-child{margin-bottom:12px;}",
+      // The fallback title, shown only if cpl_chat.js never mounted.
+      ".cb-assist-fallback{margin:0 0 12px;font-size:1.3rem;letter-spacing:-.01em;color:var(--text-strong);}",
+      // Visually hidden, still announced — the "(opens in a new tab)" cue that
+      // replaced the ↗ on every resource link. Not display:none, which would
+      // take it out of the accessibility tree along with the pixels.
+      ".cb-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0;}",
+
+      /* ── The scope picker (Sam, 2026-08-17) ─────────────────────────────
+         Words, not glyphs, per the standing rule — and no icons invented for
+         the sake of it. First Light's rule is "glass = chrome, opaque = data":
+         these are chrome, so they sit on the surface tokens with a cobalt
+         (interactive) accent, never a brand fill that would read as a status. */
+      ".cb-scope{max-width:760px;margin:8px auto 0;padding:8px 4px 24px;}",
+      ".cb-scope-q{margin:0 0 14px;font-size:1.35rem;letter-spacing:-.01em;color:var(--text-strong);font-weight:650;}",
+      // The "open what you looked at last time" shortcut. Above the options and
+      // visibly a shortcut, not a sixth option — it is a different KIND of
+      // answer to the question, and a row of five look-alike buttons with a
+      // sixth that behaves differently is how a picker becomes a guess.
+      ".cb-scope-again{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:0 0 16px;"
+        + "padding-bottom:14px;border-bottom:1px solid var(--border,#d8dde6);}",
+      ".cb-scope-again-l{font-size:.78rem;color:var(--text-muted);}",
+      ".cb-scope-opts{display:flex;flex-direction:column;gap:8px;}",
+      ".cb-scope-b{display:flex;align-items:baseline;justify-content:space-between;gap:12px;width:100%;"
+        + "text-align:left;padding:13px 16px;border:1px solid var(--border,#d8dde6);border-radius:10px;"
+        + "background:var(--surface-opaque,#fff);color:inherit;font:inherit;cursor:pointer;}",
+      ".cb-scope-b:hover:not([disabled]){border-color:var(--cobalt,#0047AB);background:var(--surface-subtle,#eef3fa);}",
+      ".cb-scope-b:focus-visible{outline:2px solid var(--focus-ring,var(--brand,var(--cobalt)));outline-offset:2px;}",
+      /* A disabled option stays READABLE. Greying it to the point of being hard
+         to read hides the one thing it is there to say — that it exists and why
+         it is off — so only the affordance is dimmed, not the sentence. */
+      ".cb-scope-b[disabled]{cursor:not-allowed;background:var(--surface-subtle,#f6f8fb);border-style:dashed;}",
+      ".cb-scope-b[disabled] .cb-scope-l{color:var(--text-muted);}",
+      ".cb-scope-l{font-size:1rem;font-weight:600;}",
+      ".cb-scope-soon{font-size:.76rem;color:var(--text-muted);white-space:nowrap;}",
+      ".cb-scope-note{margin:14px 0 0;font-size:.8rem;color:var(--text-muted);line-height:1.5;}",
+      ".cb-back{background:none;border:0;padding:0 0 10px;font:inherit;font-size:.82rem;"
+        + "color:var(--accent-link,var(--brand,var(--cobalt)));cursor:pointer;}",
+      ".cb-back:hover{text-decoration:underline;}",
+      ".cb-ent{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px;}",
+      ".cb-ent-b{display:flex;flex-direction:column;gap:2px;text-align:left;padding:11px 14px;"
+        + "border:1px solid var(--border,#d8dde6);border-radius:10px;background:var(--surface-opaque,#fff);"
+        + "color:inherit;font:inherit;cursor:pointer;}",
+      ".cb-ent-b:hover{border-color:var(--cobalt,#0047AB);background:var(--surface-subtle,#eef3fa);}",
+      ".cb-ent-n{font-size:.76rem;color:var(--text-muted);}",
+
+      /* ── The welcome header, which only exists after a choice ───────────── */
+      ".cb-welcome{margin:2px 0 14px;}",
+      ".cb-welcome-row{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;flex-wrap:wrap;}",
+      ".cb-welcome-t{margin:0;font-size:1.45rem;letter-spacing:-.015em;color:var(--text-strong);font-weight:650;}",
+      ".cb-welcome-acts{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}",
+      ".cb-act{padding:6px 13px;border:1px solid var(--border,#d8dde6);border-radius:999px;"
+        + "background:var(--surface-opaque,#fff);color:inherit;font:inherit;font-size:.8rem;cursor:pointer;"
+        + "white-space:nowrap;}",
+      ".cb-act:hover{border-color:var(--cobalt,#0047AB);background:var(--surface-subtle,#eef3fa);}",
+      ".cb-act-q{font-size:.76rem;padding:4px 11px;}",
+      ".cb-allctl{display:flex;gap:8px;margin:12px 0 0;}",
+
+      /* Sierra is a section now, but she is the PRIMARY one — the summary reads
+         at heading scale rather than at the muted scale the others use. */
+      ".cb-assist-d>.cb-sum h2{margin:0;font-size:1.15rem;}",
+      ".cb-assist-body{padding-top:4px;}",
+
+      /* ── The roll-up (district / statewide) ─────────────────────────────── */
+      ".cb-roll{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0 14px;}",
+      ".cb-roll-c{flex:1 1 170px;padding:11px 14px;border:1px solid var(--border,#d8dde6);"
+        + "border-radius:10px;background:var(--surface-opaque,#fff);}",
+      ".cb-roll-n{font-size:1.3rem;font-weight:650;color:var(--text-strong);letter-spacing:-.01em;}",
+      ".cb-roll-l{font-size:.76rem;color:var(--text-muted);margin-top:2px;line-height:1.35;}",
+
+      /* ── Print: the briefing ────────────────────────────────────────────
+         The Report button expands every section and prints. Everything outside
+         this tab is page chrome and must not be in the document, and the
+         controls must not print either — a PDF with a "Collapse all" button on
+         it looks like a screenshot, not a briefing. */
+      /* Print stays sane if someone hits Ctrl-P — the Report button now builds a
+         .docx (Sam, 2026-08-17), so this is no longer the briefing route, just
+         basic hygiene: drop the controls and do not split a section across pages. */
+      "@media print{",
+      "  .cb-welcome-acts,.cb-allctl,.cb-back,.cb-assist-pick,.cb-asks,.cb-asks-lab,"
+        + ".cb-assist-mount{display:none !important;}",
+      "  .cb-sec{break-inside:avoid;}",
+      "}",
+      // ── Use the width, and survive a phone (Sam, 2026-08-17) ──────────────
+      // The pickers stretch instead of sitting at a 220px minimum that wraps
+      // into a ragged column, and the box gives its padding back to content.
+      "@media (max-width:640px){",
+      "  .cb-assist{padding:14px 13px 13px;border-radius:9px;margin-bottom:18px;}",
+      "  .cb-bar{gap:9px;}",
+      "  .cb-bar>div{flex:1 1 100%;min-width:0;}",
+      "  .cb-bar select{width:100%;min-width:0;}",
+      "  .cb-assist-fallback,.cb-assist-head .cplchat-intro h2{font-size:1.12rem;}",
+      "  .cb-sec-b{padding:2px 12px 15px;}",
+      "  .cb-sum{padding:12px 13px;gap:9px;}",
+      "}",
       // ── Collapsible detail sections ────────────────────────────────────
       // A closed section still has to say something, or "minimal" becomes
       // "blank": the summary line carries this college's own figure, so the
@@ -457,8 +830,8 @@
       ".cb-sec[open]{background:var(--surface-subtle);border-color:var(--border-strong);}",
       ".cb-sum{list-style:none;cursor:pointer;padding:13px 16px;display:flex;align-items:baseline;justify-content:space-between;gap:14px;border-radius:9px;}",
       ".cb-sum::-webkit-details-marker{display:none;}",
-      ".cb-sum:hover .cb-sum-t{color:var(--brand);}",
-      ".cb-sum:focus-visible{outline:2px solid var(--focus-ring,var(--brand));outline-offset:-2px;}",
+      ".cb-sum:hover .cb-sum-t{color:var(--brand,var(--cobalt));}",
+      ".cb-sum:focus-visible{outline:2px solid var(--focus-ring,var(--brand,var(--cobalt)));outline-offset:-2px;}",
       ".cb-sum-t{font-size:.97rem;font-weight:600;color:var(--text-strong);display:flex;align-items:baseline;gap:8px;}",
       ".cb-sum-t::before{content:'▸';font-size:.8em;color:var(--text-muted);transition:transform .12s ease;display:inline-block;}",
       ".cb-sec[open] .cb-sum-t::before{transform:rotate(90deg);}",
@@ -468,22 +841,493 @@
       "@media (prefers-reduced-motion:reduce){.cb-sum-t::before{transition:none;}}",
       // Strategies, nested inside the funding priority they belong to.
       ".cb-strat{margin-top:9px;border-top:1px solid var(--border);padding-top:8px;}",
-      ".cb-strat>summary{list-style:none;cursor:pointer;font-size:.79rem;color:var(--accent-link,var(--brand));display:inline-flex;align-items:baseline;gap:6px;}",
+      ".cb-strat>summary{list-style:none;cursor:pointer;font-size:.79rem;color:var(--accent-link,var(--brand,var(--cobalt)));display:inline-flex;align-items:baseline;gap:6px;}",
       ".cb-strat>summary::-webkit-details-marker{display:none;}",
       ".cb-strat>summary::before{content:'▸';font-size:.85em;display:inline-block;transition:transform .12s ease;}",
       ".cb-strat[open]>summary::before{transform:rotate(90deg);}",
       ".cb-strat>summary:hover{text-decoration:underline;}",
-      ".cb-strat>summary:focus-visible{outline:2px solid var(--focus-ring,var(--brand));outline-offset:2px;border-radius:3px;}",
+      ".cb-strat>summary:focus-visible{outline:2px solid var(--focus-ring,var(--brand,var(--cobalt)));outline-offset:2px;border-radius:3px;}",
       ".cb-strat ol{margin:9px 0 0;padding-left:19px;font-size:.82rem;line-height:1.5;color:var(--text-body);}",
       ".cb-strat li{margin-bottom:7px;}",
       ".cb-strat li:last-child{margin-bottom:0;}",
       ".cb-strat li .cb-m{font-size:.8rem;margin-top:3px;}",
-      ".cb-strat li .cb-d{font-size:.76rem;color:var(--text-muted);margin-top:2px;line-height:1.45;}"
+      ".cb-strat li .cb-d{font-size:.76rem;color:var(--text-muted);margin-top:2px;line-height:1.45;}",
+
+      /* ── The occupation opportunity register ──────────────────────────────
+       * Ported from the page kb/_build_regional_cpl_opportunity.py writes, which
+       * is Ashley's Cal-JAC-derived layout: one card per occupation, the tier
+       * and the fit on the header line, and three columns underneath. Colors
+       * are tokens here rather than the standalone page's literals — the
+       * standalone file has no token layer to inherit and COBI does. */
+      ".cb-opp-tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:0 0 14px;}",
+      ".cb-opp-tools input[type=search]{flex:1 1 260px;min-width:0;padding:8px 11px;border:1px solid var(--border-strong);border-radius:6px;background:var(--surface);color:var(--text,var(--text-strong));font:inherit;}",
+      ".cb-opp-tools input[type=search]:focus-visible{outline:2px solid var(--focus-ring,var(--cobalt));outline-offset:1px;}",
+      ".cb-opp-f{font:inherit;font-size:.78rem;padding:5px 11px;border-radius:999px;cursor:pointer;background:var(--surface);color:var(--text-body);border:1px solid var(--border-strong);}",
+      ".cb-opp-f:hover{border-color:var(--brand,var(--cobalt));}",
+      ".cb-opp-f:focus-visible{outline:2px solid var(--focus-ring,var(--cobalt));outline-offset:2px;}",
+      /* The pressed state carries a border weight and a filled background, so
+       * the active filter is not signalled by color alone.
+       * ⛔ `var(--brand)` ALONE PAINTS NOTHING. COBI defines --brand NOWHERE, on
+       * purpose (see the phantom-token block in both HTMLs), so `background:
+       * var(--brand)` is invalid at computed-value time and falls to
+       * transparent — leaving `--on-accent` WHITE TEXT ON THE PAGE at 1.06:1,
+       * and "All N" is pressed by default, so it was the first thing the
+       * register painted. Measured in Chromium, 2026-09-17.
+       * `--cobalt` is the defined token for this role and it is theme-aware
+       * (#0047AB light / #7DA1D4 dark), so the fallback needs no dark rule:
+       * white on cobalt is 8.44:1 light, and --on-accent (#141413) on the dark
+       * cobalt is 6.95:1. */
+      ".cb-opp-f[aria-pressed=true]{background:var(--brand,var(--cobalt));color:var(--on-accent,#fff);border-color:var(--brand,var(--cobalt));font-weight:700;}",
+      ".cb-opp-count{font-size:.8rem;color:var(--text-muted);margin-left:auto;}",
+      ".cb-opp{border:1px solid var(--border);border-radius:8px;padding:12px 14px;margin:0 0 10px;background:var(--surface);}",
+      ".cb-opp[hidden]{display:none;}",
+      ".cb-opp-h{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;margin:0 0 9px;}",
+      ".cb-opp-h h4{margin:0;font-size:.95rem;flex:1 1 auto;color:var(--text-strong);}",
+      ".cb-opp-t{font-size:.7rem;font-weight:700;letter-spacing:.06em;padding:2px 8px;border-radius:4px;white-space:nowrap;border:1px solid var(--border-strong);color:var(--text-body);background:var(--surface-subtle);}",
+      /* P0/P1 are the two the meeting acts on, so they carry weight. Everything
+       * below them stays quiet on purpose — a page where every tier shouts has
+       * no way left to show which two matter. */
+      /* ⛔ THESE TWO WERE INVISIBLE. Same undefined-token trap as the pressed
+       * filter chip below: neither `--cpl-green` nor `--brand` is defined in
+       * COBI's LIGHT theme, so both backgrounds fell to transparent and left
+       * `--on-accent` white text on the card. P0 and P1 are the two tiers this
+       * comment says carry weight, and they are the two a meeting acts on.
+       * `--green-progress` and `--cobalt` are the defined, theme-aware tokens
+       * for these roles: white on cobalt is 8.44:1, white on #2C601A is 7.51:1,
+       * and in dark `--on-accent` (#141413) sits on the lifted pair. */
+      ".cb-opp-t.p0{background:var(--cpl-green,var(--green-progress));color:var(--on-accent,#fff);border-color:transparent;}",
+      ".cb-opp-t.p1{background:var(--brand,var(--cobalt));color:var(--on-accent,#fff);border-color:transparent;}",
+      ".cb-opp-fit{font-size:.72rem;padding:2px 8px;border-radius:4px;white-space:nowrap;border:1px solid var(--border-strong);color:var(--text-body);}",
+      ".cb-opp-soc{font-size:.72rem;color:var(--text-muted);white-space:nowrap;}",
+      ".cb-opp-b{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px 18px;}",
+      ".cb-opp-b .lbl{font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);font-weight:700;margin:0 0 5px;}",
+      ".cb-opp-b .lbl:not(:first-child){margin-top:11px;}",
+      ".cb-chip{display:inline-block;font-size:.76rem;padding:2px 8px;margin:0 4px 4px 0;border-radius:4px;background:var(--surface-subtle);border:1px solid var(--border);color:var(--text-body);}",
+      ".cb-chip.ex{background:var(--brand-soft,var(--surface-subtle));}",
+      ".cb-opp-none{font-size:.8rem;color:var(--text-muted);font-style:italic;}",
+      /* ── The CER heading over its credit recommendations (Sam, 2026-09-17) ──
+       * The exhibit name leads and the credit it grants hangs under it, so a
+       * reader takes in "which credential" before "how much credit on which
+       * course". The rule down the left is what ties the list to its heading
+       * once two exhibits sit next to each other. */
+      ".cb-cer{margin:0 0 9px;padding-left:9px;border-left:2px solid var(--border-strong);}",
+      ".cb-cer:last-child{margin-bottom:0;}",
+      ".cb-cer-n{margin:0 0 3px;font-size:.8rem;font-weight:700;color:var(--text-strong);line-height:1.35;}",
+      ".cb-recs{list-style:none;margin:0;padding:0;font-size:.76rem;color:var(--text-body);}",
+      ".cb-recs li{margin:0 0 2px;line-height:1.4;}",
+      ".cb-recs b{font-weight:700;color:var(--text-strong);}",
+      /* Word badges, never marks. The border carries the distinction as well as
+       * the fill does, so neither reads by color alone. */
+      ".cb-tag{display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.04em;",
+      "padding:1px 6px;margin-left:6px;border-radius:3px;white-space:nowrap;vertical-align:1px;",
+      "border:1px solid var(--border-strong);background:var(--surface-subtle);color:var(--text-body);}",
+      /* ⚠ NO TINTED GROUND UNDER THE STATEWIDE BADGE. `--brand-soft` is the
+       * cobalt at .22 alpha, so in dark it lifts the ground TOWARD the text
+       * color it sits under: #7DA1D4 on that composite measures 4.34:1, under
+       * AA. On the plain subtle ground it is 5.62:1. The badge reads by its
+       * color and its border, and it carries the word "Statewide" besides. */
+      ".cb-tag.sw{border-color:var(--brand,var(--cobalt));color:var(--brand,var(--cobalt));}",
+      ".cb-tag.on{border-color:var(--cpl-green,var(--green-progress));color:var(--cpl-green,var(--green-progress));}",
+      /* The CIP Sector control. `flex-shrink` on the select lets a long family
+       * name truncate rather than push the search box off the row. */
+      ".cb-opp-cip{display:inline-flex;align-items:center;gap:7px;font-size:.78rem;color:var(--text-muted);}",
+      ".cb-opp-cip>span{font-weight:700;white-space:nowrap;}",
+      ".cb-opp-cipsel{font:inherit;font-size:.78rem;max-width:min(320px,52vw);padding:5px 8px;",
+      "border:1px solid var(--border-strong);border-radius:6px;background:var(--surface);color:var(--text,var(--text-strong));}",
+      ".cb-opp-cipsel:focus-visible{outline:2px solid var(--focus-ring,var(--cobalt));outline-offset:1px;}",
+      ".cb-opp-ev{font-size:.78rem;color:var(--text-body);margin:0;}",
+      ".cb-opp-empty{padding:14px;text-align:center;color:var(--text-muted);font-size:.85rem;}",
+      "@media (max-width:560px){.cb-opp-b{grid-template-columns:1fr;}.cb-opp-count{margin-left:0;flex-basis:100%;}}"
     ].join("\n");
     document.head.appendChild(s);
   }
 
+  /* ── The occupation opportunity register ────────────────────────────────
+   * "Which of the occupations this region trains for could this college
+   * already give credit for?" — the regional crosswalk, rendered per college so
+   * a facilitator can flip between them live.
+   *
+   * ⚠ THESE ROWS ARE MATCHED, NOT RULED, AND THE DIFFERENCE DOES NOT SHOW.
+   * The curated lane (kb/delta_offering_map.json) carries a human ruling and a
+   * written rationale per occupation; this data carries a token match scored at
+   * precision 0.907 / recall 0.51. A matched row and a ruled row paint
+   * identically, which is exactly how a reader comes to trust the wrong one —
+   * so the caveat sits ABOVE the register rather than under it, and the token
+   * the match turned on is printed on every row. Nothing here is a finding
+   * until a person confirms it.
+   *
+   * ⚠ ABSENCE IS NOT A FINDING EITHER. Recall is about half, so an occupation
+   * missing from this list is unconfirmed rather than absent — which is why the
+   * unmatched occupations are named rather than merely counted. The person in
+   * the room is the one who can add what the matcher could not reach. */
+  var OPP_FITS = { confirmed: "Confirmed", partial: "Partial", none: "No program match" };
+  /* ⚠ THE TIERS ARE FILTERED BY WORD, NEVER BY NUMBER (Sam, 2026-09-17): "Add a
+   * CIP Sector filter rather than the numbered P chips". A chip reading "P1 42"
+   * makes the reader learn a code to use a control, which is the plain-words
+   * rule, and the Delta page he called the good prototype already filters by
+   * "Adopt now" and "Build first-in-state". The tier PILL on each card keeps its
+   * code — it is a compact marker with the full sentence in its title, and the
+   * legend sits in the card — but nothing the reader must click is a number.
+   * The full sentence per tier still travels in `meta.priority_labels`. */
+  var OPP_TIERS = [
+    { key: "P1", word: "Adopt now" },
+    { key: "P0", word: "Already yours" },
+    { key: "P2", word: "Build first-in-state" },
+    { key: "P3", word: "Check the fit" },
+    { key: "P4", word: "Build later" }
+  ];
+  // cip_crosswalk.js's own wording for a program with no CIP. Matched on
+  // purpose: the same absence should read the same in both places.
+  var OPP_NO_CIP = "No CIP assigned yet";
+
+  function oppsFor() {
+    if (!state.opps || !state.college) return null;
+    return state.opps.colleges[state.college] || null;
+  }
+
+  /* PURE, and ⚠ NEVER EMPTY IN ANY STATE. sec() drops the value span entirely
+   * when this returns "", and a closed drawer with a bare title reads as broken
+   * rather than as collapsed — the reader has to open it to find out there was
+   * nothing to see. This section has five states where most have two, which is
+   * why it is a separate function with its own assertions rather than an inline
+   * expression. college_briefing.test.js (P) pins the rendered no-college case;
+   * the register's own test walks all five. */
+  function oppsSummaryFor(opps, college, oppsState) {
+    if (!college) return esc("pick a college");
+    if (oppsState === "loading") return esc("loading");
+    if (oppsState === "error") return esc("unavailable");
+    var d = opps && opps.colleges ? opps.colleges[college] : null;
+    // "idle" means the drawer has never been opened, so the register has not
+    // been fetched — distinct from "fetched, and this college is outside it".
+    if (!d) return esc(oppsState === "ready" ? "not in this set" : "open to load");
+    var n = {};
+    d.rows.forEach(function (r) { n[r.priority] = (n[r.priority] || 0) + 1; });
+    // The summary names the two tiers a meeting acts on. The rest are in the
+    // section; a closed drawer should answer "is there anything here for me?".
+    return esc(((n.P0 || 0) + (n.P1 || 0)) + " to adopt now, " + (n.P2 || 0) + " to build first-in-state");
+  }
+
+  function oppsSummary() {
+    return oppsSummaryFor(state.opps, state.college, state.oppsState);
+  }
+
+  function oppChips(list, cls) {
+    if (!list || !list.length) return '<span class="cb-opp-none">None recorded</span>';
+    return list.map(function (t) {
+      return '<span class="cb-chip' + (cls ? " " + cls : "") + '">' + esc(t) + "</span>";
+    }).join("");
+  }
+
+  /* ⚠ THE CER IS A HEADING OVER ITS CREDIT RECOMMENDATIONS, NOT A CHIP BESIDE
+   * THEM (Sam, 2026-09-17): "Need to list the MAP exhibit CER names above any of
+   * the aligned credit recommendations and note any that are Statewide
+   * exhibits/CRs". The flat `exhibits` list said only THAT an exhibit matched;
+   * a college in the room needs to see WHAT credit it grants and on which
+   * course, and whether the exhibit is one every college can use.
+   *
+   * ⚠ FALLS BACK TO THE FLAT LIST. `exhibit_detail` arrived on 2026-09-17 and a
+   * data file emitted before it carries only `exhibits` — rendering nothing
+   * there would report "no credit recommendations" about an occupation that has
+   * them, which is the worst of the three outcomes. */
+  function cerBlock(r) {
+    var xd = r.exhibit_detail;
+    if (!xd || !xd.length) {
+      return (r.exhibits && r.exhibits.length)
+        ? oppChips(r.exhibits, "ex")
+        : '<span class="cb-opp-none">None recorded</span>';
+    }
+    return xd.map(function (x) {
+      var h = '<div class="cb-cer"><p class="cb-cer-n">' + esc(x.cer || "");
+      // Words, not marks. "Statewide" is the one a consortium asks about first:
+      // an exhibit any college may adopt, against one that a single college
+      // built for itself.
+      if (x.statewide) h += '<span class="cb-tag sw">Statewide</span>';
+      if (x.adopted) h += '<span class="cb-tag on">Already on it</span>';
+      h += "</p>";
+      var recs = x.recs || [];
+      if (!recs.length) {
+        h += '<p class="cb-opp-none">No credit recommendation recorded on this exhibit.</p>';
+      } else {
+        h += '<ul class="cb-recs">' + recs.map(function (c) {
+          return "<li><b>" + esc(c.course || "") + "</b>"
+            + (c.credit ? " — " + esc(c.credit) : "") + "</li>";
+        }).join("") + "</ul>";
+      }
+      return h + "</div>";
+    }).join("");
+  }
+
+  function oppRow(r, labels) {
+    var tier = String(r.priority || "").toLowerCase();
+    labels = labels || {};
+    var secs = r.cip_sectors || [];
+    // Everything the search box matches on, lowercased once at build time so
+    // filtering is a substring test rather than a walk of the DOM. The credit
+    // recommendations are in here too: a coordinator searches for the course
+    // they already teach, and before this they could not reach it.
+    var q = [r.occupation, r.soc, r.program_evidence]
+      .concat(r.programs || [], r.courses || [], r.exhibits || [],
+              (r.exhibit_detail || []).reduce(function (a, x) {
+                return a.concat([x.cer]).concat((x.recs || []).map(function (c) {
+                  return (c.course || "") + " " + (c.credit || "");
+                }));
+              }, []))
+      .filter(Boolean).join(" ").toLowerCase();
+    /* `data-cip` is the filter's whole mechanism: a space-delimited set of
+     * 2-digit sectors, or "none" when the matched programs carry no CIP. The
+     * sentinel is deliberate — an empty attribute would be indistinguishable
+     * from a row the filter should skip, and "no CIP" is a real answer a reader
+     * picks on purpose. */
+    var h = '<article class="cb-opp" data-tier="' + esc(r.priority || "")
+      + '" data-cip="' + esc(secs.length ? secs.join(" ") : "none")
+      + '" data-q="' + esc(q) + '">'
+      + '<div class="cb-opp-h">'
+      + '<span class="cb-opp-t ' + esc(tier) + '" title="' + esc(labels[r.priority] || "") + '">'
+      + esc(r.priority || "") + "</span>"
+      + "<h4>" + esc(r.occupation || "") + "</h4>"
+      + (r.soc ? '<span class="cb-opp-soc">SOC ' + esc(r.soc) + "</span>" : "")
+      + '<span class="cb-opp-fit">' + esc(OPP_FITS[r.fit] || r.fit || "") + "</span>"
+      + "</div><div class=\"cb-opp-b\">";
+    h += '<div><p class="lbl">Programs</p>' + oppChips(r.programs)
+      + '<p class="lbl">Courses that carry the content</p>' + oppChips(r.courses) + "</div>";
+    h += '<div><p class="lbl">MAP exhibits and what they grant</p>' + cerBlock(r)
+      + '<p class="lbl">What this tier means</p><p class="cb-opp-ev">'
+      + esc(labels[r.priority] || "") + "</p></div>";
+    h += '<div><p class="lbl">Why this occupation matched</p><p class="cb-opp-ev">'
+      + (r.program_evidence
+          ? "Matched on <b>" + esc(r.program_evidence) + "</b> in this college's own catalog. Confirm before acting."
+          : "No matching term recorded.")
+      + "</p>"
+      + (r.education ? '<p class="lbl">Typical entry education</p><p class="cb-opp-ev">'
+          + esc(r.education) + "</p>" : "")
+      + "</div>";
+    return h + "</div></article>";
+  }
+
+  /* One collapsed drawer of occupation names. Returns "" for an empty list, so
+   * a college with nothing in a bucket gets no drawer rather than an open
+   * question with no answer under it. */
+  function oppDrawer(list, summary, note) {
+    if (!list || !list.length) return "";
+    return '<details class="cb-strat"><summary>' + list.length + " " + esc(summary)
+      + "</summary>" + '<p class="cb-opp-ev" style="margin-top:8px">' + esc(note) + "</p>"
+      + '<div style="margin-top:8px">' + oppChips(list) + "</div></details>";
+  }
+
+  /* PURE — every input explicit, so the states below can be asserted without
+   * standing up a college selection and a Supabase read. `oppsBody()` is the
+   * thin wrapper that reads them off `state`. */
+  function oppsBodyFor(opps, college, oppsState, filter, cip) {
+    filter = filter || [];
+    cip = cip || "";
+    if (!college) {
+      return '<div class="cb-opp-empty">Pick a college above to see what it could already give credit for.</div>';
+    }
+    if (oppsState === "idle" || oppsState === "loading") {
+      return '<div class="cb-opp-empty">Loading the occupation register…</div>';
+    }
+    if (oppsState === "error" || !opps) {
+      return '<div class="cb-opp-empty">The occupation register could not be loaded. '
+        + "Everything else on this page is unaffected.</div>";
+    }
+    var meta = opps.meta || {}, d = (opps.colleges || {})[college] || null;
+    /* ⚠ "NOT IN THIS SET" IS NOT "NOTHING TO ADOPT". The register covers one
+     * region; a college outside it has been measured against nothing, and
+     * rendering that as an empty list would read as a finding about the college.
+     * Same failure family the rest of this tab guards: a read we did not make is
+     * never a zero. */
+    if (!d) {
+      return '<div class="cb-opp-empty">' + esc(college) + " is not in "
+        + esc(meta.region || "this region") + "'s occupation set, so there is nothing to show here yet. "
+        + "The register currently covers " + esc(String((meta.colleges || []).length))
+        + " colleges.</div>";
+    }
+    var acc = meta.accuracy || {};
+    var h = '<div class="cb-note"><b>' + esc(acc.precision || "About nine in ten")
+      + " of the rows below hold up, and the list finds " + esc(acc.recall || "roughly half")
+      + " of what a reviewer finds.</b> Checked against "
+      + esc(String(acc.rulings || 139)) + " occupations reviewed by hand at "
+      + esc(acc.scored_at || "one college") + ". Read a row as a candidate and a gap as unconfirmed — "
+      + "faculty confirm every match before a college acts on it."
+      /* ⚠ SAY WHEN THE SCORE TRAVELLED. The figures were measured at one college
+       * against ITS region's occupation list; a register for a different region
+       * is a different mix of work, so the same matcher can perform differently
+       * on it. Derived from the data rather than written in: the scoring college
+       * is outside this register exactly when the register does not list it, so
+       * the sentence appears on a Bay page and disappears on a Central Valley
+       * one with no edit. Quoting a transferred score in silence is the failure
+       * this guards. */
+      + (acc.scored_at && (meta.colleges || []).indexOf(acc.scored_at) === -1
+          ? " That measurement comes from a college outside " + esc(meta.region || "this region")
+            + ". Occupation mixes differ by region, so read the figures here as indicative."
+          : "")
+      + "</div>";
+
+    var counts = {}, cipCounts = {};
+    d.rows.forEach(function (r) {
+      counts[r.priority] = (counts[r.priority] || 0) + 1;
+      var secs = r.cip_sectors && r.cip_sectors.length ? r.cip_sectors : ["none"];
+      secs.forEach(function (c) { cipCounts[c] = (cipCounts[c] || 0) + 1; });
+    });
+    h += '<div class="cb-opp-tools">';
+    h += '<button type="button" class="cb-opp-f" data-tier="" aria-pressed="'
+      + (filter.length ? "false" : "true") + '">All ' + d.rows.length + "</button>";
+    OPP_TIERS.forEach(function (t) {
+      if (!counts[t.key]) return;
+      h += '<button type="button" class="cb-opp-f" data-tier="' + t.key + '" aria-pressed="'
+        + (filter.indexOf(t.key) >= 0 ? "true" : "false") + '">'
+        + esc(t.word) + " " + counts[t.key] + "</button>";
+    });
+
+    /* ⚠ A SELECT, NOT CHIPS. Eighteen sectors with names as long as
+     * "Agricultural/Animal/Plant/Veterinary Science and Related Fields" is a
+     * second full row of controls above the content — and a chip row that wraps
+     * to three lines is the thing the tier chips were just trimmed for.
+     * ⚠ ONLY THE SECTORS PRESENT, each with its count: a control offering a
+     * choice that yields nothing is how a reader concludes the page is broken.
+     * The labels are baked into the data file so this tab need not pull the
+     * 277 KB CIP crosswalk to name fifty families. */
+    var cipKeys = Object.keys(cipCounts).filter(function (c) { return c !== "none"; }).sort();
+    if (cipKeys.length) {
+      var lbl = meta.cip_sector_labels || {};
+      h += '<label class="cb-opp-cip"><span>CIP Sector</span>'
+        + '<select class="cb-opp-cipsel" aria-label="Narrow this register to one CIP Sector">'
+        + '<option value=""' + (cip ? "" : " selected") + ">Every sector ("
+        + d.rows.length + ")</option>";
+      cipKeys.forEach(function (c) {
+        h += '<option value="' + esc(c) + '"' + (cip === c ? " selected" : "") + ">"
+          + esc(c + " — " + (lbl[c] || ("CIP sector " + c))) + " (" + cipCounts[c] + ")</option>";
+      });
+      if (cipCounts.none) {
+        h += '<option value="none"' + (cip === "none" ? " selected" : "") + ">"
+          + esc(OPP_NO_CIP) + " (" + cipCounts.none + ")</option>";
+      }
+      h += "</select></label>";
+    }
+
+    h += '<input type="search" class="cb-opp-q" placeholder="Search occupation, program, course or credit"'
+      + ' aria-label="Search this register">';
+    h += '<span class="cb-opp-count" role="status"></span></div>';
+
+    h += '<div class="cb-opp-list">' + d.rows.map(function (r) { return oppRow(r, meta.priority_labels); }).join("") + "</div>";
+
+    /* ⚠ WHAT IS NOT LISTED IS STILL NAMED, IN THREE DRAWERS.
+     * Sam, 2026-09-17: "No need to list items where the college has no aligned
+     * course or program" — so 80% of the rows leave the register. They stay
+     * reachable, and they stay SEPARATE, because they are three different facts
+     * and one heading would misreport two of them: a statewide credit
+     * recommendation the college does not teach toward, an exhibit the college
+     * has already adopted with no program found, and an occupation nothing in
+     * California covers. Collapsed into one "nothing here" they would read as a
+     * finding about the college, which is the failure this whole tab guards. */
+    h += oppDrawer(d.not_teaching,
+      "occupations with a credit recommendation this college does not teach toward",
+      "California holds a credit recommendation for each of these and this college's catalog "
+        + "shows no matching program. Recall is " + (acc.recall || "roughly half")
+        + ", so read each as a question for the room rather than a settled gap.");
+    h += oppDrawer(d.adopted_no_program,
+      "occupations this college is already on the exhibit for, with no program found",
+      "The matcher reached the exhibit and missed the program. Someone who knows this "
+        + "catalog can say in a moment which program belongs here, and that correction is "
+        + "worth more than the row would have been.");
+    h += oppDrawer(d.unmatched,
+      "occupations with no program and no credit recommendation found",
+      "Recall is " + (acc.recall || "roughly half") + ", so treat these as unconfirmed "
+        + "rather than settled. If this college teaches one of them, that is the matcher "
+        + "missing it, not the college lacking it.");
+    return h;
+  }
+
+  function oppsBody() {
+    return oppsBodyFor(state.opps, state.college, state.oppsState,
+      state.oppsFilter, state.oppsCip);
+  }
+
+  /* Filtering acts on the DOM, never through render(): a rewrite of innerHTML
+   * would drop the search box's focus and caret on every keystroke. */
+  function wireOpps(root) {
+    var list = root.querySelector(".cb-opp-list");
+    if (!list) return;
+    var box = root.querySelector(".cb-opp-q");
+    var out = root.querySelector(".cb-opp-count");
+    var rows = Array.prototype.slice.call(list.querySelectorAll(".cb-opp"));
+
+    var cipSel = root.querySelector(".cb-opp-cipsel");
+
+    function apply() {
+      var q = (box && box.value || "").trim().toLowerCase();
+      var tiers = state.oppsFilter, cip = state.oppsCip, shown = 0;
+      rows.forEach(function (el) {
+        var okT = !tiers.length || tiers.indexOf(el.getAttribute("data-tier")) >= 0;
+        /* ⚠ PAD BOTH SIDES BEFORE THE SUBSTRING TEST. `data-cip` is a
+         * space-delimited SET ("46 47"), so a bare indexOf("4") would match
+         * every sector beginning with 4 and a bare indexOf("11") would match
+         * "11" inside a longer run. The padding makes it a token test. */
+        var okC = !cip
+          || (" " + (el.getAttribute("data-cip") || "") + " ").indexOf(" " + cip + " ") >= 0;
+        var okQ = !q || (el.getAttribute("data-q") || "").indexOf(q) >= 0;
+        var ok = okT && okC && okQ;
+        el.hidden = !ok;
+        if (ok) shown++;
+      });
+      if (out) out.textContent = shown === rows.length
+        ? rows.length + " occupations"
+        : shown + " of " + rows.length + " occupations";
+    }
+
+    if (cipSel) cipSel.onchange = function () {
+      state.oppsCip = cipSel.value || "";
+      apply();
+    };
+
+    Array.prototype.forEach.call(root.querySelectorAll(".cb-opp-f"), function (b) {
+      b.onclick = function () {
+        var t = b.getAttribute("data-tier");
+        if (!t) state.oppsFilter = [];
+        else {
+          var i = state.oppsFilter.indexOf(t);
+          if (i >= 0) state.oppsFilter.splice(i, 1); else state.oppsFilter.push(t);
+        }
+        Array.prototype.forEach.call(root.querySelectorAll(".cb-opp-f"), function (o) {
+          var ot = o.getAttribute("data-tier");
+          o.setAttribute("aria-pressed",
+            (ot ? state.oppsFilter.indexOf(ot) >= 0 : !state.oppsFilter.length) ? "true" : "false");
+        });
+        apply();
+      };
+    });
+    if (box) box.oninput = apply;
+    apply();
+  }
+
   /* ── Render ──────────────────────────────────────────────────────────── */
+
+  /* ⚠ THE PANE'S LOADING PLACEHOLDER IS AN INLINE STYLE, AND INLINE BEATS US.
+   * Both mirrored HTMLs ship `#college-briefing-root` with a dashed border, a
+   * tinted background, 28px of padding and `text-align:center` — correct for
+   * "Loading College Briefing…", and still applied to everything rendered on
+   * top of it. Inline styles out-rank any selector, so `#college-briefing-root
+   * {text-align:left}` in ensureCss() never won.
+   *
+   * ⭐ THAT IS WHY THE PROSE LOOKED CENTERED INSIDE A LEFT-ALIGNED PAGE (Sam,
+   * 2026-08-21: "narrow paragraphs together with full width content… looks
+   * awkward"). Every paragraph with a measure cap — the welcome line, Sierra's
+   * own description — rendered its text CENTERED inside a left-anchored box, so
+   * it read as a ragged column floating in the middle of a wide tab. The cap
+   * was never the problem; the inheritance was.
+   *
+   * Cleared here rather than in the HTML because the placeholder still has a
+   * job before this module loads, and because clearing it in JS is one edit
+   * instead of two mirrored ones (Rule 4). Idempotent, and only ever removes
+   * the four properties the placeholder sets. */
+  function shedPlaceholder(root) {
+    if (!root || !root.style || root.getAttribute("data-cb-shed") === "1") return;
+    ["border", "background", "color", "padding", "textAlign"].forEach(function (k) {
+      try { root.style[k] = ""; } catch (e) { /* jsdom-safe */ }
+    });
+    root.setAttribute("data-cb-shed", "1");
+  }
+
 
   /* One collapsible detail section. Sam, 2026-08-12: Sierra AI is the tab and
    * everything under her opens on demand — "a minimal initial view with nested
@@ -497,6 +1341,207 @@
    *
    * Returns "" for an empty body, so a section with nothing to show never
    * renders as a drawer that opens onto blankness. */
+  /* ── Step 1: who are you here as? ─────────────────────────────────────────
+   * PURE. No main title above it (Sam, 2026-08-17) — the question IS the page
+   * until it is answered, and a title over a single question is furniture.
+   * A scope with no data renders DISABLED WITH ITS REASON rather than being
+   * hidden: an option that silently is not there reads as "we never thought of
+   * that", where a disabled one with a sentence reads as "known, not yet wired"
+   * — which is the truth, and it is also how the next person knows to ask. */
+  function scopePicker() {
+    // The shortcut the old auto-restore used to take on the reader's behalf.
+    // Named, so nobody lands on a college without having read its name.
+    var last = rememberedLabel();
+    var resume = last
+      ? '<div class="cb-scope-again"><button type="button" class="cb-act" data-scope-resume="1">'
+        + "Open " + esc(last) + " again</button>"
+        + '<span class="cb-scope-again-l">what you looked at last time</span></div>'
+      : "";
+    return '<div class="cb-scope" role="group" aria-label="Choose your view">'
+      + '<h2 class="cb-scope-q">What would you like to look at?</h2>'
+      + resume
+      + '<div class="cb-scope-opts">'
+      + SCOPES.map(function (s) {
+          if (!s.ready) {
+            return '<button type="button" class="cb-scope-b" disabled aria-disabled="true" title="'
+              + esc(s.why) + '"><span class="cb-scope-l">' + esc(s.label) + "</span>"
+              + '<span class="cb-scope-soon">Not yet available</span></button>';
+          }
+          return '<button type="button" class="cb-scope-b" data-scope="' + esc(s.k) + '">'
+            + '<span class="cb-scope-l">' + esc(s.label) + "</span></button>";
+        }).join("")
+      + "</div>"
+      + '<p class="cb-scope-note">Two regional views are not wired up yet — the groupings live on the MAP '
+      + "Dashboard but are not in an export we hold. Hover either one to see what it needs.</p>"
+      + "</div>";
+  }
+
+  /* ── Step 2: the list curated from that answer ────────────────────────────
+   * One list, not two dropdowns. Which list depends entirely on step 1, which
+   * is the point: a district office should never scroll 120 colleges to find
+   * its district, and a college should never meet a district picker it does not
+   * need. */
+  function entityPicker(names, dIdx) {
+    var scope = state.scope;
+    var back = '<button type="button" class="cb-back" data-scope-clear="1">Change view</button>';
+    if (scope === "district") {
+      var districts = dIdx ? Object.keys(dIdx).sort() : [];
+      if (!districts.length) {
+        return '<div class="cb-scope">' + back
+          + '<h2 class="cb-scope-q">Choose your district</h2>'
+          + '<p class="cb-note">'
+          + (state.roster === "loading" ? "Loading the district list…"
+             : "The district list could not be read, so there is nothing to choose from. "
+               + "That is a failed read, not an empty system — try again, or pick a college instead.")
+          + "</p></div>";
+      }
+      return '<div class="cb-scope">' + back
+        + '<h2 class="cb-scope-q">Choose your district</h2>'
+        + '<div class="cb-ent">'
+        + districts.map(function (d) {
+            return '<button type="button" class="cb-ent-b" data-district="' + esc(d) + '">'
+              + esc(d.replace(/ Community College District$/, " CCD"))
+              + '<span class="cb-ent-n">' + dIdx[d].length + " colleges</span></button>";
+          }).join("")
+        + "</div></div>";
+    }
+    if (scope === "swp") {
+      var R = state.swpData && state.swpData.regions;
+      var codes = R ? Object.keys(R).sort(function (a, b) {
+        return R[a].name.localeCompare(R[b].name);
+      }) : [];
+      if (!codes.length) {
+        return '<div class="cb-scope">' + back
+          + '<h2 class="cb-scope-q">Choose your Strong Workforce region</h2>'
+          + '<p class="cb-note">'
+          + (state.swp === "loading" ? "Loading the consortium list…"
+             : "The consortium list could not be read, so there is nothing to choose from. "
+               + "That is a failed read, not an empty system — try again, or pick a college instead.")
+          + "</p></div>";
+      }
+      return '<div class="cb-scope">' + back
+        + '<h2 class="cb-scope-q">Choose your Strong Workforce region</h2>'
+        + '<div class="cb-ent">'
+        + codes.map(function (c) {
+            return '<button type="button" class="cb-ent-b" data-swp="' + esc(c) + '">'
+              + esc(R[c].name)
+              + '<span class="cb-ent-n">' + R[c].colleges.length + " colleges</span></button>";
+          }).join("")
+        + "</div></div>";
+    }
+    // College. 120 of them, so this is a SELECT with optional narrowing rather
+    // than 120 buttons — a curated list is one you can get through, and a wall
+    // of buttons is not.
+    // ⚠ TWO NARROWINGS, AND THEY INTERSECT. District and consortium are
+    // different groupings of the same colleges, so applying both is meaningful
+    // (a district inside a region) and applying either alone is the common
+    // case. The consortium one exists because a facilitator running a regional
+    // meeting flips between that region's colleges, and picking them out of 120
+    // by name is the thing she should not have to do.
+    var shown = names;
+    if (state.district && dIdx && dIdx[state.district]) shown = dIdx[state.district];
+    if (state.swpRegion) {
+      var inRegion = swpColleges(state.swpRegion);
+      shown = shown.filter(function (n) { return inRegion.indexOf(n) >= 0; });
+    }
+    var districts2 = dIdx ? Object.keys(dIdx).sort() : [];
+    var h = '<div class="cb-scope">' + back + '<h2 class="cb-scope-q">Choose your college</h2><div class="cb-bar cb-bar-pick">';
+    if (districts2.length) {
+      h += '<div><label for="cb-district">Narrow by district (optional)</label><select id="cb-district">'
+        + '<option value="">All districts (' + names.length + " colleges)</option>"
+        + districts2.map(function (d) {
+            return '<option value="' + esc(d) + '"' + (d === state.district ? " selected" : "") + ">"
+              + esc(d.replace(/ Community College District$/, " CCD")) + " (" + dIdx[d].length + ")</option>";
+          }).join("")
+        + "</select></div>";
+    }
+    var RR = state.swpData && state.swpData.regions;
+    if (RR) {
+      var rcodes = Object.keys(RR).sort(function (a, b) {
+        return RR[a].name.localeCompare(RR[b].name);
+      });
+      h += '<div><label for="cb-swp">Narrow by Strong Workforce region (optional)</label>'
+        + '<select id="cb-swp">'
+        + '<option value="">All regions (' + names.length + " colleges)</option>"
+        + rcodes.map(function (c) {
+            return '<option value="' + esc(c) + '"' + (c === state.swpRegion ? " selected" : "") + ">"
+              + esc(RR[c].name) + " (" + RR[c].colleges.length + ")</option>";
+          }).join("")
+        + "</select></div>";
+    }
+    h += '<div><label for="cb-college">College</label><select id="cb-college">'
+      + '<option value="">Choose a college…</option>'
+      + shown.map(function (n) {
+          return '<option value="' + esc(n) + '"' + (n === state.college ? " selected" : "") + ">" + esc(n) + "</option>";
+        }).join("")
+      + "</select></div></div></div>";
+    return h;
+  }
+
+  /* PURE. What the tab is currently showing, as a name. Used for the welcome
+   * title, the report, and Sierra's context. Statewide has no entity — it is
+   * named rather than left blank, because "Welcome" with nothing after it is
+   * the shape of a bug. */
+  function scopeLabel() {
+    if (state.scope === "college") return state.college || null;
+    if (state.scope === "district") return state.district || null;
+    if (state.scope === "swp") {
+      // The consortium's own name, never its code — "Bay Area", never "Bay",
+      // and never "IE/D" in a heading someone reads aloud in a meeting.
+      return state.swpRegion ? swpName(state.swpRegion) : null;
+    }
+    if (state.scope === "statewide") return "California Community Colleges";
+    return null;
+  }
+  function scopeReady() {
+    if (!state.scope) return false;
+    if (!scopeNeedsEntity(state.scope)) return true;
+    if (state.scope === "college") return !!state.college;
+    if (state.scope === "swp") return !!state.swpRegion;
+    return !!state.district;
+  }
+
+  /* ── Step 3: the header once a choice is made ─────────────────────────────
+   * Sam: the title arrives AFTER the choice. It is a NAME AND ITS CONTROLS and
+   * nothing else — no prose. The one sentence it used to carry was struck on
+   * 2026-08-21 for describing the assistant that describes itself directly
+   * below; see the note where it used to be. */
+  function welcomeHead() {
+    var name = scopeLabel();
+    if (!name) return "";
+    var title = state.scope === "statewide" ? "Statewide CPL view" : "Welcome, " + name;
+    return '<div class="cb-welcome">'
+      + '<div class="cb-welcome-row">'
+      + '<h2 class="cb-welcome-t">' + esc(title) + "</h2>"
+      + '<div class="cb-welcome-acts">'
+      + '<button type="button" class="cb-act" id="cb-report">Create a briefing</button>'
+      // Two ways back, because they are different journeys. Switching college is
+      // the common one and must not cost a trip through "who are you" — that
+      // question is answered once. "Change view" is the rarer, deliberate one.
+      + (scopeNeedsEntity(state.scope)
+          ? '<button type="button" class="cb-back" data-entity-clear="1">Choose another '
+            + (state.scope === "district" ? "district" : "college") + "</button>"
+          : "")
+      + '<button type="button" class="cb-back" data-scope-clear="1">Change view</button>'
+      + "</div></div>"
+      /* ⚠ THERE WAS A SENTENCE HERE AND IT SAID WHAT SIERRA ALREADY SAYS
+       * (struck 2026-08-21, Sam: "Strike 'Ask Sierra anything about…' It's
+       * redundant with the text under the Sierra AI logo"). It read "Ask Sierra
+       * anything about CPL at this college, or open a section below for the
+       * detail behind it." — three lines above a box whose own first line is
+       * "Ask her anything about credit for prior learning."
+       *
+       * This is #1231's duplicate-description problem for the third time: the
+       * tab printed a heading + description, the widget printed its own, #1231
+       * removed the tab's copy, and this paragraph grew back one level up. Do
+       * not reintroduce a description of Sierra here. If the header needs to
+       * point somewhere, point at something Sierra is NOT — and prefer a
+       * control to a sentence about one. */
+      + '<div class="cb-allctl"><button type="button" class="cb-act cb-act-q" data-all="open">Expand all</button>'
+      + '<button type="button" class="cb-act cb-act-q" data-all="close">Collapse all</button></div>'
+      + "</div>";
+  }
+
   function sec(id, title, summary, body) {
     if (!body) return "";
     return '<details class="cb-sec" data-sec="' + esc(id) + '"' + (state.open[id] ? " open" : "") + ">"
@@ -509,8 +1554,8 @@
   /* The team's strategies for ONE funding priority, nested inside that
    * priority's row. Sam, 2026-08-12: as a flat list of 22 they "look like a
    * long list of intimidating to-dos" — 19 of which carried a bare "not
-   * measured here" flag. Attached to the money they earn, in groups of six to
-   * ten, they read as what they are: the team's suggestions for this pool.
+   * measured here" flag. Attached to the funding they count toward, in groups of
+   * six to ten, they read as what they are: the team's suggestions for this priority.
    *
    * The "not measured here" flag is dropped in this view. It was honest and
    * it was noise: a reader opening a priority wants the advice, and a row of
@@ -521,11 +1566,14 @@
    * attaching priority 1's steps to priority 3's cap would be silent and
    * wrong in a way a reader would act on — so the join is worth stating.
    *
-   * POSITION IS THE JOIN, and it holds by construction: cpl_funding.js's
-   * priorities(slot) walks year_priorities[slot] as an ordered list and
-   * overlays the Supabase config BY THE SAME INDEX (prioField(slot, i, …)),
-   * while collectPrograms() here sorts that config's own numeric keys. Both
-   * are `i` over one ordered set. So the gate is COUNT EQUALITY.
+   * IDENTITY IS THE JOIN (2026-08-20). It used to be POSITION, which held by
+   * construction while both sides walked one ordered set — but the curator can
+   * now drag the priority cards into their own order, and a reordered pair
+   * still holds three entries on each side, so a count gate cannot see it.
+   * Each funding priority carries `src`, its index in the stored config, and
+   * each program priority carries `key`, the same index; they join exactly, in
+   * any display order. Count equality stays as the outer gate, and the
+   * fallback to position keeps a funding module that predates `src` working.
    *
    * ⚠ It is deliberately NOT metric equality, which looks stricter and is
    * worse: the funding module loads its Supabase overlay asynchronously, so
@@ -538,7 +1586,47 @@
    * which is where a structural change should fail. */
   function prioritiesAlign(prios, program) {
     if (!prios || !program || !program.priorities) return false;
-    return !!prios.length && prios.length === program.priorities.length;
+    var counted = prios.filter(function (p) { return !unlistedAndUnfunded(p, program); });
+    if (!counted.length || counted.length !== program.priorities.length) return false;
+    // A reorder makes POSITION the wrong join (both lists still hold three
+    // entries, so the count gate cannot see it). Where the funding module
+    // reports a source index, every priority must resolve through it.
+    var withSrc = counted.filter(function (p) { return p && p.src != null; });
+    if (!withSrc.length) return true;
+    return withSrc.length === counted.length && withSrc.every(function (p) {
+      return !!programPriorityFor(program, p, -1);
+    });
+  }
+
+  /* PURE. A funding priority the stored config does not list and that holds
+   * no share — Priority 4, career attainment, from 2026-09-22 until a curator
+   * edits it. The model carries it from its baked defaults, so it has no steps
+   * to nest and no funding to misattach: it stays out of the count gate above,
+   * and out of the funding box, until it is given a share or a config entry.
+   * Counting it would have sent every college's steps to the standalone list
+   * the day a fourth card appeared. */
+  function unlistedAndUnfunded(p, program) {
+    if (!p || p.src == null || (Number(p.share) || 0) > 0) return false;
+    var listed = program && program.priorities && program.priorities.some(function (pp) {
+      return String(pp.key) === String(p.src);
+    });
+    return !listed;
+  }
+
+  /* PURE. The program priority that belongs to THIS funding priority.
+   * IDENTITY FIRST: `p.src` is the funding module's source index and `key` is
+   * the same index as the config stores it, so they join exactly whatever
+   * order the cards are shown in. Position is the fallback for a funding
+   * module that predates `src`. */
+  function programPriorityFor(program, p, i) {
+    if (!program || !program.priorities) return null;
+    if (p && p.src != null) {
+      for (var j = 0; j < program.priorities.length; j++) {
+        if (String(program.priorities[j].key) === String(p.src)) return program.priorities[j];
+      }
+      return null;
+    }
+    return program.priorities[i] || null;
   }
 
   function stratHtml(items, label) {
@@ -590,6 +1678,7 @@
     if (id == null) { state.detail = null; state.detailFor = name; return Promise.resolve(); }
     state.detailLoading = true; state.detailError = null; state.detailFor = name;
     var h = authHeaders();
+    var SRC = sources();
     var q = encodeURIComponent('{"' + name.replace(/"/g, '\\"') + '"}');
     return Promise.all([
       jget(REST + "/map_credential_student_rollup?college_id=eq." + id
@@ -599,18 +1688,14 @@
          + "&select=unified_title,cpl_types,statewide", { headers: h }),
       jget(REST + "/chatbox_credentials?potential_colleges=cs." + q
          + "&select=unified_title,cpl_types,statewide,ccc_rec,adopter_colleges", { headers: h }),
-      jget(REST + "/map_college_goal2?college_id=eq." + id
+      jget(REST + "/" + SRC.goal2 + "?college_id=eq." + id
          + "&select=dest,rows_n,students,suppressed,reason", { headers: h }),
       // What the "already articulated, waiting" units actually CONSIST of.
       // Same filter as map_college_credit_summary.articulated_waiting
       // (kb/supabase_map_college_credit_summary.sql line 33) so the breakdown
       // sums to the headline exactly — a list that did not reconcile with the
       // number above it would be worse than no list.
-      jget(REST + "/map_college_cr_unit?college_id=eq." + id
-         + "&cpl_status_plan=eq." + encodeURIComponent("Needs Action")
-         + "&sum_articulated_credits=gt.0"
-         + "&select=credit_rec,college_course,course_type,sum_articulated_credits,distinct_students",
-         { headers: h })
+      jget(REST + "/" + SRC.waiting + "?college_id=eq." + id + SRC.waitingQuery, { headers: h })
     ]).then(function (r) {
       state.detail = { rollup: r[0] || [], adopted: r[1] || [], potential: r[2] || [],
                        goal2: r[3] || [], waiting: r[4] || [] };
@@ -624,7 +1709,7 @@
   /* PURE. Roll the per-college reads up per CPL type. Counts are FLOORS: only
    * ~4% of student rows carry a nameable credential, so `students` here is what
    * we can SEE, never a total. That is why `articulated` (from the curated
-   * catalogue, which is complete) and `students` (from the grain, which is not)
+   * catalog, which is complete) and `students` (from the grain, which is not)
    * are reported side by side rather than as one number. */
   function byCplType(detail) {
     if (!detail) return null;
@@ -742,14 +1827,38 @@
      * students on the systemwide dashboard, no credit rows — was being
      * congratulated on a finished queue. */
     if (!summary) return { unmeasured: true };
-    var rows = detail.waiting;
-    if (!rows.length) return { empty: true, total: 0, groups: [] };
-    var by = {}, total = 0, mil = 0;
+
+    /* ⚠ A REMAINDER ROW IS NOT A DATA GAP, AND IT MUST NOT BE GROUPED.
+     * The published mirror collapses every sub-threshold recommendation for a
+     * college into ONE row carrying their summed credits, no recommendation, no
+     * course and no headcount, with `withheld_recommendations` saying how many
+     * it stands for (never 1 — a remainder standing for one row IS that row).
+     * Fed through the grouping below it would land as "Not categorized" and
+     * "(no recommendation named in MAP)", which are this data's words for MAP
+     * being blank — a deliberate withholding rendered as somebody's oversight.
+     * So it comes out here and is reported as its own line.
+     *
+     * Its units stay IN the total, because the breakdown sits under the
+     * headline figure and a list that does not add up to the number above it is
+     * worse than no list. */
+    var all = detail.waiting || [];
+    var rows = [], withheldUnits = 0, withheldRecs = 0;
+    all.forEach(function (r) {
+      var n = Number(r.withheld_recommendations) || 0;
+      if (n > 0) {
+        withheldUnits += Number(r.sum_articulated_credits) || 0;
+        withheldRecs += n;
+        return;
+      }
+      rows.push(r);
+    });
+    if (!all.length) return { empty: true, total: 0, groups: [], withheld: null };
+    var by = {}, total = withheldUnits, mil = 0;
     rows.forEach(function (r) {
       var u = Number(r.sum_articulated_credits) || 0;
       if (u <= 0) return;
       total += u;
-      var ct = cleanText(r.course_type) || "Not categorised";
+      var ct = cleanText(r.course_type) || "Not categorized";
       if (ct.indexOf(MIL_PREFIX) === 0) mil += u;
       if (!by[ct]) by[ct] = { type: ct, label: COURSE_TYPE_LABEL[ct] || ct, units: 0, rows: 0, recs: {} };
       by[ct].units += u; by[ct].rows++;
@@ -758,7 +1867,7 @@
       var rec = cleanText(r.credit_rec) || "(no recommendation named in MAP)";
       by[ct].recs[rec] = (by[ct].recs[rec] || 0) + u;
     });
-    if (!total) return { empty: true, total: 0, groups: [] };
+    if (!total) return { empty: true, total: 0, groups: [], withheld: null };
     var groups = Object.keys(by).map(function (k) {
       var g = by[k];
       g.share = g.units / total;
@@ -767,7 +1876,14 @@
       delete g.recs;
       return g;
     }).sort(function (a, b) { return b.units - a.units; });
+    /* Group shares are of the FULL total, so they deliberately do not sum to 1
+     * when something is withheld — the withheld line accounts for the rest. A
+     * share renormalized over the visible rows would quietly report the withheld
+     * units as not existing. */
     return { suppressed: false, empty: false, total: total, groups: groups,
+             withheld: withheldRecs
+               ? { units: withheldUnits, recommendations: withheldRecs }
+               : null,
              militaryUnits: mil, militaryShare: mil / total };
   }
 
@@ -879,15 +1995,15 @@
    * Two appropriations, and they are not interchangeable:
    *   • the $50,000 ESS 25-82 seed grant — already distributed, Spring 2026
    *   • this college's share of the $35M implementation pool — an allocation
-   *     CAP earned against MAP performance, never a cheque in the post
+   *     CAP measured against MAP performance, never a check in the mail
    *
    * Both come from cpl_funding.js, which owns the model. NOTHING here
-   * re-derives a dollar figure. The allocation is a floor waterfall — every
-   * college below the $150K minimum-viable floor is pinned to it and the
-   * remainder re-splits across the rest, iteratively — with a guaranteed rural
-   * allowance layered on top. "headcount share x pool" reads perfectly
-   * plausible and is wrong for every college the waterfall touches, which is
-   * most of the small ones. So we call the model and render what it returns.
+   * re-derives a dollar figure. The allocation is TWO-SIDED and solved as one
+   * scalar: colleges below the minimum are pinned up to it, colleges above the
+   * maximum are held down to it, and the remainder re-splits over the rest.
+   * "size share x pool" reads perfectly plausible and is wrong for every
+   * college either bound touches — which is most of the small ones and the six
+   * largest. So we call the model and render what it returns.
    */
   function fundingModule() {
     var M = window.CPL_FUNDING_TAB;
@@ -910,10 +2026,10 @@
    * the canonical short name, and that difference silently unfunded five
    * colleges (found 2026-08-12).
    *
-   * The join was only half-normalised. `fundingFor()` sent MAP's full name
+   * The join was only half-normalized. `fundingFor()` sent MAP's full name
    * through cplCollegeShort() and handed the result to cpl_funding.js, whose
    * baseCollege()/_grant() compare it with `c.college` EXACTLY — the raw
-   * roster string, never normalised. So it worked for the ~110 colleges whose
+   * roster string, never normalized. So it worked for the ~110 colleges whose
    * roster string already equals their canonical short name, and failed for
    * the five where it does not:
    *
@@ -925,12 +2041,12 @@
    *     Los Angeles Southwest College   LA Southwest      "LA Swest"
    *
    * Each of those five rendered "is not on the 115-college funding roster" —
-   * telling Mt. SAC, the largest CPL programme in the system, that it has no
+   * telling Mt. SAC, the largest CPL program in the system, that it has no
    * implementation funding. The roster row was there the whole time.
    *
    * CLAUDE.md's rule is right and was applied to one side only: join through
    * cplCollegeShort() on BOTH. We resolve the canonical key back to the
-   * roster's own spelling here, in the consumer, rather than normalising
+   * roster's own spelling here, in the consumer, rather than normalizing
    * inside cpl_funding.js — the Implementation Funding tab passes roster-raw
    * names internally and works today, so this stays a local fix.
    *
@@ -970,18 +2086,28 @@
     return {
       key: key, onRoster: true, grant: grant,
       floor: model ? model.floor : null,
-      // A noncredit feeder receives the seed grant but is not in the $35M
-      // college pool — it is funded through the $1M noncredit carve-out, a
-      // different mechanism. _alloc returns null and we say so.
-      alloc: grant.kind === "credit" ? M._alloc(key) : null,
+      cap: model ? model.cap : null,
+      // ONE POOL (2026-08-31): the noncredit-only institutions hold ordinary
+      // combined awards, so _alloc answers for everyone — earned by
+      // origination for the noncredit-only three (no advances, N2 b).
+      alloc: M._alloc(key),
       // The per-priority split of that cap. Year 1 is passed EXPLICITLY: the
       // module would otherwise use the Implementation Funding tab's viewed
       // year, and under front-loaded disbursement every year after the first
       // has a zero cap — so a briefing that inherited a Year-2 view would show
       // $0 against all three priorities. Year 1 is also the authoritative set
       // (Sam, 2026-08-09: Year 1 and Year 2 are deliberately identical).
-      prios: (grant.kind === "credit" && typeof M._prios === "function") ? M._prios(key, "1") : null,
+      prios: (typeof M._prios === "function") ? M._prios(key, "1") : null,
       ess: M._ess(key),
+      // The noncredit carve-out, kept as its OWN fact rather than folded into
+      // `alloc` (Sam: "I want it on the surface the amount admin should give to
+      // NC so it doesn't get lumped into the whole"). Null when the module
+      // predates the noncredit lane, so an older cached build renders no line
+      // rather than a zero that reads like a denial.
+      // The award's NONCREDIT SHARE (one pool: a decomposition of the one
+      // combined award, restricted to noncredit outcomes — never a second
+      // pot's figure).
+      nc: (typeof M._ncAward === "function") ? M._ncAward(key) : null,
       rural: M._isRural(key),
       district: M._district(key)
     };
@@ -1062,14 +2188,14 @@
    * second. All public, all already linked from the fact sheet.
    *
    * ⚠ The fact sheet's first entry is titled "MAP Initiative Website", which
-   * the 2026-07-03 naming convention retired — the programme is the CPL
+   * the 2026-07-03 naming convention retired — the program is the CPL
    * Initiative and the platform is the MAP platform, and "MAP Initiative" is
    * never used in new writing. Fixed here rather than copied forward; the
    * fact sheet still carries the old title.
    */
   var RESOURCES = [
     ["https://map.rccd.edu/cpl_implementation_guide/", "CPL Implementation & Sustainability Guide",
-     "Step-by-step guide for establishing or expanding a college CPL programme."],
+     "Step-by-step guide for establishing or expanding a college CPL program."],
     ["https://map.rccd.edu/statewidecpl/", "Statewide CPL Credit Recommendations",
      "The faculty-approved opportunities shared across the system — what your college can adopt."],
     ["https://map.rccd.edu/cpllandingpages/", "Find CPL at Your College",
@@ -1107,15 +2233,28 @@
     return (bare ? "" : '<h3 class="cb-h">Resources</h3>')
       + '<div class="cb-note" style="margin-top:0">All public. The first four are the ones a coordinator uses; '
       + "the rest is the evidence and policy behind the work.</div>"
+      // The trailing ↗ is gone (Sam, 2026-08-17), but the "this leaves the page"
+      // cue is NOT — dropping it outright would remove the only warning a
+      // keyboard or screen-reader user gets before a new tab steals focus. It
+      // becomes a visually-hidden phrase, which is the accessible form the arrow
+      // was only gesturing at.
       + '<div class="cb-res">' + RESOURCES.map(function (r) {
           return '<div class="cb-resi"><a href="' + esc(r[0]) + '" target="_blank" rel="noopener">'
-            + esc(r[1]) + " ↗</a><div>" + esc(r[2]) + "</div></div>";
+            + esc(r[1]) + '<span class="cb-sr">(opens in a new tab)</span></a><div>'
+            + esc(r[2]) + "</div></div>";
         }).join("") + "</div>";
   }
 
+  /* The three ESS 25-82 outcomes, marked. WORDS, not glyphs (Sam, 2026-08-17)
+   * — and here the glyphs were carrying the whole meaning with no text beside
+   * them, so this is the one that mattered: a screen reader announced the
+   * partial state as "circle with left half black", and a reader had nothing to
+   * hover. The color still does the fast scanning; the word says which state
+   * it is. "Not yet" rather than a dash, because an outcome nobody has started
+   * is a real state, not a missing value. */
+  var ESS_MARKS = { met: "Met", partial: "Partial", not: "Not yet", na: "n/a" };
   function essMark(o) {
-    var g = o.state === "met" ? "✓" : o.state === "partial" ? "◐" : o.state === "not" ? "—"
-          : o.state === "na" ? "n/a" : "⏳";
+    var g = ESS_MARKS[o.state] || "Pending";
     return '<span class="cb-ess ' + esc(o.state) + '">' + g + "</span>";
   }
 
@@ -1154,14 +2293,22 @@
     return out.length ? out.join(", ") : null;
   }
 
-  function contactRoster(row) {
+  /* ⚠ A ROLE THIS READER MAY NOT SEE IS NOT AN EMPTY ROLE. The public contact
+   * mirror carries the CPL coordinator, the CPL counselor and the landing page
+   * — what routes a student to a person. Every other role is absent from the
+   * READ, so classifying it by whether the value is falsy would file it under
+   * "Not filled in", and the page would tell a college its VP Academic Affairs
+   * is missing when the truth is that we did not ask. Three lists, not two. */
+  function contactRoster(row, pub) {
     if (!row) return null;
-    var filled = [], blank = [];
+    var filled = [], blank = [], heldBack = [];
     CONTACT_ROLES.forEach(function (r) {
+      if (pub && PUBLIC_CONTACT_ROLES.indexOf(r.k) === -1) { heldBack.push({ label: r.label }); return; }
       var name = dedupeValue(row[r.k]), email = dedupeValue(row[r.e]);
       (name || email ? filled : blank).push({ label: r.label, name: name, email: email, lead: !!r.lead });
     });
-    return { filled: filled, blank: blank, landing: row.landing_page_url || null,
+    return { filled: filled, blank: blank, heldBack: heldBack,
+             landing: row.landing_page_url || null,
              updated: row.last_updated_on || null };
   }
 
@@ -1198,59 +2345,162 @@
     return h + "</div>";
   }
 
+  /* ── A group view that cannot leak a withheld college ─────────────────────
+   * PURE-ish (reads state.data only). District and statewide both land here.
+   *
+   * ⚠ THE AGGREGATE IS SUMMED OVER THE UNSUPPRESSED ROWS ONLY, AND THAT IS A
+   * DISCLOSURE DECISION, NOT A CONVENIENCE. map_college_credit_summary applies
+   * k=10 and withholds 13 colleges. If a total included the withheld rows, then
+   * for any group the total MINUS the visible rows is exactly the withheld
+   * college's figure — and a two-college district would hand it over in one
+   * subtraction. Summing only what is already on screen makes that arithmetic
+   * return zero by construction. The withheld colleges are COUNTED in the note
+   * so the total is never mistaken for the whole group
+   * (adr-student-detail-aggregate-disclosure-control).
+   *
+   * ⚠ And an absent row is not a zero: a college missing from the summary
+   * entirely is a dash and is counted separately from a withheld one. Folding
+   * the two would turn "we never measured this" into "this college does none". */
+  function rollup(group, b) {
+    var byName = (state.data && state.data.summaryByName) || {};
+    var shownWaiting = 0, shownStudents = 0, withheld = 0, absent = 0, counted = 0;
+    var rows = group.slice().sort().map(function (n) {
+      var s = byName[n];
+      if (!s) { absent++; return { n: n, waiting: "—", stu: "—" }; }
+      if (s.suppressed) { withheld++; return { n: n, waiting: "withheld", stu: "&lt;10" }; }
+      counted++;
+      shownWaiting += num(s.articulated_waiting) || 0;
+      shownStudents += num(s.students) || 0;
+      return { n: n, waiting: fmt(num(s.articulated_waiting)), stu: fmt(num(s.students)) };
+    });
+
+    var title = state.scope === "district" ? state.district
+              : state.scope === "swp" ? swpName(state.swpRegion)
+              : "All colleges";
+    var h = '<h3 class="cb-h">' + esc(title) + " — " + group.length
+      + (group.length === 1 ? " college" : " colleges") + "</h3>";
+    h += '<div class="cb-roll">'
+      + '<div class="cb-roll-c"><div class="cb-roll-n">' + fmt(shownWaiting) + "</div>"
+      + '<div class="cb-roll-l">units already articulated and waiting</div></div>'
+      + '<div class="cb-roll-c"><div class="cb-roll-n">' + fmt(shownStudents) + "</div>"
+      + '<div class="cb-roll-l">CPL students</div></div>'
+      + '<div class="cb-roll-c"><div class="cb-roll-n">' + counted + " of " + group.length + "</div>"
+      + '<div class="cb-roll-l">colleges in these totals</div></div>'
+      + "</div>";
+    h += '<table class="cb-dist"><colgroup><col style="width:52%"><col style="width:24%"><col style="width:24%"></colgroup>'
+      + "<thead><tr><th>College</th><th>Articulated, waiting</th><th>CPL students</th></tr></thead><tbody>"
+      + rows.map(function (r) {
+          return '<tr><td><button type="button" class="cb-pick" data-college="' + esc(r.n) + '">'
+            + esc(r.n) + "</button></td>"
+            + '<td class="n">' + r.waiting + '</td><td class="n">' + r.stu + "</td></tr>";
+        }).join("")
+      + "</tbody></table>";
+    h += '<div class="cb-note"><b>The totals above cover the ' + counted + " college"
+      + (counted === 1 ? "" : "s") + " listed with figures — nothing else is folded in.</b> "
+      + (withheld ? withheld + " college" + (withheld === 1 ? " is" : "s are")
+          + " withheld (fewer than 10 CPL students, which is not zero activity) and " +
+          (withheld === 1 ? "its figures are" : "their figures are") + " deliberately left out of the "
+          + "total, so they cannot be worked out by subtraction. " : "")
+      + (absent ? absent + " college" + (absent === 1 ? " is" : "s are")
+          + " not in the credit summary at all — a dash is an absent measurement, not a measured zero. " : "")
+      + "Pick any college for its full briefing.</div>";
+    if (b) {
+      h += '<div class="cb-note">Choose a college to see where it stands against the ' + esc(b.strategyTotal)
+        + " strategies the team has written for " + esc(b.scenario) + ", Year " + esc(b.year) + ".</div>";
+    }
+    return h;
+  }
+
   function render(root) {
     ensureCss();
-    if (!signedIn()) {
-      root.innerHTML = '<div style="padding:24px;text-align:center;color:var(--text-muted);">Sign in with the team phrase to view the college briefing.</div>';
-      return;
-    }
+    shedPlaceholder(root);
+    /* ⚠ THE SIGN-IN GATE IS GONE (Sam, 2026-09-17: My College is open to
+     * colleges and the public). It used to return a locked banner here, which
+     * is why setting the menu audience to Everyone changed nothing a reader
+     * could see — the Admin control governs the MENU, and this governed the
+     * PAGE.
+     *
+     * Nothing was un-gated to make this work. sources() points a credential-less
+     * reader at the `_pub` mirrors, which carry suppression applied at build
+     * time; the bases keep exactly the RLS they had. A reader who holds the team
+     * phrase still reads the bases and still sees more. */
     if (state.loading) { root.innerHTML = '<div style="padding:24px;text-align:center;color:var(--text-muted);">Measuring…</div>'; return; }
 
     var names = (state.data && state.data.colleges) || [];
     var dIdx = districtIndex(names);
-    var districts = dIdx ? Object.keys(dIdx).sort() : [];
-    // The district picker NARROWS the college list; it never changes a figure.
-    // A college with no district on the funding roster stays reachable under
-    // "All districts" — filtering it out of every option would make it
-    // unselectable, which is a worse failure than showing it unfiltered.
-    var shown = (state.district && dIdx && dIdx[state.district]) ? dIdx[state.district] : names;
 
-    var h = '<div class="cb-bar">';
-    if (districts.length) {
-      h += '<div><label for="cb-district">District</label><select id="cb-district">'
-        + '<option value="">All districts (' + names.length + " colleges)</option>"
-        + districts.map(function (d) {
-            return '<option value="' + esc(d) + '"' + (d === state.district ? " selected" : "") + ">"
-              + esc(d.replace(/ Community College District$/, " CCD")) + " (" + dIdx[d].length + ")</option>";
-          }).join("")
-        + "</select></div>";
-    } else if (state.roster === "loading") {
-      h += '<div><label>District</label><select disabled><option>Loading districts…</option></select></div>';
-    }
-    h += '<div><label for="cb-college">College</label><select id="cb-college"><option value="">Choose a college…</option>' +
-      shown.map(function (n) { return '<option value="' + esc(n) + '"' + (n === state.college ? " selected" : "") + ">" + esc(n) + "</option>"; }).join("") +
-      '</select></div><div><label for="cb-role">Your role</label><select id="cb-role">' +
-      ROLES.map(function (r) { return '<option value="' + r.id + '"' + (r.id === state.role ? " selected" : "") + ">" + esc(r.label) + "</option>"; }).join("") +
-      "</select></div></div>";
+    /* ── The two gates before the tab has anything to say ───────────────────
+     * Sam, 2026-08-17: the tab opens on the CHOICE, not on a title. Both gates
+     * return early with no main title, no Sierra box and no sections — there is
+     * nothing yet for any of them to be about. */
+    /* A college already chosen IS the college scope. Inferred rather than
+     * required, so a deep link, a restored selection or any caller that sets
+     * state.college directly lands on the briefing instead of being bounced back
+     * to a question it has already answered. */
+    if (!state.scope && state.college) state.scope = "college";
+    if (!state.scope) { root.innerHTML = scopePicker(); wire(root); return; }
+    if (!scopeReady()) { root.innerHTML = entityPicker(names, dIdx); wire(root); return; }
+
+    // Step 3 — the title arrives now that there is something to welcome.
+    var h = welcomeHead();
 
     // ── Sierra AI, first on the tab, holding the pickers ──────────────────
-    // Sam, 2026-08-11: the assistant leads, the pickers live inside it, and
-    // it is named "Sierra AI" — "Sierra" alone reads as Sierra College.
-    h += '<section class="cb-assist"><header><h3>Sierra AI</h3>'
-      + '<span class="cb-tag">Answers come from the CPL Initiative records and knowledge base.</span></header>'
-      + '<p class="cb-purpose">Ask her anything about CPL at your college — what credit is sitting unawarded, '
-      + "what other colleges give credit for, who a student should contact, what your funding is earned against. "
-      + "She reads the same records the sections below are built from, so it is usually faster to ask than to "
-      + "go looking.</p>"
+    // Sam, 2026-08-11: the assistant leads and the pickers live inside it.
+    //
+    // ⚠ THE HEADING AND THE DESCRIPTION LIVE IN THE WIDGET, NOT HERE (Sam,
+    // 2026-08-17: "eliminate anything redundant"). This block used to print an
+    // <h3>Sierra AI</h3>, a "Answers come from the CPL Initiative records and
+    // knowledge base" tag and a four-line purpose paragraph — and then mounted
+    // cpl_chat.js directly underneath, which printed its OWN heading and its
+    // OWN description. The tab opened with two titles and two descriptions of
+    // one assistant. cpl_chat.js build() now carries the single "Sierra AI"
+    // heading (with the Whitney mark) and the single description; do not
+    // reintroduce one here, or the duplicate comes straight back.
+    // The heading slot is hoisted to the TOP of the box and the widget's own
+    // intro is moved into it by finish() — the same relocation this file
+    // already does with the picker bar, and for the same reason: the markup
+    // stays authored in one place while the reading order is the sensible one
+    // (title → what she is → pickers → suggestions → the chat itself).
+    //
+    // It ships with a FALLBACK heading rather than empty, because a failed
+    // cpl_chat.js load would otherwise leave the box with no title at all —
+    // trading a duplicate heading for a missing one. Exactly one survives:
+    // finish() replaces this when, and only when, the real intro arrives.
+    // ⚠ SIERRA IS A COLLAPSIBLE SECTION NOW (Sam, 2026-08-17) — expanded by
+    // default, and closed by Collapse all like every other. The <summary>
+    // carries the SINGLE heading: hoistAssistantIntro() moves the widget's own
+    // h2 into it and the description into the body below, so there is still
+    // exactly one title for one assistant. Putting the title in the summary and
+    // ALSO leaving it in the body is how #1231's duplicate would come back one
+    // level up.
+    h += '<section class="cb-assist" aria-label="Sierra AI">'
+      + '<details class="cb-sec cb-assist-d" data-sec="sierra"' + (state.open.sierra ? " open" : "") + ">"
+      + '<summary class="cb-sum" id="cb-assist-sum"><h2 class="cb-assist-fallback">Sierra AI</h2></summary>'
+      + '<div class="cb-assist-body">'
+      + '<div class="cb-assist-head" id="cb-assist-head"></div>'
       + '<div class="cb-assist-pick" id="cb-assist-pick"></div>'
-      + (state.college ? '<div class="cb-asks-lab">Try one of these</div><div class="cb-asks" id="cb-asks"></div>' : "")
+      /* ⚠ THE SUGGESTED QUESTIONS ARE NO LONGER PRINTED HERE (Sam, 2026-08-21:
+       * "My College users select a pre-seeded question and are not prompted for
+       * their role — confusing").
+       *
+       * There were TWO question clusters and the role picker sat between them:
+       * this one above the widget, and the widget's own generic starters below
+       * its "I'm a…" chips. Clicking one of these with no role chosen called the
+       * widget's needAudience(), whose message reads "tap who you are above" —
+       * and the chips were BELOW. The sentence was wrong and the reader had two
+       * lists to reconcile.
+       *
+       * They now go to the widget via CPL_CHAT.setSuggestions() (see finish()),
+       * which renders ONE cluster in its own slot UNDER the role chips. That
+       * also replaces the generic starters, one of which names Riverside City
+       * College — fine on the CPL Assistant tab, nonsense on Cabrillo's page. */
       + '<div class="cb-assist-mount" id="cb-assistant-mount"></div>'
-      + "</section>";
+      + "</div></details></section>";
 
     if (state.error) h += '<div class="cb-warn">Could not load everything: ' + esc(state.error) + ". Figures below may be incomplete — treat a missing number as unknown, not zero.</div>";
 
     var b = state.data && state.data.briefing;
-    if (!b) { finish(root, h, null); return; }
+    if (!b) { finish(root, h); return; }
 
     if (b.unread && b.unread.length) {
       h += '<div class="cb-warn"><b>' + b.unread.length + " funding program" + (b.unread.length === 1 ? "" : "s") + " not read.</b><ul style=\"margin:6px 0 0 18px;\">" +
@@ -1258,29 +2508,17 @@
         "</ul></div>";
     }
 
+    // ── The roll-up views: district and statewide ──────────────────────────
+    // scopeReady() has already passed, so reaching here with no college means
+    // the reader chose a GROUP. Ordered ALPHABETICALLY, never by the figure:
+    // this is a list of work to do, not a league table (and Sam's standing rule
+    // is that colleges are never publicly ranked).
     if (!state.college) {
-      h += '<div class="cb-note">Choose a college to see where it stands against the ' + esc(b.strategyTotal) +
-        " strategies the team has written for " + esc(b.scenario) + ", Year " + esc(b.year) + ".</div>";
-      // A district was picked but no college yet — show the district's colleges
-      // and the one figure that matters, so a district office has somewhere to
-      // start. Ordered ALPHABETICALLY, never by the figure: this is a list of
-      // work to do, not a league table.
-      if (state.district && dIdx && dIdx[state.district]) {
-        h += '<h3 class="cb-h">' + esc(state.district) + "</h3>";
-        h += '<table class="cb-dist"><colgroup><col style="width:52%"><col style="width:24%"><col style="width:24%"></colgroup>'
-          + "<thead><tr><th>College</th><th>Articulated, waiting</th><th>CPL students</th></tr></thead><tbody>";
-        dIdx[state.district].slice().sort().forEach(function (n) {
-          var s = state.data.summaryByName && state.data.summaryByName[n];
-          var waiting = s && !s.suppressed ? fmt(num(s.articulated_waiting)) : (s && s.suppressed ? "withheld" : "—");
-          var stu = s && !s.suppressed ? fmt(num(s.students)) : (s && s.suppressed ? "&lt;10" : "—");
-          h += '<tr><td><button type="button" class="cb-pick" data-college="' + esc(n) + '">' + esc(n) + "</button></td>"
-            + '<td class="n">' + waiting + '</td><td class="n">' + stu + "</td></tr>";
-        });
-        h += "</tbody></table>";
-        h += '<div class="cb-note">“Withheld” means fewer than 10 CPL students, not zero activity. '
-          + "A dash means this college is not in the credit summary at all — an absent figure, which is not the same as a measured zero.</div>";
-      }
-      finish(root, h, null); return;
+      var group = state.scope === "district" ? (dIdx && dIdx[state.district]) || []
+                : state.scope === "swp" ? swpColleges(state.swpRegion)
+                : names;
+      h += rollup(group, b);
+      finish(root, h); return;
     }
 
     if (b.leads.length) {
@@ -1293,6 +2531,13 @@
       // still the answer to "what should I do?".
       h += sec("start", "Start here", esc(b.leads[0].item.measure.headline), leadBody);
     }
+
+    // ── What this college could already give credit for ───────────────────
+    // High on the page on purpose: this is the section a college meeting is
+    // actually held to look at, and it reads the same for every college, so a
+    // facilitator can flip between them without the page rearranging itself.
+    var oppsSum = oppsSummary();
+    h += sec("opps", "What you could already give credit for", oppsSum, oppsBody());
 
     // ── Your funding ──────────────────────────────────────────────────────
     // Two appropriations, kept visibly apart. Neither figure is derived here.
@@ -1312,12 +2557,17 @@
     } else if (state.funding === "ready" && !f) {
       fundBody += '<div class="cb-note">Loading the funding model…</div>';
     } else if (state.funding === "error") {
-      fundBody += '<div class="cb-warn">The funding model did not load. That is a <b>failed read, not a finding</b> — '
-        + "it does not mean this college has no allocation.</div>";
+      fundBody += '<div class="cb-warn">The funding model did not load, so this page cannot show an allocation for this college yet. '
+        + "Reload to read it.</div>";
     } else if (f && !f.onRoster) {
       fundBody += '<div class="cb-note">' + esc(state.college) + ' is not on the 115-college funding roster. '
-        + "The noncredit institutions are funded through the $1M noncredit carve-out, a separate mechanism from the "
-        + "college pool below — so this is <b>a different route to money, not an absence of it</b>.</div>";
+        // The carve-out figure is read from the model, never typed. It said "$1M"
+        // from the day the lane was built until 2026-08-23, when it moved to
+        // $1.8M and this sentence — shown to an institution being told why it is
+        // not on the roster — kept quoting the old number.
+        + "The noncredit institutions are funded through the " + fundCarveLabel()
+        + " noncredit carve-out, a separate mechanism from the "
+        + "college allocation below, so this institution has its own route to funding.</div>";
     } else if (f) {
       // (a) the $50,000 ESS 25-82 seed grant — already distributed
       fundBody += '<div class="cb-fund">';
@@ -1352,53 +2602,80 @@
 
       // (b) this college's share of the implementation pool. Sam, 2026-08-11:
       // use the funding tab's own names — "$35M" is his shorthand with the
-      // session, not a label a college would recognise.
+      // session, not a label a college would recognize.
       fundBody += '<div class="cb-fbox"><header><h4>2026&ndash;2028 College Implementation Funding</h4><span class="cb-tag">allocation cap</span></header>';
       if (!f.alloc) {
-        fundBody += '<div class="cb-lab">No allocation modelled for this college yet.</div>';
+        fundBody += '<div class="cb-lab">No allocation modeled for this college yet.</div>';
       } else {
         fundBody += '<div class="cb-fbig">' + money(f.alloc.total) + "</div>";
-        fundBody += '<div class="cb-lab">This is a <b>cap, not a cheque</b> — the college earns against it on what MAP records it '
-          + "doing. It is modelled, and the model is under active revision.</div>";
+        // Sam's 2026-08-22 ruling retired the old negative framing here: state
+        // positively what drives the money. It also collided with the model's
+        // new $400K MAXIMUM, which is now literally a cap — two different
+        // meanings of one word, in adjacent sentences. (The retired phrase is
+        // deliberately not quoted anywhere in this file: the test greps the
+        // SOURCE, so a comment quoting it would fail the guard it explains.)
+        fundBody += '<div class="cb-lab">What this college receives is driven by <b>its own CPL results, as they happen</b>: '
+          + "the measures MAP records count toward this figure. It is modeled, and the model is under "
+          + "active revision.</div>";
         var bits = [];
         if (f.alloc.floored) {
-          bits.push("At the <b>" + money(f.floor) + " minimum-viable floor</b> — this college's proportional share came "
-            + "out below the floor, so it is topped up to it. Its allocation is <b>not</b> its share of the pool.");
+          bits.push("At the <b>" + money(f.floor) + " base award</b> — this institution's proportional share came "
+            + "out below the base, so it is brought up to it, and the base award is its allocation.");
         }
-        if (f.alloc.rural_w) {
-          bits.push("Includes <b>" + money(f.alloc.rural_w) + "</b> of guaranteed rural allowance, which is not performance-gated.");
+        // The floor's mirror image. Say where the difference WENT, not just
+        // that the college lost it — the same reason the funding explainer
+        // names the beneficiary of every amount it shows.
+        if (f.alloc.capped && f.cap) {
+          bits.push("At the <b>" + money(f.cap) + " cap</b> — this institution's proportional share came "
+            + "out above the maximum, so it is held there and the difference re-splits across the other colleges. "
+            + "Its performance targets scale down with it, so it qualifies for funding at the same rate as every other college "
+            + "above the minimum.");
         }
         if (f.alloc.gate_blocked) {
           bits.push("<b>Participation requirements are outstanding</b>" +
             (f.alloc.gate_missing && f.alloc.gate_missing.length ? " — " + esc(f.alloc.gate_missing.join(" and ")) : "") +
-            ". The cap is unchanged and the dollars roll forward; nothing is lost by fixing it late, but nothing is earned until it is.");
+            ". The cap is unchanged and the funding rolls forward; the college receives its demonstrated funding once it confirms.");
         } else if (f.alloc.gate_pending) {
           bits.push("Participation is recorded but not yet confirmed.");
         }
         if (bits.length) fundBody += '<ul class="cb-flags"><li>' + bits.join("</li><li>") + "</li></ul>";
 
-        // ── What the cap is FOR — the three priorities, each with this
-        // college's own target. Caps and targets both come from the funding
+        // ── Noncredit money, stated separately and never added in ───────────
+        // The award's NONCREDIT SHARE (one pool, 2026-08-31). Its own line
+        // with its own heading, because noncredit funding folded into a credit
+        // total stops being visible as noncredit funding — and it is the
+        // noncredit dean who needs to see it. The share is INSIDE the combined
+        // figure above, restricted to noncredit outcomes.
+        if (f.nc != null && f.nc > 0) {
+          fundBody += '<div class="cb-note cb-floor"><b>Noncredit share: ' + money(f.nc) + "</b> of the combined "
+            + "award above, set by this institution's own noncredit FTES and restricted to the noncredit "
+            + "measures, so only noncredit results count toward it.</div>";
+        }
+
+        // ── What the cap is FOR — the priorities, each with this college's
+        // own target. Caps and targets both come from the funding
         // module; nothing here multiplies a share by a pool.
         if (f.prios && f.prios.length) {
-          fundBody += '<div class="cb-prios"><div class="cb-plab">What it is earned against</div>';
+          fundBody += '<div class="cb-prios"><div class="cb-plab">What counts toward it</div>';
           f.prios.forEach(function (p, i) {
+            if (unlistedAndUnfunded(p, implProg)) return;
             var name = p.title || p.description || p.label;
             fundBody += '<div class="cb-prow"><div class="cb-whead"><b>' + esc(name) + "</b>"
               + '<span class="v">' + money(p.cap) + "</span></div>";
             fundBody += '<div class="cb-ptarget">Your target: <b>'
               + (p.target != null ? fmt(Math.round(p.target * 10) / 10) + " " + esc(p.unit) : "—")
               + "</b>" + (p.metric ? " · " + esc(p.metric) : "") + "</div>";
-            // The team's steps for THIS pool, nested under the money they
-            // earn (Sam, 2026-08-12). As one flat list of 22 they read as an
+            // The team's steps for THIS priority, nested under the funding they
+            // count toward (Sam, 2026-08-12). As one flat list of 22 they read as an
             // intimidating audit; six to ten attached to a priority read as
             // advice about that priority.
-            if (stratsInline) fundBody += stratHtml(implProg.priorities[i].items, null);
+            var progPrio = stratsInline ? programPriorityFor(implProg, p, i) : null;
+            if (progPrio) fundBody += stratHtml(progPrio.items, null);
             fundBody += "</div>";
           });
           fundBody += "</div>";
-          fundBody += '<div class="cb-lab" style="margin-top:8px;">A target is what earns the <b>whole</b> share, not a '
-            + "pass mark — partial progress earns a proportional part of it, so there is no cliff to miss.</div>";
+          fundBody += '<div class="cb-lab" style="margin-top:8px;">Reaching a target qualifies the college for the <b>whole</b> share, '
+            + "and partial progress qualifies it for a proportional part, so there is no cliff to miss.</div>";
         }
       }
       fundBody += "</div></div>";
@@ -1561,6 +2838,22 @@
         }
         waitBody += "</div>";
       });
+      /* The withheld line sits IN the list, as a row, because it is part of the
+       * total the reader was just told these add up to. Reporting it under the
+       * table, or not at all, turns suppressed credit into credit that does not
+       * exist — the "absent read as zero" failure this whole tab is built
+       * against. Plain words, no mark: the sentence carries it. */
+      if (wb.withheld) {
+        var wp = safePct(wb.withheld.units / wb.total, 1);
+        waitBody += '<div class="cb-wrow"><div class="cb-whead">'
+          + "<b>Withheld to protect small student counts</b>"
+          + '<span class="v">' + fmt(Math.round(wb.withheld.units)) + " units · " + wp + "%</span></div>"
+          + '<div class="cb-bar"><i style="width:' + Math.max(0, Math.min(100, wp)) + '%"></i></div>'
+          + '<div class="cb-wrecs">' + fmt(wb.withheld.recommendations)
+          + " credit recommendations, each held by fewer than 10 students at this college. "
+          + "They are counted in the total above and named nowhere, so no single one can be "
+          + "worked out from what is shown.</div></div>";
+      }
       waitBody += "</div>";
       if (wb.militaryShare >= 0.6) {
         var allMil = wb.militaryShare >= 1;
@@ -1587,7 +2880,7 @@
       waitSum = "nothing waiting";
       waitBody += '<div class="cb-note" style="margin-top:0"><b>Nothing is waiting.</b> Every credit recommendation with an '
         + "articulated exhibit behind it has been acted on. That is a finished queue, not a missing measurement — "
-        + "33 of the 106 colleges are in this position, including some of the largest CPL programmes in the state.</div>";
+        + "33 of the 106 colleges are in this position, including some of the largest CPL programs in the state.</div>";
     }
 
     h += sec("waiting", "What that waiting credit actually is", waitSum, waitBody);
@@ -1595,9 +2888,9 @@
     // ── By CPL type ───────────────────────────────────────────────────────
     var types = byCplType(state.detail);
     if (types) {
-      var typeBody = '<div class="cb-note cb-floor">⚠ <b>Read the student counts carefully.</b> A credential name can be '
+      var typeBody = '<div class="cb-note cb-floor"><b>Read the student counts carefully.</b> A credential name can be '
         + 'attached to only about 4% of student records statewide, so a low count here means <b>we cannot see it</b>, '
-        + 'not that the programme is inactive. The credential counts beside them come from the curated catalogue and '
+        + 'not that the program is inactive. The credential counts beside them come from the curated catalog and '
         + 'are complete.</div>';
       typeBody += '<div class="cb-types">';
       types.forEach(function (t) { typeBody += typeBox(t); });
@@ -1631,8 +2924,8 @@
     }
 
     // ── Advice — only for programs NOT already nested in the funding box ──
-    // The implementation strategies now live inside the priority they earn
-    // against (Sam, 2026-08-12). Anything else the team adds to the config
+    // The implementation strategies now live inside the priority they count
+    // toward (Sam, 2026-08-12). Anything else the team adds to the config
     // still gets its own section here, so guarantee (c) — every project is
     // walked, a new program appears with no code change — survives the move.
     var restPrograms = b.programs.filter(function (p) {
@@ -1665,7 +2958,7 @@
 
     // ── Current MAP Users and Contacts ─────────────────────────────────────
     var roster = contactRoster(state.data && state.data.raw && state.data.raw.contactRowByName
-      && state.data.raw.contactRowByName[state.college]);
+      && state.data.raw.contactRowByName[state.college], sources().pub);
     if (roster) {
       var contactBody = "";
       contactBody += '<div class="cb-note" style="margin-top:0">This is what MAP shows today. <b>The primary contact is where a '
@@ -1683,6 +2976,12 @@
           + roster.blank.map(function (r) { return esc(r.label); }).join("</b>, <b>") + "</b>. "
           + "Blank is not a problem in itself — but a blank primary contact means student requests have nowhere to land.</div>";
       }
+      if (roster.heldBack.length) {
+        contactBody += '<div class="cb-note">Shown to signed-in MAP staff only: <b>'
+          + roster.heldBack.map(function (r) { return esc(r.label); }).join("</b>, <b>") + "</b>. "
+          + "These roles are recorded in MAP. This page lists the people a student's CPL request "
+          + "should reach, and leaves the rest to staff who sign in.</div>";
+      }
       if (roster.landing) {
         contactBody += '<div class="cb-note">Your CPL landing page: <a href="' + esc(roster.landing)
           + '" target="_blank" rel="noopener">' + esc(roster.landing) + "</a></div>";
@@ -1699,32 +2998,118 @@
       + esc(b.scenario) + ", Year " + esc(b.year) + "); edit them there and they change here. "
       + "Student figures are withheld below 10 CPL students, to protect student privacy.</div>";
 
-    finish(root, h, st);
+    finish(root, h);
   }
 
   /* Every exit path from render() goes through here, so the Sierra AI box is
    * assembled once: pickers relocated into it, suggested questions built from
    * this college's own figures, and the shared assistant mounted. */
-  function finish(root, h, st) {
+  /* ⚠ `st` (this college's standing figures) USED to be threaded in here for the
+   * suggested questions and is deliberately gone: three of the four call sites
+   * passed null for it, so the "units already waiting" question only ever
+   * appeared on one path. setAssistantQuestions() derives it from the same two
+   * inputs render() uses, via standingFor(). */
+  function finish(root, h) {
+    /* ⚠ A RE-RENDER THE READER DID NOT ASK FOR MUST NOT TAKE THEIR PLACE IN
+     * SIERRA'S BOX. This tab repaints when the roster, the live metrics or the
+     * funding model arrive, and when the router re-activates it on hashchange;
+     * each repaint rebuilds the box. cpl_chat.js carries the typed text across
+     * (mountInto); focus is carried here, because this is where the markup is
+     * replaced, so this is the one place that can see it was in the box. */
+    var ae = document.activeElement;
+    var inBox = !!(ae && ae !== root && root.contains(ae) && ae.classList && ae.classList.contains("cplchat-input"));
     root.innerHTML = h;
     // The pickers move INSIDE the Sierra AI box (Sam: "put all the college
     // selectors in the CPL Assistant box for simplicity"). They are built in
     // the main string, then relocated, so the bar markup stays in one place.
-    var pickHost = root.querySelector("#cb-assist-pick"), bar = root.querySelector(".cb-bar");
+    /* ⚠ `.cb-bar-pick`, NOT `.cb-bar`. This used to grab the first `.cb-bar` in
+     * document order, which worked only because the PICKER bar was authored
+     * first. The pickers moved to the scope flow's second step (Sam,
+     * 2026-08-17), so the first `.cb-bar` in the briefing view is now one of the
+     * waiting breakdown's progress bars — and this would have silently torn it
+     * out of its table and dropped it into the Sierra box. A positional
+     * selector is a bound on the order things happen to be written in.
+     * Nothing matches in either step today (step 2 has the bar but no host,
+     * step 3 has the host but no bar); the relocation is kept, correctly
+     * targeted, so a future layout that does put pickers in the box works. */
+    var pickHost = root.querySelector("#cb-assist-pick"), bar = root.querySelector(".cb-bar-pick");
     if (pickHost && bar) pickHost.appendChild(bar);
-    var asks = root.querySelector("#cb-asks");
-    if (asks && state.college) {
-      asks.innerHTML = sierraQuestions(state.college, state.detail, st || null)
-        .map(function (q) { return '<button type="button" class="cb-ask" data-q="' + esc(q) + '">' + esc(q) + "</button>"; })
-        .join("");
+    /* ⚠ setAssistantQuestions AFTER mountAssistant, NEVER BEFORE: setSuggestions
+     * paints into the row build() creates, so handing the list over first would
+     * store it and show nothing until the next render. Ordering, not taste.
+     *
+     * ⚠ AND A WIDGET THAT DID NOT MOUNT MUST NOT SILENTLY COST THE QUESTIONS.
+     * Moving them into the assistant means the assistant is now the only thing
+     * that can show them — so the no-widget path renders the old cluster, wired
+     * to askSierra(), which stashes the question and navigates to the full tab.
+     * This file's rule 2: a thing we could not read is NAMED, not skipped. */
+    /* ⚠ THE FALLBACK IS GATED ON THE QUESTIONS LANDING, NOT ON THE MOUNT. A
+     * chat module that mounts but predates setSuggestions() would otherwise
+     * take the mounted branch and show no questions at all — the silent loss
+     * this fallback exists to prevent, reintroduced by the gate itself. */
+    /* ⚠ SCOPE BEFORE QUESTIONS, AND UNCONDITIONALLY. The `||` below
+     * short-circuits, so anything chained onto it is skipped whenever the mount
+     * fails — and the scope is the one hand-off that must land on every path,
+     * because it is also what DROPS a thread left over from the previous
+     * subject. Chaining it would mean a failed mount silently kept RCCD's
+     * conversation alive under LACCD's heading, which is the defect itself. */
+    var mounted = mountAssistant(root);
+    setAssistantScope();
+    /* ⚠ A SIERRA TRAINING HAND-OFF CAN OPEN THIS SECTION FROM INSIDE THE MOUNT.
+     * "Try it in: My College" is delivered by cpl_chat.js mountInto() into the
+     * box just built, and it opens the collapsed Sierra section around it. The
+     * <details> toggle event that would tell wire() arrives a task LATER, and a
+     * render in between (the roster, live metrics or funding model landing)
+     * would read state.open.sierra and shut the section on the question. So the
+     * open state is recorded here, synchronously, from the element itself. */
+    var sierraSec = root.querySelector('details[data-sec="sierra"]');
+    if (sierraSec && sierraSec.open) state.open.sierra = true;
+    if (inBox) {
+      var box = root.querySelector("#cb-assistant-mount .cplchat-input");
+      if (box) { try { box.focus({ preventScroll: true }); } catch (e) { /* hidden pane */ } }
     }
-    mountAssistant(root);
+    if (!mounted || !setAssistantQuestions()) fallbackAsks(root);
+    hoistAssistantIntro(root);
     wire(root);
+  }
+
+  /* The widget's heading + description belong at the TOP of the box, but the
+   * widget mounts at the bottom of it (below the pickers and the suggested
+   * questions). Rather than fork the intro markup into this file — which is how
+   * the tab ended up with two headings and two descriptions in the first place
+   * — the real one is MOVED, and this file's fallback heading is dropped only
+   * once the move has succeeded.
+   *
+   * ⚠ Exactly one heading, in every path:
+   *   · widget mounted   → its intro is hoisted, the fallback is removed;
+   *   · widget missing   → the fallback stays and is the only title;
+   *   · re-render        → render() rewrote innerHTML, so this runs from a
+   *                        clean box every time and cannot stack copies. */
+  /* Sierra became a <details> (Sam, 2026-08-17), which SPLITS the hoist in two:
+   * the widget's heading goes into the <summary> — so the section still names
+   * itself when collapsed, which is the whole point of a summary — and the rest
+   * of its intro goes into the body. Still exactly one title in every path:
+   *   · widget mounted → its h2 replaces the fallback IN the summary;
+   *   · widget missing → the fallback stays in the summary and is the only one;
+   *   · re-render      → render() rewrote innerHTML, so this always starts clean.
+   * The description must NOT ride along into the summary: a summary is the
+   * collapsed state, and a paragraph there is text you cannot put away. */
+  function hoistAssistantIntro(root) {
+    var head = root && root.querySelector("#cb-assist-head");
+    var sum = root && root.querySelector("#cb-assist-sum");
+    var intro = root && root.querySelector("#cb-assistant-mount .cplchat-intro");
+    if (!head || !intro) return false;
+    var h = intro.querySelector("h1, h2, h3");
+    if (h && sum) { sum.textContent = ""; sum.appendChild(h); }   // drops the fallback
+    head.textContent = "";
+    head.appendChild(intro);        // now description-only, the heading having moved
+    return true;
   }
 
   function selectCollege(name, root) {
     state.college = name || null;
     state.detail = null; state.detailFor = null; state.detailError = null;
+    rememberScope();
     recompute(); render(root);
     if (state.college) {
       loadCollege(state.college, root);
@@ -1732,11 +3117,339 @@
     }
   }
 
+  /* ── The tab ALWAYS asks first (Sam, 2026-08-21) ───────────────────────────
+   * "It opens on Cabrillo College now and should rather prompt for a location
+   * before populating."
+   *
+   * ⭐ THE REMEMBERED CHOICE IS NOW A SHORTCUT, NOT A DESTINATION. It used to
+   * be restored straight into `state`, so the tab opened already populated for
+   * whichever college was last looked at — which is wrong twice over: a shared
+   * screen or a second person's turn silently shows someone else's college, and
+   * a reader who wants a different one has to notice they are on the wrong page
+   * before they can leave it. Opening on the question costs one click and can
+   * never show the wrong college.
+   *
+   * The convenience the old behavior bought is kept explicitly: the scope
+   * question carries a "Last time you looked at X — open it again" button, so
+   * the daily flow is still one click, but it is a click the reader MAKES
+   * rather than one the tab makes for them.
+   *
+   * `state.remembered` is deliberately a separate field. Nothing downstream
+   * reads it; only the picker does, and only to offer the shortcut. Wrapped
+   * because storage can be unavailable. */
+  function rememberScope() {
+    try {
+      localStorage.setItem(SCOPE_KEY, JSON.stringify({
+        scope: state.scope, college: state.college, district: state.district,
+        swpRegion: state.swpRegion
+      }));
+    } catch (e) { /* in-memory only */ }
+  }
+  function restoreScope() {
+    try {
+      var r = JSON.parse(localStorage.getItem(SCOPE_KEY) || "null");
+      if (!r || !r.scope) return;
+      // Only offer a scope that is still READY. A remembered "swp" from a
+      // future build must not become a shortcut that lands on a blank screen.
+      var known = SCOPES.filter(function (s) { return s.k === r.scope && s.ready; });
+      if (!known.length) return;
+      // A scope that needs an entity is only a usable shortcut once it HAS one;
+      // "open it again" that lands on a second question is not a shortcut.
+      if (scopeNeedsEntity(r.scope)
+          && !(r.scope === "college" ? r.college : r.district)) return;
+      state.remembered = {
+        scope: r.scope,
+        college: r.scope === "college" ? (r.college || null) : null,
+        district: r.scope === "district" ? (r.district || "") : ""
+      };
+    } catch (e) { /* ignore */ }
+  }
+
+  /* PURE. What the remembered choice is called, for the shortcut's label.
+   * Returns "" when there is nothing worth offering, so the caller renders
+   * nothing rather than a button with a blank name. */
+  function rememberedLabel() {
+    var r = state.remembered;
+    if (!r) return "";
+    if (r.scope === "college") return r.college || "";
+    if (r.scope === "district") return (r.district || "").replace(/ Community College District$/, " CCD");
+    if (r.scope === "statewide") return "the statewide view";
+    return "";
+  }
+
+  /* Take the shortcut: restore the remembered choice into live state and load.
+   * Everything the normal path does, in the order the normal path does it. */
+  function resumeRemembered(root) {
+    var r = state.remembered;
+    if (!r) return;
+    state.scope = r.scope;
+    state.college = r.college || null;
+    state.district = r.district || "";
+    state.swpRegion = r.swpRegion || "";
+    state.detail = null; state.detailFor = null; state.detailError = null;
+    rememberScope();
+    recompute(); render(root);
+    // Same loads the normal path does, and no others: setScope() pulls nothing
+    // for a group scope, so neither does the shortcut into one.
+    if (state.college) { loadCollege(state.college, root); loadFunding(root); }
+  }
+
+  function setScope(k, root) {
+    state.scope = k || null;
+    // Clear the entity when the scope changes — a college left selected under
+    // the district scope would silently decide what the district view showed.
+    if (k !== "college") { state.college = null; state.detail = null; state.detailFor = null; }
+    if (k !== "district") state.district = "";
+    // The consortium narrowing survives a move to the college scope — it is
+    // a filter there, and a facilitator who picked the Bay and then chose
+    // "My college" wants the Bay's 28 listed rather than all 120 again.
+    if (k !== "swp" && k !== "college") state.swpRegion = "";
+    rememberScope();
+    recompute(); render(root);
+  }
+
+  function setAllSections(open, root) {
+    SECTION_IDS.forEach(function (id) { state.open[id] = !!open; });
+    render(root);
+  }
+
+  /* ── The briefing (Sam, 2026-08-17: "a Report button that creates a briefing";
+   *    then, the same day: "Briefing should be docx") ───────────────────────
+   *
+   * ⭐ READ FROM THE RENDERED DOM, NEVER RE-DERIVE. Every figure in the document
+   * is lifted from the section the reader just looked at. A generator that
+   * recomputed them would be a SECOND implementation of the tab's arithmetic —
+   * the thing the EACR matrix's shared matrixCell() exists to prevent — and the
+   * two would eventually disagree, with the document being the copy that leaves
+   * the building. It also means the disclosure control comes along for free: a
+   * withheld college reads "withheld" on screen, so it reads "withheld" here,
+   * and the roll-up total is the same unsuppressed-only sum. Nothing in this
+   * function knows what k-anonymity is, and it cannot leak what the tab does not
+   * already show.
+   *
+   * ⚠ A CLOSED SECTION IS STILL IN THE DOM. This reads `details` content
+   * regardless of open state, which is why — unlike the print route it replaced
+   * — it does NOT have to expand everything first and cannot produce a document
+   * of headings with no bodies.
+   *
+   * Skips the chrome (buttons, the Sierra chat) rather than filtering it out
+   * afterwards: a transcript of an empty chat box is not a briefing. */
+  var DOCX_SRC = "docx.min.js";
+  function ensureDocx(cb) {
+    if (window.docx) { cb(true); return; }
+    loadScript(DOCX_SRC, "docx", function () { cb(!!window.docx); });
+  }
+
+  // PURE. The rendered tab -> an ordered list of blocks the docx builder walks.
+  // Separated from the docx call so it is testable without the library present.
+  function briefingBlocks(root) {
+    var out = [];
+    if (!root) return out;
+    function textOf(el) {
+      var c = el.cloneNode(true);
+      // The visually-hidden new-tab cue is for screen readers, not for a
+      // printed page where "(opens in a new tab)" is meaningless.
+      Array.prototype.forEach.call(c.querySelectorAll(".cb-sr"), function (n) { n.remove(); });
+      return (c.textContent || "").replace(/\s+/g, " ").trim();
+    }
+    function emitTable(el) {
+      var rows = Array.prototype.map.call(el.querySelectorAll("tr"), function (tr) {
+        return Array.prototype.map.call(tr.querySelectorAll("th, td"), textOf);
+      }).filter(function (r) { return r.length; });
+      if (rows.length) out.push({ kind: "table", rows: rows });
+    }
+
+    /* ⚠ A DISTRICT OR STATEWIDE VIEW HAS NO `details.cb-sec` AT ALL — its whole
+     * content is the roll-up (a heading, three stat cards, the college table and
+     * the disclosure notes). Walking only the sections produced an EMPTY
+     * briefing for two of the three scopes, which the "nothing to put in a
+     * briefing yet" guard would have reported as if the college had no data.
+     * So this walks the content region in DOCUMENT ORDER over a whitelist,
+     * which covers all three scopes with one pass. */
+    var SEL = "details.cb-sec, h3.cb-h, .cb-roll-c, table.cb-dist, .cb-note, .cb-warn";
+    Array.prototype.forEach.call(root.querySelectorAll(SEL), function (el) {
+      // Chrome, and anything a section will emit itself.
+      if (el.closest && (el.closest(".cb-assist") || el.closest(".cb-scope"))) return;
+      var inSection = el.closest && el.closest("details.cb-sec");
+      if (inSection && inSection !== el) return;
+
+      if (el.tagName.toLowerCase() === "table") { emitTable(el); return; }
+      if (!inSection) {
+        var cls = el.className || "";
+        if (/cb-roll-c/.test(cls)) {
+          // A stat card is a figure plus its label — keep them together, since
+          // "1,051,870" on its own line is not a fact.
+          var n = el.querySelector(".cb-roll-n"), l = el.querySelector(".cb-roll-l");
+          if (n) out.push({ kind: "lead", text: textOf(n) + (l ? " — " + textOf(l) : "") });
+          return;
+        }
+        var s0 = textOf(el);
+        if (s0) out.push({ kind: /cb-h/.test(cls) ? "h2" : "p", text: s0 });
+        return;
+      }
+
+      // A collapsible section.
+      var d = el;
+      if (d.getAttribute("data-sec") === "sierra") return;     // an empty chat box is not content
+      var t = d.querySelector(".cb-sum-t"), v = d.querySelector(".cb-sum-v");
+      out.push({ kind: "h2", text: t ? textOf(t) : (d.getAttribute("data-sec") || "") });
+      // ⭐ The summary value is the figure a CLOSED section shows. It is the one
+      // line most likely to be the answer, so it leads the section here too.
+      if (v && textOf(v)) out.push({ kind: "lead", text: textOf(v) });
+      Array.prototype.forEach.call(d.querySelectorAll("h3, h4, p, li, table"), function (n2) {
+        var tag = n2.tagName.toLowerCase();
+        if (tag === "table") { emitTable(n2); return; }
+        if (n2.closest && n2.closest("table")) return;   // already emitted as part of it
+        var s = textOf(n2);
+        if (s) out.push({ kind: tag === "li" ? "li" : (tag === "p" ? "p" : "h3"), text: s });
+      });
+    });
+    return out;
+  }
+
+  function buildBriefingReport(root) {
+    var btn = root && root.querySelector("#cb-report");
+    var was = btn ? btn.textContent : null;
+    if (btn) { btn.disabled = true; btn.textContent = "Building…"; }
+    var done = function (msg) {
+      if (!btn) return;
+      btn.disabled = false; btn.textContent = msg || was;
+      if (msg) setTimeout(function () { btn.textContent = was; }, 2600);
+    };
+    ensureDocx(function (ok) {
+      // ⚠ A failure has to SAY so. A button that silently does nothing is the
+      // #1166 shape — indistinguishable from one that was never wired.
+      if (!ok) { done("Could not load the document builder"); return; }
+      var D = window.docx, blocks = briefingBlocks(root);
+      if (!blocks.length) { done("Nothing to put in a briefing yet"); return; }
+
+      var name = scopeLabel() || "CPL";
+      var title = state.scope === "statewide" ? "Statewide CPL briefing" : name + " — CPL briefing";
+      var today = new Date().toISOString().slice(0, 10);
+      var kids = [];
+      // House style, matching college_report_generator.js: CO navy title, the
+      // gold rule, Calibri throughout. One look for anything that leaves here.
+      kids.push(new D.Paragraph({
+        children: [new D.TextRun({ text: title, bold: true, size: 36, color: "0A2240", font: "Calibri" })],
+        spacing: { after: 100 }
+      }));
+      kids.push(new D.Paragraph({
+        children: [new D.TextRun({
+          text: "Mapping Articulated Pathways (MAP) platform  |  Generated: " + today
+              + "  |  Figures as shown on the My College tab",
+          size: 20, color: "666666", font: "Calibri", italics: true
+        })],
+        spacing: { after: 200 }
+      }));
+      // ⭐ The suppression note travels WITH the document. On screen the reader
+      // has the surrounding page to explain a dash; in a file that reaches a
+      // college by email, this line is the only thing standing between "withheld"
+      // and someone reading it as zero.
+      kids.push(new D.Paragraph({
+        children: [new D.TextRun({
+          text: "“Withheld” means fewer than 10 CPL students — not zero activity. "
+              + "A dash means the college is not in the credit summary at all, which is an absent "
+              + "measurement rather than a measured zero. Group totals cover only the colleges "
+              + "listed with figures.",
+          size: 18, color: "666666", font: "Calibri", italics: true
+        })],
+        spacing: { after: 200 }
+      }));
+      kids.push(new D.Paragraph({
+        children: [],
+        border: { bottom: { style: D.BorderStyle.SINGLE, size: 6, color: "C9A84C" } },
+        spacing: { after: 200 }
+      }));
+
+      blocks.forEach(function (b) {
+        if (b.kind === "table") {
+          kids.push(new D.Table({
+            width: { size: 100, type: D.WidthType.PERCENTAGE },
+            rows: b.rows.map(function (r, i) {
+              return new D.TableRow({
+                children: r.map(function (cell) {
+                  return new D.TableCell({
+                    children: [new D.Paragraph({ children: [new D.TextRun({
+                      text: cell, bold: i === 0, size: 18, font: "Calibri"
+                    })] })]
+                  });
+                })
+              });
+            })
+          }));
+          kids.push(new D.Paragraph({ children: [], spacing: { after: 160 } }));
+          return;
+        }
+        var spec = {
+          h2: { size: 26, color: "0A2240", bold: true, before: 300, after: 100 },
+          h3: { size: 22, color: "163A5F", bold: true, before: 200, after: 80 },
+          lead: { size: 22, color: "0A2240", bold: true, before: 0, after: 120 },
+          li: { size: 22, color: null, bold: false, before: 0, after: 80 },
+          p: { size: 22, color: null, bold: false, before: 0, after: 120 }
+        }[b.kind] || { size: 22, after: 120 };
+        var run = { text: b.text, size: spec.size, font: "Calibri" };
+        if (spec.bold) run.bold = true;
+        if (spec.color) run.color = spec.color;
+        var para = { children: [new D.TextRun(run)], spacing: { before: spec.before || 0, after: spec.after } };
+        if (b.kind === "li") para.bullet = { level: 0 };
+        kids.push(new D.Paragraph(para));
+      });
+
+      var doc = new D.Document({
+        sections: [{ properties: { page: { margin: { top: 1000, right: 1000, bottom: 1000, left: 1000 } } },
+                     children: kids }]
+      });
+      D.Packer.toBlob(doc).then(function (blob) {
+        var a = document.createElement("a");
+        a.href = URL.createObjectURL(blob);
+        /* YYYYMMDD prefix per the vault's mandatory deliverable-naming rule
+         * (CPLBrain CLAUDE.md) so briefings sort chronologically wherever they
+         * land. NOTE: college_report_generator.js still puts its date at the
+         * END — flagged for Sam rather than changed here, since renaming an
+         * artifact people already file is his call, not a side effect of this. */
+        a.download = today.replace(/-/g, "") + "_"
+          + name.replace(/[^A-Za-z0-9]+/g, "_").replace(/^_|_$/g, "") + "_CPL_Briefing.docx";
+        document.body.appendChild(a); a.click(); document.body.removeChild(a);
+        done("Downloaded");
+      }).catch(function () { done("Could not build the document"); });
+    });
+  }
+
   function wire(root) {
-    var c = root.querySelector("#cb-college"), r = root.querySelector("#cb-role"),
-        d = root.querySelector("#cb-district");
+    Array.prototype.forEach.call(root.querySelectorAll("[data-scope]"), function (b) {
+      b.onclick = function () { setScope(b.getAttribute("data-scope"), root); };
+    });
+    Array.prototype.forEach.call(root.querySelectorAll("[data-scope-clear]"), function (b) {
+      b.onclick = function () { setScope(null, root); };
+    });
+    // The shortcut past the question, for whoever was here yesterday.
+    Array.prototype.forEach.call(root.querySelectorAll("[data-scope-resume]"), function (b) {
+      b.onclick = function () { resumeRemembered(root); };
+    });
+    // Back to step 2, keeping the scope. Clears the entity AND its detail — a
+    // stale detail left behind would render the previous college's figures under
+    // the next one's name for as long as the fetch takes.
+    Array.prototype.forEach.call(root.querySelectorAll("[data-entity-clear]"), function (b) {
+      b.onclick = function () {
+        state.college = null; state.district = state.scope === "district" ? "" : state.district;
+        state.detail = null; state.detailFor = null; state.detailError = null;
+        rememberScope(); recompute(); render(root);
+      };
+    });
+    Array.prototype.forEach.call(root.querySelectorAll("[data-district]"), function (b) {
+      b.onclick = function () {
+        state.district = b.getAttribute("data-district") || "";
+        rememberScope(); recompute(); render(root);
+      };
+    });
+    Array.prototype.forEach.call(root.querySelectorAll("[data-all]"), function (b) {
+      b.onclick = function () { setAllSections(b.getAttribute("data-all") === "open", root); };
+    });
+    var rep = root.querySelector("#cb-report");
+    if (rep) rep.onclick = function () { buildBriefingReport(root); };
+
+    var c = root.querySelector("#cb-college"), d = root.querySelector("#cb-district");
     if (c) c.onchange = function () { selectCollege(c.value, root); };
-    if (r) r.onchange = function () { state.role = r.value; render(root); };
     if (d) d.onchange = function () {
       state.district = d.value || "";
       // Clear a selection the new filter no longer contains, rather than
@@ -1748,6 +3461,25 @@
       }
       recompute(); render(root);
     };
+    // The consortium narrowing, same contract as the district one above: a
+    // selection the new filter no longer contains is cleared rather than left
+    // on screen under a picker that does not list it.
+    var sw = root.querySelector("#cb-swp");
+    if (sw) sw.onchange = function () {
+      state.swpRegion = sw.value || "";
+      if (state.college && state.swpRegion
+          && swpColleges(state.swpRegion).indexOf(state.college) < 0) {
+        state.college = null; state.detail = null; state.detailFor = null;
+      }
+      rememberScope(); recompute(); render(root);
+    };
+    // The region buttons on the `swp` scope's own second question.
+    Array.prototype.forEach.call(root.querySelectorAll("[data-swp]"), function (b) {
+      b.onclick = function () {
+        state.swpRegion = b.getAttribute("data-swp") || "";
+        rememberScope(); recompute(); render(root);
+      };
+    });
     // Remember which sections the reader opened. render() rewrites innerHTML,
     // so without this a change of role or district would slam every drawer
     // shut under someone mid-read.
@@ -1755,11 +3487,23 @@
       d.addEventListener("toggle", function () {
         var id = d.getAttribute("data-sec");
         if (id) state.open[id] = d.open;
+        // The register is the one section whose data is not already in hand.
+        // Pulled on open rather than on tab load: most visits never reach it.
+        if (id === "opps" && d.open) loadOpps(root);
       });
     });
+    // A section restored already-open from the previous render never fires a
+    // toggle, so the load has to be re-checked here or the drawer sits on its
+    // placeholder forever.
+    if (state.open.opps && state.college) loadOpps(root);
+    wireOpps(root);
     Array.prototype.forEach.call(root.querySelectorAll(".cb-pick"), function (b) {
       b.onclick = function () { selectCollege(b.getAttribute("data-college"), root); };
     });
+    // The suggested questions are the assistant's own chips now, so this wires
+    // only the FALLBACK cluster fallbackAsks() renders when cpl_chat.js did not
+    // mount. Nothing matches on the normal path — kept because the fallback is
+    // the one path where the questions still belong to this file.
     Array.prototype.forEach.call(root.querySelectorAll(".cb-ask"), function (b) {
       b.onclick = function () { askSierra(b.getAttribute("data-q")); };
     });
@@ -1787,6 +3531,33 @@
     });
   }
 
+  /* The Strong Workforce consortium roster. 3.6KB, so it loads with the tab
+   * rather than on demand: the scope question offers it in the first screen,
+   * and a button that appears a beat late reads as broken. */
+  function loadSwp(root) {
+    if (state.swp !== "idle") return;
+    state.swp = "loading";
+    loadScript("swp_region_data.js", "CPL_SWP_REGIONS", function () {
+      var D = window.CPL_SWP_REGIONS;
+      state.swpData = (D && D.regions) ? D : null;
+      state.swp = state.swpData ? "ready" : "error";
+      if (root) render(root);
+    });
+  }
+
+  /* PURE. The consortium's colleges, or [] when the roster has not arrived.
+   * ⚠ NEVER falls back to another region scheme: a near-miss roster is worse
+   * than an empty one, because 23 names look exactly as complete as 28. */
+  function swpColleges(code) {
+    var R = state.swpData && state.swpData.regions;
+    return (R && R[code] && R[code].colleges) || [];
+  }
+
+  function swpName(code) {
+    var R = state.swpData && state.swpData.regions;
+    return (R && R[code] && R[code].name) || code || "";
+  }
+
   /* The daily tier classification, from the same committed live_metrics.json
    * the dashboard KPIs are built from. Same-origin static file, 55KB, no auth.
    * A failed read leaves state.live null and the tier block simply does not
@@ -1810,7 +3581,7 @@
    * Budget ledger appropriations, which override the baked pool values. The
    * ledger/perf/ESS sidecars land asynchronously, so we subscribe to the
    * module's change notification and re-render when they do; without that the
-   * ESS outcomes would sit on "⏳ not loaded yet" forever. */
+   * ESS outcomes would sit on "Pending" forever. */
   function loadFunding(root) {
     if (state.funding !== "idle") return;
     state.funding = "loading";
@@ -1822,6 +3593,21 @@
       }
       try { M.ensureLoaded(); } catch (e) { /* the model renders its own empty state */ }
       state.funding = "ready";
+      if (root) render(root);
+    });
+  }
+
+  /* The occupation opportunity register. Pulled on first OPEN of its section
+   * rather than on college selection: the file carries every college in the
+   * region at once, so a second college costs nothing after the first, and a
+   * visitor who never opens the section never pays the 2MB. */
+  function loadOpps(root) {
+    if (state.oppsState !== "idle") return;
+    state.oppsState = "loading";
+    loadScript("regional_cpl_opportunity_data.js", "CPL_REGIONAL_OPPS", function () {
+      var D = window.CPL_REGIONAL_OPPS;
+      state.opps = (D && D.colleges) ? D : null;
+      state.oppsState = state.opps ? "ready" : "error";
       if (root) render(root);
     });
   }
@@ -1843,7 +3629,97 @@
   function mountAssistant(root) {
     var C = chatModule(), host = root && root.querySelector("#cb-assistant-mount");
     if (!C || !host) return false;
-    try { C.mountInto(host); return true; } catch (e) { return false; }
+    // "my-college" is this tab's SURFACE — see cpl_chat.js hostSurface. It is not
+    // the scope (that is setAssistantScope, and it changes as the reader picks a
+    // college); the surface is constant for this pane.
+    try { C.mountInto(host, "my-college"); return true; } catch (e) { return false; }
+  }
+
+  /* PURE-ish. This college's five headline figures, from the same two inputs
+   * render() uses. Derived here rather than threaded through finish() as a
+   * parameter: three of finish()'s four exit paths pass null for it, so a
+   * threaded value would silently drop the "units already waiting" question on
+   * every path but one. */
+  function standingFor(college) {
+    var summary = state.data && state.data.summaryByName && state.data.summaryByName[college];
+    return standing(summary, state.detail);
+  }
+
+  /* The pre-2026-08-21 question cluster, rendered ONLY when cpl_chat.js is not
+   * there to hold it. Same markup, same wiring, same askSierra() route — it is
+   * the fallback, not a second cluster: nothing calls this while the widget is
+   * mounted, so the two can never appear together. */
+  function fallbackAsks(root) {
+    var mount = root && root.querySelector("#cb-assistant-mount");
+    if (!mount || !mount.parentNode) return false;
+    // Never beside the widget's own row. Structural, so "the two can never
+    // appear together" is enforced rather than reasoned about.
+    if (root.querySelector(".cplchat-suggest") || root.querySelector(".cb-asks")) return false;
+    /* ⚠ THE SAME scopeQuestions() THE WIDGET GETS — this used to require
+     * state.college and re-derive the college list itself, so a district reader
+     * whose chat module failed to load saw NO questions at all while a college
+     * reader saw four. Two callers deriving one list is how they drift. */
+    var qs = scopeQuestions();
+    if (!qs.length) return false;
+    var box = document.createElement("div");
+    box.innerHTML = '<div class="cb-asks-lab">Try one of these</div><div class="cb-asks">'
+      + qs.map(function (q) {
+          return '<button type="button" class="cb-ask" data-q="' + esc(q) + '">' + esc(q) + "</button>";
+        }).join("")
+      + "</div>";
+    while (box.firstChild) mount.parentNode.insertBefore(box.firstChild, mount);
+    return true;
+  }
+
+  /* Hand THIS scope's own questions to the assistant, so there is ONE cluster
+   * of them and it sits below the role chips (Sam, 2026-08-21). Derived, not a
+   * fixed list, so they stay right as a college's position changes.
+   *
+   * ⚠ A GROUP SCOPE GETS GROUP QUESTIONS — IT MUST NOT PASS null. That is what
+   * #1274 did, and null returns the widget to its generic starters, one of
+   * which names Riverside City College: correct on the public page and on the
+   * CPL Assistant tab, wrong under "Welcome, Los Angeles Community College
+   * District" (Sam, 2026-08-21). The list still CHANGES on every scope change,
+   * which is the part that mattered — leaving the previous college's questions
+   * up would offer advice about a college the reader has navigated away from.
+   *
+   * Fails soft in both directions: an unmounted or older chat module simply
+   * shows its own starters, which is a working assistant with less-tailored
+   * suggestions — never a blank box. */
+  function setAssistantQuestions() {
+    var C = chatModule();
+    if (!C || typeof C.setSuggestions !== "function") return false;
+    try { return C.setSuggestions(scopeQuestions()); } catch (e) { return false; }
+  }
+
+  /* Tell the assistant WHOSE PAGE THIS IS. The questions above say what is worth
+   * asking; this says who is being asked about, and they are not the same thing
+   * — a reader types their own question far more often than they click a chip,
+   * and a typed question carries no scope at all.
+   *
+   * ⚠ THIS IS WHAT MAKES THE ANSWER MATCH THE HEADING. Sam, 2026-08-22, with
+   * LACCD selected: "she configured her response based on RCCD." Nothing had
+   * ever told the assistant which institution was selected — not the payload,
+   * not the prompt — so the live `sierra_guidance` directive "confine your
+   * answers to the selected institution" was an instruction to guess, and the
+   * stale thread from a previous scope was the only institution in evidence.
+   * cpl_chat.js's setScope() drops that thread on a real change of subject; the
+   * label it takes is what the function anchors the answer to.
+   *
+   * ⚠ THE FULL NAME, NOT THE DISPLAY ABBREVIATION. The picker renders "Los
+   * Angeles CCD" and the roster's key is "Los Angeles Community College
+   * District"; the function resolves a district by that stem through the same
+   * path a typed question uses, so handing over the short form would put a
+   * second, weaker matcher in the loop. state.district is already the full name.
+   *
+   * Fails soft: an older chat module without setScope simply behaves as it does
+   * today. Never gates the mount — a scope that cannot be handed over is a
+   * less-tailored assistant, not a missing one. */
+  function setAssistantScope() {
+    var C = chatModule();
+    if (!C || typeof C.setScope !== "function") return false;
+    try { return C.setScope(scopeReady() ? state.scope : null, scopeLabel()); }
+    catch (e) { return false; }
   }
   /* One click, not two. The suggested questions sit above an assistant that is
    * already mounted on this tab, so clicking one fills the box AND sends —
@@ -1855,6 +3731,18 @@
    * question through it and the reviewer edits first). If neither is
    * available the question is stashed and we navigate to the full tab. */
   function askSierra(question) {
+    /* ⚠ SIERRA MAY BE COLLAPSED. Since 2026-08-17 she is a <details>, and
+     * Collapse all closes her along with everything else. Prefilling a widget
+     * inside a closed section types into a box nobody can see — the exact
+     * silent failure #1166 fixed for the Sierra Training hand-off, which
+     * targets this very widget. Open the section before handing anything to it.
+     * State first, then the live DOM, because a re-render reads the state and
+     * anything already on screen does not wait for one. */
+    state.open.sierra = true;
+    try {
+      var d = document.querySelector('#college-briefing-root details[data-sec="sierra"]');
+      if (d && !d.open) d.open = true;
+    } catch (e) { /* not mounted — the state flag still lands */ }
     var C = chatModule();
     if (C && typeof C.ask === "function" && C.ask(question)) return;          // fills + sends
     if (C && typeof C.prefill === "function" && C.prefill(question)) return;  // stays on the tab
@@ -1899,6 +3787,68 @@
     return qs;
   }
 
+  /* PURE. The questions for a scope that is NOT one college — a district, or
+   * statewide.
+   *
+   * ⭐ WHY THIS EXISTS AT ALL (Sam, 2026-08-21, on a screenshot of the LACCD
+   * page): "The pre-seeded questions are not adjusted to the selected org. I
+   * know this may be due to our joint use of Sierra public use and Sierra My
+   * College use." He was exactly right about the cause. #1274 gave a group
+   * scope `null`, which returns the widget to its GENERIC starters — and those
+   * are the PUBLIC surface's list, one of which names Riverside City College.
+   * Fine on the CPL Assistant tab; nonsense under a heading that reads "Welcome,
+   * Los Angeles Community College District".
+   *
+   * The fix is structural, not a better fallback: a host that knows whose page
+   * this is ALWAYS owns the questions, in every scope. setAssistantQuestions()
+   * no longer passes null, so the generic list is unreachable from this tab and
+   * can go on being concrete for the audience it was written for.
+   *
+   * ⚠ SIERRA HAS NO DISTRICT DIMENSION, so no question here may DEPEND on one.
+   * Verified two ways, 2026-08-21: zero columns in the whole public schema are
+   * named district (`information_schema.columns … ilike '%district%'` → 0 rows),
+   * and districtIndex() above builds the grouping client-side from
+   * window.CPL_FUNDING.colleges — the funding roster. The district exists in
+   * this browser and nowhere she can read. So "which of my colleges has the
+   * most units waiting?" is a question this page can answer and she cannot, and
+   * offering it would manufacture the confident-wrong answer this project keeps
+   * finding. The district is therefore named only in an ADVISORY question,
+   * where a name cannot become a false figure.
+   *
+   * ⚠ AND NO MEMBER COLLEGE IS SINGLED OUT. The obvious "lead with the college
+   * with the most units waiting" orders a reader's own peers by a figure —
+   * rollup() right above deliberately sorts alphabetically for that reason, and
+   * Sam's standing rule is that colleges are never ranked. The roll-up table
+   * already lists every member with its figures and says "Pick any college for
+   * its full briefing"; that is the route to a college-shaped question, not a
+   * chip that picks one for them.
+   *
+   * What is left is genuinely answerable: one advisory question naming the org,
+   * and the credential + statewide routes, which are live (CRED·VOLUME,
+   * CRED·STD) and have no college or district in them. */
+  function groupQuestions(scope, label) {
+    var qs = [];
+    if (scope === "district" && label) {
+      qs.push("What should " + label + " do to help its colleges award more CPL?");
+    } else if (scope === "statewide") {
+      qs.push("How many students has CPL served statewide?");
+    }
+    qs.push("Which credentials do the most colleges give credit for?");
+    qs.push("Which colleges give credit for a real estate license?");
+    qs.push("What is Credit for Prior Learning?");
+    return qs;
+  }
+
+  /* The questions for whatever scope is in force — the ONE place that decides,
+   * so the widget cluster and the no-widget fallback can never offer different
+   * lists. Returns [] only when no scope is settled, which is a screen with no
+   * assistant on it. */
+  function scopeQuestions() {
+    if (state.college) return sierraQuestions(state.college, state.detail, standingFor(state.college));
+    if (!scopeReady()) return [];
+    return groupQuestions(state.scope, scopeLabel());
+  }
+
   /* ── Load ────────────────────────────────────────────────────────────── */
   function jget(url) {
     return fetch(url, { headers: authHeaders() }).then(function (r) {
@@ -1925,25 +3875,148 @@
         contactKnown: Object.prototype.hasOwnProperty.call(raw.contactByName || {}, state.college)
       };
     }
-    state.data.briefing = buildBriefing({ config: raw.config, college: c }, { scenario: SCENARIO, year: YEAR });
+    state.data.briefing = buildBriefing({ config: raw.config, college: c }, { scenario: briefingScenario(raw.config), year: YEAR });
+  }
+
+  /* WHICH SCENARIO (Sam, 2026-09-23: a new scenario must stay "wired to
+   * everything needed"). The funding box reads cpl_funding.js, which follows
+   * the scenario THIS BROWSER chose, or the PUBLISHED one for a browser that
+   * never chose. The strategies have to come from that same scenario, or a
+   * curator working in an unpublished scenario reads one scenario's funding
+   * beside another's strategies. Until the model loads, the config's own
+   * published name decides; SCENARIO is the last fallback. */
+  function briefingScenario(config) {
+    var M = fundingModule();
+    var s = (M && typeof M._scenario === "function") ? M._scenario() : null;
+    if (s && s.project === IMPL_PROJECT && s.name) return s.name;
+    return publishedScenarioOf(config) || SCENARIO;
+  }
+  /* PURE. The flagship project's published scenario, read from the config the
+   * same way cpl_funding.js publishedScenario() reads it. */
+  function publishedScenarioOf(config) {
+    var p = config && config.projects && config.projects[IMPL_PROJECT];
+    var scen = p && p.scenarios;
+    if (!scen || typeof scen !== "object") return null;
+    if (typeof p.published === "string" && scen[p.published]) return p.published;
+    if (scen[SCENARIO]) return SCENARIO;
+    var names = Object.keys(scen).sort(function (a, b) { return a.localeCompare(b, undefined, { numeric: true }); });
+    return names[0] || null;
   }
 
   function loadAll() {
+    var SRC = sources();
     return Promise.all([
       jget(REST + "/cpl_funding_config?id=eq.default&select=config"),
-      jget(REST + "/map_colleges?select=college_id,college_name&order=college_name"),
-      jget(REST + "/map_college_credit_summary?select=*"),
-      jget(REST + "/map_college_contacts?select=college,primary_contact,primary_contact_email,cpl_coordinator,cpl_coordinator_email,cpl_counselor,cpl_counselor_email,articulation_officer,articulation_officer_email,faculty_lead,faculty_lead_email,certifying_official,certifying_official_email,vpaa,vpaa_email,vpss,vpss_email,landing_page_url,last_updated_on")
+      // entity_kind=neq.test EXCLUDES MAP's sandbox orgs (Sam, 2026-08-13:
+      // "the MAP Custom reports mistakenly let our sandbox environment orgs slip
+      // into the users and contacts reports and now show up in our drop downs").
+      // Seven of them: CabTest / MorTest City / Nortest City / RivTest City /
+      // SantTest Ana / Testing College / NORCO College - Syllabus Manager, plus
+      // CA MAP INITIATIVE COLLEGE (also tagged test).
+      //
+      // The flag was NOT missing — map_colleges.entity_kind already carried the
+      // right value for every one of them. This consumer simply never read it,
+      // which is the same shape as the contacts fossil and the statewide flag:
+      // the data was right and nobody asked it. Filtering here, not upstream,
+      // because MAP fixing its report would clean map_college_users and
+      // map_college_contacts on the daily cron but NOT this lookup table.
+      //
+      // Deliberately neq.test rather than eq.college: partners (Futuro Health,
+      // Launch Apprenticeship) and the two standalone continuing-ed institutions
+      // are real entities and stay.
+      // `variants` joined 2026-08-21 — see the contact indexing below. It is
+      // EMPTY on the two partner rows by design, so a consumer must treat an
+      // empty array as "no aliases", never as a failed read.
+      jget(REST + "/map_colleges?select=college_id,college_name,variants&entity_kind=neq.test&order=college_name"),
+      jget(REST + "/" + SRC.summary + "?select=*"),
+      jget(REST + "/" + SRC.contacts + "?select=" + SRC.contactSelect)
     ]).then(function (res) {
       var cfgRow = res[0] && res[0][0], colleges = res[1] || [], summary = res[2] || [], contacts = res[3] || [];
       var nameToId = {}, names = [];
-      colleges.forEach(function (r) { nameToId[r.college_name] = r.college_id; names.push(r.college_name); });
+      /* variant spelling -> the canonical map_colleges name. Built from the
+       * `variants` column landed 2026-08-21 (kb/college_identity/<date>/). The
+       * canonical name NEVER maps through this — a variant must not be able to
+       * shadow a real college's own row. */
+      var variantToCanon = {};
+      colleges.forEach(function (r) {
+        nameToId[r.college_name] = r.college_id;
+        names.push(r.college_name);
+      });
+      /* ⚠ A VARIANT MUST NEVER SHADOW ANOTHER COLLEGE'S CANONICAL NAME.
+       * Built in a SECOND pass, after every canonical name is known — a single
+       * pass cannot know whether a variant it is about to register belongs to a
+       * college it has not read yet.
+       *
+       * The hazard is concrete: "Mission College" is a real college (id 82) and
+       * is also a perfectly plausible variant of "Los Angeles Mission College".
+       * Let the variant win and Mission College's own CPL coordinator is
+       * silently attached to LA Mission — one college's contact answering for
+       * another, which is worse than the blank this whole change exists to fix.
+       * Caught by tests/college_identity_variants.test.js block (3), which was
+       * written before this guard and failed. */
+      /* ⚠ AND A VARIANT TWO COLLEGES BOTH CLAIM MUST RESOLVE TO NEITHER.
+       * The shadow guard above only catches a variant equal to a CANONICAL
+       * name. It cannot see the other collision: two colleges offering the SAME
+       * variant. This used to be "first writer wins" — silently, and ordered by
+       * college_name, so the alphabetically-earlier college took it.
+       *
+       * That was harmless only while variants were district-qualified
+       * ("LA PIERCE"), which are unique by construction. The moment campus short
+       * names exist it is live: FIVE colleges' names reduce to "City College"
+       * (Los Angeles, San Diego, Long Beach, Riverside, Santa Barbara), so
+       * first-wins would attach San Diego City College's CPL coordinator to
+       * Los Angeles City College and report it as a resolved contact.
+       * A CONFIDENTLY WRONG CONTACT IS WORSE THAN THE BLANK THIS FIXES.
+       *
+       * The builder (kb/_build_college_identity_crosswalk.py) already refuses to
+       * MINT an ambiguous short name, so today nothing reaches here. This guard
+       * exists because a builder guarantee is not a consumer guarantee: this
+       * column is also written by hand and by curator rulings, and a consumer
+       * that trusts its input is one bad row from a wrong answer.
+       * Counted in a pass of its own — a single pass cannot know a later college
+       * is about to claim the same variant. */
+      var variantClaims = {};
+      colleges.forEach(function (r) {
+        (r.variants || []).forEach(function (v) {
+          if (!v || v === r.college_name || (v in nameToId)) return;
+          variantClaims[v] = (variantClaims[v] || 0) + 1;
+        });
+      });
+      colleges.forEach(function (r) {
+        (r.variants || []).forEach(function (v) {
+          if (!v || v === r.college_name) return;
+          if (v in nameToId) return;                 // some college owns this name
+          if (variantClaims[v] > 1) return;          // ambiguous — resolves to neither
+          if (!(v in variantToCanon)) variantToCanon[v] = r.college_name;
+        });
+      });
       var summaryById = {};
       summary.forEach(function (r) { summaryById[r.college_id] = r; });
       var contactByName = {}, contactRowByName = {};
       contacts.forEach(function (r) {
         contactByName[r.college] = r.primary_contact_email || null;
         contactRowByName[r.college] = r;
+        /* ⭐ AND UNDER EVERY VARIANT OF THAT NAME.
+         *
+         * Measured 2026-08-21: TWO contact rows are keyed on a name with a
+         * TRAILING SPACE — "Cypress College " and "San Jose City College ".
+         * Both carry a real primary_contact_email and a named CPL coordinator,
+         * and neither exact-matches map_colleges. So this index was built under
+         * a key nothing ever looked up, and both colleges rendered as having no
+         * contact — silently, because a missing key is indistinguishable from a
+         * college that genuinely has none.
+         *
+         * ⚠ Do NOT "fix" this by trimming the contacts table: it is rebuilt
+         * from MAP on the daily cron, so the space returns tomorrow, and a load
+         * must reproduce its source rather than improve it. The join is what
+         * has to tolerate the variance — which is exactly what map_colleges
+         * .variants is for now that it is populated (118 of 128 rows; the two
+         * trailing-space spellings are IN it, verified). */
+        var canon = variantToCanon[r.college];
+        if (canon && canon !== r.college) {
+          if (!(canon in contactByName)) contactByName[canon] = r.primary_contact_email || null;
+          if (!(canon in contactRowByName)) contactRowByName[canon] = r;
+        }
       });
       var summaryByName = {};
       names.forEach(function (n) { summaryByName[n] = summaryById[nameToId[n]] || null; });
@@ -1962,13 +4035,17 @@
   function activate() {
     var root = document.getElementById("college-briefing-root");
     if (!root) return;
-    if (state.data && state.loadedSignedIn === signedIn()) { loadRoster(root); loadLive(root); render(root); return; }
-    if (!signedIn()) { state.data = null; render(root); return; }
+    if (state.scope === null) restoreScope();
+    if (state.data && state.loadedSignedIn === signedIn()) { loadRoster(root); loadSwp(root); loadLive(root); render(root); return; }
+    // No sign-in branch: a public reader loads the `_pub` mirrors through
+    // sources(). `loadedSignedIn` above is what reloads from the OTHER source
+    // when a reader signs in or out mid-session.
     state.loading = true; render(root);
     // The roster is small and powers the district picker, so it starts now,
     // in parallel with the Supabase reads. The 370KB model waits until a
     // college is actually chosen.
     loadRoster(root);
+    loadSwp(root);
     loadLive(root);
     loadAll().then(function () {
       state.loading = false; state.loadedSignedIn = signedIn(); render(root);
@@ -1990,9 +4067,61 @@
     // no k-anonymity of its own, so breaking out a withheld college's credit
     // would hand back what suppression removed.
     _waitingBreakdown: waitingBreakdown,
+    // Pure. Exposed because the three-way split (filled / blank / held back) is
+    // the difference between telling a college its VP is missing and telling it
+    // we did not ask.
+    _contactRoster: contactRoster,
+    _sources: sources,
     _prioritiesAlign: prioritiesAlign,
+    // The reorder join (Sam, 2026-08-20). Both pure: applyPriorityOrder puts a
+    // program's priorities into the curator's display order, programPriorityFor
+    // joins one funding priority back to its own strategies by IDENTITY.
+    _applyPriorityOrder: applyPriorityOrder,
+    _programPriorityFor: programPriorityFor,
+    // Auth seams. Every per-college FIGURE on this tab sits behind
+    // `is_allowed_reviewer() OR team_pass_ok()`, and an RLS-filtered SELECT
+    // answers 200 + [] rather than 401 — so a credential that never reaches the
+    // server is indistinguishable from a college with no data, on every college
+    // at once. That is silent by construction and cannot be seen from the
+    // rendered page, so it is asserted on the headers instead.
+    _scopePicker: scopePicker,
+    _entityPicker: entityPicker,
+    _welcomeHead: welcomeHead,
+    _scopeLabel: scopeLabel,
+    _scopeReady: scopeReady,
+    _rollup: rollup,
+    // PURE. The docx builder reads the RENDERED tab through this, so a test can
+    // assert what reaches the document without the docx library present.
+    _briefingBlocks: briefingBlocks,
+    _SCOPES: SCOPES,
+    _SECTION_IDS: SECTION_IDS,
+    // PURE. The opportunity register's body, every input explicit, so its
+    // states — loading, failed, college-outside-the-set, populated — can be
+    // asserted without a college selection and a Supabase read behind them.
+    _oppsBodyFor: oppsBodyFor,
+    // Exported so the CIP filter is asserted through the DOM path the reader
+    // actually uses, rather than through a re-implementation of it in a test.
+    _wireOpps: wireOpps,
+    _cerBlock: cerBlock,
+    _oppDrawer: oppDrawer,
+    _oppsSummaryFor: oppsSummaryFor,
+    _oppRow: oppRow,
+    _setAllSections: setAllSections,
+    _getSession: getSession,
+    _authHeaders: authHeaders,
     _rosterKey: rosterKey,
     _nextEssOutcome: nextEssOutcome,
+    // The ESS outcome marks are WORDS now, not glyphs — exposed so the test can
+    // assert each state stays distinct as well as glyph-free (a strip that
+    // collapsed two states into one label would read as glyph-free and be
+    // wrong). Pure.
+    _essMark: essMark,
+    // Resources render inside a collapsible section that only exists once the
+    // briefing DATA has landed, so a jsdom load with a never-resolving fetch
+    // never sees them. Exposed so the "(opens in a new tab)" cue — which
+    // replaced the ↗ and is the only leaves-the-page warning a screen reader
+    // gets — is guarded rather than quietly untested. Pure.
+    _resourcesHtml: resourcesHtml,
     // The tier count is the WORKER's (criteriaMetCount); the per-criterion
     // list is display only, and `mismatch` fires when the two disagree.
     _tierStanding: tierStanding,
@@ -2011,6 +4140,8 @@
     _districtIndex: districtIndex,
     _shortName: shortName,
     _sierraQuestions: sierraQuestions,
+    _groupQuestions: groupQuestions,
+    _scopeQuestions: scopeQuestions,
     _dedupeValue: dedupeValue,
     _contactRoster: contactRoster,
     _askSierra: askSierra,
@@ -2018,6 +4149,8 @@
     _money: money,
     _state: state,
     _SCENARIO: SCENARIO,
+    _briefingScenario: briefingScenario,
+    _publishedScenarioOf: publishedScenarioOf,
     _YEAR: YEAR
   };
 

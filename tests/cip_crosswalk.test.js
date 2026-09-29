@@ -155,6 +155,10 @@ function freshR(mode) {
   api._setColleges(JSON.parse(JSON.stringify(MANIFEST)));
   api._setCourses("test_college", JSON.parse(JSON.stringify(RCOURSES)));
   api.activate();
+  // Browse/recommend lost their nav buttons (2026-08-14) and navNormalise() now coerces a STORED
+  // browse mode back to review on purpose, so pinning via localStorage no longer sticks. Drive the
+  // still-supported mode through the seam instead.
+  if (mode && mode !== "review") api._setMode(mode);
   // College is no longer restored from storage (ephemeral, Sam's fix) — pick it the way a user
   // would, via the dropdown, so the college-scoped views render.
   try {
@@ -174,6 +178,7 @@ function fresh(withCollege) {
   api._setColleges(JSON.parse(JSON.stringify(MANIFEST)));
   api._setCourses && api._setCourses("test_college", JSON.parse(JSON.stringify(COURSES)));
   api.activate();
+  api._setMode("browse");   // no nav button since 2026-08-14; the mode itself is untouched
   // College is ephemeral (Sam's fix — not restored from storage); pick it via the dropdown.
   if (withCollege) {
     try { const csel = dom.window.document.querySelector(".cipx-college-sel"); if (csel) { csel.value = "test_college"; csel.dispatchEvent(new dom.window.Event("change")); } } catch (e) {}
@@ -198,7 +203,7 @@ function fresh(withCollege) {
   api._setColleges(JSON.parse(JSON.stringify(MANIFEST)));
 
   let actThrew = false;
-  try { api.activate(); } catch (e) { actThrew = true; console.error("activate threw:", e); }
+  try { api.activate(); api._setMode("browse"); } catch (e) { actThrew = true; console.error("activate threw:", e); }
   check("activate() renders without throwing", !actThrew);
 
   const root = document.getElementById("cip-crosswalk-root");
@@ -329,7 +334,7 @@ function fresh(withCollege) {
 
   // ── Part B2 — "Find my course's code" (TOP→CIP easy button) ──
   check("cip_crosswalk_data.js carries topcip{} + boiler[]", /"topcip":/.test(dataSrc) && /"boiler":/.test(dataSrc));
-  check("cip_crosswalk.js has the flat four-destination nav", /cipx-modebar/.test(src) && /Find a course/.test(src) && /Review my programs/.test(src) && /Review my courses/.test(src));
+  check("cip_crosswalk.js has the two-destination nav (Browse + Find hidden 2026-08-14)", /cipx-modebar/.test(src) && /Review my programs/.test(src) && /Review my courses/.test(src));
   check("cip_crosswalk.js exposes the recommend seam", /_recommend:/.test(src));
 
   // logic (via the _recommend seam — no DOM)
@@ -484,8 +489,11 @@ function fresh(withCollege) {
   // DOM: recommend mode renders + picking a course produces a recommendation card
   const domR = freshR("recommend");
   const rdoc = domR.window.document;
-  check("recommend mode: the nav shows all four destinations", rdoc.querySelectorAll(".cipx-modebar .cipx-modetab").length === 4);
-  check("recommend mode: the recommend tab is selected", rdoc.querySelector(".cipx-modetab.on") && /Find a course/.test(rdoc.querySelector(".cipx-modetab.on").textContent));
+  check("recommend mode: the nav shows the two visible destinations", rdoc.querySelectorAll(".cipx-modebar .cipx-modetab").length === 2);
+  // Recommend has no nav button since 2026-08-14, so NO tab lights up while it renders — and that is
+  // the intended read: the two review lanes stay plainly clickable, so there is always a way out of a
+  // mode you can no longer navigate INTO. (navNormalise() means a returning user never lands here.)
+  check("recommend mode: no tab is selected, and both review lanes stay clickable", !rdoc.querySelector(".cipx-modetab.on") && rdoc.querySelectorAll(".cipx-modebar .cipx-modetab").length === 2);
   check("recommend mode: shows the course-first panel, not the browse list", rdoc.querySelector(".cipx-rec .cipx-panel") && !rdoc.querySelector(".cipx-list"));
   await tick(); await tick();  // let loadCollege() resolve
   const rInput = rdoc.querySelector(".cipx-rec-combohost .cipx-cbwrap .cipx-fit-cb");
@@ -657,7 +665,7 @@ function fresh(withCollege) {
   const domRev = freshR("review");
   domRev.window.CPL_CIP_CROSSWALK._setConsensus(RCONSENSUS);   // peer-consensus fixture (fetch is a no-op in jsdom)
   const revdoc = domRev.window.document;
-  check("review mode: four destinations, Review-my-courses selected", revdoc.querySelectorAll(".cipx-modebar .cipx-modetab").length === 4 && /Review my courses/.test(revdoc.querySelector(".cipx-modetab.on").textContent));
+  check("review mode: two destinations, Review-my-courses selected", revdoc.querySelectorAll(".cipx-modebar .cipx-modetab").length === 2 && /Review my courses/.test(revdoc.querySelector(".cipx-modetab.on").textContent));
   // Sam's point 3 (2026-07-18): Review is the FIRST tab and the default mode.
   check("the two Review destinations lead the nav — programs, then courses (Sam, 2026-08-11)", (function () { var t = revdoc.querySelectorAll(".cipx-modebar .cipx-modetab"); return /Review my programs/.test(t[0].textContent) && /Review my courses/.test(t[1].textContent); })());
   check("Review is the DEFAULT mode when nothing is stored (point 3)", (function () { var d = freshR(); var doc = d.window.document; return !!doc.querySelector(".cipx-rev") && /Review my courses/.test(doc.querySelector(".cipx-modetab.on").textContent); })());
@@ -997,8 +1005,12 @@ function fresh(withCollege) {
   // The two-level `Code my: [Programs][Courses]` + mode bar is gone. It made every visitor pick a
   // scope that two of the three destinations ignored, and the scope tab kept reading "Courses"
   // while you were browsing — a label asserting an action you are not taking.
-  check("nav: one flat bar of four destinations, no separate scope bar", (function () { var t = pdoc.querySelectorAll(".cipx-modebar .cipx-modetab"); return t.length === 4 && pdoc.querySelectorAll(".cipx-scopebar, .cipx-scopetab").length === 0; })());
-  check("nav: the four destinations read Review my programs · Review my courses · Browse CIP codes · Find a course's code", (function () { var t = Array.prototype.map.call(pdoc.querySelectorAll(".cipx-modetab"), (x) => x.textContent.trim()); return t[0] === "Review my programs" && t[1] === "Review my courses" && t[2] === "Browse CIP codes" && /^Find a course.s code$/.test(t[3]); })());
+  check("nav: one flat bar of two destinations, no separate scope bar", (function () { var t = pdoc.querySelectorAll(".cipx-modebar .cipx-modetab"); return t.length === 2 && pdoc.querySelectorAll(".cipx-scopebar, .cipx-scopetab").length === 0; })());
+  check("nav: the two destinations read Review my programs · Review my courses", (function () { var t = Array.prototype.map.call(pdoc.querySelectorAll(".cipx-modetab"), (x) => x.textContent.trim()); return t.length === 2 && t[0] === "Review my programs" && t[1] === "Review my courses"; })());
+  // Hidden, not deleted (Sam, after Jenni, 2026-08-14) — "Browse CIP codes" / "Find a course's code"
+  // muddy the waters while the field is walked through the two review lanes. The MODES still work;
+  // only their nav entries are withheld, so a restore is putting two objects back in NAV.
+  check("nav: the hidden destinations offer no button", (function () { var t = pdoc.querySelector(".cipx").textContent; return !/Browse CIP codes/.test(t) && !/Find a course.s code/.test(t); })());
   check("nav: only ONE destination is selected at a time", pdoc.querySelectorAll(".cipx-modetab.on").length === 1);
   check("nav: scope=programs + mode=review selects 'Review my programs', not 'Review my courses'", /Review my programs/.test(pdoc.querySelector(".cipx-modetab.on").textContent));
   check("nav: the old 'Code my:' label and 'Review my catalog' tab no longer render", !/Code my:/.test(pdoc.querySelector(".cipx").textContent) && !/Review my catalog/.test(pdoc.querySelector(".cipx").textContent));
@@ -1071,17 +1083,152 @@ function fresh(withCollege) {
   check("programs: the old 'This CIP is Both — use as' phrasing no longer renders", !!pcte && !/This CIP is Both/.test(pcte.textContent));
   if (pcte) { pcte.querySelector(".cipx-rev-ctebtn").click(); await tick(); }
   check("programs: the CTE choice persists to cipx_prog_<collegeIdx>", (function () { try { return JSON.parse(domP.window.localStorage.getItem("cipx_prog_0") || "{}")["1003"].cte === "cte"; } catch (e) { return false; } })());
-  // Browse is scope-FREE — it is the whole CIP taxonomy, so reaching it from Programs must not
-  // silently flip the scope; coming back to a Review destination is what sets it.
-  Array.prototype.filter.call(pdoc.querySelectorAll(".cipx-modetab"), (x) => /Browse CIP codes/.test(x.textContent))[0].click(); await tick();
-  check("nav: Browse selects on mode alone and leaves the scope alone", (function () { var on = pdoc.querySelector(".cipx-modetab.on"); return /Browse CIP codes/.test(on.textContent) && domP.window.localStorage.getItem("cipx_scope") === "programs"; })());
+
+  // ── 2026-08-14 batch (Sam, after meeting Jenni) ───────────────────────────────────────────────
+
+  // "Both" reads as a property of the CIP; it is a CHOICE the college still owes. The full phrase
+  // is ~4x the width of BOTH and would push the row past the viewport, so the badge says EITHER and
+  // the sentence lives in the tooltip. Assert BOTH halves — a short label with no tooltip is just a
+  // different opaque word.
+  (function () {
+    var badge = Array.prototype.filter.call(pdoc.querySelectorAll(".cipx-prog-item .cipx-cat-Both"), function () { return true; })[0];
+    check("cat badge: a certified-Both CIP renders EITHER, never 'Both'", !!badge && /Either/i.test(badge.textContent) && !/Both/i.test(badge.textContent));
+    check("cat badge: the tooltip carries the full 'Either CTE or Non-CTE' sentence", !!badge && /Either CTE or Non-CTE/.test(badge.getAttribute("title") || ""));
+    check("cat badge: the class still keys off the raw category (styling unchanged)", !!badge && badge.className.indexOf("cipx-cat-Both") >= 0);
+  })();
+
+  // The header never said what the two-digit number WAS — a bare "01" beside a long title read as
+  // part of the title.
+  (function () {
+    var sec = pdoc.querySelector(".cipx-prog-sector .cipx-prog-sector-lbl");
+    check("sector header: carries a 'CIP Sector' label", !!sec && /CIP Sector/.test(sec.textContent));
+    var nocip = pdoc.querySelector(".cipx-prog-sector-nocip");
+    check("sector header: the no-CIP bucket gets NO sector label (it is not a sector)", !nocip || !nocip.querySelector(".cipx-prog-sector-lbl"));
+  })();
+
+  // Row typography: TOP is the code you are LEAVING (plain), CIP the one you are moving TO (labelled).
+  (function () {
+    // Rows are grouped by CIP sector ascending, so the FIRST item is sector 01 (General Agriculture,
+    // TOP 9560.00) — pick by title rather than by position, or the assertion tests the sort order.
+    var item = Array.prototype.filter.call(pdoc.querySelectorAll(".cipx-prog-item"), function (it) {
+      return /Business Administration/.test(it.querySelector(".cipx-prog-title").textContent);
+    })[0];
+    var l2 = item && item.querySelector(".cipx-prog-l2");
+    check("row: the TOP code is no longer bold", !!l2 && !l2.querySelector(".cipx-prog-top b"));
+    check("row: the TOP code still renders its value", !!l2 && /TOP\s*0505\.00/.test(l2.textContent.replace(/\s+/g, " ")));
+    var lbl = l2 && l2.querySelector(".cipx-prog-ciplbl");
+    check("row: a bold CIP label precedes the CIP code", !!lbl && lbl.textContent.trim() === "CIP");
+    check("row: the CIP label sits BEFORE the code, not after", (function () {
+      if (!lbl) return false;
+      var code = l2.querySelector(".cipx-code");
+      return !!code && (lbl.compareDocumentPosition(code) & 4) !== 0;   // DOCUMENT_POSITION_FOLLOWING
+    })());
+  })();
+  // A row with no CIP must not sprout a "CIP" label over an em-dash placeholder.
+  check("row: a program with no CIP renders no CIP label", (function () {
+    var none = Array.prototype.filter.call(pdoc.querySelectorAll(".cipx-prog-item"), function (it) { return it.querySelector(".cipx-prog-nocip"); })[0];
+    return !none || !none.querySelector(".cipx-prog-ciplbl");
+  })());
+
+  // ── The three multi-select pickers (Sam: "we want users to use this first for simplicity") ─────
+  const mpicks = pdoc.querySelectorAll(".cipx-prog-tools .cipx-mpick");
+  check("pickers: three render (Program · Award type · CIP Sector)", mpicks.length === 3);
+  check("pickers: they sit LEFT of the keyword box", (function () {
+    var tools = pdoc.querySelector(".cipx-prog-tools"), q = tools && tools.querySelector(".cipx-prog-search");
+    if (!q || !mpicks.length) return false;
+    return (mpicks[2].compareDocumentPosition(q) & 4) !== 0;
+  })());
+  check("pickers: labelled Program, Award type, CIP Sector in that order", (function () {
+    var t = Array.prototype.map.call(mpicks, function (m) { return m.querySelector(".cipx-mpick-lbl").textContent.trim(); });
+    return t[0] === "Program" && t[1] === "Award type" && t[2] === "CIP Sector";
+  })());
+  check("pickers: each starts on its 'All …' summary (no filter applied)", (function () {
+    var v = Array.prototype.map.call(mpicks, function (m) { return m.querySelector(".cipx-mpick-val").textContent.trim(); });
+    return v[0] === "All programs" && v[1] === "All award types" && v[2] === "All CIP sectors";
+  })());
+  // Sam's call: 284 titles is a FEATURE — reading your own program titles refreshes your memory of
+  // what you own. So the list is unabridged; assert every title is offered, not a truncated head.
+  mpicks[0].querySelector(".cipx-mpick-btn").click(); await tick();
+  check("picker: opens a panel with a find box", !!mpicks[0].querySelector(".cipx-mpick-panel") && !mpicks[0].querySelector(".cipx-mpick-panel").hidden && !!mpicks[0].querySelector(".cipx-mpick-find"));
+  // Click-away must close it, and the document listener must not outlive the open panel — the
+  // toolbar is re-rendered on every college switch, so a permanently-bound closure accumulates one
+  // dead listener per picker per rebuild.
+  (function () {
+    var before = mpicks[0].querySelector(".cipx-mpick-panel").hidden;
+    pdoc.body.click();
+    check("picker: clicking away closes the panel", before === false && mpicks[0].querySelector(".cipx-mpick-panel").hidden === true);
+    mpicks[0].querySelector(".cipx-mpick-btn").click();   // re-open for the assertions below
+  })();
+  check("picker: offers EVERY program title, unabridged", mpicks[0].querySelectorAll(".cipx-mpick-opt").length === 3);
+  (function () {
+    var find = mpicks[0].querySelector(".cipx-mpick-find");
+    find.value = "account"; find.dispatchEvent(new domP.window.Event("input"));
+    check("picker: the find box narrows the option list", mpicks[0].querySelectorAll(".cipx-mpick-opt").length === 1);
+    var f2 = mpicks[0].querySelector(".cipx-mpick-find");
+    f2.value = "zzzz"; f2.dispatchEvent(new domP.window.Event("input"));
+    check("picker: a find with no hits says so rather than rendering an empty panel", !!mpicks[0].querySelector(".cipx-mpick-none"));
+    var f3 = mpicks[0].querySelector(".cipx-mpick-find");
+    f3.value = ""; f3.dispatchEvent(new domP.window.Event("input"));
+  })();
+  // Selecting filters the list; the button reports the selection back.
+  (function () {
+    var opt = Array.prototype.filter.call(mpicks[0].querySelectorAll(".cipx-mpick-opt"), function (o) { return /Managerial Accounting/.test(o.textContent); })[0];
+    opt.querySelector("input").click();
+  })();
+  await tick();
+  check("picker: selecting a title filters the list to it", pdoc.querySelectorAll(".cipx-prog-item").length === 1 && /Managerial Accounting/.test(pdoc.querySelector(".cipx-prog-title").textContent));
+  check("picker: the button summarises the single selection", /Managerial Accounting/.test(mpicks[0].querySelector(".cipx-mpick-val").textContent));
+  (function () {
+    var opt = Array.prototype.filter.call(mpicks[0].querySelectorAll(".cipx-mpick-opt"), function (o) { return /Business Administration/.test(o.textContent); })[0];
+    opt.querySelector("input").click();
+  })();
+  await tick();
+  check("picker: a second selection is OR-ed within the picker (2 rows, not 0)", pdoc.querySelectorAll(".cipx-prog-item").length === 2);
+  check("picker: the button switches to a count once more than one is picked", /2 selected/.test(mpicks[0].querySelector(".cipx-mpick-val").textContent));
+  // AND across pickers: Business Administration is award 0, Managerial Accounting is award 0 too —
+  // narrow by CIP Sector instead (52 covers both; 01 covers neither) to prove the intersection.
+  (function () {
+    mpicks[2].querySelector(".cipx-mpick-btn").click();
+    var opt = Array.prototype.filter.call(mpicks[2].querySelectorAll(".cipx-mpick-opt"), function (o) { return /^01/.test(o.textContent.trim()); })[0];
+    if (opt) opt.querySelector("input").click();
+  })();
+  await tick();
+  check("pickers: selections AND across controls (title∈{2} ∩ sector 01 = 0 rows)", pdoc.querySelectorAll(".cipx-prog-item").length === 0);
+  // Clear restores "no opinion" — an empty picker must never mean "match nothing", or opening a
+  // control and closing it again would blank the page.
+  mpicks[2].querySelector(".cipx-mpick-clear").click(); await tick();
+  check("picker: Clear restores no-opinion (back to the 2 title matches)", pdoc.querySelectorAll(".cipx-prog-item").length === 2);
+  mpicks[0].querySelector(".cipx-mpick-clear").click(); await tick();
+  check("picker: clearing every picker shows the whole catalog again", pdoc.querySelectorAll(".cipx-prog-item").length === 3);
+  check("picker: a cleared picker returns to its 'All …' summary", mpicks[0].querySelector(".cipx-mpick-val").textContent.trim() === "All programs");
+  // A stale title from a previous college would filter the new one down to nothing and read as an
+  // empty catalog, so a college switch clears all three.
+  (function () {
+    var opt = mpicks[0].querySelectorAll(".cipx-mpick-opt")[0];
+    if (opt) opt.querySelector("input").click();
+  })();
+  await tick();
+  (function () { var c = pdoc.querySelector(".cipx-prog-collegesel, .cipx-prog-tools select") || pdoc.querySelector(".cipx-prog select"); })();
+  (function () {
+    var sels = pdoc.querySelectorAll(".cipx-prog select");
+    var csel = sels[0];
+    if (csel) { csel.value = "0"; csel.dispatchEvent(new domP.window.Event("change")); }
+  })();
+  await tick();
+  check("picker: switching college clears every picker (a stale title cannot blank the new catalog)", (function () {
+    var m = pdoc.querySelectorAll(".cipx-prog-tools .cipx-mpick");
+    if (m.length !== 3) return false;
+    return Array.prototype.every.call(m, function (x) { return /^All /.test(x.querySelector(".cipx-mpick-val").textContent.trim()); })
+      && pdoc.querySelectorAll(".cipx-prog-item").length === 3;
+  })());
+  // Browse / Find lost their nav buttons 2026-08-14 (Sam, after Jenni) — "they muddy the waters for
+  // now". The nav contract that survives is the one between the TWO review lanes: a click sets scope
+  // AND mode together. (The scope-free-Browse rule is still coded in navBar(); it has no button to
+  // exercise it, so asserting it here would assert the button, not the rule.)
   Array.prototype.filter.call(pdoc.querySelectorAll(".cipx-modetab"), (x) => /Review my courses/.test(x.textContent))[0].click(); await tick();
   check("nav: 'Review my courses' sets scope AND mode in one click", (function () { return domP.window.localStorage.getItem("cipx_scope") === "courses" && domP.window.localStorage.getItem("cipx_mode") === "review" && /Review my courses/.test(pdoc.querySelector(".cipx-modetab.on").textContent); })());
-  // The course-first easy button is courses-only by definition; picking it from Programs must carry
-  // the scope across rather than land on the impossible programs+recommend pair.
   Array.prototype.filter.call(pdoc.querySelectorAll(".cipx-modetab"), (x) => /Review my programs/.test(x.textContent))[0].click(); await tick();
-  Array.prototype.filter.call(pdoc.querySelectorAll(".cipx-modetab"), (x) => /Find a course/.test(x.textContent))[0].click(); await tick();
-  check("nav: 'Find a course's code' from Programs switches scope to courses (never programs+recommend)", domP.window.localStorage.getItem("cipx_scope") === "courses" && domP.window.localStorage.getItem("cipx_mode") === "recommend");
+  check("nav: 'Review my programs' sets scope back to programs in one click", domP.window.localStorage.getItem("cipx_scope") === "programs" && domP.window.localStorage.getItem("cipx_mode") === "review");
 
   // ── Tweak 4 (Sam, 2026-07-28): authoritative 4-digit series titles in the Browse dropdown ──
   // The builder emits sub4 (NN.NN -> series title) ONLY from an authoritative NCES export; the tab
@@ -1094,6 +1241,7 @@ function fresh(withCollege) {
     try { domS4.window.localStorage.setItem("cipx_mode", "browse"); } catch (e) {}
     domS4.window.eval(src);
     domS4.window.CPL_CIP_CROSSWALK.activate();
+    domS4.window.CPL_CIP_CROSSWALK._setMode("browse");   // no nav button since 2026-08-14
     const s4doc = domS4.window.document;
     const sel4 = Array.prototype.filter.call(s4doc.querySelectorAll(".cipx-fsel-cip"), (s) => /4-digit/.test(s.getAttribute("aria-label") || ""))[0];
     const opt5138 = sel4 && Array.prototype.filter.call(sel4.options, (o) => o.value === "51.38")[0];
@@ -1169,7 +1317,7 @@ function fresh(withCollege) {
   try { dom3.window.localStorage.setItem("cipx_mode", "browse"); } catch (e) {}   // browse-view empty-state test (Review is now default)
   dom3.window.eval(src);
   let emptyThrew = false;
-  try { dom3.window.CPL_CIP_CROSSWALK.activate(); } catch (e) { emptyThrew = true; console.error(e); }
+  try { dom3.window.CPL_CIP_CROSSWALK.activate(); dom3.window.CPL_CIP_CROSSWALK._setMode("browse"); } catch (e) { emptyThrew = true; console.error(e); }
   check("empty rows[] → no throw", !emptyThrew);
   check("empty rows[] → renders an empty-state message", dom3.window.document.querySelector(".cipx-empty"));
 
@@ -1183,6 +1331,7 @@ function fresh(withCollege) {
   let noCoursesThrew = false;
   try {
     dom4.window.CPL_CIP_CROSSWALK.activate();
+    dom4.window.CPL_CIP_CROSSWALK._setMode("browse");   // no nav button since 2026-08-14
     var c4 = dom4.window.document.querySelector(".cipx-college-sel"); if (c4) { c4.value = "test_college"; c4.dispatchEvent(new dom4.window.Event("change")); }
     dom4.window.document.querySelector(".cipx-row").click(); await tick();
   } catch (e) { noCoursesThrew = true; console.error(e); }

@@ -27,7 +27,7 @@ Noncredit & Learning Partners tab.
 
 ## Context
 
-The tab surfaced items explicitly labelled **"Needs Input."** A list of things needing
+The tab surfaced items explicitly labeled **"Needs Input."** A list of things needing
 input that you *can't answer in place* is a to-do list that can't be completed — so a
 write layer was needed.
 

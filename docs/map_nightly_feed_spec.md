@@ -144,13 +144,13 @@ structurally harmless rather than a near miss.
 
 ---
 
-## Known pitfalls — please preserve these behaviours
+## Known pitfalls — please preserve these behaviors
 
 These are things we discovered the hard way in the Access export. They are not
 complaints; they are the specific details that make the difference between a feed
 that works and one that quietly produces wrong numbers.
 
-1. **`Course Type` is the goal-2 signal, and it must not be normalised away.**
+1. **`Course Type` is the goal-2 signal, and it must not be normalized away.**
    Where `ExhibitID` is blank it takes exactly one of
    `Credit for Basic Military Service-Course` / `-Area` / `-Elective`, and that
    suffix *is* the answer to "did this college award real course credit or push it

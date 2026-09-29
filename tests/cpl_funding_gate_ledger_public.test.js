@@ -6,7 +6,11 @@
 // (raising --max-old-space-size is not: the limit is the container cgroup, and
 // asking for more heap made it worse).
 //
-// Contents, moved VERBATIM:
+// Contents, moved VERBATIM (re-aimed at the one-pool table 2026-08-31 — the
+// gate/ledger/public MACHINERY is unchanged; what moved is the table shape:
+// one row per institution, data-id "c:<college>", the money story on the
+// CR award / NC award pair's .cf-award cells, and the reserve readout in the
+// consolidated Summary rather than its own pool card — R6/R11):
 //   Part S — the baseline participation gate (Sam, 2026-07-30)
 //   Part T — single-source: the Budget ledger is the pool authority
 //   Part U — public mode (the lean college-audience page)
@@ -27,6 +31,10 @@ const D = (function () {
   new Function("window", dataSrc)(sb.window);
   return sb.window.CPL_FUNDING;
 })();
+// The one-pool roster: 115 colleges + the noncredit-only rows (Mt. SAC
+// Noncredit rides the Mt San Antonio row, so it is not one of them).
+const ROSTER_N = D.colleges.length +
+  D.feeders.filter(function (f) { return !f.nc_ftes_on_credit_row; }).length;
 
 function freshDom() {
   const dom = new JSDOM(
@@ -47,13 +55,26 @@ function click(window, el) { el.dispatchEvent(new window.Event("click", { bubble
 function footText(doc) {
   return Array.from(doc.querySelectorAll(".cplfund-foot")).map(function (e) { return e.textContent; }).join(" ");
 }
+// The gate's story on the row (the College Dashboard, Sam, 2026-09-28): the
+// Curr columns read what is released ($0 while gated), the pie says which
+// condition is missing, and the Confirm chip says what to do. The reserve
+// itself reads nowhere on screen — "we make it clear that colleges need to meet
+// all 3 baselines to receive any funding" — only the CSV's Withheld column.
+function curCell(row, lane) { return row.querySelector("td.cf-cur-" + lane); }
+function chipOf(row) { return row.querySelector("button.cplfund-optin-jump"); }
+function rowWords(row) {
+  return Array.from(row.querySelectorAll("td, td *")).map(function (e) {
+    return (e.getAttribute("title") || "") + " " + (e.children.length ? "" : e.textContent);
+  }).join(" ");
+}
 
 // Part S — the BASELINE PARTICIPATION GATE (Sam, 2026-07-30): "actual funding
 // total should only be above 0 if they've met all of the quals as well."
 // Sam's four rulings, each with an assertion here:
 //   (1) only the 2 baseline reqs gate (coordinator + participation request);
 //   (2) the gate is a prompt, not a penalty — dollars are HELD, never lost;
-//   (3) the guaranteed rural allowance and the cap are NOT gated;
+//   (3) the base/cap window is NOT gated (nothing unconditional survives to
+//       pass through — the rural allowance retired 2026-08-22);
 //   (4) withheld dollars are held in reserve, never redistributed.
 // ─────────────────────────────────────────────────────────────────────────────
 {
@@ -64,6 +85,12 @@ function footText(doc) {
     unmatched: {} };
   const doc = boot(window);
   const T = window.CPL_FUNDING_TAB;
+  // Pin the phase: the row wording is deadline-dependent (Sam, 2026-08-23),
+  // and the baked 2026-09-01 deadline is about to pass in real time — a test
+  // that reads the clock through the default would flip red on Sept 2 for a
+  // reason that has nothing to do with the gate. (Moved to 2099 on 2026-09-28:
+  // the 2026-11-01 pin was five weeks from flipping the same way.)
+  T._setScenario({ participationDeadline: "2099-11-01" });
 
   // Fail-open first: with no coordinator feed, NOTHING is gated (the standing
   // rule — never a false "not qualified" from missing data).
@@ -103,25 +130,74 @@ function footText(doc) {
   // "posted no CPL", a different and unfairer claim.
   const gatedRow = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
     .find(function (r) { return /Berkeley City/.test(r.textContent); });
-  const gatedSub = gatedRow.querySelector("td.tot .sub");
-  check("S5: the gated row reads 'held', not a bare $0",
-    !!gatedSub && /held/i.test(gatedSub.textContent) && !/^\s*\$0\s*$/.test(gatedSub.textContent));
-  check("S5: the gated row carries a visible ⛔ chip so it needs no hover",
-    !!gatedRow.querySelector(".cf-gatechip"));
-  check("S5: the gated cell's hover explains the dollars roll forward",
-    /roll forward|held in reserve/i.test(gatedRow.querySelector("td.tot").getAttribute("title") || "") ||
-    /roll forward|reserve/i.test(gatedRow.querySelector("td.tot .sub").getAttribute("title") || ""));
+  // Sam, 2026-08-23: "a little worried about the message we're sending with the
+  // Held label". Before the deadline EVERY college is gated — nobody has opted
+  // in yet — so a dollar figure labelled "held" on all the rows says the state
+  // is withholding from the whole system, when the requirement is not yet due.
+  // The rule is now phase-dependent, and the never-a-bare-$0 ruling still holds
+  // in both phases.
+  // Sam, 2026-08-27: the call to action is "confirm participation", not "opt in"
+  // — "opt in" is mailing-list language that presumes a default of OUT and makes
+  // declining look like a normal choice, when nothing here is conditional on a
+  // choice. Asserted BOTH ways so a revert is a failure, not a silent pass.
+  // Sam, 2026-09-28 (the College Dashboard): the chip carries the deadline,
+  // "Confirm by MM-DD-YY", and the Curr columns read the released $0 beside
+  // the pie that says which condition is missing.
+  check("S5: before the deadline the row says what to DO, and names no held figure",
+    !!chipOf(gatedRow) && /^Confirm by 11-01-99$/.test(chipOf(gatedRow).textContent) &&
+    // The visible words are the chip's accessible name (WCAG 2.5.3); the call
+    // to action, spelled out, rides its hover.
+    !chipOf(gatedRow).hasAttribute("aria-label") &&
+    /^Confirm participation by /.test(chipOf(gatedRow).getAttribute("title") || "") &&
+    !/\bopt[- ]?in\b/i.test(chipOf(gatedRow).textContent) &&
+    !/held|reserve/i.test(rowWords(gatedRow)));
+  check("S5: ...and its Curr hover says the whole award is still ahead ($0 of it so far)",
+    !!curCell(gatedRow, "total") && curCell(gatedRow, "total").textContent.trim() === "$0" &&
+    / \$0 of \$[\d,]+$/.test(curCell(gatedRow, "total").getAttribute("title") || ""));
+  check("S5: the gate is visible WITHOUT a hover — the pie plus the chip's own words",
+    !!gatedRow.querySelector("svg.cf-eligpie") && !!chipOf(gatedRow) &&
+    /Confirmation not yet on file \(due 11-01-2099\)/.test(gatedRow.querySelector("svg.cf-eligpie").textContent));
+  check("S5: …and the ⛔ chip that duplicated the pie is gone (Sam, 2026-09-01)",
+    !gatedRow.querySelector(".cf-gatechip") && gatedRow.innerHTML.indexOf("⛔") === -1);
+  check("S5: the gated row names no reserve and no rolled-forward funding, in text or hover",
+    !/held|reserve|rolls? forward/i.test(rowWords(gatedRow)));
 
-  // The reserve pool card exists and equals the sum of what was withheld.
-  const heldCard = doc.querySelector(".cplfund-card.withheld");
-  check("S6: a 'held in reserve' pool card surfaces the parked total", !!heldCard);
-  check("S6: the reserve card states the dollars are not redistributed",
-    /NOT redistributed|held, NOT/i.test(heldCard.textContent) ||
-    /qualifying later/i.test(heldCard.textContent));
+  // AFTER the deadline the money genuinely is being held back, so the figure
+  // returns. Driven by moving the deadline into the past rather than by mocking
+  // a clock — the deadline is a real editable dial, so this is the same path a
+  // curator takes.
+  (function () {
+    T._setScenario({ participationDeadline: "2020-01-01" });
+    T.render();
+    const lateRow = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
+      .find(function (r) { return /Berkeley City/.test(r.textContent); });
+    // Sam, 2026-09-28: "Confirm Now is nice"; the reserve stays off the screen
+    // after the deadline too (its figure reads in the CSV, S7).
+    check("S5: after the deadline the chip reads Confirm now, and the row still names no held figure",
+      !!chipOf(lateRow) && chipOf(lateRow).textContent === "Confirm now" &&
+      !/held|reserve/i.test(rowWords(lateRow)));
+    T._setScenario({ participationDeadline: "2099-11-01" });
+    T.render();
+  })();
+
+  // The parked total surfaces in the consolidated SUMMARY (R11, 2026-08-31 —
+  // the standalone "held in reserve" pool card folded into it), stating the
+  // dollars are never redistributed.
+  const summary = doc.querySelector(".cplfund-summary");
+  // Sam, 2026-09-22: the reserve bullet folds into the allocation bullet, which
+  // counts the held funding as demonstrated and ends on local confirmation.
+  check("S6: the Summary folds the held funding into the demonstrated figure", !!summary &&
+    !/held in reserve/i.test(summary.textContent) &&
+    /demonstrate \$[1-9]/.test(summary.textContent));
+  check("S6: ...and ends that line on the minimum conditions (Sam, 2026-09-29)",
+    !!summary && /receives its full outcomes-based funding within the two-year window once it meets the minimum conditions/.test(summary.textContent) &&
+    !/confirms local participation/.test(summary.textContent));
+  check("S6: the standalone reserve pool card is retired into the Summary (R11)",
+    !doc.querySelector(".cplfund-card.withheld"));
 
   const csv = T._csv().split("\r\n");
   check("S7: CSV carries the withheld column",
-    csv[1].indexOf("Withheld (baseline not met)") !== -1);
+    csv[1].indexOf("Withheld (minimum conditions not met)") !== -1);
 }
 function shareSumAll(T) {
   // Σ of the viewed window's per-year share sums ÷ nYears — the same factor
@@ -221,10 +297,10 @@ function shareSumAll(T) {
     !!doc.querySelector('[data-subview="model"]') && !!doc.querySelector('[data-subview="grants"]'));
 
   // The actual product still works — this is a lean render, not a crippled one.
-  check("U3: every college row still renders",
-    doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row").length === D.colleges.length);
-  check("U3: the money cells still stack cap over earned",
-    !!doc.querySelector("#cplFundTable td.tot .sub"));
+  check("U3: every institution row still renders (the one-pool roster of " + ROSTER_N + ")",
+    doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row").length === ROSTER_N);
+  check("U3: the award cells still stack the max award over the earning line",
+    !!doc.querySelector("#cplFundTable td.cf-award .sub"));
   check("U3: grouping still works for a public reader",
     !!doc.querySelector("#cplFundGroup"));
 
@@ -240,6 +316,11 @@ function shareSumAll(T) {
   const target = D.colleges[3].college;
   window.history.replaceState({}, "", "/?college=" + encodeURIComponent(target));
   const doc = boot(window);
+  // Was KNOWN-RED for a real product bug (found by this port, 2026-08-31):
+  // rows keyed data-id "c:<college>" since one-pool adoption while
+  // applyCollegeDeepLink()/scrollToDeepLink() still used "c:<order>", so the
+  // deep-linked drill-in never opened. Fixed same day (both sites re-keyed by
+  // name); this check is the regression guard.
   check("U5: ?college= opens that college's drill-in",
     !!doc.querySelector("tr.cplfund-detail"));
   const hl = doc.querySelector("tr.cplfund-deeplink");
@@ -255,7 +336,7 @@ function shareSumAll(T) {
   window.history.replaceState({}, "", "/?college=Hogwarts");
   const doc = boot(window);
   check("U6: an unknown ?college= is ignored, not an error",
-    doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row").length === D.colleges.length &&
+    doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row").length === ROSTER_N &&
     !doc.querySelector("tr.cplfund-deeplink"));
 }
 {
@@ -266,24 +347,45 @@ function shareSumAll(T) {
     !!doc.querySelector("[data-edit]") && !!doc.querySelector('[data-subview="report"]'));
 }
 
-// U8 — the standalone page itself (static greps: it is hand-maintained HTML).
+// U8 — the ONE public page, and the redirect standing where the old one was.
+//
+// RE-AIMED 2026-09-09 (Sam's decision sheet, item 9). Until then two URLs
+// rendered this model: funding-model/ (the explainer, hosting the tab's own
+// institution section in embed mode) and cpl_funding_public.html (the tab in
+// public mode). That was untidy until a curator gained "Hide on the public
+// page" — hiding rides sectionShell(), which only the second page passes
+// through, so a section the CO held back stayed visible on the first. Two
+// renderings of one model is a correctness problem once either can be edited.
+//
+// So the contract these checks guard did not disappear; it moved. They now
+// assert it where it lives, plus that the retired URL still lands a reader
+// somewhere useful — it was handed to colleges, and Pages cannot issue a 301.
 {
   const pub = fs.readFileSync(path.join(__dirname, "..", "cpl_funding_public.html"), "utf8");
-  check("U8: the public page sets the public-mode flag", /window\.CPL_FUNDING_PUBLIC\s*=\s*true/.test(pub));
-  check("U8: it loads ONLY the funding data + consumer (no dashboard bundle)",
-    /src="cpl_funding_data\.js"/.test(pub) && /src="cpl_funding\.js"/.test(pub) &&
-    !/CPL_Data\.js|dashboard_filters\.js|cobi_orgs\.js/.test(pub));
-  check("U8: it provides the CPL_TABS.loadScript contract so the sidecars still load",
-    /CPL_TABS\s*=\s*\{[\s\S]*loadScript/.test(pub));
-  check("U8: the sidecar loader FAILS OPEN (onerror still calls back)",
-    /onerror[\s\S]{0,80}cb\(\)/.test(pub));
-  check("U8: it mounts where the consumer looks (#cplFundingMount)", /id="cplFundingMount"/.test(pub));
-  check("U8: it states plainly that this is a draft model, not an award notice",
-    /not an award notice/i.test(pub));
-  check("U8: it documents that this is audience separation, NOT security",
-    /audience separation, NOT security/i.test(pub));
-  check("U8: it links back to the full dashboard rather than pretending to be the whole site",
+  check("U8: the retired URL redirects to the one public page, by meta refresh AND script",
+    /http-equiv="refresh"[^>]*url=funding-model\//i.test(pub) &&
+    /location\.replace\("funding-model\/"\)/.test(pub));
+  check("U8: it names funding-model/ as canonical and asks not to be indexed",
+    /rel="canonical"[^>]*funding-model\//.test(pub) && /name="robots"[^>]*noindex/.test(pub));
+  check("U8: a reader whose refresh is blocked still gets a link they can click",
+    /<a href="funding-model\/">/.test(pub));
+  check("U8: it still points at the full dashboard for anyone who wanted that instead",
     /index\.html#implementation-funding/.test(pub));
+  check("U8: it no longer boots the tab (no data, no consumer, no mount)",
+    !/src="cpl_funding_data\.js"/.test(pub) && !/src="cpl_funding\.js"/.test(pub) &&
+    !/id="cplFundingMount"/.test(pub));
+
+  const exp = fs.readFileSync(path.join(__dirname, "..", "funding-model", "index.html"), "utf8");
+  check("U8: the explainer is the public rendering — public mode, embed mode, college section",
+    /window\.CPL_FUNDING_PUBLIC\s*=\s*true/.test(exp) &&
+    /window\.CPL_FUNDING_EMBED\s*=\s*"college"/.test(exp));
+  check("U8: it loads ONLY the funding data + consumer (no dashboard bundle)",
+    /src="\.\.\/cpl_funding_data\.js"/.test(exp) && /src="\.\.\/cpl_funding\.js"/.test(exp) &&
+    !/CPL_Data\.js|dashboard_filters\.js|cobi_orgs\.js/.test(exp));
+  check("U8: it mounts where the consumer looks (#cplFundingMount)", /id="cplFundingMount"/.test(exp));
+  check("U8: it states plainly that this is a draft model, not adopted policy",
+    /Draft model &mdash; not adopted policy/.test(exp) &&
+    /working model for discussion, not adopted policy/.test(exp));
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -293,9 +395,12 @@ function shareSumAll(T) {
 // failed reviewer is not a clean bill of health.)
 // ─────────────────────────────────────────────────────────────────────────────
 {
-  // V1 — WITHHELD must be pro-rated by the cell's share of the WINDOW CAP, not
-  // by 1/nYears. Those differ under FRONT-LOAD, where the year-1 cell carries
-  // the whole window: a flat split showed the full cap over HALF the withheld.
+  // V1 — the withheld figure must be the WHOLE window's under FRONT-LOAD.
+  // The defect this pinned: a flat 1/nYears split showed the full cap over
+  // HALF the withheld. The Yr-1/Yr-2 columns are retired (R6), so the guard
+  // now reads the ONE award pair: under Combined funding the CR award cell
+  // carries the whole window, and its held sub-line must carry the WHOLE
+  // withheld figure — not half of it.
   const { window } = freshDom();
   // Berkeley City is given actuals well past its target, so it WOULD earn its
   // full window — then it is gated, making the whole window withheld. (Before
@@ -312,35 +417,36 @@ function shareSumAll(T) {
   const T = window.CPL_FUNDING_TAB;
   // Gate a college so there IS withheld money, and turn front-load ON.
   T._setElig({ coordOk: true, coord: { "Laney": true }, optin: { "Laney": true } });
-  T._setScenario({ disbursement: "frontload" });
+  // The deadline is in the PAST here on purpose. This block tests arithmetic —
+  // that a front-loaded award cell reports the WHOLE window's withheld amount
+  // and not half of it — and that figure only renders once the deadline has
+  // passed (before it, the row says "confirm participation" and names no money,
+  // per Sam's 2026-08-23 wording call). Wrong phase, nothing to measure.
+  T._setScenario({ disbursement: "frontload", participationDeadline: "2020-01-01" });
   T.render();
 
-  const gated = T._alloc("Berkeley City");   // no coordinator ⇒ gated
+  const gated = T._alloc("Berkeley City");   // no opt-in ⇒ gated
   check("V1: front-load setup — the gated college has withheld money",
     gated.gate_blocked === true && gated.earned_withheld > 0);
 
   const row = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
     .find(function (r) { return /Berkeley City/.test(r.textContent); });
-  const cells = row.querySelectorAll("td");
-  // The Yr-1 cell under front-load carries the WHOLE window, so its withheld
-  // must be the WHOLE withheld — not half of it.
-  // Sam, 2026-07-30: the cell reads "held $X" — "withheld · $X held" was redundant.
-  // NB: target the .sub span, not the cell text — textContent concatenates the
-  // stacked lines with no separator ("$150,000held $106,500"), so a \b anchor
-  // never matches.
-  const subText = function (td) { var el = td.querySelector(".sub"); return el ? el.textContent : ""; };
-  const y1 = Array.from(cells).find(function (td) {
-    return /held/i.test(subText(td)) && !td.classList.contains("tot");
-  });
-  const heldDigits = String(Math.round(gated.earned_withheld));
-  check("V1: the front-loaded window cell reports the FULL held amount",
-    !!y1 && subText(y1).replace(/[^0-9]/g, "") === heldDigits);
-  // And it must agree with the window Total cell, which carries the same window.
-  const tot = row.querySelector("td.tot");
-  check("V1: the front-loaded window cell agrees with the window Total cell",
-    subText(tot).replace(/[^0-9]/g, "") === heldDigits);
-  check("V1: the cell says 'held', not the redundant 'withheld · held'",
-    !/withheld/i.test(subText(y1)));
+  // Since the College Dashboard (Sam, 2026-09-28) the held figure reads in the
+  // CSV's Withheld column alone, so the WHOLE-window guard reads it there.
+  // Every read below fails by name rather than throwing: a TypeError before
+  // finish() prints nothing at all, and a guard that dies takes every other
+  // result with it.
+  const csv = T._csv().split("\r\n");
+  const head = (csv[1] || "").split(",");
+  const iHeld = head.indexOf("Withheld (minimum conditions not met)");
+  const line = (csv.find(function (l) { return l.split(",")[1] === "Berkeley City"; }) || "").split(",");
+  check("V1: the CSV reports a held figure for the front-loaded, gated college at all",
+    iHeld > 0 && Number(line[iHeld]) > 0);
+  check("V1: the CSV's Withheld column reports the FULL window's held amount, not half of it",
+    iHeld > 0 && Number(line[iHeld]) === Math.round(gated.earned_withheld));
+  check("V1: on screen the gated row reads $0 qualifying and names no held figure",
+    !!row && !!curCell(row, "total") && curCell(row, "total").textContent.trim() === "$0" &&
+    !/held|reserve/i.test(rowWords(row)));
   T._setScenario({});
 }
 {

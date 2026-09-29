@@ -1,0 +1,5069 @@
+---
+title: "CPL Implementation Funding tab — archived lessons (2026-06-11 → 2026-09-01)"
+date: 2026-06-11
+updated: 2026-09-24
+tags: [lessons, archive, funding, implementation-funding, dashboard-tab]
+related:
+  - "[[cpl_funding_lessons]]"
+  - "[[cpl_funding_handoff]]"
+---
+
+# CPL Implementation Funding — archived lessons
+
+Sections from the build-out of the Implementation Funding tab, **2026-06-11
+through 2026-07-31**, moved here verbatim on 2026-08-20 because the live lessons
+doc had crossed the `oversized_doc` limit (179 KB against a 120 KB budget) and
+that checkpoint was about to append to it. Everything here is SHIPPED and
+settled: the tab itself, the Chancellor-facing 2-year rework, the equity
+refinements (front-load · floor · rural allowance · eligibility badges), the
+achievement-based cap-and-earn model, the $35M reframe, the Budget-tab ledger
+reconciliation, and the move to credit FTES. The live doc carries 2026-08-01
+onward; a second move on 2026-09-24 took 2026-08-31 to 2026-09-01, so the live doc now starts at S218 (2026-09-01).
+
+Live doc: [`cpl_funding_lessons.md`](cpl_funding_lessons.md).
+
+## Session checkpoint — 2026-06-11 (Rule 8; session end)
+
+**(a) Learned:** the committed-workbook-model discipline (one-shot revision
+scripts; input-driven builder since openpyxl invalidates caches;
+`insert_rows` doesn't adjust ranges; extent by structural marker; edit
+generated files at the generator source; no derived values hardcoded in
+tests) — distilled to
+[`kb-notes/methodology-committed-workbook-models.md`](kb-notes/methodology-committed-workbook-models.md).
+Plus: a failing conservation test is how you find a source's internal
+inconsistency; an unmeasurable funded metric needs a maturity ladder, not
+silence; no-horizontal-scroll is now a standing UI rule.
+
+**(b) State:** 13 PRs merged (#352–#368), all green, nothing open. The tab
+is live + DRAFT-chipped: shares-first rev2 workbook (119 colleges, balance
+$0 structural), what-if sandbox, district rollups + period toggle +
+drill-ins, P2/P3 actuals vs target (first artifact: 27 colleges, P2 4,635 /
+P3 16,151), P1 labeled incentive gap, provenance footnotes, no-scroll
+table. ADR ratified; suite 26/26 files (94 + 15 funding assertions).
+
+**(c) Roadmap:** Sam's 25-26 headcount table (mechanical refresh) · P1
+ladder (ID-coverage report → CO match-back → CAEL replication study) ·
+first-cron `unmatched` audits stay quiet unless non-empty (then the footer
+shows them) · Excel→Supabase only if the model needs multi-user editing.
+
+**(d) Next concrete step:** when Sam sends the 25-26 table — drop into the
+workbook, fix the vintage header (auto-relabels the tab), re-run builder,
+commit. Until then: nothing blocked on us.
+
+## 2026-06-11 — Session 1 (tab shipped)
+
+### What shipped
+
+- **PR #352 (merged)** — the empty tab shell in both HTMLs ONLY: left-rail
+  button "Implementation Funding" (after Budget), pane
+  `#tab-implementation-funding` with placeholder mount `#cplFundingMount`, and
+  an inline boot snippet that lazy-loads `cpl_funding.js` on first activation
+  via the existing `CPL_TABS.onActivate`/`loadScript` helpers. `loadScript`
+  fails soft, so the shell merged *before the module existed* and showed
+  "coming soon" — and every later PR is new-files-only.
+- **PR 2** — the tab itself, all new files: committed source workbook
+  (`funding/CPL_Funding_Model_2026.xlsx`), one-shot extractor
+  (`funding/_build_funding_data.py`), static data artifact
+  (`cpl_funding_data.js`, ~54 KB — NOT a daily-cron artifact, same lifecycle
+  as `college_short_names.js`), renderer (`cpl_funding.js`: pool cards,
+  priority cards, formula explainer, searchable/sortable per-college table
+  with the SYSTEM row pinned as a tfoot total), and
+  `tests/cpl_funding.test.js` (33 assertions).
+
+### The funding model (decoded + machine-verified)
+
+The workbook is one sheet, two blocks. The extractor re-derives every college
+row and asserts it matches the workbook to <1¢ (`max drift 0.01`):
+
+- **Pool**: $9,040,307 (2025-26 remaining one-time) + $35,000,000 (2026-27
+  one-time) − $1,200,000 (admin, 2 FTE × 3 yrs) − $8,040,307 (scaling
+  projects & tech) = **$34.8M college funding, 3 annual tranches of $11.6M**
+  (2026-27 → 2028-29).
+- **Per-student rate** = $11.6M ÷ 2,190,740 statewide headcount = **$5.295**.
+- **Three priorities**, each `allocation = headcount × rate × factor ×
+  $5.295`: P1 completion (rate 5%, factor 6 → 30% share), P2 access (6%, 7 →
+  42%), P3 capacity (4.667%, 6 → 28%). Shares sum to exactly 1, so a
+  college's total potential allocation **is its headcount share of one
+  $11.6M tranche**. SYSTEM row = the statewide totals; average allocation
+  $98,682.78/yr across 118 college rows.
+
+### Workbook quirks (handle on the next edition)
+
+- The third year column is **labeled "26-27" again — a source typo for
+  28-29**; the pool math (3 × 11.6M = 34.8M) pins the window. Extractor
+  documents + corrects.
+- The "26-30 TOTAL AVAILABLE COLLEGE FUNDING" value cell is empty (merged
+  cell); extractor computes it and asserts the arithmetic.
+- `COLLEGE HEADCOUNT PCT CPUNTY TOTAL` (sic) is **internally inconsistent**
+  (some rows = pct of county, some duplicate the statewide pct). Extracted
+  as `headcount_county_pct` but NOT rendered — don't surface it without
+  upstream cleanup.
+- 4 colleges carry `*Survey did not estimate counties <65K in population` →
+  `working_adults: null`; renderer shows em-dashes (test-guarded against
+  NaN).
+- **The workbook disagrees with itself by exactly its last list row (found
+  2026-06-11, v1.1).** The 118 college rows sum to **2,199,157 heads /
+  $11,644,568/yr**, but the pool block's CCC HEADCOUNT — and therefore the
+  SYSTEM row and the $5.295 per-student rate — carries **2,190,740 /
+  $11,600,000**: short by 8,417, which is exactly **Yuba**, the final row
+  before the AVERAGE footer. Classic Excel SUM-range-stops-one-row-early
+  artifact; net effect, the per-college allocations over-allocate the
+  $11.6M tranche by ~$44,568/yr (0.38%). Also: `HEADCOUNT PCT TOTAL` mixes
+  denominators across rows (Alameda ÷ pool figure, Yuba ÷ list sum).
+  **Handling: surfaced, never corrected** — extractor prints a build-time
+  NOTE, the tab renders a data-driven footnote (auto-disappears when a
+  fixed edition is committed), and the test pins conservation against the
+  *list* plus a <1% honesty bound vs the SYSTEM pool. **Flag for Sam's
+  next workbook edition: extend the pool block's SUM ranges to include the
+  last row.**
+
+### PII check (per the standing-PII-guard methodology)
+
+Workbook is **clean**: institutional + U.S. Census aggregates only (college/
+district/county names, headcounts in the thousands, dollars). No
+person-level columns; nothing to suppress. `tests/pii_guard.test.js` has a
+**fixed EMAIL_FILES list** that predates this artifact, so
+`tests/cpl_funding.test.js` carries its own mirror scan (email allow-list +
+person-level-key regex) over `cpl_funding_data.js`. **Follow-up:** fold
+`cpl_funding_data.js` into pii_guard's EMAIL_FILES (1 line) once the
+parallel-session shared-file freeze lifts.
+
+### Patterns that worked
+
+- **Shell-first + fail-soft lazy boot** is the right shape for adding a tab
+  while another session is active: one tiny HTML PR, then zero shared-file
+  contention. The shell survived a full local `excel_to_dashboard.py` regen
+  (verified before PR 1 — the §6b bounded-regex catastrophe is the thing to
+  check, not assume).
+- **Verify the model in the extractor, not the UI**: the builder asserts
+  priority shares sum to 1 and re-derives all 3×118 allocations from the
+  formula, so a future workbook whose constants drift fails the build
+  instead of rendering wrong dollars.
+- Scoped CSS injected from JS (CER pattern), `var(--token)` only —
+  test-enforced (`no raw hex` assertion).
+
+### Open follow-ups (smallest first)
+
+1. ~~pii_guard EMAIL_FILES fold-in~~ — **DONE PR 3 (2026-06-11)**.
+2. ~~Shared-doc rows~~ — **DONE PR 3**: CLAUDE.md §7b tab-table row + §2
+   file-inventory rows + `docs/INDEX.md` lessons-table row.
+3. `data-sections` sidebar TOC on the pane (the "Sidebar levels" backlog) —
+   needs a shell-HTML touch or a JS `setAttribute` before first activation.
+4. New workbook editions: drop at `funding/CPL_Funding_Model_2026.xlsx`,
+   re-run `python3 funding/_build_funding_data.py`, commit both. If the
+   model ever becomes curator-editable, follow the Excel→Supabase Phase 2-4
+   five-step shape (seed → read-path → editor → RLS) instead of growing the
+   workbook.
+
+### 2026-06-11 (sandbox) — formulas read from the workbook + the what-if layer
+
+Sam asked to make the variables interactive ("this is still in draft form")
+and whether the Excel formulas are readable. **They are** (openpyxl,
+`data_only=False`); the chain, now formula-confirmed:
+
+```
+H3 = I3 = J3 = ((C3 remaining + D3 one-time) − (E3 admin + F3 scaling)) / 3   ← per-year tranche
+E3 = 400000*3                                                                  ← admin self-documents ($400K/yr × 3)
+K3 = C8 ;  C8 = SUM(C9:C125)        ← THE BUG: the list ends at C126 (Yuba)
+L3 = H3 / K3                         ← per-student rate
+row: heads_k = C_row × rate_k(row7) ;  dollars_k = heads_k × $L$3 × factor_k(row7)
+M3 PROJECTED = K8 (SYSTEM total) ;  N3 BALANCE = H3 − M3
+D126 + parts of col P are typed literals, not formulas → the mixed denominators
+```
+
+**What-if sandbox SHIPPED** (`cpl_funding.js`): the funding pools, CCC
+headcount, per-priority funding factors, and projection % are editable
+inputs; everything (hero pool, per-student rate, shares, formula line,
+BALANCE card, all 118 college rows, district rollups, drill-ins, average)
+recomputes through the same chain. Pristine state renders the committed
+workbook values **verbatim** (recompute only after an edit); edits persist
+per-browser (`localStorage: cpl_funding_whatif_v1`) with a "● modified /
+Reset to workbook" pill; BALANCE goes red + the formula line warns when
+edits make shares ≠ 100% (mirrors the workbook's own N3 BALANCE cell). The
+workbook-variance footnote is suppressed while modified (it describes the
+workbook, not the sandbox). The CCC-headcount input tooltips the corrected
+list sum (2,199,157) so testing the fixed model is one paste. Tests 50 → 67.
+
+### 2026-06-11 (actuals) — forks ratified ("Yes on forks"); P2/P3 actual-vs-target SHIPPED
+
+ADR ratified as written + `Potential Student` excluded → the producer ladder
+shipped in one PR (producer + consumer, since the consumer is fail-soft
+until the artifact exists):
+
+- **Producer** `funding/_build_funding_performance.py` — daily-workflow step
+  4a2 over the transient `CustomReport_latest.json`
+  (`View_StudentAggregatedValues`): per-college **P2** (distinct students,
+  transcribed ≥6) + **P3** (any transcribed), Test/Potential + test-college
+  rows excluded, **<5 suppressed producer-side**, statewide computed
+  independently (cross-college dedupe — also defeats subtraction recovery of
+  suppressed cells). College-name join: MAP canonical/alias →
+  `kb/college_short_names.json` short → funding name; unresolved → an
+  `unmatched` bucket for visibility. Graceful exit-0 when the fetch fell
+  back (keeps the prior artifact).
+- **Verification committed**: `tests/cpl_funding_performance.test.js` runs
+  the real producer against a SYNTHETIC fixture via `spawnSync(python3)`
+  (15 assertions: counting/dedupe/sid-less rows, exclusions, suppression,
+  the name join, statewide dedupe, workflow wiring, graceful no-input) +
+  committed-artifact PII screens that activate once the first cron
+  publishes. pii_guard EMAIL_FILES gained the artifact.
+- **Consumer** (`cpl_funding.js`): P2/P3 cards show "Actual N students per
+  MAP (as of DATE) — X% of target" (the % uses the CURRENT, possibly
+  sandboxed, target — drag a target % and attainment moves); **P1 renders
+  the labeled incentive state** ("awaiting completion data"), never a
+  blank; new sortable "CPL students†" column (college view; "<5" / "—";
+  NOT period-multiplied); drill-ins gain per-priority actual + % of
+  target; footer explains basis/suppression/dedupe. All fail-soft: until
+  the first cron publishes the artifact, the tab shows "arrives with the
+  next daily refresh" hints. Tests 74 → 87; suite 25/25 files.
+- **First-cron follow-ups**: audit the `unmatched` bucket (name-join
+  reality check) and confirm the committed-artifact screens activate.
+- **Viewing is login-free** (Sam shared the tab with colleagues): the PII
+  guard is a CI test, not a gate; the sandbox is per-browser. Magic-link
+  credentials exist only for CCR/CSR/CER *editing* and go to each
+  reviewer's OWN email via `allowed_reviewers` — never share the
+  map@rccd.edu inbox/links.
+
+### 2026-06-11 (first data + Sam's screenshot pass) — artifact live; roster edits; the no-scroll rule
+
+- **First actuals published** (dispatched run): 27 colleges carry MAP
+  transcribed-student records; statewide **P2 = 4,635 / P3 = 16,151**; 12
+  suppressed cells; **`unmatched` = {} — every MAP name resolved**, which is
+  why Sam "didn't see" the bucket. The UI now surfaces it whenever it's
+  NON-empty (footer ⚠ line listing the unmatched MAP names; included in
+  statewide, no college row).
+- **Roster edits** (workbook revision #2, `_revise_workbook_2026_06_11_b.py`):
+  "Chabot Hayward" → **"Chabot"** — changed at the TRUE source everywhere in
+  lockstep: the workbook, AND `kb/_seed_college_short_names.py`'s RAW table
+  (the seeder REGENERATES the json — editing `college_short_names.json`
+  directly gets overwritten on the next seed; old short kept as an alias so
+  stored data still resolves) → reseeded json + `college_short_names.js`
+  (chips everywhere now read "Chabot"). **"Mt San Antonio Noncredit"
+  added** (order 119, after Mt San Antonio, district/county copied) with
+  **headcount 0 PENDING Sam's DataMart number** — allocates $0 until the
+  2022-23 annual headcount is typed into the workbook C-cell + builder
+  re-run. openpyxl `insert_rows` does NOT adjust formula references — the
+  revision script re-fills the uniform formulas + C8 SUM + the AVERAGE
+  range for the new extent (the exact bug class the rev2 fix addressed).
+  Builder hardened: the college extent is now detected by the numeric
+  ORDER column (no fixed last-row constant to forget), and it warns on
+  0-headcount rows.
+- **UI pass from Sam's screenshot**: priority-card variable lines + METRIC
+  left-justified (the page shell centers text); college table fits without
+  horizontal scroll — tighter padding/`.82rem`, district names folded to
+  "… CCD" in truncating cells (full name in `title`), `P1/P2/P3` headers
+  with explanatory titles. **Sam made no-horizontal-scroll a standing
+  rule** → added to CLAUDE.md "Engineering & UI practices". Tests 89 → 94.
+
+### 2026-06-11 (Mt SAC split) — noncredit headcount landed; mixed-vintage flag
+
+Sam: NC = **35,363**, credit = **41,950** (replacing Mt San Antonio's prior
+66,445). Applied to the workbook (two C-cells), rebuilt: statewide
+2,199,157 → **2,210,025**, per-student **$5.2488**, NC row allocates
+**$185,614/yr**, credit **$220,188/yr**, balance $0. **Vintage story (Sam, on the flag):** Mt SAC's pair is from **24-25 MIS
+totals**; he believes the rest of the table is actually **23-24** (despite
+the column header reading "2022-2023" — MIS trails by up to a year). Mixed
+vintage by one row is accepted for now; **Sam will supply a complete
+25-26 revised table once all numbers report** — that refresh should also
+correct the column header (which auto-relabels the tab footnote). Two
+test assertions that had hardcoded headcount-derived numbers ($5.27 rate,
+219,916 projected) now derive from the live data — headcount edits can't
+break the suite again.
+
+### 2026-06-11 (P1 gap) — fork ② answered; the gap's anatomy + strategy captured as a KB note
+
+Sam answered the P1 fork with the full domain story (completions live in
+SIS — Banner/Colleague/PeopleSoft — not MAP; DataMart aggregates untieable;
+MAP Student IDs inconsistent until CCCApply; probable fix = periodic
+SIS→MAP routine) and the deliberate decision: **the unmeasurable metric
+stays, as an incentive to close the gap**, aiming at a CA replication of
+the CAEL-WICHE completion effect. Per his ask, the reasons + procedures +
+strategies are now first-class project learning:
+[`kb-notes/reference-p1-completion-data-gap.md`](kb-notes/reference-p1-completion-data-gap.md)
+(identity-first P3 sub-indicator, P1 maturity ladder, CO-level match-back
+before 116 SIS integrations, decoupled CAEL replication study, provenance
+stamps, labeled dashboard state). Scope doc P1 section updated; forks ① + ③
+still open before the P2/P3 producer ships.
+
+### 2026-06-11 (rev2) — recommendations APPLIED: the workbook is now shares-first
+
+Sam: "Great recommendations! Make the changes." All four applied to
+`funding/CPL_Funding_Model_2026.xlsx` by the one-shot
+`funding/_revise_workbook_2026_06_11.py` (kept for provenance; the original
+edition lives in git history at #353):
+
+- **C8 `=SUM(C9:C126)`** — the SUM-range fix. SYSTEM headcount is now
+  2,199,157 (the full list incl. Yuba); the variance is GONE, the tab's
+  variance footnote auto-disappeared, balance is **$0.0000 by
+  construction**. Per-student rate corrected $5.295 → **$5.2747**; every
+  college allocation shifted ~−0.38% (Alameda $50,736.83 → $50,542.64) and
+  Yuba is now funded *within* the pool ($44,397.56).
+- **Shares-first**: row 7 inputs are now the three PRIORITY SHARES
+  (30%/42%/28%); dollars = `$D9*E$7*$H$3` (headcount share × priority share
+  × tranche). The FUNDING FACTOR is gone; the projection percents remain as
+  **PROJECTED HEADCOUNT (TARGET)** columns that move no dollars.
+- **One formula per column, filled down** rows 8–126 (D126's literal fixed);
+  **column P removed** (inconsistent literals, never rendered, no
+  recoverable denominator). Input cells are plain values (`E3` = 1,200,000
+  with the `(2 FTE*3 YRS = 400000*3)` derivation moved into the label).
+  `J2` header fixed to 28-29. `fullCalcOnLoad` set so Excel recalcs on open.
+- **Builder is now input-driven** (`_build_funding_data.py` rewritten):
+  openpyxl edits invalidate Excel's cached formula values (and openpyxl
+  can't evaluate), so the builder reads ONLY typed inputs and computes the
+  chain itself — also making the artifact deterministic and adding a
+  structural conservation assert. Artifact: priorities carry
+  `share` + `target_rate` (factor dropped), `headcount_county_pct` dropped,
+  `model_version 2026-06-11.2`.
+- **Tab/sandbox shares-first**: editable = pools + per-priority share % +
+  target %; CCC headcount card is now derived (Σ college rows — no longer
+  an input, matching the model); drill-ins show
+  `headcount share × priority share × tranche`; target edits visibly move
+  projected students but never dollars (test-pinned). localStorage key
+  bumped to `cpl_funding_whatif_v2` (old factor-shaped saves discarded).
+  Tests 67 → 74.
+- ⚠️ One nuance for Sam in Excel: edited cells carry no cached values until
+  the workbook is opened + saved in Excel once (it will recalc on open).
+
+### Formula review + recommendations (Sam asked; "simple is always preferred")
+
+1. **Make the headcount SUM unbreakable.** Quick fix: `C8 =SUM(C9:C126)`.
+   Durable fix: convert the college list to an Excel **Table** and use
+   `=SUM(Table[HEADCOUNT])` — Tables auto-expand when a row is added, which
+   eliminates exactly this bug class (a row appended below the SUM range).
+2. **THE structural one — specify the three shares directly; stop
+   back-solving.** Today `share_k = factor_k × rate_k` and the pair is
+   hand-tuned to hit 30/42/28 (that's why P3's rate is the awkward
+   4.6666666%). Two side-effects: the projection % *looks* like a forecast
+   but actually moves money, and every future tweak must keep
+   Σ(factor×rate)=1 by hand or the model silently over/under-allocates
+   (the sandbox's red BALANCE demonstrates it live). Simpler, equivalent
+   model: **inputs = the three shares (30/42/28)**; college dollars =
+   `headcount-share × share_k × tranche`. The per-student rate and factors
+   drop out of the allocation math entirely; keep "projected headcount
+   achieving the metric" as a separate target column (`headcount × rate`)
+   that no longer affects dollars. Forecasts become honest forecasts;
+   balance is exact *by construction*; same outputs today.
+3. **One formula per column, filled down — no literals mid-column.** D126
+   and parts of column P are typed literals among formulas; that's where
+   the mixed-denominator inconsistencies came from. Fill D9 down; delete
+   or formula-ize column P (the tab doesn't render it — it's internally
+   inconsistent).
+4. Cosmetics: J2's header repeats "26-27" (should read 28-29). E3's
+   `=400000*3` is good self-documenting style — keep doing that.
+5. **Revision methodology (simple):** iterate scenarios in the tab's
+   sandbox (zero risk, per-browser); when one is chosen, type it into the
+   workbook → `python3 funding/_build_funding_data.py` → commit. The
+   workbook stays the single model-of-record. Only reach for the
+   Excel→Supabase editor pattern if the model someday needs multi-user
+   collaborative editing — not while it's a draft.
+
+### 2026-06-11 (provenance) — college-headcount lineage (Sam's DataMart note)
+
+Sam identified the headcount column's source: **CCCCO MIS DataMart →
+Students → Annual/Term Student Count**
+(https://datamart.cccco.edu/Students/Student_Headcount_Term_Annual.aspx),
+**Collegewide Search** — the workbook carries the **2022-23 annual** edition
+("a bit dated", his words). Baked in three places: the extractor emits
+`headcount_label` (vintage read from the workbook's own column header, so a
+refreshed edition re-labels the tab automatically) + `headcount_source`
+(name/url/selection); the tab footnotes the citation and tooltips the
+Headcount column header; the test pins both.
+
+**Refresh caveat (do NOT drop-in swap):** Sam's 2025-26 Collegewide pull
+shows far smaller counts (Allan Hancock 6,156; Desert 975) than the 2022-23
+figures in the model (Alameda 9,582 scale) — the report's **Headcount
+Status** filter (e.g. "A - Credit Student Enrolled") and a partial
+in-progress year change values materially, and the per-student rate /
+allocations all scale off these counts. Refreshing the vintage is **Sam's
+modeling decision inside the workbook**; the pipeline then just needs the
+new edition dropped at `funding/CPL_Funding_Model_2026.xlsx` + a builder
+re-run. Note the parallel CCR session went active again the same hour
+(#357 merged) — this change stayed inside the funding lane's own files.
+
+### 2026-06-11 (later still) — teaser card + v1.1 (Sam: "Go on the teaser card and next steps")
+
+- **Teaser card SHIPPED (PR #355, code-only)** — 4th Dashboard teaser
+  (after Budget, rail order) linking `#implementation-funding`; headline
+  numbers read from `cpl_funding_data.js` at generate time with a
+  number-free fallback. Verified idempotent across two local generator
+  runs; published via post-merge `workflow_dispatch` of
+  `daily-dashboard.yml` (**dispatch 204 — the Actions grant works from a
+  session now**). Process scar: built it on a sibling branch forked from
+  the session branch instead of `main`, so the PR briefly double-counted
+  the prior PR's files — `git rebase origin/main` dropped the duplicate
+  (patch-id match) and the PR collapsed to the real 1-file diff. Fork
+  sibling branches FROM `origin/main`. Also: a careless `git checkout -- .`
+  while clearing regen noise reverted the uncommitted generator edit —
+  commit first, then regen-verify, then reset.
+- **v1.1 SHIPPED** (`cpl_funding.js` + test): **Colleges | Districts**
+  rollup toggle (73 districts; conservation-tested), **Per year | 2026-30
+  total** period toggle (SYSTEM ×3 = $34.8M, header relabels), and
+  **click-to-expand drill-ins** (college: per-priority math + county
+  context; district: member colleges ranked by allocation). Test grew
+  33 → 46 assertions.
+- **v1.1's real find: the SYSTEM-row variance** (see workbook quirks
+  above) — caught by a *failing conservation assertion*, not by reading
+  the sheet. Writing the "obvious" reconciliation test against the
+  workbook's own totals is exactly what surfaces a source's internal
+  inconsistency.
+
+### 2026-06-11 (later) — freeze lift: CCR-session coordination + shared-file follow-ups
+
+Sam asked to coordinate with the parallel CCR session and move forward.
+**Coordination = repo-state check, since sessions can't message each other:**
+zero open PRs repo-wide, `main`'s tip was this workstream's #353, and the 17
+`claude/*` remote branches are all pre-auto-delete leftovers of merged PRs —
+nothing in flight, so the shared-file freeze lifted. Edits were kept to
+single disjoint rows/lines so even a CCR push mid-flight rebases cleanly.
+Shipped (PR 3): pii_guard EMAIL_FILES + scope-comment line, CLAUDE.md §7b +
+§2 rows, INDEX.md row, these doc updates. **Deliberately skipped: the
+Dashboard teaser card** — the generator hardcodes teasers for only 3 of 12
+tabs (Workplan Goals / Budget / Vision 2030; none of the newer tabs have
+one), so a funding teaser isn't the established pattern AND it's the
+highest-collision file (the generator is where `export_unified_courses`
+lives). Available on request as a small generator edit at the
+`teaser_html` block (~line 10076).
+
+## 2026-07-03 — Session 2 (Chancellor-facing rework: 2-year selectable window + year-specific priorities + noncredit-feeder carve-out + team-phrase config)
+
+**(a) Learned.** Once a "data extract" tab becomes a knob the audience *plays*
+with, the year-specific policy fields (metrics, factors, selected years, the
+feeder carve-out) stop being workbook cells and become **config**, not data.
+The clean split: the builder keeps emitting the stable data-derived facts (pool
+inputs, college + system headcounts, census context) as DEFAULTS; the policy
+layer lives in a Supabase config blob (team-phrase editable) + a per-browser
+what-if. So the workbook stays untouched, and the renderer computes every dollar
+live from the effective config (the baked per-college dollar columns were
+dropped — they'd be stale the instant a year / share / carve-out changes; the
+builder still recomputes the workbook chain to SELF-CHECK the extract, it just
+doesn't ship the derived cells). Three-layer resolution, per field:
+`SCENARIO ?? SHARED ?? BASE`.
+
+**(b) State.** Shipped in one PR:
+- `funding/supabase_cpl_funding_config.sql` + live migration `cpl_funding_config`
+  — single-row JSONB config, anon SELECT, `is_allowed_reviewer() OR team_pass_ok()`
+  write. Seeded `{}` so the client PATCHes.
+- Builder rewrite (`_build_funding_data.py`, model version `2026-07-03.1`):
+  `year_options` (2026-27…2029-30) + `default_years` (**2** — 2026-27 + 2027-28),
+  `year_priorities` (slot 1 & 2, each 3 priorities with Sam's Year-1/Year-2 metric
+  text; shares/targets default from the workbook row-7 values), `feeders` (NOCE /
+  SD Cont. Ed / Mt. SAC NC / Calbright — **editable headcount estimates**),
+  `pool.feeder_carveout` ($1M default) + `feeder_metric`.
+- Renderer rewrite (`cpl_funding.js` v2): two **year dropdowns**, a **Year 1 /
+  Year 2 filter** (switches the priority metrics + the college P1/P2/P3 columns),
+  **editable priority metric/description/share/target** + **editable feeder
+  headcount/metric** + editable pool inputs, a **noncredit-feeder section** (pool
+  = carve-out ÷ years, split by headcount), a **team-phrase auth bar**
+  (`CPL_TEAM_PHRASE.unlockRow`; unlocked edits PATCH the shared config, locked
+  edits are a local scenario), Supabase load/save with rollback on RLS no-op.
+  Kept the college table format, drill-ins, district rollup, period toggle, and
+  P2/P3 actuals.
+- Teaser in `excel_to_dashboard.py` re-pointed to the renamed pool field
+  (`college_funding_before_feeder`); try/except means the cron never breaks on it.
+- Tests: `tests/cpl_funding.test.js` rewritten (110 assertions — schema, year
+  window/filter, feeder split, editable text, the 3-layer merge, team-phrase
+  shared edits via a mock, actuals, empty-state). Full suite green.
+
+**(c) Roadmap.** Feeder headcounts are placeholder estimates — Sam/Chancellor
+true them up in-tab (an explicit edit drops the `est.` flag). Admin cost label
+still reads "2 FTE × 3 YRS" while the default is a 2-year window — the pool
+inputs are editable, so adjust in-tab or re-label the workbook next edition.
+The actuals feed (`cpl_funding_performance.js`) is keyed by stable p1/p2/p3
+slots; its metric text no longer matches every year's metric, so actuals are
+surfaced as "per MAP" against whichever year is shown (honest, not year-matched).
+
+**(d) Next concrete step.** Hand the tab to the Chancellor for scenario play;
+if a base model wants to be shared, unlock with the team phrase and configure.
+Consider: a 3rd/4th year toggle (the renderer already divides by
+`selectedYears().length`); real noncredit MIS headcounts for the feeders.
+
+### 2026-07-03 follow-up — Excel workbook RETIRED
+
+Sam: "We don't need that excel book anymore." Confirmed the only thing still
+sourced from `funding/CPL_Funding_Model_2026.xlsx` was the 119-college roster
+(2022-23 MIS headcount + district/county + census working-adults) — and that was
+already **baked into the committed `cpl_funding_data.js`**; nothing at runtime
+(incl. the daily cron, which only builds the P2/P3 *actuals* via
+`_build_funding_performance.py`) reads the `.xlsx`. Deleted the workbook + the
+one-shot builder (`_build_funding_data.py`) + the two `_revise_workbook_*` scripts.
+`cpl_funding_data.js` is now a **committed hand-maintained snapshot** (header
+rewritten; `source` re-labeled; `sheet` dropped from the render line). A future
+headcount refresh = edit the roster in the data file directly; the builder lives
+in git history for a full re-derive. Kept: `_build_funding_performance.py` (cron
+actuals — reads the MAP CustomReport, not the workbook) + the new
+`supabase_cpl_funding_config.sql`.
+
+### 2026-07-03 follow-up 2 — 2025-26 headcount refresh + feeders out of the college table
+
+Sam supplied the **Annual 2025-2026 student counts** (76 institutions). Applied
+directly to the hand-maintained `cpl_funding_data.js` (model `2026-07-03.2`):
+
+- **74 college rows → 2025-26** (name aliases handled: Chabot Hayward→Chabot,
+  Coalinga College→West Hills Coalinga, Lemoore College→West Hills Lemoore);
+  the **41 colleges not in the update keep 2022-23**, stamped per-row
+  `hc_vintage` — the tab renders a data-driven honesty note ("41 of 115 college
+  rows await a 2025-26 headcount") that disappears once the refresh completes.
+- **The 4 feeder institutions were MOVED OUT of the college table** (they were
+  in the MIS roster as CalBright / Mt San Antonio Noncredit / North Orange
+  Adult / San Diego Adult — drawing college allocations against CPL metrics
+  they can't earn). They now live only in the `feeders` roster with REAL
+  headcounts (NOCE 15,560 + SD Cont. Ed 21,561 per Sam's 2025-26 table; Mt. SAC
+  NC 35,363 + Calbright 2,484 from their 2022-23 MIS rows) — `estimate` flags
+  gone, per-feeder `vintage` shown in the feeder table.
+- Roster 119 → **115 colleges**; SYSTEM headcount 2,210,025 → **2,258,784**;
+  `headcount_pct` recomputed over the new roster; `headcount_label` re-labeled
+  (drives the column tooltip + footnote automatically).
+
+### 2026-07-03 follow-up 3 — year columns · combined headcount · measurability map (Sam's 4 items)
+
+① **Measurability analysis** of the six new metrics → the vault note
+`docs/kb-notes/reference-funding-metrics-measurability.md` + a `MEASURABILITY`
+map in the renderer: Y1-P1 (any transcribed) is live NOW (the daily builder's
+distinct-student count — the old "awaiting completion data" label was stale
+under the new metric set); Y2-P1/Y2-P2's units halves are a small builder
+extension; Y1-P2 needs exhibit linkage in the Custom Report; Y1-P3 needs origin
+tracking baked into the Student-Portal launch (~2 weeks — time-critical);
+Y2-P2 completion + Y2-P3 both ride the CO MIS match-back. ② The headcount pool
+card now shows **colleges (allocation basis) + noncredit feeders = CCC total**.
+③ The college table's P1/P2/P3 columns → **one column per funding year (Yr 1 /
+Yr 2, actual years in the tooltip) + a window Total**; per-priority math stays
+in the drill-in for the filtered year; the Per-year/Total period toggle is
+retired (both are columns now); the feeder table gains Support/yr + window
+Total. ④ Sam's future ask noted: a PUBLIC "current metrics + allocations vs
+potential" college view once the model finalizes — colleges see where they
+stand (and each other). Tests 125; suite green.
+
+## 2026-07-06 — Session 3 (StarHaarland: the equity refinements — front-load · floor · rural allowance · eligibility badges)
+
+**(a) Learned.** The team's "yearly allocations are too small for 1–2 FTE"
+complaint decomposed into a TIMING problem and a SIZE problem once the
+distribution was computed: 65 of 115 colleges sit under a ~$150K/yr 1-FTE
+grant **per year**, but only 23 under it **per window** — so front-loading
+(a pure re-timing) fixes 42 colleges for free, and a minimum-viable floor
+fixes the residual 23 for ~3% of the pool. Cheap floor math: a per-college
+minimum funded *within* the pool is an iterative waterfall (floored colleges
+get exactly the floor; the remainder renormalizes over the other colleges'
+headcount — a re-split can push the next-smallest college under, so iterate;
+converges in a few passes, Σ = net pool by construction). A flat base grant
+to all 115 would have cost 17–34% of the pool — rejected. Also: the "rural
+designation" has NO single authoritative CCCCO list (only 13 campuses meet
+the federal definition); the honest seed is the CCCCO **Rural College
+Transfer Collaborative** cohort (10 colleges), DRAFT-labeled + overridable.
+
+**(b) State.** Shipped in one PR (all four team asks, per Sam's "Build all 4"):
+- **Front-load toggle** (`disbursement` even ⇄ frontload, three-layer config):
+  Yr 1 column carries the full window; later years render `↻ carryover`;
+  feeder pool front-loads too; window note + formula + footer explain the
+  roll-forward + close-out year (window end + 1, computed by `nextFy`).
+  Timing only — totals + per-year targets unchanged.
+- **Minimum-viable floor** (`pool.floor_window`, default $150K, 0 disables):
+  `allocModel()` waterfall + floor pool card (live top-up count/cost),
+  ⬆ row chips, drill-in "Floor applied" line (proportional-vs-floored),
+  formula renormalization sentence. At current defaults: ~24 colleges topped
+  up for ≈$1.2M within the $32.8M pool.
+- **Rural allowance** (`pool.rural_carveout` $1M deducted top-of-pool,
+  `rural_threshold` 50% editable, per-college `rural` flags + in-tab
+  override when unlocked): each rural college can EARN carve-out ÷ #rural by
+  reaching ≥ threshold of its measurable Year-1 priority targets
+  (`ruralAttainment` — per-MAP actuals ÷ target, suppressed/absent = pending,
+  never a silent zero); rural section table + 🌲 chips; qualifier count in
+  the tfoot. Roster = the 10 RCTC colleges, DRAFT provenance in-data.
+- **Eligibility badges** (informational — dollars unchanged): ① CPL
+  Coordinator in MAP — live via the new PII-free anon
+  `map_coordinator_summary()` RPC (boolean per college; names/emails stay
+  reviewer-gated); the sync now pulls `CPL Coordinator (+Email)` from the
+  Contacts view (field-map + PII-safe coverage count). ② Participation
+  request by 2026-09-01 (editable) — new `cpl_funding_participation` table
+  (anon read; write + DELETE team-phrase/reviewer — the waa DELETE-widening
+  precedent; the tab re-fetches after every write per #598). Elig column
+  (✓/◐/○), summary block with live counts, drill-in opt-in + rural-flag
+  buttons when unlocked. Name join through `cplCollegeShort()` short-name
+  space on both sides.
+- Migrations applied live: `map_contacts_cpl_coordinator`,
+  `map_coordinator_summary_rpc`, `cpl_funding_participation`. Schemas of
+  record updated/added (`map/supabase_map_contacts.sql`,
+  `funding/supabase_cpl_funding_participation.sql`).
+- Tests: `tests/cpl_funding.test.js` 125 → **182** assertions (Part D:
+  waterfall conservation/floor/proportionality, front-load timing +
+  three-layer resolution, rural gate + threshold edit + overrides,
+  eligibility badges + never-move-dollars). Full suite green.
+
+**(c) Roadmap.** ① The rural roster is a DRAFT — Sam's team trues it up
+(in-tab override or the data file). ② The eligibility gate is badge-only;
+when the policy finalizes, an "exclude ineligible + hold in reserve" toggle
+is a small extension of `allocModel()`. ③ Coordinator coverage populates on
+the next `map-users-sync` run — the real N-of-115 number then informs how
+hard a Sept-1 deadline bites. ④ Rural attainment currently measures only
+Y1-P1 (the one measurable metric) — it widens automatically as
+MEASURABILITY feeds land.
+
+**(d) Next concrete step.** Dispatch `map-users-sync.yml` (done post-merge)
+→ read the coordinator coverage count → tell Sam whether Sept 1 is a cliff
+or a formality.
+
+### 2026-07-06 evening — Session 3 continued (Sam's 8 + 3 refinements)
+
+One more batch, same session, all shipped together:
+
+1. **County column hidden** (college table) — the data stays in the drill-in
+   "County context" line, the search haystack, and the CSV export.
+2. **Count note** now reads "… · plus 4 noncredit campuses (74,968 students)
+   funded via the $1,000,000 carve-out" — computed live from the feeder
+   roster, never hardcoded.
+3. **Eligible† column** next to **Transcribed†** (relabeled from "CPL
+   students†"): the perf builder gained **PE = distinct students with
+   Eligible Credits > 0** (context metric, NOT a priority; same suppression);
+   "Eligible Credits" was already in the fetched view — zero new PII surface.
+   Cells show "—" until the next daily cron publishes the new artifact.
+4. **Floor ≠ higher targets, clarified in-tab** (Sam's SC): targets are
+   headcount-based (`target % × the college's own MAP headcount`) — the floor
+   raises funding, not the bar. Note added to the formula box + the floored
+   drill-in line.
+5. **⬇ Excel + ⬇ PDF** toolbar buttons: CSV (BOM, meta line, includes the
+   hidden County/working-adults + rural/floor/eligibility flags; SYSTEM row
+   carries the noncredit-inclusive headcount) and a **print-window** export
+   (clone the live tab, flatten inputs to text, strip chrome → browser
+   Print → Save as PDF — the fact-sheet pattern; literal seal-blue in the
+   transient doc since it can't see the app's tokens). No xlsx library added.
+6. **CO Monitor's note** per college in the drill-in — new gated
+   `cpl_funding_notes` table (**read AND write** reviewer/team-phrase; the
+   page is public, candid commentary isn't). Editable textarea when
+   team-editing is on; read-only text for phrase-holders; invisible to
+   anonymous visitors. Flip `cfn_select` to `using(true)` if the team ever
+   wants them public.
+7. **Seal-blue retheme**: the glass theme had redefined `--navy-primary` to
+   `#1C1C1A` (charcoal — reads black), so every "navy" background on the tab
+   was black. Backgrounds (hero card, table headers, active seg, authbar
+   buttons, tfoot rule) now use the existing **`--seal-blue` (#002F6D)**
+   token. Text usages stay charcoal per the theme.
+8. **Named scenarios**: localStorage store v2 (`cpl_funding_scenarios_v2`,
+   `{active, scenarios:{name → override}}`), v1 auto-migrates into
+   "Scenario 1"; authbar selector + ＋ New (blank slate = shared model) +
+   ✕ Delete; blank slots evaporate; the phrase-unlock promotion flow is
+   unchanged and promotes the ACTIVE scenario. Per-browser by design —
+   shared/team scenario slots would live in `cpl_funding_config` keyed by
+   name (recommended later if the team wants cross-device scenarios).
+9. **Alignment polish** (Sam's screenshot): pool-card values centered
+   (incl. the editable inputs), priority labels left with the tranche share
+   staying right, priority-box numeric inputs centered.
+
+Tests 184 → **218**. Post-merge: dispatch `daily-dashboard.yml` so the perf
+artifact picks up PE same-day.
+
+## 2026-07-23 — Session (SkyFunder): the COBI funding-tab reorg — 6 asks, 3 PRs
+
+Sam wanted six modifications to the Implementation Funding tab, delivered as three
+merged PRs — **all JS-only in `cpl_funding.js` (+ its test), zero HTML touched**, so
+no Rule-4 mirror and zero collision with a parallel Fact Sheet session.
+
+**(a) Learned.**
+- The 3-layer config (`SCENARIO ?? SHARED ?? BASE`) generalizes cleanly to a
+  **multi-project / multi-scenario** model *without* touching the accessor layer:
+  keep `SHARED` and `SCENARIO` as the two override objects, just change what fills
+  them — `SHARED` = a **pointer into** `SUPA_CONFIG.projects[pid].scenarios[sid]`,
+  `SCENARIO` = the per-browser what-if for that `(project, scenario)`. Every existing
+  `firstDefined(SCENARIO.x, SHARED.x, base().x)` accessor kept working unchanged. The
+  only real refactor was load/save/reset/promote (snapshot the WHOLE config for
+  rollback, re-point `SHARED` after any structural edit) + the UI + migration.
+- **No schema change was needed** for shared projects/scenarios — the existing
+  single-row `cpl_funding_config` JSONB just holds a richer blob. `normalizeConfig()`
+  wraps a legacy flat override as the CPL project's Scenario 1 (no team edits lost),
+  and only persists the new shape on the first curator save.
+- A **structured template document generator beats an LLM** for a memo that must
+  match a house format exactly (ESS 25-82): the numbers are the model's, the sections
+  are fixed, editing is a `contenteditable` page, and **Word export is a small
+  DOM→docx walker** over the edited content using the repo's already-loaded
+  `docx.min.js` (`window.docx`; `ensureDocx` lazy-loads if absent). Verified in real
+  Chromium — the ⬇ Word button produced a valid 10.8 KB `.docx`.
+- **The Letters tab is not a document engine** — it's an iframe into the *separate*
+  `cpl-knowledge-base` repo/Supabase (a legislative-campaign tool), unreachable from a
+  tracker session. Reusing it for the memo would have meant cross-repo edits; the
+  native sub-tab + the repo's docx stack was the right call (Sam agreed via the fork).
+
+**(b) State.** Shipped + merged:
+- **PR-1 (#878):** Total Available Funds card (`remaining_2025_26 + one_time_2026_27`
+  = $44,040,307, live) · Award range cards (Avg / Min / Max per-college window total;
+  Min names the floored-college count) · SYSTEM total row moved `<tfoot>` → pinned
+  first `<tbody>` row.
+- **PR-2 (#879):** the shared project + scenario layer. Top control strip
+  `[Project ▾ +Add | area badge] [Scenario ▾ +New(clone) ✕]`; projects/scenarios
+  persist in `cpl_funding_config` (curator/team-phrase to create/delete; anonymous
+  what-if still overlays); `+New` **clones the current scenario**; `+Project` clones
+  the CPL template + tags a COBI **area** (CPL/C&I/CIP/GR from `window.CPL_ORGS`);
+  backward-safe migration + legacy per-browser-scenario fold-in.
+- **PR-3 (#880):** the 📄 **Report** sub-tab — an editable **ESS-25-82 memo** generated
+  from the active project/scenario (masthead · MEMORANDUM · TO/FROM/RE · Funding
+  Overview · Priority Outcomes · Allowable Use · Allocation table · Reporting ·
+  Conclusion · cc), doc-type toggle **Memo/Letter/Report/Brief**, exports 📋 Copy /
+  ⬇ PDF (print) / ⬇ Word (docx). Tests 266 → **292**; full suite 168 files green.
+
+**(c) Roadmap / follow-ups (all optional).**
+- The memo's FROM/contact default to generic role titles (not names) and ESS number
+  is a `ESS __-__` placeholder — deliberately editable; Sam fills the specifics.
+- Per-project **data isolation** is still deferred (Rule 9) — a non-CPL project reuses
+  the CPL 115-college engine as a template; "add project" is a labeled container +
+  clone, not a distinct allocation model. Defining a real non-CPL funding model is the
+  next architectural step *if* a second project needs different mechanics.
+- Inline memo edits are export-only (reset on Regenerate / doc-type switch). If Sam
+  wants persistent memo drafts, store the edited HTML per (project, scenario) in the
+  config — small extension.
+- Word/docx: the DOM→docx walker handles h1/h2/p/ul/li/table/strong + recurses
+  containers; a fancier memo (page numbers, real letterhead image) would need the
+  docx section/header API.
+
+**(d) Next concrete step.** Nothing blocked on us — hand the tab to Sam for live
+testing. If he wants the memo's masthead to carry the real CO seal image or a
+per-area masthead (C&I/CIP/GR), that's a focused follow-up in `memoMasthead()`.
+
+---
+
+## 2026-07-23 (SkyFunder rounds 2 & 3) — editable narrative fields + generalized pool boxes
+
+Two more rounds of curator asks after the initial reorg (#878–#880), both JS-only in
+`cpl_funding.js`.
+
+### Round 2 — #883: editable priority titles + strategies + timing + eligibility intro
+
+- **Priority titles** (default Access / Success / Capacity) and **Recommended Strategies**
+  (editable bulleted list per priority) are **year-specific** — Sam's call: *"the next year
+  priorities may shift depending on how colleges do in Year 1 … strategies will also change
+  each year as colleges mature."* So both ride the existing per-slot `prioField`/`setPrio`
+  path (same layers as metric/share/target); no new config path, and they re-render when the
+  Year 1/Year 2 filter flips. Default title falls back to a JS `DEFAULT_PRIORITY_TITLES`
+  constant when the per-slot value is null.
+- **Timing** is a new top-level `timing` config key (array of `{label, date}`), seeded from a
+  `DEFAULT_TIMING` constant (Sam's 9 milestones); editable label + optional right-aligned date
+  with add/delete, undated rows render italic (`.nodate`). **Eligibility intro** became a
+  single editable `eligIntro` field (lost the inline bold, gained full editability — Sam OK'd).
+- Reused the eligibility-requirement **bullet/✕/＋ list pattern** verbatim for strategies and
+  timing — that pattern is now the template for the future *variable-count priority boxes*
+  (Sam flagged wanting 2/4/5 priorities later; the title/strategies keying by `slot:idx`
+  already extends to any count).
+
+### Round 3 — #884: editable / add / delete funding pool boxes + header trim
+
+- **The pool model generalized.** Core boxes stay named (`CORE_REVENUE` / `CORE_DEDUCTION`),
+  but now: editable **labels** (`poolLabels[field]`), **hide/restore** core boxes
+  (`hiddenPool[field]`), and **custom boxes** (`customPool[]` = `{label, amount, kind}`) added
+  as revenue or deduction with a per-box kind toggle. Net generalized to
+  `Σrevenue − Σdeduction − feeder − rural`.
+- **Conservation is the keystone.** With no custom boxes and nothing hidden, `grossRevenue() −
+  grossDeduction()` is *identical* to the old `remaining+one_time−admin−scaling`, so every
+  existing allocation number is unchanged — guarded by an explicit test
+  (`net == remaining+one_time−admin−scaling−feeder−rural`). This is the pattern for
+  generalizing any hardcoded calc: **make the general form reduce to the old form, then assert
+  it.** Custom revenue also flows into the Total Available Funds card.
+- **Scope boundary (Sam-approved pushback):** carve-outs (feeder/rural/floor) + computed cards
+  (Total Available, net hero, headcount, per-student) are **non-deletable** — structural or
+  derived; you disable a carve-out by zeroing it. Delete/hide are behind a `confirm()` warning
+  (*"changes the funding calculations"*); a "Hidden boxes" strip restores core boxes.
+- **Bug caught in Chromium, not jsdom:** `&mdash;` in an editable label DEFAULT rendered
+  literally ("&mda…") because an `<input value>` is plain text, not HTML — jsdom doesn't
+  surface it, real Chromium did. **Lesson: any string that lands in an input `value` must use
+  real characters (—), never HTML entities.** Fixed + added a hover-`title` so clipped labels
+  stay readable.
+- Dropped the duplicate **"% of each tranche"** chip from the priority header (Sam: *"save real
+  estate"*) — the share stays editable in the Allocation-share line below; removed the dead
+  `.share` CSS + its test clause too.
+
+**Method note landed:** `docs/kb-notes/methodology-generalize-a-calc-conserve-the-baseline.md`
+(the "reduce-to-old-form + assert conservation" pattern). Tests 292 → **325**; real-Chromium
+verified each round (0 console errors, no horizontal scroll). Side-lane — left `cpl_todos.json`
++ the numbered handoff to the CCR mainline.
+
+## 2026-07-23 (SkyFriend) — uniform box fonts · metric-keyed actuals · the allocation-balance box
+
+Three more curator asks, one JS-only PR in `cpl_funding.js` (+ its test).
+
+**(a) Learned.**
+- **A position-indexed lookup silently breaks the moment the curator reorders the
+  things it indexes.** The `MEASURABILITY` map was keyed `[slot][idx]`, so when Sam
+  swapped Access ⇄ Success the "any transcribed" ACTUAL (16,807) stayed pinned to
+  slot 0 while the metric there was now statewide-eligibility — the number showed
+  under the wrong priority. The durable fix is to key the lookup to the **content
+  that identifies the situation** (the metric text), not the ordinal. New `MEASURES`
+  array = ordered `test(metric)` predicates, most-specific first (portal → eligible/
+  statewide → matched-MIS → completion → units → any-transcribed), first match wins.
+  The measure now *travels with the metric* wherever the curator drops it, and the
+  default order still resolves identically (all prior assertions green). **General
+  rule: when a curator can reorder N things, don't index them by position — resolve
+  by an intrinsic key.**
+- **"Confirm this for me" is a real deliverable — answer it, don't just build.** Sam
+  believed the Projection % *both* sizes the affected population *and* caps funding.
+  That was true of the ORIGINAL (pre-#360) model where `share = factor × rate` so the
+  projection rate moved dollars — but the 2026-06-11 shares-first redesign (which Sam
+  approved) **decoupled them on purpose** precisely because the projection % "looked
+  like a forecast but moved money." Today: **Allocation share = the money lever;
+  Projection % = a performance target only, moves/caps nothing.** So the honest
+  "are the percentages within budget?" check is about the SHARES, not the projection —
+  which is exactly what the new balance box measures. Confirmed in the reply + a
+  clarified in-box line; did **not** silently re-couple them on a mistaken premise.
+
+**(b) State.** Shipped (one PR):
+1. **Uniform fonts** — `.cplfund-prio .p` desc/nums/metric + `.cplfund-strat` +
+   `.cplfund-timing` + `.cplfund-ed-s` all → `.8rem` (the smaller size already in use);
+   only the priority **title** (h4 + `.cplfund-prio-title-input`) stays 1rem. The strat
+   & timing rows previously inherited the page base (~1rem) because their containers set
+   no size — setting the container size makes the `font-size:inherit` ed-t inputs fall
+   in line, so the whole box reads as one block.
+2. **Metric-keyed measurability** (`MEASURES` + `measurability(metric)`), call sites in
+   `actualLineHtml` / `collegeDetailHtml` / `ruralAttainment` now pass `p.metric`; the two
+   hardcoded "Year-1 Priority-1 metric" column titles de-positioned.
+3. **Allocation-balance box** in the Funding Pool area: `perYear() − perYear()×Σshare =
+   remainder`, using the viewed year's shares. `$0` (fully apportioned) at 100%; a red
+   `.balance.over` **Over-allocated** state naming the overage when shares exceed 100%;
+   an unallocated-surplus state under 100%. It's the modern N3-BALANCE cell — recomputes
+   live with every pool/share/year edit. Projection-% line reworded to "performance
+   target only … does not move or cap the funding, which is set by the Allocation share."
+
+Tests 325 → **337** (reorder-follows-metric with a perf artifact, balance $0/over-allocated,
+projection clarify text, font-uniformity CSS guards). Full suite **168 files green**. No
+Chromium module in this sandbox, but the new entities all live in innerHTML (not input
+`value`s — the Round-3 gotcha doesn't apply); verified via a jsdom render dump.
+
+**(c) Roadmap / advice for Sam.** If he ever *wants* the Projection % to also cap funding
+(his original mental model), that's a deliberate re-coupling — I'd advise against it (it
+reintroduces the exact confusion the shares-first redesign removed); keep shares = money,
+projection = target, and read over-allocation off the balance box. The `MEASURES` predicates
+are the one thing to touch if a metric's wording changes enough to miss its matcher — they
+match distinctive phrases (`portal`, `credit recommendation`, `completion`, …), fail safe to
+"no measure mapped" (never a wrong number).
+
+**(d) Next concrete step.** Hand to Sam for live testing. Side-lane — left `cpl_todos.json`
++ the numbered handoff to the CCR mainline (per the SkyFunder precedent).
+
+## 2026-07-24 (SkyFriend cont.) — achievement-based funding: the cap-and-earn model
+
+The projection-% confirmation opened the real ask. Sam's model of the tab turned out
+to be *not what the code did* — and I had to say so plainly before building. Two truths
+established first (see the dialog): (1) the per-priority per-college allocation IS a
+CAP (confirmed against his actual workbook formulas — `E8 = F8*$L$3*E7` = projected-
+headcount × per-student × funding-factor; `F8 = C8*F7` = the % capping counted
+headcount; so the effective share = `factor × %`, tuned to 30/42/28, identical to
+today's shares-first model; his `N3 BALANCE` cell = the Allocation-balance box shipped
+above). (2) Funding on **actual achieved headcount** was **never** intact — neither the
+tab nor the workbook ever tied dollars to achievement; both are deterministic on
+headcount. I told him that directly rather than let the misconception stand. He then
+confirmed the intent and the mechanics (AskUserQuestion, both answered): **build
+achievement-based**, **phase in as feeds land**, **capped at target/cap**, and — the
+clincher — *"safeguard them from needing to achieve the full target to receive funding"*
+(⇒ proportional, not all-or-nothing) and *"incentivize local investment … some not
+implementing at all yet"* (⇒ a non-participant earns $0 on a measurable metric).
+
+**The model shipped** (`cpl_funding.js`, JS-only): `earned = cap × min(1, actual ÷
+target)`; unearned rolls forward. A **Potential ⇄ Earned** basis toggle (default
+Potential — no change for current viewers); earned mode overlays the same surfaces
+(pool Earned-so-far/Unearned cards, per-priority earned %, table total → earned-of-cap
+· % maxed, drill-in per-priority earned). The projection % finally earns a job — it's
+the achievement **target** the actuals divide by.
+
+**The load-bearing decision** was the *default for unmeasured cells* — full doctrine in
+the new KB note `methodology-achievement-based-funding-cap-and-earn.md`. Four distinct
+states, not one: **gap** (metric unmeasurable for anyone → advance full cap),
+**pending** (feed not loaded this cycle → advance), **none** (feed loaded, this college
+posted nothing → **$0**, the incentive), **suppressed** (<5 privacy floor → $0, flagged).
+My first cut wrongly advanced *every* no-datum cell (system earned read 99.87%); the fix
+— split "metric can't be measured" from "this college didn't do it" via a feed-loaded
+check + a per-college-datum check — dropped it to a truthful 85% (the unearned Year-1 P1
+of non-participants rolls forward). That distinction is the whole incentive.
+
+**Invariants test-guarded (Part E, +20 → 357):** earned ≤ cap always; no-feed / all-gap
+⇒ earned == cap (non-destructive overlay); the incentive identity (absent-from-feed
+college earns exactly `cap − its measurable-metric slice`); overachiever capped at 100%;
+suppressed = $0 + flagged; CSV gains Earned + % of cap columns. Verified via jsdom render
+dump (Laney: $197,550 earned of $222,555 cap; system 85% with only ~2 synthetic feed
+colleges).
+
+**Phase-in reality:** today only Year-1 "any transcribed CPL" is measurable, so only it
+flexes; the other two Year-1 priorities + all of Year 2 advance at full cap and light up
+automatically as their feeds land (exhibit linkage · Student Portal origin · CO MIS
+match-back) — the same measurability ladder the `MEASURES` resolver already drives.
+
+**Roadmap / open:** the basis is session state (default Potential) — if Sam wants a
+shared/team default of Earned, add a `fundingBasis` config field (one line, same 3-layer
+resolution as everything else). Suppression policy (<5 → $0-flagged) is conservative;
+revisit if small colleges need crediting. The "advance for data-gap priorities" is
+generous by design (phase-in) — as feeds land the advances shrink to real earned.
+
+## 2026-07-24 (SkyFriend cont. 2) — column show/hide + the eligibility-tooltip audit
+
+Sam's "rug left in the context" batch of 6 asks; shipped the two unambiguous ones + a
+recommendation on the rest. **Column show/hide** (`cpl_funding.js`): a **⚙ Columns**
+dropdown (native `<details>`) of checkboxes; **county (Working adults) hidden by
+default**; per-view + persisted (`localStorage cplfund_cols_v1`, keyed `{college:{},
+district:{}}`). The neat trick that avoided a row-render refactor: **hide via injected
+`nth-child` CSS computed from the live `activeCols()` order** — `.cplfund-table thead
+th:nth-child(N)` + `tbody tr:not(.cplfund-detail) td:nth-child(N)`. The `:not(.cplfund-
+detail)` is load-bearing: detail (drill-in) rows are a single `colspan` cell, so without
+the exclusion, hiding column 1 would collapse the whole drill-in. CSS-hiding is also
+transparent to jsdom (cells stay in the DOM), so it didn't disturb any existing test.
+The view's **identity column (College/District) is never hideable** (row anchor). Toggling
+`refreshTable()`s only — the menu lives in the toolbar so it stays open across a toggle.
+**Eligibility audit (#4):** clarified the Elig tooltip + the drill-in "Baseline
+eligibility" line + `eligTitle()` to frame eligibility as the **participation gate**
+(CPL Coordinator in MAP + participation request), explicitly **separate from earned
+funding** — a needed clarification now that funding is achievement-based. Tests 357 →
+**367** (Part F).
+
+**Recommendation for #6 (target vs actual layout) — DON'T use two physical rows per
+college.** Doubling 115 → 230 rows breaks sorting (rows must stay paired), the pinned
+SYSTEM row, zebra striping, and CSV, for a big complexity cost. **Recommend instead:
+stack target-over-actual *within each priority column's cell*** (the `.sub` two-line
+pattern already used by the earned Total cell) — a college sees `target / actual (%)` at
+a glance, no dropdown, no row-doubling, and it composes with sort/CSV/print. This pairs
+directly with **#5** (relabel Eligible†/Transcribed† → per-priority **P1/P2/P3** columns,
+each cell = that priority's target/actual stacked, hover = the priority goal + metric).
+Only the measurable priority shows a real actual today; the others show "—/gap" until
+their feeds land (same `MEASURES` gating). **Deferred with a note:** column **resize**
+(needs `table-layout:fixed` + a colgroup + drag handles — bigger, and it fights the
+no-horizontal-scroll rule) and Sam's dream of **per-column multi-select dropdown filters**
+("could eliminate redundant tab filters") — a real product direction worth a dedicated
+build: a filter row under the header, each column a multi-select of its distinct values,
+AND/OR across columns, replacing the separate view/year toggles. Both are the next
+session's build; the column model (`activeCols()` + the nth-child hook) is the seam.
+
+## 2026-07-24 (SkyFriend cont. 3) — per-priority P1/P2/P3 columns (target/actual stacked) + the numbered Elig pie
+
+Sam blessed the stacked-cell recommendation ("love your direction"), so **#5 + #6 shipped**.
+The two context columns (Eligible†/Transcribed†) are **replaced by three per-priority
+P1/P2/P3 columns** built from `priorities(state.viewSlot)` (so they follow the Year 1/Year 2
+filter; stable keys `prio0/1/2`). Each cell **stacks target over actual** (`prioCellHtml`):
+top = `{target students} · {cap}` (muted), bottom = `{actual students} · {earned} · {%}`
+(bold) — a college sees its standing **inline, no drill-in**. Header hover = the priority
+**goal + metric** (#5). Reuses the achievement engine: `earnFraction` drives the actual line
+(`earned` → number+%, `gap`/`pending` → advance, `none` → 0, `suppressed` → <5), so the
+columns light up as feeds land. Sort by a priority column = the posted actual. CSV swaps
+Eligible/Transcribed for per-priority `Pn target`/`Pn actual`. **Width guard:** a compact
+`fmtCountK` (797 · 16.8K · 113K) + `fmtMoneyK` ($33.4K · $4.9M) keep the dense cells narrow
+(full precision stays in the cell hover) so the extra column doesn't force horizontal scroll
+— and everything's hideable now anyway.
+
+**The Elig pie (Sam's bonus ask):** the ✓/◐/○ glyph → a **numbered SVG pie** (`eligGlyph`
+rewritten): one slice per tracked requirement, numbered 1..N, **filled green when the college
+satisfies it** (muted otherwise), ~22px. Built **N-slice, not a forced 4** — the honest
+version of Sam's "4 slices" idea: today there are **2** data-backed requirements (coordinator
++ participation), so 2 slices; it grows toward 4 automatically as more *per-college-checkable*
+requirements are wired (extra free-text requirements aren't per-college tracked, so they're
+not sliced). `eligReqList()` is the new seam (the ordered, met-stamped requirement list);
+`eligParts`/`eligScore` now derive from it. Recommendation delivered: **want a fixed 4 slices?**
+we'd first need to define + wire the data for 2 more per-college criteria — otherwise 2 slices
+would always sit gray and read as "failing" criteria that don't exist.
+
+Tests 368 → **376** (Part G: 3 columns, target/actual stacked, %, gap, funding, header hover;
+pie is an SVG with N numbered green-when-met slices). Full suite green. Real-DOM dump verified
+(Laney P1 200/$8.4K of 797/$33.4K = 25.1%; pie 2/2 green "12"). **Deferred, unchanged:** column
+resize + per-column multi-select filters (Sam: "no problem holding … not a big priority now").
+
+---
+
+## 2026-07-27 (SkyMoney) — collapsible sections · per-student rate · P1/P3 metric wiring
+
+Three curator asks on the Implementation Funding tab, one PR (**#901**, `cpl_funding.js`
++ `funding/_build_funding_performance.py` + tests; **0 HTML**). Sam answered the two
+genuine design forks up front via a focused question (per-student shown *inside each
+P-cell*; wire P3's portal count *now*), so the build proceeded without a prototype round.
+
+### 1. Collapsible sections
+
+Every top-level section is a native `<details open>` whose `<summary>` **is** its `h3`
+(8: Funding window · Funding pools · Baseline eligibility · The three funding priorities ·
+How an allocation is computed · Potential allocation by college · Noncredit feeder support ·
+Rural college allowance). Two helpers:
+
+- `section(id, title, body)` — the inline sections (I already have title + body).
+- `collapseH3(id, html)` — for the sub-generators (`ruralSectionHtml`/`feederSectionHtml`)
+  that emit their **own** leading `<h3>…</h3>`; a small regex lifts that h3 into the
+  `<summary>` and wraps the rest as the body. This avoided refactoring those functions'
+  internals (and their early `return ""` empty-state).
+
+**The load-bearing bit is persistence.** An edit re-renders the whole `#cplFundingMount`
+innerHTML, and a fresh native `<details>` defaults back to `open` — so without persistence
+every keystroke-commit would re-open every section the curator had folded. Fix: a
+`cplfund_sections_v1` localStorage map (default open), read by `sectionOpen(id)` when
+building each `<details>` and written by a `toggle` listener attached in `wire()`. Same
+lesson the ⚙ Columns menu already learned (`cplfund_cols_v1`). In-memory `SEC_STATE`
+carries it across renders within a session; localStorage carries it across reloads.
+
+### 2. Per-student funding rate (replaces "% of headcount")
+
+The curator now types **$/student**; the reach (# students + % of headcount) is **derived**
+= `share × perYear ÷ per_student`. The clean part: **`per_student` is the stored source of
+truth, and `target_rate` is derived from it in the ONE place priority objects are built
+(`priorities()`)** — so every downstream `p.target_rate` reader keeps **reading it
+unchanged**; the input flip required **no consumer re-wiring**. (Precision: `ruralAttainment`
+and `collegeAlloc` are literally untouched; `earnFraction`, `prioCellHtml`, `prioritiesHtml`
+(the `sysHeads` reader) and the CSV cells WERE edited in this same PR — but for the
+per-student *display* and the separate `advancing` feature, not to change how they consume
+`target_rate`.) Full write-up:
+KB note `methodology-invert-an-input-derive-at-the-single-seam.md`. Highlights:
+
+- No schema change — `per_student` is a new key in the config JSON; `setPrio(..., "per_student", $)` persists it.
+- Legacy rows (only `target_rate`) fall back and expose the *implied* per-student, so the
+  tab self-migrates the moment Sam edits a rate.
+- The `applyEdit` branch is `perstudent` and stores a **raw dollar** (not `/100` like share/target).
+- Guarded divide-by-zero + clamped `target_rate` to ≤ 1.0 (a very low $/student can't target
+  > 100% of headcount).
+- Checked for recursion first: `priorities()` calls `perYear()`/`totalHeads()`, which read
+  pool config only (no path back into `priorities()`).
+
+**Sam's math confirmed:** P3 $4,164,651 ÷ 67,764 = **$61.46**. The inverse is what the tests
+assert (Part H): halving `$/student` ~doubles the student target, while the **dollar
+allocation is unchanged** (dollars come from the *share*, never the rate) — the clean proof
+the derivation is wired without touching the money.
+
+**Judgment call (a): the per-cell `$/stu` is the UNIFORM policy rate**, the number Sam sets,
+the same down each column — *not* each college's `cap ÷ target`. Why it matters: with the
+minimum-viable floor active, the floor renormalizes the split, so a non-floored college's
+realized `cap ÷ target` sits ~10% below the policy rate and floored colleges sit above it.
+Showing the uniform policy rate reads as one clear policy number matching the priority card;
+showing per-college realized rate would be self-consistent within a row but wouldn't equal
+the $61.46 Sam typed. Left it uniform; noted the flip for Sam (it's a one-liner in
+`prioCellHtml` — `perStu = target > 0 ? cap/target : 0` instead of `p.per_student`).
+
+### 3. P1/P3 metric wiring — closing the data gaps
+
+The measurability engine is `MEASURES` (ordered `test(metric)` predicates, metric-keyed so it
+follows a reordered priority — SkyFriend's fix). Two additions:
+
+- **P1 → `pe`.** Sam reworded P1 to *"eligible for at least one course offered through CPL."*
+  The eligible-students count (`pe`, **~43,000 statewide** — 43,284 on the 2026-07-27 feed; it
+  drifts daily) was **already in the daily feed**
+  (the builder computes it from `Eligible Credits > 0`; it was collected as "context"). The
+  only gap was a matcher — so a plain-**"eligible"** predicate → `src: "pe"`, placed **after**
+  the statewide-eligible gap (`eligible` + `statewide`/`credit recommendation` → still the
+  exhibit-linkage gap, which genuinely needs exhibit linkage). **Zero pipeline change** — the
+  data was there all along. (The find: read what the feed *already carries* before assuming a
+  gap needs a new build.)
+- **P3 → `pp` + `advance`.** P3's metric is portal/landing-page origin, which the feed didn't
+  stamp and which excludes "Potential Student = Yes" rows (Sam's "~4, mostly test"; the real
+  post-dispatch count is **pp = 5**, across 3 privacy-suppressed colleges — Modesto/Solano/West
+  LA). Sam chose "wire the ~4 now." The builder now emits a new `pp` = distinct Potential-Student rows with
+  transcribed CPL (I stopped `continue`-ing on Potential rows and route them to `pp`; pe/p2/p3
+  still exclude them, so those counts are byte-identical). Verified against a synthetic
+  CustomReport: pp counts, and potential-without-transcribed + test rows are excluded.
+
+  **The trap I avoided:** a naive wiring makes P3 measurable, so in **Earned mode** every
+  college with `pp = 0` (i.e. everyone but the handful) flips from "advance at full cap" to `none`
+  → **$0 earned** — silently gutting P3 funding on a not-yet-live Portal. Fix: the portal
+  measure carries `advance: true`, and `earnFraction` returns a new status **`advancing`**
+  (f = 1) — it **surfaces the count for display** but **pays full cap** during phase-in, so
+  P3 isn't zeroed. `earnedLineHtml`, `prioCellHtml`, `actualLineHtml`, and the CSV all learned
+  the `advancing` status. **Flip `advance` off once the Portal is live** and P3 becomes fully
+  achievement-based automatically. (Judgment call (b) — flagged for Sam.)
+
+### State & verification
+
+Tests **376 → 390** (Part H: per-student derive + inverse, collapsible render + persistence,
+pe/pp wiring; the old P3-as-gap assertions updated to the wired behavior). Full suite green
+(**173 files** post-rebase onto #904). Real-Chromium render: 8 collapsible sections, per-student
+input + `$/stu` cells present, section collapse works on click, **0 console errors, no horizontal
+scroll**. `pp` **published** into `cpl_funding_performance.js` via the post-merge
+`daily-dashboard.yml` dispatch — statewide **pp = 5** (2026-07-27), so P3 now shows the count
+(advancing) instead of "arrives next refresh."
+
+**Next concrete steps:** (1) ~~confirm `pp` landed~~ DONE — pp = 5 statewide (2026-07-27 feed);
+(2) if Sam wants it, flip either judgment call (per-college `$/stu`; P3 zeroing) — both
+1-liners; (3) when the CPL Student Portal ships (~2 weeks), remove `advance:true` so P3 goes
+fully achievement-based. Side-lane — left `cpl_todos.json` + the numbered CCR handoff alone.
+
+---
+
+## 2026-07-27 (SkyMore) — front-load-aware formula box · cell re-weight · feeder 2-batch cadence · rural/feeder advice
+
+Four curator asks on the Implementation Funding tab. Three shipped as a JS-only PR
+(`cpl_funding.js` + its test; **0 HTML**); two (feeder measurables, rural spread) are
+**advisory** — Sam said "propose"/"advise" — captured here + surfaced to him with a
+focused question.
+
+### 1. "How an allocation is computed" is now RESPONSIVE to the Even ⇄ Front-load toggle
+
+The box read as an even-tranche explainer even when Front-load was ON — the core sentence
+said "the same again in each of the N years" regardless. Root cause: the disbursement cadence
+was a **trailing appended sentence** (`flSentence`, only added when front-loaded) on top of a
+hardcoded even-tranche clause. Fix: replaced both with **one `cadenceSentence` that branches**
+on `frontloaded()` and tells the whole timing story for its mode:
+- **Even:** "That same {tranche} disburses again in each of the N years ({window}), in **equal
+  annual amounts**."
+- **Front-load:** "Under **front-loaded** timing the full {window} window ({window total}) is
+  disbursed **up front in Year 1** ({y0}) … while Years 2+ are carryover only (unspent funds
+  roll forward, closing out by {closeout}). Front-loading is timing only: a college's window
+  total is unchanged."
+The floor + basis + balance sentences are unchanged. **Lesson (again): a toggle's explanatory
+text must branch at the point the toggle changes the story — don't bolt a second sentence onto
+a clause written for the other mode.** (The footer + window note already branched; only the
+formula box lagged.)
+
+### 2. Priority cell re-weight — the earned dollar is the focal point
+
+Sam: "de-bold the percentage and student count and bold instead the dollar amount they are
+currently receiving." The bottom (actual) line of each P-cell was `{count}` (bold navy) ·
+`{earned $}` (faint, normal) · `{%}` (bold green) — the eye landed on the count + %, not the
+money. **CSS-only** flip (3 rules): `.cf-a` (container, holds the count) → `font-weight:400` +
+`--text-muted`; `.cf-u` (earned $) → `font-weight:700` + `--navy-primary`; `.cf-pct` (%) →
+`font-weight:400`. Now the **earned dollar** is the bold navy focal point and the count + %
+recede. No markup change (weights only), so every `.cf-a`/`.cf-u`/`.cf-pct` text assertion
+stayed green.
+
+### 3. Noncredit feeder rows reflect the 2-batch-per-year disbursement (like the colleges)
+
+Sam: the feeder support "should be distributed in 2 batches — same as the colleges (see Timing
+section)." The Timing section already shows **two disbursements per funding year** (Feb + Jul)
+"based on cumulative CPL in MAP." Reflected it in the feeder table: a `feederBatchNote(amount)`
+helper prints a muted **"2 batches · ${amount/2} ea"** sub-line under each feeder row's Support
+cell **and** the FEEDER POOL footer; the intro gained a sentence tying the cadence to the
+Timing section and to "the cumulative eligible CPL these campuses stand up in MAP." Batch =
+support ÷ 2 in **both** modes (even: per-year pool halved; front-load: the whole carve-out lands
+in Year 1, still paid in two batches). Kept the "front-loaded" thead label (test-pinned).
+
+### 4 (ADVISORY) — feeder measurables + rural per-priority spread
+
+**Feeder measurables (Sam: "give it a think, suggest any measurables we could build in").**
+NC campuses can't transcribe (colleges do that) and aren't obligated to collect JST (their
+service members mostly don't claim GI Bill), so the college P2/P3/Veteran-Star metrics don't
+port. What DOES port, in build order:
+- **F1 — Eligible headcount** (measurable soonest): distinct NC students with an **exhibit
+  attached to their NC student record in MAP** showing ≥1 eligible unit. This is the direct
+  analog of the colleges' P1 **`pe`** (eligible) count — the daily builder already computes
+  `pe` from `Eligible Credits > 0`; the only lift is teaching the builder to bucket NC-campus
+  student records. **Recommend this as the metric the 2-batch feeder disbursement tracks** —
+  makes the feeder pool achievement-based exactly like the college pool.
+- **F2 — Noncredit-certificate CPL waivers** (the one "award-like" metric they OWN): count of
+  noncredit certificates where a course/requirement was **waived on work experience (CPL)** —
+  the NC campus issues its own noncredit certificates, so this is a transcription-equivalent
+  it controls, and it's the CPL work they've expressed interest in. Measurable if the waiver is
+  recorded against the exhibit in MAP.
+- **F3 (phase-2, stretch) — CPL-ready hand-offs that transcribe at a partner credit college**:
+  the feeder's true value metric, but it needs the same cross-campus identity match-back the
+  colleges' P3-portal / CO-MIS work rides. Propose once that infra lands.
+- **NOT** JST/Veteran-Star (no obligation) and **NOT** portal-origin (credit-college facing).
+
+**Rural per-priority spread (Sam: "adding the $110k to spread across their 3 priorities …
+advise").** Current mechanism (`ruralAttainment` + `ruralSectionHtml`): each rural college
+earns its **full** per-college allowance by clearing a **binary ≥50%-of-average-Year-1-
+attainment** gate — all-or-nothing, and inconsistent with the main pool, which already earns
+**per-priority proportionally** (`earned = cap × min(1, actual/target)` per priority, summed).
+Recommendation: **align rural with the main model** — split each rural college's allowance by
+the 3 priority shares and earn each slice proportionally (`Σ_k allowance×share_k×min(1,
+actual_k/target_k)`, capped). Removes the arbitrary 50% cliff (40% attainment earns 40%, not
+$0), gives one mental model, and stays phase-in-aware. **The $110k needs a decision:** today
+$1M ÷ 10 rural colleges = **$100k each**; **$110k each ⇒ the carve-out must rise to $1.1M**
+(−$100k off the college pool). Surfaced both (mechanism + amount) to Sam via AskUserQuestion;
+build is a follow-up in `ruralSectionHtml`/`ruralAttainment` (mirror `earnFraction`'s per-
+priority cap-and-earn) once he picks.
+
+**State & verification.** Tests **390 → 411** (Part J: formula-box even/front-load branch, the
+three cell-weight CSS guards, feeder 2-batch row + pool per-batch even & front-load). Full
+funding suite green; `retheme_tokens`/`pii_guard`/`cpl_funding_performance` green (the only
+other tests touching `cpl_funding.js`). Render dump confirmed the even/front-load prose swap +
+the "$X · 2 batches · $Y ea" feeder cells. **Shipped #908.**
+
+### SkyMore round 2 — the advisory items BUILT (Sam's AskUserQuestion picks)
+
+Sam answered the three forks: **rural = per-priority with a ≥50% FLOOR** (hybrid), **keep $100k
+each**, **build F1 + F2**. Shipped as a second PR (branch restarted from the merged `main` since
+#908 was squash-merged — the harness's fresh-change rule).
+
+**4a — Rural allowance now earns PER PRIORITY with a floor (was a binary ≥50%-of-average gate).**
+`ruralEarned(c)` splits each rural college's allowance by the 3 Year-1 priority shares; each
+slice **unlocks** once that priority clears ≥ the floor (`ruralThreshold`, still editable, default
+50%) of its Year-1 target, then pays **in proportion** to attainment (`slice × min(1,
+actual/target)`), capped. It **reuses `earnFraction`** — the exact per-priority engine the main
+pool uses — so rural and the main pool now share one mental model (Sam's "incorporating it that
+way"). Unmeasurable priorities are *pending* (not paid, not zeroed); the old `ruralAttainment`
+(average) was **deleted** (dead after both call sites moved to `ruralEarned`). The rural table's
+"Yr-1 target attainment" column → **"Earned so far"** ($ earned) + a **"By priority"** column of
+compact `.cf-rchip` chips (green = unlocked & earning, muted = below floor / nothing posted,
+faint = pending feed; `P1/P2/P3` short labels for the no-scroll rule). Tfoot → "N of 10 **earning**
+on current data" + the earned pool total. The college drill-in mirrors it. **Amount unchanged**
+($1M ÷ 10 = $100k each). **Key property:** removes the 50% cliff — 40% attainment on a priority
+now earns 40% of that slice instead of $0 for the whole allowance.
+
+**4b — Noncredit feeder measurables F1 + F2 (the "give it a think" build, done honestly).**
+- **F1 (Eligible headcount) is LIVE-WIRED, not faked.** The daily builder
+  (`_build_funding_performance.py`) gained a **feeder name resolver** (`_feeder_resolver`, MAP
+  name → feeder short) + per-feeder eligible bucketing (the same `pe` measure — `Eligible Credits
+  > 0`, Potential/Test excluded, <5 suppressed) → a new top-level **`feeders: {short: {pe}}`** in
+  the perf artifact. **Zero fabrication:** it's empty today (the feed carries no NC-campus records
+  yet) and lights up the instant campuses attach exhibits to their NC records in MAP. The consumer
+  reads `perf().feeders` — a per-feeder "· N eligible in MAP" sub-note in each feeder row + an F1
+  line in the new **measurables ladder** (`feederMeasurablesHtml`). This is the metric the 2-batch
+  disbursement is framed to track.
+- **F2 (Noncredit-certificate CPL waivers) is a labeled placeholder** — the one award a NC campus
+  issues itself (a course waived on work experience). There's **no feed for it** (it's not in
+  `View_StudentAggregatedValues`), so it's honestly shown "awaiting a data source — recorded when a
+  campus posts the waiver in MAP." Not faked into a number.
+- The ladder also states what is **NOT** tracked: transcription (colleges do that) and JST/Veteran
+  Star (NC campuses aren't obligated to collect JST) — Sam's own framing, on the tab.
+- **The pre-existing `feederMetric` free-text line** (default "CPL-ready noncredit completions
+  handed off to a partner credit college") is effectively **F3** (the hand-off metric) — left in
+  place; F3 proper needs the cross-campus identity match-back the colleges' portal/MIS path rides.
+
+**Method note — the honest way to "build" a metric with no data yet:** wire the *computation* +
+the *display* end-to-end (builder emits the key, consumer reads it, tests prove the bucketing on a
+synthetic row) but let it resolve to a **pending state** until real data lands — never seed a fake
+count. F1 is a live pathway; F2 is a committed placeholder. This is the feeder analog of the
+colleges' measurability ladder (`MEASURES`).
+
+**State & verification.** `tests/cpl_funding.test.js` **411 → 422** (Part K: rural per-priority
+earn + green-chip unlock + floor-locks-all + drill-in chips; feeder F1/F2 ladder + pending state +
+live F1 count). Builder test **16 → 19** (F1 NOCE=5 distinct, Calbright <5 suppressed, feeders
+don't leak to `unmatched`) — fixture gained an "Eligible Credits" column + feeder rows. Full suite
+green (173 files). Render dump confirmed the rural per-priority chips + "Earned so far" + the F1
+"42 eligible in MAP" row note + the ladder. **F1 publishes empty until the daily cron runs against
+a feed carrying NC records.** Side-lane — left `cpl_todos.json` + the numbered CCR handoff alone.
+
+## 2026-07-27 — SkyMore, cont. 3: the js-tests OOM (test-infra fix)
+
+**Symptom.** After #908/#910 grew `cpl_funding.test.js` to 422 assertions, the non-required
+**js-tests** check went red on CI (`FATAL ERROR: Reached heap limit — JavaScript heap out of
+memory`, ~4GB) — while the suite stayed green locally. It's a non-required check, so it never
+gated the merges, but a red suite erodes signal.
+
+**Root cause (measured, not guessed).** `cpl_funding.test.js` runs **53 `freshDom()` + `boot()`**
+cycles, each `new JSDOM(..., {runScripts})` evaling the ~54KB data + consumer and rendering the
+full 118-row tab. jsdom's **per-window `vm` context is not reclaimable mid-run** — proven: adding
+`window.close()`, clearing the prior window's DOM + evaled globals, and even a forced `global.gc()`
+(`--expose-gc`) **all still OOM at 400–2048 MB**. So ~53 windows × ~75 MB ≈ 4 GB accumulate with
+no way to free them. It passed locally only because dev machines default to a ~8 GB heap
+(`heap_size_limit` = 8240 MB here); CI's runner auto-defaults to ~4 GB → right at the cliff → GC
+thrash → intermittent OOM. Reproduced deterministically: `NODE_OPTIONS=--max-old-space-size=4096
+node tests/cpl_funding.test.js` → EXIT 134.
+
+**Fix.** `tests/run.js` already runs each file in its own sequential child process — so raise the
+child ceiling: `spawnSync("node", ["--max-old-space-size=8192", file])`. The explicit flag
+overrides a lower ambient default (verified: 8240 MB effective even under `NODE_OPTIONS=2048`);
+files run one at a time so only one child holds memory; the cap only permits growth, so the 172
+small files are unaffected. Post-fix: `…=4096` ambient + the flag → 422/422, full suite 173 green.
+
+**Lesson.** A jsdom test file that spins up dozens of windows in a loop will accumulate
+un-reclaimable `vm` contexts; you cannot `close()`/`gc()` your way out. Either give the child
+process a bigger heap (done — matches how the file already passed locally) or split the file so
+each half runs in its own process. If assertions keep growing, prefer the split next.
+
+---
+
+## 2026-07-28 — SkyHigh: readability + equitable cells + the rural fold + the pool-framing cascade
+
+Three merged PRs (#914 readability/full-width/mobile+a11y · #916 rural fold + pool reconciliation ·
+#921 the 13 federally-rural roster + muted 🌲). The durable lessons:
+
+**1. Showing a per-unit RATE inline can read as inequitable the moment it varies.** The cell used
+to show `$38/stu` uniformly — but the $150k floor (and later the rural bump) make each small
+college's *effective* $/student higher ($47, $64, $274…). Put side by side, "$38 vs $274/stu" reads
+as unequal even though it's the floor *protecting* small colleges. **Fix: drop the varying rate from
+the cell; lead with the ONE yardstick every college shares — % of its own target — keep the real
+dollars, and move the effective rate + WHY it differs into the hover.** (`prioCellHtml`, Option "D".)
+The cell became `Tgt N stu · $cap` / `Now N stu · $earned · %`; the hover carries the effective
+$/student + the floor/rural reason. Equity is often about what you *don't* show side by side.
+
+**2. Folding a carve-out into the distribution is a two-layer change — the policy layer fights back.**
+Folding the rural allowance into each rural college's row (`W = mainW + ruralWindow`, assume the
+≥50% unlock) made the DISTRIBUTION total $33.8M (main + rural). But the POLICY layer (priority
+cards' "statewide $ ÷ rate = target" identity, `perYear()`, the balance box) is main-pool. Keep
+those on the main pool; fold rural only into the distribution surfaces (`collegeAlloc`, `systemAlloc`
+via `netCollegeWithRural()`, the Yr/Total, `earnAgg.winCap`) — but NOT `earnAgg.perPrio` (it feeds
+the policy cards). The boundary is: *distribution folds the carve-out; policy cards don't.*
+
+**3. …and the cascade reaches every surface that names the pool.** The adversarial review caught
+that the hero pool card, the report `collegePool`, and the printed narrative still read $32.8M while
+the SYSTEM row + Earned card now read $33.8M — a $1M contradiction. **Lesson: when you change what a
+headline total means, grep every surface that displays it.** Resolution (Sam's call): ONE number
+($33.8M) everywhere, with a note breaking out "$32.8M main + $1M rural," and the rural pool card
+reframed from a *deduction* to an *earmark within the pool*. `netCollege()` stays for the main
+proportional split; the hero shows `netCollegeWithRural()`.
+
+**4. Derive parameters, don't hardcode them — it makes policy swaps free.** The per-college rural
+bump is `carve-out ÷ N(rural)`, never a literal. So switching the roster from the 10-college demo
+cohort to the 13 federally-rural colleges was a **data-only** flip in `cpl_funding_data.js`; the
+bump auto-became $1M/13 ≈ $76,923 with zero code/math change. The only test churn was the hardcoded
+"10"/anchor colleges (Butte→non-rural, Copper Mountain→rural). Every N-dependent display derived
+from the roster, so the model just re-balanced.
+
+**5. Adversarial review earned its keep twice.** Two structural reviews caught what 460 green tests
+didn't: (a) keyboard focus was silently dropped to `<body>` on every sort/expand (the innerHTML
+re-render destroys the focused node — WCAG 2.4.3), and (b) the $1M pool-framing cascade above.
+Tests guard behaviors you thought to assert; a skeptic re-derives the ones you didn't.
+
+**Next (PR4, queued for SkyHighness):** combine the floor with the rural bump — back-fill rural
+colleges to $150k from the rural carve-out FIRST (frees ~$752k of main-pool money for non-floored
+colleges; ~$248k rural remainder on top). The load-bearing decision: the floor is a *guarantee* but
+the rural bump is *performance-earned* — so the carve-out splits into a guaranteed backfill + an
+earned remainder. Lock that split with Sam before building; it couples `allocModel()` +
+`collegeAlloc` + `ruralEarned`.
+
+## 2026-07-28 — SkyHighness: PR4 — combine the floor with the rural bump (the guaranteed floor-fill model)
+
+Shipped PR4. Sam's decision (AskUserQuestion, grounded in the live-computed split): **Option B —
+guarantee the whole $1M rural allowance** (floor-fill + bonus, no performance gate). That was the
+simpler *and* the more coherent call: it let me retire the entire ≥50%-per-priority rural-earning
+machinery (`ruralEarned`/`ruralChip`/`ruralThreshold`/`rural_threshold`/`cf-rchip`) that had become
+self-contradictory the moment the allowance stopped being "performance-earned."
+
+**The mechanism — a reduced main-pool floor.** The clean way to make the rural carve-out fund a rural
+college's floor *first* is not a second waterfall grafted onto the first — it's **one waterfall with a
+per-college floor.** A rural college's MAIN-pool floor becomes `max(0, floor − ruralPer)` ≈ $73,077;
+non-rural colleges keep the full $150k. Because the reduced floor guarantees `mainW ≥ floor − ruralPer`,
+`mainW + ruralPer ≥ floor` **always** — so the guaranteed rural slice always covers the remaining gap and
+there is **never a main-pool leftover top-up** (the edge case SkyHigh anticipated — "a floor gap > the
+slice" — provably cannot arise in this formulation). The main-pool dollars the reduced floors free
+re-split proportionally to the (mostly non-rural) unfloored colleges, and **`Σ mainW` still equals
+`netCollege()`** (conservation is untouched — the reduced floors change the *split*, never the total).
+
+**The equity truth I surfaced to Sam before building.** PR4 does *not* just move money's source — it
+**reduces the smallest rural colleges' totals**: the 5 tiniest (Columbia, Copper Mountain, Feather
+River, Lassen, Siskiyous) land at **exactly $150k** because their rural allowance is fully consumed by
+their own floor (today they'd get $150k + $77k = $227k). That's the intended "no double-dip"
+redistribution — but it's a real pull-down on the tiniest colleges, so I put the computed effect in
+front of Sam *with* the decision, not buried. **Lesson: when a re-plumbing changes who wins and who
+loses, compute the winners/losers on the live data and show them — don't frame it as a pure
+source-swap.** Live split: floor-fill **$654,148** + on-top bonus **$345,852** = the $1M (conserved);
+Σ college totals = **$33.8M** = `netCollege + carve` (SYSTEM total unchanged).
+
+**The earned-basis decoupling was the subtle correctness bit.** Before PR4, `collegeAlloc`/`prioCellHtml`
+computed earned as `(mainW + ruralW) × share/ny × earnFraction.f` — i.e. the folded rural *flexed* with
+achievement (the #916 "assume unlocked" simplification). Guaranteed means it must **not** flex: earned =
+`ruralW × shareSum/ny` (added in full) **+** `Σ priorities mainW × share/ny × fr.f` (only the main part
+flexes). Same split in `prioCellHtml` (`mainCap = cap − ruralBump`; `earned = mainCap × fr.f +
+ruralBump`) and in the SYSTEM row (`ruralBump = ruralCarve × share/ny`). This **resolves** the
+adversarial-review note SkyHigh had logged as an accepted simplification — rural is now genuinely
+guaranteed in Earned mode, not advance-credited. Guarded by a Part N test that toggles the rural flag
+off under an underperforming feed and asserts earned drops by ~the full allowance.
+
+**Disclosure gotcha caught in Chromium (not jsdom).** The per-priority hover listed "raised to the $150k
+floor" AND "boosted by a rural allowance" as two independent reasons — for a floored *rural* college that
+reads as $150k + rural = double-count, when the real total is exactly $150k (rural IS part of that floor).
+Fixed to ONE combined reason for the floored-and-rural case. **Lesson (again): a hover that concatenates
+independent "why" clauses silently double-counts when two of them are actually the same dollar.**
+
+**State.** One PR (`cpl_funding.js` + `cpl_funding_data.js` + test; **0 HTML**). Rural section rewritten
+to a **Guaranteed allowance → Floor-fill → On-top bonus → Window total** table (tfoot "N of 13 funding
+their floor"); pool card + hero note + drill-in floor/rural lines all reworded to "guaranteed." Tests
+**460 → 475 → 484** (new Part N: reduced-floor + guaranteed-split conservation, freed-pool,
+earned-decoupling; Part O: the review fixes; Parts D1/D3/K/M4/M5 updated). Full suite 173 files green;
+real-Chromium clean (no h-scroll desktop/mobile, 0 console errors).
+
+**The adversarial review earned its keep — it caught a THIRD earned site I missed.** 475 green tests +
+a live-conservation proof + Chromium all passed, yet a 4-diverse-lens skeptic pass (Workflow) found
+three real defects before merge: (1) **MAJOR — the per-priority DRILL-IN earned line was a third earned
+site.** I decoupled the guaranteed rural in `collegeAlloc` (row/pool) and `prioCellHtml` (collapsed
+cell) but the drill-in `earnSeg` still computed `earned = capYr × fr.f` on the rural-*inclusive* cap, so
+in Earned mode it flexed the guaranteed rural to $0 — contradicting the same row's cell/column/pool for
+every rural college. **Lesson: when a value is computed at N call sites, a decoupling change must sweep
+ALL N — grep the formula (`× fr.f`, `c[p.key]`), don't trust that the two you edited are the whole set.**
+(2) MINOR — the cell hover claimed "funds this college's floor first" for the 3 rural colleges already
+above the floor (floorFill=$0), contradicting their own drill-in; gated the phrasing on the actual
+floorFill. (3) MINOR (pre-existing) — an empty rural roster stranded the $1M carve-out; `netCollege` now
+deducts what's actually distributed (`ruralPer × roster`), a no-op on real data that returns the earmark
+to the main pool when there are no rural colleges. **Fixing (2) surfaced a latent `prioCellHtml` crash:**
+my earlier edit had made `ruralBump` system-aware (>0 for the SYSTEM row), so the reasons block would
+dereference the null system `c` — scoped the reasons to a college-only bump. The review's own
+edge-harness independently re-confirmed conservation across floor=0 / carve=0 / empty-roster /
+ruralPer>floor / degrade. **A skeptic re-derives the invariants your tests didn't think to assert.**
+
+**Follow-up shipped — the display rename.** The roster keys `"West Hills Coalinga"`/`"Imperial"` are also
+the **join keys** to `cpl_funding_performance.js` (actuals) via the short-name space, so I renamed
+display-only: a `display` field per row (`"Coalinga College"` / `"Imperial Valley College"`) + a cached
+`dispName()` helper wrapped around every human-readable site (table row + aria-label, rural section,
+district drill-in, memo/report table, award min/max card, CSV name column, CO-Monitor aria-label) and
+**added to the search haystack** so "Imperial Valley"/"Coalinga College" match. `c.college` stays the key
+everywhere. **Lesson: separate the join key from the display label the moment they diverge — a `display`
+override + one `dispName()` seam beats renaming a key that N other systems join on.** The existing tests
+kept passing because the new names are superstrings of the old short keys ("Imperial" ⊂ "Imperial Valley
+College"), but Part P guards it explicitly (display shown, old key gone, key still resolves, search works).
+Tests 484 → **490**.
+
+## 2026-07-29 — SkyHighness cont.: reframe to the $35M apportionment (CBO workshop)
+
+Sam is presenting the model to a CBO at the CO budget workshop. Two reframes landed:
+- **The tab now models the 2026-27 $35M one-time apportionment**, not the combined $9M+$35M
+  pool. `$35M = $26,240,307 three-priority college pool (incl. $1M rural) + $1,000,000 NC feeder
+  + $1,200,000 CO Administration + $6,559,693 CPL Projects & Innovation` — ties out to the penny.
+  The 2025-26 **remaining ~$9M is a separate topic** (the $15M appropriation), so it's dropped from
+  the $35M model's revenue (`CORE_REVENUE` = one_time only). `scaling_projects_tech` → "CPL Projects
+  & Innovation" ($6,559,693); admin label → "CO Administration". Hero → **$26,240,307**; Total
+  Available → **$35M**; award range **avg $228,177 / min $150,000 / max $694,273** (all recomputed).
+- **Reconciliation lesson:** Sam's authoritative anchor ($26,240,307, with its min/max/avg) is
+  precise; his "~$8M for Projects & Innovation" was the round figure for **admin + P&I** ($7.76M).
+  Preserve the precise anchor, derive the P&I line as the residual ($6.56M) — don't let a rounded
+  side-figure move the anchor (it would have broken the min/max/avg the CBO answer is built on).
+- **Test churn from a smaller pool:** dropping $9M shrank the pool 33.8M→26.24M, which re-floored
+  colleges (Imperial fell below the floor; only Shasta stays above) and dropped the max (East LA
+  $694k). Lesson: **assert pool-*dependent* facts by deriving from the model, not hardcoding**
+  (East LA = the max & > 3× floor; the "N of 13 funding their floor" count computed from `_model()`).
+- **Sandbox-slow ≠ hang:** the local suite crossed ~120s and read as a hang; it was the throttled
+  sandbox (the *baseline* timed out too). Confirm with a progress trace + a generous timeout before
+  chasing a phantom infinite loop.
+
+### 2026-07-29 cont. — the $15M Distributions sub-view + ESS 25-82 outcome tracking (#934)
+
+The CBO question ("what are the factors in the allocation formula?") cascaded into a reporting
+question Sam raised himself: *the Legislature will ask how we used the $15M **and** the $35M.* So the
+tab now carries both appropriations, in separate sub-views —
+`[$35M Funding model | $15M Distributions | 📄 Report]`.
+
+**What the $15M view is.** The ESS 25-82 receipt: **$50,000 × 118 institutions = $5,900,000**
+(114 colleges + the **4 noncredit campuses** — ESS 25-82 funded noncredit institutions too, a detail
+easy to miss), with **Sequoias** shown as *declined — pending further review* rather than as a
+recipient. The **remaining $9,040,307** sits alongside it, which is where the $9M dropped from the
+$35M model now honestly lives.
+
+**Reading the source beat inferring it.** Sam sent the actual ESS 25-82 PDF. Two things only the memo
+gave up: (a) the $50k was tied to a **CIO certification by Jan 15, 2026** — a *commitment* to advance
+the outcomes, with achievement then "tracked through MAP plus MIS," so the columns are honestly
+**progress**, not compliance; (b) outcome 1's bar is "**at least the number** of enrolled veterans
+reported to MIS" — i.e. 100%, not the 75% Veteran Star we compute daily. That gap gets stated inline
+rather than papered over. **Lesson: when a deliverable turns on a policy document, read the document —
+the KB summary had the outcomes but not the certification mechanism or the exact threshold.**
+
+**All three outcomes turned out measurable** (I expected at least one true data gap):
+- **1 · JSTs** → `vet_star` (already in the daily perf artifact): **51 of 110** colleges at ≥75%.
+- **2 · Statewide recs** → the one real lift. The signal lives in the CER: a college has adopted when
+  it carries ≥1 local articulation on a `statewide`-flagged credential. The CER is **2.9 MB** — far too
+  heavy to load in the funding tab for one boolean per college — so a new producer
+  (`funding/_build_funding_ess.py`) rolls it into a **2.3 KB** sidecar (`cpl_funding_ess.js`):
+  **84 statewide credentials → 71 adopting colleges**. **Lesson: the rollup-to-a-sidecar pattern
+  (`cpl_coci_course_keys.js`, `vet_star`) is the standing answer to "I need one field from a huge
+  artifact."** Getting the join right mattered: the first run left **14 unmatched** real colleges
+  (East Los Angeles, City College of San Francisco…) because `college_short_names.json` nests its
+  records under `colleges`, not `records` — fixed → **0 unmatched**.
+- **3 · Proactive CPL** → `pe` / `p3` (already wired): 98 / 95 colleges.
+
+**Two honesty mechanics worth keeping.** (a) **Fail-open marks**: no feed → ⏳ *pending*, never a
+false "not met" — and the legend says outright that *a dash is not a finding that a college failed to
+use its funds*. A compliance-looking table published against a partial feed would defame colleges by
+omission. (b) **State the residual**: $5.9M + $9,040,307 = **$14,940,307** of the $15M, so the view
+names the **$59,693** gap and flags confirming it before external reporting, rather than rounding the
+two figures into "$15M."
+
+Tests 490 → **515** (Part Q, incl. the no-feed fail-open asserting zero false ✓). PII guard extended
+to the new artifact. Chromium desktop + mobile clean. Live: **51 · 70 · 94**, with **38 meeting all
+three** outcomes.
+
+## 2026-07-30 — SkyReconcile: establishing which document is authoritative
+
+Sam: *"reconcile the differences between the budget table I just gave him and the funding tab —
+needing to establish which is authoritative."* Resolved in one session; the model now ties to the
+Sept-2026 BOG amendment to the penny.
+
+### The methodological lesson: I got it wrong first, from a real-looking coincidence
+
+Before reading the source I built a bridge that appeared to prove the two documents agreed:
+
+```
+tab   admin 1,200,000 + P&I 6,559,693 + feeder 1,000,000 + rural 1,000,000 = 9,759,693
+amdt  admin   800,000 + P&I 8,959,692                                      = 9,759,692
+→ tab main pool 25,240,307  vs  amendment "to institutions" 25,240,308   (Δ $1)
+```
+
+That $1 is real arithmetic — but it compares the tab's **main proportional pool** (after stripping
+BOTH $1M carve-outs) against the amendment's **institution total**. Different quantities. On what
+actually reaches institutions the two differ by **$1,999,999**, exactly the two earmarks. The
+identity only holds *if you already accept* that the carve-outs are project money — which was the
+very question. **A reconciliation that assumes the answer looks like a proof of it.** The tell I
+should have caught: a "$1 agreement" between two independently-authored documents is far more likely
+to be a definitional artifact than a coincidence, and the $2M gap sitting right beside it was the
+thing to explain, not to net out.
+
+Sam answered the fork on that faulty framing. The correction had to be made and the question
+re-put — the source settled it in one line.
+
+### Read the source; a summary of a budget is not the budget
+
+The workbook is explicit where every summary was ambiguous:
+`$35M Part: 115 Colleges & 4 Noncredit — 12,620,154 | 12,620,154 | 0 | 25,240,308`. The noncredit
+campuses are *inside* the institution pool and there is no rural line at all. Same lesson as the ESS
+25-82 memo a day earlier (*read the policy PDF, don't infer it*) — two for two.
+
+### Reproducing a source's own numbers is a defect detector
+
+Porting `allocModel()` to Python and validating it against three published figures
+(avg $228,177 / min $150,000 / max $694,273 — exact) turned the model into an instrument that could
+*audit the source*. It found two errors in a workbook bound for the Board of Governors:
+
+- **`Total All CPL Initiative Funding $74,000,000` overstates by $3,000,000.** It sums
+  $35M + the $18M project subtotal + $21M ongoing, but that $18M *is* $8,959,692 (of the $35M) +
+  $9,040,308 (of the $15M): double-counts the former, omits the $5,959,692 already spent from the
+  latter. `+8,959,692 − 5,959,692 = +3,000,000`, exactly. True total **$71,000,000**.
+- **`Max Award $665,971` is not reproducible from the amendment's own pool.** Over 119 institutions
+  at a $150K floor the max is $635,116; $665,971 is a transposition of **$665,791**, the max when
+  only the **115 colleges** share $25,240,308 — while its average ($212,103) is that pool ÷ **119**.
+  The header pairs a 119-recipient average with a 115-recipient maximum. Ruled out an alternative
+  floor: the floor producing $665,971 over 119 is $128,631, contradicting the printed $150,000 min.
+
+**Pattern worth keeping: when a source states summary statistics (avg/min/max/total), recompute them
+from the source's own line items. Where they disagree, the disagreement localizes the error** — here
+the avg/max split pinpointed exactly which recipient count each figure was built on.
+
+### What shipped
+Data-only (`cpl_funding_data.js` pool block + a provenance header), **zero consumer changes** —
+nothing downstream had hardcoded a pool figure, which is the #931 "derive, don't hardcode" discipline
+paying off a second time. New **Part R** pins each pool line to a workbook line. Supabase Scenario 1
+re-pointed ($8,000,000 → $8,959,692) under a guarded UPDATE after a fresh read; Scenario 2 untouched.
+
+### The four tests the smaller pool broke — and why that was correct
+$25.24M → $23.24M main pool re-floors 39 → **46** colleges, and drops Shasta ($144,128) below the
+full floor, so **no rural college's main share clears $150K any more**. Four assertions had encoded
+the old pool's *shape* (`floorCount < 40`; "Shasta is the above-floor rural case"). Rewritten to
+derive: bound the floored set by an invariant (a minority, all below mean headcount), pick the
+largest-`W` rural college and assert *whichever branch the model is in* (both branches assert
+floor-fill + bonus = the allowance), and replace N4's before/after delta — which silently assumed the
+college stays unfloored with rural off — with the pool-independent invariant **unearned ≤ main_w**
+(if rural were flexed, unearned would exceed it). O2 became a correspondence check across all 13.
+**A test that names a specific college as "the above-floor case" is a hardcoded pool fact wearing a
+data costume.** 515 → **531**.
+
+## 2026-07-30 cont. — SkyReconcile: the Budget tab becomes the CPL ledger
+
+Sam: *"consolidating the Budget and Implementation Funding tabs together under Budget — making sure
+everything stays wired with clear authoritative sources and workspaces."* Shipped the Budget half in
+one day (#938/#940/#941/#942); the Implementation Funding sub-view merge is still ahead.
+
+### The unlock was Sam's funding history, not the schema
+
+He offered the full 2017-forward history and judged it "distracting from the work at hand." It was
+the opposite — it carried the **organizing insight the whole tab now hangs on**: both major asks were
+funded in **two installments**, and 2026-27 is the year the Legislature made good on each.
+
+| Original ask | 2025 | 2026 | Now |
+|---|---|---|---|
+| $50M implementation one-time | $15M | + $35M | **fully funded** |
+| $7M ongoing operations | $5M | + $2M | **$7M/yr** |
+
+A flat list of six appropriations hides that. Grouped by *ask*, the tab tells the real story in two
+rows — and "the Legislature made good on both original requests" is a far better headline for a BOG
+or CBO audience than an inventory of Prop 98 line items. **Lesson: when a curator offers context they
+think is peripheral, take it. The organizing principle for a view often lives in the history, not in
+the current-state data.**
+
+It also *solved* two open puzzles for free: the row-5 anomaly (`total` = the $2M increment × 4;
+year cells = the combined $7M/yr — two concepts in one row, never a typo), and the $59,692
+(`$1,345,236` from the $6M + `$59,692` from the $15M = the `$1,404,928` N2N project).
+
+### Nothing had to be deleted — the existing rows were already the parents
+
+The plan called for archiving the two $6M rows and adding the history separately. Checking first
+showed the seven $6M allocations split *exactly* across them (CO `2,254,764`, RCCD `3,745,236`), so
+the history **nests under rows that already existed**. **Lesson: before repurposing or deleting
+curator data, test whether the new structure is already latent in it.** Ten seconds of arithmetic
+turned a lossy migration into a lossless one.
+
+### The double-count trap, three times in one day
+
+The amendment's `$74M`; then my own mockup, built to *explain* that error, which listed the $18M pool
+alongside the appropriation shares it comes from; then my own seeded data (all-archived `23,307,440`
+vs parents-only `17,307,440`). **Knowing about a trap does not protect you from it — only an enforced
+invariant does.** Now enforced in the read path, the renderer, and both test suites, with the tests
+asserting *both* the right total and that the naive sum is larger. Distilled:
+[`methodology-parent-child-ledger-totals`](kb-notes/methodology-parent-child-ledger-totals.md).
+
+### Computed totals earn their keep as detectors
+
+`total = Σ years`, read-only where a row has years; editable only where the source gives no split.
+Within a minute of existing it caught the `$15M` **source** row still carrying its old *spend*
+schedule in the out-years (`2,808,450.40 + 2,136,854.53 + 2,013,327.01 + 2,081,675.46 = 9,040,307.40`)
+— it would have displayed **$24,040,307**. The stored `total` had been masking it. **A source row
+carries the appropriation once, never the appropriation plus its own spend plan.** Post-fix every row
+with years satisfies `Σ years == total`; that one query is now the standing post-bulk-edit check.
+
+### Two process notes
+- **A test-harness failure is not a product failure.** Two assertions failed because jsdom reports
+  `readyState: "loading"`, so the module's own `DOMContentLoaded` boot never fired. The module was
+  right; the harness had to boot it the way the page does. Diagnose before "fixing" the code.
+- **The stop-hook went stale twice in one session** — `~/.claude/` sits outside the repo, so any merge
+  carrying a hook fix (here #939) silently leaves the installed copy behind. The tell is the hook
+  firing on a `noreply@github.com` committer: that is always GitHub's squash-merge, which is on `main`
+  and must never be amended (Rule 5). The fix is always re-copy, never amend.
+
+### State + next
+Live and merged. `budget_funding` = 45 rows; `budget_ledger.js` renders four sections with inline
+editing on every non-total field. Open with Sam: the two $5M rows (one appropriation seen twice?).
+Recommended next steps are enumerated in `docs/cpl_funding_handoff.md`.
+
+---
+
+## 2026-07-30 — SkyQueue: the basis toggle retired, the baseline gate built, districts folded into one table (#946, #947)
+
+Picked up SkyReconcile's queued block of Sam's four asks. Three of the four shipped
+(#1, #1b, #2); #3 (the public college page) and the Budget consolidation are still open.
+
+### The load-bearing lesson: a mode toggle is where two scopes go to hide
+
+Both retired toggles failed the same way, and it's worth naming as a class.
+
+**The Potential⇄Earned basis toggle (#1).** Sam reported that the toggle "reads wrong."
+It did — but the toggle was innocent. Two *scope* mismatches sat underneath it:
+
+1. **Year vs window.** The P1/P2/P3 cells render the **viewed year**. The front-load
+   "Yr 1" money column renders the **whole window** (`out.y1 = out.total` when `fl`).
+   So the P-cells summed to *half* of Yr 1 and could never reconcile. Verified on Allan
+   Hancock: P-cells `$33,534 + $46,948 + $31,299 = $111,781` = the per-year cap;
+   Yr 1 = `$223,562` = the window. In even-tranche mode they reconcile exactly, which is
+   why this survived so long.
+2. **Earned silently spanned both years.** `earned_total` sums every selected year, and
+   Year-2's metrics are mostly data gaps that **advance at full cap**. So the Earned
+   figure was dominated by Year-2 advances the curator could not see anywhere in the
+   Year-1 cells.
+
+A toggle *guarantees* you can never see the two numbers at once, so a scope mismatch
+between them is structurally invisible. Putting both in the cell — cap on top, earned
+beneath, the shape the P-cells already used — makes the mismatch impossible to hide.
+**When a toggle "reads wrong," suspect the scopes it separates, not the toggle's logic.**
+
+**The Colleges⇄Districts view toggle (#2)** is the same failure in a different key: it
+swapped the *unit of analysis*, so asking for district context deleted the per-college
+rows the curator was comparing. Grouping only ADDS header rows; nothing disappears.
+
+Durable form of both: `docs/kb-notes/methodology-retire-a-mode-toggle-by-coexistence.md`.
+
+### What "honest" cost, concretely
+
+Splitting earned into **measured / advance / guaranteed** at the source (`collegeAlloc`)
+was ~15 lines, and it immediately surfaced the real number: on a typical college today
+**~95% of the "earned" figure is an ADVANCE** — full cap paid provisionally because MAP
+cannot measure that priority's metric yet. That was always true; it was just unnamed.
+An `adv $X` chip plus the hover now says so. *A figure that aggregates two different
+kinds of confidence needs to name the split, or it silently overstates the stronger one.*
+
+### The baseline gate (#1b) — Sam's four rulings, taken BEFORE building
+
+The handoff flagged four decisions as "decide with Sam before building." Asked all four
+in one batch; he took every recommendation:
+
+| Decision | Ruling |
+|---|---|
+| Which quals gate | **Only the 2 baseline reqs** (coordinator + participation request). Veteran Star / ESS outcomes stay performance measures that flex the *amount*. |
+| Timing | **Once cleared, cleared for the window** — no clawback. |
+| Scope | **Only the performance-earned main allocation.** Guaranteed rural passes through; the cap (incl. the $150K floor) always shows in full. |
+| Withheld dollars | **Held in reserve, roll forward, never redistributed.** |
+
+Two design properties fell out of those rulings and are worth keeping:
+
+- **The gate FAILS OPEN.** No coordinator feed ⇒ nothing withheld. Same standing rule as
+  every other mark on this tab: missing data must never render as a negative finding.
+- **A gated cell reads `withheld · $X held`, never a bare `$0`.** A plain zero would
+  claim the college *posted no CPL* — a different, and unfair, accusation. The wording
+  carries which claim is being made.
+
+Sam's own framing was the tell: gate the money, hold the dollars, keep it reversible.
+That is a **prompt**, not a penalty — and it's the difference between a gate colleges
+respond to and one they appeal.
+
+### State
+
+- **Tests 531 → 552.** Part E rewritten (stacked cells + the 3-way split); **new Part S**
+  covers the gate end-to-end; the old district-view assertions became grouping assertions
+  that additionally guard `Σ district subtotals == Σ college allocations`.
+- Full suite **174 files green**; real-Chromium at 1440px clean both times (0 console
+  errors, no horizontal scroll, 72 district headers over 115 college rows).
+- **Dead code removed** with the view toggle: `COLS_DISTRICT`, `districtRowHtml`,
+  `districtDetailHtml`, `districts()` + its cache.
+
+### Next concrete step
+
+**Ask #3 — the public college-audience page.** Build a standalone lean page (precedent:
+`college_activity_template.html`), NOT a `?view=` flag: a flag is cosmetic, since the nav
+and every other tab still load. Be plain with Sam that it is **audience separation, not
+security** — the data files are already public on Pages and PII-free by design.
+
+Then the **Budget consolidation**: fold Implementation Funding in as a Budget sub-view
+and — the part that actually pays — have the funding model read `one_time_2026_27` from
+the ledger's `$35M` row instead of holding its own copy in `cpl_funding_data.js`. That
+single-source wiring permanently kills the drift class that cost a day this week.
+
+---
+
+## 2026-07-31 — SkyQueue cont.: front-load earns the window, and the mask comes off (#955, #956, #957)
+
+Three merges in one run, and they're one story: a stale default caused a debugging round,
+removing it exposed a months-old join bug, and fixing that closed the loop.
+
+### #955 — make the stale baked configs announce themselves
+
+Sam's diagnosis was right and mine was wrong. He'd reworded P1/P2/P3 months ago and asked
+"can you fix the source of those baked configs" — the real answer being that the Excel
+workbook + builder were **retired 2026-07-03**, so `cpl_funding_data.js` is hand-maintained
+and *nothing* keeps its baked defaults in sync with the live Supabase config a curator
+actually edits. They can only go stale, silently. Year 1's live slots override the bake, so
+nothing looked wrong; **Year 2's three slots are `null`**, so they fell back to two-generation-old
+workbook wording that every `MEASURES` predicate reads as an unmeasurable gap.
+
+Fix was three-part: sync the bake, add a **curator-only metric-wiring diagnostic**
+(`prioMetricSource` → `scenario`/`curated`/`baked`; per slot MEASURABLE-with-src-and-live-count
+vs NAMED gap, plus "↩ inheriting baked default", opening automatically when anything needs
+attention), and guard it (`tests/cpl_funding_metric_wiring.test.js` — every Year-1 baked metric
+must be measurable; the Year-2 gap count is pinned at the KNOWN 3). The durable half of the test
+fix wasn't re-pointing 19 stale assertions — it was making them **SET** their metric via
+`_setShared` instead of inheriting whatever the bake happens to say.
+
+### #956 — front-load earns the whole window against Year-1 targets
+
+Sam's ask: *"if we doubled the per-student amount when Front Load is selected (rather than
+doubling the students, which would make it twice as hard) … I would love to be out of funding
+at the end of Year 1 because it would mean everyone is up and running."*
+
+**Not built as a multiplier.** Front-load already put the whole window in the Year-1 money
+cell; this makes the whole window *earned* against the Year-1 targets. The doubled per-student
+rate is then a consequence — same target, twice the money behind it — and it shows up in the
+P-cells and hovers on its own. Targets are deliberately not scaled: `prioTargetRate` still
+derives from `perYear()`, so the student count stays per-year. That was the half of the ask
+that was easy to get backwards.
+
+**The seam** — `slotEntitlement(W, slot)` / `prioCap(W, slot, p)` / `slotIsCarryover(slot)`,
+the single place disbursement scope is decided. Under EVEN, `prioCap` reduces *exactly* to the
+historical `W × p.share ÷ nYears`. Every site that used to compute that scope itself now routes
+through it, and **a test asserts zero strays remain** — a site drifting back to its own formula
+is precisely how two modes silently disagree again
+([[docs/kb-notes/methodology-retire-a-mode-toggle-by-coexistence]]).
+
+It also closed a live defect: front-load had been earning each year on *its own* slot's metrics
+and summing both into the Yr-1 cell, so Year 2's three gap metrics paid every college a **full
+advance for half the window** regardless of what it posted. Both live scenarios have front-load
+**ON**, with Year-2 slots overriding only `description` — real money, reading wrong.
+
+**The prose had to move with the money.** Every scope change that leaves an explainer behind
+recreates the mismatch the toggle retirement was for. Caught by hand-review, not by tests: the
+P-cell rate hover would have called the doubled cap "the statewide base rate" (flatly false),
+the "how an allocation is computed" bullet still quoted an annual tranche, and the rural
+allowance kept a `/yr` on a window figure. A front-loaded later year now reads **↻ carryover**
+in the P-cells, year filter, priority cards and drill-in rather than a wall of `$0`.
+
+### #957 — the mask comes off
+
+Removing the advance dropped four colleges to **$0 across the board** — Barstow (`pe` 133),
+Lassen (140), Madera (43), Southwestern (571) — because their names had never joined the MAP
+feed at all. The advance had been paying them the whole time. **The join bug was months old;
+it became visible the day the advance stopped.**
+
+The disagreement is `College` vs `Community College`, running in **both directions**, so no
+single canonical spelling per college could ever match both. Fixed with a trailing-suffix stem
+plus the property that makes a fuzzy join shippable: **collision-checked** — a stem reachable
+from two funding colleges is *dropped, not guessed*, so it can add matches but never merge
+institutions. Verified against the real roster: zero collisions across all names plus every
+alias, all 115 model names still self-resolving.
+
+A second instance of the same class surfaced on the way: the resolver located a short-names
+entry's funding college by matching `short` **alone**, so an entry whose workbook spelling is
+the CAPS form was skipped outright — which is why `Los Angeles Southwest College` resolved to
+nothing (workbook `LA Swest` vs short `LA Southwest`). Now tries short → short_caps → canonical,
+exact-then-stem. That also closed Reedley, Norco, MiraCosta and Mt San Antonio. LA Southwest has
+no feed row today, so it was latent — and would have gone wrong silently the first time it posted.
+
+Deliberately still unmatched: `Calbright College Credit`, `Launch Apprenticeship`, `North Orange
+Continuing Education Credit`. The first and third are noncredit **feeders**, resolved on a
+separate path — the `… Credit` variants of those feeder names are a real but low-stakes gap
+(both currently carry only suppressed 1–4 cells). **Nine model colleges genuinely have no feed
+row** (Lake Tahoe, Imperial, Rio Hondo, Marin, Cosumnes River, Folsom Lake, Siskiyous, Yuba) and
+correctly read as having posted nothing.
+
+### The durable lesson
+
+**A default payout masks the data gap beneath it** —
+[[docs/kb-notes/methodology-a-default-payout-masks-the-gap-beneath-it]]. "If we can't measure it,
+pay it anyway" is simultaneously a policy and a blindfold: it sits on the same code path as
+every upstream failure that produces "no value", so it reads as correct right up until you
+remove it — which is exactly when it turns into a false accusation against whoever the gap
+belonged to. Enumerate what reaches the default *before* removing it, and fix the defects in
+the same batch, because the window between "removed the mask" and "fixed what it hid" is a
+window where the product actively lies about real institutions.
+
+Process note: the adversarial-review Workflow failed outright on the prior run (all 4 agents hit
+the StructuredOutput retry cap), and its "0 findings" was **not** a clean bill of health — the
+hand review that replaced it found two real defects. Same again here: the three prose/unit
+contradictions above came from reading the code, not from the suite.
+
+### State
+
+- **Tests:** `cpl_funding` 591 · new `cpl_funding_frontload` **37** · new `cpl_funding_metric_wiring`
+  13 · `cpl_funding_performance` 24. Full suite **177 files green**.
+- Real Chromium desktop + phone: 0 JS errors, desktop h-overflow 0. Phone h-overflow of 50 is
+  **pre-existing on `main`** (verified against a stashed build) — not a regression.
+- Live shape confirmed in-browser: full window **$6,972,092** per priority, effective
+  **$61.73/student ($30.87 × 2)**, earned $1,781,667 — measured achievement, no advance.
+- `cpl_funding_performance.js` regenerates on the daily workflow (dispatched post-merge); the four
+  restored colleges appear on that run.
+
+### Next concrete step
+
+**The Budget consolidation** — fold Implementation Funding in as a Budget sub-view and, the part
+that actually pays, have the funding model read `one_time_2026_27` from the ledger's `$35M` row
+instead of holding its own copy in `cpl_funding_data.js`. That single-source wiring permanently
+kills the drift class that cost a day this week — and #955 is the second instance of it.
+
+Open with Sam: his rule for the **nine colleges with genuinely no feed row**. They now read $0,
+which is the honest reading of "posted nothing" — but he said he'd supply gap data before the
+advance rule goes live, so it's worth confirming he wants a bare $0 there rather than a
+"⏳ awaiting data" mark.
+
+---
+
+## 2026-07-31 — SkyQueue cont. 2: the FTES move, and two defects my own tests caught (#955–#962)
+
+Sam moved the model off headcount and onto FTES — twice over, in two different
+senses that are easy to conflate: the **allocation basis** (how big is a college)
+and the **performance metric** (what did it produce). Eight PRs. The engineering
+story is mostly about the three defects found along the way, two of them mine.
+
+### The allocation basis: I argued the wrong side, and measured my way out
+
+I opposed switching the basis to FTES, reasoning that CPL serves working adults
+who enroll part-time, so FTES-weighting would penalise the colleges doing the most
+CPL. Plausible, and **wrong**: `corr(load factor, CPL penetration) = 0.086`, and
+the switch moves **+$307K toward** the 15 highest-CPL colleges and **−$348K away
+from** the 15 lowest. It is mildly *pro*-CPL.
+
+What actually decided it was data quality, which neither of us had raised: credit
+FTES is uniform 2025-26, while headcount had **41 of 115 rows on 2022-23** and
+**33 of 115** outside any credible load band — 20 of those on *current* vintage,
+so definitional drift rather than staleness. Pasadena read 14,936 headcount
+against 23,347 credit FTES: every student carrying 47 units a year.
+
+Sam then supplied a fresh DataMart pull that **confirmed the diagnosis** —
+Pasadena 14,936 → 41,521, Santa Rosa 11,889 → 34,538, Santa Ana 19,310 → 77,076.
+The lesson worth keeping: *the new series validated the old one*. Bringing in a
+second measurement of the same institutions is how you discover the first one is
+broken, and that value is independent of which one you end up using.
+
+I also overstated the "33 implausible rows" figure and said so: it conflated real
+data errors (now fixed), a **noncredit-denominator artifact** (credit FTES over
+*total* headcount; `corr(noncredit share, load) = −0.383`, which explains Santa
+Ana and Santiago Canyon but not the rest), and genuine load variation.
+
+### Defect 1 (mine, shipped): cap and target rode different bases
+
+#959 moved the allocation to credit FTES and left every target on headcount. For
+the 72 of 115 colleges whose two shares differ, `cap ÷ target` stopped equalling
+the statewide per-student rate — spanning **0.49×** (Santa Ana) to **2.11×** (Las
+Positas). Santa Ana's cap was $46,887 against a 3,854-student target = **$12.16
+per student** while the hover asserted **"$27.69/student statewide base rate."**
+
+Two failures in one: a college asked to hit a target sized for a college of a
+different size, and a tooltip contradicted by its own two numbers.
+
+It survived because **no test asserted the invariant that ties them together**.
+There were tests for conservation, for the floor, for the basis switch — and none
+for `cap ÷ target == per_student`. The fix introduced `prioTarget(c, p)` (the
+target had been open-coded at five sites) and denominated the rate on the same
+basis as the cap. **Lesson: when two quantities must reconcile, the test that
+matters is the one asserting the relationship, not the two asserting each side.**
+
+That new test then surfaced a *pre-existing* defect: an unfloored college's real
+rate is ~10.4% **below** the statewide base, because the $150K floor top-ups are
+funded by renormalizing the split over exactly those colleges. The hover claimed
+base rate regardless. Disclosed in the floor note, never reflected per cell.
+
+### Defect 2 (mine, caught pre-merge): the policy dial ran backwards
+
+The target multiplier was wired onto the **rate** — so `0.5` made the target twice
+as **hard**, the exact opposite of what I'd told Sam it meant. Caught because the
+test encoded the *intended meaning* ("halving the multiplier makes it easier")
+rather than the formula. A test that asserted `target == ent / (rate × mult)`
+would have passed happily and shipped the inversion. **Assert what a knob is FOR,
+not what it computes.**
+
+### The unknown I couldn't resolve — so I made the pipeline resolve it
+
+Summing units required knowing the source view's row grain, and the two available
+readings gave opposite answers with nothing in the repo to settle them. Rather
+than guess, the builder now measures its own assumption every run against MAP's
+published totals. First run: **ratio 1.0054 / 1.0002** — the conservative reducer
+is right, residual = the Test/Potential rows we exclude. Full pattern:
+[[docs/kb-notes/methodology-ship-the-oracle-with-the-assumption]].
+
+### What the live numbers actually say
+
+| | units | CPL FTES | at $5,649.63 |
+|---|---:|---:|---:|
+| Eligible | 1,354,527 | 45,151 | **$255,085,870** |
+| Transcribed | 103,139 | 3,438 | **$19,423,230** |
+
+I had earlier estimated eligible at ~6,100 FTES / $34M from the CER — **off by
+7×**, because the CER covers only articulated exhibits. 43,203 students average
+**31.4 eligible units** each, which is what a complete JST looks like.
+
+Two consequences. For the SCFF argument: transcribed CPL is already worth ~$19.4M/yr
+in apportionment terms against a ~$11.6M/yr pool, so the state is *already* paying
+roughly apportionment rates — out of one-time money. And $255M of identified
+CPL sits untranscribed. For the model: **the three priorities are calibrated
+wildly differently by one rate.** P1 (eligible) is 22× over target and saturates
+instantly — it incentivises nothing; P2 (transcribed) at 1.7× actually
+discriminates; P3 (portal) is ~zero. Eligible units measure what is *possible*,
+not what a college *did*.
+
+### State
+
+- Tests: `cpl_funding` 539 · `basis` 35 · `cpl_ftes` 24 · `frontload` 40 ·
+  `metric_wiring` 26 · `gate_ledger_public` 53 (split out of the main file, which
+  had 70 JSDOM instances and OOM'd) · `performance` 24. Suite **180 files green**.
+- Real Chromium desktop + phone, 0 page errors.
+
+### Next concrete step
+
+Sam's call on P1: eligible-units saturates at any sane multiplier, so either it
+needs a different metric or the priorities need per-priority multipliers. Then
+the **Budget consolidation** — single-source `one_time_2026_27` off the ledger,
+still open and still the fix for the drift class that cost a day this week.
+
+## 2026-08-01 (SkyUnit) — the units answer, and the metric moves one rung down the funnel
+
+Sam opened with two observations on the pool cards, both correct, and the second
+one had a real defect under it: *"we should eliminate headcount from the model
+altogether — the card that allocates $4.62 per student should be a per FTES
+amount"*, and *"seems like we are miscalculating the P1,2,3 earned FTES, which
+seem way too high. Also the tgt FTES seem way too low."*
+
+Two PRs, both merged: **#964** (the units + the cards + Applied measurement) and
+**#965** (the rate as a curator-editable variable).
+
+### The defect — the summary surfaces disagreed with the detail by 30×
+
+The per-college P-cells convert units → CPL FTES through `earnFraction`/`toActual`.
+**Three summary surfaces did not**, and every one of them read as fact on the
+live page:
+
+| surface | rendered | should have read |
+|---|---|---|
+| priority card, actual | "Actual **1,354,527 students** — **193,700%** of target" | 45,150.9 CPL FTES — 6,456% |
+| priority card, target | "$73.90 per student → **699 students** (0.028% of headcount)" | Target 699.3 **CPL FTES** (≈20,979 units) |
+| college table, SYSTEM row | header *Credit FTES*, row beneath it **2,517,685** (a headcount) | 1,069,182 credit FTES |
+
+This is the **fourth, fifth and sixth** instance of the same defect in this
+workstream (#960/#961/#962 were one through three). They survived because the
+tests asserted each side's *presence* — never the *relationship* between a
+rendered number and its target's unit. The new assertions recompute "% of target"
+from the card's own two numbers, so the surface has to be internally consistent
+regardless of the data.
+
+**The SYSTEM row was caught by rendering the page in real Chromium and reading the
+column header next to its own total** — not by the suite, and not by reading the
+diff. A total that isn't in the units of the column it tops is worse than no
+total: it invites the reader to add up the column, and it will never reconcile.
+
+Durable: [`methodology-a-summary-must-share-the-unit-of-its-detail`](kb-notes/methodology-a-summary-must-share-the-unit-of-its-detail.md).
+
+### The cards — and the counterintuitive bit about the rate
+
+Both hardcoded headcount, and the first still called headcount *"the allocation
+basis"* months after the basis moved to credit FTES (#959) — asserting a false
+thing on the live page. Both now follow the basis seam, and the feeder side
+follows with them: credit FTES on the college side pairs with **noncredit FTES**
+on the feeder side, never with feeder headcount.
+
+The `$4.62` card is retired under FTES metrics in favor of the operative price —
+**$5,649.63 per CPL FTES → 2,056.8 CPL FTES the tranche buys** (61,704 units,
+$188.32/unit). Pool depth per credit FTES (**$10.87** — the literal swap Sam
+asked for) rides as a *note*, because it is a scale statistic, not the rate the
+model runs on.
+
+**Three different "per something" numbers existed and only one belonged on that
+card.** Worth writing down, because Sam's message reasonably conflated two of
+them:
+
+| quantity | value | what it is |
+|---|---:|---|
+| pool ÷ statewide headcount | $4.62 | the retired card |
+| pool ÷ statewide credit FTES | $10.87 | pool depth — a scale statistic |
+| pool ÷ CPL FTES purchased | $5,649.63 | the price the model actually runs on |
+
+And the bit that cuts against intuition, now test-locked: **raising the rate
+LOWERS the target** (target = allocation ÷ rate). Sam thought the rate might be
+~$8k; there is no $8k figure in the dataset (the only rate is $5,649.63, labeled
+SCFF base), and moving to an all-in ~$8,071 would have taken the statewide target
+from 2,057 → 1,440 CPL FTES — the wrong direction for his own complaint. **The
+rate is not the lever on targets.** He settled on $5,649.63.
+
+### P1 → Applied: our arithmetic was right, the source was inflated
+
+I proposed dropping the eligible-units metric on the evidence that it does not
+discriminate (98 of 102 colleges over target, median 42×, max 605×). Sam pushed
+back on the *reasoning* and was right to: eligible units aren't free — they
+require approved articulations and matching students — and he pointed at the real
+cause. *"There will be another category of units called Applied, which is fewer
+units because it doesn't double count eligible units like we sometimes do for
+Marine Corps JSTs."*
+
+Measurement then localised it precisely: the producer's own cross-check against
+MAP's published per-college totals reads **1.0054** — we match the source to half
+a percent. **The inflation is upstream** (ACE JST exhibits repeat a credit
+recommendation under every skill level; `map_data_quality` `10ad9e0a`, and MAP's
+parser can't easily fix it because skill levels aren't canonically ordered). So
+the answer isn't a correction factor and isn't waiting on MAP — it's to **measure
+one rung later in the funnel**, where the defect can't reach:
+
+**eligible 1,354,527 → applied 242,559 (18%) → transcribed 103,139 (8%)**
+
+`Applied Credits` was already in the same view we read, so the producer now emits
+`pa`/`pa_u`. **P1 is not rewired yet** — the per-college Applied split isn't
+visible from a sandbox without `MAP_API_KEY`, so the measurement ships first and
+the policy call follows the numbers.
+
+Durable: [`methodology-move-down-the-funnel-to-route-around-an-upstream-defect`](kb-notes/methodology-move-down-the-funnel-to-route-around-an-upstream-defect.md).
+
+### The two guards that mattered more than the feature
+
+1. **`pa` is OMITTED, never zeroed, when the pull lacks the column.**
+   `earnFraction()` reads a present-but-zero cell as "feed published, this college
+   posted nothing" and pays $0 — a column we never asked for would have zeroed out
+   every college in the state. Absent keys are the honest shape for absent data.
+   ([`methodology-omit-dont-zero-an-absent-measure`](kb-notes/methodology-omit-dont-zero-an-absent-measure.md) —
+   the mirror image of `methodology-a-default-payout-masks-the-gap-beneath-it`:
+   same root cause, opposite direction. Ask what a metric's absence pays in *both*.)
+2. **A `MEASURES` entry shipped WITH the data.** Metric text is curator-editable
+   live in Supabase, and "Applied CPL Units as FTES" matched no existing rule — it
+   fell through every predicate to `{}`, which `earnFraction` reads as a data gap
+   and pays at **full cap**. The moment Sam retyped P1 the model would have gone to
+   100% advance with nothing on screen saying so.
+
+### The rate is now editable (#965)
+
+Two entry points — the pool card and the FTES-factors row, which had been sitting
+frozen among editable siblings. Three calls worth remembering:
+
+- **The BASE rate is editable, not the derived effective rate** (`rate ÷ multiplier`).
+  Typing into a derived field pushes the number through a divisor and stores
+  something else — the store-a-quotient mistake `ftes_factors` already avoids.
+- **It writes via `setFtesRate`, not `setPool`.** `ftesRate()` reads
+  `SCENARIO ?? SHARED ?? poolField(...)`, so a pool write lands *underneath* any
+  top-level override: type a new rate, see nothing change, get no explanation.
+  (`setFtesRate` had existed since #962 and was wired to nothing.)
+- **Two entry points is only safe because they share one setter** — a test edits
+  via each and asserts the other follows.
+- **A zero rate is rejected, not clamped.** Every `prioTarget()` → 0,
+  `earnFraction` reads `target <= 0` as `"none"`, and every college in the state
+  silently earns $0. Guarded three ways (zero, negative, junk).
+
+### A process note on myself
+
+I reported "all funding tests green" from a run of `cpl_funding.test.js` that
+**predated** my SYSTEM-row edit, and CI caught the two assertions I'd invalidated.
+The stale-result trap is cheap to avoid and I walked into it: re-run the file you
+touched *after* you touch it, not before. Fixed in a second commit, with the
+assertion that would have caught the original defect (the total must not contain
+the headcount figure).
+
+Separately, a first pass at baselining the phone overflow against `origin/main`
+was **wrong** — that ref was 16 commits stale in the sandbox, so "main is clean"
+was an artifact of old data files. Re-baselined against `HEAD`: the 42px overflow
+was pre-existing in the FTES-factors box (invisible until now because that box
+only renders once a priority is FTES-denominated, which the committed defaults
+are not). Fixed while in there. **Check what your baseline ref actually points at
+before concluding a regression is yours — or isn't.**
+
+### Also settled this run
+
+- **Quarter colleges keep the 11.67 TLM** (→ 45 units/FTES). Sam's ruling closed
+  `map_data_quality` `7eb0c25a`, which had been open since the morning; it confirms
+  the shipped behavior, so no code change. The row carries the caveat that the
+  reading flips to a flat 30 if MAP turns out to pre-normalize quarter units.
+- **New DQ item `ae3e16d6`** (Sam's idea, parked): normalize the unit basis in MAP
+  — emit semester-equivalent units *alongside* native, never overwriting, because a
+  quarter college's registrar and SIS think in quarter units. That would retire the
+  TLM branch entirely and permanently close `7eb0c25a`.
+
+### State
+
+- Tests: `cpl_funding` **545** · `cpl_funding_cpl_ftes` **54** (Parts F/G/H new) ·
+  new `cpl_funding_applied` **23** · basis 35 · metric_wiring 26 · performance 24 ·
+  frontload 40 · public_private 9 · gate_ledger_public 53. Suite **181 files green**.
+- Real Chromium at the **live Supabase Scenario-1 metrics** (the committed defaults
+  are headcount-denominated and would not have exercised any of this), desktop +
+  phone: 0 horizontal overflow, 0 console errors.
+
+### Next concrete step
+
+**The cron publishes `pa`/`pa_u` at 06:17 UTC.** Then: wire P1 → Applied and make
+targets cumulative (Sam's calls), with the per-college distribution actually in
+front of you. The thing to look at before committing to it — his two calls
+together mean past work counts fully (LA Pierce maxes P2 on pre-program work)
+while **79 of 99 colleges sit at zero transcribed** and the top 10 hold 95.7%.
+Applied should widen that base considerably; measure it, don't assume it.
+
+Then the **Budget consolidation** — still open, still the fix for the drift class.
+
+## 2026-08-03 (SkyUnit cont.) — P1 → Applied went live, and I had the causal story wrong
+
+Sam sent a pivot of the MAP Student Aggregated Values export (Bakersfield tab, rows
+= MAP Internal StudentIDs, FTES row = column total ÷ 30) and asked to switch P1 from
+eligible to applied units.
+
+**The pivot validated the producer exactly** — eligible 25,280.5 / applied 8,437.5 /
+transcribed 962.5, all three matching `pe_u`/`pa_u`/`p3_u` to the decimal. Because he
+built it independently at the per-student grain we dedupe on, that is a real
+confirmation of the grain assumption rather than a circular one. His aside about
+outside submissions answered itself: **5 students / 25 units statewide.**
+
+### What I got wrong, twice
+
+**(1) The causal story.** On 2026-08-01 I wrote — into a KB note, a `cpl_memory` row
+and #964's PR body — that eligible is *"inflated at the SOURCE"* by the ACE/JST
+skill-level duplication. That framing is materially misleading. Sam: applying credit
+is a **low-burden checkmark** meaning *"this looks applicable to their program"*, and
+it *"eliminates a bunch of noise from Eligible credits that could never be applied…
+(e.g., 1 unit in marksmanship)."*
+
+The data shows it from the other side: where a credential **has** been articulated by
+someone (the CER population), colleges apply **79%** of eligible credit (75,027 of
+94,772 units). Across **all** identified eligibility in the student view it is **18%**.
+The gap is dominated by eligibility on credit recommendations nobody articulated —
+correct filtering, not loss. The duplication is real but **minor**.
+
+That matters because a wrong causal story propagates: it had reached three artifacts,
+and a future session would have gone hunting a defect that mostly isn't there.
+**Establish *why* a number shrinks downstream before describing the gap.** Corrected in
+the KB note + the memory row.
+
+**(2) A unit-scope error in my own recommendation.** I built a multiplier comparison
+on a **window**-denominated entitlement, then read it as if it were **per-year**, and
+recommended "2.0×" when that row was actually multiplier **4.0**. Precisely the class
+of defect I spent #964 fixing, made while fixing it. Caught by recomputing against the
+live config instead of trusting my own table.
+
+Re-examined with correct numbers I also **changed my mind on the substance**: 4.0
+drops the median college to 27.4% of cap, and P1 capping is not the failure I framed
+it as — a capped college has applied enough credit for its size, and you cannot apply
+credit infinitely. **The ongoing pull lives in P2**, where 79 colleges are at zero and
+nobody is capped. The ladder does the work; the multiplier didn't need to.
+
+### Sam's design intent, in his words — the reason the metrics are what they are
+
+- **P1 = Applied** — proxy for the upfront articulation work, "available to incoming
+  students and community members." The petition→outreach flip: the onus moves to the
+  college to create CPL opportunities *before* the student asks.
+- **P2 = Transcribed** — the checkbox is a proxy that *every* step happened:
+  articulation, counselling, appropriateness to program **and transfer destination**,
+  correctly coded in SIS and later reported to MIS.
+- **P3 = outside-submission activity** — evidences outreach to people who are *not yet
+  students*, "the real access booster we need long term."
+
+I proposed replacing P1 with a raw **articulation count** (corr with applied is only
+0.334, and colleges like American River have 151 credentials articulated against 4.4
+applied FTES). Sam's proxy logic is better and I withdrew it: a raw count rewards 264
+articulated credentials nobody qualifies for, while applied proves the articulation was
+both created *and* useful.
+
+### What shipped
+
+**Config, applied live** (receipt `kb/supabase_funding_p1_applied.sql`, guarded UPDATE):
+P1 → Applied units · shares **.50 / .45 / .05** · target multiplier **2.0**. Also fixed
+Year-2 P1, which had been set to *Transcribed* — duplicating P2, a curation artifact.
+
+**Cumulative targets came for free.** `prioTarget = (entitlement / nYears) / rate ×
+multiplier`, so with a 2-year window **multiplier 2.0 IS the cumulative window target**,
+exactly. Dropping the `/ nYears` in `prioEntitlement` would give the same target and
+**cancel the front-load incentive** — which that function's own comment names as the
+reason it is the one exemption from the no-inline-scope guard. So: no seam change, and
+a new test (`tests/cpl_funding_cumulative_target.test.js`, 10 assertions) carries the
+*reason* so the next session doesn't "implement cumulative targets" by breaking it.
+
+**I also withdrew my own proposal to delete the `credit recommendation` MEASURES rule.**
+Deleting it would let an "eligible + statewide" metric fall through to plain `eligible`
+and silently measure *all* eligibility — a wrong number in place of an honest gap.
+
+### Live result
+
+| | before | after |
+|---|---:|---:|
+| pool earned | $7.00M (30.1%) | **$9.65M (41.5%)** |
+| median college | 34.0% of cap | **50.0%** |
+| statewide target | 2,057 CPL FTES | 4,114 (cumulative) |
+
+29 colleges at $0 — 11 of them have no feed row at all, and **13 have eligible credit
+identified but have applied none of it** (Moorpark 8,664u · Cuyamaca 6,939u · LA City
+5,925u · Monterey 5,582u · Ohlone 5,231u · Santa Barbara 4,016u · Sacramento City
+2,298u · Gavilan 1,891u · Columbia 1,144u · Chabot 983u · Butte 435u · Feather River
+433u · Taft 353u). Since applying is a checkmark, that is an **outreach list**, not a
+performance verdict.
+
+### Next concrete step
+
+Watch the first cron after the config change to confirm the tab renders the new
+metric/shares live. Then the **Budget consolidation** — still open. Open question
+unchanged: the 11 colleges with no feed row, which Sam said he'd supply gap data for.
+
+## 2026-08-03 (SkyUnit cont. 2) — the 9 no-feed colleges, and the third kind of zero
+
+Sam, on the colleges reading $0 with no feed row: *"there should be no data gap,
+just an implementation gap that will be remedied when they implement. Correct me
+if you think that's wrong."*
+
+**He's right, and it was worth verifying rather than agreeing** — #957 was exactly
+this shape (Barstow/Lassen/Madera/Southwestern read $0 for months because of a
+`College` vs `Community College` join miss that looked identical to an
+implementation gap). Check: the 9 absent colleges are **not** in the builder's
+`unmatched` bucket, which holds only 3 entries (`Calbright College Credit`,
+`North Orange Continuing Education Credit`, `Launch Apprenticeship` — the two
+known `… Credit` feeder variants plus one apprenticeship provider, none of them
+funding colleges). So MAP genuinely has no student rows for those 9.
+
+**And it demonstrably self-heals:** West Hills Coalinga and Santa Monica were on
+the no-feed list on 2026-08-01 and now have rows.
+
+### The finding: THREE states, one rendering
+
+Verifying Sam's claim surfaced something he didn't ask about. Three different
+things all render as `$0`:
+
+| state | in the artifact | means | n |
+|---|---|---|---:|
+| **absent** | no row | hasn't implemented (Sam's read) | 9 |
+| **withheld** | `null` + `_suppressed` | HAS implemented, 1–4 students, privacy floor | 4 |
+| **measured zero** | `0` | has eligible credit, applied none | 16 |
+
+The middle state is the one that matters: **West Hills Coalinga, Santa Monica,
+Monterey and Moorpark have applied CPL credit and earn $0 anyway**, because the
+<5 rule that protects those students also erases the evidence they exist. That is
+not the same as Sam's "let them earn $0 — that's the incentive" ruling, which was
+about colleges that posted nothing.
+
+It also **corrects Friday's outreach list**: Monterey and Moorpark were on it as
+"eligible but applied none," and they have in fact applied — it's just hidden.
+
+Not decided; surfaced to Sam. The generalizable form is in
+[`methodology-omit-dont-zero-an-absent-measure`](kb-notes/methodology-omit-dont-zero-an-absent-measure.md):
+**when a suppression layer sits between a measurement and a consequence, work out
+what the suppressed state costs the subject — if suppression can only ever hurt,
+it has become a penalty for being small.** And never fold the three into one
+bucket in prose: "29 colleges earned nothing" is true and useless.
+
+### State
+
+Config live: P1 = Applied · shares .50/.45/.05 · multiplier 2.0 (= the cumulative
+2-year window target). Pool earns **$9.65M of $23.24M (41.5%)**; median college
+**50%** of cap. Suite **182 files green**.
+
+### Next concrete step
+
+**Budget reconciliation** (Sam's call) — fold Implementation Funding in as a
+Budget sub-view. Both tabs are JS-rendered, so it's a nav change plus a segmented
+control `[Sources & Uses | $35M model | $15M Distributions | Report]`. The
+single-source wiring (#949) already landed, so the two tabs agree on their numbers
+and this is now the lower-risk half.
+
+Then, in rough order of value: the **suppressed-earns-zero** decision above; the
+**add/delete/reorder** gap in the ledger editor (the biggest distance between
+"editable" and "curatable"); the **budget-vs-actual** expenditure lane.
+
+## 2026-08-04 — SkyUnit cont.: the per-priority PRICE FACTOR (the global 2× is retired) — #971
+
+Sam & Malone's ask: **decouple the funding split from the FTES difficulty.** The
+model welded them — for every priority `cap ÷ target = the rate`, uniformly, so a
+priority's FTES target was rigidly proportional to its dollar tranche. The single
+global **target multiplier** couldn't tune per-priority. Fix: **move the dial to the
+priority level.** Each priority now carries a `factor`; its **price per CPL FTES =
+factor × the SCFF base rate**, and **target = pot ÷ price**. Higher factor ⇒ pays
+more per FTES ⇒ **fewer** FTES earn the pot — the *price reading* Sam confirmed (a
+premium on the harder / more-valued behavior), which scales the target
+**inversely** (factor 2.0 halves it).
+
+**(a) Learned.** Three things worth carrying forward, distilled into
+[`methodology-retire-a-global-dial-into-per-item-dials`](kb-notes/methodology-retire-a-global-dial-into-per-item-dials.md):
+1. **Make the neutral value an exact identity.** `factor 1.0` had to reproduce
+   today's model. The old ×2 was doing *double duty* — a policy dial **and** the
+   cumulative-window `nYears` conversion. Moving only the policy role would silently
+   halve targets. So the ×nYears became **structural** in `prioTarget`
+   (`perYear/rate × nYears/factor`), leaving `prioEntitlement` per-year (the
+   front-load invariant). Now `factor 1.0` is a true identity and **merging moved no
+   live numbers.**
+2. **Direction is a real decision, not a default.** A per-item factor can scale the
+   *target* (stringency) or the *price* (premium) — inverses that flip the incentive
+   180°. I asked before building; Sam meant price (2× on P3 = pay double for portal,
+   not make it twice as hard). The AskUserQuestion-worthy fork was the whole ballgame.
+3. **Split the merge from the activation; the config write is POST-DEPLOY.** With the
+   neutral default an identity, the code merge is behavior-neutral (live config still
+   carried `targetMultiplier: 2`, which the new code ignores → neutral). Setting the
+   real factors is a **separate Supabase write after Pages deploys** — removing the
+   old multiplier while old code is still live would fall back to a default and halve
+   every target. Order: merge → deploy → config.
+
+**(b) State.** Merged #971 (squash `93b80aa`), Pages deploy green, full suite green
+(545/545 on the big file). Live config activated post-deploy
+(`kb/supabase_funding_priority_factors.sql`, fresh-read + Rule-9-guarded — all six
+factors were null, so nothing of Sam's was overwritten): **shares .5/.3/.2 · factors
+P1 0.5 / P2 1.0 / P3 2.0**, `targetMultiplier` removed. Live now: pool unchanged
+**$23,240,308**; statewide target **5,759 CPL FTES** (was 4,114 neutral); pool earns
+**$8.62M = 35.6%** of cap; median college **31%**; 23 at ~$0. Prices P1 $2,824.82 /
+P2 $5,649.63 / P3 $11,299.26 per CPL FTES. Editable per-priority in the tab (retired
+`targetMultiplier`/`effectiveFtesRate`/`setTargetMultiplier` + the global "Target
+multiplier"/"Effective rate" FTES-factors rows). Tests rewritten for inverse scaling
++ cumulative default.
+
+**(c) Prototype → port.** Iterated the whole model in the calculation sanity-check
+**artifact** first (real-Chromium verified: neutral 1/1/1 reproduced the anchors
+before any code moved), locked the direction with Sam, then ported. The artifact is
+now synced to the live model and stays linked from the private tab — a durable shared
+sanity-check surface, not a throwaway.
+
+**(d) Next concrete step.** Still the **Budget reconciliation** (fold Implementation
+Funding in as a Budget sub-view + single-source the $35M from the ledger). Factor
+tuning is now self-serve in the tab; if 5,759 FTES / 35.6% isn't the intended
+calibration, the factor inputs are the dial (P2's factor has the most redistributive
+teeth today, since P2 is the biggest tranche and where most colleges sit mid-range).
+
+## 2026-08-04 — SkyBox: Sam's funding-model tweaks (display + report) + the NC decision (#973, #974)
+
+**(a) Learned.**
+- **A "redundant" box often encodes a real distinction that only *collapses in the current
+  data*.** The two $35M boxes (source vs computed total) are equal only because there is
+  exactly ONE revenue source; the collapse must be conditional (single-source → one editable
+  box; multi-source → sources + a computed total) or "+Add revenue source" silently breaks.
+  Same shape as the memo's two redundant "Total available / Distributed" rows.
+- **Changing a headline figure's *meaning* ripples into its invariants, not just its value.**
+  Moving the hero from the college pool ($24.24M) to the institution total ($25.24M =
+  `college_funding_before_feeder`) flipped one property: the hero used to *shrink* when the
+  feeder carve-out rose; now it's *invariant* (the feeder just moves money college→NC inside
+  the total). The test asserting "raising the feeder shrinks the hero" was right BEFORE and
+  wrong AFTER — the fix was to assert the new relationship (total holds, college pool absorbs
+  the shift), not to patch a number.
+- **A coincidental value collision causes real confusion.** "Earned so far" ≈ $1M read as the
+  $1M NC carve-out. The fix isn't to hide the number (it's honest earned-to-date) but to name
+  what it ISN'T ("…not the noncredit carve-out"). It drifts off $1M as MAP updates.
+- **Reframe a premise with the user's own data.** Sam worried he'd "left SF off" the NC
+  carve-out; the FTES sheet HE sent shows SF earning $236,645 in the credit "Funding?" column
+  and **$0 for the 4 standalone NC campuses** — proof the carve-out targets the credit-shut-out
+  institutions, and SF isn't excluded (it earns through the credit door). The strongest
+  pushback used his own file.
+- **A per-item distribution is dominated by its worst datum.** $1M split by NC FTES hands
+  Calbright ~$208K (21%) on an impossible figure (21,438 FTES / 2,484 heads = 8.6 FTES per
+  student). The current HEADCOUNT split keeps Calbright at ~$33K — don't "true up" to an
+  FTES split without excluding the bad datum first.
+
+**(b) State.** 6 of 7 tweaks shipped (#973: #4 award order + #7 report; #974: #1 box collapse
++ #2 institution-total hero + #3a earned relabel). Suite cpl_funding **545→552**, public/private
+11/11. NC direction locked: **targeted + advisory column** (not diluted). Sam pre-closed three
+open questions: no suppressed colleges, factors/shares fine, no-feed colleges at $0.
+
+**(c) Roadmap.** Finish the NC cluster — **#5** advisory NC column on the 115-college table,
+**#3b** gate the NC carve-out on the 2 baseline quals (fail-open, held-not-redistributed) —
+which mirrors the college gate. THEN the Budget reconciliation (the standing next-step).
+
+**(d) Next concrete step.** #5: decide the column's content with Sam — NC **FTES** (visibility,
+my rec) vs a recommended **$ amount** (his original words, but we chose not to distribute the
+$1M to colleges, so a per-college $ lacks a funded basis) — then add each college's MIS NC FTES
+to `cpl_funding_data.js` (Malone's 115-row table is in the 2026-08-04 chat) and render the
+column. #3b: gate `feederCarveout()` disbursement on `baselineGate()` per feeder, held + rolled
+forward, never redistributed.
+
+## 2026-08-04 — SkyBox cont. (#976): the advisory NC-FTES column shipped
+
+Sam chose **NC FTES (visibility)** for the advisory column. Built + merged as #976.
+
+**(a) Learned.**
+- **A whitelisting `.map()` silently drops new data-file fields from the render.** I added
+  `noncredit_ftes` to all 115 college rows and wrote the render — and it did NOT appear, while a
+  sibling change (the `display` override) DID. Root cause: `rowsFiltered()` projects each college
+  into a NEW object with an EXPLICIT field whitelist, so `noncredit_ftes` never reached the row.
+  (`display` survived only because `dispName()` looks it up from `base()` by the raw key, not from
+  the row copy.) The fix is one line — add the field to the projection — but the *lesson* is: when a
+  new field won't render, check for a row-copy projection before debugging the emitter.
+- **Cross-validate a name-match with a field you already trust.** Matching Malone's 116-row sheet to
+  the model's 115 colleges risked wrong-college NC values. The script aborts on any unmatched, AND the
+  model's own `credit_ftes` equals Malone's Credit-FTES column for the same row (Mt San Antonio
+  26,804.41, SF 12,951.79) — so a mis-match would show as a credit-FTES disagreement, not just a
+  silent bad NC value. Use an independent shared column as the match's checksum.
+- **When two of the user's standing rules collide, surface it — don't silently pick.** Sam asked for a
+  "column" AND has a hard "no horizontal scroll" rule. I shipped the lower-risk sub-line (no width
+  cost, delivers the visibility) and told him plainly he can promote it to a standalone sortable
+  column if he prefers. Deliver the value, name the tradeoff, leave the final form to him.
+- **`display` override, not a key rename, for a display-name fix.** "De Anza → DeAnza" is display-only;
+  the `college` key drives `perfFor()`/elig joins against the MAP feed, so renaming it would break
+  matching. Added `"display": "DeAnza"`; key unchanged. Chabot stayed "Chabot" (the alias was
+  lookup-only — the NC value 152.79 was already correct).
+
+**(b) State.** ALL 7 of Sam's tweaks + the NC rehaul are live (#973–#976). cpl_funding **555** green.
+Only #3b (NC gate) deferred as inert-today. Sam: *"From tweaks to rehaul, this was a big lift… Looking good."*
+
+**(c) Roadmap / (d) next.** The funding model itself is done — next real step is the **Budget
+reconciliation** (fold Implementation Funding in as a Budget sub-view; single-source wiring #949 landed).
+
+## 2026-08-05 — SkyBox cont. (#978): the Report/memo rework + KB research discipline
+
+Sam sent 6 Report/memo tweaks + a mid-turn 7th (the $50k-seed intro). Built + merged as #978.
+
+**(a) Learned.**
+- **Research an official deliverable's external content with a subagent, and make it report the GAPS,
+  not just the hits.** I spun a general-purpose agent to mine the public CPL KB for the Technical
+  Assistance links. Its most valuable output was the NEGATIVE space: the KB has **no** dedicated
+  Office-Hours/"Get Involved" URL (only "see the MAP website"), **no** public ESS-memo URL, and **no**
+  personnel (Estrada/Nelson absent by design). In an official memo, "not found — don't fabricate" is a
+  first-class result. I rendered those as plain text / a MAP-site pointer and left `ESS_MEMO_URL` +
+  `MAP_LINKS` slots for Sam — never inventing a link or an email. The subagent prompt explicitly asked
+  for "not found in KB" over a guess, which is why the gaps came back clean.
+- **A hardcoded map beats a data-file change when the mapping is consumer-specific.** Grouping the 4 NC
+  feeders by district is a MEMO concern only; a `MEMO_FEEDER_DISTRICT` map in the memo code avoided a
+  `cpl_funding_data.js` change (and the sibling-test re-run risk that #976's data change caused).
+- **Real-render, don't just assert.** After 562/562 green I booted the tab in node (reusing the test's
+  `freshDom`/`boot`, `NODE_PATH` at the repo's node_modules) and eyeballed the district groups: it
+  confirmed Mt SAC NC landed under Mt. San Antonio ($993,947 subtotal), the NOCE/SD/Calbright
+  placements, and the TA links — things the string assertions don't fully catch (layout, right group).
+- **Reuse an existing helper to render, don't reinvent.** The verification harness was 15 lines because
+  `freshDom`/`boot` already existed in the test file.
+
+**(b) State.** ALL of Sam's tweaks live (#973–#978). cpl_funding **562** green. Sam queued a forward
+item: an **administrator opt-in** button (VPAA/VPSS/CEO) — my "capture-at-opt-in + CO-confirm" design
+is in the handoff (build v1 next). Sam: *"From tweaks to rehaul, this was a big lift, Sky!"*
+
+**(c) Roadmap / (d) next.** Build the opt-in v1 (attest + CO-confirm → `baselineGate`), then the Budget
+reconciliation.
+
+## Session checkpoint — 2026-08-05 (SkyOptIn; the self-service administrator opt-in v1)
+
+**(a) Learned.**
+- **The gate table already existed — the build was a role-flip, not a new surface.** The participation
+  half of `baselineGate` was already backed by `cpl_funding_participation` + `ELIG.optin`, but opt-in
+  was a *reviewer-only* toggle (`setOptIn` → "Mark opted-in"). "Add a self-service opt-in" was really
+  "let the public write a constrained row, and capture WHO." Reading the existing consumer end-to-end
+  before designing saved a parallel table.
+- **RLS gates rows; only column GRANTs (or a definer RPC) gate COLUMNS.** The attestor name/email are
+  PII, and the tab's own norm keeps contact PII reviewer-gated (the coordinator RPC exposes only a
+  boolean). Since reviewers use the *same* anon/authenticated role as the public (team-phrase is a
+  claim, not a distinct DB role), an RLS `is_allowed_reviewer()` policy can't reveal extra columns to
+  them. The working shape: **revoke SELECT on the PII columns from anon/authenticated, re-grant only the
+  non-PII columns, and read the PII back through a SECURITY DEFINER RPC that gates internally** — the
+  exact `map_coordinator_summary()` pattern already in the file. Verified as `anon` in a rolled-back txn:
+  a valid self-attest is allowed, a forged `confirmed` insert is RLS-rejected, and `select attestor_email`
+  is *permission denied*.
+- **Attest-first is the correct semantics, and Sam picked it.** The opt-in *is* the "participation
+  request by the deadline" — the admin's submission satisfies the gate immediately; the CO confirm/revoke
+  lane is the audit/fraud-catch, not a pre-gate. Matches the model's standing "attest + audit, not
+  pre-verify / fail-open / held-not-punitive" posture. A pending-then-confirm gate would have made the CO
+  a bottleneck on every college's money.
+- **A column-read revoke can 403 a successful WRITE.** Once anon/authenticated lose SELECT on the PII
+  columns, any write that returns a representation makes PostgREST SELECT them back → 403 on an otherwise-
+  successful insert/patch/delete. Fix: `Prefer: return=minimal` on *every* write (public submit AND the
+  three reviewer writes), then re-read status separately. PostgREST's default is minimal-ish, but making
+  it explicit is immune to version drift.
+- **The public opt-in button must survive the public sweep; the CO lane must not render at all.** The
+  form uses NON-`CURATE_ATTRS` data-attributes (so `stripCurateAffordances` leaves it), while the lane is
+  gated on `unlocked()` (never true publicly) AND its PII only arrives via the gated RPC (`[]` for anon).
+  A jsdom test asserts both directions, including that PII handed to the client is still not rendered in
+  public mode — a render-gate check on top of the RPC gate.
+
+**(b) State.** v1 shipped (PR #<tbd>): schema migration `kb/supabase_funding_optin.sql` applied live
+(`cpl_funding_participation` + attestation/status columns, constrained anon `cfp_insert_self`, PII column
+grants, `cpl_funding_optin_review()` RPC); consumer adds the per-row opt-in form (public + private), the
+reviewer confirm/revoke/remove lane in the eligibility section, and status-aware gate wiring. Tests
+`cpl_funding_optin` **18** green; the other 9 funding files green. The migration was **behavior-neutral
+to the currently-deployed code** (still reads only the non-PII columns), so it was safe to apply before
+the code merges. ⚠ The sandbox can't reach `*.supabase.co`, so the live public INSERT path is
+unexercised in-session — eyeball one real opt-in on the deployed site.
+
+**(c) Roadmap.** v2 (the "magic," optional): a one-time magic link to the entered @college.edu address
+that auto-confirms, so the CO drops out of the per-opt-in loop — needs an edge function + mail provider +
+a college→domain map (more stable than a person roster). Only build if the CO wants out of the loop.
+Then the deferred **#3b** NC-carve-out gate, and the **Budget reconciliation** (still the real next step).
+
+**(d) Next.** Confirm one live opt-in end-to-end on the deployed site once merged; then Budget.
+
+## 2026-08-05 — SkyOptIn cont.: opt-in row CTA + the Budget reconciliation + ongoing → 2030-31
+
+**(a) Learned.**
+- **Put the action where the user looked.** Sam opted Alameda in, then "I don't see where to confirm,
+  other than the CO Note box." The CO confirm/reject lived in a *separate* Baseline-eligibility lane, not
+  on the college's own row. Fix = surface ✓ Confirm / ✕ Reject **inline in the row drill-in** (gated on
+  `unlocked()`), reusing `data-optinconfirm`/`revoke`. Binding gotcha: those buttons are re-rendered by
+  `refreshTable()` (partial), so they must be bound **holder-scoped in `wireTable()`**, and the aggregate
+  lane's copies scoped to `.cplfund-elig` in `wire()` — disjoint, so no double-bind / double-PATCH.
+- **A number in a human-authored document that your system also derives is a claim to VERIFY, not a
+  source to copy.** The amendment workbook's **$74M** grand total double-counts $3M (`=E2+E9+E10` sums the
+  $18M project cross-cut instead of the $15M pot; true = $71M) and its **Max Award $665,971** is ~$144K
+  stale vs the live model's **$522,239** (Mt. San Antonio) — it predates the $1M NC + $1M rural carve-outs
+  and the credit-FTES basis. Recompute headline figures from the live engine (`awardStats()` over the 115
+  colleges), reconcile the delta, and hand back the corrected numbers. New note:
+  `docs/kb-notes/methodology-recompute-a-documents-figures-from-the-live-engine.md`.
+- **The award range mixes two recipient sets.** The header's Avg $212,103 = $25,240,308 ÷ **119** (colleges
+  + 4 NC); the floor/rural/size model governs the **115 colleges** only. The 4 NC campuses share the $1M
+  feeder by headcount and are NOT floored — **Calbright $33,134 is below the $150K college floor**, so a
+  blended 119-recipient Min/Avg/Max is dishonest. Report the two groups separately.
+- **Extending a fixed-column ledger is a 3-line consumer change + a guarded data write.** `budget_ledger.js`
+  keys everything off `YEAR_COLS`/`YEAR_LABELS`/`USE_YEARS`; adding `yr_2030_31` + extending `USE_YEARS` to
+  `[1..5]` propagates to headers, cells, `sumYears`, and footers automatically (windowed Sources totals
+  pick it up for free). "Committed vs anticipated" = an accounting stance, not a styling problem — Sam chose
+  committed, so the years render normally and count; the source `window_label` carries the "committed
+  through 2030-31" statement.
+
+**(b) State.** Opt-in row CTA + inline confirm **MERGED (#986)**; `cpl_funding_optin` 18 → 28. Budget
+reconciliation delivered (verdict: ties to the penny; $74M→$71M + award recompute are Sam's workbook fixes).
+COBI ongoing → 2030-31 committed **in PR #1002** (bundled with this checkpoint): `budget_ledger.js` grows
+`yr_2030_31`, `USE_YEARS → [1..5]`; Supabase applied + verified (`kb/supabase_budget_extend_2030_31.sql` —
+$5M archived, ids 5/14 ongoing → $35M). `budget_ledger` 34 → 40; full suite 183 files green. The ledger was
+already reconciled to the revised budget (all sources/uses/projects match) — the #949 wiring + SkyReconcile
+did the heavy lifting; the extension was the only change needed.
+
+**(c) Roadmap.** **NC equalization** is the live open workstream: design LOCKED (floor + optional per-row
+factor, no double-dip flag), BUILD DEFERRED until Sam decides **headcount → FTES** for the NC split (next
+session). Then build the editable NC section + fold in the award-card 115/4-NC split. v2 opt-in magic-link
+and #3b NC-gate remain parked.
+
+**(d) Next.** Land Sam's headcount→FTES NC-basis decision, then build the editable NC section (floor ·
+optional factor · add-program dropdown) in one pass with the award-card split. Sam's workbook fixes ($74M,
+award Max, split line) are his to make.
+
+## Session checkpoint — 2026-08-06 (SkyPlan; the $50k rework groundwork + headcount finally retired)
+
+Sam opened with the $50k/ESS-25-82 tab: *"see where we have simple check marks
+for each priority"* — he wants where-you-are / where-you-should-be / how-to-get-
+there, and his real goal underneath it: **get colleges unstuck and awarding real
+CPL to real students in MAP.** Four PRs merged. The design itself is NOT built
+yet — this run was the measurement and the plumbing it has to stand on.
+
+### What the data actually said (and how wrong my first read was)
+
+I led with the applied→transcribed cliff (65 colleges with applied CPL and zero
+transcribed). **Sam corrected the phase:** applied credit is this phase's focus;
+transcribing is a long-term ask that only actualises when outcomes funding is on
+the line. That correction made the finding *smaller and more fixable* — outcome
+3 currently fires on `pe > 0 || tr > 0`, i.e. ELIGIBLE, which is not an action a
+college takes. Moving it to APPLIED changes only 13 colleges' state, not 78.
+
+Then he explained the lifecycle in detail (JST/public/batch upload → CPL Plan →
+disposition each CR → create the articulation), and two things fell out that no
+amount of staring at aggregates would have produced:
+
+- **Batch Cx/AP/IB uploads land already-transcribed by construction.** So any
+  transcribed-based measure rewards batch loading identically to counselling.
+  Merced's 99% completion is a batch, not mastery.
+- **Colleges stop at upload because that is what the Veteran Star rewards.**
+  Applied-CPL students ≈ JSTs uploaded at a ratio of **1.00** for the median
+  college. The incentive drew a finish line nobody intended → KB note
+  `methodology-an-incentive-teaches-where-the-finish-line-is`.
+
+### The metric hunt — and the free test set I nearly wasted
+
+Sam named MVC / Cabrillo / Bakersfield as adept *before* anything was computed.
+Four metrics were tried; three ranked Cabrillo 24th–29th. Only the **disposition
+rate** (share of credit recommendations carrying any disposition — Applied /
+Not Applicable / In Process) put all three in the top thirteen of 106, against a
+**median of 4.7%**. Method → `methodology-validate-a-derived-metric-against-expert-ranking`.
+
+It is also the FAIR measure, and Cabrillo proves why: **844 Not Applicable vs
+320 Applied.** An applied-only metric scores them 9% instead of 34% and drops
+them ~40 places. Ruling a recommendation out *is* the work.
+
+### The dataset (Sam supplied it mid-session; Malone is productionising it)
+
+`StudentDetailCredits` — 537,908 rows, one per student × credit recommendation,
+carrying `CPLStatusPlan` and `CreditsInReview`, the two fields the funding model
+had been missing. Findings: **436,720 rows at Needs Action (81%)**; the top **20
+exhibits carry ~40%** of the backlog; and **11,495 rows are "Credit Is Not
+Recommended"** — unarticulable by construction, clogging every queue, and a free
+win to auto-N/A. Generator shipped as `funding/_build_cr_backlog.py` (#1014),
+aggregate-only, waiting on Malone's view name.
+
+### Headcount: Sam was right that something was trumping us
+
+*"There must be something in the config trumping our current understanding."*
+There was. `wantsUnits()` decided FTES-vs-students by **string-matching
+"headcount" in the metric LABEL** — so retitling a metric silently moved the
+target onto `sizeOf(c) × target_rate`, where `target_rate` is a headcount-era
+percentage applied to credit FTES. A category error reachable by a typo. Fixed
+with an explicit, **layer-aware** `unit` field (#1012) — the layer-awareness is
+the load-bearing part; a naive lookup would have inverted the bug and scored the
+live Scenario 2's headcount metrics as FTES. KB note
+`methodology-a-label-that-decides-behaviour-is-a-policy-switch`.
+
+Also #1012: **NC split moved headcount → noncredit FTES** via a new
+`feederBasis(f)` seam (the split was open-coded at FOUR sites while the
+aggregate already flipped with `usesFtes()`), plus **Calbright's placeholder**
+(Sam's 1,000, inside the peer-plausible 611–1,076 band; its reported 21,438.17
+is 8.63 FTES/student, impossible, and on the raw figure the smallest campus
+takes 47% of the $1M). The placeholder is a separate field — reported value
+retained, chip explains the arithmetic, a curator's real figure retires it.
+
+⚠️ **FTES alone barely moves Calbright ($33K → $40K). The FLOOR is what delivers
+Sam's equity goal** (~$161K at a $150K floor) — and with a floor in place the
+basis choice moves almost no money. Those are two independent decisions and were
+being conflated.
+
+### Deliberately not done
+
+**Re-baking `year_priorities` onto the FTES regime.** The baked defaults are the
+fail-soft fallback and are still the retired headcount model. I started it, saw
+it rewrite ~15 behavioral assertions at once, and backed it out — that is how a
+subtle regression ships. Baked rows now declare their *current* unit explicitly
+(behavior-neutral, test asserts field == sniff); the re-bake is its own change.
+
+### The day's other lesson: two hours lost to CI
+
+Every workflow began failing at ~15 minutes and Pages wedged. I went through
+three wrong hypotheses (protection rule → billing → org policy) before reading
+the job record: **`runner_id: 0`** — no runner ever assigned, canceled at the
+allocation timeout. Public repo, $0 billable, no budgets. Playbook →
+`playbook-diagnose-a-starved-actions-runner`. Repo-side lever taken: the
+`pages` concurrency group renamed to `pages-deploy` (#1013) to route around an
+uncancellable wedged run.
+
+### Next concrete step
+
+Build the **$50k tab rework** on the disposition rate: stage ladder terminating
+at APPLIED (transcribed shown as the $35M-era preview, explicitly unscored),
+every step a **fraction not a check**, the Veteran Star reframed as a starting
+line, and the per-college observation naming the top stranded exhibits. Then the
+NC floor. Wire Malone's view into `fetch_custom_report.py` + set `VIEW` in
+`_build_cr_backlog.py` when it lands.
+
+## 2026-08-20 — SkySort (Session 173): drag-to-reorder the priorities, "funding factor", and the Year-2 mirror
+
+Sam's three asks, in his words: move **Priority 3 into the Priority 1 position**
+by drag and drop rather than retyping both years; rename **Price factor →
+Funding factor**; and **auto-copy each priority's detail from Year 1 to Year 2
+when Front-load is selected**. Plus: *"push back and better alternatives always
+welcome"* — taken up on the third.
+
+**(a) Learned**
+
+- ⭐ **A reorder must never rewrite the config.** The obvious implementation —
+  permute `yearPriorities[slot]` and save — has to enumerate every field, and a
+  field it forgets silently re-points a priority at a *different* identity's
+  baked default. That is not theoretical here: the live overrides are **partial**
+  (Scenario 2 sets `metric` and `share` on two priorities and neither `factor`
+  nor `title`), and `yearPriorities[slot]` is stored as an **object keyed by
+  index string**, not an array. The order ships instead as a **permutation
+  stored beside the config** (`priorityOrder: [2,0,1]`), so not one stored value
+  moves and every allocation, cap and target comes back byte-identical.
+- ⭐ **One translation seam, not per-emitter translation.** Exactly four
+  functions index a priority list (`prioField`, `prioMetricSource`, `prioUnit`,
+  `setPrio`) plus `priorities()`. Everything above them speaks DISPLAY index and
+  everything below speaks SOURCE index. The failure mode that matters is an edit
+  landing silently on the wrong priority, and a per-call-site translation is a
+  call site somebody eventually misses.
+- ⚠️ **The label is positional, the key is not.** `label` becomes
+  `"Priority " + (i+1)`, `key`/`src` stay with the identity — so the P1/P2/P3
+  columns follow the eye while every per-college cap stays attached to its own
+  priority. `DEFAULT_PRIORITY_TITLES` had to move to the source index too, or an
+  untitled priority adopts the default title of the slot it was dragged into.
+- ⚠️ **The order is WINDOW-LEVEL, not per-year** — Sam's own ruling that the
+  years are deliberately identical (`cpl_memory` `funding-years-are-mirrored-two-year-project`)
+  decides it, and a per-year order would both make P1/P2/P3 mean different
+  things in different years and cost him the second drag this exists to save.
+- ⭐ **MY COLLEGE JOINED THE MONEY TO THE ADVICE BY POSITION, and its own guard
+  could not see the reorder.** `prioritiesAlign()` gates on COUNT equality —
+  correct while both sides walked one ordered set, useless once one of them is
+  reordered, because three still equals three. The join is now by identity
+  (`_prios().src` ↔ `collectPrograms().key`). **And the identity was being
+  dropped**: `buildBriefing()` re-maps each priority into a fresh object and did
+  not carry `key`, so the first version of the identity join resolved to nothing
+  and the strategies quietly left the funding box. Caught by the existing Part-P
+  assertions in `tests/college_briefing.test.js`, which is exactly what they are
+  for.
+- ⭐ **Pushed back on "copy on front-load".** A copy fired by that toggle
+  overwrites whatever Year 2 holds, with no undo, as a side effect of a control
+  about *cash timing* — and the same click is a no-op for Scenario 1 (years
+  byte-identical) and a silent policy edit for Scenario 2 (they differ). Worse,
+  front-load is the case where it matters **least**: it already makes Year 2 pure
+  carryover, so the Year-2 metrics are never scored. Shipped the non-destructive
+  form instead — a **mirror** that resolves later years from Year 1 while it is
+  on, plus an explicit **Copy Year 1 → Year 2** that asks first. Default OFF, so
+  shipping changes nothing until a curator asks for it.
+- ⚠️ **A mirrored year must SAY it is mirrored**, or the Year-2 view reads as a
+  Year-2 decision that happens to match and an edit there silently lands on both.
+
+**(b) State.** All three live in `cpl_funding.js` + `college_briefing.js`;
+`tests/cpl_funding_reorder.test.js` (69 assertions) covers the seam, the
+malformed-order fallbacks, both affordances, public mode, the rename, the
+mirror and the My College join. `cpl_funding.test.js` and the ten other funding
+suites unchanged; `college_briefing.test.js` 236/236.
+
+**(c) Roadmap.** The order is stored per project+scenario like every other
+override, so a new scenario clones it. If the priority list ever stops being
+three, `isPermutation()` drops a stale order back to the natural one rather than
+dropping a priority off the page.
+
+**(d) Next.** Sam drags them in a browser and sets the new shares + funding
+factors; the recalculation is live (target = pot ÷ factor × base rate) and was
+asserted rather than assumed.
+
+⚠️ **The audit flagged this doc at 1.5× its budget (179 KB / 120 KB) and this
+checkpoint acted on it**: 2026-06-11 → 2026-07-31 moved verbatim to
+[`cpl_funding_lessons_archive.md`](cpl_funding_lessons_archive.md), leaving
+52 KB live. The rule that produced the flag is the one worth keeping — a
+checkpoint that only ever appends eventually makes the doc unreadable to the
+session that needs it.
+
+---
+
+<!-- moved verbatim from docs/cpl_funding_lessons.md at the 2026-09-01 Rule 9 checkpoint (oversized_doc compaction) -->
+
+## 2026-08-20 — SkyGlass (Session 176): splitting `cpl_funding.test.js`, and the leak that was never the test's to fix
+
+**(a) What happened.** SkySort's handoff left one item explicitly for a
+successor's judgment: the per-child heap cap had been raised 8,192 → 12,288 MB
+to get PR #1268 green, and the note said plainly that the cap buys headroom and
+does not fix the file — 2,955 lines, 61 jsdom windows, one process. It also
+recorded a suspicion: *the windows are never reclaimed; `window.close()` does not
+release them, which is its own finding.*
+
+**The suspicion was half right, and the wrong half is the one that matters.**
+Measured this run:
+
+| | |
+|---|---|
+| 15 windows **constructed, not booted** | 57 MB **total** — collected normally |
+| 15 windows **booted** | 705 MB — ~44 MB each, never released |
+| the same 20 windows with `window.close()` | identical curve to one decimal place |
+
+So jsdom is not the leak and the windows are not "unreclaimable" — *rendering* is
+what leaves 44 MB behind, and nothing the test does can free it. Heap snapshots
+name the retainers: while the file's top-level frame is running every window is
+rooted from **`(Stack roots)`**, the frame's own live registers; wrap each block
+in an IIFE and that root disappears while the DOM stays rooted from
+**`(Micro tasks)`** — a promise reaction holding `boot()`'s `onDOMContentLoad`
+closure, on a queue a long synchronous script never drains. Remove one, the other
+holds.
+
+⭐ **The process boundary is the only allocator.** The one event that reclaims a
+booted window is the process exiting, which `tests/run.js` already gives every
+file. Peak memory is therefore a property of the **largest file**, and the only
+lever is how many windows that file builds. That is the whole argument for the
+split — and the reason no amount of in-file tidying was ever going to work,
+including the close-stale-windows attempt #1268 correctly reverted.
+
+⚠️ **A loop-shaped probe cannot reproduce a block-shaped file.** Booting in a
+`for` loop and measuring afterwards shows the memory coming back, because the
+frame returned. The real file is sixty *sibling blocks* in one still-running
+frame. Reproduce the shape, not the operation, or you will conclude there is no
+leak.
+
+**(b) State.** `tests/cpl_funding.test.js` is gone, replaced by nine suites —
+`shell` (static invariants, no jsdom, ~1 s), `render`, `rollup`, `equity`,
+`scenarios`, `earning`, `rate`, `rural`, `pool` — over a shared
+`tests/lib/cpl_funding_harness.js` (the same `freshDom`/`boot`/`click`/`commit`/
+`scenSlot`/`footText`/`greenSlices`/`pieSlices`, plus `check`/`finish`). The
+assertion bodies were moved verbatim by line range, not retyped.
+
+| | before | after |
+|---|---|---|
+| assertions | 575 | **575** (49+123+39+103+72+41+37+56+55) |
+| peak RSS | 8,642 MB | **2,393 MB** (the `render` suite) |
+| wall clock | 462 s | 333 s sequential — and they now parallelise |
+
+**(c) Roadmap.** The budget is written where the next person will hit it (the
+harness header, `tests/run.js`, and the KB note): **~44 MB per booted window over
+a ~40 MB floor; past ~15 windows in one file, start a new suite.** The cap stays
+at 12,288 MB as headroom for everything else, not as this file's life support.
+
+**(d) Next.** Nothing pending on this thread. If a funding suite starts creeping
+past ~15 windows, split it rather than trimming inside it.
+
+Durable:
+[`methodology-a-test-file-is-a-memory-budget`](kb-notes/methodology-a-test-file-is-a-memory-budget.md).
+
+---
+
+## 2026-08-21 — SkyGlass cont.: the sanity check becomes an explainer
+
+**(a) What Sam asked.** *"Have a look at the CPL implementation funding tab
+Calculation sanity check and make sure it reflects the latest changes I made…
+revise the language to be non-techie and as simple as possible… I'm getting ready
+to shop this to my CO colleagues and I want the sanity check to guide folks
+through the basics of the model. Change the Calculation sanity check label to
+'How this funding model works'."*
+
+⭐ **The rename was the whole brief in miniature.** "Calculation sanity check" is
+an *engineering* artifact — it existed to prove the tab's arithmetic, and it was
+written in the model's own vocabulary (`netCollege`, `sizePct`, `prioTarget`,
+price factors, a live-config calculator with policy dials). A CO colleague opening
+it does not want to verify the engine; they want to understand the policy. Same
+arithmetic, different reader, so it is a different document — not a copy-edit of
+the old one.
+
+**(b) The config had moved, and reading it was the first step.** The live shared
+scenario had changed since the artifact was last published on 2026-08-04, and
+none of it was guessable:
+
+| | 2026-08-04 artifact | live on 2026-08-21 |
+|---|---|---|
+| shares | .50 / .30 / .20 | **.34 / .33 / .33** |
+| funding factors | ½ / 1 / 2 | **1.0 / 1.0 / 1.0** |
+| priority order | source order | **`[2,0,1]` — Sam dragged Access to first** |
+| metrics | headcount-era wording | **all three in CPL FTES** |
+| deadline | 2026-09-01 | **2026-11-01** |
+| Year-2 mirror | did not exist | **on** |
+
+⭐ **Sam had used the reorder** (SkySort's #1268) — `priorityOrder: [2,0,1]` is
+sitting in the saved config. That is the second time this week a question was
+answered by *reading the table* rather than asking (the Admin tab's `cobi_nav`
+was the first).
+
+**(c) Every number is generated, never retyped.** The page's figures come from
+`cpl_funding.js`'s own engine, driven through `tests/lib/cpl_funding_harness.js`
+with the live config injected via `_setConfig` — pool waterfall, all 115 offers,
+the floor count, the worked example. `prototype/build_funding_model_explainer.js`
+regenerates the embedded block, so refreshing after a dial moves is one command
+rather than a re-derivation. ⚠️ **It is a SNAPSHOT and that is deliberate** — a
+colleague opening a link from an email should not see a page mid-edit — so the
+generator's docstring is where the refresh procedure lives.
+
+**(d) One honest number the old page did not surface.** The $150,000 minimum is
+funded from inside the same pot, so a college above the minimum is effectively
+funded at **~$5,060 per FTES rather than the full $5,649.63**, while a small
+college lifted to the minimum reaches its target on far less (Lassen: ~$23,900
+per FTES). That is the floor working as designed, but "everyone is paid the state
+rate" would have been false, so the page says it plainly.
+
+**(e) Verified, not claimed.** All **26 painted contrast pairs pass AA** (computed
+with `prototype/check_contrast.py`'s own math); `prototype/check_funding_explainer.js`
+runs a real Chromium over **nine widths** plus structure and keyboard checks —
+**36 checks, all green**. ⚠️ **Two of those checks were wrong before the page
+was**: the reduced-motion probe `return`ed on the first *cross-origin* stylesheet
+(Google Fonts) and so never looked at the page's own sheet, and the skip-link tab
+test ran with the search box still focused from an earlier step. Both are the
+Sky175 lesson repeating — suspect a new check when it goes red.
+
+**(f) Sam's copy note.** *"Use American English (e.g., check rather than
+cheque)."* Swept the page and this run's new files; `cheque`, `color` and two
+`towards` were the whole list. Left the two pre-existing `modeling`s in
+`cpl_funding.js` alone rather than churn code this run did not touch.
+
+**(g) Sam's second copy note — and the trap in it.** *"Revise 'the middle
+college's offer for the two years' to 'average funding for two years' and add a
+detail on the min and max funding."* ⚠️ **The tile was showing the MEDIAN
+($167,171); the average is $210,785.** Relabeling it without changing the number
+would have stated a false figure on the page he is about to send to colleagues.
+Shipped as: the tile now carries the true **average**, and a three-up strip below
+it gives **lowest $150,000** (the guaranteed minimum, where 50 of 115 land),
+**typical $167,171** (the median, kept because it is the more honest answer to
+"what would my college get?") and **highest $522,239** (Mt San Antonio). A line
+underneath says why they differ — a handful of very large colleges pull the
+average above what most colleges see. Both figures are emitted by the generator,
+so neither can drift.
+
+**(h) Next.** Sam reads it end to end before sending it out; re-run the generator
+and re-publish whenever the shares, factors or order change.
+
+
+---
+
+## 2026-08-22 — SkyPlain (Session 182): the explainer stopped arguing against itself
+
+Five rounds on `prototype/funding_model_explainer.html` with Sam reading it as its
+audience would — CO colleagues and possibly CA Finance staff. **PRs #1285 · #1286 ·
+#1287 · #1288 · #1289**, each republished to the same artifact URL
+(`SANITY_URL` in `cpl_funding.js`), plus a COBI-wide layout rule at the end.
+
+### (a) The comment loop works, and it is not a live channel
+
+Sam copied the artifact and left comments on the copy
+(`b1588987-…`), then asked whether they had arrived. They had — `Artifact`
+`action:"comments"` returns them with thread ids, and `reply`/`resolve` post back as
+*"Claude · via the user"*. ⚠️ **But there is no live subscription from a remote
+session**: `--watch-artifact` does not wake this session, so comments arrive only when
+someone asks for them. Say so rather than implying a channel. ⚠️ **The copy and the
+canonical artifact drift immediately** — every fix went to the original (the one the
+tab links to), so the copy Sam was commenting on fell five versions behind within the
+hour. Offer to refresh it or move the review to the canonical URL.
+
+### (b) The tone was arguing the opposite of the case
+
+Sam: *"the tone of this is written such that a CEO at a college might question why so
+much funding is being withheld by the CO"*, naming **"What is set aside before
+anything reaches a college"** and **"Left for institutions"**. Both were mine. The
+frame ran the whole page — *holds back*, *set aside*, *held back or set aside*, and a
+crimson ▼ on every non-college line.
+
+⭐ **The fix was not softer words, it was naming the BENEFICIARY of each amount.**
+"Held by the Chancellor's Office" → "statewide CPL projects and technology, and two
+Chancellor's Office posts — the work all 115 colleges draw on". Same dollars, same
+arithmetic, opposite reading. The heading became **"Where the appropriation goes"**.
+
+⭐ **Sam's second instruction was the more useful half:** *"Rather than refer to this
+funding not being a 'check' make a positive statement that the funding is based on
+real-time CPL outcomes."* *"That figure is a ceiling, not a check… Show none of it,
+earn none of it"* became *"What a college receives is driven by its own CPL results,
+as they happen."* **Nothing was hidden by saying it warmly** — the information that
+sentence carried still lands in the qualifying step ("earns nothing against it") and
+the earning step ("half its target … half that pot"). A negative framing is rarely
+load-bearing; check where the fact ALSO appears before assuming it is.
+
+⚠️ **One buried reassurance was worth more than the warning it sat behind.** The
+qualifying caveat read *"it earns nothing against it, and what it would have earned is
+held in reserve"*. Reversed, that is: **a college's allocation is not redistributed
+while it works toward the baseline** — a genuinely reassuring, already-true fact that
+a CEO would want, hidden behind the penalty clause.
+
+### (c) A waterfall argues that spending is a loss
+
+Recoloring was not enough. Sam: *"The crimson values still scream negative when they
+are actually doing very positive things. All this funding is meant to be expended
+(which is a negative), but is to produce positive outcomes."*
+
+⭐ **The instrument was wrong, not the palette.** A waterfall's job is reconciling an
+account, so every non-terminal line is a deduction and reads as a loss. This page's job
+is saying where $35M goes. Retiring **Step one** entirely removed the last crimson from
+the page — `.flow-row.out .amt` and `.bar i.out` were its only consumers. The section's
+content became boxes in the intro plus one line of prose; nothing was lost.
+
+⚠️ **Deleting the section nearly deleted a figure.** The `$800,000` CO staff line
+existed ONLY in the waterfall, because an earlier round had combined staff + projects
+into one box at Sam's request. Splitting it back out was not in the ask and was
+necessary. **When you retire a surface, diff what it was the sole display of.**
+
+### (d) Grouping is an argument too
+
+Sam: *"use the $24,240,308 box to show $25,240,308 and note that $1M is dedicated to
+noncredit. This will show that we are allocating funding for outcomes for the whole
+effort."* ⭐ **Showing the noncredit $1M as its own box read as money being taken out;
+folded into one institutions figure it reads as the whole effort being funded.** Same
+two numbers.
+
+⚠️ **But "also refer to the 4 noncredit campuses" cannot be applied blanket.** They are
+NOT in the credit-FTES split — they have no credit enrollment to be measured on. Four
+of the page's `115` references (the FTES sum, the table count, its live status text,
+the footer roster) are genuinely credit-only and stay. What the instruction correctly
+demanded was the **allocation** framing, plus a line in the "Every college" table
+saying where the noncredit campuses are rather than leaving four institutions silently
+absent from a list called *Every college*.
+
+### (e) Arithmetic must close, or a Finance reader stops reading
+
+Every box round, the boxes had to SUM. `$35,000,000 − $9,759,692 ≠ $24,240,308` because
+the noncredit $1M also comes out — so the first box round added a third box Sam had not
+asked for. Made structural rather than remembered: **the college/institution figure is
+DEFINED as the appropriation minus everything else** (`hero = one_time − admin −
+scaling − feeder`), so no two boxes can drift apart on a rebuild.
+
+### (f) The measure rule, and it is a habit not a one-off
+
+Sam: *"this is a consistent formatting pattern you use — where you make text widths
+short for readability but it looks awkward when set against the full width items. I
+prefer if you either extend text widths the full extent OR use two columns."* Then:
+*"I would like the full width format rule on throughout COBI."*
+
+⭐ **Shipped as a TOKEN, not 39 hardcoded values** — `--cpl-measure: none` on `:root` in
+both mirrored HTMLs, every site `max-width:var(--cpl-measure,none)`. One lever restores
+a measure everywhere, or moves to columns later.
+⚠️ **The `,none` fallback is load-bearing**: most of these rules ship from a tab's own
+JS onto surfaces that never declare the token (`cpl_funding_public.html` is exactly
+that), and without the fallback the declaration is invalid — right by accident today,
+wrong the day the token becomes a `ch` value again.
+⚠️ **THE THRESHOLD IS THE WHOLE POINT.** 60 of the 60 `ch` caps in COBI split cleanly:
+34 at 60–82ch are reading measures; 26 at 9–46ch are LAYOUT — cell truncation, a
+raw-value column, a monospace strip, a badge, a deliberately short hero lede. A blanket
+sweep would have widened all 60 and broken layouts this change is not about.
+⚠️ **A px cap is the same defect in different units** — four tab intro paragraphs at
+880px/760px (`raci`, `tmc_builder`, `team_phrases`, four inline `<p>` in the HTMLs) were
+invisible to a `ch` grep.
+⭐ **Two columns was offered and declined with a reason:** at full width most blocks on
+these pages run one to three lines, so columns would produce one- and two-line stacks
+and force the eye down and back for nothing. Columns pay off over long continuous runs
+of text, which COBI does not have.
+
+### (g) Next
+
+Sam reads the explainer end to end in a browser and looks at the full-width rule across
+the tabs — no session can, the sandbox is egress-blocked from the Pages host. Then:
+re-run `prototype/build_funding_model_explainer.js` and re-publish whenever the shares,
+factors or order change; and decide whether the Year-2 mirror should be on for
+Scenario 2.
+
+---
+
+## 2026-08-22 (later) — SkyBound: a maximum allocation, and what it actually buys
+
+Sam, four items: move the explainer link to the title row; add a **Max Funding**
+factor beside the $150K minimum, editable, set to **$400,000**; recalculate; and
+*"push back and simpler recommendations welcome."* (A fifth item — Title 5
+apportionment for CPL units — was explicitly thinking-only.)
+
+### The measurement came first, and it changed what there was to say
+
+Before touching the solver, the whole design space got measured over the live
+roster. That took one probe script and it is the most useful thing in this
+section:
+
+| Setting | Max | Min | Ratio | At min | At max |
+|---|---|---|---|---|---|
+| floor $150K, no ceiling (before) | $522,239 | $150,000 | 3.48x | 50 | — |
+| **floor $150K, ceiling $400K (shipped)** | **$400,000** | **$150,000** | **2.67x** | **45** | **6** |
+| floor $150K, ceiling $300K | $300,000 | $150,000 | 2.00x | 42 | 26 |
+| floor $150K, ceiling $250K | $250,000 | $150,000 | 1.67x | 30 | 56 |
+| **floor $200K, no ceiling** | **$375,285** | **$200,000** | **1.88x** | **93** | — |
+| floor $200K, ceiling $400K | $375,285 | $200,000 | 1.88x | 93 | 0 |
+| floor $250K | — | — | — | *unaffordable* | — |
+
+⭐ **A $400,000 ceiling is close to a no-op for equity.** It holds six colleges
+and moves **$262,241 — 1.1% of the pool**. Every dollar of it lands on the
+colleges ranked ~7–70; **the 45 colleges at the minimum gain nothing**, because
+a college pinned to the floor cannot be lifted by a ceiling. Biggest gainer:
+Santa Monica, **+$7,079** — the seventh-largest college in the state. Median
+gain among the 64 that gain: **$4,116**.
+
+⭐ **The floor is the equity lever, not the ceiling.** Raising the minimum to
+$200,000 reaches 1.88x on its own, and at that floor a $400,000 ceiling never
+binds — one dial instead of two. The floor's own limit is **~$210,785** (the
+average award); above that every college is at the average and the model has
+stopped being proportional at all. Recommendation put to Sam in the PR body;
+the ceiling shipped as asked either way, because it is a live-editable dial and
+the number is his to move.
+
+### The solver had to change shape (the durable half)
+
+Full write-up:
+[`methodology-a-second-bound-breaks-a-pin-as-you-go-solver`](kb-notes/methodology-a-second-bound-breaks-a-pin-as-you-go-solver.md).
+In brief: a floor is **monotone** (pinning pushes everyone else DOWN, so a pin
+is safe forever); a ceiling runs the **other way** (pinning RELEASES money and
+pushes everyone else UP), and that can lift a college back off the floor.
+Measured: **5 of the 50 floored colleges come off it** at $400K. A second `if`
+in the old pin loop would have stranded them at $150,000 with the pool still
+balancing and every row still inside both bounds — invisible.
+
+`allocModel()` now bisects `lambda` in `W(c) = clamp(lambda*size, floor, cap)`,
+then computes the free rows with the waterfall's own arithmetic — so with the
+ceiling **off** it reproduces the old loop **bit-for-bit** (`0.000e+0`), which
+is what `C2` asserts against a transcription of the pre-change algorithm.
+
+### ⚠️ A bound on the money is a bound on the bar
+
+Capping the allocation without capping the target asks the capped college for
+~40% more CPL per dollar than anybody else, and has the state asking for more
+prior learning than it funds — the *"reads as withholding"* failure Sam ruled
+out three days earlier on this very page. `capScale()` scales a capped college's
+targets down with its money.
+
+⚠️ **Scale to the ceiling ÷ `plainRatio`, not to the ceiling.** Every unbound
+college already pays a **~9% rate discount** to fund the floor top-ups
+(`plainRatio` 0.913 on the FTES basis). Scaling to the bare ceiling would hand
+the six largest colleges the only unsubsidized rate in the state. The invariant
+the repo already had a test for is the right one: **cap ÷ target is ONE rate for
+every college above the minimum** — now `1.000000000000` on both bases, capped
+colleges included rather than excused.
+
+⚠️ **The clamp must reach BOTH target paths.** A CPL-FTES priority derives its
+target from `prioEntitlement`; a student-unit priority derives it from
+`size x target_rate` and never touches that function. A clamp in one place
+gives the same college two different answers depending on a **metric label** —
+the exact trap `metric-label-was-a-policy-switch` already records against this
+tab.
+
+### Smaller things worth keeping
+
+- ⚠️ **One new check could not fail.** "No rural row exceeds the ceiling" is
+  vacuous at $400K — no rural college comes within $200K of it — and it passed
+  against a deliberately broken `capFor()`. It now runs at a ceiling that binds
+  ($160K). Three of the other four breakages fired first time; this is the
+  fourth consecutive session to find a check that cannot fail.
+- ⚠️ **Two amount inputs in one box need distinct accessible names.** Both
+  inherited `aria-label="Funding amount"`, so a screen-reader user could not
+  tell the minimum from the maximum. `valueEd()` takes an `aria` override now.
+- ⚠️ **The explainer's worked example had to move.** It was "the largest
+  college, because its offer is the one not bent by the floor" — true while the
+  floor was the only bound. The largest college is now pinned to a round number
+  its own share cannot explain, so the walk-through would have shown a
+  subtraction the reader could not reproduce. It picks the largest **unbound**
+  college now (Santa Monica).
+- The explainer's typed `$5,060` effective rate is now **computed** from the
+  model. With the ceiling on it rises to **$5,159**, because the released money
+  goes back to exactly the colleges paying the floor discount — the clearest
+  one-line statement of what the ceiling does for everyone else.
+- Six colleges tie at the ceiling, so "sort by offer" no longer orders the
+  table; the explainer falls back to size, and the COBI sort test now asserts
+  the first row carries the **maximum total** rather than naming a college.
+- My College dropped *"a cap, not a cheque"* — Sam retired that framing on
+  2026-08-22, and "cap" is now literally a cap in this model. ⚠️ The replacement
+  comment quoted the retired phrase and broke the test that greps the source:
+  **a marker is load-bearing text, not prose.**
+
+### ⭐ The noncredit question, measured: noncredit is 111 institutions, not 4
+
+Sam's think-only follow-up: *"what about our other NCs… Can you see how it would
+look if we gave each a floor of $25K and a ceiling of $100k based on their ftes?"*
+
+The first number reframes the question. **108 of the 115 credit colleges already
+carry noncredit FTES** (67,822.6 between them) alongside the 3 standalone NC
+institutions (14,165.8 — Mt. SAC NC deduped, Calbright on its $1,000 placeholder).
+So *"our other NCs"* is **111 institutions carrying 81,988 noncredit FTES**, not a
+handful. Noncredit is nearly the whole system wearing a different hat.
+
+⚠️ **At that roster the proposed bounds are arithmetically infeasible inside the
+carve-out.** 111 × $25,000 = **$2,775,000 — 2.8× the $1,000,000 feeder carve-out**,
+and still short even if the retired rural $1M is added on top. At exactly
+$2,775,000 every institution sits on the floor and the ceiling never binds, so the
+FTES basis does nothing at all. The lane only starts to differentiate near $3.5M.
+
+⭐ **So the lever is the ROSTER, not the bounds** — and the distribution is kind:
+
+| NC FTES ≥ | institutions | share of the lane | $25K floors cost | inside the $1M carve-out? |
+|---|---|---|---|---|
+| 250 | 47 | 92% | $1,175,000 | no, just over |
+| **500** | **33** | **87%** | **$825,000** | **yes** |
+| 1,000 | 17 | 72% | $425,000 | yes, but 17 × $100K can't spend $2M |
+
+**A ≥500 NC FTES roster is the one that fits what Sam asked for with no new money**:
+33 institutions, 27 of them at the $25K floor, top allocation **$89,586** (Mt. SAC),
+the $100K ceiling never binding — inside the existing $1,000,000.
+
+⚠️ **The Mt. SAC double-count is load-bearing the moment this ships.** Its credit
+row and the feeder roster both carry 10,829.3 noncredit FTES; undeduped it earns in
+the NC lane twice. Harmless while the carve-out is a flat 4-way split — a real
+defect on the day NC money follows the number.
+
+⚠️ **And this is only the SIZE basis.** Sam's other half — *"count them only if they
+originated from the NC landing pages"* — is a metric-scoping rule on what is EARNED,
+which the feed does not distinguish today. Sizing the pool is the easy half.
+
+⚠️ **Whatever the shape, the college row keeps CR and NC money visibly separate**
+(Sam: *"I want it on the surface the amount admin should give to NC so it doesn't get
+lumped into the whole"*). That is a display requirement on the credit tab, not a
+property of the allocation.
+
+### ⚠️ Two existing assertions were pinned to the wrong wording
+
+Changing the two cards turned `cpl_funding_render.test.js` and
+`cpl_funding_scenarios.test.js` red. Neither was a regression: one required the
+literal phrase *"noncredit feeder support"* and the other *"noncredit campuses"* —
+**both of which the sentences kept saying while they were wrong**. The phrase
+survived the claim being false, which is the definition of an assertion that has
+stopped guarding anything.
+
+They now assert the **substance**: the two lane figures appear, the lane is sized
+by `ncModel().rows.length` rather than the standalone roster, and the count line
+reports noncredit FTES rather than a headcount. Same failure shape this repo has
+recorded before — *an assertion pinned to a value that can leave the data stops
+being a guard the moment it does*.
+
+⚠️ **This is also why the full suite is not optional.** Both files sit outside any
+subset a session would choose while working on the memo, and the run that caught
+them exited **1** — the previous three runs in this session were all contaminated
+by edits landing underneath them, and every one of them read as green.
+
+### Where this leaves it
+
+The ceiling is built, tested (51 checks), editable, and reversible with one
+dial. **Next: Sam picks the number** — $400,000 as shipped, or the floor raise
+that does more with one lever. Either way the explainer artifact must be
+re-run and re-published to the same URL; it is a snapshot.
+
+---
+
+## 2026-08-22 (later still) — the rural carve-out retires, and the floor takes its place
+
+Sam, immediately after the ceiling shipped: *"since we have now both a floor and
+ceiling to the funding, it seems we don't need the rural carve out since all are
+benefitting from the floor… fold the funds into the total available. Seems like
+it would be near zero impact and would eliminate a complicating factor."*
+
+### The claim was two-thirds true, and the third that wasn't is the whole lesson
+
+| | today | without the carve-out | delta |
+|---|---|---|---|
+| 10 rural colleges at the minimum | $150,000 | $150,000 | **$0** |
+| Shasta | $220,656 | $150,000 | **−$70,656** |
+| Redwoods | $162,193 | $150,000 | −$12,193 |
+| Imperial | $155,655 | $150,000 | −$5,655 |
+
+⭐ **Ten of the 13 moved exactly $0** — the floor genuinely was doing that work,
+exactly as Sam said. **Three sat ABOVE the floor**, where the $76,923 was riding
+on top as a bonus rather than filling a gap.
+
+⚠️ **And the released $88,594 travels the wrong way.** It re-splits
+proportionally, so the biggest gainers were **Santa Monica +$2,375, East LA
++$2,328, Riverside +$2,277** — a transfer from three rural colleges to the
+largest non-rural ones. "Near zero impact" was true in aggregate and regressive
+in direction. That is why it shipped **paired with the floor raise to $175,000**,
+under which the 13 receive **$2,275,000 — $236,406 more** than the carve-out
+ever paid.
+
+### ⭐ The redundant-looking mechanism was carrying a SECOND job
+
+The allocation table could not show this and it is the real policy consequence:
+the rural allowance was **the only unconditional money in the college pool**.
+The floor caps what a college can *earn*; it does not guarantee what it
+*receives*. A floored college that posts nothing in MAP still earns ~$0. So all
+13 went from **$76,923 guaranteed → $0 guaranteed**, and nothing in the pool is
+unconditional now.
+
+It matters *increasingly*, not today: unmeasurable priorities currently pay
+provisional advances, so everyone looks funded. Once the feed measures
+everything, the guarantee would have been the only thing left that wasn't earned.
+Durable: [`a-mechanism-that-looks-redundant-may-be-carrying-a-second-job`](kb-notes/methodology-a-mechanism-that-looks-redundant-may-be-carrying-a-second-job.md).
+
+### ⚠️ What the $175K floor costs, measured and on the record
+
+| | floor $150K | **$175K (shipped)** | $200K |
+|---|---|---|---|
+| colleges at the minimum | 49 | **69 of 115** | 93 |
+| the median college gets | $165,770 | **$175,000 — the minimum itself** | $200,000 |
+| unbound college's earn rate | 88.1% of base | **78.2%** | 61.8% |
+| the $400K ceiling binds | 6, $262,241 | **2, $82,815 (0.34%)** | 0 |
+
+Two things nobody asked for and both matter. **The median college is now exactly
+on the floor** — half the system is funded by the minimum rather than by its
+size. And **the floor is paid for by the colleges above it**, so their effective
+rate falls to **$4,419 per CPL FTES against a $5,649.63 base**. A floor raise is
+not free; it is a transfer priced in the earn rate of the middle.
+
+That is the strongest argument for the alternative Sam floated afterwards — keep
+the floor at $150K and send the freed $1M to noncredit instead. **Both are the
+same structural change with two different dial values** (`floor_window` and
+`feeder_carveout`), which is why the code shipped either way.
+
+### Smaller things worth keeping
+
+- ⚠️ **Two more assertions could not fail.** The ceiling's rural bound was
+  vacuous at $400K (no rural college comes near it) — it passed against a
+  deliberately broken `capFor()`. And "colleges come off the floor" stopped
+  being observable once the floor rose, because the ceiling now binds only two
+  colleges. Both now run where they bind. **That is four vacuous checks found in
+  two sessions on this one tab**; the pattern is always a threshold moving out
+  from under an assertion that named a specific number.
+- ⚠️ **The explainer's worked-example cards were hand-typed** and two of their
+  four figures were already stale. They are generated from the payload now — in
+  a file whose own docstring says every figure comes from the engine.
+- The rural FLAG survives as context in the data (federal categorization, a true
+  fact Sam's team maintains); the glyph, the section, the card, the CSV column
+  and the curator control are gone.
+
+### ⚠️ Two defects the removal itself left behind, found at the checkpoint
+
+**A removal leaves a HUSK, and a husk can render.** Deleting
+`netCollegeWithRural()` left `fmtMoney(netCollege() - netCollege())` standing in
+**two audience-facing briefs** — the copyable text and the print HTML — so both
+told colleges the pool included *"the **$0** Rural College allowance."* It was
+syntactically fine, arithmetically valid, and invisible to every test, because
+the function it had referenced was already gone and nothing asserted on the
+sentence. **A self-subtraction is the signature of exactly this mistake**, so
+that is now the check (`cpl_funding_rural.test.js`, 33 → 35, both new checks
+verified to fail against the reintroduced defect).
+
+**A page that fills its figures with JS still ships hand-typed defaults.** The
+explainer writes seven figures from its payload at render time, and the static
+text inside those elements still said **$150,000** in six places and **45
+colleges** in one. A browser never shows them; view-source, a saved copy or a
+reader with scripts off does. This is the *second* instance in one session on
+the same file (the worked-example cards were the first), in a file whose own
+docstring says every figure comes from the engine. Fixed, and guarded twice:
+`lintStaticDefaults()` in the builder warns at build time, and
+`tests/funding_explainer_defaults.test.js` (11 checks) fails in CI if the page
+disagrees with its payload **or** if the payload disagrees with the repo's bounds
+— because a default checked against a stale snapshot agrees for the wrong reason.
+
+⭐ The generalization worth keeping: **when the same figure has two sources —
+one generated, one typed — the typed one is a source of truth that nothing
+exercises.** Generate it or lint it; there is no third option that survives a
+dial change.
+
+### Where this leaves it
+
+Two dials, both live and editable: **minimum $175,000**, **maximum $400,000**.
+**Next: Sam picks the pair** — as shipped, or $150K + $1M to noncredit. The
+noncredit expansion is scoped but unbuilt; see the handoff.
+
+## 2026-08-23 — the noncredit lane becomes a real allocation
+
+Sam, after reading the measurement: *"Let's go with the NC>=500 with a $25k
+floor. We can pull out the Mt SAC NC dup… This would mean we could retire the NC
+section provided we could integrate the values on the college rows."* Then, on
+being offered a floor number: *"Maybe we should add a funding box to make the
+NC>=500 a variable."*
+
+### What shipped
+
+The noncredit lane was a flat FTES split of the $1,000,000 carve-out among four
+feeder campuses. It is now **the same bounded allocation the credit pool uses**,
+over every institution clearing an editable entry threshold — 33 of them at the
+shipped dials, **30 credit colleges running their own noncredit programs plus 3
+standalone institutions**.
+
+Three dials, all editable in the box beside the credit pair: `nc_threshold_ftes`
+(500), `nc_floor_window` ($25,000), `nc_cap_window` ($100,000). The awards are
+window totals, like the credit floor and ceiling; the two-batch-per-funding-year
+cadence survives because it is disbursement policy, not part of the retired
+mechanism.
+
+### ⭐ The seam a comment predicted, and why it was worth honoring
+
+`solveAlloc()` carried a comment from the ceiling work saying its bounds
+functions were *"the one seam a second pool would swap (a noncredit pool on
+noncredit FTES with its own floor and ceiling)"*. That turned out to be exactly
+right, so the noncredit lane calls the SAME solver — `solveBounded({rows, keyOf,
+sizeOf, net, floor, cap})` — rather than growing a second one that would drift.
+The credit lane is now a five-line caller. `cpl_funding_cap.test.js` still
+asserts the ceiling-off output matches a transcription of the original pin loop,
+which is what proves the generalization moved no dollar.
+
+### ⚠️ The dedup was right about the FTES and wrong about the institution
+
+Sam's *"pull out the Mt SAC NC dup"* is correct: Mt. SAC Noncredit's 10,829.3
+noncredit FTES is **also** on the Mt. San Antonio credit row, so an
+FTES-proportional lane would pay the same program twice. I deleted the row from
+the `feeders` roster — and a test went red on a completely different surface:
+
+> `FAIL  Q2: 118 recipients + 1 declined row`
+
+**ESS 25-82 paid Mt. SAC Noncredit its own $50,000 seed grant.** It is a real
+institution in a record of distributed awards, and deleting the row erased one.
+The duplicate was the *FTES*, never the *institution*. The fix moved the dedup
+from the data roster into the size basis: the row carries
+`nc_ftes_on_credit_row: "Mt San Antonio"`, its noncredit size is zeroed, and the
+table renders it with the reason — *"counted on the Mt San Antonio row"* — because
+a silently missing institution and a deliberately-zero one look identical.
+
+⭐ **A deduplication has a scope, and the scope is one measure — not the record.**
+The same row can be a duplicate in one lane and the only copy in another.
+
+### ⚠️ The CSV's total row had been one cell too wide for months
+
+Adding the noncredit columns to the export produced a field-count mismatch, and
+checking against `main` showed **the mismatch predated the change**: the SYSTEM
+row emitted three empties where the header has two, and so did every DISTRICT
+SUBTOTAL line. Every figure from that point right — the year columns, the window
+total, all five earned columns — sat under the wrong heading **in the one row a
+reader checks first**. Invisible in the browser; you have to open the file.
+
+The guard is a field-count check over every line against the header, in both the
+flat and district-grouped shapes, plus one that reads the SYSTEM total by
+**column name** and compares it to the pool. Both verified against the
+reintroduced defect. ⭐ It generalizes: any future column added to one line and
+not another fails here.
+
+### ⚠️ Where the growth incentive actually is
+
+Sam liked this lane because it *"gives the smaller NC programs an incentive to
+grow"*. Measured, that is true at the entry and absent in the middle: **27 of 33
+sit at the $25,000 floor — 68% of the pool — and growth does not start paying
+until 3,022 noncredit FTES**, which only six institutions clear. A college at 600
+FTES and one at 2,900 receive exactly the same $25,000.
+
+| floor | at the floor | growth starts paying at | floor share of pool |
+|---|---|---|---|
+| **$25,000** (shipped) | 27 of 33 | 3,022 FTES | 68% |
+| $20,000 | 23 of 33 | 1,762 FTES | 46% |
+| $15,000 | 17 of 33 | 1,017 FTES | 26% |
+
+The model now reports `breakEven` and the box prints it, because a lane that is
+mostly floor is mostly not an incentive and that should be visible on the dial
+rather than discovered later.
+
+### ⚠️ A dial can strand real money, so the box has to say so
+
+Narrowing the threshold to 3,000 FTES leaves 7 institutions, and 7 × $100,000
+cannot absorb $1,000,000: **$300,000 becomes unspendable**. The solver's existing
+degenerate branch surfaces it and the box warns on screen. This is the one way a
+curator moving a dial can silently strand money, so it is pinned by a test.
+
+### Where this leaves it
+
+Noncredit money now rides **beside** the credit total everywhere it appears — its
+own column on the tab, its own columns in the CSV, its own line on My College —
+never summed into it, which is Sam's *"neglected step child"* constraint made
+structural. The retired feeder section is a three-row block for the institutions
+with no credit row; they are listed rather than forced into the college table as
+three rows of dashes across every credit column, which would also have dragged
+them into the credit totals, the district rollup and the eligibility counts.
+
+**Next: Sam moves the dials.** The threshold, floor and ceiling are all live, and
+the box reports what each one did.
+
+## 2026-08-23 — Sam moved the dials, and every remaining defect fell out of it
+
+He set the credit floor to **$150,000** and the noncredit floor to **$50,000**
+"just to see how it would play out", and reported that *"the changes didn't
+propagate and recalculate"*. The tab had recalculated — the figures in his
+screenshot (49 topped up, 6 held, $275,852 released) are exactly what the engine
+computes at $150K. But the report was right anyway, because **three surfaces
+were lying, each in a different way**, and the dial change is what exposed them.
+
+### ⚠️ A floor the pool cannot honor reported itself as honored
+
+33 institutions × $50,000 is **$1,650,000** against a **$1,000,000** pool. The
+solver's degenerate branch splits the pool pro rata and marks every row
+`floored` — so `floorCount` counted all 33 and the box read **"33 at the
+minimum"** while every institution actually received **$30,303, 61% of the
+stated minimum**.
+
+⭐ **Silently paying less than the number printed on the dial is the worst state
+this model has**, and it was the only state with no warning: the ceiling's
+mirror case (a pool too small to spend) has had one since the ceiling shipped.
+`solveBounded()` now returns `floorInfeasible` + `floorDemanded`, and both boxes
+**replace** their floor note rather than appending to it — the count is not
+merely incomplete there, it is false. The noncredit box also drops "growth
+starts paying above N FTES", which describes a proportional mechanism that is
+not running when every row is pinned. Latent in the credit lane too: 115 × any
+floor above ~$210,785 trips it.
+
+### ⚠️ The explainer had not moved at all, and could not
+
+It was a Claude artifact, rebuilt by a Node script and republished by hand, on a
+host that blocks the outbound call it would need to read the config. Sam: *"Yes,
+move explainer to Pages"*. It is now `funding-model/index.html` served from the
+same Pages site, loading `cpl_funding.js`, calling `ensureLoaded()`, subscribing
+to `onModelChange()` and painting from the engine — the pattern My College
+already used.
+
+⭐ **Computing a figure correctly once is not the same as the figure being
+correct.** Both were true of the snapshot; only the second matters to a reader.
+Durable: [`a-snapshot-of-a-live-model-is-a-claim-that-decays`](kb-notes/methodology-a-snapshot-of-a-live-model-is-a-claim-that-decays.md).
+
+⚠️ **One payload builder, two callers.** `funding_model_payload.js` is shared
+with the Node snapshot script (kept only for a frozen emailable copy). Two
+builders would drift invisibly — this is the same file that shipped a hand-typed
+`$5,060` and "four noncredit campuses". The extraction was verified
+byte-identical.
+
+⚠️ **A painter written for a page that runs once will accumulate.** Sam caught
+the worked-example cards rendering **three times**: the live page repaints on
+every model change and three containers appended another copy each time. Every
+container the painter appends into is now emptied first — and the test that
+should have caught it had asserted on `#tbody`, **the one container whose own
+`draw()` clears it**. Asserting on the part that cannot fail is not a guard.
+
+### ⚠️ "held $X" on all 115 rows, months before anyone was late
+
+Sam: *"a little worried about the message we're sending with the Held label — not
+sure we need it."* The label existed for a good reason (it replaced a bare `$0
+earned`, which falsely said the college had posted no CPL — his own 2026-07-30
+ruling). What changed is that **every** college is gated until the participation
+deadline, so 115 rows of "held $132,000" read as the state withholding from the
+whole system when the requirement is not yet due.
+
+Now phase-dependent: before the deadline the row says **"opt in to start
+earning"** and names no figure; after it, the figure returns, because then it is
+true. A failed clock read defaults to the softer wording — a clock error must
+never accuse 115 colleges.
+
+### ⭐ The parity figure he asked for exposed a third defect
+
+Sam kept the carve-out at $1M — *"I can adjust it up for parity later, so glad to
+have that 7.1% number at the ready"* — and asked for it on the tab. Building it
+surfaced that the **"CCC total" card counted only the standalone roster**
+(24,995 FTES) as the whole of noncredit, missing **56,993 FTES** carried on 108
+college rows. That is the exact card a reader would use to judge whether $1M is
+a fair noncredit share.
+
+| | |
+|---|---|
+| noncredit share of teaching | **7.1%** (81,988 FTES against 1,069,182 credit) |
+| noncredit share of money | **4.0%** ($1,000,000 of $25,240,308) |
+| parity would be | **$1,797,660** — $797,660 above the carve-out |
+
+Also settled: the $1M carve-out is **not** redundant with the three NC dials.
+They share the money; it decides how much there is, and it is the boundary that
+keeps "$24,240,308 to colleges" a fixed number that ties to the amendment.
+
+### ⚠️ Two verification failures, and they cost a red main
+
+Recorded because they were expensive and repeated, not because they were novel.
+
+1. **Merged twice on the required check** while the non-required suite covering
+   the exact changed files was still running. The repo rule permits merging on
+   `unstable`; it assumes the pending check is not the one carrying your risk.
+2. **Verified locally with a subset I chose.** Both files that broke were outside
+   it — and one held a **duplicate** of an assertion I had already fixed in a
+   file I did run.
+3. **Reported a "full suite pass" that was SIGTERM.** `REAL_EXIT=143`, killed by
+   my own `pkill`; the "exit code 0" belonged to the wrapper. Same class as the
+   `; echo "EXIT=$?"` trap written into the handoff that morning.
+
+Durable: [`a-green-check-you-did-not-scope-is-not-evidence`](kb-notes/methodology-a-green-check-you-did-not-scope-is-not-evidence.md).
+
+### Where this leaves it
+
+Four PRs merged (#1302–#1305) plus the repaint/noncredit-section fix. The
+explainer is live at `/funding-model/` and explains the noncredit lane from the
+payload. **Open, both Sam's:** the noncredit floor (27 of 33 sit on $25,000;
+$20,000 halves the break-even to 1,762 FTES) and whether $1M moves toward the
+$1,797,660 parity figure.
+
+## 2026-08-23 (Session 186, SkySew) — the tab was migrated, the document it exports was not
+
+Sam: *"let's get the funding tab sewn up!"* Two items were listed as open, and
+**`cpl_memory`'s read step closed one of them before any code was read**: he had
+already ruled *keep the carve-out at $1M, raise toward parity later*
+(`sam-keep-nc-carveout-at-1m-parity-later`, verified). Reading the live config
+then closed it a second way — he had since set it to **$1,800,000**, essentially
+the $1,797,660 parity figure, and moved the credit floor to **$150,000**. So the
+tab was sitting in a configuration nobody had looked at.
+
+### ⭐ The retired mechanism survived in the export
+
+The noncredit lane stopped being a flat FTES split among the standalone campuses
+on 2026-08-23 and became the bounded allocation over 33 institutions. The tab was
+migrated. **`memoModel()` was not** — it still computed
+`feederBasis(f) / Σ feederBasis * carve`. At Sam's live dials the exported memo
+said:
+
+| institution | the memo | the model |
+|---|---|---|
+| Mt. SAC Noncredit | **$779,862** | **$0** |
+| SD Cont. Ed | $672,453 | $100,000 |
+| North Orange | $275,671 | $50,000 |
+| Calbright | $72,014 | $50,000 |
+| the 30 colleges | *absent* | the remaining $1.6M |
+
+Two independent defects. It paid the **entire** carve-out to four institutions,
+so 30 colleges' noncredit money was missing from the one document that tells a
+district what it is getting. And it paid **$779,862 to the deduped record** —
+Mt. SAC Noncredit's FTES is already counted on the Mt. San Antonio credit row,
+which is why `ncInstitutions()` zeroes it — re-introducing by re-derivation the
+exact double payment [`a-deduplication-has-a-scope`](kb-notes/methodology-a-deduplication-has-a-scope.md)
+was written to prevent.
+
+⭐ **The tie-out is what let it survive.** Four campuses absorbing the whole
+carve-out produced a table that added up, so the missing 30 colleges were
+invisible: a total that balances reads as a total that is right.
+
+⚠️ **The standing rule this repo already states for the credit lane — *never
+re-derive an allocation, call the model* — had never been written down for the
+noncredit lane**, and the surface where re-derivation is hardest to notice is the
+one nobody reads beside the screen. Fixed by sourcing `ncModel()`, and the
+district table gains **its own noncredit column** so it ties to the institution
+total without folding noncredit into credit (Sam's "neglected step child" rule).
+
+⚠️ **A district with no credit member printed `$0`.** Calbright's subtotal read
+"$0" beside its real $50,000 of noncredit support. Not zero — not applicable.
+
+### ⚠️ Two on-screen cards described a 33-institution lane by a 4-record roster
+
+The pool card said the carve-out went *"to the 4 NC campuses below"* and the
+table count line said *"plus 4 noncredit campuses (74,968 students)"*. Both used
+`feeders().length`. The pool card is the one a reader uses to judge whether the
+carve-out is proportionate — **the exact question Sam raised it to $1.8M to
+answer**. The 74,968 was also the wrong *quantity*: a headcount the lane does not
+allocate on, including the deduped campus's 35,363, so nearly half of it was an
+institution paid $0.
+
+### ⚠️ The opt-in prompt was bound to the size of the withheld figure
+
+Sam: *"Why don't Cosumnes and Grossmont and others have the opt in to begin
+earning note?"* The branch keyed on `held > 0.5`, so a college that is **gated
+but has earned nothing** rendered no prompt at all — and `yearEarnParts()` two
+functions below already named the case in a comment ("a gated college can also
+have earned_total == 0"). That is the one cohort the prompt exists for: a college
+showing nothing is exactly the one that has not started. Same silent-omission
+class as the bare "$0 earned" this wording replaced. Now driven by the **gate**;
+the dollar figure still appears only when there is one to hold, so nothing ever
+reads "held $0".
+
+⚠️ **This could not be reproduced offline** — the harness has no
+coordinator/participation feed, so the gate reads PENDING and no row is blocked.
+The assertion is on the function's contract instead. Worth naming: *the
+instrument that renders the page cannot always reach the state being reported.*
+
+### ⭐ A hand-maintained lint is the thing that goes stale
+
+Three of the explainer's four mentions of the carve-out repainted to $1.8M. The
+fourth — the every-college lead-in — was a bare `<b class="num">$1,000,000</b>`
+with **no id**, so nothing painted it and the existing defaults lint, a
+hand-maintained `BOUND` map, could not see it. **Three agreeing and one not is
+worse than four wrong**: the odd one reads as a considered exception. Fixed in
+both the live page and the frozen snapshot, and both now carry a *structural*
+check — a literal currency figure in the prose must carry an id — which needs no
+one to remember to extend a list.
+
+### Also shipped
+
+- **The priority columns carry their names** (`P1 Access`, centered) — Sam asked;
+  the ordinal alone made a reader hover to learn what the column was. ⚠️ The title
+  is optional by construction: `yearPriorities` is a **sparse overlay** and one
+  slot carries no title. A first test "proving" the fallback **failed, and the
+  code was right** — `prioTitle()` falls back to `DEFAULT_PRIORITY_TITLES`, so an
+  empty title is not reachable through config today. The test now asserts what is
+  actually true rather than staging a path it cannot reach.
+- **The noncredit calculation is in "How an allocation is computed"** — the
+  section a reader opens to check the arithmetic described only the credit pool.
+  Every figure from `ncModel()`; and when the minimum is infeasible it says so
+  **there too**, replacing (not annotating) the bounds and break-even sentences,
+  because at that point neither is true.
+
+### Where this leaves it
+
+⚠️ **At Sam's live dials the noncredit lane is *more* floor-bound than the
+settings it replaced**: **30 of 33** sit at the minimum (was 27) and growth does
+not start paying until **3,909 FTES** (was 3,022). Raising the floor to $50,000
+and the pool to $1.8M together moved the incentive further toward entry, which is
+the opposite of his stated reason for the lane. **That is the decision still
+open**, and it is his.
+
+⚠️ **`CLAUDE.md` §11 says "factors 1.0"; the live config carries `factor: 0.5` on
+all three priorities.** Corrected at this checkpoint.
+
+⚠️ **A `cpl_memory` row is stale**: `p3-portal-routing-is-standard-practice`
+(2026-08-11, Sam) says Priority 3 pays on portal/landing-page arrivals. The live
+config now measures P1 = *applied units by origin*, P2 = *eligible units*,
+P3 = *transcribed units*. Same author, later statement — flagged rather than
+silently superseded, per Rule 8.
+
+*Rotated verbatim from `cpl_funding_lessons.md` at the 2026-09-03 checkpoint (the two oldest sections, 2026-08-26 and 2026-08-27).*
+
+## 2026-08-26 (Session 197, SkyVerdict) — the noncredit lane earns, and two ways a value can lie
+
+Sam opened on the noncredit half of the model and ended up ruling on its shape.
+The engineering that came out of it is small; the findings are not.
+
+### ⭐ Sam's ruling: NC EARNS like credit
+
+Offered allocated-and-displayed, display-first, or earned-now, he took **earned**:
+the NC award becomes a **cap earned against three targets**, not a presentational
+split of an FTES clamp. His reason is the whole workstream in one line — a fixed
+handout is what makes noncredit the stepchild.
+
+His three metrics mirror the credit three with an origin filter:
+P1 Applied · P2 Eligible · P3 Transcribed, for students originating from NC.
+That ordering already matches the live display order (`priorityOrder [2,0,1]`).
+
+⭐ **He corrected my objection and was right.** I argued noncredit has no units,
+so the FTES conversion would not transfer. It does — the lane measures **credit**
+CPL FTES for NC-origin students. NC is a filter on the population, not a change
+of currency, so `unitsPerCplFtes` is unchanged and the units are already in the
+data we hold. Only the origin marker is missing.
+
+### ⭐ Route, don't split — and the reason is in the model already
+
+Sam raised double-dipping himself, and proposed either deducting NC FTES from the
+credit total or splitting each unit. The mechanics answer it:
+
+`prioEntitlement = sizePct × netCollege × share ÷ nYears` — **share splits the
+MONEY**. Each priority then reads its **own** `meas.src`. So eligible / applied /
+transcribed are three *milestones on one credit*, and **the model already counts
+the same FTES three times by design**. Within-lane repetition is the funnel, not
+a leak.
+
+Which makes the real rule narrow: same unit + different milestone → count it;
+same unit + **same** milestone + two lanes → a true duplicate. So **route by
+origin** rather than splitting — no ratio to defend, and no subtraction ever
+appears on a college's row. Deducting from the credit total would make a college's
+credit earning fall when it reports noncredit work, which is a reporting
+disincentive aimed at exactly the colleges you want doing it.
+
+⚠️ **The credit lane is already inviting noncredit in.** Year‑1 P3's own strategy
+list says *"Include AP, IB, CLEP, High School articulated credit by exam,
+**noncredit mirror courses**, basic training credit…"*. Today that is not a double
+dip — it is a **single dip in the wrong lane**. One line to remove when NC goes
+live.
+
+⚠️ **Leakage is fine and points the safe way.** An NC student who uses the credit
+landing page is counted once, in the credit lane, so leakage **undercounts NC**
+rather than double-paying. Sam's read: that is the incentive for NC programs to
+route students through their own landing page. Consequence to hold: NC will be
+biased low during the ramp, which is an argument for keeping the floor.
+
+### ⚠️ The build is blocked on something found before writing any of it
+
+`measurability()` resolves a metric to its data source by **substring-matching
+the metric's prose**. All three NC metrics match the **credit** sources; one
+naming the NC landing page matches `pp_u` (portal-origin transcribed) **first**.
+So the NC lane would be silently measured against credit performance — real
+numbers, plausible percentages, nothing on screen saying so.
+
+This invalidates the argument that made "build it now" safe (unmeasurable → gap →
+full-cap advance). **Build order is therefore: explicit per-priority `src` →
+NC priorities earn → display.** Note
+[`methodology-a-metric-matched-by-its-prose-mis-measures-once-a-second-lane-exists`](kb-notes/methodology-a-metric-matched-by-its-prose-mis-measures-once-a-second-lane-exists.md).
+
+### ⚠️ "Never rely on the config" — and the harness that answers it
+
+I read `yearPriorities["2"].factor = 1` from the **live** Supabase config and told
+Sam credit runs 1.0 in Year 2. It runs **0.5**: `mirrorYears` makes `prioSlot()`
+return `"1"` for every year, so the stored Year‑2 block is unreachable. Front-load
+makes it moot a second time (carryover, zero cap).
+
+⭐ **A missing value sends you looking; a dormant one does not.** Shipped
+`_effective()` + `scripts/funding_effective.js` (#1359), which **refuses to run
+without a config** and flags each year MIRRORED / CARRYOVER. Verified against
+independently-recorded figures — 30 of 33 at the NC floor, break-even 3,909,
+$25,240,308 to institutions. ⚠️ Its own test caught the same bug *inside the fix*:
+`_effective()` read a `ncModel()` memoised at boot, so a caller setting a config
+afterwards got BAKED numbers reported as "effective".
+[`methodology-a-saved-setting-is-not-the-effective-value`](kb-notes/methodology-a-saved-setting-is-not-the-effective-value.md).
+
+### The NC floor sweep, for the decision still open
+
+Model re-solved at each floor (`--nc-sweep`), pool $1.8M, threshold 500 FTES:
+
+| floor | in lane | at floor | at cap | break-even FTES |
+|---|---|---|---|---|
+| $15,000 | 33 | 0 | 9 | 384 |
+| $25,000 | 33 | 6 | 9 | 654 |
+| $40,000 | 33 | 21 | 5 | 1,528 |
+| **$50,000 (live)** | 33 | **30** | 2 | **3,909** |
+| $60,000 | 33 | 33 | 0 | — **INFEASIBLE** |
+
+⚠️ **Dropping the threshold does not work at this pool.** Noncredit is **8.74%**
+of system teaching (102,427 NC FTES vs 1,069,182 credit) against **7.13%** of the
+money, so parity is ~**$2.21M** — up $406k, not a step change. Across all 111
+institutions that buys a **$16,216** floor ($19,873 at parity), and the median
+institution in that lane has **226** noncredit FTES. The threshold is what buys
+the floor its size: a meaningful floor for a few, or a token for everyone.
+
+---
+
+## 2026-08-27 — Session 199 (SkyPin): build step 1, and the column was in the wrong database
+
+### ⭐ The defect is three times worse than it was recorded, and invisible by construction
+
+Session 197 recorded that `measurability()` mis-resolves Sam's noncredit metrics —
+"all three match the credit sources, and one naming the NC landing page matches
+`pp_u` first". Reproduced against the real predicates before touching anything,
+in his own idiom:
+
+```
+pp_u  <-  Eligible CPL Units as FTES ... Noncredit Landing Page
+pp_u  <-  Applied CPL Units as FTES ... Noncredit Landing Page
+pp_u  <-  Transcribed CPL Units as FTES ... Noncredit Landing Page
+```
+
+**All three collapse onto one source.** The portal/landing-page entry sits FIRST
+among the unit measures, so it wins before `eligible` / `applied` / `transcribed`
+is ever consulted. The eligible → applied → transcribed **milestone structure —
+the entire reason the lane gets three priorities — silently becomes one number**,
+and that number is the credit lane's portal traffic.
+
+⚠️ **And the wrong number is indistinguishable from the right one.** Statewide
+`pp_u` is **25.0 units carried by 3 of 105 colleges**, so 102 colleges would
+render **0** — exactly the honest zero Sam asked the NC lane to show while the
+origination field is undelivered. There is no screen you could look at to catch
+this. It is precisely the case his draft-model ruling excludes: *"values calculate
+correctly based on the available data"* permits an absent number, never a
+plausible wrong one.
+
+The demonstration that made it concrete — same metric prose in all three slots,
+only the pin differing:
+
+| slot | pin | renders |
+|---|---|---|
+| P1 | `pa_u` | Now **400 FTES** · $26.3K · 100% |
+| P2 | *(none — falls to prose)* | Now 0 FTES · **$389** · 1.06% |
+| P3 | `nope_u` | **not wired** · $0 |
+
+One config field; a 4,000× difference in what the college is judged on; **neither
+cell looks broken.**
+
+### ⚠️ The handoff put the NULL column in the wrong database
+
+Sam's mechanism is right and is the good one — declare the field now, all empty,
+calculate off it, so nothing is synthetic, nothing has to be removed later, the
+cutover is zero-change, and *the disclosure becomes derivable rather than
+maintained*. The **location** was wrong.
+
+The handoff said to add `nc_origin_loc_id` to Supabase `map_student_credit` and
+`map_college_cr_unit`. **The funding model never reads either.** `perf()` is
+`window.CPL_FUNDING_PERF` — a static artifact built by
+`funding/_build_funding_performance.py` from the daily MAP pull. `cpl_funding.js`
+touches Supabase only for the config and the opt-in. A NULL column in those two
+tables would have wired **nothing** in this lane, and the first sign would have
+been an NC row reading $0 for a reason nobody could find.
+
+⭐ **So the funding lane's equivalent of his NULL column is a DECLARED SOURCE THE
+FEED DOES NOT CARRY YET** — `nc_pe_u` / `nc_pa_u` / `nc_pt_u`, registered in
+`METRIC_SOURCES`, emitted by nothing. Every property he wanted survives the move:
+nothing synthetic, nothing to remove, zero-change cutover the day the builder can
+compute them, and `srcDelivered()` **asks the published artifact** whether the key
+is present rather than reading a flag somebody has to keep true.
+
+(The Supabase column is still worth having for student-grain analysis. It is a
+different consumer, and it is not this.)
+
+### What shipped
+
+`metric_src` — an explicit per-priority pin that overrides the prose, riding
+`prioField()` so it layers scenario → shared → baked like every other field.
+
+- ⚠️ **It is deliberately not free text.** An unrecognized key would read
+  `rec[src] == null`, fall through to status `none`, and render as *"this college
+  posted nothing"* — a typo silently zeroing a lane and **looking like a
+  measurement**. Every legal key is declared with its unit; an unknown one becomes
+  a loud `bad_src`.
+- ⚠️ **A miswired pin must never ADVANCE.** Without its own branch, `bad_src` fell
+  into the data-gap branch and paid **every college its full cap** — one typo in
+  one config field disbursing a whole priority. The gap branch is for a metric
+  *nobody* can measure, which is a statement about the world; a bad pin is a
+  statement about our own config, and the safe reading of "we do not know what
+  this measures" is **$0, loudly**, not everything, silently.
+- ⭐ **`undelivered` is a LABEL, not a third earn state.** The fraction is 0,
+  identical to `none` — Sam's ruling exactly. It is separated because *"the feed
+  carries no such measure"* and *"this college posted nothing"* are two different
+  zeros, and this repo has kept absent / withheld / measured apart for a year.
+- ⚠️ **Four surfaces each tested `status === "gap" || status === "pending"`
+  inline**, so every new status had to be remembered in four places or it rendered
+  as a measured zero. Now one `earnIsMeasured()`.
+
+### ⚠️ Two of my own guards were inert, and only mutation showed it
+
+Written, green, and **proven worthless**:
+
+- `earnIsMeasured()` forced to `return true` — the CSV/sort assertions **still
+  passed**, because they read the *source text* rather than exercising the CSV.
+- `prioUnit()`'s registry lookup blanked — the unit assertion **still passed**,
+  because its own fixture's prose (*"…Units as FTES…"*) already sniffed to units,
+  so the pin was never the thing under test.
+
+Both replaced with behavioral checks (a real `_csv()` round trip; a metric whose
+prose says **Headcount** pinned to a unit source, so the pin is the only thing
+that can produce FTES). **Seven mutations, all now caught.** Same lesson as
+#1361's reversed `check()` arguments, one session later: *a guard that has never
+been made to fail is not yet a guard.*
+
+### ⛔ THE SAME DEFECT IS ALREADY LIVE ON THE CREDIT LANE, ON THE BIGGEST PRIORITY
+
+Looking up the live Supabase config to build a faithful mock turned the
+hypothetical into a present-tense one. Sam's **Year-1 Access** metric reads:
+
+> *"**Applied** units measured in FTES for students originating from either CPL
+> Portal, College CPL Landing Page, **or batch upload**"*
+
+It resolves to **`pp_u`** — portal-origin **transcribed** units. Two disagreements
+at once, and neither is visible on the tab:
+
+1. **Wrong rung.** He asks for APPLIED; `pp_u` returns TRANSCRIBED. Statewide these
+   are 223,384 and 80,338 units — not interchangeable.
+2. **Wrong origin scope.** He names three origins *including batch upload*; `pp_u`
+   is `Potential Student = Yes` only, which excludes batch upload entirely.
+
+⚠️ **Measured against the published artifact: all 115 colleges read exactly
+`0 FTES` on it.** `pp_u` is 25.0 units across 3 colleges, and 25 ÷ 30 rounds to 0.
+Access carries **share 0.34 — the largest of the three** — and under front-load
+Year 1 carries the whole window. **So the tab's largest earning line reads $0
+system-wide, for a reason nothing on screen states.**
+
+⭐ **And note which way the error runs.** Had the metric been read as a genuine
+data gap it would have *advanced the full cap*; instead it resolves to a real key
+and pays $0. The mis-resolution flipped roughly a third of the pool from
+"advances" to "earns nothing" — silently, in the direction nobody audits, because
+a low number on a new program looks like the program being new.
+
+**The fix is Sam's call, not ours** — pin it to `pa_u` (right rung, no origin
+filter), or accept it as a data gap that advances, or accept `pp_u` deliberately.
+All three are now one config field. What shipped instead is the thing that makes
+the disagreement impossible to miss: a **MILESTONE-agreement check** in the
+curator diagnostic, the second axis beside the UNIT-agreement check that has been
+there since 2026-07-31. It reads `⚠ MILESTONE MISMATCH — this metric asks for
+APPLIED CPL but pp_u returns transcribed`, fires on that slot in both years, and
+leaves the four honest priorities a clean ✔.
+
+⭐ **The generalizable half:** the funnel has three rungs and the tab had a guard
+for the *unit* axis and none for the *rung* axis. When a matcher can be wrong
+along more than one dimension, a guard on one dimension reads as coverage.
+
+### Still open, and needing Sam
+
+- ⛔ **The live Access metric** (above) — pin, gap, or accept. It is the largest
+  share and currently earns $0 for every college.
+- **Row shape** — a second table row per college, or extra lines inside each
+  P1/P2/P3 cell. A mock, not a guess.
+- **Shares for the NC three.** Nothing ruled. Inheriting credit's 34/33/33 is the
+  obvious default and keeps one number to change, but he has not said so.
+
+Neither blocks anything else; both block step 2.
+
+---
+
+## 2026-08-27 (later) — Sam corrects the Access fix, and `pa` turns out to be the wrong half
+
+### ⛔ I offered three options and my numbers for the recommended one were measured on the wrong population
+
+I put the live Access defect to Sam as pin `pa_u` / declare a gap / accept, with
+measured payouts (51 colleges full, 115 full, 112 zero). He answered with the
+fact that made option 1 both right and wrong:
+
+> *"Option 1 is correct but we need to read the **Potential Student**, which
+> returns either 'Yes' or 'No' and is our temporary field indicating it was
+> submitted from a landing page or the portal."*
+
+⭐ **THE ORIGIN FILTER ALREADY EXISTS.** The metric's *"originating from either
+CPL Portal, College CPL Landing Page, or batch upload"* was never unmeasurable —
+`Potential Student` has been in the pull since the beginning and the builder has
+read it since 2026-07-27.
+
+⚠️ **AND `pa` IS NOT THE SUPERSET OF WHAT HE WANTS — IT IS THE COMPLEMENT.**
+Every other metric in `_build_funding_performance.py` carries `and not
+is_potential`:
+
+```
+("pe",  ecr > 0 and not is_potential),
+("pa",  acr > 0 and not is_potential),
+("p3",  tcr > 0 and not is_potential),
+("p2",  tcr >= P2_MIN_UNITS and not is_potential),
+("pp",  tcr > 0 and     is_potential),      # the ONLY portal measure — transcribed
+```
+
+So `pe/pa/p2/p3` describe the **documented** cohort and deliberately **exclude**
+portal-origin students, and `pp` — the only measure of that population — is gated
+on **transcribed**. There was no applied-among-portal-origin figure at all.
+**Pinning Access to `pa_u` would have scored it on precisely the students the
+metric's own wording excludes**, and my "51 colleges earn full" was that wrong
+population's number.
+
+⭐ **The general shape, and it is the same one as the milestone finding one step
+earlier:** a matcher can be wrong along more than one axis. I had just added a
+guard for the *rung* (eligible/applied/transcribed) and was still reasoning about
+the *cohort* by assumption. Two axes were checked; the third was not even named.
+
+### What shipped
+
+`ppa` / `ppa_u` — applied units among `Potential Student = Yes` — the mirror of
+`pa` on the other side of the partition, same rung, opposite cohort. Registered
+as `ppa_u` and **pinned on the Access priority in the LIVE Supabase config** —
+surgically, with `jsonb_set` on the one path, so a concurrent edit by Sam to any
+other field survives. Shares, factors, `priorityOrder` and the NC floor were
+re-read after the write and are unchanged.
+
+⚠️ **THE PIN DOES NOT BELONG IN THE BAKE, and trying to put it there is what
+proved it.** `cpl_funding_data.js` is stale *by design*: its slot-2 metric is the
+old *"Headcount … transcribed Credit from either CPL Student Portal or CPL Landing
+Page"* while the live config's slot 2 is Sam's **applied/units** one. A pin lands
+on whichever metric occupies the slot, so pinning `ppa_u` in the bake attached a
+units/applied key to a headcount/transcribed metric — **nine assertions across
+three suites went red**, correctly. The layering makes a baked value a *shared
+default*, not a private one. A pin belongs with the metric it was chosen for.
+
+⭐ **And the attempt exposed a real gap: a pin could not be CLEARED.**
+`firstDefined()` skips null and undefined, so an override layer could ADD a pin
+but never REMOVE one — a curator could not un-pin on the tab, and a lower layer's
+pin would have been permanent. `metric_src: ""` is now the un-pin.
+
+⭐ **The pin is safe to land BEFORE the data.** `ppa_u` is emitted by the builder
+but the published artifact predates it, so today every college reads
+**`Now: $0 · no feed`** — the `undelivered` state, an absent measure rather than a
+wrong one — and starts earning with **no code change** the moment the cron
+regenerates the artifact. Verified both ways.
+
+⚠️ **`ppa` joins `pp` in `NO_SUPPRESS`, and that is a funding decision as much as
+a privacy one.** It describes the *same people* as `pp` at a different rung, so
+suppressing it hides nothing already visible — while a suppressed cell reads to
+`earnFraction()` as *"not yet credited"*, `f=0`, which would cost small-portal
+colleges their Access money outright.
+
+⏭ **What replaces it** (Sam): MAP is shipping an explicit `Origin` — Student
+Portal / Landing Page / Batch / College Entered — plus a **`LocID2`** naming the
+noncredit location a record came from. Then `ppa_u` narrows from "Yes" to the
+named origins, and the three `nc_*` measures become the same rung cut by LocID2.
+One builder change, no consumer change, because the pin already names the key.
+His example row:
+
+| LocID | College | Origin | LocID2 |
+|---|---|---|---|
+| 1 | Mt SAC | Landing Page | 1x [Mt SAC NC] |
+
+⚠️ **His noncredit rule, recorded before it can be built:** *"all three count the
+NC FTES only if they have a Yes."* The Yes-gate applies to the NC three as well —
+but NC records cannot be isolated until `LocID2` arrives, which is exactly why
+the `nc_*` sources stay declared-and-undelivered rather than being approximated.
+
+### ⚠️ My own test failed because I fixed what it was asserting
+
+Section 7 asserted the live Access metric mis-resolves and the diagnostic flags
+it. The baked pin made all four of those false. **That is the guard behaving
+correctly** — a premise changed and something said so. It now asserts *both*
+halves: the defect still reproduces on an **unpinned** slot (so the guard keeps
+its teeth), and the pinned slot is clean. Five mutations, all caught, including
+`ppa` gated on the wrong cohort and `ppa` summing the wrong column.
+
+### ⚠️ Postscript: my own guard was pinned to a value that then left the data
+
+Section 7c asserted *"every pinned Access cell reads `no feed`"*. True when
+written — `ppa_u` was declared and undelivered. The cron regenerated the artifact
+a few hours later, `ppa_u` arrived (**108 students / 661.5 units / 52 of 105
+colleges**), and the assertion went **red on the feature working exactly as
+designed**.
+
+⭐ **The repo has recorded this shape before** (mode 14, the EACR column axis, the
+Sierra prose grep red since Session 125): *an assertion pinned to a value that can
+leave the data stops being a guard the moment it does.* I wrote a fresh one
+anyway, the same day I wrote a note about defects that hide behind expected
+values.
+
+Rewritten as the **invariant**, which cannot expire: the pinned column resolves
+somewhere other than the prose matcher does, and is never the unpinned column's
+universal zero. Whether the source is delivered yet is sections 3e and 8's job —
+they use fixtures they control, which is where a transient state belongs.
+Mutation-checked after the rewrite: blanking the pin still fails it (34/43).
+
+**End state of the Access fix, measured on the live artifact:** 115 colleges at
+`no feed` → **0**; earning → **12**; `MILESTONE MISMATCH` → cleared. The 103
+measured zeros are now genuine — those colleges have no applied credit from
+portal-origin students yet, which is the incentive, not a defect.
+
+---
+
+---
+
+<!-- Moved from cpl_funding_lessons.md on 2026-09-13 (S260) to keep that doc under its 120,000-byte budget. -->
+
+## 2026-08-27 (Session 200, SkyLane) — the noncredit lane earns, and the trap ran the other way
+
+Sam ruled the last open dial in one line — **NC inherits credit's shares,
+34/33/33** — and build step 2 landed: the noncredit lane now EARNS against its
+own three measures, and the Option A row renders under every college that has a
+noncredit program.
+
+### The shape of the build
+
+The lane needed exactly one new idea and no new plumbing. `prioTarget()` already
+computes *pot ÷ price*; what changed is **which pot**:
+
+```js
+function prioEntitlement(c, p) {
+  if (p && p.lane === "nc") return ncPrioEntitlement(c, p);   // route, don't split
+  return (c ? sizePct(c) * capScale(c) : 1) * netCollege() * p.share / nYears();
+}
+```
+
+That is Sam's *"route, don't split"* made structural: a priority belongs to one
+lane and is measured against that lane's pot; `share` splits the MONEY inside the
+lane, never the FTES. Everything downstream — the clamp, the earning ladder, the
+front-load carryover states, the floor/ceiling asymmetry — is reused unchanged.
+
+`ncPriorities(slot)` is credit's three, re-pointed. Titles, descriptions,
+strategies, shares and the funding factor are **inherited** (Sam: "the same three
+priorities", "no discount for being the newer lane"), with an `ncPriorities`
+override layer resolving scenario → shared → baked so diverging any of them later
+is one field rather than a refactor.
+
+### ⭐ The prose trap, running in the opposite direction
+
+#1364 fixed a CREDIT metric that prose-matched its way onto the wrong measure.
+This lane is the mirror, and it is worse: **the NC priorities inherit credit's
+wording by construction.** An unpinned NC priority does not fail to resolve — it
+resolves confidently onto a CREDIT source and scores noncredit money on credit
+performance. Every figure would be non-zero, in range, and wrong.
+
+So `ncPriorities()` **always** emits a `metric_src`, mapped by MILESTONE out of
+`METRIC_SOURCES` itself rather than written down a second time, and a milestone
+with no noncredit counterpart gets a deliberately-unknown key so it lands in the
+loud `bad_src` branch — $0, named on the cell — instead of falling through to the
+prose. There is no unpinned path in this lane by construction, not by discipline.
+
+⚠️ **And the coupling runs both ways.** Because the NC rung is taken from how the
+CREDIT priority resolved, a mis-resolved credit metric hands its error straight to
+noncredit. `F9`/`F10` pin this: un-pin the credit Access metric and its noncredit
+counterpart follows it onto the transcribed rung, collapsing two NC priorities
+onto one source. **Sam's `ppa_u` pin is now load-bearing for both lanes.**
+
+### ⚠️ Three ways this build could have quietly disbursed the carve-out
+
+1. **The advance.** `earnFraction()` pays the FULL CAP when the perf artifact has
+   not loaded — a sensible transient for credit, and catastrophic here: Sam ruled
+   NC shows $0, never an advance. That branch fires *before* `srcDelivered()` can
+   be asked anything, so without a lane test a slow artifact load (or any harness
+   without one) disburses the whole **$1.8M**. Lane-guarded now.
+2. **The share sum.** `prioCap()` normalizes by the CREDIT share sum. Identical
+   today, because Sam set NC's shares to credit's — and silently wrong the moment
+   he moves one. `ncShareSum`/`ncSlotEntitlement`/`ncPrioCap` exist for exactly
+   that day. ⚠️ Measured while writing the guard: **a share set is a MULTIPLIER on
+   the pot, not a normalizer** — shares summing to 1.30 place 1.30 × W, in credit
+   too. My first assertion encoded an invariant the credit lane does not have.
+3. **The wrong floor in the hover.** Reusing `prioCellHtml()` wholesale would have
+   printed the **$150,000 credit floor** on a row held by the **$50,000 noncredit**
+   one — a real dollar figure, in the right place, describing the wrong dial. The
+   NC cell is its own function for this reason.
+
+### ⚠️ `fmtCountK` misstates a noncredit target — found in Chromium, not jsdom
+
+The row was structurally perfect and the numbers were wrong. Credit targets are in
+the hundreds or thousands, so the compact formatter rounds to a whole number
+harmlessly. **Noncredit targets are order 1–25 CPL FTES**, where `1.4` paints
+`"1"` (−29%) and anything under 0.5 paints **`"0"`** — an absent-looking zero, on
+the one lane whose honest zeros are the entire point of the design.
+
+Nine jsdom assertions about that cell passed. It took a screenshot to see it.
+`fmtFtesSmall()` keeps one decimal below 100 and defers to the shared compaction
+above it. ⚠️ **The credit lane has the same latent case** — a small college's
+FTES-denominated credit target can also fall under 100 — left alone deliberately
+rather than widened into a live tab mid-build.
+
+### Measured on the LIVE config, not the bake
+
+Sam, mid-build: *"The config is likely old news. Check the tab for current numbers
+and metrics."* He was right to say it — every block of the new suite runs on the
+BAKED defaults, which differ from live on **all four** properties that matter
+here: shares, factor, `mirrorYears`, and (decisively) the bake has **two
+priorities on the transcribed rung**, so it cannot exercise the three-distinct-
+sources mapping at all.
+
+Dumped live via MCP, verified **byte-identical** (`md5 23531c14…`, 8,607 chars —
+not hand-checked, compared against `md5(config::text)` in Postgres), and run
+through `_effective()`:
+
+| | live |
+|---|---|
+| NC carve-out | **$1,800,000** |
+| entry threshold | 500 FTES → **33 institutions** |
+| NC floor / cap | **$50,000 / $100,000** |
+| at floor / at cap | **30 / 2** |
+| NC sources | three DISTINCT (`nc_pe_u` · `nc_pa_u` · `nc_pt_u`) |
+| earned across all 33 | **$0** |
+
+⭐ **30 of 33 sit at the floor and 2 at the cap — exactly ONE institution is
+earning proportionally.** `ncModel().breakEven` already said so (3,909 FTES);
+seeing it as 30/33 makes the point sharper. As an incentive the lane is currently
+almost entirely a grant, and that is a dial question for Sam, not a defect.
+
+⚠️ A live-shaped FIXTURE went into the suite, never the live config — a test
+carrying today's shares goes red the next time Sam edits one, which is how a
+guard becomes a chore and then a deletion. It reproduces the four structural
+properties and pins no dial.
+
+### Verification
+
+`tests/cpl_funding_nc_lane.test.js` — **48 assertions**, six blocks. Five
+mutations run, all caught: dropping the pin (7 fail), routing the entitlement at
+the credit pool (4), letting the not-loaded branch advance NC (3), normalizing on
+the credit share sum (3), reverting the target precision (1).
+
+`scripts/check_funding_nc_row_layout.js` — **9 Chromium checks** for the four
+claims jsdom structurally cannot make: the row does not widen the table, every
+cell lines up under its credit counterpart, the CR/NC chips are painted words at
+a readable size, and the body never scrolls sideways at 390px.
+
+⚠️ **Do not mutate a source file while a full-suite background run is in flight** —
+I invalidated a 15-minute run that way, then compounded it with a `git checkout --`
+in the restore step that wiped the file. A copy taken before the first mutation is
+what saved it.
+
+### Next
+
+1. **Sam looks at the row** — density and the tint are his calls.
+2. The credit-lane variant of the rounding (a small college's FTES target).
+3. **NC's own strategy text.** Year-1 P-Success still lists *"noncredit mirror
+   courses"* among CREDIT strategies (the carryover from Session 199). The NC
+   priorities inherit credit's strategies today; moving that line is a change to
+   curator-authored text in the live config, so it is Sam's, not a session's.
+
+## 2026-08-27 (later, Session 200) — twelve tweaks, and the two guards I broke without noticing
+
+The NC lane merged as **#1367** after Sam drove the row through roughly a dozen
+visual passes in one sitting. The build lessons are in the section above; these
+are the ones the *iteration* produced.
+
+### ⭐ Sam arrived at the grouping problem from the other end
+
+I had rendered three options for his "gray underline below the CR row" and
+recommended the opposite — heavier rules BETWEEN institutions, lighter WITHIN
+the pair — because underlining inside the pair makes a noncredit row read as a
+separate college. He accepted that, then found the same defect independently
+from the zebra striping:
+
+> *"rather than alternating gray/white rows, which makes them look like
+> different colleges, would be better to alternate between colleges and keep the
+> CR and NC same background."*
+
+`tr:nth-child(even)` is **row** parity. The moment a college can occupy two
+rows, its credit row and its noncredit row land on opposite stripes. Two
+independent routes to one conclusion is the strongest signal a design has that
+it is right; the stripe is now emitted per COLLEGE and carried by every row of
+that college's block, so it survives a future third row.
+
+### ⚠️ I broke two suites I never ran, twice, the same way
+
+`cpl_funding_metric_pin` (9 of 43) and `cpl_funding_basis` (1 of 37). Neither
+failure was about what the suite tests:
+
+- metric_pin indexed priority cells off the row's `<td>` list — `cells[4]`,
+  `[5]`, `[6]` — and matched on the inline `"Now"` label. A **TGT/NOW label
+  column** shifted every index by one and removed the label.
+- basis asserted `/Credit FTES/` against the whole `<thead>`. Sam **renamed the
+  header**, which changed nothing about the allocation basis that assertion
+  exists to protect.
+
+**Both times I ran the suites my change was ABOUT rather than the ones it could
+REACH.** CI found one; the merge conflict made me re-run and find the other. The
+rule is not "run everything" (30+ minutes) — it is that a *layout* change reaches
+every suite that locates an element, and a *wording* change reaches every suite
+that matches a string.
+
+Both are now written against the CONTRACT: `td.cf-prio` in document order IS
+P1/P2/P3, `.cf-t`/`.cf-a` ARE the target and actual lines, and the size column
+NAMES THE BASIS IN FORCE rather than saying one particular phrase. ⚠️ basis's
+paired assertion had also gone **vacuous** — "the header does NOT say Credit
+FTES" became trivially true once nothing said it anywhere; it now asserts the
+positive and the negative on the same scoped element.
+
+### ⛔ The threshold cannot go below 400, and that is a finding about the FLOOR
+
+Sam asked whether to show all noncredit rows because *"I may adjust the minimum
+500 threshold"*. Building that surfaced the constraint behind his question.
+Swept through the model (not re-derived):
+
+| threshold | in lane | floor demanded | vs $1.8M |
+|---|---|---|---|
+| 500 | 33 | $1.65M | ok, 2 also capped |
+| 450 | 34 | $1.70M | ok, ceiling stops binding |
+| **400** | **35** | **$1.75M** | **last feasible step** |
+| 350 | 38 | $1.90M | ✗ `floorInfeasible` |
+| 200 | 58 | $2.90M | ✗ |
+| 50 | 88 | $4.40M | ✗ |
+
+**The threshold and the floor are one decision, not two.** Widening the lane
+below 400 makes the $50k minimum unpayable, so the lever for a bigger lane is
+the floor or the carve-out. Also: at 450 and below the $100k ceiling stops
+binding entirely (capped 2 → 0), so it is inert the moment the lane widens.
+
+### ⭐ Showing the 78 below-threshold colleges is a DIAL argument
+
+While the table listed only qualifiers, moving the threshold changed **which
+rows exist** — so the table could not show the consequence of the curator's own
+edit; you had to already know who was missing to see who joined.
+`ncInstitutions()` has returned the roster unfiltered since it was written, for
+exactly this reason. The ROW layer simply never honored it.
+
+⚠️ **A below-threshold row must not print $0.** "$0 earned" and "never eligible
+to earn" are different facts. Em-dashes with the reason, plus a `below 500` chip
+naming the gap — 476.7 short by 23 is a different story from 0.26, and both were
+equally invisible before.
+
+### ⚠️ "Opt in" was hiding a live typo, two layers down
+
+Sam asked for wording that sounds less optional without a compliance tone.
+"Confirm participation" — opt-in is mailing-list language presuming a default of
+OUT, when nothing here turns on a choice, only on results.
+
+Chasing the label found that **`partLabel` ends in the word "by" and two of its
+three call sites appended their own**, so the eligibility hover and the
+baseline-gate text had been rendering *"Opt-in participation **by by**
+2026-11-01"*. The third site appended nothing — so the same label had to end in
+"by" there and not end in "by" at the other two. **No single value satisfies
+that**, which is why editing the text could never have fixed it.
+
+⚠️ It is guarded through a **hook**, not the screen: both render surfaces need
+live eligibility data (`baselineGate()` short-circuits to "pending" when the
+coordinator feed has not loaded), so the join is unreachable from jsdom — which
+is exactly why it shipped wrong and stayed wrong.
+
+### Next
+
+1. **The ⬆/⬇ glyph → the words `min`/`max`.** Sam asked what it meant, which is
+   the finding: one mark doing two jobs ($150k credit floor on a credit row,
+   $50k noncredit floor on an NC row), told apart only by hover, against his own
+   standing preference for plain words over glyphs.
+2. **His call on the threshold**, given it is really a floor decision.
+3. The credit-lane variant of the `fmtCountK` rounding.
+4. NC's own strategy text (Year-1 P-Success still lists "noncredit mirror
+   courses" among CREDIT strategies).
+
+---
+
+
+
+<!-- Moved from docs/cpl_funding_lessons.md by the S265 Rule 9 checkpoint (2026-09-17),
+     oldest-first, VERBATIM, to bring the live doc back under its 120,000 B budget.
+     The live doc keeps the recent sections; nothing was rewritten on the way here. -->
+
+## 2026-08-28 — SkyLens: the lane switch, and a gate stricter than its own policy
+
+### What shipped (PR #1369, merged as `80d96b6`)
+
+The noncredit lane is on the priority cards behind **one switch above them**, moving
+all three together across every year. Sam named the failure mode himself before I
+built it: *"otherwise I'll be a confuseled Pooh."* Three per-card toggles is eight
+states and six of them describe no lane — the shares still read 34/33/33 while the
+pots come from two pools that sum to nothing.
+
+He also ruled **one FTES rate for both lanes** ($5,649.63 × the 0.5 factor =
+$2,824.82 per CPL FTES). It holds on the merits: what the noncredit lane measures
+is still credit *units*; the *student* originates in noncredit.
+
+### Three card lines could not carry over, and each failed while looking right
+
+1. **Strategies were inherited verbatim** (`strategies: p.strategies`). Credit's
+   Success list names *"noncredit mirror courses"* among the things to
+   batch-upload — on a noncredit card that instructs a noncredit institution
+   about itself. Sam's framing: *"NC programs do not generally award credit, they
+   get students trained and qualified to get credit at a credit college — hence
+   different strategies."* A difference in the **work**, not the wording, so
+   credit's list can never be the fallback.
+2. **The actuals line fell through to** *"Actuals arrive with the next daily data
+   refresh"* — false, and the most reassuring sentence available.
+3. **The earning line read `earnAgg().perPrio[i]`** — the credit statewide
+   aggregate, indexed by **position**.
+
+### ⚠️ `undelivered` conflates two things, and the ORDER is the fix
+
+`srcDelivered()` asks the **loaded** performance artifact whether a key is
+present, so when the artifact has not loaded it answers false for *every* source.
+Testing `meas.undelivered` before asking whether the artifact was there made every
+**credit** card claim its measure was uncarried. The order now mirrors
+`earnFraction()` exactly — the earning line and the actuals line describe the same
+measure, so a surface that ordered them differently would contradict the one
+beside it.
+
+### ⚠️ Three things I cut as "gloss" were data — three suites caught all three
+
+Sam asked to remove explanatory language. I over-cut:
+
+| Cut | Why it had to come back |
+|---|---|
+| The **effective rate** (window ÷ target) | A derived figure, not a gloss — and he separately asked to see *more* of where numbers come from |
+| **`meas.basis`** | Looks like a duplicate of the METRIC block, but they have different authors — METRIC is the CURATOR's wording, `meas.basis` is what the SYSTEM measured. Their divergence shows nowhere else |
+| **Roll-forward** | A different fact from **reprioritization**: roll-forward is inside the window (unearned Year-1 money is still earnable in Year 2), reprioritization is money never earned at all. Collapsing them lost the half that tells a college its money is still there |
+
+**The ratio is the lesson.** Of the assertions I was ready to write off as stale,
+most were protecting something real. A failing assertion on correct-looking work
+is a question, not a verdict.
+
+### ⭐ THE FINDING: a client gate stricter than its own RLS policy fails silently, toward lost work
+
+Sam relabeled the three priorities on the live tab. Nothing reached Supabase —
+the config md5 was still byte-identical to my own write hours earlier.
+
+My first diagnosis was wrong and worth recording as a near-miss: I concluded he
+had not been signed in. **He sent a screenshot: the masthead read "● Signed in".**
+
+The real cause:
+
+```js
+function unlocked() { var t = tp(); return !!(t && t.session()); }   // team PHRASE only
+```
+
+while all three funding tables carry
+
+```sql
+with check (is_allowed_reviewer() OR team_pass_ok())
+```
+
+**The database would have accepted his write. The client never attempted it.**
+`activeOverride()` handed him the per-browser SCENARIO layer, `persistActive()`
+wrote `localStorage` inside a swallowed `try/catch`, and the scenario layer wins
+the render — so the tab showed his new labels back to him and looked published.
+
+⭐ **Two credentials, one word.** COBI's masthead reports the **reviewer**
+magic-link session; this tab gated on the **team phrase**. §11 already carried the
+standing rule for the transition — *"accepts EITHER a session OR a phrase so
+nothing goes dark"* — and this tab was one of the places it had not landed.
+
+⚠️ **It was seven write paths, not one.** Config, notes and participation all
+decorated with the phrase alone. Fixed as **one `applyWriteAuth()` helper**, not
+seven patches: seven copies of an auth decision is seven chances to drift from the
+policy, which is how this survived.
+
+### ⚠️ The routing was never at fault
+
+Worth stating because it was Sam's actual question. Every consumer reads the model
+through `_prios()` / `_ncPrios()` — `college_briefing.js`, `funding_model_payload.js`,
+the memo/docx path — so a renamed priority propagates on its own. **Nothing
+hardcodes the names.** The change simply never entered the routing.
+
+### Other findings
+
+- ⚠️ **A bound must be tested by VALUE, never by the model's clamp count.** Santa
+  Ana's unclamped noncredit award solves to exactly **$100,000.00**, so it
+  receives the maximum without being *held* to it: `ncModel().capped` names 2
+  while 3 receive the max. Both true, different measurements. Gating the sentence
+  on one while counting the other makes the box disagree with itself.
+- **The award range is two rows, never merged.** 115 colleges vs 33 institutions,
+  different floors and ceilings, and 30 of the 33 sit in both lanes — a merged
+  minimum would print the noncredit floor as the credit minimum.
+- **The maximum box named Fresno City alone** while five colleges sit at the
+  ceiling. Both bounds now count ties, as the minimum always had.
+- ⚠️ **A python patch script that writes only at the end loses every edit when a
+  later assertion raises.** One did, the `unlocked()` fix silently never landed,
+  and the file still parsed. The new test caught it; nothing else would have.
+
+### Sam's rulings this run
+
+| Ruling | |
+|---|---|
+| One switch above the cards, all three, every year | never per card |
+| Same FTES rate in both lanes | no noncredit rate |
+| `Annual funding` / `Combined funding` | replacing "Disbursement / Even tranches / Front-load Year 1" |
+| Remove most explanatory language from the cards | keep the derivations |
+| No feed keys in reader-facing text | *"what does this mean? Metric · pinned to ppa_u"* |
+| Noncredit needs its own strategies | different work, not different wording |
+| Career attainment is carried by the **project pool**, reported qualitatively | no invented metric |
+| Wire the ABCD §78093.2 outcomes in and make them visible | with superscript links from whatever serves each |
+| *"Unearned reallocated after 2028"* — **withdrawn by Sam as invented** | replaced with the §78093.2(d)(1) goals |
+
+### Where it stands / next
+
+- ⛔ **Sam should re-apply his relabels** — with the gate fixed, a reviewer session
+  now saves for everyone.
+- **Not built: the ABCD spine and the goal-tagged project pool.** Design is in the
+  session-203 handoff. `scaling_projects_tech` (~$8.96M) is one box; splitting it
+  into named projects each tagged to a goal is most of the (d)(2) reporting
+  artifact, and the pool card system already supports custom labeled boxes.
+- ⚠️ **The CPL story corpus evidences the wrong goal.** Of 36 stories, **5**
+  destinations name a job and only ~4 are genuine progression; 8 of 36 quotes
+  mention employment at all, often aspirationally. The corpus documents
+  *educational* attainment — goal (B), the one already measurable. Fixable at
+  intake (ask what changed at work), not in analysis.
+- Still unruled from SkyLane: the **threshold/floor coupling** (400 FTES is the
+  last feasible step at the $50k floor).
+
+---
+
+## 2026-08-28 (later) — SkyLens: the fix that was half a fix
+
+Continues the section above. After #1370 landed, Sam re-applied his three
+priority relabels and reported them saved. **They were not.** Verified against
+Supabase three separate times: `Access` / `Outreach` / (blank), md5 unmoved.
+
+### ⭐ THE MISSING HALF WAS MINE
+
+#1370 fixed **who may write**. It did nothing about work done **before** signing
+in — and that is what kept him stuck.
+
+Everything edited while locked lands in the `SCENARIO` overlay, and the overlay
+**wins the render**. So after signing in the tab painted his labels back from
+localStorage, looking exactly like published work. Re-typing the same text then
+wrote nothing: the field already displayed that value, so no `change` event
+fired.
+
+⭐ **The promotion step already existed, and exactly one path reached it.**
+
+```js
+onUnlocked: function () {          // ← the TEAM PHRASE unlock row, only
+  p.scenarios[activeScenario] = deepMerge(clone(SHARED), SCENARIO);
+```
+
+A magic-link reviewer never passes through that row: `unlocked()` flips true, the
+row disappears, and the overlay is stranded on top of shared for ever — visible
+to its author, invisible to everyone else.
+
+Extracted as `promoteScenarioToShared()`, reachable from both credentials, plus:
+
+- ⚠️ **Work that exists in only one browser must say so, unprompted.** Unlocked
+  with an overlay, the auth bar reads *"⚠ This browser holds changes nobody else
+  can see"* and offers **Publish this browser's changes**. Automatic promotion
+  suits a *typed phrase* (deliberate); a magic-link sign-in is often incidental,
+  so this path asks.
+- ⏰ **An expired sign-in is now distinguishable from never having signed in**
+  (Sam: *"I should get a notice if my token has expired"*). A dead-but-present
+  session used to read as ordinary exploring.
+
+Durable: [`fixing-who-may-write-does-not-rescue-what-was-already-written`](kb-notes/methodology-fixing-who-may-write-does-not-rescue-what-was-already-written.md).
+
+### The sign-in dropdown (`cobi_identity.js`)
+
+Sam: *"the drop down closes when I try to click into the email box… I have to
+trick it and tab to it."*
+
+```js
+document.addEventListener("click", function () { if (openPane) { openPane = false; render(); } });
+```
+
+Closed on **any** document click. The toggle button survives because it
+`stopPropagation()`s itself; nothing inside the pane does, so clicking the email
+field bubbled here and `render()` tore the field out mid-click.
+
+⭐ **A tab still worked** — which is what made it read as a focus mystery rather
+than a stray handler. Tabbing is not a click, so it never reaches the listener.
+**When a workaround is "use the keyboard instead", suspect an event-model
+mismatch, not focus.**
+
+Fixed by containment at the boundary rather than `stopPropagation` on each
+control: the pane grows controls (`reviewer_signin.js` mounts the sign-in form
+into it) and each would have to remember. Swept — no other module closes on an
+unconditional document click; **47 sites already do a containment check**, so
+this was the lone outlier.
+
+### ⚠️ Two process notes on myself
+
+- **I wrote his labels via SQL and then reverted them.** He said plainly:
+  *"I don't want you to fix it; I want the tab to save it."* He was right — my
+  write would have masked the very thing under test. Reverted to a byte-identical
+  md5. **A hand-applied fix destroys the experiment that proves the repair.**
+- **I ground on a redundant local suite** while the same suite was queued in CI,
+  with the work already committed. Sam: *"grinding?"* Nothing was blocked on it.
+  **A second run of the same check is not verification, it is delay.**
+
+### Where it stands
+
+- **PR #1371** open: `939774d` (dropdown) + `2538fd9` (promotion + expiry notice).
+- ⛔ **Sam's relabels are STILL only in his browser.** After #1371 deploys, the
+  Publish button is the one click that lands them — and the proof is the config
+  md5 moving off `9cf58b99efa36bd40fccbfb823f3683c`, not the screen.
+- **Still unproven end to end:** that a reviewer save reaches Supabase at all.
+  Every layer has now been fixed or verified in isolation; nothing has done the
+  round trip in a real browser.
+
+## 2026-08-28 — SkyLens S203: the round trip closes, the spine lands, and a column that printed money twice
+
+### What shipped
+
+- **#1372** — curating the funding tab requires a **magic-link reviewer**, not the team phrase. Nine policies
+  read `is_allowed_reviewer()` alone; writes stamp `curatorEmail()` rather than `(team)`.
+- **#1375** — the **Ed. Code §78093.2(d)(1) spine**: four goal cards read live from the model, superscript
+  ᴬᴮᶜᴰ links from the priority cards and pool boxes, plus Timing as its own collapsible section.
+- **#1378** — the **`NC $` column retired**; every institution renders as a CR/NC pair, SYSTEM included.
+
+### The item three handoffs called unproven is closed
+
+Sam clicked Publish and his three relabels reached Supabase: config md5 `9cf58b99…` → `c95e78aa…`, and
+`yearPriorities` year 1 holds `Access: Outreach` (src 0) · `Completion` (src 1) · `Access: Statewide` (src 2).
+With `priorityOrder [2,0,1]` that displays exactly as he typed. **Do not re-derive this.**
+
+The write landed stamped `(team)` rather than his email, because `applyWriteAuth()` preferred the phrase when
+both credentials were present — which is what #1372 fixed. A per-person credential whose rows say `(team)`
+throws away the one thing the magic link buys.
+
+### ⚠️ CI was never broken, and the diagnosis in the inherited handoff was wrong
+
+The Session-203 handoff reported *"NO WORKFLOW HAS RUN REPO-WIDE SINCE 18:28 UTC"* and proposed three
+explanations: Actions disabled, out of quota, or a GitHub incident. **All three would have come back clean.**
+Two workflows ran successfully after 18:28 — Daily CPL Dashboard at 18:44 and Deploy Pages at 18:49.
+
+The real cause is narrower and completely determines the fix: **a conflicted PR cannot produce a
+`pull_request` CI run.** GitHub tests the *merge commit*, and a `dirty` PR has none — so five consecutive
+pushes produced zero runs, and the runs GitHub *did* list against the PR were for `7eea4461`, which was
+#1371's head, attributed by the recreated branch name. Merging main in fixed the conflict and CI appeared on
+the very next push.
+
+**The lesson generalizes:** when a PR shows no checks at all, read `mergeable_state` before investigating the
+CI system. `dirty` explains the absence completely, and every infrastructure theory is a detour.
+
+### ⚠️ A post-squash merge hunk that had no correct side
+
+#1371 was squash-merged *from the same branch* #1372 lived on, so main and the branch carried the same changes
+in two shapes. Three of four hunks in `cpl_funding.js` resolved to HEAD. The fourth could not be resolved by
+picking a side at all: **either choice left two `var promoteBtn` blocks** — one inside the hunk, one
+immediately below — so a single click on Publish would have bound the listener twice and promoted twice.
+Resolved as *neither* side, then asserted: 1 promoteBtn declaration, 0 `cplFundUnlockSlot` references.
+
+### The spine: two axes, and a derivation that had to be tested properly
+
+**Funded and measured are separate columns and are never merged.** Goal (C) — career attainment — is funded
+(the project pool, per Sam's ruling) and has no campus measure at all. A single status forces that into either
+a green that lies or a red that denies the money.
+
+**A priority's goal derives from its measure's milestone, not its title** (`eligible`/`applied` → A,
+`transcribed` → B, through `measureOf()` — the same resolver the earning math uses).
+
+⚠️ **The first draft's guard proved nothing.** A mutation swapping milestone-reading for title-matching
+**passed every assertion**, because on the live config the two agree for all three priorities. The
+discriminating case had to be constructed: rename the transcribed priority to *"Access: renamed by a curator"*
+and assert it stays under (B). *When two implementations agree on your live data, your test is not
+distinguishing them — build the case where they diverge.*
+
+⚠️ Similarly, the harness does not load `window.CPL_STORIES`, so the (C) story-corpus assertion was exercising
+the graceful no-corpus path and asserting nothing about the claim. **The absence rendered exactly like the
+success** — the same trap as testing a metric with no feed.
+
+### Two claims re-measured rather than inherited
+
+- **The story corpus.** The handoff said 5 of 36 destinations name a job. Counted: **32 end at an educational
+  destination, 3 name a job.** The sharper finding is the arrow's shape — `<prior role> → <credential>` — so
+  the corpus evidences goal **(B)**, not (C). Fixable at intake by asking what changed at work.
+- **The project pool has no breakdown.** The ledger holds `CPL Projects — $35M share` as one row with no
+  children, and **no project's `budget_source` names the $35M** (the nearest is `CPL Infrastructure & Scaling
+  ($15M one-time)`). So the handoff's "split it into named projects, nearly free" is true of the *mechanism*
+  and false of the *amounts*. The two shares are $8,959,692 + $9,040,308 = **$18,000,000** exactly.
+
+### Sam's corrections this run
+
+- **The Workplan register's goals are not a rival vocabulary.** My first pass framed them as incompatible with
+  ABCD and implied 32 projects needed retagging. They were set *before* §78093.2 existed, align with the CPL
+  Workplan and Vision 2030, and are the operational plan that **delivers** these outcomes. The alignment stack
+  he named: Vision 2030 · the California Master Plan for Career Education · the CPL Workplan · §§78092–78093.2.
+- **The no-NC row is a data-quality instrument**, not a layout nicety: *"if they disagree and say, Yes, we have
+  NC, we can find the error and fix it."* A college that never appears cannot be contradicted.
+
+### The NC column: the duplication was documented rather than fixed
+
+A college's carve-out printed in its credit row's `NC $` cell **and** in its noncredit row's total — and the
+noncredit row's own cell rendered `↑` with the hover *"the NC $ figure on the credit row above is the same
+money, summarized."* An arrow existed purely to explain a repetition.
+
+Sam's 2026-08-22 requirement (noncredit money on the surface, never lumped into the credit total) is preserved
+by the **row structure**, which is stronger: a labeled row is visible without reading a column header.
+
+⚠️ **The CSV keeps its noncredit column, and I was wrong to say otherwise.** I told Sam the export had to
+follow the screen. It must not: the CSV has **no noncredit rows** — one line per college — so that column is
+the only place noncredit money appears there, and deleting it removes the figure rather than de-duplicating
+it. *Screen and export must share a **scope**, not a **shape**; the layouts differ when the carriers differ.*
+
+⚠️ **My own defect:** putting `.cplfund-ncrow` on the new SYSTEM row **broadened what an existing class means**,
+and three assertions that sample it to mean "a college's noncredit row" failed on a statewide aggregate they
+were never written about. A new kind of row gets a new class.
+
+### Assertions inverted rather than deleted
+
+- *"a credit row with NO noncredit program gets no CR chip"* encoded the rule Sam changed. Now: every credit
+  row is paired — plus a **distinctness** check, because a bare count would pass if one college gained a
+  second row while another lost its only one.
+- The below-threshold reason was matched by the **retired column's wording**. Rekeyed to structure (a reason
+  chip plus dash cells that explain themselves), which is what the assertion's own name claimed.
+
+### Next
+
+1. **Sticky header + frozen SYSTEM rows.** Recommended; ⚠️ two-level sticky needs the second `top` to equal the
+   header's rendered height, so measure into a CSS variable rather than hardcoding px.
+   **Lazy-loading recommended AGAINST** — 115 colleges is ~230 rows, the EACR matrix paints 51,000 cells in
+   1.6s, and virtualization breaks browser Ctrl-F and the what-you-see-is-what-exports contract.
+2. **Goal-tagged project line items** — blocked on Sam supplying the $8.96M split; the mechanism is built.
+3. **The threshold/floor coupling** — 400 FTES is the last feasible step at the $50k floor, still unruled.
+4. **The optional Combined award row** (Mt. SAC $400,000 + $100,000 = $500,000).
+
+## 2026-08-30 — The Open Verdicts afternoon: four builds ruled and landed same day
+
+Sam ruled the 19-item Open Verdicts sheet live (reply-by-number, the first full
+exercise of the decision-sheets rule), and the funding tab took four of the
+builds the same afternoon (#1407, #1408):
+
+1. **The Combined award COLUMN (item 2, resolving the "third Award-range row"
+   question his way).** His spec: the pair's ONE total "centered vertically and
+   horizontally (like the total FTES)". Built as `combinedColDef()` /
+   `combinedCellHtml()` — a `rowspan="2"` cell on the CR row directly after
+   Total; all three NC row shapes emit NO cell in the column; `colHideStyleHtml()`
+   splits its nth-child rules at the combined position (NC rows sit one index
+   earlier to its right, and the combined rule never touches them); the
+   statewide pair included; sortable on the summed cap. **Not the retired NC $
+   column's defect**: that printed the same money twice; this prints the sum
+   that appeared nowhere (Mt. SAC $400,000 + $100,000 = $500,000).
+   `tests/cpl_funding_combined.test.js`, 19 checks.
+2. **The pair invariant MOVED, and an old test asserted the old truth.**
+   `cpl_funding_nc_lane` D2/D16 pinned "NC row carries exactly as many cells as
+   the credit row" — the very thing the spanning cell changes. CI caught it;
+   the assertions now pin the NEW invariant (exactly one fewer). ⚠️ **The local
+   full suite had "passed" first — because `npm test 2>&1 | tail -30` reports
+   TAIL's exit status, not the suite's.** The pipe masked a real failure and CI
+   told the truth. Check unpiped exit codes (`set -o pipefail`, or `$?` on the
+   command itself), and treat "green through a pipe" as unproven.
+3. **Frozen header + statewide pair (item 11: freeze, NO lazy loading).**
+   `pinFrozenRows()` measures the thead and system-CR-row heights into
+   `--cf-pin1/--cf-pin2` on every render + resize — the S203 catch (a typed
+   pixel breaks at other zoom/font sizes) is now a test assertion, and the
+   no-lazy-loading ruling is pinned by row count. `tests/cpl_funding_sticky.test.js`.
+4. **The project-pool card wired (item 5: "sourced from the jointly wired
+   Activities, Annual Targets, and Budget table" — never a hand-typed split).**
+   The ledger's `pool`-section rows (two program parents + children) fold behind
+   a word toggle on the card, framed as ONE $18,000,000 program (the $35M and
+   $15M shares join; per-share attribution would be the invented split he ruled
+   out), with an honest-empty state and a DRIFT LINE when the program rows stop
+   summing to the two shares. The live ledger sums to $18,000,000 exactly.
+   `tests/cpl_funding_pool_projects.test.js`.
+5. **Goal-card policy (items 12 + 3).** Goal (C): *demonstrated, not directly
+   measured — by design* (My CPL Stories touching career attainment + funded
+   infrastructure/interagency projects), while KEEPING the counted
+   evidence-for-(B) finding; goal (A): student-level equity belongs to the
+   system's 3-year legislative reports (MIS + CCCApply + MAP), not college
+   outcome funding. The story-intake question's final wording is his: *"What
+   changed in your work or career path?"*
+6. **Item 1 dissolved rather than decided**: threshold, minimums and buckets are
+   independent dials and the model's job is an over/under-budget readout. The
+   dials and the solver's feasibility figures already existed; the missing
+   surface is the consolidated readout — mocked with the REAL rosters + live
+   config (`docs/visuals/2026-08-30-budget-balance.html`; live finding: 42
+   institutions demand $1.68M of the $2M carve-out, and 242.7 FTES is the
+   frontier where 50 institutions consume exactly $2,000,000). Port on Sam's
+   reaction.
+
+## 2026-08-31 — The one-pool day: from morning hunch to adopted model (SkyLedger, S210 line continuing)
+
+**The arc, in one paragraph.** Sam opened with a hunch ("move the NC money into
+CR… let all the apportionment flow exactly how it is earned"), and by evening
+the one-pool model was **adopted** with its design questions ruled and its
+reaction visual built. The instrument chain that made that speed safe: scenario
+math validated **to the dollar** against the tab's own solver on both live
+lanes before any hypothetical ran; the Budget Balance mock grew a second mode
+rather than a second implementation; each ruling landed as a stamped
+scoreboard; and the port is sequenced behind its data dependency (the
+origination feed) rather than in front of it.
+
+- **Adopted (Sam, verbatim):** *"we should hold on 1 until we finalize
+  one-pool, which yes, I want to go with now."* One pool: $25.24M to 118
+  institutions sized by credit+noncredit FTES, floor $150K / cap $400K per
+  institution combined (his dials, chosen in the mock). The cap is **per
+  institution** (Mt San Antonio's pair trims $500K→$400K; Pasadena and Santa
+  Ana — big-NC colleges — rise to the cap: the pair sizing working as intended).
+- **The origination design (his, refined live):** the three noncredit-only
+  institutions hold ordinary max awards and earn by ORIGINATION — their CPL
+  transcribed at a credit college, district-scoped for NOCE/SDCCE, statewide
+  for Calbright, the same CPL crediting both institutions by design. His first
+  sketch (a separate Calbright carve-out) he folded back into the pool himself
+  minutes later — present the numbers, let the designer iterate.
+- **N1–N3 ruled by number on the mock:** N1 a (exhibits-in-MAP replaces the
+  veteran-JST gate) · N2 b (**no advance on origination** — the origin feed is
+  the gate to any funding, which re-prioritized the Custom Reports work:
+  instructions doc to Malone/Pedro shipped the same hour, formalizing the
+  standing 08-26 `Origin`+`LocID2` ask) · N3 a (nothing disburses on
+  Calbright's placeholder size; the both-sides credit confirmed for all three).
+- **The anti-usurpation answer is a restriction, not a second pool.** Sam's
+  worry — NC funding usurped by the CR program — was answered by decomposing
+  every award on its face (CR + NC by FTES share) and RESTRICTING the NC share
+  to noncredit outcomes. Two pools would have reopened the carve-out-sizing
+  problem the adoption killed. The residue is **F1** (hold vs label on the
+  $1,300,738 across 108 college awards), posed on the visual, awaiting Sam.
+- **Vocabulary is part of the model** (three rulings in one afternoon): the
+  per-institution figure is the **max award** (*"communicates that awards are
+  based on outcomes, not automatically awarded"*); the list is **alphabetical**
+  so colleges don't open on a league table; and **funding, never "money"**,
+  with CCC norms over business norms (allocated, restricted/designated,
+  redirect, brought up to the minimum; "double count" avoided as an MIS
+  audit-error term). Now doctrine in CLAUDE.md Naming.
+- **Instruments that carried the day:** the mock's dial persistence + "Copy
+  these settings" (built the hour his chosen dials proved browser-only and
+  volatile — the bench lesson recurring); the who-moves card ported to the
+  live tab (`cpl_funding_whomoves`, 13 floored checks, the saved solve being
+  the SAME pipeline with the overlay lifted); and the reaction visual carrying
+  every ruling within minutes of its making.
+- **PRs:** #1418 (Memo A on the GR tab) · #1419 (mock one-pool mode) · #1420
+  (N1–N3 stamped) · #1421 (who-moves + mock memory) · #1422 (adoption + the
+  phases 1–3 visual) · #1423 (two lanes on one face · max award · vocabulary —
+  in flight at checkpoint). Vault: CPLBrain #64–#67.
+
+---
+
+*Moved here verbatim on 2026-09-24 (S285 SkyGrant): the live doc stood at 116 KB of its 120 KB budget before that checkpoint appended. These are the 2026-08-31 to 2026-09-01 sections (S215 SkyPool, S216 SkyPort, S217 SkyDeck): the one-pool port and the deck run, all shipped and settled. The live doc carries 2026-09-01 (S218) onward.*
+
+## 2026-08-31 — S215 (SkyPool): the labels ruled twice, and the mock became the whole tab
+
+- **Boot race, not a stale greeting**: Sam's greeting named
+  `session_215_handoff.md` while main's highest was 214 — the handoff sat in
+  SkyLedger's in-flight checkpoint PR (#1423), which merged minutes into the
+  session. A greeting can be AHEAD of main, not just behind it: check open PRs
+  before declaring a number wrong.
+- **Queue item 1 shipped** (#1424): per-priority earned/available dollars in
+  every expand, the statewide cards, and the trio's expands — labels shipped as
+  the handoff-recommended proposed wording for Sam to rule on.
+- **The label two-step**: Sam ruled "Current Total / Potential Total"; the
+  session flagged that "Potential Total" reads as ceiling OR gap; he refined
+  live — *"I see that it can be read both ways. Let's use 'Total Possible' as
+  the ceiling."* Ceiling semantics settled: per priority the CR+NC shares' sum;
+  per institution the max award (captions keep his coined term); statewide as a
+  mini-label on the card headline, because a duplicate row is exactly the
+  redundancy he flags.
+- **The sweep miss**: replacing the phrase "Potential Total" left
+  `Potential␊Total` split across a hard-wrapped line — the residual scan in the
+  smoke (grep the distinctive WORD, not the phrase) caught it; the sweep never
+  would have. KB note:
+  [`methodology-a-phrase-sweep-misses-what-a-line-break-splits`](kb-notes/methodology-a-phrase-sweep-misses-what-a-line-break-splits.md).
+- **The full revised tab** (#1425): Sam saw the live tab's pre-port hybrid and
+  asked to see the whole revised tab before the port. An agent inventoried
+  `cpl_funding.js`'s ACTUAL render assembly (~30 surfaces — assembly order, not
+  file order); every surface got a disposition. Survivors built into the mock:
+  the Baseline-eligibility card (N1 a for the trio; held-in-reserve never
+  redistributed), §78093.2(d)(1) goal cards + measure-derived superscripts,
+  sticky header + ONE SYSTEM row (offset measured, never typed — the S203 catch
+  honored even in a mock), live search, the word-control toolbar. Removals
+  became **R1–R11** (8 ruled · 3 proposed), each with its successor,
+  reply-by-number.
+- **The lint earned its keep twice**: the lane file crossed its budget
+  (12,691 > 12,000) at checkpoint and the trim pass found a "double count"
+  vocabulary violation hiding in superseded pre-adoption text — deleted both.
+- **PRs:** #1424 (Current/Total-Possible columns) · #1425 (the full-tab mock).
+  Artifact: "CPL Implementation Funding," same URL, versions
+  earned-available → full-tab-r1-r11.
+
+## 2026-08-31 → 09-01 — S216 (SkyPort): the port ships, and the test family finds three bugs
+
+**What shipped.** The one-pool model is live in `cpl_funding.js` (PR #1427):
+one solve over 118 institutions, $150K/$400K on the combined award, FTES-share
+decomposition, NC restriction (F1), origination earning for the trio (N2 b),
+targets on the pre-bounds CR slice. All 33 funding suites re-aimed
+(~2,000 checks) plus briefing (243) and explainer (15). Sam ran three live
+reaction rounds against the mock, all ported same-day; three product bugs
+found by the ports were fixed. Vocabulary tightened to doctrine: funding never
+"pool"; "on its face" banned.
+
+**Lessons.**
+
+- **The anchor-first order worked exactly as designed.** The mock's figures of
+  record became `tests/cpl_funding_one_pool.test.js` BEFORE any family triage;
+  the family port then fanned out to five agents whose brief said "re-run the
+  anchor at the end." Every agent's re-aims were verified against a moving
+  product (three reaction rounds landed mid-port) and the anchor caught none
+  of them drifting the model — because none did. The KB note
+  (`methodology-a-locked-mock-s-figures-of-record-are-the-port-s-anchor-test`)
+  now has its full worked case.
+- **Intent-preserving ports are a bug-finding instrument.** Three real product
+  bugs surfaced not from users but from agents refusing to weaken guards:
+  (1) `prioTarget`'s per-student path omitted the lane slice — cap ÷ target
+  scattered 1.5076× and the scatter WAS each college's lane split; the fix
+  mirrors `prioEntitlement`'s routing, and the original 2026-07-31 seam
+  comment ("the target must ride the SAME basis as the cap") gained its
+  one-pool clause: the same-basis rule includes the LANE SLICE.
+  (2) Three consumers still keyed rows by the retired `"c:"+order` after rows
+  moved to `"c:"+college` — the `?college=` deep link, its scroll, and Sam's
+  one-click "✎ Confirm" chip were all dead clicks. A key migration is only
+  done when every WRITER of the key is found; the readers announce themselves
+  by failing, the writers fail silently.
+  (3) "Nothing bold" (the low-key-rows ruling) had shipped only two of its
+  three parts — centering and rightmost-right landed, the `<strong>` name
+  didn't — caught by a computed-style guard, not a selector guard.
+- **Grid columns denominated in `em` disagree across font sizes.** The mock's
+  header (.74rem), SYSTEM row (.95rem) and college rows (1rem) shared one
+  grid-template *string* but not one grid: em resolved against each element's
+  own font-size, so the header's numeric columns were ~25% narrower and every
+  label sat right of its values — Sam's screenshot. One `rem` template fixed
+  all three at once. (KB note filed.)
+- **A display rename and a key rename are different operations.** "LA
+  Southwest" and "Riverside City" landed as `display` aliases on the roster
+  rows: `dispName()` carries them to rows, CSV, memo, and the explainer's
+  display cells, while the `college` key keeps feeding PERF lookups, data-ids,
+  opt-ins and deep links. The college briefing renders raw keys and is the
+  known gap — queued for college-district-identity rather than half-patched.
+- **A wording sweep needs its tests swept in the same motion.** pool→funding
+  broke exactly one fresh port (`statutory_goals` pinning "full pool share")
+  and my own Summary rework broke the anchor's D1 — both expected, both
+  re-aimed within minutes because the porting policy said re-aim, never
+  weaken. The cost of sweeping vocabulary while five agents port tests is one
+  collision per overlapping phrase; the alternative (freezing wording until
+  the port lands) would have cost Sam's live reaction loop.
+- **boundLabel doubled a shared bound's figure** ("51 institutions at the
+  $150,000 base award at $150,000") because the helper embedded the figure in
+  one branch while the caller appended it unconditionally. When a helper
+  formats EITHER a name OR a count-phrase, the figure belongs inside both
+  branches and the caller appends nothing.
+- **Flagged for Sam, not decided:** Annual-view award cells show cumulative
+  window earning over the per-year figure ("earning $140,476 · 191%") —
+  deliberate per its comment, but two independent porting agents read it as
+  over-earning. His display-semantics call.
+
+**Numbers of record:** 118 · 51 base / 7 cap · trio $482,669 · college NC
+shares $1,300,738 · SYSTEM NC $1,783,407 (baked; real-data $1,783,399) ·
+average $213,901 · Mt. SAC uncapped $711,567 (its NC FTES now rides its row).
+
+## 2026-09-01 — Session 217 (SkyDeck): the deck run, and where a live-painted page still lies
+
+Sam pivoted S217 to a deliverable: revise his Taco Tuesday deck for the
+2026-09-02 session (Ed Code §78093.2 · the 2025–26 $50K review · the new
+funding). The lane lessons out of a *presentation* run, of all things:
+
+- **The live config is the only place the priorities exist correctly.** The
+  deck's three priority cards were two models stale (P1 Access / P2 Success /
+  P3 Capacity with headcount metrics). Rebuilt from the live effective values
+  (P1 Access: Statewide 34% · P2 Access: Outreach 33% · P3 Completion 33%,
+  units-in-FTES metrics), read via the config dump — never from memory rows,
+  which hold rulings, not values. The deck's opt-in date was also stale
+  (Oct. 31 vs the live participationDeadline 2026-11-01) and its
+  coordinator count happened to still be exactly right (48 of 115,
+  re-verified against `map_coordinator_summary()`).
+- **Sam's sunshine ruling (2026-09-01, verbatim):** "I don't want to get into
+  specifics on the new funding, just the general principles… New funding is
+  still in draft form that I need to confirm with CO leadership before
+  sunshining details." So outward materials carry the model's SHAPE (one
+  funding total · base and cap · sized by combined teaching · outcomes-based
+  draw-down · three draft priorities · noncredit riding every award) and no
+  dollar figures, weights, counts, or the explainer link. The tab and
+  explainer remain reachable but are not to be pointed at from presented
+  materials until he confirms with CO leadership.
+- **A live-painted page still goes stale in its PROSE.** Found while sourcing
+  the deck: `funding-model/index.html` step one still says awards are sized by
+  *credit* FTES over "all 115 … 1,069,182", and step three + the
+  choices-table still say every funding factor is **1.0** — while the live
+  Year-1 factors are **0.5** (mirrored years make them effective) and the
+  one-pool sizes on combined FTES over 118. The 2026-08 fix gave every
+  FIGURE an id the painter overwrites; SENTENCES that assert model mechanics
+  have no ids, so the page can no longer lie in numbers but still lies in
+  prose. KB note filed; the fix (next session) is to paint the load-bearing
+  claims or delete the duplicated mechanics prose in favor of painted text.
+- **Deliverable:** `CPLBrain/04-projects/cpl-initiative/20260831_Taco_Tuesday_3.pptx`
+  (+ searchable companion .md and the build script beside it). 14 slides:
+  agenda (30 min Ed Code · 5 min $50K reporting methods · 10 min questions),
+  the ESS 25-82 commitments + a reporting-methods slide for the teammate,
+  three Ed Code slides (establishes / requires / the statute verbatim), and
+  the funding slides held at general principles.
+
+## Moved from the lane file at the S300 compaction (2026-09-29)
+
+Verbatim, as `docs/reference/lanes/implementation-funding.md` held them before the S300 checkpoint condensed them.
+
+✅ **THE INTRODUCTION VIDEO: CPL Funding in Motion** (S291–S294; details in [`prototype/funding_video/README.md`](../../../prototype/funding_video/README.md)). A 90-second **introduction** for colleges per scenario, one source (`funding_in_motion.src.html` + `CONFIG` in `build.py`), linked from the explainer. ⭐ **An introduction, not a guide** (Sam, 2026-09-26: *"a guide would be much longer and more detailed"*). ⚠️ **ITS FIGURES ARE TYPED IN, NOT READ LIVE:** if a dial moves, edit `CONFIG` and run `render.sh [s2]`. ⭐ **Sam's rulings (2026-09-25):** Sample College stands in for Chaffey with Chaffey's numbers; year-one funding **carries forward to year two for the same college** and **is NOT releveled**; the figures and the explainer link are cleared for his sunshine walk-through. ⚠️ **The stored timing in Scenarios 1 and 2 still reads "…and Releveled"** (Sam's saved label; the code default is fixed, S296): his edit on the tab, To-Do `s296-sam-timeline-label`. ⭐ **The narrated draft is built; Sam's call (2026-09-27, open-asks card 1): cue each reveal to the word that names it first, then the draft comes back to him** (S294): variant `n1`, three minutes, the Heart voice (Kokoro-82M, local) reading `narration_s1.json` through `narrate.py`, whose fixes and bans answer his v2 note (*"stilted, especially when sounding out C-P-L"*); it is not linked from the explainer until he approves it. `tests/funding_video_page.test.js` guards all three pages.
+
+✅ **SCENARIO 3'S CONTROLS (#1664, 2026-09-23).** ⭐ **A PUBLISHED SCENARIO per project** (`projects.<pid>.published`): the explainer, the college briefing and an unchosen browser read it; the strip names it and offers Publish; unset keeps Scenario 1, and the published one cannot be deleted. ⚠️ **A window saves only over the version it read**: the PATCH names `updated_at` ([note](../../kb-notes/methodology-a-window-saves-only-over-the-version-it-read.md)). ⭐ **Add/Delete a priority**: `prioRemoved` (source indices, reversible via Restore) and `prioAdded` (from index 100) are window-level; ⚠️ **a deleted share must move** — an award is W × Σshares, so Delete asks which priority takes it, and the totals row warns whenever shares ≠ 100%. ⭐ **One numbering**: a reported card is "Priority N" with its own picker and title (`reportedTitles`), stored order `cardOrder` + explicit `reportedCards`; ⚠️ the label inside `priorities()` reads STORED data only (deriving the reported set there recurses), and `priorityOrder()` stays the truth for measured order. **Show on college rows** (`cardRows`; funding still counts). **Measured-from wording** editable (`measureLabels`). ⭐ **Total Funds column** — the max award, the combined figure the base and cap bind, with its plain Base / Cap chip; what qualifies against it reads in Curr Total Funds beside it (2026-09-28). It reverses part of R6/R7, and Sam kept it (evening sheet item 2, accepted 2026-09-23) ([note](../../kb-notes/methodology-label-a-bound-where-it-binds.md)). The college briefing honors `prioRemoved` and the published scenario. The builder folds MAP's trailing "Credit" onto NOCE/Calbright. ⚠️ **A REDRAW DURING A PRESS SWALLOWS THE CLICK** (Sam's Delete that "doesn't fire", 2026-09-23): a field committing on blur redrew the tab under the pressed button. `render()` waits while a press begun in the mount is open (selects exempt, 1.5 s fallback; `cpl_funding_press_hold`). Delete's question replaces its card and names the published scenario (`cpl_funding_delete_confirm`).
+
+✅ **FUNDING REVIEW SHEET, RULED (Sam, 2026-09-23; [sheet](https://claude.ai/artifact/9MfbN6jqio8as9mY4LwPB2)):** ① superseded the same evening: Career attainment funds at 33%, factor 0.5 (above) ② CO research defines the wage outcome ③ the drill-in consolidated. The 2026-09-15 sheet's residue: [`docs/map_eligible_label_note_draft.md`](../../map_eligible_label_note_draft.md), which **SAM sends** after the reconciliation is re-measured. ⚠️ **A SHEET'S STORE IS LIVE — RE-READ IT AT EXECUTION.** ⚠️ **THE CONFIG PATH IS NOT `config->'priorities'`:** `config -> projects -> <project> -> scenarios -> <scenario> -> yearPriorities -> <year> -> <slot>`, objects keyed "0"/"1"/"2" (`jsonb_each`). **NEEDS SAM (the 2026-09-27 funding asks sheet, cards 3–4, not yet reached):** review-sheet items 8–10 (card 3); the explainer's footer (card 4). **Ruled 2026-09-27 (read through card 2); card 1 carried out (S296, #1721):** under Annual funding every award cell reads the viewed year (`cellFig()`), Combined and the CSV keep the window; cards 1–2 left the builder (#1722); Sam waits for Pedro to deliver CollegeID2, and no session drafts a request (card 2, his own call). **Ruled already:** COBI keeps "<10" until the public/private split, point 2 of the under-10 ADR Sam ratified on 2026-09-03 ([adr](../../kb-notes/adr-funding-counts-mask-under-10-units-carry-the-money.md)); the ESS partial state reads the feed's floor (S296).
+
+✅ **The explainer is titled "2026-2028 CPL Initiative Funding: How It Works"** (S292), with a one-paragraph statutory intro (SB 135, Stats. 2026 Ch. 79; Ed. Code Article 9 §78093–78093.2, effective 2026-07-13; the four goals of §78093.2(d)(1)). The tab's own link text ("How this funding model works") is unchanged; three suites pin it. ⚠️ `funding_model_page.test.js`'s vocabulary scan lifts the statute's phrase "advancing career attainment" out before scanning; every other *advance* stays banned. ✅ **The noncredit drill-in header was dark ink on the blue fill** (Sam's screenshot, 2026-09-26): both lanes' headers now state fill and ink in one rule each; `cpl_funding_dtl_align.test.js` c1–c3 resolve the cascade for both.
+
+✅ **THE MEASURES.** Credit: `pe` eligible units · `pa` applied units · `p3` transcribed units (the documented cohort, `and not is_potential`). Access: `ppe`/`ppa` (+`_u`) among portal-origin students, DISJOINT from `pe`/`pa`, riding `Potential Student` until CollegeID2 lands. Accepted: ✅ **`pac`/`pac_u` ARE LIVE AND "COMPLETION WITH COUNSELING" IS PINNED TO THEM** (Sam, 2026-09-15). ⭐ **The `accepted` milestone serves (B) ALONE** (Sam, 2026-09-22: *"Change P2 B&C Completion to B Completion with Counseling"*, superseding his 2026-09-01 (B)+(C)). ⭐ **The counselor step is a policy attestation, not a technical guarantee** (Sam, 2026-09-01); no surface may claim otherwise. Transcribed + Counselor step: ✅ **`ptc`/`ptc_u`** (Sam, 2026-09-23, #1664): rung `transcribed`, so (B) and NC pairs `nc_pt_u`; `counselor: true` puts the step on its own wiring axis. Career: ✅ **`ca_u` / `nc_ca_u`** (milestone `career`, `origin: "co"`) — CPL units for students with an EDD career outcome, which the CO measures and imports; `srcByCo()` keeps every surface from saying "MAP" or "daily feed" about them. Noncredit: F1 feeder eligible headcount listed from day one, $0 until the origination feed reports — ⚠️ `srcDelivered()` reads an undelivered key as **$0, never a cap**, so pinning a priority to an undelivered measure strands its whole share. **The earn diagnostic** is the lane's best health check — **re-run it after the dials move**. ⭐ **MAP partner agencies are outside the model** (Sam, 2026-09-24: Launch *"should not be included in the college count or mentioned"*): the builder skips `entity_kind: "partner"` rows (Launch Apprenticeship, Futuro Health) at the row; `unmatched` stays for CCC names the resolver misses. ★ Veteran Star rides the college rows (59 flags), in its own slot after the pie; the Minimum Conditions section states 60 meet the condition, 59 hold the star.
+
+⭐ **THE DRILL-IN IS ONE RENDERER, ONE TABLE PER LANE** (`prioDetailTableHtml(scope)`, college + statewide; #1679, 2026-09-24):
+credit first, then noncredit or one *Credit only* line, in Sam's six columns, the first header naming the lane (Credit outcomes /
+Noncredit outcomes) · Max FTES · Max Funds · Actual FTES · Actual Funds · Difference (Max Funds − Actual Funds; the FTES gap in
+its hover, the share of Max FTES in the Actual FTES hover; `diffMoney()` subtracts the COARSE public figure). First column left,
+the rest centered, each header on its column (#1677/#1678). Credit header `--seal-blue`, NC header `--dtl-nc-head` (both HTMLs);
+only the NC table has a caption. No measure yet reads **TBA** (Sam, 2026-09-28); a bad source still reads "awaiting a known
+measure". ⭐ **Statewide Actual Funds sums what institutions RECEIVE** (`earnAgg()` `crReleased`/`ncReleased`), matching the
+Statewide row; the cards' Progress line keeps the demonstrated figure. ⚠️ **The scope supplies the figures; the renderer never derives them.** ⚠️ **The
+statewide row must NOT carry `.cplfund-row`.** ⚠️ `.cplfund-table th` and `tr.cplfund-detail td` reach the nested cells; the
+`.cplfund-dtl-tscroll >` rules restate the geometry (`cpl_funding_dtl_align`). ⭐ **The card head says each thing once** (Sam:
+*"I like your simplified priority card!"*): "Priority N · (A) Access", the pickers inline in the internal view (the derived
+option's closed face reads the outcome, `title="Set by the metric"`), the law on one line, Rename for a custom title
+(`cardHeadHtml`). Guards: `cpl_funding_statewide_expand`, `cpl_funding_outcome_cards`, `cpl_funding_row_legibility` (a suite
+reads the LANE table, `.cplfund-dtl-cr`).
+
+⭐ **GOAL (C) IS MEASURED BY THE CO FROM EDD WAGE DATA (Sam, 2026-09-22):** *"This would not be reported by the colleges but instead measured by the CO and reflected on our funding model with periodic updates (imports) of the data. The Opportunities section would stay as is."* Career attainment (`ca_u`, CPL units, milestone `career`) derives (C); ⚠️ `srcDelivered()` reads an undelivered key as **$0**, so its share qualifies nothing until the first import. ✅ **Receiver built:** `funding/career_attainment_import.json` ([format](../../kb-notes/reference-career-attainment-import.md)) → `read_career_attainment()` → `ca_u` / `nc_ca_u`; units only, an unmasked count under 10 stops the import; guard `tests/funding_career_import_test.py`. **Nothing is committed yet — CO research sends the first file.**
+
+⭐ **THE EXPLAINER READS THE MODEL, NOT COPIES OF IT (S265).** Priority card sentence = the config's `description`; baseline requirements and the participation deadline = `_requirements()`. ⚠️ **THE TWO VOCABULARY GUARDS CANNOT SEE THIS PAGE** — `cpl_funding_calm` reads the TAB's mount and `cpl_funding_earn_retired` reads `cpl_funding.js`; the explainer is a THIRD file, and `funding_model_page.test.js` scans its prose. ⚠️ **THE PRINT STYLESHEET IS THE PDF'S DESIGN** (the page prints itself — no built file) and **must never hide `.cplfund-caret`, which IS the institution's name**. ⚠️ The explainer defines its own `--focus-ring` (COBI's `--gold-accent` / `--navy-secondary` were undefined there, so 138 focus rings drew nothing). `npm run a11y funding-model` passes clean.
+
+⚠️ **THE ORIGINATION CUTOVER IS ASYMMETRIC — half of it lands on its own and half waits on a person.** The **NC side** (`LocID2`) is wired downstream: the builder emits `nc_pe`/`nc_pa`/`nc_pt` and the origination block the day the column reaches it, consumers already wired. It reaches the builder only when a session adds it to the daily fetch, which asks MAP for a fixed column list (`fetch_custom_report.py`), and asking for a column a view lacks fails the whole view (measured 2026-09-27). The **credit side is NOT**: `funding/_build_funding_performance.py` prints *"the ppa cutover from 'Potential Student' to named origins stays PENDING"* and emits an `origin_values` histogram so the change is made on CONFIRMED spellings, never guessed. Only that cutover makes `ppa_u` cover batch upload — and its only signal is one line in a daily run log. ⚠️ **A LANE FILE IS A SUMMARY OF A MEASUREMENT, NOT THE MEASUREMENT** (`scripts/funding_effective.js` refuses baked defaults; [note](../../kb-notes/methodology-a-lane-file-is-a-summary-of-a-measurement.md)). `prioTarget()` makes factor the price premium; no per-year ramp in this window (`mirrorYears`).
+
+## 2026-09-01 — Session 218 (SkyMeld): four outcomes fold into three bands, and the model's own earn figures make the case
+
+**PR [#1429](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1429), squash-merged `724feac`.** Sam opened with a
+structural ask — *"note how we have the 4 outcomes of 78093.2 and the 3
+priorities of the model. I would like to meld these somehow together so we can
+still adjust the factors and metrics needed while accounting for the 4
+outcomes"* — and refined it across five rounds. What shipped is his structure,
+not the one this session first proposed, and that is the story worth keeping.
+
+### What the tab actually had wrong
+
+Two sections described ONE allocation in two vocabularies: "Three Priority
+Outcome-Based Allocations" and "Funding Outcomes Required by Ed. Code
+§78093.2(d)(1)", stitched by a superscript letter on each priority card. The
+collision was visible in the priority NAMES — *Access: Statewide* and *Access:
+Outreach* are compounds that exist only because "Access" is the outcome and the
+second word is the real distinction.
+
+**And the code already knew.** `prioGoals()` never read a title; it derived the
+goal from the metric's MILESTONE (`transcribed` → B, `eligible`/`applied` → A)
+because, in its own comment, that distinction *"is the access-vs-completion line
+the statute itself draws."* The grouping was already computed. Only the layout
+had not caught up — so the consolidation was a presentation change over an
+existing derivation, not a new mechanism.
+
+### Sam's two refinements, both better than the proposal
+
+1. **Success = (B) + (C).** *"Combine into Success both completion and career
+   attainment the same way we combine two aspects of Access."* This gives goal
+   (C) a home inside the campus-facing frame instead of exiling it to the
+   project channel, and it is where a reader looks for it.
+2. **(D) becomes "Opportunities", not "Pilot projects".** More faithful to the
+   statute, not less: (D)'s object is *"credit for prior learning
+   opportunities"*; pilot projects are the means it names. It also makes the
+   three bands parallel — each is a thing that happens to students.
+
+Then, on the measures: **put the counselor gate ON Applied rather than beside
+it.** This session had proposed a fourth measure; Sam's version repairs the
+applied rung itself instead of standing a new one next to a still-inflatable
+one. Three measures, not four.
+
+### The finding that justified the whole thing
+
+Booting the live model against the live feed (`_prios()` per college × the perf
+artifact) measured what the current three priorities actually earn:
+
+| Measure | Cap | Earned | Colleges at full earn |
+|---|---:|---:|---|
+| Access: Outreach (eligible) | $7,740,780 | **$6,660,016 — 86.0%** | **97 of 115** |
+| Completion (transcribed) | $7,740,780 | $1,245,625 — 16.1% | 13 full · 9 partial · 93 zero |
+| Access: Statewide (`ppa_u`) | $7,975,349 | $63,773 — 0.8% | 0 |
+| **credit slice** | **$23,456,909** | **$7,969,414 — 34.0%** | |
+
+**84% of everything earned comes from the measure 97 of 115 colleges already max
+out.** A third of the allocation pays for eligibility that already exists — the
+rung the builder itself flags as carrying "the ACE/JST skill-level duplication"
+and as "not an action the college took". `earnFraction()` caps at
+`min(1, actual/target)`, so an over-target measure is an automatic payment, which
+is the same "earns nothing and incentivises nothing" the metric diagnostic warns
+about for an UNMEASURABLE metric — reached from the opposite direction.
+
+**Read as an incentive, the model mostly was not one.** That is the argument for
+the restructure, and it is stronger than the tidiness argument this session
+opened with.
+
+### Three measures proposed and measured before any was adopted
+
+Each candidate looked good until it was measured. That pattern repeated three
+times in one session and is the transferable lesson.
+
+- **Completed My CPL Stories as the career-attainment metric.** Measured the
+  live corpus: 36 stories, **14 of 118 institutions**, 9 of those with exactly
+  one, two colleges holding 44%, and **3 of 36** naming a career destination.
+  Rejected for funding (it measures COLLECTION, not attainment; it puts funding
+  pressure on a student consent artifact carrying a selfie and a release), kept
+  for (d)(2) demonstration. Also found a live defect: the goal-(C) card counts
+  `Airman → Cerritos College → UC Riverside` as a career destination because the
+  classifier's education regex has `university` but not `UC` — 4 reported, 3 real.
+- **Origination-filtering the Access measure.** Sam ruled "filter now". Measured:
+  portal-origin is **104 students statewide against 39,007** (0.27%), and
+  `ppa_u` is 649.5 units against `pa_u`'s 216,035. Scaling by the statewide
+  eligible:applied ratio (6.42×), a filtered Eligible lands near 0.3% of today's
+  1,386,862. Shipped anyway on his ruling — correctly, because `srcDelivered()`
+  reads an undelivered key as $0 rather than a full cap, and the measure becomes
+  right the moment `Origin` carries batch upload.
+- **The counselor step.** Adopted. The dial-setting question it raised is below.
+
+### Setting a measure that starts near zero
+
+`prioTarget()` for an FTES priority is `(entitlement / rate) × (nYears / factor)`
+— so **factor is the price premium**: a higher factor pays more per CPL FTES and
+the share is earned with fewer of them ("a premium on the harder / more-valued
+priority", per the code). That is exactly the dial for a new behavior. Measured
+from the model: the effective price at factor 0.5 is **$2,520.32 per CPL FTES**
+for a college at neither bound, and the statewide window targets are 2,757.1 /
+2,676.0 / 2,676.0 CPL FTES.
+
+Against today's 216,035 applied units, the adoption an Accepted measure needs to
+earn in full:
+
+| share | factor | target | applied CPL needing the attestation |
+|---:|---:|---:|---:|
+| 33% | 0.5 | 80,280 u | 37.2% |
+| 33% | 1.0 | 40,140 u | 18.6% |
+| **25%** | **1.0** | **30,409 u** | **14.1%** ← recommended, Sam ruled yes |
+| 20% | 2.0 | 12,164 u | 5.6% |
+
+⚠️ **A per-year ramp is not available in this window:** `mirrorYears` makes year
+2 read year 1, and `frontload` gives later years no separate pot. Set the factor
+once for the window, revisit at the next appropriation.
+
+### The claim this session got wrong, and Sam corrected
+
+Said repeatedly, and written into a source comment and a commit message, that
+the counselor step **"cannot be batch-loaded."** False. Sam: *"there are
+allowable uses for batch uploading the counselor step checked true — we ask
+colleges to batch upload previously transcribed CPL from their SIS, with the
+assumption that they went through the counseling steps with each student before
+transcribing."*
+
+The honest version: it is a **policy attestation, not a technical guarantee**.
+Its integrity rests on the CO instruction (stop auto-awarding — which *"can
+impact students negatively"* — confirm acceptance, then check the step) plus the
+audit trail recording who attested and when. The live risk is a college that
+auto-awards, military basic-training credit especially, and batch-sets the flag
+anyway. It still does real work: an undifferentiated applied count asks the
+college to assert NOTHING, while this one requires an assertion they are
+accountable for. **The gap narrows; it does not close.** Corrected in `8720687`.
+
+Sam also ruled the step may be checked by **either the student or the
+counselor/coordinator/initiator**, and agreed to record the attester in the audit
+trail — which is what makes the measure reviewable, and which matters more given
+the batch case.
+
+### A bug the consolidation introduced, and how it was caught
+
+Banding puts each band's cards in their own `.cplfund-prio`. The drag/reorder
+handlers bound `document.querySelector("#cplFundingMount .cplfund-prio")` —
+**singular**, correct while there was one grid. Only the Access band got
+listeners: the position picker on every card below it looked live, accepted the
+change, and reordered nothing.
+
+**No assertion about markup would have caught it.** It was found by a test that
+EXERCISED the last card, and pinned by one that still does — mutation-verified
+by reintroducing `querySelector`, which turns exactly that one assertion red.
+The general shape: **when you group a flat list into containers, every
+`querySelector` that assumed one container becomes a silent partial.**
+
+### Four suites re-aimed, and why counts went UP
+
+`reorder`, `rollup`, `metric_pin` and `render`/`one_pool` located priority cards
+by **DOM ordinal**. Bands render in statute order, so the card at display
+position N is Nth WITHIN ITS BAND — the ordinal assumption broke. Re-aimed to
+`data-priocard`, the display index the renderer already stamps, which is what
+every one of those assertions was always reaching for. None was ever about
+document order. `render` and `one_pool` also gained absence guards in the
+R1–R11 shape (the retired section title must stay gone; the statutory title must
+appear exactly once). Counts: reorder 69/69 (was crashing), rollup 43/43 (38/43),
+metric_pin 44/44 (43/44), render 137/137 (135/136), one_pool 51/51 (48/49).
+
+### Three CI failures, three different causes
+
+Worth recording because the temptation each time was to assume the previous fix
+covered it, and twice that would have been wrong.
+
+1. `b3a8ad1` — the five suites above. Fixed in `d214d71`.
+2. `d214d71` — **`dependency map is STALE`**. The map is derived from source and
+   the refactor moved code, so recorded line references drifted. 15 lines
+   changed, every one a `"line":` number; the markdown was byte-identical.
+3. `8720687` — the same staleness (that commit predated the regeneration).
+
+Also surfaced by CI, and easy to miss because it is explicitly "not a failure":
+`cpl_funding_statutory_bands.test.js` **had no recorded check floor**, so its 26
+assertions were unprotected against silently disappearing. Re-baselined with
+`npm run test:floor` and the ledger diff REVIEWED before committing — the tool
+rewrites every file's floor and will happily lower one. Nothing dropped: one_pool
+49→51, render 136→137, bands new at 26.
+
+### What shipped
+
+Three bands with **derived** membership (a card lands by the goal `prioGoals()`
+resolves from its milestone — the same resolver the earning math uses, so the
+band a college reads and the dollars it earns can never disagree), an **orphan
+band** so an unresolvable priority surfaces loudly instead of vanishing, the goal
+spine preserved as a fold (it is the §78093.2(d)(2) reporting artifact and the
+only place (C) reads honestly funded-and-unmeasured), a new `accepted` milestone
+mapping to (B)+(C), and two measure sources — `ppe`/`ppe_u` emitting today,
+`pac`/`pac_u` declared-not-delivered on the noncredit lane's proven pattern.
+
+**Not shipped, deliberately:** shares and factors. Sam's standing rule — *"I
+don't want you to fix it; I want the tab to save it"* — makes those curator edits
+through the tab, not session SQL.

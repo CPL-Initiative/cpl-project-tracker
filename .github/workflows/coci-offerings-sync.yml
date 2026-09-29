@@ -11,11 +11,21 @@ name: COCI offerings sync (Sierra catalog)
 # gated map-users sync). Rebuild + re-sync whenever the COCI extract refreshes.
 #
 # Triggers:
-#   - push (to the builder/source paths) → --apply (refresh the catalog)
-#   - workflow_dispatch → --apply (on-demand, after merge)
+#   - push to MAIN (on the builder/source paths) → --apply (refresh the catalog)
+#   - workflow_dispatch → --apply (on-demand, or to re-run after a failure)
+#
+# ⚠️ `branches: [main]` IS LOAD-BEARING (added 2026-09-17, S272). Without it the
+# push trigger fired on EVERY branch, so a `claude/*` feature branch that touched
+# the builder ran `--apply` against the live public catalog from unreviewed code
+# — measured: run 10 rewrote all three tables off a feature-branch commit before
+# the PR had a single check finish. The write is a truncate-and-replace of
+# coci_college_offerings / coci_college_programs / college_geo, which Sierra
+# reads, so an unreviewed builder change reaches students' answers directly.
+# Feature branches now verify with the DRY RUN (no --apply) and let main publish.
 
 on:
   push:
+    branches: [main]
     paths:
       - 'chatbox/build_coci_offerings.py'
       - 'chatbox/sync_coci_offerings.py'

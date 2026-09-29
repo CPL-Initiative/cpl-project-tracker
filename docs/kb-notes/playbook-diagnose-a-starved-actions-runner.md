@@ -35,7 +35,7 @@ runner_id: 0 · runner_name: "" · started_at == created_at · conclusion: cance
 ```
 
 `runner_id: 0` means **no runner was ever assigned**. The job sat in the queue
-for GitHub's ~15-minute allocation timeout and was cancelled. There are no logs
+for GitHub's ~15-minute allocation timeout and was canceled. There are no logs
 because no step executed — which is also why `get_job_logs` returns *"No failed
 jobs found"* on a run whose conclusion is `failure`.
 

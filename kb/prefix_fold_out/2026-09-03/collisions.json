@@ -1,0 +1,770 @@
+{
+  "_about": "keep-number candidates that were taken and the free key they were gap-filled to; plus the articulation identities-map ghosts the fold heals or vacates",
+  "count": 125,
+  "gapfilled": [
+    {
+      "old_id": "HVAC M1105",
+      "wanted": "ARCH M1105",
+      "new_id": "ARCH M1020",
+      "why": "HVAC->ARCH: Architecture owns ARCH"
+    },
+    {
+      "old_id": "CRIM M1413",
+      "wanted": "BUSI M1413",
+      "new_id": "BUSI M1096",
+      "why": "CRIM->BUSI: Business owns BUSI"
+    },
+    {
+      "old_id": "ITIS M9050",
+      "wanted": "COMP M9050",
+      "new_id": "COMP M9075",
+      "why": "ITIS->COMP: Computer Science owns COMP"
+    },
+    {
+      "old_id": "CNSR M1017",
+      "wanted": "CNSM M1017",
+      "new_id": "CNSM M1041",
+      "why": "CNSR->CNSM: Construction Management owns CNSM"
+    },
+    {
+      "old_id": "HVAC M1079",
+      "wanted": "CNST M1079",
+      "new_id": "CNST M1130",
+      "why": "HVAC->CNST: Construction Technology owns CNST"
+    },
+    {
+      "old_id": "HVAC M1089",
+      "wanted": "CNST M1089",
+      "new_id": "CNST M1131",
+      "why": "HVAC->CNST: Construction Technology owns CNST"
+    },
+    {
+      "old_id": "HVAC M1091",
+      "wanted": "CNST M1091",
+      "new_id": "CNST M1132",
+      "why": "HVAC->CNST: Construction Technology owns CNST"
+    },
+    {
+      "old_id": "HVAC M1103",
+      "wanted": "CNST M1103",
+      "new_id": "CNST M1133",
+      "why": "HVAC->CNST: Construction Technology owns CNST"
+    },
+    {
+      "old_id": "HVAC M1109",
+      "wanted": "CNST M1109",
+      "new_id": "CNST M1134",
+      "why": "HVAC->CNST: Construction Technology owns CNST"
+    },
+    {
+      "old_id": "HVAC M1115",
+      "wanted": "CNST M1115",
+      "new_id": "CNST M1135",
+      "why": "HVAC->CNST: Construction Technology owns CNST"
+    },
+    {
+      "old_id": "HVAC M1123",
+      "wanted": "CNST M1123",
+      "new_id": "CNST M1136",
+      "why": "HVAC->CNST: Construction Technology owns CNST"
+    },
+    {
+      "old_id": "HVAC M9010",
+      "wanted": "CNST M9010",
+      "new_id": "CNST M9041",
+      "why": "HVAC->CNST: Construction Technology owns CNST"
+    },
+    {
+      "old_id": "MAKR M9010",
+      "wanted": "ELET M9010",
+      "new_id": "ELET M9027",
+      "why": "MAKR->ELET: Electronics owns ELET"
+    },
+    {
+      "old_id": "MUSC M1033",
+      "wanted": "ELET M1033",
+      "new_id": "ELET M1054",
+      "why": "MUSC->ELET: Electronics owns ELET"
+    },
+    {
+      "old_id": "SONO M1015",
+      "wanted": "EMST M1015",
+      "new_id": "EMST M1106",
+      "why": "SONO->EMST: Emergency Medical Technologies owns EMST"
+    },
+    {
+      "old_id": "GEOL M1075",
+      "wanted": "ESCI M1075",
+      "new_id": "ESCI M1001",
+      "why": "GEOL->ESCI: Environmental Technologies owns ESCI"
+    },
+    {
+      "old_id": "FCSH M1002",
+      "wanted": "FASH M1002",
+      "new_id": "FASH M1134",
+      "why": "FCSH->FASH: Fashion and Related Technologies owns FASH"
+    },
+    {
+      "old_id": "FCSH M1045",
+      "wanted": "FASH M1045",
+      "new_id": "FASH M1135",
+      "why": "FCSH->FASH: Fashion and Related Technologies owns FASH"
+    },
+    {
+      "old_id": "NUTR M1042",
+      "wanted": "FASH M1042",
+      "new_id": "FASH M1136",
+      "why": "NUTR->FASH: Fashion and Related Technologies owns FASH"
+    },
+    {
+      "old_id": "NUTR M1047",
+      "wanted": "HLTH M1047",
+      "new_id": "HLTH M1020",
+      "why": "NUTR->HLTH: Health owns HLTH"
+    },
+    {
+      "old_id": "SONO M1010",
+      "wanted": "HLTH M1010",
+      "new_id": "HLTH M1034",
+      "why": "SONO->HLTH: Health owns HLTH"
+    },
+    {
+      "old_id": "THTR M1314",
+      "wanted": "MUSI M1314",
+      "new_id": "MUSI M1081",
+      "why": "THTR->MUSI: Music owns MUSI"
+    },
+    {
+      "old_id": "THTR M1340",
+      "wanted": "MUSI M1340",
+      "new_id": "MUSI M1512",
+      "why": "THTR->MUSI: Music owns MUSI"
+    },
+    {
+      "old_id": "THTR M1345",
+      "wanted": "MUSI M1345",
+      "new_id": "MUSI M1542",
+      "why": "THTR->MUSI: Music owns MUSI"
+    },
+    {
+      "old_id": "THTR M1346",
+      "wanted": "MUSI M1346",
+      "new_id": "MUSI M1648",
+      "why": "THTR->MUSI: Music owns MUSI"
+    },
+    {
+      "old_id": "THTR M1366",
+      "wanted": "MUSI M1366",
+      "new_id": "MUSI M1649",
+      "why": "THTR->MUSI: Music owns MUSI"
+    },
+    {
+      "old_id": "THTR M1372",
+      "wanted": "MUSI M1372",
+      "new_id": "MUSI M1650",
+      "why": "THTR->MUSI: Music owns MUSI"
+    },
+    {
+      "old_id": "NRSV M1019",
+      "wanted": "NRSR M1019",
+      "new_id": "NRSR M1290",
+      "why": "NRSV->NRSR: Nursing owns NRSR"
+    },
+    {
+      "old_id": "NRSV M1020",
+      "wanted": "NRSR M1020",
+      "new_id": "NRSR M1291",
+      "why": "NRSV->NRSR: Nursing owns NRSR"
+    },
+    {
+      "old_id": "NRSV M1022",
+      "wanted": "NRSR M1022",
+      "new_id": "NRSR M1292",
+      "why": "NRSV->NRSR: Nursing owns NRSR"
+    },
+    {
+      "old_id": "NRSV M1023",
+      "wanted": "NRSR M1023",
+      "new_id": "NRSR M1293",
+      "why": "NRSV->NRSR: Nursing owns NRSR"
+    },
+    {
+      "old_id": "NRSV M1024",
+      "wanted": "NRSR M1024",
+      "new_id": "NRSR M1294",
+      "why": "NRSV->NRSR: Nursing owns NRSR"
+    },
+    {
+      "old_id": "NRSV M1025",
+      "wanted": "NRSR M1025",
+      "new_id": "NRSR M1295",
+      "why": "NRSV->NRSR: Nursing owns NRSR"
+    },
+    {
+      "old_id": "NRSV M1028",
+      "wanted": "NRSR M1028",
+      "new_id": "NRSR M1296",
+      "why": "NRSV->NRSR: Nursing owns NRSR"
+    },
+    {
+      "old_id": "NRSV M1029",
+      "wanted": "NRSR M1029",
+      "new_id": "NRSR M1297",
+      "why": "NRSV->NRSR: Nursing owns NRSR"
+    },
+    {
+      "old_id": "CNSR M1018",
+      "wanted": "BSOT M1018",
+      "new_id": "BSOT M1259",
+      "why": "CNSR->BSOT: Office Technologies owns BSOT"
+    },
+    {
+      "old_id": "COMP M9075",
+      "wanted": "BSOT M9075",
+      "new_id": "BSOT M9125",
+      "why": "COMP->BSOT: Office Technologies owns BSOT"
+    },
+    {
+      "old_id": "HTEC M1099",
+      "wanted": "BSOT M1099",
+      "new_id": "BSOT M1260",
+      "why": "HTEC->BSOT: Office Technologies owns BSOT"
+    },
+    {
+      "old_id": "ITIS M9055",
+      "wanted": "BSOT M9055",
+      "new_id": "BSOT M9126",
+      "why": "ITIS->BSOT: Office Technologies owns BSOT"
+    },
+    {
+      "old_id": "ITIS M9057",
+      "wanted": "BSOT M9057",
+      "new_id": "BSOT M9127",
+      "why": "ITIS->BSOT: Office Technologies owns BSOT"
+    },
+    {
+      "old_id": "ITIS M9058",
+      "wanted": "BSOT M9058",
+      "new_id": "BSOT M9128",
+      "why": "ITIS->BSOT: Office Technologies owns BSOT"
+    },
+    {
+      "old_id": "ITIS M9059",
+      "wanted": "BSOT M9059",
+      "new_id": "BSOT M9129",
+      "why": "ITIS->BSOT: Office Technologies owns BSOT"
+    },
+    {
+      "old_id": "SONO M1009",
+      "wanted": "PTAS M1009",
+      "new_id": "PTAS M1002",
+      "why": "SONO->PTAS: Physical Therapy Assisting owns PTAS"
+    },
+    {
+      "old_id": "SOCS M1073",
+      "wanted": "SOCI M1073",
+      "new_id": "SOCI M1069",
+      "why": "SOCS->SOCI: Sociology owns SOCI"
+    },
+    {
+      "old_id": "POLS M1002",
+      "wanted": "CRIM M1002",
+      "new_id": "CRIM M1183",
+      "why": "POLS->CRIM: Administration of Justice owns CRIM"
+    },
+    {
+      "old_id": "SOCS M1014",
+      "wanted": "ANTH M1014",
+      "new_id": "ANTH M1099",
+      "why": "SOCS->ANTH: Anthropology owns ANTH"
+    },
+    {
+      "old_id": "ARCH M1123",
+      "wanted": "ARTS M1123",
+      "new_id": "ARTS M1043",
+      "why": "ARCH->ARTS: Art owns ARTS"
+    },
+    {
+      "old_id": "HLTH M9036",
+      "wanted": "ARTS M9036",
+      "new_id": "ARTS M9006",
+      "why": "HLTH->ARTS: Art owns ARTS"
+    },
+    {
+      "old_id": "PHSC M1002",
+      "wanted": "ASTR M1002",
+      "new_id": "ASTR M1053",
+      "why": "PHSC->ASTR: Astronomy owns ASTR"
+    },
+    {
+      "old_id": "WELD M10FI",
+      "wanted": "AUTB M10FI",
+      "new_id": "AUTB M10FN",
+      "why": "WELD->AUTB: Auto Body Technology owns AUTB"
+    },
+    {
+      "old_id": "AVIA M1022",
+      "wanted": "AUTO M1022",
+      "new_id": "AUTO M1295",
+      "why": "AVIA->AUTO: Automotive Technology owns AUTO"
+    },
+    {
+      "old_id": "HVAC M1015",
+      "wanted": "AUTO M1015",
+      "new_id": "AUTO M1296",
+      "why": "HVAC->AUTO: Automotive Technology owns AUTO"
+    },
+    {
+      "old_id": "HVAC M1032",
+      "wanted": "AUTO M1032",
+      "new_id": "AUTO M1315",
+      "why": "HVAC->AUTO: Automotive Technology owns AUTO"
+    },
+    {
+      "old_id": "HVAC M10FU",
+      "wanted": "AUTO M10FU",
+      "new_id": "AUTO M11PC",
+      "why": "HVAC->AUTO: Automotive Technology owns AUTO"
+    },
+    {
+      "old_id": "HVAC M10GJ",
+      "wanted": "AUTO M10GJ",
+      "new_id": "AUTO M11PD",
+      "why": "HVAC->AUTO: Automotive Technology owns AUTO"
+    },
+    {
+      "old_id": "HVAC M10HH",
+      "wanted": "AUTO M10HH",
+      "new_id": "AUTO M11PE",
+      "why": "HVAC->AUTO: Automotive Technology owns AUTO"
+    },
+    {
+      "old_id": "FIMS M1039",
+      "wanted": "BCST M1039",
+      "new_id": "BCST M1057",
+      "why": "FIMS->BCST: Broadcasting Technology owns BCST"
+    },
+    {
+      "old_id": "HLTH M1061",
+      "wanted": "BUSI M1061",
+      "new_id": "BUSI M1099",
+      "why": "HLTH->BUSI: Business owns BUSI"
+    },
+    {
+      "old_id": "CNSC M10AK",
+      "wanted": "CARP M10AK",
+      "new_id": "CARP M10ER",
+      "why": "CNSC->CARP: Carpentry owns CARP"
+    },
+    {
+      "old_id": "CNSC M10AR",
+      "wanted": "CARP M10AR",
+      "new_id": "CARP M10ES",
+      "why": "CNSC->CARP: Carpentry owns CARP"
+    },
+    {
+      "old_id": "CNSC M10AS",
+      "wanted": "CARP M10AS",
+      "new_id": "CARP M10ET",
+      "why": "CNSC->CARP: Carpentry owns CARP"
+    },
+    {
+      "old_id": "CNSC M10AV",
+      "wanted": "CARP M10AV",
+      "new_id": "CARP M10EU",
+      "why": "CNSC->CARP: Carpentry owns CARP"
+    },
+    {
+      "old_id": "CNSC M10BN",
+      "wanted": "CARP M10BN",
+      "new_id": "CARP M10EV",
+      "why": "CNSC->CARP: Carpentry owns CARP"
+    },
+    {
+      "old_id": "CNSC M10BS",
+      "wanted": "CARP M10BS",
+      "new_id": "CARP M10EW",
+      "why": "CNSC->CARP: Carpentry owns CARP"
+    },
+    {
+      "old_id": "CNSC M10BX",
+      "wanted": "CARP M10BX",
+      "new_id": "CARP M10EX",
+      "why": "CNSC->CARP: Carpentry owns CARP"
+    },
+    {
+      "old_id": "CNSC M10BY",
+      "wanted": "CARP M10BY",
+      "new_id": "CARP M10EY",
+      "why": "CNSC->CARP: Carpentry owns CARP"
+    },
+    {
+      "old_id": "CNSC M10CA",
+      "wanted": "CARP M10CA",
+      "new_id": "CARP M10EZ",
+      "why": "CNSC->CARP: Carpentry owns CARP"
+    },
+    {
+      "old_id": "FCSH M1019",
+      "wanted": "CDEV M1019",
+      "new_id": "CDEV M1290",
+      "why": "FCSH->CDEV: Child Development/Early Childhood Education owns CDEV"
+    },
+    {
+      "old_id": "CISC M1020",
+      "wanted": "ITIS M1020",
+      "new_id": "ITIS M1209",
+      "why": "CISC->ITIS: Computer Information Systems owns ITIS"
+    },
+    {
+      "old_id": "CISC M1090",
+      "wanted": "ITIS M1090",
+      "new_id": "ITIS M1490",
+      "why": "CISC->ITIS: Computer Information Systems owns ITIS"
+    },
+    {
+      "old_id": "HVAC M10MA",
+      "wanted": "ITIS M10MA",
+      "new_id": "ITIS M12NA",
+      "why": "HVAC->ITIS: Computer Information Systems owns ITIS"
+    },
+    {
+      "old_id": "ELET M1074",
+      "wanted": "CNST M1074",
+      "new_id": "CNST M1137",
+      "why": "ELET->CNST: Construction Technology owns CNST"
+    },
+    {
+      "old_id": "ESCI M1001",
+      "wanted": "CNST M1001",
+      "new_id": "CNST M1138",
+      "why": "ESCI->CNST: Construction Technology owns CNST"
+    },
+    {
+      "old_id": "HVAC M1038",
+      "wanted": "CNST M1038",
+      "new_id": "CNST M1139",
+      "why": "HVAC->CNST: Construction Technology owns CNST"
+    },
+    {
+      "old_id": "HVAC M1039",
+      "wanted": "CNST M1039",
+      "new_id": "CNST M1140",
+      "why": "HVAC->CNST: Construction Technology owns CNST"
+    },
+    {
+      "old_id": "IDST M1060",
+      "wanted": "COUN M1060",
+      "new_id": "COUN M1209",
+      "why": "IDST->COUN: Counseling owns COUN"
+    },
+    {
+      "old_id": "HVAC M1009",
+      "wanted": "AUTD M1009",
+      "new_id": "AUTD M1042",
+      "why": "HVAC->AUTD: Diesel Mechanics owns AUTD"
+    },
+    {
+      "old_id": "HVAC M10FQ",
+      "wanted": "AUTD M10FQ",
+      "new_id": "AUTD M10FX",
+      "why": "HVAC->AUTD: Diesel Mechanics owns AUTD"
+    },
+    {
+      "old_id": "HVAC M10FR",
+      "wanted": "AUTD M10FR",
+      "new_id": "AUTD M10FY",
+      "why": "HVAC->AUTD: Diesel Mechanics owns AUTD"
+    },
+    {
+      "old_id": "ARCH M1020",
+      "wanted": "DRAF M1020",
+      "new_id": "DRAF M1088",
+      "why": "ARCH->DRAF: Drafting/CADD owns DRAF"
+    },
+    {
+      "old_id": "MANU M1008",
+      "wanted": "DRAF M1008",
+      "new_id": "DRAF M1089",
+      "why": "MANU->DRAF: Drafting/CADD owns DRAF"
+    },
+    {
+      "old_id": "MANU M1009",
+      "wanted": "DRAF M1009",
+      "new_id": "DRAF M1090",
+      "why": "MANU->DRAF: Drafting/CADD owns DRAF"
+    },
+    {
+      "old_id": "MANU M1012",
+      "wanted": "DRAF M1012",
+      "new_id": "DRAF M1091",
+      "why": "MANU->DRAF: Drafting/CADD owns DRAF"
+    },
+    {
+      "old_id": "MANU M1017",
+      "wanted": "DRAF M1017",
+      "new_id": "DRAF M1092",
+      "why": "MANU->DRAF: Drafting/CADD owns DRAF"
+    },
+    {
+      "old_id": "MANU M1037",
+      "wanted": "DRAF M1037",
+      "new_id": "DRAF M1093",
+      "why": "MANU->DRAF: Drafting/CADD owns DRAF"
+    },
+    {
+      "old_id": "MANU M1063",
+      "wanted": "DRAF M1063",
+      "new_id": "DRAF M1094",
+      "why": "MANU->DRAF: Drafting/CADD owns DRAF"
+    },
+    {
+      "old_id": "PHSC M1012",
+      "wanted": "GEOL M1012",
+      "new_id": "GEOL M1075",
+      "why": "PHSC->GEOL: Earth Science owns GEOL"
+    },
+    {
+      "old_id": "PHSC M1038",
+      "wanted": "GEOL M1038",
+      "new_id": "GEOL M1087",
+      "why": "PHSC->GEOL: Earth Science owns GEOL"
+    },
+    {
+      "old_id": "PHSC M1039",
+      "wanted": "GEOL M1039",
+      "new_id": "GEOL M1088",
+      "why": "PHSC->GEOL: Earth Science owns GEOL"
+    },
+    {
+      "old_id": "ELET M1054",
+      "wanted": "ELEC M1054",
+      "new_id": "ELEC M1055",
+      "why": "ELET->ELEC: Electricity owns ELEC"
+    },
+    {
+      "old_id": "HVAC M10BZ",
+      "wanted": "ELEC M10BZ",
+      "new_id": "ELEC M10HI",
+      "why": "HVAC->ELEC: Electricity owns ELEC"
+    },
+    {
+      "old_id": "HVAC M10FV",
+      "wanted": "ELEC M10FV",
+      "new_id": "ELEC M10HJ",
+      "why": "HVAC->ELEC: Electricity owns ELEC"
+    },
+    {
+      "old_id": "DSPS M1007",
+      "wanted": "ENGL M1007",
+      "new_id": "ENGL M1085",
+      "why": "DSPS->ENGL: English owns ENGL"
+    },
+    {
+      "old_id": "HVAC M10LF",
+      "wanted": "ESCI M10LF",
+      "new_id": "ESCI M10RD",
+      "why": "HVAC->ESCI: Environmental Technologies owns ESCI"
+    },
+    {
+      "old_id": "PSYC M1024",
+      "wanted": "ETHS M1024",
+      "new_id": "ETHS M1069",
+      "why": "PSYC->ETHS: Ethnic Studies owns ETHS"
+    },
+    {
+      "old_id": "SOCS M1050",
+      "wanted": "FTVE M1050",
+      "new_id": "FTVE M1164",
+      "why": "SOCS->FTVE: Film and Media Studies owns FTVE"
+    },
+    {
+      "old_id": "HLTH M1020",
+      "wanted": "HTEC M1020",
+      "new_id": "HTEC M1088",
+      "why": "HLTH->HTEC: Health Care Ancillaries owns HTEC"
+    },
+    {
+      "old_id": "MATH M1194",
+      "wanted": "IDST M1194",
+      "new_id": "IDST M1060",
+      "why": "MATH->IDST: Interdisciplinary Studies owns IDST"
+    },
+    {
+      "old_id": "COMM M1089",
+      "wanted": "JOUR M1089",
+      "new_id": "JOUR M1106",
+      "why": "COMM->JOUR: Journalism owns JOUR"
+    },
+    {
+      "old_id": "LIBS M1001",
+      "wanted": "LIBR M1001",
+      "new_id": "LIBR M1045",
+      "why": "LIBS->LIBR: Library Science owns LIBR"
+    },
+    {
+      "old_id": "LIBS M1003",
+      "wanted": "LIBR M1003",
+      "new_id": "LIBR M1046",
+      "why": "LIBS->LIBR: Library Science owns LIBR"
+    },
+    {
+      "old_id": "MANU M1028",
+      "wanted": "MACH M1028",
+      "new_id": "MACH M1081",
+      "why": "MANU->MACH: Machine Tool Technology owns MACH"
+    },
+    {
+      "old_id": "BUSI M1108",
+      "wanted": "MATH M1108",
+      "new_id": "MATH M1194",
+      "why": "BUSI->MATH: Mathematics owns MATH"
+    },
+    {
+      "old_id": "CISC M1066",
+      "wanted": "MATH M1066",
+      "new_id": "MATH M1357",
+      "why": "CISC->MATH: Mathematics owns MATH"
+    },
+    {
+      "old_id": "CULN M1104",
+      "wanted": "MATH M1104",
+      "new_id": "MATH M1361",
+      "why": "CULN->MATH: Mathematics owns MATH"
+    },
+    {
+      "old_id": "HVAC M1056",
+      "wanted": "MATH M1056",
+      "new_id": "MATH M1362",
+      "why": "HVAC->MATH: Mathematics owns MATH"
+    },
+    {
+      "old_id": "COMM M1098",
+      "wanted": "FTVE M1098",
+      "new_id": "FTVE M1165",
+      "why": "COMM->FTVE: Media Production owns FTVE"
+    },
+    {
+      "old_id": "FIMS M1031",
+      "wanted": "FTVE M1031",
+      "new_id": "FTVE M1166",
+      "why": "FIMS->FTVE: Media Production owns FTVE"
+    },
+    {
+      "old_id": "FIMS M1032",
+      "wanted": "FTVE M1032",
+      "new_id": "FTVE M1167",
+      "why": "FIMS->FTVE: Media Production owns FTVE"
+    },
+    {
+      "old_id": "ARTS M1166",
+      "wanted": "MULT M1166",
+      "new_id": "MULT M1174",
+      "why": "ARTS->MULT: Multimedia owns MULT"
+    },
+    {
+      "old_id": "CISC M1073",
+      "wanted": "MULT M1073",
+      "new_id": "MULT M1175",
+      "why": "CISC->MULT: Multimedia owns MULT"
+    },
+    {
+      "old_id": "CISC M1092",
+      "wanted": "MULT M1092",
+      "new_id": "MULT M1176",
+      "why": "CISC->MULT: Multimedia owns MULT"
+    },
+    {
+      "old_id": "COMM M1069",
+      "wanted": "MULT M1069",
+      "new_id": "MULT M1177",
+      "why": "COMM->MULT: Multimedia owns MULT"
+    },
+    {
+      "old_id": "COMM M1071",
+      "wanted": "MULT M1071",
+      "new_id": "MULT M1178",
+      "why": "COMM->MULT: Multimedia owns MULT"
+    },
+    {
+      "old_id": "FIMS M1098",
+      "wanted": "MULT M1098",
+      "new_id": "MULT M1179",
+      "why": "FIMS->MULT: Multimedia owns MULT"
+    },
+    {
+      "old_id": "DANC M1144",
+      "wanted": "MUSI M1144",
+      "new_id": "MUSI M1651",
+      "why": "DANC->MUSI: Music owns MUSI"
+    },
+    {
+      "old_id": "BUSI M1096",
+      "wanted": "BSOT M1096",
+      "new_id": "BSOT M1261",
+      "why": "BUSI->BSOT: Office Technologies owns BSOT"
+    },
+    {
+      "old_id": "BUSI M1357",
+      "wanted": "BSOT M1357",
+      "new_id": "BSOT M1262",
+      "why": "BUSI->BSOT: Office Technologies owns BSOT"
+    },
+    {
+      "old_id": "ARTS M9006",
+      "wanted": "OLAD M9006",
+      "new_id": "OLAD M9063",
+      "why": "ARTS->OLAD: Older Adults: Noncredit owns OLAD"
+    },
+    {
+      "old_id": "AGRI M1062",
+      "wanted": "HORT M1062",
+      "new_id": "HORT M1115",
+      "why": "AGRI->HORT: Ornamental Horticulture owns HORT"
+    },
+    {
+      "old_id": "COUN M9021",
+      "wanted": "PARN M9021",
+      "new_id": "PARN M9064",
+      "why": "COUN->PARN: Parent Education: Noncredit owns PARN"
+    },
+    {
+      "old_id": "ARTD M1009",
+      "wanted": "PHOT M1009",
+      "new_id": "PHOT M1141",
+      "why": "ARTD->PHOT: Photography owns PHOT"
+    },
+    {
+      "old_id": "ARTS M1043",
+      "wanted": "PHOT M1043",
+      "new_id": "PHOT M1142",
+      "why": "ARTS->PHOT: Photography owns PHOT"
+    },
+    {
+      "old_id": "ETHS M1069",
+      "wanted": "POLS M1069",
+      "new_id": "POLS M1002",
+      "why": "ETHS->POLS: Political Science owns POLS"
+    },
+    {
+      "old_id": "PTAS M1002",
+      "wanted": "RADT M1002",
+      "new_id": "RADT M1085",
+      "why": "PTAS->RADT: Radiological Technology owns RADT"
+    }
+  ],
+  "identities_ghosts": {
+    "count": 1604,
+    "healed_by_this_fold": [
+      "CARP M10ET",
+      "CARP M10EU",
+      "CARP M10EV",
+      "CARP M10EW",
+      "CARP M10EX",
+      "CARP M10EY",
+      "CARP M10EZ",
+      "HLTH M1034"
+    ],
+    "vacated_keys_still_in_identities": []
+  }
+}

@@ -1,17 +1,137 @@
 name: JS tests
 
 # Consumer (jsdom) regression tests for the dashboard's static front-end JS
-# (credential_reference.js, …). Non-required check — informational on PRs; it
-# does NOT gate the merge-on-green flow (a failing non-required check leaves the
-# PR `unstable`, which the auto-merge policy still merges). Catches regressions
-# like the Session-32 raw_variants:null search/expand crash before they ship.
+# (credential_reference.js, …) plus the pure-stdlib python lints. Catches
+# regressions like the Session-32 raw_variants:null search/expand crash before
+# they ship.
+#
+# SHAPE (2026-09-24 — Sam: "chunk our npm tests… they're taking 20 mins + each
+# now"). Four jobs:
+#   gate    decides whether the jsdom suite runs at all (the E gate, below).
+#   suite   a matrix of N shards, each `node tests/run.js --shard i/N` on its
+#           own runner. `npm test` is MEMORY-bound: tests/run.js already runs
+#           4 files at once on a 16 GB machine and cannot go wider (the
+#           cpl_funding_* family peaks at 2–4 GB a file), so one machine's
+#           wall time is the suite's serial time over 4 and more machines is
+#           the only lever left. Measured before this shape: the `npm test`
+#           step alone read 18 min on 2026-09-24 (run 36013462480) against
+#           9–10 a month earlier; timed file by file, cpl_funding_* is 56 files
+#           and 3,111 s of the suite's 3,592 s serial time (87%), up from 28
+#           files and 967 s on 2026-08-28 (tests/lib/shard.js has the table).
+#   lints   the pure-stdlib python guards, beside the shards rather than after.
+#   test    fans everything into the ONE check the merge doctrine polls for
+#           (CLAUDE.md: "the `test` check must have SUCCEEDED on the current
+#           head"). It reports on every run the concurrency group does not
+#           cancel, exactly as the single `test` job before it did.
+#
+# E (Sam's ruling, 2026-08-29: "option 2!") — this check is meant to become
+# REQUIRED in branch protection, conditional-fast: the only expensive job is
+# the suite, and it alone is skipped when every changed file is docs-shaped
+# (see the gate job). Everything else always runs, so `test` ALWAYS reports.
+# Until Sam flips branch protection (a GitHub setting sessions cannot change)
+# it remains non-required: a failing run leaves the PR `unstable`, which the
+# auto-merge policy still merges.
+# ⚠️ NEVER convert this to `paths-ignore:`/`paths:` on the trigger, or put an
+# `if:` on the `test` JOB — a skipped required check never reports, which
+# blocks the PR FOREVER. The gate's `if:` sits on the SHARD jobs, which are
+# never the required check; `test` needs them and runs whether they passed,
+# failed or were skipped, so the conditional stays inside an always-reporting
+# check. tests/js_suite_gate_test.py pins this shape from both sides.
 on:
   pull_request:
   push:
     branches: [main]
 
+# A superseded run is wasted compute: this job is ~10 minutes, and a session
+# that pushes three times to one PR leaves two of them grinding to completion
+# on commits nobody will merge. Measured 2026-09-06 on PR #1494's branch: run
+# 2705 had 5.6 minutes left when 2706 started on a newer commit, and it ran all
+# of them. js-tests + secret-scan were 3,075 of the month's 4,012 Actions
+# minutes and were the only top workflows without a concurrency group; 22 others
+# already had one.
+#
+# ⚠️ THIS IS NOT THE `paths:`/`if:` CHANGE THE HEADER FORBIDS. That warning is
+# about a check that never REPORTS on the head being merged, which blocks a
+# required check forever. Here the group is keyed to the PULL REQUEST, so only
+# runs on SUPERSEDED commits are canceled and the newest commit always gets its
+# own run that reports normally. A push to main keys on the SHA instead, so each
+# main commit is its own group and can never be canceled by a later one — main
+# is the permanent record and its run has to finish.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+# `playwright` is a RUNTIME dependency of this package, but NOTHING under
+# tests/ requires it -- it is used only by the browser-check scripts in
+# prototype/, scripts/ and fact-sheet/, which are deliberately outside
+# `npm test` (see the SkyView launcher note below). Without this, every CI
+# job downloads Chromium + Firefox + WebKit before running a suite that
+# never launches a browser. Measured 2026-08-28: with the download skipped,
+# `npm install` is ~5s for 41 packages / 45 MB.
+env:
+  PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
+
 jobs:
-  test:
+  gate:
+    runs-on: ubuntu-latest
+    outputs:
+      decision: ${{ steps.gate.outputs.decision }}
+    steps:
+      - uses: actions/checkout@v7
+      # The E gate (Sam, 2026-08-29: "option 2!"): skip the jsdom suite alone
+      # when the whole diff is docs-shaped. The decision is a SKIP-LIST, not a
+      # run-list — measured 2026-08-30, the suite reads .js/.html/.json/.css/
+      # .sql/.ts, so "run when JS changes" under-triggers silently; instead
+      # anything unrecognized runs the suite (scripts/js_suite_gate.sh holds
+      # the rule; tests/js_suite_gate_test.py pins its boundary both ways).
+      # On push to main there is no base to diff against and the full suite
+      # always runs.
+      - name: Decide whether the full JS suite runs
+        id: gate
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha || '' }}
+        run: |
+          if [ -z "$BASE_SHA" ]; then
+            decision=run
+          else
+            git fetch --no-tags --depth=1 origin "$BASE_SHA"
+            files=$(git diff --name-only "$BASE_SHA" HEAD)
+            decision=$(printf '%s\n' "$files" | scripts/js_suite_gate.sh)
+          fi
+          echo "JS suite decision: $decision"
+          echo "decision=$decision" >> "$GITHUB_OUTPUT"
+
+  suite:
+    needs: gate
+    # The gate's conditional lives HERE, on the shard jobs, never on `test`
+    # (see the header). A skipped shard reads `skipped` in `needs.suite.result`
+    # and the fan-in accepts that only when the gate said skip.
+    if: needs.gate.outputs.decision == 'run'
+    runs-on: ubuntu-latest
+    strategy:
+      # Every shard reports, so a red run names every failing file rather than
+      # the first shard's.
+      fail-fast: false
+      matrix:
+        shard: [1, 2, 3, 4]
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+      - run: npm install
+      # `tests/run.js` runs its files CONCURRENTLY, each in its own process. It
+      # sizes the pool from measured peak RSS and the runner's RAM — 4 on a
+      # 16 GB ubuntu-latest — and that cap is what bounds one machine. Each
+      # shard is every N-th file of the sorted list (tests/lib/shard.js), so
+      # the heavy cpl_funding_* family is spread evenly across the runners.
+      # The shard count is the matrix above and nowhere else:
+      # `strategy.job-total` is that list's length. If a shard ever OOMs, set
+      # TEST_CONCURRENCY here rather than reverting.
+      - run: node tests/run.js --shard ${{ matrix.shard }}/${{ strategy.job-total }}
+
+  lints:
+    needs: gate
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -19,10 +139,614 @@ jobs:
         with:
           node-version: '20'
       - run: npm install
-      - run: npm test
+      # The ONE suite input a docs-shaped diff can still change is
+      # docs/catalog/** — regenerated beside the docs index on most docs PRs,
+      # and read by exactly one test file. Run that file even when the suite
+      # is skipped (~2s), so a catalog-reshaping docs PR cannot merge green
+      # and then turn main's always-full push run red.
+      # tests/js_suite_gate_test.py fails if a future test starts reading
+      # another inert path without being added here.
+      - name: Docs-reading jsdom tests (run even when the suite is skipped)
+        if: needs.gate.outputs.decision == 'skip'
+        run: node tests/governance_docs_panel.test.js
       # First Light contrast lint (Session 49) — verifies the live :root in
       # both HTMLs matches the blessed spec (prototype v1.6) and measures AA
       # on worst-case backdrops. Pure-stdlib python; part of this same
       # non-required check.
       - name: Contrast lint (live :root vs First Light spec)
         run: python3 prototype/check_contrast.py --live
+      # Supabase grant lint (Session 172) — `revoke ... from anon, authenticated`
+      # does NOT remove the PUBLIC grant, so it protects nothing. Six
+      # security-definer functions that truncate live tables were reachable with
+      # the published anon key. Pure-stdlib python; same non-required check.
+      - name: Supabase function-grant lint (revoke must name PUBLIC)
+        run: python3 tests/supabase_function_grants_test.py
+      # Supabase table-grant lint (2026-09-23) — from 2026-10-30 Supabase stops
+      # granting the API roles on a NEW public table, and five functions here
+      # DROP + CREATE their table on every nightly promotion. Every table the
+      # SQL creates at run time, recreates, or adds new must carry its own
+      # grants. Pure-stdlib python; same non-required check.
+      - name: Supabase table-grant lint (new and recreated tables carry grants)
+        run: python3 tests/supabase_table_grants_test.py
+      # A 1-2 character subject code never decides a discipline on its own
+      # (Sam's cross-list sheet item 2, 2026-09-22). `ES` maps to Ethnic Studies
+      # and means Exercise Science at many colleges, which is how 31
+      # physical-activity courses came to carry an ETHS prefix. The gate lives
+      # in the MINTING path because the re-mint that repairs those rows runs
+      # through it. Pure-stdlib python; same non-required check.
+      - name: M-ID short-code gate (corroborate, never gate on 1-2 chars)
+        run: python3 tests/mid_short_code_gate_test.py
+      # The orphan-parent worklist (item 9 of the cross-list sheet): parents
+      # whose recorded discipline appears nowhere among their members. Its
+      # `decidable` column is what stops the list reading as a to-do — 93 of 111
+      # rows are undecidable because the members disagree among themselves.
+      # Pure-stdlib python; same non-required check.
+      - name: Orphan-parent worklist (the decidable column, and freshness)
+        run: python3 tests/orphan_parent_worklist_test.py
+      # The CSR scanner's anchor rule compares the M-ID's prefix, never the
+      # anchor's `subject` field (the modal local code). Reading the field made
+      # 121 of the CSR's 136 Jev questions on 2026-09-29, every one already
+      # settled by the re-key. Its duplicate rule honors a fan-in both entries
+      # declare (FTVE, Sam's ruling of 2026-09-03). Pure-stdlib python; same
+      # non-required check.
+      - name: CSR scanner rules (compare the id, honor a ruled fan-in)
+        run: python3 tests/csr_trail_rules_test.py
+
+      # The Fact Sheet's statewide recommendations, which Sierra's statewide
+      # lines are built from. Units never split an identity (Sam, 2026-09-27):
+      # a line published at 6 and 7 units reads "6–7", where the first figure
+      # seen used to win. It also loads the domain crosswalk, which imports
+      # openpyxl, so it installs it itself. Same non-required check.
+      - name: Fact Sheet statewide recommendations (a unit range, never the first figure)
+        run: |
+          pip install --quiet openpyxl
+          python3 tests/statewide_recs_test.py
+
+      # The standing open-asks sheet must cover every lane that carries an open
+      # ask. Sam's "always" (2026-09-22) cannot depend on a session remembering:
+      # when he asked, the asks sat in eleven lane files and one reached §11.
+      # Pure-stdlib python; same non-required check.
+      - name: Open-asks sheet covers every lane with an open ask
+        run: |
+          python3 kb/_build_open_asks_decision_sheet.py --check
+          python3 tests/open_asks_sheet_coverage_test.py
+      # The PreToolUse guard that lets auto mode stop prompting on every read
+      # (Session 277). It returns `allow` for read-only SQL, so the convenience
+      # is only safe while every write case stays `deny` — a false allow is a
+      # write reaching a shared table with no prompt and no receipt, which is
+      # what Rule 10 exists to prevent. Pure-stdlib python, no network.
+      - name: Supabase SQL guard (reads allow, writes deny, unknown asks)
+        run: python3 tests/supabase_sql_guard_test.py
+      # The Bash half of the same mechanism (Session 278). A hook is needed
+      # here and NOT for the read-only MCP tools, because auto mode drops
+      # blanket `Bash(*)` and wildcarded-interpreter allow rules on entry
+      # while keeping MCP tool rules — so arbitrary-argument reads (`git
+      # status`, `grep`, `sed -n` with any arguments) cannot be covered by a
+      # permission rule without enumerating them, and the MCP reads can.
+      # Same asymmetry as above and the same reason to pin it: a hook
+      # returning `allow` is a REAL grant, so a false allow removes the human
+      # check rather than deferring it, while a false ask costs one prompt.
+      # The bypass cases are the point of the file: a compound command whose
+      # SECOND segment writes, a redirection, a `$(…)`, an assignment prefix,
+      # and flags that flip a reader into a writer (`sed -i`, `find -delete`).
+      # Pure-stdlib python, no network.
+      - name: Bash read guard (read-only allow, everything else asks)
+        run: python3 tests/bash_read_guard_test.py
+      # The execute_sql allow rule is safe ONLY beside the execute_sql hook
+      # (hooks fire first, and a hook deny wins). Measured 2026-09-20: the
+      # hook's own allow does not stop the prompt; the rule does.
+      - name: Prompt-guard installer (the execute_sql rule never ships without its hook)
+        run: python3 tests/install_prompt_guards_test.py
+      # The Jev magic half (S281). Guards the ways an AI adjudication pass fails
+      # while LOOKING like it worked: a skeptic shown the verdict rubber-stamps
+      # it, a refuted proposal reaching the plan, a noul probability read as a
+      # boolean, and calls spent on mechanical findings. Pure stdlib, no network
+      # — Jev is replaced by a recorder that asserts what it was shown.
+      - name: Jev adjudication (the second look never sees the first verdict)
+        run: python3 tests/jev_adjudicate_test.py
+      # The battery's SELECTION RULE (S281). A rule that cannot reject noise is
+      # worse than none — it launders chance into a finding the next session
+      # builds on. Asserts a false-positive RATE on pure noise (not perfection:
+      # zero-in-25 fails a correctly-calibrated rule most of the time), that a
+      # planted signal IS detected, and that a null says "no LARGE effect"
+      # rather than "no signal". Pure stdlib, no network, no key.
+      - name: Jev variable battery (the rule rejects noise and detects signal)
+        run: python3 tests/jev_battery_test.py
+      # The re-mint blast radius (Session 277). Guards three READINGS rather
+      # than three behaviors, because all three were got wrong while building
+      # it and none of them errored: course_id IS the identity id, the
+      # articulations file is ALREADY current-era so resolving it again
+      # double-applies, and a C-ID anchor is not re-mintable. Plus ruling 5 —
+      # every unattachable record lands on a worklist, never in a remainder.
+      # Pure-stdlib python, no network.
+      - name: Re-mint blast radius (join key, id era, C-ID exclusion, no silent drops)
+        run: |
+          python3 kb/_build_remint_blast_radius.py --check
+          python3 tests/remint_blast_radius_test.py
+      # The COCI program export's CIP column and the Taxonomy manual's CTE
+      # asterisk (Session 272). Both were read past for months and landed in
+      # coci_college_programs unseen — 14,740 of 22,335 rows carried a top_title
+      # beginning "* ". Re-measures the LVN arithmetic that designed
+      # search_college_programs (53 by title, 44 by either code, 56 in union)
+      # straight from the committed export, so the figures quoted in the SQL
+      # header cannot go stale silently. Imports the builder's own parsers.
+      # Pure-stdlib python, no network.
+      - name: COCI program CIP + CTE-marker parse guard
+        run: python3 tests/coci_program_cip_test.py
+      # My College went public on 2026-09-17, so the tab's four gated tables are
+      # mirrored into `_pub` tables with suppression applied at BUILD time. This
+      # asserts the PROPERTY the ADR asks for — that subtraction cannot pin a
+      # withheld value — rather than that a flag got set. The sharpest input is
+      # map_college_cr_unit: 145,554 of its rows describe exactly ONE student at
+      # a named college, course and credit recommendation. Pure-stdlib, no network.
+      # Course-title mojibake repair (S274) — 381 course titles and 186 offerings
+      # rows carried UTF-8 read back as cp1252, once or twice, and Sierra's
+      # course lists rendered them to students ("Fundamentals of Vocational
+      # Nursing Ã¢â‚¬â€œ Theory"). One repair in kb/_text_repair.py, imported by
+      # BOTH COCI loaders and applied to the TITLE; the test pins the live
+      # shapes, idempotence, and that genuine text survives. Pure stdlib.
+      - name: Course-title mojibake repair (kb/_text_repair.py)
+        run: python3 tests/course_title_mojibake_test.py
+      # Offerings sync chunk retry (S274) — the merge's path-triggered catalog
+      # sync died twice on a 4,000-row chunk under the authenticator role's 8 s
+      # statement_timeout (57014) and left coci_college_offerings LIVE at 12,000
+      # and then 8,000 of 16,097 rows while Sierra answered from it. Chunks are
+      # 1,000 now and a canceled chunk retries at half size down to 250; any
+      # other error still stops the run; a canceled first chunk truncates again
+      # on retry and a later one never does. Pure stdlib, no network.
+      - name: Offerings sync chunk retry (chatbox/sync_coci_offerings.py)
+        run: python3 tests/coci_offerings_sync_chunk_test.py
+      - name: My College public layer — suppression properties
+        run: python3 tests/college_briefing_publish_suppression_test.py
+      # Re-key chain guard (Session 224) — a re-mint alias map can CHAIN (one
+      # pair's old key is another pair's new key: `ARME M10AJ -> FLNG M10AJ`
+      # beside `ARMN M10AJ -> ARME M10AJ`). The Supabase re-key must vacate the
+      # shared key before filling it and must not count it as a leftover; the
+      # 2026-09-03 recode run went red on exactly that false positive. Pure-stdlib
+      # python, no network.
+      - name: Supabase re-key chain guard (kb/_rekey_kb_curation_supabase.py)
+        run: python3 tests/rekey_kb_curation_chain_test.py
+      # The two re-mint applies (Session 224, #1453) — apply == spec, gated
+      # against the frozen receipt: a moved row without its stamp, a ghost key
+      # not healed, a pointer left on a Z id, a materialized record with a
+      # membership entry of its own. 37 fixture checks that ran nowhere until
+      # this step. Pure-stdlib python, no network.
+      - name: Re-mint apply guards (kb/_authority_recode_apply.py, kb/_zband_retire_apply.py)
+        run: |
+          python3 tests/authority_recode_apply_test.py
+          python3 tests/zband_retire_apply_test.py
+      # UC-CUR placeholder promotion (Session 226) — the promote step the Z-band
+      # retirement left open: a client or auto-merge mint's transient UC-CUR
+      # target becomes a real M-ID record. Guards the number allocation (every
+      # id ever minted stays reserved; CCN/C-ID numbers skipped; a full bucket
+      # continues into the next band), the umbrella split code, the held cases
+      # (one pointer, no discipline, no code, no band — never guessed), the
+      # materialized record, P0 twice and P1 drift. Pure-stdlib python, no network.
+      - name: UC-CUR promotion guard (kb/_uc_cur_promote.py)
+        run: python3 tests/uc_cur_promote_test.py
+      # Occupation matcher stemming (Session 263) — stem() strips -er/-or, which
+      # is right for `installers -> install` and wrong for `engineer -> engine`
+      # and `actors -> act`: those land on a DIFFERENT word, and the coverage
+      # rule cannot catch it because the collapsed token is a genuine member of
+      # both sets by the time coverage runs. Measured on the 369-license join:
+      # 8 false pairs from the first collision, 1 from the second. The guard also
+      # pins `electricians -> electrician`, which an over-correction would break.
+      # Pure-stdlib python, no network.
+      - name: Occupation matcher stemming guard (kb/_build_regional_cpl_opportunity.py)
+        run: python3 tests/occupation_matcher_stemming_test.py
+      # Identities map re-key (Session 226) — the articulation identities map
+      # carried 1,597 keys on ids no longer in the catalog. Guards the chain
+      # resolution (one lookup per map, in order), the collision rule (the live
+      # entry wins), the convergence tie-break (title, colleges, alphabetical),
+      # the dead drop, the stamp, and — against the committed files — that
+      # every ghost is dispositioned and the post-state is all live. Pure-stdlib
+      # python, no network.
+      - name: Identities map re-key guard (kb/_identities_rekey_dryrun.py)
+        run: python3 tests/identities_rekey_test.py
+      # SkyView's CPL payload (Session 238) — the join the CPL face and the
+      # articulations light stand on. Guards that the join reaches exactly the
+      # points carrying `ar`, that the coverage line's two numbers share one
+      # universe, that no student-grain figure enters the payload, that the
+      # trainer is carried only where it differs from the issuer, and that the
+      # committed prototype/ccr_cpl.json is a fresh build. Pure-stdlib python,
+      # no network.
+      - name: SkyView CPL payload guard (kb/_build_ccr_cpl.py)
+        run: python3 tests/ccr_cpl_payload_test.py
+      # SkyView's CPL UNIVERSE (Session 252) — the second universe Sam ruled on
+      # 2026-09-10, where the entities are EXHIBITS rather than courses. Guards
+      # that two CER titles differing only past slug()'s 60-char filename cut do
+      # not collide into one entity (they did on the first build), that the
+      # builder's only data input is the curated CER and never the crosswalk's
+      # 2026-05-21 issuer snapshot, that Sam's two rulings hold (a singleton
+      # draws as a full identity; the no-discipline pile ships as an island),
+      # that every statewide exhibit is marked, and that the committed payload
+      # is a fresh build. Pure-stdlib python, no network.
+      - name: SkyView CPL universe guard (kb/_build_ccr_cpl_universe.py)
+        run: python3 tests/ccr_cpl_universe_test.py
+      # Its members payload (the rows behind the counts). Guards that the id is
+      # imported from the universe builder rather than restated, that every key
+      # is a point the universe carries, that a point's `ar` and `n` equal the
+      # rows its card lists (the ring and the card are one join), the row
+      # shapes the client reads, and that the committed file is a fresh build.
+      - name: SkyView CPL universe members guard (kb/_build_ccr_cpl_universe_members.py)
+        run: python3 tests/ccr_cpl_universe_members_test.py
+      # SkyView's sky placement (Session 239) — where each discipline island
+      # sits on the sphere, three ways, and the CTE reading behind the third.
+      # Guards that the committed prototype/ccr_sky.json is a build of today's
+      # inputs (by fingerprint — CI never pays the 90 s relaxation), that no
+      # island sits on the wrong side of the by-kind boundary, that a side is
+      # held across a threshold by the margin, that the relaxation is
+      # deterministic, and that the prototype's generator imports it rather
+      # than carrying a copy. Pure-stdlib python, no network.
+      - name: SkyView sky placement guard (kb/_build_ccr_sky.py)
+        run: python3 tests/ccr_sky_payload_test.py
+      # Course level in the island layout (Sam, 2026-09-09) — the rule must match
+      # ccr_universe.js's LEVEL_TESTS, or the map and the sidebar ladder disagree
+      # about what "Beginning" means, and the reorder must be STABLE: only 12% of
+      # points carry a level word, and the other 88% are ordered by the match
+      # score that decided which ring they sit on. Pure-stdlib python, no network.
+      - name: SkyView level-layout guard (kb/_build_ccr_universe.py)
+        run: python3 tests/ccr_level_layout_test.py
+      # The glyph sweep's classifier and its safe-rewrite envelope (Sam,
+      # 2026-09-09). ⚠️ This runs the GUARD, not the sweep: --apply rewrites
+      # rendered labels across 139 files, so what it REFUSES to touch is the
+      # thing worth pinning — a lone-glyph label, a mark mid-sentence, a glyph
+      # spliced onto a variable, and this repo's ⚠️/⭐ comment style — plus, since
+      # the first real run (2026-09-09), the Rule 1 guard that refuses to rewrite
+      # a label the dashboard generator regenerates. The sweep's own --check is
+      # deliberately not a gate yet: the backlog is 401 control-class glyphs
+      # (was 516; the mechanical half ran) and a red-on-day-one check gets
+      # ignored.
+      - name: Glyph sweep guard (kb/_glyph_sweep.py)
+        run: python3 tests/glyph_sweep_test.py
+      # Memory-table lint (Session 229) — the structural half of "is this memory
+      # row still true": dead paths, dangling pointers, a stale row wearing a
+      # verification stamp, PRs not on main, null slugs, near-duplicates. Each
+      # rule is tested both ways (fires on the defect, silent on truth — the
+      # first run reported 110 phantom dead paths because `.js` matched the
+      # start of `.json`), and the trigram similarity is pinned to pg_trgm's
+      # definition so the 0.55 cut means what Session 190 measured. Pure-stdlib
+      # python, no network.
+      - name: Memory-table lint guard (kb/_memory_audit.py)
+        run: python3 tests/memory_audit_test.py
+      # Prefix fold dry run (Session 224) — the keep-number re-key for rows off
+      # their discipline's canonical code: a span (KINE/ATHL) must not move, a
+      # TOP-only discipline is held (Rule 7), a taken number gap-fills instead of
+      # cascading, a swap is a cycle and never a chain, --scope reports rather
+      # than drops. Pure-stdlib python, no network.
+      - name: Prefix fold dry-run guard (kb/_prefix_fold_dryrun.py)
+        run: python3 tests/prefix_fold_dryrun_test.py
+      # Prefix fold apply (Session 225) — the receipted half: a moved row
+      # without its stamp or with an earlier stamp lost, a materialized
+      # record's member list left on an old id, a stale identities entry left
+      # describing the wrong row, a receipt cut under another scope or ruling
+      # passing P1, a second run of the same receipt, a TOP-only row moving
+      # without the ruling on its evidence. Pure-stdlib python, no network.
+      - name: Prefix fold apply guard (kb/_prefix_fold_apply.py)
+        run: python3 tests/prefix_fold_apply_test.py
+      # The ETHS re-mint (Session 296) — Sam's 2026-09-22 ruling on the 31
+      # physical-activity identities minted under Ethnic Studies: routing by the
+      # members' title, the two-signal gate, the ruled-only apply, the gates.
+      - name: ETHS re-mint guard (kb/_eths_remint.py)
+        run: python3 tests/eths_remint_test.py
+      # crnc_mirrors re-key (Session 225) — the 6th id-keyed artifact class,
+      # missing from the post-apply chain until the recode left 398 of its
+      # keys on retired ids: one lookup per map (never iterated within a map),
+      # cross-map chains followed, two classes converging reported not merged,
+      # a key on a memberless id reported, the era suffix guarded. Reads the
+      # committed file too. Pure-stdlib python, no network.
+      - name: crnc mirrors re-key guard (kb/_rekey_crnc_mirrors.py)
+        run: python3 tests/rekey_crnc_mirrors_test.py
+      # MAP's per-dataset verdict (2026-08-26) — the nightly load failed three
+      # nights reporting a name mismatch while MAP was plainly answering
+      # 400 "View_StudentDetailsCredits_APIDataset is not Valid" in a field
+      # nothing read. Also pins that strictness stays OPT-IN: the daily
+      # dashboard shares this fetcher and must not fall back over datasets it
+      # never reads. Pure-stdlib python, no network.
+      - name: MAP CustomReport response verdict (responseCode / duplicate views)
+        run: python3 tests/custom_report_response_test.py
+      # Lifecycle-booleans probe (Session 223) — the runner-side instrument that
+      # finds Pedro's CPL lifecycle boolean columns + CollegeID2 on the MAP API.
+      # Pins its truncated-response reader, boolean/token logic, PII denylist,
+      # and that a student key used for in-memory grouping never reaches the
+      # log. Pure-stdlib python, no network.
+      - name: Lifecycle-booleans probe guard (kb/_probe_lifecycle_checks.py)
+        run: python3 tests/probe_lifecycle_checks_test.py
+      # Origination feed (Session 216, the N2 b gate) — the noncredit-only
+      # institutions draw ONLY as CPL originating from them posts at a credit
+      # college, so the nc_* keys and the origination block must be ABSENT (not
+      # zeroed) until the pull carries LocID2, district/statewide scope must
+      # follow the ruling, and an unresolvable LocID2 must surface rather than
+      # be guessed onto an institution. Pure-stdlib python; same non-required
+      # check.
+      - name: Origination feed lint (funding/_build_funding_performance.py)
+        run: python3 tests/funding_origination_test.py
+      # Career attainment (goal C, Sam 2026-09-22/23) — the Chancellor's Office
+      # EDD wage-record import. ca_u / nc_ca_u stay ABSENT (not zero) until an
+      # import is committed, only UNITS reach the artifact, an unmasked count
+      # under 10 stops the import, and the COMMITTED file, once there is one,
+      # must pass the same checks. Pure-stdlib python; same non-required check.
+      - name: Career-attainment import lint (funding/_build_funding_performance.py)
+        run: python3 tests/funding_career_import_test.py
+      # Doctrine lookup (Session 179) — kb/doctrine.py answers "what has this
+      # repo already decided about the files I am about to touch?", replacing
+      # recall across 299 KB notes. It shipped with two silent-omission bugs
+      # (the last artifact of every note dropped — 235 entries; and --changed
+      # missing untracked files), so it carries its own guard. Pure-stdlib
+      # python; same non-required check.
+      - name: Doctrine lookup lint (kb/doctrine.py)
+        run: python3 tests/doctrine_lookup_test.py
+      # Context-pressure meter (Session 206) — this session auto-compacted at
+      # 786,077 tokens with the checkpoint 150K stale, because Rule 9's trigger
+      # said "Claude Code doesn't expose an exact counter; use proxies". It
+      # does, in the transcript. The guard pins that the WARN threshold still
+      # fits a heavy turn AND a full checkpoint (the first draft missed by 336
+      # tokens) and that announce-once never becomes announce-never. Pure
+      # stdlib; same non-required check.
+      - name: Context-pressure meter (kb/_context_budget.py)
+        run: python3 tests/context_budget_test.py
+      # Merge-chain flattening (Session 187) — the curation overlay stores one
+      # hop per row, so an identity merged into and then merged onward is both a
+      # source and a target; the merge-target loop never skipped those, and 340
+      # folded identities rendered as their own rows with members stranded
+      # mid-chain. Wired here because 18 of the 20 tests/*_test.py run NOWHERE —
+      # npm test discovers only *.test.js — and a guard nothing executes is not
+      # a guard. Needs openpyxl (it imports the generator), which the job above
+      # does not install, so it installs it itself. Same non-required check.
+      - name: Merge-chain flattening lint (excel_to_dashboard.py)
+        run: |
+          pip install --quiet openpyxl
+          python3 tests/merge_chain_flatten_test.py
+      # Units never split an identity (Sam, 2026-09-27). The M-ID Units bake
+      # read the minted memberships alone, so 2,358 merged rows printed "—" or
+      # one figure over members that differ; it now reads the members the row
+      # displays. Imports the generator, so it installs openpyxl too. Same
+      # non-required check.
+      - name: Unified Courses unit range (the displayed members, no over-merge alarm)
+        run: |
+          pip install --quiet openpyxl
+          python3 tests/unified_units_range_test.py
+      # Curated-anchor duplicates lane (Session 226) — the May 2026 curated
+      # common-course anchors whose title and discipline exactly match a
+      # catalog identity, offered to the curator as a worklist lane (never
+      # merged by a script). Guards the strict title key (Accounting I is not
+      # Accounting II), the discipline gate, the live-target resolution, the
+      # member order that IS the merge direction, and — against the committed
+      # files — that every receipt anchor is offered or already merged. Imports
+      # the generator, so it runs in the openpyxl step above.
+      - name: Curated-anchor duplicates lane guard (legacy_anchor_duplicate_groups)
+        run: python3 tests/legacy_anchor_duplicates_test.py
+      # EACR CIP sectors (Session 288) — TOP_Code_Lookup.xlsx column D routes
+      # every exhibit to its CIP family, and on 2026-09-25 it disagreed with its
+      # own program titles on 81 of 198 rows (History filed under Ethnic
+      # Studies; 611 cards in "No CIP assigned yet" behind codes that are not
+      # TOP codes). The first test holds the column to the TOP manual; the
+      # second is the EACR payload's own 52-check guard, which ran nowhere.
+      # Both import the generator, so they run in the openpyxl step above.
+      - name: EACR CIP route (TOP lookup column D + the matrix payload)
+        run: |
+          python3 tests/top_code_lookup_code4_test.py
+          python3 tests/eacr_matrix_payload_test.py
+      # Beginning-ESL spot-check worklist (Session 188) — the description-level
+      # detector proposes re-levels against live curation rows, so its failure
+      # modes are confident-wrong writes: reading a PREREQUISITE clause as the
+      # course's own level (inverts the finding), reading the "Basic Skills
+      # Level:" COCI field value as a level claim, and re-pointing a PURPOSE
+      # carve-out (Enrichment/Civic/Vocational ESL) at a level survivor, which
+      # silently strips the carve-out. Pure-stdlib python; same non-required
+      # check.
+      - name: ESL fold spot-check lint (kb/_build_esl_fold_spotcheck.py)
+        run: python3 tests/esl_fold_spotcheck_test.py
+      # ESL level bands (Session 188) — Sam ratified 0-2 Beginning / 3-5 Intermediate /
+      # 6-10 Advanced, which supersedes the P-4 pinning and required extending the reader
+      # from single-digit 1-7 to 0-10. That extension misfires without three guards, each
+      # found in live data: a level WORD must beat a number ("Beginning Skills 9"), a grade
+      # range is not a level ("K-12"), and roman numerals stop at VII ("Beginning Skills 2
+      # X" reads the trailing X as 10). All three are proven to fail the test when broken.
+      # Pure-stdlib python; same non-required check.
+      - name: ESL level-band lint (kb/_esl_relevel_dryrun.py)
+        run: python3 tests/esl_relevel_bands_test.py
+      - name: ESL reader fixes and the ladder script's own logic (sheet 2026-09-26)
+        run: python3 tests/esl_reader_and_ladder_test.py
+      - name: ESL sheet applier (holds, guarded writes, receipts, rollback)
+        run: python3 tests/esl_sheet_apply_test.py
+      - name: ESL monthly pass (what it applies, lists and never re-asks)
+        run: python3 tests/esl_monthly_pass_test.py
+      # Sam's card-7 verdict (2026-09-27): remove the garbled course rows that sit
+      # beside a repaired twin. A removal needs full row images in its receipt, so
+      # the suite pins the reviewed-set fingerprint, the receipt written before the
+      # first removal, the title guard on the wire, and the rollback.
+      - name: Course title cleanup applier (fingerprint, receipt first, title guard, rollback)
+        run: python3 tests/course_title_cleanup_apply_test.py
+      # SkyView member payload (Session 189) — the graph carried identities and NO
+      # member courses, so there was nothing at course grain to drag and the one
+      # verb the view exists for was unreachable. The payload's failure modes are
+      # both invisible on screen: a member with no control number cannot be
+      # written as `CN:<control_number>` and must be DROPPED and counted rather
+      # than coerced to zero, and 1,122 control numbers sit under more than one
+      # identity, so a move is a global statement that has to leave every card.
+      # Both are proven to fail the test when broken. Browser behavior (does a
+      # drag actually complete?) is prototype/check_ccr_atlas.js, deliberately not
+      # in npm test. Pure-stdlib python; same non-required check.
+      - name: SkyView member payload lint (kb/_build_ccr_universe.py)
+        run: python3 tests/ccr_universe_members_test.py
+      # SkyView orbit layout (Session 223) — every stand-alone course sits in
+      # orbit around the identity it is most aligned to. Guards the alignment
+      # floor (TOP + units + credit never earn an orbit alone; the title carries
+      # the weight), the ring geometry (no overlaps, everything inside its
+      # island) and the description shards being keyed by control number.
+      # Pure-stdlib python; same non-required check.
+      - name: SkyView orbit layout lint (kb/_build_ccr_universe.py)
+        run: python3 tests/ccr_universe_orbits_test.py
+      # DR-25 — the subject-discipline edge fill (Sam, 2026-09-08). All five
+      # discipline-inference passes read kb/coci_minted_courses.json, which is
+      # 19,568 records every one an M-ID, so no externally-minted identifier has
+      # ever been seen by one: 326 identities carried no discipline, 0.4% of
+      # M-IDs against 47.5% of C-IDs. The guard's sharpest check is that the
+      # edge reads the SUBJ4 off the ID PREFIX and not row["subj"], which is the
+      # colleges' freehand local codes and mis-filed four rows before it was
+      # caught. Pure-stdlib python; same non-required check.
+      - name: Discipline edge fill (DR-25, excel_to_dashboard.py)
+        run: python3 tests/discipline_edge_fill_test.py
+      # DR-25's other half (Sam's rulings of 2026-09-08, sheet item 9) — the
+      # identities the edge CANNOT reach are a curator list, never an inference.
+      # The guard's sharpest check is that a code with ONE same-prefix identity
+      # is never reported as agreement: HUMN's single voter is a film-music
+      # course while its three blanks are popular-culture titles, so the
+      # "unanimous" reading would file three humanities courses under Music.
+      # 37 of the 45 codes have no corroborating identity at all. Pure-stdlib
+      # python; same non-required check.
+      - name: Discipline-blank worklist guard (kb/_build_discipline_blanks_worklist.py)
+        run: python3 tests/discipline_blanks_worklist_test.py
+      # An umbrella discipline's protection must be DATA, not one literal (Sam,
+      # 2026-09-08: "ATHL ... is in Kinesiology but is differentiated from KINE
+      # which doesn't have the restrictions athletic PE or KIN course"). The CSR
+      # lists ATHL as a Kinesiology VARIANT with 1,468 M-IDs and is consumed by
+      # the Phase 1e re-mint to FOLD variants to the canonical; Session 47 caught
+      # that fold doing exactly this. Both halves are pinned: the allowance in
+      # kb/_subj4_dryrun.py AND the is_umbrella declaration every other CSR
+      # reader sees. Pure-stdlib python, no network.
+      - name: Umbrella codes are declared, not only literal (CSR + kb/_subj4_dryrun.py)
+        run: python3 tests/umbrella_codes_are_declared_test.py
+      # DR-26 — the COBI live-session banner. Every check is a FAIL-CLOSED case,
+      # because the failure mode of this surface is telling the whole
+      # organization to open a session that is still private: an inactive row,
+      # an active row with no link, an expired row, a missing row and a failed
+      # read must each render nothing. Also pins that the wording says reload
+      # rather than watch, which is what the product actually does.
+      - name: COBI live-session banner (DR-26, cobi_brand.js)
+        run: node tests/cobi_live_banner.test.js
+      # The Admin-tab control for the same banner. Its sharpest check is that a
+      # link which is not a claude.ai session is refused BEFORE any write, and
+      # that an expired row reads "not showing" — a stale "working right now"
+      # is the failure this whole surface is shaped around.
+      - name: Live-banner Admin control (DR-26, admin.js)
+        run: node tests/admin_live_banner_control.test.js
+      # SkyView launcher (Session 189) — Sam asked for "a button on the CCR Tab top
+      # right and prominent". The failure this guards is not a missing button, it is
+      # a button pointing at something that is not deployed: the self-contained
+      # SkyView build is 9.9 MB and GITIGNORED, so a link to it 404s on the live site
+      # while working perfectly on the machine that built it. Proven to fail when the
+      # href is repointed at that build. Runs under `npm test` via tests/run.js.
+      # Docs corpus (Session 204) — the lint that guards this repo's prose had
+      # itself never run in CI: `npm test` discovers only *.test.js, so
+      # tests/docs_audit_test.py's 67 assertions executed NOWHERE. The index is
+      # the case that matters most, because its failure is silent and gradual —
+      # docs/INDEX.md is generated now, and `--check` is what turns "somebody
+      # forgot to rebuild" into a red check instead of another 273 KB landing
+      # page. The spelling suite guards the substitution that must never land in
+      # a link target, a wikilink, a code span or a quotation (imported COCI /
+      # MAP strings, and Sam's own words). Pure-stdlib python; same non-required
+      # check.
+      - name: Docs corpus — lint, index generator, spelling
+        run: |
+          python3 tests/docs_audit_test.py
+          python3 tests/docs_index_build_test.py
+          python3 tests/american_spelling_test.py
+          python3 kb/_build_docs_index.py --check
+      # Dependency map (Sam's ruling A, 2026-08-29) — the dataset→consumers
+      # artifact every session's cross-impact flag depends on. `--check` turns
+      # "somebody forgot to rebuild after adding a fetch()" into a red check
+      # (same shape as the docs index above); the test guards the content —
+      # each of its checks is a failure mode the build actually hit, verified
+      # by perturbation against the live artifact. Pure-stdlib python; same
+      # non-required check.
+      - name: Dependency map — content guards + drift check
+        run: |
+          python3 tests/dependency_map_test.py
+          python3 kb/_build_dependency_map.py --check
+      # E gate guards (Session 210) — pins the skip/run boundary from both
+      # sides, re-derives which test files read inert (docs-shaped) paths and
+      # requires each to run in the skip branch above, and keeps the
+      # forever-block shape (`paths-ignore` on a required check) out of this
+      # file. Pure-stdlib python; always-on like every other lint here.
+      - name: JS-suite gate lint (scripts/js_suite_gate.sh)
+        run: python3 tests/js_suite_gate_test.py
+      # Stop-hook unpushed check (Session 228) — the hook nagged "There are 1
+      # unpushed commit(s)" at the end of nearly every remote session, on
+      # branches holding nothing of ours, until sessions learned to ignore it.
+      # A hook people ignore is worse than none, because the one time it is
+      # right nobody looks. Guards BOTH directions against a vendor-shaped hook
+      # (the copy that actually runs in the cloud): the false positive goes
+      # quiet, and one real local commit still fires. ⚠️ It must NOT be tested
+      # against scripts/stop-hook-git-check.sh — that copy's Session-32
+      # ancestor guard masks the case, so such a test passes with or without
+      # the fix. Pure-stdlib python, no network.
+      # Alias chain single source (Session 232, Sam's ruling 8) — the chain of
+      # applied re-mint receipts is declared ONCE, in kb/alias_chain.py. It used
+      # to be copy-pasted, and the copy in kb/_analyze_official_fold_evidence.py
+      # sat under a comment promising lockstep while carrying 7 maps against the
+      # real 15 — eight applies behind, for months, failing nothing. A comment is
+      # not a mechanism. Fails a second declaration under that name or any other,
+      # a copied resolver in a chain-aware file, and a chain that is duplicated,
+      # missing on disk or out of chronological order. Pure-stdlib python.
+      # Merge candidate queue (Session 232, Sam's ruling 6) — the lane is defined
+      # by what it does NOT do: it assembles the evidence a faculty reviewer
+      # needs and stops, because whether two courses are close enough to be one
+      # is a curriculum judgment, not a rule. The first check asserts the module
+      # holds no write path at all; the rest guard the evidence — bands never
+      # cross (credit 1xxx vs noncredit 9xxx), a cross-discipline pair is
+      # flagged rather than proposed, and the survivor's stated basis is the
+      # rule that actually decided rather than the first one it satisfied.
+      # Pure-stdlib python, no network.
+      - name: Merge candidate queue (kb/_merge_candidate_queue.py)
+        run: python3 tests/merge_candidate_queue_test.py
+      - name: Alias chain single source (kb/alias_chain.py)
+        run: python3 tests/alias_chain_single_source_test.py
+      # SkyView is BUILT (2026-09-18). prototype/skyview.html is assembled from
+      # prototype/ccr_atlas_v1.html and prototype/ccr_universe.js by
+      # prototype/build_ccr_atlas.py, and step 4d2 of daily-dashboard.yml re-runs
+      # that build whenever the unified-courses artifacts move. A change made in
+      # the artifact therefore survives review, merge and deploy, and is reverted
+      # by a cron run days later with nothing to point at. It happened on #1618.
+      - name: SkyView is built from its sources (prototype/build_ccr_atlas.py)
+        run: python3 tests/skyview_built_from_source_test.py
+      - name: Stop-hook unpushed check (scripts/patch_stop_hook.py)
+        run: python3 tests/stop_hook_git_check_test.py
+      # Video context frame planner (Session 234) — scene detection is right for
+      # a screen capture and fails in opposite directions at both ends, silently:
+      # a read-through of one page emits almost no scene changes (a 20-minute
+      # walkthrough reduced to a title card), while a fade or an embedded video
+      # emits a burst that spends the whole frame budget inside three seconds.
+      # Guards the top-up, the minimum gap, the cap, chronological interleaving
+      # of speech and stills, and the mandatory YYYYMMDD_ deliverable prefix.
+      # Pure-stdlib python, no network, no ffmpeg.
+      - name: Video context frame planner (kb/_video_context.py)
+        run: python3 tests/video_context_test.py
+      # Rule 3, the no-date-gaps guard (added by #1541, wired here in S249).
+      # ⚠️ IT WAS COMMITTED WITHOUT A RUNNER. `tests/run.js` auto-discovers
+      # `tests/*.test.js` only, so a `*_test.py` runs nowhere unless a step
+      # names it — and this file was referenced in no workflow, no script and
+      # no package.json. A guard nobody runs reports nothing, which is the
+      # failure mode #1541 was itself written about. Pure-stdlib python.
+      - name: KPI history has no date gaps (Rule 3)
+        run: python3 tests/kpi_history_no_gaps_test.py
+
+  test:
+    # The one check the merge doctrine polls (CLAUDE.md branch policy). It
+    # needs every other job and runs on `!cancelled()` rather than the bare
+    # `needs` chain: a job whose needs failed or were skipped is itself
+    # skipped by default, and a skipped required check never reports. The
+    # only run it does not report on is a superseded commit the concurrency
+    # group canceled — the same run the single job before it did not finish.
+    needs: [gate, suite, lints]
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Every shard and every lint passed (or the gate skipped the suite)
+        env:
+          GATE: ${{ needs.gate.result }}
+          DECISION: ${{ needs.gate.outputs.decision }}
+          SUITE: ${{ needs.suite.result }}
+          LINTS: ${{ needs.lints.result }}
+        run: |
+          echo "gate=$GATE decision=$DECISION suite=$SUITE lints=$LINTS"
+          ok=true
+          [ "$GATE" = success ] || { echo "::error::the gate job did not succeed ($GATE)"; ok=false; }
+          [ "$LINTS" = success ] || { echo "::error::the lints job did not succeed ($LINTS)"; ok=false; }
+          case "$DECISION:$SUITE" in
+            run:success) echo "suite: every shard passed" ;;
+            skip:skipped) echo "suite: skipped — every changed file is docs-shaped (the E gate)" ;;
+            *) echo "::error::suite result '$SUITE' under gate decision '$DECISION'"; ok=false ;;
+          esac
+          $ok

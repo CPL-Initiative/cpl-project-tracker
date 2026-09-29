@@ -1,9 +1,8 @@
 ---
 title: "Playbook — Trail Crew 🥾: the method + magic audit (deterministic scanner → AI adjudication → adversarial verify → fire-able staged plan)"
-date: 2026-07-10
+created: 2026-07-10
 kb-status: published
-type: playbook
-tags: [trail-crew, audit, cer, ccr, canon, workflow, adjudication]
+tags: [playbook, trail-crew, audit, cer, ccr, canon, workflow, adjudication]
 artifacts:
   - kb/_trail_crew.py
   - kb/_trail_crew_magic.workflow.js

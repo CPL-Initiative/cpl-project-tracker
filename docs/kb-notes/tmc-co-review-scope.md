@@ -1,9 +1,8 @@
 ---
 title: TMC tab → CO-staff ADT review/processing tool (PCF-bootstrapped)
-date: 2026-06-20
+created: 2026-06-20
 kb-status: published
-type: scope
-tags: [tmc, adt, co-review, coci, comis, program-course-file, c-id, compliance, supabase, datamart]
+tags: [scope, tmc, adt, co-review, coci, comis, program-course-file, c-id, compliance, supabase, datamart]
 artifacts:
   - tmc_builder.js                               # the tab (builder + CO-review queue + auth — Sessions 59–66)
   - tmc/supabase_tmc_submissions.sql             # submission/review store (status: draft|submitted — to extend)

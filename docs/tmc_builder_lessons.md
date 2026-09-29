@@ -398,7 +398,7 @@ Phase-2 acceptance engine needs.
 ## Session 69 — Bruh Stargaze: title-fill recovery for approved ADTs + the Status/ADT consolidation (2026-06-22)
 
 Sam-async (he set the direction, then left for a meeting; "act on your best
-judgement … exploratory … doesn't impact prod"). Three asks, all in
+judgment … exploratory … doesn't impact prod"). Three asks, all in
 `tmc_builder.js` (STATIC — no HTML/Rule-4 touch, not a cron artifact; live on
 the next Pages deploy):
 

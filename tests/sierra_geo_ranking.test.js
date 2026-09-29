@@ -136,9 +136,19 @@ const LA_COLLEGES = [
       .split("\n").filter((l) => !/^\s*\/\//.test(l)).join("\n");
     check("the ilike lookup is ORDERED (no arbitrary LIMIT window)",
       /\.order\("college"\)/.test(detectSrc));
-    const limits = [...detectSrc.matchAll(/\.limit\((\d+)\)/g)].map((m) => Number(m[1]));
+    /* The bound is a NAMED CONSTANT since 2026-08-21, not a literal, because the
+     * tie list below had its own separate `.slice(0, 3)` and the two drifted —
+     * the query was raised to 12 here and the tie list kept 3, which is the
+     * "Three LACCD colleges appear in the MAP platform data" defect. Resolve the
+     * constant rather than matching a number, so this check follows the value
+     * instead of pinning a spelling. See tests/sierra_candidate_census.test.js. */
+    const namedMax = Number((SRC.match(/const CANDIDATE_MAX = (\d+);/) || [])[1]);
+    const limits = [...detectSrc.matchAll(/\.limit\((?:(\d+)|CANDIDATE_MAX)\)/g)]
+      .map((m) => (m[1] === undefined ? namedMax : Number(m[1])));
     check("the ilike limit is wider than the 9 'angeles' matches",
-      limits.length > 0 && limits.every((n) => n > 9));
+      limits.length > 0 && limits.every((n) => n > 9), JSON.stringify(limits));
+    check("…and it is the SAME bound the tie list uses (they drifted once)",
+      Number.isFinite(namedMax) && /tiedAll\.slice\(0, CANDIDATE_MAX\)/.test(detectSrc));
 
     // ── 2. Detection: genuine ambiguity still yields an ARRAY ────────────────
     // The caller narrows these by topic hits (the West-LA real-estate path), so
@@ -161,8 +171,17 @@ const LA_COLLEGES = [
     check("same county scores above same region",
       pb({ county: "Los Angeles", region: "Los Angeles" }, LA) >
       pb({ county: "Orange", region: "Los Angeles" }, LA));
-    check("a different county+region scores 0",
-      pb({ county: "Riverside", region: "Inland Empire" }, LA) === 0);
+    // S274 (2026-09-18): a NEIGHBORING region is a band of its own — below the
+    // home region, above everywhere else — so an Orange County LVN question
+    // (a county with no such program, in a region of one county) ranks Long
+    // Beach and Chaffey ahead of Sacramento and Butte instead of letting volume
+    // decide. Inland Empire borders Los Angeles; the Far North does not.
+    check("a neighboring region scores below the home region and above elsewhere",
+      pb({ county: "Riverside", region: "Inland Empire" }, LA) > 0 &&
+      pb({ county: "Riverside", region: "Inland Empire" }, LA) <
+      pb({ county: "Orange", region: "Los Angeles" }, LA));
+    check("a distant county+region scores 0",
+      pb({ county: "Shasta", region: "Far North" }, LA) === 0);
     check("no home college => every band is 0 (ordering unchanged)",
       pb({ county: "Los Angeles", region: "Los Angeles" }, null) === 0);
     check("an ungeocoded college scores 0 rather than throwing",

@@ -1,11 +1,10 @@
 ---
 title: "Methodology — a governance artifact must measure itself, and render what it lacks"
-type: methodology
 kb-status: published
 created: 2026-08-05
 updated: 2026-08-05
 session: 120 (SkyMail)
-tags: [governance, decision-rights, instruments, honesty, accountability]
+tags: [methodology, governance, decision-rights, instruments, honesty, accountability]
 related:
   - "[[docs/kb-notes/methodology-register-is-the-spine-narrative-cites-it]]"
   - "[[docs/kb-notes/methodology-dormant-asset-worklist]]"
@@ -71,10 +70,10 @@ Two supporting details:
   These are the properties that decay first under later edits, because every
   future contributor feels mild pressure to make the page look better.
 
-## Why this generalises
+## Why this generalizes
 
 Any artifact whose job is to describe the state of a system — a governance
-register, a runbook, a compliance page, a service catalogue, a RACI — has the
+register, a runbook, a compliance page, a service catalog, a RACI — has the
 same structural weakness: it is a *claim about a system*, stored *outside* that
 system. Wiring the checkable parts back to the system is what converts it from a
 description into an instrument.

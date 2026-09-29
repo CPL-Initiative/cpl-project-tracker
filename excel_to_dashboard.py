@@ -1291,7 +1291,7 @@ def render_annual_goals_table_html(annual_goals, activities=None):
 
     year_cols = ["2025-26", "2026-27", "2027-28", "2028-29", "2029-30"]
 
-    html = '''        <div style="margin:2rem 0;padding:1.5rem;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+    html = '''        <div style="margin:2rem 0;padding:1.5rem;background:var(--surface-opaque);border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
             <h2 style="color:var(--navy-primary);margin:0 0 1rem 0;">Annual Workplan Goals</h2>
             <div style="overflow-x:auto;">
             <table style="width:100%;border-collapse:collapse;font-size:0.82rem;">
@@ -1339,14 +1339,14 @@ def render_annual_goals_table_html(annual_goals, activities=None):
                 )
             else:
                 header_inner = html_escape(current_activity)
-            html += (f'                    <tr style="background:var(--navy-secondary);color:#fff;">\n'
+            html += (f'                    <tr style="background:var(--navy-secondary);color:var(--on-accent);">\n'
                      f'                        <td colspan="8" style="padding:0.5rem 0.6rem;font-weight:700;border:1px solid var(--navy-primary);">{header_inner}</td>\n'
                      f'                    </tr>\n')
 
         # Three rows per sub-activity: GOAL, CURRENT, STRETCH
         for rtype, vals, style in [
             ("Goal", row["goal"], "background:var(--bg-off-white);font-weight:600;color:var(--navy-primary);"),
-            ("Current", row["current"], "background:#fff;color:var(--green-progress);font-weight:700;"),
+            ("Current", row["current"], "background:var(--surface-opaque);color:var(--green-progress);font-weight:700;"),
             ("Stretch", row["stretch"], "background:var(--bg-off-white);color:var(--mustard-text);font-style:italic;"),
         ]:
             is_first = rtype == "Goal"
@@ -1399,7 +1399,7 @@ def render_annual_goals_table_html(annual_goals, activities=None):
                     f'<div class="wpg-desc-cell" data-desc-edit="1" '
                     f'data-pid="{html_escape(row["id"], quote=True)}" '
                     f'data-val="{html_escape(proj_desc, quote=True)}" '
-                    f'style="font-weight:400;font-size:0.72rem;color:#666;margin-top:0.2rem;">'
+                    f'style="font-weight:400;font-size:0.72rem;color:var(--text-muted);margin-top:0.2rem;">'
                     f'{html_escape(proj_desc) if proj_desc else "&mdash;"}</div>'
                 )
                 # Hierarchy: a three-level id (X.Y.Z, e.g. 4.1.1 "29 Palms" under
@@ -1416,7 +1416,7 @@ def render_annual_goals_table_html(annual_goals, activities=None):
                                'aria-hidden="true">↳ </span>' if _depth >= 2 else '')
                 name_cell = (f'<td rowspan="3" style="padding:0.4rem 0.6rem 0.4rem {_pad_left:.2f}rem;'
                              f'border:1px solid #ddd;{_nest_style}'
-                             f'vertical-align:top;font-weight:600;background:#fff;">'
+                             f'vertical-align:top;font-weight:600;background:var(--surface-opaque);">'
                              f'{_sub_marker}'
                              f'<span style="color:#888;font-size:0.75rem;">{html_escape(row["id"])}</span> '
                              f'<span class="wpg-title-cell" data-title-edit="1" '
@@ -1849,7 +1849,7 @@ def _att_badge(attachments, act_num=None, project_id=None):
         count = attachments.get("by_activity", {}).get(str(act_num), 0)
     if count <= 0:
         return ""
-    return (f' <span style="background:var(--gold-accent);color:var(--navy-primary);font-size:0.6rem;'
+    return (f' <span style="background:var(--gold-accent);color:var(--on-mustard);font-size:0.6rem;'
             f'font-weight:700;padding:1px 5px;border-radius:8px;margin-left:2px;">'
             f'{count}</span>')
 
@@ -1946,7 +1946,7 @@ def _dual_progress_html(prog):
             f'                        <span style="color:{fill_color};font-weight:600;">{label}{" ✓" if met else ""}</span>\n'
             f'                        <span style="font-weight:700;color:{label_color};">{pct}%</span>\n'
             f'                    </div>\n'
-            f'                    <div style="height:5px;background:#e8e8e8;border-radius:3px;overflow:hidden;margin-bottom:0.35rem;">\n'
+            f'                    <div style="height:5px;background:var(--surface-muted);border-radius:3px;overflow:hidden;margin-bottom:0.35rem;">\n'
             f'                        <div style="height:100%;width:{width}%;background:{"var(--green-progress)" if met else fill_color};border-radius:3px;"></div>\n'
             f'                    </div>\n'
         )
@@ -2032,7 +2032,7 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
             if parts:
                 annual_summary = (
                     '<div style="margin-top:0.3rem;display:flex;flex-wrap:wrap;gap:0.3rem 1rem;">'
-                    + ''.join(f'<span style="font-size:0.7rem;color:#555;">{p}</span>' for p in parts)
+                    + ''.join(f'<span style="font-size:0.7rem;color:var(--text-muted);">{p}</span>' for p in parts)
                     + '</div>'
                 )
 
@@ -2042,13 +2042,13 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                  f'                <span style="display:inline-flex;gap:0.8rem;align-items:center;white-space:nowrap;">\n'
                  f'                <a href="#raci" class="act-raci-link" data-raci-key="activity:{act_num}" title="Who\'s Responsible / Accountable / Consulted / Informed for this Activity — hover for the roster, click to open Team &amp; RACI" '
                  f'onclick="try{{sessionStorage.setItem(\'cpl_raci_focus\',\'activity:{act_num}\')}}catch(e){{}}" '
-                 f'style="font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:none;white-space:nowrap;">&#128101; RACI</a>\n'
+                 f'style="font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:none;white-space:nowrap;">RACI</a>\n'
                  f'                <a href="#raci" class="act-update-link" title="Braindump a quick status update for this Activity — CC writes it up and saves it" '
                  f'onclick="try{{sessionStorage.setItem(\'cpl_update_focus\',\'activity:{act_num}\')}}catch(e){{}}" '
-                 f'style="font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:none;white-space:nowrap;">&#128221; Update</a>\n'
+                 f'style="font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:none;white-space:nowrap;">Update</a>\n'
                  f'                <a href="#raci" class="act-nudge-link" title="Nudge this Activity\'s Responsible / Accountable people for a status update (opens your mail app — nothing is auto-sent)" '
                  f'onclick="try{{sessionStorage.setItem(\'cpl_nudge_focus\',\'activity:{act_num}\')}}catch(e){{}}" '
-                 f'style="font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:none;white-space:nowrap;">&#128227; Nudge</a>\n'
+                 f'style="font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:none;white-space:nowrap;">Nudge</a>\n'
                  f'                <a href="#workplan-goals" class="act-targets-link" title="Annual + 2030 targets live on the Annual Workplan Goals tab" '
                  f'style="font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:none;white-space:nowrap;">Targets &#8599; Annual Workplan Goals</a>\n'
                  f'                </span>\n'
@@ -2056,16 +2056,16 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
         # Activity Lead — driven LIVE from the RACI Responsible by card_raci.js
         # (keyed `activity:N`); hidden until the overlay fills it (the activity
         # has no creation-era lead of its own).
-        html += (f'            <div class="cpl-raci-lead-row" style="display:none;padding:0 0.5rem 0.4rem 0.5rem;font-size:0.74rem;color:#555;">'
+        html += (f'            <div class="cpl-raci-lead-row" style="display:none;padding:0 0.5rem 0.4rem 0.5rem;font-size:0.74rem;color:var(--text-muted);">'
                  f'<strong>Lead:</strong> <span class="cpl-raci-lead" data-raci-key="activity:{act_num}" '
                  f'title="Responsible (from the Team &amp; RACI matrix)">&mdash;</span></div>\n')
         # Activity progress bar with goal + annual targets
         html += (f'            <div style="padding:0 0.5rem 0.6rem 0.5rem;">\n'
                  f'                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.25rem;">\n'
-                 f'                    <span style="font-size:0.75rem;color:#555;">{html_escape(act_goal_text)}</span>\n'
+                 f'                    <span style="font-size:0.75rem;color:var(--text-muted);">{html_escape(act_goal_text)}</span>\n'
                  f'                    <span style="font-size:0.75rem;font-weight:700;color:{label_color};white-space:nowrap;margin-left:0.5rem;">{avg_pct}% avg &middot; {completed}/{total_kpis} complete (toward 2030 goal)</span>\n'
                  f'                </div>\n'
-                 f'                <div style="height:6px;background:#e8e8e8;border-radius:3px;overflow:hidden;">\n'
+                 f'                <div style="height:6px;background:var(--surface-muted);border-radius:3px;overflow:hidden;">\n'
                  f'                    <div style="height:100%;width:{avg_pct}%;background:{bar_color};border-radius:3px;transition:width 0.3s;"></div>\n'
                  f'                </div>\n'
                  f'            </div>\n')
@@ -2077,7 +2077,7 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
         # Supabase `item_updates` table (RACI tab 📝 composer, keyed `activity:N`),
         # showing the newest posted Activity update with a timestamp. Hidden until populated.
         html += (f'            <div class="cpl-live-update" data-update-key="activity:{act_num}" '
-                 f'style="display:none;margin:0 0.5rem 0.4rem 0.5rem;border-top:1px solid #e8e8e8;padding-top:0.4rem;"></div>\n')
+                 f'style="display:none;margin:0 0.5rem 0.4rem 0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;"></div>\n')
 
         # Option-B (Activities reorg 2026-07-21): render ALL sub-activities in a
         # single grid per Activity, ordered by dotted id (build_activity_kpis
@@ -2148,7 +2148,7 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                 # Sub-activity Lead — driven LIVE from the RACI Responsible by
                 # card_raci.js (keyed `project:<id>`, the same key its RACI row
                 # uses); hidden until the overlay fills it.
-                html += (f'                <div class="cpl-raci-lead-row" style="display:none;font-size:0.7rem;color:#555;margin:-0.1rem 0 0.3rem 0;">'
+                html += (f'                <div class="cpl-raci-lead-row" style="display:none;font-size:0.7rem;color:var(--text-muted);margin:-0.1rem 0 0.3rem 0;">'
                          f'<strong>Lead:</strong> <span class="cpl-raci-lead" '
                          f'data-raci-key="project:{html_escape(str(kpi["id"]), quote=True)}" '
                          f'title="Responsible (from the Team &amp; RACI matrix)">&mdash;</span></div>\n')
@@ -2160,7 +2160,7 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                     sub_parts = [f'2030 Goal: {g2930}']
                     if s2930_val:
                         sub_parts.append(f'Stretch: {s2930_val}')
-                    html += (f'                <div style="font-size:0.7rem;color:#666;margin:-0.2rem 0 0.3rem 0;">'
+                    html += (f'                <div style="font-size:0.7rem;color:var(--text-muted);margin:-0.2rem 0 0.3rem 0;">'
                              f'{" &nbsp; ".join(sub_parts)}</div>\n')
 
                 if has_metric:
@@ -2188,7 +2188,7 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                 if any_goal:
                     tbl_style = ('font-size:0.65rem;border-collapse:collapse;width:100%;'
                                  'margin-top:0.3rem;text-align:center;')
-                    th_style = 'padding:2px 4px;color:#666;font-weight:600;border-bottom:1px solid #ddd;'
+                    th_style = 'padding:2px 4px;color:var(--text-muted);font-weight:600;border-bottom:1px solid #ddd;'
                     td_style = 'padding:2px 4px;'
                     html += f'                <table style="{tbl_style}">\n'
                     # Header row: YEAR
@@ -2239,10 +2239,10 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                 if continue_manual_bar:
                     html += (f'                <div class="akpi-progress" style="margin-top:0.5rem;">\n'
                          f'                    <div style="display:flex;justify-content:space-between;font-size:0.7rem;margin-bottom:0.15rem;">\n'
-                         f'                        <span style="color:#666;">Progress</span>\n'
+                         f'                        <span style="color:var(--text-muted);">Progress</span>\n'
                          f'                        <span style="font-weight:700;color:{plabel_color};">{pct}%</span>\n'
                          f'                    </div>\n'
-                         f'                    <div style="height:5px;background:#e8e8e8;border-radius:3px;overflow:hidden;">\n'
+                         f'                    <div style="height:5px;background:var(--surface-muted);border-radius:3px;overflow:hidden;">\n'
                          f'                        <div style="height:100%;width:{pct}%;background:{pbar_color};border-radius:3px;"></div>\n'
                          f'                    </div>\n'
                          f'                </div>\n')
@@ -2271,7 +2271,7 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                 # populated; when shown it hides the creation-era static line below.
                 html += (f'                <div class="cpl-live-update" '
                          f'data-update-key="project:{html_escape(str(kpi_pid), quote=True)}" '
-                         f'style="display:none;margin-top:0.5rem;border-top:1px solid #e8e8e8;padding-top:0.4rem;"></div>\n')
+                         f'style="display:none;margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;"></div>\n')
 
                 if kpi_update or kpi_wp:
                     # Toggle for full history
@@ -2285,7 +2285,7 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                             f'Show all ({len(kpi_notes_list)})</label>\n'
                         )
 
-                    html += (f'                <div style="margin-top:0.5rem;border-top:1px solid #e8e8e8;padding-top:0.4rem;">\n'
+                    html += (f'                <div style="margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;">\n'
                              f'                    <div style="display:flex;align-items:center;margin-bottom:0.3rem;">\n'
                              f'                        <span style="font-size:0.7rem;color:#888;">Last updated: '
                              f'<strong style="color:var(--navy-primary);">{kpi_date}</strong></span>\n'
@@ -2294,23 +2294,23 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
 
                     # Latest Update (col P)
                     if kpi_update:
-                        html += (f'                    <div class="cpl-static-update" style="font-size:0.75rem;color:#444;line-height:1.4;margin-bottom:0.3rem;">'
-                                 f'<span style="font-size:0.62rem;font-weight:600;background:var(--navy-secondary);color:#fff;'
+                        html += (f'                    <div class="cpl-static-update" style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;">'
+                                 f'<span style="font-size:0.62rem;font-weight:600;background:var(--navy-secondary);color:var(--on-accent);'
                                  f'padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Latest Update</span>'
                                  f'{kpi_update}</div>\n')
 
                     # Workplan Note (col V)
                     if kpi_wp:
-                        html += (f'                    <div style="font-size:0.75rem;color:#444;line-height:1.4;margin-bottom:0.3rem;">'
-                                 f'<span style="font-size:0.62rem;font-weight:600;background:var(--gold-accent);color:var(--navy-primary);'
+                        html += (f'                    <div style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;">'
+                                 f'<span style="font-size:0.62rem;font-weight:600;background:var(--gold-accent);color:var(--on-mustard);'
                                  f'padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Workplan Note</span>'
                                  f'{kpi_wp}</div>\n')
 
                     # Full history (hidden by default)
                     if len(kpi_notes_list) > 1:
                         type_badge_css = {
-                            "update":   "background:var(--navy-secondary);color:#fff;",
-                            "workplan": "background:var(--gold-accent);color:var(--navy-primary);",
+                            "update":   "background:var(--navy-secondary);color:var(--on-accent);",
+                            "workplan": "background:var(--gold-accent);color:var(--on-mustard);",
                         }
                         type_labels = {"update": "Progress Update", "workplan": "Workplan Note"}
                         html += (f'                    <div class="notes-history" data-pid="{kpi_pid}" '
@@ -2322,10 +2322,10 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                             badge_label = type_labels.get(ntype, "Update")
                             html += (f'                        <div style="margin-bottom:0.4rem;">'
                                      f'<span style="font-size:0.68rem;font-weight:700;color:var(--navy-primary);'
-                                     f'background:#f0f0f0;padding:0.1rem 0.35rem;border-radius:3px;">{n["date"]}</span>'
+                                     f'background:var(--surface-muted);padding:0.1rem 0.35rem;border-radius:3px;">{n["date"]}</span>'
                                      f' <span style="font-size:0.6rem;font-weight:600;{badge_style}'
                                      f'padding:0.1rem 0.3rem;border-radius:3px;">{badge_label}</span>'
-                                     f'<div style="font-size:0.73rem;color:#444;margin-top:0.1rem;line-height:1.3;">{n["note"]}</div>'
+                                     f'<div style="font-size:0.73rem;color:var(--text-body);margin-top:0.1rem;line-height:1.3;">{n["note"]}</div>'
                                      f'</div>\n')
                         html += '                    </div>\n'
 
@@ -2344,35 +2344,35 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                 kpi_pid_q = html_escape(str(kpi_pid), quote=True)
                 html += (f'                <a href="reports/projects/{kpi_pid}_Report.docx" '
                          f'download class="report-btn" '
-                         f'style="{btn_style}color:var(--navy-secondary);background:#fafafa;"'
-                         f' onmouseover="this.style.background=\'#e8e8e8\'" onmouseout="this.style.background=\'#fafafa\'">'
-                         f'<span style="font-size:0.8rem;">&#128196;</span> Report</a>'
+                         f'style="{btn_style}color:var(--navy-secondary);background:var(--surface-subtle);"'
+                         f' onmouseover="this.style.background=\'var(--surface-muted)\'" onmouseout="this.style.background=\'var(--surface-subtle)\'">'
+                         f'Report</a>'
                          f'<a href="#" '
                          f'class="attach-btn" '
                          f'data-folder="{html_escape(str(kpi_pid) + " " + str(kpi.get("name", "")), quote=True)}" '
-                         f'style="{btn_style}color:var(--navy-secondary);background:#fafafa;"'
-                         f' onmouseover="this.style.background=\'#e8e8e8\'" onmouseout="this.style.background=\'#fafafa\'"'
+                         f'style="{btn_style}color:var(--navy-secondary);background:var(--surface-subtle);"'
+                         f' onmouseover="this.style.background=\'var(--surface-muted)\'" onmouseout="this.style.background=\'var(--surface-subtle)\'"'
                          f' title="Open SharePoint folder — use Upload or drag &amp; drop to add files">'
-                         f'<span style="font-size:0.8rem;">&#128206;</span> Attach'
+                         f'Attach'
                          f'{_att_badge(attachments, act_num)}</a>'
                          f'<a href="#raci" class="raci-link" data-raci-key="project:{kpi_pid_q}" '
                          f'onclick="try{{sessionStorage.setItem(\'cpl_raci_focus\',\'project:{kpi_pid_q}\')}}catch(e){{}}" '
-                         f'style="{btn_style}color:var(--navy-secondary);background:#fafafa;"'
-                         f' onmouseover="this.style.background=\'#e8e8e8\'" onmouseout="this.style.background=\'#fafafa\'"'
+                         f'style="{btn_style}color:var(--navy-secondary);background:var(--surface-subtle);"'
+                         f' onmouseover="this.style.background=\'var(--surface-muted)\'" onmouseout="this.style.background=\'var(--surface-subtle)\'"'
                          f' title="Who\'s Responsible / Accountable / Consulted / Informed — hover for the roster, click to open Team &amp; RACI">'
-                         f'<span style="font-size:0.8rem;">&#128101;</span> RACI</a>'
+                         f'RACI</a>'
                          f'<a href="#raci" class="update-link" '
                          f'onclick="try{{sessionStorage.setItem(\'cpl_update_focus\',\'project:{kpi_pid_q}\')}}catch(e){{}}" '
-                         f'style="{btn_style}color:var(--navy-secondary);background:#fafafa;"'
-                         f' onmouseover="this.style.background=\'#e8e8e8\'" onmouseout="this.style.background=\'#fafafa\'"'
+                         f'style="{btn_style}color:var(--navy-secondary);background:var(--surface-subtle);"'
+                         f' onmouseover="this.style.background=\'var(--surface-muted)\'" onmouseout="this.style.background=\'var(--surface-subtle)\'"'
                          f' title="Braindump a quick status update — CC writes it up and saves it to this card">'
-                         f'<span style="font-size:0.8rem;">&#128221;</span> Update</a>'
+                         f'Update</a>'
                          f'<a href="#raci" class="nudge-link" '
                          f'onclick="try{{sessionStorage.setItem(\'cpl_nudge_focus\',\'project:{kpi_pid_q}\')}}catch(e){{}}" '
-                         f'style="{btn_style}color:var(--navy-secondary);background:#fafafa;"'
-                         f' onmouseover="this.style.background=\'#e8e8e8\'" onmouseout="this.style.background=\'#fafafa\'"'
+                         f'style="{btn_style}color:var(--navy-secondary);background:var(--surface-subtle);"'
+                         f' onmouseover="this.style.background=\'var(--surface-muted)\'" onmouseout="this.style.background=\'var(--surface-subtle)\'"'
                          f' title="Nudge this item\'s Responsible / Accountable people for a status update (opens your mail app — nothing is auto-sent)">'
-                         f'<span style="font-size:0.8rem;">&#128227;</span> Nudge</a>\n')
+                         f'Nudge</a>\n')
 
                 html += '            </div>\n'  # close activity-kpi-card
 
@@ -2524,7 +2524,7 @@ def render_workplan_goals_html(
                 <span style="color:var(--gold-accent);font-weight:700;font-size:0.9rem;">{header_label}</span>
             </div>
             <div style="overflow-x:auto;">
-            <table style="width:100%;border-collapse:collapse;font-size:0.8rem;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.06);border-radius:0 0 8px 8px;table-layout:fixed;">
+            <table style="width:100%;border-collapse:collapse;font-size:0.8rem;background:var(--surface-opaque);box-shadow:0 2px 8px rgba(0,0,0,0.06);border-radius:0 0 8px 8px;table-layout:fixed;">
                 <colgroup>
                     <col style="width:30%;">
                     <col style="width:8%;">
@@ -2538,7 +2538,7 @@ def render_workplan_goals_html(
                 <thead>
                     <tr style="background:var(--surface-subtle);">
                         <th style="text-align:left;padding:0.5rem 0.7rem;border-bottom:2px solid #ddd;">Activity</th>
-                        <th style="text-align:center;padding:0.5rem 0.4rem;border-bottom:2px solid #ddd;color:#666;">Type</th>
+                        <th style="text-align:center;padding:0.5rem 0.4rem;border-bottom:2px solid #ddd;color:var(--text-muted);">Type</th>
                         <th style="text-align:right;padding:0.5rem 0.4rem;border-bottom:2px solid #ddd;">2025-26</th>
                         <th style="text-align:right;padding:0.5rem 0.4rem;border-bottom:2px solid #ddd;">2026-27</th>
                         <th style="text-align:right;padding:0.5rem 0.4rem;border-bottom:2px solid #ddd;">2027-28</th>
@@ -2566,7 +2566,7 @@ def render_workplan_goals_html(
         )
     html = f'''        <div class="workplan-goals-section" style="margin:2.5rem 0;">
             <h2 style="color:var(--navy-primary);margin-bottom:0.5rem;">Annual Workplan Goals & Stretch Targets</h2>
-            <p style="color:#666;font-size:0.85rem;margin-bottom:1.5rem;">Five-year trajectory from the CCCCO CPL Workplan — Goal and Stretch targets per activity per year.</p>
+            <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:1.5rem;">Five-year trajectory from the CCCCO CPL Workplan — Goal and Stretch targets per activity per year.</p>
             {stamp_html}
 '''
 
@@ -2653,7 +2653,7 @@ def render_workplan_goals_html(
                 f'data-assoc="{html_escape(assoc_json, quote=True)}" '
                 f'data-assoc-backfilled="{1 if p.get("assoc_backfilled") else 0}" '
                 f'data-activities="{html_escape(activity_options_json, quote=True)}" '
-                f'style="font-size:0.72rem;color:#666;font-weight:400;'
+                f'style="font-size:0.72rem;color:var(--text-muted);font-weight:400;'
                 f'margin-top:0.2rem;">'
                 f'<span style="color:#888;">Contributes to:</span> '
                 f'{chips_html}'
@@ -2759,14 +2759,14 @@ def _render_single_project_card(p, update_log=None, attachments=None,
     # so a curator can add a first note (preview shows "(none — click to add)").
     current_notes_html = ""
     current_notes_html += (
-        f'            <div class="cpl-static-update" style="font-size:0.8rem;color:#444;line-height:1.4;margin-bottom:0.35rem;">'
-        f'<span style="font-size:0.65rem;font-weight:600;background:var(--navy-secondary);color:#fff;'
+        f'            <div class="cpl-static-update" style="font-size:0.8rem;color:var(--text-body);line-height:1.4;margin-bottom:0.35rem;">'
+        f'<span style="font-size:0.65rem;font-weight:600;background:var(--navy-secondary);color:var(--on-accent);'
         f'padding:0.1rem 0.35rem;border-radius:3px;margin-right:0.3rem;">Latest Update</span>'
         f'{_ed("latest_update", update_text, update_text, multiline=True)}</div>\n'
     )
     current_notes_html += (
-        f'            <div style="font-size:0.8rem;color:#444;line-height:1.4;margin-bottom:0.35rem;">'
-        f'<span style="font-size:0.65rem;font-weight:600;background:var(--gold-accent);color:var(--navy-primary);'
+        f'            <div style="font-size:0.8rem;color:var(--text-body);line-height:1.4;margin-bottom:0.35rem;">'
+        f'<span style="font-size:0.65rem;font-weight:600;background:var(--gold-accent);color:var(--on-mustard);'
         f'padding:0.1rem 0.35rem;border-radius:3px;margin-right:0.3rem;">Workplan Note</span>'
         f'{_ed("wp_notes", wp_text, wp_text, multiline=True)}</div>\n'
     )
@@ -2776,8 +2776,8 @@ def _render_single_project_card(p, update_log=None, attachments=None,
     history_html = ""
     if len(all_notes) > 1:
         type_badge_css = {
-            "update":   "background:var(--navy-secondary);color:#fff;",
-            "workplan": "background:var(--gold-accent);color:var(--navy-primary);",
+            "update":   "background:var(--navy-secondary);color:var(--on-accent);",
+            "workplan": "background:var(--gold-accent);color:var(--on-mustard);",
         }
         type_labels = {"update": "Progress Update", "workplan": "Workplan Note"}
         history_html += (
@@ -2792,10 +2792,10 @@ def _render_single_project_card(p, update_log=None, attachments=None,
             history_html += (
                 f'                <div style="margin-bottom:0.5rem;">'
                 f'<span style="font-size:0.72rem;font-weight:700;color:var(--navy-primary);'
-                f'background:#f0f0f0;padding:0.1rem 0.4rem;border-radius:3px;">{n["date"]}</span>'
+                f'background:var(--surface-muted);padding:0.1rem 0.4rem;border-radius:3px;">{n["date"]}</span>'
                 f' <span style="font-size:0.65rem;font-weight:600;{badge_style}'
                 f'padding:0.1rem 0.35rem;border-radius:3px;">{badge_label}</span>'
-                f'<div style="font-size:0.8rem;color:#444;margin-top:0.15rem;line-height:1.4;">{n["note"]}</div>'
+                f'<div style="font-size:0.8rem;color:var(--text-body);margin-top:0.15rem;line-height:1.4;">{n["note"]}</div>'
                 f'</div>\n'
             )
         history_html += '            </div>\n'
@@ -2826,7 +2826,7 @@ def _render_single_project_card(p, update_log=None, attachments=None,
             f'style="display:none;margin-bottom:0.35rem;"></div>\n'
         )
         notes_html = (
-            f'            <div style="margin-top:0.5rem;border-top:1px solid #e8e8e8;padding-top:0.5rem;">\n'
+            f'            <div style="margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.5rem;">\n'
             f'                <div style="display:flex;align-items:center;margin-bottom:0.35rem;">\n'
             f'                    <span style="font-size:0.75rem;color:#888;">Last updated: '
             f'{update_date_ed}</span>\n'
@@ -2851,7 +2851,7 @@ def _render_single_project_card(p, update_log=None, attachments=None,
 
     # Row-label style for the supplementary editable fields (matches the
     # existing Lead/Activity/Budget rows).
-    _row = 'font-size:0.85rem;color:#555;margin-bottom:0.5rem;'
+    _row = 'font-size:0.85rem;color:var(--text-muted);margin-bottom:0.5rem;'
 
     # ── "Contributes to: Activity N" chip line + association editor ──
     # Shared assoc_editor.js popover. Rendered for ALL 34 cards (incl. 5.2-5.8,
@@ -2865,7 +2865,7 @@ def _render_single_project_card(p, update_log=None, attachments=None,
         assoc_line = render_assoc_chip_line(
             str(pid), recs, activity_options_json,
             sb_activity_labels=sb_activity_labels,
-            cell_style="font-size:0.72rem;color:#666;font-weight:400;margin:0.15rem 0 0.6rem 0;",
+            cell_style="font-size:0.72rem;color:var(--text-muted);font-weight:400;margin:0.15rem 0 0.6rem 0;",
         )
 
     # Tabled / Archived projects (project_lifecycle overlay) render as a HIDDEN
@@ -2920,45 +2920,45 @@ def _render_single_project_card(p, update_log=None, attachments=None,
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:var(--navy-secondary);text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #ddd;border-radius:4px;
-                    background:#fafafa;cursor:pointer;transition:background 0.2s;"
-                    onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'">
-                    <span style="font-size:0.85rem;">&#128196;</span> Report</a>
+                    background:var(--surface-subtle);cursor:pointer;transition:background 0.2s;"
+                    onmouseover="this.style.background='var(--surface-muted)'" onmouseout="this.style.background='var(--surface-subtle)'">
+                    Report</a>
                 <a href="#" class="attach-btn"
                     data-folder="{html_escape(str(pid) + ' ' + str(p.get('name', '')), quote=True)}"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:var(--navy-secondary);text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #ddd;border-radius:4px;
-                    background:#fafafa;cursor:pointer;transition:background 0.2s;"
-                    onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"
+                    background:var(--surface-subtle);cursor:pointer;transition:background 0.2s;"
+                    onmouseover="this.style.background='var(--surface-muted)'" onmouseout="this.style.background='var(--surface-subtle)'"
                     title="Open SharePoint folder — use Upload or drag &amp; drop to add files">
-                    <span style="font-size:0.85rem;">&#128206;</span> Attach{_att_badge(attachments, project_id=pid)}</a>
+                    Attach{_att_badge(attachments, project_id=pid)}</a>
                 <a href="#raci" class="raci-link" data-raci-key="project:{html_escape(str(pid), quote=True)}"
                     onclick="try{{sessionStorage.setItem('cpl_raci_focus','project:{html_escape(str(pid), quote=True)}')}}catch(e){{}}"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:var(--navy-secondary);text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #ddd;border-radius:4px;
-                    background:#fafafa;cursor:pointer;transition:background 0.2s;"
-                    onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"
+                    background:var(--surface-subtle);cursor:pointer;transition:background 0.2s;"
+                    onmouseover="this.style.background='var(--surface-muted)'" onmouseout="this.style.background='var(--surface-subtle)'"
                     title="Who's Responsible / Accountable / Consulted / Informed — hover for the roster, click to open Team &amp; RACI">
-                    <span style="font-size:0.85rem;">&#128101;</span> RACI</a>
+                    RACI</a>
                 <a href="#raci" class="update-link"
                     onclick="try{{sessionStorage.setItem('cpl_update_focus','project:{html_escape(str(pid), quote=True)}')}}catch(e){{}}"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:var(--navy-secondary);text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #ddd;border-radius:4px;
-                    background:#fafafa;cursor:pointer;transition:background 0.2s;"
-                    onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"
+                    background:var(--surface-subtle);cursor:pointer;transition:background 0.2s;"
+                    onmouseover="this.style.background='var(--surface-muted)'" onmouseout="this.style.background='var(--surface-subtle)'"
                     title="Braindump a quick status update — CC writes it up and saves it to this card">
-                    <span style="font-size:0.85rem;">&#128221;</span> Update</a>
+                    Update</a>
                 <a href="#raci" class="nudge-link"
                     onclick="try{{sessionStorage.setItem('cpl_nudge_focus','project:{html_escape(str(pid), quote=True)}')}}catch(e){{}}"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:var(--navy-secondary);text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #ddd;border-radius:4px;
-                    background:#fafafa;cursor:pointer;transition:background 0.2s;"
-                    onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"
+                    background:var(--surface-subtle);cursor:pointer;transition:background 0.2s;"
+                    onmouseover="this.style.background='var(--surface-muted)'" onmouseout="this.style.background='var(--surface-subtle)'"
                     title="Nudge this item's Responsible / Accountable people for a status update (opens your mail app — nothing is auto-sent)">
-                    <span style="font-size:0.85rem;">&#128227;</span> Nudge</a>
+                    Nudge</a>
             </div>
         </div>
 '''
@@ -3137,14 +3137,14 @@ def render_tabled_archived_section(inactive_projects, lifecycle):
             meta_bits.append(html_escape(by))
         meta_line = " · ".join(meta_bits)
         reason_html = (
-            f'<div class="tabled-reason" style="font-size:0.78rem;color:#444;'
+            f'<div class="tabled-reason" style="font-size:0.78rem;color:var(--text-body);'
             f'margin:0.3rem 0;line-height:1.4;">{html_escape(reason)}</div>'
             if reason else ''
         )
         cards += (
             f'            <div class="tabled-card" data-pid="{html_escape(str(p["id"]), quote=True)}" '
             f'data-lifecycle="{html_escape(state, quote=True)}" '
-            f'style="border:1px solid #e3e3e3;border-radius:8px;padding:0.7rem 0.9rem;background:#fafafa;">\n'
+            f'style="border:1px solid var(--border);border-radius:8px;padding:0.7rem 0.9rem;background:var(--surface-subtle);">\n'
             f'                <div class="tabled-card-head" style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;">\n'
             f'                    {_badge(state)}\n'
             f'                    <span class="tabled-name" style="font-weight:600;color:var(--navy-primary,#16324f);">'
@@ -3155,18 +3155,18 @@ def render_tabled_archived_section(inactive_projects, lifecycle):
             f'                <div class="tabled-meta" style="font-size:0.68rem;color:#888;font-style:italic;">{meta_line}</div>\n'
             f'                <button type="button" class="tabled-restore" data-pid="{html_escape(str(p["id"]), quote=True)}" '
             f'style="display:none;margin-top:0.5rem;font-size:0.72rem;background:transparent;border:1px solid #ccc;'
-            f'border-radius:4px;padding:0.25rem 0.6rem;cursor:pointer;color:var(--text-strong,#1a1a1a);">♻ Restore to active</button>\n'
+            f'border-radius:4px;padding:0.25rem 0.6rem;cursor:pointer;color:var(--text-strong,#1a1a1a);">Restore to active</button>\n'
             f'            </div>\n'
         )
 
     return (
         '\n        <details class="tabled-archived-wrap" '
-        'style="margin-top:1.5rem;border:1px solid #e3e3e3;border-radius:10px;padding:0.5rem 1rem;background:#fff;">\n'
+        'style="margin-top:1.5rem;border:1px solid var(--border);border-radius:10px;padding:0.5rem 1rem;background:var(--surface-opaque);">\n'
         '            <summary class="tabled-archived-summary" '
         'style="cursor:pointer;font-weight:700;color:var(--navy-primary,#16324f);font-size:0.95rem;list-style:none;">'
-        f'🗄 Tabled &amp; Archived <span class="tabled-archived-count" style="color:#888;font-weight:400;font-size:0.85rem;">({len(rows)})</span></summary>\n'
+        f'Tabled &amp; Archived <span class="tabled-archived-count" style="color:#888;font-weight:400;font-size:0.85rem;">({len(rows)})</span></summary>\n'
         '            <div class="tabled-archived-note" '
-        'style="font-size:0.76rem;color:#666;margin:0.5rem 0 0.8rem 0;line-height:1.4;">'
+        'style="font-size:0.76rem;color:var(--text-muted);margin:0.5rem 0 0.8rem 0;line-height:1.4;">'
         'Paused or closed projects — kept for the record but excluded from active priorities, '
         'reports, and the RACI matrix. Sign in (or unlock with the team phrase) to Restore one.</div>\n'
         '            <div class="tabled-archived-grid" '
@@ -3205,8 +3205,8 @@ def render_awg_projects_section_html(work_projects):
 
     th = ('style="text-align:left;padding:0.5rem 0.6rem;font-size:0.68rem;'
           'text-transform:uppercase;letter-spacing:0.04em;color:#888;'
-          'border-bottom:2px solid #e8e8e8;white-space:nowrap;"')
-    td = 'padding:0.5rem 0.6rem;border-bottom:1px solid #f0f0f0;vertical-align:middle;'
+          'border-bottom:2px solid var(--border-strong);white-space:nowrap;"')
+    td = 'padding:0.5rem 0.6rem;border-bottom:1px solid var(--border);vertical-align:middle;'
     body = ""
     for p in sorted(work_projects, key=_idkey):
         pid = html_escape(str(p.get("id", "")), quote=True)
@@ -3222,16 +3222,16 @@ def render_awg_projects_section_html(work_projects):
             f'                <tr data-awgp-pid="{pid}">\n'
             f'                    <td style="{td}white-space:nowrap;color:#888;font-weight:600;">{pid}</td>\n'
             f'                    <td style="{td}font-weight:600;color:var(--navy-primary);">{html_escape(str(p.get("name", "")))}</td>\n'
-            f'                    <td style="{td}white-space:nowrap;font-size:0.78rem;color:#555;" title="{html_escape(act_full, quote=True)}">{html_escape(act_disp)}</td>\n'
-            f'                    <td style="{td}white-space:nowrap;font-size:0.78rem;color:#555;">{html_escape(str(p.get("goal", "") or "")) or "&mdash;"}</td>\n'
+            f'                    <td style="{td}white-space:nowrap;font-size:0.78rem;color:var(--text-muted);" title="{html_escape(act_full, quote=True)}">{html_escape(act_disp)}</td>\n'
+            f'                    <td style="{td}white-space:nowrap;font-size:0.78rem;color:var(--text-muted);">{html_escape(str(p.get("goal", "") or "")) or "&mdash;"}</td>\n'
             f'                    <td style="{td}font-size:0.78rem;"><span class="cpl-raci-lead" data-raci-key="project:{pid}" title="Responsible (from the Team &amp; RACI matrix)">{lead or "&mdash;"}</span></td>\n'
             f'                    <td style="{td}white-space:nowrap;">'
             f'<span class="status-badge status-{status_class}" style="font-size:0.62rem;padding:0.1rem 0.4rem;">{html_escape(status) or "&mdash;"}</span></td>\n'
             f'                    <td style="{td}min-width:110px;"><div style="display:flex;align-items:center;gap:0.4rem;">'
-            f'<div style="flex:1;height:6px;background:#e8e8e8;border-radius:3px;overflow:hidden;">'
+            f'<div style="flex:1;height:6px;background:var(--surface-muted);border-radius:3px;overflow:hidden;">'
             f'<div style="height:100%;width:{pct}%;background:var(--green-progress);border-radius:3px;"></div></div>'
-            f'<span style="font-size:0.72rem;color:#555;white-space:nowrap;">{pct}%</span></div></td>\n'
-            f'                    <td style="{td}white-space:nowrap;font-size:0.75rem;color:#666;">{html_escape(timeline) or "&mdash;"}</td>\n'
+            f'<span style="font-size:0.72rem;color:var(--text-muted);white-space:nowrap;">{pct}%</span></div></td>\n'
+            f'                    <td style="{td}white-space:nowrap;font-size:0.75rem;color:var(--text-muted);">{html_escape(timeline) or "&mdash;"}</td>\n'
             f'                </tr>\n'
         )
 
@@ -3402,20 +3402,20 @@ def render_workplan_charts_html(current_students, sub_pops=None, workplan_goals=
 
     data_json = _json.dumps(chart_data)
 
-    html = f'''        <div style="margin:2rem 0;padding:1.5rem;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+    html = f'''        <div style="margin:2rem 0;padding:1.5rem;background:var(--surface-opaque);border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
             <h3 style="color:var(--navy-primary);margin:0 0 0.25rem 0;font-size:1.1rem;">CPL Workplan Progress — Path to 2030</h3>
             <p style="color:#888;font-size:0.8rem;margin:0 0 1rem 0;">Solid lines = actuals &middot; Dashed lines = projected &middot; Right-click any chart to copy image</p>
             <div style="display:flex;gap:1.5rem;flex-wrap:wrap;">
-                <div style="flex:1;min-width:340px;">
+                <div style="flex:1;min-width:min(340px, 100%);">
                     <h4 style="color:var(--navy-primary);font-size:0.9rem;margin:0 0 0.5rem 0;text-align:center;">Goal Trajectory (250K Target)</h4>
                     <canvas id="goalChart" width="640" height="400" style="width:100%;height:auto;border-radius:6px;background:var(--bg-off-white);"></canvas>
                 </div>
-                <div style="flex:1;min-width:340px;">
+                <div style="flex:1;min-width:min(340px, 100%);">
                     <h4 style="color:var(--navy-primary);font-size:0.9rem;margin:0 0 0.5rem 0;text-align:center;">Stretch Trajectory (500K Target)</h4>
                     <canvas id="stretchChart" width="640" height="400" style="width:100%;height:auto;border-radius:6px;background:var(--bg-off-white);"></canvas>
                 </div>
             </div>
-            <div style="display:flex;flex-wrap:wrap;gap:0.8rem 1.5rem;margin-top:0.8rem;font-size:0.8rem;color:#555;align-items:center;">
+            <div style="display:flex;flex-wrap:wrap;gap:0.8rem 1.5rem;margin-top:0.8rem;font-size:0.8rem;color:var(--text-muted);align-items:center;">
                 <span><span style="display:inline-block;width:20px;height:3px;background:var(--navy-primary);vertical-align:middle;margin-right:4px;"></span> Total</span>
                 <span><span style="display:inline-block;width:20px;height:3px;background:var(--mustard-text);vertical-align:middle;margin-right:4px;"></span> Military</span>
                 <span><span style="display:inline-block;width:20px;height:3px;background:var(--cobalt);vertical-align:middle;margin-right:4px;"></span> Workforce/Other</span>
@@ -3467,6 +3467,9 @@ def render_workplan_charts_html(current_students, sub_pops=None, workplan_goals=
                 ctx.fillRect(0, 0, W, H);
 
                 // Grid lines
+                // Literal, NOT a token: canvas ignores an invalid color rather than
+                // throwing, and var() is invalid here. This chart paints its own
+                // light ground (#F4F2ED above), so it is light either way.
                 ctx.strokeStyle = '#e8e8e8';
                 ctx.lineWidth = 0.7;
                 ctx.font = '10px Calibri, sans-serif';
@@ -3958,7 +3961,7 @@ def render_kpi_history_card(history, kpi_params=None):
                   margin-bottom:0.8rem;">
         <div>
           <span style="font-family:Georgia,serif;font-size:1rem;font-weight:bold;
-                       color:var(--mustard-text);">&#128200; KPI Trends</span>
+                       color:var(--mustard-text);">KPI Trends</span>
           <span style="font-size:0.7rem;color:var(--text-muted);margin-left:0.8rem;">
             Academic {aq_label} &nbsp;·&nbsp; QTD resets each academic quarter (Jul/Oct/Jan/Apr)
           </span>
@@ -3979,6 +3982,89 @@ def render_kpi_history_card(history, kpi_params=None):
 
 _COLLEGE_DISTRICT_LOOKUP = None
 _COLLEGE_ACTIVITY_TEMPLATE = None
+
+
+def discipline_edge_fill(rows, kdir, subj_of=None):
+    """DR-25: fill a BLANK discipline from the subject-discipline edge.
+
+    Sam's rulings of 2026-09-08 (the subjects-and-disciplines sheet, items 1
+    and 2). Item 1 settles the shape: SUBJECT -> DISCIPLINE IS THE PRIMARY
+    EDGE, and kb/reference/subject_discipline_map.json is its authority. Every
+    SUBJ4 belongs to exactly one discipline; a discipline may carry several.
+    kb/discipline_canonical_subj4.json answers a different question (which of a
+    discipline's codes is canonical) and is not consulted here. The C-ID/CCN
+    identifier reference is an INPUT to the edge, not a parallel authority, so
+    it fills only where the map file has no entry.
+
+    WHY THIS EXISTS. All five discipline-inference passes read
+    kb/coci_minted_courses.json, which holds 19,568 records every one of them
+    an M-ID, so no externally-minted identifier has ever been seen by one.
+    Measured 2026-09-08: 326 identities carried no discipline -- 0.4% of
+    M-IDs against 47.5% of C-IDs and 49.1% of CCNs. A gap that tracks WHERE A
+    ROW CAME FROM rather than what the row is, is a plumbing gap.
+    `PSYC C1000` carried "discipline": "Psychology" in the identifier
+    reference, classified 2026-05-20, and disc:null on every surface.
+
+    Never overrides: a row that already has a discipline is untouched, so
+    curation and the seed keep winning. Every fill is stamped `dsrc` so it
+    shows its provenance rather than arriving anonymously.
+
+    NOT TOP. 219 of those 326 carry a TOP code and Rule 7 keeps it a
+    last-in-line corroborator. The edge is the identifier's own subject prefix
+    against the MQ discipline list, which is an independent signal.
+
+    Returns {"filled_map": n, "filled_ref": n, "blank_after": n}.
+    """
+    def _j(*parts):
+        p = os.path.join(kdir, *parts)
+        return json.load(open(p, encoding="utf-8")) if os.path.exists(p) else None
+
+    edge_doc = _j("reference", "subject_discipline_map.json") or {}
+    edge_raw = edge_doc.get("subjects") or edge_doc.get("map") or edge_doc
+    edge = {str(k).upper(): v for k, v in edge_raw.items() if isinstance(v, str)}
+
+    ref_doc = _j("reference", "coci_courses.json") or {}
+    ref = ref_doc.get("courses") if isinstance(ref_doc, dict) else None
+    if isinstance(ref, list):
+        ref = {str(r.get("course_id")): r for r in ref if isinstance(r, dict)}
+    ref = ref or {}
+
+    def _subj(r):
+        """The identity's canonical SUBJ4 -- which is its ID PREFIX.
+
+        NOT `row["subj"]`. That field is the LOCAL college subject code(s) the
+        colleges typed, which the CCR list labels "Local SUBJ code(s)" on
+        hover: freehand, multi-valued and dirty ("DANCE (DANCE)", "ARTHIST",
+        "AEROST"). Reading it mis-filed four rows on the live payload before
+        this was caught -- AERO M1001 carries local `AEROST`, ARTF M1003
+        carries five local codes, and neither is in the edge map because
+        neither is a SUBJ4. The id leads with the canonical code by
+        construction ("PSYC C1000", "WELD M1109"), which is the same rule
+        SkyView's own subjCode() applies.
+        """
+        if subj_of:
+            return subj_of(r)
+        t = str(r.get("id") or "").strip().split()
+        c = t[0] if t else ""
+        if c in ("M-ID", "C-ID", "CCN") and len(t) > 1:   # the older id shape
+            c = t[1]
+        return c.upper()
+
+    n_map = n_ref = 0
+    for r in rows:
+        if r.get("disc"):
+            continue
+        d = edge.get(_subj(r))
+        if d:
+            r["disc"], r["dsrc"] = d, "subject_map_edge"
+            n_map += 1
+            continue
+        d = (ref.get(str(r.get("id"))) or {}).get("discipline")
+        if d:
+            r["disc"], r["dsrc"] = d, "coci_reference"
+            n_ref += 1
+    blank = sum(1 for r in rows if not r.get("disc"))
+    return {"filled_map": n_map, "filled_ref": n_ref, "blank_after": blank}
 
 
 def _load_college_district_lookup():
@@ -4404,10 +4490,36 @@ def read_exhibit_metrics():
         return None
 
     # ── Index datasets by view name ──
-    datasets = {}
+    # ⚠️ A REPEATED viewName IS DROPPED, NOT OVERWRITTEN (2026-09-10). This dict
+    # is keyed by view name, so a second block of the same name used to replace
+    # the first in silence. On 2026-09-08 MAP 400'd
+    # View_StudentAggregatedValues_APIDataset over six columns it had just
+    # removed and labelled a neighbour's data with the same name; the second
+    # block won, its rows did not match its column map, and
+    # _compute_college_last_activity died on an IndexError. Nine nightly runs,
+    # three days dark, three steps from the cause.
+    #
+    # Neither copy can be trusted once the label is ambiguous — picking either
+    # one is a guess about which block MAP meant — so BOTH go and the layers
+    # above see the view as absent, which they already handle. The fetcher now
+    # refuses to save such a payload at all (fetch_custom_report.py); this is the
+    # second line of that defense, because a CustomReport file on disk did not
+    # necessarily come through today's fetcher.
+    seen = {}
     for report in data:
         view = report.get("viewName", "")
         if view and report.get("columnValue"):
+            seen[view] = seen.get(view, 0) + 1
+    ambiguous = {v for v, n in seen.items() if n > 1}
+    for view in sorted(ambiguous):
+        print(f"  WARNING: {view} appears {seen[view]}x — viewName cannot identify a "
+              f"dataset, so BOTH copies are dropped. Check the fetch log for MAP's "
+              f"responseMessage on this view.")
+
+    datasets = {}
+    for report in data:
+        view = report.get("viewName", "")
+        if view and view not in ambiguous and report.get("columnValue"):
             col_map = {c: i for i, c in enumerate(report.get("columnName", []))}
             datasets[view] = {
                 "rows": report["columnValue"],
@@ -4468,26 +4580,40 @@ def _compute_college_last_activity(datasets):
             return {}
         rows  = ds["rows"]
         cm    = ds["col_map"]
-        i_col  = cm.get("College", 0)
-        i_date = cm.get("Last Submitted On", 18)
-        i_pot  = -1
-        i_test = -1
+        i_col  = cm.get("College")
+        i_date = cm.get("Last Submitted On")
+        i_pot  = None
+        i_test = None
     else:
         rows   = ds["rows"]
         cm     = ds["col_map"]
-        i_col  = cm.get("College", 0)
-        i_date = cm.get("Uploaded Date", 22)
-        i_pot  = cm.get("Potential Student", 18)
-        i_test = cm.get("Test Student", 20)
+        i_col  = cm.get("College")
+        i_date = cm.get("Uploaded Date")
+        i_pot  = cm.get("Potential Student")
+        i_test = cm.get("Test Student")
+
+    # ⚠️ NO GUESSED POSITIONS. These read `cm.get(name, <number>)` until
+    # 2026-09-10, and the numbers were the column offsets of a 25-column view.
+    # The live view is 19 columns wide, so `cm.get("Uploaded Date", 22)` was a
+    # guess that indexes past the end of every row the day the name stops
+    # matching — the same shape as the crash that brought the cron down for
+    # three days. A column we cannot find BY NAME is a column we do not read:
+    # the two filters below simply do not apply, and without College or a date
+    # there is nothing to compute, so the caller gets {} and says so.
+    if i_col is None or i_date is None:
+        print("  WARNING: last-activity skipped — the student view carries no "
+              "'College' and/or upload-date column under the names we read. "
+              "Check the fetch log for MAP's schema.")
+        return {}
 
     college_latest = {}  # college_name -> datetime
     for row in rows:
         college = (row[i_col] or "").strip()
         if not college or college in _TEST_COLLEGES:
             continue
-        if i_pot >= 0 and str(row[i_pot]).strip().lower() in ("true", "1", "yes"):
+        if i_pot is not None and str(row[i_pot]).strip().lower() in ("true", "1", "yes"):
             continue
-        if i_test >= 0 and str(row[i_test]).strip().lower() in ("true", "1", "yes"):
+        if i_test is not None and str(row[i_test]).strip().lower() in ("true", "1", "yes"):
             continue
         raw_date = (row[i_date] or "").strip()
         if not raw_date:
@@ -5156,9 +5282,13 @@ def _load_top_code_lookup():
         for row in ws.iter_rows(min_row=2, max_col=7, values_only=True):
             code = str(row[0]).strip() if row[0] is not None else ""
             disc = str(row[2]).strip() if row[2] else "Unknown"
+            # Column D (index 3) is the CCC 4-digit TOP code — the bridge from
+            # MAP's own integer TOP id to the COCI TOP codes every other
+            # reference file is keyed by (kb/top_cip_map.json, the crosswalk).
+            code4 = str(row[3]).strip() if len(row) > 3 and row[3] else ""
             sector = str(row[6]).strip() if len(row) > 6 and row[6] else ""
             if code:
-                lookup[code] = {"discipline": disc, "sector": sector}
+                lookup[code] = {"discipline": disc, "sector": sector, "code4": code4}
         wb.close()
         return lookup
     except Exception as e:
@@ -5181,6 +5311,176 @@ def _top_sector(top_lookup, code, default=""):
     if isinstance(entry, dict):
         return entry.get("sector") or default
     return default
+
+
+# ── CIP sector (the two-digit CIP family) for an exhibit ────────────────────
+# Sam, 2026-09-24: the EACR's "Career Cluster" filter becomes "CIP Sectors",
+# with the COMPLETE family list offered rather than only the values present.
+# "CIP Sector" is Sam's word for the two-digit CIP family — cip_crosswalk.js
+# and college_briefing.js use it for the same level, and this is the third
+# surface to, so the vocabulary is read from the same place the TOP to CIP tab
+# reads it (cip_crosswalk_data.js `fams`).
+#
+# The route from an exhibit to a CIP: MAP's integer TOP id → the CCC 4-digit
+# TOP code (TOP_Code_Lookup.xlsx column D) → the CIP family that colleges
+# actually assigned to programs under that TOP (kb/top_cip_map.json, Sam's
+# ruling 2026-09-21: the observed CIP beats the published crosswalk about 3x)
+# → the published TOP↔CIP crosswalk only where no college has assigned one.
+# Rule 7 reaches every step: a course's only route to a CIP is its TOP code, so
+# this is a filter/grouping aid, never a determination.
+_CIP_FAMILIES_CACHE = None
+
+
+def _load_cip_families():
+    """Return (by_code4, families).
+
+    by_code4: CCC 4-digit TOP code → {"exact": family or None, "fold": {family: weight}}.
+              `exact` is the family colleges assigned under the 4-digit code's
+              own 6-digit form (XXXX.00) — MAP's 4-digit TOP IS that code, so it
+              wins when observed. `fold` is every 6-digit code under the 4-digit
+              prefix, weighted by programs observed (kb/top_cip_map.json), or 1
+              per published crosswalk row where the observed map is silent.
+              Measured 2026-09-24: the fold alone sent TOP 4930 (AP exams and
+              general education) to CIP 32 Basic Skills, because 4930.1x–.8x are
+              noncredit programs; 4930.00 itself is 24 Liberal Arts.
+    families: the complete two-digit CIP family vocabulary {code: title}.
+
+    Empty on any failure — a missing reference file must degrade to
+    today's behaviour (no CIP sector on the card), never abort the daily build."""
+    global _CIP_FAMILIES_CACHE
+    if _CIP_FAMILIES_CACHE is not None:
+        return _CIP_FAMILIES_CACHE
+    by_code4, families = {}, {}
+    # The vocabulary — the same `fams` the TOP to CIP tab renders.
+    fam_path = os.path.join(SCRIPT_DIR, "cip_crosswalk_data.js")
+    if os.path.exists(fam_path):
+        try:
+            with open(fam_path, encoding="utf-8") as f:
+                raw = f.read()
+            doc = json.loads(raw[raw.index("=") + 1:].strip().rstrip(";"))
+            families = {str(k): str(v) for k, v in (doc.get("fams") or {}).items()}
+        except Exception as e:
+            print(f"  WARNING: could not read CIP families from cip_crosswalk_data.js: {e}")
+    if not families:
+        csv_path = os.path.join(SCRIPT_DIR, "kb", "reference", "CIPCode2020.csv")
+        if os.path.exists(csv_path):
+            try:
+                import csv as _csv
+                with open(csv_path, encoding="utf-8-sig") as f:
+                    for r in _csv.DictReader(f):
+                        code = (r.get("CIPCode") or "").strip().strip('="')
+                        if len(code) == 2:
+                            families[code] = (r.get("CIPTitle") or "").strip().rstrip(".").title()
+            except Exception as e:
+                print(f"  WARNING: could not read CIPCode2020.csv: {e}")
+    # Observed TOP → CIP, keyed by the 6-digit COCI TOP; folded to 4 digits.
+    obs_path = os.path.join(SCRIPT_DIR, "kb", "top_cip_map.json")
+    if os.path.exists(obs_path):
+        try:
+            with open(obs_path, encoding="utf-8") as f:
+                obs = (json.load(f) or {}).get("map") or {}
+            for top6, v in obs.items():
+                cip = str((v or {}).get("cip") or "")
+                if len(cip) < 2:
+                    continue
+                w = int((v or {}).get("programs") or 1)
+                code4 = str(top6)[:4]
+                slot = by_code4.setdefault(code4, {"exact": None, "fold": {}})
+                slot["fold"][cip[:2]] = slot["fold"].get(cip[:2], 0) + w
+                if str(top6).endswith(".00"):
+                    slot["exact"] = cip[:2]
+        except Exception as e:
+            print(f"  WARNING: could not read kb/top_cip_map.json: {e}")
+    # The published crosswalk, only for 4-digit TOPs the observed map lacks.
+    pub_path = os.path.join(SCRIPT_DIR, "kb", "reference", "topcip_2021_crosswalk.xlsx")
+    if os.path.exists(pub_path):
+        try:
+            wb = load_workbook(pub_path, read_only=True, data_only=True)
+            ws = wb.worksheets[0]
+            pub = {}
+            for row in ws.iter_rows(values_only=True):
+                top, cip = (row[0] if row else None), (row[2] if row and len(row) > 2 else None)
+                if not isinstance(top, (int, float)) or not isinstance(cip, (int, float)):
+                    continue
+                code4 = f"{float(top):07.2f}"[:4]
+                fam = f"{int(cip) // 10000:02d}"
+                pub.setdefault(code4, {})
+                pub[code4][fam] = pub[code4].get(fam, 0) + 1
+            wb.close()
+            for code4, fams in pub.items():
+                if code4 not in by_code4:
+                    by_code4[code4] = {"exact": None, "fold": fams}
+        except Exception as e:
+            print(f"  WARNING: could not read topcip_2021_crosswalk.xlsx: {e}")
+    _CIP_FAMILIES_CACHE = (by_code4, families)
+    return _CIP_FAMILIES_CACHE
+
+
+def _cip_sector_for_tops(tops, top_lookup, by_code4):
+    """Modal two-digit CIP family for a group of MAP TOP ids, "" when none of
+    them resolves. Each TOP resolves to ONE family first (its exact XXXX.00
+    family when observed, else the programs-weighted modal family under its
+    4-digit prefix), then the group takes one vote per TOP; ties break to the
+    lowest code for stability."""
+    tally = {}
+    for t in tops or []:
+        entry = top_lookup.get(t)
+        code4 = entry.get("code4") if isinstance(entry, dict) else ""
+        slot = by_code4.get(code4 or "")
+        if not slot:
+            continue
+        fam = slot.get("exact")
+        if not fam and slot.get("fold"):
+            fam = sorted(slot["fold"].items(), key=lambda kv: (-kv[1], kv[0]))[0][0]
+        if fam:
+            tally[fam] = tally.get(fam, 0) + 1
+    if not tally:
+        return ""
+    return sorted(tally.items(), key=lambda kv: (-kv[1], kv[0]))[0][0]
+
+
+# ── CIP sector from the credential's TITLE ────────────────────────────────
+# Sam, 2026-09-25: "We only need the CIP sector on this tab for filter and
+# quick categorization. I would be just as happy if you used your own analysis
+# from your knowledge to create the sectors yourself." The judgment lives in
+# kb/reference/eacr_cip_title_rules.json (exact titles, then ordered patterns,
+# first match wins); this code only applies it. The card-level precedence is
+# at the call site: title first for Standardized Assessment, TOP first
+# otherwise.
+_CIP_TITLE_RULES_CACHE = None
+
+
+def _load_cip_title_rules():
+    """Return (titles, rules): {lower-cased title: family} and
+    [(compiled pattern, family)]. Empty on any failure, so the TOP route
+    answers alone rather than the daily build aborting."""
+    global _CIP_TITLE_RULES_CACHE
+    if _CIP_TITLE_RULES_CACHE is not None:
+        return _CIP_TITLE_RULES_CACHE
+    titles, rules = {}, []
+    path = os.path.join(SCRIPT_DIR, "kb", "reference", "eacr_cip_title_rules.json")
+    try:
+        with open(path, encoding="utf-8") as f:
+            doc = json.load(f) or {}
+        titles = {str(k).strip().lower(): str(v) for k, v in (doc.get("titles") or {}).items()}
+        rules = [(re.compile(r[0], re.I), str(r[1])) for r in (doc.get("rules") or [])]
+    except Exception as e:
+        print(f"  WARNING: EACR CIP title rules unavailable ({e}); CIP sectors read TOP only this run")
+        titles, rules = {}, []
+    _CIP_TITLE_RULES_CACHE = (titles, rules)
+    return _CIP_TITLE_RULES_CACHE
+
+
+def _cip_sector_for_title(title, title_rules):
+    """Two-digit CIP family the title rules give a credential title, or ""."""
+    titles, rules = title_rules
+    t = str(title or "").strip()
+    if t.lower() in titles:
+        return titles[t.lower()]
+    for rx, fam in rules:
+        if rx.search(t):
+            return fam
+    return ""
 
 
 # ── Statewide exhibit program-area categories ───────────────────────────
@@ -5219,6 +5519,83 @@ def _load_statewide_categories():
             cats = {}
     _STATEWIDE_CATS_CACHE = cats
     return cats
+
+
+# ── College-name rules for the adoption payload (sandbox + duplicate spellings) ──
+# Sam, 2026-08-17: "CAlbright, etc. should only be in once and CAMAP can be left
+# out altogether—it's our sandbox."
+#
+# BOTH rules are applied at BUILD time rather than in the tab, because the column
+# that reaches a college by email is an export, not a screen — the card counts,
+# the College filter, the Excel/JSON/Word exports and any future view all have to
+# inherit one answer. Keyed on map_colleges.entity_kind (the classifier that
+# already existed) rather than on a hardcoded name, via a committed snapshot so
+# the build needs no network. See kb/reference/map_college_roster_rules.json.
+_ROSTER_RULES_CACHE = None
+
+
+def _load_map_roster_rules():
+    """Return (sandbox_names:set, fold_map:dict). Empty on any failure — a
+    missing reference file must degrade to today's behaviour, never abort the
+    daily build."""
+    global _ROSTER_RULES_CACHE
+    if _ROSTER_RULES_CACHE is not None:
+        return _ROSTER_RULES_CACHE
+    path = os.path.join(SCRIPT_DIR, "kb", "reference", "map_college_roster_rules.json")
+    sandbox, fold = set(), {}
+    if os.path.exists(path):
+        try:
+            with open(path, encoding="utf-8") as f:
+                raw = json.load(f)
+            sandbox = {n.strip() for n in ((raw.get("sandbox") or {}).get("names") or []) if n.strip()}
+            fold = {k.strip(): v.strip()
+                    for k, v in ((raw.get("fold") or {}).get("map") or {}).items()
+                    if k.strip() and v.strip()}
+        except Exception as e:
+            print(f"  WARNING: could not load map_college_roster_rules.json: {e}")
+            sandbox, fold = set(), {}
+    _ROSTER_RULES_CACHE = (sandbox, fold)
+    return _ROSTER_RULES_CACHE
+
+
+def _canon_college(name, sandbox, fold):
+    """Canonical column identity for a college name, or "" if it must not appear.
+
+    "" means DROP — the caller must test for it, because a sandbox org counted as
+    an adopter inflates a public statewide card (CA MAP INITIATIVE COLLEGE was
+    publishing 7 adopters on California Real Estate Broker License where the true
+    count is 6)."""
+    n = (name or "").strip()
+    if not n or n in sandbox:
+        return ""
+    return fold.get(n, n)
+
+
+def _median(values):
+    """Median of a list of floats, 0.0 when empty. Median rather than mean
+    because a single college that articulated an unusually deep set would drag a
+    mean upward and the figure is shown to other colleges as "what peers get"."""
+    vals = sorted(v for v in values if v is not None)
+    if not vals:
+        return 0.0
+    mid = len(vals) // 2
+    if len(vals) % 2:
+        return round(vals[mid], 2)
+    return round((vals[mid - 1] + vals[mid]) / 2.0, 2)
+
+
+def _rec_units(credit_text):
+    """Leading unit count in a credit-recommendation string ("3 hours in Child
+    Growth" → 3.0), else 0.0. Every one of the 7,030 recommendation lines in the
+    live payload parses with this rule, so a 0.0 means genuinely unusual text and
+    not a missing case."""
+    m = re.search(r"(\d+(?:\.\d+)?)", credit_text or "")
+    if not m:
+        return 0.0
+    try:
+        return float(m.group(1))
+    except ValueError:
+        return 0.0
 
 
 def _statewide_category(title, cats):
@@ -5592,6 +5969,12 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
     from collections import defaultdict
 
     top_lookup = _load_top_code_lookup()  # MAP code → discipline name
+    cip_by_code4, _cip_families = _load_cip_families()  # 4-digit TOP → CIP family weights
+    cip_title_rules = _load_cip_title_rules()  # title → CIP family (Sam, 2026-09-25)
+    # Sandbox orgs and duplicate spellings are resolved at every point a college
+    # name ENTERS this payload — adopters, TOP potentials and C-ID potentials —
+    # so no downstream consumer has to remember the rule.
+    sandbox, fold = _load_map_roster_rules()
 
     # ── Build MAP TOP code → colleges from ProgramsofStudy ──
     # ProgramsofStudy uses MAP integer TOP codes (same as exhibits)
@@ -5605,7 +5988,7 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
     if programs_ds:
         pcm = {c: i for i, c in enumerate(programs_ds.get("columnName", []))}
         for row in programs_ds["columnValue"]:
-            college = (row[pcm.get("College", 0)] or "").strip()
+            college = _canon_college(row[pcm.get("College", 0)], sandbox, fold)
             tc = (row[pcm.get("Top Code", 9)] or "").strip()
             if college and tc:
                 top_to_colleges[tc].add(college)
@@ -5618,7 +6001,7 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
         if report.get("viewName") == "View_CollegeCourses_APIDataset":
             ccm = {c: i for i, c in enumerate(report.get("columnName", []))}
             for row in report["columnValue"]:
-                college = (row[ccm.get("College", 0)] or "").strip()
+                college = _canon_college(row[ccm.get("College", 0)], sandbox, fold)
                 cid = (row[ccm.get("CID Number", 1)] or "").strip()
                 if college and cid:
                     cid_to_colleges[cid].add(college)
@@ -5654,12 +6037,32 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
     all_exhibits = defaultdict(lambda: {
         "eids": set(),
         "adopters": set(),
+        # college → units this college has actually articulated for this exhibit.
+        # The raw row already carries (Articulation College, Course, Credit
+        # Recommendation) TOGETHER, so this attribution is a straight read — the
+        # payload has simply been discarding it. Summed over DISTINCT
+        # (college, course, credit) triples, because a group merges several raw
+        # exhibit rows and the same recommendation recurs across them.
+        "adopter_units": defaultdict(float),
+        "adopter_rec_keys": set(),   # (college, course, credit) already counted
+        "adopter_lines": defaultdict(int),
         "cids": set(),
         "tops": set(),
         "raw_titles": set(),  # for the consumer's "also entered as…" disclosure
         "confidence_titles": [],  # per-row for modal
         "quality_flags": set(),  # any constituent flag rolls up
         "credit_recs": [],  # list of {course, credit} dicts (deduped) — ALL collab rows (EACR)
+        "rec_index": {},    # (course, credit) → its index in credit_recs
+        # Per MAP exhibit record (Sam, 2026-09-24: the matrix drill-down shows
+        # the record's TITLE and TOTAL UNITS, not its MAP ID): the title the
+        # record was entered under and the distinct recommendation lines it
+        # carries.
+        "exhibit_titles": {},                # eid → raw exhibit title
+        "exhibit_recs": defaultdict(set),    # eid → {(course, credit)}
+        # college → indices into credit_recs, so a consumer can list what THIS
+        # college articulated (the hover on a matrix cell) without a second
+        # copy of the recommendation text per college.
+        "adopter_rec_idx": defaultdict(list),
         # Authoritative statewide recs: ONLY rows tagged Collaborative Type == "CCC"
         # (the single MAP-published statewide exhibit — a lead college hosts it,
         # e.g. Lassen for POST), deduped by the recommendation TEXT (the local
@@ -5696,6 +6099,7 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
         e["collab_types"].append(collab)
         e["eids"].add(eid)
         e["raw_titles"].add(title)
+        e["exhibit_titles"].setdefault(eid, title)
         if ident["confidence_title"]:
             e["confidence_titles"].append(ident["confidence_title"])
         if ident["quality_flag"]:
@@ -5709,7 +6113,7 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
             if not e["confidence_issuer"]:
                 e["confidence_issuer"] = ident["confidence_issuer"]
 
-        artic = (row[i_artic] or "").strip()
+        artic = _canon_college(row[i_artic], sandbox, fold)
         if artic:
             e["adopters"].add(artic)
         cid = (row[i_cid] or "").strip()
@@ -5723,8 +6127,21 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
         credit = (row[i_credit] or "").strip()
         if course and credit:
             rec_key = (course, credit)
-            if rec_key not in {(r["course"], r["credit"]) for r in e["credit_recs"]}:
+            if rec_key not in e["rec_index"]:
+                e["rec_index"][rec_key] = len(e["credit_recs"])
                 e["credit_recs"].append({"course": course, "credit": credit})
+            e["exhibit_recs"][eid].add(rec_key)
+            # Per-college articulated units. Guarded on the triple rather than on
+            # the pair, so two colleges articulating the SAME recommendation both
+            # count while one college's row repeated across merged exhibit IDs
+            # counts once.
+            if artic:
+                trip = (artic, course, credit)
+                if trip not in e["adopter_rec_keys"]:
+                    e["adopter_rec_keys"].add(trip)
+                    e["adopter_units"][artic] += _rec_units(credit)
+                    e["adopter_lines"][artic] += 1
+                    e["adopter_rec_idx"][artic].append(e["rec_index"][rec_key])
         # Authoritative statewide recs — only the CCC-tagged (MAP-published) rows,
         # deduped by recommendation text, C-ID backfilled.
         if credit and collab == "CCC":
@@ -5764,6 +6181,18 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
             sector = sorted(sector_counts.items(), key=lambda kv: (-kv[1], kv[0]))[0][0]
         else:
             sector = ""
+        # CIP sector — the two-digit CIP family. An exam's subject is in its
+        # title and its MAP TOP id is a coarse general-education code, so a
+        # Standardized Assessment reads the title rules first; every other
+        # card reads the 4-digit TOP route (_load_cip_families) first and the
+        # title rules only where TOP finds nothing. "" reads as "No CIP
+        # assigned yet" on the tab.
+        by_title = _cip_sector_for_title(unified_title, cip_title_rules)
+        by_top = _cip_sector_for_tops(e["tops"], top_lookup, cip_by_code4)
+        if cpl_type == "Standardized Assessment":
+            cip_sector = by_title or by_top
+        else:
+            cip_sector = by_top or by_title
 
         # Classify as Statewide (CCC Collaborative) or Local. CCC takes top billing
         # (EACR PR-2): the merged card is CCC Collaborative if ANY constituent row is
@@ -5807,6 +6236,8 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
             "cpl_type": cpl_type,
             "discipline": disc,
             "sector": sector,
+            "cip_sector": cip_sector,
+            "top_codes": tops_sorted,
             "collaborative_type": collab_label,
             "adopters": len(adopters),
             "adopter_names": sorted(adopters),
@@ -5815,6 +6246,38 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
             "total_addressable": len(adopters) + len(new_colleges),
             "credit_recs": e["credit_recs"],
             "authoritative_recs": e["authoritative_recs"],
+            # One entry per MAP exhibit record folded under this card: its title
+            # as entered and the total units of its distinct recommendation
+            # lines. The consumer's drill-down renders these instead of IDs.
+            "exhibit_records": [
+                {"id": eid,
+                 "title": e["exhibit_titles"].get(eid, ""),
+                 "units": round(sum(_rec_units(c) for _, c in e["exhibit_recs"].get(eid, ())), 2),
+                 "lines": len(e["exhibit_recs"].get(eid, ()))}
+                for eid in sorted(e["eids"])
+            ],
+            # ── Matrix sub-tab payload ──
+            # adopter_units: what each college ACTUALLY articulated (the green
+            # number). peer_units_median: what adopting colleges typically get,
+            # which is the only defensible "you could have this" figure.
+            #
+            # It is NOT the sum of credit_recs. Measured 2026-08-17 over the live
+            # peer data: colleges articulate a median 3.07 of 9.26 available
+            # recommendation lines and NO college has ever reached the line
+            # total — AP Biology carries 12 lines / 36 units while the median
+            # adopter claims 4 and the best in the state claims 12. Publishing
+            # the line total as an opportunity would promise a college roughly
+            # triple what the strongest peer has ever obtained, in a column that
+            # leaves this tab as a CSV.
+            "adopter_units": {c: round(u, 2) for c, u in sorted(e["adopter_units"].items())},
+            "adopter_lines": dict(sorted(e["adopter_lines"].items())),
+            # college → indices into credit_recs (what this college articulated).
+            "adopter_rec_idx": {c: sorted(set(ix)) for c, ix in sorted(e["adopter_rec_idx"].items())},
+            "peer_units_median": _median([e["adopter_units"][c] for c in adopters
+                                          if c in e["adopter_units"]]),
+            "peer_units_max": round(max([e["adopter_units"][c] for c in adopters
+                                         if c in e["adopter_units"]], default=0.0), 2),
+            "rec_units_total": round(sum(_rec_units(r["credit"]) for r in e["credit_recs"]), 2),
         })
 
     # Sort: exhibits with most potential first, then by adopters descending
@@ -7268,6 +7731,202 @@ def _fix_text_encoding(s):
     return s, s != orig
 
 
+def flatten_merge_chains(merge_into):
+    """Resolve each merge source to the END of its chain, in place.
+
+    A curator can merge X into Y today and merge Y into a comprehensive Z next
+    month; the overlay then holds BOTH hops and Y is simultaneously a source and
+    a target. The row loops skip a source, but the merge-target loop does not
+    skip a target that is itself a source — so Y rendered as its own row while
+    ALSO being folded into Z, and X's members stayed attributed to Y instead of
+    reaching Z. Following each source to the end of its chain is what the two
+    decisions together mean: X belongs wherever Y ended up.
+
+    Measured on the 2026-08-24 overlay: 22,538 merges are direct, 490 are two
+    hops, 18 are three, and 340 identities were rendering only because they were
+    a target while also a source (91 of them ESL, after the Session-187 fold
+    folded identities other curators had already merged into).
+
+    There are no cycles today. The `seen` guard is for the day one appears: a
+    cycle keeps the hop it already had rather than hanging the build, because a
+    generator that spins is a worse failure than one that renders a stale edge.
+    """
+    for src in list(merge_into):
+        first = merge_into[src]
+        tgt, seen = first, {src}
+        while tgt in merge_into and tgt not in seen:
+            seen.add(tgt)
+            tgt = merge_into[tgt]
+        # Walking back onto the source means a cycle. Keep the hop the overlay
+        # actually recorded: writing merge_into[src] = src would make the row a
+        # member of itself, which is a worse artifact than a stale edge and is
+        # invisible in a way the stale edge is not.
+        merge_into[src] = first if tgt == src else tgt
+    return merge_into
+
+
+def _legacy_title_key(t):
+    """Strict title key for the curated-anchor duplicates lane: lowercase,
+    punctuation and whitespace collapsed. Deliberately NOT _sug_sig — that
+    signature drops level words and digits so variants converge; a duplicate here
+    must be the SAME title (the Z-band retirement's duplicates.json rule)."""
+    return re.sub(r"[^a-z0-9]+", " ", str(t or "").lower()).strip()
+
+
+def _legacy_disc_key(d, alias_rev):
+    """Discipline key for the curated-anchor duplicates lane. The May anchors
+    spell a few disciplines their own way ("English as a Second Language (ESL)",
+    "Theater Arts"): strip a trailing parenthetical, then resolve through
+    kb/discipline_aliases.json (alias -> canonical) — the same resolution the
+    Z-band retirement dry run applied when it wrote duplicates.json."""
+    d = str(d or "").strip()
+    bare = re.sub(r"\s*\([^)]*\)\s*$", "", d).strip()
+    return alias_rev.get(d) or alias_rev.get(bare) or bare or d
+
+
+def legacy_anchor_duplicate_groups(cc, cat, sg, merge_into, rows, disc_of=None, disc_aliases=None):
+    """The curated common-course anchors' duplicates, as a worklist lane.
+
+    kb/common_courses.json carries the May 2026 curated common-course draft —
+    218 M-ID anchors (re-keyed by the 2026-09-03 Z-band retirement, each stamped
+    `_zband_retired_from`) that render as locked, read-only rows on the CCR tab.
+    130 of them (the retirement receipt's duplicates.json) carry exactly the
+    title and discipline of an identity already in the minted catalog. The
+    retirement did not merge them — "a curator's merge worklist after the fold,
+    not folded by it" — so this lane offers each pair to the curator, one group
+    per anchor:
+
+        members = the live catalog twin(s) FIRST, the anchor LAST
+
+    The worklist's own survivor rule then sets the direction (targetMemberOf in
+    unified_courses.js: the first non-Stand-Alone member, CCN > C-ID > M-ID). A
+    multi-college catalog course keeps its identity and the anchor folds into
+    it — the memberships, articulations, promotions and mirror classes keyed by
+    the twin stay untouched and a memberless duplicate row retires. When the
+    only twin is a single-college Stand-Alone, the anchor is the survivor and
+    gains that course as its member. Nothing here writes: a Confirm is the same
+    merge_into row every other lane writes, and the curator can flip the star.
+
+    Recomputed on every build from the live catalog, so the lane shrinks as the
+    curator confirms and never names a dead id: an anchor already carrying
+    merge_into is skipped; a twin that was merged away resolves through the
+    flattened merge_into map (Phase B and routing folds included when this runs
+    after them) to its live target; a twin resolving to the anchor itself is
+    dropped (already merged in); a C-ID anchor in the file is not this lane's
+    (an identity duplicating an official id is the evidence lane's job).
+
+    Args: cc — the anchor file; cat / sg — the minted courses / singletons
+    ('courses' dicts); merge_into — flattened source -> target; rows — the live
+    payload rows (a displayed twin's title, discipline, units and member count
+    come from its row); disc_of(id, base) — the curated-discipline resolver
+    (default: the record's own discipline); disc_aliases — kb/discipline_aliases
+    .json's {canonical: [alias, ...]} (spelling variants on either side resolve
+    to the canonical name before matching; a trailing parenthetical is dropped).
+    """
+    disc_of = disc_of or (lambda cid, base: base)
+    alias_rev = {a: canon for canon, alts in (disc_aliases or {}).items() for a in (alts or [])}
+    nt = _legacy_title_key
+    dk = lambda d: _legacy_disc_key(d, alias_rev)
+    tindex = {}
+    for src in (cat, sg):
+        for cid, v in src.items():
+            key = (dk(disc_of(cid, v.get("discipline"))), nt(v.get("common_title")))
+            if key[0] and key[1]:
+                tindex.setdefault(key, []).append(cid)
+    row_by_id = {r["id"]: r for r in rows}
+    k_pri = {"CCN-ID": 0, "C-ID": 1, "M-ID": 2, "Unified": 3}
+
+    def live(i):
+        seen = set()
+        while i in merge_into and i not in seen:
+            seen.add(i)
+            i = merge_into[i]
+        return i
+
+    def member_of(i):
+        r = row_by_id.get(i)
+        if r is not None:
+            return {"id": i, "t": r.get("title"), "s": ";".join(r.get("subj") or []),
+                    "u": r.get("units"), "k": r.get("id_system") or "M-ID",
+                    "d": r.get("disc"), "n": r.get("members")}
+        v = sg.get(i)
+        if v is not None:
+            return {"id": i, "t": v.get("common_title"), "s": v.get("subject") or "",
+                    "u": v.get("typical_units"), "k": "Stand-Alone", "g": 1,
+                    "d": disc_of(i, v.get("discipline")), "n": 1}
+        v = cat.get(i) or {}
+        # A row-less live target (a descriptor id no row carries): infer the
+        # system from the id shape, the way applyMergeLocal does client-side.
+        if re.search(r"\sC\d{4}", i):
+            k = "CCN-ID"
+        elif re.search(r"\sM[0-9A-Z]{4}\b", i):
+            k = "M-ID"
+        else:
+            k = "C-ID"
+        return {"id": i, "t": v.get("common_title") or i, "s": v.get("subject") or "",
+                "u": v.get("typical_units"), "k": k, "d": disc_of(i, v.get("discipline")),
+                "n": v.get("corroboration_members")}
+
+    groups = []
+    for aid, v in cc.items():
+        if v.get("id_system") != "M-ID" or aid in merge_into:
+            continue
+        key = (dk(v.get("discipline")), nt(v.get("common_title")))
+        twins = []
+        for t in tindex.get(key, []):
+            if t == aid:
+                continue
+            lt = live(t)
+            if lt == aid or lt in twins:
+                continue
+            twins.append(lt)
+        if not twins:
+            continue
+        mems = [member_of(t) for t in twins]
+        mems.sort(key=lambda m: (k_pri.get(m["k"], 9), -(m.get("n") or 0), m["id"]))
+        anchor = {"id": aid, "t": v.get("common_title"), "s": v.get("subject") or "",
+                  "u": v.get("typical_units"), "k": "M-ID", "d": v.get("discipline"),
+                  "anchor": 1}
+        g = {"sig": v.get("common_title") or aid, "n": len(mems) + 1, "score": 1.0,
+             "anchor": aid, "origin": v.get("origin"), "members": mems + [anchor]}
+        if v.get("reviewed_by"):
+            g["reviewed_by"] = v["reviewed_by"]
+        if v.get("reviewed_at"):
+            g["reviewed_at"] = str(v["reviewed_at"])[:10]
+        if v.get("_notes"):
+            g["note"] = v["_notes"]
+        if v.get("source_college_count"):
+            g["n_src"] = v["source_college_count"]
+        groups.append(g)
+    # A multi-college catalog twin first (the twin keeps its identity), the
+    # single-college twins after (the anchor survives); then discipline, title.
+    groups.sort(key=lambda g: (g["members"][0]["k"] == "Stand-Alone",
+                               g["members"][-1].get("d") or "", g["sig"]))
+    return groups
+
+
+def _units_from_members(shown, fallback, units, curated):
+    """The unit range and scalar a displayed M-ID row shows (Sam, 2026-09-27:
+    units never split an identity, so a row shows the range of what it joins).
+
+    `shown` is the unit figures of the members the row displays (_row_ents),
+    `fallback` its memberships' figures, used only when the raw catalog is
+    absent, `units` the row's scalar and `curated` whether a curator set it.
+    Returns (lo, hi, units): lo and hi are None unless the figures differ. The
+    scalar changes only where it is wrong, missing or a figure no displayed
+    member carries, and never when curated: it takes the members' modal, or
+    None on a tie, where the range alone says it."""
+    from collections import Counter
+    us = shown or fallback
+    lo = hi = None
+    if us and min(us) != max(us):
+        lo, hi = min(us), max(us)
+    if shown and not curated and units not in shown:
+        top2 = Counter(shown).most_common(2)
+        units = None if len(top2) > 1 and top2[0][1] == top2[1][1] else top2[0][0]
+    return lo, hi, units
+
+
 def export_unified_courses():
     """Build the Unified Courses tab data (window.CPL_UNIFIED_COURSES in
     unified_courses_data.js) + the full xlsx export, from the kb/coci_*.json
@@ -7387,7 +8046,13 @@ def export_unified_courses():
         _t = _c.get("merge_into")
         if _t:
             merge_into[_cid] = _t
-            merge_members.setdefault(_t, []).append(_cid)
+    # Chains are flattened BEFORE the member lists are built — see
+    # flatten_merge_chains(). Building merge_members from the raw one-hop map is
+    # what let a mid-chain identity render as its own row while also being
+    # folded away.
+    flatten_merge_chains(merge_into)
+    for _cid, _t in merge_into.items():
+        merge_members.setdefault(_t, []).append(_cid)
 
     # CR/NC mirror classification (Doctrine v0.3 Q-CREDITNC) — id -> {class,...}.
     # Lets flags_of() mark an intentional CR/NC mirror pair (a CPL Credit-by-Exam
@@ -8397,16 +9062,18 @@ def export_unified_courses():
         print(f"  Unified Courses: CPL impact on {_n_eu} rows (eligible units) / {_n_st} (students)")
 
     # ---- typical-units RANGE: bake umin/umax when member colleges disagree --------
-    # The Units column shows a scalar typical (typical_units). When a course's member
-    # colleges actually offer it at different unit loads (e.g. 1.0 and 1.5), surface the
-    # spread as a range — the consumer renders "lo–hi" and alarms a > 2.0 spread (a
-    # likely over-merge of different unit-load variants, which is what the auditor's
-    # unit_anomaly flag catches; NOT a silent tolerance band). Members come from
-    # coci_minted_memberships.json (memships, keyed by M-ID); a consolidated official-ID
-    # row unions its consolidated_from M-IDs, mirroring the eu/st rollup above.
-    # Deterministic (pure fn of the committed members) → stable daily diff. Baked only
-    # when members genuinely disagree (lean); the consumer falls back to the scalar.
-    _n_ur = 0
+    # Units never split an identity (Sam, 2026-09-27): a merge or a mint that joins
+    # records whose units differ keeps one identity and shows the range it joins,
+    # so the consumer renders "lo–hi" and raises no alarm on its width. The range
+    # and the scalar describe the members the row DISPLAYS (_row_ents, the #347
+    # lesson), as the official-ID branch below does. Before 2026-09-29 the M-ID
+    # range read coci_minted_memberships.json alone, which lacks merged-in
+    # singletons and re-homed courses: 2,358 merge targets printed "—" or one
+    # figure over members that differ, and 578 printed too narrow a range. The
+    # memberships stay the fallback when the raw catalog is absent. The scalar
+    # rule (48 rows carried a figure no displayed member has, on 2026-09-28) is
+    # _units_from_members's. Deterministic → stable daily diff.
+    _n_ur = _n_us = 0
     for r in rows:
         if r.get("id_system") in ("C-ID", "CCN-ID"):
             continue  # official rows: stats come from displayed members (below)
@@ -8429,11 +9096,16 @@ def export_unified_courses():
                     mus.append(u)
         if _n_routed_here:
             r["members"] = _n_kept_here
-        if mus:
-            lo, hi = min(mus), max(mus)
-            if lo != hi:
-                r["umin"], r["umax"] = lo, hi
-                _n_ur += 1
+        shown = [e["u"] for e in _row_ents(r) if isinstance(e.get("u"), (int, float))]
+        lo, hi, u = _units_from_members(
+            shown, mus, r.get("units"),
+            curation.get(r["id"], {}).get("typical_units") is not None)
+        if lo is not None:
+            r["umin"], r["umax"] = lo, hi
+            _n_ur += 1
+        if u != r.get("units"):
+            r["units"] = u
+            _n_us += 1
 
     # Official-ID row stats (Session 41) — derived from the row's DISPLAYED
     # members (claims ∪ folded leaves via _row_candidates), so the Members
@@ -8479,8 +9151,8 @@ def export_unified_courses():
                 r["flags"]["credit_mixed"] = bool(cmix) or bool(r["flags"].get("credit_mixed"))
             if not r.get("credit"):
                 r["credit"] = "Credit"
-    print(f"  Unified Courses: units range on {_n_ur} rows; "
-          f"official-row stats refreshed on {_n_off}")
+    print(f"  Unified Courses: units range on {_n_ur} rows; M-ID units set from "
+          f"displayed members on {_n_us}; official-row stats refreshed on {_n_off}")
 
     # Compact all-course title index for the "Generate unified course" dialog —
     # a separate file the tab lazy-loads only when a curator opens it. Built from
@@ -9006,6 +9678,16 @@ def export_unified_courses():
         title_groups.sort(key=lambda x: (x["same_college"], -(x["score"] or 0),
                                          x["sig"]))
 
+    # ── Curated-anchor duplicates lane (SkyLand S226, 2026-09-04) ─────────────
+    # The May 2026 curated common-course anchors whose title and discipline
+    # exactly match a catalog identity — the Z-band retirement's duplicates.json
+    # (130 at the land), recomputed live so it shrinks as the curator confirms.
+    # Runs AFTER Phase B and the routing folds so a twin merged away resolves
+    # to the row that actually displays. HUMAN-CONFIRMED, NEVER auto-applied.
+    legacy_groups = legacy_anchor_duplicate_groups(
+        cc, cat, sg, merge_into, rows, disc_of,
+        (_load("discipline_aliases.json") or {}).get("aliases") or {})
+
     out_sug = os.path.join(odir, "unified_courses_suggestions.js")
     _sc_flagged = sum(1 for g in singleton_groups if g["same_college"])
     sug_payload = {"generated_at": _dt.now().strftime("%Y-%m-%d %H:%M"),
@@ -9019,7 +9701,9 @@ def export_unified_courses():
                    "title_count": len(title_groups),
                    "title_groups": title_groups,
                    "evidence_count": len(evidence_groups),
-                   "evidence_groups": evidence_groups}
+                   "evidence_groups": evidence_groups,
+                   "legacy_count": len(legacy_groups),
+                   "legacy_groups": legacy_groups}
     with open(out_sug, "w", encoding="utf-8") as f:
         f.write("/* Unified Courses suggested-merge worklist — lazy-loaded. groups = "
                 "identity-anchored same-title merges; singleton_groups = NEW unified "
@@ -9035,12 +9719,26 @@ def export_unified_courses():
                 "unit packaging by college; see kb/_title_consolidation_dryrun.py); "
                 "evidence_groups = COCI-evidence "
                 "folds into official C-ID/CCN ids (witness counts per member; x=1 members "
-                "are contested and pre-unchecked). HUMAN-CONFIRMED, NEVER auto-applied. */\n"
+                "are contested and pre-unchecked); legacy_groups = the May 2026 curated "
+                "common-course anchors (kb/common_courses.json, locked rows) whose title and "
+                "discipline exactly match a catalog identity — the live twin(s) first, the "
+                "anchor last, so the worklist's survivor rule folds the anchor into the "
+                "catalog course (see legacy_anchor_duplicate_groups). HUMAN-CONFIRMED, NEVER "
+                "auto-applied. */\n"
                 "window.CPL_UC_SUGGESTIONS = " + json.dumps(sug_payload, ensure_ascii=False, separators=(",", ":")) + ";\n")
     print(f"  Unified Courses: wrote {out_sug} ({len(sug_groups)} anchored + "
           f"{len(singleton_groups)} singleton-only + {len(family_groups)} co-articulation-family + "
           f"{len(desc_groups)} description-evidence + {len(title_groups)} title-evidence + "
-          f"{len(evidence_groups)} evidence groups [{_sc_flagged} same-college flagged])")
+          f"{len(evidence_groups)} evidence + {len(legacy_groups)} curated-anchor-duplicate groups "
+          f"[{_sc_flagged} same-college flagged])")
+
+    # ---- DR-25: the subject-discipline edge fills what the M-ID-only passes
+    # never reached (Sam, 2026-09-08, sheet items 1 and 2). Blanks only; every
+    # fill carries its `dsrc`. See discipline_edge_fill().
+    _ef = discipline_edge_fill(rows, kdir)
+    print(f"  Unified Courses: discipline edge filled {_ef['filled_map']:,} from the subject map "
+          f"+ {_ef['filled_ref']:,} from the identifier reference; "
+          f"{_ef['blank_after']:,} still blank")
 
     mq = (_load(os.path.join("reference", "mq_disciplines.json")) or {}).get("disciplines", [])
     payload = {"generated_at": _dt.now().strftime("%Y-%m-%d %H:%M"), "beta": True,
@@ -9140,6 +9838,12 @@ def export_unified_courses():
             m = _row_official(r)
             if m:
                 r["match"] = m
+    # DR-25 again: a stand-alone course is filed under a discipline by the same
+    # edge as an identity, and the blank island counts both.
+    _efs = discipline_edge_fill(sa_rows, kdir)
+    print(f"  Unified Courses: stand-alone edge filled {_efs['filled_map']:,} + {_efs['filled_ref']:,}; "
+          f"{_efs['blank_after']:,} still blank")
+
     out_sa = os.path.join(odir, "unified_courses_standalone.js")
     sa_payload = {"generated_at": _dt.now().strftime("%Y-%m-%d %H:%M"), "rows": sa_rows}
     with open(out_sa, "w", encoding="utf-8") as f:
@@ -9221,6 +9925,19 @@ def export_unified_courses():
                "Noncredit mixed", "Reviewed", "Curated by", "Curated on", "Adopted (count)",
                "Adopted colleges", "Adoptable (count)", "Adoptable colleges"]
     xrows = []
+    _baked = {r["id"]: r for r in rows}
+
+    def _units_cell(i, seed):
+        # The Units the page shows for a displayed row: its range when its
+        # members differ (Sam, 2026-09-27), else its scalar. An id with no row
+        # of its own (merged away, or not displayed) keeps its seed figure.
+        r = _baked.get(i)
+        if r is None:
+            return seed
+        lo, hi = r.get("umin"), r.get("umax")
+        if lo is not None and hi is not None and lo != hi:
+            return "%g\u2013%g" % (lo, hi)
+        return r["units"] if r.get("units") is not None else seed
 
     def xrow(kind, cid, title, disc, credit, units, top, subj, members, conf, fl, mids):
         ad, pot = rollup(mids)
@@ -9232,15 +9949,15 @@ def export_unified_courses():
 
     for mid, v in cat.items():
         xrow("Course", mid, v.get("common_title"), disc_of(mid, v.get("discipline")), v.get("credit_status"),
-             v.get("typical_units"), v.get("top_code"), [v.get("subject")] if v.get("subject") else [],
+             _units_cell(mid, v.get("typical_units")), v.get("top_code"), [v.get("subject")] if v.get("subject") else [],
              v.get("corroboration_members"), v.get("confidence"), flags_of(v, mid), [mid])
     for sid, v in sg.items():
         xrow("Stand-Alone", sid, v.get("common_title"), disc_of(sid, v.get("discipline")), v.get("credit_status"),
-             v.get("typical_units"), v.get("top_code"), [v.get("subject")] if v.get("subject") else [],
+             _units_cell(sid, v.get("typical_units")), v.get("top_code"), [v.get("subject")] if v.get("subject") else [],
              1, v.get("confidence"), flags_of(v, sid), [sid])
     for uid, v in clusters.items():
         xrow("Cluster", uid, v.get("synthesized_title") or v.get("canonical_title"), disc_of(uid, v.get("discipline")),
-             v.get("credit_status"), v.get("typical_units"), v.get("top_code"), v.get("subjects", []),
+             v.get("credit_status"), _units_cell(uid, v.get("typical_units")), v.get("top_code"), v.get("subjects", []),
              v.get("member_count"), None, flags_of(v, uid, use_spread=False), v.get("members", []))
 
     _write_analytics_xlsx_export("unified_courses", "Unified Courses", headers, xrows,
@@ -9638,7 +10355,7 @@ EXHIBIT_ANALYSIS_CSS = """
     padding:0.7rem 1rem; margin:0 0 1.25rem 0; font-size:0.85rem; }
 .budget-auth-widget input[type=email] { padding:0.4rem 0.6rem; border:1px solid var(--border-strong);
     border-radius:5px; font-size:0.85rem; min-width:200px; }
-.budget-btn { background:var(--cobalt); color:#fff; border:none; border-radius:5px;
+.budget-btn { background:var(--cobalt); color:var(--on-accent); border:none; border-radius:5px;
     padding:0.4rem 0.9rem; font-size:0.82rem; cursor:pointer; }
 .budget-btn:hover { background:#003B8E; }
 .budget-btn-out { background:var(--text-muted); margin-left:auto; }
@@ -9664,7 +10381,7 @@ EXHIBIT_ANALYSIS_CSS = """
 }
 .cpl-analytics-body,
 .activity-kpi-body {
-    background-color: #ffffff;
+    background-color: var(--surface-opaque);
     padding: 1.5rem 2rem 2rem;
     margin: 0;
 }
@@ -9674,7 +10391,10 @@ EXHIBIT_ANALYSIS_CSS = """
 .activity-kpi-body .activity-kpi-section { margin-bottom: 0; }
 .exhibit-cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    /* ⚠️ minmax(500px, ...) is a HARD 500px floor — on a 390px phone it forced a
+       500px track and 142px of sideways scroll. min(500px, 100%) keeps the
+       desktop two-up and lets the track shrink on a narrow screen. */
+    grid-template-columns: repeat(auto-fit, minmax(min(500px, 100%), 1fr));
     gap: 1.5rem;
     max-width: 1400px;
     margin: 0 auto;
@@ -9724,7 +10444,7 @@ EXHIBIT_ANALYSIS_CSS = """
 }
 .analytics-export-btn:hover {
     background: var(--gold-accent);
-    color: var(--navy-primary);
+    color: var(--on-mustard);
 }
 .exhibit-total-row td {
     background: rgba(227,179,65,0.12);
@@ -9912,7 +10632,7 @@ EXHIBIT_ANALYSIS_CSS = """
 #statewide-interactive-container { grid-column: 1 / -1; }
 .sw-interactive { background:var(--surface-opaque); border:1px solid var(--border); border-radius:10px; overflow:hidden; box-shadow:0 8px 30px rgba(20,20,30,0.08); }
 .sw-toolbar { padding:0.8rem 1rem; display:flex; flex-wrap:wrap; gap:0.5rem; align-items:center; border-bottom:1px solid var(--border); }
-.sw-toolbar input[type=text] { flex:1 1 200px; padding:0.4rem 0.6rem; border:1px solid var(--border); border-radius:5px; background:#fff; color:var(--text-body); font-size:0.78rem; outline:none; }
+.sw-toolbar input[type=text] { flex:1 1 200px; padding:0.4rem 0.6rem; border:1px solid var(--border); border-radius:5px; background:var(--surface-opaque); color:var(--text-body); font-size:0.78rem; outline:none; }
 .sw-toolbar input[type=text]:focus { border-color:var(--cobalt); }
 .sw-toolbar input[type=text]::placeholder { color:var(--text-muted); }
 .sw-filter-group { position:relative; display:inline-block; }
@@ -9923,11 +10643,11 @@ EXHIBIT_ANALYSIS_CSS = """
 .sw-filter-dropdown label { display:flex; align-items:center; gap:0.4rem; padding:0.3rem 0.6rem; font-size:0.7rem; color:var(--text-body); cursor:pointer; }
 .sw-filter-dropdown label:hover { background:rgba(227,179,65,0.12); }
 .sw-filter-dropdown input[type=checkbox] { accent-color:var(--accent-link); }
-.sw-filter-search { width:calc(100% - 1rem); margin:0.4rem 0.5rem; padding:0.3rem 0.5rem; border:1px solid var(--border); border-radius:4px; background:#fff; color:var(--text-body); font-size:0.68rem; }
+.sw-filter-search { width:calc(100% - 1rem); margin:0.4rem 0.5rem; padding:0.3rem 0.5rem; border:1px solid var(--border); border-radius:4px; background:var(--surface-opaque); color:var(--text-body); font-size:0.68rem; }
 .sw-action-bar { padding:0.5rem 1rem; display:flex; flex-wrap:wrap; gap:0.5rem; align-items:center; border-bottom:1px solid var(--border); }
 .sw-action-btn { padding:0.35rem 0.9rem; border:1px solid rgba(227,179,65,0.5); border-radius:5px; background:rgba(227,179,65,0.12); color:var(--mustard-text); font-size:0.72rem; font-weight:600; cursor:pointer; transition:all 0.15s; }
 .sw-action-btn:hover { background:rgba(227,179,65,0.25); }
-.sw-action-btn.primary { background:var(--gold-accent); color:var(--navy-primary); border-color:var(--gold-accent); }
+.sw-action-btn.primary { background:var(--gold-accent); color:var(--on-mustard); border-color:var(--gold-accent); }
 .sw-action-btn.primary:hover { background:#EBC25D; }
 .sw-count { font-size:0.7rem; color:var(--text-muted); margin-left:auto; }
 .sw-table-wrap { max-height:600px; overflow:auto; scrollbar-width:thin; scrollbar-color:rgba(227,179,65,0.4) transparent; }
@@ -9961,28 +10681,28 @@ EXHIBIT_ANALYSIS_CSS = """
 /* ═══ Projects inline editor (Phase 2 PR-5 — projects_editor.js) ═══ */
 .proj-auth-widget { margin:0 0 1rem 0; padding:0.75rem 1rem; background:var(--surface-subtle); border-radius:8px; font-size:0.85rem; color:var(--navy-primary); display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap; }
 .proj-auth-widget input[type=email] { padding:0.35rem 0.5rem; border:1px solid #ccc; border-radius:5px; font-size:0.8rem; min-width:180px; }
-.proj-btn { padding:0.35rem 0.75rem; border:0; background:var(--cobalt); color:#fff; border-radius:5px; font-size:0.8rem; cursor:pointer; }
-.proj-btn-out { border:1px solid #ccc; background:#fff; color:#333; }
+.proj-btn { padding:0.35rem 0.75rem; border:0; background:var(--cobalt); color:var(--on-accent); border-radius:5px; font-size:0.8rem; cursor:pointer; }
+.proj-btn-out { border:1px solid #ccc; background:var(--surface-opaque); color:var(--text-strong); }
 /* Click-to-edit affordance only lights up when signed in */
 .proj-editable.proj-on { cursor:pointer; border-bottom:1px dashed transparent; transition:background 0.15s, border-color 0.15s; }
 .proj-editable.proj-on:hover { background:rgba(0,71,171,0.06); border-bottom-color:var(--cobalt); }
-.proj-editing { background:#fff !important; }
-.proj-cell-input { box-sizing:border-box; padding:2px 4px; font:inherit; border:1px solid var(--cobalt); border-radius:3px; background:#fff; min-width:60px; }
+.proj-editing { background:var(--surface-opaque) !important; }
+.proj-cell-input { box-sizing:border-box; padding:2px 4px; font:inherit; border:1px solid var(--cobalt); border-radius:3px; background:var(--surface-opaque); min-width:60px; }
 .proj-saving { background:#FFF8E1 !important; }
 .proj-saved { background:#E8F5E9 !important; transition:background 0.4s; }
 .proj-error { background:#FFEBEE !important; transition:background 0.4s; }
 /* Multi-line edit modal */
 .proj-modal-overlay { position:fixed; inset:0; background:rgba(28,28,26,0.55); z-index:9999; display:flex; align-items:flex-start; justify-content:center; overflow-y:auto; padding:3rem 1rem; }
-.proj-modal-card { background:#fff; border-radius:10px; box-shadow:0 8px 32px rgba(0,0,0,0.25); max-width:640px; width:100%; padding:1.5rem; font-family:inherit; color:var(--navy-primary); }
+.proj-modal-card { background:var(--surface-opaque); border-radius:10px; box-shadow:0 8px 32px rgba(0,0,0,0.25); max-width:640px; width:100%; padding:1.5rem; font-family:inherit; color:var(--navy-primary); }
 .proj-modal-card h3 { margin:0 0 0.5rem 0; color:var(--navy-primary); font-size:1.05rem; }
-.proj-modal-card .proj-modal-sub { color:#666; font-size:0.78rem; margin-bottom:0.75rem; }
+.proj-modal-card .proj-modal-sub { color:var(--text-muted); font-size:0.78rem; margin-bottom:0.75rem; }
 .proj-modal-card textarea { width:100%; min-height:140px; padding:0.5rem 0.6rem; border:1px solid #ccc; border-radius:6px; font-size:0.85rem; font-family:inherit; box-sizing:border-box; resize:vertical; }
 .proj-modal-card .proj-modal-status { margin-top:0.5rem; font-size:0.82rem; min-height:1.2em; }
 .proj-modal-card .proj-modal-status.err { color:var(--crimson); }
 .proj-modal-actions { display:flex; justify-content:flex-end; gap:0.5rem; margin-top:1rem; }
 .proj-modal-actions button { padding:0.4rem 0.9rem; border-radius:5px; font-size:0.85rem; cursor:pointer; border:0; }
-.proj-btn-cancel { background:#fff; border:1px solid #ccc !important; color:#333; }
-.proj-btn-submit { background:var(--cobalt); color:#fff; font-weight:600; }
+.proj-btn-cancel { background:var(--surface-opaque); border:1px solid #ccc !important; color:var(--text-strong); }
+.proj-btn-submit { background:var(--cobalt); color:var(--on-accent); font-weight:600; }
 .proj-btn-submit:disabled { opacity:0.6; cursor:not-allowed; }
 /* ── Activity↔Project association editor (workplan_goals.js) ── */
 /* Primary association chip (★) reads slightly bolder than a plain chip. */
@@ -9997,9 +10717,9 @@ EXHIBIT_ANALYSIS_CSS = """
 .wpg-assoc-cell.wpg-assoc-saved { background:#E8F5E9 !important; transition:background 0.4s; }
 .wpg-assoc-cell.wpg-assoc-error { background:#FFEBEE !important; transition:background 0.4s; }
 /* Association popover (anchored near the clicked chip cell) */
-.wpg-assoc-pop { position:absolute; z-index:10000; background:#fff; border:1px solid var(--border-strong); border-radius:8px; box-shadow:0 8px 28px rgba(28,28,26,0.22); width:300px; max-width:92vw; padding:0.75rem 0.85rem; font-family:inherit; color:var(--navy-primary); }
+.wpg-assoc-pop { position:absolute; z-index:10000; background:var(--surface-opaque); border:1px solid var(--border-strong); border-radius:8px; box-shadow:0 8px 28px rgba(28,28,26,0.22); width:300px; max-width:92vw; padding:0.75rem 0.85rem; font-family:inherit; color:var(--navy-primary); }
 .wpg-assoc-pop h4 { margin:0 0 0.15rem 0; font-size:0.9rem; color:var(--navy-primary); }
-.wpg-assoc-pop .wpg-assoc-pop-sub { color:#666; font-size:0.72rem; margin-bottom:0.5rem; }
+.wpg-assoc-pop .wpg-assoc-pop-sub { color:var(--text-muted); font-size:0.72rem; margin-bottom:0.5rem; }
 .wpg-assoc-pop .wpg-assoc-list { display:flex; flex-direction:column; gap:0.15rem; max-height:240px; overflow-y:auto; }
 .wpg-assoc-pop .wpg-assoc-row { display:flex; align-items:center; gap:0.45rem; padding:0.2rem 0.25rem; border-radius:5px; font-size:0.8rem; }
 .wpg-assoc-pop .wpg-assoc-row:hover { background:var(--surface-subtle); }
@@ -10014,8 +10734,8 @@ EXHIBIT_ANALYSIS_CSS = """
 .wpg-assoc-pop .wpg-assoc-pop-status.ok { color:var(--green-progress); }
 .wpg-assoc-pop .wpg-assoc-pop-actions { display:flex; justify-content:flex-end; gap:0.4rem; margin-top:0.6rem; }
 .wpg-assoc-pop .wpg-assoc-pop-actions button { padding:0.3rem 0.7rem; border-radius:5px; font-size:0.78rem; cursor:pointer; border:0; }
-.wpg-assoc-pop .wpg-assoc-cancel { background:#fff; border:1px solid #ccc !important; color:#333; }
-.wpg-assoc-pop .wpg-assoc-save { background:var(--cobalt); color:#fff; font-weight:600; }
+.wpg-assoc-pop .wpg-assoc-cancel { background:var(--surface-opaque); border:1px solid #ccc !important; color:var(--text-strong); }
+.wpg-assoc-pop .wpg-assoc-save { background:var(--cobalt); color:var(--on-accent); font-weight:600; }
 .wpg-assoc-pop .wpg-assoc-save:disabled { opacity:0.6; cursor:not-allowed; }
 .wpg-assoc-pop .wpg-assoc-note { font-size:0.68rem; color:#999; margin-top:0.45rem; line-height:1.3; }
 /* ═══ End MAP Articulation Analysis Cards ═══ */
@@ -10074,7 +10794,7 @@ def build_assoc_records_by_project(associations):
 
 def render_assoc_chip_line(pid, assoc_records, activity_options_json,
                            sb_activity_labels=None,
-                           cell_style="font-size:0.72rem;color:#666;font-weight:400;margin-top:0.2rem;"):
+                           cell_style="font-size:0.72rem;color:var(--text-muted);font-weight:400;margin-top:0.2rem;"):
     """
     Render the "Contributes to: Activity N …" chip line + the click-to-edit
     association-editor anchor. This is the SAME `data-assoc-edit` shape the
@@ -11007,7 +11727,7 @@ def render_budget_html(budget, data_source_stamp=None):
     # Funding sources table
     funding_html += '        <table style="width:100%;border-collapse:collapse;margin-bottom:2rem;font-size:0.9rem;">\n'
     funding_html += '            <thead>\n'
-    funding_html += '                <tr style="background-color:#f5f5f5;border-bottom:2px solid var(--navy-primary);">\n'
+    funding_html += '                <tr style="background-color:var(--surface-subtle);border-bottom:2px solid var(--navy-primary);">\n'
     funding_html += '                    <th style="padding:8px;text-align:left;font-weight:bold;">Funding Source</th>\n'
     for year in year_labels:
         funding_html += f'                    <th style="padding:8px;text-align:right;font-weight:bold;">{year}</th>\n'
@@ -11045,7 +11765,7 @@ def render_budget_html(budget, data_source_stamp=None):
         for idx in range(5):
             val = budget_by_year[idx] if idx < len(budget_by_year) else 0
             funding_html += _bcell(YEAR_COLS[idx], val, bid)
-        funding_html += _bcell("yr_2025_26_expense", expense_2025, bid, "color:#666;")
+        funding_html += _bcell("yr_2025_26_expense", expense_2025, bid, "color:var(--text-muted);")
         funding_html += _bcell("total", total, bid, "border-right:2px solid var(--navy-primary);font-weight:bold;")
         funding_html += f'                </tr>\n'
 
@@ -11117,7 +11837,7 @@ def render_budget_html(budget, data_source_stamp=None):
 
         detail_html += f'        <details style="margin-bottom:1rem;border:1px solid #ddd;border-radius:4px;padding:1rem;">\n'
         detail_html += f'            <summary style="font-weight:bold;cursor:pointer;padding:0.5rem 0;user-select:none;">\n'
-        detail_html += f'                {exp_type} <span style="float:right;color:#666;">{fmt_dollars(type_total)}</span>\n'
+        detail_html += f'                {exp_type} <span style="float:right;color:var(--text-muted);">{fmt_dollars(type_total)}</span>\n'
         detail_html += f'            </summary>\n'
         detail_html += f'            <div style="margin-top:1rem;overflow-x:auto;">\n'
         detail_html += f'                <table style="width:100%;border-collapse:collapse;font-size:0.8rem;">\n'
@@ -11162,7 +11882,7 @@ def render_budget_html(budget, data_source_stamp=None):
         summary_html = (
             '    <div class="budget-expenditure-summary" id="budget-expenditure" style="margin-top:2rem;">\n'
             '        <h3>Expenditure Detail</h3>\n'
-            '        <p style="color:#666;font-style:italic;background:#f5f5f5;'
+            '        <p style="color:var(--text-muted);font-style:italic;background:var(--surface-subtle);'
             'border-left:4px solid var(--gold-accent);padding:0.9rem 1.1rem;border-radius:4px;'
             'margin:0;">Detailed expenditure line items and category breakdowns '
             'are being refreshed and will appear here once updated figures are '
@@ -11179,7 +11899,7 @@ def render_budget_html(budget, data_source_stamp=None):
         personnel_html += '        <div style="overflow-x:auto;">\n'
         personnel_html += '            <table style="width:100%;border-collapse:collapse;margin-bottom:1.5rem;font-size:0.85rem;">\n'
         personnel_html += '                <thead>\n'
-        personnel_html += '                    <tr style="background-color:#f5f5f5;border-bottom:2px solid var(--navy-primary);">\n'
+        personnel_html += '                    <tr style="background-color:var(--surface-subtle);border-bottom:2px solid var(--navy-primary);">\n'
         personnel_html += '                        <th style="padding:8px;text-align:left;font-weight:bold;">Position Title</th>\n'
 
         for year in year_labels:
@@ -11238,8 +11958,8 @@ def render_budget_html(budget, data_source_stamp=None):
             except:
                 formatted = str(value)
 
-            personnel_html += f'            <div style="background-color:#f5f5f5;padding:1rem;border-radius:4px;border-left:4px solid var(--navy-primary);">\n'
-            personnel_html += f'                <div style="font-size:0.75rem;color:#666;text-transform:uppercase;font-weight:bold;margin-bottom:0.5rem;">{label}</div>\n'
+            personnel_html += f'            <div style="background-color:var(--surface-subtle);padding:1rem;border-radius:4px;border-left:4px solid var(--navy-primary);">\n'
+            personnel_html += f'                <div style="font-size:0.75rem;color:var(--text-muted);text-transform:uppercase;font-weight:bold;margin-bottom:0.5rem;">{label}</div>\n'
             personnel_html += f'                <div style="font-size:1.3rem;font-weight:bold;color:var(--navy-primary);">{formatted}</div>\n'
             personnel_html += f'            </div>\n'
 
@@ -11256,7 +11976,7 @@ def render_budget_html(budget, data_source_stamp=None):
     # Fails soft — if the fetch or the script is unavailable the mount stays
     # empty and the funding plan below is untouched.
     budget_section = f'''<!-- Budget Section -->
-    <div class="budget-section" style="background-color:#fafafa;padding:2rem;border-radius:8px;margin-bottom:2rem;">
+    <div class="budget-section" style="background-color:var(--surface-subtle);padding:2rem;border-radius:8px;margin-bottom:2rem;">
         <h2>CPL Budget & Expenditure Plan</h2>
 {stamp_html}        <div id="budgetLedgerMount"></div>
 {funding_html}
@@ -11687,6 +12407,9 @@ def main():
             },
             "generated_at": exhibit_tables.get("generated_at", ""),
             "total_credit_recs": exhibit_tables.get("total_credit_recs", 0),
+            # The COMPLETE two-digit CIP family list (Sam, 2026-09-24: offer every
+            # sector in the filter, not only the ones present), keyed by code.
+            "cip_sectors": _load_cip_families()[1],
         }
         sw_js = ("/* Statewide Exhibit Adoption Data — auto-generated */\n"
                  "window.CPL_STATEWIDE = " + json.dumps(sw_data, indent=2, ensure_ascii=False) + ";\n")
@@ -11756,13 +12479,13 @@ def main():
         # Replace <title> tag + masthead <h1> with the COBI brand. Decoupled
         # from proj_title (which still names the Word reports) so the dashboard
         # masthead reads "COBI" while the project keeps its own title elsewhere.
-        # The rotating "Mamba" subtitle + 8→24 wink are layered on at runtime by
-        # cobi_brand.js (static, regen-proof).
-        # "ᶜᴾᴸ" = Unicode modifier-letter superscripts (U+1D9C/U+1D3E/U+1D38) —
-        # they survive plain-text link unfurls (Teams/Slack read <title>/og:title),
-        # matching the gold superscript CPL in the on-page brand mark.
+        # cobi_brand.js layers the runtime brand touches (the Alpha chip + the
+        # alpha-testing notice) on top of this, static and regen-proof.
         import re
-        COBI_TITLE = "COBI ᶜᴾᴸ — Chancellor's Office Business Intelligence"
+        # "(Alpha)" rides in the <title>/og:title on purpose: a COBI link
+        # pasted into Teams/Slack unfurls as its title, so the "still in
+        # testing" signal has to travel WITH the link, not only on-page.
+        COBI_TITLE = "COBI (Alpha)"
         html = re.sub(r'<title>[^<]*</title>', "<title>" + COBI_TITLE + "</title>", html)
         html = re.sub(r'<meta property="og:title" content="[^"]*"',
                       '<meta property="og:title" content="' + COBI_TITLE + '"', html)
@@ -11796,7 +12519,7 @@ def main():
                 f'cursor:pointer;">'
                 f'<summary style="font-size:0.82rem;color:var(--light-blue);font-weight:600;'
                 f'list-style:none;display:inline-flex;align-items:center;gap:0.3rem;">'
-                f'<span class="desc-arrow" style="font-size:0.7rem;transition:transform 0.2s;">&#9654;</span>'
+                f'<span class="desc-arrow" style="width:0;height:0;border-top:3.5px solid transparent;border-bottom:3.5px solid transparent;border-left:4px solid currentColor;transition:transform 0.2s;flex:none;"></span>'
                 f' Project Description</summary>'
                 f'<div style="font-size:0.82rem;color:#ccc;line-height:1.5;'
                 f'margin-top:0.4rem;padding:0.5rem 0.8rem;'
@@ -11804,7 +12527,7 @@ def main():
                 f'{escaped_desc}</div></details>'
                 f'<style>.project-description[open] .desc-arrow{{transform:rotate(90deg);}}</style>')
         att_count = attachments.get("total", 0)
-        badge_html = (f' <span style="background:var(--gold-accent);color:var(--navy-primary);font-size:0.65rem;'
+        badge_html = (f' <span style="background:var(--gold-accent);color:var(--on-mustard);font-size:0.65rem;'
                       f'font-weight:700;padding:1px 6px;border-radius:8px;margin-left:4px;">'
                       f'{att_count}</span>') if att_count > 0 else ''
         proj_info_parts.append(
@@ -11817,7 +12540,7 @@ def main():
             f' onmouseover="this.style.background=\'rgba(255,255,255,0.2)\'"'
             f' onmouseout="this.style.background=\'rgba(255,255,255,0.1)\'"'
             f' title="Open SharePoint folder — use Upload or drag &amp; drop to add files">'
-            f'&#128206; See Attachments{badge_html}</a></div>')
+            f'See Attachments{badge_html}</a></div>')
         # KB Cheat Sheet button — opens the static #kbcs-overlay modal (defined before </body>).
         # Plain string (no interpolation) so the hand-maintained HTML mirror stays byte-identical.
         proj_info_parts.append(
@@ -11830,7 +12553,7 @@ def main():
             'onmouseover="this.style.background=\'rgba(255,255,255,0.2)\'" '
             'onmouseout="this.style.background=\'rgba(255,255,255,0.1)\'" '
             'title="How to use Claude Code with the CPL Knowledge Base">'
-            '&#128214; Claude + KB Cheat Sheet</button></div>')
+            'Claude + KB Cheat Sheet</button></div>')
         proj_info_parts.append(PROJ_INFO_END)
         proj_info_html = '\n        '.join(proj_info_parts)
 
@@ -12327,12 +13050,12 @@ def main():
             refresh_btn = (
                 '<button id="refreshBtn" class="cobi-util-link" '
                 'title="Re-scrape live MAP data and regenerate the dashboard now" onclick="'
-                'if(!confirm(\'⚠️ Manual Pipeline Run\\n\\n'
+                'if(!confirm(\'Manual Pipeline Run\\n\\n'
                 'This will re-scrape live data from the MAP CPL Dashboard, '
                 'regenerate all charts and KPIs, and overwrite today\\\'s deployed dashboard.\\n\\n'
                 'The process typically takes 3-5 minutes.\\n\\n'
                 'Continue?\'))return;'
-                'var b=this;b.disabled=true;b.textContent=\'⏳ Pipeline triggered — updating...\';'
+                'var b=this;b.disabled=true;b.textContent=\'Pipeline triggered — updating...\';'
                 # Secret rides in BOTH the query string and the JSON body: the
                 # currently-deployed worker's /trigger reads url.searchParams
                 # (older paste), the repo version reads body.secret — sending
@@ -12343,11 +13066,11 @@ def main():
                 'body:JSON.stringify({secret:\'CPL_SCRAPE_2026\'})})'
                 '.then(function(r){return r.json()})'
                 '.then(function(d){'
-                'if(d.success){b.textContent=\'✅ Pipeline running — page will refresh in 5 min\';'
+                'if(d.success){b.textContent=\'Pipeline running — page will refresh in 5 min\';'
                 'setTimeout(function(){location.reload()},300000)}'
-                'else{b.textContent=\'❌ \'+( d.error||\'Unknown error\');b.disabled=false}})'
-                '.catch(function(e){b.textContent=\'❌ \'+e.message;b.disabled=false})">'
-                '&#x21bb; Manually Refresh COBI</button>'
+                'else{b.textContent=\'Error: \'+( d.error||\'Unknown error\');b.disabled=false}})'
+                '.catch(function(e){b.textContent=\'Error: \'+e.message;b.disabled=false})">'
+                'Manually Refresh COBI</button>'
             )
             # Remove any existing refresh button first, then insert after last-updated.
             # Consume the leading newline+indent too, else a blank indented line
@@ -12449,7 +13172,7 @@ def main():
                 <div class="vision-card">
                     <h3 style="color:var(--mustard-text);">{CPL_GOALS["Goal 1"]["title"]}</h3>
                     <p style="font-size:0.85rem;">{CPL_GOALS["Goal 1"]["target"]}</p>
-                    <ul style="font-size:0.82rem;color:#555;margin:0.3rem 0 0.5rem 1.2rem;padding:0;">'''
+                    <ul style="font-size:0.82rem;color:var(--text-muted);margin:0.3rem 0 0.5rem 1.2rem;padding:0;">'''
                 for b in CPL_GOALS["Goal 1"]["bullets"]:
                     new_v2030 += f'\n                        <li style="margin-bottom:0.2rem;">{b}</li>'
                 new_v2030 += f'''
@@ -12465,7 +13188,7 @@ def main():
                 <div class="vision-card">
                     <h3 style="color:var(--mustard-text);">{CPL_GOALS["Goal 2"]["title"]}</h3>
                     <p style="font-size:0.85rem;">{CPL_GOALS["Goal 2"]["target"]}</p>
-                    <ul style="font-size:0.82rem;color:#555;margin:0.3rem 0 0.5rem 1.2rem;padding:0;">'''
+                    <ul style="font-size:0.82rem;color:var(--text-muted);margin:0.3rem 0 0.5rem 1.2rem;padding:0;">'''
                 for b in CPL_GOALS["Goal 2"]["bullets"]:
                     new_v2030 += f'\n                        <li style="margin-bottom:0.2rem;">{b}</li>'
                 new_v2030 += f'''
@@ -12481,7 +13204,7 @@ def main():
                 <div class="vision-card">
                     <h3 style="color:var(--mustard-text);">{CPL_GOALS["Goal 3"]["title"]}</h3>
                     <p style="font-size:0.85rem;">{CPL_GOALS["Goal 3"]["target"]}</p>
-                    <ul style="font-size:0.82rem;color:#555;margin:0.3rem 0 0.5rem 1.2rem;padding:0;">'''
+                    <ul style="font-size:0.82rem;color:var(--text-muted);margin:0.3rem 0 0.5rem 1.2rem;padding:0;">'''
                 for b in CPL_GOALS["Goal 3"]["bullets"]:
                     new_v2030 += f'\n                        <li style="margin-bottom:0.2rem;">{b}</li>'
                 new_v2030 += '''

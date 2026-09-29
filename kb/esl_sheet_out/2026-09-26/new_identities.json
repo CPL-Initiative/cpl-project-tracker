@@ -1,0 +1,964 @@
+{
+ "_about": "ESL identities no fold has reached, placed by the rules in force; a dry run.",
+ "_generated_at": "2026-09-26T20:06:16+00:00",
+ "placements": [
+  {
+   "id": "ESOL M10XV",
+   "title": "Beginning Grammar for Reading and Writing",
+   "credit": "Credit",
+   "members": 0,
+   "discipline": "English as a Second Language (ESL)",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: identity title word"
+  },
+  {
+   "id": "ESOL M10XW",
+   "title": "Beginning Reading and Writing",
+   "credit": "Credit",
+   "members": 0,
+   "discipline": "English as a Second Language (ESL)",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: identity title word"
+  },
+  {
+   "id": "ESOL M10XX",
+   "title": "Exploring Culture through Academic Discourse I",
+   "credit": "Credit",
+   "members": 0,
+   "discipline": "English as a Second Language (ESL)",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: nothing speaks, Beginning by default"
+  },
+  {
+   "id": "ESOL M10XY",
+   "title": "High-Beginning Grammar for Reading and Writing",
+   "credit": "Credit",
+   "members": 0,
+   "discipline": "English as a Second Language (ESL)",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: identity title word"
+  },
+  {
+   "id": "ESOL M10XZ",
+   "title": "High-Beginning Reading and Writing",
+   "credit": "Credit",
+   "members": 0,
+   "discipline": "English as a Second Language (ESL)",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: identity title word"
+  },
+  {
+   "id": "ESOL M10YA",
+   "title": "High-Intermediate Grammar for Reading and Writing",
+   "credit": "Credit",
+   "members": 0,
+   "discipline": "English as a Second Language (ESL)",
+   "bucket": "Intermediate ESL",
+   "target": "ESOL M9256",
+   "how": "level: identity title word"
+  },
+  {
+   "id": "ESOL M10YB",
+   "title": "High-Intermediate Reading and Writing",
+   "credit": "Credit",
+   "members": 0,
+   "discipline": "English as a Second Language (ESL)",
+   "bucket": "Intermediate ESL",
+   "target": "ESOL M9256",
+   "how": "level: identity title word"
+  },
+  {
+   "id": "ESOL M10YC",
+   "title": "Intermediate Grammar for Reading and Writing",
+   "credit": "Credit",
+   "members": 0,
+   "discipline": "English as a Second Language (ESL)",
+   "bucket": "Intermediate ESL",
+   "target": "ESOL M9256",
+   "how": "level: identity title word"
+  },
+  {
+   "id": "ESOL M10YD",
+   "title": "Intermediate Reading and Writing",
+   "credit": "Credit",
+   "members": 0,
+   "discipline": "English as a Second Language (ESL)",
+   "bucket": "Intermediate ESL",
+   "target": "ESOL M9256",
+   "how": "level: identity title word"
+  },
+  {
+   "id": "ESLN M9025",
+   "title": "Multilevel English for Speakers of Other Languages (ESOL) – Level 1",
+   "credit": "Noncredit Enhanced",
+   "members": 2,
+   "discipline": "English as a Second Language Noncredit 53412",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: member ladder vote"
+  },
+  {
+   "id": "ESLN M9026",
+   "title": "English Seminar for Speakers of Other Languages - Level 1",
+   "credit": "Noncredit Enhanced",
+   "members": 2,
+   "discipline": "English as a Second Language Noncredit 53412",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: member ladder vote"
+  },
+  {
+   "id": "ESLN M9027",
+   "title": "Multilevel English for Speakers of Other Languages (ESOL) – Level 2",
+   "credit": "Noncredit Enhanced",
+   "members": 2,
+   "discipline": "English as a Second Language Noncredit 53412",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: member ladder vote"
+  },
+  {
+   "id": "ESLN M9028",
+   "title": "English Seminar for Speakers of Other Languages - Level 2",
+   "credit": "Noncredit Enhanced",
+   "members": 2,
+   "discipline": "English as a Second Language Noncredit 53412",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: member ladder vote"
+  },
+  {
+   "id": "ESLN M9274",
+   "title": "English as a Second Language, Level 2B",
+   "credit": "Noncredit Enhanced",
+   "members": 3,
+   "discipline": "English as a Second Language Noncredit 53412",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: nothing speaks, Beginning by default"
+  },
+  {
+   "id": "ESOL M1362",
+   "title": "Exploring Culture Through Academic Discourse 1",
+   "credit": "Credit",
+   "members": 3,
+   "discipline": "English as a Second Language",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: nothing speaks, Beginning by default"
+  },
+  {
+   "id": "ESOL M1363",
+   "title": "High-Interm Reading/Writing/Grammar for Multiling Ss Part 1",
+   "credit": "Credit",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Intermediate ESL",
+   "target": "ESOL M9256",
+   "how": "level: identity title word"
+  },
+  {
+   "id": "ESOL M1364",
+   "title": "Grammar and Writing 1",
+   "credit": "Credit",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: member ladder vote"
+  },
+  {
+   "id": "ESOL M1365",
+   "title": "High-Interm Reading/Writing/Grammar for Multiling Ss Part 2",
+   "credit": "Credit",
+   "members": 4,
+   "discipline": "English as a Second Language",
+   "bucket": "Intermediate ESL",
+   "target": "ESOL M9256",
+   "how": "level: identity title word"
+  },
+  {
+   "id": "ESOL M1366",
+   "title": "Grammar and Writing 2",
+   "credit": "Credit",
+   "members": 3,
+   "discipline": "English as a Second Language",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: member ladder vote"
+  },
+  {
+   "id": "ESOL M1367",
+   "title": "Grammar and Writing 3",
+   "credit": "Credit",
+   "members": 4,
+   "discipline": "English as a Second Language",
+   "bucket": "Intermediate ESL",
+   "target": "ESOL M9256",
+   "how": "level: member ladder vote"
+  },
+  {
+   "id": "ESOL M1368",
+   "title": "ESL Listening and Speaking - Low Advanced",
+   "credit": "Credit",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Advanced ESL",
+   "target": "ESOL M1141",
+   "how": "level: identity title word"
+  },
+  {
+   "id": "ESOL M1369",
+   "title": "Advanced Reading Improvement for Multilingual Students",
+   "credit": "Credit",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Advanced ESL",
+   "target": "ESOL M1141",
+   "how": "level: identity title word"
+  },
+  {
+   "id": "ESOL M1370",
+   "title": "AMLA Grammar Foundations for English Language Learners",
+   "credit": "Credit",
+   "members": 3,
+   "discipline": "English as a Second Language",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: identity title word"
+  },
+  {
+   "id": "ESOL M1371",
+   "title": "Inter Read/Vocab Bldg",
+   "credit": "Credit",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: member ladder vote"
+  },
+  {
+   "id": "ESOL M1372",
+   "title": "Exper Offering in Human Career",
+   "credit": "Credit",
+   "members": 5,
+   "discipline": "English as a Second Language",
+   "bucket": "Vocational ESL",
+   "target": "ESOL M9023",
+   "how": "purpose: vocational"
+  },
+  {
+   "id": "ESOL M1373",
+   "title": "Reading and Vocabulary for College and Everyday Life",
+   "credit": "Credit",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: nothing speaks, Beginning by default"
+  },
+  {
+   "id": "ESOL M1374",
+   "title": "High-Interm Conversation & Pronunciation for Multilingual Ss",
+   "credit": "Credit",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Intermediate ESL",
+   "target": "ESOL M9256",
+   "how": "level: identity title word"
+  },
+  {
+   "id": "ESOL M1375",
+   "title": "High Int ESL: Write/Grammar",
+   "credit": "Credit",
+   "members": 4,
+   "discipline": "English as a Second Language",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: nothing speaks, Beginning by default"
+  },
+  {
+   "id": "ESOL M1376",
+   "title": "ESL Listening and Speaking - High Intermediate",
+   "credit": "Credit",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Intermediate ESL",
+   "target": "ESOL M9256",
+   "how": "level: identity title word"
+  },
+  {
+   "id": "ESOL M1377",
+   "title": "Multiple Skills Preparation: Listening Speaking and Grammar",
+   "credit": "Credit",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: nothing speaks, Beginning by default"
+  },
+  {
+   "id": "ESOL M1378",
+   "title": "Intermediate-Mid Skills Lab",
+   "credit": "Credit",
+   "members": 3,
+   "discipline": "English as a Second Language",
+   "bucket": "Intermediate ESL",
+   "target": "ESOL M9256",
+   "how": "level: identity title word"
+  },
+  {
+   "id": "ESOL M1379",
+   "title": "Lower-Intermediate Spelling for Non-Native Speakers",
+   "credit": "Credit",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Intermediate ESL",
+   "target": "ESOL M9256",
+   "how": "level: identity title word"
+  },
+  {
+   "id": "ESOL M9265",
+   "title": "ESL - Pronunciation A for Beginners (Pre-1)",
+   "credit": "Noncredit Enhanced",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: member ladder vote"
+  },
+  {
+   "id": "ESOL M9266",
+   "title": "ESL - Reading A for Beginners (Pre-1)",
+   "credit": "Noncredit",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: member ladder vote"
+  },
+  {
+   "id": "ESOL M9268",
+   "title": "ESL 2 - A Beginning High",
+   "credit": null,
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: identity title word"
+  },
+  {
+   "id": "ESOL M9269",
+   "title": "Bridge to Credit ESOL - Level 2",
+   "credit": "Noncredit",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: member ladder vote"
+  },
+  {
+   "id": "ESOL M9270",
+   "title": "Intermediate ESL 2",
+   "credit": "Noncredit Enhanced",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Intermediate ESL",
+   "target": "ESOL M9256",
+   "how": "level: identity title word"
+  },
+  {
+   "id": "ESOL M9271",
+   "title": "ESL Vocabulary and Pronunciation 2",
+   "credit": "Noncredit Enhanced",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: member ladder vote"
+  },
+  {
+   "id": "ESOL M9273",
+   "title": "Reading, Writing, and Grammar 2A",
+   "credit": "Noncredit Enhanced",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: nothing speaks, Beginning by default"
+  },
+  {
+   "id": "ESOL M9275",
+   "title": "Reading, Writing, and Grammar 2B",
+   "credit": "Noncredit Enhanced",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: nothing speaks, Beginning by default"
+  },
+  {
+   "id": "ESOL M9276",
+   "title": "English as a 2ND Language 4",
+   "credit": "Noncredit",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: member ladder vote"
+  },
+  {
+   "id": "ESOL M9277",
+   "title": "Beginning ESL 3",
+   "credit": "Noncredit Enhanced",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: identity title word"
+  },
+  {
+   "id": "ESOL M9278",
+   "title": "Bridge to Credit ESOL - Level 4",
+   "credit": "Noncredit",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Intermediate ESL",
+   "target": "ESOL M9256",
+   "how": "level: member ladder vote"
+  },
+  {
+   "id": "ESOL M9279",
+   "title": "Speaking About Non-Fiction--Intermediate",
+   "credit": "Noncredit Enhanced",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Intermediate ESL",
+   "target": "ESOL M9256",
+   "how": "level: identity title word"
+  },
+  {
+   "id": "ESOL M9280",
+   "title": "Fundamental Academic English Skills: Academic Vocabulary Development",
+   "credit": "Noncredit Enhanced",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: nothing speaks, Beginning by default"
+  },
+  {
+   "id": "ESOL M9281",
+   "title": "Academic Language Skills: Sentence Structure",
+   "credit": "Noncredit Enhanced",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: member ladder vote"
+  },
+  {
+   "id": "ESOL M9282",
+   "title": "Advanced Listening & Speaking: Transition to Academics",
+   "credit": "Noncredit Enhanced",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Advanced ESL",
+   "target": "ESOL M1141",
+   "how": "level: identity title word"
+  },
+  {
+   "id": "ESOL M9283",
+   "title": "High-Intermediate Pronunciation Improvement and Accent Reduction",
+   "credit": "Noncredit",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Intermediate ESL",
+   "target": "ESOL M9256",
+   "how": "level: identity title word"
+  },
+  {
+   "id": "ESOL M9284",
+   "title": "Introduction to Achievement in Community College for ESL Students",
+   "credit": "Noncredit Enhanced",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: member ladder vote"
+  },
+  {
+   "id": "ESOL M9285",
+   "title": "Intermed. High-Adult Education English as a Second Language",
+   "credit": "Noncredit Enhanced",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: nothing speaks, Beginning by default"
+  },
+  {
+   "id": "ESOL M9286",
+   "title": "American Idioms and Slang in the Workplace - Advanced",
+   "credit": "Noncredit Enhanced",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Vocational ESL",
+   "target": "ESOL M9023",
+   "how": "purpose: vocational"
+  },
+  {
+   "id": "ESOL M9287",
+   "title": "ESL Support for Freshman Composition: Advanced Pronunciation Noncredit",
+   "credit": "Noncredit Enhanced",
+   "members": 5,
+   "discipline": "English as a Second Language",
+   "bucket": "Advanced ESL",
+   "target": "ESOL M1141",
+   "how": "level: identity title word"
+  },
+  {
+   "id": "ESOL M9288",
+   "title": "Conversation for Advanced Fluency",
+   "credit": "Noncredit Enhanced",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Advanced ESL",
+   "target": "ESOL M1141",
+   "how": "level: identity title word"
+  },
+  {
+   "id": "ESOL M9289",
+   "title": "ESL Vocabulary Review, Intermediate to Advanced",
+   "credit": "Noncredit",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Advanced ESL",
+   "target": "ESOL M1141",
+   "how": "level: identity title word"
+  },
+  {
+   "id": "ESOL M9290",
+   "title": "Intermediate English Skills for Career Advancement",
+   "credit": "Noncredit Enhanced",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Vocational ESL",
+   "target": "ESOL M9023",
+   "how": "purpose: vocational"
+  },
+  {
+   "id": "ESOL M9291",
+   "title": "Beginning High Aesl Multi-Skills",
+   "credit": "Noncredit Enhanced",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: identity title word"
+  },
+  {
+   "id": "ESOL M9292",
+   "title": "Intermediate High Aesl Multi-Skills",
+   "credit": "Noncredit Enhanced",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Intermediate ESL",
+   "target": "ESOL M9256",
+   "how": "level: identity title word"
+  },
+  {
+   "id": "ESOL M9293",
+   "title": "ESL and the Arts",
+   "credit": "Noncredit",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: nothing speaks, Beginning by default"
+  },
+  {
+   "id": "ESOL M9294",
+   "title": "ESL & Civics - Beginning High B",
+   "credit": "Noncredit Enhanced",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: identity title word"
+  },
+  {
+   "id": "ESOL M9295",
+   "title": "ESL & Civics - Intermediate High B",
+   "credit": "Noncredit Enhanced",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Intermediate ESL",
+   "target": "ESOL M9256",
+   "how": "level: identity title word"
+  },
+  {
+   "id": "ESOL M9296",
+   "title": "VESL Work Readiness and Communication Skills, Module B",
+   "credit": "Noncredit Enhanced",
+   "members": 7,
+   "discipline": "English as a Second Language",
+   "bucket": "Vocational ESL",
+   "target": "ESOL M9023",
+   "how": "purpose: vocational"
+  },
+  {
+   "id": "ESOL M9297",
+   "title": "Low Intermediate ESL B - Long",
+   "credit": "Noncredit",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Intermediate ESL",
+   "target": "ESOL M9256",
+   "how": "level: identity title word"
+  },
+  {
+   "id": "ESOL M9298",
+   "title": "ESL & Civics – Beginning High A",
+   "credit": "Noncredit Enhanced",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: identity title word"
+  },
+  {
+   "id": "ESOL M9299",
+   "title": "Fundamental English as a Second Language (ESL) - High Beginning",
+   "credit": "Noncredit Enhanced",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: identity title word"
+  },
+  {
+   "id": "ESOL M9300",
+   "title": "Multilevel Beginning-Intermediate English as a Second Language",
+   "credit": "Noncredit Enhanced",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: identity title word"
+  },
+  {
+   "id": "ESOL M9301",
+   "title": "High-Beginning ESL",
+   "credit": "Noncredit Enhanced",
+   "members": 3,
+   "discipline": "English as a Second Language",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: identity title word"
+  },
+  {
+   "id": "ESOL M9302",
+   "title": "Beginning Pronunciation and Fluency",
+   "credit": "Noncredit Enhanced",
+   "members": 3,
+   "discipline": "English as a Second Language",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: identity title word"
+  },
+  {
+   "id": "ESOL M9303",
+   "title": "Beginning Listening and Speaking",
+   "credit": null,
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: identity title word"
+  },
+  {
+   "id": "ESOL M9304",
+   "title": "ESL for College and Career Pathways-Effective Communication",
+   "credit": "Noncredit Enhanced",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Vocational ESL",
+   "target": "ESOL M9023",
+   "how": "purpose: vocational"
+  },
+  {
+   "id": "ESOL M9305",
+   "title": "English for Childcare A",
+   "credit": null,
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: nothing speaks, Beginning by default"
+  },
+  {
+   "id": "ESOL M9306",
+   "title": "English for Citizenship",
+   "credit": "Noncredit",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Civic ESL",
+   "target": "ESOL M9177",
+   "how": "purpose: citizenship"
+  },
+  {
+   "id": "ESOL M9307",
+   "title": "ESL US Citizenship Test Preparation",
+   "credit": "Noncredit",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Civic ESL",
+   "target": "ESOL M9177",
+   "how": "purpose: citizenship"
+  },
+  {
+   "id": "ESOL M9308",
+   "title": "ESL & Civics - Intermediate High A",
+   "credit": "Noncredit Enhanced",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Intermediate ESL",
+   "target": "ESOL M9256",
+   "how": "level: identity title word"
+  },
+  {
+   "id": "ESOL M9310",
+   "title": "Computer VESL - Health Workers",
+   "credit": "Noncredit Enhanced",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Vocational ESL",
+   "target": "ESOL M9023",
+   "how": "purpose: vocational"
+  },
+  {
+   "id": "ESOL M9311",
+   "title": "ESL Conversation - Intermediate High",
+   "credit": "Noncredit Enhanced",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Intermediate ESL",
+   "target": "ESOL M9256",
+   "how": "level: identity title word"
+  },
+  {
+   "id": "ESOL M9312",
+   "title": "Conversation for Intermediate ESL",
+   "credit": null,
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Intermediate ESL",
+   "target": "ESOL M9256",
+   "how": "level: identity title word"
+  },
+  {
+   "id": "ESOL M9313",
+   "title": "Creative Writing for ESL Learners: The Craft of Self-Expression",
+   "credit": "Noncredit",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: nothing speaks, Beginning by default"
+  },
+  {
+   "id": "ESOL M9314",
+   "title": "Credit ESL Preparation - Long",
+   "credit": "Noncredit",
+   "members": 3,
+   "discipline": "English as a Second Language",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: member ladder vote"
+  },
+  {
+   "id": "ESOL M9315",
+   "title": "Open Topics: Current Events",
+   "credit": "Noncredit",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: nothing speaks, Beginning by default"
+  },
+  {
+   "id": "ESOL M9316",
+   "title": "Writing Workshop for Non-Native Speakers: Emphasis on Thesis Development and Essay Organization",
+   "credit": "Noncredit Enhanced",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: nothing speaks, Beginning by default"
+  },
+  {
+   "id": "ESOL M9317",
+   "title": "ELD Reading & Writing Lab",
+   "credit": "Noncredit Enhanced",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: nothing speaks, Beginning by default"
+  },
+  {
+   "id": "ESOL M9318",
+   "title": "TOEFL Preparation (Test of English as a Foreign Language)",
+   "credit": null,
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: nothing speaks, Beginning by default"
+  },
+  {
+   "id": "ESOL M9319",
+   "title": "Workplace English as a Second Language (Intermediate)",
+   "credit": "Noncredit Enhanced",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Vocational ESL",
+   "target": "ESOL M9023",
+   "how": "purpose: vocational"
+  },
+  {
+   "id": "ESOL M9320",
+   "title": "Workforce Language Preparation for Entry Level Positions in the Food Service Industry",
+   "credit": "Noncredit",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Vocational ESL",
+   "target": "ESOL M9023",
+   "how": "purpose: vocational"
+  },
+  {
+   "id": "ESOL M9321",
+   "title": "NC ESL for Intermediate High Fluency",
+   "credit": "Noncredit Enhanced",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Intermediate ESL",
+   "target": "ESOL M9256",
+   "how": "level: identity title word"
+  },
+  {
+   "id": "ESOL M9322",
+   "title": "Vocational ESL Landscaping and Gardening, Module A",
+   "credit": "Noncredit Enhanced",
+   "members": 6,
+   "discipline": "English as a Second Language",
+   "bucket": "Vocational ESL",
+   "target": "ESOL M9023",
+   "how": "purpose: vocational"
+  },
+  {
+   "id": "ESOL M9323",
+   "title": "High-Intermediate ESL",
+   "credit": "Noncredit Enhanced",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Intermediate ESL",
+   "target": "ESOL M9256",
+   "how": "level: identity title word"
+  },
+  {
+   "id": "ESOL M9325",
+   "title": "ESL: Preperation for the Workplace",
+   "credit": "Noncredit",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Vocational ESL",
+   "target": "ESOL M9023",
+   "how": "purpose: vocational"
+  },
+  {
+   "id": "ESOL M9326",
+   "title": "ESL - Writing A",
+   "credit": null,
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "bucket": "Beginning ESL",
+   "target": "ESOL M9168",
+   "how": "level: nothing speaks, Beginning by default"
+  }
+ ],
+ "held": [
+  {
+   "id": "ESOL M1205",
+   "title": "ESL College Composition and Reading",
+   "credit": "Credit",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "why": "transfer composition in the first plan: held apart (unruled)"
+  },
+  {
+   "id": "ESOL M9192",
+   "title": "Composition for ESL Students",
+   "credit": "Noncredit Enhanced",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "why": "transfer composition in the first plan: held apart (unruled)"
+  },
+  {
+   "id": "ESOL M1239",
+   "title": "Composition, Reading, and Freshman English",
+   "credit": "Credit",
+   "members": 3,
+   "discipline": "English as a Second Language",
+   "why": "transfer composition in the first plan: held apart (unruled)"
+  },
+  {
+   "id": "ESOL M9267",
+   "title": "Optical Technician 1",
+   "credit": "Noncredit Enhanced",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "why": "a member course's subject maps outside ESL: Health"
+  },
+  {
+   "id": "ESOL M9272",
+   "title": "Optical Technician 2",
+   "credit": "Noncredit Enhanced",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "why": "a member course's subject maps outside ESL: Health"
+  },
+  {
+   "id": "ESOL M9309",
+   "title": "ESL Supplemental Freshman Composition: Paragraphs",
+   "credit": "Noncredit Enhanced",
+   "members": 2,
+   "discipline": "English as a Second Language",
+   "why": "transfer composition: held apart (unruled)"
+  }
+ ],
+ "counts": {
+  "placed": 89,
+  "held": 6,
+  "by_bucket": {
+   "Beginning ESL": 48,
+   "Intermediate ESL": 23,
+   "Advanced ESL": 6,
+   "Vocational ESL": 10,
+   "Civic ESL": 2
+  },
+  "by_how": {
+   "level: identity title word": 42,
+   "level: nothing speaks, Beginning by default": 18,
+   "level: member ladder vote": 17,
+   "purpose: vocational": 10,
+   "purpose: citizenship": 2
+  }
+ }
+}

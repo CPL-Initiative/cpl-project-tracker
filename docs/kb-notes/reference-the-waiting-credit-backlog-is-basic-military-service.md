@@ -89,7 +89,7 @@ uniformity, because it converts an intimidating number into one decision rule
 ("award basic training credit to our Area E / PE per the exhibit we already
 articulated"). It is the most encouraging true thing on the page.
 
-Do **not** generalise it to the wider *dormant* figure. `dormant_credits` — the
+Do **not** generalize it to the wider *dormant* figure. `dormant_credits` — the
 ~1.05M units at Needs Action — is a different and far more heterogeneous
 population; `articulated_waiting` is the already-built subset of it. And these
 proportions are a snapshot: as colleges clear the military backlog the residue

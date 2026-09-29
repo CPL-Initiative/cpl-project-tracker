@@ -1,11 +1,10 @@
 ---
 title: "Methodology — when you can't decide for someone, route to a determination they already made"
-type: methodology
 kb-status: published
 created: 2026-08-05
 updated: 2026-08-05
 session: 120 (SkyMail)
-tags: [governance, autonomy, defaults, contacts, data-quality, cpl, map]
+tags: [methodology, governance, autonomy, defaults, contacts, data-quality, cpl, map]
 related:
   - "[[docs/kb-notes/adr-surface-dont-edit-readonly-system-of-record]]"
   - "[[docs/map_users_lessons]]"

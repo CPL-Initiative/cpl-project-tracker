@@ -1,7 +1,6 @@
 ---
 title: "Playbook: unattended news aggregation into a live dashboard tab"
 kb-status: published
-type: playbook
 tags: [playbook, news, supabase, edge-function, claude, automation, rss, gdelt]
 created: 2026-06-21
 related:

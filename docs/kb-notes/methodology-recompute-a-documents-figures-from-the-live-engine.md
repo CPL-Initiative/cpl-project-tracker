@@ -1,6 +1,5 @@
 ---
 title: "Methodology — recompute a document's figures from the live engine, don't copy them"
-type: methodology
 kb-status: published
 created: 2026-08-05
 updated: 2026-08-05

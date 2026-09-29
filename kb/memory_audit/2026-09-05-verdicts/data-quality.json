@@ -1,0 +1,275 @@
+{
+  "part": "data-quality",
+  "expected_rows": 9,
+  "coverage": {
+    "rows_read": 9,
+    "rows_judged": 9,
+    "note": "All 9 rows read (offset 0 returned 8, offset 8 returned 1). Live re-measures were read-only SELECTs."
+  },
+  "counts": {
+    "confirmed": 9,
+    "stale": 0,
+    "superseded_by_row": 0,
+    "snapshot": 0,
+    "unverifiable": 0
+  },
+  "verdicts": [
+    {
+      "id": "b2a8acd6-059f-4afc-a6af-cb8303358c34",
+      "slug": "o3",
+      "kind": "opportunity",
+      "title": "Remove repeated military credit recommendations when a transcript is uploaded",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Still open and tracked verbatim in the MAP Data Quality register (status open, no resolution); f8 is verified by Sam; the 'Priority 1 scores Applied' mitigation the row anticipates was ruled 2026-08-01. The MAP-side parser fix itself is not done. Advisory — Sam-sourced.",
+      "evidence": [
+        {
+          "source": "sql map_data_quality id 10ad9e0a",
+          "quote": "USMC JST eligibility inflation — skill-level CR duplication | status open | expected: MAP's JST parser should DEDUPE repeated CRs WITHIN an ACE exhibit ... dedupe by the CR itself"
+        },
+        {
+          "source": "slug:f8",
+          "quote": "USMC JST skill-level CR duplication — status verified, verified_by sam"
+        },
+        {
+          "source": "slug:p1-scores-applied-not-eligible",
+          "quote": "decision (proposed): Sam ruled 2026-08-01 that Implementation Funding Priority 1 scores APPLIED CPL units"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Sam",
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "5e1ed10a-48c2-449d-82db-2fbda53de5a0",
+      "slug": null,
+      "kind": "pitfall",
+      "title": "Reading the top of a sorted list is not an audit",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The source lessons doc states the same event and lesson (top of the trainer list vs a full audit finding ~48 high-school entries, Baldy View ROP, Fontana Adult School, Chaffey). Hygiene: the row has no slug so it cannot be cited, and related 'training_agency' names no row.",
+      "evidence": [
+        {
+          "source": "docs/noncredit_cpl_lessons.md:79-86",
+          "quote": "that read only the *top* of the trainer list. A full audit showed **~48 high-school entries, Baldy View ROP, Fontana Adult School** ... \"top N of a sorted list\" is not an audit."
+        },
+        {
+          "source": "sql",
+          "quote": "select slug from cpl_memory where slug ilike '%training%' → no row named training_agency (5 unrelated sierra-training rows only)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": [
+        {
+          "from": "training_agency",
+          "to": "no row with this slug exists — remove, or point at the row it meant once that row has a slug"
+        }
+      ]
+    },
+    {
+      "id": "e0f0c35f-5bff-4b52-bba6-5c706c008823",
+      "slug": "provenance-is-a-field",
+      "kind": "procedure",
+      "title": "Provenance is a field; a two-state detector is wrong about the middle",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Both halves are in current sources: the KB note carries the REAL/FAKE/WEAK corollary with the 25% fill floor, and map_users.js renders the provenance tiers with the curator-supplied vs web-sourced distinction; CLAUDE.md names those tiers as the worked pattern.",
+      "evidence": [
+        {
+          "source": "docs/kb-notes/methodology-provenance-is-a-field.md:68-72",
+          "quote": "A detector that emits only REAL / FAKE ... a schema probe classified an API column real if ≥25% of rows were"
+        },
+        {
+          "source": "map_users.js:1579-1580",
+          "quote": "// Renders a fallback with its provenance ALWAYS visible. A curator-supplied contact says who gave it; a web-sourced one links the page it came from."
+        },
+        {
+          "source": "CLAUDE.md (Working with the MAP team)",
+          "quote": "record **who and when** alongside it (the provenance tiers in `map_users.js` are the worked pattern)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "40ad3744-d735-4f17-a521-613126e7bf65",
+      "slug": "studio-csv-importer-duplicates-rows",
+      "kind": "pitfall",
+      "title": "The database's built-in file importer duplicates records, and re-importing does not fix it",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The runbook records all three measurements, step 3 now says distinct_source_rows must match (count(*) higher is expected), and the gate is payload_conflicts = 0 — the correction the row says was made. Related slug map-student-credit-reloaded-tblsource resolves (proposed).",
+      "evidence": [
+        {
+          "source": "docs/map_student_credit_reload.md:52-54",
+          "quote": "| 2026-08-08 | 220,588 | 222,646 | +2,058 (0.9%) | ... | 2026-08-10 (final) | 537,908 | 543,579 | +5,671 (1.05%) |"
+        },
+        {
+          "source": "docs/map_student_credit_reload.md:34",
+          "quote": "⛔ **`distinct_source_rows` must equal step 1's count.** `count(*)` being *higher* is expected and fine"
+        },
+        {
+          "source": "docs/map_student_credit_reload.md:60-64",
+          "quote": "`distinct on (source_row_id)` ... provably lossless and recovered exactly 537,908. ⛔ **The check that matters is `payload_conflicts = 0`, not the row count.**"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "dc844005-55ef-4efc-9ad7-10e2aa16d8b6",
+      "slug": "safe-fallback-is-caller-specific",
+      "kind": "procedure",
+      "title": "A safe fallback is safe only for the caller it was written for",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "fundingFor() and both distinguished states ('failed read, not a finding'; 'a different route to money, not an absence of it') are in college_briefing.js today; the KB note is on disk; PR #1117 is on main.",
+      "evidence": [
+        {
+          "source": "college_briefing.js:1430",
+          "quote": "function fundingFor(name) {"
+        },
+        {
+          "source": "college_briefing.js:1906",
+          "quote": "'The funding model did not load. That is a <b>failed read, not a finding</b> — '"
+        },
+        {
+          "source": "college_briefing.js:1916",
+          "quote": "\"college pool below — so this is <b>a different route to money, not an absence of it</b>.\""
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "c992b971 My College — the funding box, a district picker, and Ask Sierra (#1117)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "1f9c7a73-7e5d-4ec6-ae7f-e3d2965f8eca",
+      "slug": "shared-prose-over-claims-on-rows-it-was-not-written-for",
+      "kind": "pitfall",
+      "title": "One explanation written for a group of rows will be wrong for a few of them - check it against the data",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "check_absence_claims() exists, hard-exits, and is called in the build; the KB note is on disk; PR #1243 is on main; related slug resolves to a verified row.",
+      "evidence": [
+        {
+          "source": "kb/_build_college_offering_crosswalk.py:194,208,728",
+          "quote": "def check_absence_claims(rows): ... sys.exit(\"\\n\".join(lines)) ... check_absence_claims(rows)"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "0d08cc48 Add a college-scoped occupation → CPL crosswalk (SJCOE ↔ San Joaquin Delta) (#1243)"
+        },
+        {
+          "source": "slug:absence-is-a-phrase-in-a-partner-sheet",
+          "quote": "verified — 'In a shared sheet, write the absence'"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "53be8032-084c-4c9b-8cc3-8a1b40f3f250",
+      "slug": "on-conflict-do-nothing-silently-drops-renames",
+      "kind": "pitfall",
+      "title": "Three of seven renames never saved and nothing reported an error - count what landed",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The committed receipt records 1,997 rows planned, 3 unified_title rows blocked then fixed by a guarded UPDATE, naming the same three course_ids (ESOL M9023, M1152, M9177) and the Rule 10 cohort; PR #1312 is on main. Lesson unchanged.",
+      "evidence": [
+        {
+          "source": "kb/esl_package_out/2026-08-24/esl_apply_plan.json _landed",
+          "quote": "{\"merge_into\": 1990, \"unified_title_inserted\": 4, \"unified_title_blocked_then_updated\": 3, \"total_rows_written\": 1997}"
+        },
+        {
+          "source": "kb/esl_package_out/2026-08-24/esl_apply_plan.json _blocked_renames",
+          "quote": "ON CONFLICT DO NOTHING refused three unified_title rows because the survivor already carried one ... _resolution: A guarded UPDATE scoped to exactly these three course_ids"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "552d4d49 Flatten merge chains — 340 folded identities were still rendering as rows (#1312)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "47fd2991-d52c-47cb-aeea-96a81c0c637e",
+      "slug": "one-ranked-list-cannot-answer-two-questions",
+      "kind": "pitfall",
+      "title": "A score blending fit with evidence-weight starves the rows that most need help",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The second labeled group (options whose hours equal the course units, even below the cut) and the 22-hidden-exact-hour-matches finding are in the matcher's own docstring; the KB note is on disk; PR #1365 is on main.",
+      "evidence": [
+        {
+          "source": "kb/_match_courses_to_ace_recs.py:221-223",
+          "quote": "HOURS EQUAL THE COURSE'S UNITS even when those rank below the cut. ⚠️ Truncating to the top 6 by confidence hid 22 exact-hour matches on a"
+        },
+        {
+          "source": "docs/kb-notes/methodology-one-ranked-list-cannot-answer-two-questions.md",
+          "quote": "present (3,437 B)"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "57b8aa30 Find a credit recommendation for a course a college already approved (LATTC military CPL) (#1365)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "27f185e6-c7a9-4ec1-8aba-5bbb5cce16ce",
+      "slug": "a-frequency-is-not-a-rule",
+      "kind": "pitfall",
+      "title": "Measuring how often practitioners do something says nothing about whether it is allowed",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The KB note carries Jessica's correction verbatim (MAP permits many-to-many; colleges are not in the habit) and the matcher's header records the re-keying on the credit recommendation she asked for; PR #1365 is on main. The factual core is Jessica's — advisory.",
+      "evidence": [
+        {
+          "source": "docs/kb-notes/methodology-a-frequency-is-not-a-rule.md:36-38",
+          "quote": "Jessica, the curator: *\"We can utilize a credit recommendation for multiple courses or ... many-to-many. Colleges are simply not in the habit."
+        },
+        {
+          "source": "kb/_match_courses_to_ace_recs.py:12",
+          "quote": "⚠️ Keyed on the CREDIT RECOMMENDATION, not on MOS/rate (Jessica, 2026-08-27):"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "57b8aa30 Find a credit recommendation for a course a college already approved (LATTC military CPL) (#1365)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Jessica",
+      "kind_check": null,
+      "link_fixes": []
+    }
+  ]
+}

@@ -11,6 +11,13 @@
 //   - STALE feed dates are pruned from localStorage (a new feed = a fresh
 //     checklist — yesterday's check-offs must not bleed in)
 //   - a missing/empty feed renders NO button (fail-soft on preview deploys)
+//   - THE SHIPPED FEED ITSELF parses and matches the renderer's contract, and
+//     no tracked text file carries an unresolved merge conflict (added
+//     2026-08-20 — kb/cpl_todos.json sat on main with raw `<<<<<<<` markers in
+//     it, committed by a PR where two parallel sessions had both rewritten the
+//     feed, so the 📋 button had nothing valid to read on any tab; and the feed
+//     writes `for`, which this module was reading as `who`, so every real item
+//     grouped under a single "For Undefined" heading)
 //
 // Run from repo root: `npm test` (or `node tests/cpl_todos.test.js`).
 const fs = require("fs");
@@ -27,6 +34,17 @@ const FEED = {
     { id: "b-ccr", who: "sam", tab: "unified-courses", text: "CCR queue chore" },
     { id: "c-all", who: "fable", tab: "all", text: "Everywhere chore" },
     { id: "d-csr", who: "fable", tab: "canonical-subj4", text: "CSR engineering chore" },
+  ],
+};
+
+// The shape the REAL feed uses (`for: "Sam"`), as opposed to FEED above which
+// uses the early `who: "sam"` spelling. Both must group correctly.
+const FEED_FOR = {
+  _as_of: "2026-06-12",
+  _status: "real-shape status line",
+  items: [
+    { id: "r-sam", for: "Sam", tab: "dashboard", text: "Curation chore" },
+    { id: "r-fable", for: "Fable", tab: "dashboard", text: "Engineering chore" },
   ],
 };
 
@@ -53,6 +71,8 @@ const check = (name, cond) => results.push([name, !!cond]);
 const dom = boot(FEED, { "2026-06-11": { "a-dash": 1 } });
 const { window } = dom;
 const doc = window.document;
+// A second panel in the shape the REAL feed uses; asserted in the same tick.
+const dom2 = boot(FEED_FOR);
 
 setTimeout(() => {
   try {
@@ -131,6 +151,64 @@ setTimeout(() => {
     check("no exception during assertions: " + e.message, false);
     finish();
   }
+
+  // The real feed's `for` spelling groups into the same two labelled sections.
+  {
+    const p2 = dom2.window.document;
+    const b2 = p2.getElementById("cpl-todo-btn");
+    check("real-shape feed (`for`) renders the button", !!b2);
+    b2.click();
+    const t2 = p2.getElementById("cpl-todo-panel").textContent;
+    check("real-shape feed groups under For Sam", t2.indexOf("For Sam") >= 0);
+    check("real-shape feed groups under For Fable", t2.indexOf("For Fable") >= 0);
+    check("real-shape feed never renders a For-Undefined section",
+      t2.indexOf("Undefined") === -1);
+    check("real-shape feed lists both items",
+      t2.indexOf("Curation chore") >= 0 && t2.indexOf("Engineering chore") >= 0);
+  }
+
+  // ── The shipped feed + the repo's text surface ─────────────────────────────
+  // These are static (no jsdom) but they live here because this is the file a
+  // reader opens when the To-Do button misbehaves.
+  const path = require("path");
+  const ROOT = path.join(__dirname, "..");
+  let feedRaw = "", feed = null, feedErr = "";
+  try { feedRaw = fs.readFileSync(path.join(ROOT, "kb/cpl_todos.json"), "utf8"); } catch (e) { feedErr = String(e); }
+  try { feed = JSON.parse(feedRaw); } catch (e) { feedErr = String(e); }
+  check("kb/cpl_todos.json parses as JSON" + (feedErr ? " — " + feedErr : ""), !!feed);
+  check("shipped feed carries _as_of + _status", !!(feed && feed._as_of && feed._status));
+  check("shipped feed has a non-empty items array",
+    !!(feed && Array.isArray(feed.items) && feed.items.length));
+  const items = (feed && feed.items) || [];
+  check("every item has id + tab + text",
+    items.length > 0 && items.every((it) => it && it.id && it.tab && it.text));
+  check("every item is addressed to Sam or Fable (the field is `for`)",
+    items.length > 0 && items.every((it) => it && (it.for === "Sam" || it.for === "Fable")));
+  check("item ids are unique", new Set(items.map((it) => it.id)).size === items.length);
+
+  // A conflict committed into a served file breaks the page, silently for
+  // anything the browser parses at runtime. Anchored at column 0 — a doc that
+  // needs to SHOW a marker should indent it by one space.
+  const SKIP_DIRS = new Set(["node_modules", ".git", "archive", "exports", "reports", "presentations"]);
+  const SCAN_EXT = new Set([".js", ".json", ".html", ".css", ".md", ".py", ".yml", ".yaml", ".sql"]);
+  const MAX_SCAN = 2 * 1024 * 1024;
+  const conflicted = [];
+  (function walk(dir) {
+    for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+      if (e.name.startsWith(".") && e.name !== ".github") continue;
+      const full = path.join(dir, e.name);
+      if (e.isDirectory()) { if (!SKIP_DIRS.has(e.name)) walk(full); continue; }
+      if (!SCAN_EXT.has(path.extname(e.name))) continue;
+      if (fs.statSync(full).size > MAX_SCAN) continue;
+      if (/^(<{7}|={7}$|>{7})/m.test(fs.readFileSync(full, "utf8"))) {
+        conflicted.push(path.relative(ROOT, full));
+      }
+    }
+  })(ROOT);
+  check("no tracked text file carries an unresolved merge conflict" +
+    (conflicted.length ? " — " + conflicted.join(", ") : ""), conflicted.length === 0);
+
+  finish();
 
   function finish() {
     let pass = 0;

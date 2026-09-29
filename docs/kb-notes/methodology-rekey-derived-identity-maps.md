@@ -1,9 +1,8 @@
 ---
 title: "Re-key every DERIVED identity map when a re-mint permutes slots — or make consumers prefer the canonical store"
-date: 2026-07-09
+created: 2026-07-09
 kb-status: published
-type: methodology
-tags: [re-mint, alias-map, identity, coci_articulations, data-integrity]
+tags: [methodology, re-mint, alias-map, identity, coci_articulations, data-integrity]
 artifacts:
   - kb/coci_articulations.json
   - excel_to_dashboard.py (export_credential_reference)

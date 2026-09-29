@@ -605,7 +605,7 @@ in every money cell (cap on top, `earned · %` beneath — the shape the P-cells
 used), so nothing has to be toggled to be compared. Also: earned **splits three ways at
 the source** (`collegeAlloc` → `earned_measured` / `earned_advance` / `earned_guaranteed`)
 with an `adv` chip, because **~95% of a typical college's earned figure is a provisional
-ADVANCE**; the front-load first column is relabelled **"Window (front-loaded)"**; pool
+ADVANCE**; the front-load first column is relabeled **"Window (front-loaded)"**; pool
 Earned/Unearned cards, priority earned lines and the CSV earned columns are unconditional.
 Targets were deliberately **NOT** doubled under front-load (timing-only by design).
 
@@ -669,7 +669,7 @@ is the source for — **the join is that column, never the row NAME**, because t
 editor lets a curator rename rows freely (receipt `kb/supabase_budget_model_field.sql`).
 `poolField()` gained ONE layer: `SCENARIO ?? SHARED ?? LEDGER ?? BASE`, so no downstream
 reader changed. **Precedence is deliberate:** the ledger replaces the committed BASE
-literal only — a scenario what-if still wins (it's a modelling choice, not drift) but a
+literal only — a scenario what-if still wins (it's a modeling choice, not drift) but a
 disagreeing override is now reported inline (`ledgerDrift`) instead of diverging silently.
 **Fail-soft:** no fetch / no row / archived row / non-finite ⇒ the committed figure stands,
 so an unreachable Supabase can never render a $0 pool. Part T (10 assertions) covers it.

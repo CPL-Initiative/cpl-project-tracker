@@ -32,7 +32,7 @@ const cpl = fs.readFileSync("CPL_Dashboard.html", "utf8");
 const idx = fs.readFileSync("index.html", "utf8");
 check("Rule 4: CPL_Dashboard.html === index.html", cpl === idx);
 [["CPL_Dashboard.html", cpl], ["index.html", idx]].forEach(function (p) {
-  check("nav button in " + p[0], /data-tab="cpl-pathways"[^>]*>🎓 CPL Pathways</.test(p[1]));
+  check("nav button in " + p[0], /data-tab="cpl-pathways"[^>]*>CPL Pathways</.test(p[1]));
   check("pane #cpl-pathways-root in " + p[0], /id="cpl-pathways-root"/.test(p[1]));
   check("lazy boot loadScript in " + p[0], /loadScript\('cpl_pathways\.js', 'CPL_PATHWAYS_TAB'/.test(p[1]));
   check("data file boot in " + p[0], /loadScript\('cpl_pathways_data\.js', 'CPL_PATHWAYS'/.test(p[1]));

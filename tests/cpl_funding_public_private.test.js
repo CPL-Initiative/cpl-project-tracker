@@ -27,6 +27,10 @@ function freshDom() {
   const dom = new JSDOM(
     '<!DOCTYPE html><html><head></head><body>' +
     '<div class="cpl-tab-pane" id="tab-implementation-funding"><div class="main-container">' +
+    // The title-row slot is present in BOTH the private and the public DOM on
+    // purpose: the public page must be missing the explainer link because
+    // publicMode() blanks it, not because its markup happens to lack a slot.
+    '<div><h2>CPL Implementation Funding</h2><span id="cplFundTitleLink"></span></div>' +
     '<div id="cplFundingMount">placeholder</div>' +
     "</div></div></body></html>",
     { runScripts: "outside-only", url: "https://example.org/" });
@@ -75,14 +79,50 @@ function boot(window) {
   check("W2: the public page shows FEWER pool boxes than the curator view",
     pubCards < privCards && pubCards > 0);
 
-  // The calculation sanity-check link is a curator working tool (an
-  // access-controlled Claude artifact) — private only, never on the college page.
-  const privHtml = privDoc.getElementById("cplFundingMount").innerHTML;
-  const pubHtml = pubDoc.getElementById("cplFundingMount").innerHTML;
-  check("W2b: the private view links the calculation sanity-check artifact",
-    /claude\.ai\/code\/artifact/.test(privHtml) && /Calculation sanity check/.test(privHtml));
-  check("W2b: the public college page does NOT expose the sanity-check link",
-    !/claude\.ai\/code\/artifact/.test(pubHtml) && !/Calculation sanity check/.test(pubHtml));
+  // The model explainer ("How this funding model works", renamed from
+  // "Calculation sanity check" 2026-08-21) is a team working tool — an
+  // access-controlled Claude artifact, private only, never on the college page.
+  // The link MOVED to the tab's title row (Sam, 2026-08-22) — it describes the
+  // whole model, so it sits beside the tab's name rather than as a full-width
+  // strip above the content. Scan the whole pane, not just the mount, or this
+  // guard silently stops seeing the thing it guards.
+  const privHtml = privDoc.querySelector(".main-container").innerHTML;
+  const pubHtml = pubDoc.querySelector(".main-container").innerHTML;
+  // The explainer moved from a published Claude artifact to a LIVE page in this
+  // repo (2026-08-23), so the href is the relative "funding-model/". Matching on
+  // the href rather than the old host is the point: an artifact URL reappearing
+  // here would mean the tab is pointing at a snapshot again.
+  const HREF = /href="funding-model\/"/;
+  check("W2b: the private view links the funding-model explainer",
+    HREF.test(privHtml) && /How this funding model works/.test(privHtml));
+  check("W2b: ...and it is the LIVE page, not a republished snapshot",
+    !/claude\.ai\/code\/artifact/.test(privHtml));
+  check("W2b: the explainer link is in the TITLE ROW, not inside the mount",
+    HREF.test(privDoc.getElementById("cplFundTitleLink").innerHTML) &&
+    !HREF.test(privDoc.getElementById("cplFundingMount").innerHTML));
+  check("W2b: the public college page does NOT expose the explainer link",
+    !HREF.test(pubHtml) && !/How this funding model works/.test(pubHtml));
+  check("W2b: the public page is blank because publicMode() blanks it, not for want of a slot",
+    !!pubDoc.getElementById("cplFundTitleLink") &&
+    pubDoc.getElementById("cplFundTitleLink").innerHTML === "");
+  // The label is a link, not a decorated one — Sam's no-decorative-glyphs rule.
+  check("W2b: the explainer link carries no decorative glyph",
+    privHtml.indexOf("🧮") === -1);
+
+  // Sam's minimum/maximum box holds TWO editable dials (2026-08-22). On the
+  // college page both must degrade to plain figures — the curate sweep takes
+  // data-edit inputs out, and an empty box would read as "no minimum is set".
+  // The dials are the ADOPTED one-pool pair (base $150,000 / cap $400,000 on
+  // the combined award, 2026-08-31 — the baked floor was 175,000 before), and
+  // the labels are Sam's renames: "Base award (minimum)" / "Cap (maximum)".
+  const pubFloor = pubDoc.querySelector(".cplfund-card.floor");
+  const privFloor = privDoc.querySelector(".cplfund-card.floor");
+  check("W2c: the public page shows the base AND the cap as plain figures",
+    !!pubFloor && /150,000/.test(pubFloor.textContent) && /400,000/.test(pubFloor.textContent) &&
+    /Base award \(minimum\)/.test(pubFloor.textContent) && /Cap \(maximum\)/.test(pubFloor.textContent));
+  check("W2c: …with no editable control on either dial",
+    !!pubFloor && pubFloor.querySelectorAll("[data-edit]").length === 0 &&
+    !!privFloor && privFloor.querySelectorAll("[data-edit]").length === 4);
 
   // The structural hide is still available and still DOES move money — the two
   // mechanisms must stay distinguishable, or the whole point is lost.
@@ -107,10 +147,13 @@ function boot(window) {
     !/N2N/.test(pubTxt) && !/Remaining 2025-26/.test(pubTxt));
   check("W5: but the public view STILL reconciles to the $15M appropriation",
     /account for/.test(pubTxt) && /\$15,000,000/.test(pubTxt));
-  check("W6: the tab is renamed to the seed-funding framing",
+  check("W6: the seed-funding framing stays on the section heading",
     /\$50K Seed Funding/.test(privTxt));
-  check("W6: the model tab is renamed for a college audience",
-    /College Implementation Funding/.test(privTxt));
+  // Sam, 2026-09-24 (review sheet item 1): the tab buttons carry the short
+  // names; the long ones stay on the sections they head.
+  const subtabs = Array.from(privDoc.querySelectorAll(".cplfund-subtabs button")).map((b) => b.textContent);
+  check("W6: the two funding tabs read \"2026-28 Funding\" and \"2025-26 Funding\"",
+    subtabs[0] === "2026-28 Funding" && subtabs[1] === "2025-26 Funding");
 }
 
 

@@ -1,0 +1,37 @@
+{
+  "_about": "Curator rulings on college/district identity. Judgements live HERE, as data, so a crosswalk rebuild can never overwrite one — the same reason cr_reference_decisions is a table rather than a derived value. Every ruling carries WHO and WHEN, because a curator's knowledge is a first-class input and must be attributed, not laundered into an anonymous value.",
+  "_schema": {
+    "same_entity": "A spelling that IS an existing identity. Folded into that row's variants.",
+    "separate_entity": "A genuinely distinct MAP org that shares a stem with a known one. NOT folded. If map_college_id is null, MAP's own id for it is unknown to us and must be supplied — never minted here, because college_id is MAP's to assign."
+  },
+  "rulings": [
+    {
+      "id": "credit-noncredit-twins-2026-08-21",
+      "decided_by": "Sam Lee",
+      "decided_on": "2026-08-21",
+      "source": "Direct instruction in session: \"Calbright and LAUNCH get 2 entities--one credit, one noncredit. San Diego and North Orange are one entity\"",
+      "question": "Four names ending in 'Credit' or 'Non-Credit' sit beside a known identity. Two MAP orgs each, or one org spelled twice?",
+      "same_entity": [
+        { "name": "San Diego College of Continuing Education Credit", "is_variant_of": "San Diego College of Continuing Education", "map_college_id": 119 },
+        { "name": "San Diego Continuing Education", "is_variant_of": "San Diego College of Continuing Education", "map_college_id": 119 },
+        { "name": "North Orange Continuing Education Credit", "is_variant_of": "North Orange Continuing Education", "map_college_id": 121 }
+      ],
+      "separate_entity": [
+        {
+          "name": "Calbright College Credit",
+          "sibling": "Calbright College Non-Credit",
+          "sibling_map_college_id": 24,
+          "map_college_id": null,
+          "needs": "MAP's college_id for the CREDIT arm. Measured 2026-08-21: it appears in chatbox_college_profiles and map_college_contacts and carries its own landing page, but no row in map_colleges and no id in map_college_users. Only MAP can supply it."
+        },
+        {
+          "name": "Launch Apprenticeship Non-Credit",
+          "sibling": "Launch Apprenticeship",
+          "sibling_map_college_id": 132,
+          "map_college_id": null,
+          "needs": "MAP's college_id for the NON-CREDIT arm. Same measurement: present in chatbox_college_profiles, absent from map_colleges and map_college_users."
+        }
+      ]
+    }
+  ]
+}

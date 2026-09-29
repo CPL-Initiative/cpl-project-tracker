@@ -149,7 +149,9 @@ function makeWin(opts) {
   const api = w.CPL_SIERRA_TRAINING_TAB;
   api.activate();
   const html = w.document.getElementById("sierra-training-root").innerHTML;
-  check("gate: logged-out sees the sign-in gate", /Team &amp; RACI/.test(html));
+  // Was: /Team &amp; RACI/. This tab's gate needs a reviewer sign-in for the
+  // rules pane, which now lives in the About menu.
+  check("gate: logged-out sees the sign-in gate", /About|in the header/i.test(html));
   check("gate: logged-out fetches NO gated data", w.__fetches.length === 0);
 })();
 (function (done) {
@@ -205,8 +207,13 @@ function smokeFilterTest() {
     const root = w.document.getElementById("sierra-training-root");
     const html = root.innerHTML;
     check("smoke rows are hidden from the queue by default", !!root.querySelector('[data-open="real1"]') && !root.querySelector('[data-open="ci1"]'));
-    // The stat box is the number a reviewer trusts at a glance — 1 real 👎, not 4.
-    check("stats count only real rows (👎 total excludes CI)", /<div class="n">1<\/div><div class="l">\u{1F44E} Thumbs-down/u.test(html));
+    // The stat box is the number a reviewer trusts at a glance — 1 real
+    // thumbs-down, not 4. Read by KEY since round 1 (2026-09-28): the card is a
+    // <button data-stat="down"> and its label is a word, not the 👎 it used to be.
+    const downCard = root.querySelector('[data-stat="down"]');
+    check("stats count only real rows (thumbs-down total excludes CI)",
+      !!downCard && downCard.querySelector(".n").textContent === "1"
+      && downCard.querySelector(".l").textContent === "Thumbs-down");
     check("the hidden CI rows are disclosed, not silently dropped", /include 3 automated test messages/.test(html));
     const box = root.querySelector("[data-f-smoke]");
     check("a reviewer can still opt in to see CI rows", !!box);
@@ -215,7 +222,8 @@ function smokeFilterTest() {
     setTimeout(function () {
       const after = w.document.getElementById("sierra-training-root");
       check("toggling CI rows on brings them back", !!after.querySelector('[data-open="ci1"]'));
-      check("stats follow the toggle too", /<div class="n">4<\/div><div class="l">\u{1F44E} Thumbs-down/u.test(after.innerHTML));
+      const downAfter = after.querySelector('[data-stat="down"]');
+      check("stats follow the toggle too", !!downAfter && downAfter.querySelector(".n").textContent === "4");
       done();
     }, 30);
   }, 30);

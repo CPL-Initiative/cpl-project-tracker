@@ -1,0 +1,2176 @@
+{
+ "_note": "San Joaquin Delta College offering -> SJCOE occupation alignment rulings. Companion to kb/occupation_credential_map.json: that file answers 'which CPL credential matches this occupation?' (statewide), this one answers 'what does DELTA actually teach that could carry it?'. Authored for the SJCOE <-> Delta partnership conversation, 2026-08-19. The match is SUBJECT-MATTER JUDGMENT over Delta's COCI program export + its published course catalog; it is a discussion agenda, not a determination. Faculty confirm.",
+ "_schema": "occupations: { <normalized occupation key from occupation_credential_map.json> : { fit: confirmed|potential|none, programs: [..], courses: [..], why: '', cpl: '', note: '' } }. fit = strength of the DELTA OFFERING match only; MAP exhibit status is computed separately from statewide_data.js.",
+ "_sources": [
+  "kb/coci_programs_data.js (COCI program export 2026-06-17) - 251 active/approved Delta programs, 184 CTE",
+  "Supabase chatbox_college_courses (synced 2026-08-13) - 1,449 Delta courses",
+  "statewide_data.js (2026-08-19) - Delta adopter/potential status per exhibit",
+  "credential_reference_data.js (2026-08-19) - Delta's existing articulation lines"
+ ],
+ "_authored": "2026-08-19",
+ "occupations": {
+  "air conditioning refrigeration service and repair": {
+   "fit": "C",
+   "programs": [
+    "Heating & Air Conditioning: Refrigeration (A.S.)",
+    "Heating and Air Conditioning (Cert. 30-60u)",
+    "Refrigeration (Cert. 30-60u)"
+   ],
+   "courses": [
+    "HVACR 70A Refrigeration and Air Conditioning",
+    "HVACR 70B Intermediate Refrigeration",
+    "HVACR 70C Advanced Refrigeration",
+    "HVACR 71A Air Conditioning Components and Circuits",
+    "HVACR 71B Air Conditioning Troubleshooting",
+    "HVACR 71C Air Conditioning Systems and Heat Pumps",
+    "HVACR 71D Commercial Air Conditioning Design and Operation",
+    "HVACR 72A-72C Gas Heating series"
+   ],
+   "why": "Delta's HVACR sequence is a course-for-course match to the credential names on the SJCOE list: Refrigeration Principles/Service map to HVACR 70A-70C, Air Conditioning Principles/Intermediate to HVACR 71A-71C.",
+   "cpl": "The Refrigeration Service / Refrigeration Principles / Air Conditioning Principles exhibits are LOCAL articulations at other colleges - no statewide exhibit yet. Delta adopting them (or a Delta-built exhibit) would be a strong candidate to become statewide, given how complete the sequence is. Delta IS flagged potential on the ASE T7/T8 + MACS/609 bundle."
+  },
+  "ambulatory coder": {
+   "fit": "P",
+   "programs": [
+    "Medical Office Assistant (Cert. 16-30u)",
+    "Health Science (A.S.)"
+   ],
+   "courses": [
+    "H S 36 Medical Terminology and Speech",
+    "BIM/BUS office administration courses"
+   ],
+   "why": "Delta has medical terminology and office administration but NO coding or billing program. A CPC/CCS holder would find little to articulate against today.",
+   "cpl": "Medical Insurance Billing and Coding is local-only elsewhere; Delta is not listed. This is a PROGRAM gap worth naming - health information is a large regional employer need and Delta has the adjacent health science infrastructure to build on."
+  },
+  "application developer": {
+   "fit": "C",
+   "programs": [
+    "Computer Programming (Cert. 30-60u)",
+    "Computer Programming - Essentials (Cert. 16-30u)",
+    "Computer Programming-Competence (Cert. 30-60u)",
+    "Computer Science (A.S. / A.S.-T)",
+    "Computer Web Developer (Cert. 30-60u)"
+   ],
+   "courses": [
+    "CSP 51 Programming in Python",
+    "CSP 26A JAVA Programming",
+    "CSP 26B Data Structures with Java",
+    "CSP 31A/31B C++ Programming I & II",
+    "CSP 17 Introduction to Programming Concepts and Methodologies",
+    "CSW 45 Server-side Web Development"
+   ],
+   "why": "Delta's programming certificates cover Python (CSP 51), Java (CSP 26A/26B), C++ (CSP 31A/31B), C# (CSP 32A) and web/database development, matching the PCAP, Java fundamentals and Python fundamentals exhibits.",
+   "cpl": "Delta is flagged POTENTIAL on PCAP, Introduction to Python Programming, Programming Fundamentals: Java and Python Programming Fundamentals. All local-only today; Delta adopting them creates Central Valley access."
+  },
+  "arson bomb investigator": {
+   "fit": "N",
+   "programs": [],
+   "courses": [],
+   "why": "Delta has NO fire technology program and no fire service courses. The only fire-named course in the catalog is ELEC 41 Fire Alarm Systems, which is an electrical installation course, not fire service training.",
+   "cpl": "The fire exhibits are the best-covered cluster in the whole state (Firefighter 1 at 17 colleges, the full Fire Officer 2A-2E and Fire Inspector 1A-1D series statewide) - but Delta cannot adopt them without curriculum. Two options to put to the college: refer these students to Modesto Junior College (265 career credentials, the largest portfolio in the state), or treat a Delta fire program as a strategic build. MAP does flag Delta as a potential adopter on Firefighter 1 and Fire Apparatus Driver/Operator 1B, which means the platform expects a college of Delta's profile to offer it."
+  },
+  "barber": {
+   "fit": "N",
+   "programs": [],
+   "courses": [],
+   "why": "Delta has no barbering or cosmetology program.",
+   "cpl": "Barbering License (California) is a STATEWIDE exhibit with adopters elsewhere. Delta cannot adopt without a program - refer out. Note these are Board of Barbering and Cosmetology licences, so the statewide exhibit is mature and portable."
+  },
+  "bus and truck mechanics and diesel engine specialists": {
+   "fit": "C",
+   "programs": [
+    "Diesel Equipment Technician (A.S. / Cert. 30-60u)",
+    "Diesel Bus Technician (Cert. 30-60u)",
+    "Diesel Automotive Equipment Technician (Cert. 30-60u)",
+    "Heavy Equipment Technician (A.S. / Cert. 30-60u)",
+    "Heavy Equipment Mechanic (Cert. 16-30u)",
+    "Caterpillar Dealer Service Technician Apprenticeship (A.S. / Cert. 30-60u)",
+    "Caterpillar Dealer Engine Technician Apprenticeship (Cert. 16-30u)"
+   ],
+   "courses": [
+    "DIESL 91 Heavy Duty Brakes",
+    "DIESL 92 Heavy Duty Power Trains",
+    "DIESL 93 Heavy Duty Truck Components",
+    "DIESL 94 Diesel Engine Principles",
+    "DIESL 95 Diesel Engine Repair",
+    "DIESL 96 Diesel Engine Fuel and Tune-Up",
+    "DIESL 97 Diesel Air Conditioning",
+    "DIESL 98 Allison Transmission Service",
+    "DIESL 99 Computer Diagnosis and Troubleshooting",
+    "CAT 80-94 Caterpillar series"
+   ],
+   "why": "Delta runs both a general diesel pathway and a manufacturer apprenticeship (Caterpillar Dealer Service/Engine Technician). The DIESL course titles line up with the ASE Medium/Heavy Truck series and with the Heavy/Medium Duty Truck Technology Apprenticeship exhibit almost one-to-one.",
+   "cpl": "Delta is flagged POTENTIAL on the Heavy/Medium Duty Truck Technology Apprenticeship and on ASE A1/A2/A3 - exhibits already built, Delta simply has not adopted. The Caterpillar apprenticeship is a Delta-specific asset that could support a NEW exhibit no other college could offer."
+  },
+  "bus driver school special client": {
+   "fit": "P",
+   "programs": [
+    "Diesel Bus Technician (Cert. 30-60u)",
+    "Transportation (A.A.)",
+    "Logistics and Transportation Supervisor (Cert. 16-30u)"
+   ],
+   "courses": [
+    "A IND 78A Defensive Driving",
+    "A IND 78B Heavy Truck Operation",
+    "DIESL 89 Introduction to ADA Wheelchair Ramp and Lifts"
+   ],
+   "why": "CAREFUL: Delta's Diesel Bus Technician certificate trains people who REPAIR buses, not people who DRIVE them. The genuine driver-side matches are A IND 78A Defensive Driving and 78B Heavy Truck Operation, plus DIESL 89 on ADA wheelchair lifts. There is no commercial driver training program.",
+   "cpl": "Bus Operator is a local-only exhibit elsewhere; Delta is not listed. Given SJCOE's own transportation operation, this may be better served by a direct SJCOE-issued credential feeding a Delta exhibit than by Delta building a driver program."
+  },
+  "cable splicer": {
+   "fit": "N",
+   "programs": [],
+   "courses": [],
+   "why": "No cable splicing instruction at Delta. The A ELE utility series covers switching and relaying but not underground/overhead splicing.",
+   "cpl": "No CPL anywhere in California for this occupation. If the apprenticeship sponsor behind Delta's A ELE series also trains splicers, the same exhibit-build conversation applies."
+  },
+  "cable splicer gc": {
+   "fit": "N",
+   "programs": [],
+   "courses": [],
+   "why": "No cable splicing instruction at Delta.",
+   "cpl": "No CPL anywhere in California."
+  },
+  "carpenter": {
+   "fit": "N",
+   "programs": [],
+   "courses": [],
+   "why": "Delta has no carpentry, drywall, lath or plaster program. Note the naming trap: Delta's 'A CON' course prefix is a plumbing apprenticeship, not general construction.",
+   "cpl": "Carpenters Apprenticeship (Carpenter / Drywall Finisher / Drywall Applicator / Drywall-Lather / Millwright / Hardwood Floor Layer) and the NCCER Carpenter levels are STATEWIDE exhibits with adopters elsewhere. Delta cannot adopt without curriculum. Refer to a college that has adopted, or discuss whether the regional carpenters JATC would partner with Delta."
+  },
+  "cement mason": {
+   "fit": "N",
+   "programs": [],
+   "courses": [],
+   "why": "Delta has no masonry, concrete, cement, tile or terrazzo instruction.",
+   "cpl": "C-8 Concrete Contractor is a STATEWIDE CSLB-licence exhibit and adopters exist elsewhere — so the credential is portable, Delta simply has no pathway to attach it to. Refer out, or discuss whether a concrete/masonry pathway is on Delta's roadmap."
+  },
+  "central sterile processing technician": {
+   "fit": "N",
+   "programs": [
+    "Nursing R.N. (A.S.)",
+    "Health Science (A.S.)"
+   ],
+   "courses": [],
+   "why": "Delta has no surgical technology or sterile processing program. Its health portfolio is nursing, psych tech, rad tech, CNA/HHA and EMS.",
+   "cpl": "No CPL exists anywhere in California for either occupation. Both are high-demand hospital roles - a genuine statewide gap the SJCOE partnership could help make the case for."
+  },
+  "communication technician gc": {
+   "fit": "P",
+   "programs": [
+    "Computer Network Technician (A.S. / Cert. 16-30u)",
+    "Electronics Technology (Cert. 16-30u)",
+    "Electrical Technology (A.S.)"
+   ],
+   "courses": [
+    "ELEC 42 Security Alarms",
+    "ELEC 41 Fire Alarm Systems",
+    "CNT 30E Network Hardware Application",
+    "CNT 30A Introduction to Computer Networks",
+    "ELECT 13A Digital Logic, Circuits, and Systems"
+   ],
+   "why": "Delta teaches low-voltage systems (fire alarm, security alarm) and network cabling/hardware, which is the substance of voice-data-video installation - but there is no sound-and-communications or telecom program as such.",
+   "cpl": "Delta is flagged POTENTIAL on Sound and Communication Systems Installer Apprenticeship and on Communications Systems (both local-only elsewhere). ELEC 41/42 give a credible articulation target. Ask whether the local IBEW sound-and-comm JATC would partner."
+  },
+  "community health worker promoter": {
+   "fit": "P",
+   "programs": [
+    "Mental Health Specialist (Cert. 30-60u)",
+    "Substance Abuse Counselor (Cert. 30-60u)",
+    "Health Science (A.S.)",
+    "Spanish for Medical Professions (Cert. 8-16u / Noncredit)"
+   ],
+   "courses": [
+    "H ED 1 Health Education",
+    "H ED 30 Community First Aid and Safety",
+    "SOCIO Human Services courses",
+    "PSYCH Alcohol and Controlled Substances courses"
+   ],
+   "why": "Delta has adjacent human-services certificates and a Spanish for Medical Professions certificate that fits the promotora role well, but no Community Health Worker program.",
+   "cpl": "Community Health Worker Skills and Introduction to Community Health Work are local-only exhibits elsewhere; Delta is not listed. CHW is a fast-growing California credential (DHCS-recognised) - a credible build for Delta given the Spanish-language health pathway already in place."
+  },
+  "computer user support specialist help desk": {
+   "fit": "C",
+   "programs": [
+    "Computer Support (Cert. 30-60u)",
+    "Computer Support - Technician (Cert. 16-30u)",
+    "Computer Information Systems (A.S.)",
+    "Computer Network Technician (A.S. / Cert. 16-30u)",
+    "Computer Networking - Essentials (Cert. 16-30u)",
+    "Computer Networking Software (Cert. 30-60u)",
+    "Computer Networking-Competence (Cert. 16-30u)"
+   ],
+   "courses": [
+    "ELECT 14C IT Essentials (A+)",
+    "CS 32 Introduction to Computer Operating Systems",
+    "CNT 30A Introduction to Computer Networks",
+    "CS 56 Networking Essentials",
+    "CSA 71 Microsoft Windows"
+   ],
+   "why": "ELECT 14C is literally named 'IT Essentials (A+)' - it is built to the CompTIA A+ objectives. Delta also runs two Computer Support certificates.",
+   "cpl": "Delta is flagged POTENTIAL on CompTIA A+ (statewide, 24 adopters) and CompTIA Network+. A+ is one of the most commonly held certifications in the SJCOE population - this should be near the top of the agenda."
+  },
+  "construction equipment operator": {
+   "fit": "P",
+   "programs": [
+    "Heavy Equipment Technician (A.S.)",
+    "Agriculture Mechanics (Cert. 16-30u)"
+   ],
+   "courses": [
+    "A IND 78L Motor Grader Operation",
+    "A IND 78M Tractor Operations, Trenching, and Shoring",
+    "A IND 78G Power Lift and Four-Wheel Drive Units",
+    "A IND 78E Soils, Asphalt, and Concrete",
+    "AGEGR 33 Equipment Maintenance and Operation"
+   ],
+   "why": "Delta teaches equipment OPERATION inside the utility apprenticeship (motor grader, tractor/trenching/shoring, power lift). Its Heavy Equipment programs are maintenance-focused, so the operator content sits in the A IND series - confirm access for non-apprentices.",
+   "cpl": "Delta is not listed on the Skid Steer Loader Operator or Forklift Operator exhibits (local-only elsewhere). A IND 78G is close to the powered-industrial-truck content. Worth exploring."
+  },
+  "construction gradechecker": {
+   "fit": "P",
+   "programs": [],
+   "courses": [
+    "A IND 78D Surveying and Flood Control Systems",
+    "E TECH 80 Applied Surveying",
+    "A IND 78E Soils, Asphalt, and Concrete"
+   ],
+   "why": "Delta teaches applied surveying and soils/asphalt/concrete, which is the gradechecking skill base, but there is no gradechecker pathway.",
+   "cpl": "Fundamentals of Construction is a local-only exhibit elsewhere; Delta is not listed. Low priority."
+  },
+  "construction lubrication technician": {
+   "fit": "N",
+   "programs": [],
+   "courses": [],
+   "why": "No Delta pathway for this specialised operating role.",
+   "cpl": "No CPL exists anywhere in California for this occupation."
+  },
+  "control and valve installers and repairers except mechanical door": {
+   "fit": "P",
+   "programs": [
+    "Industrial Technology: Mechanical Apprenticeship Option (Cert. 30-60u)",
+    "Fluid Power & Automation Technology (A.S.)"
+   ],
+   "courses": [
+    "A IND 77D Plant Auxiliary Equipment",
+    "A IND 77F Pneumatics",
+    "INDUS 31 Industrial Hydraulics",
+    "E TECH 47 Introduction to Industrial Control Systems"
+   ],
+   "why": "Valve and control work sits inside Delta's plant-auxiliary and fluid-power instruction, but there is no dedicated course.",
+   "cpl": "No CPL exists anywhere in California. Rides along with the utility/industrial exhibit build."
+  },
+  "control technician": {
+   "fit": "P",
+   "programs": [
+    "Automation Technology - Mechatronics (A.S.)",
+    "Automation Technician - Mechatronics (Cert. 30-60u)",
+    "Control Systems Technician (Noncredit)",
+    "Electronics Technology (Cert. 16-30u)",
+    "Basic Electronics Technician (Noncredit)",
+    "Fluid Power & Automation Technology (A.S. / Cert. 16-30u)",
+    "Electronics Technology - Manufacturing Associate (Cert. 16-30u)"
+   ],
+   "courses": [
+    "E TECH 47 Introduction to Industrial Control Systems",
+    "ELEC 37 Introduction to Programmable Logic Controllers",
+    "ELECT 17/18 Robotics, Automation and Mechatronics Systems",
+    "A IND 77G Governor Systems",
+    "A IND 77H Computers in Hydro-Electric Plants"
+   ],
+   "why": "Delta teaches industrial control systems and PLCs, and the utility apprenticeship series covers governor systems and plant computers. But no course is specific to metering or gas control instrumentation - the alignment is at the underlying-competency level and needs faculty confirmation.",
+   "cpl": "Delta is flagged POTENTIAL on Instrumentation Devices and Systems (local-only elsewhere). Worth asking whether the utility partner behind the A IND apprenticeship would sponsor a metering/instrumentation exhibit - nothing statewide exists."
+  },
+  "corrosion mechanic": {
+   "fit": "P",
+   "programs": [
+    "Industrial Technology: Operations Apprenticeship Option (Cert. 30-60u)",
+    "Industrial Technology: Mechanical Apprenticeship Option (Cert. 30-60u)",
+    "Industrial Technology: Maintenance Apprenticeship Option (Cert. 30-60u)",
+    "Industrial Technology: Electrical Apprenticeship Option (Cert. 30-60u)"
+   ],
+   "courses": [
+    "A IND 78H Protective Coatings",
+    "A IND 77D Plant Auxiliary Equipment"
+   ],
+   "why": "A IND 78H Protective Coatings is the cathodic-protection/coatings content a corrosion mechanic works in, though it is one course rather than a pathway.",
+   "cpl": "No CPL exists anywhere for this occupation. Low volume, but it rides along with the utility apprenticeship conversation at no extra cost."
+  },
+  "cosmetologists": {
+   "fit": "N",
+   "programs": [],
+   "courses": [],
+   "why": "Delta has no cosmetology program.",
+   "cpl": "Cosmetology License is a STATEWIDE exhibit with adopters elsewhere. Refer out."
+  },
+  "crane operator": {
+   "fit": "P",
+   "programs": [
+    "Industrial Technology - Level II - Mechanical (Cert. 30-60u)"
+   ],
+   "courses": [
+    "A IND 78K Mobile Cranes and Rigging",
+    "A CON 87B Related Math and Rigging",
+    "DRAMA 43 Principles of Stage Rigging"
+   ],
+   "why": "A IND 78K Mobile Cranes and Rigging is a direct topical match, and A CON 87B adds rigging math. Neither is a crane-operator certification course, so this is partial.",
+   "cpl": "Delta is flagged POTENTIAL on Ironworker Apprenticeship - Cranes. Rigging and Signaling is local-only elsewhere. A IND 78K makes Delta a credible host for a rigging/signaling exhibit."
+  },
+  "cybersecurity analyst": {
+   "fit": "C",
+   "programs": [
+    "Computer Network Security Technician (A.S. / Cert. 16-30u)"
+   ],
+   "courses": [
+    "CSN 40 Information Security Fundamentals",
+    "CSN 60 Network Security",
+    "CNT 34 Network Systems Security",
+    "CSC 32 / CNT 35 Ethical Hacking",
+    "CSN 34 Computer Forensics",
+    "CSN 36 Scripting for Cybersecurity"
+   ],
+   "why": "Delta's security stack covers the Security+ domains (CSN 40, CSN 60, CNT 34), the PenTest+/ethical-hacking domain (CSC 32, CNT 35) and the CySA+ analyst/forensics domain (CSN 34, CSN 36).",
+   "cpl": "Delta is flagged POTENTIAL on CompTIA Security+, CySA+, PenTest+ and Network+ - four statewide exhibits, none adopted. A single faculty review could clear all four."
+  },
+  "designated subjects instructor": {
+   "fit": "P",
+   "programs": [
+    "Paraprofessional Preparation (Cert. 16-30u)",
+    "Early Childhood Education (A.A. / A.S.-T)"
+   ],
+   "courses": [
+    "EDUC 6 Education courses",
+    "ECE 35 Adult Supervision and Mentoring in Early Care and Education",
+    "ECE 31A Principles and Practices of Teaching Young Children"
+   ],
+   "why": "Delta has teacher-preparation and adult-supervision content but does not offer the Designated Subjects Teaching Credential coursework itself (that typically sits with a county office or a university).",
+   "cpl": "Instructor I Instructional Methodology and Instructor II Instructional Development are local-only exhibits elsewhere; Delta is not listed. Note SJCOE itself may be the credential ISSUER here - which makes this an unusually direct partnership opportunity."
+  },
+  "digital accessibility developer application developer": {
+   "fit": "C",
+   "programs": [
+    "Computer Programming (Cert. 30-60u)",
+    "Computer Programming - Essentials (Cert. 16-30u)",
+    "Computer Programming-Competence (Cert. 30-60u)",
+    "Computer Science (A.S. / A.S.-T)",
+    "Computer Web Developer (Cert. 30-60u)"
+   ],
+   "courses": [
+    "CSP 51 Programming in Python",
+    "CSP 26A JAVA Programming",
+    "CSP 26B Data Structures with Java",
+    "CSP 31A/31B C++ Programming I & II",
+    "CSP 17 Introduction to Programming Concepts and Methodologies",
+    "CSW 45 Server-side Web Development"
+   ],
+   "why": "Delta's programming certificates cover Python (CSP 51), Java (CSP 26A/26B), C++ (CSP 31A/31B), C# (CSP 32A) and web/database development, matching the PCAP, Java fundamentals and Python fundamentals exhibits.",
+   "cpl": "Delta is flagged POTENTIAL on PCAP, Introduction to Python Programming, Programming Fundamentals: Java and Python Programming Fundamentals. All local-only today; Delta adopting them creates Central Valley access."
+  },
+  "dredge operator": {
+   "fit": "N",
+   "programs": [],
+   "courses": [],
+   "why": "No Delta pathway for this specialised operating role.",
+   "cpl": "No CPL exists anywhere in California for this occupation."
+  },
+  "drywall finisher": {
+   "fit": "N",
+   "programs": [],
+   "courses": [],
+   "why": "Delta has no carpentry, drywall, lath or plaster program. Note the naming trap: Delta's 'A CON' course prefix is a plumbing apprenticeship, not general construction.",
+   "cpl": "Carpenters Apprenticeship (Carpenter / Drywall Finisher / Drywall Applicator / Drywall-Lather / Millwright / Hardwood Floor Layer) and the NCCER Carpenter levels are STATEWIDE exhibits with adopters elsewhere. Delta cannot adopt without curriculum. Refer to a college that has adopted, or discuss whether the regional carpenters JATC would partner with Delta."
+  },
+  "drywall lather": {
+   "fit": "N",
+   "programs": [],
+   "courses": [],
+   "why": "Delta has no carpentry, drywall, lath or plaster program. Note the naming trap: Delta's 'A CON' course prefix is a plumbing apprenticeship, not general construction.",
+   "cpl": "Carpenters Apprenticeship (Carpenter / Drywall Finisher / Drywall Applicator / Drywall-Lather / Millwright / Hardwood Floor Layer) and the NCCER Carpenter levels are STATEWIDE exhibits with adopters elsewhere. Delta cannot adopt without curriculum. Refer to a college that has adopted, or discuss whether the regional carpenters JATC would partner with Delta."
+  },
+  "electrical and electronic engineering technologists and technicians": {
+   "fit": "C",
+   "programs": [
+    "Automation Technology - Mechatronics (A.S.)",
+    "Automation Technician - Mechatronics (Cert. 30-60u)",
+    "Control Systems Technician (Noncredit)",
+    "Electronics Technology (Cert. 16-30u)",
+    "Basic Electronics Technician (Noncredit)",
+    "Fluid Power & Automation Technology (A.S. / Cert. 16-30u)",
+    "Electronics Technology - Manufacturing Associate (Cert. 16-30u)",
+    "Engineering Technology (A.S. / Cert. 30-60u)"
+   ],
+   "courses": [
+    "ELECT 17 Robotics/Automation Introduction",
+    "ELECT 18 Robotics/Automation/Mechatronics Systems",
+    "ELECT 11 AC and DC Network Analysis",
+    "ELECT 12 Solid State Devices",
+    "ELECT 13A Digital Logic, Circuits, and Systems",
+    "ELECT 14B Advanced Electronics Troubleshooting",
+    "E TECH 47 Introduction to Industrial Control Systems",
+    "ELEC 37 Introduction to Programmable Logic Controllers",
+    "INDUS 31 Industrial Hydraulics",
+    "INDUS 35 Mobile Hydraulics"
+   ],
+   "why": "Delta's Electronics Technology and Engineering Technology programs cover the analysis, solid-state, digital-logic and troubleshooting content these technician roles are built on.",
+   "cpl": "Delta is flagged POTENTIAL on Instrumentation Devices and Systems and Electrical Motors and Controls 1. Both local-only; a Delta adoption widens Central Valley access."
+  },
+  "electrical and electronics repairers powerhouse substation and relay": {
+   "fit": "C",
+   "programs": [
+    "Industrial Technology: Operations Apprenticeship Option (Cert. 30-60u)",
+    "Industrial Technology: Mechanical Apprenticeship Option (Cert. 30-60u)",
+    "Industrial Technology: Maintenance Apprenticeship Option (Cert. 30-60u)",
+    "Industrial Technology: Electrical Apprenticeship Option (Cert. 30-60u)"
+   ],
+   "courses": [
+    "A ELE 75D Protective Relaying",
+    "A ELE 75E High Voltage Switching",
+    "A ELE 75C Transformers and Polychlorinated Biphenyl",
+    "A ELE 75B Advanced Electricity",
+    "A IND 77D Plant Auxiliary Equipment"
+   ],
+   "why": "A ELE 75C/75D/75E are named for exactly this work - transformers, protective relaying and high voltage switching are the powerhouse/substation/relay repairer's core skill set. This is the closest course-to-occupation match in the entire crosswalk for an occupation with no CPL anywhere.",
+   "cpl": "BUILD-NEW, HIGHEST STRATEGIC VALUE. The August 2026 statewide run found no CPL recommendation anywhere in the system for the hydro/utility cluster. Delta appears to hold the only matching curriculum. An exhibit built here would be first-in-state and a natural candidate for statewide adoption. Ask the college who the apprenticeship sponsor is - that sponsor is the credential issuer a MAP exhibit would be keyed to."
+  },
+  "electrical machinist": {
+   "fit": "C",
+   "programs": [
+    "Machining Technology (A.S.)",
+    "Manual Machining (Cert. 16-30u)",
+    "Computer Numerical Control (CNC) Operator/Programmer (Cert. 16-30u)"
+   ],
+   "courses": [
+    "MACH 70A/70B Machining Fundamentals I & II",
+    "MACH 73A/73B Intermediate Machining Methods I & II",
+    "MACH 74A/74B Computer Numerical Controlled Machining I & II",
+    "MACH 76A/76B Computer Aided Machining I & II",
+    "MACH 16 Machine Tool Process",
+    "E TECH 20 Materials and Measurements"
+   ],
+   "why": "Delta's split between Manual Machining and CNC Operator/Programmer mirrors the credential split on the SJCOE list (General Machine Shop / Basic Machining vs Introduction to CNC Machining / CNC Machine Set-Up / CNC Mill Programming).",
+   "cpl": "Delta is flagged POTENTIAL on MSSC Certified Production Technician (CPT) - Machinist and on the four CNC/machining exhibits. Currently local-only articulations elsewhere; a Delta adoption adds a Central Valley site for a credential the region's manufacturers use."
+  },
+  "electrical power line installers and repairers": {
+   "fit": "N",
+   "programs": [],
+   "courses": [],
+   "why": "Delta has no lineworker or power-line program. The A ELE utility series is substation and plant electrical, not line work - do not confuse the two at the meeting.",
+   "cpl": "No CPL exists anywhere in California for the lineworker cluster - this was the single largest gap the statewide SJCOE crosswalk found. Delta does not currently close it. However, Delta is the closest thing in the region to a utility-training college, so it is the right college to ASK whether a lineworker pathway is on its roadmap."
+  },
+  "electrical technician": {
+   "fit": "C",
+   "programs": [
+    "Industrial Technology: Electrical Apprenticeship Option (Cert. 30-60u)",
+    "Electrical Technology (A.S.)",
+    "Electrical Technology - Electrical Maintenance (Cert.)"
+   ],
+   "courses": [
+    "A ELE 75A Basic Electricity",
+    "A ELE 75B Advanced Electricity",
+    "A ELE 75C Transformers and Polychlorinated Biphenyl",
+    "A ELE 75D Protective Relaying",
+    "A ELE 75E High Voltage Switching",
+    "A ELE 75F Electrical Motors and Controls",
+    "ELEC 37 Introduction to Programmable Logic Controllers"
+   ],
+   "why": "Delta's Industrial Technology: Electrical Apprenticeship Option plus the utility electrical series A ELE 75A-75F (Basic/Advanced Electricity, Transformers and PCB, Protective Relaying, High Voltage Switching, Motors and Controls) is industrial/utility electrical content, not construction wiring - which is exactly what the NCCER Industrial Electrician levels certify.",
+   "cpl": "Statewide NCCER Industrial Electrician Level 1-4 exhibits exist and Delta has adopted none. Delta's A ELE 75-series is unusually well matched - most colleges have no utility-electrical course at all."
+  },
+  "electrical technician gc": {
+   "fit": "C",
+   "programs": [
+    "Industrial Technology: Electrical Apprenticeship Option (Cert. 30-60u)",
+    "Electrical Technology (A.S.)",
+    "Electrical Technology - Electrical Maintenance (Cert.)"
+   ],
+   "courses": [
+    "A ELE 75A Basic Electricity",
+    "A ELE 75B Advanced Electricity",
+    "A ELE 75C Transformers and Polychlorinated Biphenyl",
+    "A ELE 75D Protective Relaying",
+    "A ELE 75E High Voltage Switching",
+    "A ELE 75F Electrical Motors and Controls",
+    "ELEC 37 Introduction to Programmable Logic Controllers"
+   ],
+   "why": "Delta's Industrial Technology: Electrical Apprenticeship Option plus the utility electrical series A ELE 75A-75F (Basic/Advanced Electricity, Transformers and PCB, Protective Relaying, High Voltage Switching, Motors and Controls) is industrial/utility electrical content, not construction wiring - which is exactly what the NCCER Industrial Electrician levels certify.",
+   "cpl": "Statewide NCCER Industrial Electrician Level 1-4 exhibits exist and Delta has adopted none. Delta's A ELE 75-series is unusually well matched - most colleges have no utility-electrical course at all."
+  },
+  "electrician construction": {
+   "fit": "C",
+   "programs": [
+    "Electrical Technology (A.S.)",
+    "Electrical Technology: Apprenticeship (A.S.)",
+    "Electrical Technology - General Electrician Trainee (Cert. 30-60u)",
+    "Electrical Technology - Electrical Maintenance (Cert. 30-60u)",
+    "Electrical Technology: Apprenticeship Option (Cert. 30-60u)"
+   ],
+   "courses": [
+    "ELEC 30 Fundamentals of Electricity",
+    "ELEC 31 Electrical Wiring Methods",
+    "ELEC 32 Electrical Transformers and Motors",
+    "ELEC 34 Motor Controls",
+    "ELEC 36 Advanced Motor Controls",
+    "ELEC 70 Electrical Codes I",
+    "ELEC 77 Industrial Wiring Methods",
+    "ELEC 73 Construction Safety - OSHA",
+    "A ELE 70A-74B Electrical Apprenticeship I-X (10-term)"
+   ],
+   "why": "Delta runs a full electrical trade pathway AND a 10-term registered electrical apprenticeship (A ELE 70A-74B). ELEC 30/31/32/34/70/77 map directly onto the wiring-methods, motors/controls, transformers and Code content that the NCCER levels and the IBEW/state apprenticeship standards certify.",
+   "cpl": "High priority. MAP already lists Delta as a potential adopter of the IBEW Electrician Apprenticeship exhibit; the NCCER Commercial/Industrial Electrician Level 1-4 exhibits are statewide and Delta is not yet on them. Adopting these lets a journey-level electrician convert existing credentials into the Electrical Technology A.S."
+  },
+  "electrician electric hydro": {
+   "fit": "C",
+   "programs": [
+    "Electrical Technology (A.S.)",
+    "Electrical Technology: Apprenticeship (A.S.)",
+    "Electrical Technology - General Electrician Trainee (Cert. 30-60u)",
+    "Electrical Technology - Electrical Maintenance (Cert. 30-60u)",
+    "Electrical Technology: Apprenticeship Option (Cert. 30-60u)"
+   ],
+   "courses": [
+    "ELEC 30 Fundamentals of Electricity",
+    "ELEC 31 Electrical Wiring Methods",
+    "ELEC 32 Electrical Transformers and Motors",
+    "ELEC 34 Motor Controls",
+    "ELEC 36 Advanced Motor Controls",
+    "ELEC 70 Electrical Codes I",
+    "ELEC 77 Industrial Wiring Methods",
+    "ELEC 73 Construction Safety - OSHA",
+    "A ELE 70A-74B Electrical Apprenticeship I-X (10-term)"
+   ],
+   "why": "Delta runs a full electrical trade pathway AND a 10-term registered electrical apprenticeship (A ELE 70A-74B). ELEC 30/31/32/34/70/77 map directly onto the wiring-methods, motors/controls, transformers and Code content that the NCCER levels and the IBEW/state apprenticeship standards certify.",
+   "cpl": "High priority. MAP already lists Delta as a potential adopter of the IBEW Electrician Apprenticeship exhibit; the NCCER Commercial/Industrial Electrician Level 1-4 exhibits are statewide and Delta is not yet on them. Adopting these lets a journey-level electrician convert existing credentials into the Electrical Technology A.S."
+  },
+  "electrician gc": {
+   "fit": "C",
+   "programs": [
+    "Electrical Technology (A.S.)",
+    "Electrical Technology: Apprenticeship (A.S.)",
+    "Electrical Technology - General Electrician Trainee (Cert. 30-60u)",
+    "Electrical Technology - Electrical Maintenance (Cert. 30-60u)",
+    "Electrical Technology: Apprenticeship Option (Cert. 30-60u)"
+   ],
+   "courses": [
+    "ELEC 30 Fundamentals of Electricity",
+    "ELEC 31 Electrical Wiring Methods",
+    "ELEC 32 Electrical Transformers and Motors",
+    "ELEC 34 Motor Controls",
+    "ELEC 36 Advanced Motor Controls",
+    "ELEC 70 Electrical Codes I",
+    "ELEC 77 Industrial Wiring Methods",
+    "ELEC 73 Construction Safety - OSHA",
+    "A ELE 70A-74B Electrical Apprenticeship I-X (10-term)"
+   ],
+   "why": "Delta runs a full electrical trade pathway AND a 10-term registered electrical apprenticeship (A ELE 70A-74B). ELEC 30/31/32/34/70/77 map directly onto the wiring-methods, motors/controls, transformers and Code content that the NCCER levels and the IBEW/state apprenticeship standards certify.",
+   "cpl": "High priority. MAP already lists Delta as a potential adopter of the IBEW Electrician Apprenticeship exhibit; the NCCER Commercial/Industrial Electrician Level 1-4 exhibits are statewide and Delta is not yet on them. Adopting these lets a journey-level electrician convert existing credentials into the Electrical Technology A.S."
+  },
+  "electricians": {
+   "fit": "C",
+   "programs": [
+    "Electrical Technology (A.S.)",
+    "Electrical Technology: Apprenticeship (A.S.)",
+    "Electrical Technology - General Electrician Trainee (Cert. 30-60u)",
+    "Electrical Technology - Electrical Maintenance (Cert. 30-60u)",
+    "Electrical Technology: Apprenticeship Option (Cert. 30-60u)"
+   ],
+   "courses": [
+    "ELEC 30 Fundamentals of Electricity",
+    "ELEC 31 Electrical Wiring Methods",
+    "ELEC 32 Electrical Transformers and Motors",
+    "ELEC 34 Motor Controls",
+    "ELEC 36 Advanced Motor Controls",
+    "ELEC 70 Electrical Codes I",
+    "ELEC 77 Industrial Wiring Methods",
+    "ELEC 73 Construction Safety - OSHA",
+    "A ELE 70A-74B Electrical Apprenticeship I-X (10-term)"
+   ],
+   "why": "Delta runs a full electrical trade pathway AND a 10-term registered electrical apprenticeship (A ELE 70A-74B). ELEC 30/31/32/34/70/77 map directly onto the wiring-methods, motors/controls, transformers and Code content that the NCCER levels and the IBEW/state apprenticeship standards certify.",
+   "cpl": "High priority. MAP already lists Delta as a potential adopter of the IBEW Electrician Apprenticeship exhibit; the NCCER Commercial/Industrial Electrician Level 1-4 exhibits are statewide and Delta is not yet on them. Adopting these lets a journey-level electrician convert existing credentials into the Electrical Technology A.S."
+  },
+  "electro mechanical and mechatronics technologists and technicians": {
+   "fit": "C",
+   "programs": [
+    "Automation Technology - Mechatronics (A.S.)",
+    "Automation Technician - Mechatronics (Cert. 30-60u)",
+    "Control Systems Technician (Noncredit)",
+    "Electronics Technology (Cert. 16-30u)",
+    "Basic Electronics Technician (Noncredit)",
+    "Fluid Power & Automation Technology (A.S. / Cert. 16-30u)",
+    "Electronics Technology - Manufacturing Associate (Cert. 16-30u)"
+   ],
+   "courses": [
+    "ELECT 17 Robotics/Automation Introduction",
+    "ELECT 18 Robotics/Automation/Mechatronics Systems",
+    "ELECT 11 AC and DC Network Analysis",
+    "ELECT 12 Solid State Devices",
+    "ELECT 13A Digital Logic, Circuits, and Systems",
+    "ELECT 14B Advanced Electronics Troubleshooting",
+    "E TECH 47 Introduction to Industrial Control Systems",
+    "ELEC 37 Introduction to Programmable Logic Controllers",
+    "INDUS 31 Industrial Hydraulics",
+    "INDUS 35 Mobile Hydraulics"
+   ],
+   "why": "Delta has a dedicated Mechatronics A.S. plus a noncredit Control Systems Technician certificate - an unusually complete automation stack for a college this size.",
+   "cpl": "Delta is flagged POTENTIAL on Introduction to Mechatronics and Instrumentation Devices and Systems. Both are local-only today; Delta is well placed to host them."
+  },
+  "electronics engineering technologists": {
+   "fit": "C",
+   "programs": [
+    "Automation Technology - Mechatronics (A.S.)",
+    "Automation Technician - Mechatronics (Cert. 30-60u)",
+    "Control Systems Technician (Noncredit)",
+    "Electronics Technology (Cert. 16-30u)",
+    "Basic Electronics Technician (Noncredit)",
+    "Fluid Power & Automation Technology (A.S. / Cert. 16-30u)",
+    "Electronics Technology - Manufacturing Associate (Cert. 16-30u)",
+    "Engineering Technology (A.S. / Cert. 30-60u)"
+   ],
+   "courses": [
+    "ELECT 17 Robotics/Automation Introduction",
+    "ELECT 18 Robotics/Automation/Mechatronics Systems",
+    "ELECT 11 AC and DC Network Analysis",
+    "ELECT 12 Solid State Devices",
+    "ELECT 13A Digital Logic, Circuits, and Systems",
+    "ELECT 14B Advanced Electronics Troubleshooting",
+    "E TECH 47 Introduction to Industrial Control Systems",
+    "ELEC 37 Introduction to Programmable Logic Controllers",
+    "INDUS 31 Industrial Hydraulics",
+    "INDUS 35 Mobile Hydraulics"
+   ],
+   "why": "Delta's Electronics Technology and Engineering Technology programs cover the analysis, solid-state, digital-logic and troubleshooting content these technician roles are built on.",
+   "cpl": "Delta is flagged POTENTIAL on Instrumentation Devices and Systems and Electrical Motors and Controls 1. Both local-only; a Delta adoption widens Central Valley access."
+  },
+  "emergency medical technician": {
+   "fit": "C",
+   "programs": [
+    "Health Science (A.S.)"
+   ],
+   "courses": [
+    "H S 87 Emergency Medical Technician (8.0u)",
+    "H S 88 EMT Refresher (2.0u)",
+    "H S 89A Paramedic 1",
+    "H S 89B Paramedic 1L",
+    "H S 89C Paramedic 2",
+    "H S 89D Paramedic 2L",
+    "H S 89E Paramedic 3",
+    "H S 89F Paramedic 4",
+    "H ED 31 Emergency Responder",
+    "H ED 32 Basic Life Support for Healthcare Providers"
+   ],
+   "why": "Delta teaches a full 8-unit EMT course plus a refresher. This is a direct, unambiguous match - a certified EMT has completed the equivalent of H S 87.",
+   "cpl": "TOP OPPORTUNITY. EMT Certification is a statewide exhibit adopted at 29 colleges; MAP flags Delta as a potential adopter and Delta has NOT adopted it. Delta has the course and the state has the exhibit - this is a paperwork gap, not a curriculum gap."
+  },
+  "engineering designer": {
+   "fit": "C",
+   "programs": [
+    "Engineering Computer-Aided Drafting (A.S.)",
+    "Engineering Computer-Aided Drafter (Cert. 16-30u)",
+    "Architectural Drafting (A.S. / Cert. 16-30u)",
+    "Engineering Technology (A.S. / Cert. 30-60u)"
+   ],
+   "courses": [
+    "E TECH 11 Fundamentals of Machine Drafting",
+    "E TECH 12 Computer-Aided Drafting",
+    "E TECH 22 Three Dimensional Modeling",
+    "E TECH 34 Machine Drafting",
+    "E TECH 31 Fundamentals of Civil Drafting",
+    "E TECH 78 Applied Statics & Strength of Materials"
+   ],
+   "why": "Delta has a complete CAD/drafting ladder across machine, civil and architectural drafting plus 3D modelling - a direct match for a working engineering designer.",
+   "cpl": "Engineering Drawing and Introduction to Engineering are local-only exhibits elsewhere; Delta is not listed. Straightforward adoption."
+  },
+  "equipement operator": {
+   "fit": "P",
+   "programs": [
+    "Heavy Equipment Technician (A.S.)"
+   ],
+   "courses": [
+    "A IND 78L Motor Grader Operation",
+    "A IND 78M Tractor Operations, Trenching, and Shoring",
+    "A IND 78G Power Lift and Four-Wheel Drive Units"
+   ],
+   "why": "Duplicate of Construction Equipment Operator (spelled differently on the source list) - same Delta courses apply.",
+   "cpl": "See Construction Equipment Operator."
+  },
+  "farm ranch manager": {
+   "fit": "C",
+   "programs": [
+    "Agriculture Business (A.S. / A.S.-T / Cert. 60u+)",
+    "Agriculture Business: Animal Science (Cert. 16-30u)",
+    "Agriculture Business: Plant Science (Cert. 16-30u)",
+    "Agriculture Mechanics (Cert. 16-30u)"
+   ],
+   "courses": [
+    "AGBUS 5 Introduction to Agriculture Business",
+    "AGBUS 12 Agricultural Economics",
+    "AGBUS 10 Agricultural Accounting",
+    "PLANT 10 Principles of Plant Science",
+    "ASCI 10 Principles of Animal Science",
+    "AGEGR 33 Equipment Maintenance and Operation"
+   ],
+   "why": "Delta has a full agriculture business pathway with plant and animal science options - an obvious fit for a working farm or ranch manager in San Joaquin County.",
+   "cpl": "Delta is flagged POTENTIAL on Farm Construction and Materials and on ANSI-Accredited Food Protection Manager Certification. Agriculture is under-represented in MAP generally; Delta could help lead here."
+  },
+  "fire apparatus engineer": {
+   "fit": "N",
+   "programs": [],
+   "courses": [],
+   "why": "Delta has NO fire technology program and no fire service courses. The only fire-named course in the catalog is ELEC 41 Fire Alarm Systems, which is an electrical installation course, not fire service training.",
+   "cpl": "The fire exhibits are the best-covered cluster in the whole state (Firefighter 1 at 17 colleges, the full Fire Officer 2A-2E and Fire Inspector 1A-1D series statewide) - but Delta cannot adopt them without curriculum. Two options to put to the college: refer these students to Modesto Junior College (265 career credentials, the largest portfolio in the state), or treat a Delta fire program as a strategic build. MAP does flag Delta as a potential adopter on Firefighter 1 and Fire Apparatus Driver/Operator 1B, which means the platform expects a college of Delta's profile to offer it."
+  },
+  "fire dept training officer": {
+   "fit": "N",
+   "programs": [],
+   "courses": [],
+   "why": "Delta has NO fire technology program and no fire service courses. The only fire-named course in the catalog is ELEC 41 Fire Alarm Systems, which is an electrical installation course, not fire service training.",
+   "cpl": "The fire exhibits are the best-covered cluster in the whole state (Firefighter 1 at 17 colleges, the full Fire Officer 2A-2E and Fire Inspector 1A-1D series statewide) - but Delta cannot adopt them without curriculum. Two options to put to the college: refer these students to Modesto Junior College (265 career credentials, the largest portfolio in the state), or treat a Delta fire program as a strategic build. MAP does flag Delta as a potential adopter on Firefighter 1 and Fire Apparatus Driver/Operator 1B, which means the platform expects a college of Delta's profile to offer it."
+  },
+  "fire engineer": {
+   "fit": "N",
+   "programs": [],
+   "courses": [],
+   "why": "Delta has NO fire technology program and no fire service courses. The only fire-named course in the catalog is ELEC 41 Fire Alarm Systems, which is an electrical installation course, not fire service training.",
+   "cpl": "The fire exhibits are the best-covered cluster in the whole state (Firefighter 1 at 17 colleges, the full Fire Officer 2A-2E and Fire Inspector 1A-1D series statewide) - but Delta cannot adopt them without curriculum. Two options to put to the college: refer these students to Modesto Junior College (265 career credentials, the largest portfolio in the state), or treat a Delta fire program as a strategic build. MAP does flag Delta as a potential adopter on Firefighter 1 and Fire Apparatus Driver/Operator 1B, which means the platform expects a college of Delta's profile to offer it."
+  },
+  "fire equipment specialist": {
+   "fit": "N",
+   "programs": [],
+   "courses": [],
+   "why": "Delta has NO fire technology program and no fire service courses. The only fire-named course in the catalog is ELEC 41 Fire Alarm Systems, which is an electrical installation course, not fire service training.",
+   "cpl": "The fire exhibits are the best-covered cluster in the whole state (Firefighter 1 at 17 colleges, the full Fire Officer 2A-2E and Fire Inspector 1A-1D series statewide) - but Delta cannot adopt them without curriculum. Two options to put to the college: refer these students to Modesto Junior College (265 career credentials, the largest portfolio in the state), or treat a Delta fire program as a strategic build. MAP does flag Delta as a potential adopter on Firefighter 1 and Fire Apparatus Driver/Operator 1B, which means the platform expects a college of Delta's profile to offer it."
+  },
+  "fire fighter": {
+   "fit": "N",
+   "programs": [],
+   "courses": [],
+   "why": "Delta has NO fire technology program and no fire service courses. The only fire-named course in the catalog is ELEC 41 Fire Alarm Systems, which is an electrical installation course, not fire service training.",
+   "cpl": "The fire exhibits are the best-covered cluster in the whole state (Firefighter 1 at 17 colleges, the full Fire Officer 2A-2E and Fire Inspector 1A-1D series statewide) - but Delta cannot adopt them without curriculum. Two options to put to the college: refer these students to Modesto Junior College (265 career credentials, the largest portfolio in the state), or treat a Delta fire program as a strategic build. MAP does flag Delta as a potential adopter on Firefighter 1 and Fire Apparatus Driver/Operator 1B, which means the platform expects a college of Delta's profile to offer it."
+  },
+  "fire fighter diver": {
+   "fit": "N",
+   "programs": [],
+   "courses": [],
+   "why": "Delta has NO fire technology program and no fire service courses. The only fire-named course in the catalog is ELEC 41 Fire Alarm Systems, which is an electrical installation course, not fire service training.",
+   "cpl": "The fire exhibits are the best-covered cluster in the whole state (Firefighter 1 at 17 colleges, the full Fire Officer 2A-2E and Fire Inspector 1A-1D series statewide) - but Delta cannot adopt them without curriculum. Two options to put to the college: refer these students to Modesto Junior College (265 career credentials, the largest portfolio in the state), or treat a Delta fire program as a strategic build. MAP does flag Delta as a potential adopter on Firefighter 1 and Fire Apparatus Driver/Operator 1B, which means the platform expects a college of Delta's profile to offer it."
+  },
+  "fire fighter i i": {
+   "fit": "N",
+   "programs": [],
+   "courses": [],
+   "why": "Delta has NO fire technology program and no fire service courses. The only fire-named course in the catalog is ELEC 41 Fire Alarm Systems, which is an electrical installation course, not fire service training.",
+   "cpl": "The fire exhibits are the best-covered cluster in the whole state (Firefighter 1 at 17 colleges, the full Fire Officer 2A-2E and Fire Inspector 1A-1D series statewide) - but Delta cannot adopt them without curriculum. Two options to put to the college: refer these students to Modesto Junior College (265 career credentials, the largest portfolio in the state), or treat a Delta fire program as a strategic build. MAP does flag Delta as a potential adopter on Firefighter 1 and Fire Apparatus Driver/Operator 1B, which means the platform expects a college of Delta's profile to offer it."
+  },
+  "fire fighter paramedic": {
+   "fit": "P",
+   "programs": [
+    "Health Science (A.S.)"
+   ],
+   "courses": [
+    "H S 87 Emergency Medical Technician (8.0u)",
+    "H S 88 EMT Refresher (2.0u)",
+    "H S 89A Paramedic 1",
+    "H S 89B Paramedic 1L",
+    "H S 89C Paramedic 2",
+    "H S 89D Paramedic 2L",
+    "H S 89E Paramedic 3",
+    "H S 89F Paramedic 4",
+    "H ED 31 Emergency Responder",
+    "H ED 32 Basic Life Support for Healthcare Providers"
+   ],
+   "why": "Delta covers the EMS HALF of this role completely (EMT + full paramedic sequence) but has NO fire technology instruction at all. A fire medic would get credit for the medical component only.",
+   "cpl": "Adopt EMT Certification and Paramedic License now (Delta is flagged potential on both). The fire half needs either a new Delta fire program or a referral to Modesto Junior College."
+  },
+  "fire inspector": {
+   "fit": "N",
+   "programs": [],
+   "courses": [],
+   "why": "Delta has NO fire technology program and no fire service courses. The only fire-named course in the catalog is ELEC 41 Fire Alarm Systems, which is an electrical installation course, not fire service training.",
+   "cpl": "The fire exhibits are the best-covered cluster in the whole state (Firefighter 1 at 17 colleges, the full Fire Officer 2A-2E and Fire Inspector 1A-1D series statewide) - but Delta cannot adopt them without curriculum. Two options to put to the college: refer these students to Modesto Junior College (265 career credentials, the largest portfolio in the state), or treat a Delta fire program as a strategic build. MAP does flag Delta as a potential adopter on Firefighter 1 and Fire Apparatus Driver/Operator 1B, which means the platform expects a college of Delta's profile to offer it."
+  },
+  "fire investigator": {
+   "fit": "N",
+   "programs": [],
+   "courses": [],
+   "why": "Delta has NO fire technology program and no fire service courses. The only fire-named course in the catalog is ELEC 41 Fire Alarm Systems, which is an electrical installation course, not fire service training.",
+   "cpl": "The fire exhibits are the best-covered cluster in the whole state (Firefighter 1 at 17 colleges, the full Fire Officer 2A-2E and Fire Inspector 1A-1D series statewide) - but Delta cannot adopt them without curriculum. Two options to put to the college: refer these students to Modesto Junior College (265 career credentials, the largest portfolio in the state), or treat a Delta fire program as a strategic build. MAP does flag Delta as a potential adopter on Firefighter 1 and Fire Apparatus Driver/Operator 1B, which means the platform expects a college of Delta's profile to offer it."
+  },
+  "fire marshal": {
+   "fit": "N",
+   "programs": [],
+   "courses": [],
+   "why": "Delta has NO fire technology program and no fire service courses. The only fire-named course in the catalog is ELEC 41 Fire Alarm Systems, which is an electrical installation course, not fire service training.",
+   "cpl": "The fire exhibits are the best-covered cluster in the whole state (Firefighter 1 at 17 colleges, the full Fire Officer 2A-2E and Fire Inspector 1A-1D series statewide) - but Delta cannot adopt them without curriculum. Two options to put to the college: refer these students to Modesto Junior College (265 career credentials, the largest portfolio in the state), or treat a Delta fire program as a strategic build. MAP does flag Delta as a potential adopter on Firefighter 1 and Fire Apparatus Driver/Operator 1B, which means the platform expects a college of Delta's profile to offer it."
+  },
+  "fire medic": {
+   "fit": "P",
+   "programs": [
+    "Health Science (A.S.)"
+   ],
+   "courses": [
+    "H S 87 Emergency Medical Technician (8.0u)",
+    "H S 88 EMT Refresher (2.0u)",
+    "H S 89A Paramedic 1",
+    "H S 89B Paramedic 1L",
+    "H S 89C Paramedic 2",
+    "H S 89D Paramedic 2L",
+    "H S 89E Paramedic 3",
+    "H S 89F Paramedic 4",
+    "H ED 31 Emergency Responder",
+    "H ED 32 Basic Life Support for Healthcare Providers"
+   ],
+   "why": "Delta covers the EMS HALF of this role completely (EMT + full paramedic sequence) but has NO fire technology instruction at all. A fire medic would get credit for the medical component only.",
+   "cpl": "Adopt EMT Certification and Paramedic License now (Delta is flagged potential on both). The fire half needs either a new Delta fire program or a referral to Modesto Junior College."
+  },
+  "fire officer": {
+   "fit": "N",
+   "programs": [],
+   "courses": [],
+   "why": "Delta has NO fire technology program and no fire service courses. The only fire-named course in the catalog is ELEC 41 Fire Alarm Systems, which is an electrical installation course, not fire service training.",
+   "cpl": "The fire exhibits are the best-covered cluster in the whole state (Firefighter 1 at 17 colleges, the full Fire Officer 2A-2E and Fire Inspector 1A-1D series statewide) - but Delta cannot adopt them without curriculum. Two options to put to the college: refer these students to Modesto Junior College (265 career credentials, the largest portfolio in the state), or treat a Delta fire program as a strategic build. MAP does flag Delta as a potential adopter on Firefighter 1 and Fire Apparatus Driver/Operator 1B, which means the platform expects a college of Delta's profile to offer it."
+  },
+  "fire prevention officer": {
+   "fit": "N",
+   "programs": [],
+   "courses": [],
+   "why": "Delta has NO fire technology program and no fire service courses. The only fire-named course in the catalog is ELEC 41 Fire Alarm Systems, which is an electrical installation course, not fire service training.",
+   "cpl": "The fire exhibits are the best-covered cluster in the whole state (Firefighter 1 at 17 colleges, the full Fire Officer 2A-2E and Fire Inspector 1A-1D series statewide) - but Delta cannot adopt them without curriculum. Two options to put to the college: refer these students to Modesto Junior College (265 career credentials, the largest portfolio in the state), or treat a Delta fire program as a strategic build. MAP does flag Delta as a potential adopter on Firefighter 1 and Fire Apparatus Driver/Operator 1B, which means the platform expects a college of Delta's profile to offer it."
+  },
+  "fire suppression technician": {
+   "fit": "N",
+   "programs": [],
+   "courses": [],
+   "why": "Delta has NO fire technology program and no fire service courses. The only fire-named course in the catalog is ELEC 41 Fire Alarm Systems, which is an electrical installation course, not fire service training.",
+   "cpl": "The fire exhibits are the best-covered cluster in the whole state (Firefighter 1 at 17 colleges, the full Fire Officer 2A-2E and Fire Inspector 1A-1D series statewide) - but Delta cannot adopt them without curriculum. Two options to put to the college: refer these students to Modesto Junior College (265 career credentials, the largest portfolio in the state), or treat a Delta fire program as a strategic build. MAP does flag Delta as a potential adopter on Firefighter 1 and Fire Apparatus Driver/Operator 1B, which means the platform expects a college of Delta's profile to offer it."
+  },
+  "firefighter emt": {
+   "fit": "P",
+   "programs": [
+    "Health Science (A.S.)"
+   ],
+   "courses": [
+    "H S 87 Emergency Medical Technician (8.0u)",
+    "H S 88 EMT Refresher (2.0u)",
+    "H S 89A Paramedic 1",
+    "H S 89B Paramedic 1L",
+    "H S 89C Paramedic 2",
+    "H S 89D Paramedic 2L",
+    "H S 89E Paramedic 3",
+    "H S 89F Paramedic 4",
+    "H ED 31 Emergency Responder",
+    "H ED 32 Basic Life Support for Healthcare Providers"
+   ],
+   "why": "Same split: the EMT half is a direct match to H S 87; there is no Firefighter 1 instruction at Delta.",
+   "cpl": "EMT Certification is adoptable today. Firefighter EMT Certificate would need the fire half."
+  },
+  "fireproof plaster": {
+   "fit": "N",
+   "programs": [],
+   "courses": [],
+   "why": "Delta has no carpentry, drywall, lath or plaster program. Note the naming trap: Delta's 'A CON' course prefix is a plumbing apprenticeship, not general construction.",
+   "cpl": "Carpenters Apprenticeship (Carpenter / Drywall Finisher / Drywall Applicator / Drywall-Lather / Millwright / Hardwood Floor Layer) and the NCCER Carpenter levels are STATEWIDE exhibits with adopters elsewhere. Delta cannot adopt without curriculum. Refer to a college that has adopted, or discuss whether the regional carpenters JATC would partner with Delta."
+  },
+  "fitter arc": {
+   "fit": "C",
+   "programs": [
+    "Welding Technology (Cert. 30-60u)",
+    "Gas Metal Arc Welding (GMAW)/Flux Core Arc Welding (FCAW) (Cert. 16-30u)",
+    "Gas Tungsten Arc Welding (GTAW) (Cert. 16-30u)",
+    "Oxy-Fuel Processes and Shielded Metal Arc Welding (SMAW) (Cert. 16-30u)"
+   ],
+   "courses": [
+    "WELDING 82 Introduction to Welding and Cutting Processes for the Trades",
+    "WELDING 84 SMAW and Oxyfuel Processes",
+    "WELDING 86 GMAW and FCAW Processes",
+    "WELDING 88 GTAW Processes",
+    "WELDING 90 SMAW Laboratory Skills",
+    "WELDING 92 GMAW (MIG)",
+    "WELDING 94 GTAW Laboratory Skills",
+    "WELDING 98 Metal Trade Layout, Forming, and Fabrication"
+   ],
+   "why": "Delta certificates are organised BY PROCESS - SMAW, GMAW/FCAW, GTAW - which is the same axis the AWS qualification exhibits are keyed on. A welder holding an AWS D1.1 SMAW or D1.1 FCAW qualification has demonstrated the exact performance the matching WELDING course assesses.",
+   "cpl": "Strongest single opportunity in the trades. The AWS D1.1/D1.3/D1.5/D1.8/D9.1 exhibits are statewide with many adopters; MAP lists Delta as a potential adopter on all of them and Delta has adopted none. Process-level certificates make the articulation unusually clean."
+  },
+  "gas control technician": {
+   "fit": "P",
+   "programs": [
+    "Automation Technology - Mechatronics (A.S.)",
+    "Automation Technician - Mechatronics (Cert. 30-60u)",
+    "Control Systems Technician (Noncredit)",
+    "Electronics Technology (Cert. 16-30u)",
+    "Basic Electronics Technician (Noncredit)",
+    "Fluid Power & Automation Technology (A.S. / Cert. 16-30u)",
+    "Electronics Technology - Manufacturing Associate (Cert. 16-30u)"
+   ],
+   "courses": [
+    "E TECH 47 Introduction to Industrial Control Systems",
+    "ELEC 37 Introduction to Programmable Logic Controllers",
+    "ELECT 17/18 Robotics, Automation and Mechatronics Systems",
+    "A IND 77G Governor Systems",
+    "A IND 77H Computers in Hydro-Electric Plants"
+   ],
+   "why": "Delta teaches industrial control systems and PLCs, and the utility apprenticeship series covers governor systems and plant computers. But no course is specific to metering or gas control instrumentation - the alignment is at the underlying-competency level and needs faculty confirmation.",
+   "cpl": "Delta is flagged POTENTIAL on Instrumentation Devices and Systems (local-only elsewhere). Worth asking whether the utility partner behind the A IND apprenticeship would sponsor a metering/instrumentation exhibit - nothing statewide exists."
+  },
+  "gas plant operators": {
+   "fit": "C",
+   "programs": [
+    "Industrial Technology: Operations Apprenticeship Option (Cert. 30-60u)",
+    "Industrial Technology: Mechanical Apprenticeship Option (Cert. 30-60u)",
+    "Industrial Technology: Maintenance Apprenticeship Option (Cert. 30-60u)",
+    "Industrial Technology: Electrical Apprenticeship Option (Cert. 30-60u)"
+   ],
+   "courses": [
+    "A IND 77A Mechanical Fundamentals",
+    "A IND 77B Bearings, Pumps, and Turbines",
+    "A IND 77C Motors and Generators",
+    "A IND 77D Plant Auxiliary Equipment",
+    "A IND 77E Hydraulics",
+    "A IND 77F Pneumatics",
+    "A IND 77G Governor Systems",
+    "A IND 77H Computers in Hydro-Electric Plants",
+    "A IND 77J Water Aqueduct Systems",
+    "A IND 77K Fundamentals of Thermodynamics",
+    "A IND 77L Project Control and Power Contracts",
+    "A ELE 75C Transformers and PCB",
+    "A ELE 75D Protective Relaying",
+    "A ELE 75E High Voltage Switching"
+   ],
+   "why": "THE FINDING OF THIS CROSSWALK. Delta runs a utility/hydroelectric apprenticeship that almost no other California community college has: turbines, governor systems, plant auxiliary equipment, computers in hydro-electric plants, water aqueduct systems, protective relaying and high-voltage switching. These are the exact competencies behind the occupations the statewide crosswalk found had ZERO CPL anywhere in California.",
+   "cpl": "BUILD-NEW, HIGHEST STRATEGIC VALUE. The August 2026 statewide run found no CPL recommendation anywhere in the system for the hydro/utility cluster. Delta appears to hold the only matching curriculum. An exhibit built here would be first-in-state and a natural candidate for statewide adoption. Ask the college who the apprenticeship sponsor is - that sponsor is the credential issuer a MAP exhibit would be keyed to."
+  },
+  "generator technician": {
+   "fit": "P",
+   "programs": [
+    "Electrical Technology (A.S.)",
+    "Industrial Technology: Mechanical Apprenticeship Option (Cert.)"
+   ],
+   "courses": [
+    "A IND 77C Motors and Generators",
+    "ELEC 32 Electrical Transformers and Motors",
+    "ELEC 34 Motor Controls",
+    "ELEC 36 Advanced Motor Controls",
+    "A ELE 75F Electrical Motors and Controls"
+   ],
+   "why": "A IND 77C Motors and Generators is a direct topical hit and Delta teaches motor controls at three levels. No standalone generator-technician program exists, so this is a course-level rather than program-level match.",
+   "cpl": "Delta is flagged POTENTIAL on Electrical Motors and Controls 1 and 2 (local-only). A generator/rotating-equipment exhibit does not exist statewide and Delta could originate one."
+  },
+  "hazardous materials technician": {
+   "fit": "N",
+   "programs": [],
+   "courses": [],
+   "why": "Delta has NO fire technology program and no fire service courses. The only fire-named course in the catalog is ELEC 41 Fire Alarm Systems, which is an electrical installation course, not fire service training.",
+   "cpl": "The fire exhibits are the best-covered cluster in the whole state (Firefighter 1 at 17 colleges, the full Fire Officer 2A-2E and Fire Inspector 1A-1D series statewide) - but Delta cannot adopt them without curriculum. Two options to put to the college: refer these students to Modesto Junior College (265 career credentials, the largest portfolio in the state), or treat a Delta fire program as a strategic build. MAP does flag Delta as a potential adopter on Firefighter 1 and Fire Apparatus Driver/Operator 1B, which means the platform expects a college of Delta's profile to offer it."
+  },
+  "heavy duty repairer": {
+   "fit": "C",
+   "programs": [
+    "Diesel Equipment Technician (A.S. / Cert. 30-60u)",
+    "Diesel Bus Technician (Cert. 30-60u)",
+    "Diesel Automotive Equipment Technician (Cert. 30-60u)",
+    "Heavy Equipment Technician (A.S. / Cert. 30-60u)",
+    "Heavy Equipment Mechanic (Cert. 16-30u)",
+    "Caterpillar Dealer Service Technician Apprenticeship (A.S. / Cert. 30-60u)",
+    "Caterpillar Dealer Engine Technician Apprenticeship (Cert. 16-30u)"
+   ],
+   "courses": [
+    "DIESL 91 Heavy Duty Brakes",
+    "DIESL 92 Heavy Duty Power Trains",
+    "DIESL 93 Heavy Duty Truck Components",
+    "DIESL 94 Diesel Engine Principles",
+    "DIESL 95 Diesel Engine Repair",
+    "DIESL 96 Diesel Engine Fuel and Tune-Up",
+    "DIESL 97 Diesel Air Conditioning",
+    "DIESL 98 Allison Transmission Service",
+    "DIESL 99 Computer Diagnosis and Troubleshooting",
+    "CAT 80-94 Caterpillar series"
+   ],
+   "why": "Delta runs both a general diesel pathway and a manufacturer apprenticeship (Caterpillar Dealer Service/Engine Technician). The DIESL course titles line up with the ASE Medium/Heavy Truck series and with the Heavy/Medium Duty Truck Technology Apprenticeship exhibit almost one-to-one.",
+   "cpl": "Delta is flagged POTENTIAL on the Heavy/Medium Duty Truck Technology Apprenticeship and on ASE A1/A2/A3 - exhibits already built, Delta simply has not adopted. The Caterpillar apprenticeship is a Delta-specific asset that could support a NEW exhibit no other college could offer."
+  },
+  "heavy fire equipment operator": {
+   "fit": "N",
+   "programs": [],
+   "courses": [],
+   "why": "Delta has NO fire technology program and no fire service courses. The only fire-named course in the catalog is ELEC 41 Fire Alarm Systems, which is an electrical installation course, not fire service training.",
+   "cpl": "The fire exhibits are the best-covered cluster in the whole state (Firefighter 1 at 17 colleges, the full Fire Officer 2A-2E and Fire Inspector 1A-1D series statewide) - but Delta cannot adopt them without curriculum. Two options to put to the college: refer these students to Modesto Junior College (265 career credentials, the largest portfolio in the state), or treat a Delta fire program as a strategic build. MAP does flag Delta as a potential adopter on Firefighter 1 and Fire Apparatus Driver/Operator 1B, which means the platform expects a college of Delta's profile to offer it."
+  },
+  "hospital coder": {
+   "fit": "P",
+   "programs": [
+    "Medical Office Assistant (Cert. 16-30u)",
+    "Health Science (A.S.)"
+   ],
+   "courses": [
+    "H S 36 Medical Terminology and Speech",
+    "BIM/BUS office administration courses"
+   ],
+   "why": "Delta has medical terminology and office administration but NO coding or billing program. A CPC/CCS holder would find little to articulate against today.",
+   "cpl": "Medical Insurance Billing and Coding is local-only elsewhere; Delta is not listed. This is a PROGRAM gap worth naming - health information is a large regional employer need and Delta has the adjacent health science infrastructure to build on."
+  },
+  "hydro electrical technician": {
+   "fit": "C",
+   "programs": [
+    "Industrial Technology: Electrical Apprenticeship Option (Cert. 30-60u)",
+    "Electrical Technology (A.S.)",
+    "Electrical Technology - Electrical Maintenance (Cert.)"
+   ],
+   "courses": [
+    "A ELE 75A Basic Electricity",
+    "A ELE 75B Advanced Electricity",
+    "A ELE 75C Transformers and Polychlorinated Biphenyl",
+    "A ELE 75D Protective Relaying",
+    "A ELE 75E High Voltage Switching",
+    "A ELE 75F Electrical Motors and Controls",
+    "ELEC 37 Introduction to Programmable Logic Controllers"
+   ],
+   "why": "Delta's Industrial Technology: Electrical Apprenticeship Option plus the utility electrical series A ELE 75A-75F (Basic/Advanced Electricity, Transformers and PCB, Protective Relaying, High Voltage Switching, Motors and Controls) is industrial/utility electrical content, not construction wiring - which is exactly what the NCCER Industrial Electrician levels certify.",
+   "cpl": "Statewide NCCER Industrial Electrician Level 1-4 exhibits exist and Delta has adopted none. Delta's A ELE 75-series is unusually well matched - most colleges have no utility-electrical course at all."
+  },
+  "hydro electrician": {
+   "fit": "C",
+   "programs": [
+    "Electrical Technology (A.S.)",
+    "Electrical Technology: Apprenticeship (A.S.)",
+    "Electrical Technology - General Electrician Trainee (Cert. 30-60u)",
+    "Electrical Technology - Electrical Maintenance (Cert. 30-60u)",
+    "Electrical Technology: Apprenticeship Option (Cert. 30-60u)"
+   ],
+   "courses": [
+    "ELEC 30 Fundamentals of Electricity",
+    "ELEC 31 Electrical Wiring Methods",
+    "ELEC 32 Electrical Transformers and Motors",
+    "ELEC 34 Motor Controls",
+    "ELEC 36 Advanced Motor Controls",
+    "ELEC 70 Electrical Codes I",
+    "ELEC 77 Industrial Wiring Methods",
+    "ELEC 73 Construction Safety - OSHA",
+    "A ELE 70A-74B Electrical Apprenticeship I-X (10-term)"
+   ],
+   "why": "Delta runs a full electrical trade pathway AND a 10-term registered electrical apprenticeship (A ELE 70A-74B). ELEC 30/31/32/34/70/77 map directly onto the wiring-methods, motors/controls, transformers and Code content that the NCCER levels and the IBEW/state apprenticeship standards certify.",
+   "cpl": "High priority. MAP already lists Delta as a potential adopter of the IBEW Electrician Apprenticeship exhibit; the NCCER Commercial/Industrial Electrician Level 1-4 exhibits are statewide and Delta is not yet on them. Adopting these lets a journey-level electrician convert existing credentials into the Electrical Technology A.S."
+  },
+  "hydro plant mechanic": {
+   "fit": "C",
+   "programs": [
+    "Industrial Technology: Operations Apprenticeship Option (Cert. 30-60u)",
+    "Industrial Technology: Mechanical Apprenticeship Option (Cert. 30-60u)",
+    "Industrial Technology: Maintenance Apprenticeship Option (Cert. 30-60u)",
+    "Industrial Technology: Electrical Apprenticeship Option (Cert. 30-60u)"
+   ],
+   "courses": [
+    "A IND 77A Mechanical Fundamentals",
+    "A IND 77B Bearings, Pumps, and Turbines",
+    "A IND 77C Motors and Generators",
+    "A IND 77D Plant Auxiliary Equipment",
+    "A IND 77E Hydraulics",
+    "A IND 77F Pneumatics",
+    "A IND 77G Governor Systems",
+    "A IND 77H Computers in Hydro-Electric Plants",
+    "A IND 77J Water Aqueduct Systems",
+    "A IND 77K Fundamentals of Thermodynamics",
+    "A IND 77L Project Control and Power Contracts",
+    "A ELE 75C Transformers and PCB",
+    "A ELE 75D Protective Relaying",
+    "A ELE 75E High Voltage Switching"
+   ],
+   "why": "THE FINDING OF THIS CROSSWALK. Delta runs a utility/hydroelectric apprenticeship that almost no other California community college has: turbines, governor systems, plant auxiliary equipment, computers in hydro-electric plants, water aqueduct systems, protective relaying and high-voltage switching. These are the exact competencies behind the occupations the statewide crosswalk found had ZERO CPL anywhere in California.",
+   "cpl": "BUILD-NEW, HIGHEST STRATEGIC VALUE. The August 2026 statewide run found no CPL recommendation anywhere in the system for the hydro/utility cluster. Delta appears to hold the only matching curriculum. An exhibit built here would be first-in-state and a natural candidate for statewide adoption. Ask the college who the apprenticeship sponsor is - that sponsor is the credential issuer a MAP exhibit would be keyed to."
+  },
+  "hydro plant operator": {
+   "fit": "C",
+   "programs": [
+    "Industrial Technology: Operations Apprenticeship Option (Cert. 30-60u)",
+    "Industrial Technology: Mechanical Apprenticeship Option (Cert. 30-60u)",
+    "Industrial Technology: Maintenance Apprenticeship Option (Cert. 30-60u)",
+    "Industrial Technology: Electrical Apprenticeship Option (Cert. 30-60u)"
+   ],
+   "courses": [
+    "A IND 77A Mechanical Fundamentals",
+    "A IND 77B Bearings, Pumps, and Turbines",
+    "A IND 77C Motors and Generators",
+    "A IND 77D Plant Auxiliary Equipment",
+    "A IND 77E Hydraulics",
+    "A IND 77F Pneumatics",
+    "A IND 77G Governor Systems",
+    "A IND 77H Computers in Hydro-Electric Plants",
+    "A IND 77J Water Aqueduct Systems",
+    "A IND 77K Fundamentals of Thermodynamics",
+    "A IND 77L Project Control and Power Contracts",
+    "A ELE 75C Transformers and PCB",
+    "A ELE 75D Protective Relaying",
+    "A ELE 75E High Voltage Switching"
+   ],
+   "why": "Delta runs a utility/hydroelectric apprenticeship that almost no other California community college has: turbines, governor systems, plant auxiliary equipment, computers in hydro-electric plants, water aqueduct systems, protective relaying and high-voltage switching. For a hydro plant operator specifically this is a direct match - the apprenticeship is built around exactly this plant.",
+   "cpl": "Wastewater Treatment Plant Operator Grade 1 and Grade 2 are LOCAL exhibits at one college each, and Delta is not listed on either - so there is something to adopt today. But note they are a loose fit: wastewater is not hydroelectric. The stronger play is a hydro-specific exhibit, which does not exist anywhere and which Delta's curriculum could originate."
+  },
+  "hydro stationary engineer": {
+   "fit": "C",
+   "programs": [
+    "Industrial Technology: Operations Apprenticeship Option (Cert. 30-60u)",
+    "Industrial Technology: Mechanical Apprenticeship Option (Cert. 30-60u)",
+    "Industrial Technology: Maintenance Apprenticeship Option (Cert. 30-60u)",
+    "Industrial Technology: Electrical Apprenticeship Option (Cert. 30-60u)"
+   ],
+   "courses": [
+    "A IND 77A Mechanical Fundamentals",
+    "A IND 77B Bearings, Pumps, and Turbines",
+    "A IND 77C Motors and Generators",
+    "A IND 77D Plant Auxiliary Equipment",
+    "A IND 77E Hydraulics",
+    "A IND 77F Pneumatics",
+    "A IND 77G Governor Systems",
+    "A IND 77H Computers in Hydro-Electric Plants",
+    "A IND 77J Water Aqueduct Systems",
+    "A IND 77K Fundamentals of Thermodynamics",
+    "A IND 77L Project Control and Power Contracts",
+    "A ELE 75C Transformers and PCB",
+    "A ELE 75D Protective Relaying",
+    "A ELE 75E High Voltage Switching"
+   ],
+   "why": "THE FINDING OF THIS CROSSWALK. Delta runs a utility/hydroelectric apprenticeship that almost no other California community college has: turbines, governor systems, plant auxiliary equipment, computers in hydro-electric plants, water aqueduct systems, protective relaying and high-voltage switching. These are the exact competencies behind the occupations the statewide crosswalk found had ZERO CPL anywhere in California.",
+   "cpl": "BUILD-NEW, HIGHEST STRATEGIC VALUE. The August 2026 statewide run found no CPL recommendation anywhere in the system for the hydro/utility cluster. Delta appears to hold the only matching curriculum. An exhibit built here would be first-in-state and a natural candidate for statewide adoption. Ask the college who the apprenticeship sponsor is - that sponsor is the credential issuer a MAP exhibit would be keyed to."
+  },
+  "industrial machinery mechanics": {
+   "fit": "C",
+   "programs": [
+    "Industrial Technology: Maintenance Apprenticeship Option (Cert. 30-60u)",
+    "Industrial Technology: Mechanical Apprenticeship Option (Cert. 30-60u)",
+    "Industrial Technology - Level I (Cert. 16-30u)",
+    "Industrial Technology - Level II - Mechanical (Cert. 30-60u)",
+    "Fluid Power & Automation Technology (A.S.)"
+   ],
+   "courses": [
+    "A IND 77A Mechanical Fundamentals",
+    "A IND 77B Bearings, Pumps, and Turbines",
+    "A IND 77E Hydraulics",
+    "A IND 77F Pneumatics",
+    "A IND 77N Electro-Mechanical Print Reading",
+    "INDUS 31 Industrial Hydraulics",
+    "INDUS 45 Industrial Technology",
+    "INDUS 20 Industrial Safety and Health"
+   ],
+   "why": "Delta's four Industrial Technology apprenticeship options (Electrical, Maintenance, Mechanical, Operations) plus the A IND 77-series are journeyman-level industrial maintenance content - bearings, pumps, turbines, hydraulics, pneumatics, print reading.",
+   "cpl": "Delta is flagged POTENTIAL on Introduction to Facilities Maintenance (local-only elsewhere). The bigger opportunity is that Delta's apprenticeship options are already structured as credit awards - the CPL exhibit is the missing piece, not the curriculum."
+  },
+  "industrial maintenance mechanic": {
+   "fit": "C",
+   "programs": [
+    "Industrial Technology: Maintenance Apprenticeship Option (Cert. 30-60u)",
+    "Industrial Technology: Mechanical Apprenticeship Option (Cert. 30-60u)",
+    "Industrial Technology - Level I (Cert. 16-30u)",
+    "Industrial Technology - Level II - Mechanical (Cert. 30-60u)",
+    "Fluid Power & Automation Technology (A.S.)"
+   ],
+   "courses": [
+    "A IND 77A Mechanical Fundamentals",
+    "A IND 77B Bearings, Pumps, and Turbines",
+    "A IND 77E Hydraulics",
+    "A IND 77F Pneumatics",
+    "A IND 77N Electro-Mechanical Print Reading",
+    "INDUS 31 Industrial Hydraulics",
+    "INDUS 45 Industrial Technology",
+    "INDUS 20 Industrial Safety and Health"
+   ],
+   "why": "Delta's four Industrial Technology apprenticeship options (Electrical, Maintenance, Mechanical, Operations) plus the A IND 77-series are journeyman-level industrial maintenance content - bearings, pumps, turbines, hydraulics, pneumatics, print reading.",
+   "cpl": "Delta is flagged POTENTIAL on Introduction to Facilities Maintenance (local-only elsewhere). The bigger opportunity is that Delta's apprenticeship options are already structured as credit awards - the CPL exhibit is the missing piece, not the curriculum."
+  },
+  "inspectors testers sorters samplers and weighers": {
+   "fit": "P",
+   "programs": [
+    "Industrial Technology - Level I (Cert. 16-30u)",
+    "Machining Technology (A.S.)",
+    "Electron Microscopy - Materials (A.S.)"
+   ],
+   "courses": [
+    "E TECH 20 Materials and Measurements",
+    "INDUS 20 Industrial Safety and Health",
+    "MACH 16 Machine Tool Process"
+   ],
+   "why": "E TECH 20 Materials and Measurements is the metrology/inspection content, and Delta's Electron Microscopy - Materials program is a genuinely rare materials-analysis asset. No QA/inspection program exists as such.",
+   "cpl": "No CPL exists anywhere in California for this occupation. Delta's metrology and materials capability makes it a plausible originator for an inspection/QA exhibit (e.g. ASQ CQI)."
+  },
+  "interventional radiologic technologist": {
+   "fit": "C",
+   "programs": [
+    "Radiologic Technology (Cert. 60u+)",
+    "Health Science (A.S.)"
+   ],
+   "courses": [
+    "RAD 10 Introduction to Radiography",
+    "RAD 13 Principles of Radiographic Technique",
+    "RAD 22 Fundamentals of X-Ray and Radium Physics",
+    "RAD 32 Sectional Anatomy",
+    "RAD 40 Senior Review, Advanced Radiation Protection, and Fluoroscopic Systems",
+    "H S 84 Basic Electrocardiograph Reading"
+   ],
+   "why": "Delta runs a full JRCERT-scale radiologic technology program including fluoroscopy and sectional anatomy - the substrate an interventional-radiography credential builds on.",
+   "cpl": "Delta is flagged POTENTIAL on Patient Care in Imaging Technology (local-only elsewhere). Delta's RAD program is one of its strongest health assets and carries no CPL at all today."
+  },
+  "laborer": {
+   "fit": "P",
+   "programs": [
+    "Industrial Technology - Level I (Cert. 16-30u)"
+   ],
+   "courses": [
+    "INDUS 20 Industrial Safety and Health",
+    "ELEC 73 Construction Safety - OSHA",
+    "A IND 72A Introduction to Apprenticeship",
+    "A IND 76 Applied Technical Mathematics"
+   ],
+   "why": "Delta has the safety, apprenticeship-orientation and applied-math content that sits inside MC3 pre-apprenticeship, but no construction craft laborer program.",
+   "cpl": "Delta is flagged POTENTIAL on Multi-Craft Core Curriculum (MC3) Pre-Apprenticeship. Construction Craft Laborer Apprenticeship is statewide. MC3 is the realistic first step and aligns with the pre-apprenticeship CPL work the CPL Initiative is already doing."
+  },
+  "landscape and irrigation fitter": {
+   "fit": "C",
+   "programs": [
+    "Horticulture (A.S.)",
+    "Horticulture - Irrigation Technician (Cert. 8-16u)",
+    "Horticulture - Sustainable Landscape Management (Cert. 16-30u)",
+    "Horticulture, Landscape Arborist (Cert. 16-30u)"
+   ],
+   "courses": [
+    "HORT 23 Landscape Irrigation and Drainage",
+    "HORT 21 Landscape Construction",
+    "HORT 20 Landscape Maintenance",
+    "HORT 22 Turf Practices"
+   ],
+   "why": "Delta has a certificate literally named Horticulture - Irrigation Technician, plus HORT 23 Landscape Irrigation and Drainage. This is a named match.",
+   "cpl": "Delta is flagged POTENTIAL on Irrigation and Drainage AND Landscape Installation and Maintenance 1. Both local-only elsewhere. The named certificate makes this one of the easiest adoptions on the list."
+  },
+  "line technician": {
+   "fit": "N",
+   "programs": [],
+   "courses": [],
+   "why": "Delta has no lineworker or power-line program. The A ELE utility series is substation and plant electrical, not line work - do not confuse the two at the meeting.",
+   "cpl": "No CPL exists anywhere in California for the lineworker cluster - this was the single largest gap the statewide SJCOE crosswalk found. Delta does not currently close it. However, Delta is the closest thing in the region to a utility-training college, so it is the right college to ASK whether a lineworker pathway is on its roadmap."
+  },
+  "lineman gc": {
+   "fit": "N",
+   "programs": [],
+   "courses": [],
+   "why": "Delta has no lineworker or power-line program. The A ELE utility series is substation and plant electrical, not line work - do not confuse the two at the meeting.",
+   "cpl": "No CPL exists anywhere in California for the lineworker cluster - this was the single largest gap the statewide SJCOE crosswalk found. Delta does not currently close it. However, Delta is the closest thing in the region to a utility-training college, so it is the right college to ASK whether a lineworker pathway is on its roadmap."
+  },
+  "lineman transmission": {
+   "fit": "N",
+   "programs": [],
+   "courses": [],
+   "why": "Delta has no lineworker or power-line program. The A ELE utility series is substation and plant electrical, not line work - do not confuse the two at the meeting.",
+   "cpl": "No CPL exists anywhere in California for the lineworker cluster - this was the single largest gap the statewide SJCOE crosswalk found. Delta does not currently close it. However, Delta is the closest thing in the region to a utility-training college, so it is the right college to ASK whether a lineworker pathway is on its roadmap."
+  },
+  "lineworker": {
+   "fit": "N",
+   "programs": [],
+   "courses": [],
+   "why": "Delta has no lineworker or power-line program. The A ELE utility series is substation and plant electrical, not line work - do not confuse the two at the meeting.",
+   "cpl": "No CPL exists anywhere in California for the lineworker cluster - this was the single largest gap the statewide SJCOE crosswalk found. Delta does not currently close it. However, Delta is the closest thing in the region to a utility-training college, so it is the right college to ASK whether a lineworker pathway is on its roadmap."
+  },
+  "mainframe systems administrator": {
+   "fit": "P",
+   "programs": [
+    "Computer Support (Cert. 30-60u)",
+    "Computer Support - Technician (Cert. 16-30u)",
+    "Computer Information Systems (A.S.)",
+    "Computer Network Technician (A.S.)"
+   ],
+   "courses": [
+    "CS 42 Introduction to Unix/Linux",
+    "CSN 44 Cloud Computing Essentials",
+    "CSN 46 Server+",
+    "CS 32 Introduction to Computer Operating Systems"
+   ],
+   "why": "Delta has Linux, Server+ and cloud courses, which cover CompTIA Linux+/Server+ and part of the AWS SysOps and Azure Administrator content. It has no mainframe-specific instruction, so the title overstates the fit - validate what the partner actually means by the role.",
+   "cpl": "Delta is flagged POTENTIAL on CompTIA Linux+, Azure AZ-104, RHCSA and LPIC-1. CSN 46 Server+ is a named match to the CompTIA Server+ exhibit."
+  },
+  "maintenance and repair workers general": {
+   "fit": "C",
+   "programs": [
+    "Industrial Technology: Maintenance Apprenticeship Option (Cert. 30-60u)",
+    "Industrial Technology: Mechanical Apprenticeship Option (Cert. 30-60u)",
+    "Industrial Technology - Level I (Cert. 16-30u)",
+    "Industrial Technology - Level II - Mechanical (Cert. 30-60u)",
+    "Fluid Power & Automation Technology (A.S.)"
+   ],
+   "courses": [
+    "A IND 77A Mechanical Fundamentals",
+    "A IND 77B Bearings, Pumps, and Turbines",
+    "A IND 77E Hydraulics",
+    "A IND 77F Pneumatics",
+    "A IND 77N Electro-Mechanical Print Reading",
+    "INDUS 31 Industrial Hydraulics",
+    "INDUS 45 Industrial Technology",
+    "INDUS 20 Industrial Safety and Health"
+   ],
+   "why": "Delta's four Industrial Technology apprenticeship options (Electrical, Maintenance, Mechanical, Operations) plus the A IND 77-series are journeyman-level industrial maintenance content - bearings, pumps, turbines, hydraulics, pneumatics, print reading.",
+   "cpl": "Delta is flagged POTENTIAL on Introduction to Facilities Maintenance (local-only elsewhere). The bigger opportunity is that Delta's apprenticeship options are already structured as credit awards - the CPL exhibit is the missing piece, not the curriculum."
+  },
+  "manufacturing technician": {
+   "fit": "C",
+   "programs": [
+    "Machining Technology (A.S.)",
+    "Manual Machining (Cert. 16-30u)",
+    "Computer Numerical Control (CNC) Operator/Programmer (Cert. 16-30u)"
+   ],
+   "courses": [
+    "MACH 70A/70B Machining Fundamentals I & II",
+    "MACH 73A/73B Intermediate Machining Methods I & II",
+    "MACH 74A/74B Computer Numerical Controlled Machining I & II",
+    "MACH 76A/76B Computer Aided Machining I & II",
+    "MACH 16 Machine Tool Process",
+    "E TECH 20 Materials and Measurements"
+   ],
+   "why": "Delta's split between Manual Machining and CNC Operator/Programmer mirrors the credential split on the SJCOE list (General Machine Shop / Basic Machining vs Introduction to CNC Machining / CNC Machine Set-Up / CNC Mill Programming).",
+   "cpl": "Delta is flagged POTENTIAL on MSSC Certified Production Technician (CPT) - Machinist and on the four CNC/machining exhibits. Currently local-only articulations elsewhere; a Delta adoption adds a Central Valley site for a credential the region's manufacturers use."
+  },
+  "marble mason setter": {
+   "fit": "N",
+   "programs": [],
+   "courses": [],
+   "why": "Delta has no masonry, concrete, cement, tile or terrazzo instruction.",
+   "cpl": "C-29 Masonry Contractor is a STATEWIDE CSLB-licence exhibit with adopters elsewhere. Delta has no masonry pathway — refer out."
+  },
+  "medical assistant": {
+   "fit": "P",
+   "programs": [
+    "Medical Office Assistant (Cert. 16-30u)",
+    "Health Science (A.S.)"
+   ],
+   "courses": [
+    "H S 36 Medical Terminology and Speech",
+    "H S 72 Introduction to Pharmacology for Health Science",
+    "H S 84 Basic Electrocardiograph Reading",
+    "H S 96 Phlebotomy Technician"
+   ],
+   "why": "Delta has the clinical component pieces (medical terminology, pharmacology, EKG, phlebotomy) and a Medical Office Assistant certificate for the administrative half, but no accredited Medical Assistant program as such.",
+   "cpl": "HIT 10: Medical Terminology is a local-only exhibit; Delta is not listed. H S 36 is the obvious counterpart course. Modest but easy."
+  },
+  "meter technician": {
+   "fit": "P",
+   "programs": [
+    "Automation Technology - Mechatronics (A.S.)",
+    "Automation Technician - Mechatronics (Cert. 30-60u)",
+    "Control Systems Technician (Noncredit)",
+    "Electronics Technology (Cert. 16-30u)",
+    "Basic Electronics Technician (Noncredit)",
+    "Fluid Power & Automation Technology (A.S. / Cert. 16-30u)",
+    "Electronics Technology - Manufacturing Associate (Cert. 16-30u)"
+   ],
+   "courses": [
+    "E TECH 47 Introduction to Industrial Control Systems",
+    "ELEC 37 Introduction to Programmable Logic Controllers",
+    "ELECT 17/18 Robotics, Automation and Mechatronics Systems",
+    "A IND 77G Governor Systems",
+    "A IND 77H Computers in Hydro-Electric Plants"
+   ],
+   "why": "Delta teaches industrial control systems and PLCs, and the utility apprenticeship series covers governor systems and plant computers. But no course is specific to metering or gas control instrumentation - the alignment is at the underlying-competency level and needs faculty confirmation.",
+   "cpl": "Delta is flagged POTENTIAL on Instrumentation Devices and Systems (local-only elsewhere). Worth asking whether the utility partner behind the A IND apprenticeship would sponsor a metering/instrumentation exhibit - nothing statewide exists."
+  },
+  "metering systems technician": {
+   "fit": "P",
+   "programs": [
+    "Automation Technology - Mechatronics (A.S.)",
+    "Automation Technician - Mechatronics (Cert. 30-60u)",
+    "Control Systems Technician (Noncredit)",
+    "Electronics Technology (Cert. 16-30u)",
+    "Basic Electronics Technician (Noncredit)",
+    "Fluid Power & Automation Technology (A.S. / Cert. 16-30u)",
+    "Electronics Technology - Manufacturing Associate (Cert. 16-30u)"
+   ],
+   "courses": [
+    "E TECH 47 Introduction to Industrial Control Systems",
+    "ELEC 37 Introduction to Programmable Logic Controllers",
+    "ELECT 17/18 Robotics, Automation and Mechatronics Systems",
+    "A IND 77G Governor Systems",
+    "A IND 77H Computers in Hydro-Electric Plants"
+   ],
+   "why": "Delta teaches industrial control systems and PLCs, and the utility apprenticeship series covers governor systems and plant computers. But no course is specific to metering or gas control instrumentation - the alignment is at the underlying-competency level and needs faculty confirmation.",
+   "cpl": "Delta is flagged POTENTIAL on Instrumentation Devices and Systems (local-only elsewhere). Worth asking whether the utility partner behind the A IND apprenticeship would sponsor a metering/instrumentation exhibit - nothing statewide exists."
+  },
+  "mobile concrete pumps operator": {
+   "fit": "N",
+   "programs": [],
+   "courses": [],
+   "why": "Delta has no masonry, concrete, cement, tile or terrazzo instruction.",
+   "cpl": "C-8 Concrete Contractor is a statewide exhibit, though only loosely related to pump operation specifically. Delta has no pathway. Refer out; a pump-operator credential of its own exists nowhere."
+  },
+  "mobile vertical and or horizontal drilling machine operator": {
+   "fit": "N",
+   "programs": [],
+   "courses": [],
+   "why": "No Delta pathway for this specialised operating role.",
+   "cpl": "No CPL exists anywhere in California for this occupation."
+  },
+  "network support technician": {
+   "fit": "C",
+   "programs": [
+    "Computer Network Technician (A.S. / Cert. 16-30u)",
+    "Computer Networking - Essentials (Cert. 16-30u)",
+    "Computer Networking Software (Cert. 30-60u)",
+    "Computer Networking-Competence (Cert. 16-30u)"
+   ],
+   "courses": [
+    "CNT 30A Introduction to Computer Networks",
+    "CNT 30B Routing and Switching Essentials",
+    "CNT 30C Scaling Network Systems",
+    "CNT 30D Connecting Network Systems",
+    "CNT 32A Advanced Routing Professional (ROUTE)",
+    "CS 56 Networking Essentials"
+   ],
+   "why": "The CNT 30A-30D sequence is the Cisco Networking Academy CCNA curriculum; CNT 32A is the professional-level routing course. This is as close to a named match as this crosswalk gets.",
+   "cpl": "Delta is flagged POTENTIAL on CompTIA Network+ AND Cisco CCNA - both statewide. The Cisco alignment is exact enough that faculty review should be quick."
+  },
+  "nuclear monitoring technicians": {
+   "fit": "N",
+   "programs": [],
+   "courses": [
+    "A IND 77K Fundamentals of Thermodynamics",
+    "A IND 77D Plant Auxiliary Equipment"
+   ],
+   "why": "Delta has no nuclear program. Thermodynamics and plant auxiliary equipment are generic power plant content, not nuclear qualification.",
+   "cpl": "No CPL exists anywhere in California. Not a realistic Delta build - refer out or drop from the priority list."
+  },
+  "nuclear power reactor operators": {
+   "fit": "N",
+   "programs": [],
+   "courses": [
+    "A IND 77K Fundamentals of Thermodynamics",
+    "A IND 77D Plant Auxiliary Equipment"
+   ],
+   "why": "Delta has no nuclear program. Thermodynamics and plant auxiliary equipment are generic power plant content, not nuclear qualification.",
+   "cpl": "No CPL exists anywhere in California. Not a realistic Delta build - refer out or drop from the priority list."
+  },
+  "painter": {
+   "fit": "N",
+   "programs": [],
+   "courses": [],
+   "why": "No painting or coatings trade program at Delta. A IND 78H Protective Coatings is industrial coatings inside the utility apprenticeship, not a painting trade course.",
+   "cpl": "No CPL exists anywhere in California for painting."
+  },
+  "paramedic": {
+   "fit": "C",
+   "programs": [
+    "Health Science (A.S.)"
+   ],
+   "courses": [
+    "H S 87 Emergency Medical Technician (8.0u)",
+    "H S 88 EMT Refresher (2.0u)",
+    "H S 89A Paramedic 1",
+    "H S 89B Paramedic 1L",
+    "H S 89C Paramedic 2",
+    "H S 89D Paramedic 2L",
+    "H S 89E Paramedic 3",
+    "H S 89F Paramedic 4",
+    "H ED 31 Emergency Responder",
+    "H ED 32 Basic Life Support for Healthcare Providers"
+   ],
+   "why": "Delta runs a complete six-course paramedic sequence (H S 89A-89F, 30 units). A licensed paramedic has demonstrably completed this content.",
+   "cpl": "TOP OPPORTUNITY. Paramedic License is statewide and Delta is flagged potential. Note the recurring statewide-flag issue the MAP team has tracked: Paramedic License reads as statewide in the adoption file. Confirm current status at the meeting."
+  },
+  "pest control technician": {
+   "fit": "P",
+   "programs": [
+    "Horticulture (A.S.)",
+    "Agriculture Business: Plant Science (Cert. 16-30u)"
+   ],
+   "courses": [
+    "HORT 5 Integrated Pest Management",
+    "PLANT 32 Field and Crop Integrated Pest Management",
+    "PLANT 30 Weed Science",
+    "PLANT 33 Economic Entomology",
+    "PLANT 34 Plant Pathology",
+    "A IND 78N Pesticides and Herbicides"
+   ],
+   "why": "Delta teaches IPM twice (ornamental and field crop), entomology, plant pathology, weed science and a pesticides/herbicides course. That is a substantial base for DPR Qualified Applicator/Pest Control Adviser credentials.",
+   "cpl": "BUILD-NEW. No CPL exists anywhere in California for pest control. Delta's course coverage is strong enough that a QAL/QAC exhibit could be built here - and California DPR licences are state-issued, which makes a statewide exhibit realistic."
+  },
+  "pharmacy technician": {
+   "fit": "P",
+   "programs": [
+    "Health Science (A.S.)",
+    "Psychiatric Technology (A.S.)"
+   ],
+   "courses": [
+    "H S 72 Introduction to Pharmacology for Health Science",
+    "NURSPT 20/21/22 Pharmacology I, II, III",
+    "H S 36 Medical Terminology and Speech"
+   ],
+   "why": "Delta teaches pharmacology four times over (H S 72 and the NURSPT sequence) but has no pharmacy technician program. A CPhT holder could plausibly challenge H S 72; the rest of the pathway is absent.",
+   "cpl": "California Pharmacy Technician License, CPhT and the Pharmacy Technology Apprenticeship are all local-only exhibits elsewhere and Delta is on none. Given the pharmacology depth already present, a pharmacy tech pathway is a credible build - worth asking whether it has been considered."
+  },
+  "pipefitter": {
+   "fit": "C",
+   "programs": [
+    "Welding Technology (Cert. 30-60u)",
+    "Gas Tungsten Arc Welding (GTAW) (Cert. 16-30u)"
+   ],
+   "courses": [
+    "A CON 90B Codes and Steam Systems",
+    "A CON 90C Pipe Fitting Calculations",
+    "A CON 89B Gas Installation and Drainage",
+    "WELDING 88 GTAW Processes",
+    "WELDING 94 GTAW Laboratory Skills"
+   ],
+   "why": "Two halves both present: the pipefitting/steam content in the A CON apprenticeship and the GTAW pipe-welding qualification content in the WELDING/GTAW certificate.",
+   "cpl": "Delta is flagged POTENTIAL on ASME BPVC Section IX Pipe Welder Qualification - GTAW and on Pipe and Tube Welding. The GTAW certificate makes the ASME IX adoption straightforward."
+  },
+  "plant operator": {
+   "fit": "C",
+   "programs": [
+    "Industrial Technology: Operations Apprenticeship Option (Cert. 30-60u)",
+    "Industrial Technology: Mechanical Apprenticeship Option (Cert. 30-60u)",
+    "Industrial Technology: Maintenance Apprenticeship Option (Cert. 30-60u)",
+    "Industrial Technology: Electrical Apprenticeship Option (Cert. 30-60u)"
+   ],
+   "courses": [
+    "A IND 77A Mechanical Fundamentals",
+    "A IND 77B Bearings, Pumps, and Turbines",
+    "A IND 77C Motors and Generators",
+    "A IND 77D Plant Auxiliary Equipment",
+    "A IND 77E Hydraulics",
+    "A IND 77F Pneumatics",
+    "A IND 77G Governor Systems",
+    "A IND 77H Computers in Hydro-Electric Plants",
+    "A IND 77J Water Aqueduct Systems",
+    "A IND 77K Fundamentals of Thermodynamics",
+    "A IND 77L Project Control and Power Contracts",
+    "A ELE 75C Transformers and PCB",
+    "A ELE 75D Protective Relaying",
+    "A ELE 75E High Voltage Switching"
+   ],
+   "why": "Delta runs a utility/hydroelectric apprenticeship that almost no other California community college has: turbines, governor systems, plant auxiliary equipment, computers in hydro-electric plants, water aqueduct systems, protective relaying and high-voltage switching. 'Plant Operator' is generic on the source list - establish with SJCOE which plant is meant (hydroelectric, water, wastewater), because Delta's fit is strongest for hydro.",
+   "cpl": "Wastewater Treatment Plant Operator Grade 1/2 and Water Treatment Facilities are local exhibits elsewhere and Delta is not listed on any of them. Adoptable, but confirm the occupation's real scope first - the wastewater exhibits will not serve a hydro operator well."
+  },
+  "plasterers": {
+   "fit": "N",
+   "programs": [],
+   "courses": [],
+   "why": "Delta has no carpentry, drywall, lath or plaster program. Note the naming trap: Delta's 'A CON' course prefix is a plumbing apprenticeship, not general construction.",
+   "cpl": "Carpenters Apprenticeship (Carpenter / Drywall Finisher / Drywall Applicator / Drywall-Lather / Millwright / Hardwood Floor Layer) and the NCCER Carpenter levels are STATEWIDE exhibits with adopters elsewhere. Delta cannot adopt without curriculum. Refer to a college that has adopted, or discuss whether the regional carpenters JATC would partner with Delta."
+  },
+  "plating machine setters operators and tenders metal and plastic": {
+   "fit": "N",
+   "programs": [
+    "Machining Technology (A.S.)"
+   ],
+   "courses": [
+    "MACH 16 Machine Tool Process"
+   ],
+   "why": "No metal finishing, plating or electroplating instruction at Delta.",
+   "cpl": "No CPL exists anywhere in California."
+  },
+  "plumber": {
+   "fit": "C",
+   "programs": [
+    "(apprenticeship course series - no standalone COCI program title)"
+   ],
+   "courses": [
+    "A CON 87A Introduction to Plumbing",
+    "A CON 87B Related Math and Rigging",
+    "A CON 88A Drawing, Plan Reading and Science",
+    "A CON 88B Welding",
+    "A CON 89A Water Supply, Pumps and Installations",
+    "A CON 89B Gas Installation and Drainage",
+    "A CON 90A Advanced Plan Reading, Fixtures and Appliances",
+    "A CON 90B Codes and Steam Systems",
+    "A CON 90C Pipe Fitting Calculations",
+    "A CON 90D Medical Gas and Installation"
+   ],
+   "why": "Delta runs a complete 10-course plumbing apprenticeship (A CON 87A-90D) covering water supply, gas installation, drainage, code, fixtures and medical gas. NOTE: these courses do not sit under a plumbing-named COCI program, so the pathway is invisible in a program search - confirm with the college how it is awarded.",
+   "cpl": "C-36 Plumbing Contractor is a statewide exhibit; Delta is not listed as adopter or potential. This is a case where MAP does not know Delta has the capacity. Raising it may be the single most informative item on the agenda."
+  },
+  "power distributors and dispatchers": {
+   "fit": "P",
+   "programs": [
+    "Industrial Technology: Operations Apprenticeship Option (Cert. 30-60u)",
+    "Industrial Technology: Mechanical Apprenticeship Option (Cert. 30-60u)",
+    "Industrial Technology: Maintenance Apprenticeship Option (Cert. 30-60u)",
+    "Industrial Technology: Electrical Apprenticeship Option (Cert. 30-60u)"
+   ],
+   "courses": [
+    "A ELE 75D Protective Relaying",
+    "A ELE 75E High Voltage Switching",
+    "A IND 77H Computers in Hydro-Electric Plants",
+    "A IND 77L Project Control and Power Contracts"
+   ],
+   "why": "Delta's protective relaying and high-voltage switching courses cover the substation/system side, and A IND 77L covers power contracts. There is no dispatch/system-operator course as such - validate whether the apprenticeship covers system operations.",
+   "cpl": "BUILD-NEW, HIGHEST STRATEGIC VALUE. The August 2026 statewide run found no CPL recommendation anywhere in the system for the hydro/utility cluster. Delta appears to hold the only matching curriculum. An exhibit built here would be first-in-state and a natural candidate for statewide adoption. Ask the college who the apprenticeship sponsor is - that sponsor is the credential issuer a MAP exhibit would be keyed to."
+  },
+  "power lineman": {
+   "fit": "N",
+   "programs": [],
+   "courses": [],
+   "why": "Delta has no lineworker or power-line program. The A ELE utility series is substation and plant electrical, not line work - do not confuse the two at the meeting.",
+   "cpl": "No CPL exists anywhere in California for the lineworker cluster - this was the single largest gap the statewide SJCOE crosswalk found. Delta does not currently close it. However, Delta is the closest thing in the region to a utility-training college, so it is the right college to ASK whether a lineworker pathway is on its roadmap."
+  },
+  "power system operator": {
+   "fit": "C",
+   "programs": [
+    "Industrial Technology: Operations Apprenticeship Option (Cert. 30-60u)",
+    "Industrial Technology: Mechanical Apprenticeship Option (Cert. 30-60u)",
+    "Industrial Technology: Maintenance Apprenticeship Option (Cert. 30-60u)",
+    "Industrial Technology: Electrical Apprenticeship Option (Cert. 30-60u)"
+   ],
+   "courses": [
+    "A IND 77A Mechanical Fundamentals",
+    "A IND 77B Bearings, Pumps, and Turbines",
+    "A IND 77C Motors and Generators",
+    "A IND 77D Plant Auxiliary Equipment",
+    "A IND 77E Hydraulics",
+    "A IND 77F Pneumatics",
+    "A IND 77G Governor Systems",
+    "A IND 77H Computers in Hydro-Electric Plants",
+    "A IND 77J Water Aqueduct Systems",
+    "A IND 77K Fundamentals of Thermodynamics",
+    "A IND 77L Project Control and Power Contracts",
+    "A ELE 75C Transformers and PCB",
+    "A ELE 75D Protective Relaying",
+    "A ELE 75E High Voltage Switching"
+   ],
+   "why": "THE FINDING OF THIS CROSSWALK. Delta runs a utility/hydroelectric apprenticeship that almost no other California community college has: turbines, governor systems, plant auxiliary equipment, computers in hydro-electric plants, water aqueduct systems, protective relaying and high-voltage switching. These are the exact competencies behind the occupations the statewide crosswalk found had ZERO CPL anywhere in California.",
+   "cpl": "BUILD-NEW, HIGHEST STRATEGIC VALUE. The August 2026 statewide run found no CPL recommendation anywhere in the system for the hydro/utility cluster. Delta appears to hold the only matching curriculum. An exhibit built here would be first-in-state and a natural candidate for statewide adoption. Ask the college who the apprenticeship sponsor is - that sponsor is the credential issuer a MAP exhibit would be keyed to."
+  },
+  "refrigeration and air conditioning mechanic": {
+   "fit": "C",
+   "programs": [
+    "Heating & Air Conditioning: Refrigeration (A.S.)",
+    "Heating and Air Conditioning (Cert. 30-60u)",
+    "Refrigeration (Cert. 30-60u)"
+   ],
+   "courses": [
+    "HVACR 70A Refrigeration and Air Conditioning",
+    "HVACR 70B Intermediate Refrigeration",
+    "HVACR 70C Advanced Refrigeration",
+    "HVACR 71A Air Conditioning Components and Circuits",
+    "HVACR 71B Air Conditioning Troubleshooting",
+    "HVACR 71C Air Conditioning Systems and Heat Pumps",
+    "HVACR 71D Commercial Air Conditioning Design and Operation",
+    "HVACR 72A-72C Gas Heating series"
+   ],
+   "why": "Delta's HVACR sequence is a course-for-course match to the credential names on the SJCOE list: Refrigeration Principles/Service map to HVACR 70A-70C, Air Conditioning Principles/Intermediate to HVACR 71A-71C.",
+   "cpl": "The Refrigeration Service / Refrigeration Principles / Air Conditioning Principles exhibits are LOCAL articulations at other colleges - no statewide exhibit yet. Delta adopting them (or a Delta-built exhibit) would be a strong candidate to become statewide, given how complete the sequence is. Delta IS flagged potential on the ASE T7/T8 + MACS/609 bundle."
+  },
+  "registered nurse ambulatory care": {
+   "fit": "P",
+   "programs": [
+    "Nursing R.N. (A.S.)",
+    "Health Science (A.S.)"
+   ],
+   "courses": [
+    "NURSADN 1-9 Nursing sequence",
+    "H S 92 RN Preparation for Acute Care Practice",
+    "H S 43 Nursing Synthesis"
+   ],
+   "why": "Delta runs an ADN program, so the generalist RN content is present, but there is no ambulatory-care or perioperative specialty coursework. Specialty certification (e.g. AMB-BC, CNOR) would need a specialty pathway to articulate against.",
+   "cpl": "No CPL exists anywhere in California for these specialty RN roles. Delta's ADN is a starting point but a specialty exhibit would be a genuine build. Note also the LVN-to-RN and military-corpsman-to-RN routes, which are separate CPL conversations worth having."
+  },
+  "registered nurse perioperative": {
+   "fit": "P",
+   "programs": [
+    "Nursing R.N. (A.S.)",
+    "Health Science (A.S.)"
+   ],
+   "courses": [
+    "NURSADN 1-9 Nursing sequence",
+    "H S 92 RN Preparation for Acute Care Practice",
+    "H S 43 Nursing Synthesis"
+   ],
+   "why": "Delta runs an ADN program, so the generalist RN content is present, but there is no ambulatory-care or perioperative specialty coursework. Specialty certification (e.g. AMB-BC, CNOR) would need a specialty pathway to articulate against.",
+   "cpl": "No CPL exists anywhere in California for these specialty RN roles. Delta's ADN is a starting point but a specialty exhibit would be a genuine build. Note also the LVN-to-RN and military-corpsman-to-RN routes, which are separate CPL conversations worth having."
+  },
+  "residential wireman": {
+   "fit": "C",
+   "programs": [
+    "Electrical Technology (A.S.)",
+    "Electrical Technology: Apprenticeship (A.S.)",
+    "Electrical Technology - General Electrician Trainee (Cert. 30-60u)",
+    "Electrical Technology - Electrical Maintenance (Cert. 30-60u)",
+    "Electrical Technology: Apprenticeship Option (Cert. 30-60u)"
+   ],
+   "courses": [
+    "ELEC 30 Fundamentals of Electricity",
+    "ELEC 31 Electrical Wiring Methods",
+    "ELEC 32 Electrical Transformers and Motors",
+    "ELEC 34 Motor Controls",
+    "ELEC 36 Advanced Motor Controls",
+    "ELEC 70 Electrical Codes I",
+    "ELEC 77 Industrial Wiring Methods",
+    "ELEC 73 Construction Safety - OSHA",
+    "A ELE 70A-74B Electrical Apprenticeship I-X (10-term)"
+   ],
+   "why": "Delta runs a full electrical trade pathway AND a 10-term registered electrical apprenticeship (A ELE 70A-74B). ELEC 30/31/32/34/70/77 map directly onto the wiring-methods, motors/controls, transformers and Code content that the NCCER levels and the IBEW/state apprenticeship standards certify. Residential wiring is covered in ELEC 31 Electrical Wiring Methods and the early apprenticeship terms.",
+   "cpl": "Residential Electrical Apprenticeship is statewide. Delta is flagged potential on the IBEW exhibit. Strong, low-effort adoption candidate."
+  },
+  "riggers": {
+   "fit": "P",
+   "programs": [
+    "Industrial Technology - Level II - Mechanical (Cert. 30-60u)"
+   ],
+   "courses": [
+    "A IND 78K Mobile Cranes and Rigging",
+    "A CON 87B Related Math and Rigging"
+   ],
+   "why": "Same two courses. Rigging is taught as a component of the utility and plumbing apprenticeships rather than as its own certificate.",
+   "cpl": "Rigging, Rigging and Signaling and the Ironworker rigging exhibits are local-only elsewhere and Delta is not listed on most. Modest but real opportunity."
+  },
+  "rock sand gravel": {
+   "fit": "N",
+   "programs": [],
+   "courses": [],
+   "why": "No Delta pathway for this specialised operating role.",
+   "cpl": "No CPL exists anywhere in California for this occupation."
+  },
+  "school food director": {
+   "fit": "C",
+   "programs": [
+    "Culinary Arts (A.A. / Cert. 16-30u)",
+    "Culinary Arts - Advanced (A.S.)",
+    "Baking and Pastry (A.S. / Cert. 16-30u)",
+    "Hospitality Front of House Essentials (Cert. 16-30u)"
+   ],
+   "courses": [
+    "CUL ART 3 Sanitation and Safety",
+    "CUL ART 75 Intro to Safe Food Handling",
+    "CUL ART 25 Food Service Management",
+    "CUL ART 13 Purchasing and Receiving",
+    "CUL ART 4 Food and Beverage Cost Technologies",
+    "CUL ART 19 Kitchen Management"
+   ],
+   "why": "CUL ART 3 Sanitation and Safety is the course ServSafe Food Protection Manager maps onto at essentially every college that has articulated it, and Delta also has CUL ART 75 Intro to Safe Food Handling. Food service management and purchasing cover the director-level content.",
+   "cpl": "Delta is flagged POTENTIAL on ServSafe Food Protection Manager Certification, ANSI-Accredited Food Protection Manager Certification, California Food Manager Certificate AND Sanitation and Safety - four exhibits, one course. School nutrition staff hold these certificates almost universally, so the SJCOE population match is high. Best effort-to-reach ratio on the entire list."
+  },
+  "school food specialist": {
+   "fit": "C",
+   "programs": [
+    "Culinary Arts (A.A. / Cert. 16-30u)",
+    "Culinary Arts - Advanced (A.S.)",
+    "Baking and Pastry (A.S. / Cert. 16-30u)",
+    "Hospitality Front of House Essentials (Cert. 16-30u)"
+   ],
+   "courses": [
+    "CUL ART 3 Sanitation and Safety",
+    "CUL ART 75 Intro to Safe Food Handling",
+    "CUL ART 25 Food Service Management",
+    "CUL ART 13 Purchasing and Receiving",
+    "CUL ART 4 Food and Beverage Cost Technologies",
+    "CUL ART 19 Kitchen Management"
+   ],
+   "why": "CUL ART 3 Sanitation and Safety is the course ServSafe Food Protection Manager maps onto at essentially every college that has articulated it, and Delta also has CUL ART 75 Intro to Safe Food Handling. Food service management and purchasing cover the director-level content.",
+   "cpl": "Delta is flagged POTENTIAL on ServSafe Food Protection Manager Certification, ANSI-Accredited Food Protection Manager Certification, California Food Manager Certificate AND Sanitation and Safety - four exhibits, one course. School nutrition staff hold these certificates almost universally, so the SJCOE population match is high. Best effort-to-reach ratio on the entire list."
+  },
+  "software engineer application developer": {
+   "fit": "C",
+   "programs": [
+    "Computer Programming (Cert. 30-60u)",
+    "Computer Programming - Essentials (Cert. 16-30u)",
+    "Computer Programming-Competence (Cert. 30-60u)",
+    "Computer Science (A.S. / A.S.-T)",
+    "Computer Web Developer (Cert. 30-60u)"
+   ],
+   "courses": [
+    "CSP 51 Programming in Python",
+    "CSP 26A JAVA Programming",
+    "CSP 26B Data Structures with Java",
+    "CSP 31A/31B C++ Programming I & II",
+    "CSP 17 Introduction to Programming Concepts and Methodologies",
+    "CSW 45 Server-side Web Development"
+   ],
+   "why": "Delta's programming certificates cover Python (CSP 51), Java (CSP 26A/26B), C++ (CSP 31A/31B), C# (CSP 32A) and web/database development, matching the PCAP, Java fundamentals and Python fundamentals exhibits.",
+   "cpl": "Delta is flagged POTENTIAL on PCAP, Introduction to Python Programming, Programming Fundamentals: Java and Python Programming Fundamentals. All local-only today; Delta adopting them creates Central Valley access."
+  },
+  "sound and communications systems installer voice data video": {
+   "fit": "P",
+   "programs": [
+    "Computer Network Technician (A.S. / Cert. 16-30u)",
+    "Electronics Technology (Cert. 16-30u)",
+    "Electrical Technology (A.S.)"
+   ],
+   "courses": [
+    "ELEC 42 Security Alarms",
+    "ELEC 41 Fire Alarm Systems",
+    "CNT 30E Network Hardware Application",
+    "CNT 30A Introduction to Computer Networks",
+    "ELECT 13A Digital Logic, Circuits, and Systems"
+   ],
+   "why": "Delta teaches low-voltage systems (fire alarm, security alarm) and network cabling/hardware, which is the substance of voice-data-video installation - but there is no sound-and-communications or telecom program as such.",
+   "cpl": "Delta is flagged POTENTIAL on Sound and Communication Systems Installer Apprenticeship and on Communications Systems (both local-only elsewhere). ELEC 41/42 give a credible articulation target. Ask whether the local IBEW sound-and-comm JATC would partner."
+  },
+  "station operator": {
+   "fit": "C",
+   "programs": [
+    "Industrial Technology: Operations Apprenticeship Option (Cert. 30-60u)",
+    "Industrial Technology: Mechanical Apprenticeship Option (Cert. 30-60u)",
+    "Industrial Technology: Maintenance Apprenticeship Option (Cert. 30-60u)",
+    "Industrial Technology: Electrical Apprenticeship Option (Cert. 30-60u)"
+   ],
+   "courses": [
+    "A IND 77A Mechanical Fundamentals",
+    "A IND 77B Bearings, Pumps, and Turbines",
+    "A IND 77C Motors and Generators",
+    "A IND 77D Plant Auxiliary Equipment",
+    "A IND 77E Hydraulics",
+    "A IND 77F Pneumatics",
+    "A IND 77G Governor Systems",
+    "A IND 77H Computers in Hydro-Electric Plants",
+    "A IND 77J Water Aqueduct Systems",
+    "A IND 77K Fundamentals of Thermodynamics",
+    "A IND 77L Project Control and Power Contracts",
+    "A ELE 75C Transformers and PCB",
+    "A ELE 75D Protective Relaying",
+    "A ELE 75E High Voltage Switching"
+   ],
+   "why": "THE FINDING OF THIS CROSSWALK. Delta runs a utility/hydroelectric apprenticeship that almost no other California community college has: turbines, governor systems, plant auxiliary equipment, computers in hydro-electric plants, water aqueduct systems, protective relaying and high-voltage switching. These are the exact competencies behind the occupations the statewide crosswalk found had ZERO CPL anywhere in California.",
+   "cpl": "BUILD-NEW, HIGHEST STRATEGIC VALUE. The August 2026 statewide run found no CPL recommendation anywhere in the system for the hydro/utility cluster. Delta appears to hold the only matching curriculum. An exhibit built here would be first-in-state and a natural candidate for statewide adoption. Ask the college who the apprenticeship sponsor is - that sponsor is the credential issuer a MAP exhibit would be keyed to."
+  },
+  "steamfitter pipefitter": {
+   "fit": "C",
+   "programs": [
+    "Welding Technology (Cert. 30-60u)",
+    "Gas Tungsten Arc Welding (GTAW) (Cert. 16-30u)"
+   ],
+   "courses": [
+    "A CON 90B Codes and Steam Systems",
+    "A CON 90C Pipe Fitting Calculations",
+    "A CON 89B Gas Installation and Drainage",
+    "WELDING 88 GTAW Processes",
+    "WELDING 94 GTAW Laboratory Skills"
+   ],
+   "why": "Two halves both present: the pipefitting/steam content in the A CON apprenticeship and the GTAW pipe-welding qualification content in the WELDING/GTAW certificate.",
+   "cpl": "Delta is flagged POTENTIAL on ASME BPVC Section IX Pipe Welder Qualification - GTAW and on Pipe and Tube Welding. The GTAW certificate makes the ASME IX adoption straightforward."
+  },
+  "substation electrician": {
+   "fit": "C",
+   "programs": [
+    "Industrial Technology: Electrical Apprenticeship Option (Cert. 30-60u)",
+    "Electrical Technology (A.S.)",
+    "Electrical Technology - Electrical Maintenance (Cert.)"
+   ],
+   "courses": [
+    "A ELE 75A Basic Electricity",
+    "A ELE 75B Advanced Electricity",
+    "A ELE 75C Transformers and Polychlorinated Biphenyl",
+    "A ELE 75D Protective Relaying",
+    "A ELE 75E High Voltage Switching",
+    "A ELE 75F Electrical Motors and Controls",
+    "ELEC 37 Introduction to Programmable Logic Controllers"
+   ],
+   "why": "Delta's Industrial Technology: Electrical Apprenticeship Option plus the utility electrical series A ELE 75A-75F (Basic/Advanced Electricity, Transformers and PCB, Protective Relaying, High Voltage Switching, Motors and Controls) is industrial/utility electrical content, not construction wiring - which is exactly what the NCCER Industrial Electrician levels certify.",
+   "cpl": "Statewide NCCER Industrial Electrician Level 1-4 exhibits exist and Delta has adopted none. Delta's A ELE 75-series is unusually well matched - most colleges have no utility-electrical course at all."
+  },
+  "surgical technologist": {
+   "fit": "N",
+   "programs": [
+    "Nursing R.N. (A.S.)",
+    "Health Science (A.S.)"
+   ],
+   "courses": [],
+   "why": "Delta has no surgical technology or sterile processing program. Its health portfolio is nursing, psych tech, rad tech, CNA/HHA and EMS.",
+   "cpl": "No CPL exists anywhere in California for either occupation. Both are high-demand hospital roles - a genuine statewide gap the SJCOE partnership could help make the case for."
+  },
+  "telecom tech": {
+   "fit": "P",
+   "programs": [
+    "Computer Network Technician (A.S. / Cert. 16-30u)",
+    "Electronics Technology (Cert. 16-30u)",
+    "Electrical Technology (A.S.)"
+   ],
+   "courses": [
+    "ELEC 42 Security Alarms",
+    "ELEC 41 Fire Alarm Systems",
+    "CNT 30E Network Hardware Application",
+    "CNT 30A Introduction to Computer Networks",
+    "ELECT 13A Digital Logic, Circuits, and Systems"
+   ],
+   "why": "Delta teaches low-voltage systems (fire alarm, security alarm) and network cabling/hardware, which is the substance of voice-data-video installation - but there is no sound-and-communications or telecom program as such.",
+   "cpl": "Delta is flagged POTENTIAL on Sound and Communication Systems Installer Apprenticeship and on Communications Systems (both local-only elsewhere). ELEC 41/42 give a credible articulation target. Ask whether the local IBEW sound-and-comm JATC would partner."
+  },
+  "telecommunications equipment installers and repairers except line installers": {
+   "fit": "P",
+   "programs": [
+    "Computer Network Technician (A.S. / Cert. 16-30u)",
+    "Electronics Technology (Cert. 16-30u)",
+    "Electrical Technology (A.S.)"
+   ],
+   "courses": [
+    "ELEC 42 Security Alarms",
+    "ELEC 41 Fire Alarm Systems",
+    "CNT 30E Network Hardware Application",
+    "CNT 30A Introduction to Computer Networks",
+    "ELECT 13A Digital Logic, Circuits, and Systems"
+   ],
+   "why": "Delta teaches low-voltage systems (fire alarm, security alarm) and network cabling/hardware, which is the substance of voice-data-video installation - but there is no sound-and-communications or telecom program as such.",
+   "cpl": "Delta is flagged POTENTIAL on Sound and Communication Systems Installer Apprenticeship and on Communications Systems (both local-only elsewhere). ELEC 41/42 give a credible articulation target. Ask whether the local IBEW sound-and-comm JATC would partner."
+  },
+  "telecommunications technician": {
+   "fit": "P",
+   "programs": [
+    "Computer Network Technician (A.S. / Cert. 16-30u)",
+    "Electronics Technology (Cert. 16-30u)",
+    "Electrical Technology (A.S.)"
+   ],
+   "courses": [
+    "ELEC 42 Security Alarms",
+    "ELEC 41 Fire Alarm Systems",
+    "CNT 30E Network Hardware Application",
+    "CNT 30A Introduction to Computer Networks",
+    "ELECT 13A Digital Logic, Circuits, and Systems"
+   ],
+   "why": "Delta teaches low-voltage systems (fire alarm, security alarm) and network cabling/hardware, which is the substance of voice-data-video installation - but there is no sound-and-communications or telecom program as such.",
+   "cpl": "Delta is flagged POTENTIAL on Sound and Communication Systems Installer Apprenticeship and on Communications Systems (both local-only elsewhere). ELEC 41/42 give a credible articulation target. Ask whether the local IBEW sound-and-comm JATC would partner."
+  },
+  "terrazzo layer setter": {
+   "fit": "N",
+   "programs": [],
+   "courses": [],
+   "why": "Delta has no masonry, concrete, cement, tile or terrazzo instruction.",
+   "cpl": "Only loose relations exist — Carpenters Apprenticeship (Hardwood Floor Layer) and C-29 Masonry Contractor — and neither is terrazzo. Delta has no pathway. Effectively a statewide gap for terrazzo proper, and not a realistic Delta build."
+  },
+  "tile finisher": {
+   "fit": "N",
+   "programs": [],
+   "courses": [],
+   "why": "Delta has no masonry, concrete, cement, tile or terrazzo instruction.",
+   "cpl": "No CPL exists anywhere in California for tile/terrazzo setting, and Delta has no pathway. This is a genuine statewide gap, not a Delta gap."
+  },
+  "tile setter": {
+   "fit": "N",
+   "programs": [],
+   "courses": [],
+   "why": "Delta has no masonry, concrete, cement, tile or terrazzo instruction.",
+   "cpl": "No CPL exists anywhere in California for tile/terrazzo setting, and Delta has no pathway. This is a genuine statewide gap, not a Delta gap."
+  },
+  "tool die maker": {
+   "fit": "C",
+   "programs": [
+    "Machining Technology (A.S.)",
+    "Manual Machining (Cert. 16-30u)",
+    "Computer Numerical Control (CNC) Operator/Programmer (Cert. 16-30u)"
+   ],
+   "courses": [
+    "MACH 70A/70B Machining Fundamentals I & II",
+    "MACH 73A/73B Intermediate Machining Methods I & II",
+    "MACH 74A/74B Computer Numerical Controlled Machining I & II",
+    "MACH 76A/76B Computer Aided Machining I & II",
+    "MACH 16 Machine Tool Process",
+    "E TECH 20 Materials and Measurements"
+   ],
+   "why": "Delta's split between Manual Machining and CNC Operator/Programmer mirrors the credential split on the SJCOE list (General Machine Shop / Basic Machining vs Introduction to CNC Machining / CNC Machine Set-Up / CNC Mill Programming).",
+   "cpl": "Delta is flagged POTENTIAL on MSSC Certified Production Technician (CPT) - Machinist and on the four CNC/machining exhibits. Currently local-only articulations elsewhere; a Delta adoption adds a Central Valley site for a credential the region's manufacturers use."
+  },
+  "transmission mechanic": {
+   "fit": "C",
+   "programs": [
+    "Automotive Master Technician (Cert. 30-60u)",
+    "Automotive Mechanics Technology (Cert. 30-60u)",
+    "Automotive Technology (A.S.)",
+    "Diesel Equipment Technician (A.S.)"
+   ],
+   "courses": [
+    "AUTOMECH 97 Automatic Transmissions and Transaxles",
+    "AUTOMECH 94 Manual Drivetrain and Axles",
+    "AUTOMECH 91 Starting, Charging, and Electrical Systems",
+    "DIESL 92 Heavy Duty Power Trains",
+    "DIESL 98 Allison Transmission Service"
+   ],
+   "why": "AUTOMECH 97 and 94 are a direct content match to ASE A2 (Automatic Transmission/Transaxle) and ASE A3 (Manual Drive Train and Axles); AUTOMECH 91 covers the A6 electrical content in the bundled exhibit.",
+   "cpl": "Delta is flagged POTENTIAL on ASE A2, A3 and the A2+A3+A6 bundle. Three exhibits, one course cluster - the cheapest adoption on the whole list."
+  },
+  "transmission system operator": {
+   "fit": "P",
+   "programs": [
+    "Industrial Technology: Operations Apprenticeship Option (Cert. 30-60u)",
+    "Industrial Technology: Mechanical Apprenticeship Option (Cert. 30-60u)",
+    "Industrial Technology: Maintenance Apprenticeship Option (Cert. 30-60u)",
+    "Industrial Technology: Electrical Apprenticeship Option (Cert. 30-60u)"
+   ],
+   "courses": [
+    "A ELE 75D Protective Relaying",
+    "A ELE 75E High Voltage Switching",
+    "A IND 77H Computers in Hydro-Electric Plants",
+    "A IND 77L Project Control and Power Contracts"
+   ],
+   "why": "Delta's protective relaying and high-voltage switching courses cover the substation/system side, and A IND 77L covers power contracts. There is no dispatch/system-operator course as such - validate whether the apprenticeship covers system operations.",
+   "cpl": "BUILD-NEW, HIGHEST STRATEGIC VALUE. The August 2026 statewide run found no CPL recommendation anywhere in the system for the hydro/utility cluster. Delta appears to hold the only matching curriculum. An exhibit built here would be first-in-state and a natural candidate for statewide adoption. Ask the college who the apprenticeship sponsor is - that sponsor is the credential issuer a MAP exhibit would be keyed to."
+  },
+  "u c f w northern ca meat meat cutter": {
+   "fit": "N",
+   "programs": [],
+   "courses": [
+    "CUL ART 5 Commercial Food Preparation",
+    "CUL ART 73 Garde Manger"
+   ],
+   "why": "Delta has no meat cutting or butchery instruction. Garde manger touches charcuterie but is not the trade.",
+   "cpl": "No CPL exists anywhere in California for meat cutting."
+  },
+  "utility pipeline installer": {
+   "fit": "P",
+   "programs": [
+    "(plumbing apprenticeship course series)"
+   ],
+   "courses": [
+    "A CON 89A Water Supply, Pumps and Installations",
+    "A CON 89B Gas Installation and Drainage",
+    "A IND 77J Water Aqueduct Systems",
+    "A IND 78M Tractor Operations, Trenching, and Shoring"
+   ],
+   "why": "Water supply/pumps, gas installation and drainage, aqueduct systems and trenching/shoring between them cover most of pipeline installation, but spread across two apprenticeships.",
+   "cpl": "Wastewater Collection Systems and Water Distribution Systems are local-only exhibits elsewhere; Delta is not listed. Worth raising alongside the utility apprenticeship discussion."
+  },
+  "water system repairperson": {
+   "fit": "P",
+   "programs": [
+    "(plumbing / utility apprenticeship course series)"
+   ],
+   "courses": [
+    "A CON 89A Water Supply, Pumps and Installations",
+    "A IND 77J Water Aqueduct Systems",
+    "A IND 77B Bearings, Pumps, and Turbines"
+   ],
+   "why": "Delta teaches water supply, pumps and aqueduct systems, which is the substantive content behind water distribution work. No water-technology program exists, so this needs validation.",
+   "cpl": "Delta IS flagged POTENTIAL on Water Supply Technology. Water Distribution Operator Grade D2 and Water Distribution Systems are local-only elsewhere. A Delta water/wastewater pathway would serve a real regional need - the county has extensive water infrastructure."
+  },
+  "water system repairperson gc": {
+   "fit": "P",
+   "programs": [
+    "(plumbing / utility apprenticeship course series)"
+   ],
+   "courses": [
+    "A CON 89A Water Supply, Pumps and Installations",
+    "A IND 77J Water Aqueduct Systems",
+    "A IND 77B Bearings, Pumps, and Turbines"
+   ],
+   "why": "Delta teaches water supply, pumps and aqueduct systems, which is the substantive content behind water distribution work. No water-technology program exists, so this needs validation.",
+   "cpl": "Delta IS flagged POTENTIAL on Water Supply Technology. Water Distribution Operator Grade D2 and Water Distribution Systems are local-only elsewhere. A Delta water/wastewater pathway would serve a real regional need - the county has extensive water infrastructure."
+  },
+  "welder gc gas": {
+   "fit": "C",
+   "programs": [
+    "Welding Technology (Cert. 30-60u)",
+    "Gas Metal Arc Welding (GMAW)/Flux Core Arc Welding (FCAW) (Cert. 16-30u)",
+    "Gas Tungsten Arc Welding (GTAW) (Cert. 16-30u)",
+    "Oxy-Fuel Processes and Shielded Metal Arc Welding (SMAW) (Cert. 16-30u)"
+   ],
+   "courses": [
+    "WELDING 82 Introduction to Welding and Cutting Processes for the Trades",
+    "WELDING 84 SMAW and Oxyfuel Processes",
+    "WELDING 86 GMAW and FCAW Processes",
+    "WELDING 88 GTAW Processes",
+    "WELDING 90 SMAW Laboratory Skills",
+    "WELDING 92 GMAW (MIG)",
+    "WELDING 94 GTAW Laboratory Skills",
+    "WELDING 98 Metal Trade Layout, Forming, and Fabrication"
+   ],
+   "why": "Delta certificates are organised BY PROCESS - SMAW, GMAW/FCAW, GTAW - which is the same axis the AWS qualification exhibits are keyed on. A welder holding an AWS D1.1 SMAW or D1.1 FCAW qualification has demonstrated the exact performance the matching WELDING course assesses.",
+   "cpl": "Strongest single opportunity in the trades. The AWS D1.1/D1.3/D1.5/D1.8/D9.1 exhibits are statewide with many adopters; MAP lists Delta as a potential adopter on all of them and Delta has adopted none. Process-level certificates make the articulation unusually clean."
+  },
+  "welders cutters solderers and brazers": {
+   "fit": "C",
+   "programs": [
+    "Welding Technology (Cert. 30-60u)",
+    "Gas Metal Arc Welding (GMAW)/Flux Core Arc Welding (FCAW) (Cert. 16-30u)",
+    "Gas Tungsten Arc Welding (GTAW) (Cert. 16-30u)",
+    "Oxy-Fuel Processes and Shielded Metal Arc Welding (SMAW) (Cert. 16-30u)"
+   ],
+   "courses": [
+    "WELDING 82 Introduction to Welding and Cutting Processes for the Trades",
+    "WELDING 84 SMAW and Oxyfuel Processes",
+    "WELDING 86 GMAW and FCAW Processes",
+    "WELDING 88 GTAW Processes",
+    "WELDING 90 SMAW Laboratory Skills",
+    "WELDING 92 GMAW (MIG)",
+    "WELDING 94 GTAW Laboratory Skills",
+    "WELDING 98 Metal Trade Layout, Forming, and Fabrication"
+   ],
+   "why": "Delta certificates are organised BY PROCESS - SMAW, GMAW/FCAW, GTAW - which is the same axis the AWS qualification exhibits are keyed on. A welder holding an AWS D1.1 SMAW or D1.1 FCAW qualification has demonstrated the exact performance the matching WELDING course assesses.",
+   "cpl": "Strongest single opportunity in the trades. The AWS D1.1/D1.3/D1.5/D1.8/D9.1 exhibits are statewide with many adopters; MAP lists Delta as a potential adopter on all of them and Delta has adopted none. Process-level certificates make the articulation unusually clean."
+  },
+  "wildland fire fighter specialist": {
+   "fit": "N",
+   "programs": [],
+   "courses": [],
+   "why": "Delta has NO fire technology program and no fire service courses. The only fire-named course in the catalog is ELEC 41 Fire Alarm Systems, which is an electrical installation course, not fire service training.",
+   "cpl": "The fire exhibits are the best-covered cluster in the whole state (Firefighter 1 at 17 colleges, the full Fire Officer 2A-2E and Fire Inspector 1A-1D series statewide) - but Delta cannot adopt them without curriculum. Two options to put to the college: refer these students to Modesto Junior College (265 career credentials, the largest portfolio in the state), or treat a Delta fire program as a strategic build. MAP does flag Delta as a potential adopter on Firefighter 1 and Fire Apparatus Driver/Operator 1B, which means the platform expects a college of Delta's profile to offer it."
+  }
+ },
+ "_counts": {
+  "occupations": 139,
+  "confirmed": 52,
+  "potential": 38,
+  "none": 49
+ },
+ "_narrative": {
+  "_note": "Run-specific COPY for the generated workbook + HTML. It lives here, not in kb/_build_college_offering_crosswalk.py, because these are FINDINGS about one college and a generator that hardcoded them would be lying about being reusable. Placeholders: {college} {partner} {n} {nC} {nP} {nN} {n1} {n2}.",
+  "headline_title": "What {college} could already give credit for",
+  "headline_dek": "The {n} occupations on the SJCOE list, checked one by one against {college}’s own active programs and course catalog — and against the credit-recommendation exhibits that already exist in the MAP platform.",
+  "finding_heading": "The one thing to take into the meeting",
+  "finding_paras": [
+   "{college} has articulated <strong>zero</strong> of the credentials on this occupation list. Its only career or technical CPL today is the POST Basic Academy; the other 68 exhibits it carries are AP and CLEP exams.",
+   "But {college} already teaches the content for <strong>{nC} of the {n} occupations</strong>, and for <strong>{n1}</strong> of those the exhibit is already built in MAP <em>and lists the college as a potential adopter</em>. For those {n1}, nothing needs to be created — the curriculum exists, the credit recommendation exists, and the articulation is the only missing step.",
+   "A second, rarer opportunity: {college} runs a utility and hydroelectric apprenticeship — turbines, governor systems, protective relaying, high-voltage switching, aqueduct systems — covering <strong>{n2} occupations for which no credit recommendation exists anywhere in California</strong>. An exhibit built here would be first in the state."
+  ],
+  "readme": [
+   [
+    "What this is",
+    [
+     "A working agenda for one conversation: which of {college}'s existing courses, programs and certificates could carry Credit for Prior Learning (CPL) for the occupations on the {partner} occupation list — and which of those already have a credit-recommendation exhibit built in the MAP platform.",
+     "It narrows the earlier statewide SJCOE crosswalk (August 2026, {n} occupations across all 116 colleges) down to what {college} itself has available."
+    ]
+   ],
+   [
+    "The headline",
+    [
+     "• {college} has adopted ZERO CPL exhibits for any occupation on this list. Its only career/technical CPL today is POST Basic Academy; the other 68 exhibits it carries are AP and CLEP exams.",
+     "• Yet it has a confirmed matching offering for {nC} of the {n} occupations — and for {n1} of those, the MAP exhibit ALREADY EXISTS and lists the college as a potential adopter. The curriculum is there and the exhibit is there; only the articulation is missing.",
+     "• It also appears to hold curriculum for the hydro/utility occupations that have NO credit recommendation anywhere in California ({n2} of them). That is a first-in-state build opportunity, not a catch-up one.",
+     "• It has no fire technology instruction at all, which is the single largest cluster on the list (17 occupations) and the best-covered cluster statewide. Those students need a referral or a college build."
+    ]
+   ],
+   [
+    "How to read the columns",
+    [
+     "Alignment status — the three categories requested, based on the COLLEGE'S OFFERING only:",
+     "     Confirmed alignment  ·  An active program or named course sequence teaches this occupation's core content.",
+     "     Potential — validate with college  ·  Partial or adjacent coverage; a faculty member needs to confirm.",
+     "     No apparent alignment  ·  Nothing in the active catalog covers this.",
+     "MAP exhibit status — a separate question: does a credit-recommendation exhibit already exist, and where does the college stand on it?",
+     "     \"flagged as potential adopter\" means MAP already identifies this college as one that could adopt. These are the cheapest wins.",
+     "     \"No CPL exhibit anywhere\" means nothing exists statewide — a build, and often a chance to be first.",
+     "Priority — derived from those two columns, not authored. See the Priority Opportunities tab."
+    ]
+   ],
+   [
+    "Method (same as the original SJCOE crosswalk)",
+    [
+     "Occupation → credential matching is reused verbatim from the shared map built for the first SJCOE run (kb/occupation_credential_map.json, {n} occupations / 406 rulings). Nothing was re-judged there.",
+     "Occupation → college offering matching is NEW subject-matter judgment for this run, made against the COCI program export and the published course catalog. It is a discussion agenda, not a determination — faculty decide what articulates.",
+     "MAP exhibit status is read mechanically from the MAP adoption data; no judgment involved."
+    ]
+   ],
+   [
+    "Sources",
+    [
+     "CCCCO COCI program inventory export (2026-06-17) — 251 active/approved {college} programs, 184 of them CTE.",
+     "{college} course catalog as loaded into the MAP knowledge base (synced 2026-08-13) — 1,449 courses across 98 subjects.",
+     "MAP platform exhibit and adoption data (statewide_data.js, refreshed 2026-08-19) — adopters and potential adopters per exhibit.",
+     "MAP Common Exhibit Reference (credential_reference_data.js, 2026-08-19) — existing articulation lines.",
+     "Original SJCOE occupation list: 0c936cc1-SJCOE_Occupations.xlsx, 160 rows → {n} unique occupations."
+    ]
+   ],
+   [
+    "Caveats worth saying out loud in the meeting",
+    [
+     "Program and course data is a point-in-time export; the college may have added or retired offerings since. Confirm anything you act on.",
+     "A course-title match is not a curriculum review. Every \"confirmed\" row still needs the discipline faculty to agree the learning outcomes line up.",
+     "Adopter counts here union statewide adoptions and local articulations, so they can legitimately exceed the count shown on MAP's Statewide Exhibits view.",
+     "The plumbing apprenticeship (A CON 87A–90D) does not sit under a plumbing-named program in COCI, so it is invisible to a program search. There may be other pathways the same is true of — worth asking directly."
+    ]
+   ]
+  ],
+  "footer": [
+   "<strong>How to read this.</strong> “Confirmed” means {college} has an active program or a named course sequence covering the occupation’s core content — not that the credit has been approved. Every row still needs the discipline faculty to agree the learning outcomes line up. “Validate” means partial or adjacent coverage. “No match” means nothing in the active catalog covers it.",
+   "<strong>What is mechanical and what is judgment.</strong> The occupation-to-credential matching is reused unchanged from the statewide SJCOE crosswalk. The MAP exhibit status is read directly from the platform’s adoption data. The occupation-to-offering matching is subject-matter judgment made for this run — it is a discussion agenda, not a determination.",
+   "<strong>Two things worth asking {college} directly.</strong> Its plumbing apprenticeship (<span class=\"mono\">A CON 87A–90D</span>) sits under no plumbing-named program in COCI, so it is invisible to a program search — there may be other pathways the same is true of. And the utility apprenticeship has a sponsor: that sponsor is the credential issuer any new exhibit would be keyed to."
+  ],
+  "page_title": "Delta CPL Crosswalk",
+  "source_note": "COCI export 17 Jun 2026 · catalog synced 13 Aug 2026 · MAP data 19 Aug 2026",
+  "college_short": "Delta"
+ }
+}

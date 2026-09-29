@@ -84,6 +84,27 @@ a:hover { text-decoration: underline; }
   * { scroll-behavior: auto !important; }
 }
 
+/* Skip link (WCAG 2.4.1 Bypass Blocks). The page opens with a sticky action bar
+   and a 20-entry table of contents, so a keyboard or screen-reader user
+   otherwise tabs through ~25 controls before reaching any content. Off-screen
+   until focused, then pinned top-left. No transition — it must not animate for
+   a reduced-motion user, and an instant appearance is what a skip link wants. */
+.skip-link {
+  position: absolute; left: 8px; top: -70px; z-index: 60;
+  background: var(--surface); color: var(--cobalt);
+  border: 1px solid var(--cobalt); border-radius: var(--radius-sm);
+  padding: 9px 15px; font: 600 .95rem var(--font-data); text-decoration: none;
+}
+.skip-link:focus { top: 8px; }
+/* The skip target takes focus programmatically; it must not paint a ring as if
+   it were an interactive control. */
+main:focus { outline: none; }
+
+/* A horizontally scrolling container is mouse-draggable but NOT keyboard
+   reachable unless it is focusable (WCAG 2.1.1) — factsheet.js adds tabindex
+   only while it actually overflows, so this ring is the visible half. */
+.tbl-wrap:focus-visible { outline: 2px solid var(--cobalt); outline-offset: 2px; border-radius: 4px; }
+
 /* Screen-reader-only utility — visually hidden, still announced (table caption,
    statewide column labels, etc.). */
 .sr-only {
@@ -106,6 +127,11 @@ a:hover { text-decoration: underline; }
   display: inline-flex; align-items: center; gap: 8px; transition: background .12s, border-color .12s;
 }
 .btn:hover { background: var(--surface-subtle); }
+/* `.btn` sets display:inline-flex, which outranks the UA sheet's
+   [hidden]{display:none} — so a button shipped hidden (#btn-curate) would
+   paint anyway. Declared here rather than in the JS-injected block so the
+   public never sees a flash of it before factsheet_edit.js boots. */
+.btn[hidden] { display: none !important; }
 .btn-primary { background: var(--seal-blue); border-color: var(--seal-blue); color: #fff; }
 .btn-primary:hover { background: #013a86; }
 /* Visible keyboard focus on all interactive controls (WCAG 2.4.7 AA). The
@@ -141,6 +167,18 @@ section.collapsed > *:not(h2) { display: none; }
 h2.sec-toggle:focus-visible { outline: 2px solid var(--cobalt); outline-offset: 3px; border-radius: 4px; }
 h3 { font-size: 1.12rem; color: var(--ink); margin: 22px 0 6px; }
 h4 { font-size: 1rem; color: var(--seal-blue); margin: 16px 0 4px; }
+/* Heading LEVEL follows the document outline; heading LOOK follows the role.
+   These two utilities let the two disagree without skipping a level (WCAG 1.3.1
+   / technique G141), so the semantics could be corrected and the page not move:
+     h3.h-sub  — a card title sitting directly under a section h2: h3 by depth,
+                 h4 by look. Mirrored in factsheet_word.js's export stylesheet.
+     h2.h-card — the Contents card's heading: h2 by depth, h3 by look. No Word
+                 mirror needed — #contents is stripped from the export.
+   MUST be tag-qualified per level. An h2 does not match `h3.h-sub`, so classing
+   the Contents heading with h-sub dropped it to the browser's default 2em h2 —
+   caught by a before/after screenshot, not by any test. */
+h3.h-sub  { font-size: 1rem;    color: var(--seal-blue); margin: 16px 0 4px; }
+h2.h-card { font-size: 1.12rem; color: var(--ink);       margin: 22px 0 6px; }
 p { margin: 8px 0; }
 ul, ol { margin: 8px 0; padding-left: 22px; }
 li { margin: 4px 0; }
@@ -218,6 +256,44 @@ table.data tr.total td, table.data tr.total th { font-weight: 800; background: v
 .sw-grid .sw-list { margin: 0; padding: 4px 14px 12px 32px; columns: 2; column-gap: 26px; font-size: .9rem; list-style: disc; }
 .sw-grid .sw-list li { margin: 2px 0; break-inside: avoid; }
 @media (max-width: 620px) { .sw-grid .sw-list { columns: 1; } }
+/* ── Statewide grid on narrow screens ──────────────────────────────────────
+   The 5-column track carries 322px of FIXED numeric columns; with gaps and
+   padding the row cannot render below 368px. Measured in Chromium at a 360px
+   viewport: the row overflowed by 31px, the program-area column (minmax(0,1fr))
+   collapsed to nothing so "Construction Technology" printed ON TOP of its own
+   Exhibits figure, and "Could adopt" sat entirely off-screen — inside
+   `.sw-grid details{overflow:hidden}`, so it could not even be scrolled to. A
+   silently clipped column is the worst of the three: the page looks complete.
+
+   Below 560px the row becomes two lines — program area on its own, then the
+   four figures 4-up. The .sw-head label strip is hidden there, so the labels
+   have to TRAVEL with the numbers; they are ::before content keyed off the
+   data-col attributes already in the markup, which keeps them out of
+   textContent — so factsheet_word.js still reads bare figures and the Word
+   export is byte-for-byte what it was. */
+@media (max-width: 560px) {
+  .sw-head { display: none; }
+  .sw-grid summary, .sw-total {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    row-gap: 9px; padding: 11px 12px;
+  }
+  .sw-grid summary .sw-sec, .sw-total .sw-sec { grid-column: 1 / -1; }
+  .sw-grid summary .sw-col, .sw-total .sw-col { text-align: left; }
+  .sw-grid summary .sw-col::before, .sw-total .sw-col::before {
+    display: block; font: 700 .58rem/1.3 var(--font-data);
+    text-transform: uppercase; letter-spacing: .02em; color: var(--muted);
+  }
+  .sw-col[data-col="ex"]::before                                      { content: "Exhibits"; }
+  .sw-col[data-col="rec"]::before                                     { content: "Credit recs"; }
+  .sw-col[data-col="adopt"]::before                                   { content: "Adoptions"; }
+  .sw-col[data-col="could"]::before                                   { content: "Could adopt"; }
+  /* The total row labels its first three columns with data-tcol; its fourth
+     carries only data-bind, so it is addressed by position. */
+  .sw-total .sw-col[data-tcol="ex"]::before                           { content: "Exhibits"; }
+  .sw-total .sw-col[data-tcol="rec"]::before                          { content: "Credit recs"; }
+  .sw-total .sw-col[data-tcol="adopt"]::before                        { content: "Adoptions"; }
+  .sw-total .sw-col:nth-of-type(5)::before                            { content: "Could adopt"; }
+}
 
 /* ── Resource link table ───────────────────────────────────────────────── */
 .res-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 12px; }
@@ -270,7 +346,7 @@ footer.foot strong { color: var(--ink); }
   @page { size: letter; margin: 0.4in; }
   :root { --shadow: none; }
   body { background: #fff; font-size: 10.5pt; line-height: 1.4; }
-  .actionbar, .no-print { display: none !important; }
+  .actionbar, .no-print, .skip-link { display: none !important; }
   .wrap { max-width: none; padding: 0; }
   a { color: var(--seal-blue); text-decoration: none; }
   /* Reveal the URL after links in the reference-list contexts so a printed/PDF

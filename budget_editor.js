@@ -73,7 +73,10 @@
     return null;
   }
   function signIn(email) {
-    try { sessionStorage.setItem("cpl_sb_return_tab", "budget"); } catch (e) {}
+    // sessionStorage is PER BROWSER TAB and the magic link opens a NEW one, so a
+    // stash written here was invisible where it is read. The keeper writes both.
+    if (window.CPL_SESSION && CPL_SESSION.stashReturnTab) CPL_SESSION.stashReturnTab("budget");
+    else try { sessionStorage.setItem("cpl_sb_return_tab", "budget"); } catch (e) {}
     var redirect = encodeURIComponent(location.origin + location.pathname);
     return fetch(SUPABASE_URL + "/auth/v1/otp?redirect_to=" + redirect, {
       method: "POST",
@@ -141,18 +144,18 @@
         state.sess.teamPass
           ? ["✓ Editing unlocked (team phrase)"]
           : ["Signed in as ", state.sess.email || "(no email)"]));
-      widget.appendChild(el("span", { "style": "color:#666;" },
+      widget.appendChild(el("span", { "style": "color:var(--text-muted);" },
         ["Click any dollar figure to edit • Enter saves • Esc cancels"]));
       var btnOut = el("button", { "class": "budget-btn budget-btn-out" },
-        [state.sess.teamPass ? "🔒 Lock" : "Sign out"]);
+        [state.sess.teamPass ? "Lock" : "Sign out"]);
       btnOut.addEventListener("click", function () { signOut(); onChange(); });
       widget.appendChild(btnOut);
     } else {
-      widget.appendChild(el("span", { "style": "color:#666;" },
+      widget.appendChild(el("span", { "style": "color:var(--text-muted);" },
         ["Sign in (CCCCO MAP only) to edit funding figures."]));
       var emailInput = el("input", { "type": "email", "placeholder": "you@example.edu" }, []);
       var btnIn = el("button", { "class": "budget-btn" }, ["Sign in"]);
-      var status = el("span", { "style": "color:#666;flex-basis:100%;font-size:0.8rem;" }, []);
+      var status = el("span", { "style": "color:var(--text-muted);flex-basis:100%;font-size:0.8rem;" }, []);
 
       btnIn.addEventListener("click", function () {
         var email = (emailInput.value || "").trim();

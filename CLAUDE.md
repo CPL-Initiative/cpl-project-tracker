@@ -1,12 +1,56 @@
 # CPL Project Tracker — Claude Code Project Memory
 
 This file is auto-loaded at the start of every Claude Code session in this
-repo. Keep the **Critical Rules** section tight — move deep reference material
-into `docs/reference/` (pipeline_reference · kb_build_status · mid_lifecycle — see the stubs below) or into dedicated docs.
+repo — in three repos, in fact, so every line here is a tax every future run
+pays whether or not it turns out to be relevant.
+
+## What belongs in this file (Sam's assignment rule, 2026-08-28)
+
+> **PUSH what a session cannot know to ask for. PULL everything else.**
+
+That single test decides where anything goes:
+
+- **PUSH — belongs here.** A rule that must fire *unprompted*, before you know
+  you need it. *"Never force-push `main`"* cannot live in a queryable store:
+  you would only look it up if you already suspected it, and by then you have
+  either done it or not. Same for the naming conventions, the branch policy,
+  and the obligations to the MAP team.
+- **PULL — belongs in `docs/reference/`, `docs/kb-notes/` or `cpl_memory`.**
+  Anything you know you have a question about. *"What is the state of the
+  funding lane"* is a question you arrive with — so §11 carries a one-line
+  pointer per lane and the state lives in
+  [`docs/reference/lanes/`](docs/reference/lanes/).
+
+**Doctrine must never be relocated into `cpl_memory`.** Its briefing budget
+is 17,951 chars against ~85,500 of verified rows — **about 21% fits** — so a
+rule placed there can be present and silently unread, which is strictly worse
+than a large `CLAUDE.md` that at least loads completely.
+
+**The pointer is the safety mechanism, not a courtesy.** A pulled store you
+were never told exists is the same as no store — the failure Rule 8 was written
+for, where a session re-derived three settled facts already written down. When
+you move something out of this file, leave the line that says it is out there.
+
+Deep reference offloaded: `docs/reference/` — pipeline_reference ·
+kb_build_status · mid_lifecycle · troubleshooting · obsidian_vault_wiring ·
+finished_workstreams · skyview_invariants · live_session_banner ·
+[approval_prompt_hooks](docs/reference/approval_prompt_hooks.md) (the
+Allow-Once storm: its source was the Supabase connector's Tool permissions in
+the claude.ai account, changed 2026-09-28; S298's new-session test closes it) ·
+[doctrine_provenance](docs/reference/doctrine_provenance.md) (the incidents and
+measurements behind these rules) · `lanes/` (stubs below).
+
+**Skills** (`.claude/skills/`) are pull-side too, fired by their own
+`description` rather than by a pointer: **consult-doctrine** (what this repo has
+already decided about the files you are reading), **exhibit-canonicalization**
+(freehand MAP exhibit titles into unified credential names), **video-context**
+(a screen recording read locally) and
+**obsidian-markdown**. Named here because a store nobody names is a store
+nobody finds; `unreferenced_offload` flags any that stop being.
 
 ---
 
-## Critical Rules (do not violate)
+## Critical Rules
 
 1. **The daily GitHub Actions workflow regenerates the dashboard.**
    `.github/workflows/daily-dashboard.yml` runs daily on a 3-cron ladder
@@ -37,7 +81,7 @@ into `docs/reference/` (pipeline_reference · kb_build_status · mid_lifecycle �
 5. **Never force-push `main`** (GitHub Pages serves from it; the daily cron
    and concurrent sessions race against it). Feature branches (`claude/*`)
    may `--force-with-lease` freely — that's the normal post-squash flow.
-   The ONLY main-history rewrite ever permitted: a coordinated secret/PII
+   The only main-history rewrite ever permitted: a coordinated secret/PII
    scrub — cron paused, Sam's explicit go, all open sessions told to
    re-clone. Anything else uses `git revert`.
 
@@ -47,27 +91,29 @@ into `docs/reference/` (pipeline_reference · kb_build_status · mid_lifecycle �
 
 7. **M-IDs are in staging-cleanup phase — re-mints permitted under the
    playbook.** The M-ID identity layer is "AI-assisted STAGING" (per the
-   data-file headers), **not yet faculty-published**. Re-mints in service
-   of cleanup are welcome, but they must follow
-   [`docs/coursecontrolnumber_remint.md`](docs/coursecontrolnumber_remint.md):
-   dry-run first, alias map committed, Supabase `kb_curation` fresh-read at
-   write-time, articulations re-keyed, **`kb/promotions.json` re-keyed**
-   (`kb/_rekey_promotions.py` — added 2026-06-11 after four re-mints skipped
-   it, silently severing 53% of the Phase A/B official-ID fold evidence;
-   `docs/official_id_fold_scope.md`. Resolution semantics corrected SAME DAY,
-   Session 42: alias maps are simultaneous PERMUTATIONS with slot reuse —
-   apply each map ONCE, chronologically, era-stamped (`_rekeyed_through`),
-   apply-confirmed maps only, V5-validated against per-row `*_remint_from`
-   stamps; an apply that consumes a dry-run plan must RESTAMP the receipt's
-   `_status` —
-   [`docs/kb-notes/methodology-alias-map-resolution-semantics.md`](docs/kb-notes/methodology-alias-map-resolution-semantics.md)),
-   atomic land within one cron window (06:17 UTC primary). The "never bulk renumber" framing that previously lived
-   here was **defensive** (against accidental re-keys); it's been relaxed
-   for the staging phase. **Never re-mint casually** — the playbook is
-   mandatory. Once we explicitly declare the M-ID layer
-   **faculty-published**, this rule re-locks to "stable identifiers, no
-   renumbering." Until then, principled re-mints are part of the cleanup
-   loop.
+   data-file headers), **not yet faculty-published**, so principled re-mints
+   are part of the cleanup loop rather than something to fear. **Never re-mint
+   casually** — the playbook is **mandatory**:
+   [`docs/coursecontrolnumber_remint.md`](docs/coursecontrolnumber_remint.md).
+   Once we explicitly declare the M-ID layer **faculty-published**, this rule
+   re-locks to "stable identifiers, no renumbering."
+
+   The **M-ID structural invariants** (SUBJ4 shape, the umbrella and fan-in
+   exceptions, C-ID/CCN format), the re-mint **mechanics** (dry-run, alias map,
+   `kb/promotions.json` re-key, alias-map resolution semantics, atomic land in
+   one cron window) and every past re-mint are **PULL** — you read them when you
+   are re-minting, which you already know you are doing:
+   [`docs/reference/mid_lifecycle.md`](docs/reference/mid_lifecycle.md).
+
+   ⚠️ **RESOLVE A STORED ID THROUGH `kb/alias_chain.py` BEFORE YOU COMPARE IT TO
+   THE LIVE SET — and never restate the chain (Sam's ruling 8, 2026-09-05).**
+   PUSH because it fires *before* you know you need it: an id-keyed file read
+   with a direct lookup does not error, it just reports dead rows that are
+   alive (measured 2026-09-05: welding CR ids read 44% dead directly, **27%**
+   through the chain). `kb/alias_chain.py` holds the one `ALIAS_MAPS`, the one
+   `resolve` (a map is a *simultaneous permutation*: one lookup per map, in
+   order, never iterated within a map) and the one era guard; import them, never
+   copy them — `tests/alias_chain_single_source_test.py` fails a copy.
 
    **TOP caveat — standing rule (2026-07-16).** TOP codes are faculty-entered
    in COCI during local curriculum approval with **no data-entry gatekeeper**,
@@ -84,88 +130,17 @@ into `docs/reference/` (pipeline_reference · kb_build_status · mid_lifecycle �
    and the **CIP↔TOP crosswalk** (TOP is the subject there). Full doctrine +
    the 24%-of-rows blast radius:
    [`docs/kb-notes/methodology-top-is-a-last-in-line-signal.md`](docs/kb-notes/methodology-top-is-a-last-in-line-signal.md).
-   The CO's **TOP→CIP** cutover (fall 2026) is the systemic exit from TOP —
-   apply the same "corroborate, don't gate" posture to CIP until it earns trust.
+   **TOP→CIP** (fall 2026) is the exit from TOP. A **program** CIP is reliable
+   (Sam, 2026-09-25) but labels the program, not its courses — never vote a
+   course's field from its programs; course CIP corroborates until it fills in.
 
-   **M-ID structural invariants** (enforced at every re-mint; deviations
-   become audit findings):
-   - SUBJ portion is exactly **4 letters**. The single-letter SUBJ
-     artifacts (`A M1001`, `F M1001`, …) were folded by the 2026-06-12
-     canonical fold; residue = **1** (`F M1002`, blank-discipline —
-     unfoldable until disciplined; `mid_id_off_scheme` tracks it).
-   - Within `id_system == "M-ID"`, **all rows sharing a *corroborated*
-     `discipline` share a SUBJ4** (TOP-only-disciplined rows wait for
-     corroboration before folding/voting — see the TOP caveat above) —
-     **ENFORCED 2026-06-12 (Session 50): the canonical
-     fold re-keyed every disciplined M-ID to its curator-confirmed
-     canonical** (e.g. the 10 "Sign Language, American" variants → `SLNA`).
-     `subject_collision_signal` is the steady-state watchdog (3 documented
-     residuals = cross-discipline curated re-keys whose BASELINE file
-     discipline disagrees with the curated one — honest flags, not defects).
-   - **Umbrella-discipline exception (2026-06-09, Session 37).** One MQ
-     discipline that is genuinely a *parent over many distinct subjects*
-     splits its SUBJ4 per subject — the invariant becomes *one **SUBJECT**
-     → one SUBJ4*. Two umbrellas today: **"Foreign Languages"** —
-     its 1,452 identities re-keyed `FLNG` → per-language `FL**` (FLSP
-     Spanish · FLFR French · FLCH Chinese · …) while the **MQ discipline
-     stays "Foreign Languages"** (authoritative MQ has no per-language
-     discipline) — and **"Kinesiology"** (2026-06-10, the KIN/PE
-     convergence): spans `KINE` (instruction) + `ATHL` (intercollegiate
-     athletics). Umbrella disciplines are listed in `UMBRELLA_DISCIPLINES`
-     (`kb/_row_audit.py`) and are **exempt from `subject_collision_signal`**
-     (they're *supposed* to span many SUBJ4s). Scopes:
-     [`docs/fl_subj4_remint_scope.md`](docs/fl_subj4_remint_scope.md) ·
-     [`docs/kin_pe_convergence_scope.md`](docs/kin_pe_convergence_scope.md);
-     map: `kb/foreign_language_subj4.json`; applies: `kb/_apply_fl_subj4_remint.py`,
-     `kb/_apply_kin_pe_convergence.py`.
-   - **Fan-in convergence (2026-06-10).** The inverse of the umbrella: two MQ
-     discipline *names* for one converging field fold to a canonical name, the
-     other recorded as an **alternate name** in `kb/discipline_aliases.json`
-     (never deleted from the MQ vocab). Applied: **Kinesiology ⟵ Physical
-     Education** (+ carve-outs `ATHL`/`PEDS` — "Physical Education Disabled
-     Students" is its own MQ + SUBJ4) and **Drama/Theater Arts ⟵ Theater
-     Arts** (SUBJ4 `THEA`). Both parent + singleton layers converged; alias
-     receipts under `kb/kin_pe_out/`, `kb/drama_theater_out/`,
-     `kb/convergence_singletons_out/`.
-   - **C-IDs and CCN-IDs preserve their official format** — they're
-     external authorities with variable lengths (`ANTH 100`, `AG-PS 104`,
-     `ANTH C1000`). Never re-key.
-   - New M-IDs minted by `_seed_coci_minted_mids.py` (or curator
-     consolidation via the Suggested-merges worklist) consult
-     `kb/discipline_canonical_subj4.json` (live — 146 disciplines, all
-     curator-reviewed; synced from Supabase `_CANON_SUBJ4::` picks) for
-     the canonical SUBJ4 per discipline. (The MQ vocabulary
-     `kb/reference/mq_disciplines.json` is the broader 248-title superset —
-     re-discipline proposals must be exact-MQ-name; Session 112, #746.)
+   **Units never split an identity (Sam, 2026-09-27).** A merge or a mint that
+   joins records whose units differ keeps one identity and shows the range it
+   joins (*Orienteering (1–3 units)*), for M-IDs and credit recommendations alike:
+   [`mid_lifecycle`](docs/reference/mid_lifecycle.md).
 
-   Authoritative old→new aliases for every re-mint live at
-   `kb/remint_out/<date>/alias_map.json`. Rollback notes per the playbook.
-
-   The 2026-05-22 `CourseControlNumber` re-mint (PR #84) was the first
-   instance of this playbook in production. Old `M-ID SUBJ NNN` keys are
-   dead — those aliases preserved in `kb/remint_out/alias_map.json`. Full
-   decisions + validation methodology:
-   [`docs/coursecontrolnumber_remint.md`](docs/coursecontrolnumber_remint.md).
-   Latest instance: the **UC-CUR → Z-scheme re-mint** (Session 56, 2026-06-15 —
-   the 4,053 synthetic `UC-CUR-AUTO*` unified-course ids → `SUBJ Z<band><seq:03d>`,
-   e.g. `BIOL Z9001`; dry-run `kb/_uc_cur_zscheme_dryrun.py` + apply
-   `kb/_uc_cur_zscheme_apply.py` share `compute_plan()`, receipts
-   `kb/uc_cur_zscheme_out/2026-06-15/`, scope
-   [`docs/uc_cur_zscheme_remint_scope.md`](docs/uc_cur_zscheme_remint_scope.md)).
-   Surface was **entirely inside `kb_curation`** (0 articulations/promotions), so
-   it added a **reusable** Supabase re-key path: `kb/_rekey_kb_curation_supabase.py`
-   + `.github/workflows/supabase-rekey.yml` (service-key, reads the committed
-   alias map — the only sane way to re-key thousands of rows when the alias map
-   is too large to hand-pass as SQL;
-   [`docs/kb-notes/playbook-rekey-shared-db-from-alias-map.md`](docs/kb-notes/playbook-rekey-shared-db-from-alias-map.md)).
-   Prior: **KIN/PE pass 2** (Session 51, `kb/_kin_pe_pass2.py`, 1,057 re-keys,
-   `kb/kin_pe_pass2_out/2026-06-12/`; alias-guard `kb/_alias_canon.py`) and the
-   **2026-06-12 canonical-SUBJ4 fold** (Session 50) — 71,037-alias permutation,
-   `kb/subj4_fold_out/2026-06-12/`, downstream chain `kb/_post_apply_chain.py`.
-
-8. **READ the memory table BEFORE you work — Rule 8 had no query step until
-   2026-08-10.** The very first thing a session does on a workstream, before
-   reading the handoff and before touching code:
+8. **READ the memory table BEFORE you work.** The very first thing a session
+   does on a workstream, before reading the handoff and before touching code:
 
    ```sql
    select slug, title, summary, status, event_date from cpl_memory
@@ -174,150 +149,119 @@ into `docs/reference/` (pipeline_reference · kb_build_status · mid_lifecycle �
    order by event_date desc nulls last limit 40;
    ```
 
-   ⚠️ **This exists because a session re-derived THREE settled facts in one run
-   (2026-08-10) while the answers sat in `cpl_memory` unread** — the `Student`
-   grouping counter, the MAP-student-id privacy constraint, and that 537k rows had
-   already been assessed. It wrote 8 rows that day and queried the table **zero**
-   times. The playbook is literally named *auto-write-at-checkpoint*; nothing ever
-   said read. Sam's own framing applies: Rule 8 is **ingest**, sessions are
-   **query** — and the memory table only ever got the ingest half.
+   Skipping it re-derives facts the table already holds (2026-08-10: three in
+   one run). Sam's framing: Rule 8 is **ingest**, sessions are **query**.
 
-   **Also: a row whose `source` or `verified_by` names a HUMAN may not be silently
+   **Also: a row whose `source` or `verified_by` names a human may not be silently
    superseded by a session's inference.** On 2026-08-08 Sam said *"Sierra only
    lives in COBY for now"*; a later session read the code (three callers, one
    shared function) and marked that row `superseded`. Both were true — his claim
    was about **where the widget is deployed**, the code finding about **what it
    calls** — but the fact left the default view, and he had to say it again on
    2026-08-10. Supersede a human-sourced row only by saying so explicitly, or file
-   a NEW row and flag the conflict.
+   a new row and flag the conflict.
 
-9. **Document at context checkpoints.** **Run `python3 kb/_docs_audit.py` FIRST
+9. **Document at context checkpoints.** **Run `python3 kb/_docs_audit.py` first
    at every checkpoint** — the docs **lint** pass (Rule 8 is *ingest*, sessions
    are *query*; this is the third operation, and its absence is why the corpus
-   accretes). READ-ONLY, ~2s, writes `kb/docs_audit/<date>.md`. Act on what it
-   flags **in scope for this run**: an `oversized_doc` on the lessons doc you
-   were about to append to means compact it now instead of growing it; an
-   `always_loaded` flag on this file means move prose to `docs/reference/`.
-   After writing the new handoff, `--apply` stamps the now-superseded ones
-   (its only mutation — never the authoritative one, idempotent). Rationale +
-   the vault-weight finding:
+   accretes). Read-only, ~2s, writes `kb/docs_audit/<date>.md`. Act on what it
+   flags **in scope for this run**. Rationale + the vault-weight finding:
    [`docs/kb-notes/methodology-a-knowledge-base-needs-a-lint-pass.md`](docs/kb-notes/methodology-a-knowledge-base-needs-a-lint-pass.md).
-   Roughly every ~100K tokens of context
-   consumed in a session (heuristic — Claude Code doesn't expose an exact
-   counter; use proxies: long conversations with many tool calls, large file
-   reads, multi-phase strategic work), pause and update **every** artifact below
-   — none are optional, all sync to the user's Obsidian via the repo:
-   - **`CLAUDE.md`** — rules + the §11 Roadmap table + ≤2 session
-     narratives. Refresh roadmap-table status here. **Deep memory now lives in
-     `docs/reference/` (pipeline_reference.md · kb_build_status.md ·
-     mid_lifecycle.md — the 2026-07-10 pare-down): update THOSE at checkpoints**
-     for tag counts, lifecycle/pathway changes, build-phase state, and new
-     tabs/pipeline surface — do NOT re-inflate this file.
-     **Session-narrative budget (added Session 41):** a new session's §11
-     subsection is ≤ ~10 lines — headline, numbers, PR #s, pointers to the
-     lessons doc (which holds the full story; write it ONCE there, don't
-     restate). Keep **at most 2** session narratives inline; at checkpoint,
-     move older ones verbatim to `docs/roadmap_archive.md`. Every line in
-     this file is context-tax on every future session.
-   - **`kb/README.md`** — when KB structure, generators, or audit artifacts
-     change.
-   - **`README.md`** — root project README. Kept current for first-time visitors.
-   - **`docs/<topic>_lessons.md`** — **lessons doc REQUIRED on every checkpoint.**
-     Create one on the first checkpoint for a workstream (e.g.
-     `docs/unified_courses_audit_lessons.md`), then APPEND a dated section on
-     every subsequent checkpoint capturing: what's been learned since the last
-     checkpoint, current state, strategic roadmap, and next concrete step.
-     Use the Obsidian frontmatter format that
-     [`docs/coursecontrolnumber_remint.md`](docs/coursecontrolnumber_remint.md)
-     established (title / date / tags / artifacts / related front-matter).
-   - **`docs/kb-notes/<topic>.md`** — **KB-candidate lane (added Session 11,
-     2026-05-27).** At every checkpoint, ask: did this run produce a learning
-     that's durable, reusable, distilled, and self-contained? If yes → author
-     a standalone note in `docs/kb-notes/` using
-     [`docs/kb-notes/_template.md`](docs/kb-notes/_template.md) with
-     `kb-status: candidate`. Five types: `methodology` (reusable patterns),
-     `reference` (external-source distillations), `adr` (architecture
-     decisions), `glossary` (lookup cards), `playbook` (procedures). Lessons
-     docs are the workstream scratchpad; KB notes are the **distilled, durable
-     output** intended for Obsidian-vault first-class indexing. Promotion
-     workflow + tag taxonomy in [`docs/kb-notes/README.md`](docs/kb-notes/README.md).
-     The checkpoint commit body lists any new candidates added this run so Sam
-     sees the review queue.
-   - **`docs/INDEX.md`** — auto-maintained landing page for the project's docs
-     surface. Refresh at every checkpoint: new KB notes, lessons docs, session
-     handoffs all get table rows. Obsidian renders this as the vault-side
-     entry point for `cpl-project-tracker/`.
-   - **Pipeline visualization on the dashboard (`#tab-pipeline`)** — **refresh
-     whenever the workstream moved the pipeline (added 2026-05-30).** The Pipeline
-     tab is hand-maintained static content living in **both `CPL_Dashboard.html`
-     and `index.html`** (Rule 4 — keep the two identical; this tab is NOT
-     regenerated by `excel_to_dashboard.py`). Keep it in sync with reality:
-     **Phase roadmap** (`.pl-phase` cards in `#pl-section-roadmap` — flip
-     done/active/parked to match the §11 roadmap table), **Auditor receipt**
-     (`.pl-stat` cards in `#pl-section-audit` — latest `kb/_row_audit.py` tag
-     counts/scores), **Recent re-mint** (`#pl-section-remint` — newest
-     re-mint/apply), and the **M-ID lifecycle** mermaid (`#pl-section-lifecycle`,
-     only if the stages themselves changed). Skip only if this checkpoint didn't
-     touch the pipeline at all.
-   - **`docs/session_<N+1>_handoff.md`** — **next-session prompt, written/refreshed
-     on EVERY checkpoint (safeguard, changed 2026-05-30).** Previously session-end
-     only; now refreshed every checkpoint so a fresh paste-able prompt ALWAYS exists
-     if a session gets bricked or context is consolidated mid-stream. Overwrite the
-     same N+1 file each checkpoint so it always reflects the latest state. Second
-     person ("You are Session N+1"), paste-able into the next session's first
-     message, covering: what shipped, docs to read in order, the priority
-     workstream(s), carryover items + status, patterns that worked, safety patterns
-     to honor, and a moniker suggestion with an open door for the next session to
-     claim its own. Reference example: [`docs/session_6_handoff.md`](docs/session_6_handoff.md)
-     (Bruh Quad → Session 6, the first instance of this practice). Keep it long
-     enough to be useful (~4500 chars / 170 lines is the sweet spot) — the next
-     session is starting cold.
-     **The authoritative handoff is the HIGHEST-numbered
-     `docs/session_<N>_handoff.md`.** A greeting citing a lower number is stale
-     (2026-07-10: "105" vs actual 111) — `ls docs/session_*_handoff.md`, read
-     the highest, and confirm the number with Sam if they diverge. Sam's
-     greeting sometimes names the session's moniker (SkyTime S104, SkyPhilo
-     S108 precedent) — claim it and carry it in the §11 narrative + handoff;
-     otherwise take the handoff's suggestion or coin your own.
+   **The trigger is a commit count.** The lint's `checkpoint_overdue` runs only
+   inside `/checkpoint`, so it cannot prompt one. Run these two git commands at
+   session start, after a long stretch, and before any sign-off, and **RUN
+   `/checkpoint` above 6** — run it, never offer it (Sam, 2026-09-09):
 
-   - **`kb/cpl_todos.json`** — **the dashboard To-Do feed (added Session 47),
-     refreshed on EVERY checkpoint alongside the handoff** (it is the handoff
-     distilled for the dashboard: ≤ ~12 layman-readable items split For Sam /
-     For Fable + a "where we are" `_status`, rendered by `cpl_todos.js` as the
-     📋 button on every tab). Bump `_as_of` (resets viewers' check-offs),
-     DELETE done items (never leave them checked), keep counts current.
-   - **`cpl_memory` (live Supabase memory table) — auto-write every checkpoint
-     (Phase 3, 2026-07-24).** Sessions write this run's *durable, uncaptured*
-     learnings via the Supabase MCP, **no approval gate**: own writes land
-     **`proposed`**; corroboration (a 2nd session / a committed KB-note-or-PR
-     `source` / Sam's ✓) promotes to `verified` (the only status shown by
-     default). Keep the truth table lean (the append-only `cpl_memory_log`
-     carries volume) — supersede don't delete, log every write, don't dump a
-     session log. Full procedure (SQL patterns + the corroboration rule):
-     [`docs/kb-notes/playbook-cpl-memory-auto-write-at-checkpoint.md`](docs/kb-notes/playbook-cpl-memory-auto-write-at-checkpoint.md).
+       H=$(ls docs/session_*_handoff.md | sort -V | tail -1)
+       git rev-list --count $(git log -1 --format=%H -- "$H")..HEAD
 
-   Capture in each: (a) what's been learned this checkpoint, (b) current
-   state of the work, (c) strategic roadmap, (d) next concrete step.
-   Better to checkpoint slightly early than slightly late — sessions can
-   end abruptly and what's not in a markdown file is effectively lost. The
-   user can trigger a checkpoint at any time with the **`/checkpoint`**
-   slash command (`.claude/commands/checkpoint.md`).
+   **Run `/checkpoint`; do not improvise one from memory** — an improvised
+   checkpoint names a few of its artifacts and still reads as complete. **The
+   artifact list is the checkpoint command, not this file** — all 13, none
+   optional: [`.claude/commands/checkpoint.md`](.claude/commands/checkpoint.md)
+   is the authority.
 
-10. **Supabase live-curation safety.** Sam curates LIVE beside sessions — his
-   rows always win. (a) Before ANY bulk `kb_curation` write: fresh live read
-   at write-time, re-measure any queue/worklist staged earlier in the session,
-   and cross-check pending `unified_title_merge_confirm` TARGETS (a rename
+   **The usual checkpoint edit is the lane file, not the §11 row.** §11's
+   table is a pointer index; each lane's state lives in
+   [`docs/reference/lanes/<lane>.md`](docs/reference/lanes/). A checkpoint that
+   updates only the row leaves the lane files to go stale — that is the
+   failure mode. Deep memory lives in `docs/reference/`: update those, and do
+   **not** re-inflate this file. **Session-narrative budget:** a session's §11
+   subsection is ≤ ~10 lines, **at most 2** kept inline; move older ones verbatim
+   to `docs/roadmap_archive.md`.
+
+   **The authoritative handoff is the highest-numbered
+   `docs/session_<N>_handoff.md`.** A greeting citing a lower number is stale
+   (2026-07-10: "105" vs actual 111) — `ls docs/session_*_handoff.md`, read the
+   highest, and confirm the number with Sam if they diverge. Sam's greeting
+   sometimes names the session's moniker (SkyTime S104, SkyPhilo S108
+   precedent) — claim it and carry it in the §11 narrative + handoff.
+
+   Capture in each artifact: (a) what's been learned this checkpoint, (b) the
+   current state of the work, (c) strategic roadmap, (d) next concrete step.
+   Better to checkpoint slightly early than slightly late — sessions end
+   abruptly and what is not in a markdown file is effectively lost.
+
+9a. **Context pressure is measurable — warn Sam before the compact instead of
+   discovering it after.** Claude Code writes the exact live context size to the
+   session transcript every turn, and `compactMetadata.preTokens` at every
+   compaction. `kb/_context_budget.py` reads it in ~50 ms; run it any time.
+   It fires as a PostToolUse hook from the repo's settings in a session rooted
+   here, and from the session root where the environment's setup script
+   installed it (`python3 scripts/check_hooks_live.py` reports
+   `context meter: yes` or `NO`). Run the meter yourself at session start,
+   after a long stretch, and before any sign-off.
+   Mechanics: [`docs/reference/context_pressure_hook.md`](docs/reference/context_pressure_hook.md).
+   - **WARN — ≤110,000 tokens left.** Finish the thought you are on, then run a
+     full `/checkpoint`. **Say the number to Sam** rather than checkpointing
+     silently; he may want to spend the runway differently.
+   - **EMERGENCY — ≤50,000 tokens left.** Room for one checkpoint and nothing
+     else. **Do not ask permission** — a compaction mid-question loses the
+     answer. Write only: **`docs/session_<N+1>_handoff.md`** (stating it was an
+     emergency checkpoint and naming which of Rule 9's 13 artifacts were not
+     refreshed) · the **lane files this run actually moved** · the **`cpl_memory`
+     rows** · **commit + push**. Everything else defers to the next session —
+     which is exactly why the handoff has to name it.
+
+   **Both thresholds are measured, not chosen** — derivation and the
+   2026-09-11 post-mortem:
+   [`methodology-context-pressure-is-measurable`](docs/kb-notes/methodology-context-pressure-is-measurable.md).
+
+10. **Supabase live-curation safety.** Sam curates live beside sessions — his
+   rows always win. (a) The unit of caution is any bulk write to a shared
+   human-write table — `kb_curation` is the worked example, not the boundary;
+   the [dependency map](docs/reference/dependency_map.md)'s write edges name
+   the rest. Before one: fresh live read at write-time, re-measure any
+   queue/worklist staged earlier in the session, and (for `kb_curation`)
+   cross-check pending `unified_title_merge_confirm` targets (a rename
    whose key is a pending merge target fights the curator — hold it). Then
    INSERT-only `ON CONFLICT DO NOTHING` under a cohort `reviewer_email`
    (`<lane>-s<N>@bot`) with a committed receipt; guarded UPDATEs only where a
-   reviewed plan explicitly says so. (b) `kb_curation` reads via PostgREST
-   MUST be Range-paginated (#718). (c) The sandbox cannot reach
-   `*.supabase.co` — all Supabase access goes through the MCP tools.
-   (Promoted 2026-07-10 from the rotating handoff "Safety patterns" blocks —
-   these are standing production-safety orders, not session lore. Worked
-   examples: `docs/kb-notes/playbook-trail-crew-method-magic-audit.md`.)
+   reviewed plan explicitly says so. (a2) A data write must be reversible
+   from its receipt — `git revert` covers code, and nothing covers data
+   unless the receipt does: an INSERT-only cohort rolls back by its
+   `reviewer_email`; a guarded UPDATE's receipt captures before-values or the
+   plan is not approvable. Procedure:
+   [`data_write_rollback`](docs/reference/data_write_rollback.md). (a3) A new
+   write surface routes through Governance and the privacy ADRs before it
+   ships — the first writer to any shared table, or a read-only surface
+   gaining writes, is a decision-rights change, not a code detail: map or
+   dismiss it in `kb/governance_surface_map.json` (the reason is the point)
+   and check the student-detail disclosure boundary
+   ([`adr-student-detail-aggregate-disclosure-control`](docs/kb-notes/adr-student-detail-aggregate-disclosure-control.md);
+   the CER-counts and funding-metrics privacy ADRs sit beside it).
+   (b) `kb_curation` reads via PostgREST
+   must be Range-paginated (#718). (b2) **`revoke ... on function f() from anon,
+   authenticated` does not work** — Postgres grants EXECUTE to **PUBLIC** at
+   creation and anon inherits through it, so the statement protects nothing.
+   **Name `public`**, and check `has_function_privilege('service_role', …)`
+   holds an explicit grant before you revoke PUBLIC, or the same statement
+   breaks the cron; `tests/supabase_function_grants_test.py` lints it. (c) The
+   sandbox cannot reach `*.supabase.co` — all Supabase access goes through the
+   MCP tools. Worked examples:
+   `docs/kb-notes/playbook-trail-crew-method-magic-audit.md`.
 
-## Naming & terminology (Sam's conventions — honor in ALL output)
+## Naming & terminology (Sam's conventions — honor in all output)
 
 - **New identity phase (Sam, 2026-07-03):** the program is the **CPL
   Initiative**; never "MAP Initiative" in new writing. The platform is the
@@ -326,15 +270,123 @@ into `docs/reference/` (pipeline_reference · kb_build_status · mid_lifecycle �
   2017 launch name — history-only, never the current expansion.** Enforced in
   every report prompt (`NAMING_RULE` in `report_generator.js`;
   `college_report_generator.js`; `annual_report.js` polish), the docx footers,
-  a live `sierra_guidance` row (id `cb226a48`, deactivatable in the 🧭 pane),
+  a live `sierra_guidance` row (id `cb226a48`, deactivatable in the Sierra training tab),
   and the public KB's `claude/CLAUDE.md`. Historical titles/quotes stay verbatim.
-- **"Activities" = activities AND their projects.** When Sam says
+- **American spelling, always (Sam, 2026-08-21).** *"As a Yank, I prefer
+  American, of course."* Use **color · behavior · normalize · organization ·
+  analyze · center · judgment · program · catalog · license (n and v) · gray ·
+  enroll · while (not `whilst`) · among (not `amongst`)** and the
+  `-ize`/`-ization` family. **The British form in a word pair must be in a code
+  span** — bare, the sweeper rewrites it. **Rendered UI text first**, then docs,
+  then comments. Enforced by `american_spelling` in `kb/_docs_audit.py`.
+  It scans prose only: `grey` is a valid CSS keyword and a token name is not
+  a spelling, so never blind-replace inside code.
+- **Remediate with [`/a11y-pass`](.claude/commands/a11y-pass.md) (Sam, 2026-09-09).**
+  Triage first: **findings are not problems** — and group by the color pair, not
+  the selector, or the biggest fault sorts to the bottom as many small ones.
+- **SkyView, not "Atlas" (Sam, 2026-08-24; tightened 2026-09-05).** The CCR curation
+  prototype is **SkyView**, and **when Sam says it he means the map alone, filling the
+  window** — the canvas you pan, search and drag on, one row of controls, nothing else
+  painted. The map with panes below is **the comprehensive view**, one Views-menu click
+  away and never the default; the discipline and subject tables and the ESL card are the
+  **workspace** (*Disciplines and subjects* tab). Verify such an ask against the screen,
+  not the code (`methodology-verify-an-ask-against-what-the-reader-sees`). Files keep
+  `ccr_atlas_*` paths; the user-facing name is what changed.
+- **Funding vocabulary — CCC norms, not business norms (Sam, 2026-08-31).** Say
+  **funding**, never "money," on any funding surface. Prefer sector terms:
+  *allocated / fully allocated* (not "spent"/"apportioned" — apportionment is
+  the SCFF term), *restricted / designated* (not "fenced"), *redirect* (not
+  "absorb"), *brought up to the minimum* (not "topped up"); avoid "double count"
+  (an MIS audit-error term — say *the same CPL credits both institutions by
+  design*). The per-institution figure is the **max award**, his verbatim
+  (2026-09-01): *"maximum funding to be awarded based on measurable outcomes and
+  allocated as credit and noncredit subtotals."* Say **funding**, not "pool," for
+  the model's total (vary it — "the total", "the allocation" — rather than
+  drumming "funding"; the name "one-pool" and code identifiers stay); **never
+  "on its face"** — end the statement instead. **Never the concept of advances, and never a
+  reference to a not-yet-live data feed, anywhere rendered (Sam, 2026-09-01):**
+  *"I don't want to suggest that advances are possible in the model,
+  regardless of current missing data feeds or any other factor"*. An unmeasured
+  metric shows **TBA** (Sam, 2026-09-28: *"show TBA everywhere so when it
+  changes, it will already be wired"*), never *"no data yet"* (a guard rejects
+  the phrase). "Advancing the
+  priority outcomes" and the statute's "Advancing career attainment" are the
+  allowed senses; the D13 guard enforces it. Prose only, never identifiers.
+  **Neither the banking sense of "draw" (2026-09-09) nor "earn" (2026-09-13).**
+  *"Earned still smacks of banking... better to use something like 'measured...
+  or... qualified for'"*. **The map:** a measure **counts toward** funding · a
+  college **qualifies for** its award · the result is **demonstrated** (the
+  statute's verb, §78093.2(d)(2)) · unearned is **remaining**; **receives** fits
+  where funding already qualified for is released. Also retired: **unspent**,
+  **the dollars** → *the funding*. **Award cells keep the present participle —
+  *qualifying*:** his 2026-08-27 ruling (a past tense "read like a settled
+  award") survives the sweep. **"Students earn credit" stays — check who the
+  subject is:** a *college* earning *funding* is the banking sense; a *student* earning
+  *credit* is ordinary academic English. Same subject test as *expended*. **But
+  *expended* stays where the subject is a college spending (his rule, same
+  day): *"expended should be kept if I am referring to the colleges spending
+  the funds. Allocated should be used if I am referring to the CO awarding or
+  dispensing the funds to colleges."* The two words are not interchangeable —
+  check who the subject is before sweeping either. `cpl_funding_calm` bans
+  the draw, *unspent* and earn stems in rendered text (the `\b` is load-bearing —
+  without it the ban forbids *credit for prior learning*). **A rendered-text
+  ban covers only the branches a fixture paints** — `cpl_funding_earn_retired`
+  reads the source, and is what caught the CSV header no DOM test can see.
+- **House voice — write outward artifacts the way the CO writes (Sam,
+  2026-09-01).** He shared his VC of Academic Affairs' letter to CSU as the
+  standard: *"the word choice and tone provide an extensive example of the tone
+  and vocabulary and sentence variety I would like to see in our artifacts."*
+  **Scope: letters, memos, board/legislative materials, college-facing
+  communications, public explainer prose, report narrative, deck narration.**
+  Not lane files, handoffs, commits or code comments — those are deliberately
+  dense, and register follows audience.
+  - **Concede before you argue**, stating the other position at full strength;
+    **preserve their authority explicitly** (what is not ours to decide);
+    **State it positively — no "it is this, not that" (Sam, 2026-09-16).**
+    *"I don't like the practice the saying, 'it's this, not that' Just make
+    positive, active voice declarations."* The contrastive frame makes the reader
+    hold a wrong idea in mind to discard it, and it spends a sentence on what you
+    are not saying. Declare the thing. A genuine misreading may still be closed
+    off, once, where the reader would otherwise land on it; the ban is on the
+    reflex. Scope matches the mannerly-language rule: outward
+    artifacts **and replies to Sam in session**. Keep the **student as
+    the subject** of the problem; **anchor claims to a named instrument** rather
+    than asserting them; **vary sentence length and let a short declarative
+    land** after a long qualified one; put the **ask last, and make it small**.
+  - **No business register** — never *leverage · utilize · robust · deep dive ·
+    synergy · operationalize · impactful*. Reach for *invite · partnership ·
+    shared aim · complement · warrant · examine together · practical first step*.
+  - **No bold, bullets or glyphs in outward prose.** The argument carries itself.
+  - **Mannerly language points at the writer (Sam, 2026-09-08).** *"no
+    mannerly language, avoiding adjective phrases, metaphors, and redundant
+    asides. Mannerly language is irritating because it seeks to draw attention
+    to the writer rather than the reader… the reader is not impressed and looks
+    for a way out."* Cut adjective phrases, metaphors, asides, and any sentence
+    whose job is to show the writing. **The test is who the sentence points at.**
+    Scope is wider than the rest of this section: it covers explainers **and
+    replies to Sam in session**.
+  - **Active voice, and name the actor (Sam, 2026-09-09).** He asked for
+    revisions that use *"active voice, avoidance of adjective phrases and
+    asides, and plain language or language consistent with the terminology used
+    in the T5 revision."* A passive that hides the model as the actor is the
+    common failure on funding prose (*"is measured"*, *"are then applied"*,
+    *"is produced by"*) — say **the model measures / applies / produces**. Say
+    **model**, not *engine*. And prefer the regulation's own words over an
+    invented gloss: *units of credit for prior learning*, not a metaphor like
+    *currency*. **Applies to all suggested revisions, not just outward prose.**
+  - **A voice, not a template** — copying its shapes onto a piece with no
+    concession to make produces parody, and length is not seriousness. Moves +
+    exemplars + before/after:
+    [`reference-cccco-house-voice`](docs/kb-notes/reference-cccco-house-voice.md);
+    exemplars in `CPLBrain/04-projects/cpl-initiative/resources/`. Mechanical
+    floor linted by `house_voice` in `kb/_docs_audit.py`.
+- **"Activities" = activities and their projects.** When Sam says
   "Activities" he generally means both the workplan activities and the
   projects under them. The sidebar label is **Activities** (renamed from
   "Activities & Projects", Session 97); the tab hash stays
   `activities-projects`.
 
-## Working with the MAP team (added Session 120, 2026-08-05)
+## Working with the MAP team
 
 The team is growing beyond Sam — **Ashley, Jessica, Malone** and others now use
 Claude Code directly, most of them new to it and expert in MAP. The human-facing
@@ -348,6 +400,16 @@ first day.** Do the remembering for them.
   **who and when** alongside it (the provenance tiers in `map_users.js` are the
   worked pattern). A curator's knowledge is a first-class input — attribute it,
   don't launder it into an anonymous value.
+- **Verify the three-repo set at session start (Sam, ruled enforced
+  2026-08-30).** Sessions run with all three repos attached —
+  `cpl-knowledge-base` · `cpl-project-tracker` · `CPLBrain` — *"so they can
+  stay informed and syncd."* Check all three are present before working; if
+  any is missing, say which in one line and ask whether to continue without
+  it. The driver may be a teammate on day one — do the remembering for them.
+  (A session with no repo attached loads no CLAUDE.md at all; the backstop
+  there is per-machine: `scripts/install-three-repo-check.ps1` installs a
+  one-time user-level check line. Human-facing:
+  `docs/working_with_claude_code.md` §12.)
 - **Their domain knowledge outranks your inference.** They live in MAP daily.
   When a team member contradicts something derived, believe them and record the
   correction; when they supply a value that violates a rule you set for
@@ -360,23 +422,52 @@ first day.** Do the remembering for them.
   that it is one.
 - **Show, don't describe.** Offer a visual/mock-up early for anything with a
   shape to it. Reacting is easier than specifying.
-- **Call the effort level (added Session 128, 2026-08-08).** At the top of a
+- **Decisions arrive as decision sheets (Sam, 2026-08-30).** *"I'd like to
+  handle all my current and future decisions this way."* When judgments only
+  Sam can make accumulate, build one numbered sheet rather than scattering
+  asks through chat: per item, what it is in plain words, the measured
+  context (from the maps and feeds, never guessed), a proposed disposition
+  with its draft reason, and reply-by-number verdicts. Hand it over as a
+  Claude artifact link. ⚠️ **Read the replies BEFORE executing** — they are
+  the artifact's own store, not chat. Mechanics (the reply-chip injector,
+  `capabilities: {db: {}}`, the `replies` collection, where the file lives,
+  the worked example) are PULL:
+  [`decision_sheets`](docs/reference/decision_sheets.md).
+  **And it is "always", not "when they accumulate" (Sam, 2026-09-22).**
+  *"Always give me a decision sheet for any outstanding items for me..."* —
+  so the sheet is the standing form of the backlog, built whenever anything is
+  waiting on him, never held back for a quorum.
+  `kb/_build_open_asks_decision_sheet.py` **refuses to build** when a lane
+  carries a NEEDS-SAM marker that no item covers and no `NO_OPEN_ASK` reason
+  dismisses. Add the ask to a lane and the sheet breaks until it is asked.
+  Rebuild it at every checkpoint and hand over the link. A sheet whose cards
+  changed is published under a fresh `SHEET_ID` and artifact, because its replies
+  are keyed to card position ([`decision_sheets`](docs/reference/decision_sheets.md)).
+- **Capture unplanned substance on the fly (Sam, 2026-08-30).** His important
+  statements are never planned — *"just comes out of our interactions and I
+  don't think to say specifically braindump."* When Sam or a team member says
+  something substantive unasked — a decision rationale, a vision, a lesson, a
+  failure or success story — capture their words verbatim with who/when,
+  unprompted, and say in one line that you did (veto stays with them). Where:
+  the `CPLBrain` vault's braindump pipeline when the vault is attached (its
+  `CLAUDE.md` + the `braindump` skill carry the mechanics); otherwise a
+  `cpl_memory` row plus the lane/lessons doc. The test: would the words be
+  worth re-reading in six months? Routine task talk never qualifies.
+- **Call the effort level.** At the top of a
   substantive piece of work, say in one line whether it warrants ultracode /
   multi-agent fan-out and why — don't make the user guess a dial they have no
-  way to calibrate. **The governing test is whether a hit is cheap to VERIFY**
+  way to calibrate. **The governing test is whether a hit is cheap to verify**
   (Sam's refinement, 2026-08-08, from *"sometimes better to be lucky than smart"*):
-  fan-out is **manufactured luck** — more independent draws raise the odds one
-  lands — and luck only pays when you can recognise the hit. A bug reproduces; a
-  suppressed cell either is or isn't recoverable by subtraction; **fan out there**
-  (also the usual shape of MISS-risk: many files/surfaces, audits, unknown-size
-  discovery). A definition, a naming call, where credit belongs in the Sprint —
-  nothing to score candidates against, so **stay single-threaded and think harder**
-  (WRONG-risk). A majority among agents is not evidence; it regresses toward the
-  most common intuition, which is precisely what fails on a counter-intuitive
-  problem — Sam's framing: *too many cooks in the kitchen can lead to chasing our
-  tails endlessly.* Before either, **check whether this repo has already answered
-  it**: the best catches of the last several sessions came from re-reading a
-  committed note, not from generating a new one. Human-facing version:
+  fan-out is **manufactured luck** — more draws raise the odds one lands — and luck
+  only pays when you can recognize the hit. A bug reproduces; a suppressed cell
+  either is or isn't recoverable by subtraction; **fan out there** (the usual
+  shape of MISS-risk: many files, audits, unknown-size discovery). A definition or
+  a naming call has nothing to score candidates against, so **stay single-threaded
+  and think harder** (WRONG-risk). A majority among agents is not evidence — it
+  regresses toward the most common intuition, which is what fails on a
+  counter-intuitive problem (*too many cooks… chasing our tails endlessly*).
+  Before either, **check whether this repo has already answered it**: the best
+  catches of recent sessions came from re-reading a committed note. Human-facing version:
   `docs/working_with_claude_code.md` §9.
 - **Explain approval requests in plain language.** Before a write that touches
   shared ground, say what changes and who else sees it — don't assume a new user
@@ -384,245 +475,212 @@ first day.** Do the remembering for them.
 - **Flag cross-impact before acting, not after.** Shared Supabase tables, the
   public dashboard, the daily cron, the public KB, anything with staff/student
   PII, anything reaching colleges. Also ask whether another session is live —
-  Sam frequently runs several, and a later write silently wins.
-- **Offer the checkpoint.** Near the end of substantial work, or when a session
-  is winding down, proactively offer `/checkpoint` rather than waiting to be
-  asked. What isn't written down dies with the session, and a newer user has no
-  way to know that.
+  Sam frequently runs several, and a later write silently wins. **Compute the
+  impacts, don't guess:**
+  [`docs/reference/dependency_map.md`](docs/reference/dependency_map.md) maps
+  every dataset (Supabase table, generated JS, JSON) to its consuming tabs,
+  scripts, workflows and public surfaces — derived from the code
+  (`python3 kb/_build_dependency_map.py` regenerates; CI `--check`s it).
+- **RUN the checkpoint; do not ask for it (Sam, 2026-09-09).** *"you don't need
+  permission to checkpoint. Just run it when needed and we can refresh it if we
+  stay in the session for more work."* Fire on Rule 9's commits-since-handoff
+  count, never on a feeling that the session is winding down — then just run it.
+  ⚠️ **Asking first is the failure.** One taken too early costs a re-run; one
+  deferred for an answer that never comes costs the session's reasoning. If work
+  continues after, checkpoint again.
+- **Don't lock in (Sam, 2026-09-11).** *"I really don't like how you can get
+  locked in a long process (30-60 mins or more) without a way to interrupt and
+  get you a note--escape doesn't work when you're locked in on something."*
+  When the next step waits on anything external, end the turn — a scheduled
+  wake brings the session back. One batch of calls per turn during a wait.
+- **Hand over the whole paste (Sam, 2026-09-20).** A command for another
+  session goes to Sam as the full message he pastes there: the command, then
+  *paste the output, no investigation*, then what a good result looks like.
+  *"I doubt I'll remember this habit"* — the session remembers.
 - **Say what you can't do, early.** No Teams/email sending (drafts only, a human
   presses send), no MAP writes (read-only system of record), no unattached
   repos, no visibility into other sessions except through committed docs.
+- **Sign off with the exact opening line Sam pastes into the next session (Sam,
+  2026-08-13; the template is his, ruled 2026-09-03).** At the end of a session —
+  or anything that looks like the end (a checkpoint, a "thanks, that's it", a long
+  quiet) — close with this line, filled in, on its own:
+  > *Greetings, you are Sky**Next** (Session N+1), see Sky**You**'s handoff —
+  > `docs/session_<N+1>_handoff.md` (link) — let's keep rolling with our queue.*
+  Sam removed the guard-check sentence that used to close it (2026-09-28): it was
+  added to abate the approval storm. You **assign** the next moniker (one name, not a
+  menu) and it must be the one the handoff names. *"I just copy and paste the whole thing in the new session. If I
+  need to change direction, I just add the new direction to the opening note"* —
+  so the line must stand alone, and nothing may follow it but the sign-off. The
+  path is what the new session reads; writing the number means looking at the
+  file, which catches the stale-number failure Rule 9 warns about.
 
 ## Branch policy
 
-- Work on feature branches; open a PR to `main`.
-- Claude sessions: use `claude/<short-description>` branches (the session
-  harness handles this automatically). **Sibling branches authorized (Sam,
-  2026-06-11):** a session may create additional `claude/<desc>` branches
-  off `main` for INDEPENDENT PRs, instead of serializing unrelated changes
-  through one branch (the Session-41 friction: 3 stacked PRs, each needing
-  a post-squash rebuild). One concern per branch; the assigned branch stays
-  the default for the session's main workstream.
-- **Artifact policy (added Session 41, 2026-06-11):** prefer CODE-ONLY PRs —
-  ship generator/consumer changes without committing the regenerated
-  `unified_courses_*.js` / `credential_reference_data.js` artifacts, and let
-  the daily cron (or a `workflow_dispatch`) publish them. Committing ~100MB
-  of artifacts from a session is what made #348 conflict with the mid-PR
-  backstop cron (generated-file conflicts are never resolvable by picking
-  sides — you rebuild + regen). Manual live-on-merge artifact commits remain
-  the FALLBACK when same-hour liveness matters and no dispatch path exists.
-  ✅ **Dispatch GRANTED + CONFIRMED 2026-06-11** (Sam accepted the Claude
-  GitHub App's Actions permission; a session dispatched `daily-dashboard.yml`
-  via `mcp__github__actions_run_trigger` the same minute — 204). The
-  post-merge dispatch is now the DEFAULT: merge the code-only PR, dispatch
-  the workflow, let the runner publish artifacts. Manual artifact commits
-  only when the workflow itself is broken.
-- **Sam's one-time repo toggles — ALL SET 2026-06-11:** ① **Allow
-  auto-merge** ✅ (a session can `enable_pr_auto_merge` after marking ready);
-  ② **Automatically delete head branches** ✅ (the post-merge 403 branch
-  leftovers end); ③ Claude GitHub App **Actions: Read and write** ✅
-  (self-dispatch works — cron self-heal + the artifact policy above are
-  live).
-- **Always watch PRs.** When a Claude session opens a PR, subscribe to its
-  activity (CI + review comments) and follow through — fixing small/clear
-  issues, asking when ambiguous — until the PR is merged or closed.
-- **Auto-merge authorization (added Session 11, 2026-05-27; broadened
-  Session 12, 2026-05-27 — Bruh Dec; trust-expanded 2026-05-30 — Sam:
-  "change rules to not require my review before you squash-merge. I trust
-  you at this point, Bruh!").** Claude sessions merge **every** PR they
-  open in this project as soon as the universal gates below are met.
-  **Sam's review/approval is NOT a gate — do not wait for him to review,
-  and do not wait for an explicit "merge" go-ahead.** Open the PR (as a
-  draft per the harness default), let CI run, then mark it ready and
-  squash-merge the moment CI is green. The "confirm-before-merging for
-  architecturally significant PRs" carve-out was removed: the real safety
-  mechanisms for re-mints / schema migrations / Excel→Supabase phases are
-  inside the workstream itself (pre-merge dry-run review, in-script V1–V4
-  apply gates, `workflow_dispatch` manual triggers on the apply workflow),
-  not at the PR-merge button. Merging an apply-script PR doesn't auto-run
-  the apply.
-  - **CI gate = required checks pass; merge on `clean` OR `unstable`.** "Green"
-    means the *required* check(s) (TruffleHog, plus any push-only checks like
-    CodeQL when they apply) passed. In GitHub's `mergeable_state`, that is **both
-    `clean`** (everything green) **and `unstable`** (mergeable; only a
-    *non-required* check is still pending/failing — a pending/failing *required*
-    check reads **`blocked`**, never `unstable`). **So merge on `unstable` too —
-    do NOT wait for it to flip to `clean`.** Only **`blocked`** (required check
-    failing/pending), **`dirty`** (merge conflict), or **`behind`** actually gate.
-    (Over-waiting for `clean` on `unstable` PRs — then ending the turn so the
-    CI-success event never woke the session — is what made #221/#223 sit until
-    Sam nudged "Go!", 2026-06-01. Don't.)
-  - **Poll CI via the MCP `github` tools, NOT `curl` (Session 76).** The remote
-    sandbox's `GH_TOKEN`/`curl` against `api.github.com` returns *"GitHub access
-    is not enabled for this session"* — only the **MCP `github` server** can reach
-    GitHub. So a `Monitor`/Bash loop that curls the check-runs API to watch CI
-    **silently times out** (it never gets data). Check status with
-    `pull_request_read {method:"get"}` (small — read `mergeable_state`) or
-    `actions_list {method:"list_workflow_runs"}` (large — parse the saved
-    tool-result file with python, don't read it inline). Webhooks don't deliver
-    CI *success*, so you must poll.
-  - **Autonomous engineering PRs → merge on green; don't wait for a comment,
-    review, or "Go!".** For the session's *own* work (refactors, migrations, bug
-    fixes, dead-code deletes, generator/doc changes it initiated), Sam's
-    review/comment is **not a gate** — he trusts the session to merge. If a
-    reviewer comment **already exists** and is an unresolved change-request,
-    address it (fix, or ask when ambiguous) first; absent that, a
-    mergeable-on-green PR is squash-merged, full stop. (#221/#223 should have
-    merged on `unstable` instead of ending the turn to wait for Sam's "Go!" —
-    2026-06-01.)
-  - **Carve-out — hold for input ONLY when you have a concrete reason to.** The
-    default is always merge-on-green (above), **including for docs Sam
-    commissioned** — being a thing he asked for is **not** itself a reason to hold.
-    Hold (ready, not draft) only when there's a specific, articulable reason the
-    merge genuinely benefits from his input first: the deliverable has a known
-    **gap** pending something only he supplies (a screenshot to finish a section),
-    or an embedded **decision** only he can make. That concrete reason is what made
-    the #222 hold right — §5 had an explicit placeholder for his screenshot. (Sam,
-    2026-06-01: *"Good call on holding 222"* + *"hold for comment only if you have
-    a reason to hold."*) **No reason → merge**, even if he asked for it; fold later
-    polish into a follow-up. When you DO hold: mark **ready**, state the reason,
-    merge on his nod. Never leave it in *draft*.
-  - **Merge promptly — never PARK a PR in DRAFT.** Mark it **ready immediately** (a
-    PR can be ready while CI runs). For autonomous work, squash-merge the instant
-    it's mergeable on green (`clean` OR `unstable`) — in the SAME turn, rather than
-    ending the turn to "wait." Draft-parking is the sin (#202 left in draft during
-    recon, 2026-05-30); a *ready* PR held briefly for Sam's input on a deliverable
-    he commissioned is fine (#222).
-  - **Backstop — auto-merge is ENABLED (Sam's toggle ①, 2026-06-11):** after
-    marking ready, call `mcp__github__enable_pr_auto_merge` (squash) and GitHub
-    merges the instant required checks pass — no turn-ending wait, no nudge
-    needed. Note it refuses while a required check is still in-progress; poll
-    checks via the MCP github tools and retry, or squash-merge manually per the
-    rules above.
-  - **Method: squash and merge** — collapses to one commit on `main` with
-    the PR title + body. Matches the existing `Merge pull request #N`
-    history pattern.
-  - **Feature branches auto-delete on merge** (Sam's toggle ②, 2026-06-11).
-    Don't run `git push origin --delete` from a session — the session token
-    403s on branch deletes; GitHub's auto-delete handles it.
+The operative rules are all here; the wording Sam used, the PRs each was written
+against, and the toggle history are in
+[`docs/reference/branch_policy.md`](docs/reference/branch_policy.md).
+
+- Work on feature branches (`claude/<short-description>`); open a PR to `main`.
+  **Sibling branches are authorized** — a session may open additional
+  `claude/*` branches off `main` for independent PRs rather than stacking
+  unrelated changes. One concern per branch.
+- **Artifact policy: prefer code-only PRs.** Ship generator/consumer changes
+  without the regenerated `unified_courses_*.js` / `credential_reference_data.js`
+  artifacts; merge, then dispatch `daily-dashboard.yml` and let the runner
+  publish. Generated-file conflicts are never resolvable by picking sides.
+  Manual artifact commits only when the workflow itself is broken.
+- **Always watch PRs.** Subscribe to activity and follow through — fixing
+  small/clear issues, asking when ambiguous — until merged or closed.
+- **Auto-merge authorization (Sam, trust-expanded 2026-05-30).** Claude sessions
+  merge **every** PR they open, as soon as the gates below are met. **Sam's
+  review is not a gate** — do not wait for him to review, and do not wait for an
+  explicit "merge" go-ahead. There is no carve-out for architecturally
+  significant PRs: the real safety mechanisms live inside the workstream
+  (dry-runs, in-script apply gates, `workflow_dispatch`), not at the merge button.
+  - **The `test` check must have succeeded on the current head before you
+    merge (Sam's E ruling, amended to doctrine-level 2026-08-30).** GitHub
+    cannot make it a required check without rejecting the cron's direct
+    pushes (measured live: a rules-active test declined all five of the
+    cron's push attempts with GH013), so the requirement is doctrine: poll
+    `get_check_runs` on the head until `test` (from `js-tests.yml`) reports
+    success — a docs-only diff finishes in ~2.5 min, a code diff ~7 (four
+    shards, 2026-09-24) — and
+    never merge past a pending or failing `test`. A failing `test` on your
+    PR is yours to fix. Waiting for it is the one sanctioned merge wait.
+  - **Beyond `test`, merge on `clean` or `unstable`.** `unstable` from any
+    other non-required check still merges — do not wait for it to flip to
+    `clean`. Only `blocked`, `dirty` (conflict) or `behind` gate beyond that.
+  - **Poll CI via the MCP `github` tools, not `curl`** (the sandbox cannot reach
+    `api.github.com`), and **a `check_suite.completed` wake is not a green
+    light** — it routinely names a superseded `head_sha`, so always re-read
+    `get_check_runs` on the current head. When to hold, and why never to park
+    in draft: [`branch_policy`](docs/reference/branch_policy.md).
+  - **Method: squash and merge** (`mcp__github__merge_pull_request`,
+    `merge_method: "squash"`).
+  - **Branches auto-delete on merge.** Never run `git push origin --delete` from
+    a session — the token 403s; GitHub handles it.
   - **Never force-push `main`** (Rule 5 — Pages serves from it).
-  - Use `mcp__github__merge_pull_request` with `merge_method: "squash"`.
-  - The session-end handoff still notes any architecturally-significant
-    PR that landed so the next session has context, even though no
-    pre-merge pause happened.
+  - The session-end handoff still notes any architecturally-significant PR that
+    landed, even though no pre-merge pause happened.
 
-## Engineering & UI practices (added Session 32, 2026-06-04)
+## Presentation rules — every view we ship
 
-From a retrospective Sam asked for. These are lightweight standing practices —
-honor them in normal work:
+These govern **anything a human looks at** — a COBI tab, a public page, a
+prototype, a Claude artifact, a docx — and they are PUSH because nobody stops to
+ask "may I use an emoji here" before typing one. Spec detail:
+[`engineering_ui_practices`](docs/reference/engineering_ui_practices.md) ·
+[`reference-ui-design-system`](docs/kb-notes/reference-ui-design-system.md).
+
+`presentation_doctrine` in `kb/_docs_audit.py` fails if any of them leaves this
+file.
+
+- **First Light, always, including artifacts and prototypes (Sam, 2026-08-19).**
+  *"Make sure it is based on our First Light design and make it always accessible
+  and mobile friendly."* **Do not invent a palette.** Spec:
+  [`reference-ui-design-system`](docs/kb-notes/reference-ui-design-system.md) +
+  `prototype/first_light_theme_v1.html` v1.6; `var(--token)`, never a raw hex.
+  A **light** identity by default. Since 2026-09-08 one opt-in dark palette
+  exists (Sam's ask) — a token swap owned by `cpl_theme.js`, which owns the
+  contract themed components key on. **Dark is not license to invent a color**:
+  add the role to the dark `:root` in both HTMLs (Rule 4), never a component
+  rule there. [lane](docs/reference/lanes/cobi-dark-mode.md)
+- **Accessible to today's standards — and verified, not claimed.** Compute every
+  fg-on-bg pair actually used (zebra rows and glass composites included) against
+  **AA 4.5:1 / 3:1** — `prototype/check_contrast.py` holds the math. **Color is
+  never the only signal.** `th scope` on every header cell, an `aria-label`led
+  region around any scrolling table, a skip link, `:focus-visible`, and
+  `prefers-reduced-motion`.
+  **Verify with `npm run a11y`** (Sam, 2026-09-04: *"the simplest approach
+  that sets us up for continued long term use on all projects"*). One command,
+  ~100s, every view we ship — every COBI tab, discovered from its own nav, plus
+  Sierra, the Fact Sheet, the veteran map, SkyView. **`npm test` passing proves
+  nothing here**: jsdom returns zeroes for every rectangle. Run it before you
+  ship a view; add a view in `a11y.config.js`, not a new script.
+- **Mobile-friendly, always.** Single column below ~560px, `clamp()` type, no
+  fixed widths, and wide tables scroll **inside their own container** so the body
+  never scrolls sideways.
+- **Prose runs the full width of whatever sits beside it (Sam, 2026-08-22).**
+  The lever is `--cpl-measure: none` on `:root` in both HTMLs (Rule 4); every
+  prose cap is `max-width:var(--cpl-measure,none)` — **the `,none` fallback is
+  load-bearing.** A cap below ~55ch is layout, not a measure, and must not be
+  swept (`tests/cobi_prose_measure.test.js` pins a sample so a blanket sweep
+  fails). Grep **px too**.
+  [`methodology-a-text-measure-must-agree-with-what-sits-beside-it`](docs/kb-notes/methodology-a-text-measure-must-agree-with-what-sits-beside-it.md)
+- **No horizontal scroll whenever feasible (Sam, 2026-06-11).** Tables/grids fit
+  the viewport at desktop widths. `overflow-x: auto` is the narrow-screen safety
+  net, never the default desktop experience. Use `table-layout:fixed` + an
+  explicit colgroup — auto layout silently parks columns past the wrap's edge.
+- **Plain words, not glyphs — and the glyph rule is strict (Sam, 2026-08-29,
+  tightening #1212).** *"I think they are mostly noise… I prefer to eliminate
+  every visual that doesn't prove its worth."* **The default is no glyph.** The
+  burden of proof is on the mark, never on removing it: if you cannot say what a
+  reader would misunderstand without it, delete it. Every control is a **word** —
+  *Rename · Hide · Remove · Seen by: … · All sites* — never an emoji or an icon
+  standing in for a label.
+  - **A glyph that earns its place is ghosted, not decorated:** muted **CO blue
+    on white** (`--cobalt-on-dark` #7DA1D4, or `--seal-blue` #002F6D where it
+    must carry weight). It should read as the quietest thing in the row.
+  - **Green and red are for a state the user must act on**, nothing else
+    (`--green-progress`, `--red-alert`). **Muted by default even then** —
+    full saturation is reserved for pulling focus deliberately, and a page where
+    everything shouts has no way left to shout.
+  - **This does not conflict with "color is never the only signal" above.**
+    That rule says a state already worth showing must not be shown by color
+    alone; this one says most states are not worth showing. Satisfy the first
+    with a **word** wherever you can, and a mark only when the word will not fit.
+  - **No exceptions for 📋 To-Do, 🧭 guidance or ⚖️ Governance** (Sam,
+    2026-09-09): each has its word beside it. **Do not restore a mark there.**
+    Sweep: [`/a11y-pass`](.claude/commands/a11y-pass.md).
+  - ✅ **THE SWEEP IS CLOSED AT 26 (Sam, 2026-09-09: *"Keep all 26 glyphs as is
+    for now."*)** — Star designations, `✕`, `✎`, `⛔`, `⚠`, copy, and arrows that
+    carry sequence. ⚠️ **RULED, not pending — do not sweep them**; none is an
+    emoji, and a plain-words reading does not override his ruling.
+- **American spelling, always** — rendered UI text first. Word list and the
+  code-safety caveat are in **Naming & terminology** below.
+
+## Engineering & UI practices
+
+Standing practices — honor them in normal work. Each rule below is the whole
+rule; the **evidence** behind it (measurements, the worked failures, the
+contrast math, token names) is in
+[`docs/reference/engineering_ui_practices.md`](docs/reference/engineering_ui_practices.md).
+Read that before a UI rework, a First Light artifact, or a table layout.
 
 - **Commit your verification.** Front-end (consumer JS) changes get a jsdom test
-  under `tests/` (run with `npm test`; `tests/run.js` auto-discovers
-  `tests/*.test.js`). Don't write a throwaway `/tmp` test and discard it — a test
-  worth running once is worth committing. Make it guard the *failure mode* (e.g.
-  the CER test injects a `raw_variants:null` row to guard the search/expand
-  crash). `node_modules`/`package-lock.json` stay gitignored; CI
-  (`.github/workflows/js-tests.yml`) runs `npm install && npm test` as a
-  **non-required** check (never gates merge-on-green). See
-  [`docs/kb-notes/methodology-commit-the-test-harness.md`](docs/kb-notes/methodology-commit-the-test-harness.md).
-- **New CSS uses `var(--token)`, never a raw hex.** The `:root` block (top of both
-  HTMLs) holds the brand + surface/text/link tokens. If a role is missing, add a
-  token (in BOTH HTMLs — Rule 4) rather than inlining hex. Palette + canonical
-  components (chip, badge, table, curate affordance):
-  [`docs/kb-notes/reference-ui-design-system.md`](docs/kb-notes/reference-ui-design-system.md).
-- **Prefer injecting tab CSS from the tab's JS** (the CER `ensureCerScopeCss()`
+  under `tests/` (`npm test`; `tests/run.js` auto-discovers `tests/*.test.js`).
+  Never a throwaway `/tmp` test — make it guard the *failure mode*. CI's
+  `js-tests.yml` is **non-required** and never gates merge-on-green.
+- **`git add`, then `bash scripts/check_generated.sh`, is the last thing before
+  a push** — `npm test` covers none of CI's generator `--check` steps.
+- **New CSS uses `var(--token)`, never a raw hex.** Missing role → add a token,
+  in **both** HTMLs (Rule 4). Derived tints get their own tokens.
+- **Prefer injecting tab CSS from the tab's JS** (the `ensureCerScopeCss()`
   pattern) over editing the HTML `<style>` blocks — JS is one static file, so it
-  covers both HTMLs without a Rule-4 mirror. Only the global `:root` tokens need
-  the mirror.
-- **No horizontal scroll whenever feasible (Sam, 2026-06-11).** Tables/grids
-  fit the viewport at desktop widths: tighten cell padding/fonts, truncate
-  long text cells with ellipsis + the full value in `title`, fold redundant
-  suffixes ("X Community College District" → "X CCD"), shorten headers
-  (`P1`/`P2`/`P3` + a `title`), and prefer drill-in rows over extra columns.
-  Keep `overflow-x: auto` on the wrapper only as the narrow-screen safety
-  net — never as the default desktop experience. (First applied: the
-  Implementation Funding college table. Hardened on the CCR, Session 43:
-  `table-layout:fixed` + explicit colgroup — auto layout had silently parked
-  columns past the wrap's right edge, per filtered row set; see
-  [`docs/kb-notes/methodology-fixed-table-layout-off-pane-columns.md`](docs/kb-notes/methodology-fixed-table-layout-off-pane-columns.md).)
-- **Prototype UI in a fast-feedback canvas, then port.** For a new tab or visual
-  rework, iterate the look in a Claude artifact / claude.ai (live preview), lock
-  it with Sam, then implement into the monolith. In-repo analog: the EACR
-  versioned prototype gallery.
-- **Stop-hook:** the repo carries the canonical
-  [`scripts/stop-hook-git-check.sh`](scripts/stop-hook-git-check.sh) (install:
-  `cp scripts/stop-hook-git-check.sh ~/.claude/`). It ignores GitHub's own
-  squash-merge commits, so the "Unverified `noreply@github.com`" nag after a
-  squash-merge + `reset --hard origin/main` is gone — that commit is on `main`
-  and must NOT be amended (Rule 5).
+  covers both HTMLs without a Rule-4 mirror. Only `:root` tokens need the mirror.
+- **Prototype UI in a fast-feedback canvas, then port.** Iterate the look in a
+  Claude artifact, lock it with Sam, then implement into the monolith.
+- **Stop-hook:** a nag about unpushed commits that a squash-merge already
+  landed means the hook is unpatched; `python3 scripts/check_hooks_live.py --fix`
+  patches it through `scripts/patch_stop_hook.py` (a three-repo session never
+  loads the SessionStart hook). See [`troubleshooting`](docs/reference/troubleshooting.md).
 
 ## Deployed site
 
 https://cpl-initiative.github.io/cpl-project-tracker/
 
-## Obsidian vault wiring (added Session 11, 2026-05-27)
+## Obsidian vault wiring
 
-Sam's Obsidian vault is rooted at
-`C:\Users\samuel.lee\Documents\GitHub\COG-second-brain\` (**repointed
-2026-05-28, PR #178** — it previously pointed at
-`Documents\Claude\Projects\CPLBrain\COG-second-brain\`, but the sync script
-pulled there while Obsidian read the `GitHub\` path, so checkpoint commits +
-KB notes never appeared in the vault; root cause + Windows cutover steps in
-[`docs/kb-notes/playbook-vault-sync-setup.md`](docs/kb-notes/playbook-vault-sync-setup.md)).
-This repo is cloned **into the vault** at
-`COG-second-brain\cpl-project-tracker\` so Obsidian indexes every `.md` file
-the session writes.
+**Moved to [`docs/reference/obsidian_vault_wiring.md`](docs/reference/obsidian_vault_wiring.md)** (2026-08-28 consolidation).
 
-Three doc lanes in this repo, by lifecycle (see
-[`docs/INDEX.md`](docs/INDEX.md) for the landing page):
+Read it before: vault-sync or vault-path work, Obsidian exclusion, or the
+sparse-checkout fix. It holds the vault root, `scripts/sync-vault-clones.ps1`,
+and why exclusion is a relevance filter rather than a performance one.
 
-| Lane | Path | Purpose |
-|---|---|---|
-| **KB notes** | `docs/kb-notes/<topic>.md` | Distilled, durable, reusable knowledge with `kb-status: published|archived|internal` (the `candidate` middle state was retired Session 11). **THE Obsidian-target lane.** |
-| **Lessons (WIP)** | `docs/<workstream>_lessons.md` | Workstream scratchpads, append a dated section every checkpoint. |
-| **Session handoffs** | `docs/session_<N>_handoff.md` | "Fattyfat" capsules for the next session. |
+Three doc lanes by lifecycle — KB notes, lessons, session handoffs. Which is
+which, the per-lane contract, and the KB-notes lane's author-at-final-quality
+rule: [`docs/INDEX.md`](docs/INDEX.md).
 
-The KB-notes lane is **proactive + auto-flowing**: when a session learns
-something durable, a new note lands in `docs/kb-notes/` with `kb-status:
-published` (no review-queue middle state — sessions author at final
-quality). The checkpoint commit body lists new notes for the audit trail.
-
-**Vault auto-sync (added Session 11, 2026-05-27):** `scripts/sync-vault-clones.ps1`
-runs on Sam's Windows Task Scheduler every 60 minutes (default lowered from 15
-on 2026-08-09 — work lands a few times a day, so 24 pulls/day is plenty; run the
-script by hand when you want the vault current immediately), fast-forward-pulling
-`cpl-project-tracker` + `cpl-knowledge-base` from origin into the canonical
-`Documents\GitHub\COG-second-brain` vault root (`$vaultRoot` repointed
-2026-05-28, PR #178). KB notes (and every other repo doc) appear in Obsidian
-automatically. The script is strictly
-safe: never auto-merges, skips repos with uncommitted work, logs to
-`.vault-sync.log`. Setup walkthrough:
-[`docs/kb-notes/playbook-vault-sync-setup.md`](docs/kb-notes/playbook-vault-sync-setup.md).
-
-Vault-side hygiene: heavy non-markdown paths are excluded in Obsidian's
-**Files & Links → Excluded files** so the graph stays clean. **The authoritative
-list is generated, not prose** — `python3 kb/_docs_audit.py` emits a paste-able
-`userIgnoreFilters` block in `kb/docs_audit/<date>.md`; the live copy is
-`CPLBrain/.obsidian/app.json`. (Corrected 2026-08-09: this paragraph used to
-*claim* `unified_courses_*.js` and `cip_fitcheck/` were excluded and the live
-`app.json` excluded neither — 164 MB. A documented exclusion is not an applied
-one, which is why the list is now generated from what is actually on disk.)
-
-⚠️ **Exclusion is a relevance filter, not a performance one.** It drops paths
-from search, graph and link autocomplete; it does **not** stop Obsidian's file
-watcher, metadata cache, or Sync. If the vault is slow to OPEN, excluding more
-paths will not fix it — the files have to leave the disk.
-
-**The fix is a docs-only sparse checkout of the vault clone
-(`scripts/sparse-vault-clone.ps1`): 1,766 files / 1,072 MB → 447 files / 11 MB,
-verified, reversible with `-Revert`.** The vault clone is a read-only mirror
-(`sync-vault-clones.ps1` only fast-forward pulls it; real work happens in the
-working clone at `Documents\GitHub\cpl-project-tracker`), so it has no use for
-build outputs. Sparseness survives `git pull`; the sync script logs a NOTE if it
-ever regresses. ⚠️ Do **not** re-scope this by file extension —
-**`kb/row_audit/` is 418 MB of MARKDOWN**, so a "materialise `**/*.md`" rule
-would keep 423 MB and look like it worked. Scope by LANE. Procedure + the
-measurements:
-[`docs/kb-notes/playbook-keep-build-artifacts-out-of-the-vault.md`](docs/kb-notes/playbook-keep-build-artifacts-out-of-the-vault.md);
-corpus finding:
-[`docs/kb-notes/methodology-a-knowledge-base-needs-a-lint-pass.md`](docs/kb-notes/methodology-a-knowledge-base-needs-a-lint-pass.md).
-
-**Checkpoint scope — vault, never the public KB.** Rule 8 / `/checkpoint`
+**Checkpoint scope — vault, never the public KB.** Rule 9 / `/checkpoint`
 refreshes *this* repo's docs (`docs/kb-notes/`, lessons, §11, the To-Do feed),
 which auto-sync into Sam's Obsidian vault + the `CPLBrain` repo with no review
 gate — correct for internal working memory. Checkpoint must **never** write to
@@ -637,9 +695,9 @@ deliberate, human-gated step — never a checkpoint side effect.
 
 ## Pipeline Reference
 
-**Moved to [`docs/reference/pipeline_reference.md`](docs/reference/pipeline_reference.md)** (2026-07-10 pare-down — was 1,087 lines of context-tax).
+**Moved to [`docs/reference/pipeline_reference.md`](docs/reference/pipeline_reference.md)**.
 
-Read it BEFORE: touching `excel_to_dashboard.py` or the daily workflow (§5–6);
+Read it before: touching `excel_to_dashboard.py` or the daily workflow (§5–6);
 adding/moving tabs or nav (§7b); working on CPL Assistant (§7c) or TMC Builder
 (§7d); **any Supabase schema/RLS/write work (§8 — table inventory + gating)**;
 EACR identity (§9); C-ID/CCN conventions (§10). Contents: 1 Architecture ·
@@ -649,11 +707,12 @@ EACR identity (§9); C-ID/CCN conventions (§10). Contents: 1 Architecture ·
 
 ## Knowledge Base & Unified Courses Curation — Build Status
 
-**Moved to [`docs/reference/kb_build_status.md`](docs/reference/kb_build_status.md)** (2026-07-10 pare-down — was 421 lines).
+**Moved to [`docs/reference/kb_build_status.md`](docs/reference/kb_build_status.md)**.
 
-Read it BEFORE: KB/unified-courses curation work, the CCR worklists, or citing
+Read it before: KB/unified-courses curation work, the CCR worklists, or citing
 build-phase history. It holds the phase-by-phase build narrative, counts, and
-artifact locations. Current-phase quick state: see the §11 Roadmap table below
+artifact locations. Current-phase quick state: the §11 pointer table below
+names each lane's state; its detail is in `docs/reference/lanes/`
 + the latest `docs/session_<N>_handoff.md`.
 
 ## 11. M-ID Lifecycle, Model Curriculum (MC), and the CID/CIDx Pathway
@@ -665,56 +724,73 @@ pipeline toward ASCCC C-ID approval. The dual-score auditor at
 **Lifecycle/MC/CIDx prose + the Session-25 strategic roadmap and archived
 session narratives moved to
 [`docs/reference/mid_lifecycle.md`](docs/reference/mid_lifecycle.md)**
-(2026-07-10 pare-down). Read it BEFORE: re-mints, MC/TMC terminology calls,
+(2026-07-10 pare-down). Read it before: re-mints, MC/TMC terminology calls,
 Trust-Card auditor work, or CID/CIDx pathway decisions. The live Roadmap table
-+ the two most recent session narratives stay here (Rule 8 budget).
+stays here.
 
 ### Roadmap
 
-> **Completed rows archived.** The DONE / superseded roadmap rows (all the
-> shipped phases through Session 32) live in
-> [`docs/roadmap_archive.md`](docs/roadmap_archive.md). Only the still-open
-> rows (in progress / parked / queued) are kept inline below.
+> **This table is a pointer index, not the state itself (2026-08-28, S206).**
+> Each lane's detail lives in [`docs/reference/lanes/<lane>.md`](docs/reference/lanes/);
+> the row carries only what a session **cannot know to ask for** — that the lane
+> exists, what it is, whether it is live, whether anything waits.
+>
+> **At checkpoint, update the lane file, not the row.** Touch the row only when
+> the lane's *state* changes. **Do not re-inflate a cell** — that is how §11
+> became 90 KB of a 151 KB always-loaded file.
+>
+> **A lane file states current truth, not a log.** When a finding contradicts
+> it, **delete the superseded text**; never prefix `*Prior:*`. The cost of
+> stacking is not bloat but contradiction, and no reading order fixes one
+> inside a single document. `stacked_roadmap_cell` guards both surfaces.
+>
+> **Retiring a lane: do not grep for it** — `lane_retirement_signal` already
+> ran that test and names the candidates; hand-grepping has been wrong every
+> time (four occasions). [`lanes/README.md`](docs/reference/lanes/README.md).
 
-> ⚠️ **A roadmap cell states CURRENT TRUTH, not a log (added 2026-08-10).** When a
-> session's finding contradicts what a cell says, **delete the superseded text** —
-> do not prefix it with `*Prior:*` and leave it below. The history belongs in the
-> workstream's lessons doc, which Rule 9 already says to write **once**.
->
-> This was measured, not theorised: the "Disposition grain" cell had reached
-> **14,338 characters** with **3 `*Prior:*` markers, 3 corrections and 14
-> warnings** — four generations of claims stacked, some contradicting each other.
-> §11 was 45,037 chars of a 102,587-char file that **auto-loads every session**.
-> The cost is not bloat, it is that `CLAUDE.md` simultaneously asserted Sierra
-> "sits on colleges' own pages" AND that "there is no internal COBI Sierra", so
-> the same correction had to be made on two consecutive days. **No reading order
-> fixes a contradiction inside one file.**
->
-> `stacked_roadmap_cell` in `kb/_docs_audit.py` flags this at every checkpoint —
-> mechanically, because Sam does not review checkpoint output by design.
+> **Anything waiting on Sam is also a card on a sheet.** The standing one,
+> `kb/_build_open_asks_decision_sheet.py` →
+> [XzQMks96QszUDAyXADP3Ag](https://claude.ai/artifact/XzQMks96QszUDAyXADP3Ag),
+> **refuses to build** while a lane's NEEDS-SAM marker has no card. When Sam
+> answers one, change that lane's marker in the same PR, or the sheet asks again
+> ([`decision_sheets`](docs/reference/decision_sheets.md)).
 
 | Phase | What | Status |
 |---|---|---|
 | 1b (3/3) | Curate-write Repair-from-members action (Supabase schema migration + fresh-read + cron-window) | parked (low immediate value — 1 cluster; build when ≥5 clusters exist) |
-| 1c | More audit rules — **9 of 10 landed:** `discipline_title_mismatch`, `generic_title_concrete_discipline`, `top_discipline_disagreement` (+ SISTER_PAIRS suppression), `description_discipline_disagreement`, `subject_collision_signal` (Phase 1e diagnostic — **7,203 flags pre-re-mint**, target 0 post-re-mint), `unit_anomaly` (2026-05-26, 4,385 flags — first member-level cross-validation, also first non-discipline penalty via `TAG_PENALTY_ON_UNITS`; surfaces possible over-merges across credit-vs-noncredit unit-load variants), and **`merge_into_orphan`** (2026-05-27, **0 flags on current data** — preventive data-integrity detector for dangling `merge_into` pointers; valid targets = courses ∪ singletons ∪ `UC-CUR-*`; fires symmetrically on M-IDs + clusters with bad curation pointers). **`member_top_divergence`** (2026-05-29, **1,299 flags** — the cross-discipline over-merge detector; member colleges' TOP codes span ≥2 broad divisions, ≥30% minority; 736 carry no other strong signal; second member-level rule after `unit_anomaly`). **`subject_discipline_outlier`** (2026-07-13, Session 113, #761 — **~302 flags**, penalty 0.20; the mis-mint detector Sam's HVAC M10FR catch motivated: a row's assigned discipline is a small minority (≤15%, ≤3 rows) of its LOCAL SUBJECT CODE cohort AND the TOP code OR curated lexicon corroborates the SAME correction — two-signals-agree; **covers singletons** the corroboration-gated `top_discipline_disagreement` skips; 41 corrections fired `mismint-s113@bot`, `kb/mismint_out/2026-07-13/`; carries a `suggested_fix`). **Still queued:** `cluster_title_drift` (low yield until more clusters mint) | in progress |
+| 1c | More audit rules in `kb/_row_audit.py` — **9 of 10 landed**; `cluster_title_drift` still queued. | in progress — [lane state](docs/reference/lanes/audit-rules.md) |
 | **Activity↔Project PR-D** | (Optional) split Workplan Goals into its own top-level tab if the page gets dense (Sam's prior preference: one page with two sections). | parked unless curator usage signals demand |
-| **Excel→Supabase Phase 2-4** | Retire the master `.xlsx`; Supabase is the system of record. | 🔨 **Nearly done — the writer is gone.** Phases 1–2 + the config/KPI-ladder/budget/D-row work all shipped (Sessions 15–25, PRs #189–#223); the master `.xlsx` is **no longer written on any run**. **Remaining: P3** Update Log history — a product fork Sam **parked** 2026-06-01 (38 projects / 120 stale entries, latest 2026-04-08; options = read-only snapshot / retire keeping `latest_update` / a Supabase `project_update_log`) — and **P5**, dropping the `.xlsx`, blocked only by `read_projects` (KPI-ladder + outage fallback), `read_budget_plan` (+ budget `factors`/`year_labels`) and `read_update_log`/`archive_updates_to_log` (the one remaining writer, gated on P3). Independent: budget `total`/`avg` formulas + a personnel editor (fix the 26→13 dedupe row-identity first). Keep a Supabase→xlsx backup. Full shipped-phase history: [`docs/roadmap_archive.md`](docs/roadmap_archive.md); method: `docs/kb-notes/methodology-verify-consumer-before-migrating.md`. |
-| **NC / Learning Partners** | Noncredit + not-for-credit + adult-school + ROP + HS-Cx + apprenticeship CPL — the thinking doc, the six modes, and the COBI register tab. | ✅ **Thinking doc + tab + write layer DONE** (SkyPartner, #981–#989). **Next by value÷effort:** ① populate the 4 standalone NC institutions in MAP (at ZERO); ② EMS Corps landing page + 500-alumni outreach (28 colleges already articulated); ③ work the 49 dormant statewide exhibits; ④ the mirroring playbook; ⑤ the 26-college dental list. **6 "Needs Input" items open in-tab** — biggest is HS-articulation scale. ⭐ **Pre-apprenticeship CPL now has a named mechanism set (Sam, 2026-08-10)**: noncredit coursework · industry certifications · **clearing admission requirements for the apprenticeship itself** (the one nobody names — it speeds *entry*, not just completion). Sharpens this row: noncredit coursework is a *named source* of pre-apprenticeship CPL and the four standalone NC institutions are still at ZERO. `reference-cpl-at-the-pre-apprenticeship-stage`. Funding metric PARKED by Sam until the mechanisms are mapped. |
-| **MAP Users / student contact** | Every college landing page routes a student's CPL request to a real person. MAP routes on `primary_contact_email`. | ✅ **WORKLIST LIVE + WIRING AUDITED SOUND (SkyMail #991–#993, #1001; SkyHigh #1078; SkyMind; SkyBridge #1151).** **25 of 123 colleges have no `primary_contact_email`**: **17 resolve** from the college's own MAP designations (the coordinator→assistant→counselor→AO→initiator→faculty cascade), **5 leadership-only**, **3 no-MAP-presence** (the standalone continuing-ed institutions). ⚠️ **MAP IS READ-ONLY FOR US — the nulls were never filled and cannot be.** `map_users.js` `FALLBACK_CONTACTS` is a **DISPLAY-LAYER** fallback over **78** colleges (61 with an address, 17 blank-with-a-finding, 3 curator-supplied by Jessica). ⭐ **CURATOR PROPOSALS ARE DATA NOW, NOT CODE (SkyRef, #1167).** Gated `map_contact_proposals` overlays the worklist — **all 25 rows editable**, cascade pre-filled as the default, values chipped **`curator-set`** with who/when and **never claiming MAP holds them**. **Sierra does NOT read it** (Sam's call: MAP to-do only; a test asserts `cpl-chat` never references the table). Keyed on the **trimmed** name; **clearing writes nulls, not a delete** (no delete policy, matching `governance_owners` — whose `Clear owner` no-op is the lesson); an RLS-filtered write returns **200 + empty body**, so a no-row write reports as FAILURE with the typed text kept; the CSV ships **both layers separately** because it is worked through *in MAP*. ⭐ **The "Proposed because" chip now says WHY, not WHAT** — Sam read `CPL Assistant` and correctly inferred "assistant on file, nobody as Primary Contact"; **the cascade already promoted them**, the chip never said so. A bare email beside a named row is **not a lookup failure**: `cpl_assistant_email` has **no matching name column**. ⚠️ **5 of the 8 "must be asked" are NOT empty colleges** — Gavilan has 13 active MAP users, Hartnell 15, nobody in any CPL role. ⚠️ **7 entries are `via:"search"` and `proposedFillFor()` REFUSES them in code** — sessions are egress-blocked from college domains, so their pages were never opened and Jessica's sourcing rules (which are rules about what a PAGE shows) could not be applied. They render "Candidate — confirm". ⚠️ **2 colleges publish only a mental-health inbox — DELIBERATELY DECLINED for CPL routing** (Sam: an early mistake we corrected); they stay blank because they have no usable address, not because we skipped them. ✅ **Wiring verified (SkyBridge):** all 78 `FALLBACK_CONTACTS` + 16 `CPL_PAGES` + 1 `CPL_LIAISONS` keys resolve to a real college — **zero misses**; shared addresses (SDCCD ×4, SMCCD ×3, Peralta ×2) are legitimate **district** officers. ⚠️ **Mission College's proposal is `boothmelanie@gmail.com`** — MAP's own `cpl_coordinator_email`, FIRST in the cascade, the only free-mail address in the table; **FLAGGED, never filtered**. ⚠️ **MAP's college names are hand-typed** (`"Cypress College "` has a trailing space) so `fallbackFor()` normalises both sides. **NEXT:** confirm the 7 search-tier candidates (start Palomar, Canyons) then flip to `via:"curator"`; work the 17 blanks; the 52 colleges WITH a CPL Assistant still need a differently-egressed sweep. **NEEDS SAM:** 8 colleges keep a 2026-06-25 snapshot contact where MAP is now **blank** — they fall back under the fail-safe, conservative but arguable since MAP is the system of record. Story: `docs/map_users_lessons.md`; durable [`methodology-a-provenance-label-must-say-why-not-what`](docs/kb-notes/methodology-a-provenance-label-must-say-why-not-what.md). |
-| **Partner crosswalks** | "Which of the occupations we train for can our students already get college credit for, and where?" — the reusable engine for workforce partners (training centers, workforce boards, AJCCs, COEs, apprenticeship sponsors). | ✅ **Engine LIVE** (SkyWalker, #995) — `kb/_build_partner_crosswalk.py` + the shared `kb/occupation_credential_map.json` (139 occupations / 406 rulings / 35 curated no-CPL findings) + region presets + 32-check test. SJCOE run 1: 51 statewide / 53 local-only / 35 no-CPL. ⚠️ **The engine's 2nd run is STILL outstanding** — the "coverage compounds" claim remains a design intention, undemonstrated. **Futuro Health / HTH (Session 144, #1134) is a second partner engagement but NOT a second engine run**, and the distinction is the reusable lesson: the engine reconciles a *partner's occupation vocabulary* against MAP's *credential* vocabulary (many-to-many, judgment-heavy). Ashley's HTH ask was **one known course × one known program type** across every college — no vocabulary to reconcile — so a separate, simpler generator (`kb/_build_futuro_hth_crosswalk.py`) was correct and forcing the engine would have been wrong. **Match the instrument to the question's shape, not to the word "crosswalk".** **Next:** still run a 2nd occupation list through the engine and work its `unmapped.json`. **Parked:** the COBI tab (Sam authorized; build the *regional-capacity* view, not the judgment-based occupation matching) and an **O\*NET SOC → certification spine**, which is what would let a match be defended rather than asserted. **Gap backlog:** the 35 no-CPL occupations, ~20 of them the utility/lineworker cluster. |
-| **Governance & team enablement** | Decision rights (who decides what), acceptance standards per input, and which cadences actually run — plus onboarding as the team grows past Sam. | ✅ **Starter LIVE** (SkyMail, #997/#998) — team-gated ⚖️ Governance tab: 10 decision rights · 8 acceptance standards · 5 cadences · 6 open questions. **Every `owner` is deliberately unset — filling them IS the review (OQ-01).** ⚠ It measures itself: the contact-refresh cadence was **decided in June and has never run once** (0 rows in `map_college_nudges`). **Owner column is EDITABLE** (#1000 — Sam: *"how do I add an owner? Doesn't appear to be editable"*; I shipped the review without the pen). Owners live in a separate gated `governance_owners` table overlaying the register by row id, so a session regenerating the JSON can never wipe an assignment; no delete policy. **Next:** ① fill the owner column; ② run that cadence once end-to-end with a named owner; ③ decide CIP's promotion criteria BEFORE the fall-2026 cutover (OQ-03); ④ cut the load-bearing list — 8 of 10 is too many. Team guide: `docs/working_with_claude_code.md` + the CLAUDE.md §"Working with the MAP team" obligations. **Agents: recommended NOT yet** — an agent must be invoked, so it fails exactly when a new user forgets; standing instructions can't be. Build a cross-impact reviewer agent when concurrency makes collisions real. ✅ **SIERRA IS ON THE REGISTER + THE DRIFT DETECTOR IS LIVE (SkyMiner, #1031/#1034/#1036).** Sam: *"I don't have the MAP/CO test invitation on my list of governance items"* — he was right; Sierra was absent entirely. Added **DR-11** (what Sierra tells the public — `decides` records honestly that it has been Sam personally, four times in two days), **CA-06** (Sierra feedback triage, `never-run`, and it **measures itself** — a `live:"feedback"` lens showing *21 of 25 untriaged*, CI rows excluded), **OQ-07** (what must be true before inviting MAP/CO — suggests staging it) and **OQ-08** (register drift). **Detector built + wired to the cron** (step 4a0): pure static analysis over 4 surfaces, **39 → 15 candidates** (6 mapped, 14 dismissed with reasons in a committed file), **0 stale rows**, top six are recurring jobs nobody listed. **Proposes, never auto-adds.** ⚠️ **Owner flow had 3 defects** (#1032/#1033) — first-click save, a failed read rendering as "nobody has an owner", and sign-in never re-reading; **7 more reported, unfixed** — the likeliest to be mistaken for a regression is `Clear owner` being a no-op on the 3 cadences carrying a register-file owner. `governance.test.js` 44 → **90**. **Promote-from-candidate NOT built** (needs judgment fields typed by a human; today you edit the surface map). |
-| **Sierra retrieval + corpus** | Sierra answers credential questions off the CURATED layer, not the raw freehand titles colleges typed into MAP. | ✅ **`chatbox_credentials` LIVE (1,987 rows)** — public-read/no-write, loaded by `kb/_sync_credential_catalog.py` from the PUBLISHED artifact so suppression is inherited by construction. Routes CRED·STD, CRED·VOLUME, COLLEGE·ADOPT, ALIGN live (**v42**). ✅ **CREDIT RECOMMENDATIONS PUBLISHED (SkyPeak, #1146–#1148):** `ccc_rec` is a **single string** and Sierra read it as the whole record — POST's real statewide set is **TEN**. Never missing, only unpublished: `statewide_data.js` `authoritative_recs`, already on the public **Fact Sheet**. `chatbox_credential_recs` — **2,205 rows LIVE** (134 statewide/351 lines · 2,071 local/3,357), on the nightly `credential-catalog-sync`. ⭐ **Sam's rule:** statewide exists → quote the **statewide set ONLY**; no statewide → the **most common** local recs with their college counts. Never both. ⭐ **The builder REUSES `fact-sheet/_build_statewide_recs.py`** — Sierra quoting different credit from the Fact Sheet is a credibility failure. ⚠️ **Lead with the LIST, never a count:** POST measures **10 lines · 9 carrying a C-ID · 8 DISTINCT · 1 with none** — no single count is safe, and the `AJ 110` repeat is **flagged, never auto-resolved** (Sam: *"AJ 110 may be C-ID and it is Elective"*). **Standing retrieval rules, each earned by a failing probe:** search is **TRIGRAM, never `tsquery`** (`to_tsquery('english','aed:*')` → `'a':*` took the CPR corpus out); score the **best single name**, never the concatenation (length-normalised similarity ranks the BEST-CURATED record WORST); **`statewide` is a FILTER, not a tie-break**; **no pure-fuzzy** (tier-4 floor 0.25 + `matched_via`); **zero rows is a RESULT**, not a licence to offer a neighbour. ⚠️ **Every student count is a FLOOR and the denominator ships as a COLUMN** — only 4.2% of student rows are nameable; `students_suppressed=true` must never render like `colleges_with_student_data=0`. ✅ **WIRED AND LIVE — cpl-chat v40 (SkyBridge, #1150).** `credential_recs_for_titles(titles)` batches the full set for whatever titles a route matched (one round-trip, and deliberately NOT a second matcher that could drift); `renderRecLines()` lists courses/C-IDs/units. The credential + volume route groups now run **concurrently**, which buys back more than the batched lookup costs. ⭐ **`ccc_rec` was a RETRIEVAL GATE, not just a lossy summary** — `search_statewide_recommendations` required `ccc_rec is not null`, and `ccc_rec` is derived from ADOPTIONS, so a statewide exhibit **nobody has adopted yet** had none and was excluded. **38 statewide credentials have zero adopters, `ccc_rec` null on all 38, 36 carrying 75 published rec lines** — the Carpenters ladder, NCCER, CSLB licences, ICC inspector, OSHA 10/30 — unreachable on *every* credential route. Gate now widened to `ccc_rec` OR a published statewide set. ✅ **COLLEGE·CRED NOW CARRIES THE COURSES (SkyRef, #1165, v46).** It listed credential NAMES and stopped — the only credential route never calling `fetchCredentialRecs`. Titles now join the **same** batch (one round trip; a second lookup is a second matcher that can drift) and render through the **shared** `renderRecLines`, so `local_modal` awards are never dressed as statewide. Lines are **enrichment**: the map is declared OUTSIDE the try, and a credential with no line is **still named** — dropping it re-creates the false zero. **Open:** corpus covers **59 of 123** colleges; `chatbox_college_profiles` is stale since 2026-06-25 **for everything except contacts** (those now read live — see the MAP Users row); 12 adoption-file statewide titles absent from `chatbox_credentials`. Sam triaged feedback **25 → 5** himself; 3 of the 5 are now fixed in code. **NEXT:** Sam reads the actual prose — no session has, the sandbox is egress-blocked from `*.supabase.co`. Story: `docs/sierra_credit_recs_lessons.md` · `docs/sierra_credential_naming_lessons.md` · `docs/cpl_assistant_lessons.md`. |
-| **Sierra: false absences + the statewide flag** | Why Sierra says "none" when there is plenty, and why she disagreed with the Fact Sheet. | ✅ **CERRITOS IRONWORKER FALSE ZERO FIXED (SkyTop, #1162, cpl-chat v44)** — carried as diagnosed-not-fixed across three sessions; it was never one defect. Sam asked twice, the second time **four hours after v42**: *"I have a journey worker license as Iron and Steel worker. What CPL can I get here?"* → nothing, against **13** Cerritos ironworker credentials. ① the raw corpus abbreviates (`FIW Orientation`, `IW- Mixed Base`) and `search_exhibits_by_topic_v2('iron')` returns **0 STATEWIDE**, not just at Cerritos — and there was **no college-scoped curated route at all**, so for a named college the raw corpus was the only thing ever asked; ② `search_credentials_any` never searched **`issuer`/`trainer`** and, being whole-string `LIKE`, failed on the plural (`ironworkers`→0, `ironworker`→25); ③ the route reaching **local** credentials had the **narrowest probe budget** (3/3 vs 4/4) and dropped every content token past the third — on Sam's sentence **"iron" was never probed**. Shipped: **`search_college_credentials()`** (runs unconditionally when a college is known — the raw corpus returning rows ≠ the right rows), a shared `cx_credential_match_tier()` ladder with **new tier 5 issuer/trainer** + tier 6 `search_text` (both BELOW the title tiers; ranking still scores the **best single name**, never the concatenation), `cx_needles()` plural folding, and 4/4/8 probes. Now returns **all 13** — ten by title, **three reachable ONLY via issuer** (`FIW Orientation`, `Foreman Training`, `Post Tensioning 3`). ⭐ **Not a Cerritos problem: 1,795 of 1,987 credentials (90%) have an issuer carrying a word absent from title AND variants; 597 (30%) carry a curated word absent from every raw variant.** ⚠️ **A false zero is the worst answer Sierra gives** — it closes the conversation and nobody files feedback about a door they were told wasn't there; the section forbids reporting a zero it can see is wrong, discloses issuer-tier matches, and is appended OUTSIDE the enrichment try/catch so a downstream failure can't restore it. `methodology-search-the-awarding-body-not-just-the-name`. ✅ **STATEWIDE FLAG FIXED.** It synced from `credential_reference_data.js` (84 statewide) while the adoption file carries **137** — so **42 credentials read as LOCAL** (Paramedic License, CompTIA, OSHA 10/30, the NCCER + Carpenters ladders) and Sierra **contradicted the public Fact Sheet**. This is the recurring EMT/Paramedic report Sam has made across several sessions; he was right every time. The sync now UNIONs both files (**126, up from 84**) and the 42 live rows are corrected. ⚠️ `cpl_memory` **already said** *"use the adoption file"* (`statewide-is-138-not-84`) — the sync predated it and nobody rechecked: **a settled ruling does not enforce itself, the consumer has to change.** **Open:** 12 titles are statewide in the adoption file but **absent from `chatbox_credentials` entirely**. ⚠️ **THE IRONWORKER REPORTS WERE THREE COMPLAINTS, NOT ONE (SkyRef).** Handoff 150 read them as one issue; the newest (08-13 12:04, ~4h BEFORE v44) says something else: *"You should have provided a list of courses I could get credit for and the industry certificates or licenses needed"* — **found it, still didn't say what I'd get**. Fixed separately in v46 (row above). Reading them as one would have closed the ticket with the defect live. ⚠️ **Still open:** 12 titles are statewide in the adoption file but **absent from `chatbox_credentials` entirely**; and the M-ID leverage layer still omits Cerritos from welding adoption (a *different* question — `adoption_leverage` means "teaches the same course IDENTITY", not "has this CPL"). |
-| **Local course ↔ CR alignment** | "Which of MY courses should I articulate against this credit recommendation, and how did other colleges do it?" — so faculty don't guess. | ✅ **LIVE — cpl-chat v43** (#1153/#1154/#1155/#1158/#1161). **Three surfaces:** `chatbox_peer_articulations` (9,413 rows · 1,516 credentials · 82 colleges — the FACT), `chatbox_college_courses` (141,696 · 120 colleges), and `credential_alignment_for_college()` returning both in one round trip, discriminated by `row_kind`. ⭐ **THE LADDER — C-ID, then title, then best-aligned (Sam's ruling).** Only the **best available rung renders** — a fallback, never a blend, because rung 1 says the equivalence is ESTABLISHED by a statewide standard and rung 3 says "closest thing you have"; blending lets a guess outrank a fact. 16,067 of 141,696 courses carry a C-ID across 112 colleges. ⭐ **TWO SIGNALS, NEITHER SUFFICIENT, NEVER MERGED** — Santa Ana mapped `WELD 240 Structural Welding SMAW` / `WELD 244 D1.1 Code Clinic` to **FCAW** recs and **neither title contains "FCAW"**, so title similarity can never propose them; peer precedent is the only signal that finds the broader-course pattern. Candidates print above the peer heading, labelled; **no score reaches the model**. ⚠️ **A C-ID match whose NAMES diverge is FLAGGED, never suppressed** (`cid_title_divergent`) — POST carries `AJ 110` on two lines, and suppressing it would auto-resolve the repeat Sam ruled must never be auto-resolved. ⚠️ **A plausible false positive costs more than a miss here** — the first cut ranked `ART 100 Introduction To World Art` third for an FCAW rec, so `cx_align_tokens()` drops structural words and the scorer requires **≥1 CONTENT token** (`advanced`/`beginning`/`basic` deliberately NOT stopped). ⚠️ **Bound BOTH sides of the union and resolve the grouping key** — `per_rec` once capped candidates only (3,807 peers vs 9 candidates) and peers were keyed on their own wording (43 groups where POST's set is TEN, ~34 of them phantom), which together buried five C-ID matches and rendered them as *"check catalog"*. **A phantom empty group is indistinguishable from a real one.** Now 10 groups / 94 rows / 6 of 6. **`peer_total` ships as a COLUMN** ("showing 9 of 261") — a capped list must never read as a census. ⚠️ **Do NOT re-add a "closest match anyway" fallback** — built and withdrawn; it proposed `AUTO 160 Introduction to Automotive Electrical` for a *policing* rec, and it is structural, not tunable: a rec with no candidate is one where nothing shares a subject word. Real empties point at the **peer courses**. ⚠️ Candidates come from the **whole catalogue** — scoping by TOP would gate on TOP (Rule 7). ⚠️ **`attribution`**: 8,809 `per_course`, 604 `group_wide` — name group-wide peers as a GROUP, never pair a college to a course. Recs come from the peer table UNION the published sets, so the **ready-to-adopt shelf aligns too**. **NEXT: Sam + team testing via Sierra Training; triage the feedback into instructions.** Story: `docs/local_course_alignment_lessons.md`; SQL of record: `kb/supabase_alignment_routes.sql`. |
-| **Common CR Reference** | A canonical vocabulary of credit recommendations — what the CER did for freehand credential titles, for the freehand recommendation text. | 🆕 **PROPOSED BY SAM 2026-08-13**, prompted by the 43-wordings finding above: *"we should have a Common CR Reference just as we have pretty well developed CER, CSR, and the beginnings of a CCR."* ⭐ **HIS DESIGN RULING — C-ID IS ONE FACTOR, NOT THE KEY:** *"CID is only one factor in determining common CR references. Similar to the CCR, we take into account matching factors like title, course name and number, course description, subject, etc."* Treat that list as **illustrative, not exhaustive** — ask before freezing it. The measurement backs him harder than the session's own caution did: C-ID-as-key fails in **both** directions — it **over-merges** (POST carries `AJ 110` on two genuinely different lines, a repeat Sam ruled must be FLAGGED never auto-resolved) and, far bigger, it **under-merges**, since **only 402 of 2,344 distinct `credit_rec` strings carry a C-ID at all (~17%)**, stranding ~1,942 as their own canonical and leaving the 43-wordings problem untouched. Scale: **2,344** distinct strings → **2,187** after mechanical normalisation (**~7% collapse — so this is CURATION, not string-cleaning**, exactly the CER's situation); 402 C-ID-bearing strings → **175 distinct C-IDs**, 81 C-IDs carrying 2+ wordings, worst **`AJ 110` → 10 wordings**; curated spine already in place = **351 statewide lines / 134 credentials**. Same two-signals-agree posture as the TOP caveat (Rule 7): no single field gates an identity determination; C-ID keeps its ladder role as strongest **corroborator** (`methodology-use-the-identity-key-before-you-score-strings`) without becoming the identity. Ruling recorded verified + attributed: `cpl_memory` `common-cr-reference-is-multi-factor-not-cid-keyed`. **NEXT: scope it against the CCR's actual matching factors before building.** | queued |
-| **Sierra student routing** | How Sierra points a CPL seeker between their college's landing page and the systemwide student portal. ⚠️ **DEPLOYMENT (Sam, 2026-08-08 and again 2026-08-10): the widget is on COBI ONLY — it is NOT embedded on college landing sites yet.** The anti-poaching rules below are written for the day it is, and still bind because `cpl-chat` ships `--no-verify-jwt` and is publicly callable. Do not restate this as "sits on colleges' own pages"; that phrasing is what made the correction necessary twice. | ✅ **LIVE — v31→v33** (SkyHero, #1025 · #1026 · #1027). Four passes, each one Sam correcting the last. The portal is **Credit for Being You** (`/main/student`, one `PORTAL_STUDENT_URL` const — declared above first use, since these rules are template literals and a TDZ ReferenceError kills the function at boot). It was framed as an **either/or** ("if *instead* the student is already enrolled…") and, in `LANDING_PAGE_RULE`, as a **fallback for a missing landing page**. Now **YES/AND** — and that was a substance fix, not a label: my first rewrite split them by FUNCTION (compare at the portal, act at the landing page), which is wrong, because a seeker can see opportunities AND request review at BOTH. The portal ADDS the any-CCC view **and a much more comprehensive portfolio development process**. Then the counterweight: Sierra is INTENDED for colleges' pages (COBI-only today, 2026-08-10), so an unprompted "you'd get more credit at X" would be **poaching**; it now starts with the named college and affirms it, and compares freely only when the visitor ASKS or has no college. ✅ **TENSION RESOLVED AND LIVE (SkyMiner, #1029, deploy 11).** Sam took the recommended line: **the restraint binds salesmanship, not facts.** Never withhold a fact that materially changes a seeker's outcome; never editorialise. If the host hasn't articulated it — say so, say where it IS available today, say the host can adopt it; *never stop at a polite dead end*. When the two interests can't be reconciled, **the visitor's outcome wins — stated plainly, never sold.** Same refusal-of-the-dead-end added to the student audience rule. `tests/sierra_student_portal.test.js` **44 → 59**, and the 15 new checks are deliberately the **PERMISSION** half: a violated prohibition is loud (a college complains), a violated permission is silent (the person just isn't helped and files nothing) — only one of them rots unnoticed. ✅ **EDGE CASES CLOSED AND LIVE — v35 (SkyMiner, #1035, deploy 12).** **Distance is a fact, not a filter**: name the nearest college that TEACHES it however far away, state the distance plainly from the county/region already in context, and let the visitor judge — suppressing a distant option leaves someone who would travel (or study online) with nothing. **The true dead end** (nobody articulated it, nobody nearby teaches it): say so plainly rather than padding, then Credit for Being You **and** an invitation to email MAP so the gap is on record, framed as genuinely useful because an unmet request is how the system learns a credential is in demand. And the guard that matters most — **never invent a college, a course or an articulation to avoid an empty answer**; a fabricated route sends someone to a counter where nobody expects them. `tests/sierra_student_portal.test.js` **59 → 67**. ⚠️ **Still carryover:** SkyHero's five-surface poaching audit was never reported, and `creditforbeingyou.org/main/student` remains unverified (sandbox is egress-blocked from that domain). |
-| **Disposition grain / student detail** | What a college has ACTED on, not just what credit exists. | ✅ **TABLES LIVE + SIERRA WIRED.** `map_student_credit` **537,908 rows** (student grain, reviewer-only RLS, **no write policies**) · `map_college_cr_unit` 204,714 · published aggregates `map_college_goal2` + `map_college_credit_summary` (suppression at write time) · lookup `map_colleges` (128). 🎓 **Course Credit tab LIVE.** ⭐ **THE HEADLINE: 1,051,870 units at Needs Action across 106 colleges, 63,991 ALREADY ARTICULATED** — everything built, nobody acted. Lead with the second figure; the million is a ceiling (~30% of reviewed credit is correctly Not Applicable). ⭐ **BUCKET MILITARY vs NON-MILITARY BEFORE TOTALLING (Sam, 2026-08-13).** A JST lands a few to **scores** of ACE-reviewed CRs per service member; a non-military exhibit lands **1–2**. Same lifecycle, so an undifferentiated total is **98.8% military** — military **432,693 CRs / 1,040,447 units** (17.4/student) vs non-military **3,305 / 10,698** (3.8/student, 868 students, 28 colleges). "A million units awaiting action" describes a college's veteran population, not its workload, and **hides the tractable non-military backlog**. ⚠️ **Bucketing is NOT discounting** and **raw inert volume never means "behind"**. ⚠️ **No military flag exists** — `military_credits` is an applied AMOUNT, zero on 84% of rows. [`methodology-bucket-military-and-non-military-credit-recommendations`](docs/kb-notes/methodology-bucket-military-and-non-military-credit-recommendations.md). **Number policy (Sam):** show published AND unsuppressed with a chip — published 1,051,870/63,991, unsuppressed 1,052,531/64,074, **both scoped `entity_kind='college'` (106 entities)**; **never change one half alone**. ⚠️ **Show both ONLY while ≥3 cells are suppressed** — at one, the difference IS that college's figure (`adr-student-detail-aggregate-disclosure-control`). ⚠️ **The person key is `tblStudentKey`, NOT `TblSOURCE.Student`** (a grouping counter; Sam, twice); the MAP id must never reach Supabase. ⚠️ **The two "applied" measures disagree by 55%** — `applied_credits > 0` = 18,889 students vs `cpl_status_plan='Applied to CPL Plan'` = 29,292; **publish BOTH and name the gap** (Sam), worklist view `map_applied_zero_units`. Students served **42,346** · transcribed **13,412**. ⚠️ **Never rank on TRANSCRIBED** — colleges batch-upload already-transcribed credit, so it exists at only 24 of 111 colleges (`reference-batch-uploaded-transcribed-credit`). ⭐ **Apprenticeship CPL IS measurable** — `apprenticeship_credits`, 309 students / 12 colleges / 6,617.80 units. ⚠️ **Only 4.2% of student rows are nameable** (22,606 of 537,908) — per-credential counts are a FLOOR and the denominator ships as a COLUMN. ⚠️ **537k is fine to STORE, too slow to aggregate LIVE** (~6s vs Sierra's 1.7–5.0s budget) — read pre-computed rollups, never the grain. Runbook [`docs/map_student_credit_reload.md`](docs/map_student_credit_reload.md); story `docs/student_detail_load_lessons.md`. |
-| **$50k / ESS 25-82 tab** | Turn the three bare outcome checkmarks into where-you-are / where-you-should-be / how-to-get-there, so colleges get unstuck and award real CPL in MAP. | 🔨 **GROUNDWORK DONE, REWORK NOT BUILT** (SkyPlan, #1007/#1012/#1014). ⭐ **The measure is the DISPOSITION RATE** — share of a college's credit recommendations carrying any disposition (Applied / **Not Applicable** / In Process). Median **4.7%**; MVC 3rd · Bakersfield 6th · Cabrillo 13th of 106 — the ONLY metric matching Sam's own read (three volume metrics ranked Cabrillo 24th–29th). Counting N/A as work done is load-bearing: Cabrillo is 844 N/A vs 320 Applied, so an applied-only metric scores it 9% not 34%. **Applied, not transcribed, is this phase's target** (Sam's correction — transcribing actualises when outcomes funding is live). Data: 436,720 rows at Needs Action (81%); **top 20 exhibits = ~40%** of the backlog; **11,495 rows are "Credit Is Not Recommended"** = a free auto-N/A win. **Build rules:** every step a FRACTION not a check (the Veteran Star taught colleges that uploading is the finish line — applied ≈ JSTs at ratio 1.00); reframe the Star as a starting line; **never rank colleges publicly**. **Next:** the rework itself, then wire Malone's view (expected 8/7) into `fetch_custom_report.py` + `_build_cr_backlog.py`. |
-| **College action page / MAP-team queue** | One page (not 123) where a college picks itself + a role and gets its stats, its opportunities against the goals, and concrete to-dos — plus the same engine pointed INWARD at the MAP team's own backlog. | ✅ **BUILT, AND REBUILT AROUND SIERRA (Session 143, #1128).** Sam, after the MAP team used it: Sierra AI was the part they valued, so she now **leads the tab** and everything under her is **collapsible, default collapsed** — a minimal initial view with nested detail. ⭐ **A CLOSED SECTION STILL CARRIES ITS OWN FIGURE** — collapsing is only *minimal* if what remains informs; open state lives in `state.open`, **not the DOM** (`render()` rewrites `innerHTML`). `methodology-a-collapsed-section-must-still-inform`. The **22 strategies moved inside the funding priority they earn against** (10/6/6). Gated on `prioritiesAlign()` = **COUNT equality**, deliberately not metric equality (the funding module loads its overlay async, so a metric gate flaps). Only `cpl-implementation` folds in — every-project guarantee survives. Section names are Sam's: **My CPL Funding** (moved up under *Start here*), **Current MAP Users and Contacts**, **Statewide CPL Benchmarks** (he rejected "tier" and "compares statewide" — both imply a ranking; the five criteria are FIXED thresholds, i.e. benchmarks). `buildQueue(sources, now)` is **pure — reuse it, do not fork the ranking rules**. Tab rule: **measure at load, never carry a list**; a failed read is `unknown` at the TOP, never 0. The strategies live in Supabase `cpl_funding_config` → Scenario 1 → Year 1 (Y1 ≡ Y2; "Year 1 is authoritative"). Live shares **50/30/20** via `…yearPriorities."1"` (camelCase). ⚠️ **NEVER RE-DERIVE AN ALLOCATION — call `_alloc()`.** Iterative **floor waterfall** (50 of 115 at the $150K floor, whose $1,999,687 comes out of the same pool), so a flat share is wrong. Cross-check: Mt. SAC = **$522,239** (Sep-BOG). ⚠️ **`_alloc()`'s per-priority caps key off the OTHER tab's `state.viewSlot`** and front-load zeroes later years — call **`_prios(name, slot)`** with an explicit slot or a Year-2 view renders $0 across all three. ⭐ **JOIN BOTH SIDES THROUGH `cplCollegeShort()`** — the tab normalised only MAP's name and compared it to the roster's RAW string, so **five colleges were shown NO implementation funding** (Mt. SAC, Norco, Reedley, MiraCosta, LA Southwest); fixed by `rosterKey()`. The old "0 orphans" claim tested one side only. `methodology-normalise-both-sides-of-a-join`. ⭐ **The lead figure is ONE decision, not 300** — **98.8%** of the 64,074 articulated-and-waiting units is Credit for Basic Military Service (the same military dominance the bucketing doctrine generalises); whole backlog **592 rows**, **33 of 106 have NONE**. ⚠️ **An ABSENT measurement must never render as an ACHIEVEMENT** — a college with no credit-summary row was told "Nothing is waiting… that is a finished queue"; `waitingBreakdown()` now returns a distinct `unmeasured` state. Congratulatory copy needs a stricter guard than neutral copy. ⚠️ **`map_college_cr_unit` carries NO k-anonymity of its own** (only `map_college_credit_summary` applies k=10). ⚠️ **A percentage must never round UP into a claim** — `safePct()`. ⚠️ **The access shape (`?college=`) is an RLS DECISION, not a UI change** — four reads are DB-gated. ⚠️ **`map_credential_student_rollup` is a MATVIEW — Postgres cannot give it RLS and `anon` holds the grant** (safe today, no backstop below the build script). ⚠️ **Suggested questions FILL AND SEND** via `cpl_chat.js` `ask()` — **`prefill()` must stay send-free** (Sierra Training replays through it). **HELD BY SAM (2026-08-12): MAP deep links, the RLS decision, and the MIS side-by-side.** The two "CPL students" figures disagree (36 of 104 match exactly) — **parked**, cause per Sam: MAP records are being pulled for Exhibit-reference correction and reloaded, so our extract is stale; expected to resolve with the MAP Custom Report fetch. Our aggregation is faithful (`students` == `count(distinct student_key)` exactly). Story: `docs/college_action_page_lessons.md`. |
-
-| **College & district identity** | One taxonomy: every college/district name variant resolving to MAP's authoritative `college_id` and the CCCCO MIS district code. | ✅ **CROSSWALK BUILT — dry run merged, NOT yet written to Supabase** (SkyLink, #1131–#1133). **116 colleges · 116 with a district code · 73 districts · 0 unresolved · 262 name variants, none empty.** Sam: *"I continue to see a disconnect… Mt San Antonio vs Mt. San Antonio."* THREE systems named these colleges and none knew the others: `map_colleges` (authoritative `college_id`; its **`variants` column existed and was EMPTY on all 128 rows**), `kb/college_short_names.json` (no id at all), and CCCCO MIS **Appendix A** (`kb/reference/mis_district_college_codes.json` — the PDF Sam supplied 2026-08-08, in the repo since Session 128 and never joined to anything). **24 of 116 were spelled differently**; **no Supabase column matched `%district%`** at all, so the 72-district picker ran off a JS file with no DB backing; **16 tables key on a name string** (`coci_college_programs` is 22,335 rows). ⭐ **VALIDATE A SUPPLIED CODE COLUMN BY ITS STRUCTURAL INVARIANT** — a 2025 roster's `LocationID` looked perfect (plausible 3-digit codes, first row matched exactly) but **3 of 106 agreed**: real MIS codes on the wrong rows. Caught because MIS codes are **district-prefixed** (Appendix A: 25 of 26 multi-college districts; the roster: 3 of 23, LA CCD scattered across 121/234/312/422/471/571/721/748/862). Spot-checking cannot detect a shifted column. Its `DistrictType` also contradicts itself (37 rows vs its own counts; 14 districts carry BOTH values) so **M/S is DERIVED** from the college count. **The file was still kept** — its `MAPCollege` column is a CCCCO bridge that took the hand-curated table **30 → 0**. ⚠️ **Two Appendix A parse defects repaired** (`970/971` COPPER MOUNTAIN doubled + filed under CONTRA COSTA; `470/471` EVERYGREEN) — `verify_source()` re-derives both so an upstream fix makes the patch a no-op. `EVERYGREEN` is in BOTH CCCCO files, so it is **upstream, not our parse**. ⚠️ **Futuro Health is `college_id` 133, `entity_kind='partner'`** (Launch 132) — the crosswalk excludes partners, and `cplCollegeShort()` returns its input on a miss, so **key partners on `college_id`, never the name**. ⭐ **North Orange Continuing Education + San Diego College of Continuing Education have their own CEO** but no `map_colleges` college row — the standalone NC institutions the Learning-Partners workstream found at ZERO. **NEXT: write `variants` + district columns to Supabase** (the write that actually ends the Mt. SAC problem); open questions = own `districts` table vs columns, and whether those two NC institutions become `entity_kind='college'`. Story: `docs/college_identity_lessons.md`; durable: `methodology-validate-a-code-column-by-its-structural-invariant`. |
-| **Team access / site phrases** | Where a curator enters the team phrase, and which phrase a given tab answers to. | ✅ **HEADER UNLOCK + SITE SCOPING LIVE (SkyFund, #1137/#1141).** 7 tabs consumed the phrase and offered NO box, each saying *"sign in on Team & RACI … and re-open this tab"* (Contracts, Governance, MAP Users, NC/Learning Partners, Sierra Training, MAP Queue, College Briefing); two gate a READ, so the bounce cost the whole tab. Now a 🔒/🔓 control in the masthead that follows the Site dropdown and **names the scope it will unlock**. ⭐ **A tab can carry a site phrase ONLY if it is EXCLUSIVE to that site** — every other gated tab is also a CPL tab, so demanding the org phrase there locks out CPL users. `cobi_orgs.js` already held that list; exactly **two** tabs qualify (`gr-priorities`, shipped; `contracts`, this run). **C&I and CIP have ZERO gated tables of their own** — an empty set, not an oversight, and why the `ci` secret never had a server-side gate. Shared tabs keep `team_pass_ok()` (matches ANY secret), so **"allow either" is free and nobody lost access**. Each site phrase gets its OWN slot (`cpl_gr_pass`/`cpl_fin_pass`), so holding Finance never costs the shared phrase. 🔑 **Team Phrases is now a TAB** (`team_phrases.js`) — visible to all, contents on a magic-link reviewer sign-in; the phrase deliberately does NOT open it (a holder who can rotate makes rotation meaningless). ⚠️ **`team_access` RLS FILTERS a non-reviewer to `200 + []`, never 403** — "no phrases configured" would tell a locked-out person the opposite of the truth; not-signed-in / not-a-reviewer / read-failed are three distinct renders. Same on write: a policy-filtered PATCH returns 200 with an empty body. ✅ **CONTRACTS IS LOCKED TO THE FINANCE PHRASE (applied 2026-08-12, migration `site_phrase_fin_contracts_swap`)** — 12 policies to `fin_pass_ok()`, DELETE still reviewer-only, `team_pass_ok()` gone from the register. Sam rotated the Finance phrase himself on the new tab first (the sequencing mattered: applying before distribution would have darkened a working register). **STILL OPEN — needs Sam:** under "allow either" a site phrase is a **superset** (opens its own tabs *plus* every shared one) — safe only while every holder is trusted with all shared CPL data. **Decide before the Finance phrase reaches anyone in Finance**: split the scopes with a `scope` column so `team_pass_check()` matches only `scope='shared'`. `methodology-a-shared-credential-can-only-scope-to-an-exclusive-surface`. |
-| **Sierra Training (the trainer)** | The tab where the team teaches Sierra — feedback triage, the questions she struggled with, and the instructions she follows. | ✅ **USABLE BY A HUMAN (SkyFund, #1138)** — SkyLink's Priority 1, closed. ⭐ **THE COMPOSER WAS SILENTLY EATING SAM'S INSTRUCTIONS**: `maxlength="500"` on the textarea AND an independent 500-char slice in `cpl-chat`, so all three rules written 2026-08-12 were cut — two at exactly 500, one at 499 ending mid-table (`| ASE A1 –`). `maxlength` gives NO feedback; it just stops accepting keystrokes. Raised to **1,500 on BOTH sides** (raising one alone relocates the truncation) + a live counter; **cpl-chat deployed v39**. The **total** budget (now 9,000) fails the same silent way — past it the function drops the OLDEST rules, and the oldest is the naming rule. ⚠️ **Truncated text is NOT recoverable** — Sam must retype those three. ⭐ **A queue that tracks ATTENTION but not REMEDY reports itself complete**: `new→triaged→addressed` recorded that a human *looked*, never what was *done*, and marking "addressed" changed nothing about Sierra while the queue read as clear. Both panes needed to fix it sat on the same screen, unconnected. Now "Mark this:" (each button stating it does not change Sierra) + **"✍️ Write an instruction about this"**, which seeds the composer from the question and writes nothing on its own. Plain language throughout (punt → "Sierra said she didn't know"; CI rows → "automated test messages"); hover-overs on every filter/chip/number, each saying what it means **and what to do about it**. ✅ **Guidance DOES reach My College's Sierra AI section** — `fetchTeamGuidance` runs per request, no cache (Phase 2, wired since S94). ✅ **A SAVED INSTRUCTION IS EDITABLE, AND TESTABLE FROM THE SAME BOX (SkyPeak, #1146).** Sam: *"I need to edit the last entry I made … but there is no way to get back into it once saved."* The only controls were Switch off / Switch on, so fixing a typo meant retyping the rule as a NEW row — which also moves it to the top of the **newest-10 window** that decides whether Sierra is sent it, silently pushing another rule out. **RLS already allowed the update** (`sierra_guidance_team_update` covers every column) — a missing affordance, not a missing permission. Now ✏️ Edit opens in place with the rule, the note and a **test question**, plus **💾 Save & ask Sierra →**. ⭐ **Three failure modes, each guarded:** a PATCH that RLS filters returns **`200` + EMPTY body**, so an "ok" that touched no row is a **failure** with the typed text kept (the guarantee lives in the function, not in whether an input handler fired); it **refuses to hop on an unsaved edit**, which would test the OLD wording and read as "the instruction did nothing"; and the open editor + its question **persist in `sessionStorage`**, because testing means leaving the tab and edit→ask→edit is otherwise three chores. `tests/sierra_guidance_edit.test.js` **26 checks**. ✅ **THE HAND-OFF WAS TYPING INTO A HIDDEN BOX (SkyRef, #1166).** Three defects, **all SILENT** — a button that does nothing looks like one never wired. ① `cpl_chat.js` holds `inputEl` at MODULE scope; My College mounts the same widget and `build()` re-points it, and `mount()` is idempotent — so **after one visit to My College every hand-off typed into a hidden pane**. ② `removeItem` ran BEFORE the abort guard, **destroying the retry too**. ③ The question sits inside the row's click target, so mouse-up re-rendered and **destroyed the selection**. Also: `copyText` passed an **empty rejection handler** to `navigator.clipboard`, which rejects on an unfocused document. `tests/sierra_test_handoff.test.js` 18 checks, **verified against the PRE-FIX file (5 fail there)** — it must reproduce the TWO-MOUNT condition; the happy path passed throughout. **Next:** Phase 3, documents in her knowledge. Sam triaged the backlog **25 → 5** himself; 3 are now fixed in code. `docs/sierra_training_tab_scope.md`; [`methodology-a-one-shot-handoff-must-not-consume-what-it-cannot-deliver`](docs/kb-notes/methodology-a-one-shot-handoff-must-not-consume-what-it-cannot-deliver.md). |
+| **Excel→Supabase Phase 2-4** | Retire the master `.xlsx`; Supabase is the system of record. | 🔨 in progress · open work — [lane state](docs/reference/lanes/excel-to-supabase.md) |
+| **NC / Learning Partners** | Noncredit + not-for-credit + adult-school + ROP + HS-Cx + apprenticeship CPL — the thinking doc, the six modes, and the COBI register tab. | ✅ live · open work — [lane state](docs/reference/lanes/nc-learning-partners.md) |
+| **MAP Users / student contact** | Every college landing page routes a student's CPL request to a real person. MAP routes on `primary_contact_email`. | ✅ live · open work — [lane state](docs/reference/lanes/map-users-student-contact.md) |
+| **Partner crosswalks** | "Which of the occupations we train for can our students already get college credit for, and where?" — plus the college-facing half: "and what can THIS college carry?" | ✅ live · open work — [lane state](docs/reference/lanes/partner-crosswalks.md) |
+| **Governance & team enablement** | Decision rights (who decides what), acceptance standards per input, and which cadences actually run — plus onboarding as the team grows past Sam. | ✅ live · open work — [lane state](docs/reference/lanes/governance-team-enablement.md) |
+| **Sierra retrieval + corpus** | Sierra answers credential questions off the CURATED layer, not the raw freehand titles colleges typed into MAP. | ✅ live · open work — [lane state](docs/reference/lanes/sierra-retrieval-corpus.md) |
+| **Sierra: false absences + the statewide flag** | Why Sierra says "none" when there is plenty, why she disagreed with the Fact Sheet, and why she reported three colleges out of nine. | ✅ live · open work — [lane state](docs/reference/lanes/sierra-false-absences.md) |
+| **Local course ↔ CR alignment** | "Which of MY courses should I articulate against this credit recommendation, and how did other colleges do it?" — so faculty don't guess. | ✅ live · open work — [lane state](docs/reference/lanes/local-course-cr-alignment.md) |
+| **Common CR Reference** | A canonical vocabulary of credit recommendations — what the CER did for freehand credential titles, for the freehand recommendation text. | ✅ live · open work — [lane state](docs/reference/lanes/common-cr-reference.md) |
+| **Military (ACE) CR Reference** | The same canonical-vocabulary question for the 98% of MAP's CR rows that come from ACE-reviewed military training. | ✅ live · open work — [lane state](docs/reference/lanes/military-ace-cr-reference.md) |
+| **College CR evidence ("we approved it, but we have no CR")** | A college names courses it will award for a CPL type but holds no credit recommendation — and MAP needs one before an articulation can exist. | ✅ live · open work — [lane state](docs/reference/lanes/college-cr-evidence.md) |
+| **Disposition grain / student detail** | What a college has ACTED on, not just what credit exists. | ✅ live — [lane state](docs/reference/lanes/disposition-grain-student-detail.md) |
+| **CPL clean-up worklist** | What to fix in the CPL data, in what order, and who fixes it. | ✅ live · open work — [lane state](docs/reference/lanes/cpl-cleanup-worklist.md) |
+| **$50k / ESS 25-82 tab** | Turn the three bare outcome checkmarks into where-you-are / where-you-should-be / how-to-get-there, so colleges get unstuck and award real CPL in MAP. | 🔨 in progress · open work — [lane state](docs/reference/lanes/ess-25-82-tab.md) |
+| **Implementation Funding tab / the $35M model** | The priorities, their shares and factors, what counts toward each, and the college-by-college allocation. | ✅ live · open work — [lane state](docs/reference/lanes/implementation-funding.md) |
+| **My College (college action page) / MAP-team queue** | One page (not 123) where a college picks itself and gets its stats, its opportunities against the goals, and concrete to-dos — plus the same engine pointed INWARD at the MAP team's own backlog. | ✅ live · open work — [lane state](docs/reference/lanes/my-college-action-page.md) |
+| **College & district identity** | One taxonomy: every college/district name variant resolving to MAP's authoritative `college_id`, the CCCCO MIS district code, and every spelling any system uses. | ✅ live · open work — [lane state](docs/reference/lanes/college-district-identity.md) |
+| **Admin tab / the side menu as data** | One place to manage the COBI side menu — order, grouping, naming, which sites show what, who sees it — beside what actually protects each tab. | ✅ live · open work — [lane state](docs/reference/lanes/admin-tab-side-menu.md) |
+| **Noncredit CIP categories** | Which of the CO's ten noncredit CIP categories a program belongs to — and what that means for CDCP eligibility and funding. | 🔨 in progress · open work — [lane state](docs/reference/lanes/noncredit-cip-categories.md) |
+| **Reviewer session lifetime & scope** | What "signed in" means, how long it lasts, and which browser tab has it. | ✅ live · open work — [lane state](docs/reference/lanes/reviewer-session-lifetime.md) |
+| **Org & phrase scope / auth model** | Which sites exist, which phrase opens which, and whether shared phrases survive at all. | 🔨 in progress · open work — [lane state](docs/reference/lanes/org-phrase-scope-auth.md) |
+| **EACR — Exhibit & CR Adoption** | One place to see every exhibit, its credit recommendations, and the colleges that could adopt it. | ✅ live · open work — [lane state](docs/reference/lanes/eacr-exhibit-cr-adoption.md) |
+| **GR register / CO policy & regulation review** | Every CO priority area's regulatory / Ed. Code revisions under consideration, with the artifacts informing them — pointed at the whole CO, not just CPL. | ✅ live · open work — [lane state](docs/reference/lanes/gr-register.md) |
+| **Public/private repo split** | Partition the truly public views (Sierra, Fact Sheet, veteran map, landing pages) from COBI + the methodology, so the approach is not trivially cloneable. | 🔨 in progress · open work — [lane state](docs/reference/lanes/public-private-repo-split.md) |
+| **MAP Custom Reports (3 new) / ITPI automation** | Wire the three new MAP Custom Reports, load them, keep them fresh. | ✅ live · open work — [lane state](docs/reference/lanes/map-custom-reports.md) |
+| **Discipline cross-listing** | Nest, alias, or let a course carry two homes — the 1,210 rows whose colleges disagree about discipline. Sam's 12-item sheet; 4 of 12 landed (the ETHS re-mint, S296). | 🔨 in progress · open work — [lane state](docs/reference/lanes/discipline-crosslist.md) |
+| **SkyView / the CCR curation interface** | An interactive view of the Common Course Reference — common courses by discipline, their constituent local courses, and moving a course to where it belongs. | ✅ live · open work — [lane state](docs/reference/lanes/skyview-ccr-interface.md) |
+| **ESL packaging (the first fold)** | Collapse the ESL discipline to comprehensives + carve-outs — the proof that packaging reaches the target. | ✅ live · open work — [lane state](docs/reference/lanes/esl-packaging.md) |
+| **Title 5 §55050 → Ed. Code Article 9** | A regulation that does not implement the statute it operates under — and the amendment package that fixes it. | ✅ live · open work — [lane state](docs/reference/lanes/t5-55050-article-9.md) |
+| **COBI dark mode / the one theme control** | One header control setting the theme for every tab and window, and the token layer under it. Carries the a11y remediation pass. | ✅ live · open work — [lane state](docs/reference/lanes/cobi-dark-mode.md) |
+| **Memory tab / Autogenerate + the Briefing** | Drafting a memory row from a typed topic, reading the entries back, and curating them. | ✅ live · open work — [lane state](docs/reference/lanes/memory-tab.md) |
 | 2 | Articulations by Unified Course — interactive view + curation | parked |
 | 4 | SLO ingestion + the rest of the MC slot fields | parked (unlocks MC-readiness scoring) |
 | 5 | CTE classifier (TOP code → COCI CTE field) | parked (unlocks CIDx lane) |
@@ -725,150 +801,18 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
-### SkyRef — one report, a third of the system (2026-08-13, Session 150)
-
-Four PRs (**#1164**, **#1165**, **#1166**, **#1167**), cpl-chat **v44 → v46**, one migration.
-⭐ **A COPY WITH NO REFRESH PATH IS A FOSSIL.** Sam filed *"Wrong contact information for RCC."* The
-right move was not to fix RCC but to ask how many disagree: Sierra read a JSONB blob written
-**2026-06-25** that **nothing writes** — `sync_map_users.py` writes `map_college_contacts` and only
-*reads* the profiles table. **41 of 122 colleges got a wrong email, 13 more got silence, 50 agreed.**
-Re-seeding would have made a fresher fossil; the CONSUMER changed. Reading the authority is harder
-than reading the flattened copy: trailing spaces in two real college names, 22 fields holding several
-people, one address with **no TLD**.
-⭐ **THREE IRONWORKER REPORTS WERE THREE COMPLAINTS.** The newest — *"you should have provided a list
-of courses I could get credit for"* — is not the false zero; COLLEGE·CRED was the only credential
-route never asking for `chatbox_credential_recs`.
-⭐ **SILENT FAILURE WAS THE THEME.** The Training hand-off typed into a **hidden pane** (a module-level
-`inputEl` re-pointed by a second mount), burned its own retry (`removeItem` before the guard), and ate
-text selections. `copyText` passed an **empty rejection handler** to a clipboard API that rejects
-routinely. Every one is invisible from the code and obvious from a user's sentence.
-⭐ **Sam read the cascade correctly** — `CPL Assistant` DID mean "assistant on file, nobody as Primary
-Contact", and it was already promoted. The chip said *what*, not *why*.
-Durable: `methodology-a-copy-with-no-refresh-path-is-a-fossil`,
-`methodology-a-one-shot-handoff-must-not-consume-what-it-cannot-deliver`,
-`methodology-a-provenance-label-must-say-why-not-what`.
-Story: `docs/map_users_lessons.md` · `docs/sierra_credit_recs_lessons.md` ·
-`docs/sierra_training_tab_scope.md` · handoff `docs/session_151_handoff.md`.
-
-### SkyTop — the answer that looked right (2026-08-13, Session 149)
-
-Sam tested the alignment layer himself and sent the prose back. It read well; that is why the defect
-survived three deploys. Two PRs (**#1161**, **#1162**), three migrations, **cpl-chat v43 → v44**.
-⭐ **THE RPC WAS RIGHT AND THE ANSWER WAS WRONG** — five C-ID-confirmed matches (`AJ 102`·`103`·`101`·
-`107`·`222`) rendered as *"⬜ check catalog"*. `per_rec` bounded **one side of a union** (3,807 peers vs
-9 candidates), and peers were never resolved to the recommendation set, manufacturing **~34 phantom
-rec groups** — and **a phantom empty group is indistinguishable from a real one**. 43→10 groups,
-3,816→94 rows, 1→**6 of 6**. Cost: one peer college of 31.
-⭐ **THE FALSE ZERO IS THE WORST ANSWER** — the Cerritos ironworker miss, carried three sessions, was
-**three** defects: an abbreviating raw corpus with **no college-scoped curated route beside it**, a
-matcher that never read **issuer/trainer** and failed on the plural, and the **narrowest probe budget
-on the route reaching local data** — which dropped "iron", the subject of Sam's sentence. All 13 now
-return; **three are reachable ONLY via issuer**. Not local colour: **90%** of the catalogue has an
-issuer word absent from title+variants.
-⚠️ **Sam's "closest match unless obviously wrong" was built, measured, WITHDRAWN** — `AUTO 160
-Introduction to Automotive Electrical` for a *policing* rec. Not tunable: a rec with no candidate is
-one where nothing shares a subject word. His request was right; the mechanism wasn't, and fixing the
-phantom groups answered it.
-⭐ **Sam's CR Reference ruling: C-ID is ONE factor, not the key** — match like the CCR (title, course
-name and number, description, subject). Only **17%** of rec strings carry a C-ID.
-Durable: `methodology-bound-both-sides-of-a-union`,
-`methodology-a-grouping-key-must-come-from-the-authoritative-set`,
-`methodology-search-the-awarding-body-not-just-the-name`.
-Story: `docs/local_course_alignment_lessons.md` · `docs/sierra_credit_recs_lessons.md` · handoff
-`docs/session_150_handoff.md`.
-
 ## Troubleshooting
 
-### Dashboard not updating
-1. Check the GitHub Actions run — Actions tab in GitHub
-2. Check `live_metrics.json` → `scraped_at` timestamp
-3. Check if commit was pushed (`git log origin/main -5`)
-4. If browser shows stale content, hard-refresh (Ctrl/Cmd+Shift+R)
+**Moved to [`docs/reference/troubleshooting.md`](docs/reference/troubleshooting.md)** (2026-08-19 pare-down — symptom-triggered reference only a broken run reads).
 
-### Pages deploy failed / site still stale after a merge
-1. The merge landed on `main` but Pages didn't publish → check the **"Deploy
-   Pages (lean)"** (`pages.yml`) run for that commit (Actions tab).
-2. A transient Pages **503** (`No server is currently available` / `is
-   githubstatus.com reporting a Pages outage`) fails ONLY the final deploy step —
-   the lean-site assembly + served-path assertion passed, so the build is fine.
-3. Fix = re-deploy by **dispatching a FRESH run**:
-   `mcp__github__actions_run_trigger run_workflow pages.yml ref main`. Do **NOT**
-   `rerun_failed_jobs` — re-running the job re-runs the upload step, leaving TWO
-   `github-pages` artifacts → `deploy-pages` fails with *"Multiple artifacts named
-   github-pages"*. Playbook: [`docs/kb-notes/playbook-github-pages-manual-redeploy.md`](docs/kb-notes/playbook-github-pages-manual-redeploy.md).
+Go there when: the **dashboard is not updating** · a **Pages deploy failed** or
+the site is stale after a merge (dispatch a fresh `pages.yml` run — never
+`rerun_failed_jobs`) · the **scrape returns errors** · KPI values are stale but
+the date moved · **duplicate sections / HTML growing** on every run ·
+`kpi_history.json` shows a stale 1d delta · **CI dies at `npm install` with a
+404** (the lockfile is gitignored, so every range resolves live — pin exactly) ·
+**docx library errors**.
 
-### Scrape returning errors
-1. Test: `https://cpl-proxy.slee-548.workers.dev/scrape?secret=CPL_SCRAPE_2026`
-2. `Invalid or missing secret` → check `SCRAPE_SECRET` in Cloudflare dashboard
-3. `CPL API returned 502` → CCCCO Dashboard may be down
-4. `ALL COLLEGES row not found` → API response structure may have changed
-
-### KPI values stale but date updated
-- Pipeline updates the "Updated" date but only refreshes KPIs if
-  `live_metrics.json` has newer data
-- Check `live_metrics.json` → `scraped_at`
-- If old, the scrape step failed — test the worker endpoint directly
-
-### "Duplicate sections" / HTML growing on every run
-- You've likely removed or broken the idempotency guard in
-  `excel_to_dashboard.py`. Verify the strip block anchored on the
-  `/* ═══ MAP Articulation Analysis Cards ═══ */` start/end markers (plus the
-  legacy "MAP Exhibit Analysis Cards" pattern) still runs before re-injection.
-  (There is no `EXHIBIT_CSS_MARKER` symbol in the code — don't grep for it.)
-
-### `kpi_history.json` 1d delta shows stale comparison
-- Check for date gaps in the JSON. If yesterday is missing, backfill with
-  `"_interpolated": true`.
-
-### Stop hook demands an amend on a `noreply@github.com` commit (REMOTE sessions)
-
-**Do NOT amend. That commit is GitHub's own squash-merge, it is on `main`, and
-amending it rewrites `main` — Rule 5.** The nag is a false positive.
-
-**Why it recurs in Claude-Code-on-the-web sessions (diagnosed 2026-07-30, three
-times in one session before the cause was found):** the repo ships an improved
-hook at [`scripts/stop-hook-git-check.sh`](scripts/stop-hook-git-check.sh) that
-excludes `noreply@github.com` (squash-merges) and
-`github-actions[bot]@users.noreply.github.com` (the daily cron, #939). CLAUDE.md's
-install step is `cp scripts/stop-hook-git-check.sh ~/.claude/` — **and that works
-on Sam's local machine, but NOT in the remote sandbox.** The harness *re-provisions
-its own copy* of `~/.claude/stop-hook-git-check.sh` (together with
-`session-start-git-identity.sh`, `stop-hook-reply-gate.py`,
-`user-prompt-submit-reply-reminder.py` and `launcher-settings.json` — all get the
-same fresh mtime), silently reverting the repo version mid-session.
-
-So in a remote session:
-- Copying the repo hook clears the nag **until the next re-provision**, then it
-  returns. Don't keep re-copying and don't treat it as newly broken.
-- Check with `grep -c 'noreply@github.com' ~/.claude/stop-hook-git-check.sh` —
-  `0` means the harness copy is active (the repo copy has 5).
-- The correct response is always: **verify the flagged commit's committer is
-  `noreply@github.com` (or the cron bot) and that it is an ancestor of
-  `origin/main`, then ignore it.** `git log -1 --format='%h %ce %s' <sha>`.
-
-**Variant — "There are N unpushed commit(s) on branch `claude/...`" (added
-Session 128, 2026-08-08, after it fired twice in one session).** Same root cause,
-different message, and **the answer is still: do not push.** After a squash-merge
-GitHub **auto-deletes the head branch** (Sam's toggle ②), so a session that then
-runs `git reset --hard origin/main` is left on a local branch whose remote is
-*gone* — and the hook reads "local has commits the remote doesn't" as unpushed
-work. The commit is the squash-merge itself, already on `main`. Pushing would
-recreate a merged branch for nothing.
-
-Confirm in one command, all local except the last:
-
-```bash
-git log -1 --format='%h %ce %s' HEAD                  # committer = noreply@github.com
-git log origin/main..HEAD --oneline | wc -l           # 0 = nothing unpushed
-git merge-base --is-ancestor HEAD origin/main && echo published
-git ls-remote --heads origin <branch> | wc -l         # 0 = auto-deleted at merge
-```
-
-`git branch --unset-upstream` clears the stale tracking ref and quiets it until
-the next merge. ⚠️ Wrap any networked git call in `timeout` — `git fetch --prune`
-hung for the full 2-minute limit in this sandbox at least once.
-
-### docx library errors
-- Local `docx.min.js` is v8.0.4 UMD, 334KB. CDN versions were unreliable — do
-  **not** switch back to CDN. To refresh the local copy:
-  `npm pack docx@8.0.4`, extract, copy `umd/docx.min.js`.
+**The stop-hook nags** are covered there too — including the "Unverified
+`noreply@github.com`" false positive, where the fix is to do nothing (amending
+rewrites `main`, Rule 5).

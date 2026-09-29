@@ -1,0 +1,15 @@
+{
+ "_about": "The reviewed set for kb/_course_title_cleanup_apply.py: the garbled chatbox_college_courses rows that sit beside a repaired twin. The applier re-derives the set at write time and refuses unless its fingerprint equals `expected`. Dispatch .github/workflows/course-title-cleanup-apply.yml with this directory: dry-run first, then commit; the receipt lands here.",
+ "table": "chatbox_college_courses",
+ "verdict": "Sam, 2026-09-27, open-asks sheet card 7 ('Clean the source'): clean the stored titles once, under a receipt, and keep the loader repair.",
+ "sheet": "https://claude.ai/artifact/5sWY4QCCDfkAegZtZrW1oe",
+ "rule": "A row qualifies while its title carries kb/_text_repair's _MOJI_RE marks and it has exactly one sibling on (college, subject, course_number) whose title carries none, has the same letters and digits in the same order, and matches it on units, credit_type, top_code, top_title, cid and control_number.",
+ "measured": "2026-09-27 (S295), read-only MCP queries: 397 detected, 397 qualifying, 0 held; every garbled row synced 2026-08-13 and every twin 2026-09-18; cpl_memory course-title-mojibake-397-twins-2026-09-27.",
+ "expected": {
+  "count": 397,
+  "id_sum": 28237824,
+  "id_min": 751,
+  "id_max": 140937,
+  "ids_sha256": "12756243fc4d60c662ff50fef893dac2637bc42783ee34ae3b1718af49a997be"
+ }
+}

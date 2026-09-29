@@ -1,0 +1,1993 @@
+/* admin.js — COBI Admin: the menu, and what actually protects it.
+ *
+ * WHY THIS TAB EXISTS
+ * -------------------
+ * Sam, 2026-08-14: "I want to make the COBI side menu items rearrangeable by
+ * drag and drop from a single place where I can manage the org where they
+ * appear, hierarchy, naming, visibility, and access via either team phrase or
+ * magic link. It's getting busy and needs to be organized better." And:
+ * "perhaps the COBI menu items should be part of an Admin tab."
+ *
+ * THE TRAP, WHICH THIS TAB IS BUILT AROUND
+ * ----------------------------------------
+ * The word in that request that will hurt someone is ACCESS. A nav setting is a
+ * DISPLAY control. Hiding a menu item does not protect the data behind it — RLS
+ * does. A manager UI with an access dropdown actively invites the opposite
+ * belief, and someone acting on it would "secure" a tab by unticking a box while
+ * every row behind it stayed readable to anyone holding the anon key.
+ *
+ * So the two halves are shown TOGETHER, and the distinction is structural rather
+ * than a tooltip insisting on it: the left columns are what people SEE, the
+ * right column is what actually STOPS them, read live from the database. You
+ * cannot look at a row here without seeing both.
+ *
+ * MEASURED AT LOAD, NEVER CARRIED
+ * -------------------------------
+ *   * label / group / order  -> the live nav DOM
+ *   * which sites show a tab -> window.CPL_ORGS
+ *   * what gates each table  -> the cobi_rls_gates() RPC, live
+ *   * tab -> tables          -> cobi_admin_surface.js (generated; the only part
+ *                               a browser cannot work out for itself)
+ * A carried list goes stale silently, and on this tab a stale list would be a
+ * false claim about safety.
+ *
+ * GATING: reviewer magic-link only. A phrase holder able to re-scope what other
+ * phrase holders see is the unresolved site-phrase superset problem one level
+ * up, and worse. Deliberately NOT merged with Team Phrases, which stays its own
+ * tab: that one is visible-to-all with reviewer-only contents, and folding a
+ * rotation surface into a management surface would hide it from the people who
+ * need to know it exists.
+ *
+ * Tests: tests/admin_tab.test.js
+ */
+(function () {
+  "use strict";
+
+  var SUPABASE_URL = "https://hvuwhnbuahrtptokpqfh.supabase.co";
+  var SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2dXdobmJ1YWhydHB0b2twcWZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1NzI0ODEsImV4cCI6MjA5MTE0ODQ4MX0.p0q-93iTM0GkF2z8_q7Vvl1tsX9SFGMM-W7Wdx7WfmM";
+  var REST = SUPABASE_URL + "/rest/v1";
+
+  var state = {
+    loadState: "idle",   // idle|loading|ok|notreviewer|error|signedout
+    error: null,
+    gates: null,         // table -> {select_gate, write_gates, rls_enabled}
+    q: "",               // filter box
+    showAll: false,      // include tabs with no data surface
+    // ── Arrange (drag and drop) ──
+    // `draft` is the working arrangement. It is built from the live nav + the
+    // overlay and mutated locally; nothing reaches the database until Save, so
+    // a mis-drag costs a click on Discard rather than everyone's menu.
+    draft: null,         // {containers:[{id,label,isTop,hidden,tabs:[…]}]}
+    // ── Blast Radius (Sam's Open Verdicts item 19, 2026-08-30: "blast away") ──
+    // The impact map's viewer state. The map itself is FETCHED live from
+    // kb/dependency_map.json, never carried — a carried copy would be the
+    // stale list this tab exists to refuse.
+    blast: { load: "idle", map: null, q: "", kind: "all", sel: null },
+    dirty: false,
+    saving: false,
+    saveMsg: null,
+    editKey: null,       // "tab:<id>" | "group:<id>" open for rename / sites
+    dragKey: null,
+  };
+
+  // ── Auth ──
+  function isValidJwt(t) { return typeof t === "string" && t.split(".").length === 3 && t.length > 40; }
+  function getSession() {
+    try {
+      var s = JSON.parse(sessionStorage.getItem("cpl_sb") || "null");
+      if (s && isValidJwt(s.access_token)) return { access_token: s.access_token, email: s.email || "(reviewer)" };
+    } catch (e) {}
+    return null;
+  }
+  // NOTE: deliberately does NOT fall back to the team phrase, unlike the other
+  // team tabs. The phrase cannot open this surface, so accepting it here would
+  // only produce a confident-looking page that fails on every read.
+  function authHeaders() {
+    var s = getSession();
+    return {
+      apikey: SUPABASE_ANON,
+      Authorization: "Bearer " + ((s && s.access_token) || SUPABASE_ANON),
+    };
+  }
+
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
+  /* ── Gate classification ───────────────────────────────────────────────────
+   * Turns a Postgres boolean expression into the thing a human needs to know.
+   * Ordered most-open first so `rank` doubles as "how exposed is this", which is
+   * what lets a tab report its WEAKEST link rather than its strongest — a tab is
+   * only as protected as its most open table, and reporting the strongest gate
+   * would flatter every mixed tab on the page. */
+  var GATES = [
+    { id: "open",     rank: 0, label: "Anyone",            short: "Anyone",        hint: "Anyone who opens the page can read this. Right for things we publish on purpose; wrong for anything about a person." },
+    { id: "public",   rank: 1, label: "Anyone",            short: "Anyone",        hint: "There is a rule, but it lets everyone read. Same result as having no rule at all." },
+    { id: "team",     rank: 2, label: "Team phrase",       short: "Team phrase",   hint: "The shared team phrase, or a personal sign-in. Anyone the phrase has been passed on to." },
+    { id: "gr",       rank: 3, label: "GR phrase",         short: "GR phrase",     hint: "The Government Relations phrase, or a personal sign-in." },
+    { id: "fin",      rank: 3, label: "Finance phrase",    short: "Finance phrase", hint: "The Finance phrase, or a personal sign-in." },
+    { id: "reviewer", rank: 4, label: "Personal sign-in",  short: "Sign-in",       hint: "A personal sign-in by magic link, from an address on the reviewer list. A team phrase does not open these." },
+    { id: "server",   rank: 5, label: "Our jobs only",     short: "Our jobs",      hint: "Nothing can read this through the website at all. Only our own scheduled jobs, which hold a separate key." },
+    // A view has NO row-level security of its own. Unless it is security_invoker
+    // it runs with its owner's rights and bypasses the RLS on its source tables
+    // entirely, so it is ranked with the open cases rather than inheriting the
+    // comfort of whatever it selects from. CLAUDE.md already carries this as a
+    // standing warning about map_credential_student_rollup.
+    { id: "view",     rank: 0, label: "A saved view — no rules of its own", short: "View — no rules", hint: "This is a saved view rather than a table, and views cannot carry access rules of their own. Unless it was set up to run as whoever is asking, it runs with its creator's rights and skips the protection on the tables underneath. Worth checking who can reach it." },
+    { id: "unknown",  rank: -1, label: "Not checked",      short: "Not checked",   hint: "We have not worked out which tables this page uses, so who can read them is unknown — which is not the same as nobody. Treat it as unchecked rather than safe." },
+    /* Two states that are NOT findings about a tab, and must never be rendered
+     * as one. `nodata` is a tab that reads nothing at all; `unread` is every tab
+     * at once, because the gate measurement itself did not come back.
+     *
+     * Without `unread`, a failed or signed-out gate read classifies every table
+     * as unknown and the row chips would report "Not mapped" 35 times over —
+     * indistinguishable from a genuine finding that nothing on the site is
+     * mapped. The reason the answer is missing belongs in the chip. */
+    { id: "nodata",   rank: 9, label: "No stored information", short: "No data",  hint: "This page does not use any stored information — it shows content that comes with the site. There is nothing here for access rules to protect." },
+    /* An external launcher. NOT a finding either — it opens a page of its own,
+     * so its access rules are that page's, not this menu item's. Reporting one
+     * as "not checked" would be a finding where there is nothing here to find,
+     * and reporting it as "no stored information" would be worse: the Fact Sheet
+     * and Sierra both read plenty, just not through this page. */
+    { id: "link",     rank: 9, label: "Opens another page", short: "A link",      hint: "This is a link out to a page of its own, not a page inside COBI. Whatever protects it lives on that page — nothing here decides who can read it. Both of ours are public on purpose." },
+    { id: "unread",   rank: -1, label: "Not checked yet",  short: "Unchecked",    hint: "The live check has not come back, so nothing was measured. This is not a finding about this page. See the note at the top for why." },
+  ];
+  /* ── Visibility: ONE ladder, not two controls ───────────────────────────────
+   *
+   * `hidden` and `audience` were separate affordances — an 👁 toggle on the row
+   * and a select buried in the ✏️ editor — but they are rungs of a single
+   * question: who sees this in the menu? Everyone → signed-in → magic-link only
+   * → nobody. Sam, 2026-08-14, having pressed 👁: he expected it to ASK which,
+   * and the two-control split is also what let him narrow an audience while
+   * meaning only to annotate one.
+   *
+   * The storage stays two columns because they mean different things to plan()
+   * (an audience rule is per-viewer and recoverable; `hidden` is neither), so
+   * the merge is at the CONTROL, not in the table. rungOf/applyRung are the only
+   * places that translate, and `hidden` deliberately leaves `audience` intact so
+   * un-hiding restores the rung the item had rather than silently widening it to
+   * everyone. */
+  var RUNGS = [
+    { id: "everyone",   short: "Everyone",   label: "Everyone",
+      note: "Anyone who opens the site sees it in the menu." },
+    { id: "signed_in",  short: "Signed in",  label: "Anyone signed in — team phrase or magic link",
+      note: "People who have not entered a team phrase or signed in do not see it in the menu." },
+    { id: "magic_link", short: "Magic link", label: "Magic-link sign-in only",
+      note: "Only people who sign in by magic link see it. A team phrase is not enough." },
+    { id: "nobody",     short: "Nobody",     label: "Nobody — take it off the menu",
+      note: "Nobody sees it in the menu, including you. The page still opens for anyone who has the "
+        + "link, and the data behind it does not change." },
+  ];
+  function rungById(id) {
+    for (var i = 0; i < RUNGS.length; i++) if (RUNGS[i].id === id) return RUNGS[i];
+    return RUNGS[0];
+  }
+  function rungOf(item) {
+    if (!item) return RUNGS[0];
+    if (item.hidden) return rungById("nobody");
+    return rungById(item.audience || "everyone");
+  }
+  function applyRung(item, id) {
+    if (!item) return;
+    if (id === "nobody") { item.hidden = true; return; }
+    item.hidden = false;
+    item.audience = id;
+  }
+  /* Which rungs this tab may take. Protection is enforced HERE as well as in the
+   * overlay and the drag — an option that cannot be honoured must not be offered,
+   * or the control lies about what it will do. */
+  function rungsFor(tab) {
+    var ov = window.CPL_NAV_OVERLAY;
+    if (ov.AUDIENCE_LOCKED[tab] && ov.PROTECTED[tab]) return [];
+    return RUNGS.filter(function (r) {
+      if (r.id === "nobody") return !ov.PROTECTED[tab];
+      if (r.id !== "everyone") return !ov.AUDIENCE_LOCKED[tab];
+      return true;
+    });
+  }
+
+  function gateById(id) {
+    for (var i = 0; i < GATES.length; i++) if (GATES[i].id === id) return GATES[i];
+    return GATES[GATES.length - 1];
+  }
+  function classify(row) {
+    if (!row) return gateById("unknown");
+    // Checked BEFORE rls_enabled: a view always reports rls_enabled=false, so
+    // the open branch would swallow it and lose the reason it is open.
+    if (row.kind === "view" || row.kind === "matview") return gateById("view");
+    if (!row.rls_enabled) return gateById("open");
+    var q = row.select_gate;
+    // NULL select_gate with RLS on is a DIFFERENT state from an expression: it
+    // means no read policy exists at all, so PostgREST returns nothing to
+    // anybody. Collapsing the two would report the most locked-down tables in
+    // the system as the most exposed.
+    if (q == null || q === "") return gateById("server");
+    if (/\btrue\b/.test(q)) return gateById("public");
+    if (/fin_pass_ok/.test(q)) return gateById("fin");
+    if (/gr_pass_ok/.test(q)) return gateById("gr");
+    if (/team_pass_ok/.test(q)) return gateById("team");
+    if (/is_allowed_reviewer/.test(q)) return gateById("reviewer");
+    return gateById("unknown");
+  }
+
+  // ── Live measurements ──
+  function surface() {
+    var s = window.COBI_ADMIN_SURFACE;
+    return (s && s.tabs) ? s : { tabs: {}, unmeasured: [] };
+  }
+
+  /* Read the nav rail as it actually is. Not a list in this file: the nav is
+   * regenerated daily and edited by other modules, so anything hand-kept here
+   * would describe a menu that no longer exists. */
+  function navItems() {
+    var out = [];
+    var nav = document.querySelector("nav.cpl-tabs");
+    if (!nav) return out;
+    /* Tab buttons AND keyed external launchers.
+     *
+     * Sam, 2026-08-15: "Why isn't the Shared Category on my Admin page? Seems it
+     * should be." It was not a failed read — Share is built from anchors with no
+     * data-tab, and every query on this tab asked for `.cpl-tab[data-tab]`, so
+     * two real menu items were simply invisible to the manager. A manager that
+     * silently omits part of what it manages is worse than one that says it
+     * cannot: the page looked complete. */
+    var btns = nav.querySelectorAll(".cpl-tab[data-tab], [data-nav-link]");
+    Array.prototype.forEach.call(btns, function (b, i) {
+      var group = b.closest ? b.closest(".cpl-nav-group") : null;
+      var head = group ? group.querySelector(".cpl-nav-group-head") : null;
+      var label = (b.textContent || "").trim();
+      var link = !b.getAttribute("data-tab");
+      out.push({
+        tab: b.getAttribute("data-tab") || b.getAttribute("data-nav-link"),
+        label: label,
+        order: i,
+        group: head ? (head.textContent || "").replace(/[▾▸]/g, "").trim() : "",
+        hiddenNow: b.getAttribute("data-org-hidden") === "1",
+        // An anchor to a page of our own that is NOT a pane here. It has no
+        // Supabase surface of its own to measure, and saying "not checked"
+        // about one would be a finding where there is nothing to find.
+        link: link,
+        href: link ? (b.getAttribute("href") || "") : null,
+      });
+    });
+    return out;
+  }
+
+  /* Is this key an external launcher rather than a tab? Asked of the live nav
+   * for the same reason everything else on this tab is: a list kept here would
+   * describe a menu that has moved on. */
+  function isLink(tab) {
+    var items = navItems();
+    for (var i = 0; i < items.length; i++) if (items[i].tab === tab) return !!items[i].link;
+    return false;
+  }
+
+  /* Which sites show a tab. Computed from CPL_ORGS rather than restated, so the
+   * answer cannot drift from the filter that actually runs. */
+  function sitesFor(tab, link) {
+    var O = window.CPL_ORGS;
+    if (!O || !O.ORGS) return null;
+    var always = (O.ALWAYS || []).indexOf(tab) !== -1;
+    var exclusive = (O.EXCLUSIVE || []).indexOf(tab) !== -1;
+    var out = [];
+    O.ORGS.forEach(function (o) {
+      /* A LAUNCHER with no curator rule shows everywhere — mirroring the
+       * `isLink` branch in cobi_orgs.applyNav(). Falling through to the tab
+       * logic would test a link key against a site's TAB list, find nothing, and
+       * report it as CPL-only while the rail showed it on all five. A manager
+       * that describes the menu differently from how the menu behaves is worse
+       * than one that omits it, because there is nothing to notice. */
+      var shown = always || (link ? true : (o.tabs ? o.tabs.indexOf(tab) !== -1 : !exclusive));
+      if (shown) out.push(o.label);
+    });
+    return { sites: out, always: always, exclusive: exclusive, link: !!link, total: O.ORGS.length };
+  }
+
+  function loadGates() {
+    if (!getSession()) {
+      state.loadState = "signedout";
+      return Promise.resolve();
+    }
+    state.loadState = "loading";
+    // Content-Type + an explicit empty argument object: PostgREST can answer a
+    // bodyless POST with 415, which would surface here as "could not check" —
+    // an honest message for a failure that never needed to happen.
+    var h = authHeaders();
+    h["Content-Type"] = "application/json";
+    return fetch(REST + "/rpc/cobi_rls_gates", { method: "POST", headers: h, body: "{}" })
+      .then(function (r) {
+        if (!r.ok) throw new Error("gates " + r.status);
+        return r.json();
+      })
+      .then(function (rows) {
+        // The database always has tables, so an empty result is not "no tables"
+        // — it is the RLS gate filtering a non-reviewer to zero rows. That
+        // inference is only safe BECAUSE the set is known non-empty; the same
+        // reasoning is wrong on sierra_rules, which is seeded empty on purpose.
+        if (!Array.isArray(rows) || rows.length === 0) { state.loadState = "notreviewer"; state.gates = null; return; }
+        var m = {};
+        rows.forEach(function (r) { if (r && r.tbl) m[r.tbl] = r; });
+        state.gates = m;
+        state.loadState = "ok";
+      })
+      .catch(function (e) {
+        // A failed read is never rendered as "nothing is protected".
+        state.loadState = "error";
+        state.error = (e && e.message) || "read failed";
+        state.gates = null;
+      });
+  }
+
+  /* The weakest gate across a tab's tables — see the ordering note on GATES.
+   *
+   * A tab that calls only STORED FUNCTIONS (RPCs) and no tables directly is NOT
+   * a tab with nothing to protect. cpl_chat is the clearest case: Sierra reaches
+   * most of the corpus through RPCs, so treating "no table references" as "no
+   * data" would file the widest data surface in the app under nothing-to-see.
+   * An RPC's own gate lives inside its body (security definer), which this page
+   * does not read — so the honest answer is UNKNOWN with the reason stated,
+   * never a blank. */
+  function tabGate(tab) {
+    var s = surface().tabs[tab];
+    if (!s || !s.measured) return { gate: gateById("unknown"), tables: [], rpcs: [], measured: false };
+    var tables = (s.reads || []).concat(s.writes || []);
+    var rpcs = s.rpcs || [];
+    if (!tables.length && rpcs.length) {
+      return { gate: gateById("unknown"), tables: [], rpcs: rpcs, measured: true, rpcOnly: true };
+    }
+    if (!tables.length) return { gate: null, tables: [], rpcs: [], measured: true };
+    var worst = null;
+    tables.forEach(function (t) {
+      var g = classify(state.gates ? state.gates[t] : null);
+      if (!worst || g.rank < worst.rank) worst = g;
+    });
+    return { gate: worst, tables: tables, rpcs: rpcs, measured: true };
+  }
+
+  /* The gate as a menu ROW should state it — every row, not only the alarming
+   * ones. Until now the chip rendered for `open`/`public`/`view` alone, so a
+   * properly protected tab showed nothing and read as unexamined: the same
+   * "only the bad case is labelled" asymmetry that made the audience note
+   * invisible on most items. Sam asked for the method to be noted on each item,
+   * and this is measured rather than hand-typed.
+   *
+   * `tabGate` keeps its null-means-no-data contract — the summary and the table
+   * below both depend on it — so the two states that are NOT findings about a
+   * tab are resolved here, at the point of display, and never counted as gates.
+   */
+  function rowGate(tab) {
+    // A launcher is answered FIRST, before the surface scan gets a say. The scan
+    // has never heard of it — it maps tabs to tables — so every other branch
+    // below would call it "not checked", which is a finding about a thing that
+    // has nothing here to check.
+    if (isLink(tab)) return gateById("link");
+    var g = tabGate(tab);
+    // Structural unknowns first: both are known from the static surface scan,
+    // so they stand whether or not the live gate read came back.
+    if (!g.measured || g.rpcOnly) return gateById("unknown");
+    if (!g.gate) return gateById("nodata");
+    // Only now can a missing measurement be the reason. Reporting "Not mapped"
+    // here would turn one failed RPC into 35 findings.
+    if (!state.gates) return gateById("unread");
+    return g.gate;
+  }
+
+  /* ── The arrangement editor's model ────────────────────────────────────────
+   *
+   * Built from the SAME plan() the menu itself renders through, so the editor
+   * cannot show an arrangement the rail would lay out differently. Hidden items
+   * are included in position and marked — without them there is no way to
+   * unhide anything, which is the obvious trap in a "hide" affordance.
+   *
+   * "Top level" is modelled as a container like any other so a drag into it
+   * needs no special case; it is pinned first because that is where it renders.
+   */
+  function buildDraft() {
+    var ov = window.CPL_NAV_OVERLAY;
+    var groups = (window.CPL_NAV_GROUPS && window.CPL_NAV_GROUPS.GROUPS) || [];
+    var present = navItems().map(function (it) { return it.tab; });
+    if (!ov || typeof ov.plan !== "function") return null;
+    /* ⚠ NEVER build the editor from the CACHE.
+     *
+     * nav_overlay paints from localStorage first and fetches after, which is
+     * right for the MENU — a visitor sees their arrangement without waiting.
+     * It is wrong for an EDITOR, because saveDraft() writes every row back: a
+     * draft seeded from a stale cache silently reverts whatever changed since
+     * that cache was written, for every field, including ones nobody touched.
+     *
+     * That is not hypothetical. The cache written before 2026-08-15 carries no
+     * `audience` at all (the column was missing from load()'s select), so a save
+     * built on it resets every rung to "everyone" — which is exactly how Sam
+     * lost nine of them. Fixing the select stops the cache being wrong; this
+     * stops an unconfirmed read being SAVED, which is the general form.
+     *
+     * `isLoaded()` is true once the network read has resolved OR definitively
+     * failed, so this cannot hang the editor on a flaky connection — a failed
+     * read still opens the editor, against code defaults, which is the same
+     * fail-safe the menu itself uses. */
+    if (typeof ov.isLoaded === "function" && !ov.isLoaded()) return null;
+    var p = ov.plan(groups, present);
+
+    /* plan() carries only placement — {tab, hidden}. The draft has to carry the
+     * whole row, because saveDraft() writes EVERY field for EVERY tab: seeding
+     * from placement alone would silently blank every label, site list and pin
+     * the moment anyone dragged anything and pressed Save. Read them back off
+     * the overlay rows here so a save round-trips what it did not touch. */
+    var rows = ov.rows() || [];
+    function rowFor(tab) {
+      for (var i = 0; i < rows.length; i++) if (rows[i].kind === "tab" && rows[i].key === tab) return rows[i];
+      return null;
+    }
+    function hydrate(e) {
+      var r = rowFor(e.tab);
+      return {
+        tab: e.tab,
+        hidden: e.hidden,
+        label: r && r.label != null ? r.label : null,
+        orgs: r && r.orgs && r.orgs.length ? r.orgs.slice() : null,
+        pinned: !!(r && r.pinned),
+        audience: (r && r.audience) || "everyone",
+      };
+    }
+
+    var containers = [{
+      id: "__top__", label: "Top level", isTop: true, hidden: false,
+      tabs: p.all.top.map(hydrate),
+    }];
+    var code = codeGroupIds();
+    p.all.groups.forEach(function (g) {
+      containers.push({
+        id: g.id, label: g.label, isTop: false, hidden: g.hidden,
+        // A category the curator made exists ONLY as an overlay row, which is
+        // what makes it renamable-to-nothing and deletable — neither is true of
+        // a shipped group, whose label falls back to the code and whose row
+        // cannot be removed because the group would still be there.
+        custom: !code[g.id],
+        tabs: g.tabs.map(hydrate),
+      });
+    });
+    return { containers: containers };
+  }
+
+  function codeGroupIds() {
+    var out = {};
+    var g = window.CPL_NAV_GROUPS && window.CPL_NAV_GROUPS.GROUPS;
+    (g || []).forEach(function (x) { if (x && x.id) out[x.id] = true; });
+    return out;
+  }
+
+  /* A key for a new category. Derived from the name so a curator reading the
+   * table sees something recognisable, but it must never collide: a duplicate
+   * key would make the two categories one row and merge them on the next load,
+   * and a key matching a SHIPPED group would silently take that group over. */
+  function newGroupKey(label, draft) {
+    var base = String(label || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+    if (!base) base = "category";
+    var taken = codeGroupIds();
+    draft.containers.forEach(function (c) { taken[c.id] = true; });
+    var key = base, n = 2;
+    while (taken[key]) { key = base + "-" + n; n++; }
+    return key;
+  }
+
+  function addCategory(draft, label) {
+    label = String(label || "").trim();
+    // A group with no label is dropped by the overlay (sanitize nulls a blank
+    // one and plan() will not build a nameless heading), so a category created
+    // without a name would simply never appear — and its tabs would fall to the
+    // top level looking like a bug. Refuse it here instead.
+    if (!label) return null;
+    var c = { id: newGroupKey(label, draft), label: label, isTop: false, hidden: false, custom: true, tabs: [] };
+    draft.containers.push(c);
+    return c;
+  }
+
+  /* Removing a category is a DELETE, not an omission.
+   *
+   * The save is an upsert (`resolution=merge-duplicates`), so a row simply left
+   * out of the payload stays in the table and the category returns on the next
+   * load. Collected here and deleted before the upsert. */
+  function removedGroupKeys(draft) {
+    var present = {};
+    draft.containers.forEach(function (c) { if (!c.isTop) present[c.id] = true; });
+    var out = [];
+    (window.CPL_NAV_OVERLAY.rows() || []).forEach(function (r) {
+      if (r.kind === "group" && !present[r.key] && out.indexOf(r.key) === -1) out.push(r.key);
+    });
+    return out;
+  }
+
+  function ensureDraft() {
+    if (!state.draft) state.draft = buildDraft();
+    return state.draft;
+  }
+
+  function findTab(draft, tab) {
+    for (var i = 0; i < draft.containers.length; i++) {
+      var c = draft.containers[i];
+      for (var j = 0; j < c.tabs.length; j++) if (c.tabs[j].tab === tab) return { ci: i, ti: j, c: c, item: c.tabs[j] };
+    }
+    return null;
+  }
+
+  /* Move `tab` to `containerId` at `index`. Pure over the draft so the tests can
+   * exercise reordering without synthesising HTML5 drag events, which jsdom does
+   * not implement — the DOM handlers are a thin shell over this. */
+  function moveTab(draft, tab, containerId, index) {
+    var found = findTab(draft, tab);
+    if (!found) return false;
+    var target = null;
+    for (var i = 0; i < draft.containers.length; i++) if (draft.containers[i].id === containerId) target = draft.containers[i];
+    if (!target) return false;
+    // GROUP_LOCKED, not PROTECTED. Admin used to be barred from every category
+    // on the theory that a category can be hidden — but plan() already lifts a
+    // protected tab OUT of a hidden group instead of hiding it with the group,
+    // so that door was sealed twice. Dashboard stays barred: it is the fallback
+    // every deep link lands on, and a fallback should not sit behind a heading.
+    if (window.CPL_NAV_OVERLAY.GROUP_LOCKED[tab] && !target.isTop) return false;
+    found.c.tabs.splice(found.ti, 1);
+    if (found.c === target && found.ti < index) index--;
+    index = Math.max(0, Math.min(index, target.tabs.length));
+    target.tabs.splice(index, 0, found.item);
+    return true;
+  }
+
+  function moveContainer(draft, id, index) {
+    var from = -1;
+    for (var i = 0; i < draft.containers.length; i++) if (draft.containers[i].id === id) from = i;
+    // Top level never moves: it is the container everything else is positioned
+    // against, and it holds the protected tabs.
+    if (from <= 0 || index <= 0) return false;
+    var c = draft.containers.splice(from, 1)[0];
+    if (from < index) index--;
+    draft.containers.splice(Math.max(1, Math.min(index, draft.containers.length)), 0, c);
+    return true;
+  }
+
+  /* Turn the draft into cobi_nav rows.
+   *
+   * Writes a row for EVERY tab and group rather than only the changed ones. The
+   * alternative — diffing against code defaults and writing the difference — is
+   * where this would go wrong quietly: `sort_order` is only meaningful relative
+   * to its neighbours, so a partial write leaves a container half-explicit and
+   * half-implicit, and the resulting order depends on values nobody chose.
+   */
+  /* ONE row shape for both kinds, and the uniformity is the whole point.
+   *
+   * `audience` is NOT NULL in cobi_nav. Group rows used to omit the key entirely
+   * while tab rows carried it — and a bulk POST is a single statement over the
+   * UNION of the array's keys, so the column was in the insert list and every
+   * group row supplied NULL for it. Postgres rejected the batch (23502), which
+   * PostgREST returns as 400, and since every save contains at least one group,
+   * EVERY save failed. The table stayed empty for two days while the tab looked
+   * finished, because the shape is only wrong on the wire: each row is valid on
+   * its own, and jsdom's fetch mock accepts anything.
+   *
+   * Building both kinds through one function means a column added for tabs
+   * tomorrow cannot quietly reintroduce it. */
+  function navRow(o) {
+    return {
+      kind: o.kind,
+      key: o.key,
+      label: o.label != null ? o.label : null,
+      parent: o.parent != null ? o.parent : null,
+      sort_order: o.sort_order,
+      hidden: !!o.hidden,
+      orgs: (o.orgs && o.orgs.length) ? o.orgs.slice() : null,
+      pinned: !!o.pinned,
+      // A group has no audience of its own — the overlay resolves audience per
+      // TAB — but the column is NOT NULL, so it is written as the default
+      // rather than left for PostgREST to fill with NULL.
+      audience: o.audience || "everyone",
+      updated_by: o.updated_by,
+      updated_at: o.updated_at,
+    };
+  }
+
+  function draftRows(draft) {
+    var rows = [];
+    var who = (getSession() && getSession().email) || "(reviewer)";
+    var now = new Date().toISOString();
+    draft.containers.forEach(function (c, ci) {
+      if (!c.isTop) {
+        /* A blank label means different things to the two kinds of group, and
+         * only one of them is safe. A SHIPPED group falls back to its code
+         * label, so null is fine. A CURATOR category has no code behind it —
+         * the overlay drops a group with no label — so saving one blank would
+         * delete the heading and scatter its tabs to the top level, looking
+         * like items went missing. Fall back to the key, which is at least
+         * something findable and renamable. */
+        var glabel = (c.label != null && String(c.label).trim()) ? String(c.label).trim() : null;
+        if (!glabel && c.custom) glabel = c.id;
+        rows.push(navRow({
+          kind: "group", key: c.id, label: glabel, parent: null,
+          sort_order: ci, hidden: !!c.hidden, orgs: null, pinned: false,
+          updated_by: who, updated_at: now,
+        }));
+      }
+      c.tabs.forEach(function (t, ti) {
+        rows.push(navRow({
+          kind: "tab", key: t.tab,
+          label: t.label,
+          parent: c.isTop ? null : c.id,
+          sort_order: ti,
+          hidden: t.hidden,
+          orgs: t.orgs,
+          pinned: t.pinned,
+          audience: t.audience,
+          updated_by: who, updated_at: now,
+        }));
+      });
+    });
+    return rows;
+  }
+
+  /* A status code is not a diagnosis. PostgREST puts the actual reason in the
+   * body — this bug's body said `null value in column "audience" ... violates
+   * not-null constraint`, which names it on sight — and discarding it is what
+   * left a curator staring at a bare "save 400" that reads like an expired
+   * sign-in. Always carry the body into the message, and keep `status` so the
+   * advice can tell an auth failure from a malformed write. */
+  function httpFail(r, what) {
+    function fail(detail) {
+      var e = new Error(what + " " + r.status + (detail ? " — " + detail : ""));
+      e.status = r.status;
+      throw e;
+    }
+    if (!r || typeof r.text !== "function") fail("");
+    return r.text().then(function (body) {
+      var detail = (body || "").slice(0, 300);
+      try {
+        var j = JSON.parse(body);
+        detail = j.message || j.details || j.hint || detail;
+      } catch (e) { /* not JSON — the raw text is still better than nothing */ }
+      fail(detail);
+    }, function () { fail(""); });
+  }
+
+  function saveDraft(root) {
+    if (state.saving || !state.draft) return Promise.resolve();
+    /* Re-asked at the point of the WRITE, not just when the editor opened. The
+     * guard in buildDraft decides what to OFFER; this decides what actually
+     * goes out, and the two must not be able to disagree — the same split as
+     * the category-delete check. */
+    var ovS = window.CPL_NAV_OVERLAY;
+    if (ovS && typeof ovS.isLoaded === "function" && !ovS.isLoaded()) {
+      state.saveMsg = { ok: false, text: "Not saved — the live menu had not finished loading. "
+        + "Nothing was changed. Try again in a moment." };
+      render(root);
+      return Promise.resolve();
+    }
+    state.saving = true; state.saveMsg = null; render(root);
+    var rows = draftRows(state.draft);
+    var gone = removedGroupKeys(state.draft);
+    var h = authHeaders();
+    h["Content-Type"] = "application/json";
+    h["Prefer"] = "resolution=merge-duplicates,return=representation";
+    /* Deleted categories go FIRST, and a failed delete aborts the save.
+     *
+     * The upsert cannot remove a row, so letting the delete fail quietly would
+     * write the new arrangement and leave the category behind — it reappears on
+     * the next load, out of the position the curator last saw it in, which
+     * reads as the save having partly worked. */
+    var pre = gone.length
+      ? fetch(REST + "/cobi_nav?kind=eq.group&key=in.(" + gone.map(encodeURIComponent).join(",") + ")",
+        { method: "DELETE", headers: authHeaders() })
+        .then(function (r) { if (!r.ok) return httpFail(r, "remove category"); })
+      : Promise.resolve();
+    return pre.then(function () {
+      return fetch(REST + "/cobi_nav", { method: "POST", headers: h, body: JSON.stringify(rows) });
+    })
+      .then(function (r) {
+        if (!r.ok) return httpFail(r, "save");
+        return r.json();
+      })
+      .then(function (saved) {
+        // A policy-filtered write answers 200 with an EMPTY body, so "ok" is not
+        // proof it wrote. No rows back = FAILURE, and the draft is kept.
+        if (!Array.isArray(saved) || !saved.length) {
+          var e = new Error("not saved — your sign-in isn’t a reviewer");
+          e.authish = true;
+          throw e;
+        }
+        window.CPL_NAV_OVERLAY._set(saved);   // repaints the live rail immediately
+        state.dirty = false; state.saving = false;
+        state.saveMsg = { ok: true, text: "✓ Saved. The menu updated for everyone." };
+        render(root);
+      })
+      .catch(function (e) {
+        state.saving = false;
+        // Only 401/403 (and a policy-filtered empty write) are sign-in problems.
+        // Telling someone to sign in again when the REQUEST is malformed sends
+        // them round a loop that can never succeed however valid their session.
+        var authish = !!(e && (e.authish || e.status === 401 || e.status === 403));
+        state.saveMsg = { ok: false, text: "Could not save — " + ((e && e.message) || "unknown error")
+          + ". Your arrangement is still here" + (authish
+            ? "; renew your reviewer sign-in and press Save again."
+            : ", and nothing changed for anyone. This one is a fault in the page, not your sign-in — "
+              + "send that message to a session and it can be fixed.") };
+        render(root);
+      });
+  }
+
+  /* Reset EVERYTHING to how the menu ships. A delete rather than writing the
+   * defaults back: an empty table is what "exactly as shipped" means here, and
+   * cobi_nav has a delete policy precisely so this can be honest. (sierra_rules
+   * deliberately has none — there, the record of what was tried is worth more
+   * than a clean slate; here the code IS the record.) */
+  function resetAll(root) {
+    if (state.saving) return Promise.resolve();
+    if (!confirm("Put the whole menu back to how the site came?\n\n"
+      + "Every rename, every move, every heading you made and every site setting goes, for everyone. "
+      + "The record of what was changed is kept.")) return Promise.resolve();
+    state.saving = true; state.saveMsg = null; render(root);
+    return fetch(REST + "/cobi_nav?kind=in.(tab,group)", { method: "DELETE", headers: authHeaders() })
+      .then(function (r) {
+        if (!r.ok) return httpFail(r, "reset");
+        window.CPL_NAV_OVERLAY._set([]);
+        state.draft = null; state.dirty = false; state.saving = false;
+        state.saveMsg = { ok: true, text: "✓ The menu is back to how the site came." };
+        render(root);
+      })
+      .catch(function (e) {
+        state.saving = false;
+        state.saveMsg = { ok: false, text: "Could not reset — " + ((e && e.message) || "unknown error") + "." };
+        render(root);
+      });
+  }
+
+  // ── CSS (var(--token) only) ──
+  var CSS_ID = "cobi-admin-css";
+  function ensureCss() {
+    if (document.getElementById(CSS_ID)) return;
+    var el = document.createElement("style");
+    el.id = CSS_ID;
+    el.textContent = [
+      ".adm { max-width: 1150px; margin: 0 auto; color: var(--text-body); }",
+      ".adm h2 { color: var(--navy-primary); margin: 16px 0 4px; }",
+      ".adm h3 { color: var(--navy-primary); margin: 22px 0 8px; font-size: 1.02rem; }",
+      ".adm-intro { color: var(--text-muted); max-width: 900px; margin: 0 0 12px; font-size: .92rem; }",
+      // ── the live-session banner control (DR-26) ──
+      ".adm-live { border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px;",
+      "margin: 22px 0; background: var(--surface-subtle, #F7F5F1); max-width: 720px; }",
+      ".adm-live h3 { margin-top: 0; }",
+      ".adm-live-note { color: var(--text-muted); font-size: .88rem; margin: 4px 0 10px; }",
+      ".adm-live-state { margin: 0 0 12px; font-size: .92rem; }",
+      ".adm-live-lbl { display: block; font-size: .82rem; font-weight: 700;",
+      "color: var(--text-strong, #1C1C1A); margin: 10px 0 3px; }",
+      ".adm-live-url { width: 100%; max-width: 520px; padding: 6px 9px; font: inherit;",
+      "font-size: .9rem; border: 1px solid var(--border-strong, rgba(28,28,26,.30)); border-radius: 5px; }",
+      ".adm-live-hours { padding: 6px 9px; font: inherit; font-size: .9rem;",
+      "border: 1px solid var(--border-strong, rgba(28,28,26,.30)); border-radius: 5px; }",
+      ".adm-live-btns { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }",
+      ".adm-live-auto { display: flex; align-items: center; gap: 8px; margin: 14px 0 4px; font-size: .92rem; cursor: pointer; }",
+      ".adm-live-auto input { width: 16px; height: 16px; cursor: pointer; }",
+      ".adm-live-autonote { margin: 0 0 2px 24px; }",
+      ".adm-live-msg { margin: 10px 0 0; font-size: .88rem; color: var(--text-body); min-height: 1.2em; }",
+      "@media (max-width: 560px) { .adm-live-url { max-width: 100%; } }",
+      ".adm-chip { display:inline-block; margin-left:8px; background: var(--mustard-fill, #f2dca0); color: var(--on-mustard); font-size:.62rem; font-weight:700; letter-spacing:.08em; padding:2px 8px; border-radius:10px; text-transform:uppercase; vertical-align:middle; }",
+      ".adm-warn { font-size:.85rem; color: var(--on-mustard); background: var(--mustard-fill, #f2dca0); border-radius:8px; padding:10px 13px; max-width:900px; margin:0 0 14px; }",
+      ".adm-empty { border:1px dashed var(--border-strong); border-radius:8px; background: var(--surface-subtle); color: var(--text-muted); padding:26px; text-align:center; }",
+      // The shared reviewer sign-in mounts here. Left-aligned and narrowed so
+      // the form reads as a form inside the centred explanatory block.
+      ".adm-signin { max-width:340px; margin:14px auto 0; text-align:left; }",
+      ".adm-stat { display:flex; flex-wrap:wrap; gap:10px; margin:0 0 14px; }",
+      ".adm-stat .box { flex:1 1 130px; border:1px solid var(--border); border-radius:8px; background: var(--surface-subtle); padding:10px 12px; cursor:help; }",
+      ".adm-stat .box .n { font-size:1.4rem; font-weight:700; color: var(--navy-primary); }",
+      ".adm-stat .box .l { font-size:.7rem; color: var(--text-muted); text-transform:uppercase; letter-spacing:.05em; }",
+      ".adm-toolbar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:0 0 10px; }",
+      ".adm-input { padding:6px 10px; border:1px solid var(--border-strong); border-radius:6px; font-size:.82rem; background: var(--surface-opaque); color: var(--text-body); min-width:220px; }",
+      ".adm-check { font-size:.82rem; color: var(--text-body); display:flex; align-items:center; gap:5px; }",
+      ".adm-count { font-size:.8rem; color: var(--text-muted); margin-left:auto; }",
+      // ── Blast Radius (item 19) — the impact-map pane ──
+      ".adm-blast-bar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:0 0 10px; }",
+      ".adm-blast-kinds { display:flex; flex-wrap:wrap; gap:5px; }",
+      ".adm-blast-kind { border:1px solid var(--border-strong); background: var(--surface-opaque); color: var(--text-body); border-radius:10px; padding:3px 10px; font-size:.76rem; font-weight:600; cursor:pointer; }",
+      ".adm-blast-kind[aria-pressed=\"true\"] { background: var(--navy-primary); border-color: var(--navy-primary); color: var(--on-accent); }",
+      ".adm-blast-panes { display:grid; grid-template-columns:minmax(230px,300px) 1fr; gap:12px; align-items:start; }",
+      "@media (max-width:700px) { .adm-blast-panes { grid-template-columns:1fr; } }",
+      ".adm-blast-list { background: var(--surface-opaque); border:1px solid var(--border); border-radius:10px; max-height:60vh; overflow-y:auto; padding:4px; }",
+      ".adm-blast-grp { font-size:.68rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color: var(--text-muted); padding:8px 8px 3px; }",
+      ".adm-blast-ds { display:flex; width:100%; justify-content:space-between; align-items:baseline; gap:8px; border:0; background:none; text-align:left; padding:5px 8px; font:inherit; font-size:.85rem; color: var(--text-body); border-radius:7px; cursor:pointer; }",
+      ".adm-blast-ds:hover { background: var(--surface-subtle); }",
+      ".adm-blast-ds[aria-pressed=\"true\"] { background: var(--surface-muted); color: var(--text-strong); font-weight:600; }",
+      ".adm-blast-ds .n { overflow-wrap:anywhere; }",
+      ".adm-blast-ds .c { color: var(--text-muted); font-size:.72rem; font-variant-numeric:tabular-nums; flex:none; }",
+      ".adm-blast-card { background: var(--surface-opaque); border:1px solid var(--border); border-radius:10px; padding:14px 16px 16px; }",
+      ".adm-blast-chips { display:flex; flex-wrap:wrap; gap:5px; margin:0 0 6px; }",
+      ".adm-blast-chip { border-radius:10px; font-size:.68rem; font-weight:600; padding:2px 8px; background: var(--surface-muted); color: var(--text-body); border:1px solid var(--border); }",
+      ".adm-blast-chip.public { color: var(--green-progress, #2C601A); }",
+      ".adm-blast-name { color: var(--navy-primary); font-size:1.15rem; margin:0 0 4px; overflow-wrap:anywhere; }",
+      ".adm-blast-sum { margin:0 0 10px; font-size:.9rem; }",
+      // Red is an act-on state and stays muted: a border and a bold lead-in,
+      // never a filled box (the glyph/color doctrine).
+      ".adm-blast-strip { border:1px solid var(--border); border-left:3px solid var(--red-alert, #920000); background: var(--surface-subtle); border-radius:8px; padding:7px 11px; margin:0 0 8px; font-size:.85rem; }",
+      ".adm-blast-strip b { color: var(--red-alert, #920000); }",
+      ".adm-blast-strip.caution { border-left-color: var(--border-strong); }",
+      ".adm-blast-strip.caution b { color: var(--text-strong); }",
+      ".adm-blast-sec { font-size:.68rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color: var(--text-muted); margin:12px 0 4px; }",
+      ".adm-blast-cons { display:flex; flex-wrap:wrap; gap:5px; margin:0; padding:0; list-style:none; }",
+      ".adm-blast-cons li { border:1px solid var(--border); background: var(--surface-subtle); border-radius:10px; padding:3px 9px; font-size:.8rem; color: var(--text-body); overflow-wrap:anywhere; }",
+      ".adm-blast-cons li .w { font-weight:700; color: var(--red-alert, #920000); }",
+      ".adm-blast-how { color: var(--text-muted); font-size:.74rem; }",
+      ".adm-blast-empty { color: var(--text-muted); font-size:.85rem; }",
+      ".adm-blast-foot { color: var(--text-muted); font-size:.8rem; margin:10px 0 0; max-width:900px; }",
+      // table-layout:fixed + an explicit colgroup — auto layout has silently
+      // parked columns past the wrapper's right edge here before (the CCR).
+      ".adm-tablewrap { overflow-x:auto; border:1px solid var(--border); border-radius:8px; }",
+      ".adm-table { width:100%; table-layout:fixed; border-collapse:collapse; font-size:.82rem; }",
+      ".adm-table th { text-align:left; background: var(--surface-subtle); color: var(--text-muted); font-size:.68rem; text-transform:uppercase; letter-spacing:.05em; padding:7px 9px; border-bottom:1px solid var(--border); }",
+      ".adm-table td { padding:6px 9px; border-bottom:1px solid var(--border); vertical-align:top; }",
+      ".adm-table tr:last-child td { border-bottom:none; }",
+      ".adm-table .nm { font-weight:600; color: var(--text-strong); }",
+      ".adm-table .sub { font-size:.72rem; color: var(--text-muted); }",
+      ".adm-trunc { display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }",
+      // The security column is the point of the table; it must not read as one
+      // more attribute among the display ones.
+      ".adm-table .gatecol { border-left:3px solid var(--navy-secondary, #1c3d5a); }",
+      ".adm-g { font-size:.7rem; border-radius:10px; padding:1px 8px; white-space:nowrap; cursor:help; background: var(--surface-muted); color: var(--text-muted); }",
+      ".adm-g-open, .adm-g-public { color: var(--brick, #8c2f22); background: rgba(140,47,34,.10); font-weight:700; }",
+      ".adm-g-team, .adm-g-gr, .adm-g-fin { color: var(--on-mustard); background: var(--mustard-fill, #f2dca0); }",
+      ".adm-g-reviewer, .adm-g-server { color: var(--hunter, #2c601a); background: rgba(44,96,26,.10); font-weight:700; }",
+      // Neither a pass nor a fail: two states that are not findings about a tab.
+      ".adm-g-nodata, .adm-g-unread, .adm-g-unknown, .adm-g-link { color: var(--text-muted); background: var(--surface-muted); }",
+      ".adm-vis { white-space:nowrap; }",
+      ".adm-visrow { flex-direction:column; align-items:stretch; gap:4px; }",
+      ".adm-vistitle { font-size:.82rem; color: var(--text-strong); margin-bottom:2px; }",
+      ".adm-visopt { display:block; padding:5px 8px; border:1px solid var(--border-soft, #d8d8d8); border-radius:6px; cursor:pointer; }",
+      ".adm-visopt.on { border-color: var(--navy-primary); background: var(--surface-muted); }",
+      ".adm-visname { font-size:.82rem; font-weight:600; color: var(--text-strong); }",
+      ".adm-visnote { display:block; font-size:.74rem; color: var(--text-muted); margin-left:1.35rem; }",
+      ".adm-g-unknown { color: var(--text-muted); background: var(--surface-muted); font-style:italic; }",
+      ".adm-note { font-size:.76rem; color: var(--text-muted); border-left:3px solid var(--border-strong); padding:4px 10px; margin:14px 0 0; }",
+      ".adm-soon { border:1px dashed var(--border-strong); border-radius:8px; background: var(--surface-subtle); padding:12px 14px; margin:14px 0 0; font-size:.84rem; color: var(--text-body); }",
+      ".adm-soon b { color: var(--navy-primary); }",
+      // ── Arrange (drag and drop) ──
+      ".adm-arrange { display:flex; flex-wrap:wrap; gap:12px; align-items:flex-start; }",
+      ".adm-col { flex:1 1 320px; min-width:280px; border:1px solid var(--border); border-radius:8px; background: var(--surface-opaque); }",
+      ".adm-col-head { display:flex; align-items:center; gap:8px; padding:7px 10px; border-bottom:1px solid var(--border); background: var(--surface-subtle); border-radius:8px 8px 0 0; }",
+      ".adm-col-head .t { font-size:.8rem; font-weight:700; color: var(--navy-primary); flex:1; }",
+      ".adm-col-body { padding:6px; min-height:44px; }",
+      // The drop target has to be obvious while a drag is in flight, or the
+      // whole interaction is guesswork.
+      ".adm-col.over { border-color: var(--seal-blue); box-shadow: 0 0 0 2px var(--brand-soft, rgba(29,78,216,.12)); }",
+      ".adm-item { display:flex; align-items:center; gap:8px; padding:5px 8px; margin:0 0 4px; border:1px solid var(--border); border-radius:6px; background: var(--surface-subtle); font-size:.8rem; cursor:grab; }",
+      ".adm-item:last-child { margin-bottom:0; }",
+      ".adm-item.dragging { opacity:.45; }",
+      ".adm-item .grip { color: var(--text-muted); font-size:.8rem; cursor:grab; user-select:none; }",
+      ".adm-item .nm { flex:1; color: var(--text-strong); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }",
+      /* Text chips, not glyphs. Sam, 2026-08-14 + again 2026-08-15: "I dislike
+       * the standard cheesy glyphs … prefer either simple text chips or muted
+       * monocolor glyphs." A word also survives being read aloud, which a
+       * pictogram does not — every one of these controls used to be an emoji
+       * whose meaning a new curator had to guess or hover for. */
+      ".adm-col-head .mini, .adm-item .mini { border:1px solid transparent; background:none; cursor:pointer; color: var(--text-muted); font-size:.7rem; padding:1px 6px; border-radius:10px; white-space:nowrap; font-family:inherit; }",
+      ".adm-col-head .mini:hover, .adm-item .mini:hover { background: var(--surface-muted); color: var(--text-strong); border-color: var(--border); }",
+      // Not a button: the action exists but cannot be taken right now, so it must
+      // not look pressable. Same word, no hover, no pointer.
+      ".adm-item .mini.adm-locked, .adm-col-head .mini.adm-locked { cursor:help; opacity:.6; }",
+      ".adm-item .mini.adm-locked:hover, .adm-col-head .mini.adm-locked:hover { background:none; color: var(--text-muted); border-color:transparent; }",
+      ".adm-item .adm-vis { border-color: var(--border); color: var(--text-body); }",
+      ".adm-item.hid { opacity:.55; }",
+      ".adm-item.hid .nm { text-decoration: line-through; }",
+      ".adm-item.prot { border-left:3px solid var(--mustard, #d9a800); }",
+      ".adm-drop { height:6px; margin:-2px 0 2px; border-radius:3px; }",
+      ".adm-drop.on { background: var(--seal-blue); }",
+      ".adm-editrow { display:flex; flex-wrap:wrap; gap:6px; align-items:center; padding:6px 8px; margin:0 0 4px; border:1px solid var(--seal-blue); border-radius:6px; background: var(--surface-opaque); }",
+      ".adm-editrow input[type=text] { flex:1 1 150px; padding:4px 8px; border:1px solid var(--border-strong); border-radius:5px; font-size:.8rem; background: var(--surface-opaque); color: var(--text-body); }",
+      ".adm-sitepick { display:flex; flex-wrap:wrap; gap:4px; }",
+      ".adm-sitepick label { font-size:.72rem; display:inline-flex; align-items:center; gap:3px; border:1px solid var(--border); border-radius:10px; padding:1px 7px; cursor:pointer; }",
+      ".adm-sitepick label.on { background: var(--surface-muted); border-color: var(--seal-blue); color: var(--text-strong); }",
+      ".adm-btnrow { display:flex; gap:6px; flex-wrap:wrap; margin:10px 0 0; align-items:center; }",
+      ".adm-btn { background: var(--surface-subtle); border:1px solid var(--border-strong); border-radius:5px; padding:4px 11px; cursor:pointer; color: var(--text-body); font-size:.78rem; }",
+      ".adm-btn:hover { background: var(--surface-muted); }",
+      ".adm-btn[disabled] { opacity:.5; cursor:default; }",
+      ".adm-btn-primary { background: var(--seal-blue); color:#fff; border-color: var(--seal-blue); font-weight:600; }",
+      ".adm-btn-primary:hover { background: var(--navy-secondary, #1c3d5a); }",
+      ".adm-dirty { font-size:.78rem; color: var(--brick, #8c2f22); font-weight:600; }",
+      ".adm-g-aud { color: var(--navy-primary); background: var(--surface-muted); font-weight:600; }",
+      ".adm-audnote { flex:1 1 100%; font-size:.75rem; color: var(--text-muted); margin-top:2px; }",
+      ".adm-audwarn { flex:1 1 100%; font-size:.75rem; color: var(--on-mustard); background: var(--mustard-fill, #f2dca0); border-radius:6px; padding:5px 9px; margin-top:2px; }",
+      ".adm-select { padding:3px 7px; border:1px solid var(--border-strong); border-radius:5px; font-size:.76rem; background: var(--surface-opaque); color: var(--text-body); }",
+      ".adm-saved { font-size:.78rem; color: var(--hunter, #2c601a); font-weight:600; }",
+      ".adm-addcat { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin:10px 0 4px; }",
+      ".adm-addcat input { padding:5px 9px; border:1px solid var(--border-strong); border-radius:6px; font-size:.82rem; background: var(--surface-opaque); color: var(--text-body); min-width:190px; }",
+    ].join("\n");
+    document.head.appendChild(el);
+  }
+
+  // ── Arrange section ──
+  function itemHtml(t, cid) {
+    var ov = window.CPL_NAV_OVERLAY;
+    var prot = !!ov.PROTECTED[t.tab];
+    var nav = navItems().filter(function (n) { return n.tab === t.tab; })[0];
+    var name = t.label != null ? t.label : (nav ? nav.label : t.tab);
+    if (state.editKey === "tab:" + t.tab) return itemEditor(t, cid, name);
+    if (state.editKey === "vis:" + t.tab) return visEditor(t, cid, name);
+
+    var h = '<div class="adm-item' + (t.hidden ? " hid" : "") + (prot ? " prot" : "") + '"'
+      + ' draggable="true" data-drag="tab:' + esc(t.tab) + '" data-cid="' + esc(cid) + '">'
+      + '<span class="grip" title="Drag to move it up or down, or into another heading.">⠿</span>'
+      + '<span class="nm" title="' + esc(t.tab) + '">' + esc(name) + "</span>";
+    // A launcher looks like every other row until you try to reason about it, so
+    // it says what it is. Its Rename box changes the MENU wording only — the
+    // page it opens is not ours to retitle from here.
+    if (nav && nav.link) {
+      h += '<span class="adm-g" title="Opens its own page in a new window rather than a page inside COBI'
+        + (nav.href ? " (" + esc(nav.href) + ")" : "") + ". Renaming it changes what the menu says, not "
+        + 'that page.">link</span>';
+    }
+    if (t.orgs && t.orgs.length) {
+      h += '<span class="adm-g" title="Only these sites show it: ' + esc(t.orgs.join(", ")) + '">'
+        + t.orgs.length + " site" + (t.orgs.length === 1 ? "" : "s") + "</span>";
+    }
+    if (t.pinned || (prot && t.tab === "admin")) {
+      h += '<span class="adm-g" title="Shows on every site. Picking a site in the Site dropdown '
+        + 'cannot take it away.">All sites</span>';
+    }
+    /* Protection, on every row. Two different questions sit next to each other
+     * here, so each chip says which one it answers: the visibility button is
+     * who SEES the menu item, this chip is what protects the DATA. Someone
+     * reaching for "hide" is exactly the person who needs to be told the two
+     * are not the same. */
+    var rg = rowGate(t.tab);
+    h += '<span class="adm-g adm-g-' + rg.id + '" title="Who can read the data behind this page: '
+      + esc(rg.hint) + ' Changing who sees the menu item does not change this.">'
+      + esc(rg.short || rg.label) + "</span>";
+    h += '<button class="mini" data-edit="tab:' + esc(t.tab)
+      + '" title="Change its name, or pick which sites show it.">Rename</button>';
+
+    // ONE control for who sees it — see the RUNGS note. It states the current
+    // setting in words rather than as a symbol, because a symbol-only toggle is
+    // what made "hide" look like an annotation.
+    var rung = rungOf(t);
+    var choices = rungsFor(t.tab);
+    if (!choices.length) {
+      h += '<span class="mini adm-locked" title="This one always shows. It is where the site sends anyone '
+        + 'whose link does not match a page, so it has to stay findable.">Always shown</span>';
+    } else {
+      h += '<button class="mini adm-vis" data-vis="' + esc(t.tab) + '" title="Who sees this in the menu: '
+        + esc(rung.label) + ". " + esc(rung.note) + ' Click to change.">Seen by: '
+        + esc(rung.short) + "</button>";
+    }
+    return h + "</div>";
+  }
+
+  /* The visibility ladder, opened from the row rather than buried in ✏️ — the
+   * hide affordance now ASKS who, which is what pressing it implied all along. */
+  function visEditor(t, cid, name) {
+    var cur = rungOf(t).id;
+    var choices = rungsFor(t.tab);
+    var h = '<div class="adm-editrow adm-visrow" data-cid="' + esc(cid) + '">'
+      + '<div class="adm-vistitle">Who sees <b>' + esc(name) + "</b> in the menu?</div>";
+    choices.forEach(function (r) {
+      h += '<label class="adm-visopt' + (cur === r.id ? " on" : "") + '">'
+        + '<input type="radio" name="vis-' + esc(t.tab) + '" data-visset="' + esc(t.tab)
+        + '" value="' + esc(r.id) + '"' + (cur === r.id ? " checked" : "") + "> "
+        + '<span class="adm-visname">' + esc(r.label) + "</span>"
+        + '<span class="adm-visnote">' + esc(r.note) + "</span></label>";
+    });
+    // The consequence, stated whatever is chosen — it used to appear only inside
+    // the warning, which fires on public-read tabs alone, so on most items the
+    // word "hides" never appeared while it applied to all of them.
+    h += "<div class=\"adm-audnote\">This <b>takes the item off the menu</b> for the people it excludes. "
+      + "If you only want to note that a team phrase is needed to make changes, leave this on "
+      + "<b>Everyone</b> — the page says so itself when they open it, and it stays findable meanwhile.</div>";
+    h += '<button class="adm-btn" data-editdone>Done</button>';
+
+    // Placed on the control, because narrowing the audience of a tab whose data
+    // anyone can read is the moment someone comes to believe they protected it.
+    if (cur !== "everyone") {
+      var rg = rowGate(t.tab);
+      if (rg.id === "open" || rg.id === "public" || rg.id === "view") {
+        h += '<div class="adm-audwarn"><b>Careful —</b> this takes the item off the menu, but the data behind '
+          + "it can still be <b>read by anyone</b> who opens the page directly. Locking it for real means "
+          + "changing its database rules. See the <b>Who can read it</b> column further down.</div>";
+      } else if (rg.id === "unknown" || rg.id === "unread") {
+        h += '<div class="adm-audwarn"><b>Careful —</b> this changes the menu only. We have not checked who '
+          + "can read the data behind this page, so treat it as unknown rather than locked.</div>";
+      }
+    }
+    return h + "</div>";
+  }
+
+  function itemEditor(t, cid, name) {
+    var orgs = (window.CPL_ORGS && window.CPL_ORGS.ORGS) || [];
+    var chosen = t.orgs || [];
+    var h = '<div class="adm-editrow" data-cid="' + esc(cid) + '">'
+      + '<input type="text" data-label-for="' + esc(t.tab) + '" maxlength="60" value="' + esc(name) + '" '
+      + 'aria-label="Menu label">'
+      + '<div class="adm-sitepick" title="Tick the sites that should show this item. Tick none to leave it '
+      + 'exactly as it behaves today.">';
+    orgs.forEach(function (o) {
+      var on = chosen.indexOf(o.id) !== -1;
+      h += '<label class="' + (on ? "on" : "") + '"><input type="checkbox" data-site="' + esc(o.id)
+        + '" data-site-tab="' + esc(t.tab) + '"' + (on ? " checked" : "") + "> " + esc(o.label) + "</label>";
+    });
+    h += "</div>"
+      + '<label class="adm-check" title="Show it on every site, whatever is ticked above."><input type="checkbox" '
+      + 'data-pin="' + esc(t.tab) + '"' + (t.pinned ? " checked" : "") + "> Show on every site</label>";
+
+    /* Who sees it is NOT here any more — it is the one visibility ladder on the
+     * row (see RUNGS). Two controls for one question is what let an audience be
+     * narrowed by someone who meant only to annotate, so this editor is now
+     * naming and placement alone. The pointer stays because the control moved. */
+    var rung = rungOf(t);
+    if (rungsFor(t.tab).length) {
+      h += '<div class="adm-audnote">Who sees this in the menu is set with the <b>Seen by: ' + esc(rung.short)
+        + "</b> button on the row — it is <b>" + esc(rung.label) + "</b> right now.</div>";
+    }
+    h += '<button class="adm-btn" data-editdone>Done</button>';
+    h += "</div>";
+    return h;
+  }
+
+  function renderArrange() {
+    var d = ensureDraft();
+    var h = "<h3>Arrange the menu</h3>";
+    if (!d) {
+      var ov0 = window.CPL_NAV_OVERLAY;
+      var stillReading = ov0 && typeof ov0.isLoaded === "function" && !ov0.isLoaded();
+      // Two different states, and telling them apart matters: one resolves by
+      // itself in a moment, the other never will.
+      return h + '<div class="adm-empty">' + (stillReading
+        ? "Reading the current menu… <span class=\"sub\">The editor opens once we have the live "
+          + "arrangement. It will not edit from a cached copy, because saving writes every setting back "
+          + "and a stale copy would quietly undo whatever changed since.</span>"
+        : "The menu could not be read for editing. The menu itself is unaffected — this is the editor, "
+          + "not the rail.") + "</div>";
+    }
+    h += '<p class="adm-intro">Drag an item to move it up or down, or into another heading. Drag a heading '
+      + "to move it and everything under it. <b>Nothing changes for anyone until you press Save.</b> "
+      + "These settings decide what people <b>see in the menu</b> — taking an item off the menu does not "
+      + "lock the data behind it.</p>";
+
+    h += '<div class="adm-arrange">';
+    d.containers.forEach(function (c, ci) {
+      h += '<div class="adm-col" data-drop-container="' + esc(c.id) + '">'
+        + '<div class="adm-col-head"' + (c.isTop ? "" : ' draggable="true" data-drag="group:' + esc(c.id) + '"') + ">"
+        + (c.isTop ? "" : '<span class="grip" title="Drag to move the whole group.">⠿</span>')
+        + '<span class="t">' + esc(c.label) + "</span>";
+      if (c.isTop) {
+        h += '<span class="sub" title="Items here sit at the top of the menu, above the headings. Dashboard '
+          + 'stays here so there is always somewhere to land.">top of the menu</span>';
+      } else {
+        h += '<button class="mini" data-edit="group:' + esc(c.id) + '" title="Change this heading&#39;s name.">'
+          + "Rename</button>"
+          + '<button class="mini" data-ghide="' + esc(c.id) + '" title="'
+          + (c.hidden ? "Put this heading and its items back on the menu."
+                      : "Take this heading and everything under it off the menu.") + '">'
+          + (c.hidden ? "Show" : "Hide") + "</button>";
+        /* Only a category the CURATOR made can be removed, and only while it is
+         * empty. A shipped group has no row to delete — it would simply come
+         * back — and emptying first is deliberate: deleting a full group would
+         * scatter its tabs to the top level, which looks like items going
+         * missing rather than a group being removed. */
+        if (c.custom) {
+          h += '<span class="adm-g" title="A heading you made. The ones that come with the site cannot be '
+            + 'removed.">yours</span>';
+          if (!c.tabs.length) {
+            h += '<button class="mini" data-gdel="' + esc(c.id) + '" title="Remove this heading. It is '
+              + 'empty, so nothing disappears from the menu.">Remove</button>';
+          } else {
+            h += '<span class="mini adm-locked" title="Move its ' + c.tabs.length + " item"
+              + (c.tabs.length === 1 ? "" : "s") + " somewhere else first. Removing a heading with items "
+              + 'still in it would scatter them to the top of the menu, which looks like they went '
+              + 'missing.">Remove</span>';
+          }
+        }
+      }
+      h += "</div>";
+      if (state.editKey === "group:" + c.id) {
+        h += '<div class="adm-editrow"><input type="text" data-glabel-for="' + esc(c.id) + '" maxlength="60" '
+          + 'value="' + esc(c.label) + '" aria-label="Group name">'
+          + '<button class="adm-btn" data-editdone>Done</button></div>';
+      }
+      h += '<div class="adm-col-body' + (c.hidden ? " hid" : "") + '">';
+      if (!c.tabs.length) {
+        h += '<div class="sub" style="padding:6px 4px">Nothing here yet — drag something in.</div>';
+      }
+      c.tabs.forEach(function (t) { h += itemHtml(t, c.id); });
+      h += "</div></div>";
+    });
+    h += "</div>";
+
+    // Adding a category is placed with the arrangement, not in the button row —
+    // it is an edit to the layout, not an action on the whole draft.
+    h += '<div class="adm-addcat"><input type="text" data-newcat maxlength="60" '
+      + 'placeholder="Name a new heading…" aria-label="New heading name">'
+      + '<button class="adm-btn" data-addcat>Add heading</button>'
+      + '<span class="sub">It appears at the bottom. Drag items into it, then Save.</span></div>';
+
+    h += '<div class="adm-btnrow">'
+      + '<button class="adm-btn adm-btn-primary" data-save' + (state.saving || !state.dirty ? " disabled" : "") + ">"
+      + (state.saving ? "Saving…" : "Save the menu") + "</button>"
+      + '<button class="adm-btn" data-discard' + (state.dirty ? "" : " disabled") + ">Undo my changes</button>"
+      + '<button class="adm-btn" data-resetall' + (state.saving ? " disabled" : "") + ' title="Throws away every '
+      + 'change ever made here and puts the menu back to how it came.">Start over</button>';
+    if (state.dirty) h += '<span class="adm-dirty">Not saved yet — nobody else sees this.</span>';
+    if (state.saveMsg) {
+      h += '<span class="' + (state.saveMsg.ok ? "adm-saved" : "adm-dirty") + '">' + esc(state.saveMsg.text) + "</span>";
+    }
+    h += "</div>";
+    h += '<p class="adm-note">Saving changes the menu for <b>everyone, straight away</b> — there is nothing to '
+      + "release. If the menu ever cannot load your arrangement it falls back to how the site came, so a bad "
+      + "save can never leave anyone without a menu. Every change records who made it and when.</p>";
+    return h;
+  }
+
+  // ── Render ──
+  // ── Blast Radius (Sam's Open Verdicts item 19, 2026-08-30: "blast away") ──
+  // The impact map's human face, ported from the S209 mock he approved: pick a
+  // dataset and see every tab, page, module, script and scheduled job touching
+  // it, who WRITES it, and whether the daily cron commits it straight to main
+  // (which Pages serves — so a bad value ships without review). Check here
+  // before a bulk write, a schema change, or a rename.
+  var BLAST_KINDS = [
+    ["all", "All"],
+    ["supabase", "Supabase tables"],
+    ["rpc", "RPCs"],
+    ["edgefn", "Edge functions"],
+    ["datajs", "Generated JS"],
+    ["file", "Files"],
+    ["external", "External services"],
+    ["other", "Other"]
+  ];
+  var BLAST_GROUP = {
+    supabase: "Supabase tables", rpc: "RPCs", edgefn: "Edge functions",
+    datajs: "Generated JS artifacts", file: "JSON, Excel and other files",
+    external: "External services", other: "Storage and inline data"
+  };
+  var BLAST_KIND_ORDER = { supabase: 0, rpc: 1, edgefn: 2, datajs: 3, file: 4, external: 5, other: 6 };
+  var BLAST_CONSUMER_ORDER = ["tab", "page", "module", "script", "workflow", "edgefn"];
+  function blastShort(id) { var i = String(id).indexOf(":"); return i > 0 ? String(id).slice(i + 1) : String(id); }
+  function blastKindOf(id) {
+    var i = String(id).indexOf(":");
+    var p = i > 0 ? String(id).slice(0, i) : "file";
+    if (p === "inline" || p === "storage") return "other";
+    if (p === "file") return /\.js$/.test(blastShort(id)) ? "datajs" : "file";
+    if (p === "supabase" || p === "rpc" || p === "edgefn" || p === "external") return p;
+    return "other";
+  }
+  // Served on GitHub Pages? Only file datasets can be, and the map records the
+  // NOT-served patterns rather than a served flag. When a pattern cannot be
+  // read, claim nothing — the missing "Public" chip is the safe direction.
+  function blastServed(id) {
+    var k = blastKindOf(id);
+    if (k !== "file" && k !== "datajs") return false;
+    var name = blastShort(id);
+    var pats = (state.blast.map && state.blast.map.not_served) || [];
+    for (var i = 0; i < pats.length; i++) {
+      var p = String(pats[i]);
+      try {
+        if (p === name || name.indexOf(p + "/") === 0) return false;
+        var rx = new RegExp("^" + p.split("*").map(function (s) {
+          return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+        }).join(".*") + "$");
+        if (rx.test(name)) return false;
+      } catch (e) { return false; }
+    }
+    return true;
+  }
+  function loadBlast() {
+    if (state.blast.load === "loading" || state.blast.load === "ok") return Promise.resolve();
+    state.blast.load = "loading";
+    // Promise.resolve() first, so a test stub that returns nothing for this
+    // URL lands in the catch as an honest error state instead of throwing
+    // through activate().
+    return Promise.resolve()
+      .then(function () { return fetch("kb/dependency_map.json", { cache: "no-store" }); })
+      .then(function (r) { if (!r || !r.ok) throw new Error("http"); return r.json(); })
+      .then(function (m) {
+        if (!m || !m.datasets) throw new Error("shape");
+        state.blast.map = m;
+        state.blast.load = "ok";
+      })
+      .catch(function () { state.blast.load = "error"; });
+  }
+  function blastRows() {
+    var b = state.blast;
+    if (!b.map) return [];
+    var q = String(b.q || "").toLowerCase();
+    var ids = Object.keys(b.map.datasets).filter(function (id) {
+      if (b.kind !== "all" && blastKindOf(id) !== b.kind) return false;
+      return blastShort(id).toLowerCase().indexOf(q) >= 0;
+    });
+    ids.sort(function (a, b2) {
+      var ka = BLAST_KIND_ORDER[blastKindOf(a)], kb = BLAST_KIND_ORDER[blastKindOf(b2)];
+      if (ka !== kb) return ka - kb;
+      return blastShort(a) < blastShort(b2) ? -1 : 1;
+    });
+    return ids;
+  }
+  function blastDetailHtml(id) {
+    var m = state.blast.map, d = m.datasets[id];
+    if (!d) return '<p class="adm-blast-empty">Pick a dataset from the list.</p>';
+    var cons = d.consumers || [];
+    var surfaces = {}, writers = {}, tabsTouched = {}, tabWrites = {};
+    cons.forEach(function (c) {
+      surfaces[c.id] = 1;
+      if (c.direction === "write") writers[c.id] = 1;
+      (c.tabs || []).forEach(function (t) {
+        tabsTouched[t] = 1;
+        if (c.direction === "write") tabWrites[t] = 1;
+      });
+      if (c.kind === "tab") {
+        tabsTouched[blastShort(c.id)] = 1;
+        if (c.direction === "write") tabWrites[blastShort(c.id)] = 1;
+      }
+    });
+    var nSurf = Object.keys(surfaces).length, nW = Object.keys(writers).length;
+    var chips = '<span class="adm-blast-chip">' + esc(BLAST_GROUP[blastKindOf(id)]) + "</span>";
+    if (blastServed(id)) chips += '<span class="adm-blast-chip public">Public on GitHub Pages</span>';
+    var h = '<div class="adm-blast-chips">' + chips + "</div>" +
+      '<h4 class="adm-blast-name">' + esc(blastShort(id)) + "</h4>" +
+      '<p class="adm-blast-sum">Consumed by ' + nSurf + " surface" + (nSurf === 1 ? "" : "s") +
+      (nW ? " — <b>" + nW + " of them write" + (nW === 1 ? "s" : "") + "</b>." : " — none of them write.") + "</p>";
+    var mainBy = d.main_committers || [];
+    if (mainBy.length) {
+      h += '<p class="adm-blast-strip"><b>Bypasses pull requests.</b> Committed directly to main by ' +
+        mainBy.map(function (x) { return esc(blastShort(x)); }).join(", ") +
+        " — and GitHub Pages serves from main, so a bad value ships without review.</p>";
+    }
+    (m.stale_risk || []).forEach(function (r) {
+      if (String(r).indexOf(blastShort(id)) === 0) {
+        h += '<p class="adm-blast-strip caution"><b>Stale-copy risk.</b> ' + esc(r) + ".</p>";
+      }
+    });
+    var tabs = Object.keys(tabsTouched).sort();
+    if (tabs.length) {
+      h += '<h5 class="adm-blast-sec">Tabs that touch it</h5><ul class="adm-blast-cons">' +
+        tabs.map(function (t) {
+          return "<li>" + esc(t) + (tabWrites[t] ? ' <span class="w">writes</span>' : "") + "</li>";
+        }).join("") + "</ul>";
+    }
+    var kinds = BLAST_CONSUMER_ORDER.concat(["other"]);
+    kinds.forEach(function (gk) {
+      var items = [], seen = {};
+      cons.forEach(function (c) {
+        var ck = BLAST_CONSUMER_ORDER.indexOf(c.kind) >= 0 ? c.kind : "other";
+        if (ck !== gk) return;
+        if (!seen[c.id]) { seen[c.id] = { name: blastShort(c.id), write: false }; items.push(seen[c.id]); }
+        if (c.direction === "write") seen[c.id].write = true;
+      });
+      if (!items.length) return;
+      var label = gk === "tab" ? "Tabs" : gk === "page" ? "Pages" : gk === "module" ? "Modules"
+        : gk === "script" ? "Scripts" : gk === "workflow" ? "Workflows"
+        : gk === "edgefn" ? "Edge functions" : "Other consumers";
+      h += '<h5 class="adm-blast-sec">' + label + '</h5><ul class="adm-blast-cons">' +
+        items.map(function (it) {
+          return "<li>" + esc(it.name) + (it.write ? ' <span class="w">writes</span>' : "") + "</li>";
+        }).join("") + "</ul>";
+    });
+    if ((d.producers || []).length) {
+      h += '<h5 class="adm-blast-sec">Produced by</h5><ul class="adm-blast-cons">' +
+        d.producers.map(function (p) {
+          var by = p && p.by != null ? p.by : p;
+          return "<li>" + esc(blastShort(String(by))) +
+            (p && p.how ? ' <span class="adm-blast-how">' + esc(String(p.how)) + "</span>" : "") + "</li>";
+        }).join("") + "</ul>";
+    }
+    return h;
+  }
+  function blastShellHtml() {
+    return '<h3>Blast Radius</h3>' +
+      '<p class="adm-intro">Pick a dataset and see everything that consumes it — tabs, pages, scripts, ' +
+      "workflows — with who writes it and whether the daily cron commits it straight to main. Check here " +
+      "before a bulk write, a schema change, or a rename. Read live from the impact map " +
+      "(<code>kb/dependency_map.json</code>, derived from the code and drift-checked in CI).</p>" +
+      '<div id="admBlast"></div>';
+  }
+  function renderBlast() {
+    var host = document.getElementById("admBlast");
+    if (!host) return;
+    var b = state.blast;
+    if (b.load === "idle" || b.load === "loading") {
+      host.innerHTML = '<div class="adm-empty">Loading the impact map…</div>';
+      return;
+    }
+    if (b.load === "error" || !b.map) {
+      host.innerHTML = '<div class="adm-empty">Could not load the impact map — no list rather than a stale ' +
+        "copy. Re-open the tab to try again; the map itself lives at <code>kb/dependency_map.json</code>.</div>";
+      return;
+    }
+    if (!b.sel || !b.map.datasets[b.sel]) {
+      var first = blastRows()[0];
+      b.sel = first || null;
+    }
+    var kindsBar = BLAST_KINDS.map(function (k) {
+      return '<button type="button" class="adm-blast-kind" data-blastkind="' + k[0] + '" aria-pressed="' +
+        (b.kind === k[0]) + '">' + k[1] + "</button>";
+    }).join("");
+    var ids = blastRows(), listH = "", lastGrp = "";
+    ids.forEach(function (id) {
+      var g = BLAST_GROUP[blastKindOf(id)];
+      if (g !== lastGrp) { listH += '<div class="adm-blast-grp">' + esc(g) + "</div>"; lastGrp = g; }
+      var n = (b.map.datasets[id].consumers || []).length;
+      listH += '<button type="button" class="adm-blast-ds" data-blastid="' + esc(id) + '" aria-pressed="' +
+        (b.sel === id) + '"><span class="n">' + esc(blastShort(id)) + '</span><span class="c">' + n + "</span></button>";
+    });
+    if (!listH) listH = '<p class="adm-blast-empty" style="padding:.6rem">Nothing matches. Clear the search or pick another kind.</p>';
+    var s = b.map.stats || {};
+    host.innerHTML =
+      '<div class="adm-blast-bar"><input type="search" class="adm-input" data-blastq placeholder="Search datasets" ' +
+        'aria-label="Search datasets" value="' + esc(b.q) + '">' +
+        '<div class="adm-blast-kinds" role="group" aria-label="Filter by dataset kind">' + kindsBar + "</div></div>" +
+      '<div class="adm-blast-panes">' +
+        '<nav class="adm-blast-list" aria-label="Datasets">' + listH + "</nav>" +
+        '<section class="adm-blast-card" aria-label="Selected dataset">' + blastDetailHtml(b.sel) + "</section>" +
+      "</div>" +
+      '<p class="adm-blast-foot">Coverage: ' + esc(String(s.supabase_tables || 0)) + " Supabase tables · " +
+        esc(String(s.rpcs || 0)) + " RPCs · " + esc(String(s.edge_functions || 0)) + " edge functions · " +
+        esc(String(s.file_datasets || 0)) + " file datasets · " + esc(String(s.workflows || 0)) +
+        " workflows · " + esc(String(s.tabs || 0)) + " tabs. Regenerate with " +
+        "<code>python3 kb/_build_dependency_map.py</code>.</p>";
+    var q = host.querySelector("[data-blastq]");
+    if (q) q.addEventListener("input", function () {
+      state.blast.q = q.value;
+      renderBlast();
+      var again = document.querySelector("[data-blastq]");
+      if (again) { again.focus(); again.setSelectionRange(again.value.length, again.value.length); }
+    });
+    host.querySelectorAll("[data-blastkind]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        state.blast.kind = btn.getAttribute("data-blastkind");
+        renderBlast();
+      });
+    });
+    host.querySelectorAll("[data-blastid]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        state.blast.sel = btn.getAttribute("data-blastid");
+        renderBlast();
+      });
+    });
+  }
+
+  /* ── DR-26: the live-session banner control ─────────────────────────────────
+   * Sam, 2026-09-08. He sets a Claude Code session's visibility to Team in
+   * claude.ai, then turns the banner on here rather than asking a session to
+   * write the row for him.
+   *
+   * ⚠️ THIS DOES NOT SHARE THE SESSION AND CANNOT. Visibility is a claude.ai
+   * control on the session itself; nothing in COBI can reach it. So the copy
+   * says so at the point of use, because the failure this guards against is
+   * turning the banner on for a session that is still Private and sending the
+   * whole organization at a link only its author can open.
+   *
+   * The table refuses an active row with no link and refuses any link that is
+   * not a claude.ai session, so a slip here is caught server-side too. */
+  var LIVE_REST = REST + "/cobi_live_session";
+  var liveRow = null;
+
+  function liveHtml() {
+    var on = !!(liveRow && liveRow.active);
+    var url = (liveRow && liveRow.session_url) || "";
+    var exp = liveRow && liveRow.expires_at ? new Date(liveRow.expires_at) : null;
+    var live = on && (!exp || exp.getTime() > Date.now());
+    // Absent on a row written before the column existed: treat that as ON, which
+    // is the column default, so the panel never claims a preference nobody set.
+    var auto = !liveRow || liveRow.auto_announce !== false;
+    return '<section class="adm-live"><h3>Live-session banner</h3>'
+      + '<p class="adm-live-note">Puts a line at the top of every COBI page saying you are working in '
+      + 'Claude Code, with a link to the session. <b>Set the session to Team visibility in claude.ai '
+      + 'first</b> — this control announces a session, it cannot share one.</p>'
+      + '<p class="adm-live-state">Now: <b>' + (live ? "showing" : "not showing") + '</b>'
+      + (on && exp && exp.getTime() <= Date.now() ? ' <span class="adm-live-note">(the link expired)</span>' : '')
+      + (live && exp ? ' <span class="adm-live-note">until ' + esc(exp.toLocaleString()) + '</span>' : '')
+      + '</p>'
+      + '<label class="adm-live-lbl" for="adm-live-url">Session link</label>'
+      + '<input id="adm-live-url" class="adm-live-url" type="url" spellcheck="false" '
+      + 'placeholder="https://claude.ai/code/session_..." value="' + esc(url) + '">'
+      + '<label class="adm-live-lbl" for="adm-live-hours">Show for</label>'
+      + '<select id="adm-live-hours" class="adm-live-hours">'
+      + '<option value="2">2 hours</option><option value="4" selected>4 hours</option>'
+      + '<option value="8">8 hours</option></select>'
+      + '<label class="adm-live-auto"><input type="checkbox" id="adm-live-auto"'
+      + (auto ? ' checked' : '') + '> Announce my sessions automatically</label>'
+      + '<p class="adm-live-note adm-live-autonote">On by default. A Claude Code session '
+      + 'sets this banner when it starts, so you do not have to. '
+      + '<b>It cannot tell whether you have shared the session</b> \u2014 nothing exposes that \u2014 '
+      + 'so if you have not set it to Team visibility, the team sees a link that will not '
+      + 'open for them. Untick to go back to setting the banner by hand.</p>'
+      + '<div class="adm-live-btns">'
+      + '<button type="button" class="adm-btn" id="adm-live-on">Show the banner</button>'
+      + '<button type="button" class="adm-btn" id="adm-live-off">Hide it</button>'
+      + '</div><p class="adm-live-msg" id="adm-live-msg" role="status"></p></section>';
+  }
+
+  function loadLive(done) {
+    fetch(LIVE_REST + "?id=eq.1&select=active,session_url,expires_at,auto_announce", { headers: authHeaders() })
+      .then(function (r) { return r.ok ? r.json() : []; })
+      .then(function (rows) { liveRow = (rows && rows[0]) || null; if (done) done(); })
+      .catch(function () { if (done) done(); });
+  }
+
+  function saveLive(on, root) {
+    var msg = root.querySelector("#adm-live-msg");
+    var url = (root.querySelector("#adm-live-url") || {}).value || "";
+    var hrs = parseInt((root.querySelector("#adm-live-hours") || {}).value || "4", 10);
+    url = url.trim();
+    // Said here as well as enforced in the table: the reader gets the reason,
+    // not a rejected request.
+    if (on && !/^https:\/\/claude\.ai\/code\/[A-Za-z0-9_-]+/.test(url)) {
+      if (msg) msg.textContent = "That is not a claude.ai session link. Copy it from the session's address bar.";
+      return;
+    }
+    var body = on
+      ? { active: true, session_url: url, updated_by: "admin-tab",
+          expires_at: new Date(Date.now() + hrs * 3600000).toISOString() }
+      : { active: false, session_url: null, expires_at: null, updated_by: "admin-tab" };
+    if (msg) msg.textContent = "Saving…";
+    fetch(LIVE_REST + "?id=eq.1", {
+      method: "PATCH",
+      headers: Object.assign({ "Content-Type": "application/json", Prefer: "return=representation" }, authHeaders()),
+      body: JSON.stringify(body)
+    }).then(function (r) {
+      if (!r.ok) throw new Error(String(r.status));
+      return r.json();
+    }).then(function (rows) {
+      liveRow = (rows && rows[0]) || null;
+      if (msg) msg.textContent = on
+        ? "Showing. Anyone on COBI sees it — check the session is set to Team visibility."
+        : "Hidden.";
+      var host = root.querySelector(".adm-live");
+      if (host) { host.outerHTML = liveHtml(); wireLive(root); }
+    }).catch(function (e) {
+      if (msg) msg.textContent = "Could not save (" + e.message + "). Sign in on this tab and try again.";
+    });
+  }
+
+  /* The opt-out is a PREFERENCE, not a show/hide, so it saves on its own rather
+   * than riding saveLive(): ticking it must not also re-announce a stale link,
+   * and unticking it must not take the current banner down. */
+  function saveAutoAnnounce(want, root) {
+    var msg = root.querySelector("#adm-live-msg");
+    if (msg) msg.textContent = "Saving\u2026";
+    fetch(LIVE_REST + "?id=eq.1", {
+      method: "PATCH",
+      headers: Object.assign({ "Content-Type": "application/json", Prefer: "return=representation" }, authHeaders()),
+      body: JSON.stringify({ auto_announce: !!want, updated_by: "admin-tab" })
+    }).then(function (r) {
+      if (!r.ok) throw new Error(String(r.status));
+      return r.json();
+    }).then(function (rows) {
+      if (rows && rows[0]) liveRow = rows[0];
+      if (msg) {
+        msg.textContent = want
+          ? "On. Sessions will announce themselves \u2014 remember to set each one to Team visibility, or the link will not open for the team."
+          : "Off. The banner only appears when you set it here.";
+      }
+    }).catch(function (e) {
+      // Put the box back where the row actually is, or it lies about a save
+      // that did not happen.
+      var box = root.querySelector("#adm-live-auto");
+      if (box) box.checked = !want;
+      if (msg) msg.textContent = "Could not save that (" + e.message + ").";
+    });
+  }
+
+  function wireLive(root) {
+    var on = root.querySelector("#adm-live-on"), off = root.querySelector("#adm-live-off");
+    if (on) on.onclick = function () { saveLive(true, root); };
+    if (off) off.onclick = function () { saveLive(false, root); };
+    var auto = root.querySelector("#adm-live-auto");
+    if (auto) auto.onchange = function () { saveAutoAnnounce(auto.checked, root); };
+  }
+
+  function render(root) {
+    ensureCss();
+    var h = '<div class="adm">';
+    h += '<h2>Admin <span class="adm-chip">Reviewer only</span></h2>';
+    h += '<p class="adm-intro">One place to run the COBI side menu — what each item is called, where it sits, '
+      + "which sites show it, and who sees it. Beside all that, in the last column, is a separate question: "
+      + "who can actually read the information behind it.</p>";
+
+    // Said once, plainly, at the top. This is the whole reason the two halves
+    // share a table rather than living on separate screens.
+    h += '<div class="adm-warn"><b>Taking something off the menu does not lock it.</b> The menu decides what '
+      + "people <i>see</i>. What stops someone reading the information is the database's own rules, shown in "
+      + "the last column and checked live every time you open this tab. An item can be off the menu on every "
+      + "site and still be readable by anyone who has the link.</div>";
+
+    if (state.loadState === "loading") { h += '<div class="adm-empty">Loading…</div></div>'; root.innerHTML = h; return; }
+    if (state.loadState === "signedout") {
+      // Sign in RIGHT HERE. This used to read "Sign in with a magic link on the
+      // Team & RACI tab … then re-open this tab" — and RACI's magic-link box had
+      // been removed, leaving its signIn() with no caller, so the instruction
+      // could not be followed at all (Sam, 2026-08-14). Sending someone to
+      // another tab for a credential is the same bounce team_phrase_header.js
+      // was built to end; the same control also sits in the About menu, so it is
+      // reachable from every tab, not only this one.
+      h += '<div class="adm-empty"><b>Admin needs a personal sign-in.</b><br>The shared '
+        + "team phrase does not open Admin — someone who could re-scope what other phrase holders see would be "
+        + "a wider power than the phrase is meant to carry. Sign in below, or from "
+        + "<b>ℹ About</b> in the header.<div class=\"adm-signin\"></div></div></div>";
+      root.innerHTML = h;
+      // Mount the SHARED control (reviewer_signin.js) rather than re-implementing
+      // a second sign-in box that could drift from it.
+      try {
+        var host = root.querySelector(".adm-signin");
+        if (host && window.CPL_REVIEWER_SIGNIN) {
+          window.CPL_REVIEWER_SIGNIN.mountInto(host, { title: "Sign in", returnTab: "admin" });
+        }
+      } catch (e) { /* the message above still stands on its own */ }
+      return;
+    }
+    if (state.loadState === "notreviewer") {
+      h += '<div class="adm-empty"><b>Signed in, but not as a reviewer.</b><br>Your address is not on the '
+        + "reviewer list, so the database returns nothing here. This is a closed door, not an empty system — "
+        + "the menu and its protections are all in place. Ask an existing reviewer to add you.</div></div>";
+      root.innerHTML = h; return;
+    }
+    if (state.loadState === "error") {
+      h += '<div class="adm-empty">Could not read the database rules (' + esc(state.error) + "). "
+        + "This does <b>not</b> mean nothing is protected — it means this page could not check. Re-open the "
+        + "tab to try again.</div></div>";
+      root.innerHTML = h; return;
+    }
+
+    var items = navItems();
+    var surf = surface();
+
+    // ── Summary ──
+    var counts = {};
+    var unmapped = 0;
+    items.forEach(function (it) {
+      // A launcher is not an unchecked page — it is not a page here at all. The
+      // surface scan maps tabs to tables and has never heard of one, so counting
+      // it would have added two to "Not checked yet" the day Share became
+      // visible: a number going up because we started SHOWING something is the
+      // worst kind of false finding.
+      if (it.link) return;
+      var g = tabGate(it.tab);
+      if (!g.measured) { unmapped++; return; }
+      if (!g.gate) return;                       // measured, touches no data
+      counts[g.gate.id] = (counts[g.gate.id] || 0) + 1;
+    });
+    var tableCount = state.gates ? Object.keys(state.gates).length : 0;
+    var openTables = 0, serverTables = 0;
+    if (state.gates) {
+      Object.keys(state.gates).forEach(function (t) {
+        var c = classify(state.gates[t]);
+        if (c.id === "open" || c.id === "public") openTables++;
+        if (c.id === "server") serverTables++;
+      });
+    }
+    h += '<div class="adm-stat">'
+      + '<div class="box" title="How many items are in the side menu right now. Counted from the menu itself, '
+      + 'so it cannot go out of date."><div class="n">'
+      + items.length + '</div><div class="l">Menu items</div></div>'
+      + '<div class="box" title="How many sites are in the Site dropdown at the top. One menu item can appear '
+      + 'on several of them."><div class="n">'
+      + ((window.CPL_ORGS && window.CPL_ORGS.ORGS) ? window.CPL_ORGS.ORGS.length : "?") + '</div><div class="l">Sites</div></div>'
+      + '<div class="box" title="How many tables of information the site keeps, each with its access rules '
+      + 'checked live just now."><div class="n">'
+      + tableCount + '</div><div class="l">Tables</div></div>'
+      + '<div class="box" title="Tables anyone who opens the page can read. Right for things we publish on '
+      + 'purpose — worth a second look for anything else."><div class="n">'
+      + openTables + '</div><div class="l">Anyone can read</div></div>'
+      + '<div class="box" title="Tables nothing can read through the website at all — only our own scheduled '
+      + 'jobs, which hold a separate key."><div class="n">'
+      + serverTables + '</div><div class="l">Our jobs only</div></div>'
+      + '<div class="box" title="Menu items where we have not worked out which tables they use. Their access '
+      + 'rules are unknown — which is not the same as none."><div class="n">'
+      + unmapped + '</div><div class="l">Not checked yet</div></div>'
+      + "</div>";
+
+    // ── Section 1: arrange the menu ──
+    // FIRST on the page, deliberately. It was shipped last, below a 36-row table
+    // and the protections table, and Sam's immediate report was "can't see how to
+    // drag and drop" — correctly, because it was two screens down. The tab's
+    // PRIMARY action belongs above its reference material; the inventory is what
+    // you consult, this is what you came to do.
+    h += renderArrange();
+
+    // ── Section 2: the menu inventory ──
+    h += "<h3>Every menu item, and what protects it</h3>";
+    var q = state.q.trim().toLowerCase();
+    var rows = items.filter(function (it) {
+      if (q && (it.label + " " + it.tab + " " + it.group).toLowerCase().indexOf(q) === -1) return false;
+      if (!state.showAll) {
+        var g = tabGate(it.tab);
+        // Default view hides tabs that touch no data AND are fully mapped —
+        // there is nothing to say about them here. Anything unmapped, or
+        // reaching data through a function, STAYS visible: "we don't know" is
+        // the row worth looking at, and hiding it is the false clean bill.
+        if (g.measured && !g.gate && !g.rpcOnly) return false;
+      }
+      return true;
+    });
+    h += '<div class="adm-toolbar">'
+      + '<input class="adm-input" data-q placeholder="Search by name or heading" value="' + esc(state.q) + '">'
+      + '<label class="adm-check" title="Also list the pages that do not use any stored information — plain '
+      + 'pages and built-in reports. They are left out by default because there is nothing to protect.">'
+      + '<input type="checkbox" data-showall' + (state.showAll ? " checked" : "") + "> show pages with no stored information</label>"
+      + '<span class="adm-count">' + rows.length + " of " + items.length + "</span>"
+      + "</div>";
+
+    h += '<div class="adm-tablewrap"><table class="adm-table">'
+      + "<colgroup><col style=\"width:24%\"><col style=\"width:17%\"><col style=\"width:22%\">"
+      + "<col style=\"width:16%\"><col style=\"width:21%\"></colgroup>"
+      + "<thead><tr>"
+      + '<th title="What it is called in the side menu right now.">Menu item</th>'
+      + '<th title="The heading it sits under. Blank means it sits at the top of the menu.">Heading</th>'
+      + '<th title="Which sites show it. This decides what people see, nothing more.">Shown on</th>'
+      + '<th title="How many tables of stored information this page uses.">Uses</th>'
+      + '<th class="gatecol" title="Who can read that information, checked live in the database just now. '
+      + 'This is the only column here that actually stops anyone.">Who can read it</th>'
+      + "</tr></thead><tbody>";
+
+    if (!rows.length) {
+      h += '<tr><td colspan="5" class="sub">Nothing matches that filter.</td></tr>';
+    }
+    rows.forEach(function (it) {
+      var g = tabGate(it.tab);
+      var st = sitesFor(it.tab, it.link);
+      var siteTxt = st
+        ? (st.always ? "Every site" : (st.sites.length ? st.sites.join(", ") : "None"))
+        : "unknown";
+      var siteTitle = st
+        ? (st.always
+            ? "Shows on every site. It manages the sites, so picking one cannot take it away."
+            : (st.link
+                ? "A link out, so it shows on every site unless you pick sites for it here."
+                : st.exclusive
+                  ? "Kept out of the normal menu — it appears only when its own site is picked."
+                  : st.sites.length + " of " + st.total + " sites"))
+        : "";
+      var gate = g.gate;
+      var gateTxt, gateCls, gateTitle;
+      if (it.link) {
+        var lg = gateById("link");
+        gateTxt = lg.label; gateCls = lg.id;
+        gateTitle = lg.hint + (it.href ? "\n\nOpens: " + it.href : "");
+      } else if (g.rpcOnly) {
+        gateTxt = "Not checked"; gateCls = "unknown";
+        gateTitle = "This page gets its information through built-in database routines (" + g.rpcs.join(", ")
+          + ") rather than reading tables directly. Each routine carries its own rules inside it, which this "
+          + "page does not read — so who can read it is unknown here, not nobody.";
+      } else if (!g.measured) {
+        gateTxt = "Not checked"; gateCls = "unknown"; gateTitle = gateById("unknown").hint;
+      } else if (!gate) {
+        gateTxt = "No stored information"; gateCls = "unknown";
+        gateTitle = "This page does not read or write any stored information — it is a plain page or a built-in report.";
+      } else {
+        gateTxt = gate.label; gateCls = gate.id;
+        gateTitle = gate.hint + (g.tables.length > 1
+          ? "\n\nThis shows the LEAST protected of the " + g.tables.length + " tables it uses: " + g.tables.join(", ")
+          : "\n\nTable: " + g.tables.join(", "));
+      }
+      h += "<tr>"
+        + '<td><span class="nm adm-trunc" title="' + esc(it.label) + '">' + esc(it.label) + "</span>"
+        + '<span class="sub adm-trunc">' + esc(it.tab) + "</span></td>"
+        + '<td><span class="adm-trunc sub" title="' + esc(it.group || "Top level") + '">'
+        + esc(it.group || "— top level —") + "</span></td>"
+        + '<td><span class="adm-trunc" title="' + esc(siteTitle) + '">' + esc(siteTxt) + "</span></td>"
+        + '<td><span class="sub">' + (it.link ? "—" : g.measured
+            ? (g.tables.length
+                ? g.tables.length + " table" + (g.tables.length === 1 ? "" : "s")
+                : (g.rpcs.length ? g.rpcs.length + " function" + (g.rpcs.length === 1 ? "" : "s") : "none"))
+            : "unknown") + "</span></td>"
+        + '<td class="gatecol"><span class="adm-g adm-g-' + gateCls + '" title="' + esc(gateTitle) + '">'
+        + esc(gateTxt) + "</span></td>"
+        + "</tr>";
+    });
+    h += "</tbody></table></div>";
+
+    if (unmapped) {
+      h += '<p class="adm-note"><b>We have not checked ' + unmapped + " menu item"
+        + (unmapped === 1 ? "" : "s") + ".</b> Those are built by the page itself, or by code shared across "
+        + "several pages, so the automatic check cannot tell which information belongs to which page. Who can "
+        + "read them is <b>unknown</b>, not nobody — a blank here is not a clean bill of health.</p>";
+    }
+
+    // ── Section 3: what the gates mean ──
+    h += "<h3>What each of these means</h3>";
+    h += '<div class="adm-tablewrap"><table class="adm-table">'
+      + "<colgroup><col style=\"width:20%\"><col style=\"width:12%\"><col style=\"width:68%\"></colgroup>"
+      + "<thead><tr><th>Who can read it</th><th>Tables</th><th>What that means</th></tr></thead><tbody>";
+    var seen = {};
+    GATES.forEach(function (gt) {
+      if (gt.id === "unknown" || seen[gt.label + gt.id]) return;
+      var n = 0;
+      if (state.gates) {
+        Object.keys(state.gates).forEach(function (t) { if (classify(state.gates[t]).id === gt.id) n++; });
+      }
+      if (!n) return;
+      h += "<tr><td><span class=\"adm-g adm-g-" + gt.id + '">' + esc(gt.label) + "</span></td>"
+        + '<td class="sub">' + n + "</td>"
+        + '<td class="sub">' + esc(gt.hint) + "</td></tr>";
+    });
+    h += "</tbody></table></div>";
+
+    h += '<p class="adm-note">Admin shows on every site, because it is what manages them — picking a site '
+      + "cannot hide the page you need in order to fix that site. The phrases themselves stay on their own "
+      + "<b>Team Phrases</b> page, which everyone can see even though only a signed-in reviewer can read what "
+      + "is on it. Folding it in here would hide the fact that the phrases exist from the people who most need "
+      + "to know they do.</p>";
+
+    h += liveHtml();
+    h += blastShellHtml();
+
+    h += "</div>";
+    root.innerHTML = h;
+    wire(root);
+    wireLive(root);
+    renderBlast();
+    // Repaint the one section once the live row lands, rather than blocking the
+    // whole tab on a read it does not need.
+    loadLive(function () {
+      var host = root.querySelector(".adm-live");
+      if (host) { host.outerHTML = liveHtml(); wireLive(root); }
+    });
+  }
+
+  function wire(root) {
+    var q = root.querySelector("[data-q]");
+    if (q) q.addEventListener("input", function () {
+      state.q = q.value;
+      render(root);
+      // Re-focus and restore the caret: render() rewrites innerHTML, so without
+      // this the box loses focus on the first keystroke and the filter is
+      // unusable.
+      var again = root.querySelector("[data-q]");
+      if (again) { again.focus(); again.setSelectionRange(again.value.length, again.value.length); }
+    });
+    var all = root.querySelector("[data-showall]");
+    if (all) all.addEventListener("change", function () { state.showAll = all.checked; render(root); });
+
+    wireArrange(root);
+  }
+
+  function wireArrange(root) {
+    var d = state.draft;
+    if (!d) return;
+    function touch() { state.dirty = true; state.saveMsg = null; }
+
+    // ── Drag and drop ──
+    // HTML5 DnD, with the payload also held in state: dataTransfer is
+    // unreadable during dragover in several browsers, and the drop target has to
+    // know whether it is accepting a tab or a group before the drop lands.
+    root.querySelectorAll("[data-drag]").forEach(function (el) {
+      el.addEventListener("dragstart", function (e) {
+        state.dragKey = el.getAttribute("data-drag");
+        el.classList.add("dragging");
+        try { e.dataTransfer.setData("text/plain", state.dragKey); e.dataTransfer.effectAllowed = "move"; } catch (x) {}
+      });
+      el.addEventListener("dragend", function () {
+        state.dragKey = null;
+        el.classList.remove("dragging");
+      });
+    });
+
+    root.querySelectorAll("[data-drop-container]").forEach(function (col) {
+      col.addEventListener("dragover", function (e) {
+        if (!state.dragKey) return;
+        e.preventDefault();
+        try { e.dataTransfer.dropEffect = "move"; } catch (x) {}
+        col.classList.add("over");
+      });
+      col.addEventListener("dragleave", function () { col.classList.remove("over"); });
+      col.addEventListener("drop", function (e) {
+        e.preventDefault();
+        col.classList.remove("over");
+        var key = state.dragKey || (function () { try { return e.dataTransfer.getData("text/plain"); } catch (x) { return null; } })();
+        if (!key) return;
+        var cid = col.getAttribute("data-drop-container");
+
+        if (key.indexOf("group:") === 0) {
+          // A group dropped onto a container moves it to that container's slot.
+          var gid = key.slice(6);
+          var idx = 0;
+          d.containers.forEach(function (c, i) { if (c.id === cid) idx = i; });
+          if (moveContainer(d, gid, idx)) touch();
+          render(root);
+          return;
+        }
+        var tab = key.slice(4);
+        // Drop position = the item it was dropped on, else the end.
+        var body = col.querySelector(".adm-col-body");
+        var index = body ? body.querySelectorAll("[data-drag^='tab:']").length : 0;
+        var over = e.target && e.target.closest ? e.target.closest("[data-drag^='tab:']") : null;
+        if (over) {
+          var siblings = body ? Array.prototype.slice.call(body.querySelectorAll("[data-drag^='tab:']")) : [];
+          index = Math.max(0, siblings.indexOf(over));
+        }
+        if (moveTab(d, tab, cid, index)) touch();
+        else if (window.CPL_NAV_OVERLAY.GROUP_LOCKED[tab]) {
+          alert("Dashboard has to stay at the top of the menu.\n\nIt is where the site sends anyone whose link "
+            + "does not match a page. That has to be one click away, not inside a heading someone has closed.");
+        }
+        render(root);
+      });
+    });
+
+    // ── Per-item controls ──
+    // Opening the ladder is NOT a change: pressing the visibility button used to
+    // toggle `hidden` on the spot, which is the behaviour Sam read as an
+    // annotation. It now asks, and nothing is dirty until a rung is picked.
+    root.querySelectorAll("[data-vis]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        state.editKey = "vis:" + b.getAttribute("data-vis");
+        render(root);
+      });
+    });
+    root.querySelectorAll("[data-visset]").forEach(function (r) {
+      r.addEventListener("change", function () {
+        var f = findTab(d, r.getAttribute("data-visset"));
+        if (!f || !r.checked) return;
+        // Re-check the protection list at the point of the write. The editor
+        // only offers permitted rungs, but this is the half that runs — and the
+        // overlay guards the same rule again below it.
+        var allowed = rungsFor(f.item.tab).some(function (x) { return x.id === r.value; });
+        if (!allowed) return;
+        applyRung(f.item, r.value);
+        touch(); render(root);
+      });
+    });
+    root.querySelectorAll("[data-ghide]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var id = b.getAttribute("data-ghide");
+        d.containers.forEach(function (c) { if (c.id === id) c.hidden = !c.hidden; });
+        touch(); render(root);
+      });
+    });
+    root.querySelectorAll("[data-gdel]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var id = b.getAttribute("data-gdel");
+        for (var i = 0; i < d.containers.length; i++) {
+          var c = d.containers[i];
+          // Re-checked here, not just at render: only a custom category, only
+          // while empty. The render decides what to OFFER; this decides what
+          // actually happens, and the two must not be able to disagree.
+          if (c.id === id && c.custom && !c.tabs.length) { d.containers.splice(i, 1); break; }
+        }
+        touch(); render(root);
+      });
+    });
+    var addBtn = root.querySelector("[data-addcat]");
+    if (addBtn) addBtn.addEventListener("click", function () {
+      var box = root.querySelector("[data-newcat]");
+      var made = addCategory(d, box ? box.value : "");
+      if (!made) {
+        // Silently doing nothing is what makes a button look unwired — and a
+        // nameless category could not appear in the menu anyway.
+        state.saveMsg = { ok: false, text: "Give the category a name first." };
+        render(root); return;
+      }
+      state.saveMsg = null;
+      touch(); render(root);
+    });
+    root.querySelectorAll("[data-edit]").forEach(function (b) {
+      b.addEventListener("click", function () { state.editKey = b.getAttribute("data-edit"); render(root); });
+    });
+    var done = root.querySelector("[data-editdone]");
+    if (done) done.addEventListener("click", function () { state.editKey = null; render(root); });
+
+    var lbl = root.querySelector("[data-label-for]");
+    if (lbl) lbl.addEventListener("input", function () {
+      var f = findTab(d, lbl.getAttribute("data-label-for"));
+      if (!f) return;
+      f.item.label = lbl.value;
+      touch();
+    });
+    var glbl = root.querySelector("[data-glabel-for]");
+    if (glbl) glbl.addEventListener("input", function () {
+      var id = glbl.getAttribute("data-glabel-for");
+      d.containers.forEach(function (c) { if (c.id === id) c.label = glbl.value; });
+      touch();
+    });
+    root.querySelectorAll("[data-site]").forEach(function (cb) {
+      cb.addEventListener("change", function () {
+        var f = findTab(d, cb.getAttribute("data-site-tab"));
+        if (!f) return;
+        var list = (f.item.orgs || []).slice();
+        var id = cb.getAttribute("data-site");
+        var at = list.indexOf(id);
+        if (cb.checked && at === -1) list.push(id);
+        if (!cb.checked && at !== -1) list.splice(at, 1);
+        f.item.orgs = list.length ? list : null;
+        touch(); render(root);
+      });
+    });
+    root.querySelectorAll("[data-pin]").forEach(function (cb) {
+      cb.addEventListener("change", function () {
+        var f = findTab(d, cb.getAttribute("data-pin"));
+        if (!f) return;
+        f.item.pinned = cb.checked;
+        touch(); render(root);
+      });
+    });
+
+    // ── Save / discard / reset ──
+    var save = root.querySelector("[data-save]");
+    if (save) save.addEventListener("click", function () { saveDraft(root); });
+    var disc = root.querySelector("[data-discard]");
+    if (disc) disc.addEventListener("click", function () {
+      state.draft = null; state.dirty = false; state.saveMsg = null; state.editKey = null;
+      render(root);
+    });
+    var reset = root.querySelector("[data-resetall]");
+    if (reset) reset.addEventListener("click", function () { resetAll(root); });
+  }
+
+  /* Rebuild once the overlay's live read lands, so the editor self-heals rather
+   * than sitting on "Reading the current menu…". A DIRTY draft is left alone —
+   * discarding it would throw away typing to fix a staleness the save guard
+   * already blocks. */
+  var _wiredOverlay = false;
+  function wireOverlay() {
+    if (_wiredOverlay) return;
+    var ov = window.CPL_NAV_OVERLAY;
+    if (!ov || typeof ov.onChange !== "function") return;
+    _wiredOverlay = true;
+    ov.onChange(function () {
+      if (state.dirty) return;
+      state.draft = null;
+      var root = document.getElementById("admin-root");
+      if (root && root.querySelector(".adm")) render(root);
+    });
+  }
+
+  function activate() {
+    wireOverlay();
+    var root = document.getElementById("admin-root");
+    if (!root) return;
+    if (state.loadState === "ok") { render(root); loadBlast().then(renderBlast); return; }
+    render(root);
+    loadGates().then(function () { render(root); });
+    loadBlast().then(renderBlast);
+  }
+
+  window.CPL_ADMIN_TAB = {
+    activate: activate,
+    render: render,
+    _liveHtml: liveHtml,
+    _saveLive: saveLive,
+    _setLiveRow: function (r) { liveRow = r; },
+    _state: state,
+    _classify: classify,
+    _gateById: gateById,
+    _tabGate: tabGate,
+    _rowGate: rowGate,
+    _rungOf: rungOf,
+    _applyRung: applyRung,
+    _rungsFor: rungsFor,
+    _RUNGS: RUNGS,
+    _navItems: navItems,
+    _sitesFor: sitesFor,
+    _loadGates: loadGates,
+    _authHeaders: authHeaders,
+    _GATES: GATES,
+    // blast radius (item 19)
+    _loadBlast: loadBlast,
+    _renderBlast: renderBlast,
+    _blastKindOf: blastKindOf,
+    _blastShort: blastShort,
+    _blastServed: blastServed,
+    _blastRows: blastRows,
+    // test hook: hand the pane a map without a network — the fetch stub in
+    // tests falls through for unknown URLs, which loadBlast reads as its
+    // honest error state.
+    _setBlastMap: function (m) { state.blast.map = m || null; state.blast.load = m ? "ok" : "error"; },
+    // arrange (drag and drop)
+    _buildDraft: buildDraft,
+    _ensureDraft: ensureDraft,
+    _moveTab: moveTab,
+    _moveContainer: moveContainer,
+    _findTab: findTab,
+    _draftRows: draftRows,
+    _addCategory: addCategory,
+    _removedGroupKeys: removedGroupKeys,
+    _newGroupKey: newGroupKey,
+    _codeGroupIds: codeGroupIds,
+    _saveDraft: saveDraft,
+    _resetAll: resetAll,
+  };
+
+  window.addEventListener("cpl-tab-activated", function (e) {
+    if (e && e.detail && e.detail.tab === "admin") activate();
+  });
+})();

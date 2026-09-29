@@ -108,7 +108,7 @@ side effect of the suppression rule. The failure mode is that nobody ever
 notices, because a withheld cell and an unearned cell look the same on screen
 and in the ledger.
 
-**The rule this generalises to:** whenever a privacy/suppression layer sits
+**The rule this generalizes to:** whenever a privacy/suppression layer sits
 between a measurement and a consequence, enumerate what the suppressed state
 *costs* the subject. If suppression can only ever hurt, it has quietly become a
 penalty for being small.
@@ -165,7 +165,7 @@ if (!summary) return { unmeasured: true };   // no credit-summary row = nothing 
 if (!rows.length) return { empty: true, … }; // a real, measured zero
 ```
 
-Two things generalise:
+Two things generalize:
 
 1. **Congratulatory copy needs a stricter guard than neutral copy.** "0 units"
    is merely wrong when the truth is unknown; "you have finished" is wrong *and*

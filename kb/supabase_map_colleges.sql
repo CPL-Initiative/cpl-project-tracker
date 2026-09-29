@@ -57,6 +57,11 @@ update public.map_colleges set entity_kind = 'partner'              where colleg
 alter table public.map_colleges enable row level security;
 create policy map_colleges_select on public.map_colleges
   for select to anon, authenticated using (true);
+-- EXPLICIT GRANTS (2026-09-23): this file drops and recreates the table, and
+-- from 2026-10-30 Supabase stops granting the API roles on a NEW table in
+-- public, so a re-run would otherwise leave it unreadable.
+-- Guarded by tests/supabase_table_grants_test.py.
+grant select on public.map_colleges to anon, authenticated, service_role;
 
 -- ── Expected shape, 2026-08-08 ──────────────────────────────────────────────
 --   106 colleges hold 220,398 of 220,588 student rows (99.9%)

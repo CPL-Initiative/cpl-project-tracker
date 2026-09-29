@@ -390,14 +390,14 @@
       ".mtq-t { font-weight:600; flex:1 1 320px; }",
       ".mtq-age { font-size:.72rem; border-radius:10px; padding:1px 9px; white-space:nowrap;"
         + " background: var(--surface-muted); color: var(--text-muted); }",
-      ".mtq-age.old { background: var(--danger, #b3261e); color:#fff; }",
+      ".mtq-age.old { background: var(--danger, #b3261e); color:var(--on-accent); }",
       ".mtq-d { font-size:.85rem; color: var(--text-body); margin:5px 0 0; }",
       ".mtq-why { font-size:.72rem; color: var(--text-muted); margin:6px 0 0; font-style:italic; }",
       ".mtq-names { font-size:.75rem; color: var(--text-muted); margin:5px 0 0; }",
       ".mtq-go { font-size:.75rem; }",
       ".mtq-badge { font-size:.66rem; text-transform:uppercase; letter-spacing:.04em; border-radius:3px;"
         + " padding:1px 6px; background: var(--surface-muted); color: var(--text-muted); }",
-      ".mtq-badge.person { background: var(--danger, #b3261e); color:#fff; }",
+      ".mtq-badge.person { background: var(--danger, #b3261e); color:var(--on-accent); }",
       ".mtq-tracked { border-style:dashed; }",
       ".mtq-stale { color: var(--danger, #b3261e); font-weight:600; }",
       ".mtq-gate { color: var(--text-muted); padding:18px; border:1px dashed var(--border-strong);"
@@ -512,10 +512,25 @@
     ensureCss();
 
     if (!signedIn()) {
-      root.innerHTML = '<div class="mtq"><h2>\u{1F4E5} MAP Team Queue</h2>'
-        + '<div class="mtq-gate"><b>Team sign-in required.</b> This page is internal working material — '
-        + "who owes what, and which colleges cannot route a student's CPL request. Sign in on the "
-        + "<b>Team &amp; RACI</b> tab (reviewer link or team phrase) and re-open this tab.</div></div>";
+      // Was: "Sign in on the Team & RACI tab (reviewer link or team phrase) and
+      // re-open this tab" — the bounce, still live, and pointing at a reviewer
+      // link RACI stopped offering. Four of this tab's tables gate the READ, so
+      // the cost of the bounce was the whole page.
+      root.innerHTML = '<div class="mtq"><h2>\u{1F4E5} MAP Team Queue</h2></div>';
+      var gate = root.querySelector(".mtq");
+      if (window.CPL_TEAM_PHRASE && gate) {
+        gate.appendChild(window.CPL_TEAM_PHRASE.lockedBanner({
+          what: "This page is internal working material — who owes what, and which colleges cannot route a student's CPL request. It"
+        }));
+      } else if (gate) {
+        // FAIL-SAFE. If the shared helper has not loaded, still say what is
+        // locked and where the control is — an empty locked state would be
+        // worse than the copy this replaced, which at least named a tab.
+        var p = document.createElement("p");
+        p.setAttribute("data-tp-locked", "");
+        p.textContent = "You are not signed in. Unlock with the team phrase \u2014 the About menu in the header.";
+        gate.appendChild(p);
+      }
       return;
     }
     if (state.loading || !state.items) {

@@ -11,7 +11,7 @@
 //                 unknown, badged "per c-id.net — verify";
 //   tcid rows   = 8 elements [..., xcid[], 0, tcid[]] — the approval names a
 //                 retired/renamed code, this course uniquely bears the identical
-//                 title; matches render "≈ verify", NEVER "✓ C-ID aligned".
+//                 title; matches render "≈ verify", NEVER "C-ID aligned".
 //
 // Guards:
 //   (1) setCollege exposes src === "cidnet" on a 7-element row and tcids on an
@@ -20,7 +20,7 @@
 //   (3) autoMatch PREFERS a hard carrier over a title carrier over a synth row
 //       when several courses carry the same C-ID;
 //   (4) statusFor: synth → aligned + verify nudge; tcid → "≈ … verify"
-//       (tmatch class), normal → bare "✓ C-ID aligned";
+//       (tmatch class), normal → bare "C-ID aligned";
 //   (5) chips: chosen button + picker options badge synth ('per c-id.net') and
 //       tcid ('≈ c-id.net title') courses; normal courses carry NO chip;
 //   (6) units:null doesn't NaN the Total Units meter;
@@ -135,10 +135,10 @@ function pickerBtns() { return document.querySelectorAll("#tab-tmc-builder .tmc-
     document.querySelectorAll("#tab-tmc-builder .tmc-status"), txt);
   check("synth slot status carries the c-id.net verify nudge",
     statuses.some((l) => /C-ID aligned/.test(l) && /per c-id\.net/.test(l) && /verify/.test(l)));
-  check("tcid slot status is the '≈ … verify' tier (not '✓ aligned')",
+  check("tcid slot status is the '≈ … verify' tier (not 'aligned')",
     statuses.some((l) => /≈ C-ID per c-id\.net title match/.test(l) && /verify/.test(l)));
-  check("normal slot status is a bare '✓ C-ID aligned'",
-    statuses.some((l) => /✓ C-ID aligned$/.test(l)));
+  check("normal slot status is a bare 'C-ID aligned'",
+    statuses.some((l) => /C-ID aligned$/.test(l)));
 
   // (5 cont.) picker options carry the right chips
   btns[0].click();

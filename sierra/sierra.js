@@ -62,12 +62,19 @@
   // SHARED with the COBI CPL Assistant tab (same origin, same key). Sent as an
   // optional `audience` field — callers that omit it (the map.rccd.edu widget)
   // are unaffected.
+  // Text labels, no glyphs — Sam's COBI design rule (cpl_memory
+  // cobi-no-cheesy-glyphs-design-rule), applied to cpl_chat.js in #1231 and
+  // carried here so the three surfaces that mount Sierra read identically.
+  // These strings must stay in step with cpl_chat.js AUDIENCES: the picked value
+  // is persisted under a SHARED same-origin key and travels to the same Edge
+  // Function, so a label that drifts here is the same assistant introducing
+  // itself two different ways to the same person.
   var AUDIENCES = [
-    { k: 'student',       label: '🎓 Student / future student' },
-    { k: 'faculty',       label: '📚 Faculty' },
-    { k: 'administrator', label: '🏛️ College administrator' },
-    { k: 'employer',      label: '💼 Employer / industry' },
-    { k: 'civic',         label: '🤝 Civic leader' },
+    { k: 'student',       label: 'Student / future student' },
+    { k: 'faculty',       label: 'Faculty' },
+    { k: 'administrator', label: 'College administrator' },
+    { k: 'employer',      label: 'Employer / industry' },
+    { k: 'civic',         label: 'Civic leader' },
   ];
   var AUD_KEY = 'cplSierraAudience.v1';
   var audience = null;     // in-memory copy (localStorage may be unavailable)
@@ -100,6 +107,42 @@
       audEl.appendChild(b);
     });
   }
+  // ── About Sierra (the header panel) ──
+  // The introduction and the beta note lived above the conversation and took
+  // most of a phone's first screen (Sam, 2026-09-11). They sit behind a header
+  // control now. Hover-only content fails WCAG 1.4.13 and every touch and
+  // keyboard user, so hover is a convenience on pointer devices and never the
+  // only way in: click or Enter toggles, Escape closes and returns focus, a
+  // click outside closes. The panel stays open until dismissed (1.4.13:
+  // dismissible, hoverable, persistent).
+  var aboutBtn, aboutPanel;
+  function setAbout(open) {
+    if (!aboutBtn || !aboutPanel) return;
+    aboutBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    aboutPanel.hidden = !open;
+  }
+  function wireAbout() {
+    aboutBtn = document.getElementById('s-about-btn');
+    aboutPanel = document.getElementById('s-about');
+    if (!aboutBtn || !aboutPanel) return;
+    aboutBtn.addEventListener('click', function () {
+      setAbout(aboutBtn.getAttribute('aria-expanded') !== 'true');
+    });
+    var hoverable = false;
+    try { hoverable = !!(window.matchMedia && window.matchMedia('(hover: hover)').matches); } catch (e) { /* no matchMedia → click only */ }
+    if (hoverable) aboutBtn.addEventListener('mouseenter', function () { setAbout(true); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== 'Escape' || aboutPanel.hidden) return;
+      setAbout(false);
+      try { aboutBtn.focus(); } catch (e2) { /* focus is best effort */ }
+    });
+    document.addEventListener('click', function (e) {
+      if (aboutPanel.hidden) return;
+      if (aboutBtn.contains(e.target) || aboutPanel.contains(e.target)) return;
+      setAbout(false);
+    });
+  }
+
   // Flash the selector when a send is attempted without a pick.
   function needAudience() {
     setStatus('First, tap who you are above — it helps Sierra tailor the answer for you.', 'error');
@@ -108,7 +151,7 @@
     setTimeout(function () { audEl.classList.remove('s-need'); }, 1700);
   }
 
-  // ── Per-answer feedback (👍/👎 + optional note → Supabase sierra_feedback) ──
+  // ── Per-answer feedback (Helpful / Not helpful + note → sierra_feedback) ──
   // One row per assistant turn, keyed by a client uuid: a thumb click logs
   // immediately and an added note (or a switched rating) updates the SAME row.
   // Writes go through the SECURITY DEFINER RPC `sierra_feedback_upsert` — a
@@ -120,7 +163,7 @@
       : 'turn-' + Date.now() + '-' + Math.random().toString(16).slice(2);
   }
 
-  // ── Copy an answer (📋) ────────────────────────────────────────────────────
+  // ── Copy an answer ────────────────────────────────────────────────────
   // People take Sierra's answers into email, Word and Teams, so the copy has to
   // survive the trip. We write BOTH flavours when the browser allows it:
   // text/html (the rendered bubble) so a paste into Word or Outlook keeps the
@@ -200,6 +243,10 @@
       p_note: o.note ? String(o.note).slice(0, 2000) : null,
     };
   }
+  // Resolves TRUE only when the row actually landed — see the twin in
+  // cpl_chat.js. fetch does not reject on HTTP errors and
+  // sierra_feedback_upsert RAISES on an invalid rating, so "it returned" never
+  // meant "it saved".
   function sendFeedback(payload) {
     try {
       return fetch(SUPABASE_URL + '/rest/v1/rpc/sierra_feedback_upsert', {
@@ -210,8 +257,9 @@
           'Authorization': 'Bearer ' + SUPABASE_ANON,
         },
         body: JSON.stringify(payload),
-      }).catch(function () { /* feedback is best-effort */ });
-    } catch (e) { return Promise.resolve(); }
+      }).then(function (res) { return !!(res && res.ok); },
+              function () { return false; });
+    } catch (e) { return Promise.resolve(false); }
   }
   function addFeedbackBar(afterRow, question, answer) {
     var tid = newTurnId();
@@ -225,7 +273,7 @@
     var copyBtn = document.createElement('button');
     copyBtn.type = 'button';
     copyBtn.className = 's-fb-copy';
-    copyBtn.textContent = '📋 Copy';
+    copyBtn.textContent = 'Copy';
     copyBtn.title = 'Copy this answer — formatting is kept when you paste into Word, Outlook or Teams';
     copyBtn.setAttribute('aria-label', 'Copy this answer to the clipboard');
     var copyTimer = null;
@@ -235,12 +283,12 @@
       // for turns that never streamed one (an error message, say).
       var plain = answer || (bub ? bub.textContent : '') || '';
       copyAnswer(bub ? bub.innerHTML : '', plain, function (ok) {
-        copyBtn.textContent = ok ? '✓ Copied' : '⚠ Press Ctrl+C';
+        copyBtn.textContent = ok ? 'Copied' : 'Press Ctrl+C';
         copyBtn.classList.toggle('on', ok);
         if (!ok && bub) selectNode(bub);
         if (copyTimer) clearTimeout(copyTimer);
         copyTimer = setTimeout(function () {
-          copyBtn.textContent = '📋 Copy';
+          copyBtn.textContent = 'Copy';
           copyBtn.classList.remove('on');
         }, 2200);
       });
@@ -264,6 +312,12 @@
     noteBtn.textContent = 'Send note';
     noteWrap.appendChild(noteIn);
     noteWrap.appendChild(noteBtn);
+    // Confirmation sits INSIDE the composer so it lands where the button was,
+    // not away in the rating row next to Copy.
+    var noteDone = document.createElement('span');
+    noteDone.className = 's-fb-done';
+    noteDone.hidden = true;
+    noteWrap.appendChild(noteDone);
 
     function upsert(note) {
       return sendFeedback(feedbackPayload({
@@ -273,7 +327,13 @@
     }
 
     var btns = {};
-    [['up', '👍', 'This answer was helpful'], ['down', '👎', 'This answer was not helpful']]
+    // The thumbs are WORDS here, as in cpl_chat.js (#1231). They were the one
+    // place in this bar where a glyph carried meaning no text repeated, so they
+    // could not simply be dropped — and spelling them out is also the accessible
+    // fix, because a bare 👍 announces as "thumbs up", which is a description of
+    // the picture rather than of what pressing it says. The aria-label stays: it
+    // is the full sentence, and the visible word is the short form of it.
+    [['up', 'Helpful', 'This answer was helpful'], ['down', 'Not helpful', 'This answer was not helpful']]
       .forEach(function (spec) {
         var b = document.createElement('button');
         b.type = 'button';
@@ -284,7 +344,7 @@
           rating = spec[0];
           btns.up.classList.toggle('on', rating === 'up');
           btns.down.classList.toggle('on', rating === 'down');
-          hint.textContent = '✓ Thanks — logged.';
+          hint.textContent = 'Thanks — logged.';
           noteWrap.hidden = false;
           upsert(noteIn.value.trim() || null);
         });
@@ -296,10 +356,25 @@
       var n = noteIn.value.trim();
       if (!n || !rating) return;
       noteBtn.disabled = true;
-      upsert(n);
-      noteWrap.hidden = true;
-      hint.textContent = '✓ Note sent — thank you!';
-      hint.className = 's-fb-done';
+      noteDone.hidden = false;
+      noteDone.className = 's-fb-sending';
+      noteDone.textContent = 'Sending…';
+      upsert(n).then(function (ok) {
+        noteDone.hidden = false;
+        if (ok) {
+          noteIn.value = '';
+          noteIn.hidden = true;
+          noteBtn.hidden = true;
+          noteDone.className = 's-fb-done';
+          noteDone.textContent = 'Note sent — thank you!';
+        } else {
+          // Keep the typed text on failure — never a cheerful tick over a
+          // write that did not land.
+          noteBtn.disabled = false;
+          noteDone.className = 's-fb-fail';
+          noteDone.textContent = 'Not sent — your note is still here, try again.';
+        }
+      });
     });
     noteIn.addEventListener('keydown', function (e) {
       if (e.key === 'Enter') { e.preventDefault(); noteBtn.click(); }
@@ -477,7 +552,11 @@
   // Request body — ctx rides ONLY when the ?ctx=external variant is active, so
   // a normal visit's payload is byte-identical to pre-v27 (fail-open).
   function buildPayload(query) {
-    var p = { query: query, session_id: sessionId(), history: convo.slice(), audience: audience };
+    // `surface` is the CALLER; `ctx` is the contacts gate. The vendor iframe is
+    // this same public page with ctx=external, so it keeps surface 'public' —
+    // two axes, deliberately not collapsed into one.
+    var p = { query: query, session_id: sessionId(), history: convo.slice(),
+              audience: audience, surface: 'public' };
     if (ctxVariant) p.ctx = ctxVariant;
     return p;
   }
@@ -581,6 +660,58 @@
     }
   }
 
+  /* ─── Scroll regions the keyboard can reach ────────────────────────────────
+   *
+   * A container that scrolls can be dragged with a mouse and swiped with a
+   * finger, but is UNREACHABLE by keyboard unless it is focusable (WCAG 2.1.1).
+   * Two here, and the conversation log is the one that matters:
+   *
+   *   · #s-log holds every answer Sierra has given. It became reachable only by
+   *     accident — the starter chips inside it are focusable — and `submit()`
+   *     REMOVES those chips after the first question. So the log was reachable
+   *     while it was empty and had nothing to scroll, and stopped being
+   *     reachable the moment it filled up. A keyboard user could not read past
+   *     the fold of a long answer, which on a phone is most of one.
+   *
+   *   · a markdown table inside an answer (.s-bubble table is display:block +
+   *     overflow-x:auto, so a wide one scrolls sideways rather than pushing the
+   *     page). Same problem, same fix.
+   *
+   * Focusable ONLY while it actually overflows, exactly as the Fact Sheet's
+   * .tbl-wrap does — otherwise a short conversation leaves a tab stop that does
+   * nothing, which is its own small failure. Re-synced after every render and on
+   * resize, because which state it is in depends on the content AND the
+   * viewport. Names are taken from what is already on the element, never
+   * invented: #s-log carries aria-label="Conversation with Sierra" in the
+   * markup. */
+  function syncScrollRegions() {
+    if (logEl) {
+      if (logEl.scrollHeight > logEl.clientHeight + 1) {
+        logEl.setAttribute('tabindex', '0');
+      } else {
+        logEl.removeAttribute('tabindex');
+      }
+    }
+    var tables = document.querySelectorAll('.s-bubble table');
+    for (var i = 0; i < tables.length; i++) {
+      var t = tables[i];
+      if (t.scrollWidth > t.clientWidth + 1) {
+        t.setAttribute('tabindex', '0');
+        t.setAttribute('role', 'region');
+        if (!t.getAttribute('aria-label')) {
+          var head = t.querySelector('th');
+          var lead = head ? (head.textContent || '').replace(/\s+/g, ' ').trim() : '';
+          t.setAttribute('aria-label', (lead ? lead + ' table' : 'Table') + ' (scrollable)');
+        }
+        t.classList.add('s-scrollx');
+      } else {
+        t.removeAttribute('tabindex');
+        t.removeAttribute('role');
+        t.classList.remove('s-scrollx');
+      }
+    }
+  }
+
   function wire() {
     if (wired) return; // idempotent (guards a double DOMContentLoaded)
     wired = true;
@@ -595,6 +726,7 @@
 
     loadAudience();
     renderAudience();
+    wireAbout();
 
     // Fill starter chips
     if (suggestEl) {
@@ -606,6 +738,18 @@
       });
     }
     formEl.addEventListener('submit', function (e) { e.preventDefault(); submit(); });
+
+    /* Content arrives from streaming tokens, not from a single render call, so
+       a one-shot sync would be wrong for every answer after the first. Watching
+       the log covers every path that adds to it — a new bubble, a streamed
+       token, a rendered table — without each of them having to remember. */
+    if (window.MutationObserver && logEl) {
+      var mo = new MutationObserver(function () { syncScrollRegions(); });
+      mo.observe(logEl, { childList: true, subtree: true, characterData: true });
+    }
+    window.addEventListener('resize', syncScrollRegions);
+    syncScrollRegions();
+
     inputEl.focus();
   }
 
@@ -617,9 +761,11 @@
 
   // Expose the pure helpers for the jsdom test.
   window.CPL_SIERRA_PAGE = {
+    setAbout: setAbout,
     escapeHtml: escapeHtml, inlineMd: inlineMd, renderMarkdown: renderMarkdown,
     parseSse: parseSse, CHAT_URL: CHAT_URL, SUGGESTED: SUGGESTED,
     AUDIENCES: AUDIENCES, AUD_KEY: AUD_KEY, feedbackPayload: feedbackPayload,
     SIERRA_MARK: SIERRA_MARK, ctxVariant: ctxVariant, buildPayload: buildPayload,
+    syncScrollRegions: syncScrollRegions,
   };
 })();

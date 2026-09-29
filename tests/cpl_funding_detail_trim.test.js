@@ -1,0 +1,222 @@
+// CPL Implementation Funding — the college drill-in after Sam's 2026-09-01 trim.
+//
+// Four sentences came off the expand and one column went on, and both halves
+// need a guard for the same reason: the removals were removals of RESTATEMENT,
+// so the natural way to lose them is for a later session to helpfully add the
+// explanation back where it "seems missing" — and the addition is a distance
+// figure, which is exactly the kind of number that must not appear beside a
+// value privacy has masked.
+//
+// What Sam asked for, in his words (2026-09-01):
+//   1. the headcount aside — "not needed and just a distraction"
+//   2. the base/cap tail    — "not helpful for the college and a distraction"
+//   3. the elig parenthetical — "restating what was just said"
+//   4. the reserve sentence — "restating what was said in 3rd column"
+//   2 (his numbering) — the targets and current numbers, so a college can see
+//      "where they are and where they could be by priority"
+//   3-4 — the red gate mark off the row, and Confirm Participation as a word
+//
+// The targets were never missing. The table is a GRID ITEM, and the grid is
+// repeat(auto-fit, minmax(240px, 1fr)) — so 620px of table was scrolling
+// sideways inside a 240px column, three columns out of view. That is the
+// failure this file pins first: the fix is a span, and a span is invisible in
+// a screenshot the moment someone edits the grid.
+const H = require("./lib/cpl_funding_harness.js");
+const { NPRIO } = require("./lib/cpl_funding_harness.js");
+const { freshDom, boot, check, finish, consumerSrc } = H;
+
+function openDetail(window, doc, name) {
+  const find = () => Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
+    .find((r) => r.textContent.indexOf(name) !== -1);
+  const row = find();
+  if (!row) return null;
+  row.querySelector(".cplfund-caret").dispatchEvent(new window.Event("click", { bubbles: true }));
+  const row2 = find();
+  const det = row2 && row2.nextElementSibling;
+  return det && det.classList.contains("cplfund-detail") ? det : null;
+}
+// Read the detail table BY HEADER — never by position. Adding "To go" shifted
+// every index in the metric-pin suite; that suite is header-keyed now and so
+// is this one, so the next column insert cannot quietly re-point an assertion.
+// The CREDIT table — one table per lane since 2026-09-24 (Sam's 7.9a/b).
+function detRows(det) {
+  const trs = Array.from(det.querySelectorAll(".cplfund-dtl-table.cplfund-dtl-cr tr"));
+  const keys = Array.from(trs[0].querySelectorAll("th"))
+    .map((th) => th.textContent.replace(/\s+/g, " ").trim().toLowerCase());
+  return trs.slice(1).map((tr) => {
+    const out = {};
+    Array.from(tr.querySelectorAll("td")).forEach((td, i) => {
+      out[keys[i]] = td.textContent.replace(/\s+/g, " ").trim();
+      // The hover rides along: since 2026-09-23 a row is one line, and the
+      // figures that would stack a second line (the funding remaining, the
+      // CR/NC split) read in the cell's title.
+      out[keys[i] + " (hover)"] = td.getAttribute("title") || "";
+    });
+    return out;
+  });
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// T1 — the four strikes, and the span that made the targets readable
+// ─────────────────────────────────────────────────────────────────────────────
+{
+  const { window } = freshDom();
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  // A CAPPED institution, so the cap line is on screen — Sam's screenshot was
+  // Bakersfield, and the cap tail is the one of the four with a mirror (the
+  // base tail) that has to come off with it.
+  const m = T._model();
+  const cappedName = Object.keys(m.capped)[0];
+  const det = openDetail(window, doc, cappedName);
+  const txt = det ? det.textContent.replace(/\s+/g, " ") : "";
+
+  check("T1: a capped drill-in renders at all (the fixture still finds one)", !!det);
+  // Sam, 2026-09-23 (funding review item 3, "Consolidate as proposed"): the
+  // FTES-share, base and cap cells left the expand. Their figures ride the
+  // row — the CR FTES hover and the bound word's hover.
+  check("T1a: the FTES share left the expand, and rides the CR FTES hover with its statewide total",
+    !/FTES share:/.test(txt) && !/headcount, context only/.test(txt) &&
+    /FTES in all: [\d.]+% of the statewide [\d,]+, the allocation basis/
+      .test((det.previousElementSibling.querySelector("td.c") || {}).title || ""));
+  check("T1b: no cap cell in the expand — no re-split, no 'not the bar'",
+    !/At the cap:/.test(txt) && !/At the base:/.test(txt) &&
+    !/re-splits across the institutions below the cap/.test(txt) &&
+    !/lowers the funding, not the bar/.test(txt));
+  check("T1b2: …and the base line's mirror tail came off with it",
+    !/raises the funding, not the bar/.test(txt) && !/PRE-BASE share/.test(txt) &&
+    !/PRE-CAP share/.test(txt));
+  // "Minimum Conditions" since the College Dashboard (Sam, 2026-09-28: "a
+  // better term than baseline").
+  check("T1c: the conditions are ONE line, 'Minimum Conditions:', and the old paragraph is gone",
+    det.querySelectorAll(".cplfund-basestatus").length === 1 && /^Minimum Conditions:/.test(
+      det.querySelector(".cplfund-basestatus").textContent.replace(/\s+/g, " ").trim()) &&
+    !/Baseline eligibility/.test(txt) && !/the gate to participate/.test(txt));
+  check("T1c2: …and the expand carries no second Confirm Participation control beside the row's",
+    !det.querySelector("[data-optinbtn]") && !/Confirm Participation/.test(txt));
+  // THE ROLL-FORWARD SENTENCE IS RETIRED (Sam, 2026-09-28: "we make it clear
+  // that colleges need to meet all 3 baselines to receive any funding"). The
+  // expand once risked stating it twice; the College Dashboard states it
+  // nowhere, and baselineGateText(), the hover that carried it, left with the
+  // reserve words. Both halves are asserted, so a sentence that comes back
+  // under new wording still has to get past the rendered-text half.
+  check("T1d: nothing in the expand speaks of reserve, roll-forward or qualifying later",
+    !/qualifying later still counts toward it|nothing is redistributed|held in reserve|rolls? forward/i.test(txt));
+  check("T1d: …and the gate's roll-forward sentence is retired from the module, with the hover that carried it",
+    !/qualifying later still counts toward it/.test(consumerSrc) && !/function baselineGateText\(/.test(consumerSrc));
+
+  // THE SPAN. The table is a direct child of the detail grid, and the grid is
+  // auto-fit minmax(240px, 1fr) — without the span rule it lands in one column
+  // and its 740px min-width scrolls sideways inside ~240px, which is how three
+  // of its eight columns went unread. jsdom does no layout, so assert the two
+  // facts layout depends on: the element is a grid child, and the rule granting
+  // it the full row is present in the injected CSS.
+  const tscroll = det.querySelector(".cplfund-dtl-tscroll");
+  check("T1e: the priority table is a DIRECT child of the detail grid",
+    !!tscroll && tscroll.parentElement.classList.contains("cplfund-detail-grid"));
+  check("T1e2: …and the injected CSS spans it across every grid column",
+    /\.cplfund-detail-grid\s*>\s*\.cplfund-dtl-tscroll[^{]*\{[^}]*grid-column:\s*1\s*\/\s*-1/
+      .test(consumerSrc));
+  check("T1e3: …and the scroller is still the narrow-screen safety net beneath it",
+    /"\.cplfund-dtl-tscroll \{ overflow-x: auto/.test(consumerSrc));
+
+  // Sam's items 3 and 4, on the row itself.
+  const row = det.previousElementSibling;
+  check("T1f: no red gate mark on the row — the Elig pie beside it says the same thing",
+    !row.querySelector(".cf-gatechip") && row.innerHTML.indexOf("⛔") === -1 &&
+    !/cf-gatechip/.test(consumerSrc));
+  // The words carry the deadline since 2026-09-28 ("Confirm by MM-DD-YY",
+  // "Confirm now" once it passes); this fixture keeps the baked deadline.
+  check("T1g: the row control is a word, Confirm by its deadline (or Confirm now), with no pencil",
+    !!row.querySelector("button.cplfund-optin-jump") &&
+    /^Confirm (by \d\d-\d\d-\d\d|now)$/.test(row.querySelector("button.cplfund-optin-jump").textContent) &&
+    row.innerHTML.indexOf("✎") === -1);
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// T2 — "To go": the distance, and the two states that must NOT show one
+// ─────────────────────────────────────────────────────────────────────────────
+// Three priorities on one college, pinned to three sources, so one render
+// produces all three states: under target, over target, and privacy-suppressed.
+{
+  const { window } = freshDom();
+  window.CPL_FUNDING_PERF = {
+    as_of: "2026-09-01", suppress_below: 5,
+    statewide: { pe_u: 900000, pa_u: 600000, p3_u: 300000 },
+    colleges: {
+      // pe_u far under this college's target; pa_u far over it; p3_u masked.
+      "Laney": { pe_u: 60, pa_u: 900000, p3_u_suppressed: true }
+    },
+    unmatched: {}
+  };
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  T._setShared({ yearPriorities: { "1": {
+    "0": { metric: "Eligible CPL Units measured in FTES", metric_src: "pe_u" },
+    "1": { metric: "Applied CPL Units measured in FTES", metric_src: "pa_u" },
+    "2": { metric: "Transcribed CPL Units measured in FTES", metric_src: "p3_u" }
+  } } });
+  T.render();
+  const R = detRows(openDetail(window, doc, "Laney"));
+
+  // "To go" is RETIRED (Sam, 2026-09-24, review sheet item 7, naming the six
+  // columns: "Outcomes; Max FTES; Max Funds; Actual FTES; Actual Funds;
+  // Difference"). Difference is the FUNDING still to qualify for, and the FTES
+  // distance To go carried rides its hover — so every guard below still holds,
+  // on the column that now carries the distance.
+  check("T2: the table carries a Difference column, and To go has gone",
+    R.length === NPRIO && "difference" in R[0] && !("to go" in R[0]));
+  check("T2a: under target — Difference names the funding still to qualify for, its hover the FTES gap",
+    R.length === NPRIO && /^\$[\d,]+$/.test(R[0].difference) && /FTES to Max FTES/.test(R[0]["difference (hover)"]));
+  check("T2a1: …on ONE line: the cell holds the funding alone (Sam, 2026-09-23: tighten the detail rows)",
+    R.length === NPRIO && !/FTES/.test(R[0].difference));
+  check("T2a2: …and the difference is not the whole Max Funds (Actual Funds is subtracted)",
+    R.length === NPRIO && R[0].difference !== R[0]["max funds"] && R[0]["actual funds"] !== "$0");
+  check("T2b: at or over target — Difference reads $0, its hover Max FTES met, and never a negative",
+    R.length === NPRIO && R[1].difference === "$0" && /Max FTES met/.test(R[1]["difference (hover)"]) && !/-/.test(R[1].difference));
+  // THE ONE THAT MATTERS. A masked actual plus a distance is the actual: a
+  // reader subtracts. The privacy mask has to hold across the whole row — the
+  // funds and the difference included, since funds are the actual times a
+  // known price.
+  check("T2c: a privacy-suppressed actual gets NO distance and no funds to subtract",
+    R.length === NPRIO && /privacy/.test(R[2]["actual ftes"]) &&
+    R[2]["actual funds"] === "$0" && R[2].difference === R[2]["max funds"] &&
+    // The hover is part of the row: an FTES gap there leaks the same way.
+    !/FTES|\d/.test(R[2]["difference (hover)"]) && !/\d/.test(R[2]["actual ftes (hover)"]));
+  check("T2c2: …and the masked row's hover is a plain absence, never Max FTES met",
+    R.length === NPRIO && R[2]["difference (hover)"] === "");
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// T3 — an unmeasured state carries no distance either
+// ─────────────────────────────────────────────────────────────────────────────
+// "no data yet" and "0 to go" are different claims about a college. The first
+// says the model cannot see; the second says the college is done. Rendering the
+// second when the first is true is the same silent-omission class the earned
+// column already guards against.
+{
+  const { window } = freshDom();
+  window.CPL_FUNDING_PERF = { as_of: "2026-09-01", suppress_below: 5,
+    statewide: { pa_u: 500000 }, colleges: { "Laney": { pa_u: 12000 } }, unmatched: {} };
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  T._setShared({ yearPriorities: { "1": {
+    "0": { metric: "Applied CPL Units measured in FTES", metric_src: "nc_pa_u" },  // declared, undelivered
+    "1": { metric: "Applied CPL Units measured in FTES", metric_src: "nope_u" },   // miswired pin
+    "2": { metric: "Applied CPL Units measured in FTES", metric_src: "pa_u" }      // measured
+  } } });
+  T.render();
+  const R = detRows(openDetail(window, doc, "Laney"));
+
+  // TBA since 2026-09-28 (Sam: "show TBA everywhere so when it changes, it
+  // will already be wired"), its meaning on hover.
+  check("T3a: an undelivered source reads TBA and shows no distance",
+    R.length === NPRIO && R[0]["actual ftes"] === "TBA" && R[0]["actual ftes (hover)"] === "To be announced once measured" &&
+    R[0]["difference (hover)"] === "");
+  check("T3b: a miswired pin reads awaiting a known measure and shows no distance",
+    R.length === NPRIO && /awaiting a known measure/.test(R[1]["actual ftes"]) && R[1]["difference (hover)"] === "");
+  check("T3c: the measured row beside them DOES show one — the hover is not dead",
+    R.length === NPRIO && /FTES to Max FTES|Max FTES met/.test(R[2]["difference (hover)"]));
+}
+
+finish();

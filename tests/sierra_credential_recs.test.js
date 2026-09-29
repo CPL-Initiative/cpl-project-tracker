@@ -53,8 +53,13 @@ const strip = stripTypes;
 let renderRecLines, buildCredentialContext, buildVolumeContext;
 let extractionError = null;
 try {
+  // renderAdopters must be in the bundle: buildCredentialContext has called it
+  // since #1178, so evaluating the bundle without it threw "renderAdopters is
+  // not defined" — this suite had been RED on main ever since, and the crash
+  // read as an extraction failure rather than as a missing dependency.
   const bundle = strip(
-    [extract("renderRecLines"), extract("buildCredentialContext"), extract("buildVolumeContext")]
+    [extract("renderRecLines"), extract("renderAdopters"),
+     extract("buildCredentialContext"), extract("buildVolumeContext")]
       .join("\n\n"),
   );
   // eslint-disable-next-line no-new-func
@@ -241,7 +246,7 @@ check("the recs lookup receives the handler's client (`sb`)",
       /fetchCredentialRecs\(titles,\s*sb\)/.test(src));
 
 check("CREDIT_RECS_RULE ships whenever either credential section is present",
-      /\(credentialContext \|\| volumeContext\) \? CREDIT_RECS_RULE/.test(src));
+      /body: CREDIT_RECS_RULE, appliesWhen: "credential_or_volume"/.test(src));
 
 check("the rule forbids answering with a bare count",
       /NEVER answer with just a count/.test(src));

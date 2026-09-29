@@ -133,7 +133,12 @@ session on funding" saves that entirely.
 
 ## 7. Checkpoint before you leave
 
-Type **`/checkpoint`** before you close a session that did anything substantial.
+Type **`/checkpoint`** before you close a session that did anything substantial
+— though as of 2026-09-09 you should not have to. Sam's standing rule: *"you
+don't need permission to checkpoint. Just run it when needed and we can refresh
+it if we stay in the session for more work."* Sessions now run it on their own
+when the work warrants it, and run it **again** if you keep going afterwards.
+Asking you first was the old behavior and it was the wrong default.
 
 What it does: writes down what we figured out, what state things are in, and
 what's next — into files the next session reads. Takes a couple of minutes and I
@@ -179,7 +184,7 @@ independent draws from a varied enough distribution raise the odds that one land
 a completely legitimate thing to spend on, and it isn't the opposite of method.
 
 The condition is what decides it: **luck only pays when a hit is cheap to
-recognise.**
+recognize.**
 
 - A bug — you reproduce it and you know. Verifiable.
 - A suppressed number recoverable by subtraction — the arithmetic either works or
@@ -242,6 +247,131 @@ actual opinion rather than a menu — including when I think the thing you asked
 for is the wrong thing to build.
 
 ---
+
+## 11. Decisions come to you as a sheet
+
+When work piles up decisions only you can make, ask for (or expect) a
+**decision sheet**: one page, numbered, where every item says what it is in
+plain words, what we measured, and what we propose — so your part is a short
+reply like `1–6 yes · 7 edit: also needs my sign-off · 15 dismiss`. A session
+then carries your verdicts into the registers and commits the reasons.
+Scattered questions across a chat, or a to-do list that just names the
+decision without preparing it, are what this replaces. If someone asks you to
+decide something without the preparation, ask for the sheet.
+
+The sheet is committed to `docs/visuals/` and handed to you as a Claude artifact
+link. The public site does not serve `docs/`, so a github.io link to a sheet will
+not open; the artifact link is the one to use.
+
+Since September 5 you can also reply on the sheet itself. Under every item, and
+under every memory a batch item lists, there is a row of reply chips (Yes takes
+the recommendation; under a single memory the first chip names what the batch
+would do to it, *Verify* or *Retire*, so the word says what happens; the other
+words are the ones the sheet's how-to box lists), a *Follow up* toggle for
+anything you want the session to come back to whatever the verdict, and a note
+for what a word cannot carry. The line under each reply says what was saved,
+in words — *Saved to the sheet: Retire, follow up.* — so you can trust a click
+landed without reading a color. On the artifact your replies save to the sheet and the next
+session reads them from there; if you open the sheet from the repo instead,
+they stay in your browser and *Copy replies* at the foot of the page builds the
+numbered line for you to paste.
+
+## 12. Start every session with all three repos
+
+Sam's standing practice, ruled enforced 2026-08-30: a CPL session gets all
+**three** repos — the public knowledge base (`cpl-knowledge-base`), the
+project tracker (`cpl-project-tracker`), and the vault (`CPLBrain` /
+COG-second-brain) — *"so they can stay informed and syncd."* Each repo
+carries standing instructions the others rely on; attach one and I know some
+of the rules, attach all three and I know the system.
+
+You don't have to remember this — checking is my job. If you start me with
+some of the three missing, I'll say which in one line and ask before carrying
+on. Attaching the missing one mid-session is fine.
+
+The one case I can't catch is a session with **no** repos at all: none of
+these instructions load there, so that session is generic Claude and doesn't
+know our rules exist. The fix is a one-time install on your machine —
+`scripts/install-three-repo-check.ps1` adds a short check line to your
+user-level Claude memory, so even a bare session asks about the repos before
+doing CPL work. Run it once per machine; any session can walk you through it.
+
+## 13. If you type while I am working
+
+Enter queues your message. I do not see it until my current turn ends, and I do
+not draft an answer early. Escape (Stop, on the web) interrupts the turn and your
+message lands at once; the Up arrow pulls a queued message back for editing. So if
+what you are typing changes the work I am doing, press Escape. Interrupting
+mid-step is safe: git operations are atomic and I re-read state when I resume. The
+cost is the in-flight step, not the work. (Sam asked, 2026-09-03. Claude Code's
+docs say Enter interrupts; the tracked behavior is queuing, issue #36326.)
+
+## 14. Where you run me — terminal, desktop, web
+
+Sam asked, 2026-09-05, after a session told him not to build in the desktop app
+because I "won't be able to follow the rules and memory and CLAUDE.md." That is
+mostly wrong, and the confusion is worth clearing up once, because "desktop"
+names three different things.
+
+The Claude Desktop app has three tabs: **Chat**, **Cowork**, and **Code**. Only
+the Code tab is Claude Code. Anthropic's own documentation is direct about it:
+Desktop *"runs the same underlying engine with a graphical interface… they share
+configuration and project memory via CLAUDE.md files."* So the Code tab reads
+our three CLAUDE.md files, our hooks and our skills exactly as a web session
+does. The rules travel with the repos, not with the window.
+
+**Computer use — where Claude clicks around your screen — is not a separate
+mode.** It is one tool inside a Code session, off until you turn it on in
+Settings, and it is the last thing I reach for: a connector first, then a shell
+command, then the browser, and only then your screen. Turning it on removes
+nothing. Two things are worth knowing anyway. It runs on your real desktop
+rather than in the sandbox, so the safety boundary is genuinely different from
+everything else I do. And work done by clicking is not work done in the repo —
+nothing checks it, because the checks are all things like tests, diffs and pull
+requests. That is the real argument for building in the repo, and it has nothing
+to do with whether I can read your instructions.
+
+**Cowork is the one with a genuine catch**, and it is the one you will actually
+hit: a Cowork session starts with no folders attached, and a session with no
+repo attached loads *none* of this. That is what "it ignored my rules" nearly
+always turns out to be — see §12.
+
+**The test, in any window: type `/context` and look under "Memory files."** If
+the three CLAUDE.md files are listed, they loaded. That settles it in five
+seconds, and it beats arguing about it.
+
+Two differences that are real and easy to miss:
+
+- **What I learn on my own does not travel.** Notes I keep for myself are stored
+  on the machine that made them and are not shared with other machines or with
+  cloud sessions. Anything that must survive belongs in a file we commit — which
+  is the whole reason for the checkpoint in §7.
+- **A cloud session cannot reach some things a local one can** — our database
+  and GitHub's API among them, which I get to by other means. Local sessions
+  reach them directly.
+
+You don't have to work this out either. Tell me where you are if it seems to
+matter, and I will say what is different.
+
+## 15. Allow all SQL requests
+
+When I ask you to approve *Execute SQL (Supabase)*, allow it. The connector
+asks once per statement, for everyone and in every mode, and no setting on
+our side changes that. What reaches you has already passed the repo's guard,
+which runs before the prompt and refuses any write outside the sessions' own
+memory table, so the only statements you will ever be asked about are reads
+and notes to that table. Answer Allow once and keep going.
+
+If a session asks you to approve everything else too, Git, file reads, the
+other database tools, the guards did not load in that container. Paste this
+into the session:
+
+    Run python3 scripts/check_hooks_live.py --fix and paste its LIVE line, no investigation.
+
+A good answer reads `LIVE (root) … execute_sql allow rule: yes`, and that
+repairs the session you are in. If it happens in every new session, tell Sam:
+the environment's setup script needs its date line changed so the snapshot
+rebuilds, a one-minute edit on his side.
 
 ## For Sam — a note on agents
 

@@ -80,7 +80,7 @@ expert, not a tie to be broken by code.
   code would use TOP as a gate, which this repo forbids
   (`methodology-top-is-a-last-in-line-signal`); it may corroborate, not restrict.
 
-## Generalises to
+## Generalizes to
 
 Any "suggest what a human would pick" surface: mapping a credential to a course,
 a course to a C-ID, an occupation to a credential, a contact to a role. The

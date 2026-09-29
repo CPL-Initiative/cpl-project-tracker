@@ -97,7 +97,8 @@ function makeWin(opts) {
   const w = makeWin();
   const api = w.CPL_MAP_USERS_TAB;
   const empty = api._rosterHtml([]);
-  check("rosterHtml empty: shows a gate message, no table", /Team &amp; RACI|no users/i.test(empty) && empty.indexOf("<table") < 0);
+  check("rosterHtml empty: shows a gate message, no table",
+  /in the header|no users/i.test(empty) && empty.indexOf("<table") < 0);
   const filled = api._rosterHtml([{ first_name: "Ada", last_name: "<x>", email: "a@b.edu", role_name: "Faculty", username: "ada" }]);
   check("rosterHtml rows: renders a table with the email", filled.indexOf("a@b.edu") >= 0 && filled.indexOf("<table") >= 0);
   check("rosterHtml rows: escapes the name", filled.indexOf("&lt;x&gt;") >= 0 && filled.indexOf("Ada <x>") < 0);

@@ -54,7 +54,16 @@ function load(signedIn) {
   );
   const w = dom.window;
   if (signedIn) w.localStorage.setItem("cpl_team_pass", "phrase");
-  w.fetch = function () { return new Promise(function () {}); }; // never resolves
+  // Never resolves, and records what was asked for: which TABLE a credential-less
+  // reader hits is the whole disclosure boundary, and it cannot be seen from the
+  // rendered page.
+  w.__fetched = [];
+  w.fetch = function (u) { w.__fetched.push(String(u)); return new Promise(function () {}); };
+  // Shared phrase helper first — production ships both, and the locked state
+  // renders its banner (with a working input) rather than the bare fallback.
+  const tp = w.document.createElement("script");
+  tp.textContent = fs.readFileSync("team_phrase.js", "utf8");
+  w.document.body.appendChild(tp);
   const s = w.document.createElement("script");
   s.textContent = fs.readFileSync("college_briefing.js", "utf8");
   w.document.body.appendChild(s);
@@ -71,7 +80,34 @@ check("defaults to Sam's answer: Scenario 1 / Year 1", M._SCENARIO === "Scenario
 const out = load(false);
 const gRoot = out.document.getElementById("college-briefing-root");
 out.CPL_COLLEGE_BRIEFING.render(gRoot);
-check("team-gated: no figures logged out", /sign in/i.test(gRoot.textContent));
+// ⭐ THE GATE IS GONE (Sam, 2026-09-17: My College is open to colleges and the
+// public). These two checks asserted the OLD contract — logged out meant a
+// locked banner and no figures — which is exactly what he asked to change.
+//
+// What replaces them is the assertion that actually carries the privacy now:
+// a credential-less reader reads the `_pub` MIRRORS and never a gated base. The
+// mirrors are built with suppression applied before publication
+// (kb/_publish_college_briefing.py); the bases still hold 145,554 rows that each
+// describe one student. Which table was asked for cannot be seen from the
+// rendered page, so it is asserted on the request.
+out.CPL_COLLEGE_BRIEFING.activate();
+const pubUrls = out.__fetched.join(" ");
+check("public: ⭐ the tab renders with no credential at all",
+  !/not signed in/i.test(gRoot.textContent),
+  "the Admin audience control governs the MENU; this gate governed the PAGE");
+check("public: ⭐ figures come from the published mirrors",
+  /map_college_credit_summary_pub/.test(pubUrls) && /map_college_contacts_pub/.test(pubUrls));
+check("public: ⚠ NEVER reads a gated base",
+  !/map_college_credit_summary\?/.test(pubUrls) && !/map_college_contacts\?/.test(pubUrls),
+  "a credential-less read of the base answers 200 + [] under RLS, so this is "
+  + "silent by construction and only visible on the request");
+
+// …and a signed-in reader still reads the bases, which is what the split is for.
+const inWin = load(true);
+inWin.CPL_COLLEGE_BRIEFING.activate();
+const gatedUrls = inWin.__fetched.join(" ");
+check("signed in: ⭐ still reads the gated bases, not the mirrors",
+  /map_college_credit_summary\?/.test(gatedUrls) && !/map_college_credit_summary_pub/.test(gatedUrls));
 
 // ── Part C — the strategy library ──
 // Two programs: one shaped like the live cpl-implementation, one standing in
@@ -200,10 +236,20 @@ check("XSS: no injected img element", xr.querySelectorAll("img").length === 0);
 // value without escaping "<" (legal inside an attribute), so a substring check
 // on innerHTML is a proxy that fails on correct output. What actually matters
 // is that the hostile string stayed TEXT and produced no elements.
+// RESCOPED 2026-08-17 (Sky167). The college <select> moved to the scope flow's
+// SECOND step, so it is legitimately absent from the briefing view. The property
+// — a hostile college name stays TEXT and produces no elements — is unchanged,
+// so the check now looks where the options actually are.
 check("XSS: option label is inert text, not markup", (function () {
+  wx.CPL_COLLEGE_BRIEFING._state.scope = "college";
+  wx.CPL_COLLEGE_BRIEFING._state.college = null;
+  wx.CPL_COLLEGE_BRIEFING.render(xr);
   const opt = Array.prototype.slice.call(xr.querySelectorAll("#cb-college option"))
     .filter(function (o) { return o.value.indexOf("Bad") !== -1; })[0];
-  return opt && opt.textContent === "<b>Bad</b> College" && opt.children.length === 0;
+  const ok = opt && opt.textContent === "<b>Bad</b> College" && opt.children.length === 0;
+  wx.CPL_COLLEGE_BRIEFING._state.college = "<b>Bad</b> College";
+  wx.CPL_COLLEGE_BRIEFING.render(xr);
+  return ok;
 })());
 check("XSS: strategy text produced no elements", (function () {
   const prog = xr.querySelector(".cb-prog");
@@ -377,7 +423,7 @@ check("funding: carries the floor from the model", fB && fB.floor === 150000);
 
 const fC = M._fundingFor("Calbright College Non-Credit");
 check("funding: a noncredit feeder gets no college-pool allocation", fC && fC.onRoster && fC.alloc === null,
-  "it is funded by the $1M noncredit carve-out — a different route, not an absence");
+  "it is funded by the noncredit carve-out, its own route to funding");
 
 check("funding: an off-roster college is flagged, not zeroed",
   (function () { const r = M._fundingFor("Some Other College"); return r && r.onRoster === false && !("alloc" in r); })());
@@ -449,28 +495,60 @@ check("askSierra() prefers ask() over prefill()",
   briefingSrc.indexOf("C.ask(question)") < briefingSrc.indexOf("C.prefill(question)"),
   "prefill is the fallback for an older chat module");
 
-// Behavioural: a click on a suggested question reaches ask(), not prefill().
-const wq2 = load(true);
-wq2.cplCollegeShort = S;
+/* ── The suggested questions belong to the ASSISTANT now (Sam, 2026-08-21) ────
+ * "My College users select a pre-seeded question and are not prompted for their
+ * role — confusing." There were TWO clusters with the role picker between them:
+ * the tab's own above the widget, and the widget's generic starters below its
+ * "I'm a…" chips. Clicking one of the upper set with no role chosen produced
+ * "tap who you are above" — pointing at chips that were BELOW it.
+ *
+ * The tab now hands its questions to the widget, which renders ONE cluster
+ * under the role chips. So the seam to guard is the hand-off, not the markup. */
+function briefingWith(chat) {
+  const w = load(true);
+  w.cplCollegeShort = S;
+  w.CPL_CHAT = chat;
+  const M2 = w.CPL_COLLEGE_BRIEFING;
+  M2._state.college = "Example College";
+  M2._state.data = { colleges: ["Example College"], summaryByName: {},
+    briefing: M2._buildBriefing({ config: TWO, college: COLLEGE }, { scenario: "Scenario 1", year: "1" }) };
+  const r = w.document.getElementById("college-briefing-root");
+  M2.render(r);
+  return { w: w, M: M2, root: r };
+}
+
+let handed = "unset";
+const modern = briefingWith({
+  mountInto: function () {}, prefill: function () { return true; },
+  ask: function () { return true; },
+  setSuggestions: function (list) { handed = list; return true; },
+});
+check("⭐ the tab hands its questions to the assistant rather than printing them",
+  Array.isArray(handed) && handed.length >= 2);
+check("…they are THIS college's questions, computed not fixed",
+  Array.isArray(handed) && handed.every(function (q) { return /Example College/.test(q); }),
+  JSON.stringify(handed));
+check("⭐ …and the tab prints no second cluster of its own",
+  !modern.root.querySelector("button.cb-ask"),
+  "two lists straddling the role picker is the confusion being fixed");
+
+/* ⚠ A CHAT MODULE THAT MOUNTS BUT CANNOT TAKE THE QUESTIONS MUST NOT COST THEM.
+ * Gating the fallback on the MOUNT rather than on the questions actually
+ * landing would take the mounted branch here and show nothing — the silent loss
+ * the fallback exists to prevent, reintroduced by the gate. */
 let asked = null, prefilled = null;
-wq2.CPL_CHAT = {
+const legacy = briefingWith({
   mountInto: function () {}, prefill: function (q) { prefilled = q; return true; },
   ask: function (q) { asked = q; return true; },
-};
-const Q2 = wq2.CPL_COLLEGE_BRIEFING;
-Q2._state.college = "Example College";
-Q2._state.data = { colleges: ["Example College"], summaryByName: {},
-  briefing: Q2._buildBriefing({ config: TWO, college: COLLEGE }, { scenario: "Scenario 1", year: "1" }) };
-const q2Root = wq2.document.getElementById("college-briefing-root");
-Q2.render(q2Root);
-const chip = q2Root.querySelector("button.cb-ask");
-check("a suggested question renders as a clickable chip", !!chip);
+});
+const chip = legacy.root.querySelector("button.cb-ask");
+check("⚠ an older chat module still gets the questions, via the fallback cluster", !!chip);
 if (chip) chip.click();
 check("clicking it SENDS rather than only filling the box",
   asked !== null && prefilled === null,
   "two steps is where a visitor gets lost");
 check("…and it sends the question that was on the chip",
-  asked === chip.getAttribute("data-q"));
+  !!chip && asked === chip.getAttribute("data-q"));
 
 check("Sierra AI: falls back to the deep link when the chat module is absent",
   M._SIERRA_Q_KEY === "cplSierraTestQ.v1"
@@ -497,18 +575,31 @@ check("questions: nothing waiting → asks where to look instead",
   /Nothing is set up and waiting/.test(qZero.join(" ")) && !/fastest way to award/.test(qZero.join(" ")));
 check("questions: none without a college", M._sierraQuestions(null, null, null).length === 0);
 
-// A failed model read must read as a failed read.
-check("funding: a failed model load renders 'failed read', not an empty result",
-  /failed read, not a finding/.test(briefingSrc));
-check("funding: the allocation is labelled a cap, not a payment",
-  /cap, not a cheque/.test(briefingSrc));
+// A failed model read must read as a failed read — stated positively since
+// 2026-09-24 (Sam's no-this-not-that rule): the page says the model did not
+// load and that the allocation is unread, and asks for a reload.
+check("funding: a failed model load says the allocation is unread, never that it is absent",
+  /The funding model did not load, so this page cannot show an allocation for this college yet/.test(briefingSrc)
+  && !/failed read, not a finding/.test(briefingSrc));
+// Sam retired "a cap, not a cheque" on 2026-08-22 (state positively what drives
+// the money), and the model gained a literal $400K cap the same day — so the
+// old phrase was both against the ruling and newly ambiguous. Guard the
+// REPLACEMENT and guard that the retired phrasing does not creep back.
+check("funding: the allocation is stated positively — driven by the college's own CPL results",
+  /driven by <b>its own CPL results, as they happen<\/b>/.test(briefingSrc));
+check("funding: the retired 'not a cheque' framing is gone",
+  !/not a cheque/.test(briefingSrc) && !/ceiling, not a check/.test(briefingSrc));
+check("funding: a college held to the maximum is told where the difference went",
+  // "cap" vocabulary (one pool + Sam's funding-vocabulary sweep, 2026-08-31);
+  // the promise is unchanged — say where the difference WENT.
+  / cap<\/b>/.test(briefingSrc) && /re-splits across the other colleges/.test(briefingSrc));
 
 // ⭐ The floor waterfall must not be re-implemented here. The handoff's
 // worked example — Bakersfield at 1.83% of a $23.24M pool — is a FLAT
 // PROPORTIONAL number, and it is wrong for every college the waterfall pins to
 // the floor. Guard the absence of a second implementation.
 check("funding: no re-derived allocation arithmetic in the briefing",
-  !/headcount_pct|floor_window|ruralPerCollege|23240308|0\.0183/.test(briefingCode),
+  !/headcount_pct|floor_window|ruralPerCollege|ruralAlloc|23240308|24240308|0\.0183/.test(briefingCode),
   "the allocation comes from cpl_funding.js via _alloc(); a second implementation drifts");
 
 // ── Part H — the funding section renders end-to-end ──
@@ -520,9 +611,11 @@ wf.cplCollegeShort = S;
 wf.CPL_FUNDING = jw.window.CPL_FUNDING;
 wf.CPL_FUNDING_ESS = { n_statewide_credentials: 84 };
 wf.CPL_FUNDING_TAB = {
-  _alloc: function () { return { total: 150000, floored: true, rural_w: 76923, gate_blocked: true, gate_missing: ["a CPL Coordinator"] }; },
+  // Shape matches the post-2026-08-22 model: no rural_w component, floor $175K.
+  _alloc: function () { return { total: 175000, floored: true, gate_blocked: true, gate_missing: ["a CPL Coordinator"] }; },
   _grant: FAKE._grant, _ess: FAKE._ess, _isRural: function () { return true; },
-  _district: function () { return "Kern CCD"; }, _model: function () { return { floor: 150000 }; }
+  _district: function () { return "Kern CCD"; },
+  _model: function () { return { floor: 175000, cap: 400000 }; }
 };
 const B = wf.CPL_COLLEGE_BRIEFING;
 B._state.funding = "ready";
@@ -536,21 +629,43 @@ const fr = wf.document.getElementById("college-briefing-root");
 B.render(fr);
 const ftxt = fr.textContent;
 check("render: the seed grant appears as money", /\$50,000/.test(ftxt));
-check("render: the allocation appears as money", /\$150,000/.test(ftxt));
+check("render: the allocation appears as money", /\$175,000/.test(ftxt));
 check("render: a floored college is TOLD it is at the floor, not left to infer",
-  /minimum-viable floor/.test(ftxt) && /not.{0,3} its share of the pool/i.test(ftxt));
-check("render: the guaranteed rural allowance is named", /rural allowance/.test(ftxt) && /\$76,923/.test(ftxt));
+  // "base award" vocabulary (one pool, 2026-08-31; "pool" → "funding" is Sam's
+  // sweep of the same day). The promise is unchanged: name the state AND say
+  // where the figure comes from. Since 2026-09-24 the sentence states it
+  // positively (Sam's no-this-not-that rule): the proportional share came out
+  // below the base, and the base award is the allocation.
+  /base award/.test(ftxt) && /proportional share came out below the base/i.test(ftxt)
+  && /the base award is its allocation/i.test(ftxt));
+// The rural allowance is retired (Sam, 2026-08-22) — a briefing that still
+// named it would promise a college money that no longer exists.
+check("render: no retired rural allowance is still promised",
+  !/rural allowance/.test(ftxt) && !/\$76,923/.test(ftxt));
 check("render: an outstanding participation requirement is surfaced",
   /Participation requirements are outstanding/.test(ftxt) && /CPL Coordinator/.test(ftxt));
 check("render: the ESS outcomes are listed", fr.querySelectorAll(".cb-ess-list li").length === 3);
 check("render: Sierra AI suggested questions render as buttons",
   fr.querySelectorAll("button.cb-ask").length >= 3);
-check("render: the pickers sit INSIDE the Sierra AI box",
-  !!fr.querySelector(".cb-assist .cb-bar"),
-  "Sam: put the selectors in the assistant box");
+// SUPERSEDED 2026-08-17 (Sky167). Sam's 2026-08-11 instruction was "put the
+// selectors in the assistant box"; his 2026-08-17 redesign moves the choosing
+// OUT of the briefing view entirely, into a scope step that runs before the
+// assistant exists. The instruction did not fail — it was replaced. What is
+// still worth guarding is that the briefing view carries no stray picker bar,
+// which is the same thing the (N) block checks from the other direction.
+check("render: the briefing view carries no picker bar (choosing happens before it)",
+  !fr.querySelector(".cb-assist .cb-bar-pick"));
 check("render: a mount point exists for the shared assistant",
   !!fr.querySelector("#cb-assistant-mount"));
-check("render: the district picker is present", !!fr.querySelector("#cb-district"));
+// RESCOPED 2026-08-17: the district narrowing moved to the choose-a-college
+// step. Still asserted, at its new address.
+check("render: the district picker is present on the choose-a-college step", (function () {
+  const keep = B._state.college;
+  B._state.scope = "college"; B._state.college = null; B.render(fr);
+  const seen = !!fr.querySelector("#cb-district");
+  B._state.college = keep; B.render(fr);
+  return seen;
+})());
 check("render: no script/img injected anywhere in the new sections",
   fr.querySelectorAll("script").length === 0 && fr.querySelectorAll("img").length === 0);
 
@@ -569,8 +684,10 @@ Bn.render(nr);
 // element that carries a college's money, not via a "$" substring. The page
 // legitimately contains "$50k ESS 25-82" as a PROGRAM NAME, so a text-level
 // dollar match fails on correct output.
-check("render: a failed model read says so, and attributes NO money to the college",
-  /failed read, not a finding/.test(nr.textContent) && nr.querySelectorAll(".cb-fbig").length === 0);
+check("render: a failed model read says so, and attributes NO funding to the college",
+  /The funding model did not load/.test(nr.textContent)
+  && /cannot show an allocation for this college yet/.test(nr.textContent)
+  && nr.querySelectorAll(".cb-fbig").length === 0);
 
 // ── Part I — "transcribed" in MAP is a MARK, not a posting ──
 // Sam, 2026-08-11: a college checks the Transcribe step in MAP when it judges
@@ -810,9 +927,19 @@ check("(N) resources render as links", nr2.querySelectorAll(".cb-resi a").length
 // relocates the FIRST .cb-bar in document order into the Sierra AI box. The
 // picker bar is built first in the string, so it still wins — asserted here
 // WITH the new bars present, which is the only fixture that could break it.
-check("(N) the pickers still land inside Sierra AI with the new bars present",
-  !!nr2.querySelector(".cb-assist .cb-bar select#cb-college"),
-  "finish() takes the first .cb-bar in document order");
+// ⭐ REWRITTEN 2026-08-17, and it caught a real bug. finish() used to relocate
+// the FIRST `.cb-bar` in document order into the Sierra box, which was only
+// correct because the picker bar happened to be authored first. With the
+// pickers moved to step 2, the first `.cb-bar` in this view is one of the
+// waiting breakdown's PROGRESS bars — so the old code tore it out of its table
+// and dropped it into the assistant. The selector is now `.cb-bar-pick`.
+// This fixture is the one that could expose it: it has the breakdown bars.
+check("(N) ⭐ a breakdown progress bar is NOT hoovered into the Sierra AI box",
+  !nr2.querySelector(".cb-assist .cb-bar"),
+  "finish() must target the picker bar by name, not by document order");
+check("(N) …and the breakdown bars stay where they were rendered",
+  nr2.querySelectorAll(".cb-bar").length === 0
+    || !!nr2.querySelector(".cb-sec .cb-bar, table .cb-bar, .cb-wait .cb-bar"));
 check("(N) no script or img injected by any new section",
   nr2.querySelectorAll("script").length === 0 && nr2.querySelectorAll("img").length === 0);
 
@@ -1094,9 +1221,30 @@ JOIN_CASES.forEach(function (c) {
 
 // Mt. SAC is CLAUDE.md's own cross-check against the Sep-BOG reconciliation,
 // so the fix is verified against a figure derived independently of this repo.
+// Sam's $400K MAXIMUM (2026-08-22) now binds it, so the cross-check is taken
+// with the ceiling OFF — the independently-derived figure is a property of the
+// floor waterfall, and it must keep holding underneath the ceiling. Checking
+// only the capped figure would let the waterfall rot behind a constant.
+FUND._setScenario({ pool: { cap_window: 0 } });
+FUND._model();
+const mtsacOpen = FUND._alloc("Mt San Antonio");
+// ⚠ The Sep-BOG cross-check figure MOVED AGAIN, and legitimately: one-pool
+// adoption (2026-08-31) put $25,240,308 behind a $150K base over 118
+// institutions, and Mt. SAC's own noncredit FTES (10,829.3) now rides its row
+// — so the largest institution's uncapped share is $711,567. Re-derived here
+// from the model rather than re-typed, so the NEXT model change fails loudly
+// instead of quietly agreeing with a stale literal.
+// Moved to $694,417 on 2026-09-24 with the fresh DataMart FTES pull (statewide
+// credit FTES 1,069,182 -> 1,108,508 shrinks every institution's share).
+check("(P) Mt. SAC's uncapped allocation is its share of the CURRENT funding",
+  !!mtsacOpen && Math.round(mtsacOpen.total) === 694417 &&
+  Math.round(mtsacOpen.total) > 400000,
+  "the waterfall still runs underneath the ceiling; only the model's dials moved");
+FUND._setScenario({});
+FUND._model();
 const mtsac = FUND._alloc("Mt San Antonio");
-check("(P) Mt. SAC's allocation matches the Sep-BOG cross-check ($522,239)",
-  !!mtsac && Math.round(mtsac.total) === 522239,
+check("(P) Mt. SAC is held to the $400,000 maximum once the ceiling is on",
+  !!mtsac && mtsac.capped === true && Math.round(mtsac.total) === 400000,
   "got " + (mtsac ? Math.round(mtsac.total) : "null"));
 
 // And the consumer resolves it. rosterKey() is exercised through the real
@@ -1117,31 +1265,70 @@ const jTxt = jRoot.textContent.replace(/\s+/g, " ");
 check("(P) ⭐ Mt. San Antonio is NOT told it is off the funding roster",
   !/is not on the 115-college funding roster/.test(jTxt),
   "the roster row was always there — the join dropped it");
-check("(P) …and its real allocation renders", /\$522,239/.test(jTxt));
+check("(P) …and its real allocation renders", /\$400,000/.test(jTxt));
+check("(P) …and it is told it is held to the maximum, and where the difference went",
+  // "cap" vocabulary (one pool, 2026-08-31); the where-it-went promise holds.
+  /cap/.test(jTxt) && /re-splits across the other colleges/.test(jTxt));
 
 // ── The collapsed shape ──
-const secs = jRoot.querySelectorAll("details.cb-sec");
+// RESCOPED 2026-08-17 (Sky167). Sierra is a `details.cb-sec` now too — Sam
+// asked for her to be collapsible, expanded by default — so "every section" no
+// longer means "every content section". These assertions are about the CONTENT
+// drawers; Sierra's own default is asserted separately just below, because
+// "expanded by default" and "the rest start closed" are two different promises
+// and folding them together would let either one break silently.
+const allSecs = jRoot.querySelectorAll("details.cb-sec");
+const secs = Array.prototype.filter.call(allSecs, function (d) {
+  return d.getAttribute("data-sec") !== "sierra";
+});
 check("(P) the content below Sierra AI is in collapsible sections", secs.length >= 4);
-check("(P) every section is CLOSED on arrival",
-  Array.prototype.every.call(secs, function (d) { return !d.open; }),
+check("(P) every CONTENT section is CLOSED on arrival",
+  secs.every(function (d) { return !d.open; }),
   "Sam: default collapsed");
+// ⭐ The counterpart, and the one that would rot quietly: a "collapse
+// everything" change would satisfy the line above and break Sam's actual ask.
+const sierraSec = jRoot.querySelector('details.cb-sec[data-sec="sierra"]');
+check("(P) ⭐ Sierra IS a collapsible section", !!sierraSec,
+  "Sam, 2026-08-17: collapsible but expanded by default");
+check("(P) ⭐ …and she is EXPANDED on arrival", !!sierraSec && sierraSec.open);
+check("(P) Sierra's summary carries the single heading",
+  !!sierraSec && sierraSec.querySelectorAll("summary h1, summary h2, summary h3").length === 1,
+  "the hoist moves the widget's own h2 into the summary — not a second copy");
 // ⭐ Collapsed is only "minimal" if what remains still informs. A drawer with
 // no summary is just hidden content, and the reader has to open all of them.
 check("(P) ⭐ every closed section still states something in its header",
-  Array.prototype.every.call(secs, function (d) {
+  secs.every(function (d) {
     const v = d.querySelector(".cb-sum-v");
     return v && v.textContent.trim().length > 0;
   }),
   "a blank summary on a closed section reads as broken");
 check("(P) each section has a title and a single summary row",
-  Array.prototype.every.call(secs, function (d) {
+  secs.every(function (d) {
     return d.querySelector("summary.cb-sum .cb-sum-t")
         && d.querySelectorAll("summary").length === 1;
   }));
-check("(P) Sierra AI is NOT inside a collapsible section",
-  !!jRoot.querySelector(".cb-assist") && !jRoot.querySelector("details .cb-assist"),
-  "she is the tab, not a drawer");
-check("(P) Sierra AI states what she is for", !!jRoot.querySelector(".cb-assist .cb-purpose"));
+// INVERTED 2026-08-17 by Sam's own instruction — she is a drawer now, one that
+// starts open. Kept (rather than deleted) as the record of the change, and
+// because "the assistant box still exists at all" is worth asserting.
+check("(P) Sierra AI is a collapsible section that starts open",
+  !!jRoot.querySelector(".cb-assist")
+    && !!jRoot.querySelector('.cb-assist details[data-sec="sierra"][open]'),
+  "Sam, 2026-08-17: collapsible, expanded by default");
+// RESCOPED 2026-08-17. This asserted the ELEMENT (`.cb-purpose`), which was
+// this file's own copy of a description cpl_chat.js already printed — the
+// duplicate Sam asked to remove. The PROPERTY it was guarding is unchanged and
+// still worth guarding: the box has to say what she is for. It is satisfied by
+// whichever description survives — the widget's hoisted intro when it mounted,
+// the fallback heading's box when it did not — so the check reads the box's
+// prose, not one class name.
+//
+// (Third-instance discipline from the EACR work applies here too: an assertion
+// pinned to a specific element is a BOUND on today's markup. Pin the property.)
+var assistBox = jRoot.querySelector(".cb-assist");
+check("(P) Sierra AI states what she is for",
+  !!assistBox && /credit for prior learning|cpl/i.test(assistBox.textContent || "")
+    && (assistBox.textContent || "").trim().length > 120,
+  "the assistant box must describe itself, in whichever element carries it");
 
 // Open state must survive a re-render — render() rewrites innerHTML, so a
 // <details open> living only in the DOM would slam shut when the role picker
@@ -1152,7 +1339,9 @@ const reopened = jRoot.querySelector('details.cb-sec[data-sec="funding"]');
 check("(P) an opened section stays open across a re-render", !!reopened && reopened.open);
 check("(P) …and its neighbours stay shut",
   Array.prototype.filter.call(jRoot.querySelectorAll("details.cb-sec"), function (d) {
-    return d.getAttribute("data-sec") !== "funding" && d.open; }).length === 0);
+    // Sierra is excluded: she is open by design, not a neighbour that leaked.
+    var id = d.getAttribute("data-sec");
+    return id !== "funding" && id !== "sierra" && d.open; }).length === 0);
 
 // ── Strategies live inside the priority they earn against ──
 // TWO's implementation program has 2 priorities; the real funding module has
@@ -1208,6 +1397,17 @@ check("(P) …but a strategy that IS measured still shows its figure",
   nestRoot.querySelectorAll(".cb-strat .cb-m").length > 0);
 check("(P) the nested steps are still closed by default",
   Array.prototype.every.call(nestRoot.querySelectorAll("details.cb-strat"), function (d) { return !d.open; }));
+// ⭐ THE LIVE SHAPE since 2026-09-22. THREE lists three priorities, as the live
+// config does, while the funding module carries a fourth (career attainment)
+// from its baked defaults at a 0% share. Counting it sent every college's steps
+// to the standalone list the moment the card appeared; the checks above are
+// what failed. A priority the config does not list and that holds no share has
+// no steps and no funding, so the funding box leaves it out.
+check("(P) ⭐ an unlisted priority at a 0% share stays out of the funding box and the count gate",
+  (FUND._prios("Mt San Antonio", "1") || []).length === 4 &&
+  nestRoot.querySelectorAll(".cb-prios .cb-prow").length === 3 &&
+  !/Career attainment/.test(nestRoot.querySelector(".cb-prios") ? nestRoot.querySelector(".cb-prios").textContent : ""),
+  "the model carries 4 priorities; the box shows the 3 the config lists");
 
 // ⭐ Guarantee (c) SURVIVES THE MOVE. Sam adds programs to the config and they
 // must appear with no code change. Only cpl-implementation nests into the

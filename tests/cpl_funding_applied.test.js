@@ -58,7 +58,8 @@ function build(columnName, columnValue, extraReports) {
 const COLS_A = ["College", "Transcribed Credits", "MAP Internal StudentID",
   "Potential Student", "Test Student", "Eligible Credits", "Applied Credits"];
 const rowsA = [
-  // Alameda: 6 distinct applied students (clears the <5 suppression floor).
+  // Alameda: 10 distinct applied students (clears the floor of 10 — raised
+  // from 5 on 2026-09-03, Sam's under-10 ruling).
   //   A1 eligible 30 / applied 12 / transcribed 3  -> pe, pa, p3
   //   A1 duplicate row                             -> deduped, units counted ONCE
   ["College of Alameda", "3", "A1", "no", "no", "30", "12"],
@@ -68,12 +69,22 @@ const rowsA = [
   ["College of Alameda", "0", "A4", "no", "no", "20", "8"],
   ["College of Alameda", "0", "A5", "no", "no", "20", "8"],
   ["College of Alameda", "0", "A6", "no", "no", "20", "8"],
-  ["College of Alameda", "0", "A7", "no", "no", "40", "0"],   // eligible ONLY -> pe, not pa
-  ["College of Alameda", "9", "A8", "no", "yes", "9", "9"],   // Test Student -> excluded
-  ["College of Alameda", "9", "A9", "yes", "no", "9", "9"],   // Potential -> pp lane, not pa
+  ["College of Alameda", "0", "A7", "no", "no", "20", "8"],
+  ["College of Alameda", "0", "A8", "no", "no", "20", "8"],
+  ["College of Alameda", "0", "A9", "no", "no", "20", "8"],
+  ["College of Alameda", "0", "A10", "no", "no", "20", "8"],
+  ["College of Alameda", "0", "A11", "no", "no", "40", "0"],  // eligible ONLY -> pe, not pa
+  ["College of Alameda", "9", "A12", "no", "yes", "9", "9"],  // Test Student -> excluded
+  ["College of Alameda", "9", "A13", "yes", "no", "9", "9"],  // Potential -> pp lane, not pa
   // Ventura: 2 applied students -> below SUPPRESS_BELOW, must null out.
   ["Ventura College", "0", "V1", "no", "no", "10", "5"],
   ["Ventura College", "0", "V2", "no", "no", "10", "5"],
+  // Bakersfield: a SECOND masked college, so Ventura is not the lone masked
+  // cell — a lone one drags the smallest visible college (Alameda) down with
+  // it by complementary masking, which is the builder doing its job, not the
+  // behavior this file is about.
+  ["Bakersfield College", "0", "B1", "no", "no", "10", "5"],
+  ["Bakersfield College", "0", "B2", "no", "no", "10", "5"],
 ];
 const A = build(COLS_A, rowsA);
 check("A: producer runs cleanly with Applied Credits present", A.P !== null);
@@ -81,22 +92,26 @@ check("A: producer runs cleanly with Applied Credits present", A.P !== null);
 if (A.P) {
   const al = A.P.colleges["Alameda"] || {};
   const ven = A.P.colleges["Ventura"] || {};
-  check("A: pa counts distinct students with applied > 0 (A1-A6 = 6)", al.pa === 6);
-  check("A: pa_u sums applied units over exactly those students (12 + 8x5 = 52)",
-    Math.abs((al.pa_u || 0) - 52) < 0.01);
-  check("A: a duplicate row does not double-count pa_u", (al.pa_u || 0) < 60);
-  check("A: eligible-only student counts in pe but NOT pa (pe 7 > pa 6)",
-    al.pe === 7 && al.pa === 6);
-  check("A: Test Student excluded from pa", al.pa === 6);
-  check("A: Potential Student routed to pp, not pa", al.pa === 6 && (A.P.statewide.pp || 0) >= 1);
-  check("A: pa is <5-suppressed like the other real-student metrics",
+  check("A: pa counts distinct students with applied > 0 (A1-A10 = 10)", al.pa === 10);
+  check("A: pa_u sums applied units over exactly those students (12 + 8x9 = 84)",
+    Math.abs((al.pa_u || 0) - 84) < 0.01);
+  check("A: a duplicate row does not double-count pa_u", (al.pa_u || 0) < 96);
+  check("A: eligible-only student counts in pe but NOT pa (pe 11 > pa 10)",
+    al.pe === 11 && al.pa === 10);
+  check("A: Test Student excluded from pa", al.pa === 10);
+  check("A: Potential Student routed to pp, not pa", al.pa === 10 && (A.P.statewide.pp || 0) >= 1);
+  check("A: pa masks under the floor of 10 like every other count",
     ven.pa === null && ven.pa_suppressed === true);
-  check("A: a suppressed pa nulls its unit sum too (privacy keys off the COUNT)",
-    ven.pa_u === null && ven.pa_u_suppressed === true);
+  // Sam, 2026-09-03: the COUNT masks, the UNITS never do — units are what the
+  // tab prices, so a college whose count is hidden still earns.
+  check("A: a masked pa KEEPS its unit sum (units carry the money)",
+    Math.abs((ven.pa_u || 0) - 10) < 0.01 && !ven.pa_u_suppressed);
+  check("A: with two masked colleges neither is lone, so Alameda is not masked complementarily",
+    al.pa === 10 && !al.pa_complementary && A.P.colleges["Bakersfield"].pa === null);
   check("A: statewide carries pa and pa_u", typeof A.P.statewide.pa === "number"
     && typeof A.P.statewide.pa_u === "number");
-  check("A: statewide pa_u is the plain sum of per-college sums (52 + 10)",
-    Math.abs((A.P.statewide.pa_u || 0) - 62) < 0.01);
+  check("A: statewide pa_u is the plain sum of per-college sums (84 + 10 + 10)",
+    Math.abs((A.P.statewide.pa_u || 0) - 104) < 0.01);
   check("A: the funnel orders correctly at statewide grain (eligible >= applied >= transcribed)",
     A.P.statewide.pe_u >= A.P.statewide.pa_u && A.P.statewide.pa_u >= A.P.statewide.p3_u);
   check("A: basis string documents PA", /PA = any APPLIED CPL units/.test(A.P.basis || ""));
@@ -115,10 +130,10 @@ if (B.P) {
     !("pa" in al));
   check("B: pa_u key is ABSENT too", !("pa_u" in al));
   check("B: statewide omits pa / pa_u", !("pa" in B.P.statewide) && !("pa_u" in B.P.statewide));
-  // p3 is legitimately `null` here (one transcribed student, <5 suppression) —
-  // assert the KEY is still produced, not that it holds a number.
+  // p3 is legitimately `null` here (one transcribed student, under the floor
+  // of 10) — assert the KEY is still produced, not that it holds a number.
   check("B: the existing metrics are untouched by the pa addition",
-    al.pe === 7 && Math.abs(al.pe_u - 170) < 0.01 && "p3" in al && "pp" in al);
+    al.pe === 11 && Math.abs(al.pe_u - 250) < 0.01 && "p3" in al && "pp" in al);
   check("B: the run says so out loud rather than failing silently",
     /Applied Credits' not in this pull/.test(B.run.stdout || ""));
 }
@@ -133,8 +148,9 @@ const XVIEW = {
   columnName: ["College", "Eligible Credits", "Transcribed Credits", "Applied Credits"],
   // BOTH funding colleges must appear — `ours` sums every college we resolved,
   // so a partial MAP fixture would read as a real grain gap.
-  columnValue: [["College of Alameda", "190", "3", "52"],
-                ["Ventura College", "20", "0", "10"]],
+  columnValue: [["College of Alameda", "250", "3", "84"],
+                ["Ventura College", "20", "0", "10"],
+                ["Bakersfield College", "20", "0", "10"]],
 };
 const C = build(COLS_A, rowsA, [XVIEW]);
 check("C: producer runs with the cross-check view present", C.P !== null);

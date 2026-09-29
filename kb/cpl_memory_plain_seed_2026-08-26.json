@@ -1,0 +1,631 @@
+{
+ "_about": "Plain-language pass over cpl_memory `title` and `plain` — the two READER-FACING fields, rendered by the Report view and (as of this run) sent to the model by the Briefing. Keyed by the row's write key: `slug`, or the uuid where slug is null. `summary` and `detail` were NOT touched — they are the precise curator record.",
+ "_as_of": "2026-08-26",
+ "_author": "sky196@bot",
+ "_applied_to": "Supabase project 'Work Plan' (hvuwhnbuahrtptokpqfh), table public.cpl_memory",
+ "_method": "Guarded UPDATE ... FROM (VALUES ...) matched on coalesce(slug, id::text), with a no-op guard (`m.title is distinct from s.t`). All 202 keys were verified to match exactly one live row BEFORE any write — a key that names nothing returns success and changes nothing (see the `a-write-key-can-name-nothing-and-look-like-auth` row).",
+ "_verified_after": "0 rows without plain text, 0 rows carrying developer jargon and 0 British spellings across all 573 non-superseded rows. 7 superseded rows were left alone — they render on no surface.",
+ "rows": {
+  "haiku-drops-a-say-this-whenever-caveat": {
+   "title": "On the smaller model, Sierra drops the caution that the credit backlog is a ceiling, not a debt",
+   "plain": "Sierra now runs on a smaller, cheaper AI model. Testing found one thing she stops saying: that the roughly one million units of credit waiting to be acted on is a ceiling rather than a debt, because about 30% of it will correctly turn out not to apply. The instruction telling her to say it is still there and is perfectly clear, so this is her not following it rather than us forgetting to ask. Everything else we test still passes."
+  },
+  "sb135-created-ed-code-article-9-for-cpl": {
+   "title": "A new state law put credit for prior learning into the Education Code, and one register row now asks for something already enacted",
+   "plain": "A new state law, in force since 13 July 2026, wrote credit for prior learning into California's Education Code for the first time. It requires every campus to accept credit for prior learning that another campus has already transcribed, including toward general education, transfer and the major. Our regulation register still lists that as something to be won. It also gives several other rows a footing in law they did not have, and it works against one of them."
+  },
+  "surface-vocabulary-is-five-places-not-three": {
+   "title": "Letting the assistant work on a new screen takes five separate edits, and no one document listed them all",
+   "plain": "When we let the assistant work on a new screen, five separate places have to be told about it. Our written notes listed three; a memory entry listed a different three. Both said three, and the real answer is the two lists put together, which is five. Miss one and the screen quietly gets the wrong size limit, or no curator can ever aim a rule at it, or it never shows up in the picker. Reading the memory table before starting is what caught this."
+  },
+  "a-client-cannot-see-the-cap-the-server-enforces": {
+   "title": "A page cannot tell whether the service behind it has been updated yet, so the gap between them is silently wrong",
+   "plain": "The two halves of a feature go live at different moments: the page the moment work is merged, the service behind it only when someone deploys it. In the gap, the page sends a long request that the older service quietly trims to its first 1,000 characters - throwing away the instructions at the end - and the answer comes back as confident prose instead of the structured result we asked for. The page checks the size limit written in its own copy of the code, not the one actually deployed, and our automated tests check the deployed service, so neither can see the mismatch. The defense is to put the subject first, so anything cut off fails loudly instead of quietly."
+  },
+  "gr-instrument-doctrine-is-measured-and-area-scoped": {
+   "title": "The rule for telling law from regulation from practice was measured from CPL's own rows, and must not be pointed at the sample area",
+   "plain": "We worked out how to tell whether a change needs new legislation, a change to regulation, or nothing more than a memo - and we checked the rule against our own CPL rows rather than just asserting it: three out of three one way, two out of two the other. But it is a generalization drawn from one subject area, so it is tied to that area by name rather than guessed from the wording. The dual-enrollment area is a deliberate sample whose rows are neutral review prompts, not positions we hold; running the CPL rule there would invent a Chancellor's Office position nobody took."
+  },
+  "a-substring-match-cannot-fail-on-a-typo": {
+   "title": "A check that looks for a name inside a longer text cannot catch a typo in that name",
+   "plain": "A test confirmed a setting existed by looking for its name somewhere inside a block of text. That also matches the name with a typo stuck on the end, so the single most likely real mistake could not fail the test. We only found it by deliberately breaking each check one at a time and watching which ones stayed green while the others went red."
+  },
+  "an-area-sweep-sees-what-a-per-row-pass-cannot": {
+   "title": "Sam: the whole-area sweep is the routine, and three of its findings cannot be seen one row at a time",
+   "plain": "Sam asked for the review we ran by hand to become a button he can press after editing. It is not the single-row review made wider: three of the findings that mattered are invisible from inside any one row. The headline - that a row asks for something already enacted - only appears when the row is read against a document about the whole area. Whether a row was weakened is a comparison between rows. And a duty that no row covers at all is not a finding about any row."
+  },
+  "a-rotating-token-in-a-shared-store-has-no-owner": {
+   "title": "A stale browser tab overwrote the live sign-in with an expired copy and signed every tab out",
+   "plain": "Sign-ins renew themselves, and each renewal cancels the one before it. Our code let any open browser tab declare its own copy the true one - so a tab that had been sitting idle published its already-cancelled copy over the live one, and everything signed out. Sam hit this mid-edit on the regulation register with several tabs open, and the save failed with a message blaming his account, which was fine all along. The audit trail settled it: every save that worked left a record behind and his left none. The freshest copy wins now."
+  },
+  "gr-sensitivity-open-rows-already-exist": {
+   "title": "Some regulation rows are already marked shareable - our own notes said none were",
+   "plain": "Our project notes said every row in the regulation register was marked internal-only, and that opening any of them was Sam's call. Checked against the live data, some are already open. This matters before anything is exported, because the caution about unverified legal text travels with the export. Measured the same day: not one of the twenty rows has been verified by anybody. For a document heading to the Chancellor's Office that is the number to move, and it is a person's job rather than something software can do."
+  },
+  "a-write-key-can-name-nothing-and-look-like-auth": {
+   "title": "A save aimed at a row that does not exist looks exactly like being signed out",
+   "plain": "The Memory tab saved changes by naming the row with its short text handle. That handle is optional, and six of the 572 entries do not have one - so for those, the save was addressed to nothing, changed nothing, and reported no error at all. The page read that silence as a rejected sign-in and told Sam his team phrase had expired, which was untrue and sent him looking in the wrong place entirely. Saves now use the row's permanent identifier, and a row that cannot be named is refused out loud."
+  },
+  "a-status-cycle-writes-what-it-passes-through": {
+   "title": "A button that cycles through states saves every state it passes through",
+   "plain": "One button stepped an entry through three states in a loop. Getting from the first to the third meant passing through the middle one - and on a live table each step was a real save with a real audit record. Sam's two clicks are recorded fifteen seconds apart, and they left one entry marked out-of-date while also carrying a verification stamp for a check nobody ever performed. It is a menu now: one click, one save, and each choice says what it means."
+  },
+  "a-crashing-test-leaves-later-checks-unreported": {
+   "title": "A test that stops on a missing item never reports the checks below it",
+   "plain": "Five times in one session a deliberate fault reported no failures - because the test had crashed partway through on something that was not there and stopped, so the checks after it never ran. The result only said that something failed, not what. Two rules follow: look for a missing item in a way that reports absence as an answer rather than crashing, and never let a run report success merely because it reached the end."
+  },
+  "blast-rank-is-computed-by-nothing": {
+   "title": "The impact ranking on the regulation rows was typed in by hand - nothing calculates it",
+   "plain": "Sam asked for a re-analysis of the regulation priorities. Checking first showed there was nothing to re-run: the impact ranking on those rows was written by hand, and no part of the system produces it. All sixteen CPL rows carry one and the four sample rows carry none. Building the button would have meant inventing an analysis and calling it a re-run. We built the checks a lawyer makes first instead, which is an answer that can be defended to the Chancellor's Office."
+  },
+  "cpl-sb-return-tab-was-per-browser-tab": {
+   "title": "The note saying which screen to return to after signing in was left where the new tab could not read it",
+   "plain": "Signing in by emailed link opens a brand-new browser tab. Nine parts of the site left a note saying which screen to come back to, but they left it somewhere only the original tab can read. So everyone, signing in from anywhere, landed on the same default screen. The file that manages sign-ins even described that note as the thing that returns you to the right screen, while it could not. The note now lives where both tabs can see it, expires after half an hour so an overnight one cannot hijack an unrelated sign-in, and is used once."
+  },
+  "sam-email-in-the-signin-chip-is-enough": {
+   "title": "Sam: showing the email address in the signed-in menu is good enough for now",
+   "plain": "We offered to store people's names so the site could greet them by name instead of by email address. Sam declined for now. The greeting uses a name only when the sign-in itself happens to carry one, and otherwise just says which address is signed in."
+  },
+  "a-view-must-not-fly-where-it-cannot-draw": {
+   "title": "The map search zoomed out past the point where anything is drawn, then reported results"
+  },
+  "a-control-number-is-not-a-unique-course-key": {
+   "title": "A course control number does not always name exactly one course"
+  },
+  "a-declared-fold-reaches-only-the-roster-that-consults-it": {
+   "title": "We wrote down which college names are duplicates, but only one part of the site reads that list"
+  },
+  "sierra-district-figures-came-from-a-june-snapshot": {
+   "title": "Sierra answered district questions from a two-month-old copy - she said Moreno Valley had no students when it has nearly 2,900"
+  },
+  "an-assertion-pinned-to-one-member-cannot-see-the-set-grow": {
+   "title": "A test that names a list but only checks one item on it cannot fail when the list grows"
+  },
+  "drafting-calls-pollute-the-sierra-training-gap-miner": {
+   "title": "Our own internal drafting requests were filed as though students had asked Sierra"
+  },
+  "sierra-guidance-surface-check-missing-memory-briefing": {
+   "title": "A curator cannot aim a rule at the briefing screen, and the natural way out of the failure sends it everywhere"
+  },
+  "a-silent-input-cap-is-a-content-swap": {
+   "title": "A shared service silently cut the request short, so the draft came back about a different subject"
+  },
+  "sierra-does-not-read-cpl-memory": {
+   "title": "Sierra has never read the team memory table - it is written for Claude, not for her"
+  },
+  "an-exemption-is-a-claim-so-assert-it": {
+   "title": "An accessibility exemption rests on a claim about the page - check the claim, or it quietly becomes an excuse"
+  },
+  "restart-the-branch-after-every-squash-merge": {
+   "title": "Start a fresh working branch after every merge, not just the first time"
+  },
+  "esl-ladder-table-has-no-l2-row": {
+   "title": "Sam's ESL level table has no rule for two-step ladders, and 21 colleges run one"
+  },
+  "never-assert-an-elapsed-time-you-did-not-measure": {
+   "title": "Never state how long something took unless you read it off a clock"
+  },
+  "skyview-drag-could-not-be-completed-with-a-mouse": {
+   "title": "The SkyView drag was broken as well as hidden - the click that chose the destination wiped out what you were carrying"
+  },
+  "skyview-member-payload-is-live": {
+   "title": "SkyView now carries its member courses - 101,063 of them, in a separate file"
+  },
+  "a-control-number-can-sit-under-several-identities": {
+   "title": "1,122 college courses sit under more than one group, so moving one is a statement about all of them"
+  },
+  "a-row-member-count-is-not-a-college-count": {
+   "title": "The member count on a course group is not a count of colleges"
+  },
+  "a-local-course-number-is-not-a-level-ordinal": {
+   "title": "A course number is not a level - colleges run two numbering schemes side by side"
+  },
+  "check-suite-completed-is-not-a-green-light": {
+   "title": "A checks-finished notification is not a green light - it routinely names an old version"
+  },
+  "s187-merge-chains-need-transitive-resolution": {
+   "title": "When A is merged into B and B into C, the display has to follow the chain all the way to C"
+  },
+  "s187-packaging-hides-pre-existing-over-merges": {
+   "title": "Folding a thousand courses into one hides any mistake already inside it - check before folding"
+  },
+  "on-conflict-do-nothing-silently-drops-renames": {
+   "title": "Three of seven renames never saved and nothing reported an error - count what landed"
+  },
+  "a-date-stamped-artifact-breaks-byte-for-byte-tests": {
+   "title": "A file that records its own build date breaks a character-for-character test at midnight"
+  },
+  "member-rehome-cn-verb-exists-and-is-unused": {
+   "title": "The tool for moving a course into the right group shipped a year ago and has never once been used"
+  },
+  "p1-measures-applied-units-by-origin-p3-is-transcribed": {
+   "title": "The priority definitions live on the funding tab - never quote them from memory"
+  },
+  "an-opt-in-prompt-must-key-on-the-gate-not-the-amount": {
+   "title": "A prompt tied to the size of a figure vanishes for the very people it is for"
+  },
+  "a-degenerate-branch-that-pays-less-than-the-dial-must-say-so": {
+   "title": "When the pot cannot pay the minimum, the page has to say so"
+  },
+  "a-deduplication-has-a-scope": {
+   "title": "A de-duplication has a scope - remove the duplicated measure, keep the record"
+  },
+  "a-too-wide-row-in-a-csv-is-invisible-in-the-browser": {
+   "title": "A row with too many cells in a spreadsheet export is invisible on screen"
+  },
+  "sierra-model-and-price-baseline-2026-08": {
+   "title": "There is no Haiku 4.6 - the cheaper model is Haiku 4.5, a third the price but it holds much less at once"
+  },
+  "verify-a-live-dataset-by-checksum-not-by-sampling": {
+   "title": "Check a saved copy against live data with one fingerprint, not by pulling every row across"
+  },
+  "a-liveness-check-must-be-able-to-say-no": {
+   "title": "A monitor that says \"fine\" whenever it cannot tell turns an outage into a green tick"
+  },
+  "js-filled-figures-still-ship-stale-static-defaults": {
+   "title": "A page that fills in its own figures still ships the old hand-typed ones underneath"
+  },
+  "a-second-bound-breaks-a-pin-as-you-go-solver": {
+   "title": "A minimum behaves predictably and a maximum does not - awards with both have to be solved all at once"
+  },
+  "funding-ceiling-400k-is-near-a-no-op-for-equity": {
+   "title": "A $400,000 cap moves about 1% of the pot and gives the smallest colleges nothing - the minimum is the real lever"
+  },
+  "a-bound-on-the-money-is-a-bound-on-the-bar": {
+   "title": "Capping a college's money without lowering its target asks it to do more work per dollar"
+  },
+  "sierra-can-enumerate-a-district-from-the-roster": {
+   "title": "Sierra can now list a district's colleges from the college table - this replaces the earlier note saying she could not"
+  },
+  "assert-that-an-argument-arrives-not-that-it-is-last": {
+   "title": "A test anchored on where a line ends breaks when anything is added, and blames the wrong thing"
+  },
+  "a-cap-under-55ch-is-layout-not-a-reading-measure": {
+   "title": "Not every narrow column of text is a reading width - 26 of 60 are layout, and a blanket sweep would wreck them"
+  },
+  "retiring-a-surface-can-delete-its-sole-display-of-a-figure": {
+   "title": "Deleting a section removed the only place a figure still appeared"
+  },
+  "allocation-floor-waterfall-not-proportional": {
+   "title": "A college's award is not its share of the pot - ask the model for it, never multiply"
+  },
+  "make-the-visible-cap-the-binding-one": {
+   "title": "When two limits bound one thing, the invisible one must never be the one that bites first"
+  },
+  "a-college-own-short-name-comes-from-its-district": {
+   "title": "Get a campus's short name by removing its own district name, never by guessing a city prefix"
+  },
+  "a-shadow-guard-cannot-see-a-two-claimant-collision": {
+   "title": "The alternative-college-names list was protected against one kind of clash and not the other"
+  },
+  "the-guidance-row-cap-is-a-fossil": {
+   "title": "Sierra's ten-instruction limit is left over from an earlier setup - the length budget would carry about seventeen"
+  },
+  "doctrine-is-indexed-to-files-but-was-unqueryable": {
+   "title": "Almost none of our written guidance is connected to anything that checks it"
+  },
+  "the-tables-we-build-drop-maps-college-id": {
+   "title": "MAP gives every college an official identifier, and most of our own tables match on the name instead"
+  },
+  "a-spelling-stem-flagged-430-correct-words": {
+   "title": "A British-spelling check flagged 430 correct words out of 433 matches"
+  },
+  "the-test-runner-could-not-see-a-shrinking-suite": {
+   "title": "The test runner judged each file only on whether it finished, so a file that quietly stopped checking stayed green"
+  },
+  "sam-no-temporary-mis-codes": {
+   "title": "Sam asked whether the nightly job should invent temporary college codes - measured answer: not needed"
+  },
+  "a-capped-list-must-never-read-as-a-census": {
+   "title": "Sierra reported three of nine Los Angeles colleges - and raising the limit would have made the error harder to spot"
+  },
+  "trailing-space-in-contact-names-hid-two-colleges": {
+   "title": "Two college names end with an invisible space, so Cypress and San Jose City looked like they had no CPL contact"
+  },
+  "noce-and-sdcce-have-real-mis-identities": {
+   "title": "The two standalone continuing-education institutions do have official state codes - they were being filtered out, not missing"
+  },
+  "sierra-cannot-compute-a-per-college-comparator": {
+   "title": "Sierra must not compare a college with a statewide average - the average is two to three times the typical college"
+  },
+  "sierra-guidance-is-a-zero-sum-budget-at-ten-rows": {
+   "title": "Sierra receives only her ten newest standing instructions, and adding an eleventh silently drops the oldest"
+  },
+  "an-inline-placeholder-style-outranks-injected-css": {
+   "title": "A tab's built-in \"loading\" styling overrules the styling the tab applies afterwards"
+  },
+  "the-measuring-browser-can-hide-the-defect": {
+   "title": "The browser we measure in fixes the fault itself, so the accessibility check could never fail"
+  },
+  "a-target-size-exemption-must-name-and-verify-its-equivalent": {
+   "title": "An accessibility exemption should name the equivalent way in, and the check should verify it still exists"
+  },
+  "jsdom-cannot-see-a-layout-defect": {
+   "title": "Our page tests never draw the page, so they cannot see a layout fault - and a clipped column looks complete"
+  },
+  "hiding-a-control-also-hides-the-way-in": {
+   "title": "Hiding a control from people without access also hides how they GET access"
+  },
+  "reorder-by-permutation-not-by-rewriting-config": {
+   "title": "Store the new ORDER, never rewrite the items being reordered"
+  },
+  "year2-sync-is-a-mirror-not-a-copy-on-frontload": {
+   "title": "Sam asked for Year 2 to copy Year 1 automatically; a reversible mirror shipped instead, off by default"
+  },
+  "a-count-gate-cannot-see-a-reorder": {
+   "title": "Checking that two lists are the same length cannot catch a reorder - the money got attached to the wrong advice"
+  },
+  "revoke-from-anon-does-not-remove-the-public-grant": {
+   "title": "The line meant to lock six powerful database functions was protecting nothing"
+  },
+  "worklist-is-team-gated-not-reviewer-gated": {
+   "title": "The clean-up list reached the team by being rebuilt as its own table, not by weakening a protection"
+  },
+  "applied-credits-mirrors-articulated-on-needs-action-rows": {
+   "title": "The field we read as \"credit was awarded\" is identical to \"credit exists\" on all 462,355 waiting records"
+  },
+  "cpl-plan-status-is-a-student-attribute-not-a-row-fact": {
+   "title": "The CPL plan status describes the student, not the record - it is stamped identically on every one of their rows"
+  },
+  "compute-the-canonical-pair-not-a-plausible-neighbour": {
+   "title": "A \"+6.9%\" headline was measured on the wrong thing - the real figure was 12.5%"
+  },
+  "catalog-year-rolls-forward-so-the-axis-is-mutable": {
+   "title": "Catalog years move forward between data refreshes, so they cannot carry a time series"
+  },
+  "transcribed-check-is-3x-the-transcribed-units": {
+   "title": "The \"transcribed\" tick sits on three times more records than actually have transcribed units"
+  },
+  "status-is-91-percent-null-and-implementation-dominates": {
+   "title": "The articulation approval stage is blank on 91% of records, so it cannot break down the backlog"
+  },
+  "the-three-reports-are-our-own-spec-implemented": {
+   "title": "The three new MAP reports are the specification we sent them two weeks earlier"
+  },
+  "three-map-custom-reports-served-and-wired": {
+   "title": "All three new MAP reports come through the connection our nightly job already uses"
+  },
+  "catalog-year-was-never-missing": {
+   "title": "Corrects our own notes: catalog year is filled on every record - it was never the missing piece"
+  },
+  "shared-prose-over-claims-on-rows-it-was-not-written-for": {
+   "title": "One explanation written for a group of rows will be wrong for a few of them - check it against the data"
+  },
+  "cloudflare-allowlist-matches-origin-not-path": {
+   "title": "The security gate checks which website a request came from, not which page - so a second repository needs no change"
+  },
+  "move-the-half-whose-url-matters-least": {
+   "title": "If we split the project in two, move the half whose web address matters least"
+  },
+  "a-tag-scan-cannot-see-a-fetch": {
+   "title": "Reading a page's links cannot see what it loads while running - the Fact Sheet only looked self-contained"
+  },
+  "the-tracker-licence-is-already-all-rights-reserved": {
+   "title": "The tracker is already licensed All Rights Reserved, with an explicit no-copy clause"
+  },
+  "private-repo-does-not-make-pages-private": {
+   "title": "Making the repository private would not make the dashboard private - and on our plan it takes the site down"
+  },
+  "magic-link-plus-one-role-not-groups": {
+   "title": "Recommendation: keep the email sign-in link and add one role per person - explicitly not groups"
+  },
+  "repos-already-in-the-org-not-personal": {
+   "title": "Two of the three repositories already belong to the CPL organization; only one is personal"
+  },
+  "my-college-read-a-storage-key-nothing-writes": {
+   "title": "My College looked for a sign-in record under a name nothing has ever saved"
+  },
+  "a-suite-that-signs-in-the-broken-way-tests-nothing": {
+   "title": "The tests that should have caught the sign-in bug were signing in the broken way themselves"
+  },
+  "college-geo-region-is-a-proximity-map-not-swp-or-asccc": {
+   "title": "Our regional grouping of colleges is not the Strong Workforce or Academic Senate one - do not label it as either"
+  },
+  "a-rollup-over-k-anonymised-rows-sums-unsuppressed-only": {
+   "title": "A district total must add up only the colleges it can actually show"
+  },
+  "a-fold-at-the-label-layer-is-not-a-fold": {
+   "title": "Cleaning up a name only where it is displayed hides the duplicate instead of resolving it"
+  },
+  "matrix-row-grain-is-the-title-not-the-credential-key": {
+   "title": "Each row of the adoption grid is one credential NAME, not the key the neighboring view splits on"
+  },
+  "peer-articulations-is-a-lossy-reconstruction": {
+   "title": "Our table of who adopted what covers only a third of the real adoptions - a reconstruction, not a source"
+  },
+  "eacr-prescriptive-layer-drove-no-filter": {
+   "title": "We already held a far better \"could adopt\" answer and no filter could reach it"
+  },
+  "eacr-college-filter-was-93pct-leads": {
+   "title": "Filtering by college returned what it MIGHT adopt as well as what it had - 94% were not adoptions"
+  },
+  "val-guards-the-check-the-driver-is-the-other-half": {
+   "title": "A safety wrapper protects the checks in a test, not the steps that drive it"
+  },
+  "an-explicit-select-list-is-a-second-schema": {
+   "title": "Asking the database for a named list of fields is a second copy of the design, and nothing complains when it drifts"
+  },
+  "cobi-nav-was-saved-by-sam-43-rows": {
+   "title": "Sam's Admin drag-and-save works - the table held 43 of his rows while three handoffs called it unproven"
+  },
+  "a-recorded-rule-is-not-an-applied-rule": {
+   "title": "The no-icons rule was recorded on 14 August and a tab shipped covered in emoji the same week"
+  },
+  "the-fallback-tab-was-dom-order": {
+   "title": "A link that matched no tab fell back to whichever tab happened to be first on the page"
+  },
+  "label-every-case-or-silence-is-ambiguous": {
+   "title": "Labeling only the alarming case makes silence mean two things"
+  },
+  "an-upsert-cannot-delete-a-removed-row": {
+   "title": "A save that only adds and updates cannot delete - leaving a row out is not removing it"
+  },
+  "bulk-post-unions-its-keys-so-cobi-nav-never-saved": {
+   "title": "Saving several menu rows at once behaved as a single write, so the menu had never saved once"
+  },
+  "a-rotating-refresh-token-cannot-be-cached": {
+   "title": "A sign-in that renews itself cannot be kept in a cache"
+  },
+  "a-negative-assertion-pinned-to-live-data-goes-vacuous": {
+   "title": "A test asserting something must NOT appear stops testing anything once it leaves the data"
+  },
+  "half-the-tabs-never-check-token-expiry": {
+   "title": "Half the tabs never check whether the sign-in has expired, so \"signed in\" can mean a dead one"
+  },
+  "noncredit-32-0111-is-short-term-vocational-only": {
+   "title": "The 32.0111 code covers Short-Term Vocational only, not all noncredit (Jenni)"
+  },
+  "the-existing-cip-outranks-the-top-for-noncredit-category": {
+   "title": "For the noncredit category the college's own code outranks the TOP - and 1,796 \"wrong\" codes were never wrong"
+  },
+  "a-copy-detector-must-read-the-rendered-string": {
+   "title": "A check on wording must read what the screen shows, not the lines the author typed"
+  },
+  "an-instruction-naming-another-surface-is-unenforced": {
+   "title": "An instruction that sends you to another page depends on something nothing checks"
+  },
+  "phrase-affordance-coverage-2026-08-14": {
+   "title": "Eight of the eighteen password-protected tabs offered no way to enter the password"
+  },
+  "read-a-red-guards-rationale-before-fixing-or-defending-it": {
+   "title": "When a check has been red long enough to become furniture, read WHY it was written before fixing or defending it"
+  },
+  "a-word-boundary-cannot-match-before-a-dot": {
+   "title": "A file-path check misread folders beginning with a dot and raised a false alarm"
+  },
+  "the-cobi-side-menu-is-data-now-cobi-nav": {
+   "title": "The side menu is now editable data, with the built-in menu as the fail-safe"
+  },
+  "a-manager-ui-must-not-be-able-to-hide-itself": {
+   "title": "The tab that controls what is visible must not be able to hide itself, and the code enforces that"
+  },
+  "nav-visibility-is-a-display-control-not-a-security-control": {
+   "title": "The Admin tab shows what is hidden and what is actually protected in ONE table, on purpose"
+  },
+  "an-empty-read-means-the-opposite-on-a-deliberately-empty-table": {
+   "title": "An empty answer proves nothing unless you already know the table has rows in it"
+  },
+  "a-tab-that-manages-sites-must-be-exempt-from-the-site-filter": {
+   "title": "The Admin tab has to be shown on every site, not merely left out of the groupings"
+  },
+  "cpl-assistant-tab-is-the-same-assistant-but-carries-two-dependencies": {
+   "title": "The CPL Assistant tab and the My College assistant are the same widget - but hiding that tab breaks two other things"
+  },
+  "a-test-bound-rots-when-the-code-legitimately-changes": {
+   "title": "Four failing checks were stale test limits, not real faults"
+  },
+  "sierra-rules-overlay-is-live": {
+   "title": "Sierra's built-in rules are now editable data, laid over the defaults in the code"
+  },
+  "d11-answer-covered-1-of-9-curated-credentials": {
+   "title": "Asked about a welding certification, Sierra named one of the nine we hold and missed two colleges entirely"
+  },
+  "ace-unit-variants-are-one-ccrr": {
+   "title": "Where military training is offered at different credit hours, that is ONE recommendation with a range (Sam)"
+  },
+  "sierra-adopter-names-never-reached-the-prompt": {
+   "title": "Sierra could not name the adopting colleges because every lookup returns only a count"
+  },
+  "sierra-rules-stay-separate-from-cpl-memory": {
+   "title": "Sierra's instructions get their own home, not the memory table - three clashes, one of them a safety hole"
+  },
+  "evidence-description-is-not-truncated": {
+   "title": "The description field is not cut off at the source - it was the viewer clipping it"
+  },
+  "map-api-echoes-requested-columns": {
+   "title": "MAP's data service repeats your requested field names back even when the request was invalid"
+  },
+  "usmc-rank-tokens-leak-into-cr-text": {
+   "title": "Marine Corps rank abbreviations are buried in the recommendation text, splitting 482 topics"
+  },
+  "ccr-identity-gate-mechanism-was-corrected": {
+   "title": "Conflict flag: the safeguard named in an earlier entry does not actually work"
+  },
+  "normalisation-and-its-screens-must-see-same-text": {
+   "title": "A tidying step and the checks that judge it must run on the same text"
+  },
+  "attribution-per-course-does-not-prove-a-real-pairing": {
+   "title": "A field that looks like it pairs a course with a recommendation does not prove the pairing is real"
+  },
+  "credit-recs-resist-mechanical-normalisation": {
+   "title": "Credit recommendations resist mechanical tidying - only 6.9% collapse, so this is curation work"
+  },
+  "a-module-level-element-ref-goes-stale-on-a-second-mount": {
+   "title": "A widget that remembers its own place on the page breaks the second time it appears"
+  },
+  "map-contact-fields-hold-several-people-and-bad-addresses": {
+   "title": "One MAP contact field can hold several people, and one address has no domain ending at all"
+  },
+  "per-rec-bounded-only-one-side-of-a-union": {
+   "title": "A limit was applied to only one half of a two-part result, so 3,807 rows buried 9"
+  },
+  "coci-offerings-has-two-silent-caps": {
+   "title": "The course-catalog table Sierra searches has two silent limits: 900 characters of titles, and eight sample courses"
+  },
+  "ccc-rec-was-a-retrieval-gate": {
+   "title": "A field was quietly acting as a filter, hiding 38 statewide credentials that nobody has adopted yet"
+  },
+  "adoption-leverage-is-a-narrower-question": {
+   "title": "The \"who could adopt this\" layer answers a narrower question than course alignment"
+  },
+  "conditional-key-breaks-a-bulk-upsert": {
+   "title": "When sending many records at once, one record missing a field breaks the lot - and the table still looks full"
+  },
+  "matview-cannot-carry-rls": {
+   "title": "A pre-calculated summary table cannot carry access rules, so its hiding of small figures has no backstop"
+  },
+  "prefill-must-stay-send-free": {
+   "title": "The helper that fills in a suggested question must never send it - add a second one instead"
+  },
+  "assert-what-the-reader-sees": {
+   "title": "Searching the code for a phrase is unreliable in both directions - check what the reader actually sees"
+  },
+  "my-college-access-shape-is-an-rls-decision": {
+   "title": "Giving each college its own link to its page is an access-rules decision, not a screen change"
+  },
+  "college-short-name-resolver-could-not-round-trip": {
+   "title": "The helper that shortens a college name could not handle its own output (fixed 11 August)"
+  },
+  "studio-csv-importer-duplicates-rows": {
+   "title": "The database's built-in file importer duplicates records, and re-importing does not fix it"
+  },
+  "map-student-credit-reloaded-tblsource": {
+   "title": "The student-level table was reloaded from the raw MAP extract - 537,908 records, with credit amounts"
+  },
+  "partners-have-a-college-id-but-are-not-colleges": {
+   "title": "Futuro Health and Launch Apprenticeship sit in MAP's college table but are marked as partners, not colleges"
+  },
+  "college-district-identity-crosswalk-built": {
+   "title": "One master list of colleges and districts now exists - 116 colleges, 73 districts, keyed on MAP's own identifier"
+  },
+  "default-area-sentinel-was-synthesised": {
+   "title": "\"Default Area\" never came from MAP - an earlier load invented it"
+  },
+  "concatenated-haystack-penalises-curation": {
+   "title": "Our own search ranks the best-described credential worst"
+  },
+  "ps1-non-ascii-breaks-powershell-5-1": {
+   "title": "One fancy character in a Windows script breaks the whole script, far from where it sits"
+  },
+  "sierra-single-function-service-role": {
+   "title": "There is ONE Sierra, not two - and she runs with full database rights"
+  },
+  "unordered-limit-is-a-correctness-bug": {
+   "title": "Asking for \"any three\" really does give a different three each time - and it reads as the AI being flaky"
+  },
+  "sierra-home-college-detection-was-nondeterministic": {
+   "title": "Sierra's \"nearest college\" fault was in working out where you are, not in the ranking"
+  },
+  "supabase-403-is-not-401-check-credential-type": {
+   "title": "A \"forbidden\" from the database means the identity was refused, not that the key was wrong"
+  },
+  "whitelisting-map-drops-new-datafile-fields": {
+   "title": "Code that copies rows field by field silently drops any new field the data gains"
+  },
+  "workbook-figures-verify-not-copy": {
+   "title": "Verify figures in a hand-written document against our own model, never copy them across"
+  },
+  "nc-funding-targeted-plus-advisory-column": {
+   "title": "Noncredit funding: keep the $1M with the four standalone campuses and add an advisory column, do not dilute it"
+  },
+  "nc-split-ftes-floor-does-the-equity": {
+   "title": "The noncredit split now uses teaching size, but it is the minimum payment that delivers fairness"
+  },
+  "nc-equalization-floor-plus-factor": {
+   "title": "Noncredit equalization: a minimum payment plus an optional factor; the headcount question is deferred"
+  },
+  "behavior-neutral-dial-migration-post-deploy": {
+   "title": "Replace one global setting with several per-item ones without changing behavior, then switch it on afterwards"
+  },
+  "coci-program-course-file-partial-lower-bound": {
+   "title": "The state's program-to-course file is incomplete, so any count built from it is a floor"
+  },
+  "map-headline-counts-test-colleges": {
+   "title": "The public MAP user and college counts were overstated - test entries were being counted"
+  },
+  "map-contacts-view-24-fields": {
+   "title": "MAP already holds far more college contacts than we were pulling in"
+  },
+  "cobi-ongoing-extended-2030-31": {
+   "title": "The budget ledger now runs through 2030-31; the $5M line is archived"
+  },
+  "quarter-colleges-use-1167-tlm": {
+   "title": "Colleges on quarters need 45 units per full-time student, not 30"
+  },
+  "funding-baked-defaults-drift": {
+   "title": "The funding tab's built-in default settings have no way to stay current and can only go stale"
+  },
+  "sweep-every-site-when-decoupling-a-computed-value": {
+   "title": "If the same number is worked out in several places, changing one leaves the others wrong"
+  },
+  "ship-the-oracle-with-the-assumption": {
+   "title": "When you cannot verify an assumption, ship the way to check it alongside"
+  },
+  "collision-checked-fuzzy-join": {
+   "title": "Loose name matching is safe as long as you check that nothing matches twice"
+  },
+  "d-mem-report-plain": {
+   "title": "The Report reads a separate plain-English field, so entries can stay precise and still read plainly"
+  },
+  "o3": {
+   "title": "Remove repeated military credit recommendations when a transcript is uploaded"
+  },
+  "d4": {
+   "title": "Sessions merge their own finished work once the checks pass"
+  },
+  "workplan-rekey-872-incomplete": {
+   "title": "When activity numbers change, every table storing those numbers has to change too"
+  },
+  "annual-goals-path-a-entity-overlay": {
+   "title": "Annual Goals is built from the project list, with the goal ladders laid over it"
+  },
+  "cplstatusplan-absent-from-fetched-map-views": {
+   "plain": "Sierra can tell you a certificate is worth credit somewhere, but not whether your own college has actually done anything about it - approved it, ruled it out, or left it sitting. That fact is not in any of the data we pull from MAP today. It exists in a student-level export, and MAP is building a way for us to read it directly."
+  },
+  "kb-curation-is-world-readable": {
+   "title": "One table is readable by the public on purpose - never copy its protection for student data"
+  },
+  "supabase-csv-importer-duplicates-silently": {
+   "title": "The database's own import tool duplicated 2,058 rows and reported success"
+  },
+  "sprint-goal-2-is-the-course-type-suffix": {
+   "title": "Sprint Goal 2 can be read straight off the type of award, and it is 60%"
+  },
+  "map-deep-link-urls-from-malone-and-pedro": {
+   "title": "The direct links into MAP have to come from Malone and Pedro - never guess them"
+  },
+  "statewide-credit-recs-live-in-authoritative-recs": {
+   "title": "A statewide credential's real credit is the full statewide list, not the one-line summary"
+  },
+  "student-key-is-not-stored-elsewhere-and-not-joined": {
+   "title": "Confirmed by Sam: the student number is only ever counted, never matched against anything"
+  },
+  "we-already-pull-from-map-do-not-accept-a-push": {
+   "title": "ITPI does not need to send us data - our nightly job already fetches it from MAP"
+  },
+  "pedro-added-as-second-owner": {
+   "title": "Pedro Campos is now a second owner of the database, closing the one-person risk"
+  },
+  "a-guidance-rule-must-name-the-fact-it-depends-on": {
+   "title": "An instruction that depends on something Sierra never receives is an instruction to guess"
+  },
+  "sam-authorized-the-sierra-guidance-audit": {
+   "title": "Sam: check Sierra's standing instructions for ones she cannot possibly follow"
+  },
+  "sam-leans-skyview-desc-shards-to-supabase": {
+   "title": "Sam leans toward keeping SkyView's course descriptions in the shared database"
+  },
+  "p8": {
+   "title": "Letting the team edit needs the edit permission too, not just read and add"
+  },
+  "prescriptive-layer-never-got-the-roster-rules": {
+   "title": "Two files list college names and only one had the name clean-up applied"
+  },
+  "sam-accepts-the-haiku-caveat-gap": {
+   "plain": "Sierra now runs on a smaller, cheaper AI model while our billing is sorted out. On that model she drops one caution: that the roughly one million units of credit waiting to be acted on is a ceiling, not a debt - about 30% of it will correctly turn out not to apply. Sam was shown this and said he can live with it for now, so nobody should go and fix it on their own initiative. The fix is written up and ready if he changes his mind."
+  },
+  "sam-verified-sierra-on-haiku": {
+   "plain": "Sam read Sierra's answers in a browser after she was moved to the smaller, cheaper model and said they look good. We can prove the right version is running; only a person can say whether the answers actually read well, and that is what closes out a change to Sierra. The move is temporary, until corporate billing is released."
+  }
+ }
+}

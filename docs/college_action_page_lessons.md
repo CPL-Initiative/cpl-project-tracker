@@ -1,7 +1,7 @@
 ---
 title: College action page & MAP-team queue — lessons
 created: 2026-08-09
-updated: 2026-08-11
+updated: 2026-08-21
 tags: [lessons, college-action-page, map-team-queue, governance, contacts, measurement]
 artifacts:
   - map_team_queue.js
@@ -9,6 +9,11 @@ artifacts:
   - kb/supabase_sierra_feedback_ci_status.sql
   - tests/map_team_queue.test.js
   - tests/sierra_feedback_ci_rows.test.js
+  - college_briefing.js
+  - tests/college_briefing_auth.test.js
+  - tests/my_college_scope.test.js
+  - tests/my_college_sierra_box.test.js
+  - cpl_chat.js
 related:
   - "[[docs/kb-notes/methodology-a-written-backlog-decays-silently]]"
   - "[[docs/kb-notes/methodology-a-sweep-scoped-by-a-proxy-leaves-a-shadow]]"
@@ -495,7 +500,7 @@ taught colleges that uploading is the finish line.
 ### Current state
 
 Live on `#college-briefing` behind the team gate: the $50K seed grant (with
-`declined` as a real state, not $0), the implementation allocation labelled a
+`declined` as a real state, not $0), the implementation allocation labeled a
 **cap, not a cheque**, with floor / rural-allowance / participation-gate all
 named; a 72-district picker that narrows the college list and lists a
 district's colleges **alphabetically, never ranked**; and four Ask-Sierra
@@ -653,7 +658,7 @@ and under front-loaded disbursement every slot after Year 1 has a zero cap. A
 briefing that inherited a Year-2 view would have rendered **$0 against all three
 priorities** — plausible, unqueryable, and read as a finding about the college.
 The new `_prios(name, slot)` takes the year explicitly and defaults to Year 1,
-and the test asserts the *behaviour* (the function body never mentions
+and the test asserts the *behavior* (the function body never mentions
 `state.viewSlot`) rather than the comment that says so.
 
 **5. ⭐ A percentage must never round UP into a claim it cannot support.** With
@@ -750,7 +755,7 @@ assistant's own starter chips); `askSierra()` prefers it and keeps `prefill()`
 as the fallback. Both halves are now asserted, because the failure mode of
 getting this wrong is silent in the other tab.
 
-**When two callers need different behaviour from one helper, add the sibling —
+**When two callers need different behavior from one helper, add the sibling —
 do not retune the shared one.** The existing caller's requirement was invisible
 from the call site that wanted the change.
 
@@ -875,7 +880,7 @@ change.
 
 ### 16. ⭐ Five colleges were being told they have no implementation funding
 
-Found by rendering every branch and reading it. `fundingFor()` normalised MAP's
+Found by rendering every branch and reading it. `fundingFor()` normalized MAP's
 college name through `cplCollegeShort()` and handed the result to
 `cpl_funding.js`, whose `baseCollege()` compares it against the roster's **raw**
 string. Only one side of the join went through the resolver.
@@ -884,7 +889,7 @@ It worked for ~110 colleges whose two spellings already agreed and failed for th
 five where they do not — **Mt. San Antonio** (roster: `Mt San Antonio`, no
 period), **Norco**, **Reedley**, **MiraCosta**, **Los Angeles Southwest**. Each
 rendered *"is not on the 115-college funding roster."* Mt. SAC is the largest CPL
-programme in the system; its real allocation is **$522,239**, and the roster row
+program in the system; its real allocation is **$522,239**, and the roster row
 was there the whole time.
 
 **The existing join test asserted `S(roster)` against `S(roster)`** — distinctness
@@ -893,7 +898,7 @@ orphaned in production. A join test has to exercise *the direction the code join
 in*. The new one asserts against the real shipped roster and the real funding
 module, and checks the bug directly in both directions. Verified against a figure
 derived outside this repo: `$522,239` matches the Sep-BOG reconciliation. Note:
-[`methodology-normalise-both-sides-of-a-join`](kb-notes/methodology-normalise-both-sides-of-a-join.md).
+[`methodology-normalize-both-sides-of-a-join`](kb-notes/methodology-normalize-both-sides-of-a-join.md).
 
 ### 17. ⭐ A college with no data was being congratulated
 
@@ -958,7 +963,7 @@ in `cpl_memory` so reconciliation has something to be checked against.
 
 - **Contacts and staff are not PII.** I had used synthetic placeholders in a
   scratch fixture; over-cautious, corrected. MAP college staff contacts are
-  directory information for a public programme.
+  directory information for a public program.
 - **Hold** MAP deep links, the RLS decision, and MIS.
 - **`My CPL Funding`**, moved up directly under *Start here* — money is the second
   thing a coordinator wants, and it was sitting seventh behind four measurement
@@ -984,3 +989,649 @@ item elsewhere is **EACR's `statewide_prescriptive.js` → Supabase** (carryover
 five sessions). On this tab, two unanswered design questions: whether the closed-row
 summaries earn their place, and whether *Start here* should be the one section
 open by default.
+
+---
+
+## 2026-08-17 (Session 167, Sky167) — the key was a ghost, then the tab was rebuilt around the choice
+
+Three merges: **#1232** (the auth fix + Sierra alignment), **#1233** (the
+scope-first redesign), **#1234** (the docx briefing).
+
+### The defect Sam reported, and why it looked like missing data
+
+Sam, against *"What that waiting credit actually is"* showing `no figures held`:
+**"I think all the colleges are coming up blank on this."**
+
+`waitingBreakdown()` was correct throughout. The credential never reached the
+server.
+
+`getSession()` in `college_briefing.js` read `localStorage.cpl_team_session`.
+**That string occurred exactly once in the entire repo — as that read.** No
+module, no sign-in flow and no test has ever written it, so it returned `null`
+for every visitor since the tab was written. Two consequences:
+
+1. **The reviewer session was invisible.** The canonical key is `cpl_sb`, which
+   `cpl_session.js` (the keeper, #1205) holds continuously fresh for the other
+   25 modules. This tab never read it, so the keeper could not help it and a
+   magic-link reviewer was, to this file, a logged-out guest.
+2. **The team phrase never left the browser.** `signedIn()` checked
+   `cpl_team_pass` *separately* — so a phrase holder rendered the whole tab —
+   but `authHeaders()` built its headers from the always-null session and
+   attached no `x-team-pass`, which is the header `team_pass_ok()` reads.
+
+Both halves of `is_allowed_reviewer() OR team_pass_ok()` were therefore false on
+every gated read.
+
+**Why it presented as a data gap.** An RLS-filtered `SELECT` is not an error:
+PostgREST answers **200 with `[]`**. So `map_college_credit_summary`,
+`map_college_cr_unit`, `map_college_goal2` and `map_college_contacts` all
+returned empty arrays that are indistinguishable from *"this college has
+nothing"* — while `map_colleges`, `chatbox_credentials` and `cpl_funding_config`
+(all public-read) kept working and made the page look healthy. **109 of the 120
+non-test colleges have a credit-summary row.** Nothing was missing.
+
+**The fix delegates** to `window.CPL_SESSION` and
+`CPL_TEAM_PHRASE.decorateHeaders` rather than writing a fourteenth copy of the
+auth dance — the keeper's own reasoning. A phrase session keeps the **anon key**
+as its bearer (`Bearer <phrase>` is the classic version of this mistake), and
+the stored phrase rides along even for a JWT session, which un-shadows it for a
+signed-in **non-reviewer** whose JWT alone fails `is_allowed_reviewer()`.
+
+⚠️ **The test suite was complicit.** `college_briefing.test.js` signs in with
+`cpl_team_pass` — the broken path — and stubs `fetch`. It exercised the defect
+on every one of its 232 passing checks and asserted nothing about it. The new
+`college_briefing_auth.test.js` asserts **headers, not pixels**, because there
+is no rendered state that distinguishes this bug from the truth.
+
+### Then Sam's seven asks
+
+Open on the **choice**, not a title; curate the second list from the first
+answer; welcome the reader only once there is something to welcome; Sierra
+collapsible but expanded; expand/collapse all; a briefing button; no emoji.
+
+Design calls worth recording:
+
+- **Collapse all closes Sierra too** — Sam's ruling, the literal reading. A
+  control that silently exempts one section teaches people it is broken.
+- **The `<summary>` carries the single heading.** `hoistAssistantIntro()` now
+  splits the widget's intro: its `h2` into the summary (so a collapsed section
+  names itself), the description into the body. Putting the title in both is
+  how #1231's duplicate would return one level up.
+- **`askSierra()` opens the section first.** Prefilling a widget inside a closed
+  `<details>` types into a box nobody can see — the #1166 invisible-input bug,
+  which was fixed for the Sierra Training hand-off that drives *this* widget.
+  Making Sierra collapsible re-armed it.
+- **"Choose another college" returns to step 2, not step 1.** Switching college
+  is the common journey; re-answering "who are you" is a tax.
+- **The scope is remembered but always escapable**, and a remembered scope that
+  is not `ready` is ignored rather than stranding someone on a blank screen.
+
+### The pushback, and the trap underneath it
+
+Two of the five scopes Sam named have **no data anywhere in this repo**:
+`map_colleges` carries only `college_id / college_name / variants / is_test /
+entity_kind`, and the funding roster's only geography key is `district`.
+
+⚠️ **And the region data we DO hold is a third scheme.** `college_geo.region`
+(120 colleges, 10 regions) is hand-authored for Sierra's *"which colleges NEAR
+me"* ranking — `chatbox/_seed_college_geo.py` says exactly that in its
+docstring. The **Strong Workforce program has eight** regional consortia with
+different boundaries (our *San Joaquin Valley* + *Greater Sacramento* split is
+not *Central Valley/Mother Lode*; *Central Coast* is not *South Central Coast*),
+and the **ASCCC has four** areas, A–D. Pointing either label at `college_geo`
+would silently mis-group a college's peers in a view people act on.
+
+So both render **disabled with their reason on hover**, and a test pins that
+they stay unwired — because the tempting fix for a disabled button is the
+nearest available column. Sam confirms the real groupings are on the MAP
+Dashboard, so this is *not located in an export yet*, not *does not exist*.
+
+### The disclosure rule the roll-ups needed
+
+District and statewide sum **only the unsuppressed rows**. `k=10` withholds 13
+colleges; a total that included them would mean `total − visible = the withheld
+figure`, and a two-college district hands it over in one subtraction. Summing
+only what is already on screen makes that arithmetic return zero by
+construction. The withheld are **counted** in the note so the total is never
+mistaken for the whole group, and an **absent** college stays distinct from a
+**withheld** one — folding the two turns *"never measured"* into *"does none"*.
+
+### The briefing
+
+Sam's first ask was "a Report button that creates a briefing"; four hours later,
+**"Briefing should be docx"**. Both versions read the **rendered DOM** rather
+than re-deriving the figures — the EACR `matrixCell()` reasoning, since a report
+that computes separately is a second implementation and the document is the copy
+that leaves the building. It also inherits the disclosure control for free: a
+withheld college reads "withheld" on screen, so it reads "withheld" in the file.
+The suppression note travels **inside** the document, because on screen a reader
+has the surrounding page to explain a dash and in an emailed file they do not.
+
+⚠️ Its first cut walked `details.cb-sec` only — and a **district or statewide
+view has no sections at all**, so the briefing was empty for two of the three
+scopes and the "nothing to put in a briefing yet" guard would have reported that
+as though the college had no data. Now a document-order pass over a whitelist.
+
+### Two bugs the tests found, both introduced by this work
+
+- **`finish()` hoisted the first `.cb-bar` in document order** into the Sierra
+  box. That was correct only because the picker bar happened to be authored
+  first; once the pickers moved to step 2, the first `.cb-bar` in the briefing
+  view is one of the waiting breakdown's **progress bars**, which would have
+  been torn out of its table and dropped into the assistant. *A positional
+  selector is a bound on the order things are written in.*
+- **The rendered checks passed over an EMPTY list.** jsdom defers
+  `DOMContentLoaded`, so the standalone Sierra page never booted and
+  `.some()`/`.every()` were vacuously true on nothing. Each such check now
+  requires the five chips in its own condition.
+
+### Current state
+
+The tab is live on `main` and **nobody has seen the redesign in a browser** —
+copy and density are Sam's call. The auth fix is the one that matters
+operationally: every MAP figure on the tab was blank for every user, and is not
+any more.
+
+### Next concrete step
+
+1. Sam opens the tab and reacts to the shape.
+2. The two region lists, when he locates them in a MAP export → flip `ready`.
+3. `college_report_generator.js` dates its filename at the END where the new
+   briefing uses the mandated `YYYYMMDD` prefix — one convention, Sam's call.
+
+---
+
+## 2026-08-21 — SkyAsk (Session 177): a page that answered before it asked, and two lists that should have been one
+
+**Merged #1274.** Sam's six-point pass on the tab, plus the Sierra Training Fact
+he asked for. All of it shipped in one PR except the guidance row, which lives in
+Supabase.
+
+### (a) What was learned
+
+**⭐ The tab opened on Cabrillo College because the remembered choice was restored
+into `state`, not offered.** `restoreScope()` seeded `state.scope` and
+`state.college` directly, so `render()` skipped both picker steps. The original
+comment defended it well — "Sam's flow is a daily one; re-answering *who are you*
+every morning is a tax" — and that reasoning is sound for one person on one
+laptop. It stops being sound the moment a second person opens the tab, or the
+first person opens it wanting a different college: you cannot leave a page you
+have not noticed you are on.
+
+The fix keeps the convenience and moves the agency: the scope question carries
+**"Open Cabrillo College again"**, named. A remembered scope with **no entity** is
+not offered at all, because a shortcut that lands on a second question is not a
+shortcut.
+
+**⭐ The "narrow paragraphs beside full-width content" was never the measure
+caps.** Both mirrored HTMLs ship `#college-briefing-root` with an **inline**
+`text-align:center` for its "Loading College Briefing…" placeholder. Inline
+out-ranks the `#college-briefing-root{text-align:left}` the module injects, so
+every capped paragraph rendered its text *centerd inside a left-anchored box* —
+which reads as a ragged narrow column floating in a wide tab, and points the
+reader straight at the cap. Removing the cap would have produced full-width
+centerd prose (worse), and the next session would have put the cap back. Full
+note: [`methodology-an-inline-placeholder-style-outranks-the-css-you-inject`](kb-notes/methodology-an-inline-placeholder-style-outranks-the-css-you-inject.md).
+
+**⭐ There were TWO clusters of suggested questions with the role picker between
+them.** The tab printed its college-specific list *above* the mounted widget; the
+widget printed its generic starters *below* its "I'm a…" chips. Clicking one of
+the upper set with no role chosen called the widget's `needAudience()`, whose
+message reads *"First, tap who you are above"* — and the chips were **below** it.
+The sentence was literally wrong, and the reader had two question lists to
+reconcile. That is exactly what Sam reported as "select a pre-seeded question and
+are not prompted for their role — confusing".
+
+⚠️ **And the generic list names another college.** *"Does Riverside City College
+offer firefighter CPL?"* is a fine starter on the CPL Assistant tab and is
+nonsense on Cabrillo's own page. Consolidating had to *replace* that list, not
+merge with it.
+
+⚠️ **Two pre-existing two-pane traps, both the `inputEl` trap wearing a new hat.**
+`submit()` cleared the starter chips with `document.getElementById('cplchat-suggest')`,
+which returns whichever pane is **earlier in the document** — My College — so
+asking a question on the CPL Assistant tab cleared *the other tab's* chips and left
+its own. And a host-supplied list had to be cleared in `mount()`, or a college's
+questions would follow the reader onto a pane that never named that college. The
+file already documents this trap for `inputEl`; **a documented trap is not a fixed
+trap, and the next variable is not covered by the last one's comment.**
+
+**⭐ Sierra's statewide column cannot be repaired, only removed.** Her snapshot
+table put a raw statewide total beside each college figure (`5,683 units` vs
+`1.19M statewide`), which is not a benchmark. She holds only totals and a college
+count, so the only comparator she could compute is an **average** — and the
+average runs **2–3x the median** on every measure:
+
+| measure | avg/college | median | ratio |
+|---|---:|---:|---:|
+| articulated, waiting | 751 | 305 | 2.5x |
+| applied | 2,402 | 694 | 3.5x |
+| recommended, not acted on | 12,224 | 6,166 | 2.0x |
+
+Cabrillo is the case in point: **above** the median on waiting units, **below**
+the average. A comparator she cannot compute correctly is worse than none.
+
+⚠️ **And she must not compute a disposition rate either**, tempting as it is. The
+team's own measure counts Not Applicable as work done and reaches 34% for
+Cabrillo; from what Sierra holds, `applied / (dormant + waiting + applied)` gives
+18%. **Sierra publishing a different number from the team's own is the same
+credibility failure as her disagreeing with the Fact Sheet** (SkyPeak, #1146).
+
+⚠️ **`sierra_guidance` is a zero-sum budget at 10 rows, and the visible meter
+measures the wrong dimension.** Full note:
+[`methodology-a-capped-instruction-list-is-a-zero-sum-budget`](kb-notes/methodology-a-capped-instruction-list-is-a-zero-sum-budget.md).
+Two things worth repeating here: the draft was written **`active = false`** so
+production was untouched until Sam chose; and its first wording said *"never rank
+colleges"*, which would have contradicted **Sam's own 2026-08-18 instruction** that
+naming high performers is fine. Reading the nine neighbours before writing the
+tenth is not optional — two instructions can each be reasonable and jointly
+incoherent, and the model resolves that silently.
+
+### (b) Current state
+
+- **#1274 merged, Pages deployed green** (`8349bd1`). CI ran the new suite
+  independently: JS tests run 2080, success.
+- **`tests/my_college_sierra_box.test.js`** — 19 checks, **11 red against the
+  pre-fix source** (verified by stashing the two modules and re-running).
+- `sierra_guidance` is at **9 active rows** with one slot of headroom. The new
+  snapshot rule is rank 1; the naming rule is rank 9, safely inside.
+- The two retired rules (`23a5cd2a`, `346612d9`) are **deactivated, not deleted**
+  — one click back if retrieval turns out not to cover them.
+
+### (c) Strategic roadmap
+
+The tab is now shaped the way Sam asked for and the remaining moves are his
+judgment, not engineering:
+
+1. Does the three-row snapshot read as the pulse he wanted, or does active
+   exhibits earn a fourth row? (It is a capability measure, not a pulse — which is
+   why it was cut.)
+2. Do the two **public** Sierra surfaces (`sierra/`, `fact-sheet/factsheet_sierra.js`)
+   take the new intro wording? Different audience; deliberately not changed.
+3. Is the centerd 760px scope card right for a landing screen, or did "use the
+   full width" include it?
+
+### (d) Next concrete step
+
+1. **Sam opens the tab in a browser** and asks Sierra *"How is Cabrillo College
+   doing on CPL, and what quick steps do you recommend?"* — the guidance row is
+   live, so the next answer is the test of it.
+2. If the snapshot lands, the same three-row discipline is worth applying to the
+   district and statewide roll-ups, which still lead with totals.
+3. The two region lists (SWP, ASCCC) remain the one blocked item, unchanged since
+   Sky167 — they exist on the MAP Dashboard and in no export we hold.
+
+---
+
+## 2026-08-21 (2) — SkyVouch: a remembered role, and questions that knew whose page this was
+
+**PR #1276.** Sam, on a screenshot of the LACCD view: *"we need to prompt users
+to confirm select their role before or if they click a pre-seeded question"* and
+*"the pre-seeded questions are not adjusted to the selected org."*
+
+### The role was #1274's ruling one level down
+
+SkyAsk stopped restoring a remembered **college** into state that same week,
+because a restored choice silently answers a question the reader was never asked.
+The **role** had the identical defect and nobody had looked: `audience` persists
+in localStorage under a key **shared with the public Sierra page and the Fact
+Sheet drawer**, so a role picked once, anywhere, on any earlier visit steered
+every answer here for ever. In Sam's screenshot a chip he had never touched on
+that page was lit.
+
+localStorage still *remembers* — the chip comes back marked and one tap keeps it.
+But a role is only *confirmed* in the browser-tab session someone tapped it in.
+One tap per session, not per question.
+
+Three things that made it correct rather than merely gated:
+
+- **⚠️ The held question is resumed, never dropped.** `submit()` returns before
+  `busy`, before `addUserMsg()` and before the input clears, so the text stays in
+  the box and the tap sends it. A confirm prompt that makes you hunt for the chip
+  you just clicked is worse than the silent default it replaces.
+- **⚠️ The hold is pinned to its PANE, not a boolean.** Two panes can be mounted
+  and `inputEl` points at whichever built last — a boolean would fire `submit()`
+  against the other pane's box.
+- **⚠️ `loadAudience()` assigns the flag, never only raises it.** The pick can
+  change underneath a standing confirmation, because the key is shared.
+
+Scope is deliberate: the two COBI surfaces. The public standalone page and the
+Fact Sheet drawer keep the silent restore — a one-visit member of the public
+should not be interrogated about a role they picked ninety seconds ago.
+
+### The questions: a fallback belonging to the wrong surface
+
+#1274 passed `null` for a group scope, which returns the widget to its **public**
+starters — one of which names Riverside City College. Correct on the CPL
+Assistant tab, nonsense under "Welcome, Los Angeles Community College District".
+
+The fix is structural: **a host that knows whose page this is owns the questions
+in every scope**, so the generic list is unreachable from this tab and can stay
+concrete for the audience it was written for. One `scopeQuestions()` feeds both
+the widget cluster and the no-widget fallback — the fallback previously required
+a college, so a district reader whose chat module failed to load saw *no*
+questions while a college reader saw four.
+
+**⭐ Sierra has no district dimension at all.** Verified two ways: zero columns
+named district in the entire public schema, and `districtIndex()` builds the
+grouping client-side from the funding roster. The district exists in the browser
+and nowhere she can read. So a district is named only in an **advisory** question,
+where a name cannot become a false figure — and **no member college is singled
+out**, because ordering a reader's own peers by a figure is exactly what
+`rollup()` sorts alphabetically to avoid.
+
+### Also fixed
+
+`role="radiogroup"` → `role="group"` on the audience row. Its children are
+`aria-pressed` toggle buttons, and a radiogroup promises `role="radio"` children.
+Sky175 fixed this on the public page a week earlier; COBI kept the old markup
+because nothing compared the two — which is that test file's whole job. It
+asserts it now.
+
+### Next
+
+Sam re-asks the LACCD question and reads the actual prose. If she starts
+asserting district facts we don't hold, that is a `sierra_guidance` matter — and
+that list is at 9 of 10, so it would cost the last slot.
+
+---
+
+## 2026-08-22 — the district was right and the answer was about somewhere else
+
+Sam, with **Los Angeles Community College District** selected: *"she configured
+her response based on RCCD."* Three Riverside colleges named, Norco's exhibits
+quoted, Moreno Valley's figures cited, under a heading reading *Welcome, Los
+Angeles Community College District*.
+
+The previous section's "Next" was *Sam re-asks the LACCD question and reads the
+actual prose*, and guessed the risk was Sierra asserting district facts we don't
+hold. It was not that. **The district machinery was entirely sound** and the
+answer was about a different district anyway.
+
+### What was ruled OUT first, and how
+
+Worth recording because three of the four were the obvious suspects:
+
+| Suspect | Verdict | How |
+|---|---|---|
+| `resolveDistrict()` not deployed | **deployed** | read the LIVE function source through the Supabase MCP — the repo is not the deployment |
+| LACCD colleges missing profiles | **9 of 9 present** | one join, measured |
+| the district chip's question mis-resolving | **resolves correctly** | its topic search returns 3 rows (all Santa Ana), so no LACCD college has a topic hit, the narrowing block does not fire, the roster survives |
+| the roster collapsing downstream | **latent, not the cause** | fixed anyway — see below |
+
+### The two causes, and neither is in the district code
+
+**① The thread outlived its subject.** `convo` is module-level in `cpl_chat.js`
+deliberately, so a conversation follows the reader between the CPL Assistant tab
+and the My College box. `finish()` does `root.innerHTML = h` on every scope
+change, so the mount node dies, `mountInto()` rebuilds and **the visible log
+starts empty**. Together: the reader sees a clean conversation and the next
+question still ships eight turns about the previous district. ⚠️ And the stale
+turns do not merely tint the answer — `cpl-chat` folds prior user turns into the
+**retrieval text** when the new question has <2 topic words of its own, and that
+folded string is what `detectAndFetchCollegeProfile()` gets. `riverside` is in
+`COLLEGE_ALIASES`. **A stale thread SOURCES the answer.**
+
+**② Nothing ever told Sierra which institution was selected.** `window.CPL_CHAT`
+exposed `mountInto`/`prefill`/`ask`/`setSuggestions` and no way to say whose page
+this is; the request carried `query`, `session_id`, `history`, `audience`, `ctx`.
+Meanwhile the ACTIVE `sierra_guidance` row `15ec666b` says *"confine your answers
+to the selected institution"* — **a rule whose subject the request does not
+carry, which is an instruction to guess.** The guess landed on the only other
+institution in evidence: the stale thread's.
+
+Both had to be fixed. Clearing the thread alone leaves an assistant that still
+cannot know whose page it is on.
+
+### The fix
+
+- **`setScope(kind, label)`** on `window.CPL_CHAT`; `college_briefing.js` hands it
+  over from `finish()` on every render, **unconditionally** — not chained onto
+  `mountAssistant() || …`, because a failed mount would then silently keep the
+  previous subject's thread alive.
+- **The invariant is a comparison, not a clearing rule:** *what is SENT is never
+  more than what is SHOWN.* It decides the two cases a naive rule gets wrong — a
+  pane with no subject clears the **anchor** and keeps the **thread** (the
+  transcript is still visible there), and returning to the same subject keeps it
+  too. That is why the code tracks *the last named subject the thread was formed
+  under*, not the previous anchor: the latter reads a tab round-trip as two
+  changes of subject and deletes a live conversation.
+- **`scope` on the request** + `normalizeHostScope()`/`hostScopeBlock()` in the
+  function. **A strong default, never a filter** — the guidance row's own worked
+  example is a Cabrillo question asked from another college's page, so the scope
+  fills the subject only when the question named none, resolved through the SAME
+  `detectAndFetchCollegeProfile()` path a typed question uses.
+- **The roster is now excluded from the ambiguity narrowing.** That block was
+  written for the West-LA case (one token ilike-matches five colleges); a
+  district's profiles are also an array, and collapsing them would answer a
+  nine-college question with one college and drop the roster header — #1277
+  returning through a different door. Discriminated by the `_district` stamp,
+  never by length.
+
+### What the work cost, and what caught it
+
+⚠️ **My first clear was `logEl.innerHTML = ''` and it deleted the widget.** The
+suggested-questions row lives INSIDE the log, so that detached `chipsEl` and the
+assistant lost every starter question. `my_college_sierra_box.test.js` caught it
+(*EXACTLY ONE cluster → found 0*) — the new test did not. **Committed tests from
+three sessions ago are the ones that catch you.**
+
+⚠️ **Three of my own checks could not fail, and a fail-first probe found each.**
+The fixture's fake stream reader had no `releaseLock()`, so the loop threw AFTER
+rendering and BEFORE `convo.push` — every thread assertion was vacuous. The
+first-turn question said *"this district"* rather than naming Riverside, so
+"Riverside reaches the function nowhere in the payload" **passed against the
+broken build**. And (3b) asked a question before checking the chips survived —
+but `submit()` REMOVES the starter chips once a conversation begins, so it
+measured an empty row either way. Same shape as Sky175's finding that Sierra's
+log was reachable only *because* of the chips it deletes.
+
+⚠️ **`await C.ask(...)` awaits a boolean.** `ask()` returns `true` and `submit()`
+runs its SSE loop on its own; the fixture has to poll the seam, not guess a tick
+count.
+
+### Next
+
+1. **Deploy `cpl-chat`** (playbook: `playbook-deploy-shared-supabase-edge-function`).
+   The client half is inert without it — it sends a field nothing reads yet, which
+   is safe but does nothing.
+2. **Sam re-asks the LACCD question in a browser.** No session can — the sandbox
+   is egress-blocked from `*.supabase.co`. The specific thing to check is that
+   the answer names Los Angeles colleges and does not silently substitute
+   another district.
+3. Then the harder question this exposed: `sierra_guidance` should be **audited
+   for rules whose subject the request does not carry**. This one was live for
+   weeks. It is unlikely to be the only one.
+
+### Addendum — what CI caught after the fix was written (same day)
+
+The scope fix was green on 20 targeted suites and still broke one of 251.
+
+⚠️ **`sierra_rules_overlay.test.js` failed by naming the wrong thing.** Its check
+matched the literal call-site text `rulesOverlay, ruleReport\)` — anchored on the
+CLOSING PAREN — so appending `hostScope` turned it red with the message *"the
+overlay is read per turn and passed into the prompt builder"*, while the overlay
+was fine. **A red that names the wrong thing costs more than no test**, because
+the cost lands on whoever is least equipped to discount it.
+
+⚠️ **And the new test written in the same PR had the identical defect** — it
+pinned `rulesOverlay, ruleReport, hostScope\)`. Reading a failure is not the same
+as generalizing it; the generalization has to be applied to your own diff in the
+same sitting or you ship a fresh instance of the bug you just fixed.
+`sierra_credential_volume.test.js` already had the right shape **with the lesson
+in a comment** — one more rule that existed in one file and reached no sibling.
+Durable: [`assert-that-an-argument-arrives-not-that-it-is-last`](kb-notes/methodology-assert-that-an-argument-arrives-not-that-it-is-last.md).
+
+⚠️ **The smoke red was NOT this PR's**, and the reasoning is worth keeping: smoke
+hits the **live deployed** function, which the PR did not change, and the diff
+touches neither `chatbox/smoke_test.sh` nor its workflow. One assertion failed —
+mode 7's third, a **prose grep** for LA-basin college names — with mode 8, which
+tests the same capability structurally, passing. `cpl_memory`
+`smoke-mode-7-red-is-emphasis-not-capability` recorded the same single failure on
+run 113 earlier the same day. ⭐ **But the assertion is not junk**: the smoke
+script's own comment says part 3 *"is the one that regressed and the one that
+matters most to a seeker… Do NOT green this by deleting an assertion."* The fix
+is to stop grepping PROSE — assert on the retrieved CONTEXT (did a nearby
+teaching college reach the model?) and leave the naming to mode 8. Not done;
+separate concern.
+
+### The guidance audit (Sam's go, same day)
+
+7 active rules, **1** referencing a fact the request does not carry — `15ec666b`,
+the one that caused this bug. Budget is **not** binding: 4,095 of 9,000 chars,
+7 of 20 rows, 0 active `display` rules. ⭐ **The sharper finding is that all 7
+rules ship to all 6 surfaces**, so `15ec666b`'s opening condition (*"when using
+Sierra from the My College COBI tab"*) is **unevaluable everywhere** — including
+the public page, where the same "confine to the selected institution" pressure
+applies with no selection to confine to. Recommendation recorded in §11: a
+`surface` field, explicitly **not** a forked Sierra and **not** a `mode` enum.
+
+### Next
+
+1. **Deploy `cpl-chat`.** The fix is inert until then.
+2. Sam re-asks the LACCD question in a browser.
+3. Sam's go on the `surface` field.
+
+---
+
+## 2026-08-25 — Sky190: a stale copy said a busy college was empty
+
+Sam, with a screenshot from the My College tab: *"The data are wrong, particularly
+for Moreno Valley College, which has many students and is very active in MAP and
+has many transcribed units. What might be the problem? It was working well
+yesterday."* Then, on the blast radius: *"Sierra is called from the public page,
+the My College tab and the CPL Fact sheet."*
+
+### The answer, and the three wrong answers on the way to it
+
+| Suspect | Verdict | How |
+|---|---|---|
+| the memory changes (Sam's first guess, and mine to rule out) | **not it** | `cpl-chat` was v57, unchanged since 2026-08-23 01:18; #1320/#1321 never deployed |
+| Sierra fabricated the table | **no** | all twelve figures matched `chatbox_college_profiles.credit_distribution` **verbatim** |
+| the nightly promotion broke | **no** | `map_college_credit_summary` had MVC correct: 2,887 / 14,029 / 12,861 |
+| a stale source nobody refreshes | **YES** | that column's `updated_at` is **2026-06-25 21:59:58** |
+
+⭐ **THE COLUMN HAS NO WRITER.** Four things write `chatbox_college_profiles` — the
+landing-page sync, the identity crosswalk, the scraper, the MAP users sync — and
+**not one touches `credit_distribution`**. It was seeded once from
+`View_CreditDistributionByCollege_APIDataset` and left. Meanwhile
+`map_college_credit_summary` rebuilds nightly in the 13:40 promotion. Two months
+of drift, measured across the 103 colleges that join: transcribed understated
+**61%** (31,775 vs 80,568), students **40%** (28,451 vs 47,234), a false zero for
+transcribed at **17** colleges and for students at **6**.
+
+### ⭐ Why it only bites a DISTRICT question — and why "it was working yesterday" is true
+
+`singleProfile` is null whenever the profile lookup returns an **array**, which is
+exactly what a district question returns. So `shapeCreditStatus` was called with
+`collegeName = null`, produced no per-college figures at all, and the stale profile
+line became the only per-college source in the entire context. **A single-college
+question sets `singleProfile` and had been getting live figures the whole time.**
+
+So nothing regressed. I looked hard for a change and there is none: the profiles
+table has not been written since June, the migration list shows no DB change on the
+23rd or 24th, and `resolveDistrict`, `TABLE_COLUMN_RULE` and the stale line were all
+in the deployed v57 from 2026-08-23. The fault is **question-shape-specific**, which
+is exactly what "fine until I asked about a district" looks like from the outside.
+
+⚠️ **AND THE PROMPT ASKED FOR THE TABLE.** `TABLE_COLUMN_RULE` named six columns and
+asserted *"Always include the Transcribed Units column — it is given for every college
+below."* For a district that was **false**. Naming columns while the values are stale
+is what put `Moreno Valley College | 26 | 0 | 0 | 0` on screen. **A prompt must not
+promise a number it cannot show.**
+
+### The fix is one source, not a refresh
+
+Refreshing the June column would work until the next time one of two writers stops,
+and the failure is silent **because a stale number looks exactly like a fresh one**.
+So the profile block now emits no credit figures at all, and `buildCreditContext`
+serves both the single-college and the multi-college shape from the same live table.
+
+⚠️ **Neither "absent" nor "suppressed" may render as `0`.** A college with no row is
+named as absent; a suppressed row keeps NULL measures and says why. Both asserted,
+and the table rule forbids `0` for either — **a false zero reads as an inactive
+college**, and it is the one answer nobody files feedback about.
+
+### ⚠️ Three method failures, all mine, all caught by something already in the repo
+
+**① The repo is not the deployment.** I established what v57 does by reading
+`git show 208a4d1:index.ts` — the repo at the commit I *assumed* was live. The
+section above this one rules out a suspect by reading the **live source through the
+Supabase MCP**, and Sam had to point me at it. It matched (`4796b51376780b07`), but
+a match reached by assumption is luck, not method.
+
+**② I shipped the bug I had just read about — four times.** The addendum above says
+a check anchored on a call's closing paren goes red naming something that is not
+wrong, and that *the new test written in the same PR had the identical defect*. Mine
+had it in `shapeCreditStatus(…, rosterNames)`, `fetchTeamGuidance(sb, hostSurface)`,
+`queryCapFor(hostSurface)` — and `sierra_credit_disposition.test.js` **actually went
+red**, naming *"the per-college pick uses the resolved single profile"* while the
+per-college pick was fine. ⭐ **The fix was already in that file, six lines below the
+failing line**, applied to two sibling assertions and never back-ported to this one.
+All four now assert the value ARRIVES, with **both** probes the note requires —
+remove it (must fail) and append an argument (must stay green), the second being the
+one it says people skip. **34 assertions of that shape survive repo-wide**; the ones
+on our own functions are `_prios`, `srcIdx` and `earnedSubHtml` ×2, left for their
+own workstreams.
+
+**③ `exit=0` was my trailing `grep`, not `npm test`.** A red suite nearly passed for
+green because I read the shell's exit code instead of the log. The CI event then
+named a **superseded** head, which would have sent me diagnosing an already-fixed
+failure. Both times the honest answer came from reading the actual output.
+
+### Where this leaves the tab
+
+`cpl-chat` **v58 deployed and byte-verified** 2026-08-25 (`02c130977e69e8f9`,
+221,310 chars, `verify_jwt:false`), carrying this fix, the memory per-surface caps
+and the drafting block together.
+
+**Next:** Sam re-asks the RCCD question in a browser and confirms Moreno Valley now
+reads ~2,887 students. No session can — the sandbox is egress-blocked from
+`*.supabase.co`.
+
+## 2026-09-17 — My College opens to the public without un-gating anything
+
+Sam set the tab's menu audience to Everyone and it still demanded the team
+phrase. The Admin control governs the MENU — its own help text says so — while
+two other things governed the PAGE: `if (!signedIn())` in `render()`, and the
+same check in `activate()`.
+
+⚠️ **Three of the tab's four gated tables cannot be un-gated.** Measured before
+designing anything: `map_college_cr_unit` holds 210,171 rows, 202,618 below
+k=10, and **145,554 describing exactly one student** at a named college, course
+and credit recommendation with that student's exact credit total;
+`map_college_credit_summary` publishes exact sub-threshold headcounts (three
+colleges at `students = 1`); `map_college_contacts` is a statewide CCC executive
+directory with emails.
+
+So the ratified ADR's shape applied instead of an RLS switch — **two objects,
+not one**. Four `_pub` mirrors carry only what may be public; every base keeps
+its gate and is never written; rollback is `drop table`. Suppression moved from
+render time (which the ADR calls decoration) into
+`kb/_publish_college_briefing.py`, the one implementation, with its properties
+tested without a database.
+
+**Two ways the client could have failed silently, both now guarded:**
+
+- A **remainder row** fed through the existing grouping lands as "Not
+  categorized" / "(no recommendation named in MAP)" — this data's own words for
+  MAP being blank. A deliberate withholding would have rendered as somebody's
+  oversight. It is now its own row inside the list, with its units still in the
+  total so the breakdown reconciles to the headline.
+- **A role this reader may not see is not an empty role.** `contactRoster`
+  classified by falsiness, so every executive role absent from the public read
+  would have read as "Not filled in" — telling a college its VP is missing when
+  we simply did not ask.
+
+⚠️ **Mutation-testing found a hole in the TEST, not the code:** deleting the
+complementary-suppression loop left the planner SAFE while publishing less, so
+every privacy assertion still passed. A privacy test cannot see a utility
+regression.
+
+⚠️ **Ordering corollary learned the hard way.** `cobi_admin_surface.js` is
+DERIVED from `kb/dependency_map.json`, so the order is stage → rebuild the map →
+rebuild the admin surface → run the suite. A local run that passed before the
+final map rebuild hid a real regression: `sources()` puts the table name behind a
+variable, `REST_CONCAT_RE` needs it to follow `REST + "`, and college-briefing's
+read set lost four tables and gained none. Fixed with a SEED pinned to
+`function sources\(\)`.

@@ -1,3 +1,6 @@
+-- ⚠️ NARROWED 2026-08-28 (Sam): curating funding requires a magic-link
+-- reviewer, NOT the team phrase. Live policies were altered to match; this
+-- file is the SQL of record and must state the same gate.
 -- Schema of record — public.cpl_funding_config
 -- ============================================================================
 -- The CPL Implementation Funding tab's SHARED model configuration, editable
@@ -17,7 +20,7 @@
 --     ⊕ per-browser what-if     (localStorage — anonymous scenario play)
 --
 -- The RLS boundary is the security gate: the public anon key ALONE cannot
--- write. Team-phrase writes carry the x-team-pass header, which team_pass_ok()
+-- write. (Team-phrase writes were accepted here until 2026-08-28; team_pass_ok()
 -- validates server-side (the raci.js / budget_editor.js pattern via
 -- team_phrase.js's decorateHeaders).
 -- ============================================================================
@@ -40,13 +43,13 @@ create policy cfc_select on public.cpl_funding_config
 drop policy if exists cfc_insert on public.cpl_funding_config;
 create policy cfc_insert on public.cpl_funding_config
   for insert to anon, authenticated
-  with check (is_allowed_reviewer() OR team_pass_ok());
+  with check (is_allowed_reviewer());
 
 drop policy if exists cfc_update on public.cpl_funding_config;
 create policy cfc_update on public.cpl_funding_config
   for update to anon, authenticated
-  using (is_allowed_reviewer() OR team_pass_ok())
-  with check (is_allowed_reviewer() OR team_pass_ok());
+  using (is_allowed_reviewer())
+  with check (is_allowed_reviewer());
 
 -- Keep updated_at fresh on every write.
 create or replace function public.cpl_funding_config_touch()

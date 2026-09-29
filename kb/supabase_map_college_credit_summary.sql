@@ -52,6 +52,11 @@ alter table public.map_college_credit_summary enable row level security;
 create policy map_college_credit_summary_select on public.map_college_credit_summary
   for select to anon, authenticated
   using (is_allowed_reviewer() or team_pass_ok());
+-- EXPLICIT GRANTS (2026-09-23): this file drops and recreates the table, and
+-- from 2026-10-30 Supabase stops granting the API roles on a NEW table in
+-- public, so a re-run would otherwise leave it unreadable.
+-- Guarded by tests/supabase_table_grants_test.py.
+grant select on public.map_college_credit_summary to anon, authenticated, service_role;
 
 -- ── Measured 2026-08-08, colleges only (entity_kind = 'college') ────────────
 --   1,052,531  units of potential credit at Needs Action

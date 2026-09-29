@@ -36,7 +36,16 @@
   // browser that holds it — kept in sync on save so the editor is not locked
   // out by their own rotation. `null` = no client slot (ci has no site gate).
   var PHRASES = [
-    { id: "raci", label: "Shared team phrase", slot: "cpl_team_pass",
+    /* The shared phrase. Its row was stored under the id `raci` from the days
+     * it lived on the Team & RACI tab — a tab Sam renamed to "Team" on
+     * 2026-08-15, leaving the phrase named after something that no longer
+     * existed. `legacy` lets this find the row under EITHER id, so renaming the
+     * database row and deploying this file can happen in either order without a
+     * window where the card renders blank. A blank card is the dangerous state:
+     * typing into it and saving would create a SECOND row, and team_pass_check
+     * matches ANY secret in the table — two live shared phrases, one of them
+     * invisible to whoever rotated the other. */
+    { id: "team", legacy: "raci", label: "Shared team phrase", slot: "cpl_team_pass",
       opens: "Every shared team tab — the Workplan, Budget, Memory, MAP Users, Governance, Sierra Training and the rest.",
       who: "Everyone on the MAP team who curates anything." },
     { id: "ci", label: "C&I", slot: null,
@@ -50,8 +59,29 @@
       who: "Whoever works the contract register." }
   ];
   function defOf(id) {
-    for (var i = 0; i < PHRASES.length; i++) if (PHRASES[i].id === id) return PHRASES[i];
+    for (var i = 0; i < PHRASES.length; i++) {
+      if (PHRASES[i].id === id || PHRASES[i].legacy === id) return PHRASES[i];
+    }
     return null;
+  }
+
+  /* The id this phrase's row is ACTUALLY stored under right now.
+   *
+   * Read from the rows we just fetched rather than assumed, so a PATCH always
+   * targets a row that exists. Falls back to the canonical id when nothing has
+   * loaded — writing to the new id is the right guess when there is no evidence,
+   * and the read that follows will correct the display either way. */
+  function rowIdOf(def) {
+    if (!def) return null;
+    if (state.rows) {
+      if (state.rows[def.id]) return def.id;
+      if (def.legacy && state.rows[def.legacy]) return def.legacy;
+    }
+    return def.id;
+  }
+  function rowFor(def) {
+    if (!def || !state.rows) return null;
+    return state.rows[def.id] || (def.legacy ? state.rows[def.legacy] : null) || null;
   }
 
   var state = {
@@ -85,8 +115,12 @@
   // An access token expires (~1h) while still LOOKING valid, so refresh before
   // every call or a dead token 401s while the UI still says "Signed in".
   function ensureFresh() {
-    var s = state.sess;
+    // Re-read: refresh tokens rotate, so a cached session can hold a CONSUMED
+    // one after a sibling module (or the cpl_session.js keeper) renewed. See
+    // credential_reference.js — same line, same reason.
+    var s = getSession() || state.sess;
     if (!s) return Promise.resolve(null);
+    state.sess = s;
     if (s.exp && s.exp <= Date.now() + 60000 && s.refresh_token) {
       return refreshToken(s.refresh_token).then(function (tok) {
         if (!isValidJwt(tok.access_token)) throw new Error("bad refresh");
@@ -106,7 +140,10 @@
     return { apikey: SUPABASE_ANON, Authorization: "Bearer " + ((s && s.access_token) || SUPABASE_ANON) };
   }
   function signIn(email) {
-    try { sessionStorage.setItem("cpl_sb_return_tab", "team-phrases"); } catch (e) {}
+    // sessionStorage is PER BROWSER TAB and the magic link opens a NEW one, so a
+    // stash written here was invisible where it is read. The keeper writes both.
+    if (window.CPL_SESSION && CPL_SESSION.stashReturnTab) CPL_SESSION.stashReturnTab("team-phrases");
+    else try { sessionStorage.setItem("cpl_sb_return_tab", "team-phrases"); } catch (e) {}
     var redirect = encodeURIComponent(location.origin + location.pathname);
     return fetch(SUPABASE_URL + "/auth/v1/otp?redirect_to=" + redirect, {
       method: "POST", headers: { apikey: SUPABASE_ANON, "Content-Type": "application/json" },
@@ -159,7 +196,7 @@
     state.busy[id] = true; state.msg[id] = { text: "Saving…", kind: "" }; render(root);
     ensureFresh().then(function (s) {
       if (!s) throw new Error("your sign-in expired — sign in again");
-      return fetch(REST + "/team_access?id=eq." + encodeURIComponent(id), {
+      return fetch(REST + "/team_access?id=eq." + encodeURIComponent(rowIdOf(def)), {
         method: "PATCH",
         headers: Object.assign(headersFor(s), {
           "Content-Type": "application/json", Prefer: "return=representation"
@@ -174,7 +211,8 @@
       // 403 — so an "ok" write must also prove it touched a row, or a rotation
       // that silently changed nothing reads as success.
       if (Array.isArray(rows) && rows.length === 0) throw new Error("not saved — your sign-in isn't a reviewer");
-      if (state.rows && state.rows[id]) state.rows[id].secret = v;
+      var live = rowFor(def);
+      if (live) live.secret = v;
       // Keep this browser's own stored copy in sync so the editor is not locked
       // out by their own rotation — only the slot THIS phrase lives in.
       try {
@@ -199,9 +237,12 @@
     st.textContent = [
       "#team-phrases-root{padding:0 0 2rem;max-width:900px;margin:0 auto;}",
       ".tphx h2{color:var(--navy-primary,#0A2240);margin:0 0 .25rem;}",
-      ".tphx-intro{color:var(--text-faint,#555);font-size:.9rem;margin:0 0 1rem;max-width:760px;line-height:1.5;}",
+      // ⚠️ --text-muted, NOT --text-faint: faint is #87877F, 3.24:1 on this card
+      // against the 4.5:1 floor, and this paragraph is the tab's only explanation
+      // of what a phrase opens — essential text, which faint is never for.
+      ".tphx-intro{color:var(--text-muted,#5C5C55);font-size:.9rem;margin:0 0 1rem;max-width:var(--cpl-measure,none);line-height:1.5;}",
       ".tphx-gatechip{display:inline-block;font-size:.62rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;",
-      "background:var(--gold-accent,#B8860B);color:var(--navy-primary,#0A2240);border-radius:4px;padding:.1rem .4rem;vertical-align:middle;margin-left:.4rem;}",
+      "background:var(--gold-accent,#B8860B);color:var(--on-mustard);border-radius:4px;padding:.1rem .4rem;vertical-align:middle;margin-left:.4rem;}",
       ".tphx-card{background:var(--surface-0,#fff);border:1px solid var(--border,#e0e0e0);border-radius:10px;padding:14px 16px;margin-bottom:12px;}",
       ".tphx-card h3{margin:0 0 .2rem;font-size:1rem;color:var(--navy-primary,#0A2240);}",
       ".tphx-opens{font-size:.82rem;color:var(--text-body,#444);margin:.1rem 0 .3rem;line-height:1.45;}",
@@ -215,7 +256,7 @@
       ".tphx-msg{font-size:.78rem;margin-top:6px;min-height:1em;}",
       ".tphx-msg.err{color:var(--danger-text,#c00);}",
       ".tphx-msg.ok{color:var(--success-text,#2A7D4F);}",
-      ".tphx-warn{font-size:.82rem;background:var(--mustard-fill,#f2dca0);color:var(--text-strong,#3a2f00);border-radius:8px;padding:10px 14px;margin:0 0 1rem;line-height:1.5;}",
+      ".tphx-warn{font-size:.82rem;background:var(--mustard-fill,#f2dca0);color:var(--on-mustard);border-radius:8px;padding:10px 14px;margin:0 0 1rem;line-height:1.5;}",
       ".tphx-gate{background:var(--surface-1,#fafbfc);border:1px solid var(--border,#e0e0e0);border-radius:10px;padding:18px;max-width:560px;}",
       ".tphx-gate h3{margin:0 0 .4rem;font-size:1rem;color:var(--navy-primary,#0A2240);}",
       ".tphx-gate p{font-size:.85rem;color:var(--text-body,#444);line-height:1.5;margin:.3rem 0 .8rem;}",
@@ -287,7 +328,7 @@
       + '<button class="tphx-btn" data-signout>Sign out</button></div>';
 
     PHRASES.forEach(function (def) {
-      var row = state.rows && state.rows[def.id];
+      var row = rowFor(def);
       var val = state.draft[def.id] != null ? state.draft[def.id] : (row ? row.secret : "");
       var shown = !!state.reveal[def.id];
       var m = state.msg[def.id];

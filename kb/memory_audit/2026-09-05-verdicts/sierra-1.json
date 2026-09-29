@@ -1,0 +1,1160 @@
+{
+  "part": "sierra-1",
+  "expected_rows": 37,
+  "coverage": {
+    "rows_read": 37,
+    "rows_judged": 37,
+    "note": "All 37 rows pulled (offsets 0-32), each judged against lane files, code on main, live read-only DB state, published KB notes and verified rows. DB access was SELECT-only; no repository file edited."
+  },
+  "counts": {
+    "confirmed": 36,
+    "stale": 1,
+    "superseded_by_row": 0,
+    "snapshot": 0,
+    "unverifiable": 0
+  },
+  "verdicts": [
+    {
+      "id": "2887405c-1336-46eb-a9d5-c09fc2047de5",
+      "slug": "aed-synonym-fix-became-the-outage",
+      "kind": "pitfall",
+      "title": "A synonym added to fix CPR retrieval is what broke it worse",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "PR #1016 is on main; the SQL of record routes tokens <=4 chars (or collapsing <3 after English stemming) to an unstemmed 'simple' vector, the exact remedy the row names; KB note published.",
+      "evidence": [
+        {
+          "source": "chatbox/supabase_search_exhibits_by_topic_v2.sql:68-70",
+          "quote": "Short tokens (<=4 chars) and any token the English stemmer collapses below 3 characters are matched on an UNSTEMMED 'simple' vector. This is what makes \"aed\" survivable."
+        },
+        {
+          "source": "chatbox/supabase_search_exhibits_by_topic_v2.sql:132",
+          "quote": "use_simple := length(norm) <= 4;"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "a922f516 Sierra: fix topic retrieval — the CPR question, and why it broke twice (#1016)"
+        },
+        {
+          "source": "docs/kb-notes/reference-postgres-fts-pitfalls-for-credential-titles.md:frontmatter",
+          "quote": "kb-status: published"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": [
+        {
+          "from": "related: methodology-assert-what-retrieval-returns (no such slug)",
+          "to": "assert-what-retrieval-returns"
+        }
+      ]
+    },
+    {
+      "id": "73cfd056-fa7b-4b37-8cd9-5a06ff7bf9ec",
+      "slug": "sierra-corpus-covers-59-of-123-colleges",
+      "kind": "risk",
+      "title": "Sierra's exhibit corpus covers 59 of 123 colleges",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Re-measured live 2026-09-05: chatbox_exhibits 2,397 rows over exactly 59 distinct colleges; chatbox_college_profiles max(updated_at) 2026-06-25. The lane file states the same open gap; no refresh has landed.",
+      "evidence": [
+        {
+          "source": "sql",
+          "quote": "select count(*), count(distinct college) from chatbox_exhibits -> 2397 / 59; select max(updated_at) from chatbox_college_profiles -> 2026-06-25"
+        },
+        {
+          "source": "docs/reference/lanes/sierra-retrieval-corpus.md:24",
+          "quote": "**Open:** corpus covers **59 of 123** colleges; `chatbox_college_profiles` stale since 2026-06-25 **except contacts**"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "013a075c-165b-476b-92e3-a27ec957a8f1",
+      "slug": "assert-what-retrieval-returns",
+      "kind": "procedure",
+      "title": "Assert what retrieval returns, not that the answer reads better",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "KB note published; tests/sierra_topic_keywords.test.js exists and asserts the expanded term set (plural bridge); the false-absences lane applied the doctrine again (mode 7r measures the retrieval layer, not prose).",
+      "evidence": [
+        {
+          "source": "docs/kb-notes/methodology-assert-what-retrieval-returns.md:frontmatter",
+          "quote": "kb-status: published"
+        },
+        {
+          "source": "tests/sierra_topic_keywords.test.js",
+          "quote": "exists; 6 assertions on the 'firefighter' plural/synonym expansion"
+        },
+        {
+          "source": "docs/reference/lanes/sierra-false-absences.md:24",
+          "quote": "Measured at the retrieval layer instead: the function's own tsquery for that question returns 150 rows / 78 colleges ... the assertion was testing wording, not capability."
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "14c9f3bd-a472-408f-b517-b2e6db161292",
+      "slug": "cpr-retrieval-fix-live-v29",
+      "kind": "milestone",
+      "title": "Sierra's CPR fix is live in production (v29)",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Event happened: PRs #1016/#1019/#1020/#1021 on main; the lessons doc records v29 reaching production 2026-08-07 with verify_jwt false; deploy workflow still pins --no-verify-jwt. Production is now v58 (verified row), which does not unmake the milestone.",
+      "evidence": [
+        {
+          "source": "docs/cpl_assistant_lessons.md:999",
+          "quote": "Sam gave the go. The fix reached production as **cpl-chat v29**, and the CPR"
+        },
+        {
+          "source": "docs/cpl_assistant_lessons.md:1028",
+          "quote": "**Verified live.** Deploy confirmed at v29 with `verify_jwt: false`"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "401439f0 Sierra: deploy cpl-chat from the runner, not by hand (#1019) · a922f516 ... (#1016)"
+        },
+        {
+          "source": "slug:sam-authorized-the-v58-cpl-chat-deploy",
+          "quote": "verified decision 2026-08-25 — later version, milestone unaffected"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "25037c80-0d1c-47f9-a478-566269c531b0",
+      "slug": "sierra-home-college-detection-was-nondeterministic",
+      "kind": "pitfall",
+      "title": "Sierra's \"nearest college\" fault was in working out where you are, not in the ranking",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "PR #1023 on main; index.ts still loads college_geo once and ranks by proximityBand off askedGeo; the row it supersedes is status=superseded; the geo test guards the .limit(3) shape with comments stripped.",
+      "evidence": [
+        {
+          "source": "chatbox/supabase/functions/cpl-chat/index.ts:447",
+          "quote": "// With no home college resolved, askedGeo is null and NOTHING downstream can"
+        },
+        {
+          "source": "chatbox/supabase/functions/cpl-chat/index.ts:1946-1949",
+          "quote": "function proximityBand(geo, askedGeo) ... county === askedGeo.county) return 2; ... region === askedGeo.region) return 1;"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "babe41ac Sierra: rank peer colleges by distance — and fix why there was no \"nearest\" (#1023)"
+        },
+        {
+          "source": "sql",
+          "quote": "cpl_memory slug sierra-nearest-college-ranks-volume-over-distance -> status superseded (matches the row's 'Supersedes' note)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "82308ab2-5952-45f5-b09a-11f488992260",
+      "slug": "unordered-limit-is-a-correctness-bug",
+      "kind": "pitfall",
+      "title": "Asking for \"any three\" really does give a different three each time - and it reads as the AI being flaky",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "KB note published; the guard test does what the row prescribes (strips comments before the source-level regex; limit slices after order). Lesson mechanism unchanged.",
+      "evidence": [
+        {
+          "source": "docs/kb-notes/methodology-an-unordered-limit-is-a-correctness-bug.md:frontmatter",
+          "quote": "kb-status: published"
+        },
+        {
+          "source": "tests/sierra_geo_ranking.test.js:130-131",
+          "quote": "// Comments are stripped first — this block DESCRIBES the old `.limit(3)` in prose, and an un-stripped regex happily matched the description instead of"
+        },
+        {
+          "source": "tests/sierra_geo_ranking.test.js:67",
+          "quote": "`.limit()` slices AFTER `.order()` sorts — so a test can prove"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "3924d0b7-a758-4b52-a459-211a2c4c5e51",
+      "slug": "test-that-writes-to-the-queue-it-monitors",
+      "kind": "pitfall",
+      "title": "A test that writes to the queue it monitors turns signal into noise",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Re-measured: sierra_feedback now 187 rows, 134 (72%) stamped status='ci'/page='smoke'/session 'smoke-ci' — the share rose exactly as the row predicts; FEEDBACK_LIMIT is 500; the _isSmoke exclusion is tested.",
+      "evidence": [
+        {
+          "source": "sql",
+          "quote": "select status,count(*) from sierra_feedback -> ci=134, addressed=51 (187 total); page='smoke'=134; session_id prefix 'smoke-ci'=134"
+        },
+        {
+          "source": "sierra_training.js:72",
+          "quote": "var FEEDBACK_LIMIT = 500;"
+        },
+        {
+          "source": "tests/sierra_feedback_ci_rows.test.js:59-63",
+          "quote": "check(\"isSmoke: status='ci' is CI\" ... check(\"isSmoke: a real thumbs-down is NOT CI\""
+        },
+        {
+          "source": "docs/kb-notes/methodology-a-test-that-writes-to-the-queue-it-monitors.md:frontmatter",
+          "quote": "kb-status: published"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "10de707d-499f-4003-9055-13904d9c7f2b",
+      "slug": "sierra-restraint-binds-salesmanship-not-facts",
+      "kind": "decision",
+      "title": "Sierra: the restraint binds salesmanship, not facts",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Both halves are live in the prompt: PORTAL_RULE carries the prohibition plus the permission to compare on request; the student AUDIENCE_RULE carries the never-a-dead-end fact. sierra_rules overlay is empty (0 rows) so the code defaults govern; PR #1029 on main.",
+      "evidence": [
+        {
+          "source": "chatbox/supabase/functions/cpl-chat/index.ts:2555",
+          "quote": "never volunteer a comparison of the form \"you would get more credit at <other college>\" ... If the visitor explicitly ASKS to compare colleges ... compare freely and helpfully"
+        },
+        {
+          "source": "chatbox/supabase/functions/cpl-chat/index.ts:2647",
+          "quote": "If their college has not set up credit for what they are asking about, NEVER leave them at a dead end to be polite about it: tell them plainly, tell them which colleges DO award it today"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "36210c86 Sierra: the restraint binds salesmanship, not facts — and answer all three parts (#1029)"
+        },
+        {
+          "source": "sql",
+          "quote": "select count(*) from sierra_rules -> 0 (overlay empty; RULE_DEFAULTS at index.ts:2835-2843 govern)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Sam",
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "7eabb856-e3b8-44f6-b916-c5ba411e59ed",
+      "slug": "credit-numbers-both-with-chip",
+      "kind": "procedure",
+      "title": "Credit-disposition headline numbers: show both totals with a suppression chip",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The lane file states the same policy and the same four figures, incl. the >=3-suppressed-cells safety condition and never-change-one-half-alone. Only drift: the lane scopes both to entity_kind='college' (106 entities) where the row's chip text says '13 of 111'.",
+      "evidence": [
+        {
+          "source": "docs/reference/lanes/disposition-grain-student-detail.md:24",
+          "quote": "show published AND unsuppressed with a chip — published 1,051,870/63,991, unsuppressed 1,052,531/64,074, **both scoped `entity_kind='college'` (106 entities)**; **never change one half alone**."
+        },
+        {
+          "source": "docs/reference/lanes/disposition-grain-student-detail.md:24",
+          "quote": "**Show both ONLY while ≥3 cells are suppressed** — at one, the difference IS that college's figure (`adr-student-detail-aggregate-disclosure-control`)."
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Sam",
+      "kind_check": "decision",
+      "link_fixes": [
+        {
+          "from": "source: CLAUDE.md §11 number policy (relocated 2026-08-28)",
+          "to": "docs/reference/lanes/disposition-grain-student-detail.md"
+        }
+      ]
+    },
+    {
+      "id": "f6622aa3-9e5c-4454-9580-3fe0f8a22cf4",
+      "slug": "sierra-per-college-disclosure-open",
+      "kind": "decision",
+      "title": "Per-college credit-disposition figures are disclosed to all Sierra callers",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Implemented by PR #1064 (cpl-chat v36) on main: index.ts reads the published map_college_credit_summary aggregates and renders named-college figures (small cells as 'fewer than 10') on the one shared function; ADR records Sam's 2026-08-10 refinement; no later lane/row overturns it.",
+      "evidence": [
+        {
+          "source": "git log origin/main",
+          "quote": "a0986d42 Sierra can query the credit-disposition data (cpl-chat v36) (#1064)"
+        },
+        {
+          "source": "chatbox/supabase/functions/cpl-chat/index.ts:917",
+          "quote": "// ── Credit disposition (v36) — what colleges have ACTED on ───"
+        },
+        {
+          "source": "chatbox/supabase/functions/cpl-chat/index.ts:1930",
+          "quote": "out += `- ${r.name}: fewer than 10 CPL students, so the figures are withheld to protect `"
+        },
+        {
+          "source": "docs/kb-notes/adr-student-detail-aggregate-disclosure-control.md:207",
+          "quote": "Sam's refinement on the reporting side (2026-08-10): Sierra states **\"fewer than"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Sam",
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "60ec9148-3e9a-4323-92e6-b243bc8ded66",
+      "slug": "sierra-single-function-service-role",
+      "kind": "fact",
+      "title": "There is ONE Sierra, not two - and she runs with full database rights",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Directly observable: identical CHAT_URL in cpl_chat.js, sierra/sierra.js, fact-sheet/factsheet_sierra.js (and cpl_memory.js); index.ts:5 reads SUPABASE_SERVICE_ROLE_KEY; deploy pins --no-verify-jwt. A v56 `surface` field now names the caller but it is still one function.",
+      "evidence": [
+        {
+          "source": "cpl_chat.js:30 / sierra/sierra.js:31 / fact-sheet/factsheet_sierra.js:36",
+          "quote": "var CHAT_URL = SUPABASE_URL + '/functions/v1/cpl-chat';"
+        },
+        {
+          "source": "chatbox/supabase/functions/cpl-chat/index.ts:5",
+          "quote": "const SUPABASE_SERVICE_KEY = Deno.env.get(\"SUPABASE_SERVICE_ROLE_KEY\")!;"
+        },
+        {
+          "source": ".github/workflows/cpl-chat-deploy.yml:24,135",
+          "quote": "# `--no-verify-jwt` IS LOAD-BEARING and is why it is pinned in this file ... --no-verify-jwt \\"
+        },
+        {
+          "source": "docs/kb-notes/methodology-rls-is-not-a-gate-in-front-of-a-service-role-function.md:frontmatter",
+          "quote": "kb-status: published"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "6b9d3121-d2e4-403f-8b48-0d71d59e1d4e",
+      "slug": "concatenated-haystack-penalises-curation",
+      "kind": "pitfall",
+      "title": "Our own search ranks the best-described credential worst",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The SQL of record scores max(similarity) over unnest(raw_variants || unified_title) and says so in its header; the lane carries the rule; KB note published.",
+      "evidence": [
+        {
+          "source": "kb/supabase_chatbox_credentials.sql:26",
+          "quote": "-- 2. SCORE THE BEST SINGLE NAME, NOT THE CONCATENATION. similarity() normalises"
+        },
+        {
+          "source": "kb/supabase_chatbox_credentials.sql:89-90",
+          "quote": "select max(similarity(lower(v), needle.n)) as best_sim from unnest(c.raw_variants || c.unified_title) v"
+        },
+        {
+          "source": "docs/reference/lanes/sierra-retrieval-corpus.md:24",
+          "quote": "score the **best single name**, never the concatenation (length-normalized similarity ranks the BEST-CURATED record WORST)"
+        },
+        {
+          "source": "docs/kb-notes/methodology-a-concatenated-haystack-penalises-your-best-record.md:frontmatter",
+          "quote": "kb-status: published"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "18b3f737-22ea-4d34-84e2-f1d3eb872960",
+      "slug": "suppression-must-model-the-attack",
+      "kind": "pitfall",
+      "title": "A suppression test must model the attack, not the field",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Both standing assertions are committed in kb/supabase_credential_volume.sql and I re-ran them read-only today: both return 0 (543 rollup rows, 420 suppressed). Complement suppression of the smallest published sibling is documented; ADR records the violation event.",
+      "evidence": [
+        {
+          "source": "kb/supabase_credential_volume.sql:353-366",
+          "quote": "-- Standing disclosure assertions (both must return 0) ... 2. No suppressed cell is recoverable by subtracting published siblings from the published statewide total"
+        },
+        {
+          "source": "sql",
+          "quote": "ran both assertions 2026-09-05 -> assertion1 (published measure on suppressed row)=0, assertion2 (suppressed_cells=1 with published total)=0; rollup 543 rows / 420 suppressed"
+        },
+        {
+          "source": "kb/supabase_credential_volume.sql:107-110",
+          "quote": "SMALLEST published cell alongside it ... Cost measured: 16 complement cells (139 -> 123 published of 543). Standing assertion: `suppressed_cells = 1` must return ZERO rows."
+        },
+        {
+          "source": "docs/kb-notes/adr-student-detail-aggregate-disclosure-control.md:163",
+          "quote": "### And decision 5 was violated in the same build — caught at checkpoint"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "f32bb26d-9f1e-4e60-a071-59bd4ca2edfa",
+      "slug": "credential-naming-coverage-4-percent",
+      "kind": "fact",
+      "title": "Only 4.2% of student rows can be given a credential name",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Two lane files (updated 2026-08-28) carry the same 4.2% / 22,606 of 537,908 figure and the floor-plus-denominator rule; the 59-of-123 corpus coverage re-measured live today.",
+      "evidence": [
+        {
+          "source": "docs/reference/lanes/disposition-grain-student-detail.md:24",
+          "quote": "⚠️ **Only 4.2% of student rows are nameable** (22,606 of 537,908) — per-credential counts are a FLOOR and the denominator ships as a COLUMN."
+        },
+        {
+          "source": "docs/reference/lanes/sierra-retrieval-corpus.md:24",
+          "quote": "only 4.2% of student rows are nameable; `students_suppressed=true` must never render like `colleges_with_student_data=0`."
+        },
+        {
+          "source": "sql",
+          "quote": "count(distinct college) from chatbox_exhibits -> 59"
+        },
+        {
+          "source": "docs/kb-notes/methodology-publish-the-denominator-with-the-number.md:frontmatter",
+          "quote": "kb-status: published"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "7d8e08ca-d62b-4055-8ef0-6fb19ced7061",
+      "slug": "ferpa-report-fewer-than-ten",
+      "kind": "decision",
+      "title": "Sierra reports small cells as \"fewer than 10\", not as a refusal",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "VOLUME_RULE carries the exact wording and is still assembled from RULE_DEFAULTS (sierra_rules overlay empty); the credit-disposition renderer also says 'fewer than 10'; ADR records the refinement.",
+      "evidence": [
+        {
+          "source": "chatbox/supabase/functions/cpl-chat/index.ts:2606",
+          "quote": "- WHEN A COUNT IS UNDER TEN, say \"fewer than 10 students\" — exactly that. Never give an exact number, never estimate one, and never derive one by subtracting from a larger total."
+        },
+        {
+          "source": "chatbox/supabase/functions/cpl-chat/index.ts:2841",
+          "quote": "{ key: \"volume\", title: \"Student volume by credential\", body: VOLUME_RULE, appliesWhen: \"volume\", sortOrder: 70 }"
+        },
+        {
+          "source": "docs/kb-notes/adr-student-detail-aggregate-disclosure-control.md:207",
+          "quote": "Sam's refinement on the reporting side (2026-08-10): Sierra states **\"fewer than"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Sam Lee",
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "a2030114-d682-4c06-9b6d-8722a7b69334",
+      "slug": "retrieval-miss-vs-missing-measure",
+      "kind": "pitfall",
+      "title": "A retrieval miss and a missing measure look identical from the answer",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The world-knowledge prohibition is in VOLUME_RULE verbatim; the code comment records the CompTIA episode; search_statewide_recommendations exists live; KB note published.",
+      "evidence": [
+        {
+          "source": "chatbox/supabase/functions/cpl-chat/index.ts:2608",
+          "quote": "- NEVER supply a credential, a certification name, or a student number from general knowledge of the world. If the section does not contain it, we do not have it."
+        },
+        {
+          "source": "chatbox/supabase/functions/cpl-chat/index.ts:1321",
+          "quote": "* for CompTIA) and then listed certs from general world knowledge. The listed"
+        },
+        {
+          "source": "sql",
+          "quote": "pg_proc: search_statewide_recommendations(asked text, result_limit integer) exists"
+        },
+        {
+          "source": "docs/kb-notes/methodology-a-retrieval-miss-and-a-data-gap-look-identical.md:frontmatter",
+          "quote": "kb-status: published"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "db52b72c-f2ce-40c9-adf9-171620593a2d",
+      "slug": "smoke-test-validates-the-old-version",
+      "kind": "pitfall",
+      "title": "An auto-triggered smoke test validates the version it is replacing",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Mechanism unchanged: smoke fires on push to index.ts, deploy is workflow_dispatch with a typed DEPLOY and states it triggers nothing afterward; the 2026-08-24 lessons entry re-observed the same shape (smoke green against v57 while v58 sat undeployed).",
+      "evidence": [
+        {
+          "source": ".github/workflows/cpl-chat-smoke.yml:10-15",
+          "quote": "on: workflow_dispatch: push: paths: - chatbox/smoke_test.sh - chatbox/supabase/functions/cpl-chat/index.ts"
+        },
+        {
+          "source": ".github/workflows/cpl-chat-deploy.yml:34",
+          "quote": "# AFTER A RUN: this triggers nothing automatically. Dispatch cpl-chat-smoke.yml"
+        },
+        {
+          "source": "docs/cobi_memory_tab_lessons.md:354-356",
+          "quote": "The smoke workflow runs on push, but it tests the **deployed** function, so on this diff it was exercising v57 and passing."
+        },
+        {
+          "source": "docs/kb-notes/methodology-order-the-post-deploy-check-after-the-deploy.md:frontmatter",
+          "quote": "kb-status: published"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "c3213182-ea13-4b79-b0e1-91c03ca223a1",
+      "slug": "prefill-must-stay-send-free",
+      "kind": "pitfall",
+      "title": "The helper that fills in a suggested question must never send it - add a second one instead",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "cpl_chat.js still has both helpers (ask() sends, prefill() does not) and tests/college_briefing.test.js asserts each half plus that askSierra prefers C.ask; PR #1123 on main.",
+      "evidence": [
+        {
+          "source": "cpl_chat.js:896 / cpl_chat.js:1290",
+          "quote": "async function ask(query) { ... prefill: function (q) {"
+        },
+        {
+          "source": "tests/college_briefing.test.js:462",
+          "quote": "check(\"ask(): prefill() still does NOT send — the Training tab depends on it\""
+        },
+        {
+          "source": "tests/college_briefing.test.js:466-467",
+          "quote": "check(\"askSierra() prefers ask() over prefill()\", briefingSrc.indexOf(\"C.ask(question)\") !== -1"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "34cabea5 My College: suggested questions send in one click, and the tier block reads as prose (#1123)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Sam",
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "421d8e02-7925-4123-8e9c-9e1e3f5b26de",
+      "slug": "maxlength-silently-ate-sierra-instructions",
+      "kind": "pitfall",
+      "title": "A cap enforced twice silently ate Sam's Sierra instructions",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "All three caps agree today: sierra_training.js GUIDANCE_RULE_MAX=1500 with a live counter, index.ts 1500 per rule / 9000 total, live CHECK char_length(rule)<=1500; the paired-cap test reads both files. (The separate row cap was later raised 10->20, not this row's claim.)",
+      "evidence": [
+        {
+          "source": "sierra_training.js:241",
+          "quote": "var GUIDANCE_RULE_MAX = 1500;"
+        },
+        {
+          "source": "chatbox/supabase/functions/cpl-chat/index.ts:3243-3244",
+          "quote": "const GUIDANCE_MAX_CHARS = 9000; const GUIDANCE_MAX_CHARS_PER_RULE = 1500;"
+        },
+        {
+          "source": "sql",
+          "quote": "pg_get_constraintdef(sierra_guidance_rule_len) -> CHECK (((char_length(rule) >= 3) AND (char_length(rule) <= 1500)))"
+        },
+        {
+          "source": "tests/sierra_training_plain.test.js:35,62-63",
+          "quote": "const FN = fs.readFileSync(\"chatbox/supabase/functions/cpl-chat/index.ts\") ... check(\"the textarea actually carries the raised maxlength\""
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "b3189673-9c5d-4ce7-b4ae-a0f20442faf8",
+      "slug": "status-lane-must-link-to-remedy-lane",
+      "kind": "procedure",
+      "title": "A queue that tracks attention but not remedy reports itself complete",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The tab still carries 'Write an instruction about this' beside the status controls and labels marking-handled as bookkeeping that does not change Sierra; KB note published; PR #1138 on main.",
+      "evidence": [
+        {
+          "source": "sierra_training.js:1187",
+          "quote": "'✍️ Write an instruction about this</button>'"
+        },
+        {
+          "source": "sierra_training.js:1669",
+          "quote": "Marking one handled does not change Sierra — it only takes it off this list."
+        },
+        {
+          "source": "sierra_training.js:103",
+          "quote": "for Sierra — use “Write an instruction about this” below. Mark it “Done” once that is in place."
+        },
+        {
+          "source": "docs/kb-notes/methodology-a-status-lane-must-link-to-the-remedy-lane.md:frontmatter",
+          "quote": "kb-status: published"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "0ab52398-afda-48c1-92fa-fa3338b8465a",
+      "slug": "guidance-reaches-my-college-sierra",
+      "kind": "fact",
+      "title": "Sierra guidance reaches every surface including My College, per request, uncached",
+      "verdict": "stale",
+      "confidence": "high",
+      "reason": "Two of three sub-claims changed: since #1295 (v56) a rule can be scoped and the query is surface IS NULL OR surface = caller, so a scoped rule no longer reaches every surface (2 of 7 live rules are my-college only); the row cap is 20 not 10 (#1283). Per-request, uncached still holds.",
+      "evidence": [
+        {
+          "source": "chatbox/supabase/functions/cpl-chat/index.ts:3293",
+          "quote": "const scoped = await base().or(`surface.is.null,surface.eq.${surface}`);"
+        },
+        {
+          "source": "chatbox/supabase/functions/cpl-chat/index.ts:3242",
+          "quote": "const GUIDANCE_MAX_RULES = 20;"
+        },
+        {
+          "source": "chatbox/supabase/functions/cpl-chat/index.ts:3503",
+          "quote": "fetchTeamGuidance(sb, hostSurface),     // sierra_guidance active rows (v25; surface-scoped v56)"
+        },
+        {
+          "source": "sql",
+          "quote": "sierra_guidance active=7: surface NULL x5, 'my-college' x2 (7d8641be, 15ec666b); live CHECK allows my-college, cobi-assistant, public, fact-sheet, memory-autogen, memory-briefing, gr-analysis"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "5f3f0297 sierra_guidance: a rule can be scoped to the surface that carries its fact (#1295) · 3bdb20b2 Guidance: a kind column and an honest row cap (#1283)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "7e0341f5-8592-45f1-82f3-d6b3238d04d1",
+      "slug": "which-datasets-sierra-can-actually-read",
+      "kind": "fact",
+      "title": "What Sierra can read is a small slice of what we actually hold",
+      "verdict": "confirmed",
+      "confidence": "medium",
+      "reason": "Substance holds: credential tables still 1,987 / 2,397 / 127 (row: 128); statewide_prescriptive.js has no Supabase copy. Two slips: 'ONLY Supabase' misses the live_metrics.json fetch from GitHub raw; the read list has since grown (contacts, map_colleges, sierra_rules, offerings).",
+      "evidence": [
+        {
+          "source": "chatbox/supabase/functions/cpl-chat/index.ts .from(\"...\") sites",
+          "quote": "chatbox_college_profiles, chatbox_credentials, chatbox_exhibits, college_geo, map_college_contacts, map_college_credit_summary, map_colleges, sierra_guidance, sierra_rules (+2 logging tables)"
+        },
+        {
+          "source": "chatbox/supabase/functions/cpl-chat/index.ts:3209-3211",
+          "quote": "const res = await fetch(\"https://raw.githubusercontent.com/CPL-Initiative/cpl-project-tracker/main/live_metrics.json\""
+        },
+        {
+          "source": "sql",
+          "quote": "counts 2026-09-05: chatbox_credentials 1987, chatbox_exhibits 2397, chatbox_college_profiles 127, max(updated_at) 2026-06-25; information_schema has no statewide_prescriptive/eacr table"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "a950fb09-a8eb-4457-ab32-681dbae13ff4",
+      "slug": "abbreviated-exhibit-titles-fake-a-zero-for-sierra",
+      "kind": "pitfall",
+      "title": "Cerritos ironworker CPL read as ZERO because the corpus abbreviates the titles",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The lane states the diagnosis and the fix identically (#1162, v44); search_college_credentials exists live and reads issuer + cx_needles; index.ts documents the false absence; PR #1162 on main.",
+      "evidence": [
+        {
+          "source": "docs/reference/lanes/sierra-false-absences.md:24",
+          "quote": "**Cerritos ironworker** (#1162, v44) — the raw corpus abbreviates, there was **no college-scoped curated route**, `search_credentials_any` never searched **`issuer`/`trainer`** and failed on plurals"
+        },
+        {
+          "source": "sql",
+          "quote": "pg_proc: search_college_credentials(asked text, college text, result_limit integer) exists; body references issuer and cx_needles"
+        },
+        {
+          "source": "chatbox/supabase/functions/cpl-chat/index.ts:1221",
+          "quote": "* THE FALSE ABSENCE THIS EXISTS TO END. Sam asked twice, once AFTER v42:"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "d28a2385 Sierra: end the false zero — search the curated names, the issuer, and the plural (#1162)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "ee8751a3-f5cb-4580-ae33-156b77cbf8b2",
+      "slug": "ccc-rec-was-a-retrieval-gate",
+      "kind": "pitfall",
+      "title": "A field was quietly acting as a filter, hiding 38 statewide credentials that nobody has adopted yet",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The SQL of record documents the old gate and the widened clause (ccc_rec OR a published statewide_authoritative set); the lane carries the 38/36/75 figures; PR #1150 on main.",
+      "evidence": [
+        {
+          "source": "kb/supabase_credential_recs_routes.sql:145-152",
+          "quote": "-- THE FIX. Was `c.ccc_rec is not null`, which silently required the credential to have been adopted somewhere ... or exists (... chatbox_credential_recs r ... rec_kind = 'statewide_authoritative'"
+        },
+        {
+          "source": "kb/supabase_credential_recs_routes.sql:21",
+          "quote": "--   * 38 statewide credentials have zero adopters; ccc_rec is null on all 38."
+        },
+        {
+          "source": "docs/reference/lanes/sierra-retrieval-corpus.md:24",
+          "quote": "**The statewide-rec gate is `ccc_rec` OR a published statewide set** — gating on it alone hid **38 statewide credentials with zero adopters, 36 of them carrying 75 published rec lines**"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "30ea14f8 Sierra: read the full credit-recommendation set, and un-hide the ready-to-adopt shelf (#1150)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "524392fb-5976-47fc-9a18-8553f8c166e0",
+      "slug": "title-similarity-alone-is-biased-for-alignment",
+      "kind": "pitfall",
+      "title": "Title similarity ALONE is systematically biased for course-to-credit-rec alignment",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The alignment lane states the Santa Ana FCAW example and the two-signals-never-merged rule, plus the no-TOP-scoping caveat; KB note published.",
+      "evidence": [
+        {
+          "source": "docs/reference/lanes/local-course-cr-alignment.md:24",
+          "quote": "⭐ **TWO SIGNALS, NEITHER SUFFICIENT, NEVER MERGED** — Santa Ana mapped `WELD 240 Structural Welding SMAW` / `WELD 244 D1.1 Code Clinic` to **FCAW** recs and **neither title contains \"FCAW\"**"
+        },
+        {
+          "source": "docs/reference/lanes/local-course-cr-alignment.md:24",
+          "quote": "Candidates come from the **whole catalog** — scoping by TOP would gate on TOP (Rule 7)."
+        },
+        {
+          "source": "docs/kb-notes/methodology-two-signals-for-a-judgment-proposal.md:frontmatter",
+          "quote": "kb-status: published"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "0e9859e9-4c62-4148-8cb3-f9af77ea188f",
+      "slug": "adoption-leverage-is-a-narrower-question",
+      "kind": "fact",
+      "title": "The \"who could adopt this\" layer answers a narrower question than course alignment",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The builder defines adoption_leverage exactly as the row says (colleges teaching any member course of the identity, minus those that earned it); the lane records that alignment needed the catalog plus peer precedent instead. Cerritos example not re-measured.",
+      "evidence": [
+        {
+          "source": "kb/_seed_coci_articulations.py:36-38",
+          "quote": "colleges_offering for an identity = distinct colleges teaching any member course. adoption_leverage for an earned exhibit = colleges_offering minus the colleges that already earned it."
+        },
+        {
+          "source": "kb/_seed_coci_articulations.py:279-282",
+          "quote": "offering = set(identities[cid_id][\"colleges_offering\"]) ... adoptable = sorted(offering - earned) ... g[\"adoption_leverage\"] = adoptable"
+        },
+        {
+          "source": "docs/reference/lanes/local-course-cr-alignment.md:24",
+          "quote": "**Three surfaces:** `chatbox_peer_articulations` (9,413 rows · 1,516 credentials · 82 colleges — the FACT), `chatbox_college_courses` (141,696 · 120 colleges), and `credential_alignment_for_college()`"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "a9b59e76-52e0-4987-afc8-f09d9731099c",
+      "slug": "coci-offerings-has-two-silent-caps",
+      "kind": "fact",
+      "title": "The course-catalog table Sierra searches has two silent limits: 900 characters of titles, and eight sample courses",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Constants unchanged and re-measured live today on coci_college_offerings: 16,097 rows, 801 at exactly 900 chars, 0 over, max 900; 5,077 rows have more than 8 courses. The hole the row calls 'worth fixing on its own' is still open.",
+      "evidence": [
+        {
+          "source": "chatbox/build_coci_offerings.py:37-38,177",
+          "quote": "SAMPLE_PER_TOP = 8 / TITLES_TEXT_CAP = 900 ... agg[\"titles_text\"] = txt[:TITLES_TEXT_CAP]"
+        },
+        {
+          "source": "sql",
+          "quote": "coci_college_offerings 2026-09-05: total 16097, length(titles_text)=900 -> 801, >900 -> 0, max_len 900, course_count>8 -> 5077"
+        },
+        {
+          "source": "sql",
+          "quote": "pg_proc: search_college_offerings(search_query text, college_filter text, result_limit integer) exists"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "a2c68aa0-68a5-4738-83b7-752d8e975c20",
+      "slug": "peer-attribution-is-per-course-57-percent",
+      "kind": "fact",
+      "title": "Peer-articulation attribution is per-course only 57% of the time",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Live split today is exactly 8,809 per_course / 604 group_wide over 9,413 rows; the builder computes the verdict as described; the lane repeats the never-pair rule; PR #1153 on main.",
+      "evidence": [
+        {
+          "source": "sql",
+          "quote": "select attribution, count(*) from chatbox_peer_articulations -> per_course=8809, group_wide=604 (9,413 rows)"
+        },
+        {
+          "source": "kb/_build_peer_articulations.py:130-131",
+          "quote": "group_wide = len(locs) > 1 and len(college_sets) == 1 / attribution = \"group_wide\" if group_wide else \"per_course\""
+        },
+        {
+          "source": "docs/reference/lanes/local-course-cr-alignment.md:24",
+          "quote": "⚠️ **`attribution`**: 8,809 `per_course`, 604 `group_wide` — name group-wide peers as a GROUP, never pair a college to a course."
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "5ac29da4 Peer articulations: how other colleges articulated this same certificate (#1153)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "b2ba7aa4-e3e6-4de4-9b85-b61b6398ef4e",
+      "slug": "false-positive-costs-more-than-a-miss",
+      "kind": "pitfall",
+      "title": "On a trust-building surface a plausible false positive costs more than a miss",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "cx_align_tokens() exists live and the SQL of record states the >=1 content-token rule; the lane repeats ART 100 and the deliberately un-stopped words; KB note published.",
+      "evidence": [
+        {
+          "source": "kb/supabase_alignment_routes.sql:36",
+          "quote": "-- cx_align_tokens() drops structural words and the scorer requires >= 1 CONTENT"
+        },
+        {
+          "source": "sql",
+          "quote": "pg_proc: cx_align_tokens(s text) exists"
+        },
+        {
+          "source": "docs/reference/lanes/local-course-cr-alignment.md:24",
+          "quote": "the first cut ranked `ART 100 Introduction To World Art` third for an FCAW rec, so `cx_align_tokens()` drops structural words and the scorer requires **≥1 CONTENT token**"
+        },
+        {
+          "source": "docs/kb-notes/methodology-a-false-positive-costs-more-than-a-miss.md:frontmatter",
+          "quote": "kb-status: published"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "16fceb22-a728-4c08-bed4-6cb9a9b3deba",
+      "slug": "alignment-layer-live-v41",
+      "kind": "milestone",
+      "title": "The local-course alignment layer is LIVE (cpl-chat v41)",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "PRs #1153/#1154/#1155 on main; the lessons doc records the build live as cpl-chat v41 on 2026-08-13; live tables re-measured today at the row's figures (9,413/1,516/82; 141,696/120); the RPC exists. The lane's 'v43' names the later #1158/#1161 additions.",
+      "evidence": [
+        {
+          "source": "git log origin/main",
+          "quote": "51a58cbd Sierra tells a college which of its own courses to articulate, with the evidence (#1155) · c9e6b7f3 (#1154) · 5ac29da4 (#1153)"
+        },
+        {
+          "source": "docs/local_course_alignment_lessons.md:161",
+          "quote": "## 2026-08-13 (later) — SkyBridge: built and live (cpl-chat v41)"
+        },
+        {
+          "source": "sql",
+          "quote": "chatbox_peer_articulations 9413 rows / 1516 titles / 82 colleges; chatbox_college_courses 141696 / 120 colleges; pg_proc credential_alignment_for_college(credential, college, per_rec)"
+        },
+        {
+          "source": "docs/reference/lanes/local-course-cr-alignment.md:24",
+          "quote": "✅ **LIVE — cpl-chat v43** (#1153/#1154/#1155/#1158/#1161)."
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "901191ce-b4d8-4104-838f-495a679f410d",
+      "slug": "use-the-identity-key-before-scoring-strings",
+      "kind": "pitfall",
+      "title": "When an authoritative identity key exists, use it BEFORE you score strings",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The lane carries the C-ID-first ladder (best rung only, never blended) and the figure re-measured live today (16,067 of 141,696 courses carry a C-ID across 112 colleges); Sam's verified decision row states the ladder; PR #1158 on main.",
+      "evidence": [
+        {
+          "source": "docs/reference/lanes/local-course-cr-alignment.md:24",
+          "quote": "⭐ **THE LADDER — C-ID, then title, then best-aligned (Sam's ruling).** Only the **best available rung renders** — a fallback, never a blend"
+        },
+        {
+          "source": "sql",
+          "quote": "chatbox_college_courses where cid not null -> 16067 rows across 112 colleges"
+        },
+        {
+          "source": "slug:alignment-ladder-cid-first",
+          "quote": "verified decision, Sam Lee, 2026-08-13"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "d65cfc27 Alignment: C-ID first, then title, then best-aligned (Sam's ladder) (#1158)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "560750fd-38f8-40e6-beb3-d8cf52d971da",
+      "slug": "per-rec-bounded-only-one-side-of-a-union",
+      "kind": "pitfall",
+      "title": "A limit was applied to only one half of a two-part result, so 3,807 rows buried 9",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The live RPC body contains peer_total; index.ts reads peers[0].peer_total to render 'showing N of M'; the lane states the fix; PR #1161 on main; KB note published.",
+      "evidence": [
+        {
+          "source": "sql",
+          "quote": "position('peer_total' in pg_get_functiondef(credential_alignment_for_college)) > 0 -> true"
+        },
+        {
+          "source": "chatbox/supabase/functions/cpl-chat/index.ts:1594",
+          "quote": "const total = g.peers[0] && g.peers[0].peer_total;"
+        },
+        {
+          "source": "docs/reference/lanes/local-course-cr-alignment.md:24",
+          "quote": "`per_rec` once capped candidates only (3,807 peers vs 9 candidates) ... **`peer_total` ships as a COLUMN** (\"showing 9 of 261\") — a capped list must never read as a census."
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "ba6ed2a0 Alignment: peers were unbounded and ungated, burying five C-ID matches (#1161)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "d8f8cc6f-9757-4025-b28d-2145ca325d74",
+      "slug": "credential-search-must-read-the-issuer",
+      "kind": "fact",
+      "title": "Search the awarding body: 90% of credentials carry an issuer word absent from title and variants",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Live functions carry the mechanism: cx_credential_match_tier(needles, u_title, variants, issuer, trainer, s_text) and cx_needles(asked) exist, and both credential search RPCs reference issuer and cx_needles; the lane carries the 90% / three-reachable-only-via-issuer figures.",
+      "evidence": [
+        {
+          "source": "sql",
+          "quote": "pg_proc: cx_credential_match_tier(needles, u_title, variants, issuer, trainer, s_text); cx_needles(asked); search_credentials_any + search_college_credentials bodies mention issuer and cx_needles"
+        },
+        {
+          "source": "docs/reference/lanes/sierra-false-absences.md:24",
+          "quote": "shared tier ladder (**new tier 5 issuer/trainer**) + plural folding → all **13** return, **three reachable ONLY via issuer**. ⭐ **90% of credentials have an issuer word absent from the title**"
+        },
+        {
+          "source": "docs/kb-notes/methodology-search-the-awarding-body-not-just-the-name.md:frontmatter",
+          "quote": "kb-status: published"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "6f4d7318-ee1c-45e8-8bf1-137a0f24908c",
+      "slug": "phantom-recommendation-groups-from-an-unresolved-grouping-key",
+      "kind": "pitfall",
+      "title": "Grouping peers by their own free-text wording manufactured ~34 phantom recommendations",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The lane states the 43->10 groups / 94 rows / 6 of 6 outcome and the phantom-group lesson; PR #1161 on main; KB note published.",
+      "evidence": [
+        {
+          "source": "docs/reference/lanes/local-course-cr-alignment.md:24",
+          "quote": "peers were keyed on their own wording (43 groups where POST's set is TEN, ~34 of them phantom) ... **A phantom empty group is indistinguishable from a real one.** Now 10 groups / 94 rows / 6 of 6."
+        },
+        {
+          "source": "docs/kb-notes/methodology-a-grouping-key-must-come-from-the-authoritative-set.md:frontmatter",
+          "quote": "kb-status: published"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "ba6ed2a0 Alignment: peers were unbounded and ungated, burying five C-ID matches (#1161)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "d07f1e34-bec4-4ead-b58b-495407067287",
+      "slug": "closest-match-fallback-built-measured-withdrawn",
+      "kind": "decision",
+      "title": "The \"show the closest match unless obviously wrong\" fallback was built, measured and withdrawn",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The lane carries a standing 'Do NOT re-add' with the AUTO 160 example and the structural reason; the SQL of record has no such fallback (only the three-rung ladder).",
+      "evidence": [
+        {
+          "source": "docs/reference/lanes/local-course-cr-alignment.md:24",
+          "quote": "⚠️ **Do NOT re-add a \"closest match anyway\" fallback** — built and withdrawn; it proposed `AUTO 160 Introduction to Automotive Electrical` for a *policing* rec, and it is structural, not tunable"
+        },
+        {
+          "source": "kb/supabase_alignment_routes.sql:84",
+          "quote": "--   3. aligned closest by wording — a judgement call, labelled as one (rung 3 of the ladder; no 'probable mismatch' fallback present)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Sam",
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "ddf31a36-98e2-46f5-86f5-a3d0524e1db0",
+      "slug": "college-cred-route-named-credentials-without-their-courses",
+      "kind": "pitfall",
+      "title": "Sierra listed the credentials a college awards but never the courses they convert into",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "index.ts documents the third ask and the fix (the batched recs map joined into COLLEGE-CRED, rendered through the shared renderer outside the try); the test file exists; PR #1165 on main; the lane states rec lines are enrichment, never a filter.",
+      "evidence": [
+        {
+          "source": "chatbox/supabase/functions/cpl-chat/index.ts:1264-1269",
+          "quote": "// `recs` (v45) is the batched credit-recommendation map. OPTIONAL, and the ... // He asked the ironworker question a THIRD time, after v44 had already ended the"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "f5f82296 Sierra: tell the student which courses the credential earns, not just its name (#1165)"
+        },
+        {
+          "source": "tests/sierra_college_credentials.test.js",
+          "quote": "exists"
+        },
+        {
+          "source": "docs/reference/lanes/sierra-retrieval-corpus.md:24",
+          "quote": "⚠️ **Rec lines are ENRICHMENT, never a filter** — the map is declared OUTSIDE the try and a credential with no line is **still named**; dropping it re-creates the false zero."
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "de5714d5-ecd1-4dd7-b242-9ee455db41f6",
+      "slug": "sierra-contacts-read-a-frozen-june-snapshot",
+      "kind": "pitfall",
+      "title": "Sierra named the wrong CPL contact at 41 of 122 colleges — a snapshot nothing refreshed",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "index.ts reads map_college_contacts live (v45 block); the MAP-users lane confirms daily roster sync and live reads since v45, and still lists the 8-college snapshot question under NEEDS SAM (so the row's open question remains open); PR #1164 on main; Sam's verified sync row corroborates.",
+      "evidence": [
+        {
+          "source": "chatbox/supabase/functions/cpl-chat/index.ts:2158",
+          "quote": "// ── Live CPL contacts (v45, 2026-08-13) ──── (reads .from(\"map_college_contacts\"))"
+        },
+        {
+          "source": "docs/reference/lanes/map-users-student-contact.md:24",
+          "quote": "⚡ **Roster sync is DAILY** (Sam, 2026-08-13) and Sierra reads `map_college_contacts` LIVE since v45 — a stale roster costs a student the wrong person to email."
+        },
+        {
+          "source": "docs/reference/lanes/map-users-student-contact.md:24",
+          "quote": "**NEEDS SAM:** 8 colleges keep a 2026-06-25 snapshot contact where MAP is now blank."
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "5ca8a2d2 Sierra: read CPL contacts live from MAP, not a June snapshot (#1164)"
+        },
+        {
+          "source": "slug:map-roster-sync-is-daily-not-monthly",
+          "quote": "verified decision, Sam, 2026-08-13"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    }
+  ]
+}

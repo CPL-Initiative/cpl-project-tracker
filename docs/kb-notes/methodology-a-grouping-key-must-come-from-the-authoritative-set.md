@@ -95,7 +95,7 @@ unresolved costs.
   every side of the query against it — not just the side that looks like the
   "main" one.
 - Where no authority exists yet, the grouping is a **curation** problem, not a
-  string-cleaning one. Mechanical normalisation of the 2,344 distinct
+  string-cleaning one. Mechanical normalization of the 2,344 distinct
   `credit_rec` strings in this corpus collapses only ~7%.
 - Sam's ruling on the successor design (2026-08-13): a Common CR Reference must
   match on **many** factors — title, course name and number, course

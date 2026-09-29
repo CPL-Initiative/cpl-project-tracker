@@ -60,7 +60,7 @@ string to grep for. It was caught by **rendering the page and reading it.**
 So the rule has two halves:
 
 1. **Assert against the rendered output** — `root.textContent` after a real
-   `render()`, with whitespace normalised (`.replace(/\s+/g, " ")`) so the
+   `render()`, with whitespace normalized (`.replace(/\s+/g, " ")`) so the
    assertion does not depend on how the source happened to wrap.
 2. **Read the render yourself, at least once, for every state the code can
    produce.** Not the happy path — *every* branch: the empty one, the all-of-it

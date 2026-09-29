@@ -24,7 +24,7 @@ artifacts:
 
 **Before building a better detector, read the reports you already have.** Feedback surfaces are cheap to ship and
 feel like progress, so they get built; triage is unglamorous recurring labour, so it doesn't get staffed. The
-result is an organisation that believes it is listening because the button exists.
+result is an organization that believes it is listening because the button exists.
 
 ## What happened
 
@@ -88,7 +88,7 @@ the input, not the verdict.
 ## Never let feedback auto-tune the system
 
 Tempting, and wrong, for exactly the reason people worry about misinformed feedback: one confident incorrect
-thumbs-down becomes policy. Keep a human gate between the queue and behaviour — and then **staff the gate**,
+thumbs-down becomes policy. Keep a human gate between the queue and behavior — and then **staff the gate**,
 because an ungated-but-unread queue and a gated-but-unread queue are the same queue.
 
 ## Checklist before inviting a crowd to test

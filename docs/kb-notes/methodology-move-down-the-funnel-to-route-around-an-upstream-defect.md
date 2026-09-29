@@ -100,11 +100,11 @@ component. The dominant one is the system working as intended.
 
 **This strengthens rather than weakens the claim.** The reason to move down the
 funnel is not only "the earlier stage is inflated" but "the later stage carries
-a *semantic filter* the earlier one lacks" — here, human judgement about
+a *semantic filter* the earlier one lacks" — here, human judgment about
 program applicability. When choosing a rung, ask what each stage *means*, not
 just which is cleaner.
 
-**And the generalisable lesson about the analysis itself:** "the number is
+**And the generalizable lesson about the analysis itself:** "the number is
 smaller downstream" invites the assumption that the difference is loss or error.
 Establish *why* it shrinks before describing the gap — the explanation changes
 what you should do about it, and a wrong causal story propagates into every

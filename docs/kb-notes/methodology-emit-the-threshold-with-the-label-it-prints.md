@@ -39,7 +39,7 @@ done for however long the floor had been 5.
 The failure is asymmetric in the dangerous direction. After the change every
 public surface would have **understated the protection** (claiming counts 1–4 are
 withheld when the real floor is 10) while **overstating precision** (implying a
-cell showing `<5` could be 5–9). A reader making a disclosure judgement off the
+cell showing `<5` could be 5–9). A reader making a disclosure judgment off the
 label would have been reasoning from a number the system stopped using.
 
 Nothing fails. The page renders, the tests pass, the data is correctly

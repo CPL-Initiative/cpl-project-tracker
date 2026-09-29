@@ -203,7 +203,7 @@ without destroying real data. That is the only reason `DISTINCT` is safe to keep
 
 ⭐ **`credit_rec` is a second win, not just a disambiguator.** It is the bridge for
 naming the **94% of student rows that currently cannot be named** — 11,427
-recommendation texts against a `MAPICI-*` catalogue that covers only 6.1%. It was
+recommendation texts against a `MAPICI-*` catalog that covers only 6.1%. It was
 filed as separate work; this export gets it for free.
 
 **Why straight off `TblSOURCE` and not the query that built the 5-column table:**
@@ -467,7 +467,7 @@ from public.stg_student_credit
 where nullif(btrim(student_key), '') is not null;
 ```
 
-`SELECT DISTINCT` is the second line of defence, not the first — step 3 is the
+`SELECT DISTINCT` is the second line of defense, not the first — step 3 is the
 first. Both, always.
 
 ### ⚠️ Before you build a measure on `applied_credits` — it disagrees with the disposition
@@ -593,7 +593,7 @@ drop table public.stg_student_credit;      -- never leave staging around
 
 **Only 6.1% of student rows can be given a credential name** (13,488 of
 220,588). Student grain is keyed by ACE military ids (`AR-`/`MC-`/`NV-`/`NER-`/
-`MOS-`) plus 32,360 `Default *` sentinels; Sierra's catalogue is `MAPICI-*`;
+`MOS-`) plus 32,360 `Default *` sentinels; Sierra's catalog is `MAPICI-*`;
 overlap is **624 of 6,280 ids**.
 
 So after this re-load, *"how many students have applied credit for POST"* is

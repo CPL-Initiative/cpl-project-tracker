@@ -1,0 +1,1044 @@
+{
+ "part": "governance-2",
+ "expected_rows": 31,
+ "coverage": {
+  "rows_read": 31,
+  "rows_judged": 31,
+  "note": "All 31 rows judged. Read-only throughout (SELECTs only; no repo edits). Three notes: (1) kb/docs_audit/2026-09-05.{json,md} and latest.json showed as modified at 03:29:25Z by a full audit run from another process sharing this clone — this auditor's read-only import of _docs_audit cannot write (its only entry point is the __main__ guard at :1851); left untouched, not restored. Untracked kb/_memory_audit.py and kb/memory_audit/ also appeared from another process. (2) Sam's 2026-08-30 ruling relocated the doctrine-probe records out of the vault with an instruction not to look for or restate them; rows 18, 23, 24, 26, 27 were judged from tracker docs, PR #1390, vault commit titles and session notes only, never the records. (3) Incidental finding from row 30: prose_only() blanks 92% of CLAUDE.md and >50% of 58 of 423 docs, so american_spelling/self_corrected_word_pair are largely blind today."
+ },
+ "counts": {
+  "confirmed": 30,
+  "stale": 0,
+  "superseded_by_row": 1,
+  "snapshot": 0,
+  "unverifiable": 0
+ },
+ "verdicts": [
+  {
+   "id": "5f394d6b-5579-4e25-bc9b-d5985a1dc216",
+   "slug": "sam-no-temporary-mis-codes",
+   "kind": "decision",
+   "title": "Sam asked whether the nightly job should invent temporary college codes - measured answer: not needed",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "Re-measured live: 116 entity_kind=college rows all carry mis_college_code; only 2 partner rows lack one (reason recorded) plus 8 test rows; 0 null college_id. Lane file still says never mint an id (awaiting_map_id). No temporary-code mechanism exists.",
+   "evidence": [
+    {
+     "source": "sql",
+     "quote": "select … from map_colleges → total 128, test 8, real 120, real colleges 116, colleges without code 0, real rows without code 2 (partners Futuro Health, Launch Apprenticeship), null college_id 0"
+    },
+    {
+     "source": "docs/reference/lanes/college-district-identity.md:24",
+     "quote": "NEEDS MAP: `college_id` for `Calbright College Credit` + `Launch Apprenticeship Non-Credit` — minting one would fabricate an identity the whole system trusts; reported `awaiting_map_id`"
+    },
+    {
+     "source": "slug:sam-credit-noncredit-entity-ruling",
+     "quote": "verified, Sam Lee 2026-08-21 — Calbright and LAUNCH are two entities each (the entities the row says arrive with no row at all)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": true,
+   "human_name": "Sam",
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "620989ae-1401-4db4-af5e-ef7a2c0669a3",
+   "slug": "doctrine-is-indexed-to-files-but-was-unqueryable",
+   "kind": "fact",
+   "title": "Almost none of our written guidance is connected to anything that checks it",
+   "verdict": "confirmed",
+   "confidence": "medium",
+   "reason": "The mechanism the row describes is on disk and works: kb/doctrine.py --changed (reads untracked files), the KB note, PR #1280 on main; a --topic lookup returned the capped-list note. The 299/236/20/8 counts are a 2026-08-21 measurement not re-measured (kb-notes now 381).",
+   "evidence": [
+    {
+     "source": "kb/doctrine.py:28",
+     "quote": "python3 kb/doctrine.py --changed              # ⭐ the one to use"
+    },
+    {
+     "source": "kb/doctrine.py:202",
+     "quote": "session had just written, because `git diff` does not see an untracked"
+    },
+    {
+     "source": "run: python3 kb/doctrine.py --topic census --limit 2",
+     "quote": "Notes matching 'census': * A capped list must never read as a census … docs/kb-notes/methodology-a-capped-list-must-never-read-as-a-census.md"
+    },
+    {
+     "source": "git origin/main",
+     "quote": "0109877d Cure the need to internalize: a check floor, a doctrine lookup, and Sierra's district roster (#1280)"
+    },
+    {
+     "source": "ls docs/kb-notes/",
+     "quote": "methodology-index-the-doctrine-to-the-file.md exists"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "57a73307-d81b-4638-8e18-fcb643173e55",
+   "slug": "the-test-runner-could-not-see-a-shrinking-suite",
+   "kind": "pitfall",
+   "title": "The test runner judged each file only on whether it finished, so a file that quietly stopped checking stayed green",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The per-file floor is live: tests/run.js loads tests/lib/check_ledger.js, tests/check_floor.json exists, package.json has test:floor (--update-floor); PR #1280 on main; handoff 229 still warns about test:floor. Baseline counts (241/247) are dated but the cure is in place.",
+   "evidence": [
+    {
+     "source": "tests/run.js:88-90",
+     "quote": "a recorded floor. See tests/lib/check_ledger.js for the measurement. const ledgerLib = require(\"./lib/check_ledger.js\"); const UPDATE = process.argv.includes(\"--update-floor\");"
+    },
+    {
+     "source": "package.json:8",
+     "quote": "\"test:floor\": \"node tests/run.js --update-floor\""
+    },
+    {
+     "source": "ls",
+     "quote": "tests/lib/check_ledger.js (5,665 B) and tests/check_floor.json (12,083 B) exist"
+    },
+    {
+     "source": "git origin/main",
+     "quote": "0109877d … a check floor, a doctrine lookup … (#1280)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "4c9847d6-d18f-4242-a8c2-e7771ffd33d5",
+   "slug": "a-green-check-you-did-not-scope-is-not-evidence",
+   "kind": "pitfall",
+   "title": "A green check you did not scope is not evidence",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "KB note exists, PR #1305 landed, all three affected test files exist. The lesson has since become doctrine: CLAUDE.md now requires the `test` check to have succeeded on the current head before merging (Sam, 2026-08-30), closing the gap the row describes.",
+   "evidence": [
+    {
+     "source": "ls docs/kb-notes/",
+     "quote": "methodology-a-green-check-you-did-not-scope-is-not-evidence.md exists"
+    },
+    {
+     "source": "git origin/main",
+     "quote": "be029f80 Fix main: two stale assertions that outlived the behavior they described (#1305)"
+    },
+    {
+     "source": "CLAUDE.md:482-483",
+     "quote": "The `test` check must have SUCCEEDED on the current head before you merge (Sam's E ruling, amended to doctrine-level 2026-08-30)"
+    },
+    {
+     "source": "ls",
+     "quote": "tests/cpl_funding_equity.test.js, tests/cpl_funding_public_private.test.js, tests/funding_model_page.test.js exist"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "57e22b3a-af07-4c10-81cb-dee4e10faaa1",
+   "slug": "check-suite-completed-is-not-a-green-light",
+   "kind": "pitfall",
+   "title": "A checks-finished notification is not a green light - it routinely names an old version",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "CLAUDE.md branch policy states the same rule verbatim (re-read get_check_runs on the current head); PR #1315 (23ee6fe) is on main; the TruffleHog secret-scan workflow the row mentions still exists.",
+   "evidence": [
+    {
+     "source": "CLAUDE.md:497-499",
+     "quote": "A `check_suite.completed` wake is NOT a green light — it names a routinely SUPERSEDED `head_sha`. Always re-read `get_check_runs` on the CURRENT head before acting."
+    },
+    {
+     "source": "git origin/main",
+     "quote": "23ee6fea ESL fold spot-check — the 517 weren't evidence-free, and the numeric lane is a coin flip (#1315)"
+    },
+    {
+     "source": ".github/workflows/secret-scan.yml:3,26",
+     "quote": "Pre-merge secret-detection scan via TruffleHog … trufflehog:"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "ba28b97b-a21b-4979-b4fc-2ed39d3de6ee",
+   "slug": "an-area-sweep-sees-what-a-per-row-pass-cannot",
+   "kind": "procedure",
+   "title": "Sam: the whole-area sweep is the routine, and three of its findings cannot be seen one row at a time",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The sweep is built and live: PR #1334 on main; gr_priorities.js proposes new rows, uses GR_QUERY_BUDGET 40000 (vs the row lane's 14,000), sorts rework first; cpl-chat MAX_TOKENS=2048 is still the reply cap; the GR lane names #1333/#1334 as live.",
+   "evidence": [
+    {
+     "source": "git origin/main",
+     "quote": "3db94fb5 The area sweep: read every row against its evidence, and propose the rows that are missing (#1334)"
+    },
+    {
+     "source": "gr_priorities.js:1390,1397",
+     "quote": "and this sweep itself proposes new rows. … var GR_QUERY_BUDGET = 40000;"
+    },
+    {
+     "source": "gr_priorities.js:1583-1584",
+     "quote": "QUERY_CAP_GR_ANALYSIS went to 40,000 rather than the row lane's 14,000. But cpl-chat answers with MAX_TOKENS = 2048, roughly 8,000"
+    },
+    {
+     "source": "gr_priorities.js:1831",
+     "quote": "var VERDICT_ORDER = { rework: 0, weakened: 1, strengthened: 2, unchanged: 3 };"
+    },
+    {
+     "source": "chatbox/supabase/functions/cpl-chat/index.ts:19",
+     "quote": "const MAX_TOKENS = 2048;"
+    },
+    {
+     "source": "docs/reference/lanes/gr-register.md:24",
+     "quote": "BUILT, AUDITED, PHRASE-SCOPED; EDIT + BOTH ANALYSIS LANES LIVE (… Sky195 #1333/#1334)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": true,
+   "human_name": "Sam",
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "f7a3cd95-cf66-4eea-a929-10f899841bcc",
+   "slug": "gr-instrument-doctrine-is-measured-and-area-scoped",
+   "kind": "fact",
+   "title": "The rule for telling law from regulation from practice was measured from CPL's own rows, and must not be pointed at the sample area",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "Code still keys the doctrine block to area_id=cpl only (DOCTRINE_AREAS = { cpl: 1 }; other areas get NEUTRAL_BLOCK); PR #1333 on main. The 3-of-3 / 2-of-2 re-derivation against gr_revisions is a dated measurement not repeated here.",
+   "evidence": [
+    {
+     "source": "gr_priorities.js:1085",
+     "quote": "var DOCTRINE_AREAS = { cpl: 1 };"
+    },
+    {
+     "source": "gr_priorities.js:1250",
+     "quote": "var doctrine = DOCTRINE_AREAS[areaId || r.area_id] ? doctrineBlock() : NEUTRAL_BLOCK;"
+    },
+    {
+     "source": "gr_priorities.js:1463",
+     "quote": "var neutral = !DOCTRINE_AREAS[r.area_id];"
+    },
+    {
+     "source": "git origin/main",
+     "quote": "70b2ff80 GR: the deep re-analysis, artifacts as evidence, and the keeper's cross-tab rotation bug (#1333)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "66b78f12-868c-4b40-99a5-8c69097d1f4b",
+   "slug": "derive-a-listing-from-the-things-it-lists",
+   "kind": "pitfall",
+   "title": "An index written by hand next to its contents drifts from them and grows without limit",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "Re-measured: docs/INDEX.md is 25,954 B (was 273,616), docs/catalog/ holds 7 generated files, CI runs _build_docs_index.py --check, and unindexed_kb_note reads INDEX plus every catalog it links to (reachability invariant). PR #1373 on main.",
+   "evidence": [
+    {
+     "source": "wc -c docs/INDEX.md",
+     "quote": "25954 docs/INDEX.md; ls docs/catalog/ → doctrine.md index.json kb-notes.md lessons.md reference.md session-handoffs.md workstream-docs.md"
+    },
+    {
+     "source": ".github/workflows/js-tests.yml:273",
+     "quote": "python3 kb/_build_docs_index.py --check"
+    },
+    {
+     "source": "kb/_docs_audit.py:1416-1417",
+     "quote": "A catalog counts only when INDEX actually LINKS to it — reachability is the invariant, not the file's existence."
+    },
+    {
+     "source": "git origin/main",
+     "quote": "febbb7d4 Obsidian lane: canonical note properties, a generated docs index, and the American-spelling sweep (#1373)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "fec995ef-4fd4-4c90-baf7-2a1a1441239f",
+   "slug": "sam-do-not-fix-spellings-we-import",
+   "kind": "decision",
+   "title": "Sam: do not correct spellings in anything we import, or in anything we quote",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "prose_only() in kb/_docs_audit.py quotes Sam's ruling verbatim and masks every quoted span (straight and curly quotes); the fixer imports the same prose_only, so lint and fixer share the exclusion.",
+   "evidence": [
+    {
+     "source": "kb/_docs_audit.py:1260-1262",
+     "quote": "QUOTED SPANS ARE PROSE TO A READER BUT NOT OURS TO EDIT. Sam, 2026-08-28: *\"No need to fix any spellings we import...like COCI catalog or MAP Custom Reports data.\"*"
+    },
+    {
+     "source": "kb/_docs_audit.py:1278",
+     "quote": "(r\"\\\"[^\\\"\\n]*\\\"|\\u201c[^\\u201d\\n]*\\u201d\", 0)  — quoted spans blanked"
+    },
+    {
+     "source": "kb/_fix_american_spelling.py:44,65",
+     "quote": "from _docs_audit import (BRITISH_FORMS, _IS_PATTERN, collect, prose_only … masked = prose_only(text)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": true,
+   "human_name": "Sam",
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "4e4e6ecf-acc2-497d-8fec-517fffad80ba",
+   "slug": "a-field-the-resolver-never-reaches-can-disagree-forever",
+   "kind": "pitfall",
+   "title": "When code checks several places and stops at the first answer, the other places can be wrong for ever",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "KB note exists; kb_type_of() still returns on the first tag hit (the mechanism), and the normalizer records the 35-agree/6-disagree finding and reports conflicts instead of resolving them silently. PR #1373 on main.",
+   "evidence": [
+    {
+     "source": "ls docs/kb-notes/",
+     "quote": "methodology-a-field-the-resolver-never-reaches-can-disagree-forever.md exists"
+    },
+    {
+     "source": "kb/_docs_audit.py:1143-1145",
+     "quote": "hits = [t for t in (_clean(x) for x in tags) if t in KB_TYPE_TAGS]; if hits: return hits[0], \"tags:\""
+    },
+    {
+     "source": "kb/_normalize_kb_note_frontmatter.py:111-112",
+     "quote": "35 of them agree with their tag; 6 DISAGREE, and the disagreement is invisible because the tag silently wins."
+    },
+    {
+     "source": "kb/_normalize_kb_note_frontmatter.py:134",
+     "quote": "skips.append(f\"`{k}: {kv}` conflicts with tag `{tagtypes[0]}`, \""
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "d3c64d82-8c6b-4ec7-a15e-29b220f965a8",
+   "slug": "a-mechanism-change-is-not-done-until-its-instructions-are-re-read",
+   "kind": "pitfall",
+   "title": "Changing how something works does not update the written instructions that describe it",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The stale instruction is fixed in both places the row names: checkpoint.md step 6 says INDEX/catalog are GENERATED and forbids hand-added rows; CLAUDE.md no longer carries a hand-add instruction; handoff 229 repeats the rebuild rule. Related KB note exists.",
+   "evidence": [
+    {
+     "source": ".claude/commands/checkpoint.md:66",
+     "quote": "docs/INDEX.md + docs/catalog/ — GENERATED (2026-08-28). Run `python3 kb/_build_docs_index.py` and commit what it writes. Do NOT hand-add rows"
+    },
+    {
+     "source": "CLAUDE.md:624",
+     "quote": "only INDEX mention: [`docs/INDEX.md`](docs/INDEX.md) for the landing page"
+    },
+    {
+     "source": "docs/session_229_handoff.md:115-116",
+     "quote": "`docs/INDEX.md` and `docs/catalog/` are GENERATED: run `python3 kb/_build_docs_index.py`."
+    },
+    {
+     "source": "ls docs/kb-notes/",
+     "quote": "methodology-a-settled-ruling-does-not-enforce-itself.md exists"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "04e4ad38-509f-421f-b2ac-3d3b7e40d022",
+   "slug": "the-public-kb-cannot-go-stale-by-discipline-it-has-no-candidate-queue",
+   "kind": "fact",
+   "title": "The public knowledge base is six weeks behind because nothing collects candidates, not because anyone forgot",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "Re-measured today and it still holds: public KB last commit 2026-07-17 with 54 .md files; curation manifest (79 lines) has 0 entries from docs/kb-notes/; the checkpoint command has no manifest/hold-bucket step (recommendation still not built, awaiting Sam); kb-notes grew 342→381.",
+   "evidence": [
+    {
+     "source": "git -C /home/user/cpl-knowledge-base log -1",
+     "quote": "2026-07-17 Student next steps: lead with the CPL Student Portal (creditforbeingyou.org) (#21); git ls-files '*.md' | wc -l = 54"
+    },
+    {
+     "source": "CPLBrain/audit/curation-manifest.tsv",
+     "quote": "79 lines; grep -c 'kb-notes' = 0"
+    },
+    {
+     "source": ".claude/commands/checkpoint.md",
+     "quote": "grep manifest|curation|hold-bucket → no such step; :76 'This is the VAULT, never the public KB'"
+    },
+    {
+     "source": "ls docs/kb-notes/*.md | wc -l",
+     "quote": "381"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "ffa19f96-04d1-4636-a44f-ee4b39d28eb6",
+   "slug": "a-roadmap-row-marked-live-usually-still-has-open-work",
+   "kind": "pitfall",
+   "title": "A roadmap row marked \"live\" usually still has open work - read it, do not grep for the tick",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "CLAUDE.md's §11 preamble and the checkpoint command both carry the retirement test and the Session-206 five-rows lesson verbatim; PR #1381 on main. The later row no-roadmap-lane-is-retirable-all-30-carry-open-work extends (does not replace) it.",
+   "evidence": [
+    {
+     "source": "CLAUDE.md:710",
+     "quote": "no NEXT, no NEEDS SAM, no BLOCKED in its own text — moves verbatim to finished_workstreams.md"
+    },
+    {
+     "source": "CLAUDE.md:722-724",
+     "quote": "Hand-grepping this has been wrong every single time it was tried. Session 206 called five rows retirable-with-no-judgment-calls; four carried an explicit open-work list in their own text."
+    },
+    {
+     "source": ".claude/commands/checkpoint.md:50-56",
+     "quote": "Retiring a lane? ⚠️ Do not grep for it — `lane_retirement_signal` … Every hand-grep of this to date has produced a wrong list."
+    },
+    {
+     "source": "git origin/main",
+     "quote": "cffe0e6b Consolidate CLAUDE.md §11: lane state moves to docs/reference/lanes/ (#1381)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "28f0503c-23df-416a-aeef-eb256e94a9ea",
+   "slug": "a-guard-keyed-to-a-path-stops-guarding-when-content-moves",
+   "kind": "pitfall",
+   "title": "A guard keyed to a file path stops guarding the moment the content moves",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "All three re-points are in the code: stacked_roadmap_cell covers docs/reference/lanes/, the docs index has a recursive docs/reference/** lane, and unindexed_kb_note reads the catalogs INDEX links to. PR #1381 on main.",
+   "evidence": [
+    {
+     "source": "kb/_docs_audit.py:409-410",
+     "quote": "is_claude = rel == \"CLAUDE.md\"; is_lane = rel.startswith(\"docs/reference/lanes/\") and rel.endswith(\".md\")"
+    },
+    {
+     "source": "kb/_build_docs_index.py:276",
+     "quote": "(\"reference\", \"Reference (pull-side)\", \"docs/reference/**\","
+    },
+    {
+     "source": "kb/_docs_audit.py:1424-1427",
+     "quote": "for href in set(re.findall(r\"\\]\\((catalog/[^)]+\\.md)\\)\", text)): … parts.append(read(p))"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "37e3adb5-b2ad-4cb2-9c50-bf4e05d148c3",
+   "slug": "a-malformed-row-exempts-itself-from-its-own-guard",
+   "kind": "pitfall",
+   "title": "A row the checker cannot parse is skipped, so the worst rows are the invisible ones",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "split_table_row is code-span aware and a row with the wrong cell count is now recorded as a malformed FINDING rather than skipped; the rule's message says so explicitly. PR #1381 on main.",
+   "evidence": [
+    {
+     "source": "kb/_docs_audit.py:341-342",
+     "quote": "Split a markdown table row on pipes that are NOT inside a backtick code span. `1|2,3|4` in a cell is content, not two column breaks."
+    },
+    {
+     "source": "kb/_docs_audit.py:380-383",
+     "quote": "if len(cells) != 3: offenders.append({\"row\": name, \"chars\": len(line), \"priors\": 0, \"corrections\": 0, \"malformed\": len(cells)})"
+    },
+    {
+     "source": "kb/_docs_audit.py:425-427",
+     "quote": "is a malformed table row ({worst['malformed']} cells, expected 3) — a row this rule cannot parse is a row it cannot guard"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "fbf4abf0-5827-4521-a9d3-e6d196fb7878",
+   "slug": "split-the-experimenter-from-the-subject",
+   "kind": "procedure",
+   "title": "To test whether a rule fires, split the experimenter from the subject",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The method stands in docs/scenarios/README.md (experimenter/subject split, rubric committed before the run) and its KB note; the harness exists; PR #1387 on main. Refined by the later row: the repo is an input too, so the instruments were moved out (its affects paths are gone by design).",
+   "evidence": [
+    {
+     "source": "docs/scenarios/README.md:38",
+     "quote": "| **Experimenter** (the next numbered session) | the full rich handoff, all context | runs the probes, scores them against the rubric, fixes what fails |"
+    },
+    {
+     "source": "docs/scenarios/README.md:41-42",
+     "quote": "The instruments — the rubric and the probe prompts — are deliberately NOT in this repository. They live in the private vault, which probe sessions do"
+    },
+    {
+     "source": "ls",
+     "quote": "docs/kb-notes/methodology-testing-a-rule-without-cueing-the-answer.md and kb/_doctrine_scenarios.py exist"
+    },
+    {
+     "source": "git origin/main",
+     "quote": "74bba017 Score the guard set against real failures — and warn before the next compact (#1387)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": [
+    {
+     "from": "docs/scenarios/rubric.md",
+     "to": "removed by design in #1389 (probe_instrument_leak fails if restored); see docs/scenarios/README.md:41-42"
+    },
+    {
+     "from": "docs/scenarios/probes/",
+     "to": "removed by design in #1389; instruments relocated out of the tracker"
+    }
+   ]
+  },
+  {
+   "id": "aefe2040-6ebd-4ba0-bb71-a230d2023f7b",
+   "slug": "a-threshold-must-be-a-sum-of-measured-costs",
+   "kind": "pitfall",
+   "title": "A warning threshold must be a SUM of measured costs, not a round multiple",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The constants are exactly as the row says (WARN 110,000 = checkpoint + heavy turn + slack; EMERGENCY 50,000), the file's own docstring records the 2x mistake, CLAUDE.md 9a carries both thresholds, and the test pins quiet-at-633,409.",
+   "evidence": [
+    {
+     "source": "kb/_context_budget.py:91-92",
+     "quote": "EMERGENCY_BELOW = CHECKPOINT_COST                       #  50,000 / WARN_BELOW = CHECKPOINT_COST + HEAVY_TURN + 9_000       # 110,000"
+    },
+    {
+     "source": "kb/_context_budget.py:33",
+     "quote": "WARN is a SUM, not a multiple, and the first draft got this wrong: 2x the"
+    },
+    {
+     "source": "CLAUDE.md:204,207",
+     "quote": "WARN — ≤110,000 tokens left … EMERGENCY — ≤50,000 tokens left"
+    },
+    {
+     "source": "tests/context_budget_test.py:194-195",
+     "quote": "meter(transcript(…, 633_409)); check(\"(6a) quiet at 633,409 — Sam had just asked for a checkpoint\""
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "cc0f7b6c-fc15-4d0a-9e20-5417dc218898",
+   "slug": "the-instrument-may-not-live-inside-the-system-under-test",
+   "kind": "pitfall",
+   "title": "The answer key was stored in the repository the test sessions download",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "docs/scenarios/ holds only README + the P5 findings (rubric and probes gone); probe_instrument_leak exists and the harness shows it firing; PRs #1389/#1390/#1391 on main. Advisory: Sam's 2026-08-30 ruling relocated the probe records and says not to restate them — this row restates costs/criteria.",
+   "evidence": [
+    {
+     "source": "ls docs/scenarios/",
+     "quote": "README.md, findings-2026-08-29-p5.md only; docs/scenarios/rubric.md and docs/scenarios/probes MISSING"
+    },
+    {
+     "source": "kb/_docs_audit.py:529",
+     "quote": "def rule_probe_instrument_leak(root): \"A probe rubric or prompt has reappeared in the repo probes clone.\""
+    },
+    {
+     "source": "run: python3 kb/_doctrine_scenarios.py",
+     "quote": "the probe answer key sits in the repo probes clone   probe_instrument_leak"
+    },
+    {
+     "source": "git origin/main",
+     "quote": "84696a93 (#1389) · afaba1b7 Record P5 as VOID: the probe corpus leaks through the repo under test (#1390) · 47219387 (#1391)"
+    },
+    {
+     "source": "CPLBrain/04-projects/cpl-initiative/doctrine-probes/README.md",
+     "quote": "Moved (2026-08-30) … relocated by Sam's ruling … do not reconstruct or restate the records' contents anywhere in this vault, the tracker, or the public KB."
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": [
+    {
+     "from": "CPLBrain/04-projects/cpl-initiative/doctrine-probes/",
+     "to": "CPLBrain/04-projects/cpl-initiative/doctrine-probes/ now holds only a pointer README: records relocated 2026-08-30 by Sam's ruling (CPLBrain#60); ask Sam for their location"
+    }
+   ]
+  },
+  {
+   "id": "2efcbe6c-ab5a-4052-bbc0-0ba81429cdb6",
+   "slug": "no-roadmap-lane-is-retirable-all-30-carry-open-work",
+   "kind": "fact",
+   "title": "All 30 roadmap lanes carry open work - none is retirable, established by reading every one",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "Re-measured today: rule_lane_retirement_signal('.') over the 30 lane files returns None (no lane's own text claims no open work). CLAUDE.md's §11 preamble states the same and records the three mis-greps. Expect drift when a lane retires.",
+   "evidence": [
+    {
+     "source": "python: _docs_audit.rule_lane_retirement_signal('.')",
+     "quote": "returned None; 30 lane files in docs/reference/lanes/"
+    },
+    {
+     "source": "CLAUDE.md:718",
+     "quote": "Today it names none: all 30 lanes have open work (Session 208, confirmed by reading all 30)"
+    },
+    {
+     "source": "CLAUDE.md:724-726",
+     "quote": "Session 208 then mis-grepped it three more times in one run — anchoring to line-start (0 hits), searching `NEXT` and missing `Next:`, and requiring a trailing colon"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "3c39b037-fd20-449b-8829-a99a1c248261",
+   "slug": "a-score-that-improves-is-when-to-check-the-fixtures",
+   "kind": "pitfall",
+   "title": "The guard score jumped to 11 of 11, and that was worse than 9 of 11",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The harness comments record the stub-fixture false 11/11, _assert_fixtures_current() now refuses to score on drift, and today's run reports the honest 10 of 12. A verified row (third instance) corroborates the lesson rather than replacing it.",
+   "evidence": [
+    {
+     "source": "kb/_doctrine_scenarios.py:112-116",
+     "quote": "A fixture must be COMPLETE enough that only the scenario's own defect fires … to \"11 of 11 caught\" — and every one of those catches was the new guard firing"
+    },
+    {
+     "source": "kb/_doctrine_scenarios.py:143-144",
+     "quote": "def _assert_fixtures_current(): Refuse to score when the pristine fixture is no longer 'healthy'."
+    },
+    {
+     "source": "run: python3 kb/_doctrine_scenarios.py",
+     "quote": "10 of 12 real failures would be caught today; 2 would not."
+    },
+    {
+     "source": "slug:a-harness-must-verify-its-own-healthy-fixture",
+     "quote": "verified: Third instance of the improving-score false green (after S208's 11-of-11 stub fixtures …). Honest score stays 10 of 12."
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "129245f7-0b01-4ccd-9ea7-08ad15a85cbb",
+   "slug": "a-harness-that-discovers-its-checks-by-shape-hides-new-ones",
+   "kind": "pitfall",
+   "title": "A test harness that infers which checks to run hid a working guard twice in one session",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The harness now discovers rule_* functions and dispatches on the parameter name (root / entry / entry,root), with the comment recording both failures; today's run shows critical_rule_doctrine and probe_instrument_leak catching their scenarios.",
+   "evidence": [
+    {
+     "source": "kb/_doctrine_scenarios.py:47-50",
+     "quote": "DISCOVER the rules; do not hand-list them. This list was hard-coded until 2026-08-29, and `critical_rule_doctrine` — written specifically to catch two scenarios in this file — reported \"— NOTHING —\""
+    },
+    {
+     "source": "kb/_doctrine_scenarios.py:61,69-73",
+     "quote": "Dispatch on the PARAMETER NAME, not the arity … if params[:1] == (\"root\",): … elif params == (\"entry\",): … elif params[:2] == (\"entry\", \"root\"):"
+    },
+    {
+     "source": "run: python3 kb/_doctrine_scenarios.py",
+     "quote": "Rule 7's TOP caveat relocated, pointer intact → critical_rule_doctrine; the probe answer key sits in the repo probes clone → probe_instrument_leak"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "3d05ff17-fa13-4901-864e-f5449e4402c9",
+   "slug": "a-document-about-a-failure-reproduces-the-failures-material",
+   "kind": "pitfall",
+   "title": "The write-up explaining a leak re-created it, and so did the lint built to catch it",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The lint stores the probe topics as salted hashes, scans only docs that discuss the probe protocol, and its own comment records the same-day re-leak; PR #1391 on main; CLAUDE.md still documents the american_spelling self-corruption instance with the backtick fix.",
+   "evidence": [
+    {
+     "source": "kb/_docs_audit.py:479-482",
+     "quote": "THE POST-MORTEM RE-LEAKED THE THING (2026-08-29, later the same day) … P5's phrase was back on `main` in four files within the hour"
+    },
+    {
+     "source": "kb/_docs_audit.py:491-495",
+     "quote": "So the phrases cannot be stored here in plaintext - a lint holding the secrets it detects IS the leak. Salted hashes instead … PROBE_TOPIC_SALT = b\"cpl-probe-topic-v1:\""
+    },
+    {
+     "source": "git origin/main",
+     "quote": "47219387 Close the leak the post-mortem reopened, and record what the void probe found (#1391)"
+    },
+    {
+     "source": "CLAUDE.md:276-280",
+     "quote": "The British form in a word pair MUST be written in a code span … a bare quotation of the corruption trips `self_corrected_word_pair` in turn"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "bc6eba4e-c690-4233-b202-8be4fae9fd6b",
+   "slug": "a-stated-constraint-is-not-an-enforced-one",
+   "kind": "pitfall",
+   "title": "A spawned session was told it had no push access; it had push access and used it",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "PR #1390's own body says the background event asserted no push credentials, that proved false when tested, hence the branch and PR; opened and merged 2026-08-29 (docs-only finding file on main). The P2 cost detail lives in relocated records not inspected (Sam's 2026-08-30 ruling).",
+   "evidence": [
+    {
+     "source": "github: pull_request_read #1390 (get)",
+     "quote": "body: 'The background event also asserted this sandbox had no push credentials. That proved false when tested — hence this branch and PR rather than work left in the working tree.'"
+    },
+    {
+     "source": "github: pull_request_read #1390 (get)",
+     "quote": "user samueltlee; head claude/p5-probe-leak-finding; created 2026-08-29T20:45:14Z; merged 2026-08-29T20:46:37Z; session_01GZhSzeGaNi2AKSeeatSZvT"
+    },
+    {
+     "source": "git origin/main",
+     "quote": "afaba1b7 Record P5 as VOID: the probe corpus leaks through the repo under test (#1390)"
+    },
+    {
+     "source": "docs/scenarios/findings-2026-08-29-p5.md:15-17",
+     "quote": "received the P5 prompt verbatim as an automated background event and identified it as a committed probe within three tool calls. **This run scores nothing.**"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": [
+    {
+     "from": "CPLBrain/04-projects/cpl-initiative/doctrine-probes/",
+     "to": "CPLBrain/04-projects/cpl-initiative/doctrine-probes/ now holds only a pointer README: records relocated 2026-08-30 by Sam's ruling (CPLBrain#60); ask Sam for their location"
+    }
+   ]
+  },
+  {
+   "id": "8860ded6-39fd-430c-ae34-93aac4d0c411",
+   "slug": "p4-is-the-first-valid-doctrine-probe-result",
+   "kind": "fact",
+   "title": "The first probe run that counts: under maximum blast radius, nothing reached production",
+   "verdict": "confirmed",
+   "confidence": "medium",
+   "reason": "The headline is corroborated by the vault's own commit recording it and by session notes (P4 was Sam's run; P4 stopped before pushing). The per-criterion scores sit in records Sam relocated on 2026-08-30 with a do-not-restate ruling, so they were not inspected — advisory for Sam.",
+   "evidence": [
+    {
+     "source": "git -C /home/user/CPLBrain log --all",
+     "quote": "ddd2766 Record the P4 result — the first probe run that counts (#41)"
+    },
+    {
+     "source": "CPLBrain/07-session-notes/2026-08-29-threading-rules-to-guards.md:88",
+     "quote": "P4 is Sam's to run himself; P6 needs the repo to genuinely be overdue for a"
+    },
+    {
+     "source": "docs/doctrine_enforcement_lessons.md:261",
+     "quote": "Harmless for ask-form; may explain why P2 and P4 both stopped before pushing."
+    },
+    {
+     "source": "CPLBrain/04-projects/cpl-initiative/doctrine-probes/README.md",
+     "quote": "relocated by Sam's ruling on 2026-08-30 … Do not go looking for it, and do not reconstruct or restate the records' contents"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": "milestone",
+   "link_fixes": [
+    {
+     "from": "CPLBrain/04-projects/cpl-initiative/doctrine-probes/rubric.md",
+     "to": "CPLBrain/04-projects/cpl-initiative/doctrine-probes/ now holds only a pointer README: records relocated 2026-08-30 by Sam's ruling (CPLBrain#60); ask Sam for their location"
+    }
+   ]
+  },
+  {
+   "id": "bb7cc4df-334b-4184-bd85-a90cfeee2587",
+   "slug": "no-dependency-map-from-dataset-to-consuming-tabs",
+   "kind": "opportunity",
+   "title": "Both probe arms independently named the same gap: there is no dataset-to-consumer map",
+   "verdict": "superseded_by_row",
+   "confidence": "high",
+   "reason": "The 'FOR SAM TO RULE ON - proposed, not implemented' item was ruled (Sam approved A–D, F on 2026-08-29) and every gap it names is built: the dependency map (#1396), Rule 10 widened + reversible-from-receipt (a2) + Governance routing (a3) (#1402), all now in CLAUDE.md.",
+   "evidence": [
+    {
+     "source": "slug:sam-approved-five-doctrine-remediations-2026-08-29",
+     "quote": "verified, Sam: APPROVED: (A) a dependency map from dataset to consuming tabs; (B) widen Rule 10 beyond kb_curation; (C) a rollback path for data writes; (D) route new write surfaces via Governance"
+    },
+    {
+     "source": "slug:all-six-doctrine-remediations-built",
+     "quote": "verified milestone: A-F of the 2026-08-29 remediations are BUILT: A #1396 (dependency map) … B/C/D #1402 (Rule 10 widened + reversible-from-receipt + Governance routing)"
+    },
+    {
+     "source": "CLAUDE.md:226,233,238",
+     "quote": "the dependency map's write edges name the rest … (a2) A data write must be REVERSIBLE FROM ITS RECEIPT … (a3) A NEW write surface routes through Governance and the privacy ADRs BEFORE it ships"
+    }
+   ],
+   "superseded_by": "sam-approved-five-doctrine-remediations-2026-08-29",
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "f5fee7ec-d402-4590-bed6-bc6e01bb644b",
+   "slug": "doctrine-confirmed-by-matched-pair-and-the-effect-is-mechanical",
+   "kind": "fact",
+   "title": "The doctrine works, and every point of its effect is mechanical action rather than judgment",
+   "verdict": "confirmed",
+   "confidence": "medium",
+   "reason": "The tracker's lessons doc records the same scores, the same mechanical-difference conclusion and the $1.25 vs $13.70 costs on 2026-08-29; the vault's #42/#43 commits record the ask-form results. The underlying records were relocated by Sam's 2026-08-30 ruling and not inspected.",
+   "evidence": [
+    {
+     "source": "docs/doctrine_enforcement_lessons.md:231",
+     "quote": "S1 8/8 vs 3/8 · S2 8.5/9 vs 1.5/9 · S6 6/7 vs 2/7. **Every point of difference is"
+    },
+    {
+     "source": "docs/doctrine_enforcement_lessons.md:226",
+     "quote": "**Ask form costs ~$1.25 a matched pair against $13.70 for one build-form probe**,"
+    },
+    {
+     "source": "git -C /home/user/CPLBrain log --all",
+     "quote": "53051dd Ask-form probes: criteria, results, and the compiled strategy (#42) · 676b0b9 S2 result: the largest gap, and a second kind of doctrine value (#43)"
+    },
+    {
+     "source": "slug:sam-approved-five-doctrine-remediations-2026-08-29",
+     "quote": "verified detail: A: BOTH probe arms independently named the absence of a dataset-to-consumer map as the actual failure point"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": [
+    {
+     "from": "CPLBrain/04-projects/cpl-initiative/doctrine-probes/",
+     "to": "CPLBrain/04-projects/cpl-initiative/doctrine-probes/ now holds only a pointer README: records relocated 2026-08-30 by Sam's ruling (CPLBrain#60); ask Sam for their location"
+    }
+   ]
+  },
+  {
+   "id": "449ec9af-2140-456c-891d-a944c9aefe03",
+   "slug": "doctrine-also-suppresses-plausible-but-wrong-defaults",
+   "kind": "pitfall",
+   "title": "Doctrine does a second job: it stops a capable session doing the wrong thing confidently",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The lessons doc records the S2 control's dark-mode suggestion and the pruning consequence verbatim; the rule it ran against is still in CLAUDE.md (now line 535, not 414); the vault's #43 commit records the S2 result.",
+   "evidence": [
+    {
+     "source": "docs/doctrine_enforcement_lessons.md:240-241",
+     "quote": "Doctrine also **suppresses plausible-but-wrong defaults**. S2's control offered *\"including dark mode if the app supports it\"* against `CLAUDE.md:414`"
+    },
+    {
+     "source": "docs/doctrine_enforcement_lessons.md:250",
+     "quote": "the rule is doing suppression work and stays."
+    },
+    {
+     "source": "CLAUDE.md:535",
+     "quote": "It is a **light** identity with no dark PAGE palette."
+    },
+    {
+     "source": "git -C /home/user/CPLBrain log --all",
+     "quote": "676b0b9 S2 result: the largest gap, and a second kind of doctrine value (#43)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": [
+    {
+     "from": "CLAUDE.md line 414",
+     "to": "CLAUDE.md:535 (the line moved; same sentence)"
+    }
+   ]
+  },
+  {
+   "id": "ef228888-06fd-430c-b08a-a74c93c5ce11",
+   "slug": "removing-claude-md-does-not-remove-the-doctrine",
+   "kind": "pitfall",
+   "title": "The ablation failed: a thorough session rebuilt the rules from the corpus that cites them",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The citation_drift lint's own rationale and two verified rows record the S4 control rebuilding the rules from ~400 citations and finding Rule 9/10 disagreement; that defect is now fixed and linted (#1402); the S208 control branch was deleted (vault #51) and an ablation recipe filed (#59).",
+   "evidence": [
+    {
+     "source": "kb/_docs_audit.py:660-663",
+     "quote": "the S208 ablation control rebuilt the Critical Rules from ~400 citations across docs/ and reported the numbering DISAGREES across them — Supabase safety cited as both Rule 9 and Rule 10"
+    },
+    {
+     "source": "slug:rule-number-drift-fixed-and-linted",
+     "quote": "verified: The S208 ablation finding was one systematic shift from a pre-split numbering … Fixed in 16 living files … New citation_drift lint pins living docs"
+    },
+    {
+     "source": "git -C /home/user/CPLBrain log --all",
+     "quote": "5151f4d Probe lane truth: the S208 control branch is deleted and verified gone (#51) · cc4df56 Probe lane: first Arm-A observation, criteria re-read addenda, ablation recipe (#59)"
+    },
+    {
+     "source": "slug:sam-approved-five-doctrine-remediations-2026-08-29",
+     "quote": "verified detail: F: from the failed ablation, where a session reconstructing the rules from ~400 citations found the numbering disagrees"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "159ff8a7-5be4-42cf-b8c2-270fbc7f39a1",
+   "slug": "dependency-map-built-remediation-a-2026-08-30",
+   "kind": "decision",
+   "title": "Remediation A is BUILT: the dataset-to-consumers dependency map exists and regenerates from the code",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "All artifacts exist and CI --checks the map; CLAUDE.md's cross-impact rule points at it; the stale-copy and direct-to-main findings are in the map. One clause is outdated: 'B-F remain approved-not-built' — B/C/D/F landed in #1402, E in #1400 (verified milestone all-six-doctrine-remediations-built).",
+   "evidence": [
+    {
+     "source": "ls",
+     "quote": "kb/_build_dependency_map.py (68,619 B), kb/dependency_map.json (359,803 B), docs/reference/dependency_map.md (87,206 B), tests/dependency_map_test.py (23 check( calls)"
+    },
+    {
+     "source": ".github/workflows/js-tests.yml:284",
+     "quote": "python3 kb/_build_dependency_map.py --check"
+    },
+    {
+     "source": "CLAUDE.md:434-437",
+     "quote": "dependency_map.md maps every dataset (Supabase table, generated JS, JSON) to its consuming tabs, scripts, workflows and public surfaces; `_build_dependency_map.py` regenerates; CI `--check`s it"
+    },
+    {
+     "source": "docs/reference/dependency_map.md:789,22-30",
+     "quote": "cpl_pathways_ccr_data.js rebuilt by kb/_build_cpl_pathway_ccr.py under daily-dashboard.yml but not in its commit list … ## The direct-to-main lane … `cpl-landing-pages.yml` | `37 14 * * 1` | main"
+    },
+    {
+     "source": "git origin/main",
+     "quote": "2e37d36d Build the dependency map: dataset -> consuming tabs, scripts, workflows, surfaces (ruling A) (#1396)"
+    },
+    {
+     "source": "slug:all-six-doctrine-remediations-built",
+     "quote": "verified milestone: A #1396 …; E #1400 …; B/C/D #1402 …; F #1402"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": "milestone",
+   "link_fixes": []
+  },
+  {
+   "id": "f9a732f1-3fcb-44e7-8a55-1cce6a6dacd4",
+   "slug": "prose-only-masks-4-space-continuations",
+   "kind": "pitfall",
+   "title": "Indent rule hides neighboring prose",
+   "verdict": "confirmed",
+   "confidence": "medium",
+   "reason": "Mechanism unpatched and WORSE than stated: ^\\s{4,}\\S.*$ runs under re.S, so a 4-space line (or blank line + 3-space indent) blanks everything to end of file. Measured: only 8% of CLAUDE.md's words reach the spelling lint (0 in its second half); 58 of 423 docs <50%. 'CLAUDE.md is safe' is false now.",
+   "evidence": [
+    {
+     "source": "kb/_docs_audit.py:1276,1280",
+     "quote": "(r\"^\\s{4,}\\S.*$\", 0) … for m in re.finditer(pat, text, re.S | re.M): blank(m, grp)"
+    },
+    {
+     "source": "python: _docs_audit.prose_only(open('CLAUDE.md').read())",
+     "quote": "CLAUDE.md: 7394 words, 562 visible to the lint (8%); visible words in the second half of CLAUDE.md: 0"
+    },
+    {
+     "source": "python: corpus sweep of CLAUDE.md + lanes + kb-notes + docs/reference",
+     "quote": "docs measured: 423; docs with <50% of words visible to the lint: 58 — pipeline_reference.md 0%, mid_lifecycle.md 1%, kb_build_status.md 3%, troubleshooting.md 3%"
+    },
+    {
+     "source": "grep -cE '^ {4}\\S' CLAUDE.md",
+     "quote": "47 four-space-indented lines (first at :327); 168 three-space lines"
+    },
+    {
+     "source": "kb/_fix_american_spelling.py:44,65",
+     "quote": "fixer still imports and applies the same prose_only(); no patch"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "ad121499-7326-4fe6-b00f-fb86c886461b",
+   "slug": "a11y-one-command-npm-run-a11y",
+   "kind": "decision",
+   "title": "Accessibility enforcement is one command: npm run a11y",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "package.json has the a11y script, scripts/a11y.js and a11y.config.js exist, CLAUDE.md's presentation rule mandates npm run a11y with Sam's quoted ruling, PR #1473 is on main, and a verified Sam row from the same day records the ask.",
+   "evidence": [
+    {
+     "source": "package.json:6",
+     "quote": "\"a11y\": \"node scripts/a11y.js\","
+    },
+    {
+     "source": "ls",
+     "quote": "scripts/a11y.js (41,575 B) and a11y.config.js (15,633 B) exist"
+    },
+    {
+     "source": "CLAUDE.md:542-543",
+     "quote": "VERIFY WITH `npm run a11y`** (Sam, 2026-09-04: *\"the simplest approach that sets us up for continued long term use on all projects\"*)"
+    },
+    {
+     "source": "git origin/main",
+     "quote": "92c60ee2 Accessibility gets one command: npm run a11y, over every view we ship (#1473)"
+    },
+    {
+     "source": "slug:sam-wants-a-standing-a11y-check-because-doctrine-does-not-fire",
+     "quote": "verified, Sam Lee 2026-09-04: CLAUDE.md and memory do not reliably enforce accessibility day to day, so build a check"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": true,
+   "human_name": "Sam Lee",
+   "kind_check": null,
+   "link_fixes": []
+  }
+ ]
+}

@@ -86,26 +86,27 @@ def row(sid, ctype, ecr, acr, tcr, potential="", test=""):
 def fixture(with_type_column=True):
     """A synthetic pull exercising every branch of the type split.
 
-    Military      s1..s6   (6) — eligible + applied, nothing transcribed
-    Industry      s1,s20..s23 (5) — s1 is DELIBERATELY shared with Military
-    Credit by Exam s7..s11 (5) — arrives already transcribed (the batch shape)
-    Portfolio     s30,s31  (2) — under the <5 floor, must suppress
+    Military      m1..m12  (12) — eligible + applied, nothing transcribed
+    Industry      m1,i20..i28 (10) — m1 is DELIBERATELY shared with Military
+    Credit by Exam x1..x10 (10) — arrives already transcribed (the batch shape)
+    Portfolio     s30,s31  (2) — under the floor of 10, must suppress
+    (counts sit at 10/12 because the floor rose 5 -> 10 on 2026-09-03)
     Portal Only   s40      — Potential Student, routes to `pp`, must be pruned
     (test student s50 excluded outright)
     """
     rows = []
-    for sid in ["s1", "s2", "s3", "s4", "s5", "s6"]:
+    for sid in [f"m{i}" for i in range(1, 13)]:
         rows.append(row(sid, "Military", ecr=30, acr=6, tcr=0))
-    for sid in ["s1", "s20", "s21", "s22", "s23"]:
+    for sid in ["m1"] + [f"i{i}" for i in range(20, 29)]:
         rows.append(row(sid, "Industry Certification", ecr=12, acr=3, tcr=0))
-    for sid in ["s7", "s8", "s9", "s10", "s11"]:
+    for sid in [f"x{i}" for i in range(1, 11)]:
         rows.append(row(sid, "Credit by Exam", ecr=3, acr=3, tcr=3))
     for sid in ["s30", "s31"]:
         rows.append(row(sid, "Portfolio", ecr=9, acr=9, tcr=0))
     rows.append(row("s40", "Portal Only", ecr=0, acr=0, tcr=3, potential="Yes"))
     rows.append(row("s50", "Military", ecr=99, acr=99, tcr=99, test="Yes"))
     # A repeated row for an existing student+type — must not double-count.
-    rows.append(row("s2", "Military", ecr=30, acr=6, tcr=0))
+    rows.append(row("m2", "Military", ecr=30, acr=6, tcr=0))
 
     cols = list(COLUMNS)
     if not with_type_column:
@@ -146,21 +147,21 @@ def main():
         sys.exit(1)
 
     # ── 1. the split itself ────────────────────────────────────────────
-    check("Military counts 6 eligible / 6 applied (a repeated row does not double-count)",
-          types.get("Military", {}).get("pe") == 6 and types["Military"].get("pa") == 6,
+    check("Military counts 12 eligible / 12 applied (a repeated row does not double-count)",
+          types.get("Military", {}).get("pe") == 12 and types["Military"].get("pa") == 12,
           f"got {types.get('Military')!r}")
-    check("Industry Certification counts 5 (the shared student s1 counts here too)",
-          types.get("Industry Certification", {}).get("pe") == 5,
+    check("Industry Certification counts 10 (the shared student m1 counts here too)",
+          types.get("Industry Certification", {}).get("pe") == 10,
           f"got {types.get('Industry Certification')!r}")
 
     # ── 2. the batch-vs-lifecycle signal (the whole point) ─────────────
     check("Military shows 0 transcribed",
           types.get("Military", {}).get("p3") == 0,
           f"got {types.get('Military')!r}")
-    check("Credit by Exam carries ALL 5 transcribed — a batch is separable "
+    check("Credit by Exam carries ALL 10 transcribed — a batch is separable "
           "from lifecycle work",
-          types.get("Credit by Exam", {}).get("p3") == 5
-          and p["colleges"][FUNDING_NAME]["p3"] == 5,
+          types.get("Credit by Exam", {}).get("p3") == 10
+          and p["colleges"][FUNDING_NAME]["p3"] == 10,
           f"type={types.get('Credit by Exam')!r} college_p3="
           f"{p['colleges'][FUNDING_NAME].get('p3')!r}")
 
@@ -176,15 +177,15 @@ def main():
     # college: a suppressed cell elsewhere (Portfolio's 2 students bake as
     # null) would otherwise mask the over-count and make the assertion
     # accidentally pass or fail for the wrong reason.
-    #   Military ∪ Industry = s1..s6, s20..s23 = 10 DISTINCT students
-    #   Military + Industry =      6 +      5 = 11 counted
+    #   Military ∪ Industry = m1..m12, i20..i28 = 21 DISTINCT students
+    #   Military + Industry =      12 +      10 = 22 counted
     mil_ind = types["Military"]["pe"] + types["Industry Certification"]["pe"]
-    check("a two-type student counts under EACH type — Military+Industry (11) "
-          "exceeds their 10 distinct students; do not 'reconcile' these",
-          mil_ind == 11,
-          f"Military+Industry={mil_ind}, expected 11 over 10 distinct students")
+    check("a two-type student counts under EACH type — Military+Industry (22) "
+          "exceeds their 21 distinct students; do not 'reconcile' these",
+          mil_ind == 22,
+          f"Military+Industry={mil_ind}, expected 22 over 21 distinct students")
 
-    # ── 5. <5 suppression per (college, type, metric) ──────────────────
+    # ── 5. suppression under the floor (10) per (college, type, metric) ─
     portfolio = types.get("Portfolio", {})
     check("a 2-student type suppresses to null + _suppressed",
           portfolio.get("pe") is None and portfolio.get("pe_suppressed") is True,
@@ -194,7 +195,7 @@ def main():
     # Portfolio is the ONLY suppressed `pe` cell, so on its own it would be
     # recoverable by subtracting the visible types from the college count. The
     # builder therefore also hides the smallest visible `pe` — here Credit by
-    # Exam (5, first alphabetically among the two 5s).
+    # Exam (10, first alphabetically among the two 10s).
     cx = types.get("Credit by Exam", {})
     check("a lone suppressed cell drags the smallest visible one down with it, "
           "so the hidden count cannot be recovered by subtraction",
@@ -202,7 +203,7 @@ def main():
           f"got Credit by Exam={cx!r}")
     check("complementary suppression is per-metric — p3 had no suppressed cell "
           "to protect, so it stays visible",
-          cx.get("p3") == 5, f"got Credit by Exam={cx!r}")
+          cx.get("p3") == 10, f"got Credit by Exam={cx!r}")
 
     # ── 6. all-zero types pruned ───────────────────────────────────────
     check("a Potential-Student-only type is pruned, not emitted as a zeroed cell",
@@ -211,7 +212,7 @@ def main():
     # ── 7. statewide rollup present and consistent ─────────────────────
     sw = p.get("cpl_types_statewide") or {}
     check("statewide type rollup is emitted",
-          sw.get("Military", {}).get("pe") == 6, f"got {sw.get('Military')!r}")
+          sw.get("Military", {}).get("pe") == 12, f"got {sw.get('Military')!r}")
 
     # ── 8. omit, don't zero, when the column is absent ─────────────────
     p2 = run_builder(fixture(with_type_column=False))
@@ -219,7 +220,7 @@ def main():
           "cpl_types" not in p2 and "cpl_types_statewide" not in p2,
           f"cpl_types={p2.get('cpl_types')!r}")
     check("the undifferentiated counts still build without the type column",
-          (p2.get("colleges") or {}).get(FUNDING_NAME, {}).get("pe") == 17,
+          (p2.get("colleges") or {}).get(FUNDING_NAME, {}).get("pe") == 33,
           f"got {(p2.get('colleges') or {}).get(FUNDING_NAME)!r}")
 
     passed = checks[0] - len(failures)

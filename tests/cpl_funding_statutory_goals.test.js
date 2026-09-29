@@ -1,0 +1,306 @@
+// CPL Implementation Funding tab — the statutory goal spine, Ed. Code §78093.2(d)(1).
+//
+// Sam's ask (2026-08-28): "Wire the ABCD §78093.2 outcomes in and make them
+// visible — superscript links from whatever serves each." §78093.2(d)(2) makes
+// demonstrating those four goals a precondition of a campus allocation, so this
+// section is the reporting artifact, not a caption.
+//
+// ⚠️ WHAT THESE ASSERTIONS PROTECT IS THE HONEST STATE OF EACH GOAL. Any build
+// can render four goal cards and fill them; the reason this one is worth
+// shipping is that each goal says where its evidence comes from and how far it
+// has arrived, instead of being padded with the nearest available number. Goal
+// (C) is the sharpest case: funded through Priority 4 and measured by the
+// Chancellor's Office from EDD wage records (Sam, 2026-09-22), so it must
+// never read as a MAP measure. Most of the checks below fail if a future change
+// collapses "funded" and "measured" into one status, or quietly derives a
+// statutory tag from the Workplan's own goal names.
+//
+// ONE-POOL PORT (2026-08-31). The lane switch this suite used to flip is
+// retired (R1) — there is no per-lane spine to re-scope. Under one pool a
+// priority's goal dollars are its FULL funding share (credit and noncredit
+// shares together, the ceiling the cards call Total Possible), and the intro
+// says so;
+// section 8 below pins that reading plus the R1 absence. Sam also renamed the
+// section live ("Funding Outcomes Required by Ed. Code §78093.2(d)(1)") and
+// linked the title to california.public.law — pinned in section 8 too.
+//
+// Run from repo root: `npm test` (or `node tests/cpl_funding_statutory_goals.test.js`).
+const fs = require("fs");
+const { check, freshDom, boot, commit, finish } = require("./lib/cpl_funding_harness.js");
+
+// Locate STRUCTURALLY — never by index, never by a literal sentence. Two suites
+// broke on 2026-08-27 for exactly those two reasons.
+const flat = (el) => (el ? el.textContent : "").replace(/\s+/g, " ").trim();
+const goalCard = (doc, k) => doc.getElementById("cplfund-goal-" + k);
+const goalCards = (doc) => Array.from(doc.querySelectorAll(".cplfund-goal"));
+// Address a goal row's cells BY COLUMN HEADER, never by position — a third
+// column would otherwise re-point every assertion below one cell to the left.
+const axis = (row, name) => {
+  const table = row.closest("table");
+  if (!table) return null;
+  const heads = Array.from(table.querySelector("tr").querySelectorAll("th"));
+  const i = heads.findIndex((th) => new RegExp(name, "i").test(flat(th)));
+  if (i < 0) return null;
+  // The goal cell is a <th scope=row>; the axis cells are the <td>s after it.
+  return Array.from(row.querySelectorAll("th[scope=row], td"))[i] || null;
+};
+// The design LIMIT on a goal used to render on that goal's BAND (Sam,
+// 2026-09-01). The bands are retired (Sam, 2026-09-14) and the limit renders in
+// the (d)(2) account itself, inside the goal's own "how it is evidenced" cell —
+// it had to move, because a cell that pointed at a section which no longer
+// exists would send the reader looking for something unfindable. Locate it
+// structurally, the same way the goal rows are located.
+const evidenceCell = (doc, k) => axis(goalCard(doc, k), "how it is evidenced");
+
+const dom = freshDom();
+const win = dom.window;
+// ⚠️ LOAD THE REAL STORY CORPUS BEFORE BOOT. Goal (C)'s qualitative claim is
+// COUNTED from window.CPL_STORIES at render, not quoted from a session that
+// counted it once — so a harness without the corpus exercises the graceful path
+// (no corpus -> no claim) and silently proves nothing about the claim itself.
+// This is the same trap as testing a metric with no feed: the absence renders
+// exactly like the success.
+win.eval(fs.readFileSync(require("path").join(__dirname, "..", "fact-sheet", "cpl_stories.js"), "utf8"));
+const doc = boot(win);
+check("the real story corpus is loaded, so (C)'s claim is actually exercised",
+  !!(win.CPL_STORIES && Array.isArray(win.CPL_STORIES.stories) && win.CPL_STORIES.stories.length > 0));
+
+// ── 1. all four goals render, each anchored and cited ───────────────────────
+check("all four statutory goals render", goalCards(doc).length === 4);
+["A", "B", "C", "D"].forEach((k) => {
+  check("goal (" + k + ") has an anchor a superscript can link to", !!goalCard(doc, k));
+});
+check("each goal cites its own subdivision", ["A", "B", "C", "D"].every((k) =>
+  new RegExp("78093\\.2\\(d\\)\\(1\\)\\(" + k + "\\)").test(flat(goalCard(doc, k)))));
+// The statute's own words, not a paraphrase — a reader has to be able to check
+// the model against the law without leaving the tab.
+check("each goal quotes the statute verbatim", ["A", "B", "C", "D"].every((k) =>
+  !!goalCard(doc, k).querySelector(".cplfund-goal-quote")));
+check("goal (D) names the MAP initiative, as the statute does",
+  /Mapping Articulated Pathways/i.test(flat(goalCard(doc, "D"))));
+
+// ── 2. FUNDED and MEASURED are two axes, never one status ───────────────────
+// This is the assertion that fails if someone merges them into a traffic light.
+check("every goal states funding and evidence as SEPARATE axes",
+  goalCards(doc).every((c) => !!axis(c, "what funds it") && !!axis(c, "how it is evidenced")));
+
+// ── 3. the derivation is structural, and it lands correctly ─────────────────
+// A priority's goal comes from its MEASURE's milestone (eligible/applied -> A,
+// transcribed -> B), never from its title's prose. On the live config that puts
+// both Access priorities under (A) and Completion under (B) without reading a
+// single word of a title — which is the whole point, since titles are curator-
+// editable and drift.
+const fundedA = flat(axis(goalCard(doc, "A"), "what funds it"));
+const fundedB = flat(axis(goalCard(doc, "B"), "what funds it"));
+check("an access/applied priority funds goal (A)", /Priority \d/.test(fundedA));
+check("a transcribed priority funds goal (B)", /Priority \d/.test(fundedB));
+check("(A) and (B) are not fed by the same priority set", fundedA !== fundedB);
+// A derived tag SAYS it is derived — a curator must be able to tell an
+// inference from a decision before pinning one.
+check("a derived goal tag is labelled as derived",
+  !!goalCard(doc, "A").querySelector(".cplfund-goal-derived"));
+
+// ⚠️ THE DISCRIMINATING CASE, and without it this file proves nothing about the
+// derivation. On the live config, matching a TITLE ("Access: …" -> A) and
+// reading the MEASURE's milestone give the SAME answer for all three
+// priorities — so a mutation swapping one for the other passed every assertion
+// above. The property that actually matters is that a priority's statutory goal
+// does not move when a curator renames it: titles are editable prose and drift,
+// milestones are structural. Rename the transcribed priority to say "Access"
+// and it must stay under (B).
+(function renamingMustNotMoveTheGoal() {
+  const titles = Array.from(doc.querySelectorAll('[data-edit="prio-title"]'));
+  const bBefore = flat(axis(goalCard(doc, "B"), "what funds it"));
+  const m = bBefore.match(/Priority (\d)/);
+  if (!titles.length || !m) { check("SKIPPED: no editable priority title to rename", false); return; }
+  const target = titles[Number(m[1]) - 1];
+  if (!target) { check("SKIPPED: could not locate the (B) priority's title input", false); return; }
+  commit(win, target, "Access: renamed by a curator");
+  const d2 = win.document;
+  const bAfter = flat(axis(goalCard(d2, "B"), "what funds it"));
+  const aAfter = flat(axis(goalCard(d2, "A"), "what funds it"));
+  check("renaming a priority 'Access…' does NOT move it to goal (A)",
+    /Access: renamed by a curator/.test(bAfter) && !/renamed by a curator/.test(aAfter));
+  check("the renamed priority still funds goal (B)", /Priority \d/.test(bAfter));
+})();
+
+// ── 4. (C) is measured by the Chancellor's Office, and says so ──────────────
+// ⚠️ Sam's 2026-09-22 ruling supersedes his 2026-08-30 one ("not measurable at
+// this time, and may never be"): "after speaking with CO research team, we can
+// use EDD wage data to measure this ... This would not be reported by the
+// colleges but instead measured by the CO and reflected on our funding model
+// with periodic updates (imports) of the data." Priority 4 carries the goal, at
+// a 0% share until he sets one. What this section protects now is the SOURCE:
+// (C) must read as the Chancellor's Office's measure, never as MAP's daily
+// feed, never as a wiring fault, and never as a number it does not have before
+// the first import lands.
+const cCard = goalCard(doc, "C");
+const cFund = flat(axis(cCard, "what funds it"));
+const cMeas = flat(axis(cCard, "how it is evidenced"));
+check("goal (C) is served by its own priority, with its funding figure",
+  /Priority \d: Career attainment/.test(cFund) && /\$[\d,]+/.test(cFund));
+// TBA wherever a measure has yet to arrive (Sam, 2026-09-28).
+check("goal (C) reads TBA, measured by the Chancellor's Office, never 'awaiting delivery'",
+  /\bTBA\b/.test(cMeas) &&
+  /Chancellor.s Office measures this outcome from EDD wage records/.test(cMeas) &&
+  !/awaiting delivery/i.test(cMeas));
+check("goal (C) never names MAP's daily feed as its source", !/daily (MAP )?feed/i.test(cMeas));
+check("goal (C) does not claim a metric it does not have",
+  !/earned against/i.test(cMeas));
+const cBand = evidenceCell(doc, "C");
+check("goal (C) has an evidence line in the (d)(2) account", !!cBand);
+check("goal (C) carries Sam's 2026-09-22 ruling in words: the CO measures it, colleges report nothing",
+  /Measured by the Chancellor.s Office\./.test(flat(cBand)) && /asks no reporting of colleges/.test(flat(cBand)));
+check("the retired 'not directly measured' ruling is gone from the page",
+  !/not directly measured|may never be/i.test(flat(doc.querySelector("#cplFundingMount"))));
+// And the honest half: the qualitative evidence documents a different goal.
+check("goal (C) names what its qualitative evidence actually documents",
+  /\bevidence for \(B\)/i.test(flat(cBand)));
+// ⚠️ ONE RENDERER, so there is nothing left to disagree. The account and the
+// band each printed this goal's evidence until 2026-09-14; the check is that
+// the ruling appears ONCE on the page, which is what would catch a second copy
+// coming back.
+check("(C)'s ruling renders once, in the account, with no rival copy", (function () {
+  const rx = /Measured by the Chancellor.s Office\./g;
+  const inMount = (flat(doc.querySelector("#cplFundingMount")).match(rx) || []).length;
+  const inAccount = (flat(doc.querySelector(".cplfund-goals")).match(rx) || []).length;
+  return inAccount > 0 && inMount === inAccount;
+})());
+// The figures are COUNTED, so they must agree with the corpus in the window —
+// a hardcoded pair would pass the line above and drift the moment a story lands.
+check("(C)'s story figures are counted from the corpus, not hardcoded", (function () {
+  const total = win.CPL_STORIES.stories.length;
+  return new RegExp("\\b" + total + "\\b").test(flat(cBand));
+})());
+check("(C) reports the educational majority, which is the finding", (function () {
+  const m = flat(cBand).match(/(\d+)\s*end at an educational destination/i);
+  return !!m && Number(m[1]) > win.CPL_STORIES.stories.length / 2;
+})());
+
+// ── 5. (A)'s equity qualifier is not silently dropped ───────────────────────
+// The statute says "equitably"; nothing in the model measures distribution
+// across student populations. A card that shows (A) as cleanly measured would
+// be overclaiming against the statute's own wording. (Sam's item-12 ruling,
+// 2026-08-30: the limit is POLICY — student-level equity belongs to the
+// system's three-year legislative reports, never to college outcome funding.)
+// Positive-first (Sam, 2026-09-13): the limit reads "measured elsewhere — by
+// design", never "not measured" — the sentence opens with where it IS measured.
+check("goal (A) states that 'equitably' is measured elsewhere, by design",
+  /equitably.{0,40}measured elsewhere/i.test(flat(evidenceCell(doc, "A"))));
+// ⚠️ The limits are stated ONCE, and since 2026-09-14 the one place is the
+// (d)(2) account itself. It used to render on the band with this cell pointing
+// at it; with the bands retired, a pointer to a section that no longer exists
+// would send the reader looking for something unfindable — so the limit moved
+// here rather than the pointer staying behind.
+check("...in the account itself, once, with no pointer to a section that is gone",
+  (flat(doc.querySelector("#cplFundingMount")).match(/measured elsewhere/gi) || []).length === 1 &&
+  !/stated on its band/i.test(flat(doc.querySelector("#cplFundingMount"))));
+
+// ── 6. superscript markers link cards back to the spine ─────────────────────
+const sups = Array.from(doc.querySelectorAll(".cplfund-goalsup"));
+check("superscript goal markers render", sups.length > 0);
+check("every marker links to a goal anchor that exists", sups.every((a) => {
+  const href = a.getAttribute("href") || "";
+  return /^#cplfund-goal-[ABCD]$/.test(href) && !!doc.getElementById(href.slice(1));
+}));
+// ⚠️ Colour is never the only signal, and a raised letter alone is unreadable.
+check("every marker carries an accessible name", sups.every((a) => !!a.getAttribute("aria-label")));
+check("every marker names its goal in words on hover", sups.every((a) =>
+  /78093\.2/.test(a.getAttribute("title") || "")));
+// ⚠️ THE RAISED LETTER IS RETIRED FROM THE CARD (Sam, 2026-09-14). It existed
+// to stitch a card to the band above it, and the band is gone; the card now
+// NAMES its outcome in words — since 2026-09-24 in its one-line head, which
+// carries the key, the short name, the citation and the statute's own
+// sentence. The markers themselves survive elsewhere, which is why the checks
+// above still run.
+check("a priority card names its outcome in words rather than a raised letter", (function () {
+  const c = doc.querySelector(".cplfund-prio .p");
+  const head = c && c.querySelector(".cplfund-cardhead");
+  return !!head && !c.querySelector("h4 .cplfund-goalsup") &&
+    /78093\.2\(d\)\(1\)\([ABCD]\)/.test(flat(head));
+})());
+
+// ── 7. the Workplan register is honoured, not corrected ─────────────────────
+// ⚠️ Sam, 2026-08-28: the register's goals predate §78093.2 and align with the
+// CPL Workplan and Vision 2030 — they are the operational plan that DELIVERS
+// these outcomes. This section must never read as though 32 projects are
+// mis-tagged and need fixing.
+// ⚠️ RE-AIMED FOR THE BAND CONSOLIDATION (Sam, 2026-09-01). The goal spine no
+// longer has a section of its own: the priorities and the §78093.2(d)(1) goals
+// were two sections describing one allocation, and they are now one section
+// whose title carries the statutory outcomes and whose body carries the three
+// bands, with this spine as a fold inside it (the bands retired 2026-09-14;
+// see cpl_funding_outcome_cards).
+// So the section is located by THE STATUTE LINK ITSELF rather than by a
+// `data-sec` name — which is what these two assertions were always about, and
+// is the structural locator the header of this file asks for. The guard is
+// unchanged in force: the title must still be a section's own title, not a
+// footnote parked somewhere else on the page.
+const goalsSec = (function () {
+  const a = doc.querySelector('a[href*="california.public.law/codes/education_code_section_78093.2"]');
+  return a ? a.closest("details[data-sec]") : null;
+})();
+const spine = flat(goalsSec || doc.body);
+check("the alignment stack is named, so the statute does not read as a replacement",
+  /Vision 2030/.test(spine) && /Master Plan for Career Education/.test(spine) &&
+  /CPL Workplan/.test(spine));
+check("Ed. Code is cited as the §§78092–78093.2 range Sam named",
+  /78092/.test(spine));
+check("an untagged project is never called an error", !/mis-?tagged|wrong goal/i.test(spine));
+check("the register's own goals are named as the operational plan",
+  /operational plan/i.test(spine) || /how the work gets done/i.test(spine));
+
+// ── 8. one pool: the renamed title, the statute link, and the full-pool
+//        reading (was: the lane re-scope — retired with the lane switch, R1) ──
+// Sam renamed the section live (2026-08-31) and linked the title to the law
+// itself, so a reader can check the model against the statute in one click.
+check("the section title reads 'Funding Outcomes Required by …' (Sam's rename)",
+  !!goalsSec && /Funding Outcomes Required by/.test(flat(goalsSec.querySelector("summary"))));
+check("the title links to the statute on california.public.law",
+  (function () {
+    const a = doc.querySelector('a[href*="california.public.law/codes/education_code_section_78093.2"]');
+    return !!a && a.getAttribute("target") === "_blank" && /noopener/.test(a.getAttribute("rel") || "");
+  })());
+check("the statute link IS the goals section's own title, not a footnote elsewhere",
+  (function () {
+    const a = doc.querySelector('a[href*="california.public.law"]');
+    return !!a && !!goalsSec && !!a.closest("summary") && goalsSec.contains(a);
+  })());
+// R1 (2026-08-31): the lane switch is retired — there is no control left that
+// could re-scope this spine to one lane. tests/cpl_funding_lane_switch.test.js
+// carries the full retirement guard; this is the spine's own stake in it.
+check("no lane switch exists to re-scope the spine (R1)", !doc.getElementById("cplFundLane"));
+// The reading that replaced the per-lane figures: a priority's dollars are its
+// FULL funding share — credit and noncredit shares together, the same ceiling
+// the priority card calls Total Possible — and the intro must say so, or the
+// goal figures and the card figures would silently describe different
+// quantities. ("pool" → "funding" is Sam's vocabulary sweep, 2026-08-31.)
+check("the intro states a priority's figure is its FULL funding share (one pool)",
+  /full funding share/i.test(spine));
+check("…with the credit and noncredit shares together, the cards' Total Possible ceiling",
+  /credit and noncredit shares together/i.test(spine) && /Total Possible/.test(spine));
+
+// ── 9. Timing is its own collapsible section (Sam, 2026-08-28) ─────────────
+// "The Timing block is now part of the priorities block and should probably
+// have its own so it can be collapsible separately."
+(function timingIsItsOwnSection() {
+  const d = win.document;
+  const timing = d.querySelector(".cplfund-timing");
+  check("the timing block still renders", !!timing);
+  if (!timing) return;
+  // Its own collapsible ancestor, and NOT the priorities one — the whole point
+  // is that collapsing priorities no longer takes Timing with it.
+  const own = timing.closest("details");
+  check("timing sits inside its own collapsible", !!own);
+  const prioGrid = d.querySelector(".cplfund-prio");
+  const prioOwn = prioGrid && prioGrid.closest("details");
+  check("timing's collapsible is NOT the priorities one", !!own && own !== prioOwn);
+  // The h3 was lifted into the summary, so the heading is not duplicated inside.
+  check("the Timing heading reads as the section's own summary",
+    !!own && /Timing/i.test(flat(own.querySelector("summary"))));
+  // ⚠️ The add control has to survive the move — it is how a curator edits.
+  check("the add-item control is still reachable inside it",
+    !!own && !!own.querySelector("#cplFundTimingAdd"));
+})();
+
+finish();

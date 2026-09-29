@@ -253,13 +253,20 @@ check("LANDING_PAGE_RULE still gives the MAP team as a route",
 // 2026-08-09) — a false alarm on a prompt that was entirely correct. Assert
 // membership in the returned template instead: order between rule constants
 // carries no meaning, presence does.
-const PROMPT_TEMPLATE = SRC.slice(SRC.indexOf("return `You are the CPL Chatbox"));
+// Re-pointed from the prompt template to the RULE REGISTRY. These three used to
+// appear literally in the template; they now ship via RULE_DEFAULTS, so presence
+// means "registered as an always-on rule". Membership still carries the meaning,
+// order still does not — and appliesWhen:"always" is the stronger statement,
+// since it says they ship on EVERY turn rather than merely appearing once in a
+// string. tests/sierra_rules_overlay.test.js proves the assembled prompt is
+// byte-identical to the old chain.
+const REGISTRY = SRC.slice(SRC.indexOf("const RULE_DEFAULTS"));
 check("PORTAL_RULE is still injected into the system prompt",
-  /\$\{PORTAL_RULE\}/.test(PROMPT_TEMPLATE));
+  /body: PORTAL_RULE, appliesWhen: "always"/.test(REGISTRY));
 check("LANDING_PAGE_RULE is still injected into the system prompt",
-  /\$\{LANDING_PAGE_RULE\}/.test(PROMPT_TEMPLATE));
+  /body: LANDING_PAGE_RULE, appliesWhen: "always"/.test(REGISTRY));
 check("OFFERINGS_RULE is still injected into the system prompt",
-  /\$\{OFFERINGS_RULE\}/.test(PROMPT_TEMPLATE));
+  /body: OFFERINGS_RULE, appliesWhen: "always"/.test(REGISTRY));
 
 // ── report ──
 let pass = 0;

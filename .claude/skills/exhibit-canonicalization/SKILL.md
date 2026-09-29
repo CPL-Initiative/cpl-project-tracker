@@ -471,7 +471,7 @@ against the ASE automotive cluster; recorded in `merge_doctrine_notes`.
 3. **Narrower competency does not fold into a broader one.** `Automotive Brake
    Inspection` ⊄ `ASE A5 — Brakes` (inspection ≠ full brake service).
 4. **Before treating a cluster as a typo/mis-issue, READ the curator's own
-   curation first (Rule 9).** The `Automative *` cluster (Long Beach AUTO
+   curation first (CLAUDE.md Rule 10).** The `Automative *` cluster (Long Beach AUTO
    611–619, carrying the college's OWN "Automative" catalog misspelling)
    *looked* like local Cx to re-issue to CCC — but the fresh read showed the
    **curator had deliberately set `issuing_agency = ASE`** and the CPL Type was
@@ -485,7 +485,7 @@ against the ASE automotive cluster; recorded in `merge_doctrine_notes`.
    a curator's issuer/type on a "hygiene" assumption — their rows win.
 
 Applied through the PR-5b confirm-merge machinery (`unified_title_override` +
-`unified_title_merge_confirm` under a cohort reviewer, Rule 9 pre-flight).
+`unified_title_merge_confirm` under a cohort reviewer, CLAUDE.md Rule 10 pre-flight).
 
 ### Rule 9 — Never refuse, always classify
 

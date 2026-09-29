@@ -1,9 +1,8 @@
 ---
 title: "Issuing-agency authority sources for CER exhibit canonicalization"
-date: 2026-07-07
+created: 2026-07-07
 kb-status: published
-type: reference
-tags: [cer, exhibit-canonicalization, issuing-agency, authority-sources, apprenticeship, nccer, dir-das]
+tags: [reference, cer, exhibit-canonicalization, issuing-agency, authority-sources, apprenticeship, nccer, dir-das]
 artifacts:
   - kb/_preseed_unclassified.py
   - kb/unclassified_preseed.json

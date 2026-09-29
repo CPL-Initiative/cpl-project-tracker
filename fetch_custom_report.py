@@ -17,7 +17,7 @@ from datetime import datetime
 
 API_URL = "https://mapwebapinew.azurewebsites.net/api/CustomReport/getReport"
 
-# ── The 8 datasets we fetch, with their full column lists ────────────
+# ── The datasets we fetch, with their full column lists ─────────────
 # Was 9 in the MAP Custom Reporting Module; this list has drifted from that
 # count twice and the comment said "9" until 2026-08-08. Today: the two contact
 # views are deliberately dropped (PII minimisation, Session 34) and
@@ -91,7 +91,165 @@ REQUEST_PAYLOAD = [
                        "Last Updated", "MAP Internal StudentID",
                        "Military Credits", "NonMilitary Credits",
                        "Potential Student", "Test Student",
-                       "Transcribed Credits", "Uploaded Date"]
+                       "Transcribed Credits", "Uploaded Date",
+                       # ⬇ RESTORED 2026-09-10 — see the note below. ONE of the
+                       # six, deliberately: Sam ruled "only counselor verified
+                       # that we need now, not student -- so just 1."
+                       "Counselor_Verified"]
+        # ── ⚠️ ONE OF THE SIX LIFECYCLE BOOLEANS IS REQUESTED; FIVE ARE NOT ──
+        # RESTORED 2026-09-10 after Pedro put all six back and the probe proved
+        # it (run 34493245398): every one at 100% fill and constant within a
+        # student — Counselor_Verified 3,439 TRUE, Analysis_Completed 4,318,
+        # Ed_Plan_Created 4,435, Student_Verified 3,333, Transcribed 17,406,
+        # CPL_Docs_Verified 28,223.
+        #
+        # ⚠️ THE OTHER FIVE STAY OUT ON PURPOSE. Sam, 2026-09-10: "it's actually
+        # only counselor verified that we need now, not student -- so just 1."
+        # Nothing reads them, and this response is already ~14 MB. Adding a
+        # column nothing consumes buys nothing and costs payload on every run.
+        #
+        # ⚠️ THE HISTORY BELOW IS WHY THIS LINE IS DANGEROUS TO EDIT CASUALLY.
+        # Pedro first added the six 2026-09-02; by 2026-09-08 MAP had removed
+        # them, and asking for a column the view does not have 400s the WHOLE
+        # view — which took the cron dark for three days:
+        #
+        #   View_StudentAggregatedValues_APIDataset contains invalid columns:
+        #   CPL_Docs_Verified, Ed_Plan_Created, Analysis_Completed,
+        #   Counselor_Verified, Student_Verified, Transcribed
+        #
+        # ⚠️ AND A 400 ON ONE VIEW CORRUPTS THE LABELS OF ANOTHER. One invalid
+        # view in the batch and MAP labels a neighbour's data with the invalid
+        # name: View_ProgramsofStudy_APIDataset vanished from the response and
+        # this view came back TWICE. Nine consecutive nightly runs then died in
+        # excel_to_dashboard.py's `_compute_college_last_activity` on an
+        # IndexError, three steps from the cause. That is the exact failure
+        # summarize_response() was written for in the 2026-08-24 outage.
+        #
+        # CONFIRMED GONE, NOT RENAMED AND NOT MOVED (probe run 34478781366,
+        # 2026-09-10): the live view enumerates 19 columns, "NEW vs our
+        # request+held: none", and ten candidate new view names
+        # (View_StudentCPLPlan, View_StudentLifecycle, View_StudentPlanChecks …)
+        # all answer "is not Valid".
+        #
+        # ⚠️ WHAT THIS COSTS, NAMED SO NOBODY HAS TO REDISCOVER IT: the funding
+        # model's `pac` / `pac_u` — applied CPL units on a counselor-accepted
+        # Student CPL Plan, the Success band's measure — read `Counselor_Verified`
+        # through ACCEPT_CANDIDATES in funding/_build_funding_performance.py.
+        # With the column absent those keys are OMITTED, not zeroed, which is the
+        # designed degradation: srcDelivered() in cpl_funding.js reads an absent
+        # key as "no feed yet" and pays $0 rather than measuring a false zero.
+        #
+        # ⭐ IF MAP DROPS IT AGAIN the whole view 400s and the cron dies three
+        # steps away, so REMOVE the name from the line above rather than letting
+        # a run fail. kb/_probe_lifecycle_checks.py WATCHES all six every
+        # discover-map-datasets run and says when they move.
+        # ⚠️ The funding model needed no change: ACCEPT_CANDIDATES in
+        # funding/_build_funding_performance.py already carried this exact
+        # spelling, and the probe confirmed the sweep matches it.
+    },
+    {
+        # ── College Exhibit CRs, BY CATALOG YEAR (NEW 2026-08-19) ─────────
+        # This IS Dataset A of docs/map_dataset_sql_for_malone.md, which we sent
+        # the MAP platform team on 2026-08-09 — same 13 columns, same order. The
+        # three new reports are that spec implemented, not new data to discover.
+        # Serve-checked on the runner 2026-08-19: HTTP 200, dataCount 211,005,
+        # matching the builder exactly. We hold 204,714 in map_college_cr_unit,
+        # so this is +3.07% — consistent with our extract being stale while MAP
+        # reloaded corrected Exhibit references (cpl_memory:
+        # two-student-counts-disagree-indicator-suspected). Confirm before
+        # treating a delta as a defect.
+        #
+        # ⚠️ Take THIS one, not View_CollegeExhibitCR_APIDataset (below, 11
+        # columns), which is the same funnel with Catalog Year and Course Type
+        # collapsed. Measured on our copy: dropping course_type costs 4 rows of
+        # 204,714; dropping catalog_year costs 32,990 (16.1%). Catalog year IS
+        # the grain. The 11-column report is kept out of the payload on purpose —
+        # it is derivable from this one, and fetching both would move ~175k rows
+        # to learn nothing.
+        "viewName": "View_CollegeExhibitCRByCatalogYear_APIDataset",
+        "columnName": ["CollegeID", "Source Code", "ExhibitID",
+                       "Credit Recommendation", "College Course", "CPLStatusPlan",
+                       "Catalog Year", "Course Type", "Student Count",
+                       "Potential Credits", "Articulated Credits",
+                       "Applied Credits", "Transcribed Credits"],
+    },
+    {
+        # ── Student Details and Credits (NEW 2026-08-19) ──────────────────
+        # The student × credit-recommendation grain, carrying CPLStatusPlan —
+        # the disposition, i.e. what a college actually DID, which none of the
+        # previously-fetched views held (cpl_memory:
+        # cplstatusplan-absent-from-fetched-map-views). Serve-checked on the
+        # runner 2026-08-19: HTTP 200, dataCount 591,820 against our 537,908
+        # in map_student_credit (+10.02%, our staleness resolving).
+        #
+        # StudentMAPID is INCLUDED, and that is the design rather than a
+        # relaxation: docs/map_dataset_spec_for_malone.md asked for a one-way
+        # hashed key precisely so distinct students could be COUNTED without
+        # anyone holding an identifier.
+        #
+        # ✅ SALTED — Pedro Campos (CEO, ITPI), relayed by Sam 2026-08-19:
+        # the MAP student ids are salt-hashed. That is the authoritative answer
+        # and it settles the privacy question this column raised; the source is
+        # named here rather than laundered into a bare assertion, because a
+        # curator's knowledge is a first-class input (CLAUDE.md, Rule 8).
+        #
+        # It was independently corroborated before the confirmation arrived,
+        # which is why the column shipped at all. The spec's own warning —
+        # "the ID space is small enough to enumerate" — is cheap to test:
+        # StudentMAPID is a small integer over 42,346 distinct students, and
+        # SHA-256 across 5,000,000 plain decimals plus eight formatting
+        # variants does not reproduce a sampled hash. Not a bare hash of the id.
+        # Two independent signals now agree, so this is settled, not assumed.
+        #
+        # ⚠️ ONE PROPERTY REMAINS UNVERIFIED, and it is not a privacy one.
+        # "Salted" does not by itself mean "salted with the SAME salt every
+        # run", which is what the spec actually asked for ("use the same salt
+        # each run so counts stay comparable over time"). A rotating salt would
+        # leak nothing — it would silently make distinct-student counts
+        # incomparable across refreshes, so a headcount would wander with no
+        # error anywhere.
+        #
+        # ✅ ANSWERED — Pedro Campos (ITPI) via Sam, 2026-08-19: THE SALT DOES
+        # NOT ROTATE; it stays the same every run. So the key IS stable across
+        # pulls, and a loader may rely on that rather than infer it: distinct
+        # students dedupe correctly across refreshes, and student counts are
+        # comparable over time. That is the property the spec asked for.
+        #
+        # STILL BUILD THE DETECTOR — but as a REGRESSION CHECK now, not an open
+        # question. An assurance describes today's behaviour; it does not
+        # prevent a change six months from now, and this failure is silent by
+        # construction, so nothing would surface it. cpl_memory carries the
+        # precedent as statewide-is-138-not-84: a settled ruling does not
+        # enforce itself — the consumer has to change. Whatever loads this view
+        # should compare the incoming key set against the previous pull; a
+        # stable salt gives a large overlap, a rotated one essentially zero.
+        # That check belongs at load time, not here — this file only fetches.
+        #
+        # `Notes` is deliberately NOT requested: free text at student grain,
+        # written by staff, read by nothing downstream. The cheapest PII
+        # surface to decline is the one nobody asked for.
+        #
+        # ⚠️ THREE status-shaped fields ship in this view and they are NOT
+        # interchangeable. `Status` is the workflow stage; `CPLStatusPlan` is
+        # what the college decided (this is the one that matters, and the
+        # reason the view was wanted); `CPLPlanStatus` is not a status at all
+        # but a pipe-delimited checklist — "CPL Docs |Ed Plan |Analysis
+        # |Counselor |". Picking by name gets this wrong plausibly.
+        #
+        # ⚠️ The raw pull is gitignored (CustomReport_*.json) and must stay so:
+        # this repo is PUBLIC and these are student-grain rows. Only aggregated,
+        # suppressed artifacts may be committed.
+        "viewName": "View_StudentDetailsCredits_APIDataset",
+        "columnName": ["CollegeID", "Location", "StudentMAPID", "CPL Mode",
+                       "CPL Program", "Program", "ProgramGoal",
+                       "Transfer Destination", "Catalog Year", "Course Type",
+                       "Status", "Credit Recommendation", "College Course",
+                       "ExhibitID", "Source Code", "PotentialCredits",
+                       "CreditsInReview", "AppliedCredits", "MilitaryCredits",
+                       "NonMilitaryCredits", "ApprenticeshipCredits",
+                       "ArticulatedCredits", "CourseCredits", "AreaCredits",
+                       "ElectiveCredits", "DefaultAreaCredits",
+                       "TranscribedCredits", "CPLStatusPlan", "CPLPlanStatus"],
     },
     {
         # Exhibit CRs Catalog (NEW 2026-06-09) — per (ExhibitID, SkillLevel,
@@ -108,10 +266,39 @@ REQUEST_PAYLOAD = [
         # string id, so the rollup joins on exhibit Title (export_credential_reference
         # → _rollup_exhibit_cr_catalog). SkillLevel + ExhibitID are the precise
         # de-dupe key; the rest are the credit funnel.
+        # Required-evidence + identity columns added 2026-08-14 (Sam). The full
+        # 27-field census is in the "Discover MAP datasets (manual)" run log
+        # (kb/_probe_exhibit_evidence_fields.py); the measured basis for each:
+        #   EvidenceDescription   2.5% fill, 146 distinct, max 349 chars, NOT
+        #                         truncated — "Exam Scores", "Certificate",
+        #                         "Portfolio Review", "Performance, Demonstration,
+        #                         Audition". WHAT a student must produce.
+        #   EvidenceTypeID        same 2.5% fill, 11-value controlled vocabulary.
+        #   SubmissionGuidelines  2.1% fill, 1,187 distinct, max 1,230 chars — the
+        #                         actionable half ("must submit MJC CPL Petition
+        #                         Form"). ⚠️ 43 values sit at exactly 100 chars, so
+        #                         SOME source caps at 100; it is not a global cap.
+        #   AceID                 the ACE exhibit id (MOS-44B-002, AR-1703-0030) —
+        #                         the identity anchor the military CR Reference
+        #                         lacks (docs/military_cr_reference_scope.md §5).
+        #   CPLTypeCode           6-value vocabulary, 100% fill; M = 262,970 of
+        #                         271,783. The military/non-military discriminator
+        #                         at the catalog grain, for the bucketing doctrine.
+        # ⚠️ The evidence columns are ~97.5% empty, and empty by DESIGN on military
+        # rows (every welding/MOS row sampled had all three blank, ActiveEvidence
+        # =false). That is not a defect — colleges define evidence for the
+        # non-military exhibits. Do not "fix" the nulls.
+        # NOT added, deliberately: LearningModeID / ModeofLearningCode /
+        # CPLModeofLearningDescription are three encodings of ONE field, as are
+        # CPLTypeID / CPLTypeCode / CPLTypeDescription — take one each. CriteriaID
+        # is 270,765 distinct over 271,783 rows: a row surrogate, not data.
+        # _rollup_exhibit_cr_catalog indexes columns BY NAME, so additions are safe.
         "columnName": ["ExhibitID", "SkillLevel", "CreditRecommendation", "Title",
                        "TotalEligibleCreditsForCR", "TotalTranscribedCreditsForCR",
                        "TotalAppliedCreditsForCR", "TotalCreditsInReviewForCR",
-                       "TotalStudentsForCR"]
+                       "TotalStudentsForCR",
+                       "EvidenceDescription", "EvidenceTypeID",
+                       "SubmissionGuidelines", "AceID", "CPLTypeCode"]
     },
 ]
 
@@ -143,7 +330,112 @@ def _build_headers():
     return headers
 
 
-def fetch_report(output_path=None, timeout=120):
+# MAP's per-dataset status codes, as OBSERVED — not as assumed.
+#
+#   absent   healthy (most datasets, most days)
+#   "000"    healthy. MAP's OK sentinel. Observed 2026-08-27 on a 338.7 MB pull
+#            where all ten datasets carried it AND full row counts
+#            (StudentDetailsCredits 596,656; CollegeExhibitCRByCatalogYear
+#            204,896). It is not an HTTP status at all.
+#   "400"    a real failure, and it carries a message. Observed 2026-08-26:
+#            "View_StudentDetailsCredits_APIDataset is not Valid", columnValue
+#            null, rows 0.
+#
+# WHY THIS IS A SEPARATE FUNCTION WITH THIS COMMENT. The first cut of this guard
+# said `not code.startswith("2")`, which made "000" a failure — so on 2026-08-27,
+# the first pull after MAP fixed the broken view, --strict refused a COMPLETELY
+# HEALTHY payload and saved nothing. The bug was not the logic; it was that the
+# test fixture was built from what I imagined a healthy response looks like
+# (absent, or "200") rather than from a real one. That is the Session 172 lesson
+# quoted in this file's own history — "a fixture invented alongside the code it
+# tests cannot falsify that code's premise" — repeated by me one release later.
+# Every value listed above now comes from a captured payload.
+OK_CODES = frozenset({"", "000"})
+
+
+def code_is_ok(code: str) -> bool:
+    """True when MAP's per-dataset responseCode does NOT indicate a problem."""
+    c = (code or "").strip()
+    return c in OK_CODES or c.startswith("2")
+
+
+def summarize_response(data, requested=None):
+    """Read MAP's per-dataset verdict on a CustomReport response.
+
+    Pure: takes the parsed payload, returns {lines, problems, usable}. Kept
+    separate from fetch_report so it can be tested without a network call — the
+    outage this exists for reproduces as a fixture, not as a live request.
+
+    WHY THIS EXISTS. MAP reports the outcome of each requested dataset in
+    `responseCode` / `responseMessage`, and nothing read them. On 2026-08-24 the
+    student-detail view began answering
+
+        responseCode 400 — "View_StudentDetailsCredits_APIDataset is not Valid"
+
+    and three consecutive nightly runs reported a downstream name mismatch
+    instead, because the field carrying the answer was never printed. MAP's own
+    words beat our inference.
+
+    THREE THINGS ARE CHECKED, each earned by that outage:
+
+    * `responseCode` — an ABSENT code is normal on a healthy dataset, so only a
+      PRESENT non-2xx one fails. Treating absence as an error fails every good
+      pull.
+    * `dataCount` is MAP's CLAIM, not a measurement. An errored dataset carries
+      `columnValue: null` and can still carry a count, so the claim alone cannot
+      tell a full dataset from an empty one. Rows are counted and any
+      disagreement is shown.
+    * a REPEATED viewName means the response cannot be keyed by name. One invalid
+      view in the batch and MAP labelled a neighbour's data with the invalid
+      name, so a requested view vanished while another appeared twice. Every
+      consumer looks datasets up by viewName, so a duplicate is fatal here rather
+      than mysterious three steps downstream.
+
+    Rows live under `columnValue` — the key kb/_sync_map_custom_reports.py
+    centralises in rows_of(). A `data`-keyed payload must read as EMPTY rather
+    than be quietly accepted: tolerating both spellings is what hides a
+    wrong-key bug.
+    """
+    if requested is None:
+        requested = [d["viewName"] for d in REQUEST_PAYLOAD]
+
+    lines, failed, seen = [], [], {}
+    for ds in data:
+        view = ds.get("viewName") or "?"
+        claimed = ds.get("dataCount")
+        parsed = len(ds.get("columnValue") or [])
+        code = str(ds.get("responseCode") or "").strip()
+        message = str(ds.get("responseMessage") or "").strip()
+
+        line = f"    {view}: {parsed:,} rows"
+        if not isinstance(claimed, int) or claimed != parsed:
+            shown = f"{claimed:,}" if isinstance(claimed, int) else claimed
+            line += f"  [MAP claims {shown}]"
+        if not code_is_ok(code):
+            line += f"  <-- HTTP {code}: {message or 'no message'}"
+            failed.append((view, code, message))
+        lines.append(line)
+        seen[view] = seen.get(view, 0) + 1
+
+    problems, duplicated = [], sorted(v for v, n in seen.items() if n > 1)
+    for view, code, message in failed:
+        problems.append(f"{view}: MAP returned {code} — {message or 'no message'}")
+    for view in duplicated:
+        problems.append(f"{view}: returned {seen[view]}x — viewName cannot identify a dataset")
+    for view in requested:
+        if view not in seen:
+            problems.append(f"{view}: requested but not present in the response")
+
+    # `duplicated` is reported SEPARATELY because it is a different kind of
+    # problem from the rest. A 400 on one view leaves the others readable; a
+    # repeated viewName means the payload cannot be keyed by name AT ALL, and
+    # every consumer keys it that way. Callers act on this without matching
+    # strings in `problems`.
+    return {"lines": lines, "problems": problems, "duplicated": duplicated,
+            "usable": not problems}
+
+
+def fetch_report(output_path=None, timeout=120, strict=False):
     """Fetch the full CustomReport from the MAP API and save to disk."""
     if output_path is None:
         today = datetime.now().strftime("%Y-%m-%d")
@@ -180,10 +472,42 @@ def fetch_report(output_path=None, timeout=120):
         return None
 
     print(f"  Received {len(data)} datasets ({len(raw):,} bytes)")
-    for ds in data:
-        vn = ds.get("viewName", "?")
-        dc = ds.get("dataCount", "?")
-        print(f"    {vn}: {dc:,} rows" if isinstance(dc, int) else f"    {vn}: {dc} rows")
+    report = summarize_response(data)
+    for line in report["lines"]:
+        print(line)
+    if report["problems"]:
+        # PRINTING IS UNCONDITIONAL, FAILING IS NOT — and the split is load-bearing.
+        # .github/workflows/daily-dashboard.yml runs this same fetcher and falls
+        # back on a non-zero exit, so failing the whole pull over a 400 on a view
+        # the dashboard never reads would cost a day's dashboard for nothing. The
+        # Supabase load stops on any problem and passes --strict.
+        #
+        # ⚠️ EXCEPT A REPEATED viewName, WHICH IS FATAL EITHER WAY (2026-09-10).
+        # The split above used to rest on "it consumes none of the views involved
+        # in the 2026-08-24 outage" — a claim about WHICH view MAP mislabels,
+        # which is not ours to control. On 2026-09-08 it landed on
+        # View_StudentAggregatedValues_APIDataset, which the dashboard does read;
+        # the payload was saved with the diagnosis already printed, and nine
+        # consecutive nightly runs died three steps downstream on an IndexError.
+        # A duplicate does not mean one view is unreadable — it means the payload
+        # cannot be keyed by name at all, which is the one thing every consumer
+        # does with it. Saving it is handing on a file we have already proved we
+        # cannot read. The dashboard survives the absence: read_exhibit_metrics()
+        # returns None for a missing file and main() prints "No exhibit data
+        # found — skipping exhibit KPIs".
+        fatal = strict or report["duplicated"]
+        label = "ERROR" if fatal else "WARNING"
+        print(f"  {label}: MAP did not return every requested dataset cleanly.")
+        for line in report["problems"]:
+            print(f"    {line}")
+        print("    Check whether the view was renamed, retired or redefined on the")
+        print("    MAP side before changing anything here.")
+        if fatal:
+            why = ("--strict" if strict
+                   else "a repeated viewName makes the response unkeyable")
+            print(f"    {why}: nothing has been saved.")
+            return None
+        print("    Continuing: the datasets that DID arrive are saved (--strict to stop).")
 
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(data, f)
@@ -195,7 +519,7 @@ def fetch_report(output_path=None, timeout=120):
 if __name__ == "__main__":
     output = None
     for arg in sys.argv[1:]:
-        if arg == "--output" or arg == "-o":
+        if arg == "--output" or arg == "-o" or arg.startswith("--"):
             continue
         output = arg
     if "--output" in sys.argv or "-o" in sys.argv:
@@ -203,7 +527,7 @@ if __name__ == "__main__":
         if idx + 1 < len(sys.argv):
             output = sys.argv[idx + 1]
 
-    result = fetch_report(output)
+    result = fetch_report(output, strict="--strict" in sys.argv)
     if result is None:
         print("FAILED — see errors above")
         sys.exit(1)

@@ -474,15 +474,15 @@
       ".car-btn{font-size:.82rem;font-weight:600;color:var(--navy-secondary,#1c3d5a);background:var(--surface-2,#eef3f9);border:1px solid var(--border,#d4dde7);border-radius:6px;padding:.4rem .7rem;cursor:pointer;}" +
       ".car-btn:hover{background:var(--gold-soft,#fbf3d9);border-color:var(--gold-accent,#B8860B);}" +
       ".car-btn:disabled{opacity:.5;cursor:not-allowed;}" +
-      ".car-btn-go{background:var(--navy-primary,#0A2240);color:#fff;border-color:var(--navy-primary,#0A2240);}" +
+      ".car-btn-go{background:var(--navy-primary,#0A2240);color:var(--on-accent);border-color:var(--navy-primary,#0A2240);}" +
       ".car-btn-go:hover{background:var(--navy-secondary,#1c3d5a);}" +
       ".car-status{font-size:.8rem;color:var(--text-faint,#777);margin-left:.3rem;}" +
-      ".car-sub{color:var(--text-faint,#777);font-size:.8rem;margin-bottom:.7rem;}" +
+      ".car-sub{color:var(--text-muted,#777);font-size:.8rem;margin-bottom:.7rem;}" +
       ".car-cols{display:flex;gap:1rem;align-items:stretch;}" +
       ".car-col-edit,.car-col-prev{flex:1 1 0;min-width:0;display:flex;flex-direction:column;}" +
-      ".car-col-h{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:var(--text-faint,#888);margin-bottom:.3rem;}" +
-      ".car-edit{width:100%;box-sizing:border-box;min-height:62vh;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.8rem;line-height:1.5;border:1px solid var(--border,#d4dde7);border-radius:8px;padding:.8rem;resize:vertical;color:var(--text-strong,#222);background:#fff;}" +
-      ".car-preview{min-height:62vh;border:1px solid var(--border,#e3e9f0);border-radius:8px;padding:.8rem 1.1rem;overflow:auto;background:#fff;}" +
+      ".car-col-h{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:var(--text-muted,#888);margin-bottom:.3rem;}" +
+      ".car-edit{width:100%;box-sizing:border-box;min-height:62vh;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.8rem;line-height:1.5;border:1px solid var(--border,#d4dde7);border-radius:8px;padding:.8rem;resize:vertical;color:var(--text-strong,#222);background:var(--surface-opaque);}" +
+      ".car-preview{min-height:62vh;border:1px solid var(--border,#e3e9f0);border-radius:8px;padding:.8rem 1.1rem;overflow:auto;background:var(--surface-opaque);}" +
       ".car-preview h1{color:var(--navy-primary,#0A2240);font-size:1.5rem;margin:.2rem 0 .6rem;}" +
       ".car-preview h2{color:var(--navy-primary,#0A2240);font-size:1.12rem;border-bottom:2px solid var(--gold-accent,#B8860B);padding-bottom:3px;margin:1.1rem 0 .5rem;}" +
       ".car-preview h3{color:var(--navy-secondary,#163A5F);font-size:.98rem;margin:.8rem 0 .3rem;}" +

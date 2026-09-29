@@ -104,6 +104,23 @@ jobs:
           touch _site/.nojekyll
           echo "Assembled _site: $(du -sh _site | cut -f1) ($(find _site -type f | wc -l) files)"
 
+      # Cache-bust the published assets. Sam, 2026-08-22: "I fear users may be
+      # looking at stale screens." index.html shipped 38 <script> tags with no
+      # version query, and COBI lazy-loads 34 more tab modules by name — so a
+      # browser could hold a stale college_briefing.js indefinitely.
+      #
+      # ⚠️ IT RUNS HERE, NOT IN excel_to_dashboard.py. Stamping during the daily
+      # data run would hash the files as they were THAT MORNING, so a JS change
+      # merged at noon would publish under the morning's stamp — a version query
+      # that looks precise and is wrong. This step hashes the exact bytes being
+      # uploaded, on every deploy path (push, the cron's workflow_run, dispatch).
+      #
+      # It exits non-zero if it stamps NOTHING, so a refactor that changes how
+      # assets are referenced fails the deploy instead of silently shipping
+      # unversioned pages — same posture as the served-path assertion below.
+      - name: Stamp asset versions (cache-busting)
+        run: python3 scripts/stamp_asset_versions.py _site
+
       - name: Assert every browser-served path is present
         run: |
           set -euo pipefail
@@ -140,6 +157,13 @@ jobs:
             "_site/kb/row_audit/latest.json"
             "_site/kb/reference/cid_descriptors.json"
             "_site/kb/reference/ccn_courses.json"
+            # SkyView reads both of these live from prototype/skyview.html, by a
+            # RELATIVE ../kb/ href. Neither is fatal to the page — the code fails
+            # soft — which is exactly why they belong here: a prune that dropped
+            # one would leave the subject table quietly answering from a vote
+            # again, and the Common SUBJ column blank, with nothing in the log.
+            "_site/kb/discipline_canonical_subj4.json"
+            "_site/kb/reference/subject_discipline_map.json"
             "_site/credential_reference_data.js"
             "_site/kb/exhibit_audit/latest.json"
             "_site/kb/unified_titles.json"
@@ -148,7 +172,31 @@ jobs:
             "_site/kb/unclassified_preseed.json"
             "_site/kb/unclassified_suggestions.json"
             "_site/kb/issuer_preseed.json"
+            # The Common CR Reference worklist. The tab is USELESS without it —
+            # a prune that drops it renders an empty queue rather than an error,
+            # which reads as "nothing left to curate".
+            "_site/kb/cr_reference_worklist.json"
+            "_site/cr_reference.js"
+            # Sierra's built-in rules, GENERATED from cpl-chat/index.ts. Same
+            # reason as the worklist above: without it the built-in rules pane
+            # renders "could not load" instead of the ten rules governing Sierra.
+            "_site/sierra_rule_defaults.js"
+            # The Admin tab's surface map. Without it every menu item renders
+            # "not mapped" — honest, but the tab has nothing left to say.
+            "_site/cobi_admin_surface.js"
+            "_site/admin.js"
+            # The menu overlay. Absent, every visitor silently loses the
+            # curator arrangement and gets the shipped menu instead.
+            "_site/nav_overlay.js"
             "_site/prototype/cer_triage_redesign_v1.html"
+            # The LIVE funding explainer (2026-08-23). It replaced a published
+            # snapshot precisely so the figures could never go stale, and the
+            # tab links to it by a RELATIVE href — so a prune that drops it
+            # produces a dead link from inside the dashboard, and one handed to
+            # the Chancellor's Office. It computes from cpl_funding.js and the
+            # shared payload builder, so all three must survive together.
+            "_site/funding-model/index.html"
+            "_site/funding_model_payload.js"
           )
           missing=0
           for p in "${must[@]}"; do

@@ -67,6 +67,42 @@ check("C-ID backfills onto the deduped AJ rec", aj and aj["cid"] == "AJ 110")
 check("EMT (no authoritative recs) is flagged no_ccc", "EMT Certification" in no_ccc)
 check("Local exhibit never appears", "Local Thing" not in out and "Local Thing" not in no_ccc)
 
+# Units never split an identity (Sam, 2026-09-27): one recommendation the
+# statewide rows publish at two figures shows the range it joins. Before
+# 2026-09-29 the first figure seen won, and the Fact Sheet and Sierra both
+# told a reader "6 units" for an EMT line published at 6 and 7.
+check("unit_span: differing figures print low–high", m.unit_span(["7", "6"]) == "6\u20137")
+check("unit_span: one figure prints as first published", m.unit_span(["3", "3.0"]) == "3")
+check("unit_span: a bare decimal gains its zero", m.unit_span([".5", "1"]) == "0.5\u20131")
+check("unit_span: none published prints nothing", m.unit_span([]) == "")
+span_sw = {"exhibits": [{
+    "unified_title": "EMT Certification", "collaborative_type": "CCC Collaborative",
+    "authoritative_recs": [
+        {"credit": "6 hours in Emergency Medical Technician National Registry", "cid": ""},
+        {"credit": "7 hours in Emergency Medical Technician National Registry", "cid": ""},
+        {"credit": "Emergency Medical Technician National Registry", "cid": ""},  # no units: no effect
+    ],
+}]}
+emt = m.build(span_sw)[0].get("EMT Certification", [])
+check("a line published at 6 and 7 is one line reading 6–7", len(emt) == 1 and emt[0]["u"] == "6\u20137")
+
+def _load(name, rel):
+    sp = importlib.util.spec_from_file_location(name, os.path.join(os.path.dirname(HERE), rel))
+    mod = importlib.util.module_from_spec(sp)
+    sp.loader.exec_module(mod)
+    return mod
+
+# Sierra's statewide lines are built from this builder, so the span reaches her too.
+cr = _load("credrecs", os.path.join("kb", "_build_credential_recs.py"))
+sierra = cr.statewide_sets(span_sw).get("EMT Certification", [])
+check("Sierra's statewide line speaks the span",
+      len(sierra) == 1 and sierra[0]["credit"] == "6\u20137 hours in Emergency Medical Technician National Registry"
+      and sierra[0]["units"] == "6\u20137")
+# The domain crosswalk reads `u` as a number; a span must read low and high, never unknown.
+dc = _load("domaincw", os.path.join("kb", "_build_domain_cpl_crosswalk.py"))
+pl = dc.parse_line({"t": "All Risk Command Operations for Company Officers", "u": "2\u20133"})
+check("the domain crosswalk reads a span as low and high", (pl["lo"], pl["hi"], pl["src"]) == (2.0, 3.0, "u-range"))
+
 failed = 0
 for n, ok in results:
     print(("PASS " if ok else "FAIL ") + n)

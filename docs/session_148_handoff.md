@@ -8,6 +8,8 @@ related:
   - "[[docs/sierra_training_tab_scope]]"
   - "[[docs/kb-notes/methodology-a-summary-field-is-not-the-record]]"
   - "[[docs/session_147_handoff]]"
+superseded: true
+superseded_by: session_154_handoff.md
 ---
 
 # You are Session 148

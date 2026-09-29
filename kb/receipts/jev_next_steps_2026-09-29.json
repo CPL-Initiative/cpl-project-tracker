@@ -1,0 +1,410 @@
+{
+ "cer": {
+  "file": "kb/trail_crew_out/2026-09-29/findings.json",
+  "findings": 116,
+  "by_rule": {
+   "style_nits": 60,
+   "roman_level": 18,
+   "issuer_variant_cluster": 15,
+   "level_notation_twins": 12,
+   "issuer_family_mixed": 7,
+   "bare_vs_leveled": 4
+  },
+  "jev_askable": 38,
+  "jev_by_rule": {
+   "issuer_variant_cluster": 15,
+   "level_notation_twins": 12,
+   "issuer_family_mixed": 7,
+   "bare_vs_leveled": 4
+  }
+ },
+ "csr": {
+  "file": "kb/csr_out/2026-09-29/findings.json",
+  "findings": 63,
+  "by_rule": {
+   "cs7_unreviewed": 25,
+   "cs4_aligned": 19,
+   "cs6_weak_mnemonic": 13,
+   "cs4_missed_alignment": 2,
+   "cs5_modal_diverge": 2,
+   "cs2_dup": 1,
+   "cs9_anchor_dead_format": 1
+  },
+  "jev_askable": 15,
+  "jev_by_rule": {
+   "cs6_weak_mnemonic": 13,
+   "cs4_missed_alignment": 2
+  },
+  "collisions": [
+   {
+    "a": "Agricultural Business and Related Services",
+    "b": "Auto Body Technology",
+    "code": "AUTB",
+    "mids_a": 1,
+    "mids_b": 221
+   }
+  ]
+ },
+ "ccrr": {
+  "groups": 2159,
+  "rung5_groups": 1936,
+  "rows": 9413,
+  "anchored_pairs": 55,
+  "anchored_rows": 1459,
+  "unanchored_clusters": 33,
+  "unanchored_groups": 105,
+  "unanchored_rows": 459,
+  "course_pairs": 600,
+  "course_groups": 465,
+  "course_rung5_groups": 337,
+  "course_rung5_rows": 2737
+ },
+ "ccr": {
+  "scored": 26,
+  "moves": 7,
+  "keeps": 19,
+  "auc": 0.865,
+  "lowest_move_p": 0.16,
+  "highest_keep_p": 0.51,
+  "destinations": 5,
+  "destinations_named": 4,
+  "plurality_matches": 1,
+  "items": [
+   {
+    "item": 1,
+    "title": "Three-Dimensional Design",
+    "home": "Art",
+    "verdict": "keep",
+    "destination": null,
+    "candidates": {
+     "Art": 25
+    },
+    "named": false,
+    "plurality": "Art"
+   },
+   {
+    "item": 2,
+    "title": "Two-Dimensional Design",
+    "home": "Art",
+    "verdict": "keep",
+    "destination": null,
+    "candidates": {
+     "Art": 22
+    },
+    "named": false,
+    "plurality": "Art"
+   },
+   {
+    "item": 3,
+    "title": "Ethics",
+    "home": "Philosophy",
+    "verdict": "keep",
+    "destination": null,
+    "candidates": {
+     "Philosophy": 18
+    },
+    "named": false,
+    "plurality": "Philosophy"
+   },
+   {
+    "item": 4,
+    "title": "Economic History of the United States",
+    "home": "Economics",
+    "verdict": "keep",
+    "destination": null,
+    "candidates": {
+     "Economics": 13,
+     "History": 4
+    },
+    "named": false,
+    "plurality": "Economics"
+   },
+   {
+    "item": 5,
+    "title": "Automotive Heating and Air Conditioning",
+    "home": "Automotive Technology",
+    "verdict": "keep",
+    "destination": null,
+    "candidates": {
+     "Automotive Technology": 10,
+     "Aviation": 1
+    },
+    "named": false,
+    "plurality": "Automotive Technology"
+   },
+   {
+    "item": 6,
+    "title": "Environmental Ethics",
+    "home": "Philosophy",
+    "verdict": "keep",
+    "destination": null,
+    "candidates": {
+     "Philosophy": 12,
+     "Agriculture": 1
+    },
+    "named": false,
+    "plurality": "Philosophy"
+   },
+   {
+    "item": 7,
+    "title": "Introduction to Race and Ethnicity",
+    "home": "Sociology",
+    "verdict": "keep",
+    "destination": null,
+    "candidates": {
+     "Sociology": 10,
+     "Political Science": 1,
+     "Chicano Studies": 1,
+     "Ethnic Studies": 1
+    },
+    "named": false,
+    "plurality": "Sociology"
+   },
+   {
+    "item": 8,
+    "title": "Advanced Digital Photography",
+    "home": "Art",
+    "verdict": "move",
+    "destination": "Photography",
+    "candidates": {
+     "Photography": 7,
+     "Art": 5,
+     "Multimedia": 1
+    },
+    "named": true,
+    "plurality": "Photography"
+   },
+   {
+    "item": 9,
+    "title": "Automatic Transmissions and Transaxles",
+    "home": "Automotive Technology",
+    "verdict": "keep",
+    "destination": null,
+    "candidates": {
+     "Automotive Technology": 11
+    },
+    "named": false,
+    "plurality": "Automotive Technology"
+   },
+   {
+    "item": 10,
+    "title": "Community Relations",
+    "home": "Administration of Justice",
+    "verdict": "keep",
+    "destination": null,
+    "candidates": {
+     "Administration of Justice": 12
+    },
+    "named": false,
+    "plurality": "Administration of Justice"
+   },
+   {
+    "item": 11,
+    "title": "Field Studies",
+    "home": "Ethnic Studies",
+    "verdict": "move",
+    "destination": null,
+    "candidates": {
+     "Biological Sciences": 2,
+     "Geography": 1,
+     "Ethnic Studies": 1,
+     "Music": 1,
+     "Business": 1,
+     "Economics": 1,
+     "English": 1,
+     "History": 1,
+     "Political Science": 1,
+     "Psychology": 1,
+     "Sociology": 1,
+     "Earth Science": 1
+    },
+    "named": false,
+    "plurality": "Biological Sciences"
+   },
+   {
+    "item": 12,
+    "title": "Entrepreneurial Mindset",
+    "home": "Business",
+    "verdict": "keep",
+    "destination": null,
+    "candidates": {
+     "Business": 5
+    },
+    "named": false,
+    "plurality": "Business"
+   },
+   {
+    "item": 13,
+    "title": "Intercollegiate Track and Field - Women",
+    "home": "Kinesiology",
+    "verdict": "move",
+    "destination": null,
+    "candidates": {
+     "Physical Education": 5,
+     "Kinesiology": 1
+    },
+    "named": false,
+    "plurality": "Physical Education"
+   },
+   {
+    "item": 14,
+    "title": "Automatic Transmissions",
+    "home": "Automotive Technology",
+    "verdict": "keep",
+    "destination": null,
+    "candidates": {
+     "Automotive Technology": 6
+    },
+    "named": false,
+    "plurality": "Automotive Technology"
+   },
+   {
+    "item": 15,
+    "title": "SolidWorks (Introduction)",
+    "home": "Manufacturing Technology",
+    "verdict": "keep",
+    "destination": null,
+    "candidates": {
+     "Manufacturing Technology": 10,
+     "Engineering Technology": 1
+    },
+    "named": false,
+    "plurality": "Manufacturing Technology"
+   },
+   {
+    "item": 16,
+    "title": "Personal and Social Adjustment",
+    "home": "Psychology",
+    "verdict": "keep",
+    "destination": null,
+    "candidates": {
+     "Psychology": 11
+    },
+    "named": false,
+    "plurality": "Psychology"
+   },
+   {
+    "item": 17,
+    "title": "Language and Culture",
+    "home": "Anthropology",
+    "verdict": "keep",
+    "destination": null,
+    "candidates": {
+     "Anthropology": 8
+    },
+    "named": false,
+    "plurality": "Anthropology"
+   },
+   {
+    "item": 18,
+    "title": "World Prehistory",
+    "home": "Anthropology",
+    "verdict": "keep",
+    "destination": null,
+    "candidates": {
+     "Anthropology": 10
+    },
+    "named": false,
+    "plurality": "Anthropology"
+   },
+   {
+    "item": 19,
+    "title": "Supply Chain Management",
+    "home": "Business",
+    "verdict": "keep",
+    "destination": null,
+    "candidates": {
+     "Business": 4,
+     "Vocational": 1
+    },
+    "named": false,
+    "plurality": "Business"
+   },
+   {
+    "item": 20,
+    "title": "Word Processing",
+    "home": "Computer Information Systems (inferred from TOP, uncorroborated)",
+    "verdict": "move",
+    "destination": "Office Technologies",
+    "candidates": {
+     "Business": 1,
+     "Computer Information Systems": 1
+    },
+    "named": false,
+    "plurality": "Business"
+   },
+   {
+    "item": 21,
+    "title": "Musical Theatre Performance",
+    "home": "Music",
+    "verdict": "move",
+    "destination": "Theater Arts",
+    "candidates": {
+     "Music": 5,
+     "Theater Arts": 4
+    },
+    "named": true,
+    "plurality": "Music"
+   },
+   {
+    "item": 22,
+    "title": "Musical Theatre Workshop",
+    "home": "Music",
+    "verdict": "move",
+    "destination": "Theater Arts",
+    "candidates": {
+     "Music": 6,
+     "Theater Arts": 2,
+     "Commercial Music": 1
+    },
+    "named": true,
+    "plurality": "Music"
+   },
+   {
+    "item": 23,
+    "title": "Race and Ethnic Relations",
+    "home": "Sociology",
+    "verdict": "move",
+    "destination": "Ethnic Studies",
+    "candidates": {
+     "Sociology": 9,
+     "Ethnic Studies": 1
+    },
+    "named": true,
+    "plurality": "Sociology"
+   },
+   {
+    "item": 24,
+    "title": "Ceramics: Hand Building - Design and Decoration",
+    "home": "Art",
+    "verdict": "keep",
+    "destination": null,
+    "candidates": {},
+    "named": false,
+    "plurality": null
+   },
+   {
+    "item": 25,
+    "title": "Honda/Acura Electrical Tools and Diagnostic Procedures",
+    "home": "Automotive Technology",
+    "verdict": "keep",
+    "destination": null,
+    "candidates": {},
+    "named": false,
+    "plurality": null
+   },
+   {
+    "item": 26,
+    "title": "Heavy-Duty Diesel Tune-Up and Engine Analysis",
+    "home": "Automotive Technology",
+    "verdict": "keep",
+    "destination": null,
+    "candidates": {},
+    "named": false,
+    "plurality": null
+   }
+  ]
+ },
+ "_doc": "The measurements behind the Jev next step for each of the four references.",
+ "_measured": "2026-09-29"
+}

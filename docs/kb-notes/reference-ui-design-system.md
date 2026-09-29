@@ -117,6 +117,39 @@ blind-editing 14k lines of HTML. The in-repo analog is the EACR **versioned
 prototype gallery** (`docs/kb-notes/methodology-versioned-prototype-gallery.md`):
 keep v1, stack v2 beside it, graduate the winner.
 
+## Glyphs: decorative ones are out; state ones stay
+
+**Sam, 2026-08-14:** *"Also want a design rule to not add glyphs to them (as some
+have now and should be removed). I'm not a fan of cheesy glyphs. If we use them
+they should be muted, simple, a bit ghosted based on CO blue and white."*
+
+**The rule: separate DECORATIVE from FUNCTIONAL before removing anything.**
+
+- **Decorative** — a glyph that merely labels a thing whose name already says
+  what it is. `📋 Contracts`, `🎓 CPL Pathways`, `⚖️ Governance`. These go.
+  Applied 2026-08-14: **10 of 36 side-menu items** carried one; all ten were
+  decorative and all ten were stripped, from both HTMLs (Rule 4).
+- **Functional** — a glyph that renders *state*, where removing it would remove
+  information. The masthead lock is the worked example: `🔒` vs `🔓` says whether
+  you are signed in. That is not decoration, and it stays. It also happens to
+  live in JS (`team_phrase.js`, `raci.js`, `budget_editor.js`), not in the nav
+  markup, which is why a nav-scoped strip cannot touch it.
+
+**If a glyph survives that test, it goes in as a `var(--token)` — muted, simple,
+slightly ghosted CO blue on white — never as an inline emoji.** Per the standing
+rule that new CSS uses `var(--token)`, never a raw hex.
+
+⚠️ **A nav label may be pinned by a test.** Six suites asserted the label
+*including* its glyph (`/data-tab="governance"[^>]*>⚖️ Governance</`), so a strip
+that ignores them turns a deliberate design change into six red checks. Grep the
+label, not just the markup, before editing nav text.
+
+⚠️ **In-page headings are a separate surface from the side menu.** `team_phrases.js`
+renders `<h2>🔑 Team Phrases</h2>` inside its own tab; that was left alone here
+because the ask was specifically about side-menu items. Decide it deliberately
+rather than letting a regex reach it.
+
+
 ## When this applies (and when it doesn't)
 
 - **Applies** to all new/edited dashboard CSS. Adding a token is cheap; do it

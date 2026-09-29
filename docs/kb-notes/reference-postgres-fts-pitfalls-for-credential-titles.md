@@ -38,7 +38,7 @@ select to_tsquery('english', 'aed:*');   -- 'a':*
 Snowball reads the trailing `-ed` as a past-tense suffix and strips it. With
 `:*` that becomes a **prefix match on the letter "a"** — it matched most of a
 2,397-row corpus, and OR'd with the other terms it swallowed the entire query.
-This is not exotic: any short token ending in a stemmer-recognised suffix is
+This is not exotic: any short token ending in a stemmer-recognized suffix is
 exposed (`-ed`, `-es`, `-ing`, `-ly`, `-s`).
 
 **Fix:** route short tokens (≤4 chars) and any token whose English parse
@@ -57,7 +57,7 @@ The default parser classifies `Aid/CPR/AED` as a **file** token. A search for
 `HE 100 Standard First Aid/CPR/AED` rows had only ever surfaced by accident —
 via the unrelated word "Certificate" in the same title.
 
-**Fix:** normalise `/ \ | ; : , ( ) [ ]` to spaces **before** tokenising, on both
+**Fix:** normalize `/ \ | ; : , ( ) [ ]` to spaces **before** tokenising, on both
 the indexed side and any document-frequency count. Wrap it in an `IMMUTABLE`
 helper so it can back an index.
 

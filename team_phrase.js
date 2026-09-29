@@ -193,7 +193,7 @@
     wrap.style.cssText = 'display:inline-flex;align-items:center;gap:0.4rem;flex-wrap:wrap;';
     if (opts.blurb) {
       var b = document.createElement('span');
-      b.style.cssText = 'font-size:0.78rem;color:#666;';
+      b.style.cssText = 'font-size:0.78rem;color:var(--text-muted,#5C5C55);';
       b.textContent = opts.blurb;
       wrap.appendChild(b);
     }
@@ -201,13 +201,13 @@
     input.type = 'password';
     input.placeholder = opts.placeholder || 'team phrase…';
     input.autocomplete = 'off';
-    input.style.cssText = 'padding:4px 8px;border:1px solid #ccc;border-radius:4px;font-size:0.8rem;font-family:inherit;max-width:160px;';
+    input.style.cssText = 'padding:4px 8px;border:1px solid var(--border-strong,rgba(28,28,26,.30));border-radius:4px;font-size:0.8rem;font-family:inherit;max-width:160px;background:var(--surface-opaque,#fff);color:var(--text-body,#3A3A36);';
     var btn = document.createElement('button');
     btn.type = 'button';
-    btn.textContent = opts.label || '🔓 Unlock editing';
-    btn.style.cssText = 'padding:4px 10px;border:1px solid #ccc;border-radius:4px;background:#f5f5f5;font-size:0.78rem;font-weight:600;cursor:pointer;font-family:inherit;';
+    btn.textContent = opts.label || 'Unlock editing';
+    btn.style.cssText = 'padding:4px 10px;border:1px solid var(--border-strong,rgba(28,28,26,.30));border-radius:4px;background:var(--surface-muted,#ECE9E2);color:var(--text-body,#3A3A36);font-size:0.78rem;font-weight:600;cursor:pointer;font-family:inherit;';
     var msg = document.createElement('span');
-    msg.style.cssText = 'font-size:0.75rem;color:#c00;';
+    msg.style.cssText = 'font-size:0.75rem;color:var(--crimson,#920000);';
     function go() {
       msg.textContent = '';
       btn.disabled = true;
@@ -233,9 +233,95 @@
     return wrap;
   }
 
+  // ── The locked-state banner ──────────────────────────────────────────────
+  // Sam, 2026-08-14: "What do you recommend to insure that all tabs that
+  // require a Team Phrase have an input on them?"
+  //
+  // MEASURED FIRST. 43 tables gate on a phrase, 26 of them on the READ. Of the
+  // 18 tabs touching one, EIGHT had neither a box nor even a mention of the
+  // header control — and three still carried the pre-SkyFund copy telling
+  // people to "sign in on the Team & RACI tab", which by then also promised a
+  // magic link RACI no longer offered. When the gate is on the READ, the tab
+  // does not look locked, it looks BROKEN: empty, with nothing to act on.
+  //
+  // The answer is NOT a box hand-rolled onto each of 18 tabs — that is 18
+  // implementations to drift, and it re-creates what the header control
+  // already solved. It is ONE banner that says what is locked, why, and
+  // carries a WORKING input inline, so the tab never has to send anyone
+  // anywhere. tests/team_phrase_affordance.test.js fails the build when a tab
+  // that touches a phrase-gated table has neither this nor an equivalent —
+  // mechanically, because a rule that relies on the next tab's author
+  // remembering it will fail on their first day.
+  //
+  // opts: {what?, site?, reviewerOnly?, onUnlocked?}
+  //   what         — what is unavailable, in the tab's own words
+  //                  ("decisions cannot be recorded", "the briefing")
+  //   reviewerOnly — the phrase CANNOT open this surface; point at the
+  //                  personal sign-in instead of offering a box that will not
+  //                  work. Offering an input that cannot succeed is worse than
+  //                  offering none: it reads as a wrong phrase.
+  function lockedBanner(opts) {
+    opts = opts || {};
+    var wrap = document.createElement('div');
+    wrap.className = 'cpl-tp-locked';
+    wrap.setAttribute('data-tp-locked', '');
+    wrap.style.cssText = 'border:1px solid var(--border,#d9c9a3);background:var(--surface-2,#fdf8ec);' +
+      'border-radius:8px;padding:.7rem .85rem;margin:.6rem 0;font-size:.85rem;line-height:1.45;' +
+      'color:var(--text-body,#3A3A36);';
+
+    var head = document.createElement('div');
+    head.style.cssText = 'margin-bottom:.45rem;';
+    var strong = document.createElement('b');
+    strong.textContent = 'You are not signed in. ';
+    head.appendChild(strong);
+    head.appendChild(document.createTextNode(
+      (opts.what ? opts.what : 'This tab’s contents') +
+      (opts.reviewerOnly
+        ? ' needs a personal reviewer sign-in — the shared team phrase does not open it.'
+        : ' stays hidden until you unlock with the team phrase.')));
+    wrap.appendChild(head);
+
+    if (opts.reviewerOnly) {
+      // No input here on purpose. The personal sign-in lives in ONE place
+      // (reviewer_signin.js, in the ℹ About menu); a second copy would be a
+      // second thing to drift, and this banner cannot mint a session anyway.
+      var hint = document.createElement('div');
+      hint.style.cssText = 'font-size:.8rem;color:var(--text-muted,#6b7280);';
+      hint.textContent = 'Open ℹ About in the header and ask for a sign-in link. Your address must be on the reviewer list.';
+      wrap.appendChild(hint);
+      return wrap;
+    }
+
+    // A working input, right here. This is the whole point of the component.
+    //
+    // The DEFAULT onUnlocked re-dispatches cpl-tab-activated for the live tab,
+    // which every gated tab already listens for — so unlocking re-renders the
+    // tab you are looking at without each caller wiring its own reload, and
+    // without this module knowing any tab's internals. A banner that unlocks
+    // but leaves the page looking locked reads as a rejected phrase.
+    wrap.appendChild(unlockRow({
+      site: opts.site,
+      label: 'Unlock',
+      onUnlocked: function (sess) {
+        if (typeof opts.onUnlocked === 'function') { opts.onUnlocked(sess); return; }
+        try {
+          var cur = window.CPL_TABS && typeof window.CPL_TABS.current === 'function'
+            ? window.CPL_TABS.current() : null;
+          if (cur) window.dispatchEvent(new CustomEvent('cpl-tab-activated', { detail: { tab: cur } }));
+        } catch (e) { /* the phrase is stored either way; a reload will show it */ }
+      }
+    }));
+    var alt = document.createElement('div');
+    alt.style.cssText = 'font-size:.78rem;color:var(--text-muted,#6b7280);margin-top:.4rem;';
+    alt.textContent = 'The About menu in the header holds the same box, from any tab.';
+    wrap.appendChild(alt);
+    return wrap;
+  }
+
   var api = {
     KEY: KEY,
     SITES: SITES,
+    lockedBanner: lockedBanner,
     get: get,
     session: session,
     clear: clear,

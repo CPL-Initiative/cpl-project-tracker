@@ -215,8 +215,14 @@ check("consumer init does not throw", !threw);
   check("uc-fix-css injected", !!fixCss);
   check("title column wraps instead of ellipsis",
     fixCss && /td:nth-child\(3\) \.uc-trunc\{white-space:normal/.test(fixCss.textContent));
-  check("member-table headers are white on the navy band",
-    fixCss && /\.uc-member-table th\{color:#fff/.test(fixCss.textContent));
+  // ⚠️ The ink is --on-accent, not a literal #fff (S248). The band is
+  // var(--navy-primary), which is on the INK scale: #1C1C1A in light but
+  // #ECE9E2 in dark, so a fixed white vanished on it at 1.21:1. --on-accent is
+  // #FFFFFF in light — this rule renders identically to before — and #141413 in
+  // dark. The check still guards the ORIGINAL intent (Session 41: the headers
+  // must carry an explicit ink and not inherit); it no longer pins the spelling.
+  check("member-table headers carry an explicit ink that travels with the band",
+    fixCss && /\.uc-member-table th\{color:var\(--on-accent\)/.test(fixCss.textContent));
 
   // The gated row's badge: evidence present, nothing folds, all witnesses
   // failed → "🧾 stale evidence" with the mismatch count in the tooltip.

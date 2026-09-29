@@ -81,7 +81,7 @@
   var reportIncludeProposed = false;     // DEFAULT OFF — verified-only (the pane's verified-default trust rule)
   // DOM refs
   var appEl, authBar, tilesEl, statusSegEl, tagCloudEl, activeEl, curateBarEl,
-    listMetaEl, listEl, listFootEl, rippleEl, searchEl, themeEl,
+    listMetaEl, listEl, listFootEl, rippleEl, searchEl,
     filtersEl, bodyEl, reportEl, viewSegEl;
 
   // ── report sections (in order) — plain-language briefing headings ──
@@ -145,8 +145,11 @@
   function normalizeRow(d) {
     var r = {};
     for (var k in d) r[k] = d[k];
-    r._uuid = d.id != null ? d.id : (d.slug || null);   // the uuid (audit key)
-    r.id = d.slug || d.id;                                // DISPLAY handle (the human slug)
+    // The PRIMARY KEY, and the only key a write may be addressed to. It is a
+    // uuid, so it must never fall back to a slug: `cpl_memory_log.memory_id`
+    // is a uuid FK, and a slug sent as `id=eq.` is a 400.
+    r._uuid = d.id != null ? d.id : null;                 // the uuid (write + audit key)
+    r.id = d.slug || d.id;                                // DISPLAY handle (the human slug, else the uuid)
     r.tags = Array.isArray(d.tags) ? d.tags : [];
     r.affects = Array.isArray(d.affects) ? d.affects : [];
     r.related = Array.isArray(d.related) ? d.related : [];
@@ -242,9 +245,13 @@
     // view-mode toggle — 🧠 Curate (existing UI) vs 📄 Report (the briefing)
     viewSegEl = el("div", "mem-viewseg"); viewSegEl.setAttribute("role", "group"); viewSegEl.setAttribute("aria-label", "Switch view mode");
     actions.appendChild(viewSegEl);
-    themeEl = el("button", "mem-theme", "🌗 Theme"); themeEl.type = "button";
-    themeEl.setAttribute("aria-label", "Toggle light and dark theme");
-    actions.appendChild(themeEl);
+    // ⚠️ THE PER-TAB THEME BUTTON WAS REMOVED 2026-09-08 (Sam: "ensure that it
+    // sets all tabs and windows using that one control"). It wrote data-theme
+    // straight onto <html> and REMEMBERED NOTHING, so it disagreed with every
+    // other tab until reload and then silently lost the choice; it also wore
+    // 🌙/☀️ against the plain-words rule. The header's Theme selector
+    // (cpl_theme.js) is the one control now, and it reaches this tab because
+    // the CSS below already keys on :root[data-theme].
     head.appendChild(actions);
     wrap.appendChild(head);
 
@@ -288,28 +295,107 @@
 
     root.appendChild(wrap);
     appEl = wrap;
-    wireTheme();
   }
 
   // ── auth / curate-mode bar ──
-  function refreshSession() { var TP = tp(); sess = (TP && TP.session) ? TP.session() : null; }
+  //
+  // TWO credentials open this table, and the page could only ever produce one.
+  // `cpl_memory`'s RLS is `is_allowed_reviewer() OR team_pass_ok()`, but this
+  // tab took its whole notion of "signed in" from team_phrase.js — whose
+  // session() returns a PHRASE pseudo-session and knows nothing about the
+  // magic link. So a reviewer signed in by magic link was authenticated as
+  // `anon`, matched neither arm, and was shown "No entries visible" over 330
+  // intact rows (Sam, 2026-08-14). The permission existed in the database and
+  // was unreachable from the page.
+  //
+  // The magic-link session is the same shared `cpl_sb` every other curator tab
+  // reads. It is checked FIRST because it is the stronger credential, and the
+  // stored phrase still rides along via decorateHeaders — harmless under an
+  // OR-predicate, and it is what un-shadows the phrase for a signed-in
+  // NON-reviewer, whose JWT alone fails is_allowed_reviewer().
+  var SESSION_KEY = "cpl_sb";
+  function isValidJwt(t) { return typeof t === "string" && t.split(".").length === 3 && t.length > 40; }
+  function magicLinkSession() {
+    try {
+      var s = JSON.parse(sessionStorage.getItem(SESSION_KEY) || "null");
+      if (s && isValidJwt(s.access_token)) return { access_token: s.access_token, email: s.email || "(reviewer)" };
+    } catch (e) {}
+    return null;
+  }
+  function refreshSession() {
+    var TP = tp();
+    sess = magicLinkSession() || ((TP && TP.session) ? TP.session() : null);
+  }
+  // WHATEVER THE MESSAGE ASKS FOR IS RENDERED BESIDE IT. The banner told Sam to
+  // "re-unlock" while renderAuth rendered the unlock row only when there was NO
+  // session — so a signed-in curator read an instruction and found no control
+  // anywhere on the page to carry it out (2026-08-25). Same shape as
+  // methodology-hiding-a-control-also-hides-the-way-in: naming a remedy you do
+  // not offer is worse than naming none.
+  function buildWriteErr() {
+    var box = el("div", "mem-writeerr");
+    box.appendChild(el("span", "mem-writeerr-txt", "⚠ " + writeErrMsg));
+    var acts = el("span", "mem-writeerr-acts");
+    if (sess && sess.access_token) {
+      // A magic-link session: the remedy is the keeper, not the phrase. This
+      // renews the token in place when it can, and reports honestly when the
+      // session is genuinely over instead of leaving the page insisting you
+      // are signed in while every write 401s.
+      var re = el("button", "mem-errbtn", "Check sign-in"); re.type = "button";
+      re.title = "Renew this browser's reviewer session and re-read the table";
+      re.onclick = function () {
+        re.disabled = true; re.textContent = "Checking…";
+        var K = window.CPL_SESSION;
+        var pr = (K && K.ensureFresh) ? K.ensureFresh() : Promise.resolve(null);
+        pr.then(function (fresh) {
+          writeErrMsg = fresh ? null : "your sign-in has ended — open the magic link again to curate";
+          refresh();
+        });
+      };
+      acts.appendChild(re);
+    } else if (!sess) {
+      // No session at all — the unlock row below is the control, and it is
+      // already rendered by the branch that follows.
+    }
+    var dis = el("button", "mem-errbtn", "Dismiss"); dis.type = "button";
+    dis.title = "Clear this message";
+    dis.onclick = function () { writeErrMsg = null; render(); };
+    acts.appendChild(dis);
+    box.appendChild(acts);
+    return box;
+  }
   function renderAuth() {
     if (!authBar) return;
     clear(authBar);
     refreshSession();
-    if (writeErrMsg) {
-      authBar.appendChild(el("span", "mem-writeerr", "⚠ " + writeErrMsg));
-    }
+    if (writeErrMsg) authBar.appendChild(buildWriteErr());
     if (sess) {
-      authBar.appendChild(el("span", "mem-authok", "🔓 Team curate mode — your edits write to cpl_memory"));
+      // Name the person AND the credential. "Signed in" alone is what let a
+      // reviewer and a phrase-holder look identical while only one of them
+      // could read the table, and it gives no clue when the magic link's own
+      // browser tab is not the one you are looking at (sessionStorage is
+      // per-tab: sign in, get a new tab, work in the old one, see nothing).
+      var how = sess.access_token ? "magic link" : "team phrase";
+      var who = sess.email && sess.email !== "(team)" && sess.email !== "(reviewer)" ? sess.email : null;
+      authBar.appendChild(el("span", "mem-authok",
+        "🔓 Curate mode — " + (who ? who + ", " : "") + "signed in by " + how
+        + " · your edits write to cpl_memory"));
+      // A PHRASE session whose write was refused needs the unlock row too. It
+      // used to be gated on having NO session at all, which is exactly the
+      // state a rotated phrase is not in: the phrase is still stored, still
+      // sent, and no longer accepted.
+      if (writeErrMsg && !sess.access_token) appendUnlockRow();
       return;
     }
     // No session — offer the shared unlock UI. If we have zero rows this is also the
     // team-gated empty state; either way, unlocking re-fetches.
+    appendUnlockRow();
+  }
+  function appendUnlockRow() {
     var TP = tp();
     if (TP && TP.unlockRow) {
       authBar.appendChild(TP.unlockRow({
-        label: "🔓 Unlock", placeholder: "team phrase…",
+        label: "Unlock", placeholder: "team phrase…",
         blurb: "Team memory — unlock to view + curate",
         onUnlocked: function (s) { sess = s; writeErrMsg = null; refresh(); },
       }));
@@ -427,11 +513,21 @@
       var right = el("span", "mi-right");
       if (d.affects && d.affects.length) { var rb = el("span", "mi-ripple", "⟿ " + d.affects.length); rb.title = d.affects.length + " downstream targets"; right.appendChild(rb); }
       if (sess) {
+        // A MENU, NOT A CYCLE (Sam, 2026-08-25: it "just sets to verified
+        // without any other options"). The cycle was worse than unhelpful: it
+        // ran verified → stale → proposed, so reaching `stale` from `proposed`
+        // meant passing THROUGH `verified` — and every step was a real PATCH
+        // and a real audit row. His two clicks are in cpl_memory_log 15 seconds
+        // apart, and left a row at `stale` carrying a verification stamp.
+        // One click, one choice, one write.
         var cur = el("button", "mi-curate", "✎ " + d.status); cur.type = "button";
-        cur.title = "Cycle status: verified → stale → proposed (writes to cpl_memory + logs the change)";
-        cur.setAttribute("aria-label", "Cycle review status for " + d.id + " (currently " + d.status + ")");
-        cur.onclick = function (e) { e.stopPropagation(); cycleStatus(d); };
-        right.appendChild(cur);
+        cur.title = "Set the review status for " + d.id + " — currently " + d.status + ".";
+        cur.setAttribute("aria-haspopup", "true");
+        cur.setAttribute("aria-expanded", "false");
+        cur.setAttribute("aria-label", "Set review status for " + d.id + " (currently " + d.status + ")");
+        var menuHost = el("span", "mi-curate-host");
+        cur.onclick = function (e) { e.stopPropagation(); toggleStatusMenu(cur, menuHost, d); };
+        right.appendChild(cur); right.appendChild(menuHost);
       }
       top.appendChild(right);
       li.appendChild(top);
@@ -444,6 +540,58 @@
       listEl.appendChild(li);
     });
     updateFoot(list);
+  }
+  // Only one status menu is open at a time — a second one left standing behind
+  // the first is a control the reader cannot see but can still tab into.
+  var openMenuClose = null;
+  function closeStatusMenu() { if (openMenuClose) { var f = openMenuClose; openMenuClose = null; f(); } }
+  function toggleStatusMenu(btn, host, d) {
+    if (openMenuClose && host.firstChild) { closeStatusMenu(); return; }
+    closeStatusMenu();
+    var box = el("div", "mi-menu");
+    box.setAttribute("role", "menu");
+    box.setAttribute("aria-label", "Review status for " + d.id);
+    STATUS_CHOICES.forEach(function (c) {
+      var isNow = c.s === d.status;
+      var b = el("button", "mi-menu-item" + (isNow ? " is-now" : ""));
+      b.type = "button"; b.setAttribute("role", "menuitem");
+      b.appendChild(el("span", "mi-menu-lab", c.label + (isNow ? " — current" : "")));
+      b.appendChild(el("span", "mi-menu-why", c.why));
+      if (isNow) { b.disabled = true; }
+      else b.onclick = function (e) { e.stopPropagation(); closeStatusMenu(); setStatus(d, c.s); };
+      box.appendChild(b);
+    });
+    // ⚠️ DELETE IS REACHABLE FROM HERE, AND DOES NOT DELETE FROM HERE. Sam asked
+    // for it in the list beside the statuses, and it belongs within reach — but
+    // it is not a status and it is the only one of these that cannot be undone.
+    // One mis-click away from "Stale", in a list you click through quickly, is
+    // the wrong place for an irreversible act. So this OPENS the entry and its
+    // confirm, which is where the count of entries pointing at the row and the
+    // reviewer-only warning can actually be shown.
+    box.appendChild(el("div", "mi-menu-rule"));
+    var del = el("button", "mi-menu-item mi-menu-del");
+    del.type = "button"; del.setAttribute("role", "menuitem");
+    del.appendChild(el("span", "mi-menu-lab", "Delete\u2026"));
+    del.appendChild(el("span", "mi-menu-why", "Permanent. Opens the entry to confirm."));
+    del.onclick = function (e) {
+      e.stopPropagation(); closeStatusMenu();
+      pendingDelete = d.id; selectEntry(d.id);
+    };
+    box.appendChild(del);
+    host.appendChild(box);
+    btn.setAttribute("aria-expanded", "true");
+    var onDoc = function () { closeStatusMenu(); };
+    var onKey = function (e) { if (e.key === "Escape") { closeStatusMenu(); btn.focus(); } };
+    setTimeout(function () { document.addEventListener("click", onDoc); }, 0);
+    document.addEventListener("keydown", onKey);
+    openMenuClose = function () {
+      document.removeEventListener("click", onDoc);
+      document.removeEventListener("keydown", onKey);
+      clear(host);
+      btn.setAttribute("aria-expanded", "false");
+    };
+    var first = box.querySelector("button:not([disabled])");
+    if (first) first.focus();
   }
   function updateFoot(list) {
     if (!listFootEl) return;
@@ -536,16 +684,87 @@
 
     if (d.source) { var src = el("div", "rp-src"); src.innerHTML = "source: <span class=\"rp-srclink\">" + esc(d.source) + " ↗</span>"; box.appendChild(src); }
 
-    if (sess && d.status !== "superseded") {
+    // The tools render for a SUPERSEDED row too, restricted to Restore + Delete.
+    // Marking a row inactive drops it out of every list (matchesEntry hides
+    // superseded unconditionally), so without this the reader's own undo lives
+    // on a pane they can no longer reach — an action with no way back.
+    if (sess) {
+      var inactive = d.status === "superseded";
       var tools = el("div", "rp-tools");
-      var edit = el("button", "rp-toolbtn", "✎ Edit in place"); edit.type = "button";
-      var revise = el("button", "rp-toolbtn", "⎘ Revise (new version)"); revise.type = "button";
       var toolHost = el("div", "rp-toolhost");
-      edit.onclick = function () { clear(toolHost); buildEntryForm(toolHost, d, function () { clear(toolHost); }); };
-      revise.onclick = function () { clear(toolHost); confirmRevise(toolHost, d); };
-      tools.appendChild(edit); tools.appendChild(revise);
+      if (!inactive) {
+        var edit = el("button", "rp-toolbtn", "✎ Edit in place"); edit.type = "button";
+        var revise = el("button", "rp-toolbtn", "⎘ Revise (new version)"); revise.type = "button";
+        edit.onclick = function () { clear(toolHost); buildEntryForm(toolHost, d, function () { clear(toolHost); }); };
+        // Sam, 2026-08-24: a briefing citation should land on the row READY TO
+        // EDIT, not merely selected. The intent is a flag rather than a call from
+        // the click handler because the form lives inside this render — the click
+        // happens one render earlier, when these elements do not exist yet.
+        if (pendingEdit === d.id) { pendingEdit = null; edit.onclick(); }
+        revise.onclick = function () { clear(toolHost); confirmRevise(toolHost, d); };
+        tools.appendChild(edit); tools.appendChild(revise);
+
+        var inact = el("button", "rp-toolbtn", "⊘ Mark inactive"); inact.type = "button";
+        inact.title = "Sets this entry to superseded — the house rule is supersede, don’t delete. It leaves every list and Sierra never sees it, but the row and its history stay in the table and you can restore it from here.";
+        inact.onclick = function () { clear(toolHost); confirmInactive(toolHost, d); };
+        tools.appendChild(inact);
+      } else {
+        var chain = d.superseded_by && byId[d.superseded_by];
+        if (chain) {
+          // Superseded BY a revision — restoring would leave two live rows
+          // claiming the same thing. The version chain above is the way back.
+          tools.appendChild(el("span", "rp-toolnote", "Inactive — replaced by " + d.superseded_by + ". Use the version chain above."));
+        } else {
+          var back = el("button", "rp-toolbtn", "↺ Restore"); back.type = "button";
+          back.title = "Returns this entry to proposed so it appears in the lists again";
+          back.onclick = function () { setStatus(d, "proposed"); };
+          tools.appendChild(back);
+        }
+      }
+      var del = el("button", "rp-toolbtn rp-toolbtn-danger", "🗑 Delete"); del.type = "button";
+      del.title = "Removes the row permanently. Reviewer sign-in only.";
+      del.onclick = function () { clear(toolHost); confirmDelete(toolHost, d); };
+      tools.appendChild(del);
+      // Arrived from the list's Delete… — open the confirm, not the deletion.
+      if (pendingDelete === d.id) { pendingDelete = null; del.onclick(); }
       box.appendChild(tools); box.appendChild(toolHost);
     }
+  }
+  function confirmInactive(host, d) {
+    var box = el("div", "mem-form");
+    box.appendChild(el("div", "mem-form-h", "Mark " + d.id + " inactive"));
+    box.appendChild(el("p", "mem-form-note", "Sets the status to superseded. The entry drops out of every list and out of what the team reads back — nothing is deleted, the history stays, and Restore brings it back from this pane."));
+    var actions = el("div", "mem-form-actions");
+    var go = el("button", "mem-btn mem-btn-primary", "Mark inactive"); go.type = "button";
+    var cancel = el("button", "mem-btn", "Cancel"); cancel.type = "button"; cancel.onclick = function () { clear(host); };
+    go.onclick = function () { go.disabled = true; setStatus(d, "superseded").then(function () { clear(host); }); };
+    actions.appendChild(go); actions.appendChild(cancel);
+    box.appendChild(actions); host.appendChild(box);
+  }
+  function confirmDelete(host, d) {
+    var box = el("div", "mem-form");
+    box.appendChild(el("div", "mem-form-h", "Delete " + d.id + " permanently"));
+    box.appendChild(el("p", "mem-form-note", "This cannot be undone. “Mark inactive” does what most people want — it hides the entry everywhere while keeping the row. Delete only when the entry should never have existed."));
+    // NAME WHAT ELSE POINTS AT IT. A delete that silently strands references is
+    // the merge_into_orphan failure one table over: the pointers survive, the
+    // thing they name does not, and nothing says so until something reads them.
+    var refs = (referencedBy[d.id] || []).filter(function (r) { return byId[r]; });
+    var chain = DATA.filter(function (x) { return x.superseded_by === d.id; });
+    var n = refs.length + chain.length;
+    if (n) {
+      box.appendChild(el("p", "mem-form-warn", "⚠ " + n + " other entr" + (n === 1 ? "y" : "ies") + " point" + (n === 1 ? "s" : "") + " at this one (" + refs.concat(chain.map(function (x) { return x.id; })).join(", ") + "). Deleting leaves those references naming nothing. Mark it inactive instead and the links keep resolving."));
+    }
+    // Delete is reviewer-only in the database. Saying so up front beats letting
+    // the RLS answer with a zero-row write the reader has to decode.
+    if (!(sess && sess.access_token)) {
+      box.appendChild(el("p", "mem-form-warn", "⚠ Deleting needs a reviewer sign-in (the magic link). A team phrase can edit and mark inactive, but not delete — this will be refused."));
+    }
+    var actions = el("div", "mem-form-actions");
+    var go = el("button", "mem-btn mem-btn-danger", "Delete permanently"); go.type = "button";
+    var cancel = el("button", "mem-btn", "Cancel"); cancel.type = "button"; cancel.onclick = function () { clear(host); };
+    go.onclick = function () { go.disabled = true; deleteEntry(d).then(function (ok) { if (!ok) go.disabled = false; clear(host); }); };
+    actions.appendChild(go); actions.appendChild(cancel);
+    box.appendChild(actions); host.appendChild(box);
   }
   function renderTarget(box) {
     var t = view.target, ids = (targetIndex[t] || []).filter(function (id) { return byId[id] && byId[id].status !== "superseded"; });
@@ -569,6 +788,20 @@
     });
     box.appendChild(ul);
   }
+  // Set to a slug when the reader arrived by clicking something that should open
+  // that entry for editing (a briefing citation). Cleared the moment it fires.
+  var pendingEdit = null;
+  // Same shape as pendingEdit, and for the same reason: the delete confirm is
+  // built inside renderEntry, so a click one render earlier cannot call it.
+  var pendingDelete = null;
+  // Arriving from a citation is a deliberate navigation, so bring the pane to
+  // the reader on EVERY width — selectEntry's own scroll is mobile-only, which
+  // is right for a click inside the list and wrong for a jump across views.
+  function scrollRippleIntoView() {
+    if (!appEl) return;
+    var r = appEl.querySelector(".mem-ripple");
+    if (r && r.scrollIntoView) { try { r.scrollIntoView({ behavior: "smooth", block: "start" }); } catch (e) { } }
+  }
   function selectEntry(id) { view = { mode: "entry", id: id }; render(); if (window.matchMedia && window.matchMedia("(max-width:760px)").matches && appEl) { var r = appEl.querySelector(".mem-ripple"); if (r) r.scrollIntoView({ behavior: "smooth", block: "start" }); } }
   function selectTarget(t) { view = { mode: "target", target: t }; render(); }
 
@@ -590,11 +823,35 @@
   // KB + exhibits + live metrics) and DRAFT a memory entry the curator then edits.
   // The function streams a Claude answer; we prompt for a single JSON object and
   // parse it defensively. Nothing is saved — Autogenerate only PREFILLS the form.
+  //
+  // ⚠ THE TOPIC GOES FIRST, AND THE ENVELOPE HAS A BUDGET (2026-08-24). cpl-chat
+  // caps `query`, and the cap is applied by the SERVER, silently, with no ragged
+  // edge to notice. This envelope used to run 984 characters and lead with its
+  // own instructions, against a cap of 1,000 — so Sam's 870-character note about
+  // which kind of credit to award reached the model as the sixteen characters
+  // "When responding ", and the model, handed no subject and ~9 KB of answer
+  // doctrine, drafted a confident entry about the two-band answer structure
+  // instead. Two things keep that from recurring, and BOTH are needed:
+  //   * the topic leads, so anything a cap ever takes is instruction text — and
+  //     losing the JSON contract fails LOUDLY (parseDraft returns null and the
+  //     curator sees "Couldn't draft that") rather than quietly changing subject;
+  //   * tests/cpl_memory_autogen.test.js reads the server's own drafting cap out
+  //     of the edge function and asserts THIS envelope plus a maximum-length
+  //     topic still fits under it. The budget is checked, not remembered.
+  // 4,000 is not arbitrary: it is `cpl_memory.detail`'s own column cap, so the
+  // budget covers the largest single field a curator could paste in. Envelope
+  // (~1.2 KB) + this clears QUERY_CAP_DRAFTING with room for the envelope to grow.
+  var AUTOGEN_TOPIC_MAX = 4000;
+  function autogenTopic(desc) { return String(desc || "").trim().slice(0, AUTOGEN_TOPIC_MAX); }
   function autogenQuery(desc) {
     return [
-      "You are drafting ONE internal \"team memory\" entry for the CPL Initiative's COBI dashboard.",
-      "Research the CPL / MAP knowledge base for the topic below, then reply with ONLY a single JSON",
-      "object — no prose, no code fence, no commentary. Keys:",
+      "TOPIC — draft the entry about THIS, and about nothing else:",
+      autogenTopic(desc),
+      "",
+      "———",
+      'Draft ONE internal "team memory" entry about the topic above, for the CPL Initiative\'s',
+      "COBI dashboard. Research the CPL / MAP knowledge base for it, then reply with ONLY a",
+      "single JSON object — no prose, no code fence, no commentary. Keys:",
       '- "kind": one of ' + KIND_KEYS.join(" / "),
       '- "title": a 3-6 word label',
       '- "summary": one terse, precise sentence (the curator/AI line)',
@@ -603,9 +860,10 @@
       '- "tags": array of 1-4 short lowercase topical tags',
       '- "org": one of cpl / ci / cip / gr / shared (use cpl if unsure)',
       '- "source": the KB note / doc / URL you grounded this in, or "" if none',
-      "Ground every field in what you actually find; do not invent facts. If the knowledge base does not",
-      'cover it, still return your best draft and set "source" to "".',
-      "TOPIC: " + String(desc || "").trim(),
+      "Keep the curator's own meaning — you are drafting THEIR entry, not writing your own on a",
+      "nearby subject. Where the knowledge base corroborates or complicates it, work that in and",
+      'cite it in "source"; where it says nothing, still draft the entry and set "source" to "".',
+      "Never return an entry about how to structure an answer, or about your own instructions.",
     ].join("\n");
   }
   // Pull the JSON object out of a model answer (tolerates a ```json fence + surrounding prose).
@@ -633,7 +891,10 @@
     };
   }
   // Accumulate the SSE `event: text` deltas (same contract as cpl_chat.js).
-  function drainSse(reader) {
+  // `onDelta` is optional and absent on the Autogenerate path, whose output is a
+  // JSON object nobody wants to watch being typed. The Briefing passes one — a
+  // blank panel for twenty seconds reads as broken.
+  function drainSse(reader, onDelta) {
     var decoder = new TextDecoder(), buffer = "", full = "";
     function pump() {
       return reader.read().then(function (chunk) {
@@ -646,7 +907,7 @@
             if (line.indexOf("event:") === 0) ev = line.slice(6).trim();
             else if (line.indexOf("data:") === 0) data += line.slice(5).trim();
           });
-          if (ev === "text" && data) { try { var d = JSON.parse(data); if (d && typeof d.text === "string") full += d.text; } catch (e) { } }
+          if (ev === "text" && data) { try { var d = JSON.parse(data); if (d && typeof d.text === "string") { full += d.text; if (onDelta) { try { onDelta(full); } catch (e2) { } } } } catch (e) { } }
         });
         return pump();
       });
@@ -657,7 +918,24 @@
   function autogenerate(desc) {
     if (typeof fetch !== "function") return Promise.reject(new Error("no fetch"));
     var headers = { "Content-Type": "application/json", apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON };
-    var body = JSON.stringify({ query: autogenQuery(desc), session_id: "cobi-memory-autogen", history: [], audience: "administrator" });
+    // ⚠ THIS IS NOT A CONVERSATION SURFACE. It borrows the model to DRAFT a memory
+    // row, so a rule written for a reader asking Sierra questions ("confine your
+    // answers to the selected institution") is nonsense here — while the naming
+    // rule still applies to the text it drafts. Naming the surface is what lets
+    // the first be scoped away without touching the second.
+    // ⭐ `retrieval_query` IS THE TOPIC, NOT THE ENVELOPE. cpl-chat embeds `query`
+    // to search the KB, and this envelope is ~1 KB of instructions that are
+    // themselves full of CPL words — searching on it returned 99 keywords, one
+    // of which belonged to the curator's note, at a healthy-looking 0.86
+    // similarity. Naming the retrieval text separately is what makes "researches
+    // the knowledge base" true rather than merely printed under the button.
+    //
+    // No `history` and no `audience`: sending history:[] opted this call into the
+    // multi-turn behavior where the model may ask a focusing question FIRST,
+    // which for a drafting call is a non-JSON answer and a failed parse; the
+    // audience rule shapes how to address a reader this call does not have.
+    var body = JSON.stringify({ query: autogenQuery(desc), retrieval_query: autogenTopic(desc),
+                                session_id: "cobi-memory-autogen", surface: "memory-autogen" });
     return fetch(CHAT_URL, { method: "POST", headers: headers, body: body }).then(function (resp) {
       if (!resp || !resp.ok) throw new Error("autogen HTTP " + (resp && resp.status));
       if (resp.body && resp.body.getReader) return drainSse(resp.body.getReader());
@@ -687,6 +965,469 @@
     set("source", draft.source || "");
   }
 
+  // ══════════════════════════════════════════════════════════════════════════
+  // Briefing — "here's what I understand from these entries"
+  //
+  // Sam's ask (2026-08-24): a narrative read-back of the memories, with brief
+  // examples interspersed, so an obvious misunderstanding is visible before it
+  // costs anything.
+  //
+  // ⭐ IT IS A READ-BACK BY AN AGENT, NOT A SIERRA ANSWER, and the label says so.
+  // The original framing was "as if you used them to construct a Sierra
+  // response" — but cpl-chat contains no reference to cpl_memory anywhere.
+  // Sierra reads sierra_guidance, the vector KB and the credential tables; she
+  // has never read this table. A briefing dressed as a Sierra answer would look
+  // clean while proving nothing about her. The pathway that IS real is the one
+  // Rule 8 describes: a session reads these rows at the start of a workstream.
+  // That is the reading worth testing, and it is what this brief exercises.
+  //
+  // ⚠ EVERY CLAIM CARRIES ITS SLUG, and this is the load-bearing half. A
+  // narrative that reads well and cannot be traced back to the row that produced
+  // it is worse than no briefing: the wrong sentence is the point, and it has to
+  // be followable to the entry that caused it. Citations render as links into
+  // the entry; a citation to a slug that is not in this view renders FLAGGED
+  // rather than quietly dropped, because a fabricated citation is a finding.
+  //
+  // ⚠ AND IT BRIEFS WHAT IS ON SCREEN. The corpus is exactly reportFiltered() —
+  // the rows the Report view is showing — and the panel states what it read
+  // ("48 of 63 entries"). A capped read that reports nothing reads as a census
+  // of the table.
+  // ══════════════════════════════════════════════════════════════════════════
+
+  // Budget. The edge function caps `query` per surface; memory-briefing gets
+  // QUERY_CAP_BRIEFING, and tests/cpl_memory_briefing.test.js reads that number
+  // out of index.ts and measures a real full-corpus digest against this one.
+  // Never restate the server's number here — a copy passes while the real one
+  // moves (the defect that made Autogenerate draft the wrong subject entirely).
+  var BRIEF_QUERY_MAX = 20000;       // must not exceed QUERY_CAP_BRIEFING
+  var BRIEF_DETAIL_CHARS = 240;      // per-entry slice of `detail`
+  var BRIEF_RETRIEVAL_MAX = 1000;    // the KB search text (cpl-chat caps at 1000)
+
+  // ── reading order — foundations first, specifics last ─────────────────────
+  //
+  // ⭐ THE ORDER IS ALSO THE SELECTION, and that is why this exists. The 188
+  // verified entries digest to ~83,000 characters against a 17,951-character
+  // corpus budget, so about 34 of them fit and briefDigest drops the rest from
+  // the END. Whatever order this array is in decides WHICH entries the model
+  // ever sees, not merely the sequence it reads them in.
+  //
+  // ⚠ ROWS ARRIVE IN `updated_at` DESCENDING — the tab's own fetch order. Before
+  // this existed the briefing therefore read the 34 most recently EDITED rows
+  // and silently dropped every foundation: a typo fix promoted an entry over a
+  // standing rule nobody had needed to touch since June, and the panel still
+  // said "Read 34 of 188" either way.
+  //
+  // The ladder is what a person reads to come up to speed — the ground rules,
+  // then what is true, then what goes wrong, then what is unsettled, then what
+  // shipped, then what is next. Within a band, OLDEST FIRST: an undated seed row
+  // is the most settled thing in this table and a row dated yesterday the least,
+  // and "" sorts before any ISO date, so undated foundations lead their band.
+  var READING_BANDS = [
+    ["procedure", "decision"],       // how we work, and what is settled
+    ["fact"],                        // what is true
+    ["pitfall"],                     // what goes wrong
+    ["risk", "question"],            // what is unresolved
+    ["milestone"],                   // what has shipped
+    ["opportunity", "wishlist"],     // what is next
+  ];
+  var READING_BAND_OF = {};
+  READING_BANDS.forEach(function (ks, i) { ks.forEach(function (k) { READING_BAND_OF[k] = i; }); });
+  // An unknown kind reads LAST, never first — a new kind must not silently
+  // displace the foundations from a budget this tight.
+  function readingRank(d) {
+    var b = READING_BAND_OF[d && d.kind];
+    return b == null ? READING_BANDS.length : b;
+  }
+  //
+  // ⚠ A STRICT LADDER SORT IS THE WRONG SHAPE HERE, and measuring it on the live
+  // table is the only way that shows. The verified set is 82 procedure+decision
+  // rows out of 188, and only ~38 entries fit — so ordering strictly by band
+  // spends the ENTIRE budget inside band 0 and the model reads 38 decisions and
+  // ZERO facts, pitfalls, risks or milestones. That is a worse briefing than the
+  // recency order it replaced: the traps live in the bands it never reaches.
+  //
+  // ⭐ SO THE LADDER ORDERS, AND A PROPORTIONAL SHARE SELECTS. Each row carries
+  // its position WITHIN its band as a fraction, `(j + 0.5) / bandSize`, and the
+  // sort runs on that fraction first, band second. Any prefix of the result then
+  // holds roughly the same FRACTION of every band — so truncation keeps all six
+  // represented — while inside each slice the bands still appear in ladder order,
+  // and the slices run oldest-fraction to newest. Progressive on both axes:
+  // settled before recent, ground rules before specifics.
+  //
+  // Unknown kinds are held out of the stride entirely and appended, so a new kind
+  // can never take a slot from a known one.
+  function briefOrder(rows) {
+    var bands = {}, unknown = [], out = [];
+    (rows || []).forEach(function (d, i) {
+      var b = readingRank(d);
+      if (b >= READING_BANDS.length) { unknown.push({ d: d, i: i }); return; }
+      (bands[b] = bands[b] || []).push({ d: d, i: i });
+    });
+    Object.keys(bands).forEach(function (b) {
+      // Oldest first inside the band: "" sorts before any ISO date, so the
+      // undated seed rows — the most settled things in this table — lead.
+      var list = bands[b].sort(function (a, c) {
+        return String(a.d.when || "").localeCompare(String(c.d.when || "")) || a.i - c.i;
+      });
+      list.forEach(function (x, j) {
+        out.push({ d: x.d, band: +b, pos: (j + 0.5) / list.length, i: x.i });
+      });
+    });
+    out.sort(function (a, c) { return a.pos - c.pos || a.band - c.band || a.i - c.i; });
+    return out.concat(unknown.sort(function (a, c) { return a.i - c.i; }))
+      .map(function (x) { return x.d; });
+  }
+
+  function briefRow(d, withDetail) {
+    var head = "[" + d.id + "] " + (d.kind || "fact") + "/" + (d.status || "proposed")
+      + (d.title ? " · " + d.title : "");
+    // ⭐ THE READER'S TEXT, NOT THE CURATOR'S. This used to send `summary` while
+    // the Report beside it rendered `plain`, so the model briefed different words
+    // from the ones on screen and the plain-language pass never reached it at
+    // all. `detail` still rides along as the evidence when the budget allows,
+    // which is where the numbers and quotes live.
+    // ⚠ Deliberately NOT reportProse(): that folds `detail` into its fallback,
+    // which would print detail twice on any row whose `plain` is empty.
+    var body = (d.plain || "").trim() || String(d.summary || "").trim();
+    var out = head + "\n  " + body;
+    if (withDetail && d.detail) out += "\n  why: " + String(d.detail).trim().slice(0, BRIEF_DETAIL_CHARS);
+    if ((d.tags || []).length) out += "\n  tags: " + d.tags.join(", ");
+    return out;
+  }
+  // Build the corpus to fit the budget, and SAY what did not fit. Detail is the
+  // first thing dropped (it is the enrichment); entries are dropped only after
+  // that, from the end, and the count is returned so the panel can print it.
+  // ⚠ THE CORPUS BUDGET IS THE QUERY BUDGET MINUS THE ENVELOPE, and the envelope
+  // is MEASURED rather than estimated. Budgeting the corpus alone is how the
+  // first cut of this panel overshot the cap by 1,392 characters — the same
+  // shape as the Autogenerate defect it was written after, arriving one level
+  // down. The instruction block is edited by hand, so any constant here would go
+  // stale the first time someone added a line to it.
+  function briefCorpusMax() {
+    var probe = briefQuery("", { used: 999999, total: 999999, scope: "x".repeat(120) });
+    return Math.max(1000, BRIEF_QUERY_MAX - probe.length);
+  }
+  function briefDigest(rows, budget) {
+    budget = budget || briefCorpusMax();
+    var withDetail = true;
+    var body = rows.map(function (d) { return briefRow(d, true); }).join("\n\n");
+    if (body.length > budget) {
+      withDetail = false;
+      body = rows.map(function (d) { return briefRow(d, false); }).join("\n\n");
+    }
+    var used = rows.length;
+    while (body.length > budget && used > 1) {
+      used -= 1;
+      body = rows.slice(0, used).map(function (d) { return briefRow(d, withDetail); }).join("\n\n");
+    }
+    return { text: body, used: used, total: rows.length, detail: withDetail };
+  }
+  // What to SEARCH the knowledge base on. Not the corpus — that is 20 KB of
+  // memory rows and embedding it would search the KB for the shape of a memory
+  // table. The subject of this view is its scope plus its commonest tags and a
+  // few titles, which is what a person would have typed to find these rows.
+  function briefRetrieval(rows, scopeLabel) {
+    var counts = {};
+    rows.forEach(function (d) { (d.tags || []).forEach(function (t) { counts[t] = (counts[t] || 0) + 1; }); });
+    var tags = Object.keys(counts).sort(function (a, b) { return counts[b] - counts[a]; }).slice(0, 12);
+    var titles = rows.map(function (d) { return d.title || d.summary || ""; }).filter(Boolean).slice(0, 12);
+    return [scopeLabel || "", tags.join(", "), titles.join(". ")]
+      .filter(Boolean).join(" — ").slice(0, BRIEF_RETRIEVAL_MAX);
+  }
+  // ⚠ CORPUS FIRST, INSTRUCTIONS LAST — the same ordering rule Autogenerate
+  // learned, decided on which loss is detectable. Lose the instructions and the
+  // briefing comes back without citations, visibly wrong. Lose the corpus tail
+  // and it silently briefs fewer memories than it claims, which is invisible.
+  function briefQuery(digestText, meta) {
+    return [
+      "MEMORY ENTRIES — " + meta.used + " of " + meta.total + " currently on screen"
+        + (meta.scope ? " (" + meta.scope + ")" : "") + ", in reading order:",
+      "",
+      digestText,
+      "",
+      "———",
+      "The entries above are an internal team's working memory. Brief me on them: tell me what",
+      "YOU understand from them, as the agent who would read them at the start of a piece of work.",
+      "Write it in the first person, opening with \"Here's what I understand from these entries\".",
+      "4-7 short paragraphs, no bullet lists, and no headings except the two named below.",
+      "",
+      "THEY ARE ORDERED TO BE READ IN ORDER, and the order carries meaning. They run in passes:",
+      "each pass gives you the ground rules, then what is true, then what goes wrong, then what is",
+      "unresolved, then what has shipped, then what is next. Earlier passes hold the settled,",
+      "longest-standing entries and later passes the recent ones. So read top to bottom and let the",
+      "settled ground frame the recent specifics, rather than the other way round.",
+      "",
+      "PLAIN LANGUAGE. This is the requirement, not a style note. Short sentences. Everyday words.",
+      "Say the thing directly instead of building up to it. Write for a smart colleague who does not",
+      "know this codebase: if a term is unavoidable, explain it in the same sentence the first time",
+      "it appears. No aphorisms, no rhetorical flourishes, no long stacked clauses. If it could be",
+      "said in half the words, say it in half the words. Someone busy should get through this in two",
+      "minutes and know what these entries mean.",
+      "- Cite the entry behind every substantive claim by its slug in square brackets, e.g. [f8].",
+      "  Cite ONLY slugs that appear above. Never invent one.",
+      "- Intersperse brief concrete examples from the entries themselves — a number, a name, a case —",
+      "  rather than summarizing at one remove. An example is how I check that you read it right.",
+      "- Then a short paragraph headed **Where the knowledge base agrees or differs** — say plainly",
+      "  where what you retrieved corroborates these entries, where it says nothing, and where it",
+      "  says something narrower or different. \"The knowledge base does not cover this\" is a useful",
+      "  answer; do not manufacture agreement.",
+      "- Then a short paragraph headed **What looks unclear or in tension** — name a tension ONLY if",
+      "  you can point at it with two slugs, or at one slug whose wording is genuinely ambiguous.",
+      "  If nothing looks wrong, say so in one sentence. Do not pad this to look thorough.",
+      "Do not restate the entries one by one — that list is already on the page. Synthesize.",
+    ].join("\n");
+  }
+  // Fetch + stream. Resolves with the full text; onDelta paints it as it lands,
+  // because a blank panel for twenty seconds reads as broken.
+  function briefFetch(rows, scopeLabel, onDelta) {
+    if (typeof fetch !== "function") return Promise.reject(new Error("no fetch"));
+    var meta = briefDigest(rows);
+    meta.scope = scopeLabel || "";
+    var headers = { "Content-Type": "application/json", apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON };
+    var body = JSON.stringify({
+      query: briefQuery(meta.text, meta),
+      retrieval_query: briefRetrieval(rows.slice(0, meta.used), scopeLabel),
+      session_id: "cobi-memory-briefing", surface: "memory-briefing",
+    });
+    return fetch(CHAT_URL, { method: "POST", headers: headers, body: body }).then(function (resp) {
+      if (!resp || !resp.ok) throw new Error("briefing HTTP " + (resp && resp.status));
+      if (resp.body && resp.body.getReader) return drainSse(resp.body.getReader(), onDelta);
+      if (typeof resp.text === "function") return resp.text();
+      return "";
+    }).then(function (full) {
+      if (!full || !String(full).trim()) throw new Error("empty briefing");
+      return { text: String(full), meta: meta };
+    });
+  }
+  // Turn [slug] citations into NUMBERED links, walking TEXT NODES rather than the
+  // HTML string — a regex over rendered HTML can match inside an attribute.
+  //
+  // ⭐ NUMBERED, NOT INLINE SLUGS, and that came from looking at it rendered.
+  // This table's slugs are whole sentences — `sierra-credit-outages-recurred-
+  // twice-and-are-now-monitored` — so printing them inline put more citation on
+  // the page than prose and broke the plain reading the briefing exists to give.
+  // A superscript number keeps the claim readable; the numbered source list
+  // underneath keeps it followable, which is the half that must not be traded.
+  //
+  // ⚠ A slug that is not in this view is still FLAGGED IN PLACE, with its text
+  // visible — a citation to something the model was never shown is a finding,
+  // and folding it into the tidy numbering would hide exactly that.
+  function linkBriefSlugs(root, shown) {
+    if (!root || !root.ownerDocument) return { cited: 0, unknown: 0, sources: [] };
+    var doc = root.ownerDocument, stat = { cited: 0, unknown: 0, sources: [] };
+    var num = {};   // slug -> citation number, by order of first appearance
+    var nodes = [], walk = function (n) {
+      for (var i = 0; i < n.childNodes.length; i++) {
+        var c = n.childNodes[i];
+        if (c.nodeType === 3) { if (/\[[A-Za-z0-9_-]+\]/.test(c.nodeValue)) nodes.push(c); }
+        else if (c.nodeType === 1 && c.tagName !== "A") walk(c);
+      }
+    };
+    walk(root);
+    nodes.forEach(function (t) {
+      var parts = String(t.nodeValue).split(/(\[[A-Za-z0-9_-]+\])/), frag = doc.createDocumentFragment();
+      parts.forEach(function (piece) {
+        var m = piece.match(/^\[([A-Za-z0-9_-]+)\]$/);
+        if (!m) { frag.appendChild(doc.createTextNode(piece)); return; }
+        var slug = m[1];
+        if (byId[slug]) {
+          if (!num[slug]) {
+            num[slug] = stat.sources.length + 1;
+            stat.sources.push({ n: num[slug], slug: slug, entry: byId[slug],
+                                outside: !!(shown && !shown[slug]) });
+          }
+          var a = doc.createElement("a");
+          a.href = "#"; a.className = "rp-inl mb-cite"; a.setAttribute("data-ref", slug);
+          a.textContent = String(num[slug]);
+          // ⚠ NO NATIVE `title` — it would double up with the hover card below,
+          // and a native tooltip cannot show the kind, the status or a wrapped
+          // summary. The accessible name carries the same fact for a screen
+          // reader, which never sees either tooltip.
+          a.setAttribute("aria-label", "Entry " + num[slug] + ": "
+            + (byId[slug].title || byId[slug].summary || slug));
+          if (shown && !shown[slug]) a.setAttribute("data-outside", "1");
+          frag.appendChild(a); stat.cited += 1;
+        } else {
+          var b = doc.createElement("span");
+          b.className = "mb-badref"; b.textContent = piece;
+          b.title = "No entry with this id — a citation that cannot be followed";
+          frag.appendChild(b); stat.unknown += 1;
+        }
+      });
+      if (t.parentNode) t.parentNode.replaceChild(frag, t);
+    });
+    return stat;
+  }
+  // ── The citation hover card (Sam: "superscript numbers with hover over to see
+  // the memory") ────────────────────────────────────────────────────────────
+  //
+  // A native `title` cannot do this job: it shows one unstyled line, appears
+  // after a delay the reader has to wait out, and cannot show the kind, the
+  // status and a wrapped summary together. So this is a real card.
+  //
+  // ⚠ FOCUS OPENS IT TOO, not just hover. A citation is a link, so it is on the
+  // keyboard path whether or not anyone planned for that; if only the mouse can
+  // read the memory behind a number, the number is unreadable to everyone else.
+  // Escape closes it, and it closes on blur and on leaving the citation.
+  var _mbTip = null;
+  function hideCiteCard() {
+    if (_mbTip && _mbTip.parentNode) _mbTip.parentNode.removeChild(_mbTip);
+    _mbTip = null;
+  }
+  function showCiteCard(a, d, panel) {
+    hideCiteCard();
+    if (!d || !panel) return;
+    var km = KMAP[d.kind] || KMAP.fact;
+    var tip = el("div", "mb-tip");
+    tip.setAttribute("role", "tooltip");
+    var head = el("div", "mb-tip-head");
+    var pill = el("span", "mb-tip-kind", km.label);
+    pill.style.setProperty("--kc", "var(" + km.tok + ")");
+    head.appendChild(pill);
+    head.appendChild(el("span", "mb-tip-status", d.status || "proposed"));
+    if (a.getAttribute("data-outside")) head.appendChild(el("span", "mb-srcflag", "outside this view"));
+    tip.appendChild(head);
+    if (d.title) tip.appendChild(el("div", "mb-tip-title", d.title));
+    tip.appendChild(el("div", "mb-tip-sum", String(d.summary || "")));
+    tip.appendChild(el("div", "mb-tip-slug", d.id));
+    panel.appendChild(tip);
+    // Position inside the panel, clamped to it — a card that runs off the right
+    // edge is the same as no card. jsdom has no layout and returns zeros here,
+    // which is harmless: the card still exists and still carries its text.
+    try {
+      var pr = panel.getBoundingClientRect(), ar = a.getBoundingClientRect();
+      var w = tip.offsetWidth || 320;
+      var left = Math.max(8, Math.min((ar.left - pr.left) - w / 2 + ar.width / 2, pr.width - w - 8));
+      tip.style.left = left + "px";
+      tip.style.top = ((ar.bottom - pr.top) + 7) + "px";
+    } catch (e) { }
+    _mbTip = tip;
+  }
+  function wireCiteCards(host) {
+    var panel = host.closest ? host.closest(".mem-brief") : null;
+    if (!panel) panel = host;
+    Array.prototype.forEach.call(host.querySelectorAll("a.mb-cite"), function (a) {
+      var d = byId[a.getAttribute("data-ref")];
+      a.onmouseenter = function () { showCiteCard(a, d, panel); };
+      a.onfocus = function () { showCiteCard(a, d, panel); };
+      a.onmouseleave = hideCiteCard;
+      a.onblur = hideCiteCard;
+      a.onkeydown = function (e) { if (e.key === "Escape") hideCiteCard(); };
+    });
+  }
+
+  // Render the briefing text into a host: markdown via the one renderer this
+  // dashboard already has (cpl_chat.js), plain paragraphs if it is not loaded —
+  // a local markdown re-implementation would be a second renderer to keep in
+  // step, and this repo has been bitten by exactly that shape before.
+  function renderBriefText(host, text, shown) {
+    clear(host);
+    var md = window.CPL_CHAT && window.CPL_CHAT.renderMarkdown;
+    if (md) { host.innerHTML = md(String(text)); }
+    else {
+      String(text).split(/\n{2,}/).forEach(function (para) {
+        if (para.trim()) host.appendChild(el("p", "mb-p", para.trim()));
+      });
+    }
+    var stat = linkBriefSlugs(host, shown);
+    // The source list is what makes a numbered citation followable without a
+    // hover, so it is not optional decoration — drop it and the numbers become
+    // unfalsifiable marks. Titles come from the entry, not from the model.
+    if (stat.sources.length) {
+      var src = el("div", "mb-sources");
+      src.appendChild(el("div", "mb-sources-h", "Entries cited"));
+      var ol = document.createElement("ol"); ol.className = "mb-srclist";
+      stat.sources.forEach(function (s0) {
+        var li = document.createElement("li");
+        var a2 = el("a", "mb-srclink", s0.entry.title || s0.entry.summary || s0.slug);
+        a2.href = "#"; a2.setAttribute("data-ref", s0.slug);
+        li.appendChild(a2);
+        li.appendChild(el("span", "mb-srcslug", s0.slug));
+        if (s0.outside) li.appendChild(el("span", "mb-srcflag", "outside this view"));
+        ol.appendChild(li);
+      });
+      src.appendChild(ol);
+      host.appendChild(src);
+    }
+    Array.prototype.forEach.call(host.querySelectorAll("[data-ref]"), function (a) {
+      a.onclick = function (e) {
+        e.preventDefault();
+        hideCiteCard();
+        var slug = a.getAttribute("data-ref"), d = byId[slug];
+        // Ask for the edit form only where one can actually open: a superseded
+        // row has no editor, and without a team session neither does any row.
+        // In those cases this still navigates to the entry, which is the honest
+        // half of the promise rather than a button that does nothing.
+        if (sess && d && d.status !== "superseded") pendingEdit = slug;
+        viewMode = "curate";                       // the entry lives in the curate view
+        selectEntry(slug);
+        scrollRippleIntoView();
+      };
+    });
+    wireCiteCards(host);
+    return stat;
+  }
+  // The panel itself, at the top of the Report view. Nothing is saved, ever.
+  function renderBriefingPanel(rows, scopeLabel) {
+    // ⚠ SORTED ONCE, HERE. The digest, the `shown` citation map and the fetch
+    // all read this array; sorting inside any one of them lets the panel report
+    // having read entries it never sent.
+    rows = briefOrder(rows);
+    var box = el("section", "mem-brief");
+    box.style.position = "relative";     // the hover card positions against this
+    box.appendChild(el("h2", "mb-h", "How I read these entries"));
+    box.appendChild(el("p", "mb-lead",
+      "A read-back of the entries below, in my words, with the knowledge base checked against them. "
+      + "Every claim carries a numbered citation: hover it to read that entry, click it to "
+      + (sess ? "open that entry for editing" : "jump to that entry") + ". This is how an agent reads "
+      + "this table at the start of a piece of work; it is not what the CPL Assistant tells the public, "
+      + "which never reads these entries. Nothing here is saved."));
+    var row = el("div", "mb-row");
+    var btn = el("button", "mem-btn mem-btn-primary mb-btn", "Brief me on these"); btn.type = "button";
+    var status = el("span", "mb-status", "");
+    row.appendChild(btn); row.appendChild(status);
+    box.appendChild(row);
+    var out = el("div", "mb-out");
+    box.appendChild(out);
+
+    btn.onclick = function () {
+      if (!rows.length) { status.textContent = "No entries in this view to brief."; return; }
+      // Same call as briefFetch's, with no budget argument — the set the panel
+      // says it read must be the set it sent, and two budgets could disagree.
+      var shown = {}, meta = briefDigest(rows);
+      rows.slice(0, meta.used).forEach(function (d) { shown[d.id] = 1; });
+      btn.disabled = true;
+      status.className = "mb-status is-pending";
+      status.textContent = "Reading " + meta.used + (meta.used === rows.length ? "" : " of " + rows.length)
+        + " " + (rows.length === 1 ? "entry" : "entries") + "…";
+      clear(out);
+      var live = el("div", "mb-live"); out.appendChild(live);
+      briefFetch(rows, scopeLabel, function (sofar) {
+        // Stream as plain text; the markdown pass runs once at the end so a
+        // half-written link never renders as one.
+        live.textContent = sofar;
+      }).then(function (res) {
+        var stat = renderBriefText(out, res.text, shown);
+        status.className = "mb-status is-ok";
+        // ⚠ SAY WHAT WAS READ, ALWAYS — a briefing over part of a view must never
+        // read like a briefing over the whole of it.
+        var said = "Read " + res.meta.used + " of " + res.meta.total + " "
+          + (res.meta.total === 1 ? "entry" : "entries")
+          + (res.meta.detail ? "" : " (summaries only — the full set did not fit)")
+          + " · " + stat.cited + " citation" + (stat.cited === 1 ? "" : "s");
+        if (stat.unknown) said += " · ⚠ " + stat.unknown + " citation"
+          + (stat.unknown === 1 ? "" : "s") + " to no entry — treat that claim as unsourced";
+        status.textContent = said;
+      }).catch(function (e) {
+        clear(out);
+        status.className = "mb-status is-err";
+        status.textContent = "Couldn't build the briefing" + (e && e.message ? " (" + e.message + ")" : "")
+          + ". The entries below are unaffected.";
+      }).then(function () { btn.disabled = false; });
+    };
+    return box;
+  }
+
   // The ✨ Autogenerate affordance at the top of the Add form: a topic box + a
   // button that researches the KB and prefills the fields below (all still editable).
   function buildAutogenBox(form, existing) {
@@ -713,7 +1454,11 @@
       autogenerate(desc).then(function (draft) {
         applyDraftToForm(form, draft);
         status.className = "mem-autogen-status is-ok";
-        status.textContent = "Drafted — review & edit below, then Add.";
+        // Say so when the note did not fit. A trim is the one way this can still
+        // draft from less than the curator typed, so it is never left silent.
+        status.textContent = desc.length > AUTOGEN_TOPIC_MAX
+          ? "Drafted from the first " + AUTOGEN_TOPIC_MAX.toLocaleString() + " characters of your note (it was longer) — review & edit below, then Add."
+          : "Drafted — review & edit below, then Add.";
       }).catch(function () {
         status.className = "mem-autogen-status is-err";
         status.textContent = "Couldn’t draft that — fill the fields in manually, or try rephrasing.";
@@ -787,7 +1532,13 @@
   // Data layer (read + writes)
   // ══════════════════════════════════════════════════════════════════════════
   function authHeaders(extra) {
-    var h = { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON };
+    // Bearer the reviewer's JWT when there is one — sending the anon key while
+    // holding a valid reviewer session is what made the table look empty.
+    var ml = magicLinkSession();
+    var h = {
+      apikey: SUPABASE_ANON,
+      Authorization: "Bearer " + ((ml && ml.access_token) || SUPABASE_ANON),
+    };
     if (extra) for (var k in extra) h[k] = extra[k];
     var TP = tp(); if (TP && TP.decorateHeaders) TP.decorateHeaders(h, sess);
     return h;
@@ -799,9 +1550,36 @@
     Object.keys(byId).forEach(function (s) { var m = re.exec(s); if (m) { var n = parseInt(m[1], 10); if (n > max) max = n; } });
     return pre + (max + 1);
   }
+  // ── the write key ────────────────────────────────────────────────────────
+  // WRITE BY THE PRIMARY KEY, NEVER BY THE DISPLAY HANDLE. `slug` is UNIQUE but
+  // NULLABLE, and normalizeRow falls back to the uuid for DISPLAY when it is
+  // null — so `?slug=eq.<display handle>` sent the uuid as a slug on those
+  // rows, matched nothing, and PostgREST answered 200 + [] which checkWrite
+  // reports as a 403. Six live rows carry no slug; every ✎ status cycle, every
+  // edit and every revise against them failed silently while the banner blamed
+  // the team phrase. (Sam, 2026-08-25 — "the proposed chip doesn't seem to be
+  // working".) `id` is NOT NULL by definition, so this key always names exactly
+  // one row.
+  function writeKey(d) {
+    if (d && d._uuid) return "id=eq." + encodeURIComponent(d._uuid);
+    return null;
+  }
+  // A write whose key names nothing must REFUSE and say so, not go out and be
+  // reported as an auth failure. Resolves false, the same shape doWrite gives.
+  function refuseKeyless(d) {
+    writeErrMsg = "this entry has no database key, so it can't be changed from here — reload the tab, and tell a curator if it persists";
+    render();
+    return Promise.resolve(false);
+  }
+
   function writeReq(method, pathWithQuery, body) {
     var headers = authHeaders({ "Content-Type": "application/json", Prefer: "return=representation" });
-    return fetch(REST + pathWithQuery, { method: method, headers: headers, body: JSON.stringify(body) });
+    var init = { method: method, headers: headers };
+    // A DELETE carries no body — `Prefer: return=representation` is what makes
+    // it answer with the deleted rows, which is how checkWrite tells a real
+    // delete from one the RLS filtered away.
+    if (body != null) init.body = JSON.stringify(body);
+    return fetch(REST + pathWithQuery, init);
   }
   function logEvent(memoryUuid, action, before, after, note) {
     if (typeof fetch !== "function") return Promise.resolve();
@@ -810,6 +1588,29 @@
       headers: authHeaders({ "Content-Type": "application/json", Prefer: "return=representation" }),
       body: JSON.stringify({ memory_id: memoryUuid, actor: "curator", action: action, note: note || null, before: before || null, after: after || null }),
     }).catch(function () { });
+  }
+  // NAME THE CREDENTIAL THAT ACTUALLY FAILED. This said "your team phrase may
+  // have expired" for every 401/403, so a curator signed in by MAGIC LINK — for
+  // whom the phrase is irrelevant, and whose phrase handleWriteFailure
+  // correctly does not touch — was told to re-unlock something that was not in
+  // play (Sam, 2026-08-25).
+  //
+  // It also has to tell a REFUSAL from a MISS. checkWrite reports an
+  // ok-but-empty representation as 403-shaped so the phrase-recovery path
+  // engages, but it hands back an ARRAY of rows there and `null` on a real HTTP
+  // rejection — that is the only thing separating "you are not allowed" from
+  // "nothing matched that key", and they need different words and different
+  // remedies.
+  function writeFailMessage(res) {
+    if (Array.isArray(res.rows)) {
+      return "nothing was saved — no row matched, or this entry is one your access can’t change. Nothing was lost; reload the tab and try again.";
+    }
+    if (res.status === 401 || res.status === 403) {
+      return sess && sess.access_token
+        ? "your sign-in was refused — it may have expired. Check sign-in below, or open the magic link again."
+        : "your team phrase may have expired — unlock again below.";
+    }
+    return "couldn’t save — please try again";
   }
   // Every write funnels through here: checkWrite (the RLS zero-row trap), then on
   // failure handleWriteFailure (drop the rotated phrase) + re-render the lock state.
@@ -823,9 +1624,7 @@
       var TP2 = tp();
       if (TP2 && TP2.handleWriteFailure) TP2.handleWriteFailure(sess, res.status);
       refreshSession();
-      writeErrMsg = (res.status === 401 || res.status === 403)
-        ? "your team phrase may have expired — re-unlock"
-        : "couldn’t save — please try again";
+      writeErrMsg = writeFailMessage(res);
       render();
       return false;
     }).catch(function () { writeErrMsg = "couldn’t save — please try again"; renderAuth(); return false; });
@@ -834,16 +1633,61 @@
     return { slug: d.id, kind: d.kind, title: d.title, summary: d.summary, detail: d.detail, plain: d.plain, tags: d.tags, org: d.org, status: d.status, source: d.source };
   }
 
-  function cycleStatus(d) {
-    var order = ["verified", "stale", "proposed"];
-    var idx = order.indexOf(d.status);
-    var next = order[(idx + 1) % order.length];
-    var action = next === "verified" ? "verify" : next === "stale" ? "stale" : "update";
+  // The one place a status write is composed. The chip's menu, Mark inactive and
+  // Restore all land here so they cannot drift apart.
+  //
+  // ⚠️ THE STAMP IS CLEARED WHEN THE STATUS LEAVES `verified`. It was not, and a
+  // row could sit at `stale` carrying `verified_at` and `verified_by` — a
+  // verification stamp for a row nobody verified. That is not cosmetic on a
+  // table whose entire purpose is corroboration: `verified_by` is the evidence
+  // that a second party stood behind the claim.
+  function setStatus(d, next) {
+    var key = writeKey(d);
+    if (!key) return refuseKeyless(d);
+    var action = next === "verified" ? "verify" : next === "stale" ? "stale"
+      : next === "superseded" ? "supersede" : "update";
     var body = { status: next };
-    if (next === "verified") { body.verified_at = nowIso(); body.verified_by = "curator"; }
-    return doWrite(writeReq("PATCH", "cpl_memory?slug=eq." + encodeURIComponent(d.id), body), function () {
+    if (next === "verified") {
+      body.verified_at = nowIso();
+      // NAME THE PERSON when the credential carries one. "curator" is what a
+      // shared phrase can honestly say; a signed-in reviewer can do better, and
+      // an audit trail that cannot say who verified something is most of the way
+      // to no audit trail.
+      body.verified_by = (sess && sess.access_token && sess.email) ? sess.email : "curator";
+    } else {
+      body.verified_at = null;
+      body.verified_by = null;
+    }
+    return doWrite(writeReq("PATCH", "cpl_memory?" + key, body), function () {
       logEvent(d._uuid, action, { status: d.status }, body);
     }).then(function (ok) { if (ok) refresh(); return ok; });
+  }
+  // The statuses a curator can set, with what each one MEANS. A cycle button
+  // could not say any of this: it showed the current state on a control that
+  // changed it, and the only way to learn what a click would do was to do it.
+  var STATUS_CHOICES = [
+    { s: "verified", label: "Verified", why: "Corroborated — shown by default." },
+    { s: "proposed", label: "Proposed", why: "Written but not yet corroborated." },
+    { s: "stale", label: "Stale", why: "Was true; may not be any more." },
+    { s: "superseded", label: "Inactive", why: "Out of every list. Restorable from the entry." },
+  ];
+  // Delete is REVIEWER-ONLY in the database ("reviewer deletes cpl_memory" —
+  // is_allowed_reviewer(), no team_pass arm), so a phrase-holder's delete comes
+  // back as a zero-row write. The button says so up front rather than letting
+  // that surface as a failure. `cpl_memory_log.memory_id` is ON DELETE SET
+  // NULL, so the audit trail outlives the row it describes.
+  function deleteEntry(d) {
+    var key = writeKey(d);
+    if (!key) return refuseKeyless(d);
+    var before = snapshot(d);
+    return doWrite(writeReq("DELETE", "cpl_memory?" + key, null), function () {
+      logEvent(d._uuid, "delete", before, null);
+    }).then(function (ok) {
+      // The entry pane is showing a row that no longer exists — send the reader
+      // back to the index rather than leaving a phantom on screen.
+      if (ok) { if (view.mode === "entry" && view.id === d.id) view = { mode: "index" }; refresh(); }
+      return ok;
+    });
   }
   function addEntry(v) {
     var slug = v.slug || genSlug(v.kind);
@@ -859,11 +1703,14 @@
   }
   function editEntry(d, v) {
     var body = { title: v.title || null, summary: v.summary, detail: v.detail, plain: v.plain || null, tags: v.tags, org: v.org || null, share_across_orgs: !!v.share_across_orgs, source: v.source || null, updated_at: nowIso() };
-    return doWrite(writeReq("PATCH", "cpl_memory?slug=eq." + encodeURIComponent(d.id), body), function () {
+    var key = writeKey(d);
+    if (!key) return refuseKeyless(d);
+    return doWrite(writeReq("PATCH", "cpl_memory?" + key, body), function () {
       logEvent(d._uuid, "update", snapshot(d), body);
     }).then(function (ok) { if (ok) refresh(); return ok; });
   }
   function reviseEntry(d) {
+    if (!writeKey(d)) return refuseKeyless(d);
     var newSlug = genSlug(d.kind);
     var clone = {
       slug: newSlug, kind: d.kind, title: d.title || null, summary: d.summary, detail: d.detail, plain: d.plain || null, tags: d.tags,
@@ -873,7 +1720,7 @@
     return doWrite(writeReq("POST", "cpl_memory", clone), function (rows) {
       var newRow = rows && rows[0] ? rows[0] : clone;
       // supersede the OLD row + link forward
-      doWrite(writeReq("PATCH", "cpl_memory?slug=eq." + encodeURIComponent(d.id), { status: "superseded", superseded_by: newSlug }), function () {
+      doWrite(writeReq("PATCH", "cpl_memory?" + writeKey(d), { status: "superseded", superseded_by: newSlug }), function () {
         logEvent(d._uuid, "supersede", snapshot(d), newRow);
       }).then(function () { refresh(); });
     }).then(function (ok) { return ok; });
@@ -890,17 +1737,6 @@
   }
   function refresh() { return load(); }
 
-  // ── theme toggle (reflects the effective theme; re-syncs on OS flip) ──
-  function wireTheme() {
-    var root = document.documentElement;
-    var mqDark = window.matchMedia ? window.matchMedia("(prefers-color-scheme:dark)") : { matches: false, addEventListener: null, addListener: null };
-    function effectiveDark() { var cur = root.getAttribute("data-theme"); return cur ? cur === "dark" : mqDark.matches; }
-    function sync() { var dark = effectiveDark(); themeEl.textContent = dark ? "🌙 Dark" : "☀️ Light"; themeEl.setAttribute("aria-pressed", dark); themeEl.title = "Theme: currently " + (dark ? "dark" : "light") + " — click to switch"; }
-    themeEl.onclick = function () { root.setAttribute("data-theme", effectiveDark() ? "light" : "dark"); sync(); };
-    var onSys = function () { if (!root.getAttribute("data-theme")) sync(); };
-    if (mqDark.addEventListener) mqDark.addEventListener("change", onSys); else if (mqDark.addListener) mqDark.addListener(onSys);
-    sync();
-  }
 
   function clearAll() { state.kinds = {}; state.tag = ""; state.status = "verified"; state.q = ""; if (searchEl) searchEl.value = ""; view = { mode: "index" }; render(); }
 
@@ -944,6 +1780,13 @@
   }
   // report filter: verified (+ proposed when the box is checked); never superseded;
   // org matches the scope (or scope is "all").
+  // The report's own scope, in words, for the briefing header + the KB search.
+  function reportScopeLabel(rows) {
+    var bits = [reportIncludeProposed ? "verified + proposed" : "verified only"];
+    if (reportOrg !== "all") bits.push("area: " + reportOrg);
+    bits.push((rows || []).length + " entries");
+    return bits.join(" · ");
+  }
   function reportFiltered() {
     return DATA.filter(function (d) {
       if (d.status === "superseded") return false;
@@ -999,6 +1842,10 @@
     reportEl.appendChild(reportControls());
 
     var rows = reportFiltered();
+    // ⚠ THE SAME ROWS THE REPORT IS ABOUT TO RENDER. Passing reportFiltered()
+    // here rather than re-deriving a set is what makes "what is briefed is what
+    // is shown" structural instead of remembered.
+    reportEl.appendChild(renderBriefingPanel(rows, reportScopeLabel(rows)));
     var titleBlock = el("div", "mr-titleblock");
     titleBlock.appendChild(el("h1", "mr-title", "Everything We Know"));
     var sub = rows.length + " " + (rows.length === 1 ? "entry" : "entries") + " — "
@@ -1073,7 +1920,7 @@
   function doCopy(btn) {
     var text = buildReportText();
     var restore = function () { setTimeout(function () { btn.textContent = "Copy"; }, 1600); };
-    var ok = function () { btn.textContent = "Copied ✓"; restore(); };
+    var ok = function () { btn.textContent = "Copied"; restore(); };
     var fail = function () { btn.textContent = "Copy unavailable"; restore(); };
     try {
       var nav = (typeof navigator !== "undefined") ? navigator : null;
@@ -1130,8 +1977,8 @@
   // ══════════════════════════════════════════════════════════════════════════
   function ensureCss() {
     if (document.getElementById(CSS_ID)) return;
-    var LIGHT = "--paper:#F4F2ED;--surface:rgba(255,255,255,.78);--surface-opaque:#FFFFFF;--surface-subtle:#F7F5F1;--surface-muted:#ECE9E2;--text-strong:#1C1C1A;--text-body:#3A3A36;--text-muted:#5C5C55;--text-faint:#87877F;--border:rgba(28,28,26,.14);--border-strong:rgba(28,28,26,.30);--accent-link:#0047AB;--focus:#0047AB;--glass-blur:14px;--k-fact:#0047AB;--k-pitfall:#920000;--k-procedure:#0F766E;--k-opportunity:#2C601A;--k-risk:#7A5800;--k-wishlist:#6D28D9;--k-question:#005A8C;--k-decision:#002F6D;--k-milestone:#A83255;--st-ok:#2C601A;--st-info:#5C5C55;--st-warn:#7A5800;";
-    var DARK = "--paper:#1B1B18;--surface:rgba(36,36,32,.72);--surface-opaque:#242420;--surface-subtle:#201F1C;--surface-muted:#2E2D28;--text-strong:#F4F2ED;--text-body:#DAD8D0;--text-muted:#A9A79E;--text-faint:#7C7A72;--border:rgba(244,242,237,.14);--border-strong:rgba(244,242,237,.30);--accent-link:#7DA1D4;--focus:#7DA1D4;--glass-blur:14px;--k-fact:#7DA1D4;--k-pitfall:#CF8F8F;--k-procedure:#5EBFB5;--k-opportunity:#89A67F;--k-risk:#E3B341;--k-wishlist:#B28DEB;--k-question:#79B8D6;--k-decision:#A9BEE8;--k-milestone:#E48AA6;--st-ok:#89A67F;--st-info:#A9A79E;--st-warn:#E3B341;";
+    var LIGHT = "--paper:#F4F2ED;--surface:rgba(255,255,255,.78);--surface-opaque:#FFFFFF;--surface-subtle:#F7F5F1;--surface-muted:#ECE9E2;--text-strong:#1C1C1A;--text-body:#3A3A36;--text-muted:#5C5C55;--text-faint:#87877F;--border:rgba(28,28,26,.14);--border-strong:rgba(28,28,26,.30);--accent-link:#0047AB;--focus:#0047AB;--glass-blur:14px;--k-fact:#0047AB;--k-pitfall:#920000;--k-procedure:#0F766E;--k-opportunity:#2C601A;--k-risk:#7A5800;--k-wishlist:#6D28D9;--k-question:#005A8C;--k-decision:#002F6D;--k-milestone:#A83255;--st-ok:#2C601A;--st-info:#5C5C55;--st-warn:#7A5800;--st-danger:#920000;";
+    var DARK = "--paper:#1B1B18;--surface:rgba(36,36,32,.72);--surface-opaque:#242420;--surface-subtle:#201F1C;--surface-muted:#2E2D28;--text-strong:#F4F2ED;--text-body:#DAD8D0;--text-muted:#A9A79E;--text-faint:#7C7A72;--border:rgba(244,242,237,.14);--border-strong:rgba(244,242,237,.30);--accent-link:#7DA1D4;--focus:#7DA1D4;--glass-blur:14px;--k-fact:#7DA1D4;--k-pitfall:#CF8F8F;--k-procedure:#5EBFB5;--k-opportunity:#89A67F;--k-risk:#E3B341;--k-wishlist:#B28DEB;--k-question:#79B8D6;--k-decision:#A9BEE8;--k-milestone:#E48AA6;--st-ok:#89A67F;--st-info:#A9A79E;--st-warn:#E3B341;--st-danger:#CF8F8F;";
     var BASE = "color-scheme:light dark;background:var(--paper);color:var(--text-body);font-family:'Source Sans 3',system-ui,Arial,sans-serif;line-height:1.55;padding:16px;border-radius:14px;box-sizing:border-box;max-width:100%;";
     var css = [
       ".cpl-mem{" + LIGHT + BASE + "}",
@@ -1146,15 +1993,17 @@
       ".cpl-mem .mem-title .mem-emoji{font-size:1.5rem;line-height:1;}",
       ".cpl-mem .mem-title h1{font-family:'Playfair Display',Georgia,serif;color:var(--text-strong);font-size:1.45rem;margin:0;font-weight:700;line-height:1;}",
       ".cpl-mem .mem-title .mem-sub{color:var(--text-muted);font-size:.8rem;font-family:ui-monospace,Menlo,monospace;}",
-      ".cpl-mem .mem-head-actions{display:flex;align-items:center;gap:8px;flex:0 0 auto;}",
+      ".cpl-mem .mem-head-actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px;flex:0 1 auto;min-width:0;}"  /* flex:0 0 auto + nowrap held it at 410px on a phone */,
       ".cpl-mem .mem-search{font:inherit;font-size:.86rem;min-width:220px;max-width:46vw;padding:7px 11px;border-radius:9px;border:1px solid var(--border-strong);background:var(--surface-opaque);color:var(--text-body);}",
       ".cpl-mem .mem-search::placeholder{color:var(--text-faint);}",
-      ".cpl-mem .mem-theme{font:inherit;font-size:.8rem;font-weight:600;cursor:pointer;padding:7px 11px;border-radius:9px;border:1px solid var(--border-strong);background:var(--surface-muted);color:var(--text-strong);white-space:nowrap;}",
-      ".cpl-mem .mem-theme:hover{background:var(--surface-subtle);}",
       // auth bar
       ".cpl-mem .mem-authbar{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:12px 0 2px;}",
       ".cpl-mem .mem-authok{font-size:.76rem;font-weight:600;color:var(--st-ok);background:color-mix(in srgb,var(--st-ok) 12%,transparent);border:1px solid color-mix(in srgb,var(--st-ok) 30%,transparent);padding:3px 10px;border-radius:9px;}",
-      ".cpl-mem .mem-writeerr{font-size:.76rem;font-weight:700;color:var(--st-warn);background:color-mix(in srgb,var(--st-warn) 15%,transparent);border:1px solid color-mix(in srgb,var(--st-warn) 34%,transparent);padding:3px 10px;border-radius:9px;}",
+      ".cpl-mem .mem-writeerr{display:flex;align-items:center;gap:9px;flex-wrap:wrap;font-size:.76rem;font-weight:700;color:var(--st-warn);background:color-mix(in srgb,var(--st-warn) 15%,transparent);border:1px solid color-mix(in srgb,var(--st-warn) 34%,transparent);padding:4px 10px;border-radius:9px;}",
+      ".cpl-mem .mem-writeerr-acts{display:inline-flex;gap:6px;flex-wrap:wrap;}",
+      ".cpl-mem .mem-errbtn{font:inherit;font-size:.72rem;font-weight:700;cursor:pointer;padding:3px 9px;border-radius:7px;border:1px solid color-mix(in srgb,var(--st-warn) 50%,transparent);background:var(--surface-opaque);color:var(--text-strong);}",
+      ".cpl-mem .mem-errbtn:hover{border-color:var(--accent-link);color:var(--accent-link);}",
+      ".cpl-mem .mem-errbtn:disabled{opacity:.6;cursor:default;}",
       // tiles
       ".cpl-mem .mem-tiles{display:flex;flex-wrap:wrap;gap:14px 18px;margin:12px 0 4px;}",
       ".cpl-mem .mem-fam{display:flex;flex-direction:column;gap:5px;min-width:0;}",
@@ -1206,6 +2055,57 @@
       ".cpl-mem .mem-field-check input{width:auto;}",
       ".cpl-mem .mem-form textarea{resize:vertical;line-height:1.45;}",
       ".cpl-mem .mem-form-actions{display:flex;gap:8px;margin-top:6px;flex-wrap:wrap;}",
+      // ── Briefing panel (Report view) ──────────────────────────────────────
+      // Tokens only, never a raw hex (the house rule); the panel reads as a
+      // note ON the report rather than a card in it. No fixed widths and no
+      // measure cap: prose runs the full width of what sits beside it.
+      ".cpl-mem .mem-brief{margin:0 0 22px;padding:14px 16px;border:1px solid var(--border-strong);border-left:4px solid var(--accent-link);border-radius:10px;background:var(--surface-subtle);}",
+      ".cpl-mem .mb-h{font-family:'Playfair Display',Georgia,serif;font-size:1.08rem;font-weight:700;margin:0 0 6px;color:var(--text-strong);}",
+      ".cpl-mem .mb-lead{margin:0 0 10px;font-size:.86rem;line-height:1.5;color:var(--text-muted);max-width:var(--cpl-measure,none);}",
+      ".cpl-mem .mb-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}",
+      ".cpl-mem .mb-status{font-size:.78rem;color:var(--text-muted);}",
+      ".cpl-mem .mb-status.is-pending{color:var(--accent-link);}",
+      ".cpl-mem .mb-status.is-ok{color:var(--st-ok);font-weight:600;}",
+      ".cpl-mem .mb-status.is-err{color:var(--st-warn);font-weight:600;}",
+      ".cpl-mem .mb-out{margin-top:12px;font-size:.93rem;line-height:1.62;max-width:var(--cpl-measure,none);}",
+      ".cpl-mem .mb-out:empty{margin-top:0;}",
+      ".cpl-mem .mb-out p{margin:0 0 .8em;}",
+      ".cpl-mem .mb-out strong{color:var(--text-strong);}",
+      ".cpl-mem .mb-live{white-space:pre-wrap;color:var(--text-muted);}",
+      // A citation to a slug that is not an entry is FLAGGED, not hidden — a
+      // claim nobody can follow back is the thing this panel exists to expose.
+      // Marked with a word-shaped border + a title, never by color alone.
+      // A citation is a superscript number, not a sentence-long slug — see
+      // linkBriefSlugs. Big enough to click (the whole line-height box), small
+      // enough to stay out of the prose's way.
+      ".cpl-mem .mb-cite{font-family:ui-monospace,Menlo,monospace;font-size:.68em;vertical-align:super;line-height:0;padding:0 .12em;text-decoration:none;border-bottom:0;}",
+      ".cpl-mem .mb-cite:hover,.cpl-mem .mb-cite:focus-visible{text-decoration:underline;}",
+      // The hover/focus card. Opaque surface, not glass: it sits over prose and
+      // has to stay readable (tables and popovers never on glass, house rule).
+      ".cpl-mem .mb-tip{position:absolute;z-index:40;width:min(340px,88vw);padding:10px 12px;border:1px solid var(--border-strong);border-radius:9px;background:var(--surface-opaque);box-shadow:0 6px 22px rgba(0,0,0,.16);pointer-events:none;}",
+      ".cpl-mem .mb-tip-head{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-bottom:5px;}",
+      ".cpl-mem .mb-tip-kind{font-size:.68rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--kc);border:1px solid var(--kc);border-radius:6px;padding:0 6px;}",
+      ".cpl-mem .mb-tip-status{font-size:.7rem;font-weight:600;color:var(--text-muted);}",
+      ".cpl-mem .mb-tip-title{font-weight:700;font-size:.86rem;line-height:1.35;color:var(--text-strong);margin-bottom:3px;}",
+      ".cpl-mem .mb-tip-sum{font-size:.82rem;line-height:1.45;color:var(--text-body);}",
+      ".cpl-mem .mb-tip-slug{margin-top:5px;font-family:ui-monospace,Menlo,monospace;font-size:.7rem;color:var(--text-faint);word-break:break-all;}",
+      ".cpl-mem .mb-sources{margin-top:16px;padding-top:12px;border-top:1px solid var(--border);}",
+      ".cpl-mem .mb-sources-h{font-size:.74rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;}",
+      ".cpl-mem .mb-srclist{margin:0;padding-left:1.5em;font-size:.82rem;line-height:1.5;color:var(--text-body);}",
+      ".cpl-mem .mb-srclist li{margin:0 0 3px;}",
+      // ⚠ A REAL TARGET, and it is load-bearing for more than itself. The inline
+      // superscript citations are exempt from the 24px minimum only because SC
+      // 2.5.8 exempts a target positioned by the flow of its sentence AND
+      // because these rows repeat every one of them at full size. At 15px they
+      // did not, so the exemption was unearned and BOTH were undersized —
+      // caught by scripts/check_memory_briefing_layout.js, which asserts the
+      // exemption rather than trusting the argument for it.
+      ".cpl-mem .mb-srclink{display:inline-block;padding:5px 0;color:var(--accent-link);text-decoration:none;font-weight:600;}",
+      ".cpl-mem .mb-srclink:hover,.cpl-mem .mb-srclink:focus-visible{text-decoration:underline;}",
+      ".cpl-mem .mb-srcslug{display:block;font-family:ui-monospace,Menlo,monospace;font-size:.72rem;color:var(--text-faint);}",
+      ".cpl-mem .mb-srcflag{display:inline-block;margin-top:2px;font-size:.7rem;font-weight:700;color:var(--st-warn);border:1px solid var(--st-warn);border-radius:6px;padding:0 5px;}",
+      ".cpl-mem .mb-badref{font-family:ui-monospace,Menlo,monospace;font-size:.8rem;color:var(--st-warn);border-bottom:1px dashed var(--st-warn);cursor:help;}",
+      "@media (max-width:560px){.cpl-mem .mem-brief{padding:12px;} .cpl-mem .mb-row{align-items:flex-start;flex-direction:column;}}",
       ".cpl-mem .mem-autogen{margin:0 0 14px;padding:11px 12px;border:1px dashed color-mix(in srgb,var(--accent-link) 45%,var(--border-strong));border-radius:10px;background:color-mix(in srgb,var(--accent-link) 6%,var(--surface-subtle));}",
       ".cpl-mem .mem-autogen-h{font-family:'Playfair Display',Georgia,serif;font-size:.92rem;font-weight:700;color:var(--accent-link);margin-bottom:7px;}",
       ".cpl-mem .mem-autogen-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:7px;}",
@@ -1216,7 +2116,10 @@
       ".cpl-mem .mem-autogen-status.is-err{color:var(--st-warn);font-weight:600;}",
       ".cpl-mem .mem-btn{font:inherit;font-size:.78rem;font-weight:600;cursor:pointer;padding:6px 13px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface-muted);color:var(--text-strong);}",
       ".cpl-mem .mem-btn:hover{background:var(--surface-subtle);}",
-      ".cpl-mem .mem-btn-primary{background:var(--accent-link);color:#fff;border-color:var(--accent-link);}",
+      ".cpl-mem .mem-btn-primary{background:var(--accent-link);color:var(--on-accent);border-color:var(--accent-link);}",
+      ".cpl-mem .mem-btn-danger{background:var(--st-danger);color:var(--surface-opaque);border-color:var(--st-danger);}",
+      ".cpl-mem .mem-btn-danger:disabled{opacity:.6;cursor:default;}",
+      ".cpl-mem .mem-form-warn{font-size:.78rem;font-weight:600;color:var(--st-danger);background:color-mix(in srgb,var(--st-danger) 10%,transparent);border:1px solid color-mix(in srgb,var(--st-danger) 30%,transparent);border-radius:8px;padding:7px 10px;margin:0 0 10px;line-height:1.45;}",
       ".cpl-mem .mem-btn-primary:hover{filter:brightness(1.06);}",
       // list
       ".cpl-mem .mem-body{display:grid;grid-template-columns:minmax(0,1fr) 344px;gap:16px;align-items:start;}",
@@ -1288,6 +2191,28 @@
       ".cpl-mem .rp-tools{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px;padding-top:10px;border-top:1px solid var(--border);}",
       ".cpl-mem .rp-toolbtn{font:inherit;font-size:.74rem;font-weight:600;cursor:pointer;padding:5px 11px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface-muted);color:var(--text-strong);}",
       ".cpl-mem .rp-toolbtn:hover{background:var(--surface-subtle);color:var(--accent-link);border-color:var(--accent-link);}",
+      // Destructive actions are tinted AND worded ("Delete", 🗑) — color is
+      // never the only thing carrying the meaning.
+      ".cpl-mem .rp-toolbtn-danger{color:var(--st-danger);border-color:color-mix(in srgb,var(--st-danger) 45%,transparent);}",
+      ".cpl-mem .rp-toolbtn-danger:hover{background:color-mix(in srgb,var(--st-danger) 12%,transparent);color:var(--st-danger);border-color:var(--st-danger);}",
+      ".cpl-mem .rp-toolnote{font-size:.74rem;color:var(--text-muted);align-self:center;}",
+      // status menu on the ✎ chip
+      ".cpl-mem .mi-curate-host{position:relative;display:inline-block;}",
+      ".cpl-mem .mi-menu{position:absolute;right:0;top:calc(100% + 5px);z-index:40;width:224px;",
+      "background:var(--surface-opaque);border:1px solid var(--border-strong);border-radius:9px;",
+      "box-shadow:0 10px 26px rgba(20,20,30,.18);padding:4px;text-align:left;}",
+      ".cpl-mem .mi-menu-item{display:block;width:100%;font:inherit;text-align:left;cursor:pointer;",
+      "background:none;border:0;border-radius:7px;padding:6px 9px;color:var(--text-strong);}",
+      ".cpl-mem .mi-menu-item:hover:not([disabled]){background:var(--surface-muted);}",
+      ".cpl-mem .mi-menu-item:focus-visible{outline:2px solid var(--accent-link);outline-offset:-2px;}",
+      ".cpl-mem .mi-menu-item[disabled]{cursor:default;opacity:.75;}",
+      ".cpl-mem .mi-menu-item.is-now .mi-menu-lab{color:var(--text-muted);}",
+      ".cpl-mem .mi-menu-lab{display:block;font-size:.78rem;font-weight:700;}",
+      ".cpl-mem .mi-menu-why{display:block;font-size:.71rem;color:var(--text-muted);line-height:1.35;margin-top:1px;}",
+      ".cpl-mem .mi-menu-rule{height:1px;background:var(--border);margin:4px 6px;}",
+      // Tinted AND worded AND ellipsised — the ellipsis is the promise that it
+      // asks before it acts, which is the only reason it is safe to sit here.
+      ".cpl-mem .mi-menu-del .mi-menu-lab{color:var(--st-danger);}",
       ".cpl-mem .rp-toolhost .mem-form{max-width:100%;}",
       // view-mode segmented control (masthead) — reuses .mem-seg-btn styling
       ".cpl-mem .mem-viewseg{display:inline-flex;border:1px solid var(--border-strong);border-radius:9px;overflow:hidden;flex:0 0 auto;}",
@@ -1305,7 +2230,7 @@
       ".cpl-mem .mr-titleblock{margin:0 0 18px;}",
       ".cpl-mem .mr-title{font-family:'Playfair Display',Georgia,serif;color:var(--text-strong);font-size:1.7rem;font-weight:700;margin:0 0 4px;line-height:1.12;}",
       ".cpl-mem .mr-sub{font-size:.82rem;color:var(--text-muted);margin:0;}",
-      ".cpl-mem .mr-body{max-width:65ch;}",
+      ".cpl-mem .mr-body{max-width:var(--cpl-measure,none);}",
       ".cpl-mem .mr-section{margin:0 0 22px;}",
       ".cpl-mem .mr-h{--sc:var(--k-fact);font-family:'Playfair Display',Georgia,serif;color:var(--text-strong);font-size:1.12rem;font-weight:700;margin:0 0 7px;padding:2px 0 5px 11px;border-left:4px solid var(--sc);border-bottom:1px solid var(--border);}",
       ".cpl-mem .mr-lead{font-style:italic;color:var(--text-muted);font-size:.85rem;line-height:1.45;margin:0 0 11px;}",
@@ -1323,11 +2248,27 @@
   }
 
   // ── lifecycle ──
+  var _sessWired = false;
   function activate() {
     ensureCss();
     var root = document.getElementById(ROOT_ID);
     if (!root) return;
     if (!_shellBuilt) { buildShell(root); _shellBuilt = true; }
+    // The keeper renews the reviewer token underneath this tab and announces
+    // sign-ins that happened in ANOTHER browser tab. Without this the lock
+    // state was only ever rendered at activation, so a session that changed
+    // while the tab sat open never reached the auth bar — which is how a page
+    // ends up insisting you are signed out (or in) while the truth is the
+    // other way round.
+    if (!_sessWired && typeof window.addEventListener === "function") {
+      _sessWired = true;
+      window.addEventListener("cpl-session-changed", function () {
+        if (!_shellBuilt) return;
+        refreshSession();
+        if (sess) writeErrMsg = null;   // a fresh credential clears a stale complaint
+        render();
+      });
+    }
     load();
   }
 
@@ -1346,6 +2287,25 @@
     _genSlug: genSlug,
     _parseDraft: parseDraft,
     _autogenQuery: autogenQuery,
+    _autogenTopicMax: AUTOGEN_TOPIC_MAX,
+    _briefOrder: briefOrder,
+    _readingRank: readingRank,
+    _readingBands: READING_BANDS,
+    _briefDigest: briefDigest,
+    _briefQuery: briefQuery,
+    _briefRetrieval: briefRetrieval,
+    _briefQueryMax: BRIEF_QUERY_MAX,
+    _briefCorpusMax: briefCorpusMax,
+    _briefFetch: briefFetch,
+    _renderBriefText: renderBriefText,
+    _hideCiteCard: hideCiteCard,
+    _pendingEdit: function () { return pendingEdit; },
+    _selectEntry: function (id) { selectEntry(id); },
+    _writeKey: writeKey,
+    _writeFailMessage: writeFailMessage,
+    _setStatus: setStatus,
+    _deleteEntry: deleteEntry,
+    _renderBriefingPanel: renderBriefingPanel,
     _autogenerate: autogenerate,
     _applyDraftToForm: applyDraftToForm,
     _buildEntryForm: buildEntryForm,

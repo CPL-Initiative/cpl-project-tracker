@@ -1,7 +1,7 @@
 ---
 title: COBI — the masthead rename and the Mamba brand layer
 created: 2026-06-19
-updated: 2026-07-02
+updated: 2026-09-04
 tags: [lessons, cobi, branding, masthead, ui, easter-egg, kpi-cards]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -664,3 +664,376 @@ re-grain, label per Sam: **"Common Exhibit Titles."**
   "Exhibits" columns + Top-50 stay raw-ID/raw-title grain; the college custom
   report prints those buckets — re-key in a follow-up if Sam wants the
   per-college numbers on the same grain.
+
+---
+
+## 2026-08-18 — the Alpha-testing notice (Sky168)
+
+Sam: *"add a notice to the COBI header that clarifies that it is in Alpha
+testing and only used for testing purposes."*
+
+**What shipped.** Two surfaces, one wording:
+
+- An **`Alpha` chip** on the wordmark and a one-line notice row under the
+  brand — **centered, italic, `.88rem`** (a step above the `.8rem` tagline):
+  *"COBI is an experimental data suite in Alpha development phase. Features and
+  figures may be incomplete or wrong — please don't cite or share them outside
+  the team."*
+- **`(Alpha)` in `<title>` + `og:title`** — `COBI ᶜᴾᴸ (Alpha) — …`.
+
+**Why the title too.** The on-page notice only reaches someone who already
+opened the page. A COBI link pasted into Teams or Slack unfurls as its
+`<title>`/`og:title`, and that is exactly the moment the "still in testing"
+signal has to travel — the person deciding whether to click, or worse, whether
+to forward the numbers. Same reason the change is in `COBI_TITLE` in
+`excel_to_dashboard.py` (Rule 1) rather than typed into the HTML.
+
+**Where the code lives, and why.** Both the chip and the notice row are
+injected at runtime by `cobi_brand.js`, not written into the masthead markup.
+The generator rewrites `<h1>` on every daily run (`re.sub(r'<h1>[^<]*</h1>',
+'<h1>COBI</h1>')`), so a chip typed into the HTML survives until 06:17 UTC
+tomorrow and then quietly vanishes — the same trap the gold `CPL` superscript
+already solved. `addAlphaNotice()` is idempotent and re-runnable, and
+`cobi_brand.test.js` guards the failure mode that matters: **the notice
+disappearing**, including a check that re-running the injector after a
+simulated `<h1>` regen puts the chip back.
+
+**Wording.** Two sentences: what COBI *is* right now, then what to do about
+it. Sam supplied the first on review — *"COBI is an experimental data suite in
+Alpha development phase"* — and it is the half that was missing. The original
+opened with a bare **Alpha testing.**, which names the stage but not the thing:
+a reader who has never met COBI learns that *something* is in alpha without
+learning that the whole suite is experimental. The second sentence stays as it
+was, because "don't cite or share outside the team" is the actual ask and the
+only part a colleague can comply with.
+
+**Presentation is part of the message.** Sam also asked for centered, italic and
+a bit larger. Left-aligned at `.74rem` the line read as a caption on the
+wordmark — the visual grammar of a fine-print disclaimer, which is exactly the
+register a reader skips. Centered across the full header width, italic, and
+larger than the tagline it sits under, it reads as a *statement about the whole
+page*. The `<b>Alpha testing.</b>` lead was dropped in the same pass: with the
+line already set apart, the bold was competing emphasis rather than adding it.
+
+**Layout.** The notice is a grid child at `grid-column:1 / -1` with a late
+`order`, so it takes its own row under the brand in both the wide and the
+≤1180px header layouts without disturbing the columns above it. Colors come
+from `--mustard-fill` / `--mustard-text` (the caution grades) — no raw hex.
+
+**Not done — deliberately.** The standalone public pages (the CPL Fact Sheet,
+the Sierra assistant page) carry their own headers and were left alone; Sam's
+ask named the COBI header. If those should carry it too, that is a separate,
+larger call, since they are the pages actually pointed at colleges.
+
+---
+
+## 2026-09-04 — SkyMint S227: the masthead decluttered, both credentials in one pane, and the zoom overlap root-caused (PR #1469)
+
+Sam, opening the session: *"See the header is all a mess when I zoom in or out,
+it gets messed up and ugly"*, with six asks.
+
+**The zoom bug was geometry, not styling — and three defaults each caused it.**
+Measured on `main` at a 768px viewport: `.cobi-brand` drew **580px of content
+inside a 322px grid track**, painting 240px straight across the utility cluster.
+The floor came from `.cobi-orgswitch`, a flex item whose default
+`min-width:auto` would not yield — the outer container already carried
+`min-width:0` and it made no difference. Two more defaults reproduce the same
+symptom alone: a bare `1fr` is `minmax(auto,1fr)`, and a non-stretch
+`justify-self` sizes an item to its own content. All three are now cleared. Full
+claim: [`methodology-a-grid-item-sized-to-its-content-overflows-its-track`](kb-notes/methodology-a-grid-item-sized-to-its-content-overflows-its-track.md).
+
+**The six asks.** ① The tagline left the masthead *and* the `<title>`/`og:title`
+it also rode in — via `COBI_TITLE` in the generator, which is the source of
+truth for the title (Rule 1). ② The gold CPL superscript and the per-site org
+tag are gone; `cobi_brand.js` now **sweeps** any `.cobi-num` rather than
+declining to add one, so a cached `cobi_orgs.js` cannot put it back. ③ Refresh
+moved into About **at runtime**, not in the markup — `excel_to_dashboard.py`
+re-injects that button after `.last-updated` on every daily run, so an HTML edit
+would be undone by the next cron. ④ The team phrase gave up its 🔒 masthead
+button for `mountInto()`, the seam `reviewer_signin.js` already used, so
+`cobi_identity.js` now holds both credentials in one pane. ⑤ Site options read
+`<code> — <full title>`, derived from `ORGS`. ⑥ The alpha banner, below.
+
+⭐ **`cobi_identity.js` argued against ④ in its own docstring** — the phrase is
+site-scoped, a sign-in is not, and nesting one in the other implies an isolation
+the database does not enforce. The objection was about the **copy**, not the
+container: the mounted box now states its scope on every render (*"Opens the
+Finance tabs, plus every shared team tab"*) instead of implying it by which
+cluster it sat in. Position implied it; words state it. Worth honoring the
+pattern — a docstring that argues against a future change is doing its job, and
+the resolution is to answer the argument, not to delete it.
+
+⭐ **Sam corrected the alpha banner as FALSE.** It had said *"please don't cite
+or share them outside the team"* — but COBI's figures are shared outward by
+design, through Sierra and the CPL Fact Sheet. *"Maybe rather than saying 'don't
+cite...' we should say something like, 'always doublecheck and revise outputs as
+needed...'"* A banner that forbids what the product does daily teaches readers
+to ignore the banner. It now asks the reader to verify, and names what COBI
+answers from and how it is governed. Then, on the treatment: *"remove the
+formatting around the text and shrink the font and make it unbold so it's just a
+low-key part of the header"* — reversing his own 2026-08-18 bordered/italic/gold
+treatment a step larger than everything else.
+
+**Accessibility, measured not asserted** — see
+[`public_pages_a11y_lessons`](public_pages_a11y_lessons.md) for the seven AA
+failures this found in the masthead alone, three of them written the same day.
+
+---
+
+## 2026-09-09 — SkyTouch (S248): four kinds of token that cannot flip, and a fifth theme control
+
+**PR [#1534](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1534).**
+Sam, mid-session, with three screenshots: *"the remaining COBI surfaces that are
+still not responsive to dark mode … and there are many more."*
+
+⭐ **THE REMAINDER WAS NEVER "A LONG TAIL OF RAW HEXES" — IT WAS FOUR SHAPES OF
+TOKEN THAT CANNOT CHANGE VALUE BETWEEN THEMES, EACH READING AS CORRECT CODE.**
+That is why three prior sessions of sweeping left so much: a raw `#ffffff` is
+caught by grep and by review; `var(--surface-2, #eef3f9)` is caught by neither.
+The four shapes, the role-count rule and the detection method are one KB note,
+[`methodology-a-token-that-cannot-flip-is-a-surface-that-cannot-theme`](kb-notes/methodology-a-token-that-cannot-flip-is-a-surface-that-cannot-theme.md);
+what belongs here is how the run went wrong and right.
+
+⭐ **THE BIGGEST CAUSE WAS A TOKEN THAT DID NOT EXIST.** `--surface-1` /
+`--surface-2` were referenced 26 times across seven files and defined nowhere,
+so every site painted its hardcoded light fallback in **both** themes — **19 of
+128** dark contrast findings from one missing declaration. Found by a
+**structural scan**, not the sweep: collect every `--x:` definition across the
+codebase, collect every `var(--x, …)` reference, subtract. That takes a second
+and needs no browser.
+
+⚠️ **DEFINING THEM IN LIGHT TOO WOULD HAVE BEEN A RESTYLE, NOT A FIX.** The 26
+fallbacks are six different tints (`#eef3f9` · `#f4f7fb` · `#fdf8ec` · `#f5f5f5`
+· `#fafbfc` · a translucent), so one light value repaints six tabs. Defining
+them in the **dark blocks only** leaves every light pixel where it was — an
+asymmetry that looks like an oversight and is the whole point, so it is
+commented in place and pinned by a test that fails if someone "completes" it.
+
+⭐ **COUNT A TOKEN'S USES BY ROLE BEFORE YOU DECIDE ANYTHING ABOUT IT.**
+`--navy-primary` measured **551 INK vs 26 FILL** — flipping it was right, the
+fills are collateral. `--seal-blue` measured **65 FILL vs 20 INK** — which is
+exactly why this repo refuses to flip it. Same question, opposite answers, and
+nothing but the count tells you which you are in. Guessing either would have
+been defensible and wrong.
+
+⚠️ **A FIFTH ANSWER TO "IS IT DARK", AND IT SURVIVED FOUR ROUNDS BECAUSE OF HOW
+WE LOOKED.** `cip_crosswalk.js` kept its own button, its own `cipx_theme` key
+and a 108-ground palette gated on its own **class** — using neither `data-theme`
+nor `prefers-color-scheme`, the two spellings every previous scan grepped for.
+**A search for known spellings cannot find an unknown one.** The durable fix is
+not a better grep but a behavioral invariant: *no tab may persist a theme of its
+own, whatever it calls it* — which is what the new guard asserts.
+
+⚠️ **BOTH PAIRING GUARDS COULD NOT FIRE, AND THE FIX FOR THAT COULD NOT FIRE
+EITHER.** They were single regexes requiring `color:` to sit immediately after
+`background:`, in that order; every defect that actually shipped broke one of
+those assumptions (`border-color:` in between, or the ink written first). Both
+were green against four real defects. Rewritten as a declaration-block parser —
+and then narrowing the match to the outermost `var()` returned a bare token name
+while every regex matched on the `var(--` prefix, so both stopped firing again.
+**Caught only by reverting each fix and watching the suite stay green.** Third
+session running to find a check of this shape; the falsification pass is the
+only thing that has ever caught one.
+
+⚠️ **`git checkout <file>` DISCARDS AN UNCOMMITTED FIX — IT DOES NOT UNDO A
+REVERT.** Falsifying a guard by `sed`-ing the fix out and restoring with
+`git checkout` silently threw away three of this run's own edits, because they
+had never been committed. Back up with `cp` and restore from the copy. The tell
+was a guard "firing" on a file it had no business reading.
+
+⚠️ **AND THE FALSIFICATION HARNESS ITSELF MISCOUNTED.** `stdout.count("\nFAIL")`
+misses a `FAIL` on the first line, which is exactly where the Rule-4 check
+prints. It reported a working guard as broken. Count with `grep -cE "^FAIL"`.
+
+⭐ **THE CONTRAST SWEEP UNDER-REPORTS, AND THIS RUN PROVED IT.** Annual Report
+showed **2** findings while both of its panes were white in Sam's screenshot —
+that tab builds its content on demand, so the sweep sampled it empty. The sweep
+finds what is wrong on screen and misses what is not drawn; the structural scan
+finds what cannot be right and over-reports. **Run both**; fix what the sweep
+names, and use the scan only to size what is left.
+
+⭐ **VERIFY A SCREENSHOT AGAINST `main` BEFORE CHASING IT.** That same Annual
+Report screenshot was **already fixed** — `.car-preview` took `--surface-opaque`
+five commits earlier, and `git merge-base --is-ancestor` proved it in two
+minutes. It was a cached asset. ⚠️ The sandbox cannot reach the Pages site (the
+proxy returns 403), so the check is git, never the deployed URL.
+
+⭐ **THE LIGHT BASELINE WAS MEASURED, NOT ASSUMED.** A `git worktree` at
+`origin/main` with a symlinked `node_modules` gives a clean-tree sweep in two
+minutes: **63 findings / 18 routes**, against 62 / 18 after forty-odd edits. The
+lane had been claiming "light held at 18" from the route count alone, which is
+far too coarse to carry that claim.
+
+⚠️ **AND SAY WHICH SWEEP A NUMBER CAME FROM.** S245 published 120 dark findings
+with Implementation Funding **excluded**; including it, this run started at
+**128**. Without that sentence the next session cannot tell a regression from a
+widened scope.
+
+**Measured:** dark **128 → 87** contrast findings (−32%), **26 → 20** failing
+routes; light **63 → 62**, 18 → 18 routes; `npm test` **321/321**. One suite
+failed and was right to — `uc_kinship_gate` pinned the literal `color:#fff` on
+the member-table band — so the assertion moved to the intent it was written for,
+per the S245 precedent for a guard with no ruling behind it.
+
+## 2026-09-10 — SkyTouch (S249): the rest of the phantoms, and a fix whose own measurement said nothing
+
+**PR #1542** (continued). Three findings, and the second is the one that changes
+how this lane should be worked.
+
+### 1 · The remaining 21 phantom color tokens
+
+S248 cleared `--surface-1`/`--surface-2`/`--gold-soft` and left 25 more measured
+but unfixed. 21 of them are now defined in the dark blocks only, covering 62
+uses across `cpl_pathways`, `map_users`, `team_phrases`, `unified_courses`,
+`gr_priorities`, `map_team_queue`, `credential_reference`, `annual_report`,
+`mission_control`, `raci`, `admin`, `sierra_training`, `reviewer_signin` and
+`governance`.
+
+Every value is an **alias**, never a new hex — inks to `--hunter` / `--crimson`
+/ `--mustard-text` / `--text-muted`, grounds to `--surface-subtle` /
+`--surface-muted` / `--surface-opaque` / `--gold-soft`, borders to `--border`.
+The role a token plays is then stated by the token it points at, which is the
+property that survives a palette change. All 12 new dark pairs computed with
+`prototype/check_contrast.py`: worst 4.93:1 against AA 4.5.
+
+⚠️ **The entry condition is "every use carries a fallback."** `--brand` (14
+uses), `--link` (6) and `--text` (4) were held out: they have uses written
+`var(--brand)` with no fallback, which are invalid at computed-value time and
+resolve to nothing in **both** themes today — `college_briefing.js`'s
+`.cb-bfrac>i` progress bar is `transparent` and its `.cb-lead`/`.cb-next`
+accent borders do not draw. A dark-only definition there would paint something
+light does not have. It is a both-themes bug whose fix changes light, so it went
+to Sam rather than into the sweep.
+
+### 2 · ⭐ The sweep measured nothing, and that is the finding
+
+The fix moved `npm run a11y cobi-dark` **66 → 67**. Measured both ways on the
+same tree with `git stash`, not inferred — and the diff of the two finding lists
+is **empty in one direction**. Not one of the 62 phantom uses was ever being
+sampled, so none could be reported fixed. (The single extra line is
+`map_data_quality`'s primary button, which the earlier run had not sampled; it
+is a pre-existing fixed-ink defect and is now fixed.)
+
+`.cplccr` chips, `.cplmem` cards, `.mtq` items, `.tphx` cards and `.grx` boxes
+are all built on demand. **So a finding count cannot be the acceptance test for
+a token-layer fix.** Prove the token layer directly instead: load both themes
+and read each token off `getComputedStyle(document.documentElement)`. 21/21
+resolved to the intended value in dark and were unset in light — which is also
+a stronger proof that no light pixel moved than the sweep can give. The light
+sweep merely agreed: 63 → 63, byte-identical lists.
+
+⚠️ **Falsify the probe too.** Its first version could not fail — it compared the
+light value against `""` after an `|| "(unset)"` coalesce, so all 21 read BAD
+while the data underneath was perfect. That is the third check this lane has
+produced that could not fire.
+
+### 3 · Three CI failures, none of them this branch's
+
+- **`tests/discipline_edge_fill_test.py` was red on `main` itself.** Its live-
+  payload check asserted `filled >= blank_before * 0.5` — yield — and S242 had
+  wired the fill into the generator, so the committed payload now arrives
+  already at the fixed point and yield goes to zero **on success**. Reproduced
+  on a clean worktree at `9ba2551`.
+- ⚠️ **It went red with no CI run reporting it.** `js-tests.yml` runs on push to
+  `main`, but a push made with `GITHUB_TOKEN` does not trigger workflows, so the
+  cron's commits never test themselves. `main`'s last js-tests run was an
+  **ancestor** of the commit that broke it. Same mechanism as the four
+  `background:#fff` form controls earlier in this session.
+- **Another session fixed the same test from the other side** (#1541) while this
+  branch was working. Both fixes are kept, and the reason is measured rather than
+  polite — see the KB note below.
+- ⭐ **#1541 also shipped `tests/kpi_history_no_gaps_test.py` with no runner.**
+  Named in no workflow, no script and no `package.json`, and `tests/run.js`
+  auto-discovers `tests/*.test.js` only, so a `*_test.py` runs nowhere unless a
+  step names it. Rule 3's guard had been reporting nothing since it landed. Now
+  wired into `js-tests.yml` beside the other 40 python steps.
+
+### Carried forward
+
+`--text-faint` on Implementation Funding, the raw dark inks the sweep names, the
+raw light grounds under them, printing while in dark mode, and the 24
+unresolved `var(--brand)`/`var(--link)`/`var(--text)` declarations — the last
+one needs Sam because it changes light.
+
+### S249, second pass — fixing what the sweep NAMES, and the contrast with the first
+
+The same session, an hour later. The first pass fixed what reading the code
+said was wrong and moved the sweep by one finding. The second fixed what the
+sweep itself named and moved it **67 → 38 dark, 63 → 58 light, zero
+regressions**. Both passes were correct; only one of them was measurable, and
+the difference is worth remembering when planning the next one.
+
+**⭐ A fifth "cannot flip" shape, and it was the biggest single color pair.**
+`rgba(255,255,255,.5)` as a fill is a **light-only construct**: over the night
+ground it composites to a mid grey (`#8A8A8A`, `#8F8F8E` — measured, not
+computed) that fights every themed ink laid on it. Seven findings from three
+declarations: `.uc-badge`, `.cs-badge`, `.cr-chip`.
+
+⚠️ **The recipe was deliberate, and the repo had already said so.** It is First
+Light spec v1.6's "glass-quiet chip", pinned by `tests/retheme_tokens.test.js`
+— which is how the conflict surfaced: `npm test` went red on a test whose name
+explained the design decision I had just overwritten. So it got a **dark
+branch, not a removal**: the light value moved into the fallback slot of
+`var(--glass-quiet, rgba(255,255,255,.5))`, with `--glass-quiet: #262624`
+defined dark-only. Light renders byte-identically, every themed ink clears AA
+(worst `--hunter` at 5.65:1), and the recipe's own `--border-strong` keeps the
+chip boundary from being carried by color alone.
+
+**98 raw slate inks swept.** `#374151`/`#3A3A36`/`#4B5563` → `--text-body`;
+`#5A6478`/`#64748B`/`#94A3B8` → `--text-muted`. Each mapped to the token whose
+LIGHT value is equal or darker, so light cannot regress — except that
+`#64748B` (4.25:1) and `#94A3B8` (2.29:1) were **already failing AA in light**,
+so those darkened on purpose and fixed five light findings too.
+
+### ⚠️ Three regressions, and the check that let them through
+
+The sweep caused three, all the same fault. I had checked every rule for a
+light background **of its own** and found none on the sites I swept. But **a
+rule's own `background` is not its ground — the ground is the composited
+ancestor chain**:
+
+- `.cr-summary` inherits a `--gold-accent` band (composite `#CFCBB2`)
+- `.cr-sort-indicator` sits inside a `--seal-blue` table header (`#002F6D`)
+
+Both fills are **deliberately not redefined dark**, so flipping the ink to a
+token that does flip is exactly wrong. `.cr-sort-indicator`'s original
+`#94A3B8` was *correct* at 5.03:1 on the navy; sweeping it to `--text-muted`
+landed at **1.92:1 in light**. `--on-mustard` already existed for the gold
+case; the seal-blue equivalent did not, so `--on-seal-blue-muted: #94A3B8` is
+now declared once in the base `:root` beside it.
+
+The third was two JS variables — `const nc = row.tier === 'Leading' ?
+'#1C1C1A' : '#3A3A36'` — which a `color:` regex cannot see. A painted color
+does not have to be written next to the word `color`.
+
+**What caught all three: re-measuring BOTH themes and diffing the finding
+lists.** Not the tests, which stayed green. The diff named each one with its
+selector and its ratio.
+
+### ⭐ The most consequential find: a sanitizer that blinded every guard
+
+A new guard reported that `.cs-badge` had no background rule. The rule was
+plainly there in the file. The guard was right; its input was wrong:
+
+```js
+const stripComments = (t) => t.replace(/\/\*[\s\S]*?\*\//g, "")
+                              .replace(/^\s*(\/\/|#).*$/gm, "");
+```
+
+`#` starts a comment in Python and an **ID selector** in CSS. Applied to
+`index.html`, that helper deleted **942 lines** before any scanner saw them —
+329 CSS rules beginning with an ID selector, **179 carrying a `color:`
+declaration**. Every raw-hex ink guard in `tests/cpl_theme.test.js`, including
+the ones written earlier the same day, had been scanning a stylesheet with most
+of its color declarations already removed.
+
+Split into `stripComments` (JS/CSS) and `stripPyComments` (adds `#`, used only
+for `excel_to_dashboard.py`). Proven both ways: with the old helper the injected
+defect is invisible; with the new one the guard fires.
+
+⚠️ **A sanitizer is a check's blind spot and it is invisible in the check's own
+source.** Falsify through the whole pipeline, from the file on disk, and put the
+defect where real ones live — a defect injected into a string literal inside the
+test would have passed and proved nothing. And print the count once when you
+write a sanitizer: *how many lines does this blank?* would have caught it at any
+point in the months it was live.

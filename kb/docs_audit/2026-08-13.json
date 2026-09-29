@@ -9,33 +9,33 @@
     "other": 150000
   },
   "summary": {
-    "files": 505,
-    "bytes": 5821387,
+    "files": 508,
+    "bytes": 5859223,
     "over_budget": 6,
-    "handoff_max": 151,
+    "handoff_max": 152,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 103351,
+    "always_loaded_bytes": 109885,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 103351,
+        "bytes": 109885,
         "over": 1
       },
       "other": {
-        "files": 62,
-        "bytes": 1434087,
+        "files": 63,
+        "bytes": 1452451,
         "over": 1
       },
       "index": {
         "files": 1,
-        "bytes": 209346,
+        "bytes": 209629,
         "over": 1
       },
       "lessons": {
-        "files": 55,
-        "bytes": 1628714,
+        "files": 56,
+        "bytes": 1634859,
         "over": 3
       },
       "kb_note": {
@@ -44,20 +44,21 @@
         "over": 0
       },
       "handoff": {
-        "files": 134,
-        "bytes": 1060100,
+        "files": 135,
+        "bytes": 1066610,
         "over": 0
       }
     },
     "by_rule": {
       "oversized_doc": 6,
+      "stacked_roadmap_cell": 1,
       "kb_note_dialect": 57,
-      "vault_heavy_path": 43
+      "vault_heavy_path": 44
     },
     "vault": {
-      "files": 1906,
-      "bytes": 1104669625,
-      "heavy_bytes": 582835963,
+      "files": 1917,
+      "bytes": 1111782098,
+      "heavy_bytes": 586599980,
       "heavy_share": 0.528,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
@@ -94,6 +95,7 @@
         "cpl-project-tracker/kb/automerge_out/2026-06-13-titlelane/supabase_ops.sql",
         "cpl-project-tracker/tools/first_light_candidates.json",
         "cpl-project-tracker/unified_courses_index.js",
+        "cpl-project-tracker/kb/peer_articulations_payload.json",
         "cpl-project-tracker/unified_courses_suggestions.js",
         "cpl-project-tracker/credential_reference_data.js",
         "cpl-project-tracker/coci_lookup_desc_B.js",
@@ -111,26 +113,50 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 103351,
+        "bytes": 109885,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 43351,
-        "ratio": 1.72
+        "over_by": 49885,
+        "ratio": 1.83
       },
-      "message": "103,351 B is 1.7× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "109,885 B is 1.8× the always_loaded budget (60,000 B) — candidate for compaction",
+      "path": "CLAUDE.md"
+    },
+    {
+      "rule": "stacked_roadmap_cell",
+      "fixable": false,
+      "detail": {
+        "cells": [
+          {
+            "row": "MAP Users / student contact",
+            "chars": 4447,
+            "priors": 0,
+            "corrections": 0
+          },
+          {
+            "row": "Common CR Reference",
+            "chars": 4081,
+            "priors": 0,
+            "corrections": 0
+          }
+        ],
+        "cell_max": 4000,
+        "prior_max": 1
+      },
+      "message": "2 roadmap cell(s) have become append-only logs — worst is \"MAP Users / student contact\" at 4,447 chars / 0 *Prior:* markers. A cell must state CURRENT truth; retire superseded text to the lessons doc instead of prefixing it. Contradictory claims inside one auto-loaded file are why the same correction gets made twice.",
       "path": "CLAUDE.md"
     },
     {
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 209346,
+        "bytes": 209629,
         "limit": 40000,
         "lane": "index",
-        "over_by": 169346,
-        "ratio": 5.23
+        "over_by": 169629,
+        "ratio": 5.24
       },
-      "message": "209,346 B is 5.2× the index budget (40,000 B) — candidate for compaction",
+      "message": "209,629 B is 5.2× the index budget (40,000 B) — candidate for compaction",
       "path": "docs/INDEX.md"
     },
     {
@@ -825,13 +851,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 384845,
+        "bytes": 386973,
         "limit": 150000,
         "lane": "other",
-        "over_by": 234845,
-        "ratio": 2.57
+        "over_by": 236973,
+        "ratio": 2.58
       },
-      "message": "384,845 B is 2.6× the other budget (150,000 B) — candidate for compaction",
+      "message": "386,973 B is 2.6× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {
@@ -1173,6 +1199,16 @@
         "kind": "file"
       },
       "message": "3,910,759 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/peer_articulations_payload.json",
+      "detail": {
+        "bytes": 3764017,
+        "kind": "file"
+      },
+      "message": "3,764,017 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

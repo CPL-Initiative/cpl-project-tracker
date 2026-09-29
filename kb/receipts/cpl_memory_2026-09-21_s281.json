@@ -1,0 +1,71 @@
+{
+ "_doc": "S281 checkpoint memory rows, staged. The repo's Supabase guard blocked execute_sql (Rule 10) and apply_migration was NOT used to route around it. Sam runs the .sql beside this file, or lifts the guard for the run.",
+ "_blocked_at": "2026-09-21T14:0xZ",
+ "rows": [
+  {
+   "slug": "sendtoclaude-cannot-reach-a-claude-code-session",
+   "kind": "pitfall",
+   "title": "sendToClaude() cannot reach a Claude Code session in a remote container",
+   "summary": "Measured 2026-09-21 (S281): the comments capability's sendToClaude() reports no_session from a remote-container Claude Code session EVEN WITH a live, confirmed artifact watch. The watch was re-registered and listed at 13:42:11Z, Sam pressed Complete at 13:43:24Z, the page still reported 'no session is listening' and replies/done carried sent:false. A lapsed watch was a real condition and was NOT the cause. Do not re-diagnose consent or permissions. It works from a claude.ai chat session. The reliable path: replies/done is a durable record needing nothing alive at press time, so arm a send_later that reads it and compares its at.",
+   "tags": [
+    "decision-sheets",
+    "artifacts",
+    "notification",
+    "claude-code"
+   ],
+   "status": "proposed",
+   "source": "docs/kb-notes/methodology-the-record-is-the-mechanism-the-notification-is-a-bonus.md",
+   "verified_by": "SkyAnvil S281",
+   "event_date": "2026-09-21"
+  },
+  {
+   "slug": "a-second-look-shown-the-verdict-rubber-stamps-it",
+   "kind": "procedure",
+   "title": "An adjudication second look must never see the verdict it checks",
+   "summary": "The Trail Crew playbook requires an adversarial skeptic on every merge proposal, and its working version re-derived the numbers rather than re-reading the claim. Handing a model its own conclusion and asking it to critique invites agreement, and the failure is SILENT: a rubber-stamping skeptic produces a clean report with a high confirmation rate, indistinguishable from a pass that worked. kb/_jev_adjudicate.py asks the NEGATIVE question from the same evidence in a separate call with the first answer withheld. A refuted proposal routes to the curator however confident the first look was; the gate is symmetric so a 0.5 hedge is not a refutation; the second call is spent only above the gate. tests/jev_adjudicate_test.py asserts the skeptic call does not contain the first verdict.",
+   "tags": [
+    "adjudication",
+    "ai",
+    "jev",
+    "trail-crew",
+    "verification"
+   ],
+   "status": "proposed",
+   "source": "docs/kb-notes/methodology-a-second-look-shown-the-verdict-rubber-stamps-it.md",
+   "verified_by": "SkyAnvil S281",
+   "event_date": "2026-09-21"
+  },
+  {
+   "slug": "opt-out-sheets-need-verdict-provenance",
+   "kind": "decision",
+   "title": "An opt-out decision sheet must record who ruled and who let it ride",
+   "summary": "Sam, 2026-09-21: 'set the decision button for each item to your recommended and I will change only if needed -- opt-out approach'. A pre-selected chip is indistinguishable from an answered one, so a sheet abandoned at item 30 hands over verdicts for 31-51 nobody read. They are still handed over -- that is what opt-out IS -- but never as his: no stored reply means the item carries the proposal, a stored reply is always by:'sam', and Complete commits the rest by:'default'. CONSEQUENCE: any matcher calibration must score against by:'sam' rows only; an as-proposed row measures the default, never the model.",
+   "tags": [
+    "decision-sheets",
+    "cr-reference",
+    "calibration"
+   ],
+   "status": "proposed",
+   "source": "docs/reference/decision_sheets.md",
+   "verified_by": "Sam Lee (2026-09-21), recorded by SkyAnvil S281",
+   "event_date": "2026-09-21"
+  },
+  {
+   "slug": "jev-magic-half-one-module-for-every-reference",
+   "kind": "fact",
+   "title": "Jev adjudication lives in one module for CSR, CER and CCRR; CCR is not wired",
+   "summary": "kb/_jev_adjudicate.py is the single Jev magic half. The method+magic pattern is the repo's own (playbook-trail-crew-method-magic-audit, run twice 2026-07-10 on CER then CSR); every reference owns a METHOD half and what differs is the magic one, and the playbook records that the CCR has never had a magic half at scale. CCRR blocking is IMPORTED from _typesafe_cr_trial.build_pairs(), never reimplemented. Triage measured 2026-09-21: CER 239 findings -> 59 worth a call (180 mechanical), CSR 185 -> 143, CCRR 55 anchored pairs. The 2026-09-20 receipt's 51 pairs are ALL still present (reconciled, none lost); the 4 new pairs sit under the community relations anchor. CCR deliberately not wired: its method half emits Trust Cards rather than findings. Run via typesafe-smoke.yml -- typesafe.ai is egress-blocked from the sandbox. It SUGGESTS and writes nothing.",
+   "tags": [
+    "cr-reference",
+    "jev",
+    "adjudication",
+    "csr",
+    "cer"
+   ],
+   "status": "proposed",
+   "source": "kb/_jev_adjudicate.py",
+   "verified_by": "SkyAnvil S281",
+   "event_date": "2026-09-21"
+  }
+ ]
+}

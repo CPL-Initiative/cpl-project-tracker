@@ -1,8 +1,7 @@
 ---
 title: "Fix the root, not a counter-rule: decision-tracing a stack of interacting rules"
-date: 2026-07-21
+created: 2026-07-21
 kb-status: published
-type: methodology
 tags: [methodology, rule-interaction, debugging, decision-trace, display-vs-gate, regression-sweep, cip]
 related:
   - "[[cip_crosswalk_lessons]]"

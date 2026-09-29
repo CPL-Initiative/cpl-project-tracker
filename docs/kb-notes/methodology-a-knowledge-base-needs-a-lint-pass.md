@@ -72,7 +72,7 @@ the corpus declares a note's type three ways (`tags:` 135, `type:` 43,
 that rule would have produced 52 false alarms in the first report and the tool
 would have been ignored by the second. The auditor now accepts every dialect
 (R3) and reports the drift separately as **informational** (R3b), leaving
-normalisation as a human call. Same species as
+normalization as a human call. Same species as
 [`methodology-a-guard-that-fails-on-truth-gets-muted`](methodology-a-guard-that-fails-on-truth-gets-muted.md).
 
 **4. The same defect recurred one rule later, which is the real lesson.** R6

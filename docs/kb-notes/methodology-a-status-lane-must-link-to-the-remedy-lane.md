@@ -72,7 +72,7 @@ in increasing strength:
   claim someone will rely on; too rigid when "no action needed" is a legitimate
   and common outcome (it is, here — plenty of thumbs-down are fine as-is).
 
-## The generalisation, and why it keeps recurring
+## The generalization, and why it keeps recurring
 
 **Attention is not outcome, and only one of them is easy to record.** Systems
 drift toward measuring the recordable thing. The same shape, three times in this

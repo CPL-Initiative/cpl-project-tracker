@@ -1,8 +1,7 @@
 ---
 title: "Achievement-based funding — the cap-and-earn model"
-date: 2026-07-24
+created: 2026-07-24
 kb-status: published
-kb-type: methodology
 tags: [methodology, funding, implementation-funding, incentive, measurability, cpl]
 artifacts:
   - cpl_funding.js (earnFraction · collegeAlloc.earned_total · earnAgg · basis toggle)

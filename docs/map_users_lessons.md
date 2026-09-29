@@ -66,7 +66,7 @@ decision, and it's the one rung where we'd be deciding something the college
 didn't. Those became *ask*, not *default*. Cost: 5 colleges move from
 auto-proposed to needing a conversation. Worth it.
 
-**Generalisation worth keeping:** when you can't make a determination for
+**Generalization worth keeping:** when you can't make a determination for
 someone, look for a determination they already made. It is almost always
 sitting in the system somewhere, unused.
 
@@ -206,7 +206,7 @@ into "individual → reject." Hers separates them, and it's enforceable — a
 non-department address must now carry a note justifying it, which is what stops a
 future contributor quietly pasting in some counselor's address.
 
-**Generalisation:** when a domain expert relaxes a rule you set for yourself, check
+**Generalization:** when a domain expert relaxes a rule you set for yourself, check
 whether the rule was protecting against *your* failure mode rather than theirs. A
 web lookup can't tell a designated contact from a name on a list. A person who
 works those contacts daily can.
@@ -271,7 +271,7 @@ environment moved underneath a documented plan.
 ### Why the addresses did not go in as `via: "web"`
 
 They would have passed every test in the repo. They would still have been
-mislabelled, because **a tier is a claim about method, not confidence**.
+mislabeled, because **a tier is a claim about method, not confidence**.
 `via: "web"` means *somebody opened the page and applied Jessica's rules* — and
 those rules are rules about what a *page* shows. A snippet cannot tell a
 department inbox from a name off a list, and **2 of the previous 71 published
@@ -334,7 +334,7 @@ hand-typed and two carry a **trailing space** — `"Cypress College "` and `"San
 City College "`. The fallback keys match that *exactly*, so the lookup works today
 and would break **silently** the day MAP tidies the spelling, rendering a college
 we *did* research as "not looked up". `fallbackFor()` now tries the exact key
-first, then a normalised index. Nothing changes today, and nothing changes when
+first, then a normalized index. Nothing changes today, and nothing changes when
 MAP fixes its typo either — which is the whole point.
 
 **College of Marin** carries the literal string `"na"` in `cpl_counselor_email`;
@@ -405,7 +405,7 @@ settled ruling does not enforce itself, the consumer has to change.*
 Four things the fossil had already smoothed away, each now a committed test in
 `tests/sierra_college_contacts.test.js` (28 checks):
 
-- **Normalise both sides.** Two real colleges carry a trailing space in MAP —
+- **Normalize both sides.** Two real colleges carry a trailing space in MAP —
   `"Cypress College "`, `"San Jose City College "`. Exact matching drops them
   *silently back to the fossil*. Third occurrence of this in the repo.
 - **Validate, don't just split.** 22 of 115 routable colleges hold several people

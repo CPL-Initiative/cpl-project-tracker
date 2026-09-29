@@ -33,7 +33,7 @@ MCP `deploy_edge_function` tool.
    closed", Session 94). `index.ts` reached 66 KB / 1,287 lines.
 2. **Transcription.** The file carries non-ASCII (`Cañada`, box rules,
    arrows), tabs inside string literals, and ~9 KB of prompt text **where one
-   dropped line changes answer behaviour without breaking syntax**. The
+   dropped line changes answer behavior without breaking syntax**. The
    post-deploy byte-verify catches that only *after* it is live.
 
 The runner checks the file out of git and ships those bytes. Neither failure

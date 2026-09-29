@@ -184,7 +184,7 @@
       }, []);
       // The chip body is "Activity N" (no curator string) — but stay on
       // textContent for the hygiene contract regardless.
-      chip.textContent = (rec.is_primary ? "★ " : "") + "Activity " + aid;
+      chip.textContent = (rec.is_primary ? "Primary · " : "") + "Activity " + aid;
       if (hint) cell.insertBefore(chip, hint);
       else cell.appendChild(chip);
     });

@@ -759,17 +759,17 @@
 
     var html = '';
     html += '<div id="masterReportModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.5);overflow-y:auto;padding:2rem;">';
-    html += '<div style="max-width:700px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.2);overflow:hidden;font-family:\'Source Sans 3\',Arial,sans-serif;">';
+    html += '<div style="max-width:700px;margin:0 auto;background:var(--surface-opaque);border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.2);overflow:hidden;font-family:\'Source Sans 3\',Arial,sans-serif;">';
 
     // Header
     html += '<div style="background:linear-gradient(135deg,var(--navy-primary) 0%,var(--navy-secondary) 100%);padding:1.2rem 1.5rem;display:flex;justify-content:space-between;align-items:center;">';
-    html += '<h2 style="margin:0;color:#fff;font-size:1.1rem;">Master Report</h2>';
-    html += '<button id="masterReportClose" style="background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer;padding:0;line-height:1;">&times;</button>';
+    html += '<h2 style="margin:0;color:var(--on-accent);font-size:1.1rem;">Master Report</h2>';
+    html += '<button id="masterReportClose" style="background:none;border:none;color:var(--on-accent);font-size:1.5rem;cursor:pointer;padding:0;line-height:1;">&times;</button>';
     html += '</div>';
 
     // Body
     html += '<div style="padding:1.5rem;max-height:70vh;overflow-y:auto;">';
-    html += '<p style="margin:0 0 1rem 0;font-size:0.82rem;color:#555;">Builds the Workplan-style Word report from the live dashboard data — including the latest posted card updates and Team &amp; RACI leads. Uncheck anything you want left out.</p>';
+    html += '<p style="margin:0 0 1rem 0;font-size:0.82rem;color:var(--text-muted);">Builds the Workplan-style Word report from the live dashboard data — including the latest posted card updates and Team &amp; RACI leads. Uncheck anything you want left out.</p>';
 
     // Select All / None
     html += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.6rem;">';
@@ -791,7 +791,7 @@
       html += '</label>';
       html += '<div style="padding:0.3rem 0.8rem 0.5rem 2rem;">';
       projects.forEach(function (p) {
-        html += '<label style="display:flex;align-items:flex-start;gap:0.4rem;padding:0.2rem 0;cursor:pointer;font-size:0.82rem;color:#333;">';
+        html += '<label style="display:flex;align-items:flex-start;gap:0.4rem;padding:0.2rem 0;cursor:pointer;font-size:0.82rem;color:var(--text-strong);">';
         html += '<input type="checkbox" class="mrpt-project-cb" data-pid="' + p.id + '" data-activity="' + actId + '" checked style="margin-top:2px;accent-color:var(--accent-link);cursor:pointer;">';
         html += '<span><strong style="color:var(--navy-secondary);">' + p.id + '</strong> ' + p.name + '</span>';
         html += '</label>';
@@ -803,11 +803,11 @@
 
     // Footer
     html += '<div style="padding:1rem 1.5rem;border-top:1px solid #e8e8e8;display:flex;justify-content:space-between;align-items:center;gap:0.5rem;flex-wrap:wrap;">';
-    html += '<div id="masterReportStatus" style="font-size:0.8rem;color:#666;">';
+    html += '<div id="masterReportStatus" style="font-size:0.8rem;color:var(--text-muted);">';
     html += '<a href="reports/CPL_Master_Report.docx" download style="color:var(--accent-link);text-decoration:underline;">Download today\'s pre-built full copy</a>';
     html += '</div>';
     html += '<div style="display:flex;gap:0.5rem;">';
-    html += '<button id="masterReportGenBtn" style="padding:8px 20px;background:var(--cobalt);color:#fff;border:none;border-radius:4px;font-weight:600;font-size:0.85rem;cursor:pointer;font-family:inherit;">Generate Master Report</button>';
+    html += '<button id="masterReportGenBtn" style="padding:8px 20px;background:var(--cobalt);color:var(--on-accent);border:none;border-radius:4px;font-weight:600;font-size:0.85rem;cursor:pointer;font-family:inherit;">Generate Master Report</button>';
     html += '</div></div>';
 
     html += '</div></div>';

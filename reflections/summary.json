@@ -1,10 +1,14 @@
 {
-  "generated": "2026-08-10",
-  "total_reflections": 16,
-  "active_days": 16,
+  "generated": "2026-09-28",
+  "total_reflections": 23,
+  "active_days": 23,
   "first_day": "2026-06-12",
-  "latest_day": "2026-07-30",
+  "latest_day": "2026-09-25",
   "top_paintings": [
+    {
+      "painting": "In Without Knocking",
+      "count": 2
+    },
     {
       "painting": "California Poppy Field",
       "count": 1
@@ -30,10 +34,6 @@
       "count": 1
     },
     {
-      "painting": "In Without Knocking",
-      "count": 1
-    },
-    {
       "painting": "Oranges and Poppies",
       "count": 1
     }
@@ -46,7 +46,23 @@
       "reflections": 3
     },
     {
+      "term": "creation",
+      "reflections": 3
+    },
+    {
+      "term": "favorite",
+      "reflections": 3
+    },
+    {
+      "term": "imagine",
+      "reflections": 3
+    },
+    {
       "term": "like",
+      "reflections": 3
+    },
+    {
+      "term": "makes",
       "reflections": 3
     }
   ],

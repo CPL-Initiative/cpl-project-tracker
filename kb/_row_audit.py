@@ -111,7 +111,7 @@ GENERIC_DISCIPLINES = {
 # KIN/PE convergence (docs/kin_pe_convergence_scope.md §5.2). The SUBJ4 tracks
 # the subject a student enrolls in while the MQ discipline stays coarse. EXEMPT
 # from subject_collision_signal (they are SUPPOSED to span >1 SUBJ4).
-UMBRELLA_DISCIPLINES = {"Foreign Languages", "Kinesiology"}
+UMBRELLA_DISCIPLINES = {"Foreign Languages", "Kinesiology", "Agriculture", "Agricultural Production"}
 
 def _title_tokens(s):
     """Lowercase tokens ≥3 chars, with stop-words filtered."""
@@ -255,9 +255,10 @@ def tier_of(score: float) -> str:
 # ─── id-scheme classifier ────────────────────────────────────────────────────
 # CCN-aligned surrogate M-ID: SUBJ M####  or  SUBJ M<band><d><LL>  (4-char tail).
 M_ID_RE = re.compile(r"^[A-Z]{2,6} M[0-9][0-9A-Z]{3}$")
-# Curator/auto-minted Unified course: SUBJ Z<band><seq:03d> (the 2026-06-15
-# UC-CUR→Z re-mint). Z is ON-scheme — the intended synthetic-Unified format,
-# parallel to M/C — and a promotion candidate (§11 uc_cur_ripe_for_promotion).
+# The 2026-06-15 UC-CUR→Z re-mint's synthetic-Unified shape, SUBJ Z<band><seq:03d>.
+# RETIRED 2026-09-03 (items 20-21 of Sam's rulings; kb/_zband_retire_apply.py):
+# every machine cluster is a real M-ID record now (origin 'machine cluster'), so
+# a Z id is OFF-scheme — the regex stays only to recognize a stray.
 Z_ID_RE = re.compile(r"^[A-Z]{2,6} Z[0-9][0-9A-Z]{3}$")
 
 
@@ -266,15 +267,16 @@ def id_in_scheme(course_id: str, id_system: str) -> bool:
 
     M-ID expected `SUBJ M####` / `SUBJ M<band><d><LL>`.
     C-ID and CCN reference anchors carry their own format; trusted.
-    Z-ids (`SUBJ Z<band><seq>`) are ON-scheme (the curator/auto Unified format).
-    Transient `UC-CUR-*` placeholders are off-scheme (re-mint them to Z).
+    Z-ids (`SUBJ Z<band><seq>`) were the curator/auto Unified format until the
+    2026-09-03 retirement; a Z id is off-scheme now (it should be an M-ID record).
+    Transient `UC-CUR-*` placeholders are off-scheme (they mint to M, never Z).
     """
     if id_system in ("C-ID", "CCN", "CCN-ID"):
         return True
     if id_system == "M-ID":
         return bool(M_ID_RE.match(course_id or ""))
     if course_id and Z_ID_RE.match(course_id):
-        return True
+        return False   # the Z band retired 2026-09-03
     if course_id and course_id.startswith("UC-CUR-"):
         return False
     return True  # unknown families: don't flag (no scheme to violate)
@@ -1199,7 +1201,7 @@ def _classify_merge_into_orphan(merge_into, source_id, courses, singletons,
     if merge_into.startswith("UC-CUR-"):
         return False
     if Z_ID_RE.match(merge_into):
-        return False   # Z = valid synthetic Unified target (self-defining like UC-CUR)
+        return True    # the Z band retired 2026-09-03: a Z target is a dangling pointer
     return True
 
 

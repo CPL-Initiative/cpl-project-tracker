@@ -34,6 +34,14 @@ const wantsUnits = (function () {
   const m = consumerSrc.match(/function wantsUnits\(m\) \{[\s\S]*?\n  \}/);
   return eval("(" + m[0].replace(/^function wantsUnits/, "function") + ")");
 })();
+// saysCounselorAccepted() is referenced from the first MEASURES entry (and from
+// metricMilestone), so it has to exist in this scope for the same reason
+// wantsUnits does — rebuilt out of the consumer rather than copied, so this
+// suite can never test a stale duplicate of the predicate (added 2026-09-15).
+const saysCounselorAccepted = (function () {
+  const m = consumerSrc.match(/function saysCounselorAccepted\(m\) \{[\s\S]*?\n  \}/);
+  return eval("(" + m[0].replace(/^function saysCounselorAccepted/, "function") + ")");
+})();
 const MEASURES = eval("(" + consumerSrc.slice(start + "var MEASURES = ".length, end - 1) + ")");
 function measure(metric) {
   const m = String(metric || "").toLowerCase();
@@ -42,7 +50,7 @@ function measure(metric) {
 
 check("the metric-wiring diagnostic exists (a gap can't hide silently)",
   /function metricDiagnosticHtml/.test(consumerSrc) &&
-  /inheriting baked default/.test(consumerSrc));
+  /hand-maintained default/.test(consumerSrc));
 check("the diagnostic is curator-only (public readers don't need it)",
   /function metricDiagnosticHtml\(\)\s*\{\s*\n\s*if \(publicMode\(\)\) return "";/.test(consumerSrc));
 check("prioMetricSource distinguishes curated from baked-default",
@@ -112,8 +120,11 @@ check("every measurable MEASURES entry declares its unit",
 check("a headcount metric that mentions units still reaches its GAP, not a unit measure",
   (function () { const m = measure("Headcount with Completion and 3+ Transcribed CPL Units");
     return !!m && !m.src && /match-back/.test(m.gap_short || ""); })());
+// In plain words since 2026-09-23 ("The wording asks for units, but the measure
+// counts students"), so the check reads the branch, not a retired label.
 check("the diagnostic flags a unit mismatch (not just measurable-vs-gap)",
-  /UNIT MISMATCH/.test(consumerSrc) && /function wantsUnits/.test(consumerSrc));
+  /\} else if \(mismatch\) \{\s*msg = '<span class="cplfund-warn-text">The wording asks for/.test(consumerSrc) &&
+  /function wantsUnits/.test(consumerSrc));
 
 // Every baked metric must at least MATCH a predicate — an unmatched metric falls
 // through to "no measure" and pays a silent advance with no explanation at all.

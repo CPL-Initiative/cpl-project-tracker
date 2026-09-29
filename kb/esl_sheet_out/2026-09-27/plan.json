@@ -1,0 +1,21 @@
+{
+ "_about": "The ESL follow-up sheet's verdicts and the one write they call for. Sam ruled both items himself.",
+ "sheet": "https://claude.ai/artifact/PaozKqfruMT3hZ93vcg5gr",
+ "verdicts": {
+  "1": {"v": "keep", "by": "sam", "at": "2026-09-27T00:02:06Z", "meaning": "ESOL M9309 stays apart with transfer composition; no write"},
+  "2": {"v": "vesl", "by": "sam", "at": "2026-09-27T00:02:17Z", "meaning": "ESOL M9267 and M9272 fold into Vocational ESL (ESOL M9023)"}
+ },
+ "done": {"at": "2026-09-27T00:02:19Z", "ruled": 2, "as_proposed": 0, "through": "2"},
+ "read_at": "2026-09-27T00:21:51Z",
+ "live": {
+  "ESOL M9267": {"merge_into": null, "unified_title": "Optical Technician 1 (automerge-v1@bot)", "merged_in": ["HLTH M90AE", "ESOL M91MX"]},
+  "ESOL M9272": {"merge_into": null, "unified_title": "Optical Technician 2 (automerge-v1@bot)", "merged_in": ["HLTH M90AL", "ESOL M91NF"]},
+  "ESOL M9023": {"merge_into": null, "unified_title": "Vocational ESL (package-esl-s187@bot)"},
+  "pending_confirms": 0
+ },
+ "inserts": [
+  {"id": "ESOL M9267", "to": "ESOL M9023", "cohort": "esl-vesl-s294@bot"},
+  {"id": "ESOL M9272", "to": "ESOL M9023", "cohort": "esl-vesl-s294@bot"}
+ ],
+ "note": "The four June merges into the two groups (two HLTH and two ESOL identities) follow the chain to Vocational ESL through flatten_merge_chains."
+}

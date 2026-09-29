@@ -1,8 +1,7 @@
 ---
 title: Phase 2 — Projects Table Migration (Scope)
-date: 2026-05-28
+created: 2026-05-28
 kb-status: published
-kb-type: playbook
 tags: [excel-to-supabase, phase-2, projects, migration, scope]
 related:
   - docs/kb-notes/playbook-measure-first-supabase-migration.md (the 5-step template)
