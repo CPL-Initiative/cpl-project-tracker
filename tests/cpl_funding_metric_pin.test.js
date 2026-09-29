@@ -29,7 +29,7 @@
 // target/actual columns).
 //
 // Run from repo root: `npm test` (or `node tests/cpl_funding_metric_pin.test.js`).
-const { check, freshDom, boot, consumerSrc, D, finish } = require("./lib/cpl_funding_harness.js");
+const { check, freshDom, boot, consumerSrc, D, finish, drillOf, remainingOf } = require("./lib/cpl_funding_harness.js");
 const { NPRIO } = require("./lib/cpl_funding_harness.js");
 
 // ⚠️ LOCATE A PRIORITY CARD BY ITS DISPLAY INDEX, NOT BY DOM ORDINAL
@@ -66,31 +66,31 @@ function openDetail(window, doc, name) {
   const det = row2 && row2.nextElementSibling;
   return det && det.classList.contains("cplfund-detail") ? det : null;
 }
-// Sam's six columns since 2026-09-24, one table per lane; this suite reads
-// the CREDIT table. Its Max Funds IS the credit share that the retired Total
-// Possible hover carried, so `crShare` reads it directly. Hovers are kept per
-// cell as `<key>Tip`.
-// The first header names its lane since 2026-09-28 (Credit outcomes /
-// Noncredit outcomes, Sam's mockup).
-const DTL_COL = { "outcomes": "priority", "credit outcomes": "priority", "noncredit outcomes": "priority",
-  "max ftes": "target", "max funds": "maxFunds", "actual ftes": "actual", "actual funds": "current",
-  "difference": "diff" };
+// Since round 8 (Sam, 2026-09-29) the priorities are rows of the college table
+// itself, read by COLUMN KEY through the table's own header (the harness's
+// drillOf), never by position. This suite reads the CREDIT lane: `target` is
+// the Max FTES beneath Max CR Funds, `maxFunds` that figure (the credit share
+// the retired Total Possible hover carried, so `crShare` reads it directly),
+// `actual` the Actual FTES beneath Curr CR Funds, `current` that figure, and
+// `diff` what remains, which rides the Curr figure's hover since the
+// Difference column retired. `actualTip` is the Actual FTES hover: TBA's own,
+// else the "% of Max FTES" the Curr cell's hover carries. The FTES unit moved
+// from the header into each line, so `actual` drops it to keep the figure.
 const crShare = (cells) => cells.maxFunds;
 function detRows(det) {
-  if (!det) return [];
-  const trs = Array.from(det.querySelectorAll(".cplfund-dtl-table.cplfund-dtl-cr tr"));
-  // Header → key, so a cell is addressed by NAME. Every unmapped header is a
-  // loud failure rather than a silent shift: a new column must be named here.
-  const keys = Array.from((trs[0] || { querySelectorAll: () => [] }).querySelectorAll("th"))
-    .map((th) => {
-      const k = DTL_COL[th.textContent.replace(/\s+/g, " ").trim().toLowerCase()];
-      if (!k) throw new Error("unmapped detail column: " + th.textContent.trim());
-      return k;
-    });
-  return trs.slice(1).map((tr) => {
-    const tds = Array.from(tr.querySelectorAll("td"));
-    const cells = tds.map((td) => td.textContent.replace(/\s+/g, " ").trim());
-    keys.forEach((k, i) => { cells[k] = cells[i]; cells[k + "Tip"] = tds[i] ? tds[i].getAttribute("title") || "" : ""; });
+  if (!det || !det.previousElementSibling) return [];
+  return drillOf(det.ownerDocument, det.previousElementSibling).cells.map((c) => {
+    const cells = [];
+    const cur = c.cr_current || {}, max = c.cr_award || {};
+    const pct = /Actual FTES (.*?% of Max FTES)/.exec(cur.tip || "");
+    cells.priority = c.college ? c.college.text : "";
+    cells.target = max.line || "";
+    cells.maxFunds = max.fig || "";
+    cells.actual = (cur.line || "").replace(/ FTES$/, "");
+    cells.current = cur.fig || "";
+    cells.diff = remainingOf(cur) || "";
+    cells.actualTip = cur.lineTip || (pct ? pct[1] : "");
+    cells.currentTip = cur.tip || "";
     return cells;
   });
 }
@@ -240,12 +240,13 @@ check("4c: a declared-but-undelivered source earns f=0 — Sam's NC ruling, not 
 // "The feed carries no such measure" and "this college posted nothing" are two
 // different zeros and the tab must not print them the same way. The surface is
 // the expand's Actual column now (one pool, 2026-08-31): "no feed" vs "0 · 0%".
-// The measured zero prints the NUMBER since 2026-09-24 (the unit rides the
-// header, the percent the hover); the undelivered label stays words.
+// The measured zero prints the NUMBER since 2026-09-24 (the percent rides the
+// hover); the undelivered label stays words. Since round 8 (2026-09-29) one
+// function, actualFtesOf(), decides both for the drill-in's priority rows.
 check("4d: undelivered is a separate LABEL from none (absent zero vs measured zero) — " +
       "TBA vs a measured 0.0",
-  /status === "undelivered"\) \{ act = "TBA"; actTip = TBA_TIP; \}/.test(consumerSrc) &&
-  /status === "none"\) \{ act = unit\(0\);/.test(consumerSrc));
+  /fr\.status === "undelivered"\) return \{ text: "TBA", val: null, measured: false, tip: TBA_TIP \}/.test(consumerSrc) &&
+  /fr\.status === "none"\) return \{ text: unit\(0\), val: 0, measured: true/.test(consumerSrc));
 
 // ── 5. one place decides whether a number is a measurement ───────────────────
 check("5a: earnIsMeasured() exists, so a new status cannot be forgotten at four sites",
@@ -290,9 +291,9 @@ check("5c: the CSV emits BLANK for an unmeasured priority, never 0",
 // measure still never renders as a college's measured zero (4d above), and
 // the undelivered branch still decides before the catch-all.
 check("5d: an undelivered measure never falls through to the catch-all label",
-  consumerSrc.indexOf('status === "undelivered") { act = "TBA"') !== -1 &&
-  consumerSrc.indexOf('status === "undelivered") { act = "TBA"') <
-    consumerSrc.indexOf('else { act = "TBA"; actTip = TBA_TIP; }   // gap / pending'));
+  consumerSrc.indexOf('if (fr.status === "undelivered") return { text: "TBA"') !== -1 &&
+  consumerSrc.indexOf('if (fr.status === "undelivered") return { text: "TBA"') <
+    consumerSrc.indexOf('return { text: "TBA", val: null, measured: false, tip: TBA_TIP };   // gap / pending'));
 
 // ── 6. the curator diagnostic must not lie about the new states ──────────────
 // It previously classified anything without a `src` as "not measurable — pays a

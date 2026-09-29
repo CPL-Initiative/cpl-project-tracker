@@ -92,7 +92,9 @@ window.COBI_ADMIN_SURFACE = {
         "cpl_funding.js"
       ],
       "reads": [
-        "budget_funding"
+        "budget_funding",
+        "map_college_contacts",
+        "map_college_contacts_pub"
       ],
       "writes": [
         "cpl_funding_config",
