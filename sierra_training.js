@@ -649,6 +649,8 @@
         + " .sit-seg .sit-btn { flex:1 1 0; min-width:0; padding:4px 6px; white-space:normal; }"
         + " .sit-try { display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }"
         + " .sit-try-l { grid-column: 1 / -1; }"
+        // A lone My College button takes the row, as its neighbors do.
+        + " .sit-try-one { grid-template-columns: minmax(0, 1fr); }"
         + " #sit-guid-list .sit-q { flex:1 1 100%; }"
         + " #sit-guid-list .sit-applies { margin-left:0; }"
         + " .sit-guid-row > * { flex:1 1 100%; }"
@@ -1521,13 +1523,24 @@
     return '<span class="sit-chip sit-chip-' + esc(s) + '" title="' + esc(STATUS_HELP[s] || "") + '">'
       + esc(statusLabel(s)) + "</span>";
   }
-  // "Try it in: Sierra · My College" (round 1). Two quiet buttons in a named
-  // group; `data-host` is the destination testInSierra() writes for cpl_chat.js.
+  // "Try it in: Sierra · My College" (round 1). Quiet buttons in a named group;
+  // `data-host` is the destination testInSierra() writes for cpl_chat.js.
+  //
+  // ONE BUTTON WHERE THE SITE HIDES CPL ASSISTANT (Sam's ruling, 2026-09-29,
+  // sheet 3 card 12, as proposed): keep the word Sierra, and show only My
+  // College there. sierraHost() already sent the Sierra button to My College,
+  // so the two buttons opened one place. The Sierra button is drawn only where
+  // sierraHost() would open the CPL Assistant tab, so what the group shows and
+  // where the button goes are one decision. Asked on every render; activation
+  // re-renders, so a site switch or a curator's hide shows on the next visit,
+  // and a button painted before a late menu change still routes through
+  // sierraHost() when pressed. Guard: tests/sierra_training_round1.test.js (5d).
   function tryGroup(src, labelId) {
-    return '<span class="sit-try" role="group" aria-labelledby="' + labelId + '">'
+    var both = sierraHost() === "chatbot";
+    return '<span class="sit-try' + (both ? "" : " sit-try-one") + '" role="group" aria-labelledby="' + labelId + '">'
       + '<span class="sit-try-l" id="' + labelId + '">Try it in:</span>'
-      + '<button type="button" class="sit-btn" data-qact="test" data-host="chatbot" data-qsrc="' + esc(src) + '"'
-      + ' title="' + esc(HELP.testInSierra) + '">Sierra</button>'
+      + (both ? '<button type="button" class="sit-btn" data-qact="test" data-host="chatbot" data-qsrc="' + esc(src) + '"'
+        + ' title="' + esc(HELP.testInSierra) + '">Sierra</button>' : "")
       + '<button type="button" class="sit-btn" data-qact="test" data-host="' + DEST_MY_COLLEGE + '" data-qsrc="' + esc(src) + '"'
       + ' title="' + esc(HELP.testInMyCollege) + '">My College</button>'
       + "</span>";
