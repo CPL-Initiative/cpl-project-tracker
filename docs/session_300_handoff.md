@@ -111,3 +111,14 @@ after 2026-10-28 · governance for the two write surfaces · the unit-range disp
   the lane file's compaction (above).
 - Pre-existing a11y findings on the COBI funding tab, outside the dashboard: four
   targets under 24px (`a.cplfund-sanity`, two `a.cplfund-goalsup`, `#cplFundMirror`).
+
+## Emergency close (after the checkpoint)
+
+S299 hit the Rule 9a EMERGENCY line (48,674 tokens left) after the checkpoint above, while
+answering Sam's FTES question and finding #1729. Nothing else was lost; still open:
+- the vault note PR [samueltlee/CPLBrain#191](https://github.com/samueltlee/CPLBrain/pull/191)
+  (draft, one new note): mark ready and merge;
+- #1731: held in draft. Reconcile it as above, then close it with one comment naming the PR
+  that carries its remaining changes;
+- two more `cpl_memory` rows went in: `fresh-ftes-pull-in-production-2026-09-24`,
+  `a-parallel-session-can-merge-the-work-you-are-redoing-2026-09-29`.
