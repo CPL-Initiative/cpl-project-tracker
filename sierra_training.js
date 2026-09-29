@@ -129,8 +129,22 @@
       + "no college has articulated it, or it is filed under a different name.",
     ruleSent: "This instruction is currently being sent to Sierra with every question she answers.",
     ruleOff: "Turned off — Sierra never sees this one. Kept as a record of what was tried.",
-    testInSierra: "Opens the CPL Assistant with this exact question filled in, so you can see whether "
-      + "Sierra answers it better now. It does not send it — you press enter yourself.",
+    testInSierra: "Opens Sierra on the CPL Assistant tab with this exact question filled in, so you can see "
+      + "whether she answers it better now. It does not send it; you press Enter yourself.",
+    testInMyCollege: "Opens Sierra on the My College tab with this exact question filled in. There she answers "
+      + "for the college picked on that tab; if none is picked yet, pick one and the question waits in her box. "
+      + "It does not send it; you press Enter yourself.",
+    // The five number cards (round 1, Sam's approval 2026-09-28). A card that
+    // filters says so AND says how to undo it, because a lit card is a filter the
+    // reader set and may not remember setting.
+    cardTodo: "People who rated an answer and whose report nobody has finished with yet. "
+      + "Press to list only these; press again to list everything.",
+    cardDown: "How many people pressed thumbs-down. These are the answers someone thought were wrong. "
+      + "Press to list only these; press again to list everything.",
+    cardConvos: "How many recent conversations we looked through to find those. "
+      + "Press to go to the questions she struggled with.",
+    cardInUse: "Instructions you have given Sierra that are currently switched on. "
+      + "Press to list only these; press again to list them all.",
     writeRule: "Start a new instruction for Sierra with this question already quoted, so you can tell "
       + "her how to handle this kind of question in future.",
     ruleEdit: "Change the wording of this instruction. Saving keeps it in the same place in the list, "
@@ -141,6 +155,46 @@
       + "to this tab and the editor is still open, so you can adjust and try again."
   };
   function statusLabel(s) { return STATUS_LABEL[s || "new"] || (s || "new"); }
+
+  // ── The words a "Showing N of M" line uses for each filter ─────────────────
+  // Plain words, NEVER the stored value: a filter set to "punt", "cobi-tab" or
+  // "(not set)" would otherwise print that value into a sentence meant for a
+  // person (tests/sierra_training_plain.test.js bans that jargon from the
+  // rendered text). A value with no entry reads as a neutral phrase rather
+  // than leaking through.
+  var STATUS_WORD = { open: "still to do", "new": "not reviewed", triaged: "looking into it", addressed: "done" };
+  var DAYS_WORD = { "1": "last 24 hours", "7": "last 7 days", "30": "last 30 days" };
+  var AUDIENCE_WORD = {
+    student: "asked by a student", faculty: "asked by faculty",
+    administrator: "asked by a college administrator", employer: "asked by an employer",
+    civic: "asked by a civic leader", "(not set)": "no role given",
+  };
+  var PAGE_WORD = {
+    sierra: "on the public Sierra page", "cobi-tab": "inside COBI", "student-portal": "on the student portal",
+    smoke: "from the automated test", "(unknown)": "page not recorded",
+  };
+  function audienceWord(v) { return AUDIENCE_WORD[v] || "one kind of asker"; }
+  function pageWord(v) { return PAGE_WORD[v] || "on one page"; }
+  var RATING_LABEL = { down: "Thumbs-down", up: "Thumbs-up" };
+
+  /* ── The number cards are views (round 1, Sam's approval 2026-09-28) ──────
+   * "Still to do" and "Thumbs-down" each set the WHOLE feedback filter, not one
+   * field of it. The two defaults disagree on purpose — the list opens on "still
+   * to do" while the thumbs-down number counts every status — so a card that
+   * only set Rating would list the still-to-do thumbs-downs and show fewer rows
+   * than its own number. A card is lit exactly when the filter IS its view, and
+   * pressing a lit card clears every filter. */
+  var FB_FILTERS = ["fRating", "fAudience", "fPage", "fStatus", "fDays", "fNote"];
+  var FB_ALL = { fRating: "", fAudience: "", fPage: "", fStatus: "", fDays: "", fNote: false };
+  var FB_VIEWS = {
+    todo: { fRating: "", fAudience: "", fPage: "", fStatus: "open", fDays: "", fNote: false },
+    down: { fRating: "down", fAudience: "", fPage: "", fStatus: "", fDays: "", fNote: false },
+  };
+  function fbViewIs(v) { return FB_FILTERS.every(function (k) { return state[k] === v[k]; }); }
+  function setFbView(v) { FB_FILTERS.forEach(function (k) { state[k] = v[k]; }); }
+  // "Questions she struggled with" counts every gap row, handled or not, while
+  // the list defaults to still-to-do: the card widens every gap filter.
+  function showAllGaps() { state.gKind = "all"; state.gAudience = ""; state.gRev = ""; state.gDays = ""; }
   // Depends on GUIDANCE_SENT_CAP, which is declared below — read it at call time,
   // not at definition time, or it bakes in `undefined`.
   // Takes the row so the message names THAT row's own cap. The two kinds have
@@ -191,6 +245,10 @@
     rulesOpen: {},        // key → expanded
     ruleEditKey: null, ruleEditBody: "", ruleEditWhen: "", ruleEditOrder: "",
     ruleBusy: {},         // key → write in flight
+    // "Instructions in use" card: list only the switched-on instructions.
+    guidOnlyOn: false,
+    // Focus survives a re-render (see pendingFocus). One-shot fields.
+    focusNext: null, focusHeld: null, focusFallback: null,
   };
 
   // cpl-chat v25 sends the newest N active rules — mirror the function's cap
@@ -250,6 +308,18 @@
   // (never auto-sends) so a reviewer can replay a logged question against the
   // live function after a fix.
   var TEST_Q_KEY = "cplSierraTestQ.v1";
+  /* "Try it in: My College" (round 1, Sam's approval 2026-09-28). The question
+   * stays a plain string under TEST_Q_KEY — college_briefing.js and the tests
+   * write it that way — and a SECOND key names the destination. cpl_chat.js
+   * reads and clears both. Absent means the default, which behaves exactly as it
+   * did before this key existed.
+   *
+   * ⚠ The destination cannot be inferred on the other side. cpl_chat.js picks
+   * the pane by SUPPRESSION, not by which tab was activated, so without this key
+   * a My College hand-off would type the question into the hidden CPL Assistant
+   * input and burn it. */
+  var TEST_DEST_KEY = "cplSierraTestDest.v1";
+  var DEST_MY_COLLEGE = "college-briefing";
 
   /* Where to send a hand-off. CPL Assistant when it is reachable; My College
    * when it is not, because that tab mounts the SAME assistant via mountInto().
@@ -265,9 +335,18 @@
     var suppressed = !pane || (btn && btn.getAttribute("data-org-hidden") === "1");
     return suppressed ? "college-briefing" : "chatbot";
   }
-  function testInSierra(q) {
-    try { sessionStorage.setItem(TEST_Q_KEY, String(q || "").slice(0, 1000)); } catch (e) {}
-    var host = sierraHost();
+  // One argument keeps today's hand-off (p1 and guidance_edit call it that way).
+  // `dest` === DEST_MY_COLLEGE sends it to My College's Sierra box instead.
+  function testInSierra(q, dest) {
+    var toMyCollege = dest === DEST_MY_COLLEGE;
+    try {
+      sessionStorage.setItem(TEST_Q_KEY, String(q || "").slice(0, 1000));
+      // The default carries NO destination, exactly as before; a stale one left
+      // by an earlier My College hop must not redirect it.
+      if (toMyCollege) sessionStorage.setItem(TEST_DEST_KEY, DEST_MY_COLLEGE);
+      else sessionStorage.removeItem(TEST_DEST_KEY);
+    } catch (e) {}
+    var host = toMyCollege ? DEST_MY_COLLEGE : sierraHost();
     if (window.CPL_TABS && typeof window.CPL_TABS.navigate === "function") {
       window.CPL_TABS.navigate(host);
     } else {
@@ -329,100 +408,402 @@
   var CSS_ID = "sierra-training-css";
   function ensureCss() {
     if (document.getElementById(CSS_ID)) return;
+    // ⚠ ROUND 1 (Sam's approval, 2026-09-28): ported from the approved mockup,
+    // https://claude.ai/artifact/Agmbu7UNGRcdEf48Sx5PTi — left-aligned, calmer,
+    // First Light tokens only. Every var() below is defined in the LIGHT :root of
+    // both HTMLs, or is one of the four `--sit-*` locals declared on `.sit`, each
+    // derived from a :root token (color-mix has COBI precedent). No raw hex and
+    // no rgba() literal: tests/sierra_training_round1.test.js reads this sheet.
     var css = [
-      ".sit { max-width: 1150px; margin: 0 auto; color: var(--text-body); }",
-      ".sit h2 { color: var(--navy-primary); margin: 16px 0 4px; }",
-      ".sit h3 { color: var(--navy-primary); margin: 20px 0 8px; font-size: 1.02rem; }",
-      ".sit-intro { color: var(--text-muted); max-width: 900px; margin: 0 0 12px; font-size: .92rem; }",
-      ".sit-gatechip { display:inline-block; margin-left:8px; background: var(--mustard-fill, #f2dca0); color: var(--on-mustard); font-size:.62rem; font-weight:700; letter-spacing:.08em; padding:2px 8px; border-radius:10px; text-transform:uppercase; vertical-align:middle; }",
-      ".sit-stat { display:flex; flex-wrap:wrap; gap:10px; margin:0 0 14px; }",
-      ".sit-stat .box { flex:1 1 140px; border:1px solid var(--border); border-radius:8px; background: var(--surface-subtle); padding:10px 12px; }",
-      ".sit-stat .box .n { font-size:1.5rem; font-weight:700; color: var(--navy-primary); }",
-      ".sit-stat .box .l { font-size:.72rem; color: var(--text-muted); text-transform:uppercase; letter-spacing:.05em; }",
-      ".sit-toolbar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:0 0 10px; }",
-      ".sit-select { padding:6px 10px; border:1px solid var(--border-strong); border-radius:6px; font-size:.82rem; background: var(--surface-opaque); color: var(--text-body); }",
-      ".sit-check { font-size:.82rem; color: var(--text-body); display:flex; align-items:center; gap:5px; }",
-      ".sit-count { font-size:.8rem; color: var(--text-muted); margin-left:auto; }",
-      ".sit-auth { font-size:.78rem; color: var(--text-muted); }",
-      ".sit-auth b { color: var(--hunter, #2c601a); }",
-      ".sit-empty { border:1px dashed var(--border-strong); border-radius:8px; background: var(--surface-subtle); color: var(--text-muted); padding:26px; text-align:center; }",
-      ".sit-gate { color: var(--text-muted); font-size:.85rem; padding:8px 4px; }",
-      ".sit-row { border:1px solid var(--border); border-radius:8px; margin:0 0 8px; background: var(--surface-opaque); }",
-      ".sit-row-head { display:flex; flex-wrap:wrap; gap:6px 10px; align-items:baseline; padding:8px 12px; cursor:pointer; }",
-      ".sit-row-head:hover { background: var(--surface-subtle); }",
+      ".sit { --sit-edge: var(--text-faint);"                                        // control edge: 3.62:1 on white
+        + " --sit-pick: color-mix(in srgb, var(--cobalt) 10%, var(--surface-opaque));"  // selected fill
+        + " --sit-hover: color-mix(in srgb, var(--cobalt) 6%, var(--surface-opaque));"  // hover fill
+        + " --sit-gap: clamp(28px, 3vw, 40px);"                                         // between sections
+        + " max-width: 1150px; margin: 0 auto; text-align: left; color: var(--text-body); font-size: 1rem; line-height: 1.55; }",
+      ".sit b { color: var(--text-strong); }",
+
+      // ── Title, badge, intro ──
+      ".sit h2 { display:flex; flex-wrap:wrap; align-items:center; gap:4px 12px; margin:4px 0 8px;"
+        + " font-size: clamp(1.45rem, 1.2rem + 1vw, 1.9rem); line-height:1.2; color: var(--text-strong); }",
+      ".sit-gatechip { display:inline-block; margin:0; padding:3px 9px; border-radius:8px; background: var(--mustard-fill);"
+        + " color: var(--on-mustard); font-family: \"Source Sans 3\", Arial, sans-serif; font-size:.7rem; font-weight:700;"
+        + " letter-spacing:.08em; line-height:1.3; text-transform:uppercase; vertical-align:middle; }",
+      ".sit-intro { max-width: var(--cpl-measure, none); margin:0 0 20px; color: var(--text-body);"
+        + " font-size: clamp(.95rem, .9rem + .2vw, 1.03rem); }",
+
+      // ── The five numbers: real buttons ──
+      ".sit-stat { display:grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap:10px; margin:0; }",
+      ".sit-stat .box { display:flex; flex-direction:column; align-items:flex-start; justify-content:flex-start; gap:4px;"
+        + " min-height:92px; padding:12px 14px 14px; text-align:left; font:inherit; color: var(--text-body);"
+        + " background: var(--surface-opaque); border:1px solid var(--sit-edge); border-radius:10px; cursor:pointer; }",
+      ".sit-stat .box .n { font-family: \"Playfair Display\", Georgia, serif; font-size: clamp(1.5rem, 1.25rem + 1vw, 2rem);"
+        + " font-weight:700; line-height:1.1; color: var(--text-strong); }",
+      ".sit-stat .box .l { font-size:.74rem; font-weight:600; line-height:1.35; letter-spacing:.06em; text-transform:uppercase;"
+        + " color: var(--text-muted); }",
+      ".sit-stat .box:hover { border-color: var(--cobalt); background: var(--sit-hover); }",
+      // The bar along the bottom is the non-color cue for a lit card.
+      ".sit-stat .box[aria-pressed=\"true\"] { border-color: var(--cobalt); background: var(--sit-pick);"
+        + " box-shadow: inset 0 0 0 1px var(--cobalt), inset 0 -4px 0 var(--cobalt); }",
+      // --seal-blue-text, not --seal-blue: the navy FILL never flips, so as TEXT it
+      // would sit at 1.3:1 on the dark ground. The text grade is the same navy in light.
+      ".sit-stat .box[aria-pressed=\"true\"] .n { color: var(--seal-blue-text); }",
+      ".sit-stat .box[aria-pressed=\"true\"] .l { color: var(--text-body); }",
+
+      // ── Section headings: the title, then a plain line under it ──
+      ".sit h3 { margin: var(--sit-gap) 0 12px; font-size: clamp(1.12rem, 1rem + .45vw, 1.35rem); line-height:1.3;"
+        + " color: var(--text-strong); scroll-margin-top:16px; }",
+      ".sit h3 .sit-meta { display:block; margin-top:2px; font-family: \"Source Sans 3\", Arial, sans-serif; font-size:.9rem;"
+        + " font-weight:400; line-height:1.45; color: var(--text-muted); white-space:normal; }",
+      ".sit h3 .sit-meta b { color: var(--text-body); }",
+      ".sit h3[tabindex]:focus { outline:none; }",
+      ".sit h3[tabindex]:focus-visible { outline:2px solid var(--focus-ring); outline-offset:4px; border-radius:4px; }",
+      ".sit .sit-landed { background: var(--sit-pick); box-shadow: 0 0 0 6px var(--sit-pick); border-radius:4px; }",
+
+      // ── Filters ──
+      ".sit-toolbar { display:flex; flex-wrap:wrap; align-items:center; gap:8px 10px; margin:0 0 8px; }",
+      ".sit select, .sit-select { min-height:36px; max-width:100%; padding:4px 8px; font:inherit; font-size:.9rem;"
+        + " color: var(--text-body); background-color: var(--surface-opaque); border:1px solid var(--sit-edge);"
+        + " border-radius:8px; cursor:pointer; }",
+      ".sit select:hover { border-color: var(--cobalt); }",
+      ".sit-check { display:inline-flex; align-items:center; gap:7px; min-height:36px; font-size:.9rem; color: var(--text-body); cursor:pointer; }",
+      ".sit-check input { width:18px; height:18px; margin:0; accent-color: var(--cobalt); cursor:pointer; }",
+      ".sit-check-dim { color: var(--text-muted); }",
+      ".sit-bulk { display:block; margin-left:auto; font-size:.9rem; line-height:36px; color: var(--text-muted); }",
+      ".sit-bulk > select, .sit-bulk > button { margin-left:6px; vertical-align:middle; }",
+      ".sit-toolbar > .sit-meta:empty { display:none; }",
+      ".sit-toolbar [title] { cursor:pointer; }",
+      ".sit-toolbar .sit-bulk[title] { cursor:default; }",
+
+      // ── "Showing N of M: … · Show all" ──
+      ".sit-showing { margin:6px 0 10px; font-size:.95rem; color: var(--text-body); }",
+      ".sit-showing:empty { margin:0; }",
+      ".sit-showing:focus { outline:none; }",
+      ".sit-linkbtn { display:inline-flex; align-items:center; min-height:28px; min-width:24px; padding:0 4px; margin:0 -4px;"
+        + " font:inherit; font-weight:600; color: var(--accent-link); text-decoration:underline; text-underline-offset:3px;"
+        + " background:none; border:0; border-radius:4px; cursor:pointer; }",
+      ".sit-linkbtn:hover { background: var(--sit-hover); }",
+
+      // ── Item rows ──
+      ".sit-list { display:grid; grid-template-columns: minmax(0, 1fr); gap:8px; }",
+      ".sit-list:empty { display:none; }",
+      ".sit-row { min-width:0; margin:0; background: var(--surface-opaque); border:1px solid var(--border); border-radius:10px; }",
+      ".sit-row-head { display:flex; flex-wrap:wrap; gap:6px 10px; align-items:center; padding:12px 14px; border-radius:10px; text-align:left; }",
+      ".sit-row-head[role=\"button\"] { cursor:pointer; }",
+      ".sit-row-head[role=\"button\"]:hover { background: var(--surface-subtle); }",
+      ".sit-row-head[aria-expanded=\"true\"] { border-radius:10px 10px 0 0; }",
+      ".sit-row-head:focus-visible { outline:2px solid var(--focus-ring); outline-offset:-2px; }",
       // user-select:text is explicit because the whole header is a click target
       // and `cursor:pointer` reads as "this is a button, do not try to select
-      // it". The click handler now ignores a click that ends a selection, so
+      // it". The click handler ignores a click that ends a selection, so
       // dragging across the question really does select it.
-      ".sit-q { flex:1 1 340px; font-size:.88rem; font-weight:600; color: var(--text-strong); min-width:220px;"
-        + " user-select:text; -webkit-user-select:text; cursor:text; }",
+      ".sit-q { flex:1 1 340px; min-width:0; font-size:.98rem; font-weight:600; line-height:1.45; color: var(--text-strong);"
+        + " overflow-wrap:anywhere; user-select:text; -webkit-user-select:text; cursor:text; }",
       ".sit-row-body .txt { user-select:text; -webkit-user-select:text; }",
-      ".sit-meta { font-size:.72rem; color: var(--text-muted); white-space:nowrap; }",
-      ".sit-chip { font-size:.68rem; border-radius:10px; padding:1px 8px; white-space:nowrap; background: var(--surface-muted); color: var(--text-muted); }",
-      ".sit-chip-down { color: var(--brick, #8c2f22); background: rgba(140,47,34,.10); font-weight:700; }",
-      ".sit-chip-up { color: var(--hunter, #2c601a); background: rgba(44,96,26,.10); font-weight:700; }",
-      ".sit-chip-new { color: var(--brick, #8c2f22); background: rgba(140,47,34,.10); }",
-      ".sit-chip-triaged { color: var(--on-mustard); background: var(--mustard-fill, #f2dca0); }",
-      ".sit-chip-addressed { color: var(--hunter, #2c601a); background: rgba(44,96,26,.10); }",
-      ".sit-chip-gap { color: var(--navy-secondary); background: var(--surface-muted); }",
-      ".sit-row-body { border-top:1px solid var(--border); padding:10px 14px; font-size:.85rem; }",
-      ".sit-row-body .lbl { font-size:.68rem; text-transform:uppercase; letter-spacing:.05em; color: var(--text-muted); margin:8px 0 2px; }",
-      ".sit-row-body .txt { white-space:pre-wrap; word-break:break-word; max-height:340px; overflow:auto; background: var(--surface-subtle); border-radius:6px; padding:8px 10px; }",
-      ".sit-note { border-left:3px solid var(--mustard, #d9a800); }",
-      ".sit-actions { display:flex; gap:6px; margin-top:10px; align-items:center; flex-wrap:wrap; }",
-      ".sit-btn { background: var(--surface-subtle); border:1px solid var(--border-strong); border-radius:5px; padding:3px 10px; cursor:pointer; color: var(--text-body); font-size:.76rem; }",
-      ".sit-btn:hover { background: var(--surface-muted); }",
-      ".sit-btn[disabled] { opacity:.5; cursor:default; }",
-      ".sit-btn.on { background: var(--seal-blue); color:#fff; border-color: var(--seal-blue); }",
+      ".sit-meta { font-size:.82rem; color: var(--text-muted); white-space:nowrap; }",
+
+      // the feedback row: rating word · review status · question, then who / where / when
+      ".sit-row-head[data-open] { display:grid; grid-template-columns: 7.5rem 7.5rem minmax(0, 1fr) auto; column-gap:10px; row-gap:2px; }",
+      ".sit-row-head[data-open] > .sit-chip { justify-self:start; }",
+      ".sit-row-head[data-open] > .sit-chip:nth-child(1) { grid-column:1; grid-row:1; }",
+      ".sit-row-head[data-open] > .sit-chip:nth-child(2) { grid-column:2; grid-row:1; }",
+      ".sit-row-head[data-open] > .sit-q { grid-column:3; grid-row:1; }",
+      ".sit-row-head[data-open] > .sit-chip-note { grid-column:4; grid-row:1; }",
+      ".sit-row-head[data-open] > .sit-meta { grid-column: 3 / -1; grid-row:2; white-space:normal; }",
+
+      // chips: one quiet shape; the word carries the meaning, color only where a person must act
+      ".sit-chip { display:inline-flex; align-items:center; height:26px; max-width:100%; padding:0 9px; overflow:hidden;"
+        + " font-size:.76rem; font-weight:600; line-height:1; white-space:nowrap; text-overflow:ellipsis; color: var(--text-body);"
+        + " background: var(--surface-opaque); border:1px solid var(--border-strong); border-radius:8px; }",
+      ".sit-chip-down { color: var(--crimson); font-weight:700; }",
+      ".sit-chip-up { color: var(--text-muted); }",
+      ".sit-chip-new { color: var(--text-strong); font-weight:700; }",
+      ".sit-chip-triaged, .sit-chip-addressed, .sit-chip-note, .sit-chip-gap { color: var(--text-body); }",
+      // An instruction that is on but not reaching Sierra is a state someone must act on.
+      ".sit-chip-notsent { color: var(--crimson); font-weight:700; }",
+      ".sit-chip-edited { color: var(--text-strong); font-weight:700; }",
+      ".sit-chip-prot { color: var(--on-mustard); background: var(--mustard-fill); border-color: var(--mustard-fill); font-weight:700; }",
+      // Anything carrying a hover-over says so, or nobody discovers it.
+      ".sit-chip[title] { cursor:help; }",
+      ".sit-stat .box[title] { cursor:pointer; }",
+
+      // ── The open item ── (no line between an item's title and its body)
+      ".sit-row-body { padding:0 14px 14px; font-size:.94rem; }",
+      ".sit-row-body .lbl { margin:12px 0 4px; font-size:.72rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color: var(--text-muted); }",
+      ".sit-row-body .txt { white-space:pre-wrap; word-break:break-word; overflow-wrap:anywhere; text-align:left; max-height:420px;"
+        + " overflow:auto; padding:10px 12px; color: var(--text-body); line-height:1.55; background: var(--surface-subtle); border-radius:8px; }",
+      ".sit-row-body .txt:focus-visible { outline:2px solid var(--focus-ring); outline-offset:2px; }",
+      ".sit-row-body .txt.sit-dim { color: var(--text-muted); }",
+      ".sit-note { border-left:3px solid var(--mustard-fill); }",
+      ".sit-logmatch { padding:8px 12px; font-size:.9rem; color: var(--text-body); background: var(--surface-subtle); border-radius:8px; }",
+      ".sit-logmatch b { color: var(--text-strong); }",
+      ".sit-logmatch.sit-dim { color: var(--text-muted); }",
+
+      // ── The action row: status as one control, one primary, the rest quiet ──
+      ".sit-actions { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px 20px;"
+        + " margin-top:16px; padding-top:14px; border-top:1px solid var(--border); }",
+      ".sit-act-status, .sit-act-do, .sit-try, .sit-gmark { display:flex; flex-wrap:wrap; align-items:center; gap:8px 10px; }",
+      ".sit-act-status .lbl { margin:0; }",
+      ".sit-try { gap:6px; }",
+      ".sit-try-l { margin-right:2px; font-size:.88rem; color: var(--text-muted); }",
+      ".sit-btn { display:inline-flex; align-items:center; justify-content:center; min-height:36px; padding:5px 13px; font:inherit;"
+        + " font-size:.88rem; font-weight:600; line-height:1.2; text-align:center; color: var(--cobalt); background: var(--surface-opaque);"
+        + " border:1px solid var(--sit-edge); border-radius:8px; cursor:pointer; }",
+      ".sit-btn:hover { background: var(--sit-hover); border-color: var(--cobalt); }",
       // The action that actually changes Sierra should not look like the ones
       // that only record where the team got to.
-      ".sit-btn-primary { background: var(--seal-blue); color:#fff; border-color: var(--seal-blue); font-weight:600; }",
-      ".sit-btn-primary:hover { background: var(--navy-secondary, #1c3d5a); }",
-      ".sit-btn-primary[disabled] { opacity:.5; }",
-      // Anything carrying a hover-over says so, or nobody discovers it.
-      ".sit-toolbar [title], .sit-chip[title], .sit-stat .box[title] { cursor:help; }",
-      ".sit-check-dim { color: var(--text-muted, #6b7280); }",
-      ".sit-guid-count { font-size:.72rem; color: var(--text-muted, #6b7280); margin:2px 0 6px; }",
-      ".sit-guid-count.warn { color: var(--danger-text, #c00); font-weight:600; }",
-      ".sit-guid-budget { font-size:.75rem; color: var(--text-muted, #6b7280); margin:.2rem 0 .6rem; cursor:help; }",
-      ".sit-guid-budget.warn { color: var(--danger-text, #c00); font-weight:600; }",
+      ".sit-btn-primary { color: var(--on-accent); background: var(--cobalt); border-color: var(--cobalt); }",
+      ".sit-btn-primary:hover { color: var(--on-accent); background: var(--btn-primary-hover); border-color: var(--btn-primary-hover); }",
+      ".sit-btn[disabled] { opacity:1; color: var(--text-muted); background: var(--surface-subtle); border-color: var(--sit-edge);"
+        + " border-style:dashed; cursor:not-allowed; }",
+      // The gap pane's already-set state (disabled while set) reads as chosen, not as unavailable.
+      ".sit-btn.on[disabled] { color: var(--seal-blue-text); font-weight:700; background: var(--sit-pick); border-color: var(--cobalt);"
+        + " border-style:solid; cursor:default; }",
+      ".sit-seg { display:inline-flex; gap:2px; padding:2px; background: var(--surface-opaque); border:1px solid var(--sit-edge); border-radius:10px; }",
+      ".sit-seg .sit-btn { min-height:32px; padding:4px 12px; color: var(--text-body); background:transparent; border:0; border-radius:8px; }",
+      ".sit-seg .sit-btn:hover { background: var(--sit-hover); }",
+      ".sit-seg .sit-btn[disabled] { cursor:progress; }",
+      // The old selected state measured 2.99:1 (white on navy at half opacity).
+      ".sit-seg .sit-btn[aria-pressed=\"true\"] { color: var(--seal-blue-text); font-weight:700; background: var(--sit-pick);"
+        + " box-shadow: inset 0 0 0 1.5px var(--cobalt); }",
+
+      // ── Recurring words in the questions she struggled with ──
       ".sit-themes { display:flex; flex-wrap:wrap; gap:6px; margin:0 0 12px; }",
-      ".sit-theme { font-size:.76rem; background: var(--surface-muted); color: var(--text-body); border:1px solid var(--border); border-radius:12px; padding:2px 10px; }",
-      ".sit-theme b { color: var(--navy-primary); }",
-      ".sit-cap { font-size:.74rem; color: var(--text-muted); margin:4px 0 14px; }",
-      ".sit-gov { font-size:.76rem; color: var(--text-muted); border-left:3px solid var(--border-strong); padding:4px 10px; margin:16px 0 0; }",
-      ".sit-bulk { display:inline-flex; align-items:center; gap:5px; font-size:.76rem; color: var(--text-muted); }",
-      ".sit-logmatch { font-size:.78rem; color: var(--text-body); background: var(--surface-subtle); border-radius:6px; padding:6px 10px; }",
-      ".sit-logmatch b { color: var(--navy-primary); }",
-      ".sit-logmatch.sit-dim { color: var(--text-muted); }",
-      ".sit-guid-warn { font-size:.8rem; color: var(--on-mustard); background: var(--mustard-fill, #f2dca0); border-radius:8px; padding:8px 12px; max-width:900px; }",
-      ".sit-guid-composer { display:flex; flex-direction:column; gap:6px; margin:0 0 12px; }",
-      ".sit-guid-composer textarea { resize:vertical; padding:8px 11px; border:1px solid var(--border-strong); border-radius:8px; font: .86rem inherit; font-family:inherit; background: var(--surface-opaque); color: var(--text-body); }",
-      ".sit-guid-row { display:flex; gap:6px; }",
-      ".sit-guid-note { flex:1; padding:6px 11px; border:1px solid var(--border); border-radius:8px; font-size:.8rem; background: var(--surface-opaque); color: var(--text-body); }",
-      ".sit-guid-editing { border-color: var(--brand, #1d4ed8); box-shadow: 0 0 0 2px var(--brand-soft, rgba(29,78,216,.12)); }",
-      ".sit-guid-editbox { display:flex; flex-direction:column; gap:6px; padding:12px 14px; }",
-      ".sit-guid-editlbl { font-size:.75rem; font-weight:600; color: var(--text-muted, #6b7280); }",
-      ".sit-guid-editbox textarea { resize:vertical; padding:8px 11px; border:1px solid var(--border-strong); border-radius:8px; font: .86rem inherit; font-family:inherit; background: var(--surface-opaque); color: var(--text-body); }",
-      ".sit-guid-edit-note, .sit-guid-edit-testq { padding:6px 11px; border:1px solid var(--border); border-radius:8px; font-size:.8rem; background: var(--surface-opaque); color: var(--text-body); }",
-      ".sit-guid-editrow { display:flex; gap:6px; flex-wrap:wrap; margin-top:2px; }",
-      ".sit-guid-editnote { font-size:.72rem; color: var(--text-muted, #6b7280); }",
+      ".sit-theme { padding:2px 10px; font-size:.82rem; color: var(--text-body); background: var(--surface-opaque);"
+        + " border:1px solid var(--border-strong); border-radius:8px; }",
+      ".sit-theme b { color: var(--text-strong); }",
+
+      // ── Instructions ── (the gold note is now a white note with a gold edge)
+      ".sit-guid-warn { max-width: var(--cpl-measure, none); margin:0 0 12px; padding:10px 14px; font-size:.94rem;"
+        + " color: var(--text-body); background: var(--surface-opaque); border-left:4px solid var(--mustard-fill); border-radius:0 8px 8px 0; }",
+      ".sit-guid-budget { margin:0 0 10px; font-size:.88rem; color: var(--text-muted); cursor:help; }",
+      ".sit-guid-budget.warn { color: var(--crimson); font-weight:600; }",
+      ".sit-guid-composer { display:flex; flex-direction:column; gap:8px; margin:0 0 18px; }",
+      ".sit-guid-composer textarea { width:100%; min-height:5.5em; resize:vertical; padding:10px 12px; font:inherit; font-size:.95rem;"
+        + " color: var(--text-body); background: var(--surface-opaque); border:1px solid var(--sit-edge); border-radius:8px; }",
+      ".sit-guid-count { margin:0; font-size:.82rem; color: var(--text-muted); }",
+      ".sit-guid-count.warn { color: var(--crimson); font-weight:600; }",
+      ".sit-guid-row { display:flex; flex-wrap:wrap; align-items:center; gap:8px 12px; }",
+      ".sit-guid-note { flex:1 1 280px; min-height:36px; padding:6px 11px; font:inherit; font-size:.9rem; color: var(--text-body);"
+        + " background: var(--surface-opaque); border:1px solid var(--sit-edge); border-radius:8px; }",
+      ".sit ::placeholder { color: var(--text-muted); opacity:1; }",
+      ".sit label.sit-meta { display:inline-flex; flex-wrap:wrap; align-items:center; gap:4px 6px; max-width:100%; min-width:0;"
+        + " font-size:.88rem; color: var(--text-muted); white-space:normal; }",
+      ".sit label.sit-meta select { flex:0 1 auto; min-width:0; }",
+      "#sit-guid-list .sit-q { flex:1 1 calc(100% - 14rem); min-width: min(12rem, 100%); font-weight:400; }",
+      "#sit-guid-list .sit-applies { margin-left:auto; }",
+      "#sit-guid-list .sit-row-body { padding:0 14px 10px; font-size:.9rem; }",
+      ".sit-row-body .sit-inline-lbl { display:inline; margin:0; text-transform:none; letter-spacing:0; font-size:.9rem; }",
       ".sit-rule-off .sit-q { color: var(--text-muted); text-decoration: line-through; }",
-      // Built-in rules pane. The left edge is what separates a rule that GOVERNS
-      // Sierra from an instruction the team wrote — they sit on the same screen
-      // and are read top to bottom, so they must not look interchangeable.
-      ".sit-rule { border-left:3px solid var(--navy-secondary, #1c3d5a); }",
-      ".sit-chip-prot { color: var(--on-mustard); background: var(--mustard-fill, #f2dca0); font-weight:700; }",
-      ".sit-chip-edited { color: var(--navy-primary); background: var(--surface-muted); font-weight:700; }",
-      ".sit-row-body .txt.sit-dim { color: var(--text-muted); }",
-      ".sit-guid-editbox .sit-rule-body { resize:vertical; padding:8px 11px; border:1px solid var(--border-strong);"
-        + " border-radius:8px; font: .86rem inherit; font-family:inherit; background: var(--surface-opaque);"
-        + " color: var(--text-body); width:100%; box-sizing:border-box; }",
+      ".sit-rule-off .sit-chip { color: var(--text-muted); }",
+      ".sit-guid-editing { border-color: var(--cobalt); box-shadow: 0 0 0 2px var(--sit-pick); }",
+      ".sit-guid-editbox { display:flex; flex-direction:column; gap:6px; padding:12px 14px; }",
+      ".sit-guid-editlbl { font-size:.82rem; font-weight:600; color: var(--text-muted); }",
+      ".sit-guid-editbox textarea { resize:vertical; padding:8px 11px; font:inherit; font-size:.95rem; color: var(--text-body);"
+        + " background: var(--surface-opaque); border:1px solid var(--sit-edge); border-radius:8px; }",
+      ".sit-guid-edit-note, .sit-guid-edit-testq { min-height:36px; padding:6px 11px; font:inherit; font-size:.9rem;"
+        + " color: var(--text-body); background: var(--surface-opaque); border:1px solid var(--sit-edge); border-radius:8px; }",
+      ".sit-guid-editrow { display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-top:2px; }",
+      ".sit-guid-editnote { font-size:.82rem; color: var(--text-muted); }",
+      ".sit-guid-editbox .sit-rule-body { width:100%; box-sizing:border-box; }",
+
+      // ── Built-in rules ── (no colored left edge; the .sit-rule class stays as a hook)
+      ".sit-cap { margin:0 0 12px; font-size:.88rem; color: var(--text-muted); }",
+      ".sit-row-head[data-ruleopen] .sit-q { flex:1 1 280px; }",
+      ".sit-disclose { margin-left:auto; padding-left:4px; color: var(--text-muted); }",
+
+      // ── Quiet endings ──
+      ".sit-empty { padding:14px 16px; text-align:left; color: var(--text-muted); background: var(--surface-opaque); border:0; border-radius:10px; }",
+      ".sit-gate { padding:8px 4px; font-size:.9rem; color: var(--text-muted); }",
+      ".sit-gov { max-width: var(--cpl-measure, none); margin: var(--sit-gap) 0 0; padding:0; font-size:.88rem; color: var(--text-muted); border:0; }",
+      // Unscoped on purpose: the polite announcer sits beside the root, outside .sit.
+      ".sit-vh { position:absolute !important; width:1px; height:1px; margin:-1px; padding:0; overflow:hidden;"
+        + " clip:rect(0 0 0 0); white-space:nowrap; border:0; }",
+
+      // ── Focus: one visible ring everywhere ──
+      ".sit button:focus-visible, .sit select:focus-visible, .sit input:focus-visible, .sit textarea:focus-visible"
+        + " { outline:2px solid var(--focus-ring); outline-offset:2px; }",
+      ".sit-seg .sit-btn:focus-visible { outline-offset:0; }",
+
+      // ── Motion only for readers who have not asked to reduce it ──
+      "@media (prefers-reduced-motion: no-preference) {"
+        + " .sit-stat .box, .sit-btn, .sit-row-head, .sit-linkbtn { transition: background-color .15s ease, border-color .15s ease; }"
+        + " .sit h3 { transition: background-color .4s ease, box-shadow .4s ease; } }",
+
+      // ── Narrower screens ──
+      "@media (max-width: 900px) { .sit-bulk { margin-left:0; } }",
+      "@media (max-width: 560px) {"
+        + " .sit-stat { gap:8px; }"
+        + " .sit-stat .box { min-height:84px; padding:10px 12px 12px; }"
+        + " .sit-toolbar { display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap:8px; }"
+        + " .sit-toolbar .sit-select { width:100%; }"
+        + " .sit-toolbar .sit-check, .sit-toolbar .sit-bulk, .sit-toolbar > .sit-meta { grid-column: 1 / -1; }"
+        + " .sit-toolbar > .sit-meta { white-space:normal; }"
+        + " .sit-bulk > select { margin-left:0; max-width: calc(100% - 5.5rem); }"
+        + " .sit-chip { height:auto; min-height:26px; padding:4px 9px; white-space:normal; line-height:1.25; }"
+        + " .sit-seg .sit-btn { font-size:.84rem; text-wrap:balance; }"
+        + " .sit-row-head[data-open] { display:flex; flex-wrap:wrap; row-gap:6px; }"
+        + " .sit-row-head[data-open] > .sit-q { flex:1 1 100%; order:3; }"
+        + " .sit-row-head[data-open] > .sit-meta { flex:1 1 100%; order:4; }"
+        + " .sit-actions, .sit-act-status, .sit-act-do { flex-direction:column; align-items:stretch; }"
+        + " .sit-seg { display:flex; }"
+        + " .sit-seg .sit-btn { flex:1 1 0; min-width:0; padding:4px 6px; white-space:normal; }"
+        + " .sit-try { display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }"
+        + " .sit-try-l { grid-column: 1 / -1; }"
+        + " #sit-guid-list .sit-q { flex:1 1 100%; }"
+        + " #sit-guid-list .sit-applies { margin-left:0; }"
+        + " .sit-guid-row > * { flex:1 1 100%; }"
+        + " .sit-row-body { padding:0 12px 12px; }"
+        + " .sit-row-head { padding:12px; } }",
     ].join("\n");
     var el = document.createElement("style");
     el.id = CSS_ID; el.textContent = css;
     document.head.appendChild(el);
   }
+
+  /* The loading placeholder in both HTMLs is an INLINE dashed frame with
+   * `text-align:center`, and inline beats every selector, so it stayed on after
+   * the tab drew: every answer, question and title read centered inside a dashed
+   * box (round 1, item 3). Cleared here rather than in the HTML, because the
+   * placeholder still has a job before this module loads and one JS edit needs
+   * no Rule-4 mirror — the same fix college_briefing.js made for My College.
+   * Idempotent, and it only removes what the placeholder sets. */
+  function shedPlaceholder(root) {
+    if (!root || !root.style || root.getAttribute("data-sit-shed") === "1") return;
+    ["border", "borderRadius", "background", "color", "padding", "textAlign"].forEach(function (k) {
+      try { root.style[k] = ""; } catch (e) { /* jsdom-safe */ }
+    });
+    root.setAttribute("data-sit-shed", "1");
+  }
+
+  /* ── Focus survives a re-render ────────────────────────────────────────────
+   * render() rewrites the whole tab, so without this every keyboard action —
+   * opening an item with Enter, changing a filter, pressing a number — dropped
+   * focus to the top of the page. The focused control is found again by its
+   * data-* attributes (they are what the handlers key on), or by id.
+   *
+   * A control that re-renders DISABLED while its write is in flight cannot take
+   * focus, so the wish is held for the next render; `focusFallback` names where
+   * to go if the control is gone by then (an item marked Done leaves a
+   * still-to-do list). A held wish never steals focus the reader has moved. */
+  function cssq(v) { return String(v).replace(/\\/g, "\\\\").replace(/"/g, '\\"'); }
+  function focusKey(el, root) {
+    if (!el || !root || el === root || !root.contains(el)) return null;
+    if (el.id) return '[id="' + cssq(el.id) + '"]';
+    var sel = el.tagName.toLowerCase(), n = 0;
+    for (var i = 0; i < el.attributes.length; i++) {
+      var a = el.attributes[i];
+      if (/^data-/.test(a.name) && a.name !== "data-flashing") { sel += "[" + a.name + '="' + cssq(a.value) + '"]'; n++; }
+    }
+    if (n) return sel;
+    var cls = String(el.className || "").split(/\s+/).filter(function (c) { return /^sit-/.test(c); })[0];
+    return cls ? sel + "." + cls : null;
+  }
+  function qs(root, sel) { try { return root.querySelector(sel); } catch (e) { return null; } }
+  function pendingFocus(root) {
+    var active = document.activeElement;
+    var lost = !active || active === document.body || active === document.documentElement;
+    var want = { sel: state.focusNext || focusKey(active, root) || (lost ? state.focusHeld : null),
+                 fallback: state.focusFallback };
+    state.focusNext = null; state.focusHeld = null; state.focusFallback = null;
+    return want;
+  }
+  function restoreFocus(root, want) {
+    if (!want || (!want.sel && !want.fallback)) return;
+    var el = want.sel ? qs(root, want.sel) : null;
+    if (el && el.disabled) { state.focusHeld = want.sel; state.focusFallback = want.fallback || null; return; }
+    if (!el && want.fallback) el = qs(root, want.fallback);
+    if (!el || el === document.activeElement) return;
+    try { el.focus({ preventScroll: true }); } catch (e) { try { el.focus(); } catch (e2) { /* hidden */ } }
+  }
+
+  /* ── One polite announcer, outside the part that re-renders ──────────────
+   * The "Showing N of M" lines change when a number, a filter or a status
+   * changes, and a screen reader should hear that. A live region only speaks
+   * when content changes INSIDE a region that already existed, and render()
+   * recreates everything under the root — a live region in there would stay
+   * silent, or repeat itself on every re-render (opening an item). So one
+   * visually hidden region lives BESIDE the root, created once, and is told only
+   * the lines that actually changed. The line focus moves to is left unsaid: the
+   * reader hears it on arrival. */
+  var lastSaid = null;
+  function announce(root, said, want) {
+    var live = document.getElementById("sit-live");
+    if (!live && root && root.parentNode) {
+      live = document.createElement("p");
+      live.id = "sit-live";
+      live.className = "sit-vh";
+      live.setAttribute("aria-live", "polite");
+      live.setAttribute("aria-atomic", "true");
+      root.parentNode.insertBefore(live, root.nextSibling);
+    }
+    var prev = lastSaid;
+    lastSaid = said;
+    if (!live || !prev) return;
+    var quiet = want && want.sel === "#sit-fb-showing" ? "fb" : want && want.sel === "#sit-gap-showing" ? "gap" : "";
+    var news = ["fb", "gap", "guid"].filter(function (k) {
+      return said[k] && said[k] !== prev[k] && k !== quiet;
+    }).map(function (k) { return said[k]; });
+    if (news.length) live.textContent = news.join(". ") + ".";
+  }
+
+  /* ── A long answer scrolls from the keyboard ──────────────────────────────
+   * A box that scrolls must be reachable and named while it scrolls (WCAG
+   * 2.1.1), and a box that does not scroll must not be a dead tab stop. Same
+   * rule and shape as sierra.js syncScrollRegions(): re-synced after every
+   * render and on resize, because it depends on the content AND the viewport. */
+  function syncScrollers(root) {
+    if (!root) return;
+    var boxes = root.querySelectorAll(".sit-row-body .txt");
+    for (var i = 0; i < boxes.length; i++) {
+      var t = boxes[i];
+      if (t.scrollHeight > t.clientHeight + 1) {
+        t.setAttribute("tabindex", "0");
+        t.setAttribute("role", "region");
+        t.setAttribute("aria-label", t.getAttribute("data-label") || "Text");
+      } else {
+        t.removeAttribute("tabindex");
+        t.removeAttribute("role");
+        t.removeAttribute("aria-label");
+      }
+    }
+  }
+  var resizeTimer = null;
+  window.addEventListener("resize", function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () { syncScrollers(document.getElementById("sierra-training-root")); }, 150);
+  });
+
+  // ── Moving the reader ──
+  function reduceMotion() {
+    try { return !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches); }
+    catch (e) { return false; }
+  }
+  function scrollToEl(el) {
+    if (!el || typeof el.scrollIntoView !== "function") return;   // jsdom has none
+    try { el.scrollIntoView({ behavior: reduceMotion() ? "auto" : "smooth", block: "start" }); }
+    catch (e) { el.scrollIntoView(); }
+  }
+  function bringIntoView(el) {
+    if (!el || typeof el.getBoundingClientRect !== "function") return;
+    var r = el.getBoundingClientRect();
+    var h = window.innerHeight || document.documentElement.clientHeight;
+    if (r.top < 0 || r.bottom > h) scrollToEl(el);
+  }
+  function land(h) {
+    if (!h) return;
+    scrollToEl(h);
+    h.classList.add("sit-landed");
+    setTimeout(function () { h.classList.remove("sit-landed"); }, 1600);
+  }
+  // A header that is a button: Enter or Space opens it, like a real one.
+  function onActivateKey(el, fn) {
+    el.addEventListener("keydown", function (e) {
+      if (e.target !== el) return;
+      if (e.key === "Enter" || e.key === " " || e.key === "Spacebar") { e.preventDefault(); fn(); }
+    });
+  }
+  // An id built from a stored key, safe inside an id / aria-controls list.
+  function safeId(v) { return String(v == null ? "" : v).replace(/[^A-Za-z0-9_-]/g, "_"); }
 
   function esc(s) {
     return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
@@ -1049,8 +1430,10 @@
     var rows = filteredFeedback().filter(function (f) {
       return !isSmoke(f) && (f.status || "new") !== target;
     });
-    if (!rows.length) { alert('Every filtered row is already "' + target + '".'); return Promise.resolve(); }
-    if (!confirm('Mark ' + rows.length + ' filtered feedback row(s) as "' + target + '"?')) return Promise.resolve();
+    // The label, not the stored value: "triaged" is what the RPC writes, "Looking
+    // into it" is what the reader picked.
+    if (!rows.length) { alert('Every filtered row is already "' + statusLabel(target) + '".'); return Promise.resolve(); }
+    if (!confirm('Mark ' + rows.length + ' filtered feedback row(s) as "' + statusLabel(target) + '"?')) return Promise.resolve();
     state.bulkBusy = true; render(root);
     var h = authHeaders();
     h["Content-Type"] = "application/json";
@@ -1118,10 +1501,13 @@
     if (state.fDays) rows = rows.filter(function (f) { return withinDays(f.created_at, +state.fDays); });
     return rows;
   }
-  function options(values, current, anyLabel) {
+  // `labels` (optional) maps a stored value to the words shown; a value with no
+  // entry prints as itself, which is what every caller got before it existed.
+  function options(values, current, anyLabel, labels) {
     var h = '<option value="">' + esc(anyLabel) + "</option>";
     values.forEach(function (v) {
-      h += '<option value="' + esc(v) + '"' + (current === v ? " selected" : "") + ">" + esc(v) + "</option>";
+      h += '<option value="' + esc(v) + '"' + (current === v ? " selected" : "") + ">"
+        + esc((labels && labels[v]) || v) + "</option>";
     });
     return h;
   }
@@ -1135,22 +1521,53 @@
     return '<span class="sit-chip sit-chip-' + esc(s) + '" title="' + esc(STATUS_HELP[s] || "") + '">'
       + esc(statusLabel(s)) + "</span>";
   }
+  // "Try it in: Sierra · My College" (round 1). Two quiet buttons in a named
+  // group; `data-host` is the destination testInSierra() writes for cpl_chat.js.
+  function tryGroup(src, labelId) {
+    return '<span class="sit-try" role="group" aria-labelledby="' + labelId + '">'
+      + '<span class="sit-try-l" id="' + labelId + '">Try it in:</span>'
+      + '<button type="button" class="sit-btn" data-qact="test" data-host="chatbot" data-qsrc="' + esc(src) + '"'
+      + ' title="' + esc(HELP.testInSierra) + '">Sierra</button>'
+      + '<button type="button" class="sit-btn" data-qact="test" data-host="' + DEST_MY_COLLEGE + '" data-qsrc="' + esc(src) + '"'
+      + ' title="' + esc(HELP.testInMyCollege) + '">My College</button>'
+      + "</span>";
+  }
+  // The "do something" half of an action row: one primary, two quiet.
+  function actDo(src, tryId) {
+    return '<div class="sit-act-do">'
+      + '<button type="button" class="sit-btn sit-btn-primary" data-qact="rule" data-qsrc="' + esc(src) + '"'
+      + ' title="' + esc(HELP.writeRule) + '">Write an instruction about this</button>'
+      + tryGroup(src, tryId)
+      + '<button type="button" class="sit-btn" data-qact="copy" data-qsrc="' + esc(src) + '"'
+      + ' title="Copies the question to your clipboard.">Copy question</button>'
+      + "</div>";
+  }
+
   function feedbackRow(f) {
     var open = !!state.open[f.turn_id];
+    var sid = safeId(f.turn_id);
+    // Words, not 👍/👎 (round 1): the word already says it, and color carries
+    // only the state someone must act on — thumbs-down, as crimson TEXT.
     var ratingChip = '<span class="sit-chip sit-chip-' + (f.rating === "down" ? "down" : "up") + '">'
-      + (f.rating === "down" ? "\u{1F44E} down" : "\u{1F44D} up") + "</span>";
+      + (f.rating === "down" ? "Thumbs-down" : "Thumbs-up") + "</span>";
+    // A header that opens something is a button: focusable, Enter/Space, and it
+    // says whether it is open. aria-controls names the body only while the body
+    // exists — it renders only when open.
     var h = '<div class="sit-row">'
-      + '<div class="sit-row-head" data-open="' + esc(f.turn_id) + '">'
+      + '<div class="sit-row-head" data-open="' + esc(f.turn_id) + '" role="button" tabindex="0"'
+      + ' aria-expanded="' + (open ? "true" : "false") + '"'
+      + (open ? ' aria-controls="sit-body-' + sid + '"' : "") + ">"
       + ratingChip + statusChip(f.status)
       + '<span class="sit-q">' + esc(truncate(f.question || "(no question captured)", 150)) + "</span>"
-      + (f.note ? '<span class="sit-chip">\u{1F4DD} note</span>' : "")
+      + (f.note ? '<span class="sit-chip sit-chip-note" title="The person typed a note explaining their rating. '
+        + 'Open the item to read it.">Note</span>' : "")
       + '<span class="sit-meta">' + esc(f.audience || "—") + " · " + esc(f.page || "—") + " · " + fmtWhen(f.created_at) + "</span>"
       + "</div>";
     if (open) {
-      h += '<div class="sit-row-body">';
-      if (f.note) h += '<div class="lbl">Note from the rater</div><div class="txt sit-note">' + esc(f.note) + "</div>";
-      h += '<div class="lbl">Question</div><div class="txt">' + esc(f.question || "—") + "</div>"
-        + '<div class="lbl">Sierra’s answer</div><div class="txt">' + esc(f.response || "—") + "</div>";
+      h += '<div class="sit-row-body" id="sit-body-' + sid + '">';
+      if (f.note) h += '<div class="lbl">Note from the rater</div><div class="txt sit-note" data-label="Note from the rater">' + esc(f.note) + "</div>";
+      h += '<div class="lbl">Question</div><div class="txt" data-label="Question">' + esc(f.question || "—") + "</div>"
+        + '<div class="lbl">Sierra’s answer</div><div class="txt sit-answer" data-label="Sierra’s answer">' + esc(f.response || "—") + "</div>";
       // Retrieval telemetry from the matching chat_interactions turn — was
       // this a knowledge gap (low similarity / punt) or a wording problem?
       var m = logMatch(f);
@@ -1160,10 +1577,10 @@
         h += '<div class="sit-logmatch"><span title="' + esc(HELP.similarity) + '">Closest match in the '
           + "knowledge base: <b>" + sim + "</b></span>"
           + '<span title="' + esc(HELP.topicMatch) + '"> · '
-          + (m.topic_match ? "found a matching credential ✓" : "no matching credential") + "</span>"
+          + (m.topic_match ? "found a matching credential" : "no matching credential") + "</span>"
           + gapKinds(m).map(function (k) {
             return ' · <span class="sit-chip sit-chip-gap">'
-              + (k === "low-sim" ? "⚠ nothing close" : "\u{1F6A7} said she didn’t know") + "</span>";
+              + (k === "low-sim" ? "⚠ nothing close" : "said she didn’t know") + "</span>";
           }).join("")
           + " · asked " + fmtWhen(m.created_at) + "</div>";
       } else {
@@ -1174,23 +1591,27 @@
       // about Sierra. That was the confusion: "when I click Triage, there's no
       // prompt for me to add any adjustments" (Sam, 2026-08-12). Marking is
       // bookkeeping; the thing that actually changes Sierra is an instruction,
-      // so the button that writes one now sits right here beside them.
-      h += '<div class="sit-actions"><span class="lbl" style="margin:0" '
+      // so the button that writes one sits right beside them.
+      //
+      // ONE segmented control (round 1): the pressed part is the current state,
+      // announced by aria-pressed. The old "on" button was a disabled white-on-navy
+      // at half opacity, 2.99:1; this one is --seal-blue-text on --sit-pick.
+      // Only an in-flight write disables it.
+      h += '<div class="sit-actions"><div class="sit-act-status">'
+        + '<span class="lbl" id="sit-mark-' + sid + '" '
         + 'title="Records how far the team has got with this item. It does not change how Sierra answers — '
-        + 'use “Write an instruction about this” for that.">Mark this:</span>';
+        + 'use “Write an instruction about this” for that.">Mark this</span>'
+        + '<div class="sit-seg" role="group" aria-labelledby="sit-mark-' + sid + '">';
       STATUSES.forEach(function (s) {
         var on = (f.status || "new") === s;
-        h += '<button class="sit-btn' + (on ? " on" : "") + '" data-status="' + esc(s) + '" data-turn="' + esc(f.turn_id) + '"'
+        h += '<button type="button" class="sit-btn' + (on ? " on" : "") + '" data-status="' + esc(s) + '" data-turn="' + esc(f.turn_id) + '"'
+          + ' aria-pressed="' + (on ? "true" : "false") + '"'
           + ' title="' + esc(STATUS_HELP[s] || "") + '"'
-          + (on || state.busy[f.turn_id] ? " disabled" : "") + ">" + esc(statusLabel(s)) + "</button>";
+          + (state.busy[f.turn_id] ? " disabled" : "") + ">" + esc(statusLabel(s)) + "</button>";
       });
-      h += '<button class="sit-btn sit-btn-primary" data-qact="rule" data-qsrc="fb:' + esc(f.turn_id) + '"'
-        + ' title="' + esc(HELP.writeRule) + '">Write an instruction about this</button>'
-        + '<button class="sit-btn" data-qact="test" data-qsrc="fb:' + esc(f.turn_id) + '"'
-        + ' title="' + esc(HELP.testInSierra) + '">Try it on Sierra</button>'
-        + '<button class="sit-btn" data-qact="copy" data-qsrc="fb:' + esc(f.turn_id) + '"'
-        + ' title="Copies the question to your clipboard.">⧉ Copy question</button>';
-      h += "</div></div>";
+      h += "</div></div>"
+        + actDo("fb:" + f.turn_id, "sit-try-" + sid)
+        + "</div></div>";
     }
     return h + "</div>";
   }
@@ -1215,46 +1636,44 @@
   }
   function gapRow(t) {
     var open = !!state.gOpen[t.id];
+    var sid = safeId(t.id);
     var rv = (state.turnReviews || {})[t.id] || null;
     var kinds = gapKinds(t).map(function (k) {
       var label = k === "low-sim"
         ? "⚠ nothing close in the knowledge base"
           + (t.top_similarity == null ? "" : " (" + Number(t.top_similarity).toFixed(2) + ")")
-        : "\u{1F6A7} Sierra said she didn’t know";
+        : "Sierra said she didn’t know";
       var tip = k === "low-sim" ? HELP.similarity
         : "Sierra answered that she could not find this. Either the knowledge base is missing it, "
           + "or she needs an instruction telling her where to look.";
       return '<span class="sit-chip sit-chip-gap" title="' + esc(tip) + '">' + label + "</span>";
     }).join("");
     var h = '<div class="sit-row">'
-      + '<div class="sit-row-head" data-gopen="' + esc(t.id) + '">'
+      + '<div class="sit-row-head" data-gopen="' + esc(t.id) + '" role="button" tabindex="0"'
+      + ' aria-expanded="' + (open ? "true" : "false") + '"'
+      + (open ? ' aria-controls="sit-gbody-' + sid + '"' : "") + ">"
       + kinds
       + '<span class="sit-q">' + esc(truncate(t.question || "(empty)", 150)) + "</span>"
       + '<span class="sit-meta">' + esc(t.audience || "—") + " · " + fmtWhen(t.created_at) + "</span>"
       + "</div>";
     if (open) {
-      h += '<div class="sit-row-body">'
-        + '<div class="lbl">Question</div><div class="txt">' + esc(t.question || "—") + "</div>"
-        + '<div class="lbl">Sierra’s answer</div><div class="txt">' + esc(t.response || "—") + "</div>"
-        + '<div class="sit-actions">'
-        + '<button class="sit-btn sit-btn-primary" data-qact="rule" data-qsrc="gap:' + esc(t.id) + '"'
-        + ' title="' + esc(HELP.writeRule) + '">Write an instruction about this</button>'
-        + '<button class="sit-btn" data-qact="test" data-qsrc="gap:' + esc(t.id) + '"'
-        + ' title="' + esc(HELP.testInSierra) + '">Try it on Sierra</button>'
-        + '<button class="sit-btn" data-qact="copy" data-qsrc="gap:' + esc(t.id) + '"'
-        + ' title="Copies the question to your clipboard.">⧉ Copy question</button>'
-        + "</div>"
-        // The status lane the gap pane never had. Kept BESIDE the remedy button
-        // above, not in a separate strip, so "handled" is one glance from the
-        // thing that actually changes Sierra.
-        + '<div class="sit-actions">'
-        + '<span class="lbl" style="margin:0" title="Records that someone has dealt with this '
-        + 'question. It does not change how Sierra answers — the instruction button above does '
-        + 'that. Marking it only takes it off the &quot;still to do&quot; list.">Mark this:</span>'
+      h += '<div class="sit-row-body" id="sit-gbody-' + sid + '">'
+        + '<div class="lbl">Question</div><div class="txt" data-label="Question">' + esc(t.question || "—") + "</div>"
+        + '<div class="lbl">Sierra’s answer</div><div class="txt sit-answer" data-label="Sierra’s answer">' + esc(t.response || "—") + "</div>"
+        // The status lane the gap pane never had, on the LEFT of the same row as
+        // the remedy (round 1), so "handled" is one glance from the thing that
+        // actually changes Sierra. The already-set button stays disabled while
+        // set; "↩ Still to do" is the way back, because still-to-do is the
+        // ABSENCE of a review row, not a third stored status.
+        + '<div class="sit-actions"><div class="sit-act-status">'
+        + '<span class="lbl" id="sit-gmark-' + sid + '" title="Records that someone has dealt with this '
+        + 'question. It does not change how Sierra answers; “Write an instruction about this” '
+        + 'does that. Marking it only takes it off the &quot;still to do&quot; list.">Mark this</span>'
+        + '<span class="sit-gmark" role="group" aria-labelledby="sit-gmark-' + sid + '">'
         + TURN_STATUSES.map(function (s) {
-          var on = rv && rv.status === s;
-          return '<button class="sit-btn' + (on ? " on" : "") + '" data-turnrev="' + esc(s)
-            + '" data-turnid="' + esc(t.id) + '"'
+          var on = !!(rv && rv.status === s);
+          return '<button type="button" class="sit-btn' + (on ? " on" : "") + '" data-turnrev="' + esc(s)
+            + '" data-turnid="' + esc(t.id) + '" aria-pressed="' + (on ? "true" : "false") + '"'
             + ' title="' + esc(s === "resolved"
                 ? "You have handled this — an instruction is written, or she answers it correctly now."
                 : "Nothing to do here (a one-off, or a question we do not intend to answer).")
@@ -1262,12 +1681,17 @@
             + esc(turnStatusLabel(s)) + "</button>";
         }).join("")
         + (rv
-            ? '<button class="sit-btn" data-turnrev="" data-turnid="' + esc(t.id) + '"'
+            ? '<button type="button" class="sit-btn" data-turnrev="" data-turnid="' + esc(t.id) + '"'
               + ' title="Put it back on the still-to-do list."'
               + (state.busy[t.id] ? " disabled" : "") + ">↩ Still to do</button>"
-              + '<span class="sit-meta" style="margin-left:8px">' + esc(turnStatusLabel(rv.status))
+            : "")
+        + "</span>"
+        + (rv
+            ? '<span class="sit-meta">' + esc(turnStatusLabel(rv.status))
               + (rv.updated_by ? " · " + esc(rv.updated_by) : "") + "</span>"
             : "")
+        + "</div>"
+        + actDo("gap:" + t.id, "sit-gtry-" + sid)
         + "</div></div>";
     }
     return h + "</div>";
@@ -1278,10 +1702,15 @@
     var chip = r.active
       ? (sent
         ? '<span class="sit-chip sit-chip-addressed" title="' + esc(HELP.ruleSent) + '">Sierra is using this</span>'
-        : '<span class="sit-chip sit-chip-triaged" title="' + esc(ruleNotSentHelp(r)) + '">On, but not reaching Sierra</span>')
+        // A state someone must act on (switch an older one off), so it keeps a
+        // color: crimson TEXT on the quiet chip. "Sierra is using this" lost its
+        // green in round 1, because nothing needs doing about it.
+        : '<span class="sit-chip sit-chip-notsent" title="' + esc(ruleNotSentHelp(r)) + '">On, but not reaching Sierra</span>')
       : '<span class="sit-chip" title="' + esc(HELP.ruleOff) + '">Switched off</span>';
     var h = '<div class="sit-row' + (r.active ? "" : " sit-rule-off") + '">'
-      + '<div class="sit-row-head" style="cursor:default">'
+      // NOT role="button": this header holds a select and two buttons, and a
+      // button may not contain controls. It opens nothing, so it needs no role.
+      + '<div class="sit-row-head">'
       + chip
       + '<span class="sit-q">' + esc(r.rule) + "</span>"
       // Plain words, no glyph — the Admin tab's rule (#1212). A "display" label
@@ -1300,21 +1729,21 @@
           + esc(surfaceLabel(r.surface)) + "</span>"
         : "")
       + '<span class="sit-meta">' + esc(r.created_by || "—") + " · " + fmtWhen(r.created_at) + "</span>"
-      + '<label class="sit-meta" title="Where this instruction is sent. Narrow it only when the instruction names something one place has and the others do not.">'
+      + '<label class="sit-meta sit-applies" title="Where this instruction is sent. Narrow it only when the instruction names something one place has and the others do not.">'
       + "Applies: " + surfaceSelect('data-guid-surface-row="' + esc(r.id) + '"', r.surface) + "</label>"
-      + '<button class="sit-btn" data-guid-edit="' + esc(r.id) + '"'
+      + '<button type="button" class="sit-btn" data-guid-edit="' + esc(r.id) + '"'
       + ' title="' + esc(HELP.ruleEdit) + '">Edit</button>'
-      + '<button class="sit-btn" data-guid-toggle="' + esc(r.id) + '"' + (state.guidBusy[r.id] ? " disabled" : "")
+      + '<button type="button" class="sit-btn" data-guid-toggle="' + esc(r.id) + '"' + (state.guidBusy[r.id] ? " disabled" : "")
       + ' title="' + (r.active
         ? "Stops sending this to Sierra. It stays on the list so you can turn it back on."
         : "Starts sending this to Sierra again, from her next answer.") + '">'
       + (r.active ? "Switch off" : "Switch on") + "</button>"
       + "</div>";
     if (r.note) {
-      h += '<div class="sit-row-body" style="padding:6px 14px;border-top:none"><span class="lbl" style="margin:0;display:inline">Note:</span> ' + esc(r.note) + "</div>";
+      h += '<div class="sit-row-body"><span class="lbl sit-inline-lbl">Note:</span> ' + esc(r.note) + "</div>";
     }
     if (String(r.updated_at || "") && r.updated_by && String(r.updated_at) !== String(r.created_at)) {
-      h += '<div class="sit-row-body" style="padding:2px 14px 6px;border-top:none">'
+      h += '<div class="sit-row-body">'
         + '<span class="sit-meta">Last edited by ' + esc(r.updated_by) + " · " + fmtWhen(r.updated_at) + "</span></div>";
     }
     return h + "</div>";
@@ -1330,29 +1759,29 @@
     var h = '<div class="sit-row sit-guid-editing">'
       + '<div class="sit-guid-editbox">'
       + '<div class="sit-guid-editlbl">Editing this instruction — Sierra follows it literally.</div>'
-      + '<textarea class="sit-guid-edit-input" maxlength="' + GUIDANCE_RULE_MAX + '" rows="4" '
+      + '<textarea class="sit-guid-edit-input" aria-label="Wording of this instruction" maxlength="' + GUIDANCE_RULE_MAX + '" rows="4" '
       + 'title="Change the wording and press Save. Sierra uses the new text on her very next answer.">'
       + esc(state.editRule) + "</textarea>"
       + '<div class="sit-guid-count' + (used > GUIDANCE_RULE_MAX - 150 ? " warn" : "") + '" data-guid-edit-count>'
       + used.toLocaleString() + " / " + GUIDANCE_RULE_MAX.toLocaleString() + " characters"
       + (used >= GUIDANCE_RULE_MAX ? " — at the limit; anything more will not be saved." : "")
       + "</div>"
-      + '<input class="sit-guid-edit-note" maxlength="' + GUIDANCE_NOTE_MAX + '" value="' + esc(state.editNote) + '" '
+      + '<input class="sit-guid-edit-note" aria-label="Note for the team" maxlength="' + GUIDANCE_NOTE_MAX + '" value="' + esc(state.editNote) + '" '
       + 'title="Just for the team — Sierra never sees the note." '
       + 'placeholder="Optional note for the team — why this instruction exists">'
-      + '<div class="sit-guid-editlbl" style="margin-top:8px">Try it on Sierra</div>'
-      + '<input class="sit-guid-edit-testq" maxlength="500" value="' + esc(state.editTestQ) + '" '
+      + '<div class="sit-guid-editlbl" id="sit-guid-testq-l" style="margin-top:8px">Try it on Sierra</div>'
+      + '<input class="sit-guid-edit-testq" aria-labelledby="sit-guid-testq-l" maxlength="500" value="' + esc(state.editTestQ) + '" '
       + 'title="' + esc(HELP.ruleTestQ) + '" '
       + 'placeholder="A question that should get better because of this instruction — '
       + 'e.g. What CPL does Cerritos College offer for ironworkers?">'
       + '<div class="sit-guid-editrow">'
-      + '<button class="sit-btn sit-btn-primary" data-guid-save="' + esc(r.id) + '"'
+      + '<button type="button" class="sit-btn sit-btn-primary" data-guid-save="' + esc(r.id) + '"'
       + (state.editBusy ? " disabled" : "") + ' title="Saves the new wording. Sierra uses it on her next answer.">'
-      + (state.editBusy ? "Saving…" : "💾 Save") + "</button>"
-      + '<button class="sit-btn" data-guid-savetest="' + esc(r.id) + '"'
+      + (state.editBusy ? "Saving…" : "Save") + "</button>"
+      + '<button type="button" class="sit-btn" data-guid-savetest="' + esc(r.id) + '"'
       + (state.editBusy ? " disabled" : "") + ' title="' + esc(HELP.ruleSaveTest) + '">'
-      + "💾 Save &amp; ask Sierra →</button>"
-      + '<button class="sit-btn" data-guid-cancel title="Closes without saving. Your changes are discarded.">'
+      + "Save &amp; ask Sierra →</button>"
+      + '<button type="button" class="sit-btn" data-guid-cancel title="Closes without saving. Your changes are discarded.">'
       + "Cancel</button>"
       + "</div>"
       + '<div class="sit-guid-editnote">Saving does not switch the instruction on. '
@@ -1369,8 +1798,14 @@
     var open = !!state.rulesOpen[r.key];
     var edited = r.overridden;
     var off = !r.active;
+    var sid = safeId(r.key);
+    // `.sit-rule` stays as a hook (tests count one per rule); the colored left
+    // edge it used to carry is gone (round 1). The header opens the rule's
+    // wording, so it is a button.
     var h = '<div class="sit-row sit-rule' + (off ? " sit-rule-off" : "") + '">';
-    h += '<div class="sit-row-head" data-ruleopen="' + esc(r.key) + '">'
+    h += '<div class="sit-row-head" data-ruleopen="' + esc(r.key) + '" role="button" tabindex="0"'
+      + ' aria-expanded="' + (open ? "true" : "false") + '"'
+      + (open ? ' aria-controls="sit-rbody-' + sid + '"' : "") + ">"
       + '<span class="sit-q">' + esc(r.title) + "</span>"
       + '<span class="sit-chip" title="The order Sierra reads the rules in. A lower number is read '
       + 'earlier, and an earlier rule beats a later one when they disagree — which is exactly how a '
@@ -1381,34 +1816,36 @@
       h += '<span class="sit-chip sit-chip-prot" title="A safety rule. Its built-in wording is ALWAYS '
         + "sent, switching it off does nothing, and anything you write here is ADDED to it rather than "
         + "replacing it. These carry the never-invent-a-college and student-privacy guarantees.\">"
-        + "🛡 Protected</span>";
+        + "Protected</span>";
     }
     h += edited
       ? '<span class="sit-chip sit-chip-edited" title="Someone on the team has changed this rule. '
-        + 'The built-in wording is still shown below, so you can see what was changed from.">✏️ Edited</span>'
+        + 'The built-in wording is still shown below, so you can see what was changed from.">Edited</span>'
       : '<span class="sit-chip" title="This rule is running exactly as it ships in the code — nobody '
         + 'has changed it.">Built-in</span>';
     if (off) {
-      h += '<span class="sit-chip sit-chip-new" title="Switched off, so Sierra is not sent this rule '
+      h += '<span class="sit-chip" title="Switched off, so Sierra is not sent this rule '
         + 'at all.">Switched off</span>';
     }
-    h += '<span class="sit-meta">' + (open ? "▾" : "▸") + "</span></div>";
+    // ▸/▾ repeat what aria-expanded already announces, so they are hidden from
+    // a screen reader (the ▸ is on Sam's 2026-09-09 keep list).
+    h += '<span class="sit-meta sit-disclose" aria-hidden="true">' + (open ? "▾" : "▸") + "</span></div>";
 
     if (open) {
-      h += '<div class="sit-row-body">';
+      h += '<div class="sit-row-body" id="sit-rbody-' + sid + '">';
       if (edited && !r.protectedKey) {
         h += '<div class="lbl">What Sierra is being told now (the team’s wording)</div>'
-          + '<div class="txt">' + esc(r.curatorBody) + "</div>"
+          + '<div class="txt" data-label="The team’s wording">' + esc(r.curatorBody) + "</div>"
           + '<div class="lbl">The built-in wording this replaced</div>'
-          + '<div class="txt sit-dim">' + esc(r.defaultBody) + "</div>";
+          + '<div class="txt sit-dim" data-label="The built-in wording">' + esc(r.defaultBody) + "</div>";
       } else if (edited && r.protectedKey) {
         h += '<div class="lbl">Built-in wording (always sent — this part cannot be replaced)</div>'
-          + '<div class="txt">' + esc(r.defaultBody) + "</div>"
+          + '<div class="txt" data-label="The built-in wording">' + esc(r.defaultBody) + "</div>"
           + '<div class="lbl">What the team added to it</div>'
-          + '<div class="txt">' + esc(r.curatorBody) + "</div>";
+          + '<div class="txt" data-label="What the team added">' + esc(r.curatorBody) + "</div>";
       } else {
         h += '<div class="lbl">What Sierra is being told</div>'
-          + '<div class="txt">' + esc(r.body) + "</div>";
+          + '<div class="txt" data-label="What Sierra is being told">' + esc(r.body) + "</div>";
       }
       if (r.row && r.row.updated_by) {
         h += '<div class="sit-guid-editnote">Last changed by <b>' + esc(r.row.updated_by) + "</b>"
@@ -1417,25 +1854,26 @@
       if (state.ruleEditKey === r.key) {
         h += ruleEditor(r);
       } else {
-        h += '<div class="sit-actions">'
-          + '<button class="sit-btn sit-btn-primary" data-ruleedit="' + esc(r.key) + '">'
-          + (r.protectedKey ? "✏️ Add to this rule" : "✏️ Change this rule") + "</button>";
+        // One group, so the row's space-between layout keeps them together on the left.
+        h += '<div class="sit-actions"><div class="sit-act-do">'
+          + '<button type="button" class="sit-btn sit-btn-primary" data-ruleedit="' + esc(r.key) + '">'
+          + (r.protectedKey ? "Add to this rule" : "Change this rule") + "</button>";
         // A protected rule ignores active=false, so offering the switch would be
         // a control that does nothing — the `Clear owner` no-op, repeated.
         if (!r.protectedKey) {
-          h += '<button class="sit-btn" data-ruletoggle="' + esc(r.key) + '"'
+          h += '<button type="button" class="sit-btn" data-ruletoggle="' + esc(r.key) + '"'
             + (state.ruleBusy[r.key] ? " disabled" : "")
             + ' title="Stops this rule being sent to Sierra at all. The built-in wording is kept, so '
             + 'you can switch it back on.">'
             + (state.ruleBusy[r.key] ? "Working…" : (r.active ? "Switch off" : "Switch on")) + "</button>";
         }
         if (edited) {
-          h += '<button class="sit-btn" data-rulerestore="' + esc(r.key) + '"'
+          h += '<button type="button" class="sit-btn" data-rulerestore="' + esc(r.key) + '"'
             + (state.ruleBusy[r.key] ? " disabled" : "")
             + ' title="Puts the original built-in wording back. The row stays in the table, marked as '
             + 'changed, so the history of what was tried is not lost.">↩ Restore the built-in wording</button>';
         }
-        h += "</div>";
+        h += "</div></div>";
       }
       h += "</div>";
     }
@@ -1446,12 +1884,12 @@
     var when = state.ruleEditWhen || r.appliesWhen;
     var labels = ruleDefaults().when_labels;
     var h = '<div class="sit-guid-editbox">';
-    h += '<div class="sit-guid-editlbl">'
+    h += '<div class="sit-guid-editlbl" id="sit-rule-edit-l">'
       + (r.protectedKey
         ? "Text to ADD to this safety rule. The built-in wording above is always sent as well."
         : "The wording Sierra follows. This replaces the built-in text above.")
       + "</div>";
-    h += '<textarea class="sit-rule-body" rows="10" '
+    h += '<textarea class="sit-rule-body" rows="10" aria-labelledby="sit-rule-edit-l" '
       + 'placeholder="Write it as you would say it to a colleague.">' + esc(state.ruleEditBody) + "</textarea>";
     h += '<div class="sit-guid-editrow">'
       + '<label class="sit-check" title="When this rule is sent to Sierra. Leave it alone unless you '
@@ -1467,10 +1905,10 @@
       + esc(state.ruleEditOrder || String(r.sortOrder)) + '"></label>'
       + "</div>";
     h += '<div class="sit-guid-editrow">'
-      + '<button class="sit-btn sit-btn-primary" data-rulesave="' + esc(r.key) + '"'
+      + '<button type="button" class="sit-btn sit-btn-primary" data-rulesave="' + esc(r.key) + '"'
       + (state.ruleBusy[r.key] ? " disabled" : "") + ">"
-      + (state.ruleBusy[r.key] ? "Saving…" : "💾 Save") + "</button>"
-      + '<button class="sit-btn" data-rulecancel>Cancel</button>'
+      + (state.ruleBusy[r.key] ? "Saving…" : "Save") + "</button>"
+      + '<button type="button" class="sit-btn" data-rulecancel>Cancel</button>'
       + "</div>";
     h += '<div class="sit-guid-editnote">⚠ This changes <b>every</b> place Sierra appears, for everyone, '
       + "on her next answer — there is nothing to deploy and no review in between.</div>";
@@ -1486,12 +1924,15 @@
    * arrived at from the opposite direction. */
   function renderRulesPane() {
     var defs = ruleDefaults().rules;
-    var h = "<h3>🛡️ Sierra’s built-in rules <span class=\"sit-meta\">(the rules that come with her — "
-      + "these OUTRANK the instructions above)</span></h3>";
+    // A plain line under the heading (round 1). "OUTRANK the instructions above"
+    // stays verbatim: tests/sierra_rule_defaults.test.js pins the precedence on
+    // screen, because it is the reason this pane exists.
+    var h = '<h3 id="sit-h-rules">Sierra’s built-in rules <span class="sit-meta">The rules that come with her. '
+      + "These OUTRANK the instructions above.</span></h3>";
     h += '<p class="sit-guid-warn">These ship inside Sierra herself. When one of them disagrees with an '
-      + "instruction you wrote above, <b>the built-in rule usually wins</b> — that is not a bug, it is the "
-      + "order she reads them in. This pane exists so you can see them; before it, a rule could quietly "
-      + "cancel your instruction with nothing on screen to explain why.</p>";
+      + "instruction you wrote above, <b>the built-in rule usually wins</b>, because she reads the built-in "
+      + "rules first. Seeing them here tells you which rule is in play when an instruction seems to do "
+      + "nothing.</p>";
 
     if (!defs.length) {
       // The generated file did not load. Say which file — a curator can hand
@@ -1508,7 +1949,7 @@
       return h + '<div class="sit-empty"><b>These need a personal sign-in.</b><br>'
         + "The team phrase opens the instructions above, but not this pane — these are the rules that "
         + "<i>govern</i> the instructions, so they are deliberately held to a narrower gate. Sign in with "
-        + "a magic link from <b>\u2139 About</b> in the header using an address on the reviewer list, then "
+        + "a magic link from <b>ℹ About</b> in the header using an address on the reviewer list, then "
         + "re-open this tab. This is a closed door, not an empty list — Sierra’s rules are all present "
         + "and working.</div>";
     }
@@ -1530,26 +1971,78 @@
       + (offCount ? " · <b>" + offCount + "</b> switched off" : "")
       + ". Anything not marked <i>Edited</i> is running exactly as it ships. "
       + "Rules are listed in the order Sierra reads them, first to last.</p>";
+    h += '<div class="sit-list" id="sit-rule-list">';
     merged.forEach(function (r) { h += ruleRow(r); });
-    return h;
+    return h + "</div>";
   }
 
   // ── Render ──
+  // "Showing N of M: <what the filters say> · Show all" (round 1). Returns the
+  // markup and the plain sentence the announcer speaks. No line when the list
+  // has nothing in it at all: the empty message says that.
+  function showing(key, n, total, words) {
+    if (!total) return { html: "", said: "" };
+    if (!words.length) return { html: "Showing all <b>" + total + "</b>", said: "Showing all " + total };
+    var w = words.join(", ");
+    return {
+      html: "Showing <b>" + n + "</b> of " + total + ": " + esc(w)
+        + ' · <button type="button" class="sit-linkbtn" data-show-all="' + key + '">Show all</button>',
+      said: "Showing " + n + " of " + total + ": " + w,
+    };
+  }
+  function fbWords() {
+    var w = [];
+    if (state.fRating) w.push(state.fRating === "down" ? "thumbs-down" : "thumbs-up");
+    if (state.fStatus) w.push(STATUS_WORD[state.fStatus] || "one review state");
+    if (state.fAudience) w.push(audienceWord(state.fAudience));
+    if (state.fPage) w.push(pageWord(state.fPage));
+    if (state.fNote) w.push("with a comment");
+    if (state.fDays) w.push(DAYS_WORD[state.fDays] || "a recent window");
+    return w;
+  }
+  function gapWords() {
+    var w = [];
+    if (state.gKind === "low-sim") w.push("nothing close in the knowledge base");
+    else if (state.gKind === "punt") w.push("she said she didn’t know");
+    if (state.gAudience) w.push(audienceWord(state.gAudience));
+    if (state.gRev === "open") w.push("still to do");
+    else if (state.gRev === "resolved") w.push("handled");
+    else if (state.gRev === "wont_fix") w.push("left as is");
+    if (state.gDays) w.push(DAYS_WORD[state.gDays] || "a recent window");
+    return w;
+  }
+  // A number card that filters (aria-pressed) and one that only moves the reader
+  // (no aria-pressed: it never lights up, and says where it goes to a screen reader).
+  function statCard(key, n, label, tip, pressed, controls) {
+    return '<button type="button" class="box" data-stat="' + key + '" aria-pressed="' + (pressed ? "true" : "false") + '"'
+      + ' aria-controls="' + controls + '" title="' + esc(tip) + '">'
+      + '<span class="n">' + n + '</span><span class="l">' + esc(label) + "</span></button>";
+  }
+  function goCard(key, n, label, tip, spoken) {
+    return '<button type="button" class="box sit-stat-go" data-stat="' + key + '" aria-controls="sit-gap-list"'
+      + ' title="' + esc(tip) + '">'
+      + '<span class="n">' + n + '</span><span class="l">' + esc(label) + "</span>"
+      + '<span class="sit-vh">' + esc(spoken) + "</span></button>";
+  }
+
   function render(root) {
     ensureCss();
+    shedPlaceholder(root);
     if (state.loading) { root.innerHTML = '<div class="sit"><p class="sit-gate">Loading Sierra logs…</p></div>'; return; }
 
+    var ready = signedIn() && !state.error && !state.gated;
     var html = '<div class="sit">';
     html += '<h2>Sierra Training <span class="sit-gatechip">Team only</span></h2>';
     html += '<p class="sit-intro">Where you teach <b>Sierra</b>, the CPL assistant, to answer better. '
-      + "Three parts, in the order you would use them: what people told us was wrong "
-      + "(\u{1F44D}/\u{1F44E}), the questions she struggled to answer, and the "
-      + "<b>instructions</b> you give her — plain-English rules she follows on every question, live "
-      + "within a minute. Hover anything you don’t recognize; every filter and label explains itself.</p>";
+      + "Three parts, in the order you would use them: what people said about her answers, the "
+      + "questions she struggled to answer, and the <b>instructions</b> you give her — plain-English "
+      + "rules she follows on every question, live within a minute. "
+      + (ready ? "Press any number below to see what it counts. " : "")
+      + "Hover anything you don’t recognize; every filter and label explains itself.</p>";
 
     if (!signedIn()) {
       html += '<div class="sit-empty">This surface reads the gated Sierra logs. '
-        + 'Sign in from <b>\u2139 About</b> in the header (magic-link reviewer or the shared team phrase), '
+        + 'Sign in from <b>ℹ About</b> in the header (magic-link reviewer or the shared team phrase), '
         + "then come back — the queue loads automatically.</div></div>";
       root.innerHTML = html;
       return;
@@ -1557,23 +2050,27 @@
     if (state.error) {
       html += '<div class="sit-empty">Could not load the Sierra logs (' + esc(state.error)
         + "). If you just signed in, re-open this tab; otherwise your session may have expired — "
-        + 'renew it from <b>\u2139 About</b> in the header.</div></div>';
+        + 'renew it from <b>ℹ About</b> in the header.</div></div>';
       root.innerHTML = html;
       return;
     }
     if (state.gated) {
       html += '<div class="sit-empty">The server returned no rows — your sign-in doesn’t appear to '
-        + "unlock the gated logs. Renew your sign-in from <b>\u2139 About</b> in the header and try again.</div></div>";
+        + "unlock the gated logs. Renew your sign-in from <b>ℹ About</b> in the header and try again.</div></div>";
       root.innerHTML = html;
       return;
     }
 
+    // Read the focus wish BEFORE the markup is replaced — the focused control
+    // is about to be destroyed.
+    var focusWant = pendingFocus(root);
+
     var fbAll = state.feedback || [];
     var smokeCount = fbAll.filter(isSmoke).length;
     // Stats follow the same rule as the queue: CI rows are excluded unless the
-    // reviewer opts in. Counting them made "👎 total" read 38 when only 10 were
-    // real reports — a headline that is 74% our own smoke test teaches a reviewer
-    // the number means nothing.
+    // reviewer opts in. Counting them made the thumbs-down total read 38 when
+    // only 10 were real reports — a headline that is 74% our own smoke test
+    // teaches a reviewer the number means nothing.
     var fb = state.fSmoke ? fbAll : fbAll.filter(function (f) { return !isSmoke(f); });
     var turns = state.turns || [];
     // Excludes the CI smoke test, like the gap list itself — otherwise the
@@ -1588,63 +2085,65 @@
     var downCount = fb.filter(function (f) { return f.rating === "down"; }).length;
     var activeGuidance = (state.guidance || []).filter(function (r) { return r.active; }).length;
 
-    html += '<div class="sit-stat">'
-      + '<div class="box" title="People who rated an answer and whose report nobody has finished with yet.">'
-      + '<div class="n">' + openCount + '</div><div class="l">Still to do</div></div>'
-      + '<div class="box" title="How many people pressed thumbs-down. These are the answers someone thought were wrong.">'
-      + '<div class="n">' + downCount + '</div><div class="l">\u{1F44E} Thumbs-down</div></div>'
-      + '<div class="box" title="' + esc(HELP.gapKind) + '">'
-      + '<div class="n">' + gaps.length + '</div><div class="l">Questions she struggled with</div></div>'
-      + '<div class="box" title="How many recent conversations we looked through to find those.">'
-      + '<div class="n">' + turns.length + '</div><div class="l">Conversations checked</div></div>'
-      + '<div class="box" title="Instructions you have given Sierra that are currently switched on.">'
-      + '<div class="n">' + activeGuidance + '</div><div class="l">Instructions in use</div></div>'
+    // ── The five numbers, as buttons (round 1) ──
+    html += '<div class="sit-stat" role="group" aria-label="Counts. Press one to see those items.">'
+      + statCard("todo", openCount, "Still to do", HELP.cardTodo, fbViewIs(FB_VIEWS.todo), "sit-fb-list")
+      + statCard("down", downCount, "Thumbs-down", HELP.cardDown, fbViewIs(FB_VIEWS.down), "sit-fb-list")
+      + goCard("gaps", gaps.length, "Questions she struggled with", HELP.gapKind + " Press to go to that list.",
+          ", go to that list")
+      + goCard("convos", turns.length, "Conversations checked", HELP.cardConvos,
+          ", go to the questions she struggled with")
+      + statCard("inuse", activeGuidance, "Instructions in use", HELP.cardInUse, !!state.guidOnlyOn, "sit-guid-list")
       + "</div>";
 
     // ── Pane 1: feedback queue ──
     var rows = filteredFeedback();
-    html += "<h3>\u{1F4EC} What people said about Sierra’s answers "
-      + "<span class=\"sit-meta\">(from the 👍/👎 buttons wherever Sierra appears)</span></h3>";
+    var fbShow = showing("fb", rows.length, fb.length, fbWords());
+    html += '<h3 id="sit-h-fb" tabindex="-1">What people said about Sierra’s answers '
+      + '<span class="sit-meta">From the thumbs-up and thumbs-down buttons wherever Sierra appears.</span></h3>';
     html += '<div class="sit-toolbar">'
-      + '<select class="sit-select" data-f="fRating" title="' + esc(HELP.rating) + '">'
-      + options(["down", "up"], state.fRating, "Thumbs up or down") + "</select>"
-      + '<select class="sit-select" data-f="fAudience" title="' + esc(HELP.audience) + '">'
+      + '<select class="sit-select" data-f="fRating" aria-label="Rating" title="' + esc(HELP.rating) + '">'
+      + options(["down", "up"], state.fRating, "Any rating", RATING_LABEL) + "</select>"
+      + '<select class="sit-select" data-f="fAudience" aria-label="Who asked" title="' + esc(HELP.audience) + '">'
       + options(distinct(fb, "audience", "(not set)"), state.fAudience, "Anyone asking") + "</select>"
-      + '<select class="sit-select" data-f="fPage" title="' + esc(HELP.page) + '">'
+      + '<select class="sit-select" data-f="fPage" aria-label="Page" title="' + esc(HELP.page) + '">'
       + options(distinct(fb, "page", "(unknown)"), state.fPage, "Any page") + "</select>"
-      + '<select class="sit-select" data-f="fStatus" title="' + esc(HELP.status) + '">'
+      + '<select class="sit-select" data-f="fStatus" aria-label="Review status" title="' + esc(HELP.status) + '">'
       + '<option value="open"' + (state.fStatus === "open" ? " selected" : "") + ">Still to do</option>"
       + '<option value=""' + (state.fStatus === "" ? " selected" : "") + ">Everything</option>"
       + STATUSES.map(function (s) {
         return '<option value="' + s + '"' + (state.fStatus === s ? " selected" : "") + ">" + esc(statusLabel(s)) + "</option>";
       }).join("")
       + "</select>"
+      + '<select class="sit-select" data-f="fDays" aria-label="How far back to look" title="' + esc(HELP.days) + '">'
+      + dayOptions(state.fDays) + "</select>"
       + '<label class="sit-check" title="' + esc(HELP.note) + '">'
       + '<input type="checkbox" data-f-note' + (state.fNote ? " checked" : "") + "> only ones with a comment</label>"
       + '<label class="sit-check sit-check-dim" title="' + esc(HELP.smoke) + '">'
       + '<input type="checkbox" data-f-smoke' + (state.fSmoke ? " checked" : "") + "> include "
       + smokeCount + " automated test messages</label>"
-      + '<select class="sit-select" data-f="fDays" aria-label="How far back to look" title="' + esc(HELP.days) + '">'
-      + dayOptions(state.fDays) + "</select>"
-      + '<span class="sit-bulk" title="' + esc(HELP.bulk) + '">Mark all ' + rows.length + " shown as "
+      + '<span class="sit-bulk" title="' + esc(HELP.bulk) + '">Mark all <span data-bulk-n>' + rows.length + "</span> shown as "
       + '<select class="sit-select" data-bulk-status aria-label="State to set them all to" '
       + 'title="' + esc(HELP.bulk) + '">'
       + ["triaged", "addressed"].map(function (s) {
         return '<option value="' + s + '"' + (state.bulkStatus === s ? " selected" : "") + ">" + esc(statusLabel(s)) + "</option>";
       }).join("")
       + "</select>"
-      + '<button class="sit-btn" data-bulk-apply' + (state.bulkBusy || !rows.length ? " disabled" : "") + ">"
+      + '<button type="button" class="sit-btn" data-bulk-apply' + (state.bulkBusy || !rows.length ? " disabled" : "") + ">"
       + (state.bulkBusy ? "Working…" : "Apply") + "</button></span>"
-      + '<span class="sit-count">' + rows.length + " of " + fb.length + "</span>"
       + "</div>";
+    // Replaces the old "N of M" count: says what the list holds and how to widen it.
+    html += '<p class="sit-showing" id="sit-fb-showing" tabindex="-1">' + fbShow.html + "</p>";
+    html += '<div class="sit-list" id="sit-fb-list">' + rows.map(feedbackRow).join("") + "</div>";
     if (!rows.length) {
-      html += '<div class="sit-empty">' + (fb.length ? "No feedback matches these filters." : "No feedback yet — the \u{1F44D}/\u{1F44E} bar on the Sierra surfaces feeds this queue.") + "</div>";
-    } else {
-      rows.forEach(function (f) { html += feedbackRow(f); });
+      html += '<div class="sit-empty">' + (fb.length ? "No feedback matches these filters."
+        : "No feedback yet. It arrives here when someone presses thumbs-up or thumbs-down on one of "
+          + "Sierra’s answers.") + "</div>";
     }
 
     // ── Pane 2: gap miner ──
     var g = gapRows();
+    var gapShow = showing("gap", g.length, gaps.length, gapWords());
     // How many the CI toggle is hiding — printed on the label so the exclusion
     // is visible rather than a silent filter.
     var gapSmokeCount = (state.turns || []).filter(function (t) {
@@ -1652,22 +2151,22 @@
     }).length;
     var themes = themeCounts(gaps);
     var byAud = audienceCounts(gaps);
-    html += "<h3>⛏️ Questions Sierra struggled with <span class=\"sit-meta\">(from the newest "
-      + turns.length + " conversations — she either had nothing close to answer from, or said she didn’t know)</span></h3>";
+    html += '<h3 id="sit-h-gaps" tabindex="-1">Questions Sierra struggled with <span class="sit-meta">From the newest '
+      + turns.length + " conversations: she either had nothing close to answer from, or said she didn’t know.</span></h3>";
     if (themes.length) {
       html += '<div class="sit-themes">' + themes.map(function (t) {
         return '<span class="sit-theme">' + esc(t.word) + " <b>×" + t.n + "</b></span>";
       }).join("") + "</div>";
     }
     html += '<div class="sit-toolbar">'
-      + '<select class="sit-select" data-g="gKind" title="' + esc(HELP.gapKind) + '">'
+      + '<select class="sit-select" data-g="gKind" aria-label="Kind" title="' + esc(HELP.gapKind) + '">'
       + '<option value="all"' + (state.gKind === "all" ? " selected" : "") + ">Both kinds</option>"
       + '<option value="low-sim"' + (state.gKind === "low-sim" ? " selected" : "") + ">Nothing close in the knowledge base</option>"
       + '<option value="punt"' + (state.gKind === "punt" ? " selected" : "") + ">Sierra said she didn’t know</option>"
       + "</select>"
-      + '<select class="sit-select" data-g="gAudience" title="' + esc(HELP.audience) + '">'
+      + '<select class="sit-select" data-g="gAudience" aria-label="Who asked" title="' + esc(HELP.audience) + '">'
       + options(Object.keys(byAud).sort(), state.gAudience, "Anyone asking") + "</select>"
-      + '<select class="sit-select" data-g="gRev" title="Whether to show questions somebody has already dealt with. Marking one handled does not change Sierra — it only takes it off this list.">'
+      + '<select class="sit-select" data-g="gRev" aria-label="Review status" title="Whether to show questions somebody has already dealt with. Marking one handled does not change Sierra — it only takes it off this list.">'
       + '<option value="open"' + (state.gRev === "open" ? " selected" : "") + ">Still to do</option>"
       + '<option value=""' + (state.gRev === "" ? " selected" : "") + ">Everything</option>"
       + TURN_STATUSES.map(function (s2) {
@@ -1675,11 +2174,13 @@
           + esc(turnStatusLabel(s2)) + "</option>";
       }).join("")
       + "</select>"
+      // Every select before the checkbox, as in the feedback toolbar, so a phone
+      // lays the filters out two across without a gap.
+      + '<select class="sit-select" data-g="gDays" aria-label="How far back to look" title="' + esc(HELP.days) + '">'
+      + dayOptions(state.gDays) + "</select>"
       + '<label class="sit-check sit-check-dim" title="The CI smoke test asks a fixed set of questions on every deploy, twice each — robot traffic, not people. They were 83% of this list before being excluded.">'
       + '<input type="checkbox" data-g-smoke' + (state.gSmoke ? " checked" : "") + "> include "
       + gapSmokeCount + " automated test messages</label>"
-      + '<select class="sit-select" data-g="gDays" aria-label="How far back to look" title="' + esc(HELP.days) + '">'
-      + dayOptions(state.gDays) + "</select>"
       + '<span class="sit-meta">' + Object.keys(byAud).sort().map(function (a) { return esc(a) + " " + byAud[a]; }).join(" · ") + "</span>"
       + '<span class="sit-bulk" title="Marks every row currently shown. It does not change how Sierra answers — it only clears them off the still-to-do list.">Mark all ' + g.length + " shown as "
       + '<select class="sit-select" data-gbulk-status aria-label="State to set them all to"'
@@ -1691,24 +2192,27 @@
           + esc(turnStatusLabel(s2)) + "</option>";
       }).join("")
       + "</select>"
-      + '<button class="sit-btn" data-gbulk-apply' + (state.gBulkBusy || !g.length ? " disabled" : "") + ">"
+      + '<button type="button" class="sit-btn" data-gbulk-apply' + (state.gBulkBusy || !g.length ? " disabled" : "") + ">"
       + (state.gBulkBusy ? "Working…" : "Apply") + "</button></span>"
-      + '<span class="sit-count">' + g.length + " of " + gaps.length + "</span>"
       + "</div>";
+    // The same line as the feedback list's, so the gap number and this list can
+    // be reconciled at a glance: the number counts everything, the list starts
+    // on "still to do".
+    html += '<p class="sit-showing" id="sit-gap-showing" tabindex="-1">' + gapShow.html + "</p>";
+    html += '<div class="sit-list" id="sit-gap-list">' + g.map(gapRow).join("") + "</div>";
     if (!g.length) {
-      html += '<div class="sit-empty">No gap turns match — nice.</div>';
-    } else {
-      g.forEach(function (t) { html += gapRow(t); });
+      html += '<div class="sit-empty">' + (gaps.length ? "No struggled questions match these filters."
+        : "No struggled questions in the conversations checked.") + "</div>";
     }
 
     // ── Pane 3: guidance layer (Phase 2) ──
-    html += "<h3>Instructions for Sierra <span class=\"sit-meta\">(plain-English rules she follows — "
-      + "they reach her within a minute, with nothing to deploy)</span></h3>";
+    html += '<h3 id="sit-h-guid" tabindex="-1">Instructions for Sierra <span class="sit-meta">Plain-English rules '
+      + "she follows. They reach her within a minute, with nothing to deploy.</span></h3>";
     html += '<p class="sit-guid-warn">⚠ These change <b>every</b> place Sierra appears, including My College '
-      + "and the public assistant. She is sent the newest <b>" + GUIDANCE_SENT_CAP + "</b> switched-on "
+      + "and the public assistant. Sierra receives the newest <b>" + GUIDANCE_SENT_CAP + "</b> switched-on "
       + "instructions with every question, plus up to <b>" + GUIDANCE_DISPLAY_CAP + "</b> display rules, which "
-      + "are counted separately and never take a slot from an instruction. Switch one off rather than deleting "
-      + "it — the list is its own record of what has been tried.</p>";
+      + "have their own count and never take a slot from an instruction. To retire one, switch it off; the "
+      + "list keeps its own record of what has been tried.</p>";
     // The total budget is a SILENT failure: past it, the function stops adding
     // rules and the oldest simply never reach Sierra. Show it before it bites.
     // ⚠ RANK WITHIN EACH KIND, NOT ACROSS BOTH. The edge function issues one
@@ -1731,13 +2235,16 @@
       + " characters (" + budgetPct + "%)"
       + (budgetPct >= 80 ? " — getting full. Switch off an instruction you no longer need." : "")
       + "</p>";
+    var guidShow = { html: "", said: "" };
     if (state.guidance === null) {
       html += '<div class="sit-empty">Could not load the guidance rules — renew your sign-in from '
-        + "<b>\u2139 About</b> in the header and re-open this tab.</div>";
+        + "<b>ℹ About</b> in the header and re-open this tab.</div>";
+      // Still a list, so the "Instructions in use" card controls something that exists.
+      html += '<div class="sit-list" id="sit-guid-list"></div>';
     } else {
       var used = String(state.draftRule || "").length;
       html += '<div class="sit-guid-composer">'
-        + '<textarea class="sit-guid-input" maxlength="' + GUIDANCE_RULE_MAX + '" rows="3" '
+        + '<textarea class="sit-guid-input" aria-label="New instruction for Sierra" maxlength="' + GUIDANCE_RULE_MAX + '" rows="3" '
         + 'title="Write it as you would say it to a colleague. Sierra follows these literally, so be specific '
         + 'about what she should say and when." '
         + 'placeholder="e.g. When someone asks about CPR or First Aid credit, always mention the statewide EMS '
@@ -1750,7 +2257,7 @@
         + (used >= GUIDANCE_RULE_MAX ? " — at the limit; anything more will not be saved." : "")
         + "</div>"
         + '<div class="sit-guid-row">'
-        + '<input class="sit-guid-note" maxlength="' + GUIDANCE_NOTE_MAX + '" value="' + esc(state.draftNote) + '" '
+        + '<input class="sit-guid-note" aria-label="Note for the team" maxlength="' + GUIDANCE_NOTE_MAX + '" value="' + esc(state.draftNote) + '" '
         + 'title="Just for the team — why you added this. Sierra never sees the note." '
         + 'placeholder="Optional note for the team — why this exists (e.g. which feedback it answers)">'
         // Plain-word control, no glyph. Defaults to Instruction: that is what
@@ -1766,37 +2273,79 @@
         + "Applies: "
         + surfaceSelect("data-guid-surface", state.draftSurface)
         + "</label>"
-        + '<button class="sit-btn sit-btn-primary" data-guid-add' + (state.addBusy ? " disabled" : "") + ">"
-        + (state.addBusy ? "Adding…" : "➕ Add instruction") + "</button>"
+        + '<button type="button" class="sit-btn sit-btn-primary" data-guid-add' + (state.addBusy ? " disabled" : "") + ">"
+        + (state.addBusy ? "Adding…" : "Add instruction") + "</button>"
         + "</div></div>";
+      var guidRows = "", shownGuid = 0;
+      var rankBy = {};
+      state.guidance.forEach(function (r) {
+        var k = guidKind(r);
+        // Ranked over EVERY row, shown or not: hiding a switched-off row must not
+        // change which rules are marked as reaching Sierra.
+        if (r.active) rankBy[k] = (rankBy[k] || 0) + 1;
+        var editing = String(state.editId) === String(r.id);
+        // "Instructions in use" lists the switched-on rows. A row open in the
+        // editor stays, so pressing the card never throws away someone's edit.
+        if (state.guidOnlyOn && !r.active && !editing) return;
+        shownGuid++;
+        if (editing) guidRows += guidanceEditor(r);
+        else guidRows += guidanceRow(r, r.active && rankBy[k] <= capFor(k));
+      });
+      if (state.guidOnlyOn) guidShow = showing("guid", shownGuid, state.guidance.length, ["in use"]);
+      html += '<p class="sit-showing" id="sit-guid-showing" tabindex="-1">' + guidShow.html + "</p>";
+      html += '<div class="sit-list" id="sit-guid-list">' + guidRows + "</div>";
       if (!state.guidance.length) {
         html += '<div class="sit-empty">No instructions yet — add the first one above. '
           + "It reaches Sierra on her next answer.</div>";
-      } else {
-        var rankBy = {};
-        state.guidance.forEach(function (r) {
-          var k = guidKind(r);
-          if (r.active) rankBy[k] = (rankBy[k] || 0) + 1;
-          if (String(state.editId) === String(r.id)) html += guidanceEditor(r);
-          else html += guidanceRow(r, r.active && rankBy[k] <= capFor(k));
-        });
       }
     }
 
     // ── Pane 4: Sierra's built-in rules (sierra_rules) ──
-    // Deliberately BELOW the instructions pane and visually distinct: these are
-    // the rules that outrank what you write up there, and the reason the pane
-    // exists is that on 2026-08-14 one of them silently beat Sam's instruction.
+    // Deliberately BELOW the instructions pane: these are the rules that outrank
+    // what you write up there, and the reason the pane exists is that on
+    // 2026-08-14 one of them silently beat Sam's instruction.
     html += renderRulesPane();
 
-    html += '<p class="sit-gov">Instructions are wired through to Sierra and reach every surface she appears '
-      + "on, including the Sierra AI section of <b>My College</b> — she is sent them with every question, so a "
-      + "change here shows up on her next answer with nothing to deploy. Still to come: adding documents to "
-      + "her knowledge so she can quote them. Nothing on this tab ever writes to the public CPL Knowledge "
-      + "Base — that stays behind its human-reviewed curation pipeline.</p>";
+    html += '<p class="sit-gov">Sierra receives every switched-on instruction with every question, wherever '
+      + "she appears, including the Sierra section of <b>My College</b>, so a change here shows up in her next "
+      + "answer with nothing to deploy. Still to come: adding documents to her knowledge so she can quote them. "
+      + "This tab never writes to the public CPL Knowledge Base; that stays behind its human-reviewed curation "
+      + "pipeline.</p>";
     html += "</div>";
     root.innerHTML = html;
     wire(root);
+    syncScrollers(root);
+    restoreFocus(root, focusWant);
+    announce(root, { fb: fbShow.said, gap: gapShow.said, guid: guidShow.said }, focusWant);
+  }
+
+  // ── The number cards and "Show all" (round 1) ──
+  function pressCard(key, root) {
+    if (FB_VIEWS[key]) {
+      // A lit card is the filter the reader set; pressing it again shows everything.
+      setFbView(fbViewIs(FB_VIEWS[key]) ? FB_ALL : FB_VIEWS[key]);
+      state.focusNext = '[data-stat="' + key + '"]';
+      render(root);
+      bringIntoView(root.querySelector("#sit-fb-showing"));
+    } else if (key === "inuse") {
+      state.guidOnlyOn = !state.guidOnlyOn;
+      state.focusNext = '[data-stat="inuse"]';
+      render(root);
+      bringIntoView(root.querySelector("#sit-h-guid"));
+    } else if (key === "gaps" || key === "convos") {
+      // These two only move the reader, and set the list to show everything
+      // the number counts. They never light up.
+      showAllGaps();
+      state.focusNext = "#sit-h-gaps";
+      render(root);
+      land(root.querySelector("#sit-h-gaps"));
+    }
+  }
+  function showAll(key, root) {
+    if (key === "fb") { setFbView(FB_ALL); state.focusNext = "#sit-fb-showing"; }
+    else if (key === "gap") { showAllGaps(); state.focusNext = "#sit-gap-showing"; }
+    else if (key === "guid") { state.guidOnlyOn = false; state.focusNext = "#sit-h-guid"; }
+    render(root);
   }
 
   function wire(root) {
@@ -1825,6 +2374,16 @@
     root.querySelectorAll("[data-g]").forEach(function (sel) {
       sel.addEventListener("change", function () { state[sel.getAttribute("data-g")] = sel.value; render(root); });
     });
+    // ── The five numbers and "Show all" (round 1) ──
+    root.querySelectorAll("[data-stat]").forEach(function (btn) {
+      btn.addEventListener("click", function () { pressCard(btn.getAttribute("data-stat"), root); });
+    });
+    root.querySelectorAll("[data-show-all]").forEach(function (btn) {
+      btn.addEventListener("click", function () { showAll(btn.getAttribute("data-show-all"), root); });
+    });
+    // Item headers are buttons: a click, or Enter / Space from the keyboard.
+    // render() puts focus back on the header it rebuilt (pendingFocus).
+    function toggleRow(map, id) { state[map][id] = !state[map][id]; render(root); }
     root.querySelectorAll("[data-open]").forEach(function (el) {
       el.addEventListener("click", function () {
         // A click that ENDS a text selection is someone copying the question,
@@ -1839,17 +2398,24 @@
         state.open[id] = !state.open[id];
         render(root);
       });
+      onActivateKey(el, function () { toggleRow("open", el.getAttribute("data-open")); });
     });
     root.querySelectorAll("[data-gopen]").forEach(function (el) {
       el.addEventListener("click", function () {
-        var id = el.getAttribute("data-gopen");
-        state.gOpen[id] = !state.gOpen[id];
-        render(root);
+        // The same guard as the feedback rows: the question is selectable here too.
+        if (hasTextSelection(el)) return;
+        toggleRow("gOpen", el.getAttribute("data-gopen"));
       });
+      onActivateKey(el, function () { toggleRow("gOpen", el.getAttribute("data-gopen")); });
     });
     root.querySelectorAll("[data-status]").forEach(function (btn) {
       btn.addEventListener("click", function (e) {
         e.stopPropagation();
+        // The pressed part of the control is the current state: nothing to write.
+        if (btn.getAttribute("aria-pressed") === "true") return;
+        // Marking an item Done can take it off a still-to-do list. Focus then
+        // lands on the line that says what the list now holds.
+        state.focusFallback = "#sit-fb-showing";
         setStatus(btn.getAttribute("data-turn"), btn.getAttribute("data-status"), root);
       });
     });
@@ -1869,6 +2435,7 @@
         state.rulesOpen[k] = !state.rulesOpen[k];
         render(root);
       });
+      onActivateKey(el, function () { toggleRow("rulesOpen", el.getAttribute("data-ruleopen")); });
     });
     root.querySelectorAll("[data-ruleedit]").forEach(function (btn) {
       btn.addEventListener("click", function (e) {
@@ -2034,8 +2601,9 @@
         if (!q) { flashBtn(btn, "no question on this row"); return; }
         var act = btn.getAttribute("data-qact");
         if (act === "copy") copyText(q, btn);
-        else if (act === "rule") startRuleFrom(q, root);
-        else testInSierra(q);
+        else if (act === "rule") startRuleFrom(q, root, btn.getAttribute("data-qsrc"));
+        // "Try it in: Sierra · My College" — data-host is the destination.
+        else testInSierra(q, btn.getAttribute("data-host"));
       });
     });
   }
@@ -2046,10 +2614,12 @@
   // This seeds the instruction composer with the question and scrolls to it. It
   // deliberately does NOT write anything: the curator still types the rule and
   // presses Add, because only a human knows what the right answer was.
-  function startRuleFrom(q, root) {
+  function startRuleFrom(q, root, src) {
     var seed = "When someone asks something like “" + String(q || "").trim().slice(0, 160) + "”, ";
     if (!state.draftRule) state.draftRule = seed;
-    if (!state.draftNote) state.draftNote = "From a thumbs-down on: " + String(q || "").trim().slice(0, 120);
+    // The note names where the instruction came from. A thumbs-UP item, or a
+    // question she struggled with, must not be filed as a thumbs-down.
+    if (!state.draftNote) state.draftNote = noteSource(src) + String(q || "").trim().slice(0, 120);
     render(root);
     var ta = root.querySelector(".sit-guid-input");
     if (!ta) return;
@@ -2065,6 +2635,16 @@
         ta.setSelectionRange(ta.value.length, ta.value.length);   // caret after the seed
       }
     } catch (e) { /* ignore */ }
+  }
+
+  function noteSource(src) {
+    var m = /^(fb|gap):([\s\S]+)$/.exec(src || "");
+    if (m && m[1] === "gap") return "From a question Sierra struggled with: ";
+    if (m) {
+      var f = (state.feedback || []).filter(function (r) { return String(r.turn_id) === m[2]; })[0];
+      if (f && f.rating === "up") return "From a thumbs-up on: ";
+    }
+    return "From a thumbs-down on: ";
   }
 
   // Resolve a row's question from the id-typed data-qsrc handle ("fb:<turn_id>"
@@ -2106,7 +2686,7 @@
   }
 
   function copyText(q, btn) {
-    function flash() { flashBtn(btn, "✓ copied", 1200); }
+    function flash() { flashBtn(btn, "Copied", 1200); }
     // The execCommand path, kept as a named fallback because the async
     // clipboard REJECTS in ordinary situations — an unfocused document, a
     // permissions policy, any non-secure context. It used to reject into an
@@ -2197,6 +2777,8 @@
   function activate() {
     var root = document.getElementById("sierra-training-root");
     if (!root) return;
+    // Arriving on the tab is not a change to announce; the next change is.
+    lastSaid = null;
     renderInto(root, !!(state.feedback || state.turns));
   }
 
@@ -2225,6 +2807,15 @@
     _bulkTriage: bulkTriage,
     _testInSierra: testInSierra,
     TEST_Q_KEY: TEST_Q_KEY,
+    TEST_DEST_KEY: TEST_DEST_KEY,
+    DEST_MY_COLLEGE: DEST_MY_COLLEGE,
+    // round 1: the cards, the Showing lines, the scroll boxes
+    _pressCard: pressCard,
+    _showAll: showAll,
+    _fbWords: fbWords,
+    _gapWords: gapWords,
+    _syncScrollers: syncScrollers,
+    _FB_VIEWS: FB_VIEWS,
     _guidanceRow: guidanceRow,
     _guidanceEditor: guidanceEditor,
     _addGuidance: addGuidance,

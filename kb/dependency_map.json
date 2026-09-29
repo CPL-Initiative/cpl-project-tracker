@@ -4551,7 +4551,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3567,
+     "line": 3588,
      "tabs": [
       "college-briefing"
      ]
@@ -4588,7 +4588,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3507,
+     "line": 3528,
      "tabs": [
       "college-briefing"
      ]
@@ -5686,7 +5686,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3216,
+     "line": 3237,
      "tabs": [
       "college-briefing"
      ]
@@ -13541,7 +13541,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3548,
+     "line": 3569,
      "tabs": [
       "college-briefing"
      ]
@@ -14379,7 +14379,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3586,
+     "line": 3607,
      "tabs": [
       "college-briefing"
      ]
@@ -14596,7 +14596,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 871,
+     "line": 1252,
      "tabs": [
       "sierra-training"
      ]
@@ -14853,7 +14853,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3519,
+     "line": 3540,
      "tabs": [
       "college-briefing"
      ]
@@ -17348,7 +17348,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 1027,
+     "line": 1408,
      "tabs": [
       "sierra-training"
      ]
@@ -17597,7 +17597,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 534,
+     "line": 915,
      "tabs": [
       "sierra-training"
      ]
@@ -17949,7 +17949,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3888,
+     "line": 3909,
      "tabs": [
       "college-briefing"
      ]
@@ -19133,7 +19133,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3909,
+     "line": 3930,
      "tabs": [
       "college-briefing"
      ]
@@ -19601,7 +19601,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 526,
+     "line": 907,
      "tabs": [
       "sierra-training"
      ]
@@ -19630,7 +19630,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 647,
+     "line": 1028,
      "tabs": [
       "sierra-training"
      ]
@@ -19640,7 +19640,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 713,
+     "line": 1094,
      "tabs": [
       "sierra-training"
      ]
@@ -19662,7 +19662,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 899,
+     "line": 1280,
      "tabs": [
       "sierra-training"
      ]
@@ -19672,7 +19672,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 981,
+     "line": 1362,
      "tabs": [
       "sierra-training"
      ]
@@ -19687,7 +19687,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 544,
+     "line": 925,
      "tabs": [
       "sierra-training"
      ]
@@ -19697,7 +19697,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 565,
+     "line": 946,
      "tabs": [
       "sierra-training"
      ]
@@ -19748,7 +19748,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 890,
+     "line": 1271,
      "tabs": [
       "sierra-training"
      ]

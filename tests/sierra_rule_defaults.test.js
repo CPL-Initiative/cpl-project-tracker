@@ -296,7 +296,9 @@ function makeWin(opts) {
     api._state.rulesOpen.statewide = true;
     api.render(root);
     const h = root.innerHTML;
-    return /✏️ Edited/.test(h) && /The built-in wording this replaced/.test(h);
+    // Read by KEY since round 1 (2026-09-28): the chip is a word, no ✏️.
+    const chip = root.querySelector('[data-ruleopen="statewide"] .sit-chip-edited');
+    return !!chip && chip.textContent.trim() === "Edited" && /The built-in wording this replaced/.test(h);
   })());
 
   // The failure mode that made #1146 and the team_access lesson: PostgREST
