@@ -5,7 +5,7 @@
 //
 // 1. Sam, 2026-09-14: "Add the same college detail dropdown at the system
 //    level." The statewide expand is the college expand with statewide
-//    figures — so it is the SAME FUNCTION (prioDetailTableHtml), and §2 below
+//    figures — so it is the SAME FUNCTION (prioSubRowsHtml), and §2 below
 //    is what keeps it that way. A second copy is how this repo got a statewide
 //    surface reading 193,700% of target while the per-college cells beside it
 //    read correctly (see actualLineHtml's UNIT AGREEMENT note).
@@ -30,74 +30,40 @@
 // So §3 earns its place by DIAGNOSIS, not by coverage: it counts cells instead
 // of reading them, and fails in one line that says what is actually wrong.
 //
-// Since 2026-09-24 (Sam, review sheet item 7) the expand holds ONE TABLE PER
-// LANE in his six columns — Outcomes · Max FTES · Max Funds · Actual FTES ·
-// Actual Funds · Difference — credit first, then noncredit (or one line saying
-// the scope is credit only). The percent that used to sit in the Actual cell
-// rides the Actual FTES hover, and "To go" became the Difference column with
-// the FTES gap in its hover. The invariants below are the same ones, read off
-// the new columns.
+// Since 2026-09-29 (Sam's round 8: "Line up and use the same column fields in
+// drill down as the college row") the expand's priorities are ROWS OF THE
+// INSTITUTION TABLE ITSELF, under a header band, one cell per column: Max CR
+// Funds · Curr CR Funds · Max NC Funds · Curr NC Funds · Total Funds · Curr
+// Total Funds, each figure with its FTES beneath it. The Difference column of
+// the 2026-09-24 lane tables rides each Curr cell's hover. The invariants below
+// are the same ones, read by column key (the harness's drillOf()).
 const H = require("./lib/cpl_funding_harness.js");
-const { freshDom, boot, click, check, finish, consumerSrc } = H;
+const { freshDom, boot, click, check, finish, consumerSrc, colKeys, drillOf, openDrill, remainingOf } = H;
 
-// Read a detail table STRUCTURALLY — counts first, values second.
-function readTable(tbl) {
-  if (!tbl) return null;
-  const trs = Array.from(tbl.querySelectorAll("tr"));
-  const heads = Array.from(trs[0].querySelectorAll("th"))
-    .map((th) => th.textContent.replace(/\s+/g, " ").trim());
-  const rows = trs.slice(1).map((tr) =>
-    Array.from(tr.querySelectorAll("td")).map((td) => td.textContent.replace(/\s+/g, " ").trim()));
-  // Each cell's hover rides beside it as "<header> tip": the share of Max FTES
-  // sits in the Actual FTES hover and the FTES gap in the Difference hover.
-  const tips = trs.slice(1).map((tr) =>
-    Array.from(tr.querySelectorAll("td")).map((td) => td.getAttribute("title") || ""));
-  const keyed = rows.map((cells, j) => {
-    const o = {};
-    heads.forEach((h, i) => { o[h.toLowerCase()] = cells[i]; o[h.toLowerCase() + " tip"] = tips[j][i]; });
-    return o;
-  });
-  // The credit table carries no caption since 2026-09-28 (its first header
-  // names the lane); the noncredit table's states its rule.
-  const cap = tbl.querySelector("caption");
-  return { heads, rows, keyed, caption: cap ? cap.textContent.replace(/\s+/g, " ").trim() : "" };
-}
-// The CREDIT table — the first lane table of an expand.
-function tableOf(det) {
-  return readTable(det && det.querySelector(".cplfund-dtl-table"));
-}
+const FUND_KEYS = ["cr_award", "cr_current", "nc_award", "nc_current", "total", "current_total"];
 function openCollege(window, doc, name) {
-  const find = () => Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
+  const row = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
     .find((r) => r.querySelector(".cplfund-instname") &&
       r.querySelector(".cplfund-instname").textContent.indexOf(name) !== -1);
-  const row = find();
-  if (!row) return null;
-  click(window, row.querySelector(".cplfund-caret"));
-  const det = find().nextElementSibling;
-  return det && det.classList.contains("cplfund-detail") ? det : null;
+  return row ? openDrill(window, doc, row.getAttribute("data-id")) : drillOf(doc, null);
 }
-function openSystem(window, doc) {
-  const find = () => doc.querySelector("#cplFundTable tbody tr.cplfund-systemrow");
-  const row = find();
-  if (!row) return null;
-  click(window, row.querySelector(".cplfund-caret"));
-  const det = find().nextElementSibling;
-  return det && det.classList.contains("cplfund-detail") ? det : null;
-}
-// A money cell: "$1,234", "$0", or the public floor "<$1,000". NEVER a bare
+function openSystem(window, doc) { return openDrill(window, doc, "sys"); }
+// A money figure: "$1,234", "$0", or the public floor "<$1,000". NEVER a bare
 // number and never a unit figure ("8.0 FTES" / "156 stu") — which is exactly
-// what lands here when a row is one cell short.
+// what lands under a header when a row is one cell short.
 const MONEY = /^(\$[\d,]+|<\$[\d,]+|>\$[\d,]+)$/;
-// An FTES-column figure: fmtNum1 on an FTES priority ("8.0", "1,234.5"), a
-// headcount with its unit ("156 stu"), or the privacy mask ("<10 (privacy)").
-const FIGURE = /^(<?[\d,]+(\.\d+)?( stu| \(privacy\))?)$/;
+// An FTES line: a figure with its unit ("8.0 FTES", "156 stu") or the privacy
+// mask ("<10 (privacy)").
+const FIGURE = /^(<?[\d,]+(\.\d+)?( FTES| stu| \(privacy\)))$/;
 // The undelivered and unknown-measure branches print a status, not a number:
 // TBA since 2026-09-28 (Sam: "show TBA everywhere"), and the bad-source words.
 const STATUS = /^(TBA|awaiting a known measure)$/;
 const num = (v) => Number(String(v || "").replace(/[^\d.]/g, ""));
-// The Actual FTES hover: "112.5% of Max FTES".
-const SHARE = /% of Max FTES$/;
-const pctOf = (tip) => Number(String(tip || "").replace(SHARE, "").replace(/[^\d.]/g, ""));
+// A Curr hover names the Actual FTES share: "… · Actual FTES 112.5% of Max FTES".
+const SHARE = /Actual FTES ([\d.]+)% of Max FTES/;
+const pctOf = (tip) => { const m = SHARE.exec(tip || ""); return m ? Number(m[1]) : NaN; };
+// A credit-only scope's noncredit pair reads a dash.
+const moneyOrDash = (c, k) => MONEY.test(c[k].fig) || ((k === "nc_award" || k === "nc_current") && c[k].fig === "—");
 
 // ─────────────────────────────────────────────────────────────────────────────
 // §1 — the statewide row expands at all (Sam's ask)
@@ -134,11 +100,13 @@ const pctOf = (tip) => Number(String(tip || "").replace(SHARE, "").replace(/[^\d
   check("1c: it keeps .cplfund-systemrow, so the sticky pin and fill are untouched",
     !!sysRow && sysRow.classList.contains("cplfund-systemrow"));
 
-  const det = openSystem(window, doc);
-  const sys = tableOf(det);
-  check("1d: expanding it renders the per-priority detail table", !!sys && sys.rows.length > 0);
-  check("1e: and the detail row is NOT itself sticky (a separate, plain detail row)",
-    !!det && !det.classList.contains("cplfund-systemrow"));
+  const sys = openSystem(window, doc);
+  check("1d: expanding it renders the per-priority rows", sys.rows.length > 0 && !!sys.band);
+  // The priority rows are rows OF the table, and none of them is an
+  // institution or the pinned Statewide row.
+  check("1e: and neither its detail row nor its priority rows are sticky or institution rows",
+    !!sys.first && sys.all.every((tr) => !tr.classList.contains("cplfund-systemrow") &&
+      !tr.classList.contains("cplfund-row") && !tr.hasAttribute("data-id")));
   check("1f: re-expanded state is announced",
     doc.querySelector("#cplFundTable tbody tr.cplfund-systemrow .cplfund-caret")
       .getAttribute("aria-expanded") === "true");
@@ -146,65 +114,76 @@ const pctOf = (tip) => Number(String(tip || "").replace(SHARE, "").replace(/[^\d
   // ───────────────────────────────────────────────────────────────────────────
   // §2 — ONE renderer, not two copies
   // ───────────────────────────────────────────────────────────────────────────
-  const colDet = openCollege(window, doc, "Laney");
-  const col = tableOf(colDet);
-  check("2a: the college expand still renders its table", !!col && col.rows.length > 0);
-  check("2b: statewide and college declare the SAME columns, in the same order",
-    !!sys && !!col && sys.heads.join("|") === col.heads.join("|"));
-  // The first header names the lane since 2026-09-28 (Sam's mockup).
-  check("2b2: …and they are Sam's six (2026-09-24), the first naming the lane",
-    !!sys && sys.heads.join("|") === "Credit outcomes|Max FTES|Max Funds|Actual FTES|Actual Funds|Difference");
-  // One template, used once per lane: a second copy is how the statewide
+  const col = openCollege(window, doc, "Laney");
+  check("2a: the college expand still renders its rows", col.rows.length > 0 && !!col.band);
+  const keys = colKeys(doc);
+  const bandLabels = (d) => FUND_KEYS.map((k) => d.bandCells[k].text);
+  check("2b: statewide and college bands declare the SAME funding columns, in the same order",
+    !!sys.band && !!col.band && bandLabels(sys).join("|") === bandLabels(col).join("|"));
+  // The band repeats the table's own headers for the funding columns, so a
+  // figure reads under the label it answers, and names the scope first.
+  const headText = (k) => doc.querySelector('#cplFundTable thead th[data-sort="' + k + '"]').textContent.trim();
+  check("2b2: …and they are the table's own headers, the first naming the scope",
+    !!col.band && FUND_KEYS.every((k) => col.bandCells[k].text === headText(k)) &&
+    col.bandCells.college.text === "Priority outcomes" && sys.bandCells.college.text === "Statewide priority outcomes");
+  // One template, used for every scope: a second copy is how the statewide
   // surface once read 193,700% of target.
-  check("2c: there is exactly ONE detail-table definition in the source",
-    (consumerSrc.match(/<table class="cplfund-dtl-table/g) || []).length === 1);
-  check("2d: …and exactly one header row for it",
-    (consumerSrc.match(/>Difference<\/th>/g) || []).length === 1);
+  check("2c: there is exactly ONE priority-row template in the source, and the lane tables are gone",
+    (consumerSrc.match(/'<tr class="cplfund-subrow">'/g) || []).length === 1 && !/cplfund-dtl-table/.test(consumerSrc));
+  check("2d: …and exactly one header band for it",
+    (consumerSrc.match(/'<tr class="cplfund-subhead">'/g) || []).length === 1);
 
   // ───────────────────────────────────────────────────────────────────────────
   // §3 — THE PARITY GUARD (the reported defect)
   // ───────────────────────────────────────────────────────────────────────────
-  [["statewide", sys], ["college", col]].forEach(([which, t]) => {
-    check("3a/" + which + ": every priority row emits exactly as many cells as there are headers",
-      !!t && t.rows.length > 0 && t.rows.every((cells) => cells.length === t.heads.length));
-    check("3b/" + which + ": no cell is empty — an emptied last column is how a shift shows",
-      !!t && t.rows.every((cells) => cells.every((v) => v !== "")));
+  [["statewide", sys], ["college", col]].forEach(([which, d]) => {
+    check("3a/" + which + ": the band and every priority row emit exactly one cell per column, none spanning",
+      d.rows.length > 0 && [d.band].concat(d.rows).every((tr) => tr.cells.length === keys.length &&
+        Array.from(tr.cells).every((td) => !td.hasAttribute("colspan"))));
+    check("3b/" + which + ": no funding cell is empty — an emptied last column is how a shift shows",
+      d.cells.length > 0 && d.cells.every((c) => FUND_KEYS.every((k) => c[k].fig !== "")) &&
+      d.cells.every((c) => c.college.text !== ""));
   });
 
   // ───────────────────────────────────────────────────────────────────────────
   // §4 — the funding columns carry FUNDING (Sam's report)
   // ───────────────────────────────────────────────────────────────────────────
-  [["statewide", sys], ["college", col]].forEach(([which, t]) => {
-    // The three funding columns are currency and the two FTES columns carry
-    // the unit; a unit figure in a funding column is exactly what a row one
-    // cell short produces, and it is what Sam's screenshot showed.
-    check("4a/" + which + ": Max Funds, Actual Funds and Difference are currency on every row",
-      !!t && t.keyed.length > 0 && t.keyed.every((r) =>
-        MONEY.test(r["max funds"]) && MONEY.test(r["actual funds"]) && MONEY.test(r.difference)));
-    check("4b/" + which + ": Difference is Max Funds less Actual Funds",
-      !!t && t.keyed.every((r) =>
-        Math.abs(num(r["max funds"]) - num(r["actual funds"]) - num(r.difference)) <= 2));
-    // The two FTES columns carry a FIGURE ("8.0", "1,234.5", "156 stu" on a
-    // headcount priority) or a status word — an undelivered measure reads
-    // TBA, never a number — and never currency.
-    check("4c/" + which + ": Max FTES and Actual FTES carry a figure or a status word, never currency",
-      !!t && t.keyed.every((r) => FIGURE.test(r["max ftes"]) &&
-        (FIGURE.test(r["actual ftes"]) || STATUS.test(r["actual ftes"]))));
-    check("4d/" + which + ": a measured row's Actual FTES hover reads its share of Max FTES",
-      !!t && t.keyed.some((r) => FIGURE.test(r["actual ftes"])) &&
-        t.keyed.filter((r) => FIGURE.test(r["actual ftes"])).every((r) => SHARE.test(r["actual ftes tip"])));
+  [["statewide", sys], ["college", col]].forEach(([which, d]) => {
+    // The six funding cells are currency, the FTES rides the line beneath;
+    // a unit figure in a funding cell is exactly what a row one cell short
+    // produces, and it is what Sam's screenshot showed.
+    check("4a/" + which + ": every funding cell's figure is currency on every row",
+      d.cells.length > 0 && d.cells.every((c) => FUND_KEYS.every((k) => moneyOrDash(c, k))));
+    check("4b/" + which + ": each Curr hover's remaining funding is its Max less its Curr",
+      d.cells.length > 0 && d.cells.every((c) => ["cr", "nc"].every((l) => {
+        const cur = c[l + "_current"], max = c[l + "_award"];
+        if (cur.fig === "—") return true;
+        return remainingOf(cur) !== null && Math.abs(num(max.fig) - num(cur.fig) - num(remainingOf(cur))) <= 2;
+      })));
+    // The FTES lines carry a FIGURE with its unit or a status word — an
+    // undelivered measure reads TBA, never a number — and never currency.
+    check("4c/" + which + ": every FTES line carries a figure or a status word, never currency",
+      d.cells.length > 0 && d.cells.every((c) => ["cr_award", "nc_award", "total"].every((k) =>
+        c[k].fig === "—" || FIGURE.test(c[k].line)) &&
+        ["cr_current", "nc_current", "current_total"].every((k) =>
+          c[k].fig === "—" || FIGURE.test(c[k].line) || STATUS.test(c[k].line))));
+    check("4d/" + which + ": a measured row's Curr hover reads its Actual FTES share of Max FTES",
+      d.cells.some((c) => FIGURE.test(c.cr_current.line)) &&
+        d.cells.filter((c) => FIGURE.test(c.cr_current.line)).every((c) => SHARE.test(c.cr_current.tip)));
   });
-  // The noncredit lane is a table of its own in the same six columns (Sam:
-  // "I don't want the NCs to get lost in the shuffle"), or one plain line
-  // where the scope holds no noncredit funding — never a table of zeros.
-  [["statewide", det, sys], ["college", colDet, col]].forEach(([which, d, t]) => {
-    const nc = d && d.querySelector(".cplfund-dtl-table.cplfund-dtl-nc");
-    const none = d && d.querySelector(".cplfund-dtl-ncnone");
-    check("4e/" + which + ": the noncredit lane has its own six-column table, or one line saying the scope is credit only",
-      !!d && !!t && ((!!nc && readTable(nc).heads.slice(1).join("|") === t.heads.slice(1).join("|") &&
-        readTable(nc).heads[0] === "Noncredit outcomes" && t.heads[0] === "Credit outcomes" &&
-        d.querySelector(".cplfund-dtl-table").classList.contains("cplfund-dtl-cr")) ||
-        (!nc && !!none && /Credit only/.test(none.textContent))));
+  // The noncredit lane keeps columns of its own under the lighter band cells
+  // (Sam: "I don't want the NCs to get lost in the shuffle"), or dashes where
+  // the scope holds no noncredit funding — never a column of zeros — and the
+  // closing line states the lane's rule, or says the scope is credit only.
+  [["statewide", sys], ["college", col]].forEach(([which, d]) => {
+    const foot = d.detail[d.detail.length - 1];
+    const ncBand = !!d.band && d.bandCells.nc_award.td.classList.contains("cf-nchead") &&
+      d.bandCells.nc_current.td.classList.contains("cf-nchead") && !d.bandCells.cr_award.td.classList.contains("cf-nchead");
+    const ncOn = d.cells.length > 0 && d.cells.every((c) => MONEY.test(c.nc_award.fig));
+    const ncOff = d.cells.length > 0 && d.cells.every((c) => c.nc_award.fig === "—" && c.nc_current.fig === "—");
+    check("4e/" + which + ": the noncredit lane has its own lighter-banded columns, or dashes and a Credit only line",
+      ncBand && !!foot && ((ncOn && /^Noncredit counts CPL for students who originate/.test(foot.textContent.trim())) ||
+        (ncOff && /Credit only/.test(foot.textContent))));
   });
 }
 
@@ -216,7 +195,7 @@ const pctOf = (tip) => Number(String(tip || "").replace(SHARE, "").replace(/[^\d
 // "17.6 FTES · 100%" against "Target 8.0 FTES" — two cells of one row
 // contradicting each other, because the percent was Math.min(1, actual/target)
 // while the figure beside it was raw. The cap belongs to the MONEY, and the
-// money already shows it. The percent now rides the Actual FTES hover.
+// money already shows it. The percent rides the Curr cell's hover.
 // ─────────────────────────────────────────────────────────────────────────────
 {
   const { window } = freshDom();
@@ -231,19 +210,19 @@ const pctOf = (tip) => Number(String(tip || "").replace(SHARE, "").replace(/[^\d
     "1": { metric: "Applied CPL Units as FTES", metric_src: "pa_u" },
     "2": { metric: "Applied CPL Units as FTES", metric_src: "pa_u" } } } });
   T.render();
-  const col = tableOf(openCollege(window, doc, "Laney"));
-  const r0 = col && col.keyed[0];
+  const col = openCollege(window, doc, "Laney");
+  const r0 = col.cells[0];
   check("5a: a college past its target reports a percent ABOVE 100, not a flat 100%",
-    !!r0 && SHARE.test(r0["actual ftes tip"]) && pctOf(r0["actual ftes tip"]) > 100);
-  check("5b: its Difference reads Max FTES met (the distance, not the ratio, is what closes)",
-    !!r0 && /Max FTES met/.test(r0["difference tip"]) && r0.difference === "$0");
-  check("5c: and the MONEY is still capped — Actual Funds never exceeds Max Funds",
-    !!col && col.keyed.every((r) => !(num(r["actual funds"]) > num(r["max funds"]))));
-  check("5d: the capped ratio is gone from the source — no Math.min(1, …) in the Actual cell",
+    !!r0 && pctOf(r0.cr_current.tip) > 100);
+  check("5b: its hover reads Max FTES met, and no funding remains (the distance, not the ratio, is what closes)",
+    !!r0 && /Max FTES met/.test(r0.cr_current.tip) && remainingOf(r0.cr_current) === "$0");
+  check("5c: and the MONEY is still capped — a Curr figure never exceeds its Max",
+    col.cells.length > 0 && col.cells.every((c) => !(num(c.cr_current.fig) > num(c.cr_award.fig))));
+  check("5d: the capped ratio is gone from the source — no Math.min(1, …) in the Actual FTES share",
     !/fmtPctTrim\(\s*Math\.min\(\s*1\s*,/.test(consumerSrc));
 
   // ───────────────────────────────────────────────────────────────────────────
-  // §6 — statewide Actual Funds is the SUM of institutions, never a ratio
+  // §6 — statewide Curr is the SUM of institutions, never a ratio
   //
   // The fixture above is the discriminator: statewide pa_u is far past the
   // statewide target, so a statewide-cap × statewide-fraction reading would pay
@@ -252,19 +231,18 @@ const pctOf = (tip) => Number(String(tip || "").replace(SHARE, "").replace(/[^\d
   // claimed under two goals at once (2026-09-14): every row correct alone, and
   // nothing ever added them up.
   // ───────────────────────────────────────────────────────────────────────────
-  const sys = tableOf(openSystem(window, doc));
-  check("6a: the statewide expand renders", !!sys && sys.rows.length === col.rows.length);
+  const sys = openSystem(window, doc);
+  check("6a: the statewide expand renders", sys.rows.length === col.rows.length && sys.rows.length > 0);
   // The FUNDED rows: a priority at a 0% share (Priority 4 until Sam sets one,
   // 2026-09-22) has $0 of Max Funds and nothing for either claim to test.
-  const fundedRows = (t) => t.keyed.filter((r) => num(r["max funds"]) > 0);
+  const fundedRows = (d) => d.cells.filter((c) => num(c.cr_award.fig) > 0);
   check("6b: statewide Actual FTES is past Max FTES, so a ratio reading would pay the full cap",
-    !!sys && fundedRows(sys).length >= 3 &&
-    fundedRows(sys).every((r) => pctOf(r["actual ftes tip"]) > 100));
-  check("6c: …but Actual Funds is well under Max Funds, because it SUMS institutions",
-    !!sys && fundedRows(sys).length >= 3 && fundedRows(sys).every((r) =>
-      num(r["max funds"]) > 0 && num(r["actual funds"]) < num(r["max funds"])));
-  check("6d: the scope supplies `earned` rather than the renderer deriving it",
-    /THE SCOPE SUPPLIES `earned`; IT IS NEVER DERIVED HERE/.test(consumerSrc));
+    fundedRows(sys).length >= 3 && fundedRows(sys).every((c) => pctOf(c.cr_current.tip) > 100));
+  check("6c: …but Curr CR Funds is well under Max CR Funds, because it SUMS institutions",
+    fundedRows(sys).length >= 3 && fundedRows(sys).every((c) =>
+      num(c.cr_award.fig) > 0 && num(c.cr_current.fig) < num(c.cr_award.fig)));
+  check("6d: the scope supplies the Curr figure rather than the renderer deriving it",
+    /THE SCOPE SUPPLIES `actualFunds`; IT IS NEVER DERIVED HERE/.test(consumerSrc));
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -304,6 +282,18 @@ const pctOf = (tip) => Number(String(tip || "").replace(SHARE, "").replace(/[^\d
     ph.indexOf("<select") === -1 && ph.indexOf("<textarea") === -1);
   check("7e: the caret is flattened BEFORE the button sweep, not removed with it",
     /cplfund-caret"\)\.forEach[\s\S]{0,260}replaceChild[\s\S]{0,400}querySelectorAll\("textarea, button/.test(consumerSrc));
+  // An open drill-in prints too. The print window has its own stylesheet, so
+  // a figure and the FTES line beneath it must stay two phrases in the markup
+  // itself ("$1,234 5.0 FTES", never "$1,2345.0 FTES"), and the print CSS
+  // stacks them.
+  T._state.open = { "c:Laney": true };
+  T.render();
+  const JSDOM = require("jsdom").JSDOM;
+  const pd = new JSDOM(T._printHtml()).window.document;
+  const pRows = Array.from(pd.querySelectorAll("tr.cplfund-subrow"));
+  check("7f: an open drill-in prints each figure and its FTES line as two phrases, stacked by the print CSS",
+    pRows.length > 0 && pRows.every((tr) => !/\$[\d,]+\d\.\d FTES/.test(tr.textContent)) &&
+    /\.cplfund-table td \.cf-ftes\{display:block;/.test(T._printHtml()));
 }
 
 finish();

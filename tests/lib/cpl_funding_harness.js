@@ -125,8 +125,77 @@ function pieSlices(el) {
   return pie ? pie.querySelectorAll("path, circle").length : -1;
 }
 
+// ── THE DRILL-IN'S PRIORITY ROWS (round 8, Sam 2026-09-29) ─────────────────
+// An expanded row's priorities are rows of the college table itself: after
+// its detail row (the Minimum Conditions line) come a tr.cplfund-subhead
+// header band and one tr.cplfund-subrow per priority, one cell per column,
+// then a closing detail row. They replaced the two nested lane tables of
+// 2026-09-24. Read them BY COLUMN KEY through the table's own header
+// (data-sort), never by position, so the next column cannot re-point an
+// assertion.
+function colKeys(doc) {
+  return Array.from(doc.querySelectorAll("#cplFundTable thead th")).map((th) => th.getAttribute("data-sort"));
+}
+// An expandable row by its data-id: "c:<college>", or "sys" for Statewide.
+function rowById(doc, id) {
+  return doc.querySelector('#cplFundTable tbody tr[data-id="' + id + '"]');
+}
+// One row's cells by key. A cell reads as its figure (`fig`), the FTES line
+// beneath it (`line`, the .cf-ftes span), its hover (`tip`), the line's own
+// hover (`lineTip`), and whether it reads gray (`gated`).
+function readCells(keys, tr) {
+  const o = {};
+  Array.from(tr.cells).forEach((td, i) => {
+    const span = td.querySelector(".cf-ftes");
+    const text = td.textContent.replace(/\s+/g, " ").trim();
+    const line = span ? span.textContent.replace(/\s+/g, " ").trim() : "";
+    o[keys[i]] = { td, text, fig: span ? text.slice(0, text.length - line.length).trim() : text, line,
+      tip: td.getAttribute("title") || "", lineTip: span ? span.getAttribute("title") || "" : "",
+      gated: td.classList.contains("cf-gated") };
+  });
+  return o;
+}
+// Everything an expanded row owns, up to the next expandable row or district
+// header: `detail` (its detail rows, the conditions row first), `band`,
+// `rows` (the priority rows) and `notes` (a reported card's line), with
+// `cells[i]` and `bandCells` read by key.
+function drillOf(doc, tr) {
+  const out = { tr, detail: [], band: null, rows: [], notes: [], all: [], cells: [], bandCells: null, first: null };
+  if (!tr) return out;
+  const keys = colKeys(doc);
+  let n = tr.nextElementSibling;
+  while (n && !n.hasAttribute("data-id") && !n.classList.contains("cplfund-grouphdr")) {
+    out.all.push(n);
+    if (n.classList.contains("cplfund-subhead")) out.band = n;
+    else if (n.classList.contains("cplfund-subrow")) out.rows.push(n);
+    else if (n.classList.contains("cplfund-subnote")) out.notes.push(n);
+    else if (n.classList.contains("cplfund-detail")) out.detail.push(n);
+    n = n.nextElementSibling;
+  }
+  out.first = out.detail[0] || null;
+  out.bandCells = out.band ? readCells(keys, out.band) : null;
+  out.cells = out.rows.map((r) => readCells(keys, r));
+  return out;
+}
+// Opens a row's drill-in and returns drillOf(). Idempotent: the name toggles,
+// so an open row is never clicked again (that would close it).
+function openDrill(window, doc, id) {
+  const tr = rowById(doc, id);
+  if (!tr) return drillOf(doc, null);
+  const next = tr.nextElementSibling;
+  if (!(next && next.classList.contains("cplfund-detail"))) click(window, tr.querySelector(".cplfund-caret"));
+  return drillOf(doc, rowById(doc, id));
+}
+// "$X still to qualify for" — the funding remaining, which rides a Curr cell's
+// hover since the Difference column retired. Returns the figure, or null.
+function remainingOf(cell) {
+  const m = /^(>?\$[\d,]+) still to qualify for/.exec((cell && cell.tip) || "");
+  return m ? m[1] : null;
+}
+
 module.exports = {
   cpl, idx, consumerSrc, dataSrc, D, NPRIO, FUNDED,
   results, check, finish,
   freshDom, boot, click, commit, scenSlot, footText, greenSlices, pieSlices,
+  colKeys, rowById, readCells, drillOf, openDrill, remainingOf,
 };

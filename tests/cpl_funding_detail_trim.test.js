@@ -21,9 +21,14 @@
 // sideways inside a 240px column, three columns out of view. That is the
 // failure this file pins first: the fix is a span, and a span is invisible in
 // a screenshot the moment someone edits the grid.
+//
+// ROUND 8 (Sam, 2026-09-29) moved the priorities out of the grid altogether:
+// they are rows of the institution table, one cell per column, so no span can
+// be lost. T1e now pins that, and the distance guards of T2 and T3 read the
+// Curr cell's hover, where the retired Difference column's figures ride.
 const H = require("./lib/cpl_funding_harness.js");
 const { NPRIO } = require("./lib/cpl_funding_harness.js");
-const { freshDom, boot, check, finish, consumerSrc } = H;
+const { freshDom, boot, check, finish, consumerSrc, drillOf, remainingOf } = H;
 
 function openDetail(window, doc, name) {
   const find = () => Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
@@ -35,25 +40,16 @@ function openDetail(window, doc, name) {
   const det = row2 && row2.nextElementSibling;
   return det && det.classList.contains("cplfund-detail") ? det : null;
 }
-// Read the detail table BY HEADER — never by position. Adding "To go" shifted
-// every index in the metric-pin suite; that suite is header-keyed now and so
-// is this one, so the next column insert cannot quietly re-point an assertion.
-// The CREDIT table — one table per lane since 2026-09-24 (Sam's 7.9a/b).
+// Read the priority rows BY COLUMN KEY — never by position (the harness's
+// drillOf reads the table's own header). Adding "To go" once shifted every
+// index in the metric-pin suite; a key cannot be re-pointed by a new column.
+// The credit lane: Max CR Funds with its Max FTES beneath, Curr CR Funds with
+// its Actual FTES beneath and the funding remaining on hover.
 function detRows(det) {
-  const trs = Array.from(det.querySelectorAll(".cplfund-dtl-table.cplfund-dtl-cr tr"));
-  const keys = Array.from(trs[0].querySelectorAll("th"))
-    .map((th) => th.textContent.replace(/\s+/g, " ").trim().toLowerCase());
-  return trs.slice(1).map((tr) => {
-    const out = {};
-    Array.from(tr.querySelectorAll("td")).forEach((td, i) => {
-      out[keys[i]] = td.textContent.replace(/\s+/g, " ").trim();
-      // The hover rides along: since 2026-09-23 a row is one line, and the
-      // figures that would stack a second line (the funding remaining, the
-      // CR/NC split) read in the cell's title.
-      out[keys[i] + " (hover)"] = td.getAttribute("title") || "";
-    });
-    return out;
-  });
+  const d = drillOf(det.ownerDocument, det && det.previousElementSibling);
+  return d.cells.map((c) => ({ maxFunds: c.cr_award.fig, maxFtes: c.cr_award.line,
+    cur: c.cr_current.fig, actual: c.cr_current.line, actualTip: c.cr_current.lineTip,
+    tip: c.cr_current.tip, remaining: remainingOf(c.cr_current) }));
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -105,20 +101,21 @@ function detRows(det) {
   check("T1d: …and the gate's roll-forward sentence is retired from the module, with the hover that carried it",
     !/qualifying later still counts toward it/.test(consumerSrc) && !/function baselineGateText\(/.test(consumerSrc));
 
-  // THE SPAN. The table is a direct child of the detail grid, and the grid is
-  // auto-fit minmax(240px, 1fr) — without the span rule it lands in one column
-  // and its 740px min-width scrolls sideways inside ~240px, which is how three
-  // of its eight columns went unread. jsdom does no layout, so assert the two
-  // facts layout depends on: the element is a grid child, and the rule granting
-  // it the full row is present in the injected CSS.
-  const tscroll = det.querySelector(".cplfund-dtl-tscroll");
-  check("T1e: the priority table is a DIRECT child of the detail grid",
-    !!tscroll && tscroll.parentElement.classList.contains("cplfund-detail-grid"));
-  check("T1e2: …and the injected CSS spans it across every grid column",
-    /\.cplfund-detail-grid\s*>\s*\.cplfund-dtl-tscroll[^{]*\{[^}]*grid-column:\s*1\s*\/\s*-1/
-      .test(consumerSrc));
-  check("T1e3: …and the scroller is still the narrow-screen safety net beneath it",
-    /"\.cplfund-dtl-tscroll \{ overflow-x: auto/.test(consumerSrc));
+  // THE SPAN, RETIRED WITH ITS CAUSE. The lane tables were grid items of the
+  // detail row, and the grid is auto-fit minmax(240px, 1fr): without a span
+  // rule a table landed in one column and scrolled sideways inside ~240px,
+  // which is how three of its eight columns once went unread. Since round 8
+  // the priorities are rows of the institution table, so the columns they
+  // read under are the table's own and no grid holds them.
+  const d = drillOf(doc, det.previousElementSibling);
+  check("T1e: the priority rows are rows of the institution table, not grid items of the detail row",
+    d.rows.length === NPRIO && d.rows.every((tr) => tr.parentElement === det.parentElement) &&
+    !det.querySelector("table") && !det.querySelector(".cplfund-detail-grid table"));
+  check("T1e2: …one cell per column, none spanning, so each figure sits under the header it answers",
+    d.rows.length === NPRIO && d.rows.every((tr) => tr.cells.length === det.previousElementSibling.cells.length &&
+      Array.from(tr.cells).every((td) => !td.hasAttribute("colspan"))));
+  check("T1e3: …and the table's own wrap is still the narrow-screen safety net beneath them",
+    /"\.cplfund-tablewrap \{ overflow-x: auto/.test(consumerSrc) && !/cplfund-dtl-tscroll/.test(consumerSrc));
 
   // Sam's items 3 and 4, on the row itself.
   const row = det.previousElementSibling;
@@ -159,32 +156,34 @@ function detRows(det) {
   T.render();
   const R = detRows(openDetail(window, doc, "Laney"));
 
-  // "To go" is RETIRED (Sam, 2026-09-24, review sheet item 7, naming the six
-  // columns: "Outcomes; Max FTES; Max Funds; Actual FTES; Actual Funds;
-  // Difference"). Difference is the FUNDING still to qualify for, and the FTES
-  // distance To go carried rides its hover — so every guard below still holds,
-  // on the column that now carries the distance.
-  check("T2: the table carries a Difference column, and To go has gone",
-    R.length === NPRIO && "difference" in R[0] && !("to go" in R[0]));
-  check("T2a: under target — Difference names the funding still to qualify for, its hover the FTES gap",
-    R.length === NPRIO && /^\$[\d,]+$/.test(R[0].difference) && /FTES to Max FTES/.test(R[0]["difference (hover)"]));
-  check("T2a1: …on ONE line: the cell holds the funding alone (Sam, 2026-09-23: tighten the detail rows)",
-    R.length === NPRIO && !/FTES/.test(R[0].difference));
-  check("T2a2: …and the difference is not the whole Max Funds (Actual Funds is subtracted)",
-    R.length === NPRIO && R[0].difference !== R[0]["max funds"] && R[0]["actual funds"] !== "$0");
-  check("T2b: at or over target — Difference reads $0, its hover Max FTES met, and never a negative",
-    R.length === NPRIO && R[1].difference === "$0" && /Max FTES met/.test(R[1]["difference (hover)"]) && !/-/.test(R[1].difference));
+  // "To go" retired on 2026-09-24 for a Difference column, and Difference
+  // retired with the lane tables on 2026-09-29 (Sam, round 8): the funding
+  // still to qualify for rides the Curr cell's hover, with the FTES distance
+  // beside it. Every guard below still holds, on the hover that carries it.
+  check("T2: the Curr cell's hover carries the funding remaining, and no Difference or To go column is left",
+    R.length === NPRIO && R.every((r) => r.remaining !== null) &&
+    !/>Difference<|>To go</.test(consumerSrc));
+  check("T2a: under target — the hover names the funding still to qualify for, and the FTES gap",
+    R.length === NPRIO && /^\$[\d,]+$/.test(R[0].remaining) && /FTES to Max FTES/.test(R[0].tip));
+  check("T2a1: …and the cell's figure is the funding alone, its FTES on the line beneath (Sam, 2026-09-29)",
+    R.length === NPRIO && /^\$[\d,]+$/.test(R[0].cur) && /^[\d,.]+ FTES$/.test(R[0].actual));
+  const n = (v) => Number(String(v || "").replace(/[^\d.]/g, ""));
+  check("T2a2: …and the remaining funding is not the whole Max (the Curr figure is subtracted)",
+    R.length === NPRIO && R[0].remaining !== R[0].maxFunds && R[0].cur !== "$0" &&
+    Math.abs(n(R[0].maxFunds) - n(R[0].cur) - n(R[0].remaining)) <= 1);
+  check("T2b: at or over target — nothing remains, the hover says Max FTES met, and never a negative",
+    R.length === NPRIO && R[1].remaining === "$0" && /Max FTES met/.test(R[1].tip) && !/-/.test(R[1].remaining));
   // THE ONE THAT MATTERS. A masked actual plus a distance is the actual: a
-  // reader subtracts. The privacy mask has to hold across the whole row — the
-  // funds and the difference included, since funds are the actual times a
+  // reader subtracts. The privacy mask has to hold across the whole cell — the
+  // funds and the remaining included, since funds are the actual times a
   // known price.
   check("T2c: a privacy-suppressed actual gets NO distance and no funds to subtract",
-    R.length === NPRIO && /privacy/.test(R[2]["actual ftes"]) &&
-    R[2]["actual funds"] === "$0" && R[2].difference === R[2]["max funds"] &&
-    // The hover is part of the row: an FTES gap there leaks the same way.
-    !/FTES|\d/.test(R[2]["difference (hover)"]) && !/\d/.test(R[2]["actual ftes (hover)"]));
-  check("T2c2: …and the masked row's hover is a plain absence, never Max FTES met",
-    R.length === NPRIO && R[2]["difference (hover)"] === "");
+    R.length === NPRIO && /privacy/.test(R[2].actual) &&
+    R[2].cur === "$0" && R[2].remaining === R[2].maxFunds &&
+    // The hover is part of the cell: an FTES gap or share there leaks the same way.
+    !/FTES/.test(R[2].tip) && !/\d/.test(R[2].actualTip));
+  check("T2c2: …and the masked cell's hover names the funding alone, never Max FTES met",
+    R.length === NPRIO && R[2].tip === R[2].maxFunds + " still to qualify for");
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -211,12 +210,12 @@ function detRows(det) {
   // TBA since 2026-09-28 (Sam: "show TBA everywhere so when it changes, it
   // will already be wired"), its meaning on hover.
   check("T3a: an undelivered source reads TBA and shows no distance",
-    R.length === NPRIO && R[0]["actual ftes"] === "TBA" && R[0]["actual ftes (hover)"] === "To be announced once measured" &&
-    R[0]["difference (hover)"] === "");
+    R.length === NPRIO && R[0].actual === "TBA" && R[0].actualTip === "To be announced once measured" &&
+    !/FTES/.test(R[0].tip));
   check("T3b: a miswired pin reads awaiting a known measure and shows no distance",
-    R.length === NPRIO && /awaiting a known measure/.test(R[1]["actual ftes"]) && R[1]["difference (hover)"] === "");
+    R.length === NPRIO && /awaiting a known measure/.test(R[1].actual) && !/FTES/.test(R[1].tip));
   check("T3c: the measured row beside them DOES show one — the hover is not dead",
-    R.length === NPRIO && /FTES to Max FTES|Max FTES met/.test(R[2]["difference (hover)"]));
+    R.length === NPRIO && /FTES to Max FTES|Max FTES met/.test(R[2].tip));
 }
 
 finish();

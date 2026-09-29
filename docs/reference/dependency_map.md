@@ -99,8 +99,8 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `kb_curation` | tabs: `canonical-subj4`, `credential-reference`, `map-export`, `unified-courses`, `vision-2030` · scripts: `kb/_apply_canonical_subj4.py`, `kb/_apply_credential_review.py`, `kb/_apply_curation.py`, `kb/_apply_unclassified_triage.py`, `kb/_cred_rename_apply_supabase.py`, `kb/_eacr_flag_migrate.py`, `kb/_esl_sheet_apply.py`, `kb/_overmerge_apply_supabase.py`, `kb/_preseed_unclassified.py`, `kb/_rekey_kb_curation_supabase.py`, `kb/_subj4_apply_supabase.py` | tabs: `canonical-subj4`, `credential-reference`, `unified-courses`, `vision-2030` · modules: `prototype/ccr_universe.js` · pages: `prototype/skyview.html` · scripts: `kb/_cred_rename_apply_supabase.py`, `kb/_eacr_flag_migrate.py`, `kb/_overmerge_apply_supabase.py`, `kb/_preseed_unclassified.py`, `kb/_rekey_kb_curation_supabase.py`, `kb/_subj4_apply_supabase.py` |
 | `liftoff_state` | pages: `CPL_Dashboard.html` | pages: `CPL_Dashboard.html` |
 | `map_cleanup_worklist` | tabs: `map-data-quality` | — |
-| `map_college_contacts` | tabs: `college-briefing`, `college-identity`, `map-queue`, `map-users` · scripts: `kb/_publish_college_briefing.py` · `edgefn:cpl-chat` | — |
-| `map_college_contacts_pub` | tabs: `college-briefing` · scripts: `kb/_publish_college_briefing.py` | — |
+| `map_college_contacts` | tabs: `college-briefing`, `college-identity`, `implementation-funding`, `map-queue`, `map-users` · scripts: `kb/_publish_college_briefing.py` · `edgefn:cpl-chat` | — |
+| `map_college_contacts_pub` | tabs: `college-briefing`, `implementation-funding` · scripts: `kb/_publish_college_briefing.py` | — |
 | `map_college_cr_unit` | tabs: `college-briefing` · scripts: `chatbox/smoke_test.sh`, `kb/_publish_college_briefing.py` | — |
 | `map_college_cr_waiting_pub` | tabs: `college-briefing` | scripts: `kb/_publish_college_briefing.py` |
 | `map_college_credit_summary` | tabs: `college-briefing` · scripts: `chatbox/smoke_test.sh`, `kb/_publish_college_briefing.py` · `edgefn:cpl-chat` | — |
@@ -661,6 +661,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `prototype/funding_video/funding_in_motion.src.html` | scripts: `prototype/funding_video/build.py`, `prototype/funding_video/cues.py` | — |
 | `prototype/funding_video/narration_s1.json` | scripts: `kb/_build_open_asks_decision_sheet.py` | — |
 | `prototype/funding_video/narration_s1_layout.json` | scripts: `prototype/funding_video/build.py` | — |
+| `prototype/mockup_harness/CPL_Dashboard.html` | scripts: `prototype/mockup_harness/capture.mjs` | — |
 | `prototype/skyview.html` | scripts: `prototype/build_ccr_atlas.py` | scripts: `prototype/build_ccr_atlas.py` · committed by: `daily-dashboard.yml` |
 | `quickstart.js` | pages: `CPL_Dashboard.html` | — |
 | `raci.js` | pages: `CPL_Dashboard.html` | — |
@@ -779,7 +780,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | Service | Called by |
 |---|---|
 | `127.0.0.1` | `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
-| `127.0.0.1:` | modules: `prototype/check_ccr_atlas.js`, `prototype/check_skyview_sweep.js`, `scripts/a11y.js`, `scripts/check_memory_briefing_layout.js`, `scripts/tab_review_sheet/capture.js`, `scripts/tab_review_sheet/tab.js` |
+| `127.0.0.1:` | modules: `prototype/check_ccr_atlas.js`, `prototype/check_skyview_sweep.js`, `scripts/a11y.js`, `scripts/check_memory_briefing_layout.js`, `scripts/tab_review_sheet/capture.js`, `scripts/tab_review_sheet/tab.js` · scripts: `prototype/mockup_harness/capture.mjs` |
 | `127.0.0.1:9333` | scripts: `prototype/funding_video/render.mjs` |
 | `alameda.edu` | tabs: `map-queue`, `map-users` |
 | `api.anthropic.com` | tabs: `annual-report` · pages: `CPL_Dashboard.html` · `edgefn:cpl-chat`, `edgefn:cpl-news-harvest`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
@@ -814,8 +815,8 @@ collapse to one `<date>` family so writer and reader edges join.
 | `esm.sh` | pages: `kb-portal/index.html` |
 | `fhweb.foothill.edu` | tabs: `map-queue`, `map-users` |
 | `flc.losrios.edu` | tabs: `map-queue`, `map-users` |
-| `fonts.googleapis.com` | scripts: `kb/_build_college_offering_crosswalk.py`, `kb/_build_domain_cpl_crosswalk.py`, `kb/memory_audit/2026-09-05-sheet_builder.py`, `prototype/globe/build_globe.py` |
-| `fonts.gstatic.com` | scripts: `kb/_build_college_offering_crosswalk.py` |
+| `fonts.googleapis.com` | scripts: `kb/_build_college_offering_crosswalk.py`, `kb/_build_domain_cpl_crosswalk.py`, `kb/memory_audit/2026-09-05-sheet_builder.py`, `prototype/globe/build_globe.py`, `prototype/mockup_harness/assemble.py` |
+| `fonts.gstatic.com` | scripts: `kb/_build_college_offering_crosswalk.py`, `prototype/mockup_harness/assemble.py` |
 | `foothill.edu` | tabs: `map-queue`, `map-users` |
 | `futurohealth.org` | tabs: `map-queue`, `map-users` |
 | `github.com` | pages: `kb-portal/index.html` |
@@ -947,5 +948,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 544 file
-datasets · 147 external services · 382 consumers · 38 workflows · 37 tabs.
+Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 545 file
+datasets · 147 external services · 384 consumers · 38 workflows · 37 tabs.

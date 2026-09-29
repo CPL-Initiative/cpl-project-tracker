@@ -151,9 +151,12 @@ function rowWords(row) {
     /^Confirm participation by /.test(chipOf(gatedRow).getAttribute("title") || "") &&
     !/\bopt[- ]?in\b/i.test(chipOf(gatedRow).textContent) &&
     !/held|reserve/i.test(rowWords(gatedRow)));
-  check("S5: ...and its Curr hover says the whole award is still ahead ($0 of it so far)",
+  // Since round 8 (Sam, 2026-09-29) the figure reads gray until the
+  // conditions are met, and the hover says why after the figures.
+  check("S5: ...and its Curr hover says the whole award is still ahead ($0 of it so far), then why it reads gray",
     !!curCell(gatedRow, "total") && curCell(gatedRow, "total").textContent.trim() === "$0" &&
-    / \$0 of \$[\d,]+$/.test(curCell(gatedRow, "total").getAttribute("title") || ""));
+    curCell(gatedRow, "total").classList.contains("cf-gated") &&
+    / \$0 of \$[\d,]+\. Gray until the institution meets all its minimum conditions\.$/.test(curCell(gatedRow, "total").getAttribute("title") || ""));
   check("S5: the gate is visible WITHOUT a hover — the pie plus the chip's own words",
     !!gatedRow.querySelector("svg.cf-eligpie") && !!chipOf(gatedRow) &&
     /Confirmation not yet on file \(due 11-01-2099\)/.test(gatedRow.querySelector("svg.cf-eligpie").textContent));

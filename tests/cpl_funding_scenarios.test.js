@@ -26,6 +26,8 @@ const {
   consumerSrc,
   cpl,
   finish,
+  drillOf,
+  rowById,
 } = require("./lib/cpl_funding_harness.js");
 
 // The one-pool roster: 115 colleges + the noncredit-only rows (Mt. SAC
@@ -70,8 +72,9 @@ const fmtM = function (v) { return "$" + Math.round(v).toLocaleString("en-US"); 
   click(window, doc.querySelector("tr.cplfund-row"));
   // The county rides the drill-in's one footer line since 2026-09-23:
   // "<County> County: N working adults ..." or "County context not estimated".
+  // Since round 8 (2026-09-29) the footer rides the drill-in's closing row.
   check("drill-in still shows the county context",
-    /\bCounty(:| context)/.test((doc.querySelector("tr.cplfund-detail .cplfund-dtl-foot") || {}).textContent || ""));
+    Array.from(doc.querySelectorAll("tr.cplfund-detail .cplfund-dtl-foot")).some(function (p) { return /\bCounty(:| context)/.test(p.textContent); }));
   // Priority actuals render from the perf artifact. P1's live metric is the
   // ELIGIBLE headcount → `pe` (Sam's 2026-07-30 wording), so the fixture's pe
   // value is what the surfaces must show — the per-college figure in the
@@ -84,18 +87,12 @@ const fmtM = function (v) { return "$" + Math.round(v).toLocaleString("en-US"); 
   };
   T._state.open["c:Alameda"] = true;   // rows key by name since 2026-08-31
   T.render();
-  const dtl = doc.querySelector("tr.cplfund-detail .cplfund-dtl-table");
-  check("Alameda's expand shows the measurable actual (777 eligible) in its Actual column",
-    !!dtl && (function () {
-      // Read the column by its header, never its position (the table went to
-      // six columns on 2026-09-23, and the measure column reads "Actual FTES"
-      // since the lane tables of 2026-09-24).
-      const iAct = Array.from(dtl.querySelectorAll("th")).map(function (h) { return h.textContent; }).indexOf("Actual FTES");
-      return iAct >= 0 && Array.from(dtl.querySelectorAll("tr")).slice(1).some(function (tr) {
-        const tds = tr.querySelectorAll("td");
-        return tds[iAct] && /^777 stu/.test(tds[iAct].textContent);
-      });
-    })());
+  // Since round 8 (2026-09-29) each priority is a row of the college table;
+  // its actual is the line beneath its Curr CR Funds figure, read by key.
+  check("Alameda's expand shows the measurable actual (777 eligible) beneath its Curr figure",
+    drillOf(doc, rowById(doc, "c:Alameda")).cells.some(function (c) {
+      return !!c.cr_current && /^777 stu/.test(c.cr_current.line);
+    }));
   check("the priority card shows the statewide measurable actual (50,000 eligible per MAP)",
     /Actual 50,000 students per MAP/.test(doc.getElementById("cplFundingMount").textContent));
   delete window.CPL_FUNDING_PERF;

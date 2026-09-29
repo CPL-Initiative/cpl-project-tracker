@@ -43,10 +43,14 @@ they finished, so **check every PR below on its current head before you trust it
      treat 0 as no figure?
    - Draft 4 of the narrated video (#1756) waits on his review (card 15: the explainer links it once
      he approves).
-5. **Finish the round 8 port** from WIP `3890680a` on `claude/college-dashboard-round8`: most
-   suites are moved to the drill-in's new rows; two College Dashboard (block 7) checks still fail.
-   Then the guards and the consumers (the explainer embeds the section).
-6. **Round 9, Sam's ask (2026-09-29):** *"Next to Vet JST not yet at 75%, show the college vet
+   - **Scenario 2, pending the Chancellor** (Sam, after the CO demo, 2026-09-29): *"We're going with
+     Scenario 2."* College funding follows P1 and P2 (Year 1: 50% each); P3 Career attainment is
+     reported with the P4 projects, qualitatively. Four open points: whether Year 2's three funded
+     priorities stay; carrying Scenario 1's wording to Scenario 2 ("configured", "and processed for
+     CPL"); P3 and P4 shown as reported, with no FTES or funding figure (mock it first); a Scenario 2
+     cut of the video. **Do not publish Scenario 2 until he says the Chancellor has finalized it**
+     (`cpl_memory` `sam-scenario-2-chosen-2026-09-29`).
+5. **Round 9, Sam's ask (2026-09-29):** *"Next to Vet JST not yet at 75%, show the college vet
    count vs. their JST count and the %."* Check it against the mask-under-10 rule
    ([adr](kb-notes/adr-funding-counts-mask-under-10-units-carry-the-money.md)).
 
@@ -66,6 +70,9 @@ reads `after`). Do not commit that plan.
 - **#1754** CR Reference: 88 varying groups named by topic and range.
 - **#1756** draft 4 of the narrated video.
 - **#1757** card 7's workflow, applier and test.
+- **Round 8 of the College Dashboard, live:** gray Curr figures until the conditions are met, the
+  drill-in in the row's own columns, the people behind the first condition
+  (`tests/cpl_funding_round8.test.js`; six suites moved to the new rows).
 - `cpl_memory`: the sheet 3 rulings, the first-condition, NOVA and round 8 rows, and Sam's
   permission for the workflow.
 

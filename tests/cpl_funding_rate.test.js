@@ -25,6 +25,8 @@ const {
   consumerSrc,
   idx,
   finish,
+  drillOf,
+  rowById,
 } = require("./lib/cpl_funding_harness.js");
 
 // Part H — per-student funding rate (Sam, 2026-07-27): the curator types a
@@ -131,16 +133,15 @@ const {
   check("H5: P3 earns $0 for a college with no portal students (P3 cap fully unearned, no advance)",
     oh.earned_total <= oh.cr_award - oh.p3 + 1);
   // The P-cells are retired — the same detail now reads from each row's
-  // expand: the dtl-table's P3 row stacks Target and Actual.
+  // expand. Since round 8 (2026-09-29) the priorities are rows of the college
+  // table, read by column key: P3's actual is the line beneath its Curr CR
+  // Funds figure.
   T._state.open["c:Ohlone"] = true;
   T._state.open["c:Laney"] = true;
   T.render();
   const p3ActOf = function (name) {
-    const row = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
-      .find(function (r) { return r.getAttribute("data-id") === "c:" + name; });
-    const dtl = row.nextElementSibling.querySelector(".cplfund-dtl-table");
-    const trs = Array.from(dtl.querySelectorAll("tr"));
-    return trs[3].querySelectorAll("td")[4].textContent;   // P3 row, Actual cell
+    const c = drillOf(doc, rowById(doc, "c:" + name)).cells[2];
+    return c && c.cr_current ? c.cr_current.line : "";
   };
   check("H5: P3 reads 0 (a measured none) for a college with no portal students — not 'gap'/'…'",
     p3ActOf("Ohlone").indexOf("0") !== -1 &&
