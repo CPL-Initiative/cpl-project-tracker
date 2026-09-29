@@ -1,5 +1,5 @@
 {
- "_about": "The narration the voice reads, Scenario 1, v3 (S294, 2026-09-26). SPOKEN FORM: acronyms are written unspaced (CPL, EDD, FTES) so each reads as one quick word, the stress on its last letter; FTES also needs the phoneme fix below, because unspaced it reads as the word 'eftess'. MAP is written 'map' so it is said as the word. Years are said the way people say them aloud (twenty twenty-six through twenty-eight; the twenty-six, twenty-seven year, whose comma keeps the two years apart) with a lighter stress on the twenties, and the Minimum conditions scene reads 'by November first', as its headline does, leaving the year to the screen (November 1, 2026). Voice: Kokoro-82M af_heart, speed 1.0, one pass per scene. Sam chose the voice (Heart); v2 read stilted on the spaced letters and the years; v3 awaits his OK. narrate.py reads this file. Each scene's `cues` name its reveals (Sam, 2026-09-27: cue each reveal to the word that names it): `at` is the reveal's film time in its scene (where it begins, or where a count lands), `word` the phrase in the text that names it, once; cues.py pins each to the moment the voice says it. A cue with `skip` stays off the clock for the reason it gives.",
+ "_about": "The narration the voice reads, Scenario 1, v3 (S294, 2026-09-26). SPOKEN FORM: acronyms are written unspaced (CPL, EDD, FTES) so each reads as one quick word, the stress on its last letter; FTES also needs the phoneme fix below, because unspaced it reads as the word 'eftess'. MAP is written 'map' so it is said as the word. Years are said the way people say them aloud (twenty twenty-six through twenty-eight; the twenty-six, twenty-seven year, whose comma keeps the two years apart) with a lighter stress on the twenties, and the Minimum conditions scene reads 'by November first', as its headline does, leaving the year to the screen (November 1, 2026). Voice: Kokoro-82M af_heart, speed 1.0, one pass per scene. Sam chose the voice (Heart); v2 read stilted on the spaced letters and the years; v3 awaits his OK in draft 4 (S302, 2026-09-29, sheet 3 cards 16 and 17), whose Timing scene names the release dates before the two-year amount and whose Targets scene names Sample College's Access target. narrate.py reads this file. Each scene's `cues` name its reveals (Sam, 2026-09-27: cue each reveal to the word that names it): `at` is the reveal's film time in its scene (where it begins, or where a count lands), `word` the phrase in the text that names it, once; cues.py pins each to the moment the voice says it. A cue with `skip` stays off the clock for the reason it gives.",
  "voice": "af_heart",
  "speed": 1.0,
  "layout": {
@@ -212,7 +212,7 @@
   },
   {
    "scene": "Targets",
-   "text": "Each priority has a target, measured in FTES. Thirty semester units of CPL make one FTES, or forty-five if you're on the quarter system. Here's the part to remember: reach half of a target, and your college qualifies for half that share. Go past the target, and the share stays where it is. It's the ceiling.",
+   "text": "Each priority has a target, measured in FTES. Thirty semester units of CPL make one FTES, or forty-five if you're on the quarter system. Sample College's Access target, for example, is about forty-four FTES, behind about a hundred twelve thousand dollars. Here's the part to remember: reach half of a target, and your college qualifies for half that share. Go past the target, and the share stays where it is. It's the ceiling.",
    "cues": [
     {
      "at": 0.1,
@@ -223,6 +223,11 @@
      "at": 0.9,
      "word": "Thirty semester units",
      "why": "the line, 30 semester units of CPL make one FTES, or 45 on a quarter calendar"
+    },
+    {
+     "at": 2.0,
+     "word": "Sample College's Access target",
+     "why": "the card, Sample College · Access · target 44.3 FTES · $112,484, fades in above its empty bar"
     },
     {
      "at": 3.0,
@@ -279,13 +284,13 @@
   },
   {
    "scene": "Timing",
-   "text": "The full two-year amount is available from year one. The Chancellor's Office releases funding twice a year, based on your college's CPL to date, and whatever remains after year one carries forward to year two for your college.",
+   "text": "The Chancellor's Office releases funding twice a year, based on your college's CPL to date. The full two-year amount is available from year one, and whatever remains after year one carries forward to year two for your college.",
    "cues": [
     {
      "at": 0.1,
      "word": "releases funding twice a year",
      "why": "the heading, Funding arrives in stages",
-     "skip": "the voice names it in the second sentence; pinned there, the first sentence would play over an empty stage, so the heading opens the scene"
+     "skip": "the voice names it with the words that name the release dates, and the dates take the cue, so the heading opens the scene"
     },
     {
      "at": 1.9,
@@ -295,8 +300,7 @@
     {
      "at": 4.6,
      "word": "The full two-year amount",
-     "why": "the line, The full two-year amount is available from year one",
-     "skip": "the voice says it first, and the picture shows it after the release dates; the release dates take the cue, so this line comes late"
+     "why": "the line, The full two-year amount is available from year one"
     },
     {
      "at": 6.4,
