@@ -7905,6 +7905,28 @@ def legacy_anchor_duplicate_groups(cc, cat, sg, merge_into, rows, disc_of=None, 
     return groups
 
 
+def _units_from_members(shown, fallback, units, curated):
+    """The unit range and scalar a displayed M-ID row shows (Sam, 2026-09-27:
+    units never split an identity, so a row shows the range of what it joins).
+
+    `shown` is the unit figures of the members the row displays (_row_ents),
+    `fallback` its memberships' figures, used only when the raw catalog is
+    absent, `units` the row's scalar and `curated` whether a curator set it.
+    Returns (lo, hi, units): lo and hi are None unless the figures differ. The
+    scalar changes only where it is wrong, missing or a figure no displayed
+    member carries, and never when curated: it takes the members' modal, or
+    None on a tie, where the range alone says it."""
+    from collections import Counter
+    us = shown or fallback
+    lo = hi = None
+    if us and min(us) != max(us):
+        lo, hi = min(us), max(us)
+    if shown and not curated and units not in shown:
+        top2 = Counter(shown).most_common(2)
+        units = None if len(top2) > 1 and top2[0][1] == top2[1][1] else top2[0][0]
+    return lo, hi, units
+
+
 def export_unified_courses():
     """Build the Unified Courses tab data (window.CPL_UNIFIED_COURSES in
     unified_courses_data.js) + the full xlsx export, from the kb/coci_*.json
@@ -9040,16 +9062,18 @@ def export_unified_courses():
         print(f"  Unified Courses: CPL impact on {_n_eu} rows (eligible units) / {_n_st} (students)")
 
     # ---- typical-units RANGE: bake umin/umax when member colleges disagree --------
-    # The Units column shows a scalar typical (typical_units). When a course's member
-    # colleges actually offer it at different unit loads (e.g. 1.0 and 1.5), surface the
-    # spread as a range — the consumer renders "lo–hi" and alarms a > 2.0 spread (a
-    # likely over-merge of different unit-load variants, which is what the auditor's
-    # unit_anomaly flag catches; NOT a silent tolerance band). Members come from
-    # coci_minted_memberships.json (memships, keyed by M-ID); a consolidated official-ID
-    # row unions its consolidated_from M-IDs, mirroring the eu/st rollup above.
-    # Deterministic (pure fn of the committed members) → stable daily diff. Baked only
-    # when members genuinely disagree (lean); the consumer falls back to the scalar.
-    _n_ur = 0
+    # Units never split an identity (Sam, 2026-09-27): a merge or a mint that joins
+    # records whose units differ keeps one identity and shows the range it joins,
+    # so the consumer renders "lo–hi" and raises no alarm on its width. The range
+    # and the scalar describe the members the row DISPLAYS (_row_ents, the #347
+    # lesson), as the official-ID branch below does. Before 2026-09-29 the M-ID
+    # range read coci_minted_memberships.json alone, which lacks merged-in
+    # singletons and re-homed courses: 2,358 merge targets printed "—" or one
+    # figure over members that differ, and 578 printed too narrow a range. The
+    # memberships stay the fallback when the raw catalog is absent. The scalar
+    # rule (48 rows carried a figure no displayed member has, on 2026-09-28) is
+    # _units_from_members's. Deterministic → stable daily diff.
+    _n_ur = _n_us = 0
     for r in rows:
         if r.get("id_system") in ("C-ID", "CCN-ID"):
             continue  # official rows: stats come from displayed members (below)
@@ -9072,11 +9096,16 @@ def export_unified_courses():
                     mus.append(u)
         if _n_routed_here:
             r["members"] = _n_kept_here
-        if mus:
-            lo, hi = min(mus), max(mus)
-            if lo != hi:
-                r["umin"], r["umax"] = lo, hi
-                _n_ur += 1
+        shown = [e["u"] for e in _row_ents(r) if isinstance(e.get("u"), (int, float))]
+        lo, hi, u = _units_from_members(
+            shown, mus, r.get("units"),
+            curation.get(r["id"], {}).get("typical_units") is not None)
+        if lo is not None:
+            r["umin"], r["umax"] = lo, hi
+            _n_ur += 1
+        if u != r.get("units"):
+            r["units"] = u
+            _n_us += 1
 
     # Official-ID row stats (Session 41) — derived from the row's DISPLAYED
     # members (claims ∪ folded leaves via _row_candidates), so the Members
@@ -9122,8 +9151,8 @@ def export_unified_courses():
                 r["flags"]["credit_mixed"] = bool(cmix) or bool(r["flags"].get("credit_mixed"))
             if not r.get("credit"):
                 r["credit"] = "Credit"
-    print(f"  Unified Courses: units range on {_n_ur} rows; "
-          f"official-row stats refreshed on {_n_off}")
+    print(f"  Unified Courses: units range on {_n_ur} rows; M-ID units set from "
+          f"displayed members on {_n_us}; official-row stats refreshed on {_n_off}")
 
     # Compact all-course title index for the "Generate unified course" dialog —
     # a separate file the tab lazy-loads only when a curator opens it. Built from
@@ -9896,6 +9925,19 @@ def export_unified_courses():
                "Noncredit mixed", "Reviewed", "Curated by", "Curated on", "Adopted (count)",
                "Adopted colleges", "Adoptable (count)", "Adoptable colleges"]
     xrows = []
+    _baked = {r["id"]: r for r in rows}
+
+    def _units_cell(i, seed):
+        # The Units the page shows for a displayed row: its range when its
+        # members differ (Sam, 2026-09-27), else its scalar. An id with no row
+        # of its own (merged away, or not displayed) keeps its seed figure.
+        r = _baked.get(i)
+        if r is None:
+            return seed
+        lo, hi = r.get("umin"), r.get("umax")
+        if lo is not None and hi is not None and lo != hi:
+            return "%g\u2013%g" % (lo, hi)
+        return r["units"] if r.get("units") is not None else seed
 
     def xrow(kind, cid, title, disc, credit, units, top, subj, members, conf, fl, mids):
         ad, pot = rollup(mids)
@@ -9907,15 +9949,15 @@ def export_unified_courses():
 
     for mid, v in cat.items():
         xrow("Course", mid, v.get("common_title"), disc_of(mid, v.get("discipline")), v.get("credit_status"),
-             v.get("typical_units"), v.get("top_code"), [v.get("subject")] if v.get("subject") else [],
+             _units_cell(mid, v.get("typical_units")), v.get("top_code"), [v.get("subject")] if v.get("subject") else [],
              v.get("corroboration_members"), v.get("confidence"), flags_of(v, mid), [mid])
     for sid, v in sg.items():
         xrow("Stand-Alone", sid, v.get("common_title"), disc_of(sid, v.get("discipline")), v.get("credit_status"),
-             v.get("typical_units"), v.get("top_code"), [v.get("subject")] if v.get("subject") else [],
+             _units_cell(sid, v.get("typical_units")), v.get("top_code"), [v.get("subject")] if v.get("subject") else [],
              1, v.get("confidence"), flags_of(v, sid), [sid])
     for uid, v in clusters.items():
         xrow("Cluster", uid, v.get("synthesized_title") or v.get("canonical_title"), disc_of(uid, v.get("discipline")),
-             v.get("credit_status"), v.get("typical_units"), v.get("top_code"), v.get("subjects", []),
+             v.get("credit_status"), _units_cell(uid, v.get("typical_units")), v.get("top_code"), v.get("subjects", []),
              v.get("member_count"), None, flags_of(v, uid, use_spread=False), v.get("members", []))
 
     _write_analytics_xlsx_export("unified_courses", "Unified Courses", headers, xrows,
