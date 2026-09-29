@@ -155,7 +155,7 @@ kind C, most member rows first, Keep · Move · Cross-list with Jev's choice
 selected. **9 course (CCRR):** pair by shared course identity behind the
 course-count guard (POST's every line to AJ 110 fails it); Jev runs the new pairs,
 the unanchored clusters and the newer anchored pairs under the 0.85 gate, then a
-sheet of 40–60. Re-measured after card 13 (#PRNUM), unchanged: 55 anchored pairs
+sheet of 40–60. Re-measured after card 13 (#1754), unchanged: 55 anchored pairs
 (1,459 rows), 33 unanchored clusters (105 groups), course pairing 600 pairs over 465
 groups, 338 at rung 5 (2,738 rows): every shared name is a C-ID title.
 **10 store (CER):** a decisions store with a reason column, through Governance first (DR-07's
@@ -164,10 +164,10 @@ sitting, each issuer checked against the credential registry; mechanical fixes b
 July's clean-rename path under a receipt. **11 as proposed (CSR):** *Import Body
 Customizing* to Auto Body Technology, AGAB for Agricultural Business, and AUTB
 M1006 re-minted under it by the playbook; then the 15 to Jev and a short ranked
-sheet. **13 LANDED (#PRNUM):** 88 groups named by topic and range, *Engine
+sheet. **13 LANDED (#1754):** 88 groups named by topic and range, *Engine
 Performance (2–5 units)*: 71 from the most colleges' wording, 16 from a published
 line, 1 whose ENGL 100 title is only proposed. The 25 named by a C-ID keep their
-names, his ten confirmed among them. **14 LANDED (#PRNUM):** the rung-4 units screen
+names, his ten confirmed among them. **14 LANDED (#1754):** the rung-4 units screen
 is gone; its 30 groups (182 rows; *Calculus I (4–5 units)*) merge, and no screen
 holds a group today; the other five stay. All 30 decisions keep their groups.
 *Pre-Calculus Mathematics* now takes MATH 155's title every build, not under 5 of

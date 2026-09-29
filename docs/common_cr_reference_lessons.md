@@ -651,7 +651,7 @@ ONE targeted re-test on a batch it did not pick; **never a re-analysis of these
 
 ## S302 (2026-09-29): the unit range reaches the name, and a rebuild that disagreed with itself
 
-Cards 13 and 14 of sheet 3 landed in #PRNUM (lane state: the RULED section).
+Cards 13 and 14 of sheet 3 landed in #1754 (lane state: the RULED section).
 
 - **Rebuild the committed artifact before changing its builder, and diff the two.** The unchanged builder reproduced the worklist byte for byte; the changed one then moved a group the change never touched. Under 20 hash seeds the unchanged builder wrote two different worklists: the title-divergence check joined Python sets, whose order changes per run, so *Pre-Calculus Mathematics* read as divergent from MATH 155 *Precalculus* under 15 seeds and not under 5. Enumerating every token order for the 333 groups with an official title found no other group that depended on it. The squash now keeps written order, and the output is identical under all 20 seeds.
 - **A test of a cron artifact cannot assert the builder change of the PR that ships it.** The worklist is rebuilt by `daily-dashboard.yml`, so a code-only PR's CI reads the old file. The builder's behavior is tested on a fixture corpus (C1–C11 in `tests/cr_reference.test.js`); the real-corpus checks (A25–A29) wait for `_stats.groups_named_by_range`, which only the new builder writes, and skip loudly until the dispatch.

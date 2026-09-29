@@ -542,7 +542,7 @@ become audit findings):
   Still short: SkyView's single `u`, the EACR and Common Exhibit Reference (one line per
   unit value, or the modal wording), the dashboard card and Sierra's `local_set`; the
   audit table is in the latest handoff. The CR Reference's names followed (open-asks
-  cards 13-14, #PRNUM): a group named by a wording states its range, *Engine Performance
+  cards 13-14, #1754): a group named by a wording states its range, *Engine Performance
   (2–5 units)*, an official title keeps its name, and no rung holds a merge for units.
 
 Authoritative old→new aliases for every re-mint live at
