@@ -569,3 +569,42 @@ parent before its membership is settled bakes the error into the new name.
 a small `adjudicate_limit`; build a decision sheet from the `jev-ccr` artifact;
 Sam's verdicts on it calibrate the title rung's gate and earn the CCR an entry
 in `GATES`.
+
+## 2026-09-29 — S301 SkyShuttle: a next step per reference, on measured ground
+
+Sam's ask of 2026-09-28 went to him as cards 8–11 of the standing sheet
+(`2026-09-29-open-asks-2`), after the two stale scanners re-ran.
+
+**What worked.**
+- **Re-run a stale scanner before trusting its triage.** The CER fell 239 → 116
+  and the CSR 185 → 63, and neither drop was the headline: the CER's 38 judgment
+  findings are July's 38 untouched (no store holds a ruling), and 121 of the
+  CSR's 136 Jev questions were a scanner misread.
+- **Classify a surprising finding before arguing with it.** The 121 split cleanly:
+  108 ids already carrying the canonical, 13 umbrella languages. One `if` on the
+  key shape explained all of them.
+- **Measure the population a new question fits before proposing it.** The CCR's
+  26 answers were placement calls; the members of those courses name 4 of Sam's 5
+  destinations, and plurality alone picks 1, which is the case for asking Jev to
+  choose rather than to vote.
+- **A card's numbers come from a script at build time** (`kb/_jev_next_steps.py`),
+  and each card's premise is a fixture-tested predicate, so the sheet refuses to
+  build once the work lands.
+
+**What bit.**
+- **A rule written against an old key falls back to a descriptive field after a
+  re-key, and reports settled work as open.** CS9's regex matched `M-ID SUBJ NNN`;
+  after the re-key it read `rec["subject"]`, the modal local code, and counted all
+  218 M-ID anchors as dead-format.
+- **A ruled exception the scanner never learned reads as a defect.** CS2 flagged
+  Sam's FTVE fan-in of 2026-09-03 until it honored `fan_in_with`.
+- **AUTB is the `AB` short-code defect in the CSR itself:** an agriculture course
+  minted under Auto Body's code, and the discipline's canonical derived from it.
+
+**Moved verbatim from the lane (2026-09-29, the budget trim):**
+
+⚠️ **TEN ADOPTED, NONE OF THEM HIS** — `replies/done` reads `ruled: 0 ·
+as_proposed: 10`, every row `by: "default"`. **Worth nothing as calibration**
+(the scoring rule is `by: "sam"` rows). Item 1 was held and asked back; he then
+ruled it directly: **the CCR gets the next sitting**, at **40-60 findings**.
+

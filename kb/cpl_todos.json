@@ -1,20 +1,26 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-29",
-  "_session": "300",
-  "_status": "The College Dashboard Sam locked on 28 September is finished: the follow-ups landed on 29 September (#1732), and the tab now says TBA wherever a measure has yet to arrive. Sierra Training's redesign is ported (#1733): the five numbers filter the list, the answers read left-aligned, and \"Try it in\" offers Sierra or My College. Seven decisions wait on one sheet. Next for the engineering side: Sam's answers as they come, then Jev.",
+  "_session": "301",
+  "_status": "Jev is back on the queue: on 29 September the exhibit and subject scanners re-ran for the first time since July, and each of the four references has a proposed next step waiting on Sam, on the same sheet as the seven decisions he has not yet reviewed. The funding brief now says minimum conditions, the public download's percentage follows the rounded figure, and SkyView on a phone opens narrow enough that every discipline shows its courses.",
   "items": [
+    {
+      "id": "s301-sam-open-asks-sheet",
+      "for": "Sam",
+      "tab": "cr-reference",
+      "text": "Twelve decisions on one sheet: https://claude.ai/artifact/9Wikhf54XyJgWXDEw5AK7G. Cards 1 to 7 are the seven from 29 September, unchanged and not yet reviewed. Cards 8 to 11 propose a next step for each Jev reference (courses, credit recommendations, exhibits, subjects), and card 12 is Sierra Training's Try it in buttons."
+    },
+    {
+      "id": "s301-fable-sheet-verdicts",
+      "for": "Fable",
+      "tab": "cr-reference",
+      "text": "Carry out Sam's answers on the twelve-card sheet as they arrive, each with its lane marker in the same change, and merge the SkyView phone opening (#1738) if it is still open."
+    },
     {
       "id": "s298-sam-sql-test-answer",
       "for": "Sam",
       "tab": "admin",
-      "text": "Tell the next session two things: did the three test database queries of 28 September ask you to click Allow, and did you change the Supabase tool setting for the whole organization or only your own account? The cleanup of the old notes waits on both."
-    },
-    {
-      "id": "s300-sam-open-asks-sheet",
-      "for": "Sam",
-      "tab": "implementation-funding",
-      "text": "Seven decisions on the new sheet: https://claude.ai/artifact/QiaDezD2AN6XDzctUCSCfw. You pressed Complete without touching a card, which under your 22 September rule counts as not yet reviewed, so nothing has moved. Click the chip on the last card you read, or reply \"all seven as proposed\" on the sheet's comment. Three carry over (the last three sections of your funding tab review, the explainer's footer, how far the Exercise Science re-mint reaches); four come from the College Dashboard (which figure \"Current Total\" names, the thank-you a college sees, the public page's Step two note and heading, and two of your saved texts in retired words)."
+      "text": "One question left from the database test: did you change the Supabase tool setting for the whole organization or only your own account? The new session of 29 September ran three database reads, and each answered within two seconds, so none waited for you to click Allow."
     },
     {
       "id": "s296-sam-gr-rows-on-tab",
@@ -23,34 +29,10 @@
       "text": "Rule GR register rows #2, #10 and #16 on the GR Priorities tab, your call of 27 September. Row #2 still asks for enacted law, and the tab also holds the 2026-27 timeline's five dates."
     },
     {
-      "id": "s300-fable-sheet-verdicts",
-      "for": "Fable",
-      "tab": "implementation-funding",
-      "text": "Carry out Sam's answers on the 2026-09-29 sheet as they arrive, each with its lane marker in the same change. Also coarsen the download's \"Current total as % of max award\" on the public page, which is finer than the $1,000 rule for public dollars."
-    },
-    {
-      "id": "s300-fable-sierra-followups",
-      "for": "Fable",
-      "tab": "sierra-training",
-      "text": "Sierra Training's redesign is ported (#1733). Two small calls remain for Sam when he next opens the tab: whether the \"Try it in\" button should read \"CPL Assistant\" rather than \"Sierra\", and what both buttons should do when the CPL Assistant tab is hidden."
-    },
-    {
-      "id": "s297-fable-jev-next-step",
-      "for": "Fable",
-      "tab": "cr-reference",
-      "text": "Back to Jev, Sam's ask of 28 September: bring him a next step for each of the four references (subjects, courses, exhibits and credit recommendations). The course reference's first sitting of 40 to 60 findings is already ruled; the exhibit and subject scanners last ran on 10 July and need a fresh run before Jev sees them."
-    },
-    {
       "id": "s295-fable-cue-narrated-draft",
       "for": "Fable",
       "tab": "implementation-funding",
-      "text": "Cue each reveal of the narrated funding video to the word that names it (Sam's call, 27 September). The layout already carries the cue times; rebuild the MP4 and bring the draft back to Sam before the explainer links it."
-    },
-    {
-      "id": "s295-fable-skyview-phone-narrow",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "Narrow SkyView's opening on a phone, Sam's ruling of 22 September. Measure at 390 pixels through the npm run a11y harness before picking an angle; the desktop table does not transfer."
+      "text": "Cue each reveal of the narrated funding video to the word that names it (Sam's call, 27 September), using word timings from the recorded voice. A draft render is under way on branch claude/funding-video-cues; review it, then bring it to Sam before the explainer links it."
     }
   ],
   "_deferred": [
@@ -76,7 +58,7 @@
       "id": "s296-fable-governance-two-surfaces",
       "for": "Fable",
       "tab": "governance",
-      "text": "Take the cpl_occupation_match verdict queue and the cross-list curator surface through Governance and the privacy ADRs before either ships, Sam's call of 27 September (Rule 10(a3))."
+      "text": "Take the cpl_occupation_match verdict queue, the cross-list curator surface and a decisions store for the exhibit reference through Governance and the privacy ADRs before any ships (Rule 10(a3)); Sam's call of 27 September, and card 10 of the 29 September sheet."
     },
     {
       "id": "s288-sam-eacr-grid-look",

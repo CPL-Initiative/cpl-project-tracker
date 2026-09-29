@@ -2027,3 +2027,19 @@ Sam asked on 2026-09-21 for a sheet "to manage the adjustments to what we curren
 - **Item 8 as built** (#1710): `kb/_esl_monthly_pass.py` applies what a level or purpose word places,
   lists the rest for Sam, and carries his six keep-apart rulings so no month re-asks them; the dry run
   still labels those holds "unruled". The docs lint's `esl_monthly_pass_due` makes "monthly" fire.
+
+## 2026-09-29 — S301 SkyShuttle: the phone opening (PR #1738)
+
+- **A scale proportional to the canvas's width makes an angle a different view on
+  every device.** 188° across on a 390px canvas drew 100 of 117 islands in view with
+  no stars, because the stereographic scale falls with width; the 17 with stars sat
+  at the edge, where the projection enlarges. The phone now opens at the desktop
+  opening's SCALE (65° at 390px), and every island in view shows its stars.
+- **Measure through the page's own state, on the served page.** `skyWindow` (in
+  view, stars, names, names clipped) and `__ccrSkyAcross(deg)` turned a question two
+  harness attempts had failed on into a table in one run.
+- **Narrowing never fixed the stated symptom.** Names ran past an edge on about half
+  the islands at every width; the fix was a placement rule (whole or not at all).
+- **A canvas width read at reset is not the settled width.** A 768px tablet read
+  489px there and opened at 80°; the phone test reads the viewport, fitCanvas's own.
+
