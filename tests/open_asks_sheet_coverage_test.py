@@ -44,6 +44,7 @@ check("the builder exists", os.path.exists(BUILDER), BUILDER)
 mod = load()
 items = mod.items()
 found = mod.lanes_with_asks()
+EV = mod.evidence_of(items)
 
 # ── the sheet is built and complete ──────────────────────────────────────────
 # The sheet lives at the builder's own OUT, so a fresh SHEET_ID moves this check
@@ -133,32 +134,39 @@ with tempfile.TemporaryDirectory() as _d:
 # The cross-list sheet recomputed every count at build time; this one quoted lane
 # prose, and lane prose lags the code.
 check("⭐ every card declares its evidence",
-      all(mod.EVIDENCE.get(n) for n in range(1, len(items) + 1)),
+      all(EV[n] for n in range(1, len(items) + 1)),
       "a card with no evidence kind is a claim nobody owns")
+
+# ⚠️ S302 (2026-09-29): the evidence rides each card under `evidence`. A table
+# keyed by POSITION renumbered on every dropped card, so two verdict PRs landing
+# in parallel collided on every line after the first card they removed.
+check("⭐ evidence rides the card, never a position-keyed table",
+      not hasattr(mod, "EVIDENCE"),
+      "a position-keyed table renumbers on every dropped card; keep it on the card")
 
 KINDS = {"measured", "live", "quoted", "policy"}
 check("every evidence entry carries a known kind",
       all(e.get("kind") in KINDS
-          for n in range(1, len(items) + 1) for e in mod.EVIDENCE[n]),
+          for n in range(1, len(items) + 1) for e in EV[n]),
       str(KINDS))
 
 check("⭐ a live claim names the date it was checked",
       all(e.get("checked") and e.get("how")
-          for n in range(1, len(items) + 1) for e in mod.EVIDENCE[n]
+          for n in range(1, len(items) + 1) for e in EV[n]
           if e["kind"] == "live"),
       "the builder cannot reach a running system, so the card must say when "
       "somebody last did")
 
 check("⭐ a quoted claim names its source AND its date",
       all(e.get("src") and e.get("as_of")
-          for n in range(1, len(items) + 1) for e in mod.EVIDENCE[n]
+          for n in range(1, len(items) + 1) for e in EV[n]
           if e["kind"] == "quoted"),
       "quoted is the honest label for a claim nobody re-checked; unlabeled, it "
       "reads as measured")
 
 check("a measured claim carries a callable predicate",
       all(callable(e.get("fn"))
-          for n in range(1, len(items) + 1) for e in mod.EVIDENCE[n]
+          for n in range(1, len(items) + 1) for e in EV[n]
           if e["kind"] == "measured"),
       "measured means answered at build time, not asserted")
 
@@ -257,14 +265,14 @@ check("⭐ every measured predicate answers BOTH ways on fixtures",
 check("every measured predicate has a fixture",
       all(getattr(e["fn"], "__name__", "") in FIXTURES or
           getattr(e["fn"], "__name__", "") == "p_eths_misprefixed"
-          for n in range(1, len(items) + 1) for e in mod.EVIDENCE[n]
+          for n in range(1, len(items) + 1) for e in EV[n]
           if e["kind"] == "measured"),
       "an unfixtured predicate is untested; p_eths_misprefixed is exempt only "
       "because its input is a 16,000-row payload, and it fails SAFE (an "
       "unreadable payload reports the premise unverified rather than closed)")
 
 check("the provenance line renders for every card",
-      all(mod.provenance_line(mod.EVIDENCE[n]).strip()
+      all(mod.provenance_line(EV[n]).strip()
           for n in range(1, len(items) + 1)),
       "the reader sees where each claim came from, or the label is for us only")
 

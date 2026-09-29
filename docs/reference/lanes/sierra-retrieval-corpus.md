@@ -76,8 +76,8 @@ College** rides a destination key, `cplSierraTestDest.v1`, which `cpl_chat.js`
 reads; without it a My College hand-off typed into the hidden CPL Assistant input.
 Guard: `tests/sierra_training_round1.test.js`.
 
-**NEEDS SAM — card 12 of `2026-09-29-open-asks-2`:** whether the *Sierra* button
-should read *CPL Assistant*, the tab it opens; and, where a site hides that tab,
-whether to show only *My College*, since `sierraHost()` already sends the Sierra
-button there and both buttons then open one place. Proposed: keep *Sierra*, and
-show one button where CPL Assistant is hidden.
+**RULED (Sam, 2026-09-29, sheet 3 card 12, as proposed):** keep the word
+*Sierra*, and where a site hides CPL Assistant show only *My College*.
+`sierraHost()` already sends the Sierra button there, so the two buttons opened
+one place. NEXT: `tryGroup()` draws one button where `sierraHost()` is not the
+CPL Assistant tab, under `tests/sierra_training_round1.test.js`.
