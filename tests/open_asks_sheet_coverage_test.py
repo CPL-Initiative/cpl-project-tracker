@@ -195,6 +195,13 @@ FIXTURES = {
     "p_phone_opening":       ("var sph={half:Math.PI*94/180};",   "if(narrowScreen()){ sph.half = Math.PI*75/180; }"),
     "p_eths_extension_open": ('{"courses": {"ETHS M10AA": {"common_title": "Advanced Fencing"}}}',
                               '{"courses": {"KINE M10AA": {"common_title": "Advanced Fencing"}}}'),
+    # S300 (2026-09-29): the College Dashboard port's three measured asks.
+    "p_cards_current_total": ("function earnedLineHtml(i) { return '<p title=\"' + t + '\">Current Total: <strong>' + x; }",
+                              "function earnedLineHtml(i) { return '<p title=\"' + t + '\">Demonstrated: <strong>' + x; }"),
+    "p_thankyou_acknowledge": ('var t = "The Chancellor&#39;s Office will acknowledge it; counted meanwhile.";',
+                               'var t = "Your college counts as participating from today.";'),
+    "p_explainer_reserve":   ("<p>The model reserves the funding an institution demonstrates for that institution.</p>",
+                              "<p>The model counts every outcome an institution demonstrates toward that award.</p>"),
 }
 _broken = []
 for _name, (_open_src, _closed_src) in FIXTURES.items():
