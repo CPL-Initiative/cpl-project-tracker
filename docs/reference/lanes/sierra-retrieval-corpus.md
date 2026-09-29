@@ -1,7 +1,7 @@
 ---
 title: "Sierra retrieval + corpus — lane state"
 created: 2026-08-28
-updated: 2026-09-18
+updated: 2026-09-29
 tags: [reference, roadmap-lane]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -65,3 +65,19 @@ Anthropic ACCOUNT pays** — filter the Console by key.
 ## The standalone page on a phone — the About Sierra control (2026-09-11)
 
 Sam: *"the current mobile view is mostly consumed by the header text."* The intro and beta paragraphs became an **About Sierra** control in the header (an accessible `<button aria-expanded>` panel; the footer keeps the beta and privacy lines); the map.rccd.edu pill hides ≤560px and the tagline ≤400px (`mayHideBelow` in `a11y.config.js`). **Measured at 390×844: the conversation starts 163px down (19%) against 540px (64%) before**; `npm run a11y -- sierra` clean at all nine widths. Guard: `tests/sierra_header_about.test.js` (23). **Open (Sam's ask, flag built, bubble UI not):** a floating Sierra bubble on every COBI tab — `kb/cpl_todos.json` `s255-sam-sierra-bubble-on-every-tab`.
+
+## The Sierra Training tab — round 1 (2026-09-29)
+
+✅ **Round 1 of Sam's approved mockup is live** (#1733, 2026-09-29; approved
+2026-09-28, `cpl_memory` `sam-approves-sierra-training-mockup-round-1-2026-09-28`):
+the five numbers filter what they count, a *Showing N of M* line, words for marks,
+a segmented status control, First Light tokens only. **Try it in: Sierra · My
+College** rides a destination key, `cplSierraTestDest.v1`, which `cpl_chat.js`
+reads; without it a My College hand-off typed into the hidden CPL Assistant input.
+Guard: `tests/sierra_training_round1.test.js`.
+
+**NEEDS SAM — card 12 of `2026-09-29-open-asks-2`:** whether the *Sierra* button
+should read *CPL Assistant*, the tab it opens; and, where a site hides that tab,
+whether to show only *My College*, since `sierraHost()` already sends the Sierra
+button there and both buttons then open one place. Proposed: keep *Sierra*, and
+show one button where CPL Assistant is hidden.

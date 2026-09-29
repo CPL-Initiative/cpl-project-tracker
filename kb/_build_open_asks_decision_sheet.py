@@ -31,9 +31,12 @@ also been answered on 2026-08-14 (military scope §10), and two of the 09-22
 proposals contradicted those August answers. When a verdict lands, change the
 lane's marker in the same pull request, or the sheet asks again.
 
-Published: https://claude.ai/artifact/QiaDezD2AN6XDzctUCSCfw (2026-09-29, S300, SHEET_ID 2026-09-29-open-asks,
-seven cards: the three below carried over unanswered, and four from the College Dashboard
-port). Before it: https://claude.ai/artifact/C1uyRhneegqQ4XSPRKiC3B (2026-09-28, S297, SHEET_ID
+Published: https://claude.ai/artifact/9Wikhf54XyJgWXDEw5AK7G (2026-09-29, S301, SHEET_ID
+2026-09-29-open-asks-2, capabilities db + comments, twelve cards: the seven below carried over,
+four Jev next steps, one Sierra Training call). Its cards 1-7 are the seven of
+https://claude.ai/artifact/QiaDezD2AN6XDzctUCSCfw (2026-09-29, S300, SHEET_ID 2026-09-29-open-asks),
+where Sam pressed Complete at 03:34Z with no card touched (`through: null`, nothing reviewed); that
+sheet's thread points here, and a reply there still counts for its seven. Before it: https://claude.ai/artifact/C1uyRhneegqQ4XSPRKiC3B (2026-09-28, S297, SHEET_ID
 2026-09-28-open-asks, capabilities db + comments, three cards; its store held no replies when
 S300 read it on 2026-09-29). Its cards 1 and 2 are cards 3
 and 4 of https://claude.ai/artifact/74AfMNmXPQYP5X7XKpjHfH (2026-09-27 evening, SHEET_ID
@@ -61,8 +64,8 @@ import _decision_sheet_replies as m  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANES = os.path.join(ROOT, 'docs', 'reference', 'lanes')
-OUT = os.path.join(ROOT, 'docs/visuals/2026-09-29-open-asks.html')
-SHEET_ID = '2026-09-29-open-asks'
+OUT = os.path.join(ROOT, 'docs/visuals/2026-09-29-open-asks-2.html')
+SHEET_ID = '2026-09-29-open-asks-2'
 
 NEEDS = re.compile(r'NEEDS SAM', re.I)
 
@@ -224,6 +227,78 @@ def p_explainer_reserve():
                  else "the explainer's Step two note no longer says reserves")
 
 
+def _next_steps():
+    """kb/_jev_next_steps.py, measured once per build (it reads the catalog)."""
+    global _NEXT
+    try:
+        return _NEXT
+    except NameError:
+        import _jev_next_steps
+        _NEXT = _jev_next_steps.measure()
+        return _NEXT
+
+
+def p_ccr_no_gate():
+    """Card 8: the course reference still has no measured gate."""
+    src = _code(_read("kb/_jev_adjudicate.py"))
+    block = re.search(r"GATES = \{[\s\S]*?\n\}", src)
+    open_ = bool(block) and '"ccr"' not in block.group(0)
+    return open_, ("the ccr has no entry in GATES" if open_ else "the ccr has a gate in GATES")
+
+
+def p_ccrr_course_pairing():
+    """Card 9: pairing by shared course identity is measured and not yet built."""
+    built = "def build_course_pairs" in _read("kb/_typesafe_cr_trial.py")
+    n = _next_steps()["ccrr"]["course_pairs"]
+    return (n > 0 and not built), ("%d course pairs measured; pairing %s" %
+                                   (n, "built" if built else "not built"))
+
+
+def _latest_rel(pattern):
+    hits = sorted(glob.glob(os.path.join(ROOT, pattern)))
+    return os.path.relpath(hits[-1], ROOT) if hits else ""
+
+
+# The exhibit scanner's rules that need a person (kb/_jev_adjudicate.py CER_RULES).
+CER_JUDGED = ("norm_dup_titles", "bare_vs_leveled", "issuer_variant_cluster",
+              "level_notation_twins", "issuer_family_mixed")
+
+
+def p_cer_judgment_open():
+    """Card 10: the latest exhibit scan still reports findings that need judgment."""
+    try:
+        raw = json.loads(_read(_latest_rel("kb/trail_crew_out/*/findings.json")) or "{}")
+    except ValueError:
+        return True, "the exhibit findings did not parse - premise unverified"
+    rows = raw.get("findings", []) if isinstance(raw, dict) else raw
+    n = sum(1 for f in rows if f.get("needs_judgment") and f.get("rule") in CER_JUDGED)
+    return n > 0, "%d exhibit findings need judgment" % n
+
+
+def p_csr_autb_collision():
+    """Card 11: AUTB still names two disciplines, with no fan-in declared."""
+    try:
+        reg = (json.loads(_read("kb/discipline_canonical_subj4.json") or "{}")
+               .get("disciplines") or {})
+    except ValueError:
+        return True, "the CSR registry did not parse - premise unverified"
+    names = [d for d, e in reg.items() if (e or {}).get("canonical_subj4") == "AUTB"]
+    ruled = len(names) == 2 and all(
+        set(names) - {d} <= set((reg[d] or {}).get("fan_in_with") or []) for d in names)
+    open_ = len(names) > 1 and not ruled
+    return open_, ("AUTB names %d disciplines" % len(names))
+
+
+def p_sierra_try_both_buttons():
+    """Card 12: Try it in still shows both buttons wherever CPL Assistant is hidden."""
+    src = _code(_read("sierra_training.js"))
+    m = re.search(r"function tryGroup\([\s\S]*?\n  \}", src)
+    body = m.group(0) if m else ""
+    open_ = ">Sierra</button>" in body and "sierraHost(" not in body and "org-hidden" not in body
+    return open_, ("tryGroup draws Sierra and My College whatever the side menu hides" if open_
+                   else "tryGroup already reads the side menu")
+
+
 # Keyed by the item's POSITION on the sheet — the number Sam replies with, and
 # the only unique handle (two ESL cards share a `ref`).
 EVIDENCE = {
@@ -249,6 +324,17 @@ EVIDENCE = {
     6:  [measured(p_explainer_reserve)],
     7:  [live("2026-09-29", "cpl_funding_config, Scenarios 1 and 2: the timeline's August 2027 "
               "line and the Minimum Conditions introduction")],
+    # 2026-09-29 (S301): Sam's ask of 28 September, a Jev next step per reference.
+    # Every count on these four cards is recomputed here by kb/_jev_next_steps.py.
+    8:  [measured(p_ccr_no_gate),
+         quoted("kb/receipts/jev_ccr_title_rung_calibration_2026-09-22_s282.json", "2026-09-22")],
+    9:  [measured(p_ccrr_course_pairing)],
+    10: [measured(p_cer_judgment_open),
+         live("2026-09-29", "the database's decision tables: cr_reference_decisions and "
+              "kb_curation are the only two")],
+    11: [measured(p_csr_autb_collision)],
+    # The Sierra Training round-1 port (#1733) left two calls for Sam.
+    12: [measured(p_sierra_try_both_buttons)],
 }
 
 PROVENANCE = {
@@ -478,6 +564,151 @@ def items():
             "you would rather edit them yourself on the tab; then choose that."),
         'chips': chips(('Write both for me', 'write'), ("I'll edit them on the tab", 'self'), CH_LATER),
     })
+
+    # ── Jev: a next step per reference (S301, Sam's ask of 2026-09-28) ───────
+    # Every number below is measured at build time (kb/_jev_next_steps.py), so a
+    # card cannot quote a count that has moved while the sheet waited.
+    N = _next_steps()
+    cc, cr, ce, cs = N["ccr"], N["ccrr"], N["cer"], N["csr"]
+    from _build_crosslist_decision_sheet import measure as crosslist_measure
+    kind_c = crosslist_measure()["kinds"]["C"]
+
+    I.append({
+        'lane': 'common-cr-reference',
+        'title': 'The course reference: ask where a course belongs',
+        'ref': 'common-cr-reference · the CCR ladder · kb/_jev_next_steps.py',
+        'facts': (
+            f"On 22 September you ruled {cc['scored']} of the 50 title-rung cards: {cc['moves']} moves and "
+            f"{cc['keeps']} keeps. Jev ranked them well (AUC {cc['auc']:.3f}), and no cut-off separates the two: "
+            f"your lowest-scored move sat at {cc['lowest_move_p']:.2f} and your highest-scored keep at "
+            f"{cc['highest_keep_p']:.2f}. Jev was asked whether a title matches its discipline, and each move you "
+            "made answered where the course belongs: Photography out of Art, Theater out of Music twice, Ethnic "
+            "Studies out of Sociology, Office Technology out of Computer Information Systems. Measured today, the "
+            f"course's own member colleges name {cc['destinations_named']} of the {cc['destinations']} destinations "
+            f"you gave, and their plurality alone picks {cc['plurality_matches']} of them (Photography, 7 members "
+            "against Art's 5), so the title and the description settle the rest. The cross-list sheet of 22 "
+            f"September holds the population this question fits: {kind_c:,} identities whose member colleges "
+            "genuinely disagree (its kind C)."),
+        'why': (
+            "The course reference is the largest of the four. A sitting spent on the title question calibrates "
+            "nothing, because your answers are about placement."),
+        'rec': (
+            "<strong>Ask where the course belongs.</strong> Jev chooses among the disciplines the course's member "
+            "colleges name, with the title and the description as evidence, and a session scores that choice "
+            "against your 26 answers before you see a card; it costs cents and writes nothing. If it agrees with "
+            f"you, the next sitting takes 50 of the {kind_c:,}, most member rows first, each card offering Keep, "
+            "Move or Cross-list with Jev's choice selected. <em>It might be wrong if</em> you want the ladder as "
+            "designed first: rung 2 re-asks the title question with descriptions added."),
+        'chips': chips(('Ask where it belongs', 'placement'), ('Keep the ladder', 'ladder'), CH_LATER),
+    })
+
+    I.append({
+        'lane': 'common-cr-reference',
+        'title': 'The credit recommendation reference: a second way to pair wordings',
+        'ref': 'common-cr-reference · kb/_typesafe_cr_trial.py build_pairs() · kb/_jev_next_steps.py',
+        'facts': (
+            "Your 51 verdicts of 20 September gave this reference the only measured gate: above 0.85, Jev agreed "
+            "with you 25 times in 25. Those pairs came from grouping wordings under a shared published line, C-ID "
+            f"or course identity, and that way in is spent: {cr['anchored_pairs']} pairs, 51 of them ruled. Of the "
+            f"{cr['groups']:,} recommendation groups, {cr['rung5_groups']:,} stand alone. Pairing groups that "
+            f"articulate to the same course identity yields {cr['course_pairs']} pairs over {cr['course_groups']} "
+            f"groups, {cr['course_rung5_groups']} of them among the stand-alones ({cr['course_rung5_rows']:,} "
+            f"articulation rows), nearly twice the {cr['anchored_rows']:,} rows your first sitting settled. One "
+            "guard comes first: a credential that articulates every line to one course, as POST does to AJ 110, "
+            "pairs unrelated lines, and the credential's course count is the test that catches it. Another "
+            f"{cr['unanchored_clusters']} small clusters share a wording with no anchor ({cr['unanchored_groups']} "
+            f"groups, {cr['unanchored_rows']} rows)."),
+        'why': (
+            "This is the one reference with a measured gate, so each verdict here settles the most rows: about 29 "
+            "on the first sitting."),
+        'rec': (
+            "<strong>Pair by course, with the course-count guard,</strong> and run Jev on the new pairs, the "
+            f"{cr['unanchored_clusters']} unanchored clusters and the {cr['anchored_pairs'] - 51} newer anchored "
+            "pairs under the 0.85 gate. A sheet of 40 to 60 then comes to you, most rows first, with Jev's "
+            "proposal selected. <em>It might be wrong if</em> you would rather finish the head by hand: the top 50 "
+            "wordings carry half of all articulations."),
+        'chips': chips(('Pair by course', 'course'), ('Head by hand first', 'head'), CH_LATER),
+    })
+
+    by = ce['jev_by_rule']
+    I.append({
+        'lane': 'common-cr-reference',
+        'title': 'The exhibit reference: the same questions as July, and nowhere to keep the answers',
+        'ref': 'common-cr-reference · ' + (ce['file'] or 'kb/trail_crew_out/'),
+        'facts': (
+            "The exhibit scanner ran today for the first time since 10 July. Its findings fell from 239 to "
+            f"{ce['findings']}, because July's clean renames cleared the roman numerals and the duplicate titles. "
+            f"The {ce['jev_askable']} that need judgment are the ones July found: {by.get('issuer_variant_cluster', 0)} "
+            "issuer names that look like spellings of one organization (<em>International Code Council</em> "
+            f"beside <em>International Code Council (ICC)</em>), {by.get('level_notation_twins', 0)} titles that "
+            f"differ only in how the level is written, {by.get('issuer_family_mixed', 0)} credential families "
+            f"carrying more than one issuer, and {by.get('bare_vs_leveled', 0)} bare titles beside leveled "
+            f"siblings. The other {ce['findings'] - ce['jev_askable']} are mechanical under your canon. The exhibit "
+            "reference has no decisions store, so a ruling has nowhere to live, and a new store is a write surface "
+            "that goes through Governance first (Rule 10(a3))."),
+        'why': (
+            "The exhibit reference is the vocabulary MAP will prompt with at data entry, so each spelling left "
+            "standing becomes a fork in tomorrow's data."),
+        'rec': (
+            "<strong>Governance maps a decisions store first.</strong> Jev then reads the "
+            f"{ce['jev_askable']} as a calibration sitting, with no gate yet, and they come to you on one sheet "
+            "with each issuer name checked against the credential registry you shared on 16 September. The "
+            "mechanical fixes go through the clean-rename path July's did, under a receipt. <em>It might be wrong "
+            "if</em> you want the issuer names settled against the registry before any sitting; the national "
+            "sample holds 974 of its 6,738 credentials."),
+        'chips': chips(('Store first, then the sitting', 'store'), ('Registry first', 'registry'), CH_LATER),
+    })
+
+    jb = cs['jev_by_rule']
+    autb = next((c for c in cs['collisions'] if c['code'] == 'AUTB'), {})
+    I.append({
+        'lane': 'common-cr-reference',
+        'title': 'The subject reference: the backlog was a misread, and one code names two disciplines',
+        'ref': 'common-cr-reference · ' + (cs['file'] or 'kb/csr_out/') + ' · PR #1735',
+        'facts': (
+            "The subject scanner read the anchor's old key format, so it compared each anchor's local code and "
+            "never its identifier. Fixed today (#1735): 121 of its 136 questions for Jev were anchors whose "
+            "identifiers already carry the canonical code, or languages that keep their own code under Foreign "
+            "Languages by design. Your FTVE ruling of 3 September also read as a collision and now reads as "
+            f"ruled. What remains is {cs['jev_askable']} questions for Jev ({jb.get('cs6_weak_mnemonic', 0)} codes "
+            "that are hard to recognize from the discipline's name, and Commercial Music and Health Information "
+            "Technology leaving an official CCN prefix unused) and one real collision. AUTB is Auto Body "
+            f"Technology's code ({autb.get('mids_b') or 221} identities), and Agricultural Business and Related "
+            "Services took it from its own two: <em>Supervision and Management in Agriculture</em> carries "
+            "AUTB M1006 because the subject map reads its college's two-letter code AB as Auto Body, and "
+            "<em>Import Body Customizing</em>, an auto body course, is filed under Agricultural Business."),
+        'why': (
+            "Every new identifier is minted from these codes, so a shared code reaches every course minted after "
+            "it. Your two-letter gate of 22 September stops new mints from repeating this; these two stay until "
+            "they move."),
+        'rec': (
+            "<strong>File <em>Import Body Customizing</em> under Auto Body Technology, give Agricultural Business "
+            "its own code, AGAB, beside the agriculture umbrella's other codes, and re-mint <em>Supervision and "
+            "Management in Agriculture</em> under it through the re-mint playbook.</strong> The "
+            f"{cs['jev_askable']} then go to Jev and come to you ranked on a short sheet. <em>It might be wrong "
+            "if</em> Agricultural Business belongs inside Agriculture itself; then its course re-mints under AGRI."),
+        'chips': chips(('As proposed', 'proposed'), ('Fold it into Agriculture', 'fold'), CH_LATER),
+    })
+
+    # ── Sierra Training's round-1 port left two calls (S300, #1733) ──────────
+    I.append({
+        'lane': 'sierra-retrieval-corpus',
+        'title': 'Sierra Training: the Try it in buttons',
+        'ref': 'sierra-retrieval-corpus · sierra_training.js tryGroup() and sierraHost() · #1733',
+        'facts': (
+            "Round 1 shipped on 29 September as you approved it: <em>Try it in: Sierra · My College</em>. The "
+            "Sierra button opens the tab the side menu calls CPL Assistant. Where a site hides that tab, the "
+            "Sierra button already falls back to My College, which mounts the same assistant, so both buttons "
+            "open the same place there."),
+        'why': (
+            "A reader who looks for a Sierra tab in the side menu finds CPL Assistant, and two buttons that open "
+            "one place read as a fault."),
+        'rec': (
+            "<strong>Keep the word Sierra, and show only My College where CPL Assistant is hidden.</strong> The "
+            "assistant is Sierra in both tabs. <em>It might be wrong if</em> you want each button to name the tab "
+            "it opens; then the first reads CPL Assistant."),
+        'chips': chips(('As proposed', 'proposed'), ('Name it CPL Assistant', 'rename'), CH_LATER),
+    })
     return I
 
 
@@ -545,12 +776,11 @@ def build(check_only=False):
         return 0
 
     framing = (
-        "Seven questions wait on you. Cards 1 to 3 carry over from the 28 September sheet, unanswered: "
-        "the last three sections of your funding tab review, the explainer's footer, and how far the "
-        "Exercise Science re-mint reaches (cards 1 and 2 are also cards 3 and 4 of the 27 September "
-        "sheet; answer them once). Cards 4 to 7 come from the College Dashboard port: which figure "
-        "Current Total names, the college thank-you, the explainer's Step two note, and two of your "
-        "saved texts.")
+        "Twelve questions wait on you. Cards 1 to 7 are the 29 September sheet's, unchanged: you pressed "
+        "Complete there without touching a card, so none of them is reviewed yet (cards 1 and 2 are also "
+        "cards 3 and 4 of the 27 September sheet; answer them once). Cards 8 to 11 answer your ask of 28 "
+        "September, a next step for each Jev reference: courses, credit recommendations, exhibits and "
+        "subjects. Card 12 is Sierra Training's Try it in buttons.")
     counts = (f"{len(I)} items across {len(lanes)} lanes · "
               f"every lane carrying an open ask is covered, by build-time audit")
 

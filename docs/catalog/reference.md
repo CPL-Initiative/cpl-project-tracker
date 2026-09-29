@@ -24,7 +24,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [COBI dark mode / the one theme control — lane state](../reference/lanes/cobi-dark-mode.md) | lanes | `cobi-dark-mode.md` | 2026-09-08 | 2026-09-10 |
 | [College & district identity — lane state](../reference/lanes/college-district-identity.md) | lanes | `college-district-identity.md` | 2026-08-28 | 2026-08-28 |
 | [College CR evidence ('we approved it, but we have no CR') — lane state](../reference/lanes/college-cr-evidence.md) | lanes | `college-cr-evidence.md` | 2026-08-28 | 2026-08-28 |
-| [Common CR Reference — lane state](../reference/lanes/common-cr-reference.md) | lanes | `common-cr-reference.md` | 2026-08-28 | 2026-09-21 |
+| [Common CR Reference — lane state](../reference/lanes/common-cr-reference.md) | lanes | `common-cr-reference.md` | 2026-08-28 | 2026-09-29 |
 | [CPL clean-up worklist — lane state](../reference/lanes/cpl-cleanup-worklist.md) | lanes | `cpl-cleanup-worklist.md` | 2026-08-28 | 2026-08-28 |
 | [Discipline cross-listing — nest, alias or carry two homes — lane state](../reference/lanes/discipline-crosslist.md) | lanes | `discipline-crosslist.md` | 2026-09-22 | 2026-09-28 |
 | [Disposition grain / student detail — lane state](../reference/lanes/disposition-grain-student-detail.md) | lanes | `disposition-grain-student-detail.md` | 2026-08-28 | 2026-08-28 |
@@ -48,7 +48,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [Reviewer session lifetime & scope — lane state](../reference/lanes/reviewer-session-lifetime.md) | lanes | `reviewer-session-lifetime.md` | 2026-08-28 | 2026-08-28 |
 | [Roadmap lanes — how the pointer index and the lane files divide](../reference/lanes/README.md) | lanes | `README.md` | 2026-09-09 | 2026-09-09 |
 | [Row-auditor rules (§11 phase 1c) — lane state](../reference/lanes/audit-rules.md) | lanes | `audit-rules.md` | 2026-08-28 | 2026-08-28 |
-| [Sierra retrieval + corpus — lane state](../reference/lanes/sierra-retrieval-corpus.md) | lanes | `sierra-retrieval-corpus.md` | 2026-08-28 | 2026-09-18 |
+| [Sierra retrieval + corpus — lane state](../reference/lanes/sierra-retrieval-corpus.md) | lanes | `sierra-retrieval-corpus.md` | 2026-08-28 | 2026-09-29 |
 | [Sierra: false absences + the statewide flag — lane state](../reference/lanes/sierra-false-absences.md) | lanes | `sierra-false-absences.md` | 2026-08-28 | 2026-08-28 |
 | [SkyView / the CCR curation interface — lane state](../reference/lanes/skyview-ccr-interface.md) | lanes | `skyview-ccr-interface.md` | 2026-08-28 | 2026-09-19 |
 | [Title 5 §55050 → Ed. Code Article 9 — lane state](../reference/lanes/t5-55050-article-9.md) | lanes | `t5-55050-article-9.md` | 2026-08-28 | 2026-08-30 |

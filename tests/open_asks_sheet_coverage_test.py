@@ -202,6 +202,21 @@ FIXTURES = {
                                'var t = "Your college counts as participating from today.";'),
     "p_explainer_reserve":   ("<p>The model reserves the funding an institution demonstrates for that institution.</p>",
                               "<p>The model counts every outcome an institution demonstrates toward that award.</p>"),
+    # S301 (2026-09-29): the four Jev next steps and the Sierra Training call.
+    "p_ccr_no_gate":         ('GATES = {\n    "ccrr": 0.85,\n}',
+                              'GATES = {\n    "ccrr": 0.85,\n    "ccr": 0.7,\n}'),
+    "p_ccrr_course_pairing": ("def build_pairs():\n    return []",
+                              "def build_course_pairs():\n    return []"),
+    "p_cer_judgment_open":   ('{"findings": [{"rule": "issuer_variant_cluster", "needs_judgment": true}]}',
+                              '{"findings": [{"rule": "style_nits", "needs_judgment": false}]}'),
+    "p_csr_autb_collision":  ('{"disciplines": {"Auto Body Technology": {"canonical_subj4": "AUTB"}, '
+                              '"Agricultural Business and Related Services": {"canonical_subj4": "AUTB"}}}',
+                              '{"disciplines": {"Auto Body Technology": {"canonical_subj4": "AUTB"}, '
+                              '"Agricultural Business and Related Services": {"canonical_subj4": "AGAB"}}}'),
+    "p_sierra_try_both_buttons": ("function tryGroup(src, labelId) {\n    return '<button>Sierra</button>'\n"
+                                  "      + '<button>My College</button>';\n  }",
+                                  "function tryGroup(src, labelId) {\n    if (sierraHost() !== 'chatbot') return '';\n"
+                                  "    return '<button>Sierra</button>';\n  }"),
 }
 _broken = []
 for _name, (_open_src, _closed_src) in FIXTURES.items():
