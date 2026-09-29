@@ -13733,7 +13733,7 @@
      ],
      "title": "Discipline cross-listing \u2014 nest, alias or carry two homes \u2014 lane state",
      "type": null,
-     "updated": "2026-09-28"
+     "updated": "2026-09-29"
     },
     {
      "created": "2026-08-28",
@@ -14321,8 +14321,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 273,
+   "count": 274,
    "docs": [
+    {
+     "created": "2026-09-29",
+     "governs": [],
+     "n": 303,
+     "path": "docs/session_303_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "decision-sheet",
+      "college-dashboard",
+      "implementation-funding",
+      "eths-remint",
+      "dependabot"
+     ],
+     "title": "sheet 3 carried out; the ETHS re-key, one setup-python bump and sheet 4 come first",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-29",
      "governs": [],
@@ -18954,5 +18972,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 987
+ "total": 988
 }

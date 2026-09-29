@@ -29,6 +29,7 @@ const {
   finish,
 } = require("./lib/cpl_funding_harness.js");
 const { NPRIO } = require("./lib/cpl_funding_harness.js");
+const H = require("./lib/cpl_funding_harness.js");
 
 const POOL = 25240308;
 
@@ -278,28 +279,28 @@ const POOL = 25240308;
       return !!det && /Qualifies by origination/.test(det.textContent) &&
         /stand-in/.test(det.textContent);   // N3 a on the Calbright expand
     })());
-  // Six columns since 2026-09-23 (Sam: "as clear and simple as possible"): the
-  // CR/NC split of a priority's funding moved into the Total Possible hover.
-  // One table per lane since 2026-09-24 (Sam's 7.9a/b), each in his six
-  // columns: the CR/NC split that rode a hover is now two tables, so the
-  // noncredit share has a table of its own rather than a tooltip.
-  // The first header names the lane since 2026-09-28; the credit caption is
-  // gone and the noncredit one states its rule.
-  check("D16: a college row expands to a credit and a noncredit table, each <lane> outcomes · Max FTES · " +
-        "Max Funds · Actual FTES · Actual Funds · Difference",
+  // Six columns since 2026-09-23 (Sam: "as clear and simple as possible"), one
+  // table per lane since 2026-09-24 (Sam's 7.9a/b), and since round 8
+  // (2026-09-29) the priorities are rows of the institution table itself: each
+  // lane keeps columns of its own (Max and Curr, credit then noncredit, under
+  // a lighter band for noncredit), then the two totals, and the closing line
+  // states the noncredit rule.
+  check("D16: a college row expands to priority rows in the table's own columns, each lane in its own pair",
     (function () {
       const row = Array.from(doc.querySelectorAll(".cplfund-row"))
         .find(function (r) { return /Bakersfield/.test(r.textContent); });
       if (!row) return false;
       row.querySelector(".cplfund-caret").dispatchEvent(new window.Event("click", { bubbles: true }));
-      const det = doc.querySelector("tr.cplfund-detail");
-      const cr = det && det.querySelector(".cplfund-dtl-table.cplfund-dtl-cr");
-      const nc = det && det.querySelector(".cplfund-dtl-table.cplfund-dtl-nc");
-      if (!cr || !nc) return false;
-      const heads = function (t) { return Array.from(t.querySelectorAll("th")).map(function (h) { return h.textContent; }).join("|"); };
-      const want = "|Max FTES|Max Funds|Actual FTES|Actual Funds|Difference";
-      return heads(cr) === "Credit outcomes" + want && heads(nc) === "Noncredit outcomes" + want &&
-        !cr.caption && !!nc.caption && /^Noncredit counts CPL/.test(nc.caption.textContent.trim());
+      const d = H.drillOf(doc, doc.querySelector('#cplFundTable tr[data-id="' + row.getAttribute("data-id") + '"]'));
+      if (!d.band || !d.cells.length) return false;
+      const b = d.bandCells;
+      const labels = ["college", "cr_award", "cr_current", "nc_award", "nc_current", "total", "current_total"]
+        .map(function (k) { return b[k].text; }).join("|");
+      const foot = d.detail[d.detail.length - 1];
+      return labels === "Priority outcomes|Max CR Funds|CurrCurrent CR Funds|Max NC Funds|CurrCurrent NC Funds|Total Funds|CurrCurrent Total Funds" &&
+        b.nc_award.td.classList.contains("cf-nchead") && !b.cr_award.td.classList.contains("cf-nchead") &&
+        d.cells.every(function (c) { return /^\$[\d,]+$/.test(c.nc_award.fig) && /FTES$/.test(c.nc_award.line); }) &&
+        !!foot && /^Noncredit counts CPL/.test(foot.textContent.trim());
     })());
   check("D17: the memo's allocation table is one-pool shaped (credit/noncredit shares, no carve-out)",
     (function () {

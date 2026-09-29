@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-09-29T14:11:56.824533+00:00",
+  "scraped_at": "2026-09-29T21:18:57.624425+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 28515,
+    "jst": 28546,
     "star_colleges": 59
   },
   "computed_star_colleges": 59,
@@ -22,12 +22,7 @@
     },
     "San Diego Mesa College": {
       "vets": 1070,
-      "jst": 1618,
-      "star": true
-    },
-    "San Diego City College": {
-      "vets": 776,
-      "jst": 1515,
+      "jst": 1623,
       "star": true
     },
     "City College of San Francisco": {
@@ -35,9 +30,14 @@
       "jst": 1745,
       "star": true
     },
+    "San Diego City College": {
+      "vets": 776,
+      "jst": 1518,
+      "star": true
+    },
     "San Diego Miramar College": {
       "vets": 1181,
-      "jst": 1654,
+      "jst": 1657,
       "star": true
     },
     "Moreno Valley College": {
@@ -62,7 +62,7 @@
     },
     "Norco College": {
       "vets": 831,
-      "jst": 563,
+      "jst": 564,
       "star": false
     },
     "Long Beach City College": {
@@ -147,7 +147,7 @@
     },
     "Cabrillo College": {
       "vets": 102,
-      "jst": 183,
+      "jst": 184,
       "star": true
     },
     "Sierra College": {
@@ -197,7 +197,7 @@
     },
     "Los Angeles Pierce College": {
       "vets": 296,
-      "jst": 145,
+      "jst": 146,
       "star": false
     },
     "Fullerton College": {
@@ -320,6 +320,11 @@
       "jst": 59,
       "star": false
     },
+    "Laney College": {
+      "vets": 96,
+      "jst": 58,
+      "star": false
+    },
     "West Valley College": {
       "vets": 48,
       "jst": 56,
@@ -330,20 +335,15 @@
       "jst": 105,
       "star": false
     },
-    "Laney College": {
-      "vets": 96,
-      "jst": 51,
-      "star": false
+    "Copper Mountain College": {
+      "vets": 72,
+      "jst": 82,
+      "star": true
     },
     "Foothill College": {
       "vets": 915,
       "jst": 75,
       "star": false
-    },
-    "Copper Mountain College": {
-      "vets": 72,
-      "jst": 80,
-      "star": true
     },
     "Pasadena City College": {
       "vets": 404,
@@ -352,7 +352,7 @@
     },
     "Coalinga College": {
       "vets": 17,
-      "jst": 3,
+      "jst": 4,
       "star": false
     },
     "Palo Verde College": {
@@ -500,13 +500,13 @@
       "jst": 86,
       "star": true
     },
-    "Gavilan College": {
-      "vets": 352,
-      "jst": 46,
-      "star": false
-    },
     "Chabot College": {
       "vets": 304,
+      "jst": 53,
+      "star": false
+    },
+    "Gavilan College": {
+      "vets": 352,
       "jst": 46,
       "star": false
     },

@@ -353,15 +353,16 @@ function mountWords(doc) {
     !!status && /Coordinator not yet on file/.test(status.textContent) &&
     /Confirmation not yet on file/.test(status.textContent) && status.textContent.indexOf("$") === -1);
   // The two totals ride the row now: Total Funds reads the max award and Curr
-  // Total Funds what is released ($0 while gated). The drill-in's Max Funds
-  // line is gone.
+  // Total Funds, while gated, the computed figure in gray (round 9, Sam
+  // 2026-09-29: "should not be 0"). The drill-in's Max Funds line is gone.
   const cap = det && det.querySelector(".cplfund-dtl-sum");
   const rowNow = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row")).find((r) => /Alameda/.test(r.textContent));
-  check("the drill-in's Max Funds line is gone; the row carries the max award and the $0 released",
+  check("the drill-in's Max Funds line is gone; the row carries the max award and the computed figure in gray",
     !cap && !!rowNow &&
     // the window's award under Combined funding, one year's under Annual (the baked default)
     [a.total, a.total / 2].some((v) => rowNow.querySelector("td.cf-total").textContent.indexOf("$" + Math.round(v).toLocaleString("en-US")) === 0) &&
-    rowNow.querySelector("td.cf-cur-total").textContent.trim() === "$0");
+    rowNow.querySelector("td.cf-cur-total").classList.contains("cf-gated") &&
+    /^\$[1-9]/.test(rowNow.querySelector("td.cf-cur-total").textContent.trim()));
   delete window.CPL_FUNDING_PERF;
 }
 

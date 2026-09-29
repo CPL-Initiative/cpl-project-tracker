@@ -511,6 +511,27 @@ def _origin_scopes():
     return scopes
 
 
+def vet_jst_counts(rec):
+    """One college's veteran and JST counts for the Minimum Conditions line
+    (Sam, 2026-09-29: "Next to Vet JST not yet at 75%, show the college vet
+    count vs. their JST count and the %."). Both are student counts, so each
+    masks under SUPPRESS_BELOW like every other count on the funding page
+    (adr-funding-counts-mask-under-10-units-carry-the-money). The percent is
+    computed here on the true counts, and only when neither count is masked: a
+    percent beside a masked count would give the masked count back."""
+    vets, jst = int(rec.get("vets") or 0), int(rec.get("jst") or 0)
+    out = {}
+    for key, v in (("vets", vets), ("jst", jst)):
+        if 0 < v < SUPPRESS_BELOW:
+            out[key] = None
+            out[key + "_suppressed"] = True
+        else:
+            out[key] = v
+    if vets and out["vets"] is not None and out["jst"] is not None:
+        out["pct"] = round(jst / vets, 4)
+    return out
+
+
 def read_veteran_stars(resolve):
     """Per-college Veteran Star flag (funding-name → bool) from veteran_jst.json —
     a college where >= star_threshold (0.75) of enrolled veterans have a JST
@@ -524,19 +545,21 @@ def read_veteran_stars(resolve):
             vj = json.load(f)
     except (ValueError, OSError):
         return None
-    stars, n = {}, 0
+    stars, counts, n = {}, {}, 0
     for map_name, rec in (vj.get("colleges") or {}).items():
         fname = resolve(map_name)
         if not fname:
             continue
         met = bool(rec.get("star"))
         stars[fname] = met
+        counts[fname] = vet_jst_counts(rec)
         if met:
             n += 1
     if not stars:
         return None
     return {
         "colleges": stars,
+        "counts": counts,
         "as_of": (vj.get("scraped_at") or "").split("T")[0],
         "threshold": vj.get("star_threshold"),
         "n": n,
@@ -1247,6 +1270,7 @@ def main():
         payload["vet_star_as_of"] = vet["as_of"]
         payload["vet_star_threshold"] = vet["threshold"]
         payload["vet_star_n"] = vet["n"]
+        payload["vet_jst"] = vet["counts"]
 
     # Goal (C) — the Chancellor's Office import (see read_career_attainment).
     # A college the import does not name reads as a measured zero once ca_u is

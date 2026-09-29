@@ -10,19 +10,26 @@ on the catalog's own stamps).
 
 SCOPE. The card counted 31 over the unified-courses rows, which hold corroborated
 ids only. Re-measured on the kb files (2026-09-28) the same defect also covers
-standing stand-alones and rows the title list misses, so the plan carries four
+standing stand-alones and rows the title list misses, so the plan carries five
 classes and `--scope` picks which move (the verdicts-as-flags pattern of
 kb/_prefix_fold_dryrun.py):
   ruled       the 31: corroborated ETHS ids, not merged away, whose displayed
               title carries a word from the cross-list builder's PHYSICAL list
-              (kb/_build_crosslist_decision_sheet.py) - Sam's ruling
-  standalone  the same test on ETHS stand-alones                 - not ruled
+              (kb/_build_crosslist_decision_sheet.py)
+  standalone  the same test on ETHS stand-alones
   missed      ETHS rows outside that list whose members list the course under
-              ES with a Physical Education TOP (0835)             - not ruled
-  children    ETHS ids merged into any of the above                - not ruled
+              ES with a Physical Education TOP (0835)
+  children    ETHS ids merged into any of the above
   merged_elsewhere  ETHS ids already merged into a KINE/ATHL/PEDS parent: they
               display under the right parent, and only their own id is wrong
-Only `ruled` is applied until Sam rules on the rest; the report lists them.
+Sam has ruled on every class. RULED_SCOPES holds the two he ruled to move, and
+`--apply` admits those two scope sets and nothing else:
+  ruled              re-mint the 31 (2026-09-22, open-asks card 1; applied 2026-09-28)
+  standalone,missed  re-mint the 43 the way the 31 moved (2026-09-29, open-asks
+                     sheet 3, card 3, "remint"); the 3 with no second signal hold
+  children, merged_elsewhere  the 42 merged ones stay on their ids (the same ruling)
+Each admitted scope pins the ids its ruling covers (RULED, RULED_43), and V0
+re-measures them, so a catalog that drifted since the ruling refuses.
 
 ROUTING (the KIN/PE pass-2 rules, kb/_kin_pe_pass2.py, read under the TOP doctrine:
 a title keyword routes, a TOP code only corroborates). The regexes are the pass-2
@@ -63,14 +70,17 @@ receipt by .github/workflows/supabase-rekey.yml, in the same cron window, before
 the next cron's curation sync.
 
 GATES (all must pass or nothing is written):
-  V0  the ruled class re-measures to RULED exactly (a drifted catalog refuses)
+  V0  each ruled scope re-measures to its pinned ids exactly: the ruled class to
+      RULED, the standalone and missed classes to RULED_43. A pinned id already
+      re-minted counts by its stamp, so an applied scope still measures whole.
   V1  record counts unchanged in every file
   V2  new ids unique and disjoint from every key that is not moving
   V3  every moved row lands on its route's code and discipline, and a curation
       overlay discipline, where one exists, agrees with the route
   V4  articulation re-key count equals the precount
   V5  no merge_into pointer, curation key or membership key left on a moved id
-  P0  this scope not already applied (the stamp on any moved record)
+  P0  this scope not already applied: no record carries the stamp of an id this
+      plan moves or of an id the scope's ruling pins
   P1  --apply only: the recomputed alias map equals the reviewed receipt's
   P3  --apply only: --fresh-read (live kb_curation rows for the moved ids and the
       rows pointing at them) matches the committed overlay: every field of a
@@ -80,6 +90,10 @@ Run:
   python3 kb/_eths_remint.py                    # dry run -> kb/eths_remint_out/<date>/<scope>/
   python3 kb/_eths_remint.py --apply --receipt kb/eths_remint_out/<date>/ruled/alias_map.json \\
       --fresh-read <live.json> --ruling "Sam, 2026-09-22 (open-asks card 1): re-mint them"
+  python3 kb/_eths_remint.py --scope standalone,missed          # the 43: dry run
+  python3 kb/_eths_remint.py --scope standalone,missed --apply \\
+      --receipt kb/eths_remint_out/<date>/standalone+missed/alias_map.json --fresh-read <live.json> \\
+      --ruling "Sam, 2026-09-29 (open-asks sheet 3, card 3): remint"
 """
 import argparse
 import importlib.util
@@ -94,6 +108,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 import _authority_recode_dryrun as rec  # noqa: E402  (Allocator, parse_id, SUBJ4_RE, load_id_reservations)
+import alias_chain as ac  # noqa: E402  (the one chain: read, never restated)
 
 OUT_ROOT = os.environ.get("ETHS_REMINT_OUT") or os.path.join(HERE, "eths_remint_out")
 KB_DIR = os.environ.get("ETHS_REMINT_KB") or HERE     # a scratch copy for a rehearsal
@@ -109,7 +124,51 @@ RULED = (
     "ETHS M1252", "ETHS M1269", "ETHS M1270", "ETHS M1271", "ETHS M1273", "ETHS M1276",
     "ETHS M1282",
 )
+# The 43 standing ids Sam's ruling of 2026-09-29 covers (open-asks sheet 3, card
+# 3, "remint"), measured 2026-09-28 with the same test: 40 stand-alones with a
+# physical-activity title and 3 corroborated rows the title list misses (M1191,
+# M1196, M1197). Three stand-alones carry no second signal beside the title and
+# hold under the rule the 31 used, so 40 move.
+RULED_43 = (
+    "ETHS M10AS", "ETHS M10BF", "ETHS M10BI", "ETHS M10BK", "ETHS M10BL", "ETHS M10BM",
+    "ETHS M10BN", "ETHS M10BO", "ETHS M10BS", "ETHS M10BU", "ETHS M10BW", "ETHS M10BX",
+    "ETHS M10CA", "ETHS M10CF", "ETHS M10CG", "ETHS M10CH", "ETHS M10CL", "ETHS M10CN",
+    "ETHS M10JP", "ETHS M10JT", "ETHS M10KS", "ETHS M10KU", "ETHS M10KV", "ETHS M10LC",
+    "ETHS M10LE", "ETHS M10LF", "ETHS M10LH", "ETHS M10MS", "ETHS M10MU", "ETHS M10OT",
+    "ETHS M10OV", "ETHS M10OY", "ETHS M10PO", "ETHS M10PP", "ETHS M10SF", "ETHS M10SG",
+    "ETHS M10SR", "ETHS M10ST", "ETHS M10TW", "ETHS M1191", "ETHS M1196", "ETHS M1197",
+    "ETHS M90AB",
+)
 SCOPES = ("ruled", "standalone", "missed", "children", "merged_elsewhere")
+# The scope sets Sam ruled to move: the module constant pinning the ids each
+# ruling covers (read at call time), who ruled and when, and his verdict.
+# `--apply` admits these and nothing else.
+RULED_SCOPES = {
+    ("ruled",): ("RULED", "Sam, 2026-09-22 (open-asks card 1, cross-list item 3)", "re-mint the 31"),
+    ("standalone", "missed"): ("RULED_43", "Sam, 2026-09-29 (open-asks sheet 3, card 3, \"remint\")",
+                               "re-mint the 43 the way the 31 moved; the 42 merged ones stay on their ids"),
+}
+# The same ruling for the classes that do not move.
+STAY_RULING = "Sam, 2026-09-29 (open-asks sheet 3, card 3): the 42 merged ones stay on their ids"
+
+
+def canonical_scopes(asked):
+    """-> the asked classes in SCOPES order, so one ruling has one receipt path."""
+    return tuple(s for s in SCOPES if s in set(asked))
+
+
+def pinned_ids(scopes):
+    """The ids the ruling behind this scope set covers; () for a set no ruling admits."""
+    entry = RULED_SCOPES.get(tuple(scopes))
+    return tuple(globals()[entry[0]]) if entry else ()
+
+
+def ruling_for(scopes):
+    entry = RULED_SCOPES.get(tuple(scopes))
+    if entry:
+        return f"{entry[1]}: {entry[2]}"
+    return ("no ruling moves this scope set (" + ", ".join(scopes) + "): Sam ruled "
+            + " and ".join("`" + ",".join(s) + "`" for s in RULED_SCOPES) + " to move. " + STAY_RULING)
 
 # kb/_kin_pe_pass2.py, frozen 2026-06-12 (restated: that module runs at import).
 ADAPT = re.compile(r"adapt|disab|special needs|\bDSPS\b|special olymp", re.I)
@@ -126,6 +185,22 @@ def physical_words():
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)
     return mod.PHYSICAL
+
+
+def ever_minted_ids():
+    """Every old and new id a registered re-mint receipt names. The receipt
+    reports which new ids land on one; no gate reads it. The allocator's
+    collision surface is every live key (the prefix fold's, the one the 31 moved
+    under), so a gap-fill may take a slot an earlier re-mint vacated, and the
+    chain resolves a stored id through the maps of its own era."""
+    ids = set()
+    for m in ac.load_maps(ac.ALIAS_MAPS):
+        for old, v in m.items():
+            ids.add(old)
+            new = ac.step(v)
+            if new:
+                ids.add(new)
+    return ids
 
 
 def route(title):
@@ -254,14 +329,30 @@ def compute_plan(courses, singletons, memberships, curations, identities, reserv
                                                               reason=f"{cid} -> {moves[cid]['route']}")
     alias = {k: v["new_id"] for k, v in moves.items() if v.get("new_id")}
 
-    ruled_now = sorted(k for k, s in classes.items() if s == "ruled")
+    # A pinned id that already moved no longer measures in its class; the stamp
+    # its record carries says it moved under this script.
+    stamps = {}
+    for k, r in list(courses.items()) + list(singletons.items()):
+        if r.get(STAMP):
+            stamps[r[STAMP]] = k
+
+    def pinned_gate(ids, cls):
+        now = {k for k, s in classes.items() if s in cls}
+        done = set(ids) & set(stamps)
+        seen = now | done
+        return {"pass": seen == set(ids), "measured": len(now), "applied": len(done),
+                "missing": sorted(set(ids) - seen), "extra": sorted(now - set(ids))}
+
+    pins = set(pinned_ids(scopes))
+    stamped = sorted(v for k, v in stamps.items() if k in alias or k in pins)
     new_ids = list(alias.values())
     dup = sorted(k for k, n in Counter(new_ids).items() if n > 1)
     collide = sorted(set(new_ids) & (real - set(moves)))
     ghosts = sorted(set(new_ids) & (set(identities) - real))
     validation = {
-        "V0_ruled_set": {"pass": ruled_now == sorted(RULED), "measured": len(ruled_now),
-                         "missing": sorted(set(RULED) - set(ruled_now)), "extra": sorted(set(ruled_now) - set(RULED))},
+        "V0_ruled_set": pinned_gate(RULED, {"ruled"}),
+        "V0_ruled_43_set": pinned_gate(RULED_43, {"standalone", "missed"}),
+        "P0_not_applied": {"pass": not stamped, "applied": len(stamped), "stamped": stamped[:10]},
         "V2_new_ids_unique_and_free": {"pass": not dup and not collide and len(alias) == len(moves),
                                        "duplicates": dup, "collisions": collide,
                                        "unplaced": sorted(set(moves) - set(alias))},
@@ -428,10 +519,11 @@ def rekey_skyview(alias, root=ROOT):
     return done
 
 
-def render_report(plan, today):
+def render_report(plan, today, receipt="kb/eths_remint_out/<date>/<scope>/alias_map.json"):
+    scopes = tuple(plan["scopes"])
     L = [f"# ETHS re-mint - dry run {today}", "",
-         "Sam's ruling, 2026-09-22 (open-asks card 1): re-mint the 31 ETHS-prefixed physical-activity "
-         "identities under the playbook. `--scope` for this receipt: " + ", ".join(plan["scopes"]) + ".", ""]
+         f"The ruling: {ruling_for(scopes)}. The re-mint runs under the playbook "
+         "(docs/coursecontrolnumber_remint.md). `--scope` for this receipt: " + ", ".join(scopes) + ".", ""]
     L += ["## Validation", ""]
     for k, v in plan["validation"].items():
         L.append(f"- **{k}**: {'pass' if v.get('pass') else 'FAIL'}"
@@ -450,26 +542,41 @@ def render_report(plan, today):
         L += ["", f"**{len(band2)} new ids sit in a continuation band** ({band2[0]} to {band2[-1]}): the "
               "target bucket's band 1 is full, and minting continues into the next band digit (Sam, "
               "2026-09-03, readings card 11). The digit carries no transferability meaning."]
-    if plan["held"]:
-        L += ["", f"## Held ({len(plan['held'])})", ""]
-        for k, v in sorted(plan["held"].items()):
+    reused = plan.get("reused_retired_ids") or []
+    if reused:
+        L += ["", f"**{len(reused)} new ids take a slot an earlier re-mint vacated** (an id a registered "
+              "ALIAS_MAPS receipt names, held by nothing live today): the collision surface is every live "
+              "key, as it was for the 31 and the prefix fold, and the chain resolves a stored id through "
+              "the maps of its own era. " + ", ".join(reused[:12]) + (" ..." if len(reused) > 12 else "")]
+    held_in = {k: v for k, v in plan["held"].items() if v["scope"] in scopes}
+    held_out = {k: v for k, v in plan["held"].items() if v["scope"] not in scopes}
+    if held_in:
+        L += ["", f"## Held ({len(held_in)})", "", "They keep their ids until a second signal arrives.", ""]
+        for k, v in sorted(held_in.items()):
             L.append(f"- {k} ({v['scope']}) {v['title']}: {v['why_held']}")
-    rest = plan["not_in_scope"]
+    rest = {**plan["not_in_scope"], **held_out}
     if rest:
         per = Counter(v["scope"] for v in rest.values())
-        L += ["", "## The same defect outside this receipt's scope (not ruled)", "",
-              "Each class re-mints the same way once Sam rules: " +
-              ", ".join(f"{per[s]} {s}" for s in SCOPES if per.get(s)) + ".", ""]
+        L += ["", "## Outside this receipt's scope", "",
+              ", ".join(f"{per[s]} {s}" for s in SCOPES if per.get(s)) + ". A class Sam ruled to move "
+              "re-mints under its own receipt; the rest stay on their ids.", ""]
         for s in SCOPES:
             ids = sorted(k for k, v in rest.items() if v["scope"] == s)
-            if ids:
-                L.append(f"- **{s}** ({len(ids)}): " + ", ".join(f"{k} {rest[k]['title']}" for k in ids[:60])
-                         + (" ..." if len(ids) > 60 else ""))
+            if not ids:
+                continue
+            own = next((r for r in RULED_SCOPES if s in r), None)
+            why = ("moves under its own receipt, " + ruling_for(own)) if own else STAY_RULING
+            L.append(f"- **{s}** ({len(ids)}; {why}): "
+                     + ", ".join(f"{k} {rest[k]['title']}" + (" (held)" if k in held_out else "") for k in ids[:60])
+                     + (" ..." if len(ids) > 60 else ""))
     L += ["", "## After the apply", "",
           "1. Register the receipt in `kb/alias_chain.py` ALIAS_MAPS in the same commit, and run "
           "`python3 kb/_post_apply_chain.py`.",
-          "2. Dispatch `supabase-rekey.yml` with this receipt before the next cron's curation sync.",
-          "3. Read the live kb_curation rows back: none on an old id.", ""]
+          f"2. Re-key SkyView's hand-built layout: `python3 kb/_eths_remint.py --rekey-skyview --receipt {receipt}`, "
+          "then rebuild the payloads the lints check (`kb/_build_ccr_cpl.py`, `kb/_build_remint_blast_radius.py`).",
+          f"3. After the merge, before the next cron's curation sync: dispatch `supabase-rekey.yml` with "
+          f"`alias_map_path={receipt}`.",
+          "4. Read the live kb_curation rows back: none on an old id.", ""]
     return "\n".join(L)
 
 
@@ -493,11 +600,13 @@ def main(argv=None):
         alias = {k: (v["new_id"] if isinstance(v, dict) else v) for k, v in receipt["aliases"].items()}
         print("SkyView layout re-keyed:", rekey_skyview(alias))
         return 0
-    scopes = tuple(s.strip() for s in args.scope.split(",") if s.strip())
-    if any(s not in SCOPES for s in scopes):
+    asked = [s.strip() for s in args.scope.split(",") if s.strip()]
+    if not asked or any(s not in SCOPES for s in asked):
         sys.exit(f"--scope takes {', '.join(SCOPES)}")
-    if scopes != ("ruled",) and args.apply:
-        sys.exit("--apply moves the ruled class only until Sam rules on the rest")
+    scopes = canonical_scopes(asked)
+    if args.apply and scopes not in RULED_SCOPES:
+        sys.exit("--apply admits only the scopes Sam ruled to move: "
+                 + " and ".join(",".join(s) for s in RULED_SCOPES) + ". " + STAY_RULING + ".")
     if args.apply and not (args.ruling and args.receipt and args.fresh_read):
         sys.exit("--apply needs --ruling, --receipt and --fresh-read")
 
@@ -508,8 +617,7 @@ def main(argv=None):
     plan = compute_plan(courses, singletons, docs["memberships"]["memberships"], curations,
                         docs["articulations"].get("identities") or {}, rec.load_id_reservations(),
                         physical_words(), scopes)
-    stamped = sorted(k for k, r in list(courses.items()) + list(singletons.items()) if r.get(STAMP) in plan["alias"])
-    plan["validation"]["P0_not_applied"] = {"pass": not stamped, "stamped": stamped[:10]}
+    plan["reused_retired_ids"] = sorted(set(plan["alias"].values()) & ever_minted_ids())
 
     print(f"ETHS re-mint - classes {plan['classes']} - moving {len(plan['moves'])} ({', '.join(scopes)}), "
           f"held {len(plan['held'])}")
@@ -527,11 +635,11 @@ def main(argv=None):
         dump(os.path.join(out, "alias_map.json"), {
             "_status": "ETHS re-mint old->new alias (receipt + rollback inverse) - DRY RUN, not applied",
             "_at": today, "_scope": list(scopes), "_count": len(plan["alias"]),
-            "_ruling": "Sam, 2026-09-22 (open-asks card 1, cross-list item 3): re-mint the 31",
+            "_ruling": ruling_for(scopes),
             "aliases": {k: {"new_id": v, "route": plan["moves"][k]["route"],
                             "discipline": plan["moves"][k]["discipline"]} for k, v in sorted(plan["alias"].items())}})
         with open(os.path.join(out, "report.md"), "w", encoding="utf-8") as f:
-            f.write(render_report(plan, today))
+            f.write(render_report(plan, today, receipt=os.path.relpath(os.path.join(out, "alias_map.json"), ROOT)))
         print(f"DRY RUN - wrote {os.path.relpath(out, ROOT)}/(plan.json, alias_map.json, report.md)")
         return 0 if all(v.get("pass") for v in plan["validation"].values()) else 1
 
@@ -559,7 +667,7 @@ def main(argv=None):
                     "_applied_at": today, "_applied_ruling": args.ruling, "_counts": dict(counts)})
     dump(args.receipt, receipt)
     print(f"APPLIED - {dict(counts)}. Next: register the receipt in kb/alias_chain.py ALIAS_MAPS, run "
-          f"kb/_post_apply_chain.py, commit, then dispatch supabase-rekey.yml with the receipt.")
+          f"kb/_post_apply_chain.py and --rekey-skyview, commit, then dispatch supabase-rekey.yml with the receipt.")
     return 0
 
 

@@ -26,8 +26,16 @@
 // exact defect because it counts <td> elements. The corruption happens at PAINT,
 // from CSS, and jsdom does no layout. The one question jsdom CAN answer is
 // "does this selector match this element" — so that is what this file asks.
+//
+// ROUND 8 (Sam, 2026-09-29) TURNED THE QUESTION AROUND. The drill-in is no
+// longer a table nested in the detail row: its priorities are rows OF the
+// institution table (a header band, one row per priority, one cell per
+// column), and hiding a column must now hide it there too, or a figure lands
+// under the wrong header. The detail rows that remain (the Minimum Conditions
+// line, the closing line) are one spanning cell each, and nothing inside them
+// may be matched. §3 and §4 assert both halves.
 const H = require("./lib/cpl_funding_harness.js");
-const { freshDom, boot, click, check, finish, consumerSrc } = H;
+const { freshDom, boot, click, check, finish, consumerSrc, drillOf } = H;
 
 // Every selector the hide <style> declares, one per rule. Splitting matters:
 // joining the rules into one string concatenates `td:nth-child(3)` with the next
@@ -105,29 +113,33 @@ function matchCount(els, selectors) {
     mainCells.filter((td) => sels.some((sl) => td.matches(sl)))
       .map((td) => td.cellIndex).sort(function (a, b) { return a - b; }).join(",") === want);
 
-  // ── THE REGRESSION ────────────────────────────────────────────────────────
-  const dtlCells = Array.from(det.querySelectorAll(".cplfund-dtl-table td"));
-  check("3a: the detail table renders cells to test", dtlCells.length >= 8);
-  check("3b: ⭐ NO cell of the nested detail table is matched by the hide rule",
-    matchCount(dtlCells, sels) === 0);
-  // Every DATA row of every lane table (one per lane since 2026-09-24): its
-  // third cell — Max Funds now — survives the main table's column-3 rule.
-  const dataRows = Array.from(det.querySelectorAll(".cplfund-dtl-table tr")).filter((tr) => tr.querySelector("td"));
-  check("3c: specifically, detail column 3 survives on every row of both lane tables (" + dataRows.length + ")",
-    dataRows.length >= 6 && dataRows.every((tr) => {
-      const td = tr.querySelectorAll("td")[2];
-      return td && !sels.some((s) => { try { return td.matches(s); } catch (e) { return false; } });
-    }));
+  // ── THE REGRESSION, BOTH WAYS ─────────────────────────────────────────────
+  // The hidden positions of a row, from the rules alone.
+  const hiddenAt = (tr) => Array.from(tr.cells).filter((c) => sels.some((sl) => { try { return c.matches(sl); } catch (e) { return false; } }))
+    .map((c) => c.cellIndex).sort(function (a, b) { return a - b; }).join(",");
+  const d = drillOf(doc, row);
+  check("3a: the college drill-in renders its priority rows and its header band, one cell per column",
+    d.rows.length >= 3 && !!d.band && [d.band].concat(d.rows).every((tr) => tr.cells.length === headKeys.length));
+  check("3b: ⭐ the rules hide the default's columns in the band and in every priority row, as on the institution row (" + want + ")",
+    d.rows.length >= 3 && [d.band].concat(d.rows).every((tr) => hiddenAt(tr) === want));
+  // The detail rows keep their one spanning cell, and nothing nested in them
+  // can be reached: a grid item hidden by a column rule would drop a
+  // condition or a note for every reader.
+  const nested = d.detail.reduce((a, tr) => a.concat(Array.from(tr.querySelectorAll("*"))), []);
+  check("3c: nothing in the drill-in's detail rows is matched — not their spanning cell, not a child of it (" + nested.length + ")",
+    d.detail.length >= 2 && nested.length > 10 && matchCount(nested, sels) === 0 &&
+    matchCount(d.detail.map((tr) => tr.cells[0]), sels) === 0);
 
-  // The statewide expand added 2026-09-14 renders the SAME table, so it inherits
-  // the same exposure and needs the same guarantee.
+  // The statewide expand renders the SAME rows, so it carries the same
+  // exposure and needs the same guarantee.
   const sysRow = doc.querySelector("#cplFundTable tbody tr.cplfund-systemrow");
   click(window, sysRow.querySelector(".cplfund-caret"));
-  const sysDet = doc.querySelector("#cplFundTable tbody tr.cplfund-systemrow").nextElementSibling;
-  const sysCells = Array.from(sysDet.querySelectorAll(".cplfund-dtl-table td"));
-  check("4a: the statewide expand renders its own detail cells", sysCells.length >= 8);
-  check("4b: and none of them is matched either",
-    matchCount(sysCells, sels) === 0);
+  const sd = drillOf(doc, doc.querySelector("#cplFundTable tbody tr.cplfund-systemrow"));
+  check("4a: the statewide expand renders its own priority rows", sd.rows.length >= 3 && !!sd.band);
+  const sysNested = sd.detail.reduce((a, tr) => a.concat(Array.from(tr.querySelectorAll("*"))), []);
+  check("4b: they hide the same positions, and nothing in its detail rows is matched",
+    [sd.band].concat(sd.rows).every((tr) => hiddenAt(tr) === want) && matchCount(sysNested, sels) === 0 &&
+    matchCount(sd.detail.map((tr) => tr.cells[0]), sels) === 0);
 
   // ── SOURCE GUARD ──────────────────────────────────────────────────────────
   // The DOM checks above pass the moment the selector is scoped ANY way that
@@ -137,9 +149,10 @@ function matchCount(els, selectors) {
   const fn = consumerSrc.slice(consumerSrc.indexOf("function colHideStyleHtml"),
     consumerSrc.indexOf("function colMenuHtml"));
   const emitted = (fn.match(/"\.cplfund-table[^"]*"/g) || []).join(" ");
-  check("5a: the emitted selector uses child combinators from .cplfund-table onward",
+  check("5a: the emitted selector uses child combinators from .cplfund-table onward, the band's included",
     /\.cplfund-table > thead > tr > th/.test(emitted) &&
-    /\.cplfund-table > tbody > tr:not\(\.cplfund-detail\) > td/.test(emitted));
+    /\.cplfund-table > tbody > tr:not\(\.cplfund-detail\) > td/.test(emitted) &&
+    /\.cplfund-table > tbody > tr\.cplfund-subhead > th/.test(emitted));
   check("5b: and declares no descendant hop that could re-enter a nested table",
     !/\.cplfund-table (thead|tbody)/.test(emitted));
 }
