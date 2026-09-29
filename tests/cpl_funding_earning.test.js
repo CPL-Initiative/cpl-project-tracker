@@ -351,7 +351,7 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
   const firstRow = doc.querySelector("#cplFundTable tbody tr.cplfund-row");
   check("F: the Elig column is gone; the pie leads the Institution cell, and the Curr headers say when funding counts",
     !doc.querySelector('#cplFundTable th[data-sort="elig"]') && !!firstRow && !!firstRow.querySelector("td.t > .cf-lead > .cf-elig") &&
-    /A gray figure means the institution has yet to meet all its minimum conditions; the model counts its funding once it meets them/.test(
+    /A gray figure means the institution has yet to meet all its minimum conditions; it shows the funding its measures compute to, available once it meets them/.test(
       (doc.querySelector('#cplFundTable th[data-sort="cr_current"]') || { getAttribute: () => "" }).getAttribute("title") || ""));
 }
 

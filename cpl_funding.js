@@ -4143,8 +4143,24 @@
       return { text: r.met ? "Noncredit certificates posted in MAP" : "Noncredit certificates not yet posted in MAP" };
     }
     if (r.pending) return { text: "Veteran JST status pending", pending: true };
-    return r.met ? { text: "Veteran JSTs at " + pctWords, star: true }
-      : { text: "Veteran JSTs not yet at " + pctWords };
+    var counts = vetJstWords(college);
+    return r.met ? { text: "Veteran JSTs at " + pctWords, star: true, counts: counts }
+      : { text: "Veteran JSTs not yet at " + pctWords, counts: counts };
+  }
+  // The college's veteran count against its JST count, and the percent (Sam,
+  // 2026-09-29, round 9: "Next to Vet JST not yet at 75%, show the college vet
+  // count vs. their JST count and the %."). The builder masks a count under
+  // the floor (maskLt) and then bakes no percent, since a percent beside a masked count
+  // would give it back (adr-funding-counts-mask-under-10-units-carry-the-money).
+  // Veterans first, then JSTs, the order the Activity tab's Vets / JST column
+  // uses. "" until the feed carries the counts, so the line reads as before.
+  function vetJstWords(college) {
+    var pf = perf();
+    var c = pf && pf.vet_jst && pf.vet_jst[college];
+    if (!c) return "";
+    var n = function (k) { return c[k + "_suppressed"] ? maskLt(false) : fmtInt(c[k] || 0); };
+    return n("vets") + " veterans / " + n("jst") + " JSTs" +
+      (c.pct != null ? " (" + Math.round(c.pct * 100) + "%)" : "");
   }
   function eligParts(college) {
     var reqs = eligReqList(college), met = 0;
@@ -4242,7 +4258,7 @@
     for (var i = 0; i < n; i++) {
       var met = reqs[i].met;
       var w = eligReqWords(reqs[i], college);
-      var words = w.text + (w.star ? " (Veteran Star)" : "");
+      var words = w.text + (w.star ? " (Veteran Star)" : "") + (w.counts ? ": " + w.counts : "");
       var fill = met ? "var(--green-progress, #2C601A)" : "var(--surface-muted, #ECE9E2)";
       var shape;
       if (n === 1) {
@@ -4390,6 +4406,9 @@
       var tip = ' title="' + esc(stripTags(r.label)) + '"';
       if (w.pending) return '<span class="cf-cond cf-pending"' + tip + "><span>" + esc(w.text) + "</span></span>";
       var who = r.kind === "coord" && r.met ? coordWhoHtml(college) : "";
+      // The veteran counts sit NEXT TO the condition, in the small muted type
+      // of the coordinator's name, on the same line (his words: "next to").
+      var vc = w.counts ? ' <span class="cf-cond-who cf-vetcount">' + esc(w.counts) + "</span>" : "";
       // The space between the two spans keeps them two phrases in any copy
       // that loses the stylesheet; the flex column ignores it on screen.
       return '<span class="cf-cond' + (r.met ? " cf-met" : "") + (w.star ? " cf-vet" : "") + '"' + tip + ">" +
@@ -4397,7 +4416,7 @@
         (who ? '<span class="cf-cond-txt"><span>' + esc(w.text) + "</span> " + who + "</span>"
              : "<span>" + esc(w.text) + "</span>") +
         (w.star ? '<span class="cplfund-vstar" role="img" aria-label="Veteran Star" title="Veteran Star">★</span>' : "") +
-        "</span>";
+        vc + "</span>";
     }).join("");
     // The CO's controls ride the same line, for a signed-in reviewer only and
     // never in the public preview (the preview is what a college reads). A
@@ -8773,8 +8792,10 @@
   // What a gray Curr figure means, on each Curr header's hover (Sam,
   // 2026-09-29: "Gray out the Curr Funds and FTES until the 3 conditions are
   // met--explain why gray on the label hover overs").
+  // Since the same day a gray figure is the funding the measures compute to,
+  // not $0 ("it should show the calculated funding in gray").
   var GRAY_WORDS = " A gray figure means the institution has yet to meet all its minimum conditions;" +
-    " the model counts its funding once it meets them.";
+    " it shows the funding its measures compute to, available once it meets them.";
   function COLS_COLLEGE() {
     var win = frontloaded();
     var awardWhen = win ? "for the " + windowLabel() + " window" : "per year (Annual funding)";
@@ -9233,7 +9254,7 @@
     var ys = [], eys = [], earnTotal = 0;
     // The held and lane figures year by year too, so an award cell under
     // Annual funding can set one year against one year (cellFig()).
-    var hys = [], ecys = [], enys = [];
+    var hys = [], ecys = [], enys = [], hcys = [], hnys = [];
     // Earned splits two ways so the figure can be read honestly (Sam,
     // 2026-07-30): MEASURED (a MAP feed scored this college's actual against
     // its target) and ADVANCE (the metric isn't measurable yet — full cap paid
@@ -9241,6 +9262,8 @@
     // split, advances silently dominate the earned number.
     var earnMeasured = 0, earnAdvance = 0, earnWithheld = 0;
     var earnCr = 0, earnNc = 0;
+    // The held figure by lane, for the gray Curr cells (Sam, 2026-09-29).
+    var heldCr = 0, heldNc = 0;
     // The baseline participation gate (Sam, 2026-07-30). Blocked → the college
     // earns NOTHING; the cap is untouched. What it could have earned is tracked
     // as WITHHELD and held in reserve (never redistributed).
@@ -9266,9 +9289,13 @@
       //    rides this lane — no advance on origination (N2 b).
       // Goes through prioCap, so under front-load ALL of it is earnable in
       // Year 1 against the Year-1 targets and later years carry nothing.
-      var ey = 0, hy = 0, ecy = 0, eny = 0;
+      var ey = 0, hy = 0, ecy = 0, eny = 0, hcy = 0, hny = 0;
       var pay = function (paid, fr, lane) {
-        if (gate.blocked) { earnWithheld += paid; hy += paid; return; }   // held in reserve
+        if (gate.blocked) {   // held in reserve
+          earnWithheld += paid; hy += paid;
+          if (lane === "nc") { heldNc += paid; hny += paid; } else { heldCr += paid; hcy += paid; }
+          return;
+        }
         ey += paid;
         if (lane === "nc") { earnNc += paid; eny += paid; } else { earnCr += paid; ecy += paid; }
         if (!earnIsMeasured(fr)) earnAdvance += paid;   // gap/pending advance; undelivered/bad_src contribute $0
@@ -9282,7 +9309,7 @@
         var fr = earnFraction(c, p);
         pay(ncPrioCap(ncW, slot, p) * fr.f, fr, "nc");
       });
-      eys.push(ey); hys.push(hy); ecys.push(ecy); enys.push(eny);
+      eys.push(ey); hys.push(hy); ecys.push(ecy); enys.push(eny); hcys.push(hcy); hnys.push(hny);
       earnTotal += ey;
     });
     out.earned_withheld = earnWithheld;
@@ -9291,6 +9318,10 @@
     hys.forEach(function (v, i) { out["hy" + (i + 1)] = fl ? (i === 0 ? earnWithheld : 0) : v; });
     ecys.forEach(function (v, i) { out["ecy" + (i + 1)] = fl ? (i === 0 ? earnCr : 0) : v; });
     enys.forEach(function (v, i) { out["eny" + (i + 1)] = fl ? (i === 0 ? earnNc : 0) : v; });
+    hcys.forEach(function (v, i) { out["hcy" + (i + 1)] = fl ? (i === 0 ? heldCr : 0) : v; });
+    hnys.forEach(function (v, i) { out["hny" + (i + 1)] = fl ? (i === 0 ? heldNc : 0) : v; });
+    out.held_cr = heldCr;
+    out.held_nc = heldNc;
     out.earned_total = earnTotal;
     out.earned_measured = earnMeasured;
     out.earned_advance = earnAdvance;
@@ -9467,7 +9498,8 @@
   // An award cell's figure for the span its award covers. `field` names the
   // window figure; under Annual the cell reads that figure's per-year twin
   // (collegeAlloc's ey1, hy1, ecy1, eny1 …) for the viewed year.
-  var YEAR_TWIN = { earned_total: "ey", earned_withheld: "hy", earned_cr: "ecy", earned_nc: "eny" };
+  var YEAR_TWIN = { earned_total: "ey", earned_withheld: "hy", earned_cr: "ecy", earned_nc: "eny",
+    held_cr: "hcy", held_nc: "hny" };
   function cellFig(row, field) {
     if (frontloaded()) return row[field] || 0;
     return row[YEAR_TWIN[field] + (state.viewSlot || "1")] || 0;
@@ -9530,30 +9562,40 @@
     if (a < PUBLIC_MONEY_FLOOR) return PUBLIC_MONEY_FLOOR / 2;
     return coarseDollars(v);
   }
-  var GRAY_CELL_WORDS = " Gray until the institution meets all its minimum conditions.";
+  // A gated institution's Curr cell shows the funding its measures compute to,
+  // in gray, and the hover says when it becomes available (Sam, 2026-09-29:
+  // "The Current Funding on college rows should not be 0; it should show the
+  // calculated funding in gray with a hover over that it will be available
+  // once minimum conditions are met"). This answers sheet 4's open question on
+  // round 8 (keep $0, or show the figure): show the figure.
+  var GATED_CELL_WORDS = " Gray until the institution meets all its minimum conditions, and available once it meets them.";
+  var GATED_FIELD = { earned_cr: "held_cr", earned_nc: "held_nc", earned_total: "earned_withheld" };
   function curCellHtml(row, lane) {
     var cap, fig, words;
+    var gated = !!row.gate_blocked;
+    var figOf = function (field) { return cellFig(row, gated ? GATED_FIELD[field] : field); };
     if (lane === "nc") {
       cap = (row.nc_award || 0) / awardDivisor();
       if (cap <= 0.5) return '<td class="cf-cur cf-cur-nc dk c" title="Credit only: this institution holds no noncredit share.">&mdash;</td>';
-      fig = cellFig(row, "earned_nc");
-      words = "Noncredit funding " + qualifyingWords();
+      fig = figOf("earned_nc");
+      words = gated ? "Noncredit funding the model computes" : "Noncredit funding " + qualifyingWords();
     } else if (lane === "cr") {
       cap = (row.cr_award || 0) / awardDivisor();
       if (row.nco) return '<td class="cf-cur cf-cur-cr dk c" title="A noncredit-only institution: its whole award is the noncredit share.">$0</td>';
-      fig = cellFig(row, "earned_cr");
-      words = "Credit funding " + qualifyingWords();
+      fig = figOf("earned_cr");
+      words = gated ? "Credit funding the model computes" : "Credit funding " + qualifyingWords();
     } else {
       cap = (row.total || 0) / awardDivisor();
-      fig = cellFig(row, "earned_total");
-      words = "Funding " + qualifyingWords() + ", credit and noncredit together";
+      fig = figOf("earned_total");
+      words = gated ? "Funding the model computes, credit and noncredit together"
+        : "Funding " + qualifyingWords() + ", credit and noncredit together";
     }
     // Gray while the institution has yet to meet all its minimum conditions
     // (Sam, 2026-09-29). A district subtotal and the Statewide row carry no
-    // gate of their own, so they never read gray.
-    var gated = !!row.gate_blocked;
+    // gate of their own, so they never read gray, and they add only the
+    // funding that qualifies: a gray figure never enters a total.
     return '<td class="cf-cur cf-cur-' + lane + (gated ? " cf-gated" : "") + ' c" title="' +
-      esc(words + ": " + earnedMoney(fig) + " of " + fmtMoney(cap) + (gated ? "." + GRAY_CELL_WORDS : "")) + '">' +
+      esc(words + ": " + earnedMoney(fig) + " of " + fmtMoney(cap) + (gated ? "." + GATED_CELL_WORDS : "")) + '">' +
       earnedMoney(fig) + "</td>";
   }
   // TOTAL FUNDS — the max award, the combined figure the base and the cap
@@ -9749,7 +9791,7 @@
         (HEAD_TIP[col.key] ? ' title="' + esc(HEAD_TIP[col.key]) + '"' : "") + ">" + lab + "</th>";
     }).join("") + "</tr>";
     var gate = o.gated ? " cf-gated" : "";
-    var grayWords = o.gated ? "." + GRAY_CELL_WORDS : "";
+    var grayWords = o.gated ? "." + GATED_CELL_WORDS : "";
     // A figure, then its FTES line. The space keeps the two words apart in any
     // copy that loses the stylesheet (the print window, a screen reader).
     var fig = function (money, line, lineTip) {
@@ -9921,13 +9963,14 @@
         var fr = earnFraction(c, p), m = c[p.key] || 0;
         // The gate holds the FUNDING, never the measurement: an institution yet
         // to meet its minimum conditions still shows what it posted, and its
-        // Curr figures read $0 in gray, as its row's Curr columns do.
-        return { maxFtes: c[p.key + "_heads"] || 0, maxFunds: m, fr: fr, actualFunds: c.gate_blocked ? 0 : m * fr.f };
+        // Curr figures read what the measures compute to, in gray, as its
+        // row's Curr columns do (Sam, 2026-09-29).
+        return { maxFtes: c[p.key + "_heads"] || 0, maxFunds: m, fr: fr, actualFunds: m * fr.f };
       };
       var ncFig = function (p) {
         var fr = earnFraction(c, p), m = c[p.key] || 0;
         // The target reads the ROSTER row, as _ncPrios() does — never a copy.
-        return { maxFtes: prioTarget(rosterRow(c.college) || c, p), maxFunds: m, fr: fr, actualFunds: c.gate_blocked ? 0 : m * fr.f };
+        return { maxFtes: prioTarget(rosterRow(c.college) || c, p), maxFunds: m, fr: fr, actualFunds: m * fr.f };
       };
       // The priority rows sit in the college table's own columns (Sam,
       // 2026-09-29), gray in the Curr columns while the gate holds.
@@ -11211,6 +11254,17 @@
       var liveTi = mount.querySelector('[data-sectitle="' + state.titleEditing + '"]');
       if (liveTi) state.titleDraft[state.titleEditing] = liveTi.value;
     }
+    // ⚠️ THE LIVE <details> IS THE TRUTH, NOT THE TOGGLE EVENT (Sam, 2026-09-29:
+    // "The Hide function on the Intro section is buggy--keeps opening up again
+    // after collapsing"). A browser fires `toggle` as a queued task, after the
+    // click that closed the section. A redraw that lands in between (a remote
+    // load, or the press-hold redraw below) rebuilt the section from a
+    // SEC_STATE that had not heard of the click, and the Introduction, open by
+    // default, came back open. Measured in Chromium: reopened, and stayed open
+    // on the next redraw. So every redraw first reads what is on the screen.
+    mount.querySelectorAll("details.cplfund-sec[data-sec]").forEach(function (dt) {
+      saveSectionState(dt.getAttribute("data-sec"), dt.open);
+    });
     ensureCss();
     ensureDraftChip();
     paintTitleLink();

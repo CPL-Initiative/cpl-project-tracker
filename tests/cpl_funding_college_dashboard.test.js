@@ -176,9 +176,14 @@ function drillSum(doc, id, key) {
   check("2c: …with the hover 'Credit funding qualifying so far: $X of $Y'",
     cellByKey(doc, qr, "cr_current").getAttribute("title") ===
       "Credit funding qualifying so far: " + money(q.earned_cr) + " of " + money(q.cr_award));
-  check("2d: Curr Total Funds adds the lanes; an institution meeting no condition reads $0 in every Curr column",
+  // Round 9 (Sam, 2026-09-29): a gated institution's Curr cells show the
+  // funding its measures compute to, in gray, never $0.
+  const hAl = T._alloc(HELD);
+  check("2d: Curr Total Funds adds the lanes; an institution meeting no condition shows its computed figures in gray",
     cellByKey(doc, qr, "current_total").textContent.trim() === money(q.earned_total) &&
-    ["cr_current", "nc_current", "current_total"].every((k) => cellByKey(doc, hr, k).textContent.trim() === "$0"));
+    cellByKey(doc, hr, "cr_current").textContent.trim() === money(hAl.held_cr) &&
+    cellByKey(doc, hr, "current_total").textContent.trim() === money(hAl.earned_withheld) &&
+    ["cr_current", "current_total"].every((k) => cellByKey(doc, hr, k).classList.contains("cf-gated")));
   check("2e: the Curr cells are .cf-cur, never .cf-award (the award pair keeps its class to itself)",
     Array.from(qr.querySelectorAll("td.cf-cur")).length === 3 && !qr.querySelector("td.cf-cur.cf-award"));
   // Total Funds: the max award, a plain chip, no qualifying line.
