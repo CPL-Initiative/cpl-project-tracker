@@ -13,7 +13,28 @@ Your moniker is **SkyLoom**. SkyTrellis (S299) took the queue from
 container, so S299 redid the College Dashboard port from the locked mockup alone and ran
 a Rule 9a WARN checkpoint at 107,635 tokens left.
 
-## First thing: land PR #1731
+## ⚠️ First thing: reconcile PR #1731 with #1729, which merged first
+
+S298's own port reached main as
+[#1729](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1729) after S299 began
+(S299's start-of-session check saw no branch), and
+[#1730](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1730) rewrote
+`session_299_handoff.md` on main with "the College Dashboard's five follow-ups". #1731
+(this branch) is a second port of the same mockup and is held in draft. Do NOT merge it.
+Read main's `session_299_handoff.md` first, diff #1731 against #1729, and carry into a
+fresh PR off `main` only what #1729 lacks. Candidates:
+- the explainer's color fallbacks (credit header, pie fills);
+- scoping the fixed table layout off the grants table;
+- the reading-note formula wrapping at 390px;
+- statewide Actual Funds as the qualifying figure;
+- the TBA sweep;
+- the guard suite `cpl_funding_college_dashboard.test.js`.
+Then close #1731.
+
+FTES, asked by Sam 2026-09-29: the fresh DataMart pull (Annual 2025-26, pulled
+2026-09-24) is in production since #1690 (2026-09-24); Calbright keeps its 1,000 stand-in.
+
+## Then (once reconciled): land the port
 
 [#1731](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1731) is the port,
 ready for review, with this checkpoint on the same branch. Poll `get_check_runs` on the
