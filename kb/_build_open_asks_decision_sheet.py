@@ -330,6 +330,40 @@ def p_crr_rung4_units_screen():
                    else "the rung-4 units screen is gone")
 
 
+# The narrated draft of CPL Funding in Motion (Sam, 2026-09-27: it comes back
+# to him before the explainer links it), read from the committed files.
+def p_video_narrated_unlinked():
+    """The explainer still does not link the narrated cut."""
+    page = _read("funding-model/index.html")
+    open_ = "Narrated_Draft" not in page and "funding_in_motion_n1" not in page
+    return open_, ("the explainer does not link the narrated cut" if open_
+                   else "the explainer links the narrated cut")
+
+
+def _video_scene(name):
+    try:
+        scenes = json.loads(_read("prototype/funding_video/narration_s1.json") or "{}").get("scenes", [])
+    except ValueError:
+        scenes = []
+    return next((s for s in scenes if s.get("scene") == name), {})
+
+
+def p_video_timing_trails():
+    """The Timing scene's two-year line still trails its words (its cue is skipped)."""
+    open_ = any(c.get("skip") and (c.get("word") or "").startswith("The full two-year amount")
+                for c in _video_scene("Timing").get("cues", []))
+    return open_, ("the two-year amount's cue is skipped" if open_
+                   else "the two-year amount's cue is pinned")
+
+
+def p_video_sample_unnarrated():
+    """The Targets scene's voice still does not name Sample College."""
+    text = _video_scene("Targets").get("text", "")
+    open_ = bool(text) and "Sample College" not in text
+    return open_, ("the Targets narration does not name Sample College" if open_
+                   else "the Targets narration names Sample College")
+
+
 # Keyed by the item's POSITION on the sheet — the number Sam replies with, and
 # the only unique handle (two ESL cards share a `ref`).
 EVIDENCE = {
@@ -369,6 +403,11 @@ EVIDENCE = {
     # 2026-09-29 (S301): the unit-range pass, the CR Reference's two calls.
     13: [measured(p_crr_canonical_units)],
     14: [measured(p_crr_rung4_units_screen)],
+    # 2026-09-29 (S301): the narrated draft comes back to Sam (#1741, #1745).
+    15: [measured(p_video_narrated_unlinked)],
+    16: [measured(p_video_timing_trails)],
+    17: [measured(p_video_sample_unnarrated)],
+    18: [policy()],
 }
 
 PROVENANCE = {
@@ -784,6 +823,70 @@ def items():
             "Honors, lab, sport and gender screens stay. <em>It might be wrong if</em> you want a person to see "
             "every unit spread before a merge; then the screen stays and the held card shows the range."),
         'chips': chips(('As proposed', 'proposed'), ('Keep the screen', 'keep'), CH_LATER),
+    })
+
+    # 2026-09-29 (S301): the narrated draft, brought back as Sam asked on 27
+    # September, with the four calls its cue pass left.
+    I.append({
+        'lane': 'implementation-funding',
+        'title': 'The narrated draft of CPL Funding in Motion',
+        'ref': 'implementation-funding · prototype/funding_video · #1741 · #1745',
+        'facts': (
+            "Draft 3 is built, three minutes long, with each reveal cued to the word that names it: 33 of 39 land "
+            "on their word and 37 within a quarter second. The seventh scene now says <em>minimum conditions</em> "
+            "in the voice and on screen, as do the two introductions the explainer links. The explainer does not "
+            "link the narrated cut. Cards 16 to 18 hold what the draft still leaves open."),
+        'why': "Your call of 27 September: the draft comes back to you before the explainer links it.",
+        'rec': (
+            "<strong>Make the changes on cards 16 and 17, then bring draft 4 back; the explainer links it once you "
+            "approve.</strong> <em>It might be wrong if</em> draft 3 already reads well to you; then it is linked "
+            "as it stands."),
+        'chips': chips(('As proposed', 'proposed'), ('Link draft 3 as it stands', 'link'), CH_LATER),
+    })
+    I.append({
+        'lane': 'implementation-funding',
+        'title': 'The Timing line that trails its words',
+        'ref': 'implementation-funding · prototype/funding_video/narration_s1.json, the Timing scene',
+        'facts': (
+            "In the Timing scene the voice opens with the full two-year amount, and the picture shows that line "
+            "after the two release dates, so it appears 7.6 seconds after its words. The picture keeps the "
+            "introductions' order, so the fix belongs to the voice."),
+        'why': "It is the one line in the draft that arrives well after the voice names it.",
+        'rec': (
+            "<strong>Re-read the Timing scene with its first two sentences swapped</strong>, so the voice names the "
+            "release dates first and the two-year amount second. <em>It might be wrong if</em> you want the "
+            "two-year amount heard first; then the narrated cut shows it ahead of the dates."),
+        'chips': chips(('As proposed', 'proposed'), ('Leave it', 'leave'), CH_LATER),
+    })
+    I.append({
+        'lane': 'implementation-funding',
+        'title': "Sample College's target, shown and never spoken",
+        'ref': 'implementation-funding · prototype/funding_video/narration_s1.json, the Targets scene',
+        'facts': (
+            "The Targets scene shows Sample College's Access target, 44.3 FTES behind $112,484, while the voice "
+            "speaks of targets in general. The Maximum allocation scene names Sample College's figure aloud."),
+        'why': "A figure on screen that the voice passes over reads as a gap to a viewer who follows by ear.",
+        'rec': (
+            "<strong>Add one sentence after the quarter-system line: <em>Sample College's Access target, for "
+            "example, is about forty-four FTES, behind about a hundred twelve thousand dollars.</em></strong> "
+            "<em>It might be wrong if</em> the card is there to be read rather than heard; then it stays silent."),
+        'chips': chips(('As proposed', 'proposed'), ('Leave it silent', 'leave'), CH_LATER),
+    })
+    I.append({
+        'lane': 'implementation-funding',
+        'title': 'The pacing choices in draft 3',
+        'ref': 'implementation-funding · prototype/funding_video/README.md, the cues',
+        'facts': (
+            "Where the voice and the picture disagree, draft 3 chose. The $35 million counter lands on "
+            "<em>million</em>, and each barrier keeps its own pace. The years 2026–2028 and <em>One-time funding "
+            "for 2026–27</em> appear about 3 and 3.7 seconds before the voice names them. The Minimum conditions "
+            "stage waits about 3 seconds for its heading, which types in on the words. Long stretches slow the "
+            "eased motion, and the arrow can point about 2 seconds before its figure appears."),
+        'why': "None of these breaks your rule of 27 September, and each has a one-line fix if one bothers you.",
+        'rec': (
+            "<strong>Keep them all.</strong> <em>It might be wrong if</em> one of them catches your eye when you "
+            "watch; name it in the note and it changes in draft 4."),
+        'chips': chips(('Keep them all', 'proposed'), ('Change some (name them in the note)', 'change'), CH_LATER),
     })
     return I
 
