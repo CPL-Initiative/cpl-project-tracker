@@ -35,6 +35,11 @@ When judgments only
   fifteen rulings in one sitting. Human-facing version:
   `docs/working_with_claude_code.md` §11.
 
+⭐ **JUST THE ITEMS (Sam, 2026-09-29):** *"Per our rules, no need for instruction section on
+decision sheets; just the items."* A sheet opens on item 1: no framing sentence, no count line,
+no how-to box. `build_sheet()` draws that intro only when a builder passes `framing`, `curator`,
+`counts` or `howto`, so pass none. The open-asks builder follows it from sheet 4.
+
 ## Reading the replies (added 2026-09-09)
 
 The session reads the verdicts FIRST, with the Artifact tool's `read_db` on
