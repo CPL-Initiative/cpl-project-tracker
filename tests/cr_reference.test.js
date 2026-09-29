@@ -298,7 +298,11 @@ const pendingEmptyWrite = (function () {
   w.CPL_CR_REFERENCE._render();
   const html = w.document.getElementById("cr-reference-root").innerHTML;
   check("B9 a group whose units vary says so even though rung 1 overrode the screen",
-    /units vary/.test(html));
+    /3\u20135 units/.test(html));
+  // Units never split an identity (Sam, 2026-09-27): the line states the range
+  // its wordings join, never a bare "units vary" where the figures are known.
+  check("B9b the range reads from the wordings' own figures, not a bare 'units vary'",
+    !/>units vary</.test(html));
 })();
 
 // ── B10. A curator decision must never be dressed as automation ───────────
