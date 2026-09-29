@@ -183,6 +183,14 @@ jobs:
       # Pure-stdlib python; same non-required check.
       - name: Orphan-parent worklist (the decidable column, and freshness)
         run: python3 tests/orphan_parent_worklist_test.py
+      # The CSR scanner's anchor rule compares the M-ID's prefix, never the
+      # anchor's `subject` field (the modal local code). Reading the field made
+      # 121 of the CSR's 136 Jev questions on 2026-09-29, every one already
+      # settled by the re-key. Its duplicate rule honors a fan-in both entries
+      # declare (FTVE, Sam's ruling of 2026-09-03). Pure-stdlib python; same
+      # non-required check.
+      - name: CSR scanner rules (compare the id, honor a ruled fan-in)
+        run: python3 tests/csr_trail_rules_test.py
 
       # The standing open-asks sheet must cover every lane that carries an open
       # ask. Sam's "always" (2026-09-22) cannot depend on a session remembering:
