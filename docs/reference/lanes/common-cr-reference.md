@@ -160,14 +160,17 @@ hold a ruling.
 the database. Each other center needs one before its first sheet, routed through
 Governance under Rule 10(a3).
 
-## NEEDS SAM — a Jev next step per reference (2026-09-29, S301)
+## NEEDS SAM — a Jev next step per reference, and the unit range (2026-09-29, S301)
 
-Cards 8–11 of the standing sheet (`2026-09-29-open-asks-2`), counts measured by
+Cards 8–11 of the standing sheet (`2026-09-29-open-asks-3`), counts measured by
 `kb/_jev_next_steps.py`: **CCR** ask where a course belongs (a
 choice among its members' disciplines), then 50 from cross-list kind C ·
 **CCRR** pair by shared course identity behind the course-count guard · **CER** a
 decisions store through Governance, then the 38 · **CSR** fix AUTB (AGAB), then
-the 15.
+the 15. Cards 13–14, Sam's unit rule of 2026-09-27: name 87 wording groups by
+topic and range (*Engine Performance (2–5 units)*; renaming moves the typesafe
+trial's grouping by `canonical`, so re-measure card 9 after), and retire the
+rung-4 units screen that holds 30 groups (*Calculus I* at 4 and 5).
 
 ## The CCR rung, and Sam's ladder design (2026-09-21, S282 SkyLedger)
 
@@ -203,12 +206,6 @@ STAYS, because that DEH prerequisite list IS the evidence.
 
 His words verbatim, including the revision that reordered it, are in the
 `CPLBrain` braindump and `docs/common_cr_reference_lessons.md`.
-
-**CIP IS AT PROGRAM LEVEL** (`coci_college_programs.cip_code`), and what colleges
-actually assigned beats the CO's published crosswalk ~3x: mean **2.85** CIPs per
-TOP over 19,349 programs, modal share **86.5%**, against 8.4 and a worst case of
-1,032. `kb/top_cip_map.json` holds it (builder carries the refresh query) and it
-resolves for **1,235 of 1,237**. It corroborates, never gates.
 
 ⚠️ **THE PARENT LAYER IS AN UNREVIEWED MAY DRAFT, AND SAM CALLED IT.** Measured
 on `kb/coci_minted_courses.json`: **15,513 of 19,568 parents (79%)** were minted
