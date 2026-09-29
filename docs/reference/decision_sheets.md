@@ -1,7 +1,7 @@
 ---
 title: "Decision sheets — how to build one, and how to read the replies"
 created: 2026-09-09
-updated: 2026-09-24
+updated: 2026-09-29
 tags: [reference, governance]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference
@@ -296,10 +296,14 @@ anything waiting on him belongs on it, and it is rebuilt and handed over rather
 than held back for a quorum.
 
 **Builder:** `kb/_build_open_asks_decision_sheet.py` →
+`docs/visuals/2026-09-29-open-asks.html` (seven cards: the three below, carried over unanswered,
+and four from the College Dashboard port), published S300 at
+https://claude.ai/artifact/QiaDezD2AN6XDzctUCSCfw (`SHEET_ID` `2026-09-29-open-asks`, a fresh
+store, `capabilities: {db: {}, comments: {}}`). Before it:
 `docs/visuals/2026-09-28-open-asks.html` (three cards: the two funding questions still open,
 and the ETHS re-mint's extension), published S297 at
-https://claude.ai/artifact/C1uyRhneegqQ4XSPRKiC3B (`SHEET_ID` `2026-09-28-open-asks`, a fresh
-store, `capabilities: {db: {}, comments: {}}`). Its cards 1 and 2 are cards 3 and 4 of the
+https://claude.ai/artifact/C1uyRhneegqQ4XSPRKiC3B (`SHEET_ID` `2026-09-28-open-asks`; its store
+held no replies on 2026-09-29). Its cards 1 and 2 are cards 3 and 4 of the
 2026-09-27 funding sheet: read both stores, and the later answer stands. Its predecessor,
 `docs/visuals/2026-09-27-funding-asks.html`, was
 published at https://claude.ai/artifact/74AfMNmXPQYP5X7XKpjHfH (`SHEET_ID` `2026-09-27-funding-asks`, a fresh store, four

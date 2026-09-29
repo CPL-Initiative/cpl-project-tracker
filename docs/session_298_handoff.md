@@ -4,6 +4,8 @@ date: 2026-09-28
 session: 297 (SkyLantern)
 tags: [handoff, permissions, prompt-storm, decision-sheets, jev]
 status: current
+superseded: true
+superseded_by: session_301_handoff.md
 ---
 
 # You are Session 298

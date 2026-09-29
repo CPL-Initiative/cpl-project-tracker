@@ -4,6 +4,8 @@ date: 2026-09-28
 session: 298 (SkyLatch)
 tags: [handoff, implementation-funding, sierra-training, mockup, ui]
 status: current
+superseded: true
+superseded_by: session_301_handoff.md
 ---
 
 # You are Session 299

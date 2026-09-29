@@ -79,3 +79,86 @@ same outcome by another route; ask instead.
 **Next.** Land the funding port (branch `claude/funding-dashboard-ui-s298`) and
 #1726 on green `test`; take the Sierra Training mockup through Sam's rounds,
 then port it the same way.
+
+## 2026-09-29 — S299 SkyTrellis: the port
+
+The S298 port agent's worktree branch never reached GitHub, so the container
+took it; S299 redid the port from the published mockup alone (PR #1731).
+*(Correction, S300: S298's port had reached GitHub. It merged as #1729
+minutes after S299's start-of-session check, so #1731 duplicated it and closed
+unmerged; #1732 carried what it had that #1729 lacked.)* The
+mockup held enough: its markup, class names, titles and change list were the
+spec, and the "Today" copy beside it showed what each round had changed.
+
+**What worked.**
+- **The consumer map before the port, again.** A background Explore agent read
+  every suite and surface against the planned changes while the port was
+  written. Its report caught two real defects before CI could: the new
+  fixed-layout rule also reached the grants table (it shares `.cplfund-table`),
+  and the public explainer defines only its own tokens, so the credit header's
+  `var(--seal-blue)` painted white text on no fill there, and met pie slices
+  painted black (pre-existing). Scope the rule; give every new token a fallback.
+- **Read cells by column key.** Thirty suites read money cells by class
+  position (`td.cf-award:not(.cf-max)[1]`); adding the Curr columns moved every
+  index. Re-aimed through the header's `data-sort` key, they now survive the
+  next column.
+- **Mutation-test the new guard.** Three planted regressions (a reserve word in
+  a hover, statewide Actual Funds back to the demonstrated figure, the chip
+  without its date) each turned the new suite red.
+
+**What bit.**
+- **A figure outside the mockup still moved.** Sam's "no reserve figure
+  anywhere on screen" made statewide Actual Funds the sum of what institutions
+  qualify for. The Priority Outcomes cards, outside the mockup, still print a
+  "Current Total" of what they have demonstrated: the same words now name two
+  figures. Put to Sam, not decided.
+- **A check floor counts assertions.** Merging two checks dropped
+  `gate_ledger_public` below its floor of 58; the fix was a meaningful check,
+  never a lowered floor.
+- **A mutation run beside the background suite** can poison whichever file runs
+  in that window; re-run what failed.
+
+**Next.** Merge #1731 on green `test`; Sam's two calls; then port Sierra
+Training round 1 the same way.
+
+## 2026-09-29 — S300 SkyLoom: reconciling two ports, then Sierra Training
+
+S300 opened on two ports of one mockup: #1729 on main, #1731 held in draft.
+
+**What worked.**
+- **Diff the two ports against their common base, file by file, and keep main's
+  wherever it did the same job.** Main was the more complete port almost
+  everywhere (print CSS, the public-preview sweep, the CSV's Curr twins, the
+  pending states). What #1731 alone had was a short list: TBA, the reading note,
+  the phone wrap, and the layout scope. Carrying the list, not the branch, kept
+  #1732 to 21 files.
+- **Measure the claimed defect on main before porting its fix.** Chromium
+  confirmed both of #1731's layout claims on main (the grants table's five equal
+  219px columns; the note 27px past 390px) and found one neither port knew: the
+  explainer printed the table 898px wide in a 720px box, because an inline
+  `min-width` outranks every print rule but an `!important` one.
+- **A consumer map before a port, again, and this time it changed the design.**
+  It found that "Try it in: My College", wired the obvious way, would type the
+  question into the HIDDEN CPL Assistant input and burn the hand-off key: the
+  reader picked the pane by suppression, not by destination. The fix is a second
+  key naming the destination, delivered when My College's box exists.
+- **Delegate a port with the spec, the consumer map and the doctrine in the
+  prompt; review the diff for escaping and tokens; cherry-pick onto the fresh
+  base.** The worktree agent's two commits conflicted only in
+  `tests/check_floor.json`'s note.
+
+**What bit.**
+- **A header that names a concept must be tested against the concept.** The
+  CSV's *Demonstrated* column repeated *Current total*, and a test pinned it to
+  `earned_total`, so the test guarded the mislabel. Demonstrated is qualifying
+  plus held.
+- **Self-matching process checks.** A waiter that polls `pgrep -f "<file>"`
+  matches its own command line and never exits; a `pkill -f "<cmd>"` kills the
+  shell that runs it.
+- **A repo-wide lint scans an agent's worktree** when the worktree lives inside
+  the repo (`.claude/worktrees/`): `alias_chain_single_source_test` read the copy
+  as a second declaration. CI has no worktree; remove it after the cherry-pick.
+- **A parallel session is still alive after its emergency close.** S299 corrected
+  its own memory row four minutes after S300 closed #1731.
+
+**Next.** Sam's seven-card sheet; merge #1733; the queue after Sierra (Jev first).

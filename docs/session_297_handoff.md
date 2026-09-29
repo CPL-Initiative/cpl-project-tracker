@@ -4,6 +4,8 @@ date: 2026-09-28
 session: 296 (SkyBeacon)
 tags: [handoff, implementation-funding, remint, discipline-crosslist, decision-sheets]
 status: current
+superseded: true
+superseded_by: session_301_handoff.md
 ---
 
 # You are Session 297

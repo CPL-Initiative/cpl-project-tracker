@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 497,
+   "count": 498,
    "docs": [
     {
      "created": "2026-08-14",
@@ -3537,6 +3537,26 @@
      "title": "A store's freshness tracks whether its update is unconditional",
      "type": "methodology",
      "updated": "2026-08-29"
+    },
+    {
+     "created": "2026-09-29",
+     "governs": [
+      "cpl_funding.js",
+      "funding-model/index.html",
+      "tests/cpl_funding_college_dashboard.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-style-rule-must-reach-only-the-markup-that-supplies-its-inputs.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "ui",
+      "css",
+      "print",
+      "first-light"
+     ],
+     "title": "A style rule must reach only the markup that supplies its inputs",
+     "type": "methodology",
+     "updated": "2026-09-29"
     },
     {
      "created": "2026-09-12",
@@ -14133,7 +14153,7 @@
      ],
      "title": "Decision sheets \u2014 how to build one, and how to read the replies",
      "type": null,
-     "updated": "2026-09-24"
+     "updated": "2026-09-29"
     },
     {
      "created": "2026-08-30",
@@ -14301,8 +14321,43 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 270,
+   "count": 272,
    "docs": [
+    {
+     "created": "2026-09-29",
+     "governs": [],
+     "n": 301,
+     "path": "docs/session_301_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "implementation-funding",
+      "college-dashboard",
+      "sierra-training",
+      "decision-sheet"
+     ],
+     "title": "two ports reconciled, Sierra Training redesigned, seven asks on one sheet",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-09-29",
+     "governs": [],
+     "n": 300,
+     "path": "docs/session_300_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "implementation-funding",
+      "college-dashboard",
+      "sierra-training",
+      "mockup",
+      "ui"
+     ],
+     "title": "the College Dashboard ported, two calls for Sam, Sierra Training next",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-28",
      "governs": [],
@@ -18881,5 +18936,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 983
+ "total": 986
 }
