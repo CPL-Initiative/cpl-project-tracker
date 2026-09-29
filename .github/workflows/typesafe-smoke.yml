@@ -98,7 +98,7 @@ jobs:
             ${{ inputs.rung && format('--rung {0}', inputs.rung) || '' }}
       - name: Upload the worklist
         if: inputs.adjudicate != ''
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: jev-${{ inputs.adjudicate }}
           path: kb/jev_out/
@@ -115,7 +115,7 @@ jobs:
         run: python3 kb/_jev_battery.py --ask
       - name: Upload the battery profiles
         if: inputs.battery
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: jev-battery
           path: kb/jev_out/
