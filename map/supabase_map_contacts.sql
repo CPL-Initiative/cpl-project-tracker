@@ -103,12 +103,26 @@ create policy mcn_update on public.map_college_nudges for update
 -- Implementation Funding tab's baseline-eligibility badge ①. Mirrors the
 -- map_users_summary() SECURITY DEFINER pattern; the coordinator's name/email
 -- never leave the gated table via this path.
-create or replace function public.map_coordinator_summary()
-returns table (college text, has_coordinator boolean, last_synced timestamptz)
+-- THE FIRST CONDITION HAS THREE PARTS (Sam, 2026-09-29, open-asks sheet 4 card 1:
+-- "Check all three"): a CPL Coordinator, a primary CPL contact, and the college's
+-- CPL landing page configured. The function adds one boolean per part, so the
+-- public page and the reviewer's tab run the same check without either seeing a
+-- name: the published mirror (map_college_contacts_pub) has no primary contact.
+-- A person counts by name OR email, as the coordinator always has; the landing
+-- page counts as an https URL (122 of 122 on file were https, 2026-09-29).
+-- A return type cannot change under CREATE OR REPLACE, so the function is
+-- dropped and recreated; the grant below restores what it held.
+drop function if exists public.map_coordinator_summary();
+create function public.map_coordinator_summary()
+returns table (college text, has_coordinator boolean, has_primary_contact boolean,
+               has_landing_page boolean, last_synced timestamptz)
 language sql stable security definer set search_path = public as $$
   select college,
          (nullif(trim(coalesce(cpl_coordinator, '')), '') is not null
           or nullif(trim(coalesce(cpl_coordinator_email, '')), '') is not null) as has_coordinator,
+         (nullif(trim(coalesce(primary_contact, '')), '') is not null
+          or nullif(trim(coalesce(primary_contact_email, '')), '') is not null) as has_primary_contact,
+         (coalesce(landing_page_url, '') ~* '^https://[^[:space:]]+$') as has_landing_page,
          synced_at as last_synced
   from public.map_college_contacts;
 $$;
