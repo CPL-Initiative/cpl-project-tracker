@@ -45,12 +45,12 @@ const DASH = "—";
   check("1c: the Max cells never read gray",
     ["cr_award", "nc_award", "total"].every((k) => held[k] && !held[k].gated));
   check("1d: a gray cell's own hover says why it is gray",
-    CURR.every((k) => /Gray until the institution meets all its minimum conditions\./.test(held[k].tip)));
+    CURR.every((k) => /Gray until the institution meets all its minimum conditions, and available once it meets them\./.test(held[k].tip)));
   check("1e: a qualified cell's hover carries no gray words",
     CURR.every((k) => !/Gray until/.test(met[k].tip)));
   const head = (k) => doc.querySelector('#cplFundTable thead th[data-sort="' + k + '"]');
   check("1f: each Curr header's hover explains the gray",
-    CURR.every((k) => head(k) && /A gray figure means the institution has yet to meet all its minimum conditions; the model counts its funding once it meets them\./
+    CURR.every((k) => head(k) && /A gray figure means the institution has yet to meet all its minimum conditions; it shows the funding its measures compute to, available once it meets them\./
       .test(head(k).getAttribute("title") || "")));
   check("1g: the gray is the text-muted token, the lightest gray that stays AA-readable",
     /\.cf-gated[^{]*\{[^}]*color:\s*var\(--text-muted/.test(consumerSrc));

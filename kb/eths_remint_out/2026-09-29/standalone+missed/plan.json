@@ -1,0 +1,1660 @@
+{
+  "scopes": [
+    "standalone",
+    "missed"
+  ],
+  "classes": {
+    "missed": 3,
+    "standalone": 40,
+    "merged_elsewhere": 42
+  },
+  "moves": {
+    "ETHS M10AS": {
+      "old_id": "ETHS M10AS",
+      "scope": "standalone",
+      "source": "singleton",
+      "title": "Co-Ed Volleyball 2",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.10 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": [],
+      "new_id": "KINE M12OH",
+      "how": "gap-filled"
+    },
+    "ETHS M10BF": {
+      "old_id": "ETHS M10BF",
+      "scope": "standalone",
+      "source": "singleton",
+      "title": "Adapted Water Aerobics",
+      "display_title": null,
+      "route": "PEDS",
+      "discipline": "Physical Education Disabled Students",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": [],
+      "new_id": "PEDS M10EO",
+      "how": "gap-filled"
+    },
+    "ETHS M10BI": {
+      "old_id": "ETHS M10BI",
+      "scope": "standalone",
+      "source": "singleton",
+      "title": "Adv Techniques & Strategies of Baseball",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": [],
+      "new_id": "KINE M12OI",
+      "how": "gap-filled"
+    },
+    "ETHS M10BK": {
+      "old_id": "ETHS M10BK",
+      "scope": "standalone",
+      "source": "singleton",
+      "title": "Adv Techniques & Strategies of Football",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": [],
+      "new_id": "KINE M12OJ",
+      "how": "gap-filled"
+    },
+    "ETHS M10BL": {
+      "old_id": "ETHS M10BL",
+      "scope": "standalone",
+      "source": "singleton",
+      "title": "Adv Tech/Strategies of Intercollegiate Soccer",
+      "display_title": null,
+      "route": "ATHL",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": [],
+      "new_id": "ATHL M11FJ",
+      "how": "gap-filled"
+    },
+    "ETHS M10BM": {
+      "old_id": "ETHS M10BM",
+      "scope": "standalone",
+      "source": "singleton",
+      "title": "Adv Tech/Strategies of Intercollegiate Volleyball",
+      "display_title": null,
+      "route": "ATHL",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": [],
+      "new_id": "ATHL M11FK",
+      "how": "gap-filled"
+    },
+    "ETHS M10BN": {
+      "old_id": "ETHS M10BN",
+      "scope": "standalone",
+      "source": "singleton",
+      "title": "Adv Techniques & Strategies-Water Polo",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": [],
+      "new_id": "KINE M12OK",
+      "how": "gap-filled"
+    },
+    "ETHS M10BO": {
+      "old_id": "ETHS M10BO",
+      "scope": "standalone",
+      "source": "singleton",
+      "title": "Adv Techniques & Strategies of Softball",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": [],
+      "new_id": "KINE M12OL",
+      "how": "gap-filled"
+    },
+    "ETHS M10BS": {
+      "old_id": "ETHS M10BS",
+      "scope": "standalone",
+      "source": "singleton",
+      "title": "Advanced Techniques and Strategies of Intercollegiate Basketball",
+      "display_title": null,
+      "route": "ATHL",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": [],
+      "new_id": "ATHL M11FL",
+      "how": "gap-filled"
+    },
+    "ETHS M10BU": {
+      "old_id": "ETHS M10BU",
+      "scope": "standalone",
+      "source": "singleton",
+      "title": "Advanced Cardio Dance Exercise",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": [],
+      "new_id": "KINE M12ON",
+      "how": "gap-filled"
+    },
+    "ETHS M10BW": {
+      "old_id": "ETHS M10BW",
+      "scope": "standalone",
+      "source": "singleton",
+      "title": "Advanced Fitness for Chronic Disease and Injury Prevention",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": [],
+      "new_id": "KINE M12OQ",
+      "how": "gap-filled"
+    },
+    "ETHS M10BX": {
+      "old_id": "ETHS M10BX",
+      "scope": "standalone",
+      "source": "singleton",
+      "title": "Advanced Fitness Circuit",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": [],
+      "new_id": "KINE M12OY",
+      "how": "gap-filled"
+    },
+    "ETHS M10CA": {
+      "old_id": "ETHS M10CA",
+      "scope": "standalone",
+      "source": "singleton",
+      "title": "Advanced Fitness for the Newcomer",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": [],
+      "new_id": "KINE M12OZ",
+      "how": "gap-filled"
+    },
+    "ETHS M10CF": {
+      "old_id": "ETHS M10CF",
+      "scope": "standalone",
+      "source": "singleton",
+      "title": "Advanced Techs and Strats of Intercollegiate Sand Volleyball",
+      "display_title": null,
+      "route": "ATHL",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.50 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": [],
+      "new_id": "ATHL M11FM",
+      "how": "gap-filled"
+    },
+    "ETHS M10CG": {
+      "old_id": "ETHS M10CG",
+      "scope": "standalone",
+      "source": "singleton",
+      "title": "Advanced Techniques and Strategies of Intercollegiate Swimming",
+      "display_title": null,
+      "route": "ATHL",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": [],
+      "new_id": "ATHL M11FN",
+      "how": "gap-filled"
+    },
+    "ETHS M10CH": {
+      "old_id": "ETHS M10CH",
+      "scope": "standalone",
+      "source": "singleton",
+      "title": "Advanced Techniques and Strategies of Intercollegiate Tennis",
+      "display_title": null,
+      "route": "ATHL",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": [],
+      "new_id": "ATHL M11FO",
+      "how": "gap-filled"
+    },
+    "ETHS M10CL": {
+      "old_id": "ETHS M10CL",
+      "scope": "standalone",
+      "source": "singleton",
+      "title": "Beginning Aerobic Walking for Fitness and Wellness",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": [],
+      "new_id": "KINE M12PA",
+      "how": "gap-filled"
+    },
+    "ETHS M10CN": {
+      "old_id": "ETHS M10CN",
+      "scope": "standalone",
+      "source": "singleton",
+      "title": "Intermediate Aerobic Walking for Fitness and Wellness",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": [],
+      "new_id": "KINE M12PB",
+      "how": "gap-filled"
+    },
+    "ETHS M10JP": {
+      "old_id": "ETHS M10JP",
+      "scope": "standalone",
+      "source": "singleton",
+      "title": "Technical Analysis and Theory of Football - Defense",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": [],
+      "new_id": "KINE M12QM",
+      "how": "gap-filled"
+    },
+    "ETHS M10JT": {
+      "old_id": "ETHS M10JT",
+      "scope": "standalone",
+      "source": "singleton",
+      "title": "Anatomy and Kinesiology for Fitness Specialists",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": [],
+      "new_id": "KINE M12QS",
+      "how": "gap-filled"
+    },
+    "ETHS M10KS": {
+      "old_id": "ETHS M10KS",
+      "scope": "standalone",
+      "source": "singleton",
+      "title": "Strength Trainer/Fitness Assessments for Fitness Specialists",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": [],
+      "new_id": "KINE M12QU",
+      "how": "gap-filled"
+    },
+    "ETHS M10KU": {
+      "old_id": "ETHS M10KU",
+      "scope": "standalone",
+      "source": "singleton",
+      "title": "Athletic Competition",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.50 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": [],
+      "new_id": "KINE M12QV",
+      "how": "gap-filled"
+    },
+    "ETHS M10KV": {
+      "old_id": "ETHS M10KV",
+      "scope": "standalone",
+      "source": "singleton",
+      "title": "Concepts of Intercollegiate Athletic Competition",
+      "display_title": null,
+      "route": "ATHL",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.50 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": [],
+      "new_id": "ATHL M11FP",
+      "how": "gap-filled"
+    },
+    "ETHS M10LC": {
+      "old_id": "ETHS M10LC",
+      "scope": "standalone",
+      "source": "singleton",
+      "title": "Beginning Cardio Dance Exercise",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": [],
+      "new_id": "KINE M12QW",
+      "how": "gap-filled"
+    },
+    "ETHS M10LE": {
+      "old_id": "ETHS M10LE",
+      "scope": "standalone",
+      "source": "singleton",
+      "title": "Beginning Fitness for Chronic Disease and Injury Prevention",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": [],
+      "new_id": "KINE M12QX",
+      "how": "gap-filled"
+    },
+    "ETHS M10LF": {
+      "old_id": "ETHS M10LF",
+      "scope": "standalone",
+      "source": "singleton",
+      "title": "Beginning Fitness Circuit",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": [],
+      "new_id": "KINE M12QY",
+      "how": "gap-filled"
+    },
+    "ETHS M10MS": {
+      "old_id": "ETHS M10MS",
+      "scope": "standalone",
+      "source": "singleton",
+      "title": "Intermediate Cardio Dance Exercise",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": [],
+      "new_id": "KINE M12QZ",
+      "how": "gap-filled"
+    },
+    "ETHS M10MU": {
+      "old_id": "ETHS M10MU",
+      "scope": "standalone",
+      "source": "singleton",
+      "title": "Cardiovascular Fitness and Nutrition",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": [],
+      "new_id": "KINE M12RA",
+      "how": "gap-filled"
+    },
+    "ETHS M10OT": {
+      "old_id": "ETHS M10OT",
+      "scope": "standalone",
+      "source": "singleton",
+      "title": "Fitness Walking with Children",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": [],
+      "new_id": "KINE M12RD",
+      "how": "gap-filled"
+    },
+    "ETHS M10OV": {
+      "old_id": "ETHS M10OV",
+      "scope": "standalone",
+      "source": "singleton",
+      "title": "Intermediate Fitness for Chronic Disease and Injury Prevention",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": [],
+      "new_id": "KINE M12RE",
+      "how": "gap-filled"
+    },
+    "ETHS M10OY": {
+      "old_id": "ETHS M10OY",
+      "scope": "standalone",
+      "source": "singleton",
+      "title": "Intermediate Fitness Circuit",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": [],
+      "new_id": "KINE M12RF",
+      "how": "gap-filled"
+    },
+    "ETHS M10PO": {
+      "old_id": "ETHS M10PO",
+      "scope": "standalone",
+      "source": "singleton",
+      "title": "Condition & Injury Prevention-Football",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": [],
+      "new_id": "KINE M12TP",
+      "how": "gap-filled"
+    },
+    "ETHS M10SF": {
+      "old_id": "ETHS M10SF",
+      "scope": "standalone",
+      "source": "singleton",
+      "title": "Exercise Physiology Fitness Specialists",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": [],
+      "new_id": "KINE M12TX",
+      "how": "gap-filled"
+    },
+    "ETHS M10SG": {
+      "old_id": "ETHS M10SG",
+      "scope": "standalone",
+      "source": "singleton",
+      "title": "Lifetime Exercise Science",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.10 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": [],
+      "new_id": "KINE M12UE",
+      "how": "gap-filled"
+    },
+    "ETHS M10SR": {
+      "old_id": "ETHS M10SR",
+      "scope": "standalone",
+      "source": "singleton",
+      "title": "Intermediate Fitness for the Newcomer",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": [],
+      "new_id": "KINE M12UJ",
+      "how": "gap-filled"
+    },
+    "ETHS M10ST": {
+      "old_id": "ETHS M10ST",
+      "scope": "standalone",
+      "source": "singleton",
+      "title": "Physical Fitness - Women",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.10 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": [],
+      "new_id": "KINE M12UK",
+      "how": "gap-filled"
+    },
+    "ETHS M10TW": {
+      "old_id": "ETHS M10TW",
+      "scope": "standalone",
+      "source": "singleton",
+      "title": "Intermediate Trail Running",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": [],
+      "new_id": "KINE M12UM",
+      "how": "gap-filled"
+    },
+    "ETHS M1191": {
+      "old_id": "ETHS M1191",
+      "scope": "missed",
+      "source": "minted",
+      "title": "Self Defense for Women",
+      "display_title": "Self Defense for Women",
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "member codes FITN, KIN, PE",
+        "TOP 0835.00, 0835.10 corroborating",
+        "merged children KINE M12UH"
+      ],
+      "members": 7,
+      "children": [
+        "KINE M12UH"
+      ],
+      "new_id": "KINE M2023",
+      "how": "gap-filled"
+    },
+    "ETHS M1196": {
+      "old_id": "ETHS M1196",
+      "scope": "missed",
+      "source": "minted",
+      "title": "Intermediate Springboard Diving",
+      "display_title": "Intermediate Springboard Diving",
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "member codes KAQUA, KINA",
+        "TOP 0835.00 corroborating",
+        "merged children KINE M12WT"
+      ],
+      "members": 3,
+      "children": [
+        "KINE M12WT"
+      ],
+      "new_id": "KINE M2024",
+      "how": "gap-filled"
+    },
+    "ETHS M1197": {
+      "old_id": "ETHS M1197",
+      "scope": "missed",
+      "source": "minted",
+      "title": "Physical Education in the Elementary School",
+      "display_title": "Physical Education in the Elementary School",
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "member codes KINE",
+        "TOP 0835.00 corroborating",
+        "merged children KINE M12XO"
+      ],
+      "members": 3,
+      "children": [
+        "KINE M12XO"
+      ],
+      "new_id": "KINE M2025",
+      "how": "gap-filled"
+    }
+  },
+  "not_in_scope": {
+    "ETHS M1020": {
+      "old_id": "ETHS M1020",
+      "scope": "merged_elsewhere",
+      "source": "minted",
+      "title": "Advanced Beach Volleyball",
+      "display_title": "Beach Volleyball - Advanced",
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "member codes KIN, KIN PE, KNES, PE",
+        "TOP 0835.00 corroborating",
+        "merged children KINE M1070"
+      ],
+      "members": 5,
+      "children": [
+        "KINE M1070"
+      ]
+    },
+    "ETHS M1021": {
+      "old_id": "ETHS M1021",
+      "scope": "merged_elsewhere",
+      "source": "minted",
+      "title": "Advanced Fitness Boot Camp",
+      "display_title": "Advanced Fitness Boot Camp",
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 corroborating",
+        "merged children KINE M10MD"
+      ],
+      "members": 2,
+      "children": [
+        "KINE M10MD"
+      ]
+    },
+    "ETHS M1026": {
+      "old_id": "ETHS M1026",
+      "scope": "merged_elsewhere",
+      "source": "minted",
+      "title": "Advanced Soccer",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "member codes KIN, KIN PE, KINA, KINE, KINES, KINF, KINS, KINT, KNAC, KNES, KPEA, PE, PEAC, PEM",
+        "TOP 0835.00, 0835.10, 0835.50 corroborating"
+      ],
+      "members": 17,
+      "children": []
+    },
+    "ETHS M10BE": {
+      "old_id": "ETHS M10BE",
+      "scope": "merged_elsewhere",
+      "source": "singleton",
+      "title": "Adapted Aerobic Fitness",
+      "display_title": null,
+      "route": "PEDS",
+      "discipline": "Physical Education Disabled Students",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": []
+    },
+    "ETHS M10BG": {
+      "old_id": "ETHS M10BG",
+      "scope": "merged_elsewhere",
+      "source": "singleton",
+      "title": "Adapted Aquatic Sports Education",
+      "display_title": null,
+      "route": "PEDS",
+      "discipline": "Physical Education Disabled Students",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": []
+    },
+    "ETHS M10BP": {
+      "old_id": "ETHS M10BP",
+      "scope": "merged_elsewhere",
+      "source": "singleton",
+      "title": "Advanced Aerobic Dance Exercise",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": []
+    },
+    "ETHS M10BQ": {
+      "old_id": "ETHS M10BQ",
+      "scope": "merged_elsewhere",
+      "source": "singleton",
+      "title": "Advanced Aerobic Walking for Fitness and Wellness",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": []
+    },
+    "ETHS M10BT": {
+      "old_id": "ETHS M10BT",
+      "scope": "merged_elsewhere",
+      "source": "singleton",
+      "title": "Advanced Bowling",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": []
+    },
+    "ETHS M10BV": {
+      "old_id": "ETHS M10BV",
+      "scope": "merged_elsewhere",
+      "source": "singleton",
+      "title": "Advanced Cardio Fitness and Resistance Training",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": []
+    },
+    "ETHS M10BZ": {
+      "old_id": "ETHS M10BZ",
+      "scope": "merged_elsewhere",
+      "source": "singleton",
+      "title": "Advanced Lap Swimming for Health and Fitness",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": []
+    },
+    "ETHS M10CB": {
+      "old_id": "ETHS M10CB",
+      "scope": "merged_elsewhere",
+      "source": "singleton",
+      "title": "Advanced Techniques and Strategies of Intercollegiate Women's Flag Football",
+      "display_title": null,
+      "route": "ATHL",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.50 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": []
+    },
+    "ETHS M10CI": {
+      "old_id": "ETHS M10CI",
+      "scope": "merged_elsewhere",
+      "source": "singleton",
+      "title": "Advanced Trail Running",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": []
+    },
+    "ETHS M10CK": {
+      "old_id": "ETHS M10CK",
+      "scope": "merged_elsewhere",
+      "source": "singleton",
+      "title": "Beginning Aerobic Dance Exercise",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": []
+    },
+    "ETHS M10CM": {
+      "old_id": "ETHS M10CM",
+      "scope": "merged_elsewhere",
+      "source": "singleton",
+      "title": "Intermediate Aerobic Dance Exercise",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": []
+    },
+    "ETHS M10ER": {
+      "old_id": "ETHS M10ER",
+      "scope": "merged_elsewhere",
+      "source": "singleton",
+      "title": "Beginning T'ai Chi Ch'uan",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": []
+    },
+    "ETHS M10ES": {
+      "old_id": "ETHS M10ES",
+      "scope": "merged_elsewhere",
+      "source": "singleton",
+      "title": "Intermediate T'ai Chi Ch'uan",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": []
+    },
+    "ETHS M10JQ": {
+      "old_id": "ETHS M10JQ",
+      "scope": "merged_elsewhere",
+      "source": "singleton",
+      "title": "Technical Analysis and Theory of Football - Offense",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": []
+    },
+    "ETHS M10KW": {
+      "old_id": "ETHS M10KW",
+      "scope": "merged_elsewhere",
+      "source": "singleton",
+      "title": "Conditioning and Injury Prevention for Athletics",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": []
+    },
+    "ETHS M10KZ": {
+      "old_id": "ETHS M10KZ",
+      "scope": "merged_elsewhere",
+      "source": "singleton",
+      "title": "Basketball - Co-Ed",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.10 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": []
+    },
+    "ETHS M10LA": {
+      "old_id": "ETHS M10LA",
+      "scope": "merged_elsewhere",
+      "source": "singleton",
+      "title": "Conditioning and Injury Prevention for Beach Volleyball",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.50 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": []
+    },
+    "ETHS M10LD": {
+      "old_id": "ETHS M10LD",
+      "scope": "merged_elsewhere",
+      "source": "singleton",
+      "title": "Beginning Cardio Fitness and Resistance Training",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": []
+    },
+    "ETHS M10LG": {
+      "old_id": "ETHS M10LG",
+      "scope": "merged_elsewhere",
+      "source": "singleton",
+      "title": "Beginning Lap Swimming for Health and Fitness",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": []
+    },
+    "ETHS M10LI": {
+      "old_id": "ETHS M10LI",
+      "scope": "merged_elsewhere",
+      "source": "singleton",
+      "title": "Beginning Trail Running for Fitness",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": []
+    },
+    "ETHS M10LM": {
+      "old_id": "ETHS M10LM",
+      "scope": "merged_elsewhere",
+      "source": "singleton",
+      "title": "Beginning Resistance Training",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": []
+    },
+    "ETHS M10LN": {
+      "old_id": "ETHS M10LN",
+      "scope": "merged_elsewhere",
+      "source": "singleton",
+      "title": "Beginning Trail Running",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": []
+    },
+    "ETHS M10MB": {
+      "old_id": "ETHS M10MB",
+      "scope": "merged_elsewhere",
+      "source": "singleton",
+      "title": "Total Body Conditioning",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": []
+    },
+    "ETHS M10MT": {
+      "old_id": "ETHS M10MT",
+      "scope": "merged_elsewhere",
+      "source": "singleton",
+      "title": "Intermediate Cardio Fitness and Resistance Training",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": []
+    },
+    "ETHS M10QT": {
+      "old_id": "ETHS M10QT",
+      "scope": "merged_elsewhere",
+      "source": "singleton",
+      "title": "Exercise Prog Design/Special Populations",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": []
+    },
+    "ETHS M10QY": {
+      "old_id": "ETHS M10QY",
+      "scope": "merged_elsewhere",
+      "source": "singleton",
+      "title": "Physical Education in Elementary Schools",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": []
+    },
+    "ETHS M10SP": {
+      "old_id": "ETHS M10SP",
+      "scope": "merged_elsewhere",
+      "source": "singleton",
+      "title": "Flexibility Fitness",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": []
+    },
+    "ETHS M10SQ": {
+      "old_id": "ETHS M10SQ",
+      "scope": "merged_elsewhere",
+      "source": "singleton",
+      "title": "Intermediate Lap Swimming for Health and Fitness",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": []
+    },
+    "ETHS M10SS": {
+      "old_id": "ETHS M10SS",
+      "scope": "merged_elsewhere",
+      "source": "singleton",
+      "title": "Walking/Jogging Fitness",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.10 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": []
+    },
+    "ETHS M10SU": {
+      "old_id": "ETHS M10SU",
+      "scope": "merged_elsewhere",
+      "source": "singleton",
+      "title": "Sports Officiating Fundamentals",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": []
+    },
+    "ETHS M10TV": {
+      "old_id": "ETHS M10TV",
+      "scope": "merged_elsewhere",
+      "source": "singleton",
+      "title": "Intermediate Resistance Training",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00 (catalog) corroborating"
+      ],
+      "members": 0,
+      "children": []
+    },
+    "ETHS M1126": {
+      "old_id": "ETHS M1126",
+      "scope": "merged_elsewhere",
+      "source": "minted",
+      "title": "Beginning Aquatic Fitness",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "member codes KNACT",
+        "TOP 0835.00 corroborating"
+      ],
+      "members": 2,
+      "children": []
+    },
+    "ETHS M1127": {
+      "old_id": "ETHS M1127",
+      "scope": "merged_elsewhere",
+      "source": "minted",
+      "title": "Intermediate Aquatic Fitness",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "member codes KNACT",
+        "TOP 0835.00 corroborating"
+      ],
+      "members": 2,
+      "children": []
+    },
+    "ETHS M1132": {
+      "old_id": "ETHS M1132",
+      "scope": "merged_elsewhere",
+      "source": "minted",
+      "title": "Intermediate Beach Volleyball",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "member codes KIN, KIN PE, KNES, PE, PEC",
+        "TOP 0835.00, 0835.10 corroborating"
+      ],
+      "members": 6,
+      "children": []
+    },
+    "ETHS M1134": {
+      "old_id": "ETHS M1134",
+      "scope": "merged_elsewhere",
+      "source": "minted",
+      "title": "Beginning Bowling",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "member codes KNES, PE",
+        "TOP 0835.00 corroborating"
+      ],
+      "members": 3,
+      "children": []
+    },
+    "ETHS M1136": {
+      "old_id": "ETHS M1136",
+      "scope": "merged_elsewhere",
+      "source": "minted",
+      "title": "Beginning Springboard Diving",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "member codes KINA",
+        "TOP 0835.00 corroborating"
+      ],
+      "members": 2,
+      "children": []
+    },
+    "ETHS M1155": {
+      "old_id": "ETHS M1155",
+      "scope": "merged_elsewhere",
+      "source": "minted",
+      "title": "Intermediate Bowling",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "member codes KNES, PE",
+        "TOP 0835.00 corroborating"
+      ],
+      "members": 3,
+      "children": []
+    },
+    "ETHS M1242": {
+      "old_id": "ETHS M1242",
+      "scope": "merged_elsewhere",
+      "source": "minted",
+      "title": "Sports Officiating for Spring Sports",
+      "display_title": "Sports Officiating for Spring Sports",
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [
+        "TOP 0835.00, 0835.60 corroborating",
+        "merged children KINE M14CI"
+      ],
+      "members": 2,
+      "children": [
+        "KINE M14CI"
+      ]
+    }
+  },
+  "held": {
+    "ETHS M10LH": {
+      "old_id": "ETHS M10LH",
+      "scope": "standalone",
+      "source": "singleton",
+      "title": "Beginning Fitness for the Newcomer",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [],
+      "members": 0,
+      "children": [],
+      "why_held": "no second signal beside the title (Rule 7)"
+    },
+    "ETHS M10LL": {
+      "old_id": "ETHS M10LL",
+      "scope": "merged_elsewhere",
+      "source": "singleton",
+      "title": "Beginning to Intermediate Swimming",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [],
+      "members": 0,
+      "children": [],
+      "why_held": "no second signal beside the title (Rule 7)"
+    },
+    "ETHS M10PP": {
+      "old_id": "ETHS M10PP",
+      "scope": "standalone",
+      "source": "singleton",
+      "title": "Individualized Sports Conditioning",
+      "display_title": null,
+      "route": "KINE",
+      "discipline": "Kinesiology",
+      "evidence": [],
+      "members": 0,
+      "children": [],
+      "why_held": "no second signal beside the title (Rule 7)"
+    },
+    "ETHS M90AB": {
+      "old_id": "ETHS M90AB",
+      "scope": "standalone",
+      "source": "singleton",
+      "title": "Exercise for Developmentally Disabled",
+      "display_title": null,
+      "route": "PEDS",
+      "discipline": "Physical Education Disabled Students",
+      "evidence": [],
+      "members": 0,
+      "children": [],
+      "why_held": "no second signal beside the title (Rule 7)"
+    }
+  },
+  "alias": {
+    "ETHS M10AS": "KINE M12OH",
+    "ETHS M10BF": "PEDS M10EO",
+    "ETHS M10BI": "KINE M12OI",
+    "ETHS M10BK": "KINE M12OJ",
+    "ETHS M10BL": "ATHL M11FJ",
+    "ETHS M10BM": "ATHL M11FK",
+    "ETHS M10BN": "KINE M12OK",
+    "ETHS M10BO": "KINE M12OL",
+    "ETHS M10BS": "ATHL M11FL",
+    "ETHS M10BU": "KINE M12ON",
+    "ETHS M10BW": "KINE M12OQ",
+    "ETHS M10BX": "KINE M12OY",
+    "ETHS M10CA": "KINE M12OZ",
+    "ETHS M10CF": "ATHL M11FM",
+    "ETHS M10CG": "ATHL M11FN",
+    "ETHS M10CH": "ATHL M11FO",
+    "ETHS M10CL": "KINE M12PA",
+    "ETHS M10CN": "KINE M12PB",
+    "ETHS M10JP": "KINE M12QM",
+    "ETHS M10JT": "KINE M12QS",
+    "ETHS M10KS": "KINE M12QU",
+    "ETHS M10KU": "KINE M12QV",
+    "ETHS M10KV": "ATHL M11FP",
+    "ETHS M10LC": "KINE M12QW",
+    "ETHS M10LE": "KINE M12QX",
+    "ETHS M10LF": "KINE M12QY",
+    "ETHS M10MS": "KINE M12QZ",
+    "ETHS M10MU": "KINE M12RA",
+    "ETHS M10OT": "KINE M12RD",
+    "ETHS M10OV": "KINE M12RE",
+    "ETHS M10OY": "KINE M12RF",
+    "ETHS M10PO": "KINE M12TP",
+    "ETHS M10SF": "KINE M12TX",
+    "ETHS M10SG": "KINE M12UE",
+    "ETHS M10SR": "KINE M12UJ",
+    "ETHS M10ST": "KINE M12UK",
+    "ETHS M10TW": "KINE M12UM",
+    "ETHS M1191": "KINE M2023",
+    "ETHS M1196": "KINE M2024",
+    "ETHS M1197": "KINE M2025"
+  },
+  "identities_ghosts_healed": [],
+  "validation": {
+    "V0_ruled_set": {
+      "pass": true,
+      "measured": 0,
+      "applied": 31,
+      "missing": [],
+      "extra": []
+    },
+    "V0_ruled_43_set": {
+      "pass": true,
+      "measured": 43,
+      "applied": 0,
+      "missing": [],
+      "extra": []
+    },
+    "P0_not_applied": {
+      "pass": true,
+      "applied": 0,
+      "stamped": []
+    },
+    "V2_new_ids_unique_and_free": {
+      "pass": true,
+      "duplicates": [],
+      "collisions": [],
+      "unplaced": []
+    },
+    "V3_codes_and_bands": {
+      "pass": true
+    }
+  },
+  "gapfilled": [
+    {
+      "old_id": "ETHS M10AS",
+      "wanted": "KINE M10AS",
+      "new_id": "KINE M12OH",
+      "why": "ETHS M10AS -> KINE"
+    },
+    {
+      "old_id": "ETHS M10BF",
+      "wanted": "PEDS M10BF",
+      "new_id": "PEDS M10EO",
+      "why": "ETHS M10BF -> PEDS"
+    },
+    {
+      "old_id": "ETHS M10BI",
+      "wanted": "KINE M10BI",
+      "new_id": "KINE M12OI",
+      "why": "ETHS M10BI -> KINE"
+    },
+    {
+      "old_id": "ETHS M10BK",
+      "wanted": "KINE M10BK",
+      "new_id": "KINE M12OJ",
+      "why": "ETHS M10BK -> KINE"
+    },
+    {
+      "old_id": "ETHS M10BL",
+      "wanted": "ATHL M10BL",
+      "new_id": "ATHL M11FJ",
+      "why": "ETHS M10BL -> ATHL"
+    },
+    {
+      "old_id": "ETHS M10BM",
+      "wanted": "ATHL M10BM",
+      "new_id": "ATHL M11FK",
+      "why": "ETHS M10BM -> ATHL"
+    },
+    {
+      "old_id": "ETHS M10BN",
+      "wanted": "KINE M10BN",
+      "new_id": "KINE M12OK",
+      "why": "ETHS M10BN -> KINE"
+    },
+    {
+      "old_id": "ETHS M10BO",
+      "wanted": "KINE M10BO",
+      "new_id": "KINE M12OL",
+      "why": "ETHS M10BO -> KINE"
+    },
+    {
+      "old_id": "ETHS M10BS",
+      "wanted": "ATHL M10BS",
+      "new_id": "ATHL M11FL",
+      "why": "ETHS M10BS -> ATHL"
+    },
+    {
+      "old_id": "ETHS M10BU",
+      "wanted": "KINE M10BU",
+      "new_id": "KINE M12ON",
+      "why": "ETHS M10BU -> KINE"
+    },
+    {
+      "old_id": "ETHS M10BW",
+      "wanted": "KINE M10BW",
+      "new_id": "KINE M12OQ",
+      "why": "ETHS M10BW -> KINE"
+    },
+    {
+      "old_id": "ETHS M10BX",
+      "wanted": "KINE M10BX",
+      "new_id": "KINE M12OY",
+      "why": "ETHS M10BX -> KINE"
+    },
+    {
+      "old_id": "ETHS M10CA",
+      "wanted": "KINE M10CA",
+      "new_id": "KINE M12OZ",
+      "why": "ETHS M10CA -> KINE"
+    },
+    {
+      "old_id": "ETHS M10CF",
+      "wanted": "ATHL M10CF",
+      "new_id": "ATHL M11FM",
+      "why": "ETHS M10CF -> ATHL"
+    },
+    {
+      "old_id": "ETHS M10CG",
+      "wanted": "ATHL M10CG",
+      "new_id": "ATHL M11FN",
+      "why": "ETHS M10CG -> ATHL"
+    },
+    {
+      "old_id": "ETHS M10CH",
+      "wanted": "ATHL M10CH",
+      "new_id": "ATHL M11FO",
+      "why": "ETHS M10CH -> ATHL"
+    },
+    {
+      "old_id": "ETHS M10CL",
+      "wanted": "KINE M10CL",
+      "new_id": "KINE M12PA",
+      "why": "ETHS M10CL -> KINE"
+    },
+    {
+      "old_id": "ETHS M10CN",
+      "wanted": "KINE M10CN",
+      "new_id": "KINE M12PB",
+      "why": "ETHS M10CN -> KINE"
+    },
+    {
+      "old_id": "ETHS M10JP",
+      "wanted": "KINE M10JP",
+      "new_id": "KINE M12QM",
+      "why": "ETHS M10JP -> KINE"
+    },
+    {
+      "old_id": "ETHS M10JT",
+      "wanted": "KINE M10JT",
+      "new_id": "KINE M12QS",
+      "why": "ETHS M10JT -> KINE"
+    },
+    {
+      "old_id": "ETHS M10KS",
+      "wanted": "KINE M10KS",
+      "new_id": "KINE M12QU",
+      "why": "ETHS M10KS -> KINE"
+    },
+    {
+      "old_id": "ETHS M10KU",
+      "wanted": "KINE M10KU",
+      "new_id": "KINE M12QV",
+      "why": "ETHS M10KU -> KINE"
+    },
+    {
+      "old_id": "ETHS M10KV",
+      "wanted": "ATHL M10KV",
+      "new_id": "ATHL M11FP",
+      "why": "ETHS M10KV -> ATHL"
+    },
+    {
+      "old_id": "ETHS M10LC",
+      "wanted": "KINE M10LC",
+      "new_id": "KINE M12QW",
+      "why": "ETHS M10LC -> KINE"
+    },
+    {
+      "old_id": "ETHS M10LE",
+      "wanted": "KINE M10LE",
+      "new_id": "KINE M12QX",
+      "why": "ETHS M10LE -> KINE"
+    },
+    {
+      "old_id": "ETHS M10LF",
+      "wanted": "KINE M10LF",
+      "new_id": "KINE M12QY",
+      "why": "ETHS M10LF -> KINE"
+    },
+    {
+      "old_id": "ETHS M10MS",
+      "wanted": "KINE M10MS",
+      "new_id": "KINE M12QZ",
+      "why": "ETHS M10MS -> KINE"
+    },
+    {
+      "old_id": "ETHS M10MU",
+      "wanted": "KINE M10MU",
+      "new_id": "KINE M12RA",
+      "why": "ETHS M10MU -> KINE"
+    },
+    {
+      "old_id": "ETHS M10OT",
+      "wanted": "KINE M10OT",
+      "new_id": "KINE M12RD",
+      "why": "ETHS M10OT -> KINE"
+    },
+    {
+      "old_id": "ETHS M10OV",
+      "wanted": "KINE M10OV",
+      "new_id": "KINE M12RE",
+      "why": "ETHS M10OV -> KINE"
+    },
+    {
+      "old_id": "ETHS M10OY",
+      "wanted": "KINE M10OY",
+      "new_id": "KINE M12RF",
+      "why": "ETHS M10OY -> KINE"
+    },
+    {
+      "old_id": "ETHS M10PO",
+      "wanted": "KINE M10PO",
+      "new_id": "KINE M12TP",
+      "why": "ETHS M10PO -> KINE"
+    },
+    {
+      "old_id": "ETHS M10SF",
+      "wanted": "KINE M10SF",
+      "new_id": "KINE M12TX",
+      "why": "ETHS M10SF -> KINE"
+    },
+    {
+      "old_id": "ETHS M10SG",
+      "wanted": "KINE M10SG",
+      "new_id": "KINE M12UE",
+      "why": "ETHS M10SG -> KINE"
+    },
+    {
+      "old_id": "ETHS M10SR",
+      "wanted": "KINE M10SR",
+      "new_id": "KINE M12UJ",
+      "why": "ETHS M10SR -> KINE"
+    },
+    {
+      "old_id": "ETHS M10ST",
+      "wanted": "KINE M10ST",
+      "new_id": "KINE M12UK",
+      "why": "ETHS M10ST -> KINE"
+    },
+    {
+      "old_id": "ETHS M10TW",
+      "wanted": "KINE M10TW",
+      "new_id": "KINE M12UM",
+      "why": "ETHS M10TW -> KINE"
+    },
+    {
+      "old_id": "ETHS M1191",
+      "wanted": "KINE M1191",
+      "new_id": "KINE M2023",
+      "why": "ETHS M1191 -> KINE (continuation band 2)"
+    },
+    {
+      "old_id": "ETHS M1196",
+      "wanted": "KINE M1196",
+      "new_id": "KINE M2024",
+      "why": "ETHS M1196 -> KINE (continuation band 2)"
+    },
+    {
+      "old_id": "ETHS M1197",
+      "wanted": "KINE M1197",
+      "new_id": "KINE M2025",
+      "why": "ETHS M1197 -> KINE (continuation band 2)"
+    }
+  ],
+  "reused_retired_ids": [
+    "ATHL M11FK",
+    "ATHL M11FL",
+    "KINE M12OH",
+    "KINE M12OI",
+    "KINE M12OJ",
+    "KINE M12OK",
+    "KINE M12OL",
+    "KINE M12ON",
+    "KINE M12OQ",
+    "KINE M12OY",
+    "KINE M12OZ",
+    "KINE M12PA",
+    "KINE M12PB",
+    "KINE M12QM",
+    "KINE M12QS",
+    "KINE M12QU",
+    "KINE M12QV",
+    "KINE M12QW",
+    "KINE M12QX",
+    "KINE M12QY",
+    "KINE M12QZ",
+    "KINE M12RA",
+    "KINE M12RD",
+    "KINE M12RE",
+    "KINE M12RF",
+    "KINE M12TP",
+    "KINE M12TX",
+    "KINE M12UE",
+    "KINE M12UJ",
+    "KINE M12UK",
+    "KINE M12UM"
+  ]
+}

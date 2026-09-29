@@ -1,0 +1,221 @@
+{
+  "_status": "ETHS re-mint old->new alias (receipt + rollback inverse) - APPLIED",
+  "_at": "2026-09-29",
+  "_scope": [
+    "standalone",
+    "missed"
+  ],
+  "_count": 40,
+  "_ruling": "Sam, 2026-09-29 (open-asks sheet 3, card 3, \"remint\"): re-mint the 43 the way the 31 moved; the 42 merged ones stay on their ids",
+  "aliases": {
+    "ETHS M10AS": {
+      "new_id": "KINE M12OH",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M10BF": {
+      "new_id": "PEDS M10EO",
+      "route": "PEDS",
+      "discipline": "Physical Education Disabled Students"
+    },
+    "ETHS M10BI": {
+      "new_id": "KINE M12OI",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M10BK": {
+      "new_id": "KINE M12OJ",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M10BL": {
+      "new_id": "ATHL M11FJ",
+      "route": "ATHL",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M10BM": {
+      "new_id": "ATHL M11FK",
+      "route": "ATHL",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M10BN": {
+      "new_id": "KINE M12OK",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M10BO": {
+      "new_id": "KINE M12OL",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M10BS": {
+      "new_id": "ATHL M11FL",
+      "route": "ATHL",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M10BU": {
+      "new_id": "KINE M12ON",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M10BW": {
+      "new_id": "KINE M12OQ",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M10BX": {
+      "new_id": "KINE M12OY",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M10CA": {
+      "new_id": "KINE M12OZ",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M10CF": {
+      "new_id": "ATHL M11FM",
+      "route": "ATHL",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M10CG": {
+      "new_id": "ATHL M11FN",
+      "route": "ATHL",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M10CH": {
+      "new_id": "ATHL M11FO",
+      "route": "ATHL",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M10CL": {
+      "new_id": "KINE M12PA",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M10CN": {
+      "new_id": "KINE M12PB",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M10JP": {
+      "new_id": "KINE M12QM",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M10JT": {
+      "new_id": "KINE M12QS",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M10KS": {
+      "new_id": "KINE M12QU",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M10KU": {
+      "new_id": "KINE M12QV",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M10KV": {
+      "new_id": "ATHL M11FP",
+      "route": "ATHL",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M10LC": {
+      "new_id": "KINE M12QW",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M10LE": {
+      "new_id": "KINE M12QX",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M10LF": {
+      "new_id": "KINE M12QY",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M10MS": {
+      "new_id": "KINE M12QZ",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M10MU": {
+      "new_id": "KINE M12RA",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M10OT": {
+      "new_id": "KINE M12RD",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M10OV": {
+      "new_id": "KINE M12RE",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M10OY": {
+      "new_id": "KINE M12RF",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M10PO": {
+      "new_id": "KINE M12TP",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M10SF": {
+      "new_id": "KINE M12TX",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M10SG": {
+      "new_id": "KINE M12UE",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M10SR": {
+      "new_id": "KINE M12UJ",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M10ST": {
+      "new_id": "KINE M12UK",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M10TW": {
+      "new_id": "KINE M12UM",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M1191": {
+      "new_id": "KINE M2023",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M1196": {
+      "new_id": "KINE M2024",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    },
+    "ETHS M1197": {
+      "new_id": "KINE M2025",
+      "route": "KINE",
+      "discipline": "Kinesiology"
+    }
+  },
+  "_applied_at": "2026-09-29",
+  "_applied_ruling": "Sam, 2026-09-29 (open-asks sheet 3, card 3, \"remint\"): re-mint the 43 the way the 31 moved; the 42 merged ones stay on their ids",
+  "_counts": {
+    "courses": 3,
+    "singletons": 37,
+    "identities": 1,
+    "curation_keys": 3,
+    "pointers": 3
+  }
+}

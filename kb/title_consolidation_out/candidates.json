@@ -2,6 +2,13 @@
  "_generated_by": "kb/_title_consolidation_dryrun.py",
  "_generated_at": "2026-09-28",
  "_status": "DRY-RUN — measurement receipt; nothing applied",
+ "_ids_rekeyed": {
+  "by": "kb/eths_remint_out/2026-09-29/standalone+missed/alias_map.json",
+  "at": "2026-09-29",
+  "groups": 8,
+  "members": 12,
+  "why": "the ETHS re-mint's 43 moved ids, re-keyed token for token (id and discipline) on the groups as built 2026-09-28; each re-keyed group is one the builder forms on the re-minted catalog, and a full re-run would also churn about 85 unrelated groups, since the builder is not deterministic"
+ },
  "_params": {
   "cosine_min": 0.5,
   "pair_df_cap": 60,
@@ -14193,16 +14200,6 @@
      ]
     },
     {
-     "id": "ETHS M10MS",
-     "title": "Intermediate Cardio Dance Exercise",
-     "units": 1.0,
-     "disc": "Ethnic Studies",
-     "standalone": true,
-     "colleges": [
-      "Cuyamaca College"
-     ]
-    },
-    {
      "id": "KINE M12DB",
      "title": "Cardio Dance",
      "units": 1.0,
@@ -14210,6 +14207,16 @@
      "standalone": true,
      "colleges": [
       "Ohlone College"
+     ]
+    },
+    {
+     "id": "KINE M12QZ",
+     "title": "Intermediate Cardio Dance Exercise",
+     "units": 1.0,
+     "disc": "Kinesiology",
+     "standalone": true,
+     "colleges": [
+      "Cuyamaca College"
      ]
     }
    ],
@@ -15725,16 +15732,6 @@
   {
    "members": [
     {
-     "id": "ETHS M10BF",
-     "title": "Adapted Water Aerobics",
-     "units": 1.5,
-     "disc": "Ethnic Studies",
-     "standalone": true,
-     "colleges": [
-      "Grossmont College"
-     ]
-    },
-    {
      "id": "KINE M1062",
      "title": "Advanced Water Aerobics",
      "units": 1.0,
@@ -15811,6 +15808,16 @@
      "standalone": true,
      "colleges": [
       "Saddleback College"
+     ]
+    },
+    {
+     "id": "PEDS M10EO",
+     "title": "Adapted Water Aerobics",
+     "units": 1.5,
+     "disc": "Physical Education Disabled Students",
+     "standalone": true,
+     "colleges": [
+      "Grossmont College"
      ]
     }
    ],
@@ -23245,6 +23252,16 @@
      ]
     },
     {
+     "id": "ATHL M11FP",
+     "title": "Concepts of Intercollegiate Athletic Competition",
+     "units": 2.0,
+     "disc": "Kinesiology",
+     "standalone": true,
+     "colleges": [
+      "Grossmont College"
+     ]
+    },
+    {
      "id": "ATHL M11FY",
      "title": "Fitness for Athletic Competition",
      "units": 1.0,
@@ -23255,26 +23272,6 @@
      ]
     },
     {
-     "id": "ETHS M10KU",
-     "title": "Athletic Competition",
-     "units": 3.0,
-     "disc": "Ethnic Studies",
-     "standalone": true,
-     "colleges": [
-      "Grossmont College"
-     ]
-    },
-    {
-     "id": "ETHS M10KV",
-     "title": "Concepts of Intercollegiate Athletic Competition",
-     "units": 2.0,
-     "disc": "Ethnic Studies",
-     "standalone": true,
-     "colleges": [
-      "Grossmont College"
-     ]
-    },
-    {
      "id": "KINE M11FU",
      "title": "Conditioning and Training for Athletic Competition",
      "units": 1.0,
@@ -23282,6 +23279,16 @@
      "standalone": true,
      "colleges": [
       "Moorpark College"
+     ]
+    },
+    {
+     "id": "KINE M12QV",
+     "title": "Athletic Competition",
+     "units": 3.0,
+     "disc": "Kinesiology",
+     "standalone": true,
+     "colleges": [
+      "Grossmont College"
      ]
     }
    ],
@@ -23401,26 +23408,6 @@
   {
    "members": [
     {
-     "id": "ETHS M10CN",
-     "title": "Intermediate Aerobic Walking for Fitness and Wellness",
-     "units": 1.5,
-     "disc": "Ethnic Studies",
-     "standalone": true,
-     "colleges": [
-      "Grossmont College"
-     ]
-    },
-    {
-     "id": "ETHS M10OT",
-     "title": "Fitness Walking with Children",
-     "units": 1.0,
-     "disc": "Ethnic Studies",
-     "standalone": true,
-     "colleges": [
-      "Cuyamaca College"
-     ]
-    },
-    {
      "id": "KINE M11QX",
      "title": "Fitness Walking for Beginners",
      "units": 1.0,
@@ -23428,6 +23415,26 @@
      "standalone": true,
      "colleges": [
       "Evergreen Valley College"
+     ]
+    },
+    {
+     "id": "KINE M12PB",
+     "title": "Intermediate Aerobic Walking for Fitness and Wellness",
+     "units": 1.5,
+     "disc": "Kinesiology",
+     "standalone": true,
+     "colleges": [
+      "Grossmont College"
+     ]
+    },
+    {
+     "id": "KINE M12RD",
+     "title": "Fitness Walking with Children",
+     "units": 1.0,
+     "disc": "Kinesiology",
+     "standalone": true,
+     "colleges": [
+      "Cuyamaca College"
      ]
     },
     {
@@ -51967,16 +51974,6 @@
   {
    "members": [
     {
-     "id": "ETHS M10TW",
-     "title": "Intermediate Trail Running",
-     "units": 1.0,
-     "disc": "Ethnic Studies",
-     "standalone": true,
-     "colleges": [
-      "Grossmont College"
-     ]
-    },
-    {
      "id": "KINE M12ND",
      "title": "Intermediate Running and Conditioning",
      "units": 1.0,
@@ -51984,6 +51981,16 @@
      "standalone": true,
      "colleges": [
       "City College of San Francisco"
+     ]
+    },
+    {
+     "id": "KINE M12UM",
+     "title": "Intermediate Trail Running",
+     "units": 1.0,
+     "disc": "Kinesiology",
+     "standalone": true,
+     "colleges": [
+      "Grossmont College"
      ]
     }
    ],
@@ -72068,10 +72075,10 @@
   {
    "members": [
     {
-     "id": "ETHS M10CL",
+     "id": "KINE M12PA",
      "title": "Beginning Aerobic Walking for Fitness and Wellness",
      "units": 1.5,
-     "disc": "Ethnic Studies",
+     "disc": "Kinesiology",
      "standalone": true,
      "colleges": [
       "Grossmont College"
@@ -76934,16 +76941,6 @@
   {
    "members": [
     {
-     "id": "ETHS M10BW",
-     "title": "Advanced Fitness for Chronic Disease and Injury Prevention",
-     "units": 1.5,
-     "disc": "Ethnic Studies",
-     "standalone": true,
-     "colleges": [
-      "Grossmont College"
-     ]
-    },
-    {
      "id": "HLTH M10UI",
      "title": "Nutrition for Physical Fitness and Disease Prevention",
      "units": 3.0,
@@ -76951,6 +76948,16 @@
      "standalone": true,
      "colleges": [
       "Glendale Community College"
+     ]
+    },
+    {
+     "id": "KINE M12OQ",
+     "title": "Advanced Fitness for Chronic Disease and Injury Prevention",
+     "units": 1.5,
+     "disc": "Kinesiology",
+     "standalone": true,
+     "colleges": [
+      "Grossmont College"
      ]
     }
    ],
@@ -90315,30 +90322,30 @@
   {
    "members": [
     {
-     "id": "ETHS M10JT",
+     "id": "KINE M12QS",
      "title": "Anatomy and Kinesiology for Fitness Specialists",
      "units": 2.0,
-     "disc": "Ethnic Studies",
+     "disc": "Kinesiology",
      "standalone": true,
      "colleges": [
       "Grossmont College"
      ]
     },
     {
-     "id": "ETHS M10KS",
+     "id": "KINE M12QU",
      "title": "Strength Trainer/Fitness Assessments for Fitness Specialists",
      "units": 2.0,
-     "disc": "Ethnic Studies",
+     "disc": "Kinesiology",
      "standalone": true,
      "colleges": [
       "Grossmont College"
      ]
     },
     {
-     "id": "ETHS M10SF",
+     "id": "KINE M12TX",
      "title": "Exercise Physiology Fitness Specialists",
      "units": 3.0,
-     "disc": "Ethnic Studies",
+     "disc": "Kinesiology",
      "standalone": true,
      "colleges": [
       "Grossmont College"

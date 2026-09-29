@@ -152,11 +152,21 @@ function rowWords(row) {
     !/\bopt[- ]?in\b/i.test(chipOf(gatedRow).textContent) &&
     !/held|reserve/i.test(rowWords(gatedRow)));
   // Since round 8 (Sam, 2026-09-29) the figure reads gray until the
-  // conditions are met, and the hover says why after the figures.
-  check("S5: ...and its Curr hover says the whole award is still ahead ($0 of it so far), then why it reads gray",
-    !!curCell(gatedRow, "total") && curCell(gatedRow, "total").textContent.trim() === "$0" &&
-    curCell(gatedRow, "total").classList.contains("cf-gated") &&
-    / \$0 of \$[\d,]+\. Gray until the institution meets all its minimum conditions\.$/.test(curCell(gatedRow, "total").getAttribute("title") || ""));
+  // conditions are met, and since round 9 the same day it is the funding the
+  // measures compute to, never $0 ("it should show the calculated funding in
+  // gray with a hover over that it will be available once minimum conditions
+  // are met"). It equals the row's held figure, so the gray cell and the
+  // CSV's Withheld column agree.
+  (function () {
+    const cell = curCell(gatedRow, "total");
+    const held = T._alloc("Berkeley City").earned_withheld;
+    check("S5: ...and its Curr cell shows the computed funding in gray, not $0",
+      !!cell && cell.classList.contains("cf-gated") && held > 0.5 &&
+      /^\$[1-9][\d,]*$/.test(cell.textContent.trim()));
+    check("S5: ...its hover names the computed figure, then says it is available once the conditions are met",
+      !!cell && /^Funding the model computes, credit and noncredit together: \$[\d,]+ of \$[\d,]+\. Gray until the institution meets all its minimum conditions, and available once it meets them\.$/
+        .test(cell.getAttribute("title") || ""));
+  })();
   check("S5: the gate is visible WITHOUT a hover — the pie plus the chip's own words",
     !!gatedRow.querySelector("svg.cf-eligpie") && !!chipOf(gatedRow) &&
     /Confirmation not yet on file \(due 11-01-2099\)/.test(gatedRow.querySelector("svg.cf-eligpie").textContent));
@@ -447,9 +457,14 @@ function shareSumAll(T) {
     iHeld > 0 && Number(line[iHeld]) > 0);
   check("V1: the CSV's Withheld column reports the FULL window's held amount, not half of it",
     iHeld > 0 && Number(line[iHeld]) === Math.round(gated.earned_withheld));
-  check("V1: on screen the gated row reads $0 qualifying and names no held figure",
-    !!row && !!curCell(row, "total") && curCell(row, "total").textContent.trim() === "$0" &&
-    !/held|reserve/i.test(rowWords(row)));
+  // Round 9 (Sam, 2026-09-29): the gray Curr cell shows the computed figure,
+  // so the WHOLE-window guard reads the screen too, in the exact dollars a
+  // curator sees. The words still name no held figure or reserve.
+  const shown = row && curCell(row, "total") ? curCell(row, "total").textContent.trim() : "";
+  check("V1: on screen the gated row's gray Curr Total is the FULL window's computed figure, not half",
+    shown === "$" + Math.round(gated.earned_withheld).toLocaleString("en-US"));
+  check("V1: ...and the row names no held figure or reserve in words",
+    !!row && !/held|reserve/i.test(rowWords(row)));
   T._setScenario({});
 }
 {
