@@ -42,8 +42,11 @@ function registerStub() {
   const items = sum ? Array.from(sum.querySelectorAll("li")).map((li) => li.textContent.replace(/\s+/g, " ")) : [];
   const alloc = items.find((t) => /^\$[\d,]+ allocated to \d+ institutions\./.test(t));
   check("1a: a bullet opens on the total allocated", !!alloc);
-  check("1b: ...and ends on local confirmation",
-    !!alloc && /Each institution receives its demonstrated funding once it confirms local participation\.$/.test(alloc));
+  // Sam, 2026-09-29 (sheet 3, card 6): funding waits on all three minimum
+  // conditions and is available within the two-year window once they are met.
+  check("1b: ...and ends on the minimum conditions, never on local confirmation alone",
+    !!alloc && /Each institution receives its full outcomes-based funding within the two-year window once it meets the minimum conditions\.$/.test(alloc) &&
+    !/confirms local participation/.test(alloc));
   check("1c: the reserve bullet is folded in, and the old 'demonstrated so far' lead is gone",
     !items.some((t) => /held in reserve|demonstrated so far|never redistributed/.test(t)));
   check("1d: the noncredit bullet names every noncredit program, the three standalone ones among them",

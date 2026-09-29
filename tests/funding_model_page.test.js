@@ -693,6 +693,20 @@ check("the status line is empty on a successful paint",
   check("with no overrides, the house titles render and nothing is hidden",
     /Eligibility requirements/.test(house) && secs.every((s2) => !s2.hidden));
 
+  // Sam, 2026-09-29 (open-asks sheet 3, card 6): "Colleges will be funded for FTES that meet
+  // the priority outcomes. The full outcomes-based funding is available within the two-year
+  // window once minimum conditions are met." The note says that, and names no reserve.
+  const reqNote = qualify.querySelector(".note");
+  const reqNoteText = reqNote ? reqNote.textContent.replace(/\s+/g, " ") : "";
+  check("the Minimum conditions note states Sam's premise of 2026-09-29",
+    /for the FTES that meet the priority outcomes, up to its max award/.test(reqNoteText) &&
+    /receives its full outcomes-based funding within the two-year window/.test(reqNoteText));
+  check("...and names no reserve, no kept award, no baseline and no confirmation alone",
+    !!reqNoteText && !/reserve|keeps its full award|confirms local participation|baseline/i.test(reqNoteText));
+  const instHead = doc.querySelector('[data-fsec="institutions"] h2');
+  check("the institution table's heading covers the Max and Curr columns alike",
+    !!instHead && instHead.textContent.trim() === "Funding by institution");
+
   T2._setShared({ titles: { qualify: "Baseline <b>requirements</b>" }, secHidden: { timing: true } });
   win.CPL_CURATE_SECTIONS();
   check("a rename from the tab reaches this page, escaped rather than rendered",
