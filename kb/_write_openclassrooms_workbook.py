@@ -6,6 +6,7 @@ Ashley's ten columns lead the Crosswalk sheet in her order; the evidence columns
 faculty reviewer needs follow them.
 
 Run:  python3 kb/_write_openclassrooms_workbook.py [OUT.xlsx]
+      OC_V2=1 python3 kb/_write_openclassrooms_workbook.py   (Ashley's two-sheet layout, _2.xlsx)
 """
 import datetime as dt
 import json
@@ -230,5 +231,109 @@ def main():
     print(out, "crosswalk rows:", n_cross - 1)
 
 
-if __name__ == "__main__":
+if __name__ == "__main__" and not os.environ.get("OC_V2"):
     main()
+
+
+# ------------------------------------------------------------------ V2 layout ---
+# Ashley's house layout (2026-09-29), copied from the formatting -- never the
+# content -- of her OpenClassrooms SDR Crosswalk V1: two sheets, Crosswalk + Notes;
+# one navy header row (0A2240, white bold Arial 10, centered vertically, wrapped),
+# plain Arial 10 body top-aligned and wrapped, thin BFBFBF borders on every cell,
+# no fills, rows 25.5 high, header frozen, auto-filter over the data.
+NAVY = "0A2240"
+GRID = Side(style="thin", color="BFBFBF")
+BOX = Border(left=GRID, right=GRID, top=GRID, bottom=GRID)
+
+
+def write_v2(d, out):
+    wb = Workbook()
+    ws = wb.active
+    ws.title = "Crosswalk"
+    cols = ["Title", "Certificate Name", "Region", "Credit Recommendation Title", "Discipline",
+            "Exhibit ID", "Exhibit Title", "College Name", "Course Name", "Course ID",
+            "Alignment Strength", "Opportunity Type"]
+    widths = [28, 34, 22, 40, 28, 26, 34, 28, 40, 16, 16, 40]
+    ws.append(cols)
+    def course_row(c):
+        typ = ("Potential: on MAP through another exhibit" if c["on_map"]
+               else "Potential: not in MAP (new exhibit, faculty review)")
+        ws.append([d["title"], d["certificate"], c["region"], NO_CR, clean(c["discipline"]),
+                   NO_EX, NO_EX, c["college"], clean(c["course_title"]), clean(c["course_id"]),
+                   c["strength"], typ])
+
+    # Bakersfield's direct matches lead, then what MAP already holds, then the rest.
+    for c in d["courses"]:
+        if c["strength"] == "Direct match":
+            course_row(c)
+    for m in d["map_rows"]:
+        ws.append([d["title"], d["certificate"], m["region"],
+                   f"{clean(m['credit_rec'])} (local; no statewide credit recommendation)",
+                   clean(m["discipline"]), m["exhibit_id"], clean(m["exhibit_title"]), m["college"],
+                   clean(m["course_title"]), clean(m["course_id"]),
+                   "Existing", "Existing MAP exhibit / articulation (related credential)"])
+    for c in d["courses"]:
+        if c["strength"] != "Direct match":
+            course_row(c)
+    for i, w in enumerate(widths, 1):
+        ws.column_dimensions[get_column_letter(i)].width = w
+    for row in ws.iter_rows():
+        for cell in row:
+            cell.border = BOX
+            if cell.row == 1:
+                cell.font = Font(name=FONT, size=10, bold=True, color="FFFFFF")
+                cell.fill = PatternFill("solid", fgColor=NAVY)
+                cell.alignment = Alignment(vertical="center", wrap_text=True)
+            else:
+                cell.font = Font(name=FONT, size=10)
+                cell.alignment = Alignment(vertical="top", wrap_text=True)
+        if row[0].row > 1:
+            ws.row_dimensions[row[0].row].height = 25.5
+    ws.freeze_panes = "A2"
+    ws.auto_filter.ref = f"A1:{get_column_letter(len(cols))}{ws.max_row}"
+
+    n = wb.create_sheet("Notes")
+    n.column_dimensions["A"].width = 120
+    today = dt.date.today()
+    dm = sum(1 for p in d["programs"] if p["fit"] == "Digital-marketing focused")
+    notes = [
+        f"OpenClassrooms Digital Marketer (O*NET 13-1161.01, RAPIDS 2077CB) - California Community Colleges CPL "
+        f"crosswalk, prepared {today:%B %-d, %Y} for the MAP team. A snapshot: COCI and MAP change daily.",
+        "Priority: Bakersfield College's APPR B73A-G, Digital Marketer Apprenticeship 1-7 (20 credit units, active in "
+        "the MIS Fall 2025 inventory), restates the seven OpenClassrooms projects course for course, with no MAP "
+        "exhibit. Confirm with Bakersfield whether it is OpenClassrooms' related instruction before other outreach. "
+        "These seven rows read 'Direct match'.",
+        "MAP holds no statewide credit recommendation for digital marketing, social media, SEO or advertising. Rows "
+        "marked 'Existing' are local MAP exhibits for other credentials (CLEP, AMA, CFT, credit by exam) already "
+        "articulated to a related course; they show the course accepts CPL, and OpenClassrooms would need its own "
+        "exhibit.",
+        "All other rows come from COCI and the college catalog descriptions and are not in MAP for OpenClassrooms. "
+        "Each would need a new exhibit and faculty review. 'On MAP through another exhibit' means the course is "
+        "already on MAP for a different credential.",
+        "Alignment Strength: Direct match = the course restates an OpenClassrooms project. Strong = the course centers "
+        "on what the apprenticeship teaches and its title and description show at least three of the competency "
+        "groups built from the 27 Appendix A work processes. Moderate = clear overlap on part of the training. "
+        "Partial = one strand only (branding, public relations, UX design). A title match alone never makes a row "
+        "Strong.",
+        "Region is the Strong Workforce Program region. Discipline is the Minimum Qualifications discipline where the "
+        "subject code maps without ambiguity; otherwise the TOP code, marked 'verify'.",
+        f"Also found: {dm} active digital-marketing certificates and degrees in COCI, and 12 ACE (military) credit "
+        "recommendations in MAP in related subjects with no college course attached. Both are in the fuller "
+        "workbook (20260929_OpenClassrooms_Digital_Marketer_CPL_Crosswalk.xlsx) with course descriptions and "
+        "competency detail.",
+        "Sources: MAP exhibits and credit recommendations (read-only), COCI course list and program export, MIS Fall "
+        "2025 course inventory, and the OpenClassrooms Appendix A work process schedule and program syllabus. This "
+        "is a research list for faculty review, not an articulation decision.",
+    ]
+    for t in notes:
+        n.append([t])
+    for c in n["A"]:
+        c.font = Font(name=FONT, size=10)
+        c.alignment = Alignment(vertical="top", wrap_text=True)
+    wb.save(out)
+    print(out, "rows:", ws.max_row - 1)
+
+
+if __name__ == "__main__" and os.environ.get("OC_V2"):
+    write_v2(json.load(open(SRC)), os.path.join(
+        HERE, "openclassrooms_out", f"{dt.date.today():%Y%m%d}_OpenClassrooms_Digital_Marketer_CPL_Crosswalk_2.xlsx"))
