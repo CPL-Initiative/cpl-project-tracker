@@ -648,3 +648,31 @@ ONE targeted re-test on a batch it did not pick; **never a re-analysis of these
 26 rows**.
 
 **What did not fail: the 0.85 gate** — 25 of 25, 346 rows.
+
+## S302 (2026-09-29): the unit range reaches the name, and a rebuild that disagreed with itself
+
+Cards 13 and 14 of sheet 3 landed in #1754 (lane state: the RULED section).
+
+- **Rebuild the committed artifact before changing its builder, and diff the two.** The unchanged builder reproduced the worklist byte for byte; the changed one then moved a group the change never touched. Under 20 hash seeds the unchanged builder wrote two different worklists: the title-divergence check joined Python sets, whose order changes per run, so *Pre-Calculus Mathematics* read as divergent from MATH 155 *Precalculus* under 15 seeds and not under 5. Enumerating every token order for the 333 groups with an official title found no other group that depended on it. The squash now keeps written order, and the output is identical under all 20 seeds.
+- **A test of a cron artifact cannot assert the builder change of the PR that ships it.** The worklist is rebuilt by `daily-dashboard.yml`, so a code-only PR's CI reads the old file. The builder's behavior is tested on a fixture corpus (C1–C11 in `tests/cr_reference.test.js`); the real-corpus checks (A25–A29) wait for `_stats.groups_named_by_range`, which only the new builder writes, and skip loudly until the dispatch.
+- **A card's count is its predicate's, and the predicate can be narrower than the ruling.** Card 13 counted groups whose `canonical_source` was exactly `most_colleges` or `published_statewide` (87). Two more took their name from a wording while an official title was only proposed; the rule renames them too, and the fix above moved one of them under its C-ID, so 88 renamed.
+- **A zero a Counter drops reads as a missing stat.** `groups_held_by_a_screen` fell from 30 to 0 and left `_stats`; both unit stats are now set to zero before counting.
+
+## Moved from the lane (S302, 2026-09-29): the first trial's scores, the first decisions, the battery's primary
+
+Moved verbatim to keep the lane under its size budget when cards 13–14 landed.
+
+Jev answered
+all 51 in 10 seconds (`kb/_typesafe_cr_trial.py`, run 35516193054) and it
+discriminates: *Introduction to Criminal Justice* 0.89 against *Introduction to
+Criminology* 0.48 on the same `AJ 110` anchor with near-identical row counts —
+the designated discriminator, and it passed. Spanish 1/2 at 0.84/0.86, Spanish 3
+at **0.32**.
+
+**These are the lane's first curator decisions** — before
+them the table had never held data, and the lane's old "156 groups carry a
+decision" counted the MECHANICAL rung ladder (108/28/46/41), not judgments.
+
+⚠️ **THE PRIMARY CAME BACK BELOW CHANCE — `any_reason` AUC 0.378.** Backwards,
+not weakly right: where Jev found a reason to hold two apart, Sam was MORE
+likely to fold them.
