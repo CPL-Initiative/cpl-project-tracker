@@ -161,7 +161,11 @@ title list missed. 40 moved on 2026-09-29 (S302), receipt
 PEDS. The 37 stand-alones gap-filled in band 1's stand-alone codes
 (`KINE M12OH`–`M12UM`, `ATHL M11FJ`–`M11FP`, `PEDS M10EO`); 31 of those codes
 belonged to ids an earlier re-mint moved away, a reuse the prefix fold made 71
-times and the 31 once. The 3 corroborated rows continue band 2
+times and the 31 once. The era guard keeps each slot's occupants apart: a
+reference stored after the apply reaches the new course, and one stored before
+the vacating map reaches the row that map stamped as moved (`KINE M12TP` before
+KIN/PE pass 2 is `ATHL M12TP`); `tests/eths_remint_test.py` checks all 32 reused
+ids. The 3 corroborated rows continue band 2
 (`KINE M2023`–`M2025`), and 3 curation keys, 3 merge pointers, 1 identities key
 and 1 CR/NC mirror followed them. The fresh read of the 7 live `kb_curation`
 rows matched the overlay (md5 `4c8cf052` on both sides, nothing on a new id, no

@@ -7,7 +7,9 @@ merge_into pointer or curation key left on an old id, a stale identities entry
 kept on a landing key, a receipt or a fresh read that disagree slipping through,
 a class no ruling moves applied (the 42 merged ones stay, Sam 2026-09-29), a
 pinned set that no longer measures whole once part of it moved (V0 counts the
-stamps), and a scope applied twice (P0 reads the stamps of the pinned ids).
+stamps), a scope applied twice (P0 reads the stamps of the pinned ids), and a
+reused slot whose occupants the chain cannot tell apart (on the committed
+receipts: every reused id, each era checked against the provenance stamps).
 
 Run from repo root: python3 tests/eths_remint_test.py
 """
@@ -16,10 +18,12 @@ import json
 import os
 import sys
 import tempfile
+from collections import defaultdict
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "kb"))
 import _eths_remint as er  # noqa: E402
+import alias_chain as ac  # noqa: E402
 
 results = []
 
@@ -282,6 +286,81 @@ with tempfile.TemporaryDirectory() as tmp:
           "ETHS M10011x" in text and "XETHS M1001" in text)
     check("the SkyView re-key is idempotent", er.rekey_skyview({"ETHS M1001": "KINE M2001"}, root=tmp)
           .get("prototype/ccr_universe.json") == 0)
+
+# ── a reused slot: the era guard keeps its occupants apart (the committed receipts) ─
+# The allocator's collision surface is every live key, so a gap-fill may take a slot
+# an earlier re-mint vacated: KIN/PE pass 2 moved KINE M12TP to ATHL M12TP on
+# 2026-06-12, and ETHS M10PO lands on KINE M12TP on 2026-09-29. A stored id names
+# whatever held it in its own era, and the era guard (alias_chain.pending_maps) hands
+# a reference only the maps registered after that era. So a reference stored after
+# the ETHS apply meets none of the June maps and must reach the new course, and one
+# stored before a vacating map must reach the row that map moved, never the new
+# course. A map that stamps the rows it moves names that row without the chain (the
+# stamp travels with the row), so each era's answer is checked against the stamp.
+chain = list(ac.ALIAS_MAPS)
+alias_maps = {p: ac.load_alias(p) for p in chain}
+catalog = {}
+for name in ("coci_minted_courses.json", "coci_minted_singletons.json"):
+    with open(os.path.join(ROOT, "kb", name), encoding="utf-8") as f:
+        catalog.update(json.load(f)["courses"])
+stamped, stamp_values = defaultdict(list), defaultdict(set)
+for key, r in catalog.items():
+    for fld, val in r.items():
+        if fld.startswith("_") and fld.endswith("_from") and isinstance(val, str):
+            stamped[(fld, val)].append(key)
+            stamp_values[fld].add(val)
+# A map's own stamp is the field every value of which is an id that map moved.
+own_stamp = {}
+for p in chain:
+    olds = set(alias_maps[p])
+    for fld, vals in stamp_values.items():
+        if vals <= olds:
+            own_stamp[p] = fld
+
+
+def through(maps_from, cid):
+    return ac.resolve_id(cid, [alias_maps[p] for p in maps_from])
+
+
+reused, post_ok, guard_ok, pre_ok, stamp_ok, era_needed = [], [], [], [], [], []
+for receipt in (p for p in chain if p.startswith("kb/eths_remint_out/")):
+    k = chain.index(receipt)
+    after = ac.pending_maps(chain[:k + 1], None, chain)[0]     # a reference stored after this apply
+    for old, v in sorted(alias_maps[receipt].items()):
+        new = ac.step(v)
+        vacated_by = [p for p in chain[:k] if new in alias_maps[p]]
+        if not vacated_by:
+            continue
+        reused.append(new)
+        post = through(after, new)
+        post_ok.append(stamped[(er.STAMP, old)] == [post])
+        era_needed.append(through(chain, new) != post)
+        for p in vacated_by:
+            i = chain.index(p)
+            before = ac.pending_maps(chain[:i], None, chain)[0] if i else chain   # stored before p
+            guard_ok.append(before == chain[i:])
+            pre = through(before, new)
+            pre_ok.append(pre != post)
+            if p in own_stamp:
+                stamp_ok.append(stamped[(own_stamp[p], new)] == [pre])
+check("the ETHS receipts land 32 new ids on a slot an earlier re-mint vacated (31 of the 43, KINE M1040 of the 31)",
+      len(reused) == 32 and {"KINE M12TP", "KINE M1040"} <= set(reused))
+check("a reference stored after the ETHS apply reaches the new course, for every reused id",
+      bool(post_ok) and all(post_ok))
+check("the era guard hands a reference stored before a vacating map that map and every later one",
+      bool(guard_ok) and all(guard_ok))
+check("a reference stored before a vacating map never reaches the new course",
+      bool(pre_ok) and all(pre_ok))
+check("it reaches the row that map stamped as moved from the id, for every vacating map",
+      len(stamp_ok) == len(pre_ok) and all(stamp_ok))
+check("the era decides it: through the whole chain, read with no era, every reused id leaves its new course",
+      bool(era_needed) and all(era_needed))
+k43 = next(i for i, p in enumerate(chain) if p.startswith("kb/eths_remint_out/2026-09-29/"))
+kpp = next(i for i, p in enumerate(chain) if p.startswith("kb/kin_pe_pass2_out/"))
+check("KINE M12TP: stored before KIN/PE pass 2 it names ATHL M12TP; stored after the apply, ETHS M10PO's course",
+      ac.resolve_id("KINE M12TP", [alias_maps[p] for p in chain[kpp:k43 + 1]]) == "ATHL M12TP"
+      and [through(ac.pending_maps(chain[:k43 + 1], None, chain)[0], "KINE M12TP")]
+      == stamped[(er.STAMP, "ETHS M10PO")])
 
 passed = sum(1 for _, ok in results if ok)
 print(f"\n{passed}/{len(results)} checks passed")
