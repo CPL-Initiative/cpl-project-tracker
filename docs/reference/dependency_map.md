@@ -240,7 +240,6 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `fact-sheet/cpl_stories.js` | `CPL_STORIES` | `tools/source_cpl_stories.mjs` | tabs: `college-briefing`, `implementation-funding` · pages: `fact-sheet/index.html` · scripts: `tools/source_cpl_stories.mjs` |
 | `fact-sheet/statewide_recs.js` | `CPL_STATEWIDE_RECS` | `fact-sheet/_build_statewide_recs.py` | pages: `fact-sheet/index.html` · scripts: `fact-sheet/_build_statewide_recs.py`, `kb/_build_domain_cpl_crosswalk.py`, `kb/_build_occupation_cpl_crosswalk.py` |
 | `regional_cpl_opportunity_data.js` | `CPL_REGIONAL_OPPS` | `kb/_emit_regional_opps_data.py` | tabs: `college-briefing` · scripts: `kb/_emit_regional_opps_data.py` |
-| `scripts/check_funding_nc_row_layout.js` | `CPL_FUNDING_NO_REMOTE` | not stated in header | none found |
 | `scripts/funding_effective.js` | `CPL_FUNDING_NO_REMOTE` | not stated in header | tabs: `college-briefing`, `implementation-funding` |
 | `sierra_rule_defaults.js` | `SIERRA_RULE_DEFAULTS` | `kb/_build_sierra_rule_defaults.py` | tabs: `sierra-training` · pages: `CPL_Dashboard.html` · scripts: `kb/_build_sierra_rule_defaults.py` |
 | `statewide_data.js` | `CPL_STATEWIDE` | not stated in header | tabs: `vision-2030` · scripts: `excel_to_dashboard.py`, `fact-sheet/_build_statewide_recs.py`, `kb/_build_ccr_cpl.py`, `kb/_build_college_offering_crosswalk.py`, `kb/_build_credential_recs.py`, `kb/_build_domain_cpl_crosswalk.py`, `kb/_build_occupation_cpl_crosswalk.py`, `kb/_build_partner_crosswalk.py`, `kb/_build_regional_cpl_opportunity.py`, `kb/_preseed_unclassified.py`, `kb/_seed_college_short_names.py`, `kb/_seed_statewide_categories.py`, `kb/_sync_credential_catalog.py` |
@@ -780,7 +779,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | Service | Called by |
 |---|---|
 | `127.0.0.1` | `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
-| `127.0.0.1:` | modules: `prototype/check_ccr_atlas.js`, `prototype/check_funding_explainer.js`, `prototype/check_skyview_sweep.js`, `scripts/a11y.js`, `scripts/check_memory_briefing_layout.js`, `scripts/tab_review_sheet/capture.js`, `scripts/tab_review_sheet/tab.js` |
+| `127.0.0.1:` | modules: `prototype/check_ccr_atlas.js`, `prototype/check_skyview_sweep.js`, `scripts/a11y.js`, `scripts/check_memory_briefing_layout.js`, `scripts/tab_review_sheet/capture.js`, `scripts/tab_review_sheet/tab.js` |
 | `127.0.0.1:9333` | scripts: `prototype/funding_video/render.mjs` |
 | `alameda.edu` | tabs: `map-queue`, `map-users` |
 | `api.anthropic.com` | tabs: `annual-report` · pages: `CPL_Dashboard.html` · `edgefn:cpl-chat`, `edgefn:cpl-news-harvest`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
@@ -949,4 +948,4 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 
 Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 545 file
-datasets · 147 external services · 381 consumers · 37 workflows · 37 tabs.
+datasets · 147 external services · 380 consumers · 37 workflows · 37 tabs.
