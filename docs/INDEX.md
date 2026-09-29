@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 80 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 81 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 50 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 273 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **987** | |
+| Session handoffs | 274 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **988** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,7 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
-
+- **2026-09-29 — S302 (SkyWeft):** sheet 3's eighteen rulings recorded in their lanes ([#1750](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1750)); Sierra's one-button Try it in ([#1751](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1751)); the CR Reference names varying groups by range ([#1754](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1754)); College Dashboard mockup round 8, its harness committed on the round's branch. Close-out: the priority cards' Demonstrated and the opt-in words ([#1752](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1752)), the explainer on Sam's premise ([#1753](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1753)), draft 4 of the video ([#1756](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1756)), card 7's workflow ([#1757](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1757)); the funding lessons rebuilt after a scripted write erased them. Handoff `session_303_handoff.md`.
 - **2026-09-29 — S300 (SkyLoom):** two ports of the College Dashboard reconciled: what #1731 carried that #1729 lacked, and S299's five follow-ups, landed as [#1732](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1732) (TBA everywhere, the grants table's layout, the printed explainer, the CSV's Demonstrated); Sierra Training round 1 ported ([#1733](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1733)); seven asks on one sheet; the funding lane compacted under its budget. S299's own handoff carried to main as `session_300_handoff.md`.
 - **2026-09-28 — S298 (SkyLatch):** UI fixes through a live mockup drawn by COBI's own code: Sam locked the College Dashboard redesign in seven rounds and ruled that funding waits on all three minimum conditions ([#1726](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1726)); the Sierra Training tab entered the same process. New: [`ui_mockup_lessons`](ui_mockup_lessons.md), [`methodology-mock-up-from-the-running-code`](kb-notes/methodology-mock-up-from-the-running-code.md).
 - **2026-09-28 — S297 (SkyLantern):** the SQL approval prompt's source found: the Supabase connector's Tool permissions in Sam's claude.ai account, set read-only, which he changed; seven SQL calls then ran without a prompt, and S298's three-call test in a new session closes it. The opening line's `check_hooks_live.py --fix` sentence removed on Sam's ruling; the open-asks sheet published (https://claude.ai/artifact/C1uyRhneegqQ4XSPRKiC3B). KB note extended: `methodology-verify-the-premise-before-you-build-on-it` (case 3). Handoff 298.
