@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-09-29T14:11:56.551Z",
+  "scraped_at": "2026-09-29T15:56:21.698Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -48,17 +48,17 @@
         },
         {
           "college": "West Los Angeles College",
-          "students": 786,
-          "units": 8851,
-          "avgUnits": 11.260814249363868,
-          "transcriptionRate": 84.2,
-          "avgTranscribed": 9.477735368956743,
+          "students": 787,
+          "units": 8867,
+          "avgUnits": 11.266836086404066,
+          "transcriptionRate": 84,
+          "avgTranscribed": 9.46569250317662,
           "criteriaMetCount": 5,
           "militaryStudents": 158,
-          "nonMilitaryStudents": 631,
+          "nonMilitaryStudents": 632,
           "apprenticeStudents": 0,
-          "savings": 9218037.5,
-          "yearImpact": 43176140,
+          "savings": 9233477.5,
+          "yearImpact": 43251884,
           "transcribedUnits": 7449.5
         },
         {
@@ -201,15 +201,15 @@
           "students": 624,
           "units": 8798.5,
           "avgUnits": 14.100160256410257,
-          "transcriptionRate": 11.2,
-          "avgTranscribed": 1.5833333333333333,
+          "transcriptionRate": 11.4,
+          "avgTranscribed": 1.6025641025641026,
           "criteriaMetCount": 3,
           "militaryStudents": 577,
           "nonMilitaryStudents": 61,
           "apprenticeStudents": 0,
           "savings": 15785355,
           "yearImpact": 56548765.5,
-          "transcribedUnits": 988
+          "transcribedUnits": 1000
         },
         {
           "college": "Modesto Junior College",
@@ -473,13 +473,13 @@
         },
         {
           "college": "Los Angeles Pierce College",
-          "students": 398,
+          "students": 399,
           "units": 1461,
-          "avgUnits": 3.670854271356784,
+          "avgUnits": 3.661654135338346,
           "transcriptionRate": 70.4,
-          "avgTranscribed": 2.5854271356783918,
+          "avgTranscribed": 2.5789473684210527,
           "criteriaMetCount": 1,
-          "militaryStudents": 145,
+          "militaryStudents": 146,
           "nonMilitaryStudents": 253,
           "apprenticeStudents": 0,
           "savings": 1652345,
@@ -1757,15 +1757,15 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "52,103",
+      "value": "52,105",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "28,515"
+          "value": "28,516"
         },
         {
           "label": "Workforce/Other",
-          "value": "23,676"
+          "value": "23,677"
         },
         {
           "label": "Apprentice",
@@ -1784,7 +1784,7 @@
         },
         {
           "label": "Workforce/Other",
-          "value": "101k"
+          "value": "102k"
         },
         {
           "label": "Apprentice",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 52103,
-    "Units": 224106.90000000002,
-    "TranscribedUnits": 74000.2,
-    "Savings": 336188841.5,
-    "YearImpact": 1329897327.4,
-    "MilitaryStudents": 28515,
-    "NonMilitaryStudents": 23676,
+    "Students": 52105,
+    "Units": 224122.90000000002,
+    "TranscribedUnits": 74012.2,
+    "Savings": 336204281.5,
+    "YearImpact": 1329973071.4,
+    "MilitaryStudents": 28516,
+    "NonMilitaryStudents": 23677,
     "AprenticeStudents": 853,
-    "AverageUnits": 4.301228336180259,
-    "TranscribedAverage": 1.4202675469742625
+    "AverageUnits": 4.301370309951061,
+    "TranscribedAverage": 1.4204433355724018
   }
 }
