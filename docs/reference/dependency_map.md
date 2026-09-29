@@ -947,5 +947,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 543 file
+Coverage: 85 Supabase tables · 31 RPCs · 5 edge functions · 544 file
 datasets · 147 external services · 381 consumers · 37 workflows · 37 tabs.
